@@ -982,9 +982,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 100.0,
-    "y": 90.0
-   }
+    "x": 144.0,
+    "y": 164.0
+   },
+   "ligne": 0
   },
   {
    "repere": "Q1",
@@ -1050,9 +1051,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 146.4,
-    "y": 240.0
-   }
+    "x": 190.4,
+    "y": 414.0
+   },
+   "ligne": 1
   },
   {
    "repere": "Réseau2",
@@ -1100,9 +1102,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 460.0,
-    "y": 90.0
-   }
+    "x": 504.0,
+    "y": 164.0
+   },
+   "ligne": 0
   },
   {
    "repere": "Q2",
@@ -1168,9 +1171,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 346.4,
-    "y": 390.0
-   }
+    "x": 390.4,
+    "y": 664.0
+   },
+   "ligne": 2
   },
   {
    "repere": "Q3",
@@ -1200,9 +1204,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 267.8,
-    "y": 238.4
-   }
+    "x": 311.8,
+    "y": 412.4
+   },
+   "ligne": 1
   },
   {
    "repere": "Q4",
@@ -1232,9 +1237,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 381.0,
-    "y": 246.4
-   }
+    "x": 425.0,
+    "y": 420.4
+   },
+   "ligne": 1
   },
   {
    "repere": "Q5",
@@ -1264,9 +1270,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 487.8,
-    "y": 238.4
-   }
+    "x": 531.8,
+    "y": 412.4
+   },
+   "ligne": 1
   },
   {
    "repere": "Q6",
@@ -1296,9 +1303,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 601.0,
-    "y": 246.4
-   }
+    "x": 645.0,
+    "y": 420.4
+   },
+   "ligne": 1
   },
   {
    "repere": "Q7",
@@ -1352,9 +1360,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 724.0,
-    "y": 240.0
-   }
+    "x": 768.0,
+    "y": 414.0
+   },
+   "ligne": 1
   },
   {
    "repere": "Q8",
@@ -1408,9 +1417,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 132.0,
-    "y": 390.0
-   }
+    "x": 176.0,
+    "y": 664.0
+   },
+   "ligne": 2
   },
   {
    "repere": "PE1",
@@ -1434,9 +1444,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 580.0,
-    "y": 96.4
-   }
+    "x": 624.0,
+    "y": 170.4
+   },
+   "ligne": 0
   },
   {
    "repere": "Q9",
@@ -1466,9 +1477,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 467.8,
-    "y": 388.4
-   }
+    "x": 511.8,
+    "y": 662.4
+   },
+   "ligne": 2
   },
   {
    "repere": "Q10",
@@ -1498,9 +1510,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 581.0,
-    "y": 396.4
-   }
+    "x": 625.0,
+    "y": 670.4
+   },
+   "ligne": 2
   },
   {
    "repere": "Q11",
@@ -1530,9 +1543,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 687.8,
-    "y": 388.4
-   }
+    "x": 731.8,
+    "y": 662.4
+   },
+   "ligne": 2
   },
   {
    "repere": "Q12",
@@ -1562,9 +1576,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 801.0,
-    "y": 396.4
-   }
+    "x": 845.0,
+    "y": 670.4
+   },
+   "ligne": 2
   },
   {
    "repere": "Q13",
@@ -1618,9 +1633,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 128.0,
-    "y": 540.0
-   }
+    "x": 172.0,
+    "y": 914.0
+   },
+   "ligne": 3
   },
   {
    "repere": "Q14",
@@ -1674,9 +1690,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 328.0,
-    "y": 540.0
-   }
+    "x": 372.0,
+    "y": 914.0
+   },
+   "ligne": 3
   },
   {
    "repere": "KM1",
@@ -1730,9 +1747,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 534.4,
-    "y": 540.0
-   }
+    "x": 578.4,
+    "y": 914.0
+   },
+   "ligne": 3
   },
   {
    "repere": "KM2",
@@ -1786,9 +1804,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 734.4,
-    "y": 540.0
-   }
+    "x": 778.4,
+    "y": 914.0
+   },
+   "ligne": 3
   },
   {
    "repere": "KM3",
@@ -1842,9 +1861,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 138.4,
-    "y": 690.0
-   }
+    "x": 182.4,
+    "y": 1132.0
+   },
+   "ligne": 4
   },
   {
    "repere": "KM4",
@@ -1898,9 +1918,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 338.4,
-    "y": 690.0
-   }
+    "x": 382.4,
+    "y": 1132.0
+   },
+   "ligne": 4
   },
   {
    "repere": "M1",
@@ -1930,9 +1951,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 314.4,
-    "y": 836.8
-   }
+    "x": 358.4,
+    "y": 1314.8
+   },
+   "ligne": 5
   },
   {
    "repere": "M2",
@@ -1974,9 +1996,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 450.4,
-    "y": 836.8
-   }
+    "x": 494.4,
+    "y": 1314.8
+   },
+   "ligne": 5
   },
   {
    "repere": "M3",
@@ -2006,9 +2029,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 586.4,
-    "y": 836.8
-   }
+    "x": 630.4,
+    "y": 1314.8
+   },
+   "ligne": 5
   },
   {
    "repere": "M4",
@@ -2038,9 +2062,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 514.4,
-    "y": 686.8
-   }
+    "x": 558.4,
+    "y": 1128.8
+   },
+   "ligne": 4
   },
   {
    "repere": "PE2",
@@ -2064,9 +2089,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 220.0,
-    "y": 96.4
-   }
+    "x": 264.0,
+    "y": 170.4
+   },
+   "ligne": 0
   },
   {
    "repere": "M5",
@@ -2108,9 +2134,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 650.4,
-    "y": 686.8
-   }
+    "x": 694.4,
+    "y": 1128.8
+   },
+   "ligne": 4
   },
   {
    "repere": "M6",
@@ -2140,9 +2167,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 786.4,
-    "y": 686.8
-   }
+    "x": 830.4,
+    "y": 1128.8
+   },
+   "ligne": 4
   },
   {
    "repere": "PE3",
@@ -2166,9 +2194,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 340.0,
-    "y": 96.4
-   }
+    "x": 384.0,
+    "y": 170.4
+   },
+   "ligne": 0
   },
   {
    "repere": "PE4",
@@ -2192,9 +2221,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 700.0,
-    "y": 96.4
-   }
+    "x": 744.0,
+    "y": 170.4
+   },
+   "ligne": 0
   },
   {
    "repere": "PE5",
@@ -2218,9 +2248,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 820.0,
-    "y": 96.4
-   }
+    "x": 864.0,
+    "y": 170.4
+   },
+   "ligne": 0
   },
   {
    "repere": "X1",
@@ -2255,9 +2286,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 185.4,
-    "y": 982.0
-   }
+    "x": 229.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X2",
@@ -2292,9 +2324,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 227.4,
-    "y": 982.0
-   }
+    "x": 271.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X3",
@@ -2329,9 +2362,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 269.4,
-    "y": 982.0
-   }
+    "x": 313.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X4",
@@ -2366,9 +2400,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 311.4,
-    "y": 982.0
-   }
+    "x": 355.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X5",
@@ -2403,9 +2438,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 353.4,
-    "y": 982.0
-   }
+    "x": 397.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X6",
@@ -2440,9 +2476,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 395.4,
-    "y": 982.0
-   }
+    "x": 439.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X7",
@@ -2477,9 +2514,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 437.4,
-    "y": 982.0
-   }
+    "x": 481.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X8",
@@ -2514,9 +2552,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 479.4,
-    "y": 982.0
-   }
+    "x": 523.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X9",
@@ -2551,9 +2590,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 521.4,
-    "y": 982.0
-   }
+    "x": 565.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X10",
@@ -2588,9 +2628,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 563.4,
-    "y": 982.0
-   }
+    "x": 607.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X11",
@@ -2625,9 +2666,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 605.4,
-    "y": 982.0
-   }
+    "x": 649.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X12",
@@ -2662,9 +2704,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 647.4,
-    "y": 982.0
-   }
+    "x": 691.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X13",
@@ -2699,9 +2742,10 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 689.4,
-    "y": 982.0
-   }
+    "x": 733.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X14",
@@ -2736,11 +2780,90 @@ window.CABLAGE_EXERCICES["ep2-2021-cablage-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 731.4,
-    "y": 982.0
-   }
+    "x": 775.4,
+    "y": 1480.0
+   },
+   "ligne": 6
   }
  ],
+ "platine": {
+  "largeur": 1008,
+  "hauteur": 1604,
+  "rangees": [
+   {
+    "y0": 84,
+    "y1": 244.0
+   },
+   {
+    "y0": 334.0,
+    "y1": 494.0
+   },
+   {
+    "y0": 584.0,
+    "y1": 744.0
+   },
+   {
+    "y0": 834.0,
+    "y1": 994.0
+   },
+   {
+    "y0": 1084.0,
+    "y1": 1180.0
+   },
+   {
+    "y0": 1270.0,
+    "y1": 1366.0
+   },
+   {
+    "y0": 1456.0,
+    "y1": 1520.0
+   }
+  ],
+  "goulottes_h": [
+   {
+    "y0": 16,
+    "y1": 62
+   },
+   {
+    "y0": 266.0,
+    "y1": 312.0
+   },
+   {
+    "y0": 516.0,
+    "y1": 562.0
+   },
+   {
+    "y0": 766.0,
+    "y1": 812.0
+   },
+   {
+    "y0": 1016.0,
+    "y1": 1062.0
+   },
+   {
+    "y0": 1202.0,
+    "y1": 1248.0
+   },
+   {
+    "y0": 1388.0,
+    "y1": 1434.0
+   },
+   {
+    "y0": 1542.0,
+    "y1": 1588.0
+   }
+  ],
+  "goulottes_v": [
+   {
+    "x0": 16,
+    "x1": 62
+   },
+   {
+    "x0": 946,
+    "x1": 992
+   }
+  ]
+ },
  "reseaux": [
   {
    "nom": "KM1:4",

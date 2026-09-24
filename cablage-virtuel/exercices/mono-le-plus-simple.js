@@ -481,9 +481,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 165.0,
-    "y": 96.4
-   }
+    "x": 209.0,
+    "y": 138.4
+   },
+   "ligne": 0
   },
   {
    "repere": "S1",
@@ -513,9 +514,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 523.0,
-    "y": 91.6
-   }
+    "x": 567.0,
+    "y": 133.6
+   },
+   "ligne": 0
   },
   {
    "repere": "B1",
@@ -545,9 +547,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 136.0,
-    "y": 240.0
-   }
+    "x": 180.0,
+    "y": 318.0
+   },
+   "ligne": 1
   },
   {
    "repere": "B2",
@@ -577,9 +580,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 285.0,
-    "y": 90.0
-   }
+    "x": 329.0,
+    "y": 132.0
+   },
+   "ligne": 0
   },
   {
    "repere": "M1",
@@ -609,9 +613,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 458.4,
-    "y": 388.4
-   }
+    "x": 502.4,
+    "y": 502.4
+   },
+   "ligne": 2
   },
   {
    "repere": "KA1",
@@ -641,9 +646,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 392.0,
-    "y": 90.0
-   }
+    "x": 436.0,
+    "y": 132.0
+   },
+   "ligne": 0
   },
   {
    "repere": "Y1",
@@ -679,9 +685,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 578.4,
-    "y": 399.6
-   }
+    "x": 622.4,
+    "y": 513.6
+   },
+   "ligne": 2
   },
   {
    "repere": "S2",
@@ -711,9 +718,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 286.4,
-    "y": 248.0
-   }
+    "x": 330.4,
+    "y": 326.0
+   },
+   "ligne": 1
   },
   {
    "repere": "M2",
@@ -743,9 +751,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 560.0,
-    "y": 232.0
-   }
+    "x": 604.0,
+    "y": 310.0
+   },
+   "ligne": 1
   },
   {
    "repere": "Y2",
@@ -781,9 +790,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 90.4,
-    "y": 388.4
-   }
+    "x": 134.4,
+    "y": 502.4
+   },
+   "ligne": 2
   },
   {
    "repere": "M3",
@@ -813,9 +823,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 218.4,
-    "y": 388.4
-   }
+    "x": 262.4,
+    "y": 502.4
+   },
+   "ligne": 2
   },
   {
    "repere": "M4",
@@ -845,9 +856,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 340.0,
-    "y": 382.0
-   }
+    "x": 384.0,
+    "y": 496.0
+   },
+   "ligne": 2
   },
   {
    "repere": "KA2",
@@ -877,9 +889,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 432.0,
-    "y": 248.0
-   }
+    "x": 476.0,
+    "y": 326.0
+   },
+   "ligne": 1
   },
   {
    "repere": "X1",
@@ -914,9 +927,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 65.4,
-    "y": 532.0
-   }
+    "x": 109.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X2",
@@ -951,9 +965,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 107.4,
-    "y": 532.0
-   }
+    "x": 151.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X3",
@@ -988,9 +1003,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 149.4,
-    "y": 532.0
-   }
+    "x": 193.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X4",
@@ -1025,9 +1041,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 191.4,
-    "y": 532.0
-   }
+    "x": 235.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X5",
@@ -1062,9 +1079,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 233.4,
-    "y": 532.0
-   }
+    "x": 277.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X6",
@@ -1099,9 +1117,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 275.4,
-    "y": 532.0
-   }
+    "x": 319.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X7",
@@ -1136,9 +1155,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 317.4,
-    "y": 532.0
-   }
+    "x": 361.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X8",
@@ -1173,9 +1193,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 359.4,
-    "y": 532.0
-   }
+    "x": 403.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X9",
@@ -1210,9 +1231,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 401.4,
-    "y": 532.0
-   }
+    "x": 445.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X10",
@@ -1247,9 +1269,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 443.4,
-    "y": 532.0
-   }
+    "x": 487.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X11",
@@ -1284,9 +1307,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 485.4,
-    "y": 532.0
-   }
+    "x": 529.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X12",
@@ -1321,9 +1345,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 527.4,
-    "y": 532.0
-   }
+    "x": 571.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X13",
@@ -1358,9 +1383,10 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 569.4,
-    "y": 532.0
-   }
+    "x": 613.4,
+    "y": 666.0
+   },
+   "ligne": 3
   },
   {
    "repere": "X14",
@@ -1395,11 +1421,66 @@ window.CABLAGE_EXERCICES["mono-le-plus-simple"] = {
     ]
    ],
    "implantation": {
-    "x": 611.4,
-    "y": 532.0
-   }
+    "x": 655.4,
+    "y": 666.0
+   },
+   "ligne": 3
   }
  ],
+ "platine": {
+  "largeur": 768,
+  "hauteur": 790,
+  "rangees": [
+   {
+    "y0": 84,
+    "y1": 180.0
+   },
+   {
+    "y0": 270.0,
+    "y1": 366.0
+   },
+   {
+    "y0": 456.0,
+    "y1": 552.0
+   },
+   {
+    "y0": 642.0,
+    "y1": 706.0
+   }
+  ],
+  "goulottes_h": [
+   {
+    "y0": 16,
+    "y1": 62
+   },
+   {
+    "y0": 202.0,
+    "y1": 248.0
+   },
+   {
+    "y0": 388.0,
+    "y1": 434.0
+   },
+   {
+    "y0": 574.0,
+    "y1": 620.0
+   },
+   {
+    "y0": 728.0,
+    "y1": 774.0
+   }
+  ],
+  "goulottes_v": [
+   {
+    "x0": 16,
+    "x1": 62
+   },
+   {
+    "x0": 706,
+    "x1": 752
+   }
+  ]
+ },
  "reseaux": [
   {
    "nom": "M2:2",

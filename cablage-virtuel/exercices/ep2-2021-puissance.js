@@ -1037,9 +1037,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 160.0,
-    "y": 90.0
-   }
+    "x": 204.0,
+    "y": 164.0
+   },
+   "ligne": 0
   },
   {
    "repere": "Q1",
@@ -1105,9 +1106,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 126.4,
-    "y": 240.0
-   }
+    "x": 170.4,
+    "y": 398.0
+   },
+   "ligne": 1
   },
   {
    "repere": "PE1",
@@ -1131,9 +1133,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 280.0,
-    "y": 96.4
-   }
+    "x": 324.0,
+    "y": 170.4
+   },
+   "ligne": 0
   },
   {
    "repere": "Q2",
@@ -1163,9 +1166,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 247.8,
-    "y": 238.4
-   }
+    "x": 291.8,
+    "y": 396.4
+   },
+   "ligne": 1
   },
   {
    "repere": "Q3",
@@ -1195,9 +1199,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 361.0,
-    "y": 246.4
-   }
+    "x": 405.0,
+    "y": 404.4
+   },
+   "ligne": 1
   },
   {
    "repere": "Q4",
@@ -1227,9 +1232,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 467.8,
-    "y": 238.4
-   }
+    "x": 511.8,
+    "y": 396.4
+   },
+   "ligne": 1
   },
   {
    "repere": "Q5",
@@ -1259,9 +1265,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 581.0,
-    "y": 246.4
-   }
+    "x": 625.0,
+    "y": 404.4
+   },
+   "ligne": 1
   },
   {
    "repere": "Q6",
@@ -1315,9 +1322,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 108.0,
-    "y": 390.0
-   }
+    "x": 152.0,
+    "y": 632.0
+   },
+   "ligne": 2
   },
   {
    "repere": "Q7",
@@ -1371,9 +1379,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 308.0,
-    "y": 390.0
-   }
+    "x": 352.0,
+    "y": 632.0
+   },
+   "ligne": 2
   },
   {
    "repere": "KM1",
@@ -1427,9 +1436,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 514.4,
-    "y": 390.0
-   }
+    "x": 558.4,
+    "y": 632.0
+   },
+   "ligne": 2
   },
   {
    "repere": "KM2",
@@ -1483,9 +1493,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 118.4,
-    "y": 540.0
-   }
+    "x": 162.4,
+    "y": 850.0
+   },
+   "ligne": 3
   },
   {
    "repere": "M1",
@@ -1515,9 +1526,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 294.4,
-    "y": 536.8
-   }
+    "x": 338.4,
+    "y": 846.8
+   },
+   "ligne": 3
   },
   {
    "repere": "M2",
@@ -1559,9 +1571,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 430.4,
-    "y": 536.8
-   }
+    "x": 474.4,
+    "y": 846.8
+   },
+   "ligne": 3
   },
   {
    "repere": "M3",
@@ -1591,9 +1604,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 566.4,
-    "y": 536.8
-   }
+    "x": 610.4,
+    "y": 846.8
+   },
+   "ligne": 3
   },
   {
    "repere": "PE2",
@@ -1617,9 +1631,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 400.0,
-    "y": 96.4
-   }
+    "x": 444.0,
+    "y": 170.4
+   },
+   "ligne": 0
   },
   {
    "repere": "PE3",
@@ -1643,9 +1658,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 520.0,
-    "y": 96.4
-   }
+    "x": 564.0,
+    "y": 170.4
+   },
+   "ligne": 0
   },
   {
    "repere": "X1",
@@ -1680,9 +1696,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 61.6,
-    "y": 690.0
-   }
+    "x": 105.6,
+    "y": 1060.0
+   },
+   "ligne": 4
   },
   {
    "repere": "X2",
@@ -1717,9 +1734,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 132.0,
-    "y": 688.4
-   }
+    "x": 176.0,
+    "y": 1058.4
+   },
+   "ligne": 4
   },
   {
    "repere": "X3",
@@ -1754,9 +1772,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 204.0,
-    "y": 688.4
-   }
+    "x": 248.0,
+    "y": 1058.4
+   },
+   "ligne": 4
   },
   {
    "repere": "X4",
@@ -1791,9 +1810,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 276.0,
-    "y": 688.4
-   }
+    "x": 320.0,
+    "y": 1058.4
+   },
+   "ligne": 4
   },
   {
    "repere": "X5",
@@ -1828,9 +1848,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 348.0,
-    "y": 688.4
-   }
+    "x": 392.0,
+    "y": 1058.4
+   },
+   "ligne": 4
   },
   {
    "repere": "X6",
@@ -1865,9 +1886,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 420.0,
-    "y": 688.4
-   }
+    "x": 464.0,
+    "y": 1058.4
+   },
+   "ligne": 4
   },
   {
    "repere": "X7",
@@ -1902,9 +1924,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 477.6,
-    "y": 690.0
-   }
+    "x": 521.6,
+    "y": 1060.0
+   },
+   "ligne": 4
   },
   {
    "repere": "X8",
@@ -1939,9 +1962,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 533.6,
-    "y": 690.0
-   }
+    "x": 577.6,
+    "y": 1060.0
+   },
+   "ligne": 4
   },
   {
    "repere": "X9",
@@ -1976,9 +2000,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 604.0,
-    "y": 688.4
-   }
+    "x": 648.0,
+    "y": 1058.4
+   },
+   "ligne": 4
   },
   {
    "repere": "X10",
@@ -2013,9 +2038,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 88.0,
-    "y": 778.4
-   }
+    "x": 132.0,
+    "y": 1292.4
+   },
+   "ligne": 5
   },
   {
    "repere": "X11",
@@ -2050,9 +2076,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 160.0,
-    "y": 778.4
-   }
+    "x": 204.0,
+    "y": 1292.4
+   },
+   "ligne": 5
   },
   {
    "repere": "X12",
@@ -2087,9 +2114,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 232.0,
-    "y": 778.4
-   }
+    "x": 276.0,
+    "y": 1292.4
+   },
+   "ligne": 5
   },
   {
    "repere": "X13",
@@ -2124,9 +2152,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 304.0,
-    "y": 778.4
-   }
+    "x": 348.0,
+    "y": 1292.4
+   },
+   "ligne": 5
   },
   {
    "repere": "X14",
@@ -2161,9 +2190,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 376.0,
-    "y": 778.4
-   }
+    "x": 420.0,
+    "y": 1292.4
+   },
+   "ligne": 5
   },
   {
    "repere": "X15",
@@ -2198,9 +2228,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 448.0,
-    "y": 778.4
-   }
+    "x": 492.0,
+    "y": 1292.4
+   },
+   "ligne": 5
   },
   {
    "repere": "X16",
@@ -2235,9 +2266,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 520.0,
-    "y": 778.4
-   }
+    "x": 564.0,
+    "y": 1292.4
+   },
+   "ligne": 5
   },
   {
    "repere": "X17",
@@ -2272,9 +2304,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 592.0,
-    "y": 778.4
-   }
+    "x": 636.0,
+    "y": 1292.4
+   },
+   "ligne": 5
   },
   {
    "repere": "X18",
@@ -2309,9 +2342,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 104.0,
-    "y": 868.4
-   }
+    "x": 148.0,
+    "y": 1526.4
+   },
+   "ligne": 6
   },
   {
    "repere": "X19",
@@ -2346,9 +2380,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 176.0,
-    "y": 868.4
-   }
+    "x": 220.0,
+    "y": 1526.4
+   },
+   "ligne": 6
   },
   {
    "repere": "X20",
@@ -2383,9 +2418,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 248.0,
-    "y": 868.4
-   }
+    "x": 292.0,
+    "y": 1526.4
+   },
+   "ligne": 6
   },
   {
    "repere": "X21",
@@ -2420,9 +2456,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 305.6,
-    "y": 870.0
-   }
+    "x": 349.6,
+    "y": 1528.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X22",
@@ -2457,9 +2494,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 361.6,
-    "y": 870.0
-   }
+    "x": 405.6,
+    "y": 1528.0
+   },
+   "ligne": 6
   },
   {
    "repere": "X23",
@@ -2494,9 +2532,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 432.0,
-    "y": 868.4
-   }
+    "x": 476.0,
+    "y": 1526.4
+   },
+   "ligne": 6
   },
   {
    "repere": "X24",
@@ -2531,9 +2570,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 504.0,
-    "y": 868.4
-   }
+    "x": 548.0,
+    "y": 1526.4
+   },
+   "ligne": 6
   },
   {
    "repere": "X25",
@@ -2568,9 +2608,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 576.0,
-    "y": 868.4
-   }
+    "x": 620.0,
+    "y": 1526.4
+   },
+   "ligne": 6
   },
   {
    "repere": "X26",
@@ -2605,9 +2646,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 82.0,
-    "y": 958.4
-   }
+    "x": 126.0,
+    "y": 1760.4
+   },
+   "ligne": 7
   },
   {
    "repere": "X27",
@@ -2642,9 +2684,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 154.0,
-    "y": 958.4
-   }
+    "x": 198.0,
+    "y": 1760.4
+   },
+   "ligne": 7
   },
   {
    "repere": "X28",
@@ -2679,9 +2722,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 226.0,
-    "y": 958.4
-   }
+    "x": 270.0,
+    "y": 1760.4
+   },
+   "ligne": 7
   },
   {
    "repere": "X29",
@@ -2716,9 +2760,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 298.0,
-    "y": 958.4
-   }
+    "x": 342.0,
+    "y": 1760.4
+   },
+   "ligne": 7
   },
   {
    "repere": "X30",
@@ -2753,9 +2798,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 353.4,
-    "y": 952.0
-   }
+    "x": 397.4,
+    "y": 1754.0
+   },
+   "ligne": 7
   },
   {
    "repere": "X31",
@@ -2790,9 +2836,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 412.0,
-    "y": 958.4
-   }
+    "x": 456.0,
+    "y": 1760.4
+   },
+   "ligne": 7
   },
   {
    "repere": "X32",
@@ -2827,9 +2874,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 467.4,
-    "y": 952.0
-   }
+    "x": 511.4,
+    "y": 1754.0
+   },
+   "ligne": 7
   },
   {
    "repere": "X33",
@@ -2864,9 +2912,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 526.0,
-    "y": 958.4
-   }
+    "x": 570.0,
+    "y": 1760.4
+   },
+   "ligne": 7
   },
   {
    "repere": "X34",
@@ -2901,9 +2950,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 598.0,
-    "y": 958.4
-   }
+    "x": 642.0,
+    "y": 1760.4
+   },
+   "ligne": 7
   },
   {
    "repere": "X35",
@@ -2938,9 +2988,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 205.4,
-    "y": 1050.0
-   }
+    "x": 249.4,
+    "y": 1980.0
+   },
+   "ligne": 8
   },
   {
    "repere": "X36",
@@ -2975,9 +3026,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 249.6,
-    "y": 1050.0
-   }
+    "x": 293.6,
+    "y": 1980.0
+   },
+   "ligne": 8
   },
   {
    "repere": "X37",
@@ -3012,9 +3064,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 303.4,
-    "y": 1042.0
-   }
+    "x": 347.4,
+    "y": 1972.0
+   },
+   "ligne": 8
   },
   {
    "repere": "X38",
@@ -3049,9 +3102,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 345.4,
-    "y": 1042.0
-   }
+    "x": 389.4,
+    "y": 1972.0
+   },
+   "ligne": 8
   },
   {
    "repere": "X39",
@@ -3086,9 +3140,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 387.4,
-    "y": 1042.0
-   }
+    "x": 431.4,
+    "y": 1972.0
+   },
+   "ligne": 8
   },
   {
    "repere": "X40",
@@ -3123,9 +3178,10 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 429.4,
-    "y": 1042.0
-   }
+    "x": 473.4,
+    "y": 1972.0
+   },
+   "ligne": 8
   },
   {
    "repere": "X41",
@@ -3160,11 +3216,106 @@ window.CABLAGE_EXERCICES["ep2-2021-puissance"] = {
     ]
    ],
    "implantation": {
-    "x": 471.4,
-    "y": 1042.0
-   }
+    "x": 515.4,
+    "y": 1972.0
+   },
+   "ligne": 8
   }
  ],
+ "platine": {
+  "largeur": 768,
+  "hauteur": 2120,
+  "rangees": [
+   {
+    "y0": 84,
+    "y1": 244.0
+   },
+   {
+    "y0": 334.0,
+    "y1": 462.0
+   },
+   {
+    "y0": 552.0,
+    "y1": 712.0
+   },
+   {
+    "y0": 802.0,
+    "y1": 898.0
+   },
+   {
+    "y0": 988.0,
+    "y1": 1132.0
+   },
+   {
+    "y0": 1222.0,
+    "y1": 1366.0
+   },
+   {
+    "y0": 1456.0,
+    "y1": 1600.0
+   },
+   {
+    "y0": 1690.0,
+    "y1": 1834.0
+   },
+   {
+    "y0": 1924.0,
+    "y1": 2036.0
+   }
+  ],
+  "goulottes_h": [
+   {
+    "y0": 16,
+    "y1": 62
+   },
+   {
+    "y0": 266.0,
+    "y1": 312.0
+   },
+   {
+    "y0": 484.0,
+    "y1": 530.0
+   },
+   {
+    "y0": 734.0,
+    "y1": 780.0
+   },
+   {
+    "y0": 920.0,
+    "y1": 966.0
+   },
+   {
+    "y0": 1154.0,
+    "y1": 1200.0
+   },
+   {
+    "y0": 1388.0,
+    "y1": 1434.0
+   },
+   {
+    "y0": 1622.0,
+    "y1": 1668.0
+   },
+   {
+    "y0": 1856.0,
+    "y1": 1902.0
+   },
+   {
+    "y0": 2058.0,
+    "y1": 2104.0
+   }
+  ],
+  "goulottes_v": [
+   {
+    "x0": 16,
+    "x1": 62
+   },
+   {
+    "x0": 706,
+    "x1": 752
+   }
+  ]
+ },
  "reseaux": [
   {
    "nom": "X12:1",

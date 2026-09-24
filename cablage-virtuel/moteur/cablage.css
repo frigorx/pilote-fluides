@@ -87,9 +87,11 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 @keyframes defile{to{stroke-dashoffset:-16}}
 
 /* ---- barre d'outils : couleurs + actions ---- */
-/* 100 px : 48 px d'outils + une bande libre en bas pour le cartouche inerWeb (marque.js, mode fixe, 24 px en bas à gauche) */
-.outils{display:flex;align-items:flex-start;gap:8px;padding:10px 14px 0;background:#fff;border-top:1px solid var(--ligne);
-  height:100px;overflow-x:auto}
+/* la barre passe sur deux lignes quand l'écran est étroit (tablette en portrait) ; 34 px libres en bas
+   pour le cartouche inerWeb (marque.js, mode fixe, en bas à gauche) */
+.outils{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;padding:10px 14px 34px;background:#fff;border-top:1px solid var(--ligne);
+  min-height:100px}
+.outils .actions{display:flex;gap:8px;flex-wrap:wrap}
 .outils .couleurs{display:flex;gap:8px}
 .outils .couleur{width:52px;height:48px;border-radius:12px;border:3px solid #fff;box-shadow:0 0 0 2px var(--ligne);padding:0;position:relative}
 .outils .couleur.actif{box-shadow:0 0 0 3px var(--bleu)}
@@ -123,3 +125,9 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 .fiche .modes{display:flex;gap:6px;flex-wrap:wrap}
 .fiche .modes a{flex:1;text-align:center;text-decoration:none;border:2px solid var(--ligne);border-radius:10px;padding:10px 6px;color:var(--bleu);font-weight:700;font-size:15px}
 .fiche .modes a.reel{border-color:var(--orange)}
+
+/* ---- la platine d'une vraie armoire : rails et goulottes ---- */
+#platine .rail{fill:#d3dae3;stroke:#b3bfcc;stroke-width:1}
+#platine .goulotte{fill:#e6ebf1;stroke:#c6d0db;stroke-width:1}
+#platine .goulotte-fentes{fill:url(#fentes)}
+#platine .fond-platine{fill:#f7f9fb}

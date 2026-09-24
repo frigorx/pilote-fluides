@@ -122,6 +122,7 @@ function construireCarte() {
 
 // ------------------------------------------------------------ la platine
 function construirePlatine() {
+  const PL = EX.platine || null;   // rails et goulottes, posés par le convertisseur (absent : ancien tracé libre)
   let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9, html = '';
   EX.appareils.forEach(a => {
     const px = a.implantation.x, py = a.implantation.y, [bx0, by0, bx1, by1] = a.boite;
@@ -129,25 +130,48 @@ function construirePlatine() {
     x1 = Math.max(x1, px + bx1 * ECH + 40); y1 = Math.max(y1, py + by1 * ECH + 36);
     html += '<g class="app" data-rep="' + a.repere + '"><g transform="translate(' + px + ',' + py + ') scale(' + ECH + ')">' + a.symbole + '</g>' +
       (a.rang === 0
-        ? '<text class="repere haut" x="' + (px + (bx0 + bx1) / 2 * ECH) + '" y="' + (py + by0 * ECH - 16) + '">' + a.repere + '</text>'
+        ? '<text class="repere haut" x="' + (px + (bx0 + bx1) / 2 * ECH) + '" y="' + (py + by0 * ECH - 14) + '">' + a.repere + '</text>'
         : a.rang === 5
-        ? '<text class="repere haut petit" x="' + (px + (bx0 + bx1) / 2 * ECH) + '" y="' + (py + by1 * ECH + 34) + '">' + a.repere + '</text>'
+        ? '<text class="repere petit" style="text-anchor:end" x="' + (px + (bx0 + bx1) / 2 * ECH - 9) + '" y="' + (py + by1 * ECH + 17) + '">' + a.repere + '</text>'
         : '<text class="repere" x="' + (px + bx1 * ECH + 10) + '" y="' + (py + (by0 + by1) / 2 * ECH + 5) + '">' + a.repere + '</text>') + '</g>';
     a.bornes.forEach(b => {
       const bx = px + b.x * ECH, by = py + b.y * ECH;
       x0 = Math.min(x0, bx - 30); y0 = Math.min(y0, by - 30); x1 = Math.max(x1, bx + 30); y1 = Math.max(y1, by + 30);
-      bornes[a.repere + ':' + b.id] = { ref: a.repere + ':' + b.id, rep: a.repere, id: b.id, x: bx, y: by, o: b.o };
+      bornes[a.repere + ':' + b.id] = { ref: a.repere + ':' + b.id, rep: a.repere, id: b.id, x: bx, y: by, o: b.o, ligne: a.ligne || 0 };
     });
   });
-  const vb = [x0, y0, x1 - x0, y1 - y0].map(v => v.toFixed(1)).join(' ');
+  // le décor d'une vraie platine : fond, rails DIN sous chaque rangée, goulottes entre les rangées et sur les côtés
+  let decor = '';
+  if (PL) {
+    const gauche = PL.goulottes_v[0], droite = PL.goulottes_v[1];
+    const haut = PL.goulottes_h[0].y0, bas = PL.goulottes_h[PL.goulottes_h.length - 1].y1;
+    decor += '<defs><pattern id="fentes" width="12" height="12" patternUnits="userSpaceOnUse"><rect x="4" y="0" width="4" height="12" fill="#f3f6f9"/></pattern></defs>';
+    decor += '<rect class="fond-platine" x="0" y="0" width="' + PL.largeur + '" height="' + PL.hauteur + '"/>';
+    PL.rangees.forEach(r => {
+      const yc = (r.y0 + r.y1) / 2;
+      decor += '<rect class="rail" x="' + (gauche.x1 + 6) + '" y="' + (yc - 5).toFixed(1) + '" width="' + (droite.x0 - gauche.x1 - 12) + '" height="10" rx="2"/>';
+    });
+    PL.goulottes_h.forEach(g => {
+      decor += '<rect class="goulotte" x="' + gauche.x0 + '" y="' + g.y0 + '" width="' + (droite.x1 - gauche.x0) + '" height="' + (g.y1 - g.y0) + '" rx="3"/>' +
+               '<rect class="goulotte-fentes" x="' + gauche.x1 + '" y="' + (g.y0 + 3) + '" width="' + (droite.x0 - gauche.x1) + '" height="' + (g.y1 - g.y0 - 6) + '"/>';
+    });
+    PL.goulottes_v.forEach(g => {
+      decor += '<rect class="goulotte" x="' + g.x0 + '" y="' + haut + '" width="' + (g.x1 - g.x0) + '" height="' + (bas - haut) + '" rx="3"/>';
+    });
+  }
+  const vb = PL ? [0, 0, PL.largeur, PL.hauteur].join(' ') : [x0, y0, x1 - x0, y1 - y0].map(v => v.toFixed(1)).join(' ');
+  // l'étiquette d'une borne se met À CÔTÉ de la sortie du fil, jamais dessus
   let bornesHtml = '';
   Object.values(bornes).forEach(b => {
-    const d = DIR[b.o], lx = b.x + d[0] * 16 + (d[0] === 0 ? 0 : 0), ly = b.y + d[1] * 16 + (d[1] === 0 ? 4 : (d[1] < 0 ? 0 : 8));
+    const d = DIR[b.o];
+    let lx, ly, ancre = 'start';
+    if (d[1] !== 0) { lx = b.x + 10; ly = b.y + d[1] * 13 + 4; }
+    else { lx = b.x + d[0] * 14; ly = b.y - 10; ancre = d[0] > 0 ? 'start' : 'end'; }
     bornesHtml += '<circle class="borne" role="button" aria-label="' + lib(b.ref) + '" data-ref="' + b.ref + '" cx="' + b.x + '" cy="' + b.y + '" r="' + RAYON_BORNE + '"/>' +
-      '<text class="nom-borne" x="' + lx + '" y="' + ly + '">' + b.id + '</text>';
+      '<text class="nom-borne" style="text-anchor:' + ancre + '" x="' + lx.toFixed(1) + '" y="' + ly.toFixed(1) + '">' + b.id + '</text>';
   });
   $('#platine-corps').innerHTML = '<svg viewBox="' + vb + '" preserveAspectRatio="xMidYMid meet">' +
-    '<g id="symboles">' + html + '</g><g id="fils"></g><g id="manques"></g><g id="bornes">' + bornesHtml + '</g>' +
+    '<g id="decor">' + decor + '</g><g id="symboles">' + html + '</g><g id="fils"></g><g id="manques"></g><g id="bornes">' + bornesHtml + '</g>' +
     '<path id="fil-temp" class="fil-temp" d=""/></svg>';
   svgPlatine = $('#platine-corps svg');
   gFils = svgPlatine.querySelector('#fils'); gManques = svgPlatine.querySelector('#manques'); filTemp = svgPlatine.querySelector('#fil-temp');
@@ -205,8 +229,17 @@ function armer(ref) {
   Object.values(bornes).forEach(b => b.el.classList.toggle('armee', b.ref === ref));
 }
 
-// ------------------------------------------------------------ les fils
-function chemin(a, b, idx) {
+// ------------------------------------------------------------ les fils : le cheminement d'une armoire propre
+/* Règle (F. Henninot, 24/09/2026) : « on clique l'entrée, on clique la sortie, et le cheminement se
+   crée sur un chemin logique, propre et net ». Comme dans une armoire : le fil sort de sa borne
+   TOUT DROIT vers la goulotte la plus proche (celle du dessus pour une borne du haut, celle du
+   dessous pour une borne du bas), y court dans un couloir parallèle aux autres fils, et redescend
+   tout droit sur la borne d'arrivée. Deux rangées différentes : il passe par la goulotte latérale la
+   plus proche. Un fil ne traverse donc jamais un appareil, et deux fils ne se superposent que
+   quand la goulotte est pleine. */
+const COULOIR = 7, MARGE_GOULOTTE = 6, RAYON_COUDE = 6;
+
+function cheminSimple(a, b, idx) {   // sans géométrie de platine (exercices « --platine schema »)
   const A = [a.x + DIR[a.o][0] * SORTIE, a.y + DIR[a.o][1] * SORTIE];
   const B = [b.x + DIR[b.o][0] * SORTIE, b.y + DIR[b.o][1] * SORTIE];
   const dec = ((idx % 5) - 2) * 7;
@@ -216,7 +249,79 @@ function chemin(a, b, idx) {
     else { const xm = (A[0] + B[0]) / 2 + dec; pts.push([xm, A[1]], [xm, B[1]]); }
   }
   pts.push(B, [b.x, b.y]);
-  return 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L');
+  return pts;
+}
+function goulotteDe(b) {             // la goulotte horizontale que rejoint une borne
+  const gh = EX.platine.goulottes_h, k = b.ligne;
+  if (b.o === 0) return k;
+  if (b.o === 2) return k + 1;
+  return (b.y - gh[k].y1) <= (gh[k + 1].y0 - b.y) ? k : k + 1;   // borne latérale : la plus proche
+}
+function sortieDe(b) { return b.o === 1 ? [b.x + SORTIE, b.y] : b.o === 3 ? [b.x - SORTIE, b.y] : [b.x, b.y]; }
+function couloirs(g) { const l = (g.y1 !== undefined ? g.y1 - g.y0 : g.x1 - g.x0) - 2 * MARGE_GOULOTTE; return Math.max(1, Math.floor(l / COULOIR) + 1); }
+function couloirY(k, i) { const g = EX.platine.goulottes_h[k]; return g.y0 + MARGE_GOULOTTE + (i % couloirs(g)) * COULOIR; }
+function couloirX(v, i) { const g = EX.platine.goulottes_v[v]; return g.x0 + MARGE_GOULOTTE + (i % couloirs(g)) * COULOIR; }
+
+/* Attribue à chaque fil ses couloirs : premier couloir libre sur l'intervalle parcouru — deux fils
+   partagent un couloir s'ils ne s'y recouvrent pas. Recalculé à chaque changement, dans l'ordre de
+   pose, pour que la platine reste rangée. */
+function attribuerCouloirs() {
+  const PL = EX.platine; if (!PL) return;
+  const occH = PL.goulottes_h.map(() => []), occV = PL.goulottes_v.map(() => []);
+  const libre = (goulotte, a, b) => {
+    for (let i = 0; ; i++) {
+      const c = goulotte[i] || (goulotte[i] = []);
+      if (c.every(([u, v]) => b < u - 4 || a > v + 4)) { c.push([a, b]); return i; }
+    }
+  };
+  fils.forEach(f => {
+    const A = bornes[f.de], B = bornes[f.a];
+    const r = { gA: goulotteDe(A), gB: goulotteDe(B), pA: sortieDe(A), pB: sortieDe(B), cote: -1 };
+    if (r.gA === r.gB) {
+      r.cA = r.cB = libre(occH[r.gA], Math.min(r.pA[0], r.pB[0]), Math.max(r.pA[0], r.pB[0]));
+    } else {
+      const xg = PL.goulottes_v[0].x1, xd = PL.goulottes_v[1].x0;
+      r.cote = (Math.abs(r.pA[0] - xg) + Math.abs(r.pB[0] - xg)) <= (Math.abs(r.pA[0] - xd) + Math.abs(r.pB[0] - xd)) ? 0 : 1;
+      const xv = r.cote === 0 ? xg : xd;
+      r.cA = libre(occH[r.gA], Math.min(r.pA[0], xv), Math.max(r.pA[0], xv));
+      r.cB = libre(occH[r.gB], Math.min(r.pB[0], xv), Math.max(r.pB[0], xv));
+      const yA = couloirY(r.gA, r.cA), yB = couloirY(r.gB, r.cB);
+      r.cV = libre(occV[r.cote], Math.min(yA, yB), Math.max(yA, yB));
+    }
+    f.route = r;
+  });
+}
+function pointsFil(f) {
+  const A = bornes[f.de], B = bornes[f.a];
+  if (!EX.platine) return cheminSimple(A, B, f.idx);
+  const r = f.route, pts = [[A.x, A.y]];
+  if (r.pA[0] !== A.x) pts.push(r.pA);
+  const yA = couloirY(r.gA, r.cA);
+  if (r.cote < 0) pts.push([r.pA[0], yA], [r.pB[0], yA]);
+  else { const xv = couloirX(r.cote, r.cV), yB = couloirY(r.gB, r.cB); pts.push([r.pA[0], yA], [xv, yA], [xv, yB], [r.pB[0], yB]); }
+  if (r.pB[0] !== B.x) pts.push(r.pB);
+  pts.push([B.x, B.y]);
+  return pts.filter((p, i) => i === 0 || Math.abs(p[0] - pts[i - 1][0]) > 0.01 || Math.abs(p[1] - pts[i - 1][1]) > 0.01);
+}
+/* Un vrai fil ne fait pas d'angle vif : chaque coude est arrondi. */
+function traceArrondi(pts) {
+  if (pts.length < 3) return 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L');
+  let d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+  for (let i = 1; i < pts.length - 1; i++) {
+    const p0 = pts[i - 1], p1 = pts[i], p2 = pts[i + 1];
+    const l1 = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]), l2 = Math.hypot(p2[0] - p1[0], p2[1] - p1[1]);
+    const r = Math.min(RAYON_COUDE, l1 / 2, l2 / 2);
+    const a = [p1[0] - (p1[0] - p0[0]) / l1 * r, p1[1] - (p1[1] - p0[1]) / l1 * r];
+    const b = [p1[0] + (p2[0] - p1[0]) / l2 * r, p1[1] + (p2[1] - p1[1]) / l2 * r];
+    d += ' L' + a[0].toFixed(1) + ' ' + a[1].toFixed(1) + ' Q' + p1[0].toFixed(1) + ' ' + p1[1].toFixed(1) + ' ' + b[0].toFixed(1) + ' ' + b[1].toFixed(1);
+  }
+  const fin = pts[pts.length - 1];
+  return d + ' L' + fin[0].toFixed(1) + ' ' + fin[1].toFixed(1);
+}
+function redessinerFils() {
+  attribuerCouloirs();
+  gFils.innerHTML = '';
+  fils.forEach((f, i) => { f.idx = i; dessinerFil(f); });
 }
 function creerFil(de, a) {
   if (de === a) return;
@@ -231,15 +336,15 @@ function creerFil(de, a) {
   }
   const f = { de, a, couleur, idx: fils.length };
   fils.push(f);
-  dessinerFil(f);
+  redessinerFils();
   rafraichir();
   if (MODE === 'guide') { etapeIdx++; prochaineEtape(); }
   else { niveauAide = 0; dire(libSens(de) + ' → ' + libSens(a) + ' en ' + couleur + '.', null, MODE === 'aide' ? 'Continuez, ou demandez de l’aide.' : 'Continuez, puis contrôlez.'); }
 }
 function dessinerFil(f) {
-  const d = chemin(bornes[f.de], bornes[f.a], f.idx);
+  const d = traceArrondi(pointsFil(f));
   const contour = document.createElementNS(NS, 'path'); contour.setAttribute('class', 'fil contour'); contour.setAttribute('d', d);
-  const p = document.createElementNS(NS, 'path'); p.setAttribute('class', 'fil ' + f.couleur); p.setAttribute('d', d);
+  const p = document.createElementNS(NS, 'path'); p.setAttribute('class', 'fil ' + f.couleur + (f === choisi ? ' choisi' : '') + (f.faux ? ' faux' : '')); p.setAttribute('d', d);
   p.setAttribute('stroke', COULEURS[f.couleur]);
   p.setAttribute('role', 'button'); p.setAttribute('aria-label', 'fil ' + lib(f.de) + ' vers ' + lib(f.a));
   gFils.appendChild(contour); gFils.appendChild(p);
@@ -253,8 +358,9 @@ function choisir(f) {
 }
 function supprimer() {
   if (!choisi) return;
-  choisi.el.remove(); choisi.contour.remove();
   fils = fils.filter(f => f !== choisi);
+  choisi = null;
+  redessinerFils();
   choisir(null); rafraichir();
   if (MODE === 'guide') prochaineEtape();
 }
@@ -264,8 +370,7 @@ function rafraichir() {
   $('#compteur-fils').textContent = fils.length + (fils.length > 1 ? ' fils' : ' fil');
 }
 function recommencer() {
-  fils.forEach(f => { f.el.remove(); f.contour.remove(); });
-  fils = []; etapeIdx = 0; aides = 0; niveauAide = 0; controle = false; debut = Date.now();
+  fils = []; gFils.innerHTML = ''; etapeIdx = 0; aides = 0; niveauAide = 0; controle = false; debut = Date.now();
   gManques.innerHTML = ''; choisir(null); armer(null); rafraichir(); $('#voile').classList.remove('ouvert');
   demarrerMode();
 }

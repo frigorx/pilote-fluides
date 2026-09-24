@@ -103,9 +103,10 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 101.6,
-    "y": 86.8
-   }
+    "x": 145.6,
+    "y": 128.8
+   },
+   "ligne": 0
   },
   {
    "repere": "F1",
@@ -135,9 +136,10 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 336.6,
-    "y": 93.2
-   }
+    "x": 380.6,
+    "y": 135.2
+   },
+   "ligne": 0
   },
   {
    "repere": "S1",
@@ -167,9 +169,10 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 155.0,
-    "y": 240.0
-   }
+    "x": 199.0,
+    "y": 318.0
+   },
+   "ligne": 1
   },
   {
    "repere": "H1",
@@ -199,9 +202,10 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 270.0,
-    "y": 240.0
-   }
+    "x": 314.0,
+    "y": 318.0
+   },
+   "ligne": 1
   },
   {
    "repere": "N",
@@ -225,11 +229,50 @@ window.CABLAGE_EXERCICES["eclairage-simple"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 221.6,
-    "y": 86.8
-   }
+    "x": 265.6,
+    "y": 128.8
+   },
+   "ligne": 0
   }
  ],
+ "platine": {
+  "largeur": 518,
+  "hauteur": 450,
+  "rangees": [
+   {
+    "y0": 84,
+    "y1": 180.0
+   },
+   {
+    "y0": 270.0,
+    "y1": 366.0
+   }
+  ],
+  "goulottes_h": [
+   {
+    "y0": 16,
+    "y1": 62
+   },
+   {
+    "y0": 202.0,
+    "y1": 248.0
+   },
+   {
+    "y0": 388.0,
+    "y1": 434.0
+   }
+  ],
+  "goulottes_v": [
+   {
+    "x0": 16,
+    "x1": 62
+   },
+   {
+    "x0": 456,
+    "x1": 502
+   }
+  ]
+ },
  "reseaux": [
   {
    "nom": "F1:2",
