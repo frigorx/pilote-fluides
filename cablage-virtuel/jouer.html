@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="robots" content="noindex">
+<title>Câblage virtuel</title>
+<link rel="stylesheet" href="moteur/cablage.css?v=20260924-0752">
+</head>
+<body class="jeu">
+<header class="barre">
+  <a class="retour" href="index.html" title="Liste des exercices">‹</a>
+  <div class="logo">Câblage <b>virtuel</b></div>
+  <div class="titre" id="titre">…</div>
+  <nav class="modes" id="modes" aria-label="Mode">
+    <button data-mode="guide">Guidé</button>
+    <button data-mode="aide">Aidé</button>
+    <button data-mode="reel">Réel</button>
+  </nav>
+</header>
+
+<div class="consigne" id="consigne"><div class="texte" id="consigne-texte">Chargement…</div></div>
+
+<main class="scene">
+  <section class="panneau" id="carte">
+    <div class="entete"><b>La carte</b> <span>le schéma à lire</span><span class="spacer"></span>
+      <button id="btn-numeros" title="Afficher les numéros de bornes sur le schéma">N° bornes</button>
+      <button id="btn-detacher" title="Ouvrir la carte dans une autre fenêtre (deuxième écran)">Autre écran</button>
+    </div>
+    <div class="corps" id="carte-corps"></div>
+  </section>
+  <section class="panneau" id="platine">
+    <div class="entete"><b>La platine</b> <span>tirez les fils de borne à borne</span><span class="spacer"></span>
+      <span id="compteur-fils">0 fil</span></div>
+    <div class="corps" id="platine-corps"></div>
+  </section>
+</main>
+
+<footer class="outils">
+  <div class="couleurs" id="couleurs"></div>
+  <span class="couleur-nom" id="couleur-nom"></span>
+  <span class="spacer"></span>
+  <button class="action" id="btn-aide">Aide</button>
+  <button class="action" id="btn-supprimer" disabled>Supprimer le fil</button>
+  <button class="action" id="btn-recommencer">Recommencer</button>
+  <button class="action principal" id="btn-controler">Contrôler</button>
+</footer>
+
+<div class="voile" id="voile"><div class="resultat" id="resultat"></div></div>
+
+<script>window.CABLAGE_VERSION = '20260924-0752';</script>
+<script src="exercices/index.js?v=20260924-0752"></script>
+<script src="moteur/cablage.js?v=20260924-0752"></script>
+<script src="moteur/marque.js?v=20260924-0752" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

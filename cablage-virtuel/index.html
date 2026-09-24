@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Câblage virtuel — exercices</title>
+<link rel="stylesheet" href="moteur/cablage.css?v=20260924-0752">
+</head>
+<body>
+<header class="barre">
+  <a class="retour" href="https://inerweb.fr/" title="Retour à inerweb.fr">‹</a>
+  <div class="logo">Câblage <b>virtuel</b></div>
+  <div class="titre">Lire la carte, poser les fils sur les bornes</div>
+</header>
+<main class="accueil">
+  <p class="intro">Choisissez un exercice et un mode. <b>Guidé</b> : on vous dit d'où à où. <b>Aidé</b> : la carte seule,
+    de l'aide si vous la demandez. <b>Réel</b> : la carte seule, contrôle à la fin, comme à l'examen.</p>
+  <div class="liste" id="liste"></div>
+</main>
+<script>window.CABLAGE_VERSION = '20260924-0752';</script>
+<script src="exercices/index.js?v=20260924-0752"></script>
+<script>
+(function(){
+  const liste = document.getElementById('liste');
+  const noms = {eclairage:'Éclairage', commande:'Commande', puissance:'Puissance'};
+  (window.CABLAGE_INDEX || []).forEach(function(m){
+    const f = document.createElement('article'); f.className = 'fiche';
+    f.innerHTML = '<div class="niv">Niveau ' + m.niveau + ' · ' + (noms[m.famille] || m.famille) + '</div>' +
+      '<h3></h3><div class="modes">' +
+      '<a href="jouer.html?ex=' + encodeURIComponent(m.id) + '&mode=guide">Guidé</a>' +
+      '<a href="jouer.html?ex=' + encodeURIComponent(m.id) + '&mode=aide">Aidé</a>' +
+      '<a class="reel" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&mode=reel">Réel</a></div>';
+    f.querySelector('h3').textContent = m.titre;
+    liste.appendChild(f);
+  });
+  if (!liste.children.length) liste.textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
+})();
+</script>
+<script src="moteur/marque.js?v=20260924-0752" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>
