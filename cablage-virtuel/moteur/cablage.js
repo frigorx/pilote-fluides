@@ -541,6 +541,59 @@ function construireOutils() {
   });
 }
 
+// ------------------------------------------------------------ zoom et déplacement (carte et platine)
+/* Dès le niveau 2, carte et platine sont trop petites pour un écran de tablette. Molette ou
+   pincement pour zoomer, glisser sur le VIDE pour déplacer (sur la platine, glisser depuis une
+   borne reste le geste du fil), boutons − + ⤢ dans l'entête. Le zoom joue sur le viewBox :
+   les coordonnées des bornes ne changent pas. */
+function installerZoom(svg, options) {
+  const base = (svg.getAttribute('viewBox') || '0 0 100 100').split(/[\s,]+/).map(Number);
+  const etat = { x: base[0], y: base[1], w: base[2], h: base[3] };
+  const appliquer = () => svg.setAttribute('viewBox', [etat.x, etat.y, etat.w, etat.h].map(v => v.toFixed(1)).join(' '));
+  const pt = (e) => { const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY; return p.matrixTransform(svg.getScreenCTM().inverse()); };
+  const borner = (w) => Math.min(base[2] * 4, Math.max(base[2] / 8, w));
+  const zoomer = (facteur, centre) => {
+    const c = centre || { x: etat.x + etat.w / 2, y: etat.y + etat.h / 2 };
+    const w = borner(etat.w / facteur), h = w * base[3] / base[2];
+    etat.x = c.x - (c.x - etat.x) * (w / etat.w); etat.y = c.y - (c.y - etat.y) * (h / etat.h); etat.w = w; etat.h = h; appliquer();
+  };
+  const ajuster = () => { etat.x = base[0]; etat.y = base[1]; etat.w = base[2]; etat.h = base[3]; appliquer(); };
+  svg.addEventListener('wheel', (e) => { e.preventDefault(); zoomer(e.deltaY < 0 ? 1.2 : 1 / 1.2, pt(e)); }, { passive: false });
+  const doigts = new Map(); let pan = null, pince = null;
+  svg.addEventListener('pointerdown', (e) => {
+    doigts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (doigts.size === 2) {
+      const [a, b] = [...doigts.values()];
+      pince = { d: Math.hypot(a.x - b.x, a.y - b.y), w: etat.w }; pan = null;
+      if (options.annuler) options.annuler();
+      return;
+    }
+    if (options.peutDeplacer && !options.peutDeplacer(e)) return;
+    pan = { x: e.clientX, y: e.clientY, vx: etat.x, vy: etat.y };
+    try { svg.setPointerCapture(e.pointerId); } catch (err) { /* déjà capturé */ }
+  });
+  svg.addEventListener('pointermove', (e) => {
+    if (doigts.has(e.pointerId)) doigts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pince && doigts.size === 2) {
+      const [a, b] = [...doigts.values()], d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (d > 0) {
+        const w = borner(pince.w * pince.d / d), cx = etat.x + etat.w / 2, cy = etat.y + etat.h / 2;
+        etat.w = w; etat.h = w * base[3] / base[2]; etat.x = cx - w / 2; etat.y = cy - etat.h / 2; appliquer();
+      }
+      return;
+    }
+    if (pan) { const k = etat.w / svg.getBoundingClientRect().width; etat.x = pan.vx - (e.clientX - pan.x) * k; etat.y = pan.vy - (e.clientY - pan.y) * k; appliquer(); }
+  });
+  const fin = (e) => { doigts.delete(e.pointerId); if (doigts.size < 2) pince = null; pan = null; };
+  svg.addEventListener('pointerup', fin); svg.addEventListener('pointercancel', fin);
+  return { zoomer, ajuster };
+}
+function brancherZoom(panneau, z) {
+  panneau.querySelectorAll('button.zoom').forEach(b => {
+    b.onclick = () => (b.dataset.zoom === 'plus' ? z.zoomer(1.4) : b.dataset.zoom === 'moins' ? z.zoomer(1 / 1.4) : z.ajuster());
+  });
+}
+
 // ------------------------------------------------------------ vue carte seule (deuxième écran)
 function vueCarte() {
   document.body.classList.add('vue-carte');
@@ -563,8 +616,13 @@ charger(ID, (ex) => {
   document.title = 'Câblage virtuel — ' + EX.titre;
   $('#titre').textContent = EX.titre;
   construireCarte();
+  brancherZoom($('#carte'), installerZoom($('#carte-corps svg'), {}));
   if (VUE === 'carte') { vueCarte(); return; }
   construirePlatine();
+  brancherZoom($('#platine'), installerZoom(svgPlatine, {
+    peutDeplacer: (e) => !trace && !(e.target.closest && e.target.closest('.fil')),
+    annuler: () => { trace = null; filTemp.setAttribute('d', ''); }
+  }));
   construireOutils();
   rafraichir();
   demarrerMode();

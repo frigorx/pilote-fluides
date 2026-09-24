@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260924-0823">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260924-0840">
 </head>
 <body class="jeu">
 <header class="barre">
@@ -24,6 +24,7 @@
 <main class="scene">
   <section class="panneau" id="carte">
     <div class="entete"><b>La carte</b> <span>le schéma à lire</span><span class="spacer"></span>
+      <button class="zoom" data-zoom="moins" title="Réduire">−</button><button class="zoom" data-zoom="plus" title="Agrandir">+</button><button class="zoom" data-zoom="ajuster" title="Tout voir">⤢</button>
       <button id="btn-numeros" title="Afficher les numéros de bornes sur le schéma">N° bornes</button>
       <button id="btn-detacher" title="Ouvrir la carte dans une autre fenêtre (deuxième écran)">Autre écran</button>
     </div>
@@ -31,6 +32,7 @@
   </section>
   <section class="panneau" id="platine">
     <div class="entete"><b>La platine</b> <span>tirez les fils de borne à borne</span><span class="spacer"></span>
+      <button class="zoom" data-zoom="moins" title="Réduire">−</button><button class="zoom" data-zoom="plus" title="Agrandir">+</button><button class="zoom" data-zoom="ajuster" title="Tout voir">⤢</button>
       <span id="compteur-fils">0 fil</span></div>
     <div class="corps" id="platine-corps"></div>
   </section>
@@ -50,9 +52,9 @@
 
 <div class="voile" id="voile"><div class="resultat" id="resultat"></div></div>
 
-<script>window.CABLAGE_VERSION = '20260924-0823';</script>
-<script src="exercices/index.js?v=20260924-0823"></script>
-<script src="moteur/cablage.js?v=20260924-0823"></script>
-<script src="moteur/marque.js?v=20260924-0823" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script>window.CABLAGE_VERSION = '20260924-0840';</script>
+<script src="exercices/index.js?v=20260924-0840"></script>
+<script src="moteur/cablage.js?v=20260924-0840"></script>
+<script src="moteur/marque.js?v=20260924-0840" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

@@ -131,3 +131,4 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 #platine .goulotte{fill:#e6ebf1;stroke:#c6d0db;stroke-width:1}
 #platine .goulotte-fentes{fill:url(#fentes)}
 #platine .fond-platine{fill:#f7f9fb}
+.panneau .entete button.zoom{min-width:34px;padding:0 8px;font-size:18px;line-height:1;margin-left:2px}
