@@ -57,9 +57,9 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 #carte svg .cb{fill:var(--orange);stroke:#fff;stroke-width:1;opacity:0;cursor:pointer;transition:opacity .15s}
 #carte svg .cb.sb{opacity:1;animation:pulse 1s infinite}
 #carte svg .cb.visible{opacity:.55}
-#carte svg .cb-nom{font:bold 8px Calibri,Arial,sans-serif;fill:var(--bleu);pointer-events:none;display:none}
+#carte svg .cb-nom{font:bold 7px Calibri,Arial,sans-serif;fill:#c0392b;pointer-events:none;display:none}
 #carte.numeros svg .cb-nom{display:block}
-#carte.numeros svg .cb{opacity:.35}
+#carte.numeros svg .cb{opacity:.25}
 
 /* platine */
 #platine svg{background:

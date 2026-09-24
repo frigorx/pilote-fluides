@@ -616,6 +616,7 @@ charger(ID, (ex) => {
   document.title = 'Câblage virtuel — ' + EX.titre;
   $('#titre').textContent = EX.titre;
   construireCarte();
+  $('#carte').classList.add('numeros');   // les numeros de bornes sont le sujet : visibles d'emblee
   brancherZoom($('#carte'), installerZoom($('#carte-corps svg'), {}));
   if (VUE === 'carte') { vueCarte(); return; }
   construirePlatine();
