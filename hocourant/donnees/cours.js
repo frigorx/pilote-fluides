@@ -19,8 +19,8 @@ const COURS = {
       html: "<ul><li><strong>Électrisation</strong> : le courant traverse le corps et produit un effet, sans décès.</li><li><strong>Électrocution</strong> : l'électrisation entraîne le décès.</li><li><strong>Brûlures</strong> : externes ou internes.</li><li><strong>Arc électrique</strong> : chaleur, lumière, bruit, projections, surpression — il blesse sans contact.</li></ul><p>La gravité dépend de l'intensité, du temps de passage, du trajet dans le corps, de l'état de la peau, de l'humidité et de la nature du courant.</p>" },
     { type: "cle", titre: "La clé",
       html: "<p>L'électricité ne se voit pas, ne s'entend pas, ne se sent pas. Le premier réflexe professionnel n'est jamais de toucher : c'est de <strong>s'arrêter, protéger et signaler</strong>.</p>" },
-    { type: "activite", titre: "À toi",
-      html: "<p>Classe mentalement chaque situation — contact direct, contact indirect ou arc — puis dis ton premier réflexe sûr :</p><ul><li>un doigt proche d'un conducteur dénudé ;</li><li>une main sur une carcasse de machine en défaut ;</li><li>une projection lors d'un court-circuit ;</li><li>un câble abîmé trouvé au sol.</li></ul>" },
+    { type: "activite", titre: "À vous",
+      html: "<p>Classez mentalement chaque situation — contact direct, contact indirect ou arc — puis dites votre premier réflexe sûr :</p><ul><li>un doigt proche d'un conducteur dénudé ;</li><li>une main sur une carcasse de machine en défaut ;</li><li>une projection lors d'un court-circuit ;</li><li>un câble abîmé trouvé au sol.</li></ul>" },
   ]},
 
   M2: { ecrans: [
@@ -30,8 +30,8 @@ const COURS = {
       html: "<ul><li>Coffret ouvert, capot absent, pièce nue accessible.</li><li>Câble écrasé, prise cassée, odeur ou bruit anormal.</li><li>Eau, condensation, sol mouillé, espace métallique exigu.</li><li>Plan, repérage ou identité du circuit incertain.</li><li>Balisage déplacé, protection absente, nouvelle activité à côté (coactivité).</li></ul>" },
     { type: "cle", titre: "La clé",
       html: "<p>Dire <strong>« je ne sais pas »</strong> au bon moment est un comportement professionnel. Je m'arrête, je maintiens les autres à distance, je demande une information fiable.</p>" },
-    { type: "activite", titre: "À toi",
-      html: "<p>Choisis une situation réelle de l'atelier et déroule les cinq questions : tâche demandée, installation et état électrique, risque principal, mesure prioritaire et responsable.</p>" },
+    { type: "activite", titre: "À vous",
+      html: "<p>Choisissez une situation réelle de l'atelier et déroulez les cinq questions : tâche demandée, installation et état électrique, risque principal, mesure prioritaire et responsable.</p>" },
   ]},
 
   M3: { ecrans: [
@@ -43,8 +43,8 @@ const COURS = {
       html: "<p>La <strong>vérification d'absence de tension</strong> se fait avec un dispositif prévu pour cette fonction, jamais avec n'importe quel testeur.</p><ol><li>Contrôler le bon fonctionnement du dispositif <strong>avant</strong>.</li><li>Effectuer la VAT sur <strong>tous les conducteurs</strong> prévus.</li><li>Contrôler de nouveau le dispositif <strong>après</strong>.</li></ol>" },
     { type: "piege", titre: "Le piège",
       html: "<p>Un multimètre ordinaire ne remplace pas automatiquement le dispositif prescrit. Et si le dispositif ne fonctionne plus au contrôle d'après, <strong>la vérification n'est pas validée</strong> : on reprend selon la procédure.</p>" },
-    { type: "activite", titre: "À toi",
-      html: "<p>Devant le matériel réel : nomme ce que tu vérifies avant usage sur des gants isolants, un dispositif de VAT, un écran ou une nappe, un outillage isolé.</p>" },
+    { type: "activite", titre: "À vous",
+      html: "<p>Devant le matériel réel : nommez ce que vous vérifiez avant usage sur des gants isolants, un dispositif de VAT, un écran ou une nappe, un outillage isolé.</p>" },
   ]},
 
   M4: { ecrans: [
@@ -60,7 +60,7 @@ const COURS = {
 
   M5: { ecrans: [
     { type: "notion", titre: "Ce que le courant fait au corps",
-      html: "<p>C'est l'<strong>intensité</strong> qui traverse le corps qui blesse, pas la tension seule. Ordres de grandeur enseignés, en courant alternatif 50 Hz :</p><ul><li><strong>0,5 mA</strong> — seuil de perception : picotement.</li><li><strong>10 mA</strong> — contraction musculaire : on ne peut plus lâcher.</li><li><strong>25 à 30 mA</strong> — la respiration se bloque si le contact se maintient.</li><li><strong>40 mA et plus</strong> — risque de fibrillation du cœur, selon la durée.</li></ul>" },
+      html: "<p>C'est l'<strong>intensité</strong> qui traverse le corps qui blesse, pas la tension seule. Ordres de grandeur enseignés, en courant alternatif 50 Hz :</p><ul><li><strong>0,5 mA</strong> — seuil de perception : picotement.</li><li><strong>10 mA</strong> — contraction musculaire : on ne peut plus lâcher.</li><li><strong>30 mA</strong> — la respiration se bloque si le contact se maintient.</li><li><strong>75 mA</strong> — fibrillation du cœur : risque mortel. À 1 A, le cœur s’arrête.</li></ul>" },
     { type: "notion", titre: "La durée, le trajet, la fréquence",
       html: "<p>Trois facteurs aggravent un même courant :</p><ul><li><strong>La durée</strong> : quelques dixièmes de seconde de plus changent le pronostic — c'est pourquoi les disjoncteurs différentiels <strong>30 mA</strong> coupent si vite.</li><li><strong>Le trajet</strong> : main-main ou main-pied traverse le cœur.</li><li><strong>La fréquence</strong> : le 50 Hz du réseau est particulièrement dangereux pour le cœur.</li></ul><p>La peau mouillée divise fortement la résistance du corps : même tension, courant plus grand.</p>" },
     { type: "cle", titre: "La clé",
@@ -80,8 +80,8 @@ const COURS = {
       html: "<p>Le symbole ne dit pas tout : le <strong>titre</strong> précise les installations, les tâches, les tensions et les limites. Un même symbole ne donne pas le droit d'agir partout. Et l'habilitation ne remplace jamais la compétence technique du métier.</p>" },
     { type: "piege", titre: "Le piège",
       html: "<p>Brancher et utiliser normalement un appareil en bon état n'exige pas d'habilitation — une sensibilisation au risque suffit. À l'inverse, <strong>aucune démonstration ne devient une autorisation implicite</strong> : les élèves et les jeunes en formation sont protégés, les mises en situation sont décidées et encadrées par l'établissement.</p>" },
-    { type: "activite", titre: "À toi",
-      html: "<p>Décode chaque symbole et donne une limite essentielle : B0 · BS · BE Manœuvre · B1V · BR.</p>" },
+    { type: "activite", titre: "À vous",
+      html: "<p>Décodez chaque symbole et donnez une limite essentielle : B0 · BS · BE Manœuvre · B1V · BR.</p>" },
   ]},
 
   M7: { ecrans: [
@@ -92,7 +92,7 @@ const COURS = {
     { type: "notion", titre: "Les acteurs à reconnaître",
       html: "<ul><li><strong>Chargé d'exploitation électrique</strong> : organise l'exploitation, transmet les informations.</li><li><strong>Chargé de consignation</strong> : réalise la consignation dans son périmètre.</li><li><strong>Chargé de travaux</strong> : prépare, dirige, fait respecter les mesures.</li><li><strong>Exécutant</strong> : réalise la tâche confiée, dans ses limites.</li><li><strong>Chargé d'intervention</strong> : organise et réalise l'intervention autorisée.</li></ul>" },
     { type: "piege", titre: "Le piège",
-      html: "<p>Tes mains peuvent rester hors d'une zone pendant qu'une <strong>longue pièce métallique</strong> — tube, règle, escabeau — la franchit. L'analyse porte sur le corps ET sur ce qu'il tient. Une limite déplacée, tombée ou illisible n'est plus une protection : <strong>arrêt, distance, compte rendu</strong> — on ne la remet jamais « au jugé ».</p>" },
+      html: "<p>Vos mains peuvent rester hors d'une zone pendant qu'une <strong>longue pièce métallique</strong> — tube, règle, escabeau — la franchit. L'analyse porte sur le corps ET sur ce qu'il tient. Une limite déplacée, tombée ou illisible n'est plus une protection : <strong>arrêt, distance, compte rendu</strong> — on ne la remet jamais « au jugé ».</p>" },
   ]},
 
   M8: { ecrans: [
@@ -101,14 +101,14 @@ const COURS = {
     { type: "notion", titre: "Les interdictions essentielles",
       html: "<ul><li>Ne pas ouvrir un coffret ni retirer une protection.</li><li>Ne pas remplacer prise, interrupteur, fusible ou conducteur.</li><li>Ne pas réarmer un dispositif, sauf manœuvre explicitement confiée avec le symbole adapté.</li><li>Ne pas franchir une limite ni déplacer un balisage.</li></ul>" },
     { type: "cle", titre: "La clé",
-      html: "<p>L'indice 0 n'est pas « un niveau débutant qui permet d'essayer ». Finir une tâche ne passe <strong>jamais</strong> avant respecter une limite. Si l'outil, le matériau ou ton corps risque de dépasser la limite : tu t'arrêtes <strong>avant</strong>.</p>" },
-    { type: "activite", titre: "À toi",
+      html: "<p>L'indice 0 n'est pas « un niveau débutant qui permet d'essayer ». Finir une tâche ne passe <strong>jamais</strong> avant respecter une limite. Si l'outil, le matériau ou votre corps risque de dépasser la limite : vous vous arrêtez <strong>avant</strong>.</p>" },
+    { type: "activite", titre: "À vous",
       html: "<p>Oui, non, ou j'arrête ? — peindre un mur dans la zone préparée · ouvrir le tableau pour chercher la panne · déplacer le balisage pour passer un escabeau · signaler un câble endommagé.</p>" },
   ]},
 
   M12: { ecrans: [
     { type: "notion", titre: "Protéger sans s'exposer",
-      html: "<p>Face à un accident électrique, la priorité : empêcher un nouveau contact, faire couper l'énergie par un moyen sûr, appeler les secours.</p><ul><li><strong>Ne touche pas la victime</strong> tant que le risque n'est pas supprimé.</li><li>Éloigne les autres, empêche l'accès.</li><li>En haute tension, ou si la coupure est impossible : rester à distance, faire intervenir les personnes compétentes.</li></ul>" },
+      html: "<p>Face à un accident électrique, la priorité : empêcher un nouveau contact, faire couper l'énergie par un moyen sûr, appeler les secours.</p><ul><li><strong>Ne touchez pas la victime</strong> tant que le risque n'est pas supprimé.</li><li>Éloignez les autres, empêchez l'accès.</li><li>En haute tension, ou si la coupure est impossible : rester à distance, faire intervenir les personnes compétentes.</li></ul>" },
     { type: "notion", titre: "Alerter précisément — 112, 18 ou 15",
       html: "<ol><li>Le lieu précis et l'accès.</li><li>La nature du risque électrique.</li><li>Le nombre et l'état apparent des victimes.</li><li>Ce qui a déjà été fait.</li><li>Ne raccrocher que quand l'opérateur le demande.</li></ol><p>Une fois la zone sûre : les gestes de premiers secours <strong>appris</strong>, le défibrillateur si l'organisation le prévoit.</p>" },
     { type: "cle", titre: "La clé",
@@ -152,7 +152,7 @@ const COURS = {
       html: "<p>La formation à l'habilitation enseigne la <strong>prévention du risque</strong>. Elle n'enseigne pas le métier d'électricien. En froid et climatisation, remplacer un composant électrique, modifier un câblage ou chercher une panne exige <strong>à la fois</strong> :</p><ol><li>savoir techniquement faire ;</li><li>être autorisé à le faire dans ce contexte — symbole, désignation, procédure, environnement.</li></ol>" },
     { type: "cle", titre: "La clé",
       html: "<p>Une instruction ambiguë ne s'interprète pas : on demande au chargé de travaux de <strong>préciser avant d'agir</strong>. Un B1V à qui l'on demande seul un dépannage relevant de BR <strong>refuse</strong> et demande une désignation adaptée.</p>" },
-    { type: "activite", titre: "À toi",
+    { type: "activite", titre: "À vous",
       html: "<p>Dans un remplacement de contacteur : qui est chargé d'exploitation, qui est chargé de travaux, qui exécute ? Quels documents circulent, et quelle condition impose l'arrêt ?</p>" },
   ]},
 

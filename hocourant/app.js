@@ -62,6 +62,7 @@
   /* ---------- rendu ---------- */
   const racine = document.getElementById("vue");
   function rendre(html, titreDoc) {
+    stationArreter(); sta = null;          /* changer de vue coupe la voix */
     racine.innerHTML = bandeauPrototype + html;
     document.title = (titreDoc ? titreDoc + " · " : "") + "inerWeb HoCourant";
     const h1 = racine.querySelector("h1");
@@ -100,13 +101,13 @@
     rendre(
       entete(null) +
       "<h1>Préparer son habilitation électrique</h1>" +
-      '<div class="carte accent"><p><strong>Comment ça marche ?</strong> Ton enseignant te donne un ' +
+      '<div class="carte accent"><p><strong>Comment ça marche ?</strong> Votre enseignant vous donne un ' +
       "<strong>code de mission</strong> — par exemple <span class=\"badge badge-code\">B0-K7-3M</span> : " +
-      "le niveau à obtenir, ton code personnel, la date limite. Tu le saisis une fois, et l'application " +
-      "retient où tu en es. Aucun compte, aucune donnée personnelle : ton enseignant est le seul à savoir " +
+      "le niveau à obtenir, votre code personnel, la date limite. Vous le saisissez une fois, et l'application " +
+      "retient où vous en êtes. Aucun compte, aucune donnée personnelle : votre enseignant est le seul à savoir " +
       "quel code est le tien.</p></div>" +
       (m
-        ? '<div class="carte"><h2>Ta mission en cours</h2><p><span class="badge badge-palier">' + seq(m.cible) +
+        ? '<div class="carte"><h2>Votre mission en cours</h2><p><span class="badge badge-palier">' + seq(m.cible) +
           '</span> à obtenir avant le <strong>' + seq(m.echeanceFr) + "</strong> · code " +
           '<span class="badge badge-code">' + seq(m.code) + "</span></p>" +
           '<div class="btn-ligne"><button class="btn btn-primaire" data-aller="parcours">Reprendre mon parcours →</button>' +
@@ -115,7 +116,7 @@
           '<button class="btn btn-secondaire" data-aller="libre">Découvrir sans code</button></div>') +
       '<div class="carte"><h2>Le livret papier</h2>' +
       "<p>Le support de cours complet : dix chapitres, quatre-vingts questions, les activités " +
-      "à faire en atelier et le lexique. Sa page de garde porte ton nom — remplis-la, un livret " +
+      "à faire en atelier et le lexique. Sa page de garde porte votre nom — remplissez-la, un livret " +
       "perdu revient à son propriétaire.</p>" +
       '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf" download>' +
       "Télécharger le livret (PDF, 110 pages, 11,6 Mo)</a></div>" +
@@ -135,8 +136,8 @@
   function vueCode(erreur) {
     rendre(
       entete("accueil", "Accueil") +
-      "<h1>Ton code de mission</h1>" +
-      '<div class="carte"><p>Recopie le code que ton enseignant t\'a donné. Il ressemble à ' +
+      "<h1>Votre code de mission</h1>" +
+      '<div class="carte"><p>Recopiez le code que votre enseignant vous a donné. Il ressemble à ' +
       '<span class="badge badge-code">B0-K7-3M</span>.</p>' +
       '<p><input class="champ-code" id="champ-mission" autocomplete="off" spellcheck="false" ' +
       'placeholder="B0-K7-3M" value="' + seq(etat.mission || "") + '"></p>' +
@@ -144,8 +145,8 @@
       '<div class="btn-ligne"><button class="btn btn-primaire" data-valider-mission="1">Valider mon code</button>' +
       '<button class="btn btn-secondaire" data-aller="libre">Continuer sans code</button></div></div>' +
       '<div class="enc enc-note"><span class="enc-mot">Sans code, c\'est possible aussi</span>' +
-      "<p>Tu peux tout travailler librement. Mais le résultat de tes tests ne pourra pas être rattaché " +
-      "à toi : ton enseignant ne saura pas que c'est le tien.</p></div>" + pied,
+      "<p>Vous pouvez tout travailler librement. Mais le résultat de vos tests ne pourra pas être rattaché " +
+      "à vous : votre enseignant ne saura pas que c'est le vôtre.</p></div>" + pied,
       "Mon code"
     );
     const champ = document.getElementById("champ-mission");
@@ -176,9 +177,9 @@
     const m = mission();
     rendre(
       entete("accueil", "Accueil") +
-      "<h1>Ta formation</h1>" +
-      '<div class="carte accent"><p>Cela sert uniquement à afficher les codes de ton référentiel à côté de ton travail.' +
-      (m ? " Ton objectif reste celui de ta mission : <strong>" + seq(m.cible) + "</strong>." : "") + "</p></div>" +
+      "<h1>Votre formation</h1>" +
+      '<div class="carte accent"><p>Cela sert uniquement à afficher les codes de votre référentiel à côté de votre travail.' +
+      (m ? " Votre objectif reste celui de votre mission : <strong>" + seq(m.cible) + "</strong>." : "") + "</p></div>" +
       '<div class="grille-filieres">' + cartes + "</div>" + pied,
       "Ma formation"
     );
@@ -201,7 +202,7 @@
         "<p>Obtenir <span class=\"badge badge-palier\">" + seq(m.cible) + "</span> avant le <strong>" +
         seq(m.echeanceFr) + "</strong>" +
         (fait ? ' — <span class="badge badge-ok">✔ objectif atteint</span>'
-              : jours >= 0 ? " · il te reste <strong>" + jours + " jour" + (jours > 1 ? "s" : "") + "</strong>"
+              : jours >= 0 ? " · il vous reste <strong>" + jours + " jour" + (jours > 1 ? "s" : "") + "</strong>"
                            : " · <strong>échéance dépassée de " + (-jours) + " jour" + (-jours > 1 ? "s" : "") + "</strong>") +
         "</p>" +
         "<p>Niveau validé pour l'instant : <strong>" +
@@ -253,11 +254,11 @@
       "<h1>Mon parcours</h1>" + bandeau + blocs +
       (plusLoin
         ? '<div class="enc enc-note"><span class="enc-mot">Pour aller plus loin</span>' +
-          "<p>Ces paliers dépassent ton objectif actuel. Rien ne t'empêche de les travailler et de passer " +
-          "leurs tests : le niveau que tu vises n'est pas un plafond. Le code que tu rapporteras dira jusqu'où " +
-          "tu es allé.</p></div>" + plusLoin
+          "<p>Ces paliers dépassent votre objectif actuel. Rien ne vous empêche de les travailler et de passer " +
+          "leurs tests : le niveau que vous visez n'est pas un plafond. Le code que vous rapporterez dira jusqu'où " +
+          "vous êtes allé.</p></div>" + plusLoin
         : "") +
-      '<section class="carte bloc-referentiel"><h2>Ce que ce travail couvre dans ton référentiel</h2>' +
+      '<section class="carte bloc-referentiel"><h2>Ce que ce travail couvre dans votre référentiel</h2>' +
       "<p>" + seq(f.noteReferentiel) + "</p>" +
       '<table><thead><tr><th scope="col">Code</th><th scope="col">Libellé officiel</th></tr></thead><tbody>' + codes + "</tbody></table>" +
       '<div class="btn-ligne"><button class="btn btn-secondaire" data-aller="filiere">Changer de formation</button></div></section>' +
@@ -270,29 +271,288 @@
   /* Elle n'est jamais un passage obligé : on peut lire d'abord (utile en
      lecture fragile) ou chercher d'abord — c'est la découverte qui est
      proposée par défaut. */
+  function ecranHtml(e) {
+    const enc = { cle: ["enc-cle", "🔑 La clé"], piege: ["enc-piege", "⚠ Le piège"] }[e.type];
+    return enc
+      ? '<div class="enc ' + enc[0] + '"><span class="enc-mot">' + enc[1] + "</span>" + e.html + "</div>"
+      : '<div class="carte"><h2>' + seq(e.titre) + "</h2>" + e.html + "</div>";
+  }
   function ficheHtml(id) {
     const ecrans = (COURS[id] || { ecrans: [] }).ecrans;
     let html = "";
-    for (const e of ecrans) {
-      const enc = { cle: ["enc-cle", "🔑 La clé"], piege: ["enc-piege", "⚠ Le piège"] }[e.type];
-      html += enc
-        ? '<div class="enc ' + enc[0] + '"><span class="enc-mot">' + enc[1] + "</span>" + e.html + "</div>"
-        : '<div class="carte"><h2>' + seq(e.titre) + "</h2>" + e.html + "</div>";
-    }
+    for (const e of ecrans) html += ecranHtml(e);
     return html;
   }
   function vueFiche(id) {
     const mo = MOD[id];
     etat.lus[id] = true; sauver();
+    const st = stationDe(id);
     rendre(
       entete("parcours", "Retour au parcours") +
       '<div class="palier-tete"><span class="badge badge-palier">' + seq(PAL[mo.palier].sigle) + "</span><h1>" + seq(mo.nom) + "</h1></div>" +
-      '<p class="q-compteur">La fiche de ce module — à lire d\'un trait, ou à consulter quand une question résiste.</p>' +
-      ficheHtml(id) +
-      '<div class="btn-ligne"><button class="btn btn-primaire" data-decouvrir="' + id + '">Passer aux questions →</button>' +
-      '<button class="btn btn-secondaire" data-aller="parcours">Retour au parcours</button></div>' + pied,
+      (st ? stationHtml(id)
+          : '<p class="q-compteur">La fiche de ce module — à lire d\'un trait, ou à consulter quand une question résiste.</p>' +
+            ficheHtml(id) +
+            '<div class="btn-ligne"><button class="btn btn-primaire" data-decouvrir="' + id + '">Passer aux questions →</button>' +
+            '<button class="btn btn-secondaire" data-aller="parcours">Retour au parcours</button></div>') + pied,
       mo.nom
     );
+    if (st) { sta = { id, st, i: 0, vues: new Set(), session: 0, enCours: false, minuterie: null }; stationEtape(0); }
+  }
+
+  /* ---------- la station : la même fiche, en étapes, avec scène, film et voix ---------- */
+  /* Le texte de gauche reste celui de cours.js ; la station (donnees/stations/Mx.js)
+     n'apporte que ce qu'on montre à droite et ce que la voix dit. Sans station,
+     ou si son compte d'étapes diffère des écrans, la fiche texte s'affiche. */
+  let sta = null;
+  const PAS_VOIX = [0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4];
+  const CLE_VITESSE = "pilote-voix-vitesse";    /* même clé que le réglage commun du site */
+  /* « Sans animation » (inc. 9) : réglage manuel mémorisé sur l'appareil, qui double la
+     préférence système prefers-reduced-motion. Il pose la classe sans-animation sur <html> :
+     hocourant.css fige alors les films exactement comme le fait la préférence système. */
+  const CLE_ANIMATION = "hocourant-sans-animation";
+  let sansAnimation = false;
+  try { sansAnimation = localStorage.getItem(CLE_ANIMATION) === "1"; } catch (e) { /* sans mémoire : réglage de la visite */ }
+  document.documentElement.classList.toggle("sans-animation", sansAnimation);
+  const animationSysteme = () => !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  function stationDe(id) {
+    const st = window.STATIONS && STATIONS[id];
+    return st && COURS[id] && st.etapes.length === COURS[id].ecrans.length ? st : null;
+  }
+  function lireVitesse() {
+    try { const v = Number(sessionStorage.getItem(CLE_VITESSE)); if (PAS_VOIX.includes(v)) return v; } catch (e) { /* sans mémoire */ }
+    return 0.95;
+  }
+  const vitesseTexte = (v) => v.toFixed(2).replace(".", ",").replace(/0$/, "") + "×";
+  const $st = (nom) => document.getElementById("st-" + nom);
+
+  function stationHtml(id) {
+    return '<ol class="etapes" id="st-etapes" aria-label="Étapes de la fiche"></ol>' +
+      '<section class="station" aria-live="polite"><div class="texte" id="st-texte"></div>' +
+      '<div class="panneau"><div class="scenes" id="st-scenes"></div>' +
+      '<div class="q-interactif" id="st-question" aria-live="polite"></div>' +
+      '<div class="voix"><button class="btn btn-primaire" id="st-ecouter" type="button" data-ecouter="1">▶ Écouter le professeur</button>' +
+      '<span class="reglage" role="group" aria-label="Débit de la voix">' +
+      '<button type="button" data-vitesse="-1" aria-label="Parler moins vite">−</button>' +
+      '<output id="st-vitesse">' + vitesseTexte(lireVitesse()) + "</output>" +
+      '<button type="button" data-vitesse="1" aria-label="Parler plus vite">+</button></span>' +
+      boutonAnimation() +
+      '<span class="etat" id="st-etat"></span></div>' +
+      '<details class="transcription"><summary>Ce que dit la voix (texte à part, écrit pour l\'oreille)</summary><div id="st-transcription"></div></details>' +
+      '</div></section><div class="nav" id="st-nav"></div>';
+  }
+  /* trois canaux : trait tireté → plein, fond clair → bleu, le mot précédé de ✔ */
+  function boutonAnimation() {
+    const sys = animationSysteme(), actif = sansAnimation || sys;
+    return '<button type="button" class="bascule" id="st-animation" data-sans-animation="1" aria-pressed="' + actif + '"' +
+      (sys ? ' disabled title="Réglé par votre appareil (réduction des animations)"' : "") + ">" +
+      (actif ? "✔ " : "") + "Sans animation</button>";
+  }
+  function figureScene(idScene, muet) {
+    const s = SC[idScene];
+    if (!s) return "";
+    const id = "st" + Math.random().toString(36).slice(2, 8);
+    return '<figure class="scene"><svg viewBox="0 0 320 180" role="img" aria-labelledby="' + id + "t " + id + 'd">' +
+      '<title id="' + id + 't">' + s.titre + '</title><desc id="' + id + 'd">' + s.alt + "</desc>" + s.svg + "</svg>" +
+      (muet ? "" : "<figcaption>" + s.titre + "</figcaption>") + "</figure>";
+  }
+  function filmHtml(fid) {
+    const f = window.FILMS && FILMS[fid];
+    if (!f) return '<p class="q-compteur">Le film de cette étape est en préparation.</p>';
+    if (!document.querySelector('style[data-film="' + fid + '"]')) {
+      const style = document.createElement("style");
+      style.dataset.film = fid; style.textContent = f.css;
+      document.head.appendChild(style);
+    }
+    const id = "st" + Math.random().toString(36).slice(2, 8);
+    return '<figure class="scene film film-' + fid + '"><svg viewBox="0 0 320 180" role="img" aria-labelledby="' + id + "t " + id + 'd">' +
+      '<title id="' + id + 't">' + f.titre + '</title><desc id="' + id + 'd">' + f.alt + "</desc>" + f.svg + "</svg>" +
+      '<figcaption><span class="acte" id="st-acte">Un film en deux actes</span> — la situation, puis la leçon</figcaption></figure>';
+  }
+  const etiquetteEcoute = (m) => m.film ? "▶ Jouer le film et écouter" : "▶ Écouter le professeur";
+  function stationEtape(k) {
+    stationArreter();
+    sta.i = k; sta.vues.add(k);
+    const e = COURS[sta.id].ecrans[k], m = sta.st.etapes[k], dernier = k === sta.st.etapes.length - 1;
+    $st("texte").innerHTML = ecranHtml(e);
+    const sc = $st("scenes");
+    if (m.film) {
+      sc.className = "scenes";
+      sc.innerHTML = filmHtml(m.film);
+      $st("transcription").innerHTML = m.actes.map((a) => "<p><strong>" + seq(a.titre) + ".</strong> " + seq(a.narration) + "</p>").join("");
+      sta.inter = (window.INTERACTIONS && INTERACTIONS[m.film]) ? { cle: m.film, tentees: [], resolu: false } : null;
+    } else {
+      sc.className = "scenes" + (m.scenes.length === 2 ? " deux" : m.scenes.length === 4 ? " quatre" : "");
+      sc.innerHTML = m.scenes.map((s) => figureScene(s, m.muet)).join("");
+      $st("transcription").innerHTML = "<p>" + seq(m.narration) + "</p>";
+      sta.inter = null;
+    }
+    $st("question").innerHTML = "";
+    $st("ecouter").textContent = etiquetteEcoute(m);
+    $st("etapes").innerHTML = sta.st.etapes.map((t, n) =>
+      '<li><button type="button" data-etape="' + n + '"' + (n === k ? ' aria-current="step"' : "") +
+      (sta.vues.has(n) && n !== k ? ' class="vue"' : "") + '><span class="num">' + (n + 1) + "</span>" + seq(t.court) + "</button></li>").join("");
+    $st("nav").innerHTML =
+      '<button class="btn btn-secondaire" type="button" data-etape-pas="-1"' + (k === 0 ? " disabled" : "") + ">← Précédent</button>" +
+      (dernier ? '<button class="btn btn-primaire" data-decouvrir="' + sta.id + '">Passer aux questions →</button>'
+               : '<button class="btn btn-primaire" type="button" data-etape-pas="1">Suivant →</button>');
+  }
+
+  /* ---- la voix : au clic seulement ; changer d'étape, de vitesse ou de vue l'arrête ---- */
+  function voixFr() {
+    const v = window.speechSynthesis.getVoices().filter((x) => /^fr/i.test(x.lang));
+    return v.find((x) => /natural|neural|online/i.test(x.name)) || v[0] || null;
+  }
+  function stationArreter() {
+    if (!sta) return;
+    sta.session++;
+    if (sta.minuterie) { clearTimeout(sta.minuterie); sta.minuterie = null; }
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    sta.enCours = false;
+    const film = document.querySelector(".station .film");
+    if (film) film.classList.remove("acte-1", "acte-2");
+    if ($st("ecouter")) $st("ecouter").textContent = etiquetteEcoute(sta.st.etapes[sta.i]);
+    if ($st("etat")) $st("etat").textContent = "";
+  }
+  /* dire un texte, puis enchaîner ; sans voix disponible, la durée prévue fait office */
+  function stationDire(texte, duree, suite) {
+    const s = sta.session, vitesse = lireVitesse();
+    if (!("speechSynthesis" in window)) {
+      $st("etat").textContent = "Ce navigateur n'a pas de voix : le film joue seul.";
+      sta.minuterie = setTimeout(() => { if (sta && s === sta.session) suite(); }, duree * 1000 / vitesse);
+      return;
+    }
+    const u = new SpeechSynthesisUtterance(texte);
+    u.lang = "fr-FR"; u.rate = vitesse;
+    const v = voixFr(); if (v) u.voice = v;
+    u.onend = () => { if (sta && s === sta.session) suite(); };
+    u.onerror = () => { if (sta && s === sta.session) suite(); };
+    window.speechSynthesis.speak(u);
+  }
+  function stationActe(n) {
+    const m = sta.st.etapes[sta.i], a = m.actes[n - 1];
+    /* chaque acte ouvre sa propre séance de voix : une narration encore en cours (l'acte 1 en
+       mode sans animation, que la question n'interrompt pas) se tait, ses rappels périmés sont ignorés */
+    sta.session++;
+    if ("speechSynthesis" in window && (window.speechSynthesis.speaking || window.speechSynthesis.pending)) window.speechSynthesis.cancel();
+    const film = document.querySelector(".station .film");
+    if (film) {
+      film.classList.remove("acte-1", "acte-2", "pause");   /* « pause » : au cas où un acte reprend sans passer par « Revoir » */
+      void film.getBoundingClientRect();           /* force le navigateur à repartir de zéro */
+      film.classList.add("acte-" + n);
+      $st("acte").textContent = a.titre;
+    }
+    $st("etat").textContent = a.titre;
+    /* couche interactive (inc. 8) : l'acte 1 d'un film à question n'enchaîne jamais tout
+       seul sur l'acte 2 — voir le bloc dédié après stationVitesse */
+    const gel = n === 1 && sta.inter && !sta.inter.resolu;
+    /* sans animation (inc. 9) : l'image finale de l'acte 1 est déjà là, la question s'affiche
+       tout de suite et la voix raconte quand même la situation */
+    if (gel && reduireAnimations()) figerActe1(true);
+    else if (gel) programmerArretInteractif();
+    stationDire(a.narration, a.duree, () => {
+      if (gel) { if (sta.enCours && reduireAnimations()) { sta.enCours = false; $st("ecouter").textContent = etiquetteEcoute(m); } return; }
+      if (n < m.actes.length) return stationActe(n + 1);
+      const s = sta.session;
+      sta.minuterie = setTimeout(() => {
+        if (sta && s === sta.session) { sta.enCours = false; $st("ecouter").textContent = "↺ Rejouer le film"; $st("etat").textContent = "Fin du film."; }
+      }, 300);
+    });
+  }
+  function stationParler() {
+    if (!sta) return;
+    if (sta.enCours) { stationArreter(); return; }
+    const m = sta.st.etapes[sta.i];
+    sta.session++; sta.enCours = true;
+    $st("ecouter").textContent = "■ Arrêter";
+    if (m.film) return stationActe(1);
+    $st("etat").textContent = "Le professeur explique la scène…";
+    stationDire(m.narration, 40, () => { sta.enCours = false; $st("ecouter").textContent = etiquetteEcoute(m); $st("etat").textContent = ""; });
+  }
+  function stationVitesse(sens) {
+    const k = PAS_VOIX.indexOf(lireVitesse()) + sens;
+    if (k < 0 || k >= PAS_VOIX.length) return;
+    try { sessionStorage.setItem(CLE_VITESSE, String(PAS_VOIX[k])); } catch (e) { /* sans mémoire, le réglage vaut pour l'écran */ }
+    stationArreter();
+    $st("vitesse").value = vitesseTexte(PAS_VOIX[k]);
+  }
+  function stationSansAnimation() {
+    if (animationSysteme()) return;           /* l'appareil l'impose déjà : le bouton est grisé */
+    sansAnimation = !sansAnimation;
+    try { localStorage.setItem(CLE_ANIMATION, sansAnimation ? "1" : "0"); } catch (e) { /* sans mémoire, le réglage vaut pour la visite */ }
+    document.documentElement.classList.toggle("sans-animation", sansAnimation);
+    stationArreter();
+    const b = $st("animation");
+    if (b) { b.setAttribute("aria-pressed", String(sansAnimation)); b.textContent = (sansAnimation ? "✔ " : "") + "Sans animation"; }
+  }
+
+  /* ---------- couche interactive des films (inc. 8, 26/09/2026) ---------- */
+  /* Quand INTERACTIONS[film] existe (donnees/films/interactions.js pour M1…M13, le fichier
+     du film pour les films ajoutés Mxb, Mxc… — inc. 9), l'acte 1 se fige au
+     repère « arret » (secondes réelles dans l'animation CSS, indépendantes du débit de la
+     voix) : la voix se tait, une question à trois choix apparaît sous le dessin, dans
+     l'ordre du fichier. Bonne réponse → l'acte 2 s'enchaîne comme aujourd'hui. Mauvaise
+     réponse → remédiation et « Revoir la situation » rejoue l'acte 1 ; les choix déjà
+     tentés restent marqués. Sans animation (préférence système ou réglage manuel) : la
+     question apparaît tout de suite et la voix de l'acte 1 continue. */
+  const reduireAnimations = () => sansAnimation || animationSysteme();
+  function programmerArretInteractif() {
+    const inter = INTERACTIONS[sta.inter.cle], s = sta.session;
+    sta.inter.minuterie = setTimeout(() => { if (sta && s === sta.session && sta.inter && !sta.inter.resolu) figerActe1(); }, inter.arret * 1000);
+  }
+  function figerActe1(garderVoix) {
+    if (!sta || !sta.inter || sta.inter.resolu) return;
+    if (!garderVoix) {
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      sta.enCours = false;
+      if ($st("ecouter")) $st("ecouter").textContent = etiquetteEcoute(sta.st.etapes[sta.i]);
+    }
+    const film = document.querySelector(".station .film");
+    if (film) film.classList.add("pause");
+    if ($st("etat")) $st("etat").textContent = "Le film s'arrête sur une question.";
+    afficherQuestionInteractive();
+  }
+  function afficherQuestionInteractive() {
+    const inter = INTERACTIONS[sta.inter.cle], zone = $st("question");
+    if (!zone) return;
+    const boutons = inter.choix.map((c, i) => {
+      const tentee = sta.inter.tentees.includes(i);
+      const cls = "q-option" + (tentee ? " faux" : "");
+      const texte = tentee ? "✘ À revoir — " + seq(c.t) : seq(c.t);
+      return '<button class="' + cls + '" data-inter-choix="' + i + '"' + (tentee ? " disabled" : "") + ">" + texte + "</button>";
+    }).join("");
+    zone.innerHTML =
+      '<p class="q-enonce">' + seq(inter.question) + "</p>" +
+      '<div class="q-options">' + boutons + "</div>" +
+      '<div id="st-inter-suite"></div>';
+    zone.scrollIntoView({ block: "nearest" });
+  }
+  function repondreInteraction(i) {
+    if (!sta || !sta.inter || sta.inter.resolu) return;
+    const inter = INTERACTIONS[sta.inter.cle], c = inter.choix[i], zone = $st("question");
+    zone.querySelectorAll(".q-option").forEach((b) => { b.disabled = true; });
+    const bouton = zone.querySelector('[data-inter-choix="' + i + '"]');
+    if (c.ok) {
+      sta.inter.resolu = true;
+      if (bouton) { bouton.classList.add("juste"); bouton.textContent = "✔ Juste — " + c.t; }
+      document.getElementById("st-inter-suite").innerHTML =
+        '<div class="q-explication"><span class="mot">✔ Juste.</span> ' + seq(inter.bravo) + "</div>";
+      const s = sta.session;
+      setTimeout(() => { if (sta && s === sta.session) stationActe(2); }, 1400);   /* lève « pause » elle-même */
+    } else {
+      if (!sta.inter.tentees.includes(i)) sta.inter.tentees.push(i);
+      if (bouton) { bouton.classList.add("faux"); bouton.textContent = "✘ À revoir — " + c.t; }
+      document.getElementById("st-inter-suite").innerHTML =
+        '<div class="enc enc-piege"><span class="enc-mot">⚠ À revoir</span><p>' + seq(c.remed) + "</p></div>" +
+        '<div class="btn-ligne"><button class="btn btn-primaire" type="button" data-inter-revoir="1">↺ Revoir la situation</button></div>';
+    }
+  }
+  function revoirActe1Interactif() {
+    if (!sta || !sta.inter) return;
+    $st("question").innerHTML = "";
+    sta.enCours = true;
+    if ($st("ecouter")) $st("ecouter").textContent = "■ Arrêter";
+    stationActe(1);      /* retire acte-1 et pause, reflow, repose acte-1 (voir stationActe) */
   }
 
   /* ---------- la découverte : on apprend en cherchant ---------- */
@@ -301,9 +561,13 @@
      s'ouvre sur place, et la question revient plus tard dans la file. Le
      module n'est « découvert » que lorsque chaque question a été réussie. */
   let dec = null;
+  /* id : "M3" (bouton existant), ou une liste de modules — "M11,M13" ou ["M11","M13"] —
+     pour découvrir la réunion de leurs questions (entrée ?decouvrir=Mx,My, inc. 5). */
   function demarrerDecouverte(id) {
-    const file = melanger(questionsDuModule(id)).map((q) => ({ q, options: melanger([q.ok].concat(q.nok)) }));
-    dec = { module: id, file, total: file.length, reussies: 0, essais: 0, repondu: false, aRevoir: 0 };
+    const modules = Array.isArray(id) ? id : String(id).split(",").map((s) => s.trim());
+    const questions = modules.reduce((acc, m) => acc.concat(questionsDuModule(m)), []);
+    const file = melanger(questions).map((q) => ({ q, options: melanger([q.ok].concat(q.nok)) }));
+    dec = { module: modules[0], modules, file, total: file.length, reussies: 0, essais: 0, repondu: false, aRevoir: 0 };
     vueDecouverte();
   }
   function vueDecouverte() {
@@ -319,7 +583,7 @@
       '<div class="palier-tete"><span class="badge badge-palier">' + seq(PAL[mo.palier].sigle) + "</span><h1>" + seq(mo.nom) + "</h1></div>" +
       '<div class="progression-module"><div class="pastilles">' + jauge + "</div>" +
       "<span>" + dec.reussies + " / " + dec.total + " trouvées</span></div>" +
-      '<div class="carte"><p class="q-compteur">Cherche d\'abord. Si tu ne sais pas, réponds quand même : ' +
+      '<div class="carte"><p class="q-compteur">Cherchez d\'abord. Si vous ne savez pas, répondez quand même : ' +
       "l'explication et la fiche arrivent juste après.</p>" +
       situationHtml(item.q) +
       '<p class="q-enonce">' + seq(item.q.q) + "</p>" +
@@ -371,16 +635,16 @@
   }
   function finDecouverte() {
     const mo = MOD[dec.module];
-    etat.decouvertes[dec.module] = { total: dec.total, essais: dec.essais, aRevoir: dec.aRevoir };
+    dec.modules.forEach((mid) => { etat.decouvertes[mid] = { total: dec.total, essais: dec.essais, aRevoir: dec.aRevoir }; });
     sauver();
     const dupremier = dec.essais === dec.total;
     rendre(
       entete("parcours", "Retour au parcours") +
       "<h1>Module découvert — " + seq(mo.nom) + "</h1>" +
       '<div class="carte score-final score-ok"><p class="gros">' + dec.total + " / " + dec.total + "</p>" +
-      "<p>✔ Tu as trouvé toutes les réponses de ce module." +
+      "<p>✔ Vous avez trouvé toutes les réponses de ce module." +
       (dupremier ? " Et du premier coup, sur chacune."
-                 : " Il t'a fallu " + dec.essais + " essais : les points repassés sont ceux qui comptent le plus.") + "</p></div>" +
+                 : " Il vous a fallu " + dec.essais + " essais : les points repassés sont ceux qui comptent le plus.") + "</p></div>" +
       '<div class="btn-ligne">' +
       '<button class="btn btn-secondaire" data-fiche="' + mo.id + '">Relire la fiche</button>' +
       '<button class="btn btn-secondaire" data-decouvrir="' + mo.id + '">Recommencer</button>' +
@@ -392,6 +656,7 @@
 
   /* ---------- test de palier : correction en fin ---------- */
   let test = null;
+  let cibleEnAttente = null;   /* Px en attente du choix de filière (entrée ?test=Px, inc. 5), vidée après usage */
   function tirerTest(palierId) {
     const iPal = indexPalier(palierId);
     const poolCourant = QUESTIONS.filter((q) => MOD[q.m].palier === palierId);
@@ -458,7 +723,7 @@
         '<p class="q-enonce">' + seq(item.q.q) + "</p>" +
         (juste
           ? '<p class="verif-valide">✔ Juste — ' + seq(choisie) + "</p>"
-          : '<p class="verif-invalide">✘ Ta réponse — ' + seq(choisie) + '</p><p class="verif-valide">✔ La bonne — ' + seq(item.q.ok) + "</p>") +
+          : '<p class="verif-invalide">✘ Votre réponse — ' + seq(choisie) + '</p><p class="verif-valide">✔ La bonne — ' + seq(item.q.ok) + "</p>") +
         "<p>" + seq(item.q.exp) + "</p></div>";
     });
     const total = test.tirage.length;
@@ -477,13 +742,13 @@
     let motMission = "";
     if (m && reussi) {
       if (indexPalier(test.palier) >= m.cibleIdx) {
-        motMission = '<div class="enc enc-cle"><span class="enc-mot">🔑 Mission remplie</span><p>Tu as validé ' +
+        motMission = '<div class="enc enc-cle"><span class="enc-mot">🔑 Mission remplie</span><p>Vous avez validé ' +
           seq(PAL[test.palier].sigle) + ", le niveau demandé" +
-          (indexPalier(test.palier) > m.cibleIdx ? " — et même au-delà de ta mission" : "") +
-          ". Rapporte ton code à ton enseignant. La suite se joue en pratique, avec lui.</p></div>";
+          (indexPalier(test.palier) > m.cibleIdx ? " — et même au-delà de votre mission" : "") +
+          ". Rapportez votre code à votre enseignant. La suite se joue en pratique, avec lui.</p></div>";
       } else {
         motMission = '<div class="enc enc-note"><span class="enc-mot">Sur la bonne route</span><p>Palier validé. ' +
-          "Ton objectif reste <strong>" + seq(m.cible) + "</strong> avant le " + seq(m.echeanceFr) + ".</p></div>";
+          "Votre objectif reste <strong>" + seq(m.cible) + "</strong> avant le " + seq(m.echeanceFr) + ".</p></div>";
       }
     }
 
@@ -495,11 +760,11 @@
       "<p>" + (reussi
         ? "✔ Palier atteint : au moins 70 % de bonnes réponses."
         : "✘ Palier non atteint (seuil : 70 %). Reprends les modules ci-dessous puis repasse le test : le tirage change à chaque fois.") + "</p>" +
-      "<p>Ton code à rapporter à ton enseignant :</p>" +
+      "<p>Votre code à rapporter à votre enseignant :</p>" +
       '<p><span class="code-restitution">' + seq(code) + "</span></p>" +
       '<p class="q-compteur">' + (etat.mission
-        ? "Ce code contient ta mission, le palier passé, le score et la date. Il ne contient aucun nom."
-        : "⚠ Tu travailles sans code de mission : ton enseignant ne pourra pas savoir que ce résultat est le tien.") +
+        ? "Ce code contient votre mission, le palier passé, le score et la date. Il ne contient aucun nom."
+        : "⚠ Vous travaillez sans code de mission : votre enseignant ne pourra pas savoir que ce résultat est le vôtre.") +
       "</p></div>" + motMission + arevoir +
       "<h2>La correction, question par question</h2>" + correction +
       '<div class="btn-ligne"><button class="btn btn-primaire" data-aller="parcours">Retour au parcours →</button></div>' +
@@ -607,9 +872,20 @@
 
   /* ---------- navigation ---------- */
   document.addEventListener("click", function (ev) {
-    const b = ev.target.closest("[data-aller],[data-filiere],[data-fiche],[data-decouvrir],[data-dec-suite],[data-option],[data-test],[data-test-option],[data-verifier],[data-valider-mission],[data-generer],[data-imprimer]");
+    const b = ev.target.closest("[data-aller],[data-filiere],[data-fiche],[data-decouvrir],[data-dec-suite],[data-option],[data-test],[data-test-option],[data-verifier],[data-valider-mission],[data-generer],[data-imprimer],[data-etape],[data-etape-pas],[data-ecouter],[data-vitesse],[data-sans-animation],[data-inter-choix],[data-inter-revoir]");
     if (!b) return;
-    if (b.dataset.filiere) { etat.filiere = b.dataset.filiere; sauver(); return vueParcours(); }
+    if (b.dataset.etape !== undefined) return stationEtape(Number(b.dataset.etape));
+    if (b.dataset.etapePas) return stationEtape(sta.i + Number(b.dataset.etapePas));
+    if (b.dataset.ecouter) return stationParler();
+    if (b.dataset.vitesse) return stationVitesse(Number(b.dataset.vitesse));
+    if (b.dataset.sansAnimation) return stationSansAnimation();
+    if (b.dataset.interChoix !== undefined) return repondreInteraction(Number(b.dataset.interChoix));
+    if (b.dataset.interRevoir) return revoirActe1Interactif();
+    if (b.dataset.filiere) {
+      etat.filiere = b.dataset.filiere; sauver();
+      if (cibleEnAttente) { const id = cibleEnAttente; cibleEnAttente = null; return demarrerTest(id); }
+      return vueParcours();
+    }
     if (b.dataset.aller === "accueil") return vueAccueil();
     if (b.dataset.aller === "parcours") return vueParcours();
     if (b.dataset.aller === "filiere") return vueFiliere();
@@ -636,5 +912,35 @@
   });
 
   /* ---------- départ ---------- */
-  vueAccueil();
+  /* Entrées par URL (QR du livret, inc. 5) : ?module=Mx, ?decouvrir=Mx[,My], ?test=Px,
+     ?vue=verifier, ?vue=code. Module/découverte/vérifier/code s'ouvrent sans demander la
+     filière ; test la demande d'abord si besoin (cibleEnAttente), puis continue vers le
+     test. Rien de nominatif ne voyage par l'URL. Paramètre absent ou inconnu → accueil,
+     sans message. Après lecture, l'URL est nettoyée pour qu'un retour ou un rechargement
+     ne rejoue pas l'entrée. */
+  function demarrer() {
+    const params = new URLSearchParams(location.search);
+    const connu = (table, id) => Object.prototype.hasOwnProperty.call(table, id);   /* MOD["constructor"] serait vrai */
+    let trouve = false;
+    if (params.has("module") && connu(MOD, params.get("module"))) {
+      trouve = true;
+      vueFiche(params.get("module"));
+    } else if (params.has("decouvrir")) {
+      const ids = params.get("decouvrir").split(",").map((s) => s.trim());
+      if (ids.length && ids.every((m) => connu(MOD, m))) { trouve = true; demarrerDecouverte(ids); }
+    } else if (params.has("test") && connu(PAL, params.get("test"))) {
+      trouve = true;
+      const id = params.get("test");
+      if (!etat.filiere) { cibleEnAttente = id; vueFiliere(); } else demarrerTest(id);
+    } else if (params.get("vue") === "verifier") {
+      trouve = true;
+      vueVerif();
+    } else if (params.get("vue") === "code") {
+      trouve = true;
+      vueCode();
+    }
+    if (trouve) history.replaceState(null, "", location.pathname);
+    else vueAccueil();
+  }
+  demarrer();
 })();

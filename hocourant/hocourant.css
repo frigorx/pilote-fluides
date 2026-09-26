@@ -219,6 +219,75 @@ button { font: inherit; }
   .sans-impression, .entete, .pied, .enc-note { display: none !important; }
 }
 
+/* ---------- la fiche en station : étapes, texte à gauche, panneau à droite ---------- */
+.etapes { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 14px; padding: 0; list-style: none; }
+.etapes button {
+  display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--line);
+  background: var(--paper); color: var(--bleu); border-radius: 999px; padding: 6px 14px 6px 6px; cursor: pointer;
+}
+.etapes button .num {
+  width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  border: 1.5px solid var(--bleu); font-weight: bold; font-size: .9rem;
+}
+.etapes button[aria-current="step"] { border-color: var(--bleu); box-shadow: var(--ombre); }
+.etapes button[aria-current="step"] .num { background: var(--bleu); color: #fff; }
+.etapes button.vue .num { background: var(--ok-fond); border-color: var(--ok); color: var(--ok); }
+
+/* Le texte se centre en face du panneau : un écran court ne laisse plus
+   une colonne vide à côté d'un film qui, lui, fait toute sa hauteur. */
+.station { display: grid; grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr); gap: 16px; align-items: center; }
+.station .texte { margin: 0; }
+.station .texte > :first-child { margin-top: 0; }
+.station .texte h2 { margin-top: 0; }
+.panneau {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--ombre);
+  padding: 12px; display: grid; gap: 10px;
+}
+.scenes { display: grid; gap: 8px; grid-template-columns: 1fr; }
+.scenes.deux, .scenes.quatre { grid-template-columns: 1fr 1fr; }
+.scenes .scene { margin: 0; }
+.scenes .scene svg { max-width: none; border: 0; padding: 0; background: #fff; border-radius: 12px; }
+.scenes.deux .scene figcaption, .scenes.quatre .scene figcaption { font-size: .85rem; }
+.voix { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 10px; }
+.voix .btn { padding: 8px 16px; }
+.reglage {
+  display: inline-flex; align-items: center; gap: 4px; border: 1.5px solid var(--bleu);
+  border-radius: 999px; padding: 2px 6px; color: var(--bleu);
+}
+.reglage button { min-width: 30px; min-height: 30px; border: 0; background: transparent; color: inherit; font-weight: bold; cursor: pointer; }
+.reglage output { min-width: 3.2em; text-align: center; font-weight: 600; }
+.voix .etat { color: var(--muted); font-size: .9rem; }
+.transcription { font-size: .92rem; color: var(--muted); }
+.transcription summary { cursor: pointer; color: var(--bleu); }
+.nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 14px; }
+/* le film en deux actes : ce qui bouge est piloté par la classe acte-1 / acte-2 sur la figure,
+   ses règles vivent dans donnees/films/Mx.js (préfixées .film-Mx) */
+.film .acte { font-weight: bold; color: var(--bleu); }
+@media (max-width: 760px) {
+  .station { grid-template-columns: 1fr; }
+  .panneau { order: -1; }           /* la scène passe AU-DESSUS du texte sur téléphone */
+}
+@media (prefers-reduced-motion: reduce) {
+  .film * { animation-duration: .01s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
+}
+/* « Sans animation » choisi à la main (inc. 9) : même effet que la préférence système */
+html.sans-animation .film * { animation-duration: .01s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
+.bascule {
+  min-height: 44px; border: 1.5px dashed var(--bleu); border-radius: 999px; padding: 4px 14px;
+  background: transparent; color: var(--bleu); font: inherit; font-weight: 600; cursor: pointer;
+}
+.bascule[aria-pressed="true"] { border-style: solid; background: var(--bleu); color: #fff; }
+.bascule:disabled { cursor: default; }
+
+/* ---------- couche interactive des films : arrêt sur image + question (inc. 8) ---------- */
+/* Le film se fige (classe pause sur la figure, posée en plus de acte-1/acte-2) et se voile
+   légèrement ; la question reprend le style .q-option de la découverte (mêmes classes juste/faux). */
+.film.pause * { animation-play-state: paused !important; }
+.film.pause svg { opacity: .55; }
+.q-interactif:empty { display: none; }
+.q-interactif { margin: 4px 0 0; }
+.q-interactif .q-enonce { margin-top: 0; }
+
 /* ---------- pied ---------- */
 .pied { color: var(--muted); font-size: .9rem; margin-top: 30px; border-top: 1px solid var(--line); padding-top: 12px; }
 

@@ -1,0 +1,42 @@
+{
+ "commentaire": "Registre des QR GRAVÉS dans le papier du livret HoCourant. Un QR imprimé ne peut plus changer : cette liste dit lesquels sont partis à l’imprimeur, et la chaîne refuse de les perdre. Ne JAMAIS régénérer ce fichier automatiquement.",
+ "editions": [
+  {
+   "edition": "livret-a5-v3",
+   "statut": "vendue",
+   "commentaire": "Premier jeu de QR du livret A5 (chantier du 25/09/2026) — statut « epreuve » : le contrôle avertit sans bloquer. Passer à « vendue » au bon à tirer. Complété le 25/09 après la relecture : 1b et 4b (pages neuves M5 et M4), 29 slugs. Passé à « vendue » le 26/09/2026 : livret v3.0 mis en ligne sur inerweb.fr à la demande de F. Henninot — ces 29 adresses ne changent plus.",
+   "releve_le": "2026-09-25",
+   "slugs": [
+    "1",
+    "10",
+    "10c",
+    "1c",
+    "2",
+    "2c",
+    "3",
+    "3c",
+    "4",
+    "4c",
+    "5",
+    "5c",
+    "6",
+    "6c",
+    "7",
+    "7c",
+    "8",
+    "8c",
+    "9",
+    "9c",
+    "app",
+    "code",
+    "t0",
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "1b",
+    "4b"
+   ]
+  }
+ ]
+}
