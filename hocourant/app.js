@@ -118,8 +118,8 @@
       "<p>Le support de cours complet : dix chapitres, quatre-vingts questions, les activités " +
       "à faire en atelier et le lexique. Sa page de garde porte votre nom — remplissez-la, un livret " +
       "perdu revient à son propriétaire.</p>" +
-      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf" download>' +
-      "Télécharger le livret (PDF, 110 pages, 11,6 Mo)</a></div>" +
+      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-1" download>' +
+      "Télécharger le livret (PDF, 116 pages, 11,9 Mo)</a></div>" +
       '<div class="enc enc-note"><span class="enc-mot">À imprimer en A5</span>' +
       "<p>En couleur comme en noir et blanc : le livret est fait pour les deux. Le corrigé " +
       "est réservé au formateur et ne se télécharge pas ici.</p></div></div>" +
