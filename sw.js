@@ -31,7 +31,7 @@
    Pièges tenus : réponses partielles (206, lecteurs audio) et réponses
    redirigées jamais mises en cache ; autres origines jamais touchées.
    ===================================================================== */
-const VERSION = "cae8fe30dc";
+const VERSION = "8a9084c640";
 const CACHE = "inerweb-" + VERSION;
 
 /* Le socle : ce qui doit marcher hors-ligne même si le visiteur n'a

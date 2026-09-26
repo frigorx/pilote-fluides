@@ -60,3 +60,5 @@ __pycache__/
 #  1,2 Mo pour le seul parcours manomètres, sur un dépôt public. Le
 #  résultat écrit reste dans le QA.md du cours ; l'image se refabrique.
 packs/fluides/res/*/tests/screenshots/
+# FormaRézo : ses PDF d'élève partent (livrer.py de l'atelier)
+!formarezo/**/*.pdf
