@@ -223,13 +223,32 @@ function creer(EX, fils, opts) {
     'motor-mono-2': ['tourne', 'à l’arrêt'], moteur_mono: ['tourne', 'à l’arrêt'] };
 
   let dernier = null;
+  /* Récepteurs en étoile sans neutre (résistances de dégivrage) : un bout sur une phase, l'autre sur un point commun
+     flottant que d'autres récepteurs relient à au moins une autre phase — le courant passe, 230 V en étoile équilibrée. */
+  function etoile(R, a, x, y) {
+    for (const [p, f] of [[x, y], [y, x]]) {
+      const ph = un(R, a.repere + ':' + p), noeud = R.racine(a.repere + ':' + f);
+      if (!phase(ph) || R.pots(a.repere + ':' + f).size) continue;
+      const autres = new Set();
+      for (const b of APP) {
+        if (b === a || S[b.repere].role !== 'recepteur') continue;
+        const [bx, by] = RECEPTEUR[b.type];
+        for (const [q, g] of [[bx, by], [by, bx]])
+          if (R.racine(b.repere + ':' + g) === noeud) { const pq = un(R, b.repere + ':' + q); if (phase(pq) && pq !== ph) autres.add(pq); }
+      }
+      if (autres.size) return 230;
+    }
+    return 0;
+  }
   function bilan(R) {
     const appareils = {};
     for (const a of APP) {
       const s = S[a.repere];
       if (s.role === 'moteur') appareils[a.repere] = moteur(R, a);
       else if (s.role === 'recepteur') {
-        const [x, y] = RECEPTEUR[a.type], v = tension(R, a.repere + ':' + x, a.repere + ':' + y);
+        const [x, y] = RECEPTEUR[a.type];
+        let v = tension(R, a.repere + ':' + x, a.repere + ':' + y);
+        if (!v) v = etoile(R, a, x, y);
         if (v === 400) signaler('400' + a.repere, a.repere + ' sous 400 V : il n’est pas fait pour, il grille.');
         if (v === 'PE') signaler('PE' + a.repere, a.repere + ' revient par la terre au lieu du neutre : interdit.');
         appareils[a.repere] = { marche: v ? 'oui' : 'non', texte: VERBE[a.type][v ? 0 : 1] };
