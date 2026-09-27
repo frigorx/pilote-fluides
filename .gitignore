@@ -44,6 +44,9 @@ packs/fluides/res/docs/
 #     libres (CC BY-NC-ND), livrés par cablage-virtuel/outils/livrer.py. Les
 #     documents professeur, eux, restent hors ligne (sur demande par courriel).
 !cablage-virtuel/documents/*.pdf
+# … et leurs sous-dossiers par exercice (27/09) : documents/exercices/<id>/<id>-ELEVE.pdf, feuilles élève génériques
+#     (livrer.py n’y copie jamais le professeur).
+!cablage-virtuel/documents/exercices/*/*.pdf
 .DS_Store
 Thumbs.db
 node_modules/
