@@ -112,7 +112,10 @@
   .bandeau-aquiblue .ba-couv.ba-vign img { width:280px; }
   /* Téléphone : une seule colonne, l'image centrée entre le texte et les boutons. */
   @media (max-width:760px) {
-    .bandeau-aquiblue { grid-template-columns:1fr; grid-template-areas:"logo" "texte" "couv" "btns"; }
+    .bandeau-aquiblue { grid-template-columns:minmax(0,1fr); grid-template-areas:"logo" "texte" "couv" "btns"; }
+    /* minmax(0,…) : sans lui, le bouton le plus long (nowrap) élargissait la colonne hors du cadre (27/09) */
+    .bandeau-aquiblue .bouton { white-space:normal; text-align:center; }
+    .bandeau-aquiblue .ba-couv.ba-vign img { width:100%; max-width:280px; }
     .bandeau-aquiblue .ba-couv { justify-self:center; }
   }
   .etiquette-proto { display:inline-block; background:#b06a00; color:#fff; font-weight:bold;
@@ -1314,11 +1317,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=05a8782fba"></script>
-<script src="chiffres.gen.js?v=05a8782fba"></script>
+<script src="moteur/lisibilite.js?v=02e2b92f4c"></script>
+<script src="chiffres.gen.js?v=02e2b92f4c"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=05a8782fba" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=02e2b92f4c" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
