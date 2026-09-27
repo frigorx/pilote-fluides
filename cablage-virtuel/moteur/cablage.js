@@ -36,6 +36,7 @@ const $ = (s) => document.querySelector(s);
 
 let EX, fils = [], couleur = 'marron', armee = null, choisi = null, trace = null;
 let aides = 0, niveauAide = 0, cibleAide = null, etapeIdx = 0, debut = Date.now(), controle = false, refus = 0;
+let filsControles = null;     // les fils au dernier contrôle : en Réel, la mise sous tension le demande (moteur/tension-ecran.js)
 const bornes = {};            // 'Q1:2' -> {ref, rep, id, x, y, o, el}
 const cartesBornes = {};      // 'Q1:2' -> [cercles sur la carte]
 let svgPlatine, gFils, gManques, filTemp;
@@ -674,6 +675,7 @@ function analyser() {
 function controler() {
   const r = analyser();
   controle = true; armer(null); choisir(null); surbrillance([]);
+  filsControles = signatureFils();
   const secondes = Math.round((Date.now() - debut) / 1000);
   const libNiveau = ['Rien n’est câblé', 'Début de câblage', 'Câblage à moitié', 'Câblage juste, couleurs à revoir', 'Câblage juste'][r.niveau];
   const filsMauvaiseCouleur = fils.filter(f => f.mauvaiseCouleur).slice(0, 3).map(f => lib(f.de) + ' → ' + lib(f.a) + ' (' + f.couleur + ', attendu ' + nomsCouleurs(reseauDe(f.de)) + ')');
@@ -1094,6 +1096,11 @@ window.CABLAGE_ETAT = () => ({ exercice: ID, activite: ACTIVITE, mode: MODE, fil
                                aides, controle, analyse: EX ? analyser() : null,
                                carte: items.map(i => ({ quoi: i.rep || lib(i.de) + ' > ' + lib(i.a), attendu: i.attendu, reponse: i.reponse })) });
 
+// La mise sous tension (moteur/tension-ecran.js) lit l'exercice et les fils, parle dans la consigne et compte ses aides.
+function signatureFils() { return fils.map(f => cle(f.de, f.a)).sort().join(' '); }
+window.CABLAGE_API = { ex: () => EX, fils: () => fils, mode: MODE, activite: ACTIVITE, vue: VUE, reelle: () => vueReelle(),
+                       dire, compterAide, borneCarte, controleAJour: () => filsControles !== null && filsControles === signatureFils() };
+
 // ------------------------------------------------------------ départ
 // Un téléphone (plus petit côté de l'ÉCRAN sous 500 px ; une tablette en a 600 et plus) : bornes trop petites au doigt
 // (essai de Franck, 27/09). On le dit, sans bloquer. L'écran et non la fenêtre : un ordinateur à fenêtre étroite n'est pas visé.
@@ -1121,5 +1128,6 @@ charger(ID, (ex) => {
   construireOutils();
   rafraichir();
   demarrerMode();
+  document.dispatchEvent(new Event('cablage-pret'));
 });
 })();
