@@ -136,6 +136,25 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 /* ---- accueil ---- */
 .accueil{max-width:900px;margin:24px auto;padding:0 16px 60px}
 .accueil p.intro{font-size:17px;color:var(--mut)}
+/* niveau 1 (27/09) : la prise en main, les chapitres en tuiles sans image, la manière de travailler */
+.accueil h2{font-size:22px;margin:26px 0 10px}
+.tuile{display:grid;grid-template-columns:44px 1fr;gap:2px 14px;align-items:start;text-decoration:none;color:var(--txt);
+  background:#fff;border:2px solid var(--ligne);border-radius:var(--r);padding:14px 16px;box-shadow:var(--ombre)}
+.tuile:hover{border-color:var(--bleu-clair);background:#f3f7fb}
+.tuile i{grid-row:1/span 3;font:bold 22px "Trebuchet MS",Arial,sans-serif;font-style:normal;color:#fff;background:var(--bleu);
+  width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.tuile b{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;font-size:19px;color:var(--bleu)}
+.tuile span{font-size:15px;color:var(--mut)}
+.tuile small{font-size:13px;color:var(--bleu-clair);font-weight:700}
+.tuile.prise-en-main{grid-template-columns:1fr;border-color:var(--orange);background:var(--orange-clair)}
+.tuile.prise-en-main b{font-size:21px}
+.tuiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.methode{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.methode>div{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padding:12px 16px;display:flex;flex-direction:column;gap:4px}
+.methode>div>b{color:var(--bleu);font-size:17px}
+.methode>div>span{font-size:15px;color:var(--txt)}
+.retour-chapitres{display:inline-block;margin-bottom:8px;text-decoration:none;font-weight:700}
+#chapitre h2{margin-top:0}
 .liste{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
 .fiche{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);box-shadow:var(--ombre);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
 .fiche .apercu{display:block;height:260px;background:#fff;border:1px solid var(--ligne);border-radius:10px;padding:6px;overflow:hidden}

@@ -1,2 +1,2 @@
 empreinte du contenu livré, lue par build/lib-version.mjs
-ad23a0b70ac8935a
+e120d68ffdfd4a49

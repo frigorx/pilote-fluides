@@ -1,0 +1,23 @@
+/* Le tutoriel (moteur/tutoriel.js) : une bulle et un halo posés sur la page, une barre d'avancement en haut. */
+.tuto-avance{position:fixed;left:0;right:0;top:0;height:6px;background:rgba(255,255,255,.55);z-index:60;pointer-events:none}
+.tuto-avance i{display:block;height:100%;background:var(--orange);transition:width .3s}
+.tuto-halo{position:fixed;border:3px solid var(--orange);border-radius:8px;box-shadow:0 0 0 6px rgba(255,107,53,.25);
+  pointer-events:none;z-index:55;animation:tuto-pulse 1.2s infinite}
+/* le corps de la bulle laisse passer le doigt (un fil peut partir d'une borne qu'elle recouvre) ; ses liens et boutons, non */
+.tuto-bulle{pointer-events:none;position:fixed;z-index:56;background:#fff;border:2px solid var(--orange);border-radius:14px;padding:12px 16px 14px;
+  box-shadow:0 8px 24px rgba(27,58,99,.22);font-size:17px;line-height:1.4;color:var(--txt)}
+.tuto-bulle h3{font-size:19px;display:flex;align-items:center;gap:8px;margin:0 0 6px;padding-right:110px}
+.tuto-bulle .tuto-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;
+  background:var(--orange);color:#fff;font-weight:700;font-family:"Trebuchet MS",Arial,sans-serif;flex:none}
+.tuto-bulle a,.tuto-bulle button{pointer-events:auto}
+.tuto-bulle p{margin:0}
+.tuto-bulle p.tuto-attend{margin-top:6px;color:var(--ok);font-weight:700}
+.tuto-bulle .tuto-bouton{margin-top:10px;background:var(--orange);border-color:var(--orange);color:#fff;font-weight:700}
+.tuto-bulle .tuto-passer{position:absolute;top:10px;right:14px;font-size:13px;color:var(--mut)}
+.tuto-bulle::after{content:"";position:absolute;left:var(--fl,50%);margin-left:-9px;border:9px solid transparent}
+.tuto-bulle.sous::after{top:-18px;border-bottom-color:var(--orange)}
+.tuto-bulle.sur::after{bottom:-18px;border-top-color:var(--orange)}
+.tuto-bulle.centre::after{display:none}
+@keyframes tuto-pulse{0%,100%{box-shadow:0 0 0 6px rgba(255,107,53,.25)}50%{box-shadow:0 0 0 12px rgba(255,107,53,.08)}}
+@media (prefers-reduced-motion:reduce){.tuto-halo{animation:none}}
+@media (max-width:700px){.tuto-bulle{font-size:15px}.tuto-bulle h3{font-size:17px}}

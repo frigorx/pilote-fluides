@@ -711,7 +711,8 @@ function construireOutils() {
   brancherNavigation();
 }
 function aller(activite, mode, reelle) {
-  location.search = '?ex=' + encodeURIComponent(ID) + '&activite=' + activite + '&mode=' + mode + ((reelle === undefined ? REELLE : reelle) ? '&platine=reelle' : '');
+  location.search = '?ex=' + encodeURIComponent(ID) + '&activite=' + activite + '&mode=' + mode + ((reelle === undefined ? REELLE : reelle) ? '&platine=reelle' : '') +
+    (P.get('tuto') !== null ? '&tuto' : '');   // le tutoriel (moteur/tutoriel.js) suit l'élève d'une activité à l'autre
 }
 function brancherNavigation() {
   document.querySelectorAll('#modes button').forEach(b => {

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — exercices</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260927-0950">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260927-1027">
 </head>
 <body>
 <header class="barre">
@@ -14,44 +14,104 @@
   <div class="titre">Lire la carte, poser les fils sur les bornes</div>
 </header>
 <main class="accueil">
-  <p class="intro">Trois temps, comme au TP : <b>1 Colorier</b> les conducteurs du schéma (L1, L2, L3, N, PE),
-    <b>2 Repérer</b> les numéros des bornes, <b>3 Câbler</b> la platine. <b>Guidé</b> : pas à pas, le logiciel montre
-    quoi faire et vous trouvez les numéros. <b>Aidé</b> : dans l'ordre que vous voulez. <b>Réel</b> : contrôle à la fin,
-    comme à l'examen. Chaque aide demandée est comptée.</p>
-  <div class="liste" id="liste"></div>
+  <!-- Niveau 1 (Franck, 27/09) : d'abord les chapitres en tuiles, sans image, et la manière de travailler ;
+       puis, dans un chapitre (#id), les exercices avec leur schéma. -->
+  <section id="chapitres">
+    <a class="tuile prise-en-main" href="jouer.html?ex=allumage-simple&amp;activite=cabler&amp;mode=guide&amp;tuto">
+      <b>🎓 Prise en main : le tutoriel</b>
+      <span>Douze étapes sur l’allumage simple : colorier, repérer, poser un fil, l’aide, le contrôle, la vue réelle, les trois modes. Un quart d’heure.</span>
+    </a>
+    <h2>Les chapitres</h2>
+    <div class="tuiles" id="tuiles"></div>
+    <h2>La manière de travailler</h2>
+    <div class="methode">
+      <div><b>Trois temps, comme au TP</b><span><b>1 Colorier</b> les conducteurs du schéma (L1, L2, L3, N, PE) · <b>2 Repérer</b> les numéros des bornes · <b>3 Câbler</b> la platine, fil par fil.</span></div>
+      <div><b>Trois modes</b><span><b>Guidé</b> : le logiciel montre le fil à poser, vous trouvez les numéros · <b>Aidé</b> : dans l’ordre que vous voulez, le bouton Aide reste là · <b>Réel</b> : rien n’est montré, le contrôle vient à la fin, comme à l’examen.</span></div>
+      <div><b>L’aide est comptée</b><span>Chaque appui sur Aide compte, chaque fil refusé aussi. Le contrôle donne un niveau de 0 à 4 : vous le recopiez sur votre feuille.</span></div>
+      <div><b>La vue réelle</b><span>Sur la platine, les vrais appareils à la place des symboles : mêmes repères, mêmes numéros de bornes.</span></div>
+    </div>
+  </section>
+  <section id="chapitre" hidden>
+    <a class="retour-chapitres" href="#">‹ Tous les chapitres</a>
+    <h2 id="chapitre-titre"></h2>
+    <p class="intro" id="chapitre-texte"></p>
+    <div class="liste" id="liste"></div>
+  </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260927-0950';</script>
-<script src="exercices/index.js?v=20260927-0950"></script>
+<script>window.CABLAGE_VERSION = '20260927-1027';</script>
+<script src="exercices/index.js?v=20260927-1027"></script>
 <script>
 (function(){
-  const liste = document.getElementById('liste');
-  const noms = {eclairage:'Éclairage', commande:'Commande', puissance:'Puissance', froid:'Froid'};
-  const activites = [['colorier', '1 Colorier'], ['reperer', '2 Repérer'], ['cabler', '3 Câbler']];
+  const CHAPITRES = [
+    {id: 'domestique', titre: 'Initiation domestique', texte: 'Les circuits de la maison : un disjoncteur, un interrupteur, une lampe. Le neutre à gauche, la phase à droite.',
+     ex: ['allumage-simple']},
+    {id: 'puissance', titre: 'Électrotechnique — puissance', texte: 'Du sectionneur au moteur : disjoncteur moteur, contacteur, relais thermique, bornier. Puis les démarrages.',
+     ex: ['cablage-1', 'demarrage-direct-tri', 'cablage-3', 'cablage-4', 'cablage-5', 'cablage-6']},
+    {id: 'commande', titre: 'Électrotechnique — commande', texte: 'Chaque commande reprend une puissance du chapitre précédent : bobines, auto-maintien 13-14, verrouillages 21-22, 95-96.',
+     ex: ['cablage-1-commande', 'cablage-4-commande', 'cablage-5-commande']},
+    {id: 'froid', titre: 'Froid — les groupes', texte: 'Le pump-down et la chambre froide : thermostat, électrovanne, pressostats, dégivrage. La puissance, puis la commande.',
+     ex: ['cablage-2', 'cablage-7', 'cablage-7-commande', 'cablage-8', 'cablage-8-commande', 'cablage-9', 'cablage-9-commande']},
+  ];
+  const index = window.CABLAGE_INDEX || [], parId = {};
+  index.forEach(function(m){ parId[m.id] = m; });
+  // un exercice que la liste ne range pas tombe dans un dernier chapitre : rien ne se perd
+  const ranges = new Set(CHAPITRES.flatMap(function(c){ return c.ex; }));
+  const orphelins = index.filter(function(m){ return !ranges.has(m.id); }).map(function(m){ return m.id; });
+  if (orphelins.length) CHAPITRES.push({id: 'autres', titre: 'Autres exercices', texte: '', ex: orphelins});
+
   // Les documents à télécharger (Franck, 27/09) : le TP élève est libre ; le TP professeur se demande par courriel.
   const COURRIEL = 'inerweb.fh@gmail.com';
   const DOCUMENTS = {
+    'allumage-simple': {eleve: 'documents/Tutoriel-Prise-en-main-ELEVE.pdf', nom: 'Feuille élève du tutoriel (2 feuilles)'},
     'cablage-9': {eleve: 'documents/TP-2-Puissance-ELEVE.pdf', nom: 'TP 2 — Puissance (élève, 6 feuilles)'},
     'cablage-9-commande': {eleve: 'documents/TP-Commande-ELEVE.pdf', nom: 'TP — Commande (élève, 4 feuilles)'},
   };
   const documents = function(id){ const d = DOCUMENTS[id]; if (!d) return '';
     return '<div class="documents"><a href="' + d.eleve + '" download>📄 ' + d.nom + '</a>' +
       '<span>Document professeur : sur demande à <a href="mailto:' + COURRIEL + '">' + COURRIEL + '</a></span></div>'; };
-  (window.CABLAGE_INDEX || []).forEach(function(m){
+
+  const noms = {eclairage: 'Éclairage', commande: 'Commande', puissance: 'Puissance', froid: 'Froid'};
+  const activites = [['colorier', '1 Colorier'], ['reperer', '2 Repérer'], ['cabler', '3 Câbler']];
+  function fiche(m) {
     const f = document.createElement('article'); f.className = 'fiche';
     const lien = function(a, mode, nom){ return '<a' + (mode === 'reel' ? ' class="reel"' : '') + ' href="jouer.html?ex=' +
       encodeURIComponent(m.id) + '&activite=' + a + '&mode=' + mode + '">' + nom + '</a>'; };
     f.innerHTML = '<a class="apercu" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&activite=cabler&mode=guide" title="Voir et câbler ce schéma">' +
-      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260927-0950" alt="Le schéma de l’exercice" loading="lazy"></a>' +
+      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260927-1027" alt="Le schéma de l’exercice" loading="lazy"></a>' +
       '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
       activites.map(function(a){ return '<div class="modes"><span class="act">' + a[1] + '</span>' +
         lien(a[0], 'guide', 'Guidé') + lien(a[0], 'aide', 'Aidé') + lien(a[0], 'reel', 'Réel') + '</div>'; }).join('') +
       documents(m.id);
     f.querySelector('h3').textContent = m.titre;
-    liste.appendChild(f);
+    return f;
+  }
+  // niveau 1 : les tuiles
+  const tuiles = document.getElementById('tuiles');
+  CHAPITRES.forEach(function(c, i){
+    const t = document.createElement('a'); t.className = 'tuile'; t.href = '#' + c.id;
+    const n = c.ex.filter(function(id){ return parId[id]; }).length;
+    t.innerHTML = '<i>' + (i + 1) + '</i><b></b><span></span><small>' + n + ' exercice' + (n > 1 ? 's' : '') + '</small>';
+    t.querySelector('b').textContent = c.titre; t.querySelector('span').textContent = c.texte;
+    tuiles.appendChild(t);
   });
-  if (!liste.children.length) liste.textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
+  // niveau 2 : un chapitre, ses exercices avec leur schéma
+  function montrer() {
+    const c = CHAPITRES.find(function(x){ return '#' + x.id === location.hash; });
+    document.getElementById('chapitres').hidden = !!c;
+    document.getElementById('chapitre').hidden = !c;
+    if (!c) { document.title = 'Câblage virtuel — exercices'; return; }
+    document.title = 'Câblage virtuel — ' + c.titre;
+    document.getElementById('chapitre-titre').textContent = c.titre;
+    document.getElementById('chapitre-texte').textContent = c.texte;
+    const liste = document.getElementById('liste'); liste.innerHTML = '';
+    c.ex.forEach(function(id){ if (parId[id]) liste.appendChild(fiche(parId[id])); });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', montrer);
+  montrer();
+  if (!index.length) document.getElementById('tuiles').textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
 })();
 </script>
-<script src="moteur/marque.js?v=20260927-0950" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260927-1027" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>
