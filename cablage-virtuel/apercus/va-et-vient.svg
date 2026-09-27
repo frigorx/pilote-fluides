@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="189.0 82.0 231.0 597.0" width="231" height="597"><style>*{vector-effect:non-scaling-stroke}</style>
+<!-- Va-et-vient : disjoncteur 1P+N, deux inverseurs, lampe et sa masse — converti de va-et-vient.qet par outils\qet-vers-svg.py -->
+<rect x="189.0" y="82.0" width="231.0" height="597.0" fill="#ffffff"/>
+<g id="conducteurs">
+<polyline points="246.00,120.00 320.00,120.00 320.00,174.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="246.00,140.00 300.00,140.00 300.00,174.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,216.00 320.00,304.00 320.00,304.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,336.00 320.00,424.00 320.00,424.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,336.00 340.00,424.00 340.00,424.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,456.00 340.00,524.00 340.00,524.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,216.00 300.00,600.00 340.00,600.00 340.00,556.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="246.00,160.00 280.00,160.00 280.00,620.00 380.00,620.00 380.00,633.00" fill="none" stroke="black" stroke-width="1"/>
+</g>
+<g id="symboles">
+<g class="symbole" data-type="src_1p_pe_n" transform="translate(240.00,140.00)">
+<line x1="0" y1="20" x2="10" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="10" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<text x="-12" y="23" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -12 23)">PE</text>
+<line x1="0" y1="0" x2="10" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<text x="-12" y="3" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -12 3)">N</text>
+<text x="-12" y="-17" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -12 -17)">L</text>
+</g>
+<g class="symbole" data-type="disjonct-m_1fn" transform="translate(310.00,200.00)">
+<line x1="10" y1="15.5" x2="10" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="8" y1="-20" x2="12" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-10" x2="7" y2="-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<path d="M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-10,20 -10,0 -15,-20" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-30" x2="10" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="12" y1="-26" x2="8" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="8" y1="-26" x2="12" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="-30" x2="-10" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-20" x2="-8" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="contnonc" transform="translate(320.00,320.00) rotate(180)">
+<polyline points="-15,-10 0,10 0,20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-20,-20 -20,-8 -12,-8" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="contnonc" transform="translate(340.00,440.00)">
+<polyline points="-15,-10 0,10 0,20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-20,-20 -20,-8 -12,-8" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="lampe2" transform="translate(340.00,540.00)">
+<ellipse cx="0.00" cy="0.00" rx="10.00" ry="10.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="7" y1="-7" x2="-7" y2="7" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-7" y1="-7" x2="7" y2="7" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="10" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="terre" transform="translate(380.00,640.00)">
+<line x1="-3" y1="4" x2="3" y2="4" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="2" x2="5" y2="2" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-7" y1="0" x2="7" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+</g>
+</svg>

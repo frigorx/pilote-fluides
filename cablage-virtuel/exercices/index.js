@@ -97,6 +97,18 @@ window.CABLAGE_INDEX = [
   "famille": "eclairage"
  },
  {
+  "id": "telerupteur",
+  "titre": "Télérupteur : trois boutons poussoirs, deux lampes et leurs masses",
+  "niveau": 1,
+  "famille": "eclairage"
+ },
+ {
+  "id": "va-et-vient",
+  "titre": "Va-et-vient : disjoncteur 1P+N, deux inverseurs, lampe et sa masse",
+  "niveau": 1,
+  "famille": "eclairage"
+ },
+ {
   "id": "demarrage-direct-tri",
   "titre": "Démarrage direct d'un moteur triphasé : sectionneur porte-fusibles, contacteur, relais thermique, bornier",
   "niveau": 2,

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — exercices</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260927-1401">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260927-1411">
 </head>
 <body>
 <header class="barre">
@@ -38,13 +38,13 @@
     <div class="liste" id="liste"></div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260927-1401';</script>
-<script src="exercices/index.js?v=20260927-1401"></script>
+<script>window.CABLAGE_VERSION = '20260927-1411';</script>
+<script src="exercices/index.js?v=20260927-1411"></script>
 <script>
 (function(){
   const CHAPITRES = [
-    {id: 'domestique', titre: 'Initiation domestique', texte: 'Les circuits de la maison : un disjoncteur, un interrupteur, une lampe. Le neutre à gauche, la phase à droite.',
-     ex: ['allumage-simple']},
+    {id: 'domestique', titre: 'Initiation domestique', texte: 'Les circuits de la maison : allumage simple, va-et-vient, télérupteur. Le neutre à gauche, la phase à droite.',
+     ex: ['allumage-simple', 'va-et-vient', 'telerupteur']},
     {id: 'puissance', titre: 'Électrotechnique — puissance', texte: 'Du sectionneur au moteur : disjoncteur moteur, contacteur, relais thermique, bornier. Puis les démarrages.',
      ex: ['cablage-1', 'demarrage-direct-tri', 'cablage-3', 'cablage-4', 'cablage-5', 'cablage-6']},
     {id: 'commande', titre: 'Électrotechnique — commande', texte: 'Chaque commande reprend une puissance du chapitre précédent : bobines, auto-maintien 13-14, verrouillages 21-22, 95-96.',
@@ -77,7 +77,7 @@
     const lien = function(a, mode, nom){ return '<a' + (mode === 'reel' ? ' class="reel"' : '') + ' href="jouer.html?ex=' +
       encodeURIComponent(m.id) + '&activite=' + a + '&mode=' + mode + '">' + nom + '</a>'; };
     f.innerHTML = '<a class="apercu" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&activite=cabler&mode=guide" title="Voir et câbler ce schéma">' +
-      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260927-1401" alt="Le schéma de l’exercice" loading="lazy"></a>' +
+      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260927-1411" alt="Le schéma de l’exercice" loading="lazy"></a>' +
       '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
       activites.map(function(a){ return '<div class="modes"><span class="act">' + a[1] + '</span>' +
         lien(a[0], 'guide', 'Guidé') + lien(a[0], 'aide', 'Aidé') + lien(a[0], 'reel', 'Réel') + '</div>'; }).join('') +
@@ -112,6 +112,6 @@
   if (!index.length) document.getElementById('tuiles').textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
 })();
 </script>
-<script src="moteur/marque.js?v=20260927-1401" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260927-1411" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>
