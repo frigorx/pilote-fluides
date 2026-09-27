@@ -193,7 +193,7 @@ window.CABLAGE_EXERCICES["allumage-simple"] = {
   {
    "repere": "S1",
    "type": "010_switch_1pos",
-   "nom": "Bouton / interrupteur",
+   "nom": "Interrupteur",
    "rang": 2,
    "symbole": "<g class=\"symbole\" data-type=\"010_switch_1pos\" transform=\"translate(0.00,0.00)\">\n<ellipse cx=\"0.00\" cy=\"10.00\" rx=\"1.75\" ry=\"1.75\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-12.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"-10.00\" rx=\"1.75\" ry=\"1.75\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-5\" y1=\"-10\" x2=\"-0.7\" y2=\"8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"12\" x2=\"0\" y2=\"17\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>",
    "boite": [
@@ -226,7 +226,7 @@ window.CABLAGE_EXERCICES["allumage-simple"] = {
   {
    "repere": "H1",
    "type": "lampe2",
-   "nom": "Voyant",
+   "nom": "Lampe",
    "rang": 4,
    "symbole": "<g class=\"symbole\" data-type=\"lampe2\" transform=\"translate(0.00,0.00)\">\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"10.00\" ry=\"10.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"7\" y1=\"-7\" x2=\"-7\" y2=\"7\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-7\" y1=\"-7\" x2=\"7\" y2=\"7\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>",
    "boite": [
@@ -306,10 +306,9 @@ window.CABLAGE_EXERCICES["allumage-simple"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L"
   },
   {
    "nom": "H1:A2",
@@ -318,13 +317,9 @@ window.CABLAGE_EXERCICES["allumage-simple"] = {
     "Q1:4"
    ],
    "couleurs": [
-    "marron",
-    "noir",
-    "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "bleu"
+   ],
+   "potentiel": "N"
   },
   {
    "nom": "L",
@@ -337,7 +332,8 @@ window.CABLAGE_EXERCICES["allumage-simple"] = {
     "noir",
     "gris",
     "rouge"
-   ]
+   ],
+   "potentiel": "L"
   },
   {
    "nom": "N",
@@ -347,7 +343,8 @@ window.CABLAGE_EXERCICES["allumage-simple"] = {
    ],
    "couleurs": [
     "bleu"
-   ]
+   ],
+   "potentiel": "N"
   },
   {
    "nom": "Q1:2",
@@ -359,10 +356,9 @@ window.CABLAGE_EXERCICES["allumage-simple"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L"
   }
  ],
  "etapes": [
@@ -384,7 +380,7 @@ window.CABLAGE_EXERCICES["allumage-simple"] = {
   {
    "de": "Q1:4",
    "a": "H1:A2",
-   "couleur": "marron"
+   "couleur": "bleu"
   },
   {
    "de": "S1:2",

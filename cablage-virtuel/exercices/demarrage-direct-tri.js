@@ -335,7 +335,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
   {
    "repere": "Q1",
    "type": "inter_sectionneur_tri",
-   "nom": "Sectionneur",
+   "nom": "Interrupteur-sectionneur",
    "rang": 1,
    "symbole": "<g class=\"symbole\" data-type=\"inter_sectionneur_tri\" transform=\"translate(0.00,0.00)\">\n<polyline points=\"-5,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"-40.00\" cy=\"12.00\" rx=\"2.00\" ry=\"2.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"20.00\" cy=\"-10.00\" rx=\"2.00\" ry=\"2.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"-20.00\" cy=\"-10.00\" rx=\"2.00\" ry=\"2.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"-10.00\" rx=\"2.00\" ry=\"2.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-5,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"15,-10 20,10 20,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-25,-10 -20,10 -20,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-12\" x2=\"-2\" y2=\"-12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-20\" x2=\"-20\" y2=\"-12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-18\" y1=\"-12\" x2=\"-22\" y2=\"-12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"-12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"22\" y1=\"-12\" x2=\"18\" y2=\"-12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"15\" y1=\"0\" x2=\"-40\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"-40\" y1=\"10\" x2=\"-45\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>",
    "boite": [
@@ -449,7 +449,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
   {
    "repere": "KM1",
    "type": "com_puiss4",
-   "nom": "Contact de puissance",
+   "nom": "Contacteur",
    "rang": 3,
    "symbole": "<g class=\"symbole\" data-type=\"com_puiss4\" transform=\"translate(0.00,0.00)\">\n<text x=\"5\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 5 -20)\">3\nL2<\/text>\n<text x=\"25\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 25 -20)\">5\nL3<\/text>\n<text x=\"4\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 4 19)\">4\nT2<\/text>\n<text x=\"-16\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -16 19)\">2\nT1<\/text>\n<text x=\"24\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 24 19)\">6\nT3<\/text>\n<polyline points=\"15,-10 20,10 20,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-25,-10 -20,10 -20,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-5,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-20\" x2=\"-20\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -20.00,-14.50 A 2.50,2.50 0 0 0 -20.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 0.00,-14.50 A 2.50,2.50 0 0 0 -0.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 20.00,-14.50 A 2.50,2.50 0 0 0 20.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-23\" y1=\"0\" x2=\"17\" y2=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<text x=\"-16\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -16 -20)\">1\nL1<\/text>\n<\/g>",
    "boite": [
@@ -563,7 +563,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
   {
    "repere": "PE",
    "type": "terre",
-   "nom": "Terre",
+   "nom": "Prise de terre",
    "rang": 0,
    "symbole": "<g class=\"symbole\" data-type=\"terre\" transform=\"translate(0.00,0.00)\">\n<line x1=\"-3\" y1=\"4\" x2=\"3\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-5\" y1=\"2\" x2=\"5\" y2=\"2\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-7\" y1=\"0\" x2=\"7\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>",
    "boite": [
@@ -852,10 +852,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L1"
   },
   {
    "nom": "F1:4",
@@ -869,10 +868,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L2"
   },
   {
    "nom": "F1:6",
@@ -886,10 +884,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L3"
   },
   {
    "nom": "PE",
@@ -901,7 +898,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    ],
    "couleurs": [
     "vert-jaune"
-   ]
+   ],
+   "potentiel": "PE"
   },
   {
    "nom": "F1:1",
@@ -913,10 +911,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L1"
   },
   {
    "nom": "F1:3",
@@ -928,10 +925,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L2"
   },
   {
    "nom": "F1:5",
@@ -943,10 +939,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L3"
   },
   {
    "nom": "KM1:1",
@@ -958,10 +953,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L1"
   },
   {
    "nom": "KM1:3",
@@ -973,10 +967,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L2"
   },
   {
    "nom": "KM1:5",
@@ -988,10 +981,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L3"
   },
   {
    "nom": "L1",
@@ -1004,7 +996,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "noir",
     "gris",
     "rouge"
-   ]
+   ],
+   "potentiel": "L1"
   },
   {
    "nom": "L2",
@@ -1017,7 +1010,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "noir",
     "gris",
     "rouge"
-   ]
+   ],
+   "potentiel": "L2"
   },
   {
    "nom": "L3",
@@ -1030,7 +1024,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "noir",
     "gris",
     "rouge"
-   ]
+   ],
+   "potentiel": "L3"
   },
   {
    "nom": "Q1:2",
@@ -1042,10 +1037,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L1"
   },
   {
    "nom": "Q1:4",
@@ -1057,10 +1051,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L2"
   },
   {
    "nom": "Q1:6",
@@ -1072,10 +1065,9 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "marron",
     "noir",
     "gris",
-    "rouge",
-    "orange",
-    "blanc"
-   ]
+    "rouge"
+   ],
+   "potentiel": "L3"
   }
  ],
  "etapes": [
@@ -1160,23 +1152,23 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "couleur": "marron"
   },
   {
-   "de": "M1:U1",
-   "a": "X1:2",
+   "de": "X1:2",
+   "a": "M1:U1",
    "couleur": "marron"
   },
   {
-   "de": "M1:V1",
-   "a": "X2:2",
+   "de": "X2:2",
+   "a": "M1:V1",
    "couleur": "marron"
   },
   {
-   "de": "M1:W1",
-   "a": "X3:2",
+   "de": "X3:2",
+   "a": "M1:W1",
    "couleur": "marron"
   },
   {
-   "de": "M1:PE",
-   "a": "X4:2",
+   "de": "X4:2",
+   "a": "M1:PE",
    "couleur": "vert-jaune"
   }
  ]

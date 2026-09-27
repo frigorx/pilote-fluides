@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — exercices</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260924-0850">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260927-0541">
 </head>
 <body>
 <header class="barre">
@@ -14,29 +14,32 @@
   <div class="titre">Lire la carte, poser les fils sur les bornes</div>
 </header>
 <main class="accueil">
-  <p class="intro">Choisissez un exercice et un mode. <b>Guidé</b> : on vous dit d'où à où. <b>Aidé</b> : la carte seule,
-    de l'aide si vous la demandez. <b>Réel</b> : la carte seule, contrôle à la fin, comme à l'examen.</p>
+  <p class="intro">Trois temps, comme au TP : <b>1 Colorier</b> les conducteurs du schéma (L1, L2, L3, N, PE),
+    <b>2 Repérer</b> les numéros des bornes, <b>3 Câbler</b> la platine. <b>Guidé</b> : pas à pas, le logiciel montre
+    quoi faire et vous trouvez les numéros. <b>Aidé</b> : dans l'ordre que vous voulez. <b>Réel</b> : contrôle à la fin,
+    comme à l'examen. Chaque aide demandée est comptée.</p>
   <div class="liste" id="liste"></div>
 </main>
-<script>window.CABLAGE_VERSION = '20260924-0850';</script>
-<script src="exercices/index.js?v=20260924-0850"></script>
+<script>window.CABLAGE_VERSION = '20260927-0541';</script>
+<script src="exercices/index.js?v=20260927-0541"></script>
 <script>
 (function(){
   const liste = document.getElementById('liste');
-  const noms = {eclairage:'Éclairage', commande:'Commande', puissance:'Puissance'};
+  const noms = {eclairage:'Éclairage', commande:'Commande', puissance:'Puissance', froid:'Froid'};
+  const activites = [['colorier', '1 Colorier'], ['reperer', '2 Repérer'], ['cabler', '3 Câbler']];
   (window.CABLAGE_INDEX || []).forEach(function(m){
     const f = document.createElement('article'); f.className = 'fiche';
-    f.innerHTML = '<div class="niv">Niveau ' + m.niveau + ' · ' + (noms[m.famille] || m.famille) + '</div>' +
-      '<h3></h3><div class="modes">' +
-      '<a href="jouer.html?ex=' + encodeURIComponent(m.id) + '&mode=guide">Guidé</a>' +
-      '<a href="jouer.html?ex=' + encodeURIComponent(m.id) + '&mode=aide">Aidé</a>' +
-      '<a class="reel" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&mode=reel">Réel</a></div>';
+    const lien = function(a, mode, nom){ return '<a' + (mode === 'reel' ? ' class="reel"' : '') + ' href="jouer.html?ex=' +
+      encodeURIComponent(m.id) + '&activite=' + a + '&mode=' + mode + '">' + nom + '</a>'; };
+    f.innerHTML = '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
+      activites.map(function(a){ return '<div class="modes"><span class="act">' + a[1] + '</span>' +
+        lien(a[0], 'guide', 'Guidé') + lien(a[0], 'aide', 'Aidé') + lien(a[0], 'reel', 'Réel') + '</div>'; }).join('');
     f.querySelector('h3').textContent = m.titre;
     liste.appendChild(f);
   });
   if (!liste.children.length) liste.textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
 })();
 </script>
-<script src="moteur/marque.js?v=20260924-0850" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260927-0541" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

@@ -5,13 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260924-0850">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260927-0541">
 </head>
 <body class="jeu">
 <header class="barre">
   <a class="retour" href="index.html" title="Liste des exercices">‹</a>
   <div class="logo">Câblage <b>virtuel</b></div>
   <div class="titre" id="titre">…</div>
+  <nav class="modes activites" id="activites" aria-label="Activité">
+    <button data-activite="colorier">1 Colorier</button>
+    <button data-activite="reperer">2 Repérer</button>
+    <button data-activite="cabler">3 Câbler</button>
+  </nav>
   <nav class="modes" id="modes" aria-label="Mode">
     <button data-mode="guide">Guidé</button>
     <button data-mode="aide">Aidé</button>
@@ -20,6 +25,7 @@
 </header>
 
 <div class="consigne" id="consigne"><div class="texte" id="consigne-texte">Chargement…</div></div>
+<div class="nomenclature" id="nomenclature"></div>
 
 <main class="scene">
   <section class="panneau" id="carte">
@@ -33,8 +39,10 @@
   <section class="panneau" id="platine">
     <div class="entete"><b>La platine</b> <span>tirez les fils de borne à borne</span><span class="spacer"></span>
       <button class="zoom" data-zoom="moins" title="Réduire">−</button><button class="zoom" data-zoom="plus" title="Agrandir">+</button><button class="zoom" data-zoom="ajuster" title="Tout voir">⤢</button>
+      <button id="btn-vue-reelle" hidden>Vue réelle</button>
       <span id="compteur-fils">0 fil</span></div>
     <div class="corps" id="platine-corps"></div>
+    <div class="visee" id="visee" hidden></div>
   </section>
 </main>
 
@@ -51,10 +59,16 @@
 </footer>
 
 <div class="voile" id="voile"><div class="resultat" id="resultat"></div></div>
+<div class="voile" id="petit-ecran"><div class="resultat">
+  <h2>Écran trop petit</h2>
+  <p>Sur un téléphone, les bornes sont trop petites pour être touchées du doigt.
+     Utilisez une <b>tablette</b> ou un <b>ordinateur</b>.</p>
+  <button class="action principal" id="btn-petit-ecran">Continuer quand même</button>
+</div></div>
 
-<script>window.CABLAGE_VERSION = '20260924-0850';</script>
-<script src="exercices/index.js?v=20260924-0850"></script>
-<script src="moteur/cablage.js?v=20260924-0850"></script>
-<script src="moteur/marque.js?v=20260924-0850" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script>window.CABLAGE_VERSION = '20260927-0541';</script>
+<script src="exercices/index.js?v=20260927-0541"></script>
+<script src="moteur/cablage.js?v=20260927-0541"></script>
+<script src="moteur/marque.js?v=20260927-0541" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

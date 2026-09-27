@@ -12,7 +12,7 @@ body{background:var(--fond);color:var(--txt);font-family:Calibri,"Segoe UI",syst
   font-size:16px;line-height:1.4;overscroll-behavior:none}
 /* la page de jeu tient dans l'écran : colonne souple, la scène prend le reste */
 body.jeu{display:flex;flex-direction:column;height:100dvh;overflow:hidden}
-body.jeu .barre,body.jeu .consigne,body.jeu .outils{flex:none}
+body.jeu .barre,body.jeu .consigne,body.jeu .nomenclature,body.jeu .outils{flex:none}
 h1,h2,h3{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;font-weight:700;color:var(--bleu);margin:0}
 button{font:inherit;cursor:pointer;min-height:48px;border-radius:12px;border:2px solid var(--ligne);
   background:#fff;color:var(--txt);padding:0 14px;touch-action:manipulation}
@@ -37,6 +37,13 @@ a{color:var(--bleu-clair)}
 .consigne .texte small{display:block;font-weight:400;color:var(--mut);font-size:15px}
 .consigne.ok .texte{color:var(--ok)} .consigne.ko .texte{color:var(--ko)}
 
+/* ---- nomenclature : repère et nom des appareils ---- */
+.nomenclature{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;padding:6px 14px;background:#f7f9fb;border-bottom:1px solid var(--ligne);font-size:15px;color:var(--txt)}
+.nomenclature:empty{display:none}
+.nomenclature b{color:var(--bleu)}
+.nomenclature a{color:var(--bleu-clair);text-underline-offset:2px}
+.nomenclature .titre-nomenclature{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+
 /* ---- scène : carte + platine ---- */
 .scene{display:grid;gap:10px;padding:10px;flex:1;min-height:0;
   grid-template-rows:minmax(160px,38%) 1fr;grid-template-columns:1fr}
@@ -49,7 +56,8 @@ a{color:var(--bleu-clair)}
 .panneau .entete b{color:var(--bleu);font-size:15px}
 .panneau .entete .spacer{flex:1}
 .panneau .entete button{min-height:34px;padding:0 10px;font-size:14px;border-radius:8px}
-.panneau .corps{flex:1;min-height:0;position:relative;overflow:hidden;touch-action:none}
+.panneau .corps{flex:1;min-height:0;position:relative;overflow:hidden;touch-action:none;
+  -webkit-user-select:none;user-select:none}   /* un fil tiré sélectionnait les numéros : le geste suivant devenait un glisser-déposer du texte, annulé (pointercancel) — vu le 26/09 */
 .panneau svg{width:100%;height:100%;display:block}
 body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 
@@ -57,9 +65,11 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 #carte svg .cb{fill:var(--orange);stroke:#fff;stroke-width:1;opacity:0;cursor:pointer;transition:opacity .15s}
 #carte svg .cb.sb{opacity:1;animation:pulse 1s infinite}
 #carte svg .cb.visible{opacity:.55}
-#carte svg .cb-nom{font:bold 7px Calibri,Arial,sans-serif;fill:#c0392b;pointer-events:none;display:none}
+#carte svg .cb-nom{font:bold 10px Calibri,Arial,sans-serif;fill:#c0392b;pointer-events:none;display:none;paint-order:stroke;stroke:#fff;stroke-width:2.4px}
 #carte.numeros svg .cb-nom{display:block}
+#carte.numeros svg text.imprime{display:none}   /* nos numéros remplacent ceux que le symbole imprime : un seul numéro par borne */
 #carte.numeros svg .cb{opacity:.25}
+#carte svg polyline.etape{stroke:var(--orange);stroke-width:3.2;animation:pulse 1s infinite}   /* le conducteur à poser, en guidé */
 
 /* platine */
 #platine svg{background:
@@ -67,11 +77,19 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
   repeating-linear-gradient(0deg,transparent 0 23px,#e3e9f0 23px 24px),
   repeating-linear-gradient(90deg,transparent 0 23px,#e3e9f0 23px 24px)}
 #platine .app.sb .symbole{filter:drop-shadow(0 0 4px var(--orange))}
-#platine .repere{font:bold 15px "Trebuchet MS",Calibri,Arial,sans-serif;fill:var(--bleu);text-anchor:start;pointer-events:none}
+#platine .repere{font:bold 18px "Trebuchet MS",Calibri,Arial,sans-serif;fill:var(--bleu);text-anchor:start;pointer-events:none}
 #platine .repere.haut{text-anchor:middle}
-#platine .repere.petit{font-size:12px}
-#platine .nom-borne{font:bold 11px Calibri,Arial,sans-serif;fill:#333;text-anchor:middle;pointer-events:none}
-#platine .borne{fill:#fff;stroke:#333;stroke-width:2;cursor:crosshair}
+#platine .repere.petit{font-size:14px}
+#platine .repere.dessus{paint-order:stroke;stroke:#fff;stroke-width:4px}
+#platine .nom-borne{font:bold 16px Calibri,Arial,sans-serif;fill:var(--bleu);text-anchor:middle;pointer-events:none}
+#platine .pastille{fill:#fff;stroke:var(--bleu);stroke-width:1.2;pointer-events:none}
+#platine .pastille.aimant{fill:#fff3ec;stroke:var(--orange);stroke-width:2.5}
+#platine text.imprime{display:none}
+.visee{position:absolute;top:52px;left:10px;max-width:calc(100% - 20px);background:#fff;border:2px solid var(--orange);border-radius:10px;
+  padding:4px 10px;font:bold 16px Calibri,Arial,sans-serif;color:var(--bleu);box-shadow:var(--ombre);pointer-events:none;z-index:5}
+.visee[hidden]{display:none}   /* la pastille dit le numéro : le symbole ne le double pas */
+#platine .borne{fill:#fff;stroke:#333;stroke-width:2;cursor:crosshair;transition:r .1s}
+#platine .borne.aimant{r:14px;stroke:var(--orange);stroke-width:4}   /* l'aimant : la borne visée grossit */
 #platine .borne.sb{stroke:var(--orange);stroke-width:4;animation:pulse 1s infinite}
 #platine .borne.armee{fill:var(--orange)}
 #platine .borne.occupee{fill:#ffe8b0}
@@ -118,7 +136,7 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 /* ---- accueil ---- */
 .accueil{max-width:900px;margin:24px auto;padding:0 16px 60px}
 .accueil p.intro{font-size:17px;color:var(--mut)}
-.liste{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.liste{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
 .fiche{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);box-shadow:var(--ombre);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
 .fiche .niv{font-size:13px;color:var(--mut)}
 .fiche h3{font-size:18px}
@@ -130,5 +148,31 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 #platine .rail{fill:#d3dae3;stroke:#b3bfcc;stroke-width:1}
 #platine .goulotte{fill:#e6ebf1;stroke:#c6d0db;stroke-width:1}
 #platine .goulotte-fentes{fill:url(#fentes)}
+#platine .goulotte.chemin{fill:#f3f5f8;stroke:#c6d0db;stroke-dasharray:6 4}   /* chemin de câbles vers les appareils du terrain */
 #platine .fond-platine{fill:#f7f9fb}
+#platine .fond-platine.cadre{stroke:#9aa7b5;stroke-width:3}   /* la vraie platine : le réseau et le moteur sont dehors */
 .panneau .entete button.zoom{min-width:34px;padding:0 8px;font-size:18px;line-height:1;margin-left:2px}
+
+/* ---- colorier et repérer (parties A et B du TP) : la carte seule, platine masquée ---- */
+.barre .activites button{font-weight:700}
+@media (max-width:820px){.barre{flex-wrap:wrap;height:auto;min-height:var(--barre);padding:6px 10px;row-gap:6px}.barre .titre{display:none}}
+body.sur-carte #platine,body.sur-carte #btn-supprimer,body.sur-carte #btn-detacher,body.activite-reperer #btn-numeros{display:none}
+body.sur-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
+body.sur-carte .outils .couleurs{flex:1 0 100%;min-height:48px}   /* palette ou clavier sur sa ligne : la carte ne saute pas quand le clavier change */
+#carte svg .trait,#carte svg .tirets{display:none;fill:none;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+#carte svg .trait.pose,#carte svg .tirets.pose{display:inline}
+#carte svg .tirets{stroke:#f5d90a;stroke-dasharray:4 4}
+#carte svg .hit{fill:none;stroke:transparent;stroke-width:9;stroke-linecap:round;pointer-events:stroke;cursor:pointer}
+#carte svg .hit.courant{stroke:var(--orange);stroke-opacity:.5;animation:pulse 1s infinite}
+#carte svg .hit.faux{stroke:var(--ko);stroke-opacity:.45;stroke-dasharray:3 3}
+#carte svg .cible{fill:transparent;stroke:none;pointer-events:all;cursor:pointer}
+#carte svg .cible.courant{fill:rgba(255,107,53,.25);stroke:var(--orange);stroke-width:1.5;animation:pulse 1s infinite}
+#carte svg .cible.faux{fill:rgba(192,57,43,.18);stroke:var(--ko);stroke-width:1.2}
+#carte svg .rep-borne{font:bold 8px Calibri,Arial,sans-serif;fill:var(--bleu);paint-order:stroke;stroke:#fff;stroke-width:2.4px;pointer-events:none}
+#carte svg .rep-borne.vide{fill:#98a6b5}
+#carte svg .rep-borne.juste{fill:var(--ok)}
+#carte svg .rep-borne.faux{fill:var(--ko)}
+.outils .couleur.potentiel{width:auto;min-width:64px}
+.outils .couleur.potentiel span{display:block;font:bold 16px "Trebuchet MS",Arial,sans-serif;color:#fff;text-shadow:0 0 3px #000,0 0 2px #000}
+.outils .touche{min-width:56px;font:bold 20px "Trebuchet MS",Arial,sans-serif;color:var(--bleu)}
+.fiche .modes .act{flex:0 0 88px;align-self:center;font-weight:700;font-size:15px;color:var(--txt)}
