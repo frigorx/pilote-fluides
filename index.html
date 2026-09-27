@@ -388,6 +388,9 @@
   .volet-bloc h3 { margin:0 0 3px; font-family:var(--titre); font-size:14.5px; color:var(--bleu); }
   .volet-bloc p { margin:0; font-size:13px; line-height:1.45; color:var(--mut); }
   .volet-bloc.ouvert { background:#fff7f3; border-color:#ffd9c7; }
+  .volet-actus { list-style:none; margin:4px 0 6px; padding:0; font-size:13px; line-height:1.45; color:var(--mut); }
+  .volet-actus li { margin:0 0 5px; }
+  .volet-actus li strong { color:var(--txt); }
   .volet-libre { display:inline-block; margin-top:6px; font-size:11px; font-weight:bold;
                  color:var(--mut); background:#e7eff7; border-radius:999px; padding:2px 9px; }
   .volet-pied { margin:4px 0 0; font-size:11.5px; line-height:1.5; color:var(--mut); }
@@ -555,10 +558,11 @@
 
     <div class="volet-bloc">
       <h3>📰 Actualités</h3>
-      <p><strong>27 septembre 2026 — le simulateur de câblage.</strong> Quinze exercices, la puissance puis la commande, <a href="cablage-virtuel/">à câbler sur l’écran</a>. <strong>26 septembre 2026 — <a href="formarezo/">FormaRézo</a>, le réseau des séances, et le livre 2.0 d’<a href="hocourant/">HoCourant</a>.</strong> <strong>17 septembre 2026 — six réseaux, un nouvel accueil.</strong> Chaque réseau avec sa carte en vignette, le grand plan sur <a href="plan.html">sa propre page</a>, la recherche dès l'entrée. <strong>28 août 2026 — quatre réseaux.</strong> Le plan thermo-techno (108 stations), le réseau Législation (niveau BTS, en construction), <strong>HydroMétro</strong> (hydraulique CVC, 22 stations) et <strong>AéroRézo</strong>, le nouveau réseau d’aéraulique (36 stations, trois profondeurs) — prototype en cours d’évaluation.<br>
-      🚧 <strong>Réseau en travaux</strong> : les contenus continuent d’être relus et améliorés.<br>
-      <!-- Le détail vit dans le journal, sur l'accueil : un seul endroit tenu à
-           jour, pas deux listes qui divergent au premier ajout. -->
+      <!-- Rempli par le script du volet avec les trois dernières dates du journal
+           #nouveautes (27/09, F. Henninot : « rentrer quelque chose à chaque fois
+           qu'on améliore le site ») : on n'écrit plus qu'à un seul endroit. -->
+      <ul class="volet-actus" id="volet-actus"></ul>
+      <p>🚧 <strong>Réseau en travaux</strong> : les contenus continuent d’être relus et améliorés.<br>
       <a href="#nouveautes" data-vers-journal><strong>📔 Tout ce qui a changé, par date ▸</strong></a></p>
     </div>
 
@@ -907,7 +911,8 @@
        EN HAUT du corps, et la date du <summary> mise au même jour. Les
        anciennes sections descendent, on n'en supprime aucune : c'est
        l'archive. Le lien de chaque station pointe vers sa page, pour
-       qu'on y aille d'un clic.
+       qu'on y aille d'un clic. Le volet « Actualités » (à gauche) lit
+       ses trois dernières dates ICI : rien à recopier ailleurs.
        =================================================================== -->
   <details class="nouveautes" id="nouveautes">
     <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 27 septembre 2026</span></summary>
@@ -917,6 +922,8 @@
       <ul>
         <li><span class="nv-etiq nv-neuf">nouvel outil</span><a href="cablage-virtuel/">🔌 Le simulateur de câblage</a>
           <span class="d">— l’élève lit le schéma, trouve les numéros des bornes et pose les fils sur la platine, au doigt sur la tablette ou à la souris. Trois temps : colorier les conducteurs, repérer les bornes, câbler. Trois modes : guidé, aidé (chaque aide est comptée), réel (contrôle à la fin, comme à l’épreuve). Quinze exercices, de l’allumage simple à la chambre froide négative : la puissance, puis la commande (auto-maintien, inversion du sens de marche, étoile-triangle, pump-down, dégivrage). La platine se montre en symboles ou avec les vrais appareils. <strong>Prototype en relecture</strong> ; sur téléphone, l’écran est trop petit.</span></li>
+        <li><span class="nv-etiq">amélioration</span><strong>Les actualités, à jour en haut du panneau</strong>
+          <span class="d">— le panneau de gauche affiche désormais les trois dernières mises à jour du site, datées, avec un lien vers chacune.</span></li>
       </ul>
 
       <h3>26 septembre 2026</h3>
@@ -1139,6 +1146,23 @@
       p = document.getElementById("volet-poignee"),
       CLE = "edu_volet_replie";
 
+  /* Les actualités du volet sont LUES dans le journal #nouveautes, jamais recopiées :
+     les trois dernières dates, et pour chacune le titre de ce qui a changé. */
+  var actus = document.getElementById("volet-actus"),
+      dates = document.querySelectorAll("#nouveautes .nv-corps > h3");
+  for (var d = 0; actus && d < dates.length && d < 3; d++) {
+    var li = document.createElement("li"), date = document.createElement("strong");
+    date.textContent = dates[d].textContent + " — ";
+    li.appendChild(date);
+    var ul = dates[d].nextElementSibling;
+    var titres = ul ? ul.querySelectorAll(":scope > li > a, :scope > li > strong") : [];
+    for (var t = 0; t < titres.length; t++) {
+      if (t) li.appendChild(document.createTextNode(" · "));
+      li.appendChild(titres[t].cloneNode(true));
+    }
+    actus.appendChild(li);
+  }
+
   function poser(replie) {
     v.classList.toggle("replie", replie);
     v.setAttribute("aria-hidden", replie ? "true" : "false");
@@ -1182,7 +1206,7 @@
     p.textContent = "";
     var tete = span("ap-tete", ""); tete.appendChild(span("", "📰 Actualités & espaces")); tete.appendChild(span("ap-tout", "Tout voir ▸"));
     p.appendChild(tete);
-    var actu = blocs[0] && blocs[0].querySelector("strong");
+    var actu = blocs[0] && (blocs[0].querySelector("li") || blocs[0].querySelector("strong"));
     if (actu) p.appendChild(span("ap-actu", texte(actu)));
     if (blocs[1]) p.appendChild(span("ap-appel", texte(blocs[1].querySelector("h3")) + " — " + texte(blocs[1].querySelector("strong")) + " cherche des bêta-testeurs"));
     var puces = span("ap-puces", "");

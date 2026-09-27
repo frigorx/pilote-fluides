@@ -1165,6 +1165,10 @@
 > récente en haut, rien ne se supprime. Le volet « Actualités » ne duplique plus : il y renvoie.
 > Pour la prochaine mise à jour : une section `<h3>date</h3>` en haut du corps du journal, et la
 > date du `<summary>` au même jour.
+> **27/09/2026** — le bloc « 📰 Actualités » du volet se remplit TOUT SEUL : le script du volet
+> lit les trois dernières `<h3>` du journal et le titre de chaque `<li>` (`> a` ou `> strong`).
+> Plus rien à recopier dans le volet. Règle de F. Henninot : **chaque amélioration livrée sur
+> inerweb.fr a son entrée au journal**, le jour même.
 >
 > ⚠️ **Défaut de mise en page du gabarit, trouvé en vérifiant** : les items de grille valent
 > `min-width:auto`, donc la colonne d'atelier sort de sa carte et passe hors écran, masquée par
