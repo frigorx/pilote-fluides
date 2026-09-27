@@ -1,12 +1,58 @@
 # PROMPT-REPRISE — le réseau Législation
 
 > **À LIRE EN PREMIER** dans toute nouvelle session sur ce chantier.
-> Ouvert le 23/08/2026. Dernière mise à jour : **24/08/2026** — 29 stations en ligne,
-> et le cap passe aux illustrations **animées**, branche par branche.
+> Ouvert le 23/08/2026. Dernière mise à jour : **27/09/2026** — audit complet des
+> 29 stations, plan replié pour tenir dans la page, scènes Codex, quiz rééquilibrés.
+> (Les sections datées du 24/08 restent vraies sauf mention contraire ci-dessous.)
 > La vérité du réseau technique voisin reste le `REPRISE.md` à la racine du dépôt ;
 > ce fichier-ci est la vérité DU RÉSEAU LÉGISLATION.
 
 **En ligne** : https://inerweb.fr/legislation/
+
+## ▶ 27/09/2026 — audit complet, plan replié, scènes (état qui fait foi)
+
+Demande de F. Henninot : « le réseau est en partie tronqué, audit entier de tout ce
+qui se dit et se fait, plus de visuel, avec Codex ». Plan et pièces :
+`.planning/2026-09-27-legislation-audit/` (task_plan, findings, `audit-<branche>.md`,
+`corrections-<branche>.md`, briefs).
+
+**Ce qui a changé :**
+- **Le plan tient dans la page.** Le SVG faisait 1 790 unités pour une page de
+  1 080 px : le quart droit (Certifications, Droit du travail) était caché à tout le
+  monde. Une ligne mère se replie désormais en **rangées de 4 têtes** (`parRang`),
+  elle fait un coude à droite et revient ; `W = 1070`, `H` calculé, `rangees()`,
+  `trace()`, `fleche()`. Halo blanc sous les sous-titres de tête (ils étaient
+  traversés par le trait), **une icône par tête** (`ico`).
+- **Voix : dette réglée depuis le 02/09** (commits 6e77dd97 → 40f7c878) — MP3 edge-tts
+  servis, index global `moteur/voix-index.js`, 88 narrations réécrites. Les commentaires
+  HTML des 29 stations qui disaient le contraire sont corrigés ; les stations sont
+  revenues en **LF** (elles étaient en CRLF sur le disque).
+- **Audit par branche (6 agents Sonnet, lecture seule)** : aucune valeur non sourcée
+  nulle part — la doctrine a tenu. Défauts trouvés et corrigés : quiz devinables (bonne
+  réponse toujours la plus longue, jamais en position 1 ou 4), narrations qui décrivaient
+  la géométrie (Impact), correspondances « en préparation » vers des stations ouvertes
+  (11 stations, liens réels posés), textes périmés des FOND DESP, note de fabrication
+  visible dans un SVG, pictogramme GHS07/GHS08 (risques-chimique), pressostat de
+  sécurité à réarmement manuel (desp-soupapes, écran 7 — **à confirmer par F. Henninot**),
+  textes SVG qui débordaient (tspan).
+- **Scènes Codex** (décisions F. Henninot 27/09 : *dessin inerWeb*, *marque inerWeb*) :
+  une scène par sous-ligne ouverte, `img/scene-<branche>.webp`, consignes conservées
+  dans `img/consignes/`, posée en tête de l'accueil de chaque station par
+  `outils/poser-les-scenes.mjs` (idempotent), masquée à l'impression.
+- Outils : `.planning/…/planches.mjs` (planches-contact des 232 SVG) ; captures par
+  Chrome sans fenêtre (`--headless=new --screenshot`) quand le volet navigateur expire.
+
+**Narrations modifiées → MP3 à refabriquer** (chaîne edge-tts, feu vert du 24/08) :
+listées dans chaque `corrections-<branche>.md` (Impact : 8 écrans ; DESP : soupapes
+écran 7 ; autres : voir comptes rendus).
+
+**Reste pour F. Henninot** (les comptes rendus en portent le détail) :
+1. Arbitrer `VALEURS-A-VALIDER-DESP.md` (attend depuis le 26/08).
+2. Confirmer le réarmement manuel du pressostat de sécurité (desp-soupapes-securites).
+3. Le plan affiche « PS > 0,5 bar » sous « La directive » (valeur sourcée, non arbitrée).
+4. Les « ce qui manque » par station (2-3 lignes chacune) : ajouter ou non.
+5. Relecture métier (`data-prototype` toujours posé), codes du référentiel dans les
+   stations fluidiques.
 
 ## Ce que c'est
 

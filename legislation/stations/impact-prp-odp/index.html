@@ -22,13 +22,13 @@
      C'est un écart assumé entre le chrome du site et l'illustration.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr.
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      data-prototype : station non relue par F. Henninot, à valider avant
      diffusion. Voir FOND.md pour les points laissés « à sourcer ».
@@ -64,6 +64,7 @@
   <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
   <h1>PRP &amp; ODP — deux impacts à ne pas confondre</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-impact.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -210,8 +211,8 @@
       <figcaption>Rappel de l'écran 4 — le piège du R-410A.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">Il ne détruit pas l'ozone, mais il réchauffe fortement le climat s'il fuit</button>
-      <button type="button" data-answer="b">Il ne présente aucun risque environnemental</button>
+      <button type="button" data-answer="bonne">Il ne détruit pas l'ozone, mais réchauffe fortement le climat</button>
+      <button type="button" data-answer="b">Il ne présente pas de risque pour l'environnement</button>
       <button type="button" data-answer="c">Un PRP aussi élevé voudrait dire qu'il attaque l'ozone</button>
       <button type="button" data-answer="d">Un ODP nul rendrait son PRP sans importance</button>
     </div>
@@ -245,7 +246,7 @@
       <button type="button" data-answer="a">Faire la moyenne des deux valeurs</button>
       <button type="button" data-answer="bonne">Retenir la valeur la plus élevée</button>
       <button type="button" data-answer="c">Retenir la valeur la plus ancienne</button>
-      <button type="button" data-answer="d">Retenir la valeur la plus basse, par prudence commerciale</button>
+      <button type="button" data-answer="d">Retenir la valeur la plus basse</button>
     </div>
     <p class="feedback" hidden data-explication="La moyenne masquerait une partie du risque réel. L'ancienneté d'une source ne dit rien de sa fiabilité. Retenir la valeur la plus basse minimiserait l'impact affiché : la règle maison retient toujours la valeur la plus pénalisante."></p>
   </section>
@@ -260,7 +261,7 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">Impact identique, seule la masse compte</button>
       <button type="button" data-answer="b">La fuite d'ammoniac pèserait plus lourd, car son ODP est nul</button>
-      <button type="button" data-answer="c">Aucune fuite n'aurait d'impact climatique, seul l'ODP compterait</button>
+      <button type="button" data-answer="c">Une fuite n'aurait pas d'impact climatique, seul l'ODP compterait</button>
       <button type="button" data-answer="bonne">La fuite au R-404A pèse beaucoup plus lourd en équivalent CO₂</button>
     </div>
     <p class="feedback" hidden data-explication="La masse ne suffit pas à juger l'impact : c'est masse × PRP qui compte, et le R-404A a un PRP de 3922 contre un PRP nul pour l'ammoniac. L'ODP nul de l'ammoniac ne dit rien de son PRP — c'est confondre les deux échelles. Et le PRP existe indépendamment de l'ODP : dire que seul l'ODP compterait est faux."></p>
@@ -275,10 +276,10 @@
   <ul>
     <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne)
       — pourquoi les catégories bougent : le règlement pousse vers le CO₂ et l'ammoniac.</li>
-    <li><strong>La RE2020</strong> (sous-ligne Thermique) — en préparation.</li>
+    <li><a href="../thermique-re2020/"><strong>La RE2020</strong></a> (sous-ligne Thermique) — l'indicateur carbone du bâtiment, où le PRP du fluide compte.</li>
     <li><strong>NF EN 378</strong> — en préparation.</li>
   </ul>
-  <p>F-Gaz 3 est ouverte : le lien fonctionne. Les deux autres stations sont
+  <p>F-Gaz 3 et La RE2020 sont ouvertes : les liens fonctionnent. NF EN 378 est
   en préparation sur le plan du réseau.</p>
 </section>
 
@@ -286,15 +287,16 @@
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (une source, zéro divergence). voix.js
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js
      donne la narration, prof-vocal.js enchaîne les écrans tout seul et
      s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

@@ -106,7 +106,7 @@
   .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
   .indice-glisser { display:none; text-align:center; font-size:13px; color:var(--mut); padding:2px 0 10px; }
   @media (max-width: 700px) { .indice-glisser { display:block; } }
-  .plan svg { width:100%; min-width:1280px; display:block; }
+  .plan svg { width:100%; min-width:900px; display:block; }
   .plan text { font-family:Calibri,sans-serif; }
   .plan .st   { fill:var(--bleu); font-size:15px; font-weight:bold; }
   .plan .sst  { fill:var(--mut); font-size:12px; }
@@ -122,7 +122,10 @@
   .plan .dep   { fill:var(--bleu); font-family:var(--titre); font-size:17px; font-weight:bold; }
   .plan .dep-s { fill:var(--mut); font-size:13px; }
   .plan .puce   { fill:#fff; font-family:var(--titre); font-size:14.5px; font-weight:bold; }
-  .plan .puce-s { fill:var(--mut); font-size:12.5px; }
+  /* Le sous-titre d'une tête est centré sur le trait de sa sous-ligne :
+     un halo blanc le garde lisible (27/09 — texte traversé par un tracé). */
+  .plan .puce-s { fill:var(--mut); font-size:12.5px;
+                  paint-order:stroke; stroke:#fff; stroke-width:5px; stroke-linejoin:round; }
   .plan .fin  { fill:var(--ok); font-family:var(--titre); font-size:13px; font-weight:bold; }
 
   @media (prefers-reduced-motion: reduce) {
@@ -274,9 +277,9 @@
   var RESEAU = [
     { nom: "📜 LES RÉGLEMENTATIONS", sous: "le cadre du métier",
       couleur: "#1e40af", jalon: "🏁 Le cadre réglementaire est connu",
-      y: 210, x0: 170, pas: 205,
+      y: 210, x0: 160, pas: 225, parRang: 4,
       filles: [
-        { id: "regl-thermique", nom: "Thermique", sous: "RE2020 & RT existant", couleur: "#92400e",
+        { id: "regl-thermique", ico: "🌡️", nom: "Thermique", sous: "RE2020 & RT existant", couleur: "#92400e",
           stations: [
             { nom: "Pourquoi une RT ?", sous: "de 1974 à la RE2020", href: "stations/thermique-pourquoi-une-rt/" },
             { nom: "La RE2020",         sous: "Bbio · Cep · IC", href: "stations/thermique-re2020/", corr: true },
@@ -285,7 +288,7 @@
             { nom: "Le DPE",            sous: "étiquettes & audit", href: "stations/thermique-dpe/" },
             { nom: "Les CEE",           sous: "financer les travaux", href: "stations/thermique-cee/" }
           ] },
-        { id: "regl-acoustique", nom: "Acoustique", sous: "bruit & voisinage", couleur: "#6d28d9",
+        { id: "regl-acoustique", ico: "🔊", nom: "Acoustique", sous: "bruit & voisinage", couleur: "#6d28d9",
           stations: [
             { nom: "Le bruit en dB",   sous: "dB(A), niveaux" },
             { nom: "Les seuils",       sous: "voisinage, émergence" },
@@ -293,7 +296,7 @@
             { nom: "PAC & voisinage",  sous: "l'unité extérieure" },
             { nom: "Traiter le bruit", sous: "plots, silencieux" }
           ] },
-        { id: "regl-incendie", nom: "Incendie", sous: "ERP, coupe-feu", couleur: "#b91c1c",
+        { id: "regl-incendie", ico: "🔥", nom: "Incendie", sous: "ERP, coupe-feu", couleur: "#b91c1c",
           stations: [
             { nom: "Classer le bâti",   sous: "ERP · IGH · habitation" },
             { nom: "Euroclasses",       sous: "réaction & résistance" },
@@ -302,7 +305,7 @@
             { nom: "Le SSI",            sous: "détection, asservis." },
             { nom: "Sprinkler & RIA",   sous: "eau incendie, lot CVC", corr: true }
           ] },
-        { id: "regl-electrique", nom: "Électrique", sous: "NF C 15-100, habilitation", couleur: "#a16207", corr: true,
+        { id: "regl-electrique", ico: "⚡", nom: "Électrique", sous: "NF C 15-100, habilitation", couleur: "#a16207", corr: true,
           stations: [
             { nom: "NF C 15-100",        sous: "la norme BT" },
             { nom: "Terre & différentiel", sous: "protéger les personnes" },
@@ -311,14 +314,14 @@
             { nom: "L'habilitation",     sous: "B0 · BS · BR", corr: true },
             { nom: "Consigner",          sous: "VAT, les 4 étapes" }
           ] },
-        { id: "regl-fluidique", nom: "Fluidique & thermique", sous: "F-Gaz, EN 378, traçabilité", couleur: "#0f766e", corr: true,
+        { id: "regl-fluidique", ico: "❄️", nom: "Fluidique & thermique", sous: "F-Gaz, EN 378, traçabilité", couleur: "#0f766e", corr: true,
           stations: [
             { nom: "F-Gaz 3",             sous: "2024 : quotas, interdictions", href: "stations/fgaz-3/" },
             { nom: "Aptitude & capacité", sous: "personne & entreprise", href: "stations/aptitude-capacite/" },
             { nom: "NF EN 378",           sous: "classes, charges maxi", corr: true },
             { nom: "Traçabilité",         sous: "BSD, Trackdéchets", corr: true }
           ] },
-        { id: "regl-desp", nom: "La DESP", sous: "équipements sous pression", couleur: "#0c4a6e",
+        { id: "regl-desp", ico: "🛢️", nom: "La DESP", sous: "équipements sous pression", couleur: "#0c4a6e",
           stations: [
             { nom: "La directive",        sous: "2014/68/UE, PS > 0,5 bar", href: "stations/desp-la-directive/" },
             { nom: "Catégories I à IV",   sous: "PS × V, groupe du fluide", href: "stations/desp-categories/", corr: true },
@@ -326,14 +329,14 @@
             { nom: "En service",          sous: "requalification, CTP", href: "stations/desp-en-service/" },
             { nom: "Soupapes & sécurités", sous: "accessoires de protection", href: "stations/desp-soupapes-securites/" }
           ] },
-        { id: "regl-certifs", nom: "Certifications & normes", sous: "RGE, QualiPAC, CE", couleur: "#3730a3",
+        { id: "regl-certifs", ico: "🏅", nom: "Certifications & normes", sous: "RGE, QualiPAC, CE", couleur: "#3730a3",
           stations: [
             { nom: "Loi, norme ou DTU ?", sous: "qui oblige quoi" },
             { nom: "Le marquage CE",      sous: "produits & DoP" },
             { nom: "RGE & QualiPAC",      sous: "les qualifications" },
             { nom: "Les garanties",       sous: "décennale, biennale" }
           ] },
-        { id: "regl-travail", nom: "Droit du travail", sous: "contrats, obligations", couleur: "#9d174d",
+        { id: "regl-travail", ico: "⚖️", nom: "Droit du travail", sous: "contrats, obligations", couleur: "#9d174d",
           stations: [
             { nom: "Le contrat",      sous: "CDI, CDD, apprentissage" },
             { nom: "Temps & paie",    sous: "durée, heures sup" },
@@ -344,9 +347,9 @@
       ] },
     { nom: "🦺 SÉCURITÉ & ENVIRONNEMENT", sous: "prévenir, trier, mesurer l'impact",
       couleur: "#166534", jalon: "🏁 Travailler propre et en sécurité",
-      y: 780, x0: 170, pas: 320,
+      y: 0 /* calculé : sous la dernière rangée de la ligne 1 */, x0: 160, pas: 225, parRang: 4,
       filles: [
-        { id: "secu-risques", nom: "Risques professionnels", sous: "DUERP, EPI, gestes", couleur: "#c2410c",
+        { id: "secu-risques", ico: "⛑️", nom: "Risques professionnels", sous: "DUERP, EPI, gestes", couleur: "#c2410c",
           stations: [
             { nom: "Le DUERP",        sous: "évaluer les risques", href: "stations/risques-duerp/" },
             { nom: "Les 9 principes", sous: "prévenir dans l'ordre", href: "stations/risques-neuf-principes/" },
@@ -355,7 +358,7 @@
             { nom: "Risque chimique", sous: "FDS, CMR, fluides", href: "stations/risques-chimique/" },
             { nom: "Zones ATEX",      sous: "A2L, A3 : zonage", href: "stations/risques-atex/", corr: true }
           ] },
-        { id: "secu-dechets", nom: "Déchets", sous: "tri, BSD, filières", couleur: "#57534e",
+        { id: "secu-dechets", ico: "♻️", nom: "Déchets", sous: "tri, BSD, filières", couleur: "#57534e",
           stations: [
             { nom: "Responsabilités",    sous: "producteur, détenteur", href: "stations/dechets-responsabilites/" },
             { nom: "Trier : 7 flux",     sous: "la benne juste", href: "stations/dechets-sept-flux/" },
@@ -363,7 +366,7 @@
             { nom: "La REP bâtiment",    sous: "reprise, éco-organismes", href: "stations/dechets-rep-batiment/" },
             { nom: "Valoriser",          sous: "réemploi, recyclage", href: "stations/dechets-valoriser/" }
           ] },
-        { id: "secu-impact", nom: "Impact environnemental", sous: "PRP, cycle de vie", couleur: "#047857",
+        { id: "secu-impact", ico: "🌍", nom: "Impact environnemental", sous: "PRP, cycle de vie", couleur: "#047857",
           stations: [
             { nom: "PRP & ODP",         sous: "l'impact d'un fluide", href: "stations/impact-prp-odp/", corr: true },
             { nom: "Le TEWI",           sous: "direct + indirect", href: "stations/impact-tewi/" },
@@ -375,9 +378,19 @@
   ];
 
   /* --- Géométrie : calculée, jamais saisie par station. -------------- */
-  var W = 1790, DEP_Y = 140, H = 1330;
+  /* 27/09 : le plan s'étalait sur 1 790 unités pour une page de 1 080 px —
+     le quart droit (Certifications, Droit du travail) restait caché à tout
+     le monde. Une ligne mère se replie désormais en RANGÉES de parRang
+     têtes : elle fait un coude à droite, redescend, revient vers la gauche.
+     Tout tient dans W, sans défilement ; la hauteur H se calcule. */
+  var W = 1070, DEP_Y = 140;
+  var X_TRONC = 40;           /* le tronc du DÉPART, à gauche des cartouches */
+  var X_DROITE = W - 30;      /* le coude, au-delà des libellés de la 4e colonne */
+  var X_TERMINUS = 110;       /* fin d'une rangée qui revient vers la gauche */
   var TETE_CART = 38;      /* cartouche de tête, sous la gare de jonction */
   var ST_0 = 124, ST_PAS = 66;   /* première station d'une colonne, puis le pas */
+  var ENTRE_RANGS = 96;    /* de la dernière station d'une rangée à la ligne suivante */
+  var ENTRE_LIGNES = 150;  /* idem entre deux lignes mères : place au cartouche */
 
   function esc(v) {
     return String(v).replace(/[&<>"']/g, function (c) {
@@ -439,10 +452,10 @@
     d.push(flux("M " + x + " " + y + " V " + (y + fin), f.couleur, 6));
     if (f.corr) d.push('<circle cx="' + x + '" cy="' + y + '" r="15" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>');
     d.push('<circle cx="' + x + '" cy="' + y + '" r="9" fill="#ffffff" stroke="' + f.couleur + '" stroke-width="4.5"></circle>');
-    var w = Math.round(f.nom.length * 7.4 + 30);
+    var w = Math.round(f.nom.length * 7.4 + 30) + (f.ico ? 24 : 0);
     d.push('<g><title>' + esc(f.nom) + " — sous-ligne en préparation</title>" +
            '<rect x="' + (x - w / 2) + '" y="' + (y + TETE_CART) + '" width="' + w + '" height="30" rx="15" fill="' + f.couleur + '"></rect>' +
-           '<text class="puce" x="' + x + '" y="' + (y + TETE_CART + 20) + '" text-anchor="middle">' + esc(f.nom) + "</text></g>");
+           '<text class="puce" x="' + x + '" y="' + (y + TETE_CART + 20) + '" text-anchor="middle">' + (f.ico ? f.ico + " " : "") + esc(f.nom) + "</text></g>");
     d.push('<text class="puce-s" x="' + x + '" y="' + (y + TETE_CART + 46) + '" text-anchor="middle">' + esc(f.sous) + "</text>");
     f.stations.forEach(function (s, i) {
       var yy = y + ST_0 + i * ST_PAS;
@@ -451,41 +464,72 @@
     return d.join("");
   }
 
-  /* Une LIGNE MÈRE : cartouche à gauche, trait jusqu'à la flèche
-     (toujours au-delà de la dernière tête — piège documenté du plan
-     principal), puis les têtes de sous-lignes, puis le jalon sous la
-     plus longue colonne. */
+  /* Les RANGÉES d'une ligne mère : parRang têtes par rangée ; la hauteur
+     d'une rangée suit sa colonne la plus longue. */
+  function rangees(l) {
+    var r = [], y = l.y;
+    for (var i = 0; i < l.filles.length; i += l.parRang) {
+      var filles = l.filles.slice(i, i + l.parRang), bas = 0;
+      filles.forEach(function (f) { bas = Math.max(bas, f.stations.length); });
+      var fin = y + ST_0 + (bas - 1) * ST_PAS + 14;
+      r.push({ y: y, filles: filles, fin: fin });
+      y = fin + ENTRE_RANGS;
+    }
+    return r;
+  }
+
+  /* Le TRACÉ d'une ligne mère : du tronc commun, vers la droite sur la
+     première rangée, coude, retour vers la gauche sur la deuxième, et
+     ainsi de suite. Le trait court toujours au-delà de la dernière tête
+     (piège documenté du plan principal). */
+  function trace(l) {
+    var r = rangees(l), p = "M " + X_TRONC + " " + DEP_Y + " V " + r[0].y + " H " + X_DROITE;
+    for (var i = 1; i < r.length; i++) p += " V " + r[i].y + " H " + (i % 2 ? X_TERMINUS : X_DROITE);
+    return p;
+  }
+
+  /* La FLÈCHE au bout du tracé : à droite si la dernière rangée va vers
+     la droite, à gauche sinon. */
+  function fleche(l) {
+    var r = rangees(l), y = r[r.length - 1].y, versDroite = r.length % 2 === 1;
+    var x = versDroite ? X_DROITE : X_TERMINUS, s = versDroite ? 16 : -16;
+    return '<polygon points="' + x + "," + (y - 8) + " " + (x + s) + "," + y + " " + x + "," + (y + 8) + '" fill="' + l.couleur + '"></polygon>';
+  }
+
+  /* Une LIGNE MÈRE : cartouche à gauche, flèche, puis les têtes de
+     sous-lignes rangée par rangée, puis le jalon sous la dernière rangée. */
   function mere(l) {
-    var d = [];
-    d.push('<polygon points="1690,' + (l.y - 8) + " 1706," + l.y + " 1690," + (l.y + 8) + '" fill="' + l.couleur + '"></polygon>');
+    var d = [], r = rangees(l);
+    d.push(fleche(l));
     var wh = Math.round(l.nom.length * 7.4 + 30);
-    d.push('<rect x="70" y="' + (l.y - 84) + '" width="' + wh + '" height="30" rx="15" fill="' + l.couleur + '"></rect>' +
-           '<text class="puce" x="' + (70 + wh / 2) + '" y="' + (l.y - 64) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
-    d.push('<text class="puce-s" x="' + (70 + wh / 2) + '" y="' + (l.y - 38) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
-    var bas = 0;
-    l.filles.forEach(function (f, i) {
-      d.push(tete(f, l.x0 + i * l.pas, l.y));
-      bas = Math.max(bas, f.stations.length);
+    d.push('<rect x="90" y="' + (l.y - 84) + '" width="' + wh + '" height="30" rx="15" fill="' + l.couleur + '"></rect>' +
+           '<text class="puce" x="' + (90 + wh / 2) + '" y="' + (l.y - 64) + '" text-anchor="middle">' + esc(l.nom) + "</text>");
+    d.push('<text class="puce-s" x="' + (90 + wh / 2) + '" y="' + (l.y - 38) + '" text-anchor="middle">' + esc(l.sous) + "</text>");
+    r.forEach(function (rg) {
+      rg.filles.forEach(function (f, i) { d.push(tete(f, l.x0 + i * l.pas, rg.y)); });
     });
-    d.push(jalon(l.jalon, 1550, l.y + ST_0 + (bas - 1) * ST_PAS + 40));
+    d.push(jalon(l.jalon, X_DROITE - 160, r[r.length - 1].fin + 26));
     return d.join("");
   }
 
+  RESEAU[1].y = rangees(RESEAU[0]).slice(-1)[0].fin + ENTRE_LIGNES;
+  var H = rangees(RESEAU[1]).slice(-1)[0].fin + 70;
+
   var d = [];
-  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, onze sous-lignes, 57 stations dont une ouverte : F-Gaz 3, sur la sous-ligne Fluidique et thermique">');
+  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, onze sous-lignes, 57 stations dont 29 ouvertes">');
 
   /* Départ commun en tête : un court tronc vertical dessert les deux
      lignes mères (la verte dessous, la bleue par-dessus sur le segment
      partagé). Le DÉPART vit AU-DESSUS des cartouches — posé sur la
      ligne, il venait s'écraser contre le cartouche de la ligne 1. */
-  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[1].y + " H 1690", RESEAU[1].couleur, 9));
-  d.push(flux("M 60 " + DEP_Y + " V " + RESEAU[0].y + " H 1690", RESEAU[0].couleur, 10));
-  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="#ffffff" stroke="' + RESEAU[0].couleur + '" stroke-width="6"></circle>');
-  d.push('<circle cx="60" cy="' + DEP_Y + '" r="16" fill="none" stroke="' + RESEAU[0].couleur + '" stroke-width="2" opacity="0.6">' +
+  d.push(flux(trace(RESEAU[1]), RESEAU[1].couleur, 9));
+  d.push(flux(trace(RESEAU[0]), RESEAU[0].couleur, 10));
+  d.push('<circle cx="' + X_TRONC + '" cy="' + DEP_Y + '" r="16" fill="#ffffff" stroke="' + RESEAU[0].couleur + '" stroke-width="6"></circle>');
+  d.push('<circle cx="' + X_TRONC + '" cy="' + DEP_Y + '" r="16" fill="none" stroke="' + RESEAU[0].couleur + '" stroke-width="2" opacity="0.6">' +
          '<animate attributeName="r" values="16;30;16" dur="2.4s" repeatCount="indefinite"></animate>' +
          '<animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"></animate></circle>');
-  d.push('<text class="dep" x="60" y="' + (DEP_Y - 46) + '" text-anchor="middle">DÉPART</text>');
-  d.push('<text class="dep-s" x="60" y="' + (DEP_Y - 29) + '" text-anchor="middle">niveau BTS</text>');
+  d.push('<text class="dep" x="' + X_TRONC + '" y="' + (DEP_Y - 46) + '" text-anchor="middle">DÉPART</text>');
+  d.push('<text class="dep-s" x="' + X_TRONC + '" y="' + (DEP_Y - 29) + '" text-anchor="middle">niveau BTS</text>');
 
   RESEAU.forEach(function (l) { d.push(mere(l)); });
 
@@ -500,9 +544,9 @@
      posé par marque.js, jamais écrit à la main. -->
 <script src="../moteur/lisibilite.js"></script>
 <script src="../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
-  <script src="../moteur/voix-index.js?v=20260902-1"></script>
-  <script src="../moteur/prononciation.js?v=20260902-1"></script>
-  <script src="../moteur/voix.js?v=20260902-1"></script>
-  <script src="../moteur/reglage-voix.js?v=20260902-1"></script>
+  <script src="../moteur/voix-index.js?v=20260927-1"></script>
+  <script src="../moteur/prononciation.js?v=20260927-1"></script>
+  <script src="../moteur/voix.js?v=20260927-1"></script>
+  <script src="../moteur/reglage-voix.js?v=20260927-1"></script>
 </body>
 </html>

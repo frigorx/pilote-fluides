@@ -54,6 +54,7 @@
   <p class="fil-sous-ligne">Thermique · niveau BTS</p>
   <h1>La RE2020 — trois exigences, pas une de plus</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-thermique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -189,9 +190,9 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">La performance de la chaudière ou de la pompe à chaleur installée</button>
-      <button type="button" data-answer="bonne">La qualité du bâti — orientation, compacité, isolation — indépendamment des équipements</button>
-      <button type="button" data-answer="b">L'impact carbone des matériaux de construction</button>
-      <button type="button" data-answer="c">La consommation d'eau chaude sanitaire</button>
+      <button type="button" data-answer="bonne">La qualité du bâti, indépendamment des équipements installés</button>
+      <button type="button" data-answer="b">L'impact carbone des matériaux de construction du bâtiment</button>
+      <button type="button" data-answer="c">La consommation d'eau chaude sanitaire du logement</button>
     </div>
     <p class="feedback" hidden data-explication="Le Bbio juge le bâti seul : orientation, compacité, isolation. Les équipements installés n'entrent pas dans son calcul, contrairement au Cep."></p>
   </section>
@@ -204,10 +205,10 @@
       <figcaption>Rappel de l'écran 3 — tous les usages, pas seulement le chauffage.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Uniquement le chauffage</button>
-      <button type="button" data-answer="b">Uniquement le chauffage et l'eau chaude sanitaire</button>
+      <button type="button" data-answer="a">Uniquement le chauffage, sans les autres usages du logement</button>
+      <button type="button" data-answer="b">Uniquement le chauffage et l'eau chaude sanitaire, comme pour la RT2012</button>
+      <button type="button" data-answer="c">Uniquement les auxiliaires : les pompes et les ventilateurs installés</button>
       <button type="button" data-answer="bonne">Chauffage, refroidissement, eau chaude sanitaire, éclairage et auxiliaires</button>
-      <button type="button" data-answer="c">Uniquement les auxiliaires, pompes et ventilateurs</button>
     </div>
     <p class="feedback" hidden data-explication="Le Cep additionne tous les usages d'énergie du bâtiment : chauffage, refroidissement, eau chaude sanitaire, éclairage et auxiliaires — pas seulement le chauffage."></p>
   </section>
@@ -220,8 +221,8 @@
       <figcaption>Rappel de l'écran 5 — pas de compensation entre les trois exigences.</figcaption>
     </figure>
     <div class="quiz-options">
+      <button type="button" data-answer="bonne">Non, chaque exigence a son propre seuil, sans compensation</button>
       <button type="button" data-answer="a">Oui : le bon résultat sur l'IC compense le dépassement du Bbio</button>
-      <button type="button" data-answer="bonne">Non : chaque exigence a son propre seuil, sans compensation entre elles</button>
       <button type="button" data-answer="b">Oui, mais seulement si le Cep est lui aussi excellent</button>
       <button type="button" data-answer="c">Non, mais seulement pour les bâtiments tertiaires</button>
     </div>
@@ -237,8 +238,8 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Parce que la pompe à chaleur est obligatoire dans la RE2020</button>
-      <button type="button" data-answer="bonne">Parce que l'IC compte tout le cycle de vie et pénalise les énergies carbonées à l'usage</button>
       <button type="button" data-answer="b">Parce que le Bbio impose un équipement électrique</button>
+      <button type="button" data-answer="bonne">Parce que l'IC pénalise les énergies carbonées à l'usage</button>
       <button type="button" data-answer="c">Parce que le Cep interdit le gaz depuis la RE2020</button>
     </div>
     <p class="feedback" hidden data-explication="L'IC additionne l'impact carbone sur tout le cycle de vie, énergie comprise. Une énergie carbonée pèse plus lourd dans ce calcul, ce qui fait pencher le choix vers la pompe à chaleur — ce n'est pas une obligation directe."></p>
@@ -258,26 +259,25 @@
       — l'histoire qui mène à la RE2020, et ce que la RT2012 mesurait déjà.</li>
     <li><a href="../thermique-confort-ete/"><strong>Le confort d'été</strong></a> (même sous-ligne)
       — le détail du volet DH, seulement annoncé ici à l'écran 6.</li>
-    <li><strong>ACV &amp; carbone</strong> (sous-ligne Impact environnemental, en préparation)
+    <li><a href="../impact-acv-carbone/"><strong>ACV &amp; carbone</strong></a> (sous-ligne Impact environnemental)
       — l'indicateur IC de la RE2020 est de l'analyse de cycle de vie.</li>
   </ul>
-  <p>Les deux premières stations sont ouvertes : les liens fonctionnent. La
-  troisième est en préparation sur le plan du réseau.</p>
+  <p>Les trois stations sont ouvertes : les liens fonctionnent.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

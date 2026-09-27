@@ -4,9 +4,10 @@
 > Mini-station ≤ 10 min : 8 écrans + 4 questions.
 > **Statut : FOND rédigé le 24/08/2026, EN ATTENTE de validation F. Henninot.**
 >
-> C'est la **première station** de la sous-ligne « La DESP », qui en comptera
+> C'est la **première station** de la sous-ligne « La DESP », qui en compte
 > cinq : cette station, puis desp-categories, desp-marquage-papiers,
-> desp-en-service, desp-soupapes-securites (non ouvertes, non liées).
+> desp-en-service, desp-soupapes-securites — les quatre autres sont
+> ouvertes et déjà reliées depuis le plan du réseau.
 >
 > **Sources internes** : le gabarit structurel de la station
 > « Aptitude & capacité » (mêmes classes, même style d'écriture, même
@@ -109,7 +110,8 @@ de sécurité. Renvoi explicite à une autre station pour le détail (marquage
 
 Récapitulatif des cinq points de la station, mention de la suite de la
 sous-ligne « La DESP » (catégories, marquage & papiers, en service,
-soupapes & sécurités) sans lien — elles ne sont pas encore ouvertes.
+soupapes & sécurités) — toutes ouvertes et reliées depuis le plan du
+réseau.
 
 *Visuel : `svg/bilan-directive.svg` — bande de bilan + quatre pastilles
 « la suite ».*
@@ -130,10 +132,10 @@ indépendamment du fluide ou du coût de fabrication.*
 **Q2.** Un séparateur d'huile installé sur un circuit frigorifique :
 relève-t-il de la directive ?
 - a) Non, seuls les récipients de stockage de fluide neuf sont concernés
-- b) Non, seule la bouteille de fluide frigorigène l'est
+- b) Non, seule la bouteille de fluide frigorigène est concernée par le texte
 - c) Oui, mais uniquement s'il est fabriqué hors de l'Union européenne
-- d) Oui, comme tout équipement sous pression du circuit dépassant le seuil
-  fixé par le texte ✔
+- d) Oui, comme tout équipement du circuit dépassant le seuil fixé par le
+  texte ✔
 *Explication : l'origine de fabrication ou le type d'usage ne changent rien
 au principe du seuil.*
 
@@ -141,17 +143,15 @@ au principe du seuil.*
 - a) La pression maximale que l'équipement est conçu pour supporter ✔
 - b) La pression de service mesurée le jour du contrôle
 - c) La pression atmosphérique du lieu d'installation
-- d) La pression minimale en dessous de laquelle l'équipement doit être
-  vidangé
+- d) La pression en dessous de laquelle l'équipement doit être vidangé
 *Explication : la PS est une donnée de conception fixée par le fabricant,
 pas une mesure instantanée.*
 
 **Q4.** À quoi sert la PS, une fois connue ?
 - a) À calculer la consommation électrique de l'installation
 - b) À fixer la date de la prochaine visite de maintenance
-- c) À servir de référence pour classer l'équipement et tarer ses
-  accessoires de sécurité ✔
-- d) À déterminer le prix de vente de l'équipement
+- c) À classer l'équipement et tarer ses accessoires de sécurité ✔
+- d) À déterminer le prix de vente final de l'équipement
 *Explication : la PS sert de base au classement en catégorie et au tarage
 des accessoires de sécurité.*
 

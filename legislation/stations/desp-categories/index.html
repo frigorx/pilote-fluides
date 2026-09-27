@@ -10,7 +10,7 @@
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://inerweb.fr/legislation/stations/desp-categories/">
 <!-- ===================================================================
-     STATION DU RÉSEAU LÉGISLATION — sous-ligne Fluidique & thermique.
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne « La DESP ».
      Sujet : la logique du classement DESP en catégories I à IV. Aucun
      seuil chiffré de pression, de volume ou de catégorie n'est donné :
      seule la LOGIQUE du croisement pression × volume × groupe du fluide
@@ -22,8 +22,8 @@
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      data-prototype : la station attend sa relecture métier. Voir
      FOND.md, section « Ce qui reste à trancher avant production ».
@@ -59,6 +59,7 @@
   <p class="fil-sous-ligne">La DESP · niveau BTS</p>
   <h1>Catégories I à IV — la logique du classement</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-desp.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -195,7 +196,7 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">Seulement la pression maximale admissible (PS)</button>
       <button type="button" data-answer="b">Le volume et la marque du fabricant uniquement</button>
-      <button type="button" data-answer="bonne">La PS, le volume (ou le diamètre), et le groupe du fluide</button>
+      <button type="button" data-answer="bonne">La PS, le volume ou diamètre et le groupe du fluide</button>
       <button type="button" data-answer="d">Le groupe du fluide et la date de fabrication</button>
     </div>
     <p class="feedback" hidden data-explication="La catégorie ne se lit jamais sur un seul critère : c'est le croisement de la pression, du volume (ou du diamètre) et du groupe du fluide qui la détermine."></p>
@@ -209,12 +210,12 @@
       <figcaption>Rappel de l'écran 3 — dangereux, ou pas.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">Le groupe 1 rassemble les fluides dangereux (explosif, inflammable, toxique, comburant), le groupe 2 les autres</button>
-      <button type="button" data-answer="b">Le groupe 1 concerne les gros volumes, le groupe 2 les petits</button>
-      <button type="button" data-answer="c">Le groupe 1 est réservé aux fluides frigorigènes, le groupe 2 aux autres fluides</button>
+      <button type="button" data-answer="bonne">Le groupe 1 réunit les fluides dangereux, le groupe 2 réunit les autres</button>
+      <button type="button" data-answer="b">Le groupe 1 ne concerne que les gros volumes, le groupe 2 les petits</button>
+      <button type="button" data-answer="c">Le groupe 1 est réservé aux fluides frigorigènes, le groupe 2 aux autres</button>
       <button type="button" data-answer="d">Le groupe 1 dépend du fabricant, le groupe 2 dépend de l'installateur</button>
     </div>
-    <p class="feedback" hidden data-explication="Le groupe 1 rassemble les fluides dangereux au sens de la DESP — la même dangerosité qui structure le classement NF EN 378 des fluides frigorigènes."></p>
+    <p class="feedback" hidden data-explication="Le groupe 1 rassemble les fluides dangereux (explosifs, inflammables, toxiques, comburants) au sens de la DESP — la même dangerosité qui structure le classement NF EN 378 des fluides frigorigènes."></p>
   </section>
 
   <section class="slide question" id="q3" data-narration="Troisième question. Un réservoir tampon change de fluide, sans changer de PS ni de volume. Que peut-il arriver à sa catégorie ? Souvenez-vous de l'écran six.">
@@ -228,7 +229,7 @@
       <button type="button" data-answer="a">Ne peut jamais changer, elle est fixée à la construction</button>
       <button type="button" data-answer="b">Change uniquement si le réservoir change de couleur</button>
       <button type="button" data-answer="c">Dépend désormais de la date de la dernière visite</button>
-      <button type="button" data-answer="bonne">Peut changer, car le groupe du fluide fait partie du classement</button>
+      <button type="button" data-answer="bonne">Peut changer : le groupe du fluide fait partie du classement</button>
     </div>
     <p class="feedback" hidden data-explication="À PS et volume identiques, un changement de fluide peut suffire à changer la catégorie : le groupe du fluide est un des trois critères du classement."></p>
   </section>
@@ -242,7 +243,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Rien : le contrôle est identique quelle que soit la catégorie</button>
-      <button type="button" data-answer="bonne">L'intervention d'un organisme extérieur devient nécessaire, jusqu'à l'inspection par un tiers</button>
+      <button type="button" data-answer="bonne">Un organisme extérieur doit intervenir, jusqu'à l'inspection</button>
       <button type="button" data-answer="c">L'équipement n'a plus besoin de marquage CE</button>
       <button type="button" data-answer="d">Seule la couleur réglementaire de l'équipement change</button>
     </div>
@@ -255,30 +256,32 @@
 <!-- LE MAILLAGE — hors du mode cours. Une seule correspondance mentionnée
      ici : NF EN 378, dont le groupe de fluide alimente directement la
      notion de dangerosité utilisée par le classement DESP. Aucun lien
-     vers les autres stations DESP (pas encore ouvertes) ni vers Sprinkler
-     & RIA (mentionnée ailleurs dans le réseau, pas ici). -->
+     vers les autres stations DESP (la correspondance avec Sprinkler & RIA
+     reste réservée à la station « La directive », pour n'apparaître
+     qu'une seule fois sur l'ensemble des cinq stations DESP). -->
 <section class="maillage">
   <h2>Les correspondances de la station</h2>
   <ul>
     <li><strong>NF EN 378</strong> (même sous-ligne, en préparation)
       — c'est le groupe du fluide au sens de cette norme (A1, A2L, A2, A3, B1, B2L, B2, B3) qui alimente la notion de dangerosité utilisée par le classement DESP : la correspondance est directe.</li>
   </ul>
-  <p>Cette station est en préparation avec les autres du réseau : les liens ouvriront au fur et à mesure.</p>
+  <p>NF EN 378 est en préparation sur le plan du réseau : le lien ouvrira une fois la station publiée.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (une source, zéro divergence). voix.js
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js
      donne la narration, prof-vocal.js enchaîne les écrans tout seul et
      s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

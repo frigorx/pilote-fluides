@@ -110,29 +110,27 @@ chantier au point de reprise, avec le maillon « tri » mis en évidence.*
 
 **Q1.** Que signifie le principe de responsabilité élargie du producteur
 (REP) ?
-- a) Le producteur du déchet paie toujours, quel que soit le déchet ✘
-- b) Celui qui a mis le produit sur le marché finance et organise sa fin de
-  vie ✔
-- c) Seul l'État finance la fin de vie des produits du bâtiment ✘
-- d) Chaque chantier organise sa propre filière de traitement ✘
+- a) Le metteur sur le marché finance la fin de vie ✔
+- b) Le producteur du déchet paie, quel qu'il soit ✘
+- c) Chaque chantier organise sa propre filière de traitement ✘
+- d) Seul l'État finance la fin de vie des produits du bâtiment ✘
 *Explication : la REP déplace la responsabilité de fin de vie vers le
 metteur sur le marché, pas vers celui qui utilise ou jette le produit.*
 
 **Q2.** Quel est le rôle d'un éco-organisme ?
-- a) Il vend les matériaux de construction aux entreprises ✘
-- b) Il organise, avec l'éco-contribution reçue, la collecte et le traitement
-  des déchets ✔
-- c) Il contrôle les chantiers pour vérifier le port des EPI ✘
-- d) Il remplace le registre du producteur de déchets ✘
+- a) Il contrôle les chantiers pour vérifier le port des EPI ✘
+- b) Il finance la collecte grâce à l'éco-contribution reçue ✔
+- c) Il remplace le registre du producteur de déchets ✘
+- d) Il vend les matériaux de construction aux entreprises ✘
 *Explication : l'éco-organisme est l'intermédiaire opérationnel entre le
 financement REP et le terrain.*
 
 **Q3.** Pour un frigoriste, quels déchets relèvent le plus souvent de la REP
 bâtiment ?
-- a) Les fluides frigorigènes récupérés ✘
-- b) Le cuivre de tuyauterie ✘
-- c) Les isolants et gaines utilisés en périphérie de l'intervention ✔
-- d) Les huiles usagées ✘
+- a) Les huiles usagées ✘
+- b) Les fluides frigorigènes récupérés ✘
+- c) Isolants et gaines utilisés en périphérie ✔
+- d) Le cuivre de tuyauterie ✘
 *Explication : le cœur de métier du frigoriste (fluides, cuivre, huiles) suit
 d'autres filières ; la REP bâtiment concerne les matériaux de construction
 qu'il utilise en périphérie.*
@@ -140,9 +138,9 @@ qu'il utilise en périphérie.*
 **Q4.** Un point de reprise refuse un dépôt de chantier. Pourquoi, le plus
 souvent ?
 - a) Parce que le dépôt est gratuit uniquement le matin ✘
-- b) Parce que le déchet est mal trié ou hors du périmètre de la filière ✔
-- c) Parce que les points de reprise n'acceptent aucun professionnel ✘
-- d) Parce que le camion du chantier n'est pas autorisé à circuler ✘
+- b) Parce que les points de reprise sont réservés aux particuliers ✘
+- c) Parce que le camion du chantier n'est pas autorisé à circuler ✘
+- d) Parce que le déchet est mal trié ou hors périmètre ✔
 *Explication : l'accès est conditionné à un tri correct et à un déchet
 couvert par la filière.*
 

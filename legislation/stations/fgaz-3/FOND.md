@@ -151,7 +151,7 @@ texte sur les flèches.*
 
 **Q1.** Le règlement (UE) 2024/573 est entré en application en mars 2024. Que
 remplace-t-il ?
-- a) La directive européenne sur les gaz fluorés
+- a) La directive européenne des gaz fluorés
 - b) Le règlement 517/2014, dit F-Gas II ✔
 - c) Le protocole de Montréal
 - d) L'arrêté du 21 novembre 2025
@@ -170,16 +170,15 @@ subit l'effet : rareté et prix des fluides à fort PRP.*
 **Q3.** Une installation contient 8 kg de R-410A (PRP 2088). Sa charge en
 tonnes équivalent CO₂ vaut environ :
 - a) 1,7 t éq. CO₂
-- b) 8 t éq. CO₂
+- b) 8,0 t éq. CO₂
 - c) 16,7 t éq. CO₂ ✔
 - d) 167 t éq. CO₂
 *Explication : 8 × 2088 ÷ 1000 = 16,7. C'est cette valeur qui déclenche les
 obligations de contrôle d'étanchéité, pas les 8 kg.*
 
 **Q4.** Un fluide dont la mise sur le marché est interdite en équipement neuf :
-- a) Ne peut plus jamais être utilisé, même en maintenance
-- b) Peut, selon l'échéancier, encore servir en maintenance — notamment
-  recyclé ou régénéré ✔
+- a) Ne peut plus être utilisé du tout, même en maintenance
+- b) Peut, selon l'échéancier, encore servir en maintenance ✔
 - c) Doit être détruit immédiatement dans toutes les installations
 - d) Reste autorisé en neuf si le client signe une décharge
 *Explication : l'interdiction « neuf » et les restrictions « maintenance » sont
@@ -191,6 +190,21 @@ parc. Détruire tout le parc du jour au lendemain n'est ni demandé ni possible.
 - **Aptitude & capacité** (même sous-ligne) — qui a le droit de toucher.
 - **PRP & ODP** (Impact environnemental) — d'où vient le chiffre PRP.
 - **Traçabilité** (même sous-ligne) — le fluide récupéré devient déchet tracé.
+
+## À sourcer
+
+Chiffres et échéances cités dans la station, sans article ni annexe précis du
+règlement (UE) 2024/573 rattaché (à retrouver avant tout envoi à Design ;
+aucun chiffre de la station n'est modifié ici) :
+
+- **Seuils de contrôle d'étanchéité** 5 / 50 / 500 t éq. CO₂ (écran 5, Q3 du
+  quiz) — hérités de F-Gas II (règlement 517/2014, art. 4) ; à confirmer que
+  2024/573 les reprend à l'identique, et retrouver l'article ou l'annexe qui
+  les porte.
+- **Échéancier des interdictions en équipement neuf 2025 → 2035** (écran 4) —
+  annexe précise du règlement à identifier.
+- **Horizon 2050** de sortie complète des HFC neufs (écrans 1, 2, 8) —
+  article ou considérant à retrouver.
 
 ## Consignes pour Claude Design (à joindre telles quelles au moment de l'envoi)
 
@@ -232,7 +246,8 @@ stations/fgaz-3/
 > elle donne l'URL propre `stations/fgaz-3/`. Le SVG de l'écran 6 s'appelle
 > `…-categories` et non `…-6cat`, puisqu'il en porte sept.
 
-Écrans 5 et 8 : pas de SVG, mise en forme HTML seule (trois cartes / bilan).
+Écrans 5 et 8 : mise en forme HTML avec un SVG chacun (`trois-obligations.svg`,
+`le-reflexe.svg`), pas seulement du texte.
 
 Chaque SVG : `viewBox` obligatoire, **aucune dimension figée en pixels**, texte
 en `<text>` réel — jamais vectorisé, jamais en image — et lisible une fois

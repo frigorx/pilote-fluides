@@ -168,7 +168,7 @@ Vignettes de rappel réutilisées : Q1 → écran 2 (montreal-1987.svg), Q2 → 
 3. **Voix** : aucun audio n'est fabriqué ; la station parle avec la voix du navigateur.
    Fabrication Piper (locale) à faire après validation du fond, comme sur les autres
    stations du réseau.
-4. **Lien vers une future station « PRP & ODP »** (annoncée dans `legislation/index.html`,
-   ligne 363, sous-ligne Impact environnemental elle aussi) : le dossier n'existe pas
-   encore, donc aucun lien n'a été posé ici — seulement une mention textuelle à l'écran 4.
-   À revoir quand cette station ouvrira.
+4. **Lien vers la station « PRP & ODP »** : la station existe désormais
+   (`impact-prp-odp`, produite le 24/08/2026, même sous-ligne). Le lien
+   `../impact-prp-odp/` a été ajouté au maillage, en plus de la mention
+   textuelle à l'écran 4.

@@ -131,29 +131,30 @@ notice du fabricant à côté.*
 équipement ?
 - a) Seulement la pression maximale admissible (PS)
 - b) Le volume et la marque du fabricant uniquement
-- c) La PS, le volume (ou le diamètre), et le groupe du fluide ✔
+- c) La PS, le volume ou diamètre et le groupe du fluide ✔
 - d) Le groupe du fluide et la date de fabrication
 *Explication : la catégorie ne se lit jamais sur un seul critère — c'est
 le croisement de la pression, du volume (ou du diamètre) et du groupe du
 fluide qui la détermine.*
 
 **Q2.** Qu'est-ce qui distingue le groupe 1 du groupe 2 ?
-- a) Le groupe 1 rassemble les fluides dangereux (explosif, inflammable,
-  toxique, comburant), le groupe 2 les autres ✔
-- b) Le groupe 1 concerne les gros volumes, le groupe 2 les petits
+- a) Le groupe 1 réunit les fluides dangereux, le groupe 2 réunit les
+  autres ✔
+- b) Le groupe 1 ne concerne que les gros volumes, le groupe 2 les petits
 - c) Le groupe 1 est réservé aux fluides frigorigènes, le groupe 2 aux
-  autres fluides
+  autres
 - d) Le groupe 1 dépend du fabricant, le groupe 2 dépend de l'installateur
-*Explication : le groupe 1 rassemble les fluides dangereux au sens de la
-DESP — la même dangerosité qui structure le classement NF EN 378 des
-fluides frigorigènes.*
+*Explication : le groupe 1 rassemble les fluides dangereux (explosifs,
+inflammables, toxiques, comburants) au sens de la DESP — la même
+dangerosité qui structure le classement NF EN 378 des fluides
+frigorigènes.*
 
 **Q3.** Un réservoir tampon change de fluide, sans changer de PS ni de
 volume. Sa catégorie…
 - a) Ne peut jamais changer, elle est fixée à la construction
 - b) Change uniquement si le réservoir change de couleur
 - c) Dépend désormais de la date de la dernière visite
-- d) Peut changer, car le groupe du fluide fait partie du classement ✔
+- d) Peut changer : le groupe du fluide fait partie du classement ✔
 *Explication : à PS et volume identiques, un changement de fluide peut
 suffire à changer la catégorie — le groupe du fluide est un des trois
 critères du classement.*
@@ -161,8 +162,7 @@ critères du classement.*
 **Q4.** Plus la catégorie DESP d'un équipement est élevée, qu'est-ce que
 cela change ?
 - a) Rien : le contrôle est identique quelle que soit la catégorie
-- b) L'intervention d'un organisme extérieur devient nécessaire, jusqu'à
-  l'inspection par un tiers ✔
+- b) Un organisme extérieur doit intervenir, jusqu'à l'inspection ✔
 - c) L'équipement n'a plus besoin de marquage CE
 - d) Seule la couleur réglementaire de l'équipement change
 *Explication : plus la catégorie monte, plus le contrôle est lourd —
@@ -192,8 +192,8 @@ le réseau (station desp-la-directive).
 - Gabarit repris : structure identique à la station `aptitude-capacite`
   (12 écrans navigables, `data-narration` par écran, quiz interactif,
   fondu entre écrans).
-- **Voix** : aucun audio fabriqué pour l'instant — narration au moteur du
-  navigateur, comme le gabarit.
+- **Voix** : audio fabriqué le 02/09/2026 (edge-tts) pour les 12 narrations,
+  la voix du navigateur restant le filet de secours.
 - Sortie HTML/SVG uniquement, jamais de bitmap.
 - Police lisible à l'impression A4 noir et blanc (≥ 15 px dans les SVG,
   taille du corps héritée de `styles.css`).

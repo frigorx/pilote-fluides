@@ -177,10 +177,10 @@ compteur qui court.*
 
 **Q1.** Un technicien titulaire d'une attestation d'aptitude rejoint une
 entreprise qui n'a pas d'attestation de capacité. Que peut-il faire ?
-- a) Intervenir : son aptitude suffit, elle est personnelle
-- b) Rien sur les gaz fluorés — il faut aussi la capacité de l'entreprise ✔
+- a) Intervenir : son aptitude personnelle suffit
+- b) Rien : il manque la capacité de l'entreprise ✔
 - c) Intervenir uniquement sur les faibles charges
-- d) Intervenir six mois, le temps que l'entreprise régularise
+- d) Intervenir six mois, le temps de régulariser
 *Explication : les deux papiers sont nécessaires ensemble. L'aptitude est à la
 personne et le suit, la capacité est à l'entreprise. L'une ne remplace jamais
 l'autre.*
@@ -188,16 +188,15 @@ l'autre.*
 **Q2.** Lors de l'évaluation, sur quels groupes le candidat est-il interrogé ?
 - a) Uniquement sur les groupes obligatoires
 - b) Sur les groupes qu'il choisit dans son dossier
-- c) Sur les obligatoires, plus au moins un groupe tiré au sort parmi G6 à G9,
-  plus le groupe spécifique à sa catégorie ✔
-- d) Sur les quatorze groupes, sans exception
+- c) Sur les quatorze groupes, sans exception
+- d) Obligatoires, un groupe G6-G9 au sort, plus sa catégorie ✔
 *Explication : le tirage au sort est là pour empêcher l'impasse — le candidat
 ne sait pas, avant l'évaluation, lequel des quatre sortira.*
 
 **Q3.** Une attestation d'aptitude délivrée sous le régime de 2025 est valable :
-- a) À vie, comme auparavant
-- b) Cinq ans, puis elle doit être repassée entièrement
-- c) Tant qu'une remise à niveau est faite a minima tous les 7 ans ✔
+- a) Tant qu'une remise à niveau a lieu tous les 7 ans ✔
+- b) À vie, comme auparavant
+- c) Cinq ans, puis elle doit être repassée entièrement
 - d) Trois ans, renouvelable une seule fois
 *Explication : c'est la nouveauté du régime. Sans remise à niveau, l'attestation
 est suspendue et son titulaire ne peut plus exercer jusqu'à mise en conformité,
@@ -206,9 +205,8 @@ dans un délai maximum de trois ans.*
 **Q4.** Un technicien détient une attestation de catégorie II obtenue en 2018.
 Que doit-il faire ?
 - a) Rien : les anciennes catégories restent valides sans limite
-- b) Une remise à niveau ponctuelle avant le 12 mars 2029, sinon il devra
-  repasser l'examen ✔
-- c) Repasser immédiatement l'examen complet
+- b) Repasser immédiatement l'examen complet
+- c) Remise à niveau ponctuelle avant le 12 mars 2029 ✔
 - d) Demander la conversion automatique en catégorie A2
 *Explication : l'ancien régime bascule vers le nouveau par une remise à niveau
 ponctuelle. Passé l'échéance, l'attestation n'est plus valide et le titulaire

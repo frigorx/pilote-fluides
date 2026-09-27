@@ -89,16 +89,14 @@ avant de sortir le matériel.
 **Q1.** Le travail en hauteur dans le métier frigoriste est…
 - a) Un cas rare, réservé aux couvreurs
 - b) Une tâche annuelle, pour l'entretien des toitures uniquement
-- c) Une composante ordinaire du métier — toitures, terrasses techniques,
-  groupes en hauteur ✔
+- c) Une composante ordinaire du métier, pas de l'exceptionnel ✔
 - d) Une tâche réservée aux techniciens les plus expérimentés
 *Explication : le métier impose des interventions régulières en hauteur,
 pas seulement pour les couvreurs, pas seulement une fois par an, et pas
 réservées aux plus expérimentés.*
 
 **Q2.** Sur un toit, quelle protection s'installe en premier ?
-- a) Un garde-corps ou une protection collective équivalente, avant tout
-  équipement individuel ✔
+- a) Un garde-corps, avant tout équipement individuel ✔
 - b) Un harnais individuel pour chaque intervenant
 - c) Un système d'alarme sonore en cas de chute
 - d) Une consigne orale rappelée avant l'accès
@@ -110,16 +108,14 @@ vérification. Que doit faire le technicien ?
 - a) L'utiliser normalement, la modification est mineure
 - b) Le vérifier lui-même rapidement avant de monter
 - c) Attendre la prochaine vérification programmée
-- d) Le faire revérifier par une personne compétente avant toute
-  utilisation ✔
+- d) Le faire revérifier par un compétent ✔
 *Explication : toute modification annule la vérification précédente ; seul
 un contrôle par une personne compétente la rétablit.*
 
 **Q4.** Avant d'intervenir sur le groupe de condensation de la terrasse
 technique, que vérifie le technicien ?
 - a) Uniquement l'état du groupe de condensation lui-même
-- b) L'état de l'accès (trappe, escalier) et la présence du garde-corps de
-  la terrasse ✔
+- b) L'état de l'accès, avec la présence du garde-corps ✔
 - c) La météo du jour, rien d'autre
 - d) La disponibilité d'un collègue pour l'accompagner
 *Explication : l'accès et les protections collectives se vérifient avant

@@ -4,7 +4,7 @@
 > Mini-station : 8 écrans + 4 questions = 12 diapositives.
 > Troisième des cinq stations DESP prévues au plan du réseau (La directive ·
 > Catégories I à IV · Marquage & papiers · En service · Soupapes & sécurités)
-> — la seule construite pour l'instant.
+> — les cinq sont construites et reliées depuis le plan du réseau.
 
 Contrairement à la station « Aptitude & capacité », ce fond a été rédigé et
 construit dans le même mouvement (pas de fond soumis séparément avant
@@ -102,9 +102,12 @@ double flèche, bande de synthèse en bas.*
 
 ## Les 4 questions (quiz)
 
+> Règle maison : bonnes réponses mélangées (positions b, d, a, c sur les
+> quatre questions), longueurs équilibrées.
+
 **Q1.** Le CE est sur la plaque, mais rien d'autre n'a été fourni. Que faire ?
 - a) Installer : le marquage CE suffit à lui seul
-- b) Réclamer les deux documents manquants au fabricant avant d'aller plus loin ✔
+- b) Réclamer les documents manquants avant d'aller plus loin ✔
 - c) Rédiger soi-même une déclaration de conformité
 - d) Installer, et demander les documents après coup si besoin
 *Explication : le marquage CE ne remplace ni la déclaration de conformité ni
@@ -113,27 +116,25 @@ l'installateur.*
 
 **Q2.** Sur la plaque, à côté de quoi trouve-t-on le marquage CE ?
 - a) Rien : le marquage CE est seul sur la plaque
-- b) Uniquement le numéro de série
-- c) Le fabricant, la pression maximale admissible (PS), et éventuellement un
-  numéro de série ✔
-- d) Le prix et la date d'achat
+- b) Uniquement le numéro de série de l'équipement
+- c) Le prix et la date d'achat de l'équipement
+- d) Le fabricant, la PS, et parfois un numéro de série ✔
 *Explication : le marquage CE figure aux côtés des autres champs de la
 plaque, il ne les remplace pas.*
 
 **Q3.** Que précise la notice d'instructions ?
-- a) Uniquement le prix de l'équipement
-- b) Les conditions d'utilisation, l'entretien, et les limites — dont la PS ✔
-- c) La liste des autres clients du fabricant
-- d) Rien : elle n'est pas obligatoire
+- a) Conditions, entretien, et limites — dont la PS ✔
+- b) Uniquement le prix de l'équipement à l'achat
+- c) La liste complète des autres clients du fabricant
+- d) Rien : la notice n'est pas obligatoire à fournir
 *Explication : la notice doit être fournie avec l'équipement et précise
 comment l'utiliser, l'entretenir, et ses limites.*
 
 **Q4.** Lors d'un contrôle sur chantier, que doit présenter le frigoriste ?
-- a) Rien, le marquage CE sur l'équipement suffit
-- b) Une attestation d'aptitude personnelle
-- c) Le dossier de l'installation : déclaration de conformité et notice,
-  conservées depuis le montage ✔
-- d) Une facture d'achat de l'équipement
+- a) Rien, le marquage CE sur l'équipement suffit largement
+- b) Une attestation d'aptitude personnelle du frigoriste
+- c) Le dossier de l'installation, conservé depuis le montage ✔
+- d) Une facture d'achat récente de l'équipement
 *Explication : c'est le dossier de l'installation, constitué à partir de la
 documentation reçue avec l'équipement, qui est demandé lors d'un contrôle.*
 
@@ -169,12 +170,10 @@ autorisée à la citer parmi les cinq stations DESP.
 
 ## ⚠️ Ce qui reste à trancher avant production (audio, mise en ligne)
 
-1. **Voix** : aucun audio n'est encore fabriqué. La station parle avec la
-   voix du navigateur en attendant une fabrication Piper, comme les autres
-   stations du réseau.
-2. **Lien depuis `legislation/index.html`** : la station n'y est pas encore
-   reliée (`href` absent pour « Marquage & papiers » dans le bloc `regl-desp`)
-   — hors périmètre de cette tâche, qui interdisait de toucher ce fichier.
+1. **Voix** : audio fabriqué le 02/09/2026 (edge-tts) pour les 12
+   narrations, la voix du navigateur restant le filet de secours.
+2. **Lien depuis `legislation/index.html`** : le lien existe déjà
+   (`legislation/index.html:325`).
 3. **Relecture métier** : la station porte `data-prototype` et attend la
    validation de F. Henninot avant d'être considérée finale.
 

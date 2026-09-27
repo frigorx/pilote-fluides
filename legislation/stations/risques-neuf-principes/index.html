@@ -13,15 +13,15 @@
      STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #start, #listen,
      #stop-voice, #prev, #next, #progression-index, #progression-barre et
      les classes .slide / .slide.active sont le CONTRAT du professeur
      vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur, comme aptitude-capacite.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      Sujet : les neuf principes généraux de prévention. Message central :
      un équipement de protection individuelle n'est pas une solution,
@@ -59,6 +59,7 @@
   <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
   <h1>Les 9 principes — l'EPI n'est jamais le premier réflexe</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-risques.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -256,7 +257,7 @@
       <figcaption>Rappel de l'écran 4 — planifier avant de partir.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">Peut-on éviter d'y monter, ou protéger le bord avant d'y aller</button>
+      <button type="button" data-answer="bonne">Éviter d'y monter, ou protéger le bord</button>
       <button type="button" data-answer="a">Quel harnais choisir pour l'intervention</button>
       <button type="button" data-answer="b">Combien de temps va durer l'intervention</button>
       <button type="button" data-answer="c">Quelle météo est prévue pour la journée</button>
@@ -273,24 +274,24 @@
 <section class="maillage">
   <h2>Les correspondances de la station</h2>
   <ul>
+    <li><a href="../risques-epi/">Les EPI</a> (même sous-ligne) — le dernier maillon de la hiérarchie, en détail : choisir, porter, vérifier, remplacer.</li>
     <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
   </ul>
-  <p>Cette station est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

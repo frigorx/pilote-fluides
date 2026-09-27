@@ -53,6 +53,7 @@
   <p class="fil-sous-ligne">Thermique · niveau BTS</p>
   <h1>Le DPE — lire l'étiquette, connaître ses limites</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-thermique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -188,8 +189,8 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Sur les factures d'énergie des trois dernières années</button>
-      <button type="button" data-answer="bonne">Sur une méthode standardisée, à partir des caractéristiques du bâti et des équipements</button>
       <button type="button" data-answer="b">Sur une déclaration sur l'honneur du propriétaire, sans vérification</button>
+      <button type="button" data-answer="bonne">Sur une méthode standardisée, à partir du bâti et des équipements</button>
       <button type="button" data-answer="c">Sur la moyenne des DPE des logements voisins</button>
     </div>
     <p class="feedback" hidden data-explication="Le DPE utilise une méthode standardisée, calculée à partir des caractéristiques du logement, pas une lecture directe des factures réelles des occupants."></p>
@@ -205,8 +206,8 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">L'étiquette du meilleur des deux résultats</button>
       <button type="button" data-answer="b">Une étiquette moyenne entre les deux résultats</button>
+      <button type="button" data-answer="c">Pas d'étiquette : le DPE ne peut pas trancher</button>
       <button type="button" data-answer="bonne">L'étiquette du moins bon des deux résultats</button>
-      <button type="button" data-answer="c">Aucune étiquette : le DPE ne peut pas trancher</button>
     </div>
     <p class="feedback" hidden data-explication="Le DPE combine consommation d'énergie et émissions de gaz à effet de serre, et retient le moins bon des deux résultats pour l'étiquette finale."></p>
   </section>
@@ -219,8 +220,8 @@
       <figcaption>Rappel de l'écran 4 — visible dès l'annonce, remis avant la signature.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Uniquement si l'acheteur ou le locataire le demande expressément</button>
       <button type="button" data-answer="bonne">Dès l'annonce, puis remis avant la signature</button>
+      <button type="button" data-answer="a">Uniquement si l'acheteur le demande expressément</button>
       <button type="button" data-answer="b">Uniquement après la signature, dans le mois qui suit</button>
       <button type="button" data-answer="c">Uniquement pour les logements neufs</button>
     </div>
@@ -235,10 +236,10 @@
       <figcaption>Rappel de l'écran 7 — une méthode conventionnelle, pas une mesure directe.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Le DPE est toujours identique aux factures, sans exception</button>
-      <button type="button" data-answer="bonne">Le DPE utilise des hypothèses d'usage standard, différentes de l'usage réel des occupants</button>
-      <button type="button" data-answer="b">Les factures ne peuvent jamais être comparées à un DPE</button>
-      <button type="button" data-answer="c">Le DPE mesure uniquement l'eau, jamais l'énergie</button>
+      <button type="button" data-answer="a">Le DPE reste identique aux factures, à quelques détails près</button>
+      <button type="button" data-answer="bonne">Le DPE part d'hypothèses d'usage standard, différentes de l'usage réel</button>
+      <button type="button" data-answer="b">Les factures ne se comparent pas au DPE, ce sont deux mondes séparés</button>
+      <button type="button" data-answer="c">Le DPE mesure la consommation d'eau, pas celle d'énergie</button>
     </div>
     <p class="feedback" hidden data-explication="Le DPE repose sur une méthode conventionnelle avec des hypothèses d'usage standard. La consommation réelle dépend de l'usage effectif des occupants, ce qui peut créer un écart."></p>
   </section>
@@ -262,15 +263,15 @@
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

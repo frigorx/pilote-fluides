@@ -52,6 +52,7 @@
   <p class="fil-sous-ligne">Thermique · niveau BTS</p>
   <h1>RT de l'existant — rénover, un cadre à part</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-thermique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -185,28 +186,28 @@
       <figcaption>Rappel de l'écran 1 — un cadre distinct du neuf.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">De la RE2020, exactement comme un bâtiment neuf</button>
       <button type="button" data-answer="bonne">De la RT existant, un cadre distinct pensé pour rénover</button>
-      <button type="button" data-answer="b">D'aucun cadre réglementaire tant qu'on ne construit pas</button>
+      <button type="button" data-answer="a">De la RE2020, exactement comme un bâtiment neuf</button>
+      <button type="button" data-answer="b">D'un cadre réglementaire seulement à la construction neuve</button>
       <button type="button" data-answer="c">De la RT2012, qui reste le seul texte applicable à l'existant</button>
     </div>
     <p class="feedback" hidden data-explication="La RE2020 s'applique au neuf. Un bâtiment déjà construit relève d'un cadre distinct, la RT existant, pensé pour les travaux de rénovation."></p>
   </section>
 
-  <section class="slide question" id="q2" data-narration="Deuxième question. Quand vous remplacez une seule chaudière, qu'est-ce qui est jugé ? Reprenez le schéma de l'écran trois si besoin.">
+  <section class="slide question" id="q2" data-narration="Deuxième question. Quand vous remplacez une seule fenêtre, qu'est-ce qui est jugé ? Reprenez le schéma de l'écran trois si besoin.">
     <p class="numero">Question 2 sur 4</p>
-    <h2 tabindex="-1">Remplacer une seule chaudière : qu'est-ce qui est jugé ?</h2>
+    <h2 tabindex="-1">Remplacer une seule fenêtre : qu'est-ce qui est jugé ?</h2>
     <figure class="vignette">
       <img src="svg/renovation-par-element.svg" alt="Vignette de rappel : une seule fenêtre mise en évidence sur une maison en trait fin, reliée à une jauge de niveau minimal.">
       <figcaption>Rappel de l'écran 3 — un seul composant, une seule exigence.</figcaption>
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">La performance globale de tout le bâtiment</button>
-      <button type="button" data-answer="bonne">Uniquement la chaudière remplacée, contre son niveau minimal propre</button>
-      <button type="button" data-answer="b">Rien : un remplacement isolé n'entraîne aucune exigence</button>
-      <button type="button" data-answer="c">Le bâti seul, isolation et fenêtres, jamais les équipements</button>
+      <button type="button" data-answer="b">Rien : un remplacement isolé échappe à l'exigence réglementaire</button>
+      <button type="button" data-answer="bonne">Uniquement la fenêtre remplacée, contre son niveau minimal propre</button>
+      <button type="button" data-answer="c">La toiture et les murs porteurs, sans les menuiseries posées</button>
     </div>
-    <p class="feedback" hidden data-explication="La rénovation par élément juge uniquement le composant remplacé, ici la chaudière, contre le niveau minimal fixé pour son type. Le reste du bâtiment n'est pas concerné."></p>
+    <p class="feedback" hidden data-explication="La rénovation par élément juge uniquement le composant remplacé, ici la fenêtre, contre le niveau minimal fixé pour son type. Le reste du bâtiment n'est pas concerné."></p>
   </section>
 
   <section class="slide question" id="q3" data-narration="Troisième question. Qu'est-ce qui déclenche concrètement l'exigence par élément ? Repensez à la clé plate de l'écran cinq.">
@@ -217,7 +218,7 @@
       <figcaption>Rappel de l'écran 5 — le geste de remplacement lui-même.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Un projet de rénovation globale décidé par le propriétaire</button>
+      <button type="button" data-answer="a">Un projet de rénovation globale décidé au préalable</button>
       <button type="button" data-answer="bonne">Le geste de remplacement du composant lui-même</button>
       <button type="button" data-answer="b">Une inspection administrative programmée à l'avance</button>
       <button type="button" data-answer="c">Le dépassement d'un âge minimal du bâtiment</button>
@@ -233,10 +234,10 @@
       <figcaption>Rappel de l'écran 7 — léger et ciblé, ou lourd et ambitieux.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Aucune : les deux logiques donnent toujours le même résultat</button>
-      <button type="button" data-answer="bonne">La rénovation par élément est ciblée et rapide ; la rénovation globale est plus lourde mais plus ambitieuse sur le résultat</button>
-      <button type="button" data-answer="b">La rénovation globale est toujours interdite sur l'existant</button>
+      <button type="button" data-answer="a">Une différence de nom seulement, le résultat reste identique</button>
+      <button type="button" data-answer="b">La rénovation globale n'est pas autorisée sur l'existant</button>
       <button type="button" data-answer="c">La rénovation par élément concerne uniquement les logements neufs</button>
+      <button type="button" data-answer="bonne">Par élément : ciblé et rapide. Globale : plus lourde, plus ambitieuse</button>
     </div>
     <p class="feedback" hidden data-explication="La rénovation par élément est légère et rapide mais ciblée sur un seul composant. La rénovation globale demande une étude plus lourde, mais vise une amélioration d'ensemble du bâtiment."></p>
   </section>
@@ -260,15 +261,15 @@
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

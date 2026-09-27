@@ -47,7 +47,9 @@ le texte en vigueur.*
 
 À un rythme lui aussi fixé par la réglementation en vigueur, l'équipement subit
 une requalification périodique : une remise à l'épreuve, plus approfondie
-qu'une inspection courante. L'une ne remplace pas l'autre.
+qu'une inspection courante, avec notamment une vérification de la résistance
+de l'enveloppe. L'une ne remplace pas l'autre : leurs périodicités sont
+différentes, et dépendent aussi de la catégorie de l'équipement.
 
 *Visuel : `svg/inspection-vs-requalification.svg` — deux cases, inspection
 (plus petite) et requalification (plus grande, jauge de pression), bande
@@ -104,7 +106,7 @@ réflexe.*
 
 **Q1.** Une requalification, qu'est-ce qui la distingue d'une inspection ?
 - a) Elle a lieu au même moment que l'inspection, avec le même contenu
-- b) Elle est un contrôle plus approfondi, une remise à l'épreuve, à un rythme propre ✔
+- b) Elle est un contrôle plus approfondi, à un rythme qui lui est propre ✔
 - c) Elle remplace l'inspection, qui devient inutile une fois faite
 - d) Elle est optionnelle : l'exploitant peut choisir de ne pas la faire
 *Explication : l'inspection et la requalification se complètent, elles ne se
@@ -124,13 +126,13 @@ conforme — pas forcément le fabricant.*
 - a) La même pour tous les équipements sous pression, sans exception
 - b) Déduite du volume de l'équipement, jamais du texte réglementaire
 - c) Applicable seulement aux équipements neufs, pas aux anciens
-- d) Fixée par la réglementation en vigueur, à vérifier sur le texte applicable à l'équipement concerné ✔
+- d) Fixée par la réglementation en vigueur applicable à l'équipement ✔
 *Explication : il n'existe pas de chiffre unique valable pour tous les
 équipements ; le rythme se vérifie sur le texte applicable à l'équipement
 concerné.*
 
 **Q4.** Un réservoir en service depuis des années : que garder à l'esprit ?
-- a) Il a, lui aussi, un suivi réglementaire dans le temps, à vérifier dans le dossier d'exploitation ✔
+- a) Il a, lui aussi, un suivi réglementaire à vérifier dans le dossier ✔
 - b) Il échappe au suivi réglementaire : seuls les équipements neufs sont concernés
 - c) Seul un réservoir affichant une date de fabrication récente doit être suivi
 - d) Le suivi ne concerne que les bouteilles de fluide, jamais les réservoirs fixes

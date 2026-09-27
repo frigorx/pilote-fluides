@@ -91,8 +91,7 @@ sécurité, protection auditive pour les interventions bruyantes.
 
 **Q1.** Avant une intervention risquée, quel doit être le premier réflexe ?
 - a) Mettre tout de suite l'EPI le plus protecteur disponible
-- b) Se demander si le risque peut être supprimé ou protégé collectivement
-  avant de penser à l'EPI ✔
+- b) Voir si le risque peut être évité ✔
 - c) Reporter systématiquement l'intervention à un autre jour
 - d) Demander à un collègue de la faire à sa place
 *Explication : l'EPI est le dernier maillon. Reporter systématiquement ou
@@ -100,8 +99,7 @@ faire porter le risque à un collègue n'est pas une réponse de prévention.*
 
 **Q2.** Un technicien doit faire une recharge de fluide. Quel est le bon
 réflexe EPI ?
-- a) Choisir des gants et une protection oculaire adaptés au risque de
-  projection ✔
+- a) Des gants et une protection oculaire adaptés à la projection ✔
 - b) Prendre les gants de manutention habituels, plus rapides à enfiler
 - c) Ne rien porter : une recharge de fluide est une tâche propre
 - d) Porter uniquement des lunettes, les mains ne risquent rien
@@ -112,7 +110,7 @@ projection de fluide ni d'une brûlure par le froid.*
 - a) Le porter quand même, la déchirure est petite
 - b) Le retourner pour cacher le trou côté paume
 - c) Le doubler avec un second gant fin
-- d) Le remplacer : un EPI abîmé ne protège plus, il se change ✔
+- d) Le remplacer, car il ne se répare pas ✔
 *Explication : un EPI abîmé n'offre plus la protection prévue ; seul le
 remplacement la rétablit.*
 
@@ -120,14 +118,17 @@ remplacement la rétablit.*
 brûler la peau ?
 - a) Parce que le fluide est toujours à très haute température
 - b) Parce que le fluide est acide au contact de la peau
-- c) Parce que le fluide s'évapore brutalement et absorbe la chaleur de la
-  peau ✔
+- c) Parce que le fluide s'évapore brutalement et absorbe la chaleur ✔
 - d) Parce que le fluide colle et irrite la peau durablement
 *Explication : le mécanisme est thermique, pas chimique — la détente
 brutale absorbe la chaleur autour d'elle, y compris celle de la peau.*
 
 ## Maillage (correspondances de la station)
 
+- **Les 9 principes** (même sous-ligne, ouverte) — lien relatif `../risques-neuf-principes/` :
+  la hiérarchie de prévention qui place l'EPI en dernier.
+- **Risque chimique** (même sous-ligne, ouverte) — lien relatif `../risques-chimique/` :
+  choisir un gant ou une protection oculaire adaptés au produit.
 - **L'habilitation** (sous-ligne Électrique, en préparation) — la règle
   d'un côté, le geste protégé de l'autre.
 

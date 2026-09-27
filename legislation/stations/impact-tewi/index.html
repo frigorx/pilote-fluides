@@ -20,13 +20,13 @@
      cette station.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr.
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      Fond rédigé le 24/08/2026. PROTOTYPE NON RELU — data-prototype posé
      sur marque.js. Aucun chiffre de barème (répartition direct/indirect,
@@ -64,6 +64,7 @@
   <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
   <h1>Le TEWI — l'impact total d'une machine</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-impact.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -124,7 +125,7 @@
     </figure>
   </section>
 
-  <section class="slide" id="ecran-3" data-narration="Même principe de chaîne, à droite cette fois. Premier bloc : un compteur électrique portant la mention énergie consommée sur toute la vie de la machine. Un signe multiplié. Deuxième bloc : une horloge portant la mention durée de vie de la machine. Une flèche mène vers un troisième bloc, le réseau électrique du pays où tourne la machine, avec la mention l'électricité n'est jamais neutre à produire. Une dernière flèche mène au résultat, en vert : la part indirecte, en équivalent CO2.">
+  <section class="slide" id="ecran-3" data-narration="Détaillons la part indirecte. Elle se calcule ainsi : l'énergie électrique consommée par la machine pendant toute sa vie, convertie en équivalent dioxyde de carbone selon le réseau électrique du pays où elle tourne. L'électricité n'est jamais neutre à produire : sa part de CO2 dépend du mix électrique local, un réseau n'émettant pas la même chose qu'un autre. Une machine qui consomme beaucoup pèse donc plus lourd sur cette part, quel que soit son fluide.">
     <p class="numero">Écran 3 sur 8</p>
     <h2 tabindex="-1">La part indirecte, en détail</h2>
     <p>La part indirecte se construit elle aussi en deux temps :</p>
@@ -220,7 +221,7 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">Uniquement l'impact des fuites de fluide</button>
       <button type="button" data-answer="b">Uniquement l'impact de l'énergie consommée</button>
-      <button type="button" data-answer="bonne">La somme de l'impact direct des fuites (masse × PRP) et de l'impact indirect de l'énergie consommée sur toute la vie de la machine</button>
+      <button type="button" data-answer="bonne">La somme des fuites et de l'énergie consommée</button>
       <button type="button" data-answer="d">La somme de l'ODP et du PRP du fluide</button>
     </div>
     <p class="feedback" hidden data-explication="Le TEWI additionne les deux parts : ce n'est ni les fuites seules, ni l'énergie seule. Il ne faut pas non plus le confondre avec l'ODP et le PRP, qui sont deux propriétés du fluide, pas un bilan de machine."></p>
@@ -234,7 +235,7 @@
       <figcaption>Rappel de l'écran 4 — la machine gourmande.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">La part directe domine toujours, quel que soit le fluide</button>
+      <button type="button" data-answer="a">La part directe domine généralement, quel que soit le fluide</button>
       <button type="button" data-answer="b">Le TEWI ignore la consommation électrique</button>
       <button type="button" data-answer="c">Un fluide à bas PRP garantit à lui seul un TEWI faible</button>
       <button type="button" data-answer="bonne">La part indirecte peut dominer le TEWI malgré un fluide « propre »</button>
@@ -250,7 +251,7 @@
       <figcaption>Rappel de l'écran 6 — trois leviers, pas les mêmes effets.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">La durée de fonctionnement, la consommation d'énergie et le réseau électrique du pays où elle tourne</button>
+      <button type="button" data-answer="bonne">La durée de vie, la consommation d'énergie et le réseau électrique</button>
       <button type="button" data-answer="b">Uniquement le type de fluide utilisé</button>
       <button type="button" data-answer="c">Uniquement la température extérieure du jour de la mesure</button>
       <button type="button" data-answer="d">Uniquement la charge initiale de fluide à l'installation</button>
@@ -266,8 +267,8 @@
       <figcaption>Rappel de l'écran 8 — le fluide seul ne suffit pas.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Le PRP suffirait toujours à juger l'impact</button>
-      <button type="button" data-answer="bonne">Le TEWI additionne aussi la part indirecte liée à l'énergie consommée sur toute la vie ; le PRP seul ne dit rien de la consommation</button>
+      <button type="button" data-answer="a">Le PRP suffirait à lui seul à juger l'impact</button>
+      <button type="button" data-answer="bonne">Le TEWI ajoute la part liée à l'énergie consommée</button>
       <button type="button" data-answer="c">Seule la marque de la machine compterait</button>
       <button type="button" data-answer="d">Seul le prix d'achat compterait</button>
     </div>
@@ -282,25 +283,25 @@
 <section class="maillage">
   <h2>Les correspondances de la station</h2>
   <ul>
-    <li><strong>La RE2020</strong> (sous-ligne Thermique) — l'impact carbone d'un bâtiment sur son cycle de vie, le même principe étendu au-delà de la seule machine.</li>
+    <li><a href="../thermique-re2020/"><strong>La RE2020</strong></a> (sous-ligne Thermique) — l'impact carbone d'un bâtiment sur son cycle de vie, le même principe étendu au-delà de la seule machine.</li>
     <li><strong>NF EN 378</strong> (même sous-ligne) — ce que la classe du fluide impose en plus, indépendamment de son PRP.</li>
   </ul>
-  <p>Ces deux stations sont en préparation sur le plan du réseau : aucun lien n'est encore ouvert.</p>
+  <p>La RE2020 est ouverte : le lien fonctionne. NF EN 378 est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

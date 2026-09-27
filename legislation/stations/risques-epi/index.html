@@ -13,14 +13,14 @@
      STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      data-prototype : la station attend sa relecture métier.
      =================================================================== -->
@@ -55,6 +55,7 @@
   <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
   <h1>Les EPI — le dernier maillon, pas le premier réflexe</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-risques.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -185,7 +186,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Mettre tout de suite l'EPI le plus protecteur disponible</button>
-      <button type="button" data-answer="bonne">Se demander si le risque peut être supprimé ou protégé collectivement avant de penser à l'EPI</button>
+      <button type="button" data-answer="bonne">Voir si le risque peut être évité</button>
       <button type="button" data-answer="b">Reporter systématiquement l'intervention à un autre jour</button>
       <button type="button" data-answer="c">Demander à un collègue de la faire à sa place</button>
     </div>
@@ -200,7 +201,7 @@
       <figcaption>Rappel de l'écran 2 — le bon EPI répond au risque réel.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">Choisir des gants et une protection oculaire adaptés au risque de projection</button>
+      <button type="button" data-answer="bonne">Des gants et une protection oculaire adaptés à la projection</button>
       <button type="button" data-answer="a">Prendre les gants de manutention habituels, plus rapides à enfiler</button>
       <button type="button" data-answer="b">Ne rien porter : une recharge de fluide est une tâche propre</button>
       <button type="button" data-answer="c">Porter uniquement des lunettes, les mains ne risquent rien</button>
@@ -219,7 +220,7 @@
       <button type="button" data-answer="a">Le porter quand même, la déchirure est petite</button>
       <button type="button" data-answer="b">Le retourner pour cacher le trou côté paume</button>
       <button type="button" data-answer="c">Le doubler avec un second gant fin</button>
-      <button type="button" data-answer="bonne">Le remplacer : un EPI abîmé ne protège plus, il se change</button>
+      <button type="button" data-answer="bonne">Le remplacer, car il ne se répare pas</button>
     </div>
     <p class="feedback" hidden data-explication="Un EPI abîmé n'offre plus la protection prévue. Le porter quand même, le retourner ou le doubler ne rétablit pas la protection perdue — seul le remplacement le fait."></p>
   </section>
@@ -234,7 +235,7 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">Parce que le fluide est toujours à très haute température</button>
       <button type="button" data-answer="b">Parce que le fluide est acide au contact de la peau</button>
-      <button type="button" data-answer="bonne">Parce que le fluide s'évapore brutalement et absorbe la chaleur de la peau</button>
+      <button type="button" data-answer="bonne">Parce que le fluide s'évapore brutalement et absorbe la chaleur</button>
       <button type="button" data-answer="c">Parce que le fluide colle et irrite la peau durablement</button>
     </div>
     <p class="feedback" hidden data-explication="Le mécanisme est thermique : la détente brutale du fluide absorbe la chaleur autour de lui, y compris celle de la peau, avec un effet proche d'une brûlure. Ce n'est ni une question de température élevée, ni d'acidité, ni de collage."></p>
@@ -248,24 +249,25 @@
 <section class="maillage">
   <h2>Les correspondances de la station</h2>
   <ul>
+    <li><a href="../risques-neuf-principes/">Les 9 principes</a> (même sous-ligne) — la hiérarchie de prévention qui place l'EPI en dernier, avant même de choisir un équipement.</li>
+    <li><a href="../risques-chimique/">Risque chimique</a> (même sous-ligne) — choisir un gant ou une protection oculaire adaptés au produit, pas par habitude.</li>
     <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
   </ul>
-  <p>Cette station est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

@@ -16,14 +16,14 @@
      de ce que devient ce fluide s'il n'est pas réutilisable).
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      ÉCART ASSUMÉ AVEC LE FOND : ni le nom exact de la plateforme
      numérique de traçabilité, ni sa date de bascule obligatoire, ne sont
@@ -61,6 +61,7 @@
   <p class="fil-sous-ligne">Déchets · niveau BTS</p>
   <h1>Déchets dangereux — BSD et traçabilité</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-dechets.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -198,9 +199,9 @@
       <figcaption>Rappel de l'écran 1 — la nature, pas la quantité.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Sa quantité, au-delà d'un certain volume</button>
-      <button type="button" data-answer="bonne">Sa nature — inflammable, toxique, corrosif ou nocif pour les milieux</button>
       <button type="button" data-answer="c">Le fait qu'il vienne d'un chantier de froid</button>
+      <button type="button" data-answer="bonne">Sa nature dangereuse, pas sa quantité</button>
+      <button type="button" data-answer="a">Sa quantité, au-delà d'un certain volume</button>
       <button type="button" data-answer="d">Son prix de revente</button>
     </div>
     <p class="feedback" hidden data-explication="C'est la propriété de danger qui classe le déchet, quelle que soit la quantité."></p>
@@ -214,10 +215,10 @@
       <figcaption>Rappel de l'écran 2 — non réutilisable, donc déchet dangereux.</figcaption>
     </figure>
     <div class="quiz-options">
+      <button type="button" data-answer="d">Un fluide remis dans le circuit après filtrage sur chantier</button>
       <button type="button" data-answer="a">Un fluide en attente de réemploi</button>
-      <button type="button" data-answer="bonne">Un déchet dangereux, à tracer jusqu'à son traitement final</button>
+      <button type="button" data-answer="bonne">Un déchet dangereux, à tracer jusqu'à son traitement</button>
       <button type="button" data-answer="c">Un déchet classique, comme le cuivre</button>
-      <button type="button" data-answer="d">Un fluide qui peut être remis dans le circuit après filtrage sur chantier</button>
     </div>
     <p class="feedback" hidden data-explication="Non réutilisable, il devient un déchet — et sa nature en fait un déchet dangereux."></p>
   </section>
@@ -230,10 +231,10 @@
       <figcaption>Rappel de l'écran 3 — un document qui traverse trois intervenants.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">À fixer le prix de revente du déchet</button>
-      <button type="button" data-answer="bonne">À tracer un déchet dangereux à chaque étape, jusqu'à son traitement final</button>
+      <button type="button" data-answer="bonne">À tracer le déchet dangereux à chaque étape</button>
       <button type="button" data-answer="c">Il ne concerne que les déchets non dangereux</button>
       <button type="button" data-answer="d">Il remplace le registre du producteur</button>
+      <button type="button" data-answer="a">À fixer le prix de revente du déchet</button>
     </div>
     <p class="feedback" hidden data-explication="Le BSD est la mémoire écrite du parcours d'un déchet dangereux, maillon par maillon."></p>
   </section>
@@ -248,8 +249,8 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">Les chutes de cuivre</button>
       <button type="button" data-answer="b">Les cartons d'emballage</button>
-      <button type="button" data-answer="bonne">Un fluide frigorigène récupéré non réutilisable</button>
       <button type="button" data-answer="d">Les palettes de livraison</button>
+      <button type="button" data-answer="bonne">Un fluide non réutilisable</button>
     </div>
     <p class="feedback" hidden data-explication="Seuls les déchets qui portent une propriété de danger — comme un fluide non réutilisable — exigent ce suivi."></p>
   </section>
@@ -268,25 +269,25 @@
       — la récupération obligatoire du fluide avant élimination de l'équipement, en amont de ce que
       devient ce fluide s'il n'est pas réutilisable.</li>
     <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique, en préparation).</li>
-    <li><strong>Impact environnemental</strong> (en préparation).</li>
+    <li><a href="../impact-acv-carbone/"><strong>ACV &amp; carbone</strong></a> (sous-ligne Impact environnemental) — ce que devient un fluide en fin de vie, vu du cycle de vie.</li>
   </ul>
-  <p>F-Gaz 3 est ouverte : le lien fonctionne. Les deux autres stations sont
-  en préparation sur le plan du réseau.</p>
+  <p>F-Gaz 3 et ACV &amp; carbone sont ouvertes : les liens fonctionnent. Traçabilité
+  est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

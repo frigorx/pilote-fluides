@@ -36,7 +36,7 @@ dernière génération (la RT2012), et ce que la RE2020 ajoute vraiment.
 
 ## Les 4 questions (quiz)
 
-Bonnes réponses réparties (positions 1, 2, 2, 2), longueurs équilibrées.
+Bonnes réponses réparties (positions 3, 1, 4, 2), longueurs équilibrées.
 Voir `index.html` pour le texte exact des quatre questions et de leurs
 explications.
 

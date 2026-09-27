@@ -29,8 +29,8 @@
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      Aucun chiffre de seuil réglementaire n'est inscrit dans cette
      station : les seuils évoluent souvent, ils se vérifient sur le texte
@@ -67,6 +67,7 @@
   <p class="fil-sous-ligne">Thermique · niveau BTS</p>
   <h1>Pourquoi une RT ? — de 1974 à la RE2020</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-thermique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -200,10 +201,10 @@
       <figcaption>Rappel de l'écran 1 — une crise économique, pas d'abord écologique.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">Le choc pétrolier de 1974, qui a fragilisé l'approvisionnement en énergie</button>
-      <button type="button" data-answer="a">Un accord international sur le climat</button>
-      <button type="button" data-answer="b">Une catastrophe climatique en France</button>
       <button type="button" data-answer="c">Une directive européenne sur le bâtiment</button>
+      <button type="button" data-answer="a">Un accord international sur le climat</button>
+      <button type="button" data-answer="bonne">Le choc pétrolier de 1974, crise énergétique</button>
+      <button type="button" data-answer="b">Une catastrophe climatique en France</button>
     </div>
     <p class="feedback" hidden data-explication="La réglementation thermique française naît d'un problème d'indépendance énergétique après le choc pétrolier de 1974, pas d'abord d'une préoccupation écologique ou d'un texte européen."></p>
   </section>
@@ -216,10 +217,10 @@
       <figcaption>Rappel de l'écran 3 — deux volets absents de la RT2012.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Le carbone et le confort d'été, mais pas la consommation d'énergie</button>
       <button type="button" data-answer="bonne">Uniquement la consommation d'énergie du bâtiment neuf</button>
-      <button type="button" data-answer="b">Uniquement le confort d'été</button>
+      <button type="button" data-answer="a">Le carbone et le confort d'été, mais pas la consommation d'énergie</button>
       <button type="button" data-answer="c">Le carbone, la consommation et le confort d'été, déjà les trois</button>
+      <button type="button" data-answer="b">Uniquement le confort d'été, pas la consommation d'énergie</button>
     </div>
     <p class="feedback" hidden data-explication="La RT2012 ne mesurait que la consommation d'énergie du bâtiment neuf. Le carbone et le confort d'été n'existaient pas encore dans son calcul."></p>
   </section>
@@ -233,9 +234,9 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Uniquement un durcissement du calcul de consommation d'énergie</button>
-      <button type="button" data-answer="bonne">Deux volets entiers, absents de la RT2012 : l'impact carbone et le confort d'été</button>
       <button type="button" data-answer="b">L'obligation d'installer une pompe à chaleur dans tous les cas</button>
       <button type="button" data-answer="c">De nouvelles sanctions financières, sans nouveau calcul</button>
+      <button type="button" data-answer="bonne">Deux volets absents de la RT2012 : le carbone et le confort d'été</button>
     </div>
     <p class="feedback" hidden data-explication="La RE2020 ajoute deux volets que la RT2012 ne mesurait pas : l'impact carbone sur tout le cycle de vie, et le confort d'été. Ce n'est pas qu'un durcissement de plus."></p>
   </section>
@@ -248,10 +249,10 @@
       <figcaption>Rappel de l'écran 7 — le mécanisme s'apprend, le chiffre se vérifie.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Se fier à la valeur apprise en formation : elle ne change jamais</button>
-      <button type="button" data-answer="bonne">Vérifier le texte en vigueur au moment du chantier plutôt que se fier à une valeur mémorisée</button>
-      <button type="button" data-answer="b">Ignorer les seuils : seul le mécanisme compte, jamais la valeur</button>
-      <button type="button" data-answer="c">Demander au client quelle valeur utiliser</button>
+      <button type="button" data-answer="a">Se fier à la valeur apprise en formation, sans la revérifier</button>
+      <button type="button" data-answer="bonne">Vérifier le texte en vigueur au moment du chantier</button>
+      <button type="button" data-answer="b">Retenir seulement le mécanisme, sans vérifier la valeur exacte</button>
+      <button type="button" data-answer="c">Demander au client quelle valeur retenir, faute de mieux</button>
     </div>
     <p class="feedback" hidden data-explication="Les seuils réglementaires changent souvent. Le mécanisme s'apprend une fois ; la valeur exacte se vérifie sur le texte en vigueur au moment du chantier."></p>
   </section>
@@ -277,15 +278,15 @@
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

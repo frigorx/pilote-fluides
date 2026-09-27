@@ -13,17 +13,18 @@
      STATION DU RÉSEAU LÉGISLATION — sous-ligne La DESP.
      Troisième des cinq stations DESP prévues sur le plan du réseau
      (La directive · Catégories I à IV · Marquage & papiers · En service ·
-     Soupapes & sécurités) — la seule construite pour l'instant.
+     Soupapes & sécurités) — les cinq sont construites et reliées depuis
+     le plan du réseau.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      styles.css et app.js sont copiés à l'identique depuis la station
      « Aptitude & capacité » (--sous-ligne reste #0f766e, voulu, ne pas
@@ -64,6 +65,7 @@
   <p class="fil-sous-ligne">La DESP · niveau BTS</p>
   <h1>Marquage &amp; papiers — ce qui accompagne l'équipement</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-desp.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -203,7 +205,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Installer : le marquage CE suffit à lui seul</button>
-      <button type="button" data-answer="bonne">Réclamer les deux documents manquants au fabricant avant d'aller plus loin</button>
+      <button type="button" data-answer="bonne">Réclamer les documents manquants avant d'aller plus loin</button>
       <button type="button" data-answer="c">Rédiger soi-même une déclaration de conformité</button>
       <button type="button" data-answer="d">Installer, et demander les documents après coup si besoin</button>
     </div>
@@ -219,9 +221,9 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Rien : le marquage CE est seul sur la plaque</button>
-      <button type="button" data-answer="b">Uniquement le numéro de série</button>
-      <button type="button" data-answer="bonne">Le fabricant, la pression maximale admissible (PS), et éventuellement un numéro de série</button>
-      <button type="button" data-answer="d">Le prix et la date d'achat</button>
+      <button type="button" data-answer="b">Uniquement le numéro de série de l'équipement</button>
+      <button type="button" data-answer="d">Le prix et la date d'achat de l'équipement</button>
+      <button type="button" data-answer="bonne">Le fabricant, la PS, et parfois un numéro de série</button>
     </div>
     <p class="feedback" hidden data-explication="Le marquage CE figure aux côtés des autres champs de la plaque, il ne les remplace pas. La PS, en particulier, donne la limite propre à l'équipement."></p>
   </section>
@@ -234,10 +236,10 @@
       <figcaption>Rappel de l'écran 4 — trois bandes, dont une sur les limites.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Uniquement le prix de l'équipement</button>
-      <button type="button" data-answer="bonne">Les conditions d'utilisation, l'entretien, et les limites — dont la PS</button>
-      <button type="button" data-answer="c">La liste des autres clients du fabricant</button>
-      <button type="button" data-answer="d">Rien : elle n'est pas obligatoire</button>
+      <button type="button" data-answer="bonne">Conditions, entretien, et limites — dont la PS</button>
+      <button type="button" data-answer="a">Uniquement le prix de l'équipement à l'achat</button>
+      <button type="button" data-answer="c">La liste complète des autres clients du fabricant</button>
+      <button type="button" data-answer="d">Rien : la notice n'est pas obligatoire à fournir</button>
     </div>
     <p class="feedback" hidden data-explication="La notice doit être fournie avec l'équipement : elle précise comment l'utiliser, comment l'entretenir, et ses limites, dont la pression maximale admissible."></p>
   </section>
@@ -250,10 +252,10 @@
       <figcaption>Rappel de l'écran 6 — le dossier gardé depuis le montage.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Rien, le marquage CE sur l'équipement suffit</button>
-      <button type="button" data-answer="b">Une attestation d'aptitude personnelle</button>
-      <button type="button" data-answer="bonne">Le dossier de l'installation : la déclaration de conformité et la notice, conservées depuis le montage</button>
-      <button type="button" data-answer="d">Une facture d'achat de l'équipement</button>
+      <button type="button" data-answer="a">Rien, le marquage CE sur l'équipement suffit largement</button>
+      <button type="button" data-answer="b">Une attestation d'aptitude personnelle du frigoriste</button>
+      <button type="button" data-answer="bonne">Le dossier de l'installation, conservé depuis le montage</button>
+      <button type="button" data-answer="d">Une facture d'achat récente de l'équipement</button>
     </div>
     <p class="feedback" hidden data-explication="C'est le dossier de l'installation, constitué à partir de la documentation reçue avec l'équipement, qui est demandé lors d'un contrôle — pas une simple facture ni le seul marquage visible sur l'équipement."></p>
   </section>
@@ -271,22 +273,21 @@
   <ul>
     <li><strong>NF EN 378</strong> (même sous-ligne, en préparation) — la notice d'instructions et le marquage renvoient aussi aux exigences propres au fluide que fixe cette norme.</li>
   </ul>
-  <p>Cette station est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

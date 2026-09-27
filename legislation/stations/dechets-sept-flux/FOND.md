@@ -103,38 +103,36 @@ déchets produits et les flèches vers les bonnes bennes, résumées.*
 ## Les 4 questions (quiz)
 
 **Q1.** Sur un chantier de froid, où vont les chutes de cuivre ?
-- a) Dans la benne tout-venant, comme le reste ✘
-- b) Dans la benne métaux, triée à part ✔
-- c) Elles ne se trient pas, trop peu de volume ✘
-- d) Dans la benne des fluides dangereux ✘
+- a) Dans la benne métaux, triée à part ✔
+- b) Dans la benne des fluides dangereux ✘
+- c) Dans la benne tout-venant, comme le reste ✘
+- d) Elles ne se trient pas, trop peu de volume ✘
 *Explication : le cuivre garde sa valeur récupérable seulement s'il est trié
 à part, même en petite quantité.*
 
 **Q2.** Pourquoi trier les déchets d'un chantier plutôt que tout mélanger ?
-- a) C'est seulement une obligation administrative sans autre effet ✘
-- b) Une matière triée peut être recyclée, une matière mélangée part plus
-  souvent en filière moins favorable ✔
-- c) Cela ne change rien à la filière finale ✘
-- d) Cela accélère uniquement le nettoyage du chantier ✘
+- a) Cela ne change rien à la filière finale ✘
+- b) C'est seulement une obligation administrative sans autre effet ✘
+- c) Cela accélère uniquement le nettoyage du chantier ✘
+- d) Une matière triée part vers une filière plus favorable ✔
 *Explication : le tri conditionne la filière et la valeur récupérable de la
 matière, pas seulement la propreté du chantier.*
 
 **Q3.** Un fluide récupéré non réutilisable : dans quelle benne du chantier
 va-t-il ?
-- a) Dans la benne métaux, puisque la bouteille est métallique ✘
-- b) Dans la benne tout-venant ✘
-- c) Dans aucune benne de tri classique : il suit une filière à part, tracée ✔
-- d) Dans la benne bois, faute de benne dédiée ✘
+- a) Dans la benne tout-venant ✘
+- b) Dans une filière à part, tracée, hors des bennes de tri ✔
+- c) Dans la benne bois, faute de benne dédiée ✘
+- d) Dans la benne métaux, puisque la bouteille est métallique ✘
 *Explication : un déchet dangereux ne rejoint jamais une benne de tri
 « bâtiment », classique ou tout-venant.*
 
 **Q4.** Un frigoriste hésite sur la benne d'un déchet inconnu. Que doit-il
 faire ?
 - a) Choisir la benne la plus proche ✘
-- b) Identifier d'abord la matière du déchet, puis chercher la benne qui lui
-  correspond ✔
-- c) Le laisser de côté, ce n'est pas son rôle ✘
-- d) Le mettre systématiquement en benne tout-venant par précaution ✘
+- b) Le laisser de côté, ce n'est pas son rôle ✘
+- c) Identifier d'abord la matière, puis chercher sa benne ✔
+- d) Le mettre en benne tout-venant par précaution ✘
 *Explication : le réflexe part toujours de la matière, pas de la benne la
 plus pratique.*
 

@@ -93,8 +93,7 @@ traiter comme un A1.
 
 **Q1.** Une atmosphère explosive se forme quand…
 - a) Un fluide frigorigène est stocké à basse température
-- b) Un gaz inflammable se mélange à l'air dans une proportion qui peut
-  s'enflammer au contact d'une source d'inflammation ✔
+- b) Un mélange air-gaz inflammable, avec une source d'inflammation ✔
 - c) Un compresseur fonctionne à pleine charge
 - d) Un circuit est ouvert à l'air libre, quel que soit le fluide
 *Explication : il faut à la fois le mélange dans une certaine proportion et
@@ -104,15 +103,14 @@ seules.*
 **Q2.** Le R290 (propane) est classé…
 - a) A2L, comme le R32
 - b) A1, comme le R134a
-- c) A3, très inflammable, car c'est un hydrocarbure pur ✔
+- c) A3, un hydrocarbure pur ✔
 - d) B2L, comme l'ammoniac
 *Explication : le R290 est un hydrocarbure pur, classé A3. Ce n'est ni un
 HFC à faible PRP (A2L), ni un fluide non inflammable (A1), ni un fluide
 toxique (B2L).*
 
 **Q3.** Un local contenant un groupe chargé en fluide A3 impose…
-- a) Une ventilation adaptée et l'absence de sources d'inflammation à
-  proximité ✔
+- a) Une ventilation adaptée, sans source d'inflammation ✔
 - b) Uniquement une signalisation sur la porte du local
 - c) Un éclairage plus puissant, rien d'autre
 - d) Un contrôle de température renforcé, sans autre précaution
@@ -126,14 +124,15 @@ raisonnement s'enclenche ?
   prioritaire
 - b) Ouvrir juste une fenêtre après la recharge, par précaution
 - c) Considérer que le R290 se comporte comme un fluide A1
-- d) Vérifier la ventilation et écarter toute source d'inflammation, dont
-  le chalumeau de brasage, avant d'intervenir ✔
+- d) Vérifier la ventilation et écarter le chalumeau de brasage ✔
 *Explication : la ventilation se vérifie et les sources d'inflammation
 s'écartent avant d'intervenir, pas après ; les autres propositions ignorent
 le risque réel du R290 (A3).*
 
 ## Maillage (correspondances de la station)
 
+- **Risque chimique** (même sous-ligne, ouverte) — lien relatif `../risques-chimique/` :
+  lire les pictogrammes de danger, dont celui d'un produit inflammable.
 - **L'habilitation** (sous-ligne Électrique, en préparation) — la règle
   d'un côté, le geste protégé de l'autre.
 - **NF EN 378** (sous-ligne Fluidique, en préparation) — la norme complète

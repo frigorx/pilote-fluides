@@ -13,14 +13,14 @@
      STATION DU RÉSEAU LÉGISLATION — sous-ligne Impact environnemental.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      styles.css et app.js sont une COPIE LITTÉRALE du socle commun de la
      station aptitude-capacite (même réseau) : ne pas les modifier ici,
@@ -65,6 +65,7 @@
   <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
   <h1>Montréal → Kigali — l'histoire en trois temps</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-impact.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -117,7 +118,7 @@
     </figure>
   </section>
 
-  <section class="slide" id="ecran-3" data-narration="Deux cartes reliées par une flèche. À gauche, encadrée en rouge et barrée, la carte des CFC et des HCFC : elle porte la mention contient du chlore ou du brome, attaque l'ozone, retirés par le protocole de Montréal. À droite, encadrée en vert avec une coche, la carte des HFC : sans chlore ni brome, ODP nul, le problème de l'ozone est réglé pour eux. La bande du bas résume : le relais règle l'ozone, il ne dit encore rien du climat.">
+  <section class="slide" id="ecran-3" data-narration="Les HFC prennent le relais des CFC et des HCFC parce qu'ils ne contiennent ni chlore ni brome : leur ODP est nul. Pour cette famille de fluides, le problème de l'ozone est réglé — c'est un vrai succès du protocole de Montréal. Mais cela ne dit encore rien d'un autre impact possible de ces mêmes fluides, sur le climat cette fois.">
     <p class="numero">Écran 3 sur 8</p>
     <h2 tabindex="-1">Les HFC prennent le relais</h2>
     <p>Les <strong>HFC</strong> remplacent progressivement les CFC et les HCFC parce qu'ils <strong>ne contiennent ni chlore ni brome</strong> : leur <strong>ODP est nul</strong>. Pour cette famille de fluides, le problème de l'ozone est réglé.</p>
@@ -139,7 +140,7 @@
     </figure>
   </section>
 
-  <section class="slide" id="ecran-5" data-narration="Un grand document bleu encre porte le protocole de Montréal, avec sa cible d'origine : les CFC et les HCFC, évalués par leur ODP. Une note plus petite, verte, est agrafée au coin, reliée par un trombone : l'amendement de Kigali. Elle pointe vers une nouvelle cible, les HFC, mais cette fois évalués par leur PRP. La bande du bas insiste : un ajout au texte, pas un nouveau traité.">
+  <section class="slide" id="ecran-5" data-narration="L'amendement de Kigali n'est pas un nouveau traité séparé : c'est un ajout au protocole de Montréal. Il s'attaque à son tour aux HFC, mais cette fois pour leur PRP, et non plus pour leur ODP. Le même texte international traite donc, dans l'ordre, deux problèmes différents avec deux outils différents : l'ODP pour l'ozone, le PRP pour le climat.">
     <p class="numero">Écran 5 sur 8</p>
     <h2 tabindex="-1">L'amendement de Kigali</h2>
     <p>L'amendement de Kigali est un <strong>amendement au protocole de Montréal</strong> — pas un nouveau traité séparé. Il s'attaque à son tour aux <strong>HFC</strong>, mais cette fois pour leur <strong>PRP</strong>, et non plus pour leur ODP.</p>
@@ -204,7 +205,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Lutter contre le réchauffement climatique</button>
-      <button type="button" data-answer="bonne">Protéger la couche d'ozone, en supprimant progressivement les CFC puis les HCFC</button>
+      <button type="button" data-answer="bonne">Protéger la couche d'ozone en éliminant les CFC et HCFC</button>
       <button type="button" data-answer="c">Réduire l'inflammabilité des fluides frigorigènes</button>
       <button type="button" data-answer="d">Améliorer l'efficacité énergétique des appareils</button>
     </div>
@@ -221,8 +222,8 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">Parce qu'une norme européenne l'imposerait</button>
       <button type="button" data-answer="b">Parce qu'ils seraient moins chers à produire</button>
-      <button type="button" data-answer="c">Parce qu'ils n'auraient aucun PRP</button>
-      <button type="button" data-answer="bonne">Parce qu'ils ne contiennent ni chlore ni brome : leur ODP est nul, ce qui réglait le problème de l'ozone</button>
+      <button type="button" data-answer="c">Parce qu'ils n'auraient pas de PRP</button>
+      <button type="button" data-answer="bonne">Parce qu'ils ne contiennent ni chlore ni brome</button>
     </div>
     <p class="feedback" hidden data-explication="C'est l'absence de chlore et de brome qui règle l'ozone, pas une norme européenne (c'est Kigali, un texte international, puis F-Gaz 3 côté UE) ni un critère de coût. Et les HFC ont bien un PRP, souvent élevé : c'est justement le sujet de l'écran suivant."></p>
   </section>
@@ -236,8 +237,8 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Ils détruiraient l'ozone plus fortement que les CFC</button>
-      <button type="button" data-answer="bonne">Beaucoup ont un PRP élevé, donc un fort impact sur le réchauffement climatique s'ils fuient</button>
-      <button type="button" data-answer="c">Ils n'auraient strictement aucun impact environnemental</button>
+      <button type="button" data-answer="bonne">Beaucoup ont un PRP élevé, donc un fort impact climatique s'ils fuient</button>
+      <button type="button" data-answer="c">Ils n'auraient pas d'impact environnemental</button>
       <button type="button" data-answer="d">Ils seraient aujourd'hui interdits partout dans le monde sans exception</button>
     </div>
     <p class="feedback" hidden data-explication="Les HFC ne contiennent pas de chlore ni de brome : ils ne détruisent pas l'ozone, au contraire de la première proposition. Ils ne sont pas non plus sans impact : leur PRP souvent élevé pèse sur le climat. Et l'interdiction totale et sans exception n'est pas la réalité du dispositif, construit comme une réduction progressive."></p>
@@ -251,9 +252,9 @@
       <figcaption>Rappel de l'écran 5 — un ajout au texte, pas un nouveau traité.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Un traité entièrement nouveau, sans lien avec Montréal</button>
+      <button type="button" data-answer="a">Un traité nouveau, sans rapport avec celui de Montréal</button>
       <button type="button" data-answer="b">Un texte qui ne concernerait que les CFC</button>
-      <button type="button" data-answer="bonne">Un amendement au protocole de Montréal qui s'attaque à son tour aux HFC, cette fois pour leur PRP</button>
+      <button type="button" data-answer="bonne">Un amendement au protocole de Montréal qui s'attaque aux HFC</button>
       <button type="button" data-answer="d">Le nom du règlement européen F-Gaz 3</button>
     </div>
     <p class="feedback" hidden data-explication="Kigali s'ajoute à Montréal, ce n'est pas un texte séparé, et il vise les HFC — pas les CFC, déjà traités par le texte d'origine. F-Gaz 3 est l'outil européen qui applique une logique proche, mais Kigali est l'accord international : les deux sont liés, mais ce n'est pas le même texte."></p>
@@ -263,34 +264,37 @@
 </section>
 
 <!-- LE MAILLAGE — hors du mode cours, comme sur les autres stations du
-     réseau : il se lit dès l'accueil. F-Gaz 3 est un VRAI lien, puisque
-     la station existe. RE2020 et NF EN 378 restent annoncées sans lien —
-     on ne promet pas une porte fermée. -->
+     réseau : il se lit dès l'accueil. F-Gaz 3 et PRP & ODP sont des VRAIS
+     liens, puisque les deux stations existent. RE2020 et NF EN 378 restent
+     annoncées sans lien — on ne promet pas une porte fermée. -->
 <section class="maillage">
   <h2>Les correspondances de la station</h2>
   <ul>
     <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne)
       — le règlement européen qui applique cette même logique de réduction progressive des HFC.</li>
-    <li><strong>La RE2020</strong> (sous-ligne Thermique) — en préparation.</li>
+    <li><a href="../impact-prp-odp/"><strong>PRP &amp; ODP</strong></a> (même sous-ligne)
+      — l'écran 4 cite cette station : les repères de PRP des HFC courants s'y détaillent.</li>
+    <li><a href="../thermique-re2020/"><strong>La RE2020</strong></a> (sous-ligne Thermique) — l'indicateur carbone du bâtiment, où le PRP du fluide compte.</li>
     <li><strong>NF EN 378</strong> (même sous-ligne) — en préparation.</li>
   </ul>
-  <p>F-Gaz 3 est ouverte : le lien fonctionne. Les deux autres stations sont
-  en préparation sur le plan du réseau.</p>
+  <p>F-Gaz 3, PRP &amp; ODP et La RE2020 sont ouvertes : les liens fonctionnent.
+  NF EN 378 est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (une source, zéro divergence). voix.js
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js
      donne la narration, prof-vocal.js enchaîne les écrans tout seul et
      s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

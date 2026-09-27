@@ -12,14 +12,14 @@
 <!-- ===================================================================
      STATION DU RÉSEAU LÉGISLATION — sous-ligne Fluidique & thermique.
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer. voix-index.js
-     n'est pas chargé : aucun audio n'est fabriqué pour cette station,
-     tout passe par la voix du navigateur (voir app.js).
+     (index global, 02/09/2026) donne les MP3 edge-tts des 12 narrations ; la
+     voix du navigateur reste le filet de secours (voir app.js).
 
      Fond validé par F. Henninot : voir FOND.md à côté de ce fichier.
      =================================================================== -->
@@ -54,6 +54,7 @@
   <p class="fil-sous-ligne">Fluidique &amp; thermique · niveau BTS</p>
   <h1>F-Gaz 3 — le règlement (UE) 2024/573</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-fluidique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -229,7 +230,7 @@
       <figcaption>Rappel de l’écran 1 — la lignée des trois règlements.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">La directive européenne sur les gaz fluorés</button>
+      <button type="button" data-answer="a">La directive européenne des gaz fluorés</button>
       <button type="button" data-answer="bonne">Le règlement 517/2014, dit F-Gas II</button>
       <button type="button" data-answer="c">Le protocole de Montréal</button>
       <button type="button" data-answer="d">L'arrêté du 21 novembre 2025</button>
@@ -246,7 +247,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="bonne">Aux producteurs et importateurs de HFC</button>
-      <button type="button" data-answer="b">À chaque entreprise d'installation frigorifique</button>
+      <button type="button" data-answer="b">À chaque entreprise d'installation</button>
       <button type="button" data-answer="c">À chaque État membre, qui les répartit</button>
       <button type="button" data-answer="d">Aux exploitants des installations</button>
     </div>
@@ -262,7 +263,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">1,7 t éq. CO₂</button>
-      <button type="button" data-answer="b">8 t éq. CO₂</button>
+      <button type="button" data-answer="b">8,0 t éq. CO₂</button>
       <button type="button" data-answer="bonne">16,7 t éq. CO₂</button>
       <button type="button" data-answer="d">167 t éq. CO₂</button>
     </div>
@@ -277,8 +278,8 @@
       <figcaption>Rappel de l’écran 4 — les deux régimes.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Il ne peut plus jamais être utilisé, même en maintenance</button>
-      <button type="button" data-answer="bonne">Il peut, selon l'échéancier, encore servir en maintenance — notamment recyclé ou régénéré</button>
+      <button type="button" data-answer="a">Il ne peut plus être utilisé du tout, même en maintenance</button>
+      <button type="button" data-answer="bonne">Il peut, selon l'échéancier, encore servir en maintenance</button>
       <button type="button" data-answer="c">Il doit être détruit immédiatement dans toutes les installations</button>
       <button type="button" data-answer="d">Il reste autorisé en neuf si le client signe une décharge</button>
     </div>
@@ -291,19 +292,20 @@
 <section class="maillage">
   <h2>Les correspondances de la station</h2>
   <ul>
-    <li><strong>Aptitude &amp; capacité</strong> (même sous-ligne) — qui a le droit de toucher.</li>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (même sous-ligne) — qui a le droit de toucher.</li>
     <li><strong>PRP &amp; ODP</strong> (Impact environnemental) — d'où vient le chiffre PRP.</li>
     <li><strong>Traçabilité</strong> (même sous-ligne) — le fluide récupéré devient déchet tracé.</li>
   </ul>
-  <p>Les stations correspondantes ne sont pas encore ouvertes : elles sont en préparation sur le plan du réseau.</p>
+  <p>Aptitude &amp; capacité est ouverte : le lien fonctionne. NF EN 378 et Traçabilité sont
+  en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
      L'INDEX EST LOCAL et il est chargé AVANT voix.js, qui le lit à son
@@ -316,7 +318,7 @@
 
      data-prototype : la station attend sa relecture métier. -->
 <script src="voix-index.js"></script>
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

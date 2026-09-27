@@ -185,7 +185,7 @@ n'étaient pas possibles. Il vient en dernier, jamais en premier.*
 
 **Q4.** Avant une intervention sur un groupe posé en toiture, quelle est la
 première question à se poser ?
-- a) Peut-on éviter d'y monter, ou protéger le bord avant d'y aller ✔
+- a) Éviter d'y monter, ou protéger le bord ✔
 - b) Quel harnais choisir pour l'intervention
 - c) Combien de temps va durer l'intervention
 - d) Quelle météo est prévue pour la journée
@@ -196,6 +196,8 @@ aller — décidé avant le déplacement.*
 
 ## Maillage
 
+- **Les EPI** (même sous-ligne, ouverte) — lien relatif `../risques-epi/` :
+  le dernier maillon de la hiérarchie, en détail.
 - **L'habilitation** (sous-ligne Électrique) — la règle d'un côté, le geste
   protégé de l'autre. En préparation, sans lien : la station n'existe pas
   encore.

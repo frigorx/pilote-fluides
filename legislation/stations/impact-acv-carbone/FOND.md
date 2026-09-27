@@ -99,12 +99,13 @@ longtemps ?
 
 ## Maillage (correspondances de la station)
 
+- **TEWI** (même sous-ligne, lien réel : `../impact-tewi/`) — le TEWI n'est
+  qu'une partie de l'étape « exploiter » de l'ACV.
 - **La RE2020** (sous-ligne Thermique, en préparation) — le détail de
   l'indicateur carbone, construction et exploitation.
 - **NF EN 378** (en préparation) — ce que la classe du fluide impose en
   plus, sur l'étape exploitation.
-- Pas de lien réel pour cette station : les deux correspondances sont
-  encore en préparation sur le plan du réseau.
+- RE2020 et NF EN 378 restent en préparation sur le plan du réseau.
 
 ## Consignes de production suivies
 

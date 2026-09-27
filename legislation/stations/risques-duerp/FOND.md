@@ -126,7 +126,7 @@ station.*
 
 **Q1.** À quoi sert vraiment le DUERP ?
 - a) À lister le matériel de l'entreprise, à jour chaque année
-- b) À consigner l'évaluation des risques de chaque situation de travail, et à la tenir à jour ✔
+- b) À consigner l'évaluation des risques, et la tenir à jour ✔
 - c) À remplacer les habilitations personnelles de chaque technicien
 - d) À servir de compte-rendu, rédigé après chaque accident
 *Explication : le DUERP consigne l'évaluation des risques de chaque
@@ -137,14 +137,14 @@ matériel, ni un dossier d'habilitations, ni un compte-rendu d'accident.*
 - a) Un cabinet extérieur, sans lien avec l'entreprise
 - b) Le technicien seul, sur le poste qu'il occupe
 - c) Les représentants du personnel seuls, sans l'employeur
-- d) L'employeur, avec la contribution de ceux qui connaissent le terrain ✔
+- d) L'employeur, avec l'aide du terrain ✔
 *Explication : le document n'est pas écrit depuis un bureau isolé : c'est
 l'employeur qui le rédige et le porte, avec la contribution des
 techniciens et, s'il y en a, des représentants du personnel.*
 
 **Q3.** Avant une recharge en toiture, que peut signaler le document du
 site, que le technicien ne peut pas deviner seul ?
-- a) La présence d'engins de levage ou d'autres entreprises travaillant au même endroit ✔
+- a) La présence d'engins de levage ou d'entreprises sur place ✔
 - b) Le type de fluide frigorigène présent dans le circuit
 - c) La marque de l'appareil de récupération à utiliser
 - d) La date de la prochaine visite de contrôle réglementaire
@@ -156,7 +156,7 @@ devinent pas ; le fluide ou le matériel se connaissent par ailleurs.*
 concerne, pour les risques propres à ce site ?
 - a) Le DUERP de son propre employeur
 - b) Le carnet d'entretien de l'appareil
-- c) Le document de prévention du site, formalisé par l'entreprise du site ✔
+- c) Le document de prévention formalisé par le site ✔
 - d) Le contrat commercial signé entre les deux entreprises
 *Explication : le DUERP de son employeur couvre sa propre entreprise ;
 c'est le document du site — souvent un plan de prévention en cas de

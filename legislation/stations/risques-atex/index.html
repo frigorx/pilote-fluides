@@ -13,14 +13,14 @@
      STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      data-prototype : la station attend sa relecture métier.
      =================================================================== -->
@@ -55,6 +55,7 @@
   <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
   <h1>Zones ATEX — quand un fluide inflammable change la donne</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-risques.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -184,7 +185,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Un fluide frigorigène est stocké à basse température</button>
-      <button type="button" data-answer="bonne">Un gaz inflammable se mélange à l'air dans une proportion qui peut s'enflammer au contact d'une source d'inflammation</button>
+      <button type="button" data-answer="bonne">Un mélange air-gaz inflammable, avec une source d'inflammation</button>
       <button type="button" data-answer="b">Un compresseur fonctionne à pleine charge</button>
       <button type="button" data-answer="c">Un circuit est ouvert à l'air libre, quel que soit le fluide</button>
     </div>
@@ -201,7 +202,7 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">A2L, comme le R32</button>
       <button type="button" data-answer="b">A1, comme le R134a</button>
-      <button type="button" data-answer="bonne">A3, très inflammable, car c'est un hydrocarbure pur</button>
+      <button type="button" data-answer="bonne">A3, un hydrocarbure pur</button>
       <button type="button" data-answer="c">B2L, comme l'ammoniac</button>
     </div>
     <p class="feedback" hidden data-explication="Le R290 est un hydrocarbure pur, classé A3, très inflammable. Ce n'est ni un HFC à faible PRP comme le R32 (A2L), ni un fluide non inflammable comme le R134a (A1), ni un fluide toxique comme l'ammoniac (B2L)."></p>
@@ -215,7 +216,7 @@
       <figcaption>Rappel de l'écran 4 — ventilation et absence de source d'inflammation.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">Une ventilation adaptée et l'absence de sources d'inflammation à proximité</button>
+      <button type="button" data-answer="bonne">Une ventilation adaptée, sans source d'inflammation</button>
       <button type="button" data-answer="a">Uniquement une signalisation sur la porte du local</button>
       <button type="button" data-answer="b">Un éclairage plus puissant, rien d'autre</button>
       <button type="button" data-answer="c">Un contrôle de température renforcé, sans autre précaution</button>
@@ -231,10 +232,10 @@
       <figcaption>Rappel de l'écran 6 — la recharge et le chalumeau ne se croisent pas sans réflexion.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Sortir directement le chalumeau de brasage, la recharge est prioritaire</button>
+      <button type="button" data-answer="a">Sortir le chalumeau tout de suite, la recharge d'abord</button>
       <button type="button" data-answer="b">Ouvrir juste une fenêtre après la recharge, par précaution</button>
       <button type="button" data-answer="c">Considérer que le R290 se comporte comme un fluide A1</button>
-      <button type="button" data-answer="bonne">Vérifier la ventilation et écarter toute source d'inflammation, dont le chalumeau de brasage, avant d'intervenir</button>
+      <button type="button" data-answer="bonne">Vérifier la ventilation et écarter le chalumeau de brasage</button>
     </div>
     <p class="feedback" hidden data-explication="Le R290 est A3 : la ventilation se vérifie et les sources d'inflammation s'écartent avant d'intervenir, pas après. Sortir le chalumeau en premier, ventiler après coup, ou traiter le R290 comme un A1 ignorent le risque réel."></p>
   </section>
@@ -247,25 +248,26 @@
 <section class="maillage">
   <h2>Les correspondances de la station</h2>
   <ul>
+    <li><a href="../risques-chimique/">Risque chimique</a> (même sous-ligne) — lire les pictogrammes de danger, dont celui d'un produit inflammable.</li>
     <li><strong>L'habilitation</strong> (sous-ligne Électrique) — la règle d'un côté, le geste protégé de l'autre.</li>
     <li><strong>NF EN 378</strong> (sous-ligne Fluidique) — la norme complète de classification et de sécurité des fluides, dont cette station ne montre qu'un aspect.</li>
   </ul>
-  <p>Ces deux stations sont en préparation sur le plan du réseau.</p>
+  <p>L'habilitation et NF EN 378 sont en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

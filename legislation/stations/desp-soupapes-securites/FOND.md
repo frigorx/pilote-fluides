@@ -3,9 +3,9 @@
 > Réseau Législation · sous-ligne La DESP · niveau BTS.
 > Mini-station ≤ 10 min : 8 écrans + 4 questions.
 > Cinquième station de la sous-ligne « La DESP » sur le plan du réseau
-> (`legislation/index.html`), et la **première construite** — les quatre
-> autres (La directive, Catégories I à IV, Marquage & papiers, En service)
-> n'ont encore que leur `styles.css` et `app.js`.
+> (`legislation/index.html`) — les cinq (La directive, Catégories I à IV,
+> Marquage & papiers, En service, Soupapes & sécurités) sont construites
+> et reliées depuis le plan du réseau.
 >
 > **Ligne de rigueur tenue** : aucun chiffre de tarage, de pression ou de
 > pourcentage. La station enseigne le **mécanisme** de chaque accessoire et
@@ -99,7 +99,7 @@ chiffre.*
 
 Tableau synthétique : mécanisme (mécanique / électrique / membrane),
 évacuation de matière (oui / non / oui d'un coup), fermeture après usage
-(oui, seule / oui, seul / non — à remplacer).
+(oui, seule / non — réarmement manuel / non — à remplacer).
 
 *Visuel : `svg/comparatif-accessoires.svg` — tableau à trois colonnes, une
 par accessoire, trois lignes de critères.*
@@ -121,8 +121,7 @@ inscrite sur la plaque de l'équipement.
 **Q1.** La soupape de sûreté : que se passe-t-il quand le tarage est
 dépassé ?
 - a) Elle coupe le compresseur avant que la pression ne redescende
-- b) Elle s'ouvre pour évacuer l'excès de pression, puis se referme
-  quand la pression redescend ✔
+- b) Elle s'ouvre pour évacuer l'excès de pression, puis se referme ✔
 - c) Elle cède d'un coup et doit être remplacée
 - d) Elle reste fermée tant que la pression n'a pas doublé
 *Explication : la soupape est un dispositif mécanique : elle s'ouvre
@@ -131,12 +130,14 @@ referme quand la pression redescend.*
 
 **Q2.** Le pressostat de sécurité : que fait-il, et à quel moment ?
 - a) Il évacue l'excès de pression, comme la soupape
-- b) Il agit uniquement après que la soupape s'est ouverte
+- b) Il agit seulement après l'ouverture de la soupape de sûreté
 - c) Il coupe le fonctionnement, sans rien évacuer, avant la soupape ✔
-- d) Il se referme seul quand la pression atteint zéro
+- d) Il se referme tout seul dès que la pression redescend un peu
 *Explication : le pressostat est un dispositif électrique : il coupe le
 fonctionnement dès que la pression atteint son seuil, sans rien évacuer,
-normalement avant que la soupape n'ait besoin de s'ouvrir.*
+normalement avant que la soupape n'ait besoin de s'ouvrir. Il ne se
+referme pas seul : un pressostat de sécurité attend un réarmement manuel,
+une fois la cause de la coupure vérifiée.*
 
 **Q3.** Pourquoi utilise-t-on parfois un disque de rupture plutôt qu'une
 soupape ?
@@ -154,8 +155,7 @@ exemple sur un circuit à l'ammoniac ou au CO2.*
 à un équipement ?
 - a) En comparant sa date de fabrication à celle de l'équipement
 - b) En mesurant la température ambiante au moment de l'installation
-- c) Le tarage est le même pour tous les équipements, quelle que soit
-  leur PS
+- c) Le tarage est le même pour tous les équipements
 - d) En le comparant à la PS inscrite sur la plaque de l'équipement ✔
 *Explication : le tarage d'un accessoire de sécurité est fixé en dessous
 de la PS de l'équipement qu'il protège, selon les règles du texte en
@@ -184,9 +184,8 @@ cinq stations DESP.
   `role="img"`, `title`/`desc` liés par `aria-labelledby`/`aria-describedby`,
   style CSS interne, formes `rect`/`text`/`line`/`path`/`circle`. Aucun
   texte posé sur un tracé ; police ≥ 15 px.
-- **Voix** : aucun audio fabriqué — la station parle avec la voix du
-  navigateur (SpeechSynthesis), comme le reste du réseau non encore
-  doublé en Piper.
+- **Voix** : audio fabriqué le 02/09/2026 (edge-tts) pour les 12 narrations,
+  la voix du navigateur (SpeechSynthesis) restant le filet de secours.
 - Aucun nom propre, aucun établissement — non-nominatif strict.
 
 ---

@@ -11,21 +11,21 @@
 <link rel="canonical" href="https://inerweb.fr/legislation/stations/desp-la-directive/">
 <!-- ===================================================================
      STATION DU RÉSEAU LÉGISLATION — sous-ligne « La DESP ».
-     Première des cinq stations de la sous-ligne. Suivront : les
-     catégories (desp-categories), le marquage et les papiers
-     (desp-marquage-papiers), le suivi en service (desp-en-service), les
-     soupapes et sécurités (desp-soupapes-securites) — non ouvertes,
-     donc non liées ici.
+     Première des cinq stations de la sous-ligne, qui sont toutes
+     ouvertes et déjà reliées depuis le plan du réseau : les catégories
+     (desp-categories), le marquage et les papiers (desp-marquage-papiers),
+     le suivi en service (desp-en-service), les soupapes et sécurités
+     (desp-soupapes-securites).
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      RIGUEUR FACTUELLE : aucun chiffre de seuil de pression n'est avancé
      nulle part dans cette station — le mécanisme est enseigné, pas un
@@ -65,6 +65,7 @@
   <p class="fil-sous-ligne">La DESP · niveau BTS</p>
   <h1>La directive — pourquoi une réglementation pour le sous pression</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-desp.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -240,9 +241,9 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Non, seuls les récipients de stockage de fluide neuf sont concernés</button>
-      <button type="button" data-answer="b">Non, seule la bouteille de fluide frigorigène l'est, pas les autres équipements</button>
+      <button type="button" data-answer="b">Non, seule la bouteille de fluide frigorigène est concernée par le texte</button>
       <button type="button" data-answer="c">Oui, mais uniquement s'il est fabriqué hors de l'Union européenne</button>
-      <button type="button" data-answer="bonne">Oui, comme tout équipement sous pression du circuit dépassant le seuil fixé par le texte</button>
+      <button type="button" data-answer="bonne">Oui, comme tout équipement du circuit dépassant le seuil fixé par le texte</button>
     </div>
     <p class="feedback" hidden data-explication="Le séparateur d'huile, comme le condenseur, le réservoir de liquide ou la tuyauterie, est un équipement sous pression au sens de la directive dès qu'il dépasse le seuil de pression fixé par le texte — l'origine de fabrication ou le type d'usage ne change rien à ce principe."></p>
   </section>
@@ -258,7 +259,7 @@
       <button type="button" data-answer="bonne">La pression maximale que l'équipement est conçu pour supporter</button>
       <button type="button" data-answer="b">La pression de service mesurée le jour du contrôle</button>
       <button type="button" data-answer="c">La pression atmosphérique du lieu d'installation</button>
-      <button type="button" data-answer="d">La pression minimale en dessous de laquelle l'équipement doit être vidangé</button>
+      <button type="button" data-answer="d">La pression en dessous de laquelle l'équipement doit être vidangé</button>
     </div>
     <p class="feedback" hidden data-explication="La PS, pression maximale admissible, est fixée par le fabricant et gravée sur la plaque. C'est une donnée de conception, pas une mesure instantanée ni une donnée liée au lieu d'installation."></p>
   </section>
@@ -273,8 +274,8 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">À calculer la consommation électrique de l'installation</button>
       <button type="button" data-answer="b">À fixer la date de la prochaine visite de maintenance</button>
-      <button type="button" data-answer="bonne">À servir de référence pour classer l'équipement et tarer ses accessoires de sécurité</button>
-      <button type="button" data-answer="d">À déterminer le prix de vente de l'équipement</button>
+      <button type="button" data-answer="bonne">À classer l'équipement et tarer ses accessoires de sécurité</button>
+      <button type="button" data-answer="d">À déterminer le prix de vente final de l'équipement</button>
     </div>
     <p class="feedback" hidden data-explication="La PS est la référence : elle sert de base au classement en catégorie de l'équipement et au tarage des accessoires de sécurité, qui doivent intervenir avant qu'elle ne soit dépassée."></p>
   </section>
@@ -299,15 +300,15 @@
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

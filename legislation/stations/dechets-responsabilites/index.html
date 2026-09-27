@@ -13,14 +13,14 @@
      STATION DU RÉSEAU LÉGISLATION — sous-ligne Déchets.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      Fond : legislation/stations/dechets-responsabilites/FOND.md.
      ÉCART AVEC LE FOND : aucun. Les numéros d'article listés dans le
@@ -60,6 +60,7 @@
   <p class="fil-sous-ligne">Déchets · niveau BTS</p>
   <h1>Responsabilités — qui répond du déchet</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-dechets.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -204,8 +205,8 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Rien, il n'est plus détenteur du déchet</button>
-      <button type="button" data-answer="bonne">Sa responsabilité reste engagée : il n'a pas vérifié l'autorisation du repreneur</button>
       <button type="button" data-answer="c">Rien, seul le repreneur est responsable</button>
+      <button type="button" data-answer="bonne">Sa responsabilité reste engagée malgré la remise</button>
       <button type="button" data-answer="d">Une amende automatique, quel que soit le contexte</button>
     </div>
     <p class="feedback" hidden data-explication="La responsabilité suit le déchet ; remettre à un tiers non vérifié ne l'éteint pas."></p>
@@ -219,10 +220,10 @@
       <figcaption>Rappel de l'écran 1 — deux maillons de la même chaîne.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Le producteur est toujours une entreprise, le détenteur toujours une personne</button>
-      <button type="button" data-answer="bonne">Le détenteur est celui qui a la garde du déchet à un instant donné, le producteur celui dont l'activité l'a fait naître</button>
-      <button type="button" data-answer="c">Ce sont deux mots pour la même personne, toujours</button>
-      <button type="button" data-answer="d">Le détenteur n'a aucune obligation</button>
+      <button type="button" data-answer="bonne">Le détenteur a la garde, le producteur l'a fait naître</button>
+      <button type="button" data-answer="a">Le producteur est une entreprise, le détenteur une personne</button>
+      <button type="button" data-answer="d">Le détenteur n'a pas d'obligation propre</button>
+      <button type="button" data-answer="c">Ce sont deux mots pour désigner la même personne</button>
     </div>
     <p class="feedback" hidden data-explication="Les deux notions décrivent deux maillons possibles de la même chaîne — le producteur peut aussi être détenteur."></p>
   </section>
@@ -235,10 +236,10 @@
       <figcaption>Rappel de l'écran 3 — jusqu'à la filière finale.</figcaption>
     </figure>
     <div class="quiz-options">
+      <button type="button" data-answer="d">Elle s'arrête dès qu'un bordereau est signé</button>
+      <button type="button" data-answer="bonne">Jusqu'à l'élimination ou la valorisation finale</button>
       <button type="button" data-answer="a">Jusqu'à ce qu'il quitte le chantier</button>
       <button type="button" data-answer="b">Jusqu'à la remise au premier transporteur</button>
-      <button type="button" data-answer="bonne">Jusqu'à l'élimination ou la valorisation finale du déchet</button>
-      <button type="button" data-answer="d">Elle s'arrête dès qu'un bordereau est signé</button>
     </div>
     <p class="feedback" hidden data-explication="C'est tout le sens du principe — la responsabilité ne s'arrête pas à un maillon intermédiaire."></p>
   </section>
@@ -251,10 +252,10 @@
       <figcaption>Rappel de l'écran 6 — la mémoire écrite du producteur.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Pour justifier ses achats de matériel</button>
-      <button type="button" data-answer="bonne">C'est la preuve écrite qu'il a bien géré ses déchets, utile en cas de contrôle</button>
       <button type="button" data-answer="c">Uniquement pour la comptabilité de l'entreprise</button>
       <button type="button" data-answer="d">Ce n'est utile que pour les déchets non dangereux</button>
+      <button type="button" data-answer="a">Pour justifier ses achats de matériel</button>
+      <button type="button" data-answer="bonne">La preuve écrite qu'il a bien géré ses déchets</button>
     </div>
     <p class="feedback" hidden data-explication="Sans trace écrite, une bonne pratique réelle ne peut pas être démontrée."></p>
   </section>
@@ -269,24 +270,24 @@
   <h2>Les correspondances de la station</h2>
   <ul>
     <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique, en préparation).</li>
-    <li><strong>Impact environnemental</strong> (en préparation).</li>
+    <li><a href="../impact-acv-carbone/"><strong>ACV &amp; carbone</strong></a> (sous-ligne Impact environnemental) — pourquoi la responsabilité suit le déchet jusqu'au bout de son cycle de vie.</li>
   </ul>
-  <p>Les deux stations sont en préparation sur le plan du réseau.</p>
+  <p>ACV &amp; carbone est ouverte : le lien fonctionne. Traçabilité est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

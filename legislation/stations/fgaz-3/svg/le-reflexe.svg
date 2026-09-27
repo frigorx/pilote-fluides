@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" role="img" aria-label="Le réflexe professionnel. À gauche, une fiche datée d'il y a deux ans, barrée : les seuils et les dates qu'elle porte ont pu changer. À droite, le texte en vigueur, qui seul fait foi. Entre les deux, une flèche indique le sens à prendre : toujours revenir au texte en vigueur. En bas, les quatre points du bilan de la station.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 366" role="img" aria-label="Le réflexe professionnel. À gauche, une fiche datée d'il y a deux ans, barrée : les seuils et les dates qu'elle porte ont pu changer. À droite, le texte en vigueur, qui seul fait foi. Entre les deux, une flèche indique le sens à prendre : toujours revenir au texte en vigueur. En bas, les quatre points du bilan de la station.">
 <title>Le texte en vigueur fait foi</title>
 <metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><cc:Work rdf:about=""><dc:title>Le texte en vigueur fait foi</dc:title><dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator><dc:date>2026</dc:date><cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/></cc:Work></rdf:RDF></metadata>
 <defs>
@@ -23,7 +23,7 @@
     @keyframes glisse { 0%,100% { transform:translateX(0); } 50% { transform:translateX(7px); } }
   }
 </style>
-<rect width="880" height="330" fill="#ffffff"/>
+<rect width="880" height="366" fill="#ffffff"/>
 <text class="t" x="30" y="28">Le réflexe professionnel</text>
 
 <!-- la vieille fiche -->
@@ -56,6 +56,6 @@
 
 <!-- le bilan en quatre points -->
 <line x1="30" y1="286" x2="850" y2="286" stroke="#d6dee7" stroke-width="1.5"/>
-<text class="bi" x="30" y="308">F-Gaz 3 = règlement 2024/573, cap 2050  ·  phase-down = enveloppe en t éq. CO₂ qui rétrécit, quotas aux producteurs</text>
-<text class="bi" x="30" y="326">t éq. CO₂ = charge × PRP ÷ 1000  ·  interdiction « neuf » ≠ restriction « maintenance » (recyclé ou régénéré)</text>
+<text class="bi" x="30" y="306"><tspan x="30" dy="0">F-Gaz 3 = règlement 2024/573, cap 2050  ·  phase-down = enveloppe en</tspan><tspan x="30" dy="18">t éq. CO₂ qui rétrécit, quotas aux producteurs</tspan></text>
+<text class="bi" x="30" y="342"><tspan x="30" dy="0">t éq. CO₂ = charge × PRP ÷ 1000  ·  interdiction « neuf » ≠ restriction</tspan><tspan x="30" dy="18">« maintenance » (recyclé ou régénéré)</tspan></text>
 </svg>

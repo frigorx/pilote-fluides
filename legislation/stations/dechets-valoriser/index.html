@@ -15,14 +15,14 @@
      thermique). Contenu propre à cette station, validé dans FOND.md.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      data-prototype : la station attend sa relecture métier.
      =================================================================== -->
@@ -57,6 +57,7 @@
   <p class="fil-sous-ligne">Déchets · niveau BTS</p>
   <h1>Valoriser — la hiérarchie des traitements</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-dechets.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -189,10 +190,10 @@
       <figcaption>Rappel de l'écran 1 — l'ordre des cinq niveaux.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Le recyclage, toujours</button>
-      <button type="button" data-answer="bonne">La prévention — éviter que le déchet soit produit</button>
-      <button type="button" data-answer="c">La valorisation énergétique</button>
       <button type="button" data-answer="d">L'élimination, si elle est bien contrôlée</button>
+      <button type="button" data-answer="a">Le recyclage, quelle que soit la situation</button>
+      <button type="button" data-answer="bonne">La prévention, éviter que le déchet soit produit</button>
+      <button type="button" data-answer="c">La valorisation énergétique</button>
     </div>
     <p class="feedback" hidden data-explication="La prévention est le premier niveau : elle évite le déchet avant même qu'il existe."></p>
   </section>
@@ -205,10 +206,10 @@
       <figcaption>Rappel de l'écran 3 — le réemploi, sans transformation.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Recyclage</button>
+      <button type="button" data-answer="a">Recyclage de la matière</button>
+      <button type="button" data-answer="bonne">Réemploi, sans transformation</button>
+      <button type="button" data-answer="d">Élimination du fluide</button>
       <button type="button" data-answer="b">Valorisation énergétique</button>
-      <button type="button" data-answer="bonne">Réemploi — la matière garde sa forme, sans transformation</button>
-      <button type="button" data-answer="d">Élimination</button>
     </div>
     <p class="feedback" hidden data-explication="Réemployer n'est pas recycler : rien n'est transformé, l'objet ou la matière est remis en service tel quel."></p>
   </section>
@@ -221,10 +222,10 @@
       <figcaption>Rappel de l'écran 4 — le recyclage transforme la matière.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Réemploi</button>
-      <button type="button" data-answer="bonne">Recyclage — la matière est transformée pour redonner une matière première</button>
-      <button type="button" data-answer="c">Prévention</button>
-      <button type="button" data-answer="d">Élimination</button>
+      <button type="button" data-answer="bonne">Recyclage, la matière transformée</button>
+      <button type="button" data-answer="c">Prévention à la source</button>
+      <button type="button" data-answer="d">Élimination définitive</button>
+      <button type="button" data-answer="a">Réemploi sans transformation</button>
     </div>
     <p class="feedback" hidden data-explication="Contrairement au réemploi, le recyclage transforme la matière avant qu'elle resserve."></p>
   </section>
@@ -237,10 +238,10 @@
       <figcaption>Rappel de l'écran 6 — le dernier recours, sans retour.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">C'est toujours le choix le plus simple, donc le premier envisagé</button>
-      <button type="button" data-answer="bonne">Uniquement quand aucun des niveaux précédents n'est possible</button>
       <button type="button" data-answer="c">Dès qu'un déchet est dangereux, sans autre examen</button>
-      <button type="button" data-answer="d">Jamais : l'élimination n'existe plus dans la hiérarchie actuelle</button>
+      <button type="button" data-answer="a">Dès que le choix paraît le plus simple</button>
+      <button type="button" data-answer="d">Rarement : l'élimination reste peu utilisée</button>
+      <button type="button" data-answer="bonne">Quand aucun des niveaux précédents n'est possible</button>
     </div>
     <p class="feedback" hidden data-explication="L'élimination est le dernier niveau, réservé à ce qui ne peut suivre aucun des niveaux précédents."></p>
   </section>
@@ -255,24 +256,24 @@
   <h2>Les correspondances de la station</h2>
   <ul>
     <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique, en préparation) — le registre qui suit chaque fluide, du plein au vide.</li>
-    <li><strong>Impact environnemental</strong> (en préparation) — ce que chaque niveau change pour l'environnement.</li>
+    <li><a href="../impact-acv-carbone/"><strong>ACV &amp; carbone</strong></a> (sous-ligne Impact environnemental) — ce que chaque niveau change pour l'environnement.</li>
   </ul>
-  <p>Les deux stations sont en préparation sur le plan du réseau.</p>
+  <p>ACV &amp; carbone est ouverte : le lien fonctionne. Traçabilité est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

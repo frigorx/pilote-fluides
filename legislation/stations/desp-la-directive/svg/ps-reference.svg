@@ -34,7 +34,7 @@
   <text class="lbl" x="220" y="240" text-anchor="middle">croise la PS, le volume</text>
   <text class="lbl" x="220" y="260" text-anchor="middle">(ou le diamètre) et la</text>
   <text class="lbl" x="220" y="280" text-anchor="middle">dangerosité du fluide</text>
-  <text class="note" x="220" y="304" text-anchor="middle">plus la catégorie est élevée, plus un organisme extérieur intervient</text>
+  <text class="note" x="220" y="298" text-anchor="middle"><tspan x="220" dy="0">plus la catégorie est élevée, plus</tspan><tspan x="220" dy="17">un organisme extérieur intervient</tspan></text>
 
   <!-- Boîte droite : tarage -->
   <rect x="490" y="172" width="380" height="150" rx="12" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
@@ -43,5 +43,5 @@
   <text class="lbl" x="680" y="240" text-anchor="middle">soupape, pressostat de</text>
   <text class="lbl" x="680" y="260" text-anchor="middle">sécurité — réglés pour</text>
   <text class="lbl" x="680" y="280" text-anchor="middle">intervenir avant la PS</text>
-  <text class="note" x="680" y="304" text-anchor="middle">le détail de chaque catégorie fait l'objet d'une autre station</text>
+  <text class="note" x="680" y="298" text-anchor="middle"><tspan x="680" dy="0">le détail de chaque catégorie</tspan><tspan x="680" dy="17">fait l'objet d'une autre station</tspan></text>
 </svg>

@@ -4,9 +4,9 @@
   <desc id="d-cmp">Un tableau à trois colonnes, une par accessoire : la soupape de sûreté, le
     pressostat de sécurité, le disque de rupture. Trois lignes comparent leur mécanisme, s'ils
     évacuent de la matière, et s'ils se referment après usage. La soupape est mécanique, évacue et
-    se referme d'elle-même. Le pressostat est électrique, n'évacue rien et se referme d'elle-même
-    quand la pression redescend. Le disque de rupture est une membrane, évacue d'un coup et ne se
-    referme pas — il doit être remplacé.</desc>
+    se referme d'elle-même. Le pressostat est électrique, n'évacue rien et ne se referme pas seul :
+    il attend un réarmement manuel, après vérification de la cause. Le disque de rupture est une
+    membrane, évacue d'un coup et ne se referme pas — il doit être remplacé.</desc>
   <style>
     .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
     .crit { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
@@ -48,7 +48,7 @@
 
   <!-- Ligne 3 : se referme -->
   <text class="lbl" x="310" y="255" text-anchor="middle">oui, seule</text>
-  <text class="lbl" x="530" y="255" text-anchor="middle">oui, seul</text>
+  <text class="lbl" x="530" y="255" text-anchor="middle">non — réarmement manuel</text>
   <text class="lbl" x="750" y="255" text-anchor="middle">non — à remplacer</text>
 
   <text class="lbl" x="450" y="316" text-anchor="middle" font-style="italic" fill="#5a6b7d">Trois mécanismes différents, un même objectif : ne jamais dépasser la PS</text>

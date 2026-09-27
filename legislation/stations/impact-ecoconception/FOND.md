@@ -180,6 +180,8 @@ lien avec la part indirecte du TEWI.*
 
 ## Maillage (correspondances de la station)
 
+- **TEWI** (même sous-ligne, lien réel : `../impact-tewi/`) — un appareil
+  mieux classé pèse moins lourd sur la part indirecte de son impact.
 - **La RE2020** (sous-ligne Thermique) — les exigences de conception qui
   pèsent sur les bâtiments et leurs équipements. En préparation, sans lien.
 - **NF EN 378** (même sous-ligne) — ce que la classe du fluide impose en

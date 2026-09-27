@@ -29,7 +29,12 @@ nommées.*
 ## Écran 2 — Le losange, un danger
 
 Les pictogrammes de danger sont des losanges à bord épais, chacun avec une
-silhouette désignant une famille de danger.
+silhouette désignant une famille de danger. Trois pictogrammes (inflammable,
+corrosif, toxique) gardent l'accent orange de la sous-ligne. Le quatrième,
+« danger pour la santé », est corrigé le 27/09 : il représente désormais une
+silhouette humaine avec une étoile sur la poitrine (GHS08 réel), à bord
+rouge pour le distinguer — et non plus un point d'exclamation, qui dans le
+SGH/CLP signale seulement « nocif/irritant » (GHS07), pas un danger CMR.
 
 *Visuel : `svg/chimique-pictogrammes.svg` — quatre pictogrammes nommés.*
 
@@ -93,8 +98,7 @@ exposée, une goutte d'huile étiquetée.*
 
 **Q2.** Un pictogramme de danger sur un bidon sert à…
 - a) Décorer l'emballage du produit
-- b) Indiquer un danger précis et donc le geste à adopter (ventiler,
-  éloigner une flamme, se protéger) ✔
+- b) Indiquer le danger précis et le geste à adopter ✔
 - c) Indiquer uniquement le pays de fabrication
 - d) Remplacer la lecture de la FDS
 *Explication : le pictogramme signale un danger précis et le geste qui en
@@ -103,8 +107,7 @@ découle ; il complète la FDS, il ne la remplace pas.*
 **Q3.** Que signifie qu'un produit est classé CMR ?
 - a) Qu'il est corrosif, moisi et radioactif
 - b) Qu'il est réservé aux usages militaires
-- c) Qu'il peut être cancérogène, mutagène, ou toxique pour la
-  reproduction ✔
+- c) Cancérogène, mutagène, reprotoxique ✔
 - d) Qu'il est classé comme combustible à risque
 *Explication : CMR signifie cancérogène, mutagène, reprotoxique — les
 autres propositions n'ont rien à voir avec la classification réelle.*
@@ -113,13 +116,16 @@ autres propositions n'ont rien à voir avec la classification réelle.*
 - a) Pour refroidir plus vite la pièce brasée
 - b) Pour éviter la buée sur les lunettes du technicien
 - c) Pour économiser le gaz de la torche
-- d) Parce que le flux et l'oxydation du métal chauffé dégagent des fumées
-  à évacuer ✔
+- d) Le métal chauffé dégage des fumées à évacuer ✔
 *Explication : la ventilation évacue les fumées produites par le flux et le
 métal chauffé, pas pour les raisons de confort ou d'économie proposées.*
 
 ## Maillage (correspondances de la station)
 
+- **Les EPI** (même sous-ligne, ouverte) — lien relatif `../risques-epi/` :
+  choisir des gants et une protection oculaire adaptés au risque chimique.
+- **Zones ATEX** (même sous-ligne, ouverte) — lien relatif `../risques-atex/` :
+  le pictogramme inflammable et la zone à risque d'explosion.
 - **L'habilitation** (sous-ligne Électrique, en préparation) — la règle
   d'un côté, le geste protégé de l'autre.
 

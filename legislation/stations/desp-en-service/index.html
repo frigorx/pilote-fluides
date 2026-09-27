@@ -15,14 +15,14 @@
      ce qui se passe une fois l'équipement installé et mis en service.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      RIGUEUR FACTUELLE : aucune périodicité chiffrée n'est donnée pour les
      inspections ni pour la requalification périodique — ces valeurs
@@ -61,6 +61,7 @@
   <p class="fil-sous-ligne">La DESP · niveau BTS</p>
   <h1>En service — la vie de l'équipement après l'installation</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-desp.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -120,11 +121,11 @@
   <section class="slide" id="ecran-3" data-narration="Deux contrôles portent des noms voisins et n'ont pas la même profondeur. L'inspection périodique est un contrôle visuel et fonctionnel : on regarde l'état de l'équipement, de ses accessoires, de ses sécurités. La requalification périodique va beaucoup plus loin : c'est une remise à l'épreuve, un contrôle approfondi avec vérification de la résistance de l'enveloppe. Leurs périodicités sont différentes, et elles dépendent de la catégorie de l'équipement. Retenez la hiérarchie : l'inspection surveille, la requalification revalide.">
     <p class="numero">Écran 3 sur 8</p>
     <h2 tabindex="-1">La requalification périodique : un contrôle plus profond</h2>
-    <p>À un rythme lui aussi fixé par la réglementation en vigueur, l'équipement subit une <strong>requalification périodique</strong> : une <strong>remise à l'épreuve</strong>, plus approfondie qu'une inspection courante.</p>
-    <p>L'inspection et la requalification ne se remplacent pas : elles se complètent, chacune à son rythme propre — à vérifier, là encore, sur le texte applicable à l'équipement concerné.</p>
+    <p>À un rythme lui aussi fixé par la réglementation en vigueur, l'équipement subit une <strong>requalification périodique</strong> : une <strong>remise à l'épreuve</strong>, plus approfondie qu'une inspection courante, avec notamment une <strong>vérification de la résistance de l'enveloppe</strong>.</p>
+    <p>L'inspection et la requalification ne se remplacent pas : elles se complètent, chacune à son rythme propre — <strong>des périodicités différentes, qui dépendent aussi de la catégorie de l'équipement</strong> — à vérifier, là encore, sur le texte applicable à l'équipement concerné.</p>
     <figure>
-      <img src="svg/inspection-vs-requalification.svg" alt="Deux cases : l'inspection périodique, contrôle visuel et fonctionnel, et la requalification périodique, remise à l'épreuve plus approfondie. Une bande rappelle que l'une ne remplace pas l'autre, chacune ayant son rythme propre fixé par la réglementation en vigueur.">
-      <figcaption>La case de droite est plus grande : un contrôle plus profond, pas un simple doublon.</figcaption>
+      <img src="svg/inspection-vs-requalification.svg" alt="Deux cases : l'inspection périodique, contrôle visuel et fonctionnel, et la requalification périodique, remise à l'épreuve plus approfondie incluant une vérification de la résistance de l'enveloppe. Une bande rappelle que l'une ne remplace pas l'autre, chacune ayant son propre rythme, différent et dépendant de la catégorie de l'équipement.">
+      <figcaption>La case de droite est plus grande : un contrôle plus profond, à un rythme qui lui est propre.</figcaption>
     </figure>
   </section>
 
@@ -208,7 +209,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Elle a lieu au même moment que l'inspection, avec le même contenu</button>
-      <button type="button" data-answer="bonne">Elle est un contrôle plus approfondi, une remise à l'épreuve, à un rythme propre</button>
+      <button type="button" data-answer="bonne">Elle est un contrôle plus approfondi, à un rythme qui lui est propre</button>
       <button type="button" data-answer="c">Elle remplace l'inspection, qui devient inutile une fois faite</button>
       <button type="button" data-answer="d">Elle est optionnelle : l'exploitant peut choisir de ne pas la faire</button>
     </div>
@@ -242,7 +243,7 @@
       <button type="button" data-answer="a">La même pour tous les équipements sous pression, sans exception</button>
       <button type="button" data-answer="b">Déduite du volume de l'équipement, jamais du texte réglementaire</button>
       <button type="button" data-answer="c">Applicable seulement aux équipements neufs, pas aux anciens</button>
-      <button type="button" data-answer="bonne">Fixée par la réglementation en vigueur, à vérifier sur le texte applicable à l'équipement concerné</button>
+      <button type="button" data-answer="bonne">Fixée par la réglementation en vigueur applicable à l'équipement</button>
     </div>
     <p class="feedback" hidden data-explication="Il n'existe pas un chiffre unique valable pour tous les équipements. Le rythme des inspections comme celui des requalifications se vérifie sur le texte réglementaire applicable à l'équipement concerné."></p>
   </section>
@@ -255,7 +256,7 @@
       <figcaption>Rappel de l'écran 7 — le suivi ne s'arrête pas à la pose.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">Il a, lui aussi, un suivi réglementaire dans le temps, à vérifier dans le dossier d'exploitation</button>
+      <button type="button" data-answer="bonne">Il a, lui aussi, un suivi réglementaire à vérifier dans le dossier</button>
       <button type="button" data-answer="b">Il échappe au suivi réglementaire : seuls les équipements neufs sont concernés</button>
       <button type="button" data-answer="c">Seul un réservoir affichant une date de fabrication récente doit être suivi</button>
       <button type="button" data-answer="d">Le suivi ne concerne que les bouteilles de fluide, jamais les réservoirs fixes</button>
@@ -272,22 +273,21 @@
   <ul>
     <li><strong>NF EN 378</strong> (même sous-ligne, en préparation) — le suivi en service croise aussi les contrôles propres au circuit frigorifique que fixe cette norme.</li>
   </ul>
-  <p>Cette station est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

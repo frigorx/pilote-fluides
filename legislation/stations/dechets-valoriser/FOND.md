@@ -100,37 +100,36 @@ niveaux, avec les quatre exemples métier positionnés dessus.*
 ## Les 4 questions (quiz)
 
 **Q1.** Quel est le mode de traitement le plus souhaitable pour un déchet ?
-- a) Le recyclage, toujours ✘
-- b) La prévention — éviter que le déchet soit produit ✔
-- c) La valorisation énergétique ✘
-- d) L'élimination, si elle est bien contrôlée ✘
+- a) L'élimination, si elle est bien contrôlée ✘
+- b) Le recyclage, quelle que soit la situation ✘
+- c) La prévention, éviter que le déchet soit produit ✔
+- d) La valorisation énergétique ✘
 *Explication : la prévention est le premier niveau : elle évite le déchet
 avant même qu'il existe.*
 
 **Q2.** Un fluide récupéré, propre, réemployé sur la machine dont il vient :
 à quel niveau correspond ce geste ?
-- a) Recyclage ✘
-- b) Valorisation énergétique ✘
-- c) Réemploi — la matière garde sa forme, sans transformation ✔
-- d) Élimination ✘
+- a) Recyclage de la matière ✘
+- b) Réemploi, sans transformation ✔
+- c) Élimination du fluide ✘
+- d) Valorisation énergétique ✘
 *Explication : réemployer n'est pas recycler : rien n'est transformé, l'objet
 ou la matière est remis en service tel quel.*
 
 **Q3.** Des chutes de cuivre fondues pour redevenir du cuivre neuf : quel
 niveau ?
-- a) Réemploi ✘
-- b) Recyclage — la matière est transformée pour redonner une matière
-  première ✔
-- c) Prévention ✘
-- d) Élimination ✘
+- a) Recyclage, la matière transformée ✔
+- b) Prévention à la source ✘
+- c) Élimination définitive ✘
+- d) Réemploi sans transformation ✘
 *Explication : contrairement au réemploi, le recyclage transforme la matière
 avant qu'elle resserve.*
 
 **Q4.** Quand l'élimination est-elle le bon choix ?
-- a) C'est toujours le choix le plus simple, donc le premier envisagé ✘
-- b) Uniquement quand aucun des niveaux précédents n'est possible ✔
-- c) Dès qu'un déchet est dangereux, sans autre examen ✘
-- d) Jamais : l'élimination n'existe plus dans la hiérarchie actuelle ✘
+- a) Dès qu'un déchet est dangereux, sans autre examen ✘
+- b) Dès que le choix paraît le plus simple ✘
+- c) Rarement : l'élimination reste peu utilisée ✘
+- d) Quand aucun des niveaux précédents n'est possible ✔
 *Explication : l'élimination est le dernier niveau, réservé à ce qui ne peut
 suivre aucun des niveaux précédents.*
 

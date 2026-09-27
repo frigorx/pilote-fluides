@@ -13,14 +13,14 @@
      STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      data-prototype : la station attend sa relecture métier.
      =================================================================== -->
@@ -55,6 +55,7 @@
   <p class="fil-sous-ligne">Risques professionnels · niveau BTS</p>
   <h1>En hauteur — l'accès et la protection avant l'équipement</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-risques.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -184,7 +185,7 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">Un cas rare, réservé aux couvreurs</button>
       <button type="button" data-answer="b">Une tâche annuelle, pour l'entretien des toitures uniquement</button>
-      <button type="button" data-answer="bonne">Une composante ordinaire du métier — toitures, terrasses techniques, groupes en hauteur</button>
+      <button type="button" data-answer="bonne">Une composante ordinaire du métier, pas de l'exceptionnel</button>
       <button type="button" data-answer="c">Une tâche réservée aux techniciens les plus expérimentés</button>
     </div>
     <p class="feedback" hidden data-explication="Le métier impose des interventions régulières en hauteur, pas seulement pour les couvreurs, pas seulement une fois par an, et pas réservées aux plus expérimentés."></p>
@@ -198,7 +199,7 @@
       <figcaption>Rappel de l'écran 3 — la protection collective avant l'individuelle.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">Un garde-corps ou une protection collective équivalente, avant tout équipement individuel</button>
+      <button type="button" data-answer="bonne">Un garde-corps, avant tout équipement individuel</button>
       <button type="button" data-answer="a">Un harnais individuel pour chaque intervenant</button>
       <button type="button" data-answer="b">Un système d'alarme sonore en cas de chute</button>
       <button type="button" data-answer="c">Une consigne orale rappelée avant l'accès</button>
@@ -217,7 +218,7 @@
       <button type="button" data-answer="a">L'utiliser normalement, la modification est mineure</button>
       <button type="button" data-answer="b">Le vérifier lui-même rapidement avant de monter</button>
       <button type="button" data-answer="c">Attendre la prochaine vérification programmée</button>
-      <button type="button" data-answer="bonne">Le faire revérifier par une personne compétente avant toute utilisation</button>
+      <button type="button" data-answer="bonne">Le faire revérifier par un compétent</button>
     </div>
     <p class="feedback" hidden data-explication="Toute modification d'un échafaudage annule la vérification précédente : il doit être recontrôlé par une personne compétente avant réutilisation. L'utiliser tel quel, s'auto-vérifier sans compétence reconnue, ou attendre une échéance programmée ne suffisent pas."></p>
   </section>
@@ -231,7 +232,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Uniquement l'état du groupe de condensation lui-même</button>
-      <button type="button" data-answer="bonne">L'état de l'accès (trappe, escalier) et la présence du garde-corps de la terrasse</button>
+      <button type="button" data-answer="bonne">L'état de l'accès, avec la présence du garde-corps</button>
       <button type="button" data-answer="b">La météo du jour, rien d'autre</button>
       <button type="button" data-answer="c">La disponibilité d'un collègue pour l'accompagner</button>
     </div>
@@ -256,15 +257,15 @@
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

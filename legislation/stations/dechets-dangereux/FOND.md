@@ -106,28 +106,26 @@ traçabilité complète, du chantier au traitement final, avec le maillon
 ## Les 4 questions (quiz)
 
 **Q1.** Qu'est-ce qui classe un déchet comme « dangereux » ?
-- a) Sa quantité, au-delà d'un certain volume ✘
-- b) Sa nature — inflammable, toxique, corrosif ou nocif pour les milieux ✔
-- c) Le fait qu'il vienne d'un chantier de froid ✘
+- a) Le fait qu'il vienne d'un chantier de froid ✘
+- b) Sa nature dangereuse, pas sa quantité ✔
+- c) Sa quantité, au-delà d'un certain volume ✘
 - d) Son prix de revente ✘
 *Explication : c'est la propriété de danger qui classe le déchet, quelle que
 soit la quantité.*
 
 **Q2.** Un fluide frigorigène récupéré, contaminé et non identifiable, est :
-- a) Un fluide en attente de réemploi ✘
-- b) Un déchet dangereux, à tracer jusqu'à son traitement final ✔
-- c) Un déchet classique, comme le cuivre ✘
-- d) Un fluide qui peut être remis dans le circuit après filtrage sur
-  chantier ✘
+- a) Un fluide remis dans le circuit après filtrage sur chantier ✘
+- b) Un fluide en attente de réemploi ✘
+- c) Un déchet dangereux, à tracer jusqu'à son traitement ✔
+- d) Un déchet classique, comme le cuivre ✘
 *Explication : non réutilisable, il devient un déchet — et sa nature en fait
 un déchet dangereux.*
 
 **Q3.** À quoi sert le bordereau de suivi des déchets (BSD) ?
-- a) À fixer le prix de revente du déchet ✘
-- b) À tracer un déchet dangereux à chaque étape, jusqu'à son traitement
-  final ✔
-- c) Il ne concerne que les déchets non dangereux ✘
-- d) Il remplace le registre du producteur ✘
+- a) À tracer le déchet dangereux à chaque étape ✔
+- b) Il ne concerne que les déchets non dangereux ✘
+- c) Il remplace le registre du producteur ✘
+- d) À fixer le prix de revente du déchet ✘
 *Explication : le BSD est la mémoire écrite du parcours d'un déchet
 dangereux, maillon par maillon.*
 
@@ -135,8 +133,8 @@ dangereux, maillon par maillon.*
 tracé ?
 - a) Les chutes de cuivre ✘
 - b) Les cartons d'emballage ✘
-- c) Un fluide frigorigène récupéré non réutilisable ✔
-- d) Les palettes de livraison ✘
+- c) Les palettes de livraison ✘
+- d) Un fluide non réutilisable ✔
 *Explication : seuls les déchets qui portent une propriété de danger — comme
 un fluide non réutilisable — exigent ce suivi.*
 

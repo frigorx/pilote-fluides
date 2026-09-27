@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img"
      aria-labelledby="t-cmp" aria-describedby="d-cmp" font-family="Calibri, 'Segoe UI', sans-serif">
   <title id="t-cmp">Ce qui change vraiment entre la RT2012 et la RE2020</title>
   <desc id="d-cmp">Deux colonnes face à face. La colonne RT2012 contient une seule case pleine,
@@ -30,4 +30,5 @@
 
   <rect x="530" y="292" width="280" height="40" rx="8" fill="#fff4e0" stroke="#92400e" stroke-width="3"/>
   <text class="lbl" x="670" y="317" text-anchor="middle" font-size="14">Confort d'été</text>
+  <text class="neuf" x="670" y="347" text-anchor="middle">nouveau</text>
 </svg>

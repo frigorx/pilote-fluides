@@ -16,14 +16,14 @@
      pèse moins lourd sur la part indirecte de son impact.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      ⚠️ PROTOTYPE NON RELU (data-prototype sur marque.js) : fond rédigé,
      en attente de relecture métier avant diffusion.
@@ -59,6 +59,7 @@
   <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
   <h1>Écoconception — concevoir pour durer et consommer moins</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-impact.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -123,7 +124,7 @@
     </figure>
   </section>
 
-  <section class="slide" id="ecran-4" data-narration="À gauche, sept bandes empilées, de la plus longue et verte à la plus courte et rouge, chacune portant une lettre de A à G : le principe d'une échelle de classes, donné à titre d'exemple. Une flèche part d'une bande du milieu vers le texte « la classe de cet appareil » — c'est une illustration du mécanisme, pas la note d'un appareil réel. À droite, une loupe posée sur une étiquette de prix : ce que le client regarde avant d'acheter, sans connaître le détail technique.">
+  <section class="slide" id="ecran-4" data-narration="Au moment d'acheter, le client ne connaît pas les détails techniques de l'appareil : l'étiquette énergie lui donne un repère simple, une classe qui résume l'efficacité sur une échelle de lettres, par exemple de A à G selon la famille d'appareil. Plus la lettre est proche du haut de l'échelle, plus l'appareil consomme peu — un principe illustré ici, pas la note d'un appareil réel.">
     <p class="numero">Écran 4 sur 8</p>
     <h2 tabindex="-1">L'étiquette énergie : ce que le client lit avant d'acheter</h2>
     <p>Au moment de l'achat, le client ne connaît pas les détails techniques de l'appareil. L'<strong>étiquette énergie</strong> lui donne un repère simple : une <strong>classe</strong> qui résume l'efficacité énergétique.</p>
@@ -134,7 +135,7 @@
     </figure>
   </section>
 
-  <section class="slide" id="ecran-5" data-narration="À gauche, l'icône d'une PAC ou d'un groupe de condensation, avec une flèche vers deux barres empilées. Chaque barre a une base grise identique, la part directe, la fuite de fluide — elle reste comparable. Au-dessus, une portion colorée, la part indirecte, la consommation électrique : plus petite et verte pour l'appareil mieux classé, plus grande et ambrée pour l'appareil moins bien classé. Aucun chiffre : seule la hauteur des barres porte la comparaison, doublée par les mots « plus faible » et « plus élevée ».">
+  <section class="slide" id="ecran-5" data-narration="Le lien avec le métier du froid : une PAC ou un groupe de condensation mieux classé consomme moins d'électricité sur toute sa vie. Cette consommation n'est pas une fuite de fluide frigorigène — c'est la part indirecte de l'impact de l'appareil, celle que mesure le TEWI, vu dans une autre station du même réseau. Un appareil qui consomme moins pèse donc moins lourd sur cette part, sans que sa part directe change.">
     <p class="numero">Écran 5 sur 8</p>
     <h2 tabindex="-1">Le lien avec le métier du froid : la part indirecte du TEWI</h2>
     <p>Une <strong>PAC</strong> ou un <strong>groupe de condensation</strong> mieux classé consomme moins d'électricité sur toute sa vie. Cette consommation, ce n'est pas une fuite de fluide frigorigène : c'est la <strong>part indirecte</strong> de l'impact de l'appareil.</p>
@@ -199,7 +200,7 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Uniquement baisser le prix d'achat</button>
-      <button type="button" data-answer="bonne">Concevoir un appareil qui dure, se répare et consomme moins sur toute sa vie</button>
+      <button type="button" data-answer="bonne">Concevoir un appareil qui dure et se répare</button>
       <button type="button" data-answer="c">Uniquement accélérer sa fabrication</button>
       <button type="button" data-answer="d">Uniquement plaire visuellement au client</button>
     </div>
@@ -215,8 +216,8 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Un boîtier scellé rendrait l'appareil plus réparable</button>
-      <button type="button" data-answer="b">La réparabilité n'aurait aucun effet sur l'impact environnemental</button>
-      <button type="button" data-answer="bonne">Des pièces accessibles et des pièces détachées disponibles, ce qui prolonge sa durée de vie et réduit les déchets</button>
+      <button type="button" data-answer="b">La réparabilité n'aurait pas d'effet sur l'impact environnemental</button>
+      <button type="button" data-answer="bonne">Des pièces accessibles et des pièces détachées disponibles</button>
       <button type="button" data-answer="d">Seul le prix déterminerait la réparabilité</button>
     </div>
     <p class="feedback" hidden data-explication="Un boîtier scellé interdit justement l'intervention, il réduit la réparabilité au lieu de l'augmenter ; l'impact environnemental dépend directement de la durée de vie, donc de la réparabilité ; le prix seul ne dit rien sur l'accès aux pièces. Un appareil réparable a des pièces accessibles et des pièces détachées disponibles dans le temps."></p>
@@ -230,7 +231,7 @@
       <figcaption>Rappel de l'écran 4 — la classe, avant même la mise en service.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="bonne">La classe d'efficacité énergétique de l'appareil, avant même de le mettre en service</button>
+      <button type="button" data-answer="bonne">La classe d'efficacité énergétique de l'appareil</button>
       <button type="button" data-answer="b">La durée de la garantie</button>
       <button type="button" data-answer="c">La charge de fluide frigorigène de l'appareil</button>
       <button type="button" data-answer="d">Uniquement son niveau sonore</button>
@@ -246,10 +247,10 @@
       <figcaption>Rappel de l'écran 6 — le surcoût apparaît sur la durée.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Le prix d'achat refléterait toujours le coût total sur la vie de l'appareil</button>
-      <button type="button" data-answer="b">La classe énergie n'aurait aucun impact sur le coût d'exploitation</button>
+      <button type="button" data-answer="a">Le prix d'achat refléterait à lui seul le coût total sur la vie de l'appareil</button>
+      <button type="button" data-answer="b">La classe énergie n'aurait pas vraiment d'impact sur le coût d'exploitation</button>
       <button type="button" data-answer="c">Une mauvaise classe énergie ne concernerait que le bruit</button>
-      <button type="button" data-answer="bonne">Il peut coûter plus cher sur sa durée de vie, en argent et en impact environnemental, à cause de sa consommation électrique</button>
+      <button type="button" data-answer="bonne">Il peut coûter plus cher sur sa vie, en argent et en impact environnemental</button>
     </div>
     <p class="feedback" hidden data-explication="Le prix d'achat ne montre pas la consommation sur la durée de vie ; la classe énergie agit justement sur le coût d'exploitation via la consommation électrique ; elle ne concerne pas le bruit mais l'efficacité. Un appareil mal classé consomme plus d'électricité sur sa vie, ce qui pèse sur la part indirecte de son impact — le lien avec le TEWI."></p>
   </section>
@@ -257,31 +258,32 @@
   </div><!-- /.slides -->
 </section>
 
-<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Aucun lien
-     réel pour cette station : les deux correspondances annoncées sont
-     encore en préparation sur le plan du réseau. -->
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. impact-tewi
+     est un lien réel, la station existe. RE2020 et NF EN 378 restent en
+     préparation sur le plan du réseau. -->
 <section class="maillage">
   <h2>Les correspondances de la station</h2>
   <ul>
-    <li><strong>La RE2020</strong> (sous-ligne Thermique) — les exigences de conception qui pèsent sur les bâtiments et leurs équipements.</li>
+    <li><a href="../impact-tewi/"><strong>TEWI</strong></a> (même sous-ligne) — un appareil mieux classé pèse moins lourd sur la part indirecte de son impact.</li>
+    <li><a href="../thermique-re2020/"><strong>La RE2020</strong></a> (sous-ligne Thermique) — les exigences de conception qui pèsent sur les bâtiments et leurs équipements.</li>
     <li><strong>NF EN 378</strong> (même sous-ligne) — ce que la classe du fluide impose en plus, au-delà de l'étiquette énergie.</li>
   </ul>
-  <p>Les deux stations sont en préparation sur le plan du réseau.</p>
+  <p>TEWI et La RE2020 sont ouvertes : les liens fonctionnent. NF EN 378 est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

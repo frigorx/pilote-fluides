@@ -13,15 +13,15 @@
      STATION DU RÉSEAU LÉGISLATION — sous-ligne Déchets.
      Gabarit structurel : aptitude-capacite (sous-ligne Fluidique &
      thermique). Régime SATELLITE : identité propre, une seule
-     passerelle (le plan du réseau), moteur chargé en absolu depuis
-     inerweb.fr. Le dossier legislation/ doit rester déplaçable d'un
+     passerelle (le plan du réseau), moteur chargé en relatif depuis
+     ../../../moteur/. Le dossier legislation/ doit rester déplaçable d'un
      bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      ÉCART ASSUMÉ AVEC LE FOND : aucune date d'entrée en vigueur de la
      REP bâtiment n'est citée, ni les conditions précises de gratuité
@@ -62,6 +62,7 @@
   <p class="fil-sous-ligne">Déchets · niveau BTS</p>
   <h1>La REP bâtiment — reprise et éco-organismes</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-dechets.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -199,10 +200,10 @@
       <figcaption>Rappel de l'écran 1 — le cycle et la flèche de retour.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Le producteur du déchet paie toujours, quel que soit le déchet</button>
-      <button type="button" data-answer="bonne">Celui qui a mis le produit sur le marché finance et organise sa fin de vie</button>
-      <button type="button" data-answer="c">Seul l'État finance la fin de vie des produits du bâtiment</button>
+      <button type="button" data-answer="bonne">Le metteur sur le marché finance la fin de vie</button>
+      <button type="button" data-answer="a">Le producteur du déchet paie, quel qu'il soit</button>
       <button type="button" data-answer="d">Chaque chantier organise sa propre filière de traitement</button>
+      <button type="button" data-answer="c">Seul l'État finance la fin de vie des produits du bâtiment</button>
     </div>
     <p class="feedback" hidden data-explication="La REP déplace la responsabilité de fin de vie vers le metteur sur le marché, pas vers celui qui utilise ou jette le produit."></p>
   </section>
@@ -215,10 +216,10 @@
       <figcaption>Rappel de l'écran 2 — le bloc du milieu organise.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Il vend les matériaux de construction aux entreprises</button>
-      <button type="button" data-answer="bonne">Il organise, avec l'éco-contribution reçue, la collecte et le traitement des déchets</button>
       <button type="button" data-answer="c">Il contrôle les chantiers pour vérifier le port des EPI</button>
+      <button type="button" data-answer="bonne">Il finance la collecte grâce à l'éco-contribution reçue</button>
       <button type="button" data-answer="d">Il remplace le registre du producteur de déchets</button>
+      <button type="button" data-answer="a">Il vend les matériaux de construction aux entreprises</button>
     </div>
     <p class="feedback" hidden data-explication="L'éco-organisme est l'intermédiaire opérationnel entre le financement REP et le terrain."></p>
   </section>
@@ -231,10 +232,10 @@
       <figcaption>Rappel de l'écran 4 — deux zones sur le même établi.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Les fluides frigorigènes récupérés</button>
-      <button type="button" data-answer="b">Le cuivre de tuyauterie</button>
-      <button type="button" data-answer="bonne">Les isolants et gaines utilisés en périphérie de l'intervention</button>
       <button type="button" data-answer="d">Les huiles usagées</button>
+      <button type="button" data-answer="a">Les fluides frigorigènes récupérés</button>
+      <button type="button" data-answer="bonne">Isolants et gaines de périphérie</button>
+      <button type="button" data-answer="b">Le cuivre de tuyauterie</button>
     </div>
     <p class="feedback" hidden data-explication="Le cœur de métier du frigoriste (fluides, cuivre, huiles) suit d'autres filières ; la REP bâtiment concerne les matériaux de construction qu'il utilise en périphérie."></p>
   </section>
@@ -248,9 +249,9 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Parce que le dépôt est gratuit uniquement le matin</button>
-      <button type="button" data-answer="bonne">Parce que le déchet est mal trié ou hors du périmètre de la filière</button>
-      <button type="button" data-answer="c">Parce que les points de reprise n'acceptent aucun professionnel</button>
+      <button type="button" data-answer="c">Parce que les points de reprise sont réservés aux particuliers</button>
       <button type="button" data-answer="d">Parce que le camion du chantier n'est pas autorisé à circuler</button>
+      <button type="button" data-answer="bonne">Parce que le déchet est mal trié ou hors périmètre</button>
     </div>
     <p class="feedback" hidden data-explication="L'accès est conditionné à un tri correct et à un déchet couvert par la filière."></p>
   </section>
@@ -265,24 +266,24 @@
   <h2>Les correspondances de la station</h2>
   <ul>
     <li><strong>Traçabilité</strong> (sous-ligne Fluidique &amp; thermique) — en préparation.</li>
-    <li><strong>Impact environnemental</strong> — en préparation.</li>
+    <li><a href="../impact-acv-carbone/"><strong>ACV &amp; carbone</strong></a> (sous-ligne Impact environnemental) — la reprise des déchets, vue depuis la fin de vie du cycle.</li>
   </ul>
-  <p>Ces deux stations sont en préparation sur le plan du réseau.</p>
+  <p>ACV &amp; carbone est ouverte : le lien fonctionne. Traçabilité est en préparation sur le plan du réseau.</p>
 </section>
 
 </div>
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
-     ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
-     cette station, elle parle donc avec la voix du navigateur.
+     voix-index.js : l'index global des MP3 (edge-tts, 02/09/2026) ; la voix
+     du navigateur reste le filet de secours.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>

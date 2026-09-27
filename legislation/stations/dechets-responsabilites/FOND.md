@@ -125,37 +125,33 @@ chantier à la filière finale, avec le maillon « vérification » mis en
 connaît pas, sans vérifier son autorisation. Le repreneur les gère mal. Que
 risque le frigoriste ?
 - a) Rien, il n'est plus détenteur du déchet ✘
-- b) Sa responsabilité reste engagée : il n'a pas vérifié l'autorisation du
-  repreneur ✔
-- c) Rien, seul le repreneur est responsable ✘
+- b) Rien, seul le repreneur est responsable ✘
+- c) Sa responsabilité reste engagée malgré la remise ✔
 - d) Une amende automatique, quel que soit le contexte ✘ (pas de chiffre)
 *Explication : la responsabilité suit le déchet ; remettre à un tiers non
 vérifié ne l'éteint pas.*
 
 **Q2.** Qu'est-ce qui distingue le producteur du détenteur d'un déchet ?
-- a) Le producteur est toujours une entreprise, le détenteur toujours une
-  personne ✘
-- b) Le détenteur est celui qui a la garde du déchet à un instant donné, le
-  producteur celui dont l'activité l'a fait naître ✔
-- c) Ce sont deux mots pour la même personne, toujours ✘
-- d) Le détenteur n'a aucune obligation ✘
+- a) Le détenteur a la garde, le producteur l'a fait naître ✔
+- b) Le producteur est une entreprise, le détenteur une personne ✘
+- c) Le détenteur n'a pas d'obligation propre ✘
+- d) Ce sont deux mots pour désigner la même personne ✘
 *Explication : les deux notions décrivent deux maillons possibles de la même
 chaîne — le producteur peut aussi être détenteur.*
 
 **Q3.** Jusqu'où va la responsabilité d'un producteur de déchet ?
-- a) Jusqu'à ce qu'il quitte le chantier ✘
-- b) Jusqu'à la remise au premier transporteur ✘
-- c) Jusqu'à l'élimination ou la valorisation finale du déchet ✔
-- d) Elle s'arrête dès qu'un bordereau est signé ✘
+- a) Elle s'arrête dès qu'un bordereau est signé ✘
+- b) Jusqu'à l'élimination ou la valorisation finale ✔
+- c) Jusqu'à ce qu'il quitte le chantier ✘
+- d) Jusqu'à la remise au premier transporteur ✘
 *Explication : c'est tout le sens du principe — la responsabilité ne s'arrête
 pas à un maillon intermédiaire.*
 
 **Q4.** Pourquoi un frigoriste tient-il un registre de ses déchets ?
-- a) Pour justifier ses achats de matériel ✘
-- b) C'est la preuve écrite qu'il a bien géré ses déchets, utile en cas de
-  contrôle ✔
-- c) Uniquement pour la comptabilité de l'entreprise ✘
-- d) Ce n'est utile que pour les déchets non dangereux ✘
+- a) Uniquement pour la comptabilité de l'entreprise ✘
+- b) Ce n'est utile que pour les déchets non dangereux ✘
+- c) Pour justifier ses achats de matériel ✘
+- d) La preuve écrite qu'il a bien géré ses déchets ✔
 *Explication : sans trace écrite, une bonne pratique réelle ne peut pas être
 démontrée.*
 

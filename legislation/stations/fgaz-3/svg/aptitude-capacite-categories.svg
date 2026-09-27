@@ -50,9 +50,9 @@
   <text x="12" y="6" text-anchor="middle" style="font:700 17px Calibri;fill:#fff">+</text>
 </g>
 
-<rect x="30" y="256" width="820" height="46" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
+<rect x="30" y="256" width="820" height="66" rx="8" fill="#fdf1ed" stroke="#e8b9a8" stroke-width="1.5"/>
 <text x="48" y="278" style="font:700 14.5px Calibri;fill:#c9451a">Il faut les DEUX, et l'une ne remplace jamais l'autre.</text>
-<text class="lg" x="48" y="296">La confusion la plus fréquente du métier : « mon patron a la capacité, donc je peux y aller » est faux.</text>
+<text class="lg" x="48" y="298"><tspan x="48" dy="0">La confusion la plus fréquente du métier :</tspan><tspan x="48" dy="16">« mon patron a la capacité, donc je peux y aller » est faux.</tspan></text>
 
 <text class="t" x="30" y="342">Les sept catégories d'aptitude — arrêté du 21 novembre 2025</text>
 

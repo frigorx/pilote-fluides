@@ -1,0 +1,6 @@
+Use your built-in image generation tool to create ONE image. Do not write code and do not draw with PIL, matplotlib or SVG. Save nothing else.
+
+Subject: planet Earth drawn as a simple globe with a thin protective atmosphere ring around it, a small refrigerant cylinder and a heat pump unit standing in front of the globe on the ground, a few green leaves growing beside them, a faint upward wisp rising from the cylinder valve toward the ring. No people. The orange accent is the thin wisp.
+
+Style: flat illustration in a clean editorial house style. Solid navy blue (#1b3a63) outlines, light blue flat fills, cream background (#f7f1e7), ONE orange accent (#ff6b35) used sparingly on a single element, people drawn as simple silhouettes without facial features. No gradients, no drop shadows, no textures, no photorealism. Landscape 1536 x 1024.
+Strictly avoid: text, letters, numbers, labels, signs, stickers, brand, logo, watermark, gauges with digits, faces with features, bare hands when gloves are listed, bare head when a helmet is listed.

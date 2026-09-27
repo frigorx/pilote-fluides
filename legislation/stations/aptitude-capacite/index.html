@@ -15,15 +15,14 @@
      le maillage devient réel avec elle.
 
      Régime SATELLITE : identité propre, une seule passerelle (le plan du
-     réseau), moteur chargé en absolu depuis inerweb.fr. Le dossier
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
      legislation/ doit rester déplaçable d'un bloc, sans rien casser.
 
      VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
      #prev, #start, #stop-voice et la classe .slide.active sont le
      CONTRAT du professeur vocal — ne pas les renommer.
-     ⚠️ Aucun audio n'est encore fabriqué pour cette station : elle parle
-     donc avec la voix du navigateur. La fabrication Piper (locale) est
-     une étape à part — voir FOND.md, § production.
+     Voix fabriquée le 02/09/2026 (edge-tts) : les 12 narrations ont leur MP3
+     dans l'index global moteur/voix-index.js, la voix du navigateur reste le filet.
 
      Fond rédigé le 23/08, feu vert de F. Henninot le 24/08.
      ÉCART ASSUMÉ AVEC LE FOND : l'écran 4 ne mentionne ni durée de
@@ -63,6 +62,7 @@
   <p class="fil-sous-ligne">Fluidique &amp; thermique · niveau BTS</p>
   <h1>Aptitude &amp; capacité — qui a le droit de toucher</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-fluidique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -217,10 +217,10 @@
       <figcaption>Rappel de l'écran 1 — deux papiers, deux titulaires.</figcaption>
     </figure>
     <div class="quiz-options">
-      <button type="button" data-answer="a">Intervenir : son aptitude suffit, elle est personnelle</button>
-      <button type="button" data-answer="bonne">Rien sur les gaz fluorés — il faut aussi la capacité de l'entreprise</button>
+      <button type="button" data-answer="a">Intervenir : son aptitude personnelle suffit</button>
+      <button type="button" data-answer="bonne">Rien : il manque la capacité de l'entreprise</button>
       <button type="button" data-answer="c">Intervenir uniquement sur les faibles charges</button>
-      <button type="button" data-answer="d">Intervenir six mois, le temps que l'entreprise régularise</button>
+      <button type="button" data-answer="d">Intervenir six mois, le temps de régulariser</button>
     </div>
     <p class="feedback" hidden data-explication="Les deux papiers sont nécessaires ensemble. L'aptitude est à la personne et le suit ; la capacité est à l'entreprise. L'une ne remplace jamais l'autre."></p>
   </section>
@@ -235,8 +235,8 @@
     <div class="quiz-options">
       <button type="button" data-answer="a">Uniquement sur les groupes obligatoires</button>
       <button type="button" data-answer="b">Sur les groupes qu'il choisit dans son dossier</button>
-      <button type="button" data-answer="bonne">Sur les obligatoires, plus un groupe tiré au sort parmi G6 à G9, plus celui de sa catégorie</button>
       <button type="button" data-answer="d">Sur les quatorze groupes, sans exception</button>
+      <button type="button" data-answer="bonne">Les obligatoires, un G6-G9 au sort, sa catégorie</button>
     </div>
     <p class="feedback" hidden data-explication="Le tirage au sort est là pour empêcher l'impasse : le candidat ne sait pas, avant l'évaluation, lequel des quatre sortira."></p>
   </section>
@@ -249,9 +249,9 @@
       <figcaption>Rappel de l'écran 5 — le jalon des 7 ans.</figcaption>
     </figure>
     <div class="quiz-options">
+      <button type="button" data-answer="bonne">Tant qu'une remise à niveau a lieu tous les 7 ans</button>
       <button type="button" data-answer="a">À vie, comme auparavant</button>
       <button type="button" data-answer="b">Cinq ans, puis elle doit être repassée entièrement</button>
-      <button type="button" data-answer="bonne">Tant qu'une remise à niveau est faite a minima tous les 7 ans</button>
       <button type="button" data-answer="d">Trois ans, renouvelable une seule fois</button>
     </div>
     <p class="feedback" hidden data-explication="C'est la nouveauté du régime de 2025. Sans remise à niveau, l'attestation est suspendue : son titulaire ne peut plus exercer jusqu'à mise en conformité, dans un délai maximum de trois ans."></p>
@@ -266,8 +266,8 @@
     </figure>
     <div class="quiz-options">
       <button type="button" data-answer="a">Rien : les anciennes catégories restent valides sans limite</button>
-      <button type="button" data-answer="bonne">Une remise à niveau ponctuelle avant le 12 mars 2029, sinon repasser l'examen</button>
       <button type="button" data-answer="c">Repasser immédiatement l'examen complet</button>
+      <button type="button" data-answer="bonne">Remise à niveau ponctuelle avant le 12 mars 2029</button>
       <button type="button" data-answer="d">Demander la conversion automatique en catégorie A2</button>
     </div>
     <p class="feedback" hidden data-explication="L'ancien régime bascule vers le nouveau par une remise à niveau ponctuelle. Passé l'échéance, l'attestation n'est plus valide et le titulaire redevient candidat."></p>
@@ -296,8 +296,8 @@
 
 <script src="app.js"></script>
 
-<!-- Le moteur du site, en absolu (décision du 20/08 : une source, zéro
-     divergence). voix.js donne la narration, prof-vocal.js enchaîne les
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions.
 
      ⚠️ PAS de voix-index.js ici : aucun audio n'est encore fabriqué pour
@@ -307,7 +307,7 @@
      puis réduire l'index à cette station.
 
      data-prototype : la station attend sa relecture métier. -->
-  <script src="../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
 <script src="../../../moteur/prononciation.js"></script>
 <script src="../../../moteur/voix.js"></script>
 <script src="../../../moteur/prof-vocal.js"></script>
