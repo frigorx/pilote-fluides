@@ -98,7 +98,7 @@ window.CABLAGE_INDEX = [
  },
  {
   "id": "demarrage-direct-tri",
-  "titre": "Démarrage direct d'un moteur triphasé : sectionneur, disjoncteur moteur, contacteur, relais thermique, bornier",
+  "titre": "Démarrage direct d'un moteur triphasé : sectionneur porte-fusibles, contacteur, relais thermique, bornier",
   "niveau": 2,
   "famille": "puissance"
  }

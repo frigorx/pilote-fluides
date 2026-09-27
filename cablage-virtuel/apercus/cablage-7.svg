@@ -1,52 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="89.0 42.0 771.0 809.0" width="771" height="809"><style>*{vector-effect:non-scaling-stroke}</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="89.0 42.0 771.0 849.0" width="771" height="849"><style>*{vector-effect:non-scaling-stroke}</style>
 <!-- Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur — converti de cablage-7.qet par outils\qet-vers-svg.py -->
-<rect x="89.0" y="42.0" width="771.0" height="809.0" fill="#ffffff"/>
+<rect x="89.0" y="42.0" width="771.0" height="849.0" fill="#ffffff"/>
 <g id="conducteurs">
 <polyline points="146.00,80.00 300.00,80.00 300.00,194.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="146.00,100.00 320.00,100.00 320.00,194.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="146.00,120.00 340.00,120.00 340.00,194.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="146.00,140.00 280.00,140.00 280.00,194.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="146.00,160.00 820.00,160.00 820.00,194.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="280.00,206.00 280.00,254.00 280.00,254.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,206.00 300.00,254.00 300.00,254.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,206.00 320.00,254.00 320.00,254.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,206.00 340.00,254.00 340.00,254.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,326.00 300.00,404.00 300.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,326.00 320.00,404.00 320.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,326.00 340.00,404.00 340.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="280.00,326.00 280.00,350.00 680.00,350.00 680.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,326.00 300.00,360.00 700.00,360.00 700.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,436.00 300.00,504.00 300.00,504.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,436.00 320.00,504.00 320.00,504.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,436.00 340.00,504.00 340.00,504.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,436.00 300.00,470.00 500.00,470.00 500.00,504.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,436.00 320.00,480.00 520.00,480.00 520.00,504.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,436.00 340.00,490.00 540.00,490.00 540.00,504.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="680.00,476.00 680.00,524.00 680.00,524.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="700.00,476.00 700.00,524.00 700.00,524.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="280.00,206.00 280.00,264.00 280.00,264.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,206.00 300.00,264.00 300.00,264.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,206.00 320.00,264.00 320.00,264.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,206.00 340.00,264.00 340.00,264.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,306.00 300.00,404.00 300.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,306.00 320.00,404.00 320.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,306.00 340.00,404.00 340.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="280.00,306.00 280.00,340.00 680.00,340.00 680.00,414.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,306.00 300.00,350.00 700.00,350.00 700.00,414.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,446.00 300.00,494.00 300.00,494.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,446.00 320.00,494.00 320.00,494.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,446.00 340.00,494.00 340.00,494.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,526.00 300.00,603.00 300.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,526.00 320.00,603.00 320.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,526.00 340.00,603.00 340.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,526.00 300.00,540.00 500.00,540.00 500.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,526.00 320.00,550.00 520.00,550.00 520.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,526.00 340.00,560.00 540.00,560.00 540.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,637.00 300.00,694.00 300.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,637.00 320.00,694.00 320.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,637.00 340.00,694.00 340.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,706.00 300.00,784.00 300.00,784.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,706.00 320.00,784.00 320.00,784.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,706.00 340.00,784.00 340.00,784.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="500.00,637.00 500.00,694.00 500.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="520.00,637.00 520.00,694.00 520.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="540.00,637.00 540.00,694.00 540.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="500.00,706.00 500.00,784.00 500.00,784.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="520.00,706.00 520.00,784.00 520.00,784.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="540.00,706.00 540.00,784.00 540.00,784.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="680.00,456.00 680.00,524.00 680.00,524.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="700.00,456.00 700.00,524.00 700.00,524.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="700.00,596.00 700.00,610.00 750.00,610.00 750.00,510.00 720.00,510.00 720.00,524.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,576.00 300.00,654.00 300.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,576.00 320.00,654.00 320.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,576.00 340.00,654.00 340.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,666.00 300.00,744.00 300.00,744.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,666.00 320.00,744.00 320.00,744.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,666.00 340.00,744.00 340.00,744.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="500.00,576.00 500.00,654.00 500.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="520.00,576.00 520.00,654.00 520.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="540.00,576.00 540.00,654.00 540.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="500.00,666.00 500.00,744.00 500.00,744.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="520.00,666.00 520.00,744.00 520.00,744.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="540.00,666.00 540.00,744.00 540.00,744.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="680.00,596.00 680.00,654.00 680.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="720.00,596.00 720.00,654.00 720.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="680.00,666.00 680.00,720.00 705.00,720.00 705.00,764.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="720.00,666.00 720.00,720.00 715.00,720.00 715.00,764.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="820.00,206.00 820.00,620.00 760.00,620.00 760.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="760.00,654.00 760.00,640.00 600.00,640.00 600.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="600.00,654.00 600.00,640.00 400.00,640.00 400.00,654.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="400.00,666.00 400.00,780.00 346.00,780.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="600.00,666.00 600.00,780.00 546.00,780.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="760.00,666.00 760.00,733.00 760.00,733.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="680.00,596.00 680.00,694.00 680.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="720.00,596.00 720.00,694.00 720.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="680.00,706.00 680.00,760.00 705.00,760.00 705.00,804.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="720.00,706.00 720.00,760.00 715.00,760.00 715.00,804.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="820.00,206.00 820.00,670.00 760.00,670.00 760.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="760.00,694.00 760.00,670.00 600.00,670.00 600.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="600.00,694.00 600.00,670.00 400.00,670.00 400.00,694.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="400.00,706.00 400.00,820.00 346.00,820.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="600.00,706.00 600.00,820.00 546.00,820.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="760.00,706.00 760.00,773.00 760.00,773.00" fill="none" stroke="black" stroke-width="1"/>
 </g>
 <g id="symboles">
 <g class="symbole" data-type="src_3p_pe_n" transform="translate(140.00,120.00)">
@@ -86,51 +89,62 @@
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="dis_mag_term_4f-1" transform="translate(300.00,290.00)">
-<line x1="40" y1="40" x2="40" y2="28" stroke="black" stroke-width="1" fill="none"/>
-<polyline points="40,14 40,10 45,10 45,4 40,4 40,-6 33,-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="30" y1="0" x2="30" y2="28" stroke="black" stroke-width="1" fill="none"/>
-<text x="36" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 36 25)">I&gt;</text>
-<text x="44" y="-37" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 44 -37)">5</text>
-<text x="44" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 44 39)">6</text>
-<polyline points="20,14 20,10 25,10 25,4 20,4 20,-6 13,-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="42" y1="-29" x2="38" y2="-25" stroke="black" stroke-width="1" fill="none"/>
-<polyline points="0,14 0,10 5,10 5,4 0,4 0,-6 -7,-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="38" y1="-29" x2="42" y2="-25" stroke="black" stroke-width="1" fill="none"/>
-<text x="16" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 16 25)">I&gt;</text>
-<line x1="40" y1="-27" x2="40" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<text x="24" y="-37" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 24 -37)">3</text>
-<text x="4" y="-37" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 4 -37)">1</text>
-<text x="4" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 4 39)">2</text>
-<rect x="-10" y="0" width="60" height="28" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
-<text x="24" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 24 39)">4</text>
-<text x="-16" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -16 39)">N</text>
-<text x="-4" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -4 25)">I&gt;</text>
-<line x1="-18" y1="-29" x2="-22" y2="-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-22" y1="-29" x2="-18" y2="-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="2" y1="-29" x2="-2" y2="-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-29" x2="2" y2="-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="22" y1="-29" x2="18" y2="-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="18" y1="-29" x2="22" y2="-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-10" y1="14" x2="49.59" y2="14" stroke="black" stroke-width="1" fill="none"/>
-<line x1="10" y1="0" x2="10" y2="28" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-20" y1="40" x2="-20" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="40" x2="0" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="20" y1="40" x2="20" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<text x="-16" y="-37" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -16 -37)">N</text>
-<polyline points="-20,28 -20,10 -20,4 -20,-6 -27,-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-20" y1="-27" x2="-20" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="-27" x2="0" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<line x1="20" y1="-27" x2="20" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<rect x="-46" y="-22" width="12" height="12" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-34" y1="-16" x2="-53" y2="-16" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-53" y1="-20" x2="-53" y2="-12" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-40" y1="-10" x2="-40" y2="-22" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-33.59" y1="-16" x2="33.55" y2="-16" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<polyline points="-10,21 -40,21 -40,-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<line x1="-10" y1="7" x2="-40" y2="7" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<g class="symbole" data-type="disjonct-m_4fn" transform="translate(310.00,290.00)">
+<line x1="-30" y1="15.5" x2="-30" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="30" y1="15.5" x2="30" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="15.5" x2="-10" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -30.00,15.50 A 4.00,2.50 0 0 0 -30.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -10.00,15.50 A 4.00,2.50 0 0 0 -10.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 30.00,15.50 A 4.00,2.50 0 0 0 30.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-30,10.5 -30,8 -25,8 -25,3 -30,3 -30,0 -35,-20" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-10,10.5 -10,8 -5,8 -5,3 -10,3 -10,0 -15,-20" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="30,10.5 30,8 35,8 35,3 30,3 30,0 25,-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="15.5" x2="10" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-30" y1="-30" x2="-30" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-28" y1="-26" x2="-32" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-32" y1="-26" x2="-28" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-30" x2="10" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="12" y1="-26" x2="8" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="8" y1="-26" x2="12" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="-30" x2="-10" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-8" y1="-26" x2="-12" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-26" x2="-8" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="30" y1="-30" x2="30" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="32" y1="-26" x2="28" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="28" y1="-26" x2="32" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-32.5" y1="-10" x2="27.5" y2="-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<polyline points="10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-32" y1="-20" x2="-28" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-20" x2="-8" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="8" y1="-20" x2="12" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="28" y1="-20" x2="32" y2="-20" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="com_puiss_3P_inv2" transform="translate(310.00,420.00)">
+<g class="symbole" data-type="disjonct-m_3f" transform="translate(320.00,430.00)">
+<line x1="-20" y1="15.5" x2="-20" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="15.5" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -20.00,15.50 A 4.00,2.50 0 0 0 -20.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,15.50 A 4.00,2.50 0 0 0 0.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-20,10.5 -20,8 -15,8 -15,3 -20,3 -20,0 -25,-20" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="0,10.5 0,8 5,8 5,3 0,3 0,0 -5,-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="15.5" x2="20" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 20.00,15.50 A 4.00,2.50 0 0 0 20.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-20" y1="-30" x2="-20" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-18" y1="-26" x2="-22" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-22" y1="-26" x2="-18" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-30" x2="20" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="22" y1="-26" x2="18" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="18" y1="-26" x2="22" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-30" x2="0" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="2" y1="-26" x2="-2" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-2" y1="-26" x2="2" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-22.5" y1="-10" x2="17.5" y2="-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<polyline points="20,10.5 20,8 25,8 25,3 20,3 20,0 15,-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-22" y1="-20" x2="-18" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-2" y1="-20" x2="2" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="18" y1="-20" x2="22" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="com_puiss_3P_inv2" transform="translate(310.00,510.00)">
 <line x1="-27" y1="0" x2="27" y2="0" stroke="black" stroke-width="1" fill="none"/>
 <text x="15" y="-20" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 15 -20)">3
 L2</text>
@@ -154,132 +168,54 @@ T3</text>
 <text x="-6" y="-20" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -6 -20)">1
 L1</text>
 </g>
-<g class="symbole" data-type="gv2p" transform="translate(320.00,540.00)">
-<line x1="-56" y1="-12" x2="-53" y2="-12" stroke="black" stroke-width="0.4" fill="none"/>
-<polyline points="20,14 20,10 25,10 25,4 20,4 20,-6 13,-25" stroke="black" stroke-width="1" fill="none"/>
-<polyline points="0,14 0,10 5,10 5,4 0,4 0,-6 -7,-25" stroke="black" stroke-width="1" fill="none"/>
-<text x="16" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 16 25)">I&gt;</text>
-<text x="24" y="-40" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 24 -40)">5
-L3</text>
-<text x="4" y="-40" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 4 -40)">3
-L2</text>
-<text x="4" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 4 39)">4
-T2</text>
-<rect x="-30" y="0" width="60" height="28" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
-<text x="24" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 24 39)">6
-T3</text>
-<text x="-16" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -16 39)">2
-T1</text>
-<text x="-4" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -4 25)">I&gt;</text>
-<line x1="-18" y1="-33" x2="-22" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-22" y1="-33" x2="-18" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="2" y1="-33" x2="-2" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-33" x2="2" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="22" y1="-33" x2="18" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="18" y1="-33" x2="22" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-30" y1="14" x2="30" y2="14" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-10" y1="0" x2="-10" y2="27" stroke="black" stroke-width="1" fill="none"/>
-<line x1="10" y1="0" x2="10" y2="28" stroke="black" stroke-width="1" fill="none"/>
-<text x="-24" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -24 25)">I&gt;</text>
-<line x1="-20" y1="40" x2="-20" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="40" x2="0" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="20" y1="40" x2="20" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<text x="-16" y="-40" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -16 -40)">1
-L1</text>
-<polyline points="-20,14 -20,10 -15,10 -15,4 -20,4 -20,-6 -27,-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-20" y1="-27" x2="-20" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="-27" x2="0" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<line x1="20" y1="-27" x2="20" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<rect x="-46" y="-22" width="12" height="12" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-34" y1="-16" x2="-53" y2="-16" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-53" y1="-20" x2="-53" y2="-12" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-40" y1="-10" x2="-40" y2="-22" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-34" y1="-16" x2="16" y2="-16" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<polyline points="-30,21 -40,21 -40,-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<line x1="-30" y1="7" x2="-40" y2="7" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<line x1="-53" y1="-20" x2="-50" y2="-20" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-22" y1="-27" x2="-18" y2="-27" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-27" x2="2" y2="-27" stroke="black" stroke-width="1" fill="none"/>
-<line x1="18" y1="-27" x2="22" y2="-27" stroke="black" stroke-width="1" fill="none"/>
+<g class="symbole" data-type="relais_therm4_1_wide" transform="translate(300.00,620.00)">
+<rect x="-5" y="-10" width="55" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="none" stroke-dasharray="6 3"/>
+<line x1="0" y1="-20" x2="0" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="5" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="-5" x2="5" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-5" x2="5" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="5" x2="5" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="-20" x2="40" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="5" x2="40" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="45" y1="-5" x2="45" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="-5" x2="45" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="5" x2="45" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-20" x2="20" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="5" x2="20" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="25" y1="-5" x2="25" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-5" x2="25" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="5" x2="25" y2="5" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="gv2p" transform="translate(520.00,540.00)">
-<line x1="-56" y1="-12" x2="-53" y2="-12" stroke="black" stroke-width="0.4" fill="none"/>
-<polyline points="20,14 20,10 25,10 25,4 20,4 20,-6 13,-25" stroke="black" stroke-width="1" fill="none"/>
-<polyline points="0,14 0,10 5,10 5,4 0,4 0,-6 -7,-25" stroke="black" stroke-width="1" fill="none"/>
-<text x="16" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 16 25)">I&gt;</text>
-<text x="24" y="-40" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 24 -40)">5
-L3</text>
-<text x="4" y="-40" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 4 -40)">3
-L2</text>
-<text x="4" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 4 39)">4
-T2</text>
-<rect x="-30" y="0" width="60" height="28" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
-<text x="24" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 24 39)">6
-T3</text>
-<text x="-16" y="39" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -16 39)">2
-T1</text>
-<text x="-4" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -4 25)">I&gt;</text>
-<line x1="-18" y1="-33" x2="-22" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-22" y1="-33" x2="-18" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="2" y1="-33" x2="-2" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-33" x2="2" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="22" y1="-33" x2="18" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="18" y1="-33" x2="22" y2="-29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-30" y1="14" x2="30" y2="14" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-10" y1="0" x2="-10" y2="27" stroke="black" stroke-width="1" fill="none"/>
-<line x1="10" y1="0" x2="10" y2="28" stroke="black" stroke-width="1" fill="none"/>
-<text x="-24" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -24 25)">I&gt;</text>
-<line x1="-20" y1="40" x2="-20" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="40" x2="0" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="20" y1="40" x2="20" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<text x="-16" y="-40" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -16 -40)">1
-L1</text>
-<polyline points="-20,14 -20,10 -15,10 -15,4 -20,4 -20,-6 -27,-25" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-20" y1="-27" x2="-20" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="-27" x2="0" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<line x1="20" y1="-27" x2="20" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<rect x="-46" y="-22" width="12" height="12" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-34" y1="-16" x2="-53" y2="-16" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-53" y1="-20" x2="-53" y2="-12" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-40" y1="-10" x2="-40" y2="-22" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-34" y1="-16" x2="16" y2="-16" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<polyline points="-30,21 -40,21 -40,-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<line x1="-30" y1="7" x2="-40" y2="7" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<line x1="-53" y1="-20" x2="-50" y2="-20" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-22" y1="-27" x2="-18" y2="-27" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-27" x2="2" y2="-27" stroke="black" stroke-width="1" fill="none"/>
-<line x1="18" y1="-27" x2="22" y2="-27" stroke="black" stroke-width="1" fill="none"/>
+<g class="symbole" data-type="relais_therm4_1_wide" transform="translate(500.00,620.00)">
+<rect x="-5" y="-10" width="55" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="none" stroke-dasharray="6 3"/>
+<line x1="0" y1="-20" x2="0" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="5" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="-5" x2="5" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-5" x2="5" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="5" x2="5" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="-20" x2="40" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="5" x2="40" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="45" y1="-5" x2="45" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="-5" x2="45" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="5" x2="45" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-20" x2="20" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="5" x2="20" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="25" y1="-5" x2="25" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-5" x2="25" y2="-5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="5" x2="25" y2="5" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="dis_mag_term_2f-2" transform="translate(700.00,440.00)">
-<polyline points="-20,14 -20,10 -15,10 -15,4 -20,4 -20,-6 -27,-25" stroke="black" stroke-width="1" fill="none"/>
-<text x="-24" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -24 25)">I&gt;</text>
-<polyline points="0,14 0,10 5,10 5,4 0,4 0,-6 -7,-25" stroke="black" stroke-width="1" fill="none"/>
-<text x="4" y="-37" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 4 -37)">3</text>
-<text x="4" y="40" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 4 40)">4</text>
-<rect x="-30" y="0" width="40" height="28" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
-<text x="-16" y="40" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -16 40)">2</text>
-<text x="-4" y="25" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -4 25)">I&gt;</text>
-<line x1="-18" y1="-34" x2="-22" y2="-30" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-22" y1="-34" x2="-18" y2="-30" stroke="black" stroke-width="1" fill="none"/>
-<line x1="2" y1="-34" x2="-2" y2="-30" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-34" x2="2" y2="-30" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-30" y1="14" x2="10" y2="14" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-10" y1="0" x2="-10" y2="28" stroke="black" stroke-width="1" fill="none"/>
-<line x1="10" y1="0" x2="10" y2="28" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-20" y1="40" x2="-20" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="40" x2="0" y2="29" stroke="black" stroke-width="1" fill="none"/>
-<text x="-16" y="-37" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -16 -37)">1</text>
-<line x1="-20" y1="-27" x2="-20" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="-27" x2="0" y2="-40" stroke="black" stroke-width="1" fill="none"/>
-<rect x="-46" y="-22" width="12" height="12" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-34" y1="-16" x2="-53" y2="-16" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-53" y1="-20" x2="-53" y2="-12" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-40" y1="-10" x2="-40" y2="-22" stroke="black" stroke-width="0.4" fill="none"/>
-<line x1="-34" y1="-16" x2="-3.4" y2="-16" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<polyline points="-30,21 -40,21 -40,-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<line x1="-30" y1="7" x2="-40" y2="7" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<line x1="-22" y1="-27" x2="-18" y2="-27" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-27" x2="2" y2="-27" stroke="black" stroke-width="1" fill="none"/>
+<g class="symbole" data-type="disjonct-m_1fn" transform="translate(690.00,440.00)">
+<line x1="10" y1="15.5" x2="10" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="8" y1="-20" x2="12" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-10" x2="7" y2="-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<path d="M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-10,20 -10,0 -15,-20" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-30" x2="10" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="12" y1="-26" x2="8" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="8" y1="-26" x2="12" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="-30" x2="-10" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-20" x2="-8" y2="-20" stroke="black" stroke-width="1" fill="none"/>
 </g>
 <g class="symbole" data-type="gv2p" transform="translate(700.00,560.00)">
 <line x1="-56" y1="-12" x2="-53" y2="-12" stroke="black" stroke-width="0.4" fill="none"/>
@@ -329,62 +265,62 @@ L1</text>
 <line x1="-2" y1="-27" x2="2" y2="-27" stroke="black" stroke-width="1" fill="none"/>
 <line x1="18" y1="-27" x2="22" y2="-27" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(300.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(300.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(320.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(320.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(340.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(340.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(400.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(400.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(500.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(500.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(520.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(520.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(540.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(540.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(600.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(600.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(680.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(680.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(720.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(720.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="borne_continuite" transform="translate(760.00,660.00)">
+<g class="symbole" data-type="borne_continuite" transform="translate(760.00,700.00)">
 <line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
 <line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
 <ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="moteur_tri_2" transform="translate(320.00,760.00)">
+<g class="symbole" data-type="moteur_tri_2" transform="translate(320.00,800.00)">
 <text x="22" y="-12" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 22 -12)">W1</text>
 <text x="2" y="-12" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 2 -12)">V1</text>
 <text x="23" y="30" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 23 30)">PE</text>
@@ -399,7 +335,7 @@ L1</text>
 <text x="-18" y="-12" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -18 -12)">U1</text>
 <line x1="23" y1="20" x2="30" y2="20" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="moteur_tri_2" transform="translate(520.00,760.00)">
+<g class="symbole" data-type="moteur_tri_2" transform="translate(520.00,800.00)">
 <text x="22" y="-12" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 22 -12)">W1</text>
 <text x="2" y="-12" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 2 -12)">V1</text>
 <text x="23" y="30" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 23 30)">PE</text>
@@ -414,13 +350,13 @@ L1</text>
 <text x="-18" y="-12" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -18 -12)">U1</text>
 <line x1="23" y1="20" x2="30" y2="20" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="moteur_mono" transform="translate(710.00,780.00)">
+<g class="symbole" data-type="moteur_mono" transform="translate(710.00,820.00)">
 <text x="-10" y="19" font-family="Arial,sans-serif" font-size="18.0" fill="#000000" stroke="white" stroke-width="6.3" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -10 19)">M</text>
 <ellipse cx="0.00" cy="10.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="none"/>
 <line x1="5" y1="-19" x2="5" y2="-5" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-4.75" y1="-19" x2="-4.75" y2="-5" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="terre" transform="translate(760.00,740.00)">
+<g class="symbole" data-type="terre" transform="translate(760.00,780.00)">
 <line x1="-3" y1="4" x2="3" y2="4" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-5" y1="2" x2="5" y2="2" stroke="black" stroke-width="1" fill="none"/>
 <line x1="-7" y1="0" x2="7" y2="0" stroke="black" stroke-width="1" fill="none"/>
