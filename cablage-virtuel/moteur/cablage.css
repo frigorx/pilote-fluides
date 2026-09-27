@@ -59,6 +59,11 @@ a{color:var(--bleu-clair)}
 .panneau .corps{flex:1;min-height:0;position:relative;overflow:hidden;touch-action:none;
   -webkit-user-select:none;user-select:none}   /* un fil tiré sélectionnait les numéros : le geste suivant devenait un glisser-déposer du texte, annulé (pointercancel) — vu le 26/09 */
 .panneau svg{width:100%;height:100%;display:block}
+/* inerweb.fr toujours visible dans la carte et la platine (Franck, 27/09) : une capture d'écran d'un seul panneau dit
+   d'où elle vient. Fixe (ne zoome pas), ne prend pas le doigt. */
+.panneau .corps::after{content:"inerweb.fr";position:absolute;right:8px;bottom:6px;z-index:5;pointer-events:none;
+  font:600 13px/1 "Segoe UI",system-ui,sans-serif;color:var(--bleu);opacity:.75;background:rgba(255,255,255,.8);
+  padding:3px 6px;border-radius:6px}
 body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 
 /* carte (schéma) */
