@@ -64,6 +64,11 @@ function marquerNumerosImprimes(g, a) {
   g.querySelectorAll('text').forEach(t => { if (ids.includes(t.textContent.trim().split(/\s+/)[0])) t.classList.add('imprime'); });
 }
 function rep(ref) { return ref.split(':')[0]; }
+function rangDe(r) { const a = EX && EX.appareils.find(x => x.repere === r); return a ? a.rang : -1; }
+function horsPlatine(r) {   // sous la vraie platine (réseau, moteurs, appareils du terrain) : ses fils passent par le bornier
+  const a = EX && EX.appareils.find(x => x.repere === r), PL = EX && EX.platine;
+  return !!(a && PL && PL.cadre && a.ligne >= (PL.goulottes_h || []).length);
+}
 /* La vue réelle (Franck, 26/09 : « la version avec les éléments de la vraie vie, en parallèle du symbole ») :
    un appareil qui a sa vignette y prend son dessin, ses bornes et sa place ; mêmes repères, mêmes numéros,
    donc même contrôle. Un appareil embroché (le relais thermique sous son contacteur) : liaisons fixes. */
@@ -162,6 +167,22 @@ function construireCarte() {
     surbrillance([c.dataset.ref]);
     if (VUE !== 'carte') dire(lib(c.dataset.ref), null, 'Trouvez cette borne sur la platine.');
   });
+}
+
+/* Le bornier à trouver (27/09) : la carte de l'élève est le schéma classique ; le plan de raccordement (avec ses ponts)
+   se montre sur demande, et chaque fois que l'élève l'ouvre, c'est une aide comptée. */
+let planOuvert = false;
+function basculerCarte() {
+  const tmp = EX.carte; EX.carte = EX.carte_aide; EX.carte_aide = tmp; planOuvert = !planOuvert;
+  Object.keys(cartesBornes).forEach(k => delete cartesBornes[k]);
+  $('#carte-corps').innerHTML = '';
+  construireCarte();
+  $('#carte').classList.add('numeros');
+  brancherZoom($('#carte'), installerZoom($('#carte-corps svg'), {}));
+  const bp = $('#btn-plan'); if (bp) bp.textContent = planOuvert ? 'Schéma' : 'Plan de raccordement';
+  $('#carte .entete span').textContent = planOuvert ? 'le plan de raccordement : une aide' : 'le schéma à lire';
+  if (planOuvert) compterAide();
+  if (MODE === 'guide') { const et = etapeCourante(); if (et && !et.pont) montrerConducteur(et.de, et.a); }
 }
 
 // ------------------------------------------------------------ la platine
@@ -472,10 +493,19 @@ function creerFil(de, a) {
   if (de === a) return;
   if (fils.some(f => cle(f.de, f.a) === cle(de, a))) { dire('Ces deux bornes sont déjà reliées.', 'ko'); return; }
   const r = reseauDe(de);
+  if (EX.libre) {   // le bornier à trouver : un appareil du terrain se raccorde au bornier, jamais à un autre appareil
+    const direct = [de, a].some(x => horsPlatine(rep(x)) && rangDe(rep(x)) !== 5) && ![de, a].some(x => rangDe(rep(x)) === 5);
+    if (direct) { if (MODE === 'guide') refus++; dire('Non : un appareil du terrain se raccorde au bornier, jamais en direct.', 'ko', 'Passez par une borne du bornier.'); return; }
+  }
   if (MODE === 'guide') {
     const et = etapeCourante();
     if (!et) return;
-    const bon = (de === et.de && a === et.a) || (de === et.a && a === et.de);
+    let bon;
+    if (et.pont) {   // un pont : accepté s'il reste dans le réseau attendu (les deux bouts, par le bornier), refusé sinon
+      const rd = reseauDe(de), ra = reseauDe(a), rt = reseauDe(et.de);
+      bon = !!rd && rd === ra && rd === rt && [de, a].some(x => rangDe(rep(x)) === 5);
+      if (!bon) { refus++; dire('Non : ce fil ne fait pas le pont attendu.', 'ko', 'Les deux bornes qui clignotent doivent se retrouver reliées, par le bornier. Suivez leurs fils.'); return; }
+    } else bon = (de === et.de && a === et.a) || (de === et.a && a === et.de);
     if (!bon) { refus++; dire('Non : ce fil ne correspond pas au conducteur qui clignote sur la carte.', 'ko', 'Relisez les numéros de ses deux bornes sur le schéma. Le bouton Aide peut vous mettre sur la voie.'); return; }
     if (!et.couleurs.includes(couleur)) { dire('Bonne liaison, mais la couleur doit être ' + et.couleurs.slice(0, 2).join(' ou ') + '.', 'ko'); return; }
   }
@@ -483,7 +513,7 @@ function creerFil(de, a) {
   fils.push(f);
   redessinerFils();
   rafraichir();
-  if (MODE === 'guide') { etapeIdx++; prochaineEtape(); }
+  if (MODE === 'guide') prochaineEtape();   // etapeCourante() saute ce qui est déjà relié : un pont peut demander plusieurs fils
   else { niveauAide = 0; dire(libSens(de) + ' → ' + libSens(a) + ' en ' + couleur + '.', null, MODE === 'aide' ? 'Continuez, ou demandez de l’aide.' : 'Continuez, puis contrôlez.'); }
 }
 function dessinerFil(f) {
@@ -550,7 +580,7 @@ function compterAide(n) {
 
 // ------------------------------------------------------------ les modes
 function etapes() {
-  return EX.etapes.map(e => ({ de: e.de, a: e.a, couleurs: (reseauDe(e.de) || { couleurs: [e.couleur] }).couleurs }));
+  return EX.etapes.map(e => ({ de: e.de, a: e.a, pont: !!e.pont, couleurs: (reseauDe(e.de) || { couleurs: [e.couleur] }).couleurs }));
 }
 function etapeCourante() {
   const uf = partition(), liste = etapes();
@@ -567,6 +597,13 @@ function prochaineEtape() {
   choisirCouleur(et.couleurs[0]);
   const fixes = new Set(liaisonsFixes().map(([a, b]) => cle(a, b))), aPoser = EX.etapes.filter(e => !fixes.has(cle(e.de, e.a)));
   const n = EX.etapes.slice(0, etapeIdx).filter(e => !fixes.has(cle(e.de, e.a))).length + 1, total = aPoser.length;
+  if (et.pont) {   // le bornier à trouver (27/09) : deux bornes d'appareils à relier PAR le bornier, sans donner ses numéros
+    montrerConducteur(null);
+    surbrillance([et.de, et.a], [rep(et.de), rep(et.a)]);
+    dire('Pont ' + n + '/' + total + ' : ' + lib(et.de) + ' et ' + lib(et.a) + ' doivent être reliées par le bornier.', null,
+         'Suivez le fil de chacune jusqu’au bornier, puis pontez ces deux bornes du bornier, en ' + et.couleurs[0] + '. Jamais en direct.');
+    return;
+  }
   if (montrerConducteur(et.de, et.a)) {
     surbrillance([]);
     dire('Fil ' + n + '/' + total + ' : posez le conducteur qui clignote sur la carte, en ' + et.couleurs[0] + '.', null,
@@ -708,6 +745,8 @@ function construireOutils() {
   $('#btn-controler').onclick = controler;
   $('#btn-numeros').onclick = () => $('#carte').classList.toggle('numeros');
   $('#btn-detacher').onclick = () => window.open('jouer.html?ex=' + encodeURIComponent(ID) + '&vue=carte', 'carte-' + ID);
+  const bp = $('#btn-plan');   // le plan de raccordement (les ponts du bornier) : une aide, comptée ; pas en Réel
+  if (bp) { bp.hidden = !(EX.carte_aide && MODE !== 'reel'); bp.onclick = basculerCarte; }
   brancherNavigation();
 }
 function aller(activite, mode, reelle) {
@@ -1045,7 +1084,7 @@ function vueCarte() {
   document.body.classList.add('vue-carte');
   ['#platine', '.consigne', '.outils', '#modes'].forEach(s => { const e = $(s); if (e) e.remove(); });
   $('#carte .entete b').textContent = 'La carte — deuxième écran';
-  $('#btn-detacher').remove();
+  $('#btn-detacher').remove(); const bp = $('#btn-plan'); if (bp) bp.remove();
   $('#btn-numeros').onclick = () => $('#carte').classList.toggle('numeros');
   if (canal) canal.onmessage = (m) => { if (m.data.type === 'sb') surbrillance(m.data.refs, m.data.reps); else if (m.data.type === 'cond') montrerConducteur(m.data.de, m.data.a); };
 }
