@@ -21,4 +21,4 @@ Il câble le schéma sur l'écran (colorier, repérer, câbler, contrôler), le 
 Savoir-être : la sécurité · la rigueur et le soin.
 
 ## Documents
-Feuille élève (PDF libre) : documents/exercices/cablage-8/cablage-8-ELEVE.pdf. Fiche professeur, grille et plan de séance : sur demande à inerweb.fh@gmail.com.
+Feuille élève (PDF libre) : documents/exercices/cablage-8/cablage-8-ELEVE.pdf. Fiche professeur, grille et plan de séance, en PDF et en Word : https://inerweb.fr/cablage-virtuel/documents-professeur.html, avec le code enseignant du Câblage virtuel.

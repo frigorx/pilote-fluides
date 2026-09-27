@@ -24,4 +24,5 @@ diagnostiquer, rendre compte, plus le savoir-être.
 
 ## Documents
 Feuille élève (3 feuilles, PDF libre) : documents/Mise-sous-tension-ELEVE.pdf. Fiche professeur, grille d'évaluation et plan
-de séance (10 phases) : sur demande à inerweb.fh@gmail.com.
+de séance (10 phases), en PDF et en Word : https://inerweb.fr/cablage-virtuel/documents-professeur.html, avec le code
+enseignant du Câblage virtuel.
