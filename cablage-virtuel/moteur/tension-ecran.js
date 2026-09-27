@@ -10,6 +10,20 @@ const NS = 'http://www.w3.org/2000/svg';
 const $ = s => document.querySelector(s);
 const phase = p => !!p && p !== 'N' && p !== 'PE' && p !== 'défaut';
 
+/* La carte s'allume selon les potentiels des bornes (hors Réel) ; bornes null : elle s'éteint. */
+function allumerCarte(bornes) {
+  document.querySelectorAll('#carte-corps #conducteurs polyline').forEach(pl => {
+    if (!bornes) { pl.classList.remove('vivant'); return; }
+    const pts = pl.getAttribute('points').trim().split(/\s+/), d = pts[0].split(',').map(Number), f = pts[pts.length - 1].split(',').map(Number);
+    const refs = [window.CABLAGE_API.borneCarte(d[0], d[1]), window.CABLAGE_API.borneCarte(f[0], f[1])].filter(Boolean);
+    pl.classList.toggle('vivant', refs.some(r => phase(bornes[r])));
+  });
+}
+const ID = new URLSearchParams(location.search).get('ex');
+let canal = null;
+try { canal = ID && 'BroadcastChannel' in window ? new BroadcastChannel('cablage-virtuel-tension-' + ID) : null; } catch (err) { canal = null; }
+if (canal && window.CABLAGE_API && window.CABLAGE_API.vue === 'carte') canal.onmessage = m => allumerCarte(m.data.bornes);   // la carte sur le deuxième écran
+
 document.addEventListener('cablage-pret', () => {
   const API = window.CABLAGE_API, EX = API.ex();
   if (!window.CABLAGE_TENSION || API.activite !== 'cabler' || API.vue === 'carte') return;
@@ -49,7 +63,7 @@ document.addEventListener('cablage-pret', () => {
     const p = $('#pupitre'); if (p) p.remove();
     API.fils().forEach(f => { if (f.contour) { f.contour.style.stroke = ''; f.contour.style.strokeWidth = ''; } if (f.el) f.el.classList.remove('suspect'); });
     const g = $('#pastilles'); if (g) g.remove();
-    document.querySelectorAll('#carte-corps polyline.vivant').forEach(pl => pl.classList.remove('vivant'));
+    allumerCarte(null); if (canal) canal.postMessage({ bornes: null });
     API.dire('Installation consignée.', null, 'Vous pouvez de nouveau câbler, contrôler, puis remettre sous tension.');
   }
   function geste(rep, g) { e = sim.agir({ rep, geste: g }); rendre(true); }
@@ -122,13 +136,7 @@ document.addEventListener('cablage-pret', () => {
     consigne();
     for (const [r, v] of Object.entries(e.appareils)) if (v.marche === 'tourne' || v.marche === 'oui') bilanEssai.marche.add(r);
   }
-  function carte() {
-    document.querySelectorAll('#carte-corps #conducteurs polyline').forEach(pl => {
-      const pts = pl.getAttribute('points').trim().split(/\s+/), d = pts[0].split(',').map(Number), f = pts[pts.length - 1].split(',').map(Number);
-      const refs = [API.borneCarte(d[0], d[1]), API.borneCarte(f[0], f[1])].filter(Boolean);
-      pl.classList.toggle('vivant', refs.some(r => phase(e.bornes[r])));
-    });
-  }
+  function carte() { allumerCarte(e.bornes); if (canal) canal.postMessage({ bornes: e.bornes }); }
   function consigne() {
     const nouveaux = e.journal.slice(vu); vu = e.journal.length;
     const d = nouveaux.filter(j => j.gravite === 'defaut').pop();
@@ -168,18 +176,21 @@ document.addEventListener('cablage-pret', () => {
       const p = document.createElementNS(NS, 'g'); p.setAttribute('class', 'pastille ' + cls);
       const rect = document.createElementNS(NS, 'rect'), t = document.createElementNS(NS, 'text');
       t.style.fontSize = (16 * k) + 'px';
-      t.textContent = (ro === 'moteur' && v.marche === 'tourne' ? '⟳ ' : '') + txt;
-      p.append(rect, t); g.append(p);
-      const l = t.getComputedTextLength() + 16 * k, h = 26 * k;
+      t.textContent = txt;
+      const icone = ro === 'moteur' && v.marche === 'tourne' ? document.createElementNS(NS, 'text') : null;   // elle tourne dans le sens du moteur
+      if (icone) { icone.textContent = '⟳'; icone.style.fontSize = (18 * k) + 'px'; icone.setAttribute('class', 'rotation' + (v.sens === 'inverse' ? ' inverse' : '')); }
+      p.append(rect, t); if (icone) p.append(icone); g.append(p);
+      const li = icone ? 20 * k : 0, l = t.getComputedTextLength() + 16 * k + li, h = 26 * k;
       let x = bb.x + bb.width / 2 - l / 2, y = bb.y - h - 3 * k;
-      for (let k = 0; k < 10; k++) {   // jamais deux pastilles l'une sur l'autre : on remonte
+      for (let i = 0; i < 10; i++) {   // jamais deux pastilles l'une sur l'autre : on remonte
         const gene = poses.find(o => x < o.x + o.l && o.x < x + l && y < o.y + h && o.y < y + h);
         if (!gene) break;
         y = gene.y - h - 3 * k;
       }
       poses.push({ x, y, l });
       rect.setAttribute('x', x); rect.setAttribute('y', y); rect.setAttribute('width', l); rect.setAttribute('height', h); rect.setAttribute('rx', h / 2);
-      t.setAttribute('x', x + l / 2); t.setAttribute('y', y + h / 2 + 5.5 * k); t.setAttribute('text-anchor', 'middle');
+      t.setAttribute('x', x + (l + li) / 2); t.setAttribute('y', y + h / 2 + 5.5 * k); t.setAttribute('text-anchor', 'middle');
+      if (icone) { icone.setAttribute('x', x + 8 * k + li / 2); icone.setAttribute('y', y + h / 2 + 6 * k); icone.setAttribute('text-anchor', 'middle'); }
     }
   }
   function tracerEssai() {   // à côté des contrôles, dans le même carnet : l'essai ne change pas le niveau

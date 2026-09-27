@@ -21,3 +21,6 @@ body.sous-tension .consigne.ko{background:var(--ko-bg);border-left:6px solid var
 #platine .pastille{pointer-events:none}
 #platine .fil.suspect{stroke-dasharray:10 6}
 #carte svg polyline.vivant{stroke:#e0a100;stroke-width:3}
+#platine .pastille .rotation{fill:#fff;font-weight:700;transform-box:fill-box;transform-origin:center;animation:tourner-moteur 1s linear infinite}
+#platine .pastille .rotation.inverse{animation-direction:reverse}
+@keyframes tourner-moteur{to{transform:rotate(360deg)}}
