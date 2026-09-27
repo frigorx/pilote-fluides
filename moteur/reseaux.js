@@ -133,6 +133,24 @@ window.INERWEB_RESEAUX = [
       { titre: "Les domaines de tension", href: "hocourant/?module=M4" },
       { titre: "La consignation", href: "hocourant/?module=M9" }
     ]
+  },
+  {
+    id: "r408",
+    nom: "inerWeb R408 — Travail en hauteur",
+    court: "R408",
+    emoji: "🪜",
+    adresse: "r408/index.html",
+    couleur: "#1b3a63",
+    sousTitre: "Se préparer à la formation échafaudages de pied (R408), du socle au montage, palier par palier. Prototype en cours de relecture.",
+    niveaux: "CAP",
+    etat: "en relecture",
+    catalogue: ["R408"],
+    vignette: "icones/reseaux/r408.svg",
+    entree: { titre: "Le risque de chute", href: "r408/?module=M1" },
+    raccourcis: [
+      { titre: "Utiliser en sécurité", href: "r408/?module=M7" },
+      { titre: "La vérification journalière", href: "r408/?module=M9" }
+    ]
   }
 ];
 /* RESEAUX FIN */

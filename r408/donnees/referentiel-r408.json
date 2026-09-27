@@ -1,0 +1,87 @@
+{
+  "_doc": "Référentiel de compétences du dispositif de formation « Échafaudages de pied R408 ».",
+  "_source": {
+    "titre": "Document de référence du dispositif Échafaudages de pied R408 — V07 de janvier 2023",
+    "editeur": "INRS / réseau Assurance maladie – Risques professionnels",
+    "url": "https://www.inrs.fr/dam/jcr:68ab8b8e-5b3b-450d-8e49-1b665577bfca/document-reference-echafaudages-pied.pdf",
+    "recommandation": "R408 « Montage, utilisation et démontage des échafaudages de pied » — CNAMTS, adoptée par le CTN des industries du BTP le 10 juin 2004",
+    "cadre_reglementaire": "Code du travail, articles R4323-69 à R4323-80 (montage, démontage et modification interdits aux travailleurs non formés)"
+  },
+  "_regle_modification": "Ce fichier ne se modifie que sur pièce : nouvelle version du document de référence INRS, ou révision de la recommandation. Le détail des indicateurs de réussite et des référentiels d'évaluation reste dans le PDF source — il n'est pas recopié ici.",
+  "_avertissement_r457": "⚠️ NE PAS CONFONDRE. La R408 vise les échafaudages DE PIED (fixes). La R457 vise les échafaudages ROULANTS. Le CAP IFCA cite dans ses habilitations la « sensibilisation R.457 » — donc les ROULANTS — et non la R408. Un élève de CAP IFCA formé R408 va au-delà de ce que son diplôme exige ; inversement, une formation R408 ne couvre PAS l'exigence R457 du CAP. Le dispositif INRS prévoit des parcours combinés pied + roulant (§ 3.4.6 et 3.4.7 du document source).",
+  "_etat": "Structure des domaines et des compétences SAISIE depuis la source officielle. Les éléments de contenu détaillés, les indicateurs de réussite et les référentiels d'évaluation des savoir-faire ne sont PAS saisis : ils sont dans le PDF (sections 6.1.2 à 6.5.3). À compléter si le besoin apparaît — zéro invention.",
+
+  "domaines": [
+    {
+      "id": "DC1",
+      "titre": "Se situer et être acteur de la prévention des risques",
+      "transversal": true,
+      "competences": [
+        { "code": "DC1.a", "libelle": "Appréhender les enjeux de la prévention" },
+        { "code": "DC1.b", "libelle": "Identifier les rôles et responsabilités des différents acteurs" },
+        { "code": "DC1.c", "libelle": "Communiquer — rendre compte (informer le responsable du chantier, réagir en cas de danger immédiat, réagir en cas d'accident)" },
+        { "code": "DC1.d", "libelle": "Signaler les situations dangereuses" },
+        { "code": "DC1.e", "libelle": "Prévenir les risques (notamment liés à l'activité physique)" },
+        { "code": "DC1.f", "libelle": "Connaître et faire connaître les consignes de sécurité" }
+      ],
+      "_note_evaluation": "Condition d'acquisition : 6 indicateurs incontournables acquis (§ 6.1.2 du document source). Les compétences du DC1 ne sont pas numérotées dans la source — le suffixe .a à .f est une commodité de ce fichier, signalée comme telle."
+    },
+    {
+      "id": "DC2",
+      "titre": "Monter et démonter un échafaudage de pied conformément à la notice du fabricant",
+      "competences": [
+        { "code": "2.1", "libelle": "Identifier les différents types d'échafaudages et leur domaine d'utilisation" },
+        { "code": "2.2", "libelle": "Comprendre et exploiter une notice du fabricant" },
+        { "code": "2.3", "libelle": "Préparer le montage" },
+        { "code": "2.4", "libelle": "Monter et démonter en sécurité une structure simple d'échafaudage de pied" }
+      ]
+    },
+    {
+      "id": "DC3",
+      "titre": "Réaliser la vérification journalière d'un échafaudage de pied",
+      "competences": [
+        { "code": "3.1", "libelle": "Identifier les différents types d'échafaudages et leur domaine d'utilisation" },
+        { "code": "3.2", "libelle": "Comprendre et exploiter une notice du fabricant" },
+        { "code": "3.3", "libelle": "Appréhender le cadre réglementaire des vérifications des échafaudages et les responsabilités qui en découlent" },
+        { "code": "3.4", "libelle": "Réaliser la vérification journalière (examen de l'état de conservation) de l'échafaudage" }
+      ]
+    },
+    {
+      "id": "DC4",
+      "titre": "Utiliser un échafaudage de pied en sécurité",
+      "competences": [
+        { "code": "4.1", "libelle": "Identifier les différents types d'échafaudages et leur domaine d'utilisation" },
+        { "code": "4.2", "libelle": "Utiliser un échafaudage de pied en sécurité" }
+      ]
+    },
+    {
+      "id": "DC5",
+      "titre": "Réaliser les vérifications de mises, remises en service, trimestrielles et journalières d'un échafaudage de pied",
+      "competences": [
+        { "code": "5.1", "libelle": "Identifier les différents types d'échafaudages et leur domaine d'utilisation" },
+        { "code": "5.2", "libelle": "Comprendre et exploiter une notice du fabricant" },
+        { "code": "5.3", "libelle": "Appréhender le cadre réglementaire des vérifications des échafaudages et les responsabilités qui en découlent" },
+        { "code": "5.4", "libelle": "Réaliser l'examen d'adéquation" },
+        { "code": "5.5", "libelle": "Effectuer l'examen de montage et d'installation de l'échafaudage de pied" }
+      ]
+    }
+  ],
+
+  "formations": [
+    { "code": "F1", "intitule": "Monter, utiliser et réaliser la vérification journalière des échafaudages de pied", "profil": "monteur – utilisateur", "_source_section": "7.1" },
+    { "code": "F2", "intitule": "Vérifier, réceptionner et réaliser la maintenance des échafaudages de pied (au sens de la R408)", "profil": "vérificateur interne", "_source_section": "7.2" },
+    { "code": "F3", "intitule": "Utiliser des échafaudages de pied", "profil": "utilisateur", "_source_section": "7.3" },
+    { "code": "F4", "intitule": "Utiliser et réaliser la vérification journalière des échafaudages de pied", "profil": "utilisateur et vérificateur journalier", "_source_section": "7.4" }
+  ],
+
+  "profils": [
+    { "profil": "monteur – utilisateur", "_source_section": "3.4.1" },
+    { "profil": "vérificateur interne", "_source_section": "3.4.2" },
+    { "profil": "utilisateur", "_source_section": "3.4.3" },
+    { "profil": "utilisateur et vérificateur journalier", "_source_section": "3.4.4" },
+    { "profil": "monteur – utilisateur et vérificateur interne", "_source_section": "3.4.5" },
+    { "profil": "monteur – utilisateur échafaudage de pied ET monteur-utilisateur-vérificateur échafaudage roulant", "_source_section": "3.4.6", "_note": "parcours combiné pied + roulant" },
+    { "profil": "monteur – utilisateur-vérificateur (journalier et maintenance) échafaudage de pied ET échafaudage roulant", "_source_section": "3.4.7", "_note": "parcours combiné pied + roulant" }
+  ],
+  "_note_profils": "La correspondance profil → domaines de compétences est décrite aux § 3.4.1 à 3.4.7 du document source. Elle n'est PAS saisie ici (tableaux non repris) : s'y reporter avant de construire un parcours."
+}
