@@ -138,6 +138,9 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 .accueil p.intro{font-size:17px;color:var(--mut)}
 .liste{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
 .fiche{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);box-shadow:var(--ombre);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.fiche .apercu{display:block;height:260px;background:#fff;border:1px solid var(--ligne);border-radius:10px;padding:6px;overflow:hidden}
+.fiche .apercu img{width:100%;height:100%;object-fit:contain;display:block}
+.fiche .apercu:hover{border-color:var(--orange)}
 .fiche .niv{font-size:13px;color:var(--mut)}
 .fiche h3{font-size:18px}
 .fiche .modes{display:flex;gap:6px;flex-wrap:wrap}

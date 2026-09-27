@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — exercices</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260927-0541">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260927-0850">
 </head>
 <body>
 <header class="barre">
@@ -20,8 +20,8 @@
     comme à l'examen. Chaque aide demandée est comptée.</p>
   <div class="liste" id="liste"></div>
 </main>
-<script>window.CABLAGE_VERSION = '20260927-0541';</script>
-<script src="exercices/index.js?v=20260927-0541"></script>
+<script>window.CABLAGE_VERSION = '20260927-0850';</script>
+<script src="exercices/index.js?v=20260927-0850"></script>
 <script>
 (function(){
   const liste = document.getElementById('liste');
@@ -31,7 +31,9 @@
     const f = document.createElement('article'); f.className = 'fiche';
     const lien = function(a, mode, nom){ return '<a' + (mode === 'reel' ? ' class="reel"' : '') + ' href="jouer.html?ex=' +
       encodeURIComponent(m.id) + '&activite=' + a + '&mode=' + mode + '">' + nom + '</a>'; };
-    f.innerHTML = '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
+    f.innerHTML = '<a class="apercu" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&activite=cabler&mode=guide" title="Voir et câbler ce schéma">' +
+      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260927-0850" alt="Le schéma de l’exercice" loading="lazy"></a>' +
+      '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
       activites.map(function(a){ return '<div class="modes"><span class="act">' + a[1] + '</span>' +
         lien(a[0], 'guide', 'Guidé') + lien(a[0], 'aide', 'Aidé') + lien(a[0], 'reel', 'Réel') + '</div>'; }).join('');
     f.querySelector('h3').textContent = m.titre;
@@ -40,6 +42,6 @@
   if (!liste.children.length) liste.textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
 })();
 </script>
-<script src="moteur/marque.js?v=20260927-0541" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260927-0850" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>
