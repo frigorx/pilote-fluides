@@ -75,7 +75,9 @@
     const m = mission();
     return '<header class="entete">' +
       '<div class="titre-appli"><strong>Travail en hauteur</strong>' +
-      "<small>" + (m ? "mission " + seq(m.code) : "s'entraîner en autonomie · aucune donnée personnelle") + "</small></div>" +
+      "<small>" + (m ? "mission " + seq(m.code) : "s'entraîner en autonomie · aucune donnée personnelle") + "</small>" +
+      /* Retour vers le site sur chaque écran (F. Henninot, 27/09 : « on est bloqué, on ne peut plus revenir »). */
+      '<a class="lien-site" href="https://inerweb.fr/">← inerweb.fr, tous les réseaux</a></div>' +
       (retour ? '<button class="fil-retour" data-aller="' + retour + '">← ' + retourLibelle + "</button>" : "") +
       "</header>";
   }
@@ -88,7 +90,7 @@
     "encore validés : ne pas s'en servir comme référence pour une opération réelle.</div>";
 
   const pied =
-    '<footer class="pied"><p><strong>Ce que mesure cette application :</strong> une préparation — ' +
+    '<footer class="pied"><p><a class="lien-site" href="https://inerweb.fr/">← Revenir à inerweb.fr</a></p><p><strong>Ce que mesure cette application :</strong> une préparation — ' +
     "l'aptitude théorique à suivre la formation R408. Elle ne délivre jamais rien : l'attestation " +
     "appartient à l'organisme qui forme et évalue, l'autorisation d'utiliser, de vérifier ou de monter " +
     "appartient à l'employeur (Code du travail, art. R4323-69 et s.).</p>" +
