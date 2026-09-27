@@ -3,6 +3,16 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 27/09 soir — ACCÈS ENSEIGNANT : LE PRODUIT « CABLAGE » (INDICE 5) EST BRANCHÉ ET EN LIGNE (`ffd0e977`, `be0c0d3d`)
+>
+> Franck : « un code pour le câblage ». Deuxième produit réellement branché après l’habilitation. Table `build/produits.mjs`
+> + miroir `moteur/acces.js` (test-acces : 49 contrôles) ; millésime `cablage-2026` tiré (hors dépôt) ; code n° 1 délivré à Franck ;
+> option « inerWeb Câblage virtuel » dans `demander-un-acces.html`. Le coffre (118 documents professeur, PDF + Word) est fabriqué
+> à l’atelier `C:gitcablage-virtuel` (`outils/chiffrer-coffre.mjs`) et livré dans `cablage-virtuel/coffre-2026/` ; page
+> `cablage-virtuel/documents-professeur.html`. Preuve en ligne : `node C:/git/cablage-virtuel/outils/verifier-coffre.mjs https://inerweb.fr/`.
+> 🔴 **Ne jamais lancer `node build/coffre.mjs cablage --millesime 2026`** (le script le suggère après `millesime.mjs`) : ce
+> constructeur ne connaît que les documents de l’habilitation et écraserait `docs/coffre-2026`.
+>
 > ## 27/09 après-midi — LES OUTILS MONTRENT CE QU'ON TROUVE DERRIÈRE : EN LIGNE (`cdafee21`, `16a482e8`, `b5eebc61`, `59bf656f`)
 >
 > Demande de F. Henninot : « une image qui structure l'idée », comme la couverture d'HoCourant. **AquiBlue** :
