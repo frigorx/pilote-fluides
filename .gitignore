@@ -36,6 +36,10 @@ packs/fluides/res/docs/
 #     pèse autant dans l'historique. L'atelier est C:\git\hocourant, cette copie
 #     ne s'édite jamais directement. Le corrigé formateur, lui, reste hors ligne.
 !hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf
+# … et sauf les TP élève du câblage virtuel (27/09) : documents inerWeb Édu
+#     libres (CC BY-NC-ND), livrés par cablage-virtuel/outils/livrer.py. Les
+#     documents professeur, eux, restent hors ligne (sur demande par courriel).
+!cablage-virtuel/documents/*.pdf
 .DS_Store
 Thumbs.db
 node_modules/
