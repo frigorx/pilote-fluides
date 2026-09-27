@@ -9,7 +9,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
  "source": "sources\\generiques\\cablage-7-commande.qet",
  "folio": 1,
  "carte": {
-  "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"89.0 42.0 981.0 1168.0\">\n<!-- Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur — converti de cablage-7-commande.qet par outils\\qet-vers-svg.py -->\n<rect x=\"89.0\" y=\"42.0\" width=\"981.0\" height=\"1168.0\" fill=\"#ffffff\"/>\n<g id=\"conducteurs\">\n<polyline points=\"146.00,80.00 300.00,80.00 300.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"146.00,100.00 320.00,100.00 320.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"146.00,120.00 340.00,120.00 340.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"146.00,140.00 280.00,140.00 280.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"146.00,160.00 820.00,160.00 820.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"280.00,206.00 280.00,264.00 280.00,264.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,206.00 300.00,264.00 300.00,264.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,206.00 320.00,264.00 320.00,264.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,206.00 340.00,264.00 340.00,264.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,306.00 300.00,404.00 300.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,306.00 320.00,404.00 320.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,306.00 340.00,404.00 340.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"280.00,306.00 280.00,340.00 680.00,340.00 680.00,414.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,306.00 300.00,350.00 700.00,350.00 700.00,414.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,446.00 300.00,494.00 300.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,446.00 320.00,494.00 320.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,446.00 340.00,494.00 340.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,526.00 300.00,603.00 300.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,526.00 320.00,603.00 320.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,526.00 340.00,603.00 340.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,526.00 300.00,540.00 500.00,540.00 500.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,526.00 320.00,550.00 520.00,550.00 520.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,526.00 340.00,560.00 540.00,560.00 540.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,637.00 300.00,694.00 300.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,637.00 320.00,694.00 320.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,637.00 340.00,694.00 340.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,706.00 300.00,784.00 300.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,706.00 320.00,784.00 320.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,706.00 340.00,784.00 340.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"500.00,637.00 500.00,694.00 500.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"520.00,637.00 520.00,694.00 520.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"540.00,637.00 540.00,694.00 540.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"500.00,706.00 500.00,784.00 500.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"520.00,706.00 520.00,784.00 520.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"540.00,706.00 540.00,784.00 540.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"680.00,456.00 680.00,524.00 680.00,524.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"700.00,456.00 700.00,524.00 700.00,524.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"700.00,596.00 700.00,610.00 750.00,610.00 750.00,510.00 720.00,510.00 720.00,524.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"680.00,596.00 680.00,694.00 680.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"720.00,596.00 720.00,694.00 720.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"680.00,706.00 680.00,760.00 705.00,760.00 705.00,804.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"720.00,706.00 720.00,760.00 715.00,760.00 715.00,804.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"820.00,206.00 820.00,670.00 760.00,670.00 760.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"760.00,694.00 760.00,670.00 600.00,670.00 600.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"600.00,694.00 600.00,670.00 400.00,670.00 400.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"400.00,706.00 400.00,820.00 346.00,820.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"600.00,706.00 600.00,820.00 546.00,820.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"760.00,706.00 760.00,773.00 760.00,773.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,306.00 300.00,360.00 900.00,360.00 900.00,414.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"280.00,306.00 280.00,370.00 880.00,370.00 880.00,414.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,456.00 900.00,554.00 900.00,554.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,456.00 900.00,505.00 980.00,505.00 980.00,554.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,566.00 900.00,614.00 900.00,614.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,646.00 900.00,694.00 900.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,706.00 900.00,754.00 900.00,754.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,766.00 900.00,824.00 900.00,824.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,856.00 900.00,914.00 900.00,914.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"980.00,566.00 980.00,614.00 980.00,614.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1000.00,646.00 1000.00,694.00 1000.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1000.00,706.00 1000.00,754.00 1000.00,754.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1000.00,766.00 1000.00,814.00 1000.00,814.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,846.00 1020.00,894.00 1020.00,894.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,906.00 1020.00,944.00 1020.00,944.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,976.00 1020.00,1014.00 1020.00,1014.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,1046.00 1020.00,1094.00 1020.00,1094.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,926.00 900.00,1170.00 1020.00,1170.00 1020.00,1126.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,1126.00 1020.00,1180.00 860.00,1180.00 860.00,495.00 880.00,495.00 880.00,456.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<\/g>\n<g id=\"symboles\">\n<g class=\"symbole\" data-type=\"src_3p_pe_n\" transform=\"translate(140.00,120.00)\">\n<line x1=\"0\" y1=\"40\" x2=\"10\" y2=\"40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"0\" x2=\"10\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-12\" y=\"43\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 43)\">PE<\/text>\n<line x1=\"0\" y1=\"-20\" x2=\"10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"20\" x2=\"10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-12\" y=\"23\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 23)\">N<\/text>\n<text x=\"-12\" y=\"3\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 3)\">L3<\/text>\n<text x=\"-12\" y=\"-17\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 -17)\">L2<\/text>\n<text x=\"-12\" y=\"-37\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 -37)\">L1<\/text>\n<line x1=\"0\" y1=\"-40\" x2=\"10\" y2=\"-40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(280.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(300.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(320.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(340.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(820.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_4fn\" transform=\"translate(310.00,290.00)\">\n<line x1=\"-30\" y1=\"15.5\" x2=\"-30\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"15.5\" x2=\"30\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"15.5\" x2=\"-10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -30.00,15.50 A 4.00,2.50 0 0 0 -30.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -10.00,15.50 A 4.00,2.50 0 0 0 -10.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 30.00,15.50 A 4.00,2.50 0 0 0 30.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-30,10.5 -30,8 -25,8 -25,3 -30,3 -30,0 -35,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-10,10.5 -10,8 -5,8 -5,3 -10,3 -10,0 -15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"30,10.5 30,8 35,8 35,3 30,3 30,0 25,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"15.5\" x2=\"10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-30\" y1=\"-30\" x2=\"-30\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-28\" y1=\"-26\" x2=\"-32\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-32\" y1=\"-26\" x2=\"-28\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-30\" x2=\"10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"12\" y1=\"-26\" x2=\"8\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-26\" x2=\"12\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-30\" x2=\"-10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-8\" y1=\"-26\" x2=\"-12\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-26\" x2=\"-8\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"-30\" x2=\"30\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"32\" y1=\"-26\" x2=\"28\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"28\" y1=\"-26\" x2=\"32\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-32.5\" y1=\"-10\" x2=\"27.5\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-32\" y1=\"-20\" x2=\"-28\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-20\" x2=\"-8\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-20\" x2=\"12\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"28\" y1=\"-20\" x2=\"32\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_3f\" transform=\"translate(320.00,430.00)\">\n<line x1=\"-20\" y1=\"15.5\" x2=\"-20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"15.5\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -20.00,15.50 A 4.00,2.50 0 0 0 -20.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -0.00,15.50 A 4.00,2.50 0 0 0 0.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,10.5 -20,8 -15,8 -15,3 -20,3 -20,0 -25,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"0,10.5 0,8 5,8 5,3 0,3 0,0 -5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"15.5\" x2=\"20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 20.00,15.50 A 4.00,2.50 0 0 0 20.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-30\" x2=\"-20\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-18\" y1=\"-26\" x2=\"-22\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-26\" x2=\"-18\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-30\" x2=\"20\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"22\" y1=\"-26\" x2=\"18\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-26\" x2=\"22\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-30\" x2=\"0\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-26\" x2=\"-2\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-26\" x2=\"2\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22.5\" y1=\"-10\" x2=\"17.5\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"20,10.5 20,8 25,8 25,3 20,3 20,0 15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-20\" x2=\"-18\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-20\" x2=\"2\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-20\" x2=\"22\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"com_puiss_3P_inv2\" transform=\"translate(310.00,510.00)\">\n<line x1=\"-27\" y1=\"0\" x2=\"27\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"15\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 15 -20)\">3\nL2<\/text>\n<text x=\"35\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 35 -20)\">5\nL3<\/text>\n<text x=\"14\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 14 19)\">4\nT2<\/text>\n<text x=\"-6\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 19)\">2\nT1<\/text>\n<text x=\"34\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 34 19)\">6\nT3<\/text>\n<polyline points=\"25,-10 30,10 30,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-15,-10 -10,10 -10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"5,-10 10,10 10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-20\" x2=\"-10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -10.00,-14.50 A 2.50,2.50 0 0 0 -10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-20\" x2=\"10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 10.00,-14.50 A 2.50,2.50 0 0 0 10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"-20\" x2=\"30\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 30.00,-14.50 A 2.50,2.50 0 0 0 30.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-6\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 -20)\">1\nL1<\/text>\n<\/g>\n<g class=\"symbole\" data-type=\"relais_therm4_1_wide\" transform=\"translate(300.00,620.00)\">\n<rect x=\"-5\" y=\"-10\" width=\"55\" height=\"20\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"5\" y1=\"-5\" x2=\"5\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-5\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"5\" x2=\"5\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"-20\" x2=\"40\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"5\" x2=\"40\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"45\" y1=\"-5\" x2=\"45\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"-5\" x2=\"45\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"5\" x2=\"45\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"5\" x2=\"20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"25\" y1=\"-5\" x2=\"25\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-5\" x2=\"25\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"5\" x2=\"25\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"relais_therm4_1_wide\" transform=\"translate(500.00,620.00)\">\n<rect x=\"-5\" y=\"-10\" width=\"55\" height=\"20\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"5\" y1=\"-5\" x2=\"5\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-5\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"5\" x2=\"5\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"-20\" x2=\"40\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"5\" x2=\"40\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"45\" y1=\"-5\" x2=\"45\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"-5\" x2=\"45\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"5\" x2=\"45\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"5\" x2=\"20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"25\" y1=\"-5\" x2=\"25\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-5\" x2=\"25\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"5\" x2=\"25\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_1fn\" transform=\"translate(690.00,440.00)\">\n<line x1=\"10\" y1=\"15.5\" x2=\"10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-20\" x2=\"12\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-10\" x2=\"7\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<path d=\"M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-10,20 -10,0 -15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-30\" x2=\"10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"12\" y1=\"-26\" x2=\"8\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-26\" x2=\"12\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-30\" x2=\"-10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-20\" x2=\"-8\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"gv2p\" transform=\"translate(700.00,560.00)\">\n<line x1=\"-56\" y1=\"-12\" x2=\"-53\" y2=\"-12\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polyline points=\"20,14 20,10 25,10 25,4 20,4 20,-6 13,-25\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"0,14 0,10 5,10 5,4 0,4 0,-6 -7,-25\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"16\" y=\"25\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 16 25)\">I&gt;<\/text>\n<text x=\"24\" y=\"-40\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 24 -40)\">5\nL3<\/text>\n<text x=\"4\" y=\"-40\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 4 -40)\">3\nL2<\/text>\n<text x=\"4\" y=\"39\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 4 39)\">4\nT2<\/text>\n<rect x=\"-30\" y=\"0\" width=\"60\" height=\"28\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"24\" y=\"39\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 24 39)\">6\nT3<\/text>\n<text x=\"-16\" y=\"39\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -16 39)\">2\nT1<\/text>\n<text x=\"-4\" y=\"25\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -4 25)\">I&gt;<\/text>\n<line x1=\"-18\" y1=\"-33\" x2=\"-22\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-33\" x2=\"-18\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-33\" x2=\"-2\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-33\" x2=\"2\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"22\" y1=\"-33\" x2=\"18\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-33\" x2=\"22\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-30\" y1=\"14\" x2=\"30\" y2=\"14\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"0\" x2=\"-10\" y2=\"27\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"0\" x2=\"10\" y2=\"28\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-24\" y=\"25\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -24 25)\">I&gt;<\/text>\n<line x1=\"-20\" y1=\"40\" x2=\"-20\" y2=\"29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"40\" x2=\"0\" y2=\"29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"40\" x2=\"20\" y2=\"29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-16\" y=\"-40\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -16 -40)\">1\nL1<\/text>\n<polyline points=\"-20,14 -20,10 -15,10 -15,4 -20,4 -20,-6 -27,-25\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-27\" x2=\"-20\" y2=\"-40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-27\" x2=\"0\" y2=\"-40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-27\" x2=\"20\" y2=\"-40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-46\" y=\"-22\" width=\"12\" height=\"12\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-34\" y1=\"-16\" x2=\"-53\" y2=\"-16\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-53\" y1=\"-20\" x2=\"-53\" y2=\"-12\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-40\" y1=\"-10\" x2=\"-40\" y2=\"-22\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-34\" y1=\"-16\" x2=\"16\" y2=\"-16\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"-30,21 -40,21 -40,-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"-30\" y1=\"7\" x2=\"-40\" y2=\"7\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"-53\" y1=\"-20\" x2=\"-50\" y2=\"-20\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-27\" x2=\"-18\" y2=\"-27\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-27\" x2=\"2\" y2=\"-27\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-27\" x2=\"22\" y2=\"-27\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(300.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(320.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(340.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(400.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(500.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(520.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(540.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(600.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(680.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(720.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(760.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"moteur_tri_2\" transform=\"translate(320.00,800.00)\">\n<text x=\"22\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 22 -12)\">W1<\/text>\n<text x=\"2\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 2 -12)\">V1<\/text>\n<text x=\"23\" y=\"30\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 23 30)\">PE<\/text>\n<path d=\"M 4.50,25.00 A 3.00,2.50 0 0 0 10.50,25.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 4.50,25.00 A 3.00,2.50 0 0 0 -1.50,25.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-10.25\" y=\"18\" font-family=\"Arial,sans-serif\" font-size=\"18.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"6.3\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -10.25 18)\">M<\/text>\n<ellipse cx=\"0.00\" cy=\"16.00\" rx=\"23.00\" ry=\"23.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-20\" x2=\"-20\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-11\" y=\"29\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -11 29)\">3<\/text>\n<text x=\"-18\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -18 -12)\">U1<\/text>\n<line x1=\"23\" y1=\"20\" x2=\"30\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"moteur_tri_2\" transform=\"translate(520.00,800.00)\">\n<text x=\"22\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 22 -12)\">W1<\/text>\n<text x=\"2\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 2 -12)\">V1<\/text>\n<text x=\"23\" y=\"30\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 23 30)\">PE<\/text>\n<path d=\"M 4.50,25.00 A 3.00,2.50 0 0 0 10.50,25.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 4.50,25.00 A 3.00,2.50 0 0 0 -1.50,25.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-10.25\" y=\"18\" font-family=\"Arial,sans-serif\" font-size=\"18.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"6.3\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -10.25 18)\">M<\/text>\n<ellipse cx=\"0.00\" cy=\"16.00\" rx=\"23.00\" ry=\"23.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-20\" x2=\"-20\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-11\" y=\"29\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -11 29)\">3<\/text>\n<text x=\"-18\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -18 -12)\">U1<\/text>\n<line x1=\"23\" y1=\"20\" x2=\"30\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"moteur_mono\" transform=\"translate(710.00,820.00)\">\n<text x=\"-10\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"18.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"6.3\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -10 19)\">M<\/text>\n<ellipse cx=\"0.00\" cy=\"10.00\" rx=\"15.00\" ry=\"15.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"5\" y1=\"-19\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-4.75\" y1=\"-19\" x2=\"-4.75\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"terre\" transform=\"translate(760.00,780.00)\">\n<line x1=\"-3\" y1=\"4\" x2=\"3\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-5\" y1=\"2\" x2=\"5\" y2=\"2\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-7\" y1=\"0\" x2=\"7\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_1fn\" transform=\"translate(890.00,440.00)\">\n<line x1=\"10\" y1=\"15.5\" x2=\"10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-20\" x2=\"12\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-10\" x2=\"7\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<path d=\"M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-10,20 -10,0 -15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-30\" x2=\"10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"12\" y1=\"-26\" x2=\"8\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-26\" x2=\"12\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-30\" x2=\"-10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-20\" x2=\"-8\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(900.00,560.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"contnonc\" transform=\"translate(900.00,630.00) rotate(180)\">\n<polyline points=\"-15,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,-20 -20,-8 -12,-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(900.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(900.00,760.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"electrovanne\" transform=\"translate(900.00,840.00)\">\n<line x1=\"0\" y1=\"20\" x2=\"0\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-20\" y=\"-10\" width=\"40\" height=\"20\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"white\"/>\n<line x1=\"23\" y1=\"0\" x2=\"32\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-9.5\" x2=\"10\" y2=\"9.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polygon points=\"30,-10 40,-10 30,10 40,10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(900.00,920.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(980.00,560.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"contnonc\" transform=\"translate(980.00,630.00) rotate(180)\">\n<polyline points=\"-15,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,-20 -20,-8 -12,-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(1000.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(1000.00,760.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"contnonc\" transform=\"translate(1000.00,830.00) rotate(180)\">\n<polyline points=\"-15,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,-20 -20,-8 -12,-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(1020.00,900.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"act_thermique_nf_esclave\" transform=\"translate(1020.00,960.00)\">\n<line x1=\"-13\" y1=\"0\" x2=\"3\" y2=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"-18,7 -18,3 -13,3 -13,-3 -18,-3 -18,-7\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polyline points=\"0,20 0,10 6,-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-9\" x2=\"7\" y2=\"-9\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-9\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"act_thermique_nf_esclave\" transform=\"translate(1020.00,1030.00)\">\n<line x1=\"-13\" y1=\"0\" x2=\"3\" y2=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"-18,7 -18,3 -13,3 -13,-3 -18,-3 -18,-7\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polyline points=\"0,20 0,10 6,-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-9\" x2=\"7\" y2=\"-9\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-9\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"bobine3\" transform=\"translate(1020.00,1110.00)\">\n<rect x=\"-14\" y=\"-8\" width=\"28\" height=\"16\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"8\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<\/g>\n<\/svg>\n",
+  "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"89.0 42.0 1041.0 1168.0\">\n<!-- Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur — converti de cablage-7-commande.qet par outils\\qet-vers-svg.py -->\n<rect x=\"89.0\" y=\"42.0\" width=\"1041.0\" height=\"1168.0\" fill=\"#ffffff\"/>\n<g id=\"conducteurs\">\n<polyline points=\"146.00,80.00 300.00,80.00 300.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"146.00,100.00 320.00,100.00 320.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"146.00,120.00 340.00,120.00 340.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"146.00,140.00 280.00,140.00 280.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"146.00,160.00 820.00,160.00 820.00,194.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"280.00,206.00 280.00,264.00 280.00,264.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,206.00 300.00,264.00 300.00,264.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,206.00 320.00,264.00 320.00,264.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,206.00 340.00,264.00 340.00,264.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,306.00 300.00,404.00 300.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,306.00 320.00,404.00 320.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,306.00 340.00,404.00 340.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,404.00 300.00,320.00 500.00,320.00 500.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,404.00 320.00,330.00 520.00,330.00 520.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,404.00 340.00,340.00 540.00,340.00 540.00,404.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"500.00,404.00 500.00,320.00 700.00,320.00 700.00,414.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"280.00,306.00 280.00,350.00 680.00,350.00 680.00,414.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,446.00 300.00,494.00 300.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,446.00 320.00,494.00 320.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,446.00 340.00,494.00 340.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,526.00 300.00,603.00 300.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,526.00 320.00,603.00 320.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,526.00 340.00,603.00 340.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"500.00,446.00 500.00,494.00 500.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"520.00,446.00 520.00,494.00 520.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"540.00,446.00 540.00,494.00 540.00,494.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"500.00,526.00 500.00,603.00 500.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"520.00,526.00 520.00,603.00 520.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"540.00,526.00 540.00,603.00 540.00,603.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,637.00 300.00,694.00 300.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,637.00 320.00,694.00 320.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,637.00 340.00,694.00 340.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,706.00 300.00,784.00 300.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"320.00,706.00 320.00,784.00 320.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"340.00,706.00 340.00,784.00 340.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"500.00,637.00 500.00,694.00 500.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"520.00,637.00 520.00,694.00 520.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"540.00,637.00 540.00,694.00 540.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"500.00,706.00 500.00,784.00 500.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"520.00,706.00 520.00,784.00 520.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"540.00,706.00 540.00,784.00 540.00,784.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"680.00,456.00 680.00,524.00 680.00,524.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"700.00,456.00 700.00,524.00 700.00,524.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"700.00,596.00 700.00,610.00 750.00,610.00 750.00,510.00 720.00,510.00 720.00,524.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"680.00,596.00 680.00,694.00 680.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"720.00,596.00 720.00,694.00 720.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"680.00,706.00 680.00,760.00 705.00,760.00 705.00,804.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"720.00,706.00 720.00,760.00 715.00,760.00 715.00,804.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"820.00,206.00 820.00,670.00 760.00,670.00 760.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"760.00,694.00 760.00,670.00 600.00,670.00 600.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"600.00,694.00 600.00,670.00 400.00,670.00 400.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"400.00,706.00 400.00,820.00 346.00,820.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"600.00,706.00 600.00,820.00 546.00,820.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"760.00,706.00 760.00,773.00 760.00,773.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"300.00,306.00 300.00,360.00 900.00,360.00 900.00,414.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"280.00,306.00 280.00,370.00 880.00,370.00 880.00,414.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,456.00 900.00,554.00 900.00,554.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,456.00 900.00,505.00 980.00,505.00 980.00,554.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,566.00 900.00,614.00 900.00,614.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,646.00 900.00,694.00 900.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,706.00 900.00,754.00 900.00,754.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,766.00 900.00,824.00 900.00,824.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,856.00 900.00,914.00 900.00,914.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"980.00,566.00 980.00,614.00 980.00,614.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1000.00,646.00 1000.00,694.00 1000.00,694.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1000.00,706.00 1000.00,754.00 1000.00,754.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1000.00,766.00 1000.00,814.00 1000.00,814.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,846.00 1020.00,894.00 1020.00,894.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,906.00 1020.00,944.00 1020.00,944.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,976.00 1020.00,1014.00 1020.00,1014.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,1046.00 1020.00,1094.00 1020.00,1094.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,1046.00 1020.00,1070.00 1080.00,1070.00 1080.00,1094.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1080.00,1126.00 1080.00,1170.00 1020.00,1170.00 1020.00,1126.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"900.00,926.00 900.00,1170.00 1020.00,1170.00 1020.00,1126.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<polyline points=\"1020.00,1126.00 1020.00,1180.00 860.00,1180.00 860.00,495.00 880.00,495.00 880.00,456.00\" fill=\"none\" stroke=\"black\" stroke-width=\"1\"/>\n<\/g>\n<g id=\"symboles\">\n<g class=\"symbole\" data-type=\"src_3p_pe_n\" transform=\"translate(140.00,120.00)\">\n<line x1=\"0\" y1=\"40\" x2=\"10\" y2=\"40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"0\" x2=\"10\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-12\" y=\"43\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 43)\">PE<\/text>\n<line x1=\"0\" y1=\"-20\" x2=\"10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"20\" x2=\"10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-12\" y=\"23\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 23)\">N<\/text>\n<text x=\"-12\" y=\"3\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 3)\">L3<\/text>\n<text x=\"-12\" y=\"-17\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 -17)\">L2<\/text>\n<text x=\"-12\" y=\"-37\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -12 -37)\">L1<\/text>\n<line x1=\"0\" y1=\"-40\" x2=\"10\" y2=\"-40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(280.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(300.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(320.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(340.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(820.00,200.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_4fn\" transform=\"translate(310.00,290.00)\">\n<line x1=\"-30\" y1=\"15.5\" x2=\"-30\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"15.5\" x2=\"30\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"15.5\" x2=\"-10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -30.00,15.50 A 4.00,2.50 0 0 0 -30.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -10.00,15.50 A 4.00,2.50 0 0 0 -10.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 30.00,15.50 A 4.00,2.50 0 0 0 30.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-30,10.5 -30,8 -25,8 -25,3 -30,3 -30,0 -35,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-10,10.5 -10,8 -5,8 -5,3 -10,3 -10,0 -15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"30,10.5 30,8 35,8 35,3 30,3 30,0 25,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"15.5\" x2=\"10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-30\" y1=\"-30\" x2=\"-30\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-28\" y1=\"-26\" x2=\"-32\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-32\" y1=\"-26\" x2=\"-28\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-30\" x2=\"10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"12\" y1=\"-26\" x2=\"8\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-26\" x2=\"12\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-30\" x2=\"-10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-8\" y1=\"-26\" x2=\"-12\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-26\" x2=\"-8\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"-30\" x2=\"30\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"32\" y1=\"-26\" x2=\"28\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"28\" y1=\"-26\" x2=\"32\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-32.5\" y1=\"-10\" x2=\"27.5\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-32\" y1=\"-20\" x2=\"-28\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-20\" x2=\"-8\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-20\" x2=\"12\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"28\" y1=\"-20\" x2=\"32\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_3f\" transform=\"translate(320.00,430.00)\">\n<line x1=\"-20\" y1=\"15.5\" x2=\"-20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"15.5\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -20.00,15.50 A 4.00,2.50 0 0 0 -20.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -0.00,15.50 A 4.00,2.50 0 0 0 0.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,10.5 -20,8 -15,8 -15,3 -20,3 -20,0 -25,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"0,10.5 0,8 5,8 5,3 0,3 0,0 -5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"15.5\" x2=\"20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 20.00,15.50 A 4.00,2.50 0 0 0 20.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-30\" x2=\"-20\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-18\" y1=\"-26\" x2=\"-22\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-26\" x2=\"-18\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-30\" x2=\"20\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"22\" y1=\"-26\" x2=\"18\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-26\" x2=\"22\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-30\" x2=\"0\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-26\" x2=\"-2\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-26\" x2=\"2\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22.5\" y1=\"-10\" x2=\"17.5\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"20,10.5 20,8 25,8 25,3 20,3 20,0 15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-20\" x2=\"-18\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-20\" x2=\"2\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-20\" x2=\"22\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_3f\" transform=\"translate(520.00,430.00)\">\n<line x1=\"-20\" y1=\"15.5\" x2=\"-20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"15.5\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -20.00,15.50 A 4.00,2.50 0 0 0 -20.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -0.00,15.50 A 4.00,2.50 0 0 0 0.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,10.5 -20,8 -15,8 -15,3 -20,3 -20,0 -25,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"0,10.5 0,8 5,8 5,3 0,3 0,0 -5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"15.5\" x2=\"20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 20.00,15.50 A 4.00,2.50 0 0 0 20.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-30\" x2=\"-20\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-18\" y1=\"-26\" x2=\"-22\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-26\" x2=\"-18\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-30\" x2=\"20\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"22\" y1=\"-26\" x2=\"18\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-26\" x2=\"22\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-30\" x2=\"0\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-26\" x2=\"-2\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-26\" x2=\"2\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22.5\" y1=\"-10\" x2=\"17.5\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"20,10.5 20,8 25,8 25,3 20,3 20,0 15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-20\" x2=\"-18\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-20\" x2=\"2\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-20\" x2=\"22\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"com_puiss_3P_inv2\" transform=\"translate(310.00,510.00)\">\n<line x1=\"-27\" y1=\"0\" x2=\"27\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"15\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 15 -20)\">3\nL2<\/text>\n<text x=\"35\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 35 -20)\">5\nL3<\/text>\n<text x=\"14\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 14 19)\">4\nT2<\/text>\n<text x=\"-6\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 19)\">2\nT1<\/text>\n<text x=\"34\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 34 19)\">6\nT3<\/text>\n<polyline points=\"25,-10 30,10 30,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-15,-10 -10,10 -10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"5,-10 10,10 10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-20\" x2=\"-10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -10.00,-14.50 A 2.50,2.50 0 0 0 -10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-20\" x2=\"10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 10.00,-14.50 A 2.50,2.50 0 0 0 10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"-20\" x2=\"30\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 30.00,-14.50 A 2.50,2.50 0 0 0 30.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-6\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 -20)\">1\nL1<\/text>\n<\/g>\n<g class=\"symbole\" data-type=\"com_puiss_3P_inv2\" transform=\"translate(510.00,510.00)\">\n<line x1=\"-27\" y1=\"0\" x2=\"27\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"15\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 15 -20)\">3\nL2<\/text>\n<text x=\"35\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 35 -20)\">5\nL3<\/text>\n<text x=\"14\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 14 19)\">4\nT2<\/text>\n<text x=\"-6\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 19)\">2\nT1<\/text>\n<text x=\"34\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 34 19)\">6\nT3<\/text>\n<polyline points=\"25,-10 30,10 30,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-15,-10 -10,10 -10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"5,-10 10,10 10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-20\" x2=\"-10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -10.00,-14.50 A 2.50,2.50 0 0 0 -10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-20\" x2=\"10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 10.00,-14.50 A 2.50,2.50 0 0 0 10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"-20\" x2=\"30\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 30.00,-14.50 A 2.50,2.50 0 0 0 30.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-6\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 -20)\">1\nL1<\/text>\n<\/g>\n<g class=\"symbole\" data-type=\"relais_therm4_1_wide\" transform=\"translate(300.00,620.00)\">\n<rect x=\"-5\" y=\"-10\" width=\"55\" height=\"20\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"5\" y1=\"-5\" x2=\"5\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-5\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"5\" x2=\"5\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"-20\" x2=\"40\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"5\" x2=\"40\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"45\" y1=\"-5\" x2=\"45\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"-5\" x2=\"45\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"5\" x2=\"45\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"5\" x2=\"20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"25\" y1=\"-5\" x2=\"25\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-5\" x2=\"25\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"5\" x2=\"25\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"relais_therm4_1_wide\" transform=\"translate(500.00,620.00)\">\n<rect x=\"-5\" y=\"-10\" width=\"55\" height=\"20\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"5\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"5\" y1=\"-5\" x2=\"5\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-5\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"5\" x2=\"5\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"-20\" x2=\"40\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"5\" x2=\"40\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"45\" y1=\"-5\" x2=\"45\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"-5\" x2=\"45\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40\" y1=\"5\" x2=\"45\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"5\" x2=\"20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"25\" y1=\"-5\" x2=\"25\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-5\" x2=\"25\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"5\" x2=\"25\" y2=\"5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_1fn\" transform=\"translate(690.00,440.00)\">\n<line x1=\"10\" y1=\"15.5\" x2=\"10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-20\" x2=\"12\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-10\" x2=\"7\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<path d=\"M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-10,20 -10,0 -15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-30\" x2=\"10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"12\" y1=\"-26\" x2=\"8\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-26\" x2=\"12\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-30\" x2=\"-10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-20\" x2=\"-8\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"gv2p\" transform=\"translate(700.00,560.00)\">\n<line x1=\"-56\" y1=\"-12\" x2=\"-53\" y2=\"-12\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polyline points=\"20,14 20,10 25,10 25,4 20,4 20,-6 13,-25\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"0,14 0,10 5,10 5,4 0,4 0,-6 -7,-25\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"16\" y=\"25\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 16 25)\">I&gt;<\/text>\n<text x=\"24\" y=\"-40\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 24 -40)\">5\nL3<\/text>\n<text x=\"4\" y=\"-40\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 4 -40)\">3\nL2<\/text>\n<text x=\"4\" y=\"39\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 4 39)\">4\nT2<\/text>\n<rect x=\"-30\" y=\"0\" width=\"60\" height=\"28\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"24\" y=\"39\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 24 39)\">6\nT3<\/text>\n<text x=\"-16\" y=\"39\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -16 39)\">2\nT1<\/text>\n<text x=\"-4\" y=\"25\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -4 25)\">I&gt;<\/text>\n<line x1=\"-18\" y1=\"-33\" x2=\"-22\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-33\" x2=\"-18\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-33\" x2=\"-2\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-33\" x2=\"2\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"22\" y1=\"-33\" x2=\"18\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-33\" x2=\"22\" y2=\"-29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-30\" y1=\"14\" x2=\"30\" y2=\"14\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"0\" x2=\"-10\" y2=\"27\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"0\" x2=\"10\" y2=\"28\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-24\" y=\"25\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -24 25)\">I&gt;<\/text>\n<line x1=\"-20\" y1=\"40\" x2=\"-20\" y2=\"29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"40\" x2=\"0\" y2=\"29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"40\" x2=\"20\" y2=\"29\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-16\" y=\"-40\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -16 -40)\">1\nL1<\/text>\n<polyline points=\"-20,14 -20,10 -15,10 -15,4 -20,4 -20,-6 -27,-25\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-27\" x2=\"-20\" y2=\"-40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-27\" x2=\"0\" y2=\"-40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-27\" x2=\"20\" y2=\"-40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-46\" y=\"-22\" width=\"12\" height=\"12\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-34\" y1=\"-16\" x2=\"-53\" y2=\"-16\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-53\" y1=\"-20\" x2=\"-53\" y2=\"-12\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-40\" y1=\"-10\" x2=\"-40\" y2=\"-22\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-34\" y1=\"-16\" x2=\"16\" y2=\"-16\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"-30,21 -40,21 -40,-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"-30\" y1=\"7\" x2=\"-40\" y2=\"7\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<line x1=\"-53\" y1=\"-20\" x2=\"-50\" y2=\"-20\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-27\" x2=\"-18\" y2=\"-27\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-27\" x2=\"2\" y2=\"-27\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-27\" x2=\"22\" y2=\"-27\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(300.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(320.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(340.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(400.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(500.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(520.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(540.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(600.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(680.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(720.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(760.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"moteur_tri_2\" transform=\"translate(320.00,800.00)\">\n<text x=\"22\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 22 -12)\">W1<\/text>\n<text x=\"2\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 2 -12)\">V1<\/text>\n<text x=\"23\" y=\"30\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 23 30)\">PE<\/text>\n<path d=\"M 4.50,25.00 A 3.00,2.50 0 0 0 10.50,25.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 4.50,25.00 A 3.00,2.50 0 0 0 -1.50,25.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-10.25\" y=\"18\" font-family=\"Arial,sans-serif\" font-size=\"18.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"6.3\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -10.25 18)\">M<\/text>\n<ellipse cx=\"0.00\" cy=\"16.00\" rx=\"23.00\" ry=\"23.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-20\" x2=\"-20\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-11\" y=\"29\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -11 29)\">3<\/text>\n<text x=\"-18\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -18 -12)\">U1<\/text>\n<line x1=\"23\" y1=\"20\" x2=\"30\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"moteur_tri_2\" transform=\"translate(520.00,800.00)\">\n<text x=\"22\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 22 -12)\">W1<\/text>\n<text x=\"2\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 2 -12)\">V1<\/text>\n<text x=\"23\" y=\"30\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 23 30)\">PE<\/text>\n<path d=\"M 4.50,25.00 A 3.00,2.50 0 0 0 10.50,25.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 4.50,25.00 A 3.00,2.50 0 0 0 -1.50,25.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-10.25\" y=\"18\" font-family=\"Arial,sans-serif\" font-size=\"18.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"6.3\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -10.25 18)\">M<\/text>\n<ellipse cx=\"0.00\" cy=\"16.00\" rx=\"23.00\" ry=\"23.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-7\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-20\" x2=\"20\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-20\" x2=\"-20\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-11\" y=\"29\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -11 29)\">3<\/text>\n<text x=\"-18\" y=\"-12\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -18 -12)\">U1<\/text>\n<line x1=\"23\" y1=\"20\" x2=\"30\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"moteur_mono\" transform=\"translate(710.00,820.00)\">\n<text x=\"-10\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"18.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"6.3\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -10 19)\">M<\/text>\n<ellipse cx=\"0.00\" cy=\"10.00\" rx=\"15.00\" ry=\"15.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"5\" y1=\"-19\" x2=\"5\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-4.75\" y1=\"-19\" x2=\"-4.75\" y2=\"-5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"terre\" transform=\"translate(760.00,780.00)\">\n<line x1=\"-3\" y1=\"4\" x2=\"3\" y2=\"4\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-5\" y1=\"2\" x2=\"5\" y2=\"2\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-7\" y1=\"0\" x2=\"7\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"disjonct-m_1fn\" transform=\"translate(890.00,440.00)\">\n<line x1=\"10\" y1=\"15.5\" x2=\"10\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-20\" x2=\"12\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-10\" x2=\"7\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<path d=\"M 10.00,15.50 A 4.00,2.50 0 0 0 10.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-10,20 -10,0 -15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"10,10.5 10,8 15,8 15,3 10,3 10,0 5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-30\" x2=\"10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"12\" y1=\"-26\" x2=\"8\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"8\" y1=\"-26\" x2=\"12\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-30\" x2=\"-10\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-12\" y1=\"-20\" x2=\"-8\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(900.00,560.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"contnonc\" transform=\"translate(900.00,630.00) rotate(180)\">\n<polyline points=\"-15,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,-20 -20,-8 -12,-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(900.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(900.00,760.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"electrovanne\" transform=\"translate(900.00,840.00)\">\n<line x1=\"0\" y1=\"20\" x2=\"0\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-20\" y=\"-10\" width=\"40\" height=\"20\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"white\"/>\n<line x1=\"23\" y1=\"0\" x2=\"32\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-9.5\" x2=\"10\" y2=\"9.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polygon points=\"30,-10 40,-10 30,10 40,10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(900.00,920.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(980.00,560.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"contnonc\" transform=\"translate(980.00,630.00) rotate(180)\">\n<polyline points=\"-15,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,-20 -20,-8 -12,-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(1000.00,700.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(1000.00,760.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"contnonc\" transform=\"translate(1000.00,830.00) rotate(180)\">\n<polyline points=\"-15,-10 0,10 0,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,-20 -20,-8 -12,-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"borne_continuite\" transform=\"translate(1020.00,900.00)\">\n<line x1=\"0\" y1=\"10\" x2=\"0\" y2=\"3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-10\" x2=\"0\" y2=\"-3\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"0.00\" rx=\"2.50\" ry=\"2.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"act_thermique_nf_esclave\" transform=\"translate(1020.00,960.00)\">\n<line x1=\"-13\" y1=\"0\" x2=\"3\" y2=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"-18,7 -18,3 -13,3 -13,-3 -18,-3 -18,-7\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polyline points=\"0,20 0,10 6,-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-9\" x2=\"7\" y2=\"-9\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-9\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"act_thermique_nf_esclave\" transform=\"translate(1020.00,1030.00)\">\n<line x1=\"-13\" y1=\"0\" x2=\"3\" y2=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"-18,7 -18,3 -13,3 -13,-3 -18,-3 -18,-7\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polyline points=\"0,20 0,10 6,-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-9\" x2=\"7\" y2=\"-9\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-9\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"bobine3\" transform=\"translate(1020.00,1110.00)\">\n<rect x=\"-14\" y=\"-8\" width=\"28\" height=\"16\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"8\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<g class=\"symbole\" data-type=\"bobine3\" transform=\"translate(1080.00,1110.00)\">\n<rect x=\"-14\" y=\"-8\" width=\"28\" height=\"16\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"8\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>\n<\/g>\n<\/svg>\n",
   "bornes": [
    {
     "ref": "Réseau:L2",
@@ -157,6 +157,36 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     "y": 404.0
    },
    {
+    "ref": "Q3:4",
+    "x": 520.0,
+    "y": 446.0
+   },
+   {
+    "ref": "Q3:2",
+    "x": 500.0,
+    "y": 446.0
+   },
+   {
+    "ref": "Q3:6",
+    "x": 540.0,
+    "y": 446.0
+   },
+   {
+    "ref": "Q3:5",
+    "x": 540.0,
+    "y": 404.0
+   },
+   {
+    "ref": "Q3:3",
+    "x": 520.0,
+    "y": 404.0
+   },
+   {
+    "ref": "Q3:1",
+    "x": 500.0,
+    "y": 404.0
+   },
+   {
     "ref": "KM1:3",
     "x": 320.0,
     "y": 494.0
@@ -184,6 +214,36 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    {
     "ref": "KM1:6",
     "x": 340.0,
+    "y": 526.0
+   },
+   {
+    "ref": "KM2:3",
+    "x": 520.0,
+    "y": 494.0
+   },
+   {
+    "ref": "KM2:1",
+    "x": 500.0,
+    "y": 494.0
+   },
+   {
+    "ref": "KM2:4",
+    "x": 520.0,
+    "y": 526.0
+   },
+   {
+    "ref": "KM2:2",
+    "x": 500.0,
+    "y": 526.0
+   },
+   {
+    "ref": "KM2:5",
+    "x": 540.0,
+    "y": 494.0
+   },
+   {
+    "ref": "KM2:6",
+    "x": 540.0,
     "y": 526.0
    },
    {
@@ -645,6 +705,16 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     "ref": "KM1:A2",
     "x": 1020.0,
     "y": 1126.0
+   },
+   {
+    "ref": "KM2:A1",
+    "x": 1080.0,
+    "y": 1094.0
+   },
+   {
+    "ref": "KM2:A2",
+    "x": 1080.0,
+    "y": 1126.0
    }
   ],
   "appareils": [
@@ -661,6 +731,11 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    {
     "repere": "Q2",
     "x": 320.0,
+    "y": 387.0
+   },
+   {
+    "repere": "Q3",
+    "x": 520.0,
     "y": 387.0
    },
    {
@@ -681,6 +756,16 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    {
     "repere": "KM1",
     "x": 1020.0,
+    "y": 1075.0
+   },
+   {
+    "repere": "KM2",
+    "x": 516.0,
+    "y": 477.0
+   },
+   {
+    "repere": "KM2",
+    "x": 1080.0,
     "y": 1075.0
    },
    {
@@ -1049,6 +1134,63 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "ligne": 0
   },
   {
+   "repere": "Q3",
+   "type": "disjonct-m_3f",
+   "nom": "Disjoncteur magnétothermique",
+   "rang": 1,
+   "symbole": "<g class=\"symbole\" data-type=\"disjonct-m_3f\" transform=\"translate(0.00,0.00)\">\n<line x1=\"-20\" y1=\"15.5\" x2=\"-20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"15.5\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -20.00,15.50 A 4.00,2.50 0 0 0 -20.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -0.00,15.50 A 4.00,2.50 0 0 0 0.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-20,10.5 -20,8 -15,8 -15,3 -20,3 -20,0 -25,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"0,10.5 0,8 5,8 5,3 0,3 0,0 -5,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"15.5\" x2=\"20\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 20.00,15.50 A 4.00,2.50 0 0 0 20.00,10.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-20\" y1=\"-30\" x2=\"-20\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-18\" y1=\"-26\" x2=\"-22\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-26\" x2=\"-18\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"-30\" x2=\"20\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"22\" y1=\"-26\" x2=\"18\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-26\" x2=\"22\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-30\" x2=\"0\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-26\" x2=\"-2\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-26\" x2=\"2\" y2=\"-22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22.5\" y1=\"-10\" x2=\"17.5\" y2=\"-10\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<polyline points=\"20,10.5 20,8 25,8 25,3 20,3 20,0 15,-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-22\" y1=\"-20\" x2=\"-18\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-20\" x2=\"2\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"-20\" x2=\"22\" y2=\"-20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>",
+   "boite": [
+    -30.0,
+    -40.0,
+    30.0,
+    30.0
+   ],
+   "bornes": [
+    {
+     "id": "4",
+     "x": 0.0,
+     "y": 16.0,
+     "o": 2
+    },
+    {
+     "id": "2",
+     "x": -20.0,
+     "y": 16.0,
+     "o": 2
+    },
+    {
+     "id": "6",
+     "x": 20.0,
+     "y": 16.0,
+     "o": 2
+    },
+    {
+     "id": "5",
+     "x": 20.0,
+     "y": -26.0,
+     "o": 0
+    },
+    {
+     "id": "3",
+     "x": 0.0,
+     "y": -26.0,
+     "o": 0
+    },
+    {
+     "id": "1",
+     "x": -20.0,
+     "y": -26.0,
+     "o": 0
+    }
+   ],
+   "liaisons_internes": [],
+   "implantation": {
+    "x": 472.0,
+    "y": 264.0
+   },
+   "ligne": 0
+  },
+  {
    "repere": "Q4",
    "type": "disjonct-m_1fn",
    "nom": "Disjoncteur 1P+N",
@@ -1088,7 +1230,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 528.0,
+    "x": 600.0,
     "y": 264.0
    },
    "ligne": 0
@@ -1133,7 +1275,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 656.0,
+    "x": 720.0,
     "y": 264.0
    },
    "ligne": 0
@@ -1141,7 +1283,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
   {
    "repere": "KM1",
    "type": "com_puiss_3P_inv2",
-   "nom": "Contacteur",
+   "nom": "Contacteur du compresseur",
    "rang": 3,
    "symbole": "<g class=\"symbole\" data-type=\"com_puiss_3P_inv2\" transform=\"translate(0.00,0.00)\">\n<line x1=\"-27\" y1=\"0\" x2=\"27\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"15\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 15 -20)\">3\nL2<\/text>\n<text x=\"35\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 35 -20)\">5\nL3<\/text>\n<text x=\"14\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 14 19)\">4\nT2<\/text>\n<text x=\"-6\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 19)\">2\nT1<\/text>\n<text x=\"34\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 34 19)\">6\nT3<\/text>\n<polyline points=\"25,-10 30,10 30,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-15,-10 -10,10 -10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"5,-10 10,10 10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-20\" x2=\"-10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -10.00,-14.50 A 2.50,2.50 0 0 0 -10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-20\" x2=\"10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 10.00,-14.50 A 2.50,2.50 0 0 0 10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"-20\" x2=\"30\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 30.00,-14.50 A 2.50,2.50 0 0 0 30.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-6\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 -20)\">1\nL1<\/text>\n<\/g>",
    "boite": [
@@ -1255,6 +1397,122 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "ligne": 1
   },
   {
+   "repere": "KM2",
+   "type": "com_puiss_3P_inv2",
+   "nom": "Contacteur du ventilateur du condenseur",
+   "rang": 3,
+   "symbole": "<g class=\"symbole\" data-type=\"com_puiss_3P_inv2\" transform=\"translate(0.00,0.00)\">\n<line x1=\"-27\" y1=\"0\" x2=\"27\" y2=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"15\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 15 -20)\">3\nL2<\/text>\n<text x=\"35\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 35 -20)\">5\nL3<\/text>\n<text x=\"14\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 14 19)\">4\nT2<\/text>\n<text x=\"-6\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 19)\">2\nT1<\/text>\n<text x=\"34\" y=\"19\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 34 19)\">6\nT3<\/text>\n<polyline points=\"25,-10 30,10 30,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"-15,-10 -10,10 -10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"5,-10 10,10 10,20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-10\" y1=\"-20\" x2=\"-10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -10.00,-14.50 A 2.50,2.50 0 0 0 -10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"-20\" x2=\"10\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 10.00,-14.50 A 2.50,2.50 0 0 0 10.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"-20\" x2=\"30\" y2=\"-10\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M 30.00,-14.50 A 2.50,2.50 0 0 0 30.00,-9.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-6\" y=\"-20\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -6 -20)\">1\nL1<\/text>\n<\/g>",
+   "boite": [
+    -29.0,
+    -30.0,
+    41.0,
+    30.0
+   ],
+   "bornes": [
+    {
+     "id": "3",
+     "x": 10.0,
+     "y": -16.0,
+     "o": 0,
+     "c": [
+      10.0,
+      -16.0
+     ]
+    },
+    {
+     "id": "1",
+     "x": -10.0,
+     "y": -16.0,
+     "o": 0,
+     "c": [
+      -10.0,
+      -16.0
+     ]
+    },
+    {
+     "id": "4",
+     "x": 10.0,
+     "y": 16.0,
+     "o": 2,
+     "c": [
+      10.0,
+      16.0
+     ]
+    },
+    {
+     "id": "2",
+     "x": -10.0,
+     "y": 16.0,
+     "o": 2,
+     "c": [
+      -10.0,
+      16.0
+     ]
+    },
+    {
+     "id": "5",
+     "x": 30.0,
+     "y": -16.0,
+     "o": 0,
+     "c": [
+      30.0,
+      -16.0
+     ]
+    },
+    {
+     "id": "6",
+     "x": 30.0,
+     "y": 16.0,
+     "o": 2,
+     "c": [
+      30.0,
+      16.0
+     ]
+    },
+    {
+     "id": "A1",
+     "x": -40.0,
+     "y": -16.0,
+     "o": 0,
+     "c": [
+      0.0,
+      -16.0
+     ]
+    },
+    {
+     "id": "A2",
+     "x": -40.0,
+     "y": 16.0,
+     "o": 2,
+     "c": [
+      0.0,
+      16.0
+     ]
+    }
+   ],
+   "parties": [
+    {
+     "symbole": "<g class=\"symbole\" data-type=\"bobine3\" transform=\"translate(0.00,0.00)\">\n<rect x=\"-14\" y=\"-8\" width=\"28\" height=\"16\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"8\" x2=\"0\" y2=\"20\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>",
+     "boite": [
+      -20.0,
+      -32.0,
+      20.0,
+      28.0
+     ],
+     "implantation": {
+      "x": 416.0,
+      "y": 576.0
+     }
+    }
+   ],
+   "liaisons_internes": [],
+   "implantation": {
+    "x": 480.0,
+    "y": 576.0
+   },
+   "ligne": 1
+  },
+  {
    "repere": "Q5",
    "type": "gv2p",
    "nom": "Disjoncteur moteur",
@@ -1306,7 +1564,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 640.0,
+    "x": 784.0,
     "y": 632.0
    },
    "ligne": 1
@@ -1386,7 +1644,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     },
     {
      "id": "95",
-     "x": 70.0,
+     "x": 110.0,
      "y": -16.0,
      "o": 0,
      "c": [
@@ -1396,7 +1654,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     },
     {
      "id": "96",
-     "x": 70.0,
+     "x": 110.0,
      "y": 16.0,
      "o": 2,
      "c": [
@@ -1415,7 +1673,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
       29.0
      ],
      "implantation": {
-      "x": 320.0,
+      "x": 384.0,
       "y": 697.6
      }
     }
@@ -1502,7 +1760,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     },
     {
      "id": "95",
-     "x": 70.0,
+     "x": 110.0,
      "y": -16.0,
      "o": 0,
      "c": [
@@ -1512,7 +1770,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     },
     {
      "id": "96",
-     "x": 70.0,
+     "x": 110.0,
      "y": 16.0,
      "o": 2,
      "c": [
@@ -1531,14 +1789,14 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
       29.0
      ],
      "implantation": {
-      "x": 512.0,
+      "x": 640.0,
       "y": 697.6
      }
     }
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 400.0,
+    "x": 464.0,
     "y": 697.6
    },
    "ligne": 1
@@ -2876,6 +3134,21 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "L1"
   },
   {
+   "nom": "KM1:A2",
+   "bornes": [
+    "KM1:A2",
+    "KM2:A2",
+    "Q6:2",
+    "VEM:A2",
+    "X20:1",
+    "X20:2"
+   ],
+   "couleurs": [
+    "bleu"
+   ],
+   "potentiel": "N"
+  },
+  {
    "nom": "PSL:2",
    "bornes": [
     "PSL:2",
@@ -2912,18 +3185,21 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "L1"
   },
   {
-   "nom": "KM1:A2",
+   "nom": "Q1:2",
    "bornes": [
-    "KM1:A2",
-    "Q6:2",
-    "VEM:A2",
-    "X20:1",
-    "X20:2"
+    "Q1:2",
+    "Q2:1",
+    "Q3:1",
+    "Q4:3",
+    "Q6:3"
    ],
    "couleurs": [
-    "bleu"
+    "marron",
+    "noir",
+    "gris",
+    "rouge"
    ],
-   "potentiel": "N"
+   "potentiel": "L1"
   },
   {
    "nom": "F1:2",
@@ -3128,12 +3404,11 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "N"
   },
   {
-   "nom": "Q1:2",
+   "nom": "F2:96",
    "bornes": [
-    "Q1:2",
-    "Q2:1",
-    "Q4:3",
-    "Q6:3"
+    "F2:96",
+    "KM1:A1",
+    "KM2:A1"
    ],
    "couleurs": [
     "marron",
@@ -3144,26 +3419,11 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "L1"
   },
   {
-   "nom": "F1:1",
+   "nom": "Q1:4",
    "bornes": [
-    "F1:1",
-    "F2:1",
-    "KM1:2"
-   ],
-   "couleurs": [
-    "marron",
-    "noir",
-    "gris",
-    "rouge"
-   ],
-   "potentiel": "L1"
-  },
-  {
-   "nom": "F1:3",
-   "bornes": [
-    "F1:3",
-    "F2:3",
-    "KM1:4"
+    "Q1:4",
+    "Q2:3",
+    "Q3:3"
    ],
    "couleurs": [
     "marron",
@@ -3174,11 +3434,11 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "L2"
   },
   {
-   "nom": "F1:5",
+   "nom": "Q1:6",
    "bornes": [
-    "F1:5",
-    "F2:5",
-    "KM1:6"
+    "Q1:6",
+    "Q2:5",
+    "Q3:5"
    ],
    "couleurs": [
     "marron",
@@ -3201,6 +3461,48 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "N"
   },
   {
+   "nom": "F1:1",
+   "bornes": [
+    "F1:1",
+    "KM1:2"
+   ],
+   "couleurs": [
+    "marron",
+    "noir",
+    "gris",
+    "rouge"
+   ],
+   "potentiel": "L1"
+  },
+  {
+   "nom": "F1:3",
+   "bornes": [
+    "F1:3",
+    "KM1:4"
+   ],
+   "couleurs": [
+    "marron",
+    "noir",
+    "gris",
+    "rouge"
+   ],
+   "potentiel": "L2"
+  },
+  {
+   "nom": "F1:5",
+   "bornes": [
+    "F1:5",
+    "KM1:6"
+   ],
+   "couleurs": [
+    "marron",
+    "noir",
+    "gris",
+    "rouge"
+   ],
+   "potentiel": "L3"
+  },
+  {
    "nom": "F1:96",
    "bornes": [
     "F1:96",
@@ -3215,10 +3517,10 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "L1"
   },
   {
-   "nom": "F2:96",
+   "nom": "F2:1",
    "bornes": [
-    "F2:96",
-    "KM1:A1"
+    "F2:1",
+    "KM2:2"
    ],
    "couleurs": [
     "marron",
@@ -3227,6 +3529,34 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     "rouge"
    ],
    "potentiel": "L1"
+  },
+  {
+   "nom": "F2:3",
+   "bornes": [
+    "F2:3",
+    "KM2:4"
+   ],
+   "couleurs": [
+    "marron",
+    "noir",
+    "gris",
+    "rouge"
+   ],
+   "potentiel": "L2"
+  },
+  {
+   "nom": "F2:5",
+   "bornes": [
+    "F2:5",
+    "KM2:6"
+   ],
+   "couleurs": [
+    "marron",
+    "noir",
+    "gris",
+    "rouge"
+   ],
+   "potentiel": "L3"
   },
   {
    "nom": "KM1:1",
@@ -3271,10 +3601,24 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "L3"
   },
   {
-   "nom": "Q1:4",
+   "nom": "KM2:1",
    "bornes": [
-    "Q1:4",
-    "Q2:3"
+    "KM2:1",
+    "Q3:2"
+   ],
+   "couleurs": [
+    "marron",
+    "noir",
+    "gris",
+    "rouge"
+   ],
+   "potentiel": "L1"
+  },
+  {
+   "nom": "KM2:3",
+   "bornes": [
+    "KM2:3",
+    "Q3:4"
    ],
    "couleurs": [
     "marron",
@@ -3285,10 +3629,10 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "potentiel": "L2"
   },
   {
-   "nom": "Q1:6",
+   "nom": "KM2:5",
    "bornes": [
-    "Q1:6",
-    "Q2:5"
+    "KM2:5",
+    "Q3:6"
    ],
    "couleurs": [
     "marron",
@@ -3411,11 +3755,6 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
   },
   {
    "de": "Q1:2",
-   "a": "Q4:3",
-   "couleur": "marron"
-  },
-  {
-   "de": "Q1:2",
    "a": "Q6:3",
    "couleur": "marron"
   },
@@ -3437,6 +3776,41 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
   {
    "de": "Q2:6",
    "a": "KM1:5",
+   "couleur": "marron"
+  },
+  {
+   "de": "Q2:1",
+   "a": "Q3:1",
+   "couleur": "marron"
+  },
+  {
+   "de": "Q2:3",
+   "a": "Q3:3",
+   "couleur": "marron"
+  },
+  {
+   "de": "Q2:5",
+   "a": "Q3:5",
+   "couleur": "marron"
+  },
+  {
+   "de": "Q3:2",
+   "a": "KM2:1",
+   "couleur": "marron"
+  },
+  {
+   "de": "Q3:4",
+   "a": "KM2:3",
+   "couleur": "marron"
+  },
+  {
+   "de": "Q3:6",
+   "a": "KM2:5",
+   "couleur": "marron"
+  },
+  {
+   "de": "Q3:1",
+   "a": "Q4:3",
    "couleur": "marron"
   },
   {
@@ -3525,29 +3899,39 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
    "couleur": "marron"
   },
   {
-   "de": "KM1:2",
-   "a": "F2:1",
-   "couleur": "marron"
-  },
-  {
-   "de": "KM1:4",
-   "a": "F2:3",
-   "couleur": "marron"
-  },
-  {
-   "de": "KM1:6",
-   "a": "F2:5",
-   "couleur": "marron"
-  },
-  {
    "de": "F2:96",
    "a": "KM1:A1",
    "couleur": "marron"
   },
   {
+   "de": "KM2:A2",
+   "a": "KM1:A2",
+   "couleur": "bleu"
+  },
+  {
    "de": "KM1:A2",
    "a": "X20:2",
    "couleur": "bleu"
+  },
+  {
+   "de": "KM2:2",
+   "a": "F2:1",
+   "couleur": "marron"
+  },
+  {
+   "de": "KM2:4",
+   "a": "F2:3",
+   "couleur": "marron"
+  },
+  {
+   "de": "KM2:6",
+   "a": "F2:5",
+   "couleur": "marron"
+  },
+  {
+   "de": "F2:96",
+   "a": "KM2:A1",
+   "couleur": "marron"
   },
   {
    "de": "F1:2",
@@ -3777,7 +4161,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
      }
     ],
     "implantation": {
-     "x": 504.0,
+     "x": 576.0,
      "y": 180.8
     }
    },
@@ -3804,24 +4188,6 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
       "o": 0
      },
      {
-      "id": "2",
-      "x": 12.5,
-      "y": 100.0,
-      "o": 2
-     },
-     {
-      "id": "6",
-      "x": 50.0,
-      "y": 100.0,
-      "o": 2
-     },
-     {
-      "id": "4",
-      "x": 30.0,
-      "y": 100.0,
-      "o": 2
-     },
-     {
       "id": "3",
       "x": 30.0,
       "y": 0.0,
@@ -3846,7 +4212,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     }
    },
    "F1": {
-    "modele": "lrd_socle",
+    "modele": "lrdg",
     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"lrdg\" transform=\"translate(0.00,0.00)\">\n<polyline points=\"-39.7223,-7.95832 -46.6532,-7.95832 -46.6532,-37.5119 6.48369,-37.5119 6.48369,5.83335 -30.4811,5.83335 -30.4811,-0.0773654\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"-48.9635\" y=\"-39.4821\" width=\"103.964\" height=\"98.5119\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-30.4811\" y1=\"-11.8988\" x2=\"-30.4811\" y2=\"-4.01784\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-35.1017\" y1=\"-7.95832\" x2=\"-25.8605\" y2=\"-7.95832\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<ellipse cx=\"41.14\" cy=\"19.62\" rx=\"6.93\" ry=\"5.91\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"38.83\" cy=\"43.27\" rx=\"8.09\" ry=\"6.90\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"15.72\" cy=\"19.62\" rx=\"6.93\" ry=\"5.91\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-16.6193\" y=\"31.4464\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -16.6193 31.4464)\">98N0<\/text>\n<text x=\"8.79399\" y=\"31.4464\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 8.79399 31.4464)\">95NC<\/text>\n<text x=\"31.897\" y=\"57.0595\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 31.897 57.0595)\">6T3<\/text>\n<text x=\"31.897\" y=\"31.4464\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 31.897 31.4464)\">96NC<\/text>\n<text x=\"-2.75752\" y=\"57.0595\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -2.75752 57.0595)\">4T2<\/text>\n<ellipse cx=\"4.17\" cy=\"43.27\" rx=\"8.09\" ry=\"6.90\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"-9.69\" cy=\"19.62\" rx=\"6.93\" ry=\"5.91\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"38.8279\" y1=\"19.625\" x2=\"43.4485\" y2=\"19.625\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"34.2073\" y1=\"43.2679\" x2=\"43.4485\" y2=\"43.2679\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-0.447215\" y1=\"43.2679\" x2=\"8.79399\" y2=\"43.2679\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"13.4146\" y1=\"19.625\" x2=\"18.0352\" y2=\"19.625\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-11.9987\" y1=\"19.625\" x2=\"-7.37812\" y2=\"19.625\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"4.17339\" y1=\"39.3274\" x2=\"4.17339\" y2=\"47.2083\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-9.68842\" y1=\"17.6548\" x2=\"-9.68842\" y2=\"21.5952\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"38.8279\" y1=\"39.3274\" x2=\"38.8279\" y2=\"47.2083\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"41.1382\" y1=\"17.6548\" x2=\"41.1382\" y2=\"21.5952\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"15.7249\" y1=\"17.6548\" x2=\"15.7249\" y2=\"21.5952\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"43.4485,-27.6607 43.4485,-33.5714 36.5176,-33.5714 36.5176,-27.6607 43.4485,-27.6607 43.4485,-27.6607\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"36.5176,-4.01784 43.4485,-4.01784 43.4485,3.86311 36.5176,3.86311 36.5176,-4.01784\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"8.79399\" y=\"-23.7202\" width=\"41.5854\" height=\"15.7619\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<ellipse cx=\"-35.10\" cy=\"19.62\" rx=\"6.93\" ry=\"5.91\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-37.412\" y1=\"19.625\" x2=\"-32.7914\" y2=\"19.625\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-35.1017\" y1=\"17.6548\" x2=\"-35.1017\" y2=\"21.5952\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"55\" y1=\"9.77382\" x2=\"-46.6532\" y2=\"9.77382\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"-30.48\" cy=\"43.27\" rx=\"8.09\" ry=\"6.90\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-35.1017\" y1=\"43.2679\" x2=\"-25.8605\" y2=\"43.2679\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-30.4811\" y1=\"39.3274\" x2=\"-30.4811\" y2=\"47.2083\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-44.3429\" y=\"31.4464\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -44.3429 31.4464)\">97N0<\/text>\n<line x1=\"-48.9635\" y1=\"33.4167\" x2=\"52.6897\" y2=\"33.4167\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-37.412\" y=\"57.0595\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -37.412 57.0595)\">2T1<\/text>\n<ellipse cx=\"-30.48\" cy=\"-7.96\" rx=\"5.78\" ry=\"4.93\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -30.48,-0.08 A 9.24,7.88 0 0 1 -39.72,-7.96\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"15.7249\" y=\"-27.6607\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 15.7249 -27.6607)\">reset<\/text>\n<text x=\"18.0352\" y=\"1.89287\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 18.0352 1.89287)\">stop<\/text>\n<polyline points=\"-48.9635,-39.4821 -37.412,-49.3333 43.4485,-49.3333 55,-39.4821\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<\/g><\/g>",
     "boite": [
      -26.0,
@@ -3855,24 +4221,6 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
      32.5
     ],
     "bornes": [
-     {
-      "id": "1",
-      "x": -15.2,
-      "y": -27.5,
-      "o": 0
-     },
-     {
-      "id": "3",
-      "x": 2.1,
-      "y": -27.5,
-      "o": 0
-     },
-     {
-      "id": "5",
-      "x": 19.4,
-      "y": -27.5,
-      "o": 0
-     },
      {
       "id": "2",
       "x": -15.2,
@@ -3905,12 +4253,58 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
      }
     ],
     "implantation": {
-     "x": 320.0,
+     "x": 236.6,
      "y": 711.2
     }
    },
+   "KM2": {
+    "modele": "km_tri",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"km_tri\" transform=\"translate(0.00,0.00)\">\n<circle cx=\"81.00\" cy=\"177.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"87\" y=\"96\" width=\"8\" height=\"15\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"blue\"/>\n<circle cx=\"101.00\" cy=\"177.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"100\" y=\"96\" width=\"8\" height=\"15\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"blue\"/>\n<rect x=\"102\" y=\"96\" width=\"8\" height=\"15\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"blue\"/>\n<rect x=\"95\" y=\"96\" width=\"8\" height=\"15\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"blue\"/>\n<circle cx=\"20.00\" cy=\"177.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"0\" y=\"0\" width=\"120\" height=\"200\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<line x1=\"81\" y1=\"169\" x2=\"81\" y2=\"199\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"41\" y1=\"169\" x2=\"41\" y2=\"199\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"18\" y1=\"175\" x2=\"22\" y2=\"179\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"22\" y=\"96\" width=\"66\" height=\"15\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"blue\"/>\n<line x1=\"22\" y1=\"175\" x2=\"18\" y2=\"179\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"0\" y=\"60\" width=\"120\" height=\"75\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"15\" y=\"45\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 15 45)\">13NO<\/text>\n<line x1=\"20\" y1=\"175\" x2=\"20\" y2=\"179\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"45.5\" y=\"45\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 45.5 45)\">21NC<\/text>\n<line x1=\"18\" y1=\"177\" x2=\"22\" y2=\"177\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"108\" y=\"154\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 108 154)\">A2<\/text>\n<text x=\"42\" y=\"180\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 42 180)\">4T2<\/text>\n<circle cx=\"9.00\" cy=\"43.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"82\" y=\"180\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 82 180)\">6T3<\/text>\n<circle cx=\"101.00\" cy=\"177.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"106\" y=\"45\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 106 45)\">A1<\/text>\n<line x1=\"99\" y1=\"175\" x2=\"103\" y2=\"179\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"39.50\" cy=\"43.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"49\" y=\"154\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 49 154)\">22NC<\/text>\n<line x1=\"103\" y1=\"175\" x2=\"99\" y2=\"179\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"101\" y1=\"175\" x2=\"101\" y2=\"179\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"99.00\" cy=\"43.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"7\" y1=\"41\" x2=\"11\" y2=\"45\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"99\" y1=\"177\" x2=\"103\" y2=\"177\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"61.00\" cy=\"177.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"11\" y1=\"41\" x2=\"7\" y2=\"45\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"37.5\" y1=\"41\" x2=\"41.5\" y2=\"45\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"59\" y1=\"175\" x2=\"63\" y2=\"179\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"18\" y=\"154\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 18 154)\">14NO<\/text>\n<line x1=\"63\" y1=\"175\" x2=\"59\" y2=\"179\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"97\" y1=\"41\" x2=\"101\" y2=\"45\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"61\" y1=\"175\" x2=\"61\" y2=\"179\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"101\" y1=\"41\" x2=\"97\" y2=\"45\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"59\" y1=\"177\" x2=\"63\" y2=\"177\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"9\" y1=\"41\" x2=\"9\" y2=\"45\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"12.00\" cy=\"151.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"41.5\" y1=\"41\" x2=\"37.5\" y2=\"45\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"149\" x2=\"14\" y2=\"153\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"99\" y1=\"41\" x2=\"99\" y2=\"45\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"1\" y=\"180\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 1 180)\">2T1<\/text>\n<line x1=\"39.5\" y1=\"41\" x2=\"39.5\" y2=\"45\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"80\" y1=\"0\" x2=\"80\" y2=\"30\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"42.50\" cy=\"151.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"102.00\" cy=\"151.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"40.5\" y1=\"149\" x2=\"44.5\" y2=\"153\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"14\" y1=\"149\" x2=\"10\" y2=\"153\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"100\" y1=\"149\" x2=\"104\" y2=\"153\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"12\" y1=\"149\" x2=\"12\" y2=\"153\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"104\" y1=\"149\" x2=\"100\" y2=\"153\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"44.5\" y1=\"149\" x2=\"40.5\" y2=\"153\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"102\" y1=\"149\" x2=\"102\" y2=\"153\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"42.5\" y1=\"149\" x2=\"42.5\" y2=\"153\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"2\" y=\"68\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 2 68)\">Télémécanique<\/text>\n<rect x=\"40\" y=\"96\" width=\"8\" height=\"15\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"blue\"/>\n<line x1=\"40\" y1=\"0\" x2=\"40\" y2=\"30\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"30\" x2=\"120\" y2=\"30\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"41\" y=\"10\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 41 10)\">3L2<\/text>\n<text x=\"81\" y=\"10\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 81 10)\">5L3<\/text>\n<circle cx=\"100.00\" cy=\"13.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"98\" y1=\"11\" x2=\"102\" y2=\"15\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"102\" y1=\"11\" x2=\"98\" y2=\"15\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"100\" y1=\"11\" x2=\"100\" y2=\"15\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"98\" y1=\"13\" x2=\"102\" y2=\"13\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"60.00\" cy=\"13.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"58\" y1=\"11\" x2=\"62\" y2=\"15\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"62\" y1=\"11\" x2=\"58\" y2=\"15\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"60\" y1=\"11\" x2=\"60\" y2=\"15\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"20.00\" cy=\"13.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"58\" y1=\"13\" x2=\"62\" y2=\"13\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"18\" y1=\"11\" x2=\"22\" y2=\"15\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"22\" y1=\"11\" x2=\"18\" y2=\"15\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"20\" y1=\"11\" x2=\"20\" y2=\"15\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"18\" y1=\"13\" x2=\"22\" y2=\"13\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"2\" y=\"10\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 2 10)\">1L1<\/text>\n<rect x=\"65\" y=\"96\" width=\"8\" height=\"15\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"blue\"/>\n<rect x=\"100\" y=\"96\" width=\"10\" height=\"15\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"blue\"/>\n<circle cx=\"20.00\" cy=\"177.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"168\" x2=\"120\" y2=\"168\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.5,
+     -2.0,
+     62.5,
+     103.0
+    ],
+    "bornes": [
+     {
+      "id": "1",
+      "x": 10.0,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "A1",
+      "x": 49.5,
+      "y": 16.0,
+      "o": 0
+     },
+     {
+      "id": "3",
+      "x": 30.0,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "A2",
+      "x": 51.0,
+      "y": 73.0,
+      "o": 2
+     },
+     {
+      "id": "5",
+      "x": 50.0,
+      "y": 0.0,
+      "o": 0
+     }
+    ],
+    "implantation": {
+     "x": 376.0,
+     "y": 502.4
+    }
+   },
    "F2": {
-    "modele": "lrd_socle",
+    "modele": "lrdg",
     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"lrdg\" transform=\"translate(0.00,0.00)\">\n<polyline points=\"-39.7223,-7.95832 -46.6532,-7.95832 -46.6532,-37.5119 6.48369,-37.5119 6.48369,5.83335 -30.4811,5.83335 -30.4811,-0.0773654\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"-48.9635\" y=\"-39.4821\" width=\"103.964\" height=\"98.5119\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-30.4811\" y1=\"-11.8988\" x2=\"-30.4811\" y2=\"-4.01784\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-35.1017\" y1=\"-7.95832\" x2=\"-25.8605\" y2=\"-7.95832\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<ellipse cx=\"41.14\" cy=\"19.62\" rx=\"6.93\" ry=\"5.91\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"38.83\" cy=\"43.27\" rx=\"8.09\" ry=\"6.90\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"15.72\" cy=\"19.62\" rx=\"6.93\" ry=\"5.91\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-16.6193\" y=\"31.4464\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -16.6193 31.4464)\">98N0<\/text>\n<text x=\"8.79399\" y=\"31.4464\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 8.79399 31.4464)\">95NC<\/text>\n<text x=\"31.897\" y=\"57.0595\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 31.897 57.0595)\">6T3<\/text>\n<text x=\"31.897\" y=\"31.4464\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 31.897 31.4464)\">96NC<\/text>\n<text x=\"-2.75752\" y=\"57.0595\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -2.75752 57.0595)\">4T2<\/text>\n<ellipse cx=\"4.17\" cy=\"43.27\" rx=\"8.09\" ry=\"6.90\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"-9.69\" cy=\"19.62\" rx=\"6.93\" ry=\"5.91\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"38.8279\" y1=\"19.625\" x2=\"43.4485\" y2=\"19.625\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"34.2073\" y1=\"43.2679\" x2=\"43.4485\" y2=\"43.2679\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-0.447215\" y1=\"43.2679\" x2=\"8.79399\" y2=\"43.2679\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"13.4146\" y1=\"19.625\" x2=\"18.0352\" y2=\"19.625\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-11.9987\" y1=\"19.625\" x2=\"-7.37812\" y2=\"19.625\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"4.17339\" y1=\"39.3274\" x2=\"4.17339\" y2=\"47.2083\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-9.68842\" y1=\"17.6548\" x2=\"-9.68842\" y2=\"21.5952\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"38.8279\" y1=\"39.3274\" x2=\"38.8279\" y2=\"47.2083\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"41.1382\" y1=\"17.6548\" x2=\"41.1382\" y2=\"21.5952\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"15.7249\" y1=\"17.6548\" x2=\"15.7249\" y2=\"21.5952\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"43.4485,-27.6607 43.4485,-33.5714 36.5176,-33.5714 36.5176,-27.6607 43.4485,-27.6607 43.4485,-27.6607\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<polyline points=\"36.5176,-4.01784 43.4485,-4.01784 43.4485,3.86311 36.5176,3.86311 36.5176,-4.01784\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"8.79399\" y=\"-23.7202\" width=\"41.5854\" height=\"15.7619\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<ellipse cx=\"-35.10\" cy=\"19.62\" rx=\"6.93\" ry=\"5.91\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-37.412\" y1=\"19.625\" x2=\"-32.7914\" y2=\"19.625\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-35.1017\" y1=\"17.6548\" x2=\"-35.1017\" y2=\"21.5952\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"55\" y1=\"9.77382\" x2=\"-46.6532\" y2=\"9.77382\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"-30.48\" cy=\"43.27\" rx=\"8.09\" ry=\"6.90\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-35.1017\" y1=\"43.2679\" x2=\"-25.8605\" y2=\"43.2679\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-30.4811\" y1=\"39.3274\" x2=\"-30.4811\" y2=\"47.2083\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-44.3429\" y=\"31.4464\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -44.3429 31.4464)\">97N0<\/text>\n<line x1=\"-48.9635\" y1=\"33.4167\" x2=\"52.6897\" y2=\"33.4167\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"-37.412\" y=\"57.0595\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 -37.412 57.0595)\">2T1<\/text>\n<ellipse cx=\"-30.48\" cy=\"-7.96\" rx=\"5.78\" ry=\"4.93\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<path d=\"M -30.48,-0.08 A 9.24,7.88 0 0 1 -39.72,-7.96\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"15.7249\" y=\"-27.6607\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 15.7249 -27.6607)\">reset<\/text>\n<text x=\"18.0352\" y=\"1.89287\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 18.0352 1.89287)\">stop<\/text>\n<polyline points=\"-48.9635,-39.4821 -37.412,-49.3333 43.4485,-49.3333 55,-39.4821\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<\/g><\/g>",
     "boite": [
      -26.0,
@@ -3919,24 +4313,6 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
      32.5
     ],
     "bornes": [
-     {
-      "id": "1",
-      "x": -15.2,
-      "y": -27.5,
-      "o": 0
-     },
-     {
-      "id": "3",
-      "x": 2.1,
-      "y": -27.5,
-      "o": 0
-     },
-     {
-      "id": "5",
-      "x": 19.4,
-      "y": -27.5,
-      "o": 0
-     },
      {
       "id": "2",
       "x": -15.2,
@@ -3969,7 +4345,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
      }
     ],
     "implantation": {
-     "x": 448.0,
+     "x": 420.6,
      "y": 711.2
     }
    },
@@ -4509,7 +4885,7 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
      }
     ],
     "implantation": {
-     "x": 632.0,
+     "x": 680.0,
      "y": 180.8
     }
    },
@@ -4738,6 +5114,31 @@ window.CABLAGE_EXERCICES["cablage-7-commande"] = {
     }
    }
   },
-  "liaisons_fixes": []
+  "liaisons_fixes": [
+   [
+    "KM1:2",
+    "F1:1"
+   ],
+   [
+    "KM1:4",
+    "F1:3"
+   ],
+   [
+    "KM1:6",
+    "F1:5"
+   ],
+   [
+    "KM2:2",
+    "F2:1"
+   ],
+   [
+    "KM2:4",
+    "F2:3"
+   ],
+   [
+    "KM2:6",
+    "F2:5"
+   ]
+  ]
  }
 };

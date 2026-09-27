@@ -1,6 +1,6 @@
 # Câblage n° 8 — la commande : chambre froide négative — horloge de dégivrage, pump-down, ventilateurs, résistances — documents génériques (Câblage virtuel, inerweb.fr)
 
-Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-8-commande · palier : Expert · 99 fils.
+Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-8-commande · palier : Expert · 107 fils.
 Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 27/09/2026. Générique : à adapter au diplôme.
 
 ## Ce que fait l'élève

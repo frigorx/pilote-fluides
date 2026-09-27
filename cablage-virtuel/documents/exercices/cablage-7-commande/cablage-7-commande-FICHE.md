@@ -1,6 +1,6 @@
 # Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur — documents génériques (Câblage virtuel, inerweb.fr)
 
-Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-7-commande · palier : Expert · 67 fils.
+Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-7-commande · palier : Expert · 75 fils.
 Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 27/09/2026. Générique : à adapter au diplôme.
 
 ## Ce que fait l'élève

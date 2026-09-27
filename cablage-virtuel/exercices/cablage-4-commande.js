@@ -759,7 +759,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     },
     {
      "id": "13",
-     "x": 65.0,
+     "x": 80.0,
      "y": -16.0,
      "o": 0,
      "c": [
@@ -769,7 +769,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     },
     {
      "id": "14",
-     "x": 65.0,
+     "x": 80.0,
      "y": 16.0,
      "o": 2,
      "c": [
@@ -779,7 +779,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     },
     {
      "id": "21",
-     "x": 90.0,
+     "x": 105.0,
      "y": -16.0,
      "o": 0,
      "c": [
@@ -789,7 +789,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     },
     {
      "id": "22",
-     "x": 90.0,
+     "x": 105.0,
      "y": 16.0,
      "o": 2,
      "c": [
@@ -828,7 +828,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
       30.0
      ],
      "implantation": {
-      "x": 456.0,
+      "x": 480.0,
       "y": 632.0
      }
     },
@@ -841,7 +841,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
       30.0
      ],
      "implantation": {
-      "x": 496.0,
+      "x": 520.0,
       "y": 632.0
      }
     },
@@ -941,7 +941,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     },
     {
      "id": "13",
-     "x": 65.0,
+     "x": 80.0,
      "y": -16.0,
      "o": 0,
      "c": [
@@ -951,7 +951,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     },
     {
      "id": "14",
-     "x": 65.0,
+     "x": 80.0,
      "y": 16.0,
      "o": 2,
      "c": [
@@ -961,7 +961,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     },
     {
      "id": "21",
-     "x": 90.0,
+     "x": 105.0,
      "y": -16.0,
      "o": 0,
      "c": [
@@ -971,7 +971,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     },
     {
      "id": "22",
-     "x": 90.0,
+     "x": 105.0,
      "y": 16.0,
      "o": 2,
      "c": [
@@ -1010,7 +1010,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
       30.0
      ],
      "implantation": {
-      "x": 808.0,
+      "x": 832.0,
       "y": 632.0
      }
     },
@@ -1023,7 +1023,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
       30.0
      ],
      "implantation": {
-      "x": 848.0,
+      "x": 872.0,
       "y": 632.0
      }
     },
@@ -1688,7 +1688,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
   }
  ],
  "platine": {
-  "largeur": 976,
+  "largeur": 1000,
   "hauteur": 1760,
   "cadre": {
    "x0": 32.0,
@@ -1744,14 +1744,14 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
    {
     "x0": 32.0,
     "y0": 1280.0,
-    "x1": 944.0,
+    "x1": 968.0,
     "y1": 1376.0,
     "chemin": true
    },
    {
     "x0": 32.0,
     "y0": 1632.0,
-    "x1": 944.0,
+    "x1": 968.0,
     "y1": 1728.0,
     "chemin": true
    }

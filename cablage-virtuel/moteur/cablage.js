@@ -198,6 +198,16 @@ function construirePlatine() {
       if (v && Math.abs(v.y - b.y) < 20 && b.x - v.x < 36) { quinconce[v.r] = quinconce[v.r] || 0; quinconce[b.r] = 1 - quinconce[v.r]; }
     });
   const serre = (r) => r in quinconce;
+  // les boîtes de tous les symboles posés (appareils et parties) : un repère de partie ne se pose pas sur un voisin
+  const boites = [];
+  EX.appareils.forEach(a => {
+    const v = vue(a), px = v.implantation.x, py = v.implantation.y;
+    boites.push([px + v.boite[0] * ECH, py + v.boite[1] * ECH, px + v.boite[2] * ECH, py + v.boite[3] * ECH]);
+    (v.parties || []).forEach(p => boites.push([p.implantation.x + p.boite[0] * ECH, p.implantation.y + p.boite[1] * ECH,
+      p.implantation.x + p.boite[2] * ECH, p.implantation.y + p.boite[3] * ECH]));
+  });
+  const libre = (x0, y0, x1, y1, soi) => !boites.some(b => b !== soi && b[0] < x1 && x0 < b[2] && b[1] < y1 && y0 < b[3]);
+  const boiteDe = (p) => boites.find(b => b[0] === p.implantation.x + p.boite[0] * ECH && b[1] === p.implantation.y + p.boite[1] * ECH);
   EX.appareils.forEach(a => {
     const v = vue(a), px = v.implantation.x, py = v.implantation.y, [bx0, by0, bx1, by1] = v.boite;
     x0 = Math.min(x0, px + bx0 * ECH - 40); y0 = Math.min(y0, py + by0 * ECH - 46);
@@ -206,7 +216,15 @@ function construirePlatine() {
     html += '<g class="app' + (v !== a ? ' vignette' : '') + '" data-rep="' + a.repere + '"><g transform="translate(' + px + ',' + py + ') scale(' + ECH + ')">' + v.symbole + '</g>' +
       // les autres symboles du même appareil (bobine, contacts), chacun à sa place, avec le repère de l'appareil
       (v.parties || []).map(p => '<g transform="translate(' + p.implantation.x + ',' + p.implantation.y + ') scale(' + ECH + ')">' + p.symbole + '</g>' +
-        (p.implantation.x < px   // une partie à gauche de l'appareil (la bobine) : son repère à gauche, pas sur les pôles
+        (p.implantation.x > px && !libre(p.implantation.x + p.boite[2] * ECH + 6, p.implantation.y - 12,
+                                         p.implantation.x + p.boite[2] * ECH + 6 + 9 * a.repere.length, p.implantation.y + 6, boiteDe(p))
+          // son repère tomberait sur un voisin : il passe sous la partie, au-dessus des fils
+          ? ((dessus += '<text class="repere petit dessus" style="text-anchor:middle" x="' + (p.implantation.x + (p.boite[0] + p.boite[2]) / 2 * ECH) + '" y="' +
+              (p.implantation.y + p.boite[3] * ECH + 34) + '">' + a.repere + '</text>'), '<text style="display:none"')
+          : p.implantation.x < px && Math.abs(p.implantation.y - py) < 5 &&
+         px + bx0 * ECH - (p.implantation.x + p.boite[2] * ECH) < 12   // bobine collée à ses pôles : le repère de l'appareil suffit
+          ? '<text class="repere petit" style="display:none"'
+          : p.implantation.x < px   // une partie à gauche de l'appareil (la bobine) : son repère à gauche, pas sur les pôles
           ? '<text class="repere petit" style="text-anchor:end" x="' + (p.implantation.x + p.boite[0] * ECH - 6) + '"'
           : '<text class="repere petit" x="' + (p.implantation.x + p.boite[2] * ECH + 6) + '"') +
         ' y="' + (p.implantation.y + (p.boite[1] + p.boite[3]) / 2 * ECH + 5) + '">' + a.repere + '</text>').join('') +

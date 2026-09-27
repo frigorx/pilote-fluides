@@ -833,7 +833,7 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
     },
     {
      "id": "95",
-     "x": 100.0,
+     "x": 115.0,
      "y": -16.0,
      "o": 0,
      "c": [
@@ -843,7 +843,7 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
     },
     {
      "id": "96",
-     "x": 100.0,
+     "x": 115.0,
      "y": 16.0,
      "o": 2,
      "c": [
@@ -862,7 +862,7 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
       29.0
      ],
      "implantation": {
-      "x": 496.0,
+      "x": 520.0,
       "y": 697.6
      }
     }

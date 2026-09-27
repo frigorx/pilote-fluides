@@ -14,17 +14,23 @@
 <polyline points="300.00,306.00 300.00,404.00 300.00,404.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="320.00,306.00 320.00,404.00 320.00,404.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="340.00,306.00 340.00,404.00 340.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="280.00,306.00 280.00,340.00 680.00,340.00 680.00,414.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,306.00 300.00,350.00 700.00,350.00 700.00,414.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,404.00 300.00,320.00 500.00,320.00 500.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,404.00 320.00,330.00 520.00,330.00 520.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,404.00 340.00,340.00 540.00,340.00 540.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="500.00,404.00 500.00,320.00 700.00,320.00 700.00,414.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="280.00,306.00 280.00,350.00 680.00,350.00 680.00,414.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="300.00,446.00 300.00,494.00 300.00,494.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="320.00,446.00 320.00,494.00 320.00,494.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="340.00,446.00 340.00,494.00 340.00,494.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="300.00,526.00 300.00,603.00 300.00,603.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="320.00,526.00 320.00,603.00 320.00,603.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="340.00,526.00 340.00,603.00 340.00,603.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,526.00 300.00,540.00 500.00,540.00 500.00,603.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,526.00 320.00,550.00 520.00,550.00 520.00,603.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,526.00 340.00,560.00 540.00,560.00 540.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="500.00,446.00 500.00,494.00 500.00,494.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="520.00,446.00 520.00,494.00 520.00,494.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="540.00,446.00 540.00,494.00 540.00,494.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="500.00,526.00 500.00,603.00 500.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="520.00,526.00 520.00,603.00 520.00,603.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="540.00,526.00 540.00,603.00 540.00,603.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="300.00,637.00 300.00,694.00 300.00,694.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="320.00,637.00 320.00,694.00 320.00,694.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="340.00,637.00 340.00,694.00 340.00,694.00" fill="none" stroke="black" stroke-width="1"/>
@@ -144,7 +150,55 @@
 <line x1="-2" y1="-20" x2="2" y2="-20" stroke="black" stroke-width="1" fill="none"/>
 <line x1="18" y1="-20" x2="22" y2="-20" stroke="black" stroke-width="1" fill="none"/>
 </g>
+<g class="symbole" data-type="disjonct-m_3f" transform="translate(520.00,430.00)">
+<line x1="-20" y1="15.5" x2="-20" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="15.5" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -20.00,15.50 A 4.00,2.50 0 0 0 -20.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,15.50 A 4.00,2.50 0 0 0 0.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-20,10.5 -20,8 -15,8 -15,3 -20,3 -20,0 -25,-20" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="0,10.5 0,8 5,8 5,3 0,3 0,0 -5,-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="15.5" x2="20" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 20.00,15.50 A 4.00,2.50 0 0 0 20.00,10.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-20" y1="-30" x2="-20" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-18" y1="-26" x2="-22" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-22" y1="-26" x2="-18" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-30" x2="20" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="22" y1="-26" x2="18" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="18" y1="-26" x2="22" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-30" x2="0" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="2" y1="-26" x2="-2" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-2" y1="-26" x2="2" y2="-22" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-22.5" y1="-10" x2="17.5" y2="-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<polyline points="20,10.5 20,8 25,8 25,3 20,3 20,0 15,-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-22" y1="-20" x2="-18" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-2" y1="-20" x2="2" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="18" y1="-20" x2="22" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+</g>
 <g class="symbole" data-type="com_puiss_3P_inv2" transform="translate(310.00,510.00)">
+<line x1="-27" y1="0" x2="27" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<text x="15" y="-20" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 15 -20)">3
+L2</text>
+<text x="35" y="-20" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 35 -20)">5
+L3</text>
+<text x="14" y="19" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 14 19)">4
+T2</text>
+<text x="-6" y="19" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -6 19)">2
+T1</text>
+<text x="34" y="19" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 34 19)">6
+T3</text>
+<polyline points="25,-10 30,10 30,20" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-15,-10 -10,10 -10,20" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="5,-10 10,10 10,20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="-20" x2="-10" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -10.00,-14.50 A 2.50,2.50 0 0 0 -10.00,-9.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-20" x2="10" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 10.00,-14.50 A 2.50,2.50 0 0 0 10.00,-9.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="30" y1="-20" x2="30" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 30.00,-14.50 A 2.50,2.50 0 0 0 30.00,-9.50" stroke="black" stroke-width="1" fill="none"/>
+<text x="-6" y="-20" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -6 -20)">1
+L1</text>
+</g>
+<g class="symbole" data-type="com_puiss_3P_inv2" transform="translate(510.00,510.00)">
 <line x1="-27" y1="0" x2="27" y2="0" stroke="black" stroke-width="1" fill="none"/>
 <text x="15" y="-20" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 15 -20)">3
 L2</text>

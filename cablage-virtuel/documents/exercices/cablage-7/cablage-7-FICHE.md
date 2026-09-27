@@ -1,6 +1,6 @@
 # Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur — documents génériques (Câblage virtuel, inerweb.fr)
 
-Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-7 · palier : Expert · 48 fils.
+Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-7 · palier : Expert · 54 fils.
 Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 27/09/2026. Générique : à adapter au diplôme.
 
 ## Ce que fait l'élève
