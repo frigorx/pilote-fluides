@@ -11,12 +11,12 @@
 <polyline points="300.00,206.00 300.00,264.00 300.00,264.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="320.00,206.00 320.00,264.00 320.00,264.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="340.00,206.00 340.00,264.00 340.00,264.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,306.00 300.00,404.00 300.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,306.00 320.00,404.00 320.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,306.00 340.00,404.00 340.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="300.00,404.00 300.00,320.00 500.00,320.00 500.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="320.00,404.00 320.00,330.00 520.00,330.00 520.00,404.00" fill="none" stroke="black" stroke-width="1"/>
-<polyline points="340.00,404.00 340.00,340.00 540.00,340.00 540.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,306.00 300.00,414.00 300.00,414.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,306.00 320.00,414.00 320.00,414.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,306.00 340.00,414.00 340.00,414.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="300.00,414.00 300.00,320.00 500.00,320.00 500.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="320.00,414.00 320.00,330.00 520.00,330.00 520.00,404.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="340.00,414.00 340.00,340.00 540.00,340.00 540.00,404.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="500.00,404.00 500.00,320.00 700.00,320.00 700.00,414.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="280.00,306.00 280.00,350.00 680.00,350.00 680.00,414.00" fill="none" stroke="black" stroke-width="1"/>
 <polyline points="300.00,446.00 300.00,494.00 300.00,494.00" fill="none" stroke="black" stroke-width="1"/>
@@ -147,29 +147,23 @@
 <line x1="8" y1="-20" x2="12" y2="-20" stroke="black" stroke-width="1" fill="none"/>
 <line x1="28" y1="-20" x2="32" y2="-20" stroke="black" stroke-width="1" fill="none"/>
 </g>
-<g class="symbole" data-type="disjonct-m_3f" transform="translate(320.00,430.00)">
-<line x1="-20" y1="15.5" x2="-20" y2="20" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="15.5" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
-<path d="M -20.00,15.50 A 4.00,2.50 0 0 0 -20.00,10.50" stroke="black" stroke-width="1" fill="none"/>
-<path d="M -0.00,15.50 A 4.00,2.50 0 0 0 0.00,10.50" stroke="black" stroke-width="1" fill="none"/>
-<polyline points="-20,10.5 -20,8 -15,8 -15,3 -20,3 -20,0 -25,-20" stroke="black" stroke-width="1" fill="none"/>
-<polyline points="0,10.5 0,8 5,8 5,3 0,3 0,0 -5,-20" stroke="black" stroke-width="1" fill="none"/>
-<line x1="20" y1="15.5" x2="20" y2="20" stroke="black" stroke-width="1" fill="none"/>
-<path d="M 20.00,15.50 A 4.00,2.50 0 0 0 20.00,10.50" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-20" y1="-30" x2="-20" y2="-20" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-18" y1="-26" x2="-22" y2="-22" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-22" y1="-26" x2="-18" y2="-22" stroke="black" stroke-width="1" fill="none"/>
-<line x1="20" y1="-30" x2="20" y2="-20" stroke="black" stroke-width="1" fill="none"/>
-<line x1="22" y1="-26" x2="18" y2="-22" stroke="black" stroke-width="1" fill="none"/>
-<line x1="18" y1="-26" x2="22" y2="-22" stroke="black" stroke-width="1" fill="none"/>
-<line x1="0" y1="-30" x2="0" y2="-20" stroke="black" stroke-width="1" fill="none"/>
-<line x1="2" y1="-26" x2="-2" y2="-22" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-26" x2="2" y2="-22" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-22.5" y1="-10" x2="17.5" y2="-10" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
-<polyline points="20,10.5 20,8 25,8 25,3 20,3 20,0 15,-20" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-22" y1="-20" x2="-18" y2="-20" stroke="black" stroke-width="1" fill="none"/>
-<line x1="-2" y1="-20" x2="2" y2="-20" stroke="black" stroke-width="1" fill="none"/>
-<line x1="18" y1="-20" x2="22" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<g class="symbole" data-type="sectionneur_3_fusibles" transform="translate(320.00,430.00)">
+<line x1="-33" y1="0" x2="-26" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<line x1="-35" y1="-10" x2="-30" y2="10" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="-5,-10 0,10 0,20" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-5.69,-4.51 -3.19,5.49 0.69,4.51 -1.81,-5.49" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-25,-10 -20,10 -20,20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="15,-10 20,10 20,20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="2" y1="-10" x2="-2" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="14.31,-4.51 16.81,5.49 20.69,4.51 18.19,-5.49" stroke="black" stroke-width="1" fill="none"/>
+<line x1="18" y1="-10" x2="22" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-20" x2="20" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-25.69,-4.51 -23.19,5.49 -19.31,4.51 -21.81,-5.49" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-20" y1="-20" x2="-20" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-18" y1="-10" x2="-22" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-20" y1="0" x2="-5" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<line x1="-1" y1="0" x2="15" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
 </g>
 <g class="symbole" data-type="disjonct-m_3f" transform="translate(520.00,430.00)">
 <line x1="-20" y1="15.5" x2="-20" y2="20" stroke="black" stroke-width="1" fill="none"/>
