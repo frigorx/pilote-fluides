@@ -61,6 +61,12 @@ window.CABLAGE_INDEX = [
   "famille": "puissance"
  },
  {
+  "id": "cablage-6-commande",
+  "titre": "Câblage n° 6 — la commande : Dahlander de tour de refroidissement — thermostat à deux étages, relais temporisé",
+  "niveau": "Commande 3",
+  "famille": "commande"
+ },
+ {
   "id": "cablage-7",
   "titre": "Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur",
   "niveau": "Expert",
