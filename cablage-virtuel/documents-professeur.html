@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Câblage virtuel — documents professeur</title>
+<link rel="stylesheet" href="moteur/cablage.css?v=20260927-1758">
+<style>
+  /* Les documents PROFESSEUR du câblage : le coffre chiffré (produit « cablage », indice 5), ouvert par le code
+     enseignant (Franck, 27/09/2026 : « un code pour le câblage »). Rien n'est en clair sur le serveur : chaque
+     document est déchiffré dans le navigateur par la clé que transporte le code (moteur/acces.js du site). */
+  body.prof{background:var(--fond);min-height:100vh;margin:0}
+  .prof main{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+  .prof h1{color:var(--bleu);font-size:26px;margin:.2em 0 .1em}
+  .prof .chapo{color:var(--mut);font-size:16px;margin:0 0 18px}
+  .prof .cadre{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padding:16px 18px;margin:0 0 14px;box-shadow:var(--ombre)}
+  .prof .cadre.ferme{border-left:6px solid var(--orange)}
+  .prof .cadre.ouvert{border-left:6px solid var(--ok)}
+  .prof .cadre h2{margin:0 0 6px;font-size:19px;color:var(--bleu)}
+  .prof .groupe{scroll-margin-top:12px}
+  .prof .groupe.vise{outline:3px solid var(--orange);outline-offset:2px}
+  .prof .ligne{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:7px 0;border-top:1px solid var(--ligne)}
+  .prof .ligne:first-of-type{border-top:none}
+  .prof .ligne .t{flex:1;min-width:180px;font-size:16px}
+  .prof button.doc{min-height:44px;padding:6px 14px;border-radius:10px;border:2px solid var(--bleu);background:#fff;color:var(--bleu);font:700 15px system-ui,sans-serif;cursor:pointer}
+  .prof button.doc:disabled{opacity:.5;cursor:wait}
+  .prof .bouton{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--bleu);color:#fff;font-weight:700;text-decoration:none;margin:6px 8px 0 0}
+  .prof .bouton.second{background:#fff;color:var(--bleu);border:2px solid var(--bleu)}
+  .prof .etat{font-size:15px;color:var(--mut);margin:4px 0 0}
+  .prof .erreur{color:var(--ko);font-weight:700}
+</style>
+</head>
+<body class="prof">
+<header class="barre">
+  <a class="retour" href="index.html" title="Retour aux exercices">‹</a>
+  <div class="logo">Câblage <b>virtuel</b></div>
+  <div class="titre">Documents professeur</div>
+</header>
+<main>
+  <h1>Documents professeur</h1>
+  <p class="chapo">Pour chaque exercice : la fiche professeur, la grille d’évaluation par compétences et le plan de séance, en PDF et en Word (pour les adapter). Réservés aux enseignants : ils s’ouvrent avec votre code d’accès.</p>
+  <div id="porte"></div>
+  <div id="liste"></div>
+</main>
+<script src="../moteur/acces.js?v=20260927-1758"></script>
+<script>
+(function () {
+  'use strict';
+  var PRODUIT = 'cablage', MILLESIME = 2026, COFFRE = 'coffre-' + MILLESIME + '/';
+  var A = window.inerwebAcces;
+  var porte = document.getElementById('porte'), liste = document.getElementById('liste');
+  function el(tag, cls, texte) { var e = document.createElement(tag); if (cls) e.className = cls; if (texte) e.textContent = texte; return e; }
+
+  if (!A) { porte.appendChild(el('p', 'erreur', 'La page d’accès n’a pas pu se charger. Rechargez, ou revenez plus tard.')); return; }
+  if (!A.estTitulaire(PRODUIT)) {
+    var c = el('div', 'cadre ferme');
+    c.appendChild(el('h2', null, '🔒 Accès enseignant'));
+    c.appendChild(el('p', null, 'Ces documents sont chiffrés. Collez le code du Câblage virtuel que vous avez reçu sur la page d’activation, puis revenez ici : ce navigateur s’en souviendra.'));
+    var a1 = el('a', 'bouton', 'J’ai un code : l’activer'); a1.href = '../activer.html?retour=' + encodeURIComponent(location.pathname + location.hash); c.appendChild(a1);
+    var a2 = el('a', 'bouton second', 'Demander un code'); a2.href = '../demander-un-acces.html'; c.appendChild(a2);
+    porte.appendChild(c);
+    return;
+  }
+
+  var acces = A.accesDe(PRODUIT);
+  A.filigrane(PRODUIT);
+  var ok = el('div', 'cadre ouvert');
+  ok.appendChild(el('h2', null, '✓ Ouvert pour ' + acces.nom));
+  ok.appendChild(el('p', 'etat', 'Accès ' + (acces.millesime || MILLESIME) + (acces.expireLe ? ', valable jusqu’au ' + acces.expireLe.split('-').reverse().join('/') : '') + '. Les documents portent votre nom en filigrane à l’écran.'));
+  porte.appendChild(ok);
+
+  fetch(COFFRE + 'index.json', { cache: 'no-store' }).then(function (r) {
+    if (!r.ok) throw new Error('index introuvable');
+    return r.json();
+  }).then(function (idx) {
+    var groupes = [], parGroupe = {};
+    idx.documents.forEach(function (d) {
+      if (!parGroupe[d.groupe]) { parGroupe[d.groupe] = { id: d.groupe, titre: d.exercice, docs: {} }; groupes.push(parGroupe[d.groupe]); }
+      (parGroupe[d.groupe].docs[d.titre] = parGroupe[d.groupe].docs[d.titre] || []).push(d);
+    });
+    groupes.forEach(function (g) {
+      var bloc = el('section', 'cadre groupe'); bloc.id = g.id;
+      bloc.appendChild(el('h2', null, g.titre));
+      Object.keys(g.docs).forEach(function (titre) {
+        var ligne = el('div', 'ligne');
+        ligne.appendChild(el('span', 't', titre));
+        g.docs[titre].sort(function (a, b) { return a.format < b.format ? 1 : -1; }).forEach(function (d) {
+          var b = el('button', 'doc', d.format === 'pdf' ? '📄 PDF' : '📝 Word');
+          b.title = d.fichier;
+          b.onclick = function () { ouvrir(d, b); };
+          ligne.appendChild(b);
+        });
+        bloc.appendChild(ligne);
+      });
+      liste.appendChild(bloc);
+    });
+    var vise = location.hash && document.getElementById(location.hash.slice(1));
+    if (vise) { vise.classList.add('vise'); vise.scrollIntoView(); }
+  }).catch(function () {
+    liste.appendChild(el('p', 'erreur', 'La liste des documents est introuvable. Rechargez la page.'));
+  });
+
+  function ouvrir(d, bouton) {
+    bouton.disabled = true;
+    A.ouvrirDocument(PRODUIT, COFFRE + d.id + '.enc', 'prof').then(function (clair) {
+      var type = d.format === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+      var url = URL.createObjectURL(new Blob([clair], { type: type }));
+      var a = document.createElement('a'); a.href = url; a.download = d.fichier;
+      if (d.format === 'pdf') { a.target = '_blank'; a.removeAttribute('download'); }
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
+    }).catch(function () {
+      alert('Ce document ne s’ouvre pas avec votre code (accès d’une autre année ?).');
+    }).then(function () { bouton.disabled = false; });
+  }
+})();
+</script>
+</body>
+</html>
