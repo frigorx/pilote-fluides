@@ -3,6 +3,20 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 27/09 après-midi — LES OUTILS MONTRENT CE QU'ON TROUVE DERRIÈRE : EN LIGNE (`cdafee21`, `16a482e8`, `b5eebc61`, `59bf656f`)
+>
+> Demande de F. Henninot : « une image qui structure l'idée », comme la couverture d'HoCourant. **AquiBlue** :
+> `icones/outils/aquiblue-vignette.svg`, symboles de la bibliothèque curée (croix du frigoriste), repères PT/TT,
+> Bluetooth, cycle log p-h (détente verticale, surchauffe et sous-refroidissement HORS cloche) — il a exigé des
+> symboles officiels. **Fluide** : `couverture-presentation-fluide.jpg` (page 1 du PDF). **Porte câblage** :
+> `icones/outils/cablage-vignette.jpg` (corrigé n° 9, atelier câblage), classe `.porte.avec-vignette`.
+> **HabFluide** : bandeau dans la section formation + `habfluide/inerWeb.fr-HabFluide-extrait.pdf` (20 p. : couverture,
+> pages 1-17 du tirage du 12/09 jusqu'au test d'entrée `f/positionnement`, page d'accueil et page de fin), couverture
+> `habfluide/couverture-habfluide.jpg`. ⚠️ `*.pdf` est ignoré par `.gitignore` : exception posée pour l'extrait ; le
+> livre complet ne vient JAMAIS ici (vente PDF envisagée). Reste : bouton « Acheter » quand la plateforme est choisie.
+> La grille des bandeaux (`7dcd07a4`, autre session) passe en `minmax(0,1fr)` sur téléphone : sans lui le bouton le
+> plus long (nowrap) poussait la colonne hors du cadre. Mesuré : 0 px de débord à 360, 390, 1300.
+
 > ## 17/09 — L'ACCUEIL REFAIT EN HALL, LE PLAN SUR SA PAGE : EN LIGNE (`9370b0fe..97a9d4b4`, sept commits)
 >
 > Carte blanche de F. Henninot (« l'effet waouh, comprendre instantanément, aller vers le référencement »),
