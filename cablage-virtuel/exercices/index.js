@@ -79,8 +79,20 @@ window.CABLAGE_INDEX = [
   "famille": "commande"
  },
  {
+  "id": "cablage-9",
+  "titre": "Câblage n° 9 : groupe pump-down, la puissance — compresseur, deux ventilateurs, quatre départs sous un tétrapolaire",
+  "niveau": "Expert",
+  "famille": "froid"
+ },
+ {
+  "id": "cablage-9-commande",
+  "titre": "Câblage n° 9 — la commande : pump-down — thermostat, horloge, électrovanne, pressostats BP et HP, 95-96, deux bobines",
+  "niveau": "Expert",
+  "famille": "commande"
+ },
+ {
   "id": "allumage-simple",
-  "titre": "Allumage simple : disjoncteur 1P+N, interrupteur, lampe",
+  "titre": "Allumage simple : disjoncteur 1P+N, interrupteur, lampe et sa masse",
   "niveau": 1,
   "famille": "eclairage"
  },

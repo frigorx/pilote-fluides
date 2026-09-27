@@ -146,6 +146,10 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 .fiche .modes{display:flex;gap:6px;flex-wrap:wrap}
 .fiche .modes a{flex:1;text-align:center;text-decoration:none;border:2px solid var(--ligne);border-radius:10px;padding:10px 6px;color:var(--bleu);font-weight:700;font-size:15px}
 .fiche .modes a.reel{border-color:var(--orange)}
+/* les documents à télécharger d'une fiche (27/09) : le TP élève, et le professeur sur demande */
+.fiche .documents{display:flex;flex-direction:column;gap:4px;margin-top:4px;padding-top:8px;border-top:1px solid var(--ligne);font-size:15px}
+.fiche .documents a[download]{font-weight:700;text-decoration:none;color:var(--bleu)}
+.fiche .documents span{font-size:13.5px;color:var(--mut)}
 
 /* ---- la platine d'une vraie armoire : rails et goulottes ---- */
 #platine .rail{fill:#d3dae3;stroke:#b3bfcc;stroke-width:1}
