@@ -101,11 +101,13 @@
   /* HoCourant : même gabarit, bordure ambre tiretée — l'état « prototype »
      se lit par la couleur, le trait ET le mot (charte § 4). */
   .bandeau-hocourant { margin-top:14px; border:2px dashed #b06a00; }
-  /* La couverture du livre HoCourant sur son bandeau (27/09) : à droite, cliquable, jamais sur le texte. */
-  .bandeau-hocourant .ba-couv { flex:0 0 auto; order:5; }
-  .bandeau-hocourant .ba-couv img { display:block; width:118px; height:auto; border-radius:6px;
+  /* La couverture du livre HoCourant sur son bandeau (27/09) : à droite, cliquable, jamais sur le texte.
+     Étendue le même jour aux bandeaux AquiBlue (vignette du circuit) et Fluide (couverture de la présentation). */
+  .bandeau-aquiblue .ba-couv { flex:0 0 auto; order:5; }
+  .bandeau-aquiblue .ba-couv img { display:block; width:118px; height:auto; border-radius:6px;
                                     box-shadow:0 6px 16px rgba(27,58,99,.25); }
-  .bandeau-hocourant .ba-couv:hover img { transform:translateY(-2px); }
+  .bandeau-aquiblue .ba-couv:hover img { transform:translateY(-2px); }
+  .bandeau-aquiblue .ba-couv.ba-vign img { width:240px; }
   .etiquette-proto { display:inline-block; background:#b06a00; color:#fff; font-weight:bold;
                      font-size:12.5px; letter-spacing:.04em; border-radius:999px;
                      padding:2px 10px; margin-right:8px; vertical-align:2px; }
@@ -156,6 +158,10 @@
   .porte .p-det { color:var(--mut); font-size:14.5px; }
   .porte.forte { border-color:var(--orange); }
   .porte.forte .p-titre { color:var(--orange); }
+  /* Une porte peut montrer ce qu'on trouve derrière (27/09 : le simulateur de câblage). */
+  .porte.avec-vignette { grid-template-columns:52px 1fr auto; grid-template-rows:auto 1fr; }
+  .porte .p-vign { grid-column:3; grid-row:1 / span 2; display:block; width:190px; height:auto;
+                   border-radius:6px; border:1px solid #d8e0ea; }
   /* Les outils : les bandeaux AquiBlue / HoCourant / Fluide dans un bloc blanc, sous le plan. */
   .outils .corps { padding:0 24px 22px; }
   .outils .corps .bandeau-aquiblue { margin-top:14px; }
@@ -528,6 +534,8 @@
     .porte .p-ico { font-size:26px; }
     .porte .p-titre { font-size:17px; }
     .porte .p-det { font-size:13.5px; }
+    .porte.avec-vignette { grid-template-columns:40px 1fr; grid-template-rows:none; }
+    .porte .p-vign { grid-column:1 / -1; grid-row:auto; width:100%; max-width:320px; }
     .tuiles { grid-template-columns:repeat(2,1fr); gap:10px; }
     .tuile { padding:12px; }
     .tuile p { display:none; }
@@ -855,10 +863,11 @@
        C:/git/cablage-virtuel, copie servie cablage-virtuel/ par son outils/livrer.py. -->
   <h2 class="portes-titre">Câbler sur l’écran</h2>
   <div class="portes">
-    <a class="porte forte" href="cablage-virtuel/">
+    <a class="porte forte avec-vignette" href="cablage-virtuel/">
       <span class="p-ico" aria-hidden="true">🔌</span>
       <span class="p-titre">Le simulateur de câblage</span>
       <span class="p-det">Lire le schéma, poser les fils sur les bornes — au doigt sur la tablette ou à la souris. Quinze exercices, la puissance puis la commande, de l’allumage simple à la chambre froide négative. En relecture.</span>
+      <img class="p-vign" src="icones/outils/cablage-vignette.jpg" alt="Une platine câblée dans le simulateur : disjoncteurs, contacteurs, relais thermique et fils de couleur" loading="lazy" width="560" height="481">
     </a>
   </div>
 
@@ -930,6 +939,8 @@
           <span class="d">— l’élève lit le schéma, trouve les numéros des bornes et pose les fils sur la platine, au doigt sur la tablette ou à la souris. Trois temps : colorier les conducteurs, repérer les bornes, câbler. Trois modes : guidé, aidé (chaque aide est comptée), réel (contrôle à la fin, comme à l’épreuve). Quinze exercices, de l’allumage simple à la chambre froide négative : la puissance, puis la commande (auto-maintien, inversion du sens de marche, étoile-triangle, pump-down, dégivrage). La platine se montre en symboles ou avec les vrais appareils. <strong>Prototype en relecture</strong> ; sur téléphone, l’écran est trop petit.</span></li>
         <li><span class="nv-etiq">droits d’auteur</span><a href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-2" download>La licence sur chaque page des livrets</a>
           <span class="d">— le livret HoCourant, les documents de la station FormaRézo (PDF et Word) et la présentation d’inerWeb Fluide portent désormais la mention « © inerWeb — F. Henninot » et leur licence au pied de chaque page : une feuille photocopiée seule garde son auteur. Libre de diffusion gratuite en citant l’auteur, sans usage commercial ni modification ; illustrations tous droits réservés.</span></li>
+        <li><span class="nv-etiq">amélioration</span><strong>Les outils montrent ce qu’on trouve derrière</strong>
+          <span class="d">— AquiBlue, inerWeb Fluide et le simulateur de câblage ont maintenant leur image sur l’accueil, comme le livre HoCourant : le circuit et ses sondes Bluetooth reliés au diagramme enthalpique, la couverture de la présentation d’inerWeb Fluide, une platine câblée du simulateur.</span></li>
         <li><span class="nv-etiq">amélioration</span><strong>Les actualités, à jour en haut du panneau</strong>
           <span class="d">— le panneau de gauche affiche désormais les trois dernières mises à jour du site, datées, avec un lien vers chacune.</span></li>
       </ul>
@@ -1050,6 +1061,9 @@
           <a class="bouton creux" href="aquiblue/aquiblue-v1.5.2.zip" download>Télécharger</a>
           <a class="bouton creux" href="https://github.com/frigorx/aquiblue" rel="noopener nofollow">Code source</a>
         </div>
+        <!-- Ce que fait le logiciel, en une image (27/09) : symboles frigorifiques de la bibliothèque, sondes, Bluetooth, diagramme enthalpique. -->
+        <a class="ba-couv ba-vign" href="aquiblue/" title="Essayer AquiBlue">
+          <img src="icones/outils/aquiblue-vignette.svg" alt="Le circuit frigorifique, ses sondes Bluetooth et le cycle tracé en direct sur le diagramme enthalpique" loading="lazy" width="360" height="210"></a>
       </aside>
 
       <!-- BANNIÈRE inerWeb HoCourant — prototype ouvert à l'essai (25/08).
@@ -1100,6 +1114,9 @@
           <a class="bouton creux" href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener">Présentation (PDF)</a>
           <a class="bouton creux" href="mailto:inerweb.fh@gmail.com?subject=B%C3%AAta-test%20inerWeb%20Fluide">Devenir bêta-testeur</a>
         </div>
+        <!-- La couverture de la présentation, cliquable, comme le livre d'HoCourant (27/09). -->
+        <a class="ba-couv" href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener" title="Ouvrir la présentation d’inerWeb Fluide (PDF)">
+          <img src="couverture-presentation-fluide.jpg" alt="Couverture de la présentation d’inerWeb Fluide" loading="lazy" width="672" height="951"></a>
       </aside>
     </div>
   </section>
@@ -1264,11 +1281,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=643d329ef8"></script>
-<script src="chiffres.gen.js?v=643d329ef8"></script>
+<script src="moteur/lisibilite.js?v=c9223e311b"></script>
+<script src="chiffres.gen.js?v=c9223e311b"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=643d329ef8" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=c9223e311b" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

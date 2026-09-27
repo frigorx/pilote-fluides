@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210" role="img" aria-label="Le circuit frigorifique, ses sondes Bluetooth et le cycle tracé en direct sur le diagramme enthalpique">
+  <!-- Vignette de la porte AquiBlue (accueil inerweb.fr, 27/09/2026).
+       Symboles frigorifiques de la bibliothèque curée (usine-contenu/bibliotheque-symboles,
+       frigo_schema) : échangeur à air, détendeur thermostatique, compresseur. Croix du
+       frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut,
+       évaporateur en bas. Repères d'instrument normalisés PT (pression) et TT (température).
+       Diagramme : log p-h, détente verticale (isenthalpe), condensation et évaporation
+       horizontales, surchauffe et sous-refroidissement hors de la cloche. -->
+  <style>
+    .s{fill:none;stroke:#1b3a63;stroke-width:1}
+    .b{fill:#fff;stroke:#1b3a63;stroke-width:1}
+    .hp{fill:none;stroke:#e8914a;stroke-width:3}
+    .bp{fill:none;stroke:#2aafaf;stroke-width:3}
+    .onde{fill:none;stroke:#2f6fb0;stroke-width:2;stroke-linecap:round}
+    .rep{font:bold 10px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#1b3a63}
+  </style>
+  <rect x="1" y="1" width="358" height="208" rx="14" fill="#f7fafc" stroke="#d8e0ea" stroke-width="1.5"/>
+
+  <!-- ══ Le circuit ══ -->
+  <!-- HP : refoulement compresseur → condenseur → détendeur -->
+  <path class="hp" d="M170 88 V44 H136 M94 44 H40 V92"/>
+  <!-- BP : détendeur → évaporateur → aspiration compresseur -->
+  <path class="bp" d="M40 128 V168 H94 M136 168 H170 V122"/>
+
+  <!-- condenseur (haut) : échangeur à air, bornes en bas sur la ligne -->
+  <g transform="translate(115,26) scale(1.05)" stroke-width=".95">
+    <rect x="-18" y="-20" width="36" height="36" fill="#fff" stroke="#1b3a63"/>
+    <circle cx="0" cy="-2" r="12.5" class="s"/>
+    <line x1="6" y1="-13" x2="11" y2="4" class="s"/><line x1="-6" y1="-13" x2="-11" y2="4" class="s"/>
+    <path class="s" d="M6 5A6 6 0 0 1 0-1M-7 4A6 6 0 0 1-1-2M0-1A6 6 0 0 1-6 5M1-2A6 6 0 0 1 7 4"/>
+    <ellipse cx="0" cy="-7" rx="2.5" ry="4.5" class="s"/>
+    <line x1="-19" y1="17" x2="19" y2="17" class="s"/>
+  </g>
+  <!-- évaporateur (bas) : le même symbole, retourné -->
+  <g transform="translate(115,186) rotate(180) scale(1.05)" stroke-width=".95">
+    <rect x="-18" y="-20" width="36" height="36" fill="#fff" stroke="#1b3a63"/>
+    <circle cx="0" cy="-2" r="12.5" class="s"/>
+    <line x1="6" y1="-13" x2="11" y2="4" class="s"/><line x1="-6" y1="-13" x2="-11" y2="4" class="s"/>
+    <path class="s" d="M6 5A6 6 0 0 1 0-1M-7 4A6 6 0 0 1-1-2M0-1A6 6 0 0 1-6 5M1-2A6 6 0 0 1 7 4"/>
+    <ellipse cx="0" cy="-7" rx="2.5" ry="4.5" class="s"/>
+    <line x1="-19" y1="17" x2="19" y2="17" class="s"/>
+  </g>
+  <!-- détendeur thermostatique (gauche), bulbe vers l'intérieur -->
+  <g transform="translate(40,110) rotate(90) scale(1.6)">
+    <circle cx="0" cy="-12" r="5.8" class="b" stroke-width=".8"/>
+    <polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0" class="b" stroke-width=".8"/>
+    <line x1="0" y1="0" x2="0" y2="-6" class="s" stroke-width=".8"/>
+    <line x1="-11" y1="0" x2="-10" y2="0" class="s" stroke-width=".8"/><line x1="10" y1="0" x2="11" y2="0" class="s" stroke-width=".8"/>
+  </g>
+  <!-- compresseur (droite) : aspiration en bas, refoulement en haut -->
+  <g transform="translate(170,105) rotate(-90) scale(1.1)">
+    <circle cx="0" cy="0" r="15" class="b" stroke-width="1.1"/>
+    <line x1="-7" y1="-13" x2="13" y2="-7" class="s" stroke-width="1.1"/>
+    <line x1="-7" y1="13" x2="13" y2="7" class="s" stroke-width="1.1"/>
+  </g>
+
+  <!-- repères d'instrument : PT sur la HP, TT sur l'aspiration -->
+  <line x1="152" y1="44" x2="152" y2="62" class="s" stroke-dasharray="2 2"/>
+  <circle cx="152" cy="72" r="10" class="b" stroke-width="1.4"/>
+  <text class="rep" x="152" y="75.5" text-anchor="middle">PT</text>
+  <line x1="152" y1="168" x2="152" y2="150" class="s" stroke-dasharray="2 2"/>
+  <circle cx="152" cy="140" r="10" class="b" stroke-width="1.4"/>
+  <text class="rep" x="152" y="143.5" text-anchor="middle">TT</text>
+
+  <!-- ══ Bluetooth : le symbole et les ondes vers le poste ══ -->
+  <circle cx="212" cy="106" r="15" fill="#2f6fb0"/>
+  <path d="M206 99.5 L218 111.5 L212 117 V95 L218 100.5 L206 112.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path class="onde" d="M232 98 q5 8 0 16"/>
+  <path class="onde" d="M239 92 q9 14 0 28" opacity=".6"/>
+
+  <!-- ══ Le poste : le diagramme enthalpique ══ -->
+  <rect x="252" y="46" width="98" height="104" rx="7" fill="#fff" stroke="#1b3a63" stroke-width="2.2"/>
+  <rect x="258" y="52" width="86" height="92" rx="3" fill="#eef4fa"/>
+  <!-- axes log p (vertical) et h (horizontal) -->
+  <path d="M264 58 V138 H340" fill="none" stroke="#1b3a63" stroke-width="1.3"/>
+  <!-- cloche de saturation -->
+  <path d="M270 136 C273 100 285 66 296 64 C307 66 319 100 322 136" fill="none" stroke="#9db3c8" stroke-width="1.6"/>
+  <!-- cycle : condensation (HP), détente verticale, évaporation (BP), compression -->
+  <path d="M336 80 H276" class="hp" stroke-width="2.4"/>
+  <path d="M276 80 V118" fill="none" stroke="#1b3a63" stroke-width="2" stroke-dasharray="3 2"/>
+  <path d="M276 118 H327" class="bp" stroke-width="2.4"/>
+  <path d="M327 118 L336 80" fill="none" stroke="#1b3a63" stroke-width="2"/>
+  <circle cx="336" cy="80" r="2.2" fill="#e8914a"/><circle cx="327" cy="118" r="2.2" fill="#2aafaf"/>
+  <!-- pied du poste -->
+  <path d="M290 150 L312 150 L316 162 L286 162 Z" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+</svg>
