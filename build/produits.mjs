@@ -54,6 +54,16 @@ export const PRODUITS = [
     coffre: "hocourant/coffre",
     espace: null, // espace enseignant à créer
   },
+  {
+    // 27/09/2026 — Franck : « un code pour le câblage ». Le coffre est fabriqué
+    // à l'atelier (C:/git/cablage-virtuel, outils/chiffrer-coffre.mjs) et livré
+    // par son livrer.py ; il n'est jamais édité ici.
+    indice: 5,
+    id: "cablage",
+    nom: "inerWeb Câblage virtuel",
+    coffre: "cablage-virtuel/coffre-<millésime>",
+    espace: "cablage-virtuel/documents-professeur.html",
+  },
 ];
 
 /* --------------------------------------------------------------------

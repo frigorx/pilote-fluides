@@ -43,7 +43,8 @@
     { indice: 1, id: "aquiblue", nom: "inerWeb AquiBlue" },
     { indice: 2, id: "legislation", nom: "Réseau Législation" },
     { indice: 3, id: "hydrometro", nom: "HydroMétro" },
-    { indice: 4, id: "hocourant", nom: "inerWeb HoCourant" }
+    { indice: 4, id: "hocourant", nom: "inerWeb HoCourant" },
+    { indice: 5, id: "cablage", nom: "inerWeb Câblage virtuel" }
   ];
 
   var VERSION = 1, TYPE_MAITRE = 0x11, TYPE_SEANCE = 0x21;
