@@ -25,6 +25,12 @@ window.CABLAGE_INDEX = [
   "famille": "puissance"
  },
  {
+  "id": "cablage-3-commande",
+  "titre": "Câblage n° 3 — la commande : deux départs, deux marche-arrêt à auto-maintien",
+  "niveau": "Commande 1",
+  "famille": "commande"
+ },
+ {
   "id": "cablage-4",
   "titre": "Câblage n° 4 : inversion du sens de marche d'un moteur triphasé",
   "niveau": "Niveau 2",

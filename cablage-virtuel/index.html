@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — exercices</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260927-1411">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260927-1422">
 </head>
 <body>
 <header class="barre">
@@ -38,8 +38,8 @@
     <div class="liste" id="liste"></div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260927-1411';</script>
-<script src="exercices/index.js?v=20260927-1411"></script>
+<script>window.CABLAGE_VERSION = '20260927-1422';</script>
+<script src="exercices/index.js?v=20260927-1422"></script>
 <script>
 (function(){
   const CHAPITRES = [
@@ -48,7 +48,7 @@
     {id: 'puissance', titre: 'Électrotechnique — puissance', texte: 'Du sectionneur au moteur : disjoncteur moteur, contacteur, relais thermique, bornier. Puis les démarrages.',
      ex: ['cablage-1', 'demarrage-direct-tri', 'cablage-3', 'cablage-4', 'cablage-5', 'cablage-6']},
     {id: 'commande', titre: 'Électrotechnique — commande', texte: 'Chaque commande reprend une puissance du chapitre précédent : bobines, auto-maintien 13-14, verrouillages 21-22, 95-96.',
-     ex: ['cablage-1-commande', 'cablage-4-commande', 'cablage-5-commande']},
+     ex: ['cablage-1-commande', 'cablage-3-commande', 'cablage-4-commande', 'cablage-5-commande']},
     {id: 'froid', titre: 'Froid — les groupes', texte: 'Le pump-down et la chambre froide : thermostat, électrovanne, pressostats, dégivrage. La puissance, puis la commande.',
      ex: ['cablage-2', 'cablage-7', 'cablage-7-commande', 'cablage-8', 'cablage-8-commande', 'cablage-9', 'cablage-9-commande']},
   ];
@@ -77,7 +77,7 @@
     const lien = function(a, mode, nom){ return '<a' + (mode === 'reel' ? ' class="reel"' : '') + ' href="jouer.html?ex=' +
       encodeURIComponent(m.id) + '&activite=' + a + '&mode=' + mode + '">' + nom + '</a>'; };
     f.innerHTML = '<a class="apercu" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&activite=cabler&mode=guide" title="Voir et câbler ce schéma">' +
-      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260927-1411" alt="Le schéma de l’exercice" loading="lazy"></a>' +
+      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260927-1422" alt="Le schéma de l’exercice" loading="lazy"></a>' +
       '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
       activites.map(function(a){ return '<div class="modes"><span class="act">' + a[1] + '</span>' +
         lien(a[0], 'guide', 'Guidé') + lien(a[0], 'aide', 'Aidé') + lien(a[0], 'reel', 'Réel') + '</div>'; }).join('') +
@@ -91,6 +91,11 @@
     const t = document.createElement('a'); t.className = 'tuile'; t.href = '#' + c.id;
     const n = c.ex.filter(function(id){ return parId[id]; }).length;
     t.innerHTML = '<i>' + (i + 1) + '</i><b></b><span></span><small>' + n + ' exercice' + (n > 1 ? 's' : '') + '</small>';
+    // l'image du chapitre (Franck, 27/09 après-midi : « je clique, je sais ce que je vais trouver ») :
+    // une platine câblée du chapitre, prise sur le logiciel, apercus/chapitres/<id>.jpg ; absente, la tuile reste sans image
+    const img = document.createElement('img'); img.alt = ''; img.loading = 'lazy'; img.src = 'apercus/chapitres/' + c.id + '.jpg';
+    img.onerror = function(){ img.remove(); t.classList.remove('avec-image'); };
+    t.classList.add('avec-image'); t.prepend(img);
     t.querySelector('b').textContent = c.titre; t.querySelector('span').textContent = c.texte;
     tuiles.appendChild(t);
   });
@@ -112,6 +117,6 @@
   if (!index.length) document.getElementById('tuiles').textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
 })();
 </script>
-<script src="moteur/marque.js?v=20260927-1411" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260927-1422" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>
