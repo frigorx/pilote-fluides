@@ -302,3 +302,16 @@ html.sans-animation .film * { animation-duration: .01s !important; animation-del
   .carte { padding: 14px; }
   h1 { font-size: 1.4rem; }
 }
+
+/* ---------- la carte du livret : sa couverture à côté du texte (27/09) ---------- */
+.carte-livret { display: flex; gap: 20px; align-items: flex-start; }
+.carte-livret .livret-texte { flex: 1; min-width: 0; }
+.carte-livret .livret-texte h2 { margin-top: 0; }
+.livret-couv { flex: 0 0 150px; }
+.livret-couv img { display: block; width: 100%; height: auto; border-radius: 6px; box-shadow: var(--ombre-ample); }
+.livret-couv:hover img { transform: translateY(-2px); }
+.badge-pdf { background: var(--ok-fond); color: var(--ok); border: 1px solid var(--ok); vertical-align: middle; }
+@media (max-width: 560px) {
+  .carte-livret { flex-direction: column; align-items: center; text-align: left; }
+  .livret-couv { flex-basis: auto; width: 170px; }
+}

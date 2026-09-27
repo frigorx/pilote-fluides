@@ -114,7 +114,12 @@
           '<button class="btn btn-secondaire" data-aller="code">Changer de code</button></div></div>'
         : '<div class="btn-ligne"><button class="btn btn-primaire" data-aller="code">J\'ai un code de mission →</button>' +
           '<button class="btn btn-secondaire" data-aller="libre">Découvrir sans code</button></div>') +
-      '<div class="carte"><h2>Le livret papier</h2>' +
+      // La couverture du livre se voit AVANT de télécharger (Franck, 27/09 : « trop de texte, pas assez de visuels ») :
+      // l'image est la page 1 du PDF (livret/couverture-hocourant.jpg), cliquable comme le bouton.
+      '<div class="carte carte-livret">' +
+      '<a class="livret-couv" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-1" download title="Télécharger le livret (PDF)">' +
+      '<img src="livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livret HoCourant" width="672" height="954"></a>' +
+      '<div class="livret-texte"><h2>Le livret papier <span class="badge badge-pdf">PDF disponible</span></h2>' +
       "<p>Le support de cours complet : dix chapitres, quatre-vingts questions, les activités " +
       "à faire en atelier et le lexique. Sa page de garde porte votre nom — remplissez-la, un livret " +
       "perdu revient à son propriétaire.</p>" +
@@ -122,7 +127,7 @@
       "Télécharger le livret (PDF, 116 pages, 11,9 Mo)</a></div>" +
       '<div class="enc enc-note"><span class="enc-mot">À imprimer en A5</span>' +
       "<p>En couleur comme en noir et blanc : le livret est fait pour les deux. Le corrigé " +
-      "est réservé au formateur et ne se télécharge pas ici.</p></div></div>" +
+      "est réservé au formateur et ne se télécharge pas ici.</p></div></div></div>" +
       '<div class="carte"><h2>Espace enseignant</h2>' +
       "<p>Générer les codes d'un groupe, ou lire le code qu'un élève rapporte.</p>" +
       '<div class="btn-ligne"><button class="btn btn-secondaire" data-aller="lot">Générer des codes</button>' +

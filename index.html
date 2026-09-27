@@ -101,6 +101,11 @@
   /* HoCourant : même gabarit, bordure ambre tiretée — l'état « prototype »
      se lit par la couleur, le trait ET le mot (charte § 4). */
   .bandeau-hocourant { margin-top:14px; border:2px dashed #b06a00; }
+  /* La couverture du livre HoCourant sur son bandeau (27/09) : à droite, cliquable, jamais sur le texte. */
+  .bandeau-hocourant .ba-couv { flex:0 0 auto; order:5; }
+  .bandeau-hocourant .ba-couv img { display:block; width:118px; height:auto; border-radius:6px;
+                                    box-shadow:0 6px 16px rgba(27,58,99,.25); }
+  .bandeau-hocourant .ba-couv:hover img { transform:translateY(-2px); }
   .etiquette-proto { display:inline-block; background:#b06a00; color:#fff; font-weight:bold;
                      font-size:12.5px; letter-spacing:.04em; border-radius:999px;
                      padding:2px 10px; margin-right:8px; vertical-align:2px; }
@@ -815,7 +820,8 @@
           <p class="v-det">Se préparer à l’habilitation électrique, de B0 à BR, palier par palier.</p>
           <p class="v-entrees"><a class="v-entree" href="hocourant/?module=M1">▶ Le danger électrique</a>
         <a href="hocourant/?module=M4">Les domaines de tension</a>
-        <a href="hocourant/?module=M9">La consignation</a></p>
+        <a href="hocourant/?module=M9">La consignation</a>
+        <a href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-1" download>📕 Le livre — PDF disponible</a></p>
         </div>
       </article>
 <!-- RESEAUX FIN -->
@@ -1068,7 +1074,11 @@
           métier — ne pas s'en servir comme référence pour une opération réelle.</em></p>
         <div class="ba-boutons">
           <a class="bouton" href="hocourant/">Essayer le prototype</a>
+          <a class="bouton creux" href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-1" download>Le livre — PDF disponible (116 pages)</a>
         </div>
+        <!-- La couverture du livre, cliquable : Franck (27/09) veut VOIR le livre sur la porte d'HoCourant. -->
+        <a class="ba-couv" href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-1" download title="Télécharger le livre HoCourant (PDF)">
+          <img src="hocourant/livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livre HoCourant" loading="lazy" width="672" height="954"></a>
       </aside>
 
       <aside class="bandeau-aquiblue bandeau-fluide" aria-label="inerWeb Fluide">
