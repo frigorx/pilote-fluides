@@ -15,7 +15,8 @@ tout ce qui se fait », finition des sujets non terminés, plus de visuel, Codex
       vers stations ouvertes (11 stations) ; `corrections-<branche>.md`
 - [x] 6. Images Codex : 6 scènes (dessin inerWeb, marque inerWeb), posées sur 29 accueils
 - [x] 7. PROMPT-REPRISE à jour ; MP3 edge-tts refabriqués (11 nouvelles clés, index 5 716)
-- [ ] 8. Feu vert Franck → commit + livraison (rien n'est parti en ligne)
+- [x] 8. Feu vert Franck (« envoie la purée ») → commit `8cce88ca`, push, en ligne après 105 s,
+      vérifié en contre-cache : plan, scène WebP, MP3 neuf, index ?v=20260927-1, pictogrammes
 
 ## Critère de réussite
 - Plan entièrement visible sans défilement horizontal à 1080 px, texte ≥ 13 px rendu.

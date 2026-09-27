@@ -623,6 +623,12 @@
 > (commentaire posé là-bas) ; `reglementation.html` (première forme, racine) est
 > SUPPRIMÉE. `noindex`, hors sitemap.
 >
+> **27/09/2026 — audit complet du réseau Législation et livraison** (commit `8cce88ca`) :
+> plan replié en rangées de 4 têtes (il était tronqué pour tout le monde), 29 stations
+> auditées et corrigées (quiz, narrations, correspondances, commentaires voix), scènes
+> Codex, 11 MP3 refabriqués. La vérité du réseau reste `legislation/PROMPT-REPRISE.md`
+> (section 27/09) ; pièces dans `.planning/2026-09-27-legislation-audit/`.
+>
 > **Quatrième décision : « tu es libre de créer, mieux que le livre. »** Les
 > 10 sous-lignes portent désormais **53 stations NOMMÉES** — conception Claude
 > niveau BTS, ossature du manuel non suivie, **proposition à relire par
