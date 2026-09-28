@@ -13,6 +13,48 @@ window.CABLAGE_INDEX = [
   "famille": "commande"
  },
  {
+  "id": "cablage-10",
+  "titre": "Câblage n° 10 : le sujet national EP2 2022, la puissance — porte-fusibles, disjoncteur moteur, pontage du thermique, transformateur",
+  "niveau": "Expert",
+  "famille": "froid"
+ },
+ {
+  "id": "cablage-10-commande",
+  "titre": "Câblage n° 10 — la commande 24 V du sujet national EP2 2022 : arrêt d'urgence, commutateur, pressostats, thermostat, électrovanne, voyants",
+  "niveau": "Expert",
+  "famille": "commande"
+ },
+ {
+  "id": "cablage-11",
+  "titre": "Câblage n° 11 : le sujet EP2 2013, la puissance — deux départs sous porte-fusibles, transformateur de commande",
+  "niveau": "Expert",
+  "famille": "froid"
+ },
+ {
+  "id": "cablage-11-commande",
+  "titre": "Câblage n° 11 — la commande du sujet EP2 2013 : relais auxiliaire KA1, pressostats, thermostat, électrovanne",
+  "niveau": "Expert",
+  "famille": "commande"
+ },
+ {
+  "id": "cablage-12",
+  "titre": "Câblage n° 12 : le bac 2008, la puissance — compresseur tri sous porte-fusibles, condenseur mono ponté, commande en 230 V",
+  "niveau": "Expert",
+  "famille": "froid"
+ },
+ {
+  "id": "cablage-12-commande",
+  "titre": "Câblage n° 12 — la commande du bac 2008 : horloge de dégivrage, quatre voyants, précoupure, pressostats, thermostat d'ambiance",
+  "niveau": "Expert",
+  "famille": "commande"
+ },
+ {
+  "id": "cablage-13",
+  "titre": "Câblage n° 13 : CCF EP1 2021 (folio 10), la puissance — le ventilateur du condenseur repassé en 230 V mono, pontage dans le disjoncteur moteur",
+  "niveau": "Expert",
+  "famille": "froid"
+ },
+ {
   "id": "cablage-2",
   "titre": "Câblage n° 2 : le pump-down sur bornier — thermostat, électrovanne, pressostats, compresseur, ventilateurs",
   "niveau": "Niveau 1",

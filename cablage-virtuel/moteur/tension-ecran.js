@@ -8,7 +8,7 @@
 'use strict';
 const NS = 'http://www.w3.org/2000/svg';
 const $ = s => document.querySelector(s);
-const phase = p => !!p && p !== 'N' && p !== 'PE' && p !== 'défaut';
+const phase = p => !!p && p !== 'N' && p !== 'PE' && p !== '0' && p !== 'défaut';   // « 24 » (secondaire du transformateur) est vivant, « 0 » non
 
 /* La carte s'allume selon les potentiels des bornes (hors Réel) ; bornes null : elle s'éteint. */
 function allumerCarte(bornes) {
@@ -164,7 +164,7 @@ document.addEventListener('cablage-pret', () => {
     const m = svg.getScreenCTM(), k = m && m.a ? 1 / m.a : 1;   // 16 px à l'écran, quel que soit le zoom
     for (const [r, v] of Object.entries(e.appareils)) {
       const ro = roles[r];
-      if (!['bobine', 'moteur', 'recepteur', 'protection', 'thermique'].includes(ro)) continue;
+      if (!['bobine', 'moteur', 'recepteur', 'protection', 'thermique', 'transfo'].includes(ro)) continue;
       const app = svg.querySelector('.app[data-rep="' + CSS.escape(r) + '"]'); if (!app) continue;
       const bb = app.getBBox();
       let cls = 'repos', txt = r + ' ' + v.texte;
@@ -173,6 +173,7 @@ document.addEventListener('cablage-pret', () => {
       if (ro === 'recepteur') cls = v.marche === 'oui' ? 'ok' : 'repos';
       if (ro === 'protection') cls = v.declenche ? 'ko' : v.enclenche ? 'ok' : 'repos';
       if (ro === 'thermique') cls = v.declenche ? 'ko' : 'repos';
+      if (ro === 'transfo') cls = v.alim ? 'ok' : 'repos';
       const p = document.createElementNS(NS, 'g'); p.setAttribute('class', 'pastille ' + cls);
       const rect = document.createElementNS(NS, 'rect'), t = document.createElementNS(NS, 'text');
       t.style.fontSize = (16 * k) + 'px';

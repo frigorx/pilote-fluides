@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — exercices</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260927-2209">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260928-0648">
 </head>
 <body>
 <header class="barre">
@@ -38,8 +38,8 @@
     <div class="liste" id="liste"></div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260927-2209';</script>
-<script src="exercices/index.js?v=20260927-2209"></script>
+<script>window.CABLAGE_VERSION = '20260928-0648';</script>
+<script src="exercices/index.js?v=20260928-0648"></script>
 <script>
 (function(){
   const CHAPITRES = [
@@ -51,6 +51,8 @@
      ex: ['cablage-1-commande', 'cablage-3-commande', 'cablage-4-commande', 'cablage-5-commande', 'cablage-6-commande']},
     {id: 'froid', titre: 'Froid — les groupes', texte: 'Le pump-down et la chambre froide : thermostat, électrovanne, pressostats, dégivrage. La puissance, puis la commande.',
      ex: ['cablage-2', 'cablage-7', 'cablage-7-commande', 'cablage-8', 'cablage-8-commande', 'cablage-9', 'cablage-9-commande']},
+    {id: 'sujets', titre: 'Froid — les sujets d’examen', texte: 'Les schémas des sujets CAP et bac : porte-fusibles, transformateur 24 V, arrêt d’urgence, relais auxiliaire, horloge de dégivrage, voyants. La puissance, puis la commande.',
+     ex: ['cablage-10', 'cablage-10-commande', 'cablage-11', 'cablage-11-commande', 'cablage-12', 'cablage-12-commande', 'cablage-13']},
   ];
   const index = window.CABLAGE_INDEX || [], parId = {};
   index.forEach(function(m){ parId[m.id] = m; });
@@ -81,6 +83,13 @@
     'demarrage-direct-tri': {eleve: 'documents/exercices/demarrage-direct-tri/demarrage-direct-tri-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
     'telerupteur': {eleve: 'documents/exercices/telerupteur/telerupteur-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
     'va-et-vient': {eleve: 'documents/exercices/va-et-vient/va-et-vient-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
+    'cablage-10': {eleve: 'documents/exercices/cablage-10/cablage-10-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
+    'cablage-10-commande': {eleve: 'documents/exercices/cablage-10-commande/cablage-10-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
+    'cablage-11': {eleve: 'documents/exercices/cablage-11/cablage-11-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
+    'cablage-11-commande': {eleve: 'documents/exercices/cablage-11-commande/cablage-11-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
+    'cablage-12': {eleve: 'documents/exercices/cablage-12/cablage-12-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
+    'cablage-12-commande': {eleve: 'documents/exercices/cablage-12-commande/cablage-12-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
+    'cablage-13': {eleve: 'documents/exercices/cablage-13/cablage-13-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
     'cablage-9': {eleve: 'documents/TP-2-Puissance-ELEVE.pdf', nom: 'TP 2 — Puissance (élève, 6 feuilles)'},
     'cablage-9-commande': {eleve: 'documents/TP-Commande-ELEVE.pdf', nom: 'TP — Commande (élève, 4 feuilles)'},
   };
@@ -95,7 +104,7 @@
     const lien = function(a, mode, nom){ return '<a' + (mode === 'reel' ? ' class="reel"' : '') + ' href="jouer.html?ex=' +
       encodeURIComponent(m.id) + '&activite=' + a + '&mode=' + mode + '">' + nom + '</a>'; };
     f.innerHTML = '<a class="apercu" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&activite=cabler&mode=guide" title="Voir et câbler ce schéma">' +
-      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260927-2209" alt="Le schéma de l’exercice" loading="lazy"></a>' +
+      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260928-0648" alt="Le schéma de l’exercice" loading="lazy"></a>' +
       '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
       activites.map(function(a){ return '<div class="modes"><span class="act">' + a[1] + '</span>' +
         lien(a[0], 'guide', 'Guidé') + lien(a[0], 'aide', 'Aidé') + lien(a[0], 'reel', 'Réel') + '</div>'; }).join('') +
@@ -135,6 +144,6 @@
   if (!index.length) document.getElementById('tuiles').textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
 })();
 </script>
-<script src="moteur/marque.js?v=20260927-2209" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260928-0648" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

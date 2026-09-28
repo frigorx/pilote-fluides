@@ -7,9 +7,13 @@
 
 const TEMPO = 3000;   // délai des contacts temporisés (LADS2, relais temporisé), en ms
 const PAS = 100;      // pas du temps dans avancer()
-const PROTECTION = /^(disjonct|gv2|sectionneur|disjoncteur_differentiel)/;
+const PROTECTION = /^(disjonct|gv2|sectionneur|inter[-_]?sectionneur|disjoncteur_differentiel|porte_fusible|pojistka)/;
 const DIFFERENTIEL = /^disjoncteur_differentiel/;
 const THERMIQUE = /^relais_therm/;
+/* Transformateur de commande (n° 10) : primaire 1-2 sous 230 V -> le secondaire devient une source à part, potentiels
+   « 24 » et « 0 » (les noms du sujet EP2 2022). Hors tension au primaire, rien au secondaire. */
+const TRANSFO = ['transfo_mono_2'];
+const SECONDAIRE = ['24', '0'];
 const BOBINE = ['com_puiss_3P_inv2', 'com_puiss4', 'telerupteur', 'bobine3', 'moteur_horloge'];
 const CONTACTEUR = ['com_puiss_3P_inv2', 'com_puiss4'];
 const RECEPTEUR = { lampe2: ['A1', 'A2'], electrovanne: ['A1', 'A2'], 'resistances-chauffantes': ['1', '2'],
@@ -17,16 +21,17 @@ const RECEPTEUR = { lampe2: ['A1', 'A2'], electrovanne: ['A1', 'A2'], 'resistanc
 const MOTEUR_TRI = ['moteur_tri_2', 'induction_motor_6_terminals', 'dahlander_motor_6_terminals'];
 const ORDRE = { L1: 0, L2: 1, L3: 2 };
 
-function phase(p) { return !!p && p !== 'N' && p !== 'PE'; }
+function phase(p) { return !!p && p !== 'N' && p !== 'PE' && !SECONDAIRE.includes(p); }
 
 function role(a) {
   const t = a.type;
   if (/^src_/.test(t) || (t === 'terre' && !/^Masse/.test(a.repere))) return 'source';
+  if (TRANSFO.includes(t)) return 'transfo';
   if (PROTECTION.test(t)) return 'protection';
   if (THERMIQUE.test(t)) return 'thermique';
   if (BOBINE.includes(t)) return 'bobine';
   if (/^poussoir/.test(t)) return 'bouton';
-  if (t === '010_switch_1pos' || t === 'contnonc' || t === 'con_simple') return 'capteur';
+  if (t === '010_switch_1pos' || t === 'contnonc' || t === 'con_simple' || /^arret_urgence/.test(t)) return 'capteur';
   if (RECEPTEUR[t]) return 'recepteur';
   if (MOTEUR_TRI.includes(t)) return 'moteur';
   return 'passif';   // bornier, masses : seulement leurs liaisons internes
@@ -64,13 +69,18 @@ function creer(EX, fils, opts) {
   /* Ce qui conduit dans un appareil, selon son état. */
   function fermes(a, ouverts) {
     const s = S[a.repere], ids = a.bornes.map(b => b.id), r = s.role;
-    if (r === 'protection') return s.enclenche && !s.declenche && !(ouverts && ouverts.has(a.repere)) ? poles(ids) : [];
+    if (r === 'protection') {   // ses pôles, et ses contacts auxiliaires : 13-14 (précoupure) fermé avec lui, 21-22 ouvert avec lui
+      const on = s.enclenche && !s.declenche && !(ouverts && ouverts.has(a.repere));
+      return on ? poles(ids).concat(auxiliaires(ids).filter(([, , u]) => u === 3)) : auxiliaires(ids).filter(([, , u]) => u === 1);
+    }
     if (r === 'thermique') return poles(ids).concat(auxiliaires(ids).filter(([x, , u]) => x[0] === '9' ? (u === 5) !== !!s.declenche : false));
     if (r === 'bobine') {
       const out = [];
       const colle = (s.alim && !s.grillee) || !!s.force;
       if (a.type === 'telerupteur') { if (s.bascule) out.push(['1', '2']); return out; }
       if (CONTACTEUR.includes(a.type) && colle) out.push(...poles(ids));
+      // l'inverseur d'une horloge (1 commun, 2 froid, 4 dégivrage) : 1-2 au repos, 1-4 en période de dégivrage
+      if (a.type === 'moteur_horloge' && ['1', '2', '4'].every(x => ids.includes(x))) out.push(s.periode ? ['1', '4'] : ['1', '2']);
       for (const [x, y, u] of auxiliaires(ids)) {
         if (a.type === 'moteur_horloge') { if (s.periode) out.push([x, y]); continue; }
         const temporise = colle && s.t >= tempo;
@@ -86,7 +96,8 @@ function creer(EX, fils, opts) {
     if (r === 'capteur') {
       if (a.type === 'contnonc') return [s.actionne ? ['1', '4'] : ['1', '2']];
       if (a.type === 'con_simple') return [['1', '2'], ['3', '4']].slice(0, s.etage || 0);
-      return s.ferme ? [['1', '2']] : [];
+      if (/^arret_urgence/.test(a.type)) return s.ferme ? [] : poles(ids);   // NF à verrouillage : armé il conduit, enfoncé il coupe
+      return s.ferme ? poles(ids) : [];   // commutateur : 1-2 ou 3-4 selon ses numéros
     }
     return [];
   }
@@ -99,14 +110,35 @@ function creer(EX, fils, opts) {
     liens.forEach(([x, y], i) => { if (i !== sansFil) u(x, y); });
     for (const a of APP) for (const [x, y] of fermes(a, ouverts)) u(a.repere + ':' + x, a.repere + ':' + y);
     const pots = new Map();
+    const poser = (k, p) => { if (!pots.has(k)) pots.set(k, new Set()); pots.get(k).add(p); };
     if (!coupure) for (const a of APP) if (S[a.repere].role === 'source')
-      for (const b of a.bornes) { const k = f(a.repere + ':' + b.id), p = a.type === 'terre' ? 'PE' : b.id; if (!pots.has(k)) pots.set(k, new Set()); pots.get(k).add(p); }
-    return { racine: f, pots: ref => pots.get(f(ref)) || new Set() };
+      for (const b of a.bornes) poser(f(a.repere + ':' + b.id), a.type === 'terre' ? 'PE' : b.id);
+    const R = { racine: f, pots: ref => pots.get(f(ref)) || new Set() };
+    // les transformateurs : un primaire sous 230 V alimente son secondaire (au plus trois en cascade)
+    const transfos = APP.filter(a => S[a.repere].role === 'transfo');
+    for (let n = 0; n < 3 && transfos.length; n++) {
+      let change = false;
+      for (const a of transfos) {
+        if (!coupure && tension(R, a.repere + ':1', a.repere + ':2') === 230)
+          for (const p of SECONDAIRE) { const k = f(a.repere + ':' + p); if (!R.pots(a.repere + ':' + p).has(p)) { poser(k, p); change = true; } }
+      }
+      if (!change) break;
+    }
+    return R;
   }
   function un(R, ref) { const p = R.pots(ref); return p.size === 1 ? [...p][0] : null; }
+  /* La tension entre deux bornes : 400 entre phases, 230 phase-neutre, 'PE' = retour par la terre (interdit), 24 au
+     secondaire du transformateur ; le 24 V touché par une phase, c'est du 230 (la bobine 24 V n'y résiste pas). */
   function tension(R, x, y) {
     const a = un(R, x), b = un(R, y);
     if (!a || !b || a === b) return 0;
+    const sec = [a, b].filter(p => SECONDAIRE.includes(p));
+    if (sec.length) {
+      if (sec.length === 2) return 24;
+      const autre = a === sec[0] ? b : a;
+      if (phase(autre)) return 230;
+      return sec[0] === '24' ? (autre === 'PE' ? 'PE' : 24) : 0;
+    }
     if (phase(a) && phase(b)) return 400;
     if (phase(a) || phase(b)) return a === 'PE' || b === 'PE' ? 'PE' : 230;
     return 0;
@@ -120,7 +152,14 @@ function creer(EX, fils, opts) {
     for (const [, refs] of par) {
       const p = [...R.pots(refs[0])];
       if (p.length < 2) continue;
-      const ph = p.filter(phase);
+      const ph = p.filter(phase), sec = p.filter(x => SECONDAIRE.includes(x));
+      if (sec.length) {   // le circuit 24 V : son 0 peut aller à la terre, rien d'autre ne se mélange
+        if (p.length === 2 && p.includes('0') && p.includes('PE')) continue;
+        const nature = sec.length === 2 ? 'au secondaire du transformateur (24 V et 0 V)'
+          : ph.length || p.includes('N') ? 'entre le circuit 24 V et l’installation (' + p.join('-') + ')' : 'entre le 24 V et la terre';
+        out.push({ nature, franc: true, pots: p, bornes: refs });
+        continue;
+      }
       const nature = ph.length >= 2 ? 'entre phases (' + ph.join('-') + ')' : ph.length ? 'entre ' + ph[0] + ' et ' + (p.includes('N') ? 'le neutre' : 'la terre') : 'entre le neutre et la terre';
       out.push({ nature, franc: ph.length > 0, pots: p, bornes: refs });
     }
@@ -178,7 +217,7 @@ function creer(EX, fils, opts) {
           if (aide.length) { declencher(laPlusProche(aide), 'la bobine de ' + a.repere + ' revient par la terre'); change = true; continue; }
           signaler('PE' + a.repere, 'La bobine de ' + a.repere + ' revient par la terre au lieu du neutre : interdit.');
         }
-        const alim = (v === 230 || v === 'PE') && !s.grillee;
+        const alim = (v === 230 || v === 24 || v === 'PE') && !s.grillee;
         if (alim !== !!s.alim) {
           s.alim = alim; s.t = 0; change = true;
           if (a.type === 'telerupteur' && alim) s.bascule = !s.bascule;
@@ -256,11 +295,16 @@ function creer(EX, fils, opts) {
       else if (s.role === 'protection') appareils[a.repere] = { enclenche: !!s.enclenche, declenche: !!s.declenche, texte: s.declenche ? 'déclenché' : s.enclenche ? 'enclenché' : 'ouvert' };
       else if (s.role === 'thermique') appareils[a.repere] = { declenche: !!s.declenche, texte: s.declenche ? 'déclenché' : 'armé' };
       else if (s.role === 'bouton') appareils[a.repere] = { appuye: !!s.appuye, texte: s.appuye ? 'appuyé' : 'relâché' };
-      else if (s.role === 'capteur') appareils[a.repere] = { texte: a.type === 'con_simple' ? ['arrêt', '1er étage', '2e étage'][s.etage || 0] : a.type === 'contnonc' ? (s.actionne ? 'actionné (1-4)' : 'au repos (1-2)') : (s.ferme ? 'fermé' : 'ouvert') };
+      else if (s.role === 'capteur') appareils[a.repere] = { texte: a.type === 'con_simple' ? ['arrêt', '1er étage', '2e étage'][s.etage || 0] : a.type === 'contnonc' ? (s.actionne ? 'actionné (1-4)' : 'au repos (1-2)') : /^arret_urgence/.test(a.type) ? (s.ferme ? 'enfoncé (coup de poing)' : 'armé') : (s.ferme ? 'fermé' : 'ouvert') };
+      else if (s.role === 'transfo') {
+        const v = tension(R, a.repere + ':1', a.repere + ':2');
+        if (v === 400) signaler('400' + a.repere, a.repere + ' : primaire sous 400 V, il n’est pas fait pour, il grille.');
+        appareils[a.repere] = { alim: v === 230, texte: v === 230 ? 'sous tension, 24 V au secondaire' : 'hors tension' };
+      }
     }
     for (const [r, v] of Object.entries(appareils)) {   // le journal suit les récepteurs
       const s = S[r].role;
-      if ((s === 'moteur' || s === 'recepteur') && recepteursAvant[r] !== undefined && recepteursAvant[r] !== v.texte) noter(r + ' ' + v.texte + '.');
+      if ((s === 'moteur' || s === 'recepteur' || s === 'transfo') && recepteursAvant[r] !== undefined && recepteursAvant[r] !== v.texte) noter(r + ' ' + v.texte + '.');
       recepteursAvant[r] = v.texte;
     }
     const bornes = {};
