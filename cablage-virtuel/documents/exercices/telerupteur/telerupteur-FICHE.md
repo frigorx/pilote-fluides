@@ -1,7 +1,7 @@
 # Télérupteur : trois boutons poussoirs, deux lampes et leurs masses — documents génériques (Câblage virtuel, inerweb.fr)
 
 Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=telerupteur · palier : 1 · 16 fils.
-Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 27/09/2026. Générique : à adapter au diplôme.
+Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 28/09/2026. Générique : à adapter au diplôme.
 
 ## Ce que fait l'élève
 Il câble le schéma sur l'écran (colorier, repérer, câbler, contrôler), le met sous tension et note ce qu'il observe, puis le réalise et l'essaie sur la platine avec le professeur.

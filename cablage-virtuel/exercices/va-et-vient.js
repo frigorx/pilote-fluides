@@ -615,6 +615,102 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
      "x": 328.0,
      "y": 180.8
     }
+   },
+   "S1": {
+    "modele": "inter-vv-commun-haut",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"inter-vv-commun-haut\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"90\" height=\"90\" rx=\"6\" ry=\"6\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"12\" y=\"12\" width=\"66\" height=\"66\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<rect x=\"26\" y=\"20\" width=\"38\" height=\"50\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"1\" fill=\"#e2e2e0\"/>\n<line x1=\"26\" y1=\"45\" x2=\"64\" y2=\"45\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"45.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"-2.5\" x2=\"47.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"30.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"27.5\" y1=\"87.5\" x2=\"32.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"60.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"57.5\" y1=\"87.5\" x2=\"62.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.5,
+     -2.5,
+     47.5,
+     47.5
+    ],
+    "bornes": [
+     {
+      "id": "1",
+      "x": 22.5,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "4",
+      "x": 15.0,
+      "y": 45.0,
+      "o": 2
+     },
+     {
+      "id": "2",
+      "x": 30.0,
+      "y": 45.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 412.0,
+     "y": 1436.0
+    }
+   },
+   "S2": {
+    "modele": "inter-vv-commun-bas",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"inter-vv-commun-bas\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"90\" height=\"90\" rx=\"6\" ry=\"6\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"12\" y=\"12\" width=\"66\" height=\"66\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<rect x=\"26\" y=\"20\" width=\"38\" height=\"50\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"1\" fill=\"#e2e2e0\"/>\n<line x1=\"26\" y1=\"45\" x2=\"64\" y2=\"45\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"30.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"27.5\" y1=\"-2.5\" x2=\"32.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"60.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"57.5\" y1=\"-2.5\" x2=\"62.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"45.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"87.5\" x2=\"47.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.5,
+     -2.5,
+     47.5,
+     47.5
+    ],
+    "bornes": [
+     {
+      "id": "2",
+      "x": 15.0,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "4",
+      "x": 30.0,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "1",
+      "x": 22.5,
+      "y": 45.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 540.0,
+     "y": 1436.0
+    }
+   },
+   "H1": {
+    "modele": "douille-ampoule",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"douille-ampoule\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"80\" width=\"72\" height=\"20\" rx=\"3\" ry=\"3\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"22\" y=\"56\" width=\"28\" height=\"26\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#d8d8d8\"/>\n<line x1=\"22\" y1=\"64\" x2=\"50\" y2=\"64\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"22\" y1=\"72\" x2=\"50\" y2=\"72\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polygon points=\"26,44 46,44 46,56 26,56\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#bdbdbd\"/>\n<ellipse cx=\"36.00\" cy=\"24.00\" rx=\"24.00\" ry=\"24.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#fff8d6\"/>\n<line x1=\"30\" y1=\"44\" x2=\"30\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"42\" y1=\"44\" x2=\"42\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"30\" y1=\"26\" x2=\"36\" y2=\"20\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"36\" y1=\"20\" x2=\"42\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"18.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"15.5\" y1=\"97.5\" x2=\"20.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"54.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"51.5\" y1=\"97.5\" x2=\"56.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.0,
+     -2.0,
+     38.0,
+     52.0
+    ],
+    "bornes": [
+     {
+      "id": "A1",
+      "x": 9.0,
+      "y": 50.0,
+      "o": 2
+     },
+     {
+      "id": "A2",
+      "x": 27.0,
+      "y": 50.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 259.2,
+     "y": 1432.0
+    }
    }
   },
   "liaisons_fixes": []

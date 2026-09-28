@@ -867,6 +867,186 @@ window.CABLAGE_EXERCICES["telerupteur"] = {
      "x": 328.0,
      "y": 180.8
     }
+   },
+   "K1": {
+    "modele": "telerupteur-modulaire",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"telerupteur-modulaire\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"40\" height=\"200\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<line x1=\"0\" y1=\"150\" x2=\"40\" y2=\"150\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"0\" y1=\"50\" x2=\"40\" y2=\"50\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"0\" y=\"50\" width=\"40\" height=\"30\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#c8dcf0\"/>\n<rect x=\"15\" y=\"95\" width=\"10\" height=\"34\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#5a5a5a\"/>\n<text x=\"3\" y=\"8\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 3 8)\">A1<\/text>\n<text x=\"23\" y=\"8\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 23 8)\">A2<\/text>\n<text x=\"7\" y=\"197\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 7 197)\">1<\/text>\n<text x=\"27\" y=\"197\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 27 197)\">2<\/text>\n<text x=\"9\" y=\"142\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 9 142)\">16A<\/text>\n<circle cx=\"10.00\" cy=\"6.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"7.5\" y1=\"3.5\" x2=\"12.5\" y2=\"8.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"30.00\" cy=\"6.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"27.5\" y1=\"3.5\" x2=\"32.5\" y2=\"8.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"10.00\" cy=\"194.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"7.5\" y1=\"191.5\" x2=\"12.5\" y2=\"196.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"30.00\" cy=\"194.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"27.5\" y1=\"191.5\" x2=\"32.5\" y2=\"196.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.5,
+     -2.5,
+     22.5,
+     102.5
+    ],
+    "bornes": [
+     {
+      "id": "A1",
+      "x": 5.0,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "A2",
+      "x": 15.0,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "1",
+      "x": 5.0,
+      "y": 100.0,
+      "o": 2
+     },
+     {
+      "id": "2",
+      "x": 15.0,
+      "y": 100.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 336.0,
+     "y": 552.0
+    }
+   },
+   "S1": {
+    "modele": "poussoir-mural",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"poussoir-mural\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"90\" height=\"90\" rx=\"6\" ry=\"6\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"12\" y=\"12\" width=\"66\" height=\"66\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<circle cx=\"45.00\" cy=\"45.00\" r=\"22.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e2e2e0\"/>\n<circle cx=\"45.00\" cy=\"45.00\" r=\"14.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f8f8f6\"/>\n<circle cx=\"45.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"-2.5\" x2=\"47.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"45.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"87.5\" x2=\"47.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.5,
+     -2.5,
+     47.5,
+     47.5
+    ],
+    "bornes": [
+     {
+      "id": "1",
+      "x": 22.5,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "2",
+      "x": 22.5,
+      "y": 45.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 492.0,
+     "y": 1436.0
+    }
+   },
+   "S2": {
+    "modele": "poussoir-mural",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"poussoir-mural\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"90\" height=\"90\" rx=\"6\" ry=\"6\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"12\" y=\"12\" width=\"66\" height=\"66\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<circle cx=\"45.00\" cy=\"45.00\" r=\"22.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e2e2e0\"/>\n<circle cx=\"45.00\" cy=\"45.00\" r=\"14.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f8f8f6\"/>\n<circle cx=\"45.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"-2.5\" x2=\"47.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"45.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"87.5\" x2=\"47.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.5,
+     -2.5,
+     47.5,
+     47.5
+    ],
+    "bornes": [
+     {
+      "id": "1",
+      "x": 22.5,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "2",
+      "x": 22.5,
+      "y": 45.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 620.0,
+     "y": 1436.0
+    }
+   },
+   "S3": {
+    "modele": "poussoir-mural",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"poussoir-mural\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"90\" height=\"90\" rx=\"6\" ry=\"6\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"12\" y=\"12\" width=\"66\" height=\"66\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<circle cx=\"45.00\" cy=\"45.00\" r=\"22.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e2e2e0\"/>\n<circle cx=\"45.00\" cy=\"45.00\" r=\"14.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f8f8f6\"/>\n<circle cx=\"45.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"-2.5\" x2=\"47.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"45.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"87.5\" x2=\"47.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.5,
+     -2.5,
+     47.5,
+     47.5
+    ],
+    "bornes": [
+     {
+      "id": "1",
+      "x": 22.5,
+      "y": 0.0,
+      "o": 0
+     },
+     {
+      "id": "2",
+      "x": 22.5,
+      "y": 45.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 748.0,
+     "y": 1436.0
+    }
+   },
+   "H1": {
+    "modele": "douille-ampoule",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"douille-ampoule\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"80\" width=\"72\" height=\"20\" rx=\"3\" ry=\"3\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"22\" y=\"56\" width=\"28\" height=\"26\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#d8d8d8\"/>\n<line x1=\"22\" y1=\"64\" x2=\"50\" y2=\"64\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"22\" y1=\"72\" x2=\"50\" y2=\"72\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polygon points=\"26,44 46,44 46,56 26,56\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#bdbdbd\"/>\n<ellipse cx=\"36.00\" cy=\"24.00\" rx=\"24.00\" ry=\"24.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#fff8d6\"/>\n<line x1=\"30\" y1=\"44\" x2=\"30\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"42\" y1=\"44\" x2=\"42\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"30\" y1=\"26\" x2=\"36\" y2=\"20\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"36\" y1=\"20\" x2=\"42\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"18.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"15.5\" y1=\"97.5\" x2=\"20.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"54.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"51.5\" y1=\"97.5\" x2=\"56.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.0,
+     -2.0,
+     38.0,
+     52.0
+    ],
+    "bornes": [
+     {
+      "id": "A1",
+      "x": 9.0,
+      "y": 50.0,
+      "o": 2
+     },
+     {
+      "id": "A2",
+      "x": 27.0,
+      "y": 50.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 211.2,
+     "y": 1432.0
+    }
+   },
+   "H2": {
+    "modele": "douille-ampoule",
+    "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"douille-ampoule\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"80\" width=\"72\" height=\"20\" rx=\"3\" ry=\"3\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"22\" y=\"56\" width=\"28\" height=\"26\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#d8d8d8\"/>\n<line x1=\"22\" y1=\"64\" x2=\"50\" y2=\"64\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"22\" y1=\"72\" x2=\"50\" y2=\"72\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polygon points=\"26,44 46,44 46,56 26,56\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#bdbdbd\"/>\n<ellipse cx=\"36.00\" cy=\"24.00\" rx=\"24.00\" ry=\"24.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#fff8d6\"/>\n<line x1=\"30\" y1=\"44\" x2=\"30\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"42\" y1=\"44\" x2=\"42\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"30\" y1=\"26\" x2=\"36\" y2=\"20\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"36\" y1=\"20\" x2=\"42\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"18.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"15.5\" y1=\"97.5\" x2=\"20.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"54.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"51.5\" y1=\"97.5\" x2=\"56.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+    "boite": [
+     -2.0,
+     -2.0,
+     38.0,
+     52.0
+    ],
+    "bornes": [
+     {
+      "id": "A1",
+      "x": 9.0,
+      "y": 50.0,
+      "o": 2
+     },
+     {
+      "id": "A2",
+      "x": 27.0,
+      "y": 50.0,
+      "o": 2
+     }
+    ],
+    "implantation": {
+     "x": 371.2,
+     "y": 1432.0
+    }
    }
   },
   "liaisons_fixes": []

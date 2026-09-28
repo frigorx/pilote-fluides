@@ -1198,7 +1198,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "telerupteur-PROFESSEUR.pdf",
-   "taille": 320052
+   "taille": 323380
   },
   {
    "id": "d134",
@@ -1207,7 +1207,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "telerupteur-PROFESSEUR.docx",
-   "taille": 131571
+   "taille": 134898
   },
   {
    "id": "d135",
@@ -1216,7 +1216,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "telerupteur-GRILLE-PROFESSEUR.pdf",
-   "taille": 148169
+   "taille": 148540
   },
   {
    "id": "d136",
@@ -1225,7 +1225,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "telerupteur-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17785
   },
   {
    "id": "d137",
@@ -1243,7 +1243,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "telerupteur-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19092
+   "taille": 19091
   },
   {
    "id": "d139",
@@ -1252,7 +1252,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "va-et-vient-PROFESSEUR.pdf",
-   "taille": 290809
+   "taille": 291530
   },
   {
    "id": "d140",
@@ -1261,7 +1261,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "va-et-vient-PROFESSEUR.docx",
-   "taille": 98988
+   "taille": 99252
   },
   {
    "id": "d141",
@@ -1270,7 +1270,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "va-et-vient-GRILLE-PROFESSEUR.pdf",
-   "taille": 148508
+   "taille": 148884
   },
   {
    "id": "d142",
@@ -1279,7 +1279,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "va-et-vient-GRILLE-PROFESSEUR.docx",
-   "taille": 17782
+   "taille": 17785
   },
   {
    "id": "d143",
@@ -1297,7 +1297,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "va-et-vient-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19082
+   "taille": 19080
   },
   {
    "id": "d145",
@@ -1360,7 +1360,7 @@
    "titre": "Fiche professeur du tutoriel",
    "format": "pdf",
    "fichier": "Tutoriel-Prise-en-main-PROFESSEUR.pdf",
-   "taille": 1007960
+   "taille": 1007903
   },
   {
    "id": "d152",
@@ -1369,7 +1369,7 @@
    "titre": "Fiche professeur du tutoriel",
    "format": "docx",
    "fichier": "Tutoriel-Prise-en-main-PROFESSEUR.docx",
-   "taille": 906809
+   "taille": 906594
   },
   {
    "id": "d153",

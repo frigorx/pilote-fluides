@@ -91,10 +91,14 @@ function demarrer() {
     const cadre = svg && (svg.querySelector('.fond-platine.cadre') || svg.querySelector('.fond-platine'));
     if (!z || !cadre || !z.cadrer) return;
     const c = cadre.getBBox(); if (!c.width || !c.height) return;
+    // 28/09 : quand l'essentiel des bornes est SOUS la platine (appareillage domestique : interrupteurs, poussoirs, douilles),
+    // c'est là que l'élève câble — la zone utile les prend ; sinon elle s'arrête au bornier (le réseau et les moteurs se déplient au doigt)
+    const bornes = [...svg.querySelectorAll('.borne')].map(el => el.getBBox());
+    const dedans = (b) => { const cx = b.x + b.width / 2, cy = b.y + b.height / 2; return cx >= c.x && cx <= c.x + c.width && cy >= c.y && cy <= c.y + c.height; };
+    const tout = bornes.filter(dedans).length < bornes.length / 2;
     let u = null;
-    svg.querySelectorAll('.borne').forEach(el => {
-      const b = el.getBBox(); const cx = b.x + b.width / 2, cy = b.y + b.height / 2;
-      if (cx < c.x || cx > c.x + c.width || cy < c.y || cy > c.y + c.height) return;
+    bornes.forEach(b => {
+      if (!tout && !dedans(b)) return;
       u = u ? { x1: Math.min(u.x1, b.x), y1: Math.min(u.y1, b.y), x2: Math.max(u.x2, b.x + b.width), y2: Math.max(u.y2, b.y + b.height) }
             : { x1: b.x, y1: b.y, x2: b.x + b.width, y2: b.y + b.height };
     });
