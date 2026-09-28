@@ -1026,10 +1026,19 @@ function installerZoom(svg, options) {
   const borner = (w) => Math.min(base[2] * 4, Math.max(base[2] / 8, w));
   const zoomer = (facteur, centre) => {
     const c = centre || { x: etat.x + etat.w / 2, y: etat.y + etat.h / 2 };
-    const w = borner(etat.w / facteur), h = w * base[3] / base[2];
+    const w = borner(etat.w / facteur), h = w * etat.h / etat.w;   // on garde le rapport courant (celui du cadrage, s'il y en a un)
     etat.x = c.x - (c.x - etat.x) * (w / etat.w); etat.y = c.y - (c.y - etat.y) * (h / etat.h); etat.w = w; etat.h = h; appliquer();
   };
   const ajuster = () => { etat.x = base[0]; etat.y = base[1]; etat.w = base[2]; etat.h = base[3]; appliquer(); };
+  // cadrer une zone (x, y, w, h en unités du SVG) au rapport `ratio` (largeur / hauteur du panneau, sinon celui du dessin) :
+  // la platine seule, sans ce qui est dessous (Franck, 28/09, écran adaptatif)
+  const cadrer = (z, marge, ratio) => {
+    marge = marge || 0; const r = ratio || base[2] / base[3];
+    let w = z.w + 2 * marge, h = z.h + 2 * marge;
+    if (w / h < r) w = h * r; else h = w / r;
+    w = borner(w); h = w / r;
+    etat.x = z.x + z.w / 2 - w / 2; etat.y = z.y + z.h / 2 - h / 2; etat.w = w; etat.h = h; appliquer();
+  };
   svg.addEventListener('wheel', (e) => { e.preventDefault(); zoomer(e.deltaY < 0 ? 1.2 : 1 / 1.2, pt(e)); }, { passive: false });
   const doigts = new Map(); let pan = null, pince = null;
   svg.addEventListener('pointerdown', (e) => {
@@ -1058,9 +1067,10 @@ function installerZoom(svg, options) {
   });
   const fin = (e) => { doigts.delete(e.pointerId); if (doigts.size < 2) pince = null; pan = null; };
   svg.addEventListener('pointerup', fin); svg.addEventListener('pointercancel', fin);
-  return { zoomer, ajuster };
+  return { zoomer, ajuster, cadrer };
 }
 function brancherZoom(panneau, z) {
+  panneau._zoom = z;   // l'écran adaptatif (moteur/ecran.js) cadre la platine seule
   panneau.querySelectorAll('button.zoom').forEach(b => {
     b.onclick = () => (b.dataset.zoom === 'plus' ? z.zoomer(1.4) : b.dataset.zoom === 'moins' ? z.zoomer(1 / 1.4) : z.ajuster());
   });

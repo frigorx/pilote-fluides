@@ -53,6 +53,23 @@ function demarrer() {
   bascule($('#carte'), 'platine', 'Platine ›');
   bascule($('#platine'), 'carte', '‹ Carte');
 
+  function cadrerPlatine() {
+    const p = $('#platine'), svg = p && p.querySelector('.corps svg'), z = p && p._zoom;
+    const cadre = svg && (svg.querySelector('.fond-platine.cadre') || svg.querySelector('.fond-platine'));
+    if (!z || !cadre || !z.cadrer) return;
+    const c = cadre.getBBox(); if (!c.width || !c.height) return;
+    // la zone utile : les bornes posées DANS le cadre (des appareils du rail 1 au bornier), pas les bords vides de la platine
+    let u = null;
+    svg.querySelectorAll('.borne').forEach(el => {
+      const b = el.getBBox(); const cx = b.x + b.width / 2, cy = b.y + b.height / 2;
+      if (cx < c.x || cx > c.x + c.width || cy < c.y || cy > c.y + c.height) return;
+      u = u ? { x1: Math.min(u.x1, b.x), y1: Math.min(u.y1, b.y), x2: Math.max(u.x2, b.x + b.width), y2: Math.max(u.y2, b.y + b.height) }
+            : { x1: b.x, y1: b.y, x2: b.x + b.width, y2: b.y + b.height };
+    });
+    const zone = u ? { x: u.x1, y: u.y1, w: u.x2 - u.x1, h: u.y2 - u.y1 + 55 } : { x: c.x, y: c.y, w: c.width, h: c.height };   // + 55 : les repères du bornier, sur deux rangs sous ses bornes
+    const corps = p.querySelector('.corps'), ratio = corps.clientHeight ? corps.clientWidth / corps.clientHeight : null;
+    z.cadrer(zone, 30, ratio);   // 30 unités de marge : les repères et les numéros autour des bornes
+  }
   let manuel = null;
   try { manuel = localStorage.getItem(CLE); } catch (err) { manuel = null; }
   function choisir(v, aLaMain) {
@@ -62,10 +79,12 @@ function demarrer() {
     if (v === 'platine') document.body.classList.add('vue-platine', 'un-panneau');
     nav.querySelectorAll('button').forEach(b => b.classList.toggle('actif', b.dataset.vue === v));
     if (aLaMain) { manuel = v; try { localStorage.setItem(CLE, v); } catch (err) { /* stockage indisponible */ } }
-    // le panneau qui reste prend toute la scène : on le recadre
+    // le panneau qui reste prend toute la scène : on le recadre ; la platine seule se cadre sur la platine elle-même,
+    // sans les moteurs et l'arrivée posés dessous (Franck, 28/09 : « ce qui est après le bornier, je m'en fous »)
     requestAnimationFrame(() => {
       const ids = v === 'carte' ? ['#carte'] : v === 'platine' ? ['#platine'] : ['#carte', '#platine'];
       ids.forEach(s => { const b = $(s + ' button[data-zoom="ajuster"]'); if (b) b.click(); });
+      if (v === 'platine') cadrerPlatine();
       window.dispatchEvent(new Event('resize'));
     });
   }
