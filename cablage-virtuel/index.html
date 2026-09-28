@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — exercices</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260928-0648">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260928-0933">
 </head>
 <body>
 <header class="barre">
@@ -38,8 +38,9 @@
     <div class="liste" id="liste"></div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260928-0648';</script>
-<script src="exercices/index.js?v=20260928-0648"></script>
+<script>window.CABLAGE_VERSION = '20260928-0933';</script>
+<script src="exercices/index.js?v=20260928-0933"></script>
+<script src="moteur/documents.js?v=20260928-0933"></script>
 <script>
 (function(){
   const CHAPITRES = [
@@ -63,36 +64,7 @@
 
   // Les documents à télécharger (Franck, 27/09) : le TP élève est libre ; le TP professeur se demande par courriel.
   const COURRIEL = 'inerweb.fh@gmail.com';
-  const DOCUMENTS = {
-    'allumage-simple': {eleve: 'documents/Tutoriel-Prise-en-main-ELEVE.pdf', nom: 'Feuille élève du tutoriel (2 feuilles)'},
-    'cablage-1-commande': {eleve: 'documents/Mise-sous-tension-ELEVE.pdf', nom: 'Mise sous tension : l’essai (élève, 3 feuilles)'},
-    'cablage-1': {eleve: 'documents/exercices/cablage-1/cablage-1-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-2': {eleve: 'documents/exercices/cablage-2/cablage-2-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-3-commande': {eleve: 'documents/exercices/cablage-3-commande/cablage-3-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-3': {eleve: 'documents/exercices/cablage-3/cablage-3-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-4-commande': {eleve: 'documents/exercices/cablage-4-commande/cablage-4-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-4': {eleve: 'documents/exercices/cablage-4/cablage-4-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-5-commande': {eleve: 'documents/exercices/cablage-5-commande/cablage-5-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-5': {eleve: 'documents/exercices/cablage-5/cablage-5-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-6-commande': {eleve: 'documents/exercices/cablage-6-commande/cablage-6-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-6': {eleve: 'documents/exercices/cablage-6/cablage-6-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-7-commande': {eleve: 'documents/exercices/cablage-7-commande/cablage-7-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-7': {eleve: 'documents/exercices/cablage-7/cablage-7-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-8-commande': {eleve: 'documents/exercices/cablage-8-commande/cablage-8-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-8': {eleve: 'documents/exercices/cablage-8/cablage-8-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'demarrage-direct-tri': {eleve: 'documents/exercices/demarrage-direct-tri/demarrage-direct-tri-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'telerupteur': {eleve: 'documents/exercices/telerupteur/telerupteur-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'va-et-vient': {eleve: 'documents/exercices/va-et-vient/va-et-vient-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-10': {eleve: 'documents/exercices/cablage-10/cablage-10-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-10-commande': {eleve: 'documents/exercices/cablage-10-commande/cablage-10-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-11': {eleve: 'documents/exercices/cablage-11/cablage-11-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-11-commande': {eleve: 'documents/exercices/cablage-11-commande/cablage-11-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-12': {eleve: 'documents/exercices/cablage-12/cablage-12-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-12-commande': {eleve: 'documents/exercices/cablage-12-commande/cablage-12-commande-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-13': {eleve: 'documents/exercices/cablage-13/cablage-13-ELEVE.pdf', nom: 'Feuille élève : câbler, essayer, réaliser (3 feuilles)'},
-    'cablage-9': {eleve: 'documents/TP-2-Puissance-ELEVE.pdf', nom: 'TP 2 — Puissance (élève, 6 feuilles)'},
-    'cablage-9-commande': {eleve: 'documents/TP-Commande-ELEVE.pdf', nom: 'TP — Commande (élève, 4 feuilles)'},
-  };
+  const DOCUMENTS = window.CABLAGE_DOCUMENTS || {};
   const documents = function(id){ const d = DOCUMENTS[id]; if (!d) return '';
     return '<div class="documents"><a href="' + d.eleve + '" download>📄 ' + d.nom + '</a>' +
       '<a href="documents-professeur.html#' + id + '">🔒 Documents professeur (code enseignant)</a></div>'; };
@@ -104,7 +76,7 @@
     const lien = function(a, mode, nom){ return '<a' + (mode === 'reel' ? ' class="reel"' : '') + ' href="jouer.html?ex=' +
       encodeURIComponent(m.id) + '&activite=' + a + '&mode=' + mode + '">' + nom + '</a>'; };
     f.innerHTML = '<a class="apercu" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&activite=cabler&mode=guide" title="Voir et câbler ce schéma">' +
-      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260928-0648" alt="Le schéma de l’exercice" loading="lazy"></a>' +
+      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260928-0933" alt="Le schéma de l’exercice" loading="lazy"></a>' +
       '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
       activites.map(function(a){ return '<div class="modes"><span class="act">' + a[1] + '</span>' +
         lien(a[0], 'guide', 'Guidé') + lien(a[0], 'aide', 'Aidé') + lien(a[0], 'reel', 'Réel') + '</div>'; }).join('') +
@@ -144,6 +116,6 @@
   if (!index.length) document.getElementById('tuiles').textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
 })();
 </script>
-<script src="moteur/marque.js?v=20260928-0648" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260928-0933" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

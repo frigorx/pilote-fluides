@@ -211,3 +211,24 @@ body.sur-carte .outils .couleurs{flex:1 0 100%;min-height:48px}   /* palette ou 
 .outils .couleur.potentiel span{display:block;font:bold 16px "Trebuchet MS",Arial,sans-serif;color:#fff;text-shadow:0 0 3px #000,0 0 2px #000}
 .outils .touche{min-width:56px;font:bold 20px "Trebuchet MS",Arial,sans-serif;color:var(--bleu)}
 .fiche .modes .act{flex:0 0 88px;align-self:center;font-weight:700;font-size:15px;color:var(--txt)}
+
+/* ---- l'écran adaptatif (moteur/ecran.js, 28/09) : un panneau ou deux, plein écran, feuille à imprimer ---- */
+.barre .vues button{font-weight:700}
+.barre #btn-reperes,.barre .plein-ecran{min-height:38px;padding:0 12px;font-size:15px;background:transparent;color:#fff;border:2px solid #5f7ea6;border-radius:12px}
+.barre .plein-ecran{font-size:20px;padding:0 10px}
+.barre #btn-reperes.actif,.barre .plein-ecran.actif{background:#fff;color:var(--bleu);border-color:var(--orange)}
+body:not(.un-panneau) #btn-reperes{display:none}
+.consigne .feuille{flex:none;min-height:40px;display:inline-flex;align-items:center;padding:0 12px;border:2px solid var(--ligne);border-radius:12px;
+  background:#fff;color:var(--bleu);text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap}
+.panneau .entete .basculer{display:none;min-height:40px;padding:0 14px;font-size:16px;font-weight:700;color:#fff;background:var(--bleu);border-color:var(--bleu)}
+/* un seul panneau : il prend toute la scène, la consigne se resserre, la nomenclature se replie derrière « Repères » */
+body.un-panneau .scene{grid-template-columns:1fr;grid-template-rows:1fr;padding:6px;gap:0}
+body.vue-platine #carte,body.vue-carte-seule #platine{display:none}
+body.un-panneau .panneau .entete .basculer{display:inline-flex;align-items:center}
+body.un-panneau .consigne{min-height:44px;padding:4px 10px}
+body.un-panneau .consigne .texte{font-size:16px}
+body.un-panneau .consigne .texte small{display:none}
+body.un-panneau .nomenclature{display:none}
+body.un-panneau.montre-reperes .nomenclature{display:flex}
+body.un-panneau .outils{padding-top:6px;padding-bottom:6px}
+@media (max-width:820px){.barre .vues button{padding:0 9px;font-size:14px}}
