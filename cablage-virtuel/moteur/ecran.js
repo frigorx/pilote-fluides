@@ -118,7 +118,7 @@ function demarrer() {
   }
   appliquer();
   // un petit écran, la première fois : on propose, on n'impose pas
-  if (PETIT() && !pref.propose) {
+  if (PETIT() && !pref.propose && ID !== 'allumage-simple') {   // pas par-dessus le tutoriel de prise en main
     pref.propose = true; garder();
     const a = $('#astuce-affichage'); a.textContent = 'Cet écran est petit : la platine seule, ou l’un sous l’autre, est plus lisible. À vous de choisir ; vous pourrez changer à tout moment par « Affichage ».'; a.hidden = false;
     ouvrir();
