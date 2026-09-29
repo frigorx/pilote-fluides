@@ -5,1374 +5,1590 @@
  "documents": [
   {
    "id": "d001",
+   "groupe": "allumage-simple",
+   "exercice": "Allumage simple : disjoncteur 1P+N, interrupteur, lampe et sa masse",
+   "titre": "Fiche professeur",
+   "format": "pdf",
+   "fichier": "allumage-simple-PROFESSEUR.pdf",
+   "taille": 295966
+  },
+  {
+   "id": "d002",
+   "groupe": "allumage-simple",
+   "exercice": "Allumage simple : disjoncteur 1P+N, interrupteur, lampe et sa masse",
+   "titre": "Fiche professeur",
+   "format": "docx",
+   "fichier": "allumage-simple-PROFESSEUR.docx",
+   "taille": 106760
+  },
+  {
+   "id": "d003",
+   "groupe": "allumage-simple",
+   "exercice": "Allumage simple : disjoncteur 1P+N, interrupteur, lampe et sa masse",
+   "titre": "Grille d’évaluation",
+   "format": "pdf",
+   "fichier": "allumage-simple-GRILLE-PROFESSEUR.pdf",
+   "taille": 161360
+  },
+  {
+   "id": "d004",
+   "groupe": "allumage-simple",
+   "exercice": "Allumage simple : disjoncteur 1P+N, interrupteur, lampe et sa masse",
+   "titre": "Grille d’évaluation",
+   "format": "docx",
+   "fichier": "allumage-simple-GRILLE-PROFESSEUR.docx",
+   "taille": 17958
+  },
+  {
+   "id": "d005",
+   "groupe": "allumage-simple",
+   "exercice": "Allumage simple : disjoncteur 1P+N, interrupteur, lampe et sa masse",
+   "titre": "Plan de séance",
+   "format": "pdf",
+   "fichier": "allumage-simple-PLAN-SEANCE-PROFESSEUR.pdf",
+   "taille": 294971
+  },
+  {
+   "id": "d006",
+   "groupe": "allumage-simple",
+   "exercice": "Allumage simple : disjoncteur 1P+N, interrupteur, lampe et sa masse",
+   "titre": "Plan de séance",
+   "format": "docx",
+   "fichier": "allumage-simple-PLAN-SEANCE-PROFESSEUR.docx",
+   "taille": 19263
+  },
+  {
+   "id": "d007",
    "groupe": "cablage-1",
    "exercice": "Câblage n° 1 : disjoncteur, contacteur, relais thermique, moteur triphasé",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-1-PROFESSEUR.pdf",
-   "taille": 379882
+   "taille": 373902
   },
   {
-   "id": "d002",
+   "id": "d008",
    "groupe": "cablage-1",
    "exercice": "Câblage n° 1 : disjoncteur, contacteur, relais thermique, moteur triphasé",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-1-PROFESSEUR.docx",
-   "taille": 192129
+   "taille": 197689
   },
   {
-   "id": "d003",
+   "id": "d009",
    "groupe": "cablage-1",
    "exercice": "Câblage n° 1 : disjoncteur, contacteur, relais thermique, moteur triphasé",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-1-GRILLE-PROFESSEUR.pdf",
-   "taille": 148355
+   "taille": 161509
   },
   {
-   "id": "d004",
+   "id": "d010",
    "groupe": "cablage-1",
    "exercice": "Câblage n° 1 : disjoncteur, contacteur, relais thermique, moteur triphasé",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-1-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17958
   },
   {
-   "id": "d005",
+   "id": "d011",
    "groupe": "cablage-1",
    "exercice": "Câblage n° 1 : disjoncteur, contacteur, relais thermique, moteur triphasé",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-1-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 291283
+   "taille": 292829
   },
   {
-   "id": "d006",
+   "id": "d012",
    "groupe": "cablage-1",
    "exercice": "Câblage n° 1 : disjoncteur, contacteur, relais thermique, moteur triphasé",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-1-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19092
+   "taille": 19271
   },
   {
-   "id": "d007",
+   "id": "d013",
+   "groupe": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
+   "titre": "Fiche professeur",
+   "format": "pdf",
+   "fichier": "cablage-1-commande-PROFESSEUR.pdf",
+   "taille": 394959
+  },
+  {
+   "id": "d014",
+   "groupe": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
+   "titre": "Fiche professeur",
+   "format": "docx",
+   "fichier": "cablage-1-commande-PROFESSEUR.docx",
+   "taille": 227843
+  },
+  {
+   "id": "d015",
+   "groupe": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
+   "titre": "Grille d’évaluation",
+   "format": "pdf",
+   "fichier": "cablage-1-commande-GRILLE-PROFESSEUR.pdf",
+   "taille": 161569
+  },
+  {
+   "id": "d016",
+   "groupe": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
+   "titre": "Grille d’évaluation",
+   "format": "docx",
+   "fichier": "cablage-1-commande-GRILLE-PROFESSEUR.docx",
+   "taille": 17959
+  },
+  {
+   "id": "d017",
+   "groupe": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
+   "titre": "Plan de séance",
+   "format": "pdf",
+   "fichier": "cablage-1-commande-PLAN-SEANCE-PROFESSEUR.pdf",
+   "taille": 297048
+  },
+  {
+   "id": "d018",
+   "groupe": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
+   "titre": "Plan de séance",
+   "format": "docx",
+   "fichier": "cablage-1-commande-PLAN-SEANCE-PROFESSEUR.docx",
+   "taille": 19292
+  },
+  {
+   "id": "d019",
    "groupe": "cablage-10",
    "exercice": "Câblage n° 10 : le sujet national EP2 2022, la puissance — porte-fusibles, disjoncteur moteur, pontage du thermique, transformateur",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-10-PROFESSEUR.pdf",
-   "taille": 494629
+   "taille": 499607
   },
   {
-   "id": "d008",
+   "id": "d020",
    "groupe": "cablage-10",
    "exercice": "Câblage n° 10 : le sujet national EP2 2022, la puissance — porte-fusibles, disjoncteur moteur, pontage du thermique, transformateur",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-10-PROFESSEUR.docx",
-   "taille": 325786
+   "taille": 345980
   },
   {
-   "id": "d009",
+   "id": "d021",
    "groupe": "cablage-10",
    "exercice": "Câblage n° 10 : le sujet national EP2 2022, la puissance — porte-fusibles, disjoncteur moteur, pontage du thermique, transformateur",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-10-GRILLE-PROFESSEUR.pdf",
-   "taille": 148998
+   "taille": 161575
   },
   {
-   "id": "d010",
+   "id": "d022",
    "groupe": "cablage-10",
    "exercice": "Câblage n° 10 : le sujet national EP2 2022, la puissance — porte-fusibles, disjoncteur moteur, pontage du thermique, transformateur",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-10-GRILLE-PROFESSEUR.docx",
-   "taille": 17783
+   "taille": 17957
   },
   {
-   "id": "d011",
+   "id": "d023",
    "groupe": "cablage-10",
    "exercice": "Câblage n° 10 : le sujet national EP2 2022, la puissance — porte-fusibles, disjoncteur moteur, pontage du thermique, transformateur",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-10-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 293605
+   "taille": 296046
   },
   {
-   "id": "d012",
+   "id": "d024",
    "groupe": "cablage-10",
    "exercice": "Câblage n° 10 : le sujet national EP2 2022, la puissance — porte-fusibles, disjoncteur moteur, pontage du thermique, transformateur",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-10-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19132
+   "taille": 19294
   },
   {
-   "id": "d013",
+   "id": "d025",
    "groupe": "cablage-10-commande",
    "exercice": "Câblage n° 10 — la commande 24 V du sujet national EP2 2022 : arrêt d'urgence, commutateur, pressostats, thermostat, électrovanne, voyants",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-10-commande-PROFESSEUR.pdf",
-   "taille": 560072
+   "taille": 581145
   },
   {
-   "id": "d014",
+   "id": "d026",
    "groupe": "cablage-10-commande",
    "exercice": "Câblage n° 10 — la commande 24 V du sujet national EP2 2022 : arrêt d'urgence, commutateur, pressostats, thermostat, électrovanne, voyants",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-10-commande-PROFESSEUR.docx",
-   "taille": 370721
+   "taille": 401917
   },
   {
-   "id": "d015",
+   "id": "d027",
    "groupe": "cablage-10-commande",
    "exercice": "Câblage n° 10 — la commande 24 V du sujet national EP2 2022 : arrêt d'urgence, commutateur, pressostats, thermostat, électrovanne, voyants",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-10-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 149438
+   "taille": 161573
   },
   {
-   "id": "d016",
+   "id": "d028",
    "groupe": "cablage-10-commande",
    "exercice": "Câblage n° 10 — la commande 24 V du sujet national EP2 2022 : arrêt d'urgence, commutateur, pressostats, thermostat, électrovanne, voyants",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-10-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17954
   },
   {
-   "id": "d017",
+   "id": "d029",
    "groupe": "cablage-10-commande",
    "exercice": "Câblage n° 10 — la commande 24 V du sujet national EP2 2022 : arrêt d'urgence, commutateur, pressostats, thermostat, électrovanne, voyants",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-10-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292678
+   "taille": 295660
   },
   {
-   "id": "d018",
+   "id": "d030",
    "groupe": "cablage-10-commande",
    "exercice": "Câblage n° 10 — la commande 24 V du sujet national EP2 2022 : arrêt d'urgence, commutateur, pressostats, thermostat, électrovanne, voyants",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-10-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19184
+   "taille": 19329
   },
   {
-   "id": "d019",
+   "id": "d031",
    "groupe": "cablage-11",
    "exercice": "Câblage n° 11 : le sujet EP2 2013, la puissance — deux départs sous porte-fusibles, transformateur de commande",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-11-PROFESSEUR.pdf",
-   "taille": 468428
+   "taille": 460750
   },
   {
-   "id": "d020",
+   "id": "d032",
    "groupe": "cablage-11",
    "exercice": "Câblage n° 11 : le sujet EP2 2013, la puissance — deux départs sous porte-fusibles, transformateur de commande",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-11-PROFESSEUR.docx",
-   "taille": 307121
+   "taille": 312397
   },
   {
-   "id": "d021",
+   "id": "d033",
    "groupe": "cablage-11",
    "exercice": "Câblage n° 11 : le sujet EP2 2013, la puissance — deux départs sous porte-fusibles, transformateur de commande",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-11-GRILLE-PROFESSEUR.pdf",
-   "taille": 148952
+   "taille": 161572
   },
   {
-   "id": "d022",
+   "id": "d034",
    "groupe": "cablage-11",
    "exercice": "Câblage n° 11 : le sujet EP2 2013, la puissance — deux départs sous porte-fusibles, transformateur de commande",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-11-GRILLE-PROFESSEUR.docx",
-   "taille": 17783
+   "taille": 17957
   },
   {
-   "id": "d023",
+   "id": "d035",
    "groupe": "cablage-11",
    "exercice": "Câblage n° 11 : le sujet EP2 2013, la puissance — deux départs sous porte-fusibles, transformateur de commande",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-11-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 293226
+   "taille": 294973
   },
   {
-   "id": "d024",
+   "id": "d036",
    "groupe": "cablage-11",
    "exercice": "Câblage n° 11 : le sujet EP2 2013, la puissance — deux départs sous porte-fusibles, transformateur de commande",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-11-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19122
+   "taille": 19289
   },
   {
-   "id": "d025",
+   "id": "d037",
    "groupe": "cablage-11-commande",
    "exercice": "Câblage n° 11 — la commande du sujet EP2 2013 : relais auxiliaire KA1, pressostats, thermostat, électrovanne",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-11-commande-PROFESSEUR.pdf",
-   "taille": 548210
+   "taille": 557757
   },
   {
-   "id": "d026",
+   "id": "d038",
    "groupe": "cablage-11-commande",
    "exercice": "Câblage n° 11 — la commande du sujet EP2 2013 : relais auxiliaire KA1, pressostats, thermostat, électrovanne",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-11-commande-PROFESSEUR.docx",
-   "taille": 367141
+   "taille": 389167
   },
   {
-   "id": "d027",
+   "id": "d039",
    "groupe": "cablage-11-commande",
    "exercice": "Câblage n° 11 — la commande du sujet EP2 2013 : relais auxiliaire KA1, pressostats, thermostat, électrovanne",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-11-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 149107
+   "taille": 161570
   },
   {
-   "id": "d028",
+   "id": "d040",
    "groupe": "cablage-11-commande",
    "exercice": "Câblage n° 11 — la commande du sujet EP2 2013 : relais auxiliaire KA1, pressostats, thermostat, électrovanne",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-11-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17783
+   "taille": 17955
   },
   {
-   "id": "d029",
+   "id": "d041",
    "groupe": "cablage-11-commande",
    "exercice": "Câblage n° 11 — la commande du sujet EP2 2013 : relais auxiliaire KA1, pressostats, thermostat, électrovanne",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-11-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 293316
+   "taille": 295158
   },
   {
-   "id": "d030",
+   "id": "d042",
    "groupe": "cablage-11-commande",
    "exercice": "Câblage n° 11 — la commande du sujet EP2 2013 : relais auxiliaire KA1, pressostats, thermostat, électrovanne",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-11-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19163
+   "taille": 19317
   },
   {
-   "id": "d031",
+   "id": "d043",
    "groupe": "cablage-12",
    "exercice": "Câblage n° 12 : le bac 2008, la puissance — compresseur tri sous porte-fusibles, condenseur mono ponté, commande en 230 V",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-12-PROFESSEUR.pdf",
-   "taille": 435280
+   "taille": 421719
   },
   {
-   "id": "d032",
+   "id": "d044",
    "groupe": "cablage-12",
    "exercice": "Câblage n° 12 : le bac 2008, la puissance — compresseur tri sous porte-fusibles, condenseur mono ponté, commande en 230 V",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-12-PROFESSEUR.docx",
-   "taille": 258905
+   "taille": 264065
   },
   {
-   "id": "d033",
+   "id": "d045",
    "groupe": "cablage-12",
    "exercice": "Câblage n° 12 : le bac 2008, la puissance — compresseur tri sous porte-fusibles, condenseur mono ponté, commande en 230 V",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-12-GRILLE-PROFESSEUR.pdf",
-   "taille": 149079
+   "taille": 161577
   },
   {
-   "id": "d034",
+   "id": "d046",
    "groupe": "cablage-12",
    "exercice": "Câblage n° 12 : le bac 2008, la puissance — compresseur tri sous porte-fusibles, condenseur mono ponté, commande en 230 V",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-12-GRILLE-PROFESSEUR.docx",
-   "taille": 17785
+   "taille": 17955
   },
   {
-   "id": "d035",
+   "id": "d047",
    "groupe": "cablage-12",
    "exercice": "Câblage n° 12 : le bac 2008, la puissance — compresseur tri sous porte-fusibles, condenseur mono ponté, commande en 230 V",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-12-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 293032
+   "taille": 296056
   },
   {
-   "id": "d036",
+   "id": "d048",
    "groupe": "cablage-12",
    "exercice": "Câblage n° 12 : le bac 2008, la puissance — compresseur tri sous porte-fusibles, condenseur mono ponté, commande en 230 V",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-12-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19128
+   "taille": 19312
   },
   {
-   "id": "d037",
+   "id": "d049",
    "groupe": "cablage-12-commande",
    "exercice": "Câblage n° 12 — la commande du bac 2008 : horloge de dégivrage, quatre voyants, précoupure, pressostats, thermostat d'ambiance",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-12-commande-PROFESSEUR.pdf",
-   "taille": 550809
+   "taille": 561590
   },
   {
-   "id": "d038",
+   "id": "d050",
    "groupe": "cablage-12-commande",
    "exercice": "Câblage n° 12 — la commande du bac 2008 : horloge de dégivrage, quatre voyants, précoupure, pressostats, thermostat d'ambiance",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-12-commande-PROFESSEUR.docx",
-   "taille": 356310
+   "taille": 376272
   },
   {
-   "id": "d039",
+   "id": "d051",
    "groupe": "cablage-12-commande",
    "exercice": "Câblage n° 12 — la commande du bac 2008 : horloge de dégivrage, quatre voyants, précoupure, pressostats, thermostat d'ambiance",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-12-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 149260
+   "taille": 161575
   },
   {
-   "id": "d040",
+   "id": "d052",
    "groupe": "cablage-12-commande",
    "exercice": "Câblage n° 12 — la commande du bac 2008 : horloge de dégivrage, quatre voyants, précoupure, pressostats, thermostat d'ambiance",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-12-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17785
+   "taille": 17955
   },
   {
-   "id": "d041",
+   "id": "d053",
    "groupe": "cablage-12-commande",
    "exercice": "Câblage n° 12 — la commande du bac 2008 : horloge de dégivrage, quatre voyants, précoupure, pressostats, thermostat d'ambiance",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-12-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292921
+   "taille": 295983
   },
   {
-   "id": "d042",
+   "id": "d054",
    "groupe": "cablage-12-commande",
    "exercice": "Câblage n° 12 — la commande du bac 2008 : horloge de dégivrage, quatre voyants, précoupure, pressostats, thermostat d'ambiance",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-12-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19177
+   "taille": 19336
   },
   {
-   "id": "d043",
+   "id": "d055",
    "groupe": "cablage-13",
    "exercice": "Câblage n° 13 : CCF EP1 2021 (folio 10), la puissance — le ventilateur du condenseur repassé en 230 V mono, pontage dans le disjoncteur moteur",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-13-PROFESSEUR.pdf",
-   "taille": 507382
+   "taille": 481210
   },
   {
-   "id": "d044",
+   "id": "d056",
    "groupe": "cablage-13",
    "exercice": "Câblage n° 13 : CCF EP1 2021 (folio 10), la puissance — le ventilateur du condenseur repassé en 230 V mono, pontage dans le disjoncteur moteur",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-13-PROFESSEUR.docx",
-   "taille": 338980
+   "taille": 333239
   },
   {
-   "id": "d045",
+   "id": "d057",
    "groupe": "cablage-13",
    "exercice": "Câblage n° 13 : CCF EP1 2021 (folio 10), la puissance — le ventilateur du condenseur repassé en 230 V mono, pontage dans le disjoncteur moteur",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-13-GRILLE-PROFESSEUR.pdf",
-   "taille": 149152
+   "taille": 161575
   },
   {
-   "id": "d046",
+   "id": "d058",
    "groupe": "cablage-13",
    "exercice": "Câblage n° 13 : CCF EP1 2021 (folio 10), la puissance — le ventilateur du condenseur repassé en 230 V mono, pontage dans le disjoncteur moteur",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-13-GRILLE-PROFESSEUR.docx",
-   "taille": 17785
+   "taille": 17955
   },
   {
-   "id": "d047",
+   "id": "d059",
    "groupe": "cablage-13",
    "exercice": "Câblage n° 13 : CCF EP1 2021 (folio 10), la puissance — le ventilateur du condenseur repassé en 230 V mono, pontage dans le disjoncteur moteur",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-13-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 294348
+   "taille": 296825
   },
   {
-   "id": "d048",
+   "id": "d060",
    "groupe": "cablage-13",
    "exercice": "Câblage n° 13 : CCF EP1 2021 (folio 10), la puissance — le ventilateur du condenseur repassé en 230 V mono, pontage dans le disjoncteur moteur",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-13-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19137
+   "taille": 19295
   },
   {
-   "id": "d049",
+   "id": "d061",
    "groupe": "cablage-2",
    "exercice": "Câblage n° 2 : le pump-down sur bornier — thermostat, électrovanne, pressostats, compresseur, ventilateurs",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-2-PROFESSEUR.pdf",
-   "taille": 439108
+   "taille": 435176
   },
   {
-   "id": "d050",
+   "id": "d062",
    "groupe": "cablage-2",
    "exercice": "Câblage n° 2 : le pump-down sur bornier — thermostat, électrovanne, pressostats, compresseur, ventilateurs",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-2-PROFESSEUR.docx",
-   "taille": 257442
+   "taille": 260707
   },
   {
-   "id": "d051",
+   "id": "d063",
    "groupe": "cablage-2",
    "exercice": "Câblage n° 2 : le pump-down sur bornier — thermostat, électrovanne, pressostats, compresseur, ventilateurs",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-2-GRILLE-PROFESSEUR.pdf",
-   "taille": 148903
+   "taille": 161512
   },
   {
-   "id": "d052",
+   "id": "d064",
    "groupe": "cablage-2",
    "exercice": "Câblage n° 2 : le pump-down sur bornier — thermostat, électrovanne, pressostats, compresseur, ventilateurs",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-2-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17958
   },
   {
-   "id": "d053",
+   "id": "d065",
    "groupe": "cablage-2",
    "exercice": "Câblage n° 2 : le pump-down sur bornier — thermostat, électrovanne, pressostats, compresseur, ventilateurs",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-2-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292011
+   "taille": 296302
   },
   {
-   "id": "d054",
+   "id": "d066",
    "groupe": "cablage-2",
    "exercice": "Câblage n° 2 : le pump-down sur bornier — thermostat, électrovanne, pressostats, compresseur, ventilateurs",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-2-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19157
+   "taille": 19328
   },
   {
-   "id": "d055",
+   "id": "d067",
    "groupe": "cablage-3",
    "exercice": "Câblage n° 3 : deux départs moteurs sous un disjoncteur de tête tétrapolaire",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-3-PROFESSEUR.pdf",
-   "taille": 473850
+   "taille": 474456
   },
   {
-   "id": "d056",
+   "id": "d068",
    "groupe": "cablage-3",
    "exercice": "Câblage n° 3 : deux départs moteurs sous un disjoncteur de tête tétrapolaire",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-3-PROFESSEUR.docx",
-   "taille": 289660
+   "taille": 310707
   },
   {
-   "id": "d057",
+   "id": "d069",
    "groupe": "cablage-3",
    "exercice": "Câblage n° 3 : deux départs moteurs sous un disjoncteur de tête tétrapolaire",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-3-GRILLE-PROFESSEUR.pdf",
-   "taille": 148372
+   "taille": 161510
   },
   {
-   "id": "d058",
+   "id": "d070",
    "groupe": "cablage-3",
    "exercice": "Câblage n° 3 : deux départs moteurs sous un disjoncteur de tête tétrapolaire",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-3-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17957
   },
   {
-   "id": "d059",
+   "id": "d071",
    "groupe": "cablage-3",
    "exercice": "Câblage n° 3 : deux départs moteurs sous un disjoncteur de tête tétrapolaire",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-3-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 291146
+   "taille": 294574
   },
   {
-   "id": "d060",
+   "id": "d072",
    "groupe": "cablage-3",
    "exercice": "Câblage n° 3 : deux départs moteurs sous un disjoncteur de tête tétrapolaire",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-3-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19102
+   "taille": 19283
   },
   {
-   "id": "d061",
+   "id": "d073",
    "groupe": "cablage-3-commande",
    "exercice": "Câblage n° 3 — la commande : deux départs, deux marche-arrêt à auto-maintien",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-3-commande-PROFESSEUR.pdf",
-   "taille": 512975
+   "taille": 497759
   },
   {
-   "id": "d062",
+   "id": "d074",
    "groupe": "cablage-3-commande",
    "exercice": "Câblage n° 3 — la commande : deux départs, deux marche-arrêt à auto-maintien",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-3-commande-PROFESSEUR.docx",
-   "taille": 344361
+   "taille": 339906
   },
   {
-   "id": "d063",
+   "id": "d075",
    "groupe": "cablage-3-commande",
    "exercice": "Câblage n° 3 — la commande : deux départs, deux marche-arrêt à auto-maintien",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-3-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 148381
+   "taille": 161571
   },
   {
-   "id": "d064",
+   "id": "d076",
    "groupe": "cablage-3-commande",
    "exercice": "Câblage n° 3 — la commande : deux départs, deux marche-arrêt à auto-maintien",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-3-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17782
+   "taille": 17955
   },
   {
-   "id": "d065",
+   "id": "d077",
    "groupe": "cablage-3-commande",
    "exercice": "Câblage n° 3 — la commande : deux départs, deux marche-arrêt à auto-maintien",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-3-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 291358
+   "taille": 296170
   },
   {
-   "id": "d066",
+   "id": "d078",
    "groupe": "cablage-3-commande",
    "exercice": "Câblage n° 3 — la commande : deux départs, deux marche-arrêt à auto-maintien",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-3-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19132
+   "taille": 19302
   },
   {
-   "id": "d067",
+   "id": "d079",
    "groupe": "cablage-4",
    "exercice": "Câblage n° 4 : inversion du sens de marche d'un moteur triphasé",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-4-PROFESSEUR.pdf",
-   "taille": 388675
+   "taille": 383956
   },
   {
-   "id": "d068",
+   "id": "d080",
    "groupe": "cablage-4",
    "exercice": "Câblage n° 4 : inversion du sens de marche d'un moteur triphasé",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-4-PROFESSEUR.docx",
-   "taille": 200306
+   "taille": 209364
   },
   {
-   "id": "d069",
+   "id": "d081",
    "groupe": "cablage-4",
    "exercice": "Câblage n° 4 : inversion du sens de marche d'un moteur triphasé",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-4-GRILLE-PROFESSEUR.pdf",
-   "taille": 148434
+   "taille": 161510
   },
   {
-   "id": "d070",
+   "id": "d082",
    "groupe": "cablage-4",
    "exercice": "Câblage n° 4 : inversion du sens de marche d'un moteur triphasé",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-4-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17957
   },
   {
-   "id": "d071",
+   "id": "d083",
    "groupe": "cablage-4",
    "exercice": "Câblage n° 4 : inversion du sens de marche d'un moteur triphasé",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-4-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 290794
+   "taille": 292674
   },
   {
-   "id": "d072",
+   "id": "d084",
    "groupe": "cablage-4",
    "exercice": "Câblage n° 4 : inversion du sens de marche d'un moteur triphasé",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-4-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19095
+   "taille": 19277
   },
   {
-   "id": "d073",
+   "id": "d085",
    "groupe": "cablage-4-commande",
    "exercice": "Câblage n° 4 — la commande : inversion du sens de marche, verrouillage électrique 21-22",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-4-commande-PROFESSEUR.pdf",
-   "taille": 454700
+   "taille": 420876
   },
   {
-   "id": "d074",
+   "id": "d086",
    "groupe": "cablage-4-commande",
    "exercice": "Câblage n° 4 — la commande : inversion du sens de marche, verrouillage électrique 21-22",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-4-commande-PROFESSEUR.docx",
-   "taille": 273805
+   "taille": 252213
   },
   {
-   "id": "d075",
+   "id": "d087",
    "groupe": "cablage-4-commande",
    "exercice": "Câblage n° 4 — la commande : inversion du sens de marche, verrouillage électrique 21-22",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-4-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 148433
+   "taille": 161569
   },
   {
-   "id": "d076",
+   "id": "d088",
    "groupe": "cablage-4-commande",
    "exercice": "Câblage n° 4 — la commande : inversion du sens de marche, verrouillage électrique 21-22",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-4-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17785
+   "taille": 17958
   },
   {
-   "id": "d077",
+   "id": "d089",
    "groupe": "cablage-4-commande",
    "exercice": "Câblage n° 4 — la commande : inversion du sens de marche, verrouillage électrique 21-22",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-4-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 290448
+   "taille": 295714
   },
   {
-   "id": "d078",
+   "id": "d090",
    "groupe": "cablage-4-commande",
    "exercice": "Câblage n° 4 — la commande : inversion du sens de marche, verrouillage électrique 21-22",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-4-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19138
+   "taille": 19310
   },
   {
-   "id": "d079",
+   "id": "d091",
    "groupe": "cablage-5",
    "exercice": "Câblage n° 5 : démarrage étoile-triangle d'un moteur triphasé",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-5-PROFESSEUR.pdf",
-   "taille": 419622
+   "taille": 423385
   },
   {
-   "id": "d080",
+   "id": "d092",
    "groupe": "cablage-5",
    "exercice": "Câblage n° 5 : démarrage étoile-triangle d'un moteur triphasé",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-5-PROFESSEUR.docx",
-   "taille": 244247
+   "taille": 257842
   },
   {
-   "id": "d081",
+   "id": "d093",
    "groupe": "cablage-5",
    "exercice": "Câblage n° 5 : démarrage étoile-triangle d'un moteur triphasé",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-5-GRILLE-PROFESSEUR.pdf",
-   "taille": 148417
+   "taille": 161510
   },
   {
-   "id": "d082",
+   "id": "d094",
    "groupe": "cablage-5",
    "exercice": "Câblage n° 5 : démarrage étoile-triangle d'un moteur triphasé",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-5-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17958
   },
   {
-   "id": "d083",
+   "id": "d095",
    "groupe": "cablage-5",
    "exercice": "Câblage n° 5 : démarrage étoile-triangle d'un moteur triphasé",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-5-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 291047
+   "taille": 293045
   },
   {
-   "id": "d084",
+   "id": "d096",
    "groupe": "cablage-5",
    "exercice": "Câblage n° 5 : démarrage étoile-triangle d'un moteur triphasé",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-5-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19091
+   "taille": 19273
   },
   {
-   "id": "d085",
+   "id": "d097",
    "groupe": "cablage-5-commande",
    "exercice": "Câblage n° 5 — la commande : démarrage étoile-triangle temporisé (bloc LADS2, verrouillages 21-22)",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-5-commande-PROFESSEUR.pdf",
-   "taille": 491668
+   "taille": 470563
   },
   {
-   "id": "d086",
+   "id": "d098",
    "groupe": "cablage-5-commande",
    "exercice": "Câblage n° 5 — la commande : démarrage étoile-triangle temporisé (bloc LADS2, verrouillages 21-22)",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-5-commande-PROFESSEUR.docx",
-   "taille": 319818
+   "taille": 318233
   },
   {
-   "id": "d087",
+   "id": "d099",
    "groupe": "cablage-5-commande",
    "exercice": "Câblage n° 5 — la commande : démarrage étoile-triangle temporisé (bloc LADS2, verrouillages 21-22)",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-5-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 148565
+   "taille": 161572
   },
   {
-   "id": "d088",
+   "id": "d100",
    "groupe": "cablage-5-commande",
    "exercice": "Câblage n° 5 — la commande : démarrage étoile-triangle temporisé (bloc LADS2, verrouillages 21-22)",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-5-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17787
+   "taille": 17957
   },
   {
-   "id": "d089",
+   "id": "d101",
    "groupe": "cablage-5-commande",
    "exercice": "Câblage n° 5 — la commande : démarrage étoile-triangle temporisé (bloc LADS2, verrouillages 21-22)",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-5-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 291819
+   "taille": 296702
   },
   {
-   "id": "d090",
+   "id": "d102",
    "groupe": "cablage-5-commande",
    "exercice": "Câblage n° 5 — la commande : démarrage étoile-triangle temporisé (bloc LADS2, verrouillages 21-22)",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-5-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19159
+   "taille": 19326
   },
   {
-   "id": "d091",
+   "id": "d103",
    "groupe": "cablage-6",
    "exercice": "Câblage n° 6 : moteur deux vitesses Dahlander",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-6-PROFESSEUR.pdf",
-   "taille": 442324
+   "taille": 430796
   },
   {
-   "id": "d092",
+   "id": "d104",
    "groupe": "cablage-6",
    "exercice": "Câblage n° 6 : moteur deux vitesses Dahlander",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-6-PROFESSEUR.docx",
-   "taille": 267836
+   "taille": 275823
   },
   {
-   "id": "d093",
+   "id": "d105",
    "groupe": "cablage-6",
    "exercice": "Câblage n° 6 : moteur deux vitesses Dahlander",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-6-GRILLE-PROFESSEUR.pdf",
-   "taille": 148259
+   "taille": 161509
   },
   {
-   "id": "d094",
+   "id": "d106",
    "groupe": "cablage-6",
    "exercice": "Câblage n° 6 : moteur deux vitesses Dahlander",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-6-GRILLE-PROFESSEUR.docx",
-   "taille": 17782
+   "taille": 17957
   },
   {
-   "id": "d095",
+   "id": "d107",
    "groupe": "cablage-6",
    "exercice": "Câblage n° 6 : moteur deux vitesses Dahlander",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-6-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 291142
+   "taille": 294691
   },
   {
-   "id": "d096",
+   "id": "d108",
    "groupe": "cablage-6",
    "exercice": "Câblage n° 6 : moteur deux vitesses Dahlander",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-6-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19082
+   "taille": 19265
   },
   {
-   "id": "d097",
+   "id": "d109",
    "groupe": "cablage-6-commande",
    "exercice": "Câblage n° 6 — la commande : Dahlander de tour de refroidissement — thermostat à deux étages, relais temporisé",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-6-commande-PROFESSEUR.pdf",
-   "taille": 520080
+   "taille": 531352
   },
   {
-   "id": "d098",
+   "id": "d110",
    "groupe": "cablage-6-commande",
    "exercice": "Câblage n° 6 — la commande : Dahlander de tour de refroidissement — thermostat à deux étages, relais temporisé",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-6-commande-PROFESSEUR.docx",
-   "taille": 349565
+   "taille": 378033
   },
   {
-   "id": "d099",
+   "id": "d111",
    "groupe": "cablage-6-commande",
    "exercice": "Câblage n° 6 — la commande : Dahlander de tour de refroidissement — thermostat à deux étages, relais temporisé",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-6-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 148560
+   "taille": 161568
   },
   {
-   "id": "d100",
+   "id": "d112",
    "groupe": "cablage-6-commande",
    "exercice": "Câblage n° 6 — la commande : Dahlander de tour de refroidissement — thermostat à deux étages, relais temporisé",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-6-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17957
   },
   {
-   "id": "d101",
+   "id": "d113",
    "groupe": "cablage-6-commande",
    "exercice": "Câblage n° 6 — la commande : Dahlander de tour de refroidissement — thermostat à deux étages, relais temporisé",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-6-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 291255
+   "taille": 296441
   },
   {
-   "id": "d102",
+   "id": "d114",
    "groupe": "cablage-6-commande",
    "exercice": "Câblage n° 6 — la commande : Dahlander de tour de refroidissement — thermostat à deux étages, relais temporisé",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-6-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19155
+   "taille": 19328
   },
   {
-   "id": "d103",
+   "id": "d115",
    "groupe": "cablage-7",
    "exercice": "Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-7-PROFESSEUR.pdf",
-   "taille": 560341
+   "taille": 556265
   },
   {
-   "id": "d104",
+   "id": "d116",
    "groupe": "cablage-7",
    "exercice": "Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-7-PROFESSEUR.docx",
-   "taille": 395871
+   "taille": 409528
   },
   {
-   "id": "d105",
+   "id": "d117",
    "groupe": "cablage-7",
    "exercice": "Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-7-GRILLE-PROFESSEUR.pdf",
-   "taille": 149064
+   "taille": 161569
   },
   {
-   "id": "d106",
+   "id": "d118",
    "groupe": "cablage-7",
    "exercice": "Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-7-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17954
   },
   {
-   "id": "d107",
+   "id": "d119",
    "groupe": "cablage-7",
    "exercice": "Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-7-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292847
+   "taille": 296933
   },
   {
-   "id": "d108",
+   "id": "d120",
    "groupe": "cablage-7",
    "exercice": "Câblage n° 7 : groupe frigorifique pump-down, la puissance — compresseur, ventilateurs du condenseur et de l'évaporateur",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-7-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19161
+   "taille": 19332
   },
   {
-   "id": "d109",
+   "id": "d121",
    "groupe": "cablage-7-commande",
    "exercice": "Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-7-commande-PROFESSEUR.pdf",
-   "taille": 582224
+   "taille": 602476
   },
   {
-   "id": "d110",
+   "id": "d122",
    "groupe": "cablage-7-commande",
    "exercice": "Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-7-commande-PROFESSEUR.docx",
-   "taille": 412216
+   "taille": 444951
   },
   {
-   "id": "d111",
+   "id": "d123",
    "groupe": "cablage-7-commande",
    "exercice": "Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-7-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 148892
+   "taille": 161570
   },
   {
-   "id": "d112",
+   "id": "d124",
    "groupe": "cablage-7-commande",
    "exercice": "Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-7-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17957
   },
   {
-   "id": "d113",
+   "id": "d125",
    "groupe": "cablage-7-commande",
    "exercice": "Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-7-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292398
+   "taille": 296394
   },
   {
-   "id": "d114",
+   "id": "d126",
    "groupe": "cablage-7-commande",
    "exercice": "Câblage n° 7 — la commande : pump-down — thermostat, électrovanne, pressostats BP et HP, compresseur",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-7-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19149
+   "taille": 19321
   },
   {
-   "id": "d115",
+   "id": "d127",
    "groupe": "cablage-8",
    "exercice": "Câblage n° 8 : chambre froide négative, la puissance — compresseur, ventilateurs, dégivrage électrique",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-8-PROFESSEUR.pdf",
-   "taille": 616071
+   "taille": 610214
   },
   {
-   "id": "d116",
+   "id": "d128",
    "groupe": "cablage-8",
    "exercice": "Câblage n° 8 : chambre froide négative, la puissance — compresseur, ventilateurs, dégivrage électrique",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-8-PROFESSEUR.docx",
-   "taille": 455209
+   "taille": 459999
   },
   {
-   "id": "d117",
+   "id": "d129",
    "groupe": "cablage-8",
    "exercice": "Câblage n° 8 : chambre froide négative, la puissance — compresseur, ventilateurs, dégivrage électrique",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-8-GRILLE-PROFESSEUR.pdf",
-   "taille": 148928
+   "taille": 161941
   },
   {
-   "id": "d118",
+   "id": "d130",
    "groupe": "cablage-8",
    "exercice": "Câblage n° 8 : chambre froide négative, la puissance — compresseur, ventilateurs, dégivrage électrique",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-8-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17957
   },
   {
-   "id": "d119",
+   "id": "d131",
    "groupe": "cablage-8",
    "exercice": "Câblage n° 8 : chambre froide négative, la puissance — compresseur, ventilateurs, dégivrage électrique",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-8-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292148
+   "taille": 296148
   },
   {
-   "id": "d120",
+   "id": "d132",
    "groupe": "cablage-8",
    "exercice": "Câblage n° 8 : chambre froide négative, la puissance — compresseur, ventilateurs, dégivrage électrique",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-8-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19145
+   "taille": 19313
   },
   {
-   "id": "d121",
+   "id": "d133",
    "groupe": "cablage-8-commande",
    "exercice": "Câblage n° 8 — la commande : chambre froide négative — horloge de dégivrage, pump-down, ventilateurs, résistances",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-8-commande-PROFESSEUR.pdf",
-   "taille": 649853
+   "taille": 677330
   },
   {
-   "id": "d122",
+   "id": "d134",
    "groupe": "cablage-8-commande",
    "exercice": "Câblage n° 8 — la commande : chambre froide négative — horloge de dégivrage, pump-down, ventilateurs, résistances",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-8-commande-PROFESSEUR.docx",
-   "taille": 482275
+   "taille": 519903
   },
   {
-   "id": "d123",
+   "id": "d135",
    "groupe": "cablage-8-commande",
    "exercice": "Câblage n° 8 — la commande : chambre froide négative — horloge de dégivrage, pump-down, ventilateurs, résistances",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-8-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 149282
+   "taille": 161942
   },
   {
-   "id": "d124",
+   "id": "d136",
    "groupe": "cablage-8-commande",
    "exercice": "Câblage n° 8 — la commande : chambre froide négative — horloge de dégivrage, pump-down, ventilateurs, résistances",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-8-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17958
   },
   {
-   "id": "d125",
+   "id": "d137",
    "groupe": "cablage-8-commande",
    "exercice": "Câblage n° 8 — la commande : chambre froide négative — horloge de dégivrage, pump-down, ventilateurs, résistances",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-8-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292012
+   "taille": 297145
   },
   {
-   "id": "d126",
+   "id": "d138",
    "groupe": "cablage-8-commande",
    "exercice": "Câblage n° 8 — la commande : chambre froide négative — horloge de dégivrage, pump-down, ventilateurs, résistances",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-8-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19164
+   "taille": 19336
   },
   {
-   "id": "d127",
+   "id": "d139",
+   "groupe": "cablage-9",
+   "exercice": "Câblage n° 9 : groupe pump-down, la puissance — compresseur, deux ventilateurs, quatre départs sous un tétrapolaire",
+   "titre": "Fiche professeur",
+   "format": "pdf",
+   "fichier": "cablage-9-PROFESSEUR.pdf",
+   "taille": 511243
+  },
+  {
+   "id": "d140",
+   "groupe": "cablage-9",
+   "exercice": "Câblage n° 9 : groupe pump-down, la puissance — compresseur, deux ventilateurs, quatre départs sous un tétrapolaire",
+   "titre": "Fiche professeur",
+   "format": "docx",
+   "fichier": "cablage-9-PROFESSEUR.docx",
+   "taille": 369891
+  },
+  {
+   "id": "d141",
+   "groupe": "cablage-9",
+   "exercice": "Câblage n° 9 : groupe pump-down, la puissance — compresseur, deux ventilateurs, quatre départs sous un tétrapolaire",
+   "titre": "Grille d’évaluation",
+   "format": "pdf",
+   "fichier": "cablage-9-GRILLE-PROFESSEUR.pdf",
+   "taille": 161568
+  },
+  {
+   "id": "d142",
+   "groupe": "cablage-9",
+   "exercice": "Câblage n° 9 : groupe pump-down, la puissance — compresseur, deux ventilateurs, quatre départs sous un tétrapolaire",
+   "titre": "Grille d’évaluation",
+   "format": "docx",
+   "fichier": "cablage-9-GRILLE-PROFESSEUR.docx",
+   "taille": 17955
+  },
+  {
+   "id": "d143",
+   "groupe": "cablage-9",
+   "exercice": "Câblage n° 9 : groupe pump-down, la puissance — compresseur, deux ventilateurs, quatre départs sous un tétrapolaire",
+   "titre": "Plan de séance",
+   "format": "pdf",
+   "fichier": "cablage-9-PLAN-SEANCE-PROFESSEUR.pdf",
+   "taille": 297216
+  },
+  {
+   "id": "d144",
+   "groupe": "cablage-9",
+   "exercice": "Câblage n° 9 : groupe pump-down, la puissance — compresseur, deux ventilateurs, quatre départs sous un tétrapolaire",
+   "titre": "Plan de séance",
+   "format": "docx",
+   "fichier": "cablage-9-PLAN-SEANCE-PROFESSEUR.docx",
+   "taille": 19330
+  },
+  {
+   "id": "d145",
+   "groupe": "cablage-9-commande",
+   "exercice": "Câblage n° 9 — la commande : pump-down — thermostat, horloge, électrovanne, pressostats BP et HP, 95-96, deux bobines",
+   "titre": "Fiche professeur",
+   "format": "pdf",
+   "fichier": "cablage-9-commande-PROFESSEUR.pdf",
+   "taille": 562069
+  },
+  {
+   "id": "d146",
+   "groupe": "cablage-9-commande",
+   "exercice": "Câblage n° 9 — la commande : pump-down — thermostat, horloge, électrovanne, pressostats BP et HP, 95-96, deux bobines",
+   "titre": "Fiche professeur",
+   "format": "docx",
+   "fichier": "cablage-9-commande-PROFESSEUR.docx",
+   "taille": 403594
+  },
+  {
+   "id": "d147",
+   "groupe": "cablage-9-commande",
+   "exercice": "Câblage n° 9 — la commande : pump-down — thermostat, horloge, électrovanne, pressostats BP et HP, 95-96, deux bobines",
+   "titre": "Grille d’évaluation",
+   "format": "pdf",
+   "fichier": "cablage-9-commande-GRILLE-PROFESSEUR.pdf",
+   "taille": 161570
+  },
+  {
+   "id": "d148",
+   "groupe": "cablage-9-commande",
+   "exercice": "Câblage n° 9 — la commande : pump-down — thermostat, horloge, électrovanne, pressostats BP et HP, 95-96, deux bobines",
+   "titre": "Grille d’évaluation",
+   "format": "docx",
+   "fichier": "cablage-9-commande-GRILLE-PROFESSEUR.docx",
+   "taille": 17958
+  },
+  {
+   "id": "d149",
+   "groupe": "cablage-9-commande",
+   "exercice": "Câblage n° 9 — la commande : pump-down — thermostat, horloge, électrovanne, pressostats BP et HP, 95-96, deux bobines",
+   "titre": "Plan de séance",
+   "format": "pdf",
+   "fichier": "cablage-9-commande-PLAN-SEANCE-PROFESSEUR.pdf",
+   "taille": 297221
+  },
+  {
+   "id": "d150",
+   "groupe": "cablage-9-commande",
+   "exercice": "Câblage n° 9 — la commande : pump-down — thermostat, horloge, électrovanne, pressostats BP et HP, 95-96, deux bobines",
+   "titre": "Plan de séance",
+   "format": "docx",
+   "fichier": "cablage-9-commande-PLAN-SEANCE-PROFESSEUR.docx",
+   "taille": 19339
+  },
+  {
+   "id": "d151",
    "groupe": "demarrage-direct-tri",
    "exercice": "Démarrage direct d'un moteur triphasé : sectionneur porte-fusibles, contacteur, relais thermique, bornier",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "demarrage-direct-tri-PROFESSEUR.pdf",
-   "taille": 367660
+   "taille": 364952
   },
   {
-   "id": "d128",
+   "id": "d152",
    "groupe": "demarrage-direct-tri",
    "exercice": "Démarrage direct d'un moteur triphasé : sectionneur porte-fusibles, contacteur, relais thermique, bornier",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "demarrage-direct-tri-PROFESSEUR.docx",
-   "taille": 193964
+   "taille": 199398
   },
   {
-   "id": "d129",
+   "id": "d153",
    "groupe": "demarrage-direct-tri",
    "exercice": "Démarrage direct d'un moteur triphasé : sectionneur porte-fusibles, contacteur, relais thermique, bornier",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "demarrage-direct-tri-GRILLE-PROFESSEUR.pdf",
-   "taille": 148448
+   "taille": 161532
   },
   {
-   "id": "d130",
+   "id": "d154",
    "groupe": "demarrage-direct-tri",
    "exercice": "Démarrage direct d'un moteur triphasé : sectionneur porte-fusibles, contacteur, relais thermique, bornier",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "demarrage-direct-tri-GRILLE-PROFESSEUR.docx",
-   "taille": 17786
+   "taille": 17957
   },
   {
-   "id": "d131",
+   "id": "d155",
    "groupe": "demarrage-direct-tri",
    "exercice": "Démarrage direct d'un moteur triphasé : sectionneur porte-fusibles, contacteur, relais thermique, bornier",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "demarrage-direct-tri-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 290781
+   "taille": 292828
   },
   {
-   "id": "d132",
+   "id": "d156",
    "groupe": "demarrage-direct-tri",
    "exercice": "Démarrage direct d'un moteur triphasé : sectionneur porte-fusibles, contacteur, relais thermique, bornier",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "demarrage-direct-tri-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19107
+   "taille": 19292
   },
   {
-   "id": "d133",
+   "id": "d157",
    "groupe": "telerupteur",
    "exercice": "Télérupteur : trois boutons poussoirs, deux lampes et leurs masses",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "telerupteur-PROFESSEUR.pdf",
-   "taille": 323380
+   "taille": 355152
   },
   {
-   "id": "d134",
+   "id": "d158",
    "groupe": "telerupteur",
    "exercice": "Télérupteur : trois boutons poussoirs, deux lampes et leurs masses",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "telerupteur-PROFESSEUR.docx",
-   "taille": 134898
+   "taille": 170486
   },
   {
-   "id": "d135",
+   "id": "d159",
    "groupe": "telerupteur",
    "exercice": "Télérupteur : trois boutons poussoirs, deux lampes et leurs masses",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "telerupteur-GRILLE-PROFESSEUR.pdf",
-   "taille": 148540
+   "taille": 161332
   },
   {
-   "id": "d136",
+   "id": "d160",
    "groupe": "telerupteur",
    "exercice": "Télérupteur : trois boutons poussoirs, deux lampes et leurs masses",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "telerupteur-GRILLE-PROFESSEUR.docx",
-   "taille": 17785
+   "taille": 17958
   },
   {
-   "id": "d137",
+   "id": "d161",
    "groupe": "telerupteur",
    "exercice": "Télérupteur : trois boutons poussoirs, deux lampes et leurs masses",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "telerupteur-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 289232
+   "taille": 293853
   },
   {
-   "id": "d138",
+   "id": "d162",
    "groupe": "telerupteur",
    "exercice": "Télérupteur : trois boutons poussoirs, deux lampes et leurs masses",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "telerupteur-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19091
+   "taille": 19271
   },
   {
-   "id": "d139",
+   "id": "d163",
    "groupe": "va-et-vient",
    "exercice": "Va-et-vient : disjoncteur 1P+N, deux inverseurs, lampe et sa masse",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "va-et-vient-PROFESSEUR.pdf",
-   "taille": 291530
+   "taille": 309707
   },
   {
-   "id": "d140",
+   "id": "d164",
    "groupe": "va-et-vient",
    "exercice": "Va-et-vient : disjoncteur 1P+N, deux inverseurs, lampe et sa masse",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "va-et-vient-PROFESSEUR.docx",
-   "taille": 99252
+   "taille": 120966
   },
   {
-   "id": "d141",
+   "id": "d165",
    "groupe": "va-et-vient",
    "exercice": "Va-et-vient : disjoncteur 1P+N, deux inverseurs, lampe et sa masse",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "va-et-vient-GRILLE-PROFESSEUR.pdf",
-   "taille": 148884
+   "taille": 161513
   },
   {
-   "id": "d142",
+   "id": "d166",
    "groupe": "va-et-vient",
    "exercice": "Va-et-vient : disjoncteur 1P+N, deux inverseurs, lampe et sa masse",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "va-et-vient-GRILLE-PROFESSEUR.docx",
-   "taille": 17785
+   "taille": 17955
   },
   {
-   "id": "d143",
+   "id": "d167",
    "groupe": "va-et-vient",
    "exercice": "Va-et-vient : disjoncteur 1P+N, deux inverseurs, lampe et sa masse",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "va-et-vient-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 291227
+   "taille": 295221
   },
   {
-   "id": "d144",
+   "id": "d168",
    "groupe": "va-et-vient",
    "exercice": "Va-et-vient : disjoncteur 1P+N, deux inverseurs, lampe et sa masse",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "va-et-vient-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19080
+   "taille": 19265
   },
   {
-   "id": "d145",
+   "id": "d169",
    "groupe": "cablage-1-commande",
-   "exercice": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "Mise-sous-tension-PROFESSEUR.pdf",
-   "taille": 814157
+   "taille": 842196
   },
   {
-   "id": "d146",
+   "id": "d170",
    "groupe": "cablage-1-commande",
-   "exercice": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "Mise-sous-tension-PROFESSEUR.docx",
-   "taille": 678382
+   "taille": 717603
   },
   {
-   "id": "d147",
+   "id": "d171",
    "groupe": "cablage-1-commande",
-   "exercice": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "Mise-sous-tension-GRILLE-PROFESSEUR.pdf",
-   "taille": 149839
+   "taille": 149255
   },
   {
-   "id": "d148",
+   "id": "d172",
    "groupe": "cablage-1-commande",
-   "exercice": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "Mise-sous-tension-GRILLE-PROFESSEUR.docx",
    "taille": 17871
   },
   {
-   "id": "d149",
+   "id": "d173",
    "groupe": "cablage-1-commande",
-   "exercice": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "Mise-sous-tension-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 329469
+   "taille": 330388
   },
   {
-   "id": "d150",
+   "id": "d174",
    "groupe": "cablage-1-commande",
-   "exercice": "cablage-1-commande",
+   "exercice": "Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons)",
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "Mise-sous-tension-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19536
+   "taille": 19306
   },
   {
-   "id": "d151",
+   "id": "d175",
    "groupe": "allumage-simple",
    "exercice": "Prise en main — l’allumage simple",
    "titre": "Fiche professeur du tutoriel",
    "format": "pdf",
    "fichier": "Tutoriel-Prise-en-main-PROFESSEUR.pdf",
-   "taille": 1007903
+   "taille": 1076329
   },
   {
-   "id": "d152",
+   "id": "d176",
    "groupe": "allumage-simple",
    "exercice": "Prise en main — l’allumage simple",
    "titre": "Fiche professeur du tutoriel",
    "format": "docx",
    "fichier": "Tutoriel-Prise-en-main-PROFESSEUR.docx",
-   "taille": 906594
+   "taille": 973886
   },
   {
-   "id": "d153",
+   "id": "d177",
    "groupe": "cablage-9",
    "exercice": "Câblage n° 9 — TP 2 Puissance",
    "titre": "TP professeur",
@@ -1381,7 +1597,7 @@
    "taille": 513750
   },
   {
-   "id": "d154",
+   "id": "d178",
    "groupe": "cablage-9",
    "exercice": "Câblage n° 9 — TP 2 Puissance",
    "titre": "TP professeur",
@@ -1390,7 +1606,7 @@
    "taille": 266140
   },
   {
-   "id": "d155",
+   "id": "d179",
    "groupe": "cablage-9",
    "exercice": "Câblage n° 9 — TP 2 Puissance",
    "titre": "Grille d’évaluation",
@@ -1399,7 +1615,7 @@
    "taille": 105292
   },
   {
-   "id": "d156",
+   "id": "d180",
    "groupe": "cablage-9",
    "exercice": "Câblage n° 9 — TP 2 Puissance",
    "titre": "Grille d’évaluation",
@@ -1408,7 +1624,7 @@
    "taille": 10317
   },
   {
-   "id": "d157",
+   "id": "d181",
    "groupe": "cablage-9-commande",
    "exercice": "Câblage n° 9 — TP Commande",
    "titre": "TP professeur",
@@ -1417,7 +1633,7 @@
    "taille": 459200
   },
   {
-   "id": "d158",
+   "id": "d182",
    "groupe": "cablage-9-commande",
    "exercice": "Câblage n° 9 — TP Commande",
    "titre": "TP professeur",
@@ -1426,7 +1642,7 @@
    "taille": 284003
   },
   {
-   "id": "d159",
+   "id": "d183",
    "groupe": "cablage-9-commande",
    "exercice": "Câblage n° 9 — TP Commande",
    "titre": "Grille d’évaluation",
@@ -1435,7 +1651,7 @@
    "taille": 105545
   },
   {
-   "id": "d160",
+   "id": "d184",
    "groupe": "cablage-9-commande",
    "exercice": "Câblage n° 9 — TP Commande",
    "titre": "Grille d’évaluation",

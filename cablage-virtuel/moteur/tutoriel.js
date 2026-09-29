@@ -11,18 +11,19 @@
   const ID = P.get('ex') || '', CLE = 'cablage-virtuel:tuto:' + ID;
   const $ = (s) => document.querySelector(s);
   const page = { activite: ['colorier', 'reperer', 'cabler'].includes(P.get('activite')) ? P.get('activite') : 'cabler',
-                 mode: ['guide', 'aide', 'reel'].includes(P.get('mode')) ? P.get('mode') : 'guide',
+                 mode: P.get('mode') === 'avance' ? 'reel' : ['guide', 'aide', 'reel'].includes(P.get('mode')) ? P.get('mode') : 'guide',
                  reelle: P.get('platine') === 'reelle' };
   const E = (activite, mode, reelle) => ({ activite, mode, reelle: !!reelle });
   const meme = (a, b) => a.activite === b.activite && a.mode === b.mode && a.reelle === b.reelle;
   const juste = (etat) => etat && etat.carte.some(i => i.reponse && i.reponse === i.attendu);
+  const panneauModes = () => { const m = document.querySelector('#panneau-modes'); return !!m && !m.hidden; };
 
   // Les étapes : ecran attendu, cibles (sélecteurs, ou fonction de l'état), textes, et « fait » (le geste est accompli).
   // « saut » : l'étape se termine par un rechargement de la page (l'écran suivant est celui de l'étape d'après).
   const ETAPES = [
     { ecran: E('cabler', 'guide'), titre: 'Bienvenue dans le câblage virtuel',
-      texte: 'À gauche, <b>la carte</b> : le schéma à lire. À droite, <b>la platine</b> : les appareils et leurs bornes. En douze étapes, vous allez colorier, repérer, poser des fils, demander de l’aide et contrôler.',
-      bouton: 'Commencer' },
+      texte: () => 'À gauche, <b>la carte</b> : le schéma à lire. À droite, <b>la platine</b> : les appareils et leurs bornes. En ' + NB + ' étapes, vous allez colorier, repérer, poser des fils, demander de l’aide et contrôler.',
+      bouton: 'Commencer', sansNumero: true },
     { ecran: E('colorier', 'guide'), cibles: ['#couleurs', '#carte .hit.courant'], titre: 'Colorier un fil',
       texte: 'Le fil qui clignote sur la carte porte <b>L</b>, <b>N</b> ou <b>PE</b> : remontez-le jusqu’à l’arrivée, puis touchez sa couleur en bas.',
       attend: 'J’attends un premier fil colorié.', fait: (etat) => juste(etat) },
@@ -36,13 +37,14 @@
       texte: 'Numérotez les autres bornes. Quand tout est repéré, le contrôle se fait tout seul : lisez le niveau, puis appuyez sur <b>« Passer au câblage »</b>.',
       attend: 'J’attends le passage au câblage.', saut: true },
     { ecran: E('cabler', 'guide'), cibles: ['#carte polyline.etape'], titre: 'Poser le premier fil',
-      texte: 'Le fil qui clignote sur la carte : lisez ses <b>deux numéros</b>, trouvez-les sur la platine. Posez le doigt sur la première borne, glissez jusqu’à la seconde, lâchez. Pas besoin de viser juste : la borne la plus proche s’allume.',
+      texte: 'Le fil qui clignote sur la carte : lisez ses <b>deux numéros</b>, trouvez-les sur la platine. Touchez la première borne : elle s’allume. Touchez la seconde : le fil se pose. Pas besoin de viser juste : la borne la plus proche s’allume.',
       attend: 'J’attends le fil.', fait: (etat) => etat && etat.fils.length >= 1 },
     { ecran: E('cabler', 'guide'), cibles: ['#btn-aide'], titre: 'Demander de l’aide',
       texte: 'Pour le fil suivant, appuyez sur <b>Aide</b>. Une fois : les deux appareils s’éclairent. Deux fois : les numéros s’écrivent. Trois fois : les bornes clignotent. <b>Chaque aide est comptée.</b>',
       attend: 'J’attends l’appui sur Aide, puis le fil.', fait: (etat) => etat && etat.aides >= 1 && etat.fils.length >= 2 },
-    { ecran: E('cabler', 'guide'), cibles: ['#btn-supprimer'], titre: 'Supprimer un fil',
-      texte: 'Un fil mal posé s’enlève : touchez-le sur la platine, puis <b>Supprimer le fil</b>. Reposez-le ensuite.',
+    // « Supprimer le fil » n'apparaît que sur un fil choisi (29/09) : on vise d'abord les fils, puis le bouton
+    { ecran: E('cabler', 'guide'), cibles: () => (document.querySelector('#platine .fil.choisi') ? ['#btn-supprimer'] : ['#platine .fil:not(.contour)']), titre: 'Supprimer un fil',
+      texte: 'Un fil mal posé s’enlève : touchez-le sur la platine, puis <b>Supprimer le fil</b>. Reposez-le ensuite : il clignote de nouveau sur la carte.',
       attend: 'J’attends la suppression, puis le fil reposé.',
       fait: (etat, ctx) => { if (!etat) return false; ctx.max = Math.max(ctx.max || 0, etat.fils.length);
                              if (etat.fils.length < ctx.max) ctx.supprime = true; return !!ctx.supprime && etat.fils.length >= ctx.max; } },
@@ -50,20 +52,26 @@
       texte: 'Posez les fils qui restent. Le fil à poser clignote toujours sur la carte ; l’aide reste là si besoin. Quand tout est posé, le contrôle se lance tout seul.',
       attend: 'J’attends le contrôle.', fait: (etat) => etat && etat.controle },
     { ecran: E('cabler', 'guide'), cibles: ['#resultat'], titre: 'Lire le résultat',
-      texte: 'Le niveau va de <b>0 à 4</b>. Le logiciel compte aussi les <b>aides</b> et les <b>fils refusés</b> : ils comptent pour la note. Fermez avec <b>« Revoir la platine »</b>.',
+      texte: () => 'Le niveau va de <b>0 à 4</b>. Le logiciel compte aussi les <b>aides</b> et les <b>fils refusés</b> : ils comptent pour la note. Fermez avec <b>« ' + boutonFermer() + ' »</b>.',
       attend: 'J’attends la fermeture.', fait: (etat) => etat && !etat.controle },
     { ecran: E('cabler', 'guide'), cibles: ['#btn-vue-reelle'], titre: 'La vue réelle',
       texte: 'Appuyez sur <b>« Vue réelle »</b> : la platine montre les vrais appareils.', attend: 'J’attends l’appui.', saut: true },
-    { ecran: E('cabler', 'guide', true), cibles: ['#modes'], titre: 'Le vrai disjoncteur, et les trois modes',
-      texte: 'Q1 est maintenant le vrai appareil. Ses numéros sont les mêmes : <b>1 et 2 pour le neutre, à gauche</b> ; 3 et 4 pour la phase. En haut, les trois modes : <b>Guidé</b> montre le fil à poser, <b>Aidé</b> vous laisse l’ordre, <b>Réel</b> ne montre rien et contrôle à la fin, comme à l’examen. Appuyez sur <b>« Réel »</b>.',
-      attend: 'J’attends l’appui sur Réel.', saut: true },
-    { ecran: E('cabler', 'reel', true), cibles: ['#btn-controler'], titre: 'Comme à l’examen',
+    // la pastille du mode (29/09) : on la vise, puis, panneau ouvert, le bouton « Avancé »
+    { ecran: E('cabler', 'guide', true), cibles: () => (panneauModes() ? ['#modes [data-mode="reel"]'] : ['#modes']), titre: 'Le vrai disjoncteur, et les trois modes',
+      texte: 'Q1 est maintenant le vrai appareil. Ses numéros sont les mêmes : <b>1 et 2 pour le neutre, à gauche</b> ; 3 et 4 pour la phase. En haut, la pastille dit le mode : <b>Guidé</b> montre le fil à poser, <b>Aidé</b> vous laisse l’ordre, <b>Avancé</b> ne montre rien et contrôle à la fin. Touchez la pastille <b>« Guidé »</b>, puis <b>« Avancé »</b>.',
+      attend: 'J’attends l’appui sur Avancé.', saut: true },
+    { ecran: E('cabler', 'reel', true), cibles: ['#btn-controler'], titre: 'Sans aide',
       texte: 'Câblez les <b>6 fils</b> sans aide, puis appuyez sur <b>Contrôler</b>.', attend: 'J’attends le contrôle.',
       fait: (etat) => etat && etat.controle },
     { ecran: E('cabler', 'reel', true), titre: 'Tutoriel terminé',
-      texte: 'Bravo. Notez sur votre feuille : <b>le niveau</b>, les <b>aides</b> et les <b>fils refusés</b> de chaque temps. Vous savez maintenant colorier, repérer, câbler, demander de l’aide, contrôler et passer en vue réelle.',
-      bouton: 'Retour aux chapitres', fin: true },
+      texte: 'Bravo. Notez sur votre feuille : <b>le niveau</b>, les <b>aides</b> et les <b>fils refusés</b> de chaque étape. Vous savez maintenant colorier, repérer, câbler, demander de l’aide, contrôler et passer en vue réelle.',
+      bouton: 'Retour au réseau', fin: true, sansNumero: true },
   ];
+
+  // 30/09 (constat E16) : le nombre annoncé est le vrai — les étapes numérotées (ni la bienvenue ni la fin)
+  const NB = ETAPES.filter(e => !e.sansNumero).length;
+  // 30/09 (constat E1) : la bulle nomme le bouton qui est vraiment à l'écran
+  function boutonFermer() { const b = document.querySelector('#btn-continuer'); return b ? b.textContent.trim() : 'Revoir la platine'; }
 
   let i = 0;
   try { i = Math.min(ETAPES.length - 1, JSON.parse(sessionStorage.getItem(CLE) || '{"i":0}').i || 0); } catch (e) { i = 0; }
@@ -92,13 +100,20 @@
   function ecrire(et, redirection) {
     const n = ETAPES.indexOf(et);
     avance.querySelector('i').style.width = (100 * n / (ETAPES.length - 1)) + '%';
+    const texte = typeof et.texte === 'function' ? et.texte() : et.texte;
     bulle.innerHTML = (et.fin ? '' : '<a class="tuto-passer" href="#">Passer le tutoriel</a>') +
-      '<h3><span class="tuto-num">' + n + '</span>' + et.titre + '</h3><p>' + (redirection || et.texte) + '</p>' +
+      '<h3>' + (et.sansNumero ? '' : '<span class="tuto-num">' + n + '</span>') + et.titre + '</h3><p>' + (redirection || texte) + '</p>' +
       (et.attend && !redirection ? '<p class="tuto-attend">' + et.attend + '</p>' : '') +
       (et.bouton && !redirection ? '<button class="tuto-bouton">' + et.bouton + ' ›</button>' : '');
     const passer = bulle.querySelector('.tuto-passer'); if (passer) passer.onclick = (e) => { e.preventDefault(); quitter(); };
     const b = bulle.querySelector('.tuto-bouton');
-    if (b) b.onclick = () => { if (et.fin) { effacer(); location.href = 'index.html'; } else avancer(); };
+    if (b) b.onclick = () => {
+      if (et.fin) { effacer(); location.href = 'index.html'; return; }
+      avancer();
+      // 30/09 (constat E7) : « Commencer » ouvre directement l'écran de la première étape (Colorier) : pas de « reprendre »
+      const e = ETAPES[i].ecran;
+      if (e.activite !== page.activite) { P.set('activite', e.activite); location.search = '?' + P.toString().replace(/(^|&)tuto=(&|$)/, '$1tuto$2'); }
+    };
   }
   function poser(rs) {
     halos.forEach(h => h.remove()); halos = [];
@@ -107,22 +122,56 @@
       h.style.cssText = 'left:' + (r.x - 6) + 'px;top:' + (r.y - 6) + 'px;width:' + (r.x1 - r.x + 12) + 'px;height:' + (r.y1 - r.y + 12) + 'px';
       document.body.appendChild(h); halos.push(h); });
     bulle.classList.remove('sous', 'sur', 'centre');
-    const bw = Math.min(400, L - 24), bh = bulle.offsetHeight || 160;
-    if (!rs.length) { bulle.classList.add('centre'); bulle.style.left = (L / 2 - bw / 2) + 'px'; bulle.style.top = (H / 2 - bh / 2) + 'px'; bulle.style.width = bw + 'px'; return; }
-    const r = { x: Math.min(...rs.map(q => q.x)), y: Math.min(...rs.map(q => q.y)), x1: Math.max(...rs.map(q => q.x1)), y1: Math.max(...rs.map(q => q.y1)) };
-    const cx = (r.x + r.x1) / 2, sous = r.y1 + 16 + bh < H, sur = r.y - 16 - bh > 0;
-    let left = Math.max(12, Math.min(L - bw - 12, cx - bw / 2)), top;
-    if (sous) { top = r.y1 + 16; bulle.classList.add('sous'); }
-    else if (sur) { top = r.y - 16 - bh; bulle.classList.add('sur'); if (r.y > 0.75 * H) left = 12; }   // cible dans la barre du bas : la bulle à gauche, hors de la platine
-    else { top = Math.max(12, H - bh - 12); left = Math.max(12, Math.min(L - bw - 12, r.x1 + 16 <= L - bw - 12 ? r.x1 + 16 : r.x - bw - 16)); bulle.classList.add('centre'); }
+    // 30/09 (constat E8) : la bulle ne cache jamais le schéma à lire, ni la zone de la platine où l'élève agit, ni ce qu'elle
+    // vise ; elle se pose du côté libre, la plus proche de sa cible. Les zones gênantes (consigne, palette, boutons) coûtent,
+    // sans être interdites. Plusieurs largeurs sont essayées avant de céder.
+    const r = rs.length ? { x: Math.min(...rs.map(q => q.x)), y: Math.min(...rs.map(q => q.y)), x1: Math.max(...rs.map(q => q.x1)), y1: Math.max(...rs.map(q => q.y1)) } : null;
+    const dures = zonesProtegees().concat(rs.map(q => ({ x: q.x - 8, y: q.y - 8, x1: q.x1 + 8, y1: q.y1 + 8 })));
+    const douces = ['#consigne', '#nomenclature', '#carte .entete', '#platine .entete', '#couleurs', '.outils .actions', '#activites', '#pupitre'].map(s => rect(s)).filter(Boolean);
+    const inter = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x, b.x)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y, b.y));
+    let mieux = null;
+    for (const bw of [Math.min(400, L - 24), Math.min(340, L - 24), Math.min(300, L - 24)]) {
+      bulle.style.width = bw + 'px';
+      const bh = bulle.offsetHeight || 160;
+      for (let top = 12; top + bh <= H - 8; top += 8) for (let left = 12; left + bw <= L - 12; left += 8) {
+        const b = { x: left, y: top, x1: left + bw, y1: top + bh };
+        const dur = dures.reduce((s, z) => s + inter(b, z), 0);
+        const loin = r ? Math.hypot(Math.max(0, r.x - b.x1, b.x - r.x1), Math.max(0, r.y - b.y1, b.y - r.y1)) : Math.hypot((left + bw / 2) - L / 2, (top + bh / 2) - H / 2) / 4;
+        const cout = dur * 1000 + douces.reduce((s, z) => s + inter(b, z), 0) / 40 + loin + (400 - bw) / 2;
+        if (!mieux || cout < mieux.cout) mieux = { cout, left, top, bw, bh, dur };
+      }
+      if (mieux && mieux.dur === 0) break;
+    }
+    const { left, top, bw, bh } = mieux;
     bulle.style.left = left + 'px'; bulle.style.top = top + 'px'; bulle.style.width = bw + 'px';
+    // la flèche, seulement quand la bulle est juste sous ou juste sur sa cible
+    const cx = r ? (r.x + r.x1) / 2 : 0, face = r && cx > left + 18 && cx < left + bw - 18;
+    if (face && top >= r.y1 && top - r.y1 < 40) bulle.classList.add('sous');
+    else if (face && top + bh <= r.y && r.y - top - bh < 40) bulle.classList.add('sur');
+    else bulle.classList.add('centre');
     bulle.style.setProperty('--fl', Math.max(18, Math.min(bw - 18, cx - left)) + 'px');
+  }
+  /* Ce que la bulle ne cache jamais : le dessin du schéma (la carte) et, sur la platine, les appareils et leurs bornes. */
+  function zonesProtegees() {
+    const z = [];
+    const coupe = (r, c) => { const x = Math.max(r.x, c.left), y = Math.max(r.y, c.top), x1 = Math.min(r.x1, c.right), y1 = Math.min(r.y1, c.bottom); return x1 > x && y1 > y ? { x, y, x1, y1 } : null; };
+    const svg = $('#carte-corps svg'), cc = $('#carte-corps') && $('#carte-corps').getBoundingClientRect();
+    if (svg && cc && cc.width) {
+      const els = [...svg.querySelectorAll('#conducteurs, .symbole, #carte-bornes, #coloriage, #reperage')].map(e => e.getBoundingClientRect()).filter(q => q.width || q.height);
+      if (els.length) { const u = { x: Math.min(...els.map(q => q.left)), y: Math.min(...els.map(q => q.top)), x1: Math.max(...els.map(q => q.right)), y1: Math.max(...els.map(q => q.bottom)) }; const k = coupe(u, cc); if (k) z.push(k); }
+    }
+    const pc = $('#platine-corps') && $('#platine-corps').getBoundingClientRect();
+    if (pc && pc.width && !document.body.classList.contains('sur-carte')) {
+      const els = [...document.querySelectorAll('#platine-corps .app, #platine-corps .borne')].map(e => e.getBoundingClientRect()).filter(q => q.width || q.height);
+      if (els.length) { const u = { x: Math.min(...els.map(q => q.left)), y: Math.min(...els.map(q => q.top)), x1: Math.max(...els.map(q => q.right)), y1: Math.max(...els.map(q => q.bottom)) }; const k = coupe(u, pc); if (k) z.push(k); }
+    }
+    return z;
   }
   function redirection() {   // l'écran n'est pas celui de l'étape : dire quel bouton appuyer, et le viser
     const e = ETAPES[i].ecran;
-    if (e.activite !== page.activite) return { sel: '#activites [data-activite="' + e.activite + '"]', texte: 'Appuyez sur <b>« ' + { colorier: '1 Colorier', reperer: '2 Repérer', cabler: '3 Câbler' }[e.activite] + ' »</b> en haut pour reprendre le tutoriel.' };
-    if (e.mode !== page.mode) return { sel: '#modes [data-mode="' + e.mode + '"]', texte: 'Appuyez sur <b>« ' + { guide: 'Guidé', aide: 'Aidé', reel: 'Réel' }[e.mode] + ' »</b> en haut pour reprendre le tutoriel.' };
-    if (e.reelle !== page.reelle) return { sel: '#btn-vue-reelle', texte: 'Appuyez sur <b>« ' + (e.reelle ? 'Vue réelle' : 'Symboles') + ' »</b> pour reprendre le tutoriel.' };
+    if (e.activite !== page.activite) return { sel: '#activites [data-activite="' + e.activite + '"]', texte: 'Appuyez sur <b>« ' + { colorier: '1 Colorier', reperer: '2 Repérer', cabler: '3 Câbler' }[e.activite] + ' »</b> en haut pour continuer le tutoriel.' };
+    if (e.mode !== page.mode) return { sel: panneauModes() ? '#modes [data-mode="' + e.mode + '"]' : '#modes', texte: 'Touchez la pastille du mode en haut, puis <b>« ' + { guide: 'Guidé', aide: 'Aidé', reel: 'Avancé' }[e.mode] + ' »</b>, pour continuer le tutoriel.' };
+    if (e.reelle !== page.reelle) return { sel: '#btn-vue-reelle', texte: 'Appuyez sur <b>« ' + (e.reelle ? 'Vue réelle' : 'Symboles') + ' »</b> pour continuer le tutoriel.' };
     return null;
   }
   function avancer() { if (i < ETAPES.length - 1) { i++; ctx = {}; sauver(); courant = -1; } }

@@ -13,7 +13,7 @@
 .tuto-bulle p{margin:0}
 .tuto-bulle p.tuto-attend{margin-top:6px;color:var(--ok);font-weight:700}
 .tuto-bulle .tuto-bouton{margin-top:10px;background:var(--orange);border-color:var(--orange);color:#fff;font-weight:700}
-.tuto-bulle .tuto-passer{position:absolute;top:10px;right:14px;font-size:13px;color:var(--mut)}
+.tuto-bulle .tuto-passer{position:absolute;top:4px;right:8px;font-size:13px;color:var(--mut);min-height:40px;display:inline-flex;align-items:center;padding:0 6px}   /* une cible de 40 px */
 .tuto-bulle::after{content:"";position:absolute;left:var(--fl,50%);margin-left:-9px;border:9px solid transparent}
 .tuto-bulle.sous::after{top:-18px;border-bottom-color:var(--orange)}
 .tuto-bulle.sur::after{bottom:-18px;border-top-color:var(--orange)}

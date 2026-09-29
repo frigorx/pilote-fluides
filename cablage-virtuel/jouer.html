@@ -5,29 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260928-1126">
-<link rel="stylesheet" href="moteur/tutoriel.css?v=20260928-1126">
-<link rel="stylesheet" href="moteur/tension.css?v=20260928-1126">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260929-1910">
+<link rel="stylesheet" href="moteur/tutoriel.css?v=20260929-1910">
+<link rel="stylesheet" href="moteur/tension.css?v=20260929-1910">
 </head>
 <body class="jeu">
 <header class="barre">
-  <a class="retour" href="index.html" title="Liste des exercices">‹</a>
+  <a class="retour" href="index.html" title="Retour à la station">‹</a>
   <div class="logo">Câblage <b>virtuel</b></div>
+  <span class="tag-proto" title="Prototype en construction : vos critiques sont les bienvenues (menu Plus)">prototype</span>
   <div class="titre" id="titre">…</div>
-  <nav class="modes activites" id="activites" aria-label="Activité">
-    <button data-activite="colorier">1 Colorier</button>
-    <button data-activite="reperer">2 Repérer</button>
-    <button data-activite="cabler">3 Câbler</button>
+  <!-- 29/09 (docs/PLAN-2026-09-29-REFONTE-ACCES.md § 5) : les étapes remplacent les trois temps et les trois modes.
+       L'id #activites et les data-activite restent (le tutoriel et les vérificateurs s'en servent) ; l'étape 4 est le
+       bouton de la mise sous tension (moteur/tension-ecran.js l'active) ; l'étape 5 n'existe qu'avec l'atelier. -->
+  <nav class="etapes" id="activites" aria-label="Les étapes de l’exercice">
+    <button class="etape" data-activite="colorier"><i>1</i><span class="nom">Colorier</span></button>
+    <button class="etape" data-activite="reperer"><i>2</i><span class="nom">Repérer</span></button>
+    <button class="etape" data-activite="cabler"><i>3</i><span class="nom">Câbler</span></button>
+    <button class="etape" id="btn-tension" data-etape="essayer" aria-disabled="true" title="Câblez d’abord : étape 3"><i>4</i><span class="nom">Essayer</span></button>
+    <button class="etape" data-activite="realiser" hidden><i>5</i><span class="nom">Réaliser</span></button>
   </nav>
-  <nav class="modes" id="modes" aria-label="Mode">
-    <button data-mode="guide">Guidé</button>
-    <button data-mode="aide">Aidé</button>
-    <button data-mode="reel">Réel</button>
-  </nav>
+  <div class="deroule" id="modes">
+    <button class="pastille-mode" id="btn-mode" aria-haspopup="true" aria-expanded="false" aria-controls="panneau-modes" title="Changer de mode">Guidé</button>
+    <div class="menu-barre" id="panneau-modes" role="group" aria-label="Le mode" hidden>
+      <button data-mode="guide"><b>Guidé</b><small>un élément à la fois, vérifié tout de suite</small></button>
+      <button data-mode="aide"><b>Aidé</b><small>vous choisissez l’ordre ; l’aide est là, comptée</small></button>
+      <button data-mode="reel"><b>Avancé</b><small>pas d’aide ; le contrôle à la fin</small></button>
+    </div>
+  </div>
+  <div class="deroule" id="plus">
+    <button class="btn-barre" id="btn-plus" aria-haspopup="true" aria-expanded="false" aria-controls="menu-plus">Plus</button>
+    <div class="menu-barre a-droite" id="menu-plus" role="group" aria-label="Plus" hidden>
+      <button id="btn-recommencer">Recommencer</button>
+      <a id="btn-feuille" target="_blank" rel="noopener" hidden>Feuille élève</a>
+      <a id="lien-station" href="index.html">Revenir à la station</a>
+      <a id="lien-reglages" href="index.html">Changer les réglages</a>
+      <a id="lien-avis" href="mailto:inerweb.fh@gmail.com?subject=C%C3%A2blage%20virtuel%20%3A%20mon%20avis">Donner votre avis (prototype)</a>
+      <a id="lien-site" href="https://inerweb.fr/">Accueil d’inerweb.fr</a>
+    </div>
+  </div>
 </header>
 
-<div class="consigne" id="consigne"><div class="texte" id="consigne-texte">Chargement…</div>
-  <a class="feuille" id="btn-feuille" hidden target="_blank" rel="noopener">📄 Feuille</a></div>
+<div class="consigne" id="consigne"><div class="texte" id="consigne-texte">Chargement…</div></div>
 <div class="nomenclature" id="nomenclature"></div>
 
 <main class="scene">
@@ -41,12 +60,22 @@
     <div class="corps" id="carte-corps"></div>
   </section>
   <section class="panneau" id="platine">
-    <div class="entete"><b>La platine</b> <span>tirez les fils de borne à borne</span><span class="spacer"></span>
+    <div class="entete"><b>La platine</b> <span>touchez une borne, puis l’autre</span><span class="spacer"></span>
       <button class="zoom" data-zoom="moins" title="Réduire">−</button><button class="zoom" data-zoom="plus" title="Agrandir">+</button><button class="zoom" data-zoom="ajuster" title="Tout voir">⤢</button>
       <button id="btn-vue-reelle" hidden>Vue réelle</button>
       <span id="compteur-fils">0 fil</span></div>
     <div class="corps" id="platine-corps"></div>
     <div class="visee" id="visee" hidden></div>
+    <!-- le fil par fil (&atelier=fil) : chaque fil accepté à l'écran attend d'être posé sur la vraie platine. La bulle
+         est SOUS le dessin, sa place gardée : elle ne cache jamais le bornier ni le fil qu'on vient de poser. -->
+    <div class="bulle-pose" id="bulle-pose" role="dialog" aria-live="polite" aria-label="Poser le fil sur la platine" hidden>
+      <div class="texte">
+        <p><span class="ok" id="bulle-ok">✓ Fil posé à l’écran :</span> <span id="bulle-fil"></span></p>
+        <p><b>Posez-le maintenant sur votre platine</b>, hors tension, puis appuyez.</p>
+      </div>
+      <button id="btn-pose">C’est posé sur la platine ✓</button>
+    </div>
+    <div class="bulle-vide" aria-hidden="true">Fil par fil : chaque fil posé à l’écran s’affiche ici. Posez-le sur votre platine avant le suivant.</div>
   </section>
 </main>
 
@@ -56,8 +85,7 @@
   <span class="spacer"></span>
   <div class="actions">
     <button class="action" id="btn-aide">Aide</button>
-    <button class="action" id="btn-supprimer" disabled>Supprimer le fil</button>
-    <button class="action" id="btn-recommencer">Recommencer</button>
+    <button class="action" id="btn-supprimer" hidden>Supprimer le fil</button>
     <button class="action principal" id="btn-controler">Contrôler</button>
   </div>
 </footer>
@@ -70,14 +98,16 @@
   <button class="action principal" id="btn-petit-ecran">Continuer quand même</button>
 </div></div>
 
-<script>window.CABLAGE_VERSION = '20260928-1126';</script>
-<script src="exercices/index.js?v=20260928-1126"></script>
-<script src="moteur/cablage.js?v=20260928-1126"></script>
-<script src="moteur/tutoriel.js?v=20260928-1126"></script>
-<script src="moteur/tension.js?v=20260928-1126"></script>
-<script src="moteur/tension-ecran.js?v=20260928-1126"></script>
-<script src="moteur/documents.js?v=20260928-1126"></script>
-<script src="moteur/ecran.js?v=20260928-1126"></script>
-<script src="moteur/marque.js?v=20260928-1126" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script>window.CABLAGE_VERSION = '20260929-1910';</script>
+<script src="exercices/index.js?v=20260929-1910"></script>
+<script src="moteur/reseau.js?v=20260929-1910"></script>
+<script src="moteur/cablage.js?v=20260929-1910"></script>
+<script src="moteur/tutoriel.js?v=20260929-1910"></script>
+<script src="moteur/tension.js?v=20260929-1910"></script>
+<script src="moteur/tension-ecran.js?v=20260929-1910"></script>
+<script src="moteur/documents.js?v=20260929-1910"></script>
+<script src="moteur/ecran.js?v=20260929-1910"></script>
+<script src="moteur/realiser.js?v=20260929-1910"></script>
+<script src="moteur/marque.js?v=20260929-1910" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

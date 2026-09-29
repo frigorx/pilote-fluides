@@ -160,8 +160,8 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 736.0,
-    "y": 1472.0
+    "x": 560.0,
+    "y": 1024.0
    },
    "ligne": 3
   },
@@ -205,8 +205,8 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 368.0,
-    "y": 264.0
+    "x": 352.0,
+    "y": 280.0
    },
    "ligne": 0
   },
@@ -244,10 +244,10 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 448.0,
-    "y": 1472.0
+    "x": 384.0,
+    "y": 608.0
    },
-   "ligne": 3
+   "ligne": 1
   },
   {
    "repere": "S2",
@@ -283,10 +283,10 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 576.0,
-    "y": 1472.0
+    "x": 512.0,
+    "y": 608.0
    },
-   "ligne": 3
+   "ligne": 1
   },
   {
    "repere": "H1",
@@ -316,10 +316,10 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 288.0,
-    "y": 1472.0
+    "x": 256.0,
+    "y": 608.0
    },
-   "ligne": 3
+   "ligne": 1
   },
   {
    "repere": "Masse-H1",
@@ -343,78 +343,53 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
    ],
    "liaisons_internes": [],
    "implantation": {
-    "x": 224.0,
-    "y": 1472.0
+    "x": 192.0,
+    "y": 608.0
    },
-   "ligne": 3
+   "ligne": 1
   }
  ],
  "platine": {
-  "largeur": 960,
-  "hauteur": 1760,
+  "largeur": 832,
+  "hauteur": 1107,
   "cadre": {
    "x0": 32.0,
    "y0": 32.0,
-   "x1": 928.0,
-   "y1": 1248.0
+   "x1": 800.0,
+   "y1": 816.0
   },
   "rails": [
    {
     "x0": 128.0,
-    "y0": 224.0,
-    "x1": 928.0,
-    "y1": 304.0
-   },
-   {
-    "x0": 128.0,
-    "y0": 592.0,
-    "x1": 928.0,
-    "y1": 672.0
-   },
-   {
-    "x0": 128.0,
-    "y0": 960.0,
-    "x1": 928.0,
-    "y1": 1040.0
-   },
-   {
-    "x0": 128.0,
-    "y0": 1120.0,
-    "x1": 928.0,
-    "y1": 1200.0
+    "y0": 240.0,
+    "x1": 704.0,
+    "y1": 320.0
    }
   ],
   "goulottes_h": [
    {
     "x0": 128.0,
-    "y0": 32.0,
-    "x1": 928.0,
-    "y1": 128.0
+    "y0": 64.0,
+    "x1": 704.0,
+    "y1": 160.0
    },
    {
     "x0": 128.0,
     "y0": 400.0,
-    "x1": 928.0,
+    "x1": 704.0,
     "y1": 496.0
    },
    {
     "x0": 128.0,
-    "y0": 768.0,
-    "x1": 928.0,
-    "y1": 864.0
+    "y0": 720.0,
+    "x1": 704.0,
+    "y1": 816.0
    },
    {
     "x0": 32.0,
-    "y0": 1280.0,
-    "x1": 832.0,
-    "y1": 1376.0,
-    "chemin": true
-   },
-   {
-    "x0": 32.0,
-    "y0": 1632.0,
-    "x1": 832.0,
-    "y1": 1728.0,
+    "y0": 864.0,
+    "x1": 656.0,
+    "y1": 960.0,
     "chemin": true
    }
   ],
@@ -423,7 +398,13 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
     "x0": 32.0,
     "y0": 32.0,
     "x1": 128.0,
-    "y1": 1728.0
+    "y1": 960.0
+   },
+   {
+    "x0": 704.0,
+    "y0": 32.0,
+    "x1": 800.0,
+    "y1": 960.0
    }
   ]
  },
@@ -612,8 +593,8 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
      }
     ],
     "implantation": {
-     "x": 328.0,
-     "y": 180.8
+     "x": 320.0,
+     "y": 200.0
     }
    },
    "S1": {
@@ -646,8 +627,8 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
      }
     ],
     "implantation": {
-     "x": 412.0,
-     "y": 1436.0
+     "x": 348.0,
+     "y": 572.0
     }
    },
    "S2": {
@@ -680,8 +661,8 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
      }
     ],
     "implantation": {
-     "x": 540.0,
-     "y": 1436.0
+     "x": 476.0,
+     "y": 572.0
     }
    },
    "H1": {
@@ -708,11 +689,295 @@ window.CABLAGE_EXERCICES["va-et-vient"] = {
      }
     ],
     "implantation": {
-     "x": 259.2,
-     "y": 1432.0
+     "x": 227.2,
+     "y": 568.0
     }
    }
   },
   "liaisons_fixes": []
+ },
+ "reels": {
+  "mural": {
+   "appareils": {
+    "Q1": {
+     "modele": "406785-25a",
+     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"406785-25a\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"40\" height=\"200\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<circle cx=\"30.00\" cy=\"189.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"28\" y1=\"187\" x2=\"32\" y2=\"191\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"150\" x2=\"40\" y2=\"150\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32\" y1=\"187\" x2=\"28\" y2=\"191\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"187\" x2=\"30\" y2=\"191\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"10.00\" cy=\"189.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"27\" y=\"142\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 27 142)\">6kA<\/text>\n<text x=\"8\" y=\"141\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 8 141)\">4500   3<\/text>\n<line x1=\"28\" y1=\"189\" x2=\"32\" y2=\"189\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"8\" y1=\"187\" x2=\"12\" y2=\"191\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"7\" y=\"180\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 7 180)\">N<\/text>\n<line x1=\"12\" y1=\"187\" x2=\"8\" y2=\"191\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"187\" x2=\"10\" y2=\"191\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"8\" y1=\"189\" x2=\"12\" y2=\"189\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"2\" y=\"110\" width=\"36\" height=\"6\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"black\"/>\n<line x1=\"8\" y1=\"112\" x2=\"33\" y2=\"112\" stroke=\"white\" stroke-width=\"1\" fill=\"white\"/>\n<line x1=\"8\" y1=\"114\" x2=\"33\" y2=\"114\" stroke=\"white\" stroke-width=\"1\" fill=\"black\"/>\n<rect x=\"8\" y=\"91\" width=\"25\" height=\"18\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"black\"/>\n<rect x=\"8\" y=\"83\" width=\"25\" height=\"7\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"green\"/>\n<text x=\"13\" y=\"88\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 13 88)\">O.OFF<\/text>\n<text x=\"7\" y=\"133\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 7 133)\">C25<\/text>\n<line x1=\"0\" y1=\"116\" x2=\"40\" y2=\"116\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polyline points=\"4,121 4,146 9,146\" stroke=\"red\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"26\" y1=\"146\" x2=\"31\" y2=\"146\" stroke=\"red\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"8\" y=\"124\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 8 124)\">DNX3<\/text>\n<rect x=\"7\" y=\"137\" width=\"15\" height=\"5\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"17\" y1=\"137\" x2=\"17\" y2=\"142\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"32\" y=\"122\" width=\"2\" height=\"12\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"black\"/>\n<circle cx=\"33.00\" cy=\"132.00\" r=\"0.50\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<text x=\"3\" y=\"23\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 3 23)\">\n\n\n\n\n230V∿<\/text>\n<text x=\"31\" y=\"31\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 31 31)\">N<\/text>\n<line x1=\"37\" y1=\"31\" x2=\"36\" y2=\"32\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"36\" y1=\"31\" x2=\"37\" y2=\"32\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"36.5\" y1=\"32.5\" x2=\"36.5\" y2=\"30\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"35\" y1=\"32\" x2=\"37\" y2=\"36\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"37\" y1=\"36\" x2=\"37\" y2=\"39\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"37\" y1=\"39\" x2=\"38\" y2=\"39\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"38\" y1=\"39\" x2=\"38\" y2=\"40\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"38\" y1=\"40\" x2=\"37\" y2=\"40\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"37\" y1=\"40\" x2=\"37\" y2=\"41\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<path d=\"M 37.00,41.00 A 1.00,1.00 0 0 1 37.00,43.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"37\" y1=\"43\" x2=\"37\" y2=\"44\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32\" y1=\"31\" x2=\"33\" y2=\"32\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"33\" y1=\"31\" x2=\"32\" y2=\"32\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32.5\" y1=\"30\" x2=\"32.5\" y2=\"32.5\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"31\" y1=\"32\" x2=\"33\" y2=\"36\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"33\" y1=\"36\" x2=\"33\" y2=\"44\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32\" y1=\"34\" x2=\"36\" y2=\"34\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<text x=\"31\" y=\"44\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 31 44)\">N<\/text>\n<ellipse cx=\"23.00\" cy=\"36.00\" rx=\"6.00\" ry=\"4.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"20\" y=\"38\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(345 20 38)\">N<\/text>\n<text x=\"23\" y=\"37\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(15 23 37)\">F<\/text>\n<text x=\"18\" y=\"44\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 18 44)\">UF182<\/text>\n<line x1=\"36\" y1=\"32.5\" x2=\"37\" y2=\"32.5\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32\" y1=\"32.5\" x2=\"33\" y2=\"32.5\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"0\" y=\"50\" width=\"40\" height=\"30\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"cyan\"/>\n<\/g><\/g>",
+     "boite": [
+      -2.5,
+      -2.0,
+      22.5,
+      103.0
+     ],
+     "bornes": [
+      {
+       "id": "1",
+       "x": 5.0,
+       "y": 0.0,
+       "o": 0
+      },
+      {
+       "id": "3",
+       "x": 15.0,
+       "y": 0.0,
+       "o": 0
+      },
+      {
+       "id": "4",
+       "x": 15.0,
+       "y": 100.0,
+       "o": 2
+      },
+      {
+       "id": "2",
+       "x": 5.0,
+       "y": 100.0,
+       "o": 2
+      }
+     ],
+     "implantation": {
+      "x": 320.0,
+      "y": 200.0
+     }
+    },
+    "S1": {
+     "modele": "inter-vv-commun-haut",
+     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"inter-vv-commun-haut\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"90\" height=\"90\" rx=\"6\" ry=\"6\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"12\" y=\"12\" width=\"66\" height=\"66\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<rect x=\"26\" y=\"20\" width=\"38\" height=\"50\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"1\" fill=\"#e2e2e0\"/>\n<line x1=\"26\" y1=\"45\" x2=\"64\" y2=\"45\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"45.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"-2.5\" x2=\"47.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"30.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"27.5\" y1=\"87.5\" x2=\"32.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"60.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"57.5\" y1=\"87.5\" x2=\"62.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+     "boite": [
+      -2.5,
+      -2.5,
+      47.5,
+      47.5
+     ],
+     "bornes": [
+      {
+       "id": "1",
+       "x": 22.5,
+       "y": 0.0,
+       "o": 0
+      },
+      {
+       "id": "4",
+       "x": 15.0,
+       "y": 45.0,
+       "o": 2
+      },
+      {
+       "id": "2",
+       "x": 30.0,
+       "y": 45.0,
+       "o": 2
+      }
+     ],
+     "implantation": {
+      "x": 348.0,
+      "y": 572.0
+     }
+    },
+    "S2": {
+     "modele": "inter-vv-commun-bas",
+     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"inter-vv-commun-bas\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"90\" height=\"90\" rx=\"6\" ry=\"6\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"12\" y=\"12\" width=\"66\" height=\"66\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<rect x=\"26\" y=\"20\" width=\"38\" height=\"50\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"1\" fill=\"#e2e2e0\"/>\n<line x1=\"26\" y1=\"45\" x2=\"64\" y2=\"45\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"30.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"27.5\" y1=\"-2.5\" x2=\"32.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"60.00\" cy=\"0.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"57.5\" y1=\"-2.5\" x2=\"62.5\" y2=\"2.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"45.00\" cy=\"90.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"42.5\" y1=\"87.5\" x2=\"47.5\" y2=\"92.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+     "boite": [
+      -2.5,
+      -2.5,
+      47.5,
+      47.5
+     ],
+     "bornes": [
+      {
+       "id": "2",
+       "x": 15.0,
+       "y": 0.0,
+       "o": 0
+      },
+      {
+       "id": "4",
+       "x": 30.0,
+       "y": 0.0,
+       "o": 0
+      },
+      {
+       "id": "1",
+       "x": 22.5,
+       "y": 45.0,
+       "o": 2
+      }
+     ],
+     "implantation": {
+      "x": 476.0,
+      "y": 572.0
+     }
+    },
+    "H1": {
+     "modele": "douille-ampoule",
+     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"douille-ampoule\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"80\" width=\"72\" height=\"20\" rx=\"3\" ry=\"3\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f4f4f2\"/>\n<rect x=\"22\" y=\"56\" width=\"28\" height=\"26\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#d8d8d8\"/>\n<line x1=\"22\" y1=\"64\" x2=\"50\" y2=\"64\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"22\" y1=\"72\" x2=\"50\" y2=\"72\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polygon points=\"26,44 46,44 46,56 26,56\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#bdbdbd\"/>\n<ellipse cx=\"36.00\" cy=\"24.00\" rx=\"24.00\" ry=\"24.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#fff8d6\"/>\n<line x1=\"30\" y1=\"44\" x2=\"30\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"42\" y1=\"44\" x2=\"42\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"30\" y1=\"26\" x2=\"36\" y2=\"20\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"36\" y1=\"20\" x2=\"42\" y2=\"26\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"18.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"15.5\" y1=\"97.5\" x2=\"20.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"54.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"51.5\" y1=\"97.5\" x2=\"56.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+     "boite": [
+      -2.0,
+      -2.0,
+      38.0,
+      52.0
+     ],
+     "bornes": [
+      {
+       "id": "A1",
+       "x": 9.0,
+       "y": 50.0,
+       "o": 2
+      },
+      {
+       "id": "A2",
+       "x": 27.0,
+       "y": 50.0,
+       "o": 2
+      }
+     ],
+     "implantation": {
+      "x": 227.2,
+      "y": 568.0
+     }
+    }
+   },
+   "liaisons_fixes": []
+  },
+  "22mm": {
+   "appareils": {
+    "Q1": {
+     "modele": "406785-25a",
+     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"406785-25a\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"40\" height=\"200\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<circle cx=\"30.00\" cy=\"189.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"28\" y1=\"187\" x2=\"32\" y2=\"191\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"150\" x2=\"40\" y2=\"150\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32\" y1=\"187\" x2=\"28\" y2=\"191\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"30\" y1=\"187\" x2=\"30\" y2=\"191\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<circle cx=\"10.00\" cy=\"189.00\" r=\"5.00\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"27\" y=\"142\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 27 142)\">6kA<\/text>\n<text x=\"8\" y=\"141\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 8 141)\">4500   3<\/text>\n<line x1=\"28\" y1=\"189\" x2=\"32\" y2=\"189\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"8\" y1=\"187\" x2=\"12\" y2=\"191\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"7\" y=\"180\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 7 180)\">N<\/text>\n<line x1=\"12\" y1=\"187\" x2=\"8\" y2=\"191\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"10\" y1=\"187\" x2=\"10\" y2=\"191\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"8\" y1=\"189\" x2=\"12\" y2=\"189\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"2\" y=\"110\" width=\"36\" height=\"6\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"black\"/>\n<line x1=\"8\" y1=\"112\" x2=\"33\" y2=\"112\" stroke=\"white\" stroke-width=\"1\" fill=\"white\"/>\n<line x1=\"8\" y1=\"114\" x2=\"33\" y2=\"114\" stroke=\"white\" stroke-width=\"1\" fill=\"black\"/>\n<rect x=\"8\" y=\"91\" width=\"25\" height=\"18\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"black\"/>\n<rect x=\"8\" y=\"83\" width=\"25\" height=\"7\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"1\" fill=\"green\"/>\n<text x=\"13\" y=\"88\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 13 88)\">O.OFF<\/text>\n<text x=\"7\" y=\"133\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 7 133)\">C25<\/text>\n<line x1=\"0\" y1=\"116\" x2=\"40\" y2=\"116\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<polyline points=\"4,121 4,146 9,146\" stroke=\"red\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"26\" y1=\"146\" x2=\"31\" y2=\"146\" stroke=\"red\" stroke-width=\"1\" fill=\"none\"/>\n<text x=\"8\" y=\"124\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 8 124)\">DNX3<\/text>\n<rect x=\"7\" y=\"137\" width=\"15\" height=\"5\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"17\" y1=\"137\" x2=\"17\" y2=\"142\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"32\" y=\"122\" width=\"2\" height=\"12\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"black\"/>\n<circle cx=\"33.00\" cy=\"132.00\" r=\"0.50\" stroke=\"black\" stroke-width=\"0.4\" fill=\"white\"/>\n<text x=\"3\" y=\"23\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 3 23)\">\n\n\n\n\n230V∿<\/text>\n<text x=\"31\" y=\"31\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 31 31)\">N<\/text>\n<line x1=\"37\" y1=\"31\" x2=\"36\" y2=\"32\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"36\" y1=\"31\" x2=\"37\" y2=\"32\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"36.5\" y1=\"32.5\" x2=\"36.5\" y2=\"30\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"35\" y1=\"32\" x2=\"37\" y2=\"36\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"37\" y1=\"36\" x2=\"37\" y2=\"39\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"37\" y1=\"39\" x2=\"38\" y2=\"39\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"38\" y1=\"39\" x2=\"38\" y2=\"40\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"38\" y1=\"40\" x2=\"37\" y2=\"40\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"37\" y1=\"40\" x2=\"37\" y2=\"41\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<path d=\"M 37.00,41.00 A 1.00,1.00 0 0 1 37.00,43.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"37\" y1=\"43\" x2=\"37\" y2=\"44\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32\" y1=\"31\" x2=\"33\" y2=\"32\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"33\" y1=\"31\" x2=\"32\" y2=\"32\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32.5\" y1=\"30\" x2=\"32.5\" y2=\"32.5\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"31\" y1=\"32\" x2=\"33\" y2=\"36\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"33\" y1=\"36\" x2=\"33\" y2=\"44\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32\" y1=\"34\" x2=\"36\" y2=\"34\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\" stroke-dasharray=\"6 3\"/>\n<text x=\"31\" y=\"44\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 31 44)\">N<\/text>\n<ellipse cx=\"23.00\" cy=\"36.00\" rx=\"6.00\" ry=\"4.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<text x=\"20\" y=\"38\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(345 20 38)\">N<\/text>\n<text x=\"23\" y=\"37\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(15 23 37)\">F<\/text>\n<text x=\"18\" y=\"44\" font-family=\"Arial,sans-serif\" font-size=\"9.0\" fill=\"#000000\" stroke=\"white\" stroke-width=\"3.1\" stroke-linejoin=\"round\" paint-order=\"stroke\" transform=\"rotate(0 18 44)\">UF182<\/text>\n<line x1=\"36\" y1=\"32.5\" x2=\"37\" y2=\"32.5\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"32\" y1=\"32.5\" x2=\"33\" y2=\"32.5\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"0\" y=\"50\" width=\"40\" height=\"30\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"cyan\"/>\n<\/g><\/g>",
+     "boite": [
+      -2.5,
+      -2.0,
+      22.5,
+      103.0
+     ],
+     "bornes": [
+      {
+       "id": "1",
+       "x": 5.0,
+       "y": 0.0,
+       "o": 0
+      },
+      {
+       "id": "3",
+       "x": 15.0,
+       "y": 0.0,
+       "o": 0
+      },
+      {
+       "id": "4",
+       "x": 15.0,
+       "y": 100.0,
+       "o": 2
+      },
+      {
+       "id": "2",
+       "x": 5.0,
+       "y": 100.0,
+       "o": 2
+      }
+     ],
+     "implantation": {
+      "x": 320.0,
+      "y": 200.0
+     }
+    },
+    "S1": {
+     "modele": "tournant22-3b",
+     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"tournant22-3b\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"80\" height=\"100\" rx=\"4\" ry=\"4\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#e9e9e7\"/>\n<rect x=\"6\" y=\"6\" width=\"68\" height=\"58\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f6f6f4\"/>\n<rect x=\"10\" y=\"72\" width=\"60\" height=\"22\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#c9c9c7\"/>\n<circle cx=\"40.00\" cy=\"36.00\" r=\"22.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#3a3a3a\"/>\n<circle cx=\"40.00\" cy=\"36.00\" r=\"15.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#1f1f1f\"/>\n<rect x=\"36\" y=\"16\" width=\"8\" height=\"40\" rx=\"3\" ry=\"3\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#dcdcdc\"/>\n<circle cx=\"20.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"17.5\" y1=\"97.5\" x2=\"22.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"40.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"37.5\" y1=\"97.5\" x2=\"42.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"60.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"57.5\" y1=\"97.5\" x2=\"62.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+     "boite": [
+      -2.5,
+      -2.5,
+      42.5,
+      52.5
+     ],
+     "bornes": [
+      {
+       "id": "4",
+       "x": 10.0,
+       "y": 50.0,
+       "o": 2
+      },
+      {
+       "id": "1",
+       "x": 20.0,
+       "y": 50.0,
+       "o": 2
+      },
+      {
+       "id": "2",
+       "x": 30.0,
+       "y": 50.0,
+       "o": 2
+      }
+     ],
+     "implantation": {
+      "x": 352.0,
+      "y": 568.0
+     }
+    },
+    "S2": {
+     "modele": "tournant22-3b-s2",
+     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"tournant22-3b\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"80\" height=\"100\" rx=\"4\" ry=\"4\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#e9e9e7\"/>\n<rect x=\"6\" y=\"6\" width=\"68\" height=\"58\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f6f6f4\"/>\n<rect x=\"10\" y=\"72\" width=\"60\" height=\"22\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#c9c9c7\"/>\n<circle cx=\"40.00\" cy=\"36.00\" r=\"22.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#3a3a3a\"/>\n<circle cx=\"40.00\" cy=\"36.00\" r=\"15.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#1f1f1f\"/>\n<rect x=\"36\" y=\"16\" width=\"8\" height=\"40\" rx=\"3\" ry=\"3\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#dcdcdc\"/>\n<circle cx=\"20.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"17.5\" y1=\"97.5\" x2=\"22.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"40.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"37.5\" y1=\"97.5\" x2=\"42.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"60.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"57.5\" y1=\"97.5\" x2=\"62.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+     "boite": [
+      -2.5,
+      -2.5,
+      42.5,
+      52.5
+     ],
+     "bornes": [
+      {
+       "id": "2",
+       "x": 10.0,
+       "y": 50.0,
+       "o": 2
+      },
+      {
+       "id": "1",
+       "x": 20.0,
+       "y": 50.0,
+       "o": 2
+      },
+      {
+       "id": "4",
+       "x": 30.0,
+       "y": 50.0,
+       "o": 2
+      }
+     ],
+     "implantation": {
+      "x": 480.0,
+      "y": 568.0
+     }
+    },
+    "H1": {
+     "modele": "voyant22-2b",
+     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"voyant22-2b\" transform=\"translate(0.00,0.00)\">\n<rect x=\"0\" y=\"0\" width=\"80\" height=\"100\" rx=\"4\" ry=\"4\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#e9e9e7\"/>\n<rect x=\"6\" y=\"6\" width=\"68\" height=\"58\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#f6f6f4\"/>\n<rect x=\"10\" y=\"72\" width=\"60\" height=\"22\" rx=\"2\" ry=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#c9c9c7\"/>\n<circle cx=\"40.00\" cy=\"36.00\" r=\"22.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#3a3a3a\"/>\n<circle cx=\"40.00\" cy=\"36.00\" r=\"15.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#ffe27a\"/>\n<circle cx=\"34.00\" cy=\"30.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"0.4\" fill=\"#fff6c8\"/>\n<circle cx=\"25.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"22.5\" y1=\"97.5\" x2=\"27.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"55.00\" cy=\"100.00\" r=\"4.00\" stroke=\"black\" stroke-width=\"1\" fill=\"#e6e6e6\"/>\n<line x1=\"52.5\" y1=\"97.5\" x2=\"57.5\" y2=\"102.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g><\/g>",
+     "boite": [
+      -2.5,
+      -2.5,
+      42.5,
+      52.5
+     ],
+     "bornes": [
+      {
+       "id": "A1",
+       "x": 12.5,
+       "y": 50.0,
+       "o": 2
+      },
+      {
+       "id": "A2",
+       "x": 27.5,
+       "y": 50.0,
+       "o": 2
+      }
+     ],
+     "implantation": {
+      "x": 224.0,
+      "y": 568.0
+     }
+    }
+   },
+   "liaisons_fixes": []
+  }
  }
 };

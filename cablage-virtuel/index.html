@@ -4,118 +4,403 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Câblage virtuel — exercices</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260928-1126">
+<title>Câblage virtuel — le réseau</title>
+<link rel="stylesheet" href="moteur/cablage.css?v=20260929-1910">
+<link rel="stylesheet" href="moteur/accueil.css?v=20260929-1910">
 </head>
-<body>
+<body class="reseau">
 <header class="barre">
-  <a class="retour" href="https://inerweb.fr/" title="Retour à inerweb.fr">‹</a>
+  <a class="retour site" href="https://inerweb.fr/" title="Revenir à la page d’accueil d’inerweb.fr">‹ inerweb.fr</a>
   <div class="logo">Câblage <b>virtuel</b></div>
-  <div class="titre">Lire la carte, poser les fils sur les bornes</div>
+  <a class="pro" href="professeur.html">Espace professeur</a>
 </header>
-<main class="accueil">
-  <!-- Niveau 1 (Franck, 27/09) : d'abord les chapitres en tuiles, sans image, et la manière de travailler ;
-       puis, dans un chapitre (#id), les exercices avec leur schéma. -->
-  <section id="chapitres">
-    <a class="tuile prise-en-main" href="jouer.html?ex=allumage-simple&amp;activite=cabler&amp;mode=guide&amp;tuto">
-      <b>🎓 Prise en main : le tutoriel</b>
-      <span>Douze étapes sur l’allumage simple : colorier, repérer, poser un fil, l’aide, le contrôle, la vue réelle, les trois modes. Un quart d’heure.</span>
-    </a>
-    <h2>Les chapitres</h2>
-    <div class="tuiles" id="tuiles"></div>
-    <h2>La manière de travailler</h2>
-    <div class="methode">
-      <div><b>Trois temps, comme au TP</b><span><b>1 Colorier</b> les conducteurs du schéma (L1, L2, L3, N, PE) · <b>2 Repérer</b> les numéros des bornes · <b>3 Câbler</b> la platine, fil par fil.</span></div>
-      <div><b>Trois modes</b><span><b>Guidé</b> : le logiciel montre le fil à poser, vous trouvez les numéros · <b>Aidé</b> : dans l’ordre que vous voulez, le bouton Aide reste là · <b>Réel</b> : rien n’est montré, le contrôle vient à la fin, comme à l’examen.</span></div>
-      <div><b>L’aide est comptée</b><span>Chaque appui sur Aide compte, chaque fil refusé aussi. Le contrôle donne un niveau de 0 à 4 : vous le recopiez sur votre feuille.</span></div>
-      <div><b>La vue réelle</b><span>Sur la platine, les vrais appareils à la place des symboles : mêmes repères, mêmes numéros de bornes.</span></div>
+<p class="bandeau-proto" role="note"><b>Prototype en construction.</b> Le Câblage virtuel évolue chaque semaine : vos critiques et vos idées sont les bienvenues, écrivez à <a href="mailto:inerweb.fh@gmail.com?subject=C%C3%A2blage%20virtuel%20%3A%20mon%20avis">inerweb.fh@gmail.com</a>.</p>
+<main class="page-reseau">
+  <!-- Refonte du 29/09/2026 (docs/PLAN-2026-09-29-REFONTE-ACCES.md, maquette validée docs/maquette-refonte/) :
+       l'accueil est le RÉSEAU (moteur/reseau.js, source unique) ; une station s'ouvre sur sa fiche, à la même adresse
+       suivie de #<station> ; le QR du professeur porte ?station=<id>&mode=&atelier=&platine=. -->
+  <section id="vue-reseau">
+    <div class="tete">
+      <div>
+        <h1>Lire un schéma, câbler à l'écran, puis pour de vrai.</h1>
+        <p>Cinq lignes, de la maison au niveau avancé, en électrotechnique et en froid. Chaque station est un schéma à câbler.</p>
+      </div>
+      <a class="cta" id="cta" href="#"></a>
+    </div>
+    <p class="bandeau-ligne" id="bandeau-ligne" hidden></p>
+    <div class="plan" id="plan"><svg id="carte" viewBox="0 0 1150 560" role="group" aria-label="Le réseau des stations de câblage"></svg></div>
+    <div class="legende" id="legende">
+      <span><svg width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/></svg>à faire</span>
+      <span><svg width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="#1b3a63"/><text x="11" y="15" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Calibri,Arial,sans-serif">3</text></svg>faite : le chiffre est le niveau obtenu au câblage (0 à 4)</span>
+      <span><svg width="26" height="26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><circle cx="13" cy="13" r="12" fill="none" stroke="#1b3a63" stroke-width="2"/></svg>double anneau : la commande suit la puissance</span>
+      <span><svg width="30" height="10" aria-hidden="true"><line x1="3" y1="5" x2="27" y2="5" stroke="#b3a891" stroke-width="4" stroke-dasharray="1 8" stroke-linecap="round"/></svg>correspondance conseillée</span>
+      <span class="ici-l">Vous êtes ici : la station en cours</span>
     </div>
   </section>
-  <section id="chapitre" hidden>
-    <a class="retour-chapitres" href="#">‹ Tous les chapitres</a>
-    <h2 id="chapitre-titre"></h2>
-    <p class="intro" id="chapitre-texte"></p>
-    <div class="liste" id="liste"></div>
+
+  <section id="vue-station" hidden>
+    <a class="retour-reseau" href="index.html" id="st-retour">‹ Le réseau</a>
+    <div class="station">
+      <div class="schema"><img id="st-img" alt=""></div>
+      <div class="st-fiche">
+        <div class="pastilles"><span id="st-ligne"></span><span class="claire" id="st-niv"></span></div>
+        <h1 id="st-titre" tabindex="-1"></h1>
+        <p class="sous" id="st-sous"></p>
+        <p class="faits" id="st-faits"></p>
+        <p class="apprend"><b>Vous apprenez :</b> <span id="st-apprend"></span></p>
+        <div class="quais" id="st-quais" role="group" aria-label="Les deux parties de la station" hidden>
+          <button type="button" data-q="p">1 · La puissance</button>
+          <button type="button" data-q="c">2 · La commande</button>
+        </div>
+        <ol class="chemin" id="st-chemin" aria-label="Le parcours de la station"></ol>
+        <p class="prof" id="st-prof" hidden></p>
+        <div class="actions"><a class="gros" id="st-go" href="#">Commencer</a><a class="discret" id="st-reprendre" href="#" hidden></a></div>
+        <p class="note-feuille" id="st-note" hidden></p>
+        <ul class="liens" id="st-liens"></ul>
+        <details class="reglages" id="reglages">
+          <summary>Réglages du professeur</summary>
+          <div class="rangee"><span id="r-mode">Mode</span><div class="segs" data-reg="mode" role="group" aria-labelledby="r-mode">
+            <button type="button" data-v="guide">Guidé</button><button type="button" data-v="aide">Aidé</button><button type="button" data-v="reel">Avancé</button></div></div>
+          <div class="rangee"><span id="r-atelier">À l'atelier</span><div class="segs" data-reg="atelier" role="group" aria-labelledby="r-atelier">
+            <button type="button" data-v="ecran">Écran seulement</button><button type="button" data-v="deux">En deux temps</button><button type="button" data-v="fil">Fil par fil</button></div></div>
+          <div class="rangee"><span id="r-platine">Appareils</span><div class="segs" data-reg="platine" role="group" aria-labelledby="r-platine">
+            <button type="button" data-v="">Symboles</button><button type="button" data-v="reelle">Vrais appareils</button></div></div>
+          <p class="aide-reg" id="aide-reg"></p>
+        </details>
+      </div>
+    </div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260928-1126';</script>
-<script src="exercices/index.js?v=20260928-1126"></script>
-<script src="moteur/documents.js?v=20260928-1126"></script>
+<script>window.CABLAGE_VERSION = '20260929-1910';</script>
+<script src="exercices/index.js?v=20260929-1910"></script>
+<script src="moteur/reseau.js?v=20260929-1910"></script>
+<script src="moteur/documents.js?v=20260929-1910"></script>
 <script>
 (function(){
-  const CHAPITRES = [
-    {id: 'domestique', titre: 'Initiation domestique', texte: 'Les circuits de la maison : allumage simple, va-et-vient, télérupteur. Le neutre à gauche, la phase à droite.',
-     ex: ['allumage-simple', 'va-et-vient', 'telerupteur']},
-    {id: 'puissance', titre: 'Électrotechnique — puissance', texte: 'Du sectionneur au moteur : disjoncteur moteur, contacteur, relais thermique, bornier. Puis les démarrages.',
-     ex: ['cablage-1', 'demarrage-direct-tri', 'cablage-3', 'cablage-4', 'cablage-5', 'cablage-6']},
-    {id: 'commande', titre: 'Électrotechnique — commande', texte: 'Chaque commande reprend une puissance du chapitre précédent : bobines, auto-maintien 13-14, verrouillages 21-22, 95-96.',
-     ex: ['cablage-1-commande', 'cablage-3-commande', 'cablage-4-commande', 'cablage-5-commande', 'cablage-6-commande']},
-    {id: 'froid', titre: 'Froid — les groupes', texte: 'Le pump-down et la chambre froide : thermostat, électrovanne, pressostats, dégivrage. La puissance, puis la commande.',
-     ex: ['cablage-2', 'cablage-7', 'cablage-7-commande', 'cablage-8', 'cablage-8-commande', 'cablage-9', 'cablage-9-commande']},
-    {id: 'sujets', titre: 'Froid — les sujets d’examen', texte: 'Les schémas des sujets CAP et bac : porte-fusibles, transformateur 24 V, arrêt d’urgence, relais auxiliaire, horloge de dégivrage, voyants. La puissance, puis la commande.',
-     ex: ['cablage-10', 'cablage-10-commande', 'cablage-11', 'cablage-11-commande', 'cablage-12', 'cablage-12-commande', 'cablage-13']},
-  ];
-  const index = window.CABLAGE_INDEX || [], parId = {};
-  index.forEach(function(m){ parId[m.id] = m; });
-  // un exercice que la liste ne range pas tombe dans un dernier chapitre : rien ne se perd
-  const ranges = new Set(CHAPITRES.flatMap(function(c){ return c.ex; }));
-  const orphelins = index.filter(function(m){ return !ranges.has(m.id); }).map(function(m){ return m.id; });
-  if (orphelins.length) CHAPITRES.push({id: 'autres', titre: 'Autres exercices', texte: '', ex: orphelins});
+'use strict';
+const R = window.CABLAGE_RESEAU, DOCS = window.CABLAGE_DOCUMENTS || {};
+const $ = (s, r) => (r || document).querySelector(s), $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+// une clé venue de l'adresse ou du stockage ne se cherche que parmi les propriétés PROPRES (#__proto__, ?mode=toString…)
+const own = (o, k) => typeof k === 'string' && Object.prototype.hasOwnProperty.call(o, k);
+const LIG = {}, PAR = {};
+R.lignes.forEach(l => { LIG[l.id] = l; });
+R.stations.forEach(s => { PAR[s.id] = s; });
+// l'ordre conseillé : les lignes dans l'ordre, puis leurs stations (le Départ, puis l'Allumage simple…)
+const ORDRE = ['depart'];
+R.lignes.forEach(l => (own(R.ordre, l.id) ? R.ordre[l.id] : []).forEach(id => { if (own(PAR, id) && !ORDRE.includes(id)) ORDRE.push(id); }));
 
-  // Les documents à télécharger (Franck, 27/09) : le TP élève est libre ; le TP professeur se demande par courriel.
-  const COURRIEL = 'inerweb.fh@gmail.com';
-  const DOCUMENTS = window.CABLAGE_DOCUMENTS || {};
-  const documents = function(id){ const d = DOCUMENTS[id]; if (!d) return '';
-    return '<div class="documents"><a href="' + d.eleve + '" download>📄 ' + d.nom + '</a>' +
-      '<a href="documents-professeur.html#' + id + '">🔒 Documents professeur (code enseignant)</a></div>'; };
-
-  const noms = {eclairage: 'Éclairage', commande: 'Commande', puissance: 'Puissance', froid: 'Froid'};
-  const activites = [['colorier', '1 Colorier'], ['reperer', '2 Repérer'], ['cabler', '3 Câbler']];
-  function fiche(m) {
-    const f = document.createElement('article'); f.className = 'fiche';
-    const lien = function(a, mode, nom){ return '<a' + (mode === 'reel' ? ' class="reel"' : '') + ' href="jouer.html?ex=' +
-      encodeURIComponent(m.id) + '&activite=' + a + '&mode=' + mode + '">' + nom + '</a>'; };
-    f.innerHTML = '<a class="apercu" href="jouer.html?ex=' + encodeURIComponent(m.id) + '&activite=cabler&mode=guide" title="Voir et câbler ce schéma">' +
-      '<img src="apercus/' + encodeURIComponent(m.id) + '.svg?v=20260928-1126" alt="Le schéma de l’exercice" loading="lazy"></a>' +
-      '<div class="niv">' + (typeof m.niveau === 'number' ? 'Niveau ' + m.niveau : m.niveau) + ' · ' + (noms[m.famille] || m.famille) + '</div><h3></h3>' +
-      activites.map(function(a){ return '<div class="modes"><span class="act">' + a[1] + '</span>' +
-        lien(a[0], 'guide', 'Guidé') + lien(a[0], 'aide', 'Aidé') + lien(a[0], 'reel', 'Réel') + '</div>'; }).join('') +
-      documents(m.id);
-    f.querySelector('h3').textContent = m.titre;
-    return f;
+// ---------------------------------------------------------------- réglages et résultats (sur l'appareil)
+const CLE_RES = 'cablage-virtuel:resultats', CLE_REG = 'cablage-virtuel:reglages';
+const TUTO = 'jouer.html?ex=allumage-simple&activite=cabler&mode=guide&tuto';
+const MODES = {guide: 'Guidé', aide: 'Aidé', reel: 'Avancé'};
+const ATELIER_NOM = {ecran: 'Écran seulement', deux: 'En deux temps', fil: 'Fil par fil'};
+const ATELIERS = {
+  ecran: 'Tout se fait à l’écran : révision, entraînement, travail à la maison.',
+  deux: 'Tout à l’écran jusqu’à l’essai, puis l’étape 5 « Réaliser » : la vraie platine, avec le plan d’implantation.',
+  fil: 'Chaque fil posé à l’écran se pose aussitôt sur la vraie platine. Conseillé avec le mode Guidé.',
+};
+// les étapes du parcours ; « essai » est l'activité écrite par la mise sous tension (moteur/tension-ecran.js),
+// qui se joue depuis l'activité « cabler »
+const ETAPES = [
+  {id: 'colorier', nom: 'Colorier', act: 'colorier'},
+  {id: 'reperer', nom: 'Repérer', act: 'reperer'},
+  {id: 'cabler', nom: 'Câbler', act: 'cabler'},
+  {id: 'essai', nom: 'Essayer', act: 'cabler'},
+  {id: 'realiser', nom: 'Réaliser', act: 'realiser'},
+];
+function lire(cle) { try { return JSON.parse(localStorage.getItem(cle)); } catch (e) { return null; } }
+function ecrire(cle, v) { try { localStorage.setItem(cle, JSON.stringify(v)); } catch (e) { /* stockage indisponible */ } }
+const normMode = m => m === 'avance' ? 'reel' : (own(MODES, m) ? m : null);
+function reglagesGardes() {
+  const r = lire(CLE_REG);
+  if (!r || typeof r !== 'object') return null;
+  return {mode: normMode(r.mode) || 'guide', atelier: own(ATELIERS, r.atelier) ? r.atelier : 'ecran', platine: r.platine === 'reelle' ? 'reelle' : ''};
+}
+let reg = reglagesGardes() || {mode: 'guide', atelier: 'ecran', platine: ''};
+let parProf = false;   // les réglages viennent de l'adresse (QR du professeur)
+// le tutoriel (entrée tuto: true) se range au Départ, pas à l'Allumage simple qui partage son exercice : clé « tuto:<exercice> »
+function resultats() { const l = lire(CLE_RES); return Array.isArray(l) ? l.filter(e => e && typeof e.exercice === 'string').map(e => e.tuto ? Object.assign({}, e, {exercice: 'tuto:' + e.exercice}) : e) : []; }
+const nbDefauts = d => Array.isArray(d) ? d.length : (Number(d) || 0);
+function reussie(e) {
+  if (e.activite === 'essai') return nbDefauts(e.defauts) === 0 && !(Array.isArray(e.marche) && !e.marche.length);   // comme la barre du jeu : sans défaut, et un appareil a marché
+  return (typeof e.niveau === 'number' && e.niveau >= 3) || e.fini === true;
+}
+function etapeDe(e) { return ETAPES.find(x => x.id === e.activite) || ETAPES[2]; }
+function faites(ex, res) { const f = new Set(); res.forEach(e => { if (e.exercice === ex && reussie(e)) f.add(etapeDe(e).id); }); return f; }
+function meilleurCablage(ex, res) {
+  let m = null;
+  res.forEach(e => { if (e.exercice === ex && e.activite === 'cabler' && typeof e.niveau === 'number') m = m == null ? e.niveau : Math.max(m, e.niveau); });
+  return m;
+}
+function lienJouer(ex, act, mode, atelier, platine) {
+  return 'jouer.html?ex=' + encodeURIComponent(ex) + '&activite=' + act + '&mode=' + mode +
+    (atelier ? '&atelier=' + atelier : '') + (platine === 'reelle' ? '&platine=reelle' : '');
+}
+function exDe(s, q) { return q === 'c' && s.commande ? s.commande : s.puissance; }
+// un quai est fini quand il est câblé au niveau 3 ou 4 ; la clé du tutoriel est « tuto:<exercice> »
+const cle = (s, q) => (s.tuto ? 'tuto:' : '') + exDe(s, q);
+function quaiFini(k, res) { const m = meilleurCablage(k, res); return m != null && m >= 3; }
+const stationFaite = (s, res) => quaiFini(cle(s, 'p'), res) && (!s.commande || quaiFini(cle(s, 'c'), res));
+// le quai conseillé : la commande quand la puissance est faite et pas elle
+const quaiConseille = (s, res) => s.commande && quaiFini(cle(s, 'p'), res) && !quaiFini(cle(s, 'c'), res) ? 'c' : 'p';
+const ancre = (s, q) => '#' + (q === 'c' ? s.commande : s.id);
+function suivante(s, res) {   // la prochaine station pas encore faite, dans l'ordre du réseau
+  const i = ORDRE.indexOf(s.id);
+  for (let k = 1; k < ORDRE.length; k++) { const n = PAR[ORDRE[(i + k) % ORDRE.length]]; if (n.id !== s.id && !stationFaite(n, res)) return n; }
+  return null;
+}
+const etapesPour = atelier => ETAPES.filter(e => e.id !== 'realiser' || atelier !== 'ecran');
+function etapeReprise(der, etapes) {   // l'étape de la dernière entrée ; la suivante si elle est réussie
+  let et = etapeDe(der);
+  if (reussie(der)) { const i = etapes.indexOf(et); if (i >= 0 && i < etapes.length - 1) et = etapes[i + 1]; }
+  const i = etapes.indexOf(et);
+  return {et, n: (i >= 0 ? i : ETAPES.indexOf(et)) + 1};
+}
+// la prochaine chose à faire (le bouton de tête de l'accueil)
+function prochaine(res) {
+  if (!res.length) return {href: TUTO, b: 'Commencer : la prise en main', small: 'Un quart d’heure, sur l’allumage simple'};
+  const der = res[res.length - 1];
+  const ou = der.exercice.startsWith('tuto:') ? {station: PAR.depart, quai: 'p'} : R.stationDe(der.exercice);
+  const gardes = reglagesGardes(), m = normMode(der.mode) || 'guide';
+  const reprendre = titre => {
+    const {et, n} = etapeReprise(der, etapesPour(gardes ? gardes.atelier : 'ecran'));
+    return {href: lienJouer(der.exercice, et.act, m, gardes ? gardes.atelier : '', gardes ? gardes.platine : ''),
+      b: 'Reprendre : ' + titre, small: 'Étape ' + n + ' · ' + et.nom + ', mode ' + MODES[m]};
+  };
+  if (!ou) return reprendre(R.titre(der.exercice));   // un exercice hors du réseau
+  const s = ou.station;
+  if (!quaiFini(der.exercice, res)) {
+    if (s.tuto) return {href: TUTO, b: 'Reprendre : la prise en main', small: 'Le tutoriel reprend au début, en mode Guidé'};
+    return reprendre(s.titre + (ou.quai === 'c' ? ', la commande' : ''));
   }
-  // niveau 1 : les tuiles
-  const tuiles = document.getElementById('tuiles');
-  CHAPITRES.forEach(function(c, i){
-    const t = document.createElement('a'); t.className = 'tuile'; t.href = '#' + c.id;
-    const n = c.ex.filter(function(id){ return parId[id]; }).length;
-    t.innerHTML = '<i>' + (i + 1) + '</i><b></b><span></span><small>' + n + ' exercice' + (n > 1 ? 's' : '') + '</small>';
-    // l'image du chapitre (Franck, 27/09 après-midi : « je clique, je sais ce que je vais trouver ») :
-    // une platine câblée du chapitre, prise sur le logiciel, apercus/chapitres/<id>.jpg ; absente, la tuile reste sans image
-    const img = document.createElement('img'); img.alt = ''; img.loading = 'lazy'; img.src = 'apercus/chapitres/' + c.id + '.jpg';
-    img.onerror = function(){ img.remove(); t.classList.remove('avec-image'); };
-    t.classList.add('avec-image'); t.prepend(img);
-    t.querySelector('b').textContent = c.titre; t.querySelector('span').textContent = c.texte;
-    tuiles.appendChild(t);
+  if (ou.quai === 'p' && s.commande && !quaiFini(s.commande, res))
+    return {href: ancre(s, 'c'), b: 'Continuer : ' + s.titre + ', la commande', small: 'La puissance est faite : la commande suit.'};
+  const n = suivante(s, res);
+  if (!n) return {href: ancre(s, 'p'), b: 'Tout le réseau est fait', small: 'Touchez une station du plan pour la refaire.'};
+  const q = quaiConseille(n, res);
+  return {href: ancre(n, q), b: 'Continuer : ' + n.titre + (q === 'c' ? ', la commande' : ''), small: n.niveau + ' · ' + n.sous};
+}
+
+// ---------------------------------------------------------------- le plan du réseau (maquette validée, dessiner())
+const NS = 'http://www.w3.org/2000/svg', X = c => 70 + c * 104, Y = r => 80 + r * 100;
+function el(tag, at, txt) { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; return e; }
+function dessiner(valeur) {
+  const svg = $('#carte'); svg.innerHTML = '';
+  const res = resultats(), der = res[res.length - 1];
+  const ou = der ? (der.exercice.startsWith('tuto:') ? {station: PAR.depart, quai: 'p'} : R.stationDe(der.exercice)) : null;
+  const ici = ou ? ou.station.id : res.length ? null : 'depart';
+  const pale = l => valeur && l !== valeur ? ' pale' : '';
+  R.correspondances.forEach(([a, b]) => svg.append(el('line', {class: 'corr' + (valeur ? ' pale' : ''), x1: X(PAR[a].c), y1: Y(PAR[a].r), x2: X(PAR[b].c), y2: Y(PAR[b].r)})));
+  for (const l in R.ordre) {
+    const pts = R.ordre[l].map(id => X(PAR[id].c) + ',' + Y(PAR[id].r)).join(' ');
+    svg.append(el('polyline', {class: 'ligne' + pale(l) + (valeur === l ? ' valeur' : ''), 'data-ligne': l, points: pts, stroke: LIG[l].couleur}));
+  }
+  // le nom des lignes : au-dessus du premier tronçon pour la ligne du haut, en colonne à gauche pour les autres
+  const pilule = (l, x, y, gauche) => {
+    const g = el('g', {class: 'pilule' + pale(l), 'data-ligne': l});
+    const t = el('text', {class: 'pil', y: y + 5, 'text-anchor': 'middle'}, LIG[l].num + ' ' + LIG[l].nom);
+    const r = el('rect', {y: y - 13, height: 26, rx: 13, fill: LIG[l].couleur});
+    g.append(r, t); svg.append(g);
+    const w = (t.getComputedTextLength() || t.textContent.length * 7.6) + 22, x0 = gauche ? x : x - w / 2;
+    r.setAttribute('x', x0); r.setAttribute('width', w); t.setAttribute('x', x0 + w / 2);
+  };
+  R.lignes.filter(l => l.num).forEach(l => {
+    const ids = R.ordre[l.id].filter(id => id !== 'depart'), p = PAR[ids[0]];
+    if (p.r === 0) pilule(l.id, (X(p.c) + X(PAR[ids[1]].c)) / 2, Y(0) - 32);
+    else pilule(l.id, 16, Y(p.r), true);
   });
-  // niveau 2 : un chapitre, ses exercices avec leur schéma
-  function montrer() {
-    const c = CHAPITRES.find(function(x){ return '#' + x.id === location.hash; });
-    document.getElementById('chapitres').hidden = !!c;
-    document.getElementById('chapitre').hidden = !c;
-    if (!c) { document.title = 'Câblage virtuel — exercices'; return; }
-    document.title = 'Câblage virtuel — ' + c.titre;
-    document.getElementById('chapitre-titre').textContent = c.titre;
-    document.getElementById('chapitre-texte').textContent = c.texte;
-    const liste = document.getElementById('liste'); liste.innerHTML = '';
-    c.ex.forEach(function(id){ if (parId[id]) liste.appendChild(fiche(parId[id])); });
-    window.scrollTo(0, 0);
+  R.stations.forEach(s => {
+    const x = X(s.c), y = Y(s.r), coul = LIG[s.ligne].couleur, fait = meilleurCablage((s.tuto ? 'tuto:' : '') + s.puissance, res), estIci = ici === s.id;
+    const Rr = s.id === 'depart' ? 19 : 14;
+    const g = el('g', {class: 'st' + pale(s.ligne), 'data-id': s.id, tabindex: 0, role: 'button',
+      'aria-label': s.titre + (fait != null ? ', faite, niveau ' + fait : ', à faire') + (estIci ? ', vous êtes ici' : '') + (s.commande ? ', puissance puis commande' : '')});
+    g.append(el('circle', {class: 'cible', cx: x, cy: y, r: 30, fill: 'transparent'}));
+    if (estIci) g.append(el('circle', {class: 'halo', cx: x, cy: y, r: Rr + 8, stroke: coul}));
+    if (s.commande) g.append(el('circle', {cx: x, cy: y, r: Rr + 5, fill: 'none', stroke: coul, 'stroke-width': 2}));
+    g.append(el('circle', {class: 'rond', cx: x, cy: y, r: Rr, fill: fait != null ? coul : '#fffdf8', stroke: coul, 'stroke-width': estIci ? 6 : 4}));
+    if (fait != null) g.append(el('text', {class: 'niv', x: x, y: y + 5, 'text-anchor': 'middle'}, String(fait)));
+    let lx = x, ly = y + Rr + (s.commande ? 22 : 18), anc = 'middle';
+    if (s.pos === 'droite') { lx = x + Rr + (s.commande ? 14 : 12); ly = y - 1; anc = 'start'; }
+    if (s.pos === 'haut') ly = y - Rr - 26;
+    const lignes = [[s.etiquette[0], 'lab1'], [s.etiquette[1], 'lab2']].filter(z => z[0]);
+    if (estIci) lignes.push(['Vous êtes ici', 'ici']);
+    lignes.forEach((z, i) => g.append(el('text', {class: z[1] + ' etiquette', x: lx, y: ly + i * 17, 'text-anchor': anc}, z[0])));
+    const ouvrir = () => aller('#' + s.id);
+    g.addEventListener('click', ouvrir);
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ouvrir(); } });
+    svg.append(g);
+  });
+  // le bouton de tête : la prochaine chose à faire (commencer, reprendre, continuer)
+  const cta = $('#cta'), p = prochaine(res);
+  cta.href = p.href;
+  cta.innerHTML = '<b></b><small></small>';
+  cta.querySelector('b').textContent = p.b;
+  cta.querySelector('small').textContent = p.small;
+  // une ancienne adresse de chapitre : la ligne mise en valeur, dite en clair
+  const bandeau = $('#bandeau-ligne');
+  bandeau.hidden = !valeur;
+  if (valeur) {
+    const L = LIG[valeur];
+    bandeau.style.borderLeftColor = L.couleur;
+    bandeau.innerHTML = '<b></b> <span></span>';
+    bandeau.querySelector('b').textContent = (L.num ? 'Ligne ' + L.num + ' · ' : '') + L.nom + ' :';
+    bandeau.querySelector('span').textContent = L.texte + ' Touchez une station de cette ligne.';
   }
-  window.addEventListener('hashchange', montrer);
-  montrer();
-  if (!index.length) document.getElementById('tuiles').textContent = 'Aucun exercice : lancez outils/qet-vers-exercice.py.';
+}
+
+// ---------------------------------------------------------------- la fiche de station
+let stationId = null, quai = 'p', jeton = 0;
+const compte = {};
+function compter(id) {   // le nombre de fils : les étapes de l'exercice, chargé à la demande (comme charger() de moteur/cablage.js)
+  return new Promise(ok => {
+    if (id in compte) return ok(compte[id]);
+    const fini = ex => { compte[id] = ex && Array.isArray(ex.etapes) ? ex.etapes.length : null; if (window.CABLAGE_EXERCICES) delete window.CABLAGE_EXERCICES[id]; ok(compte[id]); };
+    if (window.CABLAGE_EXERCICES && window.CABLAGE_EXERCICES[id]) return fini(window.CABLAGE_EXERCICES[id]);
+    const s = document.createElement('script');
+    s.src = 'exercices/' + encodeURIComponent(id) + '.js' + (window.CABLAGE_VERSION ? '?v=' + window.CABLAGE_VERSION : '');
+    s.onload = () => fini((window.CABLAGE_EXERCICES || {})[id]);
+    s.onerror = () => fini(null);
+    document.head.appendChild(s);
+  });
+}
+function peindreReglages() {
+  $$('.segs').forEach(g => $$('button', g).forEach(b => b.setAttribute('aria-pressed', String(reg[g.dataset.reg] === b.dataset.v))));
+  $('#aide-reg').textContent = ATELIER_NOM[reg.atelier] + ' : ' + ATELIERS[reg.atelier] + ' Ces réglages restent sur cet appareil ; le QR de votre feuille les impose.';
+}
+function remplirStation() {
+  const s = PAR[stationId], L = LIG[s.ligne], depart = s.id === 'depart';
+  if (!s.commande) quai = 'p';
+  const ex = exDe(s, quai), res = resultats();
+  document.title = 'Câblage virtuel — ' + s.titre;
+  const lg = $('#st-ligne'); lg.textContent = L.num ? 'Ligne ' + L.num + ' · ' + L.nom : L.nom; lg.style.background = L.couleur;
+  $('#st-niv').textContent = s.niveau;
+  $('#st-titre').textContent = s.titre; $('#st-sous').textContent = s.sous;
+  $('#st-apprend').textContent = s.apprend;
+  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20260929-1910';
+  img.alt = 'Le schéma : ' + R.titre(ex, s.titre);
+  // les fils à poser
+  const faits = $('#st-faits'), mien = ++jeton;
+  faits.innerHTML = '<span>… fils à poser</span>';
+  Promise.all([compter(s.puissance), s.commande ? compter(s.commande) : null]).then(([p, c]) => {
+    if (mien !== jeton) return;
+    faits.innerHTML = (p != null ? '<span><b>' + p + '</b> fils à poser</span>' : '') + (c != null ? '<span>puis la commande : <b>' + c + '</b> fils</span>' : '');
+  });
+  // les quais
+  $('#st-quais').hidden = !s.commande;
+  $$('#st-quais button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.q === quai)));
+  // le chemin, avec ses coches
+  const k = cle(s, quai), f = faites(k, res);
+  const etapes = etapesPour(reg.atelier);
+  $('#st-chemin').innerHTML = etapes.map((e, i) => '<li class="' + (f.has(e.id) ? 'faite' : '') + '"><span>' + (f.has(e.id) ? '✓ ' : '') + (i + 1) + ' ' + e.nom +
+    (f.has(e.id) ? '<small class="lecteur"> (réussie)</small>' : '') + '</span></li>').join('');
+  // UN gros bouton (la prochaine chose à faire) et, au besoin, un lien discret (repartir du début, refaire)
+  const go = $('#st-go'), rep = $('#st-reprendre'), mesRes = res.filter(e => e.exercice === k);
+  const debut = depart ? TUTO : lienJouer(ex, 'colorier', reg.mode, reg.atelier, reg.platine);
+  const nomQuai = s.commande ? (quai === 'c' ? ' la commande' : ' la puissance') : '';
+  const bouton = (href, txt) => { go.href = href; go.textContent = txt; };
+  const discret = (href, txt) => { rep.hidden = !href; if (href) { rep.href = href; rep.textContent = txt; } };
+  if (quaiFini(k, res)) {   // ce quai est fait : la suite en gros, « Refaire » en discret
+    const n = suivante(s, res);
+    if (!depart && quai === 'p' && s.commande && !quaiFini(cle(s, 'c'), res)) bouton(ancre(s, 'c'), 'Passer à la commande');
+    else if (n) { const q = quaiConseille(n, res); bouton(ancre(n, q), 'Station suivante : ' + n.titre + (q === 'c' ? ', la commande' : '')); }
+    else bouton('index.html', 'Tout le réseau est fait : revenir au plan');
+    discret(debut, depart ? 'Refaire la prise en main' : 'Refaire' + nomQuai);
+  } else if (mesRes.length && !depart) {   // commencé : reprendre en gros, repartir du début en discret
+    const {et, n} = etapeReprise(mesRes[mesRes.length - 1], etapes);
+    bouton(lienJouer(ex, et.act, reg.mode, reg.atelier, reg.platine), 'Reprendre à l’étape ' + n + ' · ' + et.nom);
+    discret(debut, 'Recommencer à l’étape 1');
+  } else {
+    bouton(debut, depart ? 'Commencer la prise en main' : 'Commencer' + nomQuai);
+    discret(null);
+  }
+  // les réglages choisis par l'adresse
+  const prof = $('#st-prof');
+  prof.hidden = !parProf || depart;
+  prof.textContent = 'Réglages choisis par votre professeur : ' + MODES[reg.mode] + ' · ' + ATELIER_NOM[reg.atelier] + ' · ' + (reg.platine === 'reelle' ? 'Vrais appareils' : 'Symboles') + '.';
+  $('#reglages').hidden = depart;
+  peindreReglages();
+  // les liens ; la feuille dite par son vrai nom (Départ : la feuille du tutoriel ; fil par fil : le carnet, s'il existe)
+  const d = own(DOCS, ex) ? DOCS[ex] : null, liens = [], note = $('#st-note');
+  note.hidden = true;
+  if (d) {
+    let href = d.eleve, nom = d.nom;
+    if (depart && d.tuto) { href = d.tuto; nom = d.nomTuto || 'Feuille élève du tutoriel'; }
+    else if (!depart && reg.atelier === 'fil') {
+      if (d.fil) { href = d.fil; nom = d.nomFil || 'Feuille élève, fil par fil'; }
+      else { note.hidden = false; note.textContent = 'Pas encore de feuille fil par fil pour cette station ; voici « ' + nom + ' ».'; }
+    }
+    liens.push('<li><a data-lien="feuille" href="' + href + '" download></a></li>');
+    liens.push('<li><a data-lien="prof" href="documents-professeur.html#' + encodeURIComponent(ex) + '">Documents professeur (code enseignant)</a></li>');
+    $('#st-liens').innerHTML = liens.join('') + '<li><a href="https://inerweb.fr/electrorezo/" target="_blank" rel="noopener">Revoir les appareils sur ÉlectroRézo</a></li>';
+    $('#st-liens [data-lien="feuille"]').textContent = nom + ' (PDF)';
+  } else {
+    $('#st-liens').innerHTML = '<li><a href="documents-professeur.html#' + encodeURIComponent(ex) + '">Documents professeur (code enseignant)</a></li>' +
+      '<li><a href="https://inerweb.fr/electrorezo/" target="_blank" rel="noopener">Revoir les appareils sur ÉlectroRézo</a></li>';
+  }
+}
+$$('#st-quais button').forEach(b => b.addEventListener('click', () => { quai = b.dataset.q; remplirStation(); }));
+$$('.segs button').forEach(b => b.addEventListener('click', () => {
+  reg[b.closest('.segs').dataset.reg] = b.dataset.v;
+  ecrire(CLE_REG, reg); parProf = false; remplirStation();
+}));
+
+// ---------------------------------------------------------------- les adresses (plusieurs portes vers la même chose)
+function montrer(vue) {
+  $('#vue-reseau').hidden = vue !== 'reseau';
+  $('#vue-station').hidden = vue !== 'station';
+}
+function route() {
+  router();
+  window.dispatchEvent(new Event('resize'));   // moteur/marque.js recalcule sa place (fixe ou en fin de page) : la hauteur a changé
+}
+function router() {
+  const q = new URLSearchParams(location.search), h = decodeURIComponent(location.hash.slice(1));
+  // 1. le QR du professeur : ?station=<id>[&quai=p|c][&mode=][&atelier=][&platine=reelle]
+  if (!h && own(PAR, q.get('station'))) {
+    stationId = q.get('station'); quai = q.get('quai') === 'c' ? 'c' : q.get('quai') === 'p' ? 'p' : quaiConseille(PAR[stationId], resultats());
+    const m = normMode(q.get('mode')), a = own(ATELIERS, q.get('atelier')) ? q.get('atelier') : null;
+    if (m || a || q.has('platine')) {   // l'adresse porte des réglages : elle les impose tous
+      reg = {mode: m || reg.mode, atelier: a || reg.atelier, platine: q.get('platine') === 'reelle' ? 'reelle' : ''};
+      ecrire(CLE_REG, reg); parProf = true;
+    }
+    montrer('station'); remplirStation(); return;
+  }
+  // 2. #<station>, ou #<exercice> (la station et son quai)
+  if (own(PAR, h)) { if (stationId !== h) quai = quaiConseille(PAR[h], resultats()); stationId = h; montrer('station'); remplirStation(); return; }
+  const de = R.stationDe(h);
+  if (de) { stationId = de.station.id; quai = de.quai; montrer('station'); remplirStation(); return; }
+  // 3. #<ancien chapitre> : le réseau, la ligne mise en valeur ; toute autre adresse : le réseau
+  document.title = 'Câblage virtuel — le réseau';
+  montrer('reseau');
+  dessiner(own(R.chapitres_anciens, h) && own(LIG, R.chapitres_anciens[h]) ? R.chapitres_anciens[h] : null);
+  // écran étroit : le plan défile dans son cadre ; on l'ouvre sur la station en cours
+  const plan = $('#plan'), ici = $('#carte .st .ici');
+  if (plan.scrollWidth > plan.clientWidth && ici) {
+    const b = ici.closest('.st').querySelector('.rond').getBoundingClientRect(), p = plan.getBoundingClientRect();
+    plan.scrollLeft += b.left + b.width / 2 - p.left - plan.clientWidth / 2;
+  }
+}
+function aller(adresse) {   // navigation interne : l'adresse change (retour du navigateur compris), la page ne se recharge pas
+  history.pushState(null, '', location.pathname + adresse);
+  const depuis = stationId;
+  route();
+  window.scrollTo(0, 0);
+  if (!$('#vue-station').hidden) $('#st-titre').focus({preventScroll: true});
+  else if (depuis) { const g = $('#carte .st[data-id="' + depuis + '"]'); if (g) g.focus({preventScroll: true}); }
+}
+$('#st-retour').addEventListener('click', e => { e.preventDefault(); aller(''); });
+// un gros bouton qui mène à une station (#<station>) ou au plan : navigation interne
+['#cta', '#st-go'].forEach(s => $(s).addEventListener('click', e => {
+  const h = $(s).getAttribute('href') || '';
+  if (h.startsWith('#')) { e.preventDefault(); aller(h); }
+  else if (h === 'index.html') { e.preventDefault(); aller(''); }
+}));
+window.addEventListener('popstate', route);
+window.addEventListener('hashchange', route);
+window.addEventListener('pageshow', e => { if (e.persisted) route(); });   // retour du jeu : les états ont pu changer
+route();
 })();
 </script>
-<script src="moteur/marque.js?v=20260928-1126" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260929-1910" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

@@ -23,20 +23,56 @@ const COULEURS = { marron: '#6b3e1e', noir: '#111111', gris: '#8a8f98', bleu: '#
 const ECH = 1.6;              // échelle des symboles QElectroTech sur la platine
 const SORTIE = 16;            // sortie droite d'une borne avant le premier coude
 const RAYON_BORNE = 9, RAYON_PRISE = 30;   // prise large : la borne la plus proche est aimantée (Franck, 26/09 : « trop petit à cliquer »)
+// Toucher une borne puis l'autre (Franck, 29/09 : « je clique sur un point et je clique sur l'autre ») : un doigt ou un pavé
+// tactile tremble ; le seuil se compte en pixels d'ÉCRAN (8 unités de platine ne faisaient que 4 px à 1366 × 768, et le toucher
+// devenait un glisser lâché dans le vide). Un appui lâché sur sa propre borne reste un toucher, quel que soit le tremblé.
+const SEUIL_GLISSER = 12;
 const DIR = [[0, -1], [1, 0], [0, 1], [-1, 0]];   // orientation QElectroTech : 0 nord 1 est 2 sud 3 ouest
 const NS = 'http://www.w3.org/2000/svg';
 
 const P = new URLSearchParams(location.search);
 const ID = P.get('ex');
 const VUE = P.get('vue');
-const MODE = ['guide', 'aide', 'reel'].includes(P.get('mode')) ? P.get('mode') : 'guide';
-const ACTIVITE = ['colorier', 'reperer', 'cabler'].includes(P.get('activite')) ? P.get('activite') : 'cabler';
-const REELLE = P.get('platine') === 'reelle';   // la platine en vue réelle (§ 5 B) : les vrais appareils, la carte reste en symboles
+// 29/09 : le troisième mode s'appelle « Avancé » à l'écran (jamais « examen ») ; sa valeur reste 'reel', « avance » est accepté
+const MODE = P.get('mode') === 'avance' ? 'reel' : ['guide', 'aide', 'reel'].includes(P.get('mode')) ? P.get('mode') : 'guide';
+const ACTIVITE = ['colorier', 'reperer', 'cabler', 'realiser'].includes(P.get('activite')) ? P.get('activite') : 'cabler';
+const REELLE_ADRESSE = P.get('platine') === 'reelle';
+const REELLE = REELLE_ADRESSE || ACTIVITE === 'realiser';   // Réaliser montre la platine en vrais appareils, quand l'exercice en a
+const TUTO = P.get('tuto') !== null;
+// À l'atelier (29/09) : écran seulement · en deux temps (tout l'écran, puis l'étape 5 Réaliser) · fil par fil (un fil à l'écran,
+// le même sur la platine). L'ADRESSE seule, sinon l'écran (30/09, constat P6 : un réglage gardé sur l'appareil s'appliquait
+// ensuite aux anciens QR sans &atelier ; un ancien QR retrouve l'écran seul). Le tutoriel : l'écran.
+const ATELIERS = ['ecran', 'deux', 'fil'];
+const ATELIER = ATELIERS.includes(P.get('atelier')) && !TUTO ? P.get('atelier') : 'ecran';
+const FIL_PAR_FIL = ATELIER === 'fil' && ACTIVITE === 'cabler' && VUE !== 'carte';
+const CLE_FILS = 'cablage-virtuel:fils:' + ID;   // les fils posés à l'écran : l'étape Réaliser, et le retour à Câbler
+// La mémoire des fils, lue une fois ; un élément incomplet (mémoire abîmée) est ignoré, jamais une erreur (constat R5).
+// Stockage bloqué : les fils de cet onglet passent par window.name, le temps d'aller de Câbler à Réaliser (constat X8).
+let STOCKAGE_BLOQUE = false;
+const MEMOIRE = (() => {
+  let m = null;
+  try { m = JSON.parse(localStorage.getItem(CLE_FILS) || 'null'); } catch (err) { m = null; STOCKAGE_BLOQUE = !(err instanceof SyntaxError); }
+  if (!m && ID) try { const n = window.name || '', t = 'cablage-virtuel:fils:' + ID + '='; if (n.startsWith(t)) m = JSON.parse(n.slice(t.length)); } catch (err) { m = null; }
+  if (!m || typeof m !== 'object') return null;
+  const valide = (f) => f && typeof f === 'object' && typeof f.de === 'string' && typeof f.a === 'string' && /:/.test(f.de) && /:/.test(f.a);
+  m.fils = Array.isArray(m.fils) ? m.fils.filter(valide).map(f => ({ de: f.de, a: f.a, couleur: typeof f.couleur === 'string' ? f.couleur : 'noir', pose: f.pose === true })) : [];
+  return m;
+})();
+// la station du réseau (moteur/reseau.js) : le « ‹ » et « Plus » y ramènent
+const RESEAU = window.CABLAGE_RESEAU || null;
+const SD = RESEAU && RESEAU.stationDe && ID ? RESEAU.stationDe(ID) : null;
+const STATION = TUTO ? 'depart' : SD ? SD.station.id : null;
+// 28/09 : plusieurs matériels pour une même platine (domestique : mural / 22 mm), « au choix du prof et en fonction des
+// moyens » — `&materiel=`, sinon le dernier choix gardé sur l'appareil, sinon le premier (mural)
+const CLE_MATERIEL = 'cablage-virtuel:materiel';
+let MATERIEL = P.get('materiel') || (ACTIVITE === 'realiser' && MEMOIRE && MEMOIRE.materiel) ||   // Réaliser : le matériel des fils mémorisés
+  (() => { try { return localStorage.getItem(CLE_MATERIEL) || ''; } catch (err) { return ''; } })();   // la platine en vue réelle (§ 5 B) : les vrais appareils, la carte reste en symboles
 const $ = (s) => document.querySelector(s);
 
 let EX, fils = [], couleur = 'marron', armee = null, choisi = null, trace = null;
 let aides = 0, niveauAide = 0, cibleAide = null, etapeIdx = 0, debut = Date.now(), controle = false, refus = 0;
-let filsControles = null;     // les fils au dernier contrôle : en Réel, la mise sous tension le demande (moteur/tension-ecran.js)
+let filsControles = null;     // les fils au dernier contrôle : en Avancé, la mise sous tension le demande (moteur/tension-ecran.js)
+let enAttente = null;         // fil par fil : le fil posé à l'écran qui attend « C'est posé sur la platine »
 const bornes = {};            // 'Q1:2' -> {ref, rep, id, x, y, o, el}
 const cartesBornes = {};      // 'Q1:2' -> [cercles sur la carte]
 let svgPlatine, gFils, gManques, filTemp;
@@ -322,13 +358,23 @@ function borneProche(pt) {
 }
 function debutTrace(e) {
   if (controle) return;
+  if (enAttente) {   // fil par fil : la platine attend que le fil soit posé pour de vrai (le vide se déplace toujours)
+    if (!borneProche(point(e)) && !(e.target.closest && e.target.closest('.fil'))) return;
+    e.stopImmediatePropagation();   // ni fil, ni déplacement depuis une borne
+    const b = $('#bulle-pose'); b.classList.remove('rappel'); void b.offsetWidth; b.classList.add('rappel');
+    dire('Posez d’abord ce fil sur votre platine.', 'ko', 'Puis appuyez sur « C’est posé sur la platine ».');
+    return;
+  }
+  fermerChoix();   // un nouveau geste sur la platine referme la bulle « Quelle borne ? »
   const filEl = e.target.closest && e.target.closest('.fil');
   if (filEl) { choisir(fils.find(f => f.el === filEl || f.contour === filEl)); return; }
   const pt = point(e), b = borneProche(pt);
   choisir(null);
   if (!b) { armer(null); return; }
+  const cands = candidatsDoigt(e);   // au doigt, deux bornes presque à égale distance : l'élève choisit, rien n'est pris
+  if (cands.length > 1) { aimanter(null); proposerChoix(cands, e, (ref) => toucherBorne(ref, e)); return; }
   svgPlatine.setPointerCapture(e.pointerId);
-  trace = { de: b, x: pt.x, y: pt.y, bouge: false };
+  trace = { de: b, cx: e.clientX, cy: e.clientY, bouge: false };
   aimanter(b); b.el.classList.add('armee');   // on voit tout de suite la borne prise
   viser(armee && armee !== b.ref ? 'Fil : ' + libSens(armee) + ' → ' + libSens(b.ref) : libSens(b.ref) + ' → …', e);
   filTemp.setAttribute('stroke', COULEURS[couleur]);
@@ -346,8 +392,8 @@ function aimanter(b) {
 }
 function suiviTrace(e) {
   const pt = point(e);
-  if (!trace) { if (e.pointerType === 'mouse' && !controle) aimanter(borneProche(pt)); return; }
-  if (Math.hypot(pt.x - trace.x, pt.y - trace.y) > 8) trace.bouge = true;
+  if (!trace) { if (e.pointerType === 'mouse' && !controle && !enAttente) aimanter(borneProche(pt)); return; }
+  if (Math.hypot(e.clientX - trace.cx, e.clientY - trace.cy) > SEUIL_GLISSER) trace.bouge = true;
   if (!trace.bouge) return;
   const b = borneProche(pt), cible = b && b !== trace.de ? b : null;
   if (cible !== aimant) viser('Fil : ' + libSens(trace.de.ref) + ' → ' + (cible ? libSens(cible.ref) : '…'), e);
@@ -371,18 +417,61 @@ function finTrace(e) {
   if (!trace) return;
   const b = borneProche(point(e)), de = trace.de;
   filTemp.setAttribute('d', ''); aimanter(null); viser(null);
-  if (trace.bouge) {
-    if (b && b.ref !== de.ref) creerFil(de.ref, b.ref);
+  if (trace.bouge && !(b && b.ref === de.ref)) {
+    const cands = b ? candidatsDoigt(e).filter(c => c !== de) : [];
+    if (cands.length > 1) proposerChoix(cands, e, (ref) => creerFil(de.ref, ref));   // lâché entre deux bornes, au doigt
+    else if (b) creerFil(de.ref, b.ref);
     else if (MODE === 'guide') prochaineEtape();   // fil lâché dans le vide : la consigne de l'étape revient
-    else dire('Fil lâché dans le vide : rien n’est posé.', null, 'Glissez d’une borne à l’autre, ou touchez l’une puis l’autre.');
+    else dire('Fil lâché dans le vide : rien n’est posé.', null, 'Touchez une borne, puis l’autre.');
     armer(null);
-  } else if (armee && armee !== de.ref) {
-    creerFil(armee, de.ref); armer(null);
-  } else {
-    armer(armee === de.ref ? null : de.ref);
-    if (armee) viser(libSens(armee) + ' : touchez l’autre borne (ou celle-ci pour annuler).', e);
-  }
+  } else toucherBorne(de.ref, e);
   trace = null;
+}
+/* Toucher une borne : la première s'allume, la seconde pose le fil ; la même une seconde fois annule. */
+function toucherBorne(ref, e) {
+  if (armee && armee !== ref) { creerFil(armee, ref); armer(null); return; }
+  armer(armee === ref ? null : ref);
+  if (armee) viser(libSens(armee) + ' : touchez l’autre borne (ou celle-ci pour annuler).', e);
+}
+/* Au doigt (30/09, constat E4) : un doigt couvre plusieurs millimètres. Quand deux bornes sont presque à égale distance du point
+   touché (la seconde à moins de 1,3 fois la distance de la première, dans le rayon de prise), une bulle propose les deux, en gros
+   boutons nommés ; rien n'est posé ni compté tant que l'élève n'a pas choisi. Jamais d'aimant vers la bonne réponse. Une distance
+   sous DOIGT pixels d'écran compte pour DOIGT : sous le doigt, 1 px ou 6 px, c'est la même imprécision. */
+const DOIGT = 8;
+let choix = null;
+function candidatsDoigt(e) {
+  if (e.pointerType !== 'touch' && e.pointerType !== 'pen') return [];
+  const m = svgPlatine.getScreenCTM(), pt = point(e); if (!m) return [];
+  const l = Object.values(bornes).filter(b => Math.hypot(b.x - pt.x, b.y - pt.y) < RAYON_PRISE)
+    .map(b => ({ b, d: Math.hypot(m.a * b.x + m.c * b.y + m.e - e.clientX, m.b * b.x + m.d * b.y + m.f - e.clientY) }))
+    .sort((p, q) => p.d - q.d);
+  const seuil = 1.3 * Math.max(l.length ? l[0].d : 0, DOIGT);
+  const c = l.filter(x => x.d < seuil).slice(0, 4).map(x => x.b);
+  return c.length > 1 ? c : [];
+}
+function proposerChoix(cands, e, faire) {
+  fermerChoix();
+  const zone = $('#platine'), r = zone.getBoundingClientRect();
+  const d = document.createElement('div'); d.className = 'choix-borne'; d.setAttribute('role', 'dialog');
+  const t = document.createElement('p'); t.textContent = cands.length > 2 ? 'Plusieurs bornes sous le doigt : laquelle ?' : 'Deux bornes sous le doigt : laquelle ?';
+  d.setAttribute('aria-label', t.textContent); d.append(t);
+  cands.forEach(b => {
+    const x = document.createElement('button'); x.textContent = b.rep + ' borne ' + b.id; x.dataset.ref = b.ref;
+    x.onclick = () => { fermerChoix(); if (!controle && !enAttente && !document.body.classList.contains('sous-tension')) faire(b.ref); }; d.append(x);
+    b.el.classList.add('candidate');
+  });
+  zone.append(d);
+  // au-dessus du doigt s'il y a la place, sinon dessous : jamais sous le doigt
+  const w = d.offsetWidth, h = d.offsetHeight;
+  let y = e.clientY - r.top - h - 40; if (y < 8) y = e.clientY - r.top + 40;
+  d.style.left = Math.max(8, Math.min(r.width - w - 8, e.clientX - r.left - w / 2)) + 'px';
+  d.style.top = Math.max(8, Math.min(r.height - h - 8, y)) + 'px';
+  choix = { el: d, cands };
+}
+function fermerChoix() {
+  if (!choix) return false;
+  choix.el.remove(); choix.cands.forEach(b => b.el.classList.remove('candidate')); choix = null;
+  return true;
 }
 function armer(ref) {
   armee = ref;
@@ -530,15 +619,88 @@ function creerFil(de, a) {
   }
   const f = { de, a, couleur, idx: fils.length };
   fils.push(f);
+  if (FIL_PAR_FIL) enAttente = f;
   redessinerFils();
   rafraichir();
+  memoriser();
+  if (FIL_PAR_FIL) { niveauAide = 0; attendrePose(f); return; }   // en Guidé, le fil suivant vient après « C'est posé »
   if (MODE === 'guide') prochaineEtape();   // etapeCourante() saute ce qui est déjà relié : un pont peut demander plusieurs fils
   else { niveauAide = 0; dire(libSens(de) + ' → ' + libSens(a) + ' en ' + couleur + '.', null, MODE === 'aide' ? 'Continuez, ou demandez de l’aide.' : 'Continuez, puis contrôlez.'); }
+}
+/* Fil par fil (29/09) : chaque fil accepté à l'écran se pose aussitôt sur la vraie platine, hors tension. Une bulle le redit en
+   toutes lettres ; tant que l'élève n'a pas appuyé sur « C'est posé sur la platine », la platine de l'écran ne prend aucun geste. */
+function attendrePose(f) {
+  const n = fils.indexOf(f) + 1;
+  // 30/09 (constat R3) : en Guidé le fil vient d'être vérifié (la coche) ; en Aidé et en Avancé, rien n'est encore vérifié
+  const verifie = MODE === 'guide';
+  $('#bulle-ok').textContent = verifie ? '✓ Fil posé à l’écran :' : 'Votre fil à l’écran, pas encore vérifié :';
+  $('#bulle-ok').className = verifie ? 'ok' : 'libre';
+  $('#bulle-pose').classList.toggle('non-verifie', !verifie);   // ni coche ni cadre vert : rien n'est encore vérifié
+  $('#bulle-fil').textContent = lib(f.de) + ' → ' + lib(f.a) + ', en ' + f.couleur + '.';
+  $('#btn-pose').textContent = verifie ? 'C’est posé sur la platine ✓' : 'C’est posé sur la platine';
+  $('#bulle-pose').hidden = false; majAttente();
+  surbrillance([]); montrerConducteur(null);
+  if (verifie) dire('Fil ' + n + ' posé à l’écran : posez-le sur votre platine.', 'ok', 'Hors tension. Puis appuyez sur « C’est posé sur la platine ».');
+  else dire('Fil ' + n + ' tracé à l’écran : posez-le sur votre platine.', null, 'Hors tension. Il sera vérifié au contrôle. Puis appuyez sur « C’est posé sur la platine ».');
+  const b = $('#btn-pose'); if (b) b.focus({ preventScroll: true });
+}
+/* 30/09 (constat R2) : tant qu'une pose sur la platine attend, Contrôler et Essayer sont inactifs, et leur infobulle le dit. */
+const ATTENTE_TITRE = 'Posez d’abord le fil sur votre platine, puis appuyez sur « C’est posé sur la platine ».';
+function majAttente() {
+  const bc = $('#btn-controler'), bt = $('#btn-tension');
+  if (bc) { if (enAttente) { bc.setAttribute('aria-disabled', 'true'); bc.title = ATTENTE_TITRE; } else if (bc.title === ATTENTE_TITRE) { bc.removeAttribute('aria-disabled'); bc.title = ''; } }
+  if (bt && ACTIVITE === 'cabler' && bt.dataset.actif) {   // l'étape 4, quand la mise sous tension l'a activée
+    if (enAttente) { bt.setAttribute('aria-disabled', 'true'); bt.title = ATTENTE_TITRE; }
+    else if (bt.title === ATTENTE_TITRE) { bt.removeAttribute('aria-disabled'); bt.title = bt.dataset.actif; }
+  }
+}
+function posePlatine() {
+  const f = enAttente; if (!f) return;
+  f.pose = true; enAttente = null;
+  $('#bulle-pose').hidden = true; $('#bulle-pose').classList.remove('rappel'); majAttente();
+  redessinerFils(); rafraichir(); memoriser();
+  if (MODE === 'guide') prochaineEtape();
+  else dire('Fil posé sur la platine.', null, MODE === 'aide' ? 'Le suivant : à l’écran, puis sur la platine. L’aide reste là si besoin.' : 'Le suivant : à l’écran, puis sur la platine. Contrôlez à la fin.');
+}
+/* Les fils posés à l'écran, gardés sur l'appareil à chaque changement : l'étape 5 Réaliser en fait l'ordre de câblage. */
+// Appelée seulement sur un geste de l'élève (un fil posé, supprimé, recoloré, posé sur la platine) : jamais au chargement.
+// 30/09 (constats X3, X2) : elle sert aussi à retrouver ses fils en revenant à Câbler ; le fil par fil y garde « posé ».
+// Les aides et les refus suivent les fils : un câblage repris ne repart pas à « 0 aide ».
+function memoriser() {
+  if (ACTIVITE !== 'cabler' || VUE === 'carte' || !ID || TUTO) return;
+  const m = { date: new Date().toISOString(), mode: MODE, reelle: vueReelle(), materiel: EX && EX.reels ? MATERIEL : '', aides, refus,
+    fils: fils.map(f => Object.assign({ de: f.de, a: f.a, couleur: f.couleur }, FIL_PAR_FIL ? { pose: !!f.pose } : {})) };
+  try { localStorage.setItem(CLE_FILS, JSON.stringify(m)); STOCKAGE_BLOQUE = false; }
+  catch (err) { STOCKAGE_BLOQUE = true; try { window.name = CLE_FILS + '=' + JSON.stringify(m); } catch (e) { /* rien */ } }
+}
+function oublier() {   // Recommencer : la mémoire des fils est effacée (plus rien à reprendre ni à réaliser)
+  try { localStorage.removeItem(CLE_FILS); } catch (err) { /* stockage indisponible */ }
+  if ((window.name || '').startsWith(CLE_FILS + '=')) window.name = '';
+}
+/* Revenir à Câbler (30/09, constats X3 et X2) : les fils gardés reviennent si la mémoire a le même mode, la même vue et le même
+   matériel, jamais dans le tutoriel ; un fil que cette vue ne connaît pas est ignoré. Renvoie le nombre de fils revenus. */
+function reprendre() {
+  const m = MEMOIRE;
+  if (TUTO || !m || !m.fils.length || m.mode !== MODE || !!m.reelle !== vueReelle() || (m.materiel || '') !== (EX.reels ? MATERIEL : '')) return 0;
+  m.fils.forEach(x => {
+    if (!bornes[x.de] || !bornes[x.a] || x.de === x.a || fils.some(f => cle(f.de, f.a) === cle(x.de, x.a))) return;
+    fils.push({ de: x.de, a: x.a, couleur: COULEURS[x.couleur] ? x.couleur : 'noir', idx: fils.length, pose: FIL_PAR_FIL ? x.pose : undefined });
+  });
+  if (!fils.length) return 0;
+  aides = Math.max(0, +m.aides || 0); refus = Math.max(0, +m.refus || 0); compterAide(aides);
+  // le dernier contrôle, s'il a eu lieu après le dernier geste : en Avancé, l'essai reste permis sans recontrôler
+  try {
+    const l = JSON.parse(localStorage.getItem('cablage-virtuel:resultats') || '[]');
+    const c = (Array.isArray(l) ? l : []).filter(e => e && e.exercice === ID && e.activite === 'cabler' && !e.tuto && e.mode === MODE && e.date >= m.date).pop();
+    if (c && c.fils === fils.length) filsControles = signatureFils();
+  } catch (err) { /* rien */ }
+  redessinerFils(); rafraichir();
+  return fils.length;
 }
 function dessinerFil(f) {
   const d = traceArrondi(pointsFil(f));
   const contour = document.createElementNS(NS, 'path'); contour.setAttribute('class', 'fil contour'); contour.setAttribute('d', d);
-  const p = document.createElementNS(NS, 'path'); p.setAttribute('class', 'fil ' + f.couleur + (f === choisi ? ' choisi' : '') + (f.faux ? ' faux' : '')); p.setAttribute('d', d);
+  const p = document.createElementNS(NS, 'path'); p.setAttribute('class', 'fil ' + f.couleur + (f === choisi ? ' choisi' : '') + (f.faux ? ' faux' : '') + (f === enAttente ? ' recent' : '')); p.setAttribute('d', d);
   p.setAttribute('stroke', COULEURS[f.couleur]);
   p.setAttribute('role', 'button'); p.setAttribute('aria-label', 'fil ' + lib(f.de) + ' vers ' + lib(f.a));
   gFils.appendChild(contour); gFils.appendChild(p);
@@ -547,25 +709,32 @@ function dessinerFil(f) {
 function choisir(f) {
   choisi = f || null;
   fils.forEach(x => x.el.classList.toggle('choisi', x === choisi));
-  $('#btn-supprimer').disabled = !choisi;
+  $('#btn-supprimer').hidden = !choisi;   // 29/09 : « Supprimer le fil » n'apparaît que sur un fil choisi
   if (choisi) dire('Fil ' + lib(choisi.de) + ' → ' + lib(choisi.a) + ' sélectionné.', null, 'Bouton « Supprimer le fil » pour l’enlever.');
 }
 function supprimer() {
   if (!choisi) return;
+  const retire = choisi;
   fils = fils.filter(f => f !== choisi);
   choisi = null;
   redessinerFils();
-  choisir(null); rafraichir();
-  if (MODE === 'guide') prochaineEtape();
+  choisir(null); rafraichir(); memoriser();
+  // 30/09 (constats E1, X5) : en Guidé, l'étape repart du premier conducteur non relié : le fil supprimé se repose
+  if (MODE === 'guide') { etapeIdx = 0; prochaineEtape(); }
+  if (FIL_PAR_FIL && retire.pose) dire('Fil retiré de l’écran : retirez-le aussi de votre platine.', 'ko', lib(retire.de) + ' → ' + lib(retire.a) + '.');
 }
 function rafraichir() {
   const occupees = new Set(); fils.forEach(f => { occupees.add(f.de); occupees.add(f.a); });
   Object.values(bornes).forEach(b => b.el.classList.toggle('occupee', occupees.has(b.ref)));
-  $('#compteur-fils').textContent = fils.length + (fils.length > 1 ? ' fils' : ' fil');
+  $('#compteur-fils').textContent = FIL_PAR_FIL ? 'Écran ' + fils.length + ' · Platine ' + fils.filter(f => f.pose).length
+    : fils.length + (fils.length > 1 ? ' fils' : ' fil');
 }
 function recommencer() {
-  fils = []; gFils.innerHTML = ''; etapeIdx = 0; aides = 0; refus = 0; niveauAide = 0; controle = false; debut = Date.now(); compterAide(0);
-  gManques.innerHTML = ''; choisir(null); armer(null); rafraichir(); $('#voile').classList.remove('ouvert');
+  // 30/09 (constats X1, R1) : sous tension, on consigne d'abord (le pupitre sort, la simulation s'arrête) ; puis on vide
+  const T = window.CABLAGE_TENSION_ECRAN; if (T && T.enCours && T.enCours()) T.consigner();
+  fils = []; gFils.innerHTML = ''; etapeIdx = 0; aides = 0; refus = 0; niveauAide = 0; cibleAide = null; controle = false; debut = Date.now(); compterAide(0);
+  enAttente = null; filsControles = null; $('#bulle-pose').hidden = true; majAttente();
+  gManques.innerHTML = ''; choisir(null); armer(null); fermerChoix(); rafraichir(); oublier(); $('#voile').classList.remove('ouvert');
   demarrerMode();
 }
 
@@ -610,8 +779,11 @@ function prochaineEtapeNonFaite() {
   const uf = partition();
   return etapes().find(e => uf.trouver(e.de) !== uf.trouver(e.a)) || null;
 }
-function prochaineEtape() {
+function prochaineEtape(sansControle) {
   const et = etapeCourante();
+  if (!et && sansControle) {   // un câblage complet qui revient (retour à Câbler) : déjà contrôlé ; l'élève choisit la suite
+    surbrillance([]); montrerConducteur(null); dire('Tout est câblé.', 'ok', 'Contrôlez, ou passez à l’étape 4 Essayer.'); return;
+  }
   if (!et) { surbrillance([]); montrerConducteur(null); dire('Tout est câblé. Contrôle en cours…', 'ok'); setTimeout(controler, 600); return; }
   choisirCouleur(et.couleurs[0]);
   const fixes = new Set(liaisonsFixes().map(([a, b]) => cle(a, b))), aPoser = EX.etapes.filter(e => !fixes.has(cle(e.de, e.a)));
@@ -629,7 +801,7 @@ function prochaineEtape() {
          'Lisez les numéros de ses deux bornes sur le schéma, puis trouvez-les sur la platine. Le courant ressort par la borne paire et entre dans l’appareil suivant par l’impaire.');
   } else {   // conducteur introuvable sur la carte : l'ancien guidage, bornes nommées
     surbrillance([et.de, et.a], [rep(et.de), rep(et.a)]);
-    dire('Fil ' + n + '/' + total + ' : de ' + libSens(et.de) + ' à ' + libSens(et.a) + ', en ' + et.couleurs[0] + '.', null, 'Glissez le doigt d’une borne à l’autre, ou touchez l’une puis l’autre.');
+    dire('Fil ' + n + '/' + total + ' : de ' + libSens(et.de) + ' à ' + libSens(et.a) + ', en ' + et.couleurs[0] + '.', null, 'Touchez une borne, puis l’autre.');
   }
 }
 /* L'aide en trois crans, chacun compté (« plus ils demandent d'aide, plus ils perdent de points » — la
@@ -637,20 +809,29 @@ function prochaineEtape() {
 function aider() {
   const et = prochaineEtapeNonFaite();
   if (!et) { dire('Tout est relié : contrôlez.', 'ok'); return; }
-  compterAide();
   const k = cle(et.de, et.a);
+  // 30/09 (constat P9) : l'aide 3 est la dernière ; un appui de plus la remontre sans la compter (il n'apporte rien)
+  const deja = cibleAide === k && niveauAide >= 3;
+  if (!deja) compterAide();
   niveauAide = (cibleAide === k) ? Math.min(3, niveauAide + 1) : 1;
   cibleAide = k;
   montrerConducteur(et.de, et.a);
   if (niveauAide === 1) { surbrillance([], [rep(et.de), rep(et.a)]); dire('Aide 1 : ce conducteur relie ' + rep(et.de) + ' et ' + rep(et.a) + '.', null, 'Ils sont éclairés sur la platine. Quels numéros de bornes ? Appuyez encore pour plus d’aide.'); }
   else if (niveauAide === 2) { surbrillance([], [rep(et.de), rep(et.a)]); dire('Aide 2 : de ' + libSens(et.de) + ' à ' + libSens(et.a) + '.', null, 'Trouvez ces deux bornes sur la platine. Appuyez encore pour les voir clignoter.'); }
-  else { choisirCouleur(et.couleurs[0]); surbrillance([et.de, et.a], [rep(et.de), rep(et.a)]); dire('Aide 3 : ' + lib(et.de) + ' → ' + lib(et.a) + ' en ' + et.couleurs[0] + '.', null, 'Les deux bornes clignotent et la couleur est choisie. Tirez le fil.'); }
+  else { choisirCouleur(et.couleurs[0]); surbrillance([et.de, et.a], [rep(et.de), rep(et.a)]); dire('Aide 3 : ' + lib(et.de) + ' → ' + lib(et.a) + ' en ' + et.couleurs[0] + '.', null, 'Les deux bornes clignotent et la couleur est choisie. Touchez une borne, puis l’autre.' + (deja ? ' (Aide déjà donnée : pas comptée de nouveau.)' : '')); }
 }
-function demarrerMode() {
+function demarrerMode(revenus) {
   $('#btn-aide').style.display = MODE === 'reel' ? 'none' : '';
-  if (MODE === 'guide') prochaineEtape();
+  if (MODE === 'guide') { etapeIdx = 0; prochaineEtape(!!revenus); }   // l'étape repart du premier conducteur non relié
   else if (MODE === 'aide') dire('Lisez la carte et posez les fils. Le bouton Aide vous guide si besoin.', null, 'Chaque aide compte dans le résultat.');
-  else dire('Lisez la carte et câblez la platine. Contrôlez quand vous avez fini.', null, 'Comme à l’examen : pas d’aide.');
+  else dire('Lisez la carte et câblez la platine. Contrôlez quand vous avez fini.', null, 'Mode avancé : pas d’aide, contrôle à la fin.');
+}
+
+/* Les fils revenus : une ligne de plus sous la consigne, jusqu'au prochain message. */
+function annoncerRevenus(n) {
+  const s = document.createElement('small'); s.className = 'revenus';
+  s.textContent = (n > 1 ? 'Vos ' + n + ' fils sont revenus.' : 'Votre fil est revenu.') + ' Plus › Recommencer pour repartir de zéro.';
+  $('#consigne-texte').append(s);
 }
 
 // ------------------------------------------------------------ le contrôle
@@ -691,11 +872,13 @@ function analyser() {
   return { justes, total, enTrop, couleursFausses, erreurs, manques, niveau };
 }
 function controler() {
+  if (enAttente) { dire('Posez d’abord ce fil sur votre platine.', 'ko', 'Puis appuyez sur « C’est posé sur la platine » : le contrôle viendra après.'); return; }
   const r = analyser();
-  controle = true; armer(null); choisir(null); surbrillance([]);
+  controle = true; armer(null); choisir(null); surbrillance([]); fermerChoix();
   filsControles = signatureFils();
   const secondes = Math.round((Date.now() - debut) / 1000);
-  const libNiveau = ['Rien n’est câblé', 'Début de câblage', 'Câblage à moitié', 'Câblage juste, couleurs à revoir', 'Câblage juste'][r.niveau];
+  // 30/09 (constat P8) : des fils posés, aucun réseau juste : « Aucun réseau juste », pas « Rien n'est câblé »
+  const libNiveau = [fils.length ? 'Aucun réseau juste' : 'Rien n’est câblé', 'Début de câblage', 'Câblage à moitié', 'Câblage juste, couleurs à revoir', 'Câblage juste'][r.niveau];
   const filsMauvaiseCouleur = fils.filter(f => f.mauvaiseCouleur).slice(0, 3).map(f => lib(f.de) + ' → ' + lib(f.a) + ' (' + f.couleur + ', attendu ' + nomsCouleurs(reseauDe(f.de)) + ')');
   let html = '<h2><span class="niveau n' + r.niveau + '">' + r.niveau + '</span>' + libNiveau + '</h2>' +
     '<table><tr><td>Réseaux justes</td><td>' + r.justes + ' / ' + r.total + '</td></tr>' +
@@ -707,10 +890,14 @@ function controler() {
     '<tr><td>Temps</td><td>' + Math.floor(secondes / 60) + ' min ' + (secondes % 60) + ' s</td></tr></table>';
   const lignes = r.erreurs.slice(0, 6).concat(filsMauvaiseCouleur.map(t => 'Couleur : ' + t));
   if (lignes.length) html += '<ul>' + lignes.map(t => '<li></li>').join('') + '</ul>';
+  // 29/09 : au niveau 4, l'étape suivante est proposée — l'essai (4) s'il existe, la réalisation (5) si l'atelier la prévoit
+  const essayer = r.niveau === 4 && !!window.CABLAGE_TENSION_ECRAN, realiser = r.niveau === 4 && ATELIER !== 'ecran';
   html += '<div class="boutons">' +
     (r.manques.length ? '<button id="btn-manques">Montrer ce qui manque</button>' : '') +
     '<button id="btn-continuer">' + (r.niveau === 4 ? 'Revoir la platine' : 'Corriger') + '</button>' +
-    '<button class="principal" id="btn-refaire">Recommencer</button></div>';
+    '<button' + (essayer || realiser ? '' : ' class="principal"') + ' id="btn-refaire">Recommencer</button>' +
+    (essayer ? '<button class="principal" id="btn-essayer">Essayer (étape 4) →</button>' : '') +
+    (realiser ? '<button' + (essayer ? '' : ' class="principal"') + ' id="btn-realiser">Réaliser (étape 5) →</button>' : '') + '</div>';
   const boite = $('#resultat'); boite.innerHTML = html;
   boite.querySelectorAll('li').forEach((li, i) => { li.textContent = lignes[i]; });
   $('#voile').classList.add('ouvert');
@@ -720,6 +907,8 @@ function controler() {
   $('#btn-refaire').onclick = recommencer;
   const bm = $('#btn-manques');
   if (bm) bm.onclick = () => { montrerManques(r.manques); fermer(); };
+  const be = $('#btn-essayer'); if (be) be.onclick = () => { fermer(); window.CABLAGE_TENSION_ECRAN.entrer(); };
+  const br = $('#btn-realiser'); if (br) br.onclick = () => aller('realiser', MODE);
   if (MODE !== 'reel' && r.manques.length) montrerManques(r.manques);
   tracer(r, secondes);
 }
@@ -735,8 +924,11 @@ function montrerManques(manques) {
 function tracer(r, secondes) {
   try {
     const cle = 'cablage-virtuel:resultats', liste = JSON.parse(localStorage.getItem(cle) || '[]');
-    liste.push({ date: new Date().toISOString(), exercice: ID, activite: ACTIVITE, mode: MODE, niveau: r.niveau, justes: r.justes, total: r.total,
-                 enTrop: r.enTrop, couleursFausses: r.couleursFausses, aides, refus, fils: fils.length, secondes });
+    const entree = { date: new Date().toISOString(), exercice: ID, activite: ACTIVITE, mode: MODE, niveau: r.niveau, justes: r.justes, total: r.total,
+                     enTrop: r.enTrop, couleursFausses: r.couleursFausses, aides, refus, fils: fils.length, secondes };
+    if (FIL_PAR_FIL) entree.platine = fils.filter(f => f.pose).length;   // fil par fil : les fils posés sur la vraie platine
+    if (P.get('tuto') !== null) entree.tuto = true;   // l'accueil range le tutoriel au Départ, pas à l'Allumage simple (même exercice)
+    liste.push(entree);
     localStorage.setItem(cle, JSON.stringify(liste.slice(-200)));
   } catch (e) { /* stockage indisponible : le jeu continue */ }
 }
@@ -755,7 +947,7 @@ function construireOutils() {
     b.className = 'couleur ' + c; b.dataset.couleur = c; b.title = c; b.setAttribute('aria-label', 'fil ' + c);
     if (c !== 'vert-jaune') b.style.background = COULEURS[c];
     const s = document.createElement('span'); s.textContent = c; b.appendChild(s);
-    b.onclick = () => { choisirCouleur(c); if (choisi) { choisi.couleur = c; choisi.el.setAttribute('stroke', COULEURS[c]); choisi.el.setAttribute('class', 'fil ' + c + ' choisi'); } };
+    b.onclick = () => { choisirCouleur(c); if (choisi) { choisi.couleur = c; choisi.el.setAttribute('stroke', COULEURS[c]); choisi.el.setAttribute('class', 'fil ' + c + ' choisi'); memoriser(); } };
     zone.appendChild(b);
   });
   choisirCouleur(couleur);
@@ -763,6 +955,7 @@ function construireOutils() {
   $('#btn-supprimer').onclick = supprimer;
   $('#btn-recommencer').onclick = recommencer;
   $('#btn-controler').onclick = controler;
+  $('#btn-pose').onclick = posePlatine;
   $('#btn-numeros').onclick = () => $('#carte').classList.toggle('numeros');
   $('#btn-detacher').onclick = () => window.open('jouer.html?ex=' + encodeURIComponent(ID) + '&vue=carte', 'carte-' + ID);
   const bp = $('#btn-plan');   // le plan de raccordement (les ponts du bornier) : une aide, comptée ; pas en Réel
@@ -770,25 +963,121 @@ function construireOutils() {
   brancherNavigation();
 }
 function aller(activite, mode, reelle) {
-  location.search = '?ex=' + encodeURIComponent(ID) + '&activite=' + activite + '&mode=' + mode + ((reelle === undefined ? REELLE : reelle) ? '&platine=reelle' : '') +
-    (P.get('tuto') !== null ? '&tuto' : '');   // le tutoriel (moteur/tutoriel.js) suit l'élève d'une activité à l'autre
+  location.search = '?ex=' + encodeURIComponent(ID) + '&activite=' + activite + '&mode=' + mode + ((reelle === undefined ? REELLE_ADRESSE : reelle) ? '&platine=reelle' : '') +
+    '&atelier=' + ATELIER +
+    (TUTO ? '&tuto' : '') +   // le tutoriel (moteur/tutoriel.js) suit l'élève d'une activité à l'autre
+    (EX && EX.reels ? '&materiel=' + MATERIEL : '');
+}
+
+/* ------------------------------------------------------------ la barre du haut (29/09, maquette validée, écran 3)
+   ‹ station · titre · 1 Colorier · 2 Repérer · 3 Câbler · 4 Essayer · 5 Réaliser · pastille du mode · Affichage · Plus.
+   Les étapes se touchent, rien n'est bloqué ; une coche dit l'étape réussie sur cet appareil (niveau 3 ou 4). */
+const NOMS_MODES = { guide: 'Guidé', aide: 'Aidé', reel: 'Avancé' };
+const NUM_ETAPE = { colorier: 1, reperer: 2, cabler: 3, essayer: 4, realiser: 5 };
+// 30/09 (constat X6) : « ‹ » ramène à la station ET à son quai : index.html#<exercice> (l'accueil sait l'ouvrir) ; le tutoriel : #depart
+function lienStation() { return TUTO ? 'index.html#depart' : STATION ? 'index.html#' + encodeURIComponent(ID) : 'index.html'; }
+function lienReglages() {   // la fiche de la station avec les réglages en cours (l'adresse des QR de l'espace professeur)
+  if (!STATION || STATION === 'depart') return lienStation();
+  return 'index.html?station=' + STATION + '&quai=' + SD.quai + '&mode=' + MODE + '&atelier=' + ATELIER + (REELLE_ADRESSE ? '&platine=reelle' : '');
+}
+function etapesReussies() {
+  let liste = [];
+  try { liste = JSON.parse(localStorage.getItem('cablage-virtuel:resultats') || '[]'); } catch (err) { liste = []; }
+  // 30/09 (constat E12) : les résultats de même nature — le tutoriel (tuto: true) avec &tuto, les autres sans
+  const miennes = (Array.isArray(liste) ? liste : []).filter(e => e && e.exercice === ID && !!e.tuto === TUTO);
+  const niveau = (a) => miennes.some(e => e.activite === a && e.niveau >= 3);
+  return { colorier: niveau('colorier'), reperer: niveau('reperer'), cabler: niveau('cabler'),
+           essayer: miennes.some(e => e.activite === 'essai' && Array.isArray(e.defauts) && !e.defauts.length && Array.isArray(e.marche) && e.marche.length > 0),
+           realiser: miennes.some(e => e.activite === 'realiser') };
+}
+function fermerMenus() {
+  document.querySelectorAll('.barre .deroule').forEach(d => {
+    const m = d.querySelector('.menu-barre'), b = d.querySelector('[aria-haspopup]');
+    if (m) m.hidden = true; if (b) b.setAttribute('aria-expanded', 'false');
+  });
+}
+// La feuille élève qui va avec la page (contrat de moteur/documents.js, 30/09) : celle du tutoriel (tuto/nomTuto) avec &tuto ;
+// sinon « fil par fil » (fil/nomFil) si l'atelier l'est et qu'elle existe ; sinon « en deux temps » (eleve/nom).
+function majFeuille() {
+  const bf = $('#btn-feuille'); if (!bf) return;
+  const d = (window.CABLAGE_DOCUMENTS || {})[ID];
+  if (!d) { bf.hidden = true; return; }
+  const [href, nomDoc] = TUTO && d.tuto ? [d.tuto, d.nomTuto || d.nom] : !TUTO && ATELIER === 'fil' && d.fil ? [d.fil, d.nomFil || d.nom] : [d.eleve, d.nom];
+  if (!href) { bf.hidden = true; return; }
+  bf.href = href;
+  bf.innerHTML = '<b>Feuille élève</b><small></small>';
+  const nom = (nomDoc || '').replace(/^Feuille élève\s*:\s*/i, '');   // « Feuille élève » n'est pas dit deux fois
+  bf.querySelector('small').textContent = nom.charAt(0).toUpperCase() + nom.slice(1);
+  bf.title = 'S’ouvre dans un nouvel onglet, pour imprimer';
+  bf.hidden = false;
+}
+function construireBarre() {
+  const retour = $('.barre .retour');
+  if (retour) { retour.href = lienStation(); retour.title = TUTO ? 'Retour à la prise en main' : STATION ? 'Retour à la station' : 'Retour au réseau'; retour.setAttribute('aria-label', retour.title); }
+  const faites = etapesReussies();
+  document.querySelectorAll('#activites .etape').forEach(b => {
+    const quoi = b.dataset.activite || b.dataset.etape, num = NUM_ETAPE[quoi];
+    if (quoi === 'realiser') b.hidden = ATELIER === 'ecran';
+    // 30/09 (constat X10) : une étape réussie garde son numéro, la coche vient à côté (moteur/cablage.css) ; nom accessible complet
+    b.classList.toggle('faite', !!faites[quoi]);
+    b.querySelector('i').textContent = num;
+    b.setAttribute('aria-label', 'Étape ' + num + ' : ' + b.querySelector('.nom').textContent + (faites[quoi] ? ', réussie' : ''));
+    if (quoi === ACTIVITE) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+    if (!b.dataset.activite) return;   // l'étape 4 : moteur/tension-ecran.js l'active en Câbler
+    b.title = 'Étape ' + num + ' : ' + b.querySelector('.nom').textContent.toLowerCase() + (faites[quoi] ? ' (réussie)' : '');
+    b.onclick = () => { if (quoi !== ACTIVITE) aller(quoi, MODE); };
+  });
+  const bt = $('#btn-tension');
+  if (bt) bt.onclick = () => { if (bt.getAttribute('aria-disabled') === 'true') dire('Câblez d’abord : étape 3.', null, 'L’essai sous tension se fait sur votre câblage de l’écran.'); };
+  // la pastille du mode : un appui ouvre les trois modes
+  const bm = $('#btn-mode');
+  if (bm) { bm.textContent = NOMS_MODES[MODE]; bm.title = 'Le mode : ' + NOMS_MODES[MODE] + '. Appuyez pour en changer.'; }
+  document.querySelectorAll('#panneau-modes [data-mode]').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.mode === MODE));
+    b.onclick = () => { if (b.dataset.mode !== MODE) aller(ACTIVITE === 'realiser' ? 'cabler' : ACTIVITE, b.dataset.mode); };
+  });
+  // « Plus » : recommencer, la feuille, la station, les réglages (Réaliser : rien à recommencer à l'écran)
+  const br = $('#btn-recommencer'); if (br && ACTIVITE === 'realiser') br.hidden = true;
+  const ls = $('#lien-station'); if (ls) { ls.href = lienStation(); if (!STATION) ls.textContent = 'Revenir au réseau'; }
+  const lr = $('#lien-reglages'); if (lr) lr.href = lienReglages();
+  majFeuille();
+  // les panneaux de la barre : un seul ouvert, fermés au clic dehors et à Échap
+  document.querySelectorAll('.barre .deroule').forEach(d => {
+    const b = d.querySelector('[aria-haspopup]'), m = d.querySelector('.menu-barre');
+    if (!b || !m) return;
+    b.onclick = () => { const ouvrir = m.hidden; fermerMenus(); if (!ouvrir) return; if (d.id === 'plus') majFeuille(); m.hidden = false; b.setAttribute('aria-expanded', 'true'); };
+    m.addEventListener('click', e => { if (e.target.closest('button, a')) fermerMenus(); });
+  });
+  document.addEventListener('pointerdown', e => { if (!(e.target.closest && e.target.closest('.barre .deroule'))) fermerMenus(); });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const ouvert = [...document.querySelectorAll('.barre .deroule')].find(d => { const m = d.querySelector('.menu-barre'); return m && !m.hidden; });
+    if (ouvert) { fermerMenus(); ouvert.querySelector('[aria-haspopup]').focus(); return; }
+    // 30/09 (constat R4) : Échap ferme aussi la boîte de résultat (comme « Corriger » / « Revoir »), le choix de borne, l'avis du téléphone
+    if (fermerChoix()) return;
+    const bc = $('#voile.ouvert #btn-continuer'); if (bc) { bc.click(); return; }
+    if ($('#petit-ecran.ouvert')) $('#petit-ecran').classList.remove('ouvert');
+  });
 }
 function brancherNavigation() {
-  document.querySelectorAll('#modes button').forEach(b => {
-    b.classList.toggle('actif', b.dataset.mode === MODE);
-    b.onclick = () => aller(ACTIVITE, b.dataset.mode);
-  });
-  document.querySelectorAll('#activites button').forEach(b => {
-    b.classList.toggle('actif', b.dataset.activite === ACTIVITE);
-    b.onclick = () => aller(b.dataset.activite, MODE);
-  });
   const vr = $('#btn-vue-reelle');   // symboles <-> vrais appareils ; la page repart de zéro, comme pour un changement de mode
-  if (vr) {
+  if (vr && ACTIVITE === 'realiser') vr.hidden = true;   // Réaliser : toujours les vrais appareils quand l'exercice en a
+  else if (vr) {
     vr.hidden = !EX.reel;
     vr.textContent = vueReelle() ? 'Symboles' : 'Vue réelle';
     vr.title = vueReelle() ? 'Revenir aux symboles du schéma sur la platine' : 'Voir les vrais appareils sur la platine (la carte reste en symboles)';
     vr.onclick = () => aller(ACTIVITE, MODE, !vueReelle());
   }
+  const mats = EX.reels ? Object.keys(EX.reels) : [];   // le matériel, à côté de « Vue réelle » : Mural · 22 mm
+  let bm = $('#materiels');
+  if (mats.length > 1 && vr) {
+    if (!bm) { bm = document.createElement('span'); bm.id = 'materiels'; vr.insertAdjacentElement('afterend', bm); }
+    const noms = { mural: 'Mural', '22mm': '22 mm' };
+    bm.innerHTML = mats.map(m => '<button data-materiel="' + m + '" class="' + (m === MATERIEL ? 'actif' : '') + '" title="Le matériel de la platine : ' +
+      (m === '22mm' ? 'boutons, voyants et boutons tournants de 22 mm dans leurs boîtes' : 'interrupteurs, poussoirs et douilles muraux') + '">' + (noms[m] || m) + '</button>').join('');
+    bm.hidden = !vueReelle() || ACTIVITE === 'realiser';
+    bm.querySelectorAll('button').forEach(b => { b.onclick = () => { MATERIEL = b.dataset.materiel; aller(ACTIVITE, MODE, true); }; });
+  } else if (bm) bm.hidden = true;
 }
 
 // ------------------------------------------------------------ colorier et repérer : les parties A et B du TP
@@ -948,7 +1237,7 @@ function demarrerCarte() {
   pinceau = null; marquerCourant(null);
   document.querySelectorAll('#couleurs .potentiel').forEach(b => b.classList.remove('actif'));
   if (MODE === 'guide') { suivant(); return; }
-  const fin = MODE === 'aide' ? 'Le bouton Aide vous guide.' : 'Pas d’aide : contrôle à la fin, comme à l’examen.';
+  const fin = MODE === 'aide' ? 'Le bouton Aide vous guide.' : 'Mode avancé : pas d’aide, contrôle à la fin.';
   if (ACTIVITE === 'colorier') dire('Coloriez chaque conducteur : ' + potentiels().map(p => p + ' ' + TEINTE[p]).join(', ') + '.', null, 'Choisissez une couleur, puis touchez les conducteurs. ' + fin);
   else dire('Numérotez les bornes : touchez une borne, puis son numéro.', null, fin);
 }
@@ -1087,6 +1376,20 @@ const STATIONS = {
   'contacteur': '5-2-contacteur', 'contact': '5-3-contact-auxiliaire', 'bouton-poussoir': '5-7-boutons', 'voyant': '5-8-securite-signalisation',
   'bobine de contacteur': '6-1-bobine-electro-aimant', 'transformateur': '6-2-transformateur', 'moteur': '6-3-moteur-asynchrone'
 };
+/* « X1 à X9 » : des repères triés, les suites de numéros regroupées (la nomenclature et le matériel de l'étape Réaliser).
+   29/09 : le bornier se lisait « X3 à X6 » (premier et dernier dans l'ordre du fichier) pour des bornes X1 à X9. */
+function compacter(reperes) {
+  const cle = r => { const m = /^(.*?)(\d+)$/.exec(r); return m ? [m[1], +m[2]] : [r, -1]; };
+  const tries = reperes.slice().sort((p, q) => { const a = cle(p), b = cle(q); return a[0].localeCompare(b[0]) || a[1] - b[1]; });
+  const morceaux = [];
+  for (let i = 0; i < tries.length;) {
+    const [pre, n] = cle(tries[i]); let j = i;
+    while (n >= 0 && j + 1 < tries.length && cle(tries[j + 1])[0] === pre && cle(tries[j + 1])[1] === cle(tries[j])[1] + 1) j++;
+    morceaux.push(j - i >= 2 ? tries[i] + ' à ' + tries[j] : tries.slice(i, j + 1).join(', '));
+    i = j + 1;
+  }
+  return morceaux.join(', ');
+}
 function construireNomenclature() {
   const z = $('#nomenclature'); if (!z) return;
   const cle = (a) => (a.rang === 5 ? 3.5 : a.rang);   // dans l'ordre du câblage : protections, commande, puissance, bornier, récepteurs
@@ -1105,14 +1408,14 @@ function construireNomenclature() {
   };
   liste.forEach(a => {
     if (a.rang !== 5) ajouter(a.repere, a.nom.toLowerCase());
-    else if (a.repere === bornier[0]) ajouter(bornier.length > 1 ? bornier[0] + ' à ' + bornier[bornier.length - 1] : bornier[0], bornier.length > 1 ? 'bornes du bornier' : 'borne');
+    else if (a.repere === bornier[0]) ajouter(compacter(bornier), bornier.length > 1 ? 'bornes du bornier' : 'borne');
   });
 }
 
 // ------------------------------------------------------------ vue carte seule (deuxième écran)
 function vueCarte() {
   document.body.classList.add('vue-carte');
-  ['#platine', '.consigne', '.outils', '#modes'].forEach(s => { const e = $(s); if (e) e.remove(); });
+  ['#platine', '.consigne', '.outils', '#modes', '#activites', '#plus'].forEach(s => { const e = $(s); if (e) e.remove(); });
   $('#carte .entete b').textContent = 'La carte — deuxième écran';
   $('#btn-detacher').remove(); const bp = $('#btn-plan'); if (bp) bp.remove();
   $('#btn-numeros').onclick = () => $('#carte').classList.toggle('numeros');
@@ -1127,7 +1430,34 @@ window.CABLAGE_ETAT = () => ({ exercice: ID, activite: ACTIVITE, mode: MODE, fil
 // La mise sous tension (moteur/tension-ecran.js) lit l'exercice et les fils, parle dans la consigne et compte ses aides.
 function signatureFils() { return fils.map(f => cle(f.de, f.a)).sort().join(' '); }
 window.CABLAGE_API = { ex: () => EX, fils: () => fils, mode: MODE, activite: ACTIVITE, vue: VUE, reelle: () => vueReelle(),
-                       dire, compterAide, borneCarte, controleAJour: () => filsControles !== null && filsControles === signatureFils() };
+                       dire, compterAide, borneCarte, controleAJour: () => filsControles !== null && filsControles === signatureFils(),
+                       // l'étape Réaliser (moteur/realiser.js) : la platine dessinée ici, sa colonne là-bas
+                       atelier: ATELIER, lib, aller, compacter, couleurs: COULEURS, memoire: () => MEMOIRE, materiel: () => MATERIEL, borne: (ref) => !!bornes[ref],
+                       liaisonsFixes: () => liaisonsFixes(),
+                       // 30/09 : le fil par fil en attente (constat R2) ; le tracé des fils et des appareils pour poser les étiquettes
+                       // d'état à côté, jamais dessus (constat E6) ; le tutoriel ; le stockage bloqué (constat X8)
+                       enAttente: () => !!enAttente, majAttente, pointsFil: (f) => pointsFil(f), tuto: TUTO,
+                       stockageBloque: () => { if (STOCKAGE_BLOQUE) return true; try { localStorage.setItem('cablage-virtuel:essai', '1'); localStorage.removeItem('cablage-virtuel:essai'); return false; } catch (err) { return true; } } };
+
+// ------------------------------------------------------------ l'étape 5 : réaliser (29/09, maquette validée, écran 4)
+/* La platine en vrais appareils (quand l'exercice en a), dessinée avec les fils gardés par l'étape Câbler, SANS geste de câblage
+   (on la regarde, on zoome, on la déplace) ; la carte est repliée. La colonne d'à côté est faite par moteur/realiser.js. */
+function lancerRealiser() {
+  document.body.classList.add('activite-realiser');
+  controle = true;   // debutTrace ne pose aucun fil
+  construirePlatine();
+  brancherZoom($('#platine'), installerZoom(svgPlatine, {}));
+  const memo = MEMOIRE && Array.isArray(MEMOIRE.fils) ? MEMOIRE.fils : [];
+  memo.forEach(m => { if (bornes[m.de] && bornes[m.a]) fils.push({ de: m.de, a: m.a, couleur: m.couleur, idx: fils.length }); });   // un fil que l'embrochage fait n'a pas de bornes en vue réelle
+  redessinerFils(); rafraichir();
+  $('#platine .entete span').textContent = vueReelle() ? 'votre câblage, en vrais appareils' : 'votre câblage';
+  brancherNavigation();
+  if (memo.length) dire('Réaliser : câblez votre vraie platine, hors tension.', null, 'Suivez votre ordre de câblage, cochez à mesure, puis appelez le professeur.');
+  else if (window.CABLAGE_API.stockageBloque()) dire('Votre navigateur n’a pas gardé vos fils.', 'ko', 'Il ne garde rien sur cet appareil. Câblez à l’écran (étape 3), puis venez ici par « Réaliser (étape 5) », dans le même onglet.');
+  else dire('Aucun fil gardé pour cet exercice sur cet appareil.', 'ko', 'Câblez d’abord à l’écran (étape 3) : vos fils y sont gardés pour cette étape.');
+  window.CABLAGE_API.realiserPret = true;
+  document.dispatchEvent(new Event('cablage-realiser'));
+}
 
 // ------------------------------------------------------------ départ
 // Un téléphone (plus petit côté de l'ÉCRAN sous 500 px ; une tablette en a 600 et plus) : bornes trop petites au doigt
@@ -1136,13 +1466,25 @@ if (Math.min(screen.width, screen.height) < 500) {
   $('#petit-ecran').classList.add('ouvert');
   $('#btn-petit-ecran').onclick = () => $('#petit-ecran').classList.remove('ouvert');
 }
-if (!ID) { dire('Aucun exercice demandé.', 'ko', 'Revenez à la liste.'); return; }
+construireBarre();
+if (FIL_PAR_FIL) document.body.classList.add('fil-par-fil');   // la place de la bulle est gardée sous la platine
+if (!ID) { dire('Aucun exercice demandé.', 'ko', 'Revenez au réseau.'); return; }
 charger(ID, (ex) => {
   if (!ex) { dire('Exercice « ' + ID + ' » introuvable.', 'ko', 'Lancez outils/qet-vers-exercice.py.'); return; }
   EX = ex;
-  document.title = 'Câblage virtuel — ' + EX.titre;
-  $('#titre').textContent = EX.titre;
+  if (EX.reels) {   // le matériel demandé, s'il existe pour cet exercice ; sinon le premier
+    if (!EX.reels[MATERIEL]) MATERIEL = Object.keys(EX.reels)[0];
+    EX.reel = EX.reels[MATERIEL];
+    try { localStorage.setItem(CLE_MATERIEL, MATERIEL); } catch (err) { /* stockage indisponible */ }
+  }
+  const titre = RESEAU && RESEAU.titre ? RESEAU.titre(ID, EX.titre) : EX.titre;   // le titre neutre du réseau (jamais « examen »)
+  // 30/09 (constat E11) : la barre dit le titre COURT de la station (celui de la carte du réseau), + « — la commande » sur le
+  // quai c ; le titre complet de l'exercice en infobulle et dans l'onglet
+  const court = TUTO && RESEAU ? (RESEAU.stations.find(s => s.id === 'depart') || {}).titre : SD ? SD.station.titre + (SD.quai === 'c' ? ' — la commande' : '') : '';
+  document.title = 'Câblage virtuel — ' + titre;
+  $('#titre').textContent = court || titre; $('#titre').title = titre;
   construireNomenclature();
+  if (ACTIVITE === 'realiser' && VUE !== 'carte') { lancerRealiser(); return; }
   construireCarte();
   if (VUE !== 'carte' && ACTIVITE !== 'cabler') { lancerCarte(); return; }
   $('#carte').classList.add('numeros');   // les numeros de bornes sont le sujet : visibles d'emblee
@@ -1154,8 +1496,15 @@ charger(ID, (ex) => {
     annuler: annulerTrace
   }));
   construireOutils();
+  const revenus = reprendre();   // retour à Câbler : les fils gardés reviennent (jamais dans le tutoriel)
   rafraichir();
-  demarrerMode();
+  demarrerMode(revenus);
+  if (revenus) {
+    const attente = FIL_PAR_FIL ? fils.find(f => !f.pose) : null;   // fil par fil : le dernier fil tracé mais pas encore posé
+    if (attente && fils.filter(f => !f.pose).length === 1) { enAttente = attente; redessinerFils(); attendrePose(attente); }
+    annoncerRevenus(revenus);
+  }
   document.dispatchEvent(new Event('cablage-pret'));
+  majAttente();
 });
 })();

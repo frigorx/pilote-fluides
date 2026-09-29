@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Câblage virtuel — espace professeur</title>
+<link rel="stylesheet" href="moteur/cablage.css?v=20260929-1910">
+<link rel="stylesheet" href="moteur/enseignant.css?v=20260929-1910">
+</head>
+<body>
+<header class="barre">
+  <a class="retour" href="index.html" title="Retour au réseau" aria-label="Retour au réseau">‹</a>
+  <div class="logo">Câblage <b>virtuel</b></div>
+  <span class="ou">Espace professeur</span>
+  <a class="site droite" href="https://inerweb.fr/" title="Revenir à la page d’accueil d’inerweb.fr">Accueil inerweb.fr</a>
+</header>
+<p class="bandeau-proto" role="note"><b>Prototype en construction.</b> Le Câblage virtuel évolue chaque semaine : vos critiques et vos idées sont les bienvenues, écrivez à <a href="mailto:inerweb.fh@gmail.com?subject=C%C3%A2blage%20virtuel%20%3A%20mon%20avis">inerweb.fh@gmail.com</a>.</p>
+<main class="prof">
+  <section>
+    <h1>Espace professeur</h1>
+    <p class="chapo">Ce que le logiciel propose à vos élèves, et de quoi préparer une séance : une station, quelques réglages, puis un lien, un QR et la feuille qui va avec.</p>
+  </section>
+
+  <section>
+    <h2>Trois façons de s’en servir en classe</h2>
+    <div class="usages">
+      <div class="usage"><span class="duree">30 minutes</span><b>Découvrir le logiciel</b>La prise en main (un quart d’heure), puis l’allumage simple, à l’écran seulement. Avant un premier TP, ou avec une classe qui arrive.</div>
+      <div class="usage"><span class="duree">Un TP de 4 heures</span><b>Une station, en deux temps</b>Tout à l’écran jusqu’à l’essai, puis la vraie platine, avec le plan d’implantation.</div>
+      <div class="usage"><span class="duree">Toute l’année</span><b>La progression</b>Le réseau, station après station : fil par fil, puis en deux temps, puis en mode Avancé.</div>
+    </div>
+  </section>
+
+  <section id="preparer">
+    <h2>Préparer une séance</h2>
+    <div class="prepa">
+      <div>
+        <h3>1 · La station</h3>
+        <div id="stations" style="margin-top:8px"></div>
+        <p class="station-dite" id="station-dite"></p>
+      </div>
+      <div>
+        <h3>2 · Les réglages</h3>
+        <div class="rangee" id="r-quai" style="margin-top:8px"><span class="lib">Quai</span><div class="segs" data-reg="quai"></div></div>
+        <div class="rangee" style="margin-top:8px"><span class="lib">Mode</span><div class="segs" data-reg="mode"></div></div>
+        <div class="rangee" style="margin-top:8px"><span class="lib">À l’atelier</span><div class="segs" data-reg="atelier"></div></div>
+        <div class="rangee" style="margin-top:8px"><span class="lib">Appareils</span><div class="segs" data-reg="apps"></div></div>
+      </div>
+      <div>
+        <h3>3 · Ce que vous donnez aux élèves</h3>
+        <div class="seance" style="margin-top:8px">
+          <div class="qr" id="qr" role="img" aria-label="QR code de la séance"></div>
+          <div class="a-droite">
+            <code class="adresse" id="adresse"></code>
+            <div class="gestes">
+              <button type="button" id="copier">Copier l’adresse</button>
+              <button type="button" id="imprimer">Imprimer le QR de la séance</button>
+              <a class="lien-bouton" id="ouvrir" href="#" target="_blank" rel="noopener">Ouvrir comme un élève</a>
+            </div>
+            <p class="qr-dit" id="qr-dit"></p>
+            <div class="dit" id="dit" role="status" aria-live="polite"></div>
+            <div class="lignes-doc">
+              <div id="feuille"></div>
+              <div><a class="lien-doc" href="documents-professeur.html" id="doc-prof">Documents professeur (code enseignant)</a></div>
+              <div class="tuto" id="tuto" hidden></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="coffre" aria-label="Documents professeur">
+    <span><b>Les documents professeur</b><br>La fiche professeur, la grille d’évaluation et le plan de séance de chaque exercice, en PDF et en Word.</span>
+    <a class="gros" href="documents-professeur.html">Tous les documents professeur (code enseignant)</a>
+  </section>
+
+  <section>
+    <h2>Comment le logiciel fait travailler l’élève</h2>
+    <ol class="etapes">
+      <li><b>Colorier</b><span>les conducteurs du schéma : L1, L2, L3, N, PE.</span></li>
+      <li><b>Repérer</b><span>les numéros de bornes des appareils.</span></li>
+      <li><b>Câbler</b><span>poser les fils sur la platine, à l’écran.</span></li>
+      <li><b>Essayer</b><span>la mise sous tension, à l’écran.</span></li>
+      <li><b>Réaliser</b><span>la vraie platine, avec le plan d’implantation.</span></li>
+    </ol>
+    <dl class="principes">
+      <div><dt>Trois modes</dt><dd><b>Guidé</b> : le logiciel montre le conducteur à poser, l’élève trouve les numéros. <b>Aidé</b> : dans l’ordre qu’il veut, avec une aide en trois crans. <b>Avancé</b> : rien n’est montré, le contrôle vient à la fin.</dd></div>
+      <div><dt>Tout est compté</dt><dd>Chaque aide demandée et chaque fil refusé sont comptés. Le contrôle donne un niveau de 0 à 4, que l’élève recopie sur sa feuille.</dd></div>
+      <div><dt>À l’atelier</dt><dd><b>Écran seulement</b>. <b>En deux temps</b> : tout à l’écran, puis la platine. <b>Fil par fil</b> : un fil à l’écran, le même sur la platine. La mise sous tension de la vraie platine reste à vous.</dd></div>
+      <div><dt>Les vrais appareils</dt><dd>Sur la platine, les appareils réels remplacent les symboles : mêmes repères, mêmes numéros de bornes.</dd></div>
+      <div><dt>Deux feuilles élève</dt><dd>Une feuille « en deux temps » (compte rendu de l’écran, puis réalisation) et une feuille « fil par fil » (carnet de câblage à remplir). Le QR imprimé sur une feuille ouvre l’exercice avec les réglages de cette feuille ; vos réglages à vous passent par le QR de la séance.</dd></div>
+    </dl>
+  </section>
+
+</main>
+<!-- la page imprimée par « Imprimer le QR de la séance » (vue d'impression seulement) -->
+<section class="impression" id="impression" hidden>
+  <p class="imp-produit">Câblage virtuel · la séance</p>
+  <h1 id="imp-titre"></h1>
+  <p class="imp-quai" id="imp-quai"></p>
+  <p class="imp-reglages" id="imp-reglages"></p>
+  <div class="imp-qr" id="imp-qr"></div>
+  <p class="imp-consigne">Scannez ce QR : la station s’ouvre avec les réglages de la séance.</p>
+  <code class="imp-adresse" id="imp-adresse"></code>
+</section>
+<script>window.CABLAGE_VERSION = '20260929-1910';</script>
+<script src="moteur/reseau.js?v=20260929-1910"></script>
+<script src="moteur/documents.js?v=20260929-1910"></script>
+<script src="moteur/qrcode-generator.js?v=20260929-1910"></script>
+<script>
+(function () {
+  const R = window.CABLAGE_RESEAU, D = window.CABLAGE_DOCUMENTS || {};
+  const BASE = 'https://inerweb.fr/cablage-virtuel/';
+  const TUTO = 'jouer.html?ex=allumage-simple&activite=cabler&mode=guide&tuto';
+  const $ = (s) => document.querySelector(s);
+  const etat = {station: 'n9', quai: 'p', mode: 'guide', atelier: 'ecran', apps: 'symboles'};
+  const CHOIX = {
+    quai: [['p', 'Puissance'], ['c', 'Commande']],
+    mode: [['guide', 'Guidé'], ['aide', 'Aidé'], ['reel', 'Avancé']],
+    atelier: [['ecran', 'Écran seulement'], ['deux', 'En deux temps'], ['fil', 'Fil par fil']],
+    apps: [['symboles', 'Symboles'], ['reelle', 'Vrais appareils']]
+  };
+  const parId = {}; R.stations.forEach((s) => { parId[s.id] = s; });
+  const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+  const bouton = (txt, cle, valeur) => {
+    const b = el('button', 'seg', txt); b.type = 'button'; b.dataset.cle = cle; b.dataset.v = valeur; return b;
+  };
+
+  // 1 · les stations, groupées par ligne (pastille de la couleur de la ligne)
+  const box = $('#stations');
+  R.lignes.forEach((l) => {
+    const sts = R.stations.filter((s) => s.ligne === l.id);
+    if (!sts.length) return;
+    const g = el('div', 'groupe-st'), lib = el('div', 'lib');
+    const p = el('i', 'puce'); p.style.setProperty('--c', l.couleur);
+    lib.append(p, el('span', null, (l.num ? l.num + ' · ' : '') + l.nom));
+    const segs = el('div', 'segs');
+    sts.forEach((s) => segs.append(bouton(s.id === 'depart' ? 'Prise en main' : s.etiquette.filter(Boolean).join(' '), 'station', s.id)));
+    g.append(lib, segs); box.append(g);
+  });
+  // 2 · les réglages : des rangées de boutons
+  Object.keys(CHOIX).forEach((cle) => {
+    const segs = document.querySelector('[data-reg="' + cle + '"]');
+    CHOIX[cle].forEach(([v, nom]) => segs.append(bouton(nom, cle, v)));
+  });
+
+  function exercice() {
+    const s = parId[etat.station];
+    return (etat.quai === 'c' && s.commande) ? s.commande : s.puissance;
+  }
+  // les réglages que porte le QR imprimé sur chaque feuille (lus en décodant les PDF ; outils/verifier-professeur.mjs le revérifie)
+  function reglagesFeuille(href) {
+    if (/-ELEVE-FIL\.pdf$/.test(href)) return {txt: 'mode Guidé, fil par fil', modes: 'guide', atelier: 'fil'};
+    if (/^documents\/exercices\/.*-ELEVE\.pdf$/.test(href)) return {txt: 'mode Aidé, en deux temps', modes: 'aide', atelier: 'deux'};
+    if (/Tutoriel-Prise-en-main-ELEVE\.pdf$/.test(href)) return {txt: 'le tutoriel, en mode Guidé', modes: 'guide', atelier: ''};
+    if (/Mise-sous-tension-ELEVE\.pdf$/.test(href)) return {txt: 'mode Aidé, à l’écran', modes: 'aide', atelier: ''};
+    if (/(TP-2-Puissance|TP-Commande)-ELEVE\.pdf$/.test(href)) return {txt: 'un QR par étape, en mode Guidé, puis en mode Avancé avec les vrais appareils', modes: 'guide,reel', atelier: ''};
+    return null;
+  }
+  function requete() {
+    return 'station=' + etat.station + '&quai=' + etat.quai + '&mode=' + etat.mode + '&atelier=' + etat.atelier +
+      (etat.apps === 'reelle' ? '&platine=reelle' : '');
+  }
+  // 3 · le QR : correction M, marge de 4 modules, en SVG (un seul tracé)
+  function dessinerQR(texte) {
+    const q = window.qrcode(0, 'M'); q.addData(texte); q.make();
+    const n = q.getModuleCount(), m = 4, t = n + 2 * m; let d = '';
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) d += 'M' + (c + m) + ' ' + (r + m) + 'h1v1h-1z';
+    const k = Math.max(3, Math.floor(300 / t)), px = t * k;   // un nombre entier de pixels par module : des bords nets, le QR se lit mieux
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + t + ' ' + t + '" width="' + px + '" height="' + px + '" shape-rendering="crispEdges">' +
+      '<rect width="' + t + '" height="' + t + '" fill="#fff"/><path d="' + d + '" fill="#000"/></svg>';
+  }
+
+  function peindre() {
+    const s = parId[etat.station];
+    if (!s.commande) etat.quai = 'p';
+    document.querySelectorAll('.seg').forEach((b) => b.setAttribute('aria-pressed', String(etat[b.dataset.cle] === b.dataset.v)));
+    $('#r-quai').hidden = !s.commande;
+    $('#station-dite').innerHTML = '';
+    const b = el('b', null, s.titre);
+    $('#station-dite').append(b, ' — ' + s.niveau + '. ' + s.sous + (s.commande ? ' Deux quais : la puissance, puis la commande.' : ''));
+    const adresse = BASE + '?' + requete();
+    $('#adresse').textContent = adresse;
+    $('#qr').innerHTML = dessinerQR(adresse);
+    $('#ouvrir').href = './?' + requete();
+    $('#dit').textContent = '';
+    const nomDe = (liste, v) => liste.find((c) => c[0] === v)[1];
+    const reglages = 'Mode ' + nomDe(CHOIX.mode, etat.mode) + ' · ' + nomDe(CHOIX.atelier, etat.atelier) + ' · ' + nomDe(CHOIX.apps, etat.apps);
+    $('#qr-dit').textContent = 'Ce QR ouvre la station avec vos réglages : ' + reglages + '. Projetez-le, ou imprimez-le.';
+    const ex = exercice(), d = Object.prototype.hasOwnProperty.call(D, ex) ? D[ex] : null, f = $('#feuille'); f.innerHTML = '';
+    if (d) {
+      // la feuille réellement donnée, dite par son vrai nom (Départ : la feuille du tutoriel ; fil par fil : le carnet, s'il existe)
+      let href = d.eleve, nom = d.nom, manque = false;
+      if (s.tuto && d.tuto) { href = d.tuto; nom = d.nomTuto || 'Feuille élève du tutoriel'; }
+      else if (!s.tuto && etat.atelier === 'fil') { if (d.fil) { href = d.fil; nom = d.nomFil || 'Feuille élève, fil par fil'; } else manque = true; }
+      const a = el('a', 'lien-bouton', nom);
+      a.href = href; a.target = '_blank'; a.rel = 'noopener';
+      f.append(el('b', null, 'La feuille élève qui va avec : '), a);
+      if (manque) f.append(el('div', 'note', 'Pas encore de feuille fil par fil pour cette station ; voici « ' + nom + ' ».'));
+      const rf = reglagesFeuille(href);
+      if (rf) {
+        const n = el('div', 'note qr-feuille', 'Le QR imprimé sur cette feuille ouvre l’exercice avec les réglages de la feuille : ' + rf.txt +
+          '. Vos réglages à vous passent par le QR de la séance.');
+        n.dataset.modes = rf.modes; n.dataset.atelier = rf.atelier; f.append(n);
+      }
+    } else f.append(el('span', 'note', 'Pas de feuille élève pour cet exercice.'));
+    // la page à imprimer : titre, quai, réglages en clair, grand QR, adresse
+    $('#imp-titre').textContent = s.titre;
+    $('#imp-quai').textContent = s.commande ? (etat.quai === 'c' ? 'Quai 2 · La commande' : 'Quai 1 · La puissance') : s.niveau + ' · ' + s.sous;
+    $('#imp-reglages').textContent = 'Réglages : ' + reglages + '.';
+    $('#imp-qr').innerHTML = dessinerQR(adresse);
+    $('#imp-adresse').textContent = adresse;
+    $('#doc-prof').href = 'documents-professeur.html#' + ex;
+    const t = $('#tuto'); t.hidden = !s.tuto; t.innerHTML = '';
+    if (s.tuto) {
+      const a = el('a', 'lien-bouton', 'Ouvrir le tutoriel'); a.href = TUTO; a.target = '_blank'; a.rel = 'noopener';
+      t.append(el('b', null, 'Le lien direct du tutoriel : '), a, el('code', 'adresse', BASE + TUTO));
+      t.lastChild.style.marginTop = '6px';
+    }
+  }
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.seg'); if (!b) return;
+    etat[b.dataset.cle] = b.dataset.v; peindre();
+  });
+  function dire(t) { $('#dit').textContent = t; }
+  function selectionner() {
+    const r = document.createRange(); r.selectNodeContents($('#adresse'));
+    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+  }
+  $('#copier').addEventListener('click', () => {
+    const t = $('#adresse').textContent;
+    const repli = () => {
+      selectionner();
+      let ok = false; try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      dire(ok ? 'Adresse copiée.' : 'Adresse sélectionnée : copiez-la avec Ctrl+C.');
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(() => dire('Adresse copiée.'), repli);
+    else repli();
+  });
+  $('#imprimer').addEventListener('click', () => {
+    document.body.classList.add('imprime-qr');
+    window.print();
+  });
+  window.addEventListener('afterprint', () => document.body.classList.remove('imprime-qr'));
+  peindre();
+})();
+</script>
+<script src="moteur/marque.js?v=20260929-1910" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* Câblage virtuel — l'accueil en réseau et la fiche de station (index.html).
+   Refonte du 29/09/2026 (docs/PLAN-2026-09-29-REFONTE-ACCES.md), d'après la maquette validée
+   docs/maquette-refonte/index.html. S'ajoute à moteur/cablage.css (qui garde l'en-tête .barre / .retour / .logo).
+   Charte inerWeb : Trebuchet MS pour les titres, Calibri pour le texte, jamais de serif, aucune police téléchargée ;
+   un seul thème, clair (jamais de thème sombre). L'orange d'accent #FF6B35 n'écrit jamais de texte. */
+:root{
+  --creme:#f7f1e7; --papier:#fffdf8; --marine:#1b3a63; --encre:#10233c; --gris:#5a6b7d;
+  --orange-texte:#c9451a; --bleu-i:#3d7fca; --vert:#1e7e54; --vert-bg:#e3f5ec; --filet-app:#d3dce6;
+  --titre:"Trebuchet MS",Calibri,Arial,sans-serif;
+  color-scheme:light;
+}
+[hidden]{display:none!important}
+.lecteur{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+body.reseau{background:var(--fond);color:var(--encre)}
+body.reseau a:focus-visible,body.reseau button:focus-visible,body.reseau summary:focus-visible,.st:focus-visible{outline:3px solid var(--bleu-i);outline-offset:2px}
+
+/* ---- l'en-tête : la porte du professeur à droite ---- */
+.barre a.retour{min-width:40px;min-height:40px;display:inline-grid;place-items:center;border-radius:10px}
+.barre .pro{margin-left:auto;color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.6);border-radius:10px;
+  min-height:40px;padding:0 14px;display:inline-flex;align-items:center;font-size:15px;white-space:nowrap}
+.barre .pro:hover{background:rgba(255,255,255,.12)}
+
+.page-reseau{max-width:1200px;margin:0 auto;padding:18px 16px 40px;min-width:0}
+
+/* ---- la tête : le titre et UN gros bouton ---- */
+.tete{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between}
+.tete > div{flex:1 1 380px;min-width:0}
+.tete h1{font-size:1.6rem;line-height:1.25;max-width:28ch;text-wrap:balance}
+.tete p{margin:6px 0 0;color:var(--gris);font-size:1.02rem;max-width:62ch}
+.cta{display:grid;gap:2px;text-align:left;text-decoration:none;background:var(--orange);color:#fff;border-radius:14px;
+  padding:12px 22px;box-shadow:0 3px 0 var(--orange-texte);min-width:min(280px,100%);max-width:min(470px,100%)}
+.cta b{font-family:var(--titre);font-size:1.18rem;line-height:1.25}
+.cta small{font-size:.95rem}
+.cta:hover{filter:brightness(1.04)}
+.cta:active{transform:translateY(2px);box-shadow:0 1px 0 var(--orange-texte)}
+
+/* ---- le plan du réseau ---- */
+.bandeau-ligne{margin:14px 0 0;background:var(--papier);border:1.5px solid var(--filet-app);border-left:6px solid var(--marine);
+  border-radius:0 10px 10px 0;padding:8px 14px}
+.plan{margin-top:14px;background:var(--papier);border:1px solid var(--filet-app);border-radius:12px;overflow-x:auto;max-width:100%}
+.plan svg{display:block;min-width:900px;width:100%;height:auto}
+.plan .corr{stroke:#b3a891;stroke-width:4;stroke-dasharray:1 8;stroke-linecap:round;fill:none}
+.plan .ligne{stroke-width:9;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.plan .lab1{font:700 14px Calibri,"Segoe UI",system-ui,Arial,sans-serif;fill:var(--encre)}
+.plan .lab2{font:13px Calibri,"Segoe UI",system-ui,Arial,sans-serif;fill:var(--gris)}
+.plan .ici{font:700 13px Calibri,"Segoe UI",system-ui,Arial,sans-serif;fill:var(--orange-texte)}
+.plan .pil{font:700 13px var(--titre);fill:#fff}
+.plan .niv{font:700 14px Calibri,"Segoe UI",system-ui,Arial,sans-serif;fill:#fff;pointer-events:none}
+.plan .pale{opacity:.25}
+.st{cursor:pointer;outline:none}
+.st:hover .rond,.st:focus-visible .rond{stroke-width:7}
+.st:focus-visible .cible{stroke:var(--bleu-i);stroke-width:3}
+.halo{fill:none;stroke-width:3;opacity:.55;transform-box:fill-box;transform-origin:center;animation:halo 1.8s ease-out infinite}
+@keyframes halo{from{transform:scale(.8);opacity:.7}to{transform:scale(1.35);opacity:0}}
+@media (prefers-reduced-motion:reduce){.halo{animation:none;opacity:.5}}
+.legende{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:10px;font-size:.95rem;color:var(--gris);align-items:center}
+.legende span{display:inline-flex;align-items:center;gap:6px}
+.legende .ici-l{color:var(--orange-texte);font-weight:700}
+
+/* ---- la fiche de station ---- */
+.retour-reseau{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1.5px solid var(--filet-app);
+  border-radius:10px;background:#fff;color:var(--marine);text-decoration:none;font-weight:700}
+.retour-reseau:hover{border-color:var(--marine)}
+.station{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:22px;margin-top:14px}
+@media (max-width:760px){.station{grid-template-columns:minmax(0,1fr)}}
+.schema{background:#fff;border:1px solid var(--filet-app);border-radius:12px;padding:10px;display:grid;place-items:center;align-self:start}
+.schema img{display:block;max-width:100%;max-height:540px;width:auto;height:auto}
+.st-fiche{display:grid;gap:14px;align-content:start;min-width:0}
+.pastilles{display:flex;flex-wrap:wrap;gap:8px}
+.pastilles span{border-radius:999px;padding:2px 12px;font-size:.9rem;font-weight:700;color:#fff}
+.pastilles .claire{background:var(--papier);color:var(--marine);border:1.5px solid var(--marine)}
+.st-fiche h1{font-size:1.5rem;line-height:1.25;text-wrap:balance}
+.st-fiche h1:focus{outline:none}
+.st-fiche .sous{margin:-8px 0 0;color:var(--gris)}
+.faits{margin:0;display:flex;flex-wrap:wrap;gap:4px 18px}
+.faits b{font-variant-numeric:tabular-nums}
+.apprend{margin:0;background:var(--papier);border-left:4px solid var(--vert);border-radius:0 10px 10px 0;padding:8px 12px}
+.quais{display:flex;gap:8px;flex-wrap:wrap}
+.quais button{min-height:40px;border:1.5px solid var(--filet-app);background:var(--papier);border-radius:10px;padding:0 14px;color:var(--encre);font-size:1rem}
+.quais button[aria-pressed="true"]{border:2px solid var(--marine);font-weight:700;box-shadow:inset 0 -3px 0 var(--marine)}
+.quais button[aria-pressed="true"]::before{content:"✓ "}
+.chemin{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center;font-size:.95rem;color:var(--gris)}
+/* le chemin se lit, il ne se touche pas : du texte et des séparateurs, aucune bordure de bouton */
+.chemin li{display:inline-flex;align-items:center;gap:8px}
+.chemin li:not(:last-child)::after{content:"·";color:var(--gris)}   /* le séparateur finit la ligne : une ligne repliée commence par une étape */
+.chemin .faite span{color:var(--vert);font-weight:700}
+.prof{margin:0;font-weight:700;color:var(--marine);background:#e8eef6;border-radius:10px;padding:6px 12px}
+.actions{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.gros{display:inline-flex;align-items:center;min-height:48px;background:var(--orange);color:#fff;text-decoration:none;border-radius:14px;
+  padding:10px 30px;font:700 1.15rem var(--titre);box-shadow:0 3px 0 var(--orange-texte)}
+.gros:active{transform:translateY(2px);box-shadow:0 1px 0 var(--orange-texte)}
+.discret{display:inline-flex;align-items:center;min-height:40px;padding:0 6px;color:var(--marine);text-decoration:underline;text-underline-offset:3px}
+.discret:hover{color:var(--bleu-i)}
+.note-feuille{margin:0;color:var(--encre);background:#fdf3e6;border-left:4px solid var(--orange-texte);border-radius:0 10px 10px 0;padding:6px 12px}
+.liens{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.98rem}
+.liens a{display:inline-flex;align-items:center;min-height:40px;color:var(--bleu-i)}
+details.reglages{background:var(--papier);border:1px solid var(--filet-app);border-radius:12px;padding:4px 14px 10px}
+details.reglages summary{cursor:pointer;font-weight:700;color:var(--marine);min-height:40px;display:flex;align-items:center}
+details.reglages summary::-webkit-details-marker{display:none}
+details.reglages summary::before{content:"▸";margin-right:8px}
+details.reglages[open] summary::before{content:"▾"}
+details.reglages:not([open]){padding-bottom:4px}
+.rangee{display:grid;grid-template-columns:120px minmax(0,1fr);gap:6px 12px;align-items:center;margin-top:10px}
+@media (max-width:560px){.rangee{grid-template-columns:minmax(0,1fr)}}
+.rangee > span{font-weight:700;font-size:.95rem}
+.segs{display:flex;flex-wrap:wrap;gap:6px}
+.segs button{min-height:40px;background:#fff;border:1.5px solid var(--filet-app);border-radius:9px;padding:0 12px;color:var(--encre);font-size:1rem}
+.segs button[aria-pressed="true"]{border:2px solid var(--marine);background:#e8eef6;font-weight:700}
+.segs button[aria-pressed="true"]::before{content:"✓ "}
+.aide-reg{margin:10px 0 0;font-size:.95rem;color:var(--gris)}

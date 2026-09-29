@@ -1,0 +1,104 @@
+/* Espace professeur — s'ajoute à moteur/cablage.css (jetons, bandeau .barre).
+   Charte inerWeb : titres Trebuchet MS, corps Calibri, bleu #1B3A63, orange de texte #c9451a (jamais #FF6B35 pour du texte),
+   un seul thème, clair. Un choix = une rangée de boutons (coche + graisse + bordure), jamais un menu déroulant. */
+:root{
+  --orange-texte:#c9451a; --bleu-actif:#3d7fca; --l-dep:#1b3a63;
+  --titre:"Trebuchet MS",Calibri,Arial,sans-serif;
+  color-scheme:light;
+}
+body{height:auto;min-height:100%;overflow-x:hidden}
+.barre .ou{font-size:16px;color:#e6edf5;white-space:nowrap}
+.barre a.retour{min-width:40px;min-height:40px;display:inline-grid;place-items:center;border-radius:10px}   /* une cible de 40 px */
+.prof{max-width:1000px;margin:0 auto;padding:22px 16px 72px;display:grid;gap:26px}
+.prof h1{font-size:1.7rem}
+.prof h2{font-size:1.3rem;margin:0 0 10px}
+.prof h3{font-size:1.05rem}
+.prof p{margin:0}
+.chapo{color:var(--mut);font-size:1.05rem;max-width:70ch;margin-top:4px}
+.prof section{min-width:0}
+
+/* la porte des documents professeur : bien visible */
+.coffre{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;background:#fff;border:2px solid var(--bleu);border-radius:var(--r);padding:12px 16px;box-shadow:var(--ombre)}
+.coffre span{flex:1 1 280px;min-width:0}
+.coffre b{font-family:var(--titre);color:var(--bleu)}
+a.gros{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:12px;
+  background:var(--bleu);border:2px solid var(--bleu);color:#fff;font-weight:700;text-decoration:none;text-align:center}
+a.gros:hover{background:var(--bleu-clair)}
+a.lien-bouton{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:12px;border:2px solid var(--ligne);
+  background:#fff;color:var(--bleu);font-weight:700;text-decoration:none}
+a.lien-bouton:hover{border-color:var(--bleu-clair)}
+
+/* trois façons de s'en servir */
+.usages{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.usage{background:#fff;border:1px solid var(--ligne);border-radius:12px;padding:8px 12px;box-shadow:var(--ombre);font-size:.95rem;line-height:1.35}
+.usage b{font-family:var(--titre);color:var(--bleu);display:block;font-size:1.05rem}
+.usage .duree{font-size:.9rem;color:var(--orange-texte);font-weight:700;display:block}
+
+/* comment le logiciel fait travailler l'élève */
+.etapes{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;counter-reset:e}
+.etapes li{counter-increment:e;background:#fff;border:1px solid var(--ligne);border-radius:12px;padding:10px 12px;font-size:.95rem}
+.etapes li::before{content:counter(e);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--bleu);color:#fff;font-weight:700;margin-right:6px;font-size:.9rem}
+.etapes b{font-family:var(--titre);color:var(--bleu)}
+.etapes span{display:block;margin-top:4px;color:var(--txt)}
+.principes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px 24px;margin:0}
+.principes div{min-width:0}
+.principes dt{font-family:var(--titre);font-weight:700;color:var(--bleu)}
+.principes dd{margin:2px 0 0;font-size:.98rem}
+
+/* préparer une séance */
+.prepa{display:grid;gap:14px;background:#fff;border:1px solid var(--ligne);border-radius:var(--r);box-shadow:var(--ombre);padding:16px}
+.rangee{display:grid;grid-template-columns:130px minmax(0,1fr);gap:6px 12px;align-items:start}
+.rangee > .lib{font-weight:700;padding-top:9px}
+.groupe-st{display:grid;grid-template-columns:210px minmax(0,1fr);gap:4px 12px;align-items:start;margin-bottom:6px}
+.groupe-st .lib{display:flex;align-items:center;gap:8px;font-weight:700;padding-top:6px;min-width:0}
+.puce{flex:none;width:16px;height:16px;border-radius:50%;background:var(--c,var(--bleu));border:2px solid #fff;box-shadow:0 0 0 1.5px var(--c,var(--bleu))}
+.segs{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.seg{min-height:44px;padding:0 14px;border:2px solid var(--ligne);border-radius:10px;background:#fff;color:var(--txt);font-size:.98rem}
+.seg:hover{border-color:var(--bleu-clair)}
+.seg[aria-pressed="true"]{border-color:var(--bleu);background:#e8eef6;font-weight:700;color:var(--bleu)}
+.seg[aria-pressed="true"]::before{content:"✓ "}
+.seg:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--bleu-actif);outline-offset:2px}
+.station-dite{color:var(--mut);font-size:.98rem}
+.station-dite b{color:var(--bleu)}
+
+.seance{display:grid;grid-template-columns:minmax(200px,300px) minmax(0,1fr);gap:18px;align-items:start;border:2px solid var(--bleu);border-radius:12px;padding:14px;background:#fbfcfe}
+.qr{background:#fff;border:1px solid var(--ligne);border-radius:8px;padding:6px;line-height:0}
+.qr svg{width:100%;height:auto;display:block;max-width:300px}
+.a-droite{display:grid;gap:10px;min-width:0;align-content:start}
+.adresse{font-family:Consolas,"Courier New",monospace;font-size:.95rem;overflow-wrap:anywhere;word-break:break-all;background:#fff;
+  border:1px solid var(--ligne);border-radius:8px;padding:8px 10px;user-select:all;-webkit-user-select:all;display:block}
+.gestes{display:flex;flex-wrap:wrap;gap:8px}
+.gestes button{border-color:var(--bleu);background:var(--bleu);color:#fff;font-weight:700}
+.dit{min-height:1.4em;color:var(--ok);font-weight:700}
+.lignes-doc{display:grid;gap:6px}
+.lignes-doc .note{color:var(--mut);font-size:.92rem}
+.lignes-doc .qr-feuille{color:var(--txt);border-left:3px solid var(--orange-texte);padding-left:8px;margin-top:6px}
+a.lien-doc{display:inline-flex;align-items:center;min-height:40px}
+.qr-dit{color:var(--txt);font-size:.95rem}
+.tuto{border-top:1px dashed var(--ligne);padding-top:8px}
+
+@media (max-width:640px){
+  .rangee,.groupe-st{grid-template-columns:minmax(0,1fr)}
+  .rangee > .lib,.groupe-st .lib{padding-top:0}
+  .seance{grid-template-columns:minmax(0,1fr)}
+  .qr{max-width:320px}
+  .prof h1{font-size:1.45rem}
+}
+@media print{.barre,.gestes{display:none}}
+
+/* « Imprimer le QR de la séance » : une page A4, rien d'autre que la séance */
+.impression{font-family:Calibri,Arial,sans-serif;color:#000;text-align:center}
+@media print{
+  @page{size:A4 portrait;margin:15mm}
+  body.imprime-qr > *:not(#impression):not(#marque-inerweb){display:none!important}   /* la marque reste en pied de feuille (moteur/marque.js) */
+  body.imprime-qr #impression{display:block!important}
+  body.imprime-qr{background:#fff}
+  .imp-produit{font:700 14pt var(--titre);color:var(--bleu);margin:0 0 4mm}
+  .impression h1{font:700 22pt var(--titre);color:#000;margin:0 0 3mm;text-wrap:balance}
+  .imp-quai{font-size:16pt;font-weight:700;margin:0 0 2mm}
+  .imp-reglages{font-size:15pt;margin:0 0 6mm}
+  .imp-qr{display:flex;justify-content:center}
+  .imp-qr svg{width:120mm!important;height:120mm!important}
+  .imp-consigne{font-size:14pt;margin:5mm 0 3mm}
+  .imp-adresse{display:block;font:12pt Consolas,"Courier New",monospace;overflow-wrap:anywhere;word-break:break-all;max-width:170mm;margin:0 auto}
+}

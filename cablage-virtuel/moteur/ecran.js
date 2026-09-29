@@ -5,9 +5,9 @@
    - la place de la carte quand les deux sont là : petite · moyenne · grande ;
    - plein écran · la carte sur un autre écran · les repères (nomenclature) montrés ou repliés.
    Les choix sont gardés sur l'appareil. Sur un petit écran, le menu s'ouvre UNE fois pour proposer, jamais pour imposer.
-   Sur un seul panneau, un gros bouton en tête du panneau bascule vers l'autre. La feuille élève (PDF) s'ouvre depuis la
-   consigne : 📄 Feuille (moteur/documents.js dit laquelle). Le deuxième écran (vue=carte) et les temps Colorier / Repérer
-   (la carte seule, déjà) ne sont pas concernés. */
+   Sur un seul panneau, un gros bouton en tête du panneau bascule vers l'autre. La feuille élève (PDF) est dans « Plus »
+   (29/09). Le deuxième écran (vue=carte), les étapes Colorier / Repérer (la carte seule, déjà) et Réaliser ne sont pas
+   concernés. */
 (function () {
 'use strict';
 const $ = s => document.querySelector(s);
@@ -25,13 +25,10 @@ if (document.querySelector('#platine-corps svg')) demarrer();   // l'exercice é
 function demarrer() {
   if (fait) return; fait = true;
   const API = window.CABLAGE_API;
-  if (!API || API.vue === 'carte') return;
+  if (!API || API.vue === 'carte' || API.activite === 'realiser') return;   // Réaliser : la platine seule, sa colonne à côté
   const EX = API.ex(), ID = EX && EX.id;
   const surCarte = document.body.classList.contains('sur-carte');
-
-  // ---- la feuille élève, à imprimer
-  const docs = window.CABLAGE_DOCUMENTS || {}, d = ID && docs[ID], bf = $('#btn-feuille');
-  if (bf && d) { bf.href = d.eleve; bf.hidden = false; bf.title = d.nom + ' — s’ouvre dans un nouvel onglet, pour imprimer'; }
+  // (la feuille élève est passée dans « Plus », 29/09 : moteur/cablage.js, majFeuille)
   if (surCarte) return;   // colorier, repérer : la carte est seule, rien à choisir
 
   // ---- les préférences, gardées sur l'appareil
@@ -43,7 +40,7 @@ function demarrer() {
   // ---- le bouton du bandeau
   const barre = $('.barre');
   const ba = document.createElement('button'); ba.id = 'btn-affichage'; ba.className = 'affichage'; ba.textContent = 'Affichage'; ba.title = 'Choisir comment afficher la carte et la platine';
-  barre.appendChild(ba);
+  barre.insertBefore(ba, $('#plus'));   // avant « Plus » (29/09) ; à la fin de la barre s'il n'y en a pas
   // le gros bouton de bascule, en tête de chaque panneau (un seul panneau)
   const bascule = (panneau, versDispo, texte) => {
     const b = document.createElement('button'); b.className = 'basculer'; b.textContent = texte; b.onclick = () => { pref.dispo = versDispo; garder(); appliquer(); };
@@ -70,6 +67,8 @@ function demarrer() {
   const fermer = () => { voile.classList.remove('ouvert'); $('#astuce-affichage').hidden = true; };
   ba.onclick = ouvrir; $('#aff-fermer').onclick = fermer;
   voile.addEventListener('click', e => { if (e.target === voile) fermer(); });
+  // 30/09 (constat R4) : Échap ferme la fenêtre, le focus revient au bouton
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && voile.classList.contains('ouvert')) { fermer(); ba.focus(); } });
   voile.querySelectorAll('#choix-dispo button').forEach(b => { b.onclick = () => { pref.dispo = b.dataset.dispo; garder(); appliquer(); peindre(); }; });
   voile.querySelectorAll('#choix-taille button').forEach(b => { b.onclick = () => { pref.taille = b.dataset.taille; garder(); appliquer(); peindre(); }; });
   $('#aff-plein-ecran').onclick = () => { if (document.fullscreenElement) document.exitFullscreen(); else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen(); };
@@ -121,11 +120,21 @@ function demarrer() {
     });
   }
   appliquer();
-  // un petit écran, la première fois : on propose, on n'impose pas
-  if (PETIT() && !pref.propose && ID !== 'allumage-simple') {   // pas par-dessus le tutoriel de prise en main
+  // 30/09 (constat E5) : un petit écran, la première fois sur cet appareil : plus de fenêtre qui s'ouvre toute seule. Une petite
+  // bulle accrochée au bouton « Affichage », qui ne prend pas le doigt et ne couvre pas la zone de travail ; elle se ferme au
+  // premier geste ou toute seule après 8 s, et ne revient plus. Pas par-dessus le tutoriel de prise en main.
+  if (PETIT() && !pref.propose && new URLSearchParams(location.search).get('tuto') === null) {
     pref.propose = true; garder();
-    const a = $('#astuce-affichage'); a.textContent = 'Cet écran est petit : la platine seule, ou l’un sous l’autre, est plus lisible. À vous de choisir ; vous pourrez changer à tout moment par « Affichage ».'; a.hidden = false;
-    ouvrir();
+    const bulle = document.createElement('div'); bulle.className = 'bulle-affichage'; bulle.id = 'bulle-affichage'; bulle.setAttribute('role', 'status');
+    bulle.textContent = 'Écran petit ? Choisissez votre affichage ici.';
+    document.body.appendChild(bulle);
+    const r = ba.getBoundingClientRect(), w = bulle.offsetWidth;
+    bulle.style.top = (r.bottom + 10) + 'px';
+    bulle.style.left = Math.max(8, Math.min(window.innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + 'px';
+    bulle.style.setProperty('--fl', (r.left + r.width / 2 - parseFloat(bulle.style.left)) + 'px');
+    const partir = () => { bulle.remove(); clearTimeout(minuterie); ['pointerdown', 'keydown'].forEach(t => document.removeEventListener(t, partir, true)); };
+    const minuterie = setTimeout(partir, 8000);
+    ['pointerdown', 'keydown'].forEach(t => document.addEventListener(t, partir, true));
   }
   window.CABLAGE_ECRAN = { pref: () => Object.assign({}, pref), regler: (p) => { Object.assign(pref, p); garder(); appliquer(); }, ouvrir, fermer };
 }

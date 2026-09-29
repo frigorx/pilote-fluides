@@ -26,10 +26,53 @@ a{color:var(--bleu-clair)}
 .barre .logo{font-family:"Trebuchet MS";font-weight:700;font-size:18px;letter-spacing:.4px;white-space:nowrap}
 .barre .logo b{color:var(--orange)}
 .barre .titre{font-size:16px;color:#e6edf5;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* 30/09 (constat E11) : le titre de la station, entier : sur deux lignes s'il le faut, jamais coupé */
+body.jeu .barre .titre{white-space:normal;line-height:1.2;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .barre .modes{display:flex;gap:6px}
 .barre .modes button{min-height:38px;padding:0 12px;font-size:15px;background:transparent;color:#fff;border-color:#5f7ea6}
 .barre .modes button.actif{background:#fff;color:var(--bleu);border-color:var(--orange)}
-.barre a.retour{color:#fff;text-decoration:none;font-size:22px;line-height:1}
+.barre a.retour{color:#fff;text-decoration:none;font-size:22px;line-height:1;
+  min-width:40px;min-height:40px;display:inline-grid;place-items:center;border-radius:10px;flex:none}   /* une cible de 40 px (jeu et espace professeur) */
+
+/* ---- 29/09 : la barre de la page de jeu (maquette validée, écran 3) : les étapes, la pastille du mode, « Plus » ----
+   L'étape en cours : fond blanc, graisse, bordure (jamais la couleur seule) ; une étape réussie : une coche dans sa pastille. */
+.barre .etapes{display:flex;gap:4px;flex:none}
+.barre .etape{min-height:40px;display:inline-flex;align-items:center;gap:6px;padding:0 12px 0 6px;border-radius:999px;
+  border:1.5px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-size:15px;white-space:nowrap}
+.barre .etape[hidden]{display:none}
+.barre .etape i{font-style:normal;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  background:rgba(255,255,255,.18);font-size:14px;font-weight:700}
+.barre .etape.faite i{background:var(--ok);color:#fff;display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:26px;padding:0 7px;border-radius:13px;white-space:nowrap}
+.barre .etape.faite i::after{content:" ✓"}   /* 30/09 (constat X10) : le numéro reste, la coche vient à côté */
+.barre .etape:hover:not([aria-current]):not([aria-disabled="true"]){border-color:#fff;background:rgba(255,255,255,.12)}
+.barre .etape[aria-current="step"]{background:#fff;color:var(--bleu);font-weight:700;border-color:#fff}
+.barre .etape[aria-current="step"] i{background:var(--orange);color:#fff}
+.barre .etape[aria-current="step"].faite i{background:var(--ok)}
+.barre .etape[aria-disabled="true"]{opacity:.5;cursor:default}
+#activites #btn-tension{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}   /* tension.css le peignait en jaune au pied de page */
+#activites #btn-tension[aria-current="step"]{background:#fff;border-color:#fff;color:var(--bleu)}
+.barre button:focus-visible,.barre a:focus-visible{outline:3px solid #9cc3f0;outline-offset:2px}
+.barre .deroule{position:relative;flex:none}
+.barre .pastille-mode{min-height:40px;padding:0 14px;border-radius:999px;border:2px solid #e8eef6;background:#e8eef6;color:var(--bleu);
+  font-weight:700;font-size:15px;white-space:nowrap}
+.barre .pastille-mode::after{content:"▾";font-size:12px;margin-left:6px}
+.barre .btn-barre{min-height:40px;padding:0 12px;font-size:15px;font-weight:700;background:transparent;color:#fff;border:2px solid #5f7ea6;border-radius:12px;white-space:nowrap}
+.barre .pastille-mode[aria-expanded="true"],.barre .btn-barre[aria-expanded="true"]{box-shadow:0 0 0 3px rgba(255,255,255,.45)}
+.menu-barre{position:absolute;top:calc(100% + 8px);left:0;z-index:25;min-width:280px;background:#fff;color:var(--txt);
+  border:1px solid var(--ligne);border-radius:14px;box-shadow:0 8px 24px rgba(27,58,99,.22);padding:6px;display:grid;gap:4px}
+.menu-barre.a-droite{left:auto;right:0}
+.menu-barre[hidden],.menu-barre [hidden]{display:none}
+.menu-barre button,.menu-barre a{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;width:100%;
+  min-height:44px;padding:6px 12px;border:2px solid transparent;border-radius:10px;background:transparent;color:var(--txt);
+  text-align:left;text-decoration:none;font-size:16px;font-weight:400;line-height:1.25}
+.menu-barre button:hover,.menu-barre a:hover{background:#eef3f9}
+.menu-barre small{color:var(--mut);font-size:13.5px}
+.menu-barre [aria-pressed="true"]{border-color:var(--bleu);background:#e8eef6}
+.menu-barre [aria-pressed="true"] b::before{content:"✓ "}
+.barre .titre[title]{cursor:default}
+@media (max-width:1340px){body.jeu .barre .logo{display:none}}   /* 30/09 (E11) : sous 1340 px, la place va au titre de la station */
+@media (max-width:1000px){body.jeu .barre .titre{font-size:14px}}
+@media (max-width:1180px){.barre .etape:not([aria-current]) .nom{display:none}.barre .etape:not([aria-current]){padding:0 6px}}   /* 1040 → 1180 (E11) ; le numéro reste (X10) */
 
 /* ---- consigne ---- */
 .consigne{display:flex;align-items:center;gap:12px;padding:8px 14px;background:#fff;border-bottom:1px solid var(--ligne);min-height:56px}
@@ -55,7 +98,7 @@ a{color:var(--bleu-clair)}
 .panneau .entete{display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--ligne);font-size:14px;color:var(--mut)}
 .panneau .entete b{color:var(--bleu);font-size:15px}
 .panneau .entete .spacer{flex:1}
-.panneau .entete button{min-height:34px;padding:0 10px;font-size:14px;border-radius:8px}
+.panneau .entete button{min-height:40px;padding:0 10px;font-size:14px;border-radius:8px}   /* 30/09 : cibles de 40 px */
 .panneau .corps{flex:1;min-height:0;position:relative;overflow:hidden;touch-action:none;
   -webkit-user-select:none;user-select:none}   /* un fil tiré sélectionnait les numéros : le geste suivant devenait un glisser-déposer du texte, annulé (pointercancel) — vu le 26/09 */
 .panneau svg{width:100%;height:100%;display:block}
@@ -186,7 +229,7 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 #platine .goulotte.chemin{fill:#f3f5f8;stroke:#c6d0db;stroke-dasharray:6 4}   /* chemin de câbles vers les appareils du terrain */
 #platine .fond-platine{fill:#f7f9fb}
 #platine .fond-platine.cadre{stroke:#9aa7b5;stroke-width:3}   /* la vraie platine : le réseau et le moteur sont dehors */
-.panneau .entete button.zoom{min-width:34px;padding:0 8px;font-size:18px;line-height:1;margin-left:2px}
+.panneau .entete button.zoom{min-width:40px;padding:0 8px;font-size:18px;line-height:1;margin-left:2px}
 
 /* ---- colorier et repérer (parties A et B du TP) : la carte seule, platine masquée ---- */
 .barre .activites button{font-weight:700}
@@ -213,7 +256,7 @@ body.sur-carte .outils .couleurs{flex:1 0 100%;min-height:48px}   /* palette ou 
 .fiche .modes .act{flex:0 0 88px;align-self:center;font-weight:700;font-size:15px;color:var(--txt)}
 
 /* ---- l'affichage au choix (moteur/ecran.js, 28/09) : disposition, place de la carte, plein écran, repères, feuille ---- */
-.barre .affichage{min-height:38px;padding:0 12px;font-size:15px;font-weight:700;background:transparent;color:#fff;border:2px solid #5f7ea6;border-radius:12px;white-space:nowrap}
+.barre .affichage{min-height:40px;padding:0 12px;font-size:15px;font-weight:700;background:transparent;color:#fff;border:2px solid #5f7ea6;border-radius:12px;white-space:nowrap}
 .consigne .feuille{flex:none;min-height:40px;display:inline-flex;align-items:center;padding:0 12px;border:2px solid var(--ligne);border-radius:12px;
   background:#fff;color:var(--bleu);text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap}
 .panneau .entete .basculer{display:none;min-height:40px;padding:0 14px;font-size:16px;font-weight:700;color:#fff;background:var(--bleu);border-color:var(--bleu)}
@@ -243,3 +286,97 @@ body.reperes-replies .nomenclature{display:none}
 .menu-affichage .choix button.actif small{color:#dfe7f2}
 .menu-affichage .pied{display:flex;justify-content:flex-end;margin-top:18px}
 @media (max-width:820px){.barre .affichage{padding:0 9px;font-size:14px}.menu-affichage .choix{grid-template-columns:1fr}}
+
+/* ---- 29/09 : fil par fil (&atelier=fil) : la bulle sous le dessin de la platine (sa place gardée), le fil qui attend d'être posé pour de vrai ---- */
+.bulle-pose{position:relative;flex:none;margin:0 8px 8px;min-height:84px;background:#fffdf8;border:2px solid var(--ok);border-radius:14px;
+  padding:10px 14px;box-shadow:0 4px 14px rgba(16,35,60,.16);display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:17px}
+.bulle-pose .texte{flex:1 1 300px;display:grid;gap:4px}
+.bulle-vide{display:none;flex:none;margin:0 8px 8px;min-height:84px;padding:10px 14px;border:2px dashed var(--ligne);border-radius:14px;
+  color:var(--mut);font-size:16px;align-items:center}
+body.fil-par-fil .bulle-vide{display:flex}
+body.fil-par-fil #bulle-pose:not([hidden]) + .bulle-vide{display:none}
+.bulle-pose[hidden]{display:none}
+.bulle-pose p{margin:0}
+.bulle-pose .ok{color:var(--ok);font-weight:700}
+.bulle-pose button{flex:none;min-height:52px;padding:0 24px;background:var(--ok);border-color:var(--ok);color:#fff;
+  font:700 18px "Trebuchet MS",Calibri,Arial,sans-serif;box-shadow:0 3px 0 #155c3d}
+.bulle-pose button:active{transform:translateY(2px);box-shadow:0 1px 0 #155c3d}
+.bulle-pose.rappel{animation:rappel .45s}
+@keyframes rappel{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+@media (prefers-reduced-motion:reduce){.bulle-pose.rappel{animation:none}}
+#platine .fil.recent{filter:drop-shadow(0 0 3px var(--ok)) drop-shadow(0 0 3px var(--ok))}
+
+/* ---- 29/09 : l'étape 5 Réaliser (moteur/realiser.js, maquette validée, écran 4) : la platine à gauche, la colonne à droite ---- */
+body.activite-realiser #carte,body.activite-realiser .nomenclature,body.activite-realiser #modes{display:none}
+body.activite-realiser .scene{grid-template-columns:1fr;grid-template-rows:minmax(220px,45%) 1fr}
+@media (min-width:900px) and (min-aspect-ratio:1/1){
+  body.activite-realiser .scene{grid-template-columns:minmax(0,1fr) minmax(380px,40%);grid-template-rows:1fr}
+}
+body.activite-realiser .outils{min-height:0;padding:0 14px 34px}
+body.activite-realiser .outils > *{display:none}
+body.activite-realiser #platine .borne,body.activite-realiser #platine .fil{cursor:default}
+#realiser .colonne{flex:1;min-height:0;overflow:auto;padding:12px;display:grid;gap:12px;align-content:start;background:#f7f9fb}
+#realiser .bloc{background:#fff;border:1px solid var(--ligne);border-radius:12px;padding:12px 14px}
+#realiser .bloc h3{font-size:18px;margin:0 0 8px}
+#realiser .bloc p{margin:0 0 6px}
+#realiser .danger{border:2px solid var(--ko);background:var(--ko-bg)}
+#realiser .danger h3{color:var(--ko)}
+#realiser .note{color:var(--mut);font-size:15px}
+#realiser .etat-controle{font-weight:700}
+#realiser .etat-controle.ok{color:var(--ok)}
+#realiser .etat-controle.ko{color:#c9451a}
+#realiser .tab{overflow-x:auto}
+#realiser table{border-collapse:collapse;width:100%;font-size:15px}
+#realiser th,#realiser td{border-bottom:1px solid var(--ligne);padding:4px 6px;text-align:left;vertical-align:middle}
+#realiser th{color:var(--mut);font-size:13.5px;font-weight:700}
+#realiser td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+#realiser td.couleur-fil{white-space:nowrap}
+#realiser .teinte{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:6px;vertical-align:-2px;box-shadow:0 0 0 1px #9aa7b6}
+#realiser .teinte.vert-jaune{background:repeating-linear-gradient(135deg,#3fae2a 0 4px,#f5d90a 4px 8px)}
+#realiser td.case{width:52px;text-align:center}
+#realiser td.case label{display:inline-grid;place-items:center;min-width:40px;min-height:40px;cursor:pointer}
+#realiser td.case small{color:var(--mut);font-size:13px}
+#realiser input[type=checkbox]{width:22px;height:22px;margin:0;accent-color:var(--ok);cursor:pointer}
+#realiser tr.pose td{color:var(--mut)}
+#realiser tr.embroche td{color:var(--mut);font-style:italic}
+#realiser .coche{display:flex;gap:10px;align-items:center;min-height:40px;cursor:pointer;font-size:16px}
+#realiser .gros{margin-top:10px;width:100%;min-height:52px;font:700 18px "Trebuchet MS",Calibri,Arial,sans-serif}
+#realiser .appel{margin:10px 0 0;padding:10px 12px;border-radius:10px;background:var(--ok-bg);color:var(--ok);font-weight:700;font-size:17px}
+#realiser .vide .principal{margin-top:6px}
+/* le panneau des modes s'ouvre vers la gauche (la pastille est à droite de la barre) ; sur un écran étroit, la barre passe à la ligne */
+#panneau-modes{left:auto;right:0}
+@media (max-width:820px){#panneau-modes{left:0;right:auto}}
+.menu-barre [data-mode] b{font-weight:400}
+.menu-barre [aria-pressed="true"] b{font-weight:700}
+
+/* ---- 30/09 : reprise des constats de la vérification indépendante (lot F) ---- */
+/* Contrôler et Essayer inactifs tant qu'un fil attend d'être posé sur la platine (fil par fil) : l'infobulle dit pourquoi */
+.outils button[aria-disabled="true"]{opacity:.45;cursor:default}
+/* Aidé et Avancé, fil par fil : le fil tracé n'est pas encore vérifié (ni coche, ni vert) */
+.bulle-pose .libre{color:var(--bleu);font-weight:700}
+.bulle-pose.non-verifie{border-color:var(--bleu-clair)}
+/* sous tension, le cadre vide du fil par fil n'a rien à dire */
+body.sous-tension .bulle-vide{display:none}
+/* les fils revenus en rentrant dans Câbler : une ligne de plus sous la consigne */
+.consigne .texte small.revenus{color:var(--bleu-clair);font-weight:700}
+/* au doigt, deux bornes presque à égale distance : la bulle « Quelle borne ? », au-dessus du doigt, en gros boutons */
+.choix-borne{position:absolute;z-index:9;display:flex;flex-direction:column;gap:6px;max-width:calc(100% - 16px);padding:8px 10px 10px;
+  background:#fff;border:2px solid var(--orange);border-radius:14px;box-shadow:0 6px 18px rgba(27,58,99,.25)}
+.choix-borne p{margin:0;font:700 15px "Trebuchet MS",Calibri,Arial,sans-serif;color:var(--bleu)}
+.choix-borne button{min-height:48px;font:700 18px "Trebuchet MS",Calibri,Arial,sans-serif;color:var(--bleu);border-color:var(--orange)}
+#platine .borne.candidate{fill:#fff3ec;stroke:var(--orange);stroke-width:4}
+/* petit écran, la première fois : une bulle accrochée au bouton « Affichage », qui ne prend pas le doigt (moteur/ecran.js) */
+.bulle-affichage{position:fixed;z-index:30;pointer-events:none;max-width:280px;padding:8px 12px;background:#fff;border:2px solid var(--orange);
+  border-radius:12px;box-shadow:0 6px 18px rgba(27,58,99,.22);font:700 15px "Trebuchet MS",Calibri,Arial,sans-serif;color:var(--bleu)}
+.bulle-affichage::after{content:"";position:absolute;top:-18px;left:var(--fl,50%);margin-left:-9px;border:9px solid transparent;border-bottom-color:var(--orange)}
+
+/* 29/09 (Franck) : sur chaque page, une porte vers l'accueil d'inerweb.fr, et le prototype dit en clair, critiques bienvenues */
+.barre a.site{color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.6);border-radius:10px;min-height:40px;min-width:40px;
+  padding:0 12px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;white-space:nowrap}
+.barre a.site:hover{background:rgba(255,255,255,.12)}
+.barre a.site.droite{margin-left:auto}
+.barre .tag-proto{flex:none;font-size:12px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#10233c;background:#ffd9a8;
+  border-radius:999px;padding:2px 8px;white-space:nowrap}
+.bandeau-proto{margin:0;padding:8px 16px;background:#fff4e0;color:#10233c;border-bottom:1px solid #f0d9a8;font-size:15px;line-height:1.45}
+.bandeau-proto a{color:#1b3a63;font-weight:700}
+@media print{.bandeau-proto{display:none}}
