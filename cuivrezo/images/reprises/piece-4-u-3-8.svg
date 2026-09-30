@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="t d">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>Pièce 4 - U à deux coudes à 90 degrés en tube cuivre 3/8 pouce</dc:title>
+      <dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator>
+      <dc:rights><cc:Agent><dc:title>© 2026 inerWeb — F. Henninot — tous droits réservés sur l’illustration</dc:title></cc:Agent></dc:rights>
+      <dc:publisher><cc:Agent><dc:title>inerWeb</dc:title></cc:Agent></dc:publisher>
+      <dc:date>2026</dc:date>
+      <dc:identifier>inerweb.fh@gmail.com</dc:identifier>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
+    </cc:Work>
+    <cc:License rdf:about="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    </cc:License>
+  </rdf:RDF>
+</metadata>
+  <title id="t">Pièce 4 - U à deux coudes à 90 degrés en tube cuivre 3/8 pouce</title>
+  <desc id="d">Plan coté d'une pièce en U en cuivre 3/8 pouce, branches de 100 millimètres, entraxe de 70 millimètres, rayon à l'axe de 23,8 millimètres et longueur de coupe de 250 millimètres.</desc>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#1B3A63"/></marker></defs>
+  <rect x="8" y="8" width="984" height="584" fill="#fff" stroke="#1B3A63" stroke-width="3"/>
+  <text x="40" y="55" font-family="Trebuchet MS" font-size="28" font-weight="700" fill="#1B3A63">PIÈCE 4 - U GRAND RAYON</text>
+  <text x="740" y="55" font-family="Calibri" font-size="22" font-weight="700">Cuivre 3/8″</text>
+  <rect x="40" y="80" width="920" height="92" rx="12" fill="#F7F1E7" stroke="#1B3A63" stroke-width="2"/>
+  <text x="65" y="117" font-family="Calibri" font-size="22"><tspan font-weight="700">Attention :</tspan> choisir la cintreuse 3/8″ ; son rayon est plus grand.</text>
+  <text x="65" y="150" font-family="Calibri" font-size="22"><tspan font-weight="700">Coupe :</tspan> 250 mm - 2 cintrages à 90° - tolérance ± 1 mm.</text>
+  <path d="M170 320H600A105 105 0 0 1 705 425V445A105 105 0 0 1 600 550H170" fill="none" stroke="#B66A37" stroke-width="28" stroke-linecap="round"/>
+  <path d="M170 320H600A105 105 0 0 1 705 425V445A105 105 0 0 1 600 550H170" fill="none" stroke="#5C341C" stroke-width="2" stroke-dasharray="9 7"/>
+  <line x1="170" y1="255" x2="705" y2="255" stroke="#1B3A63" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/><line x1="170" y1="270" x2="170" y2="335" stroke="#1B3A63"/><line x1="705" y1="255" x2="705" y2="425" stroke="#1B3A63"/>
+  <text x="405" y="242" font-family="Calibri" font-size="24" font-weight="700" fill="#1B3A63">100 mm</text>
+  <line x1="805" y1="320" x2="805" y2="550" stroke="#1B3A63" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/><line x1="600" y1="320" x2="820" y2="320" stroke="#1B3A63"/><line x1="600" y1="550" x2="820" y2="550" stroke="#1B3A63"/>
+  <text x="825" y="445" font-family="Calibri" font-size="24" font-weight="700" fill="#1B3A63">70 mm</text>
+  <text x="730" y="215" font-family="Calibri" font-size="20" font-weight="700" fill="#C9451A">R = 23,8 mm</text>
+  <text x="40" y="585" font-family="Calibri" font-size="17" fill="#1B3A63">Entraxe coté à l'axe du tube - dessin non à l'échelle.</text>
+</svg>

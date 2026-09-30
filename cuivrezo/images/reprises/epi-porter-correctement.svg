@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-3" aria-describedby="d-3" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-3">Porter l'EPI correctement : sur les yeux, pas sur le front</title>
+  <desc id="d-3">Deux silhouettes de tête schématiques côte à côte. À gauche, une paire de lunettes est
+    représentée correctement placée devant les yeux, avec une coche verte et la mention « correct ». À droite,
+    la même paire de lunettes est représentée relevée sur le front, avec une croix rouge et la mention
+    « ne protège plus ».</desc>
+  <style>
+    .tete{ fill:#fde9d0; stroke:#10233c; stroke-width:2.5; }
+    .lbl{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; }
+    .sub{ font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <!-- Silhouette correcte -->
+  <circle class="tete" cx="230" cy="150" r="90"/>
+  <ellipse cx="200" cy="150" rx="24" ry="16" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <ellipse cx="260" cy="150" rx="24" ry="16" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="224" y1="150" x2="236" y2="150" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="330" cy="90" r="20" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <path d="M320 90 l7 8 l14 -16" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round"/>
+  <text class="lbl" x="230" y="270" text-anchor="middle" fill="#1e7e54">Correct</text>
+  <text class="sub" x="230" y="294" text-anchor="middle">lunettes sur les yeux</text>
+
+  <!-- Silhouette incorrecte -->
+  <circle class="tete" cx="670" cy="150" r="90"/>
+  <ellipse cx="640" cy="70" rx="22" ry="14" fill="#fff" stroke="#c0392b" stroke-width="3" transform="rotate(-8 640 70)"/>
+  <ellipse cx="698" cy="70" rx="22" ry="14" fill="#fff" stroke="#c0392b" stroke-width="3" transform="rotate(-8 698 70)"/>
+  <line x1="662" y1="70" x2="674" y2="70" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="600" cy="150" r="6" fill="#10233c"/>
+  <circle cx="640" cy="150" r="6" fill="#10233c"/>
+  <circle cx="770" cy="90" r="20" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <path d="M760 80 l20 20 M780 80 l-20 20" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+  <text class="lbl" x="670" y="270" text-anchor="middle" fill="#c0392b">Incorrect</text>
+  <text class="sub" x="670" y="294" text-anchor="middle">lunettes remontées sur le front</text>
+</svg>

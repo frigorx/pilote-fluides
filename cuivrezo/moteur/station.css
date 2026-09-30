@@ -1,0 +1,153 @@
+/* CuivRézo — coque commune des stations-geste.
+   CONTRAT : style seul, aucune logique. Charte inerWeb (fond crème, jamais de blanc pur,
+   jamais de thème sombre). Pensé pour une tablette posée sur l'établi, lue à bout de bras,
+   touchée avec des gants : texte ≥ 20 px, cibles ≥ 64 px. */
+
+:root{
+  --navy:#1b3a63; --ink:#10233c; --muted:#56657a;
+  --cream:#f7f1e7; --paper:#fffdf8; --copper:#b8692e; --copper-soft:#f3dcc6;
+  --orange:#ff6b35; --orange-deep:#c9451a; --logo:#e8914a;
+  --ok:#1e7e54; --ok-bg:#e3f5ec; --bad:#b3261e; --bad-bg:#fbe7e4;
+  --wait:#8a5300; --wait-bg:#fff4e0;
+  --line:rgba(27,58,99,.18);
+  font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;
+  color:var(--ink); background:var(--cream);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100dvh;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;
+     background:var(--cream);font-size:clamp(18px,1.9vw,23px);line-height:1.4}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:4px solid rgba(255,107,53,.6);outline-offset:2px}
+.cache{display:none!important}
+
+/* ---------- barre du haut : le permanent ---------- */
+.haut{display:flex;align-items:center;gap:.8rem;padding:.5rem 1rem;background:var(--paper);
+      border-bottom:1px solid var(--line)}
+.haut .reseau{font-family:"Trebuchet MS",Calibri,sans-serif;font-weight:800;color:var(--navy);
+              text-decoration:none;white-space:nowrap}
+.haut .reseau b{color:var(--copper)}
+.haut .titres{min-width:0;flex:1}
+.haut .kicker{font-size:.72em;color:var(--muted)}
+.haut h1{margin:0;font-size:1.15em;color:var(--navy);font-family:"Trebuchet MS",Calibri,sans-serif}
+.haut .marque-hote{position:relative;width:275px;height:34px;flex:none}
+.haut .marque-hote #marque-inerweb{left:0;top:50%;transform:translateY(-50%)}
+@media (max-width:600px){.haut .marque-hote{width:96px;order:2}}
+.haut .carte{border:2px solid var(--navy);border-radius:12px;padding:.35rem .8rem;color:var(--navy);
+             text-decoration:none;font-weight:700;font-size:.8em;white-space:nowrap}
+
+/* ---------- les six temps ---------- */
+.temps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.35rem;padding:.45rem 1rem;
+       background:var(--paper);border-bottom:1px solid var(--line)}
+.temps button{min-height:52px;border:2px solid var(--line);border-radius:12px;background:var(--cream);
+              color:var(--navy);font-weight:700;font-size:.72em;line-height:1.15;padding:.2rem .3rem}
+.temps button .n{display:block;font-size:1.25em}
+.temps button[aria-current="step"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.temps button.fait{border-color:var(--ok)}
+.temps button.fait .n::after{content:" ✔";color:var(--ok)}
+.temps button[aria-current="step"].fait .n::after{color:#9fe0c0}
+
+/* ---------- la scène : figure + texte ---------- */
+main{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:1rem;padding:1rem;
+     align-items:start;min-height:0}
+.figure{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:.6rem;
+        display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:320px}
+.figure svg,.figure img,.figure video{width:100%;height:auto;max-height:62dvh;display:block;border-radius:12px}
+.figure .legende{font-size:max(16px,.72em);color:var(--muted);margin-top:.4rem;text-align:center}
+.figure .attente{font-size:max(16px,.7em);color:var(--wait);background:var(--wait-bg);border-radius:10px;
+                 padding:.25rem .6rem;margin-top:.4rem}
+.panneau{display:flex;flex-direction:column;gap:.7rem}
+.panneau h2{margin:0;color:var(--navy);font-size:1.3em;font-family:"Trebuchet MS",Calibri,sans-serif;line-height:1.2}
+.panneau p{margin:0}
+.compteur{font-weight:700;color:var(--copper);font-size:max(16px,.8em);letter-spacing:.02em}
+.points{display:flex;gap:.3rem;flex-wrap:wrap}
+.points span{width:.9rem;height:.9rem;border-radius:50%;background:var(--line)}
+.points span.vu{background:var(--copper)}
+.points span.ici{background:var(--navy);outline:3px solid var(--copper-soft)}
+.cle{background:var(--copper-soft);border-left:6px solid var(--copper);border-radius:10px;padding:.55rem .8rem}
+.cle strong{color:var(--navy)}
+details.pourquoi{border:2px solid var(--line);border-radius:12px;padding:.3rem .8rem;background:var(--paper)}
+details.pourquoi summary{min-height:48px;display:flex;align-items:center;font-weight:700;color:var(--navy);cursor:pointer}
+.liste{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.liste li{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.5rem .7rem}
+
+/* le matériel : une case à cocher par outil sorti */
+.outil{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.7rem;align-items:center;width:100%;
+       min-height:64px;text-align:left;background:var(--paper);border:2px solid var(--line);border-radius:14px;
+       padding:.45rem .7rem;color:var(--ink)}
+.outil .case{width:2rem;height:2rem;border:3px solid var(--navy);border-radius:8px;display:grid;place-items:center;
+             font-weight:800;color:#fff}
+.outil[aria-pressed="true"]{border-color:var(--ok);background:var(--ok-bg)}
+.outil[aria-pressed="true"] .case{background:var(--ok);border-color:var(--ok)}
+.outil .detail{display:block;font-size:max(16px,.8em);color:var(--muted)}
+
+/* le piège */
+.piege{border:3px solid var(--bad);background:var(--bad-bg);border-radius:14px;padding:.6rem .8rem}
+.piege h3{margin:0 0 .3rem;color:var(--bad);font-size:1.05em}
+.piege dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:.25rem .6rem}
+.piege dt{font-weight:700;color:var(--navy)}
+.piege dd{margin:0}
+
+/* l'autocontrôle */
+.controle{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:.6rem .8rem}
+.controle .q{font-weight:700;color:var(--navy)}
+.controle .comment{font-size:max(16px,.85em);color:var(--muted);margin:.2rem 0 .45rem}
+.ouinon{display:flex;gap:.5rem}
+.ouinon button{flex:1;min-height:60px;border-radius:12px;border:3px solid var(--navy);background:var(--paper);
+               color:var(--navy);font-weight:800}
+.ouinon button[aria-pressed="true"].oui{background:var(--ok);border-color:var(--ok);color:#fff}
+.ouinon button[aria-pressed="true"].non{background:var(--bad);border-color:var(--bad);color:#fff}
+.remede{margin-top:.5rem;background:var(--bad-bg);border-radius:10px;padding:.45rem .7rem}
+.remede button{margin-top:.4rem;min-height:52px;border:2px solid var(--bad);border-radius:10px;background:var(--paper);
+               color:var(--bad);font-weight:700;padding:.2rem .8rem}
+.bilan{border-radius:14px;padding:.6rem .8rem;font-weight:700}
+.bilan.ok{background:var(--ok-bg);color:var(--ok)}
+.bilan.attente{background:var(--wait-bg);color:var(--wait)}
+
+/* le professeur */
+.appel{background:var(--navy);color:#fff;border-radius:16px;padding:.8rem 1rem}
+.appel h2{color:#fff}
+.echelle{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.35rem}
+.echelle button{min-height:72px;border:3px solid var(--navy);border-radius:12px;background:var(--paper);color:var(--navy);
+                font-weight:800;font-size:.72em;line-height:1.1;padding:.2rem}
+.echelle button .n{display:block;font-size:1.6em}
+.echelle button[aria-pressed="true"]{background:var(--copper);border-color:var(--copper);color:#fff}
+.tampon{border:3px dashed var(--ok);color:var(--ok);border-radius:14px;padding:.5rem .8rem;font-weight:800;text-align:center}
+.codes{font-size:max(16px,.72em);color:var(--muted);border-top:1px solid var(--line);padding-top:.5rem}
+.codes b{color:var(--navy)}
+
+/* ---------- la commande du bas : gros boutons ---------- */
+.bas{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:.6rem;align-items:center;padding:.6rem 1rem;
+     background:var(--paper);border-top:1px solid var(--line);position:sticky;bottom:0}
+.bas button{min-height:68px;border-radius:16px;font-weight:800;border:3px solid var(--navy);background:var(--paper);color:var(--navy);
+            padding:.2rem 1rem}
+.bas .suivant{background:var(--copper);border-color:var(--copper);color:#fff;font-size:1.15em}
+.bas .suivant:disabled{opacity:.5;cursor:not-allowed}
+.voix{display:flex;align-items:center;gap:.5rem;white-space:nowrap}
+.voix label{font-size:.7em;color:var(--muted);display:flex;flex-direction:column;align-items:center}
+.voix input[type=range]{width:110px;height:32px}
+.voix .auto{min-height:48px;font-size:.7em;border-width:2px;padding:.1rem .6rem}
+.voix .auto[aria-pressed="true"]{background:var(--navy);color:#fff}
+
+/* ---------- tablette en portrait, téléphone ---------- */
+@media (max-width:900px),(orientation:portrait){
+  main{grid-template-columns:minmax(0,1fr)}
+  .figure{min-height:0}
+  .figure svg,.figure img,.figure video{max-height:42dvh}
+}
+@media (max-width:600px){
+  body{font-size:18px}
+  .haut{flex-wrap:wrap;padding:.4rem .7rem}
+  .haut .titres{flex-basis:100%;order:3}
+  .temps{grid-template-columns:repeat(3,minmax(0,1fr));padding:.4rem .7rem}
+  main{padding:.7rem}
+  .bas{grid-template-columns:auto minmax(0,1fr);padding:.5rem .7rem}
+  .bas .voix{grid-column:1/-1;justify-content:space-between;order:3;flex-wrap:wrap;gap:.4rem;white-space:normal}
+  .voix input[type=range]{width:84px}
+  .voix .auto{white-space:normal;max-width:9.5em;line-height:1.1}
+  .bas{gap:.4rem}
+  .bas button{min-height:58px}
+  .bas .voix button{min-height:46px;padding:.1rem .6rem}
+  .echelle{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .echelle button{font-size:.6em}
+}

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="t d">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>Pièce 3 - marche à trois coudes à 90 degrés en tube cuivre 1/4 pouce</dc:title>
+      <dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator>
+      <dc:rights><cc:Agent><dc:title>© 2026 inerWeb — F. Henninot — tous droits réservés sur l’illustration</dc:title></cc:Agent></dc:rights>
+      <dc:publisher><cc:Agent><dc:title>inerWeb</dc:title></cc:Agent></dc:publisher>
+      <dc:date>2026</dc:date>
+      <dc:identifier>inerweb.fh@gmail.com</dc:identifier>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
+    </cc:Work>
+    <cc:License rdf:about="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    </cc:License>
+  </rdf:RDF>
+</metadata>
+  <title id="t">Pièce 3 - marche à trois coudes à 90 degrés en tube cuivre 1/4 pouce</title>
+  <desc id="d">Plan coté d'une marche rectangulaire avec trois coudes à 90 degrés, segments de 70, 55, 70 et 55 millimètres, rayon à l'axe 14,3 millimètres et longueur de coupe 232 millimètres.</desc>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#1B3A63"/></marker></defs>
+  <rect x="8" y="8" width="984" height="584" fill="#fff" stroke="#1B3A63" stroke-width="3"/>
+  <text x="40" y="55" font-family="Trebuchet MS" font-size="28" font-weight="700" fill="#1B3A63">PIÈCE 3 - MARCHE RECTANGULAIRE</text>
+  <text x="740" y="55" font-family="Calibri" font-size="22" font-weight="700">Cuivre 1/4″</text>
+  <rect x="40" y="80" width="920" height="92" rx="12" fill="#F7F1E7" stroke="#1B3A63" stroke-width="2"/>
+  <text x="65" y="117" font-family="Calibri" font-size="22"><tspan font-weight="700">Sens :</tspan> lire et tracer de gauche vers la droite, comme lorsque l'on écrit.</text>
+  <text x="65" y="150" font-family="Calibri" font-size="22"><tspan font-weight="700">Coupe :</tspan> 232 mm - 3 cintrages à 90° - chaque trace sur L.</text>
+  <path d="M145 280H500A60 60 0 0 1 560 340V390A60 60 0 0 1 500 450H300A60 60 0 0 0 240 510V555" fill="none" stroke="#B66A37" stroke-width="22" stroke-linecap="round"/>
+  <path d="M145 280H500A60 60 0 0 1 560 340V390A60 60 0 0 1 500 450H300A60 60 0 0 0 240 510V555" fill="none" stroke="#5C341C" stroke-width="2" stroke-dasharray="9 7"/>
+  <line x1="145" y1="225" x2="560" y2="225" stroke="#1B3A63" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/><line x1="145" y1="240" x2="145" y2="295" stroke="#1B3A63"/><line x1="560" y1="225" x2="560" y2="340" stroke="#1B3A63"/>
+  <text x="330" y="214" font-family="Calibri" font-size="24" font-weight="700" fill="#1B3A63">70 mm</text>
+  <line x1="620" y1="280" x2="620" y2="450" stroke="#1B3A63" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/><text x="638" y="375" font-family="Calibri" font-size="24" font-weight="700" fill="#1B3A63">55 mm</text>
+  <line x1="240" y1="490" x2="560" y2="490" stroke="#1B3A63" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/><text x="370" y="482" font-family="Calibri" font-size="24" font-weight="700" fill="#1B3A63">70 mm</text>
+  <line x1="180" y1="450" x2="180" y2="555" stroke="#1B3A63" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/><text x="85" y="515" font-family="Calibri" font-size="24" font-weight="700" fill="#1B3A63">55 mm</text>
+  <text x="730" y="235" font-family="Calibri" font-size="20" font-weight="700" fill="#C9451A">R = 14,3 mm</text>
+  <text x="40" y="585" font-family="Calibri" font-size="17" fill="#1B3A63">Les cotes intermédiaires sont relevées depuis l'axe de la branche précédente.</text>
+</svg>

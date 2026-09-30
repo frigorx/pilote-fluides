@@ -1,0 +1,31 @@
+/* CuivRézo — l'accueil : la carte de la ligne. Charte inerWeb, fond crème. */
+:root{--navy:#1b3a63;--ink:#10233c;--muted:#56657a;--cream:#f7f1e7;--paper:#fffdf8;--copper:#b8692e;--copper-soft:#f3dcc6;--ok:#1e7e54;--line:rgba(27,58,99,.18);
+  font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:var(--cream)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);font-size:clamp(18px,1.6vw,21px);line-height:1.45}
+.entete{padding:1.4rem 1rem 1rem;max-width:1000px;margin:0 auto}
+.entete h1{margin:0;font:800 2.2em "Trebuchet MS",Calibri,sans-serif;color:var(--navy)}
+.entete h1 b{color:var(--copper)}
+.entete .accroche{font-size:1.2em;font-weight:700;color:var(--copper);margin:.2rem 0 .6rem}
+.entete p{margin:.3rem 0;max-width:70ch}
+main{max-width:1000px;margin:0 auto;padding:0 1rem 2rem}
+.ligne h2,.avenir h2{font:800 1.3em "Trebuchet MS",Calibri,sans-serif;color:var(--navy);display:flex;align-items:center;gap:.5rem}
+.pastille{display:inline-grid;place-items:center;width:2em;height:2em;border-radius:50%;background:var(--copper);color:#fff;font-weight:800}
+.pastille.grise{background:#b9c2cc}
+.arrets{list-style:none;margin:0;padding:0 0 0 1.2rem;border-left:8px solid var(--copper);display:flex;flex-direction:column;gap:.6rem}
+.arrets li{position:relative}
+.arrets li::before{content:"";position:absolute;left:-1.95rem;top:50%;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--paper);border:5px solid var(--copper);transform:translateY(-50%)}
+.arrets a{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;gap:.8rem;align-items:center;min-height:72px;padding:.5rem .9rem;
+  background:var(--paper);border:2px solid var(--line);border-radius:14px;color:var(--ink);text-decoration:none}
+.arrets a:hover,.arrets a:focus-visible{border-color:var(--copper)}
+.arrets .num{font-weight:800;color:var(--copper);font-size:1.2em;min-width:2.2em}
+.arrets .t strong{display:block;color:var(--navy)}
+.arrets .p{display:block;font-size:.85em;color:var(--muted)}
+.arrets .etat{font-size:.8em;font-weight:800;color:var(--muted);white-space:nowrap}
+.arrets a.confirme{border-color:var(--ok)}.arrets a.confirme .etat{color:var(--ok)}
+.avenir ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.4rem;color:var(--muted)}
+.avenir li{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.avenir li .p{font-size:.85em}
+.prof a{display:inline-block;margin-top:1rem;padding:.6rem 1rem;border:2px solid var(--navy);border-radius:12px;color:var(--navy);font-weight:700;text-decoration:none}
+.arrets .vignette{width:96px;height:64px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--cream)}
+@media (max-width:600px){.arrets .vignette{width:64px;height:44px}.arrets a{gap:.5rem;padding:.4rem .6rem}}

@@ -260,7 +260,7 @@
   /* le texte de la voix, affiché dans une bulle discrète (sous-titres.js) */
   if (scriptUrl && document.head) {
     var sousTitres = document.createElement("script");
-    sousTitres.src = new URL("sous-titres.js?v=20260930-1", scriptUrl).href;
+    sousTitres.src = new URL("sous-titres.js?v=20260930-2", scriptUrl).href;
     document.head.appendChild(sousTitres);
   }
 

@@ -1,0 +1,30 @@
+/* CuivRézo — l'espace professeur. Lecture à l'écran et à l'impression (corps ≥ 14 pt au papier). */
+:root{--navy:#1b3a63;--ink:#10233c;--muted:#56657a;--cream:#f7f1e7;--paper:#fffdf8;--copper:#b8692e;--copper-soft:#f3dcc6;--ok:#1e7e54;--line:rgba(27,58,99,.2);
+  font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:var(--cream)}
+body{margin:0;background:var(--cream);font-size:18px;line-height:1.45}
+header,main{max-width:1100px;margin:0 auto;padding:0 1rem}
+header{padding-top:1rem}
+h1{font:800 1.8em "Trebuchet MS",Calibri,sans-serif;color:var(--navy);margin:.2rem 0}
+h2{font:800 1.4em "Trebuchet MS",Calibri,sans-serif;color:var(--navy);border-bottom:3px solid var(--copper);padding-bottom:.2rem;margin-top:2rem}
+h3{color:var(--navy);margin:1.4rem 0 .4rem}
+h4{color:var(--copper);margin:.9rem 0 .3rem}
+.chapo{font-size:1.05em;max-width:75ch}
+.retour a,a{color:var(--navy)}
+table{width:100%;border-collapse:collapse;background:var(--paper);margin:.4rem 0}
+th,td{border:1px solid var(--line);padding:.35rem .5rem;vertical-align:top;text-align:left}
+th{background:#e8edf3;color:var(--navy)}
+tr.fait td{background:#e3f5ec}
+code{font-family:Consolas,monospace;font-size:.9em;background:#eef1f4;padding:0 .25em;border-radius:4px}
+.fiche{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:.4rem 1rem 1rem;margin:1rem 0}
+.duree{font-weight:400;color:var(--muted);font-size:.8em}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:760px){.deux{grid-template-columns:1fr}}
+.grille th{font-size:.8em;text-align:center}
+.grille td.case{width:11%;height:2.2em}
+.codes{font-size:.95em}
+.valider li{margin:.2rem 0}
+@media print{body{background:#fff;font-size:14pt}.fiche{break-inside:avoid;border:none}a{text-decoration:none;color:inherit}.retour{display:none}}
+.suite{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+.suite figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.4rem}
+.suite img{width:100%;height:auto}
+.suite figcaption{font-size:.9em;color:var(--muted)}
