@@ -20,17 +20,18 @@ function scene(id, titre, alt, corps) {
 
 /* fragments réutilisés : silhouettes et objets récurrents */
 const T = {
-  /* personne debout, x = axe du corps, y = haut de la tête */
-  pers: (x, y, s) => {
-    s = s || 1;
-    const h = (v) => y + v * s, l = (v) => x + v * s;
-    return (
-      '<circle cx="' + x + '" cy="' + h(10) + '" r="' + 9 * s + '" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
-      '<path d="M' + x + ' ' + h(19) + ' V' + h(48) + '" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
-      '<path d="M' + x + ' ' + h(48) + ' L' + l(-9) + ' ' + h(72) + ' M' + x + ' ' + h(48) + ' L' + l(9) + ' ' + h(72) +
-      '" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>'
-    );
-  },
+  /* personne debout, x = axe du corps, y = haut de la tête ; bonhomme « plein » (décision du 30/09/2026) ;
+     bras gauche pendant ; libre = le bras droit pend aussi (sinon la scène le dessine) */
+  pers: (x, y, s, libre) =>
+    '<g transform="translate(' + x + ' ' + y + ') scale(' + (s || 1) + ')">' +
+    '<path d="M0 48 L-9 72 M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>' +
+    '<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/>' +
+    '<path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>' +
+    '<path d="M-2 25 L-10 46" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="-10" cy="47" r="3.6" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/>' + (libre ? '<path d="M2 25 L10 46" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="10" cy="47" r="3.6" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/>' : '') +
+    '<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/>' +
+    '<path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/>' +
+    '<circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/>' +
+    '<path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/></g>',
   /* coffret / armoire électrique ; ouvert = porte battante */
   coffret: (x, y, w, h, ouvert) =>
     '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
@@ -52,8 +53,8 @@ scene("contact-direct", "Contact direct",
   T.sol(160) + T.coffret(180, 40, 100, 80, true) +
   '<path d="M196 74 h70" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>' +
   T.pers(90, 40) +
-  '<path d="M90 66 L170 76" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
-  '<circle cx="176" cy="75" r="5" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
+  '<path d="M90 66 L170 76" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
+  '<circle cx="176" cy="75" r="4.5" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/>' +
   '<g class="mobile">' + T.eclair(186, 58, 1) +
   '<animate attributeName="opacity" values="1;.25;1" dur="1.4s" repeatCount="indefinite"/></g>');
 
@@ -64,8 +65,8 @@ scene("contact-indirect", "Contact indirect",
   '<circle cx="228" cy="95" r="16" fill="none" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<path d="M228 79 v-19" stroke="#1b3a63" stroke-width="2.5"/>' +
   T.pers(96, 46) +
-  '<path d="M96 72 L172 92" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
-  '<circle cx="177" cy="92" r="5" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
+  '<path d="M96 72 L172 92" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
+  '<circle cx="177" cy="92" r="4.5" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/>' +
   '<g class="mobile">' + T.eclair(246, 66, .8) +
   '<animate attributeName="opacity" values=".3;1;.3" dur="1.6s" repeatCount="indefinite"/></g>' +
   '<path d="M96 118 v24" stroke="#84b7ec" stroke-width="3" stroke-dasharray="5 4"/>');
@@ -77,7 +78,7 @@ scene("arc", "Arc électrique",
   '<animate attributeName="opacity" values="1;.35;1" dur=".7s" repeatCount="indefinite"/></g>' +
   '<path d="M188 84 l-22 -10 M188 92 l-26 2 M188 100 l-22 12" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/>' +
   T.pers(96, 44) +
-  '<path d="M96 70 L70 74 M96 70 L120 70" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>');
+  '<path d="M96 70 L70 74 M96 70 L120 70" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>');
 
 scene("cable-abime", "Câble endommagé au sol",
   "Un câble à l'isolant arraché traverse un passage ; une personne s'arrête devant.",
@@ -86,7 +87,7 @@ scene("cable-abime", "Câble endommagé au sol",
   '<path d="M196 150 l10 -6 m-10 6 l10 7" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>' +
   '<circle cx="202" cy="151" r="9" fill="none" stroke="#ff6b35" stroke-width="2.5" stroke-dasharray="4 3"/>' +
   T.pers(80, 52) +
-  '<path d="M80 78 L58 78" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M80 78 L58 78" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>' +
   '<path d="M54 74 v-12" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>');
 
 /* ---------- M2 · analyser ---------- */
@@ -94,7 +95,7 @@ scene("analyser", "S'arrêter et analyser",
   "Devant un coffret ouvert, une personne lève la main pour marquer l'arrêt avant d'agir.",
   T.sol(160) + T.coffret(196, 46, 92, 78, true) +
   T.pers(92, 46) +
-  '<path d="M92 72 L66 66" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M92 72 L66 66" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>' +
   '<path d="M62 62 m-8 0 a8 9 0 1 1 16 0 z" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<circle cx="150" cy="70" r="15" fill="none" stroke="#ff6b35" stroke-width="3"/>' +
   '<path d="M150 62 v10 M150 78 v3" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>');
@@ -104,8 +105,8 @@ scene("coactivite", "Une autre activité entre dans la zone",
   T.sol(160) +
   '<path d="M120 160 v-46 M262 160 v-46" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<path d="M114 116 h154" stroke="#ff6b35" stroke-width="4" stroke-dasharray="12 7"/>' +
-  T.pers(180, 52) + T.pers(62, 58) +
-  '<path d="M62 84 L86 116" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  T.pers(180, 52, 1, true) + T.pers(62, 58) +
+  '<path d="M62 84 L86 116" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>' +
   '<path d="M84 118 h22 l-4 20 h-14 z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/>');
 
 /* ---------- M3 · prévention ---------- */
@@ -123,7 +124,7 @@ scene("protection-collective", "La protection collective d'abord",
   '<rect x="150" y="52" width="16" height="86" rx="4" fill="#84b7ec" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<path d="M92 138 h74" stroke="#ff6b35" stroke-width="4" stroke-dasharray="12 7"/>' +
   '<path d="M92 138 v-26" stroke="#1b3a63" stroke-width="2.5"/>' +
-  T.pers(60, 60));
+  T.pers(60, 60, 1, true));
 
 scene("vat", "La vérification d'absence de tension",
   "Un appareil de VAT bipolaire est appliqué sur deux conducteurs, avec des gants.",
@@ -174,7 +175,7 @@ scene("differentiel", "Le disjoncteur différentiel",
 scene("titre", "Le titre d'habilitation",
   "Un employeur remet à une personne un titre d'habilitation signé, sous forme de carte.",
   T.pers(64, 40) + T.pers(256, 40) +
-  '<path d="M64 66 L120 100 M256 66 L200 100" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M64 66 L120 100 M256 66 L200 100" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
   '<rect x="120" y="86" width="80" height="50" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<path d="M132 102 h34 M132 114 h52 M132 124 h40" stroke="#84b7ec" stroke-width="4" stroke-linecap="round"/>' +
   '<path d="M176 96 l8 8 l14 -16" stroke="#ff6b35" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>');
@@ -198,13 +199,13 @@ scene("objet-long", "L'objet dépasse la limite",
   '<rect x="248" y="54" width="54" height="74" rx="5" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<path d="M260 78 h30" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>' +
   T.pers(84, 50) +
-  '<path d="M84 76 L124 88" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
-  '<path d="M124 88 L262 66" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>');
+  '<path d="M84 76 L124 88" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>' +
+  '<path d="M124 88 L262 66" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>');
 
 scene("acteurs", "Recevoir une instruction",
   "Un responsable transmet une instruction de travail à un exécutant, documents en main.",
   T.sol(160) + T.pers(80, 46) + T.pers(232, 46) +
-  '<path d="M80 72 L134 106 M232 72 L182 106" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M80 72 L134 106 M232 72 L182 106" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
   '<rect x="134" y="88" width="48" height="40" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<path d="M144 100 h28 M144 110 h20" stroke="#84b7ec" stroke-width="3.5" stroke-linecap="round"/>' +
   '<path d="M156 62 a12 12 0 1 1 12 12 v6" stroke="#ff6b35" stroke-width="3" fill="none" stroke-linecap="round"/>');
@@ -217,7 +218,7 @@ scene("b0-zone-preparee", "Travailler sans toucher à l'électricité",
   '<circle cx="286" cy="84" r="3" fill="#1b3a63"/>' +
   '<path d="M204 160 V52" stroke="#ff6b35" stroke-width="4" stroke-dasharray="11 7"/>' +
   T.pers(96, 46) +
-  '<path d="M96 72 L74 60" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M96 72 L74 60" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>' +
   '<rect x="62" y="42" width="24" height="14" rx="3" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/>' +
   '<path d="M40 30 v112" stroke="#1b3a63" stroke-width="2.5" opacity=".45"/>');
 
@@ -225,7 +226,7 @@ scene("coffret-interdit", "Ce coffret n'est pas pour tout le monde",
   "Une main s'avance vers un coffret fermé ; l'accès est refusé.",
   T.sol(160) + T.coffret(196, 46, 92, 80, false) +
   T.pers(88, 50) +
-  '<path d="M88 76 L150 92" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M88 76 L150 92" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
   '<circle cx="172" cy="88" r="21" fill="none" stroke="#ff6b35" stroke-width="4"/>' +
   '<path d="M158 74 L186 102" stroke="#ff6b35" stroke-width="4" stroke-linecap="round"/>');
 
@@ -263,7 +264,7 @@ scene("bs-remplacement", "Un remplacement à l'identique",
   '<path d="M152 96 l8 -12 l8 12" stroke="#ff6b35" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>' +
   '<path d="M232 84 l30 -12 v34z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round"/>' +
   '<path d="M204 90 h28" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
-  T.pers(70, 56));
+  T.pers(70, 56, 1, true));
 
 scene("manoeuvre", "Une manœuvre, pas un dépannage",
   "Une main actionne le bouton de commande prévu ; le capot reste fermé.",
@@ -271,16 +272,16 @@ scene("manoeuvre", "Une manœuvre, pas un dépannage",
   '<circle cx="232" cy="84" r="18" fill="#e8f1fb" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<circle cx="232" cy="84" r="8" fill="#ff6b35" stroke="#1b3a63" stroke-width="2"/>' +
   T.pers(84, 48) +
-  '<path d="M84 74 L200 88" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
-  '<circle cx="206" cy="87" r="5" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>');
+  '<path d="M84 74 L200 88" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
+  '<circle cx="206" cy="87" r="4.5" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/>');
 
 /* ---------- M11 · B1V ---------- */
 scene("b1v-equipe", "Exécuter sous direction",
   "Un chargé de travaux dirige ; l'exécutant intervient dans la zone préparée, équipé.",
   T.sol(160) + T.coffret(226, 44, 66, 84, true) +
   T.pers(62, 44) + T.pers(160, 48) +
-  '<path d="M62 70 L104 84" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
-  '<path d="M160 74 L212 88" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M62 70 L104 84" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>' +
+  '<path d="M160 74 L212 88" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
   '<rect x="150" y="52" width="20" height="7" rx="3" fill="#ff6b35" stroke="#1b3a63" stroke-width="1.5"/>' +
   '<path d="M118 132 h84" stroke="#84b7ec" stroke-width="4" stroke-dasharray="10 6"/>');
 
@@ -288,11 +289,9 @@ scene("b1v-equipe", "Exécuter sous direction",
 scene("secours", "Protéger avant de secourir",
   "Une victime est au sol ; le sauveteur ne la touche pas et fait couper l'alimentation.",
   T.sol(160) +
-  '<circle cx="118" cy="146" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
-  '<path d="M130 150 H196" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
-  '<path d="M196 150 l18 -12 M196 150 l18 12" stroke="#1b3a63" stroke-width="3.5" stroke-linecap="round"/>' +
+  '<g transform="translate(106 147) rotate(-90)">' + T.pers(0, 0, 1.22, true) + '</g>' +
   T.pers(74, 42) +
-  '<path d="M74 68 L44 66" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M74 68 L44 66" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>' +
   '<rect x="234" y="36" width="58" height="80" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<rect x="252" y="52" width="22" height="30" rx="4" fill="#ff6b35" stroke="#1b3a63" stroke-width="2"/>' +
   '<path d="M100 106 C150 92, 200 84, 232 78" stroke="#84b7ec" stroke-width="3" fill="none" stroke-dasharray="6 5"/>');
@@ -314,7 +313,7 @@ scene("br-depannage", "L'intervention de dépannage",
   '<path d="M214 60 h64 M214 88 h64" stroke="#84b7ec" stroke-width="4" stroke-linecap="round"/>' +
   T.pers(78, 40) +
   '<rect x="68" y="44" width="20" height="7" rx="3" fill="#ff6b35" stroke="#1b3a63" stroke-width="1.5"/>' +
-  '<path d="M78 66 L120 96" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>' +
+  '<path d="M78 66 L120 96" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
   '<rect x="120" y="82" width="42" height="52" rx="5" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<rect x="128" y="92" width="26" height="16" rx="2" fill="#e8f1fb" stroke="#1b3a63" stroke-width="1.5"/>' +
   '<path d="M162 96 C182 88, 190 74, 206 62" stroke="#1b3a63" stroke-width="2.5" fill="none"/>' +
@@ -326,7 +325,7 @@ scene("hors-perimetre", "Au-delà de son périmètre",
   '<rect x="96" y="20" width="128" height="132" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
   '<path d="M110 44 h100 M110 68 h100 M110 92 h100 M110 116 h100" stroke="#84b7ec" stroke-width="5" stroke-linecap="round"/>' +
   '<path d="M240 44 v96" stroke="#ff6b35" stroke-width="4" stroke-dasharray="10 6"/>' +
-  T.pers(268, 60));
+  T.pers(268, 60, 1, true));
 
 /* ---------- affectation ---------- */
 /* Chaque module a sa scène par défaut : aucune question ne reste sans

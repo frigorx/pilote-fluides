@@ -5,7 +5,7 @@
    disjoncteur, elle retombe ; deux fois, trois fois ; à la troisième,
    éclair orange, cheveux dressés, secousse, projeté en arrière, assis
    par terre, étoiles autour de la tête.
-   Acte 2 · la leçon : même tableau ; deux essais, la manette retombe ;
+   Acte 2 · la leçon : même tableau ; un seul réarmement, la manette retombe ;
    il recule, lève la main et ne touche plus rien ; téléphone à l'oreille,
    une bulle orange avec un point d'exclamation au-dessus du tableau :
    le compte rendu.
@@ -31,12 +31,12 @@ FILMS.M10 = {
 <g transform="translate(28 88)"><g class="f-bon">
 <g class="f-etoiles"><g class="f-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/><g class="f-tel"><g transform="rotate(-26 12 49)"><rect x="7.5" y="39" width="9" height="20" rx="2" fill="#1b3a63"/><rect x="9.5" y="42" width="5" height="12" rx="1" fill="#e8f1fb"/></g></g></g>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/><g class="f-tel"><g transform="rotate(-26 12 49)"><rect x="7.5" y="39" width="9" height="20" rx="2" fill="#1b3a63"/><rect x="9.5" y="42" width="5" height="12" rx="1" fill="#e8f1fb"/></g></g></g>
 </g></g>`,
   css: `.film-M10 .f-bon,.film-M10 .f-jg,.film-M10 .f-jd,.film-M10 .f-bras,.film-M10 .f-etoiles-r,.film-M10 .f-manette{transform-box:fill-box}
 .film-M10 .f-jg{transform-origin:100% 0}.film-M10 .f-jd{transform-origin:0 0}.film-M10 .f-bras{transform-origin:0 0}.film-M10 .f-manette{transform-origin:50% 0}
@@ -68,9 +68,9 @@ FILMS.M10 = {
 .film-M10.acte-2 .f-jg{animation:M10-pas-g .44s ease-in-out 5 alternate,M10-pas-g .5s ease-in-out 1 alternate 4.5s}
 .film-M10.acte-2 .f-jd{animation:M10-pas-d .44s ease-in-out 5 alternate,M10-pas-d .5s ease-in-out 1 alternate 4.5s}
 .film-M10.acte-2 .f-bras{animation:M10-a2-bras 10s linear forwards}
-@keyframes M10-a2-bras{0%,22%{transform:rotate(0)}25%,27%{transform:rotate(-60deg)}29%,31%{transform:rotate(-105deg)}33%,36%{transform:rotate(-60deg)}40%,42%{transform:rotate(-105deg)}44%,46%{transform:rotate(-60deg)}50%,64%{transform:rotate(-95deg)}68%,100%{transform:rotate(-128deg)}}
+@keyframes M10-a2-bras{0%,22%{transform:rotate(0)}25%,27%{transform:rotate(-60deg)}29%,31%{transform:rotate(-105deg)}33%,46%{transform:rotate(-60deg)}50%,64%{transform:rotate(-95deg)}68%,100%{transform:rotate(-128deg)}}
 .film-M10.acte-2 .f-manette{animation:M10-a2-manette 10s linear forwards}
-@keyframes M10-a2-manette{0%,25%{transform:rotate(0)}29%,31%{transform:rotate(160deg)}33%,36%{transform:rotate(0)}40%,42%{transform:rotate(160deg)}44%,100%{transform:rotate(0)}}
+@keyframes M10-a2-manette{0%,25%{transform:rotate(0)}29%,31%{transform:rotate(160deg)}33%,100%{transform:rotate(0)}}
 .film-M10.acte-2 .f-tel{animation:M10-a2-tel 10s linear forwards}
 @keyframes M10-a2-tel{0%,66%{opacity:0}70%,100%{opacity:1}}
 .film-M10.acte-2 .f-bulle{animation:M10-a2-bulle 10s linear forwards}

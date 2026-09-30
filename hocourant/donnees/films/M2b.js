@@ -34,11 +34,11 @@ FILMS.M2b = {
 <g class="f-q5"><circle cx="24" cy="-15" r="4" fill="#1e7e54"/></g>
 <g class="f-etoiles"><g class="f-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-tete"><g class="f-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/></g>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<g class="f-bras"><path d="M0 24 L14 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="14" cy="47" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/><rect class="f-tel" x="10" y="41" width="8" height="13" rx="2" fill="#1b3a63"/></g>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/></g>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<g class="f-bras"><path d="M0 24 L14 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="14" cy="47" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/><rect class="f-tel" x="10" y="41" width="8" height="13" rx="2" fill="#1b3a63"/></g>
 </g></g>`,
   css: `.film-M2b .f-bon,.film-M2b .f-jg,.film-M2b .f-jd,.film-M2b .f-bras,.film-M2b .f-tete,.film-M2b .f-porte,.film-M2b .f-etoiles-r{transform-box:fill-box}
 .film-M2b .f-jg{transform-origin:100% 0}.film-M2b .f-jd{transform-origin:0 0}.film-M2b .f-bras{transform-origin:0 0}

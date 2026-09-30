@@ -10,8 +10,10 @@
    se retrouve assis par terre, des étoiles tournant autour de sa tête.
    Acte 2 · la leçon : même armoire. Il met l'écran facial et des
    gants isolants, pose une nappe isolante sur la borne voisine, mesure
-   sans risque ; puis, avant de remplacer la pièce, il abaisse le
-   levier de son propre départ et pose son cadenas.
+   en sécurité ; puis, avant de remplacer la pièce, il abaisse le
+   levier de son propre départ, pose son cadenas et vérifie l'absence
+   de tension (vérificateur distinct de l'appareil de mesure, coche
+   verte ; le fil ne grise qu'après la vérification — 30/09/2026).
    Règles : aucun texte dans le dessin ; classes préfixées « f- » ;
    sélecteurs sous .film-M13b ; l'acte se joue en posant la classe
    acte-1 ou acte-2 sur la <figure class="scene film film-M13b"> ;
@@ -47,17 +49,18 @@ FILMS.M13b = {
 <g class="f-halo"><circle cx="201" cy="132" r="10" fill="none" stroke="#ff6b35" stroke-width="2.5"/></g>
 <rect class="f-nappe" x="205" y="121" width="21" height="19" rx="2" fill="#e8f1fb" stroke="#1b3a63" stroke-width="2"/>
 <g class="f-eclair"><path d="M217 118 l-6 13.2 h6 l-3.6 12 l13.2 -16.8 h-7.2 l4.8 -8.4z" fill="#ff6b35"/></g>
+<g class="f-coche"><path d="M220 106 l4 4 l8 -9" stroke="#1e7e54" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g transform="translate(30 88)"><g class="f-bon">
 <g class="f-etoiles"><g class="f-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 <path class="f-visiere" d="M-8 4 h16 v7 a8 8 0 0 1 -16 0 z" fill="#84b7ec" fill-opacity=".55" stroke="#1b3a63" stroke-width="2"/>
 <g class="f-suie"><path d="M-5 8 l2.4 2.6 M-3.4 12 l2 2.2 M2 9 l2.4 2.4 M0.5 13 l2 2" stroke="#1b3a63" stroke-width="1.6" stroke-linecap="round"/></g>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/><circle class="f-gant" cx="12" cy="49" r="5" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><g class="f-app"><rect x="9" y="45" width="13" height="9" rx="2" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/></g></g>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/><circle class="f-gant" cx="12" cy="49" r="5" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><g class="f-app"><rect x="9" y="45" width="13" height="9" rx="2" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/></g><g class="f-vat"><rect x="9" y="42" width="10" height="15" rx="3" fill="#e8f1fb" stroke="#1b3a63" stroke-width="2"/><circle cx="14" cy="47.5" r="2" fill="#9aa9b8"/></g></g>
 </g></g>`,
   css: `.film-M13b .f-bon,.film-M13b .f-jg,.film-M13b .f-jd,.film-M13b .f-bras,.film-M13b .f-etoiles-r,.film-M13b .f-lev1{transform-box:fill-box}
 .film-M13b .f-jg{transform-origin:100% 0}.film-M13b .f-jd{transform-origin:0 0}.film-M13b .f-bras{transform-origin:0 0}.film-M13b .f-lev1{transform-origin:50% 100%}
@@ -95,7 +98,7 @@ FILMS.M13b = {
 .film-M13b.acte-2 .f-gant{animation:M13b-a2-gant 10s linear forwards}
 @keyframes M13b-a2-gant{0%,8%{opacity:0}12%,100%{opacity:1}}
 .film-M13b.acte-2 .f-bras{animation:M13b-a2-bras 10s linear forwards}
-@keyframes M13b-a2-bras{0%,20%{transform:rotate(0)}26%,50%{transform:rotate(-20deg)}54%,100%{transform:rotate(0)}}
+@keyframes M13b-a2-bras{0%,20%{transform:rotate(0)}26%,50%{transform:rotate(-20deg)}54%,72%{transform:rotate(0)}76%,86%{transform:rotate(-20deg)}90%,100%{transform:rotate(0)}}
 .film-M13b.acte-2 .f-nappe{animation:M13b-a2-nappe 10s linear forwards}
 @keyframes M13b-a2-nappe{0%,24%{opacity:0}28%,100%{opacity:1}}
 .film-M13b.acte-2 .f-app{animation:M13b-a2-app 10s linear forwards}
@@ -107,9 +110,14 @@ FILMS.M13b = {
 .film-M13b.acte-2 .f-voy1{animation:M13b-a2-voy1 10s linear forwards}
 @keyframes M13b-a2-voy1{0%,58%{fill:#ff6b35}64%,100%{fill:#fff}}
 .film-M13b.acte-2 .f-fil1{animation:M13b-a2-fil1 10s linear forwards}
-@keyframes M13b-a2-fil1{0%,58%{stroke:#c0392b}64%,100%{stroke:#9aa7b5}}
+@keyframes M13b-a2-fil1{0%,80%{stroke:#c0392b}84%,100%{stroke:#9aa7b5}}
 .film-M13b.acte-2 .f-cadenas{animation:M13b-a2-cadenas 10s linear forwards}
-@keyframes M13b-a2-cadenas{0%,66%{opacity:0}70%,100%{opacity:1}}`
+.film-M13b .f-vat,.film-M13b .f-coche{opacity:0}
+.film-M13b.acte-2 .f-vat{animation:M13b-a2-vat 10s linear forwards}
+.film-M13b.acte-2 .f-coche{animation:M13b-a2-coche 10s linear forwards}
+@keyframes M13b-a2-cadenas{0%,66%{opacity:0}70%,100%{opacity:1}}
+@keyframes M13b-a2-vat{0%,73%{opacity:0}76%,86%{opacity:1}89%,100%{opacity:0}}
+@keyframes M13b-a2-coche{0%,80%{opacity:0}83%,100%{opacity:1}}`
 };
 
 window.INTERACTIONS = window.INTERACTIONS || {};

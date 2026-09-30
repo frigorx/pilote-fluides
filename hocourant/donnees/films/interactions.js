@@ -110,13 +110,13 @@ INTERACTIONS.M9 = {
 
 INTERACTIONS.M10 = {
   arret: 5.9,
-  question: "Qu'est-ce qui a manqué après ce disjoncteur retombé deux fois ?",
+  question: "Qu'est-ce qui aurait dû suivre dès que le disjoncteur est retombé ?",
   choix: [
     { t: "S'arrêter net et appeler son responsable", ok: true },
     { t: "Réessayer une troisième fois, plus fort", remed: "Le disjoncteur retombe parce qu'un défaut reste présent derrière lui, pas par caprice." },
     { t: "Ouvrir le tableau pour chercher la panne", remed: "Chercher la panne derrière le capot dépasse la manœuvre : ce n'est plus le même rôle." }
   ],
-  bravo: "Deux essais, puis on s'arrête et on rend compte : la règle tient en une phrase."
+  bravo: "Un seul réarmement, prévu par l'instruction ; s'il retombe, on s'arrête et on rend compte."
 };
 
 INTERACTIONS.M11 = {

@@ -54,7 +54,10 @@ const PALIERS = [
 ];
 
 /* Les trois filières. Une même banque, un bornage différent.
-   Les codes sont ceux des référentiels officiels — libellés exacts. */
+   Les codes sont ceux des référentiels officiels — libellés exacts.
+   EN RÉSERVE depuis le 30/09/2026 : l'application est universelle (niveaux d'habilitation
+   seulement, décision de Franck) ; rien ici n'est plus affiché. Gardé pour le futur système
+   multi-diplôme — la place de la formation reste réservée dans le code de restitution. */
 const FILIERES = [
   {
     id: "tne",

@@ -23,7 +23,7 @@ FILMS.M12c = {
   svg: `<path d="M10 160 H310" stroke="#1b3a63" stroke-width="2" opacity=".35"/>
 <rect x="16" y="96" width="30" height="44" rx="3" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
 <rect x="20" y="102" width="22" height="5" fill="#84b7ec"/>
-<g transform="translate(31 128)"><g class="f-levier2"><rect x="-3" y="-16" width="6" height="16" rx="2" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><circle cx="0" cy="-14" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/></g><circle cx="0" cy="0" r="3" fill="#1b3a63"/></g>
+<g transform="translate(31 128)"><g class="f-levier2"><rect x="-3" y="-16" width="6" height="16" rx="2" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><circle cx="0" cy="-14" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/></g><circle cx="0" cy="0" r="3" fill="#1b3a63"/></g>
 <rect x="70" y="64" width="22" height="20" rx="3" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
 <circle cx="81" cy="74" r="5" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/>
 <g class="f-ondes"><path d="M92 68 a10 10 0 0 1 0 12 M97 64 a16 16 0 0 1 0 20" stroke="#1b3a63" stroke-width="2" fill="none" stroke-linecap="round"/></g>
@@ -37,12 +37,12 @@ FILMS.M12c = {
 <g transform="translate(150 88)"><g class="f-bon">
 <g class="f-etoiles"><g class="f-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<g class="f-bras"><path d="M0 24 L12 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="47" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/></g>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+<g class="f-bras"><path d="M0 24 L12 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="12" cy="47" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/></g>
 <g class="f-extincteur">
 <path d="M9 28 a3 3 0 0 1 6 0" stroke="#1b3a63" stroke-width="2" fill="none"/>
 <rect x="7" y="28" width="8" height="18" rx="2" fill="#e8f1fb" stroke="#1b3a63" stroke-width="2"/>

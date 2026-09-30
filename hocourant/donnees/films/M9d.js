@@ -10,8 +10,8 @@
    sursautent, cheveux dressés, étoiles.
    Acte 2 · la leçon : les trois outils sont comptés un par un (coche
    verte), les deux lèvent le bras, l'avis de fin de travail passe de
-   l'un à l'autre ; alors seulement le cadenas est retiré, le levier
-   remonté, l'armoire refermée, et une lampe s'allume.
+   l'un à l'autre ; alors seulement l'armoire est refermée, le cadenas
+   retiré, le levier remonté, et une lampe s'allume (ordre du 30/09/2026).
    Règles : aucun texte, aucun id ; classes « f- » ; sélecteurs sous
    .film-M9d ; images-clés préfixées M9d- ; aucun attribut transform sur
    un élément animé (le placement est porté par le groupe parent).
@@ -44,22 +44,22 @@ FILMS.M9d = {
 <g transform="translate(100 88)"><g class="f-bon">
 <g class="f-etoiles"><g class="f-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/></g>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/></g>
 </g></g>
 <g transform="translate(180 88)"><g class="f-col">
 <g class="f-col-etoiles"><g class="f-col-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-col-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#e8f1fb" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<g class="f-col-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/></g>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+<g class="f-col-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/></g>
 </g></g>`,
   css: `.film-M9d .f-bras,.film-M9d .f-col-bras,.film-M9d .f-etoiles-r,.film-M9d .f-col-etoiles-r,.film-M9d .f-manette,.film-M9d .f-feuille{transform-box:fill-box}
 .film-M9d .f-bras,.film-M9d .f-col-bras{transform-origin:0 0}
@@ -108,11 +108,11 @@ FILMS.M9d = {
 @keyframes M9d-a2-feuille{0%,61%{opacity:0}65%,100%{opacity:1}}
 @keyframes M9d-a2-feuillepos{0%,65%{transform:translateX(0)}73%,100%{transform:translateX(55px)}}
 .film-M9d.acte-2 .f-cadenas{animation:M9d-a2-cadenas 10s linear forwards}
-@keyframes M9d-a2-cadenas{0%,76%{opacity:1}81%,100%{opacity:0}}
+@keyframes M9d-a2-cadenas{0%,77%{opacity:1}81%,100%{opacity:0}}
 .film-M9d.acte-2 .f-etiquette{animation:M9d-a2-etiquette 10s linear forwards}
-@keyframes M9d-a2-etiquette{0%,76%{opacity:1}81%,100%{opacity:0}}
+@keyframes M9d-a2-etiquette{0%,77%{opacity:1}81%,100%{opacity:0}}
 .film-M9d.acte-2 .f-cache{animation:M9d-a2-cache 10s linear forwards}
-@keyframes M9d-a2-cache{0%,86%{opacity:0}90%,100%{opacity:1}}
+@keyframes M9d-a2-cache{0%,72%{opacity:0}76%,100%{opacity:1}}
 .film-M9d.acte-2 .f-lampe{animation:M9d-a2-lampe 10s linear forwards}
 @keyframes M9d-a2-lampe{0%,87%{fill:#fffdf8}91%,100%{fill:#84b7ec}}
 .film-M9d.acte-2 .f-rayons{animation:M9d-a2-rayons 10s linear forwards}

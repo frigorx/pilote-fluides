@@ -184,12 +184,10 @@ button { font: inherit; }
 .verif-valide { color: var(--ok); font-weight: bold; }
 .verif-invalide { color: var(--ko); font-weight: bold; }
 
-/* ---------- bandeau d'état : version non validée ---------- */
-.prototype {
-  border: 2px dashed var(--attente); background: var(--attente-fond); color: var(--ink);
-  border-radius: 14px; padding: 10px 16px; margin: 0 0 14px; font-size: .95rem;
-}
-.prototype .proto-mot { font-weight: bold; color: var(--attente); margin-right: 6px; }
+/* ---------- cadre permanent en tête d'écran (ressource d'entraînement) ---------- */
+.cadre-ressource { margin: 0 0 12px; padding: 8px 14px; font-size: .9rem; line-height: 1.4; }
+.cadre-ressource .enc-mot { display: inline; margin-right: 6px; }
+.cadre-ressource p { display: inline; margin: 0; }
 
 /* ---------- scènes : chaque question porte sa mise en situation ---------- */
 .scene { margin: 0 0 14px; text-align: center; }

@@ -5,9 +5,9 @@
    l'interrupteur mural, démonte l'applique grillée et saisit les fils :
    l'interrupteur ne coupe que la lampe, pas le circuit ; éclair, cheveux
    dressés, étoiles. Acte 2 · la leçon : il coupe le disjoncteur du
-   circuit au petit tableau, y pose une étiquette, vérifie l'absence de
+   circuit au petit tableau, le condamne (cadenas et étiquette), vérifie l'absence de
    tension sur les fils, remplace la lampe à l'identique et remet le
-   disjoncteur : la lampe s'allume.
+   disjoncteur après avoir retiré cadenas et étiquette : la lampe s'allume.
    Règles : aucun texte dans le dessin ; classes préfixées « f- » ;
    sélecteurs sous .film-M10b ; l'acte se joue en posant la classe
    acte-1 ou acte-2 sur la <figure class="scene film film-M10b"> ;
@@ -31,17 +31,17 @@ FILMS.M10b = {
 <rect class="f-disj" x="244" y="80" width="22" height="32" rx="3" fill="#e8f1fb" stroke="#1b3a63" stroke-width="2.5"/>
 <g transform="translate(255 93)"><g class="f-manette"><path d="M0 0 V13" stroke="#1b3a63" stroke-width="3.5" stroke-linecap="round"/><circle cx="0" cy="13" r="3.2" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/></g></g>
 <circle cx="255" cy="93" r="2.2" fill="#1b3a63"/>
-<g class="f-etiquette"><rect x="272" y="78" width="15" height="11" rx="1.5" fill="#ff6b35"/></g>
+<g class="f-etiquette"><rect x="272" y="78" width="15" height="11" rx="1.5" fill="#ff6b35"/><path d="M273 99 v-4 a4 4 0 0 1 8 0 v4" fill="none" stroke="#1b3a63" stroke-width="2"/><rect x="271" y="98" width="12" height="9" rx="1.5" fill="#1b3a63"/></g>
 <g class="f-eclair"><path d="M100 40 l-8 17 h8 l-5 15 l17 -21 h-9 l6 -11z" fill="#ff6b35"/></g>
 <g transform="translate(20 88)"><g class="f-bon">
 <g class="f-etoiles"><g class="f-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/><g class="f-vat"><rect x="8" y="35" width="6" height="14" rx="1.5" fill="#1b3a63"/><circle cx="11" cy="33" r="2.4" fill="#e8f1fb" stroke="#1b3a63" stroke-width="1.5"/></g></g>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/><g class="f-vat"><rect x="8" y="35" width="6" height="14" rx="1.5" fill="#1b3a63"/><circle cx="11" cy="33" r="2.4" fill="#e8f1fb" stroke="#1b3a63" stroke-width="1.5"/></g></g>
 </g></g>`,
   css: `.film-M10b .f-bon,.film-M10b .f-jg,.film-M10b .f-jd,.film-M10b .f-bras,.film-M10b .f-etoiles-r,.film-M10b .f-abat,.film-M10b .f-manette{transform-box:fill-box}
 .film-M10b .f-jg{transform-origin:100% 0}.film-M10b .f-jd{transform-origin:0 0}.film-M10b .f-bras{transform-origin:0 0}
@@ -78,7 +78,7 @@ FILMS.M10b = {
 .film-M10b.acte-2 .f-manette{animation:M10b-a2-manette 10s linear forwards}
 @keyframes M10b-a2-manette{0%,22%{transform:rotate(0)}26%,90%{transform:rotate(150deg)}94%,100%{transform:rotate(0)}}
 .film-M10b.acte-2 .f-etiquette{animation:M10b-a2-etiquette 10s linear forwards}
-@keyframes M10b-a2-etiquette{0%,27%{opacity:0}30%,100%{opacity:1}}
+@keyframes M10b-a2-etiquette{0%,27%{opacity:0}30%,86%{opacity:1}89%,100%{opacity:0}}
 .film-M10b.acte-2 .f-abat{animation:M10b-a2-abat 10s linear forwards}
 @keyframes M10b-a2-abat{0%,53%{transform:rotate(0)}57%,64%{transform:rotate(35deg)}68%,100%{transform:rotate(0)}}
 .film-M10b.acte-2 .f-fils-int{animation:M10b-a2-fils 10s linear forwards}

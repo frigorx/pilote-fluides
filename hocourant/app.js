@@ -3,7 +3,7 @@
    Statique, sans compte, sans réseau : la progression vit dans le
    navigateur de l'élève (localStorage). Aucune donnée personnelle.
 
-   L'identité vient d'un CODE DE MISSION distribué par l'enseignant
+   L'identité vient d'un CODE DE MISSION distribué par le formateur
    (« B0-K7-3M » : cible, élève, échéance). La cible borne l'affichage
    par défaut mais ne plafonne rien : un élève motivé continue jusqu'à
    BR — voir vueParcours(), section « pour aller plus loin ».
@@ -13,7 +13,7 @@
 
   /* ---------- état ---------- */
   const CLE_ETAT = "hocourant-etat-v1";
-  let etat = { filiere: null, mission: null, lus: {}, decouvertes: {}, tests: {} };
+  let etat = { mission: null, lus: {}, decouvertes: {}, tests: {} };
   try {
     const brut = localStorage.getItem(CLE_ETAT);
     if (brut) etat = Object.assign(etat, JSON.parse(brut));
@@ -26,19 +26,16 @@
   const parId = (liste) => Object.fromEntries(liste.map((x) => [x.id, x]));
   const MOD = parId(MODULES);
   const PAL = parId(PALIERS);
-  const FIL = parId(FILIERES);
   const themeDe = (q) => q.th || MOD[q.m].theme;
   const questionsDuModule = (id) => QUESTIONS.filter((q) => q.m === id);
   const modulesDuPalier = (p) => PAL[p].modules.map((id) => MOD[id]);
   const indexPalier = (p) => PALIERS.findIndex((x) => x.id === p);
-  const indexFiliere = (f) => FILIERES.findIndex((x) => x.id === f);
 
   const mission = () => (etat.mission ? RESTITUTION.lireMission(etat.mission) : null);
-  /* la cible vient de la mission ; à défaut, du bornage de la filière */
+  /* la cible vient de la mission ; à défaut, tous les paliers (application universelle, 30/09/2026) */
   function cibleIdx() {
     const m = mission();
-    if (m) return m.cibleIdx;
-    return etat.filiere ? indexPalier(FIL[etat.filiere].palierCible) : PALIERS.length - 1;
+    return m ? m.cibleIdx : PALIERS.length - 1;
   }
   /* le palier le plus haut réellement validé (≥ 70 % à son test) */
   function palierAtteint() {
@@ -63,7 +60,7 @@
   const racine = document.getElementById("vue");
   function rendre(html, titreDoc) {
     stationArreter(); sta = null;          /* changer de vue coupe la voix */
-    racine.innerHTML = bandeauPrototype + html;
+    racine.innerHTML = cadreRessource + html;
     document.title = (titreDoc ? titreDoc + " · " : "") + "inerWeb HoCourant";
     const h1 = racine.querySelector("h1");
     if (h1) { h1.setAttribute("tabindex", "-1"); h1.focus({ preventScroll: true }); }
@@ -80,19 +77,19 @@
       "</header>";
   }
 
-  /* Bandeau d'état, sur chaque écran : cette version n'est pas validée.
-     Trois canaux (charte § 4) : couleur ambre + trait pointillé + le mot. */
-  const bandeauPrototype =
-    '<div class="prototype"><span class="proto-mot">PROTOTYPE</span> Version de démonstration, ' +
-    "en cours de relecture métier. Les contenus, les valeurs chiffrées et les repères ne sont pas " +
-    "encore validés : ne pas s'en servir comme référence pour une opération réelle.</div>";
+  /* Cadre permanent, sur chaque écran (remplace le bandeau PROTOTYPE le 30/09/2026, après la
+     relecture métier complète) : ce que la ressource est, et ce qui prime sur le terrain. */
+  const cadreRessource =
+    '<div class="enc enc-note cadre-ressource"><span class="enc-mot">À savoir</span>' +
+    "<p>Ressource d'entraînement : elle prépare à la formation, sans la remplacer. Sur le terrain, " +
+    "les consignes de l'employeur et les documents de l'installation priment.</p></div>";
 
   const pied =
     '<footer class="pied"><p><strong>Ce que mesure cette application :</strong> une habilitabilité — ' +
     "l'aptitude théorique à être habilité. Elle ne délivre jamais un titre : l'avis appartient au formateur " +
     "après l'évaluation pratique, le titre à l'employeur (Code du travail, art. R4544-10).</p>" +
-    "<p>Repères métier : NF C 18-510 (citée, jamais reproduite) · INRS ED 6127 et ED 6109 · " +
-    "référentiels officiels des diplômes. Les distances et limites applicables sont celles enseignées " +
+    "<p>Repères métier : NF C 18-510 (citée, jamais reproduite) · INRS ED 6127 et ED 6109. " +
+    "Les distances et limites applicables sont celles enseignées " +
     "pour l'installation concernée.</p></footer>";
 
   /* ---------- vue : accueil ---------- */
@@ -101,10 +98,10 @@
     rendre(
       entete(null) +
       "<h1>Préparer son habilitation électrique</h1>" +
-      '<div class="carte accent"><p><strong>Comment ça marche ?</strong> Votre enseignant vous donne un ' +
+      '<div class="carte accent"><p><strong>Comment ça marche ?</strong> Votre formateur vous donne un ' +
       "<strong>code de mission</strong> — par exemple <span class=\"badge badge-code\">B0-K7-3M</span> : " +
       "le niveau à obtenir, votre code personnel, la date limite. Vous le saisissez une fois, et l'application " +
-      "retient où vous en êtes. Aucun compte, aucune donnée personnelle : votre enseignant est le seul à savoir " +
+      "retient où vous en êtes. Aucun compte, aucune donnée personnelle : votre formateur est le seul à savoir " +
       "quel code est le tien.</p></div>" +
       (m
         ? '<div class="carte"><h2>Votre mission en cours</h2><p><span class="badge badge-palier">' + seq(m.cible) +
@@ -117,18 +114,18 @@
       // La couverture du livre se voit AVANT de télécharger (Franck, 27/09 : « trop de texte, pas assez de visuels ») :
       // l'image est la page 1 du PDF (livret/couverture-hocourant.jpg), cliquable comme le bouton.
       '<div class="carte carte-livret">' +
-      '<a class="livret-couv" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-2" download title="Télécharger le livret (PDF)">' +
+      '<a class="livret-couv" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-4" download title="Télécharger le livret (PDF)">' +
       '<img src="livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livret HoCourant" width="672" height="954"></a>' +
       '<div class="livret-texte"><h2>Le livret papier <span class="badge badge-pdf">PDF disponible</span></h2>' +
       "<p>Le support de cours complet : dix chapitres, quatre-vingts questions, les activités " +
       "à faire en atelier et le lexique. Sa page de garde porte votre nom — remplissez-la, un livret " +
       "perdu revient à son propriétaire.</p>" +
-      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-2" download>' +
+      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-4" download>' +
       "Télécharger le livret (PDF, 116 pages, 11,9 Mo)</a></div>" +
       '<div class="enc enc-note"><span class="enc-mot">À imprimer en A5</span>' +
       "<p>En couleur comme en noir et blanc : le livret est fait pour les deux. Le corrigé " +
       "est réservé au formateur et ne se télécharge pas ici.</p></div></div></div>" +
-      '<div class="carte"><h2>Espace enseignant</h2>' +
+      '<div class="carte"><h2>Espace formateur</h2>' +
       "<p>Générer les codes d'un groupe, ou lire le code qu'un élève rapporte.</p>" +
       '<div class="btn-ligne"><button class="btn btn-secondaire" data-aller="lot">Générer des codes</button>' +
       '<button class="btn btn-secondaire" data-aller="verif">Vérifier un code</button></div></div>' +
@@ -142,7 +139,7 @@
     rendre(
       entete("accueil", "Accueil") +
       "<h1>Votre code de mission</h1>" +
-      '<div class="carte"><p>Recopiez le code que votre enseignant vous a donné. Il ressemble à ' +
+      '<div class="carte"><p>Recopiez le code que votre formateur vous a donné. Il ressemble à ' +
       '<span class="badge badge-code">B0-K7-3M</span>.</p>' +
       '<p><input class="champ-code" id="champ-mission" autocomplete="off" spellcheck="false" ' +
       'placeholder="B0-K7-3M" value="' + seq(etat.mission || "") + '"></p>' +
@@ -151,7 +148,7 @@
       '<button class="btn btn-secondaire" data-aller="libre">Continuer sans code</button></div></div>' +
       '<div class="enc enc-note"><span class="enc-mot">Sans code, c\'est possible aussi</span>' +
       "<p>Vous pouvez tout travailler librement. Mais le résultat de vos tests ne pourra pas être rattaché " +
-      "à vous : votre enseignant ne saura pas que c'est le vôtre.</p></div>" + pied,
+      "à vous : votre formateur ne saura pas que c'est le vôtre.</p></div>" + pied,
       "Mon code"
     );
     const champ = document.getElementById("champ-mission");
@@ -163,37 +160,11 @@
     if (!m) return vueCode("Ce code n'est pas reconnu. Vérifie chaque caractère, tirets compris.");
     etat.mission = m.code;
     sauver();
-    if (!etat.filiere) return vueFiliere();
     vueParcours();
-  }
-
-  /* ---------- vue : choix de filière (ancrage référentiel) ---------- */
-  function vueFiliere() {
-    let cartes = "";
-    for (const f of FILIERES) {
-      cartes +=
-        '<button class="carte-filiere" data-filiere="' + f.id + '">' +
-        '<span class="badge badge-cible">' + seq(PAL[f.palierCible].sigle) + " visé par le diplôme</span>" +
-        "<h2>" + seq(f.nom) + "</h2>" +
-        '<span class="long">' + seq(f.long) + "</span>" +
-        "<span>" + seq(f.objectif) + "</span>" +
-        "</button>";
-    }
-    const m = mission();
-    rendre(
-      entete("accueil", "Accueil") +
-      "<h1>Votre formation</h1>" +
-      '<div class="carte accent"><p>Cela sert uniquement à afficher les codes de votre référentiel à côté de votre travail.' +
-      (m ? " Votre objectif reste celui de votre mission : <strong>" + seq(m.cible) + "</strong>." : "") + "</p></div>" +
-      '<div class="grille-filieres">' + cartes + "</div>" + pied,
-      "Ma formation"
-    );
   }
 
   /* ---------- vue : parcours ---------- */
   function vueParcours() {
-    if (!etat.filiere) return vueFiliere();
-    const f = FIL[etat.filiere];
     const m = mission();
     const iCible = cibleIdx();
     const atteint = palierAtteint();
@@ -251,9 +222,6 @@
       if (auDela) plusLoin += bloc; else blocs += bloc;
     });
 
-    let codes = "";
-    for (const c of f.codes) codes += '<tr><td class="code">' + seq(c.code) + "</td><td>" + seq(c.libelle) + "</td></tr>";
-
     rendre(
       entete("accueil", "Accueil") +
       "<h1>Mon parcours</h1>" + bandeau + blocs +
@@ -263,10 +231,6 @@
           "leurs tests : le niveau que vous visez n'est pas un plafond. Le code que vous rapporterez dira jusqu'où " +
           "vous êtes allé.</p></div>" + plusLoin
         : "") +
-      '<section class="carte bloc-referentiel"><h2>Ce que ce travail couvre dans votre référentiel</h2>' +
-      "<p>" + seq(f.noteReferentiel) + "</p>" +
-      '<table><thead><tr><th scope="col">Code</th><th scope="col">Libellé officiel</th></tr></thead><tbody>' + codes + "</tbody></table>" +
-      '<div class="btn-ligne"><button class="btn btn-secondaire" data-aller="filiere">Changer de formation</button></div></section>' +
       pied,
       "Mon parcours"
     );
@@ -403,7 +367,18 @@
                : '<button class="btn btn-primaire" type="button" data-etape-pas="1">Suivant →</button>');
   }
 
-  /* ---- la voix : au clic seulement ; changer d'étape, de vitesse ou de vue l'arrête ---- */
+  /* ---- la voix : au clic seulement ; changer d'étape, de vitesse ou de vue l'arrête ----
+     Voix fabriquée (décision du 30/09/2026) : une piste Piper par narration, fabriquée sur le
+     poste (outils/fabriquer-voix.py), trouvée par l'empreinte du texte dans VOIX (donnees/voix.js).
+     Sans piste, ou si elle ne se lit pas, la voix du navigateur prend le relais. */
+  const empreinteVoix = (t) => { let h = 5381; for (const c of t) h = ((h * 33) ^ c.codePointAt(0)) >>> 0; return h.toString(36); };
+  let piste = null;
+  function pisteArreter() {
+    if (!piste) return;
+    piste.onended = piste.onerror = null;
+    piste.pause();
+    piste = null;
+  }
   function voixFr() {
     const v = window.speechSynthesis.getVoices().filter((x) => /^fr/i.test(x.lang));
     return v.find((x) => /natural|neural|online/i.test(x.name)) || v[0] || null;
@@ -412,6 +387,7 @@
     if (!sta) return;
     sta.session++;
     if (sta.minuterie) { clearTimeout(sta.minuterie); sta.minuterie = null; }
+    pisteArreter();
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     sta.enCours = false;
     const film = document.querySelector(".station .film");
@@ -422,6 +398,21 @@
   /* dire un texte, puis enchaîner ; sans voix disponible, la durée prévue fait office */
   function stationDire(texte, duree, suite) {
     const s = sta.session, vitesse = lireVitesse();
+    const cle = empreinteVoix(texte);
+    if (window.VOIX && VOIX[cle] && typeof Audio === "function") {
+      pisteArreter();
+      const a = new Audio("voix/" + cle + ".mp3");
+      a.playbackRate = vitesse;
+      piste = a;
+      a.onended = () => { if (piste === a) piste = null; if (sta && s === sta.session) suite(); };
+      a.onerror = () => { if (piste === a) piste = null; if (sta && s === sta.session) direNavigateur(texte, duree, suite, s, vitesse); };
+      const lecture = a.play();
+      if (lecture && lecture.catch) lecture.catch(() => { if (piste === a && a.onerror) a.onerror(); });
+      return;
+    }
+    direNavigateur(texte, duree, suite, s, vitesse);
+  }
+  function direNavigateur(texte, duree, suite, s, vitesse) {
     if (!("speechSynthesis" in window)) {
       $st("etat").textContent = "Ce navigateur n'a pas de voix : le film joue seul.";
       sta.minuterie = setTimeout(() => { if (sta && s === sta.session) suite(); }, duree * 1000 / vitesse);
@@ -439,6 +430,7 @@
     /* chaque acte ouvre sa propre séance de voix : une narration encore en cours (l'acte 1 en
        mode sans animation, que la question n'interrompt pas) se tait, ses rappels périmés sont ignorés */
     sta.session++;
+    pisteArreter();
     if ("speechSynthesis" in window && (window.speechSynthesis.speaking || window.speechSynthesis.pending)) window.speechSynthesis.cancel();
     const film = document.querySelector(".station .film");
     if (film) {
@@ -508,6 +500,7 @@
   function figerActe1(garderVoix) {
     if (!sta || !sta.inter || sta.inter.resolu) return;
     if (!garderVoix) {
+      pisteArreter();
       if ("speechSynthesis" in window) window.speechSynthesis.cancel();
       sta.enCours = false;
       if ($st("ecouter")) $st("ecouter").textContent = etiquetteEcoute(sta.st.etapes[sta.i]);
@@ -661,7 +654,6 @@
 
   /* ---------- test de palier : correction en fin ---------- */
   let test = null;
-  let cibleEnAttente = null;   /* Px en attente du choix de filière (entrée ?test=Px, inc. 5), vidée après usage */
   function tirerTest(palierId) {
     const iPal = indexPalier(palierId);
     const poolCourant = QUESTIONS.filter((q) => MOD[q.m].palier === palierId);
@@ -689,7 +681,6 @@
   }
 
   function demarrerTest(palierId) {
-    if (!etat.filiere) return vueFiliere();
     test = { palier: palierId, tirage: tirerTest(palierId), idx: 0 };
     vueQuestionTest();
   }
@@ -733,7 +724,7 @@
     });
     const total = test.tirage.length;
     const reussi = score >= Math.ceil(total * REGLES_TEST.seuilReussite);
-    const code = RESTITUTION.encoder(etat.mission || "", indexFiliere(etat.filiere), indexPalier(test.palier), score, total);
+    const code = RESTITUTION.encoder(etat.mission || "", 0, indexPalier(test.palier), score, total);   /* formation : 0, champ gardé pour le multi-diplôme */
     etat.tests[test.palier] = { score, total, reussi, code, date: new Date().toISOString().slice(0, 10) };
     sauver();
 
@@ -750,7 +741,7 @@
         motMission = '<div class="enc enc-cle"><span class="enc-mot">🔑 Mission remplie</span><p>Vous avez validé ' +
           seq(PAL[test.palier].sigle) + ", le niveau demandé" +
           (indexPalier(test.palier) > m.cibleIdx ? " — et même au-delà de votre mission" : "") +
-          ". Rapportez votre code à votre enseignant. La suite se joue en pratique, avec lui.</p></div>";
+          ". Rapportez votre code à votre formateur. La suite se joue en pratique, avec lui.</p></div>";
       } else {
         motMission = '<div class="enc enc-note"><span class="enc-mot">Sur la bonne route</span><p>Palier validé. ' +
           "Votre objectif reste <strong>" + seq(m.cible) + "</strong> avant le " + seq(m.echeanceFr) + ".</p></div>";
@@ -765,11 +756,11 @@
       "<p>" + (reussi
         ? "✔ Palier atteint : au moins 70 % de bonnes réponses."
         : "✘ Palier non atteint (seuil : 70 %). Reprends les modules ci-dessous puis repasse le test : le tirage change à chaque fois.") + "</p>" +
-      "<p>Votre code à rapporter à votre enseignant :</p>" +
+      "<p>Votre code à rapporter à votre formateur :</p>" +
       '<p><span class="code-restitution">' + seq(code) + "</span></p>" +
       '<p class="q-compteur">' + (etat.mission
         ? "Ce code contient votre mission, le palier passé, le score et la date. Il ne contient aucun nom."
-        : "⚠ Vous travaillez sans code de mission : votre enseignant ne pourra pas savoir que ce résultat est le vôtre.") +
+        : "⚠ Vous travaillez sans code de mission : votre formateur ne pourra pas savoir que ce résultat est le vôtre.") +
       "</p></div>" + motMission + arevoir +
       "<h2>La correction, question par question</h2>" + correction +
       '<div class="btn-ligne"><button class="btn btn-primaire" data-aller="parcours">Retour au parcours →</button></div>' +
@@ -778,7 +769,7 @@
     );
   }
 
-  /* ---------- vue : générer un lot de missions (enseignant) ---------- */
+  /* ---------- vue : générer un lot de missions (formateur) ---------- */
   function vueLot() {
     let cibles = "";
     RESTITUTION.CIBLES.forEach((sig, i) => {
@@ -820,7 +811,7 @@
       '<button class="btn btn-secondaire" data-generer="1">Regénérer</button></div></section>';
   }
 
-  /* ---------- vue : vérifier un code (enseignant) ---------- */
+  /* ---------- vue : vérifier un code (formateur) ---------- */
   function vueVerif() {
     rendre(
       entete("accueil", "Accueil") +
@@ -852,7 +843,7 @@
         "). Faites recopier le code exactement.</p>";
       return;
     }
-    const f = FILIERES[r.filiereIdx], p = PALIERS[r.palierIdx];
+    const p = PALIERS[r.palierIdx];
     const pc = Math.round((r.score / r.total) * 100);
     const seuil = pc >= REGLES_TEST.seuilReussite * 100;
     const d = r.detail;
@@ -870,14 +861,13 @@
       '<tr><th scope="row">Palier passé</th><td>' + seq(p.sigle) + " — " + seq(p.symboles) + "</td></tr>" +
       '<tr><th scope="row">Score</th><td>' + r.score + " / " + r.total + " (" + pc + " %) — " +
       (seuil ? '<span class="verif-valide">seuil de 70 % atteint</span>' : '<span class="verif-invalide">sous le seuil de 70 %</span>') + "</td></tr>" +
-      '<tr><th scope="row">Formation déclarée</th><td>' + seq(f.nom) + "</td></tr>" +
       '<tr><th scope="row">Date du test</th><td>' + String(r.jour).padStart(2, "0") + "/" + String(r.mois).padStart(2, "0") + "/" + r.annee + "</td></tr>" +
       "</tbody></table>";
   }
 
   /* ---------- navigation ---------- */
   document.addEventListener("click", function (ev) {
-    const b = ev.target.closest("[data-aller],[data-filiere],[data-fiche],[data-decouvrir],[data-dec-suite],[data-option],[data-test],[data-test-option],[data-verifier],[data-valider-mission],[data-generer],[data-imprimer],[data-etape],[data-etape-pas],[data-ecouter],[data-vitesse],[data-sans-animation],[data-inter-choix],[data-inter-revoir]");
+    const b = ev.target.closest("[data-aller],[data-fiche],[data-decouvrir],[data-dec-suite],[data-option],[data-test],[data-test-option],[data-verifier],[data-valider-mission],[data-generer],[data-imprimer],[data-etape],[data-etape-pas],[data-ecouter],[data-vitesse],[data-sans-animation],[data-inter-choix],[data-inter-revoir]");
     if (!b) return;
     if (b.dataset.etape !== undefined) return stationEtape(Number(b.dataset.etape));
     if (b.dataset.etapePas) return stationEtape(sta.i + Number(b.dataset.etapePas));
@@ -886,16 +876,10 @@
     if (b.dataset.sansAnimation) return stationSansAnimation();
     if (b.dataset.interChoix !== undefined) return repondreInteraction(Number(b.dataset.interChoix));
     if (b.dataset.interRevoir) return revoirActe1Interactif();
-    if (b.dataset.filiere) {
-      etat.filiere = b.dataset.filiere; sauver();
-      if (cibleEnAttente) { const id = cibleEnAttente; cibleEnAttente = null; return demarrerTest(id); }
-      return vueParcours();
-    }
     if (b.dataset.aller === "accueil") return vueAccueil();
     if (b.dataset.aller === "parcours") return vueParcours();
-    if (b.dataset.aller === "filiere") return vueFiliere();
     if (b.dataset.aller === "code") return vueCode();
-    if (b.dataset.aller === "libre") { etat.mission = null; sauver(); return etat.filiere ? vueParcours() : vueFiliere(); }
+    if (b.dataset.aller === "libre") { etat.mission = null; sauver(); return vueParcours(); }
     if (b.dataset.aller === "verif") return vueVerif();
     if (b.dataset.aller === "lot") return vueLot();
     if (b.dataset.validerMission) return validerMission();
@@ -918,9 +902,8 @@
 
   /* ---------- départ ---------- */
   /* Entrées par URL (QR du livret, inc. 5) : ?module=Mx, ?decouvrir=Mx[,My], ?test=Px,
-     ?vue=verifier, ?vue=code. Module/découverte/vérifier/code s'ouvrent sans demander la
-     filière ; test la demande d'abord si besoin (cibleEnAttente), puis continue vers le
-     test. Rien de nominatif ne voyage par l'URL. Paramètre absent ou inconnu → accueil,
+     ?vue=verifier, ?vue=code. Toutes s'ouvrent directement (application universelle,
+     aucune formation à choisir depuis le 30/09/2026). Rien de nominatif ne voyage par l'URL. Paramètre absent ou inconnu → accueil,
      sans message. Après lecture, l'URL est nettoyée pour qu'un retour ou un rechargement
      ne rejoue pas l'entrée. */
   function demarrer() {
@@ -936,7 +919,7 @@
     } else if (params.has("test") && connu(PAL, params.get("test"))) {
       trouve = true;
       const id = params.get("test");
-      if (!etat.filiere) { cibleEnAttente = id; vueFiliere(); } else demarrerTest(id);
+      demarrerTest(id);
     } else if (params.get("vue") === "verifier") {
       trouve = true;
       vueVerif();

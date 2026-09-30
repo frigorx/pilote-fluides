@@ -3,7 +3,8 @@
    Acte 1 : le bonhomme enfile seulement ses gants et travaille au
    coffret ouvert ; un collègue passe derrière lui et frôle le
    coffret : c'est LUI qui prend l'éclair, cheveux, étoiles, assis.
-   Acte 2 : sectionneur coupé + cadenas (fil gris), écran isolant
+   Acte 2 : sectionneur coupé + cadenas, vérification d'absence de
+   tension au bout du fil (coche verte, le fil grise ensuite), écran isolant
    dressé devant le coffret, gants enfilés en dernier ; le collègue
    passe alors derrière l'écran sans danger.
    Règles : aucun texte ni id ; classes « f- » ; sélecteurs .film-M3b ;
@@ -30,21 +31,22 @@ FILMS.M3b = {
 <g transform="translate(310 88)"><g class="f-col">
 <g class="f-etoiles"><g class="f-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-cjg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-cjd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<g class="f-cbras"><path d="M0 24 L-4 49" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="-4" cy="49" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/></g>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-cjg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-cjd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+<g class="f-cbras"><path d="M0 24 L-4 49" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="-4" cy="49" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/></g>
 </g></g>
+<g class="f-coche"><path d="M190 94 l4 4 l8 -9" stroke="#1e7e54" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g transform="translate(45 88)"><g class="f-bon">
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
 <circle class="f-main-g" cx="-10" cy="47" r="4" fill="#84b7ec" stroke="#1b3a63" stroke-width="2.2"/>
-<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle class="f-main-d" cx="12" cy="49" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle class="f-main-d" cx="12" cy="49" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/><g class="f-vat"><rect x="9" y="42" width="10" height="15" rx="3" fill="#e8f1fb" stroke="#1b3a63" stroke-width="2"/><circle cx="14" cy="47.5" r="2" fill="#9aa9b8"/></g>
 <g class="f-gant"><rect x="7" y="45" width="10" height="9" rx="4" fill="#84b7ec" stroke="#1b3a63" stroke-width="2.2"/></g></g>
 </g></g>`,
   css: `.film-M3b .f-bon,.film-M3b .f-jg,.film-M3b .f-jd,.film-M3b .f-bras,.film-M3b .f-col,
@@ -86,17 +88,24 @@ FILMS.M3b = {
 .film-M3b.acte-2 .f-levier{animation:M3b-a2-levier 10s linear forwards}
 @keyframes M3b-a2-levier{0%,15%{transform:rotate(0)}25%,100%{transform:rotate(78deg)}}
 .film-M3b.acte-2 .f-cadenas{animation:M3b-a2-cadenas 10s linear forwards}
+.film-M3b .f-vat,.film-M3b .f-coche{opacity:0}
+.film-M3b.acte-2 .f-vat{animation:M3b-a2-vat 10s linear forwards}
+.film-M3b.acte-2 .f-coche{animation:M3b-a2-coche 10s linear forwards}
+.film-M3b.acte-2 .f-bras{animation:M3b-a2-bras 10s linear forwards}
 @keyframes M3b-a2-cadenas{0%,25%{opacity:0}28%,100%{opacity:1}}
+@keyframes M3b-a2-bras{0%,28%{transform:rotate(0)}31%,36%{transform:rotate(-64deg)}39%,100%{transform:rotate(0)}}
+@keyframes M3b-a2-vat{0%,29%{opacity:0}31%,36%{opacity:1}38%,100%{opacity:0}}
+@keyframes M3b-a2-coche{0%,33%{opacity:0}35%,48%{opacity:1}52%,100%{opacity:0}}
 .film-M3b.acte-2 .f-fil{animation:M3b-a2-fil 10s linear forwards}
-@keyframes M3b-a2-fil{0%,26%{stroke:#c0392b}30%,100%{stroke:#9aa7b4}}
+@keyframes M3b-a2-fil{0%,35%{stroke:#c0392b}38%,100%{stroke:#9aa7b4}}
 .film-M3b.acte-2 .f-ecran{animation:M3b-a2-ecran 10s linear forwards}
-@keyframes M3b-a2-ecran{0%,30%{transform:translate(-95px,2px) rotate(88deg)}55%,100%{transform:translate(0,0) rotate(0)}}
+@keyframes M3b-a2-ecran{0%,50%{transform:translate(-95px,2px) rotate(88deg)}64%,100%{transform:translate(0,0) rotate(0)}}
 .film-M3b.acte-2 .f-bon{animation:M3b-a2-bon 10s linear forwards}
-@keyframes M3b-a2-bon{0%{transform:translateX(125px)}10%,28%{transform:translateX(116px)}42%,100%{transform:translateX(0)}}
+@keyframes M3b-a2-bon{0%{transform:translateX(125px)}10%,38%{transform:translateX(116px)}52%,100%{transform:translateX(0)}}
 .film-M3b.acte-2 .f-jg{animation:M3b-a2-jg 10s linear forwards}
-@keyframes M3b-a2-jg{0%,10%{transform:rotate(0)}14%,22%{transform:rotate(-22deg)}32%,40%{transform:rotate(22deg)}100%{transform:rotate(0)}}
+@keyframes M3b-a2-jg{0%,38%{transform:rotate(0)}41%{transform:rotate(-22deg)}45%{transform:rotate(22deg)}49%{transform:rotate(-22deg)}52%,100%{transform:rotate(0)}}
 .film-M3b.acte-2 .f-jd{animation:M3b-a2-jd 10s linear forwards}
-@keyframes M3b-a2-jd{0%,10%{transform:rotate(0)}14%,22%{transform:rotate(22deg)}32%,40%{transform:rotate(-22deg)}100%{transform:rotate(0)}}
+@keyframes M3b-a2-jd{0%,38%{transform:rotate(0)}41%{transform:rotate(22deg)}45%{transform:rotate(-22deg)}49%{transform:rotate(22deg)}52%,100%{transform:rotate(0)}}
 .film-M3b.acte-2 .f-gant{animation:M3b-a2-gant 10s linear forwards}
 @keyframes M3b-a2-gant{0%,72%{opacity:0}76%,100%{opacity:1}}
 .film-M3b.acte-2 .f-col{animation:M3b-a2-col 10s linear forwards}

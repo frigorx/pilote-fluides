@@ -10,7 +10,8 @@
    collègue reçoit l'éclair sur le fil qu'il tenait, cheveux dressés,
    étoiles ; le bonhomme se fige, la main encore sur la manette.
    Acte 2 · la leçon : il n'y touche pas et appelle ; le collègue revient,
-   retire lui-même son cadenas et son étiquette, la manette remonte,
+   retire lui-même son cadenas et son étiquette, puis remonte lui-même
+   la manette (30/09/2026 : son bras est animé),
    un repère vert confirme.
    Règles : aucun texte, aucun id ; classes « f- » ; sélecteurs sous
    .film-M9c ; images-clés préfixées M9c- ; aucun attribut transform sur
@@ -40,27 +41,29 @@ FILMS.M9c = {
 <circle class="f-bout" cx="188" cy="112" r="3.5" fill="#1b3a63"/>
 <g class="f-eclair"><path d="M184 96 l-6 13.2 h6 l-3.6 12 l13.2 -16.8 h-7.2 l4.8 -8.4z" fill="#ff6b35"/></g>
 <g transform="translate(10 88)"><g class="f-bon">
-<circle cx="0" cy="10" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/></g>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+<g class="f-bras"><path d="M0 24 L12 49" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/><circle cx="12" cy="49" r="4" fill="#f6d7bd" stroke="#1b3a63" stroke-width="1.8"/></g>
 </g></g>
 <g transform="translate(160 88)"><g class="f-col">
 <g class="f-col-etoiles"><g class="f-col-etoiles-r"><circle cx="16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="-6" r="2.6" fill="#ff6b35"/><circle cx="-16" cy="10" r="2.6" fill="#ff6b35"/><circle cx="0" cy="26" r="2.6" fill="#ff6b35"/></g></g>
 <g class="f-col-cheveux"><path d="M-6 1 l-3 -8 M0 0 v-9 M6 1 l3 -8" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round"/></g>
-<circle cx="0" cy="10" r="9" fill="#e8f1fb" stroke="#1b3a63" stroke-width="2.5"/>
-<path d="M0 19 V48" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path class="f-col-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path class="f-col-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
-<path d="M0 24 L10 47" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
+<circle cx="0" cy="10" r="9" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.2"/><path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9.5 0.5 9 9.5 Q6 4.6 0 4.8 Q-6 4.6 -9 9.5Z" fill="#1b3a63"/><circle cx="-3.2" cy="10.5" r="1.2" fill="#10233c"/><circle cx="3.2" cy="10.5" r="1.2" fill="#10233c"/><path d="M-2.2 14 Q0 15.6 2.2 14" stroke="#10233c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V48 H-8 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2"/><path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/><path d="M0 20 V48" stroke="#1b3a63" stroke-width="1.2"/>
+<path class="f-col-jg" d="M0 48 L-9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<path class="f-col-jd" d="M0 48 L9 72" stroke="#1b3a63" stroke-width="7" stroke-linecap="round" fill="none"/>
+<g class="f-col-bras"><path d="M0 24 L-10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/></g>
+<path d="M0 24 L10 47" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
 </g></g>`,
   css: `.film-M9c .f-bon,.film-M9c .f-jg,.film-M9c .f-jd,.film-M9c .f-bras,.film-M9c .f-col,.film-M9c .f-col-jg,.film-M9c .f-col-jd,.film-M9c .f-col-etoiles-r,.film-M9c .f-manette{transform-box:fill-box}
 .film-M9c .f-jg,.film-M9c .f-col-jg{transform-origin:100% 0}
 .film-M9c .f-jd,.film-M9c .f-col-jd{transform-origin:0 0}
 .film-M9c .f-bras{transform-origin:0 0}
+.film-M9c .f-col-bras{transform-box:fill-box;transform-origin:100% 0}
+.film-M9c.acte-2 .f-col-bras{animation:M9c-a2-colbras 10s linear forwards}
 .film-M9c .f-manette{transform-origin:50% 100%}
 .film-M9c .f-col-etoiles-r{transform-origin:50% 50%;animation:M9c-tourne 2.2s linear infinite}
 .film-M9c .f-eclair,.film-M9c .f-col-cheveux,.film-M9c .f-col-etoiles,.film-M9c .f-appel,.film-M9c .f-juste{opacity:0}
@@ -106,6 +109,7 @@ FILMS.M9c = {
 .film-M9c.acte-2 .f-etiquette{animation:M9c-a2-etiquette 10s linear forwards}
 @keyframes M9c-a2-etiquette{0%,63%{opacity:1}67%,100%{opacity:0}}
 .film-M9c.acte-2 .f-manette{animation:M9c-a2-manette 10s linear forwards}
+@keyframes M9c-a2-colbras{0%,60%{transform:rotate(0)}63%,67%{transform:rotate(100deg)}70%,72%{transform:rotate(60deg)}75%,82%{transform:rotate(110deg)}86%,100%{transform:rotate(0)}}
 @keyframes M9c-a2-manette{0%,74%{transform:rotate(180deg)}80%,100%{transform:rotate(0)}}
 .film-M9c.acte-2 .f-fil{animation:M9c-a2-fil 10s linear forwards}
 @keyframes M9c-a2-fil{0%,83%{stroke:#1b3a63}88%,100%{stroke:#c0392b}}
