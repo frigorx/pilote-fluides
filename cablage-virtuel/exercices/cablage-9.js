@@ -37,42 +37,42 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
     "y": 160.0
    },
    {
-    "ref": "XN:1",
+    "ref": "N:1",
     "x": 280.0,
     "y": 194.0
    },
    {
-    "ref": "XN:2",
+    "ref": "N:2",
     "x": 280.0,
     "y": 206.0
    },
    {
-    "ref": "XL1:1",
+    "ref": "L1:1",
     "x": 300.0,
     "y": 194.0
    },
    {
-    "ref": "XL1:2",
+    "ref": "L1:2",
     "x": 300.0,
     "y": 206.0
    },
    {
-    "ref": "XL2:1",
+    "ref": "L2:1",
     "x": 320.0,
     "y": 194.0
    },
    {
-    "ref": "XL2:2",
+    "ref": "L2:2",
     "x": 320.0,
     "y": 206.0
    },
    {
-    "ref": "XL3:1",
+    "ref": "L3:1",
     "x": 340.0,
     "y": 194.0
    },
    {
-    "ref": "XL3:2",
+    "ref": "L3:2",
     "x": 340.0,
     "y": 206.0
    },
@@ -529,22 +529,22 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
     "y": 828.0
    },
    {
-    "repere": "XN",
+    "repere": "N",
     "x": 280.0,
     "y": 177.0
    },
    {
-    "repere": "XL1",
+    "repere": "L1",
     "x": 300.0,
     "y": 177.0
    },
    {
-    "repere": "XL2",
+    "repere": "L2",
     "x": 320.0,
     "y": 177.0
    },
    {
-    "repere": "XL3",
+    "repere": "L3",
     "x": 340.0,
     "y": 177.0
    },
@@ -1255,7 +1255,7 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
    "ligne": 3
   },
   {
-   "repere": "XN",
+   "repere": "N",
    "type": "borne_continuite",
    "nom": "Borne",
    "rang": 5,
@@ -1293,7 +1293,7 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
    "ligne": 2
   },
   {
-   "repere": "XL1",
+   "repere": "L1",
    "type": "borne_continuite",
    "nom": "Borne",
    "rang": 5,
@@ -1331,7 +1331,7 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
    "ligne": 2
   },
   {
-   "repere": "XL2",
+   "repere": "L2",
    "type": "borne_continuite",
    "nom": "Borne",
    "rang": 5,
@@ -1369,7 +1369,7 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
    "ligne": 2
   },
   {
-   "repere": "XL3",
+   "repere": "L3",
    "type": "borne_continuite",
    "nom": "Borne",
    "rang": 5,
@@ -1969,10 +1969,10 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
   {
    "nom": "L1",
    "bornes": [
+    "L1:1",
+    "L1:2",
     "Q1:1",
-    "Réseau:L1",
-    "XL1:1",
-    "XL1:2"
+    "Réseau:L1"
    ],
    "couleurs": [
     "marron",
@@ -1985,10 +1985,10 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
   {
    "nom": "L2",
    "bornes": [
+    "L2:1",
+    "L2:2",
     "Q1:3",
-    "Réseau:L2",
-    "XL2:1",
-    "XL2:2"
+    "Réseau:L2"
    ],
    "couleurs": [
     "marron",
@@ -2001,10 +2001,10 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
   {
    "nom": "L3",
    "bornes": [
+    "L3:1",
+    "L3:2",
     "Q1:5",
-    "Réseau:L3",
-    "XL3:1",
-    "XL3:2"
+    "Réseau:L3"
    ],
    "couleurs": [
     "marron",
@@ -2075,10 +2075,10 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
   {
    "nom": "N",
    "bornes": [
+    "N:1",
+    "N:2",
     "Q1:N1",
-    "Réseau:N",
-    "XN:1",
-    "XN:2"
+    "Réseau:N"
    ],
    "couleurs": [
     "bleu"
@@ -2267,22 +2267,22 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
  "etapes": [
   {
    "de": "Réseau:L1",
-   "a": "XL1:1",
+   "a": "L1:1",
    "couleur": "marron"
   },
   {
    "de": "Réseau:L2",
-   "a": "XL2:1",
+   "a": "L2:1",
    "couleur": "marron"
   },
   {
    "de": "Réseau:L3",
-   "a": "XL3:1",
+   "a": "L3:1",
    "couleur": "marron"
   },
   {
    "de": "Réseau:N",
-   "a": "XN:1",
+   "a": "N:1",
    "couleur": "bleu"
   },
   {
@@ -2301,22 +2301,22 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
    "couleur": "vert-jaune"
   },
   {
-   "de": "XN:2",
+   "de": "N:2",
    "a": "Q1:N1",
    "couleur": "bleu"
   },
   {
-   "de": "XL1:2",
+   "de": "L1:2",
    "a": "Q1:1",
    "couleur": "marron"
   },
   {
-   "de": "XL2:2",
+   "de": "L2:2",
    "a": "Q1:3",
    "couleur": "marron"
   },
   {
-   "de": "XL3:2",
+   "de": "L3:2",
    "a": "Q1:5",
    "couleur": "marron"
   },
@@ -2887,7 +2887,7 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
      "y": 952.0
     }
    },
-   "XN": {
+   "N": {
     "modele": "borne-neutre",
     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"borne-neutre\" transform=\"translate(0.00,0.00)\">\n<circle cx=\"0.00\" cy=\"20.00\" r=\"3.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"0.00\" cy=\"-20.00\" r=\"3.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"18\" x2=\"-2\" y2=\"22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-22\" x2=\"-2\" y2=\"-18\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-10\" y=\"-40\" width=\"20\" height=\"80\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-22\" x2=\"2\" y2=\"-18\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"18\" x2=\"2\" y2=\"22\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-8\" y=\"-12\" width=\"16\" height=\"24\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"blue\"/>\n<line x1=\"0\" y1=\"-23\" x2=\"0\" y2=\"-17\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"0\" y1=\"17\" x2=\"0\" y2=\"23\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-3\" y1=\"-20\" x2=\"3\" y2=\"-20\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-3\" y1=\"20\" x2=\"3\" y2=\"20\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-2\" x2=\"2\" y2=\"2\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<\/g><\/g>",
     "boite": [
@@ -2915,7 +2915,7 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
      "y": 1000.0
     }
    },
-   "XL1": {
+   "L1": {
     "modele": "borne-phase",
     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"borne-phase\" transform=\"translate(0.00,0.00)\">\n<circle cx=\"0.00\" cy=\"-21.00\" r=\"3.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"0.15\" cy=\"20.06\" r=\"3.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2.15241\" y1=\"18.056\" x2=\"-1.84759\" y2=\"22.056\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-23\" x2=\"-2\" y2=\"-19\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-23\" x2=\"2\" y2=\"-19\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-1.84759\" y1=\"18.056\" x2=\"2.15241\" y2=\"22.056\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-10\" y=\"-40\" width=\"20\" height=\"80\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-24\" x2=\"0\" y2=\"-18\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"0.152409\" y1=\"17.056\" x2=\"0.152409\" y2=\"23.056\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"-8\" y=\"-12\" width=\"16\" height=\"24\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"black\"/>\n<line x1=\"-2.84759\" y1=\"20.056\" x2=\"3.15241\" y2=\"20.056\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-3\" y1=\"-21\" x2=\"3\" y2=\"-21\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<\/g><\/g>",
     "boite": [
@@ -2943,7 +2943,7 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
      "y": 1000.0
     }
    },
-   "XL2": {
+   "L2": {
     "modele": "borne-phase",
     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"borne-phase\" transform=\"translate(0.00,0.00)\">\n<circle cx=\"0.00\" cy=\"-21.00\" r=\"3.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"0.15\" cy=\"20.06\" r=\"3.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2.15241\" y1=\"18.056\" x2=\"-1.84759\" y2=\"22.056\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-23\" x2=\"-2\" y2=\"-19\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-23\" x2=\"2\" y2=\"-19\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-1.84759\" y1=\"18.056\" x2=\"2.15241\" y2=\"22.056\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-10\" y=\"-40\" width=\"20\" height=\"80\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-24\" x2=\"0\" y2=\"-18\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"0.152409\" y1=\"17.056\" x2=\"0.152409\" y2=\"23.056\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"-8\" y=\"-12\" width=\"16\" height=\"24\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"black\"/>\n<line x1=\"-2.84759\" y1=\"20.056\" x2=\"3.15241\" y2=\"20.056\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-3\" y1=\"-21\" x2=\"3\" y2=\"-21\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<\/g><\/g>",
     "boite": [
@@ -2971,7 +2971,7 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
      "y": 1000.0
     }
    },
-   "XL3": {
+   "L3": {
     "modele": "borne-phase",
     "symbole": "<g transform=\"scale(0.5)\"><g class=\"symbole\" data-type=\"borne-phase\" transform=\"translate(0.00,0.00)\">\n<circle cx=\"0.00\" cy=\"-21.00\" r=\"3.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<circle cx=\"0.15\" cy=\"20.06\" r=\"3.50\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2.15241\" y1=\"18.056\" x2=\"-1.84759\" y2=\"22.056\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"2\" y1=\"-23\" x2=\"-2\" y2=\"-19\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-2\" y1=\"-23\" x2=\"2\" y2=\"-19\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-1.84759\" y1=\"18.056\" x2=\"2.15241\" y2=\"22.056\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<rect x=\"-10\" y=\"-40\" width=\"20\" height=\"80\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"2\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-24\" x2=\"0\" y2=\"-18\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"0.152409\" y1=\"17.056\" x2=\"0.152409\" y2=\"23.056\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<rect x=\"-8\" y=\"-12\" width=\"16\" height=\"24\" rx=\"0\" ry=\"0\" stroke=\"black\" stroke-width=\"0.4\" fill=\"black\"/>\n<line x1=\"-2.84759\" y1=\"20.056\" x2=\"3.15241\" y2=\"20.056\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<line x1=\"-3\" y1=\"-21\" x2=\"3\" y2=\"-21\" stroke=\"black\" stroke-width=\"0.4\" fill=\"none\"/>\n<\/g><\/g>",
     "boite": [
@@ -3294,5 +3294,11 @@ window.CABLAGE_EXERCICES["cablage-9"] = {
     "f1:5"
    ]
   ]
- }
+ },
+ "bornes_sans_repere": [
+  "XT",
+  "XBT1",
+  "XBT2",
+  "XBT3"
+ ]
 };

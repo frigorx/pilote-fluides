@@ -8,7 +8,7 @@
 (function () {
   const P = new URLSearchParams(location.search);
   if (P.get('tuto') === null) return;
-  const ID = P.get('ex') || '', CLE = 'cablage-virtuel:tuto:' + ID;
+  const ID = P.get('ex') || '', CLE = 'cablage-virtuel:tuto:' + ID + (P.get('tuto') ? ':' + P.get('tuto') : '');
   const $ = (s) => document.querySelector(s);
   const page = { activite: ['colorier', 'reperer', 'cabler'].includes(P.get('activite')) ? P.get('activite') : 'cabler',
                  mode: P.get('mode') === 'avance' ? 'reel' : ['guide', 'aide', 'reel'].includes(P.get('mode')) ? P.get('mode') : 'guide',
@@ -67,6 +67,36 @@
       texte: 'Bravo. Notez sur votre feuille : <b>le niveau</b>, les <b>aides</b> et les <b>fils refusés</b> de chaque étape. Vous savez maintenant colorier, repérer, câbler, demander de l’aide, contrôler et passer en vue réelle.',
       bouton: 'Retour au réseau', fin: true, sansNumero: true },
   ];
+
+  // 30/09 — LE TUTORIEL DU BORNIER (&tuto=bornier, sur le n° 1 en vue réelle ; maquette docs/maquette-bornier/, Franck :
+  // « un bornier n'a pas de numéro de borne », « XA l'alimentation, XB la puissance, XC la commande », « les appellations ne
+  // sont pas obligatoires »). En Guidé, les fils viennent dans l'ordre du n° 1 : L1, L2, L3, le neutre, la terre, puis vers Q1.
+  const arme = (debut) => { const b = document.querySelector('#platine .borne.armee'); return !!b && b.dataset.ref.startsWith(debut); };
+  const pose = (etat, x, y) => !!etat && etat.fils.some(f => (f.de === x && f.a === y) || (f.de === y && f.a === x));
+  const BORNIER = [
+    { ecran: E('cabler', 'guide', true), cibles: ['#platine .borne[data-ref^="X"]'], titre: 'Le bornier, la frontière',
+      texte: 'En bas de la platine, la rangée de bornes : <b>le bornier</b>. Tout ce qui entre dans l’armoire ou en sort passe par lui.',
+      bouton: 'Commencer', sansNumero: true },
+    { ecran: E('cabler', 'guide', true), cibles: ['#platine .borne[data-ref^="XA3:"]'], titre: 'Une borne a un nom, pas un numéro',
+      texte: 'Chaque borne porte un <b>repère</b> : <b>XA</b> l’alimentation, <b>XB</b> la puissance, <b>XC</b> la commande, puis son numéro. Deux vis : <b>côté armoire</b> en haut, <b>côté terrain</b> en bas. Touchez <b>XA3, côté terrain</b>.',
+      attend: 'J’attends XA3, côté terrain (la vis du bas).', fait: () => arme('XA3:1') },
+    { ecran: E('cabler', 'guide', true), cibles: ['#platine .borne[data-ref="Réseau:L1"]'], titre: 'Deux côtés, un seul repère',
+      texte: 'XA3 s’est allumée. Touchez maintenant <b>L1</b>, à l’arrivée : le fil se pose, côté terrain.',
+      attend: 'J’attends le fil de L1.', fait: (etat) => pose(etat, 'Réseau:L1', 'XA3:1') },
+    { ecran: E('cabler', 'guide', true), cibles: ['#carte polyline.etape'], titre: 'Les phases, puis le neutre',
+      texte: 'Posez les deux autres phases, puis le neutre : sa borne est <b>bleue</b>. Le fil à poser clignote sur la carte.',
+      attend: 'J’attends les deux phases et le neutre.', fait: (etat) => pose(etat, 'Réseau:N', 'XA2:1') },
+    { ecran: E('cabler', 'guide', true), cibles: ['#platine .borne[data-ref^="XA1:"]', '#platine .borne[data-ref^="XB1:"]'], titre: 'La terre',
+      texte: 'Verte et jaune, fixée au rail : <b>la terre</b>. Un repère n’est pas obligatoire : la couleur suffit. Posez le conducteur de terre de l’arrivée.',
+      attend: 'J’attends le conducteur de terre.', fait: (etat) => pose(etat, 'Réseau:PE', 'XA1:1') },
+    { ecran: E('cabler', 'guide', true), cibles: ['#platine .borne[data-ref="XA3:2"]', '#platine .borne[data-ref="Q1:1"]'], titre: 'Côté armoire',
+      texte: 'Le courant de L1 ressort de XA3 <b>côté armoire</b> et monte vers Q1. Posez ce fil.',
+      attend: 'J’attends le fil de XA3 vers Q1.', fait: (etat) => pose(etat, 'XA3:2', 'Q1:1') },
+    { ecran: E('cabler', 'guide', true), titre: 'Terminé',
+      texte: 'Un repère, deux côtés, une couleur. Au bornier : d’abord le repère, puis le côté, armoire ou terrain.',
+      bouton: 'Retour au réseau', fin: true, sansNumero: true },
+  ];
+  if (P.get('tuto') === 'bornier') ETAPES.splice(0, ETAPES.length, ...BORNIER);
 
   // 30/09 (constat E16) : le nombre annoncé est le vrai — les étapes numérotées (ni la bienvenue ni la fin)
   const NB = ETAPES.filter(e => !e.sansNumero).length;

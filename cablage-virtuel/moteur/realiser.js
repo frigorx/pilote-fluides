@@ -51,7 +51,8 @@ function demarrer() {
       if (bornierFait) return; bornierFait = true;
       const reel = API.reelle() && EX.reel ? EX.reel.appareils : null;   // en vrais appareils, le modèle dit les bornes vert-jaune
       const vj = reel ? bornier.filter(b => reel[b.repere] && /(^|[_-])vj($|[_-])/.test(reel[b.repere].modele || '')).length : 0;
-      tr.append(el('td', null, API.compacter(bornier.map(b => b.repere))),
+      tr.append(el('td', null, API.compacter(bornier.filter(b => !API.sansRepere(b.repere)).map(b => b.repere)) +
+                (bornier.some(b => API.sansRepere(b.repere)) ? ' (et les bornes de terre sans repère)' : '')),
         el('td', null, (bornier.length > 1 ? 'Bornes du bornier' : 'Borne du bornier') + (vj ? ', dont ' + vj + ' vert-jaune' : '')),
         el('td', { class: 'n' }, String(bornier.length)));
     } else tr.append(el('td', null, a.repere), el('td', null, a.nom), el('td', { class: 'n' }, '1'));

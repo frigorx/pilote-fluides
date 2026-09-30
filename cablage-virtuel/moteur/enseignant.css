@@ -56,7 +56,7 @@ a.lien-bouton:hover{border-color:var(--bleu-clair)}
 .seg{min-height:44px;padding:0 14px;border:2px solid var(--ligne);border-radius:10px;background:#fff;color:var(--txt);font-size:.98rem}
 .seg:hover{border-color:var(--bleu-clair)}
 .seg[aria-pressed="true"]{border-color:var(--bleu);background:#e8eef6;font-weight:700;color:var(--bleu)}
-.seg[aria-pressed="true"]::before{content:"✓ "}
+.seg[aria-pressed="true"]::before{content:"● "}
 .seg:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--bleu-actif);outline-offset:2px}
 .station-dite{color:var(--mut);font-size:.98rem}
 .station-dite b{color:var(--bleu)}

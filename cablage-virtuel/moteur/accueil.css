@@ -78,7 +78,7 @@ body.reseau a:focus-visible,body.reseau button:focus-visible,body.reseau summary
 .quais{display:flex;gap:8px;flex-wrap:wrap}
 .quais button{min-height:40px;border:1.5px solid var(--filet-app);background:var(--papier);border-radius:10px;padding:0 14px;color:var(--encre);font-size:1rem}
 .quais button[aria-pressed="true"]{border:2px solid var(--marine);font-weight:700;box-shadow:inset 0 -3px 0 var(--marine)}
-.quais button[aria-pressed="true"]::before{content:"✓ "}
+.quais button[aria-pressed="true"]::before{content:"● "}
 .chemin{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center;font-size:.95rem;color:var(--gris)}
 /* le chemin se lit, il ne se touche pas : du texte et des séparateurs, aucune bordure de bouton */
 .chemin li{display:inline-flex;align-items:center;gap:8px}
@@ -106,5 +106,9 @@ details.reglages:not([open]){padding-bottom:4px}
 .segs{display:flex;flex-wrap:wrap;gap:6px}
 .segs button{min-height:40px;background:#fff;border:1.5px solid var(--filet-app);border-radius:9px;padding:0 12px;color:var(--encre);font-size:1rem}
 .segs button[aria-pressed="true"]{border:2px solid var(--marine);background:#e8eef6;font-weight:700}
-.segs button[aria-pressed="true"]::before{content:"✓ "}
+.segs button[aria-pressed="true"]::before{content:"● "}
 .aide-reg{margin:10px 0 0;font-size:.95rem;color:var(--gris)}
+
+/* 30/09 (contre-vérification) : sur téléphone, le plan défile dans son cadre ; on le dit. */
+.glisser{display:none}
+@media (max-width:900px){.glisser{display:block;margin:10px 0 0;font-weight:700;color:var(--marine)}}

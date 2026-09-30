@@ -2,13 +2,14 @@
 
 Exercice : **Câblage n° 1 — la commande** (marche-arrêt à auto-maintien), https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-1-commande
 Public : CAP IFCA 2e année, 1re Bac Pro MFER. Durée : 1 h sur l'écran, puis la platine (module atelier 4 h).
-Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 29/09/2026.
+Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 30/09/2026.
 
 ## Ce que fait l'élève
 Son câblage posé et contrôlé, il le met sous tension dans le logiciel : il enclenche Q1 puis Q2, maintient S2 (marche),
 relâche (auto-maintien par le 13-14 de KM1), appuie sur S1 (arrêt), déclenche F1 (95-96). Mal câblé, la protection la plus
 proche disjoncte et le logiciel peut montrer le fil en cause (aide comptée). Il remplit la table de vérité S1 S2 F1 → KM1 M1,
-son compte rendu, puis refait l'essai sur la vraie platine avec le professeur.
+son compte rendu, puis refait l'essai sur la vraie platine avec le professeur. À l'essai, la voix (bouton « Écouter
+le professeur ») explique chaque événement : protection, contacteur qui colle, auto-maintien, thermique, court-circuit.
 
 ## Notions (plan théorique)
 Contact à fermeture et à ouverture (13-14, 11-12) · auto-maintien · sécurité thermique 95-96 · la protection la plus proche
@@ -23,6 +24,6 @@ Grille générique par compétences, échelle 0 à 4 (0 = non évalué) : sécur
 diagnostiquer, rendre compte, plus le savoir-être.
 
 ## Documents
-Feuille élève (3 feuilles, PDF libre) : documents/Mise-sous-tension-ELEVE.pdf. Fiche professeur, grille d'évaluation et plan
+Feuille élève (4 pages, PDF libre) : documents/Mise-sous-tension-ELEVE.pdf. Fiche professeur, grille d'évaluation et plan
 de séance (10 phases), en PDF et en Word : https://inerweb.fr/cablage-virtuel/documents-professeur.html, avec le code
 enseignant du Câblage virtuel.

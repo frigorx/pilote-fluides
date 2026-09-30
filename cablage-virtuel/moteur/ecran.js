@@ -16,7 +16,9 @@ const PETIT = () => window.innerWidth < 1200 || window.innerHeight < 800;
 const DISPOS = [['colonnes', 'Côte à côte', 'la carte à gauche, la platine à droite'],
                 ['lignes', 'L’un sous l’autre', 'la carte en haut, la platine en bas'],
                 ['platine', 'La platine seule', 'la carte d’un appui, quand on en a besoin'],
-                ['carte', 'La carte seule', 'pour lire le schéma en grand']];
+                ['carte', 'La carte seule', 'pour lire le schéma en grand'],
+                // 30/09 (Franck : « la platine est petite » ; « une série de travail avec le schéma en papier ») : la platine en grand
+                ['papier', 'Schéma sur papier', 'la platine en grand, le schéma sur votre feuille (modes Aidé et Avancé)']];
 const TAILLES = [['petite', 'Petite'], ['moyenne', 'Moyenne'], ['grande', 'Grande']];
 
 let fait = false;
@@ -61,6 +63,9 @@ function demarrer() {
     '<h3>Aussi</h3><div class="choix ligne" id="choix-autres">' +
     '<button id="aff-plein-ecran">⛶ Plein écran</button><button id="aff-autre-ecran">Carte sur un autre écran</button>' +
     '<button id="aff-reperes">Repères</button></div>' +
+    // 30/09 (voix V3) : la voix du professeur se règle ici, pas par un bouton de plus ; la vitesse, obligatoire (doctrine § 5)
+    '<h3>Voix du professeur</h3><div class="choix ligne" id="choix-voix"><button id="aff-voix">Voix</button>' +
+    '<label style="display:flex;align-items:center;gap:8px;font:600 14px system-ui,sans-serif">Vitesse <input type="range" id="aff-vitesse" min="0.6" max="1.4" step="0.05" style="width:150px"> <span id="aff-vitesse-v"></span></label></div>' +
     '<div class="pied"><button class="action principal" id="aff-fermer">Fermer</button></div></div>';
   document.body.appendChild(voile);
   const ouvrir = () => { voile.classList.add('ouvert'); peindre(); };
@@ -75,6 +80,9 @@ function demarrer() {
   document.addEventListener('fullscreenchange', peindre);
   $('#aff-autre-ecran').onclick = () => { const b = $('#btn-detacher'); if (b) b.click(); fermer(); };
   $('#aff-reperes').onclick = () => { pref.reperes = !pref.reperes; garder(); appliquer(); peindre(); };
+  const V = () => window.CABLAGE_VOIX;
+  $('#aff-voix').onclick = () => { if (V()) { V().regler({ actif: !V().reglage().actif }); peindre(); } };
+  $('#aff-vitesse').oninput = (e) => { if (V()) { V().regler({ vitesse: +e.target.value }); peindre(); } };
 
   function peindre() {
     voile.querySelectorAll('#choix-dispo button').forEach(b => b.classList.toggle('actif', b.dataset.dispo === pref.dispo));
@@ -84,20 +92,21 @@ function demarrer() {
     if (pref.dispo === 'lignes') $('#titre-taille').textContent = 'Hauteur de la carte'; else $('#titre-taille').textContent = 'Place de la carte';
     const pe = $('#aff-plein-ecran'); pe.classList.toggle('actif', !!document.fullscreenElement); pe.textContent = document.fullscreenElement ? '⛶ Quitter le plein écran' : '⛶ Plein écran';
     const r = $('#aff-reperes'); r.classList.toggle('actif', pref.reperes); r.textContent = pref.reperes ? 'Repères : montrés' : 'Repères : repliés';
+    const v = window.CABLAGE_VOIX && window.CABLAGE_VOIX.reglage();
+    $('#choix-voix').hidden = !v;
+    if (v) { const b = $('#aff-voix'); b.classList.toggle('actif', v.actif); b.textContent = v.actif ? 'Voix : oui' : 'Voix : non';
+             $('#aff-vitesse').value = v.vitesse; $('#aff-vitesse-v').textContent = v.vitesse.toFixed(2).replace('.', ',') + '×'; }
   }
-  function cadrerPlatine() {   // la platine seule se cadre sur sa zone utile : des appareils du rail 1 aux repères du bornier
+  function cadrerPlatine() {   // la platine seule se cadre sur sa zone utile : toutes les bornes, l'arrivée et les moteurs compris
     const p = $('#platine'), svg = p && p.querySelector('.corps svg'), z = p && p._zoom;
     const cadre = svg && (svg.querySelector('.fond-platine.cadre') || svg.querySelector('.fond-platine'));
     if (!z || !cadre || !z.cadrer) return;
     const c = cadre.getBBox(); if (!c.width || !c.height) return;
-    // 28/09 : quand l'essentiel des bornes est SOUS la platine (appareillage domestique : interrupteurs, poussoirs, douilles),
-    // c'est là que l'élève câble — la zone utile les prend ; sinon elle s'arrête au bornier (le réseau et les moteurs se déplient au doigt)
+    // 29/09 (Franck : « les bandes d'alimentation sont souvent en dehors du champ de vision ») : la zone utile prend TOUTES les
+    // bornes ; s'arrêter au bornier laissait l'arrivée du réseau et les moteurs hors champ, et le premier fil part de l'arrivée
     const bornes = [...svg.querySelectorAll('.borne')].map(el => el.getBBox());
-    const dedans = (b) => { const cx = b.x + b.width / 2, cy = b.y + b.height / 2; return cx >= c.x && cx <= c.x + c.width && cy >= c.y && cy <= c.y + c.height; };
-    const tout = bornes.filter(dedans).length < bornes.length / 2;
     let u = null;
     bornes.forEach(b => {
-      if (!tout && !dedans(b)) return;
       u = u ? { x1: Math.min(u.x1, b.x), y1: Math.min(u.y1, b.y), x2: Math.max(u.x2, b.x + b.width), y2: Math.max(u.y2, b.y + b.height) }
             : { x1: b.x, y1: b.y, x2: b.x + b.width, y2: b.y + b.height };
     });
@@ -107,15 +116,18 @@ function demarrer() {
   }
   function appliquer() {
     const b = document.body.classList;
-    ['dispo-colonnes', 'dispo-lignes', 'vue-platine', 'vue-carte-seule', 'un-panneau', 'taille-petite', 'taille-moyenne', 'taille-grande', 'reperes-replies'].forEach(c => b.remove(c));
+    ['dispo-colonnes', 'dispo-lignes', 'vue-platine', 'vue-carte-seule', 'vue-papier', 'un-panneau', 'taille-petite', 'taille-moyenne', 'taille-grande', 'reperes-replies'].forEach(c => b.remove(c));
     if (pref.dispo === 'platine') b.add('vue-platine', 'un-panneau');
+    else if (pref.dispo === 'papier') b.add('vue-platine', 'vue-papier', 'un-panneau');
     else if (pref.dispo === 'carte') b.add('vue-carte-seule', 'un-panneau');
     else b.add('dispo-' + pref.dispo, 'taille-' + pref.taille);
     if (!pref.reperes) b.add('reperes-replies');
     requestAnimationFrame(() => {   // les panneaux ont changé de taille : on les recadre
-      const ids = pref.dispo === 'carte' ? ['#carte'] : pref.dispo === 'platine' ? ['#platine'] : ['#carte', '#platine'];
+      const seule = pref.dispo === 'platine' || pref.dispo === 'papier';
+      const ids = pref.dispo === 'carte' ? ['#carte'] : seule ? ['#platine'] : ['#carte', '#platine'];
       ids.forEach(s => { const x = $(s + ' button[data-zoom="ajuster"]'); if (x) x.click(); });
-      if (pref.dispo === 'platine') cadrerPlatine();
+      if (seule) cadrerPlatine();
+      if (window.CABLAGE_SUIVRE) window.CABLAGE_SUIVRE();   // en Guidé, les deux bornes du fil en cours restent dans la vue
       window.dispatchEvent(new Event('resize'));
     });
   }

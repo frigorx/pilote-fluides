@@ -1,0 +1,1002 @@
+{
+ "voix": "fr-FR-RemyMultilingualNeural",
+ "debit": "-5%",
+ "pistes": {
+  "tuto-0": {
+   "fichier": "mp3/tuto-0-c916c02db4d8.mp3",
+   "duree": 33.1,
+   "mots": 96,
+   "mots_s": 2.9
+  },
+  "tuto-1": {
+   "fichier": "mp3/tuto-1-f2c1f0e6d78f.mp3",
+   "duree": 28.9,
+   "mots": 91,
+   "mots_s": 3.15
+  },
+  "tuto-2": {
+   "fichier": "mp3/tuto-2-ee8cf44ea8fa.mp3",
+   "duree": 16.2,
+   "mots": 49,
+   "mots_s": 3.02
+  },
+  "tuto-3": {
+   "fichier": "mp3/tuto-3-8657fed44b4a.mp3",
+   "duree": 35.2,
+   "mots": 103,
+   "mots_s": 2.93
+  },
+  "tuto-4": {
+   "fichier": "mp3/tuto-4-f41835703753.mp3",
+   "duree": 9.2,
+   "mots": 28,
+   "mots_s": 3.04
+  },
+  "tuto-5": {
+   "fichier": "mp3/tuto-5-157bcd084cb4.mp3",
+   "duree": 27.1,
+   "mots": 80,
+   "mots_s": 2.95
+  },
+  "tuto-6": {
+   "fichier": "mp3/tuto-6-6d9c58dfee3f.mp3",
+   "duree": 23.8,
+   "mots": 66,
+   "mots_s": 2.78
+  },
+  "tuto-7": {
+   "fichier": "mp3/tuto-7-ea61ec3f0bc6.mp3",
+   "duree": 15.6,
+   "mots": 52,
+   "mots_s": 3.33
+  },
+  "tuto-8": {
+   "fichier": "mp3/tuto-8-4a5d332cf50a.mp3",
+   "duree": 10.4,
+   "mots": 32,
+   "mots_s": 3.09
+  },
+  "tuto-9": {
+   "fichier": "mp3/tuto-9-d825f6d4baec.mp3",
+   "duree": 22.8,
+   "mots": 63,
+   "mots_s": 2.76
+  },
+  "tuto-10": {
+   "fichier": "mp3/tuto-10-99307e2985e4.mp3",
+   "duree": 11.9,
+   "mots": 30,
+   "mots_s": 2.53
+  },
+  "tuto-11": {
+   "fichier": "mp3/tuto-11-237372325439.mp3",
+   "duree": 33.5,
+   "mots": 98,
+   "mots_s": 2.93
+  },
+  "tuto-12": {
+   "fichier": "mp3/tuto-12-85917b969cf2.mp3",
+   "duree": 13.3,
+   "mots": 33,
+   "mots_s": 2.48
+  },
+  "tuto-13": {
+   "fichier": "mp3/tuto-13-f2d08768fb8a.mp3",
+   "duree": 20.1,
+   "mots": 61,
+   "mots_s": 3.03
+  },
+  "n1-colorier": {
+   "fichier": "mp3/n1-colorier-61be2a8167fb.mp3",
+   "duree": 24.8,
+   "mots": 68,
+   "mots_s": 2.74
+  },
+  "n1-reperer": {
+   "fichier": "mp3/n1-reperer-f53aa427373a.mp3",
+   "duree": 23.7,
+   "mots": 63,
+   "mots_s": 2.66
+  },
+  "n1-cabler": {
+   "fichier": "mp3/n1-cabler-3d9ddf9f8d07.mp3",
+   "duree": 26.1,
+   "mots": 80,
+   "mots_s": 3.07
+  },
+  "n1-fil-1": {
+   "fichier": "mp3/n1-fil-1-c50048bdf6c0.mp3",
+   "duree": 25.0,
+   "mots": 72,
+   "mots_s": 2.88
+  },
+  "n1-arme": {
+   "fichier": "mp3/n1-arme-49686023486c.mp3",
+   "duree": 4.5,
+   "mots": 10,
+   "mots_s": 2.24
+  },
+  "n1-fil-2": {
+   "fichier": "mp3/n1-fil-2-973dab3882c6.mp3",
+   "duree": 10.3,
+   "mots": 27,
+   "mots_s": 2.62
+  },
+  "n1-fil-3": {
+   "fichier": "mp3/n1-fil-3-15c65781c392.mp3",
+   "duree": 3.7,
+   "mots": 9,
+   "mots_s": 2.45
+  },
+  "n1-fil-4": {
+   "fichier": "mp3/n1-fil-4-ca1bfbe4a37f.mp3",
+   "duree": 13.8,
+   "mots": 37,
+   "mots_s": 2.69
+  },
+  "n1-fil-5": {
+   "fichier": "mp3/n1-fil-5-a3303d042955.mp3",
+   "duree": 14.7,
+   "mots": 44,
+   "mots_s": 3.0
+  },
+  "n1-fil-6": {
+   "fichier": "mp3/n1-fil-6-bc35367e9015.mp3",
+   "duree": 25.3,
+   "mots": 65,
+   "mots_s": 2.57
+  },
+  "n1-fil-7": {
+   "fichier": "mp3/n1-fil-7-b3f94e21b323.mp3",
+   "duree": 4.8,
+   "mots": 11,
+   "mots_s": 2.27
+  },
+  "n1-fil-8": {
+   "fichier": "mp3/n1-fil-8-ccf1833a1e66.mp3",
+   "duree": 3.6,
+   "mots": 10,
+   "mots_s": 2.8
+  },
+  "n1-fil-9": {
+   "fichier": "mp3/n1-fil-9-07d00ee64c0c.mp3",
+   "duree": 28.8,
+   "mots": 82,
+   "mots_s": 2.85
+  },
+  "n1-fil-10": {
+   "fichier": "mp3/n1-fil-10-77e53fdd4d89.mp3",
+   "duree": 2.5,
+   "mots": 6,
+   "mots_s": 2.36
+  },
+  "n1-fil-11": {
+   "fichier": "mp3/n1-fil-11-59eb650b6ce8.mp3",
+   "duree": 1.9,
+   "mots": 4,
+   "mots_s": 2.14
+  },
+  "n1-fil-12": {
+   "fichier": "mp3/n1-fil-12-7b0478a34138.mp3",
+   "duree": 19.2,
+   "mots": 51,
+   "mots_s": 2.66
+  },
+  "n1-fil-13": {
+   "fichier": "mp3/n1-fil-13-9e477a22d2ae.mp3",
+   "duree": 3.7,
+   "mots": 7,
+   "mots_s": 1.87
+  },
+  "n1-fil-14": {
+   "fichier": "mp3/n1-fil-14-449dd4854a1a.mp3",
+   "duree": 1.9,
+   "mots": 3,
+   "mots_s": 1.6
+  },
+  "n1-fil-15": {
+   "fichier": "mp3/n1-fil-15-0851baf11737.mp3",
+   "duree": 12.9,
+   "mots": 32,
+   "mots_s": 2.48
+  },
+  "n1-fil-16": {
+   "fichier": "mp3/n1-fil-16-c2a847b529e9.mp3",
+   "duree": 3.3,
+   "mots": 7,
+   "mots_s": 2.13
+  },
+  "n1-fil-17": {
+   "fichier": "mp3/n1-fil-17-449dd4854a1a.mp3",
+   "duree": 1.9,
+   "mots": 3,
+   "mots_s": 1.6
+  },
+  "n1-fil-18": {
+   "fichier": "mp3/n1-fil-18-6f6dc8b5b9a5.mp3",
+   "duree": 21.2,
+   "mots": 58,
+   "mots_s": 2.74
+  },
+  "n1-fil-19": {
+   "fichier": "mp3/n1-fil-19-9d0fc8351dcd.mp3",
+   "duree": 3.3,
+   "mots": 8,
+   "mots_s": 2.4
+  },
+  "n1-fil-20": {
+   "fichier": "mp3/n1-fil-20-e17ce04addbf.mp3",
+   "duree": 1.9,
+   "mots": 4,
+   "mots_s": 2.14
+  },
+  "n1-fil-21": {
+   "fichier": "mp3/n1-fil-21-3377b3ae4eb5.mp3",
+   "duree": 16.8,
+   "mots": 56,
+   "mots_s": 3.34
+  },
+  "n1-fil-22": {
+   "fichier": "mp3/n1-fil-22-5e8410f3def0.mp3",
+   "duree": 11.4,
+   "mots": 33,
+   "mots_s": 2.9
+  },
+  "n1-fini": {
+   "fichier": "mp3/n1-fini-6b51b8717391.mp3",
+   "duree": 10.4,
+   "mots": 28,
+   "mots_s": 2.7
+  },
+  "n1-refus": {
+   "fichier": "mp3/n1-refus-a454ba52ab39.mp3",
+   "duree": 11.3,
+   "mots": 38,
+   "mots_s": 3.36
+  },
+  "n1-essayer": {
+   "fichier": "mp3/n1-essayer-e35c967387bf.mp3",
+   "duree": 21.8,
+   "mots": 61,
+   "mots_s": 2.8
+  },
+  "n1-ev-q1": {
+   "fichier": "mp3/n1-ev-q1-aac13894d32d.mp3",
+   "duree": 22.2,
+   "mots": 60,
+   "mots_s": 2.71
+  },
+  "n1-ev-direct": {
+   "fichier": "mp3/n1-ev-direct-251ac076bf84.mp3",
+   "duree": 21.2,
+   "mots": 60,
+   "mots_s": 2.82
+  },
+  "n1-ev-inverse": {
+   "fichier": "mp3/n1-ev-inverse-afb1c8c6d632.mp3",
+   "duree": 18.0,
+   "mots": 54,
+   "mots_s": 3.01
+  },
+  "n1-ev-ronfle": {
+   "fichier": "mp3/n1-ev-ronfle-8754b4c1afb0.mp3",
+   "duree": 15.5,
+   "mots": 41,
+   "mots_s": 2.65
+  },
+  "n1-ev-cc": {
+   "fichier": "mp3/n1-ev-cc-9478f0093fe7.mp3",
+   "duree": 18.2,
+   "mots": 55,
+   "mots_s": 3.02
+  },
+  "n1-ev-f1": {
+   "fichier": "mp3/n1-ev-f1-f6a04102ea77.mp3",
+   "duree": 21.7,
+   "mots": 62,
+   "mots_s": 2.85
+  },
+  "n1-ev-arret": {
+   "fichier": "mp3/n1-ev-arret-3bfe97fa0760.mp3",
+   "duree": 11.5,
+   "mots": 33,
+   "mots_s": 2.86
+  },
+  "aide-1": {
+   "fichier": "mp3/aide-1-d9a061140578.mp3",
+   "duree": 24.4,
+   "mots": 76,
+   "mots_s": 3.12
+  },
+  "aide-2": {
+   "fichier": "mp3/aide-2-53e7fd4a6201.mp3",
+   "duree": 17.8,
+   "mots": 54,
+   "mots_s": 3.04
+  },
+  "aide-3": {
+   "fichier": "mp3/aide-3-1026a2d1834e.mp3",
+   "duree": 16.7,
+   "mots": 53,
+   "mots_s": 3.18
+  },
+  "born-1": {
+   "fichier": "mp3/born-1-471ae8b46601.mp3",
+   "duree": 31.5,
+   "mots": 104,
+   "mots_s": 3.3
+  },
+  "born-2": {
+   "fichier": "mp3/born-2-3b58eb350471.mp3",
+   "duree": 37.3,
+   "mots": 101,
+   "mots_s": 2.71
+  },
+  "born-3": {
+   "fichier": "mp3/born-3-ce89c328e26b.mp3",
+   "duree": 29.3,
+   "mots": 91,
+   "mots_s": 3.11
+  },
+  "born-4": {
+   "fichier": "mp3/born-4-d019ae719d4f.mp3",
+   "duree": 34.3,
+   "mots": 108,
+   "mots_s": 3.15
+  },
+  "born-5": {
+   "fichier": "mp3/born-5-289e1d667986.mp3",
+   "duree": 20.6,
+   "mots": 61,
+   "mots_s": 2.96
+  },
+  "born-7": {
+   "fichier": "mp3/born-7-909a7e708a6c.mp3",
+   "duree": 14.7,
+   "mots": 41,
+   "mots_s": 2.79
+  },
+  "etape-colorier": {
+   "fichier": "mp3/etape-colorier-166810b3ee11.mp3",
+   "duree": 21.7,
+   "mots": 64,
+   "mots_s": 2.95
+  },
+  "etape-reperer": {
+   "fichier": "mp3/etape-reperer-28d9b0f6aabe.mp3",
+   "duree": 31.2,
+   "mots": 89,
+   "mots_s": 2.86
+  },
+  "etape-cabler": {
+   "fichier": "mp3/etape-cabler-2b294bec9588.mp3",
+   "duree": 21.8,
+   "mots": 64,
+   "mots_s": 2.94
+  },
+  "etape-essayer": {
+   "fichier": "mp3/etape-essayer-9b6835b2ffc2.mp3",
+   "duree": 14.4,
+   "mots": 36,
+   "mots_s": 2.5
+  },
+  "etape-realiser": {
+   "fichier": "mp3/etape-realiser-38e86d2542cd.mp3",
+   "duree": 19.4,
+   "mots": 53,
+   "mots_s": 2.74
+  },
+  "fini": {
+   "fichier": "mp3/fini-f85c3ba6fd57.mp3",
+   "duree": 9.3,
+   "mots": 24,
+   "mots_s": 2.58
+  },
+  "refus": {
+   "fichier": "mp3/refus-101b919869f5.mp3",
+   "duree": 10.5,
+   "mots": 36,
+   "mots_s": 3.44
+  },
+  "arme": {
+   "fichier": "mp3/arme-49686023486c.mp3",
+   "duree": 4.5,
+   "mots": 10,
+   "mots_s": 2.24
+  },
+  "fil-arrivee": {
+   "fichier": "mp3/fil-arrivee-df8fc6aa81ff.mp3",
+   "duree": 9.0,
+   "mots": 29,
+   "mots_s": 3.21
+  },
+  "fil-vers-bornier": {
+   "fichier": "mp3/fil-vers-bornier-e9faa9846fb8.mp3",
+   "duree": 8.5,
+   "mots": 27,
+   "mots_s": 3.19
+  },
+  "fil-bornier-terrain": {
+   "fichier": "mp3/fil-bornier-terrain-256b4eb765d0.mp3",
+   "duree": 8.5,
+   "mots": 28,
+   "mots_s": 3.29
+  },
+  "fil-puissance": {
+   "fichier": "mp3/fil-puissance-6dcd642cc7a7.mp3",
+   "duree": 9.4,
+   "mots": 33,
+   "mots_s": 3.52
+  },
+  "fil-commande": {
+   "fichier": "mp3/fil-commande-83bc16670363.mp3",
+   "duree": 9.8,
+   "mots": 35,
+   "mots_s": 3.57
+  },
+  "fil-terre": {
+   "fichier": "mp3/fil-terre-2e74f16fd630.mp3",
+   "duree": 9.4,
+   "mots": 29,
+   "mots_s": 3.09
+  },
+  "fil-neutre": {
+   "fichier": "mp3/fil-neutre-b7d284096210.mp3",
+   "duree": 7.5,
+   "mots": 19,
+   "mots_s": 2.55
+  },
+  "fil-pont": {
+   "fichier": "mp3/fil-pont-ac39ed8b7f5e.mp3",
+   "duree": 9.1,
+   "mots": 28,
+   "mots_s": 3.07
+  },
+  "fil-suite-1": {
+   "fichier": "mp3/fil-suite-1-3c64a18f24b9.mp3",
+   "duree": 2.5,
+   "mots": 5,
+   "mots_s": 1.97
+  },
+  "fil-suite-2": {
+   "fichier": "mp3/fil-suite-2-73241b32a133.mp3",
+   "duree": 2.6,
+   "mots": 6,
+   "mots_s": 2.29
+  },
+  "fil-suite-3": {
+   "fichier": "mp3/fil-suite-3-0d3bb052bb55.mp3",
+   "duree": 3.3,
+   "mots": 12,
+   "mots_s": 3.68
+  },
+  "app-bornier": {
+   "fichier": "mp3/app-bornier-65f5acfaca27.mp3",
+   "duree": 13.0,
+   "mots": 37,
+   "mots_s": 2.85
+  },
+  "app-disjoncteur": {
+   "fichier": "mp3/app-disjoncteur-5f521d624466.mp3",
+   "duree": 14.4,
+   "mots": 43,
+   "mots_s": 2.98
+  },
+  "app-disjoncteur-diff": {
+   "fichier": "mp3/app-disjoncteur-diff-889bfdcfe7f4.mp3",
+   "duree": 12.9,
+   "mots": 38,
+   "mots_s": 2.94
+  },
+  "app-disjoncteur-moteur": {
+   "fichier": "mp3/app-disjoncteur-moteur-5dc3db2d3135.mp3",
+   "duree": 13.0,
+   "mots": 42,
+   "mots_s": 3.23
+  },
+  "app-sectionneur-fusibles": {
+   "fichier": "mp3/app-sectionneur-fusibles-a870102a0ad7.mp3",
+   "duree": 12.9,
+   "mots": 34,
+   "mots_s": 2.64
+  },
+  "app-porte-fusible": {
+   "fichier": "mp3/app-porte-fusible-ca1aec5a02df.mp3",
+   "duree": 11.6,
+   "mots": 31,
+   "mots_s": 2.67
+  },
+  "app-fusible": {
+   "fichier": "mp3/app-fusible-76f1a2104152.mp3",
+   "duree": 7.8,
+   "mots": 22,
+   "mots_s": 2.84
+  },
+  "app-interrupteur-sectionneur": {
+   "fichier": "mp3/app-interrupteur-sectionneur-bbcce8da48af.mp3",
+   "duree": 12.1,
+   "mots": 29,
+   "mots_s": 2.4
+  },
+  "app-contacteur": {
+   "fichier": "mp3/app-contacteur-92fe8a85e707.mp3",
+   "duree": 13.4,
+   "mots": 35,
+   "mots_s": 2.6
+  },
+  "app-relais-thermique": {
+   "fichier": "mp3/app-relais-thermique-48ff2e4e3410.mp3",
+   "duree": 15.4,
+   "mots": 43,
+   "mots_s": 2.8
+  },
+  "app-relais": {
+   "fichier": "mp3/app-relais-a3c58498b911.mp3",
+   "duree": 10.7,
+   "mots": 28,
+   "mots_s": 2.61
+  },
+  "app-relais-temporise": {
+   "fichier": "mp3/app-relais-temporise-902b987b65f6.mp3",
+   "duree": 11.0,
+   "mots": 33,
+   "mots_s": 3.01
+  },
+  "app-bouton-marche": {
+   "fichier": "mp3/app-bouton-marche-681986ea6f18.mp3",
+   "duree": 8.7,
+   "mots": 21,
+   "mots_s": 2.42
+  },
+  "app-bouton-arret": {
+   "fichier": "mp3/app-bouton-arret-4ec2c781ae1d.mp3",
+   "duree": 12.6,
+   "mots": 32,
+   "mots_s": 2.55
+  },
+  "app-arret-urgence": {
+   "fichier": "mp3/app-arret-urgence-8e0f56e9cde7.mp3",
+   "duree": 11.1,
+   "mots": 35,
+   "mots_s": 3.16
+  },
+  "app-commutateur": {
+   "fichier": "mp3/app-commutateur-447e24ad0d46.mp3",
+   "duree": 8.8,
+   "mots": 28,
+   "mots_s": 3.18
+  },
+  "app-interrupteur": {
+   "fichier": "mp3/app-interrupteur-7e47f7b6220d.mp3",
+   "duree": 8.0,
+   "mots": 23,
+   "mots_s": 2.88
+  },
+  "app-va-et-vient": {
+   "fichier": "mp3/app-va-et-vient-891815c6445f.mp3",
+   "duree": 10.2,
+   "mots": 28,
+   "mots_s": 2.74
+  },
+  "app-poussoir-lumiere": {
+   "fichier": "mp3/app-poussoir-lumiere-ad600a53a925.mp3",
+   "duree": 9.7,
+   "mots": 23,
+   "mots_s": 2.36
+  },
+  "app-telerupteur": {
+   "fichier": "mp3/app-telerupteur-ad4280a517e7.mp3",
+   "duree": 11.1,
+   "mots": 27,
+   "mots_s": 2.43
+  },
+  "app-pressostat-bp": {
+   "fichier": "mp3/app-pressostat-bp-47b7dd2e1915.mp3",
+   "duree": 12.8,
+   "mots": 34,
+   "mots_s": 2.65
+  },
+  "app-pressostat-hp": {
+   "fichier": "mp3/app-pressostat-hp-a2a37ecea4c5.mp3",
+   "duree": 10.6,
+   "mots": 25,
+   "mots_s": 2.35
+  },
+  "app-pressostat-combine": {
+   "fichier": "mp3/app-pressostat-combine-a933ecfc5aea.mp3",
+   "duree": 10.4,
+   "mots": 27,
+   "mots_s": 2.6
+  },
+  "app-thermostat": {
+   "fichier": "mp3/app-thermostat-5717c758d594.mp3",
+   "duree": 8.8,
+   "mots": 23,
+   "mots_s": 2.61
+  },
+  "app-thermostat-2": {
+   "fichier": "mp3/app-thermostat-2-b24f6087d0b8.mp3",
+   "duree": 10.8,
+   "mots": 30,
+   "mots_s": 2.77
+  },
+  "app-horloge": {
+   "fichier": "mp3/app-horloge-9e90d05de7ee.mp3",
+   "duree": 8.8,
+   "mots": 24,
+   "mots_s": 2.74
+  },
+  "app-voyant": {
+   "fichier": "mp3/app-voyant-9c836d89f8df.mp3",
+   "duree": 9.8,
+   "mots": 25,
+   "mots_s": 2.56
+  },
+  "app-lampe": {
+   "fichier": "mp3/app-lampe-5b9761232828.mp3",
+   "duree": 6.1,
+   "mots": 16,
+   "mots_s": 2.61
+  },
+  "app-electrovanne": {
+   "fichier": "mp3/app-electrovanne-27c46cec46ea.mp3",
+   "duree": 10.4,
+   "mots": 21,
+   "mots_s": 2.01
+  },
+  "app-transformateur": {
+   "fichier": "mp3/app-transformateur-3f5fcdd7cd52.mp3",
+   "duree": 12.2,
+   "mots": 33,
+   "mots_s": 2.7
+  },
+  "app-moteur-tri": {
+   "fichier": "mp3/app-moteur-tri-ba5e6e13dd82.mp3",
+   "duree": 11.6,
+   "mots": 33,
+   "mots_s": 2.84
+  },
+  "app-moteur-6b": {
+   "fichier": "mp3/app-moteur-6b-1e6e9f7bcc62.mp3",
+   "duree": 10.6,
+   "mots": 38,
+   "mots_s": 3.57
+  },
+  "app-moteur-dahlander": {
+   "fichier": "mp3/app-moteur-dahlander-2b46d8e73b97.mp3",
+   "duree": 7.1,
+   "mots": 21,
+   "mots_s": 2.95
+  },
+  "app-moteur-mono": {
+   "fichier": "mp3/app-moteur-mono-890c0eed7246.mp3",
+   "duree": 8.6,
+   "mots": 24,
+   "mots_s": 2.8
+  },
+  "app-resistance": {
+   "fichier": "mp3/app-resistance-734296ceb3b9.mp3",
+   "duree": 8.1,
+   "mots": 18,
+   "mots_s": 2.23
+  },
+  "ev-protection": {
+   "fichier": "mp3/ev-protection-e2e631f87dcd.mp3",
+   "duree": 10.4,
+   "mots": 26,
+   "mots_s": 2.5
+  },
+  "ev-colle": {
+   "fichier": "mp3/ev-colle-9c116646b94f.mp3",
+   "duree": 9.8,
+   "mots": 24,
+   "mots_s": 2.44
+  },
+  "ev-colle-main": {
+   "fichier": "mp3/ev-colle-main-3a1047f00c89.mp3",
+   "duree": 9.5,
+   "mots": 30,
+   "mots_s": 3.15
+  },
+  "ev-automaintien": {
+   "fichier": "mp3/ev-automaintien-cb65967cd2c7.mp3",
+   "duree": 14.0,
+   "mots": 38,
+   "mots_s": 2.72
+  },
+  "ev-retombe": {
+   "fichier": "mp3/ev-retombe-104eb907ebd6.mp3",
+   "duree": 8.5,
+   "mots": 19,
+   "mots_s": 2.22
+  },
+  "ev-moteur-direct": {
+   "fichier": "mp3/ev-moteur-direct-9ff2230d22d1.mp3",
+   "duree": 5.3,
+   "mots": 15,
+   "mots_s": 2.84
+  },
+  "ev-moteur-inverse": {
+   "fichier": "mp3/ev-moteur-inverse-14b6ce2a51fb.mp3",
+   "duree": 10.9,
+   "mots": 31,
+   "mots_s": 2.85
+  },
+  "ev-etoile": {
+   "fichier": "mp3/ev-etoile-0224ada6df82.mp3",
+   "duree": 6.9,
+   "mots": 18,
+   "mots_s": 2.6
+  },
+  "ev-triangle": {
+   "fichier": "mp3/ev-triangle-dcf634ac3f89.mp3",
+   "duree": 6.7,
+   "mots": 19,
+   "mots_s": 2.84
+  },
+  "ev-petite-vitesse": {
+   "fichier": "mp3/ev-petite-vitesse-e166f4ee885c.mp3",
+   "duree": 6.7,
+   "mots": 21,
+   "mots_s": 3.14
+  },
+  "ev-grande-vitesse": {
+   "fichier": "mp3/ev-grande-vitesse-1b3754ece4c2.mp3",
+   "duree": 7.5,
+   "mots": 24,
+   "mots_s": 3.22
+  },
+  "ev-moteur-mono": {
+   "fichier": "mp3/ev-moteur-mono-787fec2dd110.mp3",
+   "duree": 4.1,
+   "mots": 11,
+   "mots_s": 2.71
+  },
+  "ev-ronfle": {
+   "fichier": "mp3/ev-ronfle-a1c332322513.mp3",
+   "duree": 10.4,
+   "mots": 32,
+   "mots_s": 3.07
+  },
+  "ev-arret": {
+   "fichier": "mp3/ev-arret-39b977eb2821.mp3",
+   "duree": 8.6,
+   "mots": 25,
+   "mots_s": 2.89
+  },
+  "ev-cc": {
+   "fichier": "mp3/ev-cc-bf5b4a799c6a.mp3",
+   "duree": 16.7,
+   "mots": 49,
+   "mots_s": 2.94
+  },
+  "ev-thermique-commande": {
+   "fichier": "mp3/ev-thermique-commande-5899167a5d93.mp3",
+   "duree": 14.5,
+   "mots": 36,
+   "mots_s": 2.48
+  },
+  "ev-thermique-seul": {
+   "fichier": "mp3/ev-thermique-seul-5c367f27ad03.mp3",
+   "duree": 11.8,
+   "mots": 33,
+   "mots_s": 2.79
+  },
+  "ev-lampe": {
+   "fichier": "mp3/ev-lampe-66c2418c1307.mp3",
+   "duree": 6.3,
+   "mots": 18,
+   "mots_s": 2.87
+  },
+  "ev-electrovanne": {
+   "fichier": "mp3/ev-electrovanne-ed5d089dd62d.mp3",
+   "duree": 6.0,
+   "mots": 13,
+   "mots_s": 2.17
+  },
+  "ev-resistance": {
+   "fichier": "mp3/ev-resistance-e506883fa118.mp3",
+   "duree": 3.6,
+   "mots": 8,
+   "mots_s": 2.21
+  },
+  "ev-transfo": {
+   "fichier": "mp3/ev-transfo-32575a1e725c.mp3",
+   "duree": 6.6,
+   "mots": 18,
+   "mots_s": 2.72
+  },
+  "ev-voyant": {
+   "fichier": "mp3/ev-voyant-856df71ee961.mp3",
+   "duree": 4.7,
+   "mots": 10,
+   "mots_s": 2.14
+  },
+  "ev-pompage": {
+   "fichier": "mp3/ev-pompage-d24484cc6ec4.mp3",
+   "duree": 10.9,
+   "mots": 29,
+   "mots_s": 2.66
+  },
+  "ev-defaut": {
+   "fichier": "mp3/ev-defaut-e86e0fbf29f6.mp3",
+   "duree": 10.6,
+   "mots": 32,
+   "mots_s": 3.01
+  },
+  "ex-allumage-simple": {
+   "fichier": "mp3/ex-allumage-simple-e4de379577ce.mp3",
+   "duree": 16.8,
+   "mots": 52,
+   "mots_s": 3.1
+  },
+  "ex-va-et-vient": {
+   "fichier": "mp3/ex-va-et-vient-2bb353f14343.mp3",
+   "duree": 12.6,
+   "mots": 43,
+   "mots_s": 3.41
+  },
+  "ex-telerupteur": {
+   "fichier": "mp3/ex-telerupteur-4e3d09f4eab6.mp3",
+   "duree": 13.8,
+   "mots": 34,
+   "mots_s": 2.47
+  },
+  "ex-demarrage-direct-tri": {
+   "fichier": "mp3/ex-demarrage-direct-tri-5461a36dbd7f.mp3",
+   "duree": 17.0,
+   "mots": 50,
+   "mots_s": 2.95
+  },
+  "ex-cablage-1-commande": {
+   "fichier": "mp3/ex-cablage-1-commande-d89fd8c77a88.mp3",
+   "duree": 20.8,
+   "mots": 65,
+   "mots_s": 3.12
+  },
+  "ex-cablage-2": {
+   "fichier": "mp3/ex-cablage-2-dc27f2076bee.mp3",
+   "duree": 19.8,
+   "mots": 49,
+   "mots_s": 2.47
+  },
+  "ex-cablage-3": {
+   "fichier": "mp3/ex-cablage-3-4c87590f32e3.mp3",
+   "duree": 18.7,
+   "mots": 53,
+   "mots_s": 2.83
+  },
+  "ex-cablage-3-commande": {
+   "fichier": "mp3/ex-cablage-3-commande-5e17cb031b40.mp3",
+   "duree": 14.5,
+   "mots": 42,
+   "mots_s": 2.89
+  },
+  "ex-cablage-4": {
+   "fichier": "mp3/ex-cablage-4-d6dd19b91322.mp3",
+   "duree": 16.6,
+   "mots": 47,
+   "mots_s": 2.83
+  },
+  "ex-cablage-4-commande": {
+   "fichier": "mp3/ex-cablage-4-commande-42ed58ce06df.mp3",
+   "duree": 16.9,
+   "mots": 49,
+   "mots_s": 2.9
+  },
+  "ex-cablage-5": {
+   "fichier": "mp3/ex-cablage-5-2e3a9e60cde3.mp3",
+   "duree": 20.8,
+   "mots": 57,
+   "mots_s": 2.74
+  },
+  "ex-cablage-5-commande": {
+   "fichier": "mp3/ex-cablage-5-commande-678ad06fd95a.mp3",
+   "duree": 15.3,
+   "mots": 40,
+   "mots_s": 2.62
+  },
+  "ex-cablage-6": {
+   "fichier": "mp3/ex-cablage-6-ac22a7356c0c.mp3",
+   "duree": 20.6,
+   "mots": 57,
+   "mots_s": 2.76
+  },
+  "ex-cablage-6-commande": {
+   "fichier": "mp3/ex-cablage-6-commande-822511bf022e.mp3",
+   "duree": 21.6,
+   "mots": 60,
+   "mots_s": 2.77
+  },
+  "ex-cablage-7": {
+   "fichier": "mp3/ex-cablage-7-101a371b061a.mp3",
+   "duree": 18.8,
+   "mots": 50,
+   "mots_s": 2.66
+  },
+  "ex-cablage-7-commande": {
+   "fichier": "mp3/ex-cablage-7-commande-5917e290a1fe.mp3",
+   "duree": 22.9,
+   "mots": 54,
+   "mots_s": 2.36
+  },
+  "ex-cablage-8": {
+   "fichier": "mp3/ex-cablage-8-09f4e119a427.mp3",
+   "duree": 14.8,
+   "mots": 35,
+   "mots_s": 2.37
+  },
+  "ex-cablage-8-commande": {
+   "fichier": "mp3/ex-cablage-8-commande-23bfb34a3cca.mp3",
+   "duree": 22.5,
+   "mots": 55,
+   "mots_s": 2.44
+  },
+  "ex-cablage-9": {
+   "fichier": "mp3/ex-cablage-9-5aa734d13745.mp3",
+   "duree": 22.8,
+   "mots": 55,
+   "mots_s": 2.41
+  },
+  "ex-cablage-9-commande": {
+   "fichier": "mp3/ex-cablage-9-commande-266dde2668cc.mp3",
+   "duree": 22.4,
+   "mots": 68,
+   "mots_s": 3.03
+  },
+  "ex-cablage-10": {
+   "fichier": "mp3/ex-cablage-10-23891fb63311.mp3",
+   "duree": 20.6,
+   "mots": 48,
+   "mots_s": 2.33
+  },
+  "ex-cablage-10-commande": {
+   "fichier": "mp3/ex-cablage-10-commande-8281342331f9.mp3",
+   "duree": 17.6,
+   "mots": 45,
+   "mots_s": 2.56
+  },
+  "ex-cablage-11": {
+   "fichier": "mp3/ex-cablage-11-6dfdfb3a9ac2.mp3",
+   "duree": 14.5,
+   "mots": 37,
+   "mots_s": 2.55
+  },
+  "ex-cablage-11-commande": {
+   "fichier": "mp3/ex-cablage-11-commande-7c66a7f10e66.mp3",
+   "duree": 24.0,
+   "mots": 61,
+   "mots_s": 2.54
+  },
+  "ex-cablage-12": {
+   "fichier": "mp3/ex-cablage-12-a4fb3a02ec40.mp3",
+   "duree": 15.4,
+   "mots": 42,
+   "mots_s": 2.73
+  },
+  "ex-cablage-12-commande": {
+   "fichier": "mp3/ex-cablage-12-commande-c50366b9f5e3.mp3",
+   "duree": 15.2,
+   "mots": 39,
+   "mots_s": 2.56
+  },
+  "ex-cablage-13": {
+   "fichier": "mp3/ex-cablage-13-21274040b1f9.mp3",
+   "duree": 19.4,
+   "mots": 50,
+   "mots_s": 2.58
+  },
+  "app-thermostat-fd": {
+   "fichier": "mp3/app-thermostat-fd-03e1f7848d8e.mp3",
+   "duree": 10.0,
+   "mots": 25,
+   "mots_s": 2.5
+  },
+  "app-pressostat-condenseur": {
+   "fichier": "mp3/app-pressostat-condenseur-0168e798693a.mp3",
+   "duree": 9.9,
+   "mots": 28,
+   "mots_s": 2.84
+  }
+ }
+}

@@ -10,7 +10,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "allumage-simple-PROFESSEUR.pdf",
-   "taille": 295966
+   "taille": 283994
   },
   {
    "id": "d002",
@@ -19,7 +19,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "allumage-simple-PROFESSEUR.docx",
-   "taille": 106760
+   "taille": 112495
   },
   {
    "id": "d003",
@@ -28,7 +28,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "allumage-simple-GRILLE-PROFESSEUR.pdf",
-   "taille": 161360
+   "taille": 160836
   },
   {
    "id": "d004",
@@ -37,7 +37,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "allumage-simple-GRILLE-PROFESSEUR.docx",
-   "taille": 17958
+   "taille": 31650
   },
   {
    "id": "d005",
@@ -46,7 +46,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "allumage-simple-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 294971
+   "taille": 307542
   },
   {
    "id": "d006",
@@ -55,7 +55,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "allumage-simple-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19263
+   "taille": 34447
   },
   {
    "id": "d007",
@@ -64,7 +64,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-1-PROFESSEUR.pdf",
-   "taille": 373902
+   "taille": 324514
   },
   {
    "id": "d008",
@@ -73,7 +73,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-1-PROFESSEUR.docx",
-   "taille": 197689
+   "taille": 161474
   },
   {
    "id": "d009",
@@ -82,7 +82,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-1-GRILLE-PROFESSEUR.pdf",
-   "taille": 161509
+   "taille": 160983
   },
   {
    "id": "d010",
@@ -91,7 +91,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-1-GRILLE-PROFESSEUR.docx",
-   "taille": 17958
+   "taille": 31649
   },
   {
    "id": "d011",
@@ -100,7 +100,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-1-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292829
+   "taille": 307346
   },
   {
    "id": "d012",
@@ -109,7 +109,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-1-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19271
+   "taille": 34444
   },
   {
    "id": "d013",
@@ -118,7 +118,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-1-commande-PROFESSEUR.pdf",
-   "taille": 394959
+   "taille": 361950
   },
   {
    "id": "d014",
@@ -127,7 +127,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-1-commande-PROFESSEUR.docx",
-   "taille": 227843
+   "taille": 201469
   },
   {
    "id": "d015",
@@ -136,7 +136,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-1-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161569
+   "taille": 161039
   },
   {
    "id": "d016",
@@ -145,7 +145,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-1-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17959
+   "taille": 31659
   },
   {
    "id": "d017",
@@ -154,7 +154,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-1-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 297048
+   "taille": 309774
   },
   {
    "id": "d018",
@@ -163,7 +163,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-1-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19292
+   "taille": 34522
   },
   {
    "id": "d019",
@@ -172,7 +172,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-10-PROFESSEUR.pdf",
-   "taille": 499607
+   "taille": 397730
   },
   {
    "id": "d020",
@@ -181,7 +181,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-10-PROFESSEUR.docx",
-   "taille": 345980
+   "taille": 243977
   },
   {
    "id": "d021",
@@ -190,7 +190,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-10-GRILLE-PROFESSEUR.pdf",
-   "taille": 161575
+   "taille": 161047
   },
   {
    "id": "d022",
@@ -199,7 +199,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-10-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31660
   },
   {
    "id": "d023",
@@ -208,7 +208,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-10-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296046
+   "taille": 307902
   },
   {
    "id": "d024",
@@ -217,7 +217,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-10-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19294
+   "taille": 34485
   },
   {
    "id": "d025",
@@ -226,7 +226,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-10-commande-PROFESSEUR.pdf",
-   "taille": 581145
+   "taille": 497353
   },
   {
    "id": "d026",
@@ -235,7 +235,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-10-commande-PROFESSEUR.docx",
-   "taille": 401917
+   "taille": 312389
   },
   {
    "id": "d027",
@@ -244,7 +244,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-10-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161573
+   "taille": 161044
   },
   {
    "id": "d028",
@@ -253,7 +253,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-10-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17954
+   "taille": 31661
   },
   {
    "id": "d029",
@@ -262,7 +262,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-10-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 295660
+   "taille": 308454
   },
   {
    "id": "d030",
@@ -271,7 +271,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-10-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19329
+   "taille": 34510
   },
   {
    "id": "d031",
@@ -280,7 +280,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-11-PROFESSEUR.pdf",
-   "taille": 460750
+   "taille": 362814
   },
   {
    "id": "d032",
@@ -289,7 +289,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-11-PROFESSEUR.docx",
-   "taille": 312397
+   "taille": 213507
   },
   {
    "id": "d033",
@@ -298,7 +298,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-11-GRILLE-PROFESSEUR.pdf",
-   "taille": 161572
+   "taille": 161045
   },
   {
    "id": "d034",
@@ -307,7 +307,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-11-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31660
   },
   {
    "id": "d035",
@@ -316,7 +316,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-11-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 294973
+   "taille": 306833
   },
   {
    "id": "d036",
@@ -325,7 +325,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-11-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19289
+   "taille": 34475
   },
   {
    "id": "d037",
@@ -334,7 +334,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-11-commande-PROFESSEUR.pdf",
-   "taille": 557757
+   "taille": 467106
   },
   {
    "id": "d038",
@@ -343,7 +343,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-11-commande-PROFESSEUR.docx",
-   "taille": 389167
+   "taille": 291734
   },
   {
    "id": "d039",
@@ -352,7 +352,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-11-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161570
+   "taille": 161042
   },
   {
    "id": "d040",
@@ -361,7 +361,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-11-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17955
+   "taille": 31657
   },
   {
    "id": "d041",
@@ -370,7 +370,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-11-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 295158
+   "taille": 307957
   },
   {
    "id": "d042",
@@ -379,7 +379,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-11-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19317
+   "taille": 34497
   },
   {
    "id": "d043",
@@ -388,7 +388,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-12-PROFESSEUR.pdf",
-   "taille": 421719
+   "taille": 350044
   },
   {
    "id": "d044",
@@ -397,7 +397,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-12-PROFESSEUR.docx",
-   "taille": 264065
+   "taille": 194853
   },
   {
    "id": "d045",
@@ -406,7 +406,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-12-GRILLE-PROFESSEUR.pdf",
-   "taille": 161577
+   "taille": 161048
   },
   {
    "id": "d046",
@@ -415,7 +415,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-12-GRILLE-PROFESSEUR.docx",
-   "taille": 17955
+   "taille": 31660
   },
   {
    "id": "d047",
@@ -424,7 +424,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-12-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296056
+   "taille": 307921
   },
   {
    "id": "d048",
@@ -433,7 +433,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-12-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19312
+   "taille": 34494
   },
   {
    "id": "d049",
@@ -442,7 +442,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-12-commande-PROFESSEUR.pdf",
-   "taille": 561590
+   "taille": 483267
   },
   {
    "id": "d050",
@@ -451,7 +451,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-12-commande-PROFESSEUR.docx",
-   "taille": 376272
+   "taille": 296596
   },
   {
    "id": "d051",
@@ -460,7 +460,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-12-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161575
+   "taille": 161045
   },
   {
    "id": "d052",
@@ -469,7 +469,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-12-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17955
+   "taille": 31660
   },
   {
    "id": "d053",
@@ -478,7 +478,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-12-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 295983
+   "taille": 308809
   },
   {
    "id": "d054",
@@ -487,7 +487,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-12-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19336
+   "taille": 34515
   },
   {
    "id": "d055",
@@ -496,7 +496,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-13-PROFESSEUR.pdf",
-   "taille": 481210
+   "taille": 392980
   },
   {
    "id": "d056",
@@ -505,7 +505,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-13-PROFESSEUR.docx",
-   "taille": 333239
+   "taille": 237314
   },
   {
    "id": "d057",
@@ -514,7 +514,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-13-GRILLE-PROFESSEUR.pdf",
-   "taille": 161575
+   "taille": 161048
   },
   {
    "id": "d058",
@@ -523,7 +523,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-13-GRILLE-PROFESSEUR.docx",
-   "taille": 17955
+   "taille": 31660
   },
   {
    "id": "d059",
@@ -532,7 +532,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-13-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296825
+   "taille": 309191
   },
   {
    "id": "d060",
@@ -541,7 +541,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-13-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19295
+   "taille": 34495
   },
   {
    "id": "d061",
@@ -550,7 +550,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-2-PROFESSEUR.pdf",
-   "taille": 435176
+   "taille": 407997
   },
   {
    "id": "d062",
@@ -559,7 +559,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-2-PROFESSEUR.docx",
-   "taille": 260707
+   "taille": 231560
   },
   {
    "id": "d063",
@@ -568,7 +568,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-2-GRILLE-PROFESSEUR.pdf",
-   "taille": 161512
+   "taille": 160984
   },
   {
    "id": "d064",
@@ -577,7 +577,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-2-GRILLE-PROFESSEUR.docx",
-   "taille": 17958
+   "taille": 31652
   },
   {
    "id": "d065",
@@ -586,7 +586,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-2-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296302
+   "taille": 309146
   },
   {
    "id": "d066",
@@ -595,7 +595,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-2-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19328
+   "taille": 34533
   },
   {
    "id": "d067",
@@ -604,7 +604,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-3-PROFESSEUR.pdf",
-   "taille": 474456
+   "taille": 391094
   },
   {
    "id": "d068",
@@ -613,7 +613,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-3-PROFESSEUR.docx",
-   "taille": 310707
+   "taille": 234231
   },
   {
    "id": "d069",
@@ -622,7 +622,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-3-GRILLE-PROFESSEUR.pdf",
-   "taille": 161510
+   "taille": 160984
   },
   {
    "id": "d070",
@@ -631,7 +631,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-3-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31649
   },
   {
    "id": "d071",
@@ -640,7 +640,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-3-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 294574
+   "taille": 306753
   },
   {
    "id": "d072",
@@ -649,7 +649,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-3-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19283
+   "taille": 34466
   },
   {
    "id": "d073",
@@ -658,7 +658,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-3-commande-PROFESSEUR.pdf",
-   "taille": 497759
+   "taille": 439511
   },
   {
    "id": "d074",
@@ -667,7 +667,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-3-commande-PROFESSEUR.docx",
-   "taille": 339906
+   "taille": 275517
   },
   {
    "id": "d075",
@@ -676,7 +676,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-3-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161571
+   "taille": 161039
   },
   {
    "id": "d076",
@@ -685,7 +685,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-3-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17955
+   "taille": 31659
   },
   {
    "id": "d077",
@@ -694,7 +694,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-3-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296170
+   "taille": 309457
   },
   {
    "id": "d078",
@@ -703,7 +703,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-3-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19302
+   "taille": 34500
   },
   {
    "id": "d079",
@@ -712,7 +712,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-4-PROFESSEUR.pdf",
-   "taille": 383956
+   "taille": 338320
   },
   {
    "id": "d080",
@@ -721,7 +721,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-4-PROFESSEUR.docx",
-   "taille": 209364
+   "taille": 176434
   },
   {
    "id": "d081",
@@ -730,7 +730,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-4-GRILLE-PROFESSEUR.pdf",
-   "taille": 161510
+   "taille": 160982
   },
   {
    "id": "d082",
@@ -739,7 +739,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-4-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31651
   },
   {
    "id": "d083",
@@ -748,7 +748,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-4-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292674
+   "taille": 307180
   },
   {
    "id": "d084",
@@ -757,7 +757,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-4-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19277
+   "taille": 34448
   },
   {
    "id": "d085",
@@ -766,7 +766,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-4-commande-PROFESSEUR.pdf",
-   "taille": 420876
+   "taille": 378514
   },
   {
    "id": "d086",
@@ -775,7 +775,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-4-commande-PROFESSEUR.docx",
-   "taille": 252213
+   "taille": 219080
   },
   {
    "id": "d087",
@@ -784,7 +784,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-4-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161569
+   "taille": 161037
   },
   {
    "id": "d088",
@@ -793,7 +793,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-4-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17958
+   "taille": 31656
   },
   {
    "id": "d089",
@@ -802,7 +802,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-4-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 295714
+   "taille": 308996
   },
   {
    "id": "d090",
@@ -811,7 +811,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-4-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19310
+   "taille": 34502
   },
   {
    "id": "d091",
@@ -820,7 +820,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-5-PROFESSEUR.pdf",
-   "taille": 423385
+   "taille": 353042
   },
   {
    "id": "d092",
@@ -829,7 +829,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-5-PROFESSEUR.docx",
-   "taille": 257842
+   "taille": 193802
   },
   {
    "id": "d093",
@@ -838,7 +838,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-5-GRILLE-PROFESSEUR.pdf",
-   "taille": 161510
+   "taille": 160982
   },
   {
    "id": "d094",
@@ -847,7 +847,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-5-GRILLE-PROFESSEUR.docx",
-   "taille": 17958
+   "taille": 31648
   },
   {
    "id": "d095",
@@ -856,7 +856,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-5-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 293045
+   "taille": 307642
   },
   {
    "id": "d096",
@@ -865,7 +865,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-5-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19273
+   "taille": 34450
   },
   {
    "id": "d097",
@@ -874,7 +874,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-5-commande-PROFESSEUR.pdf",
-   "taille": 470563
+   "taille": 417111
   },
   {
    "id": "d098",
@@ -883,7 +883,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-5-commande-PROFESSEUR.docx",
-   "taille": 318233
+   "taille": 262975
   },
   {
    "id": "d099",
@@ -892,7 +892,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-5-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161572
+   "taille": 161038
   },
   {
    "id": "d100",
@@ -901,7 +901,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-5-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31659
   },
   {
    "id": "d101",
@@ -910,7 +910,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-5-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296702
+   "taille": 309969
   },
   {
    "id": "d102",
@@ -919,7 +919,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-5-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19326
+   "taille": 34523
   },
   {
    "id": "d103",
@@ -928,7 +928,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-6-PROFESSEUR.pdf",
-   "taille": 430796
+   "taille": 368771
   },
   {
    "id": "d104",
@@ -937,7 +937,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-6-PROFESSEUR.docx",
-   "taille": 275823
+   "taille": 216000
   },
   {
    "id": "d105",
@@ -946,7 +946,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-6-GRILLE-PROFESSEUR.pdf",
-   "taille": 161509
+   "taille": 160983
   },
   {
    "id": "d106",
@@ -955,7 +955,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-6-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31649
   },
   {
    "id": "d107",
@@ -964,7 +964,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-6-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 294691
+   "taille": 306877
   },
   {
    "id": "d108",
@@ -973,7 +973,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-6-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19265
+   "taille": 34449
   },
   {
    "id": "d109",
@@ -982,7 +982,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-6-commande-PROFESSEUR.pdf",
-   "taille": 531352
+   "taille": 452859
   },
   {
    "id": "d110",
@@ -991,7 +991,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-6-commande-PROFESSEUR.docx",
-   "taille": 378033
+   "taille": 300630
   },
   {
    "id": "d111",
@@ -1000,7 +1000,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-6-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161568
+   "taille": 161038
   },
   {
    "id": "d112",
@@ -1009,7 +1009,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-6-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31659
   },
   {
    "id": "d113",
@@ -1018,7 +1018,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-6-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296441
+   "taille": 309724
   },
   {
    "id": "d114",
@@ -1027,7 +1027,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-6-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19328
+   "taille": 34520
   },
   {
    "id": "d115",
@@ -1036,7 +1036,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-7-PROFESSEUR.pdf",
-   "taille": 556265
+   "taille": 424829
   },
   {
    "id": "d116",
@@ -1045,7 +1045,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-7-PROFESSEUR.docx",
-   "taille": 409528
+   "taille": 277487
   },
   {
    "id": "d117",
@@ -1054,7 +1054,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-7-GRILLE-PROFESSEUR.pdf",
-   "taille": 161569
+   "taille": 161042
   },
   {
    "id": "d118",
@@ -1063,7 +1063,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-7-GRILLE-PROFESSEUR.docx",
-   "taille": 17954
+   "taille": 31658
   },
   {
    "id": "d119",
@@ -1072,7 +1072,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-7-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296933
+   "taille": 309857
   },
   {
    "id": "d120",
@@ -1081,7 +1081,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-7-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19332
+   "taille": 34536
   },
   {
    "id": "d121",
@@ -1090,7 +1090,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-7-commande-PROFESSEUR.pdf",
-   "taille": 602476
+   "taille": 511730
   },
   {
    "id": "d122",
@@ -1099,7 +1099,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-7-commande-PROFESSEUR.docx",
-   "taille": 444951
+   "taille": 345750
   },
   {
    "id": "d123",
@@ -1108,7 +1108,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-7-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161570
+   "taille": 161038
   },
   {
    "id": "d124",
@@ -1117,7 +1117,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-7-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31659
   },
   {
    "id": "d125",
@@ -1126,7 +1126,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-7-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296394
+   "taille": 309637
   },
   {
    "id": "d126",
@@ -1135,7 +1135,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-7-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19321
+   "taille": 34510
   },
   {
    "id": "d127",
@@ -1144,7 +1144,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-8-PROFESSEUR.pdf",
-   "taille": 610214
+   "taille": 481717
   },
   {
    "id": "d128",
@@ -1153,7 +1153,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-8-PROFESSEUR.docx",
-   "taille": 459999
+   "taille": 322861
   },
   {
    "id": "d129",
@@ -1162,7 +1162,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-8-GRILLE-PROFESSEUR.pdf",
-   "taille": 161941
+   "taille": 161415
   },
   {
    "id": "d130",
@@ -1171,7 +1171,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-8-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31659
   },
   {
    "id": "d131",
@@ -1180,7 +1180,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-8-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 296148
+   "taille": 308636
   },
   {
    "id": "d132",
@@ -1189,7 +1189,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-8-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19313
+   "taille": 34505
   },
   {
    "id": "d133",
@@ -1198,7 +1198,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-8-commande-PROFESSEUR.pdf",
-   "taille": 677330
+   "taille": 526868
   },
   {
    "id": "d134",
@@ -1207,7 +1207,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-8-commande-PROFESSEUR.docx",
-   "taille": 519903
+   "taille": 358782
   },
   {
    "id": "d135",
@@ -1216,7 +1216,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-8-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161942
+   "taille": 161411
   },
   {
    "id": "d136",
@@ -1225,7 +1225,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-8-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17958
+   "taille": 31658
   },
   {
    "id": "d137",
@@ -1234,7 +1234,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-8-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 297145
+   "taille": 310400
   },
   {
    "id": "d138",
@@ -1243,7 +1243,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-8-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19336
+   "taille": 34529
   },
   {
    "id": "d139",
@@ -1252,7 +1252,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-9-PROFESSEUR.pdf",
-   "taille": 511243
+   "taille": 413595
   },
   {
    "id": "d140",
@@ -1261,7 +1261,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-9-PROFESSEUR.docx",
-   "taille": 369891
+   "taille": 256950
   },
   {
    "id": "d141",
@@ -1270,7 +1270,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-9-GRILLE-PROFESSEUR.pdf",
-   "taille": 161568
+   "taille": 161041
   },
   {
    "id": "d142",
@@ -1279,7 +1279,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-9-GRILLE-PROFESSEUR.docx",
-   "taille": 17955
+   "taille": 31659
   },
   {
    "id": "d143",
@@ -1288,7 +1288,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-9-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 297216
+   "taille": 310228
   },
   {
    "id": "d144",
@@ -1297,7 +1297,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-9-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19330
+   "taille": 34561
   },
   {
    "id": "d145",
@@ -1306,7 +1306,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-9-commande-PROFESSEUR.pdf",
-   "taille": 562069
+   "taille": 482344
   },
   {
    "id": "d146",
@@ -1315,7 +1315,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-9-commande-PROFESSEUR.docx",
-   "taille": 403594
+   "taille": 306877
   },
   {
    "id": "d147",
@@ -1324,7 +1324,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-9-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 161570
+   "taille": 161038
   },
   {
    "id": "d148",
@@ -1333,7 +1333,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-9-commande-GRILLE-PROFESSEUR.docx",
-   "taille": 17958
+   "taille": 31659
   },
   {
    "id": "d149",
@@ -1342,7 +1342,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-9-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 297221
+   "taille": 310510
   },
   {
    "id": "d150",
@@ -1351,7 +1351,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-9-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19339
+   "taille": 34556
   },
   {
    "id": "d151",
@@ -1360,7 +1360,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "demarrage-direct-tri-PROFESSEUR.pdf",
-   "taille": 364952
+   "taille": 358756
   },
   {
    "id": "d152",
@@ -1369,7 +1369,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "demarrage-direct-tri-PROFESSEUR.docx",
-   "taille": 199398
+   "taille": 197774
   },
   {
    "id": "d153",
@@ -1378,7 +1378,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "demarrage-direct-tri-GRILLE-PROFESSEUR.pdf",
-   "taille": 161532
+   "taille": 161002
   },
   {
    "id": "d154",
@@ -1387,7 +1387,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "demarrage-direct-tri-GRILLE-PROFESSEUR.docx",
-   "taille": 17957
+   "taille": 31673
   },
   {
    "id": "d155",
@@ -1396,7 +1396,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "demarrage-direct-tri-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 292828
+   "taille": 307261
   },
   {
    "id": "d156",
@@ -1405,7 +1405,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "demarrage-direct-tri-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19292
+   "taille": 34464
   },
   {
    "id": "d157",
@@ -1414,7 +1414,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "telerupteur-PROFESSEUR.pdf",
-   "taille": 355152
+   "taille": 322945
   },
   {
    "id": "d158",
@@ -1423,7 +1423,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "telerupteur-PROFESSEUR.docx",
-   "taille": 170486
+   "taille": 151257
   },
   {
    "id": "d159",
@@ -1432,7 +1432,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "telerupteur-GRILLE-PROFESSEUR.pdf",
-   "taille": 161332
+   "taille": 160806
   },
   {
    "id": "d160",
@@ -1441,7 +1441,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "telerupteur-GRILLE-PROFESSEUR.docx",
-   "taille": 17958
+   "taille": 31648
   },
   {
    "id": "d161",
@@ -1450,7 +1450,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "telerupteur-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 293853
+   "taille": 306495
   },
   {
    "id": "d162",
@@ -1459,7 +1459,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "telerupteur-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19271
+   "taille": 34459
   },
   {
    "id": "d163",
@@ -1468,7 +1468,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "va-et-vient-PROFESSEUR.pdf",
-   "taille": 309707
+   "taille": 291351
   },
   {
    "id": "d164",
@@ -1477,7 +1477,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "va-et-vient-PROFESSEUR.docx",
-   "taille": 120966
+   "taille": 120442
   },
   {
    "id": "d165",
@@ -1486,7 +1486,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "va-et-vient-GRILLE-PROFESSEUR.pdf",
-   "taille": 161513
+   "taille": 160984
   },
   {
    "id": "d166",
@@ -1495,7 +1495,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "va-et-vient-GRILLE-PROFESSEUR.docx",
-   "taille": 17955
+   "taille": 31651
   },
   {
    "id": "d167",
@@ -1504,7 +1504,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "va-et-vient-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 295221
+   "taille": 308109
   },
   {
    "id": "d168",
@@ -1513,7 +1513,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "va-et-vient-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19265
+   "taille": 34452
   },
   {
    "id": "d169",
@@ -1522,7 +1522,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "Mise-sous-tension-PROFESSEUR.pdf",
-   "taille": 842196
+   "taille": 850469
   },
   {
    "id": "d170",
@@ -1531,7 +1531,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "Mise-sous-tension-PROFESSEUR.docx",
-   "taille": 717603
+   "taille": 711644
   },
   {
    "id": "d171",
@@ -1540,7 +1540,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "Mise-sous-tension-GRILLE-PROFESSEUR.pdf",
-   "taille": 149255
+   "taille": 149145
   },
   {
    "id": "d172",
@@ -1549,7 +1549,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "Mise-sous-tension-GRILLE-PROFESSEUR.docx",
-   "taille": 17871
+   "taille": 31579
   },
   {
    "id": "d173",
@@ -1558,7 +1558,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "Mise-sous-tension-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 330388
+   "taille": 343464
   },
   {
    "id": "d174",
@@ -1567,7 +1567,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "Mise-sous-tension-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 19306
+   "taille": 34441
   },
   {
    "id": "d175",
@@ -1576,7 +1576,7 @@
    "titre": "Fiche professeur du tutoriel",
    "format": "pdf",
    "fichier": "Tutoriel-Prise-en-main-PROFESSEUR.pdf",
-   "taille": 1076329
+   "taille": 1181982
   },
   {
    "id": "d176",
@@ -1585,7 +1585,7 @@
    "titre": "Fiche professeur du tutoriel",
    "format": "docx",
    "fichier": "Tutoriel-Prise-en-main-PROFESSEUR.docx",
-   "taille": 973886
+   "taille": 1093994
   },
   {
    "id": "d177",
@@ -1594,7 +1594,7 @@
    "titre": "TP professeur",
    "format": "pdf",
    "fichier": "TP-2-Puissance-PROFESSEUR.pdf",
-   "taille": 513750
+   "taille": 513723
   },
   {
    "id": "d178",
@@ -1603,7 +1603,7 @@
    "titre": "TP professeur",
    "format": "docx",
    "fichier": "TP-2-Puissance-PROFESSEUR.docx",
-   "taille": 266140
+   "taille": 281351
   },
   {
    "id": "d179",
@@ -1621,7 +1621,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "TP-2-Puissance-GRILLE-PROFESSEUR.docx",
-   "taille": 10317
+   "taille": 10761
   },
   {
    "id": "d181",
@@ -1630,7 +1630,7 @@
    "titre": "TP professeur",
    "format": "pdf",
    "fichier": "TP-Commande-PROFESSEUR.pdf",
-   "taille": 459200
+   "taille": 459032
   },
   {
    "id": "d182",
@@ -1639,7 +1639,7 @@
    "titre": "TP professeur",
    "format": "docx",
    "fichier": "TP-Commande-PROFESSEUR.docx",
-   "taille": 284003
+   "taille": 298480
   },
   {
    "id": "d183",
@@ -1657,7 +1657,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "TP-Commande-GRILLE-PROFESSEUR.docx",
-   "taille": 10344
+   "taille": 10789
   }
  ]
 }

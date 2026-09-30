@@ -4807,5 +4807,16 @@ window.CABLAGE_EXERCICES["cablage-2"] = {
    }
   },
   "liaisons_fixes": []
- }
+ },
+ "bornes_sans_repere": [
+  "PE",
+  "PE1",
+  "PE2",
+  "PE3",
+  "PE4",
+  "PE5",
+  "PE6",
+  "PE7",
+  "PE8"
+ ]
 };

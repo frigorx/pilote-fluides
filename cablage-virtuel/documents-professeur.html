@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — documents professeur</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260929-1910">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260930-0800">
 <style>
   /* Les documents PROFESSEUR du câblage : le coffre chiffré (produit « cablage », indice 5), ouvert par le code
      enseignant (Franck, 27/09/2026 : « un code pour le câblage »). Rien n'est en clair sur le serveur : chaque
@@ -43,7 +43,7 @@
   <div id="porte"></div>
   <div id="liste"></div>
 </main>
-<script src="../moteur/acces.js?v=20260929-1910"></script>
+<script src="../moteur/acces.js?v=20260930-0800"></script>
 <script>
 (function () {
   'use strict';
@@ -77,7 +77,11 @@
     var groupes = [], parGroupe = {};
     idx.documents.forEach(function (d) {
       if (!parGroupe[d.groupe]) { parGroupe[d.groupe] = { id: d.groupe, titre: d.exercice, docs: {} }; groupes.push(parGroupe[d.groupe]); }
-      (parGroupe[d.groupe].docs[d.titre] = parGroupe[d.groupe].docs[d.titre] || []).push(d);
+      // 30/09 (contre-vérification) : un groupe peut porter deux jeux sous les mêmes titres (le générique, et la mise sous tension ou
+      // le TP réel) ; la famille, lue dans le nom du fichier, les sépare sur deux lignes
+      var racine = d.fichier.replace(/-(PLAN-SEANCE-|GRILLE-)?PROFESSEUR\.[a-z]+$/, '');
+      var titre = racine === d.groupe ? d.titre : d.titre + ' · ' + racine.replace(/-/g, ' ').replace(/^Mise sous tension$/, 'mise sous tension');
+      (parGroupe[d.groupe].docs[titre] = parGroupe[d.groupe].docs[titre] || []).push(d);
     });
     groupes.forEach(function (g) {
       var bloc = el('section', 'cadre groupe'); bloc.id = g.id;

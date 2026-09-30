@@ -1903,7 +1903,7 @@ window.CABLAGE_EXERCICES["cablage-11-commande"] = {
   {
    "repere": "S3",
    "type": "010_switch_1pos",
-   "nom": "Interrupteur de l'évaporateur",
+   "nom": "Interrupteur du groupe condenseur",
    "rang": 2,
    "symbole": "<g class=\"symbole\" data-type=\"010_switch_1pos\" transform=\"translate(0.00,0.00)\">\n<ellipse cx=\"0.00\" cy=\"10.00\" rx=\"1.75\" ry=\"1.75\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-12.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"-10.00\" rx=\"1.75\" ry=\"1.75\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-5\" y1=\"-10\" x2=\"-0.7\" y2=\"8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"12\" x2=\"0\" y2=\"17\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>",
    "boite": [
@@ -1936,7 +1936,7 @@ window.CABLAGE_EXERCICES["cablage-11-commande"] = {
   {
    "repere": "S2",
    "type": "010_switch_1pos",
-   "nom": "Interrupteur du groupe",
+   "nom": "Marche / arrêt de la chambre froide",
    "rang": 2,
    "symbole": "<g class=\"symbole\" data-type=\"010_switch_1pos\" transform=\"translate(0.00,0.00)\">\n<ellipse cx=\"0.00\" cy=\"10.00\" rx=\"1.75\" ry=\"1.75\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"-20\" x2=\"0\" y2=\"-12.5\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<ellipse cx=\"0.00\" cy=\"-10.00\" rx=\"1.75\" ry=\"1.75\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"-5\" y1=\"-10\" x2=\"-0.7\" y2=\"8\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<line x1=\"0\" y1=\"12\" x2=\"0\" y2=\"17\" stroke=\"black\" stroke-width=\"1\" fill=\"none\"/>\n<\/g>",
    "boite": [

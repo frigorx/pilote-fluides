@@ -1,6 +1,7 @@
 /* La mise sous tension (moteur/tension-ecran.js) */
 #btn-tension{background:#e0a100;border-color:#e0a100;color:#fff}
 body.sous-tension .outils > :not(.pupitre){display:none}
+body.sous-tension .nomenclature{display:none}
 body.sous-tension .consigne:not(.ko){background:#fff4d6;border-left:6px solid #e0a100}
 body.sous-tension .consigne.ko{background:var(--ko-bg);border-left:6px solid var(--ko)}
 .pupitre{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:flex-end;width:100%}

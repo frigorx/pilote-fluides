@@ -82,7 +82,8 @@ function creer(EX, fils, opts) {
       // l'inverseur d'une horloge (1 commun, 2 froid, 4 dégivrage) : 1-2 au repos, 1-4 en période de dégivrage
       if (a.type === 'moteur_horloge' && ['1', '2', '4'].every(x => ids.includes(x))) out.push(s.periode ? ['1', '4'] : ['1', '2']);
       for (const [x, y, u] of auxiliaires(ids)) {
-        if (a.type === 'moteur_horloge') { if (s.periode) out.push([x, y]); continue; }
+        // 30/09 (docs/DECISIONS-TECHNIQUES-2026-09-30.md § 2) : le 13-14 d'une horloge = son 1-2 réel, fermé en production, ouvert au dégivrage
+        if (a.type === 'moteur_horloge') { if (!s.periode) out.push([x, y]); continue; }
         const temporise = colle && s.t >= tempo;
         if ((u === 1 && !colle) || (u === 3 && colle) || (u === 5 && !temporise) || (u === 7 && temporise)) out.push([x, y]);
       }

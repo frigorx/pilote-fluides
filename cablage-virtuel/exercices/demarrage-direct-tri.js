@@ -127,42 +127,42 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "y": 477.0
    },
    {
-    "ref": "X1:1",
+    "ref": "XB1:1",
     "x": 300.0,
     "y": 554.0
    },
    {
-    "ref": "X1:2",
+    "ref": "XB1:2",
     "x": 300.0,
     "y": 566.0
    },
    {
-    "ref": "X2:1",
+    "ref": "XB2:1",
     "x": 320.0,
     "y": 554.0
    },
    {
-    "ref": "X2:2",
+    "ref": "XB2:2",
     "x": 320.0,
     "y": 566.0
    },
    {
-    "ref": "X3:1",
+    "ref": "XB3:1",
     "x": 340.0,
     "y": 554.0
    },
    {
-    "ref": "X3:2",
+    "ref": "XB3:2",
     "x": 340.0,
     "y": 566.0
    },
    {
-    "ref": "X4:1",
+    "ref": "XB4:1",
     "x": 400.0,
     "y": 554.0
    },
    {
-    "ref": "X4:2",
+    "ref": "XB4:2",
     "x": 400.0,
     "y": 566.0
    },
@@ -224,22 +224,22 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
     "y": 629.0
    },
    {
-    "repere": "X1",
+    "repere": "XB1",
     "x": 300.0,
     "y": 537.0
    },
    {
-    "repere": "X2",
+    "repere": "XB2",
     "x": 320.0,
     "y": 537.0
    },
    {
-    "repere": "X3",
+    "repere": "XB3",
     "x": 340.0,
     "y": 537.0
    },
    {
-    "repere": "X4",
+    "repere": "XB4",
     "x": 400.0,
     "y": 537.0
    }
@@ -541,7 +541,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "ligne": 2
   },
   {
-   "repere": "X1",
+   "repere": "XB1",
    "type": "borne_continuite",
    "nom": "Borne",
    "rang": 5,
@@ -579,7 +579,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "ligne": 1
   },
   {
-   "repere": "X2",
+   "repere": "XB2",
    "type": "borne_continuite",
    "nom": "Borne",
    "rang": 5,
@@ -617,7 +617,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "ligne": 1
   },
   {
-   "repere": "X3",
+   "repere": "XB3",
    "type": "borne_continuite",
    "nom": "Borne",
    "rang": 5,
@@ -655,7 +655,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "ligne": 1
   },
   {
-   "repere": "X4",
+   "repere": "XB4",
    "type": "borne_continuite",
    "nom": "Borne",
    "rang": 5,
@@ -745,8 +745,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "bornes": [
     "F1:2",
     "M1:U1",
-    "X1:1",
-    "X1:2"
+    "XB1:1",
+    "XB1:2"
    ],
    "couleurs": [
     "marron",
@@ -761,8 +761,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "bornes": [
     "F1:4",
     "M1:V1",
-    "X2:1",
-    "X2:2"
+    "XB2:1",
+    "XB2:2"
    ],
    "couleurs": [
     "marron",
@@ -777,8 +777,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "bornes": [
     "F1:6",
     "M1:W1",
-    "X3:1",
-    "X3:2"
+    "XB3:1",
+    "XB3:2"
    ],
    "couleurs": [
     "marron",
@@ -793,8 +793,8 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
    "bornes": [
     "M1:PE",
     "PE:PE",
-    "X4:1",
-    "X4:2"
+    "XB4:1",
+    "XB4:2"
    ],
    "couleurs": [
     "vert-jaune"
@@ -946,7 +946,7 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
   },
   {
    "de": "PE:PE",
-   "a": "X4:1",
+   "a": "XB4:1",
    "couleur": "vert-jaune"
   },
   {
@@ -981,36 +981,36 @@ window.CABLAGE_EXERCICES["demarrage-direct-tri"] = {
   },
   {
    "de": "F1:2",
-   "a": "X1:1",
+   "a": "XB1:1",
    "couleur": "marron"
   },
   {
    "de": "F1:4",
-   "a": "X2:1",
+   "a": "XB2:1",
    "couleur": "marron"
   },
   {
    "de": "F1:6",
-   "a": "X3:1",
+   "a": "XB3:1",
    "couleur": "marron"
   },
   {
-   "de": "X1:2",
+   "de": "XB1:2",
    "a": "M1:U1",
    "couleur": "marron"
   },
   {
-   "de": "X2:2",
+   "de": "XB2:2",
    "a": "M1:V1",
    "couleur": "marron"
   },
   {
-   "de": "X3:2",
+   "de": "XB3:2",
    "a": "M1:W1",
    "couleur": "marron"
   },
   {
-   "de": "X4:2",
+   "de": "XB4:2",
    "a": "M1:PE",
    "couleur": "vert-jaune"
   }

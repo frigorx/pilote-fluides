@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — le réseau</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260929-1910">
-<link rel="stylesheet" href="moteur/accueil.css?v=20260929-1910">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260930-0800">
+<link rel="stylesheet" href="moteur/accueil.css?v=20260930-0800">
 </head>
 <body class="reseau">
 <header class="barre">
@@ -28,10 +28,12 @@
       <a class="cta" id="cta" href="#"></a>
     </div>
     <p class="bandeau-ligne" id="bandeau-ligne" hidden></p>
+    <p class="glisser" aria-hidden="true">Faites glisser le plan vers la gauche : les stations sont à droite →</p>
     <div class="plan" id="plan"><svg id="carte" viewBox="0 0 1150 560" role="group" aria-label="Le réseau des stations de câblage"></svg></div>
     <div class="legende" id="legende">
       <span><svg width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/></svg>à faire</span>
       <span><svg width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="#1b3a63"/><text x="11" y="15" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Calibri,Arial,sans-serif">3</text></svg>faite : le chiffre est le niveau obtenu au câblage (0 à 4)</span>
+      <span><svg width="26" height="26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><path d="M13 5 A8 8 0 0 0 13 21 Z" fill="#1b3a63"/><circle cx="13" cy="13" r="12" fill="none" stroke="#1b3a63" stroke-width="2"/></svg>à moitié plein : la puissance est faite, pas encore la commande</span>
       <span><svg width="26" height="26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><circle cx="13" cy="13" r="12" fill="none" stroke="#1b3a63" stroke-width="2"/></svg>double anneau : la commande suit la puissance</span>
       <span><svg width="30" height="10" aria-hidden="true"><line x1="3" y1="5" x2="27" y2="5" stroke="#b3a891" stroke-width="4" stroke-dasharray="1 8" stroke-linecap="round"/></svg>correspondance conseillée</span>
       <span class="ici-l">Vous êtes ici : la station en cours</span>
@@ -54,7 +56,7 @@
         </div>
         <ol class="chemin" id="st-chemin" aria-label="Le parcours de la station"></ol>
         <p class="prof" id="st-prof" hidden></p>
-        <div class="actions"><a class="gros" id="st-go" href="#">Commencer</a><a class="discret" id="st-reprendre" href="#" hidden></a></div>
+        <div class="actions"><a class="gros" id="st-go" href="#">Commencer</a><a class="discret" id="st-reprendre" href="#" hidden></a><a class="discret" id="st-suite" href="#" hidden></a></div>
         <p class="note-feuille" id="st-note" hidden></p>
         <ul class="liens" id="st-liens"></ul>
         <details class="reglages" id="reglages">
@@ -71,10 +73,10 @@
     </div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260929-1910';</script>
-<script src="exercices/index.js?v=20260929-1910"></script>
-<script src="moteur/reseau.js?v=20260929-1910"></script>
-<script src="moteur/documents.js?v=20260929-1910"></script>
+<script>window.CABLAGE_VERSION = '20260930-0800';</script>
+<script src="exercices/index.js?v=20260930-0800"></script>
+<script src="moteur/reseau.js?v=20260930-0800"></script>
+<script src="moteur/documents.js?v=20260930-0800"></script>
 <script>
 (function(){
 'use strict';
@@ -210,14 +212,18 @@ function dessiner(valeur) {
     else pilule(l.id, 16, Y(p.r), true);
   });
   R.stations.forEach(s => {
-    const x = X(s.c), y = Y(s.r), coul = LIG[s.ligne].couleur, fait = meilleurCablage((s.tuto ? 'tuto:' : '') + s.puissance, res), estIci = ici === s.id;
+    // 30/09 (contre-vérification) : une station à deux quais n'est « faite » que puissance ET commande câblées ; une seule : à moitié pleine
+    const fp = meilleurCablage(cle(s, 'p'), res), fc = s.commande ? meilleurCablage(cle(s, 'c'), res) : fp;
+    const x = X(s.c), y = Y(s.r), coul = LIG[s.ligne].couleur, fait = fp != null && fc != null ? Math.min(fp, fc) : null, estIci = ici === s.id;
+    const entamee = fait == null && (fp != null || fc != null);
     const Rr = s.id === 'depart' ? 19 : 14;
     const g = el('g', {class: 'st' + pale(s.ligne), 'data-id': s.id, tabindex: 0, role: 'button',
-      'aria-label': s.titre + (fait != null ? ', faite, niveau ' + fait : ', à faire') + (estIci ? ', vous êtes ici' : '') + (s.commande ? ', puissance puis commande' : '')});
+      'aria-label': s.titre + (fait != null ? ', faite, niveau ' + fait : entamee ? ', commencée : ' + (fp != null ? 'puissance faite, commande à faire' : 'commande faite, puissance à faire') : ', à faire') + (estIci ? ', vous êtes ici' : '') + (s.commande ? ', puissance puis commande' : '')});
     g.append(el('circle', {class: 'cible', cx: x, cy: y, r: 30, fill: 'transparent'}));
     if (estIci) g.append(el('circle', {class: 'halo', cx: x, cy: y, r: Rr + 8, stroke: coul}));
     if (s.commande) g.append(el('circle', {cx: x, cy: y, r: Rr + 5, fill: 'none', stroke: coul, 'stroke-width': 2}));
     g.append(el('circle', {class: 'rond', cx: x, cy: y, r: Rr, fill: fait != null ? coul : '#fffdf8', stroke: coul, 'stroke-width': estIci ? 6 : 4}));
+    if (entamee) g.append(el('path', {d: 'M' + x + ' ' + (y - Rr) + ' A' + Rr + ' ' + Rr + ' 0 0 0 ' + x + ' ' + (y + Rr) + ' Z', fill: coul, 'pointer-events': 'none'}));
     if (fait != null) g.append(el('text', {class: 'niv', x: x, y: y + 5, 'text-anchor': 'middle'}, String(fait)));
     let lx = x, ly = y + Rr + (s.commande ? 22 : 18), anc = 'middle';
     if (s.pos === 'droite') { lx = x + Rr + (s.commande ? 14 : 12); ly = y - 1; anc = 'start'; }
@@ -265,7 +271,7 @@ function compter(id) {   // le nombre de fils : les étapes de l'exercice, charg
 }
 function peindreReglages() {
   $$('.segs').forEach(g => $$('button', g).forEach(b => b.setAttribute('aria-pressed', String(reg[g.dataset.reg] === b.dataset.v))));
-  $('#aide-reg').textContent = ATELIER_NOM[reg.atelier] + ' : ' + ATELIERS[reg.atelier] + ' Ces réglages restent sur cet appareil ; le QR de votre feuille les impose.';
+  $('#aide-reg').textContent = ATELIER_NOM[reg.atelier] + ' : ' + ATELIERS[reg.atelier] + ' Ces réglages restent sur cet appareil ; vous pouvez les changer ici.';
 }
 function remplirStation() {
   const s = PAR[stationId], L = LIG[s.ligne], depart = s.id === 'depart';
@@ -273,10 +279,10 @@ function remplirStation() {
   const ex = exDe(s, quai), res = resultats();
   document.title = 'Câblage virtuel — ' + s.titre;
   const lg = $('#st-ligne'); lg.textContent = L.num ? 'Ligne ' + L.num + ' · ' + L.nom : L.nom; lg.style.background = L.couleur;
-  $('#st-niv').textContent = s.niveau;
+  $('#st-niv').textContent = s.niveau; $('#st-niv').hidden = depart;   // le Départ : « Départ · Départ » disait deux fois la même chose
   $('#st-titre').textContent = s.titre; $('#st-sous').textContent = s.sous;
   $('#st-apprend').textContent = s.apprend;
-  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20260929-1910';
+  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20260930-0800';
   img.alt = 'Le schéma : ' + R.titre(ex, s.titre);
   // les fils à poser
   const faits = $('#st-faits'), mien = ++jeton;
@@ -290,7 +296,7 @@ function remplirStation() {
   $$('#st-quais button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.q === quai)));
   // le chemin, avec ses coches
   const k = cle(s, quai), f = faites(k, res);
-  const etapes = etapesPour(reg.atelier);
+  const etapes = etapesPour(reg.atelier).filter(e => !(depart && e.id === 'essai'));   // le tutoriel ne passe pas par l'essai
   $('#st-chemin').innerHTML = etapes.map((e, i) => '<li class="' + (f.has(e.id) ? 'faite' : '') + '"><span>' + (f.has(e.id) ? '✓ ' : '') + (i + 1) + ' ' + e.nom +
     (f.has(e.id) ? '<small class="lecteur"> (réussie)</small>' : '') + '</span></li>').join('');
   // UN gros bouton (la prochaine chose à faire) et, au besoin, un lien discret (repartir du début, refaire)
@@ -298,6 +304,7 @@ function remplirStation() {
   const debut = depart ? TUTO : lienJouer(ex, 'colorier', reg.mode, reg.atelier, reg.platine);
   const nomQuai = s.commande ? (quai === 'c' ? ' la commande' : ' la puissance') : '';
   const bouton = (href, txt) => { go.href = href; go.textContent = txt; };
+  const su = $('#st-suite'); su.hidden = true;
   const discret = (href, txt) => { rep.hidden = !href; if (href) { rep.href = href; rep.textContent = txt; } };
   if (quaiFini(k, res)) {   // ce quai est fait : la suite en gros, « Refaire » en discret
     const n = suivante(s, res);
@@ -305,6 +312,9 @@ function remplirStation() {
     else if (n) { const q = quaiConseille(n, res); bouton(ancre(n, q), 'Station suivante : ' + n.titre + (q === 'c' ? ', la commande' : '')); }
     else bouton('index.html', 'Tout le réseau est fait : revenir au plan');
     discret(debut, depart ? 'Refaire la prise en main' : 'Refaire' + nomQuai);
+    // 30/09 (contre-vérification) : la suite de CETTE station reste atteignable (Essayer, puis Réaliser), en discret
+    const apres = depart ? null : etapes.slice(etapes.findIndex(e => e.id === 'cabler') + 1).find(e => !f.has(e.id));
+    if (apres) { su.hidden = false; su.href = lienJouer(ex, apres.act, reg.mode, reg.atelier, reg.platine); su.textContent = 'Continuer à l’étape ' + (etapes.indexOf(apres) + 1) + ' · ' + apres.nom + nomQuai; }
   } else if (mesRes.length && !depart) {   // commencé : reprendre en gros, repartir du début en discret
     const {et, n} = etapeReprise(mesRes[mesRes.length - 1], etapes);
     bouton(lienJouer(ex, et.act, reg.mode, reg.atelier, reg.platine), 'Reprendre à l’étape ' + n + ' · ' + et.nom);
@@ -401,6 +411,6 @@ window.addEventListener('pageshow', e => { if (e.persisted) route(); });   // re
 route();
 })();
 </script>
-<script src="moteur/marque.js?v=20260929-1910" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260930-0800" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

@@ -61,6 +61,7 @@ document.addEventListener('cablage-pret', () => {
     document.body.classList.add('sous-tension');
     b.setAttribute('aria-current', 'step'); if (etapeCabler) etapeCabler.removeAttribute('aria-current');   // l'étape en cours : 4
     construirePupitre();
+    cadrerEssai();
     rendre();
     horloge = setInterval(() => { e = sim.avancer(100); rendre(); }, 100);
   }
@@ -74,8 +75,24 @@ document.addEventListener('cablage-pret', () => {
     const p = $('#pupitre'); if (p) p.remove();
     API.fils().forEach(f => { if (f.contour) { f.contour.style.stroke = ''; f.contour.style.strokeWidth = ''; } if (f.el) f.el.classList.remove('suspect'); });
     const g = $('#pastilles'); if (g) g.remove();
+    plan = null; planCle = '';
+    cadrerEssai(true);
     allumerCarte(null); if (canal) canal.postMessage({ bornes: null });
     API.dire('Installation consignée.', null, 'Vous pouvez de nouveau câbler, contrôler, puis remettre sous tension.');
+  }
+  /* 29/09 (nuit 2) : à l'essai, la platine occupe la place — la nomenclature se replie (tension.css), la vue se cadre sur la zone utile
+     (toutes les bornes, comme moteur/ecran.js) ; au retour au câblage, la vue entière (ou le cadrage de la platine seule). */
+  function cadrerEssai(sortie) {
+    requestAnimationFrame(() => {
+      const p = $('#platine'), z = p && p._zoom, svg = p && p.querySelector('.corps svg'); if (!z || !svg) return;
+      if (sortie && !document.body.classList.contains('vue-platine')) { z.ajuster(); plan = null; return; }
+      const bornes = [...svg.querySelectorAll('.borne')].map(el => el.getBBox()); if (!bornes.length) return;
+      const x1 = Math.min(...bornes.map(q => q.x)), y1 = Math.min(...bornes.map(q => q.y)),
+            x2 = Math.max(...bornes.map(q => q.x + q.width)), y2 = Math.max(...bornes.map(q => q.y + q.height));
+      const corps = p.querySelector('.corps'), ratio = corps.clientHeight ? corps.clientWidth / corps.clientHeight : null;
+      z.cadrer({ x: x1, y: y1 - 20, w: x2 - x1, h: y2 - y1 + 60 }, 30, ratio);
+      plan = null; if (sim) rendre(true);
+    });
   }
   function geste(rep, g) { e = sim.agir({ rep, geste: g }); rendre(true); }
 
@@ -158,7 +175,7 @@ document.addEventListener('cablage-pret', () => {
     const bf = $('#btn-fil-cause'); if (bf) bf.hidden = !(defautAffiche && defautAffiche.suspects && defautAffiche.suspects.length);
     if (defautAffiche) {
       const s = defautAffiche.suspects;
-      API.dire(defautAffiche.texte, 'ko', aideMontree && s ? 'Aide : le fil en rouge, ' + s.map(f => f.de + ' → ' + f.a).join(', ') + '. Consignez, corrigez, puis remettez sous tension.'
+      API.dire(defautAffiche.texte, 'ko', aideMontree && s ? 'Aide : le fil en rouge, ' + s.map(f => API.lib(f.de) + ' → ' + API.lib(f.a)).join(', ') + '. Consignez, corrigez, puis remettez sous tension.'
         : 'Consignez, cherchez le défaut, corrigez, puis remettez sous tension.');
       return;
     }
@@ -178,7 +195,7 @@ document.addEventListener('cablage-pret', () => {
     if (g) g.remove();
     g = document.createElementNS(NS, 'g'); g.id = 'pastilles'; svg.append(g);
     const roles = sim.roles(), liste = [];
-    const m = svg.getScreenCTM(), k = m && m.a ? 1 / m.a : 1;   // 16 px à l'écran, quel que soit le zoom
+    const m = svg.getScreenCTM(), k = m && m.a ? 1 / m.a : 1;   // 12 px à l'écran, quel que soit le zoom
     for (const [r, v] of Object.entries(e.appareils)) {
       const ro = roles[r];
       if (!['bobine', 'moteur', 'recepteur', 'protection', 'thermique', 'transfo'].includes(ro)) continue;
@@ -192,20 +209,20 @@ document.addEventListener('cablage-pret', () => {
       if (ro === 'transfo') cls = v.alim ? 'ok' : 'repos';
       const p = document.createElementNS(NS, 'g'); p.setAttribute('class', 'pastille ' + cls);
       const rect = document.createElementNS(NS, 'rect'), t = document.createElementNS(NS, 'text');
-      t.style.fontSize = (16 * k) + 'px';
+      t.style.fontSize = (12 * k) + 'px';
       t.textContent = txt;
       const icone = ro === 'moteur' && v.marche === 'tourne' ? document.createElementNS(NS, 'text') : null;   // elle tourne dans le sens du moteur
-      if (icone) { icone.textContent = '⟳'; icone.style.fontSize = (18 * k) + 'px'; icone.setAttribute('class', 'rotation' + (v.sens === 'inverse' ? ' inverse' : '')); }
+      if (icone) { icone.textContent = '⟳'; icone.style.fontSize = (13 * k) + 'px'; icone.setAttribute('class', 'rotation' + (v.sens === 'inverse' ? ' inverse' : '')); }
       p.append(rect, t); if (icone) p.append(icone); g.append(p);
-      const li = icone ? 20 * k : 0, l = t.getComputedTextLength() + 16 * k + li, h = 26 * k;
+      const li = icone ? 15 * k : 0, l = t.getComputedTextLength() + 10 * k + li, h = 19 * k;
       liste.push({ r, app, rect, t, icone, li, l, h, txt });
     }
     const places = placer(svg, m, liste);
     liste.forEach(({ rect, t, icone, li, l, h }, i) => {
       const { x, y } = places[i];
       rect.setAttribute('x', x); rect.setAttribute('y', y); rect.setAttribute('width', l); rect.setAttribute('height', h); rect.setAttribute('rx', h / 2);
-      t.setAttribute('x', x + (l + li) / 2); t.setAttribute('y', y + h / 2 + 5.5 * k); t.setAttribute('text-anchor', 'middle');
-      if (icone) { icone.setAttribute('x', x + 8 * k + li / 2); icone.setAttribute('y', y + h / 2 + 6 * k); icone.setAttribute('text-anchor', 'middle'); }
+      t.setAttribute('x', x + (l + li) / 2); t.setAttribute('y', y + h / 2 + 4.2 * k); t.setAttribute('text-anchor', 'middle');
+      if (icone) { icone.setAttribute('x', x + 6 * k + li / 2); icone.setAttribute('y', y + h / 2 + 4.5 * k); icone.setAttribute('text-anchor', 'middle'); }
     });
   }
   /* 30/09 (constat E6 ; règle de Franck : un texte ne chevauche jamais un tracé) : l'étiquette d'état se pose À CÔTÉ de son
@@ -247,9 +264,17 @@ document.addEventListener('cablage-pret', () => {
       const rep = [...q.app.querySelectorAll(':scope > text.repere')].map(boite).find(Boolean);
       const corpsApp = [...q.app.querySelectorAll(':scope > g')].map(boite).filter(Boolean)
         .reduce((u, b) => u ? { x: Math.min(u.x, b.x), y: Math.min(u.y, b.y), x1: Math.max(u.x1, b.x1), y1: Math.max(u.y1, b.y1) } : b, null) || boite(q.app);
-      const ax = (rep ? Math.max(rep.x1, corpsApp.x1) : corpsApp.x1) + 8, ay = (rep ? (rep.y + rep.y1) / 2 : (corpsApp.y + corpsApp.y1) / 2) - h / 2;
-      let o = ecarts.find(([dx, dy]) => libre(ax + dx, ay + dy, w, h, true)) || ecarts.find(([dx, dy]) => libre(ax + dx, ay + dy, w, h, false)) || [0, 0];
-      const x = ax + o[0], y = ay + o[1];
+      // 30/09 (contre-vérification) : trois ancrages — à droite du repère, au-dessus, au-dessous (centrés) ; des modulaires serrés sur
+      // un rail n'ont pas de place à droite, et leurs étiquettes filaient toutes au bout de la rangée
+      const cx = (corpsApp.x + corpsApp.x1) / 2;
+      const ancres = [[(rep ? Math.max(rep.x1, corpsApp.x1) : corpsApp.x1) + 8, (rep ? (rep.y + rep.y1) / 2 : (corpsApp.y + corpsApp.y1) / 2) - h / 2, 0],
+                      [cx - w / 2, corpsApp.y - h - 6, 10], [cx - w / 2, corpsApp.y1 + 6, 10]];
+      let meilleur = null;
+      for (const dans of [true, false]) {
+        ancres.forEach(([ax, ay, pen]) => { const o = ecarts.find(([dx, dy]) => libre(ax + dx, ay + dy, w, h, dans)); if (o && (!meilleur || o[2] + pen < meilleur.c)) meilleur = { x: ax + o[0], y: ay + o[1], c: o[2] + pen }; });
+        if (meilleur) break;
+      }
+      const x = meilleur ? meilleur.x : ancres[0][0], y = meilleur ? meilleur.y : ancres[0][1];
       obst.push({ x, y, x1: x + w, y1: y + h });   // la suivante ne se pose pas dessus
       const p = svg.createSVGPoint(); p.x = x; p.y = y; const s = p.matrixTransform(inv);
       return { x: s.x, y: s.y };

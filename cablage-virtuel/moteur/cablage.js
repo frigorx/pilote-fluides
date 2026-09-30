@@ -82,17 +82,21 @@ try { canal = ID && 'BroadcastChannel' in window ? new BroadcastChannel('cablage
 // ------------------------------------------------------------ utilitaires
 // Le nom de l'appareil accompagne son repère (Franck, 26/09 : « il manquait le nom des appareils ») ;
 // l'arrivée et les bornes du bornier se lisent sans.
+// Une borne que le schéma source ne nomme pas (Franck, 29/09 : « les appellations ne sont pas obligatoires ») : les plots de
+// terre du n° 2, du n° 9… Son repère interne sert au contrôle, jamais affiché ; on la reconnaît à sa couleur et à sa place.
+function sansRepere(r) { return !!(EX && (EX.bornes_sans_repere || []).includes(r)); }
 function nomApp(r) { const a = EX && EX.appareils.find(x => x.repere === r); return a && a.rang > 0 && a.rang < 5 ? a.nom.toLowerCase() : ''; }
 function lib(ref) {
   const [r, b] = ref.split(':'), a = EX && EX.appareils.find(x => x.repere === r);
-  if (a && a.rang === 5) { const c = coteBornier(ref); return 'borne ' + r + (c ? ' côté ' + c : ' (' + b + ')'); }
+  if (a && a.rang === 5) { const c = coteBornier(ref); return (sansRepere(r) ? 'la borne de terre (vert-jaune)' : 'borne ' + r) + (c ? ' côté ' + c : sansRepere(r) ? '' : ' (' + b + ')'); }
   const n = nomApp(r); return r + (n ? ' (' + n + ')' : '') + ' borne ' + b;
 }
-/* Le côté d'une borne de bornier, tel qu'on le voit sur la platine : haut (armoire) ou bas (câbles). */
+/* Le côté d'une borne de bornier, tel qu'on le voit sur la platine (Franck, 29/09 : « un bornier n'a pas de numéro de borne ») :
+   côté armoire (en haut, vers les appareils) ou côté terrain (en bas, vers l'arrivée, les moteurs). Les :1 / :2 restent internes. */
 function coteBornier(ref) {
   const B = bornes[ref]; if (!B) return '';
   const autre = Object.values(bornes).find(x => x.rep === B.rep && x.ref !== ref);
-  return autre ? (B.y < autre.y ? 'haut' : 'bas') : '';
+  return autre ? (B.y < autre.y ? 'armoire' : 'terrain') : '';
 }
 // Les numéros que le symbole QElectroTech imprime lui-même (« 1 L1 », « U1 »…) : repérés pour ne jamais
 // doubler nos étiquettes. Un texte est un numéro imprimé si son premier mot est une borne de l'appareil.
@@ -170,7 +174,7 @@ function construireCarte() {
     t.setAttribute('x', a.x); t.setAttribute('y', a.y); t.setAttribute('class', 'cb-repere');
     t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', '8'); t.setAttribute('font-weight', 'bold');
     t.setAttribute('font-family', 'Trebuchet MS, Calibri, Arial'); t.setAttribute('fill', '#1B3A63');
-    t.textContent = a.repere; g.appendChild(t);
+    t.textContent = sansRepere(a.repere) ? '' : a.repere; g.appendChild(t);
   });
   EX.carte.bornes.forEach(b => {
     const c = doc.createElementNS(NS, 'circle');
@@ -178,6 +182,7 @@ function construireCarte() {
     c.dataset.ref = b.ref; g.appendChild(c);
     (cartesBornes[b.ref] = cartesBornes[b.ref] || []).push(c);
     const t = doc.createElementNS(NS, 'text');
+    if (rangDe(b.ref.split(':')[0]) === 5) return;   // bornier : pas de numéro de borne (29/09), le repère suffit
     t.setAttribute('x', b.x + 5); t.setAttribute('y', b.y - 4); t.setAttribute('class', 'cb-nom');
     t.textContent = b.ref.split(':')[1]; g.appendChild(t);
   });
@@ -270,9 +275,9 @@ function construirePlatine() {
         : hors && a.rang === 4
         ? '<text class="repere haut" x="' + (px + (bx0 + bx1) / 2 * ECH) + '" y="' + (py + by1 * ECH + 22) + '">' + a.repere + '</text>'
         : a.rang === 5 && (v !== a || serre(a.repere))   // vraie borne, ou bornier serré : repère sous le numéro du bas, au-dessus des fils (calque des étiquettes), en quinconce
-        ? ((dessus += '<text class="repere petit dessus" style="text-anchor:middle" x="' + (px + (bx0 + bx1) / 2 * ECH) + '" y="' + (py + by1 * ECH + 38 + 16 * (quinconce[a.repere] || 0)) + '">' + a.repere + '</text>'), '')
+        ? ((dessus += '<text class="repere petit dessus" style="text-anchor:middle" x="' + (px + (bx0 + bx1) / 2 * ECH) + '" y="' + (py + by1 * ECH + 38 + 16 * (quinconce[a.repere] || 0)) + '">' + (sansRepere(a.repere) ? '' : a.repere) + '</text>'), '')
         : a.rang === 5
-        ? '<text class="repere petit" style="text-anchor:end" x="' + (px + (bx0 + bx1) / 2 * ECH - 9) + '" y="' + (py + by1 * ECH + 17) + '">' + a.repere + '</text>'
+        ? '<text class="repere petit" style="text-anchor:end" x="' + (px + (bx0 + bx1) / 2 * ECH - 9) + '" y="' + (py + by1 * ECH + 17) + '">' + (sansRepere(a.repere) ? '' : a.repere) + '</text>'
         : '<text class="repere" x="' + (px + bx1 * ECH + 10) + '" y="' + (py + (by0 + by1) / 2 * ECH + 5) + '">' + a.repere + '</text>') + '</g>';
     v.bornes.forEach(b => {
       const bx = px + b.x * ECH, by = py + b.y * ECH;
@@ -319,6 +324,7 @@ function construirePlatine() {
     }
     else { lx = b.x + d[0] * 7; ly = b.y - 8; ancre = d[0] > 0 ? 'start' : 'end'; }
     bornesHtml += '<circle class="borne" role="button" aria-label="' + lib(b.ref) + '" data-ref="' + b.ref + '" cx="' + b.x + '" cy="' + b.y + '" r="' + RAYON_BORNE + '"/>';
+    if (rangDe(b.rep) === 5) return;   // une borne de bornier n'a pas de numéro : son repère est écrit dessous (29/09)
     etiquettesHtml += '<text class="nom-borne" data-ref="' + b.ref + '" style="text-anchor:' + ancre + '" x="' + lx.toFixed(1) + '" y="' + ly.toFixed(1) + '">' + b.id + '</text>';
   });
   $('#platine-corps').innerHTML = '<svg viewBox="' + vb + '" preserveAspectRatio="xMidYMid meet">' +
@@ -352,11 +358,16 @@ function point(e) {
   return p.matrixTransform(svgPlatine.getScreenCTM().inverse());
 }
 function borneProche(pt) {
-  let meilleure = null, dmin = RAYON_PRISE;
+  // 30/09 (pavé tactile) : dézoomé, la prise ne descend jamais sous 14 px d'écran ; la borne la plus proche l'emporte toujours
+  const m = svgPlatine.getScreenCTM(), parPx = m && m.a ? 1 / m.a : 1;
+  let meilleure = null, dmin = Math.max(RAYON_PRISE, 14 * parPx);
   Object.values(bornes).forEach(b => { const d = Math.hypot(b.x - pt.x, b.y - pt.y); if (d < dmin) { dmin = d; meilleure = b; } });
   return meilleure;
 }
 function debutTrace(e) {
+  // 29/09 : un doigt qui a glissé sur la consigne y laisse une sélection de texte ; tant qu'elle reste, le glisser suivant
+  // ne posait aucun fil. Un appui sur la platine l'efface.
+  try { const sel = window.getSelection(); if (sel && !sel.isCollapsed) sel.removeAllRanges(); } catch (err) { /* rien */ }
   if (controle) return;
   if (enAttente) {   // fil par fil : la platine attend que le fil soit posé pour de vrai (le vide se déplace toujours)
     if (!borneProche(point(e)) && !(e.target.closest && e.target.closest('.fil'))) return;
@@ -456,15 +467,25 @@ function proposerChoix(cands, e, faire) {
   const t = document.createElement('p'); t.textContent = cands.length > 2 ? 'Plusieurs bornes sous le doigt : laquelle ?' : 'Deux bornes sous le doigt : laquelle ?';
   d.setAttribute('aria-label', t.textContent); d.append(t);
   cands.forEach(b => {
-    const x = document.createElement('button'); x.textContent = b.rep + ' borne ' + b.id; x.dataset.ref = b.ref;
-    x.onclick = () => { fermerChoix(); if (!controle && !enAttente && !document.body.classList.contains('sous-tension')) faire(b.ref); }; d.append(x);
+    const x = document.createElement('button'); x.textContent = rangDe(b.rep) === 5 ? lib(b.ref) : b.rep + ' borne ' + b.id;   // bornier : son repère et son côté
+    x.dataset.ref = b.ref;   // 30/09 : l'instruction était tombée dans le commentaire (lot B1)
+    // 30/09 (contre-vérification, majeur) : le relâchement du doigt qui a ouvert la bulle ne choisit jamais une borne
+    // le clic ne compte que si le doigt s'est POSÉ sur ce bouton après l'ouverture (le relâchement de l'appui qui l'a ouverte, jamais)
+    x.addEventListener('pointerdown', () => { x.dataset.pose = '1'; });
+    x.onclick = (ev) => { if (!x.dataset.pose && ev.detail !== 0) return; fermerChoix(); if (!controle && !enAttente && !document.body.classList.contains('sous-tension')) faire(b.ref); }; d.append(x);
     b.el.classList.add('candidate');
   });
   zone.append(d);
   // au-dessus du doigt s'il y a la place, sinon dessous : jamais sous le doigt
   const w = d.offsetWidth, h = d.offsetHeight;
-  let y = e.clientY - r.top - h - 40; if (y < 8) y = e.clientY - r.top + 40;
-  d.style.left = Math.max(8, Math.min(r.width - w - 8, e.clientX - r.left - w / 2)) + 'px';
+  const fx = e.clientX - r.left, fy = e.clientY - r.top;
+  let x = fx - w / 2, y = fy - h - 40;
+  if (y < 8) y = fy + 40;
+  if (y + h > r.height - 8) {   // 30/09 : trop haute pour tenir au-dessus ou au-dessous (4 bornes) : à côté du doigt, jamais dessous
+    y = fy - h / 2;
+    x = fx - 40 > r.width - fx - 40 ? fx - w - 40 : fx + 40;   // du côté où il y a le plus de place
+  }
+  d.style.left = Math.max(8, Math.min(r.width - w - 8, x)) + 'px';
   d.style.top = Math.max(8, Math.min(r.height - h - 8, y)) + 'px';
   choix = { el: d, cands };
 }
@@ -526,6 +547,26 @@ function cheminDirect(A, B, idx) {   // du haut vers le bas : descendre, se déc
   pts.push([b.x, b.y]);
   return pts;
 }
+/* Un pont entre deux bornes de bornier (nuit du 29/09) : au métier, c'est une barrette ou un fil très court, posé d'une borne à l'autre,
+   juste au-dessus des bornes (côté armoire) ou juste au-dessous : jamais un fil qui remonte dans la goulotte. Les deux bornes se
+   prennent du même côté ; si deux ponts se recouvrent sur la rangée, le second se pose un cran plus haut (quinconce). Bornes prises
+   d'un côté chacune : le fil reste sur le cheminement ordinaire, par les goulottes. */
+const PONT_BASE = 18, PONT_PAS = 8;
+function estPont(A, B) {
+  return A.rep !== B.rep && rangDe(A.rep) === 5 && rangDe(B.rep) === 5 && A.o === B.o && (A.o === 0 || A.o === 2);
+}
+function cheminPont(A, B, niv) {
+  if (A.o !== B.o) {   // 30/09 : deux blocs VOISINS pris de côtés opposés : un cavalier court entre les deux blocs, jamais la goulotte
+    const d = PONT_BASE + niv * PONT_PAS, xm = (A.x + B.x) / 2, yA = A.y + (A.o === 0 ? -d : d), yB = B.y + (B.o === 0 ? -d : d);
+    return [[A.x, A.y], [A.x, yA], [xm, yA], [xm, yB], [B.x, yB], [B.x, B.y]];
+  }
+  const y = A.y + (A.o === 0 ? -1 : 1) * (PONT_BASE + niv * PONT_PAS);
+  return [[A.x, A.y], [A.x, y], [B.x, y], [B.x, B.y]];
+}
+function estCavalier(A, B) {   // bornier, blocs voisins (un pas au plus), l'un pris côté armoire, l'autre côté terrain
+  return A.rep !== B.rep && rangDe(A.rep) === 5 && rangDe(B.rep) === 5 && A.o !== B.o && (A.o === 0 || A.o === 2) && (B.o === 0 || B.o === 2)
+    && Math.abs(A.x - B.x) <= 40 && Math.abs(A.y - B.y) <= 30;
+}
 function sortieDe(b) { return b.o === 1 ? [b.x + SORTIE, b.y] : b.o === 3 ? [b.x - SORTIE, b.y] : [b.x, b.y]; }
 function couloirs(l) { return Math.max(1, Math.floor((l - 2 * MARGE_GOULOTTE) / COULOIR) + 1); }
 function couloirY(k, i) { const g = EX.platine.goulottes_h[k]; return g.y0 + MARGE_GOULOTTE + (i % couloirs(g.y1 - g.y0)) * COULOIR; }
@@ -536,7 +577,7 @@ function couloirX(v, i) { const g = EX.platine.goulottes_v[v]; return g.x0 + MAR
    pose, pour que la platine reste rangée. */
 function attribuerCouloirs() {
   const PL = EX.platine; if (!PL) return;
-  const occH = PL.goulottes_h.map(() => []), occV = PL.goulottes_v.map(() => []);
+  const occH = PL.goulottes_h.map(() => []), occV = PL.goulottes_v.map(() => []), occP = { 0: [], 2: [] };
   const libre = (goulotte, a, b) => {
     for (let i = 0; ; i++) {
       const c = goulotte[i] || (goulotte[i] = []);
@@ -545,6 +586,8 @@ function attribuerCouloirs() {
   };
   fils.forEach(f => {
     const A = bornes[f.de], B = bornes[f.a];
+    if (estPont(A, B)) { f.route = { pont: true, niv: libre(occP[A.o], Math.min(A.x, B.x), Math.max(A.x, B.x)) }; return; }
+    if (estCavalier(A, B)) { const a = Math.min(A.x, B.x), b = Math.max(A.x, B.x); f.route = { pont: true, niv: Math.max(libre(occP[0], a, b), libre(occP[2], a, b)) }; return; }
     if (direct(A, B)) { f.route = { direct: true }; return; }
     const r = { gA: goulotteDe(A), gB: goulotteDe(B), pA: sortieDe(A), pB: sortieDe(B), cote: -1 };
     if (r.gA === r.gB) {
@@ -565,6 +608,7 @@ function pointsFil(f) {
   const A = bornes[f.de], B = bornes[f.a];
   if (!EX.platine) return cheminSimple(A, B, f.idx);
   const r = f.route;
+  if (r.pont) return cheminPont(A, B, r.niv);
   let pts = [[A.x, A.y]];
   if (r.direct) pts = cheminDirect(A, B, f.idx);
   else {
@@ -761,6 +805,31 @@ function montrerConducteur(de, a) {
   if (canal && VUE !== 'carte') canal.postMessage({ type: 'cond', de, a });
   return !!pl;
 }
+/* Le Guidé suit le fil (Franck, 29/09 : « certaines bornes ne sont pas visibles, on ne peut pas faire les exercices ; les
+   bandes d'alimentation sont souvent en dehors du champ ») : si l'une des deux bornes du fil est hors de la vue, ou trop
+   petite pour être lue, la platine se recadre sur une LARGE bande qui les contient toutes les deux, à une échelle lisible.
+   La bande est assez large pour ne rien désigner : l'élève lit toujours les numéros lui-même (règle n° 1). */
+function suivreFil(de, a) {
+  const p = $('#platine'), z = p && p._zoom, svg = svgPlatine, b1 = bornes[de], b2 = bornes[a];
+  if (TUTO || !z || !z.cadrer || !svg || !b1 || !b2) return;   // le tutoriel : une petite platine, ses bulles visent la vue entière
+  const corps = p.querySelector('.corps'), cw = corps && corps.clientWidth, ch = corps && corps.clientHeight;
+  if (!cw || !ch) return;
+  const [vx, vy, vw, vh] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+  const LISIBLE = 0.7;   // une borne de 9 d'unité de rayon fait alors 13 px de diamètre à l'écran
+  const k = Math.min(cw / vw, ch / vh), m = 2 * RAYON_BORNE;
+  const vue = b => b.x >= vx + m && b.x <= vx + vw - m && b.y >= vy + m && b.y <= vy + vh - m;
+  if (vue(b1) && vue(b2) && k >= LISIBLE - 0.05) return;
+  const x1 = Math.min(b1.x, b2.x) - 60, x2 = Math.max(b1.x, b2.x) + 60, y1 = Math.min(b1.y, b2.y) - 60, y2 = Math.max(b1.y, b2.y) + 60;
+  let w = Math.max(x2 - x1, cw / LISIBLE), h = Math.max(y2 - y1, ch / LISIBLE);
+  if (w / h < cw / ch) w = h * cw / ch; else h = w * ch / cw;
+  // la bande reste sur la platine : on la glisse à l'intérieur de l'étendue des bornes plutôt que de montrer du vide
+  const tout = Object.values(bornes), cadre = svg.querySelector('.fond-platine.cadre') || svg.querySelector('.fond-platine'),
+        c = cadre ? cadre.getBBox() : { x: tout[0].x, y: tout[0].y, width: 0, height: 0 };
+  const ex1 = Math.min(c.x, ...tout.map(b => b.x - 60)), ex2 = Math.max(c.x + c.width, ...tout.map(b => b.x + 60)),
+        ey1 = Math.min(c.y, ...tout.map(b => b.y - 60)), ey2 = Math.max(c.y + c.height, ...tout.map(b => b.y + 60));
+  const caler = (c, t, e1, e2) => (t >= e2 - e1 ? (e1 + e2) / 2 - t / 2 : Math.min(Math.max(c - t / 2, e1), e2 - t));
+  z.cadrer({ x: caler((x1 + x2) / 2, w, ex1, ex2), y: caler((y1 + y2) / 2, h, ey1, ey2), w, h }, 0, cw / ch);
+}
 function compterAide(n) {
   if (n === undefined) aides++; else aides = n;
   const b = $('#btn-aide'); if (b) b.textContent = aides ? 'Aide (' + aides + ')' : 'Aide';
@@ -786,6 +855,7 @@ function prochaineEtape(sansControle) {
   }
   if (!et) { surbrillance([]); montrerConducteur(null); dire('Tout est câblé. Contrôle en cours…', 'ok'); setTimeout(controler, 600); return; }
   choisirCouleur(et.couleurs[0]);
+  suivreFil(et.de, et.a);
   const fixes = new Set(liaisonsFixes().map(([a, b]) => cle(a, b))), aPoser = EX.etapes.filter(e => !fixes.has(cle(e.de, e.a)));
   const n = EX.etapes.slice(0, etapeIdx).filter(e => !fixes.has(cle(e.de, e.a))).length + 1, total = aPoser.length;
   if (et.pont) {   // le bornier à trouver (27/09) : deux bornes d'appareils à relier PAR le bornier, sans donner ses numéros
@@ -966,6 +1036,7 @@ function aller(activite, mode, reelle) {
   location.search = '?ex=' + encodeURIComponent(ID) + '&activite=' + activite + '&mode=' + mode + ((reelle === undefined ? REELLE_ADRESSE : reelle) ? '&platine=reelle' : '') +
     '&atelier=' + ATELIER +
     (TUTO ? '&tuto' : '') +   // le tutoriel (moteur/tutoriel.js) suit l'élève d'une activité à l'autre
+    (P.get('voix') !== null ? '&voix' : '') +   // la voix du professeur aussi (moteur/voix.js, maquette V1)
     (EX && EX.reels ? '&materiel=' + MATERIEL : '');
 }
 
@@ -1310,7 +1381,12 @@ function lancerCarte() {
 function installerZoom(svg, options) {
   const base = (svg.getAttribute('viewBox') || '0 0 100 100').split(/[\s,]+/).map(Number);
   const etat = { x: base[0], y: base[1], w: base[2], h: base[3] };
-  const appliquer = () => svg.setAttribute('viewBox', [etat.x, etat.y, etat.w, etat.h].map(v => v.toFixed(1)).join(' '));
+  const appliquer = () => {
+    svg.setAttribute('viewBox', [etat.x, etat.y, etat.w, etat.h].map(v => v.toFixed(1)).join(' '));
+    // unités du dessin par pixel d'écran : un fil garde une épaisseur minimale à l'écran (cablage.css), même dézoomé
+    const r = svg.getBoundingClientRect();
+    if (r.width && r.height) svg.style.setProperty('--k', Math.max(etat.w / r.width, etat.h / r.height).toFixed(3) + 'px');
+  };
   const pt = (e) => { const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY; return p.matrixTransform(svg.getScreenCTM().inverse()); };
   const borner = (w) => Math.min(base[2] * 4, Math.max(base[2] / 8, w));
   const zoomer = (facteur, centre) => {
@@ -1318,14 +1394,21 @@ function installerZoom(svg, options) {
     const w = borner(etat.w / facteur), h = w * etat.h / etat.w;   // on garde le rapport courant (celui du cadrage, s'il y en a un)
     etat.x = c.x - (c.x - etat.x) * (w / etat.w); etat.y = c.y - (c.y - etat.y) * (h / etat.h); etat.w = w; etat.h = h; appliquer();
   };
-  const ajuster = () => { etat.x = base[0]; etat.y = base[1]; etat.w = base[2]; etat.h = base[3]; appliquer(); };
+  // 30/09 (Franck, au pavé tactile : « la platine est petite ») : ⤢ cadre ce qu'on câble (options.zone), pas toute la plaque
+  const ajuster = () => {
+    const z = options.zone && options.zone(), r = svg.getBoundingClientRect();
+    if (z && r.width && r.height) { cadrer(z, 25, r.width / r.height); return; }
+    etat.x = base[0]; etat.y = base[1]; etat.w = base[2]; etat.h = base[3]; appliquer();
+  };
   // cadrer une zone (x, y, w, h en unités du SVG) au rapport `ratio` (largeur / hauteur du panneau, sinon celui du dessin) :
   // la platine seule, sans ce qui est dessous (Franck, 28/09, écran adaptatif)
   const cadrer = (z, marge, ratio) => {
     marge = marge || 0; const r = ratio || base[2] / base[3];
     let w = z.w + 2 * marge, h = z.h + 2 * marge;
     if (w / h < r) w = h * r; else h = w / r;
-    w = borner(w); h = w / r;
+    // 30/09 (contre-vérification) : un cadrage doit tout montrer ; le plafond de dézoom (4 × la platine) rognait la hauteur d'un panneau
+    // large et bas (la platine seule à 1366 × 768) et laissait les deux bornes du fil guidé hors champ. Seul le zoom avant reste borné.
+    w = Math.max(base[2] / 8, w); h = w / r;
     etat.x = z.x + z.w / 2 - w / 2; etat.y = z.y + z.h / 2 - h / 2; etat.w = w; etat.h = h; appliquer();
   };
   svg.addEventListener('wheel', (e) => { e.preventDefault(); zoomer(e.deltaY < 0 ? 1.2 : 1 / 1.2, pt(e)); }, { passive: false });
@@ -1358,6 +1441,15 @@ function installerZoom(svg, options) {
   svg.addEventListener('pointerup', fin); svg.addEventListener('pointercancel', fin);
   return { zoomer, ajuster, cadrer };
 }
+function zonePlatine() {   // les appareils dessinés et toutes les bornes (l'arrivée du réseau et les moteurs compris)
+  const svg = svgPlatine; if (!svg) return null;
+  const boites = [...svg.querySelectorAll('#symboles .app, .borne')].map(el => { try { return el.getBBox(); } catch (err) { return null; } })
+    .filter(b => b && (b.width || b.height));
+  if (!boites.length) return null;
+  const x1 = Math.min(...boites.map(b => b.x)), y1 = Math.min(...boites.map(b => b.y)),
+        x2 = Math.max(...boites.map(b => b.x + b.width)), y2 = Math.max(...boites.map(b => b.y + b.height));
+  return { x: x1, y: y1, w: x2 - x1, h: y2 - y1 };
+}
 function brancherZoom(panneau, z) {
   panneau._zoom = z;   // l'écran adaptatif (moteur/ecran.js) cadre la platine seule
   panneau.querySelectorAll('button.zoom').forEach(b => {
@@ -1376,6 +1468,22 @@ const STATIONS = {
   'contacteur': '5-2-contacteur', 'contact': '5-3-contact-auxiliaire', 'bouton-poussoir': '5-7-boutons', 'voyant': '5-8-securite-signalisation',
   'bobine de contacteur': '6-1-bobine-electro-aimant', 'transformateur': '6-2-transformateur', 'moteur': '6-3-moteur-asynchrone'
 };
+// 29/09 : les noms des exercices varient (« disjoncteur 1P+N », « compresseur », « ventilateur du condenseur »…) : après le nom exact,
+// des mots-clés, du plus précis au plus général. Une station sert ce que l'élève a sous les yeux ; rien d'inventé.
+const STATIONS_MOTS = [
+  [/sectionneur.*porte.?fusible|porte.?fusible.*sectionneur/, '3-5-sectionneur-porte-fusible'], [/porte.?fusible/, '3-4-porte-fusible'],
+  [/interrupteur.sectionneur/, '3-3-interrupteur-sectionneur'], [/sectionneur/, '3-2-sectionneur'],
+  [/disjoncteur.*diff/, '4-6-disjoncteur-differentiel'], [/interrupteur.*diff/, '4-5-interrupteur-differentiel'],
+  [/disjoncteur.moteur/, '4-4-disjoncteur-moteur'], [/disjoncteur/, '4-3-disjoncteur-magneto-thermique'],
+  [/relais thermique/, '4-7-relais-thermique'], [/relais temporis/, '5-5-relais-temporise'], [/relais/, '5-4-relais'],
+  [/contacteur/, '5-2-contacteur'], [/bouton|poussoir|arr[êe]t d.urgence/, '5-7-boutons'], [/voyant/, '5-8-securite-signalisation'],
+  [/transformateur/, '6-2-transformateur'], [/[ée]lectrovanne|vanne magn/, '6-1-bobine-electro-aimant'],
+  [/fusible/, '4-1-fusible-gg'], [/^interrupteur(?! va)/, '3-1-interrupteur']];
+function stationDe(nom, type) {
+  if (/^(moteur|motor)(?!_horloge)/.test(type || '')) return /mono/.test(type) ? '6-5-moteur-monophase' : '6-3-moteur-asynchrone';   // le type dit mono ou tri, pas le nom
+  if (STATIONS[nom]) return STATIONS[nom];
+  const m = STATIONS_MOTS.find(([re]) => re.test(nom)); return m ? m[1] : null;
+}
 /* « X1 à X9 » : des repères triés, les suites de numéros regroupées (la nomenclature et le matériel de l'étape Réaliser).
    29/09 : le bornier se lisait « X3 à X6 » (premier et dernier dans l'ordre du fichier) pour des bornes X1 à X9. */
 function compacter(reperes) {
@@ -1394,21 +1502,23 @@ function construireNomenclature() {
   const z = $('#nomenclature'); if (!z) return;
   const cle = (a) => (a.rang === 5 ? 3.5 : a.rang);   // dans l'ordre du câblage : protections, commande, puissance, bornier, récepteurs
   const liste = EX.appareils.filter(a => a.rang > 0).slice().sort((p, q) => cle(p) - cle(q));
-  const bornier = liste.filter(a => a.rang === 5).map(a => a.repere);
+  const bornier = liste.filter(a => a.rang === 5 && !sansRepere(a.repere)).map(a => a.repere);
+  const muettes = liste.filter(a => a.rang === 5 && sansRepere(a.repere)).length;
   z.textContent = '';
   const titre = document.createElement('span'); titre.className = 'titre-nomenclature'; titre.textContent = 'Nomenclature'; z.append(titre);
-  const ajouter = (rep, nom) => {
+  const ajouter = (rep, nom, type) => {
     const s = document.createElement('span'), b = document.createElement('b'); b.textContent = rep; s.append(b, ' ');
-    if (STATIONS[nom]) {
+    const st = stationDe(nom, type);
+    if (st) {
       const a = document.createElement('a'); a.textContent = nom; a.target = '_blank'; a.rel = 'noopener';
-      a.href = 'https://inerweb.fr/electrorezo/stations/' + STATIONS[nom] + '/'; a.title = 'Station ÉlectroRézo sur inerweb.fr : ' + nom;
+      a.href = 'https://inerweb.fr/electrorezo/stations/' + st + '/'; a.title = 'Station ÉlectroRézo sur inerweb.fr : ' + nom;
       s.append(a);
     } else s.append(nom);
     z.append(s);
   };
   liste.forEach(a => {
-    if (a.rang !== 5) ajouter(a.repere, a.nom.toLowerCase());
-    else if (a.repere === bornier[0]) ajouter(compacter(bornier), bornier.length > 1 ? 'bornes du bornier' : 'borne');
+    if (a.rang !== 5) ajouter(a.repere, a.nom.toLowerCase(), a.type);
+    else if (a.repere === bornier[0]) ajouter(compacter(bornier), (bornier.length > 1 ? 'bornes du bornier' : 'borne') + (muettes ? ', et ' + muettes + ' borne' + (muettes > 1 ? 's' : '') + ' de terre sans repère' : ''));
   });
 }
 
@@ -1427,12 +1537,15 @@ window.CABLAGE_ETAT = () => ({ exercice: ID, activite: ACTIVITE, mode: MODE, fil
                                aides, controle, analyse: EX ? analyser() : null,
                                carte: items.map(i => ({ quoi: i.rep || lib(i.de) + ' > ' + lib(i.a), attendu: i.attendu, reponse: i.reponse })) });
 
+// l'écran adaptatif (moteur/ecran.js) rappelle le suivi du fil après avoir recadré la platine
+window.CABLAGE_SUIVRE = () => { if (MODE !== 'guide' || ACTIVITE !== 'cabler') return; const et = etapeCourante(); if (et) suivreFil(et.de, et.a); };
+
 // La mise sous tension (moteur/tension-ecran.js) lit l'exercice et les fils, parle dans la consigne et compte ses aides.
 function signatureFils() { return fils.map(f => cle(f.de, f.a)).sort().join(' '); }
 window.CABLAGE_API = { ex: () => EX, fils: () => fils, mode: MODE, activite: ACTIVITE, vue: VUE, reelle: () => vueReelle(),
                        dire, compterAide, borneCarte, controleAJour: () => filsControles !== null && filsControles === signatureFils(),
                        // l'étape Réaliser (moteur/realiser.js) : la platine dessinée ici, sa colonne là-bas
-                       atelier: ATELIER, lib, aller, compacter, couleurs: COULEURS, memoire: () => MEMOIRE, materiel: () => MATERIEL, borne: (ref) => !!bornes[ref],
+                       atelier: ATELIER, lib, aller, compacter, sansRepere, couleurs: COULEURS, memoire: () => MEMOIRE, materiel: () => MATERIEL, borne: (ref) => !!bornes[ref],
                        liaisonsFixes: () => liaisonsFixes(),
                        // 30/09 : le fil par fil en attente (constat R2) ; le tracé des fils et des appareils pour poser les étiquettes
                        // d'état à côté, jamais dessus (constat E6) ; le tutoriel ; le stockage bloqué (constat X8)
@@ -1446,7 +1559,7 @@ function lancerRealiser() {
   document.body.classList.add('activite-realiser');
   controle = true;   // debutTrace ne pose aucun fil
   construirePlatine();
-  brancherZoom($('#platine'), installerZoom(svgPlatine, {}));
+  brancherZoom($('#platine'), installerZoom(svgPlatine, { zone: zonePlatine }));
   const memo = MEMOIRE && Array.isArray(MEMOIRE.fils) ? MEMOIRE.fils : [];
   memo.forEach(m => { if (bornes[m.de] && bornes[m.a]) fils.push({ de: m.de, a: m.a, couleur: m.couleur, idx: fils.length }); });   // un fil que l'embrochage fait n'a pas de bornes en vue réelle
   redessinerFils(); rafraichir();
@@ -1492,6 +1605,7 @@ charger(ID, (ex) => {
   if (VUE === 'carte') { vueCarte(); return; }
   construirePlatine();
   brancherZoom($('#platine'), installerZoom(svgPlatine, {
+    zone: zonePlatine,
     peutDeplacer: (e) => !trace && !(e.target.closest && e.target.closest('.fil')),
     annuler: annulerTrace
   }));
