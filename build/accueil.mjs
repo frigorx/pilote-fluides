@@ -55,7 +55,7 @@ const audio = compterMp3("packs/fluides/res") + compterMp3("electrorezo") + comp
 const comptes = RESEAUX.map((r) => {
   const st = catalogue.filter((s) => r.catalogue.includes(s.reseau));
   const lignes = r.lignes || new Set(st.flatMap((s) => (s.ligne || "").split(",").map((x) => x.trim()).filter(Boolean))).size;
-  return { id: r.id, stations: st.length, lignes };
+  return { id: r.id, stations: r.stations || st.length, lignes };
 });
 const total = {
   reseaux: RESEAUX.length,

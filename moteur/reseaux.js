@@ -151,6 +151,27 @@ window.INERWEB_RESEAUX = [
       { titre: "Utiliser en sécurité", href: "r408/?module=M7" },
       { titre: "La vérification journalière", href: "r408/?module=M9" }
     ]
+  },
+  {
+    id: "cuivrezo",
+    nom: "CuivRézo — Les gestes du cuivre",
+    court: "CuivRézo",
+    emoji: "🔥",
+    adresse: "cuivrezo/index.html",
+    couleur: "#b45309",
+    sousTitre: "Les gestes du cuivre à votre poste d’atelier : couper, cintrer, évaser, braser, jusqu’aux pièces complexes. Prototype en cours de relecture.",
+    niveaux: "CAP",
+    etat: "en relecture",
+    catalogue: [],
+    stations: 14, /* pas encore au catalogue des stations : compte relevé dans l'atelier cuivrezo */
+    lignes: 4,
+    vignette: "cuivrezo/images/1-4-cintrette.webp",
+    entree: { titre: "Mon poste de travail", href: "cuivrezo/stations/1-0/" },
+    raccourcis: [
+      { titre: "Cintrer à la cintrette", href: "cuivrezo/stations/1-4/" },
+      { titre: "Le poste oxyacétylénique", href: "cuivrezo/stations/2-1/" },
+      { titre: "La brasure forte sous azote", href: "cuivrezo/stations/3-2/" }
+    ]
   }
 ];
 /* RESEAUX FIN */
