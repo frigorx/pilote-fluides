@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — le réseau</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260930-0800">
-<link rel="stylesheet" href="moteur/accueil.css?v=20260930-0800">
+<link rel="stylesheet" href="moteur/cablage.css?v=20260930-0834">
+<link rel="stylesheet" href="moteur/accueil.css?v=20260930-0834">
 </head>
 <body class="reseau">
 <header class="barre">
@@ -73,10 +73,10 @@
     </div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260930-0800';</script>
-<script src="exercices/index.js?v=20260930-0800"></script>
-<script src="moteur/reseau.js?v=20260930-0800"></script>
-<script src="moteur/documents.js?v=20260930-0800"></script>
+<script>window.CABLAGE_VERSION = '20260930-0834';</script>
+<script src="exercices/index.js?v=20260930-0834"></script>
+<script src="moteur/reseau.js?v=20260930-0834"></script>
+<script src="moteur/documents.js?v=20260930-0834"></script>
 <script>
 (function(){
 'use strict';
@@ -282,7 +282,7 @@ function remplirStation() {
   $('#st-niv').textContent = s.niveau; $('#st-niv').hidden = depart;   // le Départ : « Départ · Départ » disait deux fois la même chose
   $('#st-titre').textContent = s.titre; $('#st-sous').textContent = s.sous;
   $('#st-apprend').textContent = s.apprend;
-  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20260930-0800';
+  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20260930-0834';
   img.alt = 'Le schéma : ' + R.titre(ex, s.titre);
   // les fils à poser
   const faits = $('#st-faits'), mien = ++jeton;
@@ -314,7 +314,9 @@ function remplirStation() {
     discret(debut, depart ? 'Refaire la prise en main' : 'Refaire' + nomQuai);
     // 30/09 (contre-vérification) : la suite de CETTE station reste atteignable (Essayer, puis Réaliser), en discret
     const apres = depart ? null : etapes.slice(etapes.findIndex(e => e.id === 'cabler') + 1).find(e => !f.has(e.id));
-    if (apres) { su.hidden = false; su.href = lienJouer(ex, apres.act, reg.mode, reg.atelier, reg.platine); su.textContent = 'Continuer à l’étape ' + (etapes.indexOf(apres) + 1) + ' · ' + apres.nom + nomQuai; }
+    // le mode réellement joué (ses fils ne reviennent que dans ce mode), sinon celui des réglages
+    const joue = mesRes.filter(e => e.activite === 'cabler').pop(), modeSuite = (joue && normMode(joue.mode)) || reg.mode;
+    if (apres) { su.hidden = false; su.href = lienJouer(ex, apres.act, modeSuite, reg.atelier, reg.platine); su.textContent = 'Continuer à l’étape ' + (etapes.indexOf(apres) + 1) + ' · ' + apres.nom + nomQuai; }
   } else if (mesRes.length && !depart) {   // commencé : reprendre en gros, repartir du début en discret
     const {et, n} = etapeReprise(mesRes[mesRes.length - 1], etapes);
     bouton(lienJouer(ex, et.act, reg.mode, reg.atelier, reg.platine), 'Reprendre à l’étape ' + n + ' · ' + et.nom);
@@ -411,6 +413,6 @@ window.addEventListener('pageshow', e => { if (e.persisted) route(); });   // re
 route();
 })();
 </script>
-<script src="moteur/marque.js?v=20260930-0800" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20260930-0834" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

@@ -31,16 +31,37 @@ const propre = (k) => PROPRE ? PROPRE + '-' + k : null;
 // ---- la lecture : une piste à la fois ; une piste « urgente » coupe la précédente (l'élève va plus vite que la voix)
 function jouer(id, urgent) {
   if (!reglage.actif || !id || !pistes[id]) return;
-  if (urgent) { file = []; if (audio) { audio.pause(); audio = null; } }
+  if (urgent) { file = []; if (audio) { audio.pause(); audio = null; bulle('cacher'); } }
   if (audio) { if (file.length < 3) file.push(id); return; }
   audio = new Audio('voix/' + pistes[id].fichier);
   audio.playbackRate = Math.min(1.5, Math.max(0.6, reglage.vitesse / BASE));
-  audio.onended = audio.onerror = () => { audio = null; bouton(); if (file.length) jouer(file.shift()); };
+  audio.onended = audio.onerror = () => { audio = null; bulle('cacher'); bouton(); if (file.length) jouer(file.shift()); };
+  bulle('montrer', pistes[id].texte, { audio });   // 30/09 : la phrase dite, dans la bulle du site (absente à l'atelier : rien)
   // après un rechargement, le navigateur peut refuser le son sans nouveau geste : le bouton propose de reprendre
   audio.play().catch(() => { audio = null; bloque = id; bouton(); });
   bouton();
 }
-function couper() { file = []; if (audio) { audio.pause(); audio = null; } }
+function couper() { file = []; if (audio) { audio.pause(); audio = null; } bulle('cacher'); }
+// le texte de la voix : pilote-fluides/moteur/sous-titres.js, branché par outils/livrer.py dans la copie servie
+function bulle(methode, ...args) {
+  if (!window.PiloteSousTitres || (methode === 'montrer' && !args[0])) return;
+  window.PiloteSousTitres[methode](...args);
+  if (methode === 'montrer') poserBulle();
+}
+// Le composant prend le coin bas qui cache le moins ; ici tous les coins cachent la carte ou la platine, et c'était « Contrôler ».
+// Tant que l'élève ne l'a pas déplacée (il le peut, c'est retenu), la bulle se pose dans le vide de la barre du bas, sur deux lignes ;
+// en « Schéma sur papier », au pied de la colonne des outils.
+function poserBulle() {
+  const b = document.querySelector('.pst'), o = $('.outils');
+  if (!b || !o || b.style.top) return;
+  const colonne = document.body.classList.contains('vue-papier') && window.innerWidth > window.innerHeight;
+  const r = (colonne ? o : o.querySelector('.spacer') || o).getBoundingClientRect();
+  const w = Math.min(640, r.width - 16);
+  if (w < 200) return;
+  b.style.maxWidth = w + 'px'; b.style.left = (r.left + (r.width - w) / 2) + 'px';
+  b.style.bottom = colonne ? '44px' : Math.max(8, window.innerHeight - o.getBoundingClientRect().bottom + 30) + 'px';   // dans la barre, au-dessus du pied
+}
+window.addEventListener('resize', () => { if (audio) poserBulle(); });
 
 // ---- le bouton, dans la bande de consigne (une seule commande)
 function bouton() {

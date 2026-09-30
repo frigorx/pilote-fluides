@@ -6,997 +6,1163 @@
    "fichier": "mp3/tuto-0-c916c02db4d8.mp3",
    "duree": 33.1,
    "mots": 96,
-   "mots_s": 2.9
+   "mots_s": 2.9,
+   "texte": "Bonjour. Je vais vous accompagner pendant cette prise en main. À gauche de l’écran, vous avez la carte : c’est le schéma électrique, celui qu’un électricien lit avant de toucher un seul fil. À droite, la platine : les appareils posés sur leur rail, avec leurs bornes. Tout le travail consiste à passer de l’un à l’autre. On va le faire pas à pas, sur un circuit très simple : une lampe commandée par un interrupteur. Vous allez colorier les fils, retrouver les numéros des bornes, puis poser les fils vous-même. Quand vous êtes prêt, appuyez sur Commencer."
   },
   "tuto-1": {
    "fichier": "mp3/tuto-1-f2c1f0e6d78f.mp3",
    "duree": 28.9,
    "mots": 91,
-   "mots_s": 3.15
+   "mots_s": 3.15,
+   "texte": "Première chose : savoir ce que porte chaque fil. Sur la carte, un fil clignote. Pour savoir s’il porte la phase, le neutre ou la terre, on le remonte jusqu’à l’arrivée, en haut du schéma, là où sont écrits L, N et PE. C’est exactement ce qu’on fait sur un chantier avant de choisir un conducteur : le neutre est toujours bleu, la terre toujours verte et jaune, et la phase prend une autre couleur, souvent le marron ou le noir. Quand vous avez trouvé, touchez la bonne couleur, en bas de l’écran."
   },
   "tuto-2": {
    "fichier": "mp3/tuto-2-ee8cf44ea8fa.mp3",
    "duree": 16.2,
    "mots": 49,
-   "mots_s": 3.02
+   "mots_s": 3.02,
+   "texte": "C’est juste. Faites de même pour les autres fils, à votre rythme. Vous n’avez rien à valider : dès que le dernier fil est colorié, le logiciel contrôle tout seul et vous donne un niveau, de zéro à quatre. Lisez-le, puis passez au repérage avec le bouton qui apparaît."
   },
   "tuto-3": {
    "fichier": "mp3/tuto-3-8657fed44b4a.mp3",
    "duree": 35.2,
    "mots": 103,
-   "mots_s": 2.93
+   "mots_s": 2.93,
+   "texte": "Maintenant, les numéros des bornes sont cachés, et c’est vous qui allez les retrouver. Les appareils de puissance numérotent leurs bornes de la même façon : en haut, les impaires, un, trois, cinq, de gauche à droite ; en bas, les paires, deux, quatre, six. Pourquoi ? Parce que le courant entre par le haut et ressort par le bas : ce qui entre par la borne un ressort par la deux, ce qui entre par la trois ressort par la quatre. Avec cette règle, vous pouvez numéroter un appareil que vous n’avez jamais vu. La borne qui clignote : quel est son numéro ? Touchez-le, en bas."
   },
   "tuto-4": {
    "fichier": "mp3/tuto-4-f41835703753.mp3",
    "duree": 9.2,
    "mots": 28,
-   "mots_s": 3.04
+   "mots_s": 3.04,
+   "texte": "Voilà. Numérotez les autres bornes de la même manière. Comme tout à l’heure, le contrôle se fait tout seul à la fin, et ensuite on passe au câblage."
   },
   "tuto-5": {
    "fichier": "mp3/tuto-5-157bcd084cb4.mp3",
    "duree": 27.1,
    "mots": 80,
-   "mots_s": 2.95
+   "mots_s": 2.95,
+   "texte": "On arrive au cœur du travail. Sur la carte, un seul fil clignote : c’est celui à poser. Suivez-le d’un bout à l’autre et lisez les deux numéros écrits à ses extrémités. Cherchez ensuite ces deux bornes sur la platine. Pour poser le fil, touchez la première borne : elle s’allume, pour vous montrer qu’elle est prise. Touchez la seconde : le fil se dessine. Inutile de viser au millimètre, c’est la borne la plus proche de votre doigt qui est choisie."
   },
   "tuto-6": {
    "fichier": "mp3/tuto-6-6d9c58dfee3f.mp3",
    "duree": 23.8,
    "mots": 66,
-   "mots_s": 2.78
+   "mots_s": 2.78,
+   "texte": "Bien. Pour le fil suivant, essayons le bouton Aide, pour voir comment il marche. Un premier appui éclaire les deux appareils concernés. Un deuxième écrit les numéros des bornes. Un troisième fait clignoter les bornes elles-mêmes. C’est une vraie aide, et c’est pour cela qu’elle est comptée : votre professeur verra combien de fois vous l’avez demandée. Servez-vous-en quand vous êtes bloqué, pas avant."
   },
   "tuto-7": {
    "fichier": "mp3/tuto-7-ea61ec3f0bc6.mp3",
    "duree": 15.6,
    "mots": 52,
-   "mots_s": 3.33
+   "mots_s": 3.33,
+   "texte": "Tout le monde se trompe de borne un jour. Un fil mal posé ne reste pas : touché sur la platine, il se met à défiler, et le bouton Supprimer le fil l’enlève. Essayez sur un des fils que vous venez de poser, puis reposez-le : il clignote de nouveau sur la carte."
   },
   "tuto-8": {
    "fichier": "mp3/tuto-8-4a5d332cf50a.mp3",
    "duree": 10.4,
    "mots": 32,
-   "mots_s": 3.09
+   "mots_s": 3.09,
+   "texte": "Vous avez tout en main. Posez les fils qui restent, un par un, en suivant celui qui clignote sur la carte. Quand le dernier est posé, le contrôle se lance tout seul."
   },
   "tuto-9": {
    "fichier": "mp3/tuto-9-d825f6d4baec.mp3",
    "duree": 22.8,
    "mots": 63,
-   "mots_s": 2.76
+   "mots_s": 2.76,
+   "texte": "Voici votre résultat. Le niveau va de zéro à quatre : quatre, c’est un câblage juste. En dessous, le logiciel compte les aides demandées et les fils refusés, c’est-à-dire posés sur une mauvaise borne. Ces chiffres, vous les recopierez sur votre feuille : ils disent à votre professeur comment vous avez travaillé, pas seulement si le résultat est bon. Fermez ensuite la fenêtre."
   },
   "tuto-10": {
    "fichier": "mp3/tuto-10-99307e2985e4.mp3",
    "duree": 11.9,
    "mots": 30,
-   "mots_s": 2.53
+   "mots_s": 2.53,
+   "texte": "Jusqu’ici, la platine montrait des symboles. Mais à l’atelier, vous câblerez de vrais appareils. Appuyez sur Vue réelle : chaque symbole est remplacé par l’appareil que vous aurez entre les mains."
   },
   "tuto-11": {
    "fichier": "mp3/tuto-11-237372325439.mp3",
    "duree": 33.5,
    "mots": 98,
-   "mots_s": 2.93
+   "mots_s": 2.93,
+   "texte": "Regardez le disjoncteur : c’est maintenant le vrai. Ses numéros n’ont pas changé : un et deux pour le neutre, à gauche, trois et quatre pour la phase. C’est la règle en France : le neutre à gauche. En haut de l’écran, la pastille indique le mode de travail. En Guidé, le logiciel vous montre le fil à poser. En Aidé, vous choisissez l’ordre, avec l’aide si besoin. En Avancé, il ne montre plus rien et contrôle seulement à la fin, comme sur un vrai chantier où personne ne vous dit où va le fil. Touchez la pastille, puis choisissez Avancé."
   },
   "tuto-12": {
    "fichier": "mp3/tuto-12-85917b969cf2.mp3",
    "duree": 13.3,
    "mots": 33,
-   "mots_s": 2.48
+   "mots_s": 2.48,
+   "texte": "Dernier essai : le même câblage, mais seul. Six fils, pas d’aide, rien qui clignote. Vous lisez chaque fil sur la carte, et vous le posez. Quand vous pensez avoir fini, appuyez sur Contrôler."
   },
   "tuto-13": {
    "fichier": "mp3/tuto-13-f2d08768fb8a.mp3",
    "duree": 20.1,
    "mots": 61,
-   "mots_s": 3.03
+   "mots_s": 3.03,
+   "texte": "C’est terminé, bravo. Vous savez maintenant lire un fil sur la carte, retrouver le numéro d’une borne, poser et enlever un fil, demander de l’aide et passer à la vue réelle. Pensez à noter sur votre feuille le niveau, les aides et les fils refusés de chaque étape. La suite, ce sont les vrais exercices : vous les trouverez dans le réseau."
   },
   "n1-colorier": {
    "fichier": "mp3/n1-colorier-61be2a8167fb.mp3",
    "duree": 24.8,
    "mots": 68,
-   "mots_s": 2.74
+   "mots_s": 2.74,
+   "texte": "Cet exercice alimente un moteur triphasé, comme celui d’un compresseur de groupe frigorifique. Avant de câbler, on lit. Sur la carte, chaque fil porte soit une des trois phases, L1, L2 ou L3, soit le neutre, soit la terre. Pour le savoir, on le remonte jusqu’à l’arrivée du réseau, en haut à gauche du schéma. Le fil qui clignote : suivez-le vers le haut, puis touchez sa couleur."
   },
   "n1-reperer": {
    "fichier": "mp3/n1-reperer-f53aa427373a.mp3",
    "duree": 23.7,
    "mots": 63,
-   "mots_s": 2.66
+   "mots_s": 2.66,
+   "texte": "Deuxième étape : les numéros. Sur le schéma, chaque borne porte un numéro, et c’est ce numéro qui vous dira où poser le fil sur la platine. En haut de chaque appareil, les impaires, un, trois, cinq : c’est par là que le courant entre. En bas, les paires, deux, quatre, six : c’est par là qu’il ressort. La borne qui clignote : quel est son numéro ?"
   },
   "n1-cabler": {
    "fichier": "mp3/n1-cabler-3d9ddf9f8d07.mp3",
    "duree": 26.1,
    "mots": 80,
-   "mots_s": 3.07
+   "mots_s": 3.07,
+   "texte": "On passe au câblage. Le chemin du courant est toujours le même : il arrive du réseau, entre dans l’armoire par le bornier, traverse le disjoncteur, puis le contacteur, puis le relais thermique, et repart par le bornier vers le moteur. À chaque appareil, il entre par une borne impaire, en haut, et ressort par la paire, en bas. En mode guidé, un seul fil clignote sur la carte à la fois : c’est celui qu’on pose. Je vous accompagne pour chacun."
   },
   "n1-fil-1": {
    "fichier": "mp3/n1-fil-1-c50048bdf6c0.mp3",
    "duree": 25.0,
    "mots": 72,
-   "mots_s": 2.88
+   "mots_s": 2.88,
+   "texte": "Regardez le fil qui clignote. Il part de l’arrivée du réseau, sur la première phase, L1. Suivez-le : il descend jusqu’au bornier, la rangée de petites bornes en bas de la platine. Le bornier, c’est la frontière entre le réseau et l’armoire : tout ce qui entre ou sort passe par lui. Sur quelle borne du bornier arrive-t-il ? Lisez le repère au bout du trait. Puis touchez L1, et cette borne."
   },
   "n1-arme": {
    "fichier": "mp3/n1-arme-49686023486c.mp3",
    "duree": 4.5,
    "mots": 10,
-   "mots_s": 2.24
+   "mots_s": 2.24,
+   "texte": "Vous voyez, elle s’allume. Touchez maintenant l’autre bout du fil."
   },
   "n1-fil-2": {
    "fichier": "mp3/n1-fil-2-973dab3882c6.mp3",
    "duree": 10.3,
    "mots": 27,
-   "mots_s": 2.62
+   "mots_s": 2.62,
+   "texte": "C’est posé. Même chemin pour la deuxième phase, L2 : du réseau vers sa propre borne du bornier. Laquelle ? La carte vous le dit, au bout du trait."
   },
   "n1-fil-3": {
    "fichier": "mp3/n1-fil-3-15c65781c392.mp3",
    "duree": 3.7,
    "mots": 9,
-   "mots_s": 2.45
+   "mots_s": 2.45,
+   "texte": "Et la troisième phase, L3, de la même façon."
   },
   "n1-fil-4": {
    "fichier": "mp3/n1-fil-4-ca1bfbe4a37f.mp3",
    "duree": 13.8,
    "mots": 37,
-   "mots_s": 2.69
+   "mots_s": 2.69,
+   "texte": "Voici le neutre, en bleu. Le moteur triphasé n’en a pas besoin pour tourner : ses trois phases lui suffisent. On l’amène quand même jusqu’au bornier, pour qu’il soit disponible dans l’armoire. Suivez son trait jusqu’à sa borne."
   },
   "n1-fil-5": {
    "fichier": "mp3/n1-fil-5-a3303d042955.mp3",
    "duree": 14.7,
    "mots": 44,
-   "mots_s": 3.0
+   "mots_s": 3.0,
+   "texte": "Le vert et jaune, c’est la terre, le conducteur de protection. En temps normal, aucun courant n’y passe : il est là pour le jour où un fil abîmé touche la carcasse du moteur. Lui aussi entre dans l’armoire par le bornier. Suivez son trait."
   },
   "n1-fil-6": {
    "fichier": "mp3/n1-fil-6-bc35367e9015.mp3",
    "duree": 25.3,
    "mots": 65,
-   "mots_s": 2.57
+   "mots_s": 2.57,
+   "texte": "Le courant est entré dans l’armoire. Il monte maintenant vers le premier appareil, Q1, le disjoncteur magnétothermique. Son rôle : couper tout seul si le courant devient trop fort, à cause d’une surcharge ou d’un court-circuit. Le fil part du haut du bornier, côté armoire, et monte jusqu’à une entrée de Q1. Laquelle ? Une impaire, puisque c’est une entrée : lisez son numéro sur la carte."
   },
   "n1-fil-7": {
    "fichier": "mp3/n1-fil-7-b3f94e21b323.mp3",
    "duree": 4.8,
    "mots": 11,
-   "mots_s": 2.27
+   "mots_s": 2.27,
+   "texte": "Deuxième phase, même idée : du bornier vers l’entrée suivante de Q1."
   },
   "n1-fil-8": {
    "fichier": "mp3/n1-fil-8-ccf1833a1e66.mp3",
    "duree": 3.6,
    "mots": 10,
-   "mots_s": 2.8
+   "mots_s": 2.8,
+   "texte": "Et la troisième phase, vers la dernière entrée de Q1."
   },
   "n1-fil-9": {
    "fichier": "mp3/n1-fil-9-07d00ee64c0c.mp3",
    "duree": 28.8,
    "mots": 82,
-   "mots_s": 2.85
+   "mots_s": 2.85,
+   "texte": "Le courant a traversé Q1 : il ressort par une borne paire, en bas. Il va maintenant au contacteur, KM1. Le contacteur, c’est un interrupteur commandé à distance : quand sa bobine est alimentée, ses contacts se ferment et le courant passe vers le moteur. Sortie paire de Q1, entrée impaire de KM1 : lisez les deux numéros sur la carte. Et si le contacteur ne vous dit rien, touchez son nom souligné dans la liste des appareils, sous la consigne : une fiche vous l’explique."
   },
   "n1-fil-10": {
    "fichier": "mp3/n1-fil-10-77e53fdd4d89.mp3",
    "duree": 2.5,
    "mots": 6,
-   "mots_s": 2.36
+   "mots_s": 2.36,
+   "texte": "Même logique pour la deuxième phase."
   },
   "n1-fil-11": {
    "fichier": "mp3/n1-fil-11-59eb650b6ce8.mp3",
    "duree": 1.9,
    "mots": 4,
-   "mots_s": 2.14
+   "mots_s": 2.14,
+   "texte": "Et pour la troisième."
   },
   "n1-fil-12": {
    "fichier": "mp3/n1-fil-12-7b0478a34138.mp3",
    "duree": 19.2,
    "mots": 51,
-   "mots_s": 2.66
+   "mots_s": 2.66,
+   "texte": "Sortie du contacteur, par le bas. Direction le relais thermique, F1. Lui surveille le moteur : si le moteur absorbe trop de courant pendant trop longtemps, il chauffe, et le relais fait couper la commande avant que le bobinage ne brûle. Le disjoncteur protège la ligne ; le relais thermique protège le moteur."
   },
   "n1-fil-13": {
    "fichier": "mp3/n1-fil-13-9e477a22d2ae.mp3",
    "duree": 3.7,
    "mots": 7,
-   "mots_s": 1.87
+   "mots_s": 1.87,
+   "texte": "Deuxième phase, du contacteur au relais thermique."
   },
   "n1-fil-14": {
    "fichier": "mp3/n1-fil-14-449dd4854a1a.mp3",
    "duree": 1.9,
    "mots": 3,
-   "mots_s": 1.6
+   "mots_s": 1.6,
+   "texte": "Et la troisième."
   },
   "n1-fil-15": {
    "fichier": "mp3/n1-fil-15-0851baf11737.mp3",
    "duree": 12.9,
    "mots": 32,
-   "mots_s": 2.48
+   "mots_s": 2.48,
+   "texte": "Le courant a traversé toutes les protections. Il redescend au bornier, pour sortir de l’armoire vers le moteur. Sortie paire du relais thermique, puis une borne du bornier : laquelle ? Suivez le trait."
   },
   "n1-fil-16": {
    "fichier": "mp3/n1-fil-16-c2a847b529e9.mp3",
    "duree": 3.3,
    "mots": 7,
-   "mots_s": 2.13
+   "mots_s": 2.13,
+   "texte": "Deuxième phase, vers le bornier de sortie."
   },
   "n1-fil-17": {
    "fichier": "mp3/n1-fil-17-449dd4854a1a.mp3",
    "duree": 1.9,
    "mots": 3,
-   "mots_s": 1.6
+   "mots_s": 1.6,
+   "texte": "Et la troisième."
   },
   "n1-fil-18": {
    "fichier": "mp3/n1-fil-18-6f6dc8b5b9a5.mp3",
    "duree": 21.2,
    "mots": 58,
-   "mots_s": 2.74
+   "mots_s": 2.74,
+   "texte": "Dernière partie du chemin : du bornier au moteur, M1. Ses bornes ne portent pas des chiffres, mais des lettres : U, V et W, chacune suivie du chiffre un. Et l’ordre compte : c’est lui qui donne le sens de rotation. Inverser deux phases, et le moteur tourne à l’envers. Lisez sur la carte quelle phase va sur quelle borne."
   },
   "n1-fil-19": {
    "fichier": "mp3/n1-fil-19-9d0fc8351dcd.mp3",
    "duree": 3.3,
    "mots": 8,
-   "mots_s": 2.4
+   "mots_s": 2.4,
+   "texte": "La phase suivante, vers sa borne du moteur."
   },
   "n1-fil-20": {
    "fichier": "mp3/n1-fil-20-e17ce04addbf.mp3",
    "duree": 1.9,
    "mots": 4,
-   "mots_s": 2.14
+   "mots_s": 2.14,
+   "texte": "Et la dernière phase."
   },
   "n1-fil-21": {
    "fichier": "mp3/n1-fil-21-3377b3ae4eb5.mp3",
    "duree": 16.8,
    "mots": 56,
-   "mots_s": 3.34
+   "mots_s": 3.34,
+   "texte": "Il reste la terre du moteur. Le vert et jaune relie sa carcasse au bornier. Si un fil se dénude à l’intérieur et touche le métal, le courant de défaut part par la terre, et le différentiel, en tête de l’installation, coupe, au lieu de passer par la personne qui pose la main sur le moteur."
   },
   "n1-fil-22": {
    "fichier": "mp3/n1-fil-22-5e8410f3def0.mp3",
    "duree": 11.4,
    "mots": 33,
-   "mots_s": 2.9
+   "mots_s": 2.9,
+   "texte": "Dernier fil : relier, dans le bornier, la terre de l’arrivée à celle du moteur. Sans lui, la carcasse du moteur ne serait reliée à rien, et le fil précédent ne servirait à rien."
   },
   "n1-fini": {
    "fichier": "mp3/n1-fini-6b51b8717391.mp3",
    "duree": 10.4,
    "mots": 28,
-   "mots_s": 2.7
+   "mots_s": 2.7,
+   "texte": "Tout est posé. Le logiciel contrôle votre câblage. Si le niveau est quatre, votre armoire est juste : vous pourrez passer à l’étape suivante, et la mettre sous tension."
   },
   "n1-refus": {
    "fichier": "mp3/n1-refus-a454ba52ab39.mp3",
    "duree": 11.3,
    "mots": 38,
-   "mots_s": 3.36
+   "mots_s": 3.36,
+   "texte": "Ce n’est pas ce fil-là. Regardez de nouveau le trait qui clignote et lisez les numéros à ses deux bouts. Rappelez-vous : le courant entre par une impaire, en haut, et ressort par une paire, en bas."
   },
   "n1-essayer": {
    "fichier": "mp3/n1-essayer-e35c967387bf.mp3",
    "duree": 21.8,
    "mots": 61,
-   "mots_s": 2.8
+   "mots_s": 2.8,
+   "texte": "Voici le moment de vérité : on met votre armoire sous tension. Ici, rien n’est dangereux, c’est une simulation, mais on fait les gestes dans l’ordre du métier : d’abord les protections, de l’amont vers l’aval, puis la commande. Ce premier exercice n’a pas encore de circuit de commande, alors on commandera le contacteur à la main. Commencez par enclencher le disjoncteur, Q1."
   },
   "n1-ev-q1": {
    "fichier": "mp3/n1-ev-q1-aac13894d32d.mp3",
    "duree": 22.2,
    "mots": 60,
-   "mots_s": 2.71
+   "mots_s": 2.71,
+   "texte": "Q1 est enclenché. Le courant traverse le disjoncteur et s’arrête aux bornes d’entrée du contacteur, qui est encore ouvert. Regardez la platine : les conducteurs sous tension sont surlignés, et ils s’arrêtent là. Pour fermer KM1 sans circuit de commande, on utilise son poussoir de test, comme un technicien le fait pour un essai. Appuyez sur Fermer KM1 à la main."
   },
   "n1-ev-direct": {
    "fichier": "mp3/n1-ev-direct-251ac076bf84.mp3",
    "duree": 21.2,
    "mots": 60,
-   "mots_s": 2.82
+   "mots_s": 2.82,
+   "texte": "Les contacts de KM1 se ferment. Le courant traverse le relais thermique, ressort par le bornier et arrive aux trois bornes du moteur : il tourne, dans le sens direct. C’est le bon ordre des phases, la première phase sur la borne U, la deuxième sur la V, la troisième sur la W. Pour arrêter, relâchez le contacteur, puis ouvrez Q1."
   },
   "n1-ev-inverse": {
    "fichier": "mp3/n1-ev-inverse-afb1c8c6d632.mp3",
    "duree": 18.0,
    "mots": 54,
-   "mots_s": 3.01
+   "mots_s": 3.01,
+   "texte": "Le moteur tourne, mais dans le sens inverse. Deux phases sont croisées quelque part entre l’arrivée et le moteur. Sur un compresseur ou une pompe, c’est une erreur à repérer tout de suite. Consignez, puis vérifiez sur la carte quelle phase doit arriver sur la borne U, sur la V et sur la W."
   },
   "n1-ev-ronfle": {
    "fichier": "mp3/n1-ev-ronfle-8754b4c1afb0.mp3",
    "duree": 15.5,
    "mots": 41,
-   "mots_s": 2.65
+   "mots_s": 2.65,
+   "texte": "Le moteur ronfle sans démarrer : il lui manque une phase. Un moteur triphasé a besoin de ses trois phases pour démarrer ; avec deux seulement, il chauffe sans tourner. Consignez, puis cherchez la phase qui n’arrive pas : suivez chacune depuis le disjoncteur."
   },
   "n1-ev-cc": {
    "fichier": "mp3/n1-ev-cc-9478f0093fe7.mp3",
    "duree": 18.2,
    "mots": 55,
-   "mots_s": 3.02
+   "mots_s": 3.02,
+   "texte": "Le disjoncteur a déclenché : il y a un court-circuit. Deux conducteurs qui ne devraient jamais se rejoindre sont reliés quelque part. C’est exactement pour cela que Q1 est là : il coupe en un instant, avant que les fils ne chauffent. Consignez, puis cherchez le fil en cause, en suivant le chemin de chaque phase."
   },
   "n1-ev-f1": {
    "fichier": "mp3/n1-ev-f1-f6a04102ea77.mp3",
    "duree": 21.7,
    "mots": 62,
-   "mots_s": 2.85
+   "mots_s": 2.85,
+   "texte": "Vous venez de faire déclencher le relais thermique. Et pourtant, le moteur ne s’arrête pas. C’est normal : le relais thermique ne coupe pas lui-même la puissance. Il ouvre un petit contact, qui coupe la bobine du contacteur. Ce contact fait partie du circuit de commande, que cet exercice n’a pas encore : vous le verrez à l’œuvre dans l’exercice suivant, la commande."
   },
   "n1-ev-arret": {
    "fichier": "mp3/n1-ev-arret-3bfe97fa0760.mp3",
    "duree": 11.5,
    "mots": 33,
-   "mots_s": 2.86
+   "mots_s": 2.86,
+   "texte": "Le moteur s’arrête. Avant de toucher au moindre fil, on consigne : on ouvre les protections, et on s’assure que plus rien n’est sous tension. C’est le geste qui protège la personne qui intervient."
   },
   "aide-1": {
    "fichier": "mp3/aide-1-d9a061140578.mp3",
    "duree": 24.4,
    "mots": 76,
-   "mots_s": 3.12
+   "mots_s": 3.12,
+   "texte": "Vous êtes bloqué, c’est normal, on va chercher ensemble. Regardez la platine : les deux appareils que ce fil relie sont maintenant éclairés. Vous savez donc où il va ; il reste à trouver sur quelles bornes. Revenez à la carte, au bout du trait qui clignote : il y a un petit numéro contre chaque appareil. Un fil qui arrive par le haut d’un appareil tombe sur une impaire ; un fil qui part du bas, sur une paire."
   },
   "aide-2": {
    "fichier": "mp3/aide-2-53e7fd4a6201.mp3",
    "duree": 17.8,
    "mots": 54,
-   "mots_s": 3.04
+   "mots_s": 3.04,
+   "texte": "Deuxième aide : les numéros des deux bornes sont écrits dans la consigne. Il ne vous reste qu’à les retrouver sur la platine. Sur chaque appareil, les numéros se suivent de gauche à droite : les impaires en haut, les paires juste en dessous. Si vous cherchez encore, un appui de plus fera clignoter les bornes."
   },
   "aide-3": {
    "fichier": "mp3/aide-3-1026a2d1834e.mp3",
    "duree": 16.7,
    "mots": 53,
-   "mots_s": 3.18
+   "mots_s": 3.18,
+   "texte": "Dernière aide : les deux bornes clignotent sur la platine, et la bonne couleur est déjà choisie. Touchez-en une, puis l’autre. Au fil suivant, essayez d’abord sans aide, en lisant les numéros sur la carte : c’est comme ça qu’on apprend à lire un schéma, et c’est ce que vous ferez seul à l’atelier."
   },
   "born-1": {
    "fichier": "mp3/born-1-471ae8b46601.mp3",
    "duree": 31.5,
    "mots": 104,
-   "mots_s": 3.3
+   "mots_s": 3.3,
+   "texte": "Regardez en bas de la platine cette rangée de petites bornes serrées les unes contre les autres : c’est le bornier. Il sert de frontière entre l’armoire et le reste de l’installation. Tout ce qui entre dans l’armoire, comme l’arrivée du réseau, et tout ce qui en sort, comme les câbles des moteurs, passe par lui. Pourquoi ne pas brancher le câble du moteur directement sur le contacteur ? Parce que le jour où l’on change le moteur, on desserre deux ou trois vis au bornier, sans toucher à l’intérieur de l’armoire. Et chaque départ est repéré : on sait tout de suite quel câble va où."
   },
   "born-2": {
    "fichier": "mp3/born-2-3b58eb350471.mp3",
    "duree": 37.3,
    "mots": 101,
-   "mots_s": 2.71
+   "mots_s": 2.71,
+   "texte": "Sur un appareil comme un disjoncteur, chaque vis a son numéro : un, deux, trois. Sur un bornier, c’est différent : c’est la borne entière qui porte un nom, son repère. Le X veut dire bornier, et la lettre qui suit dit lequel : XA, le bornier de l’alimentation, là où arrive le réseau ; XB, celui de la puissance, vers les moteurs ; XC, celui de la commande, vers les boutons et les pressostats. Le chiffre dit la borne dans son bornier : XA1, XA2, XA3. Chaque schéma a ses habitudes, et c’est toujours le schéma qui fait foi. Trouvez la borne XA3, et touchez-la."
   },
   "born-3": {
    "fichier": "mp3/born-3-ce89c328e26b.mp3",
    "duree": 29.3,
    "mots": 91,
-   "mots_s": 3.11
+   "mots_s": 3.11,
+   "texte": "Une borne de bornier a deux vis, une en haut, une en bas, reliées entre elles à l’intérieur : le courant passe de l’une à l’autre. Ces deux vis n’ont pas de numéro, on les désigne par leur côté. En haut, le côté armoire : c’est là qu’arrivent les fils qui viennent des appareils. En bas, le côté terrain : c’est là que se branchent les câbles qui partent vers le moteur, ou qui arrivent du réseau. On dit donc : XA3, côté terrain. Posez le fil qui part de L1 sur XA3, côté terrain."
   },
   "born-4": {
    "fichier": "mp3/born-4-d019ae719d4f.mp3",
    "duree": 34.3,
    "mots": 108,
-   "mots_s": 3.15
+   "mots_s": 3.15,
+   "texte": "Regardez les couleurs. La borne verte et jaune, c’est la borne de terre. Elle est plus haute que les autres parce que son pied, en métal, se serre directement sur le rail : elle relie la terre à toute la structure de l’armoire. La borne bleue, c’est le neutre. Les autres portent les phases. Ces couleurs évitent les erreurs : un conducteur vert et jaune va toujours sur une borne verte et jaune. Sur certains schémas, la borne de terre n’a même pas de repère : un nom n’est pas obligatoire, on la reconnaît à sa couleur et à sa place. Posez le conducteur de terre de l’arrivée sur sa borne."
   },
   "born-5": {
    "fichier": "mp3/born-5-289e1d667986.mp3",
    "duree": 20.6,
    "mots": 61,
-   "mots_s": 2.96
+   "mots_s": 2.96,
+   "texte": "Le courant de L1 est entré dans XA3 par le côté terrain. Il en ressort par l’autre vis, côté armoire, et monte vers le premier appareil, le disjoncteur Q1. Voilà tout le rôle du bornier : d’un côté le terrain, de l’autre l’armoire. Posez le fil qui part du côté armoire de XA3 vers l’entrée de Q1 que vous montre la carte."
   },
   "born-7": {
    "fichier": "mp3/born-7-909a7e708a6c.mp3",
    "duree": 14.7,
    "mots": 41,
-   "mots_s": 2.79
+   "mots_s": 2.79,
+   "texte": "Vous savez maintenant lire un bornier. Chaque borne a un repère, deux côtés, et une couleur qui dit ce qu’elle porte. Au prochain exercice, quand la carte vous envoie au bornier, cherchez d’abord le repère, puis le côté : armoire ou terrain."
   },
   "etape-colorier": {
    "fichier": "mp3/etape-colorier-166810b3ee11.mp3",
    "duree": 21.7,
    "mots": 64,
-   "mots_s": 2.95
+   "mots_s": 2.95,
+   "texte": "Première étape : savoir ce que porte chaque fil. Un fil clignote sur la carte. Remontez-le jusqu’à l’arrivée du réseau, en haut du schéma : porte-t-il une phase, le neutre ou la terre ? Sa couleur en découle : la terre est toujours verte et jaune, le neutre toujours bleu, et les phases prennent une autre couleur. Quand vous avez trouvé, touchez la bonne couleur."
   },
   "etape-reperer": {
    "fichier": "mp3/etape-reperer-28d9b0f6aabe.mp3",
    "duree": 31.2,
    "mots": 89,
-   "mots_s": 2.86
+   "mots_s": 2.86,
+   "texte": "Deuxième étape : les numéros des bornes. C’est ce numéro qui vous dira où poser le fil sur la platine. Sur les pôles de puissance, le courant entre par le haut, par les bornes impaires, un, trois, cinq, et ressort par le bas, par les paires, deux, quatre, six. Les bobines et les contacts de commande ont leurs propres numéros, à deux chiffres ou avec une lettre : la carte vous les donne. Les bornes du bornier, elles, se désignent par leur repère. La borne qui clignote : quel est son numéro ?"
   },
   "etape-cabler": {
    "fichier": "mp3/etape-cabler-2b294bec9588.mp3",
    "duree": 21.8,
    "mots": 64,
-   "mots_s": 2.94
+   "mots_s": 2.94,
+   "texte": "On passe au câblage. Le courant suit toujours le même chemin : il arrive du réseau, souvent par le bornier, traverse les protections, puis les appareils qui commandent, et va jusqu’aux récepteurs. À chaque appareil, il entre en haut et ressort en bas. En mode guidé, un seul fil clignote sur la carte à la fois : c’est celui qu’on pose. Je vous accompagne pour chacun."
   },
   "etape-essayer": {
    "fichier": "mp3/etape-essayer-9b6835b2ffc2.mp3",
    "duree": 14.4,
    "mots": 36,
-   "mots_s": 2.5
+   "mots_s": 2.5,
+   "texte": "Voici l’essai sous tension. Ici, rien n’est dangereux, c’est une simulation, mais on fait les gestes dans l’ordre du métier : d’abord les protections, de l’amont vers l’aval, puis la commande. Voici d’abord comment fonctionne cette installation."
   },
   "etape-realiser": {
    "fichier": "mp3/etape-realiser-38e86d2542cd.mp3",
    "duree": 19.4,
    "mots": 53,
-   "mots_s": 2.74
+   "mots_s": 2.74,
+   "texte": "Dernière étape : passer de l’écran à votre vraie platine. Le logiciel vous donne le matériel et votre ordre de câblage, celui que vous avez suivi à l’écran. Câblez hors tension, fil par fil, en cochant à mesure. Quand tout est posé, appelez le professeur : c’est lui, et lui seul, qui met sous tension."
   },
   "fini": {
    "fichier": "mp3/fini-f85c3ba6fd57.mp3",
    "duree": 9.3,
    "mots": 24,
-   "mots_s": 2.58
+   "mots_s": 2.58,
+   "texte": "Tout est posé. Le logiciel contrôle votre câblage. Avec un niveau quatre, votre câblage est juste, et vous pourrez passer à l’essai sous tension."
   },
   "refus": {
    "fichier": "mp3/refus-101b919869f5.mp3",
    "duree": 10.5,
    "mots": 36,
-   "mots_s": 3.44
+   "mots_s": 3.44,
+   "texte": "Ce n’est pas ce fil-là. Regardez de nouveau le trait qui clignote et lisez les numéros à ses deux bouts. Rappelez-vous : le courant entre par le haut d’un appareil, et ressort par le bas."
   },
   "arme": {
    "fichier": "mp3/arme-49686023486c.mp3",
    "duree": 4.5,
    "mots": 10,
-   "mots_s": 2.24
+   "mots_s": 2.24,
+   "texte": "Vous voyez, elle s’allume. Touchez maintenant l’autre bout du fil."
   },
   "fil-arrivee": {
    "fichier": "mp3/fil-arrivee-df8fc6aa81ff.mp3",
    "duree": 9.0,
    "mots": 29,
-   "mots_s": 3.21
+   "mots_s": 3.21,
+   "texte": "Ce fil part de l’arrivée du réseau. Suivez-le sur la carte jusqu’à son autre bout, et lisez le repère, ou le numéro, de la borne où il arrive."
   },
   "fil-vers-bornier": {
    "fichier": "mp3/fil-vers-bornier-e9faa9846fb8.mp3",
    "duree": 8.5,
    "mots": 27,
-   "mots_s": 3.19
+   "mots_s": 3.19,
+   "texte": "Ce fil relie un appareil au bornier, du côté armoire, celui qui est tourné vers les appareils. Lisez le repère de la borne au bout du trait."
   },
   "fil-bornier-terrain": {
    "fichier": "mp3/fil-bornier-terrain-256b4eb765d0.mp3",
    "duree": 8.5,
    "mots": 28,
-   "mots_s": 3.29
+   "mots_s": 3.29,
+   "texte": "Du côté terrain du bornier, le fil part vers un appareil qui est hors de l’armoire. Lisez sur la carte à quelle borne de cet appareil il arrive."
   },
   "fil-puissance": {
    "fichier": "mp3/fil-puissance-6dcd642cc7a7.mp3",
    "duree": 9.4,
    "mots": 33,
-   "mots_s": 3.52
+   "mots_s": 3.52,
+   "texte": "Le courant sort par le bas d’un appareil et entre par le haut du suivant. Lisez les deux numéros au bout du trait qui clignote, puis trouvez ces deux bornes sur la platine."
   },
   "fil-commande": {
    "fichier": "mp3/fil-commande-83bc16670363.mp3",
    "duree": 9.8,
    "mots": 35,
-   "mots_s": 3.57
+   "mots_s": 3.57,
+   "texte": "C’est un fil de commande : il porte l’ordre, celui qui fait coller une bobine, ou qui allume une lampe ou un voyant. Suivez le trait, et lisez ce qui est écrit à ses deux bouts."
   },
   "fil-terre": {
    "fichier": "mp3/fil-terre-2e74f16fd630.mp3",
    "duree": 9.4,
    "mots": 29,
-   "mots_s": 3.09
+   "mots_s": 3.09,
+   "texte": "Un conducteur vert et jaune : la terre. Il relie une masse métallique à la terre de l’installation, pour qu’un défaut parte à la terre plutôt que par une personne."
   },
   "fil-neutre": {
    "fichier": "mp3/fil-neutre-b7d284096210.mp3",
    "duree": 7.5,
    "mots": 19,
-   "mots_s": 2.55
+   "mots_s": 2.55,
+   "texte": "Un conducteur bleu : le neutre. C’est par lui que le courant revient au réseau. Suivez-le jusqu’à sa borne."
   },
   "fil-pont": {
    "fichier": "mp3/fil-pont-ac39ed8b7f5e.mp3",
    "duree": 9.1,
    "mots": 28,
-   "mots_s": 3.07
+   "mots_s": 3.07,
+   "texte": "Ces deux bornes doivent porter la même chose. On les relie par le bornier, jamais en direct : trouvez d’où part chacune, puis reliez les deux bornes du bornier."
   },
   "fil-suite-1": {
    "fichier": "mp3/fil-suite-1-3c64a18f24b9.mp3",
    "duree": 2.5,
    "mots": 5,
-   "mots_s": 1.97
+   "mots_s": 1.97,
+   "texte": "Le fil suivant, même logique."
   },
   "fil-suite-2": {
    "fichier": "mp3/fil-suite-2-73241b32a133.mp3",
    "duree": 2.6,
    "mots": 6,
-   "mots_s": 2.29
+   "mots_s": 2.29,
+   "texte": "Encore un, sur le même principe."
   },
   "fil-suite-3": {
    "fichier": "mp3/fil-suite-3-0d3bb052bb55.mp3",
    "duree": 3.3,
    "mots": 12,
-   "mots_s": 3.68
+   "mots_s": 3.68,
+   "texte": "Et le suivant : lisez ce qui est écrit à ses deux bouts."
   },
   "app-bornier": {
    "fichier": "mp3/app-bornier-65f5acfaca27.mp3",
    "duree": 13.0,
    "mots": 37,
-   "mots_s": 2.85
+   "mots_s": 2.85,
+   "texte": "Ce fil passe par le bornier. Une borne de bornier se désigne par son repère, et elle a deux côtés : côté armoire, vers les appareils, et côté terrain, vers l’extérieur. Lisez le repère au bout du trait."
   },
   "app-disjoncteur": {
    "fichier": "mp3/app-disjoncteur-5f521d624466.mp3",
    "duree": 14.4,
    "mots": 43,
-   "mots_s": 2.98
+   "mots_s": 2.98,
+   "texte": "Voici un disjoncteur. Son rôle : couper tout seul si le courant devient trop fort, à cause d’une surcharge ou d’un court-circuit. Il protège la ligne qui part derrière lui. Le courant y entre par le haut, et en ressort par le bas."
   },
   "app-disjoncteur-diff": {
    "fichier": "mp3/app-disjoncteur-diff-889bfdcfe7f4.mp3",
    "duree": 12.9,
    "mots": 38,
-   "mots_s": 2.94
+   "mots_s": 2.94,
+   "texte": "Voici un disjoncteur différentiel. En plus de protéger la ligne, il compare le courant qui part et celui qui revient. S’il en manque, c’est qu’une fuite passe par la terre, peut-être par une personne, et il coupe."
   },
   "app-disjoncteur-moteur": {
    "fichier": "mp3/app-disjoncteur-moteur-5dc3db2d3135.mp3",
    "duree": 13.0,
    "mots": 42,
-   "mots_s": 3.23
+   "mots_s": 3.23,
+   "texte": "Voici un disjoncteur moteur. Il protège le moteur à la fois contre le court-circuit et contre la surcharge, avec un réglage à la valeur du moteur. C’est pour cela qu’un départ qui en a un n’a pas besoin de relais thermique."
   },
   "app-sectionneur-fusibles": {
    "fichier": "mp3/app-sectionneur-fusibles-a870102a0ad7.mp3",
    "duree": 12.9,
    "mots": 34,
-   "mots_s": 2.64
+   "mots_s": 2.64,
+   "texte": "Voici un sectionneur porte-fusibles. Il sert à isoler l’installation, pour travailler hors tension, et ses fusibles la protègent des courts-circuits. On ne l’ouvre jamais en charge : on arrête d’abord ce qui tourne."
   },
   "app-porte-fusible": {
    "fichier": "mp3/app-porte-fusible-ca1aec5a02df.mp3",
    "duree": 11.6,
    "mots": 31,
-   "mots_s": 2.67
+   "mots_s": 2.67,
+   "texte": "Voici un porte-fusible. Le fusible qu’il contient fond sur un court-circuit ou une forte surcharge, et coupe la ligne qu’il protège. On l’ouvre, hors charge, pour isoler cette ligne."
   },
   "app-fusible": {
    "fichier": "mp3/app-fusible-76f1a2104152.mp3",
    "duree": 7.8,
    "mots": 22,
-   "mots_s": 2.84
+   "mots_s": 2.84,
+   "texte": "Voici un fusible : un fil calibré qui fond si le courant devient trop fort. Il protège le circuit qui part derrière lui."
   },
   "app-interrupteur-sectionneur": {
    "fichier": "mp3/app-interrupteur-sectionneur-bbcce8da48af.mp3",
    "duree": 12.1,
    "mots": 29,
-   "mots_s": 2.4
+   "mots_s": 2.4,
+   "texte": "Voici un interrupteur-sectionneur. Il coupe toute l’installation, même en charge, et l’isole pour travailler hors tension. Il ne protège pas : ce rôle revient aux fusibles et aux disjoncteurs."
   },
   "app-contacteur": {
    "fichier": "mp3/app-contacteur-92fe8a85e707.mp3",
    "duree": 13.4,
    "mots": 35,
-   "mots_s": 2.6
+   "mots_s": 2.6,
+   "texte": "Voici un contacteur : un interrupteur commandé à distance. Quand sa bobine est alimentée, ses contacts de puissance se ferment, et le courant passe vers le récepteur. Quand elle ne l’est plus, un ressort les rouvre."
   },
   "app-relais-thermique": {
    "fichier": "mp3/app-relais-thermique-48ff2e4e3410.mp3",
    "duree": 15.4,
    "mots": 43,
-   "mots_s": 2.8
+   "mots_s": 2.8,
+   "texte": "Voici un relais thermique. Il surveille le courant que prend le moteur : si le moteur force trop longtemps, le relais chauffe et ouvre un petit contact, qui coupe la commande du contacteur. Le disjoncteur protège la ligne ; le relais thermique protège le moteur."
   },
   "app-relais": {
    "fichier": "mp3/app-relais-a3c58498b911.mp3",
    "duree": 10.7,
    "mots": 28,
-   "mots_s": 2.61
+   "mots_s": 2.61,
+   "texte": "Voici un relais auxiliaire : une bobine, et plusieurs contacts. Il sert à multiplier les ordres : une seule bobine commandée, et plusieurs circuits qui changent d’état en même temps."
   },
   "app-relais-temporise": {
    "fichier": "mp3/app-relais-temporise-902b987b65f6.mp3",
    "duree": 11.0,
    "mots": 33,
-   "mots_s": 3.01
+   "mots_s": 3.01,
+   "texte": "Voici un relais temporisé : certains de ses contacts changent d’état tout de suite, d’autres après un délai que l’on règle. Il sert à attendre, par exemple avant de passer d’une vitesse à l’autre."
   },
   "app-bouton-marche": {
    "fichier": "mp3/app-bouton-marche-681986ea6f18.mp3",
    "duree": 8.7,
    "mots": 21,
-   "mots_s": 2.42
+   "mots_s": 2.42,
+   "texte": "Voici un bouton marche. Au repos, son contact est ouvert. Quand on appuie, il se ferme, et envoie l’ordre de démarrer."
   },
   "app-bouton-arret": {
    "fichier": "mp3/app-bouton-arret-4ec2c781ae1d.mp3",
    "duree": 12.6,
    "mots": 32,
-   "mots_s": 2.55
+   "mots_s": 2.55,
+   "texte": "Voici un bouton arrêt. Au contraire du bouton marche, son contact est fermé au repos : appuyer dessus ouvre le circuit. Et si un fil se coupe, l’installation s’arrête aussi : c’est une sécurité."
   },
   "app-arret-urgence": {
    "fichier": "mp3/app-arret-urgence-8e0f56e9cde7.mp3",
    "duree": 11.1,
    "mots": 35,
-   "mots_s": 3.16
+   "mots_s": 3.16,
+   "texte": "Voici l’arrêt d’urgence : un gros bouton rouge qui se verrouille une fois appuyé. Son contact est fermé au repos ; appuyer dessus coupe toute la commande, et rien ne repart tant qu’on ne l’a pas déverrouillé."
   },
   "app-commutateur": {
    "fichier": "mp3/app-commutateur-447e24ad0d46.mp3",
    "duree": 8.8,
    "mots": 28,
-   "mots_s": 3.18
+   "mots_s": 3.18,
+   "texte": "Voici un commutateur : il reste dans la position où on le met. Il sert à autoriser une marche, ou à la forcer, sans avoir à tenir un bouton."
   },
   "app-interrupteur": {
    "fichier": "mp3/app-interrupteur-7e47f7b6220d.mp3",
    "duree": 8.0,
    "mots": 23,
-   "mots_s": 2.88
+   "mots_s": 2.88,
+   "texte": "Voici l’interrupteur. Il coupe la phase qui va à la lampe, jamais le neutre : ainsi, la lampe éteinte ne reste pas sous tension."
   },
   "app-va-et-vient": {
    "fichier": "mp3/app-va-et-vient-891815c6445f.mp3",
    "duree": 10.2,
    "mots": 28,
-   "mots_s": 2.74
+   "mots_s": 2.74,
+   "texte": "Voici un interrupteur va-et-vient. Il a trois bornes : le commun, et deux navettes. Selon sa position, le commun est relié à l’une ou à l’autre navette."
   },
   "app-poussoir-lumiere": {
    "fichier": "mp3/app-poussoir-lumiere-ad600a53a925.mp3",
    "duree": 9.7,
    "mots": 23,
-   "mots_s": 2.36
+   "mots_s": 2.36,
+   "texte": "Voici un bouton poussoir d’éclairage. Il ne reste pas enfoncé : il envoie une impulsion, que le télérupteur transforme en allumage, ou en extinction."
   },
   "app-telerupteur": {
    "fichier": "mp3/app-telerupteur-ad4280a517e7.mp3",
    "duree": 11.1,
    "mots": 27,
-   "mots_s": 2.43
+   "mots_s": 2.43,
+   "texte": "Voici le télérupteur. Chaque impulsion sur sa bobine fait basculer son contact : fermé, puis ouvert à l’impulsion suivante. C’est lui qui garde en mémoire l’état des lampes."
   },
   "app-pressostat-bp": {
    "fichier": "mp3/app-pressostat-bp-47b7dd2e1915.mp3",
    "duree": 12.8,
    "mots": 34,
-   "mots_s": 2.65
+   "mots_s": 2.65,
+   "texte": "Voici le pressostat basse pression. Il surveille la pression d’aspiration du compresseur : quand elle descend trop bas, son contact s’ouvre et arrête le compresseur. Dans un pump-down, c’est lui qui arrête le groupe."
   },
   "app-pressostat-hp": {
    "fichier": "mp3/app-pressostat-hp-a2a37ecea4c5.mp3",
    "duree": 10.6,
    "mots": 25,
-   "mots_s": 2.35
+   "mots_s": 2.35,
+   "texte": "Voici le pressostat haute pression : une sécurité. Si la pression de refoulement devient dangereuse, par exemple quand le condenseur est encrassé, il coupe le compresseur."
   },
   "app-pressostat-combine": {
    "fichier": "mp3/app-pressostat-combine-a933ecfc5aea.mp3",
    "duree": 10.4,
    "mots": 27,
-   "mots_s": 2.6
+   "mots_s": 2.6,
+   "texte": "Voici un pressostat combiné : dans un même boîtier, la basse et la haute pression. L’une arrête le groupe en fonctionnement normal, l’autre le protège d’une pression dangereuse."
   },
   "app-thermostat": {
    "fichier": "mp3/app-thermostat-5717c758d594.mp3",
    "duree": 8.8,
    "mots": 23,
-   "mots_s": 2.61
+   "mots_s": 2.61,
+   "texte": "Voici le thermostat. Il mesure la température : quand la valeur voulue est atteinte, son contact change d’état et arrête la production de froid."
   },
   "app-thermostat-2": {
    "fichier": "mp3/app-thermostat-2-b24f6087d0b8.mp3",
    "duree": 10.8,
    "mots": 30,
-   "mots_s": 2.77
+   "mots_s": 2.77,
+   "texte": "Voici un thermostat à deux étages : deux contacts qui se ferment l’un après l’autre, selon l’écart de température. Le premier demande un peu de froid, le second en demande beaucoup."
   },
   "app-horloge": {
    "fichier": "mp3/app-horloge-9e90d05de7ee.mp3",
    "duree": 8.8,
    "mots": 24,
-   "mots_s": 2.74
+   "mots_s": 2.74,
+   "texte": "Voici l’horloge. À des heures programmées, elle change l’état de son contact : elle sert à lancer ou à interrompre un cycle, comme le dégivrage."
   },
   "app-voyant": {
    "fichier": "mp3/app-voyant-9c836d89f8df.mp3",
    "duree": 9.8,
    "mots": 25,
-   "mots_s": 2.56
+   "mots_s": 2.56,
+   "texte": "Voici un voyant. Il ne commande rien : il informe l’utilisateur, par exemple que l’installation est sous tension, qu’un moteur tourne, ou qu’un défaut est apparu."
   },
   "app-lampe": {
    "fichier": "mp3/app-lampe-5b9761232828.mp3",
    "duree": 6.1,
    "mots": 16,
-   "mots_s": 2.61
+   "mots_s": 2.61,
+   "texte": "Voici la lampe, le récepteur de ce circuit. Sa masse métallique est reliée à la terre."
   },
   "app-electrovanne": {
    "fichier": "mp3/app-electrovanne-27c46cec46ea.mp3",
    "duree": 10.4,
    "mots": 21,
-   "mots_s": 2.01
+   "mots_s": 2.01,
+   "texte": "Voici l’électrovanne : une vanne commandée par une bobine. Alimentée, elle laisse passer le fluide frigorigène vers l’évaporateur ; coupée, elle se ferme."
   },
   "app-transformateur": {
    "fichier": "mp3/app-transformateur-3f5fcdd7cd52.mp3",
    "duree": 12.2,
    "mots": 33,
-   "mots_s": 2.7
+   "mots_s": 2.7,
+   "texte": "Voici le transformateur de commande. Il abaisse la tension du réseau, par exemple à vingt-quatre volts, pour alimenter la commande. Une tension plus basse, c’est moins de danger pour celui qui intervient."
   },
   "app-moteur-tri": {
    "fichier": "mp3/app-moteur-tri-ba5e6e13dd82.mp3",
    "duree": 11.6,
    "mots": 33,
-   "mots_s": 2.84
+   "mots_s": 2.84,
+   "texte": "Voici le moteur triphasé. Il reçoit ses trois phases sur ses bornes marquées U, V et W. L’ordre des phases donne le sens de rotation, et sa carcasse est reliée à la terre."
   },
   "app-moteur-6b": {
    "fichier": "mp3/app-moteur-6b-1e6e9f7bcc62.mp3",
    "duree": 10.6,
    "mots": 38,
-   "mots_s": 3.57
+   "mots_s": 3.57,
+   "texte": "Voici un moteur à six bornes : on a accès aux deux bouts de chacun de ses trois enroulements. C’est ce qui permet de le coupler en étoile, ou en triangle, selon la façon dont on relie ces bornes."
   },
   "app-moteur-dahlander": {
    "fichier": "mp3/app-moteur-dahlander-2b46d8e73b97.mp3",
    "duree": 7.1,
    "mots": 21,
-   "mots_s": 2.95
+   "mots_s": 2.95,
+   "texte": "Voici un moteur Dahlander : un seul bobinage, mais deux vitesses, selon qu’on l’alimente par un jeu de bornes ou par l’autre."
   },
   "app-moteur-mono": {
    "fichier": "mp3/app-moteur-mono-890c0eed7246.mp3",
    "duree": 8.6,
    "mots": 24,
-   "mots_s": 2.8
+   "mots_s": 2.8,
+   "texte": "Voici un moteur monophasé. Une phase et le neutre lui suffisent pour tourner ; on le trouve sur les ventilateurs et sur les petits compresseurs."
   },
   "app-resistance": {
    "fichier": "mp3/app-resistance-734296ceb3b9.mp3",
    "duree": 8.1,
    "mots": 18,
-   "mots_s": 2.23
+   "mots_s": 2.23,
+   "texte": "Voici les résistances de dégivrage. Alimentées, elles chauffent l’évaporateur pour faire fondre la glace qui s’y est accumulée."
   },
   "ev-protection": {
    "fichier": "mp3/ev-protection-e2e631f87dcd.mp3",
    "duree": 10.4,
    "mots": 26,
-   "mots_s": 2.5
+   "mots_s": 2.5,
+   "texte": "Une protection est enclenchée. Regardez la platine : les conducteurs sous tension sont surlignés, et ils s’arrêtent là où un contact, ou une protection, est encore ouvert."
   },
   "ev-colle": {
    "fichier": "mp3/ev-colle-9c116646b94f.mp3",
    "duree": 9.8,
    "mots": 24,
-   "mots_s": 2.44
+   "mots_s": 2.44,
+   "texte": "Un contacteur colle : sa bobine est alimentée, l’électro-aimant attire la partie mobile, et ses contacts se ferment. Le courant passe vers le récepteur."
   },
   "ev-colle-main": {
    "fichier": "mp3/ev-colle-main-3a1047f00c89.mp3",
    "duree": 9.5,
    "mots": 30,
-   "mots_s": 3.15
+   "mots_s": 3.15,
+   "texte": "Vous fermez le contacteur à la main, avec son poussoir de test, comme un technicien pour un essai. Sans circuit de commande, c’est la seule façon de le faire coller."
   },
   "ev-automaintien": {
    "fichier": "mp3/ev-automaintien-cb65967cd2c7.mp3",
    "duree": 14.0,
    "mots": 38,
-   "mots_s": 2.72
+   "mots_s": 2.72,
+   "texte": "Vous avez relâché le bouton marche, et pourtant le contacteur reste collé. C’est l’auto-maintien : un contact auxiliaire du contacteur, branché en parallèle du bouton, a pris le relais. Il faudra le bouton arrêt pour couper la bobine."
   },
   "ev-retombe": {
    "fichier": "mp3/ev-retombe-104eb907ebd6.mp3",
    "duree": 8.5,
    "mots": 19,
-   "mots_s": 2.22
+   "mots_s": 2.22,
+   "texte": "Un contacteur retombe : sa bobine n’est plus alimentée, et un ressort rouvre ses contacts. Le récepteur qu’il alimentait s’arrête."
   },
   "ev-moteur-direct": {
    "fichier": "mp3/ev-moteur-direct-9ff2230d22d1.mp3",
    "duree": 5.3,
    "mots": 15,
-   "mots_s": 2.84
+   "mots_s": 2.84,
+   "texte": "Le moteur tourne, dans le sens direct : ses phases arrivent dans l’ordre sur ses bornes."
   },
   "ev-moteur-inverse": {
    "fichier": "mp3/ev-moteur-inverse-14b6ce2a51fb.mp3",
    "duree": 10.9,
    "mots": 31,
-   "mots_s": 2.85
+   "mots_s": 2.85,
+   "texte": "Ce moteur tourne dans le sens inverse : deux de ses phases sont croisées. Comparez avec la carte : si le schéma les croise aussi, c’est voulu ; sinon, c’est un câblage à corriger."
   },
   "ev-etoile": {
    "fichier": "mp3/ev-etoile-0224ada6df82.mp3",
    "duree": 6.9,
    "mots": 18,
-   "mots_s": 2.6
+   "mots_s": 2.6,
+   "texte": "Le moteur démarre en étoile : chaque enroulement reçoit une tension réduite, et le courant de démarrage reste raisonnable."
   },
   "ev-triangle": {
    "fichier": "mp3/ev-triangle-dcf634ac3f89.mp3",
    "duree": 6.7,
    "mots": 19,
-   "mots_s": 2.84
+   "mots_s": 2.84,
+   "texte": "Le moteur passe en triangle : chaque enroulement reçoit maintenant toute la tension, et le moteur donne toute sa puissance."
   },
   "ev-petite-vitesse": {
    "fichier": "mp3/ev-petite-vitesse-e166f4ee885c.mp3",
    "duree": 6.7,
    "mots": 21,
-   "mots_s": 3.14
+   "mots_s": 3.14,
+   "texte": "Le moteur tourne en petite vitesse : son bobinage est couplé avec deux fois plus de pôles, donc il tourne moins vite."
   },
   "ev-grande-vitesse": {
    "fichier": "mp3/ev-grande-vitesse-1b3754ece4c2.mp3",
    "duree": 7.5,
    "mots": 24,
-   "mots_s": 3.22
+   "mots_s": 3.22,
+   "texte": "Le moteur passe en grande vitesse : son bobinage est couplé autrement, avec deux fois moins de pôles, et il tourne deux fois plus vite."
   },
   "ev-moteur-mono": {
    "fichier": "mp3/ev-moteur-mono-787fec2dd110.mp3",
    "duree": 4.1,
    "mots": 11,
-   "mots_s": 2.71
+   "mots_s": 2.71,
+   "texte": "Le moteur monophasé tourne : il reçoit sa phase et son neutre."
   },
   "ev-ronfle": {
    "fichier": "mp3/ev-ronfle-a1c332322513.mp3",
    "duree": 10.4,
    "mots": 32,
-   "mots_s": 3.07
+   "mots_s": 3.07,
+   "texte": "Un moteur ronfle sans démarrer : il ne reçoit pas correctement ses trois phases, qu’il en manque une ou que ses enroulements soient mal reliés. Consignez, puis cherchez la phase qui n’arrive pas."
   },
   "ev-arret": {
    "fichier": "mp3/ev-arret-39b977eb2821.mp3",
    "duree": 8.6,
    "mots": 25,
-   "mots_s": 2.89
+   "mots_s": 2.89,
+   "texte": "Un moteur s’arrête. S’il faut intervenir sur un fil, on consigne d’abord : on ouvre les protections, et on vérifie que plus rien n’est sous tension."
   },
   "ev-cc": {
    "fichier": "mp3/ev-cc-bf5b4a799c6a.mp3",
    "duree": 16.7,
    "mots": 49,
-   "mots_s": 2.94
+   "mots_s": 2.94,
+   "texte": "Une protection a déclenché : il y a un court-circuit. Deux conducteurs qui ne devraient jamais se rejoindre sont reliés quelque part. C’est exactement pour cela que la protection est là : elle coupe en un instant, avant que les fils ne chauffent. Consignez, puis cherchez le fil en cause."
   },
   "ev-thermique-commande": {
    "fichier": "mp3/ev-thermique-commande-5899167a5d93.mp3",
    "duree": 14.5,
    "mots": 36,
-   "mots_s": 2.48
+   "mots_s": 2.48,
+   "texte": "Le relais thermique a déclenché. Son contact, placé dans la commande, s’est ouvert : les bobines qu’il alimente retombent, et ce qu’elles commandent s’arrête. Sur une vraie installation, on chercherait pourquoi le moteur forçait avant de réarmer."
   },
   "ev-thermique-seul": {
    "fichier": "mp3/ev-thermique-seul-5c367f27ad03.mp3",
    "duree": 11.8,
    "mots": 33,
-   "mots_s": 2.79
+   "mots_s": 2.79,
+   "texte": "Le relais thermique a déclenché, et rien ne s’arrête. Il ne coupe pas la puissance lui-même : il ouvre un contact de la commande. Ici, aucune bobine alimentée ne passait par ce contact."
   },
   "ev-lampe": {
    "fichier": "mp3/ev-lampe-66c2418c1307.mp3",
    "duree": 6.3,
    "mots": 18,
-   "mots_s": 2.87
+   "mots_s": 2.87,
+   "texte": "La lampe s’allume : le circuit est fermé, la phase arrive, et le neutre ramène le courant au réseau."
   },
   "ev-electrovanne": {
    "fichier": "mp3/ev-electrovanne-ed5d089dd62d.mp3",
    "duree": 6.0,
    "mots": 13,
-   "mots_s": 2.17
+   "mots_s": 2.17,
+   "texte": "L’électrovanne s’ouvre : sa bobine est alimentée, et le fluide peut aller vers l’évaporateur."
   },
   "ev-resistance": {
    "fichier": "mp3/ev-resistance-e506883fa118.mp3",
    "duree": 3.6,
    "mots": 8,
-   "mots_s": 2.21
+   "mots_s": 2.21,
+   "texte": "Les résistances chauffent : le dégivrage est en cours."
   },
   "ev-transfo": {
    "fichier": "mp3/ev-transfo-32575a1e725c.mp3",
    "duree": 6.6,
    "mots": 18,
-   "mots_s": 2.72
+   "mots_s": 2.72,
+   "texte": "Le transformateur est sous tension : son secondaire fournit la très basse tension de la commande, vingt-quatre volts."
   },
   "ev-voyant": {
    "fichier": "mp3/ev-voyant-856df71ee961.mp3",
    "duree": 4.7,
    "mots": 10,
-   "mots_s": 2.14
+   "mots_s": 2.14,
+   "texte": "Un voyant s’allume : il informe l’utilisateur de l’état de l’installation."
   },
   "ev-pompage": {
    "fichier": "mp3/ev-pompage-d24484cc6ec4.mp3",
    "duree": 10.9,
    "mots": 29,
-   "mots_s": 2.66
+   "mots_s": 2.66,
+   "texte": "Ça bat : des contacteurs collent et retombent sans fin. C’est souvent un contact qui coupe sa propre bobine. Consignez, puis vérifiez sur la carte le chemin de chaque bobine."
   },
   "ev-defaut": {
    "fichier": "mp3/ev-defaut-e86e0fbf29f6.mp3",
    "duree": 10.6,
    "mots": 32,
-   "mots_s": 3.01
+   "mots_s": 3.01,
+   "texte": "Un défaut est apparu : un appareil reçoit une tension qu’il ne supporte pas, ou le courant revient par la terre. Consignez, puis cherchez le fil en cause avant de remettre sous tension."
   },
   "ex-allumage-simple": {
    "fichier": "mp3/ex-allumage-simple-e4de379577ce.mp3",
    "duree": 16.8,
    "mots": 52,
-   "mots_s": 3.1
+   "mots_s": 3.1,
+   "texte": "Ce circuit allume une lampe. Le disjoncteur protège la ligne. L’interrupteur coupe la phase, jamais le neutre, pour que la lampe éteinte ne reste pas sous tension. Et la masse de la lampe est reliée à la terre : si un fil touchait le métal, le courant de défaut partirait à la terre."
   },
   "ex-va-et-vient": {
    "fichier": "mp3/ex-va-et-vient-2bb353f14343.mp3",
    "duree": 12.6,
    "mots": 43,
-   "mots_s": 3.41
+   "mots_s": 3.41,
+   "texte": "Le va-et-vient allume la même lampe depuis deux endroits, par exemple en haut et en bas d’un escalier. Les deux navettes relient les interrupteurs entre eux : selon leurs positions, la phase trouve un chemin jusqu’à la lampe, ou n’en trouve pas."
   },
   "ex-telerupteur": {
    "fichier": "mp3/ex-telerupteur-4e3d09f4eab6.mp3",
    "duree": 13.8,
    "mots": 34,
-   "mots_s": 2.47
+   "mots_s": 2.47,
+   "texte": "Le télérupteur commande les lampes depuis trois boutons poussoirs. Les boutons sont en parallèle : n’importe lequel envoie une impulsion à la bobine, et le contact du télérupteur bascule. Un appui allume, l’appui suivant éteint."
   },
   "ex-demarrage-direct-tri": {
    "fichier": "mp3/ex-demarrage-direct-tri-5461a36dbd7f.mp3",
    "duree": 17.0,
    "mots": 50,
-   "mots_s": 2.95
+   "mots_s": 2.95,
+   "texte": "Le démarrage direct : le moteur reçoit d’un coup ses trois phases. Le sectionneur porte-fusibles isole l’installation et la protège des courts-circuits, le contacteur met le moteur en marche, et le relais thermique le protège contre les surcharges. Sans circuit de commande, on fermera le contacteur à la main."
   },
   "ex-cablage-1-commande": {
    "fichier": "mp3/ex-cablage-1-commande-d89fd8c77a88.mp3",
    "duree": 20.8,
    "mots": 65,
-   "mots_s": 3.12
+   "mots_s": 3.12,
+   "texte": "La commande de ce départ moteur : un bouton marche, un bouton arrêt, et un contacteur qui se maintient tout seul. Un appui sur marche alimente la bobine, le contacteur colle, et l’un de ses contacts auxiliaires prend le relais du bouton : c’est l’auto-maintien. Le bouton arrêt et le contact du relais thermique sont en série avec la bobine : l’un ou l’autre peut la couper."
   },
   "ex-cablage-2": {
    "fichier": "mp3/ex-cablage-2-dc27f2076bee.mp3",
    "duree": 19.8,
    "mots": 49,
-   "mots_s": 2.47
+   "mots_s": 2.47,
+   "texte": "Un groupe frigorifique en pump-down, câblé sur bornier. Le thermostat commande l’électrovanne. Quand la chambre a assez froid, la vanne se ferme, le compresseur vide l’évaporateur, et la basse pression chute jusqu’à ce que le pressostat basse pression l’arrête. Le pressostat haute pression, lui, veille à la sécurité."
   },
   "ex-cablage-3": {
    "fichier": "mp3/ex-cablage-3-4c87590f32e3.mp3",
    "duree": 18.7,
    "mots": 53,
-   "mots_s": 2.83
+   "mots_s": 2.83,
+   "texte": "Deux départs moteurs sous un même disjoncteur de tête. Chaque moteur a son disjoncteur moteur, qui le protège des surcharges et des courts-circuits, et son contacteur, qui le met en marche. Le disjoncteur de tête coupe toute l’installation d’un seul geste. Sans circuit de commande, on fermera les contacteurs à la main."
   },
   "ex-cablage-3-commande": {
    "fichier": "mp3/ex-cablage-3-commande-5e17cb031b40.mp3",
    "duree": 14.5,
    "mots": 42,
-   "mots_s": 2.89
+   "mots_s": 2.89,
+   "texte": "Deux moteurs, deux marche-arrêt indépendants, chacun avec son auto-maintien. Ce qui se passe sur un départ ne touche pas l’autre : c’est tout l’intérêt de deux commandes séparées. Chaque contacteur colle sur son bouton marche et retombe sur son bouton arrêt."
   },
   "ex-cablage-4": {
    "fichier": "mp3/ex-cablage-4-d6dd19b91322.mp3",
    "duree": 16.6,
    "mots": 47,
-   "mots_s": 2.83
+   "mots_s": 2.83,
+   "texte": "L’inversion du sens de marche. Pour faire tourner un moteur triphasé dans l’autre sens, on croise deux phases. Deux contacteurs font chacun un sens : l’un laisse les phases dans l’ordre, l’autre en croise deux. Ils ne doivent jamais coller ensemble : ce serait un court-circuit entre phases."
   },
   "ex-cablage-4-commande": {
    "fichier": "mp3/ex-cablage-4-commande-42ed58ce06df.mp3",
    "duree": 16.9,
    "mots": 49,
-   "mots_s": 2.9
+   "mots_s": 2.9,
+   "texte": "La commande de l’inversion : un bouton par sens, et un bouton arrêt. Chaque contacteur a son auto-maintien, et chacun coupe la bobine de l’autre par un contact fermé au repos : c’est le verrouillage électrique. Ainsi, marche avant et marche arrière ne peuvent jamais être commandées en même temps."
   },
   "ex-cablage-5": {
    "fichier": "mp3/ex-cablage-5-2e3a9e60cde3.mp3",
    "duree": 20.8,
    "mots": 57,
-   "mots_s": 2.74
+   "mots_s": 2.74,
+   "texte": "Le démarrage étoile-triangle. Un moteur qui démarre en direct appelle un courant très fort. On le démarre donc d’abord en étoile, sous une tension réduite sur chaque enroulement, puis on le passe en triangle pour qu’il donne toute sa puissance. Trois contacteurs : la ligne, l’étoile et le triangle. L’étoile et le triangle ne collent jamais ensemble."
   },
   "ex-cablage-5-commande": {
    "fichier": "mp3/ex-cablage-5-commande-678ad06fd95a.mp3",
    "duree": 15.3,
    "mots": 40,
-   "mots_s": 2.62
+   "mots_s": 2.62,
+   "texte": "La commande du démarrage étoile-triangle. Le bouton marche fait coller la ligne et l’étoile. Au bout d’une temporisation, l’étoile retombe et le triangle colle. Des contacts fermés au repos empêchent l’étoile et le triangle de coller en même temps."
   },
   "ex-cablage-6": {
    "fichier": "mp3/ex-cablage-6-ac22a7356c0c.mp3",
    "duree": 20.6,
    "mots": 57,
-   "mots_s": 2.76
+   "mots_s": 2.76,
+   "texte": "Le moteur deux vitesses Dahlander, comme celui d’un ventilateur de tour de refroidissement. Le même bobinage donne deux vitesses selon son couplage : en petite vitesse, un contacteur l’alimente par un jeu de bornes ; en grande vitesse, un autre l’alimente par l’autre jeu, pendant qu’un troisième relie les premières bornes entre elles. Chaque vitesse a son disjoncteur moteur."
   },
   "ex-cablage-6-commande": {
    "fichier": "mp3/ex-cablage-6-commande-822511bf022e.mp3",
    "duree": 21.6,
    "mots": 60,
-   "mots_s": 2.77
+   "mots_s": 2.77,
+   "texte": "La commande du Dahlander : un thermostat à deux étages choisit la vitesse selon le besoin de refroidissement. Au premier étage, la petite vitesse ; au second, la grande. Un relais temporisé impose un temps entre les deux : il coupe la petite vitesse, et un contact du contacteur de petite vitesse, fermé au repos, n’autorise la grande qu’une fois la petite retombée."
   },
   "ex-cablage-7": {
    "fichier": "mp3/ex-cablage-7-101a371b061a.mp3",
    "duree": 18.8,
    "mots": 50,
-   "mots_s": 2.66
+   "mots_s": 2.66,
+   "texte": "La puissance d’un groupe frigorifique : le compresseur, le ventilateur du condenseur et celui de l’évaporateur, chacun avec son départ et sa protection. Le disjoncteur de tête coupe tout ; les contacteurs mettent en marche le compresseur et le ventilateur du condenseur ; les relais thermiques et le disjoncteur moteur protègent les moteurs."
   },
   "ex-cablage-7-commande": {
    "fichier": "mp3/ex-cablage-7-commande-5917e290a1fe.mp3",
    "duree": 22.9,
    "mots": 54,
-   "mots_s": 2.36
+   "mots_s": 2.36,
+   "texte": "Le pump-down. Quand la chambre a atteint sa température, le thermostat ferme l’électrovanne. Le compresseur continue de tourner et aspire le fluide de l’évaporateur ; la basse pression baisse, jusqu’à ce que le pressostat basse pression arrête le compresseur. Au redémarrage, c’est l’inverse. Le pressostat haute pression, lui, coupe si la pression devient dangereuse."
   },
   "ex-cablage-8": {
    "fichier": "mp3/ex-cablage-8-09f4e119a427.mp3",
    "duree": 14.8,
    "mots": 35,
-   "mots_s": 2.37
+   "mots_s": 2.37,
+   "texte": "Une chambre froide négative. En plus du compresseur et des ventilateurs, il faut dégivrer l’évaporateur, où la glace s’accumule : des résistances électriques le chauffent pendant le dégivrage. Chaque récepteur a son contacteur et sa protection."
   },
   "ex-cablage-8-commande": {
    "fichier": "mp3/ex-cablage-8-commande-23bfb34a3cca.mp3",
    "duree": 22.5,
    "mots": 55,
-   "mots_s": 2.44
+   "mots_s": 2.44,
+   "texte": "La commande d’une chambre froide négative. Une horloge lance le dégivrage à heures fixes : le froid s’arrête et les résistances chauffent l’évaporateur. Un thermostat de fin de dégivrage les coupe dès que la glace a fondu. Le froid reprend quand l’horloge termine le dégivrage. Le reste du temps, c’est un pump-down : thermostat, électrovanne, pressostats."
   },
   "ex-cablage-9": {
    "fichier": "mp3/ex-cablage-9-5aa734d13745.mp3",
    "duree": 22.8,
    "mots": 55,
-   "mots_s": 2.41
+   "mots_s": 2.41,
+   "texte": "La puissance du groupe pump-down : quatre départs sous un disjoncteur de tête. Le compresseur a son disjoncteur moteur et son contacteur. Le ventilateur du condenseur a son contacteur et son relais thermique. Le ventilateur de l’évaporateur n’a pas de contacteur : il tourne dès que son disjoncteur est enclenché. Le dernier disjoncteur alimente la commande."
   },
   "ex-cablage-9-commande": {
    "fichier": "mp3/ex-cablage-9-commande-266dde2668cc.mp3",
    "duree": 22.4,
    "mots": 68,
-   "mots_s": 3.03
+   "mots_s": 3.03,
+   "texte": "La commande du pump-down. L’électrovanne est commandée par le thermostat et par le contact de l’horloge, en série : quand la chambre a froid, la vanne se ferme, et le compresseur vide l’évaporateur jusqu’à ce que le pressostat basse pression l’arrête. Le pressostat haute pression et le contact du relais thermique sont en série avec les bobines : l’un ou l’autre arrête le compresseur et le ventilateur du condenseur."
   },
   "ex-cablage-10": {
    "fichier": "mp3/ex-cablage-10-23891fb63311.mp3",
    "duree": 20.6,
    "mots": 48,
-   "mots_s": 2.33
+   "mots_s": 2.33,
+   "texte": "Une installation frigorifique alimentée par des sectionneurs porte-fusibles. Le compresseur, avec le ventilateur du condenseur, a son disjoncteur moteur et son contacteur ; le ventilateur de l’évaporateur a son contacteur et son relais thermique. Un transformateur abaisse la tension à vingt-quatre volts pour la commande, plus sûre."
   },
   "ex-cablage-10-commande": {
    "fichier": "mp3/ex-cablage-10-commande-8281342331f9.mp3",
    "duree": 17.6,
    "mots": 45,
-   "mots_s": 2.56
+   "mots_s": 2.56,
+   "texte": "La commande en vingt-quatre volts. Derrière l’arrêt d’urgence et le commutateur de marche, deux branches : les pressostats haute et basse pression commandent le compresseur, le thermostat commande l’électrovanne. Les voyants disent à l’utilisateur ce qui se passe : sous tension, en marche, ou en défaut."
   },
   "ex-cablage-11": {
    "fichier": "mp3/ex-cablage-11-6dfdfb3a9ac2.mp3",
    "duree": 14.5,
    "mots": 37,
-   "mots_s": 2.55
+   "mots_s": 2.55,
+   "texte": "Deux départs sous des sectionneurs porte-fusibles, derrière un interrupteur-sectionneur de tête : le groupe condenseur et le ventilateur de l’évaporateur, chacun avec son contacteur et son relais thermique. Un transformateur fournit la tension de la commande."
   },
   "ex-cablage-11-commande": {
    "fichier": "mp3/ex-cablage-11-commande-7c66a7f10e66.mp3",
    "duree": 24.0,
    "mots": 61,
-   "mots_s": 2.54
+   "mots_s": 2.54,
+   "texte": "La commande avec un relais auxiliaire. Un relais multiplie les contacts : une seule bobine commandée, et plusieurs circuits qui changent d’état ensemble. Le thermostat et les pressostats forment la chaîne de régulation et de sécurité. Et deux interrupteurs : l’un coupe le relais, donc toute l’installation ; l’autre coupe seulement le groupe et l’électrovanne, pendant que le ventilateur de l’évaporateur continue de tourner."
   },
   "ex-cablage-12": {
    "fichier": "mp3/ex-cablage-12-a4fb3a02ec40.mp3",
    "duree": 15.4,
    "mots": 42,
-   "mots_s": 2.73
+   "mots_s": 2.73,
+   "texte": "Un compresseur triphasé derrière un sectionneur porte-fusibles à précoupure, et un ventilateur de condenseur monophasé. La précoupure est un contact qui s’ouvre avant les contacts de puissance : elle coupe d’abord la commande, pour qu’on ne manœuvre jamais le sectionneur en charge."
   },
   "ex-cablage-12-commande": {
    "fichier": "mp3/ex-cablage-12-commande-c50366b9f5e3.mp3",
    "duree": 15.2,
    "mots": 39,
-   "mots_s": 2.56
+   "mots_s": 2.56,
+   "texte": "La commande de ce groupe : une horloge de dégivrage, des pressostats, un thermostat d’ambiance, et quatre voyants pour renseigner l’utilisateur. Le contact de précoupure du sectionneur est en série dans la commande : ouvrir le sectionneur coupe d’abord les bobines."
   },
   "ex-cablage-13": {
    "fichier": "mp3/ex-cablage-13-21274040b1f9.mp3",
    "duree": 19.4,
    "mots": 50,
-   "mots_s": 2.58
+   "mots_s": 2.58,
+   "texte": "Un compresseur et deux ventilateurs derrière un sectionneur porte-fusibles. Le compresseur et le ventilateur de l’évaporateur ont chacun leur protection. Le ventilateur du condenseur, en deux cent trente volts monophasé, passe par un disjoncteur moteur dont on ponte les pôles, pour que sa protection fonctionne sur un moteur monophasé."
   },
   "app-thermostat-fd": {
    "fichier": "mp3/app-thermostat-fd-03e1f7848d8e.mp3",
    "duree": 10.0,
    "mots": 25,
-   "mots_s": 2.5
+   "mots_s": 2.5,
+   "texte": "Voici le thermostat de fin de dégivrage. Il mesure la température de l’évaporateur : quand la glace a fondu, son contact s’ouvre et coupe les résistances."
   },
   "app-pressostat-condenseur": {
    "fichier": "mp3/app-pressostat-condenseur-0168e798693a.mp3",
    "duree": 9.9,
    "mots": 28,
-   "mots_s": 2.84
+   "mots_s": 2.84,
+   "texte": "Voici le pressostat du condenseur. Ce n’est pas une sécurité : il met en marche le ventilateur du condenseur quand la haute pression monte, et l’arrête quand elle redescend."
   }
  }
 }

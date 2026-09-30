@@ -387,10 +387,12 @@ body.sous-tension .bulle-vide{display:none}
 /* 30/09 — « Schéma sur papier » (moteur/ecran.js) : le schéma est sur la feuille de l'élève ; la platine prend toute la hauteur.
    La carte et la nomenclature se retirent, la consigne tient en une ligne, les couleurs et les boutons passent en colonne à droite. */
 body.vue-papier .nomenclature{display:none}
+body.vue-papier .outils{padding-bottom:36px}   /* 30/09 (contre-vérification, majeur) : la place du pied de page (marque.js, fixe en bas à gauche) */
+.menu-affichage [hidden]{display:none!important}   /* « Place de la carte » masquée pour une disposition à un panneau : ses boutons aussi */
 @media (orientation:landscape){   /* en portrait, les outils restent en bas : la largeur manque déjà */
 body.jeu.vue-papier{display:grid;grid-template-columns:minmax(0,1fr) 232px;grid-template-rows:auto auto minmax(0,1fr)}
 body.vue-papier .barre,body.vue-papier .consigne{grid-column:1 / -1}
-body.vue-papier .scene{grid-column:1;grid-row:3;padding:6px 0 6px 6px}
+body.vue-papier .scene{grid-column:1;grid-row:3;padding:6px 0 34px 6px}
 body.vue-papier .outils{grid-column:2;grid-row:3;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:10px;padding:10px 10px 40px;
   border-top:0;border-left:1px solid var(--ligne);overflow-y:auto}
 body.vue-papier .outils .couleurs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}

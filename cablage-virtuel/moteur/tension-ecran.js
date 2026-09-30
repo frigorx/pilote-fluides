@@ -120,7 +120,7 @@ document.addEventListener('cablage-pret', () => {
       x.addEventListener('pointerdown', ev => { ev.preventDefault(); x.setPointerCapture && x.setPointerCapture(ev.pointerId); geste(r, 'appuyer'); });
       ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(t => x.addEventListener(t, lacher));
     });
-    groupe('Capteurs', par('capteur').concat(horloges), x => { x.dataset.g = 'c'; x.onclick = () => geste(x.dataset.rep, 'basculer'); });
+    groupe('Capteurs', par('capteur').concat(horloges), (x, r) => { x.dataset.g = 'c'; x.dataset.nom = nom(r); x.onclick = () => geste(x.dataset.rep, 'basculer'); });
     groupe('Contacteurs (poussoir de test)', contacteurs, x => { x.dataset.g = 'f'; x.onclick = () => geste(x.dataset.rep, 'forcer'); });
     groupe('Essai des sécurités', par('thermique'), x => { x.dataset.g = 't'; x.onclick = () => geste(x.dataset.rep, e.appareils[x.dataset.rep].declenche ? 'rearmer' : 'declencher'); });
     const droite = document.createElement('div'); droite.className = 'droite';
@@ -138,7 +138,7 @@ document.addEventListener('cablage-pret', () => {
       const r = x.dataset.rep, v = e.appareils[r], g = x.dataset.g;
       if (g === 'q') { x.textContent = (v.declenche ? 'Réarmer ' : v.enclenche ? 'Ouvrir ' : 'Enclencher ') + r; x.classList.toggle('on', v.enclenche && !v.declenche); x.classList.toggle('ko', v.declenche); }
       if (g === 'b') x.classList.toggle('appui', !!v.appuye);
-      if (g === 'c') x.textContent = 'Basculer ' + r + ' : ' + v.texte;
+      if (g === 'c') x.textContent = 'Basculer ' + r + ' (' + x.dataset.nom + ') : ' + v.texte;   // 30/09 : le nom dit à quoi il sert (S2 / S3 du n° 11)
       if (g === 'f') { x.textContent = v.force ? 'Relâcher ' + r : 'Fermer ' + r + ' à la main'; x.classList.toggle('on', !!v.force); }
       if (g === 't') { x.textContent = (v.declenche ? 'Réarmer ' : 'Déclencher ') + r; x.classList.toggle('ko', v.declenche); }
     });
@@ -179,7 +179,11 @@ document.addEventListener('cablage-pret', () => {
         : 'Consignez, cherchez le défaut, corrigez, puis remettez sous tension.');
       return;
     }
-    const faits = e.journal.filter(j => !/ (enclenché|ouvert|appuyé|relâché|basculé)\.$/.test(j.texte)).slice(-2).map(j => j.texte);
+    // les deux derniers faits, un par appareil (30/09 : « VEM ouverte. VEM fermée. » se contredisait) : le plus récent l'emporte
+    const faits = [], vus = new Set();
+    e.journal.filter(j => !/ (enclenché|ouvert|appuyé|relâché|basculé)\.$/.test(j.texte)).reverse().forEach(j => {
+      const rep = j.texte.split(' ')[0]; if (faits.length < 2 && !vus.has(rep)) { vus.add(rep); faits.unshift(j.texte); }
+    });
     const enclenche = Object.values(e.appareils).some(v => v.enclenche);
     // le geste réel (constat E13) : un appui suffit ; un poussoir reste enfoncé tant qu'on le maintient
     const p = $('#pupitre'), f = p && p.querySelector('[data-g="f"]');
@@ -266,6 +270,7 @@ document.addEventListener('cablage-pret', () => {
         .reduce((u, b) => u ? { x: Math.min(u.x, b.x), y: Math.min(u.y, b.y), x1: Math.max(u.x1, b.x1), y1: Math.max(u.y1, b.y1) } : b, null) || boite(q.app);
       // 30/09 (contre-vérification) : trois ancrages — à droite du repère, au-dessus, au-dessous (centrés) ; des modulaires serrés sur
       // un rail n'ont pas de place à droite, et leurs étiquettes filaient toutes au bout de la rangée
+      if (!corpsApp) return { x: 0, y: 0 };   // 30/09 : la platine cachée (la carte seule, pendant l'essai) : rien à placer
       const cx = (corpsApp.x + corpsApp.x1) / 2;
       const ancres = [[(rep ? Math.max(rep.x1, corpsApp.x1) : corpsApp.x1) + 8, (rep ? (rep.y + rep.y1) / 2 : (corpsApp.y + corpsApp.y1) / 2) - h / 2, 0],
                       [cx - w / 2, corpsApp.y - h - 6, 10], [cx - w / 2, corpsApp.y1 + 6, 10]];
