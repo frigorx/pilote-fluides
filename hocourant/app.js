@@ -114,14 +114,14 @@
       // La couverture du livre se voit AVANT de télécharger (Franck, 27/09 : « trop de texte, pas assez de visuels ») :
       // l'image est la page 1 du PDF (livret/couverture-hocourant.jpg), cliquable comme le bouton.
       '<div class="carte carte-livret">' +
-      '<a class="livret-couv" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-4" download title="Télécharger le livret (PDF)">' +
+      '<a class="livret-couv" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download title="Télécharger le livret (PDF)">' +
       '<img src="livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livret HoCourant" width="672" height="954"></a>' +
       '<div class="livret-texte"><h2>Le livret papier <span class="badge badge-pdf">PDF disponible</span></h2>' +
       "<p>Le support de cours complet : dix chapitres, quatre-vingts questions, les activités " +
       "à faire en atelier et le lexique. Sa page de garde porte votre nom — remplissez-la, un livret " +
       "perdu revient à son propriétaire.</p>" +
-      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-4" download>' +
-      "Télécharger le livret (PDF, 116 pages, 11,9 Mo)</a></div>" +
+      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download>' +
+      "Télécharger le livret (PDF, 124 pages, 12,5 Mo)</a></div>" +
       '<div class="enc enc-note"><span class="enc-mot">À imprimer en A5</span>' +
       "<p>En couleur comme en noir et blanc : le livret est fait pour les deux. Le corrigé " +
       "est réservé au formateur et ne se télécharge pas ici.</p></div></div></div>" +
@@ -373,6 +373,8 @@
      Sans piste, ou si elle ne se lit pas, la voix du navigateur prend le relais. */
   const empreinteVoix = (t) => { let h = 5381; for (const c of t) h = ((h * 33) ^ c.codePointAt(0)) >>> 0; return h.toString(36); };
   let piste = null;
+  /* la phrase dite s'affiche dans une bulle discrète (moteur/sous-titres.js, demande de Franck du 30/09/2026) */
+  const bulle = (methode, ...args) => { if (window.PiloteSousTitres) window.PiloteSousTitres[methode](...args); };
   function pisteArreter() {
     if (!piste) return;
     piste.onended = piste.onerror = null;
@@ -388,6 +390,7 @@
     sta.session++;
     if (sta.minuterie) { clearTimeout(sta.minuterie); sta.minuterie = null; }
     pisteArreter();
+    bulle("cacher");
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     sta.enCours = false;
     const film = document.querySelector(".station .film");
@@ -404,8 +407,9 @@
       const a = new Audio("voix/" + cle + ".mp3");
       a.playbackRate = vitesse;
       piste = a;
-      a.onended = () => { if (piste === a) piste = null; if (sta && s === sta.session) suite(); };
+      a.onended = () => { if (piste === a) piste = null; bulle("cacher"); if (sta && s === sta.session) suite(); };
       a.onerror = () => { if (piste === a) piste = null; if (sta && s === sta.session) direNavigateur(texte, duree, suite, s, vitesse); };
+      bulle("montrer", texte, { audio: a });
       const lecture = a.play();
       if (lecture && lecture.catch) lecture.catch(() => { if (piste === a && a.onerror) a.onerror(); });
       return;
@@ -415,14 +419,16 @@
   function direNavigateur(texte, duree, suite, s, vitesse) {
     if (!("speechSynthesis" in window)) {
       $st("etat").textContent = "Ce navigateur n'a pas de voix : le film joue seul.";
-      sta.minuterie = setTimeout(() => { if (sta && s === sta.session) suite(); }, duree * 1000 / vitesse);
+      bulle("montrer", texte, { debit: vitesse });
+      sta.minuterie = setTimeout(() => { bulle("cacher"); if (sta && s === sta.session) suite(); }, duree * 1000 / vitesse);
       return;
     }
     const u = new SpeechSynthesisUtterance(texte);
     u.lang = "fr-FR"; u.rate = vitesse;
     const v = voixFr(); if (v) u.voice = v;
-    u.onend = () => { if (sta && s === sta.session) suite(); };
-    u.onerror = () => { if (sta && s === sta.session) suite(); };
+    u.onstart = () => bulle("montrer", texte, { debit: u.rate });
+    u.onend = () => { bulle("cacher"); if (sta && s === sta.session) suite(); };
+    u.onerror = () => { bulle("cacher"); if (sta && s === sta.session) suite(); };
     window.speechSynthesis.speak(u);
   }
   function stationActe(n) {
@@ -431,6 +437,7 @@
        mode sans animation, que la question n'interrompt pas) se tait, ses rappels périmés sont ignorés */
     sta.session++;
     pisteArreter();
+    bulle("cacher");
     if ("speechSynthesis" in window && (window.speechSynthesis.speaking || window.speechSynthesis.pending)) window.speechSynthesis.cancel();
     const film = document.querySelector(".station .film");
     if (film) {
@@ -501,6 +508,7 @@
     if (!sta || !sta.inter || sta.inter.resolu) return;
     if (!garderVoix) {
       pisteArreter();
+      bulle("cacher");
       if ("speechSynthesis" in window) window.speechSynthesis.cancel();
       sta.enCours = false;
       if ($st("ecouter")) $st("ecouter").textContent = etiquetteEcoute(sta.st.etapes[sta.i]);
