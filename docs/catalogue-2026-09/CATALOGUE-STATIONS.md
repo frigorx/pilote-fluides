@@ -299,7 +299,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
 | [Acquisition de données Bluetooth](https://inerweb.fr/aquiblue/) | — | — | — | condenseur évaporateur détendeur compresseur HP BP le cycle, en direct Bluetooth du PC Recherche de l&rsquo;adaptateur&hellip; Effacer les journaux de capture Le geste central du TP Le numéro de série est écrit sur la sonde. 1. |
-| [se préparer à l'habilitation électrique](https://inerweb.fr/hocourant/) | — | — | — | S'entraîner en autonomie à l'habilitation électrique, de B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle. Sans compte, sans donnée personnelle. Prototype inerWeb. |
+| [se préparer à l'habilitation électrique](https://inerweb.fr/hocourant/) | — | — | — | S'entraîner en autonomie à l'habilitation électrique, de B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle. Sans compte, sans donnée personnelle. Une ressource inerWeb. |
 
 ## Pages du site — 17 stations
 
