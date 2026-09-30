@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Traiter le bruit — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : les deux chemins du bruit (l'air et la structure), agir à la source, sur le chemin ou chez le récepteur, plots antivibratiles, manchettes souples, silencieux dans les gaines, vitesse d'air et bruit, et les erreurs classiques.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/acoustique-traiter-le-bruit/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Acoustique.
+     Produite le 30/09/2026 sur le gabarit aptitude-capacite ; fond dans
+     FOND.md (sources : Code du travail R. 4432-1, INRS, arrêté du
+     30 juin 1999 art. 5 et 6 — objet seulement, aucune valeur reprise).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer. Les narrations
+     n'ont pas encore leur MP3 (edge-tts, à fabriquer) : le navigateur
+     parle en attendant.
+
+     Illustrations : 8 SVG, dont 4 animés (SMIL autonome, sans script,
+     état au repos = image finale) : deux-chemins, plot-coupe-vibration,
+     pont-rigide, silencieux-reseau.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Acoustique · niveau BTS</p>
+  <h1>Traiter le bruit</h1>
+  <p class="sous-titre">Plots, silencieux · mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-acoustique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire par quel chemin un bruit arrive — <strong>par l'air ou par la structure</strong> —, choisir où agir (la source, le chemin, le récepteur), expliquer ce que font un <strong>plot antivibratile</strong>, une <strong>manchette souple</strong> et un <strong>silencieux</strong>, relier la vitesse de l'air dans une gaine au bruit, et repérer les erreurs qui ruinent un traitement.</p>
+  </div>
+  <p class="depart-note"><strong>Référentiel</strong> : TP TECVC, REAC TP-00133 — <strong>CP4</strong> (VMC), <strong>CP7</strong> (ventilation tertiaire) et <strong>CP9</strong> (climatisation) : le technicien d'études qui dimensionne un réseau d'air ou pose un groupe extérieur en prescrit aussi le traitement acoustique.</p>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la machine à gauche, posée sur la dalle, et le local occupé à droite. Deux chemins les relient. En violet, le chemin aérien : les ondes partent dans l'air et entrent par la fenêtre ouverte. En orange, le chemin solidien : la vibration de la machine passe dans la dalle, qui la conduit jusque sous le local, où elle ressort en bruit. Une même machine emprunte souvent les deux. Et c'est ce qui commande la suite : on ne coupe pas l'air comme on coupe une structure. Il faut d'abord savoir par où le bruit passe.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux chemins : l'air et la structure</h2>
+    <p>Un bruit ne gêne que s'il arrive à quelqu'un. Il y arrive par deux chemins :</p>
+    <ul>
+      <li>le <strong>chemin aérien</strong> : l'onde sonore se propage dans l'air, traverse une ouverture ou une paroi légère ;</li>
+      <li>le <strong>chemin solidien</strong> : la <strong>vibration</strong> de la machine passe dans la structure (dalle, mur, tuyauteries, fixations), qui la transmet puis la rayonne en bruit dans un autre local.</li>
+    </ul>
+    <p>Une même machine emprunte souvent les deux. <strong>On ne les traite pas de la même façon</strong> : écran, capot, silencieux pour l'air ; plots et raccords souples pour la structure. Traiter le mauvais chemin ne change rien.</p>
+    <figure>
+      <img src="svg/deux-chemins.svg" alt="Une machine posée sur une dalle, à gauche, et un local occupé dont la fenêtre est ouverte, à droite. Trois arcs violets et une flèche traversent l'air de la machine à la fenêtre : c'est le chemin aérien. Une ligne ondulée orange court dans la dalle, de dessous la machine jusque sous le local : c'est le chemin solidien. Une bande rappelle qu'un même bruit peut passer par l'air, par la structure, ou par les deux.">
+      <figcaption>Violet : l'air transmet. Orange : la dalle transmet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Le bruit se traite à trois endroits, et l'ordre compte. À gauche, la source : choisir une machine plus discrète, réduire sa vitesse, utiliser un mode nuit quand il existe. Au milieu, le chemin, ici un mur traversé par des ondes : plots, manchettes souples, silencieux, écran, capot. À droite, le récepteur : isoler le local, éloigner les postes de travail et, en dernier recours, les protections auditives individuelles. L'Institut national de recherche et de sécurité, l'INRS, rappelle qu'agir sur la source est le moyen le plus efficace. On commence donc par là, puis on descend d'un cran.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Trois endroits où agir</h2>
+    <ol>
+      <li><strong>La source</strong> : une machine plus discrète (comparer les données acoustiques des constructeurs), une vitesse de rotation réduite, un mode nuit quand la machine en propose un.</li>
+      <li><strong>Le chemin</strong> : plots antivibratiles, manchettes et raccords souples, silencieux et pièges à son dans les réseaux d'air, écran acoustique, capotage.</li>
+      <li><strong>Le récepteur</strong> : isoler le local, éloigner les postes ; les protections auditives individuelles ne viennent qu'en dernier recours.</li>
+    </ol>
+    <p>L'<strong>INRS</strong> (Institut national de recherche et de sécurité) l'écrit : agir sur la source est le moyen le plus efficace de lutter contre le bruit. Le Code du travail (article R. 4432-1) impose à l'employeur de supprimer ou réduire au minimum le risque, en tenant compte de la disponibilité de mesures <strong>à la source</strong>.</p>
+    <figure>
+      <img src="svg/source-chemin-recepteur.svg" alt="Trois cartes reliées par des flèches. La source : une machine, avec machine plus discrète, vitesse réduite, mode nuit. Le chemin : un mur traversé par des ondes, avec plots antivibratiles, manchettes souples, silencieux, écran, capot. Le récepteur : un personnage, avec isoler le local, éloigner les postes, protection auditive. Une bande rappelle l'ordre : la source d'abord, le chemin ensuite, le récepteur en dernier.">
+      <figcaption>De gauche à droite : on commence par la source.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deux vues, avec la même machine. À gauche, elle repose directement sur la dalle : la ligne orange dans la dalle montre la vibration qui la traverse, et les arcs sous la dalle, le bruit qui ressort dans le local du dessous. À droite, la machine repose sur deux plots antivibratiles. La dalle reste calme, et les arcs sous la dalle ne sont plus que des pointillés : les plots coupent l'essentiel du chemin. Un plot est un ressort, en caoutchouc ou en acier. Il n'isole que si sa fréquence propre est bien plus basse que celle de la machine.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le plot antivibratile : couper le chemin solidien</h2>
+    <p>Un compresseur ou un ventilateur qui tourne pousse sa structure à la cadence de sa rotation. Posé sur la dalle, il lui transmet cette vibration. Entre la machine et son support, on place un <strong>plot antivibratile</strong> : un élément élastique (élastomère ou ressort en acier). L'ensemble machine + plots forme un ressort avec une masse, qui a une <strong>fréquence propre</strong>.</p>
+    <p><strong>Règle du modèle simple</strong> (sans amortissement) : le plot n'isole que si la fréquence des vibrations de la machine dépasse √2 fois la fréquence propre. En dessous, il peut même <strong>amplifier</strong>. Plus le plot s'écrase sous la charge, plus la fréquence propre baisse : la charge portée par chaque plot se choisit dans la plage indiquée par le fabricant.</p>
+    <figure>
+      <img src="svg/plot-coupe-vibration.svg" alt="Deux vues côte à côte. À gauche, sans plot : la machine repose directement sur la dalle, une ligne ondulée orange court dans la dalle et trois arcs orange descendent dans le local du dessous. À droite, avec plots : la machine repose sur deux plots antivibratiles, la dalle reste lisse et les arcs sous la dalle ne sont que des pointillés gris très atténués. Légendes : la vibration traverse la dalle ; les plots coupent l'essentiel.">
+      <figcaption>Même machine : à gauche la dalle transmet, à droite les plots coupent l'essentiel.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Cette fois, deux machines identiques, chacune sur ses plots et reliée à un mur par un tube. À gauche, le tube est rigide : les traits orange courent le long du tube jusqu'au mur, et derrière le mur, des arcs montrent le bruit qui ressort. Les plots sont posés, mais la vibration passe quand même par le tube : il court-circuite la coupure. À droite, le tube comporte un raccord souple, en accordéon. Les traits orange s'arrêtent avant lui et rien ne passe dans le mur. La règle : tout ce qui quitte une machine posée sur plots doit comporter un élément souple.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Ne pas refaire le pont : manchettes et raccords souples</h2>
+    <p>Une machine sur plots reste reliée à l'installation par des tuyauteries, des gaines, des câbles. Si l'un d'eux est <strong>rigide et fixé à la structure</strong>, la vibration passe par lui : il <strong>court-circuite</strong> le plot.</p>
+    <ul>
+      <li><strong>Tuyauteries</strong> : un raccord souple (flexible, compensateur en accordéon) dès la sortie de la machine, puis des colliers à garniture élastique.</li>
+      <li><strong>Gaines</strong> : une <strong>manchette souple</strong> entre le ventilateur et la gaine rigide.</li>
+      <li><strong>Câbles</strong> : de la longueur en boucle, jamais tendus.</li>
+    </ul>
+    <p>Le souple doit <strong>rester souple</strong> : un flexible tendu ou en butée retransmet la vibration.</p>
+    <figure>
+      <img src="svg/pont-rigide.svg" alt="Deux vues côte à côte. À gauche, une machine sur deux plots est reliée à un mur par un tube rigide : des traits orange alternés courent le long du tube et des arcs orange se propagent derrière le mur. À droite, la même machine est reliée au mur par un tube qui comporte un raccord souple en accordéon : les traits orange s'arrêtent avant le raccord et rien ne se propage dans le mur.">
+      <figcaption>Le plot est posé dans les deux cas : seul le raccord souple garde la coupure.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Une gaine de ventilation, du ventilateur à gauche jusqu'à la bouche à droite. Au-dessus, l'onde violette représente le bruit. Elle est ample à la sortie du ventilateur. Elle traverse le silencieux, ces trois lames de matériau absorbant entre lesquelles l'air passe, et elle en ressort nettement plus faible. Le silencieux retire une part du bruit : c'est l'atténuation, exprimée en décibels. Mais regardez les lames : elles gênent un peu le passage de l'air. Le silencieux a un prix, la perte de charge, que le ventilateur devra compenser. Le piège à son désigne le même principe.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le silencieux : retirer du bruit dans la gaine</h2>
+    <p>Dans un réseau d'air, le bruit du ventilateur voyage dans la gaine avec l'air et ressort par les bouches. Un <strong>silencieux</strong> (ou <strong>piège à son</strong>) est un tronçon garni de matériau absorbant — souvent des <strong>baffles</strong>, des lames parallèles entre lesquelles l'air passe — qui dissipe l'énergie sonore.</p>
+    <ul>
+      <li>Son <strong>atténuation</strong> s'exprime en <strong>décibels (dB)</strong> et se lit dans les données du constructeur.</li>
+      <li>Niveau en sortie = niveau en entrée − atténuation : ici, les décibels se <strong>soustraient</strong>, car l'atténuation est un écart de niveaux.</li>
+      <li><strong>Son prix</strong> : il freine l'air. Cette perte de charge s'ajoute au réseau et se prévoit au dimensionnement du ventilateur.</li>
+    </ul>
+    <p>Un piège à son entre deux locaux limite aussi le bruit qui passe de l'un à l'autre par la gaine.</p>
+    <figure>
+      <img src="svg/silencieux-reseau.svg" alt="Une gaine horizontale relie un ventilateur, à gauche, à une bouche, à droite. Au milieu, un silencieux à baffles : trois lames parallèles de matériau absorbant entre lesquelles l'air passe, montré par des flèches avant et après. Au-dessus de la gaine, une onde violette montre le bruit : ample avant le silencieux, plus petite dans le silencieux, faible après. Une bande rappelle que le bruit en sortie est le bruit en entrée moins l'atténuation, en décibels, et que le silencieux freine l'air.">
+      <figcaption>L'onde s'affaiblit en traversant les baffles ; l'air, lui, est un peu freiné.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux gaines transportent le même débit d'air. À gauche, la section est petite : les flèches sont longues, l'air va vite, et à la bouche on voit trois grands arcs de bruit. À droite, la section est grande : les flèches sont courtes, l'air va lentement, et il ne reste qu'un petit arc. La vitesse est le débit divisé par la section : agrandir la section fait baisser la vitesse, donc le bruit d'écoulement. C'est souvent plus efficace que d'ajouter un silencieux sur une gaine trop étroite, et sans perte de charge en plus.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">La vitesse de l'air et le bruit</h2>
+    <p>L'air fait lui-même du bruit : turbulences dans les coudes, aux registres, aux grilles et aux bouches. Ce <strong>bruit d'écoulement</strong> augmente très vite quand la vitesse augmente.</p>
+    <p>Or, à débit donné, <strong>vitesse = débit ÷ section</strong> (la relation est reprise dans la station <em>Débit, vitesse, section</em> d'AéroRézo). Pour baisser le bruit à la cause :</p>
+    <ul>
+      <li><strong>agrandir la section</strong> de la gaine pour ralentir l'air ;</li>
+      <li>éviter les <strong>étranglements</strong> : coudes serrés, registres fermés à moitié pour « équilibrer » ;</li>
+      <li>faire tourner le ventilateur moins vite quand le besoin le permet.</li>
+    </ul>
+    <p>Un silencieux placé sur une gaine trop étroite traite le symptôme et ajoute de la perte de charge. Les vitesses à viser dépendent du local et se prennent dans les guides de conception.</p>
+    <figure>
+      <img src="svg/vitesse-bruit.svg" alt="Deux gaines pour le même débit d'air. À gauche, une petite section : trois flèches longues, donc de l'air rapide, et trois grands arcs violets de bruit à la bouche. À droite, une grande section : trois flèches courtes, donc de l'air lent, et un seul petit arc. Une phrase rappelle que pour un même débit, agrandir la section fait baisser la vitesse et le bruit d'écoulement.">
+      <figcaption>Flèches longues, air rapide, bruit fort. Flèches courtes, air lent, bruit faible.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes, quatre erreurs, chacune barrée d'une croix. Le plot écrasé : la machine est trop lourde pour lui, ou le plot est trop raide, et il n'isole plus. Le tube rigide fixé au mur, que nous venons de voir. Le mauvais chemin : un silencieux posé sur la gaine, alors que le bruit passe par la dalle. Et le capot fermé : il étouffe le bruit, mais aussi la machine, qui n'a plus l'air dont elle a besoin. Dans chaque cas, on a bien agi, mais pas au bon endroit ou pas assez complètement.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Les erreurs classiques</h2>
+    <ol>
+      <li><strong>Le plot écrasé</strong> : plot trop chargé (il s'écrase, arrive en butée) ou mal choisi (trop raide pour la charge portée). Il n'isole plus.</li>
+      <li><strong>Le tube rigide</strong> : tuyauterie, gaine ou câble fixé en dur à la structure, sans élément souple. Il court-circuite les plots.</li>
+      <li><strong>Le mauvais chemin traité</strong> : un silencieux ne coupe pas un bruit qui passe par la dalle, un plot ne coupe pas un bruit qui passe par l'air. D'où l'écran 1.</li>
+      <li><strong>Le capot sans air</strong> : un capot fermé étouffe le bruit mais aussi la machine, dont l'échangeur ne reçoit plus assez d'air.</li>
+    </ol>
+    <figure>
+      <img src="svg/erreurs-classiques.svg" alt="Quatre cartes, chacune barrée d'une croix rouge. Plot écrasé : un plot aplati sous une machine, avec en pointillé la hauteur qu'il devrait avoir. Tube rigide : une machine sur plots dont un tube rigide est fixé à un mur. Mauvais chemin traité : un silencieux sur une gaine alors que le bruit passe par la dalle, montrée par une ligne ondulée orange. Capot sans air : une machine enfermée dans un capot fermé, avec des traits de chaleur.">
+      <figcaption>Dans chaque cas, le traitement est là — mais il ne marche pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient en trois questions, de gauche à droite. Un : quel chemin, aérien, solidien, ou les deux. Deux : où agir, d'abord à la source, puis sur le chemin. Trois : ai-je créé un pont, un tube rigide, une gaine fixée en dur, un plot écrasé. En dessous, les quatre outils du technicien : plots, manchettes, silencieux, section de gaine. Et la bande du bas rappelle le réflexe : on mesure avant et après, sinon rien ne prouve que l'on a réussi.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Un bruit passe par <strong>l'air</strong>, par la <strong>structure</strong>, ou par les deux : on identifie le chemin avant d'agir.</li>
+      <li>On agit d'abord <strong>à la source</strong>, puis <strong>sur le chemin</strong>, en dernier chez le récepteur.</li>
+      <li>Le <strong>plot</strong> coupe la structure ; la <strong>manchette</strong> et le <strong>raccord souple</strong> empêchent le pont ; le <strong>silencieux</strong> retire du bruit dans l'air, au prix d'une perte de charge.</li>
+      <li>La <strong>vitesse de l'air</strong> fait du bruit : on agrandit la section avant d'ajouter un silencieux.</li>
+    </ul>
+    <p class="formule">Le réflexe : trois questions — quel chemin, où agir, y a-t-il un pont — puis mesurer avant et après.</p>
+    <figure>
+      <img src="svg/bilan-diagnostic.svg" alt="Trois cartes reliées par des flèches : un, quel chemin, aérien, solidien ou les deux ; deux, où agir, d'abord la source puis le chemin ; trois, un pont, tube rigide, gaine fixée en dur, plot écrasé. En dessous, quatre étiquettes : plots, manchettes, silencieux, section de gaine. Une bande rappelle qu'on mesure avant et après.">
+      <figcaption>Trois questions avant de poser quoi que ce soit.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un groupe froid posé sur une terrasse gêne le local situé juste dessous, alors que l'on n'entend presque rien à l'extérieur. Quel chemin est le plus probable ? Reprenez le schéma de l'écran un avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Un groupe sur une terrasse gêne le local du dessous, mais presque rien dehors. Quel chemin est le plus probable ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-chemins.svg" alt="Vignette de rappel : une machine sur une dalle, le chemin aérien en violet vers la fenêtre d'un local, le chemin solidien en orange dans la dalle.">
+      <figcaption>Rappel de l'écran 1 — deux chemins, l'air et la structure.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le chemin aérien, par les grilles du groupe</button>
+      <button type="button" data-answer="b">Les deux, sans pouvoir les distinguer</button>
+      <button type="button" data-answer="bonne">Le chemin solidien : la dalle transmet</button>
+      <button type="button" data-answer="d">Le récepteur : le local est trop sensible</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un bruit net dans le local du dessous et faible à l'extérieur est le signe d'une transmission par la structure : la dalle rayonne la vibration. On regarde d'abord les plots et les raccords, pas l'air."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. À quelle condition un plot antivibratile isole-t-il vraiment ? Reprenez les deux vues de l'écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un plot antivibratile n'isole vraiment que si…</h2>
+    <figure class="vignette">
+      <img src="svg/plot-coupe-vibration.svg" alt="Vignette de rappel : la même machine sans plot, où la vibration traverse la dalle, et avec deux plots, où l'essentiel du chemin est coupé.">
+      <figcaption>Rappel de l'écran 3 — le plot est un ressort.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">sa fréquence propre est très inférieure à celle de la machine</button>
+      <button type="button" data-answer="b">il est le plus dur possible, pour que la machine ne bouge presque pas</button>
+      <button type="button" data-answer="c">la machine est aussi boulonnée à la dalle par sécurité</button>
+      <button type="button" data-answer="d">il est le plus large possible sous la machine</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le plot est un ressort : il isole quand sa fréquence propre est très inférieure à la fréquence des vibrations de la machine. Un plot trop dur, ou une fixation rigide en parallèle, annule l'effet."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Une machine est posée sur des plots, mais sa tuyauterie de cuivre est fixée au mur sans aucun élément souple. Que se passe-t-il ? Souvenez-vous des deux tubes de l'écran quatre.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Machine sur plots, tuyauterie fixée au mur sans élément souple : que se passe-t-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/pont-rigide.svg" alt="Vignette de rappel : une machine sur plots reliée à un mur par un tube rigide, où la vibration passe, puis par un tube avec raccord souple, où elle s'arrête.">
+      <figcaption>Rappel de l'écran 4 — le tube rigide fait le pont.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien : les plots suffisent à eux seuls</button>
+      <button type="button" data-answer="b">Seule la tuyauterie vibre, sans effet sur le mur</button>
+      <button type="button" data-answer="c">Le bruit aérien augmente, pas le solidien</button>
+      <button type="button" data-answer="bonne">La vibration contourne les plots par le tube</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le tube rigide relie la machine à la structure : il court-circuite les plots. Il faut un raccord souple dès la sortie de la machine et des supports à garniture élastique."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Le bruit d'air d'une bouche de soufflage est trop fort, et la gaine est trop étroite pour le débit. Quelle action traite la cause ? Reprenez les deux gaines de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Bruit d'air trop fort à une bouche, gaine trop étroite pour le débit : quelle action traite la cause ?</h2>
+    <figure class="vignette">
+      <img src="svg/vitesse-bruit.svg" alt="Vignette de rappel : à débit égal, une petite section avec de l'air rapide et beaucoup de bruit, une grande section avec de l'air lent et peu de bruit.">
+      <figcaption>Rappel de l'écran 6 — la vitesse fait le bruit.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Ajouter un silencieux juste avant la bouche</button>
+      <button type="button" data-answer="bonne">Élargir la gaine pour ralentir l'air</button>
+      <button type="button" data-answer="c">Fermer à moitié le registre de la bouche</button>
+      <button type="button" data-answer="d">Poser des plots sous le ventilateur du réseau</button>
+    </div>
+    <p class="feedback" hidden data-explication="À débit constant, agrandir la section fait baisser la vitesse, donc le bruit d'écoulement, sans perte de charge en plus. Un silencieux avant la bouche ne réduit pas le bruit créé à la bouche ; fermer le registre étrangle l'air et augmente le bruit."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../acoustique-pac-voisinage/"><strong>Acoustique — la pompe à chaleur et le voisinage</strong></a> (même sous-ligne)
+      — l'unité extérieure chez le voisin : le cas où plots, écran et mode nuit servent.</li>
+    <li><a href="../acoustique-mesurer/"><strong>Acoustique — mesurer</strong></a> (même sous-ligne)
+      — mesurer avant et après le traitement, pour en prouver l'effet.</li>
+    <li><a href="../acoustique-le-bruit-en-db/"><strong>Acoustique — le bruit en dB</strong></a> (même sous-ligne)
+      — les décibels et leur calcul : pourquoi une atténuation se soustrait.</li>
+    <li><a href="https://inerweb.fr/aerorezo/"><strong>AéroRézo</strong></a> (réseau technique)
+      — débit, vitesse et section d'une gaine : la vitesse d'air qui fait le bruit.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

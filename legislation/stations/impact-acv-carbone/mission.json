@@ -1,0 +1,54 @@
+{
+  "slug": "impact-acv-carbone",
+  "branche": "Impact environnemental",
+  "titre": "Mission : Ne juger que la consommation ?",
+  "client": "Le maître d'ouvrage d'un immeuble neuf, dont le dossier est soumis à la RE2020, qui choisit entre deux pompes à chaleur.",
+  "situation": "Le maître d'ouvrage compare deux pompes à chaleur uniquement sur la consommation annuelle annoncée. Votre responsable rappelle que l'empreinte d'un équipement ne se joue pas que pendant son fonctionnement, et que le bâtiment sera lui-même jugé sur son cycle de vie complet. Vous devez lui expliquer ce que l'analyse de cycle de vie ajoute à sa lecture.",
+  "piece_a_produire": "Une note d'une demi-page qui présente les quatre étapes du cycle de vie d'un équipement, situe le TEWI et l'indicateur carbone de la RE2020, et conclut sur ce qu'il faut regarder avant de choisir.",
+  "questions": [
+    {
+      "q": "Quelles sont les quatre étapes d'une analyse de cycle de vie, dans l'ordre ?",
+      "ecran": 1,
+      "reponse": "Fabriquer, transporter, exploiter, démolir."
+    },
+    {
+      "q": "Pour un équipement fixe, quelle étape dure en général le plus longtemps, et quel indicateur en mesure la partie fluide et énergie ?",
+      "ecran": 4,
+      "reponse": "L'exploitation, qui dure toute la vie de l'installation (énergie consommée et fluide frigorigène). Le TEWI en mesure la part."
+    },
+    {
+      "q": "Que se passe-t-il, dans le bilan, pour ce qui n'est pas récupéré à la démolition ?",
+      "ecran": 5,
+      "reponse": "Cela compte aussi dans le bilan. La récupération du fluide est obligatoire en fin de vie, puis démontage et recyclage ou mise au rebut des matériaux."
+    },
+    {
+      "q": "Que mesure l'indicateur carbone (Ic) de la RE2020 ?",
+      "ecran": 6,
+      "reponse": "Le cycle de vie complet du bâtiment neuf : la construction et l'exploitation ensemble."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque étape du cycle de vie à ce qui pèse dans le bilan.",
+    "items": [
+      "A. Fabriquer",
+      "B. Transporter",
+      "C. Exploiter",
+      "D. Démolir",
+      "1. Le trajet de l'usine au chantier",
+      "2. Ce qui n'est pas récupéré en fin de vie",
+      "3. L'énergie industrielle et l'extraction des matières premières",
+      "4. L'énergie consommée et le fluide sur toute la vie"
+    ],
+    "corrige": "A-3, B-1, C-4, D-2."
+  },
+  "badge": "Du berceau à la démolition",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "2.02"
+    ],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. Le cadre RE2020 et l'analyse de cycle de vie ne sont pas des compétences évaluées du référentiel TECVC. Côté attestation 2025, l'incidence des émissions relève du code 2.02."
+  }
+}

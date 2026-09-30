@@ -1,0 +1,50 @@
+{
+  "slug": "impact-montreal-kigali",
+  "branche": "Impact environnemental",
+  "titre": "Mission : Du chlore au climat",
+  "client": "Le gestionnaire technique d'un centre commercial dont Clim'Études Sud prépare le plan de remplacement des équipements de climatisation.",
+  "situation": "Le parc comprend une vieille machine dont l'étiquette indique un fluide contenant du chlore, plusieurs machines aux HFC, et un projet avec un fluide naturel. Le gestionnaire pense que « Kigali est un nouveau traité sans rapport » et que les HFC sont sans souci puisque « l'ozone est sauvé ». Vous devez lui montrer l'enchaînement, et ce que chaque famille de fluides met en jeu.",
+  "piece_a_produire": "Une frise en trois temps (Montréal, relais des HFC, Kigali) et un petit tableau du parc : fluide, problème en cause (ozone ou climat), texte concerné.",
+  "questions": [
+    {
+      "q": "Que vise le protocole de Montréal de 1987, et quelles molécules cible-t-il ?",
+      "ecran": 2,
+      "reponse": "Protéger la couche d'ozone. Il vise des molécules contenant du chlore ou du brome : d'abord les CFC, puis les HCFC."
+    },
+    {
+      "q": "Pourquoi les HFC ont-ils remplacé les CFC et les HCFC ?",
+      "ecran": 3,
+      "reponse": "Ils ne contiennent ni chlore ni brome : leur ODP est nul, le problème de l'ozone est réglé pour cette famille."
+    },
+    {
+      "q": "Pourquoi le problème n'est-il pas clos avec les HFC ?",
+      "ecran": 4,
+      "reponse": "Beaucoup ont un PRP élevé : s'ils fuient, ils réchauffent fortement le climat, même avec un ODP nul."
+    },
+    {
+      "q": "Qu'est-ce que l'amendement de Kigali et quelle grandeur vise-t-il ?",
+      "ecran": 5,
+      "reponse": "Un amendement au protocole de Montréal, pas un traité séparé. Il vise les HFC pour leur PRP, alors que Montréal visait l'ODP."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Remettez ces trois temps dans l'ordre, et indiquez pour chacun le problème traité (ozone ou climat).",
+    "items": [
+      "Amendement de Kigali",
+      "Les HFC remplacent les CFC et les HCFC",
+      "Protocole de Montréal (1987)"
+    ],
+    "corrige": "1. Protocole de Montréal (ozone, CFC puis HCFC). 2. Relais des HFC (ozone réglé, climat en question). 3. Amendement de Kigali (climat, PRP des HFC)."
+  },
+  "badge": "Du chlore au climat",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "2.01",
+      "2.02"
+    ],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. Côté attestation 2025, la politique internationale, le protocole de Montréal et le PRP relèvent des codes 2.01 et 2.02."
+  }
+}

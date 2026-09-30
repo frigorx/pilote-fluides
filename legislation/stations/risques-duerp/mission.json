@@ -1,0 +1,46 @@
+{
+  "slug": "risques-duerp",
+  "branche": "Risques professionnels",
+  "titre": "Mission : Qui connaît la toiture ? Réclamer le document du site",
+  "client": "Le responsable technique d'un site industriel de conditionnement, qui a commandé à Clim'Études Sud la recharge d'un groupe de condensation posé en toiture.",
+  "situation": "Le technicien de Clim'Études Sud doit monter en toiture jeudi. Le responsable du site vous répond au téléphone : « Vous avez votre propre document unique, cela suffit, vous savez ce que vous faites. » Vous, vous ne savez rien de sa toiture : ni qui d'autre y travaille, ni comment on y accède, ni si des engins de levage circulent, ni s'il existe une zone à atmosphère particulière. Votre responsable vous demande de rédiger la demande écrite avant la visite.",
+  "piece_a_produire": "Un courriel d'une demi-page au responsable du site : (1) vous demandez à voir son document de prévention ; (2) à défaut, vous posez les quatre questions qu'il contiendrait (coactivité, accès, engins, zone à atmosphère particulière) ; (3) vous expliquez en une phrase pourquoi le DUERP de votre employeur ne remplace pas celui du site.",
+  "questions": [
+    {
+      "q": "Quelles sont les trois actions qui forment le cycle du document unique, et pourquoi dit-on que ce n'est pas un papier de tiroir ?",
+      "ecran": 1,
+      "reponse": "Évaluer les risques de chaque situation de travail, consigner le résultat par écrit, tenir le document à jour. C'est un outil de pilotage de la prévention : la boucle ne se referme jamais, le document se relit."
+    },
+    {
+      "q": "Qui rédige le document unique, et sur qui s'appuie-t-il pour le faire ?",
+      "ecran": 2,
+      "reponse": "L'employeur le rédige et en porte la responsabilité. Il s'appuie sur ceux qui connaissent le terrain : les techniciens eux-mêmes et, quand il y en a, les représentants du personnel. Il ne l'écrit pas seul depuis un bureau."
+    },
+    {
+      "q": "Sous quelles trois rubriques, dans quel ordre, le document présente-t-il l'information pour chaque situation de travail ?",
+      "ecran": 3,
+      "reponse": "Les situations de travail identifiées poste par poste, les risques repérés pour chacune, puis les mesures de prévention retenues. Un risque sans mesure associée n'est qu'un constat."
+    },
+    {
+      "q": "Le DUERP de Clim'Études Sud vous renseigne-t-il sur la toiture du client ? Justifiez.",
+      "ecran": 6,
+      "reponse": "Non. Il couvre votre propre entreprise. Le site visité a son propre document, souvent formalisé par un document de prévention propre au chantier en cas de coactivité : deux documents, deux responsables, à ne pas confondre."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Un collègue écrit dans son compte rendu : « J'ai relu le DUERP de notre entreprise : je connais donc les risques du site du client. Le responsable du site l'a écrit seul dans son bureau, donc inutile de lui poser des questions sur la toiture. » Trouvez les deux erreurs et corrigez-les chacune en une phrase.",
+    "items": [
+      "« Je connais donc les risques du site du client. »",
+      "« Il l'a écrit seul dans son bureau, donc inutile de lui poser des questions. »"
+    ],
+    "corrige": "Erreur 1 : le DUERP de son employeur ne décrit pas le site visité ; le site a son propre document, avec son propre responsable. Erreur 2 : un document écrit seul depuis un bureau passe à côté de sa raison d'être, et surtout on a intérêt à demander à le voir ou à poser les questions (coactivité, accès, engins, zone à atmosphère particulière) avant d'intervenir sur un site que l'on ne connaît pas."
+  },
+  "badge": "Le document du site",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires (préparer une intervention sur un site qui n'est pas le sien)."
+  }
+}

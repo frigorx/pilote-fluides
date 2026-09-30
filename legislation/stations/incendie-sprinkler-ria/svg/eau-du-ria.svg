@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 415" role="img"
+     aria-labelledby="t-eau" aria-describedby="d-eau" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-eau">L'eau du robinet d'incendie armé : alimentation et pression</title>
+  <desc id="d-eau">Une conduite du réseau public arrive à gauche et alimente, dans un bâtiment, une canalisation d'eau en pression. Sur son trajet, un premier robinet d'incendie armé proche de l'arrivée, puis une colonne montante qui mène au robinet le plus défavorisé, en haut à droite, dont la lance projette un jet. Près de ce robinet, un manomètre avec un repère rouge : la pression minimale de fonctionnement, 2,5 bars, doit y être tenue. Une bande rappelle les articles MS 16 et MS 17. L'animation fait circuler l'eau dans la canalisation, puis la pression monte sur le manomètre et le jet apparaît ; l'image fixe montre le résultat final.</desc>
+  <style>
+    .lbl { font-size:17px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#b91c1c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- bâtiment -->
+  <rect x="140" y="60" width="740" height="290" rx="10" fill="none" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="12 8"/>
+  <text class="lbl" x="152" y="50" fill="#5a6b7d">Bâtiment</text>
+
+  <!-- canalisation -->
+  <path id="tuyau" d="M20,300 L700,300 L700,130 L776,130" fill="none" stroke="#2f5689" stroke-width="10" stroke-linejoin="round"/>
+  <text class="lbl" x="80" y="336" text-anchor="middle">Réseau public</text>
+
+  <!-- RIA proche -->
+  <rect x="295" y="262" width="10" height="38" fill="#2f5689"/>
+  <circle cx="300" cy="244" r="20" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="300" cy="244" r="7" fill="#b91c1c"/>
+  <text class="lbl" x="300" y="208" text-anchor="middle">RIA proche</text>
+
+  <!-- RIA le plus défavorisé -->
+  <circle cx="800" cy="130" r="20" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="800" cy="130" r="7" fill="#b91c1c"/>
+  <text class="qui" x="870" y="92" text-anchor="end">RIA le plus défavorisé</text>
+  <!-- jet : apparaît une fois la pression établie -->
+  <path d="M818,122 C846,96 864,112 872,150" fill="none" stroke="#2f5689" stroke-width="4" stroke-dasharray="9 7" stroke-linecap="round" opacity="1">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.44;1" dur="12s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- manomètre -->
+  <rect x="646" y="187" width="54" height="6" fill="#2f5689"/>
+  <circle cx="620" cy="190" r="28" fill="#fffdf8" stroke="#10233c" stroke-width="4"/>
+  <path d="M632,171 L638,161" fill="none" stroke="#b91c1c" stroke-width="5"/>
+  <line x1="620" y1="190" x2="620" y2="166" stroke="#10233c" stroke-width="4" stroke-linecap="round" transform="rotate(55 620 190)">
+    <animateTransform attributeName="transform" type="rotate" values="-75 620 190;-75 620 190;55 620 190;55 620 190" keyTimes="0;0.16;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </line>
+  <circle cx="620" cy="190" r="4" fill="#10233c"/>
+  <text class="lbl" x="580" y="196" text-anchor="end">Manomètre</text>
+  <text class="qui" x="620" y="246" text-anchor="middle">2,5 bars au moins</text>
+
+  <!-- eau qui circule (décor animé) -->
+  <circle r="6" fill="#bcd3ee" opacity="0">
+    <animateMotion dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.03;0.30;1"><mpath href="#tuyau"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.29;0.31;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6" fill="#bcd3ee" opacity="0">
+    <animateMotion dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.07;0.34;1"><mpath href="#tuyau"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.07;0.33;0.35;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6" fill="#bcd3ee" opacity="0">
+    <animateMotion dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.11;0.38;1"><mpath href="#tuyau"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.11;0.37;0.39;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <text class="lbl" x="150" y="330">Canalisation d'eau en pression, desservie par le réseau public</text>
+
+  <text class="band" x="450" y="382" text-anchor="middle">MS 16 : alimentation par une canalisation d'eau en pression</text>
+  <text class="band" x="450" y="404" text-anchor="middle">MS 17 : pression minimale de fonctionnement au robinet le plus défavorisé</text>
+</svg>

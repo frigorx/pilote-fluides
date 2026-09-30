@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Temps &amp; paie — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/travail-temps-et-paie/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Droit du travail.
+     Deuxième station de la sous-ligne (après « Le contrat »).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+
+     DOCTRINE : aucun chiffre non sourcé. Toute valeur affichée est lue
+     dans le Code du travail (code.travail.gouv.fr, consulté le 30/09/2026),
+     sur service-public.fr ou dans la fiche du ministère du Travail sur les
+     conventions collectives du bâtiment (ouvriers) — voir FOND.md. Aucun
+     montant de SMIC, aucun taux de cotisation : ils changent chaque année.
+     Les valeurs des conventions collectives sont attribuées à leur source
+     et signalées comme pouvant différer par accord d'entreprise.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Droit du travail · niveau BTS</p>
+  <h1>Temps &amp; paie — compter ses heures, lire sa fiche</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 12 minutes</p>
+  <figure class="scene"><img src="../../img/scene-travail.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire <strong>quelles heures comptent</strong>, distinguer la <strong>durée légale</strong> des <strong>durées maximales</strong>, repérer le moment où une heure devient <strong>supplémentaire</strong> et comment elle est majorée, connaître vos <strong>repos</strong>, situer le <strong>trajet</strong> et le <strong>grand déplacement</strong> dans le bâtiment, lire une <strong>fiche de paie</strong> de haut en bas et compter vos <strong>congés payés</strong>.</p>
+    <p style="margin-top:10px"><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — <strong>hors REAC</strong> : culture professionnelle du technicien et du chargé d'affaires. Aucune des compétences CP1 à CP10 ne porte sur le temps de travail ni sur la paie.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Avant de compter des heures, encore faut-il savoir lesquelles comptent. Regardez la journée découpée en quatre blocs. Les blocs bleus sont du travail effectif : vous êtes à la disposition de l'employeur, vous suivez ses directives, et vous ne pouvez pas vaquer librement à vos occupations personnelles. Le premier bloc, en gris, est le trajet entre votre domicile et votre lieu habituel de travail : il ne compte pas. Le bloc de la pause dépend de la situation : si vous restez à disposition, il compte. En bas, deux cartes : un trajet plus long que d'habitude, ou une tenue imposée à enfiler sur place, ouvrent droit à une contrepartie.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Ce qui compte : le temps de travail effectif</h2>
+    <p>La durée du travail se compte en <strong>travail effectif</strong> : le temps pendant lequel le salarié est <strong>à la disposition de l'employeur</strong>, se conforme à ses directives et <strong>ne peut pas vaquer librement</strong> à des occupations personnelles (Code du travail, L. 3121-1).</p>
+    <ul>
+      <li>Le <strong>trajet</strong> pour se rendre sur le lieu d'exécution du contrat n'est pas du travail effectif (L. 3121-4). S'il dépasse le temps normal de trajet entre le domicile et le lieu habituel de travail, il donne droit à une <strong>contrepartie</strong> — voir l'écran 6.</li>
+      <li>La <strong>pause</strong> et le temps de restauration comptent comme du travail effectif quand les critères ci-dessus sont réunis (L. 3121-2).</li>
+      <li>L'<strong>habillage et le déshabillage</strong>, quand une tenue est imposée et qu'il faut la mettre sur place, ouvrent aussi droit à une contrepartie, en repos ou en argent (L. 3121-3).</li>
+    </ul>
+    <p><strong>Le réflexe</strong> : se demander « suis-je libre de mon temps, ou à disposition ? ».</p>
+    <figure>
+      <img src="svg/travail-effectif.svg" alt="Une bande rappelle la définition du temps de travail effectif : à la disposition de l'employeur, sous ses directives, sans pouvoir vaquer librement à ses occupations. Dessous, une journée en quatre blocs : le trajet domicile – lieu habituel, en gris, ne compte pas ; le travail sur le chantier et la reprise du travail, en bleu, comptent ; la pause, en trait tireté, compte si le salarié reste à disposition. Deux cartes en bas : un trajet plus long que le trajet normal et une tenue imposée enfilée sur place ouvrent une contrepartie.">
+      <figcaption>Bleu : ça compte. Gris : ça ne compte pas d'office. Tireté : ça dépend.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Sur cette échelle, le trait bleu s'arrête à trente-cinq heures : c'est la durée légale, celle à partir de laquelle une heure devient supplémentaire. Ce n'est pas un plafond. Les vrais plafonds sont plus loin : quarante-quatre heures en moyenne sur douze semaines consécutives, et quarante-huit heures au maximum sur une semaine donnée. Sous l'échelle, quatre cartes : la durée légale, les deux plafonds, et le plafond du jour, dix heures, qu'un accord peut porter à douze. Le bandeau du bas rappelle qu'avant dix-huit ans, les limites sont plus basses : huit heures par jour et trente-cinq par semaine.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Un seuil, puis des plafonds</h2>
+    <p>La <strong>durée légale</strong> du travail effectif est de <strong>35 heures par semaine</strong> pour un salarié à temps complet (L. 3121-27). Ce n'est <strong>pas un plafond</strong> : c'est le seuil au-delà duquel les heures deviennent supplémentaires. Les plafonds sont plus loin :</p>
+    <ul>
+      <li><strong>48 heures</strong> au cours d'une même semaine (L. 3121-20) ;</li>
+      <li><strong>44 heures</strong> en moyenne sur une période quelconque de douze semaines consécutives (L. 3121-22), sauf cas prévus aux articles L. 3121-23 à L. 3121-25 ;</li>
+      <li><strong>10 heures</strong> par jour (L. 3121-18), sauf dérogation de l'inspecteur du travail, urgence, ou accord collectif qui peut aller jusqu'à 12 heures (L. 3121-19).</li>
+    </ul>
+    <p>Pour les <strong>jeunes de moins de 18 ans</strong>, les limites sont plus basses : <strong>8 heures par jour et 35 heures par semaine</strong>, avec des dérogations encadrées (L. 3162-1).</p>
+    <figure>
+      <img src="svg/plafonds.svg" alt="Une échelle horizontale de zéro à quarante-huit heures par semaine. Le trait bleu s'arrête à trente-cinq heures, la durée légale. Deux repères plus loin : quarante-quatre heures et quarante-huit heures. Sous l'échelle, quatre cartes : la durée légale de 35 heures par semaine, le plafond moyen de 44 heures sur douze semaines, le plafond absolu de 48 heures sur une semaine, le plafond du jour de 10 heures qu'un accord peut porter à 12. Un bandeau rappelle les limites des moins de 18 ans : 8 heures par jour et 35 heures par semaine.">
+      <figcaption>Le trait bleu est un seuil, pas une limite : les limites sont à sa droite.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Suivez la semaine, de gauche à droite. Chaque petit carré vaut une heure. Les carrés bleus se remplissent : lundi, mardi, mercredi, puis jeudi. Vers la fin de jeudi, le trait pointillé marque la trente-cinquième heure. À partir de là, les carrés sont orange : chaque heure de plus est une heure supplémentaire. Vendredi finit de se remplir en orange. Samedi et dimanche restent vides. Les deux compteurs du bas résument : quarante-cinq heures au total, dont dix supplémentaires. Remarquez que le décompte se fait sur la semaine, pas sur la journée : une journée de neuf heures est parfaitement régulière.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La semaine qui se remplit</h2>
+    <p>Sauf accord collectif qui en fixe une autre, la semaine court du <strong>lundi 0 h au dimanche 24 h</strong> (L. 3121-35, L. 3121-32). Toute heure accomplie <strong>au-delà de la durée légale hebdomadaire</strong> est une <strong>heure supplémentaire</strong> (L. 3121-28).</p>
+    <p><strong>Exemple</strong> : cinq journées de 9 heures font 45 heures. Lundi, mardi et mercredi totalisent 27 heures ; la <strong>36e heure tombe le jeudi</strong>. Il reste <strong>10 heures supplémentaires</strong> : une le jeudi, neuf le vendredi.</p>
+    <p>Le décompte est <strong>hebdomadaire</strong> : chaque journée de 9 heures respecte le plafond de 10 heures, et les 45 heures restent sous le plafond de 48. C'est le cumul de la semaine qui déclenche les heures supplémentaires.</p>
+    <figure>
+      <img src="svg/semaine-qui-se-remplit.svg" alt="Une semaine de lundi à dimanche, en petits carrés d'une heure. Cinq jours de neuf heures se remplissent l'un après l'autre : les trente-cinq premiers carrés sont bleus, puis un trait pointillé marque la trente-cinquième heure au milieu du jeudi, et les dix carrés suivants sont orange. Samedi et dimanche sont vides. Deux compteurs : 45 heures au total, dont 10 supplémentaires.">
+      <figcaption>La 36e heure — la dernière du jeudi — est la première heure supplémentaire.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Les dix heures supplémentaires de la semaine sont maintenant alignées. Les huit premières, en orange, sont majorées de vingt-cinq pour cent. Les deux suivantes, en brun, de cinquante pour cent. C'est la règle qui s'applique à défaut d'accord. Dans le bas du dessin, l'échelle de décision : d'abord un accord d'entreprise ou d'établissement, sinon un accord de branche, sinon la règle du Code. Un accord peut choisir un autre taux, mais jamais moins de dix pour cent. Une heure majorée de vingt-cinq pour cent se paie une heure et quart ; à cinquante pour cent, une heure et demie.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Heures supplémentaires : la majoration, et ce que la convention change</h2>
+    <p><strong>À défaut d'accord</strong>, les heures supplémentaires sont majorées de <strong>25 %</strong> pour chacune des <strong>huit premières</strong>, puis de <strong>50 %</strong> pour les suivantes (L. 3121-36).</p>
+    <p>Mais le Code renvoie d'abord à un <strong>accord d'entreprise ou d'établissement</strong>, ou à défaut à un <strong>accord de branche</strong> : c'est lui qui fixe le taux — <strong>jamais inférieur à 10 %</strong> —, le <strong>contingent annuel</strong> d'heures supplémentaires et la contrepartie obligatoire en repos au-delà de ce contingent (L. 3121-33). Un <strong>repos compensateur équivalent</strong> peut aussi remplacer la majoration (L. 3121-28).</p>
+    <p><strong>Dans le bâtiment</strong> : la fiche du ministère du Travail sur les conventions des ouvriers indique 25 % pour les huit premières heures puis 50 % (art. 3-17). Pour un technicien, lisez la convention de <em>votre</em> contrat.</p>
+    <p class="formule">Calcul de l'exemple : 8 × 1,25 + 2 × 1,5 = 13 heures payées pour les 10 heures supplémentaires — soit 48 heures de salaire pour 45 heures travaillées, à défaut d'accord.</p>
+    <figure>
+      <img src="svg/heures-sup-majoration.svg" alt="Une bande bleue : les trente-cinq premières heures au taux normal. Dessous, dix jetons pour les dix heures supplémentaires : les huit premiers en orange, majorés de 25 pour cent, les deux suivants en brun, majorés de 50 pour cent. En bas, trois cartes reliées par des flèches : un accord d'entreprise ou d'établissement fixe le taux, à défaut un accord de branche, à défaut le Code du travail avec 25 puis 50 pour cent. Un bandeau précise qu'un accord peut fixer un autre taux, jamais en dessous de 10 pour cent.">
+      <figcaption>Orange : la majoration à 25 %. Brun : la majoration à 50 %. En dessous : qui décide.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Deux bandes. En haut, la journée : après six heures de travail, une pause d'au moins vingt minutes ; et une fois la journée finie, au moins onze heures de repos de suite avant de reprendre. En dessous, la semaine : six jours de travail au plus, puis le repos hebdomadaire, vingt-quatre heures consécutives auxquelles s'ajoutent les onze heures de repos quotidien. Le Code prévoit le dimanche pour ce repos. Dans le bâtiment, la convention des ouvriers organise en principe la semaine sur cinq jours, avec deux jours de repos de suite. Un chantier pressé n'efface pas ces repos, sauf urgence ou dérogation prévue par les textes.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Pauses et repos</h2>
+    <ul>
+      <li><strong>Pause</strong> : dès que le temps de travail quotidien atteint 6 heures, <strong>20 minutes consécutives au moins</strong> (L. 3121-16).</li>
+      <li><strong>Repos quotidien</strong> : <strong>11 heures consécutives au moins</strong> (L. 3131-1), sauf cas prévus aux articles L. 3131-2 et L. 3131-3 ou urgence.</li>
+      <li><strong>Repos hebdomadaire</strong> : <strong>24 heures consécutives</strong> auxquelles s'ajoutent les heures de repos quotidien (L. 3132-2). Il est interdit de faire travailler un salarié <strong>plus de six jours par semaine</strong> (L. 3132-1) ; le repos est donné, en principe, le dimanche (L. 3132-3).</li>
+      <li><strong>Bâtiment, ouvriers</strong> (fiche du ministère du Travail) : semaine sur 5 jours, repos sur 2 jours consécutifs (art. 3-21) ; travail le samedi ou le lundi pour raisons impératives contre un repos compensateur (art. 3-22).</li>
+    </ul>
+    <figure>
+      <img src="svg/repos.svg" alt="Deux bandes. En haut, une journée : un bloc de travail, une pause en trait tireté, un second bloc de travail, puis un bloc hachuré pour le repos quotidien. Une accolade indique au plus dix heures de travail effectif. La pause dure vingt minutes au moins dès six heures de travail ; le repos quotidien dure onze heures de suite au moins. En dessous, une semaine : six blocs bleus du lundi au samedi sous une accolade six jours de travail au plus, et le dimanche hachuré, repos hebdomadaire de vingt-quatre heures de suite plus le repos quotidien. Un bandeau rappelle la semaine de cinq jours du bâtiment pour les ouvriers.">
+      <figcaption>Hachuré : le repos. La pause, la nuit, le week-end ne se rattrapent pas au hasard.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="À gauche, le siège de l'entreprise au centre, et des cercles pointillés autour : ce sont les zones concentriques utilisées par la convention des ouvriers du bâtiment pour indemniser les petits déplacements. Le chantier A est dans les cercles : le salarié rentre chez lui chaque soir et reçoit des indemnités de trajet, de transport et de repas. Le chantier B est loin, hors des cercles, avec un lit : impossible de rentrer chaque soir. C'est le grand déplacement : indemnité journalière pour le logement et les repas, voyages de retour payés. Pour tous, le trajet n'est pas du travail effectif, mais ouvre une contrepartie.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Trajet, petit et grand déplacement dans le bâtiment</h2>
+    <p><strong>Principe du Code</strong> (L. 3121-4) : le temps de déplacement pour se rendre sur le lieu d'exécution du contrat n'est <strong>pas du travail effectif</strong>. S'il dépasse le temps normal de trajet domicile – lieu habituel de travail, il fait l'objet d'une <strong>contrepartie</strong>, en repos ou en argent ; la part qui coïncide avec l'horaire de travail n'entraîne <strong>aucune perte de salaire</strong>. Une convention ou un accord fixe ces contreparties (L. 3121-7).</p>
+    <p><strong>Dans le bâtiment</strong>, les conventions collectives des <strong>ouvriers</strong> (IDCC 1596 et 1597) distinguent deux régimes, d'après la fiche du ministère du Travail (mise à jour de février 2024) :</p>
+    <ul>
+      <li><strong>Petit déplacement</strong> : l'ouvrier rentre chez lui chaque soir. Il perçoit des indemnités <strong>forfaitaires</strong> de trajet, de frais de transport et de repas, selon des zones concentriques autour du siège (art. 8-11 à 8-20).</li>
+      <li><strong>Grand déplacement</strong> : le chantier est trop éloigné, compte tenu des transports en commun, pour rentrer chaque soir à la résidence déclarée à l'embauche. L'ouvrier perçoit une <strong>indemnité journalière</strong> (logement, nourriture), un voyage de retour est payé périodiquement, et le temps de trajet est indemnisé (art. 8-21 à 8-29).</li>
+    </ul>
+    <p><strong>Attention à qui vous êtes</strong> : ces règles sont celles des ouvriers. Un technicien ou un chargé d'affaires relève d'une autre convention (par exemple celle des ETAM du bâtiment, IDCC 2609, ou celle des bureaux d'études, IDCC 1486), dont les dispositions ne sont pas reprises ici. La fiche de paie indique la convention applicable ; un accord d'entreprise peut aussi en différer.</p>
+    <figure>
+      <img src="svg/deplacements.svg" alt="À gauche, le siège de l'entreprise au centre de trois cercles pointillés, les zones concentriques. Le chantier A, marqué A, est dans les cercles : le salarié rentre chaque soir. Le chantier B, marqué B et accompagné d'un lit, est loin hors des cercles, relié au siège par un trait tireté : le salarié ne peut pas rentrer chaque soir. À droite, deux cartes : petit déplacement avec indemnités forfaitaires de trajet, de frais de transport et de repas ; grand déplacement avec indemnité journalière de logement et de repas, voyage de retour payé périodiquement et temps de trajet indemnisé. Un bandeau précise que ces règles sont lues dans la convention des ouvriers du bâtiment.">
+      <figcaption>A : on rentre le soir. B : on dort sur place. Le régime d'indemnisation n'est pas le même.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Une fiche de paie se lit de haut en bas, et le cadre rose vous guide. Bande un : qui vous êtes, votre convention collective, et le nombre d'heures, avec les heures supplémentaires et leurs taux. Bande deux : le salaire brut, avant toute retenue. Bande trois : les cotisations sociales, avec la part salarié, retirée du brut, et la part employeur, payée en plus par l'entreprise. Bande quatre : le net à payer avant impôt. Bande cinq : le net imposable, qui sert de base à l'impôt. Bande six : l'impôt prélevé à la source. Bande sept : les congés pris. Aucun montant n'est écrit ici : ils changent, la structure reste.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Lire une fiche de paie, de haut en bas</h2>
+    <p>L'employeur remet une <strong>fiche de paie</strong> à chaque paiement du salaire (L. 3243-2) ; elle est en principe électronique, sauf opposition du salarié. Il en garde un double <strong>5 ans</strong> (L. 3243-4) ; vous, conservez-la <strong>sans limite de durée</strong>. Ses mentions obligatoires sont fixées par l'article R. 3243-1.</p>
+    <ol>
+      <li><strong>Vous et vos heures</strong> : employeur, emploi, position dans la classification, <strong>convention collective</strong> applicable, heures au taux normal et heures supplémentaires avec les <strong>taux appliqués</strong>.</li>
+      <li><strong>Salaire brut</strong> : la rémunération avant toute retenue.</li>
+      <li><strong>Cotisations</strong> : montant et assiette, part <strong>salarié</strong> (retirée du brut) et part <strong>employeur</strong> (payée en plus par l'entreprise).</li>
+      <li><strong>Net à payer avant impôt</strong> : ce qui reste après les cotisations, avant l'impôt sur le revenu.</li>
+      <li><strong>Net imposable</strong> : la base de calcul du prélèvement à la source — <strong>ce n'est pas le net à payer</strong>.</li>
+      <li><strong>Impôt à la source</strong> : le montant prélevé, puis la <strong>somme effectivement reçue</strong> et la date de paiement.</li>
+      <li><strong>Congés</strong> : les dates prises et le montant de l'indemnité, quand un congé tombe dans la période payée.</li>
+    </ol>
+    <p>Sur service-public.fr, la fiche est présentée par zones ; l'ordre exact varie selon les logiciels de paie. Un désaccord sur le montant ou l'exactitude de la fiche peut être contesté pendant <strong>3 ans</strong> à compter de sa remise. Aucun taux ni montant n'est donné ici : ils changent chaque année.</p>
+    <figure>
+      <img src="svg/fiche-de-paie.svg" alt="Une feuille découpée en sept bandes numérotées, chacune avec son intitulé et une barre grise à la place du montant : un, vous et vos heures ; deux, salaire brut ; trois, cotisations ; quatre, net à payer avant impôt ; cinq, net imposable ; six, impôt à la source ; sept, congés. À droite, une explication courte par bande. Dans l'animation, un cadre rose descend bande après bande.">
+      <figcaption>Le cadre rose descend : brut, cotisations, net avant impôt, net imposable, impôt.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le compteur des congés : douze cartes, chacune vaut deux jours et demi ouvrables, pour un mois de travail effectif. Douze mois, trente jours ouvrables, soit cinq semaines. En dessous, deux calendriers : la période d'acquisition classique, du premier juin au trente et un mai, et celle des entreprises affiliées à une caisse de congés payés, comme dans le bâtiment, du premier avril au trente et un mars. En bas, l'indemnité : le dixième de la rémunération brute de la période, sans pouvoir être inférieure à ce que vous auriez gagné en travaillant. Le réflexe : chaque mois, relire les heures et leurs taux, les congés, la convention.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Les congés payés — et le réflexe</h2>
+    <ul>
+      <li><strong>2,5 jours ouvrables</strong> par mois de travail effectif chez le même employeur, au plus <strong>30 jours ouvrables</strong> : cinq semaines (L. 3141-3). Les jours ouvrables sont tous les jours sauf le dimanche et les jours fériés (fiche du ministère du Travail). L'apprenti a droit aux mêmes cinq semaines (service-public.fr).</li>
+      <li><strong>Période d'acquisition</strong> : du 1er juin au 31 mai en général ; du <strong>1er avril au 31 mars</strong> pour les entreprises affiliées à une caisse de congés payés, comme dans le BTP (service-public.fr ; caisses : L. 3141-32).</li>
+      <li>Un <strong>arrêt maladie non professionnel</strong> compte aussi, dans la limite de 2 jours ouvrables par mois (service-public.fr, article L. 3141-5 modifié le 24/12/2025).</li>
+      <li><strong>Prise</strong> : dans une période qui comprend du 1er mai au 31 octobre (L. 3141-13), au plus 24 jours ouvrables d'un seul tenant (L. 3141-17). L'employeur fixe l'ordre des départs et le communique au moins un mois à l'avance.</li>
+      <li><strong>Indemnité</strong> : le <strong>dixième de la rémunération brute totale</strong> de la période de référence, sans pouvoir être inférieure à la rémunération qu'on aurait perçue en continuant à travailler (L. 3141-24).</li>
+    </ul>
+    <p class="formule">Le réflexe : chaque mois, relire trois lignes de la fiche — les heures et leurs taux, les congés, la convention collective indiquée.</p>
+    <figure>
+      <img src="svg/conges-payes.svg" alt="Douze cartes bleues marquées 2,5 : un mois de travail effectif donne deux jours et demi ouvrables ; une accolade indique douze mois égale trente jours ouvrables, soit cinq semaines. Dessous, deux calendriers d'acquisition : du premier juin au trente et un mai pour le cas général, du premier avril au trente et un mars pour les entreprises du bâtiment affiliées à une caisse de congés payés. En bas, l'indemnité : le dixième de la rémunération brute totale de la période, ou le maintien du salaire qu'on aurait perçu, le plus élevé des deux.">
+      <figcaption>2,5 jours par mois, 30 jours par an : et l'indemnité retient le montant le plus favorable.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un technicien a travaillé quarante et une heures cette semaine, réparties sur cinq jours. Combien d'heures supplémentaires cela représente-t-il ? Reprenez la semaine de l'écran trois avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Quarante et une heures dans la semaine : combien d'heures supplémentaires ?</h2>
+    <figure class="vignette">
+      <img src="svg/semaine-qui-se-remplit.svg" alt="Vignette de rappel : la semaine en petits carrés d'une heure, avec le trait pointillé de la trente-cinquième heure après lequel les carrés deviennent orange.">
+      <figcaption>Rappel de l'écran 3 — le seuil est à 35 heures.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Aucune : on reste sous le plafond de 48 heures</button>
+      <button type="button" data-answer="b">Une seule : seule la 41e dépasse 40 heures</button>
+      <button type="button" data-answer="bonne">Six : toutes celles au-delà de 35 heures</button>
+      <button type="button" data-answer="d">Quarante et une : toute la semaine est majorée</button>
+    </div>
+    <p class="feedback" hidden data-explication="La durée légale est de 35 heures par semaine, et toute heure au-delà est supplémentaire : 41 − 35 = 6 heures. Le plafond de 48 heures n'est pas le seuil des heures supplémentaires."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Aucun accord d'entreprise ni de branche ne fixe de taux. Un salarié fait deux heures supplémentaires dans la semaine. Quelle majoration s'applique ? Souvenez-vous de la règle de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Aucun accord ne fixe de taux : deux heures supplémentaires, quelle majoration ?</h2>
+    <figure class="vignette">
+      <img src="svg/heures-sup-majoration.svg" alt="Vignette de rappel : les dix jetons d'heures supplémentaires, majorés de 25 puis 50 pour cent, et l'échelle de décision entre accord d'entreprise, accord de branche et Code du travail.">
+      <figcaption>Rappel de l'écran 4 — ce que dit le Code à défaut d'accord.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">25 % pour chacune des deux</button>
+      <button type="button" data-answer="b">10 % : c'est le taux légal minimal</button>
+      <button type="button" data-answer="c">50 % : toutes les heures supplémentaires</button>
+      <button type="button" data-answer="d">Aucune : elles sont remplacées par un repos</button>
+    </div>
+    <p class="feedback" hidden data-explication="À défaut d'accord, chacune des huit premières heures supplémentaires est majorée de 25 % (L. 3121-36). Les 10 % sont un plancher pour un accord (L. 3121-33), pas le taux légal."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Le chantier de la semaine est plus loin que le trajet habituel entre votre domicile et votre lieu de travail. Que dit le Code du travail du temps de trajet supplémentaire ? Reprenez le principe de l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un chantier plus loin que le trajet habituel : le temps de trajet en plus…</h2>
+    <figure class="vignette">
+      <img src="svg/deplacements.svg" alt="Vignette de rappel : le siège au centre de zones concentriques, le chantier A où l'on rentre le soir et le chantier B éloigné où l'on dort sur place.">
+      <figcaption>Rappel de l'écran 6 — principe du Code, puis régimes du bâtiment.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Est du travail effectif, compté minute par minute</button>
+      <button type="button" data-answer="b">Ne donne droit à rien : le trajet est libre</button>
+      <button type="button" data-answer="c">Est payé seulement si l'employeur le décide</button>
+      <button type="button" data-answer="bonne">N'est pas du travail effectif, mais ouvre une contrepartie</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le temps de déplacement professionnel n'est pas du temps de travail effectif ; au-delà du temps normal de trajet, il fait l'objet d'une contrepartie, en repos ou en argent (L. 3121-4). La convention ou l'accord en fixe les modalités (L. 3121-7)."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Sur la fiche de paie, quel montant sert de base au calcul de l'impôt prélevé à la source ? Reprenez les sept bandes de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Quel montant sert de base à l'impôt prélevé à la source ?</h2>
+    <figure class="vignette">
+      <img src="svg/fiche-de-paie.svg" alt="Vignette de rappel : la fiche de paie en sept bandes numérotées, du brut aux congés, avec le net à payer avant impôt, le net imposable et l'impôt à la source.">
+      <figcaption>Rappel de l'écran 7 — les sept bandes de la fiche.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le salaire brut</button>
+      <button type="button" data-answer="bonne">Le net imposable</button>
+      <button type="button" data-answer="c">Le net à payer avant impôt</button>
+      <button type="button" data-answer="d">Le total versé par l'employeur</button>
+    </div>
+    <p class="feedback" hidden data-explication="La fiche mentionne un net imposable, qui sert de base au calcul du prélèvement à la source. Ce n'est ni le brut, ni le net à payer avant impôt, ni le total versé par l'employeur, qui inclut ses propres cotisations."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../travail-le-contrat/"><strong>Le contrat de travail</strong></a> (même sous-ligne)
+      — ce que dit votre contrat sur l'horaire et la convention collective applicable : les mêmes informations reviennent sur la fiche de paie.</li>
+    <li><a href="../travail-droits-devoirs/"><strong>Droits et devoirs</strong></a> (même sous-ligne)
+      — les durées maximales et les repos vus ici sont des droits que l'employeur doit respecter.</li>
+    <li><a href="../travail-s-installer/"><strong>S'installer à son compte</strong></a> (même sous-ligne)
+      — ce que devient ce socle quand on quitte le salariat : durée légale, fiche de paie et congés payés protègent le salarié.</li>
+    <li><a href="../risques-epi/"><strong>Les équipements de protection individuelle</strong></a> (autre sous-ligne)
+      — la tenue de travail imposée, dont l'habillage ouvre droit à une contrepartie.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ : le dossier reste
+     déplaçable d'un bloc. voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions. Aucun MP3 n'est encore
+     fabriqué pour cette station : la voix du navigateur sert de filet.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

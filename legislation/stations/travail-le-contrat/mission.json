@@ -1,0 +1,48 @@
+{
+  "slug": "travail-le-contrat",
+  "branche": "Droit du travail",
+  "titre": "Mission : Lire son premier contrat avant de le signer",
+  "client": "Un jeune technicien d'un bureau d'études CVC qui vient de recevoir sa première proposition d'embauche et ne sait pas ce qu'il doit vérifier avant de signer.",
+  "situation": "La proposition arrive par courriel : un contrat de travail à durée déterminée pour « tenir le poste de technicien d'études », sans autre précision, avec une période d'essai et une mention « convention collective applicable » sans intitulé. Le jeune technicien hésite : il aimerait un CDI, il ne sait pas si le CDD est régulier, ni où retrouver sa convention, ni comment la relation pourrait s'arrêter. Votre responsable vous demande de préparer, en vingt minutes, ce qu'il faut lui répondre.",
+  "piece_a_produire": "Une check-list d'une page, à cocher avant de signer : le type de contrat et son motif précis, la période d'essai (prévue par écrit ? quelle durée maximale pour un technicien ?), la convention collective (où lire son intitulé ? où trouver son texte ?), les modes de rupture et le préavis. Sous la liste, deux phrases pour le jeune technicien : ce qui peut faire requalifier un CDD, et où aller lire sa convention.",
+  "questions": [
+    {
+      "q": "À temps plein, l'écrit est-il obligatoire pour un CDI ? Que devient un contrat sans écrit ?",
+      "ecran": 1,
+      "reponse": "À temps plein, l'écrit n'est pas obligatoire, et sans écrit le contrat conclu est un CDI. À temps partiel, l'écrit est obligatoire. Un contrat signé reste toujours préférable."
+    },
+    {
+      "q": "Quels sont les trois acteurs d'un contrat d'apprentissage, et qui est directement responsable de la formation de l'apprenti dans l'entreprise ?",
+      "ecran": 3,
+      "reponse": "L'employeur, le maître d'apprentissage et le CFA (centre de formation d'apprentis). Le maître d'apprentissage, salarié volontaire de l'entreprise, est directement responsable de la formation de l'apprenti ; le CFA assure l'enseignement théorique."
+    },
+    {
+      "q": "Pour un CDD, quelles mentions la loi impose-t-elle, et que risque l'employeur s'il n'y a ni écrit ni motif précis ?",
+      "ecran": 5,
+      "reponse": "Le motif précis, la date de fin (ou une durée minimale), la désignation du poste, la qualification du salarié remplacé, la rémunération, la convention collective applicable. Sans écrit ni motif précis, le salarié peut demander la requalification du CDD en CDI."
+    },
+    {
+      "q": "Où lit-on la convention collective qui s'applique à un salarié, et comment retrouve-t-on son texte ?",
+      "ecran": 6,
+      "reponse": "Son intitulé doit figurer sur le bulletin de paie (et peut figurer au contrat). Le numéro IDCC permet de la retrouver : sur Légifrance pour les conventions étendues, avec l'outil du Code du travail numérique (nom de l'entreprise, SIRET ou IDCC), ou auprès de l'employeur qui en tient une copie à jour."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Voici le résumé d'un contrat, écrit à la hâte par un employeur. Trouvez les quatre points qui posent problème et dites, pour chacun, ce qu'il faudrait écrire ou vérifier. Vous avez cinq minutes.",
+    "items": [
+      "Contrat à durée déterminée pour « pourvoir le poste de technicien d'études, poste permanent du bureau ».",
+      "Contrat remis au salarié dix jours après son arrivée.",
+      "Période d'essai : « quatre mois, renouvelable à la demande de l'employeur », pour un technicien en CDI.",
+      "Convention collective : « celle du secteur », sans intitulé ni numéro."
+    ],
+    "corrige": "1) Un CDD ne sert qu'une tâche précise et temporaire, dans un cas prévu par la loi, avec son motif précis écrit : pas un poste permanent (écran 2). 2) Un CDD est remis au plus tard sous 2 jours ouvrables après l'embauche (écran 2). 3) Pour un technicien en CDI, la durée maximale est de trois mois ; le renouvellement n'est possible qu'une fois, si la convention collective le permet, si la clause figure au contrat et si le salarié donne son accord par écrit — pas « à la demande de l'employeur » (écran 4). 4) La convention collective se désigne par son intitulé, qui apparaît sur le bulletin de paie, et par son numéro IDCC (écrans 5 et 6)."
+  },
+  "badge": "Contrat en main",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires (aucune des compétences CP1 à CP10 du REAC TP-00133 n'est mobilisée honnêtement ; la station sert à lire ses propres papiers de salarié)."
+  }
+}

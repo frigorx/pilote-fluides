@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-ent" aria-describedby="d-ent" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ent">L'entretien de parcours professionnel : à l'embauche, puis tous les quatre ans</title>
+  <desc id="d-ent">En haut, une carte rappelle de quoi parle l'entretien : compétences, parcours, besoins de formation,
+    souhaits d'évolution et usage du compte de formation, sans évaluer le travail. Au milieu, une ligne de temps non
+    à l'échelle avec quatre repères : l'embauche, où le salarié est informé ; le premier entretien, dans la première
+    année ; un entretien quatre ans plus tard ; puis, huit ans après, un entretien qui fait aussi l'état des lieux
+    récapitulatif. En bas, trois pastilles listent ce que cet état des lieux vérifie : une formation suivie, une
+    certification acquise, une progression salariale ou professionnelle. L'animation pose les repères un à un ; l'image
+    fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl  { font-size:18px; fill:#10233c; }
+    .lblb { font-size:18px; fill:#10233c; font-weight:bold; }
+    .att  { font-size:18px; font-weight:bold; }
+  </style>
+
+  <rect x="20" y="16" width="860" height="132" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ttl" x="40" y="48">L'entretien de parcours professionnel parle de :</text>
+  <text class="lbl" x="40" y="78">vos compétences · votre parcours · vos besoins de formation ·</text>
+  <text class="lbl" x="40" y="102">vos souhaits d'évolution · l'usage de votre compte de formation.</text>
+  <text class="lblb" x="40" y="132">Il ne s'agit pas d'évaluer votre travail.</text>
+
+  <!-- Ligne de temps -->
+  <path d="M 40 212 H 850" stroke="#1b3a63" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <polygon points="850,200 874,212 850,224" fill="#1b3a63"/>
+
+  <g>
+    <circle cx="90" cy="212" r="16" fill="#fffdf8" stroke="#9d174d" stroke-width="6"/>
+    <text class="lblb" x="90" y="252" text-anchor="middle">Embauche</text>
+    <text class="lbl" x="90" y="274" text-anchor="middle">vous êtes informé</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.10;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="290" cy="212" r="16" fill="#9d174d"/>
+    <text class="lblb" x="290" y="252" text-anchor="middle">1re année</text>
+    <text class="lbl" x="290" y="274" text-anchor="middle">1er entretien</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.26;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="520" cy="212" r="16" fill="#9d174d"/>
+    <text class="lblb" x="520" y="252" text-anchor="middle">4 ans après</text>
+    <text class="lbl" x="520" y="274" text-anchor="middle">entretien</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.42;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="760" cy="212" r="20" fill="#e8914a" stroke="#9d174d" stroke-width="5"/>
+    <text class="lblb" x="760" y="252" text-anchor="middle">8 ans après</text>
+    <text class="lbl" x="760" y="274" text-anchor="middle">entretien et</text>
+    <text class="lbl" x="760" y="296" text-anchor="middle">état des lieux</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.58;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Pastilles de l'état des lieux -->
+  <g>
+    <text class="lblb" x="450" y="338" text-anchor="middle">L'état des lieux vérifie trois choses :</text>
+    <rect x="30" y="346" width="260" height="60" rx="26" fill="#f3e4eb" stroke="#9d174d" stroke-width="2"/>
+    <text class="lbl" x="160" y="382" text-anchor="middle">une formation suivie</text>
+    <rect x="320" y="346" width="260" height="60" rx="26" fill="#f3e4eb" stroke="#9d174d" stroke-width="2"/>
+    <text class="lbl" x="450" y="382" text-anchor="middle">une certification acquise</text>
+    <rect x="610" y="346" width="260" height="60" rx="26" fill="#f3e4eb" stroke="#9d174d" stroke-width="2"/>
+    <text class="lbl" x="740" y="373" text-anchor="middle">une progression salariale</text>
+    <text class="lbl" x="740" y="395" text-anchor="middle">ou professionnelle</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.68;0.76;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="lbl" x="450" y="426" text-anchor="middle" style="fill:#5a6b7d">Schéma non à l'échelle.</text>
+</svg>

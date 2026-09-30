@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-f1" aria-describedby="d-f1" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-f1">Les fumées gagnent le couloir par le haut</title>
+  <desc id="d-f1">Coupe d'un couloir. Un foyer brûle à gauche, près du sol. Une couche de fumée grise
+    s'accumule sous le plafond et descend peu à peu. Une personne se tient debout au milieu du couloir,
+    la tête sous la couche de fumée. Une barre orange à droite marque la hauteur libre, celle qui reste
+    praticable sous la couche. Au bout du couloir, une porte de sortie. La légende à droite nomme la
+    couche de fumée et la hauteur libre. L'animation fait épaissir la couche de fumée et rétrécir la
+    hauteur libre ; l'image fixe montre l'état final.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .cap { font-size:18px; fill:#10233c; font-weight:bold; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="38" text-anchor="middle">Les fumées gagnent le couloir par le haut</text>
+
+  <!-- le couloir -->
+  <rect x="40" y="110" width="530" height="290" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+
+  <!-- couche de fumée : elle s'épaissit (état final = image fixe) -->
+  <rect x="43" y="113" width="524" height="137" fill="#5a6b7d" fill-opacity="0.6">
+    <animate attributeName="height" values="30;30;137;137" keyTimes="0;0.08;0.62;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- le foyer -->
+  <path d="M110,400 C88,382 100,360 108,342 C112,362 128,366 130,386 C131,394 124,400 110,400 Z" fill="#e8914a" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M110,400 C100,392 104,382 110,372 C116,384 120,388 118,396 C117,399 114,400 110,400 Z" fill="#b91c1c"/>
+
+  <!-- bouffées de fumée qui montent (décor animé, invisibles à l'arrêt) -->
+  <circle cx="112" cy="330" r="9" fill="#5a6b7d" opacity="0">
+    <animate attributeName="cy" values="330;330;150" keyTimes="0;0.05;0.32" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.8;0.8;0;0" keyTimes="0;0.05;0.08;0.28;0.32;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="124" cy="330" r="7" fill="#5a6b7d" opacity="0">
+    <animate attributeName="cy" values="330;330;170" keyTimes="0;0.16;0.42" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.8;0.8;0;0" keyTimes="0;0.16;0.19;0.38;0.42;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="102" cy="330" r="8" fill="#5a6b7d" opacity="0">
+    <animate attributeName="cy" values="330;330;190" keyTimes="0;0.3;0.56" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.8;0.8;0;0" keyTimes="0;0.3;0.33;0.52;0.56;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- la personne : pictogramme plein, tête sous la couche -->
+  <circle cx="330" cy="318" r="13" fill="#1b3a63"/>
+  <rect x="314" y="336" width="32" height="64" rx="12" fill="#1b3a63"/>
+
+  <!-- la porte de sortie -->
+  <rect x="500" y="300" width="42" height="100" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="530" cy="352" r="3.5" fill="#1b3a63"/>
+
+  <!-- la hauteur libre : barre orange -->
+  <rect x="446" y="250" width="10" height="150" fill="#e8914a">
+    <animate attributeName="y" values="143;143;250;250" keyTimes="0;0.08;0.62;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="257;257;150;150" keyTimes="0;0.08;0.62;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+
+  <text class="lbl" x="110" y="428" text-anchor="middle">Foyer</text>
+  <text class="lbl" x="521" y="428" text-anchor="middle">Sortie</text>
+
+  <!-- légende -->
+  <rect x="600" y="150" width="26" height="26" fill="#5a6b7d" fill-opacity="0.6" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lbl" x="638" y="168">Couche de fumée</text>
+  <rect x="608" y="210" width="10" height="30" fill="#e8914a"/>
+  <text class="lbl" x="638" y="226">Hauteur libre :</text>
+  <text class="lbl" x="638" y="248">reste praticable</text>
+
+  <text class="cap" x="400" y="474" text-anchor="middle">Les fumées barrent la sortie avant que les flammes n'y arrivent.</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img"
+     aria-labelledby="t-em" aria-describedby="d-em" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-em">Où se trouve le fluide : système direct ou système indirect</title>
+  <desc id="d-em">Deux coupes de bâtiment côte à côte. À gauche, le système direct : un groupe extérieur est relié par un tuyau orange de fluide frigorigène
+    jusqu'à l'unité intérieure, dans l'espace occupé ; le fluide circule donc là où sont les personnes. À droite, le système indirect : le fluide frigorigène
+    reste enfermé dans une petite salle des machines avec le groupe froid ; un tuyau bleu d'eau, le circuit secondaire, apporte le froid jusqu'au
+    ventilo-convecteur de l'espace occupé. Une légende donne les couleurs : orange pour le fluide frigorigène, bleu pour l'eau. Une bande rappelle que le classement par
+    emplacement dit où se trouvent les parties qui contiennent le fluide.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .sub  { font-size:17px; fill:#5a6b7d; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .lblb { font-size:17px; fill:#10233c; font-weight:bold; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- ============ GAUCHE : système direct ============ -->
+  <rect x="20" y="16" width="415" height="342" rx="14" fill="#fffdf8" stroke="#2f5689" stroke-width="2"/>
+  <text class="ttl" x="40" y="48">Système direct</text>
+  <text class="sub" x="40" y="72">le fluide circule dans l'espace occupé</text>
+
+  <!-- bâtiment -->
+  <rect x="40" y="100" width="260" height="190" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <!-- unité intérieure -->
+  <rect x="70" y="128" width="80" height="30" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lbl" x="164" y="149">unité intérieure</text>
+  <!-- groupe extérieur -->
+  <rect x="330" y="220" width="86" height="64" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <!-- tuyau de fluide frigorigène -->
+  <path d="M330,246 H300 H110 V158" fill="none" stroke="#e8914a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <text class="lblb" x="60" y="322" style="fill:#1b3a63">espace occupé</text>
+  <text class="lbl" x="372" y="304" text-anchor="middle">groupe</text>
+  <text class="lbl" x="372" y="324" text-anchor="middle">extérieur</text>
+
+  <!-- ============ DROITE : système indirect ============ -->
+  <rect x="465" y="16" width="415" height="342" rx="14" fill="#fffdf8" stroke="#2f5689" stroke-width="2"/>
+  <text class="ttl" x="485" y="48">Système indirect</text>
+  <text class="sub" x="485" y="72">le fluide reste en salle des machines</text>
+
+  <!-- bâtiment -->
+  <rect x="485" y="100" width="380" height="190" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <!-- ventilo-convecteur -->
+  <rect x="515" y="128" width="80" height="30" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lbl" x="609" y="149">ventilo-convecteur</text>
+  <!-- salle des machines -->
+  <rect x="705" y="190" width="150" height="90" fill="#fffdf8" stroke="#0f766e" stroke-width="4" stroke-dasharray="10 5"/>
+  <rect x="725" y="212" width="80" height="50" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="737" y="226" width="56" height="22" rx="8" fill="none" stroke="#e8914a" stroke-width="5"/>
+  <!-- eau -->
+  <path d="M555,158 V250 H725" fill="none" stroke="#2f5689" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <text class="lblb" x="505" y="322" style="fill:#1b3a63">espace occupé</text>
+  <text class="lbl" x="780" y="304" text-anchor="middle">salle des machines</text>
+  <text class="lbl" x="780" y="324" text-anchor="middle">(fluide enfermé)</text>
+
+  <!-- légende -->
+  <line x1="40" y1="382" x2="84" y2="382" stroke="#e8914a" stroke-width="5" stroke-linecap="round"/>
+  <text class="lbl" x="94" y="388">fluide frigorigène</text>
+  <line x1="300" y1="382" x2="344" y2="382" stroke="#2f5689" stroke-width="5" stroke-linecap="round"/>
+  <text class="lbl" x="354" y="388">eau du circuit secondaire</text>
+
+  <rect x="20" y="398" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="425" text-anchor="middle">Le classement par emplacement dit où sont les parties qui contiennent le fluide.</text>
+</svg>

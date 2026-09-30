@@ -1,0 +1,48 @@
+{
+  "slug": "aptitude-capacite",
+  "branche": "Fluidique & thermique",
+  "titre": "Mission : Deux techniciens, deux papiers, une seule visite",
+  "client": "Le gérant d'un restaurant qui confie l'entretien de sa chambre froide à Clim'Études Sud et pense que « l'entreprise est attestée, donc tout le monde peut intervenir ».",
+  "situation": "Lundi, deux techniciens de Clim'Études Sud doivent venir chez le gérant : l'un détient une attestation obtenue en 2018 sous une ancienne catégorie ; l'autre débute dans le métier et n'a pas encore passé la sienne. Le gérant a compris qu'une entreprise en règle couvre tous ses techniciens. Votre responsable vous demande de préparer, avant la visite, ce que l'on peut dire au gérant : qui détient quoi, ce qui manque, et ce qui reste à vérifier.",
+  "piece_a_produire": "Un tableau d'une page, une ligne par technicien : ce qu'il détient (aptitude ?), ce que l'entreprise doit détenir (capacité), la date de délivrance à vérifier sur son attestation et ce qu'il peut faire lundi. Sous le tableau, deux phrases pour le gérant : « L'entreprise seule ne couvre personne » et « L'aptitude est à la personne, la capacité est à l'entreprise ».",
+  "questions": [
+    {
+      "q": "Attestation d'aptitude et attestation de capacité : qui détient laquelle, et l'une peut-elle remplacer l'autre ?",
+      "ecran": 1,
+      "reponse": "L'aptitude est détenue par la personne (le technicien) ; la capacité est détenue par l'entreprise. Il faut les deux et l'une ne remplace jamais l'autre : « mon patron a la capacité, donc je peux y aller » est faux."
+    },
+    {
+      "q": "Quels sont les trois piliers que l'entreprise doit prouver pour obtenir la capacité ?",
+      "ecran": 4,
+      "reponse": "Le personnel (des techniciens titulaires de l'aptitude, en nombre suffisant), l'outillage (récupération, détection, mesure, maintenus et vérifiés) et les procédures (traçabilité des interventions et des fluides)."
+    },
+    {
+      "q": "Depuis le régime issu de l'arrêté du 21 novembre 2025, l'aptitude est-elle acquise à vie ? Que se passe-t-il en cas de défaut ?",
+      "ecran": 5,
+      "reponse": "Non : une remise à niveau est nécessaire a minima tous les 7 ans à compter de la délivrance ou de la dernière remise à niveau. En cas de défaut, l'attestation est suspendue, avec un délai maximum de 3 ans pour se mettre en conformité."
+    },
+    {
+      "q": "Pour un ancien titulaire des catégories I à IV, quelle est l'échéance et que se passe-t-il au-delà ?",
+      "ecran": 6,
+      "reponse": "Une remise à niveau ponctuelle est à faire avant le 12 mars 2029. Passé cette date, l'ancienne attestation n'est plus valide et son titulaire doit repasser l'évaluation complète."
+    }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Vrai ou faux ? Justifiez chaque réponse en une phrase.",
+    "items": [
+      "Une entreprise qui a la capacité peut faire intervenir n'importe lequel de ses techniciens.",
+      "Un titulaire de la catégorie E peut intervenir sur le circuit frigorifique pour recharger.",
+      "Si je change d'entreprise, mon aptitude me suit.",
+      "Pour une attestation délivrée sous le nouveau régime, le compteur de la remise à niveau part de la date de délivrance."
+    ],
+    "corrige": "Faux : chaque intervenant doit avoir sa propre aptitude (écran 4). Faux : la catégorie E se limite aux contrôles d'étanchéité, à condition de ne pas accéder au circuit (écran 3). Vrai : l'aptitude est à la personne, mais la nouvelle entreprise doit avoir sa capacité (écran 7). Vrai : le compteur part de la date de délivrance, d'où le réflexe de connaître la date de sa propre attestation (écrans 5, 7 et 8)."
+  },
+  "badge": "Les deux papiers",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": ["1.00"],
+    "justification": "Hors REAC TECVC : culture professionnelle du technicien et du chargé d'affaires (savoir qui a le droit d'intervenir). Côté attestation 2025 : la législation applicable aux gaz fluorés (1.00)."
+  }
+}

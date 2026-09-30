@@ -1,0 +1,48 @@
+{
+  "slug": "risques-neuf-principes",
+  "branche": "Risques professionnels",
+  "titre": "Mission : Avant d'acheter des harnais",
+  "client": "Le responsable d'une chaîne de supérettes, qui projette un nouveau local technique pour son groupe frigorifique et veut « équiper tout le monde en EPI » pour régler la question de la sécurité.",
+  "situation": "Le plan du client prévoit un compresseur logé dans un local exigu et fermé, et une ligne budgétaire « harnais, gants, casques ». Il vous dit : « Avec les bons équipements, mes techniciens ne risquent rien. » Vous savez que le code du travail classe les principes de prévention du plus efficace au moins efficace, et que l'équipement individuel est tout en bas. Votre responsable vous demande de reprendre le projet dans le bon ordre, avant que le client ne commande.",
+  "piece_a_produire": "Une note d'une page au client sous forme de tableau à deux colonnes : à gauche un principe de prévention (éviter, évaluer, combattre à la source, protection collective, instructions, équipement individuel), à droite ce que vous proposez pour SON local technique. La dernière ligne, l'équipement individuel, doit venir en dernier.",
+  "questions": [
+    {
+      "q": "Les neuf principes de prévention sont-ils neuf conseils au même niveau ? Où se placent « supprimer le risque » et « équipement individuel » ?",
+      "ecran": 1,
+      "reponse": "Non : ils sont classés, du plus efficace au moins efficace. Supprimer le risque est tout en haut, l'équipement de protection individuelle (casque, gants, harnais) tout en bas."
+    },
+    {
+      "q": "Pour un local technique fermé, que veut dire « combattre le risque à la source » ? Donnez un exemple de la station.",
+      "ecran": 2,
+      "reponse": "Poser une détection de fuite et une ventilation mécanique dans le local, plutôt que de compter sur la seule vigilance du technicien."
+    },
+    {
+      "q": "La consignation d'une installation est-elle une mesure collective ou individuelle ? Pourquoi ?",
+      "ecran": 5,
+      "reponse": "Collective : elle protège quiconque s'approche de l'installation, même sans y penser. Les gants isolants et le harnais sont individuels : ils ne protègent que celui qui les porte, et seulement s'il les porte correctement."
+    },
+    {
+      "q": "Que traduit le fait de devoir porter un EPI sur une intervention ?",
+      "ecran": 6,
+      "reponse": "C'est l'aveu que tout le reste — la suppression du risque, la protection collective — n'a pas suffi ou n'était pas possible. Le harnais ne remplace pas le garde-corps qu'on n'a pas posé."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque mesure au principe de prévention qu'elle applique.",
+    "items": [
+      "Loger le compresseur en extérieur plutôt qu'en local exigu",
+      "Poser une détection de fuite et une ventilation dans le local",
+      "Remplacer le contrôle visuel seul par un détecteur de fuite électronique",
+      "Un établi de brasure à bonne hauteur, un accès aux vannes sans contorsion"
+    ],
+    "corrige": "Compresseur en extérieur : éviter le risque (écran 2). Détection de fuite et ventilation : combattre le risque à la source (écran 2). Détecteur électronique : tenir compte de l'évolution de la technique (écran 3). Établi à bonne hauteur : adapter le travail à l'homme (écran 3)."
+  },
+  "badge": "Dans l'ordre",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires (conseiller un client sur l'ordre des mesures de prévention)."
+  }
+}

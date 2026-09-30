@@ -1,5 +1,6 @@
 /* Station 1-0 — Mon poste de travail. Source : sources-metier/1-0-poste-de-travail.md
-   L'étau est presque absent des fiches : ce qui le concerne est marqué aValider. */
+   L'étau est presque absent des fiches : mordaches, posture et hauteur TRANCHÉES le 30/09/2026 (DECISIONS-2026-09-30.md),
+   de même que les lunettes (pendant tout le façonnage). */
 CUIVREZO.stations.push({
   id: '1-0', ligne: 1, titre: 'Mon poste de travail', duree: '10 min',
   sources: ['sources-metier/1-0-poste-de-travail.md'],
@@ -17,7 +18,7 @@ CUIVREZO.stations.push({
     items: [
       { nom: 'Le bleu de travail', detail: 'ou une combinaison en coton, ni trop large, ni trop juste' },
       { nom: 'Les chaussures de sécurité', detail: 'aux pieds dès l’entrée dans l’atelier' },
-      { nom: 'Les lunettes de protection', detail: 'pour couper et ébavurer' },
+      { nom: 'Les lunettes de protection', detail: 'sur les yeux pendant tout le façonnage' },
       { nom: 'Les gants de travail anti-coupure', detail: 'pour manipuler un tube coupé' },
       { nom: 'La fiche de sécurité à cocher', detail: 'celle de la séance du jour' },
       { nom: 'Le bac de récupération des chutes', detail: 'à portée de main, près de l’établi' }
@@ -50,18 +51,16 @@ CUIVREZO.stations.push({
       pourquoi: 'La fiche vous fait penser aux risques avant de les rencontrer. Le visa du professeur vous autorise à commencer.',
       figure: { img: 'images/reprises/fiche-securite.webp', alt: 'La fiche de sécurité à cocher', legende: 'La fiche de sécurité de l’atelier.' }, clip: 'clips/1-0/05-fiche.mp4',
       narration: 'La fiche de sécurité se remplit avant de commencer, pas après. On coche la tâche du jour, ici le façonnage. On coche les risques qu’elle apporte : les coupures, les projections, l’écrasement. Puis les protections qui y répondent. La fiche ne sert pas à faire plaisir au professeur : elle vous oblige à penser au danger avant de le rencontrer. Quand elle est visée, vous pouvez commencer.' },
-    { titre: 'Lunettes et gants, au bon moment', texte: 'Lunettes sur les yeux avant toute coupe et tout ébavurage. Gants pour toucher un tube coupé.',
+    { titre: 'Lunettes et gants, au bon moment', texte: 'Lunettes sur les yeux pendant tout le façonnage : couper, ébavurer, cintrer, évaser. Gants pour toucher un tube coupé.',
       pointCle: 'Jamais de gants près d’un outil qui tourne tout seul, comme une perceuse à colonne.',
       pourquoi: 'La limaille vole vers les yeux, le bord coupé tranche les doigts. Mais un gant happé par une machine entraîne la main.',
-      aValider: 'Les fiches se contredisent sur les lunettes : « dès qu’on coupe » ou « pendant tout le façonnage »',
       figure: { img: 'images/reprises/epi-porter-correctement.svg', alt: 'Lunettes portées sur les yeux, pas sur le front' }, clip: 'clips/1-0/06-epi.mp4',
-      narration: 'Les lunettes se portent sur les yeux, pas sur le front, dès que vous coupez ou ébavurez : la limaille de cuivre vole. Les gants protègent vos doigts du bord tranchant d’un tube coupé. Une seule exception, et elle est importante : près d’une machine qui tourne toute seule, comme une perceuse à colonne, on ne porte pas de gants, parce qu’un gant happé entraîne la main avec lui.' },
-    { titre: 'Je serre l’étau sans me pincer', texte: 'Serrez progressivement, les doigts hors de l’axe de serrage. Pour un tube, des mordaches.',
+      narration: 'Les lunettes se portent sur les yeux, pas sur le front, pendant tout le façonnage, pas seulement au moment de couper : la limaille vole aussi quand on ébavure, quand on cintre, quand on évase. Les gants protègent vos doigts du bord tranchant d’un tube coupé. Une seule exception, et elle est importante : près d’une machine qui tourne toute seule, comme une perceuse à colonne, on ne porte pas de gants, parce qu’un gant happé entraîne la main avec lui.' },
+    { titre: 'Je serre l’étau sans me pincer', texte: 'Serrez progressivement, les doigts hors de l’axe de serrage. Pour un tube, des mordaches. Pieds stables, face à l’étau, mors à hauteur du coude.',
       pointCle: 'Juste de quoi tenir : un tube en cuivre s’écrase vite.',
       pourquoi: 'Entre les mors, c’est la zone de pincement. Et des mors striés marquent ou écrasent un tube mince.',
-      aValider: 'Mordaches, hauteur de l’étau et posture : absents des fiches, pris du savoir général',
       figure: { img: 'images/1-0-etau.webp', alt: 'Serrer un tube dans un étau à mordaches' }, clip: 'clips/1-0/07-etau.mp4',
-      narration: 'L’étau tient la pièce pour vous, mais il ne fait pas la différence entre un tube et un doigt. On serre progressivement, et les doigts restent hors de l’axe, jamais entre les mors. Pour un tube de cuivre, on pose des mordaches, des mors doux, parce que les mors striés marquent le cuivre, et qu’un serrage trop fort l’écrase. Juste de quoi tenir, pas plus.' },
+      narration: 'L’étau tient la pièce pour vous, mais il ne fait pas la différence entre un tube et un doigt. On serre progressivement, et les doigts restent hors de l’axe, jamais entre les mors. Pour un tube de cuivre, on pose des mordaches, des mors doux, parce que les mors striés marquent le cuivre, et qu’un serrage trop fort l’écrase. Juste de quoi tenir, pas plus. Et l’étau est à la bonne hauteur quand les mors sont au niveau de votre coude : ni penché, ni les bras en l’air.' },
     { titre: 'Je range au fil de l’eau', texte: 'Chaque outil tranchant revient à sa place. Chaque chute va au bac, debout, tout de suite.',
       pointCle: 'Jamais d’outil chez le voisin, jamais de chute sur l’établi.',
       pourquoi: 'Les chutes coupent, et un outil qui traîne tombe ou se perd.',

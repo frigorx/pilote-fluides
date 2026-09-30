@@ -1,0 +1,48 @@
+{
+  "slug": "risques-epi",
+  "branche": "Risques professionnels",
+  "titre": "Mission : Le bon équipement pour la bonne recharge",
+  "client": "Le responsable de l'atelier de Clim'Études Sud, qui prépare les sacs d'intervention des techniciens avant une série de recharges chez un client de la grande distribution.",
+  "situation": "En ouvrant les sacs, vous trouvez : des gants de manutention « pour tout faire », un gant percé rangé avec les autres, une paire de lunettes rayée. Un technicien plus ancien vous dit : « L'EPI, c'est le premier réflexe, je mets le maximum et je pars. » Le responsable de l'atelier vous demande une check-list simple à glisser dans chaque sac, pour que chaque équipement soit choisi selon la tâche du jour.",
+  "piece_a_produire": "Une check-list d'une page à glisser dans le sac : trois questions à se poser avant chaque tâche (l'équipement est-il adapté à CETTE tâche, en bon état, bien porté ?) et, en dessous, un tableau à remplir : tâche, risque réel, équipement adapté — pour une recharge de fluide, la récupération d'huile et une intervention près d'un groupe en fonctionnement.",
+  "questions": [
+    {
+      "q": "Dans quel ordre pense-t-on la prévention, et où se place l'équipement de protection individuelle ?",
+      "ecran": 1,
+      "reponse": "On supprime le risque d'abord, on le protège collectivement ensuite, et l'équipement individuel vient en dernier, quand les deux premiers n'ont pas suffi ou n'étaient pas possibles."
+    },
+    {
+      "q": "Pourquoi un gant de manutention ne convient-il pas pour une recharge de fluide ?",
+      "ecran": 2,
+      "reponse": "Il protège d'une coupure ou d'un écrasement, mais ni d'une projection de fluide frigorigène ni d'une brûlure par le froid. L'EPI se choisit selon le risque réel de la tâche du jour, pas par habitude."
+    },
+    {
+      "q": "Pourquoi le contact avec un fluide qui se détend brutalement peut-il abîmer la peau ?",
+      "ecran": 5,
+      "reponse": "Le fluide s'évapore brutalement et absorbe la chaleur autour de lui, y compris celle de la peau, qui gèle : les conséquences se rapprochent d'une brûlure thermique."
+    },
+    {
+      "q": "Citez les quatre familles d'EPI que le métier du froid et de la climatisation utilise sans cesse.",
+      "ecran": 7,
+      "reponse": "Des gants adaptés au risque froid, des lunettes ou un écran facial, des chaussures de sécurité, et une protection auditive pour les interventions bruyantes près d'un compresseur ou d'un groupe en fonctionnement."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Quatre situations observées dans l'atelier. Une seule est correcte ; trouvez les trois erreurs et dites pour chacune ce qu'il fallait faire. (A) Des lunettes remontées sur le front pendant une purge. (B) Un gant percé retourné pour cacher le trou côté paume. (C) Des gants de manutention pour une recharge de fluide. (D) Des gants et une protection oculaire vérifiés avant la recharge, correctement portés.",
+    "items": [
+      "A. Lunettes remontées sur le front pendant une purge",
+      "B. Gant percé retourné, trou côté paume",
+      "C. Gants de manutention pour une recharge de fluide",
+      "D. Gants et protection oculaire vérifiés avant la recharge, bien portés"
+    ],
+    "corrige": "D est correcte. A : un EPI mal porté n'est plus un EPI, les lunettes se portent sur les yeux. B : un EPI abîmé ne se répare pas, il se change. C : le gant de manutention ne protège ni de la projection de fluide ni du froid ; l'EPI se choisit selon le risque réel de la tâche."
+  },
+  "badge": "Dernier maillon",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien (préparer un poste et choisir son équipement selon le risque réel)."
+  }
+}

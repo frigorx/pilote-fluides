@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>RGE &amp; QualiPAC — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la mention RGE et l'écoconditionnalité des aides, QualiPAC et les autres signes de qualité, ce que l'entreprise doit tenir, l'audit de chantier, l'annuaire officiel, et la différence avec l'attestation de capacité fluides.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/certif-rge-qualipac/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Certifications & normes.
+     Gabarit : stations/aptitude-capacite/.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les 12 narrations sont à fabriquer (edge-tts) ; en attendant, la voix
+     du navigateur sert de filet.
+
+     Aucun montant d'aide dans cette station : ils sont fixés par arrêté et
+     changent. Aucun chiffre non lu dans une source officielle (voir FOND.md,
+     section « À sourcer »).
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Certifications &amp; normes · niveau BTS</p>
+  <h1>RGE &amp; QualiPAC — les qualifications</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-certifs.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez expliquer pourquoi <strong>le client n'a l'aide que si l'entreprise est RGE</strong> pour ces travaux, dire qui délivre la mention et quand on la vérifie, situer <strong>QualiPAC</strong> parmi les autres signes de qualité, énumérer ce que l'entreprise doit tenir, <strong>vérifier un professionnel dans l'annuaire officiel</strong> — et ne pas confondre le RGE avec l'attestation de capacité ou d'aptitude fluides.</p>
+    <p style="margin-top:10px"><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — <strong>hors REAC</strong> : culture professionnelle du technicien et du chargé d'affaires. Aucune des compétences CP1 à CP10 ne porte sur la qualification des entreprises. Pont avec l'attestation d'aptitude 2025 : code <strong>1.00</strong> (législation applicable).</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez de gauche à droite. Le client veut des travaux ; il s'adresse à une entreprise dont l'enseigne porte la mention RGE, reconnu garant de l'environnement. De cette entreprise part une flèche vers la porte de l'aide. Dans l'image fixe, la porte est ouverte : la condition est remplie. Dans l'animation, vous la voyez s'ouvrir, et son cadenas disparaître, quand la mention s'allume. La bande du bas donne la règle inverse : sans la mention RGE pour ces travaux, la porte reste fermée. La condition ne pèse donc pas sur le client, mais sur l'entreprise qu'il choisit.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">L'écoconditionnalité : l'aide s'ouvre avec l'entreprise</h2>
+    <p>Les aides à la rénovation énergétique ne dépendent pas seulement des travaux : elles dépendent aussi de <strong>l'entreprise qui les réalise</strong>. C'est ce que l'on appelle l'<strong>écoconditionnalité</strong>. Le texte du service public est sans détour : « Vos travaux et prestations doivent être réalisés par un professionnel reconnu garant de l'environnement (RGE). » (service-public.gouv.fr, fiche « MaPrimeRénov' (MPR) », vérifiée le 1<sup>er</sup> septembre 2026, parcours par geste).</p>
+    <p>Le ministère de la Transition écologique le dit de la même façon : le label RGE est la condition pour bénéficier des aides comme <strong>MaPrimeRénov'</strong>, l'<strong>éco-prêt à taux zéro</strong> ou les <strong>certificats d'économies d'énergie</strong> (CEE). Une exception à connaître : pour MaPrimeRénov', le choix d'un professionnel RGE n'est pas exigé pour un raccordement à un réseau de chaleur ou de froid.</p>
+    <p>Aucun montant dans cette station : ils sont fixés par arrêté et changent. Ce qui compte pour vous, technicien d'études, c'est la condition : <strong>sans RGE pour ces travaux, pas d'aide pour votre client</strong>.</p>
+    <figure>
+      <img src="svg/aide-qui-souvre.svg" alt="De gauche à droite : le client, un pictogramme plein, demande des travaux à une entreprise dont l'enseigne porte la mention RGE ; une flèche mène à une porte marquée « L'aide », ouverte dans l'image fixe. Une bande en bas rappelle que sans la mention RGE pour ces travaux, la porte reste fermée.">
+      <figcaption>La porte de l'aide s'ouvre quand l'entreprise est RGE pour ces travaux.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Le bandeau indigo, en haut, pose le cadre : la mention RGE est reconnue par les pouvoirs publics et par l'ADEME, l'agence de la transition écologique. Dessous, deux colonnes. À gauche, la qualification : elle est délivrée par des organismes de qualification, Qualibat, Qualit'EnR ou Qualifelec, et elle atteste qu'une entreprise sait réaliser en propre des travaux bien précis. À droite, la certification, délivrée par Certibat ou Cerqual : elle concerne celui qui conçoit et pilote un projet d'ensemble, et qui peut sous-traiter aux entreprises qualifiées. La bande du bas retient un détail utile : la mention est attachée à l'établissement, repéré par son numéro de SIRET.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le RGE : une mention, plusieurs organismes</h2>
+    <p>RGE veut dire <strong>reconnu garant de l'environnement</strong>. C'est une reconnaissance accordée par les pouvoirs publics et l'ADEME à des professionnels du bâtiment engagés dans une démarche de qualité (France Rénov'). Elle repose sur l'analyse de l'entreprise au regard d'un référentiel d'exigences de moyens et de compétences.</p>
+    <p>Cette analyse et la délivrance du signe de qualité sont assurés par des <strong>organismes de qualification</strong> (Qualibat, Qualit'EnR, Qualifelec) ou de <strong>certification</strong> (Certibat, Cerqual). Deux choses différentes :</p>
+    <ul>
+      <li>la <strong>qualification</strong> porte sur la compétence de l'entreprise à réaliser <em>en propre</em> des travaux bien précis ;</li>
+      <li>la <strong>certification</strong> porte sur la capacité à concevoir et piloter des travaux dans une <em>offre globale</em> ; l'entreprise certifiée peut sous-traiter à des entreprises qualifiées RGE.</li>
+    </ul>
+    <p>La mention est attachée à <strong>l'établissement</strong> (numéro de SIRET) : une entreprise qui veut être référencée pour plusieurs sites doit demander une qualification pour chacun. Les textes cités par le ministère : décret n° 2014-812 du 16 juillet 2014 et arrêté du 1<sup>er</sup> décembre 2015 modifié.</p>
+    <figure>
+      <img src="svg/qui-delivre-rge.svg" alt="Un bandeau : RGE, une mention reconnue par les pouvoirs publics et l'ADEME. Dessous, deux colonnes : la qualification, délivrée par Qualibat, Qualit'EnR ou Qualifelec, pour des travaux précis réalisés en propre ; la certification, délivrée par Certibat ou Cerqual, pour piloter une offre globale. Une bande rappelle que la mention est attachée à l'établissement, par son numéro de SIRET.">
+      <figcaption>Qualification : je sais faire ces travaux. Certification : je pilote l'ensemble.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deux repères verticaux en pointillé : la signature du devis, puis la réalisation des travaux. Chaque ligne est une aide, et chaque pastille orange marque le moment où l'on vérifie que l'entreprise est RGE. Pour l'éco-prêt à taux zéro, c'est la signature du devis. Pour les certificats d'économies d'énergie, c'est l'engagement de l'opération, le plus souvent la même date. Pour MaPrimeRénov', il y a deux pastilles : au devis, puis aux travaux. La bande du bas coupe court à une idée reçue : « RGE en cours de qualification » ne compte pas. Il faut le certificat portant le logo.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Quand faut-il être RGE ?</h2>
+    <p>Être RGE <em>un jour</em> ne suffit pas : ce qui compte, c'est de l'être <strong>au bon moment</strong>, et ce moment change selon l'aide (fiche « La mention RGE : questions/réponses », ADEME, mars 2025) :</p>
+    <ul>
+      <li><strong>éco-prêt à taux zéro</strong> : à la date de signature du formulaire correspondant au devis ;</li>
+      <li><strong>CEE</strong> : à la date d'engagement de l'opération d'économies d'énergie, le plus souvent la date de signature du devis ;</li>
+      <li><strong>MaPrimeRénov'</strong> : à la date de signature du devis <em>et</em> à la date de réalisation des travaux.</li>
+    </ul>
+    <p>Et la notion de « RGE en cours de qualification » ? <strong>Elle ne peut pas être utilisée</strong> : pour que le client bénéficie des aides, l'entreprise doit avoir obtenu son certificat de qualification ou de certification portant le logo RGE. Pour une jeune entreprise sans référence de chantier, les organismes peuvent proposer une <strong>qualification probatoire</strong>, limitée à deux ans, le temps d'apporter la preuve de chantiers réalisés en propre.</p>
+    <figure>
+      <img src="svg/quand-etre-rge.svg" alt="Deux repères verticaux en pointillé : la signature du devis et la réalisation des travaux. Trois aides : l'éco-prêt à taux zéro, un repère au devis ; les certificats d'économies d'énergie, un repère à l'engagement de l'opération, le plus souvent le devis ; MaPrimeRénov', deux repères, au devis et aux travaux. Une bande rappelle que « RGE en cours de qualification » ne compte pas.">
+      <figcaption>Chaque pastille orange : le moment où l'on vérifie la mention RGE.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Six cartes, six signes de qualité publiés par Qualit'EnR, chacun pour un domaine de travaux : Qualisol pour le solaire thermique, QualiPV pour le photovoltaïque, Qualibois pour le chauffage au bois, Chauffage plus pour les chaudières à condensation, Ventilation plus pour la ventilation mécanique. La carte encadrée d'orange est celle qui nous intéresse : QualiPAC, pour les pompes à chaleur, les PAC, et les chauffe-eau thermodynamiques. La bande du bas donne la règle du technicien d'études : la qualification est propre à un domaine, et elle doit correspondre aux travaux que l'entreprise réalise vraiment.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">QualiPAC et les autres signes de qualité</h2>
+    <p>Il n'existe pas <em>un</em> RGE, mais un signe de qualité <strong>par domaine de travaux</strong>. L'association Qualit'EnR, créée en 2006 pour développer la qualité d'installation en énergies renouvelables, en publie plusieurs : <strong>Qualisol</strong>, <strong>QualiPV</strong>, <strong>Qualibois</strong>, <strong>Chauffage +</strong>, <strong>Ventilation +</strong> — et <strong>QualiPAC</strong>, pour l'installation de pompes à chaleur (aérothermiques, géothermiques) et de chauffe-eau thermodynamiques. QualiPAC est un signe de qualité titulaire de la mention RGE, géré par Qualit'EnR.</p>
+    <p>D'autres organismes délivrent aussi des mentions RGE (Qualibat, Qualifelec) : l'annuaire officiel liste les activités de chaque établissement, quel que soit l'organisme.</p>
+    <p><strong>Ce qu'il faut retenir</strong> : la qualification est propre à un domaine. Une entreprise qualifiée pour le bois n'est pas RGE pour une pompe à chaleur : le signe doit correspondre aux travaux réellement réalisés.</p>
+    <figure>
+      <img src="svg/signes-de-qualite.svg" alt="Six cartes, une par signe de qualité de Qualit'EnR : Qualisol pour le solaire thermique, QualiPV pour le photovoltaïque, Qualibois pour le bois, QualiPAC pour les pompes à chaleur et chauffe-eau thermodynamiques (encadrée en orange), Chauffage plus pour les chaudières à condensation et la micro-cogénération, Ventilation plus pour la ventilation mécanique. Une bande rappelle que la qualification doit correspondre aux travaux réalisés.">
+      <figcaption>Un signe par domaine : la carte orange est celle des pompes à chaleur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="À gauche, ce qui se tient dans l'entreprise : un responsable technique formé, désigné pour chaque qualification demandée ; une mention attachée à chaque établissement ; et un sous-traitant qui doit lui aussi être RGE, dans le même domaine. À droite, six cartes numérotées : ce sont les engagements de la charte QualiPAC, dans l'ordre d'un chantier. On conseille avec une étude thermique, on chiffre par un devis détaillé, on informe sur les aides, on installe selon les règles de l'art, on réceptionne avec le client, on facture avec les attestations. La bande du bas ajoute l'après-chantier : intervenir vite en cas d'anomalie et accepter les contrôles.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Ce que l'entreprise doit tenir</h2>
+    <ul>
+      <li><strong>Un responsable technique formé.</strong> L'entreprise en nomme un par qualification demandée. Pour les énergies renouvelables, il doit suivre des formations et réussir des tests de connaissances ; pour l'efficacité énergétique, la preuve peut aussi venir d'un diplôme ou d'un titre. Il n'a pas l'obligation de participer à chaque chantier.</li>
+      <li><strong>Un sous-traitant, lui aussi qualifié.</strong> L'entreprise doit assurer tout ou partie de la fourniture et de la pose ; si elle sous-traite, elle choisit une entreprise également RGE dans le même domaine de travaux.</li>
+      <li><strong>La charte de son signe.</strong> Les installateurs QualiPAC s'engagent sur les 10 points de la charte : compétences et garanties légales, conseil avec étude thermique, devis descriptif après visite, information sur les aides, installation dans les règles de l'art, réception en présence du client, facture détaillée et attestations, intervention rapide en cas d'anomalie, contrôles de Qualit'EnR acceptés.</li>
+    </ul>
+    <figure>
+      <img src="svg/ce-que-l-entreprise-tient.svg" alt="À gauche, un encadré « Dans l'entreprise » : un responsable technique formé par qualification demandée, une mention attachée à chaque établissement, un sous-traitant lui aussi RGE dans le même domaine. À droite, six cartes numérotées de la charte QualiPAC : conseiller, chiffrer, informer, installer, réceptionner, facturer. Une bande ajoute l'après-chantier : intervenir vite en cas d'anomalie et accepter les contrôles de Qualit'EnR.">
+      <figcaption>Une entreprise RGE se reconnaît à ses gestes, de la visite à la facture.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="À gauche, un chantier de maison et une loupe : l'audit porte sur un chantier réel. À droite, la fiche de l'auditeur, avec sept lignes qui se cochent une à une. Il regarde le devis détaillé ; la conformité aux règles de l'art, comme les DTU, documents techniques unifiés ; le procès-verbal de réception ; la facture et les attestations pour les aides ; la levée des réserves ; les notices et garanties ; enfin la cohérence entre devis, facture et ce qui est posé. En bas : un label de quatre ans avec suivi annuel, et un défaut majeur rend le contrôle insatisfaisant.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">L'audit de chantier : le RGE se contrôle</h2>
+    <p>Le label RGE est délivré pour une période de <strong>4 ans, avec un suivi annuel</strong>. Une fois qualifiées, les entreprises voient leurs <strong>chantiers contrôlés</strong> dans le cadre d'audits de réalisation : la conformité des travaux aux règles de l'art est examinée sur un chantier réel. Depuis la réforme entrée en vigueur au 1<sup>er</sup> janvier 2021, les contrôles sont <strong>renforcés</strong> pour certaines catégories dites critiques, dont les pompes à chaleur pour le chauffage ou pour l'eau chaude sanitaire.</p>
+    <p>L'auditeur vérifie notamment : le devis descriptif détaillé, la réalisation selon les règles de l'art (DTU, avis techniques), le procès-verbal de réception, la facture détaillée et les attestations servant à obtenir les aides, la levée des réserves selon le moment du contrôle, la remise des notices et garanties, et la <strong>cohérence entre devis, facture et réalisation</strong>. Un <strong>défaut majeur</strong> rend le contrôle insatisfaisant.</p>
+    <figure>
+      <img src="svg/audit-de-chantier.svg" alt="Un chantier de maison et une loupe à gauche. À droite, la fiche de l'auditeur avec sept lignes cochées : devis descriptif détaillé, règles de l'art, procès-verbal de réception, facture détaillée et attestations, levée des réserves, notices et garanties, cohérence entre devis, facture et réalisation. Deux bandes : label de 4 ans avec suivi annuel ; un défaut majeur rend le contrôle insatisfaisant.">
+      <figcaption>Sept points cochés sur un chantier réel : c'est le RGE mis à l'épreuve.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="À gauche, l'écran de recherche de l'annuaire officiel : on choisit le type de travaux, ici une pompe à chaleur, on indique la commune, puis on lance la recherche. La flèche mène à la fiche d'une entreprise, fictive : son établissement, identifié par son numéro de SIRET, ses activités qualifiées et ses coordonnées. En dessous, la coche verte pose la seule question qui compte : l'activité listée est-elle bien celle de vos travaux ? La bande du bas explique pourquoi l'annuaire fait foi : quand un organisme radie ou suspend une entreprise, elle cesse d'y apparaître.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Vérifier un professionnel : l'annuaire officiel</h2>
+    <ol>
+      <li>Ouvrir l'<strong>annuaire officiel des professionnels RGE</strong> sur france-renov.gouv.fr (page « annuaire-rge »).</li>
+      <li>Chercher par <strong>type de travaux</strong> et par localité.</li>
+      <li>Retrouver l'<strong>établissement</strong> : la mention est attachée à son numéro de SIRET.</li>
+      <li>Vérifier que <strong>l'activité listée est bien celle des travaux prévus</strong>. Une qualification pour un autre domaine ne couvre pas le chantier.</li>
+    </ol>
+    <p>L'annuaire est alimenté par les organismes de qualification et de certification, dont la majorité envoient leurs données chaque jour. Si un organisme radie une entreprise, il cesse d'envoyer ses données : elle disparaît de l'annuaire. Un doute, une fraude ? Le site propose un formulaire de signalement à l'organisme compétent. Et un réflexe de bon sens rappelé par France Rénov' : les administrations ne démarchent pas pour les travaux.</p>
+    <figure>
+      <img src="svg/annuaire-officiel.svg" alt="À gauche, un écran de recherche : type de travaux « pompe à chaleur », localité, bouton Rechercher. Une flèche mène à la fiche d'une entreprise fictive : établissement identifié par son numéro de SIRET, activités qualifiées, coordonnées. Sous la fiche, une coche verte accompagne la question : l'activité listée correspond-elle aux travaux prévus ? Une bande rappelle qu'une radiation ou une suspension fait disparaître l'entreprise de l'annuaire.">
+      <figcaption>La seule question qui compte : l'activité listée est-elle celle de vos travaux ?</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Trois colonnes, trois papiers qu'il ne faut pas confondre. La mention RGE, en indigo : elle appartient à l'entreprise, elle porte sur des travaux de rénovation énergétique et elle ouvre les aides de vos clients. L'attestation de capacité, en bleu : elle appartient aussi à l'entreprise, mais elle concerne les fluides frigorigènes, avec le personnel, l'outillage et les procédures. L'attestation d'aptitude, en vert : elle appartient à la personne, et elle se maintient au moins tous les sept ans. La bande du bas résume : trois objets, et aucun papier ne remplace un autre.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : RGE, capacité, aptitude — ne pas confondre</h2>
+    <ul>
+      <li>L'aide s'ouvre <strong>avec l'entreprise</strong> : il faut le RGE pour les travaux concernés.</li>
+      <li>Le moment de la vérification change selon l'aide ; <strong>« en cours de qualification » ne compte pas</strong>.</li>
+      <li><strong>QualiPAC</strong> est le signe des pompes à chaleur et des chauffe-eau thermodynamiques : un domaine parmi d'autres.</li>
+      <li>Le label dure <strong>4 ans avec suivi annuel</strong> ; les chantiers sont <strong>audités</strong>.</li>
+      <li>Il se vérifie dans l'<strong>annuaire officiel</strong>, établissement par établissement.</li>
+      <li><strong>Le RGE n'est ni l'attestation de capacité ni l'attestation d'aptitude</strong> : il ouvre les aides, pas le droit de manipuler un fluide. Dès que l'on intervient sur le circuit frigorifique d'une pompe à chaleur, les deux attestations de la station <a href="../aptitude-capacite/">Aptitude &amp; capacité</a> restent nécessaires.</li>
+    </ul>
+    <p class="formule">Le réflexe : ouvrir l'annuaire avant de conseiller une entreprise à un client.</p>
+    <figure>
+      <img src="svg/trois-papiers.svg" alt="Trois colonnes comparées : la mention RGE, détenue par l'entreprise, pour des travaux de rénovation énergétique, qui ouvre les aides ; l'attestation de capacité, détenue par l'entreprise, pour les fluides frigorigènes ; l'attestation d'aptitude, détenue par la personne, à maintenir a minima tous les sept ans. Une bande rappelle que les trois papiers ont trois objets et qu'aucun ne remplace un autre.">
+      <figcaption>Trois papiers, trois objets : aucun ne remplace un autre.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Le devis est signé avec une entreprise qui indique RGE en cours de qualification. Le client peut-il compter sur l'aide ? Reprenez la bande du bas de l'écran trois avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Devis signé avec une entreprise « RGE en cours de qualification » : et l'aide ?</h2>
+    <figure class="vignette">
+      <img src="svg/quand-etre-rge.svg" alt="Vignette de rappel : les repères où l'on vérifie le RGE, au devis et aux travaux, et la bande « RGE en cours de qualification ne compte pas ».">
+      <figcaption>Rappel de l'écran 3 — quand faut-il être RGE ?</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Oui, si la qualification arrive avant la fin des travaux</button>
+      <button type="button" data-answer="b">Oui pour les CEE, non pour MaPrimeRénov'</button>
+      <button type="button" data-answer="bonne">Non : il faut le certificat portant le logo RGE</button>
+      <button type="button" data-answer="d">Oui, l'entreprise a déposé son dossier auprès d'un organisme</button>
+    </div>
+    <p class="feedback" hidden data-explication="Pour que le client bénéficie des aides, l'entreprise doit avoir obtenu son certificat de qualification ou de certification portant le logo RGE. « En cours de qualification » ne peut pas être utilisé, quelle que soit l'aide."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Une entreprise détient la qualification pour les appareils de chauffage au bois. Elle propose de poser aussi une pompe à chaleur. La mention RGE couvre-t-elle ce chantier ? Regardez les six cartes de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Qualifiée pour le bois, elle propose de poser une pompe à chaleur : RGE ?</h2>
+    <figure class="vignette">
+      <img src="svg/signes-de-qualite.svg" alt="Vignette de rappel : les six signes de qualité de Qualit'EnR, un par domaine de travaux, dont QualiPAC encadré en orange.">
+      <figcaption>Rappel de l'écran 4 — un signe par domaine de travaux.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Non : la qualification est propre à un domaine</button>
+      <button type="button" data-answer="b">Oui : la mention s'applique à toute l'entreprise</button>
+      <button type="button" data-answer="c">Oui, si le devis précise la marque de la pompe</button>
+      <button type="button" data-answer="d">Oui, pour tous les travaux de chauffage</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les qualifications portent sur la compétence à réaliser des travaux bien précis. Il faut la qualification correspondant aux travaux envisagés — ici celle des pompes à chaleur, comme QualiPAC — et l'annuaire officiel liste les activités de chaque établissement."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Que contrôle un auditeur lors d'un audit de chantier RGE ? Reprenez la fiche de l'écran six avant de choisir.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Que contrôle l'auditeur lors d'un audit de chantier ?</h2>
+    <figure class="vignette">
+      <img src="svg/audit-de-chantier.svg" alt="Vignette de rappel : la fiche de l'auditeur aux sept lignes cochées, un chantier réel et une loupe.">
+      <figcaption>Rappel de l'écran 6 — sept points sur un chantier réel.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le montant de l'aide finalement versée au client par l'organisme</button>
+      <button type="button" data-answer="b">Le niveau de diplôme du dirigeant et de ses techniciens</button>
+      <button type="button" data-answer="c">La note de satisfaction laissée par le client sur un site d'avis</button>
+      <button type="button" data-answer="bonne">Devis, facture et travaux réalisés : sont-ils cohérents ?</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'auditeur vérifie le devis descriptif, la conformité aux règles de l'art, le procès-verbal de réception, la facture et les attestations, les notices et garanties, et la cohérence entre devis, facture et réalisation. Un défaut majeur rend le contrôle insatisfaisant."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un client veut vérifier un installateur avant de signer. Quel est le bon réflexe ? Souvenez-vous de la coche verte de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Avant de signer, quel réflexe pour vérifier l'installateur ?</h2>
+    <figure class="vignette">
+      <img src="svg/annuaire-officiel.svg" alt="Vignette de rappel : l'écran de recherche de l'annuaire officiel, la fiche d'une entreprise fictive et la coche « activité listée = travaux prévus ».">
+      <figcaption>Rappel de l'écran 7 — l'annuaire officiel fait foi.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Se fier au logo RGE affiché sur le véhicule de l'entreprise</button>
+      <button type="button" data-answer="bonne">Le retrouver dans l'annuaire officiel, activité comprise</button>
+      <button type="button" data-answer="c">Lui demander si sa qualification est « en cours »</button>
+      <button type="button" data-answer="d">Attendre la fin du chantier : l'audit vérifiera tout</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'annuaire officiel des professionnels RGE, sur france-renov.gouv.fr, est alimenté par les organismes de qualification. On y retrouve l'établissement et on vérifie que son activité correspond aux travaux prévus, avant la signature du devis."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../thermique-cee/"><strong>Les CEE</strong></a> (sous-ligne Thermique)
+      — l'aide dont l'engagement de l'opération exige, elle aussi, une entreprise RGE.</li>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (sous-ligne Fluidique &amp; thermique)
+      — l'autre paire de papiers : ils ouvrent le droit de manipuler un fluide, pas les aides.</li>
+    <li><a href="../certif-garanties/"><strong>Les garanties</strong></a> (même sous-ligne)
+      — la charte QualiPAC engage l'installateur sur ses garanties légales.</li>
+    <li><a href="../thermique-dpe/"><strong>Le DPE</strong></a> (sous-ligne Thermique)
+      — le diagnostic et l'audit énergétique qui précèdent les travaux aidés.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"
+     aria-labelledby="t-tc" aria-describedby="d-tc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-tc">Le terme correctif selon la durée d'apparition du bruit</title>
+  <desc id="d-tc">Sept colonnes de hauteurs décroissantes, de gauche à droite, comme un escalier qui descend.
+    Chaque colonne porte un terme correctif en décibels pondérés A et la durée cumulée d'apparition du bruit
+    correspondante : plus 6 pour 1 minute ou moins ; plus 5 au-delà d'1 minute et jusqu'à 5 minutes ; plus 4
+    au-delà de 5 minutes et jusqu'à 20 minutes ; plus 3 au-delà de 20 minutes et jusqu'à 2 heures ; plus 2
+    au-delà de 2 heures et jusqu'à 4 heures ; plus 1 au-delà de 4 heures et jusqu'à 8 heures ; zéro au-delà
+    de 8 heures. Une flèche en dessous indique que la durée augmente vers la droite. Un bandeau rappelle que
+    la limite égale 5 le jour ou 3 la nuit, plus ce terme. L'animation fait monter les colonnes une à une.</desc>
+  <rect width="800" height="520" fill="#fffdf8"/>
+  <text x="400" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#10233c">Plus le bruit dure, moins on le tolère</text>
+
+  <!-- ligne de base y=320 ; unité 36 -->
+  <line x1="40" y1="320" x2="760" y2="320" stroke="#5a6b7d" stroke-width="3"/>
+
+  <!-- colonne 1 : +6 -->
+  <g>
+    <rect x="46" y="104" width="88" height="216" fill="#6d28d9" stroke="#1b3a63" stroke-width="3">
+      <animate attributeName="height" values="0;0;216;216" keyTimes="0;0.04;0.10;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="320;320;104;104" keyTimes="0;0.04;0.10;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text x="90" y="94" text-anchor="middle" font-size="24" font-weight="bold" fill="#10233c">+ 6
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.09;0.12;1" dur="12s" repeatCount="indefinite"/></text>
+  </g>
+  <!-- colonne 2 : +5 -->
+  <g>
+    <rect x="146" y="140" width="88" height="180" fill="#6d28d9" stroke="#1b3a63" stroke-width="3">
+      <animate attributeName="height" values="0;0;180;180" keyTimes="0;0.11;0.17;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="320;320;140;140" keyTimes="0;0.11;0.17;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text x="190" y="130" text-anchor="middle" font-size="24" font-weight="bold" fill="#10233c">+ 5
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.19;1" dur="12s" repeatCount="indefinite"/></text>
+  </g>
+  <!-- colonne 3 : +4 -->
+  <g>
+    <rect x="246" y="176" width="88" height="144" fill="#6d28d9" stroke="#1b3a63" stroke-width="3">
+      <animate attributeName="height" values="0;0;144;144" keyTimes="0;0.18;0.24;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="320;320;176;176" keyTimes="0;0.18;0.24;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text x="290" y="166" text-anchor="middle" font-size="24" font-weight="bold" fill="#10233c">+ 4
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.23;0.26;1" dur="12s" repeatCount="indefinite"/></text>
+  </g>
+  <!-- colonne 4 : +3 -->
+  <g>
+    <rect x="346" y="212" width="88" height="108" fill="#6d28d9" stroke="#1b3a63" stroke-width="3">
+      <animate attributeName="height" values="0;0;108;108" keyTimes="0;0.25;0.31;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="320;320;212;212" keyTimes="0;0.25;0.31;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text x="390" y="202" text-anchor="middle" font-size="24" font-weight="bold" fill="#10233c">+ 3
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.33;1" dur="12s" repeatCount="indefinite"/></text>
+  </g>
+  <!-- colonne 5 : +2 -->
+  <g>
+    <rect x="446" y="248" width="88" height="72" fill="#6d28d9" stroke="#1b3a63" stroke-width="3">
+      <animate attributeName="height" values="0;0;72;72" keyTimes="0;0.32;0.38;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="320;320;248;248" keyTimes="0;0.32;0.38;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text x="490" y="238" text-anchor="middle" font-size="24" font-weight="bold" fill="#10233c">+ 2
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.37;0.40;1" dur="12s" repeatCount="indefinite"/></text>
+  </g>
+  <!-- colonne 6 : +1 -->
+  <g>
+    <rect x="546" y="284" width="88" height="36" fill="#6d28d9" stroke="#1b3a63" stroke-width="3">
+      <animate attributeName="height" values="0;0;36;36" keyTimes="0;0.39;0.45;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="320;320;284;284" keyTimes="0;0.39;0.45;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text x="590" y="274" text-anchor="middle" font-size="24" font-weight="bold" fill="#10233c">+ 1
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.47;1" dur="12s" repeatCount="indefinite"/></text>
+  </g>
+  <!-- colonne 7 : 0 (pas de hauteur : un simple trait tireté) -->
+  <g>
+    <line x1="646" y1="320" x2="734" y2="320" stroke="#6d28d9" stroke-width="5" stroke-dasharray="10 6"/>
+    <text x="690" y="308" text-anchor="middle" font-size="24" font-weight="bold" fill="#10233c">0
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.46;0.50;1" dur="12s" repeatCount="indefinite"/></text>
+  </g>
+
+  <!-- durées -->
+  <g font-size="17" fill="#10233c" text-anchor="middle">
+    <text x="90" y="345">1 min</text><text x="90" y="365">ou moins</text>
+    <text x="190" y="345">1 à 5 min</text>
+    <text x="290" y="345">5 à 20 min</text>
+    <text x="390" y="345">20 min</text><text x="390" y="365">à 2 h</text>
+    <text x="490" y="345">2 à 4 h</text>
+    <text x="590" y="345">4 à 8 h</text>
+    <text x="690" y="345">plus de 8 h</text>
+  </g>
+
+  <!-- flèche de durée -->
+  <g>
+    <line x1="60" y1="400" x2="722" y2="400" stroke="#5a6b7d" stroke-width="3"/>
+    <polygon points="740,400 722,391 722,409" fill="#5a6b7d"/>
+    <text x="400" y="424" text-anchor="middle" font-size="18" fill="#5a6b7d">durée cumulée d'apparition du bruit particulier</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.58;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- bandeau -->
+  <g>
+    <rect x="40" y="440" width="720" height="60" rx="12" fill="#ede3f4" stroke="#6d28d9" stroke-width="3" stroke-dasharray="10 6"/>
+    <text x="400" y="466" text-anchor="middle" font-size="19" font-weight="bold" fill="#10233c">Limite = 5 dB(A) le jour ou 3 dB(A) la nuit, plus le terme de la colonne</text>
+    <text x="400" y="489" text-anchor="middle" font-size="17" fill="#10233c">Un bruit très bref est toléré davantage ; au-delà de 8 heures, plus aucune tolérance.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.68;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

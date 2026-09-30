@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-lien" aria-describedby="d-lien" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-lien">Le lien entre la fiche et le bordereau</title>
+  <desc id="d-lien">À gauche, la fiche d'intervention, en trait plein bleu, avec quatre repères : le numéro de la fiche, le fluide, le code postal et le SIRET du détenteur. Une flèche part vers la droite, où le bordereau BSFF, en trait tireté orange, reprend ces repères et suit chaque contenant, chaque bouteille, par son numéro. En bas, un encadré vert explique que le SIRET du détenteur relie les deux papiers : le détenteur retrouve dans son compte Trackdéchets le bordereau de son fluide.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomt{ font-weight:bold; font-size:18px; fill:#0f766e; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <defs><marker id="lf" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/></marker></defs>
+  <rect x="30" y="30" width="270" height="290" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="nom" x="165" y="66" text-anchor="middle">Fiche d'intervention</text>
+  <text class="mut" x="165" y="94" text-anchor="middle">quatre repères</text>
+  <rect x="52" y="118" width="226" height="36" rx="8" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text class="txt" x="165" y="142" text-anchor="middle">numéro de la fiche</text>
+  <rect x="52" y="164" width="226" height="36" rx="8" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text class="txt" x="165" y="188" text-anchor="middle">fluide</text>
+  <rect x="52" y="210" width="226" height="36" rx="8" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text class="txt" x="165" y="234" text-anchor="middle">code postal</text>
+  <rect x="52" y="256" width="226" height="36" rx="8" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text class="txt" x="165" y="280" text-anchor="middle">SIRET du détenteur</text>
+  <path d="M306,175 H494" stroke="#5a6b7d" stroke-width="4" marker-end="url(#lf)"/>
+  <text class="mut" x="400" y="148" text-anchor="middle">reportés</text>
+  <rect x="500" y="30" width="270" height="290" rx="12" fill="#fdf1e6" stroke="#e8914a" stroke-width="3" stroke-dasharray="10 7"/>
+  <text class="nomo" x="635" y="66" text-anchor="middle">BSFF</text>
+  <text class="mut" x="635" y="94" text-anchor="middle">dans Trackdéchets</text>
+  <text class="txt" x="635" y="150" text-anchor="middle">reprend ces repères,</text>
+  <text class="txt" x="635" y="200" text-anchor="middle">suit chaque contenant</text>
+  <text class="txt" x="635" y="228" text-anchor="middle">(chaque bouteille)</text>
+  <text class="txt" x="635" y="256" text-anchor="middle">par son numéro.</text>
+  <rect x="30" y="346" width="740" height="128" rx="12" fill="#e6f2ef" stroke="#0f766e" stroke-width="3"/>
+  <text class="nomt" x="400" y="384" text-anchor="middle">Le SIRET du détenteur relie les deux papiers</text>
+  <text class="txt" x="400" y="418" text-anchor="middle">Le détenteur retrouve dans son compte Trackdéchets</text>
+  <text class="txt" x="400" y="446" text-anchor="middle">le bordereau de son fluide, et la preuve du traitement.</text>
+</svg>

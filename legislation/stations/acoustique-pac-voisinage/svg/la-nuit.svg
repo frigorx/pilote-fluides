@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-nui" aria-describedby="d-nui" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-nui">La nuit, la limite d'émergence se resserre</title>
+  <desc id="d-nui">Une frise de vingt-quatre heures, de 7 h à 7 h. La période de jour, de 7 h à 22 h, est en orange clair ; la période de nuit, de 22 h à 7 h, est en bleu sombre. Dessous, deux cartes : l'émergence maximale est de 5 dB(A) le jour et de 3 dB(A) la nuit, pour une activité professionnelle, avant termes correctifs. Deux cartes en bas rappellent de demander au fabricant le niveau annoncé en mode silencieux et le bruit pendant le dégivrage. L'animation fait passer un repère, soleil puis lune, le long de la frise ; l'image fixe montre la frise complète.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:22px; fill:#10233c; }
+    .per  { font-weight:bold; font-size:20px; fill:#10233c; }
+    .tic  { font-size:17px; fill:#10233c; }
+    .ct   { font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .big  { font-weight:bold; font-size:40px; fill:#b45309; }
+    .bigb { font-weight:bold; font-size:40px; fill:#1b3a63; }
+    .lbl  { font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="400" y="30" text-anchor="middle">Une journée, deux limites</text>
+
+  <!-- frise -->
+  <text class="per" x="272" y="78" text-anchor="middle">Jour</text>
+  <text class="per" x="612" y="78" text-anchor="middle">Nuit</text>
+  <rect x="60" y="90" width="425" height="38" fill="#f6d9b8" stroke="#b45309" stroke-width="3"/>
+  <rect x="485" y="90" width="255" height="38" fill="#1b3a63" stroke="#10233c" stroke-width="3"/>
+  <g stroke="#5a6b7d" stroke-width="2">
+    <line x1="60" y1="128" x2="60" y2="140"/><line x1="485" y1="128" x2="485" y2="140"/><line x1="740" y1="128" x2="740" y2="140"/>
+  </g>
+  <text class="tic" x="60" y="162" text-anchor="middle">7 h</text>
+  <text class="tic" x="485" y="162" text-anchor="middle">22 h</text>
+  <text class="tic" x="740" y="162" text-anchor="middle">7 h</text>
+
+  <!-- repère mobile : invisible à l'arrêt -->
+  <circle cx="60" cy="109" r="16" fill="#e8914a" stroke="#fffdf8" stroke-width="3" opacity="0">
+    <animate attributeName="cx" values="60;740;740" keyTimes="0;0.8;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.8;0.83;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#e8914a;#f4f1ff" keyTimes="0;0.5" calcMode="discrete" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- cartes jour / nuit -->
+  <rect x="60" y="188" width="320" height="112" rx="14" fill="#fffdf8" stroke="#b45309" stroke-width="3"/>
+  <text class="ct" x="220" y="216" text-anchor="middle">Jour · 7 h à 22 h</text>
+  <text class="big" x="220" y="262" text-anchor="middle">5 dB(A)</text>
+  <text class="lbl" x="220" y="288" text-anchor="middle">émergence maximale</text>
+  <rect x="60" y="188" width="320" height="112" rx="14" fill="none" stroke="#e8914a" stroke-width="8" opacity="0">
+    <animate attributeName="opacity" values="0;0.9;0.9;0;0" keyTimes="0;0.03;0.46;0.5;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="420" y="188" width="320" height="112" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ct" x="580" y="216" text-anchor="middle">Nuit · 22 h à 7 h</text>
+  <text class="bigb" x="580" y="262" text-anchor="middle">3 dB(A)</text>
+  <text class="lbl" x="580" y="288" text-anchor="middle">émergence maximale</text>
+  <rect x="420" y="188" width="320" height="112" rx="14" fill="none" stroke="#1b3a63" stroke-width="8" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.9;0.9;0;0" keyTimes="0;0.5;0.53;0.8;0.83;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <text class="lbl" x="400" y="328" text-anchor="middle">Activité professionnelle, avant termes correctifs (article R. 1336-7)</text>
+
+  <!-- deux points à vérifier -->
+  <rect x="60" y="346" width="320" height="140" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="ct" x="220" y="374" text-anchor="middle">Mode silencieux</text>
+  <text class="lbl" x="220" y="402" text-anchor="middle">S'il existe, relevez le niveau</text>
+  <text class="lbl" x="220" y="424" text-anchor="middle">annoncé dans ce mode, et non</text>
+  <text class="lbl" x="220" y="446" text-anchor="middle">celui du fonctionnement normal.</text>
+
+  <rect x="420" y="346" width="320" height="140" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="ct" x="580" y="374" text-anchor="middle">Dégivrage</text>
+  <text class="lbl" x="580" y="402" text-anchor="middle">En hiver, l'unité givre : elle</text>
+  <text class="lbl" x="580" y="424" text-anchor="middle">passe par un cycle de dégivrage.</text>
+  <text class="lbl" x="580" y="446" text-anchor="middle">Demandez le bruit pendant ce cycle.</text>
+</svg>

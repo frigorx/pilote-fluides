@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img"
+     aria-labelledby="t-bilan" aria-describedby="d-bilan" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bilan">La liste à cocher avant de prescrire ou d'accepter un produit</title>
+  <desc id="d-bilan">Une liste de six cases à cocher, chacune avec sa question : le produit est-il couvert par une
+    norme harmonisée, donc CE et déclaration attendus ; l'usage prévu de la déclaration correspond-il à mon usage ;
+    chaque performance exigée est-elle déclarée et non NPD ; le fabricant et le produit type sont-ils identifiables ;
+    la déclaration et la notice sont-elles fournies dans la langue requise ; pour un appareil, quels autres textes
+    s'appliquent. En bas, un bandeau donne le réflexe : lire la déclaration des performances, pas seulement
+    l'étiquette.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .q   { font-size:18px; fill:#10233c; }
+    .qb  { font-size:18px; fill:#10233c; font-weight:bold; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .rf  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="450" y="32" text-anchor="middle">Avant de prescrire ou d'accepter un produit</text>
+
+  <g fill="#ffffff" stroke="#3730a3" stroke-width="3">
+    <rect x="40" y="62" width="30" height="30" rx="5"/>
+    <rect x="40" y="130" width="30" height="30" rx="5"/>
+    <rect x="40" y="198" width="30" height="30" rx="5"/>
+    <rect x="40" y="266" width="30" height="30" rx="5"/>
+    <rect x="40" y="334" width="30" height="30" rx="5"/>
+    <rect x="40" y="402" width="30" height="30" rx="5"/>
+  </g>
+  <g stroke="#1e7e54" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 46 77 L 54 85 L 68 66"/>
+    <path d="M 46 145 L 54 153 L 68 134"/>
+    <path d="M 46 213 L 54 221 L 68 202"/>
+    <path d="M 46 281 L 54 289 L 68 270"/>
+    <path d="M 46 349 L 54 357 L 68 338"/>
+    <path d="M 46 417 L 54 425 L 68 406"/>
+  </g>
+
+  <text class="qb" x="92" y="83">Couvert par une norme harmonisée ?</text>
+  <text class="sm" x="92" y="104">Si oui : le CE et la déclaration des performances sont attendus.</text>
+
+  <text class="qb" x="92" y="151">L'usage prévu de la déclaration est-il le mien ?</text>
+  <text class="sm" x="92" y="172">Une performance déclarée pour un autre usage ne prouve rien pour celui-ci.</text>
+
+  <text class="qb" x="92" y="219">Chaque performance exigée est-elle déclarée ?</text>
+  <text class="sm" x="92" y="240">NPD en face d'une caractéristique du cahier des charges : on ne s'en contente pas.</text>
+
+  <text class="qb" x="92" y="287">Le fabricant et le produit type sont-ils identifiables ?</text>
+  <text class="sm" x="92" y="308">Nom, adresse, code du produit type, numéro de la déclaration.</text>
+
+  <text class="qb" x="92" y="355">La déclaration et la notice sont-elles fournies ?</text>
+  <text class="sm" x="92" y="376">Sur papier ou par voie électronique, dans la langue requise.</text>
+
+  <text class="qb" x="92" y="423">Pour un appareil : quels autres textes s'appliquent ?</text>
+  <text class="sm" x="92" y="444">Pression, machines, électricité, écoconception : autant de déclarations possibles.</text>
+
+  <rect x="40" y="478" width="820" height="62" rx="14" fill="#3730a3"/>
+  <text class="rf" x="450" y="516" text-anchor="middle">Le réflexe : lire la déclaration des performances, pas seulement l'étiquette</text>
+</svg>

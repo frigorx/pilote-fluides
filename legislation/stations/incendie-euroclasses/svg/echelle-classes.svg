@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" role="img" aria-labelledby="t" aria-describedby="d" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t">Les classes de réaction au feu, de A1 à F</title>
+  <desc id="d">Sept cases alignées, de gauche à droite : A1, A2, B, C, D, E et F, la dernière en pointillé. Sous la case A1, la mention classe la plus haute. Sous la case F, la mention aucune performance déterminée. Une accolade sous A2 à E précise que de A2 à D on ajoute deux lettres, s pour la fumée et d pour les gouttelettes, et que pour E on ajoute seulement d. Une bande rappelle que pour les sols les classes portent l'indice fl. Dans l'animation, les cases apparaissent l'une après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .sub { font-size:17px; fill:#5a6b7d; }
+    .h   { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .hr  { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#b91c1c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lb  { font-size:17px; font-weight:bold; fill:#10233c; }
+    .gry { font-size:17px; fill:#5a6b7d; }
+    .code{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:34px; fill:#1b3a63; }
+    .big { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:72px; fill:#1b3a63; }
+    .bigr{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:56px; fill:#b91c1c; }
+    .band{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#e8914a; }
+  </style>
+  <defs><path id="fl" d="M0 -85 C-20 -55 -35 -45 -27 -18 C-23 -4 -10 0 0 0 C13 0 27 -6 27 -24 C27 -45 13 -55 0 -85 Z" fill="#e8914a" stroke="#b91c1c" stroke-width="2"/><path id="fli" d="M0 -48 C-9 -32 -16 -26 -12 -12 C-9 -4 -4 0 0 0 C6 0 12 -3 12 -12 C12 -26 6 -32 0 -48 Z" fill="#f6c58e"/>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#5a6b7d"/></marker>
+  </defs>
+<text class="ttl" x="400" y="38" text-anchor="middle">Les classes de réaction au feu des produits de construction</text>
+<text class="sub" x="400" y="68" text-anchor="middle">Annexe 1 de l'arrêté du 21 novembre 2002</text>
+<g><rect x="48" y="100" width="92" height="90" rx="10" fill="#e3efe6" stroke="#1b3a63" stroke-width="3"/><text class="code" x="94.0" y="158" text-anchor="middle">A1</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.10;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="150" y="100" width="92" height="90" rx="10" fill="#eaf0dc" stroke="#1b3a63" stroke-width="3"/><text class="code" x="196.0" y="158" text-anchor="middle">A2</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.09;0.15;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="252" y="100" width="92" height="90" rx="10" fill="#f3efd0" stroke="#1b3a63" stroke-width="3"/><text class="code" x="298.0" y="158" text-anchor="middle">B</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.14;0.20;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="354" y="100" width="92" height="90" rx="10" fill="#f8e6c8" stroke="#1b3a63" stroke-width="3"/><text class="code" x="400.0" y="158" text-anchor="middle">C</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.19;0.25;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="456" y="100" width="92" height="90" rx="10" fill="#f8d9c0" stroke="#1b3a63" stroke-width="3"/><text class="code" x="502.0" y="158" text-anchor="middle">D</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.30;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="558" y="100" width="92" height="90" rx="10" fill="#f5c9b8" stroke="#1b3a63" stroke-width="3"/><text class="code" x="604.0" y="158" text-anchor="middle">E</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.29;0.35;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="660" y="100" width="92" height="90" rx="10" fill="#f0b8b0" stroke="#1b3a63" stroke-width="3" stroke-dasharray="7 5"/><text class="code" x="706.0" y="158" text-anchor="middle">F</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.34;0.40;1" dur="13s" repeatCount="indefinite"/></g>
+<g><text class="lb" x="48" y="224" text-anchor="start">Classe la plus haute</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.48;1" dur="13s" repeatCount="indefinite"/></g>
+<g><text class="lb" x="752" y="224" text-anchor="end">Aucune performance déterminée</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.47;0.53;1" dur="13s" repeatCount="indefinite"/></g>
+<g><path d="M150 262 H650" stroke="#5a6b7d" stroke-width="3" fill="none"/><path d="M150 254 V270 M650 254 V270" stroke="#5a6b7d" stroke-width="3" fill="none"/><text class="lbl" x="400" y="300" text-anchor="middle">A2 à D : on ajoute s (fumée) et d (gouttelettes)</text><text class="lbl" x="400" y="326" text-anchor="middle">E : on ajoute d seulement</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.58;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="30" y="356" width="740" height="50" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/><text class="band" x="400" y="388" text-anchor="middle">Pour les sols, les mêmes classes portent l'indice « fl » : A1fl … Ffl</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.72;1" dur="13s" repeatCount="indefinite"/></g>
+</svg>

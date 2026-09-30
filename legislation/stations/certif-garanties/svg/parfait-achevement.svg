@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-labelledby="t-pa" aria-describedby="d-pa" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pa">La garantie de parfait achèvement, pas à pas</title>
+  <desc id="d-pa">De gauche à droite. Deux entrées : les réserves écrites au procès-verbal de
+    réception, et la notification écrite pour un désordre révélé après la réception. Elles
+    mènent au bloc central : l'entrepreneur répare, pendant un an à compter de la réception.
+    Puis, en haut à droite, en vert : les délais de réparation sont fixés d'un commun accord.
+    En dessous, en orange et en tireté : si rien n'est exécuté et qu'une mise en demeure reste
+    sans effet, les travaux sont faits aux frais et risques de l'entrepreneur. Une bande en bas
+    précise que l'exécution est constatée d'un commun accord ou, à défaut, par le juge, et que la
+    garantie ne couvre pas l'usure normale ni l'usage. L'animation allume les blocs dans cet
+    ordre ; l'image fixe montre tout.</desc>
+  <defs>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Un désordre est signalé : que se passe-t-il ?</text>
+
+  <!-- Entrée 1 -->
+  <g>
+    <rect x="20" y="60" width="230" height="92" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="135" y="92" text-anchor="middle">Réserves écrites</text>
+    <text class="lbl" x="135" y="116" text-anchor="middle">au procès-verbal</text>
+    <text class="sm" x="135" y="138" text-anchor="middle">à la réception</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.10;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- Entrée 2 -->
+  <g>
+    <rect x="20" y="170" width="230" height="92" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="135" y="202" text-anchor="middle">Notification écrite</text>
+    <text class="lbl" x="135" y="226" text-anchor="middle">désordre révélé</text>
+    <text class="sm" x="135" y="248" text-anchor="middle">après la réception</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.12;0.18;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Flèches d'entrée -->
+  <g>
+    <path d="M250 106 H274 V161" stroke="#5a6b7d" stroke-width="4" fill="none" stroke-linejoin="round"/>
+    <path d="M250 216 H274 V161 H292" stroke="#5a6b7d" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#pt)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.26;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bloc central -->
+  <g>
+    <rect x="300" y="100" width="230" height="122" rx="14" fill="#e8f0fb" stroke="#3730a3" stroke-width="3"/>
+    <text class="qui" x="415" y="140" text-anchor="middle">L'entrepreneur</text>
+    <text class="qui" x="415" y="164" text-anchor="middle">répare</text>
+    <text class="lbl" x="415" y="196" text-anchor="middle">pendant 1 an à compter</text>
+    <text class="lbl" x="415" y="216" text-anchor="middle">de la réception</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.28;0.34;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Flèche vers les délais -->
+  <g>
+    <path d="M530 161 H552 V100 H578" stroke="#5a6b7d" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#pt)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.38;0.44;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Délais d'un commun accord -->
+  <g>
+    <rect x="590" y="60" width="290" height="80" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+    <text class="qui" x="735" y="92" text-anchor="middle" style="fill:#1e7e54">Délais fixés</text>
+    <text class="lbl" x="735" y="118" text-anchor="middle">d'un commun accord avec le client</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.50;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Flèche vers l'exécution forcée -->
+  <g>
+    <path d="M735 140 V190" stroke="#c0392b" stroke-width="4" fill="none" stroke-dasharray="12 8" marker-end="url(#pt)"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.62;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Exécution aux frais et risques -->
+  <g>
+    <rect x="590" y="196" width="290" height="102" rx="12" fill="#fbe9e7" stroke="#c0392b" stroke-width="3" stroke-dasharray="14 8"/>
+    <text class="qui" x="735" y="224" text-anchor="middle" style="fill:#c0392b">Mise en demeure</text>
+    <text class="qui" x="735" y="246" text-anchor="middle" style="fill:#c0392b">restée sans effet</text>
+    <text class="lbl" x="735" y="274" text-anchor="middle">travaux faits aux frais et risques</text>
+    <text class="lbl" x="735" y="292" text-anchor="middle">de l'entrepreneur</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.68;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bande de fin -->
+  <g>
+    <rect x="20" y="326" width="860" height="86" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <text class="qui" x="450" y="356" text-anchor="middle">L'exécution des travaux est constatée d'un commun accord, sinon par le juge.</text>
+    <text class="lbl" x="450" y="392" text-anchor="middle">Hors garantie : les effets de l'usure normale ou de l'usage.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.76;0.84;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

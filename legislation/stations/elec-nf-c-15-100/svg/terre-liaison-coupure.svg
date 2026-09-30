@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t7" aria-describedby="d7" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t7">Schéma de principe : terre, liaison équipotentielle principale, coupure d'urgence</title>
+  <desc id="d7">Un bâtiment, avec le sol en bas. Sous le sol, une prise de terre. Elle est reliée par le conducteur de terre à la borne principale de terre, dans le bâtiment. De cette borne part la liaison équipotentielle principale, un trait épais ocre horizontal, qui se raccorde par trois branches à trois éléments : une canalisation d'eau, une canalisation de chauffage, et la masse d'un équipement comme une pompe à chaleur ou une centrale de traitement d'air. En haut à droite, un cadre orange : la coupure d'urgence, qui coupe toute l'installation. C'est un schéma de principe, pas un schéma électrique normalisé.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .b18 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .b20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .t17 { font-size:17px; fill:#10233c; }
+    .g16 { font-size:16px; fill:#5a6b7d; }
+  </style>
+  <text class="ttl" x="30" y="34">Schéma de principe : terre et coupure d'urgence</text>
+
+  <!-- Coupure d'urgence -->
+  <rect x="560" y="52" width="220" height="62" rx="14" fill="#e8914a" stroke="#c9451a" stroke-width="3"/>
+  <text class="b20" x="670" y="80" text-anchor="middle">Coupure d'urgence</text>
+  <text class="t17" x="670" y="102" text-anchor="middle">toute l'installation</text>
+
+  <!-- Bâtiment -->
+  <rect x="50" y="130" width="730" height="250" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="g16" x="66" y="156">bâtiment</text>
+
+  <!-- Sol -->
+  <line x1="20" y1="380" x2="790" y2="380" stroke="#5a6b7d" stroke-width="4"/>
+  <g stroke="#5a6b7d" stroke-width="2">
+    <line x1="40" y1="396" x2="52" y2="384"/><line x1="90" y1="396" x2="102" y2="384"/><line x1="240" y1="396" x2="252" y2="384"/>
+    <line x1="340" y1="396" x2="352" y2="384"/><line x1="440" y1="396" x2="452" y2="384"/><line x1="540" y1="396" x2="552" y2="384"/>
+    <line x1="640" y1="396" x2="652" y2="384"/><line x1="740" y1="396" x2="752" y2="384"/>
+  </g>
+
+  <!-- Prise de terre et conducteur de terre -->
+  <line x1="150" y1="340" x2="150" y2="440" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="126" y1="440" x2="174" y2="440" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="134" y1="452" x2="166" y2="452" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="142" y1="464" x2="158" y2="464" stroke="#1b3a63" stroke-width="4"/>
+  <text class="t17" x="190" y="452">prise de terre</text>
+
+  <!-- Borne principale de terre -->
+  <rect x="80" y="290" width="140" height="50" rx="10" fill="#1b3a63"/>
+  <text x="150" y="312" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">borne principale</text>
+  <text x="150" y="331" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">de terre</text>
+
+  <!-- Liaison équipotentielle principale -->
+  <line x1="220" y1="315" x2="710" y2="315" stroke="#a16207" stroke-width="8"/>
+  <line x1="360" y1="315" x2="360" y2="250" stroke="#a16207" stroke-width="5"/>
+  <line x1="510" y1="315" x2="510" y2="250" stroke="#a16207" stroke-width="5"/>
+  <line x1="660" y1="315" x2="660" y2="250" stroke="#a16207" stroke-width="5"/>
+  <text class="b18" x="470" y="350" text-anchor="middle">liaison équipotentielle principale</text>
+
+  <!-- Éléments raccordés -->
+  <g fill="#fffdf8" stroke="#1b3a63" stroke-width="3">
+    <rect x="290" y="190" width="140" height="60" rx="10"/><rect x="440" y="190" width="140" height="60" rx="10"/><rect x="590" y="190" width="140" height="60" rx="10"/>
+  </g>
+  <g class="t17" text-anchor="middle">
+    <text x="360" y="216">canalisation</text><text x="360" y="238">d'eau</text>
+    <text x="510" y="216">canalisation</text><text x="510" y="238">de chauffage</text>
+    <text x="660" y="216">masse d'un</text><text x="660" y="238">équipement</text>
+  </g>
+</svg>

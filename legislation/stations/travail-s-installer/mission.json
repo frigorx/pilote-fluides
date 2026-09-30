@@ -1,0 +1,48 @@
+{
+  "slug": "travail-s-installer",
+  "branche": "Droit du travail",
+  "titre": "Mission : Un collègue veut partir à son compte",
+  "client": "Un technicien frigoriste de votre entreprise, qui envisage de s'installer en auto-entreprise et vous demande ce qu'il doit avoir en règle avant son premier chantier.",
+  "situation": "Un collègue technicien, titulaire d'une attestation d'aptitude, veut quitter l'entreprise et s'installer seul. Son premier client serait son employeur actuel, qui lui proposerait les mêmes chantiers, avec les mêmes consignes. Il pense que « le statut de micro-entrepreneur simplifie tout » et qu'il pourra fixer ses prix au plus juste. Il vous demande de lui préparer, avant qu'il ne démissionne, la liste de ce qu'il doit avoir en règle et des questions à se poser.",
+  "piece_a_produire": "Une check-list d'une page à sept lignes (qualification, immatriculation, attestation de capacité, attestation d'aptitude, assurances, mention RGE si le client attend une aide, cotisations déclarées) : pour chaque ligne, la preuve à obtenir et le site officiel où la vérifier. En dessous, deux phrases pour le collègue : la question à se poser sur son futur premier client (qui fixe mes conditions de travail ?) et la façon de calculer un prix (partir du coût complet).",
+  "questions": [
+    {
+      "q": "Sur quoi se calculent les cotisations d'un micro-entrepreneur, et le matériel acheté les réduit-il ?",
+      "ecran": 3,
+      "reponse": "Elles se calculent par un pourcentage fixe appliqué au chiffre d'affaires, dont le taux dépend de la catégorie d'activité. Le matériel acheté ne les réduit pas ; sans chiffre d'affaires, il n'y a rien à payer."
+    },
+    {
+      "q": "Un entrepreneur seul, titulaire de l'aptitude, peut-il intervenir sur un fluide frigorigène sans attestation de capacité ?",
+      "ecran": 4,
+      "reponse": "Non. L'aptitude est à la personne, la capacité est à l'entreprise : entrepreneur seul, il cumule les deux rôles mais les deux papiers restent deux. Une entreprise sans capacité ne peut pas exercer."
+    },
+    {
+      "q": "Quand l'assurance décennale se justifie-t-elle, et le statut de micro-entrepreneur en dispense-t-il ?",
+      "ecran": 5,
+      "reponse": "Elle se justifie à l'ouverture du chantier. Le statut n'en dispense pas : l'obligation suit l'activité exercée, pas le régime choisi."
+    },
+    {
+      "q": "Qu'est-ce qui peut faire requalifier en contrat de travail une prestation d'une personne immatriculée ?",
+      "ecran": 7,
+      "reponse": "Un lien de subordination juridique permanente à l'égard du donneur d'ordre : l'existence d'un contrat de travail peut alors être établie malgré l'immatriculation (Code du travail, L8221-6)."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Chaque phrase contient une erreur. Trouvez-la et corrigez-la en une phrase.",
+    "items": [
+      "Je suis micro-entrepreneur : mes cotisations se calculent sur mon bénéfice, une fois mon matériel déduit.",
+      "Mon attestation d'aptitude suffit : dans mon entreprise, l'entreprise, c'est moi.",
+      "Je suis micro-entrepreneur, donc je n'ai pas besoin d'assurance décennale.",
+      "Mon client aura son aide : je suis RGE pour le bois, donc pour sa pompe à chaleur aussi."
+    ],
+    "corrige": "1. Faux : la base est le chiffre d'affaires, pas le bénéfice (écran 3). 2. Faux : la capacité est à l'entreprise, l'aptitude à la personne ; il faut les deux (écran 4). 3. Faux : l'obligation d'assurance suit l'activité exercée, pas le statut (écran 5). 4. Faux : la mention RGE est propre à un domaine de travaux (écran 6)."
+  },
+  "badge": "Case cochée",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": ["1.00"],
+    "justification": "Hors REAC TECVC : culture professionnelle du technicien et du chargé d'affaires (créer son activité). Pont avec l'attestation 2025 : la législation applicable (1.00) pour l'attestation de capacité de l'entreprise."
+  }
+}

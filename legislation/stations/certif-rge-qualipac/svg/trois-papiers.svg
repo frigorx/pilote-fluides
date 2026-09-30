@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-tp" aria-describedby="d-tp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-tp">Trois papiers, trois objets : RGE, capacité, aptitude</title>
+  <desc id="d-tp">Trois colonnes comparées. La mention RGE : l'entreprise, pour des travaux de rénovation
+    énergétique, ce qui ouvre les aides à la rénovation. L'attestation de capacité : l'entreprise, pour la
+    manipulation des fluides frigorigènes, avec personnel, outillage et procédures. L'attestation d'aptitude :
+    la personne, pour ses compétences sur les fluides selon sa catégorie, à entretenir a minima tous les sept
+    ans. Une bande du bas rappelle que les trois papiers ont trois objets et qu'aucun ne remplace un autre.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .gris{ font-size:15px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- RGE -->
+  <rect x="20" y="20" width="270" height="304" rx="14" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <rect x="20" y="20" width="270" height="42" rx="14" fill="#3730a3"/>
+  <rect x="20" y="48" width="270" height="14" fill="#3730a3"/>
+  <text class="ttl" x="155" y="47" text-anchor="middle">MENTION RGE</text>
+  <text class="gris" x="40" y="90">Qui la détient ?</text>
+  <text class="qui" x="40" y="114" fill="#3730a3">L'entreprise</text>
+  <text class="gris" x="40" y="152">Sur quoi porte-t-elle ?</text>
+  <text class="lbl" x="40" y="176">des travaux de rénovation</text>
+  <text class="lbl" x="40" y="198">énergétique, par domaine</text>
+  <text class="gris" x="40" y="236">Ce qu'elle ouvre</text>
+  <text class="lbl" x="40" y="260">les aides à la rénovation</text>
+  <text class="lbl" x="40" y="282">énergétique de vos clients</text>
+
+  <!-- Capacité -->
+  <rect x="315" y="20" width="270" height="304" rx="14" fill="#fffdf8" stroke="#1e40af" stroke-width="3"/>
+  <rect x="315" y="20" width="270" height="42" rx="14" fill="#1e40af"/>
+  <rect x="315" y="48" width="270" height="14" fill="#1e40af"/>
+  <text class="ttl" x="450" y="47" text-anchor="middle">ATTESTATION DE CAPACITÉ</text>
+  <text class="gris" x="335" y="90">Qui la détient ?</text>
+  <text class="qui" x="335" y="114" fill="#1e40af">L'entreprise</text>
+  <text class="gris" x="335" y="152">Sur quoi porte-t-elle ?</text>
+  <text class="lbl" x="335" y="176">les fluides frigorigènes :</text>
+  <text class="lbl" x="335" y="198">personnel, outillage, procédures</text>
+  <text class="gris" x="335" y="236">Ce qu'elle ouvre</text>
+  <text class="lbl" x="335" y="260">le droit d'exercer sur ces</text>
+  <text class="lbl" x="335" y="282">fluides</text>
+
+  <!-- Aptitude -->
+  <rect x="610" y="20" width="270" height="304" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <rect x="610" y="20" width="270" height="42" rx="14" fill="#0f766e"/>
+  <rect x="610" y="48" width="270" height="14" fill="#0f766e"/>
+  <text class="ttl" x="745" y="47" text-anchor="middle">ATTESTATION D'APTITUDE</text>
+  <text class="gris" x="630" y="90">Qui la détient ?</text>
+  <text class="qui" x="630" y="114" fill="#0f766e">La personne</text>
+  <text class="gris" x="630" y="152">Sur quoi porte-t-elle ?</text>
+  <text class="lbl" x="630" y="176">le savoir-faire sur les fluides,</text>
+  <text class="lbl" x="630" y="198">selon la catégorie</text>
+  <text class="gris" x="630" y="236">Ce qu'elle ouvre</text>
+  <text class="lbl" x="630" y="260">le droit d'intervenir, à maintenir</text>
+  <text class="lbl" x="630" y="282">a minima tous les 7 ans</text>
+
+  <!-- Bande -->
+  <rect x="20" y="348" width="860" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="380" text-anchor="middle">Trois papiers, trois objets : aucun ne remplace un autre</text>
+</svg>

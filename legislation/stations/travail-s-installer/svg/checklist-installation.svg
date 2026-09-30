@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img"
+     aria-labelledby="t-chk" aria-describedby="d-chk" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-chk">La check-list de l'installation : sept cases à cocher avant le premier chantier</title>
+  <desc id="d-chk">Une liste de sept cases, quatre à gauche et trois à droite, toutes cochées à la fin : la
+    qualification du métier ; l'immatriculation ; l'attestation de capacité de l'entreprise ; l'attestation
+    d'aptitude de la personne ; l'assurance décennale et la responsabilité civile professionnelle ; la
+    mention RGE si le client attend une aide ; les cotisations déclarées. Une bande en bas dit : prêt à
+    ouvrir le chantier. Dans l'animation, les cases se cochent une à une ; l'image fixe montre les sept cochées.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#fffdf8; }
+    .tick{ fill:none; stroke:#1e7e54; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Avant le premier chantier, sept cases à cocher</text>
+
+  <!-- Colonne gauche -->
+  <g>
+    <rect x="30" y="64" width="46" height="46" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3">
+      <animate attributeName="fill" values="#fffdf8;#fffdf8;#e3f5ec;#e3f5ec" keyTimes="0;0.06;0.10;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <path class="tick" d="M40 88 L50 99 L68 72">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.10;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <text class="qui" x="94" y="84">Qualification du métier</text>
+    <text class="sm" x="94" y="106">diplôme ou trois ans d'expérience</text>
+  </g>
+  <g>
+    <rect x="30" y="144" width="46" height="46" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3">
+      <animate attributeName="fill" values="#fffdf8;#fffdf8;#e3f5ec;#e3f5ec" keyTimes="0;0.16;0.20;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <path class="tick" d="M40 168 L50 179 L68 152">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.20;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <text class="qui" x="94" y="164">Immatriculation</text>
+    <text class="sm" x="94" y="186">registre national des entreprises</text>
+  </g>
+  <g>
+    <rect x="30" y="224" width="46" height="46" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3">
+      <animate attributeName="fill" values="#fffdf8;#fffdf8;#e3f5ec;#e3f5ec" keyTimes="0;0.26;0.30;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <path class="tick" d="M40 248 L50 259 L68 232">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.26;0.30;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <text class="qui" x="94" y="244">Attestation de capacité</text>
+    <text class="sm" x="94" y="266">celle de l'entreprise</text>
+  </g>
+  <g>
+    <rect x="30" y="304" width="46" height="46" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3">
+      <animate attributeName="fill" values="#fffdf8;#fffdf8;#e3f5ec;#e3f5ec" keyTimes="0;0.36;0.40;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <path class="tick" d="M40 328 L50 339 L68 312">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.40;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <text class="qui" x="94" y="324">Attestation d'aptitude</text>
+    <text class="sm" x="94" y="346">celle de la personne, à maintenir</text>
+  </g>
+
+  <!-- Colonne droite -->
+  <g>
+    <rect x="470" y="64" width="46" height="46" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3">
+      <animate attributeName="fill" values="#fffdf8;#fffdf8;#e3f5ec;#e3f5ec" keyTimes="0;0.46;0.50;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <path class="tick" d="M480 88 L490 99 L508 72">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.46;0.50;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <text class="qui" x="534" y="84">Assurances</text>
+    <text class="sm" x="534" y="106">décennale et responsabilité civile pro</text>
+  </g>
+  <g>
+    <rect x="470" y="144" width="46" height="46" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3">
+      <animate attributeName="fill" values="#fffdf8;#fffdf8;#e3f5ec;#e3f5ec" keyTimes="0;0.56;0.60;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <path class="tick" d="M480 168 L490 179 L508 152">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.60;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <text class="qui" x="534" y="164">Mention RGE</text>
+    <text class="sm" x="534" y="186">si le client attend une aide</text>
+  </g>
+  <g>
+    <rect x="470" y="224" width="46" height="46" rx="8" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3">
+      <animate attributeName="fill" values="#fffdf8;#fffdf8;#e3f5ec;#e3f5ec" keyTimes="0;0.66;0.70;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+    <path class="tick" d="M480 248 L490 259 L508 232">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.70;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <text class="qui" x="534" y="244">Cotisations déclarées</text>
+    <text class="sm" x="534" y="266">à l'Urssaf, chaque mois ou trimestre</text>
+  </g>
+
+  <g>
+    <rect x="30" y="392" width="840" height="64" rx="14" fill="#9d174d"/>
+    <text class="band" x="450" y="432" text-anchor="middle">Sept cases cochées : prêt à ouvrir le chantier</text>
+    <animate attributeName="opacity" values="0.25;0.25;1;1" keyTimes="0;0.76;0.82;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg>

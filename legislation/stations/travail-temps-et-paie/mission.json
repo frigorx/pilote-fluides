@@ -1,0 +1,48 @@
+{
+  "slug": "travail-temps-et-paie",
+  "branche": "Droit du travail",
+  "titre": "Mission : Ma première fiche de paie après une semaine de chantier chargée",
+  "client": "Un jeune de l'équipe de Clim'Études Sud, arrivé en alternance, qui vient de recevoir sa première fiche de paie et ne sait pas relire ses heures ni ses lignes.",
+  "situation": "La semaine dernière, l'équipe a enchaîné cinq journées de 9 heures pour tenir une échéance de chantier. Le jeune a pointé ses heures avec soin, mais sa fiche de paie affiche plusieurs montants (brut, net à payer avant impôt, net imposable, congés) sans qu'il sache lequel est « son salaire ». Il ignore aussi si ses heures du jeudi et du vendredi ont été majorées, et si le trajet vers un chantier éloigné compte. Votre responsable vous demande de l'aider à s'y retrouver avant la prochaine paie.",
+  "piece_a_produire": "Une page en deux parties. Partie 1 : la semaine de 5 jours de 9 heures, avec le cumul jour par jour, le moment où la 35e heure est dépassée, le nombre d'heures supplémentaires, et pour chacune la règle de majoration applicable à défaut d'accord. Partie 2 : un schéma de la fiche de paie annotée bande par bande (heures et taux, brut, cotisations, net à payer avant impôt, net imposable, impôt à la source, congés), avec une phrase qui dit à quoi sert chaque bande. Sans aucun montant ni taux : ils changent chaque année.",
+  "questions": [
+    {
+      "q": "Un salarié à temps complet travaille 41 heures dans la semaine, sans accord particulier. Combien d'heures supplémentaires, et pourquoi ?",
+      "ecran": 3,
+      "reponse": "Six heures : la durée légale est de 35 heures par semaine et toute heure au-delà est supplémentaire (41 − 35 = 6). Les 48 heures sont un plafond, pas le seuil des heures supplémentaires."
+    },
+    {
+      "q": "À défaut d'accord, quelle majoration s'applique aux heures supplémentaires, et qui peut fixer un autre taux, dans quelle limite ?",
+      "ecran": 4,
+      "reponse": "25 % pour chacune des huit premières heures supplémentaires, puis 50 %. Un accord d'entreprise ou d'établissement, à défaut de branche, peut fixer un autre taux, jamais inférieur à 10 %."
+    },
+    {
+      "q": "Le temps de trajet vers un chantier plus éloigné que le trajet habituel domicile – lieu de travail est-il du travail effectif ? Quelle conséquence ?",
+      "ecran": 6,
+      "reponse": "Non, ce n'est pas du travail effectif ; mais s'il dépasse le temps normal de trajet, il fait l'objet d'une contrepartie en repos ou en argent, fixée par la convention ou l'accord. Dans le bâtiment (ouvriers), le grand déplacement a son propre régime d'indemnisation."
+    },
+    {
+      "q": "Sur la fiche de paie, quel montant sert de base au calcul de l'impôt prélevé à la source, et en quoi diffère-t-il du net à payer ?",
+      "ecran": 7,
+      "reponse": "Le net imposable. C'est une ligne distincte du net à payer avant impôt : la fiche les mentionne séparément, et c'est le net imposable qui sert de base au prélèvement à la source."
+    }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Vrai ou faux ? Justifiez chaque réponse en une phrase.",
+    "items": [
+      "La durée légale de 35 heures par semaine est un plafond : on ne peut jamais la dépasser.",
+      "Un jeune de moins de 18 ans peut travailler 10 heures par jour comme un adulte.",
+      "Le temps de trajet qui dépasse le trajet normal domicile – lieu habituel de travail ouvre droit à une contrepartie.",
+      "Un mois de travail effectif chez le même employeur ouvre 2,5 jours ouvrables de congé payé."
+    ],
+    "corrige": "Faux : 35 heures est le seuil au-delà duquel les heures deviennent supplémentaires, les plafonds sont 48 heures par semaine, 44 heures en moyenne sur 12 semaines et 10 heures par jour (écran 2). Faux : avant 18 ans, 8 heures par jour et 35 heures par semaine, avec des dérogations encadrées (écran 2). Vrai : contrepartie en repos ou en argent (écran 6). Vrai : 2,5 jours ouvrables par mois, au plus 30 (écran 8)."
+  },
+  "badge": "Compte juste",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. Aucune compétence CP1 à CP10 du TP TECVC (REAC TP-00133) ne porte sur le temps de travail ni sur la paie."
+  }
+}

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Sprinkler &amp; RIA — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le robinet d'incendie armé et le sprinkler, la tête qui s'ouvre seule à la chaleur, la source d'eau et le poste de contrôle, pourquoi c'est un lot du bureau d'études CVC, et le pont vers la directive sur les équipements sous pression.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/incendie-sprinkler-ria/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Incendie.
+     C'est une CORRESPONDANCE du plan : Incendie ⇄ La DESP (décision
+     fondatrice du réseau — sprinkler et RIA sont des réseaux d'eau sous
+     pression, lot CVC de bureau d'études).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer. Les 12 narrations
+     de cette station n'ont pas encore leur MP3 : elles parlent avec la
+     voix du navigateur (le filet) jusqu'à la fabrication edge-tts.
+
+     Sources : FOND.md (Légifrance : règlement de sécurité ERP, MS 14 à 17,
+     MS 25 à 30, MS 72 à 75 ; Code du travail R. 4227-28 à R. 4227-30).
+     Aucune valeur qui ne soit lue dans une de ces sources.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Incendie · niveau BTS</p>
+  <h1>Sprinkler &amp; RIA — l'eau incendie, un lot CVC</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-incendie.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez distinguer le <strong>robinet d'incendie armé</strong> (première intervention) du <strong>sprinkler</strong> (extinction automatique), expliquer comment une tête s'ouvre seule et pourquoi <strong>seule la tête au-dessus du foyer</strong> arrose, décrire la chaîne source d'eau – pompe – poste de contrôle – tuyauterie, et dire pourquoi c'est un <strong>réseau d'eau sous pression</strong> qui revient au bureau d'études CVC — avec la question de la DESP en pont.</p>
+  </div>
+  <p class="depart-note"><strong>Référentiel</strong> : TP TECVC, REAC TP-00133 — CP3 (réseaux sanitaires), par la méthode : dimensionner un réseau d'eau sous pression. Le sprinkler et le RIA eux-mêmes sont hors REAC : culture professionnelle du technicien d'études et du chargé d'affaires.</p>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Deux moyens d'éteindre avec de l'eau, et deux logiques très différentes. À gauche, le robinet d'incendie armé, que l'on appelle RIA : un dévidoir avec son tuyau. C'est un moyen de première intervention : une personne formée le déroule et dirige la lance vers le foyer. À droite, le sprinkler : une tête fixée sous un tuyau au plafond, qui s'ouvre seule quand il fait assez chaud, sans que personne ne soit là. Regardez la bande du bas : dans les deux cas, c'est de l'eau sous pression dans un réseau de tuyaux. Ce point commun en fait un sujet de bureau d'études.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux moyens à eau, deux logiques</h2>
+    <p>Le <strong>robinet d'incendie armé (RIA)</strong> est un moyen de <strong>première intervention</strong> : une personne formée déroule le tuyau et vise le foyer. Le <strong>sprinkler</strong> est une <strong>extinction automatique</strong> : la tête s'ouvre seule, à la chaleur, sans personne sur place.</p>
+    <p>Un point les réunit : <strong>de l'eau sous pression dans un réseau de tuyaux</strong>. C'est ce point commun qui en fait un lot de bureau d'études.</p>
+    <figure>
+      <img src="svg/deux-dispositifs.svg" alt="Deux cartes côte à côte. À gauche, le robinet d'incendie armé : un dévidoir avec son tuyau, moyen de première intervention qu'un occupant formé déroule pour viser le foyer. À droite, le sprinkler : une tête fixée sous un tuyau au plafond, extinction automatique, la tête s'ouvre seule à la chaleur, sans personne sur place. Une bande en bas rappelle le point commun : de l'eau sous pression dans un réseau de tuyaux.">
+      <figcaption>À gauche, une personne agit. À droite, la chaleur agit seule.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici un robinet d'incendie armé, vu de face. L'eau arrive par la canalisation, en haut, passe par le robinet d'arrêt et alimente le dévidoir, le grand cercle bleu au centre. Le tuyau sort par le bas et se termine par la lance, qui projette le jet. À droite, trois règles de l'article MS 15 du règlement de sécurité des établissements recevant du public. Un : le robinet se place dans le bâtiment mais à l'extérieur du local qu'il protège. Deux : l'armoire est signalée et ne peut pas être condamnée. Trois : dans un local à risque important, tout point doit être atteint par deux jets.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le robinet d'incendie armé : le matériel et son emplacement</h2>
+    <p>Le RIA se compose d'un <strong>robinet d'arrêt</strong>, d'un <strong>dévidoir</strong>, d'un <strong>tuyau</strong> et d'une <strong>lance</strong>. Le règlement de sécurité contre l'incendie dans les <strong>établissements recevant du public (ERP)</strong> en fixe l'emplacement (article <strong>MS 15</strong>) :</p>
+    <ul>
+      <li>sauf impossibilité, à <strong>l'intérieur du bâtiment</strong>, le plus près possible et <strong>à l'extérieur des locaux à protéger</strong> ;</li>
+      <li>dans une armoire ou un coffret : <strong>signalés</strong>, <strong>sans dispositif de condamnation</strong> ;</li>
+      <li>dans un local à risque important d'incendie : <strong>tout point</strong> atteint par <strong>au moins deux jets de lance</strong>.</li>
+    </ul>
+    <p>Le robinet est désigné par son <strong>diamètre nominal</strong> : DN 19/6, DN 25/8 ou DN 33/12 (article <strong>MS 14</strong>), et sa composition suit les normes qui le concernent.</p>
+    <figure>
+      <img src="svg/le-ria.svg" alt="Une armoire de robinet d'incendie armé dessinée de face : une canalisation d'eau arrive par le haut, un robinet d'arrêt commande le dévidoir, le tuyau sort en bas et se termine par une lance qui projette un jet. Des étiquettes nomment chaque pièce. À droite, trois règles de l'article MS 15 : emplacement à l'extérieur du local à protéger, armoire signalée et jamais condamnée, deux jets de lance sur tout point d'un local à risque important. Une bande rappelle les trois diamètres nominaux.">
+      <figcaption>Cinq pièces à nommer, trois règles d'emplacement à retenir.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Un robinet d'incendie armé ne sert à rien sans eau. Suivez la canalisation, à gauche : elle vient du réseau public et traverse le bâtiment. Regardez les points clairs qui avancent : c'est l'eau qui circule jusqu'au dernier robinet, le plus défavorisé, c'est-à-dire celui où l'eau arrive avec le moins de pression. Puis l'aiguille du manomètre monte, et le jet apparaît. L'article MS 16 demande une canalisation d'eau en pression alimentée par le réseau public. L'article MS 17 fixe la pression minimale à tenir à ce robinet : deux bars et demi, avec un manomètre à côté pour la contrôler.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">L'eau du RIA : l'alimentation et la pression</h2>
+    <ul>
+      <li><strong>Alimentation (MS 16)</strong> : sauf impossibilité, par une <strong>canalisation d'eau en pression</strong> desservie par les conduites publiques ; l'alimentation par réservoirs élevés ou sous pression n'est admise qu'exceptionnellement.</li>
+      <li><strong>Pression (MS 17)</strong> : la pression minimale de fonctionnement à laquelle le débit doit être fourni ne doit pas être inférieure à <strong>2,5 bars</strong> au robinet d'incendie armé le plus défavorisé — celui où l'eau arrive avec le moins de pression.</li>
+      <li><strong>Contrôle</strong> : un <strong>manomètre avec robinets à trois voies</strong> est mis en place près de ce robinet pour contrôler cette pression.</li>
+    </ul>
+    <p>C'est ici que le bureau d'études intervient : tenir la pression au robinet du bout, c'est un calcul hydraulique.</p>
+    <figure>
+      <img src="svg/eau-du-ria.svg" alt="Une conduite du réseau public alimente, dans un bâtiment, une canalisation d'eau en pression. Un premier robinet d'incendie armé proche de l'arrivée, puis une colonne montante qui mène au robinet le plus défavorisé, en haut à droite, dont la lance projette un jet. Près de ce robinet, un manomètre avec un repère rouge : 2,5 bars au moins. L'animation fait circuler l'eau, puis l'aiguille monte au-dessus du repère et le jet apparaît.">
+      <figcaption>Le robinet du bout est celui qui décide : c'est là que la pression se mesure.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Regardez le sprinkler de gauche, au repos. Sous le tuyau d'eau, la tête est fermée par une ampoule de verre rouge, tenue entre deux bras : c'est elle qui retient l'eau. À droite, la même tête quand il fait chaud. Suivez l'animation : la chaleur monte, le liquide de l'ampoule se dilate, l'ampoule gonfle puis éclate. L'eau sort alors du tuyau et frappe le déflecteur, la petite plaque du bas, qui l'étale en gerbe vers le sol. La tête n'a besoin ni d'électricité ni de commande : c'est la chaleur elle-même qui la déclenche.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La tête de sprinkler : l'ampoule qui éclate</h2>
+    <p>Une tête de sprinkler est fixée sous un <strong>tuyau d'eau sous pression</strong>. Au repos, une <strong>ampoule de verre</strong> bouche la sortie et retient l'eau.</p>
+    <p>À la chaleur, le liquide contenu dans l'ampoule se dilate jusqu'à briser le verre : <strong>l'eau sort</strong> et frappe le <strong>déflecteur</strong>, qui l'étale en gerbe vers le sol. La tête se déclenche <strong>seule</strong>, par la chaleur : ni détecteur, ni commande à distance.</p>
+    <p>L'article <strong>MS 25</strong> précise que le système du type sprinkleur doit être conforme aux normes françaises homologuées.</p>
+    <figure>
+      <img src="svg/tete-sprinkler.svg" alt="Deux têtes de sprinkler sous un tuyau d'eau sous pression. À gauche, la tête au repos : une ampoule de verre rouge entre deux bras bouche la sortie et retient l'eau, le déflecteur est dessiné dessous. À droite, la même tête à la chaleur : l'ampoule a éclaté, des éclats sont tombés, l'eau sort et frappe le déflecteur qui l'étale en gerbe. L'animation montre la chaleur qui monte, l'ampoule qui gonfle puis éclate, et l'eau qui jaillit.">
+      <figcaption>À gauche, l'ampoule retient l'eau. À droite, elle a cédé à la chaleur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Cinq têtes sont alignées au plafond, mais regardez laquelle s'ouvre. Un foyer démarre sur le sol, au milieu. La flamme grandit, la chaleur monte en colonne, et seule la tête du milieu, juste au-dessus, est assez chauffée : son ampoule éclate et l'eau tombe sur la flamme, qui se réduit. Les quatre autres têtes restent fermées, ampoule intacte. Chaque tête réagit à sa propre chaleur : dans un feu plus grand, plusieurs s'ouvrent, mais toujours celles qui sont chauffées. L'eau arrose donc là où il y a du feu, et pas ailleurs.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Seule la tête au-dessus du foyer s'ouvre</h2>
+    <p>Chaque tête réagit à <strong>sa propre chaleur</strong>. Quand un foyer démarre, l'air chaud monte : la tête située juste au-dessus s'ouvre, et l'eau tombe sur le foyer.</p>
+    <p>Les têtes voisines, moins chauffées, <strong>restent fermées</strong>. Dans un feu plus étendu, plusieurs s'ouvrent, mais <strong>toujours celles que la chaleur atteint</strong> : le sprinkler n'arrose pas tout le local d'un coup.</p>
+    <figure>
+      <img src="svg/seul-le-foyer.svg" alt="Un tuyau au plafond porte cinq têtes de sprinkler alignées. Sous la tête du milieu, un foyer brûle sur le sol et une colonne d'air chaud monte vers elle. Seule cette tête est ouverte : l'eau tombe en gerbe sur le foyer dont la flamme est réduite. Les quatre autres têtes restent fermées, ampoule intacte. L'animation montre le foyer qui grandit, l'ampoule qui éclate, puis l'eau qui maîtrise la flamme.">
+      <figcaption>Une tête ouverte sur cinq : celle qui est au-dessus du feu.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Pour que la tête laisse sortir de l'eau, il faut toute une chaîne. Suivez les flèches. D'abord la source d'eau : réseau public, réservoir ou source inépuisable. Ensuite la pompe ou le surpresseur, qui fournit pression et débit ; à chaque source, un dispositif installé à demeure mesure ce débit et cette pression, c'est l'article MS 29. Puis le poste de contrôle, avec sa vanne d'arrêt et son alarme, et enfin la tuyauterie jusqu'aux têtes. En bas, deux façons de remplir le réseau : en eau, l'eau sort dès l'ouverture d'une tête ; sec, rempli d'air, elle arrive un peu après.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">La source d'eau et le poste de contrôle</h2>
+    <p>La chaîne du sprinkler, de l'amont vers les têtes :</p>
+    <ol>
+      <li><strong>la source d'eau</strong> : réseau d'eau public, réservoir ou source inépuisable, avec des <strong>pompes ou surpresseurs</strong> qui répondent aux exigences de la norme NF EN 12845 (article <strong>MS 28</strong>) ;</li>
+      <li><strong>la mesure</strong> : à chaque source, un dispositif installé à demeure permet de mesurer le <strong>débit et la pression</strong> (article <strong>MS 29</strong>) ;</li>
+      <li><strong>le poste de contrôle</strong> : vanne d'arrêt et alarme du réseau ;</li>
+      <li><strong>la tuyauterie</strong> jusqu'aux têtes.</li>
+    </ol>
+    <p>Le réseau peut être <strong>en eau</strong> (tuyaux pleins, l'eau sort dès l'ouverture d'une tête) ou <strong>sec</strong> (tuyaux remplis d'air sous pression, l'eau arrive après l'ouverture — utile là où l'eau pourrait geler).</p>
+    <figure>
+      <img src="svg/source-et-poste.svg" alt="Une chaîne de quatre blocs reliés par des flèches : la source d'eau (réseau public, réservoir ou source inépuisable), la pompe ou le surpresseur avec la mesure du débit et de la pression en aval, le poste de contrôle avec sa vanne d'arrêt et son alarme, puis la tuyauterie qui mène aux têtes. Dessous, deux cartes : le réseau en eau, tuyaux pleins d'eau, et le réseau sec, tuyaux remplis d'air sous pression, utile là où l'eau pourrait geler.">
+      <figcaption>Une chaîne de quatre maillons : si l'un manque, la tête ouverte ne sert à rien.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Pourquoi ce sujet arrive-t-il chez un technicien d'études en chauffage, ventilation et climatisation, ce que l'on appelle le CVC ? Parce que, derrière la tête et le robinet, il y a un réseau d'eau sous pression. Il faut le dimensionner : débit, pression, pertes de charge, comme pour un réseau d'eau sanitaire. Il faut aussi coordonner la source d'eau, le local des pompes, le passage des tuyaux. Et regardez l'encadré rouge en pointillé : un réseau sous pression pose la question de la directive sur les équipements sous pression, la DESP. Le système sprinkleur lui-même est réalisé par une entreprise spécialisée et qualifiée.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Pourquoi c'est un lot du bureau d'études CVC</h2>
+    <ul>
+      <li><strong>Dimensionner l'hydraulique</strong> : débit, pression, pertes de charge dans le réseau — la même démarche que pour un réseau d'eau sanitaire.</li>
+      <li><strong>Coordonner les interfaces</strong> : source d'eau, local des pompes, passage des tuyaux avec le gros œuvre, l'électricité et la sécurité incendie.</li>
+      <li><strong>Poser la question de la DESP</strong> : c'est un réseau d'eau sous pression. Pour savoir si la directive s'applique, on lit son champ d'application et les grandeurs qu'elle utilise — la pression maximale admissible <strong>PS</strong>, le diamètre <strong>DN</strong>, le fluide. La station <a href="../desp-la-directive/">La directive</a> donne la marche.</li>
+    </ul>
+    <p>Le <strong>système sprinkleur lui-même</strong> doit être réalisé par des <strong>entreprises spécialisées et dûment qualifiées</strong> (article <strong>MS 25</strong>) : le bureau d'études prépare le réseau, il ne se substitue pas à elles.</p>
+    <figure>
+      <img src="svg/lot-cvc.svg" alt="À gauche, le bureau d'études CVC et plomberie. Trois traits le relient à trois missions : dimensionner l'hydraulique, coordonner les interfaces, et, en pointillé rouge, se demander si la directive sur les équipements sous pression s'applique à ce réseau d'eau sous pression, en regardant PS, DN et le fluide. Une bande rappelle que le système sprinkleur est réalisé par une entreprise spécialisée et dûment qualifiée.">
+      <figcaption>Trois missions pour le bureau d'études — dont un pont vers la DESP.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Ces équipements ne sont pas partout. Dans un établissement recevant du public, un système sprinkleur peut être exigé, dans tout ou partie de l'établissement. Dans un lieu de travail, le Code du travail équipe l'établissement de robinets ou d'extinction automatique seulement si c'est nécessaire. Ensuite, il faut vérifier : avant la mise en service, puis en exploitation au moins une fois par an, et pour un sprinkleur tous les trois ans par une personne ou un organisme agréé. Les rapports sont classés au registre de sécurité. Retenez : c'est le texte qui dit quand c'est exigé, et on le lit, on ne le devine pas.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Quand c'est exigé, et comment c'est entretenu — bilan</h2>
+    <ul>
+      <li><strong>ERP</strong> : un système sprinkleur <em>peut être exigé</em> dans tout ou partie de l'établissement (MS 25).</li>
+      <li><strong>Lieu de travail</strong> : <em>si nécessaire</em>, l'établissement est équipé de RIA, de colonnes, d'extinction automatique ou de détection (Code du travail, R. 4227-30).</li>
+      <li><strong>Vérifications (MS 73)</strong> : avant la mise en service, puis en exploitation <strong>au moins une fois par an</strong> ; un sprinkleur est vérifié <strong>tous les trois ans</strong> par une personne ou un organisme agréé.</li>
+      <li><strong>Suivi</strong> : appareils entretenus et maintenus en bon état, personnel formé (MS 72) ; rapports et attestations classés au <strong>registre de sécurité</strong> (MS 75).</li>
+    </ul>
+    <p class="formule">Le réflexe : lire le texte pour savoir si c'est exigé, jamais le supposer.</p>
+    <figure>
+      <img src="svg/exige-et-entretenu.svg" alt="Deux cartes : dans un ERP, un système sprinkleur peut être exigé dans tout ou partie de l'établissement ; dans un lieu de travail, l'établissement est équipé si nécessaire de RIA ou d'extinction automatique. Dessous, une ligne de temps à trois jalons : vérification avant la mise en service, au moins une fois par an en exploitation, et tous les trois ans par une personne ou un organisme agréé pour un sprinkleur. Une bande rappelle le registre de sécurité.">
+      <figcaption>Exigé seulement si le texte le dit, puis vérifié et tracé.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Au robinet d'incendie armé le plus défavorisé, celui où l'eau arrive avec le moins de pression, le règlement des établissements recevant du public fixe une pression minimale de fonctionnement. Que demande-t-il ? Reprenez le schéma de l'écran trois avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Que fixe le règlement ERP au robinet le plus défavorisé ?</h2>
+    <figure class="vignette">
+      <img src="svg/eau-du-ria.svg" alt="Vignette de rappel : la canalisation d'eau, le robinet le plus défavorisé en bout de réseau et le manomètre avec son repère de pression minimale.">
+      <figcaption>Rappel de l'écran 3 — le manomètre est près du robinet du bout.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La pression du réseau public du quartier, sans mesure sur place</button>
+      <button type="button" data-answer="c">Une pression laissée au choix de l'exploitant, selon le tuyau posé</button>
+      <button type="button" data-answer="bonne">2,5 bars au moins, contrôlés au manomètre</button>
+      <button type="button" data-answer="d">Aucune pression : seul le débit de la lance est réglementé</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'article MS 17 fixe une pression minimale de fonctionnement de 2,5 bars au robinet le plus défavorisé, avec un manomètre à trois voies près de ce robinet pour la contrôler. Tenir cette valeur au bout du réseau est un calcul hydraulique."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Dans un local équipé de sprinkleurs, un incendie démarre sous une seule tête. Que se passe-t-il ? Souvenez-vous de la scène de l'écran cinq, avec les cinq têtes alignées.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un foyer démarre sous une seule tête. Que se passe-t-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/seul-le-foyer.svg" alt="Vignette de rappel : cinq têtes alignées au plafond, un foyer sous celle du milieu, dont seule la tête s'ouvre.">
+      <figcaption>Rappel de l'écran 5 — cinq têtes, une seule ouverte.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Seules les têtes assez chauffées s'ouvrent et arrosent le foyer</button>
+      <button type="button" data-answer="b">Toutes les têtes du local s'ouvrent ensemble, par précaution</button>
+      <button type="button" data-answer="c">Le poste de contrôle ouvre les têtes une à une jusqu'à l'extinction</button>
+      <button type="button" data-answer="d">Les têtes s'ouvrent dès que de la fumée arrive sur elles</button>
+    </div>
+    <p class="feedback" hidden data-explication="Chaque tête est déclenchée par sa propre chaleur, par l'éclatement de son ampoule. Ni la fumée ni une commande centrale ne l'ouvrent : seules les têtes que la chaleur atteint s'ouvrent."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Pourquoi un système sprinkleur ou un réseau de robinets d'incendie armés concerne-t-il le bureau d'études CVC ? Reprenez les trois missions de l'écran sept.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Pourquoi ce sujet concerne-t-il le bureau d'études CVC ?</h2>
+    <figure class="vignette">
+      <img src="svg/lot-cvc.svg" alt="Vignette de rappel : le bureau d'études CVC et ses trois missions, dimensionner l'hydraulique, coordonner les interfaces et poser la question de la DESP.">
+      <figcaption>Rappel de l'écran 7 — trois missions, dont un pont vers la DESP.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Parce que les têtes chauffent l'air du local comme un émetteur</button>
+      <button type="button" data-answer="b">Parce que c'est lui qui choisit les détecteurs du système de sécurité incendie</button>
+      <button type="button" data-answer="c">Parce qu'il pose lui-même les têtes, sans qualification particulière</button>
+      <button type="button" data-answer="bonne">Un réseau d'eau sous pression à dimensionner, avec la question de la DESP</button>
+    </div>
+    <p class="feedback" hidden data-explication="Derrière la tête et le robinet, il y a un réseau d'eau sous pression : débit, pression, pertes de charge, interfaces, et la question de la directive sur les équipements sous pression. Le système sprinkleur lui-même est réalisé par une entreprise spécialisée et dûment qualifiée (MS 25)."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un système sprinkleur est en service dans un établissement recevant du public. Quelle vérification le règlement demande-t-il en plus du suivi annuel ? Reprenez la ligne de temps de l'écran huit.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">En plus du suivi annuel, quelle vérification pour un sprinkleur ?</h2>
+    <figure class="vignette">
+      <img src="svg/exige-et-entretenu.svg" alt="Vignette de rappel : la ligne de temps des vérifications, avant la mise en service, chaque année, et tous les trois ans pour un sprinkleur.">
+      <figcaption>Rappel de l'écran 8 — les jalons de vérification.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Aucune : le sprinkleur se surveille tout seul une fois posé</button>
+      <button type="button" data-answer="bonne">Tous les trois ans, par une personne ou un organisme agréé</button>
+      <button type="button" data-answer="c">Une seule, avant la mise en service, puis plus rien</button>
+      <button type="button" data-answer="d">Uniquement après un déclenchement, par l'exploitant seul</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'article MS 73 prévoit une vérification avant la mise en service, puis au moins une fois par an en exploitation ; les systèmes d'extinction automatique du type sprinkleur sont en plus vérifiés tous les trois ans par une personne ou un organisme agréé."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../desp-la-directive/"><strong>La directive (DESP)</strong></a> (autre sous-ligne : La DESP)
+      — le pont de cette station : un réseau d'eau sous pression, où lire PS, DN et le fluide pour savoir si la directive s'applique.</li>
+    <li><a href="../desp-en-service/"><strong>En service (DESP)</strong></a> (autre sous-ligne : La DESP)
+      — le suivi d'un équipement sous pression dans le temps, comme les vérifications du sprinkleur.</li>
+    <li><a href="../incendie-classer-le-bati/"><strong>Classer le bâti</strong></a> (même sous-ligne)
+      — la première étape : le classement du bâtiment oriente ce qu'il faut lire, et ce qui peut être exigé.</li>
+    <li><a href="../incendie-ssi/"><strong>Le SSI</strong></a> (même sous-ligne)
+      — l'autre volet de la sécurité incendie : détecter et alerter, quand le sprinkler éteint.</li>
+    <li><a href="https://inerweb.fr/hydrometro/" target="_blank" rel="noopener"><strong>HydroMétro</strong></a> (réseau voisin, l'eau)
+      — les circuits d'eau côté technique : le même vocabulaire de débit et de pression.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+     Les 12 narrations n'ont pas encore leur MP3 : voix du navigateur en filet.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

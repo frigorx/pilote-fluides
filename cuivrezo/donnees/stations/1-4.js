@@ -11,7 +11,7 @@ CUIVREZO.stations.push({
     titre: 'Un coude à 90°, 300 mm à l’axe',
     texte: 'Le coude est d’équerre, la branche mesure 300 mm jusqu’à l’axe de l’autre branche, et le tube n’est ni écrasé ni vrillé.',
     criteres: ['Angle de 90°, contrôlé à l’équerre', 'Cote de 300 mm à l’axe, à ± 3 mm', 'Tube ni écrasé ni marqué', 'Ligne de contrôle droite : pas de vrille'],
-    figure: { svg: 'coude', etat: 'equerre', legende: 'Un coude d’équerre, sans écrasement.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'coude90', angle: '90', cote: '300' }, legende: 'Le coude à 90°, 300 mm à l’axe. Tournez-le du doigt.' },
     narration: 'Le cintrage remplace un raccord par un coude fait dans le tube lui-même. Moins de raccords, c’est moins de brasures, moins de fuites et moins de pertes de charge. Mais un coude se rate de trois façons : trop long, écrasé, ou vrillé. Cette station vous apprend à les éviter toutes les trois. Et vous allez découvrir vous-même le chiffre qui rend un coude juste : le rayon de votre cintrette.'
   },
   materiel: {
@@ -39,7 +39,7 @@ CUIVREZO.stations.push({
     { titre: 'Trouver le rayon de votre cintrette', texte: 'Sur une chute : tracez à 300 mm, posez ce trait sur le 0, cintrez à 90°. Mesurez la branche à l’axe, contre la butée.',
       pointCle: 'Rc = ce que vous mesurez − 300.',
       pourquoi: 'Le coude ne commence pas au trait : il s’enroule autour de la forme. La branche finie est donc plus longue de la valeur du rayon.',
-      figure: { svg: 'coude', etat: 'rc' }, clip: 'clips/1-4/03-essai.mp4',
+      figure: { composant: 'cuivre-3d', attributs: { piece: 'coude90', angle: '90', cote: '300' }, legende: 'Le rayon Rc : du centre du coude à l’axe du tube.' }, clip: 'clips/1-4/03-essai.mp4',
       narration: 'Voici l’expérience qui rend tout le reste juste. Sur une chute, tracez un trait à trois cents millimètres, posez-le sur le repère zéro, et cintrez à quatre-vingt-dix degrés. Puis plaquez la branche contre la butée et mesurez jusqu’à l’axe de l’autre branche. Vous ne trouvez pas trois cents : vous trouvez davantage. La différence, c’est le rayon de votre cintrette, le chiffre qu’on appelle R c. Notez-le : c’est lui qui corrigera tous vos traçages.' },
     { titre: 'Tracer le début du cintrage', texte: 'Sur la pièce, depuis le bout de référence, tracez à 300 − Rc.',
       pointCle: 'Cette soustraction ne vaut que pour un coude à 90°.',
@@ -88,10 +88,9 @@ CUIVREZO.stations.push({
       narration: 'Dernier piège : un angle un peu ouvert. On s’est arrêté au repère, mais le cuivre s’est détendu. C’est l’équerre qui décide, pas le repère.' }
   ],
   controles: [
-    { question: 'La branche mesure-t-elle 300 mm à l’axe (± 3) ?', comment: 'Plaquez la branche contre la butée, mesurez jusqu’au bord de l’autre branche, retirez la moitié du diamètre du tube. Trois mesures.',
+    { question: 'La branche mesure-t-elle 300 mm à l’axe (± 3) ?', comment: 'Plaquez la branche contre la butée, mesurez jusqu’au bord de l’autre branche, retirez la moitié du diamètre du tube (par exemple 7,9 mm pour un tube 5/8″). Trois mesures.',
       siNon: 'Trop long : Rc non retiré. Trop court : trait mal posé sur le 0.', geste: 3,
-      aValider: 'Retrait de la moitié du diamètre : écrit pour le multicouche Ø16 (8 mm) ; pour le cuivre, D/2 du tube utilisé',
-      figure: { svg: 'coude', etat: 'rc' }, narration: 'Premier contrôle : la cote à l’axe, contre la butée, trois fois.' },
+      figure: { svg: 'coude', etat: 'rc' }, narration: 'Premier contrôle : la cote à l’axe, contre la butée, trois fois. On mesure jusqu’au bord de l’autre branche, et l’on retire la moitié du diamètre du tube.' },
     { question: 'Le coude est-il à 90° ?', comment: 'Posez l’équerre : les deux branches la touchent.', siNon: 'Reprenez un tout petit peu à la cintrette, sans forcer.', geste: 6,
       figure: { svg: 'coude', etat: 'equerre' }, narration: 'Deuxième contrôle : l’équerre touche les deux branches.' },
     { question: 'Le tube est-il resté rond dans le coude ?', comment: 'Une chute de tube passe encore dans le coude.', siNon: 'Coude écrasé : pièce à refaire, plus lentement.', geste: 5,

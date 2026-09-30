@@ -1,0 +1,48 @@
+{
+  "slug": "incendie-ssi",
+  "branche": "Incendie",
+  "titre": "Mission : Qui commande la CTA quand l'alarme sonne ?",
+  "client": "Le maître d'ouvrage d'un bâtiment de bureaux accueillant du public, qui confie le lot CVC à votre entreprise et découvre en réunion de chantier que « le système incendie » pilotera aussi vos centrales de traitement d'air.",
+  "situation": "Le lot sécurité incendie et le lot CVC sont attribués à deux entreprises différentes. Le maître d'ouvrage vous demande, avant la prochaine réunion, ce que votre lot doit prévoir pour que le système de sécurité incendie puisse mettre à l'arrêt une ventilation, fermer des clapets et ouvrir des volets de désenfumage. Personne n'a encore écrit qui fournit les commandes, qui câble, et quelles informations le CVC renvoie au centralisateur. Votre responsable vous demande de préparer la liste des points à faire trancher.",
+  "piece_a_produire": "Une check-list d'une page pour la réunion de chantier : en colonne de gauche, ce que le règlement impose (à citer avec l'article), en colonne de droite, ce que le cahier des charges doit fixer entre le lot CVC et le lot sécurité incendie (qui fournit, qui câble, quelles commandes, quels contacts de position, quelles ventilations s'arrêtent). Sous la liste, une phrase pour le maître d'ouvrage qui explique pourquoi le découpage en zones et le scénario doivent être validés avant la pose.",
+  "questions": [
+    {
+      "q": "Quelles sont les trois étapes du système de sécurité incendie, et à laquelle se rattache l'arrêt d'une ventilation ?",
+      "ecran": 1,
+      "reponse": "Recueillir les informations ou ordres, les traiter, puis effectuer les fonctions de mise en sécurité. L'arrêt d'une ventilation se rattache à la fonction « mise à l'arrêt de certaines installations techniques » (MS 53, § 1)."
+    },
+    {
+      "q": "Comment s'emboîtent zones de détection, zones de mise en sécurité et zones de diffusion d'alarme, et ont-elles forcément les mêmes limites ?",
+      "ecran": 3,
+      "reponse": "Une zone de diffusion d'alarme englobe une ou plusieurs zones de mise en sécurité, et chaque zone de mise en sécurité englobe une ou plusieurs zones de détection (MS 55, § 1). Elles n'ont pas nécessairement les mêmes limites géographiques (MS 54)."
+    },
+    {
+      "q": "Pour un SSI de catégorie D ou E, quels sont les seuls dispositifs actionnés de sécurité que l'alarme peut télécommander ?",
+      "ecran": 5,
+      "reponse": "Les portes résistant au feu à fermeture automatique et le déverrouillage des portes d'issue de secours (MS 60, § 3)."
+    },
+    {
+      "q": "Quelles exigences le règlement pose-t-il sur les clapets télécommandés et sur les mécanismes de commande des DAS ?",
+      "ecran": 7,
+      "reponse": "Les clapets télécommandés et les portes coupe-feu doivent être admis à la marque NF, et les mécanismes de commande des DAS doivent avoir un procès-verbal en cours de validité délivré par un laboratoire agréé (MS 60, § 4)."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Dans chacune de ces quatre phrases entendues en réunion de chantier, trouvez l'erreur et corrigez-la en une phrase.",
+    "items": [
+      "« Le désenfumage des cages d'escalier se commande automatiquement par la détection. »",
+      "« Un SSI de catégorie E peut télécommander des clapets coupe-feu et arrêter les ventilations. »",
+      "« Pour une détection neuve, des essais fonctionnels suffisent toujours, sans foyer type. »",
+      "« Le contrat d'entretien n'est obligatoire pour aucune catégorie. »"
+    ],
+    "corrige": "1. Faux : pour les cages d'escalier, la commande du désenfumage est uniquement manuelle (MS 60, § 1, écran 4). 2. Faux : pour les catégories D et E, les seuls DAS télécommandés sont les portes coupe-feu à fermeture automatique et le déverrouillage des issues (MS 60, § 3, écran 5). 3. Faux : la première vérification d'une installation neuve ou modifiée se fait par la combustion d'un foyer type ; les essais fonctionnels valent dans les autres cas (MS 56, § 3, écrans 2 et 8). 4. Faux : le contrat d'entretien est toujours obligatoire pour les catégories A et B (MS 68, écrans 5 et 8)."
+  },
+  "badge": "Chef d'orchestre",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP7", "CP10"],
+    "attestation_2025": [],
+    "justification": "Le système de sécurité incendie commande l'arrêt des ventilations, la fermeture des clapets et l'ouverture des volets de désenfumage : l'étude d'une installation de ventilation tertiaire (CP7) et d'une centrale de traitement d'air (CP10) doit prévoir ces asservissements."
+  }
+}

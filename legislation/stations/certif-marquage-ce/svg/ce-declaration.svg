@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-labelledby="t-cedecl" aria-describedby="d-cedecl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cedecl">Le marquage CE : une déclaration du fabricant</title>
+  <desc id="d-cedecl">À gauche, une usine schématique : le fabricant, ou son mandataire. Une flèche mène à un
+    produit sur lequel une plaque porte les lettres CE. Sous eux, un encadré résume ce que le fabricant déclare :
+    son produit respecte les exigences applicables des textes européens qui le concernent, et il en assume la
+    responsabilité. À droite, trois cartes : le CE n'est pas un label de qualité, il n'est pas un certificat délivré
+    par un tiers, et c'est le seul marquage qui atteste cette conformité européenne. Une note rappelle qu'un signe
+    qui prêterait à confusion avec le CE est interdit.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .nm  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .tx  { font-size:18px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .ce  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:28px; fill:#3730a3; }
+    .no  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#9b2c20; }
+    .ok  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1e7e54; }
+  </style>
+
+  <text class="ttl" x="450" y="32" text-anchor="middle">Le CE : le fabricant déclare, personne ne le lui délivre</text>
+
+  <!-- Le fabricant : usine schématique -->
+  <g>
+    <rect x="52" y="110" width="140" height="70" rx="4" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <polygon points="52,110 52,86 92,110 92,86 132,110 132,86 172,110" fill="#eef3f9" stroke="#1b3a63" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="164" y="70" width="18" height="40" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="72" y="136" width="28" height="44" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+    <rect x="116" y="130" width="60" height="24" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+    <text class="nm" x="122" y="214" text-anchor="middle">Le fabricant</text>
+    <text class="sm" x="122" y="236" text-anchor="middle">ou son mandataire</text>
+  </g>
+
+  <!-- Flèche -->
+  <path d="M 214 145 H 300" stroke="#5a6b7d" stroke-width="4" fill="none"/>
+  <polygon points="300,135 320,145 300,155" fill="#5a6b7d"/>
+
+  <!-- Le produit -->
+  <g>
+    <rect x="340" y="94" width="176" height="104" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="392" cy="136" r="26" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+    <path d="M 392 136 L 392 112 M 392 136 L 413 148 M 392 136 L 371 148" stroke="#5a6b7d" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 440 112 H 500 M 440 126 H 500 M 440 140 H 500" stroke="#c9d3df" stroke-width="3" stroke-linecap="round"/>
+    <rect x="432" y="152" width="74" height="36" rx="6" fill="#ffffff" stroke="#3730a3" stroke-width="2"/>
+    <text class="ce" x="469" y="180" text-anchor="middle">CE</text>
+    <text class="nm" x="428" y="222" text-anchor="middle">Le produit</text>
+    <text class="sm" x="428" y="244" text-anchor="middle">il porte le marquage</text>
+  </g>
+
+  <!-- Ce que dit le fabricant -->
+  <g>
+    <rect x="40" y="272" width="480" height="122" rx="14" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+    <text class="tx" x="280" y="306" text-anchor="middle" font-style="italic">« Mon produit respecte les exigences applicables</text>
+    <text class="tx" x="280" y="332" text-anchor="middle" font-style="italic">des textes européens qui le concernent —</text>
+    <text class="tx" x="280" y="358" text-anchor="middle" font-style="italic">et j'en assume la responsabilité. »</text>
+    <text class="sm" x="280" y="382" text-anchor="middle">Voilà tout ce que dit le CE.</text>
+  </g>
+
+  <!-- Ce que ce n'est pas / ce que c'est -->
+  <g>
+    <rect x="560" y="64" width="320" height="76" rx="12" fill="#fbe9e7" stroke="#c0392b" stroke-width="2"/>
+    <circle cx="590" cy="102" r="14" fill="none" stroke="#c0392b" stroke-width="3"/>
+    <path d="M 583 95 L 597 109 M 597 95 L 583 109" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+    <text class="no" x="616" y="96">Pas un label de qualité</text>
+    <text class="sm" x="616" y="120">il ne dit pas « meilleur »</text>
+
+    <rect x="560" y="154" width="320" height="76" rx="12" fill="#fbe9e7" stroke="#c0392b" stroke-width="2"/>
+    <circle cx="590" cy="192" r="14" fill="none" stroke="#c0392b" stroke-width="3"/>
+    <path d="M 583 185 L 597 199 M 597 185 L 583 199" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+    <text class="no" x="616" y="186">Pas un certificat délivré</text>
+    <text class="sm" x="616" y="210">le fabricant l'appose lui-même</text>
+
+    <rect x="560" y="244" width="320" height="76" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <circle cx="590" cy="282" r="14" fill="none" stroke="#1e7e54" stroke-width="3"/>
+    <path d="M 582 282 L 588 288 L 599 276" stroke="#1e7e54" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="ok" x="616" y="276">Le seul marquage qui atteste</text>
+    <text class="sm" x="616" y="300">cette conformité européenne</text>
+  </g>
+
+  <text class="sm" x="720" y="358" text-anchor="middle" font-style="italic">Un signe qui prêterait à confusion</text>
+  <text class="sm" x="720" y="380" text-anchor="middle" font-style="italic">avec le CE est interdit.</text>
+</svg>

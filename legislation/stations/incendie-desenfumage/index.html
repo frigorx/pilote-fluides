@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le désenfumage — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi les fumées tuent avant les flammes, désenfumage naturel ou mécanique, balayage, ce qui revient au lot CVC, l'ordre de démarrage du ventilateur, l'arrêt de la CTA, et le cas des bureaux.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/incendie-desenfumage/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Incendie.
+     « Le désenfumage — le rôle du CVC ». Niveau BTS / technicien d'études.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les narrations (data-narration) sont neuves : aucun MP3 n'est encore
+     fabriqué pour cette station, elle parle donc avec la voix du navigateur
+     jusqu'à la fabrication (chaîne edge-tts, feu vert du 24/08).
+
+     SOURCES : voir FOND.md (Légifrance, INRS). Aucune valeur n'entre ici
+     sans avoir été lue à la source ; ce qui n'a pas pu l'être est listé
+     sous « À sourcer » dans FOND.md.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Incendie · niveau BTS</p>
+  <h1>Le désenfumage — le rôle du CVC</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-incendie.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez pourquoi on désenfume, distinguer <strong>balayage</strong> et <strong>hiérarchie des pressions</strong>, choisir entre naturel et mécanique, dire ce qui revient au lot chauffage, ventilation, climatisation (CVC), expliquer l'ordre de démarrage du ventilateur et l'arrêt de la CTA, et situer le cas des <strong>bureaux</strong>.</p>
+    <p style="margin-top:10px"><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — <strong>CP7</strong> (étude d'une installation de ventilation d'un bâtiment tertiaire) et <strong>CP10</strong> (étude d'une centrale de traitement d'air). Hors périmètre de l'attestation d'aptitude fluides 2025 : aucun code fluide.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la coupe de ce couloir. Un feu démarre à gauche, mais ce qui tue d'abord, ce sont les fumées et les gaz, pas les flammes. Chaudes, les fumées montent, s'accumulent sous le plafond, puis la couche s'épaissit et descend vers la hauteur des visages. La barre orange à droite montre la hauteur libre, celle qui reste praticable pour évacuer : elle rétrécit. Le désenfumage a un but précis : extraire, dès le début de l'incendie, une partie de ces fumées, pour garder ce passage praticable. Il n'éteint rien. Il gagne du temps pour sortir.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Les fumées tuent avant les flammes</h2>
+    <p>La première cause de décès dans un incendie, ce sont <strong>les fumées et les gaz</strong> (INRS, ED 6061). Cinq dangers : la <strong>température</strong> des gaz inhalés, l'<strong>opacité</strong> qui empêche de trouver la sortie, la baisse de l'<strong>oxygène</strong>, la <strong>toxicité</strong> (monoxyde de carbone, cyanure d'hydrogène) et l'<strong>irritation</strong> qui rend incapable de fuir.</p>
+    <p>Les fumées chaudes montent par convection et s'accumulent en partie haute : c'est la <strong>stratification</strong>. La couche s'épaissit, se refroidit, se mélange à l'air neuf, et redescend.</p>
+    <p>Objet du désenfumage (article DF 1 du règlement de sécurité des ERP) : <strong>extraire, en début d'incendie, une partie des fumées et des gaz de combustion</strong> afin de maintenir praticables les cheminements d'évacuation. Il peut aussi limiter la propagation de l'incendie et faciliter l'intervention des secours. Il ne cherche pas à éteindre : il gagne du <strong>temps praticable</strong>.</p>
+    <figure>
+      <img src="svg/fumees-avant-flammes.svg" alt="Coupe d'un couloir. Un foyer brûle à gauche, près du sol. Une couche de fumée grise s'accumule sous le plafond et descend peu à peu ; une personne se tient debout, la tête sous la couche. Une barre orange marque la hauteur libre, celle qui reste praticable. Au bout du couloir, une porte de sortie. En animation, la couche s'épaissit et la hauteur libre rétrécit.">
+      <figcaption>La barre orange est ce qu'il faut préserver : la hauteur libre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Il existe deux grands principes, et le schéma les met côte à côte. À gauche, le balayage : de l'air neuf entre en bas, les fumées sortent en haut, et l'on profite de leur montée naturelle. À droite, la hiérarchie des pressions : un ventilateur souffle dans l'escalier, qui passe en surpression, signe plus, tandis que le local sinistré reste en dépression relative, signe moins. Résultat : quand la porte s'ouvre, l'air va de l'escalier vers le local, pas l'inverse. Les deux méthodes peuvent se combiner. Les règles d'exécution viennent de l'instruction technique 246, annexée à l'arrêté du vingt-deux mars deux mille quatre sur le désenfumage.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Deux principes : balayer ou mettre en pression</h2>
+    <p>L'article DF 3 du règlement de sécurité des ERP admet, en naturel comme en mécanique :</p>
+    <ul>
+      <li>le <strong>balayage</strong> : de l'air neuf en bas, une évacuation des fumées en haut. Il s'appuie sur le mouvement ascendant des fumées ;</li>
+      <li>la <strong>différence de pressions</strong> (INRS : « hiérarchie des pressions », ou « mise à l'abri des fumées ») : le volume à protéger est en <strong>surpression</strong>, le volume sinistré en <strong>dépression relative</strong> ;</li>
+      <li>la <strong>combinaison</strong> des deux.</li>
+    </ul>
+    <p>Pour un escalier mis en surpression, l'instruction technique 246 (IT 246, § 5.2) borne la surpression entre <strong>20 et 80 Pa</strong>, toutes portes de l'escalier fermées, et la met en route <strong>en même temps</strong> que le désenfumage du volume voisin.</p>
+    <p><strong>Quel texte ?</strong> L'IT 246 est annexée à l'arrêté du 22 mars 2004 portant approbation de dispositions complétant et modifiant le règlement de sécurité contre les risques d'incendie et de panique dans les ERP (dispositions relatives au désenfumage), modifié par l'arrêté du 22 novembre 2004 ; il reste en vigueur. <strong>Ne le confondez pas</strong> avec l'arrêté du 22 mars 2004 relatif à la résistance au feu des produits, éléments de construction et d'ouvrages : celui-là est abrogé depuis le 27 mars 2026 (station « Euroclasses »).</p>
+    <p>Dans les deux cas, c'est de l'aéraulique : des débits, des pressions, des vitesses de passage. C'est là que le CVC est attendu.</p>
+    <figure>
+      <img src="svg/deux-principes.svg" alt="Deux schémas côte à côte. À gauche, le balayage : une pièce avec une couche de fumée sous le plafond, de l'air neuf qui entre en bas à gauche, une sortie des fumées en haut à droite, une ligne en tirets entre les deux. À droite, la hiérarchie des pressions : un local sinistré rempli de fumée marqué du signe moins, un escalier marqué du signe plus alimenté par un ventilateur, et une flèche qui va de l'escalier vers le local par la porte.">
+      <figcaption>Balayage : haut et bas. Pressions : plus côté escalier, moins côté sinistre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Voici les quatre combinaisons possibles entre l'amenée d'air et l'évacuation des fumées. La plus fréquente, en haut à gauche : tout est naturel, avec des exutoires et des ouvrants. Le mécanique intervient quand le naturel est impossible : sous-sols, locaux aveugles, circulations de faible hauteur. Les deux bandes rouges portent les interdits. Premier interdit : mêler, dans une même zone, une évacuation naturelle et une extraction mécanique, car elles se perturbent. Second interdit : extraire mécaniquement les fumées d'un escalier, car la dépression pourrait attirer les fumées du local sinistré vers lui.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Naturel ou mécanique : quel choix ?</h2>
+    <ul>
+      <li><strong>Naturel / naturel</strong> (amenée d'air et évacuation naturelles, par exutoires en toiture ou ouvrants en façade) : le cas le plus fréquent.</li>
+      <li><strong>Extraction mécanique</strong> : quand le naturel est impossible (sous-sols, étages intermédiaires, locaux aveugles), ou quand la configuration exige un système très efficace (faible hauteur, circulations, parkings). Elle est plus performante et moins sensible au vent et à la température extérieure (INRS).</li>
+      <li><strong>Amenée d'air mécanique + évacuation naturelle</strong> : rare, et seulement avec des exutoires (IT 246, § 3.3).</li>
+    </ul>
+    <p><strong>Deux interdits.</strong> Associer évacuation naturelle et extraction mécanique dans une même zone est à proscrire : les deux systèmes se perturbent. Et pour un <strong>escalier encloisonné</strong>, l'article DF 5 est net : « en aucun cas, les fumées ne sont extraites mécaniquement ». Balayage naturel (IT 246, § 5.1 : un exutoire de 1 m² en haut, une amenée d'air de même surface en bas), ou surpression. La dépression risquerait d'appeler les fumées du local sinistré vers l'escalier.</p>
+    <p>Circulations encloisonnées d'un ERP (article DF 6) : désenfumées de façon obligatoire au-delà de 30 m de longueur, si elles sont desservies par un escalier en surpression, si elles desservent des locaux réservés au sommeil, ou si elles sont en sous-sol.</p>
+    <figure>
+      <img src="svg/naturel-ou-mecanique.svg" alt="Un tableau de quatre cases : en colonnes l'évacuation naturelle ou l'extraction mécanique, en lignes l'amenée d'air naturelle ou mécanique. Air et évacuation naturels : le plus fréquent. Air naturel et extraction mécanique : sous-sols, étages intermédiaires, locaux aveugles. Air mécanique et évacuation naturelle : rare, avec des exutoires seulement. Air et extraction mécaniques : faible hauteur, circulations, parkings, risque élevé. Deux bandes rouges : évacuation naturelle et extraction mécanique ensemble dans une même zone à proscrire ; jamais d'extraction mécanique dans un escalier.">
+      <figcaption>Les deux bandes rouges sont les interdits à connaître par cœur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Ce schéma montre une circulation désenfumée mécaniquement. À gauche, en bas, l'amenée d'air : la flèche bleue en tirets suit le sol. À droite, au plafond, la bouche d'extraction, reliée par un conduit au ventilateur. Pendant l'animation, des bouffées de fumée glissent sous le plafond jusqu'à la bouche, puis montent dans le conduit. C'est cela, le balayage : l'air neuf pousse, le ventilateur tire, et toute la section entre les deux est balayée. La cote en bas rappelle la distance maximale entre amenée et extraction : quinze mètres en ligne droite, dix mètres sinon.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Amenées d'air, évacuations : le balayage</h2>
+    <p>Désenfumage mécanique d'une circulation encloisonnée (IT 246, § 6.2) :</p>
+    <ul>
+      <li>amenées d'air et extractions <strong>alternées</strong>, à au plus <strong>15 m</strong> l'une de l'autre en ligne droite, <strong>10 m</strong> sinon ;</li>
+      <li>bouches d'amenée d'air en <strong>partie basse</strong> (partie haute à 1 m au plus du plancher), bouches d'extraction en <strong>partie haute</strong> (partie basse à 1,80 m au moins du plancher, dans le tiers supérieur) ;</li>
+      <li>toute section comprise entre une extraction et une amenée est balayée par un débit d'au moins <strong>0,5 m³/s par unité de passage</strong>, le débit total extrait dans une circulation étant limité à <strong>8 m³/s</strong>.</li>
+    </ul>
+    <p>Côté vitesses : passage de l'air aux amenées d'air <strong>inférieur à 5 m/s</strong> ; amenées naturelles dimensionnées pour la totalité du débit extrait ; amenées mécaniques à environ <strong>0,6 fois</strong> le débit extrait, si bien que le volume désenfumé reste en dépression (IT 246, § 4.6.1 ; INRS).</p>
+    <p>Piège de conception (INRS) : augmenter le débit n'améliore pas toujours le contrôle des fumées. Un débit trop fort brasse la couche de fumée, ou la « poinçonne » : la bouche aspire alors de l'air frais. Les bouches d'extraction sont généralement dimensionnées pour <strong>8 à 10 m/s</strong>.</p>
+    <figure>
+      <img src="svg/balayage-circulation.svg" alt="Coupe d'une circulation. En bas à gauche, une bouche d'amenée d'air et une flèche bleue en tirets qui court le long du sol. Sous le plafond, une couche de fumée. En haut à droite, une bouche d'extraction rouge, un conduit vertical et un ventilateur. Un foyer au milieu. Une ligne de cote sous le schéma indique 15 m au plus en ligne droite, 10 m sinon. En animation, des bouffées de fumée glissent sous le plafond vers la bouche puis montent dans le conduit.">
+      <figcaption>L'air neuf pousse en bas, le ventilateur tire en haut : la section entre les deux est balayée.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Voici la chaîne du désenfumage mécanique, telle que le bureau d'études la dimensionne. De gauche à droite : la bouche avec son volet, le conduit résistant au feu, le ventilateur d'extraction, puis le rejet à l'extérieur. L'accolade rouge désigne ce qui revient le plus souvent au lot chauffage, ventilation, climatisation. Les trois cartes grises du bas rappellent le reste : commande et coffret de relayage côté système de sécurité incendie, alimentation électrique de sécurité côté électricité, exutoires et écrans de cantonnement pour le désenfumage naturel. La répartition exacte se lit toujours dans le cahier des charges.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Ce qui revient au lot CVC</h2>
+    <p>Le plus souvent au lot CVC, avec ce que l'IT 246 en dit :</p>
+    <ul>
+      <li><strong>Ventilateur d'extraction</strong> (§ 4.7) : il assure sa fonction <strong>une heure avec des fumées à 400 °C</strong>, ou est classé <strong>F400 90</strong>. Installé à l'extérieur du bâtiment, ou dans un local technique séparé par des parois coupe-feu de degré 1 heure (porte ½ heure, ferme-porte). Dimensionné pour le débit nominal augmenté du débit de fuite tolérable, de l'ordre de 20 %.</li>
+      <li><strong>Conduits</strong> (§ 3.4.3 et 4.4) : matériaux de catégorie <strong>M0 ou A2 s2 d0</strong>, stables au feu de degré ¼ h. Conduits d'extraction : résistance au feu évaluée avec un feu <strong>intérieur</strong>, d'une durée égale au degré coupe-feu de la paroi traversée. Étanchéité : débit de fuite total inférieur à <strong>20 %</strong> du débit exigé au niveau le plus défavorisé. Conduits collectifs d'extraction en dépression.</li>
+      <li><strong>Volets sur les bouches</strong> (§ 3.7.1 et 4.6.2) : <strong>fermés en position d'attente</strong> ; pare-flammes pour les amenées d'air, coupe-feu pour les évacuations, d'un degré égal à celui des conduits.</li>
+      <li><strong>Amenées d'air mécaniques</strong> : ventilateur de soufflage, vitesse aux bouches inférieure à 5 m/s.</li>
+      <li><strong>Réception</strong> (INRS) : mesures de vitesse et de débit, et essai de l'ensemble. Le dossier d'un ERP comporte le plan des bouches, le tracé des réseaux aérauliques, les ventilateurs et les commandes (article DF 2).</li>
+    </ul>
+    <p>Ce qui n'est pas du CVC, sauf clause contraire : la commande et le coffret de relayage (système de sécurité incendie), l'alimentation électrique de sécurité, les exutoires. La répartition des lots est fixée par le cahier des charges : <strong>elle se lit, elle ne se suppose pas</strong>.</p>
+    <figure>
+      <img src="svg/lot-cvc-chaine.svg" alt="Une chaîne de quatre éléments reliés par des flèches : la bouche avec son volet, le conduit de désenfumage, le ventilateur d'extraction, le rejet à l'extérieur. Une accolade rouge les désigne comme le plus souvent du lot CVC. En dessous, trois cartes grises : commande, coffret de relayage et centralisateur pour le système de sécurité incendie ; alimentation électrique de sécurité pour le lot électricité ; exutoires et écrans de cantonnement pour le désenfumage naturel.">
+      <figcaption>Quatre maillons pour le CVC ; le reste se lit dans le cahier des charges.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Suivez le repère orange le long de la ligne de temps. Première étape : la détection, ou une commande manuelle, donne l'ordre. Deuxième étape : les volets et les portes se mettent en position. Regardez le battant qui s'ouvre. Troisième étape : une temporisation, trente secondes au plus, l'anneau orange se remplit. Enfin, quatrième étape, le ventilateur démarre. Ce délai n'est pas un retard : il laisse aux volets le temps de s'ouvrir, pour que le ventilateur ne tire pas contre un volet fermé. Et il lui faut, en principe, une alimentation électrique de sécurité.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le ventilateur qui démarre : dans l'ordre</h2>
+    <ol>
+      <li><strong>L'ordre.</strong> Lorsque la réglementation l'impose, le désenfumage d'une zone est commandé <strong>automatiquement par la détection incendie</strong>, doublée par la commande manuelle du centralisateur de mise en sécurité incendie (CMSI) (IT 246, § 3.6.3). Pour les cages d'escalier, la commande est uniquement manuelle (MS 60, § 1 : voir la station « Le SSI »).</li>
+      <li><strong>Les volets et les portes</strong>, ces dispositifs actionnés de sécurité (DAS), se mettent en position.</li>
+      <li><strong>Une temporisation de 30 secondes au plus</strong> : elle laisse aux DAS le temps de fonctionner avant la mise en route des ventilateurs (IT 246, § 4.8). Elle se place entre la mise en position des DAS et le démarrage des ventilateurs : elle ne retarde pas l'ordre donné aux DAS, que le SSI de catégorie A donne sans temporisation (MS 60, § 1 : voir la station « Le SSI »).</li>
+      <li><strong>Le ventilateur démarre.</strong> L'état ouvert ou fermé de son sectionneur est reporté au poste de sécurité ; il est commandé par un coffret de relayage (§ 4.7).</li>
+    </ol>
+    <p>Alimentation : les installations de désenfumage mécanique des ERP sont alimentées, en principe, par une <strong>alimentation électrique de sécurité (AES)</strong> ; l'article DF 3 (§ 3) prévoit des exceptions pour certains établissements.</p>
+    <p><strong>Avec un sprinkler, deux logiques.</strong> Dans un ERP avec un SSI de catégorie A, en présence du public, le désenfumage est commandé <em>avant</em> le déclenchement de l'extinction automatique à eau (DF 3, § 2). Pour les lieux de travail, l'INRS recommande plutôt que le sprinkler se déclenche <em>avant</em> l'ouverture du désenfumage. On lit le texte qui s'applique au bâtiment.</p>
+    <figure>
+      <img src="svg/ventilateur-demarre.svg" alt="Une ligne de temps à quatre étapes : 1, la détection ou la commande manuelle (un détecteur rouge) ; 2, les volets et les portes se mettent en position (un volet dont le battant s'ouvre) ; 3, une temporisation de 30 secondes au plus (une horloge dont l'anneau orange se remplit) ; 4, le ventilateur démarre (une hélice). Un repère orange avance d'une étape à l'autre. En bas, une phrase : les volets sont en position avant que le ventilateur ne pousse.">
+      <figcaption>Le repère orange avance ; le ventilateur, lui, part en dernier.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Au début de l'animation, la centrale de traitement d'air, la CTA, tourne et souffle dans le conduit : ce sont les flèches bleues. Puis l'ordre arrive du système de sécurité incendie, le cadre rouge en haut à gauche. L'hélice ralentit et s'arrête, les flèches disparaissent, et le clapet télécommandé se ferme. Pendant ce temps, à droite, l'extraction des fumées s'établit. La règle : quand le désenfumage démarre, la ventilation mécanique de confort est interrompue dans le volume concerné, sauf la ventilation mécanique contrôlée, et sauf si elle participe au désenfumage. Une CTA qui continuerait à souffler brasserait les fumées.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">La CTA qui s'arrête</h2>
+    <p>Article DF 3, § 5 : en cas de mise en fonctionnement du désenfumage, la <strong>ventilation mécanique</strong>, à l'exception de la ventilation mécanique contrôlée (VMC), doit être <strong>interrompue dans le volume concerné</strong>, à moins qu'elle ne participe au désenfumage.</p>
+    <ul>
+      <li>L'interruption se fait par <strong>arrêt des ventilateurs</strong>, obtenu depuis le CMSI à partir de la commande de désenfumage de la zone (SSI de catégorie A ou B), ou depuis une commande placée près de la commande locale de désenfumage (SSI de catégorie C, D ou E) ;</li>
+      <li>si la ventilation de confort doit être <strong>maintenue</strong> ailleurs, l'interruption se fait par <strong>fermeture des clapets télécommandés</strong> de la zone de compartimentage concernée ;</li>
+      <li>cet arrêt fait partie de la <strong>vérification annuelle</strong> de l'installation de désenfumage (article DF 10).</li>
+    </ul>
+    <p>Pourquoi : l'INRS note que des systèmes CVC soufflant vers le bas peuvent perturber le mouvement naturel des fumées, retarder la détection et <strong>destratifier</strong> les fumées. Il recommande une <strong>coupure automatique</strong> (asservissement) des systèmes CVC à l'activation du désenfumage.</p>
+    <p>Ce que cela change pour le bureau d'études : la CTA doit avoir une <strong>entrée d'ordre du SSI</strong> décrite au cahier des charges, et rien, dans la régulation ou la GTB, ne doit la relancer pendant le désenfumage. Les clapets coupe-feu télécommandés font l'objet de la station voisine.</p>
+    <figure>
+      <img src="svg/cta-s-arrete.svg" alt="En haut à gauche, un cadre du système de sécurité incendie qui donne l'ordre d'arrêt ; une flèche en tirets descend vers une centrale de traitement d'air dont l'hélice s'arrête. Un conduit horizontal relie la centrale à un local, avec un clapet télécommandé qui se ferme. Le local à droite porte une couche de fumée et un conduit d'extraction surmonté d'un ventilateur, avec une flèche rouge qui monte. En animation, la centrale tourne d'abord avec des flèches d'air, puis s'arrête à l'ordre du système, le clapet se ferme et l'extraction s'établit.">
+      <figcaption>À l'ordre du SSI : la CTA s'arrête, le clapet se ferme, l'extraction travaille.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Passons aux bureaux, que le Code du travail range parmi les bâtiments à usage professionnel. Quatre cas sur les cartes : un local de plus de trois cents mètres carrés au rez-de-chaussée ou en étage ; un local aveugle de plus de cent mètres carrés ; un local en sous-sol de plus de cent mètres carrés ; et tous les escaliers. En naturel, la section de sortie dépasse le centième de la surface, un mètre carré au minimum ; en mécanique, on extrait un mètre cube par seconde pour cent mètres carrés. Attention : ces articles changent de place au premier janvier deux mille vingt-sept.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Le cas des bureaux, et le réflexe</h2>
+    <p><strong>Code du travail, articles R. 4216-13 à R. 4216-15</strong> (lieux de travail) : sont désenfumés, en naturel ou en mécanique, les locaux de <strong>plus de 300 m²</strong> en rez-de-chaussée et en étage, les locaux <strong>aveugles</strong> ou en <strong>sous-sol</strong> de plus de 100 m², et <strong>tous les escaliers</strong>. En naturel : ouvertures hautes et basses vers l'extérieur, section de sortie supérieure au <strong>centième</strong> de la surface (1 m² au minimum), amenée d'air de même section, ouvertures manœuvrables depuis le sol. En mécanique : <strong>1 m³/s pour 100 m²</strong>.</p>
+    <p>L'INRS précise que l'instruction technique 246 fournit les règles d'exécution des systèmes, par renvoi de l'arrêté du 5 août 1992. Il note aussi que le Code du travail n'impose pas le désenfumage des circulations encloisonnées, sauf si le lieu est aussi un ERP. <strong>Un plateau de bureaux ouvert au public est un ERP</strong> : c'est alors le règlement de sécurité et l'IT 246.</p>
+    <p><strong>Attention à la date.</strong> Les articles R. 4216-1 à R. 4216-34 sont <strong>abrogés à compter du 1<sup>er</sup> janvier 2027</strong> (décret n° 2025-1100 du 19 novembre 2025, art. 2 et 5) : pour les opérations dont la demande d'autorisation d'urbanisme est déposée à compter de cette date, ou dont les travaux débutent à compter de cette date quand il n'y a pas d'autorisation, les règles des bâtiments à usage professionnel relèvent du Code de la construction et de l'habitation (chapitre IV, articles R. 144-1 à R. 144-20). L'article R. 144-8 renvoie le désenfumage à un arrêté de règlement de sécurité, sans en donner lui-même les seuils.</p>
+    <p class="formule">Le réflexe : lire la date de dépôt, le type de bâtiment, puis l'ordre de marche.</p>
+    <figure>
+      <img src="svg/bureaux-code-travail.svg" alt="Quatre cartes : un plateau de bureaux de plus de 300 mètres carrés au rez-de-chaussée ou en étage ; un local aveugle de plus de 100 mètres carrés, sans ouverture vers l'extérieur ; un local en sous-sol de plus de 100 mètres carrés ; tous les escaliers. Deux bandes en dessous : en naturel, section de sortie supérieure au centième de la surface, 1 mètre carré au minimum ; en mécanique, débit d'extraction de 1 mètre cube par seconde pour 100 mètres carrés.">
+      <figcaption>Quatre cas déclencheurs, deux règles de dimensionnement.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Comment désenfume-t-on un escalier encloisonné ? Reprenez les deux bandes rouges de l'écran trois avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Comment désenfume-t-on un escalier encloisonné ?</h2>
+    <figure class="vignette">
+      <img src="svg/naturel-ou-mecanique.svg" alt="Vignette de rappel : le tableau des quatre combinaisons naturel et mécanique, avec les deux bandes rouges des interdits.">
+      <figcaption>Rappel de l'écran 3 — les deux interdits.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Extraction mécanique en partie haute de la cage d'escalier</button>
+      <button type="button" data-answer="bonne">Balayage naturel ; à défaut, surpression de la cage</button>
+      <button type="button" data-answer="c">Mise en dépression de la cage pour aspirer les fumées</button>
+      <button type="button" data-answer="d">Amenée d'air en haut et extraction en bas de la cage</button>
+    </div>
+    <p class="feedback" hidden data-explication="Pour un escalier encloisonné, les fumées ne sont jamais extraites mécaniquement : la dépression risquerait d'appeler les fumées du local sinistré. On fait un balayage naturel, ou, exceptionnellement, une mise en surpression."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Dans une circulation désenfumée mécaniquement, où place-t-on l'amenée d'air et l'extraction ? Regardez le schéma de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Où placer l'amenée d'air et l'extraction dans une circulation ?</h2>
+    <figure class="vignette">
+      <img src="svg/balayage-circulation.svg" alt="Vignette de rappel : une circulation avec l'amenée d'air en bas à gauche, l'extraction au plafond à droite et la cote de 15 m au plus.">
+      <figcaption>Rappel de l'écran 4 — le balayage.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Les deux en partie haute, pour agir plus vite</button>
+      <button type="button" data-answer="b">Extraction en partie basse, amenée d'air en partie haute</button>
+      <button type="button" data-answer="bonne">Amenée d'air en partie basse, extraction en partie haute</button>
+      <button type="button" data-answer="d">Une seule bouche d'extraction en partie haute, sans amenée d'air</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le balayage suit le mouvement naturel des fumées : l'air neuf arrive en bas, les fumées sont extraites en haut, en alternance le long de la circulation. Les bouches d'amenée d'air ont leur partie haute à 1 m au plus du plancher, les bouches d'extraction leur partie basse à 1,80 m au moins."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. À l'ordre de désenfumage, comment le ventilateur d'extraction doit-il démarrer ? Repensez à la ligne de temps de l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">À l'ordre de désenfumage, comment le ventilateur doit-il démarrer ?</h2>
+    <figure class="vignette">
+      <img src="svg/ventilateur-demarre.svg" alt="Vignette de rappel : la ligne de temps à quatre étapes, de l'ordre au démarrage du ventilateur, avec la temporisation en troisième position.">
+      <figcaption>Rappel de l'écran 6 — l'ordre de marche.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Immédiatement, avant les volets : chaque seconde compte</button>
+      <button type="button" data-answer="b">Dès que la CTA de confort a fini son cycle de régulation</button>
+      <button type="button" data-answer="c">Après un délai de plusieurs minutes, quand le feu est confirmé</button>
+      <button type="button" data-answer="bonne">Après une courte temporisation, volets en position</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'IT 246 prévoit une temporisation maximale de 30 secondes : elle permet aux volets et aux portes, dispositifs actionnés de sécurité, d'atteindre leur position avant que les ventilateurs ne démarrent."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Le désenfumage d'une zone démarre : que doit devenir la CTA de confort qui dessert cette zone ? Souvenez-vous de l'animation de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Le désenfumage démarre : que devient la CTA de confort ?</h2>
+    <figure class="vignette">
+      <img src="svg/cta-s-arrete.svg" alt="Vignette de rappel : le cadre du système de sécurité incendie, la centrale de traitement d'air arrêtée, le clapet fermé et l'extraction des fumées qui travaille.">
+      <figcaption>Rappel de l'écran 7 — la CTA qui s'arrête.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Arrêtée par le SSI, ou isolée par clapets télécommandés</button>
+      <button type="button" data-answer="b">Elle continue de souffler pour refroidir et diluer les fumées</button>
+      <button type="button" data-answer="c">Elle passe en débit maximal pour repousser les fumées</button>
+      <button type="button" data-answer="d">Elle reste pilotée par la GTB, qui gère l'arrêt seule</button>
+    </div>
+    <p class="feedback" hidden data-explication="Article DF 3, § 5 : la ventilation mécanique, sauf la VMC, est interrompue dans le volume concerné, à moins qu'elle ne participe au désenfumage. C'est le SSI qui l'ordonne, par arrêt des ventilateurs ou par fermeture de clapets télécommandés quand la ventilation de confort doit être maintenue ailleurs."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../incendie-clapets-coupe-feu/"><strong>Les clapets coupe-feu</strong></a> (même sous-ligne)
+      — les clapets télécommandés qui isolent une zone quand la ventilation de confort doit rester en service ailleurs.</li>
+    <li><a href="../incendie-ssi/"><strong>Le système de sécurité incendie</strong></a> (même sous-ligne)
+      — qui donne l'ordre : détection, centralisateur, catégories A à E.</li>
+    <li><a href="../incendie-classer-le-bati/"><strong>Classer le bâti</strong></a> (même sous-ligne)
+      — l'ERP, le bâtiment à usage professionnel, l'habitation : le texte qui s'applique dépend du classement.</li>
+    <li><a href="https://inerweb.fr/aerorezo/"><strong>AéroRézo</strong></a> (réseau voisin)
+      — l'aéraulique elle-même : débits, pertes de charge, ventilateurs et conduits.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/. voix.js donne la
+     narration, prof-vocal.js enchaîne les écrans tout seul et s'arrête sur
+     les questions.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "slug": "impact-prp-odp",
+  "branche": "Impact environnemental",
+  "titre": "Mission : « Il ne touche pas l'ozone, donc il est propre »",
+  "client": "Le responsable maintenance d'une plateforme de produits frais, cliente de Clim'Études Sud.",
+  "situation": "Un compagnon affirme que le fluide de la chambre froide est un HFC, donc « propre » puisque son ODP est nul. Par ailleurs, deux fiches techniques donnent pour ce même fluide deux valeurs de PRP différentes, et une fuite vient d'être constatée. Le responsable maintenance veut comprendre ce qu'il doit retenir et comment mesurer l'effet de la fuite.",
+  "piece_a_produire": "Une note d'une demi-page qui explique la différence entre ODP et PRP, la règle à appliquer quand deux sources divergent, et comment estimer l'effet climatique d'une fuite.",
+  "questions": [
+    {
+      "q": "Pourquoi « ODP nul » ne prouve-t-il pas qu'un fluide est sans effet sur l'environnement ?",
+      "ecran": 1,
+      "reponse": "L'ODP et le PRP mesurent deux choses différentes par deux mécanismes indépendants : un fluide peut ne pas toucher l'ozone et réchauffer fortement le climat."
+    },
+    {
+      "q": "Qu'est-ce qui rend l'ODP d'une molécule non nul ?",
+      "ecran": 2,
+      "reponse": "La présence de chlore ou de brome (cas des CFC et des HCFC). Les HFC n'en contiennent pas : leur ODP est nul."
+    },
+    {
+      "q": "Comment le PRP est-il exprimé, et que signifie un PRP plus élevé ?",
+      "ecran": 3,
+      "reponse": "Sur une échelle comparée au CO₂, fixé par convention à 1. Plus la molécule retient de chaleur, plus son PRP est élevé, sans lien avec son ODP."
+    },
+    {
+      "q": "Deux chambres froides perdent la même masse de fluide, l'une au R-404A, l'autre au CO₂ : qu'est-ce qui décide de l'impact climatique ?",
+      "ecran": 6,
+      "reponse": "Le PRP, qui multiplie l'effet de la fuite : la masse perdue est la même, l'impact climatique très différent."
+    }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Vrai ou faux ? Justifiez chaque réponse en une phrase.",
+    "items": [
+      "Un fluide à ODP nul n'a aucun effet sur le climat.",
+      "Quand deux sources donnent deux PRP différents, on fait la moyenne.",
+      "ODP et PRP se lisent ensemble, jamais l'un à la place de l'autre."
+    ],
+    "corrige": "Faux (l'ODP ne dit rien du PRP) ; Faux (on retient toujours la valeur la plus élevée) ; Vrai (deux échelles indépendantes)."
+  },
+  "badge": "Deux échelles",
+  "duree_min": 20,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "2.02"
+    ],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. Le concept de PRP et l'incidence des émissions de fluides relèvent côté attestation 2025 du code 2.02."
+  }
+}

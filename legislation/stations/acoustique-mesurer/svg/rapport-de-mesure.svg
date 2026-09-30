@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 446" role="img"
+     aria-labelledby="t-rm" aria-describedby="d-rm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rm">Le contenu d'un rapport de mesure</title>
+  <desc id="d-rm">Une feuille intitulée « Rapport de mesure » avec huit lignes, chacune précédée d'une case cochée, en deux colonnes : objet et demandeur ; lieu, date, heure et durée ; météo pendant la mesure ; matériel et date de sa vérification ; étalonnage avant et après avec l'écart ; position du micro par plan ou photo ; fonctionnement de la machine ; résultats ambiant, résiduel et émergence. Sous la feuille, une bande : le rapport doit permettre à quelqu'un d'autre de refaire la mesure dans les mêmes conditions. L'animation coche les lignes une à une ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .h   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .hb  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .hv  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#6d28d9; }
+    .t   { font-size:17px; fill:#10233c; }
+    .g   { font-size:16px; fill:#5a6b7d; }
+  </style>
+<text class="ttl" x="400" y="34" text-anchor="middle">Ce que contient un rapport de mesure</text>
+  <rect x="40" y="62" width="720" height="262" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="40" y="62" width="720" height="48" rx="14" fill="#ede3f4" stroke="#1b3a63" stroke-width="3"/>
+  <text class="hv" x="70" y="94">Rapport de mesure</text>
+  <rect x="70" y="130" width="26" height="26" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g><path d="M 75 144 l 5.3999999999999995 6 l 10.799999999999999 -13.2" fill="none" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.09;1" dur="13s" repeatCount="indefinite"/></g>
+  <text class="t" x="110" y="150">Objet et demandeur</text>
+  <rect x="70" y="178" width="26" height="26" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g><path d="M 75 192 l 5.3999999999999995 6 l 10.799999999999999 -13.2" fill="none" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.14;0.18;1" dur="13s" repeatCount="indefinite"/></g>
+  <text class="t" x="110" y="198">Lieu, date, heure et durée</text>
+  <rect x="70" y="226" width="26" height="26" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g><path d="M 75 240 l 5.3999999999999995 6 l 10.799999999999999 -13.2" fill="none" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22999999999999998;0.27;1" dur="13s" repeatCount="indefinite"/></g>
+  <text class="t" x="110" y="246">Météo pendant la mesure</text>
+  <rect x="70" y="274" width="26" height="26" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g><path d="M 75 288 l 5.3999999999999995 6 l 10.799999999999999 -13.2" fill="none" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.36;1" dur="13s" repeatCount="indefinite"/></g>
+  <text class="t" x="110" y="294">Matériel et date de sa vérification</text>
+  <rect x="440" y="130" width="26" height="26" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g><path d="M 445 144 l 5.3999999999999995 6 l 10.799999999999999 -13.2" fill="none" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.41;0.44999999999999996;1" dur="13s" repeatCount="indefinite"/></g>
+  <text class="t" x="480" y="150">Étalonnage avant et après, écart</text>
+  <rect x="440" y="178" width="26" height="26" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g><path d="M 445 192 l 5.3999999999999995 6 l 10.799999999999999 -13.2" fill="none" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.49999999999999994;0.5399999999999999;1" dur="13s" repeatCount="indefinite"/></g>
+  <text class="t" x="480" y="198">Position du micro (plan, photo)</text>
+  <rect x="440" y="226" width="26" height="26" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g><path d="M 445 240 l 5.3999999999999995 6 l 10.799999999999999 -13.2" fill="none" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5900000000000001;0.63;1" dur="13s" repeatCount="indefinite"/></g>
+  <text class="t" x="480" y="246">Fonctionnement de la machine</text>
+  <rect x="440" y="274" width="26" height="26" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g><path d="M 445 288 l 5.3999999999999995 6 l 10.799999999999999 -13.2" fill="none" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.68;0.72;1" dur="13s" repeatCount="indefinite"/></g>
+  <text class="t" x="480" y="294">Ambiant, résiduel, émergence</text>
+  <rect x="40" y="352" width="720" height="70" rx="14" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="hb" x="400" y="381" text-anchor="middle">Il doit permettre à quelqu'un d'autre</text>
+  <text class="hb" x="400" y="407" text-anchor="middle">de refaire la mesure dans les mêmes conditions.</text>
+</svg>

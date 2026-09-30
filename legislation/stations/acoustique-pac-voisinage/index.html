@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>PAC &amp; voisinage — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : lire la puissance acoustique d'une fiche technique, ce que changent la distance et l'emplacement, la nuit, le droit du bruit de voisinage, l'urbanisme et la copropriété — l'unité extérieure d'une pompe à chaleur face au voisin.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/acoustique-pac-voisinage/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Acoustique.
+     « PAC & voisinage » : le cas d'école du technicien d'études CVC.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Aucun MP3 n'est encore fabriqué pour cette station : la voix du
+     navigateur sert de filet.
+
+     DOCTRINE : aucun chiffre réglementaire non sourcé. Les seuils cités
+     (émergence, seuils de déclenchement, dispense d'urbanisme) sont lus
+     sur Légifrance ; les écarts d'emplacement et la décroissance avec la
+     distance sont soit tirés de la définition logarithmique, soit repris
+     de la fiche AFPAC n° 1. Les valeurs des exemples chiffrés sont des
+     VALEURS D'EXERCICE, dites telles. Détail et « À sourcer » : FOND.md.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Acoustique · niveau BTS</p>
+  <h1>PAC &amp; voisinage — l'unité extérieure</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-acoustique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez lire la <strong>puissance acoustique</strong> d'une fiche technique sans la confondre avec le niveau chez le voisin, estimer l'effet de la <strong>distance</strong> et de l'<strong>emplacement</strong> (mur, angle, cour), dire pourquoi la <strong>nuit</strong> est la période critique, distinguer les deux régimes du droit du bruit de voisinage, et lister ce qu'il faut vérifier avant de poser : urbanisme, copropriété, dialogue avec le voisin.</p>
+    <p style="margin-top:10px"><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — compétences mobilisées : <strong>CP1</strong> (plans d'implantation : choisir et reporter l'emplacement de l'unité extérieure), <strong>CP6</strong> (chauffage et eau chaude sanitaire : pompe à chaleur air-eau) et <strong>CP9</strong> (climatisation : unité extérieure d'un split).</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez l'unité extérieure d'une pompe à chaleur, posée sur son socle le long d'un mur. Deux éléments y font du bruit : le ventilateur, qui brasse l'air, et le compresseur, dans le caisson. Ce bruit part par deux chemins. À droite, les trois arcs violets figurent le bruit aérien, porté par l'air jusqu'au voisin. Sous le socle et le long des tuyaux, les zigzags orange figurent le bruit solidien : les vibrations passent par la structure, et le mur les rayonne à son tour. Il faut donc traiter les deux chemins.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un appareil, deux chemins pour le bruit</h2>
+    <p>Une unité extérieure fait du bruit à deux endroits : le <strong>ventilateur</strong>, qui brasse l'air à travers la batterie, et le <strong>compresseur</strong>, logé dans le caisson.</p>
+    <p>Ce bruit voyage par <strong>deux chemins</strong> :</p>
+    <ul>
+      <li>par l'air, jusqu'au voisin : c'est le <strong>bruit aérien</strong> ;</li>
+      <li>par la structure : les vibrations passent par le socle, les tuyaux et les fixations, puis un mur ou un plancher les rayonne à son tour : c'est le <strong>bruit solidien</strong>.</li>
+    </ul>
+    <p>Un écran ou un capotage agit sur l'air ; il ne fait rien contre les vibrations. Le socle, les plots et les liaisons souples agissent sur la structure. « Toute transmission de vibrations est de nature à générer du bruit » (AFPAC, fiche n° 2).</p>
+    <figure>
+      <img src="svg/sources-du-bruit.svg" alt="Vue de côté d'une unité extérieure posée sur un socle en béton à côté du mur d'une maison. Le ventilateur et le compresseur sont désignés. À droite, trois arcs violets figurent le bruit aérien. Sous le socle et le long des deux tuyaux qui rejoignent le mur, des zigzags orange figurent le bruit solidien.">
+      <figcaption>Violet : le son porté par l'air. Orange : les vibrations portées par la structure.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="À gauche, la machine : sa puissance acoustique, notée L W, dit ce qu'elle émet, indépendamment du lieu. C'est la valeur mesurée en laboratoire et publiée par le fabricant, et elle sert à comparer deux appareils. À droite, trois micros de plus en plus éloignés : la pression acoustique, notée L p, est ce qu'un sonomètre relève à cet endroit. Elle change avec la distance et avec l'environnement. Le piège du débutant consiste à comparer la valeur de la fiche au niveau chez le voisin, comme s'il s'agissait de la même grandeur. En bas, vous voyez où trouver la valeur.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Lire la fiche technique : Lw n'est pas Lp</h2>
+    <ul>
+      <li><strong>Lw, la puissance acoustique</strong> (en dB(A)) caractérise ce que la source émet, <em>indépendamment de son environnement</em>. Mesurée en laboratoire, c'est la valeur qui permet de comparer directement les appareils entre eux.</li>
+      <li><strong>Lp, la pression acoustique</strong> (en dB(A)) est la grandeur perçue par l'oreille et relevée par le sonomètre. Pour une même machine, elle <em>dépend de la distance et de l'environnement</em> (AFPAC, fiche n° 1).</li>
+    </ul>
+    <p><strong>Où lire Lw.</strong> Sur la fiche technique du fabricant ; sur l'étiquette énergie, puisque, d'après le considérant 9 du règlement délégué (UE) n° 811/2013, l'information sur le niveau de puissance acoustique doit figurer sur les étiquettes des chauffages ; dans les bases de données de certification citées par le CidB (Eurovent Certita Certification, Keymark, Edibatec). La méthode de détermination de Lw pour les pompes à chaleur est l'objet de la norme NF EN 12102-1 (norme payante : seul son objet est cité ici).</p>
+    <p><strong>Le piège.</strong> Comparer le Lw d'une fiche au niveau mesuré chez le voisin : ce ne sont pas les mêmes grandeurs. Si une fiche donne aussi une pression à une distance, lisez la distance et les conditions de mesure ; et relevez le mode de fonctionnement auquel la valeur se rapporte.</p>
+    <figure>
+      <img src="svg/lw-et-lp.svg" alt="À gauche, une unité extérieure : sa puissance acoustique Lw est ce que la machine émet, mesuré en laboratoire. À droite, trois micros posés à des distances croissantes : la pression acoustique Lp est ce que le sonomètre relève à cet endroit, elle change avec la distance et le lieu. Un bandeau en bas indique où lire Lw : fiche technique, étiquette énergie, bases certifiées.">
+      <figcaption>Lw se lit sur la fiche ; Lp se mesure, ou se calcule, chez quelqu'un.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Voici la même machine, vue de côté, et une onde qui s'éloigne. Elle passe à deux mètres, puis à quatre, puis à huit. Chaque fois que la distance double, le niveau baisse de six décibels : cinquante-quatre, quarante-huit, quarante-deux, dans l'exemple de la fiche de l'association professionnelle. La raison est géométrique : en doublant la distance, la même puissance se répartit sur une surface quatre fois plus grande. Cela vaut en champ libre, sans mur ni obstacle qui renvoie le son. Éloigner la machine de la fenêtre du voisin aide donc, mais chaque doublement ne rapporte que six décibels.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La distance atténue : six décibels à chaque doublement</h2>
+    <p>En <strong>champ libre</strong> (aucun obstacle, aucun mur qui renvoie le son), la puissance se répartit sur une surface qui croît comme le carré de la distance. Doubler la distance, c'est donc répartir la même puissance sur une surface <strong>quatre fois</strong> plus grande : le niveau perd 10·log 4, soit <strong>6 dB</strong>. La fiche n° 1 de l'AFPAC en donne l'exemple : 54 dB(A) à 2 m, 48 à 4 m, 42 à 8 m.</p>
+    <p>Pour une unité posée au sol, la puissance se répartit sur une demi-sphère de surface 2π·r² ; la définition du niveau donne alors :</p>
+    <p class="formule" style="white-space:nowrap;overflow-x:auto;font-size:.95rem">Lp = Lw − 20·log r − 8</p>
+    <p><strong>Exemple d'exercice</strong> (valeur fictive, non tirée d'une fiche réelle) : Lw = 60 dB(A), fenêtre du voisin à 4 m. Lp ≈ 60 − 12 − 8 = <strong>40 dB(A)</strong> devant la fenêtre ; à 8 m, ≈ 34 dB(A). C'est le niveau à l'extérieur : à l'intérieur, la façade l'atténue.</p>
+    <figure>
+      <img src="svg/distance-attenue.svg" alt="Vue de côté : une unité extérieure à gauche émet un son qui s'éloigne en arcs violets. À deux mètres le niveau est de 54 dB(A), à quatre mètres 48, à huit mètres 42. Deux accolades indiquent moins 6 dB(A) à chaque doublement de la distance.">
+      <figcaption>Regardez les accolades : chaque doublement de la distance retire 6 dB(A).</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Ce schéma est vu de dessus : l'unité est dans l'angle de deux murs. Les traits bleus sont le son qui part directement. Les traits orange en pointillés sont le son qui rebondit sur un mur puis repart vers l'avant, dans la même direction générale que les autres. Les murs empêchent le son de partir vers l'arrière : il est renvoyé du côté du voisin. À droite, le tableau donne l'écart par rapport à une machine posée au sol : plus trois décibels contre un mur, plus six dans un angle, plus neuf dans une cour intérieure. Sortir la machine de l'angle rapporte autant que doubler la distance.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">L'emplacement : mur, angle, cour</h2>
+    <p>Un mur, un angle, une cour <strong>renvoient</strong> le son. Dans le modèle simple (surfaces parfaitement réfléchissantes), la même puissance se répartit sur une part plus petite de l'espace : demi-espace au sol, puis quart contre un mur, puis huitième dans un angle. L'intensité <strong>double</strong> à chaque étape, soit <strong>+ 3 dB</strong> (10·log 2).</p>
+    <p>La fiche n° 1 de l'AFPAC donne les mêmes écarts par rapport à une PAC posée au sol : <strong>+ 3 dB(A)</strong> contre un mur, <strong>+ 6 dB(A)</strong> dans un angle, <strong>+ 9 dB(A)</strong> au moins dans une cour intérieure (« plus la cour est petite, plus la réflexion est importante »). Le même écart vaut pour le niveau reçu.</p>
+    <p><strong>Suite de l'exemple d'exercice</strong> (Lw = 60 dB(A), fenêtre à 4 m) : 40 dB(A) au sol, 43 contre un mur, <strong>46 dans un angle</strong>. Sortir de l'angle vaut autant que doubler la distance.</p>
+    <p>Autres règles de la fiche : ne pas diriger les ventilations vers les voisins ; s'éloigner des limites de propriété ; ne pas poser la PAC sous une fenêtre, car les fenêtres isolent moins que les murs et peuvent être ouvertes. Un absorbant sur le mur derrière la machine retire au plus 2 dB(A) contre un mur, 4 dB(A) dans un angle.</p>
+    <figure>
+      <img src="svg/reflexion-angle.svg" alt="Vue de dessus : une unité extérieure dans l'angle de deux murs. Des traits bleus pleins figurent le son direct, des traits orange en pointillés le son qui rebondit sur un mur puis repart vers l'avant. À droite, les écarts par rapport au sol : zéro au sol, plus 3 dB(A) contre un mur, plus 6 dB(A) dans un angle, plus 9 dB(A) dans une cour intérieure.">
+      <figcaption>Le son renvoyé par l'angle s'ajoute au son direct : c'est lui qui coûte 6 dB(A).</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Les décibels ne s'additionnent pas comme des nombres ordinaires, parce que l'échelle est logarithmique. À gauche, deux barres de trente décibels : le bruit résiduel, celui du quartier avec la pompe arrêtée, et le bruit de la pompe seule. Ensemble, elles ne font pas soixante mais trente-trois, comme le montre la troisième barre : deux niveaux égaux donnent trois décibels de plus. L'écart entre le bruit ambiant et le bruit résiduel s'appelle l'émergence. Ici, elle vaut trois décibels. Retenez enfin qu'un niveau nettement plus faible que l'autre n'ajoute presque rien.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Les décibels ne s'additionnent pas : l'émergence</h2>
+    <p>Deux niveaux L1 et L2 se combinent ainsi (définition logarithmique du décibel) :</p>
+    <p class="formule" style="white-space:nowrap;overflow-x:auto;font-size:.95rem">L = 10·log ( 10<sup>L1/10</sup> + 10<sup>L2/10</sup> )</p>
+    <p>Deux niveaux <strong>égaux</strong> donnent donc 10·log 2 ≈ <strong>+ 3 dB</strong> : 30 dB + 30 dB = 33 dB, pas 60 (exemple du CidB). Un niveau très inférieur à l'autre n'ajoute presque rien.</p>
+    <p>L'<strong>émergence</strong> est la différence entre le bruit <strong>ambiant</strong> (avec le bruit en cause) et le bruit <strong>résiduel</strong> (sans lui) : article R. 1336-7 du code de la santé publique.</p>
+    <p><strong>Suite de l'exemple d'exercice.</strong> Résiduel de nuit de 25 dB(A), valeur indiquée par le CidB pour une zone calme. Avec la PAC à 40 dB(A) devant la fenêtre, le bruit ambiant vaut ≈ 40 dB(A) : émergence ≈ <strong>15 dB</strong>. Dans l'angle (46 dB(A)) : ≈ <strong>21 dB</strong>. Un niveau qui semble modeste émerge fortement dans un environnement très calme.</p>
+    <figure>
+      <img src="svg/decibels-ne-s-additionnent-pas.svg" alt="Trois barres : le bruit résiduel de 30 dB, plus la pompe à chaleur seule de 30 dB, égale le bruit ambiant de 33 dB, dont le haut ne dépasse que de 3 dB. À droite, un encadré : émergence égale 33 moins 30, soit 3 dB, et le rappel qu'un niveau bien plus faible que l'autre n'ajoute presque rien.">
+      <figcaption>La troisième barre ne dépasse les deux autres que de 3 dB : c'est l'émergence.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Voici une journée de vingt-quatre heures, de sept heures à sept heures. Le repère se déplace : il traverse d'abord la période de jour, en orange clair, puis la période de nuit, en bleu sombre, à partir de vingt-deux heures. Pour une activité professionnelle, la limite d'émergence est de cinq décibels le jour et de trois la nuit. La nuit est la période critique : le bruit résiduel tombe, donc la machine ressort davantage, alors qu'elle continue de tourner. Dessous, deux points à vérifier auprès du fabricant : le niveau annoncé en mode silencieux, et le bruit pendant le dégivrage.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">La nuit : la période critique</h2>
+    <p>Pour une <strong>activité professionnelle</strong>, l'émergence limite est de <strong>5 dB(A)</strong> de 7 h à 22 h et de <strong>3 dB(A)</strong> de 22 h à 7 h, avant les termes correctifs liés à la durée d'apparition du bruit (article R. 1336-7).</p>
+    <p>La nuit, le <strong>bruit résiduel tombe</strong> alors que la machine continue de tourner : à niveau égal, l'émergence est plus forte, et la limite est plus stricte. C'est pourquoi une PAC acceptable de jour peut devenir un litige la nuit.</p>
+    <ul>
+      <li><strong>Mode silencieux</strong> : s'il existe, relever dans la documentation du fabricant le niveau annoncé <em>dans ce mode</em>, et non celui du fonctionnement normal.</li>
+      <li><strong>Dégivrage</strong> : en hiver, l'unité givre et passe par un cycle de dégivrage ; demander au fabricant le bruit pendant ce cycle.</li>
+    </ul>
+    <figure>
+      <img src="svg/la-nuit.svg" alt="Une frise de vingt-quatre heures, de 7 h à 7 h : le jour de 7 h à 22 h en orange clair, la nuit de 22 h à 7 h en bleu sombre. Deux cartes donnent l'émergence maximale : 5 dB(A) le jour, 3 dB(A) la nuit. Deux cartes en bas rappellent de demander au fabricant le niveau en mode silencieux et le bruit pendant le dégivrage.">
+      <figcaption>De 22 h à 7 h, la limite passe de 5 à 3 dB(A) — et le bruit résiduel baisse.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Tout part d'une question : qui utilise la pompe à chaleur ? À gauche, un particulier, chez lui : l'article R mille trois cent trente-six, tiret cinq, du code de la santé publique pose un principe, aucun bruit particulier ne doit porter atteinte à la tranquillité du voisinage, et le texte ne fixe pas de seuil chiffré. À droite, un usage professionnel, un commerce ou un bureau : les articles R mille trois cent trente-six, tiret six à tiret huit, fixent des émergences limites, recherchées seulement au-dessus d'un certain niveau de bruit ambiant. La bande du bas rappelle que le droit civil s'ajoute dans les deux cas.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Ce que dit le droit du bruit : deux régimes</h2>
+    <p>La réponse du ministère à une question parlementaire (juin 2024) le confirme : les articles R. 1336-5 à R. 1336-9 du code de la santé publique <strong>s'appliquent aux pompes à chaleur</strong>, selon l'usage.</p>
+    <ul>
+      <li><strong>Usage domestique</strong> : article R. 1336-5. Le texte ne fixe pas de seuil chiffré ; d'après le CidB, il n'est pas nécessaire de mesurer pour constater l'infraction, et elle ne dépend pas de l'heure.</li>
+      <li><strong>Usage professionnel</strong> : articles R. 1336-6 à R. 1336-8. L'émergence globale est limitée (5 dB(A) le jour, 3 dB(A) la nuit, plus un terme correctif) ; dans les pièces principales d'un logement, l'émergence spectrale est limitée à 7 dB dans les bandes d'octave de 125 et 250 Hz et à 5 dB de 500 à 4 000 Hz. Ces émergences ne sont recherchées que si le bruit ambiant dépasse 25 dB(A) à l'intérieur d'une pièce principale, 30 dB(A) ailleurs.</li>
+    </ul>
+    <p><strong>Mesurage</strong> : les modalités sont fixées par arrêté (article R. 1336-9) ; c'est l'arrêté du 5 décembre 2006, qui renvoie à la norme NF S 31-010 (norme payante). <strong>Suites</strong> : l'autorité administrative peut prendre les mesures de l'article L. 171-8 du code de l'environnement (article R. 1336-11).</p>
+    <p><strong>Le civil s'ajoute</strong> : article 1253 du Code civil — le propriétaire, le locataire ou l'occupant à l'origine d'un trouble excédant les inconvénients normaux du voisinage est responsable de plein droit du dommage.</p>
+    <figure>
+      <img src="svg/deux-regimes.svg" alt="Un arbre de décision partant de la question « Qui utilise la PAC ? ». À gauche, l'usage domestique : article R. 1336-5, sans seuil chiffré. À droite, l'usage professionnel : articles R. 1336-6 à R. 1336-8, émergence globale de 5 dB(A) le jour et 3 dB(A) la nuit plus un terme correctif, émergence spectrale de 7 puis 5 dB, recherchées au-dessus de 25 dB(A) à l'intérieur ou 30 dB(A) ailleurs. Une bande en bas rappelle le trouble anormal de voisinage, article 1253 du Code civil.">
+      <figcaption>Regardez d'abord l'usage : il décide du critère.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="La liste compte six vérifications avant de poser une unité extérieure. Les quatre premières sont techniques : la puissance acoustique relevée sur la fiche, l'emplacement, qui évite l'angle, la cour, la limite de propriété et le dessous d'une fenêtre, le niveau calculé chez le voisin, et l'isolement des vibrations. Les deux dernières sont juridiques : l'urbanisme, où la pose en façade non visible est dispensée de formalité depuis mars deux mille vingt-six, sauf en zone protégée, et la copropriété, où l'assemblée autorise les travaux touchant l'aspect extérieur. Aucun outil public de l'État n'a été trouvé pour calculer le niveau chez le voisin ; l'outil existant vient de l'association professionnelle.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Avant de poser : urbanisme, copropriété, prévenir le litige</h2>
+    <ul>
+      <li><strong>Urbanisme.</strong> Depuis les travaux engagés à compter de mars 2026, l'implantation <em>en façade</em> d'une PAC qui n'est visible ni du domaine public, ni d'une voie ouverte au public, ni d'un autre immeuble ayant une vue sur l'installation est <strong>dispensée de formalité</strong> (décret n° 2026-117 du 20 février 2026, article R*421-13 du code de l'urbanisme) — sauf dans les périmètres protégés (sites patrimoniaux remarquables, abords de monuments historiques, sites classés, réserves naturelles…). Sinon, modifier l'aspect extérieur reste soumis à <strong>déclaration préalable</strong> (article R*421-17). Dispensé de formalité ne veut pas dire dispensé des règles d'urbanisme (article L. 421-8) : le PLU de la commune se consulte.</li>
+      <li><strong>Copropriété.</strong> Les travaux qui affectent les parties communes ou l'aspect extérieur de l'immeuble demandent l'autorisation de l'assemblée générale (article 25 b de la loi du 10 juillet 1965) ; se reporter aussi au règlement de copropriété.</li>
+      <li><strong>Prévenir le litige.</strong> Installateur qualifié RGE, PAC certifiée NF, recommandations de l'AFPAC ; avertir le voisin avant la pose ; faire appel à un acousticien dès que le doute subsiste ; conserver le calcul et la fiche : ce sont les pièces qu'un juge lira (CidB).</li>
+      <li><strong>Un outil ?</strong> Aucun guide ni outil public de l'État ou de l'ADEME qui estime le niveau chez le voisin n'a été trouvé (recherche du 30/09/2026) ; en 2024, le ministère indiquait seulement que le Conseil national du bruit pourrait en proposer. L'outil existant est celui de l'<strong>AFPAC</strong> (association professionnelle), réservé aux professionnels inscrits : il calcule une émergence à partir de la puissance acoustique, de la configuration et de la distance au voisin.</li>
+    </ul>
+    <figure>
+      <img src="svg/avant-de-poser.svg" alt="Une liste de six vérifications numérotées : relever Lw, choisir l'emplacement, calculer chez le voisin, isoler les vibrations, vérifier l'urbanisme, copropriété et voisin.">
+      <figcaption>Quatre vérifications techniques, deux vérifications juridiques.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Sur la fiche technique d'une pompe à chaleur figure une valeur de puissance acoustique, notée L W. Que représente-t-elle ? Reprenez le schéma de l'écran deux si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Que représente la valeur Lw d'une fiche technique ?</h2>
+    <figure class="vignette">
+      <img src="svg/lw-et-lp.svg" alt="Vignette de rappel : à gauche Lw, ce que la machine émet ; à droite Lp, ce que l'on mesure à différentes distances.">
+      <figcaption>Rappel de l'écran 2 — Lw à gauche, Lp à droite.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le niveau que le voisin recevra devant sa fenêtre</button>
+      <button type="button" data-answer="bonne">Ce que la machine émet, quel que soit le lieu</button>
+      <button type="button" data-answer="c">Le niveau de bruit résiduel du quartier</button>
+      <button type="button" data-answer="d">La limite d'émergence à ne pas dépasser</button>
+    </div>
+    <p class="feedback" hidden data-explication="Lw caractérise la source elle-même, mesurée en laboratoire : elle sert à comparer les appareils. Le niveau chez le voisin est une pression acoustique, Lp, qui dépend de la distance et de l'emplacement."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Une pompe à chaleur d'abord posée au sol est déplacée dans l'angle formé par deux murs, sans changer la distance à la fenêtre du voisin. Que devient le niveau reçu par le voisin ? Regardez le tableau de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Posée au sol, la PAC est déplacée dans un angle, à distance égale de la fenêtre. Le niveau reçu…</h2>
+    <figure class="vignette">
+      <img src="svg/reflexion-angle.svg" alt="Vignette de rappel : une unité dans l'angle de deux murs, le son direct et le son réfléchi, et le tableau des écarts par emplacement.">
+      <figcaption>Rappel de l'écran 4 — chaque emplacement a son écart.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Ne change pas : seule la distance compte</button>
+      <button type="button" data-answer="b">Augmente de 3 dB(A), comme contre un seul mur</button>
+      <button type="button" data-answer="c">Augmente de 9 dB(A), comme dans une cour</button>
+      <button type="button" data-answer="bonne">Augmente de 6 dB(A)</button>
+    </div>
+    <p class="feedback" hidden data-explication="Contre un mur : + 3 dB(A) ; dans un angle : + 6 dB(A) ; dans une cour intérieure : + 9 dB(A) au moins (fiche AFPAC n° 1). C'est autant que ce que rapporterait un doublement de la distance."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Chez le voisin, le bruit résiduel est de trente décibels, et la pompe à chaleur seule y produit aussi trente décibels. Quel est le niveau ambiant, pompe en marche ? Pensez à la troisième barre de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Bruit résiduel : 30 dB. PAC seule : 30 dB. Bruit ambiant, PAC en marche ?</h2>
+    <figure class="vignette">
+      <img src="svg/decibels-ne-s-additionnent-pas.svg" alt="Vignette de rappel : deux barres de 30 dB qui donnent une troisième barre de 33 dB.">
+      <figcaption>Rappel de l'écran 5 — les décibels ne s'additionnent pas comme des nombres.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">33 dB : deux niveaux égaux ajoutent 3 dB</button>
+      <button type="button" data-answer="b">60 dB : on additionne les deux valeurs</button>
+      <button type="button" data-answer="c">30 dB : la PAC est noyée dans le bruit résiduel</button>
+      <button type="button" data-answer="d">31 dB : un décibel de plus</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'échelle est logarithmique : deux niveaux égaux ajoutent 10·log 2, soit 3 dB environ. L'émergence est ici de 3 dB : c'est exactement la limite de nuit d'une activité professionnelle, avant terme correctif."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième question. Une pompe à chaleur alimente une boulangerie, et le voisin se plaint du bruit la nuit. Quel critère du code de la santé publique s'applique ? Souvenez-vous des deux régimes de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">La PAC d'une boulangerie gêne un voisin la nuit. Quel critère s'applique ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-regimes.svg" alt="Vignette de rappel : l'usage domestique relève de l'article R. 1336-5 sans seuil chiffré, l'usage professionnel des articles R. 1336-6 à R. 1336-8 avec des émergences limites.">
+      <figcaption>Rappel de l'écran 7 — l'usage décide du critère.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Aucun seuil : seule compte la tranquillité du voisinage</button>
+      <button type="button" data-answer="b">Un niveau absolu à ne pas dépasser en limite de propriété</button>
+      <button type="button" data-answer="bonne">Une émergence limitée à 3 dB(A) la nuit, plus un terme correctif</button>
+      <button type="button" data-answer="d">Une émergence limitée à 5 dB(A), de jour comme de nuit</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un commerce est un usage professionnel : les articles R. 1336-6 à R. 1336-8 s'appliquent, avec une émergence limite de 3 dB(A) la nuit (5 le jour), majorée d'un terme correctif selon la durée d'apparition du bruit. Le régime sans seuil chiffré est celui du particulier chez lui."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../acoustique-les-seuils/"><strong>Les seuils</strong></a> (même sous-ligne)
+      — voisinage et émergence : le détail des valeurs que cette station cite.</li>
+    <li><a href="../acoustique-traiter-le-bruit/"><strong>Traiter le bruit</strong></a> (même sous-ligne)
+      — plots antivibratiles, silencieux, écrans : ce qui agit sur les deux chemins du bruit.</li>
+    <li><a href="../acoustique-le-bruit-en-db/"><strong>Le bruit en dB</strong></a> (même sous-ligne)
+      — dB(A), niveaux, addition logarithmique : la base des écrans 3 à 5.</li>
+    <li><a href="../thermique-re2020/"><strong>La RE2020</strong></a> (sous-ligne Thermique)
+      — la pompe à chaleur est aussi un choix de performance énergétique : le bruit se règle avec elle, pas contre elle.</li>
+  </ul>
+  <p>Les stations de la sous-ligne Acoustique sont produites ensemble : leurs liens fonctionnent dès qu'elles sont en ligne.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

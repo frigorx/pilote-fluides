@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 590" role="img"
+     aria-labelledby="t-dep" aria-describedby="d-dep" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dep">Petits et grands déplacements : rentrer chaque soir, ou non</title>
+  <desc id="d-dep">À gauche, un schéma : le siège de l'entreprise au centre, entouré de trois cercles pointillés qui représentent des zones concentriques. Le chantier A, marqué d'un A, est dans les cercles : le salarié rentre chez lui chaque soir. Le chantier B, marqué d'un B, est loin, hors des cercles, relié au siège par un trait tireté et accompagné d'un lit : le salarié ne peut pas rentrer chaque soir. À droite, deux cartes. Petit déplacement : indemnités forfaitaires de trajet, de frais de transport et de repas. Grand déplacement : indemnité journalière pour le logement et la nourriture, voyage de retour payé à intervalles réguliers, temps de trajet indemnisé. Un bandeau précise que ces règles sont lues dans la convention des ouvriers du bâtiment et qu'un accord d'entreprise peut différer.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#1b3a63; }
+    .h   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .hw  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#ffffff; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lw  { font-size:17px; fill:#ffffff; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Deux régimes selon la distance du chantier</text>
+  <text class="sm" x="215" y="72" text-anchor="middle">cercles : zones autour du siège</text>
+  <circle cx="215" cy="285" r="160" fill="#f6f8fb" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <circle cx="215" cy="285" r="108" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <circle cx="215" cy="285" r="56" fill="#e3ebf5" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <line x1="215" y1="285" x2="289" y2="223" stroke="#1b3a63" stroke-width="3.5"/>
+  <line x1="215" y1="285" x2="90" y2="510" stroke="#a8410b" stroke-width="3.5" stroke-dasharray="4 8" stroke-linecap="round"/>
+  <path d="M193 287 L215 265 L237 287 Z" fill="#1b3a63"/>
+  <rect x="199" y="287" width="32" height="24" fill="#1b3a63"/>
+  <rect x="210" y="296" width="10" height="15" fill="#fffdf8"/>
+  <text class="sm" x="209" y="255" text-anchor="middle">siège</text>
+  <circle cx="289" cy="223" r="17" fill="#1b3a63"/>
+  <text x="289" y="230" text-anchor="middle" class="hw">A</text>
+  <circle cx="90" cy="510" r="17" fill="#a8410b"/>
+  <text x="90" y="517" text-anchor="middle" class="hw">B</text>
+  <rect x="120" y="506" width="46" height="14" rx="3" fill="#a8410b"/>
+  <rect x="120" y="520" width="5" height="10" fill="#a8410b"/>
+  <rect x="161" y="520" width="5" height="10" fill="#a8410b"/>
+  <rect x="120" y="496" width="14" height="10" rx="4" fill="#a8410b"/>
+  <rect x="430" y="60" width="440" height="220" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="430" y="60" width="440" height="44" rx="10" fill="#1b3a63"/>
+  <rect x="430" y="80" width="440" height="24" rx="0" fill="#1b3a63"/>
+  <text class="hw" x="650" y="90" text-anchor="middle">A · Petit déplacement</text>
+  <text class="h" x="650" y="132" text-anchor="middle">Vous rentrez chez vous chaque soir.</text>
+  <rect x="462" y="157" width="12" height="12" rx="2" fill="#1b3a63"/>
+  <text class="lbl" x="486" y="170" text-anchor="start">une indemnité de trajet</text>
+  <rect x="462" y="191" width="12" height="12" rx="2" fill="#1b3a63"/>
+  <text class="lbl" x="486" y="204" text-anchor="start">une indemnité de frais de transport</text>
+  <rect x="462" y="225" width="12" height="12" rx="2" fill="#1b3a63"/>
+  <text class="lbl" x="486" y="238" text-anchor="start">une indemnité de repas</text>
+  <text class="sm" x="650" y="262" text-anchor="middle">forfaits, selon la zone du chantier</text>
+  <rect x="430" y="296" width="440" height="228" rx="10" fill="#fffdf8" stroke="#a8410b" stroke-width="3"/>
+  <rect x="430" y="296" width="440" height="44" rx="10" fill="#a8410b"/>
+  <rect x="430" y="316" width="440" height="24" rx="0" fill="#a8410b"/>
+  <text class="hw" x="650" y="326" text-anchor="middle">B · Grand déplacement</text>
+  <text class="h" x="650" y="368" text-anchor="middle">Trop loin pour rentrer chaque soir.</text>
+  <rect x="462" y="393" width="12" height="12" rx="2" fill="#a8410b"/>
+  <text class="lbl" x="486" y="406" text-anchor="start">une indemnité journalière (logement, repas)</text>
+  <rect x="462" y="427" width="12" height="12" rx="2" fill="#a8410b"/>
+  <text class="lbl" x="486" y="440" text-anchor="start">un voyage de retour payé, périodiquement</text>
+  <rect x="462" y="461" width="12" height="12" rx="2" fill="#a8410b"/>
+  <text class="lbl" x="486" y="474" text-anchor="start">le temps de trajet indemnisé</text>
+  <text class="sm" x="650" y="512" text-anchor="middle">y compris le week-end si vous restez à disposition</text>
+  <rect x="40" y="545" width="830" height="36" rx="10" fill="#eef3f9" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="lbl" x="455" y="569" text-anchor="middle">Lu dans la convention des ouvriers du bâtiment ; un accord d'entreprise peut différer</text>
+</svg>

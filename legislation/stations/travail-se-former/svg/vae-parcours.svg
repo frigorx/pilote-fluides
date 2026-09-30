@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-vae" aria-describedby="d-vae" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-vae">La validation des acquis de l'expérience, marche après marche</title>
+  <desc id="d-vae">Un escalier de cinq marches qui montent de gauche à droite : 1, candidature sur la plateforme
+    France VAE ; 2, accompagnement, facultatif ; 3, recevabilité, avec le dossier de faisabilité ; 4, dossier de
+    validation ; 5, jury, par entretien oral ou mise en situation professionnelle. Une flèche part de la cinquième
+    marche vers une carte en haut à gauche, la décision du jury : titre ou diplôme accordé, accordé en partie avec
+    des préconisations, ou non accordé. Une bande en bas rappelle le congé de quarante-huit heures. L'animation
+    allume les marches une à une puis la décision ; l'image fixe est complète.</desc>
+  <style>
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#9d174d; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .lblb { font-size:17px; fill:#10233c; font-weight:bold; }
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+  </style>
+
+  <!-- Décision du jury -->
+  <g>
+    <rect x="20" y="24" width="330" height="170" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <text class="ttl" x="38" y="56">La décision du jury</text>
+    <text class="lbl" x="38" y="88">• titre ou diplôme accordé</text>
+    <text class="lbl" x="38" y="118">• accordé en partie :</text>
+    <text class="lbl" x="54" y="140">il indique quoi compléter</text>
+    <text class="lbl" x="38" y="170">• non accordé</text>
+    <path d="M 790 70 V 54 H 372" stroke="#1b3a63" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <polygon points="372,44 352,54 372,64" fill="#1b3a63"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.74;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Marche 1 -->
+  <g>
+    <rect x="20" y="284" width="160" height="80" fill="#f3e4eb" stroke="#9d174d" stroke-width="3"/>
+    <circle cx="100" cy="266" r="18" fill="#9d174d"/><text class="num" x="100" y="273" text-anchor="middle">1</text>
+    <text class="h" x="32" y="312">Candidature</text>
+    <text class="lbl" x="32" y="336">sur France VAE</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.10;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <!-- Marche 2 -->
+  <g>
+    <rect x="190" y="240" width="160" height="124" fill="#f3e4eb" stroke="#9d174d" stroke-width="3"/>
+    <circle cx="270" cy="222" r="18" fill="#9d174d"/><text class="num" x="270" y="229" text-anchor="middle">2</text>
+    <text class="h" x="202" y="268" style="font-size:16px">Accompagnement</text>
+    <text class="lbl" x="202" y="292">facultatif</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.22;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <!-- Marche 3 -->
+  <g>
+    <rect x="360" y="196" width="160" height="168" fill="#f3e4eb" stroke="#9d174d" stroke-width="3"/>
+    <circle cx="440" cy="178" r="18" fill="#9d174d"/><text class="num" x="440" y="185" text-anchor="middle">3</text>
+    <text class="h" x="372" y="224">Recevabilité</text>
+    <text class="lbl" x="372" y="248">dossier de</text>
+    <text class="lbl" x="372" y="270">faisabilité</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.28;0.34;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <!-- Marche 4 -->
+  <g>
+    <rect x="530" y="152" width="160" height="212" fill="#f3e4eb" stroke="#9d174d" stroke-width="3"/>
+    <circle cx="610" cy="134" r="18" fill="#9d174d"/><text class="num" x="610" y="141" text-anchor="middle">4</text>
+    <text class="h" x="542" y="180">Dossier de</text>
+    <text class="h" x="542" y="200">validation</text>
+    <text class="lbl" x="542" y="226">activités et</text>
+    <text class="lbl" x="542" y="248">compétences</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.40;0.46;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <!-- Marche 5 -->
+  <g>
+    <rect x="700" y="108" width="180" height="256" fill="#f3e4eb" stroke="#9d174d" stroke-width="3"/>
+    <circle cx="790" cy="90" r="18" fill="#9d174d"/><text class="num" x="790" y="97" text-anchor="middle">5</text>
+    <text class="h" x="712" y="136">Jury</text>
+    <text class="lbl" x="712" y="162">entretien oral et/ou</text>
+    <text class="lbl" x="712" y="184">mise en situation</text>
+    <text class="lbl" x="712" y="206">professionnelle</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.58;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bande congé -->
+  <rect x="20" y="382" width="860" height="30" rx="10" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+  <text class="lbl" x="450" y="403" text-anchor="middle">Salarié : un congé VAE de 48 heures par session d'évaluation, rémunération maintenue.</text>
+</svg>

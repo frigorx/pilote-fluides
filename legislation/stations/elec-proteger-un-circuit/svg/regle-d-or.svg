@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-or" aria-describedby="d-or" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-or">La règle d'or : la protection protège le câble</title>
+  <desc id="d-or">Deux cartes de trois barres horizontales chacune : IB, le courant que le circuit consomme, In, le calibre
+    de la protection, et IZ, le courant que le câble peut supporter. À gauche, carte « correct », encadrée en vert : les
+    barres sont de plus en plus longues, IB puis In puis IZ, et la formule IB inférieur ou égal à In inférieur ou égal à
+    IZ est écrite dessous. À droite, carte « faux », encadrée en rouge : la barre du calibre In dépasse la barre du câble
+    IZ ; un crochet rouge marque la partie où le câble est en danger, sans que la protection ne coupe. Une bande rappelle
+    la signification de IB, In et IZ. L'animation fait grandir les barres une à une ; l'image fixe montre les barres
+    complètes.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .sym { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .ok  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#047857; }
+    .ko  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#c0392b; }
+    .kol { font-size:16px; font-weight:bold; fill:#c0392b; }
+    .band{ font-size:16px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Le calibre ne dépasse jamais ce que le câble supporte</text>
+
+  <!-- Carte correcte -->
+  <rect x="20" y="50" width="410" height="270" rx="14" fill="#fffdf8" stroke="#047857" stroke-width="3"/>
+  <text class="ok" x="40" y="84">Correct</text>
+  <text class="sym" x="40" y="130">IB</text><text class="mut" x="40" y="150">consommé</text>
+  <text class="sym" x="40" y="190">In</text><text class="mut" x="40" y="210">calibre</text>
+  <text class="sym" x="40" y="250">IZ</text><text class="mut" x="40" y="270">câble</text>
+  <rect x="160" y="110" width="100" height="34" rx="6" fill="#2f5689">
+    <animate attributeName="width" values="0;0;100;100" keyTimes="0;0.04;0.13;1" dur="12s" repeatCount="indefinite"/></rect>
+  <rect x="160" y="170" width="170" height="34" rx="6" fill="#e8914a">
+    <animate attributeName="width" values="0;0;170;170" keyTimes="0;0.14;0.24;1" dur="12s" repeatCount="indefinite"/></rect>
+  <rect x="160" y="230" width="250" height="34" rx="6" fill="#a16207">
+    <animate attributeName="width" values="0;0;250;250" keyTimes="0;0.25;0.36;1" dur="12s" repeatCount="indefinite"/></rect>
+  <text class="ok" x="225" y="304" text-anchor="middle">IB ≤ In ≤ IZ</text>
+
+  <!-- Carte fausse -->
+  <rect x="470" y="50" width="410" height="270" rx="14" fill="#fffdf8" stroke="#c0392b" stroke-width="3"/>
+  <text class="ko" x="490" y="84">Faux</text>
+  <text class="sym" x="490" y="130">IB</text><text class="mut" x="490" y="150">consommé</text>
+  <text class="sym" x="490" y="190">In</text><text class="mut" x="490" y="210">calibre</text>
+  <text class="sym" x="490" y="250">IZ</text><text class="mut" x="490" y="270">câble</text>
+  <rect x="610" y="110" width="100" height="34" rx="6" fill="#2f5689">
+    <animate attributeName="width" values="0;0;0;100;100" keyTimes="0;0.40;0.42;0.50;1" dur="12s" repeatCount="indefinite"/></rect>
+  <rect x="610" y="170" width="250" height="34" rx="6" fill="#c0392b">
+    <animate attributeName="width" values="0;0;0;250;250" keyTimes="0;0.50;0.52;0.62;1" dur="12s" repeatCount="indefinite"/></rect>
+  <rect x="610" y="230" width="170" height="34" rx="6" fill="#a16207">
+    <animate attributeName="width" values="0;0;0;170;170" keyTimes="0;0.62;0.64;0.72;1" dur="12s" repeatCount="indefinite"/></rect>
+  <g>
+    <path d="M780,282 V290 H860 V282" fill="none" stroke="#c0392b" stroke-width="3"/>
+    <text class="kol" x="820" y="312" text-anchor="middle">câble en danger</text>
+    <text class="ko" x="680" y="304" text-anchor="middle">In &gt; IZ</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.72;0.80;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="20" y="340" width="860" height="44" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="367" text-anchor="middle">IB : ce que le circuit consomme · In : le calibre de la protection · IZ : ce que le câble supporte</text>
+</svg>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-f6" aria-describedby="d-f6" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-f6">L'ordre de démarrage d'un désenfumage mécanique</title>
+  <desc id="d-f6">Une ligne de temps horizontale à quatre étapes. Étape 1 : la détection incendie ou la commande
+    manuelle donne l'ordre, symbolisée par un détecteur rouge. Étape 2 : les volets et les portes se
+    mettent en position, symbolisée par un volet dont le battant s'ouvre. Étape 3 : une temporisation de
+    trente secondes au plus, symbolisée par une horloge dont l'anneau orange se remplit. Étape 4 : le
+    ventilateur démarre, symbolisé par une hélice. Un repère orange avance le long de la ligne d'une
+    étape à l'autre. Une phrase en bas rappelle que les volets sont en position avant que le ventilateur
+    ne pousse. L'image fixe montre les quatre étapes acquises, le repère sur la dernière.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .bd  { font-weight:bold; font-size:17px; fill:#10233c; }
+    .cap { font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="38" text-anchor="middle">Le ventilateur ne part pas tout seul, il part dans l'ordre</text>
+
+  <!-- la ligne -->
+  <line x1="90" y1="215" x2="690" y2="215" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="130" cy="215" r="8" fill="#1b3a63"/>
+  <circle cx="300" cy="215" r="8" fill="#1b3a63"/>
+  <circle cx="470" cy="215" r="8" fill="#1b3a63"/>
+  <circle cx="640" cy="215" r="8" fill="#1b3a63"/>
+  <line x1="130" y1="165" x2="130" y2="200" stroke="#5a6b7d" stroke-width="2.5"/>
+  <line x1="300" y1="165" x2="300" y2="200" stroke="#5a6b7d" stroke-width="2.5"/>
+  <line x1="470" y1="165" x2="470" y2="200" stroke="#5a6b7d" stroke-width="2.5"/>
+  <line x1="640" y1="165" x2="640" y2="200" stroke="#5a6b7d" stroke-width="2.5"/>
+
+  <!-- 1. détecteur -->
+  <g>
+    <circle cx="130" cy="120" r="34" fill="#fdecea" stroke="#b91c1c" stroke-width="3.5"/>
+    <circle cx="130" cy="120" r="16" fill="none" stroke="#b91c1c" stroke-width="3" stroke-dasharray="6 5"/>
+    <circle cx="130" cy="120" r="5" fill="#b91c1c"/>
+    <animate attributeName="opacity" values="0.3;0.3;1;1" keyTimes="0;0.03;0.06;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 2. volet -->
+  <g>
+    <rect x="266" y="88" width="68" height="64" fill="#eef3f9" stroke="#1b3a63" stroke-width="3.5"/>
+    <line x1="270" y1="148" x2="330" y2="148" stroke="#b91c1c" stroke-width="6" stroke-linecap="round" transform="rotate(-50 270 148)">
+      <animateTransform attributeName="transform" type="rotate" additive="replace" values="0 270 148;0 270 148;-50 270 148;-50 270 148" keyTimes="0;0.19;0.27;1" dur="13s" repeatCount="indefinite"/>
+    </line>
+    <animate attributeName="opacity" values="0.3;0.3;1;1" keyTimes="0;0.19;0.22;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 3. temporisation -->
+  <g>
+    <circle cx="470" cy="120" r="34" fill="#fffdf8" stroke="#1b3a63" stroke-width="3.5"/>
+    <path d="M470,120 V100 M470,120 L484,128" stroke="#1b3a63" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="470" cy="120" r="42" fill="none" stroke="#e8914a" stroke-width="6" stroke-dasharray="264" stroke-dashoffset="0" transform="rotate(-90 470 120)">
+      <animate attributeName="stroke-dashoffset" values="264;264;0;0" keyTimes="0;0.4;0.58;1" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <animate attributeName="opacity" values="0.3;0.3;1;1" keyTimes="0;0.39;0.42;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 4. ventilateur -->
+  <g>
+    <circle cx="640" cy="120" r="38" fill="#fffdf8" stroke="#1b3a63" stroke-width="3.5"/>
+    <g>
+      <path d="M640,120 L640,90 M640,120 L666,135 M640,120 L614,135" stroke="#1b3a63" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <animateTransform attributeName="transform" type="rotate" additive="replace" values="0 640 120;0 640 120;0 640 120;3600 640 120" keyTimes="0;0.5;0.62;1" dur="13s" repeatCount="indefinite"/>
+    </g>
+    <animate attributeName="opacity" values="0.3;0.3;1;1" keyTimes="0;0.6;0.64;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- repère orange qui avance -->
+  <circle cx="640" cy="215" r="12" fill="#e8914a" stroke="#1b3a63" stroke-width="2.5">
+    <animate attributeName="cx" values="130;130;300;300;470;470;640;640" keyTimes="0;0.05;0.2;0.27;0.4;0.47;0.62;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- étiquettes -->
+  <text class="bd" x="130" y="272" text-anchor="middle">1. Détection ou</text>
+  <text class="bd" x="130" y="294" text-anchor="middle">commande manuelle</text>
+  <text class="bd" x="300" y="272" text-anchor="middle">2. Volets et portes</text>
+  <text class="bd" x="300" y="294" text-anchor="middle">se mettent en position</text>
+  <text class="bd" x="470" y="272" text-anchor="middle">3. Temporisation</text>
+  <text class="bd" x="470" y="294" text-anchor="middle">30 secondes au plus</text>
+  <text class="bd" x="640" y="272" text-anchor="middle">4. Le ventilateur</text>
+  <text class="bd" x="640" y="294" text-anchor="middle">démarre</text>
+
+  <text class="lbl" x="400" y="356" text-anchor="middle">En principe, une alimentation électrique de sécurité,</text>
+  <text class="lbl" x="400" y="380" text-anchor="middle">et un coffret de relayage pour commander le ventilateur.</text>
+  <text class="cap" x="400" y="444" text-anchor="middle">Les volets sont en position avant que le ventilateur ne pousse.</text>
+</svg>

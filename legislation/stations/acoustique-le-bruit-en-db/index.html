@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le bruit en dB — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qu'est un son, le décibel et l'échelle logarithmique, la pondération A, la puissance acoustique Lw et la pression acoustique Lp, l'addition de deux sources et l'effet de la distance.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/acoustique-le-bruit-en-db/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Acoustique (#6d28d9).
+     Station de tête de la ligne : elle donne le vocabulaire (dB, dB(A),
+     Lw, Lp) dont se servent les quatre suivantes — seuils, mesurer,
+     PAC et voisinage, traiter le bruit.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+
+     Sources : voir FOND.md (INRS, AFPAC, Code du travail R. 4431-2).
+     Aucune valeur n'est reprise sans source ; les règles de calcul
+     (+3 dB pour deux sources identiques, −6 dB par doublement de la
+     distance) sont recoupées avec la définition logarithmique.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Acoustique · niveau BTS</p>
+  <h1>Le bruit en dB — dB(A), niveaux</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-acoustique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez ce qu'est un son, pourquoi un niveau de bruit se compte en <strong>décibels</strong> sur une échelle logarithmique, ce que change la <strong>pondération A</strong>, et vous savez distinguer la <strong>puissance acoustique Lw</strong> (ce que la machine émet) de la <strong>pression acoustique Lp</strong> (ce que l'on mesure à un endroit). Vous savez aussi pourquoi deux sources ne font pas le double, et comment la distance et le lieu changent le niveau reçu.</p>
+    <p><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — compétences <strong>CP9</strong> (climatisation : choisir un groupe extérieur sur sa puissance acoustique et juger de son effet à l'implantation) et <strong>CP7</strong> (ventilation tertiaire : ventilateurs, réseaux et bouches font du bruit dans les locaux).</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la machine à gauche : c'est la source. Les arcs violets figurent l'onde qui s'en éloigne, et dans l'animation ils s'allument l'un après l'autre. Un son n'est pas un objet qui voyage : c'est de l'air qui oscille sur place et qui passe le mouvement à l'air voisin. En dessous, la courbe montre ce que reçoit un point de l'espace. La pression monte au-dessus de sa valeur de repos, l'air est comprimé, puis elle redescend, l'air est détendu, et cela recommence. Le point orange suit cette montée et cette descente. C'est cette variation que l'oreille et le sonomètre détectent.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un son, c'est de la pression qui varie</h2>
+    <p>Un son est une <strong>vibration de l'air</strong> qui se propage sous la forme d'<strong>ondes acoustiques</strong>. Autour d'une machine qui tourne, la pression de l'air, en un point donné, monte un peu au-dessus de sa valeur de repos, puis redescend, et cela recommence sans cesse.</p>
+    <p>L'air ne va pas de la machine à l'oreille : il <strong>oscille sur place</strong> et passe le mouvement à l'air voisin. C'est cette variation de pression que l'oreille — ou le microphone d'un sonomètre — détecte.</p>
+    <p>Un <strong>bruit</strong>, c'est un son perçu comme gênant : la gêne est subjective, mais le niveau, lui, se mesure.</p>
+    <figure>
+      <img src="svg/son-onde.svg" alt="Une machine à gauche émet quatre arcs violets concentriques qui s'éloignent vers la droite. En dessous, une courbe ondulée montre la pression de l'air en un point au fil du temps, autour d'une ligne pointillée qui marque la pression au repos : au-dessus l'air est comprimé, en dessous il est détendu. Dans l'animation, les arcs s'allument un à un et un point orange parcourt la courbe.">
+      <figcaption>L'onde s'éloigne de la source ; en un point, la pression monte et descend.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Deux ondes en haut. À gauche, les vibrations sont espacées : elles sont lentes, la fréquence est faible, le son est grave. À droite, elles sont serrées : elles sont rapides, la fréquence est élevée, le son est aigu. La fréquence se compte en hertz, c'est-à-dire en vibrations par seconde. En bas, la règle des fréquences. De vingt à vingt mille hertz, c'est la zone que l'oreille humaine entend ; en dessous, ce sont les infrasons, au-dessus, les ultrasons. Le crochet orange marque la parole, de cent à six mille hertz. Retenez ceci : le hertz dit la hauteur du son, le décibel dit sa force.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Grave ou aigu : la fréquence</h2>
+    <p>Le nombre de vibrations par seconde est la <strong>fréquence</strong>, exprimée en <strong>hertz (Hz)</strong>. Vibrations rapides : fréquence élevée, son <strong>aigu</strong>. Vibrations lentes : fréquence faible, son <strong>grave</strong>.</p>
+    <ul>
+      <li>l'oreille humaine entend de <strong>20 à 20 000 Hz</strong> ; en dessous, les infrasons ; au-dessus, les ultrasons ;</li>
+      <li>la <strong>parole</strong> occupe la plage de <strong>100 à 6 000 Hz</strong>.</li>
+    </ul>
+    <p><strong>Deux grandeurs, deux unités</strong> : l'hertz dit <em>la hauteur</em> du son, le décibel dit <em>sa force</em>.</p>
+    <figure>
+      <img src="svg/frequence-grave-aigu.svg" alt="En haut, une onde lente à gauche pour le son grave et une onde rapide à droite pour le son aigu. En bas, une règle des fréquences graduée en logarithme : infrasons en dessous de 20 hertz, sons audibles de 20 à 20 000 hertz, ultrasons au-delà ; un crochet orange marque la parole, de 100 à 6 000 hertz.">
+      <figcaption>À gauche le grave, à droite l'aigu ; en bas, la place de la parole dans la zone audible.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Voici la règle des niveaux, de zéro à cent vingt décibels pondérés A. Le curseur orange s'arrête sur quatre repères que donne l'INRS, l'Institut national de recherche et de sécurité. Zéro : le bruit le plus faible qu'une oreille humaine perçoit. Cinquante : une conversation habituelle. Quatre-vingts : le seuil de nocivité pour huit heures par jour. Cent vingt : une sensation douloureuse. Pourquoi une échelle logarithmique ? Parce qu'elle compare un son à une référence par un rapport : dix fois plus d'énergie sonore ajoute dix décibels, deux fois plus n'en ajoute que trois. C'est pour cela que les niveaux ne s'additionnent pas comme des nombres ordinaires.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le décibel : pourquoi une échelle logarithmique</h2>
+    <p>On mesure physiquement le niveau d'un bruit en <strong>décibels (dB)</strong>. Repères donnés par l'INRS, en dB(A) :</p>
+    <ul>
+      <li><strong>0</strong> : le bruit le plus faible qu'une oreille humaine puisse percevoir ;</li>
+      <li><strong>50</strong> : le niveau habituel d'une conversation ;</li>
+      <li><strong>80</strong> : le seuil de nocivité, pour une exposition de 8 h par jour ;</li>
+      <li><strong>120</strong> : un bruit qui provoque une sensation douloureuse.</li>
+    </ul>
+    <p>Le décibel compare une quantité à une référence, par un <strong>logarithme</strong>. Conséquence : <strong>+ 10 dB, c'est dix fois plus d'énergie sonore ; + 3 dB, c'est deux fois plus</strong>. Une échelle ordinaire ne pourrait pas ranger sur une même règle des bruits aussi différents.</p>
+    <figure>
+      <img src="svg/echelle-db.svg" alt="Une règle horizontale graduée de 0 à 120 décibels pondérés A, avec quatre repères : 0, le bruit le plus faible perceptible ; 50, une conversation habituelle ; 80, le seuil de nocivité pour 8 heures par jour ; 120, une sensation douloureuse. Un curseur orange parcourt la règle d'un repère à l'autre. En bas : plus 10 dB, dix fois plus d'énergie ; plus 3 dB, deux fois plus.">
+      <figcaption>Le curseur passe d'un repère à l'autre ; il termine sur 120 dB(A).</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="À gauche, la courbe schématique de la sensibilité de l'oreille. Elle est très basse pour les sons graves, elle monte vers les fréquences moyennes, puis redescend un peu vers les aigus. L'oreille entend donc beaucoup moins les graves. À droite, le même bruit lu de deux façons. Pour un bruit grave, la barre en décibels est haute, mais la barre en décibels pondérés A, la barre orange, est plus basse : la pondération A retire une part de ce que l'oreille n'entend pas. Pour un bruit médium, les deux barres se confondent. Ce schéma est qualitatif : aucune valeur n'y figure.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La pondération A : l'oreille entend moins les graves</h2>
+    <p>L'oreille n'est pas également sensible à toutes les fréquences : elle entend <strong>beaucoup moins les graves</strong> que les fréquences moyennes. Pour rendre compte du niveau <em>réellement perçu</em>, on utilise le <strong>décibel pondéré A</strong>, noté <strong>dB(A)</strong> : la mesure est corrigée fréquence par fréquence.</p>
+    <p>Pour les niveaux très élevés, l'oreille ne réagit pas de la même manière : on utilise alors le <strong>décibel pondéré C</strong>, noté dB(C). Le <strong>sonomètre</strong> est l'instrument de mesure de base.</p>
+    <p><strong>Ce que cela change pour vous</strong> : un « dB » sans lettre et un « dB(A) » ne sont pas la même mesure. Le Code du travail exprime l'exposition quotidienne en dB(A) et la pression de crête en dB(C) (article R. 4431-2) — les valeurs sont dans la station « Les seuils ».</p>
+    <figure>
+      <img src="svg/ponderation-a.svg" alt="À gauche, une courbe schématique de la sensibilité de l'oreille selon la fréquence : très basse pour les graves, haute vers les fréquences moyennes, un peu plus basse vers les aigus. À droite, deux paires de barres : pour un bruit grave la barre en dB est haute et la barre en dB(A) plus basse ; pour un bruit médium, les deux barres ont la même hauteur. Schéma qualitatif sans valeur chiffrée.">
+      <figcaption>Le dB(A) écarte une part de ce que l'oreille n'entend pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Deux grandeurs à ne jamais confondre. À gauche, la machine et le repère Lw, la puissance acoustique : ce que la machine émet, où qu'on la pose. Mesurée en laboratoire, elle figure sur la fiche du constructeur, et c'est elle qui permet de comparer deux appareils. À droite, deux sonomètres et le repère Lp, la pression acoustique : ce que l'on mesure à un endroit précis, et qui change avec la distance et le lieu. Une machine, un seul Lw ; autant de Lp que de points de mesure. Pensez à une ampoule : sa puissance est fixe, ce que vous en recevez dépend de votre place.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Lw et Lp : ce que la machine émet, ce que l'on reçoit</h2>
+    <ul>
+      <li><strong>Lw, puissance acoustique</strong> : la capacité d'émission sonore de la source, <em>indépendamment de son environnement</em>. Elle est mesurée en laboratoire ; c'est la valeur qui permet de <strong>comparer directement les appareils</strong> entre eux.</li>
+      <li><strong>Lp, pression acoustique</strong> : la grandeur perçue par l'oreille et mesurée par le sonomètre. Pour une source donnée, elle <strong>dépend de l'environnement d'installation et de la distance</strong> de la mesure.</li>
+    </ul>
+    <p><strong>Pour le technicien d'études</strong> : on choisit un groupe en comparant les Lw des fiches constructeur, puis on vérifie ce que cela donne, en Lp, chez le voisin ou dans le local. Comparer le Lw d'un appareil au Lp d'un autre, c'est comparer deux grandeurs différentes.</p>
+    <figure>
+      <img src="svg/lw-et-lp.svg" alt="À gauche, une machine extérieure émet des ondes ; au-dessus, la mention Lw, puissance acoustique, ce que la machine émet. À droite, deux sonomètres, l'un plus proche et l'autre plus loin, chacun avec la mention Lp, pression acoustique, ce que l'on mesure à cet endroit. Une ligne de distance les relie à la machine. Une bande rappelle : un seul Lw par machine, autant de Lp que de lieux de mesure.">
+      <figcaption>Un Lw par machine ; un Lp par point de mesure.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Cinq colonnes, et dans chacune des machines identiques de quatre-vingts décibels pondérés A chacune. Une seule machine : quatre-vingts. Deux machines : quatre-vingt-trois, soit trois de plus seulement. Trois machines : quatre-vingt-cinq. Quatre : quatre-vingt-six. Cinq : quatre-vingt-sept. Et dix machines donnent quatre-vingt-dix. Le gain diminue à chaque machine ajoutée. La raison : ce sont les énergies sonores qui s'additionnent, pas les niveaux. Deux fois plus d'énergie, c'est trois décibels de plus. Et inversement, arrêter l'une de deux machines identiques ne retire que trois décibels.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Deux sources ne font pas le double</h2>
+    <p>Les niveaux en décibels <strong>ne s'ajoutent pas directement</strong> : c'est une échelle logarithmique. Si une machine produit <strong>80 dB(A)</strong> (INRS) :</p>
+    <ul>
+      <li>2 machines : <strong>83 dB(A)</strong> · 3 machines : 85 · 4 machines : 86 · 5 machines : 87 · 10 machines : <strong>90</strong> ;</li>
+      <li>quand deux machines identiques fonctionnent, <strong>en arrêter une ne baisse le niveau que de 3 dB(A)</strong>.</li>
+    </ul>
+    <p><strong>Pourquoi</strong> : ce sont les <em>énergies</em> sonores qui s'additionnent. Deux sources identiques donnent deux fois plus d'énergie, soit 10 fois le logarithme de 2, environ 3 dB de plus.</p>
+    <p>Quand l'écart est grand, la source la plus forte domine : deux sources de 60 et 66 dB(A) donnent 67 dB(A) (AFPAC).</p>
+    <figure>
+      <img src="svg/deux-sources.svg" alt="Cinq colonnes de machines identiques de 80 dB(A) chacune : une, deux, trois, quatre puis cinq machines, avec les niveaux obtenus 80, 83, 85, 86 et 87 dB(A) et les écarts plus 3, plus 2, plus 1, plus 1. En dessous, quatre constats : 80 plus 80 ne font pas 160 ; deux machines identiques ajoutent 3 dB(A) ; en arrêter une en retire 3 ; dix machines donnent 90 dB(A). Dans l'animation, les machines s'ajoutent une colonne après l'autre.">
+      <figcaption>Chaque machine ajoutée pèse moins que la précédente.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="En haut, une machine et trois points de mesure alignés, à deux, quatre puis huit mètres, en champ libre, c'est-à-dire sans mur ni obstacle qui renvoie le son. À deux mètres : cinquante-quatre décibels pondérés A. Chaque fois que la distance double, le niveau baisse de six : quarante-huit à quatre mètres, quarante-deux à huit mètres. Regardez les flèches orange : elles suivent les doublements, pas les mètres. En bas, le lieu compte aussi. Contre un mur, trois de plus ; dans un coin, six de plus ; dans une cour intérieure, neuf de plus. Un coin efface donc, à lui seul, le bénéfice d'un doublement de distance.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">La distance atténue, le lieu renforce</h2>
+    <p><strong>La distance.</strong> En champ libre — sans surface qui renvoie le son —, le niveau de pression acoustique est <strong>réduit de 6 dB(A) à chaque doublement de la distance</strong>. Exemple AFPAC : 54 dB(A) à 2 m, 48 dB(A) à 4 m, 42 dB(A) à 8 m. La baisse suit les <em>doublements</em>, pas les mètres.</p>
+    <p><strong>Le lieu.</strong> Un groupe posé au sol ou sur une terrasse est en champ libre. Contre un mur : <strong>+ 3 dB(A)</strong>. Dans un coin : <strong>+ 6 dB(A)</strong>. Dans une cour intérieure : <strong>+ 9 dB(A)</strong> (au moins). Le son se réfléchit et se cumule.</p>
+    <p><strong>Conséquence pour l'implantation</strong> : un coin ajoute 6 dB(A), autant qu'un doublement de distance en retire. Éviter les angles et les cours intérieures, s'éloigner des limites de propriété et des fenêtres.</p>
+    <figure>
+      <img src="svg/distance-et-lieu.svg" alt="En haut, une machine à gauche et trois points de mesure à 2, 4 et 8 mètres en champ libre : 54, 48 puis 42 dB(A), avec une flèche courbe moins 6 dB(A) entre chaque point. En bas, quatre petits schémas comparent le lieu : champ libre, contre un mur plus 3 dB(A), dans un coin plus 6 dB(A), dans une cour intérieure plus 9 dB(A). Dans l'animation, les niveaux et les flèches apparaissent de gauche à droite.">
+      <figcaption>La distance retire des décibels par paliers ; un mur, un coin ou une cour en ajoutent.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Quatre cartes, quatre questions à vous poser devant tout niveau en décibels. Un : Lw, ce que la machine émet, ou Lp, ce qui est reçu à un endroit ? Deux : décibel simple, ou décibel pondéré A ? Trois : à quelle distance et dans quel lieu ? Six de moins à chaque doublement, et le mur qui ajoute. Quatre : combien de sources ? Les niveaux ne s'additionnent pas comme des nombres. Le bandeau du bas résume le réflexe : ne jamais comparer deux niveaux sans savoir de quoi ils parlent. Les stations suivantes s'en servent : seuils, mesure, pompes à chaleur.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Un son est une <strong>pression qui varie</strong> ; la <strong>fréquence</strong> (Hz) dit sa hauteur, le <strong>décibel</strong> sa force.</li>
+      <li>Le décibel est <strong>logarithmique</strong> : + 3 dB = deux fois plus d'énergie, + 10 dB = dix fois plus.</li>
+      <li>Le <strong>dB(A)</strong> tient compte de l'oreille, qui entend moins les graves.</li>
+      <li><strong>Lw</strong> : ce que la machine émet. <strong>Lp</strong> : ce que l'on mesure à un endroit.</li>
+      <li>Deux sources identiques : + 3 dB seulement. Distance doublée : − 6 dB en champ libre. Un mur, un coin, une cour : + 3, + 6, + 9 dB.</li>
+    </ul>
+    <p class="formule">Le réflexe : ne jamais comparer deux niveaux sans savoir de quoi ils parlent.</p>
+    <figure>
+      <img src="svg/bilan-bruit.svg" alt="Quatre cartes numérotées : 1, Lw ou Lp, émis ou reçu ; 2, dB ou dB(A), pondéré selon l'oreille ou non ; 3, quelle distance et quel lieu ; 4, combien de sources. Une bande rappelle le réflexe : ne jamais comparer deux niveaux sans savoir de quoi ils parlent.">
+      <figcaption>Quatre questions à poser devant un niveau en dB.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Deux machines identiques, de quatre-vingts décibels pondérés A chacune, fonctionnent en même temps. Quel niveau mesure-t-on ? Reprenez la colonne de l'écran six avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Deux machines identiques, 80 dB(A) chacune, marchent ensemble. On mesure…</h2>
+    <figure class="vignette">
+      <img src="svg/deux-sources.svg" alt="Vignette de rappel : des machines identiques de 80 dB(A) et les niveaux obtenus quand on en ajoute, 83 pour deux machines.">
+      <figcaption>Rappel de l'écran 6 — les niveaux ne s'ajoutent pas comme des nombres.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">160 dB(A), la somme des deux niveaux</button>
+      <button type="button" data-answer="b">90 dB(A), dix décibels de plus pour une machine ajoutée</button>
+      <button type="button" data-answer="bonne">83 dB(A), soit 3 dB(A) de plus qu'une seule</button>
+      <button type="button" data-answer="d">86 dB(A), soit 3 dB(A) de plus par machine</button>
+    </div>
+    <p class="feedback" hidden data-explication="Ce sont les énergies qui s'additionnent, pas les niveaux : deux sources identiques ajoutent 3 dB(A) seulement. Il faut dix machines de 80 dB(A) pour atteindre 90 dB(A) (INRS)."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. La fiche du constructeur d'un groupe extérieur donne son niveau de puissance acoustique, le Lw. Que peut-on en déduire ? Souvenez-vous de la différence entre ce que la machine émet et ce que l'on mesure.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">La fiche du constructeur donne le Lw d'un groupe extérieur. On peut en déduire…</h2>
+    <figure class="vignette">
+      <img src="svg/lw-et-lp.svg" alt="Vignette de rappel : la puissance acoustique Lw, ce que la machine émet, et la pression acoustique Lp, ce que l'on mesure à un endroit.">
+      <figcaption>Rappel de l'écran 5 — un Lw par machine, un Lp par point de mesure.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Ce que le voisin entendra à sa fenêtre</button>
+      <button type="button" data-answer="b">Le niveau mesuré à un mètre, quel que soit le lieu</button>
+      <button type="button" data-answer="c">Le niveau maximal que la loi autorise pour cet appareil</button>
+      <button type="button" data-answer="bonne">Ce que la machine émet : de quoi la comparer à une autre</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le Lw caractérise l'émission de la source, indépendamment de son environnement : il sert à comparer les appareils. Ce que reçoit le voisin est un Lp, qui dépend de la distance et du lieu."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un groupe extérieur donne cinquante-quatre décibels pondérés A à deux mètres, en champ libre. Que lit-on à quatre mètres, toujours en champ libre ? Regardez les flèches de l'écran sept.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">54 dB(A) à 2 m en champ libre. Que lit-on à 4 m, toujours en champ libre ?</h2>
+    <figure class="vignette">
+      <img src="svg/distance-et-lieu.svg" alt="Vignette de rappel : trois points de mesure à 2, 4 et 8 mètres avec 54, 48 et 42 dB(A), et l'effet du lieu d'installation.">
+      <figcaption>Rappel de l'écran 7 — la baisse suit les doublements de distance.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">27 dB(A), la moitié, puisque la distance double</button>
+      <button type="button" data-answer="bonne">48 dB(A), soit 6 dB(A) de moins</button>
+      <button type="button" data-answer="c">50 dB(A), soit 2 dB(A) de moins par mètre gagné</button>
+      <button type="button" data-answer="d">42 dB(A), soit 12 dB(A) de moins</button>
+    </div>
+    <p class="feedback" hidden data-explication="En champ libre, le niveau baisse de 6 dB(A) à chaque doublement de la distance : 54 à 2 m, 48 à 4 m, 42 à 8 m (AFPAC)."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Pourquoi exprime-t-on si souvent un bruit en décibels pondérés A ? Reprenez la courbe de l'écran quatre avant de répondre.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Pourquoi exprime-t-on souvent un bruit en dB(A) ?</h2>
+    <figure class="vignette">
+      <img src="svg/ponderation-a.svg" alt="Vignette de rappel : la courbe de sensibilité de l'oreille, basse pour les graves, et la comparaison des barres en dB et en dB(A).">
+      <figcaption>Rappel de l'écran 4 — l'oreille entend moins les graves.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Il tient compte de la sensibilité de l'oreille, moins sensible aux graves</button>
+      <button type="button" data-answer="b">Le « A » veut dire « absolu » : c'est la mesure sans correction</button>
+      <button type="button" data-answer="c">Il ne retient que les sons aigus, les plus gênants</button>
+      <button type="button" data-answer="d">Il permet d'additionner les niveaux comme des nombres ordinaires</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le dB(A) rend compte du niveau réellement perçu par l'oreille, qui entend beaucoup moins les graves. Ce n'est ni une mesure « absolue » ni un moyen d'additionner les niveaux comme des nombres."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../acoustique-les-seuils/"><strong>Les seuils</strong></a> (même sous-ligne)
+      — les valeurs du Code du travail et du voisinage sont exprimées avec ces décibels : il faut savoir lesquels.</li>
+    <li><a href="../acoustique-mesurer/"><strong>Mesurer</strong></a> (même sous-ligne)
+      — comment un sonomètre donne un Lp, et pourquoi une mesure a des règles.</li>
+    <li><a href="../acoustique-pac-voisinage/"><strong>PAC et voisinage</strong></a> (même sous-ligne)
+      — du Lw de la fiche constructeur au Lp chez le voisin : le cas d'école.</li>
+    <li><a href="../risques-epi/"><strong>Les équipements de protection individuelle</strong></a> (autre sous-ligne : Risques professionnels)
+      — les protections auditives : le niveau en dB(A) décide de l'exposition.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ : le dossier reste
+     déplaçable d'un bloc. voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

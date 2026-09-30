@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>NF C 15-100 — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qu'est la norme des installations électriques à basse tension, son statut réel depuis 2016, ses six objectifs, la logique du tableau, l'alimentation d'une pompe à chaleur ou d'une centrale de traitement d'air, la terre et le Consuel.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/elec-nf-c-15-100/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Électrique · niveau BTS.
+     Tête de la sous-ligne : la norme des installations à basse tension.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les narrations de cette station ne sont pas encore dans l'index audio
+     (moteur/voix-index.js) : la voix du navigateur parle en attendant la
+     fabrication des MP3.
+
+     Sources : voir FOND.md. Norme payante : rien n'est reproduit de son
+     texte ; seuls les textes réglementaires publics sont cités.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Électrique · niveau BTS</p>
+  <h1>NF C 15-100 — la norme des installations basse tension</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-electrique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire ce qu'est la NF C 15-100 et quel est son <strong>statut réel</strong> : une norme, rendue quasi incontournable par les textes, mais qui n'est pas la loi. Vous savez lire ses six objectifs de sécurité, la logique d'un tableau et de ses circuits spécialisés, ce que vous transmettez à l'électricien pour alimenter une pompe à chaleur, un groupe ou une centrale de traitement d'air, et où intervient le Consuel.</p>
+    <p><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — compétences <strong>CP6</strong> (chauffage et eau chaude sanitaire), <strong>CP9</strong> (climatisation) et <strong>CP10</strong> (centrale de traitement d'air), pour la partie « alimentation électrique des équipements étudiés ».</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les trois bandes, de haut en bas. Le texte réglementaire, un arrêté ou un article du Code du travail, dit ce qu'il faut obtenir : des objectifs de sécurité. La norme française N F C quinze cent, élaborée dans le cadre de l'Association française de normalisation, dit comment y parvenir, par des solutions reconnues. Et la notice du constructeur, tout en bas, donne les valeurs de votre appareil : intensité, protection. Ce sont trois niveaux différents. Celui qui les confond cite la norme comme une loi, ou oublie que la notice reste la référence de la machine.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un texte, une norme, une notice</h2>
+    <p>La <strong>NF C 15-100</strong> s'intitule « Installations électriques à basse tension ». C'est une <strong>norme</strong> : un document de référence élaboré dans le cadre de l'AFNOR (Association française de normalisation) et diffusé par <strong>AFNOR Éditions</strong>. Elle est payante : ce que vous lisez ici s'appuie sur les textes réglementaires publics et sur les guides d'application, jamais sur une copie de la norme.</p>
+    <p>Trois niveaux à ne pas confondre :</p>
+    <ul>
+      <li>le <strong>texte réglementaire</strong> (arrêté, Code du travail) dit <strong>quoi</strong> : les objectifs de sécurité ;</li>
+      <li>la <strong>norme</strong> dit <strong>comment</strong> : les solutions reconnues pour les atteindre ;</li>
+      <li>la <strong>notice du constructeur</strong> dit <strong>avec quel appareil</strong> : intensité, protection, exigences de la machine.</li>
+    </ul>
+    <figure>
+      <img src="svg/trois-niveaux.svg" alt="Trois bandes empilées, reliées par des flèches vers le bas : le texte réglementaire, arrêté ou Code du travail, qui dit quoi, les objectifs de sécurité ; la norme NF C 15-100, éditée et diffusée par l'AFNOR, qui dit comment, les solutions reconnues ; la notice du constructeur, livrée avec l'appareil, qui dit avec quel appareil, les valeurs de la machine. Une bande finale : le texte fixe le but, la norme et la notice montrent le chemin.">
+      <figcaption>Le texte fixe le but ; la norme et la notice montrent le chemin.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Suivez la voie du haut, en trait plein. L'arrêté du 3 août 2016 fixe les objectifs de sécurité des installations électriques des logements neufs. Si l'installation est conçue selon la norme, la conformité est présumée : c'est la voie la plus sûre. La voie du bas, en trait tireté, existe aussi : une autre norme équivalente, à condition de démontrer le même niveau de sécurité. En bas de l'image, la note rappelle l'ancien régime : l'arrêté de 1969 imposait la norme en entier, il est abrogé. Dans les locaux de travail, c'est le Code du travail qui joue ce rôle.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Son statut : une présomption, pas une loi</h2>
+    <p>On lit souvent que la NF C 15-100 est « obligatoire ». C'est un raccourci. Trois portes réglementaires y renvoient :</p>
+    <ul>
+      <li><strong>Logement neuf</strong> — l'<strong>arrêté du 3 août 2016</strong> fixe six objectifs de sécurité. Les installations conçues et réalisées selon la norme (titre 10, édition de 2002, mise à jour de 2005, amendements A1 à A5) sont <strong>présumées</strong> conformes ; une <strong>autre norme équivalente</strong> est admise si elle atteint le même niveau de sécurité. Il s'applique aux permis de construire ou déclarations préalables postérieurs au 1<sup>er</sup> septembre 2016 et a <strong>abrogé l'arrêté du 22 octobre 1969</strong>, qui imposait la norme en entier ;</li>
+      <li><strong>Lieux de travail</strong> — le <strong>Code du travail</strong> (articles R. 4215-14 et R. 4215-15) et l'<strong>arrêté du 19 avril 2012</strong>, qui cite la NF C 15-100 : une installation réalisée conformément à la norme est réputée satisfaire aux prescriptions du chapitre ;</li>
+      <li><strong>Mise en service</strong> — l'attestation de conformité et le Consuel (écran 8).</li>
+    </ul>
+    <p><strong>Ce que ça change pour vous</strong> : suivre la norme est la ligne de défense la plus sûre ; s'en écarter oblige à <em>démontrer</em> l'équivalence. Et l'édition citée par un texte n'est pas forcément la dernière : vérifiez toujours quelle version s'applique à votre chantier (date du permis, du marché).</p>
+    <figure>
+      <img src="svg/deux-chemins.svg" alt="Deux voies partent d'un cadre : les objectifs de sécurité de l'arrêté du 3 août 2016, et arrivent à un cadre : objectifs atteints. La voie du haut, en trait plein, passe par la NF C 15-100 : conformité présumée. La voie du bas, en trait tireté, passe par une autre norme : même niveau de sécurité à démontrer. Une note en bas rappelle que l'arrêté de 1969, qui imposait la norme en entier, est abrogé.">
+      <figcaption>Trait plein : la voie de la présomption. Trait tireté : celle de la démonstration.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Trois familles de risques, six objectifs numérotés. À gauche, le choc électrique : le contact indirect, c'est-à-dire un défaut sur une masse métallique, et le contact direct avec une partie sous tension. Au centre, la chaleur et le feu : une surintensité qui échauffe les conducteurs, et l'incendie. À droite, l'usage au quotidien : des circuits terminaux adaptés et dédiés, et une distribution organisée, avec un tableau et une coupure d'urgence. En résumé : protéger les personnes, protéger les biens, garder une installation utilisable. L'arrêté fixe ces buts, la norme détaille les moyens.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Les grands principes : protéger les personnes, les biens, l'installation</h2>
+    <p>L'arrêté du 3 août 2016 pose <strong>six règles fondamentales</strong>. Regroupées par risque :</p>
+    <ul>
+      <li><strong>Le choc électrique</strong> — (1) contacts indirects : prise de terre, liaison équipotentielle, coupure automatique ; (5) contacts directs : aucune partie active dangereuse accessible ;</li>
+      <li><strong>La chaleur et le feu</strong> — (2) protection contre les surintensités ; (6) limitation des risques d'incendie et de propagation du feu et de la fumée ;</li>
+      <li><strong>L'usage au quotidien</strong> — (3) sécurité des circuits terminaux, avec des circuits dédiés à certains matériels ; (4) distribution organisée et sécurisée.</li>
+    </ul>
+    <p>Le regroupement par familles est une aide de lecture ; les six numéros sont ceux de l'arrêté. Il vise les <strong>logements neufs</strong> : pour un local de travail, c'est le Code du travail qui pose le cadre, avec la même norme comme référence.</p>
+    <figure>
+      <img src="svg/six-objectifs.svg" alt="Trois colonnes de deux cartes numérotées. Le choc électrique : 1, contact indirect, défaut sur une masse ; 5, contact direct, parties sous tension. La chaleur et le feu : 2, surintensité, chaleur excessive ; 6, incendie, feu et fumée limités. L'usage au quotidien : 3, circuits terminaux, circuits dédiés ; 4, distribution, tableau et coupure. Une bande : l'arrêté fixe les six objectifs, la norme donne les moyens de les atteindre.">
+      <figcaption>Six objectifs numérotés comme dans l'arrêté, rangés par famille de risque.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Voici un tableau vu de face. En haut, le cadre orange : la coupure d'urgence, qui permet de couper toute l'installation en cas de danger. Sous la barre de distribution, six départs, chacun avec sa protection avant son circuit : éclairage, prises, chauffage, eau chaude, ventilation, cuisson. Regardez le circuit chauffage : dans l'animation, un défaut apparaît, sa protection s'ouvre, et les cinq autres circuits restent alimentés. C'est la logique du tableau, à condition que les protections soient bien choisies : isoler le défaut sans priver l'installation du reste. Pour les personnes, l'arrêté ajoute des dispositifs différentiels à haute sensibilité.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La logique du tableau : un départ, une protection</h2>
+    <p>Selon l'arrêté, la distribution est <strong>organisée et sécurisée</strong> : un emplacement réservé regroupe les arrivées des circuits de puissance et le tableau de répartition. Ce tableau porte :</p>
+    <ul>
+      <li>un <strong>sectionnement à l'origine de chaque circuit</strong> ;</li>
+      <li>une <strong>protection contre les surintensités adaptée à chaque circuit</strong> ;</li>
+      <li>des protections <strong>complémentaires contre les contacts directs</strong> : dans un logement, tous les circuits terminaux sont protégés par des dispositifs différentiels à haute sensibilité au plus égale à <strong>30 mA</strong> ;</li>
+      <li>un <strong>parafoudre</strong>, le cas échéant ;</li>
+      <li>des circuits, appareillages et canalisations <strong>repérés et identifiés</strong> ;</li>
+      <li>une <strong>coupure d'urgence</strong>, facilement accessible, qui coupe toute l'installation en cas de danger de choc ou d'incendie.</li>
+    </ul>
+    <p><strong>La logique</strong> : un défaut ne doit priver que le circuit concerné, pas tout le bâtiment. Le repérage sert à vous et à l'électricien : un circuit non identifié ne se consigne pas proprement.</p>
+    <figure>
+      <img src="svg/tableau-circuits.svg" alt="En haut, un cadre orange : la coupure d'urgence. Dessous, une barre qui distribue six départs : éclairage, prises, chauffage, eau chaude, VMC et cuisson. Chaque départ passe par un bloc de protection avant d'alimenter son circuit. Une bande : chaque circuit a son sectionnement et sa protection, un défaut ne coupe que le circuit concerné. Dans l'animation, la protection du circuit chauffage s'ouvre sur un défaut, les cinq autres circuits restent alimentés.">
+      <figcaption>Regardez le circuit chauffage : seul son départ s'ouvre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Six cartes, six familles d'appareils. Les trois cartes de fond ocre, le chauffage, l'eau chaude et la ventilation, sont celles du technicien du génie climatique. L'arrêté demande des circuits spécifiques, dédiés à l'alimentation de matériels spécifiques. Pourquoi ? Un appareil de puissance branché sur un circuit qui alimente aussi des prises, c'est une protection mal adaptée, et une panne qui coupe tout le reste. Les sections de câble et les calibres se lisent dans la norme et dans les guides des fabricants : ils ne sont pas repris ici. Retenez le principe : un appareil de puissance, un circuit à lui.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Les circuits spécialisés : un appareil de puissance, un circuit</h2>
+    <p>L'arrêté impose que l'installation comporte des <strong>circuits spécifiques dédiés à l'alimentation de matériels spécifiques</strong>, pour permettre leur utilisation optimale. Dans les guides professionnels, on retrouve en circuits dédiés : le <strong>chauffage électrique</strong>, l'<strong>eau chaude sanitaire</strong> (ballon thermodynamique compris), la <strong>ventilation mécanique contrôlée</strong>, les volets roulants, la cuisson, le lave-linge…</p>
+    <p><strong>Pourquoi dédier ?</strong> Un appareil de puissance sur un circuit partagé impose une protection mal adaptée à l'un ou à l'autre, et une panne prive l'utilisateur de tout le circuit.</p>
+    <p><strong>Ce que cette station ne donne pas</strong> : les sections de conducteurs et les calibres de protection par type de circuit. Ils se lisent dans la norme et dans les guides d'application des fabricants ; ils évoluent avec les amendements.</p>
+    <figure>
+      <img src="svg/circuits-specialises.svg" alt="Six cartes avec pictogramme : chauffage, un radiateur ; eau chaude sanitaire, un ballon ; ventilation VMC, un ventilateur ; volets roulants, un rideau à lames ; cuisson, une plaque à quatre foyers ; lave-linge, un tambour. Les trois premières cartes, de fond ocre, sont celles du technicien du génie climatique.">
+      <figcaption>Fond ocre : les trois familles qui concernent directement le CVC.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="À gauche le tableau, à droite deux équipements : une pompe à chaleur ou un groupe frigorifique, et une centrale de traitement d'air. Chacun a sa ligne, sa pastille circuit dédié, et les deux lignes ne se rejoignent jamais. Sous chaque pastille, une consigne : la protection se lit dans la notice du constructeur. Votre rôle de technicien d'études : transmettre à l'électricien la puissance, l'intensité maximale et la protection préconisée, puis vérifier que ce qui est posé correspond. La norme dit comment câbler et protéger ; la notice dit ce que l'appareil exige. Si les deux semblent diverger, on ne tranche pas seul : on interroge le constructeur.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Alimenter une PAC, un groupe, une CTA : ce que vous transmettez</h2>
+    <p>Pour chaque équipement que vous étudiez (pompe à chaleur, groupe frigorifique, centrale de traitement d'air), votre fiche d'alimentation au lot électricité précise :</p>
+    <ol>
+      <li>un <strong>circuit dédié</strong> à l'équipement ;</li>
+      <li>la <strong>puissance, l'intensité maximale et la protection préconisée</strong>, lues sur la notice et la plaque signalétique du constructeur ;</li>
+      <li>le <strong>type de protection différentielle</strong> exigé par la notice ; dans un logement, les circuits terminaux sont protégés par différentiel à haute sensibilité (écran 4) ;</li>
+      <li>le <strong>repérage</strong> du circuit au tableau, et son <strong>sectionnement</strong> à l'origine ;</li>
+      <li>le raccordement de la <strong>masse</strong> de l'équipement au conducteur de protection (écran 7).</li>
+    </ol>
+    <p>Le câblage et le dimensionnement des conducteurs restent l'affaire de l'installateur électricien, qui applique la norme. Votre travail : lui donner les bonnes données d'entrée, puis contrôler que la pose y correspond.</p>
+    <figure>
+      <img src="svg/alimenter-cvc.svg" alt="À gauche, le tableau électrique. Deux lignes partent vers la droite sans se rejoindre : celle du haut vers une pompe à chaleur ou un groupe frigorifique, celle du bas vers une centrale de traitement d'air. Chaque ligne porte une pastille circuit dédié et, dessous, la mention protection : voir la notice du constructeur. Une bande : le constructeur donne l'intensité et la protection, la norme dit comment les mettre en œuvre.">
+      <figcaption>Deux équipements, deux lignes qui ne se rejoignent jamais.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Schéma de principe, pas schéma électrique normalisé. Sous le sol, la prise de terre. Elle remonte par le conducteur de terre jusqu'à la borne principale de terre, en bas à gauche. De cette borne part la liaison équipotentielle principale, le trait épais ocre : elle raccorde les éléments métalliques du bâtiment, ici une canalisation d'eau, une canalisation de chauffage et la masse d'un équipement. Ainsi, en cas de défaut, ces éléments restent au même potentiel : on évite une différence de tension dangereuse entre eux. En haut à droite, la coupure d'urgence : elle coupe toute l'installation et doit être facilement accessible.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Terre, liaison équipotentielle, coupure d'urgence</h2>
+    <p>Pour la protection contre les contacts indirects, l'arrêté exige dans chaque logement et dans les parties communes :</p>
+    <ul>
+      <li>une <strong>prise de terre</strong> et une <strong>installation de mise à la terre</strong> : conducteurs de terre, borne principale de terre, conducteur principal de protection, conducteurs de protection ;</li>
+      <li>une <strong>liaison équipotentielle principale</strong>, à laquelle sont raccordés la borne principale de terre et les <strong>éléments conducteurs</strong> du bâtiment ;</li>
+      <li>des <strong>dispositifs de coupure automatique</strong> adaptés au schéma de liaison à la terre (station « Régimes de neutre ») ;</li>
+      <li>une <strong>liaison équipotentielle supplémentaire</strong> dans chaque local contenant une baignoire ou une douche.</li>
+    </ul>
+    <p><strong>Pour le technicien CVC</strong> : la masse d'une PAC, d'un groupe ou d'une CTA se raccorde au conducteur de protection ; les canalisations métalliques d'eau ou de chauffage sont des éléments conducteurs à considérer dans la liaison équipotentielle. Quant à la <strong>coupure d'urgence</strong>, elle agit sur l'ensemble de l'installation : elle ne remplace ni le sectionnement de chaque circuit, ni la consignation avant intervention (station « Consigner »).</p>
+    <figure>
+      <img src="svg/terre-liaison-coupure.svg" alt="Schéma de principe. Sous le sol, une prise de terre, reliée par un conducteur à la borne principale de terre, dans le bâtiment. De cette borne part un trait épais, la liaison équipotentielle principale, qui se raccorde par trois branches à une canalisation d'eau, une canalisation de chauffage et la masse d'un équipement. En haut à droite, un cadre orange : la coupure d'urgence, pour toute l'installation.">
+      <figcaption>Schéma de principe : la liaison équipotentielle réunit les éléments métalliques du bâtiment.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="La chaîne du haut, de gauche à droite. L'installateur établit l'attestation de conformité, le Consuel, comité national pour la sécurité des usagers de l'électricité, la vise, puis le distributeur met sous tension. Les étapes s'allument l'une après l'autre dans l'animation. Sous la chaîne, deux cartes : pour une installation neuve, l'attestation est exigée avant la première mise sous tension ; pour les locaux recevant des travailleurs ou du public, un formulaire vert spécifique existe. Retenez le réflexe du chargé d'affaires : inscrire l'attestation au planning, avant la date de mise en service promise au client. Sinon, c'est le chantier qui attend.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Le Consuel, et le bilan</h2>
+    <p>Le <strong>Consuel</strong> (Comité national pour la sécurité des usagers de l'électricité) est agréé pour viser les <strong>attestations de conformité</strong> des installations électriques intérieures. La base : le décret n° 72-1120 du 14 décembre 1972 modifié, l'arrêté du 17 octobre 1973, et aujourd'hui les articles <strong>D. 342-18 à D. 342-21 du Code de l'énergie</strong>. L'attestation est établie par l'<strong>installateur</strong> (ou par le maître d'ouvrage s'il a réalisé ou fait exécuter les travaux sous sa responsabilité), puis visée par le Consuel. Elle est exigée avant la première mise sous tension d'une installation neuve. Pour un <strong>usage non domestique</strong> (locaux recevant des travailleurs ou du public, parties communes d'immeubles d'habitation), le formulaire est l'attestation <strong>verte</strong>.</p>
+    <p><strong>Le bilan</strong> :</p>
+    <ul>
+      <li>La NF C 15-100 est une <strong>norme</strong> : les textes la rendent quasi incontournable par une <strong>présomption de conformité</strong>, pas par la loi.</li>
+      <li>Six objectifs : <strong>choc, chaleur et feu, usage au quotidien</strong>.</li>
+      <li>Un tableau : <strong>un sectionnement et une protection par circuit</strong>, une coupure d'urgence.</li>
+      <li>Une PAC, un groupe, une CTA : <strong>un circuit dédié</strong>, protection lue sur la notice.</li>
+      <li>Avant la mise en service : <strong>l'attestation de conformité</strong>, au planning.</li>
+    </ul>
+    <p class="formule">Le réflexe : la norme fixe la méthode, la notice fixe les valeurs de l'appareil.</p>
+    <figure>
+      <img src="svg/chaine-consuel.svg" alt="Quatre étapes reliées par des flèches : l'installateur établit l'attestation, le Consuel vise l'attestation de conformité, le distributeur d'électricité met sous tension, l'installation est en service. Dessous, deux cartes : installation neuve, attestation exigée avant la première mise sous tension, Code de l'énergie D. 342-18 à 21 ; usage non domestique, locaux recevant des travailleurs ou du public, formulaire vert, parties communes comprises.">
+      <figcaption>L'attestation se prévoit au planning, avant la date de mise en service.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Depuis 2016, quel est le statut de la norme N F C quinze cent pour l'installation électrique d'un logement neuf ? Reprenez les deux voies de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Depuis 2016, quel est le statut de la NF C 15-100 pour un logement neuf ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-chemins.svg" alt="Vignette de rappel : deux voies vers les objectifs de sécurité, la norme NF C 15-100 en trait plein avec conformité présumée, une autre norme en trait tireté avec équivalence à démontrer.">
+      <figcaption>Rappel de l'écran 2 — deux chemins, les mêmes objectifs.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Une loi votée par le Parlement, applicable telle quelle</button>
+      <button type="button" data-answer="b">Une norme purement volontaire, sans lien avec la réglementation</button>
+      <button type="button" data-answer="bonne">Elle vaut présomption de conformité, sans exclure une solution équivalente</button>
+      <button type="button" data-answer="d">Elle est imposée en entier, comme par l'ancien arrêté de 1969 toujours en vigueur</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'arrêté du 3 août 2016 fixe des objectifs et présume conformes les installations conçues selon la norme ; il admet une autre norme équivalente. Il a abrogé l'arrêté de 1969, qui imposait la norme en entier."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Que doit comporter le tableau d'un logement pour chacun de ses circuits ? Regardez le schéma de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Que doit comporter le tableau pour chaque circuit ?</h2>
+    <figure class="vignette">
+      <img src="svg/tableau-circuits.svg" alt="Vignette de rappel : un tableau avec sa coupure d'urgence, six départs et, pour chacun, une protection avant le circuit.">
+      <figcaption>Rappel de l'écran 4 — un départ, une protection.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Un sectionnement à l'origine et une protection contre les surintensités adaptée</button>
+      <button type="button" data-answer="b">Le seul disjoncteur de branchement, qui protège alors tous les circuits ensemble</button>
+      <button type="button" data-answer="c">Une protection commune à tous les circuits de même famille</button>
+      <button type="button" data-answer="d">Sa propre coupure d'urgence, sans autre protection</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'arrêté demande un dispositif de sectionnement à l'origine de chaque circuit et des protections contre les surintensités adaptées à chaque circuit. La coupure d'urgence, elle, agit sur l'ensemble de l'installation."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Vous étudiez l'alimentation électrique d'une pompe à chaleur. Que transmettez-vous à l'électricien ? Repensez aux deux lignes de l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Vous étudiez l'alimentation d'une pompe à chaleur : que transmettez-vous à l'électricien ?</h2>
+    <figure class="vignette">
+      <img src="svg/alimenter-cvc.svg" alt="Vignette de rappel : le tableau électrique et deux lignes dédiées, l'une vers une pompe à chaleur, l'autre vers une centrale de traitement d'air, avec la mention protection : voir la notice du constructeur.">
+      <figcaption>Rappel de l'écran 6 — un équipement, son propre circuit.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un raccordement sur le circuit prises du local technique, si la puissance semble suffisante</button>
+      <button type="button" data-answer="b">Une section de câble prise dans la norme, sans consulter la notice</button>
+      <button type="button" data-answer="c">Le calibre de protection du chantier précédent, valable pour toute PAC</button>
+      <button type="button" data-answer="bonne">Un circuit dédié, avec l'intensité et la protection de la notice du constructeur</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un appareil de puissance a son propre circuit, et ses valeurs de protection viennent de la notice du constructeur : ni d'un autre chantier, ni d'un circuit partagé. Le câblage relève de l'installateur, selon la norme."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Qui établit l'attestation de conformité d'une installation neuve, et à quel moment est-elle exigée ? Souvenez-vous de la chaîne de l'écran huit.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Qui établit l'attestation de conformité, et quand est-elle exigée ?</h2>
+    <figure class="vignette">
+      <img src="svg/chaine-consuel.svg" alt="Vignette de rappel : la chaîne installateur, Consuel, distributeur d'électricité, installation en service, avec les deux cartes installation neuve et usage non domestique.">
+      <figcaption>Rappel de l'écran 8 — l'attestation précède la mise sous tension.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le Consuel l'établit lui-même, une fois le bâtiment en service</button>
+      <button type="button" data-answer="bonne">L'installateur, avant la première mise sous tension d'une installation neuve</button>
+      <button type="button" data-answer="c">Le distributeur d'électricité, après la mise en service de l'installation neuve du bâtiment</button>
+      <button type="button" data-answer="d">Le bureau d'études, avant l'appel d'offres des travaux</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'installateur (ou le maître d'ouvrage qui a fait exécuter les travaux) établit l'attestation, le Consuel la vise, et elle est exigée avant la première mise sous tension d'une installation neuve."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../elec-terre-differentiel/"><strong>Terre &amp; différentiel</strong></a> (même sous-ligne)
+      — comment le différentiel à haute sensibilité protège les personnes, vu de près.</li>
+    <li><a href="../elec-proteger-un-circuit/"><strong>Protéger un circuit</strong></a> (même sous-ligne)
+      — sections et calibres : la suite logique des circuits spécialisés.</li>
+    <li><a href="../elec-regimes-de-neutre/"><strong>Régimes de neutre</strong></a> (même sous-ligne)
+      — la coupure automatique dépend du schéma de liaison à la terre.</li>
+    <li><a href="../risques-neuf-principes/"><strong>Les neuf principes de prévention</strong></a> (autre sous-ligne : Risques professionnels)
+      — le risque électrique se prévient d'abord à la conception.</li>
+  </ul>
+  <p>Pour la technologie des composants (sectionneur, disjoncteur, différentiel, terre), le réseau voisin
+    <a href="https://inerweb.fr/electrorezo/"><strong>ÉlectroRézo</strong></a> les explique un par un. Pour intervenir sur une
+    installation, voyez aussi <a href="../elec-habilitation/">L'habilitation</a> et <a href="../elec-consigner/">Consigner</a>.</p>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ : voix.js donne la
+     narration, prof-vocal.js enchaîne les écrans tout seul et s'arrête sur les
+     questions. Les narrations de cette station n'ont pas encore de MP3 dans
+     l'index : la voix du navigateur prend le relais.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

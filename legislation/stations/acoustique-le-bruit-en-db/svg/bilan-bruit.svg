@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-bilan" aria-describedby="d-bilan" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t-bilan">Les quatre questions à poser devant un niveau en dB</title>
+  <desc id="d-bilan">Quatre cartes numérotées : 1, Lw ou Lp, c'est-à-dire émis ou reçu ; 2, dB ou dB(A), c'est-à-dire pondéré selon l'oreille ou non ; 3, quelle distance et quel lieu ; 4, combien de sources, car les niveaux ne s'additionnent pas comme des nombres ordinaires. Une bande au pied de la page rappelle le réflexe : ne jamais comparer deux niveaux sans savoir de quoi ils parlent.</desc>
+  <style>
+    .ti{font-size:22px;font-weight:bold;fill:#1b3a63}
+    .lb{font-size:17px;fill:#10233c}
+    .lg{font-size:18px;font-weight:bold;fill:#1b3a63}
+    .gr{font-size:16px;fill:#5a6b7d}
+    .vv{font-size:20px;font-weight:bold;fill:#6d28d9}
+    .oo{font-size:18px;font-weight:bold;fill:#b45f1a}
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ti" x="30" y="34">Devant un niveau en dB, quatre questions</text>
+  <rect x="30" y="60" width="360" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="70" cy="102" r="22" fill="#6d28d9"/><text x="70" y="110" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">1</text>
+  <text class="lg" x="106" y="110" style="font-size:21px">Lw ou Lp ?</text>
+  <text class="lb" x="54" y="154">Émis par la machine,</text>
+  <text class="lb" x="54" y="178">ou reçu à un endroit ?</text>
+  <rect x="410" y="60" width="360" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="450" cy="102" r="22" fill="#6d28d9"/><text x="450" y="110" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">2</text>
+  <text class="lg" x="486" y="110" style="font-size:21px">dB ou dB(A) ?</text>
+  <text class="lb" x="434" y="154">Pondéré selon l'oreille,</text>
+  <text class="lb" x="434" y="178">ou non ?</text>
+  <rect x="30" y="220" width="360" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="70" cy="262" r="22" fill="#6d28d9"/><text x="70" y="270" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">3</text>
+  <text class="lg" x="106" y="270" style="font-size:21px">Quelle distance, quel lieu ?</text>
+  <text class="lb" x="54" y="314">− 6 dB(A) par doublement</text>
+  <text class="lb" x="54" y="338">de la distance ; le mur ajoute.</text>
+  <rect x="410" y="220" width="360" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="450" cy="262" r="22" fill="#6d28d9"/><text x="450" y="270" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">4</text>
+  <text class="lg" x="486" y="270" style="font-size:21px">Combien de sources ?</text>
+  <text class="lb" x="434" y="314">Les niveaux ne s'additionnent</text>
+  <text class="lb" x="434" y="338">pas comme des nombres.</text>
+  <rect x="30" y="392" width="740" height="76" rx="14" fill="#ece6f8" stroke="#6d28d9" stroke-width="2"/>
+  <text class="lb" x="400" y="424" text-anchor="middle" style="font-weight:bold">Le réflexe : ne jamais comparer deux niveaux</text>
+  <text class="lb" x="400" y="450" text-anchor="middle" style="font-weight:bold">sans savoir de quoi ils parlent.</text>
+</svg>

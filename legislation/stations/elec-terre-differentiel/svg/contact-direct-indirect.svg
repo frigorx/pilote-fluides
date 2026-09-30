@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-ci" aria-describedby="d-ci" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ci">Deux façons d'être touché : contact direct et contact indirect</title>
+  <desc id="d-ci">Deux scènes côte à côte. À gauche, contact direct : une main touche la partie nue d'un conducteur, une pièce normalement sous tension, dont l'isolant s'arrête plus loin. À droite, contact indirect : une main touche la carcasse métallique d'un appareil, qui n'est pas censée être sous tension, mais qu'un défaut d'isolement à l'intérieur a rendue dangereuse ; un éclair marque la tension.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .sub { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .acc { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#a16207; }
+    .wht { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fff; }
+    .bad { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .nw { white-space:nowrap; }
+  </style>
+  <text class="ttl" x="225" y="45" text-anchor="middle">Contact direct</text>
+  <text class="ttl" x="665" y="45" text-anchor="middle">Contact indirect</text>
+  <line x1="450" y1="30" x2="450" y2="350" stroke="#b9c6d3" stroke-width="2" stroke-dasharray="8 6"/>
+  <rect x="60" y="176" width="190" height="28" rx="6" fill="#f6d3ae" stroke="#e8914a" stroke-width="2"/>
+  <line x1="60" y1="190" x2="390" y2="190" stroke="#1b3a63" stroke-width="8" stroke-linecap="round"/>
+  <rect x="304" y="116" width="52" height="34" rx="12" fill="#5a6b7d"/><rect x="322" y="142" width="16" height="44" rx="8" fill="#5a6b7d"/>
+  <polygon points="407,142 398,166 406,166 401,186 418,158 409,158 415,142" fill="#e8914a"/>
+  <text class="mut" x="155" y="166" text-anchor="middle">isolant</text>
+  <text class="lbl" x="320" y="238" text-anchor="middle">partie nue sous tension</text>
+  <text class="lbl" x="225" y="325" text-anchor="middle">On touche la pièce active</text>
+  <text class="lbl" x="225" y="348" text-anchor="middle">elle-même (fil nu, borne)</text>
+  <rect x="520" y="150" width="280" height="140" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="556" y="190" width="140" height="70" rx="6" fill="#fff" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="626" y="231" text-anchor="middle">récepteur</text>
+  <polygon points="747,196 738,220 746,220 741,240 758,212 749,212 755,196" fill="#e8914a"/>
+  <rect x="744" y="80" width="52" height="34" rx="12" fill="#5a6b7d"/><rect x="762" y="106" width="16" height="44" rx="8" fill="#5a6b7d"/>
+  <text class="lbl" x="520" y="138" text-anchor="start">carcasse métallique (masse)</text>
+  <text class="lbl" x="660" y="325" text-anchor="middle">On touche l'enveloppe, devenue</text>
+  <text class="lbl" x="660" y="348" text-anchor="middle">dangereuse par accident</text>
+</svg>

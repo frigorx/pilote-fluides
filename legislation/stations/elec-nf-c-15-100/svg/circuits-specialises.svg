@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t5" aria-describedby="d5" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t5">Circuits spécialisés : un appareil de puissance, son propre circuit</title>
+  <desc id="d5">Six cartes, chacune avec un pictogramme et son nom. Chauffage : un radiateur. Eau chaude sanitaire : un ballon. Ventilation mécanique contrôlée : un ventilateur. Volets roulants : un rideau à lames. Cuisson : une plaque à quatre foyers. Lave-linge : un tambour. Les trois premières concernent directement le technicien du génie climatique. Une bande précise que les trois cartes de fond ocre, chauffage, eau chaude et ventilation, sont celles du technicien du génie climatique.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .b18 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; text-anchor:middle; }
+    .t17 { font-size:17px; fill:#10233c; }
+    .g16 { font-size:16px; fill:#5a6b7d; text-anchor:middle; }
+  </style>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Un appareil de puissance, son propre circuit</text>
+
+  <!-- Rangée du haut : les trois cartes du génie climatique (fond ocre clair) -->
+  <g fill="#f4eadb" stroke="#a16207" stroke-width="3">
+    <rect x="30" y="58" width="230" height="170" rx="14"/><rect x="285" y="58" width="230" height="170" rx="14"/><rect x="540" y="58" width="230" height="170" rx="14"/>
+  </g>
+  <!-- Rangée du bas -->
+  <g fill="#fffdf8" stroke="#1b3a63" stroke-width="3">
+    <rect x="30" y="246" width="230" height="170" rx="14"/><rect x="285" y="246" width="230" height="170" rx="14"/><rect x="540" y="246" width="230" height="170" rx="14"/>
+  </g>
+
+  <!-- Chauffage : radiateur -->
+  <g stroke="#1b3a63" stroke-width="3" fill="#fffdf8">
+    <rect x="80" y="78" width="130" height="64" rx="8"/>
+    <line x1="106" y1="78" x2="106" y2="142"/><line x1="132" y1="78" x2="132" y2="142"/><line x1="158" y1="78" x2="158" y2="142"/><line x1="184" y1="78" x2="184" y2="142"/>
+  </g>
+  <text class="b18" x="145" y="180">Chauffage</text>
+  <text class="g16" x="145" y="206">émetteurs électriques</text>
+
+  <!-- Eau chaude : ballon -->
+  <g stroke="#1b3a63" stroke-width="3" fill="#fffdf8">
+    <rect x="365" y="78" width="70" height="68" rx="22"/>
+  </g>
+  <path d="M400,96 C392,108 392,116 400,122 C408,116 408,108 400,96 Z" fill="#e8914a"/>
+  <text class="b18" x="400" y="180">Eau chaude sanitaire</text>
+  <text class="g16" x="400" y="206">ballon, chauffe-eau</text>
+
+  <!-- VMC : ventilateur -->
+  <circle cx="655" cy="112" r="38" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g fill="#1b3a63">
+    <path d="M655,112 L655,80 A32,32 0 0 1 684,98 Z"/>
+    <path d="M655,112 L683,128 A32,32 0 0 1 655,144 Z"/>
+    <path d="M655,112 L627,128 A32,32 0 0 1 627,96 Z"/>
+  </g>
+  <circle cx="655" cy="112" r="6" fill="#e8914a"/>
+  <text class="b18" x="655" y="180">Ventilation</text>
+  <text class="g16" x="655" y="206">VMC</text>
+
+  <!-- Volets roulants -->
+  <g stroke="#1b3a63" stroke-width="3" fill="#fffdf8">
+    <rect x="85" y="266" width="120" height="14" rx="4"/><rect x="85" y="284" width="120" height="14" rx="4"/>
+    <rect x="85" y="302" width="120" height="14" rx="4"/><rect x="85" y="320" width="120" height="14" rx="4"/>
+  </g>
+  <text class="b18" x="145" y="368">Volets roulants</text>
+  <text class="g16" x="145" y="394">moteurs de volets</text>
+
+  <!-- Cuisson -->
+  <rect x="345" y="266" width="110" height="72" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g fill="none" stroke="#1b3a63" stroke-width="3">
+    <circle cx="373" cy="286" r="10"/><circle cx="427" cy="286" r="10"/><circle cx="373" cy="318" r="10"/><circle cx="427" cy="318" r="10"/>
+  </g>
+  <text class="b18" x="400" y="368">Cuisson</text>
+  <text class="g16" x="400" y="394">plaques, four</text>
+
+  <!-- Lave-linge -->
+  <rect x="610" y="264" width="90" height="76" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="655" cy="308" r="24" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text class="b18" x="655" y="368">Lave-linge</text>
+  <text class="g16" x="655" y="394">un appareil, un circuit</text>
+
+  <!-- Bande -->
+  <rect x="30" y="432" width="740" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="t17" x="400" y="464" text-anchor="middle" font-weight="bold">Les trois cartes de fond ocre sont celles du technicien CVC.</text>
+</svg>

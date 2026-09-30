@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-cpt" aria-describedby="d-cpt" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cpt">Se mettre à son compte : une personne, une entreprise, deux patrimoines séparés</title>
+  <desc id="d-cpt">À gauche, un pictogramme plein représentant l'entrepreneur seul, en nom propre. À droite,
+    deux cartes séparées par une cloison rose : la carte grise, avec une maison, représente les biens
+    personnels ; la carte rose, avec une caisse à outils, représente les biens utiles à l'activité. Une
+    bande en bas rappelle que la séparation est automatique, sauf fraude, et qu'une personne ne peut avoir
+    qu'une seule micro-entreprise.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Une personne, une entreprise, deux patrimoines</text>
+
+  <!-- L'entrepreneur -->
+  <circle cx="110" cy="120" r="30" fill="#1b3a63"/>
+  <path d="M56 214 Q56 162 110 162 Q164 162 164 214 Z" fill="#1b3a63"/>
+  <text class="qui" x="110" y="244" text-anchor="middle">Vous</text>
+  <text class="sm" x="110" y="266" text-anchor="middle">en nom propre</text>
+
+  <!-- Biens personnels -->
+  <rect x="250" y="70" width="250" height="210" rx="14" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <path d="M320 132 L375 90 L430 132 Z" fill="#5a6b7d"/>
+  <rect x="335" y="132" width="80" height="52" fill="#5a6b7d"/>
+  <rect x="365" y="150" width="20" height="34" fill="#fffdf8"/>
+  <text class="qui" x="375" y="218" text-anchor="middle">Biens personnels</text>
+  <text class="sm" x="375" y="248" text-anchor="middle">la vie privée</text>
+
+  <!-- Cloison -->
+  <rect x="520" y="62" width="30" height="226" rx="6" fill="#9d174d"/>
+  <text class="sm" x="535" y="316" text-anchor="middle">cloison automatique</text>
+
+  <!-- Biens professionnels -->
+  <rect x="570" y="70" width="250" height="210" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+  <path d="M660 128 V112 H730 V128" fill="none" stroke="#9d174d" stroke-width="7" stroke-linejoin="round"/>
+  <rect x="640" y="128" width="110" height="60" rx="8" fill="#9d174d"/>
+  <rect x="685" y="150" width="20" height="14" rx="3" fill="#fffdf8"/>
+  <text class="qui" x="695" y="218" text-anchor="middle">Biens de l'activité</text>
+  <text class="sm" x="695" y="248" text-anchor="middle">outils, matériel</text>
+
+  <rect x="30" y="338" width="840" height="76" rx="14" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <text class="band" x="450" y="371" text-anchor="middle">La séparation est automatique, sauf fraude.</text>
+  <text class="band" x="450" y="399" text-anchor="middle">Une personne ne peut avoir qu'une seule micro-entreprise.</text>
+</svg>

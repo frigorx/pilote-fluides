@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"
+     aria-labelledby="t-ctr" aria-describedby="d-ctr" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-ctr">Ce que contient un contrat écrit</title>
+  <desc id="d-ctr">À gauche, une feuille de contrat de travail dépliée, avec neuf lignes : identité et adresse
+    des parties, fonction et qualification, lieu de travail, durée du travail, rémunération, congés payés,
+    période d'essai si elle est prévue, délais de préavis, convention collective applicable. À droite, trois
+    encadrés : pour un CDI le contenu est libre sauf mentions imposées par la convention collective ; pour
+    un CDD ou un contrat d'apprentissage l'écrit est obligatoire avec des mentions imposées par la loi ;
+    selon le poste, on peut y trouver une clause de non-concurrence ou de mobilité. L'animation déplie la
+    feuille puis allume les lignes l'une après l'autre ; l'image fixe montre la feuille entière.</desc>
+  <defs>
+    <clipPath id="deplie">
+      <rect x="20" y="10" width="462" height="500">
+        <animate attributeName="height" values="60;60;500;500" keyTimes="0;0.0769;0.3077;1" dur="13s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+  <style>
+    .ttl { font-weight:bold; font-size:20px; fill:#10233c; }
+    .rw  { font-size:17px; fill:#10233c; }
+    .bt  { font-weight:bold; font-size:18px; fill:#9d174d; }
+    .bl  { font-size:16px; fill:#10233c; }
+  </style>
+
+  <g clip-path="url(#deplie)">
+    <rect x="30" y="20" width="450" height="484" rx="10" fill="#ffffff" stroke="#1b3a63" stroke-width="3"/>
+    <text class="ttl" x="255" y="58" text-anchor="middle">CONTRAT DE TRAVAIL</text>
+    <line x1="60" y1="70" x2="450" y2="70" stroke="#e8914a" stroke-width="3"/>
+  <g>
+    <rect x="44" y="84" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="84" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="84" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.3385;0.3692;0.4231;0.4538;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="109">Identité et adresse des parties</text>
+  </g>
+  <g>
+    <rect x="44" y="128" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="128" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="128" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.3962;0.4269;0.4808;0.5115;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="153">Fonction et qualification</text>
+  </g>
+  <g>
+    <rect x="44" y="172" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="172" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="172" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.4538;0.4846;0.5385;0.5692;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="197">Lieu de travail</text>
+  </g>
+  <g>
+    <rect x="44" y="216" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="216" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="216" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.5115;0.5423;0.5962;0.6269;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="241">Durée du travail</text>
+  </g>
+  <g>
+    <rect x="44" y="260" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="260" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="260" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.5692;0.6000;0.6538;0.6846;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="285">Rémunération</text>
+  </g>
+  <g>
+    <rect x="44" y="304" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="304" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="304" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.6269;0.6577;0.7115;0.7423;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="329">Congés payés</text>
+  </g>
+  <g>
+    <rect x="44" y="348" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="348" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="348" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.6846;0.7154;0.7692;0.8000;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="373">Période d'essai, si elle est prévue</text>
+  </g>
+  <g>
+    <rect x="44" y="392" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="392" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="392" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.7423;0.7731;0.8269;0.8577;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="417">Délais de préavis</text>
+  </g>
+  <g>
+    <rect x="44" y="436" width="422" height="38" rx="6" fill="#fffdf8" stroke="#d5dde6" stroke-width="1.5"/>
+    <rect x="44" y="436" width="8" height="38" rx="3" fill="#9d174d"/>
+    <rect x="44" y="436" width="422" height="38" rx="6" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0.0000;0.8000;0.8308;0.8846;0.9154;1.0000" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="rw" x="66" y="461">Convention collective applicable</text>
+  </g>
+  </g>
+
+  <rect x="510" y="30" width="270" height="140" rx="10" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="bt" x="530" y="60">CDI</text>
+  <text class="bl" x="530" y="88">Contenu libre, sauf</text>
+  <text class="bl" x="530" y="112">mentions imposées par</text>
+  <text class="bl" x="530" y="136">la convention collective</text>
+
+  <rect x="510" y="190" width="270" height="140" rx="10" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="bt" x="530" y="220">CDD, apprentissage</text>
+  <text class="bl" x="530" y="248">Écrit obligatoire,</text>
+  <text class="bl" x="530" y="272">avec les mentions</text>
+  <text class="bl" x="530" y="296">imposées par la loi</text>
+
+  <rect x="510" y="350" width="270" height="140" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text class="bt" x="530" y="380">Selon le poste</text>
+  <text class="bl" x="530" y="408">clause de non-concurrence,</text>
+  <text class="bl" x="530" y="432">clause de mobilité :</text>
+  <text class="bl" x="530" y="456">à lire avant de signer</text>
+</svg>

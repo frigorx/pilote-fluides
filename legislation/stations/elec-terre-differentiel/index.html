@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Terre &amp; différentiel — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : contact direct et indirect, défaut d'isolement sur une masse, chemin du courant de défaut par la terre, conducteur de protection, dispositif différentiel, sensibilité 30 mA, bouton test et vérifications à la mise en service.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/elec-terre-differentiel/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Électrique.
+     « Terre & différentiel — protéger les personnes ».
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les narrations sont neuves : pas encore d'audio fabriqué dans l'index
+     global, la voix du navigateur sert de filet jusqu'à la fabrication.
+
+     Sources : INRS ED 6345 (2019), Code du travail R4215-3, décret
+     88-1056 (art. 31, 33), OPPBTP — voir FOND.md. Aucune valeur de
+     résistance de terre, aucun courant physiologique, aucun temps de
+     coupure : tout ce qui n'est pas sourcé est listé « À sourcer ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Électrique · niveau BTS</p>
+  <h1>Terre &amp; différentiel — protéger les personnes</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-electrique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez distinguer contact direct et contact indirect, expliquer ce que devient une carcasse d'appareil après un défaut d'isolement, suivre le chemin du courant de défaut jusqu'à la terre, dire ce que compare un dispositif différentiel, situer la sensibilité de 30 mA, et lister ce que l'on vérifie à la mise en service.</p>
+    <p class="referentiel" style="margin-top:.8em"><strong>Référentiel</strong> : TP TECVC, REAC TP-00133 — <strong>CP9</strong> (installation de climatisation) et <strong>CP6</strong> (chauffage / eau chaude sanitaire) : le technicien d'études qui prescrit une pompe à chaleur ou un groupe froid prescrit aussi son alimentation et la protection des personnes qui la touchent.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Sur ce schéma, deux façons d'être électrisé, côte à côte. À gauche, un contact direct : la main touche un fil dont l'isolant s'arrête plus loin, une pièce nue qui est normalement sous tension. À droite, un contact indirect : la main touche l'enveloppe métallique d'un appareil, qui n'est jamais censée être sous tension, mais qu'un défaut, à l'intérieur, a rendue dangereuse sans que rien ne se voie. C'est ce second cas qui nous occupe : la carcasse d'une pompe à chaleur ou d'un groupe froid est exactement le genre de pièce que l'on touche sans y penser.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux façons d'être touché : direct et indirect</h2>
+    <p>Un <strong>contact direct</strong>, c'est le contact d'une partie du corps avec une <strong>pièce nue sous tension</strong> : une borne, un conducteur dénudé. Un <strong>contact indirect</strong>, c'est le contact avec une <strong>pièce conductrice mise accidentellement sous tension</strong> : par exemple une armoire métallique dont l'équipement intérieur présente un défaut d'isolement (INRS, page « Risques liés à l'électricité »).</p>
+    <p>Le Code du travail impose au maître d'ouvrage de concevoir les installations de façon qu'aucune partie active dangereuse ne soit accessible, et qu'en cas de défaut d'isolement <strong>aucune masse ne présente une différence de potentiel dangereuse</strong> pour les travailleurs (article R4215-3).</p>
+    <figure>
+      <img src="svg/contact-direct-indirect.svg" alt="Deux scènes côte à côte. À gauche, contact direct : une main touche la partie nue d'un fil, une pièce normalement sous tension, dont l'isolant s'arrête plus loin. À droite, contact indirect : une main touche la carcasse métallique d'un appareil qu'un défaut intérieur a rendue dangereuse, un éclair marquant la tension.">
+      <figcaption>À gauche on touche la pièce active ; à droite, une enveloppe devenue dangereuse par accident.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="À gauche, l'isolement est sain : le conducteur est entièrement enveloppé de son isolant et ne touche pas la carcasse. À droite, l'isolant est abîmé, par un échauffement ou une contrainte mécanique : le conducteur nu vient toucher le fond de la carcasse, au point cerclé de rouge, et l'éclair orange signale que la carcasse est désormais sous tension. On dit que c'est une masse : une pièce conductrice qui n'est pas normalement sous tension, mais qui peut le devenir. Rien ne se voit, rien ne s'entend.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le défaut d'isolement : la carcasse devient dangereuse</h2>
+    <p>La <strong>masse</strong> d'un appareil est la partie conductrice que l'on peut toucher, qui n'est pas normalement sous tension mais <strong>peut le devenir</strong> lorsque l'isolation principale est défaillante — la carcasse d'un moteur, la tôle d'une pompe à chaleur (PAC) ou d'un groupe froid (INRS, ED 6345).</p>
+    <p>Une carcasse peut se retrouver sous tension après <strong>un échauffement important ou des contraintes mécaniques</strong> ayant abîmé l'isolation. Le piège : <strong>rien ne se voit</strong>. L'appareil continue souvent de fonctionner, et la première personne qui touche la carcasse est celle qui subit le défaut.</p>
+    <figure>
+      <img src="svg/defaut-isolement.svg" alt="Deux carcasses d'appareil vues en coupe. À gauche, isolement sain : le conducteur est entièrement enveloppé de son isolant et ne touche pas la carcasse. À droite, isolant abîmé : le conducteur nu touche le fond de la carcasse, au point entouré de rouge, et un éclair marque la carcasse sous tension. Une bande rappelle qu'une masse n'est pas sous tension en fonctionnement normal.">
+      <figcaption>Le cercle rouge marque le point de défaut : l'éclair, la carcasse sous tension.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Suivez le point orange. Il part de la source, remonte le câble de phase jusqu'à la pompe à chaleur, atteint le point de défaut cerclé de rouge, puis passe dans la carcasse. Il descend ensuite par le conducteur de protection jusqu'à la prise de terre de l'installation, traverse le sol, en trait tireté, et rejoint la prise de terre de la source, pour revenir à son point de départ. Ici, le neutre de la source est relié à la terre : c'est le régime TT, vu dans la station Régimes de neutre. Sans conducteur de protection, la boucle est coupée.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le chemin du courant de défaut : une boucle par la terre</h2>
+    <p>Un courant de défaut n'existe que <strong>s'il peut revenir à la source</strong>. Le chemin va du conducteur de phase à la carcasse, puis du <strong>conducteur de protection</strong> à la <strong>prise de terre</strong>, traverse le sol et retrouve la source. Le schéma ci-dessous est celui d'un neutre relié à la terre (régime TT) ; les autres régimes bouclent autrement — voir la station <a href="../elec-regimes-de-neutre/">Régimes de neutre</a>.</p>
+    <p>Conséquence pratique : <strong>pas de conducteur de protection, pas de boucle</strong>. Le décret n° 88-1056 le pose ainsi : toute masse protégée par coupure automatique de l'alimentation doit être reliée à un conducteur de protection (art. 31).</p>
+    <figure>
+      <img src="svg/chemin-defaut.svg" alt="Une boucle : une source d'énergie dont le neutre est relié à une prise de terre, un câble de phase vers la carcasse d'une pompe à chaleur, un point de défaut entouré de rouge, le conducteur de protection qui descend vers la prise de terre de l'installation, puis le sol en trait tireté qui ramène le courant à la prise de terre de la source. Des flèches orange donnent le sens.">
+      <figcaption>Trait plein : les conducteurs. Trait tireté : le courant qui traverse le sol.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Ce schéma montre le rôle du conducteur de protection. Chaque carcasse, ici celle de la pompe à chaleur et celle du groupe froid, est reliée par un conducteur à une barre commune, la borne principale de terre. La canalisation métallique du bâtiment y est reliée aussi, par une liaison équipotentielle, en trait tireté. La barre est elle-même reliée à la prise de terre, en bas. Résultat : les pièces métalliques que l'on peut toucher en même temps sont au même potentiel, donc aucune différence dangereuse ne peut s'établir entre elles.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le conducteur de protection et la prise de terre</h2>
+    <p>Deux règles du décret n° 88-1056 : les masses simultanément accessibles doivent être reliées <strong>à la même prise de terre</strong> (art. 31), et, en régime TT, les masses protégées par un même dispositif sont <strong>interconnectées</strong> et reliées par un conducteur de protection à une même prise de terre (art. 33).</p>
+    <p>L'INRS ajoute les <strong>éléments conducteurs étrangers</strong> à l'installation (canalisations, rails, bâtis métalliques) : ils sont reliés à la prise de terre par un conducteur d'équipotentialité. La prise de terre doit avoir une résistance telle que le potentiel atteint par la masse en cas de défaut <strong>ne puisse être maintenu à une valeur dangereuse</strong>.</p>
+    <figure>
+      <img src="svg/masses-au-meme-potentiel.svg" alt="Trois éléments en haut : la carcasse d'une pompe à chaleur, celle d'un groupe froid et une canalisation métallique. Chacun est relié à une barre commune, la borne principale de terre, par un conducteur de protection ou par une liaison équipotentielle en trait tireté. La barre est reliée à la prise de terre par le conducteur de terre.">
+      <figcaption>Toutes les masses touchables ensemble, reliées au même point : plus de différence dangereuse entre elles.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Deux rangées. En haut, sans défaut : le courant part par le fil d'aller et revient par le fil de retour, en même quantité, avec la même épaisseur de trait. Le dispositif différentiel entoure les deux fils : il compare, ne trouve aucune différence, et reste fermé. En bas, avec un défaut : une partie du courant s'échappe de la pompe à chaleur vers la terre. Le retour est plus faible que l'aller, il est dessiné plus fin. Le dispositif détecte cet écart, et ses contacts s'ouvrent. Il ne mesure ni une tension ni une température : seulement cet écart.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le différentiel compare l'aller et le retour</h2>
+    <p>Un <strong>dispositif différentiel résiduel</strong> (DDR) « fait la somme » des courants des conducteurs actifs : si elle n'est pas nulle, il compare l'écart à sa sensibilité et coupe (OPPBTP, fiche « Les dispositifs différentiels résiduels »). Il est placé à l'origine de l'installation ou des départs principaux et divisionnaires, en amont des appareils d'utilisation (INRS, ED 6345).</p>
+    <p>Vocabulaire : un appareil qui ne fait qu'ouvrir le circuit est un <strong>interrupteur différentiel</strong> ; s'il assure aussi la protection contre les surintensités, c'est un <strong>disjoncteur différentiel</strong> (INRS).</p>
+    <figure>
+      <img src="svg/differentiel-compare.svg" alt="Deux rangées. En haut, sans défaut : les fils d'aller et de retour traversent le dispositif différentiel avec la même épaisseur, contacts fermés. En bas, avec un défaut : le fil de retour est plus fin, une partie du courant part vers la terre par un trait vertical avec un symbole de terre, et les contacts du dispositif sont ouverts.">
+      <figcaption>Même épaisseur de trait : rien à couper. Retour plus fin : le dispositif ouvre ses contacts.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="À gauche, trois sensibilités couramment utilisées, dessinées à l'échelle : cinq cents, trois cents et trente milliampères. Plus la valeur est petite, plus le dispositif déclenche tôt. Trente milliampères, c'est la haute sensibilité, celle qui protège les personnes. À droite, les cas où l'INRS, l'Institut national de recherche et de sécurité, la rend obligatoire : prises de courant jusqu'à trente-deux ampères, locaux mouillés, installations temporaires comme les chantiers, salles d'eau, logements. Enfin, le texte au-dessus rappelle que la valeur de la prise de terre, multipliée par la sensibilité, ne doit pas dépasser cinquante volts.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">La sensibilité : 30 mA pour protéger les personnes</h2>
+    <p>Le seuil de déclenchement d'un DDR dépend de sa <strong>sensibilité</strong> : le courant de défaut à la terre pour lequel il coupe. Les valeurs courantes citées par l'INRS sont 500 mA, 300 mA et 30 mA. La <strong>haute sensibilité</strong> est celle de <strong>30 mA ou moins</strong>.</p>
+    <p>Elle est <strong>obligatoire</strong> pour : les prises de courant jusqu'à 32 A (courant assigné) ; les prises en locaux mouillés, quel que soit le courant ; les installations temporaires (chantiers, foires, expositions) ; les salles d'eau ; les logements. Elle est <strong>recommandée</strong> quand des appareils à câble souple sont utilisés dans des conditions sévères (INRS, ED 6345, §4.3.2).</p>
+    <p>La prise de terre reste liée à la sensibilité : l'INRS rappelle que le produit de sa résistance par la sensibilité du dispositif ne doit pas dépasser 50 V, la tension limite pour une personne en courant alternatif.</p>
+    <p class="formule" style="white-space:nowrap">prise de terre × sensibilité ≤ 50 V</p>
+    <figure>
+      <img src="svg/sensibilite.svg" alt="À gauche, trois barres horizontales à l'échelle : 500 mA, 300 mA et 30 mA, cette dernière très courte et en accent, marquée haute sensibilité pour protéger les personnes. À droite, la liste des cas où la haute sensibilité est obligatoire selon l'INRS : prises jusqu'à 32 ampères, locaux mouillés, installations temporaires, salles d'eau, logements.">
+      <figcaption>La barre de 30 mA est la plus courte : c'est celle qui coupe le plus tôt.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Voici la face avant d'un dispositif différentiel. Le bouton orange, marqué T, est le bouton test : en l'enfonçant, on simule un défaut, et le dispositif doit déclencher aussitôt. À l'écran, le doigt arrive sur le bouton, et le levier passe de la position enclenchée à la position déclenchée. On le remonte ensuite pour réarmer. À droite, le cas qui compte : si le levier ne tombe pas, le dispositif n'assure plus sa fonction, et il faut le remplacer. La protection des personnes ne se présume pas : elle se constate.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le bouton test : on constate, on ne présume pas</h2>
+    <p>Le bouton test simule un défaut : le dispositif <strong>doit déclencher</strong>. L'OPPBTP recommande de vérifier périodiquement les dispositifs différentiels en actionnant ce bouton ; la fréquence n'est pas fixée dans cette fiche.</p>
+    <div class="encadre encadre--piege">
+      <span class="mot">Le piège</span>
+      <p>Après un appui sur T, « rien ne se passe » ne veut pas dire « tout va bien ». <strong>Si le levier ne tombe pas, c'est le dispositif lui-même qui est en cause</strong> : on ne conclut pas à une installation saine, on considère que la protection est perdue et on le remplace.</p>
+    </div>
+    <figure>
+      <img src="svg/bouton-test.svg" alt="À gauche, la face avant d'un dispositif différentiel : un levier dans une glissière, enclenché en haut et déclenché en bas, et un bouton orange marqué T. Un doigt appuie sur le bouton. À droite, trois étapes : appuyer sur T, le levier doit retomber, remonter le levier. Un encadré rouge en pointillé : si le levier ne tombe pas, le dispositif ne protège plus et doit être remplacé.">
+      <figcaption>Le doigt appuie sur T ; le levier doit retomber. S'il ne tombe pas, la protection est perdue.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Cinq lignes, cinq vérifications à la mise en service. La continuité du conducteur de protection : chaque masse est réellement reliée. La valeur de la prise de terre, compatible avec la sensibilité du différentiel. Le bon fonctionnement du différentiel, par l'essai du bouton test. Le repérage des circuits. Et, sur la dernière ligne, en pointillé, une précision importante : la vérification initiale de l'installation est confiée à un organisme accrédité. Le technicien ne s'y substitue pas, mais il livre une installation qu'il a lui-même contrôlée.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">À la mise en service : ce que l'on vérifie</h2>
+    <p>L'INRS liste ce que portent les vérifications : les dispositions vis-à-vis des contacts directs et indirects et leur efficacité, en particulier <strong>le bon fonctionnement des dispositifs sensibles aux courants différentiels résiduels, la continuité des conducteurs de protection, la valeur des prises de terre</strong> ; et l'identification des différentes parties de l'installation.</p>
+    <p>La vérification <strong>initiale</strong> (mise en service, ou après une modification de structure) doit être réalisée par un <strong>organisme accrédité</strong>. Le rôle du technicien : livrer une installation qu'il a lui-même contrôlée sur ces points.</p>
+    <ul>
+      <li>Contact direct ou indirect : deux risques, deux familles de mesures.</li>
+      <li>Défaut d'isolement : la carcasse devient une masse sous tension, sans signe visible.</li>
+      <li>Le courant de défaut boucle par le conducteur de protection et la terre.</li>
+      <li>Le différentiel compare l'aller et le retour ; 30 mA ou moins pour les personnes.</li>
+    </ul>
+    <p class="formule">Le réflexe : appuyer sur T, et constater que le levier tombe.</p>
+    <figure>
+      <img src="svg/mise-en-service.svg" alt="Cinq lignes numérotées : continuité du conducteur de protection, valeur de la prise de terre, bon fonctionnement du différentiel par le bouton test, repérage des circuits, et, en pointillé, la vérification initiale de l'installation réalisée par un organisme accrédité.">
+      <figcaption>La dernière ligne, en pointillé, n'est pas la vôtre : elle est confiée à un organisme accrédité.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un technicien touche la carcasse métallique d'une pompe à chaleur, à l'intérieur de laquelle un conducteur est venu toucher la tôle. De quel type de contact s'agit-il ? Choisissez parmi les quatre propositions.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Il touche la carcasse d'une PAC dont un conducteur touche la tôle : quel contact ?</h2>
+    <figure class="vignette">
+      <img src="svg/contact-direct-indirect.svg" alt="Vignette de rappel : à gauche le contact direct avec un fil nu, à droite le contact indirect avec une carcasse devenue dangereuse.">
+      <figcaption>Rappel de l'écran 1 — direct ou indirect.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Direct : le conducteur touche la tôle à l'intérieur</button>
+      <button type="button" data-answer="b">Direct : une carcasse en métal est conductrice</button>
+      <button type="button" data-answer="bonne">Indirect : la masse est sous tension par accident</button>
+      <button type="button" data-answer="d">Aucun : une carcasse est toujours isolée</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le technicien ne touche pas une pièce active : il touche une masse, normalement hors tension, que le défaut d'isolement a rendue dangereuse. C'est la définition du contact indirect."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Le conducteur de protection d'une pompe à chaleur est sectionné. Un défaut d'isolement vient ensuite toucher la carcasse. Que se passe-t-il ? Reprenez la boucle de l'écran trois avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Le conducteur de protection est sectionné, puis un défaut touche la carcasse. Et alors ?</h2>
+    <figure class="vignette">
+      <img src="svg/chemin-defaut.svg" alt="Vignette de rappel : la boucle du courant de défaut, de la source à la carcasse, au conducteur de protection, à la terre et retour.">
+      <figcaption>Rappel de l'écran 3 — la boucle par la terre.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Plus de boucle : la carcasse reste sous tension</button>
+      <button type="button" data-answer="b">Le courant s'écoule par le sol, sans danger</button>
+      <button type="button" data-answer="c">Le différentiel coupe aussitôt, sans que personne touche</button>
+      <button type="button" data-answer="d">La carcasse retombe à zéro volt après quelques secondes</button>
+    </div>
+    <p class="feedback" hidden data-explication="Sans conducteur de protection, le courant de défaut ne peut pas circuler : le dispositif ne détecte rien et la carcasse reste sous tension jusqu'à ce que quelqu'un la touche. La continuité du conducteur de protection se vérifie."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Que compare un dispositif différentiel ? Reprenez les deux rangées de l'écran cinq si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Que compare un dispositif différentiel ?</h2>
+    <figure class="vignette">
+      <img src="svg/differentiel-compare.svg" alt="Vignette de rappel : deux rangées, sans défaut avec aller et retour égaux, puis avec défaut et retour plus faible.">
+      <figcaption>Rappel de l'écran 5 — aller et retour.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La tension de la phase et celle de la terre</button>
+      <button type="button" data-answer="b">Le courant réel et le calibre du circuit</button>
+      <button type="button" data-answer="c">La température du câble et celle de l'air</button>
+      <button type="button" data-answer="bonne">Le courant qui part et le courant qui revient</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le dispositif fait la somme des courants des conducteurs actifs. Si elle n'est pas nulle, une partie du courant est partie par la terre : il compare cet écart à sa sensibilité et coupe. Il ne mesure ni tension, ni température, ni surcharge."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Vous appuyez sur le bouton test d'un dispositif différentiel : le levier ne bouge pas. Que concluez-vous ? Pensez à la phrase de l'écran sept : la protection ne se présume pas, elle se constate.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Vous appuyez sur T : le levier ne bouge pas. Que concluez-vous ?</h2>
+    <figure class="vignette">
+      <img src="svg/bouton-test.svg" alt="Vignette de rappel : la face avant d'un dispositif différentiel, le bouton test T, le levier et l'encadré rouge « le levier ne tombe pas ? ».">
+      <figcaption>Rappel de l'écran 7 — le bouton test.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">L'installation est saine : aucun défaut détecté</button>
+      <button type="button" data-answer="bonne">Le dispositif est défaillant : il ne protège plus</button>
+      <button type="button" data-answer="c">Il faut passer à une sensibilité de 300 mA</button>
+      <button type="button" data-answer="d">Il faut recommencer l'essai avec le circuit à vide</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le bouton test simule un défaut : le dispositif doit déclencher. S'il ne déclenche pas, c'est lui qui est en cause, pas l'installation. La protection des personnes ne se présume pas, elle se constate : on le remplace."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../elec-nf-c-15-100/"><strong>NF C 15-100</strong></a> (même sous-ligne)
+      — la norme des installations basse tension, où la protection différentielle est détaillée.</li>
+    <li><a href="../elec-regimes-de-neutre/"><strong>Régimes de neutre</strong></a> (même sous-ligne)
+      — TT, TN, IT : la boucle du courant de défaut n'y est pas la même.</li>
+    <li><a href="../elec-consigner/"><strong>Consigner</strong></a> (même sous-ligne)
+      — mettre hors tension avant d'intervenir : l'autre moyen de protéger la personne.</li>
+    <li><a href="../risques-epi/"><strong>Les EPI</strong></a> (Risques professionnels)
+      — quand la protection collective ne suffit pas, le geste protégé.</li>
+    <li><a href="https://inerweb.fr/electrorezo/" target="_blank" rel="noopener"><strong>ÉlectroRézo</strong></a> (réseau voisin)
+      — la terre, le disjoncteur différentiel et l'interrupteur différentiel, côté technique.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/. voix.js donne la
+     narration, prof-vocal.js enchaîne les écrans tout seul et s'arrête sur
+     les questions.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

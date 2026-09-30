@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="t" aria-describedby="d" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t">Lire un classement complet : B-s1,d0</title>
+  <desc id="d">Le code B-s1,d0 écrit en grand, découpé en trois parties. Sous la lettre B, une carte explique la classe, de A1 à F. Sous s1, une carte explique le niveau de fumée : s1, s2 ou s3, s1 étant la fumée la plus faible. Sous d0, une carte explique les gouttelettes enflammées : d0, d1 ou d2, d0 signifiant aucune gouttelette enflammée à l'essai. Une bande résume la lecture complète. Dans l'animation, les trois parties apparaissent l'une après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .sub { font-size:17px; fill:#5a6b7d; }
+    .h   { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .hr  { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#b91c1c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lb  { font-size:17px; font-weight:bold; fill:#10233c; }
+    .gry { font-size:17px; fill:#5a6b7d; }
+    .code{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:34px; fill:#1b3a63; }
+    .big { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:72px; fill:#1b3a63; }
+    .bigr{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:56px; fill:#b91c1c; }
+    .band{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#e8914a; }
+  </style>
+  <defs><path id="fl" d="M0 -85 C-20 -55 -35 -45 -27 -18 C-23 -4 -10 0 0 0 C13 0 27 -6 27 -24 C27 -45 13 -55 0 -85 Z" fill="#e8914a" stroke="#b91c1c" stroke-width="2"/><path id="fli" d="M0 -48 C-9 -32 -16 -26 -12 -12 C-9 -4 -4 0 0 0 C6 0 12 -3 12 -12 C12 -26 6 -32 0 -48 Z" fill="#f6c58e"/>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#5a6b7d"/></marker>
+  </defs>
+<text class="ttl" x="400" y="38" text-anchor="middle">Lire un classement complet</text>
+<g><text class="big" x="140" y="140" text-anchor="middle">B</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.12;1" dur="13s" repeatCount="indefinite"/></g>
+<g><text class="big" x="270" y="140" text-anchor="middle">-</text><text class="big" x="400" y="140" text-anchor="middle">s1</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.28;0.34;1" dur="13s" repeatCount="indefinite"/></g>
+<g><text class="big" x="530" y="140" text-anchor="middle">,</text><text class="big" x="660" y="140" text-anchor="middle">d0</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.50;0.56;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="25" y="176" width="230" height="178" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text class="h" x="140" y="208" text-anchor="middle">La classe</text><text class="lbl" x="140" y="242" text-anchor="middle">de A1 à F ;</text><text class="lbl" x="140" y="270" text-anchor="middle">ici B.</text><text class="lbl" x="140" y="298" text-anchor="middle">A1 n'a pas de suffixe.</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.10;0.16;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="285" y="176" width="230" height="178" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text class="h" x="400" y="208" text-anchor="middle">La fumée</text><text class="lbl" x="400" y="242" text-anchor="middle">s1, s2 ou s3.</text><text class="lbl" x="400" y="270" text-anchor="middle">s1 : fumée la plus faible</text><text class="lbl" x="400" y="298" text-anchor="middle">s3 : ni s1 ni s2</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.38;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="545" y="176" width="230" height="178" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text class="h" x="660" y="208" text-anchor="middle">Les gouttelettes</text><text class="lbl" x="660" y="242" text-anchor="middle">d0, d1 ou d2.</text><text class="lbl" x="660" y="270" text-anchor="middle">d0 : aucune gouttelette</text><text class="lbl" x="660" y="298" text-anchor="middle">enflammée à l'essai</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.54;0.60;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="30" y="384" width="740" height="52" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/><text class="band" x="400" y="417" text-anchor="middle">B-s1,d0 se lit : classe B, fumée faible, aucune gouttelette enflammée</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.72;0.78;1" dur="13s" repeatCount="indefinite"/></g>
+</svg>

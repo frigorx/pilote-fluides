@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 486" role="img"
+     aria-labelledby="t-vei" aria-describedby="d-vei" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-vei">Trois veilleurs autour du salarié : CSE, inspection du travail, santé au travail</title>
+  <desc id="d-vei">En haut, un pictogramme plein figure le salarié. Trois flèches descendent vers trois cartes. Le comité social et économique : expression collective des salariés, droit d'alerte en cas de danger grave et imminent, mis en place dès onze salariés. L'inspection du travail : veille à l'application du droit du travail, constate les infractions, entre dans tout établissement. Le service de prévention et de santé au travail : éviter toute altération de la santé du fait du travail, suivi individuel avec une visite d'information et de prévention après l'embauche.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .ha   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#9d174d; }
+    .b    { font-size:17px; fill:#10233c; }
+    .bb   { font-size:17px; font-weight:bold; fill:#10233c; }
+    .ba   { font-size:17px; font-weight:bold; fill:#9d174d; }
+    .bo   { font-size:17px; font-weight:bold; fill:#b45309; }
+    .g    { font-size:16px; fill:#5a6b7d; }
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <g transform="translate(430 96) scale(1.3)"><circle cx="0" cy="-34" r="16" fill="#9d174d"/><path d="M-28 34 V4 Q-28 -12 -12 -12 H12 Q28 -12 28 4 V34 Z" fill="#9d174d"/></g>
+  <text class="h" x="500" y="104" style="fill:#9d174d">Le salarié</text>
+  <line x1="430" y1="158" x2="150" y2="232" stroke="#5a6b7d" stroke-width="3"/><polygon points="150,250 141,234 159,234" fill="#5a6b7d"/>
+  <line x1="430" y1="158" x2="430" y2="232" stroke="#5a6b7d" stroke-width="3"/><polygon points="430,250 421,234 439,234" fill="#5a6b7d"/>
+  <line x1="430" y1="158" x2="710" y2="232" stroke="#5a6b7d" stroke-width="3"/><polygon points="710,250 701,234 719,234" fill="#5a6b7d"/>
+  <rect x="20" y="256" width="260" height="210" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="h" x="36" y="288">Le comité social</text>
+    <text class="h" x="36" y="312">et économique (CSE)</text>
+  <text class="b" x="36" y="346">Expression collective</text>
+    <text class="b" x="36" y="370">des salariés.</text>
+    <text class="b" x="36" y="394">Droit d'alerte en cas de</text>
+    <text class="b" x="36" y="418">danger grave et imminent.</text>
+    <text class="b" x="36" y="442">Dès 11 salariés.</text>
+  <rect x="300" y="256" width="260" height="210" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="h" x="316" y="288">L'inspection</text>
+    <text class="h" x="316" y="312">du travail</text>
+  <text class="b" x="316" y="346">Veille à l'application</text>
+    <text class="b" x="316" y="370">du droit du travail,</text>
+    <text class="b" x="316" y="394">constate les infractions.</text>
+    <text class="b" x="316" y="418">Droit d'entrée dans tout</text>
+    <text class="b" x="316" y="442">établissement.</text>
+  <rect x="580" y="256" width="260" height="210" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="h" x="596" y="288">Prévention et santé</text>
+    <text class="h" x="596" y="312">au travail</text>
+  <text class="b" x="596" y="346">Évite toute altération de</text>
+    <text class="b" x="596" y="370">la santé due au travail.</text>
+    <text class="b" x="596" y="394">Suivi individuel : visite</text>
+    <text class="b" x="596" y="418">d'information et de</text>
+    <text class="b" x="596" y="442">prévention après l'embauche.</text>
+</svg>

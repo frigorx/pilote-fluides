@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>S'installer — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : s'installer à son compte dans le froid et la climatisation — la micro-entreprise, le droit d'exercer, les cotisations sur le chiffre d'affaires, l'attestation de capacité, l'assurance décennale, la mention RGE, et les pièges.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/travail-s-installer/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Droit du travail.
+     « S'installer — l'auto-entreprise ». Produite le 30/09/2026 sur le gabarit
+     Aptitude & capacité. Fond : FOND.md (sources officielles lues le jour).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+
+     DOCTRINE : aucun plafond, taux ou montant n'est écrit sur l'écran :
+     ils changent chaque année, la station donne la règle et renvoie au site
+     officiel. Les chiffres présents sont tous lus (durées, délais) — voir FOND.md.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Droit du travail · niveau BTS</p>
+  <h1>S'installer — l'auto-entreprise</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-travail.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez ce qu'il faut avoir <strong>avant de toucher un fluide</strong> quand on s'installe à son compte : le droit d'exercer, la façon dont les <strong>cotisations se calculent sur le chiffre d'affaires</strong>, l'attestation de capacité, l'assurance décennale, la mention RGE qui ouvre les aides du client — et les deux pièges qui guettent le débutant, la <strong>sous-traitance déguisée</strong> et le <strong>prix trop bas</strong>.</p>
+    <p style="margin-top:10px"><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — <strong>hors REAC</strong> : culture professionnelle du technicien et du chargé d'affaires. Aucune des compétences CP1 à CP10 ne porte sur la création d'entreprise. Pont avec l'attestation d'aptitude 2025 : code <strong>1.00</strong> (législation applicable), pour l'attestation de capacité de l'entreprise.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la scène : à gauche, vous, seul, en nom propre. À droite, deux cartes séparées par une cloison rose. La carte grise, ce sont vos biens personnels ; la carte rose, les biens utiles à l'activité. Cette cloison existe automatiquement pour un entrepreneur individuel, sans démarche, sauf fraude. Le micro-entrepreneur est cet entrepreneur individuel, avec des règles fiscales et sociales simplifiées, et une même personne ne peut en avoir qu'une seule. Retenez que simple ne veut pas dire sans obligations : le métier du froid en impose, et les écrans suivants les déroulent une à une.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">À son compte : une personne, une entreprise</h2>
+    <p>Le <strong>micro-entrepreneur</strong> (on dit encore « auto-entrepreneur ») est un <strong>entrepreneur individuel</strong> : il n'y a pas de société à créer. Il bénéficie de règles fiscales et sociales <strong>simplifiées</strong>, pas d'un métier simplifié.</p>
+    <ul>
+      <li>Son <strong>patrimoine professionnel est séparé automatiquement</strong> de son patrimoine personnel — sauf fraude.</li>
+      <li>Une même personne ne peut avoir <strong>qu'une seule</strong> micro-entreprise.</li>
+      <li>À la différence d'une société à responsabilité limitée, il agit <strong>en son nom propre</strong> : c'est lui, en personne, qui répond de l'activité, sur ses biens utiles à l'activité.</li>
+    </ul>
+    <p><strong>À retenir</strong> : le statut simplifie la comptabilité et les cotisations. Il ne supprime aucune obligation du métier : diplôme, attestations, assurances — les écrans suivants.</p>
+    <figure>
+      <img src="svg/a-son-compte.svg" alt="À gauche, un pictogramme plein représentant l'entrepreneur seul, en nom propre. À droite, deux cartes séparées par une cloison rose : la carte grise, avec une maison, représente les biens personnels ; la carte rose, avec une caisse à outils, les biens de l'activité. Une bande rappelle que la séparation est automatique sauf fraude, et qu'une personne ne peut avoir qu'une seule micro-entreprise.">
+      <figcaption>La cloison rose sépare la vie privée de l'activité — elle n'est pas une société.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Trois marches montent de gauche à droite, et elles s'allument une à une. Première marche : la qualification. Dans la climatisation, il faut un diplôme du métier, ou à défaut trois années d'expérience effective. Deuxième marche : l'immatriculation au registre national des entreprises, à faire entre un mois avant et quinze jours après le début de l'activité. Troisième marche : le premier chantier, qui ne s'ouvre qu'avec les assurances et les papiers du fluide, dont parlent les écrans suivants. Le bandeau du bas cite les diplômes reconnus.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le droit d'exercer : qualification et immatriculation</h2>
+    <p>Installer et entretenir du froid ou de la climatisation est une <strong>activité artisanale</strong>. Deux conditions viennent avant tout chantier :</p>
+    <ol>
+      <li><strong>La qualification professionnelle.</strong> Pour le climaticien : un diplôme du métier — CAP installateur thermique ou CAP froid et climatisation, bac pro technicien en installation des systèmes énergétiques et climatiques, brevet professionnel monteur dépanneur en froid et climatisation — <strong>ou, à défaut, trois années d'expérience professionnelle effective</strong> dans l'Union européenne ou l'Espace économique européen.</li>
+      <li><strong>L'immatriculation</strong> au registre national des entreprises, <strong>entre un mois avant et quinze jours après</strong> le début de l'activité : c'est elle qui donne la qualité d'artisan.</li>
+    </ol>
+    <p><strong>Pour un BTS</strong> : votre diplôme entre dans cette liste de qualifications. Il ne remplace ni l'immatriculation ni les attestations fluides.</p>
+    <figure>
+      <img src="svg/droit-d-exercer.svg" alt="Trois marches qui montent de gauche à droite : la qualification, un diplôme du métier ou trois ans d'expérience ; l'immatriculation au registre national des entreprises, autour du début d'activité ; le premier chantier, avec assurances et papiers du fluide en règle. Un bandeau cite les diplômes : CAP froid et climatisation, bac pro installation des systèmes énergétiques et climatiques, brevet professionnel monteur dépanneur en froid et climatisation.">
+      <figcaption>Les marches s'allument dans l'ordre : on ne saute pas la première.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Suivez la chaîne du haut, bloc par bloc. Le chiffre d'affaires que vous déclarez, multiplié par un taux qui dépend de la nature de l'activité, donne vos cotisations. La bande bleue insiste : la base, c'est le chiffre d'affaires, pas ce qu'il vous reste. Sans chiffre d'affaires, rien à payer. Puis regardez la barre orange qui grandit et franchit le trait rouge en pointillé, le plafond du régime. Deux années de suite au-dessus, on passe au régime réel. C'est le moment d'étudier une société, qui limite la responsabilité aux apports. Les montants changent : on les relit sur le site officiel.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le chiffre d'affaires commande tout</h2>
+    <ul>
+      <li><strong>Cotisations = taux × chiffre d'affaires.</strong> Un pourcentage fixe, dont le taux dépend de la catégorie d'activité (vente, prestation de services, profession libérale). Déclaration et paiement <strong>en ligne à l'Urssaf</strong>, chaque mois ou chaque trimestre selon l'option choisie. Sans chiffre d'affaires : pas de cotisation.</li>
+      <li><strong>La base n'est pas le bénéfice.</strong> Le matériel, les déplacements, l'assurance ne la réduisent pas.</li>
+      <li><strong>Un plafond</strong> de chiffre d'affaires borne le régime, différent pour la vente et pour la prestation de services. <strong>Deux années de suite au-dessus</strong> : régime réel d'imposition. On peut aussi <strong>choisir</strong> ce régime avant.</li>
+      <li><strong>Quand l'activité grandit</strong> : on étudie une <strong>société</strong> (EURL, SASU…). La responsabilité de l'associé unique est limitée à ses apports, sauf faute de gestion ; en échange, statuts, comptes annuels à déposer, protection sociale et cotisations du dirigeant différentes.</li>
+    </ul>
+    <p><strong>Aucun taux, aucun plafond n'est écrit ici</strong> : ils sont revus chaque année. On les lit sur le site de l'Urssaf et sur service-public.gouv.fr le jour où l'on calcule.</p>
+    <figure>
+      <img src="svg/chiffre-d-affaires.svg" alt="En haut, une chaîne de trois blocs : le chiffre d'affaires, multiplié par le taux de l'activité, égale les cotisations. Une bande rappelle que le matériel acheté ne réduit pas la base. Au milieu, une barre orange représente le chiffre d'affaires de l'année : elle grandit et dépasse un repère rouge en pointillé, le plafond du régime. À droite, un encadré : deux années de suite au-dessus, régime réel. Une bande en bas : quand l'activité grandit, on étudie la société.">
+      <figcaption>La chaîne du haut se déroule d'abord ; la barre grandit ensuite et franchit le plafond.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Deux documents, un signe plus. À gauche, l'attestation d'aptitude : elle appartient à la personne, elle prouve que vous savez faire. À droite, l'attestation de capacité : elle appartient à l'entreprise, et trois pastilles disent ce qu'elle doit prouver, du personnel qualifié, de l'outillage, des procédures. Vous êtes seul, donc les deux titulaires, c'est vous. Mais regardez la bande du bas : les deux papiers restent deux. Avoir l'aptitude ne suffit pas pour intervenir sur un fluide frigorigène, il faut aussi que l'entreprise ait sa capacité. Le détail est dans la station Aptitude et capacité.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Avant de toucher un fluide : deux papiers, une seule personne</h2>
+    <p>La micro-entreprise ne change rien à la règle des fluides frigorigènes : il faut <strong>les deux attestations</strong>.</p>
+    <ul>
+      <li>L'<strong>attestation d'aptitude</strong> est à <strong>la personne</strong> : c'est vous. Depuis le régime de 2025, elle n'est plus acquise à vie (remise à niveau tous les 7 ans).</li>
+      <li>L'<strong>attestation de capacité</strong> est à <strong>l'entreprise</strong> : elle suppose du <strong>personnel</strong> titulaire de l'aptitude, de l'<strong>outillage</strong> de récupération, de détection et de mesure, et des <strong>procédures</strong> de traçabilité.</li>
+    </ul>
+    <p><strong>Le piège du débutant</strong> : « l'entreprise, c'est moi, donc mon aptitude suffit ». Non : entrepreneur seul, vous cumulez les deux rôles, mais chaque papier garde son titulaire. Une entreprise sans capacité ne peut pas exercer, même si son unique technicien est parfaitement attesté.</p>
+    <figure>
+      <img src="svg/deux-papiers-soi-meme.svg" alt="Deux documents côte à côte, reliés par un signe plus. À gauche, l'attestation d'aptitude, détenue par la personne, qui prouve qu'elle sait faire et la suit d'une entreprise à l'autre. À droite, l'attestation de capacité, détenue par l'entreprise, avec trois pastilles : personnel, outillage, procédures. Une bande rappelle que l'entrepreneur seul cumule les deux rôles mais que les deux papiers restent deux.">
+      <figcaption>Seul dans l'entreprise, vous restez titulaire de deux papiers distincts.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Suivez la chaîne. À gauche, en rose, l'attestation d'assurance décennale : elle se justifie avant l'ouverture du chantier. Puis les travaux, la réception, et enfin dix ans de responsabilité décennale. En dessous, deux cartes. La première : le statut de micro-entrepreneur ne dispense de rien, l'obligation suit l'activité exercée. La seconde : ne confondez pas votre assurance décennale avec la dommages-ouvrage, que souscrit le client. La question de savoir si un désordre relève de la décennale est une autre affaire, traitée dans la station Garanties.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">L'assurance décennale : avant d'ouvrir le chantier</h2>
+    <ul>
+      <li>Code des assurances, art. L241-1 : toute personne dont la <strong>responsabilité décennale</strong> peut être engagée doit être couverte par une assurance, dont elle <strong>justifie à l'ouverture du chantier</strong>.</li>
+      <li>La responsabilité dure <strong>dix ans</strong> à compter de la réception. Ne pas s'assurer expose à des <strong>sanctions pénales</strong>.</li>
+      <li><strong>Micro-entrepreneur ou non</strong> : l'assurance dépend de l'activité exercée, pas du statut. En plus, la responsabilité civile professionnelle est exigée d'un climaticien qui exerce à titre libéral.</li>
+      <li>À ne pas confondre : la <strong>décennale</strong> est souscrite par vous ; la <strong>dommages-ouvrage</strong> est souscrite par le client.</li>
+    </ul>
+    <p><strong>Ce que cette station ne tranche pas</strong> : si tel désordre sur telle installation relève ou non de la décennale. C'est la méthode de la station Garanties.</p>
+    <figure>
+      <img src="svg/decennale-avant-chantier.svg" alt="Quatre blocs en chaîne : l'attestation d'assurance justifiée avant l'ouverture du chantier, les travaux, la réception, puis dix ans de responsabilité décennale. En dessous, deux cartes : le statut ne dispense de rien, l'obligation suit l'activité exercée ; la décennale est souscrite par l'entrepreneur, la dommages-ouvrage par le client. Une bande renvoie à la station Garanties.">
+      <figcaption>Assuré avant d'ouvrir, responsable dix ans après.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Au centre, la rosette : la mention RGE, reconnu garant de l'environnement. À gauche, le client attend une aide ; à droite, l'aide elle-même. La flèche passe par la mention : en règle générale, sans elle, pour ces travaux, l'aide ne s'ouvre pas. Les trois pastilles du bas donnent les règles : la mention est propre à un domaine de travaux, on la vérifie sur l'annuaire officiel, et une mention en cours de qualification ne compte pas. Enfin, s'immatriculer ne donne pas la mention : elle se demande à un organisme. Pour un client qui compte sur une aide, c'est à dire avant le devis.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">La mention RGE : pour que le client ait ses aides</h2>
+    <p>Pour beaucoup d'aides à la rénovation énergétique, <strong>le client n'y a droit que si l'entreprise est RGE</strong> (« reconnu garant de l'environnement ») pour les travaux concernés.</p>
+    <ul>
+      <li>La mention est <strong>propre à un domaine de travaux</strong> : RGE pour le bois n'est pas RGE pour la pompe à chaleur.</li>
+      <li>Elle se <strong>vérifie</strong> sur l'annuaire officiel des professionnels RGE.</li>
+      <li>« <strong>En cours de qualification</strong> » ne compte pas.</li>
+      <li>S'immatriculer <strong>ne la donne pas</strong> : elle est délivrée par un organisme de qualification ou de certification.</li>
+    </ul>
+    <p><strong>Réflexe</strong> : dire au client, <strong>avant le devis</strong>, si l'entreprise a la mention pour ces travaux. Le détail est dans la station RGE &amp; QualiPAC.</p>
+    <figure>
+      <img src="svg/rge-pour-le-client.svg" alt="De gauche à droite : le client, pictogramme plein, qui attend une aide ; au centre une rosette portant la mention RGE, qui doit correspondre aux travaux ; à droite un bloc vert, l'aide du client. Des flèches relient les trois éléments. En dessous, trois pastilles : propre à un domaine de travaux, vérifiable sur l'annuaire officiel, « en cours » ne compte pas. Une bande : s'immatriculer ne donne pas la mention, elle se demande à un organisme.">
+      <figcaption>La flèche de l'aide passe par la mention de l'entreprise.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Deux panneaux, deux pièges. À gauche, la sous-traitance déguisée. La carte verte : celui dont les conditions de travail sont définies par lui-même ou par le contrat est présumé indépendant. La carte rouge : si un donneur d'ordre vous place dans un lien de subordination juridique permanente, un contrat de travail peut être établi, malgré votre immatriculation. À droite, le prix trop bas : la barre représente le chiffre d'affaires d'un chantier. Les cotisations se calculent sur le tout, les frais et les assurances restent à votre charge. Avant de donner un prix, partez du coût complet.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Deux pièges : la sous-traitance déguisée et le prix trop bas</h2>
+    <p><strong>1. La sous-traitance déguisée.</strong> Un ancien employeur vous propose de « passer en auto-entrepreneur » pour faire les mêmes chantiers, avec les mêmes consignes ? Le Code du travail (art. L8221-6) présume <strong>non salarié</strong> celui qui est immatriculé, mais précise qu'un <strong>contrat de travail peut être établi</strong> s'il fournit ses prestations « dans des conditions qui les placent dans un lien de subordination juridique permanente ». L'art. L8221-6-1 présume indépendant celui dont les conditions de travail sont « définies exclusivement par lui-même ou par le contrat les définissant avec son donneur d'ordre ». <strong>La question à poser</strong> : qui fixe mes conditions de travail ?</p>
+    <p>Côté donneur d'ordre (chargé d'affaires, bureau d'études), le risque existe aussi : un donneur d'ordre condamné pour travail dissimulé doit payer les cotisations sociales dues.</p>
+    <p><strong>2. Le prix trop bas.</strong> Les cotisations se calculent sur le chiffre d'affaires, <strong>pas sur ce qui vous reste</strong> ; les frais et les assurances restent à votre charge. Un prix qui ne couvre pas le coût complet — assurances, déplacements, temps d'étude et de devis — fait travailler à perte.</p>
+    <figure>
+      <img src="svg/deux-pieges.svg" alt="Deux panneaux. À gauche, la sous-traitance déguisée : une carte verte, présumé indépendant quand les conditions de travail sont définies par soi-même ou par le contrat ; une carte rouge, contrat de travail possible en cas de lien de subordination juridique permanente malgré l'immatriculation. À droite, le prix trop bas : une barre découpée en cotisations, frais et ce qui reste, sans valeurs, avec le rappel que les cotisations se calculent sur le tout. Une bande conseille de partir du coût complet.">
+      <figcaption>À gauche, qui fixe vos conditions de travail ; à droite, ce qui reste vraiment du chiffre d'affaires.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Voici la check-list, et elle se coche toute seule. Une case après l'autre : la qualification du métier, l'immatriculation, l'attestation de capacité de l'entreprise, l'attestation d'aptitude de la personne, les assurances, la mention RGE si le client attend une aide, et les cotisations déclarées. Chacune renvoie à un écran de cette station. Quand tout est coché, la bande rose en bas le dit : prêt à ouvrir le chantier. Retenez surtout l'ordre : on s'installe avant de toucher un fluide, jamais après, et on relit les plafonds et les taux sur les sites officiels.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : la check-list de l'installation</h2>
+    <ul>
+      <li>☐ <strong>Qualification</strong> du métier : diplôme, ou trois ans d'expérience (écran 2).</li>
+      <li>☐ <strong>Immatriculation</strong> au registre national des entreprises (écran 2).</li>
+      <li>☐ <strong>Attestation de capacité</strong> de l'entreprise (écran 4).</li>
+      <li>☐ <strong>Attestation d'aptitude</strong> de la personne, à maintenir (écran 4).</li>
+      <li>☐ <strong>Assurances</strong> : décennale et responsabilité civile professionnelle (écran 5).</li>
+      <li>☐ <strong>Mention RGE</strong> si le client attend une aide (écran 6).</li>
+      <li>☐ <strong>Cotisations</strong> déclarées à l'Urssaf (écran 3) — et prix calculé sur le coût complet (écran 7).</li>
+    </ul>
+    <p class="formule">Le réflexe : cocher les sept cases avant d'ouvrir le chantier, et relire taux et plafonds sur les sites officiels.</p>
+    <figure>
+      <img src="svg/checklist-installation.svg" alt="Une liste de sept cases cochées, quatre à gauche et trois à droite : qualification du métier, immatriculation, attestation de capacité, attestation d'aptitude, assurances, mention RGE, cotisations déclarées. Une bande rose en bas : sept cases cochées, prêt à ouvrir le chantier.">
+      <figcaption>Dans l'animation, les cases se cochent une à une ; à la fin, les sept sont cochées.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un micro-entrepreneur a acheté beaucoup de matériel pour un chantier. Sur quoi calcule-t-il ses cotisations ? Reprenez la chaîne de l'écran trois avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Cotisations du micro-entrepreneur : elles se calculent sur…</h2>
+    <figure class="vignette">
+      <img src="svg/chiffre-d-affaires.svg" alt="Vignette de rappel : la chaîne chiffre d'affaires, taux de l'activité, cotisations, et la barre du chiffre d'affaires qui franchit le plafond du régime.">
+      <figcaption>Rappel de l'écran 3 — la base est le chiffre d'affaires.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Son bénéfice, une fois le matériel déduit</button>
+      <button type="button" data-answer="bonne">Son chiffre d'affaires, par un pourcentage fixe</button>
+      <button type="button" data-answer="c">Son bénéfice imposable de l'année précédente</button>
+      <button type="button" data-answer="d">Le nombre de chantiers réalisés dans le mois</button>
+    </div>
+    <p class="feedback" hidden data-explication="La cotisation est un pourcentage fixe appliqué au chiffre d'affaires ; le taux dépend de la catégorie d'activité. Le matériel acheté ne la réduit pas, et sans chiffre d'affaires il n'y a rien à payer."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Vous êtes seul dans votre entreprise et vous détenez votre attestation d'aptitude. Que faut-il encore pour intervenir sur un fluide frigorigène ? Reprenez les deux documents de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Seul, avec votre attestation d'aptitude : que faut-il encore pour intervenir sur un fluide ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-papiers-soi-meme.svg" alt="Vignette de rappel : l'attestation d'aptitude de la personne, l'attestation de capacité de l'entreprise, et le signe plus entre elles.">
+      <figcaption>Rappel de l'écran 4 — deux papiers, même quand on est seul.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien : l'entreprise, c'est vous, l'aptitude suffit</button>
+      <button type="button" data-answer="b">Une seconde attestation d'aptitude au nom de l'entreprise</button>
+      <button type="button" data-answer="c">La mention RGE, qui ouvre le droit de manipuler</button>
+      <button type="button" data-answer="bonne">L'attestation de capacité, détenue par l'entreprise</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'aptitude est à la personne, la capacité est à l'entreprise. Entrepreneur seul, vous cumulez les deux rôles, mais chaque papier garde son titulaire. La mention RGE, elle, concerne les aides du client, pas le droit de manipuler."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un micro-entrepreneur du bâtiment affirme être dispensé d'assurance décennale parce qu'il est en micro-entreprise. Que répond la règle ? Souvenez-vous des deux cartes de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Micro-entrepreneur du bâtiment : l'assurance décennale est…</h2>
+    <figure class="vignette">
+      <img src="svg/decennale-avant-chantier.svg" alt="Vignette de rappel : l'attestation d'assurance justifiée avant l'ouverture du chantier, puis les travaux, la réception et les dix ans de responsabilité, avec la carte « le statut ne dispense de rien ».">
+      <figcaption>Rappel de l'écran 5 — assuré avant d'ouvrir le chantier.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Une obligation qui suit l'activité, pas le statut</button>
+      <button type="button" data-answer="b">Facultative tant qu'on reste en micro-entreprise</button>
+      <button type="button" data-answer="c">À souscrire seulement après la réception du chantier</button>
+      <button type="button" data-answer="d">Remplacée par la dommages-ouvrage souscrite par le client</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'obligation d'assurance dépend de l'activité exercée, pas du statut. Elle se justifie à l'ouverture du chantier, avant les travaux. La dommages-ouvrage est une autre assurance, souscrite par le client : elle ne remplace pas la décennale de l'entrepreneur."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Vous êtes immatriculé, mais un donneur d'ordre vous place dans un lien de subordination juridique permanente. Que dit le Code du travail ? Reprenez la carte rouge de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Immatriculé, mais placé en subordination juridique permanente : que dit le Code du travail ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-pieges.svg" alt="Vignette de rappel : à gauche la carte verte présumé indépendant et la carte rouge contrat de travail possible, à droite le prix trop bas.">
+      <figcaption>Rappel de l'écran 7 — la carte rouge de la sous-traitance déguisée.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">L'immatriculation écarte tout contrat de travail, sans exception</button>
+      <button type="button" data-answer="b">Seul le sous-traitant peut être sanctionné pour travail dissimulé</button>
+      <button type="button" data-answer="bonne">Un contrat de travail peut être établi malgré l'immatriculation</button>
+      <button type="button" data-answer="d">Le contrat de travail ne peut naître que d'un écrit signé</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'immatriculation crée une présomption de non-salariat, mais elle n'est pas irréfragable : si les prestations sont fournies dans un lien de subordination juridique permanente, l'existence d'un contrat de travail peut être établie. Un donneur d'ordre condamné pour travail dissimulé doit payer les cotisations dues."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (Fluidique &amp; thermique)
+      — les deux papiers du fluide : l'aptitude est à la personne, la capacité à l'entreprise, et l'aptitude se maintient.</li>
+    <li><a href="../certif-garanties/"><strong>Les garanties</strong></a> (Certifications &amp; normes)
+      — la décennale se justifie à l'ouverture du chantier ; la station donne la méthode pour dire si un désordre en relève.</li>
+    <li><a href="../certif-rge-qualipac/"><strong>RGE &amp; QualiPAC</strong></a> (Certifications &amp; normes)
+      — la mention qui ouvre les aides du client, propre à un domaine de travaux et vérifiable sur l'annuaire officiel.</li>
+    <li><a href="../travail-se-former/"><strong>Se former</strong></a> (Droit du travail)
+      — la qualification et les attestations s'obtiennent et se maintiennent par la formation.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions. Les narrations de cette station
+     n'ont pas encore leur MP3 (voix du navigateur en filet) : à fabriquer par la
+     chaîne edge-tts (build/voix/collecter-narrations.mjs) puis réduire l'index.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

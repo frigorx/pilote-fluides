@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-cyc" aria-describedby="d-cyc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cyc">Une habilitation se renouvelle : la boucle</title>
+  <desc id="d-cyc">Quatre cartes disposées en boucle, lues dans le sens des aiguilles d'une montre. En haut à gauche, la formation, théorique et pratique. En haut à droite, l'attestation médicale d'absence de contre-indication, valable cinq ans. En bas à droite, le titre d'habilitation délivré par l'employeur, avec le symbole, le domaine de tension et les ouvrages. En bas à gauche, le recyclage, recommandé tous les trois ans, avec un suivi annuel du titre ; une flèche remonte vers la formation. Une bande en bas rappelle que pour les travaux sous tension, le titre n'est valable qu'un an. L'animation fait apparaître les cartes puis fait passer un point d'une carte à la suivante ; l'image fixe montre les quatre cartes.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+  <rect x="0" y="0" width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="32" text-anchor="middle">Une habilitation vit : elle se renouvelle</text>
+  <g>
+    <rect x="40" y="60" width="340" height="150" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="60" y="100">Formation</text>
+    <text class="lbl" x="60" y="140">théorique et pratique</text>
+    <text class="lbl" x="60" y="170">avant toute habilitation</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.03;0.11;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="420" y="60" width="340" height="150" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="440" y="100">Attestation médicale</text>
+    <text class="lbl" x="440" y="140">absence de contre-indication</text>
+    <text class="lbl" x="440" y="170">valable cinq ans</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="420" y="270" width="340" height="150" rx="14" fill="#f7edd8" stroke="#a16207" stroke-width="3"/>
+    <text class="qui" x="440" y="310">Titre d'habilitation</text>
+    <text class="lbl" x="440" y="350">délivré par l'employeur</text>
+    <text class="lbl" x="440" y="380">symbole, tension, ouvrages</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.29;0.37;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="40" y="270" width="340" height="150" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="60" y="310">Recyclage</text>
+    <text class="lbl" x="60" y="350">recommandé tous les trois ans</text>
+    <text class="lbl" x="60" y="380">suivi annuel du titre</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.5;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g fill="#5a6b7d" stroke="#5a6b7d" stroke-width="4">
+    <line x1="384" y1="135" x2="404" y2="135"/><polygon points="416,135 402,127 402,143" stroke="none"/>
+    <line x1="590" y1="214" x2="590" y2="254"/><polygon points="590,266 582,252 598,252" stroke="none"/>
+    <line x1="416" y1="345" x2="396" y2="345"/><polygon points="384,345 398,337 398,353" stroke="none"/>
+    <line x1="210" y1="266" x2="210" y2="226"/><polygon points="210,214 202,228 218,228" stroke="none"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.50;0.56;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- point qui parcourt la boucle : décor animé, invisible à l'arrêt -->
+  <circle r="9" cx="400" cy="135" fill="#e8914a" stroke="#10233c" stroke-width="2" opacity="0">
+    <animate attributeName="cx" calcMode="discrete" values="400;400;590;400;210;210" keyTimes="0;0.58;0.66;0.74;0.82;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="cy" calcMode="discrete" values="135;135;240;345;240;240" keyTimes="0;0.58;0.66;0.74;0.82;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.58;0.59;0.89;0.90;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <rect x="40" y="446" width="720" height="40" rx="12" fill="#fdeedd" stroke="#e8914a" stroke-width="2.5"/>
+  <text class="band" x="400" y="472" text-anchor="middle">Travaux sous tension : le titre n'est valable qu'un an.</text>
+</svg>

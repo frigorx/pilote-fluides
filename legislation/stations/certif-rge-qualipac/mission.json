@@ -1,0 +1,48 @@
+{
+  "slug": "certif-rge-qualipac",
+  "branche": "Certifications & normes",
+  "titre": "Mission : Deux devis pour une pompe à chaleur, une seule porte d'aide",
+  "client": "Le responsable d'une petite entreprise de génie climatique, qui conseille des particuliers et veut pouvoir leur dire quel installateur ouvre l'aide à la rénovation énergétique.",
+  "situation": "Un couple de particuliers projette de remplacer sa chaudière par une pompe à chaleur et hésite entre deux devis. La première entreprise est référencée dans l'annuaire officiel pour les pompes à chaleur. La seconde affiche « RGE en cours de qualification » et est plutôt qualifiée pour le chauffage au bois. Votre responsable vous demande de préparer, avant le rendez-vous, ce que l'on peut dire aux clients : ce qui conditionne l'aide, quand la mention est vérifiée et comment le contrôler soi-même.",
+  "piece_a_produire": "Une check-list d'une page intitulée « Avant de signer un devis aidé » : cinq vérifications numérotées (aide visée, moment où la mention est exigée, signe de qualité correspondant aux travaux, recherche dans l'annuaire officiel, activité listée), suivie de deux phrases pour les clients : « L'aide s'ouvre avec l'entreprise, pas seulement avec les travaux » et « Le RGE n'est pas l'attestation qui permet de manipuler le fluide ».",
+  "questions": [
+    {
+      "q": "Pourquoi dit-on que le client n'a l'aide que si l'entreprise est RGE pour ces travaux ? Citez l'une des aides concernées.",
+      "ecran": 1,
+      "reponse": "C'est l'écoconditionnalité : le RGE est la condition pour bénéficier des aides à la rénovation énergétique, comme MaPrimeRénov', l'éco-prêt à taux zéro ou les certificats d'économies d'énergie. La condition pèse sur l'entreprise choisie, pas sur le client."
+    },
+    {
+      "q": "Une entreprise écrit « RGE en cours de qualification » sur son devis. Le client peut-il compter sur l'aide ? À quel moment vérifie-t-on la mention pour MaPrimeRénov' ?",
+      "ecran": 3,
+      "reponse": "Non : il faut avoir obtenu le certificat portant le logo RGE. Pour MaPrimeRénov', la mention est exigée à la date de signature du devis et à la date de réalisation des travaux."
+    },
+    {
+      "q": "Citez deux choses que l'entreprise doit tenir pour conserver sa mention RGE.",
+      "ecran": 5,
+      "reponse": "Par exemple : un responsable technique formé pour chaque qualification demandée, un sous-traitant lui aussi RGE dans le même domaine, le respect de la charte de son signe de qualité (devis descriptif, réception avec le client, facture et attestations), et l'acceptation des audits de chantier."
+    },
+    {
+      "q": "Le RGE, l'attestation de capacité et l'attestation d'aptitude : qui détient quoi, et un papier peut-il en remplacer un autre ?",
+      "ecran": 8,
+      "reponse": "Le RGE et l'attestation de capacité appartiennent à l'entreprise, l'attestation d'aptitude à la personne. Les trois ont des objets différents : le RGE ouvre les aides pour des travaux de rénovation énergétique, les deux attestations concernent les fluides frigorigènes. Aucun ne remplace un autre."
+    }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Vrai ou faux ? Justifiez chaque réponse en une phrase.",
+    "items": [
+      "Une entreprise qualifiée RGE pour le chauffage au bois peut faire bénéficier son client de l'aide pour une pompe à chaleur.",
+      "Pour l'éco-prêt à taux zéro, la mention RGE est vérifiée à la date de signature du formulaire correspondant au devis.",
+      "Une entreprise dont la mention a été radiée continue d'apparaître dans l'annuaire officiel.",
+      "Un technicien titulaire de l'attestation d'aptitude n'a pas besoin que son entreprise soit RGE pour que ses clients aient l'aide."
+    ],
+    "corrige": "Faux : la qualification est propre à un domaine de travaux (écran 4). Vrai : c'est le moment d'exigence indiqué pour l'éco-prêt à taux zéro (écran 3). Faux : quand un organisme radie une entreprise, il cesse d'envoyer ses données et elle disparaît de l'annuaire (écran 7). Faux : l'aptitude est un papier de la personne pour les fluides, elle n'ouvre pas les aides, c'est la mention RGE de l'entreprise qui le fait (écran 8)."
+  },
+  "badge": "Porte ouverte",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": ["1.00"],
+    "justification": "Hors REAC TECVC : culture professionnelle du technicien et du chargé d'affaires (savoir quelle entreprise ouvre l'aide). Côté attestation 2025 : la législation applicable (1.00), pour distinguer le RGE de l'attestation d'aptitude et de l'attestation de capacité."
+  }
+}

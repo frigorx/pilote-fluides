@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-freq" aria-describedby="d-freq" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t-freq">Grave, aigu et plage des fréquences audibles</title>
+  <desc id="d-freq">En haut, deux courbes : à gauche une onde lente, dont les vibrations sont espacées, qui correspond à un son grave ; à droite une onde rapide, aux vibrations serrées, qui correspond à un son aigu. En bas, une échelle des fréquences graduée en logarithme, de gauche à droite : les infrasons en dessous de 20 hertz, les sons audibles de 20 à 20 000 hertz, les ultrasons au-delà de 20 000 hertz. Sous la zone audible, un crochet marque la parole, de 100 à 6 000 hertz.</desc>
+  <style>
+    .ti{font-size:22px;font-weight:bold;fill:#1b3a63}
+    .lb{font-size:17px;fill:#10233c}
+    .lg{font-size:18px;font-weight:bold;fill:#1b3a63}
+    .gr{font-size:16px;fill:#5a6b7d}
+    .vv{font-size:20px;font-weight:bold;fill:#6d28d9}
+    .oo{font-size:18px;font-weight:bold;fill:#b45f1a}
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ti" x="30" y="34">Grave ou aigu : la fréquence</text>
+  <path d="M50.0,125.0 L54.0,120.2 L58.0,115.5 L62.0,110.9 L66.0,106.5 L70.0,102.3 L74.0,98.4 L78.0,94.9 L82.0,91.7 L86.0,89.0 L90.0,86.8 L94.0,85.1 L98.0,83.8 L102.0,83.2 L106.0,83.0 L110.0,83.4 L114.0,84.4 L118.0,85.9 L122.0,87.9 L126.0,90.3 L130.0,93.3 L134.0,96.6 L138.0,100.3 L142.0,104.3 L146.0,108.7 L150.0,113.2 L154.0,117.8 L158.0,122.6 L162.0,127.4 L166.0,132.2 L170.0,136.8 L174.0,141.3 L178.0,145.7 L182.0,149.7 L186.0,153.4 L190.0,156.7 L194.0,159.7 L198.0,162.1 L202.0,164.1 L206.0,165.6 L210.0,166.6 L214.0,167.0 L218.0,166.8 L222.0,166.2 L226.0,164.9 L230.0,163.2 L234.0,161.0 L238.0,158.3 L242.0,155.1 L246.0,151.6 L250.0,147.7 L254.0,143.5 L258.0,139.1 L262.0,134.5 L266.0,129.8 L270.0,125.0 L274.0,120.2 L278.0,115.5 L282.0,110.9 L286.0,106.5 L290.0,102.3 L294.0,98.4 L298.0,94.9 L302.0,91.7 L306.0,89.0 L310.0,86.8 L314.0,85.1 L318.0,83.8 L322.0,83.2 L326.0,83.0 L330.0,83.4 L334.0,84.4 L338.0,85.9 L342.0,87.9 L346.0,90.3 L350.0,93.3 L354.0,96.6 L358.0,100.3 L362.0,104.3 L366.0,108.7 L370.0,113.2 L374.0,117.8 L378.0,122.6" fill="none" stroke="#6d28d9" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M420.0,125.0 L422.0,115.5 L424.0,106.5 L426.0,98.4 L428.0,91.7 L430.0,86.8 L432.0,83.8 L434.0,83.0 L436.0,84.4 L438.0,87.9 L440.0,93.3 L442.0,100.3 L444.0,108.7 L446.0,117.8 L448.0,127.4 L450.0,136.8 L452.0,145.7 L454.0,153.4 L456.0,159.7 L458.0,164.1 L460.0,166.6 L462.0,166.8 L464.0,164.9 L466.0,161.0 L468.0,155.1 L470.0,147.7 L472.0,139.1 L474.0,129.8 L476.0,120.2 L478.0,110.9 L480.0,102.3 L482.0,94.9 L484.0,89.0 L486.0,85.1 L488.0,83.2 L490.0,83.4 L492.0,85.9 L494.0,90.3 L496.0,96.6 L498.0,104.3 L500.0,113.2 L502.0,122.6 L504.0,132.2 L506.0,141.3 L508.0,149.7 L510.0,156.7 L512.0,162.1 L514.0,165.6 L516.0,167.0 L518.0,166.2 L520.0,163.2 L522.0,158.3 L524.0,151.6 L526.0,143.5 L528.0,134.5 L530.0,125.0 L532.0,115.5 L534.0,106.5 L536.0,98.4 L538.0,91.7 L540.0,86.8 L542.0,83.8 L544.0,83.0 L546.0,84.4 L548.0,87.9 L550.0,93.3 L552.0,100.3 L554.0,108.7 L556.0,117.8 L558.0,127.4 L560.0,136.8 L562.0,145.7 L564.0,153.4 L566.0,159.7 L568.0,164.1 L570.0,166.6 L572.0,166.8 L574.0,164.9 L576.0,161.0 L578.0,155.1 L580.0,147.7 L582.0,139.1 L584.0,129.8 L586.0,120.2 L588.0,110.9 L590.0,102.3 L592.0,94.9 L594.0,89.0 L596.0,85.1 L598.0,83.2 L600.0,83.4 L602.0,85.9 L604.0,90.3 L606.0,96.6 L608.0,104.3 L610.0,113.2 L612.0,122.6 L614.0,132.2 L616.0,141.3 L618.0,149.7 L620.0,156.7 L622.0,162.1 L624.0,165.6 L626.0,167.0 L628.0,166.2 L630.0,163.2 L632.0,158.3 L634.0,151.6 L636.0,143.5 L638.0,134.5 L640.0,125.0 L642.0,115.5 L644.0,106.5 L646.0,98.4 L648.0,91.7 L650.0,86.8 L652.0,83.8 L654.0,83.0 L656.0,84.4 L658.0,87.9 L660.0,93.3 L662.0,100.3 L664.0,108.7 L666.0,117.8 L668.0,127.4 L670.0,136.8 L672.0,145.7 L674.0,153.4 L676.0,159.7 L678.0,164.1 L680.0,166.6 L682.0,166.8 L684.0,164.9 L686.0,161.0 L688.0,155.1 L690.0,147.7 L692.0,139.1 L694.0,129.8 L696.0,120.2 L698.0,110.9 L700.0,102.3 L702.0,94.9 L704.0,89.0 L706.0,85.1 L708.0,83.2 L710.0,83.4 L712.0,85.9 L714.0,90.3 L716.0,96.6 L718.0,104.3 L720.0,113.2 L722.0,122.6 L724.0,132.2 L726.0,141.3 L728.0,149.7 L730.0,156.7 L732.0,162.1 L734.0,165.6 L736.0,167.0 L738.0,166.2 L740.0,163.2 L742.0,158.3 L744.0,151.6 L746.0,143.5 L748.0,134.5 L750.0,125.0" fill="none" stroke="#e8914a" stroke-width="4" stroke-linejoin="round"/>
+  <text class="lg" x="215" y="200" text-anchor="middle">Grave</text>
+  <text class="lb" x="215" y="224" text-anchor="middle">vibrations lentes, fréquence faible</text>
+  <text class="lg" x="585" y="200" text-anchor="middle">Aigu</text>
+  <text class="lb" x="585" y="224" text-anchor="middle">vibrations rapides, fréquence élevée</text>
+  <rect x="40" y="298" width="130" height="30" fill="#e6eaef" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="170" y="298" width="460" height="30" fill="#ece6f8" stroke="#6d28d9" stroke-width="3"/>
+  <rect x="630" y="298" width="130" height="30" fill="#e6eaef" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="277.2" y1="290" x2="277.2" y2="336" stroke="#1b3a63" stroke-width="2"/>
+  <text class="gr" x="277.2" y="280" text-anchor="middle">100 Hz</text>
+  <line x1="430.5" y1="290" x2="430.5" y2="336" stroke="#1b3a63" stroke-width="2"/>
+  <text class="gr" x="430.5" y="280" text-anchor="middle">1 000 Hz</text>
+  <line x1="583.8" y1="290" x2="583.8" y2="336" stroke="#1b3a63" stroke-width="2"/>
+  <text class="gr" x="583.8" y="280" text-anchor="middle">10 000 Hz</text>
+  <text class="lg" x="105" y="358" text-anchor="middle">Infrasons</text>
+  <text class="gr" x="105" y="379" text-anchor="middle">moins de 20 Hz</text>
+  <text class="lg" x="400" y="358" text-anchor="middle">Sons audibles : 20 à 20 000 Hz</text>
+  <text class="lg" x="695" y="358" text-anchor="middle">Ultrasons</text>
+  <text class="gr" x="695" y="379" text-anchor="middle">plus de 20 000 Hz</text>
+  <path d="M277.2,392 V402 H549.8 V392" fill="none" stroke="#e8914a" stroke-width="3"/>
+  <text class="oo" x="413.5" y="428" text-anchor="middle">La parole : 100 à 6 000 Hz</text>
+  <text class="gr" x="400" y="480" text-anchor="middle">Graduations en échelle logarithmique : chaque cran multiplie la fréquence par dix.</text>
+</svg>

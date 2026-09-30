@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-dm" aria-describedby="d-dm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dm">Choisir la section et le calibre : quatre gestes dans l'ordre</title>
+  <desc id="d-dm">Quatre cartes numérotées, de gauche à droite, séparées par des flèches. Un : le besoin, la puissance et la
+    tension du récepteur donnent le courant d'emploi IB. Deux : le calibre, un calibre normalisé au moins égal à IB, c'est
+    le calibre In. Trois : la section, celle dont le courant admissible IZ reste au moins égal à In, selon la pose.
+    Quatre : les vérifications, chute de tension, pouvoir de coupure et tenue du câble au court-circuit. Une bande
+    rappelle que, sur une installation existante, la section est un fait qui borne le calibre, jamais l'inverse.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .tete{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .gras{ font-size:16px; font-weight:bold; fill:#10233c; }
+    .band{ font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Quatre gestes, dans cet ordre</text>
+
+  <!-- Carte 1 -->
+  <rect x="15" y="50" width="186" height="220" rx="14" fill="#fffdf8" stroke="#a16207" stroke-width="3"/>
+  <rect x="15" y="50" width="186" height="42" rx="14" fill="#a16207"/><rect x="15" y="78" width="186" height="14" fill="#a16207"/>
+  <text class="tete" x="108" y="78" text-anchor="middle">1 · Le besoin</text>
+  <text class="lbl" x="108" y="126" text-anchor="middle">Puissance et tension</text>
+  <text class="lbl" x="108" y="150" text-anchor="middle">du récepteur donnent</text>
+  <text class="lbl" x="108" y="174" text-anchor="middle">le courant d'emploi</text>
+  <text class="gras" x="108" y="206" text-anchor="middle">IB</text>
+
+  <path d="M206,157 H222 V148 L238,165 L222,182 V173 H206 Z" fill="#5a6b7d"/>
+
+  <!-- Carte 2 -->
+  <rect x="243" y="50" width="186" height="220" rx="14" fill="#fffdf8" stroke="#a16207" stroke-width="3"/>
+  <rect x="243" y="50" width="186" height="42" rx="14" fill="#a16207"/><rect x="243" y="78" width="186" height="14" fill="#a16207"/>
+  <text class="tete" x="336" y="78" text-anchor="middle">2 · Le calibre</text>
+  <text class="lbl" x="336" y="126" text-anchor="middle">Calibre normalisé</text>
+  <text class="lbl" x="336" y="150" text-anchor="middle">au moins égal à IB :</text>
+  <text class="lbl" x="336" y="174" text-anchor="middle">c'est le calibre</text>
+  <text class="gras" x="336" y="206" text-anchor="middle">In</text>
+
+  <path d="M434,157 H450 V148 L466,165 L450,182 V173 H434 Z" fill="#5a6b7d"/>
+
+  <!-- Carte 3 -->
+  <rect x="471" y="50" width="186" height="220" rx="14" fill="#fffdf8" stroke="#a16207" stroke-width="3"/>
+  <rect x="471" y="50" width="186" height="42" rx="14" fill="#a16207"/><rect x="471" y="78" width="186" height="14" fill="#a16207"/>
+  <text class="tete" x="564" y="78" text-anchor="middle">3 · La section</text>
+  <text class="lbl" x="564" y="126" text-anchor="middle">Section dont le</text>
+  <text class="lbl" x="564" y="150" text-anchor="middle">courant admissible</text>
+  <text class="lbl" x="564" y="174" text-anchor="middle">reste au moins égal</text>
+  <text class="gras" x="564" y="206" text-anchor="middle">IZ ≥ In</text>
+  <text class="lbl" x="564" y="240" text-anchor="middle">selon la pose</text>
+
+  <path d="M662,157 H678 V148 L694,165 L678,182 V173 H662 Z" fill="#5a6b7d"/>
+
+  <!-- Carte 4 -->
+  <rect x="699" y="50" width="186" height="220" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="699" y="50" width="186" height="42" rx="14" fill="#1b3a63"/><rect x="699" y="78" width="186" height="14" fill="#1b3a63"/>
+  <text class="tete" x="792" y="78" text-anchor="middle">4 · Contrôles</text>
+  <text class="lbl" x="792" y="126" text-anchor="middle">Chute de tension</text>
+  <text class="lbl" x="792" y="150" text-anchor="middle">Pouvoir de coupure</text>
+  <text class="lbl" x="792" y="174" text-anchor="middle">Tenue du câble au</text>
+  <text class="lbl" x="792" y="198" text-anchor="middle">court-circuit</text>
+
+  <rect x="15" y="298" width="870" height="64" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="325" text-anchor="middle" font-weight="bold">Sur une installation existante, la section est un fait :</text>
+  <text class="band" x="450" y="348" text-anchor="middle">elle borne le calibre, jamais l'inverse.</text>
+</svg>

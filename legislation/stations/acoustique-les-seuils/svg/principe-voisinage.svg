@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-pv" aria-describedby="d-pv" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pv">Un bruit de voisinage : ce que la règle regarde</title>
+  <desc id="d-pv">À gauche, un bâtiment d'activité avec une machine sur son toit ; des arcs de cercle
+    concentriques partent de la machine vers la droite. Au milieu, une limite de propriété en tireté.
+    À droite, la maison d'un voisin dont la fenêtre est ouverte. En bas, trois cartes : la durée, la
+    répétition, l'intensité — l'un ou l'autre suffit à caractériser l'atteinte à la tranquillité.</desc>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#10233c">Un bruit de voisinage : ce que la règle regarde</text>
+
+  <!-- sol -->
+  <line x1="20" y1="300" x2="780" y2="300" stroke="#5a6b7d" stroke-width="3"/>
+
+  <!-- bâtiment d'activité -->
+  <rect x="40" y="170" width="160" height="130" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="70" y="210" width="34" height="34" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="128" y="240" width="40" height="60" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+  <!-- machine sur le toit -->
+  <rect x="90" y="140" width="80" height="30" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="130" cy="155" r="10" fill="none" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="130" y1="145" x2="130" y2="165" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="120" y1="155" x2="140" y2="155" stroke="#1b3a63" stroke-width="2"/>
+
+  <!-- ondes sonores -->
+  <g fill="none" stroke="#6d28d9" stroke-width="3" stroke-linecap="round">
+    <path d="M 210.6 129.3 A 40 40 0 0 1 210.6 180.7"/>
+    <path d="M 233.6 110 A 70 70 0 0 1 233.6 200"/>
+    <path d="M 256.6 90.7 A 100 100 0 0 1 256.6 219.3"/>
+    <path d="M 279.6 71.4 A 130 130 0 0 1 279.6 238.6"/>
+  </g>
+
+  <!-- limite de propriété -->
+  <line x1="400" y1="110" x2="400" y2="300" stroke="#e8914a" stroke-width="3" stroke-dasharray="10 8"/>
+
+  <!-- maison du voisin -->
+  <polygon points="500,190 640,120 780,190" fill="#ede3f4" stroke="#1b3a63" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="520" y="190" width="240" height="110" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="560" y="218" width="64" height="54" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="592" y1="218" x2="592" y2="272" stroke="#1b3a63" stroke-width="2"/>
+  <path d="M 624 218 L 646 228 L 646 282 L 624 272 Z" fill="#dfe6f1" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="690" y="240" width="40" height="60" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+
+  <!-- étiquettes -->
+  <text x="120" y="326" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b3a63">Activité et équipement</text>
+  <text x="400" y="326" text-anchor="middle" font-size="18" fill="#10233c">Limite de propriété</text>
+  <text x="640" y="326" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b3a63">Le voisin</text>
+
+  <!-- trois critères -->
+  <text x="400" y="364" text-anchor="middle" font-size="20" font-weight="bold" fill="#10233c">L'atteinte se caractérise par la durée, la répétition ou l'intensité</text>
+  <rect x="30" y="384" width="235" height="92" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text x="147" y="420" text-anchor="middle" font-size="22" font-weight="bold" fill="#6d28d9">La durée</text>
+  <text x="147" y="450" text-anchor="middle" font-size="17" fill="#10233c">le bruit se prolonge</text>
+  <rect x="282" y="384" width="235" height="92" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text x="400" y="420" text-anchor="middle" font-size="22" font-weight="bold" fill="#6d28d9">La répétition</text>
+  <text x="400" y="450" text-anchor="middle" font-size="17" fill="#10233c">le bruit revient</text>
+  <rect x="535" y="384" width="235" height="92" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text x="652" y="420" text-anchor="middle" font-size="22" font-weight="bold" fill="#6d28d9">L'intensité</text>
+  <text x="652" y="450" text-anchor="middle" font-size="17" fill="#10233c">le bruit est fort</text>
+</svg>

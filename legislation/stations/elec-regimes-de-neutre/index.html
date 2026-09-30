@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Régimes de neutre — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : les deux lettres d'un régime de neutre, TT, TN et IT, le chemin du courant de défaut dans chacun, et ce que cela change pour le technicien qui raccorde une machine.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/elec-regimes-de-neutre/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Électrique.
+     Fond : FOND.md (sources et section « À sourcer » dedans).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Aucun MP3 fabriqué pour cette station : elle parle avec la voix du
+     navigateur tant que la chaîne edge-tts n'a pas été passée.
+
+     ILLUSTRATIONS : 8 SVG, dont 4 animés en SMIL autonome (défaut-personne,
+     schéma-tt, schéma-tn, schéma-it) — sans script, état au repos = image
+     finale, boucle de 13 s avec temps de repos.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Électrique · niveau BTS</p>
+  <h1>Régimes de neutre — TT · TN · IT</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 12 minutes</p>
+  <figure class="scene"><img src="../../img/scene-electrique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez lire les deux lettres d'un régime de neutre, suivre le chemin du courant de défaut en <strong>TT</strong>, en <strong>TN</strong> et en <strong>IT</strong>, dire qui coupe dans chaque cas, et savoir ce que cela change quand vous raccordez une machine : un dispositif différentiel en TT, une coupure par la protection contre les surintensités en TN, un contrôleur permanent d'isolement en IT.</p>
+  </div>
+
+  <div class="chapeau">
+    <span class="mot">Référentiel</span>
+    <p>TP TECVC, REAC TP-00133 : <strong>CP9</strong> (étude d'une installation de climatisation) et <strong>CP10</strong> (étude d'une installation de centrale de traitement d'air). Le régime de neutre décide de la protection et du raccordement électrique des machines que vous étudiez dans ces deux compétences.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Voici la clé de lecture de tout le sujet : deux lettres. Regardez le tableau. Les lignes donnent la première lettre, qui décrit le neutre du transformateur : T quand il est relié à la terre, I quand il est isolé. Les colonnes donnent la deuxième lettre, qui décrit les masses, c'est-à-dire les carcasses métalliques des appareils : T quand elles sont reliées à la terre, N quand elles sont reliées au neutre. Trois cases sont pleines : T T, T N et I T. La quatrième, en pointillés, n'est pas un régime normalisé.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux lettres, un code</h2>
+    <p>Un <strong>régime de neutre</strong> — on dit aussi <strong>schéma de liaison à la terre</strong> — se lit avec deux lettres :</p>
+    <ul>
+      <li><strong>1re lettre : la source.</strong> Le neutre du transformateur est <strong>T</strong> (relié à la terre) ou <strong>I</strong> (isolé de la terre).</li>
+      <li><strong>2e lettre : les masses.</strong> Les masses — les enveloppes métalliques des appareils, que l'on peut toucher — sont <strong>T</strong> (reliées à la terre) ou <strong>N</strong> (reliées au neutre).</li>
+    </ul>
+    <p>Trois régimes sont normalisés en France : <strong>TT</strong>, <strong>TN</strong> et <strong>IT</strong>. Le TN existe en trois versions, notées par une troisième lettre (écran 5).</p>
+    <figure>
+      <img src="svg/codification-slt.svg" alt="Un tableau à quatre cases. Les lignes donnent la première lettre, la situation du neutre de la source : T, relié à la terre, ou I, isolé. Les colonnes donnent la deuxième lettre, la situation des masses : T, reliées à la terre, ou N, reliées au neutre. Trois cases portent un régime normalisé : TT, TN et IT. La quatrième, IN, est en pointillé : elle n'est pas normalisée.">
+      <figcaption>La première lettre parle de la source, la seconde de la machine.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Pourquoi un régime de neutre ? À cause d'un incident banal : l'isolant d'un conducteur cède, et la phase touche la carcasse d'une machine. Sur le dessin, l'éclair marque ce défaut d'isolement. Aucun conducteur de protection ne relie la carcasse à la terre. Elle est donc sous tension, et la personne qui la touche referme le circuit : le trait orange traverse son corps, rejoint le sol, puis la prise de terre du poste. Au-delà de cinquante volts en courant alternatif, la peau ne suffit plus à protéger. Chaque régime répond à cette question : éliminer le défaut, ou le signaler, avant qu'il ne soit dangereux.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le défaut d'isolement : ce qu'un régime doit traiter</h2>
+    <p>Un jour, l'isolant d'un conducteur cède : la phase touche la <strong>carcasse</strong> d'une machine. C'est un <strong>défaut d'isolement</strong>, et le contact d'une personne avec cette carcasse est un <strong>contact indirect</strong>.</p>
+    <p>Sur le dessin, la machine n'a <strong>aucun conducteur de protection</strong> : la carcasse est sous tension, et la personne referme le circuit. Pour une peau sèche et fine, au-delà d'environ <strong>50 V</strong> en courant alternatif, la peau ne protège plus (INRS, brochure ED 6345).</p>
+    <p>Le Code du travail (art. R. 4215-3) l'exige : en cas de défaut d'isolement, aucune masse ne doit présenter une différence de potentiel dangereuse avec une autre masse ou un élément conducteur. Chaque régime de neutre est une réponse : <strong>éliminer</strong> le défaut par une coupure, ou le <strong>signaler</strong> avant qu'il ne devienne dangereux.</p>
+    <figure>
+      <img src="svg/defaut-personne.svg" alt="À gauche, un poste transformateur dont le neutre est relié à une prise de terre dans le sol. Au centre, une machine dont la carcasse est sous tension : un éclair marque le contact entre la phase et la carcasse, et aucun conducteur de protection ne relie la carcasse à la terre. À droite, une personne, en pictogramme plein, pose la main sur la carcasse. Un trait orange épais suit le courant : de la phase à la carcasse, à travers la personne, puis en pointillés dans le sol jusqu'à la prise de terre du poste.">
+      <figcaption>Sans conducteur de protection, la personne referme le circuit : le trait orange la traverse.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Premier régime : T T, le neutre à la terre. À gauche, le neutre du poste est relié à une première prise de terre. À droite, la carcasse de la machine est reliée, par le conducteur de protection en vert, à une seconde prise de terre, distincte. Quand la phase touche la carcasse, le trait orange montre le chemin : carcasse, conducteur de protection, sol en pointillés, puis neutre. Deux prises de terre limitent le courant : dans l'exemple de la page, environ quinze ampères, trop peu pour que le disjoncteur réagisse vite. D'où le dispositif différentiel.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">TT : le défaut boucle par la terre</h2>
+    <p>Dans le régime <strong>TT</strong>, le neutre du poste est relié à une <strong>prise de terre</strong>, et les masses de l'installation à une <strong>autre prise de terre</strong>. C'est le cas typique de la distribution publique en France.</p>
+    <p>Le courant de défaut boucle <strong>par la terre</strong> : carcasse → conducteur de protection (PE) → prise de terre de l'installation → sol → prise de terre du poste → neutre. Deux prises de terre sont sur le trajet : leur résistance <strong>limite</strong> le courant.</p>
+    <p><strong>Exemple d'école</strong> (guide « Intersections », 1998) : réseau 230 V, prise de terre des masses 10 Ω, prise de terre du poste 5 Ω. Le courant de défaut est d'environ <strong>15 A</strong> et la carcasse est portée à environ <strong>153 V</strong> : tension dangereuse, mais courant trop faible pour que la protection thermique d'un disjoncteur réagisse vite. Il faut un <strong>dispositif différentiel</strong>.</p>
+    <figure>
+      <img src="svg/schema-tt.svg" alt="À gauche, un poste transformateur dont le neutre est relié à une première prise de terre. À droite, une machine dont la carcasse est reliée par un conducteur de protection vert à une seconde prise de terre, distincte. Un éclair marque un défaut entre la phase et la carcasse. Un trait orange suit le courant : de la phase à la carcasse, par le conducteur de protection jusqu'à la prise de terre de l'installation, puis en pointillés à travers le sol jusqu'à la prise de terre du poste, et enfin par le neutre vers le transformateur.">
+      <figcaption>Le trajet orange traverse le sol, en pointillés, entre les deux prises de terre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Deuxième régime : T N. Comparez avec le dessin précédent : la carcasse n'est plus reliée à une prise de terre à part, mais au neutre du poste, par le conducteur de protection. Suivez le trait orange, en trait plein : il part de la phase, passe par la carcasse, remonte le conducteur de protection et retourne au poste sans traverser le sol. Le défaut d'isolement devient un court-circuit entre la phase et le neutre. Le courant est élevé, et c'est le disjoncteur ou le fusible qui coupe. Reste une condition à vérifier : que le courant de défaut soit assez fort, même au bout de la ligne.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">TN : le défaut devient un court-circuit</h2>
+    <p>Dans le régime <strong>TN</strong>, le neutre du poste est relié à la terre et <strong>toutes les masses sont reliées au neutre</strong> par le conducteur de protection. Tout défaut d'isolement devient un <strong>court-circuit phase-neutre</strong>, qui fait réagir les protections contre les surintensités : <strong>disjoncteur ou fusible</strong>.</p>
+    <p>Le sol n'est pas sur le trajet du courant : il n'y a pas de résistance de prise de terre pour le limiter. Dans l'exemple du guide « Intersections » (câble de 50 mm², 50 m), le courant de défaut atteint environ <strong>4 089 A</strong>.</p>
+    <p><strong>Condition à vérifier</strong> : en tout point du réseau, le courant de défaut doit rester supérieur au seuil de fonctionnement de la protection, dans le temps maximal fixé par les normes. Cela impose un calcul des impédances de boucle, une vérification du déclenchement à la mise en œuvre, et une reprise de l'étude à toute modification.</p>
+    <p>Où le trouve-t-on ? Industries qui n'exigent pas la continuité de service de l'IT, récepteurs à faible isolement (fours), grand tertiaire, immeubles de grande hauteur (guide « Intersections »).</p>
+    <figure>
+      <img src="svg/schema-tn.svg" alt="À gauche, un poste transformateur dont le neutre est relié à la terre. À droite, une machine dont la carcasse est reliée par un conducteur de protection directement au point neutre du poste. Un éclair marque un défaut entre la phase et la carcasse. Un trait orange, en trait plein, suit le courant : de la phase à la carcasse, par le conducteur de protection jusqu'au neutre, puis au transformateur, sans passer par le sol.">
+      <figcaption>Comparez avec le TT : ici, le trajet orange reste dans les conducteurs, sans traverser le sol.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Le T N existe en trois versions. En haut, T N C : C signifie combiné. Deux fils seulement : la phase et un conducteur unique, le P E N, vert rayé de bleu, qui joue à la fois le rôle du neutre et celui de la protection. Au milieu, T N S : S signifie séparé. Le neutre, en bleu, et le conducteur de protection, en vert, sont deux fils distincts. En bas, T N C S : le P E N part du poste, puis se sépare en deux au rond noir. Un fil unique cumule deux rôles : si on l'interrompt, les deux disparaissent ensemble.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">TN-C, TN-S, TN-C-S : un fil ou deux ?</h2>
+    <p>La troisième lettre dit comment le <strong>neutre (N)</strong> et le <strong>conducteur de protection (PE)</strong> sont réalisés :</p>
+    <ul>
+      <li><strong>TN-C</strong> (C comme combiné) : un seul conducteur, le <strong>PEN</strong>, joue les deux rôles ;</li>
+      <li><strong>TN-S</strong> (S comme séparé) : un conducteur de protection <strong>PE</strong> distinct du neutre <strong>N</strong> ;</li>
+      <li><strong>TN-C-S</strong> : le TN-S est réalisé <strong>en aval</strong> d'un TN-C — le PEN se sépare en N et PE.</li>
+    </ul>
+    <p>Un fil unique qui cumule deux rôles : si on l'interrompt, <strong>les deux rôles disparaissent en même temps</strong>. Le conducteur de protection doit être relié à la terre en de nombreux points (guide « Intersections »).</p>
+    <figure>
+      <img src="svg/tn-variantes.svg" alt="Trois schémas l'un sous l'autre, chacun avec un poste à gauche et une machine à droite. En TN-C, deux fils : la phase et un conducteur unique, le PEN, en vert rayé de bleu, qui réunit le neutre et la protection. En TN-S, trois fils séparés : la phase, le neutre en bleu et le conducteur de protection en vert. En TN-C-S, le PEN part du poste puis se sépare en neutre et conducteur de protection au point marqué d'un rond noir.">
+      <figcaption>Le PEN, rayé de vert et de bleu, cumule deux rôles ; en TN-S, ils sont séparés.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Troisième régime : I T, le neutre isolé. À gauche, le neutre du poste n'est pas relié à la terre. Il est surveillé par un boîtier, le contrôleur permanent d'isolement, ou C P I, dont le voyant est allumé. Premier défaut : le trait orange, mince, passe par la terre et par les fuites d'isolement du réseau. Le courant est très faible, la personne ne risque rien, et rien ne coupe : le C P I signale. À droite, si un second défaut apparaît sur une autre phase, les masses reliées entre elles forment un court-circuit, tracé épais, et la protection coupe. On traite donc le défaut dès l'alarme.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">IT : le premier défaut se signale, le second se coupe</h2>
+    <p>Dans le régime <strong>IT</strong>, le neutre du poste est <strong>isolé de la terre</strong> (ou relié par une impédance élevée) et les masses sont reliées à la terre. Un <strong>contrôleur permanent d'isolement (CPI)</strong> mesure en permanence l'isolement du réseau et signale toute baisse.</p>
+    <ul>
+      <li><strong>Premier défaut</strong> : le courant est <strong>très faible</strong>, limité par l'isolement du réseau (67 mA dans l'exemple du guide « Intersections »), et la tension de défaut reste sans danger. <strong>Rien ne coupe</strong> : le CPI signale. C'est la meilleure continuité de service.</li>
+      <li><strong>Second défaut</strong> sur un autre conducteur actif : si les masses sont reliées entre elles, c'est un <strong>court-circuit</strong>, éliminé par les protections contre les courts-circuits. Si des groupes de masses ne sont pas reliés, on retombe sur le cas du TT : un dispositif différentiel par groupe.</li>
+    </ul>
+    <p>Il faut donc <strong>traiter le défaut dès l'alarme</strong>, avant qu'un second n'apparaisse. On trouve l'IT dans les hôpitaux (salles d'opération), les pistes d'aéroport, les mines, les bateaux, et les industries où un arrêt serait coûteux ou dangereux.</p>
+    <figure>
+      <img src="svg/schema-it.svg" alt="Deux schémas côte à côte. À gauche, premier défaut : le neutre du poste est isolé et surveillé par un contrôleur permanent d'isolement à voyant allumé. Un éclair marque le défaut entre une phase et la carcasse d'une machine. Un mince trait orange suit le courant, par le conducteur de protection, la terre et les fuites d'isolement : courant faible, pas de coupure. À droite, deuxième défaut : deux machines ont chacune un défaut sur une phase différente et leurs masses sont reliées. Un gros trait orange forme un court-circuit entre les deux phases par les masses.">
+      <figcaption>Trait mince : courant faible, on signale. Trait épais : court-circuit, on coupe.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Que change le régime quand vous raccordez une machine ? Regardez les trois cartes. En T T, l'anneau représente le dispositif différentiel : c'est lui qui coupe, dès le premier défaut. En T N, le fusible représente la protection contre les surintensités : elle coupe si le courant de défaut est assez fort, ce qui dépend de la longueur et de la section du câble. En I T, le voyant du contrôleur signale l'alarme, sans couper. Dans les trois cas, votre geste commence pareil : relier la masse de la machine au conducteur de protection.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Ce que cela change quand vous raccordez une machine</h2>
+    <p><strong>Dans les trois régimes</strong>, la masse de la machine (unité extérieure, centrale de traitement d'air…) est reliée au <strong>conducteur de protection (PE)</strong>. Sans lui, aucun régime ne protège la personne.</p>
+    <ul>
+      <li><strong>TT</strong> : le circuit est protégé par un <strong>dispositif différentiel à courant résiduel (DDR)</strong>, en tête d'installation ou de départ. Sa sensibilité (courants usuels : 500, 300 ou 30 mA) doit rester compatible avec la prise de terre : le produit de la résistance par la sensibilité ne doit pas dépasser 50 V (exemple INRS, pour une maison : 100 Ω et 500 mA).</li>
+      <li><strong>TN</strong> : la coupure dépend de l'<strong>impédance de la boucle de défaut</strong>. Unité extérieure loin du tableau, câble long ou fin : le courant de défaut peut devenir trop faible pour faire réagir la protection. À calculer à l'étude, à vérifier à la mise en service.</li>
+      <li><strong>IT</strong> : ni disjoncteur ni différentiel ne coupent au premier défaut. Le <strong>CPI</strong> signale : vous prévenez l'exploitant, et vous ne neutralisez jamais le contrôleur.</li>
+    </ul>
+    <figure>
+      <img src="svg/raccorder-machine.svg" alt="Trois cartes côte à côte, une par régime. TT : l'anneau d'un dispositif différentiel autour de deux conducteurs ; le différentiel coupe immédiatement au premier défaut ; on relie la masse au conducteur de protection et on contrôle le différentiel. TN : un fusible ; le disjoncteur ou le fusible coupe, le défaut étant un court-circuit ; on relie la masse au conducteur de protection et on vérifie le déclenchement. IT : le contrôleur permanent d'isolement et son voyant ; alarme au premier défaut, pas de coupure ; on relie la masse au conducteur de protection et on signale toute alarme.">
+      <figcaption>Trois régimes, trois protections, un même premier geste : relier la masse au PE.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient en trois gestes, à lire de gauche à droite. Un : repérer le régime, sur le plan, dans le dossier, ou en le demandant au client. Deux : repérer la protection en tête du circuit : différentiel, disjoncteur ou fusible, contrôleur d'isolement. Trois : relier le conducteur de protection, puis vérifier. La phrase du bas est le réflexe à garder : sans conducteur de protection, aucun régime ne protège la personne, car c'est lui qui donne au courant de défaut un chemin autre que le corps.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Deux lettres : la <strong>source</strong> (T ou I) et les <strong>masses</strong> (T ou N).</li>
+      <li><strong>TT</strong> : défaut par la terre, courant limité, coupure par le <strong>différentiel</strong>.</li>
+      <li><strong>TN</strong> : défaut par le conducteur de protection, court-circuit, coupure par le <strong>disjoncteur ou le fusible</strong>.</li>
+      <li><strong>IT</strong> : premier défaut <strong>signalé</strong> par le CPI, second défaut <strong>coupé</strong>.</li>
+    </ul>
+    <p class="formule">Le réflexe : repérer le régime, repérer la protection, relier le PE.</p>
+    <figure>
+      <img src="svg/bilan-regimes.svg" alt="Trois étapes numérotées reliées par des flèches orange. Étape 1, repérer le régime : un dossier et une loupe. Étape 2, repérer la protection en tête du circuit : les trois régimes TT, TN et IT et une coche verte. Étape 3, relier le conducteur de protection puis vérifier : une machine reliée à la terre. Une phrase rappelle que sans conducteur de protection aucun régime ne protège la personne.">
+      <figcaption>Sans conducteur de protection, aucun régime ne protège la personne.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Dans le nom d'un régime, la deuxième lettre est un N. Que décrit-elle ? Reprenez le tableau de l'écran un avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Dans TN, que signifie la lettre N ?</h2>
+    <figure class="vignette">
+      <img src="svg/codification-slt.svg" alt="Vignette de rappel : le tableau des deux lettres, première lettre pour le neutre de la source, deuxième lettre pour les masses.">
+      <figcaption>Rappel de l'écran 1 — la 2e lettre parle des masses.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le neutre du transformateur est isolé de la terre</button>
+      <button type="button" data-answer="b">Le neutre du transformateur est relié à la terre</button>
+      <button type="button" data-answer="bonne">Les masses sont reliées au conducteur neutre</button>
+      <button type="button" data-answer="d">Le régime se passe de conducteur de protection</button>
+    </div>
+    <p class="feedback" hidden data-explication="La première lettre décrit le neutre de la source (T ou I), la seconde décrit les masses : T quand elles sont reliées à la terre, N quand elles sont reliées au neutre."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Une machine est alimentée en régime T T, sans dispositif différentiel. Un défaut franc apparaît entre la phase et la carcasse. Pourquoi est-ce dangereux ? Regardez le trajet de l'écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">TT, sans différentiel : pourquoi le défaut franc est-il dangereux ?</h2>
+    <figure class="vignette">
+      <img src="svg/schema-tt.svg" alt="Vignette de rappel : le trajet du courant de défaut en TT, de la carcasse à la prise de terre de l'installation, à travers le sol, jusqu'à la prise de terre du poste.">
+      <figcaption>Rappel de l'écran 3 — le trajet passe par deux prises de terre.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Deux prises de terre limitent le courant : le disjoncteur tarde à ouvrir</button>
+      <button type="button" data-answer="b">Le courant est énorme : il fait fondre le câble avant toute coupure</button>
+      <button type="button" data-answer="c">Le neutre est isolé : le courant ne peut pas revenir à la source</button>
+      <button type="button" data-answer="d">La carcasse reste au potentiel de la terre : aucun risque pour la personne</button>
+    </div>
+    <p class="feedback" hidden data-explication="En TT, le courant de défaut traverse deux prises de terre dont la résistance le limite. Dans l'exemple de la station, environ 15 A : la carcasse est dangereuse, mais la protection thermique d'un disjoncteur réagirait trop lentement. D'où le dispositif différentiel."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. En régime T N, quel dispositif élimine un défaut d'isolement ? Souvenez-vous du trajet orange de l'écran quatre.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">En TN, qui élimine le défaut d'isolement ?</h2>
+    <figure class="vignette">
+      <img src="svg/schema-tn.svg" alt="Vignette de rappel : en TN, le trajet du courant de défaut suit les conducteurs, de la carcasse au neutre du poste par le conducteur de protection, sans passer par le sol.">
+      <figcaption>Rappel de l'écran 4 — un court-circuit phase-neutre.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le contrôleur permanent d'isolement, qui ouvre le circuit</button>
+      <button type="button" data-answer="b">Le dispositif différentiel : lui seul détecte un défaut à la masse</button>
+      <button type="button" data-answer="c">La prise de terre, dont la résistance absorbe le courant de défaut</button>
+      <button type="button" data-answer="bonne">Le disjoncteur ou le fusible : le défaut est un court-circuit</button>
+    </div>
+    <p class="feedback" hidden data-explication="En TN, le défaut revient au neutre par le conducteur de protection : c'est un court-circuit phase-neutre, coupé par la protection contre les surintensités. À condition que le courant de défaut soit assez fort, même au bout de la ligne."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Vous raccordez une unité extérieure dans une installation en régime I T, et le contrôleur permanent d'isolement signale une baisse d'isolement. Que faites-vous ? Reprenez les deux schémas de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">En IT, le contrôleur d'isolement signale une baisse : que faites-vous ?</h2>
+    <figure class="vignette">
+      <img src="svg/schema-it.svg" alt="Vignette de rappel : à gauche, le premier défaut en IT, signalé par le contrôleur permanent d'isolement sans coupure ; à droite, le second défaut, qui forme un court-circuit entre deux phases.">
+      <figcaption>Rappel de l'écran 6 — premier défaut signalé, second défaut coupé.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien : en IT, une alarme reste sans conséquence</button>
+      <button type="button" data-answer="bonne">Prévenir l'exploitant : traiter le défaut avant un second</button>
+      <button type="button" data-answer="c">Débrancher le contrôleur, qui déclenche des alarmes inutiles</button>
+      <button type="button" data-answer="d">Couper toute l'installation : l'IT l'exige au premier défaut</button>
+    </div>
+    <p class="feedback" hidden data-explication="Au premier défaut, rien ne coupe : le contrôleur signale. Il faut traiter le défaut rapidement, avant qu'un second n'apparaisse et ne crée un court-circuit. On prévient l'exploitant et on ne neutralise jamais le contrôleur."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../elec-terre-differentiel/"><strong>Terre &amp; différentiel</strong></a> (même sous-ligne)
+      — la prise de terre et le dispositif différentiel, pièces maîtresses du TT.</li>
+    <li><a href="../elec-nf-c-15-100/"><strong>NF C 15-100</strong></a> (même sous-ligne)
+      — la norme qui définit les régimes, les temps de coupure et les règles d'installation.</li>
+    <li><a href="../elec-proteger-un-circuit/"><strong>Protéger un circuit</strong></a> (même sous-ligne)
+      — sections et calibres : ce dont dépend la coupure d'un défaut en TN.</li>
+    <li><a href="https://inerweb.fr/electrorezo/"><strong>ÉlectroRézo</strong></a> (réseau technique)
+      — le câblage et les schémas électriques côté atelier.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js
+     enchaîne les écrans tout seul et s'arrête sur les questions.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

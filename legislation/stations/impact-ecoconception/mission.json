@@ -1,0 +1,51 @@
+{
+  "slug": "impact-ecoconception",
+  "branche": "Impact environnemental",
+  "titre": "Mission : Deux devis, une seule étiquette",
+  "client": "Le gérant d'un restaurant qui remplace le groupe de sa chambre froide et hésite entre deux devis.",
+  "situation": "Le premier devis propose un appareil moins cher, mal classé sur l'étiquette énergie, au boîtier scellé. Le second est plus cher mais mieux classé, avec des pièces accessibles et des pièces détachées disponibles dans le temps. Le gérant veut prendre le moins cher : « un groupe, c'est un groupe ». Votre responsable vous demande de rédiger la comparaison sur la vie entière de l'appareil.",
+  "piece_a_produire": "Une note comparative d'une page à deux colonnes (devis 1 / devis 2) : durer, se réparer, consommer moins, lecture de l'étiquette énergie, et votre recommandation.",
+  "questions": [
+    {
+      "q": "Quels leviers agissent sur la consommation d'un appareil dès sa conception ?",
+      "ecran": 3,
+      "reponse": "Un dimensionnement juste (ni sur ni sous-dimensionné), une régulation efficace qui suit la demande, une isolation soignée qui limite les déperditions."
+    },
+    {
+      "q": "Qu'est-ce qui rend un appareil réparable, et que dit l'indice de réparabilité ?",
+      "ecran": 2,
+      "reponse": "Des pièces accessibles (pas de boîtier scellé) et des pièces détachées disponibles dans le temps. L'indice situe l'appareil sur une échelle mais ne garantit rien de chiffré pour un appareil précis."
+    },
+    {
+      "q": "Quel lien entre le classement d'un appareil et la part indirecte du TEWI ?",
+      "ecran": 5,
+      "reponse": "Un appareil mieux classé consomme moins d'électricité sur toute sa vie : cette consommation n'est pas une fuite mais la part indirecte de son impact, qui pèse donc moins lourd."
+    },
+    {
+      "q": "Pourquoi un prix d'achat bas ne suffit-il pas à dire qu'un appareil est le moins coûteux ?",
+      "ecran": 6,
+      "reponse": "Mal classé, il consomme plus d'électricité : le surcoût apparaît plus tard, sur la facture et sur l'impact environnemental. Le prix d'achat ne dit rien du coût total sur la vie."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Une seule de ces trois phrases est fausse. Laquelle, et par quoi la corriger ?",
+    "items": [
+      "Un appareil dimensionné au besoin réel limite les pertes.",
+      "L'étiquette énergie se lit avant l'achat : elle donne une classe d'efficacité.",
+      "Un prix d'achat bas garantit le coût le plus bas sur la vie de l'appareil."
+    ],
+    "corrige": "La troisième est fausse : un prix bas peut cacher une mauvaise classe énergie et un surcoût sur la durée de vie."
+  },
+  "badge": "Lire l'étiquette",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [
+      "CP9"
+    ],
+    "attestation_2025": [
+      "11.02"
+    ],
+    "justification": "Comparer deux équipements de climatisation sur leur efficacité énergétique et leur dimensionnement relève de CP9 ; côté attestation 2025, les systèmes de conception qui réduisent la charge et augmentent l'efficacité relèvent du code 11.02."
+  }
+}

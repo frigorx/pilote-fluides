@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Les garanties — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la réception des travaux, point de départ de tout, puis le parfait achèvement, le bon fonctionnement (biennale) et la décennale, les deux assurances obligatoires, et le cas d'une pompe à chaleur qui ne chauffe pas.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/certif-garanties/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Certifications & normes.
+     Quatrième station de la sous-ligne : « Les garanties ».
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer. Les narrations
+     n'ont pas encore leur MP3 (edge-tts, à fabriquer) : la voix du
+     navigateur sert de filet.
+
+     Sources : Code civil art. 1792 à 1792-7, Code des assurances art.
+     L. 241-1, L. 241-2, L. 242-1, L. 243-1-1, L. 243-2, L. 243-3
+     (Légifrance, lus le 30/09/2026) et Cass. 3e civ., 15 juin 2017,
+     n° 16-19.640. Aucune valeur ne vient d'ailleurs : voir FOND.md.
+
+     Trois illustrations sont animées (frise, parfait achèvement, test de
+     la dépose) plus le cas de la pompe à chaleur : SMIL autonome, sans
+     script, état au repos = image finale, boucle de 12 s.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Certifications &amp; normes · niveau BTS</p>
+  <h1>Les garanties — décennale, biennale</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-certifs.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dater le point de départ de toutes les garanties — <strong>la réception</strong> —, distinguer le <strong>parfait achèvement</strong>, le <strong>bon fonctionnement</strong> (dite biennale) et la <strong>décennale</strong>, dire quel critère fait basculer un désordre dans la décennale, situer les <strong>deux assurances</strong> et poser les bonnes questions devant un cas comme celui d'une pompe à chaleur qui ne chauffe pas.</p>
+  </div>
+
+  <div class="chapeau">
+    <span class="mot">Référentiel</span>
+    <p>TP Technicien d'études en CVC (REAC TP-00133). Le droit des garanties est <strong>hors REAC</strong> : culture professionnelle du technicien et du chargé d'affaires. Le cas de la pompe à chaleur touche pourtant <strong>CP5</strong> (déperditions) et <strong>CP6</strong> (chauffage et eau chaude sanitaire) : remonter à la cause d'un désordre suppose de relire l'étude.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la scène. À gauche, le client, en bleu. À droite, l'entrepreneur, en orange. Entre eux, un document, le procès-verbal de réception, vers lequel chacun avance. C'est le moment où le client déclare accepter l'ouvrage. Deux cartes en dessous : sans réserves, le client accepte l'ouvrage tel quel ; avec réserves, il l'accepte mais fait écrire au procès-verbal ce qui reste à reprendre. Dans les deux cas, la bande violette le rappelle : la réception est le point de départ des garanties. Et elle se prononce toujours en présence des deux parties.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">La réception : le point de départ de tout</h2>
+    <p>Le Code civil la définit ainsi : <strong>la réception est l'acte par lequel le maître de l'ouvrage déclare accepter l'ouvrage, avec ou sans réserves</strong> (art. 1792-6). Le maître de l'ouvrage, c'est le client ; l'entrepreneur, c'est votre entreprise de chauffage, ventilation et climatisation (CVC).</p>
+    <ul>
+      <li>Elle intervient <strong>à la demande de la partie la plus diligente</strong>, à l'amiable ou, à défaut, par le juge ;</li>
+      <li>elle est, en tout état de cause, <strong>prononcée contradictoirement</strong> : les deux parties sont présentes ;</li>
+      <li><strong>avec ou sans réserves</strong> : les réserves sont mentionnées au procès-verbal, et elles comptent pour la suite (écran 3).</li>
+    </ul>
+    <p><strong>Pourquoi ça vous concerne</strong> : toutes les durées de garantie se comptent <strong>à partir de la réception</strong>. La date écrite sur le procès-verbal est donc une donnée de l'affaire, au même titre qu'un prix ou une puissance. À ne pas confondre avec la mise en service d'un équipement sous pression, qui relève d'un autre texte (voir les correspondances).</p>
+    <figure>
+      <img src="svg/reception-depart.svg" alt="Le client, personnage bleu, et l'entrepreneur, personnage orange, avancent chacun par une flèche vers un document au centre, le procès-verbal de réception. En dessous, deux cartes : réception sans réserves en vert, où le client accepte l'ouvrage tel quel, et réception avec réserves en orange tireté, où ce qui reste à reprendre est écrit au procès-verbal. Une bande rappelle que dans les deux cas la réception est le point de départ des garanties.">
+      <figcaption>Sans réserves ou avec réserves, la réception ouvre les garanties.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Suivez la frise. Tout part du repère violet, la réception. Une première barre orange grandit : un an, c'est la garantie de parfait achèvement. Une deuxième barre, bleue, va jusqu'à deux ans : la garantie de bon fonctionnement, dont deux ans est la durée minimale. Puis la longue barre indigo court jusqu'à dix ans : la responsabilité décennale. Regardez la règle graduée, en bas : c'est la même échelle pour les trois. Ce qui change d'une garantie à l'autre, ce n'est pas le point de départ, c'est ce qu'elle couvre. C'est l'objet des écrans suivants.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Trois garanties sur une même frise</h2>
+    <ul>
+      <li><strong>Parfait achèvement : un an</strong> à compter de la réception (art. 1792-6) ;</li>
+      <li><strong>Bon fonctionnement : deux ans</strong> à compter de la réception — le texte dit « <em>durée minimale</em> de deux ans » (art. 1792-3) ;</li>
+      <li><strong>Décennale : dix ans</strong> à compter de la réception. Passé ce délai, le constructeur est déchargé de ses responsabilités et garanties (art. 1792-4-1).</li>
+    </ul>
+    <p><strong>Ce que la frise ne dit pas</strong> : quel désordre relève de laquelle. C'est le même dommage, vu à trois moments et par trois critères. Les écrans 3 à 5 les prennent un par un.</p>
+    <figure>
+      <img src="svg/frise-garanties.svg" alt="Une frise part d'un repère « Réception » à gauche. Trois barres horizontales s'en éloignent à la même échelle : parfait achèvement, un an, en orange ; bon fonctionnement, deux ans au minimum, en bleu ; responsabilité décennale, dix ans, en indigo. Une règle graduée en bas marque la réception, un an, deux ans et dix ans. Dans la version animée, les barres grandissent l'une après l'autre.">
+      <figcaption>Une seule origine, la réception ; trois durées.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Lisez le schéma de gauche à droite. Un désordre entre par l'une de deux portes : une réserve écrite au procès-verbal, ou une notification écrite s'il n'est révélé qu'après la réception. L'entrepreneur doit alors réparer, pendant un an à compter de la réception. En haut à droite, en vert : les délais de réparation sont fixés d'un commun accord. En dessous, en tireté orange : si rien n'est fait, et qu'une mise en demeure reste sans effet, les travaux sont exécutés aux frais et risques de l'entrepreneur. La bande du bas ajoute que l'usure normale n'est pas couverte.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Parfait achèvement : réparer tout ce qui est signalé</h2>
+    <p>La garantie de parfait achèvement dure <strong>un an à compter de la réception</strong>. Elle s'étend à la <strong>réparation de tous les désordres signalés</strong> par le maître de l'ouvrage :</p>
+    <ul>
+      <li>soit par les <strong>réserves</strong> mentionnées au procès-verbal de réception ;</li>
+      <li>soit par une <strong>notification écrite</strong> pour ceux révélés après la réception.</li>
+    </ul>
+    <p>Les délais de réparation sont <strong>fixés d'un commun accord</strong>. Sans accord, ou si les travaux ne sont pas faits dans le délai fixé, ils peuvent, après <strong>mise en demeure</strong> restée sans effet, être exécutés <strong>aux frais et risques de l'entrepreneur</strong> défaillant. L'exécution est constatée d'un commun accord ou, à défaut, judiciairement. <strong>Sont exclus</strong> les travaux nécessaires pour remédier aux effets de l'usure normale ou de l'usage (art. 1792-6).</p>
+    <p><strong>Le réflexe</strong> : ce qui n'est pas écrit se prouve mal. Réserve au procès-verbal ou notification écrite : la trace est ce qui fait entrer un désordre dans la garantie.</p>
+    <figure>
+      <img src="svg/parfait-achevement.svg" alt="Schéma de gauche à droite. Deux entrées, réserves écrites au procès-verbal et notification écrite pour un désordre révélé après la réception, mènent au bloc central : l'entrepreneur répare, pendant un an à compter de la réception. Un bloc vert, à droite, indique des délais fixés d'un commun accord avec le client. En dessous, un bloc orange en tireté : mise en demeure restée sans effet, travaux faits aux frais et risques de l'entrepreneur. Une bande précise que l'exécution est constatée d'un commun accord, sinon par le juge, et que l'usure normale ou l'usage sont hors garantie. Dans la version animée, les blocs s'allument dans cet ordre.">
+      <figcaption>Les blocs s'allument dans l'ordre de la procédure ; la bande du bas donne les deux limites.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Deux cartes en haut, deux critères, et il suffit de l'un ou de l'autre. Soit le dommage compromet la solidité de l'ouvrage. Soit, en affectant un élément constitutif ou un élément d'équipement, il rend l'ouvrage impropre à sa destination. Les deux flèches convergent vers le bloc indigo : la responsabilité décennale. Le client n'a pas à démontrer une faute, la responsabilité est présumée. En bas à gauche, l'unique sortie pour le constructeur : prouver que le dommage vient d'une cause étrangère. À droite, qui est constructeur : l'architecte, l'entrepreneur, le technicien lié au client par un contrat de louage d'ouvrage.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Décennale : les deux critères et la seule sortie</h2>
+    <p>Tout constructeur d'un ouvrage est <strong>responsable de plein droit</strong>, envers le maître ou l'acquéreur de l'ouvrage, des dommages, même résultant d'un vice du sol, qui :</p>
+    <ul>
+      <li><strong>compromettent la solidité de l'ouvrage</strong> ; ou</li>
+      <li>qui, <strong>en l'affectant dans l'un de ses éléments constitutifs ou l'un de ses éléments d'équipement</strong>, le rendent <strong>impropre à sa destination</strong> (art. 1792).</li>
+    </ul>
+    <p>C'est une <strong>présomption de responsabilité</strong> : le client n'a pas à démontrer la faute. Le constructeur n'y échappe que <strong>s'il prouve que les dommages proviennent d'une cause étrangère</strong>. Une clause de contrat qui exclut ou limite cette responsabilité est <strong>réputée non écrite</strong> (art. 1792-5) — vos conditions générales n'y changent rien.</p>
+    <p><strong>Qui est « constructeur »</strong> (art. 1792-1) : tout architecte, entrepreneur, technicien ou autre personne liée au maître de l'ouvrage par un contrat de louage d'ouvrage ; la personne qui vend, après achèvement, un ouvrage qu'elle a construit ou fait construire ; le mandataire qui accomplit une mission assimilable à celle d'un locateur d'ouvrage. Un bureau d'études lié au client par un tel contrat entre dans cette définition, comme l'installateur.</p>
+    <figure>
+      <img src="svg/decennale-criteres.svg" alt="Deux cartes côte à côte : le dommage compromet la solidité de l'ouvrage, et le dommage rend l'ouvrage impropre à sa destination en affectant un élément constitutif ou d'équipement. Deux flèches convergent vers un bloc indigo : responsabilité décennale, de plein droit. En dessous, à gauche, une carte à bord orange tireté : la seule sortie est de prouver une cause étrangère, et une clause excluant la décennale est réputée non écrite. À droite, une carte : qui est constructeur, l'architecte, l'entrepreneur ou le technicien lié au client par un contrat de louage d'ouvrage.">
+      <figcaption>Deux critères, l'un ou l'autre ; une seule sortie.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Deux scènes côte à côte, et un seul test : la dépose. À gauche, l'appareil bleu est retiré, et le mur reste intact : l'équipement est dissociable, il relève de la garantie de bon fonctionnement, deux ans au minimum. À droite, en le retirant, on arrache un bloc du mur et il reste un trou en pointillé : l'équipement fait corps avec l'ouvrage, la décennale couvre aussi sa solidité. La bande du bas apporte la nuance : même dissociable, un équipement peut relever de la décennale, s'il rend l'ouvrage impropre à sa destination.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Bon fonctionnement : le test de la dépose</h2>
+    <p>Le Code civil trie les éléments d'équipement avec <strong>un seul test : la dépose</strong>.</p>
+    <ul>
+      <li><strong>Indissociable</strong> : un élément d'équipement forme indissociablement corps avec les ouvrages de viabilité, de fondation, d'ossature, de clos ou de couvert lorsque <strong>sa dépose, son démontage ou son remplacement ne peut s'effectuer sans détérioration ou enlèvement de matière</strong> de cet ouvrage. La présomption de l'écran 4 s'étend alors à la solidité de cet élément (art. 1792-2).</li>
+      <li><strong>Dissociable</strong> : <strong>les autres éléments d'équipement</strong> font l'objet d'une <strong>garantie de bon fonctionnement</strong> d'une durée minimale de <strong>deux ans</strong> à compter de la réception (art. 1792-3). On l'appelle couramment la biennale.</li>
+    </ul>
+    <p><strong>Deux nuances à retenir.</strong> D'abord, l'article 1792 vise aussi les dommages qui, en affectant <em>un élément d'équipement</em>, rendent l'ouvrage impropre à sa destination : un équipement dissociable n'est donc pas hors décennale par nature (écran 7). Ensuite, ne sont <strong>pas</strong> des éléments d'équipement au sens de ces articles ceux dont <strong>la fonction exclusive est de permettre l'exercice d'une activité professionnelle</strong> dans l'ouvrage (art. 1792-7).</p>
+    <p><strong>Côté fabricant</strong> : celui qui fabrique un élément d'équipement conçu et produit pour satisfaire, en état de service, à des exigences précises et déterminées à l'avance est solidairement responsable, si l'installateur l'a mis en œuvre <strong>sans modification et conformément aux règles édictées par le fabricant</strong> (art. 1792-4). D'où l'intérêt de suivre la notice de pose.</p>
+    <figure>
+      <img src="svg/equipement-dissociable.svg" alt="Deux scènes côte à côte. À gauche, équipement dissociable : un appareil bleu est retiré d'un mur gris qui reste intact, sans trace ; garantie de bon fonctionnement, deux ans au minimum. À droite, équipement indissociable : l'appareil, pris dans un bloc de matière, est retiré avec un morceau du mur qui laisse un trou en pointillé ; la décennale s'applique, même pour la solidité de l'équipement. Une bande précise qu'un équipement dissociable relève aussi de la décennale s'il rend l'ouvrage impropre à sa destination. Dans la version animée, les deux appareils sont déposés.">
+      <figcaption>Le test : la dépose laisse-t-elle une trace dans l'ouvrage ?</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux colonnes. À gauche, en indigo, l'assurance de responsabilité décennale. C'est le constructeur, donc votre entreprise, qui la souscrit, et il justifie de son contrat à l'ouverture du chantier, par une attestation d'assurance jointe aux devis et aux factures. À droite, en orange, l'assurance dommages-ouvrage. C'est le maître de l'ouvrage, le client, qui la souscrit avant l'ouverture du chantier. Elle paie les réparations sans chercher qui est responsable. La bande du bas rappelle que le défaut d'assurance est puni par la loi.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Deux assurances, deux souscripteurs</h2>
+    <p><strong>Assurance de responsabilité décennale</strong> (Code des assurances, art. L. 241-1) :</p>
+    <ul>
+      <li>toute personne dont la responsabilité décennale peut être engagée sur le fondement des articles 1792 et suivants <strong>doit être couverte par une assurance</strong> ;</li>
+      <li>à l'ouverture de tout chantier, elle <strong>justifie de son contrat</strong> ; la garantie est maintenue pour <strong>toute la durée de la responsabilité décennale</strong> ;</li>
+      <li>la justification prend la forme d'une <strong>attestation d'assurance jointe aux devis et aux factures</strong> (art. L. 243-2).</li>
+    </ul>
+    <p><strong>Assurance dommages-ouvrage</strong> (art. L. 242-1) :</p>
+    <ul>
+      <li>le propriétaire de l'ouvrage, le vendeur ou le mandataire qui fait réaliser des travaux de construction la souscrit <strong>avant l'ouverture du chantier</strong> ;</li>
+      <li>elle garantit le paiement des travaux de réparation <strong>en dehors de toute recherche des responsabilités</strong> ;</li>
+      <li>elle prend effet <strong>après l'expiration du délai de parfait achèvement</strong> (sauf carence de l'entrepreneur, dans les cas que le texte prévoit) ;</li>
+      <li>l'assureur a <strong>soixante jours</strong> pour notifier sa décision sur le principe de la garantie, puis <strong>quatre-vingt-dix jours</strong> pour présenter une offre d'indemnité, à compter de la déclaration du sinistre.</li>
+    </ul>
+    <p><strong>Deux points de vigilance pour un chargé d'affaires.</strong> Le défaut d'assurance est puni de <strong>six mois d'emprisonnement et de 75 000 euros d'amende</strong>, ou de l'une de ces deux peines (art. L. 243-3). Et ces obligations d'assurance <strong>ne s'appliquent pas aux ouvrages existants avant l'ouverture du chantier</strong>, sauf ceux qui, totalement incorporés dans l'ouvrage neuf, en deviennent techniquement indivisibles (art. L. 243-1-1, II) : une pose en rénovation se lit donc avec ce texte, et avec l'attestation de votre assureur, qui dit ce qu'elle couvre.</p>
+    <figure>
+      <img src="svg/deux-assurances.svg" alt="Deux colonnes. À gauche, sous un bouclier indigo, la responsabilité décennale : souscrite par le constructeur, l'entreprise ; il justifie son contrat à l'ouverture du chantier ; attestation jointe aux devis et aux factures. À droite, sous une maison orange, l'assurance dommages-ouvrage : souscrite par le maître de l'ouvrage, le client, avant l'ouverture du chantier ; elle paie les réparations sans chercher le responsable. Une bande rappelle la sanction : six mois d'emprisonnement et 75 000 euros d'amende, ou l'une de ces deux peines.">
+      <figcaption>Le constructeur s'assure pour sa responsabilité ; le client, pour être payé sans attendre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Voici un cas de terrain : une pompe à chaleur posée ne chauffe pas le logement. Le schéma ne donne pas la réponse, il donne les quatre questions à poser, et le cadre orange les parcourt une à une. Un : quand, par rapport à la réception ? Deux : la pompe à chaleur se dépose-t-elle sans abîmer l'ouvrage ? Trois : le logement devient-il impropre à sa destination ? Quatre : d'où vient le désordre, et une cause étrangère est-elle prouvée ? La bande du bas le dit : selon les faits établis, l'une des garanties joue, ou aucune.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le cas d'école : une pompe à chaleur qui ne chauffe pas</h2>
+    <p>Un client vous appelle : la pompe à chaleur air-eau que votre entreprise a posée ne chauffe pas correctement son logement. <strong>Est-ce la décennale ?</strong> Aucun réflexe ne répond : il faut <strong>quatre questions</strong>.</p>
+    <ol>
+      <li><strong>Quand ?</strong> Où est la réception, et combien de temps s'est-il écoulé ? (un an, deux ans, dix ans — écran 2).</li>
+      <li><strong>Quel élément ?</strong> La pompe à chaleur se dépose-t-elle sans détérioration ni enlèvement de matière de l'ouvrage ? (écran 5).</li>
+      <li><strong>Quel effet ?</strong> Le désordre rend-il <strong>l'ouvrage, dans son ensemble, impropre à sa destination</strong> — un logement qui ne se chauffe plus —, ou ne fait-il que dégrader un équipement ? (écran 4).</li>
+      <li><strong>Quelle cause ?</strong> Étude, pose, matériel, usage : d'où vient le désordre, et une cause étrangère est-elle prouvée ?</li>
+    </ol>
+    <p><strong>Ce que dit la jurisprudence sur cette situation.</strong> Dans un arrêt du 15 juin 2017 (n° 16-19.640), la troisième chambre civile de la Cour de cassation a posé que les désordres affectant des éléments d'équipement, <strong>dissociables ou non, d'origine ou installés sur existant</strong>, relèvent de la responsabilité décennale <strong>lorsqu'ils rendent l'ouvrage dans son ensemble impropre à sa destination</strong>. L'affaire portait sur une pompe à chaleur air-eau : la Cour a censuré une décision qui n'avait pas recherché si les dysfonctionnements rendaient le logement impropre à l'usage prévu. <strong>Elle n'a pas dit que toute pompe à chaleur défaillante relève de la décennale</strong> : le critère est l'effet sur l'ouvrage, établi par les faits.</p>
+    <p><strong>Votre rôle de technicien d'études</strong> : rassembler ce qui permet de répondre — procès-verbal de réception, date, note de calcul et étude de dimensionnement, notice du fabricant, attestation d'assurance — <strong>avant</strong> de dire au client « c'est couvert » ou « ce n'est pas couvert ».</p>
+    <figure>
+      <img src="svg/cas-pac.svg" alt="Un bandeau pose le cas : la pompe à chaleur posée ne chauffe pas le logement. En dessous, quatre cartes numérotées : 1, quand, après la réception, depuis combien de temps ; 2, quel élément, la pompe à chaleur se dépose-t-elle sans abîmer l'ouvrage, dissociable ou non ; 3, quel effet, le logement devient-il impropre à sa destination ou seulement moins bon ; 4, quelle cause, étude, pose ou matériel, cause étrangère. Une bande en bas : selon les réponses, parfait achèvement, bon fonctionnement, décennale ou aucune de ces garanties, le résultat dépendant des faits établis. Dans la version animée, un cadre orange parcourt les quatre cartes.">
+      <figcaption>Quatre questions, dans l'ordre : le schéma ne donne pas de verdict.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient dans une image. À gauche, le procès-verbal de réception, avec sa date encadrée en orange : c'est de cette date que tout se compte. À droite, trois pastilles : un an pour le parfait achèvement, deux ans au minimum pour le bon fonctionnement, dix ans pour la décennale. La bande du bas donne le réflexe du professionnel : connaître la date de réception de chaque chantier, et la garder avec le procès-verbal. Sans cette date, aucun délai ne peut être vérifié.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>La <strong>réception</strong> — avec ou sans réserves, contradictoire — est le point de départ de toutes les garanties.</li>
+      <li><strong>Parfait achèvement</strong> : un an, tous les désordres signalés (réserves ou notification écrite).</li>
+      <li><strong>Bon fonctionnement</strong> : deux ans au minimum, les éléments d'équipement dissociables.</li>
+      <li><strong>Décennale</strong> : dix ans ; solidité de l'ouvrage, ou ouvrage impropre à sa destination ; présomption, seule sortie : la cause étrangère.</li>
+      <li>Le constructeur <strong>s'assure</strong> (décennale, attestation jointe aux devis) ; le client <strong>peut se faire payer sans attendre</strong> (dommages-ouvrage).</li>
+      <li>Devant un désordre : <strong>quatre questions</strong> — quand, quel élément, quel effet, quelle cause.</li>
+    </ul>
+    <p class="formule">Le réflexe : connaître la date de réception de chaque chantier.</p>
+    <p>Sans cette date, aucun délai ne se vérifie : ni le un an, ni le deux ans, ni les dix ans.</p>
+    <figure>
+      <img src="svg/bilan-garanties.svg" alt="À gauche, un procès-verbal de réception dont la date, encadrée en orange, est le point de départ. À droite, trois pastilles : un an, parfait achèvement ; deux ans au minimum, bon fonctionnement ; dix ans, décennale. Une bande rappelle le réflexe : connaître la date de réception de chaque chantier et la garder avec le procès-verbal.">
+      <figcaption>C'est de la date de réception que partent les trois compteurs.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. La réception vient d'être prononcée sur votre chantier. Que change-t-elle pour l'entrepreneur ? Reprenez la scène de l'écran un si besoin, puis choisissez parmi les quatre propositions.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Que change la réception pour l'entrepreneur ?</h2>
+    <figure class="vignette">
+      <img src="svg/reception-depart.svg" alt="Vignette de rappel : le client et l'entrepreneur autour du procès-verbal de réception, avec ou sans réserves.">
+      <figcaption>Rappel de l'écran 1 — la réception, avec ou sans réserves.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Elle éteint toutes ses obligations envers le client</button>
+      <button type="button" data-answer="bonne">Elle ouvre les délais des garanties, réserves ou non</button>
+      <button type="button" data-answer="c">Elle n'a d'effet que si le client n'émet aucune réserve</button>
+      <button type="button" data-answer="d">Elle est prononcée par lui seul, à son dernier passage</button>
+    </div>
+    <p class="feedback" hidden data-explication="La réception est l'acte par lequel le client déclare accepter l'ouvrage, avec ou sans réserves, et elle est prononcée contradictoirement. Elle n'éteint rien : elle est le point de départ des garanties."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Sur une installation réceptionnée il y a quatorze mois, un équipement dissociable tombe en panne, sans que l'ouvrage devienne impropre à sa destination. Quelle garantie peut jouer ? Regardez la frise de l'écran deux avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Réception il y a quatorze mois : un équipement dissociable tombe en panne, l'ouvrage reste utilisable. Quelle garantie ?</h2>
+    <figure class="vignette">
+      <img src="svg/frise-garanties.svg" alt="Vignette de rappel : la frise des trois garanties à partir de la réception, un an, deux ans au minimum, dix ans.">
+      <figcaption>Rappel de l'écran 2 — la frise des trois durées.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le parfait achèvement, qui court encore</button>
+      <button type="button" data-answer="b">La décennale : les dix ans ne sont pas écoulés</button>
+      <button type="button" data-answer="bonne">Le bon fonctionnement, deux ans au minimum</button>
+      <button type="button" data-answer="d">Aucune : toute garantie légale s'arrête à un an</button>
+    </div>
+    <p class="feedback" hidden data-explication="Quatorze mois, c'est au-delà du parfait achèvement (un an) mais dans le bon fonctionnement (deux ans au minimum) pour un équipement dissociable. La décennale suppose un dommage qui compromet la solidité ou rend l'ouvrage impropre à sa destination : ici, l'ouvrage reste utilisable."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Pour un chantier soumis à l'obligation, qui doit souscrire l'assurance dommages-ouvrage avant l'ouverture du chantier ? Reprenez les deux colonnes de l'écran six si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Qui souscrit l'assurance dommages-ouvrage, avant l'ouverture du chantier ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-assurances.svg" alt="Vignette de rappel : les deux assurances, la décennale du constructeur et la dommages-ouvrage du maître de l'ouvrage.">
+      <figcaption>Rappel de l'écran 6 — deux assurances, deux souscripteurs.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Le maître de l'ouvrage, ou son vendeur ou mandataire</button>
+      <button type="button" data-answer="b">L'entreprise CVC, en même temps que sa responsabilité décennale</button>
+      <button type="button" data-answer="c">Le bureau d'études qui a dimensionné l'installation</button>
+      <button type="button" data-answer="d">Personne : elle est facultative dans tous les cas</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'assurance dommages-ouvrage est souscrite par celui qui fait réaliser les travaux, propriétaire, vendeur ou mandataire, avant l'ouverture du chantier. Le constructeur souscrit, lui, l'assurance de responsabilité décennale. Le texte prévoit des exceptions (par exemple les personnes morales de droit public), mais elle n'est pas facultative en règle générale."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Une pompe à chaleur posée ne chauffe pas le logement. Qu'est-ce qui rattache le désordre à la garantie décennale ? Souvenez-vous des quatre questions de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Une pompe à chaleur ne chauffe pas : qu'est-ce qui rattache le désordre à la décennale ?</h2>
+    <figure class="vignette">
+      <img src="svg/cas-pac.svg" alt="Vignette de rappel : les quatre questions à poser devant une pompe à chaleur qui ne chauffe pas le logement, quand, quel élément, quel effet, quelle cause.">
+      <figcaption>Rappel de l'écran 7 — quand, quel élément, quel effet, quelle cause.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La qualification RGE de l'installateur</button>
+      <button type="button" data-answer="b">Le coût élevé de la réparation</button>
+      <button type="button" data-answer="c">Le fait qu'il apparaisse dès la première année</button>
+      <button type="button" data-answer="bonne">L'ouvrage devenu impropre à sa destination</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le critère est l'effet sur l'ouvrage : les désordres affectant un élément d'équipement, dissociable ou non, relèvent de la décennale lorsqu'ils rendent l'ouvrage dans son ensemble impropre à sa destination. La qualification RGE (reconnu garant de l'environnement) de l'installateur, le coût de la réparation ou la date d'apparition ne suffisent pas."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../certif-loi-norme-dtu/"><strong>Loi, norme ou DTU ?</strong></a> (même sous-ligne)
+      — qui oblige quoi : pour juger si un désordre vient d'un travail conforme ou non, il faut savoir de quoi l'on parle.</li>
+    <li><a href="../certif-rge-qualipac/"><strong>RGE &amp; QualiPAC</strong></a> (même sous-ligne)
+      — une qualification n'est pas une garantie : elle ne remplace pas l'assurance décennale du constructeur.</li>
+    <li><a href="../travail-s-installer/"><strong>S'installer</strong></a> (Droit du travail)
+      — créer son entreprise : l'assurance décennale se justifie à l'ouverture de tout chantier.</li>
+    <li><a href="../desp-en-service/"><strong>En service</strong></a> (La DESP)
+      — après la réception, l'équipement sous pression entre dans un suivi propre : à ne pas confondre avec les garanties du constructeur.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js
+     enchaîne les écrans tout seul et s'arrête sur les questions.
+
+     Les narrations de cette station n'ont pas encore leur MP3 : la voix
+     du navigateur sert de filet. À fabriquer par la chaîne edge-tts
+     (build/voix/collecter-narrations.mjs, puis generer-audios-edge-tts.py).
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

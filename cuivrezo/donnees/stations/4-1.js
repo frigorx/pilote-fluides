@@ -1,8 +1,9 @@
 /* Station 4-1 — Le chapeau de gendarme. Source : sources-metier/4-pieces-complexes.md (partie 1)
    Méthode retenue : « METHODE CHAPEAU DE GENDARME CUIVRE » du dossier CAP IFCA (C3-Réaliser) et fiches
    voisines : coude central d'abord (60 à 90°), puis deux coudes de moitié, A et B à égale distance de l'axe.
-   Les fiches divergent fortement (définition de l'axe, espacement des coudes, angles, outil) : aucune
-   n'emploie les repères L et R ; chaque choix est marqué aValider. Tolérance des fiches : ± 2 mm. */
+   Les fiches divergent (définition de l'axe, espacement des coudes, angles, outil) parce qu'elles décrivent
+   des outils différents : choix TRANCHÉS le 30/09/2026 (DECISIONS-2026-09-30.md). Aucune n'emploie les
+   repères L et R. Tolérance des fiches : ± 2 mm. */
 CUIVREZO.stations.push({
   id: '4-1', ligne: 4, titre: 'Le chapeau de gendarme', duree: '45 min', vignette: 'images/4-1-chapeau.webp',
   sources: ['sources-metier/4-pieces-complexes.md'],
@@ -11,8 +12,7 @@ CUIVREZO.stations.push({
     titre: 'Un contournement symétrique, branches alignées',
     texte: 'Le tube passe par-dessus l’obstacle avec un coude central et deux coudes de moitié. Les deux côtés sont égaux, les deux branches restent sur la même ligne.',
     criteres: ['Hauteur H conforme au plan', 'Les deux côtés du chapeau égaux', 'Les deux branches alignées sur une même droite', 'Pièce plane, tube ni écrasé ni marqué (cotes à ± 2 mm)'],
-    aValider: 'Méthode retenue parmi cinq (définition de l’axe, espacement des coudes, angles, outil) : à confirmer',
-    figure: { svg: 'chapeau', etat: 'plan', legende: 'Le chapeau passe au-dessus de l’obstacle ; H se mesure d’axe à axe.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'chapeau', angle: '90' }, legende: 'Le chapeau passe au-dessus de l’obstacle ; H se mesure d’axe à axe.' },
     narration: 'Sur un chantier, un tube rencontre souvent un autre tube, une gaine, un support. Plutôt que de couper et d’ajouter des raccords, on le fait passer par-dessus d’un seul morceau : c’est le chapeau de gendarme. Un coude au sommet, deux coudes plus doux de chaque côté. Sa difficulté n’est pas dans chaque coude, que vous savez faire : elle est dans la symétrie. Les deux branches doivent repartir exactement sur la même ligne.'
   },
   materiel: {
@@ -28,29 +28,25 @@ CUIVREZO.stations.push({
     narration: 'Le chapeau se fait avec les outils que vous connaissez : la cintrette ou la cintreuse, le mètre, le feutre. Il s’y ajoute la règle, qui dira si les deux branches sont alignées, et la fausse équerre, qui compare les angles. Le plan donne la hauteur H du chapeau, d’axe à axe, et l’emplacement de l’obstacle.'
   },
   gestes: [
-    { titre: 'Repérer l’axe du chapeau', texte: 'Sur le plan, repérez où passe le milieu de l’obstacle. Reportez-le sur le tube : c’est l’axe du chapeau.',
+    { titre: 'Repérer l’axe du chapeau', texte: 'Sur le plan, repérez où passe le milieu de l’obstacle. Reportez cette cote sur le tube, contre la butée : c’est l’axe du chapeau.',
       pointCle: 'L’axe au-dessus du centre de l’obstacle.',
       pourquoi: 'Tout le chapeau se construit symétriquement autour de cet axe : s’il est décalé, le chapeau l’est aussi.',
-      aValider: 'Position de l’axe : cote + 20 mm, cote − B (tableau), cote − R + 2 cm, M + 2 cm selon les fiches',
       figure: { svg: 'chapeau', etat: 'traits' }, clip: 'clips/4-1/01-axe.mp4',
       narration: 'Tout part de l’axe du chapeau : l’endroit du tube qui passera exactement au-dessus du milieu de l’obstacle. On le repère sur le plan, on le reporte sur le tube, en mesurant contre une butée comme toujours. Le chapeau entier va se construire symétriquement autour de ce trait.' },
-    { titre: 'Tracer A et B, à égale distance', texte: 'De part et d’autre de l’axe, tracez A et B à la même distance, sur tout le tour du tube.',
+    { titre: 'Tracer A et B, à égale distance', texte: 'De part et d’autre de l’axe, tracez A et B à la même distance, donnée par le plan, sur tout le tour du tube.',
       pointCle: 'Même distance des deux côtés.',
       pourquoi: 'A et B sont les deux coudes de moitié. S’ils ne sont pas à égale distance, le chapeau penche.',
-      aValider: 'Distance axe–A : « X = ½ Ø tube + ½ Ø obstacle + 10 mm » (fiche 08), « 2 × H » (recueil de façonnage), tableau par diamètre d’obstacle (fiche 10)',
       figure: { svg: 'chapeau', etat: 'traits' }, clip: 'clips/4-1/02-a-b.mp4',
       narration: 'De chaque côté de l’axe, on trace deux repères, A et B, à exactement la même distance, et sur tout le tour du tube. Ce seront les deux coudes de moitié. La distance dépend de la hauteur du chapeau et de la taille de l’obstacle : c’est le plan, ou le professeur, qui la donne.' },
     { titre: 'Choisir l’angle central', texte: 'L’angle du coude central dépend de la hauteur : entre 60 et 90°.',
       pointCle: 'Plus le chapeau est haut, plus le coude central est fermé.',
       pourquoi: 'Les deux coudes de côté font chacun la moitié de cet angle : c’est ce qui ramène les branches sur la même ligne.',
-      aValider: 'Angle central : 60 à 90° (méthode CAP), 30 à 120° (autre méthode), 90° puis deux 45° (recueil)',
       figure: { svg: 'chapeau', etat: 'central' }, clip: 'clips/4-1/03-angle.mp4',
       narration: 'On choisit l’angle du coude central, entre soixante et quatre-vingt-dix degrés, selon la hauteur à franchir. Le principe à comprendre est simple : chaque coude de côté fera exactement la moitié de cet angle. Soixante au centre, trente de chaque côté. Quatre-vingt-dix au centre, quarante-cinq de chaque côté. C’est cette moitié qui ramène les deux branches sur la même ligne.' },
     { titre: 'Cintrer le coude central', texte: 'Placez l’axe sur l’outil, au milieu du coude, et cintrez à l’angle choisi.',
       pointCle: 'L’axe au milieu du coude, pas au début.',
       pourquoi: 'Le coude central doit être partagé en deux par l’axe, pour que les deux côtés soient égaux.',
-      aValider: 'Position de l’axe sur l’outil : « à la moitié de l’angle » (60° → repère 30°) dans la méthode CAP',
-      figure: { svg: 'chapeau', etat: 'central' }, clip: 'clips/4-1/04-central.mp4',
+      figure: { composant: 'cuivre-3d', attributs: { piece: 'chapeau', angle: '54' } }, clip: 'clips/4-1/04-central.mp4',
       narration: 'On commence par le coude du sommet. L’axe tracé sur le tube doit tomber au milieu du coude, pas à son début : on le place donc sur l’outil à la moitié de l’angle, par exemple sur le repère trente pour un coude de soixante. Puis on cintre jusqu’à l’angle choisi.' },
     { titre: 'Cintrer le coude A, à la moitié', texte: 'Placez le repère A sur l’outil et cintrez à la moitié de l’angle central, dans l’autre sens.',
       pointCle: 'Le coude de côté tourne en sens inverse du coude central.',
@@ -93,7 +89,7 @@ CUIVREZO.stations.push({
       figure: { svg: 'chapeau', etat: 'controle' }, narration: 'Dernier contrôle : la pièce plane, les coudes ronds.' }
   ],
   prof: {
-    verifie: ['Le positionnement dans l’outil, avant le premier coude', 'La hauteur H et l’alignement des branches', 'La symétrie et la planéité', 'L’aspect des trois coudes'],
+    verifie: ['La distance de A et B à l’axe, prise sur son plan', 'Le positionnement dans l’outil, avant le premier coude', 'La hauteur H et l’alignement des branches', 'La symétrie et la planéité', 'L’aspect des trois coudes'],
     narration: 'Les fiches de l’atelier demandent d’appeler le professeur une fois le tube positionné dans l’outil, avant de cintrer : c’est le moment où une erreur se corrige encore. Puis il contrôle la pièce finie : hauteur, alignement, symétrie, planéité.'
   }
 });

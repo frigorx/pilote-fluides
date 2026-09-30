@@ -1,0 +1,51 @@
+{
+  "slug": "tracabilite-fluides",
+  "branche": "Fluidique & thermique",
+  "titre": "Mission : le dossier qui prouve où est passé le fluide",
+  "client": "Le responsable technique d'un centre commercial, détenteur de plusieurs groupes froids, qui fait remplacer l'un d'eux par votre entreprise.",
+  "situation": "Votre entreprise dépose un ancien groupe froid et en installe un neuf. Le technicien récupère le fluide de l'ancien circuit, en remet une partie dans une autre machine du site et met le reste dans une bouteille de récupération, qui repart chez le distributeur. À la recette, le client vous demande : « Comment je prouve, si l'administration passe, que ce fluide n'est pas parti dans l'atmosphère ? » Vous devez lui présenter les pièces du dossier, dire qui les a signées, qui les conserve et ce qu'elles prouvent.",
+  "piece_a_produire": "Une check-list d'une page, remise au client à la recette : pour chaque pièce du dossier de traçabilité (fiche d'intervention, registre de l'équipement, bordereau BSFF), qui l'établit, qui la signe, qui la conserve et ce qu'elle prouve. Une ligne finale indique la vérification croisée à faire entre les trois pièces.",
+  "questions": [
+    {
+      "q": "Pour cette intervention, quelles informations la fiche d'intervention doit-elle porter, et à quelle condition le détenteur doit-il aussi la signer ?",
+      "ecran": 2,
+      "reponse": "Coordonnées de l'opérateur et numéro d'attestation de capacité, date et nature de l'intervention, nature, quantité et installation de destination du fluide récupéré, quantité éventuellement réintroduite. Le détenteur cosigne (et garde l'original) si la charge dépasse le seuil réglementaire indiqué dans la station."
+    },
+    {
+      "q": "Quelle est la différence entre la fiche d'intervention et le registre de l'équipement, et à quel moment le technicien consulte-t-il le registre ?",
+      "ecran": 3,
+      "reponse": "La fiche raconte une intervention ; le registre raconte toute la vie de la machine (charge, contrôles, réparations, fluide ajouté ou récupéré). Le technicien le consulte avant tout contrôle d'étanchéité et le renseigne à chaque fluide ajouté ou récupéré."
+    },
+    {
+      "q": "Dans cette mission, quelle partie du fluide récupéré passe par un BSFF, et quelle partie n'en a pas besoin ? Justifiez.",
+      "ecran": 5,
+      "reponse": "La partie remise dans une machine dont elle provient reste un fluide : elle est notée sur la fiche, sans bordereau. La partie qui ne peut pas être réintroduite (ou dont la réutilisation est interdite) devient un déchet : elle part en bouteille de récupération avec un BSFF dans Trackdéchets."
+    },
+    {
+      "q": "Citez les trois signataires du BSFF, dans l'ordre, et dites ce que chacun déclare ou confirme.",
+      "ecran": 6,
+      "reponse": "L'émetteur (opérateur qui collecte, ou détenteur) déclare le déchet, les contenants et les quantités ; le transporteur renseigne son récépissé et le transport et confirme l'exactitude ; l'installation de destination indique les quantités acceptées ou refusées puis l'opération réalisée."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Sur papier, en 5 minutes : reliez chaque pièce au ou aux acteurs qui la signent, puis dites laquelle prouve que le fluide est arrivé en filière de traitement.",
+    "items": [
+      "Fiche d'intervention",
+      "Registre de l'équipement",
+      "BSFF dans Trackdéchets",
+      "Opérateur",
+      "Détenteur",
+      "Transporteur",
+      "Installation de traitement"
+    ],
+    "corrige": "Fiche d'intervention : opérateur, et détenteur au-delà du seuil de charge. Registre de l'équipement : tenu par l'exploitant, renseigné par celui qui intervient (la personne qui a agi est notée sur chaque ligne). BSFF : émetteur (opérateur qui collecte, ou détenteur), transporteur, installation de traitement. C'est le BSFF, signé jusqu'à l'installation de traitement, qui prouve l'arrivée en filière."
+  },
+  "badge": "Fil tendu",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP9"],
+    "attestation_2025": ["1.00", "4.02", "4.09", "5.07", "5.08"],
+    "justification": "Réceptionner une installation de climatisation, c'est aussi réunir et contrôler les pièces qui prouvent où est passé le fluide (CP9)."
+  }
+}

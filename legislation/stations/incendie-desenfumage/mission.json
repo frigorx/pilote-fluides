@@ -1,0 +1,35 @@
+{
+  "slug": "incendie-desenfumage",
+  "branche": "Incendie",
+  "titre": "Mission : Le plateau de bureaux et la CTA qui ne s'arrête pas",
+  "client": "Le gestionnaire d'un immeuble de bureaux, qui fait aménager un plateau en étage.",
+  "situation": "Le gestionnaire réunit deux surfaces de bureaux au deuxième étage : le plateau atteindra 400 m², avec des fenêtres, un escalier commun et un faux plafond. La centrale de traitement d'air existante souffle dans tout le plateau. L'architecte affirme qu'« il suffit d'ouvrir les fenêtres en cas de fumée » et que la CTA peut continuer à tourner. Le gestionnaire hésite : il vous demande si un désenfumage est obligatoire, sous quelle forme, et ce que cela change pour la CTA. La demande d'autorisation d'urbanisme sera déposée en début d'année prochaine.",
+  "piece_a_produire": "Une note d'une page au gestionnaire : le seuil qui déclenche l'obligation et le texte de référence, le principe retenu (naturel ou mécanique) avec ce qui reviendrait au lot CVC, la conduite à tenir pour la CTA à l'ordre du système de sécurité incendie, et le texte à vérifier compte tenu de la date de dépôt.",
+  "questions": [
+    { "q": "Un local de bureaux de 400 m² en étage : le Code du travail impose-t-il un désenfumage, et sur quel seuil ?", "ecran": 8,
+      "reponse": "Oui : les locaux de plus de 300 m² en rez-de-chaussée et en étage doivent avoir un dispositif de désenfumage, naturel ou mécanique (Code du travail, R. 4216-13, abrogé à compter du 1er janvier 2027 pour les opérations dont la demande d'urbanisme est déposée à partir de cette date : décret n° 2025-1100, art. 2 et 5). En mécanique, l'extraction est calculée sur 1 m³/s pour 100 m²." },
+    { "q": "Quelles tenues et quelles conditions d'installation sont exigées d'un ventilateur d'extraction de désenfumage ?", "ecran": 5,
+      "reponse": "Il assure sa fonction une heure avec des fumées à 400 °C, ou il est classé F400 90 ; il est installé à l'extérieur du bâtiment ou dans un local technique séparé par des parois coupe-feu de degré 1 heure (IT 246, § 4.7)." },
+    { "q": "À l'ordre de désenfumage, pourquoi le ventilateur ne démarre-t-il pas instantanément ?", "ecran": 6,
+      "reponse": "Une temporisation de 30 secondes au plus laisse aux volets et aux portes, dispositifs actionnés de sécurité, le temps d'atteindre leur position avant la mise en route des ventilateurs (IT 246, § 4.8)." },
+    { "q": "Le désenfumage d'une zone démarre : que doit faire la ventilation de confort qui la dessert ?", "ecran": 7,
+      "reponse": "Elle est interrompue dans le volume concerné, par arrêt des ventilateurs ordonné par le système de sécurité incendie, ou par fermeture de clapets télécommandés si la ventilation de confort doit être maintenue ailleurs ; la ventilation mécanique contrôlée fait exception (DF 3, § 5)." }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Vrai ou faux ? Justifiez chaque réponse en une phrase.",
+    "items": [
+      "Pour désenfumer un escalier encloisonné, on installe une extraction mécanique en partie haute de la cage.",
+      "Le ventilateur de désenfumage doit démarrer immédiatement à l'ordre, avant que les volets aient fini de s'ouvrir.",
+      "Un plateau de bureaux de 250 m² avec fenêtres, en étage, est soumis au désenfumage du seul fait de sa surface (Code du travail)."
+    ],
+    "corrige": "Faux (les fumées d'un escalier ne sont jamais extraites mécaniquement : balayage naturel ou surpression) ; Faux (une temporisation de 30 secondes au plus laisse les volets se placer) ; Faux (le seuil est de plus de 300 m² en rez-de-chaussée et en étage, 100 m² pour un local aveugle ou en sous-sol ; les escaliers, eux, sont toujours concernés)."
+  },
+  "badge": "Ordre de marche",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP7", "CP10"],
+    "attestation_2025": [],
+    "justification": "Le désenfumage mécanique est une étude d'aéraulique tertiaire (CP7 : ventilation d'un bâtiment tertiaire) et impose l'arrêt de la centrale de traitement d'air sur ordre du système de sécurité incendie (CP10) ; station hors périmètre de l'attestation d'aptitude fluides 2025."
+  }
+}

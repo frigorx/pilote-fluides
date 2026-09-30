@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" role="img"
+     aria-labelledby="t-tp" aria-describedby="d-tp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-tp">Position d'attente, position de sécurité, réarmement</title>
+  <desc id="d-tp">Trois vignettes côte à côte, chacune montrant une gaine qui traverse une paroi hachurée avec sa lame.
+    Première vignette, position d'attente : la lame est ouverte, posée le long du haut de la gaine, retenue par un
+    fusible orange neuf ; l'air circule. Deuxième vignette, position de sécurité : la lame est fermée en travers de la
+    gaine, le fusible a disparu, une goutte orange est tombée au fond. Troisième vignette, après réarmement : la lame
+    est de nouveau ouverte, avec un fusible neuf. Deux flèches courbes relient les vignettes : la première,
+    déclenchement, de l'attente vers la sécurité ; la seconde, réarmement, de la sécurité vers l'attente. L'animation
+    éclaire les vignettes l'une après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .tete { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .l1 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .l2 { font-size:17px; fill:#5a6b7d; }
+    .tr1 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#b91c1c; }
+    .tr2 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#b45309; }
+  </style>
+  <defs>
+    <pattern id="hach" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#e2e8f0"/>
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#94a3b8" stroke-width="3"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="490" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Le cycle d'un clapet</text>
+
+  <!-- vignette 1 : attente (x0 = 30) -->
+  <rect x="30" y="56" width="220" height="270" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="tete" x="140" y="90" text-anchor="middle">1. Attente</text>
+  <rect x="125" y="108" width="30" height="190" fill="url(#hach)" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="42" y="165" width="196" height="80" fill="#fffdf8"/>
+  <line x1="42" y1="165" x2="238" y2="165" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="42" y1="245" x2="238" y2="245" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="140" y="171" width="70" height="8" rx="2" fill="#1b3a63"/>
+  <circle cx="140" cy="175" r="6" fill="#1b3a63"/>
+  <rect x="205" y="166" width="10" height="24" rx="3" fill="#e8914a" stroke="#b45309" stroke-width="2"/>
+  <line x1="60" y1="215" x2="110" y2="215" stroke="#5a6b7d" stroke-width="4"/>
+  <polygon points="108,206 126,215 108,224" fill="#5a6b7d"/>
+
+  <!-- vignette 2 : sécurité (x0 = 290) -->
+  <rect x="290" y="56" width="220" height="270" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="tete" x="400" y="90" text-anchor="middle">2. Sécurité</text>
+  <rect x="385" y="108" width="30" height="190" fill="url(#hach)" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="302" y="165" width="196" height="80" fill="#fffdf8"/>
+  <line x1="302" y1="165" x2="498" y2="165" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="302" y1="245" x2="498" y2="245" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="396" y="175" width="8" height="70" rx="2" fill="#1b3a63"/>
+  <circle cx="400" cy="175" r="6" fill="#1b3a63"/>
+  <circle cx="470" cy="238" r="5" fill="#e8914a" stroke="#b45309" stroke-width="1.5"/>
+  <line x1="322" y1="215" x2="374" y2="215" stroke="#b91c1c" stroke-width="4"/>
+  <polygon points="372,206 388,215 372,224" fill="#b91c1c"/>
+
+  <!-- vignette 3 : réarmé (x0 = 550) -->
+  <rect x="550" y="56" width="220" height="270" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="tete" x="660" y="90" text-anchor="middle">3. Réarmé</text>
+  <rect x="645" y="108" width="30" height="190" fill="url(#hach)" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="562" y="165" width="196" height="80" fill="#fffdf8"/>
+  <line x1="562" y1="165" x2="758" y2="165" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="562" y1="245" x2="758" y2="245" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="660" y="171" width="70" height="8" rx="2" fill="#1b3a63"/>
+  <circle cx="660" cy="175" r="6" fill="#1b3a63"/>
+  <rect x="725" y="166" width="10" height="24" rx="3" fill="#e8914a" stroke="#b45309" stroke-width="2"/>
+  <line x1="580" y1="215" x2="630" y2="215" stroke="#5a6b7d" stroke-width="4"/>
+  <polygon points="628,206 646,215 628,224" fill="#5a6b7d"/>
+
+  <!-- descriptions -->
+  <text class="l1" x="140" y="356" text-anchor="middle">Lame ouverte</text>
+  <text class="l2" x="140" y="378" text-anchor="middle">l'air circule</text>
+  <text class="l1" x="400" y="356" text-anchor="middle">Lame fermée</text>
+  <text class="l2" x="400" y="378" text-anchor="middle">le feu est arrêté</text>
+  <text class="l1" x="660" y="356" text-anchor="middle">Lame ouverte de nouveau</text>
+  <text class="l2" x="660" y="378" text-anchor="middle">prête pour le prochain cas</text>
+
+  <!-- flèches de transition (se tracent tour à tour) -->
+  <g>
+    <path d="M140 398 Q270 442 386 402" fill="none" stroke="#b91c1c" stroke-width="4" stroke-linecap="round"
+          pathLength="100" stroke-dasharray="100" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="100;100;0;0;100;100" keyTimes="0;0.30;0.38;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <polygon points="0,0 -18,-9 -18,9" fill="#b91c1c" transform="translate(390,403) rotate(-20)">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.37;0.39;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+    </polygon>
+    <path d="M414 402 Q540 442 654 398" fill="none" stroke="#e8914a" stroke-width="4" stroke-linecap="round"
+          pathLength="100" stroke-dasharray="100" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="100;100;0;0;100;100" keyTimes="0;0.64;0.72;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <polygon points="0,0 -18,-9 -18,9" fill="#e8914a" transform="translate(658,397) rotate(-20)">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.71;0.73;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+    </polygon>
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.92;0.945;0.985;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <text class="tr1" x="270" y="470" text-anchor="middle">déclenchement</text>
+  <text class="tr2" x="536" y="470" text-anchor="middle">réarmement</text>
+
+  <!-- éclairage tour à tour (contours) -->
+  <rect x="30" y="56" width="220" height="270" rx="14" fill="none" stroke="#e8914a" stroke-width="6" opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.26;0.29;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="290" y="56" width="220" height="270" rx="14" fill="none" stroke="#e8914a" stroke-width="6" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.38;0.41;0.60;0.63;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="550" y="56" width="220" height="270" rx="14" fill="none" stroke="#e8914a" stroke-width="6" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.72;0.75;0.90;0.93;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" role="img"
+     aria-labelledby="t-pm" aria-describedby="d-pm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pm">Du ressenti à la mesure</title>
+  <desc id="d-pm">À gauche une maison dont le mur porte une unité extérieure ; des ondes en arcs violets partent de l'unité vers la fenêtre du logement de droite, où un habitant est représenté par un pictogramme plein. En bas, deux cartes reliées par une flèche orange : ce que dit le plaignant, « Ça me gêne », et ce que le technicien doit établir, un niveau mesuré avec sa méthode.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .h   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .hb  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .hv  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#6d28d9; }
+    .t   { font-size:17px; fill:#10233c; }
+    .g   { font-size:16px; fill:#5a6b7d; }
+  </style>
+
+  <text class="ttl" x="400" y="34" text-anchor="middle">Une plainte se traite par une mesure</text>
+  <!-- Installation -->
+  <polygon points="50,150 160,95 270,150" fill="#dfe7f0" stroke="#1b3a63" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="60" y="150" width="200" height="150" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="90" y="190" width="50" height="50" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  
+  <rect x="270" y="225" width="50" height="60" rx="7" fill="#dfe7f0" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="295" cy="255" r="20" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+    <path d="M 295 235 L 295 275 M 275 255 L 315 255" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M 352.6 229.3 A 40 40 0 0 1 352.6 280.7" fill="none" stroke="#6d28d9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+    <path d="M 379.5 206.8 A 75 75 0 0 1 379.5 303.2" fill="none" stroke="#6d28d9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+    <path d="M 406.3 184.3 A 110 110 0 0 1 406.3 325.7" fill="none" stroke="#6d28d9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <!-- Logement du plaignant -->
+  <polygon points="510,150 630,95 750,150" fill="#dfe7f0" stroke="#1b3a63" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="520" y="150" width="220" height="150" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="540" y="192" width="70" height="76" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <circle cx="575" cy="214" r="9" fill="#1b3a63"/>
+    <path d="M 559 258 Q 559 232 575 232 Q 591 232 591 258 Z" fill="#1b3a63"/>
+  <text class="g" x="295" y="335" text-anchor="middle">Unité extérieure</text>
+  <text class="g" x="630" y="335" text-anchor="middle">Chez le plaignant</text>
+  <!-- Deux cartes -->
+  <rect x="40" y="370" width="340" height="96" rx="14" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="h" x="210" y="406" text-anchor="middle">Ce que dit le plaignant</text>
+  <text class="t" x="210" y="440" text-anchor="middle">« Ça me gêne. »</text>
+  <line x1="388" y1="418" x2="404.8" y2="418.0" stroke="#e8914a" stroke-width="4"/>
+    <polygon points="412,418 402.1,413.2 402.1,422.8" fill="#e8914a"/>
+  <rect x="420" y="370" width="340" height="96" rx="14" fill="#ede3f4" stroke="#6d28d9" stroke-width="2.5"/>
+  <text class="hv" x="590" y="406" text-anchor="middle">Ce que vous devez établir</text>
+  <text class="t" x="590" y="440" text-anchor="middle">un niveau mesuré, avec sa méthode</text>
+</svg>

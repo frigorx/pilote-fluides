@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-ref" aria-describedby="d-ref" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-ref">Un angle renvoie le son vers le voisin</title>
+  <desc id="d-ref">Vue de dessus : une unité extérieure est posée dans l'angle formé par deux murs. Des traits bleus pleins montrent le son qui part directement ; des traits orange en pointillés montrent le son qui rebondit sur un mur puis repart vers l'avant. À droite, quatre lignes donnent l'écart par rapport à une machine posée au sol en champ libre : zéro au sol, plus 3 dB(A) contre un mur, plus 6 dB(A) dans un angle, plus 9 dB(A) dans une cour intérieure. L'animation fait circuler des points le long des trajets ; l'image fixe montre tous les trajets.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:22px; fill:#10233c; }
+    .sub  { font-weight:bold; font-size:19px; fill:#10233c; }
+    .nom  { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .val  { font-weight:bold; font-size:26px; fill:#b45309; }
+    .val0 { font-weight:bold; font-size:26px; fill:#1b3a63; }
+    .lbl  { font-size:17px; fill:#10233c; }
+  </style>
+  <defs>
+    <marker id="fb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1b3a63"/></marker>
+    <marker id="fo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e8914a"/></marker>
+  </defs>
+
+  <text class="ttl" x="20" y="34">Vue de dessus : une PAC dans un angle</text>
+
+  <!-- murs -->
+  <rect x="20" y="60" width="24" height="400" fill="#c9d0d9" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="20" y="436" width="450" height="24" fill="#c9d0d9" stroke="#5a6b7d" stroke-width="2"/>
+
+  <!-- unité -->
+  <rect x="62" y="388" width="48" height="42" rx="5" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+
+  <!-- son direct -->
+  <g stroke="#1b3a63" stroke-width="3" fill="none" marker-end="url(#fb)">
+    <line x1="85" y1="408" x2="430" y2="384"/>
+    <line x1="85" y1="408" x2="425" y2="250"/>
+    <line x1="85" y1="408" x2="330" y2="96"/>
+    <line x1="85" y1="408" x2="200" y2="72"/>
+  </g>
+  <!-- son réfléchi : du départ jusqu'au mur, puis du mur vers l'avant -->
+  <g stroke="#e8914a" stroke-width="3" fill="none" stroke-dasharray="9 6" marker-end="url(#fo)">
+    <polyline points="85,408 44,300 142,41"/>
+    <polyline points="85,408 44,370 372,66"/>
+    <polyline points="85,408 200,436 453,374"/>
+    <polyline points="85,408 140,436 415,296"/>
+    <polyline points="85,408 44,420 98.7,436 427,340"/>
+  </g>
+
+  <!-- points animés : invisibles à l'arrêt -->
+  <g fill="#1b3a63">
+    <circle r="7" opacity="0">
+      <animateMotion dur="12s" repeatCount="indefinite" path="M85,408 L425,250" keyTimes="0;0.4;1" keyPoints="0;1;1" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.38;0.4;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="7" opacity="0">
+      <animateMotion dur="12s" repeatCount="indefinite" path="M85,408 L330,96" keyTimes="0;0.4;1" keyPoints="0;1;1" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.38;0.4;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g fill="#e8914a" stroke="#b45309" stroke-width="1.5">
+    <circle r="7" opacity="0">
+      <animateMotion dur="12s" repeatCount="indefinite" path="M85,408 L44,370 L372,66" keyTimes="0;0.5;1" keyPoints="0;1;1" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.48;0.5;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="7" opacity="0">
+      <animateMotion dur="12s" repeatCount="indefinite" path="M85,408 L140,436 L415,296" keyTimes="0;0.5;1" keyPoints="0;1;1" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.48;0.5;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="7" opacity="0">
+      <animateMotion dur="12s" repeatCount="indefinite" path="M85,408 L44,420 L98.7,436 L427,340" keyTimes="0;0.6;1" keyPoints="0;1;1" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.58;0.6;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- légende -->
+  <rect x="30" y="472" width="20" height="18" rx="3" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="lbl" x="58" y="487">Unité</text>
+  <line x1="130" y1="481" x2="170" y2="481" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lbl" x="178" y="487">Son direct</text>
+  <line x1="290" y1="481" x2="330" y2="481" stroke="#e8914a" stroke-width="3" stroke-dasharray="9 6"/>
+  <text class="lbl" x="338" y="487">Son réfléchi</text>
+
+  <!-- tableau des écarts -->
+  <text class="sub" x="500" y="62">Écart pour le voisin</text>
+  <text class="lbl" x="500" y="84">par rapport à une PAC posée au sol,</text>
+  <text class="lbl" x="500" y="105">en champ libre (fiche AFPAC n° 1)</text>
+
+  <g transform="translate(500,128)">
+    <rect x="22" y="22" width="20" height="18" rx="3" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+    <path d="M32,32 m-26,0 a26,26 0 0 1 52,0" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-dasharray="4 4"/>
+    <path d="M32,32 m-26,0 a26,26 0 0 0 52,0" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-dasharray="4 4"/>
+    <text class="nom" x="84" y="26">Au sol, terrasse</text>
+    <text class="val0" x="84" y="58">référence</text>
+  </g>
+  <g transform="translate(500,213)">
+    <rect x="4" y="2" width="8" height="60" fill="#c9d0d9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="18" y="24" width="20" height="18" rx="3" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+    <path d="M20,33 m0,-28 a28 28 0 0 1 0,56" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-dasharray="4 4"/>
+    <text class="nom" x="84" y="26">Contre un mur</text>
+    <text class="val" x="84" y="58">+ 3 dB(A)</text>
+  </g>
+  <g transform="translate(500,298)">
+    <rect x="4" y="2" width="8" height="60" fill="#c9d0d9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="4" y="54" width="60" height="8" fill="#c9d0d9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="18" y="30" width="20" height="18" rx="3" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+    <path d="M18,10 a30 30 0 0 1 40,40" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-dasharray="4 4"/>
+    <text class="nom" x="84" y="26">Dans un angle</text>
+    <text class="val" x="84" y="58">+ 6 dB(A)</text>
+  </g>
+  <g transform="translate(500,383)">
+    <rect x="4" y="2" width="8" height="60" fill="#c9d0d9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="4" y="2" width="60" height="8" fill="#c9d0d9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="4" y="54" width="60" height="8" fill="#c9d0d9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="18" y="26" width="20" height="18" rx="3" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+    <path d="M44,20 a12 12 0 0 1 0,30" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-dasharray="4 4"/>
+    <text class="nom" x="84" y="26">Cour intérieure</text>
+    <text class="val" x="84" y="58">+ 9 dB(A)</text>
+  </g>
+</svg>

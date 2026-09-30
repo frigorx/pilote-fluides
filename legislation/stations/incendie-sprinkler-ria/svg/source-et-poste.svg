@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" role="img"
+     aria-labelledby="t-sp" aria-describedby="d-sp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-sp">De la source d'eau aux têtes : la chaîne du sprinkler</title>
+  <desc id="d-sp">Une chaîne de quatre blocs reliés par des flèches, de gauche à droite : la source d'eau (réseau public, réservoir ou source inépuisable), la pompe ou le surpresseur avec un dispositif de mesure du débit et de la pression en aval, le poste de contrôle avec sa vanne et son alarme, puis le réseau de tuyauterie qui mène aux têtes. Dessous, deux cartes : le réseau en eau, dont les tuyaux sont pleins d'eau et où l'eau sort dès l'ouverture d'une tête ; le réseau sec, dont les tuyaux sont remplis d'air sous pression, où l'eau arrive après l'ouverture, utile là où l'eau pourrait geler.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#b91c1c; }
+    .lbl { font-size:16px; fill:#10233c; }
+  </style>
+  <defs>
+    <marker id="pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1b3a63"/></marker>
+  </defs>
+
+  <!-- 1 source -->
+  <rect x="20" y="20" width="180" height="180" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M75,50 L75,84 A25,9 0 0 0 125,84 L125,50" fill="#eef3f9" stroke="#2f5689" stroke-width="3"/>
+  <ellipse cx="100" cy="50" rx="25" ry="9" fill="#eef3f9" stroke="#2f5689" stroke-width="3"/>
+  <text class="ttl" x="110" y="122" text-anchor="middle">Source d'eau</text>
+  <text class="lbl" x="110" y="148" text-anchor="middle">réseau public,</text>
+  <text class="lbl" x="110" y="168" text-anchor="middle">réservoir, source</text>
+  <text class="lbl" x="110" y="188" text-anchor="middle">inépuisable</text>
+  <line x1="200" y1="110" x2="242" y2="110" stroke="#1b3a63" stroke-width="3" marker-end="url(#pt)"/>
+
+  <!-- 2 pompe -->
+  <rect x="246" y="20" width="180" height="180" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="336" cy="66" r="26" fill="#eef3f9" stroke="#2f5689" stroke-width="3"/>
+  <path d="M336,66 L336,40 M336,66 L358,79" fill="none" stroke="#2f5689" stroke-width="3"/>
+  <text class="ttl" x="336" y="122" text-anchor="middle">Pompe ou</text>
+  <text class="ttl" x="336" y="142" text-anchor="middle">surpresseur</text>
+  <text class="lbl" x="336" y="168" text-anchor="middle">débit et pression</text>
+  <text class="lbl" x="336" y="188" text-anchor="middle">mesurés en aval</text>
+  <line x1="426" y1="110" x2="468" y2="110" stroke="#1b3a63" stroke-width="3" marker-end="url(#pt)"/>
+
+  <!-- 3 poste de contrôle -->
+  <rect x="472" y="20" width="180" height="180" rx="12" fill="#fffdf8" stroke="#b91c1c" stroke-width="3"/>
+  <path d="M540,44 L562,66 L540,88 z M584,44 L562,66 L584,88 z" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+  <text class="ttl" x="562" y="122" text-anchor="middle">Poste de</text>
+  <text class="ttl" x="562" y="142" text-anchor="middle">contrôle</text>
+  <text class="lbl" x="562" y="168" text-anchor="middle">vanne d'arrêt</text>
+  <text class="lbl" x="562" y="188" text-anchor="middle">et alarme</text>
+  <line x1="652" y1="110" x2="694" y2="110" stroke="#1b3a63" stroke-width="3" marker-end="url(#pt)"/>
+
+  <!-- 4 réseau -->
+  <rect x="698" y="20" width="182" height="180" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="720" y1="56" x2="858" y2="56" stroke="#2f5689" stroke-width="6"/>
+  <path d="M736,56 v14 M789,56 v14 M842,56 v14" stroke="#5a6b7d" stroke-width="4"/>
+  <ellipse cx="736" cy="78" rx="6" ry="9" fill="#b91c1c"/>
+  <ellipse cx="789" cy="78" rx="6" ry="9" fill="#b91c1c"/>
+  <ellipse cx="842" cy="78" rx="6" ry="9" fill="#b91c1c"/>
+  <text class="ttl" x="789" y="122" text-anchor="middle">Réseau de</text>
+  <text class="ttl" x="789" y="142" text-anchor="middle">tuyauterie</text>
+  <text class="lbl" x="789" y="168" text-anchor="middle">jusqu'aux têtes</text>
+
+  <!-- réseau en eau -->
+  <rect x="20" y="226" width="415" height="170" rx="12" fill="#fffdf8" stroke="#2f5689" stroke-width="3"/>
+  <text class="qui" x="40" y="258">Réseau en eau</text>
+  <rect x="40" y="290" width="110" height="18" rx="4" fill="#2f5689"/>
+  <ellipse cx="95" cy="322" rx="6" ry="9" fill="#b91c1c"/>
+  <text class="lbl" x="170" y="296">Tuyaux pleins d'eau :</text>
+  <text class="lbl" x="170" y="318">l'eau sort dès qu'une</text>
+  <text class="lbl" x="170" y="340">tête s'ouvre.</text>
+
+  <!-- réseau sec -->
+  <rect x="465" y="226" width="415" height="170" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="qui" x="485" y="258">Réseau sec</text>
+  <rect x="485" y="290" width="110" height="18" rx="4" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="6 5"/>
+  <ellipse cx="540" cy="322" rx="6" ry="9" fill="#b91c1c"/>
+  <text class="lbl" x="615" y="296">Tuyaux remplis d'air sous</text>
+  <text class="lbl" x="615" y="318">pression : l'eau arrive après</text>
+  <text class="lbl" x="615" y="340">l'ouverture. Utile là où</text>
+  <text class="lbl" x="615" y="362">l'eau pourrait geler.</text>
+</svg>

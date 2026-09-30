@@ -2,8 +2,9 @@
    Vocabulaire des fiches : le « dudgeon » est l'évasement frigorifique à 45° (dudgeonnière, écrou, huile,
    clé dynamométrique) ; le « collet battu » est le geste de plomberie (collerette plate au marteau, joint),
    qui demande un recuit au chalumeau : il n'est pas traité ici.
-   Dépassement et couples : fiche d'atelier « FICHE SYNTHESE Travail tube cuivre froid » et « Faire un dudgeon » ;
-   la notice du fabricant de l'appareil fait foi sur chantier. */
+   Dépassement et couples : DÉCIDÉS le 30/09/2026 (DECISIONS-2026-09-30.md) d'après la notice d'un fabricant
+   d'appareil (Carrier 42HQE/38YE, p. 8), plus fiable que la fiche d'atelier (unité « N/m » fausse) ;
+   la notice de l'appareil raccordé fait foi sur chantier. */
 CUIVREZO.stations.push({
   id: '1-6', ligne: 1, titre: 'Le dudgeon', duree: '25 min',
   sources: ['sources-metier/1-6-collet-battu.md'],
@@ -12,7 +13,7 @@ CUIVREZO.stations.push({
     titre: 'Un dudgeon régulier, l’écrou en place',
     texte: 'Le bout du tube est évasé en cône à 45°, lisse, sans fissure. L’écrou, enfilé avant, vient le coiffer et se visse sur le raccord.',
     criteres: ['Cône régulier, lisse, sans fissure ni marque d’outil', 'Épaisseur uniforme, bien centré', 'Il épouse le raccord : ni trop grand, ni trop petit', 'L’écrou enfilé, dans le bon sens'],
-    figure: { svg: 'dudgeon', etat: 'controle', legende: 'Le dudgeon réussi, l’écrou qui vient le coiffer.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'dudgeon', angle: '45' }, legende: 'Le dudgeon réussi, l’écrou qui vient le coiffer.' },
     narration: 'Le dudgeon est un raccord sans flamme. Le bout du tube est évasé en cône, et un écrou vient le plaquer contre un raccord en laiton : métal contre métal, sans joint. C’est ce qui raccorde, par exemple, les liaisons d’une climatisation. Tout repose sur la qualité du cône : trop petit, il fuit ; trop grand, l’écrou ne passe plus ; fendu, il fuira un jour. Et un raccord qui fuit, c’est du fluide frigorigène dans l’atmosphère.'
   },
   materiel: {
@@ -22,7 +23,7 @@ CUIVREZO.stations.push({
       { nom: 'Le tube recuit, coupé d’équerre et ébavuré', detail: 'station 1.3 : c’est la moitié de la réussite' },
       { nom: 'L’écrou du bon diamètre', detail: 'celui du raccord' },
       { nom: 'La dudgeonnière', detail: 'une barre à trous et un étrier à cône de 45°' },
-      { nom: 'L’huile frigorifique', detail: 'une goutte sur les cônes au montage', aValider: 'L’huile : citée par la fiche de synthèse, formulation ambiguë dans « Faire un dudgeon »' },
+      { nom: 'L’huile frigorifique', detail: 'une goutte sur les cônes au montage ; le professeur donne l’huile' },
       { nom: 'Deux clés, dont une dynamométrique', detail: 'pour serrer au bon couple' },
       { nom: 'Le raccord', detail: 'pour l’essai de montage' }
     ],
@@ -40,11 +41,10 @@ CUIVREZO.stations.push({
       figure: { svg: 'dudgeon', etat: 'ecrou' }, clip: 'clips/1-6/02-ecrou.mp4',
       narration: 'Le geste qu’on oublie une fois, et jamais deux : enfiler l’écrou avant d’évaser. Une fois le cône formé, l’écrou ne passe plus par-dessus. Il ne reste alors qu’à recouper le tube et tout recommencer. L’écrou s’enfile dans le bon sens : son filetage regarde le bout du tube.' },
     { titre: 'Serrer le tube dans la barre', texte: 'Dans le trou du bon diamètre, côté chanfrein. Le tube dépasse de la cote A, puis on serre les écrous papillons.',
-      pointCle: 'Dépassement A (fiche) : 1/4″ 1,3 · 3/8″ 1,6 · 1/2″ 1,8 · 5/8″ 2 mm.',
+      pointCle: 'Dépassement A, entre le mini et le maxi de la notice d’un appareil : 1/4″ 0,7 à 1,3 · 3/8″ 1,0 à 1,6 · 1/2″ 1,0 à 1,8 · 5/8″ 2,2 à 2,4 mm.',
       pourquoi: 'Le métal qui dépasse est celui qui formera le cône. Trop, le cône est trop grand ; pas assez, il est trop petit.',
-      aValider: 'Dépassement de la fiche d’atelier ; la notice d’un fabricant donne une fourchette voisine (0,7 à 1,3 mm en 1/4″)',
       figure: { svg: 'dudgeon', etat: 'mors' }, clip: 'clips/1-6/03-barre.mp4',
-      narration: 'On place le tube dans le trou de son diamètre, du côté chanfreiné de la barre, et on le fait dépasser d’une petite hauteur, qu’on appelle A : un virgule trois millimètre en un quart, un virgule six en trois huitièmes, d’après la fiche de l’atelier. C’est ce métal qui dépasse qui va former le cône. Puis on serre les deux écrous papillons : le tube ne doit plus bouger.' },
+      narration: 'On place le tube dans le trou de son diamètre, du côté chanfreiné de la barre, et on le fait dépasser d’une petite hauteur, qu’on appelle A. Pour un quart de pouce, entre sept dixièmes et un virgule trois millimètre ; pour un trois huitièmes, entre un et un virgule six millimètre : ce sont les valeurs de la notice d’un fabricant, et le professeur vous donne celles de la dudgeonnière de l’atelier. C’est ce métal qui dépasse qui va former le cône. Puis on serre les deux écrous papillons : le tube ne doit plus bouger.' },
     { titre: 'Poser l’étrier', texte: 'Posez l’étrier sur la barre, le cône bien au centre du tube, et bloquez-le.',
       pointCle: 'Le cône au centre, sinon le dudgeon sera décentré.',
       pourquoi: 'Un cône qui entre de biais pousse le métal d’un seul côté.',
@@ -63,15 +63,13 @@ CUIVREZO.stations.push({
     { titre: 'Huiler et visser à la main', texte: 'Une goutte d’huile frigorifique sur les cônes. Présentez le tube sur le raccord et vissez l’écrou à la main, jusqu’au contact.',
       pointCle: 'À la main d’abord : l’écrou doit se visser sans résistance.',
       pourquoi: 'Un écrou qui force à la main est mal engagé : à la clé, il abîmerait le filetage.',
-      aValider: 'L’huile sur les cônes : à confirmer',
       figure: { img: 'images/1-6-serrage.webp', alt: 'Le tube présenté sur le raccord, l’écrou vissé' }, clip: 'clips/1-6/07-main.mp4',
       narration: 'Au montage, une goutte d’huile frigorifique sur les cônes aide les deux surfaces à glisser l’une sur l’autre. On présente le tube bien dans l’axe du raccord, et on visse l’écrou à la main, jusqu’au contact. S’il force à la main, c’est qu’il est mal engagé : on dévisse, on recommence. La clé ne sert qu’à finir le serrage.' },
     { titre: 'Serrer au couple, à deux clés', texte: 'Clé dynamométrique sur l’écrou, contre-clé sur le raccord. Serrez jusqu’au couple.',
-      pointCle: 'Couples de la fiche : 1/4″ 18 · 3/8″ 22 · 1/2″ 42 N·m. Sur chantier, la notice de l’appareil fait foi.',
+      pointCle: 'Couples de la notice d’un appareil : 1/4″ 15,7 · 3/8″ 29,4 · 1/2″ 29,4 · 5/8″ 73,6 N·m. Sur chantier, la notice de l’appareil fait foi.',
       pourquoi: 'Pas assez serré, le raccord fuit. Trop serré, le dudgeon s’écrase ou l’écrou casse. La contre-clé empêche le raccord de tourner et de tordre le tube.',
-      aValider: 'Couples de la fiche d’atelier (unité écrite « N/m ») ; une notice de fabricant donne 15,7 · 29,4 · 29,4 N·m',
       figure: { svg: 'dudgeon', etat: 'serrage' }, clip: 'clips/1-6/08-couple.mp4',
-      narration: 'Le serrage final se fait à deux clés. La clé dynamométrique sur l’écrou, parce qu’elle mesure l’effort : trop peu, le raccord fuit ; trop, le dudgeon s’écrase ou l’écrou casse. Et une contre-clé sur le raccord, qui l’empêche de tourner et de tordre le tube. Le couple dépend du diamètre. Sur un appareil réel, c’est la notice du fabricant qui le donne.' }
+      narration: 'Le serrage final se fait à deux clés. La clé dynamométrique sur l’écrou, parce qu’elle mesure l’effort : trop peu, le raccord fuit ; trop, le dudgeon s’écrase ou l’écrou casse. Et une contre-clé sur le raccord, qui l’empêche de tourner et de tordre le tube. Le couple dépend du diamètre, et il se compte en newtons-mètres. Par exemple, la notice d’un appareil donne quinze virgule sept newtons-mètres pour un quart de pouce, et vingt-neuf virgule quatre pour un trois huitièmes. Sur un appareil réel, c’est toujours la notice du fabricant qui fait foi.' }
   ],
   pieges: [
     { titre: 'L’écrou oublié', voit: 'Un beau dudgeon… et l’écrou resté sur l’établi.', cause: 'On a évasé avant d’enfiler l’écrou.',

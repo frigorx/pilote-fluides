@@ -1,0 +1,179 @@
+/* CuivRézo — les défis, le tampon, le passeport.
+   CONTRAT : style seul (la logique est dans moteur/defis.js). Chargé après station.css (stations),
+   ou accueil.css (carte, passeport). Charte inerWeb : fond crème, cuivre, jamais de thème sombre.
+   Tout texte ≥ 16 px ; cibles ≥ 60 px ; le mouvement se coupe avec prefers-reduced-motion. */
+
+:root{--tampon:#a63d1f;--ok:#1e7e54;--ok-bg:#e3f5ec;--bad:#b3261e;--bad-bg:#fbe7e4;--copper:#b8692e;--copper-soft:#f3dcc6;
+      --navy:#1b3a63;--ink:#10233c;--muted:#56657a;--paper:#fffdf8;--cream:#f7f1e7;--line:rgba(27,58,99,.18)}
+
+/* ---------- boutons communs ---------- */
+.defi-zone{min-width:0}
+.defi-actions{display:flex;gap:.6rem;flex-wrap:wrap;scroll-margin-bottom:170px}
+.loupe{align-items:stretch;justify-content:center;gap:.6rem;padding:1.2rem;min-height:260px}
+.loupe-titre{display:flex;align-items:center;gap:.6rem;font:800 1.1em "Trebuchet MS",Calibri,sans-serif;color:var(--copper)}
+.figure .loupe-icone{width:3.4rem;height:3.4rem;flex:none}
+.loupe-texte{margin:0;font-size:1.5em;font-weight:700;color:var(--navy);line-height:1.3}
+.gros,.second,.petit,.bouton-lien{font:inherit;font-weight:800;border-radius:16px;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.gros{min-height:68px;flex:1 1 auto;padding:.2rem 1.3rem;background:var(--copper);color:#fff;border:3px solid var(--copper);font-size:1.1em;
+  box-shadow:0 4px 0 #8a4a1f;transition:transform .12s,box-shadow .12s}
+.gros:active{transform:translateY(3px);box-shadow:0 1px 0 #8a4a1f}
+.second{min-height:68px;padding:.2rem 1.2rem;background:var(--paper);color:var(--navy);border:3px solid var(--navy)}
+.petit{min-height:52px;padding:.1rem .9rem;background:var(--paper);color:var(--navy);border:2px solid var(--navy);border-radius:12px;font-size:max(16px,.8em)}
+.bouton-lien{min-height:60px;padding:.2rem 1.2rem;border:3px solid var(--navy);color:var(--navy);background:var(--paper)}
+.bouton-lien.plein{background:var(--copper);border-color:var(--copper);color:#fff;box-shadow:0 4px 0 #8a4a1f}
+.petit.son[aria-pressed="true"]{background:var(--navy);color:#fff}
+
+/* ---------- messages ---------- */
+.defi-msg{font-weight:800;padding:.5rem .8rem;border-radius:12px;font-size:max(16px,.95em)}
+.defi-msg:empty{display:none}
+.defi-msg.ok{background:var(--ok-bg);color:var(--ok);animation:defi-pop .35s ease-out}
+.defi-msg.ko{background:var(--bad-bg);color:var(--bad)}
+p.aide{font-size:max(16px,.85em);color:var(--muted)}
+
+/* ---------- épreuve 1 : dans l'ordre ---------- */
+.defi-ordre{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.defi-ordre li{display:grid;grid-template-columns:minmax(0,1fr) 3.6rem;background:var(--paper);border:3px solid var(--line);border-radius:16px;
+  box-shadow:0 3px 0 rgba(27,58,99,.14);position:relative;transition:border-color .15s,background .15s,scale .15s,box-shadow .15s}
+.carte-ordre{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.7rem;align-items:center;min-height:60px;padding:.3rem .7rem;
+  background:transparent;border:0;color:var(--ink);font:inherit;font-weight:700;text-align:left;cursor:pointer;border-radius:13px 0 0 13px}
+.carte-ordre .rang{display:grid;place-items:center;width:2.3rem;height:2.3rem;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;transition:background .2s}
+.poignee{display:grid;place-items:center;font-size:1.8rem;color:var(--muted);border-left:2px dashed var(--line);cursor:grab;
+  touch-action:none;user-select:none;-webkit-user-select:none}
+.defi-ordre li.choisie{border-color:var(--copper);scale:1.02;box-shadow:0 8px 18px rgba(184,105,46,.35)}
+.defi-ordre li.choisie .rang{background:var(--copper)}
+.defi-ordre li.glisse{z-index:5;scale:1.03;border-color:var(--copper);box-shadow:0 12px 24px rgba(16,35,60,.3);transition:none;cursor:grabbing}
+.defi-ordre li.juste{border-color:var(--ok);background:var(--ok-bg)}
+.defi-ordre li.juste .rang{background:var(--ok)}
+.defi-ordre li.faux{border-color:var(--bad);background:var(--bad-bg);animation:defi-secoue .4s}
+.defi-ordre li.faux .rang{background:var(--bad)}
+.defi-ordre.gagne li{animation:defi-onde .6s ease-out both;animation-delay:calc(var(--i,0) * 90ms)}
+.defi-ordre.gagne .poignee{visibility:hidden}
+.carte-ordre:focus-visible{outline:4px solid rgba(255,107,53,.6);outline-offset:-2px}
+
+/* ---------- épreuves 2 et 3 : questions à choix ---------- */
+.question{font-weight:800;color:var(--navy);font-size:1.1em}
+p.invite{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.5rem .8rem}
+.choix-liste{display:flex;flex-direction:column;gap:.55rem}
+.choix-liste.deux{flex-direction:row}
+.choix{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.7rem;align-items:center;min-height:64px;width:100%;padding:.45rem .8rem;
+  background:var(--paper);border:3px solid var(--line);border-radius:14px;color:var(--ink);font:inherit;text-align:left;cursor:pointer;
+  box-shadow:0 3px 0 rgba(27,58,99,.14);transition:border-color .15s,background .15s,opacity .2s}
+.choix:hover:not(:disabled){border-color:var(--copper)}
+.choix:disabled{cursor:default;color:var(--ink)}
+.choix .lettre{display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--navy);color:#fff;font-weight:800}
+.choix.sans-lettre{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;font-weight:800;font-size:1.05em}
+.choix.sans-lettre .lettre{display:none}
+.choix.juste{border-color:var(--ok);background:var(--ok-bg);animation:defi-pop .35s ease-out}
+.choix.juste .lettre{background:var(--ok)}
+.choix.faux{border-color:var(--bad);background:var(--bad-bg);animation:defi-secoue .4s}
+.choix.faux .lettre{background:var(--bad)}
+.choix.autre{opacity:.7}
+.defi-retour{display:flex;flex-direction:column;gap:.6rem}
+.explication{background:var(--copper-soft);border-left:6px solid var(--copper);border-radius:10px;padding:.5rem .8rem}
+.explication p{margin:.25rem 0}
+.explication strong{color:var(--navy)}
+
+/* la pièce : une carte qui se retourne pour montrer ce qui était caché */
+.defi-fig{position:relative;overflow:hidden;perspective:1400px}
+.flip{display:grid;width:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,.7,.2,1)}
+.flip.retourne{transform:rotateY(180deg)}
+.flip .face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;justify-content:center}
+.flip .dos{transform:rotateY(180deg)}
+.flip .face svg{width:100%;height:auto;max-height:62dvh}
+.masque text,.masque line[stroke-width="1.6"],.masque circle[r="4"]{opacity:0}
+.defi-bravo{display:grid;place-items:center;width:8rem;height:8rem;border-radius:50%;background:var(--ok-bg);color:var(--ok);font-size:4.5rem;font-weight:800;
+  border:6px solid var(--ok);animation:defi-pop .5s cubic-bezier(.2,1.4,.4,1)}
+
+/* ---------- le tampon ---------- */
+.figure svg.tampon-svg,.figure svg.tampon-vide{width:min(100%,380px);height:auto}
+.tampon-svg{color:var(--tampon);mix-blend-mode:multiply;overflow:visible}
+.tampon-svg.frappe .tp-frappe{transform-box:view-box;transform-origin:center;animation:defi-frappe .6s cubic-bezier(.2,1.3,.4,1) both}
+.tampon-vide{color:rgba(86,101,122,.7)}
+.defi-bilan li{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.defi-bilan .coche{font-weight:800;font-size:1.3em;color:var(--muted);width:1.5em}
+.defi-bilan li.fait .coche{color:var(--ok)}
+.defi-bilan .txt{flex:1;font-weight:700;color:var(--navy)}
+.confettis{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:hidden}
+.confettis span{position:absolute;left:50%;top:45%;width:9px;height:14px;border-radius:2px;opacity:0;animation:defi-conf var(--d,1.4s) ease-out forwards}
+
+/* ---------- l'accueil : la bande de tampons de chaque ligne ---------- */
+.passeport-bandeau{display:flex;align-items:center;gap:.8rem 1.2rem;flex-wrap:wrap;background:var(--paper);border:3px solid var(--copper);
+  border-radius:18px;padding:.7rem 1rem;margin:.9rem 0 .2rem}
+.passeport-bandeau .gros-nombre{font:800 1.5em "Trebuchet MS",Calibri,sans-serif;color:var(--tampon)}
+.passeport-bandeau p{margin:0;flex:1 1 16em;max-width:none}
+.ligne h2 .ligne-tp{margin-left:auto;font-size:max(16px,.75em);font-weight:800;color:var(--tampon);white-space:nowrap}
+.bande{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 0 .7rem 1.2rem}
+.slot{display:grid;place-items:center;min-width:3.4rem;height:3.4rem;padding:0 .3rem;border-radius:50%;border:3px dashed rgba(27,58,99,.3);
+  font-weight:800;font-size:max(16px,.8em);color:var(--muted);transition:transform .2s}
+.slot.gagne{border:3px solid var(--tampon);color:var(--tampon);background:rgba(166,61,31,.08);
+  box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 5px var(--tampon);transform:rotate(-6deg)}
+.tp-mini{display:none;font-weight:800;color:var(--tampon);font-size:max(16px,.85em)}
+.arrets a.tamponne{border-color:var(--tampon)}
+.arrets a.tamponne .tp-mini{display:block}
+
+/* ---------- le passeport (page imprimable) ---------- */
+.pp{max-width:1000px;margin:0 auto;padding:1rem}
+.pp-haut{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:4px solid var(--copper);padding-bottom:.6rem;margin-bottom:.8rem}
+.pp-haut h1{margin:0;font:800 2em "Trebuchet MS",Calibri,sans-serif;color:var(--navy)}
+.pp-haut h1 b{color:var(--copper)}
+.pp-haut .sous{margin:0;color:var(--muted)}
+.pp-nom{margin:.4rem 0 .8rem;font-size:1.1em}
+.pp-nom span{display:inline-block;min-width:16em;border-bottom:2px solid var(--ink)}
+.pp-compte{font:800 1.3em "Trebuchet MS",Calibri,sans-serif;color:var(--tampon)}
+.pp-ligne{margin:0 0 1rem;break-inside:avoid}
+.pp-ligne h2{display:flex;align-items:center;gap:.5rem;margin:.3rem 0 .5rem;font:800 1.25em "Trebuchet MS",Calibri,sans-serif;color:var(--navy)}
+.pp-ligne .pastille{display:inline-grid;place-items:center;width:2em;height:2em;border-radius:50%;background:var(--copper);color:#fff;font-weight:800}
+.pp-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.7rem}
+.pp-case{background:var(--paper);border:2px solid var(--line);border-radius:16px;padding:.6rem;text-align:center;break-inside:avoid}
+.pp-case .emplacement{width:min(100%,160px);aspect-ratio:1;margin:0 auto .3rem;display:grid;place-items:center;border-radius:50%;
+  border:4px dashed rgba(27,58,99,.3);color:var(--muted);font:800 2rem "Trebuchet MS",Calibri,sans-serif}
+.pp-case.gagne .emplacement{border:0;border-radius:0}
+.pp-case .emplacement .tampon-svg{width:100%}
+.pp-case .titre{font-size:max(16px,.9em);font-weight:700;color:var(--navy);line-height:1.25}
+.pp-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}
+.pp-note{color:var(--muted);font-size:max(16px,.85em)}
+.pp-effacer{margin-top:1rem;background:none;border:0;color:var(--muted);text-decoration:underline;font:inherit;font-size:max(16px,.85em);cursor:pointer;min-height:48px}
+
+/* ---------- mouvements ---------- */
+@keyframes defi-pop{0%{transform:scale(.85);opacity:.4}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+@keyframes defi-secoue{0%,100%{translate:0}20%{translate:-7px}40%{translate:7px}60%{translate:-5px}80%{translate:5px}}
+@keyframes defi-onde{0%{translate:0}40%{translate:0 -7px}100%{translate:0}}
+@keyframes defi-frappe{0%{transform:scale(2.1);opacity:0}45%{transform:scale(.93);opacity:1}70%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+@keyframes defi-conf{0%{transform:translate(0,0) rotate(0) scale(.3);opacity:0}12%{opacity:1}
+  45%{transform:translate(var(--x),var(--y)) rotate(calc(var(--r) / 2)) scale(1)}
+  100%{transform:translate(calc(var(--x) * 1.15),calc(var(--y) + 300px)) rotate(var(--r));opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .flip{transition:none}
+  .tampon-svg.frappe .tp-frappe,.defi-ordre li,.defi-ordre li.faux,.defi-ordre.gagne li,.choix.faux,.choix.juste,.defi-msg.ok,.defi-bravo,.gros{animation:none;transition:none}
+  .confettis{display:none}
+}
+
+/* ---------- téléphone ---------- */
+@media (max-width:600px){
+  .choix-liste.deux{flex-direction:column}
+  .gros,.second{min-height:60px;width:100%}
+  .bande{padding-left:.4rem}
+  .pp-grille{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ---------- papier : le passeport tient sur une page A4, 14 pt minimum ---------- */
+@media print{
+  @page{size:A4;margin:12mm}
+  html,body{background:#fff!important;font-size:14pt}
+  .pas-imprimer{display:none!important}
+  .pp{padding:0;max-width:none}
+  /* tout tient sur une page : la ligne 1 en pleine largeur (4 par rang), les autres côte à côte */
+  .pp-blocs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm 4mm}
+  .pp-ligne:first-child{grid-column:1/-1}
+  .pp-ligne:first-child .pp-grille{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .pp-ligne{margin:0}
+  .pp-grille{grid-template-columns:repeat(2,minmax(0,1fr));gap:3mm}
+  .pp-case{border:1.5pt solid #999;padding:2mm}
+  .pp-case .emplacement{width:min(100%,32mm)}
+  .pp-ligne .pastille{background:none;color:var(--copper);border:2.5pt solid var(--copper)}
+  .pp-case .titre{font-size:14pt;overflow-wrap:anywhere}
+  .pp-ligne h2{font-size:16pt}
+  .pp-compte,.pp-nom,.pp-haut .sous{font-size:14pt}
+  .tampon-svg{mix-blend-mode:normal}
+}

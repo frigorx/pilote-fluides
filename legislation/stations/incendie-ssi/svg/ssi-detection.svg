@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-det" aria-describedby="d-det" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-det">Le système de détection : détecteurs, déclencheurs manuels, vérification</title>
+  <desc id="d-det">En haut à gauche, un détecteur automatique et un déclencheur manuel, chacun relié par un trait à un équipement de commande et de signalisation, puis à droite une flèche vers le système de mise en sécurité. En bas, deux cartes : pour une installation neuve ou modifiée, la vérification se fait par la combustion d'un foyer type ; dans les autres cas, par des essais fonctionnels.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .h2  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .lb  { font-size:16px; font-weight:bold; fill:#10233c; }
+    .gr  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:44px; fill:#1b3a63; }
+    .wht { font-size:16px; font-weight:bold; fill:#fff; }
+  </style>
+
+  <text class="ttl" x="400" y="32" text-anchor="middle">Détecter tôt, signaler, vérifier</text>
+
+  <g>
+    <circle cx="80" cy="110" r="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="80" cy="110" r="9" fill="#1b3a63"></circle>
+  </g>
+  <text class="lb" x="80" y="156" text-anchor="middle">Détecteur</text>
+  <g>
+    <rect x="58" y="208" width="44" height="44" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="68" y="218" width="24" height="24" rx="3" fill="#b91c1c"/>
+    <polyline points="74,218 81,228 77,232 85,242" fill="none" stroke="#fff" stroke-width="2"/>
+  </g>
+  <text class="lb" x="80" y="276" text-anchor="middle">Déclencheur manuel</text>
+
+  <path d="M112,110 H200 V140 H288" fill="none" stroke="#1b3a63" stroke-width="3"/><polygon points="300,140 289,133 289,147" fill="#1b3a63"/>
+  <path d="M112,230 H200 V172 H288" fill="none" stroke="#1b3a63" stroke-width="3"/><polygon points="300,172 289,165 289,179" fill="#1b3a63"/>
+  <rect x="300" y="100" width="210" height="112" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="405" y="137" text-anchor="middle">Équipement de</text>
+    <text class="lb" x="405" y="158" text-anchor="middle">commande et</text>
+    <text class="lb" x="405" y="179" text-anchor="middle">signalisation</text>
+
+  <line x1="510" y1="156" x2="600" y2="156" stroke="#1b3a63" stroke-width="3"/><polygon points="614,156 603,149 603,163" fill="#1b3a63"/>
+  <rect x="616" y="100" width="164" height="112" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="3" stroke-dasharray="8 6"/>
+  <text class="lb" x="698" y="143" text-anchor="middle">Mise en</text>
+    <text class="lb" x="698" y="164" text-anchor="middle">sécurité</text>
+  <text class="gr" x="698" y="240" text-anchor="middle">ordres aux DAS</text>
+
+  <rect x="20" y="300" width="370" height="170" rx="14" fill="#fffdf8" stroke="#b91c1c" stroke-width="3"/>
+  <text class="h2" x="205" y="330" text-anchor="middle">Installation neuve ou modifiée</text>
+  <text class="lbl" x="205" y="366" text-anchor="middle">Combustion d'un foyer type,</text>
+    <text class="lbl" x="205" y="387" text-anchor="middle">adapté à la nature</text>
+    <text class="lbl" x="205" y="408" text-anchor="middle">du risque de l'établissement</text>
+  <text class="gr" x="205" y="452" text-anchor="middle">MS 56, § 3</text>
+  <rect x="410" y="300" width="370" height="170" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3" stroke-dasharray="8 6"/>
+  <text class="h2" x="595" y="330" text-anchor="middle">Tous les autres cas</text>
+  <text class="lbl" x="595" y="366" text-anchor="middle">Essais fonctionnels, avec des</text>
+    <text class="lbl" x="595" y="387" text-anchor="middle">appareils de vérification adaptés</text>
+    <text class="lbl" x="595" y="408" text-anchor="middle">au type de détecteur posé</text>
+  <text class="gr" x="595" y="452" text-anchor="middle">MS 56, § 3</text>
+</svg>

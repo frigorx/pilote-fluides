@@ -1,0 +1,46 @@
+{
+  "slug": "fgaz-3",
+  "branche": "Fluidique & thermique",
+  "titre": "Mission : Changer la chambre froide, choisir le fluide",
+  "client": "La directrice d'une résidence hôtelière dont la chambre froide de cuisine, fonctionnant au R-404A, arrive en fin de vie.",
+  "situation": "La directrice vous demande de « remettre la même chose », puisque le fluide fonctionne depuis des années. Elle a entendu dire que « les fluides vont disparaître » et voudrait comprendre ce qui se passe avant de signer. Vous savez que le règlement (UE) 2024/573 réduit l'enveloppe de HFC mise sur le marché, que le R-404A est à fort PRP, et que ce n'est pas le poids de fluide, mais sa valeur en tonnes équivalent CO₂, qui déclenche les obligations. Votre responsable vous demande une note de conseil avant le rendez-vous.",
+  "piece_a_produire": "Une note de conseil d'une page à la directrice qui déroule le raisonnement du technicien en quatre questions, appliquées à SA chambre froide : le PRP du fluide, la charge et sa valeur en tonnes équivalent CO₂, la disponibilité et le prix du fluide sous quota, l'alternative bas PRP ou naturelle possible. En bas de page : où l'on vérifie ce qui est en vigueur (le texte du règlement, pas une fiche ancienne).",
+  "questions": [
+    {
+      "q": "Le règlement (UE) 2024/573 est-il une directive ? Qu'est-ce que cela change pour son application ?",
+      "ecran": 1,
+      "reponse": "Non, c'est un règlement : il s'applique tel quel dans toute l'Union, sans transposition. C'est la troisième génération après les règlements 842/2006 et 517/2014."
+    },
+    {
+      "q": "À qui les quotas du phase-down sont-ils attribués, et quelle conséquence le frigoriste en subit-il sur chantier ?",
+      "ecran": 2,
+      "reponse": "Aux producteurs et importateurs de HFC, pas aux frigoristes. Les fluides à fort PRP deviennent rares et chers, et le marché pousse vers les bas PRP."
+    },
+    {
+      "q": "Écrivez la formule qui convertit une charge en tonnes équivalent CO₂. Pourquoi est-ce cette valeur, et non le poids, qui compte ?",
+      "ecran": 3,
+      "reponse": "Tonnes éq. CO₂ = charge (kg) × PRP ÷ 1000. C'est cette valeur qui déclenche les obligations : deux installations de même charge n'ont pas les mêmes obligations si les fluides diffèrent."
+    },
+    {
+      "q": "Distinguez les interdictions en équipement neuf et les restrictions en maintenance. Où vérifie-t-on l'échéancier ?",
+      "ecran": 4,
+      "reponse": "Deux régimes distincts : l'échéancier des équipements neufs par catégorie et seuil de PRP, et les restrictions d'appoint en maintenance, avec tolérance pour le fluide recyclé ou régénéré. On ne l'apprend pas par cœur : on le vérifie dans l'annexe du règlement en vigueur, à chaque affaire."
+    }
+  ],
+  "defi": {
+    "type": "calcul",
+    "consigne": "Une installation de 12 kg de R-410A (PRP 2088), à comparer avec la même charge de R-32 (PRP 675). Calculez la valeur en tonnes équivalent CO₂ de chacune, puis dites laquelle a le plus d'obligations et pourquoi.",
+    "items": [
+      "12 kg de R-410A, PRP 2088",
+      "12 kg de R-32, PRP 675"
+    ],
+    "corrige": "R-410A : 12 × 2088 ÷ 1000 = 25,056, soit environ 25,1 t éq. CO₂. R-32 : 12 × 675 ÷ 1000 = 8,1 t éq. CO₂. À charge égale, le R-410A pèse un peu plus de trois fois plus en équivalent CO₂ : c'est cette valeur, jamais le poids seul, qui déclenche les obligations."
+  },
+  "badge": "Le texte en vigueur",
+  "duree_min": 30,
+  "referentiel": {
+    "tecvc": ["CP9"],
+    "attestation_2025": ["1.00", "2.01", "2.02"],
+    "justification": "CP9 (climatisation) dans la mesure où le technicien d'études choisit le fluide et la charge d'une installation ; côté attestation 2025 : législation applicable aux gaz fluorés (1.00), politique climat et Protocole de Montréal (2.01), PRP et dispositions du règlement 2024/573 (2.02)."
+  }
+}

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" role="img"
+     aria-labelledby="t-ess" aria-describedby="d-ess" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-ess">La période d'essai : prévue au contrat, durée bornée</title>
+  <desc id="d-ess">En haut, une frise : la longue barre d'un CDI, dont le tout début, en orange, est la
+    période d'essai, à condition que le contrat la prévoie. Au milieu, trois barres alignées sur un axe
+    gradué en mois : employés et ouvriers, deux mois ; agents de maîtrise et techniciens, trois mois ;
+    cadres, quatre mois. Chaque barre se prolonge d'un tronçon en tirets pour le renouvellement, ce qui
+    donne quatre, six et huit mois au plus. En bas, un encadré rappelle les trois conditions du
+    renouvellement : la convention collective le permet, la clause figure au contrat, le salarié
+    donne son accord par écrit.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:21px; fill:#10233c; }
+    .fr   { font-size:16px; fill:#5a6b7d; }
+    .fr2  { font-size:16px; fill:#9d174d; font-weight:bold; }
+    .row  { font-size:16px; fill:#10233c; }
+    .rowb { font-weight:bold; font-size:16px; fill:#10233c; }
+    .val  { font-weight:bold; font-size:16px; fill:#9d174d; }
+    .val2 { font-size:15px; fill:#5a6b7d; }
+    .ax   { font-size:15px; fill:#5a6b7d; }
+    .cd   { font-weight:bold; font-size:17px; fill:#9d174d; }
+    .cl   { font-size:16px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="400" y="30" text-anchor="middle">La période d'essai : une clause, une durée bornée</text>
+
+  <!-- frise du contrat -->
+  <text class="fr2" x="40" y="72">Période d'essai, si le contrat la prévoit</text>
+  <rect x="40" y="84" width="720" height="34" rx="6" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="40" y="84" width="110" height="34" rx="6" fill="#e8914a" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="fr" x="40" y="146">début du contrat</text>
+  <text class="fr" x="760" y="146" text-anchor="end">CDI : aucune date de fin</text>
+
+  <!-- axe en mois : 0 à 8, échelle 38 -->
+  <text class="rowb" x="30" y="196">Catégorie</text>
+  <g stroke="#d5dde6" stroke-width="1.5">
+    <line x1="310" y1="206" x2="310" y2="376"/>
+    <line x1="386" y1="206" x2="386" y2="376"/>
+    <line x1="462" y1="206" x2="462" y2="376"/>
+    <line x1="538" y1="206" x2="538" y2="376"/>
+    <line x1="614" y1="206" x2="614" y2="376"/>
+  </g>
+  <text class="ax" x="310" y="196" text-anchor="middle">0</text>
+  <text class="ax" x="386" y="196" text-anchor="middle">2</text>
+  <text class="ax" x="462" y="196" text-anchor="middle">4</text>
+  <text class="ax" x="538" y="196" text-anchor="middle">6</text>
+  <text class="ax" x="614" y="196" text-anchor="middle">8 mois</text>
+
+  <!-- employés et ouvriers : 2 mois, renouvelée 4 -->
+  <text class="row" x="30" y="240">Employés et ouvriers</text>
+  <rect x="310" y="222" width="76" height="28" fill="#e8914a" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="386" y="222" width="76" height="28" fill="#fffdf8" stroke="#1b3a63" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="val" x="632" y="234">2 mois</text>
+  <text class="val2" x="632" y="252">4 si renouvelée</text>
+
+  <!-- techniciens : 3 mois, renouvelée 6 -->
+  <text class="row" x="30" y="300">Agents de maîtrise et techniciens</text>
+  <rect x="310" y="282" width="114" height="28" fill="#e8914a" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="424" y="282" width="114" height="28" fill="#fffdf8" stroke="#1b3a63" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="val" x="632" y="294">3 mois</text>
+  <text class="val2" x="632" y="312">6 si renouvelée</text>
+
+  <!-- cadres : 4 mois, renouvelée 8 -->
+  <text class="row" x="30" y="360">Cadres</text>
+  <rect x="310" y="342" width="152" height="28" fill="#e8914a" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="462" y="342" width="152" height="28" fill="#fffdf8" stroke="#1b3a63" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="val" x="632" y="354">4 mois</text>
+  <text class="val2" x="632" y="372">8 si renouvelée</text>
+
+  <!-- légende -->
+  <rect x="310" y="392" width="30" height="16" fill="#e8914a" stroke="#1b3a63" stroke-width="2"/>
+  <text class="fr" x="350" y="406">durée initiale</text>
+  <rect x="480" y="392" width="30" height="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="2" stroke-dasharray="4 3"/>
+  <text class="fr" x="520" y="406">renouvellement, une fois</text>
+
+  <!-- conditions -->
+  <rect x="30" y="428" width="740" height="98" rx="10" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="cd" x="50" y="458">Un renouvellement, une seule fois, à trois conditions</text>
+  <text class="cl" x="50" y="484">la convention collective le permet, la clause figure clairement au contrat,</text>
+  <text class="cl" x="50" y="508">le salarié donne son accord par écrit pendant la période initiale.</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t1" aria-describedby="d1" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t1">Qui dit quoi : le texte, la norme, la notice</title>
+  <desc id="d1">Trois bandes empilées, reliées par des flèches vers le bas. En haut, le texte réglementaire, arrêté ou Code du travail, qui dit quoi : les objectifs de sécurité. Au milieu, la norme NF C 15-100, qui dit comment : les solutions reconnues. En bas, la notice du constructeur, qui dit avec quel appareil : les valeurs de la machine. Une bande finale résume : le texte fixe le but, la norme et la notice montrent le chemin.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .b20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .o20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#a16207; }
+    .t17 { font-size:17px; fill:#10233c; }
+    .g16 { font-size:16px; fill:#5a6b7d; }
+  </style>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Qui dit quoi ?</text>
+
+  <!-- Bande 1 : le texte -->
+  <rect x="40" y="56" width="720" height="104" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="b20" x="66" y="98">Le texte réglementaire</text>
+  <text class="g16" x="66" y="126">arrêté ou Code du travail</text>
+  <text class="o20" x="470" y="98">dit QUOI</text>
+  <text class="t17" x="470" y="126">les objectifs de sécurité</text>
+
+  <!-- Flèche 1 -->
+  <line x1="400" y1="164" x2="400" y2="186" stroke="#5a6b7d" stroke-width="3"/>
+  <polygon points="390,184 410,184 400,196" fill="#5a6b7d"/>
+
+  <!-- Bande 2 : la norme -->
+  <rect x="40" y="198" width="720" height="104" rx="14" fill="#f4eadb" stroke="#a16207" stroke-width="3"/>
+  <text class="b20" x="66" y="240">La norme NF C 15-100</text>
+  <text class="g16" x="66" y="268">éditée et diffusée par l'AFNOR</text>
+  <text class="o20" x="470" y="240">dit COMMENT</text>
+  <text class="t17" x="470" y="268">les solutions reconnues</text>
+
+  <!-- Flèche 2 -->
+  <line x1="400" y1="306" x2="400" y2="328" stroke="#5a6b7d" stroke-width="3"/>
+  <polygon points="390,326 410,326 400,338" fill="#5a6b7d"/>
+
+  <!-- Bande 3 : la notice -->
+  <rect x="40" y="340" width="720" height="104" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="b20" x="66" y="382">La notice du constructeur</text>
+  <text class="g16" x="66" y="410">livrée avec l'appareil</text>
+  <text class="o20" x="470" y="382">dit AVEC QUEL APPAREIL</text>
+  <text class="t17" x="470" y="410">les valeurs de la machine</text>
+
+  <!-- Bande finale -->
+  <rect x="40" y="456" width="720" height="34" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="t17" x="400" y="479" text-anchor="middle" font-weight="bold">Le texte fixe le but ; la norme et la notice montrent le chemin.</text>
+</svg>

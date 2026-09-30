@@ -1,0 +1,48 @@
+{
+  "slug": "certif-marquage-ce",
+  "branche": "Certifications & normes",
+  "titre": "Mission : Un « CE » collé sur le carton, et pas de DoP",
+  "client": "Le responsable d'un bureau d'études CVC, qui prépare la consultation d'entreprises pour la rénovation des installations d'un bâtiment tertiaire.",
+  "situation": "L'entreprise de pose retenue propose, pour remplacer un produit prescrit, un équivalent moins cher. Il arrive sans notice, avec un « CE » collé sur le carton et sans déclaration des performances. Le conducteur de travaux affirme que « le CE, c'est la garantie européenne, donc c'est bon ». Vous devez dire, avant la réunion de chantier, ce que l'on peut accepter, ce que l'on doit demander et ce que l'on refuse.",
+  "piece_a_produire": "Une liste de vérification d'une page, en six lignes, à remplir pour ce produit : produit couvert ou non par une norme harmonisée, usage prévu, performances exigées déclarées ou NPD, fabricant et produit type identifiables, déclaration et notice fournies, autres textes applicables. Sous la liste, un courriel de trois phrases à l'entreprise : ce qui manque et ce que vous attendez avant d'accepter le produit.",
+  "questions": [
+    {
+      "q": "Dans quels cas un fabricant de produit de construction doit-il établir une déclaration des performances, et que pose-t-il ensuite sur le produit ?",
+      "ecran": 3,
+      "reponse": "Lorsque le produit est couvert par une norme harmonisée ou conforme à une évaluation technique européenne : le fabricant établit une déclaration des performances à la mise sur le marché, puis appose le marquage CE. Sans déclaration, le CE n'est pas apposé. Des dérogations existent (pièce sur mesure, produit fait sur le chantier, fabrication traditionnelle pour un ouvrage protégé) si aucun texte n'exige la déclaration."
+    },
+    {
+      "q": "Le CE apparaît sur une étiquette : quelle information vous permet de retrouver la déclaration des performances complète, et qui répond du produit ?",
+      "ecran": 5,
+      "reponse": "Le numéro de référence de la déclaration des performances, que l'étiquette porte avec le code du produit type ; le fabricant, dont le nom et l'adresse figurent aussi sur l'étiquette, répond du produit."
+    },
+    {
+      "q": "Un même groupe de climatisation peut-il relever de plusieurs textes européens portant chacun le CE ? Donnez deux exemples.",
+      "ecran": 6,
+      "reponse": "Oui : le CE engage le fabricant sur toutes les exigences applicables. Exemples : les équipements sous pression (directive 2014/68/UE), le matériel électrique (directive basse tension 2014/35/UE), les machines, l'écoconception. L'étiquette énergie est un autre dispositif : elle informe l'acheteur et n'est pas un marquage CE."
+    },
+    {
+      "q": "Un produit couvert par une norme harmonisée arrive sans CE ni déclaration des performances : que faites-vous, et pourquoi le distributeur n'aurait-il pas dû le livrer ?",
+      "ecran": 7,
+      "reponse": "On ne le prescrit pas et on ne l'accepte pas, on signale le manque et l'on demande le papier ou un autre produit. Le distributeur doit s'assurer que le produit porte le CE et qu'il est accompagné des documents requis avant de le mettre à disposition."
+    }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Vrai ou faux ? Justifiez chaque réponse en une phrase.",
+    "items": [
+      "Le marquage CE est un label de qualité délivré par un laboratoire.",
+      "Un CE collé sur un produit de construction couvert par une norme harmonisée suffit, même sans déclaration des performances.",
+      "NPD, dans une déclaration des performances, signifie que le produit a échoué à l'essai.",
+      "Un appareil de chauffage ou de climatisation peut relever de plusieurs textes qui prévoient chacun le CE."
+    ],
+    "corrige": "Faux : le CE est apposé par le fabricant, qui déclare la conformité et en assume la responsabilité (écran 1). Faux : le CE suppose qu'une déclaration des performances a été établie ; sans elle, le marquage est douteux et se signale (écrans 3 et 7). Faux : NPD veut dire performance non déterminée, le fabricant ne s'engage pas sur cette caractéristique (écran 4). Vrai : équipements sous pression, matériel électrique, machines, écoconception peuvent s'ajouter (écran 6)."
+  },
+  "badge": "Le CE décrypté",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP9", "CP10"],
+    "attestation_2025": [],
+    "justification": "CP9 et CP10 : le technicien d'études choisit et prescrit des appareils (groupes de climatisation, centrales de traitement d'air) à partir des données du constructeur ; le CE et la déclaration des performances disent ce que ces données engagent. Station hors périmètre de l'attestation d'aptitude 2025."
+  }
+}

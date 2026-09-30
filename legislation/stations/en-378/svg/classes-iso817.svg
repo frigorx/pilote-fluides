@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 530" role="img"
+     aria-labelledby="t-cl" aria-describedby="d-cl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cl">Les classes de sécurité des fluides : deux lettres, deux dangers</title>
+  <desc id="d-cl">Un tableau de deux lignes et quatre colonnes. Les lignes portent la toxicité : la lettre A pour une
+    toxicité faible, la lettre B pour une toxicité plus élevée. Les colonnes portent l'inflammabilité :
+    1 pour aucune propagation de flamme, 2L pour faiblement inflammable, 2 pour inflammable, 3 pour très
+    inflammable, avec de zéro à trois petites flammes. Chaque case est une classe avec des exemples :
+    A1 avec le R134a, le R410A et le R744 ; A2L avec le R32 et le R1234yf ; A2 avec le R152a ; A3 avec le R290,
+    le propane, et le R600a ; B1 avec le R123 ; B2L avec le R717, l'ammoniac. Les cases B2 et B3 n'ont pas
+    d'exemple courant. Une flèche en bas indique que l'inflammabilité augmente vers la droite. Une bande
+    résume : la lettre dit la toxicité, le chiffre dit l'inflammabilité. L'animation fait apparaître les
+    colonnes de gauche à droite ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:28px; fill:#10233c; }
+    .rl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:34px; fill:#1b3a63; }
+    .cls { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .flu { font-size:18px; fill:#10233c; }
+    .vide{ font-size:16px; fill:#5a6b7d; font-style:italic; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+  </style>
+  <defs>
+    <path id="fl" d="M8,0 C9,7 16,10 16,17 C16,22 12,26 8,26 C4,26 0,22 0,17 C0,12 4,10 5,4 C6,7 7,8 8,0 Z"/>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+  </defs>
+
+  <text class="ttl" x="450" y="32" text-anchor="middle">Une classe = une lettre + un chiffre</text>
+  <rect x="20" y="170" width="177" height="110" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="rl" x="40" y="232">A</text>
+  <text class="lbl" x="82" y="222">toxicité</text>
+  <text class="lbl" x="82" y="244">faible</text>
+  <rect x="20" y="288" width="177" height="110" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="rl" x="40" y="350">B</text>
+  <text class="lbl" x="82" y="340">toxicité</text>
+  <text class="lbl" x="82" y="362">plus élevée</text>
+  <g>
+    <rect x="205" y="48" width="163" height="112" rx="12" fill="#e2ede7" stroke="#0f766e" stroke-width="2"/>
+    <text class="num" x="286.5" y="112" text-anchor="middle">1</text>
+    <text class="lbl" x="286.5" y="132" text-anchor="middle" font-size="16">pas de propagation</text>
+    <text class="lbl" x="286.5" y="152" text-anchor="middle" font-size="16">de flamme</text>
+    <rect x="205" y="170" width="163" height="110" rx="12" fill="#e2ede7" stroke="#0f766e" stroke-width="2"/>
+    <text class="cls" x="219" y="202">A1</text>
+    <text class="flu" x="219" y="224">R134a</text>
+    <text class="flu" x="219" y="245">R410A</text>
+    <text class="flu" x="219" y="266">R744 (CO₂)</text>
+    <rect x="205" y="288" width="163" height="110" rx="12" fill="#e2ede7" stroke="#0f766e" stroke-width="2"/>
+    <text class="cls" x="219" y="320">B1</text>
+    <text class="flu" x="219" y="342">R123</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.12;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="373" y="48" width="163" height="112" rx="12" fill="#fdf3e3" stroke="#e8914a" stroke-width="3"/>
+    <use href="#fl" x="446.5" y="56" fill="#e8914a"/>
+    <text class="num" x="454.5" y="112" text-anchor="middle">2L</text>
+    <text class="lbl" x="454.5" y="132" text-anchor="middle" font-size="16">faiblement</text>
+    <text class="lbl" x="454.5" y="152" text-anchor="middle" font-size="16">inflammable</text>
+    <rect x="373" y="170" width="163" height="110" rx="12" fill="#fdf3e3" stroke="#e8914a" stroke-width="3"/>
+    <text class="cls" x="387" y="202">A2L</text>
+    <text class="flu" x="387" y="224">R32</text>
+    <text class="flu" x="387" y="245">R1234yf</text>
+    <rect x="373" y="288" width="163" height="110" rx="12" fill="#fdf3e3" stroke="#e8914a" stroke-width="3"/>
+    <text class="cls" x="387" y="320">B2L</text>
+    <text class="flu" x="387" y="342">R717 (NH₃)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.22;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="541" y="48" width="163" height="112" rx="12" fill="#fbe3c8" stroke="#e8914a" stroke-width="4"/>
+    <use href="#fl" x="603.5" y="56" fill="#e8914a"/>
+    <use href="#fl" x="625.5" y="56" fill="#e8914a"/>
+    <text class="num" x="622.5" y="112" text-anchor="middle">2</text>
+    <text class="lbl" x="622.5" y="132" text-anchor="middle" font-size="16">inflammable</text>
+    <rect x="541" y="170" width="163" height="110" rx="12" fill="#fbe3c8" stroke="#e8914a" stroke-width="4"/>
+    <text class="cls" x="555" y="202">A2</text>
+    <text class="flu" x="555" y="224">R152a</text>
+    <rect x="541" y="288" width="163" height="110" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 5"/>
+    <text class="cls" x="555" y="320">B2</text>
+    <text class="vide" x="555" y="350">pas d'exemple</text>
+    <text class="vide" x="555" y="372">courant</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.26;0.32;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="709" y="48" width="163" height="112" rx="12" fill="#f6cdb8" stroke="#c0392b" stroke-width="5"/>
+    <use href="#fl" x="760.5" y="56" fill="#c0392b"/>
+    <use href="#fl" x="782.5" y="56" fill="#c0392b"/>
+    <use href="#fl" x="804.5" y="56" fill="#c0392b"/>
+    <text class="num" x="790.5" y="112" text-anchor="middle">3</text>
+    <text class="lbl" x="790.5" y="132" text-anchor="middle" font-size="16">très</text>
+    <text class="lbl" x="790.5" y="152" text-anchor="middle" font-size="16">inflammable</text>
+    <rect x="709" y="170" width="163" height="110" rx="12" fill="#f6cdb8" stroke="#c0392b" stroke-width="5"/>
+    <text class="cls" x="723" y="202">A3</text>
+    <text class="flu" x="723" y="224">R290 (propane)</text>
+    <text class="flu" x="723" y="245">R600a</text>
+    <rect x="709" y="288" width="163" height="110" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 5"/>
+    <text class="cls" x="723" y="320">B3</text>
+    <text class="vide" x="723" y="350">pas d'exemple</text>
+    <text class="vide" x="723" y="372">courant</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.42;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <line x1="215" y1="428" x2="852" y2="428" stroke="#c0392b" stroke-width="5" stroke-dasharray="640">
+    <animate attributeName="stroke-dashoffset" values="640;640;0;0" keyTimes="0;0.46;0.60;1" dur="13s" repeatCount="indefinite"/>
+  </line>
+  <polygon points="846,414 874,428 846,442" fill="#c0392b"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.58;0.62;1" dur="13s" repeatCount="indefinite"/></polygon>
+  <g>
+    <text class="lbl" x="537" y="458" text-anchor="middle" font-size="18" font-weight="bold">l'inflammabilité augmente vers la droite</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.58;0.66;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <rect x="20" y="476" width="860" height="46" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="506" text-anchor="middle">La lettre dit la toxicité, le chiffre dit l'inflammabilité.</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="t-rd" aria-describedby="d-rd" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rd">Règlement et directive : deux chemins vers l'entreprise</title>
+  <desc id="d-rd">Deux couloirs superposés. En haut, le règlement, par exemple F-Gaz 3, règlement (UE) 2024/573 : une flèche relie directement l'Union européenne à l'entreprise française, le règlement s'applique tel quel. En bas, la directive, par exemple la directive équipements sous pression 2014/68/UE : l'Union européenne transmet à l'État, qui la transpose en droit français par une loi, un décret ou un arrêté, et c'est ce texte français que l'entreprise applique. Une bande résume : le règlement oblige directement l'entreprise, la directive oblige d'abord l'État. À l'animation, la flèche du haut se trace, puis les trois étapes du bas s'allument ; l'image fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#3730a3; }
+    .hb   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .wht  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <g><text class="hb" x="20" y="34" text-anchor="start">Règlement : par exemple F-Gaz 3, règlement (UE) 2024/573</text></g>
+  <g><rect x="20" y="50" width="210" height="70" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="125" y="92" text-anchor="middle">Union européenne</text></g>
+  <g><rect x="670" y="50" width="210" height="70" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="775" y="92" text-anchor="middle">Entreprise</text></g>
+  <g>
+    <line x1="232" y1="85" x2="655" y2="85" stroke="#1b3a63" stroke-width="4" stroke-dasharray="423" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="423;423;0;0" keyTimes="0;0.06;0.22;1" dur="12s" repeatCount="indefinite"/>
+    </line>
+    <polygon points="668,85 646,74 646,96" fill="#1b3a63"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="lbl" x="450" y="74" text-anchor="middle">s'applique tel quel : pas de transposition</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.12;0.20;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="hb" x="20" y="176" text-anchor="start">Directive : par exemple la directive équipements sous pression, 2014/68/UE</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="20" y="192" width="210" height="70" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="125" y="234" text-anchor="middle">Union européenne</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="232" y1="227" x2="308" y2="227" stroke="#1b3a63" stroke-width="4"/><polygon points="322,227 300,216 300,238" fill="#1b3a63"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.40;0.44;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="340" y="192" width="220" height="70" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="450" y="220" text-anchor="middle">État : transposition</text><text class="lbl" x="450" y="246" text-anchor="middle">loi, décret, arrêté</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.50;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="562" y1="227" x2="640" y2="227" stroke="#1b3a63" stroke-width="4"/><polygon points="654,227 632,216 632,238" fill="#1b3a63"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.59;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="670" y="192" width="210" height="70" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="775" y="234" text-anchor="middle">Entreprise</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.59;0.65;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="20" y="300" width="860" height="108" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text class="band" x="450" y="334" text-anchor="middle">Le règlement oblige directement l'entreprise.</text><text class="band" x="450" y="364" text-anchor="middle">La directive oblige d'abord l'État, qui écrit le texte français.</text><text class="band" x="450" y="392" text-anchor="middle">C'est ce texte que l'entreprise applique.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.72;0.80;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

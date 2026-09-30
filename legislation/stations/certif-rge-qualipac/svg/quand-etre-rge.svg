@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-qe" aria-describedby="d-qe" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-qe">À quel moment faut-il être RGE ?</title>
+  <desc id="d-qe">Deux repères verticaux en pointillé : la signature du devis à gauche, la réalisation des
+    travaux à droite. Trois aides, une ligne chacune. Éco-prêt à taux zéro : un repère sur la signature du
+    devis. Certificats d'économies d'énergie : un repère à l'engagement de l'opération, le plus souvent la
+    signature du devis. MaPrimeRénov' : deux repères, la signature du devis et la réalisation des travaux.
+    En bas, une bande rappelle que « RGE en cours de qualification » ne compte pas : il faut le certificat
+    portant le logo RGE. L'animation fait apparaître les repères un à un ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .rep { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#3730a3; }
+    .aide{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .gris{ font-size:16px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="32" text-anchor="middle">Le moment où l'on exige le RGE change selon l'aide</text>
+
+  <!-- Repères verticaux -->
+  <text class="rep" x="400" y="76" text-anchor="middle">Signature du devis</text>
+  <text class="rep" x="740" y="76" text-anchor="middle">Réalisation des travaux</text>
+  <line x1="400" y1="92" x2="400" y2="296" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 6"/>
+  <line x1="740" y1="92" x2="740" y2="296" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 6"/>
+  <line x1="60" y1="296" x2="850" y2="296" stroke="#1b3a63" stroke-width="3"/>
+  <polygon points="850,288 866,296 850,304" fill="#1b3a63"/>
+  <text class="gris" x="60" y="322" text-anchor="start">le temps</text>
+
+  <!-- Éco-PTZ -->
+  <text class="aide" x="20" y="146">Éco-prêt à taux zéro</text>
+  <g>
+    <circle cx="400" cy="140" r="13" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+    <text class="lbl" x="424" y="146">formulaire signé avec le devis</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.10;0.20;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- CEE -->
+  <text class="aide" x="20" y="206">Certificats d'économies</text>
+  <text class="aide" x="20" y="228">d'énergie (CEE)</text>
+  <g>
+    <circle cx="400" cy="212" r="13" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+    <text class="lbl" x="424" y="218">engagement de l'opération,</text>
+    <text class="lbl" x="424" y="240">le plus souvent le devis</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.34;0.44;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- MaPrimeRénov' -->
+  <text class="aide" x="20" y="276">MaPrimeRénov'</text>
+  <g>
+    <circle cx="400" cy="270" r="13" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.66;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="740" cy="270" r="13" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.70;0.80;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bande -->
+  <rect x="20" y="338" width="860" height="48" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="368" text-anchor="middle">« RGE en cours de qualification » ne compte pas : il faut le certificat RGE</text>
+</svg>

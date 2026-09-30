@@ -1,0 +1,45 @@
+{
+  "slug": "acoustique-mesurer",
+  "branche": "Acoustique",
+  "titre": "Mission : Le voisin se plaint, qu'allez-vous mesurer ?",
+  "client": "Le gérant d'un commerce de proximité dont l'unité extérieure de climatisation fait l'objet d'une plainte d'un habitant voisin.",
+  "situation": "Un habitant de l'immeuble voisin écrit au gérant : le groupe extérieur de la climatisation le gêne le soir. Le gérant conteste et propose de « faire venir quelqu'un avec un appareil ». Votre responsable veut une mesure que l'on pourra défendre devant un tiers : ni un chiffre relevé au hasard, ni un appareil non contrôlé. Avant d'envoyer un technicien sur place, elle vous demande le protocole qu'il devra suivre.",
+  "piece_a_produire": "Une fiche de protocole d'une page pour le technicien : le matériel et son contrôle (classe, réglages, étalonnage avant et après), les points et les conditions de mesure (où, quand, météo, durée), les deux relevés dans l'ordre (ambiant machine en marche, résiduel machine arrêtée) et la liste de ce que le rapport devra contenir.",
+  "questions": [
+    {
+      "q": "Quelle différence fait-on pour obtenir l'émergence, et pourquoi ne peut-on pas se contenter de mesurer la machine ?",
+      "ecran": 5,
+      "reponse": "L'émergence est l'écart entre le bruit ambiant (machine en marche, avec tous les bruits habituels) et le bruit résiduel (machine arrêtée). Le niveau ambiant n'est pas la somme de deux niveaux : les énergies s'additionnent, pas les décibels, donc le résiduel doit être mesuré et non deviné."
+    },
+    {
+      "q": "À quels moments contrôle-t-on le sonomètre avec le calibreur, et que fait-on de l'écart constaté ?",
+      "ecran": 4,
+      "reponse": "Avant la série et après la série, avec le même calibreur sur le même microphone. On note les deux résultats et l'écart : s'il reste dans la tolérance de la notice et de la méthode, la série est utilisable ; sinon elle est à refaire."
+    },
+    {
+      "q": "Où place-t-on le sonomètre, et que doit-on noter sur les conditions de la mesure ?",
+      "ecran": 6,
+      "reponse": "Là où le bruit est perçu (pièce principale du logement du plaignant, ou extérieur selon le cas), pas au ras de la machine. On note l'heure (les limites diffèrent le jour et la nuit), la météo (vent, pluie) et la durée ; si la météo sort du cadre de la méthode, on reporte."
+    },
+    {
+      "q": "Citez les trois erreurs de débutant de cette station et la parade de chacune.",
+      "ecran": 8,
+      "reponse": "Mesurer trop près : mesurer là où le bruit est perçu. Oublier le résiduel : toujours deux relevés dans les mêmes conditions. Vent sur le micro : protéger le micro, noter la météo et reporter si elle sort du cadre."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Un technicien arrive sur place. Il pose son sonomètre contre l'unité extérieure, lance un relevé machine en marche un jour de grand vent, sans avoir posé le calibreur, puis note ce seul niveau dans son rapport comme « l'émergence du groupe ». Relevez, en 5 minutes, toutes les erreurs de protocole que vous voyez et proposez pour chacune la correction.",
+    "items": [
+      "Le sonomètre est placé contre l'unité extérieure.",
+      "Le relevé est fait un jour de grand vent.",
+      "Le calibreur n'est posé ni avant ni après.",
+      "Un seul niveau est relevé, machine en marche.",
+      "Ce niveau est présenté comme « l'émergence »."
+    ],
+    "corrige": "Placer le sonomètre là où le bruit est perçu, chez le plaignant (écran 6). Vérifier la météo et reporter si elle sort du cadre de la méthode (écrans 6 et 8). Étalonner avant et après la série et noter l'écart (écran 4). Relever aussi le bruit résiduel, machine arrêtée, au même point et dans les mêmes conditions (écran 5). Calculer l'émergence comme l'écart ambiant moins résiduel : un niveau seul n'est pas une émergence (écran 5)."
+  },
+  "badge": "Oreille fine",
+  "duree_min": 25,
+  "referentiel": { "tecvc": ["CP9", "CP7"], "attestation_2025": [], "justification": "CP9 (climatisation) et CP7 (ventilation tertiaire) : le technicien d'études qui dimensionne une installation doit pouvoir vérifier, mesure à l'appui, qu'elle respecte ses contraintes acoustiques. Hors périmètre de l'attestation d'aptitude 2025 (station non fluidique)." }
+}

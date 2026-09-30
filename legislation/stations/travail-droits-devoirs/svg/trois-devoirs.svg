@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" role="img"
+     aria-labelledby="t-dev" aria-describedby="d-dev" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dev">Les trois devoirs du salarié</title>
+  <desc id="d-dev">Trois cartes numérotées : exécuter le travail selon les instructions de l'employeur ; agir de bonne foi ; prendre soin de sa santé et de sa sécurité et de celles des autres personnes concernées par ses actes ou ses omissions. En bas à gauche, deux cercles concentriques : « moi » au centre, « les autres » autour. En bas, une bande dit que ces devoirs ne dégagent pas la responsabilité de l'employeur.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .ha   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#9d174d; }
+    .b    { font-size:17px; fill:#10233c; }
+    .bb   { font-size:17px; font-weight:bold; fill:#10233c; }
+    .ba   { font-size:17px; font-weight:bold; fill:#9d174d; }
+    .bo   { font-size:17px; font-weight:bold; fill:#b45309; }
+    .g    { font-size:16px; fill:#5a6b7d; }
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <rect x="20" y="20" width="260" height="168" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <circle cx="50" cy="52" r="17" fill="#9d174d"/><text class="num" x="50" y="58" text-anchor="middle">1</text>
+  <text class="ha" x="78" y="58">Exécuter</text>
+  <text class="b" x="40" y="108">le travail demandé,</text>
+    <text class="b" x="40" y="134">selon les instructions</text>
+    <text class="b" x="40" y="160">de l'employeur</text>
+  <rect x="300" y="20" width="260" height="168" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <circle cx="330" cy="52" r="17" fill="#9d174d"/><text class="num" x="330" y="58" text-anchor="middle">2</text>
+  <text class="ha" x="358" y="58">Agir de bonne foi</text>
+  <text class="b" x="320" y="108">le contrat de travail</text>
+    <text class="b" x="320" y="134">est exécuté de</text>
+    <text class="b" x="320" y="160">bonne foi (L. 1222-1)</text>
+  <rect x="580" y="20" width="260" height="168" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <circle cx="610" cy="52" r="17" fill="#9d174d"/><text class="num" x="610" y="58" text-anchor="middle">3</text>
+  <text class="ha" x="638" y="58">Prendre soin</text>
+  <text class="b" x="600" y="108">de sa santé et de sa</text>
+    <text class="b" x="600" y="134">sécurité, et de celles</text>
+    <text class="b" x="600" y="160">des autres (L. 4122-1)</text>
+  <circle cx="140" cy="306" r="90" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="140" cy="306" r="42" fill="#f3e1e3" stroke="#9d174d" stroke-width="3"/>
+  <text class="bb" x="140" y="313" text-anchor="middle" style="fill:#9d174d">Moi</text>
+  <text class="bb" x="140" y="380" text-anchor="middle" style="fill:#1b3a63">Les autres</text>
+  <circle cx="280" cy="276" r="9" fill="#f3e1e3" stroke="#9d174d" stroke-width="3"/>
+  <text class="b" x="302" y="282">ma santé et ma sécurité</text>
+  <circle cx="280" cy="332" r="9" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="b" x="302" y="330">les autres personnes concernées</text>
+    <text class="b" x="302" y="354">par mes actes ou mes omissions</text>
+  <rect x="20" y="408" width="820" height="62" rx="14" fill="#fff4e0" stroke="#e8914a" stroke-width="3"/>
+  <text class="bb" x="430" y="435" text-anchor="middle">Ces devoirs ne dégagent pas la responsabilité de l'employeur</text>
+  <text class="g" x="430" y="458" text-anchor="middle">(L. 4122-1, dernier alinéa)</text>
+</svg>

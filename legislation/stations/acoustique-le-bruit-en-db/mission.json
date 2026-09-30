@@ -1,0 +1,48 @@
+{
+  "slug": "acoustique-le-bruit-en-db",
+  "branche": "Acoustique",
+  "titre": "Mission : Deux fiches, deux façons de dire « silencieux »",
+  "client": "Le gérant d'une boulangerie de quartier qui veut installer un groupe extérieur de climatisation à proximité d'un jardin voisin et demande « lequel est le plus silencieux ».",
+  "situation": "Deux fabricants proposent chacun un groupe extérieur. La fiche du premier annonce un niveau de puissance acoustique Lw en dB(A). La fiche du second annonce un niveau de pression acoustique Lp en dB(A), sans dire à quelle distance il a été relevé. Le gérant a compris « le plus petit chiffre gagne » et voudrait poser le groupe dans l'angle formé par deux murs, à côté de la clôture du voisin. Votre responsable vous demande de préparer ce qu'il faut lui répondre avant de commander.",
+  "piece_a_produire": "Une note d'une page au gérant : un petit tableau à trois colonnes (fiche 1, fiche 2, ce qui manque pour les comparer) et trois phrases. Première phrase : ce que dit un Lw et ce que dit un Lp. Deuxième : ce que fait la distance. Troisième : ce que change un angle de murs. Terminez par la question à poser au fabricant.",
+  "questions": [
+    {
+      "q": "Quelle grandeur varie dans un son, et comment s'appelle le nombre de variations par seconde ? Quelle plage l'oreille humaine entend-elle ?",
+      "ecran": 2,
+      "reponse": "C'est la pression de l'air qui varie ; le nombre de variations par seconde est la fréquence, en hertz. L'oreille humaine entend de 20 à 20 000 Hz ; la parole occupe 100 à 6 000 Hz."
+    },
+    {
+      "q": "Pourquoi le décibel est-il une échelle logarithmique, et que valent + 3 dB et + 10 dB en termes d'énergie sonore ?",
+      "ecran": 3,
+      "reponse": "Le décibel compare une quantité à une référence par un logarithme, ce qui range des bruits très différents sur une même règle. + 3 dB correspond à deux fois plus d'énergie sonore ; + 10 dB à dix fois plus."
+    },
+    {
+      "q": "Que mesure le dB(A) par rapport au dB, et que donne le Lw par rapport au Lp ?",
+      "ecran": 5,
+      "reponse": "Le dB(A) corrige la mesure pour rendre compte du niveau perçu par l'oreille, qui entend moins les graves. Le Lw est ce que la machine émet, indépendamment du lieu, et sert à comparer les appareils ; le Lp est ce que l'on mesure à un endroit, et dépend de la distance et du lieu."
+    },
+    {
+      "q": "Deux machines identiques de 80 dB(A) fonctionnent ensemble : quel niveau obtient-on, et que se passe-t-il si on en arrête une ?",
+      "ecran": 6,
+      "reponse": "On obtient 83 dB(A), soit 3 dB(A) de plus seulement, car ce sont les énergies qui s'additionnent. En arrêter une ne baisse le niveau que de 3 dB(A)."
+    }
+  ],
+  "defi": {
+    "type": "calcul",
+    "consigne": "Un groupe extérieur donne 54 dB(A) à 2 m en champ libre. Sans calculatrice, complétez : (a) le niveau à 4 m et à 8 m, en champ libre ; (b) le niveau à 2 m si le groupe est posé contre un mur ; (c) le niveau à 2 m si le groupe est posé dans un coin ; (d) le niveau à 2 m de deux groupes identiques posés côte à côte en champ libre.",
+    "items": [
+      "(a) 4 m et 8 m en champ libre",
+      "(b) 2 m, contre un mur",
+      "(c) 2 m, dans un coin",
+      "(d) 2 m, deux groupes identiques en champ libre"
+    ],
+    "corrige": "(a) 48 dB(A) à 4 m et 42 dB(A) à 8 m : 6 dB(A) de moins à chaque doublement de la distance (écran 7). (b) 57 dB(A) : + 3 dB(A) contre un mur (écran 7). (c) 60 dB(A) : + 6 dB(A) dans un coin (écran 7). (d) 57 dB(A) : deux sources identiques ajoutent 3 dB(A) seulement (écran 6). Le réflexe : le coin annule l'effet d'un doublement de distance."
+  },
+  "badge": "Oreille fine",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP9", "CP7"],
+    "attestation_2025": [],
+    "justification": "CP9 (climatisation) : choisir un groupe extérieur sur sa puissance acoustique Lw et juger de son effet à l'implantation ; CP7 (ventilation tertiaire) : les ventilateurs, réseaux et bouches produisent un bruit dans les locaux."
+  }
+}

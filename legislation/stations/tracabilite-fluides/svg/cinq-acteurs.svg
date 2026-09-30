@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-acteurs" aria-describedby="d-acteurs" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-acteurs">Les cinq acteurs de la chaîne</title>
+  <desc id="d-acteurs">Cinq lignes empilées, chacune avec un pictogramme, un nom et une phrase : le détenteur, qui contrôle le fonctionnement de l'équipement et produit le déchet ; l'opérateur, l'entreprise qui intervient et émet le bordereau quand il collecte ; le transporteur, qui emporte les bouteilles ; le distributeur, qui reprend les fluides usagés et regroupe les bouteilles ; l'installation de traitement, qui reçoit, accepte ou refuse, puis régénère ou détruit. Dans l'animation, les lignes apparaissent une à une.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomt{ font-weight:bold; font-size:18px; fill:#0f766e; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <g>
+    <rect x="30" y="22" width="740" height="84" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="86" cy="64" r="30" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="71" y="42" width="30" height="42" stroke="#1b3a63" stroke-width="2.5" fill="#eef3f9" stroke-linejoin="round"/><path d="M78,52 h4 M90,52 h4 M78,62 h4 M90,62 h4 M78,72 h4 M90,72 h4" stroke="#1b3a63" stroke-width="3"/>
+    <text class="nom" x="140" y="58" text-anchor="start">Détenteur</text>
+    <text class="txt" x="140" y="86" text-anchor="start">contrôle le fonctionnement de l'équipement, produit le déchet</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.03;0.09;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="30" y="117" width="740" height="84" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="86" cy="159" r="30" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="66" y="153" width="40" height="24" rx="4" stroke="#1b3a63" stroke-width="2.5" fill="#eef3f9" stroke-linejoin="round"/><path d="M77,153 v-7 a3,3 0 0 1 3,-3 h12 a3,3 0 0 1 3,3 v7" fill="none" stroke="#1b3a63" stroke-width="2.5"/><path d="M66,164 h40" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="nom" x="140" y="153" text-anchor="start">Opérateur</text>
+    <text class="txt" x="140" y="181" text-anchor="start">l'entreprise qui intervient ; émet le bordereau s'il collecte</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.12;0.18;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="30" y="212" width="740" height="84" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="86" cy="254" r="30" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+    <g transform="translate(86 254) scale(.82) translate(-86 -254)"><rect x="61" y="240" width="30" height="24" stroke="#1b3a63" stroke-width="2.5" fill="#eef3f9" stroke-linejoin="round"/><path d="M91,248 h12 l8,9 v7 h-20 z" stroke="#1b3a63" stroke-width="2.5" fill="#eef3f9" stroke-linejoin="round"/><circle cx="73" cy="267" r="5" fill="#1b3a63"/><circle cx="101" cy="267" r="5" fill="#1b3a63"/></g>
+    <text class="nom" x="140" y="248" text-anchor="start">Transporteur</text>
+    <text class="txt" x="140" y="276" text-anchor="start">emporte les bouteilles et confirme ce qu'il a pris en charge</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.21;0.27;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="30" y="307" width="740" height="84" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="86" cy="349" r="30" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+    <path d="M62,365 V345 L86,329 L110,345 V365 Z" stroke="#1b3a63" stroke-width="2.5" fill="#eef3f9" stroke-linejoin="round"/><rect x="79" y="350" width="14" height="15" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="nom" x="140" y="343" text-anchor="start">Distributeur</text>
+    <text class="txt" x="140" y="371" text-anchor="start">reprend les fluides usagés, regroupe les bouteilles</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30000000000000004;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="30" y="402" width="740" height="84" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="86" cy="444" r="30" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="63" y="441" width="46" height="20" stroke="#1b3a63" stroke-width="2.5" fill="#eef3f9" stroke-linejoin="round"/><rect x="92" y="422" width="11" height="19" stroke="#1b3a63" stroke-width="2.5" fill="#eef3f9" stroke-linejoin="round"/><path d="M63,441 l12,-9 v9 l12,-9 v9" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round"/>
+    <text class="nom" x="140" y="438" text-anchor="start">Installation de traitement</text>
+    <text class="txt" x="140" y="466" text-anchor="start">reçoit, accepte ou refuse, puis régénère ou détruit</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.39;0.44999999999999996;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

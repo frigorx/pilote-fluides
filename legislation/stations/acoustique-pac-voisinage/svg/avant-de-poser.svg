@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-av" aria-describedby="d-av" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-av">Six vérifications avant de poser l'unité extérieure</title>
+  <desc id="d-av">Une liste de six cases à cocher : relever la puissance acoustique Lw ; choisir l'emplacement en évitant l'angle, la cour, la limite de propriété et le dessous d'une fenêtre ; calculer le niveau chez le voisin ; isoler les vibrations ; vérifier l'urbanisme en mairie ; en copropriété, obtenir le vote de l'assemblée, et prévenir le voisin.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:22px; fill:#10233c; }
+    .t    { font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .d    { font-size:17px; fill:#10233c; }
+    .n    { font-weight:bold; font-size:20px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="400" y="30" text-anchor="middle">Avant de poser : six vérifications</text>
+
+  <g id="r1">
+    <rect x="30" y="52" width="740" height="66" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <circle cx="66" cy="85" r="18" fill="#6d28d9"/><text class="n" x="66" y="92" text-anchor="middle">1</text>
+    <text class="t" x="100" y="80">Relever Lw</text>
+    <text class="d" x="100" y="104">Puissance acoustique de la fiche ou de l'étiquette énergie, dans le bon mode.</text>
+  </g>
+  <g id="r2">
+    <rect x="30" y="128" width="740" height="66" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+    <circle cx="66" cy="161" r="18" fill="#6d28d9"/><text class="n" x="66" y="168" text-anchor="middle">2</text>
+    <text class="t" x="100" y="156">Choisir l'emplacement</text>
+    <text class="d" x="100" y="180">Éviter l'angle, la cour, la limite de propriété et le dessous d'une fenêtre.</text>
+  </g>
+  <g id="r3">
+    <rect x="30" y="204" width="740" height="66" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <circle cx="66" cy="237" r="18" fill="#6d28d9"/><text class="n" x="66" y="244" text-anchor="middle">3</text>
+    <text class="t" x="100" y="232">Calculer chez le voisin</text>
+    <text class="d" x="100" y="256">Niveau à sa fenêtre, puis émergence de nuit ; un acousticien si le doute demeure.</text>
+  </g>
+  <g id="r4">
+    <rect x="30" y="280" width="740" height="66" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+    <circle cx="66" cy="313" r="18" fill="#6d28d9"/><text class="n" x="66" y="320" text-anchor="middle">4</text>
+    <text class="t" x="100" y="308">Isoler les vibrations</text>
+    <text class="d" x="100" y="332">Socle d'inertie, plots antivibratiles, liaisons souples ; écran ou capotage si besoin.</text>
+  </g>
+  <g id="r5">
+    <rect x="30" y="356" width="740" height="66" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <circle cx="66" cy="389" r="18" fill="#6d28d9"/><text class="n" x="66" y="396" text-anchor="middle">5</text>
+    <text class="t" x="100" y="384">Vérifier l'urbanisme</text>
+    <text class="d" x="100" y="408">Mairie et PLU ; façade non visible : dispense depuis mars 2026, sauf zone protégée.</text>
+  </g>
+  <g id="r6">
+    <rect x="30" y="432" width="740" height="60" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+    <circle cx="66" cy="462" r="18" fill="#6d28d9"/><text class="n" x="66" y="469" text-anchor="middle">6</text>
+    <text class="t" x="100" y="456">Copropriété et voisin</text>
+    <text class="d" x="100" y="480">Vote de l'assemblée (article 25 b) ; prévenir le voisin avant, garder les documents.</text>
+  </g>
+</svg>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Euroclasses — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : réaction au feu (A1 à F, fumée, gouttelettes) et résistance au feu (R, E, I en minutes), deux questions différentes, ce que cela change pour un isolant de gaine, un fourreau ou un calfeutrement de traversée.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/incendie-euroclasses/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Incendie.
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les MP3 de cette station ne sont pas encore fabriqués : elle parle
+     avec la voix du navigateur (filet) jusqu'à la fabrication edge-tts.
+
+     SOURCES : FOND.md. Texte de la résistance au feu : arrêté du
+     22 mars 2026 (abroge celui du 22 mars 2004 relatif à la résistance au feu, et
+     non celui du 22 mars 2004 sur le désenfumage/IT 246), lu sur Légifrance le
+     30/09/2026. Aucune valeur non sourcée : voir « À sourcer » dans FOND.md.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Incendie · niveau BTS</p>
+  <h1>Euroclasses — réaction et résistance au feu</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-incendie.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez distinguer la <strong>réaction au feu</strong> (le produit alimente-t-il le feu ?) de la <strong>résistance au feu</strong> (l'ouvrage tient-il ?), lire un classement — A1 à F avec s et d, ou R, E, I avec des minutes —, dire ce que cela change pour l'isolant d'une gaine, un fourreau ou le calfeutrement d'une traversée, et vous savez que le texte de référence de la résistance au feu a changé : l'<strong>arrêté du 22 mars 2026</strong>.</p>
+    <p><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — compétences <strong>CP7</strong> (ventilation tertiaire : gaines, isolants) et <strong>CP1</strong> (plans d'implantation : repérage des traversées de parois). Le classement au feu lui-même relève de la culture professionnelle du technicien et du chargé d'affaires.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Devant un matériau ou devant un mur, le feu pose deux questions à ne jamais confondre. À gauche, la réaction au feu : le matériau alimente-t-il le feu ? La réponse est une classe, de A1 à F, fixée par l'arrêté du 21 novembre 2002. À droite, la résistance au feu : l'ouvrage tient-il ? Ce sont des lettres et des minutes, et le texte de référence vient de changer : l'arrêté du vingt-deux mars deux mille vingt-six remplace celui de deux mille quatre sur la résistance, pas celui de la même date sur le désenfumage. Une bonne classe de réaction ne dit rien de la tenue d'un mur.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux questions, deux textes</h2>
+    <p>La <strong>réaction au feu</strong> décrit le comportement d'un <strong>produit</strong> : contribue-t-il au feu et à la fumée ? Elle se classe de <strong>A1 à F</strong> (arrêté du 21 novembre 2002 relatif à la réaction au feu des produits de construction et d'aménagement).</p>
+    <p>La <strong>résistance au feu</strong> décrit la tenue d'un <strong>élément de construction ou d'un ouvrage</strong> exposé au feu : porte-t-il, reste-t-il étanche, isole-t-il ? Elle s'exprime avec les lettres <strong>R, E, I</strong> et une <strong>durée en minutes</strong>.</p>
+    <p><strong>Le texte a changé.</strong> L'arrêté du 22 mars 2004 relatif à la résistance au feu des produits, éléments de construction et d'ouvrages est abrogé depuis le 27 mars 2026 : c'est l'arrêté du 22 mars 2026, de même intitulé, qui fixe désormais les méthodes d'évaluation, applicable aux demandes d'autorisation de travaux et d'urbanisme déposées <strong>à compter du 1er octobre 2026</strong>.</p>
+    <p><strong>Ne le confondez pas</strong> avec l'arrêté du 22 mars 2004 portant approbation de l'instruction technique 246 (désenfumage dans les ERP) : celui-là n'est pas abrogé, il reste en vigueur (station « Le désenfumage »).</p>
+    <figure>
+      <img src="svg/deux-questions.svg" alt="Deux panneaux côte à côte. À gauche, la réaction au feu : un morceau de matériau surmonté d'une flamme, la question est de savoir si le matériau alimente le feu, la réponse est une classe de A1 à F, fixée par l'arrêté du 21 novembre 2002. À droite, la résistance au feu : un mur exposé à une flamme et un chronomètre, la question est de savoir si l'ouvrage tient, la réponse s'exprime avec les lettres R, E et I et une durée, selon l'arrêté du 22 mars 2026 qui remplace celui de 2004. Une bande rappelle qu'une classe de réaction ne dit rien de la tenue d'un mur.">
+      <figcaption>Deux questions, deux textes. Une classe de réaction ne dit rien de la tenue d'un mur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici l'échelle de la réaction au feu pour les produits de construction : sept cases, de A1 à F. A1, à gauche, est la classe la plus haute. F, à droite, en pointillé, veut dire qu'aucune performance n'est déterminée : on ne peut rien affirmer sur le comportement du produit. Entre les deux, cinq classes : A2, B, C, D et E. Sous les cases, l'accolade rappelle que de A2 à D on ajoute deux informations, la fumée et les gouttelettes, et que pour E on n'ajoute que les gouttelettes. Dernière ligne : pour les sols, les mêmes classes portent l'indice « fl ».">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La réaction au feu : l'échelle de A1 à F</h2>
+    <p>Les produits de construction sont classés, selon leur réaction au feu, en <strong>sept classes : A1, A2, B, C, D, E, F</strong> (article 2 et annexe 1 de l'arrêté du 21 novembre 2002).</p>
+    <ul>
+      <li><strong>A1</strong> est la classe la plus haute : aucun suffixe ne s'y ajoute.</li>
+      <li><strong>A2, B, C, D</strong> portent deux informations en plus : la fumée (<strong>s</strong>) et les gouttelettes ou particules enflammées (<strong>d</strong>).</li>
+      <li><strong>E</strong> ne porte que le <strong>d</strong>.</li>
+      <li><strong>F</strong> : aucune performance déterminée.</li>
+    </ul>
+    <p>Pour les <strong>sols</strong>, les mêmes classes portent l'indice <strong>fl</strong> (A1fl à Ffl). Le classement s'appuie sur la norme NF EN 13501-1, citée à l'article 5 ; cette norme est payante : la station n'en donne que l'objet, le classement des produits d'après leurs essais de réaction au feu.</p>
+    <figure>
+      <img src="svg/echelle-classes.svg" alt="Sept cases alignées, de gauche à droite : A1, A2, B, C, D, E et F, la dernière en pointillé. Sous la case A1, la mention classe la plus haute. Sous la case F, la mention aucune performance déterminée. Une accolade sous A2 à E précise que de A2 à D on ajoute deux lettres, s pour la fumée et d pour les gouttelettes, et que pour E on ajoute seulement d. Une bande rappelle que pour les sols les classes portent l'indice fl.">
+      <figcaption>Les cases apparaissent de A1 à F : plus on va vers la droite, moins le classement est favorable.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Prenons un classement complet : B, tiret, s1, virgule, d0. Il se lit en trois temps, et les trois cartes du schéma suivent cet ordre. D'abord la lettre : la classe du produit, ici B. Ensuite la fumée, s1, s2 ou s3 : s1 est le niveau de fumée le plus faible, s3 signifie que le produit n'atteint ni s1 ni s2. Enfin les gouttelettes enflammées, d0, d1 ou d2 : d0 veut dire qu'aucune gouttelette enflammée n'est apparue à l'essai. Lu ensemble, B-s1,d0 se dit : classe B, fumée faible, aucune gouttelette enflammée.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Lire un classement complet : les sigles s et d</h2>
+    <p>Un classement se lit en trois parties. Exemple : <strong>B-s1,d0</strong>.</p>
+    <ul>
+      <li><strong>B</strong> : la classe du produit.</li>
+      <li><strong>s1, s2, s3</strong> (smoke) : la production de fumée. s1 est le niveau le plus faible ; <strong>s3</strong> : ni s1 ni s2.</li>
+      <li><strong>d0, d1, d2</strong> : les gouttelettes ou particules enflammées. <strong>d0</strong> : aucune à l'essai (avant 600 secondes) ; <strong>d1</strong> : aucune qui persiste plus de 10 secondes ; <strong>d2</strong> : ni d0 ni d1.</li>
+    </ul>
+    <p>Les seuils chiffrés qui séparent s1 et s2 sont donnés à l'annexe 1 de l'arrêté ; ils ne sont pas repris ici. À retenir : ce sont les <em>indices</em> qui distinguent deux produits de même lettre.</p>
+    <figure>
+      <img src="svg/lire-un-code.svg" alt="Le code B-s1,d0 écrit en grand, découpé en trois parties. Sous la lettre B, une carte explique la classe, de A1 à F. Sous s1, une carte explique le niveau de fumée : s1, s2 ou s3, s1 étant la fumée la plus faible. Sous d0, une carte explique les gouttelettes enflammées : d0, d1 ou d2, d0 signifiant aucune gouttelette enflammée à l'essai. Une bande résume la lecture complète.">
+      <figcaption>Trois parties, trois cartes : la classe, la fumée, les gouttelettes.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Trois panneaux, trois lettres. R, à gauche : la résistance mécanique. La colonne porte une charge, et l'élément doit continuer à porter pendant le feu. E, au milieu : l'étanchéité. La flamme reste d'un seul côté du mur : les flammes et les gaz chauds ne passent pas de l'autre. I, à droite : l'isolation thermique. Le thermomètre de la face non exposée reste bas, car le mur n'a pas seulement arrêté les flammes, il a aussi retenu la chaleur. Ces lettres sont toujours suivies d'une durée en minutes. La bande du bas donne deux exemples : EI 30, et R 90.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La résistance au feu : R, E, I et des minutes</h2>
+    <p>L'arrêté du 22 mars 2026 distingue trois catégories de performance, qui se lisent avec les lettres du classement :</p>
+    <ul>
+      <li><strong>Stabilité au feu (SF)</strong> : le classement comporte le symbole <strong>R</strong> (résistance mécanique) ;</li>
+      <li><strong>Pare-flammes (PF)</strong> : le classement comporte <strong>E</strong> (étanchéité aux flammes et aux gaz chauds), ou <strong>RE</strong> si l'élément est porteur ;</li>
+      <li><strong>Coupe-feu (CF)</strong> : le classement comporte <strong>E et I</strong> (isolation thermique), ou <strong>R, E et I</strong> si l'élément est porteur.</li>
+    </ul>
+    <p>La durée s'exprime en <strong>minutes</strong> et se rapporte aux anciens degrés en heures : l'annexe donne l'exemple de <strong>R 90 pour une exigence SF de degré 1 h 30</strong>, et cite <strong>EI 30</strong> parmi les classements possibles.</p>
+    <figure>
+      <img src="svg/r-e-i.svg" alt="Trois panneaux. Panneau R, résistance mécanique : une colonne supporte une charge, une flèche descend sur elle, l'élément continue de porter. Panneau E, étanchéité : une flamme d'un côté d'un mur, des gaz chauds qui viennent buter contre le mur et ne passent pas. Panneau I, isolation thermique : une flamme d'un côté d'un mur, un thermomètre de l'autre côté dont la colonne reste basse, la face non exposée reste peu chauffée. Une bande donne deux exemples : EI 30, étanche et isolant pendant 30 minutes, et R 90, qui porte pendant 90 minutes.">
+      <figcaption>R, E, I : trois critères, apparus l'un après l'autre. Chacun est suivi d'une durée en minutes.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Quatre étiquettes que vous croiserez sur une fiche technique ou un procès-verbal. La première, B-s1,d0, relève de la réaction au feu : elle parle d'un produit. Les trois suivantes relèvent de la résistance au feu : elles parlent d'un ouvrage et donnent une durée. EI 30 : étanche et isolant pendant trente minutes, c'est du coupe-feu. R 90 : l'ouvrage porte pendant quatre-vingt-dix minutes, ce qui répond à une exigence de stabilité au feu d'une heure trente. E 30 : étanche seulement, pendant trente minutes, c'est du pare-flammes. Repérez d'abord la lettre : elle vous dit à quelle question l'étiquette répond.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Lire une étiquette : quelle question traite-t-elle ?</h2>
+    <p>Devant un classement, posez d'abord la question : <strong>de quoi parle-t-il ?</strong></p>
+    <ol>
+      <li><strong>B-s1,d0</strong> — réaction au feu, un <strong>produit</strong> : classe B, fumée faible, aucune gouttelette enflammée.</li>
+      <li><strong>EI 30</strong> — résistance au feu, un <strong>ouvrage</strong> : étanche et isolant pendant 30 minutes (coupe-feu).</li>
+      <li><strong>R 90</strong> — résistance au feu : porte pendant 90 minutes (exigence SF 1 h 30).</li>
+      <li><strong>E 30</strong> — résistance au feu : étanche seulement, 30 minutes (pare-flammes).</li>
+    </ol>
+    <p>Les deux systèmes ne se déduisent pas l'un de l'autre : un produit bien classé en réaction au feu n'apprend rien sur la durée que tiendra la paroi construite avec.</p>
+    <figure>
+      <img src="svg/lire-etiquettes.svg" alt="Quatre lignes. Chaque ligne associe une étiquette à gauche et sa lecture à droite. B-s1,d0 relève de la réaction au feu et décrit un produit : classe B, fumée faible, aucune gouttelette enflammée. EI 30 relève de la résistance au feu et décrit un ouvrage : étanche et isolant pendant 30 minutes, c'est du coupe-feu. R 90 : l'ouvrage porte pendant 90 minutes, ce qui répond à une exigence de stabilité au feu de 1 h 30. E 30 : étanche seulement pendant 30 minutes, ce qui répond à une exigence de pare-flammes.">
+      <figcaption>Le premier cadre est orange : c'est la seule étiquette de réaction au feu.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Voici une coupe de paroi coupe-feu, avec trois pièces de votre lot chauffage, ventilation, climatisation. Repère un, la gaine et son isolant, qui traversent la paroi : pour l'isolant, on regarde la classe de réaction au feu, de A1 à F. Repère deux, la canalisation qui traverse la paroi dans un fourreau : le fourreau est un percement, il ne doit pas affaiblir la paroi. Repère trois, le calfeutrement, aux deux extrémités du fourreau : c'est un ouvrage, on lui demande un classement de résistance au feu, avec les lettres E et I. Trois pièces, deux questions différentes.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Ce que cela change pour le lot CVC</h2>
+    <p>Dans un bureau d'études, trois pièces reviennent sans cesse quand un réseau traverse une paroi :</p>
+    <ol>
+      <li><strong>L'isolant de gaine</strong> est un <strong>produit</strong> : on lui applique une <strong>classe de réaction au feu</strong> (A1 à F, avec s et d). La justification du classement se rattache au <strong>marquage CE</strong> (article 6 de l'arrêté de 2002) — voir la station « Marquage CE ».</li>
+      <li><strong>Le fourreau</strong> est un percement de la paroi : la traversée ne doit pas affaiblir la résistance au feu de la paroi. C'est une question de <strong>résistance</strong>, pas de réaction.</li>
+      <li><strong>Le calfeutrement</strong> est un <strong>ouvrage</strong> : on lui demande un <strong>classement de résistance au feu</strong> (E, I), pas une classe A1.</li>
+    </ol>
+    <p>Le niveau exigé dépend du bâtiment et de son règlement de sécurité : la station ne le chiffre pas (voir « Classer le bâti »). La gaine elle-même, quand elle traverse une paroi coupe-feu, pose la question du clapet : voir « Clapets coupe-feu ».</p>
+    <figure>
+      <img src="svg/cvc-trois-cas.svg" alt="Coupe d'une paroi verticale grise. Une gaine de ventilation entourée d'un isolant clair traverse la paroi : c'est le repère 1, l'isolant de gaine, pour lequel on regarde la classe de réaction au feu de A1 à F. Plus bas, une canalisation traverse la paroi dans un fourreau : repère 2, le fourreau, qui traverse la paroi. Aux deux extrémités du fourreau, deux bouchons orange : repère 3, le calfeutrement, pour lequel on regarde un classement de résistance au feu, avec les lettres E et I. En bas à gauche, une flamme indique le côté du sinistre.">
+      <figcaption>Trois pièces, deux questions : le repère 1 relève de la réaction, les repères 2 et 3 de la résistance.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Sur d'anciens documents, vous trouverez encore des classes M, de M zéro à M quatre. Elles n'ont pas disparu de l'arrêté de 2002, qui les garde pour les matériaux d'aménagement, à l'annexe 2. Sur le schéma, en haut, les euroclasses des produits de construction. En bas, les cinq catégories M. Entre les deux, un cadre : l'annexe 4, dont les tableaux donnent les classes européennes admissibles pour chaque catégorie M. Retenez la méthode : on ne traduit pas de mémoire une catégorie M en euroclasse, on lit le tableau. Une catégorie M n'est pas une euroclasse renommée.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">L'ancien classement M0 à M4</h2>
+    <p>Avant les euroclasses, la France classait en <strong>catégories M0 à M4</strong>. L'arrêté du 21 novembre 2002 les conserve pour les <strong>matériaux d'aménagement</strong> (article 3 et annexe 2) ; l'ancien arrêté du 30 juin 1983 est abrogé (article 10).</p>
+    <p>Le passage de l'un à l'autre se lit à l'<strong>annexe 4</strong> : ses tableaux IV.1 (produits autres que sols), IV.2 (sols) et IV.3 (isolants linéaires) fixent les classes européennes <strong>admissibles</strong> au regard des catégories M.</p>
+    <p><strong>La méthode</strong> : sur une ancienne fiche qui affiche « M1 », ne traduisez pas de mémoire ; ouvrez le tableau. Les lignes exactes ne sont pas reprises ici (voir FOND.md, « À sourcer »).</p>
+    <figure>
+      <img src="svg/anciennes-classes.svg" alt="Trois niveaux. En haut, les sept euroclasses A1 à F des produits de construction, définies à l'annexe 1 de l'arrêté du 21 novembre 2002. Au milieu, un cadre : l'annexe 4, avec ses tableaux IV.1 à IV.3, qui donne les classes européennes admissibles pour chaque catégorie M. En bas, les cinq catégories M0 à M4 des matériaux d'aménagement, définies à l'annexe 2. Deux flèches descendent du haut vers le cadre puis du cadre vers le bas. Une bande rappelle qu'on lit le tableau : une catégorie M n'est pas une euroclasse renommée.">
+      <figcaption>Le cadre du milieu est le seul pont légal : l'annexe 4.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient sur une frise et deux questions. Sur la frise : l'arrêté du vingt et un novembre deux mille deux pour la réaction au feu ; celui du vingt-deux mars deux mille quatre pour la résistance, abrogé depuis le vingt-sept mars deux mille vingt-six par l'arrêté du vingt-deux mars deux mille vingt-six, applicable aux demandes déposées à compter du premier octobre deux mille vingt-six. Dessous, les deux questions : le matériau alimente-t-il le feu, on lit A1 à F avec s et d ; l'ouvrage tient-il, on lit R, E, I et les minutes. Le réflexe : lire l'étiquette, ne jamais la deviner.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li><strong>Réaction au feu</strong> : le produit alimente-t-il le feu ? Classes <strong>A1 à F</strong>, indices <strong>s</strong> (fumée) et <strong>d</strong> (gouttelettes) — arrêté du 21 novembre 2002.</li>
+      <li><strong>Résistance au feu</strong> : l'ouvrage tient-il ? Lettres <strong>R, E, I</strong> et <strong>minutes</strong> — arrêté du 22 mars 2026, qui abroge l'arrêté de 2004 sur la résistance au feu (et non celui de 2004 sur le désenfumage, toujours en vigueur).</li>
+      <li>Isolant de gaine : classe de réaction. Fourreau et calfeutrement : résistance de la traversée.</li>
+      <li>M0 à M4 : anciennes catégories, à traduire par le tableau de l'annexe 4.</li>
+    </ul>
+    <p class="formule">Le réflexe : lire l'étiquette, ne jamais la deviner.</p>
+    <figure>
+      <img src="svg/bilan-textes.svg" alt="Une frise horizontale avec quatre repères. Le 21 novembre 2002 : l'arrêté sur la réaction au feu, qui concerne le produit. Le 22 mars 2004 : l'arrêté sur la résistance au feu, qui concerne l'ouvrage. Le 27 mars 2026 : l'arrêté de 2004 est abrogé par l'arrêté du 22 mars 2026. Le 1er octobre 2026 : le nouvel arrêté est applicable aux demandes d'autorisation déposées à partir de cette date. Sous la frise, deux cartes résument les deux questions : réaction, le matériau alimente-t-il le feu, on lit A1 à F avec s et d ; résistance, l'ouvrage tient-il, on lit R, E, I et les minutes. Une bande donne le réflexe : lire l'étiquette, ne jamais la deviner.">
+      <figcaption>La frise se construit repère par repère ; dessous, les deux questions à poser.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Une fiche technique de plaque annonce A2, tiret, s1, virgule, d0. Que peut-on en conclure ? Choisissez parmi les quatre propositions.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Une fiche de plaque annonce « A2-s1,d0 ». Que peut-on en conclure ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-questions.svg" alt="Vignette de rappel : à gauche la réaction au feu, qui concerne le produit, à droite la résistance au feu, qui concerne l'ouvrage, avec deux textes différents.">
+      <figcaption>Rappel de l'écran 1 — deux questions, deux textes.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La cloison faite avec cette plaque est coupe-feu</button>
+      <button type="button" data-answer="b">Seule la lettre A2 compte : s et d sont facultatifs</button>
+      <button type="button" data-answer="bonne">Le comportement du produit, rien sur la cloison</button>
+      <button type="button" data-answer="d">La plaque est classée selon l'arrêté du 22 mars 2026</button>
+    </div>
+    <p class="feedback" hidden data-explication="A2-s1,d0 est un classement de réaction au feu : il décrit le produit. La tenue de la cloison construite avec, elle, se dit avec R, E, I et des minutes. Les indices s et d font partie du classement."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Dans le classement C, tiret, s2, virgule, d1, que désigne le d1 ? Reprenez les trois cartes de l'écran trois avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Dans « C-s2,d1 », que désigne le d1 ?</h2>
+    <figure class="vignette">
+      <img src="svg/lire-un-code.svg" alt="Vignette de rappel : le code B-s1,d0 découpé en trois parties, la classe, la fumée et les gouttelettes enflammées.">
+      <figcaption>Rappel de l'écran 3 — la classe, la fumée, les gouttelettes.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Les gouttelettes enflammées, au niveau d1</button>
+      <button type="button" data-answer="b">Une durée de résistance, en heures</button>
+      <button type="button" data-answer="c">La densité de fumée produite</button>
+      <button type="button" data-answer="d">Le degré de stabilité de l'élément</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le d désigne les gouttelettes ou particules enflammées (d0, d1, d2) ; d1 : aucune ne persiste plus de 10 secondes à l'essai. La fumée est désignée par le s."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un élément de construction est classé E I trente. Quelle phrase est juste ? Regardez les trois panneaux de l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un élément est classé « EI 30 ». Quelle phrase est juste ?</h2>
+    <figure class="vignette">
+      <img src="svg/r-e-i.svg" alt="Vignette de rappel : les trois critères de résistance au feu, R pour la résistance mécanique, E pour l'étanchéité, I pour l'isolation thermique.">
+      <figcaption>Rappel de l'écran 4 — R, E, I et des minutes.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Il brûle pendant trente minutes avant de s'effondrer</button>
+      <button type="button" data-answer="b">Il est de classe E en réaction au feu, indice 30</button>
+      <button type="button" data-answer="c">Il supporte sa charge pendant trente minutes</button>
+      <button type="button" data-answer="bonne">Il reste étanche et isolant pendant trente minutes</button>
+    </div>
+    <p class="feedback" hidden data-explication="EI 30 dit E (étanchéité) et I (isolation) pendant 30 minutes : c'est du coupe-feu. Sans R dans le classement, on n'affirme rien sur la capacité à porter une charge. Et E, ici, n'a rien à voir avec la classe E de réaction au feu."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un fourreau traverse une paroi coupe-feu. Que demandez-vous pour justifier le calfeutrement ? Souvenez-vous des trois repères de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un fourreau traverse une paroi coupe-feu. Que demandez-vous pour le calfeutrement ?</h2>
+    <figure class="vignette">
+      <img src="svg/cvc-trois-cas.svg" alt="Vignette de rappel : la coupe d'une paroi avec l'isolant de gaine, le fourreau et le calfeutrement de traversée.">
+      <figcaption>Rappel de l'écran 6 — isolant, fourreau, calfeutrement.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Sa classe de réaction au feu, A1 de préférence</button>
+      <button type="button" data-answer="bonne">Un classement de résistance au feu : E et I</button>
+      <button type="button" data-answer="c">La classe M de l'isolant de la gaine voisine</button>
+      <button type="button" data-answer="d">La date de l'arrêté qui a créé la classe A1</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le calfeutrement est un ouvrage dont on attend qu'il préserve la tenue de la paroi : on lui demande un classement de résistance (E, I). Une classe de réaction, même A1, dit seulement comment le produit réagit au feu."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../incendie-classer-le-bati/"><strong>Classer le bâti</strong></a> (même sous-ligne)
+      — c'est le type de bâtiment qui fixe le niveau attendu : ERP, IGH, habitation.</li>
+    <li><a href="../incendie-clapets-coupe-feu/"><strong>Clapets coupe-feu</strong></a> (même sous-ligne)
+      — la gaine qui traverse une paroi coupe-feu : la question de la traversée, vue de près.</li>
+    <li><a href="../incendie-desenfumage/"><strong>Le désenfumage</strong></a> (même sous-ligne)
+      — le rôle du CVC quand les fumées comptent autant que les flammes.</li>
+    <li><a href="../certif-marquage-ce/"><strong>Marquage CE</strong></a> (autre sous-ligne : Certifications &amp; normes)
+      — où se lit la classe d'un produit : le classement se justifie par le marquage CE.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ : le dossier reste
+     déplaçable d'un bloc. voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

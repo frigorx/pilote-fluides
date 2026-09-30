@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-cdi" aria-describedby="d-cdi" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-cdi">Le CDI, forme normale de l'embauche</title>
+  <desc id="d-cdi">Au centre, un grand cadre plein : le CDI, contrat à durée indéterminée, forme normale et
+    générale de l'embauche. Autour, quatre cadres en tirets : le CDD, l'intérim, l'apprentissage et la
+    professionnalisation, présentés comme des exceptions encadrées par la loi. En bas, deux encadrés :
+    à temps plein l'écrit n'est pas obligatoire et sans écrit le contrat est un CDI ; à temps partiel
+    l'écrit est obligatoire.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:22px; fill:#10233c; }
+    .sub  { font-size:16px; fill:#5a6b7d; }
+    .big  { font-weight:bold; font-size:38px; fill:#9d174d; }
+    .mid  { font-size:17px; fill:#10233c; }
+    .exc  { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .exl  { font-size:16px; fill:#5a6b7d; }
+    .bt   { font-weight:bold; font-size:18px; fill:#9d174d; }
+    .bl   { font-size:16px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="400" y="30" text-anchor="middle">Le CDI est la règle, le reste est l'exception</text>
+  <text class="sub" x="400" y="56" text-anchor="middle">Chaque exception est encadrée par la loi</text>
+
+  <!-- liaisons en tirets (aucune étiquette dessus) -->
+  <g stroke="#5a6b7d" stroke-width="2" stroke-dasharray="6 5" fill="none">
+    <path d="M230,115 L270,165"/>
+    <path d="M570,115 L530,165"/>
+    <path d="M230,265 L270,235"/>
+    <path d="M570,265 L530,235"/>
+  </g>
+
+  <!-- les quatre exceptions -->
+  <g>
+    <rect x="30" y="80" width="200" height="70" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5" stroke-dasharray="8 5"/>
+    <text class="exc" x="130" y="108" text-anchor="middle">CDD</text>
+    <text class="exl" x="130" y="132" text-anchor="middle">durée déterminée</text>
+  </g>
+  <g>
+    <rect x="570" y="80" width="200" height="70" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5" stroke-dasharray="8 5"/>
+    <text class="exc" x="670" y="108" text-anchor="middle">Intérim</text>
+    <text class="exl" x="670" y="132" text-anchor="middle">contrat de mission</text>
+  </g>
+  <g>
+    <rect x="30" y="230" width="200" height="70" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5" stroke-dasharray="8 5"/>
+    <text class="exc" x="130" y="258" text-anchor="middle">Apprentissage</text>
+    <text class="exl" x="130" y="282" text-anchor="middle">alternance</text>
+  </g>
+  <g>
+    <rect x="570" y="230" width="200" height="70" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5" stroke-dasharray="8 5"/>
+    <text class="exc" x="670" y="258" text-anchor="middle">Professionnalisation</text>
+    <text class="exl" x="670" y="282" text-anchor="middle">alternance</text>
+  </g>
+
+  <!-- le CDI -->
+  <rect x="270" y="140" width="260" height="120" rx="16" fill="#f6e6ee" stroke="#9d174d" stroke-width="4"/>
+  <text class="big" x="400" y="188" text-anchor="middle">CDI</text>
+  <text class="mid" x="400" y="216" text-anchor="middle">contrat à durée indéterminée</text>
+  <text class="mid" x="400" y="240" text-anchor="middle">forme normale et générale</text>
+
+  <!-- écrit ou pas -->
+  <rect x="30" y="335" width="360" height="135" rx="12" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="bt" x="210" y="367" text-anchor="middle">À temps plein</text>
+  <text class="bl" x="210" y="399" text-anchor="middle">L'écrit n'est pas obligatoire.</text>
+  <text class="bl" x="210" y="425" text-anchor="middle">Sans écrit, le contrat est un CDI.</text>
+  <text class="bl" x="210" y="451" text-anchor="middle">Un écrit reste plus sûr.</text>
+
+  <rect x="410" y="335" width="360" height="135" rx="12" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="bt" x="590" y="367" text-anchor="middle">À temps partiel</text>
+  <text class="bl" x="590" y="399" text-anchor="middle">L'écrit est obligatoire.</text>
+  <text class="bl" x="590" y="425" text-anchor="middle">Pas de contrat verbal possible.</text>
+  <text class="bl" x="590" y="451" text-anchor="middle">Signer protège les deux parties.</text>
+</svg>

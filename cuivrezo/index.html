@@ -7,7 +7,8 @@
 <meta name="robots" content="noindex">
 <title>CuivRézo · les gestes du cuivre</title>
 <meta name="description" content="CuivRézo : un assistant de geste pour l’atelier de façonnage du cuivre. L’élève apprend seul le geste attendu, le professeur le confirme.">
-<link rel="stylesheet" href="moteur/accueil.css?v=47c21bb4">
+<link rel="stylesheet" href="moteur/accueil.css?v=8bffc52a">
+<link rel="stylesheet" href="moteur/defis.css?v=8bffc52a">
 </head>
 <body>
 <header class="entete">
@@ -16,96 +17,123 @@
   <p>Chaque station vous guide pas à pas jusqu’à une pièce réussie : ce que vous devez obtenir, le matériel,
   le geste écran par écran, les pièges, votre propre contrôle. Quand tout est bon, vous appelez votre
   professeur : il confirme le geste.</p>
+  <div class="passeport-bandeau">
+    <span class="gros-nombre" data-compte="total"></span>
+    <p>Chaque station réussie, avec son défi, vous donne un tampon. Vos tampons restent sur cet appareil : rien n’est envoyé.</p>
+    <a class="bouton-lien plein" href="passeport.html">Mon passeport</a>
+  </div>
 </header>
 <main>
 
   <section class="ligne">
-    <h2><span class="pastille">1</span> Les gestes de base</h2>
+    <h2><span class="pastille">1</span> Les gestes de base <span class="ligne-tp" data-compte="1"></span></h2>
+    <div class="bande" role="group" aria-label="Tampons de la ligne 1">
+      <span class="slot" data-slot="1-0" data-ligne="1" title="Mon poste de travail">1.0</span>
+      <span class="slot" data-slot="1-1" data-ligne="1" title="Reconnaître le tube">1.1</span>
+      <span class="slot" data-slot="1-2" data-ligne="1" title="Mesurer et tracer">1.2</span>
+      <span class="slot" data-slot="1-3" data-ligne="1" title="Couper et ébavurer">1.3</span>
+      <span class="slot" data-slot="1-4" data-ligne="1" title="Cintrer à la cintrette">1.4</span>
+      <span class="slot" data-slot="1-5" data-ligne="1" title="Cintrer à la cintreuse (L, R, 0)">1.5</span>
+      <span class="slot" data-slot="1-6" data-ligne="1" title="Le dudgeon">1.6</span>
+      <span class="slot" data-slot="1-7" data-ligne="1" title="L’emboîture à la pince">1.7</span>
+    </div>
     <ol class="arrets">
       <li><a href="stations/1-0/" data-id="1-0">
         <img class="vignette" src="images/1-0-poste.webp" alt="" loading="lazy">
         <span class="num">1.0</span>
-        <span class="t"><strong>Mon poste de travail</strong><span class="p">Un poste prêt, un élève protégé</span></span>
+        <span class="t"><strong>Mon poste de travail</strong><span class="p">Un poste prêt, un élève protégé</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/1-1/" data-id="1-1">
         <img class="vignette" src="images/1-1-livraison.webp" alt="" loading="lazy">
         <span class="num">1.1</span>
-        <span class="t"><strong>Reconnaître le tube</strong><span class="p">Le bon tube, nommé juste</span></span>
+        <span class="t"><strong>Reconnaître le tube</strong><span class="p">Le bon tube, nommé juste</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/1-2/" data-id="1-2">
         <img class="vignette" src="images/1-2-tracer.webp" alt="" loading="lazy">
         <span class="num">1.2</span>
-        <span class="t"><strong>Mesurer et tracer</strong><span class="p">Un trait fin, à la bonne cote, sur tout le tour</span></span>
+        <span class="t"><strong>Mesurer et tracer</strong><span class="p">Un trait fin, à la bonne cote, sur tout le tour</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/1-3/" data-id="1-3">
         <img class="vignette" src="images/1-3-couper.webp" alt="" loading="lazy">
         <span class="num">1.3</span>
-        <span class="t"><strong>Couper et ébavurer</strong><span class="p">Un tube coupé d’équerre, sans bavure</span></span>
+        <span class="t"><strong>Couper et ébavurer</strong><span class="p">Un tube coupé d’équerre, sans bavure</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/1-4/" data-id="1-4">
         <img class="vignette" src="images/1-4-cintrette.webp" alt="" loading="lazy">
         <span class="num">1.4</span>
-        <span class="t"><strong>Cintrer à la cintrette</strong><span class="p">Un coude à 90°, 300 mm à l’axe</span></span>
+        <span class="t"><strong>Cintrer à la cintrette</strong><span class="p">Un coude à 90°, 300 mm à l’axe</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/1-5/" data-id="1-5">
         <img class="vignette" src="images/1-5-cintreuse.webp" alt="" loading="lazy">
         <span class="num">1.5</span>
-        <span class="t"><strong>Cintrer à la cintreuse (L, R, 0)</strong><span class="p">Un coude à 90°, à la cote, du premier coup</span></span>
+        <span class="t"><strong>Cintrer à la cintreuse (L, R, 0)</strong><span class="p">Un coude à 90°, à la cote, du premier coup</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/1-6/" data-id="1-6">
         <img class="vignette" src="images/1-6-dudgeon.webp" alt="" loading="lazy">
         <span class="num">1.6</span>
-        <span class="t"><strong>Le dudgeon</strong><span class="p">Un dudgeon régulier, l’écrou en place</span></span>
+        <span class="t"><strong>Le dudgeon</strong><span class="p">Un dudgeon régulier, l’écrou en place</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/1-7/" data-id="1-7">
         <img class="vignette" src="images/1-7-pince.webp" alt="" loading="lazy">
         <span class="num">1.7</span>
-        <span class="t"><strong>L’emboîture à la pince</strong><span class="p">Un bout élargi où l’autre tube entre juste</span></span>
+        <span class="t"><strong>L’emboîture à la pince</strong><span class="p">Un bout élargi où l’autre tube entre juste</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
     </ol>
   </section>
   <section class="ligne">
-    <h2><span class="pastille">2</span> Le chalumeau</h2>
+    <h2><span class="pastille">2</span> Le chalumeau <span class="ligne-tp" data-compte="2"></span></h2>
+    <div class="bande" role="group" aria-label="Tampons de la ligne 2">
+      <span class="slot" data-slot="2-1" data-ligne="2" title="Le poste oxyacétylénique en sécurité">2.1</span>
+      <span class="slot" data-slot="2-2" data-ligne="2" title="Allumer, régler, éteindre la flamme">2.2</span>
+    </div>
     <ol class="arrets">
       <li><a href="stations/2-1/" data-id="2-1">
         <img class="vignette" src="images/2-1-poste.webp" alt="" loading="lazy">
         <span class="num">2.1</span>
-        <span class="t"><strong>Le poste oxyacétylénique en sécurité</strong><span class="p">Un poste prêt à allumer, vérifié, sans fuite</span></span>
+        <span class="t"><strong>Le poste oxyacétylénique en sécurité</strong><span class="p">Un poste prêt à allumer, vérifié, sans fuite</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/2-2/" data-id="2-2">
         <img class="vignette" src="images/2-2-allumer.webp" alt="" loading="lazy">
         <span class="num">2.2</span>
-        <span class="t"><strong>Allumer, régler, éteindre la flamme</strong><span class="p">Une flamme neutre, allumée et éteinte dans l’ordre</span></span>
+        <span class="t"><strong>Allumer, régler, éteindre la flamme</strong><span class="p">Une flamme neutre, allumée et éteinte dans l’ordre</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
     </ol>
   </section>
   <section class="ligne">
-    <h2><span class="pastille">3</span> Braser</h2>
+    <h2><span class="pastille">3</span> Braser <span class="ligne-tp" data-compte="3"></span></h2>
+    <div class="bande" role="group" aria-label="Tampons de la ligne 3">
+      <span class="slot" data-slot="3-1" data-ligne="3" title="La brasure tendre à l’étain">3.1</span>
+      <span class="slot" data-slot="3-2" data-ligne="3" title="La brasure forte sous azote">3.2</span>
+    </div>
     <ol class="arrets">
       <li><a href="stations/3-1/" data-id="3-1">
         <img class="vignette" src="images/3-1-tendre.webp" alt="" loading="lazy">
         <span class="num">3.1</span>
-        <span class="t"><strong>La brasure tendre à l’étain</strong><span class="p">Un anneau d’étain régulier, étanche</span></span>
+        <span class="t"><strong>La brasure tendre à l’étain</strong><span class="p">Un anneau d’étain régulier, étanche</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/3-2/" data-id="3-2">
         <img class="vignette" src="images/3-2-forte.webp" alt="" loading="lazy">
         <span class="num">3.2</span>
-        <span class="t"><strong>La brasure forte sous azote</strong><span class="p">Un joint brasé plein, propre à l’intérieur</span></span>
+        <span class="t"><strong>La brasure forte sous azote</strong><span class="p">Un joint brasé plein, propre à l’intérieur</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
     </ol>
   </section>
   <section class="ligne">
-    <h2><span class="pastille">4</span> Les pièces complexes</h2>
+    <h2><span class="pastille">4</span> Les pièces complexes <span class="ligne-tp" data-compte="4"></span></h2>
+    <div class="bande" role="group" aria-label="Tampons de la ligne 4">
+      <span class="slot" data-slot="4-1" data-ligne="4" title="Le chapeau de gendarme">4.1</span>
+      <span class="slot" data-slot="4-2" data-ligne="4" title="La baïonnette">4.2</span>
+    </div>
     <ol class="arrets">
       <li><a href="stations/4-1/" data-id="4-1">
         <img class="vignette" src="images/4-1-chapeau.webp" alt="" loading="lazy">
         <span class="num">4.1</span>
-        <span class="t"><strong>Le chapeau de gendarme</strong><span class="p">Un contournement symétrique, branches alignées</span></span>
+        <span class="t"><strong>Le chapeau de gendarme</strong><span class="p">Un contournement symétrique, branches alignées</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/4-2/" data-id="4-2">
         <img class="vignette" src="images/4-2-baionnette.webp" alt="" loading="lazy">
         <span class="num">4.2</span>
-        <span class="t"><strong>La baïonnette</strong><span class="p">Deux branches parallèles, décalées à la cote</span></span>
+        <span class="t"><strong>La baïonnette</strong><span class="p">Deux branches parallèles, décalées à la cote</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
     </ol>
   </section>
@@ -117,16 +145,18 @@
   </section>
   <p class="prof"><a href="prof/">Espace professeur : mode d’emploi, matériel, grilles</a></p>
 </main>
+<script src="moteur/defis.js?v=8bffc52a"></script>
 <script>
 /* l'état de chaque station, lu sur cet appareil seulement */
 document.querySelectorAll('.arrets a').forEach(a => {
   let m = {}; try { m = JSON.parse(localStorage.getItem('cuivrezo:' + a.dataset.id)) || {}; } catch (e) {}
-  const faits = Object.keys(m.faits || {}).length, c = m.confirmation;
+  const faits = ['obtenir', 'materiel', 'gestes', 'pieges', 'defi', 'controles', 'prof'].filter(k => (m.faits || {})[k]).length, c = m.confirmation;
   const e = a.querySelector('.etat');
   if (c && c.niveau != null) { e.textContent = '✔ confirmé'; a.classList.add('confirme'); }
-  else if (faits) { e.textContent = faits + ' / 6'; a.classList.add('commence'); }
+  else if (faits) { e.textContent = faits + ' / 7'; a.classList.add('commence'); }
 });
+CuivDefis.remplir();
 </script>
-<script src="moteur/marque.js?v=47c21bb4" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+<script src="moteur/marque.js?v=8bffc52a" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

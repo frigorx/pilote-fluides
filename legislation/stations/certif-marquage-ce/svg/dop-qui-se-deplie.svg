@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img"
+     aria-labelledby="t-dop" aria-describedby="d-dop" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dop">La déclaration des performances, rubrique par rubrique</title>
+  <desc id="d-dop">Une feuille intitulée déclaration des performances. De haut en bas : le code d'identification du
+    produit type, le numéro de type, de lot ou de série, l'usage prévu, le fabricant, le mandataire le cas échéant, le
+    système d'évaluation et de vérification de la constance des performances, l'organisme notifié s'il intervient,
+    puis un tableau à trois colonnes : caractéristique essentielle, performance déclarée, spécification technique
+    harmonisée. Une ligne du tableau porte les lettres NPD, performance non déterminée. En bas, la signature du
+    fabricant. À droite, trois remarques : NPD signifie que le fabricant ne s'engage pas sur cette caractéristique et
+    qu'au moins une caractéristique doit être déclarée ; selon le système, un organisme notifié intervient ou non ; la
+    déclaration est établie sous la seule responsabilité du fabricant. L'animation déplie la feuille de haut en bas ;
+    l'image fixe montre la feuille entièrement dépliée.</desc>
+  <defs>
+    <clipPath id="deplie">
+      <rect x="20" y="40" width="560" height="590">
+        <animate attributeName="height" values="0;0;590;590" keyTimes="0;0.04;0.50;1" dur="14s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .nm  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#3730a3; }
+    .tx  { font-size:17px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .th  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#1b3a63; }
+    .npd { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#8a5a00; }
+    .rm  { font-size:17px; fill:#10233c; }
+    .rt  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+  </style>
+
+  <!-- La feuille (dépliée de haut en bas) -->
+  <g clip-path="url(#deplie)">
+    <rect x="20" y="40" width="560" height="590" rx="10" fill="#ffffff" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="20" y="40" width="560" height="52" rx="10" fill="#3730a3"/>
+    <rect x="20" y="70" width="560" height="22" fill="#3730a3"/>
+    <text class="ttl" x="300" y="74" text-anchor="middle">Déclaration des performances</text>
+
+    <text class="num" x="42" y="124">1</text><text class="tx" x="70" y="124">Code d'identification unique du produit type</text>
+    <text class="num" x="42" y="154">2</text><text class="tx" x="70" y="154">Numéro de type, de lot ou de série</text>
+    <text class="num" x="42" y="184">3</text><text class="tx" x="70" y="184">Usage(s) prévu(s)</text>
+    <text class="num" x="42" y="214">4</text><text class="tx" x="70" y="214">Fabricant : nom et adresse de contact</text>
+    <text class="num" x="42" y="244">5</text><text class="tx" x="70" y="244">Mandataire, le cas échéant</text>
+    <text class="num" x="42" y="274">6</text><text class="tx" x="70" y="274">Système d'évaluation et de vérification</text>
+    <text class="tx" x="70" y="296">de la constance des performances</text>
+    <text class="num" x="42" y="326">7</text><text class="tx" x="70" y="326">Organisme notifié, s'il intervient</text>
+    <path d="M 36 340 H 564" stroke="#e3e8ee" stroke-width="2"/>
+
+    <!-- 9 : tableau des performances déclarées -->
+    <text class="num" x="42" y="370">9</text><text class="nm" x="70" y="370">Performances déclarées</text>
+    <rect x="36" y="384" width="528" height="32" fill="#e7e4ee"/>
+    <text class="th" x="46" y="406">Caractéristique</text>
+    <text class="th" x="228" y="406">Performance</text>
+    <text class="th" x="390" y="406">Spécification</text>
+    <path d="M 218 384 V 494 M 380 384 V 494" stroke="#c9d3df" stroke-width="2"/>
+    <path d="M 36 416 H 564 M 36 455 H 564 M 36 494 H 564" stroke="#c9d3df" stroke-width="2"/>
+    <text class="tx" x="46" y="441">Caractéristique A</text>
+    <text class="tx" x="228" y="441">niveau ou classe</text>
+    <text class="tx" x="390" y="441">norme, datée</text>
+    <text class="tx" x="46" y="480">Caractéristique B</text>
+    <rect x="224" y="461" width="66" height="26" rx="6" fill="#fdf1e3" stroke="#e8914a" stroke-width="2"/>
+    <text class="npd" x="257" y="481" text-anchor="middle">NPD</text>
+    <text class="tx" x="390" y="480">norme, datée</text>
+
+    <path d="M 36 516 H 564" stroke="#e3e8ee" stroke-width="2"/>
+    <text class="num" x="42" y="546">10</text>
+    <text class="tx" x="76" y="546">Les performances sont conformes à celles déclarées.</text>
+    <text class="tx" x="76" y="570">Établie sous la seule responsabilité du fabricant.</text>
+    <text class="sm" x="76" y="606">Signé pour le fabricant : nom, fonction, date, lieu</text>
+  </g>
+
+  <!-- Remarques (apparaissent une fois la feuille dépliée) -->
+  <g>
+    <path d="M 582 474 H 618" stroke="#e8914a" stroke-width="3" stroke-linecap="round"/>
+    <rect x="618" y="360" width="262" height="140" rx="12" fill="#fdf1e3" stroke="#e8914a" stroke-width="2"/>
+    <text class="rt" x="634" y="388">NPD</text>
+    <text class="rm" x="634" y="412">performance non déterminée :</text>
+    <text class="rm" x="634" y="434">le fabricant ne s'engage pas</text>
+    <text class="rm" x="634" y="456">sur cette caractéristique. Au</text>
+    <text class="rm" x="634" y="478">moins une doit être déclarée.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.63;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <path d="M 582 322 H 618" stroke="#3730a3" stroke-width="3" stroke-linecap="round"/>
+    <rect x="618" y="244" width="262" height="92" rx="12" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+    <text class="rt" x="634" y="272">Qui a vérifié ?</text>
+    <text class="rm" x="634" y="296">Selon le système, un organisme</text>
+    <text class="rm" x="634" y="318">notifié intervient — ou pas.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.73;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <path d="M 582 566 H 618" stroke="#1e7e54" stroke-width="3" stroke-linecap="round"/>
+    <rect x="618" y="516" width="262" height="100" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="rt" x="634" y="544" style="fill:#1e7e54">Qui répond ?</text>
+    <text class="rm" x="634" y="568">Le fabricant, et lui seul :</text>
+    <text class="rm" x="634" y="590">il signe sa propre déclaration.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.76;0.83;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg>

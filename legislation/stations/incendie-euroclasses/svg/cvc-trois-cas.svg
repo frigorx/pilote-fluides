@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img" aria-labelledby="t" aria-describedby="d" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t">Trois pièces du lot CVC dans une paroi coupe-feu</title>
+  <desc id="d">Coupe d'une paroi verticale grise. Une gaine de ventilation entourée d'un isolant clair traverse la paroi : c'est le repère 1, l'isolant de gaine, pour lequel on regarde la classe de réaction au feu de A1 à F. Plus bas, une canalisation traverse la paroi dans un fourreau : repère 2, le fourreau, qui traverse la paroi. Aux deux extrémités du fourreau, deux bouchons orange : repère 3, le calfeutrement, pour lequel on regarde un classement de résistance au feu, avec les lettres E et I. En bas à gauche, une flamme indique le côté du sinistre.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .sub { font-size:17px; fill:#5a6b7d; }
+    .h   { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .hr  { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#b91c1c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lb  { font-size:17px; font-weight:bold; fill:#10233c; }
+    .gry { font-size:17px; fill:#5a6b7d; }
+    .code{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:34px; fill:#1b3a63; }
+    .big { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:72px; fill:#1b3a63; }
+    .bigr{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:56px; fill:#b91c1c; }
+    .band{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#e8914a; }
+  </style>
+  <defs><path id="fl" d="M0 -85 C-20 -55 -35 -45 -27 -18 C-23 -4 -10 0 0 0 C13 0 27 -6 27 -24 C27 -45 13 -55 0 -85 Z" fill="#e8914a" stroke="#b91c1c" stroke-width="2"/><path id="fli" d="M0 -48 C-9 -32 -16 -26 -12 -12 C-9 -4 -4 0 0 0 C6 0 12 -3 12 -12 C12 -26 6 -32 0 -48 Z" fill="#f6c58e"/>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#5a6b7d"/></marker>
+  </defs>
+<text class="ttl" x="400" y="34" text-anchor="middle">Trois pièces du lot CVC dans une paroi coupe-feu</text>
+<text class="gry" x="260" y="66" text-anchor="middle">paroi</text>
+<rect x="230" y="74" width="60" height="330" fill="#cfd6df" stroke="#5a6b7d" stroke-width="3"/>
+<rect x="60" y="122" width="392" height="76" rx="4" fill="#f7e2b8" stroke="#5a6b7d" stroke-width="2"/>
+<rect x="60" y="138" width="392" height="44" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+<line x1="60" y1="270" x2="452" y2="270" stroke="#1b3a63" stroke-width="10"/>
+<rect x="230" y="252" width="60" height="36" fill="none" stroke="#e8914a" stroke-width="4"/>
+<rect x="212" y="258" width="18" height="24" fill="#e8914a"/><rect x="290" y="258" width="18" height="24" fill="#e8914a"/>
+<g transform="translate(120,392) scale(0.9)"><use href="#fl"/><use href="#fli"/></g>
+<text class="gry" x="190" y="420" text-anchor="middle">côté sinistre</text>
+<path d="M452 160 H488" stroke="#5a6b7d" stroke-width="2"/><circle cx="452" cy="160" r="5" fill="#5a6b7d"/>
+<text class="num" x="500" y="150">1</text><text class="h" x="526" y="150" text-anchor="start">Isolant de gaine</text><text class="lbl" x="500" y="180" text-anchor="start">classe de réaction (A1 à F)</text>
+<path d="M452 270 H488" stroke="#5a6b7d" stroke-width="2"/><circle cx="452" cy="270" r="5" fill="#5a6b7d"/>
+<text class="num" x="500" y="260">2</text><text class="h" x="526" y="260" text-anchor="start">Fourreau</text><text class="lbl" x="500" y="290" text-anchor="start">traverse la paroi</text>
+<path d="M299 282 V362 H488" stroke="#5a6b7d" stroke-width="2" fill="none"/><circle cx="299" cy="282" r="5" fill="#5a6b7d"/>
+<text class="num" x="500" y="352">3</text><text class="h" x="526" y="352" text-anchor="start">Calfeutrement</text><text class="lbl" x="500" y="382" text-anchor="start">classement de résistance (E, I)</text>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-4p" aria-describedby="d-4p" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-4p">La norme NF EN 378 : quatre parties, quatre questions</title>
+  <desc id="d-4p">Quatre cartes côte à côte, numérotées de un à quatre. Partie 1, les bases : définitions,
+    classification, critères de choix, elle répond à la question de quoi parle-t-on. Partie 2, la
+    conception : construction, essais, marquage, documentation, elle répond à la question comment la
+    fabriquer. Partie 3, l'installation : installation sur site et protection des personnes, elle
+    répond à la question où et comment la poser. Partie 4, l'exploitation : fonctionnement,
+    maintenance, réparation, récupération, elle répond à la question comment la faire vivre. En bas,
+    une bande rappelle qu'une norme n'est pas une loi : un texte ou un contrat peut s'y référer.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .part { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .nom  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#0f766e; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .q    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="34" text-anchor="middle">Une seule norme, quatre parties</text>
+
+  <!-- Partie 1 -->
+  <rect x="20" y="58" width="205" height="262" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <rect x="20" y="58" width="205" height="42" rx="14" fill="#0f766e"/>
+  <rect x="20" y="86" width="205" height="14" fill="#0f766e"/>
+  <text class="part" x="122" y="87" text-anchor="middle">PARTIE 1</text>
+  <text class="nom" x="122" y="134" text-anchor="middle">Les bases</text>
+  <text class="lbl" x="122" y="168" text-anchor="middle">définitions,</text>
+  <text class="lbl" x="122" y="190" text-anchor="middle">classification,</text>
+  <text class="lbl" x="122" y="212" text-anchor="middle">critères de choix</text>
+  <text class="q" x="122" y="262" text-anchor="middle">De quoi</text>
+  <text class="q" x="122" y="283" text-anchor="middle">parle-t-on ?</text>
+  <text class="lbl" x="122" y="306" text-anchor="middle">classes, catégories</text>
+
+  <!-- Partie 2 -->
+  <rect x="245" y="58" width="205" height="262" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <rect x="245" y="58" width="205" height="42" rx="14" fill="#0f766e"/>
+  <rect x="245" y="86" width="205" height="14" fill="#0f766e"/>
+  <text class="part" x="347" y="87" text-anchor="middle">PARTIE 2</text>
+  <text class="nom" x="347" y="134" text-anchor="middle">La conception</text>
+  <text class="lbl" x="347" y="168" text-anchor="middle">construction, essais,</text>
+  <text class="lbl" x="347" y="190" text-anchor="middle">marquage,</text>
+  <text class="lbl" x="347" y="212" text-anchor="middle">documentation</text>
+  <text class="q" x="347" y="262" text-anchor="middle">Comment la</text>
+  <text class="q" x="347" y="283" text-anchor="middle">fabriquer ?</text>
+  <text class="lbl" x="347" y="306" text-anchor="middle">côté constructeur</text>
+
+  <!-- Partie 3 -->
+  <rect x="470" y="58" width="205" height="262" rx="14" fill="#fffdf8" stroke="#e8914a" stroke-width="4"/>
+  <rect x="470" y="58" width="205" height="42" rx="14" fill="#e8914a"/>
+  <rect x="470" y="86" width="205" height="14" fill="#e8914a"/>
+  <text class="part" x="572" y="87" text-anchor="middle" style="fill:#10233c">PARTIE 3</text>
+  <text class="nom" x="572" y="134" text-anchor="middle" style="fill:#1b3a63">L'installation</text>
+  <text class="lbl" x="572" y="168" text-anchor="middle">installation sur site,</text>
+  <text class="lbl" x="572" y="190" text-anchor="middle">protection des</text>
+  <text class="lbl" x="572" y="212" text-anchor="middle">personnes</text>
+  <text class="q" x="572" y="262" text-anchor="middle">Où et comment</text>
+  <text class="q" x="572" y="283" text-anchor="middle">la poser ?</text>
+  <text class="lbl" x="572" y="306" text-anchor="middle">le cœur de la station</text>
+
+  <!-- Partie 4 -->
+  <rect x="695" y="58" width="185" height="262" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <rect x="695" y="58" width="185" height="42" rx="14" fill="#0f766e"/>
+  <rect x="695" y="86" width="185" height="14" fill="#0f766e"/>
+  <text class="part" x="787" y="87" text-anchor="middle">PARTIE 4</text>
+  <text class="nom" x="787" y="134" text-anchor="middle">L'exploitation</text>
+  <text class="lbl" x="787" y="168" text-anchor="middle">fonctionnement,</text>
+  <text class="lbl" x="787" y="190" text-anchor="middle">maintenance,</text>
+  <text class="lbl" x="787" y="212" text-anchor="middle">réparation,</text>
+  <text class="lbl" x="787" y="234" text-anchor="middle">récupération</text>
+  <text class="q" x="787" y="262" text-anchor="middle">Comment la</text>
+  <text class="q" x="787" y="283" text-anchor="middle">faire vivre ?</text>
+
+  <!-- Bande -->
+  <rect x="20" y="340" width="860" height="48" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="370" text-anchor="middle">Une norme n'est pas une loi : un texte ou un contrat peut s'y référer.</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-bsff" aria-describedby="d-bsff" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-bsff">Le BSFF : trois signatures électroniques</title>
+  <desc id="d-bsff">Trois cartes alignées, reliées par des flèches. Première carte, l'émetteur, opérateur ou détenteur : il déclare l'entreprise, la nature du déchet, les contenants et les quantités. Deuxième carte, le transporteur : il porte le récépissé, le véhicule, le mode et la date de transport. Troisième carte, l'installation de destination : elle indique les quantités acceptées ou refusées, puis l'opération réalisée. Sous chaque carte, une pastille verte marque la signature électronique. En bas, un encadré tireté rappelle qu'en cas de regroupement ou de reconditionnement, l'installation qui reçoit émet un nouveau bordereau lié au précédent.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomt{ font-weight:bold; font-size:18px; fill:#0f766e; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <defs><marker id="fb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/></marker></defs>
+  <g>
+    <rect x="30" y="30" width="210" height="220" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <path d="M30,42 a12,12 0 0 1 12,-12 h186 a12,12 0 0 1 12,12 v36 h-210 z" fill="#1b3a63"/>
+    <text class="wht" x="135" y="56" text-anchor="middle">1. L'émetteur</text>
+    <text class="nom" x="135" y="104" text-anchor="middle">opérateur ou détenteur</text>
+    <text class="txt" x="135" y="140" text-anchor="middle">déclare : entreprise,</text>
+    <text class="txt" x="135" y="168" text-anchor="middle">nature du déchet,</text>
+    <text class="txt" x="135" y="196" text-anchor="middle">contenants, quantités</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.02;0.06;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="295" y="30" width="210" height="220" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <path d="M295,42 a12,12 0 0 1 12,-12 h186 a12,12 0 0 1 12,12 v36 h-210 z" fill="#1b3a63"/>
+    <text class="wht" x="400" y="56" text-anchor="middle">2. Le transporteur</text>
+    <text class="nom" x="400" y="104" text-anchor="middle">prend en charge</text>
+    <text class="txt" x="400" y="140" text-anchor="middle">récépissé, véhicule,</text>
+    <text class="txt" x="400" y="168" text-anchor="middle">mode et date de</text>
+    <text class="txt" x="400" y="196" text-anchor="middle">transport</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.07;0.11;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="560" y="30" width="210" height="220" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <path d="M560,42 a12,12 0 0 1 12,-12 h186 a12,12 0 0 1 12,12 v36 h-210 z" fill="#1b3a63"/>
+    <text class="wht" x="665" y="56" text-anchor="middle">3. L'installation</text>
+    <text class="nom" x="665" y="104" text-anchor="middle">de destination</text>
+    <text class="txt" x="665" y="140" text-anchor="middle">quantités acceptées</text>
+    <text class="txt" x="665" y="168" text-anchor="middle">ou refusées, puis</text>
+    <text class="txt" x="665" y="196" text-anchor="middle">opération réalisée</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.12000000000000001;0.16;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <path d="M244,140 H291" stroke="#5a6b7d" stroke-width="3" marker-end="url(#fb)"/>
+  <path d="M509,140 H556" stroke="#5a6b7d" stroke-width="3" marker-end="url(#fb)"/>
+  <g>
+    <circle cx="135" cy="296" r="20" fill="#0f766e"/><path d="M126,296 l6,7 l12,-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="nomt" x="135" y="344" text-anchor="middle">signé</text>
+    <path d="M135,250 V274" stroke="#0f766e" stroke-width="3"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.28;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="400" cy="296" r="20" fill="#0f766e"/><path d="M391,296 l6,7 l12,-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="nomt" x="400" y="344" text-anchor="middle">signé</text>
+    <path d="M400,250 V274" stroke="#0f766e" stroke-width="3"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.38;0.44000000000000006;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="665" cy="296" r="20" fill="#0f766e"/><path d="M656,296 l6,7 l12,-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="nomt" x="665" y="344" text-anchor="middle">signé</text>
+    <path d="M665,250 V274" stroke="#0f766e" stroke-width="3"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.54;0.6000000000000001;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <rect x="30" y="372" width="740" height="108" rx="12" fill="#fdf1e6" stroke="#e8914a" stroke-width="3" stroke-dasharray="10 7"/>
+  <text class="nomo" x="400" y="406" text-anchor="middle">Entreposage, regroupement, reconditionnement</text>
+  <text class="txt" x="400" y="436" text-anchor="middle">l'installation qui reçoit émet un nouveau bordereau,</text>
+  <text class="txt" x="400" y="462" text-anchor="middle">lié au précédent : la chaîne reste continue.</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t6" aria-describedby="d6" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t6">Un équipement de génie climatique, son propre circuit</title>
+  <desc id="d6">À gauche, le tableau électrique. Deux lignes en partent vers la droite, sans jamais se rejoindre. La ligne du haut alimente une pompe à chaleur ou un groupe frigorifique ; la ligne du bas alimente une centrale de traitement d'air. Chaque ligne porte une pastille : circuit dédié, avec en dessous : protection selon la notice du constructeur. Une bande rappelle que le constructeur donne l'intensité et la protection, et que la norme dit comment les mettre en œuvre. Dans l'animation, des points d'énergie parcourent chaque ligne, l'une après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .b20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .w20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#ffffff; }
+    .t17 { font-size:17px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Un équipement CVC, son propre circuit</text>
+
+  <!-- Tableau -->
+  <rect x="30" y="110" width="140" height="280" rx="16" fill="#1b3a63"/>
+  <text class="w20" x="100" y="244" text-anchor="middle">Tableau</text>
+  <text class="w20" x="100" y="270" text-anchor="middle">électrique</text>
+
+  <!-- Ligne du haut -->
+  <line x1="170" y1="170" x2="300" y2="170" stroke="#a16207" stroke-width="5"/>
+  <line x1="440" y1="170" x2="570" y2="170" stroke="#a16207" stroke-width="5"/>
+  <polygon points="568,159 568,181 580,170" fill="#a16207"/>
+  <circle r="9" fill="#e8914a" opacity="0">
+    <animateMotion dur="12s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.10;0.32;1" calcMode="linear" path="M170,170 L580,170"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.09;0.10;0.32;0.33;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <rect x="300" y="146" width="140" height="48" rx="24" fill="#f4eadb" stroke="#a16207" stroke-width="3"/>
+  <text class="b20" x="370" y="177" text-anchor="middle">circuit dédié</text>
+  <text class="t17" x="370" y="222" text-anchor="middle">protection : voir la notice</text>
+  <text class="t17" x="370" y="242" text-anchor="middle">du constructeur</text>
+
+  <!-- Ligne du bas -->
+  <line x1="170" y1="330" x2="300" y2="330" stroke="#a16207" stroke-width="5"/>
+  <line x1="440" y1="330" x2="570" y2="330" stroke="#a16207" stroke-width="5"/>
+  <polygon points="568,319 568,341 580,330" fill="#a16207"/>
+  <circle r="9" fill="#e8914a" opacity="0">
+    <animateMotion dur="12s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.44;0.66;1" calcMode="linear" path="M170,330 L580,330"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.43;0.44;0.66;0.67;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <rect x="300" y="306" width="140" height="48" rx="24" fill="#f4eadb" stroke="#a16207" stroke-width="3"/>
+  <text class="b20" x="370" y="337" text-anchor="middle">circuit dédié</text>
+  <text class="t17" x="370" y="382" text-anchor="middle">protection : voir la notice</text>
+  <text class="t17" x="370" y="402" text-anchor="middle">du constructeur</text>
+
+  <!-- Équipements -->
+  <rect x="580" y="120" width="190" height="100" rx="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="580" y="120" width="190" height="100" rx="16" fill="#a16207" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.25;0;0;0" keyTimes="0;0.30;0.34;0.42;0.5;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <text class="b20" x="675" y="164" text-anchor="middle">PAC ou groupe</text>
+  <text class="b20" x="675" y="190" text-anchor="middle">frigorifique</text>
+
+  <rect x="580" y="280" width="190" height="100" rx="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="580" y="280" width="190" height="100" rx="16" fill="#a16207" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0.25;0;0" keyTimes="0;0.62;0.64;0.72;0.80;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <text class="b20" x="675" y="324" text-anchor="middle">Centrale de</text>
+  <text class="b20" x="675" y="350" text-anchor="middle">traitement d'air</text>
+
+  <!-- Bande -->
+  <rect x="40" y="430" width="720" height="56" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="t17" x="400" y="454" text-anchor="middle" font-weight="bold">Le constructeur donne l'intensité et la protection ;</text>
+  <text class="t17" x="400" y="475" text-anchor="middle">la norme dit comment les mettre en œuvre.</text>
+</svg>

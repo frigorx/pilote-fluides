@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-rec" aria-describedby="d-rec" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rec">La réception : le point de départ des garanties</title>
+  <desc id="d-rec">En haut, deux personnages pleins et sobres : à gauche le maître de l'ouvrage, le client ;
+    à droite l'entrepreneur, l'entreprise de chauffage, ventilation et climatisation. Entre eux, un
+    document, le procès-verbal de réception, que chacun rejoint par une flèche. En dessous, deux
+    cartes : à gauche, réception sans réserves, en vert ; à droite, réception avec réserves, en orange,
+    où ce qui reste à reprendre est écrit au procès-verbal. Une bande en bas rappelle que dans les
+    deux cas la réception est le point de départ des garanties.</desc>
+  <defs>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Le jour où le client accepte l'ouvrage</text>
+
+  <!-- Le maître de l'ouvrage -->
+  <circle cx="110" cy="98" r="24" fill="#1b3a63"/>
+  <path d="M66 176 Q66 130 110 130 Q154 130 154 176 Z" fill="#1b3a63"/>
+  <text class="qui" x="110" y="204" text-anchor="middle">Le maître de l'ouvrage</text>
+  <text class="sm" x="110" y="225" text-anchor="middle">le client</text>
+
+  <!-- L'entrepreneur -->
+  <circle cx="790" cy="98" r="24" fill="#e8914a"/>
+  <path d="M746 176 Q746 130 790 130 Q834 130 834 176 Z" fill="#e8914a"/>
+  <text class="qui" x="790" y="204" text-anchor="middle">L'entrepreneur</text>
+  <text class="sm" x="790" y="225" text-anchor="middle">l'entreprise CVC</text>
+
+  <!-- Le procès-verbal -->
+  <rect x="340" y="56" width="220" height="176" rx="10" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <text class="qui" x="450" y="86" text-anchor="middle">Procès-verbal</text>
+  <text class="qui" x="450" y="108" text-anchor="middle">de réception</text>
+  <rect x="366" y="126" width="168" height="8" rx="4" fill="#d6dee7"/>
+  <rect x="366" y="146" width="140" height="8" rx="4" fill="#d6dee7"/>
+  <rect x="366" y="166" width="156" height="8" rx="4" fill="#d6dee7"/>
+  <line x1="372" y1="212" x2="436" y2="212" stroke="#5a6b7d" stroke-width="2"/>
+  <line x1="464" y1="212" x2="528" y2="212" stroke="#5a6b7d" stroke-width="2"/>
+
+  <!-- Les deux flèches vers le document -->
+  <line x1="172" y1="150" x2="330" y2="150" stroke="#5a6b7d" stroke-width="4" marker-end="url(#pt)"/>
+  <line x1="728" y1="150" x2="570" y2="150" stroke="#5a6b7d" stroke-width="4" marker-end="url(#pt)"/>
+
+  <!-- Deux issues -->
+  <rect x="30" y="256" width="410" height="98" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="qui" x="235" y="286" text-anchor="middle" fill="#1e7e54" style="fill:#1e7e54">Réception sans réserves</text>
+  <text class="lbl" x="235" y="314" text-anchor="middle">Le client accepte l'ouvrage tel quel.</text>
+  <text class="lbl" x="235" y="338" text-anchor="middle">Rien n'est laissé à reprendre.</text>
+
+  <rect x="460" y="256" width="410" height="98" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="14 8"/>
+  <text class="qui" x="665" y="286" text-anchor="middle" style="fill:#b06a00">Réception avec réserves</text>
+  <text class="lbl" x="665" y="314" text-anchor="middle">Le client accepte, et fait écrire au procès-verbal</text>
+  <text class="lbl" x="665" y="338" text-anchor="middle">ce qui reste à reprendre.</text>
+
+  <!-- Bande -->
+  <rect x="30" y="372" width="840" height="40" rx="12" fill="#3730a3"/>
+  <text class="band" x="450" y="399" text-anchor="middle">Dans les deux cas : la réception est le point de départ des garanties</text>
+</svg>

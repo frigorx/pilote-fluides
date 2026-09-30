@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t4" aria-describedby="d4" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t4">La logique du tableau : un départ, une protection par circuit</title>
+  <desc id="d4">En haut, un cadre orange : la coupure d'urgence, qui coupe toute l'installation. Dessous, une barre horizontale qui distribue six départs : éclairage, prises, chauffage, eau chaude, ventilation mécanique contrôlée et cuisson. Chaque départ passe par sa propre protection, un petit bloc, puis alimente son circuit. Une bande résume : chaque circuit a son sectionnement et sa protection, un défaut ne coupe que le circuit concerné. Dans l'animation, un défaut apparaît sur le circuit chauffage : seule sa protection s'ouvre, les cinq autres circuits restent alimentés. L'image fixe montre l'état normal.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .b20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .t17 { font-size:17px; fill:#10233c; }
+    .g16 { font-size:16px; fill:#5a6b7d; }
+    .r16 { font-size:16px; font-weight:bold; fill:#c0392b; }
+  </style>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Un tableau : un départ, une protection par circuit</text>
+
+  <!-- Coupure d'urgence -->
+  <rect x="250" y="54" width="300" height="50" rx="14" fill="#e8914a" stroke="#c9451a" stroke-width="3"/>
+  <text class="b20" x="400" y="86" text-anchor="middle">Coupure d'urgence</text>
+  <line x1="400" y1="104" x2="400" y2="140" stroke="#1b3a63" stroke-width="5"/>
+
+  <!-- Barre de distribution -->
+  <line x1="100" y1="140" x2="710" y2="140" stroke="#1b3a63" stroke-width="7"/>
+
+  <!-- Départs : x = 130, 240, 350, 460, 570, 680 -->
+  <g stroke="#1b3a63" stroke-width="4">
+    <line x1="130" y1="143" x2="130" y2="180"/><line x1="240" y1="143" x2="240" y2="180"/>
+    <line x1="350" y1="143" x2="350" y2="180"/><line x1="460" y1="143" x2="460" y2="180"/>
+    <line x1="570" y1="143" x2="570" y2="180"/><line x1="680" y1="143" x2="680" y2="180"/>
+  </g>
+  <g fill="#f4eadb" stroke="#a16207" stroke-width="3">
+    <rect x="104" y="180" width="52" height="56" rx="8"/><rect x="214" y="180" width="52" height="56" rx="8"/>
+    <rect x="324" y="180" width="52" height="56" rx="8"/><rect x="434" y="180" width="52" height="56" rx="8"/>
+    <rect x="544" y="180" width="52" height="56" rx="8"/><rect x="654" y="180" width="52" height="56" rx="8"/>
+  </g>
+  <g stroke="#1b3a63" stroke-width="4">
+    <line x1="130" y1="236" x2="130" y2="280"/><line x1="240" y1="236" x2="240" y2="280"/>
+    <line x1="460" y1="236" x2="460" y2="280"/><line x1="570" y1="236" x2="570" y2="280"/>
+    <line x1="680" y1="236" x2="680" y2="280"/>
+  </g>
+  <!-- Le circuit chauffage : sa liaison s'ouvre pendant l'animation -->
+  <line x1="350" y1="236" x2="350" y2="280" stroke="#1b3a63" stroke-width="4">
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.25;0.26;0.78;0.80;1" dur="12s" repeatCount="indefinite"/>
+  </line>
+  <g fill="#fffdf8" stroke="#1b3a63" stroke-width="3">
+    <rect x="92" y="280" width="76" height="56" rx="10"/><rect x="202" y="280" width="76" height="56" rx="10"/>
+    <rect x="312" y="280" width="76" height="56" rx="10"/><rect x="422" y="280" width="76" height="56" rx="10"/>
+    <rect x="532" y="280" width="76" height="56" rx="10"/><rect x="642" y="280" width="76" height="56" rx="10"/>
+  </g>
+
+  <!-- Surcouches d'animation : rien d'essentiel, invisibles au repos -->
+  <rect x="312" y="280" width="76" height="56" rx="10" fill="#c0392b" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.55;0.55;0.12;0.12;0;0" keyTimes="0;0.15;0.18;0.25;0.27;0.78;0.80;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="324" y="180" width="52" height="56" rx="8" fill="#c0392b" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.6;0.6;0;0" keyTimes="0;0.25;0.26;0.78;0.80;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <text class="r16" x="362" y="262" opacity="0">défaut
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.18;0.30;0.32;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Légendes -->
+  <text class="g16" x="14" y="212">protection</text>
+  <text class="g16" x="14" y="312">circuit</text>
+  <g class="t17" text-anchor="middle">
+    <text x="130" y="366">Éclairage</text><text x="240" y="366">Prises</text><text x="350" y="366">Chauffage</text>
+    <text x="460" y="366">Eau chaude</text><text x="570" y="366">VMC</text><text x="680" y="366">Cuisson</text>
+  </g>
+
+  <!-- Bande -->
+  <rect x="40" y="404" width="720" height="68" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="t17" x="400" y="432" text-anchor="middle" font-weight="bold">Chaque circuit a son sectionnement et sa protection.</text>
+  <text class="t17" x="400" y="458" text-anchor="middle">Un défaut ne coupe que le circuit concerné.</text>
+</svg>

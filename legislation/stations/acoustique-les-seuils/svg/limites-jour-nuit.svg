@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-jn" aria-describedby="d-jn" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-jn">Les valeurs limites de l'émergence : jour et nuit</title>
+  <desc id="d-jn">Une frise horizontale de vingt-quatre heures. La nuit occupe le début, de 0 h à 7 h, et la fin,
+    de 22 h à 24 h, en bleu ; le jour, de 7 h à 22 h, est en orange clair. Dessous, deux cartes : le jour,
+    de 7 heures à 22 heures, limite de 5 décibels pondérés A ; la nuit, de 22 heures à 7 heures, limite de
+    3 décibels pondérés A. Un bandeau rappelle qu'un terme correctif selon la durée du bruit s'ajoute à ces valeurs.</desc>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#10233c">Deux valeurs limites : une de jour, une de nuit</text>
+
+  <!-- frise 24 h : 30 unités par heure, de x=40 à x=760 -->
+  <text x="145" y="90" text-anchor="middle" font-size="20" font-weight="bold" fill="#1b3a63">Nuit</text>
+  <text x="505" y="90" text-anchor="middle" font-size="20" font-weight="bold" fill="#c9451a">Jour</text>
+  <text x="730" y="90" text-anchor="middle" font-size="20" font-weight="bold" fill="#1b3a63">Nuit</text>
+  <rect x="40" y="102" width="210" height="50" fill="#c7d3e3" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="250" y="102" width="450" height="50" fill="#fbe3c8" stroke="#c9451a" stroke-width="3"/>
+  <rect x="700" y="102" width="60" height="50" fill="#c7d3e3" stroke="#1b3a63" stroke-width="3"/>
+  <g font-size="18" fill="#10233c" text-anchor="middle">
+    <text x="40" y="180">0 h</text>
+    <text x="250" y="180">7 h</text>
+    <text x="700" y="180">22 h</text>
+    <text x="760" y="180">24 h</text>
+  </g>
+
+  <!-- carte jour -->
+  <rect x="50" y="216" width="325" height="176" rx="14" fill="#fff3e4" stroke="#c9451a" stroke-width="3"/>
+  <circle cx="335" cy="252" r="12" fill="#e8914a" stroke="#c9451a" stroke-width="2"/>
+  <g stroke="#c9451a" stroke-width="3" stroke-linecap="round">
+    <line x1="335" y1="228" x2="335" y2="234"/><line x1="335" y1="270" x2="335" y2="276"/>
+    <line x1="311" y1="252" x2="317" y2="252"/><line x1="353" y1="252" x2="359" y2="252"/>
+  </g>
+  <text x="70" y="256" font-size="22" font-weight="bold" fill="#c9451a">Le jour</text>
+  <text x="70" y="284" font-size="18" fill="#10233c">de 7 heures à 22 heures</text>
+  <text x="212" y="352" text-anchor="middle" font-size="52" font-weight="bold" fill="#10233c">5 dB(A)</text>
+  <text x="212" y="380" text-anchor="middle" font-size="17" fill="#10233c">valeur limite de l'émergence</text>
+
+  <!-- carte nuit -->
+  <rect x="425" y="216" width="325" height="176" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="710" cy="252" r="15" fill="#1b3a63"/>
+  <circle cx="718" cy="246" r="13" fill="#eef3f9"/>
+  <text x="445" y="256" font-size="22" font-weight="bold" fill="#1b3a63">La nuit</text>
+  <text x="445" y="284" font-size="18" fill="#10233c">de 22 heures à 7 heures</text>
+  <text x="587" y="352" text-anchor="middle" font-size="52" font-weight="bold" fill="#10233c">3 dB(A)</text>
+  <text x="587" y="380" text-anchor="middle" font-size="17" fill="#10233c">valeur limite de l'émergence</text>
+
+  <!-- bandeau terme correctif -->
+  <rect x="50" y="416" width="700" height="66" rx="12" fill="#ede3f4" stroke="#6d28d9" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="400" y="445" text-anchor="middle" font-size="19" font-weight="bold" fill="#10233c">À ces deux valeurs s'ajoute un terme correctif, en dB(A),</text>
+  <text x="400" y="469" text-anchor="middle" font-size="19" font-weight="bold" fill="#10233c">fonction de la durée cumulée d'apparition du bruit.</text>
+</svg>

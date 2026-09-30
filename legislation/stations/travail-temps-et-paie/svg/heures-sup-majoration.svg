@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" role="img"
+     aria-labelledby="t-maj" aria-describedby="d-maj" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-maj">Heures supplémentaires : 25 % pour les huit premières, 50 % ensuite, sauf accord</title>
+  <desc id="d-maj">En haut, une bande bleue : les trente-cinq premières heures, payées au taux normal. Dessous, dix jetons pour les dix heures supplémentaires de la semaine : les huit premiers en orange, majorés de vingt-cinq pour cent, les deux suivants en brun, majorés de cinquante pour cent. Une accolade sous chaque groupe. En bas, une échelle de décision en trois cartes reliées par des flèches : d'abord un accord d'entreprise ou d'établissement, à défaut un accord de branche, à défaut la règle du Code du travail, vingt-cinq puis cinquante pour cent. Un bandeau précise qu'un accord peut fixer un autre taux, jamais inférieur à dix pour cent. Dans l'animation, les jetons arrivent un par un puis les cartes ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#1b3a63; }
+    .h   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .hw  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#ffffff; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lw  { font-size:17px; fill:#ffffff; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Ce qu'on paie en plus, semaine par semaine</text>
+  <rect x="40" y="58" width="820" height="42" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="450" y="86" text-anchor="middle">les 35 premières heures : taux normal</text>
+  <rect x="40" y="124" width="72" height="54" rx="8" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0400;0.0550;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#e8914a;#e8914a" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="h" x="76.0" y="158" text-anchor="middle">36<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0400;0.0550;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#10233c;#10233c" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="120" y="124" width="72" height="54" rx="8" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0750;0.0900;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#e8914a;#e8914a" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="h" x="156.0" y="158" text-anchor="middle">37<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0750;0.0900;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#10233c;#10233c" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="200" y="124" width="72" height="54" rx="8" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1100;0.1250;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#e8914a;#e8914a" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="h" x="236.0" y="158" text-anchor="middle">38<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1100;0.1250;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#10233c;#10233c" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="280" y="124" width="72" height="54" rx="8" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1450;0.1600;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#e8914a;#e8914a" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="h" x="316.0" y="158" text-anchor="middle">39<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1450;0.1600;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#10233c;#10233c" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="360" y="124" width="72" height="54" rx="8" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1800;0.1950;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#e8914a;#e8914a" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="h" x="396.0" y="158" text-anchor="middle">40<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1800;0.1950;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#10233c;#10233c" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="440" y="124" width="72" height="54" rx="8" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2150;0.2300;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#e8914a;#e8914a" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="h" x="476.0" y="158" text-anchor="middle">41<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2150;0.2300;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#10233c;#10233c" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="520" y="124" width="72" height="54" rx="8" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2500;0.2650;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#e8914a;#e8914a" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="h" x="556.0" y="158" text-anchor="middle">42<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2500;0.2650;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#10233c;#10233c" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="600" y="124" width="72" height="54" rx="8" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2850;0.3000;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#e8914a;#e8914a" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="h" x="636.0" y="158" text-anchor="middle">43<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2850;0.3000;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#10233c;#10233c" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="680" y="124" width="72" height="54" rx="8" fill="#a8410b">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3200;0.3350;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#a8410b;#a8410b" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="hw" x="716.0" y="158" text-anchor="middle">44<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3200;0.3350;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#ffffff;#ffffff" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <rect x="760" y="124" width="72" height="54" rx="8" fill="#a8410b">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3550;0.3700;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#1b3a63;#1b3a63;#a8410b;#a8410b" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text class="hw" x="796.0" y="158" text-anchor="middle">45<tspan font-size="14">e</tspan><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3550;0.3700;1" dur="14s" repeatCount="indefinite"/><animate attributeName="fill" values="#ffffff;#ffffff;#ffffff;#ffffff" keyTimes="0;0.44;0.47;1" dur="14s" repeatCount="indefinite"/></text>
+  <g>
+  <path d="M40 188 L40 200 L672 200 L672 188" fill="none" stroke="#b86a1c" stroke-width="3.5" stroke-linejoin="round"/>
+  <text class="lbl" x="356.0" y="234" text-anchor="middle">les 8 premières heures supplémentaires</text>
+  <text class="big" x="356.0" y="260" text-anchor="middle">+ 25 %</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5200;0.5700;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+  <path d="M680 188 L680 200 L832 200 L832 188" fill="none" stroke="#a8410b" stroke-width="3.5" stroke-linejoin="round"/>
+  <text class="lbl" x="834" y="234" text-anchor="end">les suivantes</text>
+  <text class="big" x="834" y="260" text-anchor="end">+ 50 %</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5700;0.6200;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+  <rect x="40" y="330" width="252" height="86" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="h" x="166.0" y="358" text-anchor="middle">1. Un accord d'entreprise</text>
+  <text class="lbl" x="166.0" y="382" text-anchor="middle">ou d'établissement</text>
+  <text class="lbl" x="166.0" y="405" text-anchor="middle">fixe le taux</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6600;0.6900;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <path d="M298 373.0 L324 373.0" stroke="#5a6b7d" stroke-width="3.5" fill="none"/>
+    <path d="M316 365.0 L328 373.0 L316 381.0" stroke="#5a6b7d" stroke-width="3.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6900;0.7100;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+  <rect x="334" y="330" width="252" height="86" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="h" x="460.0" y="358" text-anchor="middle">2. À défaut,</text>
+  <text class="lbl" x="460.0" y="382" text-anchor="middle">un accord de branche</text>
+  <text class="lbl" x="460.0" y="405" text-anchor="middle">fixe le taux</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.7200;0.7500;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <path d="M592 373.0 L618 373.0" stroke="#5a6b7d" stroke-width="3.5" fill="none"/>
+    <path d="M610 365.0 L622 373.0 L610 381.0" stroke="#5a6b7d" stroke-width="3.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.7500;0.7700;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+  <rect x="628" y="330" width="252" height="86" rx="10" fill="#fffdf8" stroke="#a8410b" stroke-width="3"/>
+  <text class="h" x="754.0" y="358" text-anchor="middle">3. À défaut d'accord :</text>
+  <text class="lbl" x="754.0" y="382" text-anchor="middle">le Code du travail</text>
+  <text class="lbl" x="754.0" y="405" text-anchor="middle">25 % puis 50 %</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.7800;0.8100;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+  <rect x="40" y="440" width="820" height="70" rx="10" fill="#eef3f9" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="h" x="450" y="470" text-anchor="middle">Un accord peut fixer un autre taux, jamais en dessous de 10 %</text>
+  <text class="lbl" x="450" y="496" text-anchor="middle">Une heure à 25 % se paie 1,25 fois le taux horaire ; à 50 %, 1,5 fois</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.8400;0.8800;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg>

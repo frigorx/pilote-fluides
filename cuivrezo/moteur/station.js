@@ -1,8 +1,9 @@
 /* CuivRézo — moteur des stations-geste. Écrit une fois, partagé par toutes les stations.
    CONTRAT : la page porte <body data-station="1-3" data-racine="../../"> et charge, dans l'ordre,
    donnees/stations.js · moteur/figures.js · moteur/voix.js · ce fichier. Rien d'autre à écrire.
-   Les SIX TEMPS, toujours dans le même ordre : le but · le matériel · le geste (un écran par geste)
-   · les pièges · je contrôle (un écran par critère, puis le bilan) · le professeur confirme.
+   Les SEPT TEMPS, toujours dans le même ordre : le but · le matériel · le geste (un écran par geste)
+   · les pièges · le défi (moteur/defis.js : épreuves tirées des données, puis le tampon)
+   · je contrôle (un écran par critère, puis le bilan) · le professeur confirme.
    Figures : { svg, etat } dessiné par CuivFigures · { img, alt } · et, sur un geste, `clip` :
    la vidéo des mains du professeur, prise si le fichier existe, sinon repli sur la figure.
    `?revue` dans l'adresse montre ce qui manque encore (clips à filmer, images à valider).
@@ -15,6 +16,7 @@ const Station = (() => {
     { cle: 'materiel',  court: 'Le matériel' },
     { cle: 'gestes',    court: 'Le geste' },
     { cle: 'pieges',    court: 'Les pièges' },
+    { cle: 'defi',      court: 'Le défi' },
     { cle: 'controles', court: 'Je contrôle' },
     { cle: 'prof',      court: 'Le professeur' }
   ];
@@ -35,6 +37,7 @@ const Station = (() => {
     switch (TEMPS[t].cle) {
       case 'gestes': return st.gestes.length;
       case 'pieges': return st.pieges.length;
+      case 'defi': return CuivDefis.pages(st);
       case 'controles': return st.controles.length + 1;   /* + le bilan */
       default: return 1;
     }
@@ -156,6 +159,16 @@ const Station = (() => {
       narration = pg.narration;
     }
 
+    if (T === 'defi') {
+      /* les épreuves se construisent depuis les données de la station (moteur/defis.js) */
+      const r = CuivDefis.ecran({
+        st, p: S.p, racine: S.racine, memo: memo('defi'), sauver: ecrireMemo,
+        fig: figure, revoir: boutonRetour,
+        page: n => { CuivVoix.couper(); S.p = n; rendre(); window.scrollTo(0, 0); if (S.auto) CuivVoix.dire(S.narration); }
+      }, pan);
+      fig = r.fig; narration = r.narration;
+    }
+
     if (T === 'controles') {
       const rep = memo('controles'), n = st.controles.length;
       if (S.p < n) {
@@ -239,8 +252,8 @@ const Station = (() => {
     const faits = memo('faits');
     if (sens > 0) {
       if (S.p + 1 < pages(S.t)) S.p++;
-      else if (S.t + 1 < TEMPS.length) { faits[S.t] = true; ecrireMemo(); S.t++; S.p = 0; }
-      else { faits[S.t] = true; ecrireMemo(); return sortir(); }
+      else if (S.t + 1 < TEMPS.length) { faits[TEMPS[S.t].cle] = true; ecrireMemo(); S.t++; S.p = 0; }
+      else { faits[TEMPS[S.t].cle] = true; ecrireMemo(); return sortir(); }
     } else {
       if (S.p > 0) S.p--;
       else if (S.t > 0) { S.t--; S.p = pages(S.t) - 1; }
@@ -272,7 +285,7 @@ const Station = (() => {
     const faits = memo('faits');
     document.querySelectorAll('.temps button').forEach((b, i) => {
       if (i === S.t) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
-      b.classList.toggle('fait', !!faits[i]);
+      b.classList.toggle('fait', !!faits[TEMPS[i].cle]);
     });
   }
 
@@ -287,7 +300,7 @@ const Station = (() => {
     const mq = el('div', 'marque-hote'); mq.setAttribute('data-marque-hote', '');   /* le logo inerWeb se range ici (moteur/marque.js) */
     haut.append(res, ti, mq, ca);
 
-    const nav = el('nav', 'temps'); nav.setAttribute('aria-label', 'Les six temps de la station');
+    const nav = el('nav', 'temps'); nav.setAttribute('aria-label', 'Les sept temps de la station');
     TEMPS.forEach((t, i) => {
       const b = el('button'); b.type = 'button'; b.append(el('span', 'n', String(i + 1)), t.court);
       b.addEventListener('click', () => { CuivVoix.couper(); S.t = i; S.p = 0; rendre(); if (S.auto) CuivVoix.dire(S.narration); });

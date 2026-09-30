@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 450" role="img"
+     aria-labelledby="t-var" aria-describedby="d-var" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-var">Les trois versions du régime TN : TN-C, TN-S et TN-C-S</title>
+  <desc id="d-var">Trois schémas l'un sous l'autre, chacun avec un poste à gauche et une machine à droite. En TN-C, deux fils : la phase et un conducteur unique, le PEN, dessiné en vert rayé de bleu, qui réunit le neutre et la protection. En TN-S, trois fils séparés : la phase, le neutre en bleu et le conducteur de protection en vert. En TN-C-S, le PEN part du poste, puis se sépare en un neutre et un conducteur de protection au point marqué d'un rond noir : le TN-S est réalisé en aval du TN-C.</desc>
+  <style>
+    .t { font:bold 22px 'Trebuchet MS',Calibri,sans-serif; fill:#10233c; }
+    .h { font:bold 20px 'Trebuchet MS',Calibri,sans-serif; fill:#1b3a63; }
+    .l { font:17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .lb { font:bold 17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .m { font:16px Calibri,'Segoe UI',sans-serif; fill:#5a6b7d; }
+    .big { font:bold 60px 'Trebuchet MS',Calibri,sans-serif; fill:#a16207; }
+    .w { font:bold 30px 'Trebuchet MS',Calibri,sans-serif; fill:#fffdf8; }
+  </style>
+  <defs>
+    <marker id="fl-var" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,1 L11,6 L1,11 z" fill="#b45309" stroke="#10233c" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  
+  <text class="t" x="20" y="93" text-anchor="start">TN-C</text>
+  <rect x="100" y="37" width="70" height="96" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="124.5" cy="93" r="17.5" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="145.5" cy="93" r="17.5" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="590" y="37" width="110" height="96" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="6"/>
+  <text class="lb" x="645" y="29" text-anchor="middle">Machine</text>
+  <path d="M170,71 H590" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><path d="M170,99 H590" fill="none" stroke="#1e7e54" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /><path d="M170,99 H590" fill="none" stroke="#2f5689" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="12 12"/>
+  <text class="l" x="300" y="63" text-anchor="middle">Phase</text>
+  <text class="l" x="300" y="127" text-anchor="middle">PEN : neutre et protection réunis</text>
+  <text class="lb" x="715" y="81" text-anchor="start">Un seul fil</text>
+  <text class="l" x="715" y="103" text-anchor="start">pour deux rôles</text>
+
+  
+  <text class="t" x="20" y="243" text-anchor="start">TN-S</text>
+  <rect x="100" y="187" width="70" height="96" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="124.5" cy="243" r="17.5" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="145.5" cy="243" r="17.5" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="590" y="187" width="110" height="96" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="6"/>
+  <text class="lb" x="645" y="179" text-anchor="middle">Machine</text>
+  <path d="M170,209 H590" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><path d="M170,235 H590" fill="none" stroke="#2f5689" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><path d="M170,261 H590" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <text class="l" x="300" y="203" text-anchor="middle">Phase</text>
+  <text class="l" x="300" y="229" text-anchor="middle">Neutre</text>
+  <text class="l" x="300" y="285" text-anchor="middle">Conducteur de protection (PE)</text>
+  <text class="lb" x="715" y="231" text-anchor="start">Deux fils</text>
+  <text class="l" x="715" y="253" text-anchor="start">séparés</text>
+
+  
+  <text class="t" x="20" y="393" text-anchor="start">TN-C-S</text>
+  <rect x="100" y="337" width="70" height="96" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="124.5" cy="393" r="17.5" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="145.5" cy="393" r="17.5" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="590" y="337" width="110" height="96" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="6"/>
+  <text class="lb" x="645" y="329" text-anchor="middle">Machine</text>
+  <path d="M170,359 H590" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M170,385 H380" fill="none" stroke="#1e7e54" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /><path d="M170,385 H380" fill="none" stroke="#2f5689" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="12 12"/>
+  <path d="M380,385 H590" fill="none" stroke="#2f5689" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M380,385 V411 H590" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="380" cy="385" r="7" fill="#10233c"/>
+  <text class="l" x="275" y="353" text-anchor="middle">Phase</text>
+  <text class="l" x="275" y="409" text-anchor="middle">PEN</text>
+  <text class="l" x="485" y="379" text-anchor="middle">Neutre</text>
+  <text class="l" x="485" y="435" text-anchor="middle">PE</text>
+  <text class="lb" x="715" y="381" text-anchor="start">PEN, puis</text>
+  <text class="l" x="715" y="403" text-anchor="start">N et PE séparés</text>
+</svg>

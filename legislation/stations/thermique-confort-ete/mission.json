@@ -1,0 +1,36 @@
+{
+  "slug": "thermique-confort-ete",
+  "branche": "Thermique",
+  "titre": "Mission : ne pas commencer par la climatisation",
+  "client": "Le maître d'ouvrage d'une résidence de logements collectifs, qui souhaite réduire le budget de l'enveloppe et prévoir des climatiseurs dans chaque logement à la place des protections solaires.",
+  "situation": "Pour économiser sur l'enveloppe, le maître d'ouvrage voudrait supprimer les débords de toit et les brise-soleil, en compensant par des climatiseurs. Il est persuadé que la climatisation règle tout et que la RE2020 n'impose rien de particulier sur l'été. Votre responsable vous demande de préparer l'argumentaire : comment se mesure l'inconfort d'été, dans quel ordre on le traite, et sur quoi se dimensionne la climatisation quand elle reste nécessaire.",
+  "piece_a_produire": "Une fiche d'une page « Ordre de traitement de la surchauffe » : les quatre étapes dans l'ordre, avec pour chacune une phrase d'explication, puis trois lignes de réponse au maître d'ouvrage sur la suppression des protections solaires.",
+  "questions": [
+    { "q": "Comment se mesure le confort d'été dans la RE2020, et en quoi est-ce différent d'une température de pointe ?", "ecran": 2,
+      "reponse": "En degrés-heures d'inconfort (DH) : une aire cumulée qui additionne combien de degrés on dépasse le seuil de confort et combien de temps le dépassement dure. Deux logements de même pointe peuvent avoir des DH très différents." },
+    { "q": "Pourquoi un débord de toit bloque-t-il le soleil d'été sans priver le logement du soleil d'hiver ?", "ecran": 4,
+      "reponse": "Le soleil d'été est haut, presque à la verticale ; celui d'hiver est bas et passe sous le débord. Le débord ne bouge pas, c'est la hauteur du soleil qui change." },
+    { "q": "Qu'apporte un mur lourd (béton, terre cuite, pierre) par rapport à un mur léger sur la courbe de température intérieure ?", "ecran": 5,
+      "reponse": "Il stocke une partie de l'énergie reçue le jour et la restitue plus tard : le pic de température intérieure est à la fois plus bas et plus tardif qu'avec un mur léger." },
+    { "q": "Sur quoi la climatisation se dimensionne-t-elle, et qu'est-ce que cela change pour le métier ?", "ecran": 7,
+      "reponse": "Sur le besoin résiduel, c'est-à-dire ce que les leviers de conception n'ont pas suffi à effacer. La climatisation n'est plus le premier réflexe : elle est calculée après les leviers passifs, pas moins nécessaire mais pensée différemment." }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Remettez dans le bon ordre de traitement ces quatre actions contre la surchauffe d'été (de 1 à 4).",
+    "items": [
+      "Installer une climatisation dimensionnée sur le besoin qui reste",
+      "Purger la chaleur accumulée en refroidissant le bâtiment la nuit",
+      "Poser des protections solaires (débord, brise-soleil, orientation des baies)",
+      "Utiliser des matériaux lourds qui stockent la chaleur du jour"
+    ],
+    "corrige": "1 : protections solaires ; 2 : matériaux lourds (inertie) ; 3 : refroidissement nocturne (ventilation) ; 4 : climatisation, en dernier, sur le besoin résiduel."
+  },
+  "badge": "Ordre de bataille",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP8", "CP9"],
+    "attestation_2025": [],
+    "justification": "CP8 (apports) parce que le confort d'été se joue sur les apports solaires et la surchauffe, et CP9 (climatisation) parce que la climatisation se dimensionne sur le besoin résiduel."
+  }
+}

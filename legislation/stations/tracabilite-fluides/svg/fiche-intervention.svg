@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-fiche" aria-describedby="d-fiche" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-fiche">La fiche d'intervention : ce qu'elle dit et qui la signe</title>
+  <desc id="d-fiche">À gauche, la fiche d'intervention Cerfa 15497 avec quatre rubriques numérotées : l'opérateur avec ses coordonnées et son numéro d'attestation de capacité, l'intervention avec sa date et sa nature, le fluide récupéré avec sa nature, sa quantité et l'installation destinataire, le fluide réintroduit avec sa quantité. À droite, un encadré montre les deux signatures, celle de l'opérateur et celle du détenteur, au-delà d'un seuil de charge (3 kg de HCFC, ou 5 tonnes équivalent CO2 pour les HFC et PFC). Un second encadré indique que chacun conserve un exemplaire au moins cinq ans, à disposition des opérateurs suivants et de l'administration.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomt{ font-weight:bold; font-size:18px; fill:#0f766e; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <rect x="30" y="30" width="440" height="440" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M30,42 a12,12 0 0 1 12,-12 h416 a12,12 0 0 1 12,12 v44 h-440 z" fill="#1b3a63"/>
+  <text class="wht" x="250" y="66" text-anchor="middle">FICHE D'INTERVENTION · Cerfa 15497</text>
+  <circle cx="60" cy="134" r="15" fill="#1b3a63"/>
+  <text class="wht" x="60" y="140" text-anchor="middle">1</text>
+  <text class="nom" x="90" y="130" text-anchor="start">L'opérateur</text>
+  <text class="txt" x="90" y="156" text-anchor="start">coordonnées, n° d'attestation de capacité</text>
+  <path d="M50,180 H450" stroke="#b9c6d3" stroke-width="1.5" stroke-dasharray="2 5"/>
+  <circle cx="60" cy="226" r="15" fill="#1b3a63"/>
+  <text class="wht" x="60" y="232" text-anchor="middle">2</text>
+  <text class="nom" x="90" y="222" text-anchor="start">L'intervention</text>
+  <text class="txt" x="90" y="248" text-anchor="start">date et nature du travail réalisé</text>
+  <path d="M50,272 H450" stroke="#b9c6d3" stroke-width="1.5" stroke-dasharray="2 5"/>
+  <circle cx="60" cy="318" r="15" fill="#1b3a63"/>
+  <text class="wht" x="60" y="324" text-anchor="middle">3</text>
+  <text class="nom" x="90" y="314" text-anchor="start">Le fluide récupéré</text>
+  <text class="txt" x="90" y="340" text-anchor="start">nature, quantité, installation destinataire</text>
+  <path d="M50,364 H450" stroke="#b9c6d3" stroke-width="1.5" stroke-dasharray="2 5"/>
+  <circle cx="60" cy="410" r="15" fill="#1b3a63"/>
+  <text class="wht" x="60" y="416" text-anchor="middle">4</text>
+  <text class="nom" x="90" y="406" text-anchor="start">Le fluide réintroduit</text>
+  <text class="txt" x="90" y="432" text-anchor="start">quantité remise dans l'équipement</text>
+  <rect x="500" y="30" width="270" height="230" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="nom" x="635" y="62" text-anchor="middle">Deux signatures</text>
+  <rect x="520" y="80" width="108" height="66" rx="8" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M532,102 q10,-16 20,0 t20,0 t20,0" fill="none" stroke="#1b3a63" stroke-width="2.5" stroke-linecap="round"/>
+  <text class="txt" x="574" y="132" text-anchor="middle">Opérateur</text>
+  <rect x="642" y="80" width="108" height="66" rx="8" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M654,102 q10,-16 20,0 t20,0 t20,0" fill="none" stroke="#1b3a63" stroke-width="2.5" stroke-linecap="round"/>
+  <text class="txt" x="696" y="132" text-anchor="middle">Détenteur</text>
+  <text class="txt" x="635" y="178" text-anchor="middle">au-delà d'un seuil de charge :</text>
+  <text class="nom" x="635" y="202" text-anchor="middle">3 kg de HCFC</text>
+  <text class="nom" x="635" y="226" text-anchor="middle">5 t éq. CO₂ (HFC, PFC)</text>
+  <rect x="500" y="280" width="270" height="190" rx="12" fill="#e6f2ef" stroke="#0f766e" stroke-width="3"/>
+  <text class="nomt" x="635" y="312" text-anchor="middle">Conservation</text>
+  <text class="txt" x="635" y="344" text-anchor="middle">un exemplaire chacun,</text>
+  <text class="txt" x="635" y="368" text-anchor="middle">au moins 5 ans,</text>
+  <text class="txt" x="635" y="392" text-anchor="middle">à disposition des</text>
+  <text class="txt" x="635" y="416" text-anchor="middle">opérateurs suivants</text>
+  <text class="txt" x="635" y="440" text-anchor="middle">et de l'administration</text>
+</svg>

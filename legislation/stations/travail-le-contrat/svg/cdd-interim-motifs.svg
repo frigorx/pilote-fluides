@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"
+     aria-labelledby="t-cdd" aria-describedby="d-cdd" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-cdd">CDD et intérim : des motifs limités</title>
+  <desc id="d-cdd">À gauche, quatre motifs autorisés pour un CDD ou une mission d'intérim, empilés :
+    remplacer un salarié absent, faire face à un accroissement temporaire d'activité, un emploi saisonnier,
+    attendre l'arrivée d'un salarié en CDI. En dessous, un encadré en tirets marqué d'une croix : pourvoir
+    durablement un emploi permanent est interdit. Un encadré rappelle un écrit, le motif précis, la remise
+    sous deux jours ouvrables. À droite, deux montages : le CDD, un seul contrat entre l'employeur et le
+    salarié ; l'intérim, trois acteurs empilés, l'intérimaire, l'agence d'intérim et l'entreprise utilisatrice,
+    avec deux contrats, le contrat de mission puis le contrat de mise à disposition. L'animation allume les
+    motifs l'un après l'autre ; l'image fixe montre tout.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:20px; fill:#10233c; }
+    .pill { font-size:16px; fill:#10233c; }
+    .non  { font-size:16px; fill:#10233c; }
+    .nb   { font-weight:bold; font-size:16px; fill:#9d174d; }
+    .ban  { font-size:16px; fill:#10233c; }
+    .mt   { font-weight:bold; font-size:18px; fill:#9d174d; }
+    .nod  { font-weight:bold; font-size:16px; fill:#10233c; }
+    .lk   { font-size:15px; fill:#5a6b7d; }
+  </style>
+
+  <text class="ttl" x="20" y="34">Les motifs autorisés</text>
+  <g>
+    <rect x="20" y="70" width="390" height="44" rx="10" fill="#f6e6ee" stroke="#9d174d" stroke-width="2.5"/>
+    <rect x="20" y="70" width="390" height="44" rx="10" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.55;0.55;0;0" keyTimes="0;0.1538;0.1923;0.2462;0.2846;1" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="pill" x="40" y="98">Remplacer un salarié absent</text>
+  </g>
+  <g>
+    <rect x="20" y="124" width="390" height="44" rx="10" fill="#f6e6ee" stroke="#9d174d" stroke-width="2.5"/>
+    <rect x="20" y="124" width="390" height="44" rx="10" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.55;0.55;0;0" keyTimes="0;0.2769;0.3154;0.3692;0.4077;1" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="pill" x="40" y="152">Accroissement temporaire d'activité</text>
+  </g>
+  <g>
+    <rect x="20" y="178" width="390" height="44" rx="10" fill="#f6e6ee" stroke="#9d174d" stroke-width="2.5"/>
+    <rect x="20" y="178" width="390" height="44" rx="10" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.55;0.55;0;0" keyTimes="0;0.4000;0.4385;0.4923;0.5308;1" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="pill" x="40" y="206">Emploi saisonnier</text>
+  </g>
+  <g>
+    <rect x="20" y="232" width="390" height="44" rx="10" fill="#f6e6ee" stroke="#9d174d" stroke-width="2.5"/>
+    <rect x="20" y="232" width="390" height="44" rx="10" fill="#e8914a" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.55;0.55;0;0" keyTimes="0;0.5231;0.5615;0.6154;0.6538;1" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <text class="pill" x="40" y="260">Attendre l'arrivée d'un salarié en CDI</text>
+  </g>
+
+  <!-- l'interdit -->
+  <rect x="20" y="300" width="390" height="70" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <path d="M38,322 L58,342 M58,322 L38,342" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>
+  <text class="non" x="74" y="328">Jamais : occuper durablement</text>
+  <text class="non" x="74" y="352">un emploi permanent de l'entreprise</text>
+
+  <!-- les formes -->
+  <rect x="20" y="392" width="390" height="100" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nb" x="40" y="420">Toujours</text>
+  <text class="ban" x="40" y="446">un écrit, avec le motif précis,</text>
+  <text class="ban" x="40" y="470">remis sous 2 jours ouvrables</text>
+
+  <line x1="430" y1="20" x2="430" y2="500" stroke="#d5dde6" stroke-width="2"/>
+
+  <text class="ttl" x="452" y="34">Deux montages</text>
+
+  <!-- CDD -->
+  <text class="mt" x="452" y="70">CDD</text>
+  <rect x="452" y="84" width="140" height="44" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nod" x="522" y="112" text-anchor="middle">Employeur</text>
+  <rect x="628" y="84" width="140" height="44" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nod" x="698" y="112" text-anchor="middle">Salarié</text>
+  <line x1="592" y1="106" x2="628" y2="106" stroke="#9d174d" stroke-width="4"/>
+  <text class="lk" x="610" y="152" text-anchor="middle">un seul contrat, écrit</text>
+
+  <!-- Intérim -->
+  <text class="mt" x="452" y="206">Intérim</text>
+  <rect x="452" y="222" width="230" height="44" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nod" x="567" y="250" text-anchor="middle">Intérimaire</text>
+  <line x1="567" y1="266" x2="567" y2="316" stroke="#9d174d" stroke-width="4"/>
+  <text class="lk" x="584" y="296">contrat de mission</text>
+  <rect x="452" y="316" width="230" height="44" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nod" x="567" y="344" text-anchor="middle">Agence d'intérim</text>
+  <line x1="567" y1="360" x2="567" y2="410" stroke="#9d174d" stroke-width="4"/>
+  <text class="lk" x="584" y="380">contrat de mise</text>
+  <text class="lk" x="584" y="399">à disposition</text>
+  <rect x="452" y="410" width="230" height="44" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nod" x="567" y="438" text-anchor="middle">Entreprise utilisatrice</text>
+</svg>

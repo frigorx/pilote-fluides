@@ -164,6 +164,7 @@
       <span class="reseau-nom">Législation</span>
     </a>
     <nav class="nav" aria-label="Correspondance">
+      <a href="carnet.html">📒 Mon carnet <span id="carnet-tampons"></span></a>
       <a href="https://inerweb.fr/">⇄ Le réseau thermo-techno</a>
       <a href="https://inerweb.fr/hydrometro/">⇄ HydroMétro</a>
     </nav>
@@ -173,13 +174,14 @@
 <div class="page" role="main" id="contenu" tabindex="-1">
 
   <div class="accroche">
-    <div class="pastille">NIVEAU BTS · RÉSEAU EN CONSTRUCTION</div>
+    <div class="pastille">NIVEAU BTS · TP TECVC · 57 STATIONS · PROTOTYPE EN RELECTURE</div>
     <h1>Le réseau <em>Législation</em>.</h1>
     <p class="chapo">Une <strong>autre matière</strong> que la thermo-techno : le cadre du métier —
     réglementations, sécurité, environnement. Un réseau à part entière, et un réseau
     de réseaux : sur chaque ligne mère, <strong>chaque station est le départ de sa propre
     sous-ligne</strong>, et le tout se lit comme un <strong>maillage</strong> — les sous-réseaux se
-    répondent par des correspondances. Les stations ouvriront une à une.</p>
+    répondent par des correspondances. Chaque station est une <strong>mission</strong> du carnet du
+    chargé d'affaires : une année chez Clim'Études Sud, du premier jour au dossier complet.</p>
   </div>
 
   <!-- CE QUI EST OUVERT — posé le 24/08 après le test de F. Henninot : il a
@@ -190,20 +192,33 @@
        bandeau, hors du plan : il dit l'état réel et donne l'accès direct.
        À tenir à jour quand une station ouvre — c'est deux nombres et un lien. -->
   <div class="ouvert">
-    <p class="o-etat"><b>29 stations ouvertes</b> sur 57</p>
-    <p class="o-liste"><b>Cinq sous-lignes sont complètes</b> — Thermique, La DESP,
-    Risques professionnels, Déchets, Impact environnemental — et la sous-ligne
-    Fluidique &amp; thermique compte deux stations sur quatre.</p>
-    <a class="o-lien" href="stations/fgaz-3/">
-      <span class="o-nom">📜 Commencer par F-Gaz 3 — le règlement (UE) 2024/573</span>
-      <span class="o-det">12 écrans, 4 questions, narration audio — environ 10 minutes</span>
+    <p class="o-etat"><b>57 stations ouvertes</b> sur 57</p>
+    <p class="o-liste"><b>Les onze sous-lignes sont complètes</b> — de la sécurité au droit du
+    travail, en passant par l'électricité, les fluides, la DESP, la thermique, l'acoustique,
+    l'incendie, les certifications, les déchets et l'impact environnemental.</p>
+    <a class="o-lien" href="stations/risques-duerp/">
+      <span class="o-nom">⛑️ Première mission : le DUERP — évaluer les risques</span>
+      <span class="o-det">période 1 « Arriver en sécurité » · 12 écrans, 4 questions, voix — environ 10 minutes</span>
     </a>
-    <p class="o-note">Sur le plan ci-dessous, <strong>une station ouverte porte son nom
-    souligné</strong> et s'ouvre d'un clic. Les 28 autres sont encore en préparation :
-    leur pastille reste en pointillé. Les cours ouverts n'ont pas encore été relus par
-    un professionnel — certaines valeurs réglementaires y sont volontairement absentes
-    plutôt qu'approximatives.</p>
+    <p class="o-note">📒 <a href="carnet.html"><strong>Mon carnet</strong></a> : chaque station est une
+    mission de Clim'Études Sud ; 3 bonnes réponses sur 4 = un tampon, une sous-ligne complète = un
+    certificat. Tout reste sur votre appareil. Le carnet papier et son livret professeur se
+    téléchargent depuis la page du carnet.</p>
+    <p class="o-note">Les cours n'ont pas encore été relus par un professionnel : certaines valeurs
+    réglementaires y sont volontairement absentes plutôt qu'approximatives.</p>
   </div>
+
+  <!-- LE BÂTIMENT RÉGLEMENTAIRE (3D) — porte d'entrée du réseau : onze zones, onze sous-lignes.
+       C'est un PLUS : le plan ci-dessous reste la vraie navigation (repli automatique sans WebGL).
+       Composant : batiment3d/batiment.js. Zones lues dans batiment3d/zones.json (généré depuis
+       le tableau RESEAU de cette page : node batiment3d/generer-zones.mjs). -->
+  <section class="bloc" id="batiment" aria-label="Le bâtiment réglementaire, en 3D" style="margin-top:26px">
+    <div class="titre-bloc">
+      <h2>🏢 Le bâtiment réglementaire</h2>
+      <span>onze zones, onze sous-lignes du réseau : tournez, survolez, touchez</span>
+    </div>
+    <div id="batiment3d" style="padding:14px 20px 22px"></div>
+  </section>
 
   <section class="bloc plan" id="carte" aria-label="Plan du réseau Législation">
     <div class="titre-bloc">
@@ -238,7 +253,7 @@
       <li><span class="c-nom">Catégories I à IV (DESP) ⇄ NF EN 378 (Fluidique)</span><br>
         <span class="c-det">le groupe du fluide (1 ou 2) entre dans le classement de l'équipement.</span></li>
       <li><span class="c-nom">Sprinkler &amp; RIA (Incendie) ⇄ La DESP</span><br>
-        <span class="c-det">les réseaux d'eau incendie sont sous pression — un lot CVC en bureau d'études, soumis à la DESP.</span></li>
+        <span class="c-det">les réseaux d'eau incendie sont sous pression — un lot CVC en bureau d'études, dont le rapport à la DESP s'examine.</span></li>
     </ul>
     <h3>Vers les autres réseaux inerWeb</h3>
     <ul>
@@ -290,36 +305,36 @@
           ] },
         { id: "regl-acoustique", ico: "🔊", nom: "Acoustique", sous: "bruit & voisinage", couleur: "#6d28d9",
           stations: [
-            { nom: "Le bruit en dB",   sous: "dB(A), niveaux" },
-            { nom: "Les seuils",       sous: "voisinage, émergence" },
-            { nom: "Mesurer",          sous: "sonomètre, protocole" },
-            { nom: "PAC & voisinage",  sous: "l'unité extérieure" },
-            { nom: "Traiter le bruit", sous: "plots, silencieux" }
+            { nom: "Le bruit en dB",   sous: "dB(A), niveaux", href: "stations/acoustique-le-bruit-en-db/" },
+            { nom: "Les seuils",       sous: "voisinage, émergence", href: "stations/acoustique-les-seuils/" },
+            { nom: "Mesurer",          sous: "sonomètre, protocole", href: "stations/acoustique-mesurer/" },
+            { nom: "PAC & voisinage",  sous: "l'unité extérieure", href: "stations/acoustique-pac-voisinage/" },
+            { nom: "Traiter le bruit", sous: "plots, silencieux", href: "stations/acoustique-traiter-le-bruit/" }
           ] },
         { id: "regl-incendie", ico: "🔥", nom: "Incendie", sous: "ERP, coupe-feu", couleur: "#b91c1c",
           stations: [
-            { nom: "Classer le bâti",   sous: "ERP · IGH · habitation" },
-            { nom: "Euroclasses",       sous: "réaction & résistance" },
-            { nom: "Le désenfumage",    sous: "le rôle du CVC" },
-            { nom: "Clapets coupe-feu", sous: "traversées, DAS" },
-            { nom: "Le SSI",            sous: "détection, asservis." },
-            { nom: "Sprinkler & RIA",   sous: "eau incendie, lot CVC", corr: true }
+            { nom: "Classer le bâti",   sous: "ERP · IGH · habitation", href: "stations/incendie-classer-le-bati/" },
+            { nom: "Euroclasses",       sous: "réaction & résistance", href: "stations/incendie-euroclasses/" },
+            { nom: "Le désenfumage",    sous: "le rôle du CVC", href: "stations/incendie-desenfumage/" },
+            { nom: "Clapets coupe-feu", sous: "traversées, DAS", href: "stations/incendie-clapets-coupe-feu/" },
+            { nom: "Le SSI",            sous: "détection, asservis.", href: "stations/incendie-ssi/" },
+            { nom: "Sprinkler & RIA",   sous: "eau incendie, lot CVC", href: "stations/incendie-sprinkler-ria/", corr: true }
           ] },
         { id: "regl-electrique", ico: "⚡", nom: "Électrique", sous: "NF C 15-100, habilitation", couleur: "#a16207", corr: true,
           stations: [
-            { nom: "NF C 15-100",        sous: "la norme BT" },
-            { nom: "Terre & différentiel", sous: "protéger les personnes" },
-            { nom: "Protéger un circuit", sous: "sections & calibres" },
-            { nom: "Régimes de neutre",  sous: "TT · TN · IT" },
-            { nom: "L'habilitation",     sous: "B0 · BS · BR", corr: true },
-            { nom: "Consigner",          sous: "VAT, les 4 étapes" }
+            { nom: "NF C 15-100",        sous: "la norme BT", href: "stations/elec-nf-c-15-100/" },
+            { nom: "Terre & différentiel", sous: "protéger les personnes", href: "stations/elec-terre-differentiel/" },
+            { nom: "Protéger un circuit", sous: "sections & calibres", href: "stations/elec-proteger-un-circuit/" },
+            { nom: "Régimes de neutre",  sous: "TT · TN · IT", href: "stations/elec-regimes-de-neutre/" },
+            { nom: "L'habilitation",     sous: "B0 · BS · BR", href: "stations/elec-habilitation/", corr: true },
+            { nom: "Consigner",          sous: "VAT, les 4 étapes", href: "stations/elec-consigner/" }
           ] },
         { id: "regl-fluidique", ico: "❄️", nom: "Fluidique & thermique", sous: "F-Gaz, EN 378, traçabilité", couleur: "#0f766e", corr: true,
           stations: [
             { nom: "F-Gaz 3",             sous: "2024 : quotas, interdictions", href: "stations/fgaz-3/" },
             { nom: "Aptitude & capacité", sous: "personne & entreprise", href: "stations/aptitude-capacite/" },
-            { nom: "NF EN 378",           sous: "classes, charges maxi", corr: true },
-            { nom: "Traçabilité",         sous: "BSD, Trackdéchets", corr: true }
+            { nom: "NF EN 378",           sous: "classes, charges maxi", href: "stations/en-378/", corr: true },
+            { nom: "Traçabilité",         sous: "BSD, Trackdéchets", href: "stations/tracabilite-fluides/", corr: true }
           ] },
         { id: "regl-desp", ico: "🛢️", nom: "La DESP", sous: "équipements sous pression", couleur: "#0c4a6e",
           stations: [
@@ -331,18 +346,18 @@
           ] },
         { id: "regl-certifs", ico: "🏅", nom: "Certifications & normes", sous: "RGE, QualiPAC, CE", couleur: "#3730a3",
           stations: [
-            { nom: "Loi, norme ou DTU ?", sous: "qui oblige quoi" },
-            { nom: "Le marquage CE",      sous: "produits & DoP" },
-            { nom: "RGE & QualiPAC",      sous: "les qualifications" },
-            { nom: "Les garanties",       sous: "décennale, biennale" }
+            { nom: "Loi, norme ou DTU ?", sous: "qui oblige quoi", href: "stations/certif-loi-norme-dtu/" },
+            { nom: "Le marquage CE",      sous: "produits & DoP", href: "stations/certif-marquage-ce/" },
+            { nom: "RGE & QualiPAC",      sous: "les qualifications", href: "stations/certif-rge-qualipac/" },
+            { nom: "Les garanties",       sous: "décennale, biennale", href: "stations/certif-garanties/" }
           ] },
         { id: "regl-travail", ico: "⚖️", nom: "Droit du travail", sous: "contrats, obligations", couleur: "#9d174d",
           stations: [
-            { nom: "Le contrat",      sous: "CDI, CDD, apprentissage" },
-            { nom: "Temps & paie",    sous: "durée, heures sup" },
-            { nom: "Droits & devoirs", sous: "employeur, salarié" },
-            { nom: "Se former",       sous: "CPF, VAE" },
-            { nom: "S'installer",     sous: "l'auto-entreprise" }
+            { nom: "Le contrat",      sous: "CDI, CDD, apprentissage", href: "stations/travail-le-contrat/" },
+            { nom: "Temps & paie",    sous: "durée, heures sup", href: "stations/travail-temps-et-paie/" },
+            { nom: "Droits & devoirs", sous: "employeur, salarié", href: "stations/travail-droits-devoirs/" },
+            { nom: "Se former",       sous: "CPF, VAE", href: "stations/travail-se-former/" },
+            { nom: "S'installer",     sous: "l'auto-entreprise", href: "stations/travail-s-installer/" }
           ] }
       ] },
     { nom: "🦺 SÉCURITÉ & ENVIRONNEMENT", sous: "prévenir, trier, mesurer l'impact",
@@ -453,7 +468,7 @@
     if (f.corr) d.push('<circle cx="' + x + '" cy="' + y + '" r="15" fill="none" stroke="#98a6b3" stroke-width="2.5"></circle>');
     d.push('<circle cx="' + x + '" cy="' + y + '" r="9" fill="#ffffff" stroke="' + f.couleur + '" stroke-width="4.5"></circle>');
     var w = Math.round(f.nom.length * 7.4 + 30) + (f.ico ? 24 : 0);
-    d.push('<g><title>' + esc(f.nom) + " — sous-ligne en préparation</title>" +
+    d.push('<g id="ligne-' + f.id + '"><title>' + esc(f.nom) + " — " + f.stations.length + " stations</title>" +
            '<rect x="' + (x - w / 2) + '" y="' + (y + TETE_CART) + '" width="' + w + '" height="30" rx="15" fill="' + f.couleur + '"></rect>' +
            '<text class="puce" x="' + x + '" y="' + (y + TETE_CART + 20) + '" text-anchor="middle">' + (f.ico ? f.ico + " " : "") + esc(f.nom) + "</text></g>");
     d.push('<text class="puce-s" x="' + x + '" y="' + (y + TETE_CART + 46) + '" text-anchor="middle">' + esc(f.sous) + "</text>");
@@ -542,11 +557,27 @@
      PRINCIPAL, comme les autres satellites (décision du 20/08 : une
      source, zéro divergence). Le pied de page — logo + licence — est
      posé par marque.js, jamais écrit à la main. -->
+<script>
+(function () {
+  try {
+    var n = Object.keys(JSON.parse(localStorage.getItem("inerweb-legislation-tampons") || "{}")).length;
+    var c = document.getElementById("carnet-tampons");
+    if (c && n) c.textContent = "· " + n + " tampon" + (n > 1 ? "s" : "");
+  } catch (e) {}
+})();
+</script>
 <script src="../moteur/lisibilite.js"></script>
 <script src="../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
   <script src="../moteur/voix-index.js?v=20260927-1"></script>
   <script src="../moteur/prononciation.js?v=20260927-1"></script>
   <script src="../moteur/voix.js?v=20260927-1"></script>
   <script src="../moteur/reglage-voix.js?v=20260927-1"></script>
+<script type="module">
+  import { monterBatiment } from "./batiment3d/batiment.js";
+  monterBatiment(document.getElementById("batiment3d"), { urlPlan: "#carte", auPlan: function (id) {
+    var g = document.getElementById("ligne-" + id);
+    (g || document.getElementById("carte")).scrollIntoView({ behavior: "smooth", block: "center" });
+  } });
+</script>
 </body>
 </html>

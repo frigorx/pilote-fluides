@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 520" role="img"
+     aria-labelledby="t-bal" aria-describedby="d-bal" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bal">La balance employeur et salarié : chaque pouvoir a sa contrepartie</title>
+  <desc id="d-bal">Une balance à deux plateaux, un pivot central portant la mention « Le droit du travail ». Le plateau de gauche est celui de l'employeur : il peut donner des ordres, contrôler et sanctionner avec une procédure ; il doit protéger la santé et la sécurité et former. Le plateau de droite est celui du salarié : il doit exécuter, agir de bonne foi et prendre soin de la sécurité ; il peut alerter et se retirer d'un danger grave et imminent. La balance est à l'équilibre. L'animation charge d'abord le plateau de l'employeur, qui descend, puis celui du salarié, jusqu'à l'équilibre ; l'image fixe est complète et à l'équilibre.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .ha   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#9d174d; }
+    .b    { font-size:17px; fill:#10233c; }
+    .bb   { font-size:17px; font-weight:bold; fill:#10233c; }
+    .ba   { font-size:17px; font-weight:bold; fill:#9d174d; }
+    .bo   { font-size:17px; font-weight:bold; fill:#b45309; }
+    .g    { font-size:16px; fill:#5a6b7d; }
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <text class="ttl" x="470" y="34" text-anchor="middle">Chaque pouvoir a sa contrepartie</text>
+  <!-- pilier -->
+  <polygon points="470,120 440,440 500,440" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="400" y="440" width="140" height="18" rx="6" fill="#1b3a63"/>
+  <text class="h" x="470" y="488" text-anchor="middle">Le droit du travail</text>
+  <!-- fléau -->
+  <line x1="160" y1="126" x2="780" y2="126" stroke="#1b3a63" stroke-width="6" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="rotate" values="0 470 126;-3.3 470 126;-3.3 470 126;0 470 126;0 470 126" keyTimes="0;0.12;0.30;0.42;1" dur="12s" repeatCount="indefinite"/>
+  </line>
+  <circle cx="470" cy="126" r="12" fill="#e8914a" stroke="#1b3a63" stroke-width="3"/>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 18;0 18;0 0;0 0" keyTimes="0;0.12;0.30;0.42;1" dur="12s" repeatCount="indefinite"/>
+    <line x1="160" y1="126" x2="160" y2="178" stroke="#5a6b7d" stroke-width="3"/>
+    <line x1="100" y1="178" x2="220" y2="178" stroke="#5a6b7d" stroke-width="3"/>
+    <line x1="100" y1="178" x2="30" y2="200" stroke="#5a6b7d" stroke-width="2"/><line x1="220" y1="178" x2="290" y2="200" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="10" y="200" width="300" height="226" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <g>
+      <text class="h" x="160" y="232" text-anchor="middle">L'employeur</text>
+      <text class="bb" x="26" y="262">Il peut</text>
+      <text class="b" x="26" y="284">donner des ordres, contrôler,</text>
+    <text class="b" x="26" y="306">sanctionner (avec procédure)</text>
+      <text class="bb" x="26" y="346">Il doit</text>
+      <text class="b" x="26" y="368">protéger la santé et la sécurité,</text>
+    <text class="b" x="26" y="390">informer et former</text>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.08;0.16;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -18;0 -18;0 0;0 0" keyTimes="0;0.12;0.30;0.42;1" dur="12s" repeatCount="indefinite"/>
+    <line x1="780" y1="126" x2="780" y2="178" stroke="#5a6b7d" stroke-width="3"/>
+    <line x1="720" y1="178" x2="840" y2="178" stroke="#5a6b7d" stroke-width="3"/>
+    <line x1="720" y1="178" x2="650" y2="200" stroke="#5a6b7d" stroke-width="2"/><line x1="840" y1="178" x2="910" y2="200" stroke="#5a6b7d" stroke-width="2"/>
+    <rect x="630" y="200" width="300" height="226" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+    <g>
+      <text class="ha" x="780" y="232" text-anchor="middle">Le salarié</text>
+      <text class="ba" x="646" y="262">Il doit</text>
+      <text class="b" x="646" y="284">exécuter, agir de bonne foi,</text>
+    <text class="b" x="646" y="306">prendre soin de sa sécurité</text>
+      <text class="ba" x="646" y="346">Il peut</text>
+      <text class="b" x="646" y="368">alerter et se retirer d'un</text>
+    <text class="b" x="646" y="390">danger grave et imminent</text>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3;0.38;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>

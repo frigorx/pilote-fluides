@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Traçabilité — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : suivre un fluide frigorigène du chargement à la filière de traitement — fiche d'intervention, registre, bordereau de suivi BSFF dans Trackdéchets, qui signe quoi, ce que vérifie un contrôle.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/tracabilite-fluides/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Fluidique & thermique.
+     Traçabilité : la fiche d'intervention (Cerfa 15497), le registre de
+     l'équipement, le BSFF dans Trackdéchets.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Voix : les 12 narrations n'ont pas encore leur MP3 dans l'index
+     global moteur/voix-index.js (station produite le 30/09/2026) : la voix
+     du navigateur sert de filet, en attendant la fabrication edge-tts.
+
+     Sources : voir FOND.md. Aucune valeur (seuil, durée, date) n'est écrite
+     ici sans avoir été lue dans un texte officiel ; le reste est listé sous
+     « À sourcer » dans FOND.md.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Fluidique &amp; thermique · niveau BTS</p>
+  <h1>Traçabilité — suivre le fluide, du chargement à la filière</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-fluidique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire quels papiers accompagnent un fluide frigorigène — la fiche d'intervention, le registre de l'équipement, le bordereau de suivi dans Trackdéchets —, qui les établit et qui les signe, à quel moment un fluide récupéré devient un déchet tracé, et ce qu'un contrôle vérifie en remontant le fil.</p>
+    <p class="referentiel" style="margin-top:.8em"><strong>Référentiel</strong> : TP TECVC, REAC TP-00133 — <strong>CP9</strong> (installation de climatisation) : la recette d'une installation ne se limite pas à la machine qui tourne, elle réunit les pièces qui prouvent où est passé le fluide. <strong>Attestation d'aptitude 2025</strong> : codes 1.00 (législation applicable), 4.02 et 4.09 (registre de l'équipement lors des contrôles d'étanchéité), 5.07 (registre : fluide récupéré ou ajouté), 5.08 (gestion, stockage et transport des réfrigérants).</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la ligne de cinq étapes, de gauche à droite : la machine, la récupération du fluide, la bouteille de récupération, le distributeur, puis l'installation de traitement. Au-dessus, deux bandeaux. Le premier, en trait plein bleu, est la fiche d'intervention : elle couvre les deux premières étapes, celles de l'intervention. Le second, en trait tireté orange, est le bordereau de suivi dans Trackdéchets : il prend le relais dès que le fluide devient un déchet, et l'accompagne jusqu'au traitement. Une goutte parcourt le fil pour montrer le trajet. Et la bande du bas le dit : si un maillon manque, la preuve disparaît.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un fluide n'est jamais « sans papier »</h2>
+    <p>Du chargement de la machine jusqu'à l'installation qui régénère ou détruit le fluide, <strong>deux documents se relaient</strong> :</p>
+    <ul>
+      <li>la <strong>fiche d'intervention</strong> (Cerfa 15497), établie par l'opérateur à chaque opération qui manipule le fluide ;</li>
+      <li>le <strong>bordereau de suivi des déchets de fluides frigorigènes (BSFF)</strong>, dématérialisé dans <strong>Trackdéchets</strong>, dès que le fluide récupéré devient un déchet.</li>
+    </ul>
+    <p>Pour le technicien d'études ou le chargé d'affaires, l'enjeu est concret : savoir quelles pièces réclamer à la recette, qui les signe, et ce qu'elles prouvent. <strong>Si un maillon manque, le fil se coupe.</strong></p>
+    <figure>
+      <img src="svg/fil-du-fluide.svg" alt="Cinq étapes alignées, reliées par des flèches : la machine, la récupération du fluide, la bouteille de récupération, le distributeur, l'installation de traitement. Un bandeau bleu en trait plein, la fiche d'intervention Cerfa 15497, couvre les deux premières étapes ; un bandeau orange en trait tireté, le BSFF dans Trackdéchets, couvre les trois dernières. Une bande en bas rappelle que chaque étape laisse une trace écrite et signée.">
+      <figcaption>Trait plein : la fiche d'intervention. Trait tireté : le bordereau du fluide devenu déchet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici la fiche d'intervention, à gauche, avec ses quatre rubriques numérotées. La première identifie l'opérateur : ses coordonnées et son numéro d'attestation de capacité. La deuxième donne la date et la nature du travail. La troisième décrit le fluide récupéré : sa nature, sa quantité et l'installation où il part. La quatrième chiffre ce qui est remis dans la machine. À droite, l'encadré du haut montre les deux signatures, celle de l'opérateur et celle du détenteur, exigées au-delà d'un seuil de charge. Celui du bas rappelle que chacun garde un exemplaire au moins cinq ans.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La fiche d'intervention : une opération, une fiche</h2>
+    <p>L'<strong>opérateur</strong> établit une fiche pour <strong>chaque opération</strong> qui manipule le fluide (article R. 543-82 du Code de l'environnement). Elle mentionne ses coordonnées et son <strong>numéro d'attestation de capacité</strong>, la <strong>date</strong> et la <strong>nature</strong> de l'intervention, la <strong>nature, la quantité et l'installation de destination</strong> du fluide récupéré, et la <strong>quantité éventuellement réintroduite</strong> dans l'équipement (arrêté du 29 février 2016, article 11).</p>
+    <ul>
+      <li><strong>Deux signatures</strong> — opérateur et détenteur, ce dernier gardant l'original — pour un équipement dont la charge dépasse <strong>3 kg de HCFC</strong>, ou <strong>5 tonnes équivalent CO₂</strong> de HFC ou de PFC.</li>
+      <li><strong>Conservation</strong> : chacun garde un exemplaire <strong>au moins 5 ans</strong> à compter de la signature, et le tient à disposition des opérateurs qui interviendront ensuite et de l'administration.</li>
+    </ul>
+    <p>Le formulaire imposé est le <strong>Cerfa n° 15497</strong>. Le texte le vise pour les catégories I à IV de l'ancien régime d'attestation ; son alignement sur les catégories de 2025 reste à vérifier sur le texte en vigueur.</p>
+    <figure>
+      <img src="svg/fiche-intervention.svg" alt="À gauche, la fiche d'intervention Cerfa 15497 et ses quatre rubriques : l'opérateur avec ses coordonnées et son numéro d'attestation de capacité, l'intervention avec sa date et sa nature, le fluide récupéré avec sa nature, sa quantité et l'installation destinataire, le fluide réintroduit avec sa quantité. À droite, un encadré montre les deux signatures, opérateur et détenteur, au-delà de 3 kg de HCFC ou 5 tonnes équivalent CO2 ; un second encadré indique la conservation d'un exemplaire chacun pendant au moins 5 ans.">
+      <figcaption>Quatre rubriques à gauche ; à droite, qui signe et qui garde.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Ici, un carnet de quatre lignes : c'est le registre de l'équipement, qui suit la machine pendant toute sa vie. Première ligne, la mise en service et le fluide chargé. Deuxième, le contrôle d'étanchéité et son résultat. Troisième, la réparation et le fluide ajouté. Quatrième, la fin de vie et le fluide récupéré. Sur chaque ligne, une date et la personne qui a agi. À la différence de la fiche, qui raconte une intervention, le registre raconte toute l'histoire de la machine. À droite, l'encadré rappelle quand on le consulte et quand on le remplit.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le registre : la mémoire de l'équipement</h2>
+    <p>La fiche raconte <strong>une intervention</strong> ; le registre raconte <strong>toute la vie de la machine</strong> : fluide chargé, contrôles d'étanchéité, fuites et réparations, fluide ajouté, fluide récupéré à la fin.</p>
+    <ul>
+      <li>Le règlement européen F-Gaz III, (UE) 2024/573, prévoit un <strong>registre d'équipement</strong> tenu par l'exploitant (voir la station F-Gaz 3) ; son article exact et son contenu détaillé sont à vérifier sur le texte.</li>
+      <li>L'attestation d'aptitude 2025 en fait une compétence de terrain : le <strong>consulter avant tout contrôle d'étanchéité</strong> (4.02), y <strong>consigner</strong> les données du contrôle (4.09), y noter <strong>tout fluide récupéré ou ajouté</strong> (5.07).</li>
+      <li>En droit français, le détenteur conserve <strong>au moins 5 ans</strong> les documents attestant les contrôles d'étanchéité et les réparations (article R. 543-80).</li>
+    </ul>
+    <figure>
+      <img src="svg/registre-equipement.svg" alt="Un carnet à quatre lignes suit la vie d'un équipement : mise en service avec le fluide chargé, contrôle d'étanchéité avec son résultat, réparation avec le fluide ajouté, fin de vie avec le fluide récupéré ; chaque ligne porte la date et la personne. À droite, un encadré : consulté avant chaque contrôle d'étanchéité, renseigné à chaque fluide ajouté ou récupéré. En bas : documents des contrôles et des réparations conservés au moins 5 ans.">
+      <figcaption>Quatre moments de la vie de la machine, quatre lignes du registre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Cinq lignes, cinq acteurs, dans l'ordre où ils touchent au fluide. Le détenteur contrôle le fonctionnement de l'équipement : c'est lui qui produit le déchet. L'opérateur est l'entreprise qui intervient, avec son attestation de capacité ; s'il collecte le fluide chez son client, c'est lui qui émet le bordereau. Le transporteur emporte les bouteilles. Le distributeur reprend les fluides usagés et regroupe les bouteilles. L'installation de traitement reçoit, accepte ou refuse, puis régénère ou détruit. Retenez le repère : à chaque acteur, son maillon de la chaîne.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Qui est qui dans la chaîne</h2>
+    <ul>
+      <li><strong>Le détenteur</strong> exerce le contrôle effectif du fonctionnement technique de l'équipement, qu'il en soit propriétaire ou non (R. 543-76). C'est lui qui <strong>produit le déchet</strong> quand le fluide est collecté.</li>
+      <li><strong>L'opérateur</strong> est l'entreprise qui intervient à titre professionnel (R. 543-76). S'il collecte le fluide chez son client, il est <strong>l'émetteur du bordereau</strong> ; sinon, c'est le détenteur.</li>
+      <li><strong>Le transporteur</strong> prend en charge les contenants et confirme l'exactitude de ce qu'il transporte.</li>
+      <li><strong>Le distributeur</strong> reprend les fluides usagés (R. 543-91, R. 543-92) et regroupe les bouteilles.</li>
+      <li><strong>L'installation de traitement</strong> reçoit, accepte ou refuse, puis régénère ou détruit.</li>
+    </ul>
+    <figure>
+      <img src="svg/cinq-acteurs.svg" alt="Cinq lignes empilées, chacune avec un pictogramme : le détenteur, qui contrôle le fonctionnement de l'équipement et produit le déchet ; l'opérateur, l'entreprise qui intervient et émet le bordereau s'il collecte ; le transporteur, qui emporte les bouteilles ; le distributeur, qui reprend les fluides usagés et regroupe les bouteilles ; l'installation de traitement, qui reçoit, accepte ou refuse, puis régénère ou détruit.">
+      <figcaption>Cinq acteurs, cinq maillons.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Le fluide vient d'être récupéré : c'est l'encadré de gauche. À partir de là, deux chemins. En haut, le trait plein vert : le fluide peut être remis dans la machine d'où il vient. Il reste alors un fluide, pas un déchet, et il n'y a rien à déclarer dans Trackdéchets. La quantité remise est notée sur la fiche. En bas, le trait tireté orange : le fluide ne peut pas retourner dans son équipement, ou sa réutilisation est interdite. C'est un déchet. Il part dans une bouteille de récupération, avec un bordereau dans Trackdéchets. La goutte suit chaque chemin tour à tour.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Quand le fluide devient un déchet</h2>
+    <p>Quand on ouvre le circuit pour charger, mettre en service, entretenir ou contrôler l'étanchéité, <strong>la totalité du fluide retiré doit être récupérée</strong> (article R. 543-88). Ensuite, deux destins :</p>
+    <ul>
+      <li>le fluide peut être <strong>réintroduit dans l'équipement d'où il provient</strong> : il reste un fluide, la quantité remise est notée sur la fiche, et il n'y a pas de bordereau ;</li>
+      <li>s'il <strong>ne peut pas l'être, ou si sa réutilisation est interdite</strong>, l'opérateur le remet au distributeur ou le fait traiter sous sa responsabilité (article R. 543-92) : c'est un <strong>déchet</strong>, et il entre dans Trackdéchets.</li>
+    </ul>
+    <p>À l'autre bout de la filière, distributeurs et producteurs transmettent chaque année à l'ADEME les quantités mises sur le marché, stockées, reprises ou retraitées (article R. 543-98) : c'est le <strong>bilan annuel</strong> de la filière.</p>
+    <figure>
+      <img src="svg/du-fluide-au-dechet.svg" alt="Un encadré « fluide récupéré » d'où partent deux chemins. En haut, un trait plein vert mène à « réintroduit dans la même machine » : il reste un fluide, rien à déclarer sur Trackdéchets, la quantité remise est notée sur la fiche d'intervention. En bas, un trait tireté orange mène à « impossible à réintroduire, ou réutilisation interdite » : c'est un déchet, il part dans une bouteille de récupération avec un BSFF dans Trackdéchets.">
+      <figcaption>Le même fluide récupéré peut suivre deux chemins : c'est la réintroduction, ou non, qui décide.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Trois cartes, trois signatures. À gauche, l'émetteur, qui est l'opérateur quand il collecte chez son client, ou le détenteur : il déclare l'entreprise, la nature du déchet, les contenants et les quantités. Au milieu, le transporteur, qui renseigne son récépissé, son véhicule, le mode et la date du transport. À droite, l'installation de destination, qui indique ce qu'elle accepte ou refuse, puis l'opération réalisée. Sous chaque carte, une pastille verte : la signature électronique. Et si le fluide est regroupé ou reconditionné en route, un nouveau bordereau est émis, lié au précédent : la chaîne ne se rompt pas.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le BSFF dans Trackdéchets : trois signatures</h2>
+    <p>Depuis le <strong>1<sup>er</sup> janvier 2023</strong>, le bordereau des déchets dangereux de fluides frigorigènes se fait dans le système électronique prévu à l'article R. 541-45 — l'application <strong>Trackdéchets</strong> (arrêté du 26 juillet 2022).</p>
+    <ol>
+      <li><strong>L'émetteur</strong> — l'opérateur qui collecte chez son client, ou le détenteur — déclare son identité (SIRET, raison sociale, adresse), la nature du déchet, les contenants et les quantités.</li>
+      <li><strong>Le transporteur</strong> renseigne son récépissé, son véhicule, le mode et la date du transport, et confirme par sa signature.</li>
+      <li><strong>L'installation de destination</strong> indique les quantités acceptées ou refusées, puis l'opération réalisée.</li>
+    </ol>
+    <p>Chaque information est <strong>validée par signature électronique</strong> ; après validation, seuls quelques éléments restent modifiables, et <strong>chaque modification est enregistrée</strong>. En cas d'entreposage, de regroupement ou de reconditionnement, l'installation qui reçoit émet un <strong>nouveau bordereau lié au précédent</strong>.</p>
+    <figure>
+      <img src="svg/bsff-trackdechets.svg" alt="Trois cartes alignées, reliées par des flèches : l'émetteur, opérateur ou détenteur, qui déclare l'entreprise, la nature du déchet, les contenants et les quantités ; le transporteur, avec son récépissé, son véhicule, le mode et la date de transport ; l'installation de destination, avec les quantités acceptées ou refusées puis l'opération réalisée. Sous chaque carte, une pastille verte marque la signature. En bas, un encadré tireté : en cas de regroupement ou de reconditionnement, un nouveau bordereau lié au précédent.">
+      <figcaption>Trois cartes, trois pastilles vertes : le bordereau n'est complet que signé jusqu'au bout.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="À gauche, la fiche d'intervention et quatre repères : son numéro, le fluide, le code postal, et le numéro d'identification de son établissement, le SIRET. La flèche montre qu'ils sont reportés sur le bordereau, à droite. Ce bordereau suit chaque contenant, c'est-à-dire chaque bouteille, par son numéro. En bas, l'encadré vert donne le mécanisme : ce numéro SIRET relie les deux papiers. Le détenteur peut ainsi retrouver, dans son compte Trackdéchets, le bordereau de son fluide, donc la preuve que le fluide est bien arrivé en filière. La fiche et le bordereau ne forment plus qu'un seul dossier.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le lien entre la fiche et le bordereau</h2>
+    <p>Les deux papiers ne sont pas parallèles : ils se <strong>rejoignent</strong>. D'après la documentation publiée par l'équipe Trackdéchets (note de mars 2023, à vérifier sur la documentation en ligne), l'opérateur qui établit le bordereau y mentionne les informations clés de la ou des fiches d'intervention : <strong>numéro de fiche, fluide, code postal et SIRET du détenteur</strong>.</p>
+    <p>C'est ce SIRET qui permet à Trackdéchets de mettre le bordereau <strong>à la disposition du détenteur</strong> : il retrouve, dans son compte, la trace de son fluide jusqu'au traitement. Côté bouteilles, la plateforme gère <strong>chaque contenant par son numéro</strong>.</p>
+    <figure>
+      <img src="svg/lien-fiche-bordereau.svg" alt="À gauche, la fiche d'intervention en trait plein bleu avec quatre repères : numéro de la fiche, fluide, code postal, SIRET du détenteur. Une flèche part vers la droite, où le BSFF dans Trackdéchets, en trait tireté orange, reprend ces repères et suit chaque bouteille par son numéro. En bas, un encadré vert : le SIRET du détenteur relie les deux papiers, le détenteur retrouve dans son compte le bordereau de son fluide et la preuve du traitement.">
+      <figcaption>Quatre repères reportés de la fiche sur le bordereau : le détenteur retrouve son fluide.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan, sous forme de liste de contrôle : cinq lignes cochées. La fiche signée, avec le numéro d'attestation de capacité. L'exemplaire conservé au moins cinq ans, chez l'opérateur comme chez le détenteur. Le registre à jour. Le bordereau signé jusqu'au bout, de l'émetteur à l'installation de traitement. Et des quantités qui se recoupent : ce que dit la fiche, ce que contient la bouteille, ce que déclare le bordereau doivent raconter la même histoire. Le réflexe, en bas : remonter le fil d'un fluide, du chargement à la filière, avant que quelqu'un d'autre ne le fasse pour vous.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : ce que vérifie un contrôle</h2>
+    <ul>
+      <li>La <strong>fiche</strong> est signée, avec le numéro d'attestation de capacité, le fluide et les quantités.</li>
+      <li>L'<strong>exemplaire</strong> est conservé au moins 5 ans, chez l'opérateur et chez le détenteur, et tenu à disposition de l'administration.</li>
+      <li>Le <strong>registre</strong> est à jour : fluide ajouté ou récupéré, contrôles d'étanchéité.</li>
+      <li>Le <strong>BSFF</strong> est signé jusqu'au bout : émetteur, transporteur, installation de traitement.</li>
+      <li>Les <strong>quantités se recoupent</strong> entre la fiche, la bouteille et le bordereau.</li>
+    </ul>
+    <p>Les manquements à ces obligations — récupération du fluide, attestation de capacité, tenue des registres — relèvent des <strong>contraventions de la 5<sup>e</sup> classe</strong> (article R. 543-123).</p>
+    <p class="formule">Le réflexe : remonter le fil d'un fluide, du chargement à la filière.</p>
+    <figure>
+      <img src="svg/bilan-tracabilite.svg" alt="Cinq lignes cochées : la fiche signée avec le numéro d'attestation de capacité, le fluide et les quantités ; l'exemplaire conservé au moins 5 ans chez l'opérateur et chez le détenteur ; le registre à jour ; le BSFF signé jusqu'au bout par l'émetteur, le transporteur et l'installation de traitement ; les quantités qui se recoupent entre fiche, bouteille et bordereau. En bas, le réflexe : remonter le fil, du chargement à la filière.">
+      <figcaption>Cinq contrôles, un réflexe : remonter le fil avant qu'un autre ne le fasse.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un équipement dont la charge dépasse le seuil réglementaire fait l'objet d'une intervention. Qui signe la fiche d'intervention ? Choisissez parmi les quatre propositions.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Au-delà du seuil de charge, qui signe la fiche d'intervention ?</h2>
+    <figure class="vignette">
+      <img src="svg/fiche-intervention.svg" alt="Vignette de rappel : la fiche d'intervention et son encadré des deux signatures, opérateur et détenteur.">
+      <figcaption>Rappel de l'écran 2 — deux signatures au-delà du seuil.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">L'opérateur seul, qui conserve l'original</button>
+      <button type="button" data-answer="b">Le détenteur seul, qui conserve l'original</button>
+      <button type="button" data-answer="bonne">L'opérateur et le détenteur, ensemble</button>
+      <button type="button" data-answer="d">L'opérateur, puis le distributeur du fluide</button>
+    </div>
+    <p class="feedback" hidden data-explication="Au-delà du seuil, la fiche est signée conjointement par l'opérateur et par le détenteur, qui conserve l'original. Chacun garde ensuite un exemplaire au moins cinq ans."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Le fluide vient d'être récupéré, et l'opérateur peut le remettre dans la machine d'où il provient. Faut-il établir un bordereau dans Trackdéchets ? Reprenez le schéma de l'écran cinq avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Le fluide récupéré est remis dans la même machine. Faut-il un BSFF ?</h2>
+    <figure class="vignette">
+      <img src="svg/du-fluide-au-dechet.svg" alt="Vignette de rappel : le fluide récupéré suit deux chemins, réintroduit dans la même machine ou envoyé en bouteille de récupération comme déchet.">
+      <figcaption>Rappel de l'écran 5 — deux chemins pour un même fluide.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Non : ce n'est pas un déchet, la fiche suffit</button>
+      <button type="button" data-answer="b">Oui : tout fluide récupéré passe par un BSFF</button>
+      <button type="button" data-answer="c">Oui, mais seulement au-delà du seuil de charge</button>
+      <button type="button" data-answer="d">Non : le BSFF ne concerne que les installations neuves</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un fluide réintroduit dans l'équipement d'où il provient reste un fluide : la quantité remise est notée sur la fiche d'intervention. Seul le fluide qui ne peut pas être réintroduit, ou dont la réutilisation est interdite, devient un déchet suivi par un bordereau."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Une bouteille de fluide usagé a été signée par l'émetteur, puis par le transporteur. Qui vient clore la chaîne du bordereau ? Regardez les trois cartes de l'écran six si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Qui clôt la chaîne du bordereau, après l'émetteur et le transporteur ?</h2>
+    <figure class="vignette">
+      <img src="svg/bsff-trackdechets.svg" alt="Vignette de rappel : les trois cartes du bordereau, émetteur, transporteur et installation de destination, chacune avec sa signature.">
+      <figcaption>Rappel de l'écran 6 — trois cartes, trois signatures.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le transporteur, dès qu'il a livré la bouteille</button>
+      <button type="button" data-answer="b">L'opérateur, dès que la bouteille est remplie</button>
+      <button type="button" data-answer="c">Le détenteur, en recevant le récépissé final</button>
+      <button type="button" data-answer="bonne">L'installation qui reçoit et traite le fluide</button>
+    </div>
+    <p class="feedback" hidden data-explication="C'est l'installation de destination qui indique les quantités acceptées ou refusées, puis l'opération réalisée : elle signe la dernière étape. Le transporteur n'est qu'un maillon intermédiaire."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un opérateur collecte du fluide usagé chez son client. Qui peut émettre le premier bordereau ? Souvenez-vous des cinq acteurs de l'écran quatre.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Qui peut émettre le premier bordereau d'un fluide usagé ?</h2>
+    <figure class="vignette">
+      <img src="svg/cinq-acteurs.svg" alt="Vignette de rappel : les cinq acteurs de la chaîne, détenteur, opérateur, transporteur, distributeur et installation de traitement.">
+      <figcaption>Rappel de l'écran 4 — cinq acteurs, cinq maillons.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le transporteur qui emporte la bouteille pleine</button>
+      <button type="button" data-answer="bonne">L'opérateur qui collecte, ou le détenteur</button>
+      <button type="button" data-answer="c">L'installation qui traitera le fluide</button>
+      <button type="button" data-answer="d">Trackdéchets lui-même, automatiquement</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'émetteur du bordereau est l'opérateur qui collecte les déchets lors de ses opérations chez ses clients, ou le détenteur des déchets. Les autres acteurs complètent ensuite le bordereau, chacun à son étape."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Tous les
+     liens sont réels : les quatre stations existent. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne)
+      — la récupération obligatoire et le registre d'équipement, en amont de ce que devient le fluide.</li>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (même sous-ligne)
+      — le numéro d'attestation de capacité que l'opérateur inscrit sur la fiche.</li>
+    <li><a href="../dechets-dangereux/"><strong>Déchets dangereux — BSD et traçabilité</strong></a> (sous-ligne Déchets)
+      — le bordereau de suivi, vu du côté du producteur de déchets.</li>
+    <li><a href="../dechets-responsabilites/"><strong>Responsabilités — qui répond du déchet</strong></a> (sous-ligne Déchets)
+      — pourquoi le producteur doit pouvoir prouver, maillon par maillon, la bonne gestion de son déchet.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

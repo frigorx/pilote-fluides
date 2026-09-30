@@ -1,9 +1,9 @@
 /* Station 1-7 — L'emboîture à la pince (l'expandeur). Source : sources-metier/1-7-emboiture.md
    Outil des fiches : la « pince à emboîture (expandeur) » et ses têtes, une par diamètre.
    Serrage en trois temps avec un quart de tour (fiche « T.P Les assemblages par emboîture ») ;
-   recuit exigé sur tube écroui seulement (lecture proposée, à trancher) : la station part d'un tube
-   recuit en couronne, le recuit au chalumeau relève de la ligne 2.
-   Profondeur d'emboîture : cinq règles différentes dans les fiches, aucune retenue ici : à trancher. */
+   recuit exigé sur tube écroui seulement (DÉCIDÉ le 30/09/2026) : la station part d'un tube recuit en
+   couronne, le recuit d'une barre est fait par le professeur, au chalumeau (ligne 2).
+   Profondeur d'emboîture : DÉCIDÉE le 30/09/2026, de 1 à 1,5 fois le diamètre (DECISIONS-2026-09-30.md). */
 CUIVREZO.stations.push({
   id: '1-7', ligne: 1, titre: 'L’emboîture à la pince', duree: '20 min', vignette: 'images/1-7-pince.webp',
   sources: ['sources-metier/1-7-emboiture.md'],
@@ -12,7 +12,7 @@ CUIVREZO.stations.push({
     titre: 'Un bout élargi où l’autre tube entre juste',
     texte: 'Le bout du tube est élargi, droit dans l’axe, sans fente. Un tube du même diamètre y entre sans forcer et sans jouer : il est prêt pour la brasure.',
     criteres: ['L’autre tube entre sans forcer, et sans jouer', 'Emboîture sans fente ni bavure', 'Régulière, ronde, alignée sur l’axe du tube', 'Profondeur d’emboîture conforme'],
-    figure: { svg: 'emboiture', etat: 'profil', legende: 'Le tube mâle dans l’emboîture : un jeu de quelques dixièmes.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'emboiture', angle: '90' }, legende: 'Le tube mâle dans l’emboîture : un jeu de quelques dixièmes.' },
     narration: 'Pour raccorder deux tubes de même diamètre, on peut ajouter un manchon, avec deux brasures. Ou bien élargir le bout de l’un pour y glisser l’autre : une seule brasure, donc une seule fuite possible au lieu de deux. C’est l’emboîture. Tout son secret tient dans un jeu minuscule entre les deux tubes : assez pour que la brasure s’y glisse, pas assez pour que le tube joue. Le seul contrôle qui compte, c’est l’essai : l’autre tube doit entrer sans forcer, et sans jouer.'
   },
   materiel: {
@@ -21,7 +21,7 @@ CUIVREZO.stations.push({
     items: [
       { nom: 'La pince à emboîture', detail: 'l’expandeur, avec son jeu de têtes' },
       { nom: 'La tête du diamètre du tube', detail: 'une tête par diamètre' },
-      { nom: 'Un tube recuit, coupé d’équerre et ébavuré', detail: 'en couronne ; une barre écrouie se recuit d’abord : voir le professeur', aValider: 'Recuit exigé sur tube écroui seulement : lecture proposée, les fiches divergent' },
+      { nom: 'Un tube recuit, coupé d’équerre et ébavuré', detail: 'en couronne, il se travaille tel quel ; une barre écrouie est recuite d’abord par le professeur, au chalumeau' },
       { nom: 'Un bout du même tube pour l’essai', detail: 'c’est lui qui dira si l’emboîture est bonne' },
       { nom: 'Le mètre et le feutre', detail: 'pour la profondeur d’emboîture' }
     ],
@@ -56,7 +56,6 @@ CUIVREZO.stations.push({
     { titre: 'Tourner d’un quart de tour', texte: 'Pince desserrée, tournez-la d’un quart de tour dans le tube.',
       pointCle: 'Entre deux serrages, un quart de tour.',
       pourquoi: 'Les segments laissent de petites marques entre eux. En tournant, le serrage suivant les efface : l’emboîture reste ronde.',
-      aValider: 'Le quart de tour est dans une fiche ; une autre dit « parfois », une autre n’en parle pas. Le pourquoi n’est écrit nulle part',
       figure: { svg: 'emboiture', etat: 'tourner' }, clip: 'clips/1-7/06-quart.mp4',
       narration: 'La pince desserrée, on la fait tourner d’un quart de tour dans le tube. La tête est faite de segments séparés par de petits espaces : chaque serrage laisse une trace à leur place. En tournant avant de serrer de nouveau, on répartit le travail, et l’emboîture reste bien ronde.' },
     { titre: 'Serrer aux deux tiers, puis jusqu’à la butée', texte: 'Serrez aux deux tiers, desserrez, puis serrez jusqu’à la butée de la pince.',
@@ -96,9 +95,8 @@ CUIVREZO.stations.push({
       figure: { svg: 'emboiture', etat: 'fissure' }, narration: 'Troisième contrôle : aucune fente au bord.' },
     { question: 'Est-elle ronde et dans l’axe ?', comment: 'Regardez le bout de face, puis de profil.', siNon: 'Recoupez : tube à la main, pince dans l’axe, quart de tour.', geste: 5,
       figure: { svg: 'emboiture', etat: 'ovale' }, narration: 'Quatrième contrôle : ronde, et bien dans l’axe du tube.' },
-    { question: 'La profondeur est-elle conforme ?', comment: 'Mesurez la longueur élargie.', siNon: 'Voyez la profondeur demandée avec le professeur.', geste: 6,
-      aValider: 'Profondeur : cinq règles incompatibles dans les fiches (1 à 1,5 fois le diamètre, le diamètre, diamètre + 1 mm, 10 mm fixes…)',
-      figure: { svg: 'emboiture', etat: 'profil' }, narration: 'Dernier contrôle : la longueur élargie, celle que demande le plan.' }
+    { question: 'La profondeur est-elle conforme ?', comment: 'Mesurez la longueur élargie : au moins le diamètre du tube, au plus une fois et demie ce diamètre (de 14 à 21 mm pour un tube de 14).', siNon: 'Trop courte : recoupez et recommencez, tête enfilée jusqu’à la butée. Si le plan demande autre chose, voyez le professeur.', geste: 6,
+      figure: { svg: 'emboiture', etat: 'profil' }, narration: 'Dernier contrôle : la longueur élargie. Elle doit valoir au moins le diamètre du tube, et au plus une fois et demie ce diamètre.' }
   ],
   prof: {
     verifie: ['L’essai d’emboîtement : sans forcer, sans jouer', 'L’emboîture : sans fente, ronde, dans l’axe', 'Le geste : trois serrages, quart de tour, tube à la main', 'Avant de braser : il voit toutes les emboîtures'],

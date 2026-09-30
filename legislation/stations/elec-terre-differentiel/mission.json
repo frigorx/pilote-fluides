@@ -1,0 +1,40 @@
+{
+  "slug": "elec-terre-differentiel",
+  "branche": "Électrique",
+  "titre": "Mission : la carcasse qui mord",
+  "client": "Le gestionnaire technique d'un bâtiment tertiaire, qui fait installer une pompe à chaleur et un groupe froid en local technique.",
+  "situation": "Un agent de maintenance a ressenti un picotement en touchant la carcasse du groupe froid, et le disjoncteur n'a pas déclenché. Le gestionnaire vous demande, en tant que technicien d'études de l'entreprise de CVC, d'expliquer ce qui a pu se passer et ce que doit garantir l'installation pour que les personnes qui touchent ces machines soient protégées. Vous disposez du schéma d'alimentation de la pompe à chaleur et du groupe froid, et de leur protection différentielle.",
+  "piece_a_produire": "Une note d'une page au gestionnaire : où passe le courant de défaut quand une carcasse est sous tension, ce qui protège les personnes (conducteur de protection, prise de terre, dispositif différentiel), et la liste des vérifications à faire à la mise en service.",
+  "questions": [
+    { "q": "Qu'est-ce qui distingue un contact direct d'un contact indirect ? Dans quel cas se trouve la personne qui touche la carcasse du groupe froid ?",
+      "ecran": 1,
+      "reponse": "Le contact direct se fait avec une pièce active nue, normalement sous tension ; le contact indirect se fait avec une masse mise accidentellement sous tension. Toucher la carcasse d'un groupe froid après un défaut d'isolement est un contact indirect." },
+    { "q": "Suivez le courant de défaut depuis la source jusqu'à son retour : quels éléments traverse-t-il, et que se passe-t-il si le conducteur de protection est coupé ?",
+      "ecran": 3,
+      "reponse": "Phase, point de défaut, carcasse, conducteur de protection, prise de terre, sol, prise de terre de la source (schéma TT). Sans conducteur de protection, la boucle est coupée : le dispositif ne détecte rien et la carcasse reste sous tension." },
+    { "q": "Que compare un dispositif différentiel, et quelle sensibilité retient-on pour protéger les personnes ? Citez deux cas où l'INRS la rend obligatoire.",
+      "ecran": 6,
+      "reponse": "Il compare le courant d'aller et le courant de retour. La haute sensibilité est de 30 mA ou moins. Elle est obligatoire, par exemple, pour les prises de courant jusqu'à 32 A, les locaux mouillés, les installations temporaires, les salles d'eau et les logements." },
+    { "q": "Le bouton test ne fait pas tomber le levier : que concluez-vous, et pourquoi ne peut-on pas s'en tenir à « pas de défaut détecté » ?",
+      "ecran": 7,
+      "reponse": "Le dispositif est défaillant : il ne protège plus et doit être remplacé. Le bouton test simule un défaut ; s'il ne déclenche pas, c'est le dispositif qui est en cause, pas l'installation." }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Quatre constats sont notés dans le compte rendu de mise en service. Un seul est faux ou dangereux : trouvez-le et corrigez-le.",
+    "items": [
+      "Les carcasses de la pompe à chaleur et du groupe froid sont reliées à la même borne principale de terre.",
+      "La canalisation métallique d'eau est reliée à cette borne par une liaison équipotentielle.",
+      "Le bouton test du différentiel a été actionné : le levier n'a pas bougé, l'installation est jugée saine.",
+      "Les prises de courant du local technique sont protégées par un différentiel de 30 mA."
+    ],
+    "corrige": "Le constat 3 : si le levier ne tombe pas, le dispositif est défaillant et doit être remplacé ; on ne conclut pas à une installation saine."
+  },
+  "badge": "Terre franche",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP9", "CP6"],
+    "attestation_2025": [],
+    "justification": "Le technicien d'études qui prescrit une pompe à chaleur (CP6, chauffage / ECS) ou un groupe froid de climatisation (CP9) prescrit aussi son alimentation électrique et la protection des personnes qui la touchent."
+  }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="t-nv" aria-describedby="d-nv" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-nv">La norme : volontaire par principe</title>
+  <desc id="d-nv">Trois cartes côte à côte, de l'international au français. À gauche, le niveau international, ISO et IEC, avec l'exemple de la norme ISO 817 qui classe les fluides frigorigènes. Au centre, le niveau européen, CEN et CENELEC, avec la norme EN 378 sur la sécurité des systèmes frigorifiques. À droite, le niveau français, l'AFNOR, qui diffuse la version française NF EN 378. En dessous, un grand cadre en trait tireté porte le principe : application volontaire, article 17 du décret 2009-697. Sous le cadre, une petite note rappelle qu'une autre solution technique reste possible. Image fixe.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#3730a3; }
+    .hb   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .wht  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <g><text class="ttl" x="450" y="34" text-anchor="middle">Qui écrit les normes ?</text></g>
+  <g><rect x="20" y="56" width="260" height="158" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="150" y="92" text-anchor="middle">International</text><text class="hb" x="150" y="120" text-anchor="middle">ISO, IEC</text><line x1="50" y1="136" x2="250" y2="136" stroke="#5a6b7d" stroke-width="1.5"/><text class="lbl" x="150" y="166" text-anchor="middle">ISO 817 : classe</text><text class="lbl" x="150" y="190" text-anchor="middle">les fluides frigorigènes</text></g>
+  <g><rect x="320" y="56" width="260" height="158" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="450" y="92" text-anchor="middle">Européen</text><text class="hb" x="450" y="120" text-anchor="middle">CEN, CENELEC</text><line x1="350" y1="136" x2="550" y2="136" stroke="#5a6b7d" stroke-width="1.5"/><text class="lbl" x="450" y="166" text-anchor="middle">EN 378 : sécurité des</text><text class="lbl" x="450" y="190" text-anchor="middle">systèmes frigorifiques</text></g>
+  <g><rect x="620" y="56" width="260" height="158" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="750" y="92" text-anchor="middle">Français</text><text class="hb" x="750" y="120" text-anchor="middle">AFNOR</text><line x1="650" y1="136" x2="850" y2="136" stroke="#5a6b7d" stroke-width="1.5"/><text class="lbl" x="750" y="166" text-anchor="middle">NF EN 378 : la version</text><text class="lbl" x="750" y="190" text-anchor="middle">française de la norme EN</text></g>
+  <g><rect x="20" y="244" width="860" height="92" rx="12" fill="#fffdf8" stroke="#3730a3" stroke-width="4" stroke-dasharray="9 7"/><text class="ttl" x="450" y="282" text-anchor="middle">Application volontaire</text><text class="lbl" x="450" y="314" text-anchor="middle">Principe posé par l'article 17 du décret n° 2009-697 du 16 juin 2009</text></g>
+  <g><text class="band" x="450" y="372" text-anchor="middle">Une autre solution technique reste possible, tant qu'elle atteint le même résultat.</text></g>
+  <g><text class="sm" x="450" y="400" text-anchor="middle">Une norme n'est pas un texte de loi : elle ne vaut que par ce qui la rend obligatoire.</text></g>
+</svg>

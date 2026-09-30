@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-ex" aria-describedby="d-ex" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ex">Quand c'est exigé, et comment c'est entretenu</title>
+  <desc id="d-ex">Partie haute : deux cartes sur l'exigence. Dans un établissement recevant du public, un système sprinkleur peut être exigé dans tout ou partie de l'établissement (MS 25). Dans un lieu de travail, l'établissement est équipé si nécessaire de robinets d'incendie armés ou d'installations d'extinction automatique (R. 4227-30 du Code du travail). Partie basse : une ligne de temps à trois jalons : avant la mise en service, une vérification ; en exploitation, une vérification au moins une fois par an ; pour un sprinkleur, une vérification tous les trois ans par une personne ou un organisme agréé. Une bande rappelle que les rapports sont classés au registre de sécurité (MS 75).</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#b91c1c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <rect x="20" y="20" width="415" height="130" rx="14" fill="#fffdf8" stroke="#b91c1c" stroke-width="3"/>
+  <text class="qui" x="40" y="54">Établissement recevant du public</text>
+  <text class="lbl" x="40" y="86">Un système sprinkleur « peut être</text>
+  <text class="lbl" x="40" y="108">exigé » dans tout ou partie</text>
+  <text class="lbl" x="40" y="130">de l'établissement (MS 25).</text>
+
+  <rect x="465" y="20" width="415" height="130" rx="14" fill="#fffdf8" stroke="#b91c1c" stroke-width="3"/>
+  <text class="qui" x="485" y="54">Lieu de travail</text>
+  <text class="lbl" x="485" y="86">« Si nécessaire », l'établissement est</text>
+  <text class="lbl" x="485" y="108">équipé de RIA ou d'extinction</text>
+  <text class="lbl" x="485" y="130">automatique (R. 4227-30).</text>
+
+  <text class="ttl" x="20" y="190">Ensuite, il faut vérifier</text>
+  <line x1="60" y1="238" x2="840" y2="238" stroke="#1b3a63" stroke-width="5"/>
+  <circle cx="150" cy="238" r="14" fill="#e8914a" stroke="#10233c" stroke-width="3"/>
+  <circle cx="455" cy="238" r="14" fill="#e8914a" stroke="#10233c" stroke-width="3"/>
+  <circle cx="760" cy="238" r="14" fill="#b91c1c" stroke="#10233c" stroke-width="3"/>
+
+  <text class="qui" x="150" y="286" text-anchor="middle">Avant la mise en service</text>
+  <text class="lbl" x="150" y="314" text-anchor="middle">une vérification</text>
+  <text class="lbl" x="150" y="336" text-anchor="middle">des installations</text>
+  <text class="qui" x="455" y="286" text-anchor="middle">En exploitation</text>
+  <text class="lbl" x="455" y="314" text-anchor="middle">au moins une fois</text>
+  <text class="lbl" x="455" y="336" text-anchor="middle">par an</text>
+  <text class="qui" x="760" y="286" text-anchor="middle">Sprinkleur</text>
+  <text class="lbl" x="760" y="314" text-anchor="middle">tous les trois ans, par une</text>
+  <text class="lbl" x="760" y="336" text-anchor="middle">personne ou un organisme agréé</text>
+
+  <rect x="20" y="372" width="860" height="46" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="402" text-anchor="middle">Rapports et attestations classés au registre de sécurité (MS 75)</text>
+</svg>

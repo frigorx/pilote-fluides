@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img"
+     aria-labelledby="t-sym" aria-describedby="d-sym" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-sym">Lire un symbole d'habilitation : B2V</title>
+  <desc id="d-sym">Trois grandes tuiles côte à côte portent les caractères d'un symbole d'exemple : B, 2 et V. Sous chaque tuile, une carte explique le caractère. Le premier donne le domaine de tension : B pour basse tension, H pour haute tension. Le deuxième donne le type d'opération : 0 pour l'ordre non électrique, 1 pour exécutant, 2 pour chargé de travaux, ou une lettre comme R, S, C, E. Le troisième est une lettre additionnelle : V voisinage, T travaux sous tension, N nettoyage sous tension, X spéciale. Une bande en bas donne la lecture complète : basse tension, chargé de travaux, au voisinage. L'animation fait apparaître les trois caractères l'un après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:96px; fill:#fffdf8; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+  </style>
+  <rect x="0" y="0" width="900" height="500" fill="#fffdf8"/>
+  <g>
+    <rect x="80" y="24" width="140" height="150" rx="18" fill="#1b3a63"/>
+    <text class="big" x="150" y="128" text-anchor="middle">B</text>
+    <line x1="150" y1="178" x2="150" y2="204" stroke="#5a6b7d" stroke-width="3.5"/>
+    <rect x="15" y="208" width="270" height="212" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="32" y="240">1er caractère</text>
+    <text class="lbl" x="32" y="266" font-style="italic">le domaine de tension</text>
+    <text class="lbl" x="32" y="302">B : basse tension</text>
+    <text class="lbl" x="32" y="332">H : haute tension</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.03;0.11;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="380" y="24" width="140" height="150" rx="18" fill="#a16207"/>
+    <text class="big" x="450" y="128" text-anchor="middle">2</text>
+    <line x1="450" y1="178" x2="450" y2="204" stroke="#5a6b7d" stroke-width="3.5"/>
+    <rect x="315" y="208" width="270" height="212" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="332" y="240">2e caractère</text>
+    <text class="lbl" x="332" y="266" font-style="italic">le type d'opération</text>
+    <text class="lbl" x="332" y="302">0 : ordre non électrique</text>
+    <text class="lbl" x="332" y="332">1 : exécutant</text>
+    <text class="lbl" x="332" y="362">2 : chargé de travaux</text>
+    <text class="lbl" x="332" y="392">ou une lettre : R, S, C, E…</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2;0.28;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="680" y="24" width="140" height="150" rx="18" fill="#c9451a"/>
+    <text class="big" x="750" y="128" text-anchor="middle">V</text>
+    <line x1="750" y1="178" x2="750" y2="204" stroke="#5a6b7d" stroke-width="3.5"/>
+    <rect x="615" y="208" width="270" height="212" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="632" y="240">3e caractère</text>
+    <text class="lbl" x="632" y="266" font-style="italic">une lettre additionnelle</text>
+    <text class="lbl" x="632" y="302">V : voisinage</text>
+    <text class="lbl" x="632" y="332">T : travaux sous tension</text>
+    <text class="lbl" x="632" y="362">N : nettoyage sous tension</text>
+    <text class="lbl" x="632" y="392">X : spéciale</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.37;0.45;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="15" y="440" width="870" height="46" rx="14" fill="#f7edd8" stroke="#a16207" stroke-width="2.5"/>
+    <text class="band" x="450" y="470" text-anchor="middle">B2V : basse tension · chargé de travaux · au voisinage</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.63;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

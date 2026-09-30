@@ -1,0 +1,6 @@
+Use your built-in image generation tool to create ONE image. Do not write code and do not draw with PIL, matplotlib or SVG. Save nothing else.
+
+Subject: a technical room: an open electrical distribution cabinet with rows of circuit breakers, a padlock and a lockout tag hanging on the main switch, a thick cable running to the outdoor unit of a heat pump visible through an open door. A technician silhouette wearing an insulating helmet with face shield, insulating gloves and safety shoes holds a two-pole voltage tester on the terminals. The orange accent is the lockout padlock.
+
+Style: flat illustration in a clean editorial house style. Solid navy blue (#1b3a63) outlines, light blue flat fills, cream background (#f7f1e7), ONE orange accent (#ff6b35) used sparingly on a single element, people drawn as simple silhouettes without facial features. No gradients, no drop shadows, no textures, no photorealism. Landscape 1536 x 1024.
+Strictly avoid: text, letters, numbers, labels, signs, stickers, brand, logo, watermark, gauges with digits, faces with features, bare hands when gloves are listed, bare head when a helmet is listed.

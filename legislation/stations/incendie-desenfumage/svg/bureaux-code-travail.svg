@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-f8" aria-describedby="d-f8" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-f8">Le cas des bureaux : ce que le Code du travail impose de désenfumer</title>
+  <desc id="d-f8">Quatre cartes côte à côte. Un plateau de bureaux de plus de 300 mètres carrés, au rez-de-chaussée
+    ou en étage. Un local aveugle, sans fenêtre, de plus de 100 mètres carrés. Un local en sous-sol de plus
+    de 100 mètres carrés. Tous les escaliers. Deux bandes en dessous donnent les règles de dimensionnement :
+    en naturel, des ouvertures hautes et basses vers l'extérieur, avec une section de sortie supérieure au
+    centième de la surface, un mètre carré au minimum ; en mécanique, un débit d'extraction d'un mètre cube
+    par seconde pour cent mètres carrés.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:21px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .bd  { font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="38" text-anchor="middle">Locaux de travail : ce qui doit être désenfumé</text>
+
+  <!-- carte 1 : bureaux plus de 300 m2 -->
+  <rect x="30" y="64" width="172" height="214" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="56" y="88" width="120" height="70" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="70" y="102" width="26" height="18" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="106" y="102" width="26" height="18" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="142" y="102" width="20" height="18" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <line x1="56" y1="164" x2="176" y2="164" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="bd" x="116" y="198" text-anchor="middle">Bureaux</text>
+  <text class="lbl" x="116" y="220" text-anchor="middle">plus de 300 m²</text>
+  <text class="lbl" x="116" y="240" text-anchor="middle">rez-de-chaussée</text>
+  <text class="lbl" x="116" y="262" text-anchor="middle">ou étage</text>
+
+  <!-- carte 2 : local aveugle -->
+  <rect x="222" y="64" width="172" height="214" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="248" y="88" width="120" height="70" fill="#5a6b7d" fill-opacity="0.35" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="248" y="88" width="120" height="70" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text class="bd" x="308" y="198" text-anchor="middle">Local aveugle</text>
+  <text class="lbl" x="308" y="220" text-anchor="middle">plus de 100 m²</text>
+  <text class="lbl" x="308" y="240" text-anchor="middle">sans ouverture</text>
+  <text class="lbl" x="308" y="262" text-anchor="middle">vers l'extérieur</text>
+
+  <!-- carte 3 : sous-sol -->
+  <rect x="414" y="64" width="172" height="214" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="436" y="92" width="128" height="20" fill="#e9edf1"/>
+  <line x1="436" y1="112" x2="564" y2="112" stroke="#5a6b7d" stroke-width="4"/>
+  <rect x="456" y="114" width="88" height="48" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="bd" x="500" y="198" text-anchor="middle">Sous-sol</text>
+  <text class="lbl" x="500" y="220" text-anchor="middle">plus de 100 m²</text>
+
+  <!-- carte 4 : escaliers -->
+  <rect x="606" y="64" width="164" height="214" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M640,158 H664 V140 H688 V122 H712 V104 H736" fill="none" stroke="#1b3a63" stroke-width="5"/>
+  <text class="bd" x="688" y="198" text-anchor="middle">Escaliers</text>
+  <text class="lbl" x="688" y="220" text-anchor="middle">tous, sans seuil</text>
+
+  <!-- règles de dimensionnement -->
+  <rect x="30" y="296" width="740" height="82" rx="10" fill="#fffdf8" stroke="#2f5689" stroke-width="3"/>
+  <text class="bd" x="400" y="324" text-anchor="middle">Naturel : ouvertures hautes et basses vers l'extérieur</text>
+  <text class="lbl" x="400" y="348" text-anchor="middle">section de sortie supérieure au centième de la surface (1 m² au minimum)</text>
+  <text class="lbl" x="400" y="368" text-anchor="middle">amenée d'air de même section, ouvertures manœuvrables depuis le sol</text>
+
+  <rect x="30" y="392" width="740" height="58" rx="10" fill="#fffdf8" stroke="#2f5689" stroke-width="3"/>
+  <text class="bd" x="400" y="418" text-anchor="middle">Mécanique : débit d'extraction de 1 m³/s pour 100 m²</text>
+  <text class="lbl" x="400" y="440" text-anchor="middle">de surface à désenfumer</text>
+
+  <text class="lbl" x="400" y="480" text-anchor="middle">Code du travail, articles R. 4216-13 à R. 4216-15</text>
+</svg>

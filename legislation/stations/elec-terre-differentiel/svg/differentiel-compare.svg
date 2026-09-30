@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img"
+     aria-labelledby="t-dc" aria-describedby="d-dc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dc">Le dispositif différentiel compare l'aller et le retour</title>
+  <desc id="d-dc">Deux rangées. En haut, sans défaut : le fil d'aller et le fil de retour traversent le dispositif différentiel avec la même épaisseur, donc le même courant, et les contacts sont fermés. En bas, avec un défaut : le fil de retour est dessiné plus fin que celui d'aller, parce qu'une partie du courant s'échappe de la pompe à chaleur vers la terre, par un trait vertical avec un symbole de terre. Le dispositif détecte cette différence et ses contacts sont ouverts. L'animation fait circuler des points sur les fils ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .sub { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .acc { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#a16207; }
+    .wht { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fff; }
+    .bad { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .nw { white-space:nowrap; }
+  </style>
+  <text class="ttl" x="450" y="30" text-anchor="middle">Sans défaut : ce qui part revient</text>
+  <rect x="30" y="55" width="110" height="100" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <text class="lbl" x="85" y="110" text-anchor="middle">Source</text>
+  <rect x="740" y="55" width="130" height="100" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <text class="lbl" x="805" y="110" text-anchor="middle">PAC</text>
+  <rect x="340" y="60" width="220" height="92" rx="10" fill="#fdf6ea" stroke="#a16207" stroke-width="3"/>
+  <text class="acc" x="450" y="52" text-anchor="middle">dispositif différentiel</text>
+  <text class="mut" x="450" y="111" text-anchor="middle">compare</text>
+  <line x1="140" y1="85" x2="500" y2="85" stroke="#1b3a63" stroke-width="8" stroke-linecap="round"/>
+  <line x1="140" y1="125" x2="500" y2="125" stroke="#1b3a63" stroke-width="8" stroke-linecap="round"/>
+  <rect x="380" y="68" width="24" height="76" rx="10" fill="none" stroke="#a16207" stroke-width="4"/>
+  <text class="lbl" x="250" y="69" text-anchor="middle">aller</text>
+  <text class="lbl" x="250" y="155" text-anchor="middle">retour</text>
+  <line x1="500" y1="85" x2="740" y2="85" stroke="#1b3a63" stroke-width="8" stroke-linecap="round"/>
+  <line x1="500" y1="125" x2="740" y2="125" stroke="#1b3a63" stroke-width="8" stroke-linecap="round"/>
+  <text class="acc" x="450" y="178" text-anchor="middle">aller = retour : contacts fermés</text>
+  <line x1="20" y1="252" x2="880" y2="252" stroke="#b9c6d3" stroke-width="2" stroke-dasharray="8 6"/>
+  <text class="ttl" x="450" y="282" text-anchor="middle">Avec un défaut : une partie du courant part par la terre</text>
+  <rect x="30" y="305" width="110" height="100" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <text class="lbl" x="85" y="360" text-anchor="middle">Source</text>
+  <rect x="740" y="305" width="130" height="100" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <text class="lbl" x="805" y="360" text-anchor="middle">PAC</text>
+  <rect x="340" y="310" width="220" height="112" rx="10" fill="#fdf6ea" stroke="#a16207" stroke-width="3"/>
+  <text class="acc" x="450" y="302" text-anchor="middle">dispositif différentiel</text>
+  <text class="mut" x="450" y="361" text-anchor="middle">compare</text>
+  <line x1="140" y1="335" x2="500" y2="335" stroke="#1b3a63" stroke-width="8" stroke-linecap="round"/>
+  <line x1="140" y1="375" x2="500" y2="375" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
+  <rect x="380" y="318" width="24" height="96" rx="10" fill="none" stroke="#a16207" stroke-width="4"/>
+  <text class="lbl" x="250" y="319" text-anchor="middle">aller</text>
+  <text class="lbl" x="250" y="405" text-anchor="middle">retour plus faible</text>
+  <line x1="530" y1="335" x2="740" y2="335" stroke="#1b3a63" stroke-width="8" stroke-linecap="round"/>
+  <line x1="530" y1="375" x2="740" y2="375" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
+  <line x1="805" y1="405" x2="805" y2="447" stroke="#e8914a" stroke-width="4" stroke-dasharray="8 6"/>
+  <g stroke="#1b3a63" stroke-width="4" stroke-linecap="round"><line x1="785" y1="447" x2="825" y2="447"/><line x1="791.8" y1="456" x2="818.2" y2="456"/><line x1="799.4" y1="465" x2="810.6" y2="465"/></g>
+  <text class="lbl" x="778" y="460" text-anchor="end">fuite vers la terre</text>
+  <line x1="500" y1="335" x2="526" y2="314" stroke="#1b3a63" stroke-width="5" stroke-linecap="round">
+    <animate attributeName="y2" values="335;335;314;314" keyTimes="0;0.52;0.60;1" dur="13s" repeatCount="indefinite"/>
+  </line>
+  <line x1="500" y1="375" x2="526" y2="354" stroke="#1b3a63" stroke-width="3" stroke-linecap="round">
+    <animate attributeName="y2" values="375;375;354;354" keyTimes="0;0.52;0.60;1" dur="13s" repeatCount="indefinite"/>
+  </line>
+  <text class="acc" x="450" y="438" text-anchor="middle">contacts ouverts</text>
+  <text class="lbl" x="450" y="506" text-anchor="middle">Il ne mesure ni tension ni température : seulement l'écart entre l'aller et le retour.</text>
+  <circle r="8" fill="#e8914a" opacity="0">
+    <animateMotion path="M140,85 L740,85" keyPoints="0;0;1;1" keyTimes="0;0.02;0.16;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.032;0.148;0.16;1" dur="13s" repeatCount="indefinite"/>
+  </circle><circle r="8" fill="#e8914a" opacity="0">
+    <animateMotion path="M140,85 L740,85" keyPoints="0;0;1;1" keyTimes="0;0.07;0.21;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.082;0.198;0.21;1" dur="13s" repeatCount="indefinite"/>
+  </circle><circle r="8" fill="#e8914a" opacity="0">
+    <animateMotion path="M140,85 L740,85" keyPoints="0;0;1;1" keyTimes="0;0.12;0.26;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.132;0.248;0.26;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="8" fill="#5a6b7d" opacity="0">
+    <animateMotion path="M740,125 L140,125" keyPoints="0;0;1;1" keyTimes="0;0.02;0.16;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.032;0.148;0.16;1" dur="13s" repeatCount="indefinite"/>
+  </circle><circle r="8" fill="#5a6b7d" opacity="0">
+    <animateMotion path="M740,125 L140,125" keyPoints="0;0;1;1" keyTimes="0;0.07;0.21;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.082;0.198;0.21;1" dur="13s" repeatCount="indefinite"/>
+  </circle><circle r="8" fill="#5a6b7d" opacity="0">
+    <animateMotion path="M740,125 L140,125" keyPoints="0;0;1;1" keyTimes="0;0.12;0.26;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.132;0.248;0.26;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="8" fill="#e8914a" opacity="0">
+    <animateMotion path="M140,335 L740,335" keyPoints="0;0;1;1" keyTimes="0;0.32;0.5;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.32;0.332;0.488;0.5;1" dur="13s" repeatCount="indefinite"/>
+  </circle><circle r="8" fill="#e8914a" opacity="0">
+    <animateMotion path="M140,335 L740,335" keyPoints="0;0;1;1" keyTimes="0;0.37;0.55;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.37;0.382;0.538;0.55;1" dur="13s" repeatCount="indefinite"/>
+  </circle><circle r="8" fill="#e8914a" opacity="0">
+    <animateMotion path="M140,335 L740,335" keyPoints="0;0;1;1" keyTimes="0;0.42;0.6;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.42;0.432;0.588;0.6;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6" fill="#5a6b7d" opacity="0">
+    <animateMotion path="M740,375 L140,375" keyPoints="0;0;1;1" keyTimes="0;0.32;0.5;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.32;0.332;0.488;0.5;1" dur="13s" repeatCount="indefinite"/>
+  </circle><circle r="6" fill="#5a6b7d" opacity="0">
+    <animateMotion path="M740,375 L140,375" keyPoints="0;0;1;1" keyTimes="0;0.42;0.6;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.42;0.432;0.588;0.6;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6" fill="#e8914a" opacity="0">
+    <animateMotion path="M805,405 L805,447" keyPoints="0;0;1;1" keyTimes="0;0.4;0.52;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.4;0.412;0.508;0.52;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+</svg>

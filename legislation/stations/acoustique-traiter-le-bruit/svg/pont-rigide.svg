@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-pr" aria-describedby="d-pr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pr">Un tube rigide court-circuite le plot ; un raccord souple garde la coupure</title>
+  <desc id="d-pr">Deux vues côte à côte. À gauche, une machine posée sur deux plots est reliée à un mur par un tube rigide : des traits orange alternés courent le long du tube jusqu'au mur et des arcs orange se propagent derrière le mur, la vibration passe malgré les plots. À droite, la même machine sur ses plots est reliée au mur par un tube qui comporte une partie souple en accordéon : les traits orange s'arrêtent avant le raccord souple et rien ne se propage dans le mur. Dans l'animation, les traits orange avancent le long du tube.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .t20 { font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lblb{ font-size:17px; font-weight:bold; fill:#1b3a63; }
+    .sub { font-size:16px; fill:#5a6b7d; }
+    .aer { font-size:17px; font-weight:bold; fill:#5b21b6; }
+    .sol { font-size:17px; font-weight:bold; fill:#9a4d0a; }
+    .band{ font-size:18px; font-weight:bold; fill:#10233c; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f5689"/></marker>
+  </defs>
+
+  <path d="M400,40 V400" stroke="#d6dee7" stroke-width="2" stroke-dasharray="6 6"/>
+  <text class="t20" x="205" y="70" text-anchor="middle">Tuyauterie rigide</text>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -1.5;0 0;0 1.5;0 0" dur="0.9s" repeatCount="indefinite"/>
+    <rect x="50" y="200" width="130" height="90" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="115" cy="236" r="20" fill="none" stroke="#5a6b7d" stroke-width="2.5"/><path d="M115,220 V252 M99,236 H131" stroke="#5a6b7d" stroke-width="2.5"/>
+    <text class="lbl" x="115" y="278" text-anchor="middle">Machine</text>
+  </g>
+  <rect x="60" y="290" width="30" height="18" rx="3" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/><path d="M65,299 h20" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="142" y="290" width="30" height="18" rx="3" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/><path d="M147,299 h20" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="20" y="310" width="280" height="36" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="300" y="100" width="30" height="246" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+  <path d="M180,245 H300" fill="none" stroke="#5a6b7d" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M180,245 H300" fill="none" stroke="#e8914a" stroke-width="7" stroke-dasharray="14 10"><animate attributeName="stroke-dashoffset" values="24;0" dur="1.2s" repeatCount="indefinite"/></path>
+  <path d="M349.9,228.3 A26,26 0 0 1 349.9,261.7" fill="none" stroke="#e8914a" stroke-width="4" stroke-linecap="round"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4;0.44;1" dur="12s" repeatCount="indefinite"/></path>
+  <path d="M365.2,215.4 A46,46 0 0 1 365.2,274.6" fill="none" stroke="#e8914a" stroke-width="4" stroke-linecap="round"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.46;0.5;1" dur="12s" repeatCount="indefinite"/></path>
+  <path d="M380.6,202.6 A66,66 0 0 1 380.6,287.4" fill="none" stroke="#e8914a" stroke-width="4" stroke-linecap="round"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.56;1" dur="12s" repeatCount="indefinite"/></path>
+  <text class="lbl" x="240" y="196" text-anchor="middle">Tube</text>
+  <text class="lbl" x="240" y="214" text-anchor="middle">rigide</text>
+  <text class="sub" x="315" y="372" text-anchor="middle">Mur</text>
+  <g>
+    <text class="sol" x="205" y="426" text-anchor="middle">Le tube court-circuite le plot</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1;0.16;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <text class="t20" x="605" y="70" text-anchor="middle">Raccord souple</text>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0;0 3;0 0" dur="0.9s" repeatCount="indefinite"/>
+    <rect x="450" y="200" width="130" height="90" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="515" cy="236" r="20" fill="none" stroke="#5a6b7d" stroke-width="2.5"/><path d="M515,220 V252 M499,236 H531" stroke="#5a6b7d" stroke-width="2.5"/>
+    <text class="lbl" x="515" y="278" text-anchor="middle">Machine</text>
+  </g>
+  <rect x="460" y="290" width="30" height="18" rx="3" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/><path d="M465,299 h20" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="542" y="290" width="30" height="18" rx="3" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/><path d="M547,299 h20" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="420" y="310" width="280" height="36" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="700" y="100" width="30" height="246" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+  <path d="M580,245 H615 L621,229 L630,261 L639,229 L648,261 L655,245 H700" fill="none" stroke="#5a6b7d" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M580,245 H615" fill="none" stroke="#e8914a" stroke-width="7" stroke-dasharray="14 10"><animate attributeName="stroke-dashoffset" values="24;0" dur="1.2s" repeatCount="indefinite"/></path>
+  
+  <text class="lbl" x="640" y="196" text-anchor="middle">Raccord</text>
+  <text class="lbl" x="640" y="214" text-anchor="middle">souple</text>
+  <text class="sub" x="715" y="372" text-anchor="middle">Mur</text>
+  <g>
+    <text class="lblb" x="605" y="426" text-anchor="middle">Le raccord garde la coupure</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.61;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

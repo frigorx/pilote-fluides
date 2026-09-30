@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img"
+     aria-labelledby="t-cr" aria-describedby="d-cr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cr">Le clapet coupe-feu rétablit le degré de la paroi</title>
+  <desc id="d-cr">Trois vignettes côte à côte, chacune avec un petit feu à gauche d'une paroi hachurée. Première
+    vignette, paroi pleine, marquée d'une coche verte : le feu reste d'un côté. Deuxième vignette, la paroi est
+    percée par une gaine et une flèche rouge traverse la paroi, marquée d'une croix rouge : le feu passe.
+    Troisième vignette, la gaine porte un clapet posé dans la paroi, lame fermée, la flèche rouge s'arrête devant
+    lui, marquée d'une coche verte : le degré de la paroi est rétabli.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .tete { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .l1 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .l2 { font-size:17px; fill:#5a6b7d; }
+  </style>
+  <defs>
+    <pattern id="hach" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#e2e8f0"/>
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#94a3b8" stroke-width="3"/>
+    </pattern>
+    <g id="flamme">
+      <path d="M0 0 C-30 -4 -38 -36 -14 -62 C-14 -44 -4 -40 0 -32 C4 -54 16 -68 22 -82 C42 -54 42 -8 0 0 Z" fill="#e8914a"/>
+      <path d="M0 0 C-14 -2 -16 -18 -4 -30 C-2 -22 2 -20 6 -26 C14 -16 14 -2 0 0 Z" fill="#b91c1c"/>
+    </g>
+  </defs>
+  <rect width="800" height="470" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Ce que fait le clapet</text>
+
+  <!-- vignette 1 : paroi pleine -->
+  <rect x="30" y="56" width="220" height="290" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="tete" x="44" y="92">1. Paroi pleine</text>
+  <circle cx="221" cy="86" r="15" fill="#1e7e54"/>
+  <polyline points="213,86 219,92 230,80" fill="none" stroke="#fffdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="125" y="115" width="30" height="215" fill="url(#hach)" stroke="#1b3a63" stroke-width="2"/>
+  <use href="#flamme" transform="translate(70,330) scale(.7)"/>
+
+  <!-- vignette 2 : paroi percée -->
+  <rect x="290" y="56" width="220" height="290" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="tete" x="304" y="92">2. Paroi percée</text>
+  <circle cx="481" cy="86" r="15" fill="#b91c1c"/>
+  <line x1="474" y1="79" x2="488" y2="93" stroke="#fffdf8" stroke-width="4" stroke-linecap="round"/>
+  <line x1="488" y1="79" x2="474" y2="93" stroke="#fffdf8" stroke-width="4" stroke-linecap="round"/>
+  <rect x="385" y="115" width="30" height="215" fill="url(#hach)" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="300" y="200" width="200" height="60" fill="#fffdf8"/>
+  <line x1="300" y1="200" x2="500" y2="200" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="300" y1="260" x2="500" y2="260" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="322" y1="230" x2="462" y2="230" stroke="#b91c1c" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="458,217 484,230 458,243" fill="#b91c1c"/>
+  <use href="#flamme" transform="translate(330,330) scale(.7)"/>
+
+  <!-- vignette 3 : clapet -->
+  <rect x="550" y="56" width="220" height="290" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="tete" x="564" y="92">3. Avec clapet</text>
+  <circle cx="741" cy="86" r="15" fill="#1e7e54"/>
+  <polyline points="733,86 739,92 750,80" fill="none" stroke="#fffdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="645" y="115" width="30" height="215" fill="url(#hach)" stroke="#1b3a63" stroke-width="2"/>
+  <rect x="560" y="200" width="200" height="60" fill="#fffdf8"/>
+  <line x1="560" y1="200" x2="760" y2="200" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="560" y1="260" x2="760" y2="260" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="636" y="192" width="48" height="76" rx="4" fill="#e6edf6" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="656" y="196" width="8" height="68" rx="2" fill="#1b3a63"/>
+  <line x1="582" y1="230" x2="622" y2="230" stroke="#b91c1c" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="620,217 632,230 620,243" fill="#b91c1c"/>
+  <use href="#flamme" transform="translate(590,330) scale(.7)"/>
+
+  <!-- légendes sous les vignettes -->
+  <text class="l1" x="140" y="380" text-anchor="middle">Le feu reste d'un côté</text>
+  <text class="l2" x="140" y="404" text-anchor="middle">la paroi tient son degré</text>
+  <text class="l1" x="400" y="380" text-anchor="middle">Le feu passe par la gaine</text>
+  <text class="l2" x="400" y="404" text-anchor="middle">le degré est perdu</text>
+  <text class="l1" x="660" y="380" text-anchor="middle">Le clapet ferme la gaine</text>
+  <text class="l2" x="660" y="404" text-anchor="middle">le degré est rétabli</text>
+
+  <rect x="20" y="424" width="760" height="38" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="l1" x="400" y="449" text-anchor="middle">Le clapet a le même degré coupe-feu que la paroi qu'il traverse</text>
+</svg>

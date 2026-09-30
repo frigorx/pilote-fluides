@@ -1,0 +1,50 @@
+{
+  "slug": "travail-se-former",
+  "branche": "Droit du travail",
+  "titre": "Mission : Arriver à son entretien de parcours avec un projet",
+  "client": "Le responsable du bureau d'études CVC qui vous emploie comme technicien d'études et vous annonce qu'un entretien de parcours professionnel va être planifié.",
+  "situation": "Vous travaillez depuis quelques mois dans un bureau d'études CVC. Votre responsable vous prévient qu'un entretien de parcours professionnel va être planifié. Vous aimeriez, à terme, obtenir le titre professionnel de technicien d'études en chauffage, ventilation et climatisation : votre expérience de chantier vous paraît proche de ce que ce titre valide. Vous savez aussi que votre attestation d'aptitude aux fluides et votre habilitation électrique devront être maintenues. Il s'agit d'arriver à l'entretien avec un projet clair et des questions précises, plutôt que d'attendre que l'on vous propose quelque chose.",
+  "piece_a_produire": "Une fiche d'une page « Mon parcours de formation » en trois blocs. Bloc 1, les obligations à maintenir : habilitation électrique et attestation d'aptitude, avec pour chacune la date à vérifier sur votre propre document. Bloc 2, votre projet : la certification visée (fiche du répertoire national à consulter, avec sa date d'échéance), la voie choisie parmi compte personnel de formation, VAE ou plan de développement des compétences de l'employeur, et une phrase de justification. Bloc 3, trois questions à poser à l'employeur pendant l'entretien.",
+  "questions": [
+    {
+      "q": "Comment le compte personnel de formation est-il alimenté, et que devient-il si l'on change d'employeur ?",
+      "ecran": 2,
+      "reponse": "À partir d'un mi-temps, il est alimenté chaque année (500 € par an, dans la limite totale de 5 000 €, montants lus le 30/09/2026 et à revérifier) ; en dessous, proportionnellement. Il est attaché à la personne : il suit son titulaire d'employeur en employeur et reste utilisable au chômage, mais il ne se cède pas."
+    },
+    {
+      "q": "Citez les étapes d'une VAE, de la candidature à la décision, et les trois issues possibles devant le jury.",
+      "ecran": 4,
+      "reponse": "Candidature sur France VAE, accompagnement facultatif, recevabilité par le dossier de faisabilité, dossier de validation, jury (entretien oral et/ou mise en situation). Le jury peut attribuer la certification, l'accorder en partie en indiquant quoi compléter, ou ne pas l'attribuer."
+    },
+    {
+      "q": "Que recense le RNCP, et comment lit-on la fiche du TP TECVC (code, niveau, blocs, échéance) ?",
+      "ecran": 5,
+      "reponse": "Le RNCP recense les certifications reconnues (diplômes, titres professionnels, certificats de qualification professionnelle). La fiche du TP TECVC porte le code RNCP37292, le niveau 5, trois blocs de compétences et une date d'échéance d'enregistrement au 10 mai 2028 (lue le 30/09/2026)."
+    },
+    {
+      "q": "À quel rythme l'entretien de parcours professionnel a-t-il lieu, et que vérifie l'état des lieux récapitulatif ?",
+      "ecran": 6,
+      "reponse": "Un entretien dans la première année suivant l'embauche, puis tous les quatre ans. Tous les huit ans, l'état des lieux vérifie que le salarié a suivi au moins une formation, acquis des éléments de certification (par la formation ou la VAE) et bénéficié d'une progression salariale ou professionnelle. Il ne porte pas sur l'évaluation du travail."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Classez chaque situation dans une colonne : « imposée par un texte pour exercer », « décidée par l'employeur » ou « à votre initiative ». Justifiez en une phrase.",
+    "items": [
+      "Suivre la formation qui précède la délivrance d'une habilitation électrique.",
+      "Faire une remise à niveau de son attestation d'aptitude aux fluides.",
+      "Utiliser son compte personnel de formation pour préparer un titre professionnel.",
+      "Faire valider son expérience de chantier par un titre du répertoire national.",
+      "Organiser l'entretien de parcours professionnel.",
+      "Suivre une formation à un nouveau logiciel de calcul prévue dans le plan de développement des compétences."
+    ],
+    "corrige": "1 : imposée pour exercer (l'habilitation est délivrée par l'employeur après la formation, art. R. 4544-9 et R. 4544-10). 2 : imposée pour exercer (remise à niveau a minima tous les 7 ans, régime 2025). 3 : à votre initiative (le compte est le vôtre). 4 : à votre initiative (VAE). 5 : décidée par l'employeur, qui a l'obligation de l'organiser. 6 : décidée par l'employeur, au titre de l'adaptation au poste (art. L. 6321-1)."
+  },
+  "badge": "Cap sur le titre",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. Le TP TECVC (REAC TP-00133) sert ici d'exemple de certification du RNCP ; les compétences CP1 à CP10 ne portent pas sur le droit de la formation."
+  }
+}

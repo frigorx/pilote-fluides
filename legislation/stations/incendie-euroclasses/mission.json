@@ -1,0 +1,27 @@
+{
+  "slug": "incendie-euroclasses",
+  "branche": "Incendie",
+  "titre": "Mission : Cette gaine et ce calfeutrement répondent-ils à la bonne question ?",
+  "client": "Le maître d'ouvrage d'un plateau de bureaux en rénovation, représenté par son conducteur de travaux.",
+  "situation": "L'entreprise du lot ventilation propose, pour un réseau de gaines qui traverse une paroi coupe-feu, un isolant dont la fiche technique, ancienne, n'indique qu'une catégorie M, et un calfeutrement de traversée dont la seule pièce fournie est une classe de réaction au feu. Le conducteur de travaux ne sait pas si ces justificatifs répondent à la bonne question. Il vous demande aussi quel texte fixe les méthodes d'évaluation de la résistance au feu pour l'autorisation de travaux qui sera déposée après le 1er octobre 2026.",
+  "piece_a_produire": "Une note d'une page au conducteur de travaux : pour chaque pièce (isolant de gaine, fourreau, calfeutrement), la question posée (réaction ou résistance au feu), l'étiquette à demander, et le texte de référence.",
+  "questions": [
+    { "q": "Une fiche de plaque annonce « A2-s1,d0 ». Que peut-on en conclure ?", "ecran": 1,
+      "reponse": "C'est un classement de réaction au feu : il décrit le comportement du produit, pas la tenue de la cloison construite avec. Les indices s et d font partie du classement." },
+    { "q": "Dans « C-s2,d1 », que désigne le d1 ?", "ecran": 3,
+      "reponse": "Les gouttelettes ou particules enflammées : d1 signifie qu'aucune ne persiste plus de 10 secondes à l'essai. La fumée est désignée par le s." },
+    { "q": "Un élément est classé « EI 30 ». Que garantit ce classement ?", "ecran": 4,
+      "reponse": "Qu'il reste étanche aux flammes et aux gaz chauds (E) et isolant thermiquement (I) pendant 30 minutes : c'est du coupe-feu. Sans R, rien n'est affirmé sur la capacité à porter une charge." },
+    { "q": "Un fourreau traverse une paroi coupe-feu. Que demandez-vous pour justifier le calfeutrement ?", "ecran": 6,
+      "reponse": "Un classement de résistance au feu (E, I) : le calfeutrement est un ouvrage qui doit préserver la tenue de la paroi. Une classe de réaction, même A1, ne répond pas à cette question." }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque étiquette à la question qu'elle traite (réaction ou résistance au feu), à ce qu'elle décrit (un produit ou un ouvrage) et à sa lecture, en une phrase.",
+    "items": ["B-s1,d0", "EI 30", "R 90", "M1"],
+    "corrige": "B-s1,d0 : réaction au feu, un produit, classe B, fumée faible, aucune gouttelette enflammée ; EI 30 : résistance au feu, un ouvrage, étanche et isolant pendant 30 minutes (coupe-feu) ; R 90 : résistance au feu, porte pendant 90 minutes (exigence SF 1 h 30) ; M1 : ancienne catégorie de réaction au feu, à traduire en lisant le tableau de l'annexe 4 de l'arrêté du 21 novembre 2002, jamais de mémoire."
+  },
+  "badge": "Deux questions",
+  "duree_min": 25,
+  "referentiel": { "tecvc": ["CP7", "CP1"], "attestation_2025": [], "justification": "CP7 : choisir isolants et gaines d'un réseau de ventilation tertiaire ; CP1 : repérer les traversées de parois sur les plans d'implantation. Le classement au feu relève de la culture professionnelle du technicien et du chargé d'affaires." }
+}

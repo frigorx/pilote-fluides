@@ -1,0 +1,49 @@
+{
+  "slug": "risques-atex",
+  "branche": "Risques professionnels",
+  "titre": "Mission : Du propane dans l'arrière-boutique",
+  "client": "Le gérant d'une boucherie-charcuterie qui remplace sa vitrine réfrigérée par un modèle fonctionnant au R290 (propane), le tout dans une arrière-boutique étroite et mal ventilée.",
+  "situation": "Le gérant vous dit : « C'est un fluide moderne, comme celui de la climatisation de mon voisin : le technicien fait sa recharge et c'est fini. » Un ancien de l'équipe ajoute : « Je sors le chalumeau pour reprendre un raccord, ça prend deux minutes. » Le R290 n'est pourtant pas classé comme le fluide du voisin. Votre responsable vous demande une fiche claire, à remettre au gérant et au technicien avant la pose.",
+  "piece_a_produire": "Une fiche d'une page « Avant d'intervenir sur un fluide inflammable » : la classe du R290 avec le piège à éviter (A3, jamais A2L), les deux précautions dans la pièce (ventilation, aucune source d'inflammation), la précaution sur le matériel électrique, et une phrase qui interdit le chalumeau tant que ces vérifications ne sont pas faites.",
+  "questions": [
+    {
+      "q": "Que faut-il réunir pour qu'une atmosphère explosive s'enflamme ?",
+      "ecran": 1,
+      "reponse": "Un gaz ou une vapeur inflammable mélangé à l'air dans une proportion qui peut s'enflammer, et une source d'inflammation (étincelle, flamme, surface chaude). Le mélange seul ne suffit pas."
+    },
+    {
+      "q": "Rangez les classes A1, A2L, A2 et A3 : laquelle est non inflammable, laquelle est très inflammable ?",
+      "ecran": 2,
+      "reponse": "A1 non inflammable, A2L faiblement inflammable, A2 inflammable, A3 très inflammable. L'inflammabilité augmente de A1 vers A3."
+    },
+    {
+      "q": "Pourquoi confondre A2L et A3 pour le R290 est-il une erreur qui compte ?",
+      "ecran": 3,
+      "reponse": "Le R290 est un hydrocarbure pur : il est classé A3, très inflammable, jamais A2L. Les précautions à prendre ne sont pas les mêmes."
+    },
+    {
+      "q": "Quel matériel électrique peut-on utiliser dans une zone où une atmosphère explosive peut apparaître ?",
+      "ecran": 5,
+      "reponse": "Un matériel conçu pour cet usage, dit « ATEX » et marqué en conséquence. Un appareil standard n'a rien à faire dans une zone à risque."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque fluide à sa classe de sécurité.",
+    "items": [
+      "R134a",
+      "R32",
+      "R152a",
+      "R290",
+      "R600a"
+    ],
+    "corrige": "R134a : A1, non inflammable. R32 : A2L, faiblement inflammable. R152a : A2, inflammable. R290 et R600a : A3, très inflammables (hydrocarbures purs)."
+  },
+  "badge": "Pas d'étincelle",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": ["1.08", "11.03", "12.02"],
+    "justification": "Hors REAC TECVC : culture professionnelle du technicien. Côté attestation 2025 : combustibilité et propagation des flammes (1.08), règles de sécurité des réfrigérants inflammables (11.03), prescriptions de sécurité des outils et équipements d'entretien pour les hydrocarbures (12.02)."
+  }
+}

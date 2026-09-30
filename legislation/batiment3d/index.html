@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1b3a63">
+<meta name="robots" content="noindex">
+<title>Le bâtiment réglementaire — démonstration</title>
+<style>
+  :root { --bleu:#1b3a63; --orange:#e8914a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  .page { max-width:1180px; margin:0 auto; padding:24px 20px 40px; }
+  h1 { margin:0 0 8px; font:bold 34px/1.15 'Trebuchet MS',Calibri,Arial,sans-serif; color:var(--bleu); }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0 0 20px; color:var(--mut); font-size:18px; max-width:40em; }
+  .pied { margin-top:26px; font-size:15px; color:var(--mut); }
+  .pied code { background:#efe9dc; padding:1px 6px; border-radius:5px; }
+  @media (max-width:760px){ h1{font-size:28px} .page{padding:16px 14px 32px} }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Le bâtiment <em>réglementaire</em></h1>
+  <p class="chapo">Onze zones, onze sous-lignes du réseau Législation. Tournez la maquette, survolez une
+  zone, touchez-la : le panneau vous dit de quoi il s'agit et vous ouvre ses stations.</p>
+
+  <div id="batiment3d"></div>
+
+  <p class="pied">Page de démonstration du composant <code>batiment.js</code> — les zones sont lues dans
+  <code>zones.json</code>, généré depuis le plan par <code>generer-zones.mjs</code>.</p>
+</div>
+<script type="module">
+  import { monterBatiment } from "./batiment.js";
+  window.b3d = monterBatiment(document.getElementById("batiment3d"), { urlPlan: "../index.html#carte" });
+</script>
+</body>
+</html>

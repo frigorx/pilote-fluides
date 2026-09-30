@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"
+     aria-labelledby="t-cat" aria-describedby="d-cat" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cat">La catégorie d'un ERP : cinq colonnes selon l'effectif</title>
+  <desc id="d-cat">Cinq colonnes de hauteur croissante de gauche à droite : cinquième catégorie, dont le seuil est fixé par le type
+    d'établissement, quatrième catégorie à 300 personnes et moins, troisième de 301 à 700, deuxième de 701 à 1 500 et première
+    au-dessus de 1 500. Un bandeau en haut rappelle que l'effectif compte le public et le personnel pour le premier groupe, le public
+    seul pour la cinquième catégorie. Sous les colonnes, deux accolades : le premier groupe réunit les quatre premières catégories,
+    le deuxième groupe est la cinquième catégorie. L'animation fait grandir les colonnes une à une de la cinquième à la première ;
+    l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .cat { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .sil { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nom { font-size:16px; fill:#10233c; }
+    .grp { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#b91c1c; }
+    .band{ font-size:17px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="400" y="30" text-anchor="middle">La catégorie : l'effectif décide</text>
+  <rect x="25" y="46" width="750" height="44" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="400" y="74" text-anchor="middle">Effectif compté : public + personnel (1er groupe) · public seul (5e catégorie)</text>
+  <line x1="25" y1="372" x2="775" y2="372" stroke="#1b3a63" stroke-width="3"/>
+  <g>
+    <rect x="25" y="332" width="130" height="40" rx="6" fill="#eef3f9" stroke="#2f5689" stroke-width="3">
+      <animate attributeName="y" values="372;372;332;332" keyTimes="0;0.05;0.13;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="0;0;40;40" keyTimes="0;0.05;0.13;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text class="cat" x="90" y="320" text-anchor="middle">5e catégorie</text>
+    <text class="sil" x="90" y="398" text-anchor="middle">sous le seuil</text>
+    <text class="nom" x="90" y="420" text-anchor="middle">fixé par le type</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.13;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="171" y="282" width="130" height="90" rx="6" fill="#fbeaea" stroke="#b91c1c" stroke-width="3">
+      <animate attributeName="y" values="372;372;282;282" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="0;0;90;90" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text class="cat" x="236" y="270" text-anchor="middle">4e catégorie</text>
+    <text class="sil" x="236" y="398" text-anchor="middle">300 et moins</text>
+    <text class="nom" x="236" y="420" text-anchor="middle">personnes</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="317" y="232" width="130" height="140" rx="6" fill="#fbeaea" stroke="#b91c1c" stroke-width="3">
+      <animate attributeName="y" values="372;372;232;232" keyTimes="0;0.27;0.35;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="0;0;140;140" keyTimes="0;0.27;0.35;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text class="cat" x="382" y="220" text-anchor="middle">3e catégorie</text>
+    <text class="sil" x="382" y="398" text-anchor="middle">301 à 700</text>
+    <text class="nom" x="382" y="420" text-anchor="middle">personnes</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.27;0.35;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="463" y="182" width="130" height="190" rx="6" fill="#fbeaea" stroke="#b91c1c" stroke-width="3">
+      <animate attributeName="y" values="372;372;182;182" keyTimes="0;0.38;0.46;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="0;0;190;190" keyTimes="0;0.38;0.46;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text class="cat" x="528" y="170" text-anchor="middle">2e catégorie</text>
+    <text class="sil" x="528" y="398" text-anchor="middle">701 à 1 500</text>
+    <text class="nom" x="528" y="420" text-anchor="middle">personnes</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.38;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="609" y="132" width="130" height="240" rx="6" fill="#fbeaea" stroke="#b91c1c" stroke-width="3">
+      <animate attributeName="y" values="372;372;132;132" keyTimes="0;0.49;0.57;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="0;0;240;240" keyTimes="0;0.49;0.57;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text class="cat" x="674" y="120" text-anchor="middle">1re catégorie</text>
+    <text class="sil" x="674" y="398" text-anchor="middle">plus de 1 500</text>
+    <text class="nom" x="674" y="420" text-anchor="middle">personnes</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.49;0.57;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- accolades -->
+  <path d="M25 456 v10 h130 v-10" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+  <path d="M171 456 v10 h568 v-10" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="grp" x="90" y="496" text-anchor="middle">2e groupe</text>
+  <text class="grp" x="455" y="496" text-anchor="middle">1er groupe</text>
+</svg>

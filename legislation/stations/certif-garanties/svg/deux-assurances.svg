@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-as" aria-describedby="d-as" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-as">Deux assurances, deux souscripteurs</title>
+  <desc id="d-as">Deux colonnes. À gauche, en indigo : l'assurance de responsabilité décennale, souscrite
+    par le constructeur, l'entreprise. Il justifie de son contrat à l'ouverture du chantier, par une
+    attestation d'assurance jointe aux devis et aux factures. À droite, en orange : l'assurance
+    dommages-ouvrage, souscrite avant l'ouverture du chantier par le maître de l'ouvrage. Elle paie
+    les réparations en dehors de toute recherche de responsabilités, et prend effet après le délai
+    de parfait achèvement. Un pictogramme de bouclier surmonte la colonne de gauche, un pictogramme
+    de maison celle de droite. En bas, une bande rappelle que le défaut d'assurance est puni.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .cle  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#5a6b7d; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Qui s'assure, et pour quoi ?</text>
+
+  <!-- Colonne gauche : décennale -->
+  <rect x="30" y="52" width="400" height="298" rx="14" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <!-- bouclier -->
+  <path d="M230 66 L262 78 V104 Q262 124 230 138 Q198 124 198 104 V78 Z" fill="#3730a3"/>
+  <text class="qui" x="230" y="166" text-anchor="middle">Responsabilité décennale</text>
+  <text class="cle" x="50" y="200">Qui</text>
+  <text class="lbl" x="50" y="222">Le constructeur : l'entreprise qui pose</text>
+  <text class="cle" x="50" y="256">Quand</text>
+  <text class="lbl" x="50" y="278">Il justifie son contrat à l'ouverture du chantier</text>
+  <text class="cle" x="50" y="312">Preuve</text>
+  <text class="lbl" x="50" y="334">Attestation jointe aux devis et aux factures</text>
+
+  <!-- Colonne droite : dommages-ouvrage -->
+  <rect x="470" y="52" width="400" height="298" rx="14" fill="#fffdf8" stroke="#e8914a" stroke-width="3"/>
+  <!-- maison -->
+  <path d="M670 66 L706 98 H694 V134 H646 V98 H634 Z" fill="#e8914a"/>
+  <text class="qui" x="670" y="166" text-anchor="middle">Dommages-ouvrage</text>
+  <text class="cle" x="490" y="200">Qui</text>
+  <text class="lbl" x="490" y="222">Le maître de l'ouvrage : le client</text>
+  <text class="cle" x="490" y="256">Quand</text>
+  <text class="lbl" x="490" y="278">Avant l'ouverture du chantier</text>
+  <text class="cle" x="490" y="312">Particularité</text>
+  <text class="lbl" x="490" y="334">Paie les réparations sans chercher le responsable</text>
+
+  <!-- Bande -->
+  <rect x="30" y="372" width="840" height="56" rx="12" fill="#3730a3"/>
+  <text class="band" x="450" y="397" text-anchor="middle">Le défaut d'assurance est puni : six mois d'emprisonnement</text>
+  <text class="band" x="450" y="419" text-anchor="middle">et 75 000 euros d'amende, ou l'une de ces deux peines</text>
+</svg>

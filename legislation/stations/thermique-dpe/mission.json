@@ -1,0 +1,36 @@
+{
+  "slug": "thermique-dpe",
+  "branche": "Thermique",
+  "titre": "Mission : « Mon DPE est faux, mes locataires paient peu ! »",
+  "client": "Un propriétaire bailleur d'un appartement, qui vient de recevoir un DPE défavorable et sollicite Clim'Études Sud pour savoir s'il doit faire des travaux.",
+  "situation": "Le propriétaire conteste son diagnostic : selon lui, ses locataires paient de petites factures de chauffage, donc l'étiquette ne peut pas être aussi mauvaise. Il ne sait pas si le résultat pourrait l'empêcher de relouer, et il se demande si un changement de chauffage y changerait quelque chose. Votre responsable vous demande de rédiger la réponse : ce que mesure réellement un DPE, pourquoi il peut s'écarter des factures, ce qu'il déclenche et où intervient votre métier.",
+  "piece_a_produire": "Un courriel d'une dizaine de lignes au propriétaire : ce qu'est un DPE, pourquoi il diffère des factures, ce qu'il déclenche, et quels travaux peuvent faire remonter l'étiquette, sans citer de seuil ni de calendrier.",
+  "questions": [
+    { "q": "Sur quoi repose le calcul d'un DPE ?", "ecran": 1,
+      "reponse": "Sur une méthode standardisée appliquée aux caractéristiques du bâti et des équipements du logement, pas sur les factures réelles des occupants. Deux logements identiques sur le papier reçoivent le même DPE." },
+    { "q": "Un logement est excellent sur un indicateur et mauvais sur l'autre : quelle étiquette reçoit-il, et quels sont ces deux indicateurs ?", "ecran": 2,
+      "reponse": "Les deux indicateurs sont la consommation d'énergie et les émissions de gaz à effet de serre. L'étiquette retient le moins bon des deux résultats." },
+    { "q": "Que peut entraîner un mauvais classement pour un bailleur, et qu'est-ce qui se vérifie sur le texte en vigueur ?", "ecran": 5,
+      "reponse": "Une restriction de la mise en location. Le mécanisme existe ; la lettre exacte et le calendrier précis évoluent et se vérifient sur le texte en vigueur." },
+    { "q": "Citez deux raisons pour lesquelles un DPE peut s'écarter de la consommation réelle d'un logement.", "ecran": 7,
+      "reponse": "La méthode est conventionnelle, avec des hypothèses d'usage standard, alors que la consommation réelle dépend de la façon dont les occupants utilisent le logement ; et le résultat dépend de la qualité des données saisies (surface, isolation, équipements) : une donnée mal renseignée fausse l'étiquette." }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque situation à la conséquence qui lui correspond : A) afficher le DPE dès l'annonce et le remettre avant la signature ; B) la mise en location peut être restreinte ; C) l'étiquette peut remonter ; D) l'étiquette est faussée.",
+    "items": [
+      "Un propriétaire met son bien en vente ou en location",
+      "Un logement est mal classé",
+      "Une chaudière est remplacée par une pompe à chaleur ou le logement est isolé",
+      "Une donnée du logement (surface, isolation, équipement) a été mal saisie"
+    ],
+    "corrige": "1 → A (obligation d'information, écran 4) ; 2 → B (restriction de location, écran 5) ; 3 → C (travaux d'amélioration, écran 6) ; 4 → D (limite du DPE, écran 7)."
+  },
+  "badge": "Étiquette expliquée",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP5", "CP6"],
+    "attestation_2025": [],
+    "justification": "CP5 (déperditions) parce que l'étiquette dépend de la qualité du bâti, et CP6 (chauffage / eau chaude sanitaire) parce que les travaux de génération de chaleur font remonter l'étiquette."
+  }
+}

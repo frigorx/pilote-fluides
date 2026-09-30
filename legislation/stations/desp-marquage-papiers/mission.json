@@ -1,0 +1,36 @@
+{
+  "slug": "desp-marquage-papiers",
+  "branche": "DESP (équipements sous pression)",
+  "titre": "Mission : livré avec le CE, mais sans notice",
+  "client": "Le chef de chantier de Clim'Études Sud, qui réceptionne ce matin un séparateur d'huile sur un chantier de modernisation d'une chambre froide.",
+  "situation": "Le séparateur d'huile arrive sur le chantier. Sa plaque porte le marquage CE, mais le carton ne contient aucune notice et la déclaration de conformité manque. Le planning est serré et le chef de chantier voudrait monter l'équipement tout de suite : « Le CE est là, c'est bon. » Votre responsable vous demande de préparer la check-list de réception, pour que l'équipe sache quoi vérifier, quoi réclamer et quoi conserver.",
+  "piece_a_produire": "Une check-list de réception d'une page : les champs à vérifier sur la plaque, les deux pièces à recevoir avec l'équipement, la conduite à tenir quand une pièce manque, et ce qui rejoint le dossier de l'installation.",
+  "questions": [
+    { "q": "Sur la plaque signalétique, à côté de quoi trouve-t-on le marquage CE ?", "ecran": 2,
+      "reponse": "À côté du fabricant, de la pression maximale admissible (PS) et, selon les équipements, d'un numéro de série. Le CE s'ajoute à ces champs, il n'en remplace aucun." },
+    { "q": "Qui délivre la déclaration de conformité, et l'installateur peut-il la rédiger lui-même ?", "ecran": 3,
+      "reponse": "Le fabricant la délivre : elle atteste que l'équipement respecte la directive et l'identifie ainsi que la directive visée. C'est une pièce que l'installateur reçoit, jamais une pièce qu'il rédige." },
+    { "q": "Que précise la notice d'instructions ?", "ecran": 4,
+      "reponse": "Les conditions d'utilisation, les opérations d'entretien et les limites de l'équipement, dont sa PS. Elle doit être fournie avec l'équipement ; elle ne s'improvise pas." },
+    { "q": "Lors d'un contrôle sur le chantier, pourquoi le marquage CE seul ne suffit-il pas au frigoriste ?", "ecran": 6,
+      "reponse": "C'est le dossier de l'installation qui est demandé : la déclaration de conformité et la notice reçues avec l'équipement et conservées depuis le montage. Sans ce dossier, le frigoriste n'a pas de preuve à montrer, même si l'équipement porte bien son CE." }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque situation de terrain à la bonne conduite : A) la réclamer au fabricant avant de monter ; B) présenter le dossier conservé depuis le montage ; C) signaler une plaque incomplète ; D) la redemander au fabricant.",
+    "items": [
+      "Un équipement neuf est livré sans notice.",
+      "Un contrôle demande le dossier de l'installation.",
+      "La plaque porte le CE mais aucune PS lisible.",
+      "La déclaration de conformité est introuvable."
+    ],
+    "corrige": "1 → A ; 2 → B ; 3 → C (un champ manque, la plaque n'est pas complète) ; 4 → D (elle se reconstitue auprès du fabricant, elle ne s'improvise pas)."
+  },
+  "badge": "Réception irréprochable",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires ; aucun code de l'attestation d'aptitude 2025 ni compétence CP1 à CP10 ne porte directement sur le marquage et la documentation d'un équipement sous pression."
+  }
+}

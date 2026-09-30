@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-sce" aria-describedby="d-sce" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-sce">Un scénario de mise en sécurité, zone par zone (exemple fictif)</title>
+  <desc id="d-sce">Un tableau à trois lignes : une alarme en zone 1, en zone 2, en zone 3. Quatre colonnes : les dispositifs de la zone 1, de la zone 2, de la zone 3, et la ventilation commune, la CTA. Un disque plein signifie commandé, un cercle vide signifie non commandé. Chaque ligne commande les dispositifs de sa propre zone et la ventilation commune. En bas, la légende et la mention qu'il s'agit d'un exemple fictif. L'animation promène une bande orange sur les trois lignes, l'une après l'autre ; l'image fixe montre le tableau sans bande.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .h2  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .lb  { font-size:16px; font-weight:bold; fill:#10233c; }
+    .gr  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:44px; fill:#1b3a63; }
+    .wht { font-size:16px; font-weight:bold; fill:#fff; }
+  </style>
+
+  <text class="ttl" x="400" y="30" text-anchor="middle">Quelle alarme commande quels dispositifs ?</text>
+  <text class="lb" x="318" y="64" text-anchor="middle">Dispositifs</text>
+    <text class="lb" x="318" y="85" text-anchor="middle">de la zone 1</text>
+  <text class="lb" x="452" y="64" text-anchor="middle">Dispositifs</text>
+    <text class="lb" x="452" y="85" text-anchor="middle">de la zone 2</text>
+  <text class="lb" x="586" y="64" text-anchor="middle">Dispositifs</text>
+    <text class="lb" x="586" y="85" text-anchor="middle">de la zone 3</text>
+  <text class="lb" x="722" y="64" text-anchor="middle">Ventilation</text>
+    <text class="lb" x="722" y="85" text-anchor="middle">commune (CTA)</text>
+  <rect x="20" y="134" width="760" height="76" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lb" x="36" y="168" text-anchor="start">Alarme</text>
+    <text class="lb" x="36" y="190" text-anchor="start">en zone 1</text>
+  <rect x="20" y="218" width="760" height="76" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lb" x="36" y="252" text-anchor="start">Alarme</text>
+    <text class="lb" x="36" y="274" text-anchor="start">en zone 2</text>
+  <rect x="20" y="302" width="760" height="76" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lb" x="36" y="336" text-anchor="start">Alarme</text>
+    <text class="lb" x="36" y="358" text-anchor="start">en zone 3</text>
+  <circle cx="318" cy="172" r="15" fill="#b91c1c"/>
+  <circle cx="452" cy="172" r="15" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="586" cy="172" r="15" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="722" cy="172" r="15" fill="#b91c1c"/>
+  <circle cx="318" cy="256" r="15" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="452" cy="256" r="15" fill="#b91c1c"/>
+  <circle cx="586" cy="256" r="15" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="722" cy="256" r="15" fill="#b91c1c"/>
+  <circle cx="318" cy="340" r="15" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="452" cy="340" r="15" fill="none" stroke="#5a6b7d" stroke-width="2.5"/>
+  <circle cx="586" cy="340" r="15" fill="#b91c1c"/>
+  <circle cx="722" cy="340" r="15" fill="#b91c1c"/>
+  <rect x="14" y="134" width="772" height="76" rx="12" fill="#e8914a" fill-opacity="0.22" stroke="#e8914a" stroke-width="3" opacity="0">
+    <animate attributeName="y" calcMode="discrete" values="134;218;302" keyTimes="0;0.3;0.6" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.88;0.92;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <circle cx="240" cy="434" r="13" fill="#b91c1c"/><text class="lb" x="262" y="440" text-anchor="start">commandé</text>
+  <circle cx="420" cy="434" r="13" fill="none" stroke="#5a6b7d" stroke-width="2.5"/><text class="lb" x="442" y="440" text-anchor="start">non commandé</text>
+  <text class="gr" x="400" y="478" text-anchor="middle">Exemple fictif : le vrai scénario s'écrit projet par projet.</text>
+</svg>

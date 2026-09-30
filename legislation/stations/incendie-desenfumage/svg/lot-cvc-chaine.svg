@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-f5" aria-describedby="d-f5" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-f5">Ce qui revient au lot CVC dans un désenfumage mécanique</title>
+  <desc id="d-f5">Une chaîne de quatre éléments reliés par des flèches, de gauche à droite : la bouche avec
+    son volet, le conduit de désenfumage, le ventilateur d'extraction, puis le rejet à l'extérieur. Une
+    accolade rouge au-dessus les désigne comme le plus souvent du ressort du lot CVC. En dessous, trois
+    cartes grises rappellent ce qui relève d'autres lots : la commande, le coffret de relayage et le
+    centralisateur, qui relèvent du système de sécurité incendie ; l'alimentation électrique de
+    sécurité ; les exutoires et les écrans de cantonnement, selon le cahier des charges.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .bd  { font-weight:bold; font-size:17px; fill:#10233c; }
+    .rd  { font-weight:bold; font-size:19px; fill:#8f1414; }
+    .gr  { font-size:17px; fill:#3d4d5e; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="36" text-anchor="middle">Le désenfumage mécanique, côté CVC</text>
+
+  <!-- accolade du lot CVC -->
+  <text class="rd" x="400" y="72" text-anchor="middle">Le plus souvent au lot CVC</text>
+  <path d="M40,88 V98 H760 V88" fill="none" stroke="#b91c1c" stroke-width="3.5"/>
+
+  <!-- 1. bouche et volet -->
+  <rect x="40" y="120" width="150" height="110" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="80" y="140" width="70" height="46" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="88" y1="178" x2="142" y2="150" stroke="#b91c1c" stroke-width="5"/>
+  <text class="bd" x="115" y="256" text-anchor="middle">Bouche</text>
+  <text class="lbl" x="115" y="278" text-anchor="middle">et volet</text>
+
+  <!-- 2. conduit -->
+  <rect x="235" y="120" width="150" height="110" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="255" y="152" width="110" height="46" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M255,175 H365" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <text class="bd" x="310" y="256" text-anchor="middle">Conduit</text>
+  <text class="lbl" x="310" y="278" text-anchor="middle">résistant au feu</text>
+
+  <!-- 3. ventilateur -->
+  <rect x="430" y="120" width="150" height="110" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="505" cy="175" r="34" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M505,175 L505,149 M505,175 L527,188 M505,175 L483,188" stroke="#1b3a63" stroke-width="4" fill="none"/>
+  <text class="bd" x="505" y="256" text-anchor="middle">Ventilateur</text>
+  <text class="lbl" x="505" y="278" text-anchor="middle">d'extraction</text>
+
+  <!-- 4. rejet -->
+  <rect x="625" y="120" width="135" height="110" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <line x1="660" y1="200" x2="725" y2="150" stroke="#b91c1c" stroke-width="6"/>
+  <polygon points="736,141 706,146 722,168" fill="#b91c1c"/>
+  <text class="bd" x="692" y="256" text-anchor="middle">Rejet</text>
+  <text class="lbl" x="692" y="278" text-anchor="middle">à l'extérieur</text>
+
+  <!-- flèches entre blocs -->
+  <line x1="192" y1="175" x2="220" y2="175" stroke="#1b3a63" stroke-width="4"/>
+  <polygon points="233,175 218,166 218,184" fill="#1b3a63"/>
+  <line x1="387" y1="175" x2="415" y2="175" stroke="#1b3a63" stroke-width="4"/>
+  <polygon points="428,175 413,166 413,184" fill="#1b3a63"/>
+  <line x1="582" y1="175" x2="610" y2="175" stroke="#1b3a63" stroke-width="4"/>
+  <polygon points="623,175 608,166 608,184" fill="#1b3a63"/>
+
+  <!-- autres lots -->
+  <text class="bd" x="40" y="330">Ailleurs, selon le cahier des charges</text>
+  <rect x="40" y="345" width="230" height="110" rx="10" fill="#e9edf1" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="gr" x="155" y="378" text-anchor="middle">Commande, coffret de</text>
+  <text class="gr" x="155" y="400" text-anchor="middle">relayage, centralisateur :</text>
+  <text class="gr" x="155" y="422" text-anchor="middle">système de sécurité</text>
+  <text class="gr" x="155" y="444" text-anchor="middle">incendie</text>
+  <rect x="285" y="345" width="230" height="110" rx="10" fill="#e9edf1" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="gr" x="400" y="388" text-anchor="middle">Alimentation</text>
+  <text class="gr" x="400" y="410" text-anchor="middle">électrique de sécurité :</text>
+  <text class="gr" x="400" y="432" text-anchor="middle">lot électricité</text>
+  <rect x="530" y="345" width="230" height="110" rx="10" fill="#e9edf1" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="gr" x="645" y="388" text-anchor="middle">Exutoires, écrans de</text>
+  <text class="gr" x="645" y="410" text-anchor="middle">cantonnement :</text>
+  <text class="gr" x="645" y="432" text-anchor="middle">désenfumage naturel</text>
+</svg>

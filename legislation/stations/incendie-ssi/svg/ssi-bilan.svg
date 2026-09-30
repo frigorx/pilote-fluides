@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-bil" aria-describedby="d-bil" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bil">La vie d'un SSI : concevoir, installer, vérifier, entretenir</title>
+  <desc id="d-bil">Quatre cartes numérotées de gauche à droite. 1, concevoir : les zones sont proposées à la commission de sécurité. 2, installer : par une entreprise spécialisée et qualifiée. 3, vérifier : foyer type pour une installation neuve ou modifiée, sinon essais fonctionnels. 4, entretenir : contrat d'entretien et trace au registre de sécurité. En bas, une phrase de réflexe professionnel.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .h2  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .lb  { font-size:16px; font-weight:bold; fill:#10233c; }
+    .gr  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:44px; fill:#1b3a63; }
+    .wht { font-size:16px; font-weight:bold; fill:#fff; }
+  </style>
+
+  <text class="ttl" x="400" y="32" text-anchor="middle">Quatre temps, quatre articles</text>
+  <rect x="20" y="60" width="175" height="250" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="107" cy="98" r="24" fill="#b91c1c"/><text x="107" y="108" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="28" fill="#fff">1</text>
+  <text class="h2" x="107" y="156" text-anchor="middle">Concevoir</text>
+  <text class="lbl" x="107" y="192" text-anchor="middle">Zones proposées à la</text>
+    <text class="lbl" x="107" y="213" text-anchor="middle">commission de</text>
+    <text class="lbl" x="107" y="234" text-anchor="middle">sécurité</text>
+  <text class="gr" x="107" y="288" text-anchor="middle">MS 55, § 2</text>
+  <rect x="215" y="60" width="175" height="250" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="302" cy="98" r="24" fill="#b91c1c"/><text x="302" y="108" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="28" fill="#fff">2</text>
+  <text class="h2" x="302" y="156" text-anchor="middle">Installer</text>
+  <text class="lbl" x="302" y="192" text-anchor="middle">Entreprise</text>
+    <text class="lbl" x="302" y="213" text-anchor="middle">spécialisée et</text>
+    <text class="lbl" x="302" y="234" text-anchor="middle">qualifiée</text>
+  <text class="gr" x="302" y="288" text-anchor="middle">MS 58, § 2</text>
+  <rect x="410" y="60" width="175" height="250" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="497" cy="98" r="24" fill="#b91c1c"/><text x="497" y="108" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="28" fill="#fff">3</text>
+  <text class="h2" x="497" y="156" text-anchor="middle">Vérifier</text>
+  <text class="lbl" x="497" y="192" text-anchor="middle">Foyer type si neuf</text>
+    <text class="lbl" x="497" y="213" text-anchor="middle">ou modifié ; sinon</text>
+    <text class="lbl" x="497" y="234" text-anchor="middle">essais fonctionnels</text>
+  <text class="gr" x="497" y="288" text-anchor="middle">MS 56, § 3</text>
+  <rect x="605" y="60" width="175" height="250" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="692" cy="98" r="24" fill="#b91c1c"/><text x="692" y="108" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="28" fill="#fff">4</text>
+  <text class="h2" x="692" y="156" text-anchor="middle">Entretenir</text>
+  <text class="lbl" x="692" y="192" text-anchor="middle">Contrat d'entretien,</text>
+    <text class="lbl" x="692" y="213" text-anchor="middle">trace au registre</text>
+    <text class="lbl" x="692" y="234" text-anchor="middle">de sécurité</text>
+  <text class="gr" x="692" y="288" text-anchor="middle">MS 68</text>
+  <polygon points="213,185 197,172 197,198" fill="#e8914a"/>
+  <polygon points="408,185 392,172 392,198" fill="#e8914a"/>
+  <polygon points="603,185 587,172 587,198" fill="#e8914a"/>
+  <rect x="20" y="340" width="760" height="140" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="h2" x="400" y="376" text-anchor="middle">Le réflexe du technicien d'études</text>
+  <text class="lb" x="400" y="410" text-anchor="middle">Demander le scénario de mise en sécurité, zone par zone,</text>
+    <text class="lb" x="400" y="436" text-anchor="middle">et repérer ce que le lot CVC doit fournir pour le tenir.</text>
+</svg>

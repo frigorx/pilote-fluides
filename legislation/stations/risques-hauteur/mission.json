@@ -1,0 +1,47 @@
+{
+  "slug": "risques-hauteur",
+  "branche": "Risques professionnels",
+  "titre": "Mission : Vérifier avant de monter",
+  "client": "Le gestionnaire technique d'un centre commercial, dont le groupe de condensation est posé en terrasse technique, derrière une trappe et une échelle à crinoline.",
+  "situation": "Le gestionnaire vous dit : « Le technicien sera sur place jeudi à la première heure, la terrasse est accessible, il n'y a qu'à monter. » Vous savez que la terrasse est entourée d'un garde-corps, mais personne ne vous a dit dans quel état sont la trappe et l'échelle, ni si un échafaudage a été monté depuis pour les travaux voisins. Votre responsable vous demande de préparer la fiche que le technicien remplira au pied de l'accès, avant de sortir le moindre outil.",
+  "piece_a_produire": "Une fiche « avant de monter » d'une page, à cocher au pied de l'accès : l'état de l'accès (trappe, échelle), la présence du garde-corps, la vérification de l'échafaudage s'il y en a un — puis une ligne « seulement si le collectif est impossible ou insuffisant : équipement individuel (harnais, longe, point d'ancrage vérifié) ».",
+  "questions": [
+    {
+      "q": "Le travail en hauteur est-il un cas rare dans le métier de frigoriste ? Citez trois lieux courants.",
+      "ecran": 1,
+      "reponse": "Non : c'est une composante ordinaire du métier. Les lieux courants sont les toitures, les terrasses techniques et les groupes de condensation posés en hauteur."
+    },
+    {
+      "q": "Que fait-on avant de penser à l'équipement de protection, à propos de la voie d'accès ?",
+      "ecran": 2,
+      "reponse": "On vérifie l'état de l'accès (escalier fixe, trappe, échelle à crinoline) avant de l'emprunter : un accès dégradé est déjà un risque, avant même d'arriver en hauteur."
+    },
+    {
+      "q": "À quel moment le harnais, la longe et le point d'ancrage interviennent-ils ?",
+      "ecran": 4,
+      "reponse": "Seulement lorsque la protection collective est impossible ou insuffisante : c'est le dernier recours, pas le premier réflexe."
+    },
+    {
+      "q": "Que faut-il pour qu'un échafaudage puisse être utilisé, et que se passe-t-il s'il est modifié ?",
+      "ecran": 5,
+      "reponse": "Il se monte selon la notice du fabricant et se fait vérifier par une personne compétente avant l'usage. Une fois modifié, il doit être revérifié avant de remonter dessus."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Classez ces trois protections dans l'ordre où on y pense pour un travail en toiture, puis dites à quel moment le technicien sort son matériel d'intervention.",
+    "items": [
+      "L'équipement individuel (harnais, longe, ancrage)",
+      "La protection collective (garde-corps, filet)",
+      "L'état de l'accès (escalier, trappe, échelle)"
+    ],
+    "corrige": "1. L'accès (écran 2) ; 2. la protection collective (écran 3) ; 3. l'équipement individuel, seulement si le collectif est impossible ou insuffisant (écran 4). Le matériel d'intervention ne sort qu'après la vérification de l'accès et des protections collectives, pas une fois en haut (écran 6)."
+  },
+  "badge": "Pied de l'accès",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien (préparer une intervention en hauteur sur un groupe de condensation)."
+  }
+}

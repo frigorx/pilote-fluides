@@ -1,0 +1,5 @@
+Vague Incendie — slugs (ils existeront tous) : incendie-classer-le-bati, incendie-euroclasses, incendie-desenfumage, incendie-clapets-coupe-feu, incendie-ssi, incendie-sprinkler-ria.
+Sous-ligne : Incendie (couleur #b91c1c), scène : ../../img/scene-incendie.webp (elle existe).
+Sources officielles attendues : Code de la construction et de l'habitation (ERP, IGH), règlement de sécurité contre l'incendie dans les ERP (arrêté du 25 juin 1980 modifié, instruction technique 246 pour le désenfumage, dispositions CH / GC / MS selon le sujet — citez l'article exact lu sur Légifrance), arrêté du 31 janvier 1986 (habitation), Code du travail R. 4216-* et R. 4227-* (lieux de travail), INRS. Normes payantes (NF S 61-9xx, EN 13501, EN 12845, APSAD R1) : objet seulement.
+Rappel de décision du réseau : sprinkler et RIA sont des réseaux d'eau sous pression, lot CVC de bureau d'études — pont vers la DESP.
+Chercher d'abord dans le fonds de l'enseignant : node C:/git/HAL-v3/scripts/chercher-rag.js "<sujet>".

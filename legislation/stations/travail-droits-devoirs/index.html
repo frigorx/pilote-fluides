@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Droits &amp; devoirs — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le lien de subordination, l'obligation de sécurité de l'employeur, les devoirs du salarié, le droit d'alerte et de retrait, le règlement intérieur et la discipline, le CSE, l'inspection du travail et la santé au travail.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/travail-droits-devoirs/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Droit du travail.
+     « Droits & devoirs — employeur, salarié » (slug travail-droits-devoirs).
+     Rédigée le 30/09/2026 ; textes du Code du travail lus le même jour sur
+     code.travail.gouv.fr (articles cités dans FOND.md). Aucune valeur non lue.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer. Les 12 narrations
+     n'ont pas encore leur MP3 (chaîne edge-tts à lancer) : la voix du
+     navigateur sert de filet.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Droit du travail · niveau BTS</p>
+  <h1>Droits &amp; devoirs — employeur, salarié</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-travail.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire ce qui fonde l'autorité de l'employeur (le lien de subordination) et ce qu'il doit en retour (la sécurité), quels sont les devoirs du salarié, comment on exerce le droit d'alerte et de retrait, ce que la discipline permet et interdit, et vers qui se tourner : CSE, inspection du travail, santé au travail.</p>
+    <p style="margin-top:10px"><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — <strong>hors REAC</strong> : culture professionnelle du technicien et du chargé d'affaires. Aucune des compétences CP1 à CP10 ne porte sur le droit du travail ; cette station sert le futur salarié que vous êtes déjà.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez à gauche l'employeur, à droite le salarié, et entre les deux trois flèches qui apparaissent l'une après l'autre. La première : l'employeur donne des ordres et des directives. La deuxième : il contrôle l'exécution du travail. La troisième : il sanctionne les manquements. C'est la définition que la Cour de cassation donne du lien de subordination, en mille neuf cent quatre-vingt-seize. Retenez-la, car elle explique tout le reste de la station : celui qui commande doit protéger, et celui qui obéit a des devoirs, mais aussi des droits pour ne pas subir.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Le lien de subordination : ce qui fait un salarié</h2>
+    <p>Ce qui lie un salarié à son employeur, c'est le <strong>lien de subordination</strong>. La Cour de cassation (chambre sociale, 13 novembre 1996) le définit ainsi : l'exécution d'un travail <strong>sous l'autorité d'un employeur</strong> qui a le pouvoir de <strong>donner des ordres et des directives</strong>, d'<strong>en contrôler l'exécution</strong> et de <strong>sanctionner les manquements</strong> de son subordonné.</p>
+    <p>Trois pouvoirs, donc : ordonner, contrôler, sanctionner. C'est le point de départ de la station : <strong>parce que l'employeur commande, il doit protéger</strong> ; parce que le salarié obéit, il a des devoirs — et des droits pour ne pas subir. Le contrat dans lequel naît ce lien est traité dans la station <a href="../travail-le-contrat/">Le contrat</a>.</p>
+    <figure>
+      <img src="svg/lien-subordination.svg" alt="À gauche, un immeuble figure l'employeur ; à droite, un pictogramme plein figure le salarié. Entre les deux, trois flèches de l'employeur vers le salarié : il donne des ordres et des directives, il contrôle l'exécution du travail, il sanctionne les manquements. Une bande en bas nomme le lien de subordination.">
+      <figcaption>Ordonner, contrôler, sanctionner : les trois pouvoirs qui font le lien de subordination.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici une balance à deux plateaux. À gauche, l'employeur : il peut donner des ordres, contrôler et sanctionner avec une procédure, mais il doit protéger la santé et la sécurité, informer et former. À droite, le salarié : il doit exécuter, agir de bonne foi et prendre soin de sa sécurité, mais il peut alerter et se retirer d'un danger grave et imminent. Regardez l'équilibre, une fois les deux plateaux chargés : à chaque pouvoir répond une contrepartie. Ce n'est pas l'égalité entre celui qui dirige et celui qui exécute, c'est l'équilibre entre leurs obligations.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La balance : chaque pouvoir a sa contrepartie</h2>
+    <p>Le droit du travail n'est pas une obéissance sans limite. À chaque pouvoir de l'employeur répond une obligation ; à chaque devoir du salarié répond un droit.</p>
+    <ul>
+      <li><strong>L'employeur</strong> peut ordonner, contrôler, sanctionner — mais il <strong>doit la sécurité</strong> (L. 4121-1), l'information et la formation à la sécurité (L. 4141-1 et L. 4141-2), et une <strong>procédure</strong> avant toute sanction (L. 1332-1 et suivants).</li>
+      <li><strong>Le salarié</strong> doit exécuter, agir de bonne foi (L. 1222-1) et prendre soin de sa sécurité et de celle des autres (L. 4122-1) — mais il peut <strong>alerter et se retirer</strong> d'un danger grave et imminent (L. 4131-1), sans sanction (L. 4131-3).</li>
+    </ul>
+    <p>Ce qui compte n'est pas que les deux plateaux pèsent pareil, mais qu'ils tiennent ensemble : un employeur qui commande sans protéger, ou un salarié qui obéit sans jamais pouvoir dire non à un danger, sortent de l'équilibre.</p>
+    <figure>
+      <img src="svg/balance-employeur-salarie.svg" alt="Une balance à deux plateaux, un pivot portant la mention « Le droit du travail ». À gauche, l'employeur : il peut donner des ordres, contrôler, sanctionner avec procédure ; il doit protéger la santé et la sécurité, informer et former. À droite, le salarié : il doit exécuter, agir de bonne foi, prendre soin de sa sécurité ; il peut alerter et se retirer d'un danger grave et imminent. La balance est à l'équilibre.">
+      <figcaption>L'employeur et le salarié : chacun a ses pouvoirs ou ses droits, et chacun est tenu.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="En haut de l'image, l'article L. 4121-1 : l'employeur prend les mesures nécessaires pour assurer la sécurité et protéger la santé physique et mentale des travailleurs. Trois colonnes détaillent ces mesures : la prévention des risques, l'information et la formation, l'organisation et les moyens adaptés. En dessous, une bande rappelle qu'il doit les adapter quand les circonstances changent. Tout en bas, deux passerelles vers d'autres stations : les neuf principes de prévention, qui guident ses choix, et le document unique d'évaluation des risques professionnels, où il évalue les risques.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">L'obligation de sécurité : ce que l'employeur doit</h2>
+    <p>Article <strong>L. 4121-1</strong> : « L'employeur prend les mesures nécessaires pour assurer la sécurité et protéger la santé physique et mentale des travailleurs. » Ces mesures comprennent :</p>
+    <ol>
+      <li>des <strong>actions de prévention</strong> des risques professionnels ;</li>
+      <li>des <strong>actions d'information et de formation</strong> ;</li>
+      <li>la mise en place d'une <strong>organisation et de moyens adaptés</strong>.</li>
+    </ol>
+    <p>L'employeur <strong>adapte</strong> ces mesures pour tenir compte du changement des circonstances et tendre à l'amélioration des situations existantes. La formation à la sécurité est <strong>pratique et appropriée</strong>, notamment pour les travailleurs qu'il embauche et ceux qui changent de poste de travail ou de technique (L. 4141-2).</p>
+    <p>Ses choix suivent les <strong>neuf principes généraux de prévention</strong> (L. 4121-2) — voir la station <a href="../risques-neuf-principes/">Les neuf principes</a>. Et il <strong>évalue les risques</strong> (L. 4121-3) : c'est le document unique d'évaluation des risques professionnels (DUERP), sur lequel le comité social et économique (CSE) est consulté — voir la station <a href="../risques-duerp/">Le DUERP</a>.</p>
+    <figure>
+      <img src="svg/obligation-securite.svg" alt="En haut, l'article L. 4121-1 : l'employeur prend les mesures nécessaires pour assurer la sécurité et protéger la santé physique et mentale. Dessous, trois colonnes : prévention des risques, information et formation, organisation et moyens adaptés. Une bande dit que l'employeur adapte ces mesures quand les circonstances changent. En bas, deux cartes renvoient aux stations Les neuf principes et Le DUERP.">
+      <figcaption>Trois familles de mesures, et deux stations pour aller plus loin.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Trois cartes alignées : les trois devoirs du salarié. Exécuter le travail selon les instructions de l'employeur ; agir de bonne foi, puisque le contrat s'exécute de bonne foi ; prendre soin de sa santé et de sa sécurité, et de celles des autres personnes concernées par ses actes ou ses omissions. Le dessin des deux cercles le montre : moi au centre, les autres autour. Et la bande du bas dit l'essentiel : ces devoirs ne dégagent pas la responsabilité de l'employeur. Un exemple : sans habilitation délivrée par l'employeur, on n'effectue pas d'opération sur une installation électrique.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Les devoirs du salarié</h2>
+    <p>Article <strong>L. 4122-1</strong> : conformément aux instructions de l'employeur, il incombe à chaque travailleur de <strong>prendre soin, en fonction de sa formation et selon ses possibilités, de sa santé et de sa sécurité ainsi que de celles des autres personnes concernées par ses actes ou ses omissions</strong> au travail.</p>
+    <ol>
+      <li><strong>Exécuter</strong> le travail selon les instructions de l'employeur. Elles précisent, quand la nature des risques le justifie, les conditions d'utilisation des équipements de travail, des moyens de protection et des substances dangereuses, et elles sont adaptées aux tâches (L. 4122-1).</li>
+      <li><strong>Agir de bonne foi</strong> : « le contrat de travail est exécuté de bonne foi » (L. 1222-1). C'est l'assise de ce que l'on appelle la loyauté envers l'employeur.</li>
+      <li><strong>Prendre soin</strong> de sa sécurité et de celle des autres.</li>
+    </ol>
+    <p><strong>Ces devoirs sont sans incidence sur le principe de la responsabilité de l'employeur</strong> (L. 4122-1, dernier alinéa) : demander à chacun de faire attention ne dispense jamais l'employeur de ses propres mesures.</p>
+    <p>Exemple de terrain : les opérations sur les installations électriques ou dans leur voisinage ne peuvent être effectuées que par des travailleurs <strong>habilités</strong> (R. 4544-9), et l'habilitation est <strong>délivrée par l'employeur</strong>, qui s'assure d'abord de la formation (R. 4544-10). Voir la station <a href="../elec-habilitation/">L'habilitation</a>.</p>
+    <figure>
+      <img src="svg/trois-devoirs.svg" alt="Trois cartes numérotées : exécuter le travail selon les instructions de l'employeur, agir de bonne foi, prendre soin de sa santé et de sa sécurité et de celles des autres. En bas à gauche, deux cercles concentriques : « moi » au centre, « les autres » autour. En bas, une bande : ces devoirs ne dégagent pas la responsabilité de l'employeur.">
+      <figcaption>Trois devoirs, et une phrase de fin qui protège le salarié : l'employeur reste responsable.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Cinq étapes s'allument de haut en bas, reliées par un trait. D'abord, un motif raisonnable de penser à un danger grave et imminent. Ensuite, j'alerte immédiatement l'employeur, à l'oral si c'est urgent, par écrit ensuite si possible. Troisième étape : je peux me retirer, quitter le poste ou refuser de m'y installer. Quatrième : mon retrait ne doit pas créer de danger pour autrui. Enfin, je suis protégé : ni sanction ni retenue de salaire, si le motif était raisonnable, et l'employeur ne peut m'imposer de reprendre tant que le danger dure.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le droit d'alerte et de retrait : pas à pas</h2>
+    <p>Article <strong>L. 4131-1</strong> : le travailleur <strong>alerte immédiatement</strong> l'employeur de toute situation de travail dont il a un <strong>motif raisonnable</strong> de penser qu'elle présente un <strong>danger grave et imminent</strong> pour sa vie ou sa santé, ainsi que de toute défectuosité qu'il constate dans les systèmes de protection. Il <strong>peut se retirer</strong> d'une telle situation.</p>
+    <ol>
+      <li>Le motif est raisonnable quand une <strong>menace sérieuse</strong> existe et que la situation appelle une <strong>urgence à réagir</strong> ; le danger peut être individuel ou collectif (service-public.fr).</li>
+      <li>L'information se fait <strong>par tout moyen</strong> : à l'oral d'abord si c'est urgent ; un écrit est préférable, sans être obligatoire (service-public.fr).</li>
+      <li>Le retrait <strong>ne doit pas créer pour autrui une nouvelle situation de danger grave et imminent</strong> (L. 4132-1).</li>
+      <li><strong>Aucune sanction, aucune retenue de salaire</strong> contre le travailleur qui s'est retiré avec un motif raisonnable (L. 4131-3). L'employeur ne peut lui demander de reprendre tant que le danger persiste (L. 4131-1).</li>
+    </ol>
+    <p><strong>Limite</strong> : si le retrait n'est pas justifié, l'employeur peut retenir sur le salaire le montant correspondant à l'absence ; le salarié peut contester devant le conseil de prud'hommes (service-public.fr). <strong>Pourquoi alerter</strong> : si le risque signalé se réalise, la faute inexcusable de l'employeur est de droit (L. 4131-4).</p>
+    <figure>
+      <img src="svg/droit-de-retrait.svg" alt="Cinq étapes numérotées, de haut en bas : un danger grave et imminent avec un motif raisonnable ; j'alerte immédiatement l'employeur, par tout moyen, un écrit étant préférable ; je peux me retirer, en quittant le poste ou en refusant de m'y installer ; sans créer de nouveau danger pour autrui ; je suis protégé, sans sanction ni retenue de salaire.">
+      <figcaption>Cinq étapes, dans cet ordre : on ne se retire pas sans avoir alerté.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="En haut, le règlement intérieur, qui fixe la nature et l'échelle des sanctions. En dessous, quatre cartes se dessinent de gauche à droite : le fait fautif, la convocation, l'entretien, la sanction. Deux accolades apparaissent ensuite : les poursuites doivent être engagées dans les deux mois qui suivent la connaissance du fait par l'employeur ; la sanction intervient entre deux jours ouvrables et un mois après l'entretien. Enfin, deux règles, en bas : les griefs sont communiqués par écrit, et les amendes sont interdites.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Règlement intérieur et discipline : le permis et l'interdit</h2>
+    <p>Le <strong>règlement intérieur</strong> est un document écrit par lequel l'employeur fixe <em>exclusivement</em> : les mesures d'application de la réglementation santé-sécurité (dont les instructions de L. 4122-1) ; les conditions de participation des salariés au rétablissement de conditions de travail protectrices ; les <strong>règles générales et permanentes de discipline</strong>, dont la nature et l'échelle des sanctions (L. 1321-1). Il est <strong>obligatoire dans les entreprises d'au moins 50 salariés</strong> (L. 1311-2).</p>
+    <ul>
+      <li><strong>Ses limites</strong> (L. 1321-3) : rien de contraire aux lois, règlements et conventions collectives ; aucune restriction aux droits et libertés qui ne soit justifiée par la nature de la tâche et proportionnée au but ; aucune discrimination. Il est soumis à l'avis du CSE et communiqué à l'inspecteur du travail (L. 1321-4).</li>
+      <li><strong>Une sanction</strong> est toute mesure, autre que les observations verbales, prise à la suite d'un agissement considéré comme fautif (L. 1331-1).</li>
+      <li><strong>La procédure</strong> : griefs communiqués par écrit (L. 1332-1) ; convocation à un entretien, sauf avertissement ou sanction de même nature sans incidence sur la présence, la fonction, la carrière ou la rémunération ; assistance d'une personne de l'entreprise ; sanction motivée et notifiée, pas avant deux jours ouvrables ni après un mois suivant l'entretien (L. 1332-2) ; poursuites engagées dans les deux mois de la connaissance du fait, sauf poursuites pénales (L. 1332-4).</li>
+      <li><strong>Jamais d'amende</strong> ni de sanction pécuniaire : toute stipulation contraire est réputée non écrite (L. 1331-2).</li>
+    </ul>
+    <figure>
+      <img src="svg/discipline.svg" alt="En haut, une bande : le règlement intérieur fixe la nature et l'échelle des sanctions, obligatoire dans les entreprises d'au moins cinquante salariés. Quatre cartes de gauche à droite : le fait fautif, la convocation, l'entretien, la sanction. Deux accolades dessous : poursuites engagées au plus tard deux mois après la connaissance du fait ; sanction entre deux jours ouvrables et un mois après l'entretien. En bas : toujours les griefs par écrit, jamais d'amende.">
+      <figcaption>Quatre étapes, deux délais, deux règles absolues.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Le salarié est en haut, et trois flèches descendent vers trois cartes. Le comité social et économique, avec ses représentants du personnel, porte l'expression collective des salariés et peut alerter l'employeur d'un danger grave et imminent. L'inspection du travail veille à l'application du droit du travail, constate les infractions, et entre dans tout établissement concerné. Le service de prévention et de santé au travail cherche à éviter toute altération de la santé du fait du travail, avec un suivi individuel dès l'embauche. Trois recours, trois rôles distincts.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Qui veille : CSE, inspection du travail, santé au travail</h2>
+    <ul>
+      <li><strong>Le comité social et économique (CSE)</strong> : mis en place dans les entreprises d'au moins onze salariés, mais obligatoire seulement si l'effectif est atteint pendant douze mois consécutifs (L. 2311-2). Il assure l'expression collective des salariés (L. 2312-8), analyse les risques professionnels (L. 2312-9), et un membre de la délégation exerce le droit d'alerte en cas de danger grave et imminent (L. 2312-60) : l'employeur enquête alors immédiatement avec lui (L. 4132-2).</li>
+      <li><strong>L'inspection du travail</strong> : ses agents sont chargés de veiller à l'application du Code du travail et des autres dispositions relatives au régime du travail, et de constater les infractions ; ils disposent d'une garantie d'indépendance (L. 8112-1). Ils ont un droit d'entrée dans tout établissement concerné ; dans des locaux habités, ils ne peuvent entrer qu'avec l'autorisation des occupants (L. 8113-1).</li>
+      <li><strong>Le service de prévention et de santé au travail</strong> : sa mission principale est d'éviter toute altération de la santé des travailleurs du fait de leur travail (L. 4622-2). Tout travailleur bénéficie d'un suivi individuel, avec une visite d'information et de prévention après l'embauche ; un décret fixe le délai (L. 4624-1).</li>
+    </ul>
+    <p>Le CSE représente, l'inspection contrôle, le service de santé prévient et suit : trois portes différentes, à ne pas confondre avec l'employeur lui-même.</p>
+    <figure>
+      <img src="svg/trois-veilleurs.svg" alt="En haut, un pictogramme plein figure le salarié ; trois flèches descendent vers trois cartes. Le comité social et économique : expression collective, droit d'alerte en cas de danger grave et imminent, dès onze salariés. L'inspection du travail : veille à l'application du droit du travail, constate les infractions, droit d'entrée dans tout établissement. La prévention et la santé au travail : éviter toute altération de la santé, suivi individuel après l'embauche.">
+      <figcaption>Un représentant, un contrôleur, un service de santé : trois rôles distincts.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient en un tableau. À gauche, l'employeur ; à droite, le salarié ; trois lignes : le lien, la sécurité, les garde-fous. L'employeur ordonne, contrôle et sanctionne, mais il doit la sécurité et respecte une procédure écrite. Le salarié exécute de bonne foi, prend soin de la sécurité, et peut alerter puis se retirer d'un danger grave et imminent. En dessous, une bande rappelle les trois veilleurs. Et le réflexe, en bas : face à un danger grave et imminent, j'alerte, je me mets en sécurité, et je confirme par écrit.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Le <strong>lien de subordination</strong> : ordonner, contrôler, sanctionner. Il donne à l'employeur ses pouvoirs, et il lui impose des obligations.</li>
+      <li>L'employeur <strong>doit la sécurité</strong> (L. 4121-1) ; le salarié <strong>prend soin</strong> de la sienne et de celle des autres (L. 4122-1) — sans que cela décharge l'employeur.</li>
+      <li>Face à un danger grave et imminent : <strong>alerter, puis se retirer</strong> ; ni sanction ni retenue de salaire si le motif est raisonnable (L. 4131-1, L. 4131-3).</li>
+      <li>La discipline a ses règles : <strong>règlement intérieur, procédure écrite, délais, aucune amende</strong>.</li>
+      <li>Trois veilleurs : <strong>CSE, inspection du travail, santé au travail</strong>.</li>
+    </ul>
+    <p class="formule">Le réflexe : danger grave et imminent — j'alerte, je me mets en sécurité, je confirme par écrit.</p>
+    <figure>
+      <img src="svg/bilan-droits-devoirs.svg" alt="Un tableau à deux colonnes, employeur et salarié, sur trois lignes : le lien, la sécurité, les garde-fous. Une bande rappelle les trois veilleurs : le CSE, l'inspection du travail, la santé au travail. Une dernière bande donne le réflexe face à un danger grave et imminent.">
+      <figcaption>Une ligne pour le lien, une pour la sécurité, une pour les garde-fous.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Qu'est-ce qui caractérise le lien de subordination entre un employeur et un salarié ? Reprenez les trois flèches de l'écran un avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui caractérise le lien de subordination ?</h2>
+    <figure class="vignette">
+      <img src="svg/lien-subordination.svg" alt="Vignette de rappel : l'employeur, le salarié et les trois flèches — ordres, contrôle, sanctions.">
+      <figcaption>Rappel de l'écran 1 — trois pouvoirs, un seul lien.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le versement d'une rémunération fixe chaque mois</button>
+      <button type="button" data-answer="b">L'obligation de travailler à temps plein pour un seul client</button>
+      <button type="button" data-answer="bonne">Des ordres donnés, un contrôle et des sanctions possibles</button>
+      <button type="button" data-answer="d">Un document intitulé « contrat de travail » signé par les deux</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le lien de subordination, c'est l'exécution d'un travail sous l'autorité d'un employeur qui donne des ordres et des directives, en contrôle l'exécution et sanctionne les manquements (Cour de cassation, chambre sociale, 13 novembre 1996)."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un chef d'équipe affirme que, puisque chaque salarié doit prendre soin de sa sécurité, la sécurité ne le regarde plus. Que répond le Code du travail ? Pensez à la bande orange de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">« Vous devez prendre soin de votre sécurité, donc elle ne me regarde plus », dit le chef d'équipe. Que répond le Code du travail ?</h2>
+    <figure class="vignette">
+      <img src="svg/trois-devoirs.svg" alt="Vignette de rappel : les trois devoirs du salarié et la bande qui dit que l'employeur reste responsable.">
+      <figcaption>Rappel de l'écran 4 — l'employeur reste responsable.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Il a tort : cela ne décharge pas l'employeur de sa responsabilité</button>
+      <button type="button" data-answer="b">Il a raison : le salarié devient seul responsable de sa sécurité</button>
+      <button type="button" data-answer="c">Il a raison si le salarié a été formé à la sécurité à l'embauche</button>
+      <button type="button" data-answer="d">Il a tort, mais seulement dans une entreprise de plus de 50 salariés</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'article L. 4122-1 le dit expressément : les devoirs du salarié sont sans incidence sur le principe de la responsabilité de l'employeur, qui reste tenu de prendre les mesures nécessaires (L. 4121-1), quelle que soit la taille de l'entreprise."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Sur un chantier, un technicien constate l'absence d'un garde-corps et pense avoir un motif raisonnable de croire à un danger grave et imminent. Que fait-il ? Revoyez l'ordre des cinq étapes de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un technicien voit un garde-corps absent et pense à un danger grave et imminent. Que fait-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/droit-de-retrait.svg" alt="Vignette de rappel : les cinq étapes du droit d'alerte et de retrait, de l'alerte à la protection.">
+      <figcaption>Rappel de l'écran 5 — on alerte d'abord, on peut se retirer ensuite.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Il attend l'accord écrit de l'employeur avant de quitter son poste</button>
+      <button type="button" data-answer="b">Il demande d'abord l'avis du comité social et économique</button>
+      <button type="button" data-answer="c">Il continue de travailler et le signale à la fin de la journée</button>
+      <button type="button" data-answer="bonne">Il alerte immédiatement l'employeur, puis peut se retirer</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le travailleur alerte immédiatement l'employeur et peut se retirer d'une telle situation, sans accord préalable (L. 4131-1). S'il avait un motif raisonnable, ni sanction ni retenue de salaire ne peuvent le frapper (L. 4131-3)."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un employeur veut sanctionner des retards répétés par une amende retenue sur la paie. Est-ce possible ? Regardez la bande du bas de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un employeur veut sanctionner des retards répétés par une amende retenue sur la paie. Est-ce possible ?</h2>
+    <figure class="vignette">
+      <img src="svg/discipline.svg" alt="Vignette de rappel : la procédure disciplinaire en quatre étapes, ses deux délais et les deux règles du bas.">
+      <figcaption>Rappel de l'écran 6 — toujours l'écrit, jamais d'amende.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Oui, si le règlement intérieur prévoit ce barème</button>
+      <button type="button" data-answer="bonne">Non : toute amende ou sanction pécuniaire est interdite</button>
+      <button type="button" data-answer="c">Oui, après un entretien préalable avec un collègue de son choix</button>
+      <button type="button" data-answer="d">Oui, si la somme reste proportionnée à la faute</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les amendes et autres sanctions pécuniaires sont interdites, et toute disposition contraire, même dans un règlement intérieur, est réputée non écrite (L. 1331-2). L'employeur peut sanctionner autrement, mais en respectant la procédure."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../risques-neuf-principes/"><strong>Les neuf principes</strong></a> (Risques professionnels)
+      — ce qui guide les mesures que l'employeur doit prendre.</li>
+    <li><a href="../risques-duerp/"><strong>Le DUERP</strong></a> (Risques professionnels)
+      — l'évaluation des risques, sur laquelle le CSE est consulté.</li>
+    <li><a href="../travail-le-contrat/"><strong>Le contrat</strong></a> (même sous-ligne)
+      — l'acte dans lequel naît le lien de subordination.</li>
+    <li><a href="../elec-habilitation/"><strong>L'habilitation</strong></a> (Électrique)
+      — un titre délivré par l'employeur, qui autorise le geste du salarié.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ : voix.js donne la narration,
+     prof-vocal.js enchaîne les écrans tout seul et s'arrête sur les questions.
+     voix-index.js : index global des MP3 ; une narration absente de l'index
+     (cas de cette station, fabriquée le 30/09) retombe sur la voix du navigateur.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

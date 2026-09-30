@@ -1,0 +1,48 @@
+{
+  "slug": "elec-nf-c-15-100",
+  "branche": "Électrique",
+  "titre": "Mission : une pompe à chaleur et une centrale d'air pour un petit immeuble de bureaux",
+  "client": "Le maître d'ouvrage d'un petit immeuble de bureaux, qui fait ajouter une pompe à chaleur et une centrale de traitement d'air.",
+  "situation": "Vous êtes chargé d'affaires dans une entreprise de génie climatique. Le lot électricité est confié à une autre société. Le client vous demande si « la norme électrique est obligatoire » et ce que vous attendez de l'électricien pour les deux équipements. L'équipe prévoit de brancher la pompe à chaleur sur un circuit existant du local technique « puisque la puissance passe », et de demander l'attestation de conformité après la mise en service. Vous devez remettre une réponse claire avant la réunion de chantier.",
+  "piece_a_produire": "Une note d'une page au lot électricité : le statut de la NF C 15-100 pour ce local de travail, puis, pour chaque équipement, le circuit dédié demandé, l'origine des valeurs de protection (notice du constructeur), le raccordement des masses au conducteur de protection, et la place de l'attestation de conformité dans le planning.",
+  "questions": [
+    {
+      "q": "Le client demande si la NF C 15-100 est « obligatoire ». Que répondez-vous, pour un logement neuf puis pour un local de travail ?",
+      "ecran": 2,
+      "reponse": "Pour un logement neuf, l'arrêté du 3 août 2016 fixe des objectifs et présume conformes les installations conçues selon la norme ; une autre norme équivalente est admise. Pour un local de travail, le Code du travail (R. 4215-14 et R. 4215-15) et l'arrêté du 19 avril 2012 renvoient à la norme : une installation réalisée conformément à elle est réputée satisfaire aux prescriptions."
+    },
+    {
+      "q": "Citez trois éléments que doit comporter le tableau pour l'alimentation des circuits.",
+      "ecran": 4,
+      "reponse": "Un sectionnement à l'origine de chaque circuit, une protection contre les surintensités adaptée à chaque circuit, des circuits et appareillages repérés et identifiés, et une coupure d'urgence accessible pour l'ensemble de l'installation (on peut aussi citer les protections complémentaires contre les contacts directs)."
+    },
+    {
+      "q": "Pourquoi refusez-vous de brancher la pompe à chaleur sur un circuit existant, et d'où viennent les valeurs de protection ?",
+      "ecran": 6,
+      "reponse": "Un appareil de puissance a son propre circuit dédié, sinon la protection est mal adaptée et une panne coupe tout le circuit partagé. Les valeurs de protection viennent de la notice et de la plaque signalétique du constructeur ; le câblage relève de l'installateur électricien, selon la norme."
+    },
+    {
+      "q": "Quand l'attestation de conformité doit-elle être demandée, et qui la vise ?",
+      "ecran": 8,
+      "reponse": "Avant la première mise sous tension d'une installation neuve, pas après la mise en service. L'installateur l'établit, le Consuel la vise ; pour des locaux recevant des travailleurs ou du public, le formulaire est l'attestation verte."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Voici quatre phrases extraites d'un devis. Une seule est correcte. Trouvez les trois erreurs et corrigez-les en une phrase chacune.",
+    "items": [
+      "1. La pompe à chaleur sera raccordée sur le circuit prises existant du local technique.",
+      "2. La protection sera identique à celle du chantier précédent.",
+      "3. La masse de la pompe à chaleur sera raccordée au conducteur de protection.",
+      "4. L'attestation de conformité sera demandée après la mise en service."
+    ],
+    "corrige": "La phrase 3 est correcte. Erreurs : 1 (un circuit dédié pour l'équipement), 2 (protection selon la notice du constructeur), 4 (attestation exigée avant la première mise sous tension d'une installation neuve)."
+  },
+  "badge": "Tampon « Circuit dédié »",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP6", "CP9", "CP10"],
+    "attestation_2025": [],
+    "justification": "Le technicien d'études fournit au lot électricité les données d'alimentation des équipements qu'il étudie (chauffage et eau chaude, climatisation, centrale de traitement d'air) et contrôle que la pose y correspond."
+  }
+}

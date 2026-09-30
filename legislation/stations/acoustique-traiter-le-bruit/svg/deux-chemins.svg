@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-dc" aria-describedby="d-dc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dc">Deux chemins du bruit : aérien et solidien</title>
+  <desc id="d-dc">Une machine posée sur une dalle. À sa droite, un local occupé dont une fenêtre est ouverte. Le chemin aérien : trois arcs violets partent de la machine et une flèche traverse l'air jusqu'à la fenêtre. Le chemin solidien : une ligne ondulée orange court dans la dalle, de dessous la machine jusque sous le local. En bas, une phrase rappelle qu'un même bruit peut passer par l'air, par la structure, ou par les deux. L'animation fait apparaître d'abord l'air, puis la dalle ; l'image fixe montre les deux chemins.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .t20 { font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lblb{ font-size:17px; font-weight:bold; fill:#1b3a63; }
+    .sub { font-size:16px; fill:#5a6b7d; }
+    .aer { font-size:17px; font-weight:bold; fill:#5b21b6; }
+    .sol { font-size:17px; font-weight:bold; fill:#9a4d0a; }
+    .band{ font-size:18px; font-weight:bold; fill:#10233c; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f5689"/></marker>
+  </defs>
+
+  <text class="ttl" x="400" y="36" text-anchor="middle">Deux chemins pour un même bruit</text>
+
+  <!-- la dalle et le chemin solidien -->
+  <rect x="60" y="300" width="680" height="40" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+  <path d="M110,320 q15,-14 30,0 q15,14 30,0 q15,-14 30,0 q15,14 30,0 q15,-14 30,0 q15,14 30,0 q15,-14 30,0 q15,14 30,0 q15,-14 30,0 q15,14 30,0 q15,-14 30,0 q15,14 30,0 q15,-14 30,0 q15,14 30,0 q15,-14 30,0 q15,14 30,0 q15,-14 30,0 q15,14 30,0 q15,-14 30,0" fill="none" stroke="#e8914a" stroke-width="4" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.3;0.55;1" dur="12s" repeatCount="indefinite"/></path>
+  <polygon points="684,309 706,320 684,331" fill="#e8914a"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.58;1" dur="12s" repeatCount="indefinite"/></polygon>
+
+  <!-- la machine -->
+  <rect x="90" y="190" width="140" height="110" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="160" cy="245" r="30" fill="none" stroke="#5a6b7d" stroke-width="2.5"/><path d="M160,219 V271 M134,245 H186" stroke="#5a6b7d" stroke-width="2.5"/>
+  <text class="lblb" x="160" y="176" text-anchor="middle">La machine</text>
+
+  <!-- le local occupé -->
+  <rect x="480" y="150" width="260" height="150" fill="#fffdf8"/>
+  <path d="M480,190 V150 H740 V300 M480,250 V300" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M480,192 V248" stroke="#8fb0d6" stroke-width="4" stroke-dasharray="6 5"/>
+  <text class="t20" x="610" y="232" text-anchor="middle">Local occupé</text>
+  <text class="sub" x="610" y="258" text-anchor="middle">bureau ou logement</text>
+
+  <!-- le chemin aérien -->
+  <g>
+    <path d="M287.7,228.5 A60,60 0 0 1 287.7,261.5" fill="none" stroke="#6d28d9" stroke-width="5" stroke-linecap="round"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.1;1" dur="12s" repeatCount="indefinite"/></path>
+    <path d="M335.7,214.7 A110,110 0 0 1 335.7,275.3" fill="none" stroke="#6d28d9" stroke-width="5" stroke-linecap="round"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.11;0.15000000000000002;1" dur="12s" repeatCount="indefinite"/></path>
+    <path d="M383.8,200.9 A160,160 0 0 1 383.8,289.1" fill="none" stroke="#6d28d9" stroke-width="5" stroke-linecap="round"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.2;1" dur="12s" repeatCount="indefinite"/></path>
+    <path d="M400,245 H462" stroke="#6d28d9" stroke-width="4" fill="none"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.21;0.25;1" dur="12s" repeatCount="indefinite"/></path>
+    <polygon points="462,235 484,245 462,255" fill="#6d28d9"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.21;0.25;1" dur="12s" repeatCount="indefinite"/></polygon>
+    <text class="aer" x="335" y="160" text-anchor="middle">Chemin aérien<animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.1;1" dur="12s" repeatCount="indefinite"/></text>
+  </g>
+
+  <g>
+    <text class="sol" x="400" y="374" text-anchor="middle">Chemin solidien</text>
+    <text class="sub" x="400" y="398" text-anchor="middle">les vibrations traversent la dalle</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="90" y="428" width="620" height="50" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <g>
+    <text class="band" x="400" y="459" text-anchor="middle">Un même bruit peut passer par l'air, par la structure, ou par les deux.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.72;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

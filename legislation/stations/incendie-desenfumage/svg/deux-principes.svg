@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-f2" aria-describedby="d-f2" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-f2">Deux principes de désenfumage : le balayage et la hiérarchie des pressions</title>
+  <desc id="d-f2">Deux schémas côte à côte. À gauche, le balayage : une pièce avec une couche de fumée
+    sous le plafond, de l'air neuf qui entre en bas à gauche et une sortie des fumées en haut à droite ;
+    une ligne en tirets relie l'entrée à la sortie. À droite, la hiérarchie des pressions : un local
+    sinistré rempli de fumée, marqué du signe moins, et un escalier marqué du signe plus, alimenté en air
+    par un ventilateur ; une flèche part de l'escalier vers le local par la porte. Sous chaque schéma,
+    une phrase résume le principe.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:21px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .sgn { font-weight:bold; font-size:46px; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+
+  <!-- 1. balayage -->
+  <text class="ttl" x="205" y="52" text-anchor="middle">1. Le balayage</text>
+  <rect x="40" y="100" width="330" height="230" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="43" y="103" width="324" height="70" fill="#5a6b7d" fill-opacity="0.6"/>
+  <path d="M60,290 H285 C330,290 336,230 322,112" fill="none" stroke="#2f5689" stroke-width="3.5" stroke-dasharray="10 7"/>
+  <!-- air neuf : entrée basse gauche -->
+  <line x1="8" y1="290" x2="42" y2="290" stroke="#2f5689" stroke-width="5"/>
+  <polygon points="56,290 40,280 40,300" fill="#2f5689"/>
+  <!-- fumées : sortie haute droite -->
+  <line x1="322" y1="100" x2="322" y2="76" stroke="#b91c1c" stroke-width="5"/>
+  <polygon points="322,64 312,82 332,82" fill="#b91c1c"/>
+  <text class="lbl" x="205" y="366" text-anchor="middle">Air neuf en bas, fumées évacuées en haut.</text>
+  <text class="lbl" x="205" y="390" text-anchor="middle">Il s'appuie sur la montée naturelle</text>
+  <text class="lbl" x="205" y="414" text-anchor="middle">des fumées.</text>
+
+  <!-- 2. hiérarchie des pressions -->
+  <text class="ttl" x="595" y="52" text-anchor="middle">2. La hiérarchie des pressions</text>
+  <!-- local sinistré -->
+  <rect x="430" y="100" width="170" height="230" fill="#fdecea" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="433" y="103" width="164" height="120" fill="#5a6b7d" fill-opacity="0.6"/>
+  <text class="sgn" x="515" y="278" text-anchor="middle" fill="#b91c1c">–</text>
+  <text class="lbl" x="515" y="318" text-anchor="middle">Local sinistré</text>
+  <!-- escalier -->
+  <rect x="630" y="100" width="130" height="230" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="sgn" x="695" y="230" text-anchor="middle" fill="#2f5689">+</text>
+  <text class="lbl" x="695" y="318" text-anchor="middle">Escalier</text>
+  <!-- cloison avec porte -->
+  <rect x="600" y="100" width="30" height="150" fill="#1b3a63"/>
+  <!-- ventilateur de soufflage -->
+  <circle cx="695" cy="74" r="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M695,74 L695,60 M695,74 L707,81 M695,74 L683,81" stroke="#1b3a63" stroke-width="3" fill="none"/>
+  <line x1="695" y1="92" x2="695" y2="112" stroke="#2f5689" stroke-width="5"/>
+  <polygon points="695,128 685,110 705,110" fill="#2f5689"/>
+  <!-- la porte : passage ouvert dans la cloison -->
+  <rect x="598" y="252" width="34" height="76" fill="#fffdf8"/>
+  <!-- flèche par la porte : de l'escalier vers le local -->
+  <line x1="690" y1="292" x2="628" y2="292" stroke="#2f5689" stroke-width="5"/>
+  <polygon points="612,292 632,282 632,302" fill="#2f5689"/>
+  <text class="lbl" x="595" y="366" text-anchor="middle">Le volume à protéger est en surpression,</text>
+  <text class="lbl" x="595" y="390" text-anchor="middle">le volume sinistré en dépression relative.</text>
+</svg>

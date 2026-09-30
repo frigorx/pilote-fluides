@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-ss" aria-describedby="d-ss" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ss">Le seuil d'application et l'émergence spectrale</title>
+  <desc id="d-ss">Partie haute : deux échelles de niveau sonore. Pour une mesure dans une pièce principale d'un
+    logement, fenêtres ouvertes ou fermées, le repère est à 25 décibels pondérés A ; pour les autres cas, à
+    30 décibels pondérés A. À gauche du repère, en gris, l'émergence n'est pas recherchée ; à droite, en
+    violet clair, elle est recherchée. Partie basse : six colonnes, une par bande d'octave. Aux bandes de
+    125 hertz et 250 hertz, la limite est de 7 décibels ; aux bandes de 500, 1 000, 2 000 et 4 000 hertz,
+    elle est de 5 décibels.</desc>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="32" text-anchor="middle" font-size="22" font-weight="bold" fill="#10233c">En dessous du seuil, on ne cherche pas l'émergence</text>
+
+  <!-- échelle 1 : pièce principale d'un logement, repère 25 -->
+  <text x="20" y="98" font-size="17" font-weight="bold" fill="#1b3a63">Dans une pièce principale</text>
+  <text x="20" y="118" font-size="17" fill="#10233c">d'un logement, fenêtres</text>
+  <text x="20" y="138" font-size="17" fill="#10233c">ouvertes ou fermées</text>
+  <rect x="260" y="88" width="250" height="36" fill="#e6e9ee" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="510" y="88" width="250" height="36" fill="#ede3f4" stroke="#6d28d9" stroke-width="3"/>
+  <text x="510" y="78" text-anchor="middle" font-size="20" font-weight="bold" fill="#10233c">25 dB(A)</text>
+  <text x="385" y="148" text-anchor="middle" font-size="17" fill="#10233c">émergence non recherchée</text>
+  <text x="635" y="148" text-anchor="middle" font-size="17" fill="#6d28d9" font-weight="bold">émergence recherchée</text>
+
+  <!-- échelle 2 : autres cas, repère 30 -->
+  <text x="20" y="214" font-size="17" font-weight="bold" fill="#1b3a63">Dans les autres cas</text>
+  <rect x="260" y="188" width="300" height="36" fill="#e6e9ee" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="560" y="188" width="200" height="36" fill="#ede3f4" stroke="#6d28d9" stroke-width="3"/>
+  <text x="560" y="178" text-anchor="middle" font-size="20" font-weight="bold" fill="#10233c">30 dB(A)</text>
+  <text x="410" y="248" text-anchor="middle" font-size="17" fill="#10233c">émergence non recherchée</text>
+  <text x="660" y="248" text-anchor="middle" font-size="17" fill="#6d28d9" font-weight="bold">émergence recherchée</text>
+  <text x="260" y="270" font-size="16" fill="#5a6b7d">niveau du bruit ambiant mesuré, bruit particulier compris →</text>
+
+  <!-- spectrale -->
+  <text x="400" y="306" text-anchor="middle" font-size="20" font-weight="bold" fill="#10233c">Émergence spectrale : une limite par bande d'octave</text>
+  <line x1="40" y1="440" x2="760" y2="440" stroke="#5a6b7d" stroke-width="3"/>
+  <!-- 14 unités par dB : 7 -> 98, 5 -> 70 -->
+  <g fill="#c9b5ee" stroke="#1b3a63" stroke-width="3">
+    <rect x="60" y="342" width="90" height="98"/>
+    <rect x="170" y="342" width="90" height="98"/>
+    <rect x="280" y="370" width="90" height="70"/>
+    <rect x="390" y="370" width="90" height="70"/>
+    <rect x="500" y="370" width="90" height="70"/>
+    <rect x="610" y="370" width="90" height="70"/>
+  </g>
+  <g font-size="22" font-weight="bold" fill="#10233c" text-anchor="middle">
+    <text x="105" y="334">7 dB</text><text x="215" y="334">7 dB</text>
+    <text x="325" y="362">5 dB</text><text x="435" y="362">5 dB</text>
+    <text x="545" y="362">5 dB</text><text x="655" y="362">5 dB</text>
+  </g>
+  <g font-size="18" fill="#10233c" text-anchor="middle">
+    <text x="105" y="466">125 Hz</text><text x="215" y="466">250 Hz</text>
+    <text x="325" y="466">500 Hz</text><text x="435" y="466">1 000 Hz</text>
+    <text x="545" y="466">2 000 Hz</text><text x="655" y="466">4 000 Hz</text>
+  </g>
+  <text x="400" y="490" text-anchor="middle" font-size="16" fill="#5a6b7d">Équipements d'activités professionnelles, bruit perçu dans une pièce principale d'un logement</text>
+</svg>

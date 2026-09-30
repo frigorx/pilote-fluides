@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" role="img"
+     aria-labelledby="t-sp" aria-describedby="d-sp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-sp">Les six parois où le clapet est exigé</title>
+  <desc id="d-sp">Six cartes en deux rangées de trois, chacune avec un pictogramme et un intitulé. Zones de mise en
+    sécurité avec compartimentage : deux espaces séparés par une paroi, celui de droite entouré de pointillés verts.
+    Isolement entre niveaux : deux niveaux séparés par un plancher épais traversé par une gaine verticale. Secteurs
+    et compartiments : deux parois épaisses successives, une gaine les traverse. Locaux à risques importants : un
+    local contenant une flamme. Locaux à sommeil : un lit dans un local. Espaces d'attente sécurisés : un local à
+    contour vert avec un personnage. Sur les pictogrammes de traversée, le petit carré orange est le clapet.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .l1 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .l2 { font-size:18px; fill:#5a6b7d; }
+    .src { font-size:17px; fill:#5a6b7d; }
+  </style>
+  <rect width="800" height="490" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Six parois où le clapet est exigé</text>
+
+  <!-- rangée 1 -->
+  <rect x="30" y="56" width="240" height="180" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <rect x="280" y="56" width="240" height="180" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <rect x="530" y="56" width="240" height="180" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <!-- rangée 2 -->
+  <rect x="30" y="256" width="240" height="180" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <rect x="280" y="256" width="240" height="180" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <rect x="530" y="256" width="240" height="180" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+
+  <!-- 1. zone de mise en sécurité (compartimentage) -->
+  <g transform="translate(150,74)">
+    <rect x="-60" y="0" width="120" height="80" fill="#fffdf8" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="3" y="2" width="55" height="76" fill="#e3f5ec"/>
+    <rect x="9" y="9" width="44" height="62" fill="none" stroke="#1e7e54" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#1b3a63" stroke-width="7"/>
+    <line x1="-60" y1="40" x2="60" y2="40" stroke="#5a6b7d" stroke-width="5"/>
+    <rect x="-6" y="28" width="12" height="24" fill="#e8914a" stroke="#b45309" stroke-width="2"/>
+  </g>
+  <text class="l1" x="150" y="186" text-anchor="middle" style="font-size:17px">Zones de mise en sécurité</text>
+  <text class="l2" x="150" y="210" text-anchor="middle">avec compartimentage</text>
+
+  <!-- 2. isolement entre niveaux -->
+  <g transform="translate(400,74)">
+    <rect x="-50" y="0" width="100" height="34" fill="#eef3f9"/>
+    <rect x="-50" y="46" width="100" height="34" fill="#eef3f9"/>
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#5a6b7d" stroke-width="5"/>
+    <rect x="-56" y="34" width="112" height="12" fill="#1b3a63"/>
+    <rect x="-12" y="33" width="24" height="14" fill="#e8914a" stroke="#b45309" stroke-width="2"/>
+  </g>
+  <text class="l1" x="400" y="186" text-anchor="middle">Isolement</text>
+  <text class="l2" x="400" y="210" text-anchor="middle">entre niveaux</text>
+
+  <!-- 3. secteurs et compartiments -->
+  <g transform="translate(650,74)">
+    <rect x="-60" y="0" width="120" height="80" fill="#fffdf8" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="-20" y1="0" x2="-20" y2="80" stroke="#1b3a63" stroke-width="7"/>
+    <line x1="20" y1="0" x2="20" y2="80" stroke="#1b3a63" stroke-width="7"/>
+    <line x1="-60" y1="40" x2="60" y2="40" stroke="#5a6b7d" stroke-width="5"/>
+    <rect x="-26" y="28" width="12" height="24" fill="#e8914a" stroke="#b45309" stroke-width="2"/>
+    <rect x="14" y="28" width="12" height="24" fill="#e8914a" stroke="#b45309" stroke-width="2"/>
+  </g>
+  <text class="l1" x="650" y="186" text-anchor="middle">Secteurs</text>
+  <text class="l2" x="650" y="210" text-anchor="middle">et compartiments</text>
+
+  <!-- 4. locaux à risques importants -->
+  <g transform="translate(150,274)">
+    <rect x="-60" y="0" width="120" height="80" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
+    <g transform="translate(0,72) scale(.7)">
+      <path d="M0 0 C-30 -4 -38 -36 -14 -62 C-14 -44 -4 -40 0 -32 C4 -54 16 -68 22 -82 C42 -54 42 -8 0 0 Z" fill="#e8914a"/>
+      <path d="M0 0 C-14 -2 -16 -18 -4 -30 C-2 -22 2 -20 6 -26 C14 -16 14 -2 0 0 Z" fill="#b91c1c"/>
+    </g>
+  </g>
+  <text class="l1" x="150" y="386" text-anchor="middle">Locaux à risques</text>
+  <text class="l2" x="150" y="410" text-anchor="middle">importants</text>
+
+  <!-- 5. locaux à sommeil -->
+  <g transform="translate(400,274)">
+    <rect x="-60" y="0" width="120" height="80" fill="#fffdf8" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="-44" y="22" width="8" height="46" fill="#1b3a63"/>
+    <rect x="-44" y="44" width="88" height="14" rx="4" fill="#1b3a63"/>
+    <rect x="-40" y="58" width="6" height="10" fill="#1b3a63"/>
+    <rect x="36" y="58" width="6" height="10" fill="#1b3a63"/>
+    <ellipse cx="-22" cy="38" rx="14" ry="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
+    <rect x="-6" y="34" width="46" height="12" rx="4" fill="#e8914a"/>
+  </g>
+  <text class="l1" x="400" y="386" text-anchor="middle">Locaux</text>
+  <text class="l2" x="400" y="410" text-anchor="middle">à sommeil</text>
+
+  <!-- 6. espaces d'attente sécurisés -->
+  <g transform="translate(650,274)">
+    <rect x="-60" y="0" width="120" height="80" fill="#e3f5ec" stroke="#1e7e54" stroke-width="5"/>
+    <circle cx="0" cy="26" r="11" fill="#1b3a63"/>
+    <path d="M-17 66 Q-17 42 0 42 Q17 42 17 66 Z" fill="#1b3a63"/>
+  </g>
+  <text class="l1" x="650" y="386" text-anchor="middle">Espaces d'attente</text>
+  <text class="l2" x="650" y="410" text-anchor="middle">sécurisés</text>
+
+  <text class="src" x="400" y="470" text-anchor="middle">Règlement de sécurité des ERP, article CH 32, paragraphe 5. Petit carré orange : le clapet.</text>
+</svg>

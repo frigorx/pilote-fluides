@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img" aria-labelledby="t-cctp" aria-describedby="d-cctp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cctp">Lire un CCTP : la nature de chaque référence</title>
+  <desc id="d-cctp">À gauche, un extrait fictif de cahier des clauses techniques particulières, cinq lignes. À droite, une étiquette par ligne dit la nature de la référence et ce qui l'oblige. Ligne 1, le règlement (UE) 2024/573 : un texte, il oblige directement. Ligne 2, la NF C 15-100 : une norme, présomption pour un logement neuf. Ligne 3, la NF EN 378 : une norme, elle oblige par le contrat ou par un arrêté. Ligne 4, le NF DTU du lot : il oblige si le marché y renvoie. Ligne 5, l'avis technique du CSTB : il éclaire, le marché tranche. Une bande rappelle les trois questions à poser à chaque ligne : quelle nature, qui oblige, quelle édition. À l'animation, les étiquettes se posent une à une ; l'image fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#3730a3; }
+    .hb   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .wht  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <g><text class="ttl" x="20" y="34" text-anchor="start">Extrait de CCTP (exemple fictif)</text></g>
+  <g><rect x="20" y="50" width="500" height="320" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/></g>
+  <g><text class="lbl" x="40" y="88.0" text-anchor="start">Règlement (UE) 2024/573 (F-Gaz 3)</text></g>
+  <g>
+    <rect x="560" y="56" width="320" height="52" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="720" y="77" text-anchor="middle">TEXTE</text><text class="lbl" x="720" y="97" text-anchor="middle">oblige directement</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.10;0.17;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g><line x1="20" y1="114" x2="520" y2="114" stroke="#d6dee7" stroke-width="2"/></g>
+  <g><text class="lbl" x="40" y="152.0" text-anchor="start">Installation conforme à la NF C 15-100</text></g>
+  <g>
+    <rect x="560" y="120" width="320" height="52" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="720" y="141" text-anchor="middle">NORME</text><text class="lbl" x="720" y="161" text-anchor="middle">présomption (logement neuf)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.23;0.30;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g><line x1="20" y1="178" x2="520" y2="178" stroke="#d6dee7" stroke-width="2"/></g>
+  <g><text class="lbl" x="40" y="216.0" text-anchor="start">Systèmes frigorifiques : NF EN 378</text></g>
+  <g>
+    <rect x="560" y="184" width="320" height="52" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="720" y="205" text-anchor="middle">NORME</text><text class="lbl" x="720" y="225" text-anchor="middle">oblige par contrat ou par arrêté</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.43;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g><line x1="20" y1="242" x2="520" y2="242" stroke="#d6dee7" stroke-width="2"/></g>
+  <g><text class="lbl" x="40" y="280.0" text-anchor="start">Mise en œuvre selon le NF DTU du lot</text></g>
+  <g>
+    <rect x="560" y="248" width="320" height="52" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="720" y="269" text-anchor="middle">NF DTU</text><text class="lbl" x="720" y="289" text-anchor="middle">oblige si le marché y renvoie</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.49;0.56;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g><line x1="20" y1="306" x2="520" y2="306" stroke="#d6dee7" stroke-width="2"/></g>
+  <g><text class="lbl" x="40" y="344.0" text-anchor="start">Procédé sous avis technique du CSTB</text></g>
+  <g>
+    <rect x="560" y="312" width="320" height="52" rx="12" fill="#fbe9d8" stroke="#e8914a" stroke-width="3"/><text class="hb" x="720" y="333" text-anchor="middle">AVIS TECHNIQUE</text><text class="lbl" x="720" y="353" text-anchor="middle">éclaire ; le marché tranche</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.69;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="20" y="386" width="860" height="56" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="2"/><text class="band" x="450" y="421" text-anchor="middle">Trois questions par ligne : quelle nature ? qui oblige ? quelle édition ?</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.80;0.88;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

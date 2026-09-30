@@ -1,0 +1,35 @@
+{
+  "slug": "incendie-clapets-coupe-feu",
+  "branche": "Incendie",
+  "titre": "Mission : Les gaines qui traversent les chambres",
+  "client": "La direction d'une clinique de quartier, établissement recevant du public, qui fait remplacer sa centrale de traitement d'air.",
+  "situation": "La nouvelle centrale de traitement d'air soufflera dans un couloir desservant plusieurs chambres. Vos gaines traversent des parois de locaux à sommeil, une paroi d'isolement entre deux niveaux et la paroi d'un local technique à risques importants. Le maître d'œuvre a écrit sur un plan « clapets coupe-feu à prévoir » sans en dire plus. L'installateur propose de les poser au-dessus du faux plafond, sans trappe, pour gagner du temps, et ne parle ni de calfeutrement ni d'entretien. Votre responsable vous demande de cadrer ce point avant la consultation des entreprises.",
+  "piece_a_produire": "Un tableau de traversées à compléter pour le dossier de consultation : pour chaque paroi franchie, le type de paroi, la présence d'un clapet, son mode de déclenchement (thermique ou télécommandé), son accès pour la maintenance, son calfeutrement, et la vérification à prévoir. Ajoutez trois lignes de prescriptions à destination de l'installateur.",
+  "questions": [
+    { "q": "Dans un établissement recevant du public, quel degré coupe-feu doit avoir le clapet d'une traversée de paroi ?", "ecran": 2,
+      "reponse": "Un degré égal au degré coupe-feu de la paroi franchie : le clapet rétablit la résistance au feu de la paroi." },
+    { "q": "À quelle température est taré le capteur du mécanisme de déclenchement thermique d'un clapet coupe-feu ?", "ecran": 3,
+      "reponse": "À 70 °C (article CH 32, paragraphe 6 du règlement de sécurité des ERP)." },
+    { "q": "Si un SSI de catégorie A ou B est exigé, quels clapets sont autorisés au droit des parois de compartimentage ?", "ecran": 4,
+      "reponse": "Seuls les clapets télécommandés, depuis le centralisateur de mise en sécurité incendie (CMSI)." },
+    { "q": "Que faut-il prévoir pour que le clapet reste efficace après la pose ?", "ecran": 7,
+      "reponse": "Un calfeutrement qui reconstitue la résistance au feu de la paroi, un mécanisme accessible (trappe d'accès), une pose conforme au procès-verbal d'essai, et une vérification du fonctionnement tous les ans." }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Voici la proposition de l'installateur. Elle contient trois erreurs : trouvez-les et corrigez-les en une phrase chacune.",
+    "items": [
+      "Nous posons les clapets au-dessus du faux plafond, sans trappe, pour aller plus vite.",
+      "Pour la paroi d'un local à sommeil, un clapet d'un degré plus faible que la paroi suffit, l'air ne fait que passer.",
+      "Le trou autour de la gaine sera simplement laissé vide : le clapet ferme la gaine, c'est suffisant."
+    ],
+    "corrige": "1) Le mécanisme doit rester accessible : il faut une trappe d'accès et un faux plafond ouvrable. 2) Le clapet doit avoir un degré égal à celui de la paroi franchie, sinon la paroi perd son degré. 3) Les percements et trémies sont rebouchés avec un matériau qui reconstitue la résistance au feu de la paroi : le calfeutrement est obligatoire."
+  },
+  "badge": "Lame tombée",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP1", "CP7"],
+    "attestation_2025": [],
+    "justification": "CP1 : le technicien d'études repère les traversées de parois sur les plans d'implantation et y prévoit l'accès aux clapets ; CP7 : la ventilation d'un établissement recevant du public est un réseau aéraulique tertiaire qui traverse des parois coupe-feu."
+  }
+}

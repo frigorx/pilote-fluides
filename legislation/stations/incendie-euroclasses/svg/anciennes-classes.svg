@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="t" aria-describedby="d" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t">Les catégories M et les euroclasses</title>
+  <desc id="d">Trois niveaux. En haut, les sept euroclasses A1 à F des produits de construction, définies à l'annexe 1 de l'arrêté du 21 novembre 2002. Au milieu, un cadre : l'annexe 4, avec ses tableaux IV.1 à IV.3, qui donne les classes européennes admissibles pour chaque catégorie M. En bas, les cinq catégories M0 à M4 des matériaux d'aménagement, définies à l'annexe 2. Deux flèches descendent du haut vers le cadre puis du cadre vers le bas. Une bande rappelle qu'on lit le tableau : une catégorie M n'est pas une euroclasse renommée.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .sub { font-size:17px; fill:#5a6b7d; }
+    .h   { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .hr  { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#b91c1c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lb  { font-size:17px; font-weight:bold; fill:#10233c; }
+    .gry { font-size:17px; fill:#5a6b7d; }
+    .code{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:34px; fill:#1b3a63; }
+    .big { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:72px; fill:#1b3a63; }
+    .bigr{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:56px; fill:#b91c1c; }
+    .band{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#e8914a; }
+  </style>
+  <defs><path id="fl" d="M0 -85 C-20 -55 -35 -45 -27 -18 C-23 -4 -10 0 0 0 C13 0 27 -6 27 -24 C27 -45 13 -55 0 -85 Z" fill="#e8914a" stroke="#b91c1c" stroke-width="2"/><path id="fli" d="M0 -48 C-9 -32 -16 -26 -12 -12 C-9 -4 -4 0 0 0 C6 0 12 -3 12 -12 C12 -26 6 -32 0 -48 Z" fill="#f6c58e"/>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#5a6b7d"/></marker>
+  </defs>
+<text class="ttl" x="400" y="34" text-anchor="middle">Deux systèmes de classes, un tableau de passage</text>
+<text class="lb" x="400" y="72" text-anchor="middle">Produits de construction : les euroclasses (annexe 1)</text>
+<rect x="110" y="88" width="72" height="52" rx="8" fill="#e3efe6" stroke="#1b3a63" stroke-width="2"/><text class="h" x="146" y="124" text-anchor="middle">A1</text>
+<rect x="192" y="88" width="72" height="52" rx="8" fill="#eaf0dc" stroke="#1b3a63" stroke-width="2"/><text class="h" x="228" y="124" text-anchor="middle">A2</text>
+<rect x="274" y="88" width="72" height="52" rx="8" fill="#f3efd0" stroke="#1b3a63" stroke-width="2"/><text class="h" x="310" y="124" text-anchor="middle">B</text>
+<rect x="356" y="88" width="72" height="52" rx="8" fill="#f8e6c8" stroke="#1b3a63" stroke-width="2"/><text class="h" x="392" y="124" text-anchor="middle">C</text>
+<rect x="438" y="88" width="72" height="52" rx="8" fill="#f8d9c0" stroke="#1b3a63" stroke-width="2"/><text class="h" x="474" y="124" text-anchor="middle">D</text>
+<rect x="520" y="88" width="72" height="52" rx="8" fill="#f5c9b8" stroke="#1b3a63" stroke-width="2"/><text class="h" x="556" y="124" text-anchor="middle">E</text>
+<rect x="602" y="88" width="72" height="52" rx="8" fill="#f0b8b0" stroke="#1b3a63" stroke-width="2" stroke-dasharray="6 4"/><text class="h" x="638" y="124" text-anchor="middle">F</text>
+<path d="M400 148 V194" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#pt)"/>
+<rect x="170" y="200" width="460" height="74" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="3"/>
+<text class="h" x="400" y="232" text-anchor="middle">Annexe 4 : tableaux IV.1 à IV.3</text><text class="lbl" x="400" y="258" text-anchor="middle">classes européennes admissibles par catégorie M</text>
+<path d="M400 282 V326" stroke="#5a6b7d" stroke-width="3" fill="none" marker-end="url(#pt)"/>
+<text class="lb" x="400" y="364" text-anchor="middle">Matériaux d'aménagement : catégories M (annexe 2)</text>
+<rect x="155" y="380" width="86" height="52" rx="8" fill="#e3efe6" stroke="#1b3a63" stroke-width="2"/><text class="h" x="198" y="416" text-anchor="middle">M0</text>
+<rect x="255" y="380" width="86" height="52" rx="8" fill="#eaf0dc" stroke="#1b3a63" stroke-width="2"/><text class="h" x="298" y="416" text-anchor="middle">M1</text>
+<rect x="355" y="380" width="86" height="52" rx="8" fill="#f3efd0" stroke="#1b3a63" stroke-width="2"/><text class="h" x="398" y="416" text-anchor="middle">M2</text>
+<rect x="455" y="380" width="86" height="52" rx="8" fill="#f8d9c0" stroke="#1b3a63" stroke-width="2"/><text class="h" x="498" y="416" text-anchor="middle">M3</text>
+<rect x="555" y="380" width="86" height="52" rx="8" fill="#f0b8b0" stroke="#1b3a63" stroke-width="2"/><text class="h" x="598" y="416" text-anchor="middle">M4</text>
+<rect x="30" y="452" width="740" height="50" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/><text class="band" x="400" y="484" text-anchor="middle">On lit le tableau : une catégorie M n'est pas une euroclasse renommée</text>
+</svg>
