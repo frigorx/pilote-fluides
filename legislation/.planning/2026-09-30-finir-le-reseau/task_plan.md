@@ -41,14 +41,14 @@ Hors périmètre : HoCourant et Câblage virtuel (sessions en cours).
 9. Voix : MP3 edge-tts des nouvelles narrations (chaîne existante, feu vert du 24/08).
 
 ## Phases
-- [ ] P0 Cadrage, briefs sur disque (ce dossier : `brief-station.md`, `brief-mission.md`)
-- [ ] P1 Législation vague 1 : Fluidique (2) + Électrique (6)
-- [ ] P2 Législation vague 2 : Incendie (6) ; vague 3 : Acoustique (5) + Certifications (4) ; vague 4 : Droit du travail (5)
-- [ ] P3 Missions des 57 stations + générateur du livret + boîte mission sur chaque accueil
-- [ ] P4 Bâtiment 3D (porte d'entrée)
-- [ ] P5 CuivRézo : moteur de défis + passeport numérique + 3D + livrets papier + décisions
-- [ ] P6 Scènes Codex, câblage du plan (RESEAU, bandeau), couleurs, voix MP3
-- [ ] P7 Contrôles (navigateur, débordements, polices ≥ 14 pt sur l'élève, liens), commit local
+- [x] P0 Cadrage, briefs sur disque (ce dossier : `brief-station.md`, `brief-mission.md`)
+- [x] P1 Législation vague 1 : Fluidique (2) + Électrique (6)
+- [x] P2 Législation vague 2 : Incendie (6) ; vague 3 : Acoustique (5) + Certifications (4) ; vague 4 : Droit du travail (5)
+- [x] P3 Missions des 57 stations + générateur du livret + boîte mission sur chaque accueil
+- [x] P4 Bâtiment 3D (porte d'entrée)
+- [x] P5 CuivRézo : moteur de défis + passeport numérique + 3D + livrets papier + décisions
+- [x] P6 Scènes Codex, câblage du plan (RESEAU, bandeau), couleurs — voix MP3 Législation EN COURS (commit à part)
+- [x] P7 Contrôles (navigateur, débordements, polices ≥ 14 pt sur l'élève, liens), commit local
 - [ ] P8 Soumission à validation (lien local + synthèse), PAS de push
 
 ## Journal
@@ -71,3 +71,8 @@ Hors périmètre : HoCourant et Câblage virtuel (sessions en cours).
   27/03/2026 par l'arrêté du 22/03/2026) — vérifier que incendie-desenfumage et incendie-euroclasses ne se contredisent pas ;
   R. 4216-* abrogés au 01/01/2027 (décret 2025-1100) : aligner incendie-classer-le-bati ; plan : « soumis à la DESP »
   (sprinkler) non sourcé → « à examiner » ; SVG de incendie-euroclasses à recontrôler (scratch partagé).
+
+- 30/09 fin de journée : 57/57 stations, missions, carnet (complet + P1-P5 + livret prof), bâtiment 3D intégré,
+  cohérence Incendie corrigée, contrôle structure au vert. Commits : worktree d5323ea1 (branche chantier-2026-09-30),
+  cuivrezo c000ed8 (branche passeport-2026-09-30). RIEN POUSSÉ. Reste : commit des MP3 Législation, puis validation
+  de F. Henninot → fusion dans main (pilote-fluides + cuivrezo), node build/version.mjs, journal des nouveautés, push.
