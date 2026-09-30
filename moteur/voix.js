@@ -70,13 +70,14 @@
 
   function emitVoiceEvent(name, utterance, mode, extra) {
     if (!document || typeof document.dispatchEvent !== "function" || typeof window.CustomEvent !== "function") return;
-    var text = utterance && utterance.text ? normalizeText(utterance.text) : "";
+    var text = utterance && utterance.text ? normalizeText(utterance.__piloteTexteEcrit || utterance.text) : "";
     try {
       document.dispatchEvent(new window.CustomEvent("pilotevoix:" + name, {
         detail: Object.assign({
           texte: text,
           cle: text ? textKey(text) : null,
           mode: mode || lastMode,
+          debit: utterance && utterance.rate,
           interne: !!(utterance && utterance.__piloteProfVocal)
         }, extra || {})
       }));
@@ -136,6 +137,7 @@
          à CETTE utterance, et faire parler une copie priverait le mode professeur de
          l'événement de fin — l'enchaînement resterait bloqué. La table est idempotente
          (vérifié sur les 3 750 narrations), une réécoute ne dégrade donc rien. */
+      if (!utterance.__piloteTexteEcrit) utterance.__piloteTexteEcrit = utterance.text; /* la bulle montre l'écrit, pas l'oralisé */
       var dit = prononciation.oraliser(utterance.text);
       if (dit) utterance.text = dit;
     }
@@ -251,8 +253,16 @@
     cle: textKey,
     arreter: cancel,
     parleAvecAudioLocal: function (text) { return !!entries[textKey(text)]; },
-    etat: function () { return { mode: lastMode, cle: lastKey, actif: !!active }; }
+    etat: function () { return { mode: lastMode, cle: lastKey, actif: !!active }; },
+    audioEnCours: function () { return active ? active.audio : null; }
   };
+
+  /* le texte de la voix, affiché dans une bulle discrète (sous-titres.js) */
+  if (scriptUrl && document.head) {
+    var sousTitres = document.createElement("script");
+    sousTitres.src = new URL("sous-titres.js?v=20260930-1", scriptUrl).href;
+    document.head.appendChild(sousTitres);
+  }
 
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) cancel();

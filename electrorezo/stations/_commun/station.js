@@ -46,8 +46,12 @@ const Station = (() => {
     return fr.find(v => neuronale.test(v.name)) || fr[0];
   }
 
+  /* le texte de la voix, dans la bulle du site (moteur/sous-titres.js, injecté à la livraison) */
+  const bulle = (methode, ...args) => { if (window.PiloteSousTitres) window.PiloteSousTitres[methode](...args); };
+
   function couperVoix() {
     S.tour++;
+    bulle('cacher');
     if (lecteur) { lecteur.pause(); lecteur = null; }
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     const b = $('#btVoix'); if (b) { b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); }
@@ -81,9 +85,9 @@ const Station = (() => {
     const a = new Audio('voix/' + S.genre + '/' + t.id + '.mp3');
     a.playbackRate = S.vitesse;
     a.addEventListener('playing', () => {
-      if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); } });
+      if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', t.narration, { audio: a }); } });
     a.addEventListener('ended', () => {
-      if (tour === S.tour) { lecteur = null; b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); } });
+      if (tour === S.tour) { lecteur = null; b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); } });
     a.addEventListener('error', () => {
       /* pas de fichier ici : on ne réessaiera plus de la séance — repli sur
          la voix du poste, et on dit quand même. */
@@ -106,8 +110,8 @@ const Station = (() => {
     const dit = window.PILOTE_PRONONCIATION ? window.PILOTE_PRONONCIATION.oraliser(texte) : texte;
     const u = new SpeechSynthesisUtterance(dit);
     u.lang = 'fr-FR'; u.rate = S.vitesse; u.pitch = 1; u.voice = v;
-    u.onstart = () => { if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); } };
-    u.onend = u.onerror = () => { if (tour === S.tour) { b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); } };
+    u.onstart = () => { if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', texte, { debit: S.vitesse }); } };
+    u.onend = u.onerror = () => { if (tour === S.tour) { b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); } };
     speechSynthesis.speak(u);
   }
 
