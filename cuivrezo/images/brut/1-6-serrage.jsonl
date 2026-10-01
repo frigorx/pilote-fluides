@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"01a0ec6a-9511-76a0-8b61-5830f45f7512"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll use the imagegen and inerWeb style skills to create one illustration with the specified tools, colors, and opposing effort arrows.\n"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":""}}
-{"type":"turn.completed","usage":{"input_tokens":57356,"cached_input_tokens":30208,"cache_write_input_tokens":0,"output_tokens":629,"reasoning_output_tokens":0}}

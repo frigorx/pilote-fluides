@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"01a0ec98-b9b5-74f1-bc80-fddc45621118"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll use the imagegen and inerWeb style skills to create the single illustration with the specified tools, colors, and framing.\n"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":""}}
-{"type":"turn.completed","usage":{"input_tokens":76560,"cached_input_tokens":66944,"cache_write_input_tokens":0,"output_tokens":589,"reasoning_output_tokens":0}}

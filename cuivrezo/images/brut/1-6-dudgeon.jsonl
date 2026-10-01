@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"01a0ec69-b7db-7b21-8dde-b3049f8164bf"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll use the imagegen and inerWeb style skills to create the single illustration with the specified tool geometry and palette."}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":""}}
-{"type":"turn.completed","usage":{"input_tokens":57456,"cached_input_tokens":48640,"cache_write_input_tokens":0,"output_tokens":645,"reasoning_output_tokens":0}}

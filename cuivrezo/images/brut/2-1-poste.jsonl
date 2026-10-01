@@ -1,6 +1,0 @@
-{"type":"thread.started","thread_id":"01a0ec97-a350-75a3-bd47-65a6b995e268"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Je vais créer une seule illustration, en appliquant les consignes des skills imagegen et de la charte inerWeb."}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"L’accès aux fichiers des skills est bloqué par l’environnement. Je poursuis avec vos consignes détaillées dans l’outil de génération intégré."}}
-{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":""}}
-{"type":"turn.completed","usage":{"input_tokens":57674,"cached_input_tokens":42752,"cache_write_input_tokens":0,"output_tokens":785,"reasoning_output_tokens":9}}

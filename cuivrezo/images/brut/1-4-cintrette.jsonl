@@ -1,6 +1,0 @@
-{"type":"thread.started","thread_id":"01a0f59e-d07f-78c2-92de-16e088b78b8b"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Je vais utiliser l’outil de génération d’image avec la référence, en appliquant les consignes de style inerWeb et en préservant la géométrie du mécanisme.\n"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"La lecture des fichiers de consignes locaux est bloquée par l’environnement. Je poursuis avec votre référence jointe et les règles graphiques détaillées dans votre demande.\n"}}
-{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":""}}
-{"type":"turn.completed","usage":{"input_tokens":82225,"cached_input_tokens":70656,"cache_write_input_tokens":0,"output_tokens":784,"reasoning_output_tokens":14}}

@@ -1,6 +1,0 @@
-{"type":"thread.started","thread_id":"01a0ec64-e104-7b30-b1f9-0c3983d30bea"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll use the imagegen and inerWeb style skills to create one illustration with the shared stop and aligned marking clearly visible.\n"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"The local skill files are blocked by the environment’s access policy. I’ll use your detailed style specification directly.\n"}}
-{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":""}}
-{"type":"turn.completed","usage":{"input_tokens":76741,"cached_input_tokens":61824,"cache_write_input_tokens":0,"output_tokens":757,"reasoning_output_tokens":7}}

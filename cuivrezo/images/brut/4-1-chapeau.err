@@ -1,1 +1,0 @@
-2026-09-29T10:21:54.689619Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"`\\\"C:\\\\\\\\WINDOWS\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\\\" -Command \\\"Get-Content -LiteralPath 'C:/Users/henni/.codex/skills/.system/imagegen/SKILL.md'\\\"` rejected: blocked by policy\")" }

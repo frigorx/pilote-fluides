@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"01a0ec63-fd9f-7c22-b793-6093ca142d6c"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll use the imagegen and inerWeb style skills to create one clean illustration with an unnumbered caliper scale.\n"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":""}}
-{"type":"turn.completed","usage":{"input_tokens":57246,"cached_input_tokens":48384,"cache_write_input_tokens":0,"output_tokens":569,"reasoning_output_tokens":0}}

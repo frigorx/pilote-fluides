@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"01a0ecaf-47df-7de3-b644-bb16a839306c"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll use the imagegen and inerWeb style skills to create the single side-view illustration."}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":""}}
-{"type":"turn.completed","usage":{"input_tokens":57143,"cached_input_tokens":48384,"cache_write_input_tokens":0,"output_tokens":640,"reasoning_output_tokens":0}}
