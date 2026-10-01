@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" role="img"
+     aria-labelledby="t-bil" aria-describedby="d-bil" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bil">Bilan : trois gestes avant de raccorder une machine</title>
+  <desc id="d-bil">Trois étapes numérotées, reliées par des flèches orange. Étape 1, repérer le régime, avec un dossier et une loupe. Étape 2, repérer la protection en tête du circuit, avec les trois régimes TT, TN et IT et une coche verte. Étape 3, relier le conducteur de protection puis vérifier, avec une machine reliée à une prise de terre. Une phrase en bas rappelle que sans conducteur de protection aucun régime ne protège la personne.</desc>
+  <style>
+    .t { font:bold 22px 'Trebuchet MS',Calibri,sans-serif; fill:#10233c; }
+    .h { font:bold 20px 'Trebuchet MS',Calibri,sans-serif; fill:#1b3a63; }
+    .l { font:17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .lb { font:bold 17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .m { font:16px Calibri,'Segoe UI',sans-serif; fill:#5a6b7d; }
+    .big { font:bold 60px 'Trebuchet MS',Calibri,sans-serif; fill:#a16207; }
+    .w { font:bold 30px 'Trebuchet MS',Calibri,sans-serif; fill:#fffdf8; }
+  </style>
+  <defs>
+    <marker id="fl-bil" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,1 L11,6 L1,11 z" fill="#b45309" stroke="#10233c" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <text class="t" x="20" y="46" text-anchor="start">Avant de raccorder une machine, trois gestes</text>
+  
+  <rect x="20" y="90" width="240" height="230" rx="16" fill="#fffdf8" stroke="#a16207" stroke-width="3"/>
+  <circle cx="56" cy="126" r="22" fill="#a16207"/>
+  <text class="w" x="56" y="137" text-anchor="middle">1</text>
+  
+  <rect x="100" y="120" width="80" height="100" rx="6" fill="#fbf1dd" stroke="#1b3a63" stroke-width="4"/>
+  <path d="M114,142 H166 M114,162 H166 M114,182 H150" fill="none" stroke="#5a6b7d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="170" cy="212" r="18" fill="none" stroke="#1b3a63" stroke-width="5"/>
+  <path d="M183,226 L200,244" fill="none" stroke="#1b3a63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  <text class="lb" x="140" y="268" text-anchor="middle">Repérer le régime</text>
+  <text class="l" x="140" y="292" text-anchor="middle">plan, dossier, client</text>
+  <path d="M262,205 h22 v-12 l20,22 l-20,22 v-12 h-22 z" fill="#e8914a" stroke="#10233c" stroke-width="2.5" stroke-linejoin="round"/>
+  
+  <rect x="310" y="90" width="240" height="230" rx="16" fill="#fffdf8" stroke="#a16207" stroke-width="3"/>
+  <circle cx="346" cy="126" r="22" fill="#a16207"/>
+  <text class="w" x="346" y="137" text-anchor="middle">2</text>
+  
+  <rect x="336" y="150" width="56" height="44" rx="8" fill="#fbf1dd" stroke="#a16207" stroke-width="3"/>
+  <rect x="402" y="150" width="56" height="44" rx="8" fill="#fbf1dd" stroke="#a16207" stroke-width="3"/>
+  <rect x="468" y="150" width="56" height="44" rx="8" fill="#fbf1dd" stroke="#a16207" stroke-width="3"/>
+  <text class="h" x="364" y="180" text-anchor="middle">TT</text>
+  <text class="h" x="430" y="180" text-anchor="middle">TN</text>
+  <text class="h" x="496" y="180" text-anchor="middle">IT</text>
+  <circle cx="430" cy="226" r="16" fill="none" stroke="#1b3a63" stroke-width="4"/>
+  <path d="M422,224 l6,7 l12,-14" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="lb" x="430" y="268" text-anchor="middle">Repérer la protection</text>
+  <text class="l" x="430" y="292" text-anchor="middle">en tête du circuit</text>
+  <path d="M552,205 h22 v-12 l20,22 l-20,22 v-12 h-22 z" fill="#e8914a" stroke="#10233c" stroke-width="2.5" stroke-linejoin="round"/>
+  
+  <rect x="600" y="90" width="240" height="230" rx="16" fill="#fffdf8" stroke="#a16207" stroke-width="3"/>
+  <circle cx="636" cy="126" r="22" fill="#a16207"/>
+  <text class="w" x="636" y="137" text-anchor="middle">3</text>
+  
+  <rect x="676" y="140" width="88" height="54" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="5"/>
+  <path d="M720,194 V222" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M696,222 H744 M706,232 H734 M714,242 H726" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <text class="lb" x="720" y="268" text-anchor="middle">Relier le PE</text>
+  <text class="l" x="720" y="292" text-anchor="middle">puis vérifier</text>
+  <text class="lb" x="430" y="372" text-anchor="middle">Sans conducteur de protection, aucun régime ne protège la personne.</text>
+</svg>

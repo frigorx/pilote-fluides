@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Classer le bâti — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : ERP, IGH, habitation et lieux de travail — pourquoi on classe, le type et la catégorie d'un ERP, la hauteur d'un IGH, les familles d'habitation, et ce que le classement change pour le lot CVC.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/incendie-classer-le-bati/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Incendie.
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les 12 narrations sont à fabriquer (chaîne edge-tts) : d'ici là, la voix
+     du navigateur sert de filet.
+
+     Fond : FOND.md (sources et section « À sourcer » comprises). Aucun seuil
+     n'entre ici sans avoir été lu dans un texte officiel.
+     ILLUSTRATIONS ANIMÉES (SMIL autonome, image fixe = état final) :
+     arbre-classement, erp-categories, igh-hauteur, impact-cvc.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Incendie · niveau BTS</p>
+  <h1>Classer le bâti — de quel bâtiment parle-t-on ?</h1>
+  <p class="sous-titre">ERP · IGH · habitation · Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-incendie.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire <strong>pourquoi on classe</strong> un bâtiment, distinguer ERP, IGH, habitation et lieu de travail, lire le <strong>type</strong> et la <strong>catégorie</strong> d'un ERP, appliquer la définition de la <strong>hauteur d'un IGH</strong>, situer une habitation dans ses familles, et expliquer ce que ce classement change pour le <strong>lot CVC</strong> et pour la notice de sécurité du permis.</p>
+    <p style="margin-top:10px"><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — <strong>CP7</strong> (ventilation tertiaire : désenfumage, compartimentage, obligations d'un bâtiment tertiaire) et <strong>CP1</strong> (plans d'implantation : secteurs, compartiments et dégagements imposés par le classement).</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Avant toute règle, une question : de quel bâtiment parle-t-on ? À gauche, le bâtiment à classer. À droite, quatre questions posées dans l'ordre, et chacune ouvre un régime. Des personnes extérieures y sont admises : c'est un établissement recevant du public, un ERP. Le plancher du dernier niveau est très haut : c'est un immeuble de grande hauteur, un IGH. On y habite : ce sont les règles de l'habitation. Seuls des salariés y travaillent : c'est le Code du travail. Regardez la bande du bas : un même bâtiment peut cumuler plusieurs cas, et l'on applique alors la règle la plus contraignante.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Pourquoi on classe : quatre questions, quatre régimes</h2>
+    <p>Le risque d'incendie ne dépend pas seulement du bâtiment : il dépend de <strong>qui s'y trouve</strong>, de <strong>combien de personnes</strong> et de <strong>la hauteur</strong> à laquelle il faut aller les chercher. Pour les établissements recevant du public, le code le dit ainsi : les mesures de prévention se déterminent selon la nature de l'exploitation, les dimensions des locaux, le mode de construction, le nombre de personnes admissibles et leur aptitude à se soustraire aux effets d'un incendie (<em>Code de la construction et de l'habitation, art. R. 143-3</em>).</p>
+    <ul>
+      <li><strong>ERP</strong> (établissement recevant du public) : tout bâtiment où des personnes sont admises, librement ou non (R. 143-2) ;</li>
+      <li><strong>IGH</strong> (immeuble de grande hauteur) : défini par la hauteur du dernier plancher (R. 146-3) ;</li>
+      <li><strong>habitation</strong> : arrêté du 31 janvier 1986, classée en familles ;</li>
+      <li><strong>lieu de travail</strong> : Code du travail, art. R. 4216-* (conception ; abrogés à compter du 1<sup>er</sup> janvier 2027, voir l'écran 6) et R. 4227-* (utilisation).</li>
+    </ul>
+    <p><strong>Un même bâtiment peut cumuler plusieurs cas</strong> : l'employeur applique tous les textes et retient les solutions les plus contraignantes (INRS). Le Code du travail ne fait pas obstacle aux règles plus contraignantes des ERP et de l'habitation, et son chapitre ne s'applique pas aux IGH (R. 4216-1, R. 4227-1).</p>
+    <figure>
+      <img src="svg/arbre-classement.svg" alt="Un pictogramme de bâtiment, à gauche, relié par un tronc à quatre lignes. Chaque ligne associe une question à un régime : des personnes extérieures y sont-elles admises, régime ERP ; le plancher du dernier niveau est-il très haut, régime IGH ; y habite-t-on, régime habitation en familles de un à quatre ; seuls des salariés y travaillent-ils, régime Code du travail. Une bande en bas rappelle qu'un bâtiment peut cumuler plusieurs cas et que l'on applique la règle la plus contraignante.">
+      <figcaption>Quatre questions dans l'ordre : chacune ouvre un régime.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Premier classement d'un ERP : son type, qui découle de l'activité. Chaque tuile porte une lettre et une activité : M pour les magasins, N pour les restaurants, O pour les hôtels, R pour l'enseignement, U pour le sanitaire. Repérez la tuile rouge, la lettre W : administrations, banques, bureaux. C'est celle que vous croiserez le plus souvent en tertiaire. En bas, la bande des établissements spéciaux : plein air, chapiteaux, parcs de stationnement couverts, gares et quelques autres. Retenez la note en bas à droite : la lettre vient de l'activité, jamais de la taille.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">ERP : le type, donné par l'activité</h2>
+    <p>Un <strong>ERP</strong> est tout bâtiment, local ou enceinte où des personnes sont admises, librement ou moyennant une rétribution, ou où se tiennent des réunions ouvertes à tout venant ou sur invitation (<em>R. 143-2</em>). Les établissements sont répartis en <strong>types selon la nature de leur exploitation</strong> (<em>R. 143-18</em> ; règlement de sécurité, arrêté du 25 juin 1980, articles GN 1 à GN 3) : une lettre par activité.</p>
+    <p>Pour un technicien d'études, la lettre à connaître est <strong>W : administrations, banques, bureaux</strong>. Les autres types courants du tertiaire sont M (magasins), N (restaurants), O (hôtels), R (enseignement) et U (sanitaire). Les <strong>établissements spéciaux</strong> (PA, CTS, SG, PS, OA, GA, EF, REF) ont leur propre liste.</p>
+    <p>Le type détermine les <strong>dispositions particulières</strong> qui s'ajoutent aux règles communes à tous les ERP (R. 143-18).</p>
+    <figure>
+      <img src="svg/erp-types.svg" alt="Quatorze tuiles en cinq rangées, une par type d'ERP installé dans un bâtiment : J accueil de personnes âgées ou handicapées, L réunions et spectacles, M magasins et centres commerciaux, N restaurants et débits de boissons, O hôtels et pensions de famille, P danse et jeux, R enseignement, S bibliothèques, T expositions, U sanitaire, V culte, W administrations, banques et bureaux (encadrée en rouge), X sport couvert, Y musées. Une bande en bas liste les établissements spéciaux. Une note rappelle que la lettre vient de l'activité, pas de la taille.">
+      <figcaption>Cherchez la tuile rouge : W, administrations, banques, bureaux.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Second classement : la catégorie, et cette fois l'effectif décide, public et personnel compris. Regardez les colonnes : elles grandissent de la cinquième catégorie, à gauche, jusqu'à la première. Au-dessus de mille cinq cents personnes, première catégorie. De sept cent un à mille cinq cents, deuxième. De trois cent un à sept cents, troisième. Trois cents et moins, quatrième. La cinquième est à part : son seuil dépend du type d'établissement, et seul le public compte. Les quatre premières forment le premier groupe, la cinquième le second, comme le montrent les accolades.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">ERP : la catégorie, donnée par l'effectif</h2>
+    <p>Quel que soit leur type, les ERP sont classés en <strong>catégories d'après l'effectif du public et du personnel</strong> (<em>R. 143-19</em>) :</p>
+    <ul>
+      <li><strong>1re catégorie</strong> : au-dessus de 1 500 personnes ;</li>
+      <li><strong>2e catégorie</strong> : de 701 à 1 500 personnes ;</li>
+      <li><strong>3e catégorie</strong> : de 301 à 700 personnes ;</li>
+      <li><strong>4e catégorie</strong> : 300 personnes et au-dessous ;</li>
+      <li><strong>5e catégorie</strong> : effectif du public inférieur au minimum fixé pour le type d'établissement (R. 143-14).</li>
+    </ul>
+    <p>Deux groupes : le <strong>1er groupe</strong> (catégories 1 à 4, où l'effectif compte le public <em>et</em> le personnel) et le <strong>2e groupe</strong> (5e catégorie, où seul le public compte). Le seuil de 5e catégorie <strong>dépend du type</strong> : il se lit dans les dispositions particulières du type.</p>
+    <figure>
+      <img src="svg/erp-categories.svg" alt="Cinq colonnes de hauteur croissante de gauche à droite : cinquième catégorie, dont le seuil est fixé par le type ; quatrième, 300 personnes et moins ; troisième, de 301 à 700 ; deuxième, de 701 à 1 500 ; première, plus de 1 500. Un bandeau rappelle que l'effectif compte le public et le personnel pour le premier groupe, le public seul pour la cinquième catégorie. Deux accolades sous les colonnes : le premier groupe réunit les catégories 1 à 4, le deuxième groupe est la 5e.">
+      <figcaption>Les colonnes grandissent avec l'effectif. La 5e est à part.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Un immeuble de grande hauteur se définit par une seule mesure. Suivez la barre orange : elle part du sol le plus haut utilisable par les engins de secours et monte jusqu'au plancher bas du dernier niveau. Ce n'est pas le toit, la note à droite le rappelle. À gauche, un immeuble d'habitation : la limite est à cinquante mètres. À droite, un immeuble de bureaux, comme tout autre immeuble : la limite est à vingt-huit mètres. Les deux barres dépassent leur ligne rouge : ces immeubles relèvent du régime des IGH, classés ensuite selon leur usage.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">IGH : une seule mesure, la hauteur</h2>
+    <p>Un <strong>immeuble de grande hauteur</strong> est tout corps de bâtiment dont le <strong>plancher bas du dernier niveau</strong> est situé, par rapport au niveau du sol le plus haut utilisable pour les engins des services publics de secours et de lutte contre l'incendie, à <strong>plus de 50 mètres</strong> pour les immeubles à usage d'habitation et à <strong>plus de 28 mètres</strong> pour tous les autres immeubles (<em>R. 146-3</em>).</p>
+    <p>On mesure jusqu'au plancher bas du dernier niveau, <strong>pas jusqu'au toit</strong>. Les IGH sont ensuite classés par destination : GHA (habitation), GHO (hôtel), GHR (enseignement), GHS (dépôt d'archives), GHTC (tour de contrôle), GHU (sanitaire), GHW (bureaux), GHZ, et ITGH pour les immeubles de très grande hauteur (<em>R. 146-4</em>). Un arrêté conjoint fixe leur règlement de sécurité (R. 146-5).</p>
+    <p>Un IGH suit son propre règlement : le Code du travail écarte ces immeubles de son chapitre, et la réglementation incendie des IGH s'impose à celle du Code du travail (INRS).</p>
+    <figure>
+      <img src="svg/igh-hauteur.svg" alt="Deux immeubles posés sur une ligne de sol, avec deux lignes en tirets rouges : 50 mètres pour l'habitation, 28 mètres pour les autres immeubles. Une barre orange monte du sol jusqu'au trait orange du plancher bas du dernier niveau, au-dessus de la ligne des 50 mètres pour l'immeuble d'habitation, au-dessus de la ligne des 28 mètres pour l'immeuble de bureaux. Une note précise que la cote s'arrête au plancher bas du dernier niveau, pas au toit.">
+      <figcaption>La barre orange s'arrête au plancher bas du dernier niveau.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Quatre familles, classées par la hauteur. De gauche à droite : la première, une maison avec un étage au plus sur rez-de-chaussée. La deuxième : des maisons plus hautes, et l'habitat collectif jusqu'à trois étages sur rez-de-chaussée. La troisième : le plancher bas du logement le plus haut est à vingt-huit mètres au plus, et l'on distingue les sous-classes A et B. La quatrième monte jusqu'à cinquante mètres. Le trait orange marque ce plancher bas. Au-delà, en rouge, ce n'est plus de l'habitation ordinaire : c'est un immeuble de grande hauteur.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Habitation : quatre familles, classées par la hauteur</h2>
+    <p>Pour les bâtiments d'habitation, l'<strong>arrêté du 31 janvier 1986</strong> relatif à la protection contre l'incendie distingue quatre familles (art. 3) :</p>
+    <ul>
+      <li><strong>1re famille</strong> : habitations individuelles isolées ou jumelées à un étage sur rez-de-chaussée au plus, ou de plain-pied groupées en bande ;</li>
+      <li><strong>2e famille</strong> : habitations individuelles plus hautes, et habitations collectives d'au plus trois étages sur rez-de-chaussée ;</li>
+      <li><strong>3e famille</strong> : plancher bas du logement le plus haut à 28 m au plus, avec la <strong>3e A</strong> (sept étages au plus sur rez-de-chaussée, distance limitée entre la porte de logement et l'escalier) et la <strong>3e B</strong> pour les autres ;</li>
+      <li><strong>4e famille</strong> : plancher bas du niveau le plus haut à 50 m au plus.</li>
+    </ul>
+    <p>Au-delà de 50 m, un immeuble d'habitation est un IGH (R. 146-3). Dans le schéma, les deux premières familles ne sont pas à l'échelle. Les cas particuliers de maisons groupées en bande de la 2e famille ne sont pas détaillés.</p>
+    <figure>
+      <img src="svg/habitation-familles.svg" alt="Cinq bâtiments de hauteur croissante sur une ligne de sol : une maison à toit pour la première famille, un immeuble bas pour la deuxième, un immeuble dont le plancher bas du logement le plus haut est à 28 mètres au plus pour la troisième, un immeuble plus haut à 50 mètres au plus pour la quatrième, et en rouge un immeuble de grande hauteur au-delà de 50 mètres. Des tirets rouges marquent 28 et 50 mètres, un trait orange marque le plancher bas du logement le plus haut.">
+      <figcaption>Plus le bâtiment monte, plus la famille est haute.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Un plateau de bureaux où ne vient aucun public relève du Code du travail. Attention à la date : ses articles sur la conception des bâtiments sont abrogés à compter du premier janvier deux mille vingt-sept, et la matière passe au Code de la construction et de l'habitation. Quatre cartes, quatre seuils. Le désenfumage : les locaux de plus de trois cents mètres carrés, les locaux aveugles ou en sous-sol de plus de cent, et tous les escaliers. La structure : au-delà de huit mètres, une heure de stabilité au feu. L'alarme sonore : au-delà de cinquante personnes. Les extincteurs : six litres d'eau pulvérisée pour deux cents mètres carrés.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Bureaux sans public : le Code du travail</h2>
+    <p>Un lieu de travail où ne vient aucun public n'est pas un ERP : il relève du <strong>Code du travail</strong>, pour la conception (maître d'ouvrage, art. R. 4216-1 à R. 4216-34) et pour l'utilisation (employeur, art. R. 4227-1 et suivants). Le bâtiment doit permettre l'évacuation rapide, l'intervention des secours et la limitation de la propagation de l'incendie (<em>R. 4216-2</em>).</p>
+    <p><strong>Attention à la date.</strong> Les articles R. 4216-1 à R. 4216-34 sont <strong>abrogés à compter du 1<sup>er</sup> janvier 2027</strong> (décret n° 2025-1100 du 19 novembre 2025, art. 2 et 5) : pour les opérations dont la demande d'autorisation d'urbanisme est déposée à compter de cette date, ou dont les travaux débutent à compter de cette date quand il n'y a pas d'autorisation, les règles des bâtiments à usage professionnel relèvent du Code de la construction et de l'habitation (chapitre IV, articles R. 144-1 à R. 144-20). Les articles R. 4227-* (utilisation) ne sont pas visés par ce décret.</p>
+    <ul>
+      <li><strong>R. 4216-13</strong> : désenfumage naturel ou mécanique pour les locaux de plus de 300 m² en rez-de-chaussée et en étage, les locaux aveugles ou en sous-sol de plus de 100 m² (lecture de l'INRS, ED 6061) et tous les escaliers ;</li>
+      <li><strong>R. 4216-14 et R. 4216-15</strong> : naturel, ouvertures hautes et basses de surface supérieure au centième de la superficie du local (1 m² au minimum) ; mécanique, un mètre cube par seconde par 100 m² ;</li>
+      <li><strong>R. 4216-24</strong> : plancher bas du dernier niveau à plus de 8 m du sol, structure stable au feu de degré une heure et planchers coupe-feu de même degré ;</li>
+      <li><strong>R. 4227-29 et R. 4227-34</strong> : extincteurs (6 litres d'eau pulvérisée pour 200 m², un par niveau) ; alarme sonore au-delà de cinquante personnes.</li>
+    </ul>
+    <p>Un bureau qui reçoit du public, une agence par exemple, sort de ce cadre : c'est un ERP de type W.</p>
+    <figure>
+      <img src="svg/bureaux-code-travail.svg" alt="Quatre cartes en deux rangées : désenfumage pour les locaux de plus de 300 mètres carrés, les locaux aveugles ou en sous-sol de plus de 100 mètres carrés et les escaliers ; structure stable au feu une heure au-delà de 8 mètres pour le plancher bas du dernier niveau ; alarme sonore au-delà de cinquante personnes ; extincteur à eau pulvérisée de 6 litres pour 200 mètres carrés. Une bande en bas donne le dimensionnement du désenfumage naturel et mécanique.">
+      <figcaption>Quatre seuils à connaître, et le dimensionnement du désenfumage.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Voici ce que le classement change pour vous, technicien d'études du lot chauffage, ventilation et climatisation. Au centre, le classement du bâtiment ; autour, quatre conséquences. Le désenfumage : obligatoire ou non, naturel ou mécanique, selon le classement. Le compartimentage : une gaine qui traverse une paroi ne doit pas défaire le compartiment. Les matériaux : leur comportement au feu est encadré. Le système de sécurité incendie, qui porte les scénarios de mise en sécurité. Chaque carte renvoie à une station voisine du réseau, et la notice de sécurité les réunit toutes.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Ce que le classement change pour le lot CVC</h2>
+    <p>Le classement ne dit pas quoi installer : il dit <strong>quel texte lire</strong>. Ce texte pèse ensuite sur quatre points du lot CVC :</p>
+    <ol>
+      <li><strong>Le désenfumage</strong> : obligatoire ou non, naturel ou mécanique. Dans un ERP, la notice fait renseigner circulations, escaliers, locaux techniques, réserves, salles et sous-sols (articles DF, instructions techniques 246 et 247) ;</li>
+      <li><strong>Le compartimentage</strong> : la distribution intérieure limite la propagation du feu et des fumées par des recoupements ou des compartimentages (R. 4216-27 pour un lieu de travail). Une gaine qui traverse une paroi ne doit pas les défaire ;</li>
+      <li><strong>Les matériaux</strong> : le comportement au feu des matériaux et des éléments de construction est classé (R. 4216-28 renvoie aux articles D. 141-1 et suivants du code de la construction et de l'habitation) ;</li>
+      <li><strong>Le système de sécurité incendie</strong> (SSI, norme NF S 61-931, catégories A à E) et la mise en sécurité de l'établissement.</li>
+    </ol>
+    <p>La notice d'un ERP cite en outre les articles <strong>CH et GZ</strong> pour le chauffage et la ventilation d'air.</p>
+    <figure>
+      <img src="svg/impact-cvc.svg" alt="Au centre, une carte rouge « Le classement du bâtiment » reliée par quatre traits à quatre cartes : le désenfumage, obligatoire ou non, naturel ou mécanique ; le compartimentage, une gaine qui traverse une paroi ne doit pas défaire le compartiment ; les matériaux, dont le comportement au feu est encadré ; le système de sécurité incendie, catégories A à E, qui porte les scénarios de mise en sécurité. Chaque carte cite la station voisine du réseau.">
+      <figcaption>Quatre conséquences, une station voisine pour chacune.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="La notice de sécurité est la pièce où le classement se transforme en engagements. À gauche, une notice de préfecture, en cinq rubriques : type et catégorie, construction, désenfumage, chauffage et ventilation d'air, système de sécurité incendie. Les deux rubriques rouges sont celles que remplit le lot CVC. À droite, le parcours du dossier : autorisation de travaux ou permis de construire, avis de la commission de sécurité, visite de réception, autorisation d'ouverture par le maire. Le réflexe : avant de dimensionner quoi que ce soit, obtenez le classement du bâtiment, puis retrouvez-le dans la notice.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">La notice de sécurité, et le réflexe</h2>
+    <p>Toute construction, tout aménagement ou toute modification d'un ERP passe par une <strong>demande d'autorisation de travaux</strong>, ou par un <strong>permis de construire</strong> accompagné du dossier spécifique aux ERP (formulaire cerfa 13824), avec l'avis d'une commission de sécurité. Le dossier comprend notamment une <strong>notice descriptive</strong> précisant les matériaux utilisés, et des plans indiquant les largeurs des passages (<em>R. 143-22</em>). Avant l'ouverture, une visite de réception a lieu, puis le maire autorise l'ouverture (R. 143-38 et R. 143-39).</p>
+    <p>Sur l'exemple d'une notice de préfecture (version 2015), les rubriques sont : renseignements principaux (type, catégorie, effectif) ; construction (résistance au feu, réaction au feu, secteurs, compartiments, hauteur du plancher bas du dernier niveau accessible au public) ; désenfumage ; chauffage et ventilation d'air (mode de chauffage, puissance, organes de coupure) ; SSI.</p>
+    <ul>
+      <li>Le <strong>classement</strong> se lit dans quatre régimes : ERP, IGH, habitation, lieu de travail.</li>
+      <li>ERP : <strong>type</strong> par l'activité, <strong>catégorie</strong> par l'effectif.</li>
+      <li>IGH : plancher bas du dernier niveau à plus de <strong>28 m</strong> (<strong>50 m</strong> pour l'habitation).</li>
+    </ul>
+    <p class="formule">Le réflexe : obtenir le classement du bâtiment avant de dimensionner, puis le retrouver dans la notice.</p>
+    <figure>
+      <img src="svg/notice-securite.svg" alt="À gauche, une notice descriptive de sécurité en cinq rubriques : renseignements principaux, construction, désenfumage et chauffage-ventilation d'air encadrés en rouge parce qu'ils relèvent du lot CVC, et système de sécurité incendie. À droite, quatre étapes reliées par des flèches : autorisation de travaux ou permis de construire, avis de la commission de sécurité, visite de réception, autorisation d'ouverture par arrêté du maire.">
+      <figcaption>Les deux rubriques rouges sont celles du lot CVC.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Une agence bancaire reçoit des clients dans ses locaux. Comment est-elle classée ? Reprenez les tuiles de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Une agence bancaire reçoit des clients. Comment est-elle classée ?</h2>
+    <figure class="vignette">
+      <img src="svg/erp-types.svg" alt="Vignette de rappel : les tuiles des types d'ERP, avec la lettre W, administrations, banques, bureaux, encadrée en rouge.">
+      <figcaption>Rappel de l'écran 2 — une lettre par activité.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">ERP de type M, puisqu'elle accueille des clients</button>
+      <button type="button" data-answer="b">Code du travail seul : ce sont des bureaux</button>
+      <button type="button" data-answer="c">IGH, car c'est un établissement bancaire</button>
+      <button type="button" data-answer="bonne">ERP de type W, catégorie selon l'effectif</button>
+    </div>
+    <p class="feedback" hidden data-explication="Une agence reçoit du public : c'est un ERP (R. 143-2). Son activité, administrations, banques, bureaux, donne la lettre W. L'effectif, public et personnel, donne la catégorie."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un ERP peut accueillir six cent cinquante personnes, public et personnel compris. Quelle est sa catégorie ? Reprenez les colonnes de l'écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un ERP peut accueillir 650 personnes, public et personnel compris. Sa catégorie ?</h2>
+    <figure class="vignette">
+      <img src="svg/erp-categories.svg" alt="Vignette de rappel : les cinq colonnes des catégories d'ERP, de la cinquième à la première, avec leurs seuils d'effectif.">
+      <figcaption>Rappel de l'écran 3 — l'effectif décide.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">2e catégorie</button>
+      <button type="button" data-answer="bonne">3e catégorie</button>
+      <button type="button" data-answer="c">4e catégorie</button>
+      <button type="button" data-answer="d">5e catégorie</button>
+    </div>
+    <p class="feedback" hidden data-explication="De 301 à 700 personnes, c'est la 3e catégorie. Dans le 1er groupe, l'effectif compte le public et le personnel."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un immeuble de bureaux a son plancher bas du dernier niveau à trente-cinq mètres au-dessus du sol le plus haut utilisable par les engins de secours. Est-ce un immeuble de grande hauteur ? Reprenez le schéma de l'écran quatre.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Bureaux, plancher bas du dernier niveau à 35 m : est-ce un IGH ?</h2>
+    <figure class="vignette">
+      <img src="svg/igh-hauteur.svg" alt="Vignette de rappel : deux immeubles, les seuils de 50 mètres pour l'habitation et de 28 mètres pour les autres, et la cote qui s'arrête au plancher bas du dernier niveau.">
+      <figcaption>Rappel de l'écran 4 — la hauteur se mesure au plancher bas du dernier niveau.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Oui : plus de 28 m, hors habitation</button>
+      <button type="button" data-answer="a">Non : la limite est de 50 m pour tous</button>
+      <button type="button" data-answer="b">Cela dépend de l'effectif présent</button>
+      <button type="button" data-answer="c">Non : il faudrait dépasser 200 m</button>
+    </div>
+    <p class="feedback" hidden data-explication="Pour un immeuble qui n'est pas d'habitation, la limite est de 28 m mesurés au plancher bas du dernier niveau (R. 146-3). Les 50 m ne valent que pour l'habitation. L'effectif ne compte pas."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième question. Un plateau de bureaux de quatre cents mètres carrés, sans public, dans un bâtiment ordinaire. Le désenfumage est-il obligatoire ? Reprenez les quatre cartes de l'écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un plateau de bureaux de 400 m², sans public : le désenfumage est-il obligatoire ?</h2>
+    <figure class="vignette">
+      <img src="svg/bureaux-code-travail.svg" alt="Vignette de rappel : les quatre cartes du Code du travail, dont celle du désenfumage pour les locaux de plus de 300 mètres carrés.">
+      <figcaption>Rappel de l'écran 6 — les seuils du Code du travail.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Aucune : le désenfumage est réservé aux ERP</button>
+      <button type="button" data-answer="b">Seulement si le local est en sous-sol</button>
+      <button type="button" data-answer="bonne">Oui : un désenfumage naturel ou mécanique</button>
+      <button type="button" data-answer="d">Seulement un désenfumage naturel</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un local de plus de 300 m² en rez-de-chaussée ou en étage doit comporter un dispositif de désenfumage naturel ou mécanique (R. 4216-13). Les locaux aveugles et les locaux en sous-sol de plus de 100 m² sont visés en plus."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../incendie-desenfumage/"><strong>Désenfumage</strong></a> (même sous-ligne)
+      — les obligations et le dimensionnement que le classement déclenche.</li>
+    <li><a href="../incendie-euroclasses/"><strong>Euroclasses</strong></a> (même sous-ligne)
+      — le comportement au feu des matériaux et des éléments de construction.</li>
+    <li><a href="../incendie-ssi/"><strong>Système de sécurité incendie</strong></a> (même sous-ligne)
+      — ce que le classement impose comme SSI et comme mise en sécurité.</li>
+    <li><a href="../risques-duerp/"><strong>Évaluation des risques (DUERP)</strong></a> (autre sous-ligne)
+      — le lieu de travail, côté employeur.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

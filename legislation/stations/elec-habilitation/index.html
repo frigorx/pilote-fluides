@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>L'habilitation — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : l'obligation d'habilitation électrique (Code du travail), la norme NF C 18-510, qui habilite, la lecture d'un symbole, B0, BS, BR, le titre, l'attestation médicale et le recyclage.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/elec-habilitation/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Électrique.
+     Correspondance fondatrice du réseau (Électrique ⇄ Risques professionnels) :
+     la règle d'un côté, le geste protégé de l'autre (voir les EPI).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+
+     Produite le 30/09/2026. Sources dans FOND.md : Code du travail
+     R. 4544-2, -3, -9, -10, -11 (Légifrance, version du 01/10/2025),
+     arrêté du 5 juillet 2024, INRS (FAQ habilitation électrique, ED 6127).
+     La norme NF C 18-510 est payante : seul son objet public est cité.
+     Les narrations sont nouvelles : aucun MP3 fabriqué, la voix du
+     navigateur sert de filet jusqu'à la fabrication edge-tts de la branche.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Électrique · niveau BTS</p>
+  <h1>L'habilitation — qui a le droit d'ouvrir l'armoire</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-electrique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire ce qui soumet une opération à l'habilitation, <strong>qui la délivre</strong>, lire un symbole comme <strong>B2V</strong> ou <strong>BR</strong>, choisir celui qui correspond à un geste de technicien du froid, et vérifier ce qui le rend valable : l'attestation médicale et le recyclage.</p>
+    <p style="margin-top:10px"><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — <strong>hors REAC</strong> : culture professionnelle du technicien et du chargé d'affaires. Aucune des compétences CP1 à CP10 ne porte sur l'habilitation.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez d'abord le personnage à gauche, avec son badge : il est habilité. À droite, une armoire électrique, et autour d'elle un cadre en pointillé : la zone de voisinage. La règle du Code du travail tient en une phrase : les opérations sur une installation électrique, ou dans son voisinage, ne peuvent être faites que par des travailleurs habilités. Retenez les deux mots : sur, et à côté. Nettoyer ou peindre près de pièces nues sous tension demande donc une habilitation. Ce qui n'en demande pas : l'usage normal d'un appareil, branché comme prévu.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">L'obligation : pas d'habilitation, pas d'opération</h2>
+    <p>Article <strong>R. 4544-9</strong> du Code du travail : « Les opérations sur les installations électriques ou dans leur voisinage ne peuvent être effectuées que par des travailleurs habilités. »</p>
+    <p>Le Code (article R. 4544-2) range dans les <strong>opérations sur les installations</strong> les travaux hors tension, les travaux sous tension, les manœuvres, les essais, les mesurages et les vérifications, et, en basse tension, les interventions. Le <strong>voisinage</strong> est une zone définie autour des pièces nues sous tension ; on y trouve des opérations d'ordre électrique <em>et non électrique</em>.</p>
+    <div class="encadre encadre--note">
+      <span class="mot">Ce qui n'en demande pas</span>
+      <p>L'utilisation normale d'un appareil électrique, branchement compris. Et, pour une personne avertie, quelques opérations simples (changer une lampe, réarmer une protection, remplacer un fusible à l'identique) si le matériel est intact et protégé contre les contacts directs (INRS).</p>
+    </div>
+    <figure>
+      <img src="svg/obligation.svg" alt="À gauche, un travailleur en pictogramme plein avec un badge « Travailleur habilité ». Une flèche va vers la droite, vers une armoire électrique entourée d'un cadre en pointillé qui représente la zone de voisinage. Une bande en bas rappelle : Code du travail, seuls les travailleurs habilités.">
+      <figcaption>Sur l'installation, ou à côté : la même règle.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Ce schéma est un escalier à deux marches, avec un relais au milieu. En haut, le Code du travail : il dit quoi. L'habilitation est obligatoire, et c'est l'employeur qui la délivre. En bas, la norme N F C dix-huit, cinq cent dix : elle dit comment, avec les symboles, la formation, le titre et le carnet de prescriptions. Entre les deux, en orange, un arrêté daté du cinq juillet deux mille vingt-quatre, qui désigne officiellement cette norme. Retenez le mot de l'article : la norme donne des modalités recommandées. Son texte s'achète : ce cours n'en donne que l'objet.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Deux étages : le Code du travail, puis la norme</h2>
+    <p>Le Code du travail <strong>impose</strong> l'habilitation. La <strong>norme NF C 18-510</strong>, « Opérations sur les ouvrages et installations électriques et dans un environnement électrique — Prévention du risque électrique », en donne les <strong>modalités</strong> : symboles, formation préalable, titre, carnet de prescriptions.</p>
+    <p>Le lien est écrit à l'article <strong>R. 4544-3</strong> : les modalités recommandées figurent dans des normes homologuées, dont les références sont publiées par arrêté. L'<strong>arrêté du 5 juillet 2024</strong> désigne la NF C 18-510 (édition de janvier 2012) et son amendement A1 (février 2020) ; il abroge l'arrêté du 20 novembre 2017.</p>
+    <div class="encadre encadre--piege">
+      <span class="mot">Le piège</span>
+      <p>« Recommandées » qualifie les <em>modalités</em>, pas l'habilitation : celle-ci est obligatoire. Le texte de la norme est payant ; ici, on ne cite que son objet public et ce que l'INRS en publie.</p>
+    </div>
+    <figure>
+      <img src="svg/regle-et-norme.svg" alt="Trois blocs empilés, reliés par des flèches vers le bas : le Code du travail, qui dit quoi (l'habilitation est obligatoire, l'employeur la délivre) ; l'arrêté du 5 juillet 2024, en orange, qui désigne la norme ; la norme NF C 18-510, qui dit comment (symboles, formation, titre, carnet de prescriptions). Une note rappelle que la norme s'achète.">
+      <figcaption>La loi dit quoi ; la norme dit comment.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Suivez les cinq cases de haut en bas. Analyser l'activité : que fera ce technicien, sur quelles installations ? Former : théorie et pratique, et l'employeur s'assure qu'elles ont bien eu lieu. Attestation médicale, quand il s'agit du voisinage de pièces nues sous tension. Puis la case orange, la quatrième : c'est l'employeur qui délivre l'habilitation. Ni le centre de formation, ni le médecin, ni le client. Enfin le titre et le carnet de prescriptions sont remis, et le travailleur apparaît à droite avec son titre. Un technicien indépendant ne peut pas s'habiliter lui-même.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Qui habilite : l'employeur</h2>
+    <p>Article <strong>R. 4544-10</strong> : l'habilitation est <strong>délivrée par l'employeur</strong> et précise la nature des opérations autorisées. Avant de la délivrer, il s'assure que le travailleur a reçu la <strong>formation théorique et pratique</strong> qui lui donne la connaissance des risques et des mesures à prendre. Il lui remet un <strong>carnet de prescriptions</strong>.</p>
+    <ul>
+      <li><strong>Intérimaire</strong> : c'est l'entreprise utilisatrice qui habilite, pour la durée de la mission.</li>
+      <li><strong>Indépendant, auto-entrepreneur, chef d'entreprise</strong> : pas d'auto-habilitation possible.</li>
+      <li><strong>Sous-traitant</strong> : habilité par son propre employeur.</li>
+    </ul>
+    <div class="encadre encadre--piege">
+      <span class="mot">Le piège</span>
+      <p>Le stage ne suffit pas : le titre est un acte de l'employeur. Et être habilité ne donne pas le droit d'agir de son propre chef : l'employeur désigne le travailleur pour l'opération (INRS).</p>
+    </div>
+    <figure>
+      <img src="svg/qui-habilite.svg" alt="Cinq étapes empilées : analyser l'activité, former en théorie et en pratique, attestation médicale d'absence de contre-indication si voisinage, l'employeur délivre l'habilitation (encadrée en orange, avec la mention ni l'organisme de formation ni le médecin), titre et carnet de prescriptions remis. À droite, un travailleur en pictogramme plein avec son titre.">
+      <figcaption>La quatrième case, en orange : la seule qui habilite.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Trois grandes tuiles côte à côte : B, deux, V. C'est un exemple de symbole, et il se lit de gauche à droite. La première tuile, bleue : B pour basse tension, H pour haute tension. La deuxième, ocre : le type d'opération, un chiffre ou une lettre. Zéro, c'est l'ordre non électrique. Un, exécutant. Deux, chargé de travaux. Les lettres R, S, C, E disent d'autres rôles, que nous verrons. La troisième, orange : une lettre additionnelle, V pour voisinage, T pour travaux sous tension. Lu en entier, B deux V signifie : basse tension, chargé de travaux, au voisinage.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Lire un symbole : trois caractères</h2>
+    <p>Chaque habilitation a un <strong>symbole</strong>, fait de lettres et de chiffres :</p>
+    <ol>
+      <li><strong>1er caractère</strong> : le domaine de tension — <strong>B</strong> basse tension, <strong>H</strong> haute tension ;</li>
+      <li><strong>2e caractère</strong> : le type d'opération, en chiffre (<strong>0</strong> ordre non électrique, <strong>1</strong> exécutant, <strong>2</strong> chargé de travaux) ou en lettre (<strong>C</strong> consignation, <strong>R</strong> intervention BT générale, <strong>S</strong> intervention BT élémentaire, <strong>E</strong> opérations spécifiques) ;</li>
+      <li><strong>3e caractère</strong> : une lettre additionnelle — <strong>V</strong> voisinage, <strong>T</strong> travaux sous tension, <strong>N</strong> nettoyage sous tension, <strong>X</strong> spéciale.</li>
+    </ol>
+    <p>Exemple de l'INRS : <strong>B2V</strong> = chargé de travaux en basse tension, qui peut travailler au voisinage de pièces nues sous tension. Le symbole <strong>E</strong> reçoit en plus un attribut : manœuvre, mesurage, vérification ou essai.</p>
+    <p>Pour vous entraîner à lire et à choisir des symboles : <a href="https://inerweb.fr/hocourant/" target="_blank" rel="noopener">HoCourant</a>, le réseau voisin dédié à l'habilitation.</p>
+    <figure>
+      <img src="svg/lire-symbole.svg" alt="Trois grandes tuiles portent les caractères B, 2 et V. Sous chacune, une carte l'explique : le domaine de tension (B basse, H haute), le type d'opération (0 non électrique, 1 exécutant, 2 chargé de travaux, ou une lettre R, S, C, E), la lettre additionnelle (V voisinage, T travaux sous tension, N nettoyage sous tension, X spéciale). Une bande donne la lecture : B2V, basse tension, chargé de travaux, au voisinage.">
+      <figcaption>Un symbole se lit de gauche à droite, un caractère à la fois.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Six cartes, en deux rangées. B zéro : un non-électricien qui travaille près de pièces nues sous tension, en basse tension, pour nettoyer ou peindre. B S : une intervention élémentaire, remplacer ou raccorder, toujours hors tension. B R, la carte mise en avant : le chargé d'intervention générale, celui de l'entretien et du dépannage. B C : il consigne pour les autres et ne fait rien d'autre. B E : une opération spécifique, précisée par un attribut. H zéro : même esprit que B zéro, mais en haute tension. Regardez la bande du bas : une habilitation couvre le risque électrique, pas les fluides frigorigènes.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Les symboles du technicien du froid</h2>
+    <ul>
+      <li><strong>B0</strong> : opérations d'ordre non électrique (nettoyage, peinture, maçonnerie) dans la zone de voisinage simple, en basse tension. <strong>H0</strong> et <strong>H0V</strong> : la même idée en haute tension (voisinage simple, puis renforcé).</li>
+      <li><strong>BS</strong> : intervention élémentaire. Pas besoin d'être qualifié en électricité pour l'être, mais il faut être formé aux opérations.</li>
+      <li><strong>BR</strong> : intervention générale en basse tension, c'est-à-dire l'entretien et le dépannage ; il faut être qualifié en électricité.</li>
+      <li><strong>BC</strong> : consigner pour des tiers, en basse tension ; le chargé de consignation ne fait que consigner et déconsigner.</li>
+      <li><strong>BE</strong> + attribut : manœuvre, mesurage, vérification ou essai.</li>
+    </ul>
+    <p>Le symbole est choisi d'après l'<strong>activité réelle</strong> du travailleur, pas d'après son diplôme ; un même titre peut cumuler plusieurs symboles. Et l'habilitation n'est pas l'attestation d'aptitude aux fluides frigorigènes : c'est un autre papier (voir <a href="../aptitude-capacite/">Aptitude &amp; capacité</a>).</p>
+    <figure>
+      <img src="svg/symboles-frigoriste.svg" alt="Six cartes en deux rangées : B0 (ordre non électrique, voisinage simple en basse tension, par exemple nettoyer ou peindre), BS (intervention élémentaire, remplacer ou raccorder, hors tension), BR mise en avant en ocre (intervention générale, entretien et dépannage, courte durée), BC (consigner pour des tiers en basse tension, et rien d'autre), BE (opération spécifique, avec un attribut manœuvre, mesurage, vérification ou essai), H0 (ordre non électrique, voisinage simple en haute tension, H0V pour le voisinage renforcé). Une bande rappelle qu'une habilitation couvre le risque électrique, pas les fluides.">
+      <figcaption>Six symboles à connaître ; BR est celui de l'entretien et du dépannage.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Un tableau à deux colonnes : B S à gauche, B R à droite. B S remplace et raccorde, selon une liste courte. B R fait de l'entretien et du dépannage. Puis trois limites : la tension, le calibre de la protection et la section du câble, plus larges pour B R. Dernière ligne : B S travaille seul, B R peut être aidé par un exécutant B un, au plus. L'astérisque signale un point fin : pour B R, ces limites bornent les connexions faites en présence de tension. Remplacer un contacteur ne figure pas dans la liste de B S.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">BS ou BR : le bon niveau pour le bon geste</h2>
+    <p><strong>BS</strong> n'autorise qu'une <strong>liste courte</strong> : remplacer à l'identique un fusible, une lampe, un accessoire d'éclairage, une prise ou un interrupteur ; raccorder un matériel à un circuit en attente ; réarmer une protection dans un environnement sûr. Toujours <strong>hors tension</strong>, sans voisinage, sans exécutant.</p>
+    <p><strong>BR</strong> couvre des interventions de <strong>courte durée</strong> sur des parties de <strong>faible étendue</strong> d'une installation : entretien, dépannage. Hors tension, sauf certaines connexions sur un circuit ouvert ; un exécutant <strong>B1</strong> au plus ; il peut consigner pour son propre compte et celui de son exécutant.</p>
+    <div class="encadre encadre--cle">
+      <span class="mot">Le raisonnement</span>
+      <p>Rechercher une panne sur un circuit de commande, ou remplacer un contacteur, n'est pas dans la liste de BS : c'est le domaine de BR.</p>
+    </div>
+    <figure>
+      <img src="svg/bs-ou-br.svg" alt="Tableau à deux colonnes, BS et BR, sur cinq lignes : opérations (remplacer et raccorder pour BS, entretien et dépannage pour BR), tension, protection du circuit, câble en cuivre, et aide (aucun exécutant pour BS, un exécutant B1 au plus pour BR). Les limites de BR portent un astérisque : elles bornent les connexions faites en présence de tension.">
+      <figcaption>Limites indiquées par l'INRS, d'après la norme : le texte de la norme fait foi.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes en boucle, dans le sens des aiguilles d'une montre. La formation d'abord. Puis l'attestation médicale, valable cinq ans : depuis le premier octobre deux mille vingt-cinq, elle remplace le suivi individuel renforcé. Ensuite, la carte ocre : le titre d'habilitation, remis par l'employeur, avec le symbole, le domaine de tension et les ouvrages concernés. Enfin le recyclage, recommandé tous les trois ans, et la flèche qui remonte : le cycle recommence. Un point orange saute d'une carte à l'autre. En bas, un cas à part : pour les travaux sous tension, le titre ne vaut qu'un an.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le titre, l'attestation médicale, le recyclage</h2>
+    <ul>
+      <li><strong>Le titre d'habilitation</strong> est le document de l'employeur : il mentionne les symboles, les domaines de tension, les ouvrages ou installations concernés et, si besoin, des limitations. Sa durée de validité est fixée par l'employeur.</li>
+      <li><strong>L'attestation médicale</strong> : depuis le <strong>1er octobre 2025</strong> (décret du 18 avril 2025), l'habilitation qui autorise le voisinage de pièces nues sous tension n'est valable que si le travailleur détient une attestation d'<strong>absence de contre-indication médicale</strong>. Elle est délivrée par le médecin du travail et dure <strong>cinq ans</strong>. Un avis d'aptitude plus ancien peut en tenir lieu pendant cinq ans à compter de sa délivrance.</li>
+      <li><strong>Le recyclage</strong> : l'INRS recommande <strong>trois ans</strong>, comme la norme (deux ans pour une pratique occasionnelle), avec un suivi annuel de l'adéquation du titre à l'activité réelle.</li>
+    </ul>
+    <p>Cas à part : pour les <strong>travaux sous tension</strong>, le titre est valable <strong>un an</strong>, et la formation relève d'un organisme agréé (article R. 4544-11).</p>
+    <figure>
+      <img src="svg/cycle-habilitation.svg" alt="Quatre cartes en boucle : la formation, théorique et pratique ; l'attestation médicale d'absence de contre-indication, valable cinq ans ; le titre d'habilitation délivré par l'employeur, en ocre ; le recyclage, recommandé tous les trois ans, avec une flèche qui remonte vers la formation. Une bande rappelle que pour les travaux sous tension le titre n'est valable qu'un an.">
+      <figcaption>Le cycle ne s'arrête pas à la remise du titre : un point orange passe d'une carte à la suivante.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient dans un titre d'habilitation, à gauche, et trois questions à droite. Le titre porte le symbole, le domaine de tension, les ouvrages, les limites. Avant d'ouvrir une armoire, trois vérifications, et vous voyez les coches apparaître une à une. Mon symbole couvre-t-il ce geste ? Mon titre est-il à jour ? L'installation est-elle consignée ? La bande du bas dit l'essentiel : une habilitation ne dit pas je sais tout faire, elle dit je peux faire ceci, ici. Pour vous entraîner à lire et choisir des symboles, le réseau voisin HoCourant est fait pour cela.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Pas d'habilitation, pas d'opération <strong>sur</strong> une installation ni <strong>dans son voisinage</strong> (R. 4544-9).</li>
+      <li>La loi impose, la <strong>norme</strong> donne les modalités ; c'est l'<strong>employeur</strong> qui habilite.</li>
+      <li>Un symbole se lit en trois caractères : <strong>domaine · type · lettre additionnelle</strong>.</li>
+      <li><strong>BS</strong> remplace et raccorde ; <strong>BR</strong> entretient et dépanne ; <strong>BC</strong> consigne pour les autres.</li>
+      <li>Le titre vit : <strong>attestation médicale</strong>, <strong>recyclage</strong>, validité fixée par l'employeur.</li>
+    </ul>
+    <p class="formule">Le réflexe : lire son titre avant d'ouvrir l'armoire.</p>
+    <figure>
+      <img src="svg/bilan-habilitation.svg" alt="À gauche, un exemple de titre d'habilitation : symbole BR, domaine basse tension, ouvrages, limites, délivré par l'employeur, validité fixée par l'employeur. À droite, trois questions cochées l'une après l'autre : mon symbole couvre-t-il ce geste, mon titre est-il à jour, l'installation est-elle consignée. Une bande rappelle : l'habilitation dit je peux faire ceci, ici, pas je sais tout faire.">
+      <figcaption>Trois questions, dans cet ordre, avant chaque ouverture.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un technicien revient d'un stage de préparation à l'habilitation électrique. Qui délivre son habilitation ? Reprenez la chaîne de l'écran trois avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Un technicien revient de son stage. Qui délivre son habilitation ?</h2>
+    <figure class="vignette">
+      <img src="svg/qui-habilite.svg" alt="Vignette de rappel : la chaîne en cinq étapes, avec la quatrième case en orange, l'employeur délivre l'habilitation.">
+      <figcaption>Rappel de l'écran 3 — la case orange.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">L'organisme de formation, en remettant l'attestation de stage</button>
+      <button type="button" data-answer="b">Le médecin du travail, en signant son attestation médicale</button>
+      <button type="button" data-answer="bonne">L'employeur, qui l'a envoyé en formation</button>
+      <button type="button" data-answer="d">Le client, sur le site où il intervient</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'habilitation est délivrée par l'employeur (article R. 4544-10), après avoir vérifié la formation. L'organisme forme, le médecin atteste l'absence de contre-indication, le client n'a aucun rôle : seul le titre de l'employeur habilite."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un titre d'habilitation porte le symbole B, deux, V. Comment le lit-on ? Regardez les trois tuiles de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un titre porte le symbole B2V. Comment se lit-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/lire-symbole.svg" alt="Vignette de rappel : les trois tuiles B, 2 et V et l'explication de chaque caractère.">
+      <figcaption>Rappel de l'écran 4 — un caractère à la fois.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Basse tension, chargé de travaux, au voisinage</button>
+      <button type="button" data-answer="b">Haute tension, exécutant, travaux sous tension</button>
+      <button type="button" data-answer="c">Basse tension, exécutant, travaux sous tension</button>
+      <button type="button" data-answer="d">Basse tension, chargé de consignation, au voisinage</button>
+    </div>
+    <p class="feedback" hidden data-explication="B : basse tension. 2 : chargé de travaux (1 serait exécutant, la consignation s'écrit avec la lettre C). V : voisinage, alors que les travaux sous tension portent la lettre T."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un technicien doit dépanner, en basse tension, le circuit de commande d'un groupe frigorifique : recherche de la panne et remplacement d'un contacteur, hors tension. Quel symbole convient ? Reprenez les six cartes de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Dépanner un circuit de commande en basse tension, contacteur compris : quel symbole ?</h2>
+    <figure class="vignette">
+      <img src="svg/symboles-frigoriste.svg" alt="Vignette de rappel : les six cartes B0, BS, BR, BC, BE et H0.">
+      <figcaption>Rappel de l'écran 5 — les six symboles.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">B0, puisqu'il ne travaille que dans le voisinage</button>
+      <button type="button" data-answer="b">BS, puisque le circuit est hors tension</button>
+      <button type="button" data-answer="c">BC, puisqu'il doit consigner l'installation</button>
+      <button type="button" data-answer="bonne">BR, chargé d'intervention générale</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le dépannage en basse tension relève de BR. B0 ne couvre que l'ordre non électrique ; BS se limite à une liste courte qui ne comprend pas le contacteur ; BC ne fait que consigner pour des tiers, rien d'autre."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Depuis le premier octobre deux mille vingt-cinq, qu'exige le Code du travail pour qu'une habilitation autorisant le voisinage de pièces nues sous tension soit valable ? Reprenez la boucle de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Habilitation avec voisinage de pièces nues sous tension : que faut-il aussi détenir ?</h2>
+    <figure class="vignette">
+      <img src="svg/cycle-habilitation.svg" alt="Vignette de rappel : la boucle formation, attestation médicale, titre, recyclage.">
+      <figcaption>Rappel de l'écran 7 — la boucle du titre.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un avis d'aptitude au titre du suivi individuel renforcé</button>
+      <button type="button" data-answer="bonne">Une attestation d'absence de contre-indication médicale</button>
+      <button type="button" data-answer="c">Un diplôme d'électricien</button>
+      <button type="button" data-answer="d">Un certificat de l'organisme de formation, renouvelé chaque année</button>
+    </div>
+    <p class="feedback" hidden data-explication="Depuis le 1er octobre 2025, l'attestation d'absence de contre-indication médicale remplace le suivi individuel renforcé (article R. 4544-10). Ni un diplôme ni un certificat annuel ne sont exigés à ce titre."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil.
+     Cette station est la CORRESPONDANCE FONDATRICE du réseau :
+     Électrique ⇄ Risques professionnels, par l'habilitation et les EPI. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../elec-consigner/"><strong>Consigner</strong></a> (même sous-ligne) — la mise hors tension que BR fait pour son compte et que BC fait pour les autres.</li>
+    <li><a href="../elec-terre-differentiel/"><strong>Terre &amp; différentiel</strong></a> (même sous-ligne) — protéger les personnes : la règle d'habilitation suppose déjà une installation sûre.</li>
+    <li><a href="../risques-epi/"><strong>Les EPI</strong></a> (sous-ligne Risques professionnels) — la règle d'un côté, le geste protégé de l'autre.</li>
+    <li><a href="../risques-neuf-principes/"><strong>Les 9 principes</strong></a> et <a href="../risques-duerp/"><strong>le document unique</strong></a> (sous-ligne Risques professionnels) — l'habilitation est une mesure de prévention, choisie après l'évaluation du risque électrique.</li>
+    <li><a href="https://inerweb.fr/hocourant/" target="_blank" rel="noopener"><strong>HoCourant</strong></a> (autre réseau inerWeb) — s'entraîner à lire et à choisir des symboles d'habilitation.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     Les narrations de cette station sont nouvelles : aucun MP3 n'est encore
+     fabriqué, la voix du navigateur sert de filet. Fabrication edge-tts à
+     faire pour la branche (collecter-narrations.mjs puis generer-audios-edge-tts.py).
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "slug": "incendie-classer-le-bati",
+  "branche": "Incendie",
+  "titre": "Mission : Quel régime pour chaque partie du bâtiment ?",
+  "client": "Un promoteur qui transforme un ancien entrepôt en bâtiment mixte : agence bancaire au rez-de-chaussée, plateaux de bureaux, logements aux étages.",
+  "situation": "Le promoteur prépare son dossier de permis de construire et vous demande, avant de chiffrer le lot chauffage, ventilation et climatisation, « quelles règles incendie s'appliquent ». Le rez-de-chaussée accueillera des clients, les étages intermédiaires des salariés d'une seule société sans aucun public, et le dernier niveau des logements. Personne n'a encore mesuré à quelle hauteur se trouvera le plancher bas du dernier niveau. Votre responsable veut savoir ce qu'il faut demander au maître d'ouvrage avant d'aller plus loin.",
+  "piece_a_produire": "Une note d'une page au chargé d'affaires : pour chacune des trois parties (agence, bureaux sans public, logements), le régime applicable et le texte à lire ; les deux informations à demander au promoteur (effectif et hauteur du plancher bas du dernier niveau) ; trois conséquences à anticiper pour le lot CVC.",
+  "questions": [
+    { "q": "Une agence bancaire reçoit des clients dans ses locaux. Comment est-elle classée ?", "ecran": 2,
+      "reponse": "C'est un ERP de type W (administrations, banques, bureaux), car elle reçoit du public. Sa catégorie vient de l'effectif, public et personnel compris." },
+    { "q": "Un ERP peut accueillir 650 personnes, public et personnel compris. Quelle est sa catégorie ?", "ecran": 3,
+      "reponse": "La 3e catégorie (de 301 à 700 personnes), qui appartient au 1er groupe." },
+    { "q": "Un immeuble de bureaux a son plancher bas du dernier niveau à 35 m au-dessus du sol le plus haut utilisable par les engins de secours. Est-ce un IGH ?", "ecran": 4,
+      "reponse": "Oui : pour un immeuble qui n'est pas d'habitation, la limite est de 28 m mesurés au plancher bas du dernier niveau. Les 50 m ne valent que pour l'habitation." },
+    { "q": "Un plateau de bureaux de 400 m², sans public, dans un bâtiment ordinaire : le désenfumage est-il obligatoire ?", "ecran": 6,
+      "reponse": "Oui : un local de plus de 300 m² en rez-de-chaussée ou en étage doit comporter un dispositif de désenfumage naturel ou mécanique (Code du travail, R. 4216-13, abrogé à compter du 1er janvier 2027 pour les opérations dont la demande d'urbanisme est déposée à partir de cette date : décret n° 2025-1100, art. 2 et 5)." }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque bâtiment au régime dont il relève, puis dites en une phrase ce qui décide.",
+    "items": [
+      "Une agence de banque ouverte à la clientèle",
+      "Un plateau de bureaux où ne travaillent que des salariés",
+      "Un immeuble de bureaux dont le plancher bas du dernier niveau est à plus de 28 m",
+      "Un immeuble d'habitation dont le plancher bas du logement le plus haut est à plus de 50 m"
+    ],
+    "corrige": "Agence : ERP de type W (elle reçoit du public) ; plateau de salariés : Code du travail ; immeuble de bureaux à plus de 28 m : IGH ; immeuble d'habitation à plus de 50 m : IGH (la limite est de 50 m pour l'habitation)."
+  },
+  "badge": "Bon classement",
+  "duree_min": 25,
+  "referentiel": { "tecvc": ["CP7", "CP1"], "attestation_2025": [], "justification": "CP7 : désenfumage, compartimentage et obligations d'un bâtiment tertiaire dépendent de son classement ; CP1 : un plan d'implantation respecte les secteurs, compartiments et dégagements qu'impose le classement." }
+}

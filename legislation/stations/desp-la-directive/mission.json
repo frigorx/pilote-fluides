@@ -1,0 +1,36 @@
+{
+  "slug": "desp-la-directive",
+  "branche": "DESP (équipements sous pression)",
+  "titre": "Mission : « Seule la bouteille est concernée, non ? »",
+  "client": "Le directeur technique d'une enseigne de magasins alimentaires, qui fait rénover la salle des machines frigorifiques de l'un de ses magasins.",
+  "situation": "La rénovation prévoit le remplacement d'un réservoir de liquide et d'un séparateur d'huile. Le directeur technique pense que la directive sur les équipements sous pression ne concerne que la bouteille de fluide frigorigène, et que la plaque signalétique ne sert qu'à l'inventaire. Votre responsable vous demande de rédiger la note qui remet les choses à plat : pourquoi une réglementation propre existe, quels équipements du circuit y entrent, et à quoi sert la pression maximale admissible (PS) gravée sur la plaque.",
+  "piece_a_produire": "Une note d'une page : un tableau « équipement du circuit / dans le champ de la directive ? / pourquoi » sur cinq lignes (bouteille, réservoir, séparateur d'huile, condenseur côté haute pression, tuyauterie), et trois phrases sur la PS.",
+  "questions": [
+    { "q": "Pourquoi une réglementation propre aux équipements sous pression, et non le simple danger du fluide ?", "ecran": 1,
+      "reponse": "À cause de l'énergie mécanique stockée dans un volume fermé sous pression : si l'enveloppe cède, elle se libère d'un coup (projection de fragments, onde de choc). C'est cette énergie, pas le fluide lui-même, qui justifie la réglementation." },
+    { "q": "Quelles familles d'équipements le champ de la directive couvre-t-il ?", "ecran": 2,
+      "reponse": "Les récipients, les tuyauteries, les accessoires sous pression et les accessoires de sécurité, ainsi que les ensembles quand plusieurs équipements forment un tout fonctionnel." },
+    { "q": "Que désigne la PS, qui la fixe et où la lit-on ?", "ecran": 5,
+      "reponse": "La pression maximale admissible que l'équipement est conçu pour supporter. Elle est fixée par le fabricant et figure sur la plaque signalétique de l'équipement." },
+    { "q": "Une fois connue, à quoi sert la PS ?", "ecran": 6,
+      "reponse": "Elle sert de référence pour le classement en catégorie de l'équipement (avec le volume ou le diamètre et la dangerosité du fluide) et pour le tarage des accessoires de sécurité, qui doivent intervenir avant que la pression ne dépasse la PS." }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Répondez vrai ou faux et corrigez les phrases fausses (5 minutes).",
+    "items": [
+      "La tuyauterie frigorifique qui relie les équipements relève de la catégorie « tuyauterie ».",
+      "Seule la bouteille de fluide frigorigène est concernée par la directive.",
+      "Le seuil d'entrée dans le champ se lit dans le texte en vigueur, en croisant la pression avec le volume (ou le diamètre pour une tuyauterie).",
+      "Marquage CE, déclaration de conformité, notice et accessoires de sécurité sont facultatifs."
+    ],
+    "corrige": "1 vrai ; 2 faux (réservoir, séparateur d'huile, condenseur côté haute pression et tuyauterie sont aussi concernés au-delà du seuil) ; 3 vrai (on retient le principe, la plaque et le texte en vigueur tranchent cas par cas) ; 4 faux (ils accompagnent l'équipement conforme, ils ne sont pas optionnels)."
+  },
+  "badge": "Plaque lue",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": ["11.03"],
+    "justification": "Hors REAC pour le TP TECVC : culture réglementaire du technicien et du chargé d'affaires. Côté attestation d'aptitude 2025, le code 11.03 (réglementations et normes de sécurité pour les fluides nécessitant une pression de fonctionnement plus élevée) rejoint le thème."
+  }
+}

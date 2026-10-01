@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-labelledby="t-cpf" aria-describedby="d-cpf" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cpf">Le compte personnel de formation se remplit chaque année et vous suit</title>
+  <desc id="d-cpf">À gauche, un réservoir gradué par années : quatre couches s'empilent, une par année de travail,
+    sous un trait tireté qui marque le plafond du compte. À droite, trois cartes rappellent que le compte est
+    attaché à la personne : il vous suit quand vous changez d'employeur, il reste utilisable au chômage sans être
+    alimenté, et il ne peut pas être cédé à un proche. L'animation empile les couches une à une puis fait
+    apparaître les trois cartes ; l'image fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .lbl  { font-size:18px; fill:#10233c; }
+    .lblb { font-size:18px; fill:#10233c; font-weight:bold; }
+    .an   { font-size:17px; fill:#5a6b7d; }
+    .ok   { font-size:18px; fill:#1e7e54; font-weight:bold; }
+  </style>
+
+  <text class="ttl" x="450" y="34" text-anchor="middle">Un compte attaché à la personne, pas au contrat</text>
+
+  <!-- Réservoir -->
+  <rect x="100" y="110" width="160" height="240" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <!-- Couches (une par année) -->
+  <g>
+    <rect x="104" y="294" width="152" height="52" fill="#9d174d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.12;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="104" y="238" width="152" height="52" fill="#c2557f"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.22;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="104" y="182" width="152" height="52" fill="#9d174d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.26;0.32;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="104" y="126" width="152" height="52" fill="#c2557f"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.42;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- Plafond -->
+  <line x1="80" y1="98" x2="280" y2="98" stroke="#b06a00" stroke-width="4" stroke-dasharray="14 8"/>
+  <text class="lblb" x="292" y="104" fill="#b06a00" style="fill:#b06a00">plafond du compte</text>
+  <!-- Graduations -->
+  <text class="an" x="88" y="326" text-anchor="end">an 1</text>
+  <text class="an" x="88" y="270" text-anchor="end">an 2</text>
+  <text class="an" x="88" y="214" text-anchor="end">an 3</text>
+  <text class="an" x="88" y="158" text-anchor="end">an 4</text>
+  <!-- Alimentation annuelle -->
+  <path d="M 296 330 V 248" stroke="#1b3a63" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <polygon points="284,254 296,232 308,254" fill="#1b3a63"/>
+  <text class="lbl" x="322" y="292">alimenté chaque</text>
+  <text class="lbl" x="322" y="314">année de travail</text>
+
+  <!-- Trois cartes -->
+  <g>
+    <rect x="500" y="84" width="380" height="82" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="ok" x="520" y="112">Vous changez d'employeur</text>
+    <text class="lbl" x="520" y="140">le compte vous suit, intact</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.62;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="500" y="186" width="380" height="82" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
+    <text class="ok" x="520" y="214">Vous perdez votre emploi</text>
+    <text class="lbl" x="520" y="242">utilisable, mais plus alimenté</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.73;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="500" y="288" width="380" height="82" rx="14" fill="#fbe9e7" stroke="#c0392b" stroke-width="2" stroke-dasharray="12 7"/>
+    <text class="lblb" x="520" y="316" style="fill:#c0392b">Un proche demande le compte</text>
+    <text class="lbl" x="520" y="344">impossible : il ne se cède pas</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.77;0.84;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <text class="lbl" x="450" y="410" text-anchor="middle">On le consulte sur moncompteformation.gouv.fr, avec son numéro de sécurité sociale.</text>
+</svg>

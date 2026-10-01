@@ -1,0 +1,50 @@
+{
+  "slug": "dechets-rep-batiment",
+  "branche": "Déchets",
+  "titre": "Mission : Où vont les chutes d'isolant ?",
+  "client": "Le conducteur de travaux d'un chantier de réhabilitation de bureaux, où Clim'Études Sud pose les réseaux de climatisation.",
+  "situation": "Sur le chantier s'accumulent des chutes d'isolant de tuyauterie et de gaines. Un premier dépôt a été refusé par un point de reprise parce que tout était mélangé. Un compagnon propose alors de laisser les chutes sur le terrain vague voisin : « c'est plus simple ». Le conducteur de travaux veut une consigne claire pour toute l'équipe avant la prochaine évacuation.",
+  "piece_a_produire": "Une fiche de consigne d'une demi-page affichable au chantier : qui finance, qui organise, où déposer, dans quel état, et pourquoi on ne laisse rien sur le terrain voisin.",
+  "questions": [
+    {
+      "q": "Dans le principe de la responsabilité élargie du producteur (REP), qui porte le coût et l'organisation de la fin de vie d'un produit ?",
+      "ecran": 1,
+      "reponse": "Celui qui a mis le produit sur le marché (fabricant ou distributeur), et non celui qui le jette."
+    },
+    {
+      "q": "Que fait l'éco-organisme entre le metteur sur le marché et le terrain ?",
+      "ecran": 2,
+      "reponse": "Il reçoit l'éco-contribution du metteur sur le marché et organise à sa place la collecte et le traitement des déchets."
+    },
+    {
+      "q": "Pour un frigoriste, parmi le cuivre de tuyauterie, le fluide récupéré et l'isolant de tuyauterie, lequel relève de la REP bâtiment ?",
+      "ecran": 4,
+      "reponse": "L'isolant de tuyauterie (et les gaines, supports) : matériaux périphériques. Le cuivre et les fluides suivent leurs propres filières."
+    },
+    {
+      "q": "À quelles conditions l'accès à un point de reprise est-il en général gratuit pour un professionnel ?",
+      "ecran": 6,
+      "reponse": "Le déchet doit être trié par nature et correspondre aux matériaux couverts par la filière. Mélangé ou hors périmètre, il peut être refusé."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque situation de terrain à la bonne réponse.",
+    "items": [
+      "A. Je ne sais pas où déposer mes chutes d'isolant",
+      "B. Le point de reprise a refusé mon dépôt",
+      "C. Je laisse les chutes sur le chantier voisin",
+      "1. Vérifier le tri : mélangé ou hors périmètre, il peut être refusé",
+      "2. Chercher un point de reprise du dispositif REP bâtiment",
+      "3. C'est un dépôt sauvage, ce que le dispositif cherche à éviter"
+    ],
+    "corrige": "A-2, B-1, C-3."
+  },
+  "badge": "Point de reprise",
+  "duree_min": 20,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. La REP bâtiment concerne les matériaux périphériques du chantier, pas le cœur du métier du frigoriste."
+  }
+}

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-ch" aria-describedby="d-ch" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ch">Même courant, deux sections : la petite chauffe, la grande reste tiède</title>
+  <desc id="d-ch">Deux conducteurs parcourus par le même courant. En haut, un conducteur de petite section,
+    très fin : il rougit et des vaguelettes de chaleur montent au-dessus de lui ; à droite, la mention
+    « chauffe beaucoup, l'isolant vieillit vite ». En bas, un conducteur de grande section, épais : il reste
+    bleu, à droite la mention « chauffe peu, l'isolant tient ». Une bande résume : moins de matière pour le
+    même courant, plus d'échauffement, et l'isolant durcit puis lâche lentement. L'animation fait circuler
+    des points de courant puis chauffer le conducteur fin ; l'image fixe montre le résultat final.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .chaud { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#c0392b; }
+    .tiede { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#047857; }
+    .band { font-size:16px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Le même courant, deux sections</text>
+
+  <!-- Rangée 1 : petite section -->
+  <text class="qui" x="20" y="100">Petite section</text>
+  <text class="mut" x="20" y="124">peu de cuivre</text>
+  <g fill="none" stroke="#e8914a" stroke-width="3" stroke-linecap="round">
+    <path d="M300,84 q6,-8 0,-16 q-6,-8 0,-16"/>
+    <path d="M430,84 q6,-8 0,-16 q-6,-8 0,-16"/>
+    <path d="M560,84 q6,-8 0,-16 q-6,-8 0,-16"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.45;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <rect x="230" y="100" width="400" height="10" rx="5" fill="#c0392b">
+    <animate attributeName="fill" values="#5a6b7d;#5a6b7d;#e8914a;#c0392b;#c0392b" keyTimes="0;0.10;0.30;0.45;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <text class="chaud" x="660" y="100">Chauffe beaucoup</text>
+    <text class="mut" x="660" y="124">l'isolant vieillit vite</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.45;0.55;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Rangée 2 : grande section -->
+  <text class="qui" x="20" y="212">Grande section</text>
+  <text class="mut" x="20" y="236">beaucoup de cuivre</text>
+  <rect x="230" y="200" width="400" height="34" rx="8" fill="#2f5689"/>
+  <g>
+    <text class="tiede" x="660" y="212">Chauffe peu</text>
+    <text class="mut" x="660" y="236">l'isolant tient</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.45;0.55;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Points de courant (décor animé : invisibles à l'arrêt) -->
+  <g fill="#fffdf8" stroke="#e8914a" stroke-width="2" opacity="0">
+    <circle cx="240" cy="105" r="5"><animate attributeName="cx" values="240;240;620;620" keyTimes="0;0.02;0.28;1" dur="12s" repeatCount="indefinite"/></circle>
+    <circle cx="240" cy="217" r="5"><animate attributeName="cx" values="240;240;620;620" keyTimes="0;0.02;0.28;1" dur="12s" repeatCount="indefinite"/></circle>
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.27;0.29;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <text class="mut" x="430" y="172" text-anchor="middle">le même courant traverse les deux</text>
+
+  <rect x="20" y="262" width="860" height="62" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="288" text-anchor="middle" font-weight="bold">Moins de matière pour le même courant : plus d'échauffement.</text>
+  <text class="band" x="450" y="311" text-anchor="middle">L'isolant durcit, puis lâche : lentement, sans prévenir.</text>
+</svg>

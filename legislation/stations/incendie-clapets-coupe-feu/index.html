@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Clapets coupe-feu — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la gaine qui traverse une paroi coupe-feu, le clapet qui rétablit le degré de la paroi, le déclenchement thermique et la télécommande par le SSI, la pose, l'accès et la vérification annuelle.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/incendie-clapets-coupe-feu/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Incendie (#b91c1c).
+     « Clapets coupe-feu » — traversées, DAS. Niveau BTS.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les narrations de cette station ne sont pas encore fabriquées en MP3 :
+     la voix du navigateur sert de filet.
+
+     Fond rédigé le 30/09/2026 (voir FOND.md). Sources : arrêté du 25 juin 1980
+     (ERP), articles CH 32, CH 58, CO 30. Aucune valeur non sourcée : la seule
+     valeur chiffrée est le seuil de 70 °C de l'article CH 32 § 6.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Incendie · niveau BTS</p>
+  <h1>Clapets coupe-feu — traversées et dispositifs actionnés de sécurité</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-incendie.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez expliquer pourquoi une gaine qui traverse une paroi coupe-feu ouvre un chemin au feu, ce que fait le <strong>clapet coupe-feu</strong> pour rétablir le degré de la paroi, comment il se déclenche (fusible thermique ou commande à distance par le SSI), ce que veulent dire <strong>position d'attente</strong>, <strong>position de sécurité</strong> et <strong>réarmement</strong>, et ce que vous prévoyez au plan : pose au droit de la paroi, calfeutrement, accès, vérification annuelle.</p>
+    <p><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — compétences <strong>CP1</strong> (plans d'implantation : repérer les traversées de parois et prévoir l'accès aux clapets) et <strong>CP7</strong> (ventilation tertiaire : réseaux aérauliques d'un établissement recevant du public).</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la coupe. À gauche, un local où deux foyers brûlent. Au milieu, la paroi coupe-feu, hachurée : elle a été construite pour retenir l'incendie d'un côté pendant un temps donné. À droite, le local voisin. Et une gaine de ventilation traverse la paroi de part en part. Suivez la flèche rouge : elle court à l'intérieur de la gaine, franchit la paroi, et ressort de l'autre côté, avec ses volutes de fumée. La gaine est devenue un couloir pour les gaz chauds. Le trou fait pour elle a ruiné le travail de la paroi.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Une gaine perce la paroi : le chemin du feu</h2>
+    <p>Une paroi coupe-feu est construite pour retenir un incendie d'un côté pendant une durée donnée : c'est son <strong>degré coupe-feu</strong>. Or un bâtiment est traversé de gaines : ventilation, désenfumage, climatisation. Chaque fois qu'une gaine traverse une paroi, elle la <strong>perce</strong>.</p>
+    <p>Sans précaution, la gaine devient un couloir : gaz chauds et fumées la suivent, franchissent la paroi et ressortent dans un local où personne n'est encore alerté. Dans un établissement recevant du public (ERP), le règlement demande que les circuits aérauliques soient réalisés de manière à <strong>limiter la propagation du feu</strong> à l'intérieur de l'établissement (article CH 32, § 1).</p>
+    <p>Le technicien d'études qui trace une gaine trace donc, du même trait, une <strong>traversée de paroi</strong> à traiter.</p>
+    <figure>
+      <img src="svg/gaine-traverse-la-paroi.svg" alt="Coupe schématique : à gauche un local sinistré avec deux flammes, au milieu une paroi coupe-feu hachurée, à droite un local voisin. Une gaine horizontale traverse la paroi de part en part ; une flèche rouge suit l'intérieur de la gaine du local sinistré au local voisin, où sortent des volutes de fumée grise. Deux phrases en dessous : le feu suit la gaine et ressort de l'autre côté ; le trou de la gaine annule le degré coupe-feu de la paroi. L'animation trace la flèche puis fait apparaître la fumée.">
+      <figcaption>Regardez la flèche rouge : elle est à l'intérieur de la gaine, et elle traverse la paroi.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Trois vignettes, de gauche à droite. Première vignette : une paroi pleine, un petit feu à sa gauche, une coche verte. Le feu reste d'un côté, la paroi tient son degré coupe-feu. Deuxième vignette : la même paroi, percée par une gaine. La flèche rouge la traverse de part en part, et la croix rouge dit le résultat : le degré est perdu. Troisième vignette : on a posé un clapet dans la gaine, au niveau de la paroi. Sa lame est fermée, la flèche s'arrête devant elle. Le clapet a le même degré coupe-feu que la paroi : il lui rend ce que la gaine lui avait pris.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le clapet coupe-feu rétablit le degré de la paroi</h2>
+    <p>Le <strong>clapet coupe-feu</strong> est un obturateur placé dans la gaine, au niveau de la paroi. Ouvert, il laisse passer l'air. Fermé, il barre la gaine et <strong>rétablit la résistance au feu de la paroi</strong>.</p>
+    <p>La règle, dans un ERP (article CH 32, § 5) : les conduits aérauliques sont, <strong>quelle que soit leur section</strong>, équipés d'un clapet coupe-feu, ou d'un clapet-bouche terminal, <strong>d'un degré égal au degré coupe-feu des parois franchies</strong>. Le clapet ne fait pas mieux que la paroi, il fait aussi bien : c'est ce qui referme le trou.</p>
+    <p>Le <em>clapet-bouche terminal</em> est le clapet placé à l'extrémité du conduit, au niveau de la bouche.</p>
+    <figure>
+      <img src="svg/clapet-retablit-le-degre.svg" alt="Trois vignettes côte à côte, chacune avec un petit feu à gauche d'une paroi hachurée. Première : paroi pleine, coche verte, le feu reste d'un côté. Deuxième : la paroi est percée par une gaine et une flèche rouge la traverse, croix rouge, le degré est perdu. Troisième : la gaine porte un clapet posé dans la paroi, lame fermée, la flèche rouge s'arrête devant lui, coche verte, le degré est rétabli. Un encadré : le clapet a le même degré coupe-feu que la paroi qu'il traverse.">
+      <figcaption>De gauche à droite : la paroi pleine, la paroi percée, la paroi avec son clapet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Suivez la gaine de gauche à droite. La flèche rouge, ce sont les gaz chauds d'un incendie. À droite, le thermomètre : le mercure monte jusqu'au repère de soixante-dix degrés. Au niveau de la paroi, la lame est retenue ouverte par un petit fusible orange. Quand la température atteint le repère, le fusible fond : vous voyez la goutte tomber. Libérée, la lame bascule et barre la gaine, et les gaz chauds s'arrêtent devant elle. Dans ce type de clapet, aucun ordre extérieur n'est nécessaire : c'est la chaleur elle-même qui commande la fermeture.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le déclenchement thermique : le fusible et la lame</h2>
+    <p>Sur un clapet du type <strong>auto-commandé</strong>, c'est la chaleur qui déclenche. La lame est retenue ouverte par un élément sensible à la température, en pratique le plus souvent un <strong>fusible</strong>. Quand il cède, la lame est libérée et vient barrer la gaine.</p>
+    <p>Le règlement fixe le seuil (article CH 32, § 6) : le mécanisme de déclenchement thermique d'un clapet coupe-feu dispose d'un <strong>capteur de température taré à 70 °C</strong>. Les clapets conformes à la norme NF S 61-937-5 (mars 2012) sont présumés satisfaire ces exigences.</p>
+    <p>Tant que la gaine reste plus fraîche que ce seuil, rien ne bouge : l'air circule. Passé le seuil, la fermeture d'un clapet auto-commandé ne dépend ni du courant électrique ni d'un ordre extérieur.</p>
+    <figure>
+      <img src="svg/fusible-et-lame.svg" alt="Coupe d'une gaine horizontale qui traverse une paroi hachurée. Au niveau de la paroi, une lame articulée en haut de la gaine est retenue ouverte par un petit fusible orange. Une flèche rouge, les gaz chauds, arrive de la gauche. À droite, un thermomètre dont le mercure monte jusqu'au repère 70 °C. Quand il l'atteint, le fusible fond, une goutte orange tombe, la lame bascule à la verticale et la flèche s'arrête devant elle. L'animation montre l'attente puis le déclenchement ; l'image fixe montre l'état final.">
+      <figcaption>Regardez le mercure monter jusqu'à 70 °C : c'est là que le fusible cède.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Ici, l'ordre vient de l'extérieur. En haut à gauche, un détecteur de fumée. Quand il détecte, il envoie une alarme, la flèche, vers le boîtier bleu : le centralisateur de mise en sécurité incendie, abrégé CMSI. De là part la ligne orange, qui descend jusqu'au petit boîtier de commande posé sur la gaine. Regardez la lame : elle était ouverte, en position d'attente, et elle se ferme quand l'ordre arrive. Le clapet est ici un dispositif actionné de sécurité, un DAS, piloté par le système de sécurité incendie. L'encadré du bas donne la règle qui s'applique aux parois de compartimentage.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le clapet, dispositif actionné de sécurité commandé par le SSI</h2>
+    <p>Le règlement définit le clapet (article CO 30, § 2) comme un <strong>dispositif actionné de sécurité (DAS)</strong> : un dispositif d'obturation destiné au <strong>compartimentage</strong> dans un <strong>système de sécurité incendie (SSI)</strong>. Il est <strong>ouvert en position d'attente</strong>. Il peut être du type <strong>télécommandé</strong> ou <strong>auto-commandé</strong>, selon l'application.</p>
+    <p>Un clapet télécommandé se ferme sur ordre du <strong>centralisateur de mise en sécurité incendie (CMSI)</strong>. Article CH 32, § 6 : lorsqu'un SSI de catégorie A ou B est exigé, <strong>seuls les clapets télécommandés</strong> sont autorisés au droit des parois délimitant les zones à fonction de compartimentage, et ils sont télécommandés depuis le CMSI.</p>
+    <p>La station <em>Le SSI</em> détaille la détection, le CMSI et les catégories.</p>
+    <figure>
+      <img src="svg/ssi-commande-le-das.svg" alt="Schéma de principe. En haut à gauche un détecteur de fumée, relié par une flèche au boîtier bleu CMSI, le centralisateur. Du CMSI part une ligne orange qui va vers la droite puis descend jusqu'à un petit boîtier de commande posé sur une gaine. Dans la gaine, une lame ouverte en position d'attente qui se ferme quand l'ordre arrive. En bas, un encadré : si un SSI de catégorie A ou B est exigé, seuls les clapets télécommandés depuis le CMSI sont autorisés au droit du compartimentage. L'animation montre l'alarme, le trajet de l'ordre puis la fermeture.">
+      <figcaption>L'ordre suit la ligne orange, du CMSI jusqu'à la commande du clapet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Trois vignettes racontent le cycle d'un clapet. La première, attente : la lame est ouverte, posée le long de la gaine, retenue par le fusible orange, et l'air circule. La deuxième, sécurité : après le déclenchement, la lame est fermée en travers, le fusible a disparu, il ne reste qu'une goutte au fond. Le feu est arrêté. La troisième, réarmé : l'intervenant a remis la lame en position d'attente, avec un fusible neuf. La flèche rouge va de l'attente à la sécurité : c'est le déclenchement. La flèche orange revient : c'est le réarmement, un geste de maintenance qu'il faut prévoir.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Attente, sécurité, réarmement</h2>
+    <p>Un clapet a deux positions, et un geste pour passer de l'une à l'autre :</p>
+    <ul>
+      <li>la <strong>position d'attente</strong> : celle du fonctionnement normal, clapet <strong>ouvert</strong> (article CO 30, § 2) ;</li>
+      <li>la <strong>position de sécurité</strong> : celle qu'il prend au déclenchement, lame <strong>fermée</strong> ;</li>
+      <li>le <strong>réarmement</strong> : le geste qui le ramène de la sécurité à l'attente. Après un déclenchement thermique, l'élément qui a cédé doit être remplacé ; la marche à suivre est celle de la notice du fabricant.</li>
+    </ul>
+    <p>Selon le modèle, un contact peut renvoyer au SSI la position réelle du clapet, ouvert ou fermé : c'est le <strong>contrôle de position</strong>. Ses exigences précises relèvent des normes sur les DAS, dont on ne cite ici que l'objet.</p>
+    <figure>
+      <img src="svg/trois-positions.svg" alt="Trois vignettes côte à côte, chacune avec une gaine qui traverse une paroi hachurée et sa lame. Première, attente : la lame est ouverte, le long du haut de la gaine, retenue par un fusible orange ; l'air circule. Deuxième, sécurité : la lame est fermée en travers de la gaine, le fusible a disparu, une goutte orange est tombée au fond, la flèche rouge s'arrête devant la lame. Troisième, réarmé : la lame est ouverte de nouveau, avec un fusible neuf. Une flèche rouge courbe, déclenchement, va de la première à la deuxième ; une flèche orange courbe, réarmement, va de la deuxième à la troisième. L'animation éclaire les vignettes tour à tour.">
+      <figcaption>Deux flèches, deux gestes : le déclenchement (rouge) et le réarmement (orange).</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Six cartes, six sortes de parois où le règlement des établissements recevant du public exige un clapet. En haut : les parois des zones de mise en sécurité qui font du compartimentage ; l'isolement entre niveaux, avec le plancher épais et la gaine verticale ; les secteurs et les compartiments, avec leurs deux parois. En bas : les locaux à risques importants, symbolisés par la flamme ; les locaux à sommeil, avec le lit ; et les espaces d'attente sécurisés, le personnage dans le local vert. Sur les pictogrammes, le petit carré orange est le clapet. Dans chaque cas, la gaine qui traverse doit être protégée.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Où le règlement exige un clapet</h2>
+    <p>Article CH 32, § 5 : les clapets rétablissent la résistance au feu des parois suivantes :</p>
+    <ul>
+      <li>les parois délimitant les <strong>zones de mise en sécurité</strong> qui ont une fonction de compartimentage ;</li>
+      <li>les parois d'<strong>isolement entre niveaux</strong> ;</li>
+      <li>les parois délimitant les <strong>secteurs et compartiments</strong> ;</li>
+      <li>les parois des <strong>locaux à risques importants</strong> ;</li>
+      <li>les parois des <strong>locaux à sommeil</strong> ;</li>
+      <li>les parois délimitant les <strong>espaces d'attente sécurisés</strong>.</li>
+    </ul>
+    <p>Et si la gaine traverse un <strong>bâtiment tiers</strong>, elle doit présenter, quelle que soit sa section, un coupe-feu de traversée équivalent à celui des parois franchies (§ 4). Cette station suit le règlement des ERP ; l'habitation et les lieux de travail ont leurs propres textes (voir <em>Classer le bâti</em>).</p>
+    <figure>
+      <img src="svg/six-parois.svg" alt="Six cartes en deux rangées de trois, chacune avec un pictogramme et un intitulé : zones de mise en sécurité avec compartimentage ; isolement entre niveaux ; secteurs et compartiments ; locaux à risques importants, avec une flamme ; locaux à sommeil, avec un lit ; espaces d'attente sécurisés, avec un personnage dans un local à contour vert. Sur les pictogrammes de traversée, un petit carré orange représente le clapet.">
+      <figcaption>Chaque carte est un endroit où une gaine qui traverse doit porter un clapet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Voici une coupe de la pose. La paroi hachurée, la gaine qui la traverse, et le corps du clapet, en bleu clair, placé au droit de la paroi. Regardez les deux bandes orange, en haut et en bas du clapet : c'est le calfeutrement. Le percement est toujours plus grand que la gaine, et ce vide doit être rebouché avec un matériau qui rend à la paroi sa résistance au feu. À gauche, la trappe d'accès : sans elle, on ne peut pas atteindre le mécanisme, et il doit rester accessible. Enfin, l'encadré : le degré du clapet n'est valable que posé comme dans le procès-verbal d'essai.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">La pose : au droit de la paroi, calfeutrée, accessible</h2>
+    <ul>
+      <li><strong>Où le placer</strong> (CH 32, § 5) : si le volume limité par la paroi est desservi par le conduit, le clapet est placé au droit de la paroi traversée, ou au droit de la paroi qui assure le coupe-feu de traversée du conduit. Si le volume n'est pas desservi, le clapet n'est pas exigible quand le conduit, avec sa gaine éventuelle, présente un coupe-feu de traversée équivalent à celui des parois franchies.</li>
+      <li><strong>Calfeutrer</strong> (CH 32, § 7) : toutes les trémies réservées et tous les percements pour le passage des conduits sont rebouchés avec un matériau qui reconstitue la résistance au feu de l'élément traversé.</li>
+      <li><strong>Laisser accessible</strong> (CH 32, § 6) : le mécanisme de fonctionnement du clapet doit être accessible. Sur le plan, cela veut dire une trappe d'accès, et un faux plafond qu'on peut ouvrir.</li>
+      <li><strong>Poser comme testé</strong> : le degré d'un clapet est établi par un essai de résistance au feu, consigné dans un <strong>procès-verbal (PV)</strong> de classement. Il vaut pour la pose décrite dans ce PV. Les méthodes d'essai et de classement relèvent de normes européennes payantes (EN 1366-2, EN 13501-3, et la norme produit EN 15650) : on n'en cite ici que l'objet.</li>
+    </ul>
+    <figure>
+      <img src="svg/pose-au-droit-de-la-paroi.svg" alt="Coupe d'une paroi coupe-feu hachurée verticale, traversée par une gaine horizontale. Au niveau de la paroi, le corps du clapet, un boîtier bleu clair plus long que la paroi, avec sa lame ouverte. Entre le clapet et le bord du percement, deux bandes orange, en haut et en bas : le calfeutrement. À gauche du clapet, sur le dessus de la gaine, une trappe d'accès fermée par deux vis. Un encadré en bas : le degré annoncé vaut pour la pose décrite dans le procès-verbal d'essai.">
+      <figcaption>Les bandes orange sont le calfeutrement ; la trappe, à gauche, donne accès au mécanisme.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient dans cette liste de cinq cases cochées. Chaque année, on vérifie que le clapet se ferme à l'essai, qu'il se remet en position d'attente, que son mécanisme est accessible, que la trappe est libre et que le calfeutrement est intact. À droite, le calendrier : c'est une vérification périodique, tous les ans, prévue par le règlement des établissements recevant du public. En bas, le réflexe du technicien d'études : repérer chaque clapet au plan, prévoir son accès, et inscrire sa vérification dans le suivi de l'exploitant.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Contrôler chaque année, et le réflexe</h2>
+    <ul>
+      <li>Une gaine qui traverse une paroi coupe-feu la perce ; le <strong>clapet rétablit le degré</strong>, égal à celui de la paroi.</li>
+      <li>Déclenchement thermique : capteur <strong>taré à 70 °C</strong>. Avec un SSI de catégorie A ou B, au compartimentage : clapets <strong>télécommandés</strong> depuis le CMSI.</li>
+      <li>Ouvert en <strong>attente</strong>, fermé en <strong>sécurité</strong> ; le <strong>réarmement</strong> est un geste à prévoir.</li>
+      <li>Pose <strong>au droit de la paroi</strong>, <strong>calfeutrée</strong>, conforme au procès-verbal d'essai.</li>
+      <li>Mécanisme <strong>accessible</strong> ; fonctionnement des clapets vérifié <strong>tous les ans</strong> (article CH 58, § 2).</li>
+    </ul>
+    <p class="formule">Le réflexe : sur chaque plan, une traversée de paroi = un clapet, un repère, un accès.</p>
+    <figure>
+      <img src="svg/verification-annuelle.svg" alt="À gauche, une liste de cinq points cochés en vert : le clapet se ferme à l'essai, il se remet en position d'attente, le mécanisme est accessible, la trappe d'accès est libre, le calfeutrement est intact. À droite, un calendrier avec une case orange et la mention tous les ans, vérification périodique, règlement ERP, article CH 58. En bas, le réflexe du technicien d'études : repérer chaque clapet au plan, le laisser accessible, prévoir sa vérification chaque année. L'animation coche les cinq points un par un.">
+      <figcaption>Cinq points à cocher, une fois par an, pour chaque clapet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide question" id="q1" data-narration="Première question. Dans un établissement recevant du public, une gaine traverse une paroi coupe-feu. Quel degré coupe-feu doit avoir le clapet posé à cet endroit ? Reprenez les trois vignettes de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Quel degré coupe-feu pour le clapet d'une traversée de paroi ?</h2>
+    <figure class="vignette">
+      <img src="svg/clapet-retablit-le-degre.svg" alt="Vignette de rappel : la paroi pleine, la paroi percée par une gaine, et la paroi avec son clapet.">
+      <figcaption>Rappel de l'écran 2 — la paroi pleine, percée, puis avec son clapet.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un degré inférieur, puisqu'il ne fait que laisser passer l'air</button>
+      <button type="button" data-answer="b">Le degré que choisit librement le fabricant du clapet</button>
+      <button type="button" data-answer="bonne">Un degré égal à celui de la paroi qu'il traverse</button>
+      <button type="button" data-answer="d">Un degré supérieur, pour compenser le trou de la gaine</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'article CH 32, § 5 demande un clapet d'un degré égal au degré coupe-feu des parois franchies. Avec un degré moindre, la paroi perdrait son degré à l'endroit du trou."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. À quelle température est taré le capteur du mécanisme de déclenchement thermique d'un clapet coupe-feu, dans un établissement recevant du public ? Regardez le thermomètre de l'écran trois si besoin.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Le capteur du déclencheur thermique est taré à…</h2>
+    <figure class="vignette">
+      <img src="svg/fusible-et-lame.svg" alt="Vignette de rappel : la gaine, la lame retenue par son fusible, et le thermomètre dont le mercure monte jusqu'au repère 70 °C.">
+      <figcaption>Rappel de l'écran 3 — le mercure monte jusqu'au repère.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">120 °C</button>
+      <button type="button" data-answer="b">50 °C</button>
+      <button type="button" data-answer="c">90 °C</button>
+      <button type="button" data-answer="bonne">70 °C</button>
+    </div>
+    <p class="feedback" hidden data-explication="Article CH 32, § 6 : le mécanisme de déclenchement thermique d'un clapet coupe-feu dispose d'un capteur de température taré à 70 °C."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un système de sécurité incendie de catégorie A est exigé. Au droit d'une paroi qui fait du compartimentage, quels clapets sont autorisés ? Souvenez-vous de l'encadré rouge de l'écran quatre.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">SSI de catégorie A exigé : quels clapets au droit du compartimentage ?</h2>
+    <figure class="vignette">
+      <img src="svg/ssi-commande-le-das.svg" alt="Vignette de rappel : le détecteur, le CMSI, la ligne orange qui va jusqu'à la commande du clapet, et l'encadré sur la catégorie A ou B.">
+      <figcaption>Rappel de l'écran 4 — l'ordre part du CMSI.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Au choix : télécommandés, ou à fusible seul</button>
+      <button type="button" data-answer="bonne">Seuls les clapets télécommandés depuis le CMSI</button>
+      <button type="button" data-answer="c">Seulement des clapets à fusible : ils ne dépendent d'aucun courant</button>
+      <button type="button" data-answer="d">Aucun : le SSI ferme les portes, pas les gaines</button>
+    </div>
+    <p class="feedback" hidden data-explication="Article CH 32, § 6 : avec un SSI de catégorie A ou B exigé, seuls les clapets télécommandés sont autorisés au droit des parois de compartimentage, et ils sont télécommandés depuis le CMSI."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. À quelle fréquence vérifie-t-on le fonctionnement des clapets coupe-feu d'un établissement recevant du public ? Regardez le calendrier de l'écran huit.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Le fonctionnement des clapets coupe-feu se vérifie…</h2>
+    <figure class="vignette">
+      <img src="svg/verification-annuelle.svg" alt="Vignette de rappel : la liste des cinq points à vérifier et le calendrier avec la mention tous les ans.">
+      <figcaption>Rappel de l'écran 8 — le calendrier « tous les ans ».</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Tous les ans, avec les vérifications périodiques de ventilation</button>
+      <button type="button" data-answer="b">Une seule fois, à la réception des travaux</button>
+      <button type="button" data-answer="c">Tous les dix ans, comme une requalification</button>
+      <button type="button" data-answer="d">Tous les trois ans, comme les sécurités des systèmes frigorifiques</button>
+    </div>
+    <p class="feedback" hidden data-explication="Article CH 58, § 2 : les vérifications périodiques des installations de traitement d'air et de ventilation ont lieu tous les ans et portent, entre autres, sur le fonctionnement des clapets coupe-feu. Les trois ans concernent d'autres dispositifs."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../incendie-euroclasses/"><strong>Euroclasses</strong></a> (même sous-ligne)
+      — les lettres et les durées d'un degré coupe-feu : le degré du clapet se lit dans cette classification.</li>
+    <li><a href="../incendie-ssi/"><strong>Le SSI</strong></a> (même sous-ligne)
+      — la détection, le CMSI et les catégories : c'est de là que part l'ordre de fermeture d'un clapet télécommandé.</li>
+    <li><a href="../incendie-desenfumage/"><strong>Le désenfumage</strong></a> (même sous-ligne)
+      — le volet de désenfumage est l'autre dispositif d'obturation du règlement, ouvert ou fermé en position d'attente selon son usage.</li>
+    <li><a href="https://inerweb.fr/aerorezo/"><strong>AéroRézo</strong></a> (réseau technique)
+      — les gaines, leurs sections et leurs accès : ce que vous dimensionnez, et que le clapet vient traverser.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site : voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions. data-prototype : la
+     station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

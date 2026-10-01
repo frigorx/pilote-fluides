@@ -1,0 +1,49 @@
+{
+  "slug": "elec-consigner",
+  "branche": "Électrique",
+  "titre": "Mission : le groupe extérieur « à l'arrêt »",
+  "client": "Le responsable technique d'un immeuble de bureaux, client de l'entreprise de maintenance CVC qui vous emploie.",
+  "situation": "La pompe à chaleur installée en toiture s'est arrêtée en défaut. Un technicien de l'entreprise doit intervenir sur le groupe extérieur : contrôle du circuit frigorifique, puis remplacement éventuel du ventilateur. Le responsable du site vous dit au téléphone que le groupe est arrêté au bouton, voyant éteint, et qu'on peut donc y aller. Vous préparez l'ordre d'intervention et devez y joindre la procédure de consignation que le technicien appliquera, en tenant compte de toutes les énergies présentes sur le groupe.",
+  "piece_a_produire": "Une fiche de consignation d'une page pour le groupe extérieur : les trois énergies (électrique, fluide sous pression, pièces mobiles), les opérations dans l'ordre pour chacune, le nom de la fonction qui signe l'attestation de consignation, et ce qui se passe au retour (avis de fin de travail, déconsignation).",
+  "questions": [
+    {
+      "q": "Pourquoi le fait que le groupe soit arrêté au bouton, voyant éteint, ne permet-il pas d'intervenir ?",
+      "ecran": 1,
+      "reponse": "Le bouton coupe la commande, pas l'alimentation : en amont du contacteur, tout reste sous tension. La victime se croit en sécurité parce que la machine ne fonctionne pas ; c'est la confusion entre l'arrêt et la sécurité. La mise hors tension doit être prouvée par une consignation."
+    },
+    {
+      "q": "Quelles sont les quatre étapes qui se font toujours, dans l'ordre, et quelle est la cinquième ?",
+      "ecran": 2,
+      "reponse": "Séparer, condamner, identifier, vérifier l'absence de tension (VAT). La cinquième, la mise à la terre et en court-circuit, se fait immédiatement après la VAT quand elle est prescrite ; elle n'est pas toujours requise en basse tension."
+    },
+    {
+      "q": "Avec quel appareil et sur quels conducteurs fait-on la vérification d'absence de tension, et que fait-on de l'appareil avant et après ?",
+      "ecran": 4,
+      "reponse": "Avec un vérificateur d'absence de tension conçu pour cela (ni voltmètre, ni tournevis testeur), sur chacun des conducteurs actifs, neutre compris, au lieu de travail. Le vérificateur est contrôlé sur une source connue avant et après ; si le contrôle d'après échoue, on reprend."
+    },
+    {
+      "q": "Au-delà de l'électricité, quelles autres énergies faut-il consigner sur ce groupe, et pourquoi le circuit frigorifique renvoie-t-il à la DESP ?",
+      "ecran": 7,
+      "reponse": "Le fluide sous pression (séparation, purge, condamnation des vannes, vérification de l'absence de risque résiduel) et les pièces mobiles (pales sous l'effet du vent, masses, ressorts). Le circuit frigorifique est un équipement sous pression : les organes de séparation et de purge doivent être prévus dès la conception, et le fluide purgé se récupère."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Remettez dans l'ordre imposé les cinq opérations de la consignation électrique du groupe, puis soulignez celle qui n'est pas toujours requise en basse tension.",
+    "items": [
+      "Condamner",
+      "Vérifier l'absence de tension",
+      "Séparer",
+      "Mettre à la terre et en court-circuit",
+      "Identifier"
+    ],
+    "corrige": "Séparer, condamner, identifier, vérifier l'absence de tension, mettre à la terre et en court-circuit. C'est la dernière (mise à la terre et en court-circuit) qui n'est pas toujours requise en basse tension."
+  },
+  "badge": "Cadenas posé",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. La consignation relève de l'exécution d'une intervention et non de l'étude d'une installation (CP9) ; aucun code du référentiel de l'attestation d'aptitude 2025 ne porte sur la consignation électrique."
+  }
+}

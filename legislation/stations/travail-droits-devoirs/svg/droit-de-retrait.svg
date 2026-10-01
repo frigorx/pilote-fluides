@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 540" role="img"
+     aria-labelledby="t-ret" aria-describedby="d-ret" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ret">Le droit d'alerte et de retrait, pas à pas</title>
+  <desc id="d-ret">Cinq étapes numérotées, empilées de haut en bas et reliées par un trait vertical. Un : un motif raisonnable de penser à un danger grave et imminent pour sa vie ou sa santé. Deux : alerter immédiatement l'employeur, par tout moyen, un écrit étant préférable. Trois : pouvoir se retirer, en quittant le poste ou en refusant de s'y installer. Quatre : ne pas créer de nouveau danger pour autrui. Cinq : être protégé, sans sanction ni retenue de salaire. L'animation allume les étapes l'une après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .ha   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#9d174d; }
+    .b    { font-size:17px; fill:#10233c; }
+    .bb   { font-size:17px; font-weight:bold; fill:#10233c; }
+    .ba   { font-size:17px; font-weight:bold; fill:#9d174d; }
+    .bo   { font-size:17px; font-weight:bold; fill:#b45309; }
+    .g    { font-size:16px; fill:#5a6b7d; }
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <text class="ttl" x="430" y="30" text-anchor="middle">Le droit de retrait, pas à pas</text>
+  <g>
+    
+    <circle cx="44" cy="84" r="17" fill="#b45309"/><text class="num" x="44" y="90" text-anchor="middle">1</text>
+    <rect x="84" y="52" width="756" height="68" rx="14" fill="#fffdf8" stroke="#e8914a" stroke-width="2.5"/>
+    <text class="bb" x="104" y="80" style="fill:#b45309">Un danger grave et imminent</text>
+    <text class="g" x="820" y="80" text-anchor="end">L. 4131-1</text>
+    <text class="b" x="104" y="106">J'ai un motif raisonnable de penser que ma vie ou ma santé est menacée.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.12;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="44" y1="128" x2="44" y2="160" stroke="#5a6b7d" stroke-width="3"/>
+    <circle cx="44" cy="180" r="17" fill="#1b3a63"/><text class="num" x="44" y="186" text-anchor="middle">2</text>
+    <rect x="84" y="148" width="756" height="68" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bb" x="104" y="176" style="fill:#1b3a63">J'alerte immédiatement l'employeur</text>
+    <text class="g" x="820" y="176" text-anchor="end">L. 4131-1</text>
+    <text class="b" x="104" y="202">Par tout moyen, d'abord à l'oral si c'est urgent ; un écrit est préférable.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.18;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="44" y1="224" x2="44" y2="256" stroke="#5a6b7d" stroke-width="3"/>
+    <circle cx="44" cy="276" r="17" fill="#1b3a63"/><text class="num" x="44" y="282" text-anchor="middle">3</text>
+    <rect x="84" y="244" width="756" height="68" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bb" x="104" y="272" style="fill:#1b3a63">Je peux me retirer</text>
+    <text class="g" x="820" y="272" text-anchor="end">L. 4131-1</text>
+    <text class="b" x="104" y="298">Quitter le poste ou refuser de m'y installer, sans accord préalable.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="44" y1="320" x2="44" y2="352" stroke="#5a6b7d" stroke-width="3"/>
+    <circle cx="44" cy="372" r="17" fill="#1b3a63"/><text class="num" x="44" y="378" text-anchor="middle">4</text>
+    <rect x="84" y="340" width="756" height="68" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bb" x="104" y="368" style="fill:#1b3a63">Sans créer de nouveau danger</text>
+    <text class="g" x="820" y="368" text-anchor="end">L. 4132-1</text>
+    <text class="b" x="104" y="394">Mon retrait ne doit pas créer de danger grave et imminent pour autrui.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.48;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="44" y1="416" x2="44" y2="448" stroke="#5a6b7d" stroke-width="3"/>
+    <circle cx="44" cy="468" r="17" fill="#9d174d"/><text class="num" x="44" y="474" text-anchor="middle">5</text>
+    <rect x="84" y="436" width="756" height="68" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+    <text class="bb" x="104" y="464" style="fill:#9d174d">Je suis protégé</text>
+    <text class="g" x="820" y="464" text-anchor="end">L. 4131-1 et L. 4131-3</text>
+    <text class="b" x="104" y="490">Ni sanction, ni retenue de salaire ; pas de reprise forcée tant que le danger dure.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.54;0.60;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

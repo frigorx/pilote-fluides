@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-sq" aria-describedby="d-sq" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-sq">Les signes de qualité RGE de Qualit'EnR, un par domaine de travaux</title>
+  <desc id="d-sq">Six cartes, une par signe de qualité publié par Qualit'EnR. Qualisol : chauffage et eau chaude
+    solaires. QualiPV : panneaux solaires photovoltaïques. Qualibois : appareils de chauffage au bois.
+    QualiPAC, encadrée en orange : pompes à chaleur et chauffe-eau thermodynamiques. Chauffage plus :
+    chaudières à condensation et micro-cogénération. Ventilation plus : ventilation mécanique. Une bande du
+    bas rappelle que la qualification est propre à un domaine : elle doit correspondre aux travaux réalisés.</desc>
+  <style>
+    .nom { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:23px; fill:#3730a3; }
+    .nomq{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .tag { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:15px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Un signe de qualité par domaine de travaux</text>
+
+  <!-- Rangée 1 -->
+  <rect x="20" y="52" width="270" height="130" rx="14" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <text class="nom" x="155" y="90" text-anchor="middle">Qualisol</text>
+  <text class="lbl" x="155" y="120" text-anchor="middle">chauffage et eau chaude</text>
+  <text class="lbl" x="155" y="144" text-anchor="middle">solaires</text>
+
+  <rect x="315" y="52" width="270" height="130" rx="14" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <text class="nom" x="450" y="90" text-anchor="middle">QualiPV</text>
+  <text class="lbl" x="450" y="120" text-anchor="middle">panneaux solaires</text>
+  <text class="lbl" x="450" y="144" text-anchor="middle">photovoltaïques</text>
+
+  <rect x="610" y="52" width="270" height="130" rx="14" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <text class="nom" x="745" y="90" text-anchor="middle">Qualibois</text>
+  <text class="lbl" x="745" y="120" text-anchor="middle">appareils de chauffage</text>
+  <text class="lbl" x="745" y="144" text-anchor="middle">au bois</text>
+
+  <!-- Rangée 2 : QualiPAC en valeur -->
+  <rect x="20" y="206" width="270" height="130" rx="14" fill="#fff4e6" stroke="#e8914a" stroke-width="5"/>
+  <text class="nomq" x="155" y="244" text-anchor="middle">QualiPAC</text>
+  <text class="lbl" x="155" y="274" text-anchor="middle">pompes à chaleur et</text>
+  <text class="lbl" x="155" y="298" text-anchor="middle">chauffe-eau thermodynamiques</text>
+  <text class="tag" x="155" y="324" text-anchor="middle">le signe de cette station</text>
+
+  <rect x="315" y="206" width="270" height="130" rx="14" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <text class="nom" x="450" y="244" text-anchor="middle">Chauffage +</text>
+  <text class="lbl" x="450" y="274" text-anchor="middle">chaudières à condensation,</text>
+  <text class="lbl" x="450" y="298" text-anchor="middle">micro-cogénération</text>
+
+  <rect x="610" y="206" width="270" height="130" rx="14" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <text class="nom" x="745" y="244" text-anchor="middle">Ventilation +</text>
+  <text class="lbl" x="745" y="274" text-anchor="middle">installation de</text>
+  <text class="lbl" x="745" y="298" text-anchor="middle">ventilations mécaniques</text>
+
+  <!-- Bande -->
+  <rect x="20" y="362" width="860" height="56" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="386" text-anchor="middle">La qualification est propre à un domaine :</text>
+  <text class="band" x="450" y="408" text-anchor="middle">elle doit correspondre aux travaux réellement réalisés</text>
+</svg>

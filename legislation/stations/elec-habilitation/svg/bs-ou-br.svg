@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img"
+     aria-labelledby="t-bsr" aria-describedby="d-bsr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bsr">BS ou BR : deux niveaux d'intervention</title>
+  <desc id="d-bsr">Un tableau à deux colonnes, BS à gauche, BR à droite, sur cinq lignes. Opérations : BS remplace et raccorde, BR fait de l'entretien et du dépannage. Tension : jusqu'à 400 volts en alternatif pour BS, jusqu'à 500 volts pour BR. Protection du circuit : jusqu'à 32 ampères pour BS, jusqu'à 63 ampères pour BR. Câble en cuivre : jusqu'à 6 millimètres carrés pour BS, jusqu'à 10 pour BR. Aide : aucun exécutant pour BS, un exécutant B1 au plus pour BR. Pour BR, les limites bornent les connexions faites en présence de tension. Limites indiquées par l'INRS d'après la norme.</desc>
+  <style>
+    .sym { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:34px; fill:#fffdf8; }
+    .rl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .lbl { font-size:19px; fill:#10233c; }
+    .src { font-size:16px; fill:#5a6b7d; }
+  </style>
+  <rect x="0" y="0" width="800" height="470" fill="#fffdf8"/>
+  <rect x="290" y="16" width="230" height="56" rx="12" fill="#1b3a63"/>
+  <text class="sym" x="405" y="55" text-anchor="middle">BS</text>
+  <rect x="550" y="16" width="230" height="56" rx="12" fill="#a16207"/>
+  <text class="sym" x="665" y="55" text-anchor="middle">BR</text>
+  <rect x="20" y="84" width="760" height="56" rx="10" fill="#eef3f9" stroke="#d6dee7" stroke-width="2"/>
+  <text class="rl" x="36" y="119">Opérations</text>
+  <text class="lbl" x="405" y="119" text-anchor="middle">remplacer, raccorder</text>
+  <text class="lbl" x="665" y="119" text-anchor="middle">entretien, dépannage</text>
+  <rect x="20" y="150" width="760" height="56" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="rl" x="36" y="185">Tension</text>
+  <text class="lbl" x="405" y="185" text-anchor="middle">≤ 400 V c.a.</text>
+  <text class="lbl" x="665" y="185" text-anchor="middle">≤ 500 V c.a. *</text>
+  <rect x="20" y="216" width="760" height="56" rx="10" fill="#eef3f9" stroke="#d6dee7" stroke-width="2"/>
+  <text class="rl" x="36" y="251">Protection du circuit</text>
+  <text class="lbl" x="405" y="251" text-anchor="middle">≤ 32 A c.a.</text>
+  <text class="lbl" x="665" y="251" text-anchor="middle">≤ 63 A c.a. *</text>
+  <rect x="20" y="282" width="760" height="56" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="rl" x="36" y="317">Câble, cuivre</text>
+  <text class="lbl" x="405" y="317" text-anchor="middle">≤ 6 mm²</text>
+  <text class="lbl" x="665" y="317" text-anchor="middle">≤ 10 mm² *</text>
+  <rect x="20" y="348" width="760" height="56" rx="10" fill="#eef3f9" stroke="#d6dee7" stroke-width="2"/>
+  <text class="rl" x="36" y="383">Aide</text>
+  <text class="lbl" x="405" y="383" text-anchor="middle">aucun exécutant</text>
+  <text class="lbl" x="665" y="383" text-anchor="middle">un exécutant B1 au plus</text>
+  <text class="src" x="400" y="428" text-anchor="middle">* Pour BR : limites des connexions faites en présence de tension.</text>
+  <text class="src" x="400" y="452" text-anchor="middle">Limites indiquées par l'INRS, d'après la norme NF C 18-510.</text>
+</svg>

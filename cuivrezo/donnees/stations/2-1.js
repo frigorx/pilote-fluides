@@ -1,7 +1,8 @@
 /* Station 2-1 — Le poste oxyacétylénique en sécurité. Source : sources-metier/2-chalumeau.md (partie 2-1)
    Référence : INRS ED 742, fiche de poste CDG, fiches de l'atelier. Ogive O blanche, A marron.
-   Pressions de réglage : 0,8 à 2,5 bar (O) et 0,2 à 0,5 bar (A) selon les fiches ; la valeur du lycée
-   n'est écrite nulle part : c'est le professeur qui la donne. Jamais plus de 1,5 bar d'acétylène (INRS). */
+   Pressions de réglage : valeurs RÉGLÉES PAR LE PROFESSEUR d'après la notice du chalumeau et de la buse
+   (INRS ED 742 : « réglages conseillés par le fabricant ») ; jamais plus de 1,5 bar d'acétylène (INRS).
+   Ordre du poste : le gaz combustible s'ouvre en dernier et se ferme en premier (DECISIONS-2026-09-30.md). */
 CUIVREZO.stations.push({
   id: '2-1', ligne: 2, titre: 'Le poste oxyacétylénique en sécurité', duree: '20 min', vignette: 'images/2-1-poste.webp',
   sources: ['sources-metier/2-chalumeau.md'],
@@ -10,7 +11,6 @@ CUIVREZO.stations.push({
     titre: 'Un poste prêt à allumer, vérifié, sans fuite',
     texte: 'Rien n’est allumé. Les bouteilles sont debout et arrimées, les pressions réglées, le poste est étanche, et le professeur l’a visé.',
     criteres: ['Protections portées, zone dégagée, extincteur repéré', 'Bouteilles debout, arrimées ; gaz reconnus à l’ogive', 'Basse pression réglée à la valeur donnée', 'Aucune bulle à l’eau savonneuse ; visa du professeur'],
-    aValider: 'Codes du référentiel (T12, C3.1, S6.2, S6.3) posés par analogie avec la station 1.0 : à confirmer',
     figure: { img: 'images/2-1-poste.webp', alt: 'Le poste oxyacétylénique : deux bouteilles arrimées, détendeurs, tuyaux, chalumeau' },
     narration: 'Le chalumeau oxyacétylénique produit une flamme de plus de trois mille degrés. Il est indispensable pour braser, et il ne pardonne aucune négligence : l’oxygène fait flamber ce qui est gras, l’acétylène devient instable sous pression, un retour de flamme peut remonter les tuyaux. Cette station ne vous fait pas allumer. Elle vous apprend à préparer et à vérifier le poste, pour que l’allumage, qui se fera toujours devant le professeur, se passe sans surprise.'
   },
@@ -28,23 +28,21 @@ CUIVREZO.stations.push({
     narration: 'Voici le poste. Deux bouteilles, reconnaissables à la couleur de leur ogive, la partie haute : blanche pour l’oxygène, marron pour l’acétylène. Sur chacune, un détendeur, qui abaisse la pression de la bouteille à celle du travail. Puis deux tuyaux, bleu pour l’oxygène, rouge pour l’acétylène, et près du chalumeau, les clapets anti-retour, qui arrêtent une flamme qui voudrait remonter. On vérifie chaque élément avant d’y mettre la main.'
   },
   gestes: [
-    { titre: 'M’équiper', texte: 'Lunettes teintées, gants et tablier en cuir, tenue en coton, pantalon sur les chaussures.',
+    { titre: 'M’équiper', texte: 'Lunettes à verres teintés avec protections sur les côtés, gants et tablier en cuir, tenue en coton, pantalon sur les chaussures. Le professeur vous donne le numéro de teinte.',
       pointCle: 'Rien de gras sur moi ni sur mes gants.',
       pourquoi: 'La flamme rayonne et projette. Et un tissu gras au contact de l’oxygène peut s’enflammer tout seul.',
-      aValider: 'Teinte des lunettes : « 4 à 7 » (fiche CDG), « 5 minimum » (séance 1.2), selon le débit de la buse (INRS)',
       figure: { img: 'images/reprises/epi-familles.svg', alt: 'Les protections' }, clip: 'clips/2-1/01-epi.mp4',
-      narration: 'On s’équipe avant de toucher au poste. Des lunettes teintées, contre le rayonnement de la flamme. Des gants et un tablier en cuir, une tenue en coton, le pantalon par-dessus les chaussures pour qu’une projection n’y tombe pas. Et rien de gras : un tissu ou un gant graisseux, au contact de l’oxygène, peut s’enflammer tout seul.' },
+      narration: 'On s’équipe avant de toucher au poste. Des lunettes à verres teintés, avec des protections sur les côtés, contre le rayonnement de la flamme et les projections. Le numéro de teinte dépend de la buse : c’est le professeur qui vous le donne. Des gants et un tablier en cuir, une tenue en coton, le pantalon par-dessus les chaussures pour qu’une projection n’y tombe pas. Et rien de gras : un tissu ou un gant graisseux, au contact de l’oxygène, peut s’enflammer tout seul.' },
     { titre: 'Dégager la zone', texte: 'Un mètre libre autour du poste. Repérez l’extincteur.',
       pointCle: 'Ni chiffon, ni carton, ni produit inflammable.',
       pourquoi: 'L’oxygène active le moindre départ de feu.',
       figure: { svg: 'poste', etat: 'secours' }, clip: 'clips/2-1/02-zone.mp4',
       narration: 'On dégage un mètre autour du poste : rien qui puisse brûler. L’oxygène rend un feu beaucoup plus violent. Et on repère l’extincteur, pour ne pas avoir à le chercher.' },
-    { titre: 'Contrôler les bouteilles', texte: 'Debout, arrimées par leur chaîne, loin de toute chaleur. Reconnaissez-les à l’ogive.',
+    { titre: 'Contrôler les bouteilles', texte: 'Debout, à la verticale, arrimées par leur chaîne, loin de toute chaleur. Reconnaissez-les à l’ogive. Une bouteille d’acétylène qui a été couchée ne s’utilise pas : prévenez le professeur.',
       pointCle: 'L’acétylène ne se couche jamais.',
       pourquoi: 'Couchée, l’acétylène laisse couler l’acétone qui la stabilise. Et une bouteille chauffée voit sa pression monter.',
-      aValider: 'Inclinaison tolérée de l’acétylène : « jamais couchée » (INRS), « 45° maximum » ou « au moins 30° » selon deux fiches',
       figure: { svg: 'oa', etat: 'poste' }, clip: 'clips/2-1/03-bouteilles.mp4',
-      narration: 'On regarde les bouteilles. Debout, retenues par leur chaîne, loin de toute source de chaleur. L’acétylène, surtout, ne se couche jamais : à l’intérieur, il est dissous dans un liquide qui le stabilise, et couchée, ce liquide s’écoule par le robinet. On reconnaît chaque gaz à la couleur de l’ogive, pas à l’étiquette qui a pu tomber.' },
+      narration: 'On regarde les bouteilles. Debout, retenues par leur chaîne, loin de toute source de chaleur. L’acétylène, surtout, ne se couche jamais : à l’intérieur, il est dissous dans un liquide qui le stabilise, et couchée, ce liquide s’écoule par le robinet. Une bouteille d’acétylène qui a été couchée ne se sert pas : on prévient le professeur. On reconnaît chaque gaz à la couleur de l’ogive, pas à l’étiquette qui a pu tomber.' },
     { titre: 'Vérifier le détendeur et le chalumeau fermés', texte: 'Vis de détente desserrées à fond, robinets du chalumeau fermés.',
       pointCle: 'Vis desserrée : rien ne passe vers le chalumeau.',
       pourquoi: 'Si la vis est serrée à l’ouverture de la bouteille, la pression arrive d’un coup sur le détendeur et dans les tuyaux.',
@@ -63,15 +61,13 @@ CUIVREZO.stations.push({
     { titre: 'Régler la basse pression d’oxygène', texte: 'Vissez la vis de détente jusqu’à la valeur donnée par le professeur.',
       pointCle: 'La valeur de l’atelier, pas une valeur au hasard.',
       pourquoi: 'Le chalumeau et la buse sont prévus pour une pression donnée : trop, la flamme se décolle ; pas assez, elle claque.',
-      aValider: 'Basse pression d’oxygène : de 0,8 à 2,5 bar selon les fiches ; la valeur du lycée n’est écrite nulle part',
       figure: { svg: 'oa', etat: 'detendeur' }, clip: 'clips/2-1/07-bp-o.mp4',
-      narration: 'On visse doucement la vis de détente, en regardant le manomètre de basse pression, jusqu’à la valeur que donne le professeur pour l’atelier. Les fiches donnent des valeurs voisines, autour d’un bar : c’est la valeur affichée au poste qui fait foi.' },
-    { titre: 'Ouvrir et régler l’acétylène', texte: 'Même geste sur la bouteille d’acétylène, clé laissée dessus. Basse pression à la valeur donnée.',
+      narration: 'On visse doucement la vis de détente, en regardant le manomètre de basse pression, jusqu’à la valeur que donne le professeur pour l’atelier. Cette valeur dépend du chalumeau et de sa buse, d’après la notice du fabricant : ce n’est pas à vous de la deviner, c’est la valeur affichée au poste qui fait foi.' },
+    { titre: 'Ouvrir et régler l’acétylène', texte: 'Toujours après l’oxygène : même geste sur la bouteille d’acétylène, clé laissée dessus. Basse pression à la valeur donnée.',
       pointCle: 'Jamais plus de 1,5 bar d’acétylène.',
       pourquoi: 'Au-delà, l’acétylène peut se décomposer violemment, même sans flamme.',
-      aValider: 'Ordre d’ouverture oxygène puis acétylène : une seule fiche (TP 002) ; basse pression d’acétylène 0,2 à 0,5 bar selon les fiches',
       figure: { svg: 'oa', etat: 'ouvrir' }, clip: 'clips/2-1/08-ouvrir-a.mp4',
-      narration: 'Même geste pour l’acétylène : un quart de tour, lentement, de côté. On laisse la clé sur le robinet, pour pouvoir le refermer aussitôt. Puis on règle sa basse pression à la valeur donnée, toujours faible : quelques dixièmes de bar. L’acétylène ne s’utilise jamais au-dessus d’un bar et demi : au-delà, il peut se décomposer violemment, même sans flamme.' },
+      narration: 'Même geste pour l’acétylène, toujours après l’oxygène : le gaz combustible s’ouvre en dernier. Un quart de tour, lentement, de côté. On laisse la clé sur le robinet, pour pouvoir le refermer aussitôt. Puis on règle sa basse pression à la valeur que donne le professeur. L’acétylène ne s’utilise jamais au-dessus d’un bar et demi : au-delà, il peut se décomposer violemment, même sans flamme.' },
     { titre: 'Chercher les fuites à l’eau savonneuse', texte: 'Au pinceau, sur les détendeurs, les robinets et les raccords. Une bulle, c’est une fuite.',
       pointCle: 'Jamais une flamme pour chercher une fuite.',
       pourquoi: 'Une fuite de gaz sur un poste qu’on va allumer, c’est un départ de feu assuré.',
@@ -110,7 +106,7 @@ CUIVREZO.stations.push({
       figure: { svg: 'oa', etat: 'savon' }, narration: 'Dernier contrôle : pas une bulle.' }
   ],
   prof: {
-    verifie: ['La fiche de sécurité, signée', 'Le poste : bouteilles, détendeurs, tuyaux, clapets', 'Les pressions et l’étanchéité', 'Son visa : sans lui, pas d’allumage'],
+    verifie: ['La fiche de sécurité, signée', 'Le poste : bouteilles, détendeurs, tuyaux, clapets', 'Les pressions (valeurs de la notice du chalumeau, acétylène au plus 1,5 bar) et l’étanchéité', 'La teinte des lunettes, choisie d’après la buse (NF EN 169 : n° 4 jusqu’à 70 l/h d’acétylène, n° 5 jusqu’à 200, n° 6 jusqu’à 800, n° 7 au-delà)', 'Son visa : sans lui, pas d’allumage'],
     narration: 'Le professeur vérifie le poste à son tour, sans complaisance : c’est sa signature qui autorise l’allumage. Un poste bien préparé, c’est la moitié de la sécurité du chalumeau. L’autre moitié, c’est l’allumage, la flamme et l’extinction : la station suivante.'
   }
 });

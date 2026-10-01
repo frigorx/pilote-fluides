@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-an" aria-describedby="d-an" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-an">Vérifier une entreprise dans l'annuaire officiel RGE</title>
+  <desc id="d-an">À gauche, un écran de recherche : type de travaux « pompe à chaleur », localité, bouton
+    Rechercher. Une flèche mène vers la fiche d'une entreprise fictive : son établissement identifié par un
+    numéro de SIRET, ses activités qualifiées, ses coordonnées. Sous la fiche, une coche verte accompagne la
+    question à se poser : l'activité listée est-elle celle des travaux prévus ? Une bande du bas rappelle qu'une
+    radiation ou une suspension fait disparaître l'entreprise de l'annuaire. L'animation déroule la recherche
+    puis la fiche ; l'image fixe est complète.</desc>
+  <style>
+    .ent { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .gris{ font-size:15px; fill:#5a6b7d; }
+    .bout{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .ok  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#047857; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- Écran de recherche -->
+  <rect x="20" y="20" width="350" height="274" rx="12" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <rect x="20" y="20" width="350" height="44" rx="12" fill="#3730a3"/>
+  <rect x="20" y="46" width="350" height="18" fill="#3730a3"/>
+  <text class="ent" x="195" y="49" text-anchor="middle">Annuaire des professionnels RGE</text>
+
+  <text class="gris" x="40" y="94">Type de travaux</text>
+  <rect x="40" y="102" width="310" height="40" rx="8" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+  <g>
+    <text class="lbl" x="54" y="128">pompe à chaleur</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.14;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <text class="gris" x="40" y="172">Localité</text>
+  <rect x="40" y="180" width="310" height="40" rx="8" fill="#eef3f9" stroke="#5a6b7d" stroke-width="2"/>
+  <g>
+    <text class="lbl" x="54" y="206">la commune du chantier</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.18;0.26;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="110" y="240" width="170" height="40" rx="10" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+  <text class="bout" x="195" y="266" text-anchor="middle">Rechercher</text>
+
+  <!-- Flèche -->
+  <g>
+    <line x1="390" y1="157" x2="440" y2="157" stroke="#5a6b7d" stroke-width="3"/>
+    <polygon points="440,147 458,157 440,167" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.34;0.40;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Fiche de l'entreprise -->
+  <g>
+    <rect x="480" y="20" width="400" height="274" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="500" y="56">Entreprise (exemple)</text>
+    <text class="gris" x="500" y="94">Établissement</text>
+    <text class="lbl" x="500" y="118">identifié par son numéro de SIRET</text>
+    <text class="gris" x="500" y="156">Activités qualifiées</text>
+    <text class="lbl" x="500" y="180">pompes à chaleur : oui / non ?</text>
+    <text class="gris" x="500" y="218">Coordonnées</text>
+    <text class="lbl" x="500" y="242">adresse, téléphone</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.52;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- La vérification -->
+  <g>
+    <circle cx="512" cy="326" r="15" fill="#047857"/>
+    <path d="M504,326 l6,7 l11,-14" fill="none" stroke="#fffdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="ok" x="538" y="333">Activité listée = travaux prévus ?</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.72;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Bande -->
+  <rect x="20" y="362" width="860" height="46" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="391" text-anchor="middle">Radiation ou suspension : l'entreprise disparaît de l'annuaire</text>
+</svg>

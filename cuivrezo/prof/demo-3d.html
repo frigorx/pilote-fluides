@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La pièce en 3D · CuivRézo</title>
+<link rel="stylesheet" href="../moteur/prof.css">
+<style>
+  .demo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+  @media (max-width:860px){.demo{grid-template-columns:1fr}}
+  .demo figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:.6rem}
+  .demo cuivre-3d{height:min(56dvh,470px)}
+  .demo figcaption{padding:.5rem .4rem .2rem;font-size:1rem}
+  .demo figcaption b{color:var(--navy)}
+  .demo figcaption code{white-space:normal}
+  .large{grid-column:1/-1}
+  .large cuivre-3d{height:min(64dvh,560px)}
+  .note{background:var(--copper-soft);border-radius:12px;padding:.6rem 1rem}
+</style>
+</head>
+<body>
+<header>
+  <p class="retour"><a href="index.html">← L’espace professeur</a></p>
+  <h1>La pièce de cuivre en 3D</h1>
+  <p class="chapo">Cinq pièces, calculées au millimètre : le tube suit une droite, un arc de rayon Rc, puis une droite. Faites-les tourner au doigt ou à la souris. Le curseur cintre la pièce en direct. Sans écran 3D, la figure à plat prend la place.</p>
+</header>
+<main>
+<section>
+  <div class="demo">
+    <figure class="large">
+      <cuivre-3d piece="coude90" angle="60" cote="300" rc="45"></cuivre-3d>
+      <figcaption><b>Le coude à 90°</b> (station 1.4). Le tube garde sa longueur : l’arc prend de la matière à la droite d’arrivée. Faites glisser le curseur : la cote à l’axe côté L ne vaut <b>300 mm qu’à 90°</b>. Le trait « 0 » est posé à 300 − Rc du bout.
+      <code>&lt;cuivre-3d piece="coude90" angle="60" cote="300" rc="45"&gt;</code></figcaption>
+    </figure>
+    <figure>
+      <cuivre-3d piece="chapeau" hauteur="70" obstacle="36" central="90"></cuivre-3d>
+      <figcaption><b>Le chapeau de gendarme</b> (station 4.1). Trois coudes autour d’un obstacle : le coude central d’abord, puis A et B, qui font chacun la moitié. Appuyez sur « Cintrer ».
+      <code>&lt;cuivre-3d piece="chapeau" hauteur="70"&gt;</code></figcaption>
+    </figure>
+    <figure>
+      <cuivre-3d piece="baionnette" decalage="70" angle-coude="45"></cuivre-3d>
+      <figcaption><b>La baïonnette</b> (station 4.2). Deux coudes égaux, en sens opposés : le tube repart parallèle, décalé d’axe à axe.
+      <code>&lt;cuivre-3d piece="baionnette" decalage="70"&gt;</code></figcaption>
+    </figure>
+    <figure>
+      <cuivre-3d piece="dudgeon" angle="45"></cuivre-3d>
+      <figcaption><b>Le dudgeon</b> (station 1.6). Le bout du tube s’évase en cône à 45°. L’écrou est enfilé avant. Le bouton « Voir la pièce entière » retire la coupe.
+      <code>&lt;cuivre-3d piece="dudgeon" angle="45"&gt;</code></figcaption>
+    </figure>
+    <figure>
+      <cuivre-3d piece="emboiture" angle="60"></cuivre-3d>
+      <figcaption><b>L’emboîture</b> (station 1.7). Un bout de tube élargi reçoit un autre tube, avec un jeu de quelques dixièmes de millimètre.
+      <code>&lt;cuivre-3d piece="emboiture" angle="60"&gt;</code></figcaption>
+    </figure>
+  </div>
+</section>
+<section>
+  <h2>Les réglages</h2>
+  <p class="note">Tout est facultatif. Les cotes sont en millimètres. La marque « L » est prise du bout gauche, « R » du bout droit.</p>
+  <table>
+    <thead><tr><th>Attribut</th><th>Pièce</th><th>Sens</th></tr></thead>
+    <tbody>
+      <tr><td><code>angle</code></td><td>toutes</td><td>coude à 90° : l’angle, de 0 à 90°. Dudgeon : demi-angle, de 0 à 45°. Autres pièces : l’avancement, de 0 à 90 (0 à 100 %).</td></tr>
+      <tr><td><code>diametre</code>, <code>rc</code></td><td>toutes</td><td>diamètre extérieur du tube ; rayon de cintrage à l’axe (45 par défaut).</td></tr>
+      <tr><td><code>cote</code>, <code>cote2</code></td><td>coude90</td><td>cotes à l’axe côté L et côté R (300 et 300 par défaut).</td></tr>
+      <tr><td><code>central</code>, <code>hauteur</code>, <code>obstacle</code></td><td>chapeau</td><td>angle du coude central ; hauteur H d’axe à axe ; diamètre de l’obstacle.</td></tr>
+      <tr><td><code>decalage</code>, <code>angle-coude</code></td><td>baionnette</td><td>décalage d’axe à axe ; angle de chaque coude (45°).</td></tr>
+      <tr><td><code>profondeur</code>, <code>coupe</code></td><td>emboiture, dudgeon</td><td>profondeur de l’emboîture ; <code>coupe="non"</code> pour la pièce entière.</td></tr>
+      <tr><td><code>sans-controles</code></td><td>toutes</td><td>cache le curseur et les boutons.</td></tr>
+    </tbody>
+  </table>
+</section>
+</main>
+<script src="../moteur/piece3d.js"></script>
+</body>
+</html>

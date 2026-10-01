@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img"
+     aria-labelledby="t-ec" aria-describedby="d-ec" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ec">Quatre erreurs classiques contre le bruit</title>
+  <desc id="d-ec">Quatre cartes, chacune marquée d'une croix rouge. Plot écrasé : un plot aplati sous une machine, avec en pointillé la hauteur qu'il devrait avoir. Tube rigide : une machine sur plots dont un tube rigide est fixé au mur. Mauvais chemin traité : un silencieux sur une gaine, alors que le bruit passe par la dalle, montrée par une ligne ondulée orange. Capot sans air : une machine enfermée dans un capot fermé, avec des traits de chaleur.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .t20 { font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lblb{ font-size:17px; font-weight:bold; fill:#1b3a63; }
+    .sub { font-size:16px; fill:#5a6b7d; }
+    .aer { font-size:17px; font-weight:bold; fill:#5b21b6; }
+    .sol { font-size:17px; font-weight:bold; fill:#9a4d0a; }
+    .band{ font-size:18px; font-weight:bold; fill:#10233c; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f5689"/></marker>
+  </defs>
+
+  
+  <rect x="20" y="20" width="370" height="200" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="t20" x="205" y="54" text-anchor="middle">Plot écrasé</text>
+  <rect x="135" y="110" width="140" height="14" fill="none" stroke="#9aa7b5" stroke-width="2.5" stroke-dasharray="6 5"/>
+     <rect x="135" y="86" width="140" height="26" rx="6" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+     <rect x="175" y="124" width="60" height="8" rx="3" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/>
+     <rect x="135" y="132" width="140" height="10" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+     <path d="M293,102 l24,24 M317,102 l-24,24" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+  <text class="lbl" x="205" y="182" text-anchor="middle">Trop chargé ou trop raide :</text>
+  <text class="lbl" x="205" y="204" text-anchor="middle">le plot n'isole plus.</text>
+  
+  <rect x="410" y="20" width="370" height="200" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="t20" x="595" y="54" text-anchor="middle">Tube rigide</text>
+  <rect x="495" y="86" width="80" height="38" rx="6" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+     <rect x="505" y="124" width="24" height="12" rx="3" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/><path d="M510,133 h20" stroke="#1b3a63" stroke-width="2"/>
+     <rect x="485" y="136" width="110" height="10" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+     <path d="M575,105 H655" stroke="#5a6b7d" stroke-width="7"/>
+     <rect x="655" y="70" width="22" height="76" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+     <path d="M693,93 l24,24 M717,93 l-24,24" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+  <text class="lbl" x="595" y="182" text-anchor="middle">Un tube fixé au mur relie</text>
+  <text class="lbl" x="595" y="204" text-anchor="middle">la machine à la structure.</text>
+  
+  <rect x="20" y="240" width="370" height="200" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="t20" x="205" y="274" text-anchor="middle">Mauvais chemin traité</text>
+  <rect x="95" y="306" width="140" height="36" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+     <rect x="145" y="310" width="40" height="28" fill="#cfd8e3" stroke="#5a6b7d" stroke-width="2"/>
+     <rect x="95" y="354" width="220" height="12" fill="#d9dee5" stroke="#5a6b7d" stroke-width="2"/>
+     <path d="M105,360 q10,-6 20,0 q10,6 20,0 q10,-6 20,0 q10,6 20,0 q10,-6 20,0 q10,6 20,0 q10,-6 20,0 q10,6 20,0 q10,-6 20,0 q10,6 20,0" fill="none" stroke="#e8914a" stroke-width="3.5"/>
+     <path d="M293,312 l24,24 M317,312 l-24,24" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+  <text class="lbl" x="205" y="402" text-anchor="middle">Un silencieux ne coupe pas le</text>
+  <text class="lbl" x="205" y="424" text-anchor="middle">bruit qui passe par la dalle.</text>
+  
+  <rect x="410" y="240" width="370" height="200" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="t20" x="595" y="274" text-anchor="middle">Capot sans air</text>
+  <rect x="525" y="296" width="140" height="74" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
+     <rect x="555" y="314" width="80" height="40" rx="6" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5"/>
+     <path d="M575,310 q-6,-8 0,-14 M595,310 q-6,-8 0,-14 M615,310 q-6,-8 0,-14" fill="none" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+     <path d="M683,322 l24,24 M707,322 l-24,24" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+  <text class="lbl" x="595" y="402" text-anchor="middle">Un capot fermé étouffe le bruit,</text>
+  <text class="lbl" x="595" y="424" text-anchor="middle">mais aussi la machine.</text>
+</svg>

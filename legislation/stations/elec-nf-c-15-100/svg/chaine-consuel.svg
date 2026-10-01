@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t8" aria-describedby="d8" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t8">Du chantier à la mise sous tension : l'attestation de conformité</title>
+  <desc id="d8">Quatre étapes de gauche à droite, reliées par des flèches. L'installateur établit l'attestation de conformité. Le Consuel la vise. Le distributeur d'électricité met alors sous tension. L'installation est en service. Sous la chaîne, deux cartes : l'attestation est exigée avant la première mise sous tension d'une installation neuve ; pour les locaux recevant des travailleurs ou du public, une attestation verte spécifique existe. Dans l'animation, les quatre étapes s'allument l'une après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .b20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .w20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#ffffff; }
+    .t17 { font-size:17px; fill:#10233c; }
+    .g16 { font-size:16px; fill:#5a6b7d; }
+  </style>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Du chantier à la mise sous tension</text>
+
+  <!-- Étape 1 -->
+  <rect x="25" y="70" width="160" height="130" rx="14" fill="#1b3a63"/>
+  <text class="w20" x="105" y="114" text-anchor="middle">Installateur</text>
+  <text x="105" y="146" text-anchor="middle" font-size="17" fill="#ffffff">établit</text>
+  <text x="105" y="168" text-anchor="middle" font-size="17" fill="#ffffff">l'attestation</text>
+  <!-- Flèche 1 -->
+  <line x1="187" y1="135" x2="208" y2="135" stroke="#5a6b7d" stroke-width="4"/>
+  <polygon points="206,125 206,145 218,135" fill="#5a6b7d"/>
+
+  <!-- Étape 2 -->
+  <rect x="220" y="70" width="160" height="130" rx="14" fill="#f4eadb" stroke="#a16207" stroke-width="3"/>
+  <text class="b20" x="300" y="114" text-anchor="middle">Consuel</text>
+  <text class="t17" x="300" y="146" text-anchor="middle">vise l'attestation</text>
+  <text class="t17" x="300" y="168" text-anchor="middle">de conformité</text>
+  <line x1="382" y1="135" x2="403" y2="135" stroke="#5a6b7d" stroke-width="4"/>
+  <polygon points="401,125 401,145 413,135" fill="#5a6b7d"/>
+
+  <!-- Étape 3 -->
+  <rect x="415" y="70" width="160" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="b20" x="495" y="106" text-anchor="middle">Distributeur</text>
+  <text class="b20" x="495" y="130" text-anchor="middle">d'électricité</text>
+  <text class="t17" x="495" y="166" text-anchor="middle">met sous tension</text>
+  <line x1="577" y1="135" x2="598" y2="135" stroke="#5a6b7d" stroke-width="4"/>
+  <polygon points="596,125 596,145 608,135" fill="#5a6b7d"/>
+
+  <!-- Étape 4 -->
+  <rect x="610" y="70" width="165" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="b20" x="692" y="122" text-anchor="middle">Installation</text>
+  <text class="b20" x="692" y="148" text-anchor="middle">en service</text>
+
+
+  <!-- Surcouches d'animation : les étapes s'allument l'une après l'autre (invisibles au repos) -->
+  <rect x="25" y="70" width="160" height="130" rx="14" fill="#e8914a" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.35;0.35;0;0" keyTimes="0;0.10;0.12;0.24;0.27;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="220" y="70" width="160" height="130" rx="14" fill="#e8914a" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.35;0.35;0;0" keyTimes="0;0.24;0.26;0.38;0.41;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="415" y="70" width="160" height="130" rx="14" fill="#e8914a" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.35;0.35;0;0" keyTimes="0;0.38;0.40;0.52;0.55;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="610" y="70" width="165" height="130" rx="14" fill="#e8914a" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.35;0.35;0;0" keyTimes="0;0.52;0.54;0.66;0.69;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Deux cartes -->
+  <rect x="25" y="262" width="360" height="150" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="b20" x="205" y="298" text-anchor="middle">Installation neuve</text>
+  <text class="t17" x="205" y="334" text-anchor="middle">attestation exigée avant la</text>
+  <text class="t17" x="205" y="358" text-anchor="middle">première mise sous tension</text>
+  <text class="g16" x="205" y="388" text-anchor="middle">Code de l'énergie, D. 342-18 à 21</text>
+
+  <rect x="415" y="262" width="360" height="150" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="b20" x="595" y="298" text-anchor="middle">Usage non domestique</text>
+  <text class="t17" x="595" y="334" text-anchor="middle">locaux recevant des travailleurs</text>
+  <text class="t17" x="595" y="358" text-anchor="middle">ou du public : formulaire vert</text>
+  <text class="g16" x="595" y="388" text-anchor="middle">parties communes comprises</text>
+
+  <!-- Bande -->
+  <rect x="25" y="432" width="750" height="46" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="t17" x="400" y="461" text-anchor="middle" font-weight="bold">L'attestation est exigée avant la mise sous tension : prévoyez-la au planning.</text>
+</svg>

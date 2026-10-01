@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" role="img"
+     aria-labelledby="t-ria" aria-describedby="d-ria" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ria">Le robinet d'incendie armé et ce que dit le règlement ERP</title>
+  <desc id="d-ria">À gauche, une armoire de robinet d'incendie armé dessinée de face : une canalisation d'eau arrive par le haut, un robinet d'arrêt commande le dévidoir, le tuyau sort en bas et se termine par une lance qui projette un jet. Des étiquettes nomment la canalisation, le robinet d'arrêt, le dévidoir, le tuyau et la lance. À droite, trois règles numérotées de l'article MS 15 : le robinet est placé dans le bâtiment mais à l'extérieur du local à protéger ; l'armoire est signalée et jamais condamnée ; dans un local à risque important, tout point est atteint par deux jets de lance. Une bande en bas rappelle les trois diamètres nominaux de l'article MS 14.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#b91c1c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- canalisation d'eau en pression -->
+  <rect x="215" y="30" width="80" height="12" rx="3" fill="#2f5689"/>
+  <rect x="249" y="42" width="12" height="46" fill="#2f5689"/>
+  <!-- armoire -->
+  <rect x="170" y="60" width="170" height="250" rx="10" fill="#fffdf8" stroke="#b91c1c" stroke-width="4"/>
+  <!-- robinet d'arrêt -->
+  <circle cx="255" cy="100" r="11" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+  <!-- dévidoir -->
+  <circle cx="255" cy="170" r="48" fill="none" stroke="#1b3a63" stroke-width="5"/>
+  <circle cx="255" cy="170" r="17" fill="#b91c1c"/>
+  <line x1="255" y1="111" x2="255" y2="122" stroke="#2f5689" stroke-width="6"/>
+  <!-- tuyau et lance -->
+  <path d="M255,218 C255,268 320,262 330,330" fill="none" stroke="#2f5689" stroke-width="8" stroke-linecap="round"/>
+  <path d="M330,330 L346,352" fill="none" stroke="#1b3a63" stroke-width="12" stroke-linecap="round"/>
+  <!-- jet -->
+  <path d="M356,358 C400,330 430,340 452,385" fill="none" stroke="#2f5689" stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round"/>
+
+  <!-- étiquettes + repères -->
+  <text class="lbl" x="150" y="40" text-anchor="end">Canalisation d'eau</text>
+  <line x1="156" y1="35" x2="212" y2="35" stroke="#5a6b7d" stroke-width="1.5"/>
+  <text class="lbl" x="150" y="106" text-anchor="end">Robinet d'arrêt</text>
+  <line x1="156" y1="101" x2="240" y2="101" stroke="#5a6b7d" stroke-width="1.5"/>
+  <text class="lbl" x="150" y="176" text-anchor="end">Dévidoir</text>
+  <line x1="156" y1="171" x2="204" y2="171" stroke="#5a6b7d" stroke-width="1.5"/>
+  <text class="lbl" x="150" y="272" text-anchor="end">Tuyau</text>
+  <line x1="156" y1="267" x2="280" y2="267" stroke="#5a6b7d" stroke-width="1.5"/>
+  <text class="lbl" x="150" y="350" text-anchor="end">Lance</text>
+  <line x1="156" y1="345" x2="322" y2="345" stroke="#5a6b7d" stroke-width="1.5"/>
+
+  <!-- règles MS 15 -->
+  <text class="ttl" x="490" y="50">Ce que dit le règlement (MS 15)</text>
+  <text class="num" x="490" y="110">1</text>
+  <text class="lbl" x="525" y="103">Dans le bâtiment, mais à l'extérieur</text>
+  <text class="lbl" x="525" y="126">du local à protéger.</text>
+  <text class="num" x="490" y="190">2</text>
+  <text class="lbl" x="525" y="183">Armoire signalée, sans dispositif</text>
+  <text class="lbl" x="525" y="206">de condamnation.</text>
+  <text class="num" x="490" y="270">3</text>
+  <text class="lbl" x="525" y="263">Local à risque important : tout point</text>
+  <text class="lbl" x="525" y="286">atteint par au moins deux jets de lance.</text>
+
+  <rect x="490" y="330" width="390" height="56" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="685" y="355" text-anchor="middle">Diamètres nominaux (MS 14) :</text>
+  <text class="band" x="685" y="377" text-anchor="middle">DN 19/6, DN 25/8 ou DN 33/12</text>
+</svg>

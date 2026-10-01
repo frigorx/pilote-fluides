@@ -1,0 +1,48 @@
+{
+  "slug": "travail-droits-devoirs",
+  "branche": "Droit du travail",
+  "titre": "Mission : « C'est un ordre ! » — obéir, alerter ou se retirer ?",
+  "client": "Le responsable d'agence de Clim'Études Sud, qui accueille un nouvel apprenti en bureau d'études et veut lui remettre une fiche réflexe avant ses premières visites de chantier.",
+  "situation": "Mardi, vous accompagnez un chef d'équipe sur un site où une intervention est prévue en toiture-terrasse. Arrivé sur place, vous constatez qu'il n'y a pas de garde-corps. Le chef d'équipe vous dit : « C'est un ordre, on monte quand même, et la sécurité, c'est à chacun d'y faire attention. » Votre responsable d'agence vous demande, en rentrant, de rédiger la fiche réflexe : ce que l'employeur doit, ce que vous devez, ce que vous pouvez faire et à qui vous adresser.",
+  "piece_a_produire": "Une fiche réflexe d'une page, en trois colonnes : « Ce que l'employeur doit », « Ce que je dois », « Ce que je peux faire face à un danger grave et imminent » (avec les étapes dans l'ordre). En bas, une ligne : « À qui m'adresser » (comité social et économique, inspection du travail, santé au travail). Chaque affirmation renvoie à son article du Code du travail.",
+  "questions": [
+    {
+      "q": "Qu'est-ce qui caractérise le lien de subordination entre un employeur et un salarié ?",
+      "ecran": 1,
+      "reponse": "L'exécution d'un travail sous l'autorité d'un employeur qui a le pouvoir de donner des ordres et des directives, d'en contrôler l'exécution et de sanctionner les manquements de son subordonné (Cour de cassation, chambre sociale, 13 novembre 1996)."
+    },
+    {
+      "q": "Le devoir du salarié de prendre soin de sa sécurité décharge-t-il l'employeur de sa responsabilité ?",
+      "ecran": 4,
+      "reponse": "Non. L'article L. 4122-1 précise que les devoirs du salarié sont sans incidence sur le principe de la responsabilité de l'employeur, qui doit prendre les mesures nécessaires pour assurer la sécurité et protéger la santé des travailleurs (L. 4121-1)."
+    },
+    {
+      "q": "Face à un danger grave et imminent, quelles sont les étapes du droit d'alerte et de retrait, et quelle protection le salarié a-t-il ?",
+      "ecran": 5,
+      "reponse": "Il alerte immédiatement l'employeur, il peut se retirer de la situation (sans accord préalable), sans créer de nouveau danger pour autrui. S'il avait un motif raisonnable, aucune sanction ni retenue de salaire ne peut être prise contre lui, et l'employeur ne peut lui demander de reprendre tant que le danger persiste (L. 4131-1, L. 4131-3, L. 4132-1)."
+    },
+    {
+      "q": "Un employeur peut-il sanctionner un salarié par une amende retenue sur la paie, même si le règlement intérieur la prévoit ?",
+      "ecran": 6,
+      "reponse": "Non. Les amendes et autres sanctions pécuniaires sont interdites ; toute disposition contraire est réputée non écrite (L. 1331-2). Toute sanction doit aussi respecter la procédure : griefs communiqués par écrit, entretien préalable sauf avertissement, sanction motivée et notifiée (L. 1332-1 et L. 1332-2)."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Le chef d'équipe a rédigé quatre affirmations pour un affichage d'atelier. Chacune contient une erreur : trouvez-la et corrigez-la en une phrase.",
+    "items": [
+      "Le salarié qui veut se retirer d'un danger grave et imminent doit d'abord obtenir l'accord écrit de l'employeur.",
+      "Le règlement intérieur peut prévoir une amende en cas de retard.",
+      "Un fait fautif peut être sanctionné n'importe quand, tant que l'employeur ne s'est pas décidé.",
+      "Puisque le salarié doit prendre soin de sa sécurité, l'employeur n'a plus à le former ni à le protéger."
+    ],
+    "corrige": "1) Faux : le travailleur alerte immédiatement l'employeur et peut se retirer, sans accord préalable (L. 4131-1, écran 5). 2) Faux : les amendes et sanctions pécuniaires sont interdites, même dans un règlement intérieur (L. 1331-2, écran 6). 3) Faux : les poursuites disciplinaires doivent être engagées dans un délai de deux mois à compter du jour où l'employeur a eu connaissance du fait (L. 1332-4, écran 6). 4) Faux : les devoirs du salarié sont sans incidence sur la responsabilité de l'employeur, qui doit la sécurité et la formation à la sécurité (L. 4122-1, L. 4121-1, L. 4141-2, écrans 3 et 4)."
+  },
+  "badge": "Le bon réflexe",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires (aucune compétence CP1 à CP10 ne porte sur le droit du travail)."
+  }
+}

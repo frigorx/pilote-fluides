@@ -1,0 +1,481 @@
+{
+ "genere": "node batiment3d/generer-zones.mjs (depuis index.html, tableau RESEAU)",
+ "stations": 57,
+ "ouvertes": 57,
+ "lignes": [
+  {
+   "id": "regl-thermique",
+   "ico": "🌡️",
+   "nom": "Thermique",
+   "sous": "RE2020 & RT existant",
+   "couleur": "#92400e",
+   "mere": "📜 LES RÉGLEMENTATIONS",
+   "mereCouleur": "#1e40af",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "Pourquoi une RT ?",
+     "sous": "de 1974 à la RE2020",
+     "href": "stations/thermique-pourquoi-une-rt/",
+     "correspondance": false
+    },
+    {
+     "nom": "La RE2020",
+     "sous": "Bbio · Cep · IC",
+     "href": "stations/thermique-re2020/",
+     "correspondance": true
+    },
+    {
+     "nom": "Le confort d'été",
+     "sous": "DH, degrés-heures",
+     "href": "stations/thermique-confort-ete/",
+     "correspondance": false
+    },
+    {
+     "nom": "RT de l'existant",
+     "sous": "rénover par élément",
+     "href": "stations/thermique-existant/",
+     "correspondance": false
+    },
+    {
+     "nom": "Le DPE",
+     "sous": "étiquettes & audit",
+     "href": "stations/thermique-dpe/",
+     "correspondance": false
+    },
+    {
+     "nom": "Les CEE",
+     "sous": "financer les travaux",
+     "href": "stations/thermique-cee/",
+     "correspondance": false
+    }
+   ]
+  },
+  {
+   "id": "regl-acoustique",
+   "ico": "🔊",
+   "nom": "Acoustique",
+   "sous": "bruit & voisinage",
+   "couleur": "#6d28d9",
+   "mere": "📜 LES RÉGLEMENTATIONS",
+   "mereCouleur": "#1e40af",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "Le bruit en dB",
+     "sous": "dB(A), niveaux",
+     "href": "stations/acoustique-le-bruit-en-db/",
+     "correspondance": false
+    },
+    {
+     "nom": "Les seuils",
+     "sous": "voisinage, émergence",
+     "href": "stations/acoustique-les-seuils/",
+     "correspondance": false
+    },
+    {
+     "nom": "Mesurer",
+     "sous": "sonomètre, protocole",
+     "href": "stations/acoustique-mesurer/",
+     "correspondance": false
+    },
+    {
+     "nom": "PAC & voisinage",
+     "sous": "l'unité extérieure",
+     "href": "stations/acoustique-pac-voisinage/",
+     "correspondance": false
+    },
+    {
+     "nom": "Traiter le bruit",
+     "sous": "plots, silencieux",
+     "href": "stations/acoustique-traiter-le-bruit/",
+     "correspondance": false
+    }
+   ]
+  },
+  {
+   "id": "regl-incendie",
+   "ico": "🔥",
+   "nom": "Incendie",
+   "sous": "ERP, coupe-feu",
+   "couleur": "#b91c1c",
+   "mere": "📜 LES RÉGLEMENTATIONS",
+   "mereCouleur": "#1e40af",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "Classer le bâti",
+     "sous": "ERP · IGH · habitation",
+     "href": "stations/incendie-classer-le-bati/",
+     "correspondance": false
+    },
+    {
+     "nom": "Euroclasses",
+     "sous": "réaction & résistance",
+     "href": "stations/incendie-euroclasses/",
+     "correspondance": false
+    },
+    {
+     "nom": "Le désenfumage",
+     "sous": "le rôle du CVC",
+     "href": "stations/incendie-desenfumage/",
+     "correspondance": false
+    },
+    {
+     "nom": "Clapets coupe-feu",
+     "sous": "traversées, DAS",
+     "href": "stations/incendie-clapets-coupe-feu/",
+     "correspondance": false
+    },
+    {
+     "nom": "Le SSI",
+     "sous": "détection, asservis.",
+     "href": "stations/incendie-ssi/",
+     "correspondance": false
+    },
+    {
+     "nom": "Sprinkler & RIA",
+     "sous": "eau incendie, lot CVC",
+     "href": "stations/incendie-sprinkler-ria/",
+     "correspondance": true
+    }
+   ]
+  },
+  {
+   "id": "regl-electrique",
+   "ico": "⚡",
+   "nom": "Électrique",
+   "sous": "NF C 15-100, habilitation",
+   "couleur": "#a16207",
+   "mere": "📜 LES RÉGLEMENTATIONS",
+   "mereCouleur": "#1e40af",
+   "correspondance": true,
+   "stations": [
+    {
+     "nom": "NF C 15-100",
+     "sous": "la norme BT",
+     "href": "stations/elec-nf-c-15-100/",
+     "correspondance": false
+    },
+    {
+     "nom": "Terre & différentiel",
+     "sous": "protéger les personnes",
+     "href": "stations/elec-terre-differentiel/",
+     "correspondance": false
+    },
+    {
+     "nom": "Protéger un circuit",
+     "sous": "sections & calibres",
+     "href": "stations/elec-proteger-un-circuit/",
+     "correspondance": false
+    },
+    {
+     "nom": "Régimes de neutre",
+     "sous": "TT · TN · IT",
+     "href": "stations/elec-regimes-de-neutre/",
+     "correspondance": false
+    },
+    {
+     "nom": "L'habilitation",
+     "sous": "B0 · BS · BR",
+     "href": "stations/elec-habilitation/",
+     "correspondance": true
+    },
+    {
+     "nom": "Consigner",
+     "sous": "VAT, les 4 étapes",
+     "href": "stations/elec-consigner/",
+     "correspondance": false
+    }
+   ]
+  },
+  {
+   "id": "regl-fluidique",
+   "ico": "❄️",
+   "nom": "Fluidique & thermique",
+   "sous": "F-Gaz, EN 378, traçabilité",
+   "couleur": "#0f766e",
+   "mere": "📜 LES RÉGLEMENTATIONS",
+   "mereCouleur": "#1e40af",
+   "correspondance": true,
+   "stations": [
+    {
+     "nom": "F-Gaz 3",
+     "sous": "2024 : quotas, interdictions",
+     "href": "stations/fgaz-3/",
+     "correspondance": false
+    },
+    {
+     "nom": "Aptitude & capacité",
+     "sous": "personne & entreprise",
+     "href": "stations/aptitude-capacite/",
+     "correspondance": false
+    },
+    {
+     "nom": "NF EN 378",
+     "sous": "classes, charges maxi",
+     "href": "stations/en-378/",
+     "correspondance": true
+    },
+    {
+     "nom": "Traçabilité",
+     "sous": "BSD, Trackdéchets",
+     "href": "stations/tracabilite-fluides/",
+     "correspondance": true
+    }
+   ]
+  },
+  {
+   "id": "regl-desp",
+   "ico": "🛢️",
+   "nom": "La DESP",
+   "sous": "équipements sous pression",
+   "couleur": "#0c4a6e",
+   "mere": "📜 LES RÉGLEMENTATIONS",
+   "mereCouleur": "#1e40af",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "La directive",
+     "sous": "2014/68/UE, PS > 0,5 bar",
+     "href": "stations/desp-la-directive/",
+     "correspondance": false
+    },
+    {
+     "nom": "Catégories I à IV",
+     "sous": "PS × V, groupe du fluide",
+     "href": "stations/desp-categories/",
+     "correspondance": true
+    },
+    {
+     "nom": "Marquage & papiers",
+     "sous": "CE, déclaration, notice",
+     "href": "stations/desp-marquage-papiers/",
+     "correspondance": false
+    },
+    {
+     "nom": "En service",
+     "sous": "requalification, CTP",
+     "href": "stations/desp-en-service/",
+     "correspondance": false
+    },
+    {
+     "nom": "Soupapes & sécurités",
+     "sous": "accessoires de protection",
+     "href": "stations/desp-soupapes-securites/",
+     "correspondance": false
+    }
+   ]
+  },
+  {
+   "id": "regl-certifs",
+   "ico": "🏅",
+   "nom": "Certifications & normes",
+   "sous": "RGE, QualiPAC, CE",
+   "couleur": "#3730a3",
+   "mere": "📜 LES RÉGLEMENTATIONS",
+   "mereCouleur": "#1e40af",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "Loi, norme ou DTU ?",
+     "sous": "qui oblige quoi",
+     "href": "stations/certif-loi-norme-dtu/",
+     "correspondance": false
+    },
+    {
+     "nom": "Le marquage CE",
+     "sous": "produits & DoP",
+     "href": "stations/certif-marquage-ce/",
+     "correspondance": false
+    },
+    {
+     "nom": "RGE & QualiPAC",
+     "sous": "les qualifications",
+     "href": "stations/certif-rge-qualipac/",
+     "correspondance": false
+    },
+    {
+     "nom": "Les garanties",
+     "sous": "décennale, biennale",
+     "href": "stations/certif-garanties/",
+     "correspondance": false
+    }
+   ]
+  },
+  {
+   "id": "regl-travail",
+   "ico": "⚖️",
+   "nom": "Droit du travail",
+   "sous": "contrats, obligations",
+   "couleur": "#9d174d",
+   "mere": "📜 LES RÉGLEMENTATIONS",
+   "mereCouleur": "#1e40af",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "Le contrat",
+     "sous": "CDI, CDD, apprentissage",
+     "href": "stations/travail-le-contrat/",
+     "correspondance": false
+    },
+    {
+     "nom": "Temps & paie",
+     "sous": "durée, heures sup",
+     "href": "stations/travail-temps-et-paie/",
+     "correspondance": false
+    },
+    {
+     "nom": "Droits & devoirs",
+     "sous": "employeur, salarié",
+     "href": "stations/travail-droits-devoirs/",
+     "correspondance": false
+    },
+    {
+     "nom": "Se former",
+     "sous": "CPF, VAE",
+     "href": "stations/travail-se-former/",
+     "correspondance": false
+    },
+    {
+     "nom": "S'installer",
+     "sous": "l'auto-entreprise",
+     "href": "stations/travail-s-installer/",
+     "correspondance": false
+    }
+   ]
+  },
+  {
+   "id": "secu-risques",
+   "ico": "⛑️",
+   "nom": "Risques professionnels",
+   "sous": "DUERP, EPI, gestes",
+   "couleur": "#c2410c",
+   "mere": "🦺 SÉCURITÉ & ENVIRONNEMENT",
+   "mereCouleur": "#166534",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "Le DUERP",
+     "sous": "évaluer les risques",
+     "href": "stations/risques-duerp/",
+     "correspondance": false
+    },
+    {
+     "nom": "Les 9 principes",
+     "sous": "prévenir dans l'ordre",
+     "href": "stations/risques-neuf-principes/",
+     "correspondance": false
+    },
+    {
+     "nom": "Les EPI",
+     "sous": "choisir & vérifier",
+     "href": "stations/risques-epi/",
+     "correspondance": true
+    },
+    {
+     "nom": "En hauteur",
+     "sous": "échafaudages, R408",
+     "href": "stations/risques-hauteur/",
+     "correspondance": true
+    },
+    {
+     "nom": "Risque chimique",
+     "sous": "FDS, CMR, fluides",
+     "href": "stations/risques-chimique/",
+     "correspondance": false
+    },
+    {
+     "nom": "Zones ATEX",
+     "sous": "A2L, A3 : zonage",
+     "href": "stations/risques-atex/",
+     "correspondance": true
+    }
+   ]
+  },
+  {
+   "id": "secu-dechets",
+   "ico": "♻️",
+   "nom": "Déchets",
+   "sous": "tri, BSD, filières",
+   "couleur": "#57534e",
+   "mere": "🦺 SÉCURITÉ & ENVIRONNEMENT",
+   "mereCouleur": "#166534",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "Responsabilités",
+     "sous": "producteur, détenteur",
+     "href": "stations/dechets-responsabilites/",
+     "correspondance": false
+    },
+    {
+     "nom": "Trier : 7 flux",
+     "sous": "la benne juste",
+     "href": "stations/dechets-sept-flux/",
+     "correspondance": false
+    },
+    {
+     "nom": "Déchets dangereux",
+     "sous": "BSD & Trackdéchets",
+     "href": "stations/dechets-dangereux/",
+     "correspondance": true
+    },
+    {
+     "nom": "La REP bâtiment",
+     "sous": "reprise, éco-organismes",
+     "href": "stations/dechets-rep-batiment/",
+     "correspondance": false
+    },
+    {
+     "nom": "Valoriser",
+     "sous": "réemploi, recyclage",
+     "href": "stations/dechets-valoriser/",
+     "correspondance": false
+    }
+   ]
+  },
+  {
+   "id": "secu-impact",
+   "ico": "🌍",
+   "nom": "Impact environnemental",
+   "sous": "PRP, cycle de vie",
+   "couleur": "#047857",
+   "mere": "🦺 SÉCURITÉ & ENVIRONNEMENT",
+   "mereCouleur": "#166534",
+   "correspondance": false,
+   "stations": [
+    {
+     "nom": "PRP & ODP",
+     "sous": "l'impact d'un fluide",
+     "href": "stations/impact-prp-odp/",
+     "correspondance": true
+    },
+    {
+     "nom": "Le TEWI",
+     "sous": "direct + indirect",
+     "href": "stations/impact-tewi/",
+     "correspondance": false
+    },
+    {
+     "nom": "ACV & carbone",
+     "sous": "l'IC de la RE2020",
+     "href": "stations/impact-acv-carbone/",
+     "correspondance": true
+    },
+    {
+     "nom": "Écoconception",
+     "sous": "ErP, étiquettes",
+     "href": "stations/impact-ecoconception/",
+     "correspondance": false
+    },
+    {
+     "nom": "Montréal → Kigali",
+     "sous": "l'accord mondial",
+     "href": "stations/impact-montreal-kigali/",
+     "correspondance": false
+    }
+   ]
+  }
+ ]
+}

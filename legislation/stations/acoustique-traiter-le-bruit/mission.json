@@ -1,0 +1,48 @@
+{
+  "slug": "acoustique-traiter-le-bruit",
+  "branche": "Acoustique",
+  "titre": "Mission : Le grondement du soir sous la terrasse",
+  "client": "Le gestionnaire d'un petit immeuble de bureaux, dont un locataire du dernier étage se plaint d'un grondement continu venant du plafond quand le groupe froid de la terrasse tourne.",
+  "situation": "Un groupe de production de froid a été posé sur la dalle de la terrasse, juste au-dessus des bureaux du dernier étage. À l'extérieur, on l'entend à peine. Dans les bureaux, un grondement sourd se propage à travers le plafond. Sur la terrasse, vous constatez que le groupe repose sur de simples cales, que la tuyauterie de cuivre est fixée en dur au muret, et que la gaine d'extraction du local voisin passe à proximité, avec un ventilateur qui siffle à la bouche. Le gestionnaire veut savoir par où le bruit passe et ce que l'on traite en premier.",
+  "piece_a_produire": "Une note d'une page au gestionnaire : un tableau à trois colonnes (constat sur la terrasse, chemin concerné — aérien ou solidien —, action proposée), classé dans l'ordre où l'on agit, avec pour chaque action l'erreur classique qu'elle évite. Une dernière ligne indique ce que l'on mesurera avant et après.",
+  "questions": [
+    {
+      "q": "Un bruit net dans le local du dessous mais faible à l'extérieur : quel chemin est le plus probable, et pourquoi n'agit-on pas d'abord sur l'air ?",
+      "ecran": 1,
+      "reponse": "Le chemin solidien : la vibration passe dans la dalle qui la rayonne dans le local. Un traitement de l'air (silencieux, écran, capot) ne coupe pas un bruit qui passe par la structure ; on traite d'abord les plots et les raccords."
+    },
+    {
+      "q": "Dans quel ordre agit-on sur la source, le chemin et le récepteur, et que dit l'INRS de la source ?",
+      "ecran": 2,
+      "reponse": "D'abord la source, puis le chemin, en dernier le récepteur (protections auditives individuelles en dernier recours). L'INRS écrit qu'agir sur la source est le moyen le plus efficace de lutter contre le bruit."
+    },
+    {
+      "q": "Pourquoi un silencieux réduit-il le bruit dans une gaine, et quel est son inconvénient ?",
+      "ecran": 5,
+      "reponse": "Il est garni de matériau absorbant qui dissipe l'énergie sonore : le niveau en sortie est le niveau en entrée moins l'atténuation, en décibels. Son inconvénient est la perte de charge, qui s'ajoute au réseau et se prévoit au dimensionnement du ventilateur."
+    },
+    {
+      "q": "Le ventilateur de la gaine siffle à la bouche parce que la gaine est trop étroite pour le débit. Quelle action traite la cause, et pourquoi pas un silencieux ?",
+      "ecran": 6,
+      "reponse": "Agrandir la section pour faire baisser la vitesse de l'air (vitesse = débit ÷ section), donc le bruit d'écoulement. Un silencieux avant la bouche ne réduit pas le bruit créé à la bouche et ajoute de la perte de charge."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Quatre dispositions sont relevées sur la terrasse. Pour chacune, dites si elle coupe le chemin solidien ou si elle le laisse ouvert, et corrigez celles qui posent problème : (1) groupe sur plots, tuyauterie de cuivre fixée en dur au muret ; (2) groupe sur plots dont l'un est écrasé jusqu'en butée ; (3) silencieux ajouté sur la gaine alors que le bruit gênant passe par la dalle ; (4) groupe sur plots avec raccords souples, colliers à garniture élastique et câbles en boucle.",
+    "items": [
+      "Groupe sur plots, tuyauterie de cuivre fixée en dur au muret",
+      "Groupe sur plots, l'un des plots écrasé jusqu'en butée",
+      "Silencieux ajouté sur la gaine alors que le bruit passe par la dalle",
+      "Groupe sur plots, raccords souples, colliers à garniture élastique, câbles en boucle"
+    ],
+    "corrige": "1 : erreur, le tube rigide court-circuite les plots ; il faut un raccord souple dès la sortie du groupe (écran 4). 2 : erreur, un plot écrasé n'isole plus ; recalculer la charge par plot et le remplacer (écran 7). 3 : erreur de chemin, un silencieux ne coupe pas un bruit solidien ; traiter les plots et les raccords (écrans 1 et 7). 4 : correcte, aucune liaison rigide ne subsiste entre le groupe et la structure (écran 4)."
+  },
+  "badge": "Plot posé",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP4", "CP7", "CP9"],
+    "attestation_2025": [],
+    "justification": "CP4 (VMC) et CP7 (ventilation tertiaire) : la vitesse d'air dans les gaines, le silencieux et la manchette souple se prescrivent au dimensionnement du réseau ; CP9 (climatisation) : la pose d'un groupe extérieur sur plots avec raccords souples se prescrit à l'installation. Station non fluidique : aucun code de l'attestation d'aptitude 2025."
+  }
+}

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t3" aria-describedby="d3" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t3">Les six objectifs de sécurité de l'arrêté du 3 août 2016</title>
+  <desc id="d3">Trois colonnes, chacune avec deux cartes numérotées. Le choc électrique : objectif 1, contact indirect, défaut sur une masse ; objectif 5, contact direct, parties sous tension. La chaleur et le feu : objectif 2, surintensité, chaleur excessive ; objectif 6, incendie, feu et fumée limités. L'usage au quotidien : objectif 3, circuits terminaux, circuits dédiés ; objectif 4, distribution, tableau et coupure. Une bande rappelle que la norme donne les moyens d'atteindre ces objectifs.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .b18 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .w20 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#ffffff; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#ffffff; }
+    .t17 { font-size:17px; fill:#10233c; }
+    .g16 { font-size:16px; fill:#5a6b7d; }
+  </style>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Six objectifs, trois familles de risques</text>
+
+  <!-- Colonne 1 : le choc électrique -->
+  <rect x="27" y="62" width="246" height="46" rx="23" fill="#a16207"/>
+  <text class="w20" x="150" y="93" text-anchor="middle">Le choc électrique</text>
+  <rect x="27" y="126" width="246" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="60" cy="176" r="19" fill="#1b3a63"/><text class="num" x="60" y="184" text-anchor="middle">1</text>
+  <text class="b18" x="92" y="170">Contact indirect</text>
+  <text class="g16" x="92" y="196">défaut sur une masse</text>
+  <rect x="27" y="246" width="246" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="60" cy="296" r="19" fill="#1b3a63"/><text class="num" x="60" y="304" text-anchor="middle">5</text>
+  <text class="b18" x="92" y="290">Contact direct</text>
+  <text class="g16" x="92" y="316">parties sous tension</text>
+
+  <!-- Colonne 2 : la chaleur et le feu -->
+  <rect x="287" y="62" width="246" height="46" rx="23" fill="#a16207"/>
+  <text class="w20" x="410" y="93" text-anchor="middle">La chaleur et le feu</text>
+  <rect x="287" y="126" width="246" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="320" cy="176" r="19" fill="#1b3a63"/><text class="num" x="320" y="184" text-anchor="middle">2</text>
+  <text class="b18" x="352" y="170">Surintensité</text>
+  <text class="g16" x="352" y="196">chaleur excessive</text>
+  <rect x="287" y="246" width="246" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="320" cy="296" r="19" fill="#1b3a63"/><text class="num" x="320" y="304" text-anchor="middle">6</text>
+  <text class="b18" x="352" y="290">Incendie</text>
+  <text class="g16" x="352" y="316">feu et fumée limités</text>
+
+  <!-- Colonne 3 : l'usage au quotidien -->
+  <rect x="547" y="62" width="246" height="46" rx="23" fill="#a16207"/>
+  <text class="w20" x="670" y="93" text-anchor="middle">L'usage au quotidien</text>
+  <rect x="547" y="126" width="246" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="580" cy="176" r="19" fill="#1b3a63"/><text class="num" x="580" y="184" text-anchor="middle">3</text>
+  <text class="b18" x="612" y="170">Circuits terminaux</text>
+  <text class="g16" x="612" y="196">circuits dédiés</text>
+  <rect x="547" y="246" width="246" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="580" cy="296" r="19" fill="#1b3a63"/><text class="num" x="580" y="304" text-anchor="middle">4</text>
+  <text class="b18" x="612" y="290">Distribution</text>
+  <text class="g16" x="612" y="316">tableau et coupure</text>
+
+  <!-- Bande -->
+  <rect x="27" y="376" width="766" height="64" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="t17" x="410" y="404" text-anchor="middle" font-weight="bold">L'arrêté fixe les six objectifs.</text>
+  <text class="t17" x="410" y="428" text-anchor="middle">La norme NF C 15-100 donne les moyens de les atteindre.</text>
+</svg>

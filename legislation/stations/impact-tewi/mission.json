@@ -1,0 +1,54 @@
+{
+  "slug": "impact-tewi",
+  "branche": "Impact environnemental",
+  "titre": "Mission : Les deux plateaux de la balance",
+  "client": "Le gérant d'une boulangerie industrielle qui change le groupe de sa chambre froide.",
+  "situation": "Deux offres arrivent chez Clim'Études Sud. L'offre A utilise un fluide à très bas PRP, mais la machine est mal dimensionnée et consomme beaucoup. L'offre B utilise un fluide à PRP élevé, avec une machine efficace et étanche. Le gérant veut trancher sur le seul fluide. Votre responsable vous demande de lui montrer pourquoi le fluide seul ne dit rien du poids climatique.",
+  "piece_a_produire": "Un tableau qualitatif à deux offres : part directe, part indirecte, ce qui les fait varier, et les trois questions à poser avant de trancher.",
+  "questions": [
+    {
+      "q": "Que mesure le TEWI, et de quelles deux parts se compose-t-il ?",
+      "ecran": 1,
+      "reponse": "Le poids climatique complet d'une machine sur toute sa vie : la part directe (fuites de fluide converties en équivalent CO₂ via le PRP) et la part indirecte (énergie électrique consommée, convertie en équivalent CO₂)."
+    },
+    {
+      "q": "Comment se construit la part directe ?",
+      "ecran": 2,
+      "reponse": "On additionne toute la masse de fluide fuie pendant la vie de la machine, puis on la multiplie par le PRP du fluide."
+    },
+    {
+      "q": "Pourquoi la part indirecte dépend-elle du réseau électrique où tourne la machine ?",
+      "ecran": 3,
+      "reponse": "L'électricité n'est jamais neutre à produire : sa part de CO₂ dépend du réseau, donc une même consommation ne pèse pas pareil d'un réseau à l'autre."
+    },
+    {
+      "q": "Une machine efficace au fluide à PRP élevé fuit régulièrement : quelle part peut dominer le TEWI ?",
+      "ecran": 5,
+      "reponse": "La part directe, malgré la bonne efficacité énergétique : une machine économe ne compense pas un fluide qui s'échappe."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque situation à la part du TEWI qui peut dominer.",
+    "items": [
+      "A. Pompe à chaleur au propane, mal dimensionnée, très gourmande",
+      "B. Groupe au R-404A, efficace, mais qui fuit régulièrement",
+      "C. Machine qui dure beaucoup plus longtemps en service",
+      "1. Part directe",
+      "2. Part indirecte",
+      "3. Les deux parts, qui ont plus de temps pour s'accumuler"
+    ],
+    "corrige": "A-2 (part indirecte), B-1 (part directe), C-3 (les deux parts)."
+  },
+  "badge": "Les deux plateaux",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [
+      "CP9"
+    ],
+    "attestation_2025": [
+      "2.02"
+    ],
+    "justification": "Comparer deux solutions de production frigorifique ou de climatisation sur leur poids climatique relève de CP9 ; côté attestation 2025, le PRP et l'incidence des émissions relèvent du code 2.02."
+  }
+}

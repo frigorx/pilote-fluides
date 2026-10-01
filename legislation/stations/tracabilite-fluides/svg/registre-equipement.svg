@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-registre" aria-describedby="d-registre" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-registre">Le registre de l'équipement, tenu tout au long de sa vie</title>
+  <desc id="d-registre">Un carnet à quatre lignes suit la vie d'un équipement : la mise en service avec le fluide chargé, le contrôle d'étanchéité avec son résultat, la réparation avec le fluide ajouté, la fin de vie avec le fluide récupéré. Chaque ligne porte la date et la personne qui a agi. À droite, un encadré rappelle que le registre est consulté avant chaque contrôle d'étanchéité et renseigné à chaque fluide ajouté ou récupéré. En bas, une phrase précise que les documents des contrôles et des réparations sont conservés au moins cinq ans. Dans l'animation, les lignes s'ajoutent une à une.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomt{ font-weight:bold; font-size:18px; fill:#0f766e; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <rect x="30" y="30" width="520" height="410" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M30,42 a12,12 0 0 1 12,-12 h496 a12,12 0 0 1 12,12 v40 h-520 z" fill="#1b3a63"/>
+  <text class="wht" x="290" y="62" text-anchor="middle">REGISTRE DE L'ÉQUIPEMENT</text>
+  <g>
+    <circle cx="66" cy="128" r="16" fill="#0f766e"/>
+    <text class="wht" x="66" y="134" text-anchor="middle">1</text>
+    <text class="nom" x="100" y="124" text-anchor="start">Mise en service</text>
+    <text class="txt" x="100" y="150" text-anchor="start">date · fluide chargé · qui</text>
+    <path d="M50,170 H530" stroke="#b9c6d3" stroke-width="1.5" stroke-dasharray="2 5"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.13;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="66" cy="212" r="16" fill="#0f766e"/>
+    <text class="wht" x="66" y="218" text-anchor="middle">2</text>
+    <text class="nom" x="100" y="208" text-anchor="start">Contrôle d'étanchéité</text>
+    <text class="txt" x="100" y="234" text-anchor="start">date · résultat · qui</text>
+    <path d="M50,254 H530" stroke="#b9c6d3" stroke-width="1.5" stroke-dasharray="2 5"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.19;0.26;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="66" cy="296" r="16" fill="#0f766e"/>
+    <text class="wht" x="66" y="302" text-anchor="middle">3</text>
+    <text class="nom" x="100" y="292" text-anchor="start">Réparation, appoint</text>
+    <text class="txt" x="100" y="318" text-anchor="start">date · fluide ajouté · qui</text>
+    <path d="M50,338 H530" stroke="#b9c6d3" stroke-width="1.5" stroke-dasharray="2 5"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.39;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="66" cy="380" r="16" fill="#0f766e"/>
+    <text class="wht" x="66" y="386" text-anchor="middle">4</text>
+    <text class="nom" x="100" y="376" text-anchor="start">Fin de vie</text>
+    <text class="txt" x="100" y="402" text-anchor="start">date · fluide récupéré · qui</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.45;0.52;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <rect x="580" y="30" width="190" height="410" rx="12" fill="#e6f2ef" stroke="#0f766e" stroke-width="3"/>
+  <text class="nomt" x="675" y="66" text-anchor="middle">Consulté</text>
+  <text class="txt" x="675" y="96" text-anchor="middle">avant chaque</text>
+  <text class="txt" x="675" y="120" text-anchor="middle">contrôle</text>
+  <text class="txt" x="675" y="144" text-anchor="middle">d'étanchéité</text>
+  <path d="M600,190 H750" stroke="#0f766e" stroke-width="2" stroke-dasharray="2 5"/>
+  <text class="nomt" x="675" y="226" text-anchor="middle">Renseigné</text>
+  <text class="txt" x="675" y="256" text-anchor="middle">à chaque fluide</text>
+  <text class="txt" x="675" y="280" text-anchor="middle">ajouté ou</text>
+  <text class="txt" x="675" y="304" text-anchor="middle">récupéré</text>
+  <text class="txt" x="400" y="476" text-anchor="middle">Documents des contrôles et des réparations : conservés au moins 5 ans.</text>
+</svg>

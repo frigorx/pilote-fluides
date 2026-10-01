@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" role="img"
+     aria-labelledby="t-autres" aria-describedby="d-autres" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-autres">Un appareil CVC, plusieurs textes, un seul marquage CE</title>
+  <desc id="d-autres">Au centre, un appareil CVC schématique avec un ventilateur et une plaque CE. Autour, six cartes
+    reliées à lui. À gauche : les produits de construction (règlement 305/2011, la déclaration des performances),
+    les équipements sous pression (directive 2014/68/UE, déclaration UE de conformité, voir la station sur la
+    directive), les machines (directive 2006/42/CE, puis règlement 2023/1230 à partir du 14 janvier 2027). À droite :
+    le matériel électrique (directive basse tension et directive compatibilité électromagnétique), l'écoconception
+    (directive 2009/125/CE puis règlement 2024/1781, avec CE et déclaration de conformité), et, en tirets, l'étiquette
+    énergie du règlement 2017/1369, qui informe l'acheteur mais n'est pas un marquage CE. L'animation fait apparaître
+    les cartes une à une, puis la plaque CE ; l'image fixe montre tout.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .nm  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .tx  { font-size:16px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .ce  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#3730a3; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Un appareil, plusieurs textes, un seul CE</text>
+
+  <!-- L'appareil au centre -->
+  <rect x="340" y="175" width="220" height="140" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="398" cy="225" r="34" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+  <path d="M 398 225 L 398 193 M 398 225 L 426 241 M 398 225 L 370 241" stroke="#5a6b7d" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 450 200 H 540 M 450 216 H 540 M 450 232 H 540" stroke="#c9d3df" stroke-width="3" stroke-linecap="round"/>
+  <text class="nm" x="450" y="345" text-anchor="middle">Un appareil CVC</text>
+  <text class="sm" x="450" y="367" text-anchor="middle">une seule plaque, plusieurs exigences</text>
+
+  <!-- Liaisons (dessinées avec les cartes) -->
+  <!-- Carte 1 : produits de construction -->
+  <g>
+    <path d="M 300 105 L 340 195" stroke="#3730a3" stroke-width="3" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.04;0.10;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <rect x="20" y="56" width="280" height="98" rx="12" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+    <text class="nm" x="36" y="84">Produits de construction</text>
+    <text class="tx" x="36" y="108">règlement (UE) 305/2011</text>
+    <text class="tx" x="36" y="130">déclaration des performances</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.03;0.08;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Carte 2 : équipements sous pression -->
+  <g>
+    <path d="M 300 245 L 340 245" stroke="#3730a3" stroke-width="3" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.16;0.22;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <rect x="20" y="196" width="280" height="98" rx="12" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+    <text class="nm" x="36" y="224">Équipements sous pression</text>
+    <text class="tx" x="36" y="248">directive 2014/68/UE</text>
+    <text class="tx" x="36" y="270">déclaration UE de conformité</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.15;0.20;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Carte 3 : machines -->
+  <g>
+    <path d="M 300 385 L 340 295" stroke="#3730a3" stroke-width="3" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.28;0.34;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <rect x="20" y="336" width="280" height="98" rx="12" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+    <text class="nm" x="36" y="364">Machines</text>
+    <text class="tx" x="36" y="388">directive 2006/42/CE, puis</text>
+    <text class="tx" x="36" y="410">règlement (UE) 2023/1230 dès 2027</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.27;0.32;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Carte 4 : matériel électrique -->
+  <g>
+    <path d="M 600 105 L 560 195" stroke="#3730a3" stroke-width="3" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.40;0.46;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <rect x="600" y="56" width="280" height="98" rx="12" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+    <text class="nm" x="616" y="84">Matériel électrique</text>
+    <text class="tx" x="616" y="108">basse tension : 2014/35/UE</text>
+    <text class="tx" x="616" y="130">électromagnétique : 2014/30/UE</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.39;0.44;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Carte 5 : écoconception -->
+  <g>
+    <path d="M 600 245 L 560 245" stroke="#3730a3" stroke-width="3" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.52;0.58;1" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <rect x="600" y="196" width="280" height="98" rx="12" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+    <text class="nm" x="616" y="224">Écoconception</text>
+    <text class="tx" x="616" y="248">directive 2009/125/CE, puis</text>
+    <text class="tx" x="616" y="270">règlement (UE) 2024/1781</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.51;0.56;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Carte 6 : étiquette énergie (pas un CE) -->
+  <g>
+    <path d="M 600 385 L 560 295" stroke="#5a6b7d" stroke-width="3" fill="none" stroke-dasharray="8 7"/>
+    <rect x="600" y="336" width="280" height="98" rx="12" fill="#ffffff" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="9 6"/>
+    <text class="nm" x="616" y="364" style="fill:#5a6b7d">Étiquette énergie</text>
+    <text class="tx" x="616" y="388">règlement (UE) 2017/1369</text>
+    <text class="tx" x="616" y="410">informe l'acheteur : ce n'est pas un CE</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.63;0.68;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- La plaque CE : apparaît en dernier -->
+  <g>
+    <rect x="474" y="262" width="76" height="40" rx="6" fill="#ffffff" stroke="#3730a3" stroke-width="2"/>
+    <text class="ce" x="512" y="292" text-anchor="middle">CE</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.72;0.78;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Phrase de synthèse -->
+  <g>
+  <rect x="20" y="462" width="860" height="66" rx="12" fill="#fdf1e3" stroke="#e8914a" stroke-width="2"/>
+  <text class="tx" x="450" y="488" text-anchor="middle" style="font-size:18px">Le CE engage le fabricant sur toutes les exigences applicables à son appareil :</text>
+  <text class="tx" x="450" y="512" text-anchor="middle" style="font-size:18px">à vous de savoir quels textes le visent, pas seulement lequel est écrit sur la plaque.</text>
+  <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.80;0.86;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg>

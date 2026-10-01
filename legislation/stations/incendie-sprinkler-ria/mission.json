@@ -1,0 +1,48 @@
+{
+  "slug": "incendie-sprinkler-ria",
+  "branche": "Incendie",
+  "titre": "Mission : « Un sprinkler partout, et des RIA en plus »",
+  "client": "Le responsable d'une société de services qui aménage des locaux accueillant du public dans un bâtiment existant, et qui veut « être tranquille » côté incendie.",
+  "situation": "Le client a lu quelque part qu'il faut « du sprinkler et des RIA » et demande les deux, partout, dans son bâtiment. Vous n'avez pas encore lu les textes qui s'appliquent au projet. Votre responsable vous demande de préparer, avant le rendez-vous, une note qui explique ce que sont ces deux dispositifs, ce que le bureau d'études aura à dimensionner côté eau, et ce qu'il faut vérifier avant de promettre quoi que ce soit.",
+  "piece_a_produire": "Une note d'une page au client : un tableau à deux colonnes (robinet d'incendie armé, sprinkler) avec pour chacun qui agit, comment l'eau arrive, et ce que le règlement fixe ; puis trois questions à poser avant tout chiffrage : quel texte l'exige pour ce bâtiment, la DESP s'applique-t-elle à ce réseau d'eau sous pression, qui réalise le système. Aucune valeur qui ne soit lue dans un texte.",
+  "questions": [
+    {
+      "q": "Quelle est la différence de logique entre un robinet d'incendie armé et un sprinkler ?",
+      "ecran": 1,
+      "reponse": "Le RIA est un moyen de première intervention : une personne formée déroule le tuyau et vise le foyer. Le sprinkler est une extinction automatique : la tête s'ouvre seule à la chaleur, sans personne sur place. Les deux sont de l'eau sous pression dans un réseau de tuyaux."
+    },
+    {
+      "q": "Que fixe l'article MS 17 pour le robinet d'incendie armé le plus défavorisé, et pourquoi est-ce un sujet de calcul ?",
+      "ecran": 3,
+      "reponse": "Une pression minimale de fonctionnement de 2,5 bars à laquelle le débit doit être fourni, contrôlée par un manomètre à trois voies. La tenir au robinet du bout du réseau demande un calcul hydraulique (débit, pertes de charge)."
+    },
+    {
+      "q": "Un foyer démarre sous l'une des têtes d'un local : quelles têtes s'ouvrent, et pourquoi ?",
+      "ecran": 5,
+      "reponse": "Seules les têtes que la chaleur atteint : chaque ampoule éclate à sa propre chaleur. Ni la fumée ni une commande centrale ne les ouvre. Dans un feu plus étendu, plusieurs têtes s'ouvrent, mais toujours celles qui sont chauffées."
+    },
+    {
+      "q": "Pourquoi ce sujet passe-t-il par le bureau d'études CVC, et qu'est-ce qui relie ce lot à la DESP ?",
+      "ecran": 7,
+      "reponse": "Derrière la tête et le robinet, il y a un réseau d'eau sous pression à dimensionner et à coordonner (source d'eau, local des pompes, passages). La question de la DESP se pose : on lit le champ d'application de la directive et ses grandeurs (PS, DN, fluide) pour savoir si elle s'applique. Le système sprinkleur lui-même est réalisé par une entreprise spécialisée et qualifiée (MS 25)."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Chaque phrase contient une erreur. Trouvez-la et corrigez-la en une phrase.",
+    "items": [
+      "Un sprinkler s'ouvre dès que de la fumée arrive sur la tête.",
+      "Quand un foyer démarre, toutes les têtes du local s'ouvrent ensemble.",
+      "Le robinet d'incendie armé se place à l'intérieur du local qu'il protège.",
+      "Un système sprinkleur se vérifie une seule fois, avant la mise en service."
+    ],
+    "corrige": "1. La tête est déclenchée par la chaleur (éclatement de l'ampoule), pas par la fumée (écran 4). 2. Chaque tête réagit à sa propre chaleur : seules les têtes chauffées s'ouvrent (écran 5). 3. Le RIA se place à l'intérieur du bâtiment mais à l'extérieur des locaux à protéger (MS 15, écran 2). 4. Vérification avant la mise en service, au moins une fois par an en exploitation, et tous les trois ans pour un sprinkleur par une personne ou un organisme agréé (MS 73, écran 8)."
+  },
+  "badge": "Seule la bonne tête",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP3"],
+    "attestation_2025": [],
+    "justification": "CP3 (réseaux sanitaires) par la méthode seulement : dimensionner un réseau d'eau sous pression (débit, pression, pertes de charge) ; le sprinkler et le RIA eux-mêmes sont hors REAC, culture professionnelle du technicien d'études et du chargé d'affaires."
+  }
+}

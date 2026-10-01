@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-echelle" aria-describedby="d-echelle" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t-echelle">Le curseur de l'échelle des niveaux en dB(A)</title>
+  <desc id="d-echelle">Une règle horizontale graduée de 0 à 120 décibels pondérés A. Quatre repères : 0, le bruit le plus faible qu'une oreille humaine perçoit ; 50, une conversation habituelle ; 80, le seuil de nocivité pour huit heures par jour, marqué sous la règle ; 120, un bruit qui provoque une sensation douloureuse. Un curseur orange en forme de flèche parcourt la règle d'un repère à l'autre ; à la fin il s'arrête à 120. En bas, un rappel : plus dix décibels, c'est dix fois plus d'énergie sonore ; plus trois, deux fois plus.</desc>
+  <style>
+    .ti{font-size:22px;font-weight:bold;fill:#1b3a63}
+    .lb{font-size:17px;fill:#10233c}
+    .lg{font-size:18px;font-weight:bold;fill:#1b3a63}
+    .gr{font-size:16px;fill:#5a6b7d}
+    .vv{font-size:20px;font-weight:bold;fill:#6d28d9}
+    .oo{font-size:18px;font-weight:bold;fill:#b45f1a}
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ti" x="30" y="34">L'échelle du bruit en dB(A)</text>
+  <g transform="translate(0,-55)">
+  <rect x="60" y="285" width="680" height="30" fill="#ece6f8" stroke="#6d28d9" stroke-width="3"/>
+  <line x1="116.7" y1="298" x2="116.7" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="173.3" y1="298" x2="173.3" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="230.0" y1="298" x2="230.0" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="286.7" y1="298" x2="286.7" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="400.0" y1="298" x2="400.0" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="456.7" y1="298" x2="456.7" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="570.0" y1="298" x2="570.0" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="626.7" y1="298" x2="626.7" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="683.3" y1="298" x2="683.3" y2="315" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="60.0" y1="270" x2="60.0" y2="330" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="343.3" y1="270" x2="343.3" y2="330" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="513.3" y1="270" x2="513.3" y2="330" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="740.0" y1="270" x2="740.0" y2="330" stroke="#1b3a63" stroke-width="4"/>
+  <text class="vv" x="60" y="205">0 dB(A)</text>
+  <text class="lb" x="60" y="230">le plus faible</text>
+  <text class="lb" x="60" y="251">perceptible</text>
+  <text class="vv" x="343.3" y="205" text-anchor="middle">50 dB(A)</text>
+  <text class="lb" x="343.3" y="230" text-anchor="middle">conversation habituelle</text>
+  <text class="vv" x="740" y="205" text-anchor="end">120 dB(A)</text>
+  <text class="lb" x="740" y="230" text-anchor="end">sensation douloureuse</text>
+  <text class="vv" x="513.3" y="362" text-anchor="middle">80 dB(A)</text>
+  <text class="lb" x="513.3" y="387" text-anchor="middle">seuil de nocivité, 8 h par jour</text>
+  <g><polygon points="740,266 728,244 752,244" fill="#e8914a" stroke="#1b3a63" stroke-width="2"/><line x1="740" y1="266" x2="740" y2="285" stroke="#e8914a" stroke-width="4"/><animateTransform attributeName="transform" type="translate" values="-680.0 0;-680.0 0;-396.7 0;-396.7 0;-226.7 0;-226.7 0;0 0;0 0" keyTimes="0;0.08;0.3;0.42;0.6;0.72;0.88;1" calcMode="linear" dur="12s" repeatCount="indefinite"/></g>
+  </g>
+  <text class="lb" x="400" y="420" text-anchor="middle">+ 10 dB : dix fois plus d'énergie sonore. + 3 dB : deux fois plus.</text>
+  <text class="gr" x="400" y="447" text-anchor="middle">Une échelle logarithmique range sur une même règle des bruits très différents.</text>
+</svg>

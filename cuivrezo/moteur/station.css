@@ -36,8 +36,8 @@ button:focus-visible,a:focus-visible{outline:4px solid rgba(255,107,53,.6);outli
 .haut .carte{border:2px solid var(--navy);border-radius:12px;padding:.35rem .8rem;color:var(--navy);
              text-decoration:none;font-weight:700;font-size:.8em;white-space:nowrap}
 
-/* ---------- les six temps ---------- */
-.temps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.35rem;padding:.45rem 1rem;
+/* ---------- les sept temps ---------- */
+.temps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.35rem;padding:.45rem 1rem;
        background:var(--paper);border-bottom:1px solid var(--line)}
 .temps button{min-height:52px;border:2px solid var(--line);border-radius:12px;background:var(--cream);
               color:var(--navy);font-weight:700;font-size:.72em;line-height:1.15;padding:.2rem .3rem}
@@ -139,7 +139,7 @@ details.pourquoi summary{min-height:48px;display:flex;align-items:center;font-we
   body{font-size:18px}
   .haut{flex-wrap:wrap;padding:.4rem .7rem}
   .haut .titres{flex-basis:100%;order:3}
-  .temps{grid-template-columns:repeat(3,minmax(0,1fr));padding:.4rem .7rem}
+  .temps{grid-template-columns:repeat(4,minmax(0,1fr));padding:.4rem .7rem}
   main{padding:.7rem}
   .bas{grid-template-columns:auto minmax(0,1fr);padding:.5rem .7rem}
   .bas .voix{grid-column:1/-1;justify-content:space-between;order:3;flex-wrap:wrap;gap:.4rem;white-space:normal}

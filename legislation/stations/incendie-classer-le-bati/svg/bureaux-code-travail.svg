@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img"
+     aria-labelledby="t-cdt" aria-describedby="d-cdt" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cdt">Les bureaux sans public : quatre seuils du Code du travail</title>
+  <desc id="d-cdt">Quatre cartes en deux rangées. Désenfumage : locaux de plus de 300 mètres carrés en rez-de-chaussée et en étage, locaux aveugles ou
+    en sous-sol de plus de 100 mètres carrés et tous les escaliers, en naturel ou en mécanique. Structure : plancher bas du dernier niveau à plus
+    de 8 mètres du sol, structure stable au feu de degré une heure. Alarme : plus de cinquante personnes, alarme sonore et consigne affichée.
+    Extincteurs : un extincteur à eau pulvérisée de 6 litres pour 200 mètres carrés, un par niveau. En bas, une bande donne les règles de
+    dimensionnement du désenfumage : naturel, surface supérieure au centième de la superficie, minimum 1 mètre carré ; mécanique, 1 mètre cube
+    par seconde par 100 mètres carrés.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .tag { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#b91c1c; }
+    .nom { font-size:16px; fill:#10233c; }
+    .sp  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+  </style>
+  <text class="ttl" x="400" y="30" text-anchor="middle">Bureaux sans public : ce que dit le Code du travail</text>
+  <rect x="20" y="48" width="365" height="136" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="tag" x="36" y="78">Désenfumage · R. 4216-13</text>
+  <text class="nom" x="36" y="106">Locaux de plus de 300 m² (rez-de-chaussée</text>
+  <text class="nom" x="36" y="128">et étage), locaux aveugles ou en sous-sol de</text>
+  <text class="nom" x="36" y="150">plus de 100 m², et tous les escaliers :</text>
+  <text class="nom" x="36" y="172">désenfumage naturel ou mécanique.</text>
+  <rect x="415" y="48" width="365" height="136" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="tag" x="431" y="78">Structure · R. 4216-24</text>
+  <text class="nom" x="431" y="106">Plancher bas du dernier niveau à plus de</text>
+  <text class="nom" x="431" y="128">8 m du sol : structure stable au feu de</text>
+  <text class="nom" x="431" y="150">degré une heure, planchers coupe-feu</text>
+  <text class="nom" x="431" y="172">de même degré.</text>
+  <rect x="20" y="196" width="365" height="136" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="tag" x="36" y="226">Alarme · R. 4227-34</text>
+  <text class="nom" x="36" y="254">Plus de cinquante personnes occupées ou</text>
+  <text class="nom" x="36" y="276">réunies habituellement : alarme sonore.</text>
+  <text class="nom" x="36" y="298">Consigne de sécurité incendie affichée</text>
+  <text class="nom" x="36" y="320">dans ces établissements (R. 4227-37).</text>
+  <rect x="415" y="196" width="365" height="136" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="tag" x="431" y="226">Extincteurs · R. 4227-29</text>
+  <text class="nom" x="431" y="254">Extincteur à eau pulvérisée, 6 litres au</text>
+  <text class="nom" x="431" y="276">moins, pour 200 m² de plancher ;</text>
+  <text class="nom" x="431" y="298">au moins un appareil par niveau.</text>
+  <rect x="20" y="350" width="760" height="100" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="sp" x="36" y="378">Dimensionner le désenfumage d'un lieu de travail (R. 4216-14 et R. 4216-15)</text>
+  <text class="nom" x="36" y="406">Naturel : ouvertures hautes et basses, section d'évacuation supérieure au centième</text>
+  <text class="nom" x="36" y="428">de la superficie, 1 m² au minimum. Mécanique : un mètre cube par seconde par 100 m².</text>
+</svg>

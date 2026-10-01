@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img"
+     aria-labelledby="t-aide" aria-describedby="d-aide" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-aide">Le client n'a l'aide que si l'entreprise est RGE pour ces travaux</title>
+  <desc id="d-aide">De gauche à droite : le client, représenté par un pictogramme plein, demande des travaux
+    à une entreprise dont l'enseigne porte la mention RGE. De cette entreprise part une flèche vers une porte
+    marquée « L'aide ». Dans l'image fixe, la porte est ouverte : la condition est remplie. En bas, une bande
+    rappelle que sans la mention RGE pour ces travaux, la porte reste fermée. L'animation montre le client qui
+    demande, la mention RGE qui s'allume, puis la porte qui s'ouvre et son cadenas qui disparaît ; l'image
+    fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .qui2{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#3730a3; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .gris{ font-size:16px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .rge { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#fffdf8; }
+    .aide{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:24px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="36" text-anchor="middle">Le client n'a l'aide que si l'entreprise est RGE pour ces travaux</text>
+
+  <!-- Le client : pictogramme plein -->
+  <circle cx="90" cy="120" r="24" fill="#1b3a63"/>
+  <path d="M48,204 Q48,154 90,154 Q132,154 132,204 Z" fill="#1b3a63"/>
+  <text class="qui" x="90" y="238" text-anchor="middle">Le client</text>
+  <text class="lbl" x="90" y="262" text-anchor="middle">veut des travaux</text>
+
+  <!-- Flèche client vers entreprise -->
+  <g>
+    <text class="gris" x="243" y="150" text-anchor="middle">devis, travaux</text>
+    <line x1="160" y1="170" x2="322" y2="170" stroke="#5a6b7d" stroke-width="3"/>
+    <polygon points="322,160 340,170 322,180" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.14;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- L'entreprise -->
+  <rect x="350" y="112" width="200" height="108" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <polygon points="340,112 450,66 560,112" fill="#1b3a63"/>
+  <g>
+    <circle cx="450" cy="168" r="44" fill="none" stroke="#e8914a" stroke-width="3"/>
+    <circle cx="450" cy="168" r="36" fill="#3730a3"/>
+    <text class="rge" x="450" y="177" text-anchor="middle">RGE</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.30;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="qui2" x="450" y="252" text-anchor="middle">L'entreprise RGE</text>
+  <text class="lbl" x="450" y="276" text-anchor="middle">pour ce domaine de travaux</text>
+
+  <!-- Flèche entreprise vers l'aide -->
+  <g>
+    <text class="gris" x="636" y="150" text-anchor="middle">mention valide</text>
+    <line x1="570" y1="170" x2="694" y2="170" stroke="#5a6b7d" stroke-width="3"/>
+    <polygon points="694,160 712,170 694,180" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.44;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- La porte de l'aide : ouverte dans l'image fixe -->
+  <rect x="720" y="100" width="130" height="130" rx="10" fill="#fff4e6" stroke="#e8914a" stroke-width="3"/>
+  <text class="aide" x="785" y="172" text-anchor="middle">L'AIDE</text>
+  <rect x="723" y="103" width="6" height="124" fill="#5a6b7d">
+    <animate attributeName="width" values="62;62;6;6" keyTimes="0;0.5;0.6;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="841" y="103" width="6" height="124" fill="#5a6b7d">
+    <animate attributeName="width" values="62;62;6;6" keyTimes="0;0.5;0.6;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="785;785;841;841" keyTimes="0;0.5;0.6;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <g opacity="0">
+    <rect x="771" y="176" width="28" height="22" rx="3" fill="#e8914a"/>
+    <path d="M776,176 v-8 a9,9 0 0 1 18,0 v8" fill="none" stroke="#e8914a" stroke-width="4"/>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.55;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="qui" x="785" y="256" text-anchor="middle">La porte de l'aide</text>
+  <text class="lbl" x="785" y="280" text-anchor="middle">s'ouvre avec le RGE</text>
+
+  <!-- Bande de rappel -->
+  <rect x="20" y="314" width="860" height="48" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="344" text-anchor="middle">Sans la mention RGE pour ces travaux, la porte reste fermée</text>
+</svg>

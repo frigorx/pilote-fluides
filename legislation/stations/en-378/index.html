@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>NF EN 378 — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la norme NF EN 378, les classes de sécurité des fluides, les catégories d'accès, l'emplacement du système, pourquoi la charge est limitée, la détection et la ventilation.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/en-378/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Fluidique & thermique.
+     « NF EN 378 — classes, charges maxi ». Niveau BTS / technicien d'études.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+
+     DOCTRINE : la norme est payante. La station n'en cite que l'objet, la
+     structure et ce qui est public ; AUCUNE valeur de charge n'y figure
+     (voir FOND.md, section « À sourcer »). Les narrations sont écrites
+     mais les MP3 ne sont pas encore fabriqués : la station parle avec la
+     voix du navigateur tant que la chaîne edge-tts n'a pas tourné.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Fluidique &amp; thermique · niveau BTS</p>
+  <h1>NF EN 378 — la sécurité du système frigorifique, du fluide au local</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-fluidique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez lire la classe de sécurité d’un fluide, qualifier un local (catégorie d’accès) et un emplacement, expliquer <strong>pourquoi la charge est limitée</strong> et dérouler la démarche du technicien d’études : classe, accès, emplacement, puis charge contre limite. Vous savez aussi que <strong>le R290 est A3, pas A2L</strong>.</p>
+  </div>
+
+  <div class="encadre encadre--note">
+    <span class="mot">Référentiel</span>
+    <p><strong>TP TECVC, REAC TP-00133 : CP9</strong> (climatisation) — choisir et dimensionner une installation en respectant les contraintes de sécurité du fluide. <strong>Attestation d’aptitude 2025</strong> : 1.07 (caractéristiques des hydrocarbures, du CO₂ et du NH₃), 1.08 (combustibilité, limites de charge, limites d’occupation), 11.03 (normes de sécurité pour fluides inflammables, toxiques ou à haute pression), 12.02 (détection, ventilation), 12.03 (calcul de la charge d’un fluide inflammable).</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Voyez la norme NF EN 378 comme un livre en quatre parties, une par question. La première pose les mots : définitions, classification des fluides, critères de choix. La deuxième concerne le constructeur : conception, essais, marquage, documentation. La troisième, en orange, est la vôtre : où et comment installer, et comment protéger les personnes. La quatrième couvre la vie de l’installation : exploitation, maintenance, réparation, récupération du fluide. Et regardez la bande du bas : une norme n’est pas une loi. Elle s’impose quand un texte ou un contrat s’y réfère.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Une norme en quatre parties, pas une loi</h2>
+    <p>La <strong>NF EN 378</strong> — <em>Systèmes frigorifiques et pompes à chaleur, exigences de sécurité et d’environnement</em> — est la référence du métier pour la sécurité d’une installation frigorifique. Elle est publiée en <strong>quatre parties</strong>, chacune répond à une question : de quoi parle-t-on, comment la fabriquer, où et comment la poser, comment la faire vivre.</p>
+    <p><strong>Ce n’est pas une loi.</strong> C’est une norme <strong>volontaire et payante</strong> : elle ne s’impose que si un texte ou un contrat s’y réfère. Sa partie 2 (conception) est <strong>harmonisée</strong> avec la directive équipements sous pression et la directive machines ; et le règlement de sécurité des établissements recevant du public (ERP) s’appuie sur la classification de la partie 1 pour les fluides frigorigènes (article CH 35).</p>
+    <div class="encadre encadre--note"><span class="mot">Norme payante</span><p>Cette station n’en cite que l’objet, la structure et ce qui est public. Les valeurs chiffrées de charge se lisent dans l’édition en vigueur, jamais ici.</p></div>
+    <figure>
+      <img src="svg/quatre-parties.svg" alt="Quatre cartes numérotées de un à quatre. Partie 1, les bases : définitions, classification, critères de choix. Partie 2, la conception : construction, essais, marquage, documentation. Partie 3, l'installation, mise en orange : installation sur site et protection des personnes. Partie 4, l'exploitation : fonctionnement, maintenance, réparation, récupération. Une bande rappelle qu'une norme n'est pas une loi : un texte ou un contrat peut s'y référer.">
+      <figcaption>La partie 3, en orange, est celle du technicien d’études et de l’installateur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Regardez le tableau : chaque case est une classe de sécurité, formée d’une lettre et d’un chiffre, selon la classification de l’Organisation internationale de normalisation. La lettre, en ligne, dit la toxicité : A, faible ; B, plus élevée. Le chiffre, en colonne, dit l’inflammabilité et augmente vers la droite : un, pas de flamme qui se propage ; deux L, faiblement inflammable ; deux ; puis trois, très inflammable, en rouge. Les exemples sont dans les cases : le R134a en A un, le R32 en A deux L, le propane en A trois, l’ammoniac en B deux L.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Deux lettres, deux dangers : la classe de sécurité</h2>
+    <p>Avant toute chose, la norme range chaque fluide dans une <strong>classe de sécurité</strong>, issue de la classification internationale <strong>ISO 817</strong>. Elle croise deux axes :</p>
+    <ul>
+      <li>la <strong>lettre</strong> dit la <strong>toxicité</strong> : <strong>A</strong> faible, <strong>B</strong> plus élevée ;</li>
+      <li>le <strong>chiffre</strong> dit l’<strong>inflammabilité</strong> : <strong>1</strong> aucune propagation de flamme, <strong>2L</strong> faiblement inflammable, <strong>2</strong> inflammable, <strong>3</strong> très inflammable.</li>
+    </ul>
+    <p>La sous-classe <strong>2L</strong> a été introduite dans la NF EN 378 en 2016 : elle isole les fluides difficiles à enflammer, dont la flamme se propage lentement : c’est la classe du <strong>R32</strong> et des <strong>HFO</strong> (hydrofluoro-oléfines) comme le R1234yf. La classe d’un fluide se lit dans les <strong>tables de la norme</strong> ou de la fiche du fabricant, à la version à jour.</p>
+    <figure>
+      <img src="svg/classes-iso817.svg" alt="Un tableau de deux lignes et quatre colonnes. Les lignes portent la toxicité, A faible et B plus élevée ; les colonnes portent l'inflammabilité, de 1 à 3, avec de zéro à trois flammes. Chaque case est une classe avec des exemples : A1 avec R134a, R410A et R744 ; A2L avec R32 et R1234yf ; A2 avec R152a ; A3 avec R290 et R600a ; B1 avec R123 ; B2L avec R717 ; B2 et B3 sans exemple courant. Une flèche montre que l'inflammabilité augmente vers la droite.">
+      <figcaption>La lettre se lit en ligne, le chiffre en colonne : l’inflammabilité augmente vers la droite.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Voici le piège classique. En haut à gauche, l’affirmation fausse, barrée en rouge : le R290 serait A2L, comme le R32. À droite, la vérité : le R290 est du propane, un hydrocarbure pur, donc A3, très inflammable. Sur l’échelle, les deux fluides sont posés très loin l’un de l’autre : le R32 en deux L, le R290 tout au bout, en trois. Ils ont en commun d’accompagner la transition écologique, pas les mêmes règles. Passer de l’un à l’autre, c’est changer de classe, donc de contraintes sur la charge et sur le matériel.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le piège : le R290 est A3, pas A2L</h2>
+    <p>Le <strong>R290</strong> est du <strong>propane</strong> : un <strong>hydrocarbure pur</strong>, donc <strong>A3</strong> — très inflammable. Le <strong>R32</strong> et les <strong>HFO</strong> comme le R1234yf sont <strong>A2L</strong>. On les range souvent ensemble parce que les deux familles accompagnent la baisse des fluides à fort potentiel de réchauffement planétaire (PRP) ; ce sont pourtant deux classes, donc deux jeux de règles.</p>
+    <div class="encadre encadre--piege"><span class="mot">Piège</span><p>« Le R290 est A2L comme le R32 » est <strong>faux</strong>. Pour un technicien d’études, remplacer un fluide A2L par du R290, c’est changer de classe : la limite de charge, la zone autour de la machine et le matériel ne se traitent plus de la même façon.</p></div>
+    <p>Repère : <strong>hydrocarbure pur → A3</strong> ; <strong>R32 et HFO → A2L</strong>.</p>
+    <figure>
+      <img src="svg/piege-r290.svg" alt="En haut à gauche, une carte grise porte l'erreur « le R290 est A2L, comme le R32 », barrée d'un trait rouge. En haut à droite, une carte verte porte la vérité : le R290, le propane, est A3, un hydrocarbure pur très inflammable. Dessous, une échelle d'inflammabilité de 1 à 3 : le R32 est posé sur la graduation 2L, le R290 sur la graduation 3. Une bande donne le repère : hydrocarbure pur, toujours A3 ; R32 et HFO, A2L.">
+      <figcaption>Sur la même échelle, les deux fluides sont aux deux extrémités des classes inflammables.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Deuxième question : qui a accès au local où se trouve le fluide ? La norme distingue trois catégories. À gauche, la catégorie a, accès général : la foule, n’importe qui, sans connaître les consignes. Au milieu, la catégorie b, accès surveillé : un nombre limité de personnes, dont certaines connaissent les consignes générales. À droite, la catégorie c, accès autorisé : une seule personne, casquée, formée aux consignes générales et particulières. Retenez la logique de la bande du bas : plus le public est large et non averti, plus la limite de charge est sévère.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Qui a accès au local : les catégories a, b et c</h2>
+    <p>Deuxième axe : <strong>qui fréquente le local</strong> où se trouve le fluide. La norme parle de <strong>catégorie d’accès</strong> (dans sa version de 2008, de catégorie d’occupation). Elle en distingue trois :</p>
+    <ul>
+      <li><strong>a — accès général</strong> : n’importe qui peut entrer, sans connaître les consignes (logement, école, hôtel, magasin) ;</li>
+      <li><strong>b — accès surveillé</strong> : un nombre limité de personnes, dont certaines connaissent les consignes générales (bureaux, laboratoires) ;</li>
+      <li><strong>c — accès autorisé</strong> : seules des personnes autorisées, formées aux consignes générales et particulières (atelier de production, entrepôt frigorifique).</li>
+    </ul>
+    <p><strong>Plus le public est large et non averti, plus la limite de charge est sévère</strong> : la même machine peut être admise en catégorie c et refusée en catégorie a. Le technicien d’études qualifie donc le <em>local</em> avant de choisir le fluide.</p>
+    <figure>
+      <img src="svg/categories-acces.svg" alt="Trois cartes côte à côte. Catégorie a, accès général : six pictogrammes de personnes, n'importe qui peut entrer sans connaître les consignes. Catégorie b, accès surveillé : trois pictogrammes, un nombre limité de personnes dont certaines connaissent les consignes générales. Catégorie c, accès autorisé : un seul pictogramme casqué, seules des personnes autorisées et formées. Une bande rappelle que plus le public est large et non averti, plus la limite de charge est sévère.">
+      <figcaption>Le nombre de pictogrammes diminue de a à c : c’est le public admis qui diminue.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Troisième question : où se trouve le fluide ? À gauche, un système direct : le tuyau orange part du groupe extérieur, entre dans le bâtiment, et le fluide frigorigène circule jusque dans l’espace occupé, là où sont les personnes. À droite, un système indirect : le fluide reste enfermé dans une petite salle des machines, cerclée de vert, avec le groupe froid. C’est de l’eau, en bleu, qui distribue le froid dans le bâtiment. La norme classe les systèmes selon cet emplacement. Pour le concepteur, c’est un levier : éloigner le fluide des occupants.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Où est le fluide : l’emplacement du système</h2>
+    <p>Troisième axe : <strong>où se trouvent les parties qui contiennent le fluide</strong>. La norme classe les systèmes par <strong>emplacement</strong> en quatre classes (I à IV) : par exemple, la classe III désigne un système entièrement placé en <strong>salle des machines</strong> ou à l’<strong>extérieur</strong>, ce qui est compatible avec un lieu accessible au public.</p>
+    <ul>
+      <li>En <strong>système direct</strong>, le fluide frigorigène circule jusque dans l’espace occupé.</li>
+      <li>En <strong>système indirect</strong>, il reste dans la salle des machines ou dehors : un circuit secondaire, souvent de l’eau, distribue le froid.</li>
+    </ul>
+    <p>C’est un <strong>levier de conception</strong> : quand la limite de charge ne passe pas dans l’espace occupé, on éloigne le fluide des personnes. Les salles des machines ont ensuite leurs exigences propres (partie 3).</p>
+    <figure>
+      <img src="svg/emplacement.svg" alt="Deux coupes de bâtiment. À gauche, le système direct : un tuyau orange de fluide frigorigène relie le groupe extérieur à l'unité intérieure, dans l'espace occupé. À droite, le système indirect : le fluide reste dans une petite salle des machines cerclée de vert avec le groupe froid, et un tuyau bleu d'eau apporte le froid jusqu'au ventilo-convecteur de l'espace occupé. Une légende donne les couleurs et une bande rappelle que le classement par emplacement dit où sont les parties qui contiennent le fluide.">
+      <figcaption>Orange : le fluide frigorigène. Bleu : l’eau du circuit secondaire.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="C’est le cœur de la station. Deux locaux, la même machine, la même quantité de fluide, et l’on imagine une fuite totale. Dans le petit local, à gauche, le fluide se répartit dans un volume réduit : regardez la jauge rouge, elle dépasse le trait tireté de la limite. Dans le grand local, à droite, le même fluide se dilue : la jauge verte reste bien en dessous. Voilà pourquoi la charge est limitée. La concentration, c’est la masse de fluide divisée par le volume du local : plus le local est petit, plus la limite est vite atteinte.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Pourquoi la charge est limitée</h2>
+    <p>Si toute la charge s’échappait dans le local, le fluide se répartirait dans son volume : <strong>concentration = masse de fluide ÷ volume du local</strong>. La norme fixe donc une <strong>limite de concentration</strong> — fondée sur la toxicité ou le manque d’oxygène pour les fluides non inflammables, sur la <strong>limite inférieure d’inflammabilité</strong> pour les fluides inflammables — et en déduit une <strong>charge maximale</strong> pour chaque local.</p>
+    <p>Elle dépend de trois entrées, vues dans les écrans précédents : la <strong>classe du fluide</strong>, la <strong>catégorie d’accès</strong>, l’<strong>emplacement</strong> — plus la taille du local. Dans les ERP, l’article CH 35 limite de la même façon la charge d’un fluide inflammable selon la surface du local, pour ne pas atteindre la limite inférieure d’inflammabilité en cas de fuite.</p>
+    <div class="encadre encadre--cle"><span class="mot">Le réflexe</span><p>La charge maximale se <strong>calcule</strong> avec la méthode et les tables de la norme en vigueur, et se recoupe avec la fiche du constructeur. Elle ne s’estime jamais.</p></div>
+    <figure>
+      <img src="svg/charge-volume.svg" alt="Deux locaux avec la même machine et la même quantité de fluide, après une fuite totale. À gauche, un petit local très rempli de fluide et, à côté, une jauge de concentration rouge qui dépasse le trait tireté de la limite. À droite, un grand local où le fluide est dilué et une jauge verte qui reste sous la limite. Une bande donne le principe : concentration égale masse de fluide divisée par volume du local ; dans un petit local, la limite est vite atteinte.">
+      <figcaption>Même masse de fluide : seul le volume du local change la concentration.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quand la limite de charge pose problème, on peut compenser avec des équipements, mais dans le bon ordre. La chaîne du haut suit une fuite : le fluide s’échappe, le détecteur franchit son seuil d’alarme, la ventilation se renforce et le matériel est mis hors tension, puis la concentration redescend. Regardez ensuite les trois pastilles, qui donnent les priorités : d’abord limiter les points de fuite, ensuite ventiler en continu, enfin choisir un matériel adapté au fluide. La détection est le filet de sécurité : elle ne remplace aucune de ces trois barrières.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Détection et ventilation : le filet, pas la première barrière</h2>
+    <p>Quand la limite de charge gêne, on peut la <strong>compenser</strong> par des équipements : un <strong>détecteur</strong> qui déclenche l’alarme à un seuil réglé, une <strong>ventilation mécanique</strong> renforcée, la <strong>mise hors tension</strong> du matériel. Dans les ERP, l’article CH 35 admet ainsi qu’une détection associée à une extraction mécanique permette de lever certaines limites de charge.</p>
+    <p>Mais l’ordre des priorités compte, surtout avec un fluide inflammable : <strong>1. limiter les points de fuite</strong> ; <strong>2. ventiler en continu</strong> ; <strong>3. choisir un matériel adapté</strong> à la zone. <strong>La détection est un filet de sécurité</strong> : elle ne remplace aucune de ces barrières, et un matériel non adapté ne devient pas acceptable parce qu’un détecteur veille.</p>
+    <p>Pour les fluides A2L, A2, A3, B2L, B2 et B3, la partie 3 de la norme attend en salle des machines une analyse des zones à risque d’explosion : c’est le lien avec la station sur les zones ATEX.</p>
+    <figure>
+      <img src="svg/detection-ventilation.svg" alt="Quatre cartes reliées par des flèches : une fuite, le détecteur qui mesure la concentration et déclenche l'alarme, la réaction avec un ventilateur, le retour de la concentration sous le seuil. En dessous, trois pastilles donnent les priorités : limiter les points de fuite, ventiler en continu, choisir un matériel adapté au fluide. Une bande indique que la détection est un filet de sécurité qui ne remplace aucune de ces barrières.">
+      <figcaption>En haut la chaîne d’une fuite ; en dessous, l’ordre des trois barrières.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Voici la démarche complète du technicien d’études. Trois entrées en haut : la classe du fluide, la catégorie d’accès du local, l’emplacement du système. Elles alimentent la question du losange : la charge du circuit est-elle inférieure ou égale à la limite calculée ? Si oui, on retient la solution et on la documente. Si non, cinq leviers en dessous : réduire la charge, changer l’emplacement, passer en système indirect, ajouter détection et ventilation, ou changer de fluide. Et la limite ne s’estime jamais : elle se lit dans la norme en vigueur et chez le constructeur.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">La démarche du technicien d’études — et le bilan</h2>
+    <ol>
+      <li>Je lis la <strong>classe du fluide</strong> (lettre = toxicité, chiffre = inflammabilité) — et je n’oublie pas : <strong>R290 = A3</strong>.</li>
+      <li>Je qualifie le <strong>local</strong> : catégorie d’accès <strong>a, b ou c</strong>.</li>
+      <li>Je situe le <strong>système</strong> : direct ou indirect, dans l’espace occupé ou en salle des machines.</li>
+      <li>Je compare la <strong>charge</strong> du circuit à la <strong>limite calculée</strong> ; si elle est dépassée, j’agis sur un levier.</li>
+      <li>Je <strong>documente</strong> le choix et ses hypothèses.</li>
+    </ol>
+    <p class="formule">Le réflexe : la limite se lit dans la norme en vigueur, jamais à l’estime.</p>
+    <figure>
+      <img src="svg/demarche-technicien.svg" alt="Un logigramme. Trois étapes en haut : la classe du fluide, la catégorie d'accès, l'emplacement. Elles mènent à un losange : la charge du circuit est-elle inférieure ou égale à la limite calculée ? Oui : conforme, on retient la solution et on la documente. Non : on agit sur un des cinq leviers en dessous : réduire la charge, changer l'emplacement, passer en système indirect, ajouter détection et ventilation, changer de fluide. Une bande rappelle que la limite se lit dans la norme et la fiche du constructeur.">
+      <figcaption>Trois entrées, une comparaison, cinq leviers si la charge dépasse la limite.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un fluide est classé B2L. Que pouvez-vous en déduire ? Reprenez le tableau de l’écran deux si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Un fluide est classé B2L. Que pouvez-vous en déduire ?</h2>
+    <figure class="vignette">
+      <img src="svg/classes-iso817.svg" alt="Vignette de rappel : le tableau des classes de sécurité, les lettres A et B en lignes pour la toxicité, les chiffres 1, 2L, 2 et 3 en colonnes pour l'inflammabilité.">
+      <figcaption>Rappel de l’écran 2 — la lettre en ligne, le chiffre en colonne.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Faible toxicité, mais très inflammable comme un hydrocarbure</button>
+      <button type="button" data-answer="bonne">Toxicité plus élevée, faiblement inflammable</button>
+      <button type="button" data-answer="c">Toxicité plus élevée, mais aucune propagation de flamme</button>
+      <button type="button" data-answer="d">Faible toxicité, flamme qui se propage lentement</button>
+    </div>
+    <p class="feedback" hidden data-explication="La lettre B dit une toxicité plus élevée, le 2L une faible inflammabilité : c’est la classe de l’ammoniac. Une faible toxicité serait une lettre A ; l’absence de propagation de flamme serait un chiffre 1."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un collègue affirme : le R290 est A2L comme le R32, les règles sont les mêmes. Que lui répondez-vous ?">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un collègue affirme : « Le R290 est A2L comme le R32, les règles sont les mêmes. » Que lui répondez-vous ?</h2>
+    <figure class="vignette">
+      <img src="svg/piege-r290.svg" alt="Vignette de rappel : l'erreur barrée en rouge et l'échelle d'inflammabilité où le R32 est en 2L et le R290 en 3.">
+      <figcaption>Rappel de l’écran 3 — deux fluides, deux extrémités de l’échelle.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">C’est exact : ce sont deux fluides à faible impact sur le climat</button>
+      <button type="button" data-answer="b">C’est faux : le R290 est un hydrocarbure naturel, donc A1</button>
+      <button type="button" data-answer="c">C’est exact, seule la toxicité change entre les deux fluides</button>
+      <button type="button" data-answer="bonne">C’est faux : le R290, propane, est A3 : règles plus sévères</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un hydrocarbure pur est toujours A3. Naturel ne veut pas dire non inflammable : le R290 change de classe par rapport au R32, donc de limite de charge, de zone et de matériel."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. La même machine, avec la même quantité de fluide, passe d’un grand local à un petit local. Après une fuite totale, que devient la concentration ?">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">La même machine, avec la même quantité de fluide, passe d’un grand local à un petit local. Après une fuite totale, la concentration…</h2>
+    <figure class="vignette">
+      <img src="svg/charge-volume.svg" alt="Vignette de rappel : deux locaux, un petit dont la jauge dépasse la limite et un grand dont la jauge reste en dessous.">
+      <figcaption>Rappel de l’écran 6 — même masse, volume différent.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">augmente : la même masse dans un volume plus petit</button>
+      <button type="button" data-answer="a">reste la même : la charge de la machine ne change pas</button>
+      <button type="button" data-answer="c">diminue : l’air d’un petit local se renouvelle plus vite</button>
+      <button type="button" data-answer="d">ne dépend que de la classe de toxicité du fluide utilisé</button>
+    </div>
+    <p class="feedback" hidden data-explication="La concentration est la masse de fluide divisée par le volume du local : à masse égale, un local plus petit donne une concentration plus élevée. C’est pourquoi la charge admise dépend du local."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un client veut supprimer la ventilation du local technique parce qu’un détecteur de fuite est installé. Que lui répondez-vous ?">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un client veut supprimer la ventilation du local technique « puisqu’un détecteur de fuite est installé ». Que lui répondez-vous ?</h2>
+    <figure class="vignette">
+      <img src="svg/detection-ventilation.svg" alt="Vignette de rappel : la chaîne de détection en quatre cartes et les trois barrières dans l'ordre, dont la ventilation en continu.">
+      <figcaption>Rappel de l’écran 7 — la détection est le filet, pas la première barrière.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Accepter : un détecteur de fuite suffit à protéger les occupants</button>
+      <button type="button" data-answer="b">Accepter si l’alarme sonore est reliée à un téléphone d’astreinte</button>
+      <button type="button" data-answer="bonne">Refuser : le détecteur ne remplace pas la ventilation continue</button>
+      <button type="button" data-answer="d">Refuser seulement pour les fluides toxiques</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le détecteur est un filet de sécurité. Les barrières de base restent : limiter les fuites, ventiler en continu, choisir un matériel adapté. Un détecteur peut aussi défaillir : il ne peut pas être la seule protection."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne)
+      — le règlement pousse vers les fluides naturels et à bas PRP, c’est-à-dire vers les classes A2L, A3 et B2L de cette station.</li>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (même sous-ligne)
+      — le groupe G12 de l’attestation demande de calculer la charge d’un fluide inflammable selon les normes de sécurité.</li>
+    <li><a href="../risques-atex/"><strong>Zones ATEX</strong></a> (autre sous-ligne : Risques professionnels)
+      — une classe A2L ou A3 ouvre la question de l’atmosphère explosive et du matériel adapté.</li>
+    <li><a href="../desp-categories/"><strong>Catégories I à IV</strong></a> (autre sous-ligne : La DESP)
+      — le groupe du fluide côté équipement sous pression ne se confond pas avec la classe NF EN 378.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+     Les MP3 de cette station ne sont pas fabriqués : la voix du navigateur sert de filet.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

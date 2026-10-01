@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Protéger un circuit — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi un conducteur chauffe, la règle d'or « la protection protège le câble », le choix de la section et du calibre, la chute de tension, le pouvoir de coupure, la sélectivité et la protection d'un moteur de compresseur.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/elec-proteger-un-circuit/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Électrique.
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les 12 narrations de cette station n'ont pas encore leur MP3 dans
+     l'index global : elles parlent avec la voix du navigateur (le filet)
+     tant que la voix fabriquée n'est pas générée.
+
+     Fond : FOND.md (même dossier). AUCUN chiffre non sourcé : les tableaux
+     de sections / courants admissibles, les facteurs de correction, les
+     limites de chute de tension et les multiples des courbes sont listés
+     sous « À sourcer » dans FOND.md, jamais écrits ici.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Électrique · niveau BTS</p>
+  <h1>Protéger un circuit — sections &amp; calibres</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-electrique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez expliquer pourquoi un conducteur chauffe, distinguer surcharge et court-circuit, énoncer la règle d'or — <strong>la protection protège le câble</strong> —, mener la démarche de choix section / calibre, et protéger correctement le moteur d'un compresseur.</p>
+  </div>
+
+  <div class="chapeau">
+    <span class="mot">Référentiel</span>
+    <p>TP Technicien d'études en CVC (REAC TP-00133) : <strong>CP9</strong> — climatisation, dimensionner l'alimentation et la protection d'un groupe — et <strong>CP6</strong> — chauffage / ECS, alimenter circulateurs et brûleurs.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les deux conducteurs, parcourus par le même courant. En haut, le conducteur fin : les points de courant passent, puis le trait rougit et des vaguelettes de chaleur apparaissent. Il y a peu de cuivre, donc le courant y rencontre plus de résistance, et l'énergie perdue devient de la chaleur. En bas, le conducteur épais reste bleu : il chauffe peu. Ce qui compte pour un technicien d'études, c'est la suite : la chaleur fait vieillir l'isolant, qui durcit puis lâche, lentement, sans prévenir.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un conducteur qui travaille chauffe</h2>
+    <p>Tout courant qui traverse un conducteur le chauffe : le cuivre oppose une <strong>résistance</strong>, et l'énergie perdue devient de la chaleur. Ce n'est pas un défaut en soi, tant que la chaleur s'évacue.</p>
+    <p>Ce qui décide de l'échauffement : <strong>le courant</strong>, <strong>la section</strong> du conducteur, et <strong>la façon dont le câble est posé</strong> — à l'air libre, il évacue mieux sa chaleur que sous isolant ou serré en faisceau avec d'autres.</p>
+    <p>Le danger est <strong>lent et invisible</strong> : l'isolant vieillit, durcit, se fissure, et le défaut peut apparaître des mois plus tard.</p>
+    <figure>
+      <img src="svg/chauffe-conducteur.svg" alt="Deux conducteurs parcourus par le même courant. Le conducteur de petite section, en haut, rougit et dégage de la chaleur : il chauffe beaucoup et son isolant vieillit vite. Le conducteur de grande section, en bas, reste bleu : il chauffe peu et son isolant tient. Une bande rappelle que moins de matière pour le même courant donne plus d'échauffement.">
+      <figcaption>Le même courant, deux sections : la petite chauffe, la grande reste tiède.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici les deux défauts qu'une protection doit savoir traiter. À gauche, la surcharge : sur le petit graphique, le courant reste un peu au-dessus du courant nominal, mais pendant longtemps. Elle vient de trop de récepteurs ou d'un moteur qui force, et elle chauffe lentement le câble. À droite, le court-circuit : le courant fait un bond énorme, très bref, avant d'être coupé. Il vient d'un contact direct entre deux conducteurs sous tension. Deux vitesses, donc deux déclencheurs : le thermique, à bilame, surveille le lent ; le magnétique, à bobine, réagit au brutal.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Surcharge et court-circuit : deux défauts, deux vitesses</h2>
+    <ul>
+      <li>La <strong>surcharge</strong> : un courant un peu trop élevé, mais <strong>longtemps</strong>. Cause : trop de récepteurs sur la ligne, ou un moteur qui force. Effet : échauffement lent. C'est le <strong>déclencheur thermique</strong> (un bilame, deux métaux collés qui se courbent en chauffant) qui répond.</li>
+      <li>Le <strong>court-circuit</strong> : un courant énorme, <strong>en un instant</strong>. Cause : un contact direct entre deux conducteurs sous tension. Effet : forces et chaleur brutales. C'est le <strong>déclencheur magnétique</strong> (une bobine) qui répond.</li>
+    </ul>
+    <p>Un même disjoncteur porte souvent les deux déclencheurs : on parle de disjoncteur <strong>magnétothermique</strong>.</p>
+    <figure>
+      <img src="svg/deux-defauts.svg" alt="Deux cartes. À gauche la surcharge : un graphique où le courant reste un peu au-dessus du nominal pendant longtemps ; cause : trop de récepteurs ou un moteur qui force ; effet lent ; déclencheur thermique à bilame. À droite le court-circuit : un graphique où le courant fait un bond énorme puis est coupé net ; cause : deux conducteurs sous tension en contact ; effet brutal ; déclencheur magnétique à bobine.">
+      <figcaption>Le lent se traite au thermique, le brutal au magnétique.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="À gauche, la carte « correct » : trois barres de plus en plus longues. La plus courte, IB, est le courant que le circuit consomme normalement. La barre moyenne, In, est le calibre de la protection. La plus longue, IZ, est ce que le câble peut supporter durablement. À droite, la carte « faux » : la barre du calibre dépasse celle du câble, et un crochet rouge montre la zone où le câble souffre sans que rien ne coupe. C'est l'erreur classique : monter le calibre parce que le disjoncteur déclenche.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La règle d'or : la protection protège le câble</h2>
+    <p>Le calibre d'un disjoncteur ou d'un fusible ne protège pas l'appareil au bout de la ligne : il protège <strong>le conducteur</strong>. Trois grandeurs entrent en jeu :</p>
+    <ul>
+      <li><strong>IB</strong>, le courant d'emploi : ce que le circuit demande en fonctionnement normal ;</li>
+      <li><strong>In</strong>, le calibre de la protection ;</li>
+      <li><strong>IZ</strong>, le courant admissible du câble : ce qu'il supporte durablement sans que son isolant souffre.</li>
+    </ul>
+    <p class="formule">IB ≤ In ≤ IZ</p>
+    <p>La protection ne doit pas déclencher pour un fonctionnement normal, et doit couper avant que le câble souffre. <strong>Piège classique</strong> : « ça déclenche souvent, je monte le calibre d'un cran ». Si In dépasse IZ, le câble chauffe sans que rien ne l'arrête.</p>
+    <figure>
+      <img src="svg/regle-d-or.svg" alt="Deux cartes de trois barres : IB, le courant consommé, In, le calibre, et IZ, le câble. À gauche, carte « correct » encadrée en vert : les barres sont de plus en plus longues et la formule IB inférieur ou égal à In inférieur ou égal à IZ est écrite. À droite, carte « faux » encadrée en rouge : la barre du calibre dépasse celle du câble, et un crochet rouge marque la zone où le câble est en danger.">
+      <figcaption>Le calibre ne dépasse jamais ce que le câble supporte.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Quatre cartes se suivent de gauche à droite, séparées par des flèches. La première : le besoin. La puissance et la tension du récepteur donnent le courant d'emploi, IB. La deuxième : on choisit un calibre normalisé au moins égal à IB, c'est In. La troisième : on cherche la section dont le courant admissible reste au moins égal à In, selon la façon de poser le câble. La dernière carte regroupe les contrôles : chute de tension, pouvoir de coupure, tenue du câble au court-circuit. La bande du bas rappelle qu'en dépannage, la section est un fait.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Choisir la section et le calibre : la démarche</h2>
+    <ol>
+      <li><strong>Le besoin</strong> : la puissance et la tension du récepteur donnent le courant d'emploi IB.</li>
+      <li><strong>Le calibre</strong> : un calibre normalisé au moins égal à IB — c'est In.</li>
+      <li><strong>La section</strong> : celle dont le courant admissible IZ reste au moins égal à In. IZ dépend de la section, de la nature de l'isolant, du mode de pose, du nombre de circuits groupés et de la température ambiante.</li>
+      <li><strong>Les contrôles</strong> : chute de tension, pouvoir de coupure, tenue du câble au court-circuit.</li>
+    </ol>
+    <p>Les tableaux de courants admissibles et de facteurs de correction figurent dans la norme d'installation NF C 15-100, <strong>payante</strong> : cette station donne la démarche, pas les chiffres. On les relit toujours dans la norme en vigueur ou chez le constructeur du câble.</p>
+    <figure>
+      <img src="svg/demarche-section-calibre.svg" alt="Quatre cartes numérotées séparées par des flèches. Un : le besoin, puissance et tension du récepteur donnent IB. Deux : le calibre normalisé, au moins égal à IB, appelé In. Trois : la section, dont le courant admissible IZ reste au moins égal à In, selon la pose. Quatre : les contrôles, chute de tension, pouvoir de coupure et tenue du câble au court-circuit. Une bande rappelle que sur l'existant la section est un fait qui borne le calibre.">
+      <figcaption>Quatre gestes, toujours dans cet ordre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Deux lignes de même longueur, du départ à gauche jusqu'au bout de ligne à droite. Les barres bleues figurent la tension le long du trajet. En haut, la ligne de petite section : les barres baissent nettement, et la dernière, en orange, est bien plus basse que la première. En bas, la ligne épaisse : les barres baissent peu. La conclusion vaut pour un groupe de condensation posé loin du tableau : sur une longue ligne, on agrandit la section pour que la tension arrive correcte, même si le courant n'échauffe pas le câble.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">La chute de tension : le piège des longues lignes</h2>
+    <p>Un conducteur a une résistance : plus il est <strong>long</strong>, plus elle est grande ; plus sa <strong>section</strong> est grande, plus elle est faible. Sur une longue ligne, une part de la tension se perd en route : le récepteur reçoit moins que ce que le tableau délivre.</p>
+    <p>Conséquences : un moteur qui démarre mal — le courant de démarrage, très fort, creuse encore la chute —, un régime dégradé, des protections qui déclenchent pour rien.</p>
+    <p>Le remède : <strong>augmenter la section</strong>, même si l'échauffement ne l'exige pas. Cas typique : un groupe de condensation posé en toiture, loin du tableau.</p>
+    <p>La chute admise est bornée par la norme d'installation ; la valeur n'est pas reprise ici (voir « À sourcer » dans le fond).</p>
+    <figure>
+      <img src="svg/chute-de-tension.svg" alt="Deux lignes de même longueur avec cinq barres de tension chacune, du départ au bout de ligne. En haut, petite section : les barres diminuent nettement et la dernière, orange, est très basse ; la tension est faible en bout de ligne. En bas, grande section : les barres diminuent peu et la tension est mieux tenue en bout. Une bande dit que plus la ligne est longue, plus la section doit grandir.">
+      <figcaption>La section limite la perte de tension le long du trajet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Un arbre de distribution : en haut le disjoncteur de tête, dessous trois départs. Un éclair marque un court-circuit sur le départ du compresseur. Regardez qui s'ouvre : seulement le disjoncteur du départ deux, en rouge. La tête et les deux autres départs restent verts, alimentés : c'est la sélectivité. Dans un local de stockage frigorifique, elle évite de couper tout le bâtiment pour un seul défaut. À droite, le pouvoir de coupure : chaque appareil doit pouvoir couper le plus gros court-circuit possible à l'endroit où il est posé.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Pouvoir de coupure et sélectivité</h2>
+    <p>Le <strong>pouvoir de coupure</strong> est le plus gros courant qu'un appareil sait couper sans se détruire. Il doit être au moins égal au <strong>courant de court-circuit</strong> à l'endroit où l'appareil est installé — et ce courant est d'autant plus fort qu'on est près de la source.</p>
+    <p>La <strong>sélectivité</strong> : en cas de défaut, <strong>seul l'appareil situé juste en amont du défaut s'ouvre</strong>. Le reste de l'installation reste alimenté. C'est ce qui évite de couper toute une chambre froide, ou tout un local technique, pour un défaut sur un seul départ, et qui rend le dépannage plus rapide.</p>
+    <p>Elle s'obtient par le choix et le réglage des appareils, à partir des tableaux de sélectivité des constructeurs.</p>
+    <figure>
+      <img src="svg/selectivite-coupure.svg" alt="Un arbre de distribution : le disjoncteur de tête, en vert, alimente trois départs, l'éclairage, le compresseur et les prises. Un éclair marque un court-circuit sur le départ du compresseur : seul son disjoncteur est ouvert, en rouge, la tête et les deux autres départs restent alimentés. À droite, une carte rappelle que chaque appareil doit pouvoir couper le plus gros court-circuit possible à son point d'installation.">
+      <figcaption>Seul l'appareil le plus proche du défaut s'ouvre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Sur ce graphique, le courant en fonction du temps. La courbe ocre part de zéro, monte très haut au démarrage : c'est la pointe, plusieurs fois le courant nominal. Puis elle retombe et se stabilise. Le trait tireté gris est le courant de la plaque signalétique : c'est là qu'on règle la protection thermique. Le trait rouge tireté, tout en haut, est le réglage magnétique : il passe au-dessus de la pointe pour que le démarrage ne déclenche pas, alors qu'une surcharge prolongée, elle, fera déclencher.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le moteur d'un compresseur : la pointe de démarrage</h2>
+    <p>À la mise sous tension, un moteur appelle, pendant un court instant, <strong>plusieurs fois son courant nominal</strong> : c'est la pointe de démarrage. Une protection choisie sur le seul courant de service déclencherait à chaque démarrage.</p>
+    <ul>
+      <li>Les <strong>courbes de déclenchement</strong> des disjoncteurs (B, C, D…) fixent à partir de quel multiple du calibre le magnétique agit : on choisit la courbe selon la charge.</li>
+      <li>Le <strong>disjoncteur moteur</strong> est fait pour cela : son thermique se règle sur le <strong>courant de la plaque signalétique</strong>, son magnétique est calé haut pour laisser passer la pointe.</li>
+    </ul>
+    <p>Un compresseur qui peine — condenseur encrassé, manque de fluide, rotor qui cale — appelle un courant durablement trop fort : c'est le thermique qui protège. <strong>Ne jamais monter un réglage</strong> pour faire taire un déclenchement sans avoir cherché la cause.</p>
+    <figure>
+      <img src="svg/demarrage-compresseur.svg" alt="Graphique du courant en fonction du temps. Une courbe ocre monte très haut au démarrage, c'est la pointe, plusieurs fois le nominal, puis retombe et se stabilise sur le courant de la plaque, repéré par un trait tireté gris qui sert de réglage au thermique. Un trait tireté rouge, au-dessus de la pointe, marque le réglage magnétique. Une bande résume que le démarrage ne doit pas déclencher, une surcharge prolongée si.">
+      <figcaption>Le réglage magnétique passe au-dessus de la pointe.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Trois colonnes. La colonne A, encadrée en vert : une tête, ici un sectionneur porte-fusibles, puis un disjoncteur moteur seul, puis le moteur. La colonne B, verte aussi : une tête, cette fois un disjoncteur modulaire, puis un contacteur qui commande, un relais thermique qui protège, et le moteur. La colonne C, en rouge, montre ce qu'il faut éviter : un disjoncteur moteur suivi d'un relais thermique, le même moteur protégé deux fois pour rien. Dans les deux bonnes colonnes, la tête et le câble respectent la règle d'or.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">La règle des protections d'un moteur, et le bilan</h2>
+    <p>Un moteur a <strong>une seule protection thermique</strong>. Derrière <strong>une tête</strong> (des fusibles ou un disjoncteur modulaire), on place :</p>
+    <ul>
+      <li>soit <strong>un disjoncteur moteur</strong>, seul ;</li>
+      <li>soit <strong>un contacteur et son relais thermique</strong>.</li>
+    </ul>
+    <p>Jamais deux disjoncteurs moteurs l'un derrière l'autre, jamais un disjoncteur moteur suivi d'un relais thermique. Et un départ par moteur : un appareil commun à deux moteurs ne protégerait plus le câble le plus fin.</p>
+    <p><strong>À retenir</strong> : un conducteur chauffe · surcharge = lent, court-circuit = brutal · <strong>IB ≤ In ≤ IZ</strong> · la section d'abord, les contrôles ensuite (chute de tension, pouvoir de coupure) · le démarrage d'un moteur ne doit pas déclencher.</p>
+    <p class="formule">Le réflexe : avant de toucher à un calibre, regarder la section du câble.</p>
+    <figure>
+      <img src="svg/protections-moteur.svg" alt="Trois colonnes de blocs. A, en vert : tête sectionneur porte-fusibles, puis disjoncteur moteur seul, puis moteur du compresseur. B, en vert : tête disjoncteur modulaire, puis contacteur, puis relais thermique, puis moteur. C, en rouge, à éviter : disjoncteur moteur puis relais thermique puis moteur, le même moteur protégé deux fois pour rien.">
+      <figcaption>Une tête, puis une seule protection du moteur.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un disjoncteur déclenche régulièrement sur un circuit. Un technicien monte le calibre d'un cran, sans toucher au câble. Que risque-t-il ? Rappelez-vous les deux cartes de l'écran trois.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Le disjoncteur déclenche souvent : on monte le calibre d'un cran, sans changer le câble. Que risque-t-on ?</h2>
+    <figure class="vignette">
+      <img src="svg/regle-d-or.svg" alt="Vignette de rappel : la carte correcte où le calibre reste sous la limite du câble, et la carte fausse où il la dépasse.">
+      <figcaption>Rappel de l'écran 3 — le calibre ne dépasse jamais ce que le câble supporte.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien : le calibre ne concerne que l'appareil alimenté</button>
+      <button type="button" data-answer="bonne">Le câble peut chauffer sans que rien ne coupe</button>
+      <button type="button" data-answer="c">Le disjoncteur déclenchera encore plus souvent qu'avant</button>
+      <button type="button" data-answer="d">Le différentiel prendra le relais contre les surcharges</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le calibre protège le câble, pas l'appareil au bout de la ligne. Au-dessus du courant admissible, une surcharge n'est plus coupée : le câble chauffe et l'isolant vieillit. Il faut chercher la cause du déclenchement, ou augmenter la section si le besoin l'exige."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Une ligne alimente un groupe de condensation posé loin du tableau. Le courant reste sous le courant admissible de la section. Pourquoi peut-on tout de même devoir choisir une section plus grande ? Reprenez les deux lignes de l'écran cinq.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Le courant reste sous le courant admissible, mais la ligne est très longue. Pourquoi une section plus grande ?</h2>
+    <figure class="vignette">
+      <img src="svg/chute-de-tension.svg" alt="Vignette de rappel : deux lignes de même longueur, la fine où la tension baisse nettement, l'épaisse où elle baisse peu.">
+      <figcaption>Rappel de l'écran 5 — la section limite la perte de tension.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Pour pouvoir monter le calibre de la protection ensuite</button>
+      <button type="button" data-answer="b">Pour que la protection déclenche plus vite en cas de surcharge</button>
+      <button type="button" data-answer="c">Pour augmenter le pouvoir de coupure du disjoncteur de tête</button>
+      <button type="button" data-answer="bonne">Pour limiter la chute de tension en bout de ligne</button>
+    </div>
+    <p class="feedback" hidden data-explication="Sur une longue ligne, la tension se perd en route. Une section plus grande réduit cette perte, même quand le courant n'échauffe pas le câble. Elle ne change ni le calibre ni le pouvoir de coupure."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un court-circuit apparaît sur le départ d'un compresseur. Dans une installation sélective, que se passe-t-il ? Repensez à l'arbre de l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Court-circuit sur le départ du compresseur : que fait une installation sélective ?</h2>
+    <figure class="vignette">
+      <img src="svg/selectivite-coupure.svg" alt="Vignette de rappel : un arbre de distribution où seul le disjoncteur du départ du compresseur est ouvert, la tête et les autres départs restant alimentés.">
+      <figcaption>Rappel de l'écran 6 — seul l'appareil le plus proche du défaut s'ouvre.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le disjoncteur de tête s'ouvre, pour couper tout ce qui est en aval</button>
+      <button type="button" data-answer="b">Tous les disjoncteurs s'ouvrent en même temps, par sécurité</button>
+      <button type="button" data-answer="bonne">Seul le départ concerné s'ouvre, le reste reste alimenté</button>
+      <button type="button" data-answer="d">Aucun ne s'ouvre : c'est au différentiel de décider</button>
+    </div>
+    <p class="feedback" hidden data-explication="La sélectivité consiste à ne couper que le départ en défaut. La tête et les autres départs restent alimentés : un seul défaut ne met pas tout le local hors service."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Parmi ces propositions, laquelle protège correctement le moteur d'un compresseur ? Souvenez-vous des trois colonnes de l'écran huit.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Parmi ces montages, lequel protège correctement le moteur du compresseur ?</h2>
+    <figure class="vignette">
+      <img src="svg/protections-moteur.svg" alt="Vignette de rappel : deux montages corrects, avec disjoncteur moteur seul ou avec contacteur et relais thermique, et un montage à éviter qui protège deux fois le même moteur.">
+      <figcaption>Rappel de l'écran 8 — une tête, puis une seule protection du moteur.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Une tête, puis un disjoncteur moteur seul</button>
+      <button type="button" data-answer="b">Un disjoncteur moteur suivi d'un relais thermique sur le même moteur</button>
+      <button type="button" data-answer="c">Deux disjoncteurs moteurs l'un derrière l'autre, pour doubler la sécurité</button>
+      <button type="button" data-answer="d">Un contacteur seul derrière la tête, sans relais thermique</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un moteur a une seule protection thermique : soit un disjoncteur moteur seul, soit un contacteur avec son relais thermique, derrière une tête. Empiler deux protections du même moteur n'apporte rien ; un contacteur sans thermique ne protège pas le moteur d'une surcharge."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../elec-nf-c-15-100/"><strong>NF C 15-100</strong></a> (même sous-ligne)
+      — la norme d'installation où se lisent les tableaux de courants admissibles et les limites de chute de tension.</li>
+    <li><a href="../elec-terre-differentiel/"><strong>Terre et différentiel</strong></a> (même sous-ligne)
+      — la protection des personnes : le calibre protège le câble, le différentiel protège les personnes.</li>
+    <li><a href="../elec-regimes-de-neutre/"><strong>Les régimes de neutre</strong></a> (même sous-ligne)
+      — la façon dont un défaut se boucle décide du courant de défaut et de l'appareil qui coupe.</li>
+    <li><a href="https://inerweb.fr/electrorezo/"><strong>ÉlectroRézo</strong></a> (réseau thermo-techno)
+      — la ligne « Protéger » : fusibles, disjoncteurs, relais thermique, section du câble.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

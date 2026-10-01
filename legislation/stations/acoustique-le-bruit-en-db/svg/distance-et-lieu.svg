@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-distance" aria-describedby="d-distance" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t-distance">La distance atténue, le lieu renforce</title>
+  <desc id="d-distance">En haut, une machine à gauche et trois points de mesure alignés à 2, 4 et 8 mètres, en champ libre : 54, 48 puis 42 décibels pondérés A. Une flèche courbe entre chaque point indique moins 6 décibels à chaque doublement de la distance. En bas, quatre petits schémas comparent le lieu d'installation : en champ libre, contre un mur, dans un coin, dans une cour intérieure, avec un ajout de 0, 3, 6 puis 9 décibels pondérés A. Dans l'animation, les niveaux et les flèches apparaissent de gauche à droite.</desc>
+  <style>
+    .ti{font-size:22px;font-weight:bold;fill:#1b3a63}
+    .lb{font-size:17px;fill:#10233c}
+    .lg{font-size:18px;font-weight:bold;fill:#1b3a63}
+    .gr{font-size:16px;fill:#5a6b7d}
+    .vv{font-size:20px;font-weight:bold;fill:#6d28d9}
+    .oo{font-size:18px;font-weight:bold;fill:#b45f1a}
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ti" x="30" y="34">La distance atténue, le lieu renforce</text>
+  <line x1="30" y1="300" x2="770" y2="300" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="40" y="235" width="70" height="65" rx="6" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/><circle cx="75.0" cy="267.5" r="20.8" fill="none" stroke="#5a6b7d" stroke-width="2"/><path d="M56.3,267.5 H93.7 M75.0,248.8 V286.2" stroke="#5a6b7d" stroke-width="2"/>
+  <path d="M139.2,248.0 A28,28 0 0 1 139.2,276.0" fill="none" stroke="#6d28d9" stroke-width="4" stroke-linecap="round"><animate attributeName="opacity" values="0.25;0.25;1;0.25;1;1" keyTimes="0;0.05;0.09;0.14;0.50;1" dur="12s" repeatCount="indefinite"/></path>
+  <path d="M158.3,237.0 A50,50 0 0 1 158.3,287.0" fill="none" stroke="#6d28d9" stroke-width="4" stroke-linecap="round"><animate attributeName="opacity" values="0.25;0.25;1;0.25;1;1" keyTimes="0;0.10;0.14;0.19;0.52;1" dur="12s" repeatCount="indefinite"/></path>
+  <path d="M177.4,226.0 A72,72 0 0 1 177.4,298.0" fill="none" stroke="#6d28d9" stroke-width="4" stroke-linecap="round"><animate attributeName="opacity" values="0.25;0.25;1;0.25;1;1" keyTimes="0;0.15;0.19;0.24;0.54;1" dur="12s" repeatCount="indefinite"/></path>
+  <g><line x1="260" y1="268" x2="260" y2="300" stroke="#1b3a63" stroke-width="3"/><circle cx="260" cy="262" r="8" fill="#1b3a63"/><text class="vv" x="260" y="215" text-anchor="middle">54 dB(A)</text><text class="lg" x="260" y="326" text-anchor="middle">2 m</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.12;0.17;1" dur="12s" repeatCount="indefinite"/></g>
+  <g><line x1="440" y1="268" x2="440" y2="300" stroke="#1b3a63" stroke-width="3"/><circle cx="440" cy="262" r="8" fill="#1b3a63"/><text class="vv" x="440" y="215" text-anchor="middle">48 dB(A)</text><text class="lg" x="440" y="326" text-anchor="middle">4 m</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.37;1" dur="12s" repeatCount="indefinite"/></g>
+  <g><line x1="620" y1="268" x2="620" y2="300" stroke="#1b3a63" stroke-width="3"/><circle cx="620" cy="262" r="8" fill="#1b3a63"/><text class="vv" x="620" y="215" text-anchor="middle">42 dB(A)</text><text class="lg" x="620" y="326" text-anchor="middle">8 m</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.57;1" dur="12s" repeatCount="indefinite"/></g>
+  <g><path d="M305,160 Q350.0,120 395,160" fill="none" stroke="#e8914a" stroke-width="4"/><polygon points="395,160 382,146 392,139" fill="#e8914a"/><text class="oo" x="350.0" y="118" text-anchor="middle">− 6 dB(A)</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.27;0.32;1" dur="12s" repeatCount="indefinite"/></g>
+  <g><path d="M485,160 Q530.0,120 575,160" fill="none" stroke="#e8914a" stroke-width="4"/><polygon points="575,160 562,146 572,139" fill="#e8914a"/><text class="oo" x="530.0" y="118" text-anchor="middle">− 6 dB(A)</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.47;0.52;1" dur="12s" repeatCount="indefinite"/></g>
+  <text class="gr" x="30" y="352">Champ libre : la distance double, le niveau baisse de 6 dB(A).</text>
+  <text class="lg" x="30" y="380">Et le lieu ? Ajout au champ libre</text>
+  <line x1="60" y1="440" x2="190" y2="440" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="90" y="416" width="26" height="24" rx="4" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/><circle cx="103.0" cy="428.0" r="7.7" fill="none" stroke="#5a6b7d" stroke-width="1.5"/><path d="M96.1,428.0 H109.9 M103.0,421.1 V434.9" stroke="#5a6b7d" stroke-width="1.5"/>
+  <line x1="250" y1="440" x2="380" y2="440" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="280" y="416" width="26" height="24" rx="4" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/><circle cx="293.0" cy="428.0" r="7.7" fill="none" stroke="#5a6b7d" stroke-width="1.5"/><path d="M286.1,428.0 H299.9 M293.0,421.1 V434.9" stroke="#5a6b7d" stroke-width="1.5"/>
+  <line x1="440" y1="440" x2="570" y2="440" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="470" y="416" width="26" height="24" rx="4" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/><circle cx="483.0" cy="428.0" r="7.7" fill="none" stroke="#5a6b7d" stroke-width="1.5"/><path d="M476.1,428.0 H489.9 M483.0,421.1 V434.9" stroke="#5a6b7d" stroke-width="1.5"/>
+  <line x1="630" y1="440" x2="760" y2="440" stroke="#5a6b7d" stroke-width="2"/>
+  <rect x="660" y="416" width="26" height="24" rx="4" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/><circle cx="673.0" cy="428.0" r="7.7" fill="none" stroke="#5a6b7d" stroke-width="1.5"/><path d="M666.1,428.0 H679.9 M673.0,421.1 V434.9" stroke="#5a6b7d" stroke-width="1.5"/>
+  <line x1="360" y1="396" x2="360" y2="440" stroke="#1b3a63" stroke-width="6"/>
+  <path d="M450,396 V440 M550,396 V440" stroke="#1b3a63" stroke-width="6" fill="none"/>
+  <path d="M640,396 V440 M740,396 V440" stroke="#1b3a63" stroke-width="6" fill="none"/>
+  <text class="lb" x="125" y="462" text-anchor="middle">Champ libre</text>
+  <text class="oo" x="125" y="486" text-anchor="middle">0</text>
+  <text class="lb" x="315" y="462" text-anchor="middle">Contre un mur</text>
+  <text class="oo" x="315" y="486" text-anchor="middle">+ 3 dB(A)</text>
+  <text class="lb" x="505" y="462" text-anchor="middle">Dans un coin</text>
+  <text class="oo" x="505" y="486" text-anchor="middle">+ 6 dB(A)</text>
+  <text class="lb" x="695" y="462" text-anchor="middle">Cour intérieure</text>
+  <text class="oo" x="695" y="486" text-anchor="middle">+ 9 dB(A)</text>
+</svg>

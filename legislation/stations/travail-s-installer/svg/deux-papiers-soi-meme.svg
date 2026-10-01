@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-dp" aria-describedby="d-dp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dp">Seul dans son entreprise, on reste titulaire de deux papiers distincts</title>
+  <desc id="d-dp">Deux documents côte à côte, reliés par un signe plus. À gauche, l'attestation d'aptitude,
+    détenue par la personne. À droite, l'attestation de capacité, détenue par l'entreprise, avec trois pastilles
+    : personnel, outillage, procédures. En bas, une bande rappelle que l'entrepreneur seul cumule les deux
+    rôles, mais que les deux papiers restent deux.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .pas { font-size:16px; fill:#10233c; font-weight:bold; }
+    .op  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:56px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Seul, vous détenez les deux papiers</text>
+
+  <!-- Aptitude : la personne -->
+  <rect x="40" y="60" width="340" height="216" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="90" cy="114" r="20" fill="#1b3a63"/>
+  <path d="M56 170 Q56 136 90 136 Q124 136 124 170 Z" fill="#1b3a63"/>
+  <text class="qui" x="150" y="112">Attestation d'aptitude</text>
+  <text class="lbl" x="150" y="140">détenue par la personne</text>
+  <text class="lbl" x="210" y="222" text-anchor="middle">Elle prouve que vous savez faire.</text>
+  <text class="lbl" x="210" y="248" text-anchor="middle">Elle vous suit d'une entreprise à l'autre.</text>
+
+  <text class="op" x="450" y="190" text-anchor="middle">+</text>
+
+  <!-- Capacité : l'entreprise -->
+  <rect x="520" y="60" width="340" height="216" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+  <rect x="546" y="88" width="46" height="60" rx="4" fill="#9d174d"/>
+  <rect x="558" y="102" width="22" height="6" fill="#fffdf8"/>
+  <rect x="558" y="116" width="22" height="6" fill="#fffdf8"/>
+  <text class="qui" x="612" y="112">Attestation de capacité</text>
+  <text class="lbl" x="612" y="140">détenue par l'entreprise</text>
+  <rect x="536" y="180" width="96" height="40" rx="10" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <text class="pas" x="584" y="206" text-anchor="middle">personnel</text>
+  <rect x="642" y="180" width="96" height="40" rx="10" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <text class="pas" x="690" y="206" text-anchor="middle">outillage</text>
+  <rect x="748" y="180" width="100" height="40" rx="10" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <text class="pas" x="798" y="206" text-anchor="middle">procédures</text>
+  <text class="lbl" x="690" y="256" text-anchor="middle">Ce que l'entreprise doit prouver.</text>
+
+  <rect x="30" y="306" width="840" height="106" rx="14" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <text class="band" x="450" y="342" text-anchor="middle">Entrepreneur seul : vous cumulez les deux rôles,</text>
+  <text class="band" x="450" y="370" text-anchor="middle">mais les deux papiers restent deux.</text>
+  <text class="lbl" x="450" y="398" text-anchor="middle">L'aptitude ne remplace jamais la capacité, même quand l'entreprise, c'est vous.</text>
+</svg>

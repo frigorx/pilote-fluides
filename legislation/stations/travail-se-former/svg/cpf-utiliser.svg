@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-use" aria-describedby="d-use" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-use">Utiliser son compte personnel de formation en quatre étapes</title>
+  <desc id="d-use">Quatre cartes numérotées de gauche à droite, reliées par des flèches. Étape 1 : choisir une
+    formation éligible (certifiante, validation des acquis, bilan de compétences). Étape 2 : prévenir l'employeur
+    seulement si la formation a lieu sur le temps de travail ; hors temps de travail, aucun accord à demander.
+    Étape 3 : le titulaire participe au financement, sauf abondement de son employeur. Étape 4 : compléter le
+    financement si la formation coûte plus que les droits du compte. Une bande en bas signale que certaines
+    actions, dont les habilitations électriques, sont plafonnées.</desc>
+  <style>
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#fffdf8; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#9d174d; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .lblb { font-size:17px; fill:#10233c; font-weight:bold; }
+  </style>
+
+  <!-- Étape 1 -->
+  <circle cx="115" cy="36" r="20" fill="#9d174d"/><text class="num" x="115" y="44" text-anchor="middle">1</text>
+  <rect x="20" y="66" width="190" height="262" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+  <text class="h" x="36" y="100">Choisir</text>
+  <text class="lblb" x="36" y="128">une formation</text>
+  <text class="lblb" x="36" y="150">éligible</text>
+  <text class="lbl" x="36" y="188">• formation certifiante</text>
+  <text class="lbl" x="36" y="214">• validation des acquis</text>
+  <text class="lbl" x="36" y="240">• bilan de compétences</text>
+  <text class="lbl" x="36" y="266">• création d'entreprise</text>
+
+  <path d="M 214 196 h 24" stroke="#1b3a63" stroke-width="4" fill="none"/>
+  <polygon points="236,188 250,196 236,204" fill="#1b3a63"/>
+
+  <!-- Étape 2 -->
+  <circle cx="345" cy="36" r="20" fill="#9d174d"/><text class="num" x="345" y="44" text-anchor="middle">2</text>
+  <rect x="252" y="66" width="190" height="262" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+  <text class="h" x="268" y="100">Prévenir ?</text>
+  <text class="lblb" x="268" y="134">Hors temps</text>
+  <text class="lblb" x="268" y="156">de travail :</text>
+  <text class="lbl" x="268" y="182">aucun accord</text>
+  <text class="lbl" x="268" y="204">à demander</text>
+  <text class="lblb" x="268" y="240">Sur le temps</text>
+  <text class="lblb" x="268" y="262">de travail :</text>
+  <text class="lbl" x="268" y="288">autorisation</text>
+  <text class="lbl" x="268" y="310">d'absence</text>
+
+  <path d="M 446 196 h 24" stroke="#1b3a63" stroke-width="4" fill="none"/>
+  <polygon points="468,188 482,196 468,204" fill="#1b3a63"/>
+
+  <!-- Étape 3 -->
+  <circle cx="577" cy="36" r="20" fill="#9d174d"/><text class="num" x="577" y="44" text-anchor="middle">3</text>
+  <rect x="484" y="66" width="190" height="262" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+  <text class="h" x="500" y="100">Participer</text>
+  <text class="lblb" x="500" y="134">Le titulaire paie</text>
+  <text class="lblb" x="500" y="156">une part fixe</text>
+  <text class="lbl" x="500" y="192">sauf si l'employeur</text>
+  <text class="lbl" x="500" y="214">abonde le compte</text>
+  <text class="lbl" x="500" y="250">La part est indexée,</text>
+  <text class="lbl" x="500" y="272">revue chaque</text>
+  <text class="lbl" x="500" y="294">1er janvier</text>
+
+  <path d="M 678 196 h 24" stroke="#1b3a63" stroke-width="4" fill="none"/>
+  <polygon points="700,188 714,196 700,204" fill="#1b3a63"/>
+
+  <!-- Étape 4 -->
+  <circle cx="805" cy="36" r="20" fill="#9d174d"/><text class="num" x="805" y="44" text-anchor="middle">4</text>
+  <rect x="716" y="66" width="170" height="262" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+  <text class="h" x="730" y="100">Compléter</text>
+  <text class="lblb" x="730" y="134">Si la formation</text>
+  <text class="lblb" x="730" y="156">coûte plus cher</text>
+  <text class="lbl" x="730" y="192">l'employeur, un</text>
+  <text class="lbl" x="730" y="214">opérateur de</text>
+  <text class="lbl" x="730" y="236">compétences, la</text>
+  <text class="lbl" x="730" y="258">région… peuvent</text>
+  <text class="lbl" x="730" y="280">compléter</text>
+
+  <!-- Bande plafond -->
+  <rect x="20" y="352" width="866" height="54" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+  <text class="lblb" x="453" y="376" text-anchor="middle">Attention : certaines actions sont plafonnées,</text>
+  <text class="lbl" x="453" y="397" text-anchor="middle">dont les habilitations électriques et les bilans de compétences.</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img"
+     aria-labelledby="t-sans" aria-describedby="d-sans" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-sans">Le produit sans marquage CE : quatre situations, quatre réflexes</title>
+  <desc id="d-sans">Quatre cartes en deux rangées. Un : le produit n'est pas couvert par une norme harmonisée ; ce n'est
+    pas un défaut en soi, aucune déclaration des performances n'est prévue et les performances se justifient
+    autrement. Deux, en rouge : le produit est couvert mais n'a ni CE ni déclaration ; il n'aurait pas dû être mis
+    à disposition, on ne le prescrit pas et on ne l'accepte pas. Trois, en orange : un CE est collé mais aucune
+    déclaration ne l'accompagne ; le CE suppose une déclaration établie, le marquage est douteux et se signale.
+    Quatre : produit fabriqué sur mesure ou sur le chantier ; une dérogation est possible sous conditions, et
+    celui qui l'incorpore en répond.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .tag { font-size:16px; fill:#5a6b7d; font-style:italic; }
+    .sit { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .tx  { font-size:17px; fill:#10233c; }
+    .rf  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Pas de CE sur le produit : que faire ?</text>
+
+  <!-- Carte A -->
+  <rect x="20" y="52" width="430" height="230" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="tag" x="38" y="80">Situation</text>
+  <text class="sit" x="38" y="104">Le produit n'est pas couvert par</text>
+  <text class="sit" x="38" y="127">une norme harmonisée</text>
+  <path d="M 38 146 H 432" stroke="#c9d3df" stroke-width="2"/>
+  <text class="tag" x="38" y="172">Réflexe</text>
+  <text class="tx" x="38" y="197">Ce n'est pas un défaut en soi : aucune</text>
+  <text class="tx" x="38" y="219">déclaration des performances n'est prévue.</text>
+  <text class="tx" x="38" y="241">Les performances se justifient autrement :</text>
+  <text class="tx" x="38" y="263">à demander au fabricant, par écrit.</text>
+
+  <!-- Carte B -->
+  <rect x="470" y="52" width="410" height="230" rx="14" fill="#fbe9e7" stroke="#c0392b" stroke-width="2"/>
+  <text class="tag" x="488" y="80">Situation</text>
+  <text class="sit" x="488" y="104">Le produit est couvert, mais il n'a</text>
+  <text class="sit" x="488" y="127">ni CE ni déclaration des performances</text>
+  <path d="M 488 146 H 862" stroke="#e6b9b3" stroke-width="2"/>
+  <text class="tag" x="488" y="172">Réflexe</text>
+  <text class="rf" x="488" y="197" style="fill:#9b2c20">Ne pas le prescrire, ne pas l'accepter.</text>
+  <text class="tx" x="488" y="221">Il n'aurait pas dû être mis à disposition :</text>
+  <text class="tx" x="488" y="243">on le signale, on demande le papier manquant</text>
+  <text class="tx" x="488" y="265">ou un autre produit.</text>
+
+  <!-- Carte C -->
+  <rect x="20" y="298" width="430" height="230" rx="14" fill="#fdf1e3" stroke="#e8914a" stroke-width="2"/>
+  <text class="tag" x="38" y="326">Situation</text>
+  <text class="sit" x="38" y="350">Un « CE » est collé sur un produit</text>
+  <text class="sit" x="38" y="373">de construction, sans déclaration</text>
+  <path d="M 38 392 H 432" stroke="#f0d2ad" stroke-width="2"/>
+  <text class="tag" x="38" y="418">Réflexe</text>
+  <text class="tx" x="38" y="443">Le CE suppose qu'une déclaration a été</text>
+  <text class="tx" x="38" y="465">établie. Sans elle, le marquage est douteux :</text>
+  <text class="tx" x="38" y="487">on le signale, on ne se contente pas du logo.</text>
+
+  <!-- Carte D -->
+  <rect x="470" y="298" width="410" height="230" rx="14" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+  <text class="tag" x="488" y="326">Situation</text>
+  <text class="sit" x="488" y="350">Produit fait sur mesure pour un</text>
+  <text class="sit" x="488" y="373">ouvrage unique, ou sur le chantier</text>
+  <path d="M 488 392 H 862" stroke="#c8c3dd" stroke-width="2"/>
+  <text class="tag" x="488" y="418">Réflexe</text>
+  <text class="tx" x="488" y="443">Une dérogation est possible, sous conditions.</text>
+  <text class="tx" x="488" y="465">Celui qui l'incorpore en répond : la sécurité</text>
+  <text class="tx" x="488" y="487">de la mise en œuvre reste à sa charge.</text>
+</svg>

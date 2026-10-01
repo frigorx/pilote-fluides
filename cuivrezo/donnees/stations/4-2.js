@@ -2,7 +2,8 @@
    Méthode retenue : la méthode de chantier à 45° (fiche Rothenberger 8, recueil de façonnage, analyse
    baïonnette) : premier coude à 45°, retourner, régler le décalage à la règle, second coude à 45°.
    Les fiches divergent sur l'angle (20/45/60° selon la hauteur ; formule Rothenberger 90° × d / 2 Rc +
-   correctif) : marqué aValider. Tolérance des fiches : ± 2 mm. */
+   correctif) : TRANCHÉ le 30/09/2026, 45° pour tous les exercices (DECISIONS-2026-09-30.md).
+   Tolérance des fiches : ± 2 mm. */
 CUIVREZO.stations.push({
   id: '4-2', ligne: 4, titre: 'La baïonnette', duree: '35 min', vignette: 'images/4-2-baionnette.webp',
   sources: ['sources-metier/4-pieces-complexes.md'],
@@ -11,8 +12,7 @@ CUIVREZO.stations.push({
     titre: 'Deux branches parallèles, décalées à la cote',
     texte: 'Deux coudes égaux en sens opposés décalent le tube parallèlement à lui-même, de la valeur du plan.',
     criteres: ['Les deux branches parallèles', 'Le décalage à la cote du plan (± 2 mm)', 'Les deux coudes au même angle', 'Pièce plane, tube ni écrasé ni pincé'],
-    aValider: 'Angle retenu : 45° (méthode de chantier) ; d’autres fiches donnent 20, 45 ou 60° selon la hauteur, ou une formule avec correctif',
-    figure: { svg: 'baionnette', etat: 'plan', legende: 'Deux coudes égaux, en sens opposés : le décalage.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'baionnette', angle: '90' }, legende: 'Deux coudes égaux, en sens opposés : le décalage.' },
     narration: 'La baïonnette sert à rattraper une différence d’axe : un tube qui doit se décaler de quelques centimètres pour rejoindre un raccord, ou pour longer un mur. Deux coudes identiques, en sens opposés, et le tube repart parallèle à lui-même. Tout tient dans ce mot : parallèle. Si les deux coudes ne sont pas exactement égaux, les branches divergent, et le raccord n’arrive jamais en face.'
   },
   materiel: {
@@ -35,7 +35,7 @@ CUIVREZO.stations.push({
     { titre: 'Cintrer le premier coude à 45°', texte: 'Placez le trait au départ du cintrage et cintrez à 45°. Contrôlez à la fausse équerre.',
       pointCle: '45°, pas « à peu près ».',
       pourquoi: 'Le second coude devra être exactement le même : c’est celui-ci qui sert de modèle.',
-      figure: { svg: 'baionnette', etat: 'premier' }, clip: 'clips/4-2/02-premier.mp4',
+      figure: { composant: 'cuivre-3d', attributs: { piece: 'baionnette', angle: '45' } }, clip: 'clips/4-2/02-premier.mp4',
       narration: 'On place le trait au départ du cintrage, et l’on cintre à quarante-cinq degrés. On vérifie tout de suite à la fausse équerre : ce premier coude sert de modèle au second, qui devra lui être parfaitement identique.' },
     { titre: 'Retourner le tube', texte: 'Sortez le tube et retournez-le, pour cintrer le second coude dans l’autre sens.',
       pointCle: 'Le second coude tourne en sens inverse, dans le même plan.',
@@ -45,7 +45,6 @@ CUIVREZO.stations.push({
     { titre: 'Régler le décalage à la règle', texte: 'Faites coulisser le tube dans l’outil jusqu’à ce que le décalage mesuré soit celui du plan, règle parallèle au tube.',
       pointCle: 'Le décalage se mesure d’axe à axe.',
       pourquoi: 'C’est la position du second coude qui décide du décalage final.',
-      aValider: 'Réglage du second coude : à la règle (Rothenberger), à H/3 (fiche 09), « milieu du cintre » (recueil)',
       figure: { svg: 'baionnette', etat: 'deplacer' }, clip: 'clips/4-2/04-decalage.mp4',
       narration: 'Voici le geste qui fait la baïonnette. On fait coulisser le tube dans l’outil, et l’on mesure, avec la règle posée parallèle au tube, l’écart entre la première branche et la ligne du futur second coude. Quand cet écart est celui du plan, d’axe à axe, on bloque le tube.' },
     { titre: 'Cintrer le second coude à 45°', texte: 'Cintrez jusqu’à ce que les deux branches soient parallèles.',

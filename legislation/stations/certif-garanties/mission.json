@@ -1,0 +1,48 @@
+{
+  "slug": "certif-garanties",
+  "branche": "Certifications & normes",
+  "titre": "Mission : La pompe à chaleur qui ne chauffe pas assez",
+  "client": "Un particulier, propriétaire d'une maison, qui a fait poser une pompe à chaleur air-eau par votre entreprise et demande : « C'est la garantie décennale, non ? »",
+  "situation": "Votre entreprise a posé une pompe à chaleur air-eau dans une maison existante. Le procès-verbal de réception date d'il y a quatorze mois, sans réserves. Cet hiver, la maison n'atteint plus la température voulue. Le client vous écrit et cite la garantie décennale. Votre responsable vous demande de préparer, avant tout appel, ce qu'il faut établir pour savoir si une garantie joue et laquelle, sans rien promettre au client.",
+  "piece_a_produire": "Une check-list d'une page en trois blocs. Bloc 1, les pièces à réunir : procès-verbal de réception, note de calcul ou étude de dimensionnement, notice du fabricant, attestation d'assurance de l'entreprise. Bloc 2, les quatre questions à trancher (quand, quel élément, quel effet, quelle cause), avec pour chacune ce qui permettrait d'y répondre. Bloc 3, deux phrases pour le client : ce que vous vérifiez, et ce que vous ne pouvez pas encore affirmer.",
+  "questions": [
+    {
+      "q": "Que change la réception, et de quelle date part-on pour compter les garanties ?",
+      "ecran": 1,
+      "reponse": "La réception est l'acte par lequel le maître de l'ouvrage déclare accepter l'ouvrage avec ou sans réserves ; elle est prononcée contradictoirement. Toutes les durées se comptent à partir de la réception, donc de la date du procès-verbal."
+    },
+    {
+      "q": "Citez les trois garanties et leur durée, à partir de la réception.",
+      "ecran": 2,
+      "reponse": "Parfait achèvement : un an. Bon fonctionnement : deux ans au minimum. Décennale : dix ans, au terme desquels le constructeur est déchargé de ses responsabilités et garanties."
+    },
+    {
+      "q": "Quels sont les deux critères de la garantie décennale, et comment le constructeur s'en dégage-t-il ?",
+      "ecran": 4,
+      "reponse": "Le dommage compromet la solidité de l'ouvrage, ou, en affectant un élément constitutif ou d'équipement, rend l'ouvrage impropre à sa destination. La responsabilité est présumée ; le constructeur s'en dégage seulement en prouvant que le dommage vient d'une cause étrangère."
+    },
+    {
+      "q": "Quelle est la différence entre l'assurance décennale et l'assurance dommages-ouvrage ?",
+      "ecran": 6,
+      "reponse": "La décennale est souscrite par le constructeur pour sa responsabilité, et justifiée à l'ouverture du chantier (attestation jointe aux devis et factures). La dommages-ouvrage est souscrite par le maître de l'ouvrage avant l'ouverture du chantier et paie les réparations en dehors de toute recherche des responsabilités."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Pour chaque situation, indiquez la garantie qui peut être invoquée, ou « aucune », et justifiez en une phrase. Pour chacune, la réception date de la période indiquée.",
+    "items": [
+      "Une porte de local technique ne ferme pas, signalée par écrit à l'entrepreneur huit mois après la réception.",
+      "Un équipement dissociable tombe en panne quatorze mois après la réception ; l'ouvrage reste utilisable.",
+      "Un désordre qui rend l'ouvrage impropre à sa destination apparaît six ans après la réception.",
+      "Un désordre apparaît douze ans après la réception."
+    ],
+    "corrige": "1. Parfait achèvement (un an) : désordre signalé par notification écrite après la réception (écran 3). 2. Bon fonctionnement (deux ans au minimum) : au-delà du parfait achèvement, équipement dissociable, ouvrage non impropre (écrans 2 et 5). 3. Décennale (dix ans) : impropre à sa destination, dans le délai de dix ans (écran 4). 4. Aucune de ces trois garanties : le constructeur est déchargé au terme de dix ans à compter de la réception (écran 2)."
+  },
+  "badge": "Point de départ",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP5", "CP6"],
+    "attestation_2025": [],
+    "justification": "Le droit des garanties est hors REAC (culture professionnelle du technicien et du chargé d'affaires) ; le cas de la pompe à chaleur croise CP5 (déperditions) et CP6 (chauffage, ECS) car remonter à la cause d'un désordre suppose de relire l'étude de dimensionnement."
+  }
+}

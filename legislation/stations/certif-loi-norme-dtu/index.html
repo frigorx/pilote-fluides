@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Loi, norme ou DTU ? — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la pyramide des textes qui obligent, la norme volontaire par principe, la flèche « rend obligatoire », la présomption de conformité, le DTU et l'avis technique, et la lecture d'un CCTP.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/certif-loi-norme-dtu/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Certifications & normes.
+     « Loi, norme ou DTU ? — qui oblige quoi » : la tête de la sous-ligne.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les 12 narrations sont nouvelles : sans MP3 dans l'index global, la
+     voix du navigateur prend le relais (fabrication edge-tts à faire).
+
+     Animations : SVG SMIL autonomes (pyramide, règlement/directive,
+     « rend obligatoire », lecture d'un CCTP). Aucune information n'existe
+     seulement dans l'animation : l'état au repos est l'image finale.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Certifications &amp; normes · niveau BTS</p>
+  <h1>Loi, norme ou DTU ? — qui oblige quoi</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-certifs.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez classer une référence citée dans un dossier : texte qui <strong>oblige</strong> (règlement, directive, loi, décret, arrêté), norme <strong>volontaire</strong> par principe, norme <strong>rendue obligatoire</strong> par un arrêté, DTU ou avis technique. Vous savez dire ce qu'est une présomption de conformité et lire un CCTP en posant, ligne par ligne, la même question : <strong>qu'est-ce qui oblige ?</strong></p>
+    <p><strong>Référentiel :</strong> hors REAC TP-00133 (TP TECVC) — culture professionnelle du technicien d'études et du chargé d'affaires : aucune des compétences CP1 à CP10 n'est évaluée ici. <strong>Attestation d'aptitude 2025</strong> : 1.00 (connaissance élémentaire de la législation de l'Union européenne et nationale applicable) et 11.03 (réglementations et normes de sécurité applicables aux réfrigérants inflammables ou toxiques).</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la pyramide se construire, du bas vers le haut. À la base, l'arrêté, pris par un ministre pour régler le détail technique. Au-dessus, le décret, qui précise la loi. Puis la loi elle-même, votée par le Parlement. Et tout en haut, le droit de l'Union européenne, en deux cases : le règlement d'un côté, la directive de l'autre. Chaque étage doit respecter celui du dessus. Remarquez enfin le cadre en tireté, sous la pyramide : la norme, le document technique unifié, et l'avis technique n'y figurent pas. Ils n'obligent pas par eux-mêmes.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Qui oblige : la pyramide des textes</h2>
+    <p>Un texte <strong>oblige</strong> quand il appartient à la pyramide du droit. Du haut vers le bas : le <strong>droit de l'Union européenne</strong> (règlement, directive), la <strong>loi</strong>, le <strong>décret</strong>, l'<strong>arrêté</strong>. Chaque étage doit respecter celui du dessus. C'est la première chose qu'un technicien d'études cherche dans un dossier : <strong>quel étage cite-t-on ?</strong></p>
+    <p>Trois références n'y figurent pas : la <strong>norme</strong>, le <strong>DTU</strong> (document technique unifié) et l'<strong>avis technique</strong>. Ce ne sont pas des textes de loi. Elles peuvent pourtant s'imposer — les écrans suivants disent comment.</p>
+    <div class="encadre encadre--note">
+      <span class="mot">Repères</span>
+      <p>La loi fixe les règles dans les matières que la Constitution lui réserve ; les autres matières sont réglementaires (art. 34 et 37). Les traités régulièrement ratifiés ont une autorité supérieure à celle des lois (art. 55).</p>
+    </div>
+    <figure>
+      <img src="svg/pyramide-des-textes.svg" alt="Une pyramide à quatre étages, du bas vers le haut : l'arrêté, le décret, la loi, puis le droit de l'Union européenne en deux cases, règlement qui s'applique tel quel et directive à transposer. Une bande rappelle que chaque étage respecte celui du dessus. En dessous, un cadre en trait tireté, hors de la pyramide : norme, DTU, avis technique, qui n'obligent pas seuls.">
+      <figcaption>La pyramide se pose du bas vers le haut. Le cadre tireté reste à l'extérieur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Deux couloirs. En haut, le règlement : F-Gaz trois, règlement européen deux mille vingt-quatre barre cinq cent soixante-treize. La flèche va tout droit de l'Union européenne à l'entreprise, sans étape : il s'applique tel quel. En bas, une directive, ici celle des équipements sous pression. Cette fois, la flèche passe par l'État, qui la transpose dans un texte français, loi, décret ou arrêté. Voilà la différence à retenir : le règlement oblige directement l'entreprise, la directive oblige d'abord l'État, et c'est le texte français que l'entreprise applique.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Règlement ou directive : ce qui s'applique tel quel</h2>
+    <p>Le <strong>règlement</strong> européen est obligatoire dans tous ses éléments et directement applicable dans tout État membre. La <strong>directive</strong> lie l'État quant au résultat à atteindre, en lui laissant le choix de la forme et des moyens : il la <strong>transpose</strong> par un texte national (loi, décret, arrêté).</p>
+    <p>Deux exemples du réseau. <a href="../fgaz-3/"><strong>F-Gaz 3</strong></a> est un <strong>règlement</strong>, le règlement (UE) 2024/573 : il s'applique sans transposition, et l'arrêté du 21 novembre 2025 organise le terrain français (attestations, contrôles). La directive <strong>équipements sous pression</strong> (2014/68/UE) est une <strong>directive</strong> : l'entreprise applique le texte français qui la transpose.</p>
+    <figure>
+      <img src="svg/reglement-directive.svg" alt="Deux couloirs superposés. En haut, le règlement F-Gaz 3 : une flèche directe de l'Union européenne vers l'entreprise, « s'applique tel quel ». En bas, la directive équipements sous pression : l'Union européenne, puis l'État qui transpose par une loi, un décret ou un arrêté, puis l'entreprise. Une bande résume : le règlement oblige directement l'entreprise, la directive oblige d'abord l'État.">
+      <figcaption>Une flèche directe, ou un détour par l'État : c'est toute la différence.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Une norme, qui l'écrit ? Trois cartes, de gauche à droite. Le niveau international, avec l'I S O et l'I E C, d'où vient par exemple la norme qui classe les fluides frigorigènes. Le niveau européen, avec le C E N et le CENELEC, qui écrivent la norme sur la sécurité des systèmes frigorifiques. Et le niveau français, l'Association française de normalisation, l'AFNOR, qui diffuse la version française. Le grand cadre en tireté porte le principe : une norme est d'application volontaire, c'est l'article dix-sept du décret de deux mille neuf. On peut choisir une autre solution, si elle atteint le même résultat.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">La norme : volontaire par principe</h2>
+    <p>L'article 17 du <strong>décret n° 2009-697 du 16 juin 2009</strong> relatif à la normalisation pose le principe : les normes sont <strong>d'application volontaire</strong>. Elles sont écrites par des organismes de normalisation : l'<strong>AFNOR</strong> (Association française de normalisation) en France, le <strong>CEN</strong> et le <strong>CENELEC</strong> en Europe, l'<strong>ISO</strong> et l'<strong>IEC</strong> dans le monde.</p>
+    <p>« NF EN 378 » se lit ainsi : une norme d'origine européenne (EN), diffusée en version française (NF). <strong>Aucune norme ne vous oblige parce qu'elle existe</strong> : elle vous oblige parce qu'un texte ou un contrat s'y réfère. Les deux écrans suivants montrent les deux portes.</p>
+    <figure>
+      <img src="svg/norme-volontaire.svg" alt="Trois cartes côte à côte : le niveau international (ISO, IEC) avec la norme ISO 817 qui classe les fluides frigorigènes, le niveau européen (CEN, CENELEC) avec la norme EN 378, le niveau français (AFNOR) avec la NF EN 378. En dessous, un grand cadre en trait tireté : application volontaire, article 17 du décret n° 2009-697. Une note rappelle qu'une autre solution technique reste possible.">
+      <figcaption>Trois niveaux d'écriture, un seul principe : l'application volontaire.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Comment une norme devient-elle obligatoire ? Regardez la flèche. À gauche, une norme en trait tireté : application volontaire. À droite, la même norme en trait plein : application obligatoire. Ce qui fait passer de l'une à l'autre, c'est l'arrêté, au-dessus, cosigné par le ministre chargé de l'industrie et les ministres intéressés. Sous la flèche, la condition : la norme doit être consultable gratuitement. En bas, un cas réel : en deux mille dix-sept, le Conseil d'État a annulé l'article d'un arrêté qui rendait obligatoires deux parties de la N F E N trois cent soixante-dix-huit, faute d'accès libre et gratuit.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La flèche « rend obligatoire »</h2>
+    <p>Une norme peut être <strong>rendue d'application obligatoire</strong> par un <strong>arrêté</strong> signé du ministre chargé de l'industrie et du ou des ministres intéressés (art. 17 du décret de 2009). Les normes ainsi rendues obligatoires sont <strong>consultables gratuitement</strong> sur le site de l'AFNOR.</p>
+    <p><strong>Un cas réel, au cœur du métier.</strong> Un arrêté relatif aux fluides frigorigènes exigeait, pour les contrôles d'étanchéité, la conformité aux normes NF EN 378-2:2012 et NF EN 378-3:2012. Le <strong>Conseil d'État</strong> (28 juillet 2017, n° 402752) a jugé que le ministre de l'environnement pouvait renvoyer à des normes techniques, mais il a <strong>annulé l'article</strong> : l'accès libre et gratuit à ces normes n'était pas garanti.</p>
+    <figure>
+      <img src="svg/rend-obligatoire.svg" alt="Une flèche horizontale part d'une norme en trait tireté, application volontaire, vers la même norme en trait plein, application obligatoire, avec la mention « rend obligatoire ». Au-dessus, un arrêté cosigné du ministre de l'industrie et des ministres intéressés est relié à la flèche. En dessous, la condition : la norme doit être consultable gratuitement, puis la décision du Conseil d'État du 28 juillet 2017, numéro 402752, qui a annulé un article rendant obligatoires deux parties de la NF EN 378.">
+      <figcaption>Trait tireté, puis trait plein : c'est l'arrêté qui fait la différence.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Obligatoire et présumé conforme sont deux choses différentes. À gauche, l'exigence : les objectifs de sécurité fixés par l'arrêté du trois août deux mille seize pour les logements neufs. Deux voies en partent. En haut, en trait plein : vous suivez la norme N F C quinze cent, et vous êtes présumé conforme, sans rien avoir à prouver de plus. En bas, en tireté : vous choisissez autre chose, et c'est à vous de démontrer que le résultat est équivalent. La bande du bas rappelle que la même logique vaut pour une norme européenne harmonisée. Suivre la norme est la voie la plus sûre, pas la seule.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">La présomption de conformité : la voie sûre</h2>
+    <p>Depuis l'<strong>arrêté du 3 août 2016</strong> (installations électriques des bâtiments d'habitation), la <a href="../elec-nf-c-15-100/"><strong>NF C 15-100</strong></a> n'est plus rendue obligatoire « dans son intégralité », comme l'avait fait l'arrêté du 22 octobre 1969. Le texte fixe des <strong>objectifs de sécurité</strong>, et <strong>présume conforme</strong> l'installation qui suit la norme, tout en laissant place à une <strong>solution équivalente</strong>.</p>
+    <p>Même mécanisme pour une <strong>norme harmonisée</strong> européenne : son usage reste volontaire, et l'opérateur est libre de choisir une autre solution technique pour démontrer la conformité. Mais la publication de sa référence au Journal officiel de l'Union européenne est la condition de la <strong>présomption de conformité</strong> prévue par les textes concernés. La <a href="../en-378/"><strong>NF EN 378</strong></a> est de cette famille : sa partie 2 est rattachée aux directives équipements sous pression et machines.</p>
+    <figure>
+      <img src="svg/presomption.svg" alt="À gauche, l'exigence : les objectifs de sécurité de l'arrêté du 3 août 2016 pour un logement neuf. Deux voies : en trait plein, vous suivez la NF C 15-100 et vous êtes présumé conforme, sans rien prouver de plus ; en trait tireté, vous choisissez une autre solution et devez démontrer qu'elle est équivalente. Une bande rappelle que la même logique vaut pour une norme européenne harmonisée.">
+      <figcaption>Trait plein : la voie sûre. Trait tireté : la voie à démontrer.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux cartes. À gauche, le N F D T U, document technique unifié, pour les procédés courants : ce sont les règles de l'art de mise en œuvre, une norme française validée par l'AFNOR. Il devient obligatoire quand le marché y renvoie. À droite, l'avis technique, donné par le CSTB, le Centre scientifique et technique du bâtiment, pour un produit ou un procédé nouveau, hors du savoir-faire courant. Il est demandé volontairement par le fabricant, et il éclaire sans obliger seul. La bande du bas le redit : aucun des deux n'est un texte de loi. C'est le contrat qui les rend obligatoires.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le DTU et l'avis technique : le marché, pas la loi</h2>
+    <p>Les <strong>NF DTU</strong> (documents techniques unifiés) décrivent les <strong>règles de l'art</strong> et les prescriptions de <strong>mise en œuvre</strong> d'un domaine technique. Élaborés par les professionnels du bâtiment, ils sont validés par l'AFNOR. Ils s'imposent <strong>quand le marché y renvoie</strong>.</p>
+    <p>L'<strong>avis technique</strong> est une évaluation demandée volontairement par le fabricant au <strong>CSTB</strong> (Centre scientifique et technique du bâtiment), pour un produit ou un procédé <strong>dont la constitution ou l'emploi ne relèvent pas des pratiques courantes</strong>. Il éclaire les acteurs de la construction ; il ne change pas la répartition de leurs responsabilités.</p>
+    <figure>
+      <img src="svg/dtu-avis-technique.svg" alt="Deux cartes côte à côte. À gauche, le NF DTU, procédé courant : les règles de l'art de mise en œuvre, une norme française validée par l'AFNOR, obligatoire si le marché y renvoie. À droite, l'avis technique, procédé nouveau : une évaluation du CSTB, volontaire, demandée par le fabricant, qui éclaire sans obliger seul. Une bande : ni l'un ni l'autre n'est un texte de loi, c'est le marché qui les rend obligatoires.">
+      <figcaption>Procédé courant : le DTU. Procédé nouveau : l'avis technique.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Voici un extrait de C C T P, cahier des clauses techniques particulières. Il est fictif : cinq lignes. À droite, chaque ligne reçoit son étiquette. Le règlement européen : un texte, il oblige directement. La N F C quinze cent : une norme, avec présomption pour un logement neuf. La N F E N trois cent soixante-dix-huit : une norme, qui oblige par le contrat ou par arrêté. Le D T U du lot : il oblige si le marché y renvoie. L'avis technique : il éclaire, le marché tranche. Retenez les trois questions de la bande du bas : quelle nature, qui oblige, quelle édition.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Lire un CCTP : trois questions par ligne</h2>
+    <p>Un <strong>CCTP</strong> (cahier des clauses techniques particulières) cite tout cela d'un seul tenant. Pour chaque référence, posez trois questions :</p>
+    <ol>
+      <li><strong>Quelle nature ?</strong> Texte (règlement, directive, loi, décret, arrêté), norme, DTU ou avis technique ?</li>
+      <li><strong>Qui oblige ?</strong> Un texte de la pyramide, un arrêté qui rend la norme obligatoire, ou <strong>le contrat</strong> : les contrats légalement formés tiennent lieu de loi à ceux qui les ont faits (Code civil, art. 1103), donc ce que le marché cite s'impose à l'entreprise.</li>
+      <li><strong>Quelle édition ?</strong> Une norme évolue. L'arrêté du 3 août 2016 date lui-même sa référence : NF C 15-100 de 2002, mise à jour 2005, amendements A1 à A5.</li>
+    </ol>
+    <figure>
+      <img src="svg/lire-un-cctp.svg" alt="À gauche, un extrait fictif de CCTP en cinq lignes. À droite, une étiquette par ligne : le règlement (UE) 2024/573 est un texte qui oblige directement ; la NF C 15-100 est une norme avec présomption pour un logement neuf ; la NF EN 378 est une norme qui oblige par contrat ou par arrêté ; le NF DTU du lot oblige si le marché y renvoie ; l'avis technique du CSTB éclaire et le marché tranche. Une bande : trois questions par ligne, quelle nature, qui oblige, quelle édition.">
+      <figcaption>Les étiquettes se posent une à une : c'est la méthode, ligne par ligne.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient dans ce tableau. Trois colonnes : la nature de la référence, qui l'écrit, et si elle oblige. Règlement, directive, loi, décret et arrêté obligent, la directive après transposition. La norme, écrite par les organismes de normalisation, n'oblige pas : elle est volontaire. Rendue obligatoire, elle oblige par l'arrêté. Le D T U oblige par le contrat, quand le marché y renvoie. L'avis technique éclaire sans obliger. Le réflexe du technicien d'études, dans la bande du bas : pour chaque référence d'un dossier, dire ce qui l'oblige.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li><strong>Oblige par eux-mêmes</strong> : règlement, directive (après transposition), loi, décret, arrêté.</li>
+      <li><strong>Norme</strong> : volontaire par principe (art. 17 du décret n° 2009-697). Elle oblige si un arrêté la rend obligatoire — et elle doit alors être consultable gratuitement.</li>
+      <li><strong>Présomption de conformité</strong> : suivre la norme est la voie la plus sûre, pas la seule.</li>
+      <li><strong>DTU</strong> : oblige par le contrat, quand le marché y renvoie. <strong>Avis technique</strong> : éclaire, n'oblige pas seul.</li>
+    </ul>
+    <p class="formule">Le réflexe : pour chaque référence d'un dossier, dire ce qui l'oblige.</p>
+    <figure>
+      <img src="svg/bilan-loi-norme-dtu.svg" alt="Un tableau à trois colonnes, nature, qui l'écrit, oblige-t-il, et cinq lignes : règlement, directive, loi, décret, arrêté, qui obligent (la directive après transposition) ; norme, volontaire ; norme rendue obligatoire, oblige par l'arrêté ; NF DTU, oblige par le contrat ; avis technique, éclaire. Une bande donne le réflexe.">
+      <figcaption>Cinq lignes, une question : qu'est-ce qui oblige ?</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Le règlement européen F-Gaz trois et la directive européenne sur les équipements sous pression n'ont pas le même effet sur une entreprise française. Quelle est la différence ? Reprenez les deux couloirs de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Règlement ou directive : quelle différence pour l'entreprise ?</h2>
+    <figure class="vignette">
+      <img src="svg/reglement-directive.svg" alt="Vignette de rappel : les deux couloirs, le règlement qui va directement à l'entreprise et la directive qui passe par l'État.">
+      <figcaption>Rappel de l'écran 2 — une flèche directe, ou un détour par l'État.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La directive s'applique telle quelle ; le règlement doit être transposé par une loi</button>
+      <button type="button" data-answer="b">Le règlement est facultatif ; la directive est obligatoire</button>
+      <button type="button" data-answer="bonne">Le règlement s'applique tel quel ; la directive passe par un texte français</button>
+      <button type="button" data-answer="d">Aucune : l'un comme l'autre s'imposent directement à l'entreprise</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le règlement est obligatoire dans tous ses éléments et directement applicable. La directive lie l'État quant au résultat : il la transpose par une loi, un décret ou un arrêté, et l'entreprise applique ce texte français."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Une norme est d'application volontaire par principe. Qu'est-ce qui peut la rendre d'application obligatoire ? Reprenez la flèche de l'écran quatre avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Qu'est-ce qui rend une norme d'application obligatoire ?</h2>
+    <figure class="vignette">
+      <img src="svg/rend-obligatoire.svg" alt="Vignette de rappel : la flèche « rend obligatoire » entre une norme en trait tireté et la même norme en trait plein, déclenchée par un arrêté.">
+      <figcaption>Rappel de l'écran 4 — c'est l'arrêté qui change le statut.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Un arrêté qui la rend d'application obligatoire</button>
+      <button type="button" data-answer="b">Sa publication au catalogue de l'AFNOR</button>
+      <button type="button" data-answer="c">Son usage par la grande majorité des professionnels</button>
+      <button type="button" data-answer="d">Un avis technique délivré par le CSTB</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'article 17 du décret du 16 juin 2009 le prévoit : un arrêté signé du ministre chargé de l'industrie et du ou des ministres intéressés. Et la norme doit être consultable gratuitement, sinon l'article est annulé, comme l'a jugé le Conseil d'État le 28 juillet 2017."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Une installation électrique de logement neuf est conçue selon la norme N F C quinze cent. Que peut-on en déduire juridiquement ? Reprenez les deux voies de l'écran cinq avant de répondre.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Un logement neuf, une installation conçue selon la NF C 15-100 : que déduire ?</h2>
+    <figure class="vignette">
+      <img src="svg/presomption.svg" alt="Vignette de rappel : les deux voies, suivre la norme et être présumé conforme, ou choisir une autre solution et démontrer qu'elle est équivalente.">
+      <figcaption>Rappel de l'écran 5 — la voie sûre, pas la seule.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Elle est obligatoire dans son intégralité, comme l'imposait l'arrêté de 1969</button>
+      <button type="button" data-answer="b">Rien : une norme n'a aucun effet juridique</button>
+      <button type="button" data-answer="c">La norme devient une loi dès qu'un installateur la cite</button>
+      <button type="button" data-answer="bonne">L'installation est présumée conforme aux objectifs de l'arrêté de 2016</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'arrêté du 3 août 2016 fixe des objectifs de sécurité et présume conforme l'installation qui suit la norme. Une solution équivalente reste possible, mais c'est alors à celui qui la choisit de la démontrer."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un CCTP renvoie au NF DTU du lot. Aucun arrêté n'a rendu ce DTU obligatoire. S'impose-t-il à l'entreprise qui signe le marché ? Reprenez l'extrait de l'écran sept avant de répondre.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Le CCTP renvoie au NF DTU du lot, sans arrêté : s'impose-t-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/lire-un-cctp.svg" alt="Vignette de rappel : l'extrait de CCTP et ses cinq étiquettes, dont le NF DTU du lot qui oblige si le marché y renvoie.">
+      <figcaption>Rappel de l'écran 7 — trois questions par ligne.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Non : un DTU est une norme, donc toujours facultative</button>
+      <button type="button" data-answer="bonne">Oui : le marché y renvoie, il devient une clause du contrat</button>
+      <button type="button" data-answer="c">Oui : un DTU a valeur de loi dans tout le secteur du bâtiment</button>
+      <button type="button" data-answer="d">Seulement si le CSTB a délivré un avis technique</button>
+    </div>
+    <p class="feedback" hidden data-explication="Ce n'est ni la loi ni un arrêté qui l'impose, c'est le contrat : les contrats légalement formés tiennent lieu de loi à ceux qui les ont faits (Code civil, art. 1103). Le DTU s'impose parce que le marché y renvoie."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours, il se lit dès l'accueil. Les liens
+     sont relatifs : les stations existent toutes. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../certif-marquage-ce/"><strong>Marquage CE</strong></a> (même sous-ligne)
+      — la norme harmonisée et la présomption de conformité, côté produit.</li>
+    <li><a href="../certif-garanties/"><strong>Garanties et assurances</strong></a> (même sous-ligne)
+      — ce qui se passe quand la règle de l'art n'a pas été suivie.</li>
+    <li><a href="../elec-nf-c-15-100/"><strong>NF C 15-100</strong></a> (sous-ligne Électrique)
+      — l'exemple de la présomption : de l'obligation de 1969 aux objectifs de 2016.</li>
+    <li><a href="../en-378/"><strong>NF EN 378</strong></a> (sous-ligne Fluidique &amp; thermique)
+      — une norme de sécurité qui s'impose par un texte ou par un contrat.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/. voix.js donne la
+     narration, prof-vocal.js enchaîne les écrans tout seul et s'arrête sur
+     les questions. Les narrations de cette station n'ont pas encore de MP3 :
+     la voix du navigateur sert de filet.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

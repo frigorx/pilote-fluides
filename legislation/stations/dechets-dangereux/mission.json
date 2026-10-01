@@ -1,0 +1,52 @@
+{
+  "slug": "dechets-dangereux",
+  "branche": "Déchets",
+  "titre": "Mission : Ce qui se trace, ce qui se trie",
+  "client": "Le responsable d'une résidence de logements dont Clim'Études Sud vient de reprendre la maintenance du groupe froid.",
+  "situation": "Après la remise en état du groupe froid, le local technique contient une bouteille de fluide récupéré contaminé et non identifiable, un bidon d'huile usagée, un filtre déshydrateur contaminé, des chutes de cuivre et des cartons. Le gardien propose de tout évacuer avec les ordures de la résidence : « c'est peu de volume, personne ne verra rien ». Le responsable vous demande de dire précisément ce qui doit être suivi et pourquoi.",
+  "piece_a_produire": "Un inventaire de fin de chantier en deux colonnes (« se trace par bordereau » / « suit le tri classique »), avec une ligne de justification par déchet, et la phrase que vous direz au gardien.",
+  "questions": [
+    {
+      "q": "Un bidon d'huile usagée et un grand carton d'emballage : lequel est un déchet dangereux, et sur quel critère ?",
+      "ecran": 1,
+      "reponse": "L'huile usagée. C'est sa nature (sa propriété de danger, signalée par un pictogramme) qui classe le déchet, jamais son volume."
+    },
+    {
+      "q": "Un fluide frigorigène récupéré est contaminé et non identifiable : quel est son statut et quelle filière suit-il ?",
+      "ecran": 2,
+      "reponse": "Il n'est plus réutilisable : c'est un déchet, et un déchet dangereux. Il suit la filière des déchets dangereux, pas une benne de tri classique."
+    },
+    {
+      "q": "Quels intervenants le bordereau de suivi des déchets relie-t-il, et à quelle question permet-il de répondre ?",
+      "ecran": 3,
+      "reponse": "Le producteur, le transporteur et le traiteur, chacun apposant sa trace. Il permet de savoir par où le déchet dangereux est passé et où il a fini."
+    },
+    {
+      "q": "Un collègue dit : « J'ai rempli un bordereau papier, c'est suffisant. » Que lui répondez-vous ?",
+      "ecran": 4,
+      "reponse": "Le principe est bon, mais le suivi passe aujourd'hui par un registre numérique : il faut se renseigner sur l'outil en vigueur, seul le support a changé."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Classez ces six déchets d'un chantier de froid en deux colonnes : « se trace par bordereau » ou « suit le tri classique ».",
+    "items": [
+      "Chutes de cuivre",
+      "Huile usagée",
+      "Filtre déshydrateur contaminé",
+      "Cartons d'emballage",
+      "Fluide non réutilisable",
+      "Bois trié"
+    ],
+    "corrige": "Se tracent : l'huile usagée, le filtre déshydrateur contaminé, le fluide non réutilisable. Tri classique : le cuivre, les cartons, le bois trié."
+  },
+  "badge": "Le déchet qui se trace",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "5.08"
+    ],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. Côté attestation d'aptitude 2025, la gestion des fluides et des huiles contaminés relève du code 5.08."
+  }
+}

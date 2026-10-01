@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-fri" aria-describedby="d-fri" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-fri">La frise des garanties, à partir de la réception</title>
+  <desc id="d-fri">Une frise part d'un repère « Réception », à gauche. Trois barres horizontales
+    s'en éloignent, à l'échelle : la plus courte, la garantie de parfait achèvement, dure un an ;
+    la deuxième, la garantie de bon fonctionnement, dure deux ans au minimum ; la troisième, la
+    plus longue, la responsabilité décennale, dure dix ans. Sous les barres, une règle graduée
+    marque la réception, un an, deux ans et dix ans. L'animation fait grandir les barres l'une
+    après l'autre ; l'image fixe montre les trois barres complètes.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .tag  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .tk   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Trois garanties, un seul point de départ</text>
+
+  <!-- Repère de la réception -->
+  <rect x="36" y="46" width="128" height="30" rx="8" fill="#3730a3"/>
+  <text class="tag" x="100" y="67" text-anchor="middle">Réception</text>
+  <line x1="100" y1="80" x2="100" y2="340" stroke="#3730a3" stroke-width="3" stroke-dasharray="10 7"/>
+
+  <!-- Barre 1 : parfait achèvement, 1 an -->
+  <g>
+    <text class="qui" x="114" y="122">Parfait achèvement · 1 an</text>
+    <rect x="100" y="132" width="70" height="30" fill="#e8914a">
+      <animate attributeName="width" values="0;0;70;70" keyTimes="0;0.06;0.16;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text class="lbl" x="186" y="154">tous les désordres signalés</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.10;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Barre 2 : bon fonctionnement, 2 ans minimum -->
+  <g>
+    <text class="qui" x="114" y="192">Bon fonctionnement · 2 ans au minimum</text>
+    <rect x="100" y="202" width="140" height="30" fill="#2f5689">
+      <animate attributeName="width" values="0;0;140;140" keyTimes="0;0.22;0.36;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text class="lbl" x="256" y="224">équipements dissociables</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.21;0.26;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Barre 3 : décennale, 10 ans -->
+  <g>
+    <text class="qui" x="114" y="262">Responsabilité décennale · 10 ans</text>
+    <rect x="100" y="272" width="700" height="30" fill="#3730a3">
+      <animate attributeName="width" values="0;0;700;700" keyTimes="0;0.40;0.72;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text class="lbl" x="114" y="326">solidité de l'ouvrage, ou ouvrage impropre à sa destination</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.39;0.44;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Règle graduée -->
+  <line x1="100" y1="352" x2="800" y2="352" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="100" y1="344" x2="100" y2="360" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="170" y1="344" x2="170" y2="360" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="240" y1="344" x2="240" y2="360" stroke="#5a6b7d" stroke-width="3"/>
+  <line x1="800" y1="344" x2="800" y2="360" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="tk" x="100" y="382" text-anchor="middle">réception</text>
+  <text class="tk" x="176" y="382" text-anchor="middle">1 an</text>
+  <text class="tk" x="244" y="382" text-anchor="middle">2 ans</text>
+  <text class="tk" x="800" y="382" text-anchor="middle">10 ans</text>
+</svg>

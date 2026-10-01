@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Les seuils — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le bruit de voisinage d'une activité ou d'un équipement, l'émergence (bruit ambiant moins bruit résiduel), les valeurs limites de jour et de nuit avec leur terme correctif, qui constate et ce qui peut suivre, et les valeurs d'exposition au bruit du Code du travail.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/acoustique-les-seuils/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Acoustique.
+     « Les seuils » : le bruit de voisinage (Code de la santé publique,
+     R. 1336-4 à R. 1336-11 ; sanctions R. 1337-6 et suivants) et le bruit
+     au travail (Code du travail, R. 4431-2). Fond : FOND.md.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer. Aucun MP3 fabriqué
+     pour cette station à ce jour : la voix du navigateur sert de filet.
+
+     DOCTRINE : aucune valeur réglementaire qui ne soit lue dans un texte
+     officiel cité dans FOND.md. Les niveaux des exemples (35, 41 dB(A)…)
+     sont des chiffres d'école, jamais des valeurs réglementaires.
+     Illustrations animées (SMIL autonome, sans script, état au repos =
+     image finale) : émergence, terme correctif, chaîne de constat,
+     valeurs d'exposition au travail.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Acoustique · niveau BTS</p>
+  <h1>Les seuils — voisinage, émergence</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-acoustique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez définir l'<strong>émergence</strong>, lire les valeurs limites de jour et de nuit avec leur terme correctif, dire quand l'émergence n'est pas recherchée, nommer ceux qui constatent et ce qui peut suivre — et situer le <strong>bruit au travail</strong>, qui obéit à d'autres repères.</p>
+  </div>
+
+  <div class="chapeau">
+    <span class="mot">Référentiel</span>
+    <p>TP Technicien d'études en CVC (REAC TP-00133) : <strong>CP9</strong> (climatisation) et <strong>CP7</strong> (ventilation tertiaire) — le groupe froid, la pompe à chaleur ou le ventilateur que vous prescrivez est un équipement d'activité professionnelle que ce texte encadre. La partie « bruit au travail » relève de la culture professionnelle du technicien et du chargé d'affaires, hors REAC.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Voici la situation de départ. À gauche, un bâtiment d'activité avec une machine sur son toit, et des ondes qui partent vers la droite. Au milieu, la limite de propriété. À droite, la maison d'un voisin, fenêtre ouverte. La règle ne pose pas d'abord un chiffre : elle interdit qu'un bruit porte atteinte à la tranquillité du voisinage ou à la santé. Les trois cartes du bas donnent les critères : la durée, la répétition, l'intensité. L'un ou l'autre suffit. Ce texte vise les bruits de voisinage, avec quelques exclusions que vous lisez à côté.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un bruit ne doit pas gêner le voisin</h2>
+    <p>Le Code de la santé publique pose le principe à l'article <strong>R. 1336-5</strong> : aucun bruit particulier ne doit, <strong>par sa durée, sa répétition ou son intensité</strong>, porter atteinte à la tranquillité du voisinage ou à la santé de l'homme, dans un lieu public ou privé. On en répond qu'on soit soi-même à l'origine du bruit, ou par une personne, une chose dont on a la garde, ou un animal.</p>
+    <p>Le critère chiffré de l'émergence (écrans suivants) est prévu, à l'article <strong>R. 1336-6</strong>, pour le bruit d'une <strong>activité professionnelle</strong> (hors chantier), sportive, culturelle ou de loisir, organisée de façon habituelle ou soumise à autorisation. Les autres bruits particuliers restent jugés sur la durée, la répétition ou l'intensité.</p>
+    <div class="encadre encadre--note">
+      <span class="mot">Ce que ces articles ne couvrent pas</span>
+      <p>L'article <strong>R. 1336-4</strong> exclut notamment les infrastructures de transport et les véhicules qui y circulent, les aéronefs, les installations nucléaires de base et les <strong>installations classées pour la protection de l'environnement</strong> (ICPE). Un <strong>chantier</strong> relève de l'article R. 1336-10 : pas de seuil chiffré, mais le non-respect des conditions fixées, l'insuffisance de précautions ou un comportement anormalement bruyant.</p>
+    </div>
+    <figure>
+      <img src="svg/principe-voisinage.svg" alt="À gauche, un bâtiment d'activité avec une machine sur son toit d'où partent des arcs de cercle concentriques ; au milieu, une limite de propriété en tireté ; à droite, la maison d'un voisin, fenêtre ouverte. En bas, trois cartes : la durée, la répétition, l'intensité.">
+      <figcaption>Durée, répétition, intensité : l'un ou l'autre suffit à caractériser l'atteinte.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Regardez les deux colonnes : elles se construisent l'une après l'autre. La première, en gris-bleu, est le bruit résiduel, celui du lieu quand la machine est arrêtée. La seconde est le bruit ambiant, celui du même lieu, machine en marche. Un trait tireté prolonge le sommet de la première colonne, et la part de la seconde qui le dépasse est en orange. Cette part, c'est l'émergence. Dans cet exemple, aux chiffres choisis pour l'école, la machine fait monter le niveau de six décibels pondérés A. La règle ne juge pas un niveau seul : elle juge de combien la machine dépasse le bruit habituel.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">L'émergence : deux mesures, une différence</h2>
+    <p>L'article <strong>R. 1336-7</strong> définit l'<strong>émergence globale</strong> comme la différence entre :</p>
+    <ul>
+      <li>le niveau de <strong>bruit ambiant</strong>, comportant le bruit particulier en cause (la machine <strong>en marche</strong>) ;</li>
+      <li>le niveau du <strong>bruit résiduel</strong>, constitué par l'ensemble des bruits habituels, extérieurs et intérieurs, correspondant à l'occupation normale des locaux et au fonctionnement habituel des équipements, <strong>en l'absence</strong> du bruit particulier en cause (la machine <strong>à l'arrêt</strong>).</li>
+    </ul>
+    <p class="formule">Émergence = niveau ambiant − niveau résiduel (en dB(A))</p>
+    <div class="encadre encadre--piege">
+      <span class="mot">Le piège du débutant</span>
+      <p>Confondre émergence et niveau : une machine peut être « peu bruyante » en valeur absolue et dépasser la limite dans un lieu très calme, parce que c'est l'<strong>écart avec le bruit habituel</strong> qui est jugé. Les niveaux de l'illustration (35 et 41 dB(A)) sont des chiffres d'exemple, pas des valeurs réglementaires.</p>
+    </div>
+    <figure>
+      <img src="svg/emergence-deux-niveaux.svg" alt="Deux colonnes côte à côte : le bruit résiduel, machine à l'arrêt, 35 décibels pondérés A dans l'exemple, et le bruit ambiant, machine en marche, 41. Un tireté prolonge le sommet de la première ; la part de la seconde qui le dépasse est en orange et porte une accolade : l'émergence, 6 décibels pondérés A. En bas, la formule.">
+      <figcaption>La part orange, c'est l'émergence : ce que la machine ajoute au bruit habituel.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Une frise de vingt-quatre heures. La nuit, en bleu, occupe le début, jusqu'à sept heures, puis la fin, à partir de vingt-deux heures. Le jour, en orange clair, court de sept heures à vingt-deux heures. Dessous, deux cartes : de jour, la valeur limite de l'émergence est de cinq décibels pondérés A ; de nuit, elle descend à trois. La règle est plus stricte quand les gens dorment. Mais ces deux nombres ne sont qu'un point de départ : le bandeau du bas annonce qu'un terme correctif, qui dépend de la durée du bruit, vient s'y ajouter.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Les valeurs limites : cinq le jour, trois la nuit</h2>
+    <p>Toujours à l'article <strong>R. 1336-7</strong> : les valeurs limites de l'émergence sont de <strong>5 décibels pondérés A en période diurne</strong> (de 7 heures à 22 heures) et de <strong>3 décibels pondérés A en période nocturne</strong> (de 22 heures à 7 heures).</p>
+    <p>Ces valeurs sont <strong>le point de départ</strong> : le texte précise qu'un <strong>terme correctif</strong>, fonction de la durée cumulée d'apparition du bruit particulier, s'y ajoute (écran suivant).</p>
+    <div class="encadre encadre--cle">
+      <span class="mot">À retenir</span>
+      <p>Le décibel pondéré A, noté dB(A), est l'unité de niveau qui tient compte de la sensibilité de l'oreille. L'émergence s'exprime donc en dB(A) : c'est un <strong>écart</strong> entre deux niveaux, pas un niveau.</p>
+    </div>
+    <figure>
+      <img src="svg/limites-jour-nuit.svg" alt="Une frise de vingt-quatre heures : nuit en bleu de 0 h à 7 h et de 22 h à 24 h, jour en orange clair de 7 h à 22 h. Dessous, deux cartes : le jour, limite de 5 décibels pondérés A ; la nuit, limite de 3. Un bandeau rappelle qu'un terme correctif selon la durée du bruit s'ajoute.">
+      <figcaption>La nuit, la marge est plus étroite : trois au lieu de cinq.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Sept colonnes qui montent l'une après l'autre, de la plus haute à gauche à la plus basse à droite : c'est un escalier qui descend. Chaque colonne est un terme correctif, en décibels pondérés A, associé à une durée cumulée d'apparition du bruit. Pour un bruit d'une minute ou moins, on ajoute six. Ensuite cinq, quatre, trois, deux, un. Et au-delà de huit heures, zéro. La flèche sous les colonnes rappelle que la durée grandit vers la droite. Un bruit bref est donc davantage toléré ; un bruit continu, la nuit, n'a plus aucune marge.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Le terme correctif : plus le bruit dure, moins on le tolère</h2>
+    <p>Le terme correctif de l'article <strong>R. 1336-7</strong> dépend de la <strong>durée cumulée d'apparition</strong> du bruit particulier :</p>
+    <table>
+      <thead><tr><th>Durée cumulée d'apparition</th><th>Terme à ajouter</th></tr></thead>
+      <tbody>
+        <tr><td>1 minute ou moins</td><td><strong>6</strong> dB(A)</td></tr>
+        <tr><td>plus de 1 minute, jusqu'à 5 minutes</td><td><strong>5</strong> dB(A)</td></tr>
+        <tr><td>plus de 5 minutes, jusqu'à 20 minutes</td><td><strong>4</strong> dB(A)</td></tr>
+        <tr><td>plus de 20 minutes, jusqu'à 2 heures</td><td><strong>3</strong> dB(A)</td></tr>
+        <tr><td>plus de 2 heures, jusqu'à 4 heures</td><td><strong>2</strong> dB(A)</td></tr>
+        <tr><td>plus de 4 heures, jusqu'à 8 heures</td><td><strong>1</strong> dB(A)</td></tr>
+        <tr><td>plus de 8 heures</td><td><strong>0</strong> dB(A)</td></tr>
+      </tbody>
+    </table>
+    <p class="formule">Limite = 5 (jour) ou 3 (nuit) + terme correctif</p>
+    <p>Deux lectures : de jour, pour un bruit d'une minute ou moins, 5 + 6 = <strong>11 dB(A)</strong> ; de nuit, pour un groupe qui tourne plus de huit heures, 3 + 0 = <strong>3 dB(A)</strong> — le cas le plus sévère.</p>
+    <figure>
+      <img src="svg/terme-correctif-duree.svg" alt="Sept colonnes de hauteurs décroissantes, comme un escalier qui descend : plus 6 pour une minute ou moins, plus 5 jusqu'à 5 minutes, plus 4 jusqu'à 20 minutes, plus 3 jusqu'à 2 heures, plus 2 jusqu'à 4 heures, plus 1 jusqu'à 8 heures, zéro au-delà. Une flèche indique que la durée augmente vers la droite ; un bandeau rappelle la formule de la limite.">
+      <figcaption>Un escalier qui descend : plus la durée grandit, plus le terme diminue.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="En haut, deux échelles de niveau sonore. Sur chacune, un repère sépare deux zones. À gauche du repère, en gris, l'émergence n'est pas recherchée ; à droite, en violet clair, elle l'est. Le repère est à vingt-cinq décibels pondérés A si la mesure est faite dans une pièce principale d'un logement, et à trente dans les autres cas. En bas, six colonnes : pour un équipement professionnel entendu dans un logement, on regarde aussi l'émergence bande d'octave par bande d'octave, c'est-à-dire tranche de fréquences par tranche. Sept décibels pour les deux bandes graves, cinq pour les quatre autres.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le seuil d'application et l'émergence spectrale</h2>
+    <p><strong>Le seuil.</strong> Selon l'article <strong>R. 1336-6</strong>, l'émergence n'est recherchée que si le niveau de bruit ambiant mesuré, bruit particulier compris, est supérieur à <strong>25 dB(A)</strong> quand la mesure est faite à l'intérieur des pièces principales d'un logement (fenêtres ouvertes ou fermées), ou à <strong>30 dB(A)</strong> dans les autres cas. En dessous, on ne cherche pas.</p>
+    <p><strong>L'émergence spectrale.</strong> Quand le bruit est engendré par des <strong>équipements d'activités professionnelles</strong> et perçu dans les pièces principales d'un logement, l'atteinte est aussi caractérisée si l'émergence <em>spectrale</em> dépasse ses limites (article <strong>R. 1336-8</strong>). Elle se calcule comme l'émergence globale, mais <strong>par bande d'octave</strong> — une tranche de fréquences — normalisée :</p>
+    <ul>
+      <li><strong>7 dB</strong> dans les bandes centrées sur 125 Hz et 250 Hz ;</li>
+      <li><strong>5 dB</strong> dans les bandes centrées sur 500 Hz, 1 000 Hz, 2 000 Hz et 4 000 Hz.</li>
+    </ul>
+    <p>Pour un technicien d'études, c'est la ligne qui vise un ventilateur ou un compresseur dont le ronflement grave passe dans la cloison.</p>
+    <figure>
+      <img src="svg/seuil-et-spectrale.svg" alt="En haut, deux échelles de niveau : le repère est à 25 décibels pondérés A pour une mesure dans une pièce principale d'un logement, et à 30 dans les autres cas ; à gauche du repère l'émergence n'est pas recherchée, à droite elle l'est. En bas, six colonnes par bande d'octave : 7 décibels à 125 et 250 hertz, 5 décibels à 500, 1 000, 2 000 et 4 000 hertz.">
+      <figcaption>Sous le repère, pas d'émergence à chercher ; au-dessus, on cherche, et pour un équipement on cherche aussi par bande.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Quatre cartes se suivent, reliées par des flèches. D'abord la plainte d'un voisin. Puis la mesure, faite par un agent habilité, qui relève le bruit ambiant et le bruit résiduel. Ensuite le procès-verbal, où l'agent consigne ce qu'il a mesuré. Et enfin la suite : une amende, ou des mesures administratives. Sous la chaîne, à gauche, ceux qui peuvent constater : les officiers de police judiciaire, dont le maire, les inspecteurs de l'environnement, les agents de santé et les agents communaux habilités. À droite, ce qui peut suivre : une contravention de cinquième classe, ou des mesures prises par l'autorité compétente.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Qui constate, et ce qui peut suivre</h2>
+    <p><strong>La mesure.</strong> L'article <strong>R. 1336-9</strong> renvoie les modalités de mesure à un arrêté (arrêté du 5 décembre 2006 relatif aux modalités de mesurage des bruits de voisinage), qui s'appuie sur la norme <strong>NF S 31-010</strong> (caractérisation et mesurage des bruits de l'environnement). C'est ce qui rend indispensable la mesure des <em>deux</em> niveaux, avec et sans la machine.</p>
+    <p><strong>Qui constate.</strong> Des agents de l'État — officiers et agents de police judiciaire, dont les maires, inspecteurs de l'environnement, agents de santé — et des <strong>agents communaux habilités et assermentés</strong> (article <strong>R. 1337-10-2</strong> ; article L. 571-18 du Code de l'environnement). Ils consignent leurs constats dans un <strong>procès-verbal</strong>.</p>
+    <p><strong>Ce qui peut suivre.</strong> Pour une activité professionnelle qui dépasse les valeurs limites de l'émergence globale ou spectrale, l'article <strong>R. 1337-6</strong> prévoit une amende de <strong>contravention de la cinquième classe</strong>. Les autres bruits particuliers relèvent de l'article R. 1337-7 (troisième classe). Indépendamment de cela, l'autorité administrative compétente peut prendre des mesures (article <strong>R. 1336-11</strong>, qui renvoie à l'article L. 171-8 du Code de l'environnement).</p>
+    <figure>
+      <img src="svg/constater-sanctionner.svg" alt="Une chaîne de quatre cartes reliées par des flèches : la plainte d'un voisin, la mesure par un agent habilité, le procès-verbal, la suite. En dessous, deux encadrés : à gauche, qui peut constater — officiers de police judiciaire dont le maire, inspecteurs de l'environnement, agents de santé, agents communaux habilités ; à droite, ce qui peut suivre — une amende de cinquième classe et des mesures administratives.">
+      <figcaption>De la plainte à la suite : c'est la mesure des deux niveaux qui fait la preuve.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Ici, on ne compare plus deux niveaux : on regarde le niveau que reçoit le salarié dans sa journée. La colonne de gauche se remplit comme un niveau qui monte, et trois cartes s'allument à mesure. Première carte, quatre-vingts décibels pondérés A : l'action de prévention commence. Deuxième, quatre-vingt-cinq : l'employeur doit veiller au port effectif des protecteurs. Troisième, quatre-vingt-sept : c'est la valeur limite, et là l'effet des protecteurs est pris en compte. Chaque carte donne aussi une valeur de crête, en décibels C. Le bandeau rappelle qu'on parle d'un niveau moyen sur la journée de travail, pas d'une différence.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le bruit au travail : trois valeurs d'exposition</h2>
+    <p>Le Code du travail ne parle pas d'émergence. L'article <strong>R. 4431-2</strong> fixe des valeurs pour le <strong>niveau d'exposition quotidienne au bruit</strong> (rapporté à une journée nominale de 8 heures de travail) ou pour le <strong>niveau de pression acoustique de crête</strong> (mesuré en pondération C) :</p>
+    <ul>
+      <li><strong>valeurs d'exposition inférieures</strong>, qui déclenchent l'action de prévention : <strong>80 dB(A)</strong> ou <strong>135 dB(C)</strong> de crête ;</li>
+      <li><strong>valeurs d'exposition supérieures</strong>, qui déclenchent l'action de prévention : <strong>85 dB(A)</strong> ou <strong>137 dB(C)</strong> de crête ;</li>
+      <li><strong>valeurs limites d'exposition</strong> : <strong>87 dB(A)</strong> ou <strong>140 dB(C)</strong> de crête.</li>
+    </ul>
+    <p>Pour la valeur limite, l'exposition effective prend en compte l'atténuation des protecteurs auditifs portés ; les valeurs qui déclenchent l'action n'en tiennent pas compte.</p>
+    <p><strong>Ce que doit faire l'employeur</strong> : évaluer et, si nécessaire, mesurer les niveaux de bruit (article <strong>R. 4433-1</strong>) ; réduire au minimum les risques (<strong>R. 4432-1</strong>) ; mettre des protecteurs individuels à disposition au-delà des valeurs inférieures, et veiller à ce qu'ils soient effectivement utilisés quand les valeurs supérieures sont atteintes (<strong>R. 4434-7</strong>).</p>
+    <figure>
+      <img src="svg/bruit-au-travail.svg" alt="Une colonne verticale qui se remplit de bas en haut, et trois cartes empilées : 80 décibels pondérés A ou 135 décibels C de crête, valeur d'exposition inférieure ; 85 ou 137, valeur supérieure ; 87 ou 140, valeur limite. Un bandeau rappelle qu'il s'agit d'un niveau moyen sur la journée de travail.">
+      <figcaption>Un niveau absolu, pas une différence : le repère est le salarié, pas le voisin.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient en deux colonnes. À gauche, le voisinage, régi par le Code de la santé publique : on se demande de combien le bruit dépasse le bruit habituel, et on mesure une différence. À droite, le travail, régi par le Code du travail : on se demande quel bruit reçoit le salarié, et on mesure un niveau. Entre les deux, le signe différent : ce ne sont ni les mêmes règles ni les mêmes repères. En bas, le réflexe du chargé d'affaires : connaître le bruit résiduel avant d'installer la machine, car c'est de lui que dépend ce qu'on pourra faire entendre.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Voisinage : l'<strong>émergence</strong> est la différence entre le bruit ambiant et le bruit résiduel.</li>
+      <li>Limites : <strong>5 dB(A) le jour, 3 dB(A) la nuit</strong>, plus un terme correctif de 6 à 0 selon la durée.</li>
+      <li>Pas de recherche sous <strong>25 dB(A)</strong> dans un logement, <strong>30 dB(A)</strong> ailleurs ; pour un équipement professionnel, l'émergence <strong>spectrale</strong> s'y ajoute.</li>
+      <li>Des agents habilités constatent ; le procès-verbal s'appuie sur les mesures ; sanction : contravention, et mesures administratives.</li>
+      <li>Travail : <strong>80, 85, 87 dB(A)</strong> d'exposition quotidienne — un niveau, pas une différence.</li>
+    </ul>
+    <p class="formule">Le réflexe : connaître le bruit résiduel avant d'installer la machine.</p>
+    <p>Pourquoi : c'est le bruit résiduel qui fixe ce que la machine pourra faire entendre, puisque l'émergence se compte à partir de lui.</p>
+    <figure>
+      <img src="svg/bilan-deux-regimes.svg" alt="Deux colonnes séparées par un signe différent. À gauche, le voisinage, Code de la santé publique : de combien le bruit dépasse le bruit habituel, une différence, 5 et 3 décibels pondérés A plus un terme selon la durée. À droite, le travail, Code du travail : quel bruit le salarié reçoit dans sa journée, un niveau absolu, 80, 85 et 87. En bas, le réflexe : connaître le bruit résiduel avant d'installer la machine.">
+      <figcaption>Deux régimes, deux questions : ne jamais mélanger leurs repères.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. On mesure un lieu machine en marche, puis machine arrêtée. Que vaut l'émergence ? Reprenez le schéma de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">44 dB(A) machine en marche, 37 dB(A) à l'arrêt : quelle émergence ?</h2>
+    <figure class="vignette">
+      <img src="svg/emergence-deux-niveaux.svg" alt="Vignette de rappel : deux colonnes, le bruit résiduel et le bruit ambiant, avec la part orange qui les sépare : l'émergence.">
+      <figcaption>Rappel de l'écran 2 — la part orange, c'est l'émergence.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">81 dB(A) : on additionne les deux niveaux</button>
+      <button type="button" data-answer="bonne">7 dB(A) : l'écart entre les deux mesures</button>
+      <button type="button" data-answer="c">44 dB(A) : le niveau machine en marche</button>
+      <button type="button" data-answer="d">37 dB(A) : le niveau du bruit habituel du lieu</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'émergence est une différence : niveau ambiant (machine en marche) moins niveau résiduel (machine à l'arrêt). Ici 44 moins 37, soit 7 dB(A)."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un groupe de climatisation tourne toute la nuit, bien plus de huit heures d'affilée. Quelle valeur limite d'émergence s'applique, terme correctif compris ? Reprenez l'escalier de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un groupe tourne toute la nuit, plus de huit heures d'affilée : quelle limite ?</h2>
+    <figure class="vignette">
+      <img src="svg/terme-correctif-duree.svg" alt="Vignette de rappel : l'escalier des termes correctifs, de plus 6 pour une minute à zéro au-delà de huit heures.">
+      <figcaption>Rappel de l'écran 4 — le terme correctif selon la durée.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">5 dB(A) : la valeur de jour</button>
+      <button type="button" data-answer="b">9 dB(A) : 3 plus le terme le plus élevé, 6</button>
+      <button type="button" data-answer="c">8 dB(A) : 5 plus 3</button>
+      <button type="button" data-answer="bonne">3 dB(A) : 3 plus un terme correctif nul</button>
+    </div>
+    <p class="feedback" hidden data-explication="De nuit la base est de 3 dB(A). Au-delà de huit heures de présence du bruit, le terme correctif est nul : la limite reste 3 dB(A), la situation la plus sévère."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Dans une chambre, fenêtres fermées, on mesure vingt-quatre décibels pondérés A de bruit ambiant, machine comprise. Que dit la réglementation ? Reprenez les deux échelles de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">24 dB(A) mesurés dans une chambre, fenêtres fermées : que dit la règle ?</h2>
+    <figure class="vignette">
+      <img src="svg/seuil-et-spectrale.svg" alt="Vignette de rappel : les deux échelles de seuil, 25 décibels pondérés A dans une pièce principale d'un logement et 30 ailleurs, puis les limites par bande d'octave.">
+      <figcaption>Rappel de l'écran 5 — le seuil d'application.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Elle n'est pas recherchée : 24 est sous le repère de 25</button>
+      <button type="button" data-answer="b">Elle est recherchée, avec la limite de nuit de 3 dB(A)</button>
+      <button type="button" data-answer="c">Elle n'est recherchée qu'à partir de 30 dB(A)</button>
+      <button type="button" data-answer="d">Seule l'émergence spectrale est recherchée</button>
+    </div>
+    <p class="feedback" hidden data-explication="Dans une pièce principale d'un logement, l'émergence n'est recherchée que si le bruit ambiant mesuré est supérieur à 25 dB(A). À 24 dB(A), il n'y a rien à chercher : ni émergence globale, ni émergence spectrale."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Le niveau d'exposition quotidienne d'un salarié est de quatre-vingt-six décibels pondérés A. Que faut-il retenir ? Reprenez les trois cartes de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un salarié est exposé à 86 dB(A) par jour : que retenir ?</h2>
+    <figure class="vignette">
+      <img src="svg/bruit-au-travail.svg" alt="Vignette de rappel : les trois valeurs d'exposition au bruit du Code du travail, 80, 85 et 87 décibels pondérés A, sur trois cartes empilées.">
+      <figcaption>Rappel de l'écran 7 — les trois valeurs d'exposition.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien à faire : on reste sous la valeur limite de 87 dB(A), donc aucune obligation</button>
+      <button type="button" data-answer="b">Le niveau se compare à un bruit résiduel, comme pour une plainte de voisin</button>
+      <button type="button" data-answer="bonne">Au-dessus de 85 : l'employeur met des protecteurs et veille à leur port</button>
+      <button type="button" data-answer="d">Le poste doit être arrêté : la valeur limite de 87 dB(A) est déjà atteinte</button>
+    </div>
+    <p class="feedback" hidden data-explication="86 dB(A) dépasse la valeur d'exposition supérieure (85) sans atteindre la valeur limite (87). L'employeur doit mettre des protecteurs à disposition et veiller à ce qu'ils soient effectivement utilisés. Et le Code du travail raisonne en niveau, pas en émergence."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../acoustique-le-bruit-en-db/"><strong>Le bruit en dB</strong></a> (même sous-ligne) — le décibel, la pondération A, et pourquoi on n'additionne pas deux niveaux comme deux nombres.</li>
+    <li><a href="../acoustique-mesurer/"><strong>Mesurer</strong></a> (même sous-ligne) — comment relever le bruit ambiant et le bruit résiduel avec un sonomètre.</li>
+    <li><a href="../acoustique-pac-voisinage/"><strong>PAC &amp; voisinage</strong></a> (même sous-ligne) — l'unité extérieure d'une pompe à chaleur, cas d'application de ces seuils.</li>
+    <li><a href="../risques-duerp/"><strong>Le DUERP</strong></a> (Risques professionnels) — le bruit au travail est un risque à évaluer et à consigner.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     Aucun audio n'est encore fabriqué pour cette station : les narrations
+     partent en voix du navigateur tant que la chaîne edge-tts n'est pas passée
+     (build/voix/collecter-narrations.mjs puis generer-audios-edge-tts.py).
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

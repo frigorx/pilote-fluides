@@ -18,7 +18,7 @@ CUIVREZO.stations.push({
       { nom: 'L’alésoir ou l’ébavureur', detail: 'la lame fixée sur le côté du coupe-tube, ou un stylo ébavureur' },
       { nom: 'Le tube, tracé à la cote', detail: 'voir la station 1.2 : mesurer et tracer' },
       { nom: 'Le mètre et l’équerre', detail: 'pour contrôler la longueur et l’équerrage' },
-      { nom: 'Lunettes et gants de travail', detail: 'un bord de tube coupé est tranchant', aValider: 'EPI : les fiches d’origine n’en parlent pas' }
+      { nom: 'Lunettes et gants de travail', detail: 'lunettes sur les yeux pendant tout le façonnage ; gants pour toucher le tube coupé, dont le bord est tranchant' }
     ],
     narration: 'Avant de couper, tout est sur l’établi. Le coupe-tube d’abord. Regardez la molette, ce petit disque tranchant, et en face, les deux galets. Ce sont les galets qui tiennent l’outil perpendiculaire au tube : voilà pourquoi un coupe-tube coupe droit. Une scie, elle, coupe de travers et laisse des échardes ; pour ces tubes, en froid, elle n’a pas sa place. À côté, l’alésoir ou l’ébavureur, qui enlèvera la fine bavure que la molette laisse toujours à l’intérieur. Cochez chaque outil quand il est devant vous.'
   },
@@ -41,7 +41,6 @@ CUIVREZO.stations.push({
     { titre: 'Faire un premier tour lent', texte: 'Tournez le coupe-tube une fois autour du tube, lentement.',
       pointCle: 'Ce premier tour trace un repère tout autour du tube.',
       pourquoi: 'C’est le chemin que la molette va creuser. S’il fait une spirale au lieu d’un cercle, l’outil est de travers : reposez-le.',
-      aValider: 'Le contrôle de la spirale n’est pas dans les fiches d’origine',
       figure: { svg: 'coupeTube', etat: 'tourner' }, clip: 'clips/1-3/04-premier-tour.mp4',
       narration: 'Le premier tour se fait lentement. La molette grave un repère tout autour du tube : c’est le chemin qu’elle va creuser ensuite. Regardez-le. Un repère qui se referme sur lui-même, c’est un outil bien posé. Un repère qui part en spirale, c’est un outil de travers : on desserre, on repose, et on recommence.' },
     { titre: 'Tourner, dans un sens puis dans l’autre', texte: 'Faites tourner l’outil autour du tube en poussant, puis en tirant la poignée.',
@@ -67,7 +66,6 @@ CUIVREZO.stations.push({
     { titre: 'Ébavurer l’extérieur', texte: 'Passez l’ébavureur sur l’arête extérieure pour casser le fil de métal.',
       pointCle: 'Un tour léger suffit.',
       pourquoi: 'L’arête extérieure coupe les doigts et accroche à l’entrée d’un raccord.',
-      aValider: 'L’ébavurage extérieur n’est décrit que dans le cours G10 (habilitation), pas dans les fiches d’atelier',
       figure: { svg: 'ebavurer', etat: 'exterieur' }, clip: 'clips/1-3/09-ebavurer-ext.mp4',
       narration: 'Dernier geste : l’arête extérieure. Elle aussi garde un fil de métal, qui coupe les doigts et accroche quand on enfile le tube dans un raccord. Un tour léger de l’ébavureur suffit à le casser. Votre pièce est coupée. Il reste à la contrôler.' }
   ],
@@ -96,7 +94,6 @@ CUIVREZO.stations.push({
   controles: [
     { question: 'La coupe est-elle d’équerre ?', comment: 'Posez l’équerre contre la face du tube : aucun jour ne doit passer.',
       siNon: 'Recoupez quelques millimètres plus loin, le tube bien posé sur les galets.', geste: 1,
-      aValider: 'Contrôle à l’équerre : non décrit dans les fiches d’origine',
       figure: { svg: 'bout', etat: 'equerre' },
       narration: 'Premier contrôle, l’équerrage. On pose l’équerre contre la face du tube et on regarde s’il passe du jour. Pas de jour, la coupe est d’équerre.' },
     { question: 'La face est-elle plane ?', comment: 'Regardez la face de profil : ni creux, ni bosse.',
@@ -107,7 +104,6 @@ CUIVREZO.stations.push({
       narration: 'Troisième contrôle : l’intérieur. Le doigt ganté ne doit accrocher sur aucun rebord, et à contre-jour, le bord est net.' },
     { question: 'Le tube est-il resté rond ?', comment: 'Regardez le bout de face. En cas de doute, mesurez le diamètre dans deux sens au pied à coulisse : les deux mesures sont égales.',
       siNon: 'Un bout ovalisé ne se rattrape pas : recoupez plus loin, en serrant moins fort.', geste: 5,
-      aValider: 'Mesure dans deux sens : non décrite dans les fiches d’origine',
       figure: { svg: 'bout', etat: 'ovale' },
       narration: 'Quatrième contrôle : le tube est-il resté rond ? Regardez-le de face. Au moindre doute, deux mesures au pied à coulisse, dans deux sens différents, doivent donner le même diamètre.' },
     { question: 'La longueur est-elle à la cote ?', comment: 'Mesurez au mètre, le crochet contre le bout du tube.',

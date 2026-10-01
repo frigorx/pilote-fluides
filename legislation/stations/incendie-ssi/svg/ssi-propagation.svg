@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-labelledby="t-prop" aria-describedby="d-prop" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-prop">L'alarme part d'un détecteur et atteint les DAS de la zone</title>
+  <desc id="d-prop">À gauche, une zone de détection en pointillé : un détecteur, un déclencheur manuel, et une flamme. Deux traits mènent au centralisateur de mise en sécurité, au centre. À droite, la zone de mise en sécurité regroupe quatre dispositifs : un clapet coupe-feu qui se ferme, un volet de désenfumage qui s'ouvre, une porte coupe-feu qui se ferme, et la ventilation de la centrale de traitement d'air qui s'arrête. L'animation envoie une impulsion du détecteur au centralisateur, puis du centralisateur aux quatre dispositifs, qui changent d'état ; l'image fixe montre les dispositifs en position de sécurité.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .h2  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .lb  { font-size:16px; font-weight:bold; fill:#10233c; }
+    .gr  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:44px; fill:#1b3a63; }
+    .wht { font-size:16px; font-weight:bold; fill:#fff; }
+  </style>
+
+  <text class="ttl" x="400" y="30" text-anchor="middle">De la détection aux dispositifs actionnés de sécurité</text>
+
+  <rect x="20" y="55" width="150" height="340" rx="12" fill="none" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="8 6"/>
+  <text class="lb" x="95" y="424" text-anchor="middle">Zone de détection</text>
+  <g><g transform="translate(95,100)">
+    <path d="M0,-30 C12,-14 22,-6 22,10 C22,24 11,32 0,32 C-11,32 -22,24 -22,10 C-22,0 -14,-8 -9,-16 C-6,-6 -2,-6 0,-30 Z" fill="#e8914a" stroke="#b91c1c" stroke-width="2.5"/>
+    <path d="M0,4 C6,12 10,16 10,22 C10,28 5,31 0,31 C-5,31 -10,28 -10,22 C-10,16 -5,12 0,4 Z" fill="#fbe3c4"/>
+    
+  </g><animate attributeName="opacity" values="0;0.02;1;1" keyTimes="0;0.02;0.08;1" dur="12s" repeatCount="indefinite"/></g>
+  <g>
+    <circle cx="95" cy="190" r="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="95" cy="190" r="9" fill="#b91c1c"><animate attributeName="fill" values="#1b3a63;#1b3a63;#b91c1c;#b91c1c" keyTimes="0;0.05;0.08;1" dur="12s" repeatCount="indefinite"/></circle>
+  </g>
+  <text class="lb" x="95" y="232" text-anchor="middle">Détecteur</text>
+  <g>
+    <rect x="73" y="278" width="44" height="44" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="83" y="288" width="24" height="24" rx="3" fill="#b91c1c"/>
+    <polyline points="89,288 96,298 92,302 100,312" fill="none" stroke="#fff" stroke-width="2"/>
+  </g>
+  <text class="lb" x="95" y="342" text-anchor="middle">Déclencheur</text>
+    <text class="lb" x="95" y="363" text-anchor="middle">manuel</text>
+
+  <path d="M117,190 H190 V225 H228" fill="none" stroke="#1b3a63" stroke-width="3"/><polygon points="240,225 229,218 229,232" fill="#1b3a63"/>
+  <path d="M117,300 H190 V265 H228" fill="none" stroke="#1b3a63" stroke-width="3"/><polygon points="240,265 229,258 229,272" fill="#1b3a63"/>
+  <circle r="8" fill="#b91c1c" stroke="#fff" stroke-width="2" opacity="0">
+      <animateMotion path="M117,190 H190 V225 H240" dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1;0.22;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1;0.106;0.214;0.22;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+
+  <g>
+    <rect x="240" y="195" width="140" height="100" rx="10" fill="#fffdf8" stroke="#b91c1c" stroke-width="3"><animate attributeName="stroke" values="#1b3a63;#1b3a63;#b91c1c;#b91c1c" keyTimes="0;0.2;0.24;1" dur="12s" repeatCount="indefinite"/></rect>
+    <rect x="260" y="211" width="100" height="34" rx="4" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+    <circle cx="278" cy="271" r="7" fill="#1b3a63"/><circle cx="310" cy="271" r="7" fill="#1b3a63"/><circle cx="342" cy="271" r="7" fill="#b91c1c"><animate attributeName="fill" values="#1b3a63;#1b3a63;#b91c1c;#b91c1c" keyTimes="0;0.2;0.24;1" dur="12s" repeatCount="indefinite"/></circle>
+  </g>
+  <text class="lb" x="310" y="322" text-anchor="middle">Centralisateur de</text>
+    <text class="lb" x="310" y="343" text-anchor="middle">mise en sécurité</text>
+
+  <rect x="470" y="55" width="310" height="405" rx="12" fill="#f7e2e2" stroke="#b91c1c" stroke-width="3"><animate attributeName="fill" values="#fffdf8;#fffdf8;#f7e2e2;#f7e2e2" keyTimes="0;0.44;0.5;1" dur="12s" repeatCount="indefinite"/></rect>
+
+  <path d="M380,245 H420" stroke="#1b3a63" stroke-width="3" fill="none"/>
+  <path d="M420,150 V405" stroke="#1b3a63" stroke-width="3" fill="none"/>
+  <path d="M420,150 H474" stroke="#1b3a63" stroke-width="3" fill="none"/><polygon points="486,150 475,143 475,157" fill="#1b3a63"/>
+  <path d="M420,235 H474" stroke="#1b3a63" stroke-width="3" fill="none"/><polygon points="486,235 475,228 475,242" fill="#1b3a63"/>
+  <path d="M420,320 H474" stroke="#1b3a63" stroke-width="3" fill="none"/><polygon points="486,320 475,313 475,327" fill="#1b3a63"/>
+  <path d="M420,405 H474" stroke="#1b3a63" stroke-width="3" fill="none"/><polygon points="486,405 475,398 475,412" fill="#1b3a63"/>
+  <circle r="8" fill="#b91c1c" stroke="#fff" stroke-width="2" opacity="0">
+      <animateMotion path="M380,245 H420 V150 H486" dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3;0.44;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3;0.306;0.434;0.44;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  <circle r="8" fill="#b91c1c" stroke="#fff" stroke-width="2" opacity="0">
+      <animateMotion path="M380,245 H420 V235 H486" dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3;0.44;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3;0.306;0.434;0.44;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  <circle r="8" fill="#b91c1c" stroke="#fff" stroke-width="2" opacity="0">
+      <animateMotion path="M380,245 H420 V320 H486" dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3;0.44;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3;0.306;0.434;0.44;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  <circle r="8" fill="#b91c1c" stroke="#fff" stroke-width="2" opacity="0">
+      <animateMotion path="M380,245 H420 V405 H486" dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3;0.44;1"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3;0.306;0.434;0.44;1" dur="12s" repeatCount="indefinite"/>
+    </circle>
+
+  <text class="h2" x="625" y="88" text-anchor="middle">Zone de mise en sécurité</text>
+  <g><rect x="490" y="130" width="64" height="40" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <line x1="522" y1="130" x2="522" y2="170" stroke="#e8914a" stroke-width="6" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-90 522 150;-90 522 150;0 522 150;0 522 150" keyTimes="0;0.46;0.54;1" dur="12s" repeatCount="indefinite"/></line>
+  </g>
+  <text class="lb" x="572" y="148" text-anchor="start">Clapet coupe-feu</text><text class="gr" x="572" y="170" text-anchor="start">se ferme</text>
+  <g><rect x="490" y="215" width="64" height="40" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <line x1="496" y1="235" x2="548" y2="235" stroke="#e8914a" stroke-width="6" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="90 522 235;90 522 235;0 522 235;0 522 235" keyTimes="0;0.46;0.54;1" dur="12s" repeatCount="indefinite"/></line>
+  </g>
+  <text class="lb" x="572" y="233" text-anchor="start">Volet de désenfumage</text><text class="gr" x="572" y="255" text-anchor="start">s'ouvre</text>
+  <g>
+    <rect x="488" y="315" width="16" height="10" fill="#1b3a63"/><rect x="540" y="315" width="16" height="10" fill="#1b3a63"/>
+    <line x1="504" y1="320" x2="540" y2="320" stroke="#e8914a" stroke-width="6" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-80 504 320;-80 504 320;0 504 320;0 504 320" keyTimes="0;0.46;0.54;1" dur="12s" repeatCount="indefinite"/></line>
+  </g>
+  <text class="lb" x="572" y="318" text-anchor="start">Porte coupe-feu</text><text class="gr" x="572" y="340" text-anchor="start">se ferme</text>
+  <g>
+    <circle cx="522" cy="405" r="27" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <g>
+      <ellipse cx="522" cy="393" rx="6" ry="11" fill="#e8914a" transform="rotate(0 522 405)"/>
+      <ellipse cx="522" cy="393" rx="6" ry="11" fill="#e8914a" transform="rotate(90 522 405)"/>
+      <ellipse cx="522" cy="393" rx="6" ry="11" fill="#e8914a" transform="rotate(180 522 405)"/>
+      <ellipse cx="522" cy="393" rx="6" ry="11" fill="#e8914a" transform="rotate(270 522 405)"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 522 405;1080 522 405;1440 522 405;1440 522 405" keyTimes="0;0.35;0.55;1" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <circle cx="522" cy="405" r="4" fill="#1b3a63"/>
+  </g>
+  <text class="lb" x="572" y="403" text-anchor="start">CTA (ventilation)</text><text class="gr" x="572" y="425" text-anchor="start">s'arrête</text>
+</svg>

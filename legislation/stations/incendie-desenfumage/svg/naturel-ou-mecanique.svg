@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-f3" aria-describedby="d-f3" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-f3">Naturel ou mécanique : quatre combinaisons</title>
+  <desc id="d-f3">Un tableau de quatre cases. En colonnes : l'évacuation des fumées, naturelle ou mécanique.
+    En lignes : l'amenée d'air, naturelle ou mécanique. Air naturel et évacuation naturelle : le cas le
+    plus fréquent. Air naturel et extraction mécanique : sous-sols, étages intermédiaires, locaux aveugles.
+    Air mécanique et évacuation naturelle : rare, avec des exutoires seulement. Air mécanique et extraction
+    mécanique : faible hauteur, circulations, parkings, risque élevé. Deux bandes rouges en dessous : à
+    proscrire, l'évacuation naturelle et l'extraction mécanique ensemble dans une même zone ; et pour un
+    escalier, jamais d'extraction mécanique des fumées.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:21px; fill:#10233c; }
+    .hd  { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .bd  { font-weight:bold; font-size:17px; fill:#10233c; }
+    .rd  { font-weight:bold; font-size:17px; fill:#8f1414; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="38" text-anchor="middle">Amenée d'air et évacuation : quatre combinaisons</text>
+
+  <text class="hd" x="425" y="82" text-anchor="middle">Évacuation naturelle</text>
+  <text class="hd" x="645" y="82" text-anchor="middle">Extraction mécanique</text>
+  <text class="hd" x="160" y="150" text-anchor="middle">Amenée d'air</text>
+  <text class="hd" x="160" y="172" text-anchor="middle">naturelle</text>
+  <text class="hd" x="160" y="260" text-anchor="middle">Amenée d'air</text>
+  <text class="hd" x="160" y="282" text-anchor="middle">mécanique</text>
+
+  <rect x="320" y="100" width="210" height="100" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="bd" x="425" y="142" text-anchor="middle">Le plus fréquent</text>
+  <text class="lbl" x="425" y="168" text-anchor="middle">exutoires, ouvrants</text>
+
+  <rect x="540" y="100" width="210" height="100" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="bd" x="645" y="136" text-anchor="middle">Sous-sols,</text>
+  <text class="lbl" x="645" y="162" text-anchor="middle">étages intermédiaires,</text>
+  <text class="lbl" x="645" y="184" text-anchor="middle">locaux aveugles</text>
+
+  <rect x="320" y="210" width="210" height="100" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3" stroke-dasharray="9 6"/>
+  <text class="bd" x="425" y="252" text-anchor="middle">Rare</text>
+  <text class="lbl" x="425" y="278" text-anchor="middle">avec exutoires seulement</text>
+
+  <rect x="540" y="210" width="210" height="100" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="bd" x="645" y="246" text-anchor="middle">Faible hauteur,</text>
+  <text class="lbl" x="645" y="272" text-anchor="middle">circulations, parkings,</text>
+  <text class="lbl" x="645" y="294" text-anchor="middle">risque élevé</text>
+
+  <rect x="50" y="340" width="700" height="56" rx="10" fill="#fdecea" stroke="#b91c1c" stroke-width="3"/>
+  <text class="rd" x="400" y="364" text-anchor="middle">À proscrire dans une même zone :</text>
+  <text class="rd" x="400" y="386" text-anchor="middle">évacuation naturelle ET extraction mécanique ensemble.</text>
+
+  <rect x="50" y="410" width="700" height="56" rx="10" fill="#fdecea" stroke="#b91c1c" stroke-width="3"/>
+  <text class="rd" x="400" y="434" text-anchor="middle">Escalier : les fumées ne sont jamais extraites mécaniquement.</text>
+  <text class="rd" x="400" y="456" text-anchor="middle">Balayage naturel, ou mise en surpression.</text>
+</svg>

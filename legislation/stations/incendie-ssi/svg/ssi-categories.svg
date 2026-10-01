@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-cat" aria-describedby="d-cat" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cat">Les catégories de SSI, de A à E</title>
+  <desc id="d-cat">Un tableau. En colonnes, les cinq catégories A, B, C, D et E, de la plus sévère à la moins sévère. En lignes, quatre exigences lues dans le règlement : la détection déclenche les dispositifs sans temporisation, seulement en catégorie A ; le centralisateur admis à la marque NF, en A et B ; le contrat d'entretien toujours obligatoire, en A et B ; les seuls dispositifs télécommandés étant les portes coupe-feu et les issues de secours, en D et E. La colonne C est vide : son contenu se lit dans la norme.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .h2  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .lb  { font-size:16px; font-weight:bold; fill:#10233c; }
+    .gr  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:44px; fill:#1b3a63; }
+    .wht { font-size:16px; font-weight:bold; fill:#fff; }
+  </style>
+
+  <text class="ttl" x="400" y="30" text-anchor="middle">Cinq catégories, de la plus sévère à la moins sévère</text>
+  <rect x="390" y="46" width="60" height="62" rx="10" fill="#b91c1c"/>
+  <text x="420" y="92" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="40" fill="#fff">A</text>
+  <rect x="470" y="46" width="60" height="62" rx="10" fill="#b91c1c"/>
+  <text x="500" y="92" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="40" fill="#fff">B</text>
+  <rect x="550" y="46" width="60" height="62" rx="10" fill="#5a6b7d"/>
+  <text x="580" y="92" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="40" fill="#fff">C</text>
+  <rect x="630" y="46" width="60" height="62" rx="10" fill="#1b3a63"/>
+  <text x="660" y="92" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="40" fill="#fff">D</text>
+  <rect x="710" y="46" width="60" height="62" rx="10" fill="#1b3a63"/>
+  <text x="740" y="92" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="40" fill="#fff">E</text>
+  <rect x="20" y="116" width="760" height="74" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lb" x="32" y="138" text-anchor="start">La détection déclenche les DAS</text>
+    <text class="lb" x="32" y="159" text-anchor="start">sans temporisation</text><text class="gr" x="32" y="178" text-anchor="start">MS 60, § 1</text>
+  <polyline points="409,150 417,160 432,140" fill="none" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="500" cy="150" r="4" fill="#c3cdd8"/>
+  <circle cx="580" cy="150" r="4" fill="#c3cdd8"/>
+  <circle cx="660" cy="150" r="4" fill="#c3cdd8"/>
+  <circle cx="740" cy="150" r="4" fill="#c3cdd8"/>
+  <rect x="20" y="196" width="760" height="74" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lb" x="32" y="218" text-anchor="start">Centralisateur admis à la</text>
+    <text class="lb" x="32" y="239" text-anchor="start">marque NF</text><text class="gr" x="32" y="258" text-anchor="start">MS 59, § 2</text>
+  <polyline points="409,230 417,240 432,220" fill="none" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="489,230 497,240 512,220" fill="none" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="580" cy="230" r="4" fill="#c3cdd8"/>
+  <circle cx="660" cy="230" r="4" fill="#c3cdd8"/>
+  <circle cx="740" cy="230" r="4" fill="#c3cdd8"/>
+  <rect x="20" y="276" width="760" height="74" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lb" x="32" y="298" text-anchor="start">Contrat d'entretien</text>
+    <text class="lb" x="32" y="319" text-anchor="start">toujours obligatoire</text><text class="gr" x="32" y="338" text-anchor="start">MS 68</text>
+  <polyline points="409,310 417,320 432,300" fill="none" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="489,310 497,320 512,300" fill="none" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="580" cy="310" r="4" fill="#c3cdd8"/>
+  <circle cx="660" cy="310" r="4" fill="#c3cdd8"/>
+  <circle cx="740" cy="310" r="4" fill="#c3cdd8"/>
+  <rect x="20" y="356" width="760" height="74" rx="10" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <text class="lb" x="32" y="378" text-anchor="start">Seuls DAS télécommandés :</text>
+    <text class="lb" x="32" y="399" text-anchor="start">portes coupe-feu et issues</text><text class="gr" x="32" y="418" text-anchor="start">MS 60, § 3</text>
+  <circle cx="420" cy="390" r="4" fill="#c3cdd8"/>
+  <circle cx="500" cy="390" r="4" fill="#c3cdd8"/>
+  <circle cx="580" cy="390" r="4" fill="#c3cdd8"/>
+  <polyline points="649,390 657,400 672,380" fill="none" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="729,390 737,400 752,380" fill="none" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="20" y="440" width="760" height="46" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lb" x="400" y="470" text-anchor="middle">La catégorie C : son contenu se lit dans la norme, pas dans ce tableau.</text>
+</svg>

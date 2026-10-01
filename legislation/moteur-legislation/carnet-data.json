@@ -1,0 +1,744 @@
+{
+ "_role": "Généré par outils/poser-les-missions.mjs depuis index.html (RESEAU), progression.json et les mission.json. Ne pas éditer.",
+ "entreprise": "Clim'Études Sud",
+ "fil_rouge": "Vous entrez comme jeune technicien d'études chez Clim'Études Sud. D'abord on vous apprend à travailler en sécurité et à ne toucher qu'à ce que vous avez le droit de toucher ; puis on vous confie des dossiers de plus en plus complets, du fluide à l'enveloppe du bâtiment ; en fin d'année, vous défendez un dossier d'affaire complet devant le client — et vous savez ce que dit votre propre contrat.",
+ "periodes": [
+  {
+   "id": "P1",
+   "titre": "Arriver en sécurité",
+   "semaines": "1 à 6",
+   "pourquoi": "Avant tout geste sur une installation : les risques, l'habilitation, la consignation. C'est l'ordre du chantier réel.",
+   "sous_lignes": [
+    "secu-risques",
+    "regl-electrique"
+   ]
+  },
+  {
+   "id": "P2",
+   "titre": "Le fluide et la machine",
+   "semaines": "7 à 14",
+   "pourquoi": "Le cœur du métier de frigoriste : qui a le droit de manipuler, dans quel local, avec quelle traçabilité, et ce que dit la loi des récipients sous pression.",
+   "sous_lignes": [
+    "regl-fluidique",
+    "regl-desp"
+   ]
+  },
+  {
+   "id": "P3",
+   "titre": "Le bâtiment qui consomme",
+   "semaines": "15 à 22",
+   "pourquoi": "Le technicien d'études dimensionne pour un bâtiment : la réglementation thermique fixe le cadre, l'acoustique fixe la place de la machine.",
+   "sous_lignes": [
+    "regl-thermique",
+    "regl-acoustique"
+   ]
+  },
+  {
+   "id": "P4",
+   "titre": "Le bâtiment qui protège",
+   "semaines": "23 à 28",
+   "pourquoi": "Le lot CVC traverse les murs coupe-feu et participe au désenfumage : l'incendie s'étudie une fois le bâtiment compris.",
+   "sous_lignes": [
+    "regl-incendie",
+    "regl-certifs"
+   ]
+  },
+  {
+   "id": "P5",
+   "titre": "L'affaire complète",
+   "semaines": "29 à 36",
+   "pourquoi": "Fin de vie, bilan carbone, et le cadre du contrat de travail : ce qu'il faut pour porter une affaire seul, et pour se situer soi-même.",
+   "sous_lignes": [
+    "secu-dechets",
+    "secu-impact",
+    "regl-travail"
+   ]
+  }
+ ],
+ "tampons": {
+  "regle": "Un tampon par station : il se gagne en terminant la station avec au moins 3 bonnes réponses sur 4, puis se fait signer sur papier par le professeur après la mission.",
+  "certificats": "Une sous-ligne complète donne un certificat de branche (ex. « Certificat Électrique »). Les onze certificats forment le diplôme maison « Chargé d'affaires réglementaire » du carnet."
+ },
+ "sous_lignes": [
+  {
+   "id": "regl-thermique",
+   "ico": "🌡️",
+   "nom": "Thermique",
+   "sous": "RE2020 & RT existant",
+   "couleur": "#92400e",
+   "ligne_mere": "📜 LES RÉGLEMENTATIONS",
+   "stations": [
+    {
+     "nom": "Pourquoi une RT ?",
+     "sous": "de 1974 à la RE2020",
+     "slug": "thermique-pourquoi-une-rt",
+     "mission": {
+      "titre": "Mission : la plaquette « RT » qui date d'avant la RE2020",
+      "badge": "Frise à jour",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "La RE2020",
+     "sous": "Bbio · Cep · IC",
+     "slug": "thermique-re2020",
+     "mission": {
+      "titre": "Mission : un excellent carbone ne rattrape pas un Bbio dépassé",
+      "badge": "Trois seuils, trois contrôles",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Le confort d'été",
+     "sous": "DH, degrés-heures",
+     "slug": "thermique-confort-ete",
+     "mission": {
+      "titre": "Mission : ne pas commencer par la climatisation",
+      "badge": "Ordre de bataille",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "RT de l'existant",
+     "sous": "rénover par élément",
+     "slug": "thermique-existant",
+     "mission": {
+      "titre": "Mission : remplacer la chaudière, ou rénover tout l'immeuble ?",
+      "badge": "Bon cadre, bon devis",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Le DPE",
+     "sous": "étiquettes & audit",
+     "slug": "thermique-dpe",
+     "mission": {
+      "titre": "Mission : « Mon DPE est faux, mes locataires paient peu ! »",
+      "badge": "Étiquette expliquée",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Les CEE",
+     "sous": "financer les travaux",
+     "slug": "thermique-cee",
+     "mission": {
+      "titre": "Mission : l'aide pour la pompe à chaleur, avant de signer",
+      "badge": "Aide sécurisée",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "regl-acoustique",
+   "ico": "🔊",
+   "nom": "Acoustique",
+   "sous": "bruit & voisinage",
+   "couleur": "#6d28d9",
+   "ligne_mere": "📜 LES RÉGLEMENTATIONS",
+   "stations": [
+    {
+     "nom": "Le bruit en dB",
+     "sous": "dB(A), niveaux",
+     "slug": "acoustique-le-bruit-en-db",
+     "mission": {
+      "titre": "Mission : Deux fiches, deux façons de dire « silencieux »",
+      "badge": "Oreille fine",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Les seuils",
+     "sous": "voisinage, émergence",
+     "slug": "acoustique-les-seuils",
+     "mission": {
+      "titre": "Mission : Une machine sur le toit, un voisin qui ne dort plus",
+      "badge": "Oreille de voisin",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Mesurer",
+     "sous": "sonomètre, protocole",
+     "slug": "acoustique-mesurer",
+     "mission": {
+      "titre": "Mission : Le voisin se plaint, qu'allez-vous mesurer ?",
+      "badge": "Oreille fine",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "PAC & voisinage",
+     "sous": "l'unité extérieure",
+     "slug": "acoustique-pac-voisinage",
+     "mission": {
+      "titre": "Mission : la pompe à chaleur qui donne sur la chambre du voisin",
+      "badge": "Oreille fine",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Traiter le bruit",
+     "sous": "plots, silencieux",
+     "slug": "acoustique-traiter-le-bruit",
+     "mission": {
+      "titre": "Mission : Le grondement du soir sous la terrasse",
+      "badge": "Plot posé",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "regl-incendie",
+   "ico": "🔥",
+   "nom": "Incendie",
+   "sous": "ERP, coupe-feu",
+   "couleur": "#b91c1c",
+   "ligne_mere": "📜 LES RÉGLEMENTATIONS",
+   "stations": [
+    {
+     "nom": "Classer le bâti",
+     "sous": "ERP · IGH · habitation",
+     "slug": "incendie-classer-le-bati",
+     "mission": {
+      "titre": "Mission : Quel régime pour chaque partie du bâtiment ?",
+      "badge": "Bon classement",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Euroclasses",
+     "sous": "réaction & résistance",
+     "slug": "incendie-euroclasses",
+     "mission": {
+      "titre": "Mission : Cette gaine et ce calfeutrement répondent-ils à la bonne question ?",
+      "badge": "Deux questions",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Le désenfumage",
+     "sous": "le rôle du CVC",
+     "slug": "incendie-desenfumage",
+     "mission": {
+      "titre": "Mission : Le plateau de bureaux et la CTA qui ne s'arrête pas",
+      "badge": "Ordre de marche",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Clapets coupe-feu",
+     "sous": "traversées, DAS",
+     "slug": "incendie-clapets-coupe-feu",
+     "mission": {
+      "titre": "Mission : Les gaines qui traversent les chambres",
+      "badge": "Lame tombée",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Le SSI",
+     "sous": "détection, asservis.",
+     "slug": "incendie-ssi",
+     "mission": {
+      "titre": "Mission : Qui commande la CTA quand l'alarme sonne ?",
+      "badge": "Chef d'orchestre",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Sprinkler & RIA",
+     "sous": "eau incendie, lot CVC",
+     "slug": "incendie-sprinkler-ria",
+     "mission": {
+      "titre": "Mission : « Un sprinkler partout, et des RIA en plus »",
+      "badge": "Seule la bonne tête",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "regl-electrique",
+   "ico": "⚡",
+   "nom": "Électrique",
+   "sous": "NF C 15-100, habilitation",
+   "couleur": "#a16207",
+   "ligne_mere": "📜 LES RÉGLEMENTATIONS",
+   "stations": [
+    {
+     "nom": "NF C 15-100",
+     "sous": "la norme BT",
+     "slug": "elec-nf-c-15-100",
+     "mission": {
+      "titre": "Mission : une pompe à chaleur et une centrale d'air pour un petit immeuble de bureaux",
+      "badge": "Tampon « Circuit dédié »",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Terre & différentiel",
+     "sous": "protéger les personnes",
+     "slug": "elec-terre-differentiel",
+     "mission": {
+      "titre": "Mission : la carcasse qui mord",
+      "badge": "Terre franche",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Protéger un circuit",
+     "sous": "sections & calibres",
+     "slug": "elec-proteger-un-circuit",
+     "mission": {
+      "titre": "Mission : le compresseur qui déclenche, et le calibre qu'on a monté",
+      "badge": "Câble d'abord",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Régimes de neutre",
+     "sous": "TT · TN · IT",
+     "slug": "elec-regimes-de-neutre",
+     "mission": {
+      "titre": "Mission : quel régime de neutre derrière cette unité extérieure ?",
+      "badge": "Tampon « Boucle de défaut »",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "L'habilitation",
+     "sous": "B0 · BS · BR",
+     "slug": "elec-habilitation",
+     "mission": {
+      "titre": "Mission : qui a le droit d'ouvrir l'armoire du groupe froid ?",
+      "badge": "Titre en règle",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Consigner",
+     "sous": "VAT, les 4 étapes",
+     "slug": "elec-consigner",
+     "mission": {
+      "titre": "Mission : le groupe extérieur « à l'arrêt »",
+      "badge": "Cadenas posé",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "regl-fluidique",
+   "ico": "❄️",
+   "nom": "Fluidique & thermique",
+   "sous": "F-Gaz, EN 378, traçabilité",
+   "couleur": "#0f766e",
+   "ligne_mere": "📜 LES RÉGLEMENTATIONS",
+   "stations": [
+    {
+     "nom": "F-Gaz 3",
+     "sous": "2024 : quotas, interdictions",
+     "slug": "fgaz-3",
+     "mission": {
+      "titre": "Mission : Changer la chambre froide, choisir le fluide",
+      "badge": "Le texte en vigueur",
+      "duree_min": 30
+     }
+    },
+    {
+     "nom": "Aptitude & capacité",
+     "sous": "personne & entreprise",
+     "slug": "aptitude-capacite",
+     "mission": {
+      "titre": "Mission : Deux techniciens, deux papiers, une seule visite",
+      "badge": "Les deux papiers",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "NF EN 378",
+     "sous": "classes, charges maxi",
+     "slug": "en-378",
+     "mission": {
+      "titre": "Mission : le fluide du hall d'accueil",
+      "badge": "Tampon « Bonne classe »",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Traçabilité",
+     "sous": "BSD, Trackdéchets",
+     "slug": "tracabilite-fluides",
+     "mission": {
+      "titre": "Mission : le dossier qui prouve où est passé le fluide",
+      "badge": "Fil tendu",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "regl-desp",
+   "ico": "🛢️",
+   "nom": "La DESP",
+   "sous": "équipements sous pression",
+   "couleur": "#0c4a6e",
+   "ligne_mere": "📜 LES RÉGLEMENTATIONS",
+   "stations": [
+    {
+     "nom": "La directive",
+     "sous": "2014/68/UE, PS > 0,5 bar",
+     "slug": "desp-la-directive",
+     "mission": {
+      "titre": "Mission : « Seule la bouteille est concernée, non ? »",
+      "badge": "Plaque lue",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Catégories I à IV",
+     "sous": "PS × V, groupe du fluide",
+     "slug": "desp-categories",
+     "mission": {
+      "titre": "Mission : le même réservoir, un autre fluide, une autre catégorie",
+      "badge": "Catégorie décodée",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Marquage & papiers",
+     "sous": "CE, déclaration, notice",
+     "slug": "desp-marquage-papiers",
+     "mission": {
+      "titre": "Mission : livré avec le CE, mais sans notice",
+      "badge": "Réception irréprochable",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "En service",
+     "sous": "requalification, CTP",
+     "slug": "desp-en-service",
+     "mission": {
+      "titre": "Mission : l'état des lieux d'une installation qui vieillit",
+      "badge": "Dossier ouvert",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Soupapes & sécurités",
+     "sous": "accessoires de protection",
+     "slug": "desp-soupapes-securites",
+     "mission": {
+      "titre": "Mission : « Desserrez la protection, le groupe s'arrête trop souvent »",
+      "badge": "Dernier rempart",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "regl-certifs",
+   "ico": "🏅",
+   "nom": "Certifications & normes",
+   "sous": "RGE, QualiPAC, CE",
+   "couleur": "#3730a3",
+   "ligne_mere": "📜 LES RÉGLEMENTATIONS",
+   "stations": [
+    {
+     "nom": "Loi, norme ou DTU ?",
+     "sous": "qui oblige quoi",
+     "slug": "certif-loi-norme-dtu",
+     "mission": {
+      "titre": "Mission : Ce que dit le CCTP, et ce qui oblige vraiment",
+      "badge": "Le bon étage",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Le marquage CE",
+     "sous": "produits & DoP",
+     "slug": "certif-marquage-ce",
+     "mission": {
+      "titre": "Mission : Un « CE » collé sur le carton, et pas de DoP",
+      "badge": "Le CE décrypté",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "RGE & QualiPAC",
+     "sous": "les qualifications",
+     "slug": "certif-rge-qualipac",
+     "mission": {
+      "titre": "Mission : Deux devis pour une pompe à chaleur, une seule porte d'aide",
+      "badge": "Porte ouverte",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Les garanties",
+     "sous": "décennale, biennale",
+     "slug": "certif-garanties",
+     "mission": {
+      "titre": "Mission : La pompe à chaleur qui ne chauffe pas assez",
+      "badge": "Point de départ",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "regl-travail",
+   "ico": "⚖️",
+   "nom": "Droit du travail",
+   "sous": "contrats, obligations",
+   "couleur": "#9d174d",
+   "ligne_mere": "📜 LES RÉGLEMENTATIONS",
+   "stations": [
+    {
+     "nom": "Le contrat",
+     "sous": "CDI, CDD, apprentissage",
+     "slug": "travail-le-contrat",
+     "mission": {
+      "titre": "Mission : Lire son premier contrat avant de le signer",
+      "badge": "Contrat en main",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Temps & paie",
+     "sous": "durée, heures sup",
+     "slug": "travail-temps-et-paie",
+     "mission": {
+      "titre": "Mission : Ma première fiche de paie après une semaine de chantier chargée",
+      "badge": "Compte juste",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Droits & devoirs",
+     "sous": "employeur, salarié",
+     "slug": "travail-droits-devoirs",
+     "mission": {
+      "titre": "Mission : « C'est un ordre ! » — obéir, alerter ou se retirer ?",
+      "badge": "Le bon réflexe",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Se former",
+     "sous": "CPF, VAE",
+     "slug": "travail-se-former",
+     "mission": {
+      "titre": "Mission : Arriver à son entretien de parcours avec un projet",
+      "badge": "Cap sur le titre",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "S'installer",
+     "sous": "l'auto-entreprise",
+     "slug": "travail-s-installer",
+     "mission": {
+      "titre": "Mission : Un collègue veut partir à son compte",
+      "badge": "Case cochée",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "secu-risques",
+   "ico": "⛑️",
+   "nom": "Risques professionnels",
+   "sous": "DUERP, EPI, gestes",
+   "couleur": "#c2410c",
+   "ligne_mere": "🦺 SÉCURITÉ & ENVIRONNEMENT",
+   "stations": [
+    {
+     "nom": "Le DUERP",
+     "sous": "évaluer les risques",
+     "slug": "risques-duerp",
+     "mission": {
+      "titre": "Mission : Qui connaît la toiture ? Réclamer le document du site",
+      "badge": "Le document du site",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Les 9 principes",
+     "sous": "prévenir dans l'ordre",
+     "slug": "risques-neuf-principes",
+     "mission": {
+      "titre": "Mission : Avant d'acheter des harnais",
+      "badge": "Dans l'ordre",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Les EPI",
+     "sous": "choisir & vérifier",
+     "slug": "risques-epi",
+     "mission": {
+      "titre": "Mission : Le bon équipement pour la bonne recharge",
+      "badge": "Dernier maillon",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "En hauteur",
+     "sous": "échafaudages, R408",
+     "slug": "risques-hauteur",
+     "mission": {
+      "titre": "Mission : Vérifier avant de monter",
+      "badge": "Pied de l'accès",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Risque chimique",
+     "sous": "FDS, CMR, fluides",
+     "slug": "risques-chimique",
+     "mission": {
+      "titre": "Mission : Le bidon sans mode d'emploi",
+      "badge": "La fiche d'abord",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Zones ATEX",
+     "sous": "A2L, A3 : zonage",
+     "slug": "risques-atex",
+     "mission": {
+      "titre": "Mission : Du propane dans l'arrière-boutique",
+      "badge": "Pas d'étincelle",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "secu-dechets",
+   "ico": "♻️",
+   "nom": "Déchets",
+   "sous": "tri, BSD, filières",
+   "couleur": "#57534e",
+   "ligne_mere": "🦺 SÉCURITÉ & ENVIRONNEMENT",
+   "stations": [
+    {
+     "nom": "Responsabilités",
+     "sous": "producteur, détenteur",
+     "slug": "dechets-responsabilites",
+     "mission": {
+      "titre": "Mission : « Ce n'est plus notre problème »",
+      "badge": "Le maillon vérifié",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Trier : 7 flux",
+     "sous": "la benne juste",
+     "slug": "dechets-sept-flux",
+     "mission": {
+      "titre": "Mission : La benne juste",
+      "badge": "La benne juste",
+      "duree_min": 20
+     }
+    },
+    {
+     "nom": "Déchets dangereux",
+     "sous": "BSD & Trackdéchets",
+     "slug": "dechets-dangereux",
+     "mission": {
+      "titre": "Mission : Ce qui se trace, ce qui se trie",
+      "badge": "Le déchet qui se trace",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "La REP bâtiment",
+     "sous": "reprise, éco-organismes",
+     "slug": "dechets-rep-batiment",
+     "mission": {
+      "titre": "Mission : Où vont les chutes d'isolant ?",
+      "badge": "Point de reprise",
+      "duree_min": 20
+     }
+    },
+    {
+     "nom": "Valoriser",
+     "sous": "réemploi, recyclage",
+     "slug": "dechets-valoriser",
+     "mission": {
+      "titre": "Mission : Cinq marches avant la benne",
+      "badge": "Cinq marches",
+      "duree_min": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "secu-impact",
+   "ico": "🌍",
+   "nom": "Impact environnemental",
+   "sous": "PRP, cycle de vie",
+   "couleur": "#047857",
+   "ligne_mere": "🦺 SÉCURITÉ & ENVIRONNEMENT",
+   "stations": [
+    {
+     "nom": "PRP & ODP",
+     "sous": "l'impact d'un fluide",
+     "slug": "impact-prp-odp",
+     "mission": {
+      "titre": "Mission : « Il ne touche pas l'ozone, donc il est propre »",
+      "badge": "Deux échelles",
+      "duree_min": 20
+     }
+    },
+    {
+     "nom": "Le TEWI",
+     "sous": "direct + indirect",
+     "slug": "impact-tewi",
+     "mission": {
+      "titre": "Mission : Les deux plateaux de la balance",
+      "badge": "Les deux plateaux",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "ACV & carbone",
+     "sous": "l'IC de la RE2020",
+     "slug": "impact-acv-carbone",
+     "mission": {
+      "titre": "Mission : Ne juger que la consommation ?",
+      "badge": "Du berceau à la démolition",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Écoconception",
+     "sous": "ErP, étiquettes",
+     "slug": "impact-ecoconception",
+     "mission": {
+      "titre": "Mission : Deux devis, une seule étiquette",
+      "badge": "Lire l'étiquette",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Montréal → Kigali",
+     "sous": "l'accord mondial",
+     "slug": "impact-montreal-kigali",
+     "mission": {
+      "titre": "Mission : Du chlore au climat",
+      "badge": "Du chlore au climat",
+      "duree_min": 25
+     }
+    }
+   ]
+  }
+ ]
+}

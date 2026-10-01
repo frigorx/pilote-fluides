@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-labelledby="t" aria-describedby="d" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t">Les textes et les deux questions à poser</title>
+  <desc id="d">Une frise horizontale avec quatre repères. Le 21 novembre 2002 : l'arrêté sur la réaction au feu, qui concerne le produit. Le 22 mars 2004 : l'arrêté sur la résistance au feu, qui concerne l'ouvrage. Le 27 mars 2026 : l'arrêté de 2004 est abrogé par l'arrêté du 22 mars 2026. Le 1er octobre 2026 : le nouvel arrêté est applicable aux demandes d'autorisation déposées à partir de cette date. Sous la frise, deux cartes résument les deux questions : réaction, le matériau alimente-t-il le feu, on lit A1 à F avec s et d ; résistance, l'ouvrage tient-il, on lit R, E, I et les minutes. Une bande donne le réflexe : lire l'étiquette, ne jamais la deviner. Dans l'animation, les repères apparaissent l'un après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .sub { font-size:17px; fill:#5a6b7d; }
+    .h   { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .hr  { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#b91c1c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lb  { font-size:17px; font-weight:bold; fill:#10233c; }
+    .gry { font-size:17px; fill:#5a6b7d; }
+    .code{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:34px; fill:#1b3a63; }
+    .big { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:72px; fill:#1b3a63; }
+    .bigr{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:56px; fill:#b91c1c; }
+    .band{ font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS','Segoe UI',sans-serif; font-weight:bold; font-size:22px; fill:#e8914a; }
+  </style>
+  <defs><path id="fl" d="M0 -85 C-20 -55 -35 -45 -27 -18 C-23 -4 -10 0 0 0 C13 0 27 -6 27 -24 C27 -45 13 -55 0 -85 Z" fill="#e8914a" stroke="#b91c1c" stroke-width="2"/><path id="fli" d="M0 -48 C-9 -32 -16 -26 -12 -12 C-9 -4 -4 0 0 0 C6 0 12 -3 12 -12 C12 -26 6 -32 0 -48 Z" fill="#f6c58e"/>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#5a6b7d"/></marker>
+  </defs>
+<text class="ttl" x="400" y="34" text-anchor="middle">Les textes, et les deux questions à poser</text>
+<line x1="50" y1="130" x2="750" y2="130" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>
+<g><circle cx="100" cy="130" r="10" fill="#e8914a" stroke="#1b3a63" stroke-width="3"/><text class="h" x="100" y="102" text-anchor="middle">21 novembre 2002</text><text class="lbl" x="100" y="172" text-anchor="middle">Arrêté sur la</text><text class="lbl" x="100" y="198" text-anchor="middle">réaction au feu</text><text class="lbl" x="100" y="224" text-anchor="middle">(le produit)</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.12;1" dur="13s" repeatCount="indefinite"/></g>
+<g><circle cx="290" cy="130" r="10" fill="#e8914a" stroke="#1b3a63" stroke-width="3"/><text class="h" x="290" y="102" text-anchor="middle">22 mars 2004</text><text class="lbl" x="290" y="172" text-anchor="middle">Arrêté sur la</text><text class="lbl" x="290" y="198" text-anchor="middle">résistance au feu</text><text class="lbl" x="290" y="224" text-anchor="middle">(l'ouvrage)</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.20;0.26;1" dur="13s" repeatCount="indefinite"/></g>
+<g><circle cx="500" cy="130" r="10" fill="#e8914a" stroke="#1b3a63" stroke-width="3"/><text class="h" x="500" y="102" text-anchor="middle">27 mars 2026</text><text class="lbl" x="500" y="172" text-anchor="middle">2004 abrogé par</text><text class="lbl" x="500" y="198" text-anchor="middle">l'arrêté du</text><text class="lbl" x="500" y="224" text-anchor="middle">22 mars 2026</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.34;0.40;1" dur="13s" repeatCount="indefinite"/></g>
+<g><circle cx="690" cy="130" r="10" fill="#e8914a" stroke="#1b3a63" stroke-width="3"/><text class="h" x="690" y="102" text-anchor="middle">1er octobre 2026</text><text class="lbl" x="690" y="172" text-anchor="middle">Applicable aux</text><text class="lbl" x="690" y="198" text-anchor="middle">demandes déposées</text><text class="lbl" x="690" y="224" text-anchor="middle">dès cette date</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.48;0.54;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="30" y="270" width="350" height="100" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text class="h" x="205" y="306" text-anchor="middle">Réaction : le matériau</text><text class="lbl" x="205" y="332" text-anchor="middle">alimente-t-il le feu ?</text><text class="lbl" x="205" y="358" text-anchor="middle">on lit A1 à F, s et d</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.68;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="420" y="270" width="350" height="100" rx="12" fill="#fffdf8" stroke="#b91c1c" stroke-width="2"/><text class="h" x="595" y="306" text-anchor="middle">Résistance : l'ouvrage</text><text class="lbl" x="595" y="332" text-anchor="middle">tient-il ?</text><text class="lbl" x="595" y="358" text-anchor="middle">on lit R, E, I et les minutes</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.68;1" dur="13s" repeatCount="indefinite"/></g>
+<g><rect x="30" y="396" width="740" height="54" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/><text class="band" x="400" y="430" text-anchor="middle">Le réflexe : lire l'étiquette, ne jamais la deviner</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.78;0.84;1" dur="13s" repeatCount="indefinite"/></g>
+</svg>

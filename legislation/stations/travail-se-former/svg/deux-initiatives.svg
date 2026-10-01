@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-labelledby="t-init" aria-describedby="d-init" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-init">Deux initiatives pour se former : celle de l'employeur et la vôtre</title>
+  <desc id="d-init">Un bandeau en haut rappelle que les fluides changent et que les textes aussi. Dessous, deux
+    cartes côte à côte. À gauche, l'employeur, symbolisé par un bâtiment : il adapte chacun à son poste, maintient
+    sa capacité à occuper un emploi et prévoit les actions dans le plan de développement des compétences. À droite,
+    vous, symbolisé par un pictogramme de personne : vous ouvrez et utilisez votre compte personnel de formation,
+    et vous pouvez demander la validation des acquis de l'expérience. Une bande en bas fait le pont vers l'attestation
+    d'aptitude aux fluides, qui se maintient.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; }
+    .lbl  { font-size:18px; fill:#10233c; }
+    .lblb { font-size:18px; fill:#10233c; font-weight:bold; }
+  </style>
+
+  <rect x="20" y="14" width="860" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="ttl" x="450" y="49" text-anchor="middle">Les fluides changent, les textes aussi : on se forme toute sa vie</text>
+
+  <!-- Carte employeur -->
+  <rect x="30" y="92" width="400" height="262" rx="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <!-- bâtiment -->
+  <rect x="52" y="122" width="52" height="56" fill="#1b3a63"/>
+  <rect x="60" y="130" width="10" height="10" fill="#fffdf8"/><rect x="86" y="130" width="10" height="10" fill="#fffdf8"/>
+  <rect x="60" y="148" width="10" height="10" fill="#fffdf8"/><rect x="86" y="148" width="10" height="10" fill="#fffdf8"/>
+  <rect x="72" y="164" width="12" height="14" fill="#e8914a"/>
+  <text class="qui" x="122" y="158" fill="#1b3a63">L'employeur</text>
+  <text class="lblb" x="52" y="212">Il a le devoir de :</text>
+  <text class="lbl" x="52" y="240">• adapter chacun à son poste</text>
+  <text class="lbl" x="52" y="266">• maintenir sa capacité à occuper</text>
+  <text class="lbl" x="66" y="288">un emploi</text>
+  <text class="lbl" x="52" y="314">• prévoir les actions dans le plan</text>
+  <text class="lbl" x="66" y="334">de développement des compétences</text>
+
+  <!-- Carte vous -->
+  <rect x="470" y="92" width="400" height="262" rx="16" fill="#fffdf8" stroke="#9d174d" stroke-width="3" stroke-dasharray="14 8"/>
+  <!-- personne pleine -->
+  <circle cx="80" cy="132" r="14" fill="#9d174d" transform="translate(440 0)"/>
+  <path d="M 58 180 v -22 q 0 -12 12 -12 h 20 q 12 0 12 12 v 22 z" fill="#9d174d" transform="translate(440 0)"/>
+  <text class="qui" x="562" y="158" fill="#9d174d">Vous</text>
+  <text class="lblb" x="492" y="212">Vous avez le droit de :</text>
+  <text class="lbl" x="492" y="240">• ouvrir et utiliser votre compte</text>
+  <text class="lbl" x="506" y="262">personnel de formation</text>
+  <text class="lbl" x="492" y="288">• faire valider votre expérience</text>
+  <text class="lbl" x="506" y="310">(validation des acquis)</text>
+
+  <!-- Pont -->
+  <rect x="30" y="372" width="840" height="52" rx="14" fill="#f3e4eb" stroke="#9d174d" stroke-width="2"/>
+  <text class="lblb" x="450" y="395" text-anchor="middle">Le pont vers l'attestation d'aptitude : elle aussi se maintient.</text>
+  <text class="lbl" x="450" y="416" text-anchor="middle">Voir la station voisine « Aptitude &amp; capacité ».</text>
+</svg>

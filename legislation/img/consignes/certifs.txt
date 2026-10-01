@@ -1,0 +1,6 @@
+Use your built-in image generation tool to create ONE image. Do not write code and do not draw with PIL, matplotlib or SVG. Save nothing else.
+
+Subject: a bright office desk of a small HVAC company: a heat pump box with a large product label, a stack of technical binders, a quality certificate framed on the wall shown as a blank frame with a ribbon seal, a laptop showing a plain chart, a signed contract on the desk with a pen. A technician silhouette in a polo shirt reviews a document. The orange accent is the ribbon seal of the framed certificate.
+
+Style: flat illustration in a clean editorial house style. Solid navy blue (#1b3a63) outlines, light blue flat fills, cream background (#f7f1e7), ONE orange accent (#ff6b35) used sparingly on a single element, people drawn as simple silhouettes without facial features. No gradients, no drop shadows, no textures, no photorealism. Landscape 1536 x 1024.
+Strictly avoid: text, letters, numbers, labels, signs, stickers, brand, logo, watermark, gauges with digits, faces with features, bare hands when gloves are listed, bare head when a helmet is listed.

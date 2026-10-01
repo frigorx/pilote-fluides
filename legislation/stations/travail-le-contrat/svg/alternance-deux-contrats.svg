@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" role="img"
+     aria-labelledby="t-alt" aria-describedby="d-alt" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-alt">Apprentissage et professionnalisation : qui fait quoi</title>
+  <desc id="d-alt">Deux schémas côte à côte. À gauche, l'apprentissage : un apprenti, représenté par un
+    pictogramme plein, relié à son employeur qui le forme au poste et au CFA, centre de formation
+    d'apprentis, qui assure l'enseignement théorique pendant au moins un quart de la durée du contrat.
+    Sous l'employeur, le maître d'apprentissage, un salarié volontaire directement responsable de la
+    formation de l'apprenti. Bandeau : contrat écrit, formulaire cerfa 10103, de 6 mois à 3 ans.
+    À droite, la professionnalisation : un salarié en alternance relié à son employeur et à une
+    formation en centre, avec un tuteur désigné par l'employeur. Bandeau : contrat écrit, formulaire
+    cerfa 12434, qualification par alternance.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:21px; fill:#9d174d; }
+    .qui  { font-weight:bold; font-size:16px; fill:#10233c; }
+    .nb   { font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .nl   { font-size:15px; fill:#10233c; }
+    .nt   { font-size:15px; fill:#5a6b7d; }
+    .bd   { font-size:15px; fill:#10233c; }
+  </style>
+
+  <!-- ===== APPRENTISSAGE ===== -->
+  <text class="ttl" x="205" y="32" text-anchor="middle">Apprentissage</text>
+  <circle cx="205" cy="70" r="14" fill="#1b3a63"/>
+  <path d="M180,120 Q180,90 205,90 Q230,90 230,120 Z" fill="#1b3a63"/>
+  <text class="qui" x="205" y="146" text-anchor="middle">L'apprenti</text>
+  <g stroke="#5a6b7d" stroke-width="2.5" fill="none">
+    <path d="M195,156 L112,222"/>
+    <path d="M215,156 L298,222"/>
+    <path d="M112,306 L112,336"/>
+  </g>
+  <rect x="25" y="222" width="175" height="84" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nb" x="112" y="254" text-anchor="middle">Employeur</text>
+  <text class="nl" x="112" y="280" text-anchor="middle">forme au poste</text>
+  <rect x="210" y="222" width="175" height="84" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nb" x="297" y="254" text-anchor="middle">CFA</text>
+  <text class="nl" x="297" y="280" text-anchor="middle">enseignement théorique</text>
+  <rect x="25" y="336" width="175" height="84" rx="10" fill="#f6e6ee" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="nb" x="112" y="366" text-anchor="middle">Maître</text>
+  <text class="nb" x="112" y="388" text-anchor="middle">d'apprentissage</text>
+  <text class="nt" x="112" y="410" text-anchor="middle">un salarié volontaire</text>
+  <rect x="210" y="336" width="175" height="84" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 5"/>
+  <text class="nb" x="297" y="366" text-anchor="middle">Au moins 25 %</text>
+  <text class="nl" x="297" y="390" text-anchor="middle">de la durée du contrat</text>
+  <text class="nt" x="297" y="410" text-anchor="middle">passés au CFA</text>
+  <rect x="25" y="440" width="360" height="72" rx="10" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="bd" x="205" y="468" text-anchor="middle">Contrat écrit, formulaire cerfa n° 10103</text>
+  <text class="bd" x="205" y="494" text-anchor="middle">Durée de 6 mois à 3 ans</text>
+
+  <line x1="400" y1="20" x2="400" y2="520" stroke="#d5dde6" stroke-width="2"/>
+
+  <!-- ===== PROFESSIONNALISATION ===== -->
+  <text class="ttl" x="595" y="32" text-anchor="middle">Professionnalisation</text>
+  <circle cx="595" cy="70" r="14" fill="#1b3a63"/>
+  <path d="M570,120 Q570,90 595,90 Q620,90 620,120 Z" fill="#1b3a63"/>
+  <text class="qui" x="595" y="146" text-anchor="middle">Le salarié en alternance</text>
+  <g stroke="#5a6b7d" stroke-width="2.5" fill="none">
+    <path d="M585,156 L502,222"/>
+    <path d="M605,156 L688,222"/>
+    <path d="M502,306 L502,336"/>
+  </g>
+  <rect x="415" y="222" width="175" height="84" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nb" x="502" y="254" text-anchor="middle">Employeur</text>
+  <text class="nl" x="502" y="280" text-anchor="middle">forme au poste</text>
+  <rect x="600" y="222" width="175" height="84" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="nb" x="687" y="254" text-anchor="middle">Formation</text>
+  <text class="nl" x="687" y="280" text-anchor="middle">en centre</text>
+  <rect x="415" y="336" width="175" height="84" rx="10" fill="#f6e6ee" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="nb" x="502" y="366" text-anchor="middle">Tuteur</text>
+  <text class="nl" x="502" y="390" text-anchor="middle">salarié qualifié,</text>
+  <text class="nt" x="502" y="410" text-anchor="middle">désigné par l'employeur</text>
+  <rect x="600" y="336" width="175" height="84" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 5"/>
+  <text class="nb" x="687" y="366" text-anchor="middle">CDD ou CDI</text>
+  <text class="nl" x="687" y="390" text-anchor="middle">selon le contrat</text>
+  <rect x="415" y="440" width="360" height="72" rx="10" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="bd" x="595" y="468" text-anchor="middle">Contrat écrit, formulaire cerfa n° 12434</text>
+  <text class="bd" x="595" y="494" text-anchor="middle">Qualification par alternance</text>
+</svg>

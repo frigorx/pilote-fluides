@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-zon" aria-describedby="d-zon" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-zon">Trois sortes de zones, emboîtées</title>
+  <desc id="d-zon">Un grand cadre en pointillé : la zone de diffusion d'alarme. Dedans, deux cadres pleins : les zones de mise en sécurité A et B. Dans la zone A, deux petites zones de détection, 1 et 2 ; dans la zone B, une seule, la 3. Une flamme est dessinée dans la zone de détection 1 : la zone de mise en sécurité A qui la contient est teintée en rouge, la zone B reste neutre. En bas, la règle d'emboîtement. L'animation fait apparaître la flamme puis teinte la zone A ; l'image fixe montre l'état final.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .h2  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .lb  { font-size:16px; font-weight:bold; fill:#10233c; }
+    .gr  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:44px; fill:#1b3a63; }
+    .wht { font-size:16px; font-weight:bold; fill:#fff; }
+  </style>
+
+  <text class="ttl" x="400" y="30" text-anchor="middle">Zones de détection, de mise en sécurité, d'alarme</text>
+  <rect x="20" y="48" width="760" height="370" rx="16" fill="none" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="10 7"/>
+  <text class="h2" x="400" y="78" text-anchor="middle">Zone de diffusion d'alarme</text>
+
+  <rect x="44" y="94" width="352" height="304" rx="12" fill="#f7e2e2" stroke="#b91c1c" stroke-width="3"><animate attributeName="fill" values="#fffdf8;#fffdf8;#f7e2e2;#f7e2e2" keyTimes="0;0.2;0.3;1" dur="12s" repeatCount="indefinite"/></rect>
+  <rect x="404" y="94" width="352" height="304" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="220" y="122" text-anchor="middle">Zone de mise en sécurité A</text>
+  <text class="lb" x="580" y="122" text-anchor="middle">Zone de mise en sécurité B</text>
+
+  <rect x="60" y="140" width="156" height="240" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <rect x="224" y="140" width="156" height="240" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <rect x="420" y="140" width="320" height="240" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5" stroke-dasharray="8 6"/>
+
+  <g>
+    <circle cx="138" cy="268" r="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="138" cy="268" r="9" fill="#b91c1c"><animate attributeName="fill" values="#1b3a63;#1b3a63;#b91c1c;#b91c1c" keyTimes="0;0.05;0.08;1" dur="12s" repeatCount="indefinite"/></circle>
+  </g>
+  <g>
+    <circle cx="302" cy="268" r="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="302" cy="268" r="9" fill="#1b3a63"></circle>
+  </g>
+  <g>
+    <circle cx="580" cy="268" r="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="580" cy="268" r="9" fill="#1b3a63"></circle>
+  </g>
+  <g opacity="1"><g transform="translate(138,200)">
+    <path d="M0,-30 C12,-14 22,-6 22,10 C22,24 11,32 0,32 C-11,32 -22,24 -22,10 C-22,0 -14,-8 -9,-16 C-6,-6 -2,-6 0,-30 Z" fill="#e8914a" stroke="#b91c1c" stroke-width="2.5"/>
+    <path d="M0,4 C6,12 10,16 10,22 C10,28 5,31 0,31 C-5,31 -10,28 -10,22 C-10,16 -5,12 0,4 Z" fill="#fbe3c4"/>
+    
+  </g><animate attributeName="opacity" values="0;0.04;1;1" keyTimes="0;0.05;0.12;1" dur="12s" repeatCount="indefinite"/></g>
+  <text class="lb" x="138" y="330" text-anchor="middle">Zone de</text>
+    <text class="lb" x="138" y="351" text-anchor="middle">détection 1</text>
+  <text class="lb" x="302" y="330" text-anchor="middle">Zone de</text>
+    <text class="lb" x="302" y="351" text-anchor="middle">détection 2</text>
+  <text class="lb" x="580" y="330" text-anchor="middle">Zone de</text>
+    <text class="lb" x="580" y="351" text-anchor="middle">détection 3</text>
+
+  <rect x="20" y="430" width="760" height="58" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lb" x="400" y="456" text-anchor="middle">Une zone d'alarme englobe des zones de mise en sécurité,</text>
+    <text class="lb" x="400" y="478" text-anchor="middle">qui englobent chacune une ou plusieurs zones de détection.</text>
+</svg>

@@ -1,0 +1,439 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>CuivRézo · mon passeport du cuivre</title><style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Calibri,"Segoe UI",Arial,sans-serif;color:#10233c;font-size:14pt;line-height:1.2}
+.page{width:210mm;height:296.6mm;padding:9mm 12mm 7mm;display:flex;flex-direction:column;gap:3.5mm;break-after:page;overflow:hidden}
+h1{margin:0;font:800 24pt "Trebuchet MS",Calibri,sans-serif;color:#1b3a63;line-height:1.1}
+h2{margin:0;font:800 16pt "Trebuchet MS",Calibri,sans-serif;color:#1b3a63}
+p{margin:0}
+.pastille{display:inline-flex;align-items:center;justify-content:center;width:9mm;height:9mm;border-radius:50%;background:#1b3a63;color:#fff;font:800 15pt "Trebuchet MS",sans-serif}
+.trait{display:inline-block;border-bottom:.4mm solid #1b3a63;width:52mm;height:6mm;vertical-align:baseline}
+/* pied : les codes du référentiel + la marque */
+footer{margin-top:auto;border-top:.5mm solid #b8692e;padding-top:1.6mm}
+.codes{font-size:14pt;color:#1b3a63;font-weight:700}
+.marque{display:flex;justify-content:space-between;align-items:center;margin-top:.8mm;color:#56657a}
+.logo{display:inline-flex;align-items:flex-end;gap:1.2mm;color:#1b3a63;border-bottom:.9mm solid #e8914a;padding-bottom:.4mm}
+.logo .fl{font-size:15pt}
+.logo b{font:800 17pt "Trebuchet MS",sans-serif}
+.logo i{font:400 17pt "Segoe Script","Brush Script MT",cursive;font-style:normal}
+.logo .cart{background:#e8914a;color:#fff;font:700 14pt "Segoe UI",Arial,sans-serif;border-radius:1.6mm;padding:0 2mm;align-self:flex-start;margin-left:1mm}
+.droits{font-size:14pt}
+/* couverture */
+.couverture{gap:5mm}
+.couv{width:100%;height:124mm;object-fit:cover;border-radius:4mm;border:.4mm solid #d6dee7}
+.kicker{font:700 16pt "Trebuchet MS",sans-serif;color:#b8692e;letter-spacing:.3mm}
+.titrage h1{font-size:40pt;margin-top:2mm}.titrage h1 b{color:#b8692e}
+.sous{font-size:16pt;color:#56657a;margin-top:2mm}
+.identite{display:flex;flex-direction:column;gap:5mm;margin-top:3mm;font-size:16pt;font-weight:700;color:#1b3a63}
+.identite .trait{width:120mm}
+.quatre{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:auto;margin-bottom:2mm}
+.quatre div{border:.5mm solid #1b3a63;border-radius:3mm;padding:2mm;display:flex;flex-direction:column;gap:1mm;align-items:flex-start;line-height:1.1}
+.quatre div span:last-child{color:#b8692e;font-weight:700}
+/* carte */
+.carte .chapo{font-size:15pt}
+.ligne{border:.5mm solid #1b3a63;border-radius:3mm;padding:2mm 3mm 2.5mm}
+.ligne h2{display:flex;align-items:center;gap:2.5mm;margin-bottom:1.5mm}
+.cels{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm 5mm}
+.cel{display:flex;align-items:center;gap:2.5mm;min-height:15.5mm}
+.tp{flex:none;width:14mm;height:14mm;border:.5mm dashed #56657a;border-radius:50%}
+.tx b{color:#b8692e}
+.marche{border-left:1.2mm solid #b8692e;padding:1mm 0 1mm 4mm}
+.marche h2{margin-bottom:1mm}
+.marche ol{margin:0;padding-left:6mm}.marche li{margin:.6mm 0}
+/* station */
+.bandeau{display:flex;align-items:center;gap:3mm;border-bottom:.5mm solid #b8692e;padding-bottom:1.6mm;font-weight:700;color:#1b3a63}
+.bandeau .dr{margin-left:auto;color:#b8692e}
+.station h1{font-size:25pt}
+.tete{display:grid;grid-template-columns:78mm 1fr 33mm;gap:4mm;align-items:start}
+.tete img{width:78mm;height:52mm;object-fit:cover;border-radius:3mm;border:.4mm solid #d6dee7}
+.but p{margin-bottom:1.2mm}.gras{font-weight:800;color:#1b3a63;font-size:15pt}
+.qr{text-align:center;font-weight:700;color:#1b3a63;line-height:1.05}
+.qr svg{width:33mm;height:33mm;display:block}
+.defi{border:.5mm solid #1b3a63;border-radius:3mm;padding:2mm 3.5mm 2.5mm}
+.defi h2{display:flex;align-items:center;gap:2.5mm}
+.defi .n{background:#b8692e;color:#fff;border-radius:2mm;padding:0 2.5mm;font-size:15pt}
+.consigne{color:#56657a;margin:.8mm 0 1.6mm}
+.case{flex:none;display:inline-block;width:10mm;height:10mm;border:.6mm solid #1b3a63;border-radius:1.6mm;background:#fff}
+ul{list-style:none;margin:0;padding:0}
+.ordre li{display:flex;align-items:center;gap:3mm;margin:1.4mm 0}
+.deux{display:grid;grid-template-columns:1fr 1.15fr;gap:6mm}
+.pieges li,.causes li{display:flex;align-items:center;gap:2.5mm;margin:1.4mm 0;min-height:10mm}
+.pieges li b,.causes li b{flex:none;width:8mm;height:8mm;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#1b3a63;color:#fff}
+.pieges li span:nth-child(2){flex:1}
+.causes li b{background:#b8692e}
+.valid{flex:1;min-height:34mm;display:grid;grid-template-columns:1.3fr 1fr;gap:4mm}
+.tampon{border:.6mm dashed #1b3a63;border-radius:4mm;padding:2mm 3mm;color:#56657a;font-weight:700}
+.dn{display:flex;flex-direction:column;justify-content:space-between;gap:2mm}
+.niveaux{display:flex;gap:2mm}
+.niveaux span{width:11mm;height:11mm;border:.6mm solid #1b3a63;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#1b3a63}
+.dn .trait{width:34mm}
+/* dernière page */
+.fin{gap:3mm}
+.fin h1{font-size:22pt;margin-top:1mm}
+.tab{width:100%;border-collapse:collapse}
+.tab th,.tab td{border:.4mm solid #1b3a63;padding:1.4mm 2.5mm;text-align:left;vertical-align:top}
+.tab th{width:18mm;text-align:center;color:#fff;background:#1b3a63;font-size:15pt}
+.fin .tab th,.fin .tab td{padding:1.7mm 2.5mm}
+</style></head><body><section class="page couverture">
+  <img class="couv" src="../images/couverture-passeport.webp" alt="">
+  <div class="titrage"><p class="kicker">CuivRézo · CAP IFCA</p><h1>Mon passeport <b>du cuivre</b></h1>
+    <p class="sous">14 stations · 4 lignes · un tampon à chaque geste réussi</p></div>
+  <div class="identite"><p>Nom : <span class="trait"></span></p><p>Prénom : <span class="trait"></span></p><p>Classe : <span class="trait"></span></p></div>
+  <div class="quatre"><div><span class="pastille">1</span><b>Les gestes de base</b><span>8 stations</span></div><div><span class="pastille">2</span><b>Le chalumeau</b><span>2 stations</span></div><div><span class="pastille">3</span><b>Braser</b><span>2 stations</span></div><div><span class="pastille">4</span><b>Les pièces complexes</b><span>2 stations</span></div></div>
+  <footer><p class="codes">CAP IFCA · tâches T6, T10, T12 · compétences C2.2, C3.1, C3.4 · savoirs S0.2, S2.1, S5.5, S6.2, S6.3, S6.4</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page carte">
+  <h1>Mon parcours</h1>
+  <p class="chapo">Chaque station réussie donne un tampon du professeur. Suivez les lignes dans l’ordre.</p>
+  <div class="ligne"><h2><span class="pastille">1</span> Ligne 1 · Les gestes de base</h2><div class="cels"><div class="cel"><div class="tp"></div><div class="tx"><b>1.0</b> Mon poste de travail</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>1.1</b> Reconnaître le tube</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>1.2</b> Mesurer et tracer</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>1.3</b> Couper et ébavurer</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>1.4</b> Cintrer à la cintrette</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>1.5</b> Cintrer à la cintreuse (L, R, 0)</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>1.6</b> Le dudgeon</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>1.7</b> L’emboîture à la pince</div></div></div></div><div class="ligne"><h2><span class="pastille">2</span> Ligne 2 · Le chalumeau</h2><div class="cels"><div class="cel"><div class="tp"></div><div class="tx"><b>2.1</b> Le poste oxyacétylénique en sécurité</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>2.2</b> Allumer, régler, éteindre la flamme</div></div></div></div><div class="ligne"><h2><span class="pastille">3</span> Ligne 3 · Braser</h2><div class="cels"><div class="cel"><div class="tp"></div><div class="tx"><b>3.1</b> La brasure tendre à l’étain</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>3.2</b> La brasure forte sous azote</div></div></div></div><div class="ligne"><h2><span class="pastille">4</span> Ligne 4 · Les pièces complexes</h2><div class="cels"><div class="cel"><div class="tp"></div><div class="tx"><b>4.1</b> Le chapeau de gendarme</div></div><div class="cel"><div class="tp"></div><div class="tx"><b>4.2</b> La baïonnette</div></div></div></div>
+  <div class="marche"><h2>Comment ça marche ?</h2><ol>
+    <li>Scannez le QR de la page : la station s’ouvre sur la tablette.</li>
+    <li>Faites le geste à votre poste, en suivant la tablette.</li>
+    <li>Faites les deux défis de la page, au stylo. Sur la tablette, le défi donne aussi un tampon.</li>
+    <li>Appelez le professeur : il regarde votre pièce, tamponne et date.</li></ol></div>
+  <footer><p class="codes">CAP IFCA · tâches T6, T10, T12 · compétences C2.2, C3.1, C3.4 · savoirs S0.2, S2.1, S5.5, S6.2, S6.3, S6.4</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">1</span><span>Ligne 1 · Les gestes de base</span><span class="dr">Station 1.0 · 10 min</span></div>
+  <h1>Mon poste de travail</h1>
+  <div class="tete">
+    <img src="../images/1-0-poste.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un poste prêt, un élève protégé</p><p>Avant le premier geste, vous êtes équipé, votre établi est dégagé, vos outils sont vérifiés et vous savez où sont les secours.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m5 0h2m5 0h2m1 0h7M1 2.5h1m5 0h1m3 0h1m1 0h6m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h3m1 0h2m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h3m4 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m3 0h2m1 0h1m3 0h1m2 0h1m1 0h5M2 10.5h1m3 0h1m2 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h3m3 0h1M1 11.5h3m1 0h3m2 0h1m1 0h1m2 0h3m3 0h1M1 12.5h2m5 0h2m2 0h2m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M3 13.5h1m3 0h1m1 0h3m1 0h2m3 0h1m5 0h1m1 0h2M1 14.5h1m1 0h2m1 0h1m1 0h3m2 0h1m1 0h1m1 0h2m1 0h6m3 0h1M1 15.5h4m1 0h3m2 0h1m4 0h4m1 0h1m2 0h4M1 16.5h2m1 0h3m2 0h1m1 0h3m2 0h1m2 0h3m2 0h2m2 0h1M1 17.5h2m2 0h1m1 0h1m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m5 0h2M1 18.5h1m2 0h1m1 0h1m1 0h2m1 0h2m1 0h1m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m3 0h4m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m4 0h1M1 20.5h1m3 0h1m2 0h1m3 0h2m1 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m1 0h7m1 0h1m1 0h1m2 0h4m1 0h5m1 0h3M9 22.5h2m2 0h2m2 0h5m3 0h5M1 23.5h7m2 0h9m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h1m2 0h3m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h1m2 0h2m3 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h3m1 0h7M1 28.5h1m5 0h1m3 0h3m2 0h2m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m2 0h3m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Je rassemble et je vérifie mes outils</span></li><li><span class="case"></span><span>Lunettes et gants, au bon moment</span></li><li><span class="case"></span><span>Je rends mon poste propre</span></li><li><span class="case"></span><span>Je m’équipe</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>Les protections oubliées ou retirées trop tôt</span><span class="case"></span></li><li><b>2</b><span>Les doigts dans l’étau</span><span class="case"></span></li><li><b>3</b><span>Souffler dans un tube</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Serrage trop rapide, main entre les mors.</span></li><li><b>B</b><span>On veut chasser les copeaux.</span></li><li><b>C</b><span>L’habitude, ou la hâte de finir.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T12 · compétence C3.1 · savoirs S6.3, S6.2, S0.2, S6.4</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">1</span><span>Ligne 1 · Les gestes de base</span><span class="dr">Station 1.1 · 15 min</span></div>
+  <h1>Reconnaître le tube</h1>
+  <div class="tete">
+    <img src="../images/1-1-livraison.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Le bon tube, nommé juste</p><p>Devant un tube, vous dites son nom en pouces, sa valeur en millimètres et son état : recuit en couronne, ou écroui en barre. Ses bouts restent bouchés.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m2 0h1m1 0h1m1 0h1m5 0h2m1 0h7M1 2.5h1m5 0h1m4 0h1m1 0h5m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h5m1 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h1m6 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m3 0h1m2 0h1m3 0h1m2 0h1m1 0h5M1 10.5h1m1 0h1m10 0h1m2 0h1m1 0h3m1 0h3m3 0h1M2 11.5h1m1 0h1m2 0h3m5 0h3m3 0h1M1 12.5h1m1 0h2m3 0h1m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M3 13.5h2m2 0h1m1 0h2m1 0h1m1 0h1m3 0h1m5 0h1m1 0h2M2 14.5h1m2 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h6m3 0h1M1 15.5h2m2 0h4m4 0h1m2 0h4m1 0h1m2 0h4M6 16.5h1m2 0h1m2 0h2m1 0h2m2 0h3m2 0h2m2 0h1M4 17.5h2m1 0h2m4 0h2m3 0h1m1 0h1m5 0h2M1 18.5h5m2 0h2m3 0h2m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m1 0h1m3 0h1m3 0h1m1 0h4m1 0h1m3 0h1m4 0h1M1 20.5h1m2 0h1m1 0h1m1 0h2m1 0h3m1 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m1 0h2m2 0h2m2 0h2m3 0h4m1 0h5m1 0h3M9 22.5h1m3 0h2m2 0h5m3 0h5M1 23.5h7m2 0h2m2 0h5m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h2m3 0h1m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h2m4 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h2m6 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h4m1 0h3m1 0h3m1 0h7M1 28.5h1m5 0h1m2 0h8m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h3m1 0h2m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Trouver le nom du tube</span></li><li><span class="case"></span><span>Reboucher le tube</span></li><li><span class="case"></span><span>Vérifier le zéro du pied à coulisse</span></li><li><span class="case"></span><span>Regarder comment le tube est livré</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>Mesurer l’intérieur</span><span class="case"></span></li><li><b>2</b><span>Oublier le pouce entier</span><span class="case"></span></li><li><b>3</b><span>La barre cintrée sans recuit</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Le tube était écroui et on l’a pris pour un recuit.</span></li><li><b>B</b><span>Les becs placés à l’intérieur du tube.</span></li><li><b>C</b><span>On n’a calculé que le huitième.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâches T10, T6 · compétences C3.4, C2.2 · savoir S5.5</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">1</span><span>Ligne 1 · Les gestes de base</span><span class="dr">Station 1.2 · 15 min</span></div>
+  <h1>Mesurer et tracer</h1>
+  <div class="tete">
+    <img src="../images/1-2-tracer.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un trait fin, à la bonne cote, sur tout le tour</p><p>Le tube porte un trait net, exactement à la cote du plan, qui fait le tour complet du tube.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m2 0h1m3 0h1m5 0h2m1 0h7M1 2.5h1m5 0h1m3 0h2m1 0h5m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m2 0h1m2 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m2 0h2m1 0h2m3 0h1m2 0h1m1 0h5M2 10.5h5m1 0h2m1 0h1m1 0h2m2 0h1m1 0h3m1 0h3m3 0h1M3 11.5h3m1 0h3m1 0h1m3 0h3m3 0h1M3 12.5h2m4 0h4m2 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M1 13.5h2m2 0h1m1 0h2m2 0h1m1 0h2m3 0h1m5 0h1m1 0h2M1 14.5h2m3 0h1m1 0h2m2 0h2m1 0h1m1 0h2m1 0h6m3 0h1M2 15.5h1m4 0h1m1 0h3m2 0h1m1 0h4m1 0h1m2 0h4M1 16.5h4m1 0h1m2 0h1m3 0h1m2 0h1m2 0h3m2 0h2m2 0h1M2 17.5h2m2 0h2m1 0h2m3 0h1m3 0h1m1 0h1m5 0h2M1 18.5h3m1 0h1m3 0h2m1 0h1m1 0h1m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m2 0h1m2 0h3m1 0h2m1 0h3m1 0h1m3 0h1m4 0h1M1 20.5h1m3 0h1m2 0h1m4 0h1m1 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m3 0h3m3 0h1m4 0h4m1 0h5m1 0h3M9 22.5h2m1 0h1m1 0h1m2 0h5m3 0h5M1 23.5h7m2 0h2m1 0h6m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h2m3 0h1m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h3m3 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h1m3 0h2m1 0h1m1 0h3m1 0h7M1 28.5h1m5 0h1m3 0h1m1 0h1m1 0h3m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h2m1 0h3m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Plaquer le tube contre la butée</span></li><li><span class="case"></span><span>Lire la cote et le diamètre</span></li><li><span class="case"></span><span>Remesurer</span></li><li><span class="case"></span><span>Marquer un trait fin</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>La cote prise du mauvais bout</span><span class="case"></span></li><li><b>2</b><span>La lecture de biais</span><span class="case"></span></li><li><b>3</b><span>La rayure profonde</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>L’œil n’était pas au-dessus de la graduation.</span></li><li><b>B</b><span>Une pointe à tracer appuyée sur le tube.</span></li><li><b>C</b><span>Bout de référence changé en cours de route.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T10 · compétence C3.4 · savoir S2.1</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">1</span><span>Ligne 1 · Les gestes de base</span><span class="dr">Station 1.3 · 20 min</span></div>
+  <h1>Couper et ébavurer</h1>
+  <div class="tete">
+    <img src="../images/1-3-couper.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un tube coupé d’équerre, sans bavure</p><p>Le tube est coupé à la cote. Sa face est droite et plane, son intérieur est lisse, et il est resté rond.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m4 0h3m5 0h2m1 0h7M1 2.5h1m5 0h1m5 0h6m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h3m3 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m4 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m2 0h5m3 0h1m2 0h1m1 0h5M1 10.5h1m2 0h2m2 0h1m4 0h2m2 0h1m1 0h3m1 0h3m3 0h1M1 11.5h1m4 0h2m2 0h3m2 0h3m3 0h1M2 12.5h1m12 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M1 13.5h2m1 0h2m1 0h2m3 0h1m1 0h1m3 0h1m5 0h1m1 0h2M3 14.5h3m3 0h5m1 0h1m1 0h2m1 0h6m3 0h1M2 15.5h4m1 0h1m1 0h2m2 0h2m1 0h4m1 0h1m2 0h4M3 16.5h1m1 0h2m2 0h1m1 0h1m1 0h1m1 0h2m2 0h3m2 0h2m2 0h1M1 17.5h1m1 0h2m1 0h3m1 0h2m2 0h1m3 0h1m1 0h1m5 0h2M1 18.5h1m4 0h1m2 0h3m1 0h2m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m1 0h5m1 0h2m2 0h4m1 0h1m3 0h1m4 0h1M1 20.5h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m5 0h1m1 0h1m1 0h3m2 0h4m1 0h5m1 0h3M9 22.5h1m2 0h1m1 0h1m2 0h5m3 0h5M1 23.5h7m2 0h3m1 0h5m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h1m2 0h3m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h4m4 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h2m1 0h1m3 0h1m1 0h3m1 0h7M1 28.5h1m5 0h1m2 0h2m1 0h2m1 0h2m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m1 0h1m1 0h2m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Resserrer un peu à chaque tour</span></li><li><span class="case"></span><span>Ébavurer l’extérieur</span></li><li><span class="case"></span><span>Vérifier le tube</span></li><li><span class="case"></span><span>Faire un premier tour lent</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>La coupe inclinée</span><span class="case"></span></li><li><b>2</b><span>Le tube écrasé</span><span class="case"></span></li><li><b>3</b><span>La limaille dans le tube</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Le tube était tenu bout en haut pendant l’ébavurage.</span></li><li><b>B</b><span>L’outil n’était pas perpendiculaire au tube au départ.</span></li><li><b>C</b><span>La molette a été serrée trop fort ou trop vite.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T10 · compétence C3.4 · savoir S6.2</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">1</span><span>Ligne 1 · Les gestes de base</span><span class="dr">Station 1.4 · 30 min</span></div>
+  <h1>Cintrer à la cintrette</h1>
+  <div class="tete">
+    <img src="../images/1-4-cintrette.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un coude à 90°, 300 mm à l’axe</p><p>Le coude est d’équerre, la branche mesure 300 mm jusqu’à l’axe de l’autre branche, et le tube n’est ni écrasé ni vrillé.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m3 0h1m2 0h1m5 0h2m1 0h7M1 2.5h1m5 0h1m3 0h1m1 0h6m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h5m2 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m3 0h1m2 0h1m3 0h1m2 0h1m1 0h5M1 10.5h1m3 0h1m3 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h3m3 0h1M3 11.5h6m2 0h1m1 0h1m1 0h3m3 0h1M3 12.5h4m4 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M1 13.5h2m1 0h1m2 0h1m1 0h2m1 0h3m3 0h1m5 0h1m1 0h2M1 14.5h1m1 0h3m3 0h2m4 0h1m1 0h2m1 0h6m3 0h1M1 15.5h1m1 0h2m1 0h5m4 0h5m1 0h1m2 0h4M1 16.5h3m4 0h2m2 0h1m3 0h1m2 0h3m2 0h2m2 0h1M4 17.5h1m1 0h2m2 0h2m1 0h2m3 0h1m1 0h1m5 0h2M1 18.5h1m2 0h3m1 0h3m3 0h1m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m2 0h2m1 0h1m1 0h4m1 0h3m1 0h1m3 0h1m4 0h1M1 20.5h1m1 0h1m2 0h1m3 0h3m2 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m1 0h1m3 0h3m6 0h4m1 0h5m1 0h3M9 22.5h6m2 0h5m3 0h5M1 23.5h7m2 0h9m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h4m1 0h1m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h2m3 0h1m2 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h7M1 28.5h1m5 0h1m3 0h2m3 0h2m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h6m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Sortir la pièce</span></li><li><span class="case"></span><span>Contrôler l’outil, les mains hors de la pince</span></li><li><span class="case"></span><span>Trouver le rayon de votre cintrette</span></li><li><span class="case"></span><span>Cintrer doucement, à deux mains</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>Le coude écrasé</span><span class="case"></span></li><li><b>2</b><span>Le coude trop long</span><span class="case"></span></li><li><b>3</b><span>L’angle qui n’est pas à 90°</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Arrêt au repère sans tenir compte de la détente.</span></li><li><b>B</b><span>Cintrage trop rapide, ou tube pas au fond de la gorge.</span></li><li><b>C</b><span>Le rayon n’a pas été retiré au traçage.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T10 · compétence C3.4 · savoirs S5.5, S6.2</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">1</span><span>Ligne 1 · Les gestes de base</span><span class="dr">Station 1.5 · 30 min</span></div>
+  <h1>Cintrer à la cintreuse (L, R, 0)</h1>
+  <div class="tete">
+    <img src="../images/1-5-cintreuse.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un coude à 90°, à la cote, du premier coup</p><p>Pièce 1 : un tube 1/4″ coupé à 144 mm, un coude à 90°, des branches de 80 et 70 mm jusqu’à l’axe, à ± 1 mm.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m2 0h5m5 0h2m1 0h7M1 2.5h1m5 0h1m4 0h1m1 0h5m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h1m5 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h1m2 0h2m2 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m3 0h2m1 0h1m3 0h1m2 0h1m1 0h5M2 10.5h2m1 0h2m3 0h3m1 0h1m2 0h1m1 0h3m1 0h3m3 0h1M1 11.5h1m5 0h1m1 0h5m1 0h3m3 0h1M2 12.5h1m2 0h2m2 0h2m2 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M1 13.5h2m4 0h1m1 0h3m2 0h1m3 0h1m5 0h1m1 0h2M2 14.5h1m3 0h1m1 0h2m1 0h1m3 0h1m1 0h2m1 0h6m3 0h1M1 15.5h1m3 0h7m1 0h1m1 0h5m1 0h1m2 0h4M3 16.5h3m2 0h2m1 0h2m2 0h2m2 0h3m2 0h2m2 0h1M1 17.5h2m3 0h5m2 0h2m3 0h1m1 0h1m5 0h2M1 18.5h4m3 0h7m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m1 0h2m1 0h4m3 0h4m1 0h1m3 0h1m4 0h1M1 20.5h1m1 0h3m3 0h2m1 0h1m2 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m1 0h1m1 0h4m3 0h2m2 0h4m1 0h5m1 0h3M9 22.5h1m1 0h4m2 0h5m3 0h5M1 23.5h7m2 0h2m2 0h5m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h1m1 0h1m1 0h2m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h1m2 0h3m2 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h4m3 0h1m1 0h3m1 0h7M1 28.5h1m5 0h1m2 0h3m1 0h4m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m3 0h2m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Ouvrir la cintreuse</span></li><li><span class="case"></span><span>Dégager, puis enchaîner</span></li><li><span class="case"></span><span>Prendre la bonne cintreuse</span></li><li><span class="case"></span><span>Ou sur R, si la cote part de la droite</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>La mauvaise cintreuse</span><span class="case"></span></li><li><b>2</b><span>Le trait mal aligné</span><span class="case"></span></li><li><b>3</b><span>La pièce vrillée</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Le trait n’était pas pile sur le repère.</span></li><li><b>B</b><span>Le sens de cintrage a changé, ou le tube a tourné entre deux coudes.</span></li><li><b>C</b><span>Une cintreuse 1/4″ pour un tube 3/8″, ou l’inverse.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T10 · compétence C3.4 · savoirs S5.5, S6.2</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">1</span><span>Ligne 1 · Les gestes de base</span><span class="dr">Station 1.6 · 25 min</span></div>
+  <h1>Le dudgeon</h1>
+  <div class="tete">
+    <img src="../images/1-6-dudgeon.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un dudgeon régulier, l’écrou en place</p><p>Le bout du tube est évasé en cône à 45°, lisse, sans fissure. L’écrou, enfilé avant, vient le coiffer et se visse sur le raccord.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m2 0h2m1 0h2m5 0h2m1 0h7M1 2.5h1m5 0h1m3 0h2m1 0h5m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h2m4 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h3m1 0h2m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m1 0h1m3 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m2 0h5m3 0h1m2 0h1m1 0h5M1 10.5h1m1 0h2m3 0h3m1 0h3m2 0h1m1 0h3m1 0h3m3 0h1M1 11.5h3m1 0h1m1 0h1m1 0h2m1 0h2m1 0h3m3 0h1M1 12.5h2m2 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M3 13.5h3m1 0h2m3 0h3m3 0h1m5 0h1m1 0h2M1 14.5h2m2 0h1m3 0h1m2 0h1m2 0h1m1 0h2m1 0h6m3 0h1M7 15.5h1m6 0h6m1 0h1m2 0h4M1 16.5h2m2 0h1m2 0h2m1 0h1m4 0h1m2 0h3m2 0h2m2 0h1M1 17.5h1m1 0h3m1 0h1m6 0h1m3 0h1m1 0h1m5 0h2M1 18.5h3m5 0h1m1 0h1m2 0h1m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m4 0h2m4 0h1m1 0h3m1 0h1m3 0h1m4 0h1M1 20.5h1m1 0h1m2 0h1m3 0h2m3 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m2 0h1m2 0h1m5 0h1m2 0h4m1 0h5m1 0h3M9 22.5h3m2 0h1m2 0h5m3 0h5M1 23.5h7m2 0h2m1 0h6m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h1m1 0h1m1 0h2m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h4m1 0h1m2 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h2m1 0h3m1 0h7M1 28.5h1m5 0h1m3 0h1m3 0h3m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m1 0h4m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Dévisser et contrôler</span></li><li><span class="case"></span><span>Partir d’un bout parfait</span></li><li><span class="case"></span><span>Serrer au couple, à deux clés</span></li><li><span class="case"></span><span>Serrer le tube dans la barre</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>L’écrou oublié</span><span class="case"></span></li><li><b>2</b><span>Le dudgeon oblique</span><span class="case"></span></li><li><b>3</b><span>Le mauvais serrage</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Serrage au jugé, ou sans contre-clé.</span></li><li><b>B</b><span>On a évasé avant d’enfiler l’écrou.</span></li><li><b>C</b><span>Coupe de travers, ou cône posé hors du centre.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T10 · compétence C3.4 · savoirs S5.5, S6.2</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">1</span><span>Ligne 1 · Les gestes de base</span><span class="dr">Station 1.7 · 20 min</span></div>
+  <h1>L’emboîture à la pince</h1>
+  <div class="tete">
+    <img src="../images/1-7-pince.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un bout élargi où l’autre tube entre juste</p><p>Le bout du tube est élargi, droit dans l’axe, sans fente. Un tube du même diamètre y entre sans forcer et sans jouer : il est prêt pour la brasure.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m3 0h2m1 0h1m5 0h2m1 0h7M1 2.5h1m5 0h1m5 0h6m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h1m1 0h2m3 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h1m1 0h2m2 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m2 0h2m1 0h2m3 0h1m2 0h1m1 0h5M2 10.5h1m1 0h1m1 0h1m1 0h1m1 0h5m2 0h1m1 0h3m1 0h3m3 0h1M2 11.5h1m1 0h1m1 0h3m4 0h1m1 0h3m3 0h1M1 12.5h1m1 0h4m1 0h2m1 0h1m3 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M3 13.5h1m1 0h1m1 0h2m2 0h1m2 0h1m3 0h1m5 0h1m1 0h2M3 14.5h2m1 0h1m1 0h5m2 0h1m1 0h2m1 0h6m3 0h1M3 15.5h3m1 0h1m3 0h1m1 0h7m1 0h1m2 0h4M4 16.5h1m3 0h2m5 0h2m2 0h3m2 0h2m2 0h1M2 17.5h2m1 0h1m1 0h3m1 0h1m2 0h1m3 0h1m1 0h1m5 0h2M1 18.5h1m3 0h2m2 0h1m2 0h3m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h4m1 0h1m3 0h1m4 0h1M1 20.5h1m1 0h3m3 0h2m4 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m2 0h4m1 0h1m2 0h1m3 0h4m1 0h5m1 0h3M9 22.5h1m1 0h1m2 0h1m2 0h5m3 0h5M1 23.5h7m2 0h3m1 0h5m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h4m1 0h1m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m2 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h3m1 0h3m1 0h7M1 28.5h1m5 0h1m2 0h2m2 0h1m1 0h2m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h2m2 0h2m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Retirer et essayer</span></li><li><span class="case"></span><span>Tourner d’un quart de tour</span></li><li><span class="case"></span><span>Partir d’un bout parfait</span></li><li><span class="case"></span><span>Visser la tête sur la pince</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>L’emboîture fendue</span><span class="case"></span></li><li><b>2</b><span>Le tube qui joue</span><span class="case"></span></li><li><b>3</b><span>La tête bloquée</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>On a élargi un tube encore chaud du recuit.</span></li><li><b>B</b><span>Tube écroui non recuit, bavure laissée, ou serrage en une seule fois.</span></li><li><b>C</b><span>Tête trop grosse pour le tube.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T10 · compétence C3.4 · savoirs S5.5, S6.2</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">2</span><span>Ligne 2 · Le chalumeau</span><span class="dr">Station 2.1 · 20 min</span></div>
+  <h1>Le poste oxyacétylénique en sécurité</h1>
+  <div class="tete">
+    <img src="../images/2-1-poste.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un poste prêt à allumer, vérifié, sans fuite</p><p>Rien n’est allumé. Les bouteilles sont debout et arrimées, les pressions réglées, le poste est étanche, et le professeur l’a visé.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m4 0h3m5 0h2m1 0h7M1 2.5h1m5 0h1m2 0h1m1 0h7m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h2m4 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h3m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h4m4 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m2 0h1m1 0h1m1 0h1m3 0h1m2 0h1m1 0h5M4 10.5h1m3 0h1m5 0h1m2 0h1m1 0h3m1 0h3m3 0h1M1 11.5h1m2 0h10m1 0h3m3 0h1M1 12.5h2m2 0h1m2 0h2m3 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M1 13.5h1m1 0h1m1 0h1m1 0h2m1 0h2m2 0h1m3 0h1m5 0h1m1 0h2M1 14.5h2m3 0h1m2 0h1m5 0h1m1 0h2m1 0h6m3 0h1M4 15.5h1m1 0h2m2 0h1m5 0h4m1 0h1m2 0h4M1 16.5h1m3 0h1m3 0h1m1 0h2m2 0h2m2 0h3m2 0h2m2 0h1M2 17.5h2m2 0h3m1 0h5m3 0h1m1 0h1m5 0h2M1 18.5h3m6 0h2m2 0h1m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m1 0h6m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m4 0h1M1 20.5h1m2 0h1m5 0h1m2 0h1m1 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m3 0h3m3 0h3m2 0h4m1 0h5m1 0h3M9 22.5h1m2 0h1m1 0h1m2 0h5m3 0h5M1 23.5h7m5 0h6m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h1m1 0h1m1 0h2m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h2m2 0h1m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h1m2 0h2m2 0h1m1 0h3m1 0h7M1 28.5h1m5 0h1m3 0h1m3 0h3m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m1 0h1m4 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Vérifier le détendeur et le chalumeau fermés</span></li><li><span class="case"></span><span>Appeler le professeur</span></li><li><span class="case"></span><span>M’équiper</span></li><li><span class="case"></span><span>Régler la basse pression d’oxygène</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>La graisse et l’oxygène</span><span class="case"></span></li><li><b>2</b><span>Le robinet ouvert brutalement</span><span class="case"></span></li><li><b>3</b><span>La bouteille couchée ou libre</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Précipitation, vis de détente serrée.</span></li><li><b>B</b><span>Rangement négligé.</span></li><li><b>C</b><span>Une main, un gant ou un chiffon gras sur le circuit d’oxygène.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâches T12, T6 · compétences C3.1, C3.4 · savoirs S6.2, S6.3</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">2</span><span>Ligne 2 · Le chalumeau</span><span class="dr">Station 2.2 · 25 min</span></div>
+  <h1>Allumer, régler, éteindre la flamme</h1>
+  <div class="tete">
+    <img src="../images/2-2-allumer.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Une flamme neutre, allumée et éteinte dans l’ordre</p><p>Devant le professeur, vous allumez, vous réglez une flamme neutre, vous nommez les deux autres, et vous éteignez dans le bon ordre.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m5 0h2m5 0h2m1 0h7M1 2.5h1m5 0h1m2 0h9m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h1m5 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h3m5 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m4 0h3m3 0h1m2 0h1m1 0h5M1 10.5h2m2 0h2m2 0h1m1 0h1m1 0h2m2 0h1m1 0h3m1 0h3m3 0h1M1 11.5h4m1 0h5m1 0h2m1 0h3m3 0h1M2 12.5h1m2 0h1m6 0h1m2 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M2 13.5h1m1 0h1m2 0h1m1 0h1m2 0h3m3 0h1m5 0h1m1 0h2M2 14.5h1m2 0h1m2 0h2m1 0h2m2 0h1m1 0h2m1 0h6m3 0h1M1 15.5h1m2 0h2m1 0h3m1 0h1m1 0h2m1 0h4m1 0h1m2 0h4M2 16.5h4m3 0h1m1 0h1m4 0h1m2 0h3m2 0h2m2 0h1M4 17.5h2m1 0h1m1 0h1m1 0h2m1 0h1m3 0h1m1 0h1m5 0h2M1 18.5h4m3 0h1m2 0h4m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m3 0h3m1 0h2m2 0h4m1 0h1m3 0h1m4 0h1M1 20.5h1m3 0h2m2 0h5m1 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m1 0h2m2 0h2m2 0h1m1 0h1m2 0h4m1 0h5m1 0h3M9 22.5h2m2 0h2m2 0h5m3 0h5M1 23.5h7m6 0h5m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h1m1 0h1m1 0h2m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h2m1 0h3m2 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h3m3 0h2m1 0h3m1 0h7M1 28.5h1m5 0h1m2 0h3m1 0h4m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m2 0h1m3 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>En fin de travail, refermer le poste</span></li><li><span class="case"></span><span>Reconnaître les trois flammes</span></li><li><span class="case"></span><span>Orienter la buse, préparer l’allumeur</span></li><li><span class="case"></span><span>Allumer à la buse</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>Le chalumeau ouvert, pas allumé</span><span class="case"></span></li><li><b>2</b><span>La flamme qui se décolle</span><span class="case"></span></li><li><b>3</b><span>Le chalumeau posé allumé</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Gaz ouvert trop grand pour la buse.</span></li><li><b>B</b><span>L’habitude du « juste une seconde ».</span></li><li><b>C</b><span>Hésitation, allumeur pas prêt.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâches T12, T10 · compétences C3.1, C3.4 · savoirs S6.2, S6.3</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">3</span><span>Ligne 3 · Braser</span><span class="dr">Station 3.1 · 30 min</span></div>
+  <h1>La brasure tendre à l’étain</h1>
+  <div class="tete">
+    <img src="../images/3-1-tendre.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un anneau d’étain régulier, étanche</p><p>L’étain a filé tout autour du joint et forme un anneau régulier. Le cuivre n’est pas noirci, le décapant est essuyé.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m4 0h1m1 0h1m5 0h2m1 0h7M1 2.5h1m5 0h1m3 0h1m1 0h6m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h3m1 0h2m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h5m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m4 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m5 0h2m3 0h1m2 0h1m1 0h5M1 10.5h1m1 0h4m1 0h2m2 0h1m1 0h1m2 0h1m1 0h3m1 0h3m3 0h1M4 11.5h2m1 0h2m2 0h3m1 0h3m3 0h1M1 12.5h3m1 0h2m2 0h2m2 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M1 13.5h3m3 0h1m1 0h1m1 0h2m1 0h1m3 0h1m5 0h1m1 0h2M4 14.5h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h6m3 0h1M1 15.5h1m2 0h2m1 0h1m3 0h2m3 0h4m1 0h1m2 0h4M9 16.5h1m1 0h3m1 0h2m2 0h3m2 0h2m2 0h1M1 17.5h1m2 0h5m3 0h3m3 0h1m1 0h1m5 0h2M1 18.5h1m3 0h1m2 0h1m2 0h1m1 0h2m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m1 0h1m2 0h2m1 0h1m2 0h5m1 0h1m3 0h1m4 0h1M1 20.5h1m1 0h1m5 0h2m2 0h1m1 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m5 0h1m1 0h5m2 0h4m1 0h5m1 0h3M9 22.5h3m1 0h2m2 0h5m3 0h5M1 23.5h7m3 0h1m1 0h6m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h2m3 0h1m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h3m2 0h1m2 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h2m4 0h2m1 0h3m1 0h7M1 28.5h1m5 0h1m2 0h2m1 0h2m1 0h2m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m2 0h2m2 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Chauffer modérément</span></li><li><span class="case"></span><span>Essuyer, puis laisser refroidir</span></li><li><span class="case"></span><span>Protéger autour du joint</span></li><li><span class="case"></span><span>Étaler le décapant sur les deux pièces</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>L’étain qui ne prend pas</span><span class="case"></span></li><li><b>2</b><span>Le décapant oublié</span><span class="case"></span></li><li><b>3</b><span>L’étain-plomb sur l’eau potable</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Le décapant n’a pas été essuyé.</span></li><li><b>B</b><span>Mauvais fil d’étain.</span></li><li><b>C</b><span>Cuivre mal nettoyé, ou oxydé par une chauffe trop forte.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâches T10, T12 · compétence C3.4 · savoirs S5.5, S6.2, S6.3</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">3</span><span>Ligne 3 · Braser</span><span class="dr">Station 3.2 · 40 min</span></div>
+  <h1>La brasure forte sous azote</h1>
+  <div class="tete">
+    <img src="../images/3-2-forte.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un joint brasé plein, propre à l’intérieur</p><p>L’apport a rempli le joint tout autour ; le cuivre n’est pas brûlé ; l’intérieur du tube est resté couleur cuivre, sans calamine.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m6 0h1m5 0h2m1 0h7M1 2.5h1m5 0h1m5 0h6m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h1m2 0h3m1 0h1m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m2 0h1m3 0h1m3 0h1m2 0h1m1 0h5M2 10.5h2m7 0h4m2 0h1m1 0h3m1 0h3m3 0h1M2 11.5h3m2 0h2m3 0h2m1 0h3m3 0h1M2 12.5h2m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M4 13.5h2m1 0h2m1 0h1m2 0h2m3 0h1m5 0h1m1 0h2M1 14.5h1m2 0h2m4 0h1m1 0h2m1 0h1m1 0h2m1 0h6m3 0h1M4 15.5h1m1 0h5m1 0h3m1 0h4m1 0h1m2 0h4M1 16.5h4m4 0h1m1 0h1m1 0h1m2 0h1m2 0h3m2 0h2m2 0h1M1 17.5h3m3 0h1m1 0h2m1 0h1m1 0h1m3 0h1m1 0h1m5 0h2M1 18.5h1m2 0h2m4 0h3m1 0h1m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m2 0h1m1 0h3m5 0h3m1 0h1m3 0h1m4 0h1M1 20.5h1m1 0h4m3 0h4m1 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m1 0h9m1 0h1m2 0h4m1 0h5m1 0h3M9 22.5h1m1 0h2m1 0h1m2 0h5m3 0h5M1 23.5h7m3 0h1m2 0h5m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h2m3 0h1m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h1m3 0h2m2 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h1m1 0h3m2 0h1m1 0h3m1 0h7M1 28.5h1m5 0h1m3 0h3m2 0h2m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m1 0h1m1 0h1m2 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Chauffer les deux pièces</span></li><li><span class="case"></span><span>Retirer la flamme, laisser refroidir</span></li><li><span class="case"></span><span>Préparer la zone</span></li><li><span class="case"></span><span>Choisir la baguette</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>La surchauffe</span><span class="case"></span></li><li><b>2</b><span>Le cordon interrompu</span><span class="case"></span></li><li><b>3</b><span>La brûlure et le feu</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Tube touché trop tôt ; matière inflammable près du joint.</span></li><li><b>B</b><span>Flamme trop forte, ou trop longtemps au même endroit.</span></li><li><b>C</b><span>Un côté du joint trop froid, ou un jeu trop large ou trop serré.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâches T10, T12 · compétence C3.4 · savoirs S5.5, S6.2, S6.3</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">4</span><span>Ligne 4 · Les pièces complexes</span><span class="dr">Station 4.1 · 45 min</span></div>
+  <h1>Le chapeau de gendarme</h1>
+  <div class="tete">
+    <img src="../images/4-1-chapeau.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Un contournement symétrique, branches alignées</p><p>Le tube passe par-dessus l’obstacle avec un coude central et deux coudes de moitié. Les deux côtés sont égaux, les deux branches restent sur la même ligne.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m4 0h3m5 0h2m1 0h7M1 2.5h1m5 0h1m3 0h1m1 0h6m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h6m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h1m3 0h1m1 0h2m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m1 0h2m3 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m2 0h1m2 0h2m3 0h1m2 0h1m1 0h5M1 10.5h1m3 0h2m1 0h1m1 0h2m1 0h2m2 0h1m1 0h3m1 0h3m3 0h1M2 11.5h4m1 0h1m5 0h1m1 0h3m3 0h1M4 12.5h3m1 0h6m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M1 13.5h1m2 0h1m1 0h2m3 0h1m1 0h2m3 0h1m5 0h1m1 0h2M3 14.5h2m1 0h1m1 0h2m3 0h1m1 0h1m1 0h2m1 0h6m3 0h1M2 15.5h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h4m1 0h1m2 0h4M1 16.5h1m1 0h1m1 0h1m3 0h3m3 0h2m2 0h3m2 0h2m2 0h1M3 17.5h2m1 0h4m3 0h2m3 0h1m1 0h1m5 0h2M1 18.5h1m2 0h3m4 0h1m2 0h1m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m1 0h1m3 0h2m2 0h1m1 0h4m1 0h1m3 0h1m4 0h1M1 20.5h1m1 0h2m1 0h1m2 0h1m2 0h1m2 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m2 0h1m1 0h4m2 0h2m2 0h4m1 0h5m1 0h3M9 22.5h3m1 0h2m2 0h5m3 0h5M1 23.5h7m2 0h9m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h1m2 0h3m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h3m1 0h1m3 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h2m1 0h3m1 0h7M1 28.5h1m5 0h1m2 0h8m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m1 0h4m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Contrôler l’alignement à la règle</span></li><li><span class="case"></span><span>Cintrer le coude A, à la moitié</span></li><li><span class="case"></span><span>Repérer l’axe du chapeau</span></li><li><span class="case"></span><span>Choisir l’angle central</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>Les branches désaxées</span><span class="case"></span></li><li><b>2</b><span>La pièce gauchie</span><span class="case"></span></li><li><b>3</b><span>Le tube écrasé</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Tube écroui non recuit, ou cintrage forcé.</span></li><li><b>B</b><span>Coudes A et B différents, ou pas à égale distance de l’axe.</span></li><li><b>C</b><span>Le tube a tourné entre deux coudes.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T10 · compétence C3.4 · savoirs S5.5, S6.2</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page station">
+  <div class="bandeau"><span class="pastille">4</span><span>Ligne 4 · Les pièces complexes</span><span class="dr">Station 4.2 · 35 min</span></div>
+  <h1>La baïonnette</h1>
+  <div class="tete">
+    <img src="../images/4-2-baionnette.webp" alt="">
+    <div class="but"><p><b>Mon but</b></p><p class="gras">Deux branches parallèles, décalées à la cote</p><p>Deux coudes égaux en sens opposés décalent le tube parallèlement à lui-même, de la valeur du plan.</p></div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h31v31H0z"/><path stroke="#000000" d="M1 1.5h7m5 0h2m5 0h2m1 0h7M1 2.5h1m5 0h1m5 0h6m2 0h1m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h5m1 0h1m3 0h1m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h4m2 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m4 0h2m1 0h2m1 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m2 0h1m3 0h1m1 0h1m1 0h1M1 9.5h1m1 0h5m6 0h1m3 0h1m2 0h1m1 0h5M2 10.5h1m1 0h1m4 0h2m3 0h1m2 0h1m1 0h3m1 0h3m3 0h1M4 11.5h1m2 0h1m3 0h1m1 0h1m1 0h3m3 0h1M1 12.5h1m2 0h3m3 0h2m3 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1M2 13.5h2m1 0h6m1 0h1m1 0h1m3 0h1m5 0h1m1 0h2M1 14.5h1m1 0h3m3 0h1m1 0h3m1 0h1m1 0h2m1 0h6m3 0h1M1 15.5h3m2 0h3m1 0h1m3 0h1m1 0h4m1 0h1m2 0h4M2 16.5h1m1 0h2m3 0h4m3 0h1m2 0h3m2 0h2m2 0h1M2 17.5h1m2 0h1m1 0h1m2 0h1m3 0h1m3 0h1m1 0h1m5 0h2M1 18.5h1m3 0h2m1 0h1m1 0h5m2 0h4m1 0h4m1 0h1m1 0h1M1 19.5h1m2 0h1m2 0h1m1 0h1m1 0h2m1 0h3m1 0h1m3 0h1m4 0h1M1 20.5h1m1 0h1m1 0h1m5 0h1m3 0h3m2 0h1m1 0h3m3 0h1M1 21.5h1m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m2 0h4m1 0h5m1 0h3M9 22.5h1m1 0h2m1 0h1m2 0h5m3 0h5M1 23.5h7m2 0h3m1 0h5m1 0h2m1 0h1m1 0h3M1 24.5h1m5 0h1m1 0h1m2 0h3m1 0h1m3 0h2m3 0h1M1 25.5h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h2m1 0h1m2 0h5m1 0h3M1 26.5h1m1 0h3m1 0h1m1 0h1m7 0h1m3 0h2m3 0h4M1 27.5h1m1 0h3m1 0h1m1 0h2m5 0h1m1 0h3m1 0h7M1 28.5h1m5 0h1m3 0h1m1 0h1m1 0h3m3 0h1m1 0h4m1 0h1M1 29.5h7m1 0h1m3 0h2m1 0h3m1 0h1m1 0h2m3 0h1"/></svg>
+<p>Scannez : la station</p></div>
+  </div>
+  <div class="defi"><h2><span class="n">Défi 1</span> Remettez les gestes dans l’ordre</h2>
+    <p class="consigne">Écrivez 1, 2, 3, 4 dans les cases.</p>
+    <ul class="ordre"><li><span class="case"></span><span>Retourner le tube</span></li><li><span class="case"></span><span>Régler le décalage à la règle</span></li><li><span class="case"></span><span>Contrôler le parallélisme et le décalage</span></li><li><span class="case"></span><span>Tracer le début du premier coude</span></li></ul></div>
+  <div class="defi"><h2><span class="n">Défi 2</span> Reliez chaque piège à sa cause</h2>
+    <p class="consigne">Écrivez la bonne lettre dans la case.</p>
+    <div class="deux"><ul class="pieges"><li><b>1</b><span>Les branches qui divergent</span><span class="case"></span></li><li><b>2</b><span>La pièce gauchie</span><span class="case"></span></li><li><b>3</b><span>Le coude pincé</span><span class="case"></span></li></ul>
+      <ul class="causes"><li><b>A</b><span>Tube écroui, ou cintrage forcé.</span></li><li><b>B</b><span>Les deux coudes n’ont pas le même angle.</span></li><li><b>C</b><span>Le tube a tourné autour de son axe en le retournant.</span></li></ul></div></div>
+  <div class="valid">
+    <div class="tampon"><p>Tampon du professeur</p></div>
+    <div class="dn"><p>Date : <span class="trait"></span></p>
+      <p>Niveau (le professeur entoure)</p>
+      <div class="niveaux"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  <footer><p class="codes">CAP IFCA · tâche T10 · compétence C3.4 · savoirs S5.5, S6.2</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section>
+<section class="page fin">
+  <h1>Les cinq niveaux</h1>
+  <table class="tab"><tbody><tr><th>0</th><td><b>Non évalué</b><br>La station n’a pas été traitée.</td></tr><tr><th>1</th><td><b>Non acquis</b><br>Pièce non conforme : le geste doit être remontré par le professeur.</td></tr><tr><th>2</th><td><b>En cours</b><br>Pièce conforme après une reprise, ou avec l’aide du professeur.</td></tr><tr><th>3</th><td><b>Acquis</b><br>Pièce conforme, geste correct, autocontrôle fait seul.</td></tr><tr><th>4</th><td><b>Parfaitement maîtrisé</b><br>Pièce conforme du premier coup, geste sûr, et l’élève explique le pourquoi de chaque étape.</td></tr></tbody></table>
+  <h1>Ce que je travaille : les codes du référentiel</h1>
+  <table class="tab"><tbody><tr><th>T6</th><td>Préparer, vérifier les matériels et les outillages</td></tr><tr><th>T10</th><td>Repérer, raccorder, assembler les réseaux fluidiques, aérauliques et électriques</td></tr><tr><th>T12</th><td>Respecter les consignes de sécurité et protéger la zone de travail durant les travaux</td></tr><tr><th>C2.2</th><td>Contrôler les éléments nécessaires à la réalisation</td></tr><tr><th>C3.1</th><td>Organiser le poste de travail</td></tr><tr><th>C3.4</th><td>Façonner, raccorder, assembler, isoler, les circuits (frigorifique, hydraulique, aéraulique)</td></tr><tr><th>S0.2</th><td>Gestion de l’environnement du site d’intervention et des déchets</td></tr><tr><th>S2.1</th><td>Outils, normes et représentation</td></tr><tr><th>S5.5</th><td>Réseaux fluidiques et mécanique des fluides</td></tr><tr><th>S6.2</th><td>Connaissance des principaux risques et des moyens de prévention</td></tr><tr><th>S6.3</th><td>Identification des dangers et prévention des risques</td></tr><tr><th>S6.4</th><td>PRAP - SST</td></tr></tbody></table>
+  <footer><p class="codes">CAP IFCA · tâches T6, T10, T12 · compétences C2.2, C3.1, C3.4 · savoirs S0.2, S2.1, S5.5, S6.2, S6.3, S6.4</p><p class="marque"><span class="logo"><span class="fl">❄️</span><b>iner</b><i>Web</i><span class="cart">CuivRézo</span></span><span class="droits">© inerWeb 2026 · CC BY-NC-ND</span></p></footer>
+</section></body></html>

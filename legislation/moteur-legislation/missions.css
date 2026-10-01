@@ -1,0 +1,160 @@
+/* =====================================================================
+   missions.css — la couche « carnet du chargé d'affaires » d'une station
+   ---------------------------------------------------------------------
+   Deux objets : la carte « Votre mission » (accueil) et le tampon (fin
+   des questions). Couleur : --sous-ligne, posée par styles.css de la
+   station (repli : bleu de la charte). Posé par outils/poser-les-missions.mjs.
+   ===================================================================== */
+
+.mission-carte {
+  --m-accent: var(--sous-ligne, #1b3a63);
+  --m-fond: var(--sous-ligne-bg, #e8edf4);
+  margin: 0 0 24px;
+  background: var(--carte, #fffdf8);
+  border: 1px solid var(--ligne, #d6dee7);
+  border-left: 6px solid var(--m-accent);
+  border-radius: var(--r, 14px);
+  box-shadow: var(--ombre, 0 2px 10px rgba(27, 58, 99, .10));
+  overflow: hidden;
+}
+.mission-carte > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  background: var(--m-fond);
+  font-family: var(--titre, 'Trebuchet MS', Calibri, Arial, sans-serif);
+}
+.mission-carte > summary::-webkit-details-marker { display: none; }
+.mission-carte > summary:focus-visible { outline: 3px solid var(--orange, #ff6b35); outline-offset: -3px; }
+.mission-carte__etiquette {
+  font-weight: bold;
+  font-size: .82rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--m-accent);
+  padding: 3px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.mission-carte__titre {
+  flex: 1 1 220px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--txt, #10233c);
+  line-height: 1.3;
+}
+.mission-carte__replier {
+  font-size: .9rem;
+  color: var(--mut, #5a6b7d);
+  white-space: nowrap;
+}
+.mission-carte__replier::after { content: "Replier ▴"; }
+.mission-carte:not([open]) .mission-carte__replier::after { content: "Déplier ▾"; }
+
+.mission-carte__corps { padding: 6px 20px 18px; }
+.mission-carte dl { margin: 0; }
+.mission-carte dt {
+  margin: 14px 0 2px;
+  font-family: var(--titre, 'Trebuchet MS', Calibri, Arial, sans-serif);
+  font-weight: bold;
+  font-size: .8rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--m-accent);
+}
+.mission-carte dd { margin: 0; font-size: 1rem; line-height: 1.55; color: var(--txt, #10233c); text-wrap: pretty; }
+.mission-carte__pied {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--ligne, #d6dee7);
+}
+.mission-carte__puce {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--m-fond);
+  border: 1.5px solid var(--m-accent);
+  font-size: .95rem;
+  font-weight: bold;
+  color: var(--txt, #10233c);
+}
+.mission-carte__puce--gagne { background: var(--ok-bg, #e3f5ec); border-color: var(--ok, #1e7e54); color: var(--ok, #1e7e54); }
+.mission-carte__lien { margin-left: auto; align-self: center; font-size: .95rem; }
+
+/* ---------- le tampon ---------- */
+.mission-fin {
+  margin: 26px 0 8px;
+  padding: 20px 22px;
+  border: 1px solid var(--ligne, #d6dee7);
+  border-left: 6px solid var(--sous-ligne, #1b3a63);
+  border-radius: var(--r, 14px);
+  background: var(--carte, #fffdf8);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.mission-fin__texte { flex: 1 1 260px; min-width: 0; }
+.mission-fin__texte h3 { margin: 0 0 6px; font-size: 1.15rem; }
+.mission-fin__texte p { margin: 0 0 8px; font-size: 1rem; }
+.mission-fin__texte a, .mission-fin__texte button.mission-fin__lien {
+  font: inherit; font-weight: bold; color: var(--bleu, #1b3a63);
+  background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline;
+}
+.mission-fin__texte a:hover, .mission-fin__texte button.mission-fin__lien:hover { color: var(--orange, #ff6b35); }
+.mission-fin--essai { border-left-color: var(--fragile, #b06a00); background: var(--fragile-bg, #fff4e0); }
+
+.mission-tampon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 210px;
+  height: 210px;
+  color: var(--sous-ligne, #1b3a63);
+  transform: rotate(-8deg);
+  transform-origin: 50% 50%;
+}
+.mission-tampon svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.mission-tampon--pose { animation: mission-tampon-pose .62s cubic-bezier(.2, .8, .3, 1) both; }
+.mission-tampon--pose::after {
+  /* la trace d'encre qui s'étale à l'impact */
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  opacity: 0;
+  animation: mission-tampon-encre .7s .34s ease-out both;
+  pointer-events: none;
+}
+@keyframes mission-tampon-pose {
+  0%   { transform: rotate(-22deg) scale(2.5); opacity: 0; filter: blur(3px); }
+  55%  { transform: rotate(-9deg) scale(.93); opacity: 1; filter: blur(0); }
+  74%  { transform: rotate(-8deg) scale(1.04); }
+  100% { transform: rotate(-8deg) scale(1); opacity: 1; }
+}
+@keyframes mission-tampon-encre {
+  0%   { opacity: .45; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.22); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mission-tampon--pose, .mission-tampon--pose::after { animation: none; }
+}
+
+@media (max-width: 560px) {
+  .mission-carte__lien { margin-left: 0; }
+  .mission-tampon { width: 170px; height: 170px; }
+}
+@media print {
+  .mission-carte:not([open]) > .mission-carte__corps { display: block; }
+  .mission-tampon--pose, .mission-tampon--pose::after { animation: none; }
+}

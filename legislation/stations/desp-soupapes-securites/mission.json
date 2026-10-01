@@ -1,0 +1,36 @@
+{
+  "slug": "desp-soupapes-securites",
+  "branche": "DESP (équipements sous pression)",
+  "titre": "Mission : « Desserrez la protection, le groupe s'arrête trop souvent »",
+  "client": "Le responsable d'un entrepôt frigorifique, dont un groupe s'arrête par moments et qui demande à Clim'Études Sud de « régler moins serré » la protection.",
+  "situation": "Le compresseur s'est arrêté à plusieurs reprises et le responsable voudrait que l'on relève le réglage du pressostat pour éviter les coupures, quitte à retirer la soupape « qui ne sert à rien puisqu'elle ne s'ouvre jamais ». Votre responsable refuse de lui répondre de mémoire : il vous demande de préparer une note qui explique le rôle de chaque accessoire de sécurité, dans quel ordre ils interviennent et à quelle valeur se compare un tarage.",
+  "piece_a_produire": "Un tableau comparatif d'une page à trois colonnes (soupape de sûreté, pressostat de sécurité, disque de rupture) : nature, ce qu'il fait à la pression, se referme ou non, ce qu'on fait après déclenchement ; suivi de deux phrases sur la hiérarchie de protection et sur la comparaison avec la PS.",
+  "questions": [
+    { "q": "Que fait la soupape de sûreté quand la pression dépasse son tarage, puis quand elle redescend ?", "ecran": 2,
+      "reponse": "Elle s'ouvre pour évacuer l'excès de pression, puis se referme d'elle-même quand la pression redescend. C'est un dispositif mécanique." },
+    { "q": "Lequel agit en premier, du pressostat de sécurité ou de la soupape, et pourquoi ?", "ecran": 5,
+      "reponse": "Le pressostat : il coupe le fonctionnement avant que la pression ne continue à monter, sans rien évacuer. La soupape agit en dernier recours, si la pression est quand même montée trop haut. Normalement, le pressostat agit avant que la soupape n'ait à s'ouvrir." },
+    { "q": "Dans quel cas installe-t-on plutôt un disque de rupture qu'une soupape ?", "ecran": 4,
+      "reponse": "Quand une ouverture progressive ne convient pas, par exemple sur un circuit à l'ammoniac ou au CO2, où la pression peut monter très vite. La membrane calibrée cède d'un coup." },
+    { "q": "À quelle valeur compare-t-on le tarage d'un accessoire de sécurité pour savoir s'il convient ?", "ecran": 6,
+      "reponse": "À la PS inscrite sur la plaque de l'équipement protégé : le tarage est établi en dessous de la PS, selon les règles du texte en vigueur. Un accessoire de sécurité se choisit toujours en fonction de l'équipement qu'il équipe." }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque caractéristique à l'accessoire de sécurité qui lui correspond : soupape de sûreté, pressostat de sécurité ou disque de rupture.",
+    "items": [
+      "Il s'ouvre puis se referme seul quand la pression redescend.",
+      "Il attend un réarmement manuel, une fois la cause de la coupure vérifiée.",
+      "Il doit être remplacé après usage.",
+      "Il agit en dernier recours, si la pression est quand même montée trop haut."
+    ],
+    "corrige": "1 → soupape de sûreté ; 2 → pressostat de sécurité ; 3 → disque de rupture ; 4 → soupape de sûreté."
+  },
+  "badge": "Dernier rempart",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": ["6.03", "9.06", "14.16"],
+    "justification": "Hors REAC pour le TP TECVC : culture réglementaire du technicien et du chargé d'affaires. Côté attestation d'aptitude 2025 : 6.03 (régler les interrupteurs de sécurité et de contrôle), 9.06 (régler des limiteurs de pression) et 14.16 (soupapes de sécurité et leur intervalle d'inspection, catégorie C)."
+  }
+}

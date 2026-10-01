@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-labelledby="t-lc" aria-describedby="d-lc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-lc">Pourquoi le sprinkler et le RIA sont un lot du bureau d'études CVC</title>
+  <desc id="d-lc">À gauche, le bureau d'études CVC et plomberie. Trois traits le relient à trois missions empilées à droite : dimensionner l'hydraulique (débit, pression, pertes de charge) ; coordonner les interfaces (source d'eau, local des pompes, passage des tuyaux) ; et, en pointillé rouge, se demander si la directive sur les équipements sous pression s'applique à ce réseau d'eau sous pression, en regardant la pression maximale admissible PS, le diamètre DN et le fluide, avec un renvoi vers la station La directive. Une bande en bas rappelle que le système sprinkleur lui-même est réalisé par une entreprise spécialisée et dûment qualifiée, article MS 25.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#b91c1c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <rect x="20" y="120" width="230" height="130" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <text class="ttl" x="135" y="170" text-anchor="middle">Bureau d'études</text>
+  <text class="ttl" x="135" y="196" text-anchor="middle">CVC / plomberie</text>
+  <text class="lbl" x="135" y="226" text-anchor="middle">le lot « eau incendie »</text>
+
+  <path d="M250,185 L290,185 L290,70 L320,70 M290,185 L320,185 M290,185 L290,300 L320,300" fill="none" stroke="#5a6b7d" stroke-width="3"/>
+
+  <rect x="320" y="20" width="560" height="100" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ttl" x="340" y="54">Dimensionner l'hydraulique</text>
+  <text class="lbl" x="340" y="84">débit, pression, pertes de charge dans le réseau</text>
+  <text class="lbl" x="340" y="106">même démarche que pour un réseau d'eau sanitaire</text>
+
+  <rect x="320" y="135" width="560" height="100" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ttl" x="340" y="169">Coordonner les interfaces</text>
+  <text class="lbl" x="340" y="199">source d'eau, local des pompes, passage des tuyaux</text>
+  <text class="lbl" x="340" y="221">avec le gros œuvre, l'électricité et la sécurité incendie</text>
+
+  <rect x="320" y="250" width="560" height="100" rx="12" fill="#fffdf8" stroke="#b91c1c" stroke-width="3" stroke-dasharray="10 6"/>
+  <text class="qui" x="340" y="284">Un réseau d'eau sous pression : la DESP ?</text>
+  <text class="lbl" x="340" y="314">se demander si la directive s'applique : PS, DN, fluide</text>
+  <text class="lbl" x="340" y="336">→ station « La directive » (sous-ligne La DESP)</text>
+
+  <rect x="20" y="372" width="860" height="46" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="402" text-anchor="middle">Le système sprinkleur : entreprise spécialisée et dûment qualifiée (MS 25)</text>
+</svg>

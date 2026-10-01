@@ -1,0 +1,6 @@
+Use your built-in image generation tool to create ONE image. Do not write code and do not draw with PIL, matplotlib or SVG. Save nothing else.
+
+Subject: the break room of an HVAC company in the morning: a team of three worker silhouettes in work clothes around a table with coffee cups, one holds a blank employment contract, a wall calendar with blank squares, a planning board with coloured magnets, a young apprentice silhouette with a backpack shaking hands with a manager silhouette. The orange accent is the apprentice's backpack.
+
+Style: flat illustration in a clean editorial house style. Solid navy blue (#1b3a63) outlines, light blue flat fills, cream background (#f7f1e7), ONE orange accent (#ff6b35) used sparingly on a single element, people drawn as simple silhouettes without facial features. No gradients, no drop shadows, no textures, no photorealism. Landscape 1536 x 1024.
+Strictly avoid: text, letters, numbers, labels, signs, stickers, brand, logo, watermark, gauges with digits, faces with features, bare hands when gloves are listed, bare head when a helmet is listed.

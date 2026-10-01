@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" role="img"
+     aria-labelledby="t-va" aria-describedby="d-va" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-va">Chaque année, on vérifie que le clapet fonctionne</title>
+  <desc id="d-va">À gauche, une liste de cinq points à cocher, chacun avec une case verte : le clapet se ferme à
+    l'essai, il se remet en position d'attente, le mécanisme est accessible, la trappe d'accès est libre, le
+    calfeutrement est intact. À droite, un calendrier avec une case orange mise en évidence et la mention
+    tous les ans, vérification périodique, article CH 58. En bas, un encadré donne le réflexe du technicien
+    d'études : repérer chaque clapet au plan, le laisser accessible, prévoir sa vérification chaque année.
+    L'animation coche les cinq points l'un après l'autre ; l'image fixe les montre tous cochés.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .it { font-size:20px; fill:#10233c; }
+    .an { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#b91c1c; }
+    .mut { font-size:17px; fill:#5a6b7d; }
+    .band { font-size:18px; fill:#10233c; }
+  </style>
+  <rect width="800" height="490" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Chaque année, on vérifie le fonctionnement</text>
+
+  <!-- la liste -->
+  <rect x="30" y="56" width="500" height="330" rx="14" fill="#fffdf8" stroke="#d6dee7" stroke-width="2"/>
+  <g fill="#e3f5ec" stroke="#1e7e54" stroke-width="3">
+    <rect x="56" y="82" width="34" height="34" rx="6"/>
+    <rect x="56" y="142" width="34" height="34" rx="6"/>
+    <rect x="56" y="202" width="34" height="34" rx="6"/>
+    <rect x="56" y="262" width="34" height="34" rx="6"/>
+    <rect x="56" y="322" width="34" height="34" rx="6"/>
+  </g>
+  <text class="it" x="108" y="107">Le clapet se ferme à l'essai</text>
+  <text class="it" x="108" y="167">Il se remet en position d'attente</text>
+  <text class="it" x="108" y="227">Le mécanisme est accessible</text>
+  <text class="it" x="108" y="287">La trappe d'accès est libre</text>
+  <text class="it" x="108" y="347">Le calfeutrement est intact</text>
+
+  <g fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="63,99 72,108 84,90" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="100;100;0;0;100;100" keyTimes="0;0.06;0.11;0.94;0.955;1" dur="14s" repeatCount="indefinite"/></polyline>
+    <polyline points="63,159 72,168 84,150" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="100;100;0;0;100;100" keyTimes="0;0.18;0.23;0.94;0.955;1" dur="14s" repeatCount="indefinite"/></polyline>
+    <polyline points="63,219 72,228 84,210" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="100;100;0;0;100;100" keyTimes="0;0.30;0.35;0.94;0.955;1" dur="14s" repeatCount="indefinite"/></polyline>
+    <polyline points="63,279 72,288 84,270" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="100;100;0;0;100;100" keyTimes="0;0.42;0.47;0.94;0.955;1" dur="14s" repeatCount="indefinite"/></polyline>
+    <polyline points="63,339 72,348 84,330" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="100;100;0;0;100;100" keyTimes="0;0.54;0.59;0.94;0.955;1" dur="14s" repeatCount="indefinite"/></polyline>
+  </g>
+
+  <!-- le calendrier -->
+  <rect x="590" y="96" width="160" height="150" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="590" y="96" width="160" height="40" rx="14" fill="#b91c1c"/>
+  <rect x="590" y="118" width="160" height="18" fill="#b91c1c"/>
+  <line x1="628" y1="84" x2="628" y2="108" stroke="#1b3a63" stroke-width="7" stroke-linecap="round"/>
+  <line x1="712" y1="84" x2="712" y2="108" stroke="#1b3a63" stroke-width="7" stroke-linecap="round"/>
+  <g fill="#cbd5e1">
+    <rect x="606" y="152" width="28" height="22" rx="4"/><rect x="646" y="152" width="28" height="22" rx="4"/><rect x="686" y="152" width="28" height="22" rx="4"/>
+    <rect x="606" y="184" width="28" height="22" rx="4"/><rect x="686" y="184" width="28" height="22" rx="4"/>
+    <rect x="606" y="216" width="28" height="18" rx="4"/><rect x="646" y="216" width="28" height="18" rx="4"/><rect x="686" y="216" width="28" height="18" rx="4"/>
+  </g>
+  <rect x="646" y="184" width="28" height="22" rx="4" fill="#e8914a" stroke="#b45309" stroke-width="2"/>
+  <text class="an" x="670" y="292" text-anchor="middle">tous les ans</text>
+  <text class="mut" x="670" y="320" text-anchor="middle">vérification périodique</text>
+  <text class="mut" x="670" y="342" text-anchor="middle">règlement ERP, CH 58</text>
+
+  <!-- le réflexe -->
+  <rect x="20" y="404" width="760" height="70" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="400" y="432" text-anchor="middle">Réflexe du technicien d'études : repérer chaque clapet au plan,</text>
+  <text class="band" x="400" y="458" text-anchor="middle">le laisser accessible, et prévoir sa vérification chaque année.</text>
+</svg>

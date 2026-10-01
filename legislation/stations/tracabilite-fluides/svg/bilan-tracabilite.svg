@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-bilan" aria-describedby="d-bilan" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-bilan">Ce que vérifie un contrôle : remonter le fil</title>
+  <desc id="d-bilan">Cinq lignes cochées : la fiche signée avec le numéro d'attestation de capacité, le fluide et les quantités ; l'exemplaire conservé au moins cinq ans chez l'opérateur et chez le détenteur ; le registre à jour avec les fluides ajoutés et récupérés et les contrôles d'étanchéité ; le BSFF signé jusqu'au bout par l'émetteur, le transporteur et l'installation de traitement ; les quantités qui se recoupent entre la fiche, la bouteille et le bordereau. En bas, le réflexe : remonter le fil d'un fluide, du chargement à la filière.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomt{ font-weight:bold; font-size:18px; fill:#0f766e; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <rect x="30" y="22" width="740" height="68" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="74" cy="56" r="20" fill="#0f766e"/><path d="M65,56 l6,7 l12,-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="nom" x="110" y="52" text-anchor="start">La fiche signée</text>
+  <text class="txt" x="110" y="77" text-anchor="start">n° d'attestation de capacité, fluide, quantités</text>
+  <rect x="30" y="100" width="740" height="68" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="74" cy="134" r="20" fill="#0f766e"/><path d="M65,134 l6,7 l12,-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="nom" x="110" y="130" text-anchor="start">L'exemplaire conservé</text>
+  <text class="txt" x="110" y="155" text-anchor="start">au moins 5 ans, chez l'opérateur et chez le détenteur</text>
+  <rect x="30" y="178" width="740" height="68" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="74" cy="212" r="20" fill="#0f766e"/><path d="M65,212 l6,7 l12,-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="nom" x="110" y="208" text-anchor="start">Le registre à jour</text>
+  <text class="txt" x="110" y="233" text-anchor="start">fluide ajouté ou récupéré, contrôles d'étanchéité</text>
+  <rect x="30" y="256" width="740" height="68" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="74" cy="290" r="20" fill="#0f766e"/><path d="M65,290 l6,7 l12,-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="nom" x="110" y="286" text-anchor="start">Le BSFF signé jusqu'au bout</text>
+  <text class="txt" x="110" y="311" text-anchor="start">émetteur, transporteur, installation de traitement</text>
+  <rect x="30" y="334" width="740" height="68" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="74" cy="368" r="20" fill="#0f766e"/><path d="M65,368 l6,7 l12,-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="nom" x="110" y="364" text-anchor="start">Les quantités qui se recoupent</text>
+  <text class="txt" x="110" y="389" text-anchor="start">fiche, bouteille et bordereau racontent la même histoire</text>
+  <rect x="30" y="418" width="740" height="66" rx="12" fill="#e6f2ef" stroke="#0f766e" stroke-width="3"/>
+  <text class="nomt" x="400" y="458" text-anchor="middle">Le réflexe : remonter le fil, du chargement à la filière.</text>
+</svg>

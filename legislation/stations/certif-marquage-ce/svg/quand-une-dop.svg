@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img"
+     aria-labelledby="t-quand" aria-describedby="d-quand" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-quand">Quand une déclaration des performances s'impose</title>
+  <desc id="d-quand">Un arbre de décision. En haut, un produit de construction. Une question : est-il couvert par une
+    norme harmonisée, ou a-t-il fait l'objet d'une évaluation technique européenne ? Si oui, trait plein vert : le
+    fabricant établit une déclaration des performances puis appose le CE. Si non, trait tireté rouge : pas de
+    déclaration des performances ni de CE au titre du règlement. En bas, un encadré rappelle trois dérogations
+    possibles pour un produit couvert : la pièce faite sur mesure pour un ouvrage unique, le produit fabriqué sur le
+    chantier même, la fabrication traditionnelle pour un ouvrage protégé, à condition qu'aucun texte n'exige la
+    déclaration.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .nm  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .tx  { font-size:18px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .ok  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1e7e54; }
+    .no  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#9b2c20; }
+    .br  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#8a5a00; }
+  </style>
+
+  <!-- Départ -->
+  <rect x="280" y="24" width="340" height="52" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="nm" x="450" y="47" text-anchor="middle">Un produit de construction</text>
+  <text class="sm" x="450" y="67" text-anchor="middle">destiné à entrer durablement dans l'ouvrage</text>
+  <path d="M 450 76 V 104" stroke="#5a6b7d" stroke-width="4" fill="none"/>
+  <polygon points="440,102 450,122 460,102" fill="#5a6b7d"/>
+
+  <!-- La question -->
+  <rect x="190" y="126" width="520" height="84" rx="14" fill="#e7e4ee" stroke="#3730a3" stroke-width="3"/>
+  <text class="tx" x="450" y="158" text-anchor="middle" font-weight="bold">Couvert par une norme harmonisée,</text>
+  <text class="tx" x="450" y="184" text-anchor="middle" font-weight="bold">ou ayant une évaluation technique européenne ?</text>
+
+  <!-- Branche OUI : trait plein -->
+  <path d="M 300 210 V 244 H 250 V 268" stroke="#1e7e54" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="238,266 250,288 262,266" fill="#1e7e54"/>
+  <text class="ok" x="316" y="236" text-anchor="start">oui</text>
+
+  <!-- Branche NON : trait tireté -->
+  <path d="M 600 210 V 244 H 650 V 268" stroke="#c0392b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 10" fill="none"/>
+  <polygon points="638,266 650,288 662,266" fill="#c0392b"/>
+  <text class="no" x="584" y="236" text-anchor="end">non</text>
+
+  <!-- Résultats -->
+  <rect x="50" y="292" width="400" height="76" rx="14" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="ok" x="250" y="324" text-anchor="middle">Le fabricant établit une DoP</text>
+  <text class="tx" x="250" y="352" text-anchor="middle">puis appose le marquage CE</text>
+
+  <rect x="470" y="292" width="380" height="76" rx="14" fill="#fbe9e7" stroke="#c0392b" stroke-width="3" stroke-dasharray="10 6"/>
+  <text class="no" x="660" y="324" text-anchor="middle">Pas de DoP, pas de CE</text>
+  <text class="tx" x="660" y="352" text-anchor="middle">au titre de ce règlement</text>
+
+  <!-- Dérogations -->
+  <rect x="50" y="392" width="800" height="98" rx="14" fill="#fdf1e3" stroke="#e8914a" stroke-width="2"/>
+  <text class="br" x="70" y="418">Trois dérogations possibles pour un produit couvert :</text>
+  <text class="tx" x="70" y="444">pièce sur mesure, ouvrage unique  ·  produit fabriqué sur le chantier même</text>
+  <text class="tx" x="70" y="466">·  fabrication traditionnelle pour un ouvrage protégé</text>
+  <text class="sm" x="480" y="466" font-style="italic">— si aucun texte n'exige la déclaration</text>
+</svg>

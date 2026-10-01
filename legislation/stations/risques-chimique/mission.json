@@ -1,0 +1,48 @@
+{
+  "slug": "risques-chimique",
+  "branche": "Risques professionnels",
+  "titre": "Mission : Le bidon sans mode d'emploi",
+  "client": "Le responsable technique d'un hôtel, chez qui Clim'Études Sud doit nettoyer un circuit et reprendre un brasage dans un petit local technique fermé.",
+  "situation": "Dans le local, un bidon de solvant laissé par l'ancien prestataire : l'étiquette est à moitié effacée et personne ne retrouve la fiche du produit. Le responsable vous dit : « Il ne sent pas très fort, ça doit aller, faites vite. » Le brasage est prévu dans la même pièce, porte fermée. Votre responsable vous demande de cadrer l'intervention avant que le technicien n'ouvre quoi que ce soit.",
+  "piece_a_produire": "Une note d'une page au responsable de l'hôtel : ce que vous demandez avant de commencer (la fiche de données de sécurité du solvant, ou son remplacement par un produit dont la fiche existe), les trois vérifications avant ouverture (fiche lue, pictogrammes identifiés, EPI adapté au danger repéré) et la condition de ventilation pour le brasage.",
+  "questions": [
+    {
+      "q": "Que contient une fiche de données de sécurité, et à quel moment la lit-on ?",
+      "ecran": 1,
+      "reponse": "Elle décrit les dangers du produit, les précautions d'emploi et la conduite à tenir en cas d'exposition. Elle se lit avant d'utiliser un produit qu'on ne connaît pas, avant d'ouvrir le bidon."
+    },
+    {
+      "q": "Un pictogramme à bord rouge, avec une silhouette humaine et une étoile sur la poitrine : de quelle famille de danger s'agit-il, et par quoi ne faut-il pas le confondre ?",
+      "ecran": 2,
+      "reponse": "Le danger pour la santé, réservé aux dangers les plus graves (CMR). Il ne faut pas le confondre avec le point d'exclamation, qui signale seulement un produit nocif ou irritant."
+    },
+    {
+      "q": "Que signifie CMR, et où lit-on si un solvant ou un flux de brasage est concerné ?",
+      "ecran": 4,
+      "reponse": "Cancérogène, mutagène, reprotoxique. Certains solvants de nettoyage ou flux de brasage peuvent être concernés : c'est la fiche de données de sécurité qui le dit, pas la mémoire."
+    },
+    {
+      "q": "Quels risques présentent le nettoyage au solvant et l'huile frigorigène récupérée ?",
+      "ecran": 7,
+      "reponse": "Le solvant expose la peau et les voies respiratoires. L'huile récupérée est un déchet chimique : elle ne se manipule pas à mains nues de façon prolongée."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque situation au geste qu'elle commande.",
+    "items": [
+      "Un bidon marqué du pictogramme « inflammable »",
+      "Un brasage dans un local technique fermé",
+      "Un produit que l'on ne connaît pas",
+      "Un nettoyage de circuit au solvant"
+    ],
+    "corrige": "Inflammable : éloigner toute flamme ou source d'inflammation et ventiler (écran 3). Brasage en local fermé : ventiler pour évacuer les fumées du flux et du métal chauffé (écran 6). Produit inconnu : lire sa fiche de données de sécurité avant d'ouvrir (écrans 1 et 5). Solvant : protéger la peau et les voies respiratoires (écran 7)."
+  },
+  "badge": "La fiche d'abord",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien (lire une fiche de données de sécurité et un pictogramme avant d'utiliser un produit)."
+  }
+}

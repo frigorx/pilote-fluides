@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" role="img"
+     aria-labelledby="t-it" aria-describedby="d-it" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-it">Régime IT : le premier défaut est signalé, le second est coupé</title>
+  <desc id="d-it">Deux schémas côte à côte. À gauche, premier défaut : le neutre du poste est isolé de la terre et surveillé par un contrôleur permanent d'isolement, le CPI, qui porte un voyant d'alarme allumé. Un éclair marque le défaut entre une phase et la carcasse d'une machine. Un mince trait orange suit le courant : par le conducteur de protection, la terre, puis les fuites d'isolement du réseau ; ce courant est faible et le circuit n'est pas coupé. À droite, deuxième défaut : deux machines, A et B, ont chacune un défaut sur une phase différente et leurs masses sont reliées entre elles. Un gros trait orange forme une boucle entre les deux phases par les masses : c'est un court-circuit, qui déclenche la protection.</desc>
+  <style>
+    .t { font:bold 22px 'Trebuchet MS',Calibri,sans-serif; fill:#10233c; }
+    .h { font:bold 20px 'Trebuchet MS',Calibri,sans-serif; fill:#1b3a63; }
+    .l { font:17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .lb { font:bold 17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .m { font:16px Calibri,'Segoe UI',sans-serif; fill:#5a6b7d; }
+    .big { font:bold 60px 'Trebuchet MS',Calibri,sans-serif; fill:#a16207; }
+    .w { font:bold 30px 'Trebuchet MS',Calibri,sans-serif; fill:#fffdf8; }
+  </style>
+  <defs>
+    <marker id="fl-it" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,1 L11,6 L1,11 z" fill="#b45309" stroke="#10233c" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- panneau gauche -->
+  <rect x="10" y="10" width="430" height="480" rx="14" fill="none" stroke="#d6dee7" stroke-width="2"/>
+  <text class="h" x="225" y="44" text-anchor="middle">1er défaut : on signale</text>
+  <rect x="20" y="340" width="410" height="130" rx="6" fill="#efe6d5" stroke="#d8c9a8" stroke-width="2"/>
+  <text class="m" x="420" y="362" text-anchor="end">Sol</text>
+  <rect x="30" y="100" width="80" height="90" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="58" cy="153" r="20" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="82" cy="153" r="20" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="70" y="88" text-anchor="middle">Poste</text>
+
+  <rect x="300" y="90" width="110" height="110" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="6"/>
+  <path d="M110,120 H330" fill="none" stroke="#e8914a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <path d="M330,150 H380 V340" fill="none" stroke="#e8914a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <path d="M380,340 V430 H190 V340" fill="none" stroke="#e8914a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" stroke-dasharray="12 9"/>
+  <path d="M190,340 V170 H110" fill="none" stroke="#e8914a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <path d="M110,120 H300 M110,170 H300" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M70,190 V240" fill="none" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="40" y="240" width="60" height="36" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="70" y="265" text-anchor="middle">CPI</text>
+  <path d="M70,276 V340" fill="none" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M100,258 H124" fill="none" stroke="#1b3a63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <g>
+    <circle cx="150" cy="258" r="15" fill="#e8914a" stroke="#10233c" stroke-width="3"/>
+    <path d="M124,258 h6 M170,258 h6 M150,232 v6 M150,278 v6" fill="none" stroke="#e8914a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <animate attributeName="opacity" values="0.15;0.15;1;1" keyTimes="0;0.04;0.10;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="l" x="150" y="316" text-anchor="middle">Alarme</text>
+  <text class="l" x="82" y="219" text-anchor="start">Neutre isolé</text>
+
+  <path d="M190,170 V255 M172,255 H208 M172,265 H208 M190,265 V340" fill="none" stroke="#5a6b7d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <text class="l" x="205" y="300" text-anchor="start">Fuites (isolement)</text>
+
+  <path d="M300,120 H330 M300,170 H380" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M330,122 L321,131.88 L337,137.07999999999998 L328,148" fill="none" stroke="#c0392b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="h" x="355" y="80" text-anchor="middle">Machine</text>
+  <path d="M380,200 V340" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M374,340 H386 V395 L380,405 L374,395 Z" fill="#c9c2b3" stroke="#5a6b7d" stroke-width="2"/>
+
+  <path d="M220,120 L223.0,120.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-it)"/><path d="M380,260 L380.0,263.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-it)"/><path d="M300,430 L297.0,430.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-it)"/><path d="M190,250 L190.0,247.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-it)"/>
+
+  <!-- panneau droit -->
+  <rect x="460" y="10" width="430" height="480" rx="14" fill="none" stroke="#d6dee7" stroke-width="2"/>
+  <text class="h" x="675" y="44" text-anchor="middle">2e défaut : on coupe</text>
+  <rect x="470" y="340" width="410" height="130" rx="6" fill="#efe6d5" stroke="#d8c9a8" stroke-width="2"/>
+  <text class="m" x="870" y="362" text-anchor="end">Sol</text>
+  <rect x="490" y="100" width="80" height="90" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="518" cy="153" r="20" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="542" cy="153" r="20" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="530" y="88" text-anchor="middle">Poste</text>
+
+  <rect x="610" y="90" width="90" height="110" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="6"/>
+  <rect x="770" y="90" width="90" height="110" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="6"/>
+  <path d="M570,120 H635" fill="none" stroke="#e8914a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <path d="M635,150 H660 V270 H820 V146 H800" fill="none" stroke="#e8914a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <path d="M800,170 H570" fill="none" stroke="#e8914a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <path d="M570,120 H770 M570,170 H770" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M610,120 H635 M610,170 H700 M770,120 H790 M770,170 H800" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M635,122 L626,132.64 L642,138.24 L633,150" fill="none" stroke="#c0392b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M800,146 L791,155.12 L807,159.92 L798,170" fill="none" stroke="#c0392b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="h" x="655" y="80" text-anchor="middle">Machine A</text>
+  <text class="h" x="815" y="80" text-anchor="middle">Machine B</text>
+  <path d="M660,200 V270 H820 V200" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M740,270 V340" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M734,340 H746 V395 L740,405 L734,395 Z" fill="#c9c2b3" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="l" x="740" y="250" text-anchor="middle">Masses reliées</text>
+  <text class="lb" x="725" y="300" text-anchor="end">Court-circuit</text>
+  <text class="lb" x="725" y="322" text-anchor="end">entre deux phases</text>
+
+  <path d="M600,120 L603.0,120.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-it)"/><path d="M740,270 L743.0,270.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-it)"/><path d="M700,170 L697.0,170.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-it)"/>
+
+  <!-- légende : l'épaisseur dit l'intensité -->
+  <path d="M30,515 H90" fill="none" stroke="#e8914a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <text class="l" x="105" y="521" text-anchor="start">Courant de défaut faible</text>
+  <path d="M400,515 H460" fill="none" stroke="#e8914a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <text class="l" x="475" y="521" text-anchor="start">Court-circuit : forte intensité</text>
+  
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M110,120 H330 V150 H380 V430 H190 V170 H110" keyPoints="0;0;1;1" keyTimes="0;0.060;0.420;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.060;0.070;0.410;0.420;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M110,120 H330 V150 H380 V430 H190 V170 H110" keyPoints="0;0;1;1" keyTimes="0;0.105;0.465;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.105;0.115;0.455;0.465;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M110,120 H330 V150 H380 V430 H190 V170 H110" keyPoints="0;0;1;1" keyTimes="0;0.150;0.510;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.150;0.160;0.500;0.510;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M570,120 H635 V150 H660 V270 H820 V146 H800 V170 H570" keyPoints="0;0;1;1" keyTimes="0;0.550;0.850;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.550;0.560;0.840;0.850;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M570,120 H635 V150 H660 V270 H820 V146 H800 V170 H570" keyPoints="0;0;1;1" keyTimes="0;0.580;0.880;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.580;0.590;0.870;0.880;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M570,120 H635 V150 H660 V270 H820 V146 H800 V170 H570" keyPoints="0;0;1;1" keyTimes="0;0.610;0.910;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.610;0.620;0.900;0.910;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <g>
+    <rect x="460" y="10" width="430" height="480" rx="14" fill="#fffdf8" opacity="0">
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.53;1" dur="13s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

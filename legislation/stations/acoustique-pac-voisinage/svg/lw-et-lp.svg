@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-lw" aria-describedby="d-lw" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-lw">Ce que dit la fiche, ce que l'on mesure</title>
+  <desc id="d-lw">À gauche, une unité extérieure : sa puissance acoustique Lw est ce que la machine émet, mesuré en laboratoire, et sert à comparer les appareils. À droite, trois micros posés à des distances croissantes : la pression acoustique Lp est ce que le sonomètre relève à cet endroit, elle change avec la distance et avec le lieu. En bas, un bandeau indique où lire Lw : fiche technique, étiquette énergie, bases de données certifiées.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:22px; fill:#10233c; }
+    .big  { font-weight:bold; font-size:26px; fill:#1b3a63; }
+    .bigo { font-weight:bold; font-size:26px; fill:#b45309; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .lblb { font-size:18px; font-weight:bold; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="400" y="34" text-anchor="middle">Ce que dit la fiche, ce que l'on mesure</text>
+
+  <!-- séparation -->
+  <line x1="270" y1="80" x2="270" y2="430" stroke="#b9c6d3" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <!-- côté fiche : la machine -->
+  <line x1="20" y1="300" x2="780" y2="300" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="70" y="170" width="150" height="130" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="145" cy="235" r="40" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <ellipse cx="145" cy="218" rx="9" ry="16" fill="#2f5689" opacity="0.8"/>
+  <ellipse cx="145" cy="218" rx="9" ry="16" fill="#2f5689" opacity="0.8" transform="rotate(120 145 235)"/>
+  <ellipse cx="145" cy="218" rx="9" ry="16" fill="#2f5689" opacity="0.8" transform="rotate(240 145 235)"/>
+  <circle cx="145" cy="235" r="6" fill="#1b3a63"/>
+  <text class="big" x="145" y="342" text-anchor="middle">Lw</text>
+  <text class="lblb" x="145" y="368" text-anchor="middle">puissance acoustique</text>
+  <text class="lbl" x="145" y="392" text-anchor="middle">ce que la machine émet,</text>
+  <text class="lbl" x="145" y="414" text-anchor="middle">mesuré en laboratoire</text>
+
+  <!-- côté terrain : trois points d'écoute -->
+  <path d="M290,216 L740,216" stroke="#6d28d9" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round" fill="none"/>
+  <path d="M740,216 l-16,-9 l0,18 z" fill="#6d28d9"/>
+  <g stroke="#1b3a63" stroke-width="3" fill="#e8914a">
+    <line x1="400" y1="300" x2="400" y2="262" fill="none"/><circle cx="400" cy="252" r="11"/>
+    <line x1="560" y1="300" x2="560" y2="262" fill="none"/><circle cx="560" cy="252" r="11"/>
+    <line x1="720" y1="300" x2="720" y2="262" fill="none"/><circle cx="720" cy="252" r="11"/>
+  </g>
+  <text class="bigo" x="400" y="342" text-anchor="middle">Lp</text>
+  <text class="lbl" x="400" y="366" text-anchor="middle">près</text>
+  <text class="bigo" x="560" y="342" text-anchor="middle">Lp</text>
+  <text class="lbl" x="560" y="366" text-anchor="middle">plus loin</text>
+  <text class="bigo" x="720" y="342" text-anchor="middle">Lp</text>
+  <text class="lbl" x="720" y="366" text-anchor="middle">loin</text>
+  <text class="lblb" x="560" y="396" text-anchor="middle">pression acoustique : ce que le</text>
+  <text class="lblb" x="560" y="418" text-anchor="middle">sonomètre relève ici. Elle change</text>
+  <text class="lblb" x="560" y="440" text-anchor="middle">avec la distance et avec le lieu.</text>
+
+  <!-- où lire -->
+  <rect x="40" y="454" width="720" height="38" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lbl" x="400" y="479" text-anchor="middle"><tspan font-weight="bold">Où lire Lw :</tspan> fiche technique · étiquette énergie · bases certifiées</text>
+</svg>

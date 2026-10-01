@@ -1,0 +1,36 @@
+{
+  "slug": "desp-en-service",
+  "branche": "DESP (équipements sous pression)",
+  "titre": "Mission : l'état des lieux d'une installation qui vieillit",
+  "client": "Le responsable d'un site de conditionnement alimentaire, exploitant d'une installation frigorifique en service depuis de longues années, qui confie sa maintenance à Clim'Études Sud.",
+  "situation": "En reprenant le contrat, vous dressez l'état des lieux des équipements sous pression : un réservoir, un séparateur d'huile et deux bouteilles de fluide stockées en atelier depuis plusieurs années. Personne ne retrouve de dossier. Le responsable pense que le suivi s'arrête à la pose et que c'est au fabricant de s'en occuper. Votre responsable vous demande de préparer le tableau d'état des lieux et de rappeler à l'exploitant ce qui lui incombe.",
+  "piece_a_produire": "Un tableau d'état des lieux d'une page : pour chaque équipement, les documents attendus dans le dossier d'exploitation, l'échéance à vérifier sur le texte applicable (case à renseigner, sans valeur inscrite d'avance) et le responsable ; suivi de trois phrases pour l'exploitant.",
+  "questions": [
+    { "q": "Que cherchent les inspections périodiques, et où lit-on leur rythme ?", "ecran": 2,
+      "reponse": "Elles vérifient que l'équipement reste conforme à son état de référence et repèrent une dégradation (corrosion, fissure, fuite naissante) avant qu'elle devienne dangereuse. Le rythme se lit dans la réglementation en vigueur applicable à l'équipement, jamais au jugé." },
+    { "q": "En quoi la requalification périodique se distingue-t-elle d'une inspection ?", "ecran": 3,
+      "reponse": "C'est un contrôle plus approfondi (remise à l'épreuve, avec notamment la vérification de la résistance de l'enveloppe), à un rythme propre. Les deux ne se remplacent pas, elles se complètent." },
+    { "q": "Que rassemble le dossier d'exploitation ?", "ecran": 4,
+      "reponse": "La documentation d'origine (marquage, déclaration de conformité, notice), l'historique des inspections et des requalifications, et les réparations ou modifications éventuelles. C'est la mémoire de l'équipement." },
+    { "q": "Qui doit faire réaliser les contrôles, tenir le dossier à jour et retirer de service un équipement non conforme ?", "ecran": 5,
+      "reponse": "L'exploitant, c'est-à-dire l'entreprise qui utilise l'équipement, pas forcément celle qui l'a fabriqué." }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Répondez vrai ou faux et corrigez les phrases fausses (5 minutes).",
+    "items": [
+      "Une bouteille de fluide qui reste plusieurs années en atelier n'a aucun suivi : ce n'est qu'un contenant.",
+      "Le suivi réglementaire d'un réservoir s'arrête le jour de sa pose.",
+      "La périodicité d'une inspection se lit dans le texte réglementaire applicable, pas au jugé.",
+      "L'exploitant est toujours le fabricant de l'équipement."
+    ],
+    "corrige": "1 faux (c'est un équipement sous pression, avec son propre suivi dans le temps) ; 2 faux (un réservoir en service depuis des années reste suivi dans la durée) ; 3 vrai ; 4 faux (l'exploitant est l'entreprise qui utilise l'équipement)."
+  },
+  "badge": "Dossier ouvert",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": ["4.02", "4.09"],
+    "justification": "Hors REAC pour le TP TECVC : culture professionnelle du technicien et du chargé d'affaires. Côté attestation d'aptitude 2025, les codes 4.02 et 4.09 (consulter et tenir le registre de l'équipement) relèvent d'un document distinct du dossier d'exploitation, mais du même réflexe de traçabilité."
+  }
+}

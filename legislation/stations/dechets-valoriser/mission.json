@@ -1,0 +1,54 @@
+{
+  "slug": "dechets-valoriser",
+  "branche": "Déchets",
+  "titre": "Mission : Cinq marches avant la benne",
+  "client": "Le directeur d'une plateforme logistique du froid, qui fait remplacer deux groupes frigorifiques avec Clim'Études Sud.",
+  "situation": "La dépose va produire : un fluide récupéré propre et identifié, des chutes de cuivre, de l'isolant non recyclable et un fluide non réutilisable. Le directeur veut « tout mettre en benne et en finir vite ». Vous devez lui montrer qu'il existe un ordre de préférence entre les traitements et que chaque déchet du chantier a sa place sur cette échelle.",
+  "piece_a_produire": "Un schéma de l'échelle des cinq niveaux de traitement, avec sous chaque marche le déchet du chantier concerné, et un argument d'une phrase pour le directeur.",
+  "questions": [
+    {
+      "q": "Dans quel ordre de préférence classe-t-on les cinq modes de traitement d'un déchet ?",
+      "ecran": 1,
+      "reponse": "Du plus au moins souhaitable : prévention, réemploi, recyclage, valorisation énergétique, élimination."
+    },
+    {
+      "q": "Quelle différence faites-vous entre réemploi et recyclage ?",
+      "ecran": 3,
+      "reponse": "Le réemploi remet en service sans transformer : la matière garde sa forme (fluide propre réemployé sur la même machine). Le recyclage transforme le déchet pour refaire une matière première."
+    },
+    {
+      "q": "Que donne la valorisation énergétique, et pour quel type de déchet de chantier ?",
+      "ecran": 5,
+      "reponse": "Pas de matière neuve mais une énergie tirée du déchet, le plus souvent par combustion contrôlée ; pour ce qui ne peut être ni évité, ni réemployé, ni recyclé, par exemple certains isolants."
+    },
+    {
+      "q": "Dans quel cas l'élimination est-elle le bon choix ?",
+      "ecran": 6,
+      "reponse": "Seulement en dernier recours, quand aucun des niveaux précédents n'est possible, par exemple un fluide non réutilisable et non valorisable, détruit dans une installation dédiée."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque déchet du chantier au niveau de traitement adapté.",
+    "items": [
+      "A. Fluide récupéré propre, remis sur la même machine",
+      "B. Chutes de cuivre envoyées en fonderie",
+      "C. Chute d'isolant non recyclable brûlée pour produire de l'énergie",
+      "D. Fluide non réutilisable détruit",
+      "1. Élimination",
+      "2. Valorisation énergétique",
+      "3. Réemploi",
+      "4. Recyclage"
+    ],
+    "corrige": "A-3 (réemploi), B-4 (recyclage), C-2 (valorisation énergétique), D-1 (élimination)."
+  },
+  "badge": "Cinq marches",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "5.08"
+    ],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. La réutilisation et la gestion des fluides récupérés relèvent côté attestation 2025 du code 5.08."
+  }
+}

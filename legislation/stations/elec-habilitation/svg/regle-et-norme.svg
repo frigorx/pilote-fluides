@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-reg" aria-describedby="d-reg" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-reg">Le Code du travail dit quoi, la norme dit comment</title>
+  <desc id="d-reg">Trois blocs empilés, reliés par des flèches vers le bas. En haut, le Code du travail : l'habilitation est obligatoire et c'est l'employeur qui la délivre. Au milieu, un bloc orange : l'arrêté du 5 juillet 2024 désigne la norme. En bas, la norme NF C 18-510 : le comment, avec les symboles, la formation et le carnet de prescriptions. Une bande finale rappelle que le texte de la norme s'achète et que ce cours n'en cite que l'objet public.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .band{ font-size:17px; fill:#10233c; }
+  </style>
+  <rect x="0" y="0" width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="34" text-anchor="middle">Deux étages : la loi, puis la norme</text>
+
+  <rect x="80" y="56" width="640" height="106" rx="14" fill="#f7edd8" stroke="#a16207" stroke-width="3"/>
+  <text class="qui" x="400" y="90" text-anchor="middle" fill="#a16207">Le Code du travail : le quoi</text>
+  <text class="lbl" x="400" y="119" text-anchor="middle">l'habilitation est obligatoire</text>
+  <text class="lbl" x="400" y="146" text-anchor="middle">c'est l'employeur qui la délivre</text>
+
+  <line x1="400" y1="166" x2="400" y2="190" stroke="#5a6b7d" stroke-width="4"/>
+  <polygon points="400,198 390,182 410,182" fill="#5a6b7d"/>
+
+  <rect x="150" y="204" width="500" height="70" rx="35" fill="#fdeedd" stroke="#e8914a" stroke-width="3"/>
+  <text class="qui" x="400" y="235" text-anchor="middle">Arrêté du 5 juillet 2024</text>
+  <text class="lbl" x="400" y="260" text-anchor="middle">il désigne la norme à suivre</text>
+
+  <line x1="400" y1="278" x2="400" y2="302" stroke="#5a6b7d" stroke-width="4"/>
+  <polygon points="400,310 390,294 410,294" fill="#5a6b7d"/>
+
+  <rect x="80" y="316" width="640" height="106" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="qui" x="400" y="350" text-anchor="middle">NF C 18-510 : le comment</text>
+  <text class="lbl" x="400" y="379" text-anchor="middle">les symboles, la formation, le titre</text>
+  <text class="lbl" x="400" y="406" text-anchor="middle">le carnet de prescriptions</text>
+
+  <text class="band" x="400" y="458" text-anchor="middle">Le texte de la norme s'achète : on n'en donne que l'objet.</text>
+  <text class="band" x="400" y="482" text-anchor="middle">Ses grandes lignes se lisent dans les brochures de l'INRS.</text>
+</svg>

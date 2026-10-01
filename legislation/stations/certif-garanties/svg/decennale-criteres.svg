@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-labelledby="t-dec" aria-describedby="d-dec" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dec">Les deux portes de la garantie décennale</title>
+  <desc id="d-dec">En haut, deux cartes côte à côte. À gauche : le dommage compromet la solidité de
+    l'ouvrage. À droite : le dommage, en affectant un élément constitutif ou un élément d'équipement,
+    rend l'ouvrage impropre à sa destination. Deux flèches descendent de ces cartes vers un bloc
+    central : la responsabilité décennale, de plein droit. En dessous, à gauche, une carte
+    d'exonération : le constructeur y échappe seulement en prouvant que le dommage vient d'une cause
+    étrangère. À droite, une carte qui dit qui est constructeur : architecte, entrepreneur ou
+    technicien lié au client par un contrat de louage d'ouvrage.</desc>
+  <defs>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Deux critères, l'un ou l'autre</text>
+
+  <!-- Porte 1 -->
+  <rect x="30" y="52" width="400" height="104" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="qui" x="230" y="88" text-anchor="middle">Le dommage compromet</text>
+  <text class="qui" x="230" y="112" text-anchor="middle">la solidité de l'ouvrage</text>
+  <text class="sm" x="230" y="140" text-anchor="middle">la structure ne tient plus comme prévu</text>
+
+  <!-- Porte 2 -->
+  <rect x="470" y="52" width="400" height="104" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="qui" x="670" y="82" text-anchor="middle">Le dommage rend l'ouvrage</text>
+  <text class="qui" x="670" y="106" text-anchor="middle">impropre à sa destination</text>
+  <text class="sm" x="670" y="132" text-anchor="middle">en affectant un élément constitutif</text>
+  <text class="sm" x="670" y="150" text-anchor="middle">ou un élément d'équipement</text>
+
+  <!-- Flèches -->
+  <line x1="230" y1="160" x2="360" y2="196" stroke="#5a6b7d" stroke-width="4" marker-end="url(#pt)"/>
+  <line x1="670" y1="160" x2="540" y2="196" stroke="#5a6b7d" stroke-width="4" marker-end="url(#pt)"/>
+
+  <!-- Bloc central -->
+  <rect x="250" y="200" width="400" height="66" rx="14" fill="#3730a3"/>
+  <text class="band" x="450" y="240" text-anchor="middle">Responsabilité décennale, de plein droit</text>
+
+  <!-- Exonération -->
+  <rect x="30" y="296" width="400" height="118" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="14 8"/>
+  <text class="qui" x="230" y="328" text-anchor="middle" style="fill:#b06a00">Une seule sortie</text>
+  <text class="lbl" x="230" y="356" text-anchor="middle">Le constructeur prouve que le dommage</text>
+  <text class="lbl" x="230" y="378" text-anchor="middle">vient d'une cause étrangère.</text>
+  <text class="sm" x="230" y="402" text-anchor="middle">Clause excluant la décennale : réputée non écrite.</text>
+
+  <!-- Qui est constructeur -->
+  <rect x="470" y="296" width="400" height="118" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="3"/>
+  <text class="qui" x="670" y="328" text-anchor="middle">Qui est « constructeur » ?</text>
+  <text class="lbl" x="670" y="356" text-anchor="middle">Architecte, entrepreneur, technicien…</text>
+  <text class="lbl" x="670" y="378" text-anchor="middle">lié au client par un contrat</text>
+  <text class="lbl" x="670" y="400" text-anchor="middle">de louage d'ouvrage.</text>
+</svg>

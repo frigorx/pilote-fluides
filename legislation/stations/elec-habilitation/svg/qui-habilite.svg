@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"
+     aria-labelledby="t-qui" aria-describedby="d-qui" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-qui">Qui habilite : l'employeur, à la fin d'une chaîne de cinq étapes</title>
+  <desc id="d-qui">Cinq étapes empilées de haut en bas, reliées par de petites flèches : analyser l'activité, former en théorie et en pratique, obtenir l'attestation médicale d'absence de contre-indication quand l'habilitation autorise le voisinage de pièces nues sous tension, puis l'employeur délivre l'habilitation, étape encadrée en orange, et enfin le titre d'habilitation et le carnet de prescriptions sont remis. À droite, un travailleur en pictogramme plein reçoit un titre à la fin. L'animation fait apparaître les étapes une à une ; l'image fixe montre la chaîne complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+  </style>
+  <rect x="0" y="0" width="800" height="520" fill="#fffdf8"/>
+  <text class="ttl" x="290" y="34" text-anchor="middle">Du besoin au titre : cinq étapes</text>
+
+  <g>
+    <rect x="30" y="54" width="520" height="66" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="66" cy="87" r="19" fill="#1b3a63"/>
+    <text class="num" x="66" y="94" text-anchor="middle">1</text>
+    <text class="qui" x="98" y="81">Analyser l'activité</text>
+    <text class="lbl" x="98" y="106">quelles opérations, sur quelles installations ?</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.03;0.11;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="290" y1="123" x2="290" y2="133" stroke="#5a6b7d" stroke-width="3.5"/>
+    <polygon points="290,141 282,130 298,130" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.11;0.14;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="30" y="142" width="520" height="66" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="66" cy="175" r="19" fill="#1b3a63"/>
+    <text class="num" x="66" y="182" text-anchor="middle">2</text>
+    <text class="qui" x="98" y="169">Former, en théorie et en pratique</text>
+    <text class="lbl" x="98" y="194">c'est l'employeur qui s'en assure</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="290" y1="211" x2="290" y2="221" stroke="#5a6b7d" stroke-width="3.5"/>
+    <polygon points="290,229 282,218 298,218" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.27;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="30" y="230" width="520" height="66" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="66" cy="263" r="19" fill="#1b3a63"/>
+    <text class="num" x="66" y="270" text-anchor="middle">3</text>
+    <text class="qui" x="98" y="257">Attestation médicale</text>
+    <text class="lbl" x="98" y="282">absence de contre-indication (si voisinage)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.29;0.37;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="290" y1="299" x2="290" y2="309" stroke="#5a6b7d" stroke-width="3.5"/>
+    <polygon points="290,317 282,306 298,306" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.37;0.40;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="30" y="318" width="520" height="66" rx="12" fill="#fdeedd" stroke="#e8914a" stroke-width="3"/>
+    <circle cx="66" cy="351" r="19" fill="#e8914a"/>
+    <text class="num" x="66" y="358" text-anchor="middle">4</text>
+    <text class="qui" x="98" y="345">L'employeur délivre l'habilitation</text>
+    <text class="lbl" x="98" y="370">ni l'organisme de formation, ni le médecin</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.5;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="290" y1="387" x2="290" y2="397" stroke="#5a6b7d" stroke-width="3.5"/>
+    <polygon points="290,405 282,394 298,394" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5;0.53;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="30" y="406" width="520" height="66" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="66" cy="439" r="19" fill="#1b3a63"/>
+    <text class="num" x="66" y="446" text-anchor="middle">5</text>
+    <text class="qui" x="98" y="433">Titre et carnet de prescriptions</text>
+    <text class="lbl" x="98" y="458">remis au travailleur : symbole, ouvrages, limites</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.63;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="675" cy="170" r="32" fill="#1b3a63"/>
+    <path d="M610,290 q0,-75 65,-75 q65,0 65,75 z" fill="#1b3a63"/>
+    <rect x="600" y="316" width="150" height="112" rx="10" fill="#f7edd8" stroke="#a16207" stroke-width="3"/>
+    <text class="qui" x="675" y="347" text-anchor="middle" fill="#a16207">Titre</text>
+    <text class="lbl" x="675" y="373" text-anchor="middle">symbole</text>
+    <text class="lbl" x="675" y="395" text-anchor="middle">ouvrages</text>
+    <text class="lbl" x="675" y="417" text-anchor="middle">limites</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.76;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

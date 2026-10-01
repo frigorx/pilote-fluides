@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-dis" aria-describedby="d-dis" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-dis">La distance atténue : six décibels à chaque doublement</title>
+  <desc id="d-dis">Vue de côté : une unité extérieure à gauche émet un son qui s'éloigne en arcs violets. À deux mètres, le niveau est de 54 dB(A) ; à quatre mètres, 48 ; à huit mètres, 42. Deux accolades montrent que chaque doublement de la distance fait baisser le niveau de 6 dB(A). Le niveau ne baisse pas de moitié : il perd une valeur fixe à chaque doublement. L'animation fait partir l'onde puis fait apparaître les niveaux au moment où elle les atteint ; l'image fixe montre les trois distances et leurs niveaux.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:22px; fill:#10233c; }
+    .bub  { font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .dist { font-weight:bold; font-size:19px; fill:#10233c; }
+    .brk  { font-weight:bold; font-size:18px; fill:#b45309; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .lblb { font-size:19px; font-weight:bold; fill:#10233c; }
+  </style>
+  <defs>
+    <clipPath id="cl"><rect x="76" y="150" width="724" height="190"/></clipPath>
+  </defs>
+
+  <text class="ttl" x="400" y="28" text-anchor="middle">La distance atténue le son</text>
+
+  <!-- sol, unité -->
+  <rect x="0" y="340" width="800" height="14" fill="#e6e0d4"/>
+  <line x1="0" y1="340" x2="800" y2="340" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="14" y="215" width="56" height="125" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="42" cy="285" r="19" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="42" cy="285" r="4" fill="#1b3a63"/>
+  <text class="dist" x="42" y="376" text-anchor="middle">PAC</text>
+
+  <!-- repères de distance : 2 m, 4 m, 8 m (chaque groupe apparaît quand l'onde l'atteint) -->
+  <g>
+    <line x1="236" y1="136" x2="236" y2="340" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 6"/>
+    <circle cx="76" cy="290" r="160" fill="none" stroke="#6d28d9" stroke-width="6" opacity="0.85" clip-path="url(#cl)"/>
+    <rect x="176" y="98" width="120" height="38" rx="19" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bub" x="236" y="124" text-anchor="middle">54 dB(A)</text>
+    <text class="dist" x="236" y="376" text-anchor="middle">2 m</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.11;0.15;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="396" y1="136" x2="396" y2="340" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 6"/>
+    <circle cx="76" cy="290" r="320" fill="none" stroke="#6d28d9" stroke-width="5" opacity="0.65" clip-path="url(#cl)"/>
+    <rect x="336" y="98" width="120" height="38" rx="19" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bub" x="396" y="124" text-anchor="middle">48 dB(A)</text>
+    <text class="dist" x="396" y="376" text-anchor="middle">4 m</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.28;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="716" y1="136" x2="716" y2="340" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="7 6"/>
+    <circle cx="76" cy="290" r="640" fill="none" stroke="#6d28d9" stroke-width="4" opacity="0.5" clip-path="url(#cl)"/>
+    <rect x="656" y="98" width="120" height="38" rx="19" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bub" x="716" y="124" text-anchor="middle">42 dB(A)</text>
+    <text class="dist" x="716" y="376" text-anchor="middle">8 m</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.49;0.53;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- accolades -6 dB(A) -->
+  <g>
+    <path d="M236,88 v-12 h160 v12" fill="none" stroke="#b45309" stroke-width="3" stroke-linejoin="round"/>
+    <text class="brk" x="316" y="66" text-anchor="middle">−6 dB(A)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.28;0.32;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <path d="M396,88 v-12 h320 v12" fill="none" stroke="#b45309" stroke-width="3" stroke-linejoin="round"/>
+    <text class="brk" x="556" y="66" text-anchor="middle">−6 dB(A)</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.53;0.57;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- onde mobile (décor animé : invisible à l'arrêt) -->
+  <circle cx="76" cy="290" r="10" fill="none" stroke="#6d28d9" stroke-width="6" opacity="0" clip-path="url(#cl)">
+    <animate attributeName="r" values="10;640;640" keyTimes="0;0.5;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.9;0.9;0;0" keyTimes="0;0.02;0.48;0.5;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- règle -->
+  <rect x="40" y="398" width="720" height="84" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lblb" x="400" y="430" text-anchor="middle">Distance doublée : le niveau perd 6 dB(A), sans obstacle</text>
+  <text class="lbl" x="400" y="458" text-anchor="middle">Exemple de la fiche AFPAC n° 1, en champ libre : 54, 48, puis 42 dB(A)</text>
+</svg>

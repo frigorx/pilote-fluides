@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img"
+     aria-labelledby="t-dm" aria-describedby="d-dm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dm">La démarche du technicien d'études : du fluide à la décision</title>
+  <desc id="d-dm">Un logigramme. En haut, trois étapes reliées de gauche à droite : un, la classe du fluide selon la classification internationale ; deux, la catégorie d'accès du local, a, b ou c ; trois, l'emplacement du système, c'est-à-dire où se trouvent les parties qui contiennent le fluide. De la troisième étape, une flèche descend vers un losange qui pose la question : la charge du circuit est-elle inférieure ou égale à la limite calculée ? À gauche du losange, la réponse oui mène à une carte : conforme, on retient la solution et on la documente. À droite, la réponse non mène à une carte : on agit sur un levier, et cinq pastilles en dessous les listent : réduire la charge, changer l'emplacement, passer en système indirect, ajouter détection et ventilation, changer de fluide. Une bande en bas rappelle que la limite se lit dans la norme en vigueur et la fiche du constructeur, jamais à l'estime.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .st  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lblb{ font-size:17px; fill:#10233c; font-weight:bold; }
+    .q   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .yn  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+  <defs><marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1b3a63"/></marker></defs>
+
+  <text class="ttl" x="450" y="32" text-anchor="middle">Du fluide à la décision</text>
+
+  <!-- Trois étapes -->
+  <rect x="20" y="48" width="270" height="82" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="48" cy="76" r="16" fill="#0f766e"/><text class="num" x="48" y="83" text-anchor="middle">1</text>
+  <text class="st" x="74" y="83">Classe du fluide</text>
+  <text class="lbl" x="40" y="114">A1, A2L, A2, A3, B2L…</text>
+
+  <rect x="315" y="48" width="270" height="82" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="343" cy="76" r="16" fill="#0f766e"/><text class="num" x="343" y="83" text-anchor="middle">2</text>
+  <text class="st" x="369" y="83">Catégorie d'accès</text>
+  <text class="lbl" x="335" y="114">a, b ou c : qui a accès ?</text>
+
+  <rect x="610" y="48" width="270" height="82" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="638" cy="76" r="16" fill="#0f766e"/><text class="num" x="638" y="83" text-anchor="middle">3</text>
+  <text class="st" x="664" y="83">Emplacement</text>
+  <text class="lbl" x="630" y="114">où sont les parties du fluide ?</text>
+
+  <line x1="291" y1="89" x2="312" y2="89" stroke="#1b3a63" stroke-width="4" marker-end="url(#fl)"/>
+  <line x1="586" y1="89" x2="607" y2="89" stroke="#1b3a63" stroke-width="4" marker-end="url(#fl)"/>
+
+  <!-- vers le losange -->
+  <path d="M745,131 V152 H450 V174" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linejoin="round" marker-end="url(#fl)"/>
+
+  <!-- Losange de décision -->
+  <polygon points="450,178 610,250 450,322 290,250" fill="#fdf3e3" stroke="#e8914a" stroke-width="4"/>
+  <text class="q" x="450" y="244" text-anchor="middle">La charge du circuit est-elle</text>
+  <text class="q" x="450" y="266" text-anchor="middle">≤ la limite calculée ?</text>
+
+  <!-- Oui -->
+  <line x1="288" y1="250" x2="214" y2="250" stroke="#1b3a63" stroke-width="4" marker-end="url(#fl)"/>
+  <text class="yn" x="252" y="238" text-anchor="middle" fill="#0f766e">oui</text>
+  <rect x="20" y="206" width="192" height="88" rx="14" fill="#e2ede7" stroke="#0f766e" stroke-width="4"/>
+  <text class="lblb" x="116" y="234" text-anchor="middle">Conforme : on retient</text>
+  <text class="lblb" x="116" y="256" text-anchor="middle">la solution et on</text>
+  <text class="lblb" x="116" y="278" text-anchor="middle">la documente</text>
+
+  <!-- Non -->
+  <line x1="612" y1="250" x2="686" y2="250" stroke="#1b3a63" stroke-width="4" marker-end="url(#fl)"/>
+  <text class="yn" x="648" y="238" text-anchor="middle" fill="#c0392b">non</text>
+  <rect x="688" y="206" width="192" height="88" rx="14" fill="#f9e3dd" stroke="#c0392b" stroke-width="4" stroke-dasharray="9 5"/>
+  <text class="lblb" x="784" y="234" text-anchor="middle">Non : on agit sur</text>
+  <text class="lblb" x="784" y="256" text-anchor="middle">un des leviers</text>
+  <text class="lblb" x="784" y="278" text-anchor="middle">ci-dessous</text>
+
+  <!-- Leviers -->
+  <path d="M784,295 V332 H102 M798,332 H784" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <g stroke="#c0392b" stroke-width="3">
+    <line x1="102" y1="332" x2="102" y2="348"/><line x1="276" y1="332" x2="276" y2="348"/>
+    <line x1="450" y1="332" x2="450" y2="348"/><line x1="624" y1="332" x2="624" y2="348"/>
+    <line x1="798" y1="332" x2="798" y2="348"/>
+  </g>
+  <g fill="#fffdf8" stroke="#c0392b" stroke-width="3">
+    <rect x="20" y="350" width="164" height="66" rx="12"/><rect x="194" y="350" width="164" height="66" rx="12"/>
+    <rect x="368" y="350" width="164" height="66" rx="12"/><rect x="542" y="350" width="164" height="66" rx="12"/>
+    <rect x="716" y="350" width="164" height="66" rx="12"/>
+  </g>
+  <g class="lbl" text-anchor="middle" style="font-size:17px;fill:#10233c">
+    <text x="102" y="388">réduire</text><text x="102" y="408">la charge</text>
+    <text x="276" y="388">changer</text><text x="276" y="408">d'emplacement</text>
+    <text x="450" y="388">passer en</text><text x="450" y="408">système indirect</text>
+    <text x="624" y="388">ajouter détection</text><text x="624" y="408">et ventilation</text>
+    <text x="798" y="388">changer</text><text x="798" y="408">de fluide</text>
+  </g>
+
+  <rect x="20" y="440" width="860" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="472" text-anchor="middle">La limite se lit dans la norme en vigueur et la fiche du constructeur : jamais à l'estime.</text>
+</svg>

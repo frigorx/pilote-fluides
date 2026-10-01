@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le SSI — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le système de sécurité incendie comme un chef d'orchestre — détection, mise en sécurité, catégories A à E, zones, scénario, ce que le lot CVC doit fournir, réception et entretien.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/incendie-ssi/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Incendie (#b91c1c).
+     « Le SSI » — détection, asservis.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les narrations de cette station ne sont pas encore dans l'index audio
+     global : elle parle avec la voix du navigateur tant que les MP3 ne
+     sont pas fabriqués (chaîne edge-tts du réseau).
+
+     SOURCES : arrêté du 25 juin 1980 modifié (règlement de sécurité ERP),
+     articles MS 53 à MS 60 et MS 68, lus sur Légifrance le 30/09/2026 ;
+     Code du travail R. 4227-34 et R. 4227-36. Voir FOND.md.
+     Aucune valeur chiffrée n'est utilisée hors de ces textes.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Incendie · niveau BTS</p>
+  <h1>Le SSI — détection et asservissements</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-incendie.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez décrire le système de sécurité incendie comme un chef d'orchestre — ce qui détecte, ce qui traite, ce qui agit —, lire l'emboîtement des zones, situer les catégories A à E, comprendre comment l'alarme d'une zone atteint les dispositifs de cette zone, et dire ce que vous demandez au lot CVC : commandes, retours de position, arrêt des ventilations. Vous savez aussi comment on vérifie et on entretient l'installation.</p>
+    <p><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — compétences <strong>CP7</strong> (ventilation tertiaire) et <strong>CP10</strong> (centrale de traitement d'air), pour la partie « ordres du système de sécurité incendie reçus par les ventilations ».</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez les trois colonnes, de gauche à droite. Dans la première, ce qui recueille l'information : un détecteur, rond, et un déclencheur manuel, le petit boîtier carré. Une flèche mène à la colonne du centre : le centralisateur de mise en sécurité, qui traite. Une seconde flèche mène à la dernière colonne, cinq fonctions de mise en sécurité, dont l'arrêt de certaines installations techniques. C'est cette ligne qui concerne votre lot ventilation. Le tout forme le système de sécurité incendie, le SSI : il recueille, il traite, il agit, comme un chef d'orchestre.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Un chef d'orchestre : recueillir, traiter, agir</h2>
+    <p>Dans un établissement recevant du public (ERP), le règlement définit le <strong>système de sécurité incendie (SSI)</strong> comme l'ensemble des matériels qui servent à <strong>recueillir</strong> les informations ou les ordres liés à la seule sécurité incendie, à les <strong>traiter</strong>, et à effectuer les fonctions nécessaires à la <strong>mise en sécurité</strong> de l'établissement (article MS 53, § 1).</p>
+    <p>La mise en sécurité peut comporter cinq fonctions : le compartimentage, l'évacuation des personnes (diffusion du signal, gestion des issues), le désenfumage, l'extinction automatique et la <strong>mise à l'arrêt de certaines installations techniques</strong>. Dans un bâtiment tertiaire, la ventilation en fait souvent partie : c'est ce qui rend cette station utile à un technicien d'études CVC.</p>
+    <figure>
+      <img src="svg/ssi-chef-orchestre.svg" alt="Trois colonnes reliées par des flèches. À gauche, recueillir : un détecteur et un déclencheur manuel. Au centre, traiter : le centralisateur de mise en sécurité. À droite, agir : cinq fonctions, compartimentage, évacuation, désenfumage, extinction automatique, arrêt d'installations techniques. En bas, la définition du système de sécurité incendie.">
+      <figcaption>Recueillir, traiter, agir : le SSI fonctionne comme un chef d'orchestre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="En haut à gauche, le détecteur automatique et le déclencheur manuel. Chacun est relié à un équipement de commande et de signalisation, puis une flèche part vers la mise en sécurité. Le texte demande à cette détection de déceler tout début d'incendie dans les meilleurs délais, et d'éliminer les fausses alarmes sans nuire à son efficacité. En bas, deux cartes : pour une installation neuve ou modifiée, on vérifie avec la combustion d'un foyer type ; dans tous les autres cas, avec des essais fonctionnels. La carte de gauche est cerclée de rouge, en trait plein ; celle de droite est en pointillé.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La détection : détecter tôt, éviter les fausses alarmes</h2>
+    <p>Le système de détection regroupe des <strong>détecteurs</strong> et des <strong>déclencheurs manuels</strong>, reliés à un équipement de commande et de signalisation. Il doit <strong>déceler et signaler tout début d'incendie dans les meilleurs délais</strong> et mettre en œuvre les équipements de sécurité qui lui sont asservis (MS 56, § 2).</p>
+    <ul>
+      <li>Pendant la présence du public, la détection suppose un <strong>personnel permanent et qualifié</strong>, capable d'alerter les sapeurs-pompiers (MS 57, § 1).</li>
+      <li>Toutes dispositions doivent être prises pour <strong>éliminer les fausses alarmes</strong> sans nuire à l'efficacité (MS 57, § 2).</li>
+      <li>La fonction est vérifiée par la combustion d'un <strong>foyer type</strong> pour une installation neuve ou modifiée, et par des <strong>essais fonctionnels</strong> dans les autres cas (MS 56, § 3).</li>
+    </ul>
+    <figure>
+      <img src="svg/ssi-detection.svg" alt="En haut à gauche, un détecteur automatique et un déclencheur manuel, chacun relié à un équipement de commande et de signalisation, puis une flèche vers la mise en sécurité. En bas, deux cartes : installation neuve ou modifiée, combustion d'un foyer type ; tous les autres cas, essais fonctionnels.">
+      <figcaption>Deux façons de vérifier la même fonction, selon que l'installation est neuve ou non.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Regardez ce grand cadre en pointillé : c'est la zone de diffusion d'alarme. Dedans, deux cadres pleins, les zones de mise en sécurité A et B. Dans la zone A, deux petits cadres en pointillé, les zones de détection un et deux ; dans la B, une seule, la trois. Une flamme apparaît en zone de détection un : la zone de mise en sécurité A, qui la contient, devient rouge, alors que la B reste neutre. La règle est celle de l'emboîtement. Et ces trois sortes de zones n'ont pas forcément les mêmes limites sur le plan du bâtiment.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Les zones : trois sortes, emboîtées</h2>
+    <ul>
+      <li>Une <strong>zone de détection</strong> est surveillée par un ensemble de détecteurs et/ou de déclencheurs manuels, avec une signalisation commune (MS 54).</li>
+      <li>Une <strong>zone de mise en sécurité</strong> est une zone susceptible d'être mise en sécurité par le système de mise en sécurité incendie (MS 54).</li>
+      <li>Une <strong>zone de diffusion d'alarme</strong> englobe une ou plusieurs zones de mise en sécurité, et chaque zone de mise en sécurité englobe une ou plusieurs zones de détection (MS 55, § 1).</li>
+    </ul>
+    <p>Ces trois zones n'ont pas nécessairement les mêmes limites géographiques (MS 54). En dehors des cas prévus par le règlement, c'est au concepteur ou à l'exploitant de <strong>proposer à la commission de sécurité</strong> le découpage en zones (MS 55, § 2).</p>
+    <figure>
+      <img src="svg/ssi-zones.svg" alt="Un grand cadre en pointillé, la zone de diffusion d'alarme, contient deux zones de mise en sécurité, A et B. La zone A contient deux zones de détection, la B en contient une. Une flamme dans la zone de détection 1 teinte en rouge la zone de mise en sécurité A qui la contient ; la zone B reste neutre.">
+      <figcaption>Le foyer est détecté dans une zone de détection ; c'est la zone de mise en sécurité qui l'englobe qui réagit.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Suivez l'impulsion rouge. Elle part du détecteur, entouré en pointillé avec le déclencheur manuel, et rejoint le centralisateur de mise en sécurité, qui passe au rouge. De là, quatre lignes partent vers la zone de mise en sécurité. Quatre dispositifs actionnés de sécurité changent d'état : le clapet coupe-feu se ferme, le volet de désenfumage s'ouvre, la porte coupe-feu se ferme, et la ventilation de la centrale de traitement d'air, la CTA, s'arrête. Chaque dispositif est nommé, et son état est écrit en gris : la couleur seule n'explique rien.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La mise en sécurité : le centralisateur et les DAS</h2>
+    <p>Le <strong>système de mise en sécurité incendie</strong> agit soit à partir des informations du système de détection, soit à partir d'ordres de <strong>commandes manuelles</strong>. Il comprend des <strong>dispositifs actionnés de sécurité (DAS)</strong>, répartis éventuellement par zones de mise en sécurité, et les équipements nécessaires pour en assurer la commande (MS 59, § 1) : le <strong>centralisateur de mise en sécurité incendie</strong>.</p>
+    <ul>
+      <li>Le <strong>désenfumage</strong> est commandé par la détection automatique quand les dispositions particulières l'imposent ; pour les cages d'escalier, la commande est <strong>uniquement manuelle</strong> (MS 60, § 1).</li>
+      <li>Les mécanismes de commande des DAS doivent avoir un <strong>procès-verbal en cours de validité</strong> d'un laboratoire agréé ; les portes coupe-feu et les clapets télécommandés doivent être admis à la <strong>marque NF</strong> (MS 60, § 4).</li>
+    </ul>
+    <p>Les autres stations de la sous-ligne détaillent les DAS du CVC : les <a href="../incendie-clapets-coupe-feu/">clapets coupe-feu</a> et le <a href="../incendie-desenfumage/">désenfumage</a>.</p>
+    <figure>
+      <img src="svg/ssi-propagation.svg" alt="À gauche, une zone de détection en pointillé avec une flamme, un détecteur et un déclencheur manuel, reliés au centralisateur de mise en sécurité au centre. À droite, la zone de mise en sécurité regroupe quatre dispositifs : un clapet coupe-feu qui se ferme, un volet de désenfumage qui s'ouvre, une porte coupe-feu qui se ferme, et la ventilation de la centrale de traitement d'air qui s'arrête.">
+      <figcaption>L'alarme part du détecteur, passe par le centralisateur et atteint les DAS de la zone.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Voici un tableau à cinq colonnes, A, B, C, D et E, de la plus sévère à la moins sévère. Chaque ligne est une exigence lue dans le règlement, avec l'article en gris. La première, la détection qui déclenche les dispositifs sans temporisation, ne coche que la catégorie A. Le centralisateur à marque NF et le contrat d'entretien obligatoire cochent A et B. La dernière ligne, les seuls dispositifs télécommandés que sont les portes coupe-feu et les issues de secours, coche D et E. La colonne C reste sans coche : son contenu se lit dans la norme.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Les catégories A à E : de la plus sévère à la moins sévère</h2>
+    <p>Les SSI répondent aux normes en vigueur et aux principes du règlement, et sont classés en <strong>cinq catégories</strong>, appelées A, B, C, D et E, <strong>par ordre de sévérité décroissante</strong>. Le règlement de chaque type d'établissement précise, le cas échéant, la catégorie exigée (MS 53, §§ 2 et 3).</p>
+    <ul>
+      <li><strong>A</strong> : quand le règlement prévoit que la détection automatique déclenche les DAS, ce déclenchement se fait <strong>sans temporisation</strong> (MS 60, § 1).</li>
+      <li><strong>A et B</strong> : centralisateur admis à la marque NF (MS 59, § 2) et <strong>contrat d'entretien toujours obligatoire</strong> (MS 68).</li>
+      <li><strong>D et E</strong> : les seuls DAS que l'alarme peut télécommander sont les <strong>portes coupe-feu à fermeture automatique</strong> et le <strong>déverrouillage des issues de secours</strong> (MS 60, § 3).</li>
+    </ul>
+    <p>Ce que la catégorie C impose se lit dans la norme d'installation, payante : ce tableau ne l'invente pas.</p>
+    <figure>
+      <img src="svg/ssi-categories.svg" alt="Un tableau : en colonnes, les catégories A, B, C, D et E ; en lignes, quatre exigences. La détection qui déclenche les DAS sans temporisation : A. Centralisateur à marque NF : A et B. Contrat d'entretien obligatoire : A et B. Seuls DAS télécommandés, les portes coupe-feu et les issues : D et E. La colonne C n'a aucune coche.">
+      <figcaption>Une coche par exigence lue dans le règlement : la colonne C attend la norme.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Un tableau à trois lignes : alarme en zone un, deux, trois. En colonnes, les dispositifs de chaque zone, et la ventilation commune. Un disque plein veut dire commandé, un cercle vide, non commandé. Regardez la ligne de la zone deux : seuls les dispositifs de la zone deux sont commandés, plus la ventilation commune. L'animation promène une bande orange d'une ligne à l'autre. Attention, c'est un exemple fictif : le vrai scénario s'écrit projet par projet, et le texte demande au concepteur de proposer le découpage à la commission de sécurité.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le scénario de mise en sécurité : zone par zone</h2>
+    <p>Un scénario de mise en sécurité répond à une question simple : <strong>quand telle zone détecte, quels dispositifs sont commandés ?</strong> Il se lit comme un tableau à double entrée : les zones en lignes, les DAS en colonnes.</p>
+    <ul>
+      <li>Le découpage en zones est proposé par le concepteur ou l'exploitant à la commission de sécurité (MS 55, § 2).</li>
+      <li>Les DAS sont « répartis éventuellement par zones de mise en sécurité » (MS 59, § 1) : le scénario dit, zone par zone, quels dispositifs répondent à quelle détection.</li>
+      <li>L'exemple ci-dessous est <strong>fictif</strong> : il montre la façon de lire un scénario, pas un scénario à recopier. Ici, une ventilation commune s'arrête quelle que soit la zone en alarme.</li>
+    </ul>
+    <figure>
+      <img src="svg/ssi-scenario-zone.svg" alt="Un tableau à trois lignes, alarme en zone 1, 2 et 3, et quatre colonnes : dispositifs des zones 1, 2 et 3, et ventilation commune. Un disque plein signifie commandé, un cercle vide non commandé. Chaque ligne commande les dispositifs de sa zone et la ventilation commune. Une bande orange se déplace d'une ligne à l'autre. En bas, la mention exemple fictif.">
+      <figcaption>Exemple fictif : la ligne de la zone en alarme dit ce qui est commandé.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="À gauche, le lot sécurité incendie et son centralisateur ; à droite, le lot CVC, avec un clapet, un volet et une ventilation. Entre les deux, une flèche pleine : les ordres du SSI, fermer, ouvrir, arrêter. Une flèche en pointillé orange revient : les informations du CVC, comme la position des dispositifs. En bas, deux cartes. Le règlement impose la marque NF pour les clapets télécommandés et les portes coupe-feu, et un procès-verbal de laboratoire pour la commande. Le reste, qui fournit, qui câble, qui règle, se décide par écrit dans le cahier des charges.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Ce que le lot CVC doit fournir</h2>
+    <p>Le SSI commande, le CVC obéit : la <strong>frontière entre les deux lots</strong> doit être écrite. Le règlement fixe le cadre, le cahier des charges du projet règle le reste.</p>
+    <ol>
+      <li><strong>Ce que le règlement impose</strong> : clapets télécommandés et portes coupe-feu admis à la marque NF ; mécanisme de commande des DAS avec procès-verbal d'un laboratoire agréé (MS 60, § 4).</li>
+      <li><strong>Ce que le cahier des charges fixe</strong> : qui fournit les organes, qui câble, qui règle ; quelles <strong>commandes</strong> reçoivent les clapets, volets et ventilateurs de désenfumage ; quels <strong>contacts de position</strong> remontent au centralisateur ; quelles ventilations <strong>s'arrêtent</strong> et sur quel ordre.</li>
+    </ol>
+    <p class="formule">Pratique de bureau d'études : la liste du point 2 est à faire valider par la relecture métier avant tout usage en projet.</p>
+    <figure>
+      <img src="svg/ssi-lot-cvc.svg" alt="À gauche, le lot sécurité incendie avec son centralisateur. À droite, le lot CVC avec un clapet, un volet et une ventilation. Une flèche pleine, ordres du SSI : fermer, ouvrir, arrêter. Une flèche en pointillé orange, informations du CVC : position des dispositifs. En bas, deux cartes : ce que le règlement impose, ce que le cahier des charges fixe.">
+      <figcaption>Deux lots, une frontière à écrire : ordres dans un sens, informations dans l'autre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Quatre cartes, quatre temps de vie du système. Un : concevoir, les zones sont proposées à la commission de sécurité. Deux : installer, par une entreprise spécialisée et qualifiée. Trois : vérifier, avec un foyer type pour une installation neuve ou modifiée, sinon par des essais fonctionnels. Quatre : entretenir, sous contrat, avec la preuve au registre de sécurité ; ce contrat est toujours obligatoire pour les catégories A et B. En bas, le réflexe : demander le scénario de mise en sécurité, zone par zone, et repérer ce que votre lot doit fournir.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Réception, essais, entretien — bilan</h2>
+    <ul>
+      <li><strong>Concevoir</strong> : les zones sont proposées à la commission de sécurité (MS 55, § 2).</li>
+      <li><strong>Installer</strong> : la détection est posée par des entreprises spécialisées et qualifiées, avec des équipements de détection à la marque NF ou équivalente (MS 58, §§ 1 et 2).</li>
+      <li><strong>Vérifier</strong> : foyer type pour une installation neuve ou modifiée, sinon essais fonctionnels (MS 56, § 3).</li>
+      <li><strong>Entretenir</strong> : contrat avec un installateur qualifié, notice et contrat annexés au registre de sécurité (MS 58, §§ 3 et 4) ; entretien du SSI par un technicien compétent ou par l'installateur, avec un contrat obligatoire pour les catégories A et B (MS 68).</li>
+    </ul>
+    <p class="formule">Le réflexe : demander le scénario zone par zone et repérer ce que le lot CVC doit fournir.</p>
+    <figure>
+      <img src="svg/ssi-bilan.svg" alt="Quatre cartes numérotées : 1 concevoir, les zones proposées à la commission de sécurité ; 2 installer, entreprise spécialisée et qualifiée ; 3 vérifier, foyer type si neuf ou modifié, sinon essais fonctionnels ; 4 entretenir, contrat d'entretien et trace au registre de sécurité. En bas, le réflexe du technicien d'études.">
+      <figcaption>Quatre temps, quatre articles : de la conception à l'entretien.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Sur alarme, la centrale de traitement d'air d'un bâtiment doit s'arrêter. À quelle fonction de mise en sécurité, citée par le règlement, cela se rattache-t-il ? Reprenez le schéma de l'écran un avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">L'arrêt d'une CTA sur alarme : à quelle fonction se rattache-t-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/ssi-chef-orchestre.svg" alt="Vignette de rappel : recueillir, traiter, agir, avec les cinq fonctions de mise en sécurité dans la colonne de droite.">
+      <figcaption>Rappel de l'écran 1 — les cinq fonctions de la mise en sécurité.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le compartimentage, au sens large du terme</button>
+      <button type="button" data-answer="b">L'évacuation : diffusion du signal et gestion des issues</button>
+      <button type="button" data-answer="bonne">La mise à l'arrêt d'installations techniques</button>
+      <button type="button" data-answer="d">L'extinction automatique des locaux concernés</button>
+    </div>
+    <p class="feedback" hidden data-explication="Parmi les fonctions que peut comporter la mise en sécurité, le règlement cite la mise à l'arrêt de certaines installations techniques (MS 53, § 1). C'est là que se rattache l'arrêt d'une ventilation."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un concepteur découpe un bâtiment en zones. Quelle imbrication respecte le règlement ? Regardez les cadres emboîtés de l'écran trois avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Quelle imbrication des zones respecte le règlement ?</h2>
+    <figure class="vignette">
+      <img src="svg/ssi-zones.svg" alt="Vignette de rappel : la zone de diffusion d'alarme contient des zones de mise en sécurité, qui contiennent des zones de détection.">
+      <figcaption>Rappel de l'écran 3 — trois sortes de zones, emboîtées.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Une zone de détection englobe plusieurs zones de mise en sécurité</button>
+      <button type="button" data-answer="bonne">Une zone de mise en sécurité englobe des zones de détection</button>
+      <button type="button" data-answer="c">Une zone de détection couvre toujours un seul étage</button>
+      <button type="button" data-answer="d">Les trois sortes de zones ont toujours exactement les mêmes limites</button>
+    </div>
+    <p class="feedback" hidden data-explication="Chaque zone de mise en sécurité englobe une ou plusieurs zones de détection, et une zone de diffusion d'alarme englobe une ou plusieurs zones de mise en sécurité (MS 55, § 1). Les limites géographiques ne sont pas nécessairement les mêmes (MS 54)."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un projet exige un système de sécurité incendie de catégorie E. Lequel de ces dispositifs son alarme peut-elle télécommander ? Reprenez la dernière ligne du tableau de l'écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Catégorie E : quel dispositif l'alarme peut-elle télécommander ?</h2>
+    <figure class="vignette">
+      <img src="svg/ssi-categories.svg" alt="Vignette de rappel : le tableau des catégories A à E, avec la ligne des seuls dispositifs télécommandés cochée en D et E.">
+      <figcaption>Rappel de l'écran 5 — la ligne des seuls DAS télécommandés.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un volet de désenfumage de circulation</button>
+      <button type="button" data-answer="b">Un clapet coupe-feu télécommandé de gaine de ventilation</button>
+      <button type="button" data-answer="c">L'arrêt de la centrale de traitement d'air</button>
+      <button type="button" data-answer="bonne">Une porte coupe-feu à fermeture automatique</button>
+    </div>
+    <p class="feedback" hidden data-explication="Pour les catégories D et E, les seuls DAS pouvant être télécommandés par l'alarme sont les portes résistant au feu à fermeture automatique et le déverrouillage des portes d'issue de secours (MS 60, § 3). Un clapet télécommandé n'en fait pas partie."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Une installation de détection neuve vient d'être posée. Comment vérifie-t-on d'abord qu'elle remplit sa fonction ? Souvenez-vous des deux cartes de l'écran deux, reprises dans le bilan.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Détection neuve : comment vérifie-t-on qu'elle remplit sa fonction ?</h2>
+    <figure class="vignette">
+      <img src="svg/ssi-bilan.svg" alt="Vignette de rappel : les quatre temps de vie d'un SSI, dont la carte vérifier : foyer type si neuf ou modifié, sinon essais fonctionnels.">
+      <figcaption>Rappel du bilan — la carte « Vérifier ».</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Par la combustion d'un foyer type adapté au risque</button>
+      <button type="button" data-answer="b">Par des essais fonctionnels avec un appareil adapté au détecteur</button>
+      <button type="button" data-answer="c">Par la lecture du procès-verbal du centralisateur</button>
+      <button type="button" data-answer="d">Par un simple contrôle visuel de chaque détecteur au plafond</button>
+    </div>
+    <p class="feedback" hidden data-explication="Pour une première vérification d'une installation neuve ou modifiée, ou après un changement de la nature des risques, la fonction est réputée satisfaite lorsqu'elle est remplie lors de la combustion d'un foyer type. Les essais fonctionnels valent dans les autres cas (MS 56, § 3)."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../incendie-clapets-coupe-feu/"><strong>Les clapets coupe-feu</strong></a> (même sous-ligne)
+      — le DAS qui se ferme dans la gaine : ce que le SSI lui commande.</li>
+    <li><a href="../incendie-desenfumage/"><strong>Le désenfumage</strong></a> (même sous-ligne)
+      — les volets et ventilateurs que le SSI ouvre et met en marche, et la commande manuelle des escaliers.</li>
+    <li><a href="../incendie-classer-le-bati/"><strong>Classer le bâti</strong></a> (même sous-ligne)
+      — le type et la catégorie de l'établissement (1 à 5), dont dépend la catégorie de SSI exigée (A à E) ; ne pas confondre les deux échelles.</li>
+    <li><a href="../elec-nf-c-15-100/"><strong>NF C 15-100</strong></a> (autre sous-ligne)
+      — l'alimentation électrique des matériels que le SSI commande.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

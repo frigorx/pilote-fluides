@@ -1,13 +1,49 @@
 # PROMPT-REPRISE — le réseau Législation
 
 > **À LIRE EN PREMIER** dans toute nouvelle session sur ce chantier.
-> Ouvert le 23/08/2026. Dernière mise à jour : **27/09/2026** — audit complet des
-> 29 stations, plan replié pour tenir dans la page, scènes Codex, quiz rééquilibrés.
+> Ouvert le 23/08/2026. Dernière mise à jour : **30/09/2026** — LE RÉSEAU EST COMPLET (57 stations), carnet du
+> chargé d'affaires, bâtiment 3D. (27/09 : audit des 29 premières, plan replié, scènes Codex.)
 > (Les sections datées du 24/08 restent vraies sauf mention contraire ci-dessous.)
 > La vérité du réseau technique voisin reste le `REPRISE.md` à la racine du dépôt ;
 > ce fichier-ci est la vérité DU RÉSEAU LÉGISLATION.
 
 **En ligne** : https://inerweb.fr/legislation/
+
+## ▶ 30/09/2026 — réseau complet, carnet, bâtiment 3D (état qui fait foi)
+
+Commande de F. Henninot (autonomie totale, « aucune décision ne m'est confiée ») : finir le réseau,
+effet waouh, apprentissage ludique, livret papier qui renvoie à chaque station, progression BTS.
+Travail fait dans le worktree `C:\git\pilote-fluides-chantier` (branche `chantier-2026-09-30`),
+**soumis à validation avant toute mise en ligne**. Plan, briefs et journal :
+`.planning/2026-09-30-finir-le-reseau/`.
+
+- **28 stations produites** (une par agent Sonnet, gabarit aptitude-capacite) : Électrique (6),
+  Fluidique (NF EN 378, Traçabilité), Incendie (6), Acoustique (5), Certifications (4), Droit du
+  travail (5). **57 stations sur 57.** Chaque FOND.md porte ses sources et son « À sourcer ».
+  Doctrine tenue : aucun chiffre non sourcé ; 3 à 5 SVG animés (SMIL) par station.
+- **Référentiel d'adossement tranché** (décision d'architecte) : **TP TECVC, REAC TP-00133, CP1-CP10**
+  (déjà employé par AéroRézo), + attestation d'aptitude 2025 pour le fluidique ; « Hors REAC : culture
+  professionnelle… » là où aucune CP n'est honnêtement mobilisée (droit du travail, DESP…).
+- **Le carnet du chargé d'affaires** : l'étudiant est un jeune technicien d'études chez **Clim'Études Sud**
+  (fictif). Chaque station = une mission (`stations/<slug>/mission.json`) ; ≥ 3/4 au quiz = un tampon ;
+  une sous-ligne = un certificat. Progression annuelle P1-P5 : `progression.json`.
+  Numérique : `moteur-legislation/missions.js` (carte mission + tampon, posé par
+  `outils/poser-les-missions.mjs`), page `carnet.html`. Papier : `outils/carnet-papier.mjs` →
+  `carnet/` (carnet élève complet 122 p. + un par période P1-P5 + livret professeur, HTML/PDF/docx,
+  14 pt min, QR relus : `python outils/verifier-carnet.py`).
+- **Le bâtiment réglementaire en 3D** (Three.js) en tête du plan : `batiment3d/` ; zones générées
+  depuis RESEAU : `node batiment3d/generer-zones.mjs` ; clic → panneau des stations, « Voir sur le
+  plan » défile jusqu’à la sous-ligne (`id="ligne-<id>"` sur les têtes).
+- Cohérence Incendie vérifiée : deux arrêtés du 22/03/2004 distincts (IT 246 en vigueur ; résistance au
+  feu abrogé le 27/03/2026 par l'arrêté du 22/03/2026) ; R. 4216-* abrogés à compter du 01/01/2027.
+- Voix : MP3 edge-tts des nouvelles narrations (`build/voix/collecter-narrations.mjs` puis
+  `generer-audios-edge-tts.py --alternance-module --sources legislation --confirmer`).
+
+**Après toute production, relancer** : couleur-des-sous-lignes, poser-les-scenes, poser-les-missions,
+fiches-a-valider, `batiment3d/generer-zones.mjs`, `outils/carnet-papier.mjs` + verifier-carnet.
+
+**Reste pour F. Henninot** : relecture métier (data-prototype partout) ; les listes « À sourcer » ; les
+valeurs DESP (VALEURS-A-VALIDER-DESP.md) ; l'essai de la 3D sur une vraie tablette.
 
 ## ▶ 27/09/2026 — audit complet, plan replié, scènes (état qui fait foi)
 

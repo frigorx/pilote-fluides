@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-bt" aria-describedby="d-bt" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bt">Le bruit au travail : trois valeurs d'exposition</title>
+  <desc id="d-bt">À gauche, une colonne verticale qui se remplit de bas en haut, comme un niveau qui monte. À sa
+    droite, trois cartes empilées, de la plus basse à la plus haute. En bas : 80 décibels pondérés A ou 135
+    décibels C de crête, valeur d'exposition inférieure, où l'action de prévention commence. Au milieu : 85
+    décibels pondérés A ou 137 décibels C, valeur d'exposition supérieure. En haut : 87 décibels pondérés A
+    ou 140 décibels C, valeur limite d'exposition. Un bandeau rappelle qu'il s'agit d'un niveau absolu, moyenné
+    sur la journée, et non d'une différence. L'animation fait monter la colonne et allume les cartes une à une.</desc>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#10233c">Le bruit au travail : un niveau, pas une différence</text>
+
+  <!-- colonne de niveau -->
+  <rect x="50" y="70" width="56" height="340" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="53" y="73" width="50" height="334" fill="#c9b5ee">
+    <animate attributeName="height" values="0;0;334;334" keyTimes="0;0.04;0.60;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="407;407;73;73" keyTimes="0;0.04;0.60;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <!-- repères vers les cartes -->
+  <g stroke="#5a6b7d" stroke-width="2" stroke-dasharray="6 5">
+    <line x1="106" y1="352" x2="150" y2="352"/>
+    <line x1="106" y1="252" x2="150" y2="252"/>
+    <line x1="106" y1="152" x2="150" y2="152"/>
+  </g>
+
+  <!-- carte basse : 80 -->
+  <g>
+    <rect x="150" y="312" width="620" height="80" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text x="170" y="344" font-size="22" font-weight="bold" fill="#1b3a63">80 dB(A)  ·  crête 135 dB(C)</text>
+    <text x="170" y="374" font-size="18" fill="#10233c">Valeur d'exposition inférieure : l'action de prévention commence</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- carte milieu : 85 -->
+  <g>
+    <rect x="150" y="212" width="620" height="80" rx="12" fill="#fff3e4" stroke="#c9451a" stroke-width="3"/>
+    <text x="170" y="244" font-size="22" font-weight="bold" fill="#c9451a">85 dB(A)  ·  crête 137 dB(C)</text>
+    <text x="170" y="274" font-size="18" fill="#10233c">Valeur d'exposition supérieure : le port des protecteurs est à faire respecter</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.38;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- carte haute : 87 -->
+  <g>
+    <rect x="150" y="112" width="620" height="80" rx="12" fill="#fbe7e4" stroke="#c0392b" stroke-width="4"/>
+    <text x="170" y="144" font-size="22" font-weight="bold" fill="#c0392b">87 dB(A)  ·  crête 140 dB(C)</text>
+    <text x="170" y="174" font-size="18" fill="#10233c">Valeur limite d'exposition : l'effet des protecteurs est pris en compte</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.46;0.54;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- bandeau -->
+  <g>
+    <rect x="50" y="430" width="720" height="58" rx="12" fill="#ede3f4" stroke="#6d28d9" stroke-width="3" stroke-dasharray="10 6"/>
+    <text x="410" y="455" text-anchor="middle" font-size="19" font-weight="bold" fill="#10233c">Niveau d'exposition quotidienne : le bruit reçu par le salarié,</text>
+    <text x="410" y="477" text-anchor="middle" font-size="19" font-weight="bold" fill="#10233c">moyenné sur la journée de travail.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.64;0.70;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

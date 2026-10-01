@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img"
+     aria-labelledby="t-fri" aria-describedby="d-fri" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-fri">Six symboles utiles au technicien du froid</title>
+  <desc id="d-fri">Six cartes en deux rangées de trois. B0 : opérations d'ordre non électrique dans le voisinage simple en basse tension, par exemple nettoyer ou peindre. BS : intervention élémentaire, remplacer ou raccorder, hors tension. BR, carte mise en avant en couleur ocre : intervention générale, entretien et dépannage, de courte durée. BC : consigner pour des tiers en basse tension, et rien d'autre. BE : opération spécifique, précisée par un attribut : manœuvre, mesurage, vérification ou essai. H0 : ordre non électrique dans le voisinage simple en haute tension, H0V pour le voisinage renforcé. Une bande en bas rappelle qu'une habilitation couvre le risque électrique, pas les fluides frigorigènes.</desc>
+  <style>
+    .sym { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:38px; fill:#fffdf8; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lb  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+  <rect x="0" y="0" width="900" height="520" fill="#fffdf8"/>
+  <rect x="15" y="20" width="270" height="200" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="35" y="40" width="100" height="56" rx="12" fill="#1b3a63"/>
+  <text class="sym" x="85" y="81" text-anchor="middle">B0</text>
+  <text class="lb" x="35" y="132">ordre non électrique</text>
+  <text class="lbl" x="35" y="162">voisinage simple, BT</text>
+  <text class="lbl" x="35" y="192">ex. : nettoyer, peindre</text>
+  <rect x="315" y="20" width="270" height="200" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="335" y="40" width="100" height="56" rx="12" fill="#1b3a63"/>
+  <text class="sym" x="385" y="81" text-anchor="middle">BS</text>
+  <text class="lb" x="335" y="132">intervention élémentaire</text>
+  <text class="lbl" x="335" y="162">remplacer, raccorder</text>
+  <text class="lbl" x="335" y="192">hors tension</text>
+  <rect x="615" y="20" width="270" height="200" rx="14" fill="#f7edd8" stroke="#a16207" stroke-width="4"/>
+  <rect x="635" y="40" width="100" height="56" rx="12" fill="#a16207"/>
+  <text class="sym" x="685" y="81" text-anchor="middle">BR</text>
+  <text class="lb" x="635" y="132">intervention générale</text>
+  <text class="lbl" x="635" y="162">entretien, dépannage</text>
+  <text class="lbl" x="635" y="192">courte durée</text>
+  <rect x="15" y="240" width="270" height="200" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="35" y="260" width="100" height="56" rx="12" fill="#1b3a63"/>
+  <text class="sym" x="85" y="301" text-anchor="middle">BC</text>
+  <text class="lb" x="35" y="352">consigner pour des tiers</text>
+  <text class="lbl" x="35" y="382">en basse tension</text>
+  <text class="lbl" x="35" y="412">et rien d'autre</text>
+  <rect x="315" y="240" width="270" height="200" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="335" y="260" width="100" height="56" rx="12" fill="#1b3a63"/>
+  <text class="sym" x="385" y="301" text-anchor="middle">BE</text>
+  <text class="lb" x="335" y="352">opération spécifique</text>
+  <text class="lbl" x="335" y="382">attribut : manœuvre, mesurage,</text>
+  <text class="lbl" x="335" y="412">vérification ou essai</text>
+  <rect x="615" y="240" width="270" height="200" rx="14" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="635" y="260" width="100" height="56" rx="12" fill="#5a6b7d"/>
+  <text class="sym" x="685" y="301" text-anchor="middle">H0</text>
+  <text class="lb" x="635" y="352">ordre non électrique</text>
+  <text class="lbl" x="635" y="382">voisinage simple, HT</text>
+  <text class="lbl" x="635" y="412">H0V : voisinage renforcé</text>
+  <rect x="15" y="462" width="870" height="42" rx="14" fill="#fdeedd" stroke="#e8914a" stroke-width="2.5"/>
+  <text class="band" x="450" y="489" text-anchor="middle">Une habilitation couvre le risque électrique, pas les fluides.</text>
+</svg>

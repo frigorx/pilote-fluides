@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img"
+     aria-labelledby="t-dex" aria-describedby="d-dex" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dex">Le droit d'exercer : qualification, immatriculation, premier chantier</title>
+  <desc id="d-dex">Trois marches qui montent de gauche à droite. Première marche : la qualification, un diplôme
+    du métier ou trois années d'expérience. Deuxième marche : l'immatriculation au registre national des
+    entreprises, entre un mois avant et quinze jours après le début d'activité. Troisième marche, la plus
+    haute : le premier chantier, avec assurances et papiers du fluide. Un bandeau en bas cite les diplômes :
+    CAP froid et climatisation, bac pro installation des systèmes énergétiques et climatiques, brevet
+    professionnel monteur dépanneur en froid et climatisation. Dans l'animation, les marches s'allument une à une.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .clair{ font-size:17px; fill:#fffdf8; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#fffdf8; }
+    .band{ font-size:17px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Trois marches avant le premier chantier</text>
+
+  <g>
+    <rect x="30" y="190" width="260" height="140" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="66" cy="222" r="18" fill="#1b3a63"/>
+    <text class="num" x="66" y="230" text-anchor="middle">1</text>
+    <text class="qui" x="94" y="230">Qualification</text>
+    <text class="lbl" x="160" y="268" text-anchor="middle">un diplôme du métier</text>
+    <text class="lbl" x="160" y="296" text-anchor="middle">ou trois ans d'expérience</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.15;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="320" y="130" width="260" height="140" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+    <circle cx="356" cy="162" r="18" fill="#9d174d"/>
+    <text class="num" x="356" y="170" text-anchor="middle">2</text>
+    <text class="qui" x="384" y="170">Immatriculation</text>
+    <text class="lbl" x="450" y="206" text-anchor="middle">registre national des</text>
+    <text class="lbl" x="450" y="232" text-anchor="middle">entreprises, autour du</text>
+    <text class="lbl" x="450" y="258" text-anchor="middle">début d'activité</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.34;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="610" y="70" width="260" height="140" rx="14" fill="#1b3a63" stroke="#10233c" stroke-width="3"/>
+    <circle cx="646" cy="102" r="18" fill="#e8914a"/>
+    <text class="num" x="646" y="110" text-anchor="middle">3</text>
+    <text class="qui" x="674" y="110" fill="#fffdf8" style="fill:#fffdf8">1er chantier</text>
+    <text class="clair" x="740" y="148" text-anchor="middle">assurances et papiers</text>
+    <text class="clair" x="740" y="176" text-anchor="middle">du fluide en règle</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.54;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="30" y="352" width="840" height="92" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <g>
+    <text class="band" x="450" y="380" text-anchor="middle" font-weight="bold">Diplômes cités : CAP froid et climatisation, bac pro installation des systèmes</text>
+    <text class="band" x="450" y="406" text-anchor="middle" font-weight="bold">énergétiques et climatiques, brevet professionnel monteur dépanneur</text>
+    <text class="band" x="450" y="432" text-anchor="middle" font-weight="bold">en froid et climatisation.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.72;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

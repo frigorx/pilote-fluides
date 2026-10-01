@@ -1,9 +1,10 @@
 /* Station 2-2 — Allumer, régler, éteindre la flamme. Source : sources-metier/2-chalumeau.md (partie 2-2)
    RÈGLE DES FICHES : le professeur est présent à CHAQUE allumage ; aucun élève seul à un poste allumé.
    La station prépare le geste, elle ne remplace pas la surveillance.
-   Allumage : oxygène un peu, acétylène largement, allumer, régler (INRS ED 742 et sept autres fiches) ;
-   trois fiches ouvrent l'acétylène d'abord : désaccord signalé. Extinction : acétylène d'abord (toutes
-   les fiches). Fin de travail : ordre de la majorité des fiches ; l'INRS diffère sur le moment des vis. */
+   DÉCIDÉ le 30/09/2026 (DECISIONS-2026-09-30.md) : le gaz combustible s'ouvre en dernier et se ferme en premier.
+   Allumage : oxygène un peu, acétylène largement, allumer, régler (INRS ED 742 p. 22). Extinction : acétylène,
+   un peu d'oxygène, oxygène (INRS). Fin de travail : bouteilles fermées (acétylène d'abord), purge à zéro,
+   vis desserrées, robinets du chalumeau refermés (OPPBTP, notice WELDTEAM, cinq fiches). */
 CUIVREZO.stations.push({
   id: '2-2', ligne: 2, titre: 'Allumer, régler, éteindre la flamme', duree: '25 min', vignette: 'images/2-2-allumer.webp',
   sources: ['sources-metier/2-chalumeau.md'],
@@ -12,7 +13,6 @@ CUIVREZO.stations.push({
     titre: 'Une flamme neutre, allumée et éteinte dans l’ordre',
     texte: 'Devant le professeur, vous allumez, vous réglez une flamme neutre, vous nommez les deux autres, et vous éteignez dans le bon ordre.',
     criteres: ['Allumage dans l’ordre, avec l’allumeur à pierre', 'Flamme neutre : dard net, arrondi, ni sifflement ni fumée', 'Les deux autres flammes reconnues et nommées', 'Extinction dans l’ordre, poste refermé en fin de travail'],
-    aValider: 'Codes du référentiel posés par analogie : à confirmer',
     figure: { svg: 'flamme', etat: 'neutre', legende: 'La flamme neutre : un dard net, arrondi, bien délimité.' },
     narration: 'Allumer un chalumeau n’a rien de difficile, à condition de toujours faire les gestes dans le même ordre. C’est l’ordre qui protège : il évite le claquement à l’allumage, la fumée noire, et le retour de flamme à l’extinction. Dans cette station, vous apprenez cet ordre et vous apprenez à lire la flamme. Mais retenez la règle de l’atelier : vous n’allumez jamais seul, le professeur est toujours là.'
   },
@@ -36,9 +36,8 @@ CUIVREZO.stations.push({
     { titre: 'Ouvrir un peu l’oxygène', texte: 'Ouvrez légèrement le robinet bleu.',
       pointCle: 'Un filet d’oxygène, pas plus.',
       pourquoi: 'Ce filet évite les flammèches noires et fumeuses de l’acétylène pur à l’allumage.',
-      aValider: 'Ordre d’allumage : oxygène d’abord dans huit fiches et l’INRS ; acétylène d’abord dans trois fiches (TP2, instructions, soudage OA)',
       figure: { svg: 'oa', etat: 'allumer' }, clip: 'clips/2-2/02-oxygene.mp4',
-      narration: 'Premier robinet : l’oxygène, le bleu, ouvert légèrement. Juste un filet. Il évite qu’à l’allumage l’acétylène brûle seul, en flammèches noires et en suie.' },
+      narration: 'Premier robinet : l’oxygène, le bleu, ouvert légèrement. Juste un filet. Il évite qu’à l’allumage l’acétylène brûle seul, en flammèches noires et en suie. C’est l’ordre que recommande l’INRS : l’oxygène d’abord, le gaz combustible ensuite.' },
     { titre: 'Ouvrir largement l’acétylène', texte: 'Ouvrez le robinet rouge, largement.',
       pointCle: 'Et on allume aussitôt.',
       pourquoi: 'L’acétylène qui sort sans être allumé s’accumule autour de vous.',
@@ -56,26 +55,24 @@ CUIVREZO.stations.push({
       narration: 'On ouvre maintenant l’oxygène, doucement, en regardant le cœur de la flamme, le dard. Il est d’abord long et entouré d’un voile blanc : c’est la flamme carburante. À mesure que l’oxygène arrive, le voile se retire. Dès qu’il a disparu et que le dard est net, arrondi, on s’arrête : c’est la flamme neutre. Si l’on continue, le dard raccourcit, s’affine, et la flamme se met à siffler : elle est oxydante.' },
     { titre: 'Reconnaître les trois flammes', texte: 'Carburante : dard long, voile blanc. Neutre : dard net, arrondi. Oxydante : dard court, pointu, qui siffle.',
       pointCle: 'Le professeur vous demande de les nommer.',
-      pourquoi: 'Chaque travail demande sa flamme. Savoir les lire, c’est savoir corriger.',
-      aValider: 'Flamme pour braser le cuivre : neutre (deux fiches), carburante (deux fiches), neutre à légèrement réductrice (G10)',
+      pourquoi: 'Chaque travail demande sa flamme. Pour braser le cuivre, on règle une flamme neutre, jamais oxydante. Savoir les lire, c’est savoir corriger.',
       figure: { svg: 'flamme', etat: 'trois' }, clip: 'clips/2-2/06-trois.mp4',
-      narration: 'Il faut savoir reconnaître les trois flammes d’un coup d’œil. La carburante, trop riche en acétylène : un dard long, entouré d’un voile blanc. La neutre : un dard net et arrondi. L’oxydante, trop riche en oxygène : un dard court et pointu, et une flamme qui siffle. Le professeur vous les fera nommer.' },
+      narration: 'Il faut savoir reconnaître les trois flammes d’un coup d’œil. La carburante, trop riche en acétylène : un dard long, entouré d’un voile blanc. La neutre : un dard net et arrondi. L’oxydante, trop riche en oxygène : un dard court et pointu, et une flamme qui siffle. Pour braser le cuivre, vous garderez la flamme neutre, jamais l’oxydante, qui noircit le cuivre. Le professeur vous les fera nommer.' },
     { titre: 'Ne jamais poser le chalumeau allumé', texte: 'Pendant le travail, le chalumeau reste en main. Pour le poser, on l’éteint.',
       pointCle: 'Même « une seconde ».',
       pourquoi: 'Un chalumeau posé allumé glisse, tourne, et brûle ce qu’il touche.',
       figure: { svg: 'poste', etat: 'secours' }, clip: 'clips/2-2/07-poser.mp4',
       narration: 'Un chalumeau allumé ne se pose jamais, même une seconde, même sur l’établi. Il bascule, tourne, et la flamme part vers un tuyau ou une main. Pour le poser, on l’éteint.' },
-    { titre: 'Éteindre : l’acétylène d’abord', texte: 'Fermez d’abord le robinet d’acétylène, puis celui d’oxygène.',
+    { titre: 'Éteindre : l’acétylène d’abord', texte: 'Fermez d’abord le robinet d’acétylène. Laissez l’oxygène s’échapper un court instant, puis fermez le robinet d’oxygène.',
       pointCle: 'Rouge d’abord, bleu ensuite.',
       pourquoi: 'En coupant d’abord le gaz combustible, la flamme s’éteint net, sans claquement ni suie.',
       figure: { svg: 'oa', etat: 'eteindre' }, clip: 'clips/2-2/08-eteindre.mp4',
-      narration: 'Pour éteindre, on ferme d’abord le robinet d’acétylène, le rouge : la flamme s’éteint net. Puis celui d’oxygène, le bleu. Toutes les fiches de l’atelier sont d’accord sur cet ordre. Le chalumeau éteint se pose sur son crochet, et on surveille la zone : rien ne doit couver.' },
-    { titre: 'En fin de travail, refermer le poste', texte: 'Fermez les bouteilles, purgez les tuyaux par le chalumeau jusqu’à zéro, desserrez les vis de détente, refermez les robinets.',
+      narration: 'Pour éteindre, on ferme d’abord le robinet d’acétylène, le rouge : la flamme s’éteint net. On laisse l’oxygène s’échapper un court instant, pour chasser ce qui reste d’acétylène dans le chalumeau, puis on ferme celui d’oxygène, le bleu. C’est l’ordre de l’INRS, et toutes les fiches de l’atelier sont d’accord. Le chalumeau éteint se pose sur son crochet, et on surveille la zone : rien ne doit couver.' },
+    { titre: 'En fin de travail, refermer le poste', texte: 'Fermez les deux bouteilles, l’acétylène d’abord. Ouvrez les robinets du chalumeau et purgez jusqu’à zéro aux deux manomètres, loin de toute flamme. Desserrez les vis de détente. Refermez les robinets du chalumeau.',
       pointCle: 'Les manomètres retombent à zéro.',
       pourquoi: 'Un poste laissé sous pression fuit pendant la nuit, et fatigue les détendeurs.',
-      aValider: 'Moment où l’on desserre les vis : avant de fermer les bouteilles (INRS, un cours) ou après la purge (cinq fiches)',
       figure: { svg: 'oa', etat: 'fin' }, clip: 'clips/2-2/09-fin.mp4',
-      narration: 'À la fin du travail, on referme tout le poste. On ferme les deux bouteilles. On purge : les robinets du chalumeau ouverts, le gaz resté dans les tuyaux s’échappe jusqu’à ce que les manomètres retombent à zéro. On desserre les vis de détente, et on referme les robinets du chalumeau. Le poste est au repos, sans pression.' }
+      narration: 'À la fin du travail, on referme tout le poste, toujours dans le même ordre. D’abord les deux bouteilles, en commençant par l’acétylène : le gaz combustible se ferme en premier. Ensuite on purge : on ouvre les robinets du chalumeau, dans un endroit aéré, loin de toute flamme, et le gaz resté dans les tuyaux s’échappe jusqu’à ce que les manomètres retombent à zéro. Alors seulement, on desserre les vis de détente, et on referme les robinets du chalumeau. Le poste est au repos, sans aucune pression.' }
   ],
   pieges: [
     { titre: 'Le chalumeau ouvert, pas allumé', voit: 'Du gaz s’échappe pendant qu’on cherche l’allumeur.', cause: 'Hésitation, allumeur pas prêt.',

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-dechet" aria-describedby="d-dechet" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-dechet">Un même fluide récupéré, deux destins</title>
+  <desc id="d-dechet">À gauche, un encadré « fluide récupéré ». De là partent deux chemins. En haut, un trait plein vert mène à un encadré : le fluide est réintroduit dans la même machine, il reste un fluide, rien n'est déclaré sur Trackdéchets et la quantité remise est notée sur la fiche d'intervention. En bas, un trait tireté orange mène à un second encadré : le fluide ne peut pas être réintroduit, ou sa réutilisation est interdite, c'est un déchet ; il part dans une bouteille de récupération avec un BSFF dans Trackdéchets. Dans l'animation, une goutte suit chaque chemin tour à tour.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomt{ font-weight:bold; font-size:18px; fill:#0f766e; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="36" text-anchor="middle">Un même fluide récupéré, deux destins</text>
+  <defs><marker id="vt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f766e"/></marker><marker id="vo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e8914a"/></marker></defs>
+  <rect x="30" y="190" width="190" height="120" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ttl" x="125" y="240" text-anchor="middle">Fluide</text>
+  <text class="ttl" x="125" y="270" text-anchor="middle">récupéré</text>
+  <path d="M220,232 H250 V140 H326" fill="none" stroke="#0f766e" stroke-width="4" marker-end="url(#vt)"/>
+  <path d="M220,268 H250 V360 H326" fill="none" stroke="#e8914a" stroke-width="4" stroke-dasharray="11 7" marker-end="url(#vo)"/>
+  <g>
+    <rect x="340" y="62" width="430" height="156" rx="12" fill="#e6f2ef" stroke="#0f766e" stroke-width="3"/>
+    <text class="nomt" x="555" y="96" text-anchor="middle">Réintroduit dans la même machine</text>
+    <text class="txt" x="555" y="128" text-anchor="middle">Il reste un fluide, pas un déchet.</text>
+    <text class="txt" x="555" y="152" text-anchor="middle">Rien à déclarer sur Trackdéchets :</text>
+    <text class="txt" x="555" y="176" text-anchor="middle">la quantité remise est notée</text>
+    <text class="txt" x="555" y="200" text-anchor="middle">sur la fiche d'intervention.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2;0.3;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="340" y="282" width="430" height="182" rx="12" fill="#fdf1e6" stroke="#e8914a" stroke-width="3" stroke-dasharray="10 7"/>
+    <text class="nomo" x="555" y="316" text-anchor="middle">Impossible à réintroduire</text>
+    <text class="txt" x="555" y="348" text-anchor="middle">ou réutilisation interdite : c'est</text>
+    <text class="txt" x="555" y="372" text-anchor="middle">un déchet. Il part dans une</text>
+    <text class="txt" x="555" y="396" text-anchor="middle">bouteille de récupération,</text>
+    <text class="txt" x="555" y="420" text-anchor="middle">avec un BSFF dans Trackdéchets.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.65;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <circle r="8" fill="#0f766e" opacity="0" cx="0" cy="0">
+    <animateMotion path="M222,232 H250 V140 H322" dur="12s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.06;0.22;1" calcMode="linear"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.08;0.21;0.23;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="8" fill="#e8914a" opacity="0" cx="0" cy="0">
+    <animateMotion path="M222,268 H250 V360 H322" dur="12s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.40;0.58;1" calcMode="linear"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40;0.42;0.57;0.59;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+</svg>

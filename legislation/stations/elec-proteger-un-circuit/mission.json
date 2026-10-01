@@ -1,0 +1,39 @@
+{
+  "slug": "elec-proteger-un-circuit",
+  "branche": "Électrique",
+  "titre": "Mission : le compresseur qui déclenche, et le calibre qu'on a monté",
+  "client": "Le responsable de maintenance d'un entrepôt frigorifique, qui vous demande un avis écrit avant de laisser repartir le dépanneur.",
+  "situation": "Le groupe de condensation posé en toiture, loin du tableau, fait déclencher sa protection à intervalles irréguliers. Pour « arrêter les déclenchements », un dépanneur a monté le calibre de la protection d'un cran, sans toucher au câble d'alimentation, dont la section n'a pas été relevée. Le responsable hésite à valider : le local abrite des denrées et une coupure prolongée coûterait cher. Vous devez dire ce qui est acceptable, ce qui ne l'est pas, et ce qu'il faut vérifier avant toute décision.",
+  "piece_a_produire": "Une note technique d'une page au client : la règle à respecter entre courant d'emploi, calibre et courant admissible, les trois vérifications à faire avant de remonter un calibre (section relevée, chute de tension sur la longueur de ligne, réglage du thermique sur la plaque signalétique), et le montage correct de la protection du moteur.",
+  "questions": [
+    { "q": "Pourquoi un conducteur de petite section chauffe-t-il davantage qu'un conducteur de grande section, à courant égal ?",
+      "ecran": 1,
+      "reponse": "Il contient moins de cuivre : sa résistance est plus grande, donc l'énergie perdue en chaleur est plus grande. L'échauffement fait vieillir l'isolant, lentement et sans signe visible." },
+    { "q": "Écrivez la relation qui lie le courant d'emploi IB, le calibre In et le courant admissible IZ, et dites ce qu'elle protège.",
+      "ecran": 3,
+      "reponse": "IB ≤ In ≤ IZ. Le calibre se place entre le besoin du circuit et la limite du câble : la protection protège le câble, pas l'appareil branché au bout." },
+    { "q": "Une ligne longue alimente un groupe de condensation. Donnez deux conséquences d'une chute de tension trop forte et le remède.",
+      "ecran": 5,
+      "reponse": "Le récepteur reçoit une tension insuffisante : un moteur démarre mal, le fonctionnement est dégradé. Le remède est d'augmenter la section, même si le courant n'échauffe pas le câble." },
+    { "q": "Décrivez les deux montages corrects de protection d'un moteur derrière une tête, et un montage à éviter.",
+      "ecran": 8,
+      "reponse": "Correct : la tête puis un disjoncteur moteur seul, ou la tête puis un contacteur avec son relais thermique. À éviter : deux disjoncteurs moteurs en série, ou un disjoncteur moteur suivi d'un relais thermique sur le même moteur." }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Sur papier, en 5 minutes : voici la fiche d'un dépanneur. Relevez les deux erreurs de principe et corrigez-les. Fiche : « Le disjoncteur déclenchait au démarrage du compresseur : j'ai monté le calibre sans regarder le câble. Le circuit comporte une tête, un disjoncteur moteur, puis un relais thermique réglé sur le courant de la plaque signalétique. »",
+    "items": [
+      "Le calibre a été monté sans regarder la section du câble",
+      "Un disjoncteur moteur et un relais thermique sont placés sur le même moteur",
+      "Le relais thermique est réglé sur le courant de la plaque signalétique"
+    ],
+    "corrige": "Deux erreurs : (1) le calibre a été monté sans vérifier que In reste inférieur ou égal à IZ — la protection doit protéger le câble ; (2) le moteur reçoit deux protections thermiques, un disjoncteur moteur puis un relais thermique : il en faut une seule, soit le disjoncteur moteur seul, soit un contacteur avec son relais thermique. Le réglage du thermique sur la plaque signalétique est correct."
+  },
+  "badge": "Câble d'abord",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP9", "CP6"],
+    "attestation_2025": [],
+    "justification": "Le technicien d'études dimensionne l'alimentation électrique et la protection des groupes de climatisation (CP9) et des organes de chauffage / ECS tels que circulateurs et brûleurs (CP6) ; la station ne relève pas de l'attestation d'aptitude 2025."
+  }
+}

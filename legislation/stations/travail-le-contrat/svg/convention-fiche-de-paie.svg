@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"
+     aria-labelledby="t-cc" aria-describedby="d-cc" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-cc">La convention collective : la ligne de la fiche de paie</title>
+  <desc id="d-cc">À gauche, un bulletin de paie schématique : des lignes grises pour les rubriques, et une ligne
+    mise en valeur, bordée d'orange, qui porte l'intitulé de la convention collective et son numéro IDCC.
+    De cette ligne partent trois traits vers trois endroits où lire le texte : Légifrance, qui publie les
+    conventions étendues ; le Code du travail numérique, dont un outil retrouve la convention par nom
+    d'entreprise, SIRET ou IDCC ; et le lieu de travail, où l'employeur tient une copie à jour. Un
+    encadré rappelle que l'IDCC est un numéro de un à quatre chiffres. L'animation allume la ligne, puis
+    trace les chemins ; l'image fixe montre tout.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:20px; fill:#10233c; }
+    .lg  { font-weight:bold; font-size:17px; fill:#10233c; }
+    .lm  { font-size:16px; fill:#10233c; }
+    .bt  { font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .bl  { font-size:15px; fill:#10233c; }
+    .nt  { font-size:16px; fill:#10233c; }
+    .nb  { font-weight:bold; font-size:16px; fill:#9d174d; }
+  </style>
+
+  <!-- le bulletin -->
+  <rect x="30" y="20" width="404" height="484" rx="10" fill="#ffffff" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ttl" x="232" y="58" text-anchor="middle">BULLETIN DE PAIE</text>
+  <line x1="60" y1="70" x2="404" y2="70" stroke="#e8914a" stroke-width="3"/>
+  <g fill="#d5dde6">
+    <rect x="52" y="92" width="190" height="10" rx="5"/>
+    <rect x="52" y="112" width="140" height="10" rx="5"/>
+    <rect x="52" y="132" width="210" height="10" rx="5"/>
+    <rect x="52" y="152" width="120" height="10" rx="5"/>
+  </g>
+  <!-- la ligne qui compte -->
+  <rect x="46" y="184" width="372" height="84" rx="8" fill="#fffdf8" stroke="#e8914a" stroke-width="3.5"/>
+  <rect x="46" y="184" width="372" height="84" rx="8" fill="#e8914a" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0;0.1154;0.1615;0.2692;0.3154;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <text class="lg" x="64" y="216">Convention collective</text>
+  <text class="lm" x="64" y="244">intitulé et numéro IDCC</text>
+  <g fill="#d5dde6">
+    <rect x="52" y="294" width="250" height="10" rx="5"/>
+    <rect x="330" y="294" width="70" height="10" rx="5"/>
+    <rect x="52" y="320" width="220" height="10" rx="5"/>
+    <rect x="330" y="320" width="70" height="10" rx="5"/>
+    <rect x="52" y="346" width="270" height="10" rx="5"/>
+    <rect x="330" y="346" width="70" height="10" rx="5"/>
+    <rect x="52" y="372" width="200" height="10" rx="5"/>
+    <rect x="330" y="372" width="70" height="10" rx="5"/>
+    <rect x="52" y="398" width="240" height="10" rx="5"/>
+    <rect x="330" y="398" width="70" height="10" rx="5"/>
+    <rect x="52" y="424" width="180" height="10" rx="5"/>
+    <rect x="330" y="424" width="70" height="10" rx="5"/>
+    <rect x="52" y="462" width="120" height="14" rx="6"/>
+    <rect x="330" y="462" width="70" height="14" rx="6"/>
+  </g>
+
+  <!-- chemins puis destinations -->
+  <path d="M418,226 H462 V104 H490" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" fill="none" stroke="#9d174d" stroke-width="3.5" stroke-linejoin="round">
+    <animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.3077;0.4000;1" dur="13s" repeatCount="indefinite"/>
+  </path>
+  <path d="M418,226 H490" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" fill="none" stroke="#9d174d" stroke-width="3.5" stroke-linejoin="round">
+    <animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.3385;0.4462;1" dur="13s" repeatCount="indefinite"/>
+  </path>
+  <path d="M418,226 H462 V336 H490" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" fill="none" stroke="#9d174d" stroke-width="3.5" stroke-linejoin="round">
+    <animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.3692;0.4923;1" dur="13s" repeatCount="indefinite"/>
+  </path>
+  <g>
+    <rect x="490" y="56" width="290" height="96" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bt" x="508" y="86">Légifrance</text>
+    <text class="bl" x="508" y="112">texte des conventions</text>
+    <text class="bl" x="508" y="134">collectives étendues</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4000;0.4462;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="490" y="172" width="290" height="96" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bt" x="508" y="202">Code du travail numérique</text>
+    <text class="bl" x="508" y="228">recherche par nom d'entreprise,</text>
+    <text class="bl" x="508" y="250">SIRET ou numéro IDCC</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4462;0.4923;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="490" y="288" width="290" height="96" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="bt" x="508" y="318">Sur le lieu de travail</text>
+    <text class="bl" x="508" y="344">l'employeur tient à disposition</text>
+    <text class="bl" x="508" y="366">une copie à jour</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4923;0.5385;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="490" y="404" width="290" height="100" rx="10" fill="#f6e6ee" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="nb" x="508" y="434">IDCC</text>
+  <text class="nt" x="508" y="460">un numéro de 1 à 4 chiffres,</text>
+  <text class="nt" x="508" y="482">une seule convention par numéro</text>
+</svg>

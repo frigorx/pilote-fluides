@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img"
+     aria-labelledby="t-bt" aria-describedby="d-bt" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bt">Le bouton test : simuler un défaut pour vérifier le déclenchement</title>
+  <desc id="d-bt">À gauche, la face avant d'un dispositif différentiel : un levier dans une glissière, avec deux positions, enclenché en haut et déclenché en bas, et un bouton orange marqué T, le bouton test. Un doigt appuie sur le bouton. À droite, trois étapes : appuyer sur T, constater que le levier retombe, remonter le levier. Un encadré rouge en pointillé dit que si le levier ne tombe pas, le dispositif ne protège plus et doit être remplacé. L'animation montre le doigt arriver puis le levier tomber ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .sub { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .acc { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#a16207; }
+    .wht { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fff; }
+    .bad { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .nw { white-space:nowrap; }
+  </style>
+  <text class="ttl" x="180" y="34" text-anchor="middle">Dispositif différentiel</text>
+  <rect x="60" y="56" width="240" height="266" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="120" y="80" width="40" height="126" rx="8" fill="#fff" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="124" y="142" width="32" height="58" rx="6" fill="#1b3a63">
+    <animate attributeName="y" values="88;88;142;142" keyTimes="0;0.34;0.42;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <text class="lbl" x="178" y="104" text-anchor="start">enclenché</text>
+  <text class="lbl" x="178" y="190" text-anchor="start">déclenché</text>
+  <circle cx="140" cy="262" r="22" fill="#e8914a" stroke="#a16207" stroke-width="3"/>
+  <text class="wht" x="140" y="270" text-anchor="middle">T</text>
+  <text class="lbl" x="180" y="306" text-anchor="start">bouton test</text>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="60 0;60 0;0 0;0 0" keyTimes="0;0.10;0.30;1" dur="13s" repeatCount="indefinite"/>
+    <rect x="168" y="253" width="120" height="18" rx="9" fill="#5a6b7d"/>
+    <rect x="280" y="238" width="52" height="48" rx="14" fill="#5a6b7d"/>
+  </g>
+  <text class="mut" x="180" y="352" text-anchor="middle">un doigt appuie sur T</text>
+  <circle cx="478" cy="88" r="18" fill="#a16207"/><text class="wht" x="478" y="95" text-anchor="middle">1</text>
+  <text class="lbl" x="510" y="94" text-anchor="start">Appuyez sur le bouton T</text>
+  <circle cx="478" cy="158" r="18" fill="#a16207"/><text class="wht" x="478" y="165" text-anchor="middle">2</text>
+  <text class="lbl" x="510" y="158" text-anchor="start">Le levier doit retomber aussitôt :</text>
+  <text class="lbl" x="510" y="182" text-anchor="start">le dispositif déclenche</text>
+  <circle cx="478" cy="238" r="18" fill="#a16207"/><text class="wht" x="478" y="245" text-anchor="middle">3</text>
+  <text class="lbl" x="510" y="232" text-anchor="start">Remontez le levier :</text>
+  <text class="lbl" x="510" y="256" text-anchor="start">l'installation est de nouveau alimentée</text>
+  <rect x="440" y="290" width="440" height="88" rx="12" fill="#fdf0ee" stroke="#c0392b" stroke-width="3" stroke-dasharray="10 6"/>
+  <text class="bad" x="462" y="322" text-anchor="start">Le levier ne tombe pas ?</text>
+  <text class="lbl" x="462" y="348" text-anchor="start">Le dispositif ne protège plus : il faut le remplacer.</text>
+</svg>

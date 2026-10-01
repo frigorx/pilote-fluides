@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" role="img"
+     aria-labelledby="t-cv" aria-describedby="d-cv" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cv">Pourquoi la charge est limitée : la même fuite dans un petit et dans un grand local</title>
+  <desc id="d-cv">Deux locaux côte à côte avec la même machine, la même quantité de fluide et une fuite complète. À gauche, un petit local :
+    le fluide qui s'échappe le remplit presque entièrement, et la jauge de concentration, à côté, monte au-dessus du trait rouge tireté de la limite.
+    À droite, un grand local : le même fluide s'y dilue, et la jauge de concentration reste sous la limite. Une bande donne le principe :
+    la concentration est la masse de fluide divisée par le volume du local, donc dans un petit local la limite est vite atteinte.
+    L'animation remplit les locaux et les jauges ; l'image fixe montre l'état final.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .lim  { font-size:17px; fill:#c0392b; font-weight:bold; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="34" text-anchor="middle">Même machine, même quantité de fluide, même fuite totale</text>
+
+  <g transform="translate(0,-40)">
+  <!-- ====== Petit local ====== -->
+  <rect x="40" y="150" width="200" height="160" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="40" y="150" width="200" height="160" fill="#e8914a" fill-opacity="0.55">
+    <animate attributeName="fill-opacity" values="0;0;0.55;0.55" keyTimes="0;0.10;0.50;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="70" y="256" width="64" height="40" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lbl" x="102" y="280" text-anchor="middle" font-size="16">machine</text>
+
+  <!-- jauge du petit local -->
+  <rect x="262" y="110" width="30" height="200" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="262" y="130" width="30" height="180" fill="#c0392b">
+    <animate attributeName="y" values="310;310;130;130" keyTimes="0;0.10;0.50;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="0;0;180;180" keyTimes="0;0.10;0.50;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <line x1="254" y1="170" x2="300" y2="170" stroke="#c0392b" stroke-width="3" stroke-dasharray="6 4"/>
+  <text class="lim" x="306" y="176">limite</text>
+
+  <text class="nom" x="140" y="342" text-anchor="middle">Petit local</text>
+  <text class="lbl" x="140" y="364" text-anchor="middle">concentration au-dessus</text>
+  <text class="lbl" x="140" y="384" text-anchor="middle">de la limite</text>
+
+  <!-- ====== Grand local ====== -->
+  <rect x="420" y="110" width="320" height="200" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <rect x="420" y="110" width="320" height="200" fill="#e8914a" fill-opacity="0.14">
+    <animate attributeName="fill-opacity" values="0;0;0.14;0.14" keyTimes="0;0.10;0.50;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="450" y="256" width="64" height="40" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lbl" x="482" y="280" text-anchor="middle" font-size="16">machine</text>
+
+  <!-- jauge du grand local -->
+  <rect x="762" y="110" width="30" height="200" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="762" y="262" width="30" height="48" fill="#0f766e">
+    <animate attributeName="y" values="310;310;262;262" keyTimes="0;0.10;0.50;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="0;0;48;48" keyTimes="0;0.10;0.50;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <line x1="754" y1="170" x2="800" y2="170" stroke="#c0392b" stroke-width="3" stroke-dasharray="6 4"/>
+  <text class="lim" x="806" y="176">limite</text>
+
+  <text class="nom" x="580" y="342" text-anchor="middle">Grand local</text>
+  <text class="lbl" x="580" y="364" text-anchor="middle">concentration sous la limite</text>
+
+  <!-- bande -->
+  <rect x="20" y="398" width="860" height="42" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="425" text-anchor="middle">Concentration = masse de fluide ÷ volume du local. Petit local : la limite est vite atteinte.</text>
+  </g>
+</svg>

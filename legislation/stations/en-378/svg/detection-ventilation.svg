@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-dv" aria-describedby="d-dv" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dv">Détection et ventilation : le filet de sécurité, pas la première barrière</title>
+  <desc id="d-dv">Quatre cartes reliées par des flèches, de gauche à droite. Une : une fuite, le fluide s'échappe d'un tuyau dans le local. Deux : le détecteur mesure la concentration et déclenche l'alarme au seuil réglé. Trois : la réaction, alarme, ventilation renforcée et mise hors tension du matériel, avec un ventilateur. Quatre : le retour, la concentration redescend sous le seuil. En dessous, trois pastilles donnent l'ordre des priorités : un, limiter les points de fuite ; deux, ventiler en continu ; trois, choisir un matériel adapté au fluide. Une bande précise que la détection est un filet de sécurité qui ne dispense jamais des trois barrières. L'animation déroule la chaîne carte par carte ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .ct  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .num { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .chip{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1b3a63"/></marker></defs>
+  <text class="ttl" x="450" y="32" text-anchor="middle">Quand une fuite se produit : la chaîne de détection</text>
+  <g>
+    <rect x="20" y="52" width="190" height="206" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+    <circle cx="46" cy="80" r="16" fill="#0f766e"/>
+    <text class="num" x="46" y="87" text-anchor="middle">1</text>
+    <text class="ct" x="70" y="87">Une fuite</text>
+    <rect x="60" y="112" width="110" height="14" rx="5" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="123" cy="142" r="6" fill="#e8914a"/><circle cx="137" cy="158" r="6" fill="#e8914a"/><circle cx="113" cy="164" r="6" fill="#e8914a"/>
+    <circle cx="123" cy="142" r="6" fill="#e8914a" opacity="0"><animate attributeName="cy" values="130;130;172;172" keyTimes="0;0.06;0.16;1" dur="14s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.06;0.08;0.16;1" dur="14s" repeatCount="indefinite"/></circle>
+    <text class="lbl" x="115" y="202" text-anchor="middle" font-size="16">le fluide s’échappe</text>
+    <text class="lbl" x="115" y="222" text-anchor="middle" font-size="16">dans le local</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.11;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g><line x1="214" y1="150" x2="239" y2="150" stroke="#1b3a63" stroke-width="4" marker-end="url(#ar)"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.21;1" dur="14s" repeatCount="indefinite"/></g>
+  <g>
+    <rect x="243" y="52" width="190" height="206" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+    <circle cx="269" cy="80" r="16" fill="#0f766e"/>
+    <text class="num" x="269" y="87" text-anchor="middle">2</text>
+    <text class="ct" x="293" y="87">Le détecteur</text>
+    <rect x="314" y="150" width="48" height="26" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <path d="M324,138 Q338,124 352,138" fill="none" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M312,130 Q338,106 364,130" fill="none" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+    <text class="lbl" x="338" y="202" text-anchor="middle" font-size="16">mesure la concentration</text>
+    <text class="lbl" x="338" y="222" text-anchor="middle" font-size="16">et déclenche l’alarme</text>
+    <text class="lbl" x="338" y="242" text-anchor="middle" font-size="16">au seuil réglé</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.19;0.25;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g><line x1="437" y1="150" x2="463" y2="150" stroke="#1b3a63" stroke-width="4" marker-end="url(#ar)"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30000000000000004;0.35000000000000003;1" dur="14s" repeatCount="indefinite"/></g>
+  <g>
+    <rect x="467" y="52" width="190" height="206" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+    <circle cx="493" cy="80" r="16" fill="#0f766e"/>
+    <text class="num" x="493" y="87" text-anchor="middle">3</text>
+    <text class="ct" x="517" y="87">La réaction</text>
+    <circle cx="562" cy="146" r="30" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <g><path d="M562,146 L553,118 Q562,112 571,118 Z" fill="#0f766e"/><path d="M562,146 L553,118 Q562,112 571,118 Z" fill="#0f766e" transform="rotate(120 562 146)"/><path d="M562,146 L553,118 Q562,112 571,118 Z" fill="#0f766e" transform="rotate(240 562 146)"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 562 146;0 562 146;360 562 146;360 562 146" keyTimes="0;0.33;0.47;1" dur="14s" repeatCount="indefinite"/></g>
+    <circle cx="562" cy="146" r="4" fill="#1b3a63"/>
+    <text class="lbl" x="562" y="202" text-anchor="middle" font-size="16">alarme, ventilation</text>
+    <text class="lbl" x="562" y="222" text-anchor="middle" font-size="16">renforcée, mise hors</text>
+    <text class="lbl" x="562" y="242" text-anchor="middle" font-size="16">tension du matériel</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.33;0.39;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g><line x1="661" y1="150" x2="686" y2="150" stroke="#1b3a63" stroke-width="4" marker-end="url(#ar)"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.43999999999999995;0.49;1" dur="14s" repeatCount="indefinite"/></g>
+  <g>
+    <rect x="690" y="52" width="190" height="206" rx="14" fill="#fffdf8" stroke="#0f766e" stroke-width="3"/>
+    <circle cx="716" cy="80" r="16" fill="#0f766e"/>
+    <text class="num" x="716" y="87" text-anchor="middle">4</text>
+    <text class="ct" x="740" y="87">Le retour</text>
+    <rect x="745" y="112" width="22" height="66" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <rect x="745" y="160" width="22" height="18" fill="#0f766e"/>
+    <line x1="739" y1="140" x2="773" y2="140" stroke="#c0392b" stroke-width="3" stroke-dasharray="5 3"/>
+    <path d="M805,120 V164 M793,152 L805,166 L817,152" fill="none" stroke="#0f766e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="lbl" x="785" y="202" text-anchor="middle" font-size="16">la concentration</text>
+    <text class="lbl" x="785" y="222" text-anchor="middle" font-size="16">redescend sous</text>
+    <text class="lbl" x="785" y="242" text-anchor="middle" font-size="16">le seuil</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.47;0.53;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+  <text class="lbl" x="20" y="284" font-weight="bold">Les trois barrières, dans l'ordre :</text>
+    <rect x="20" y="296" width="276" height="48" rx="24" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <circle cx="46" cy="320" r="15" fill="#e8914a"/><text class="chip" x="46" y="326" text-anchor="middle" style="fill:#10233c">1</text>
+    <text class="chip" x="70" y="326">limiter les points de fuite</text>
+    <rect x="312" y="296" width="276" height="48" rx="24" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <circle cx="338" cy="320" r="15" fill="#e8914a"/><text class="chip" x="338" y="326" text-anchor="middle" style="fill:#10233c">2</text>
+    <text class="chip" x="362" y="326">ventiler en continu</text>
+    <rect x="604" y="296" width="276" height="48" rx="24" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+    <circle cx="630" cy="320" r="15" fill="#e8914a"/><text class="chip" x="630" y="326" text-anchor="middle" style="fill:#10233c">3</text>
+    <text class="chip" x="654" y="326">matériel adapté au fluide</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.7;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g>
+  <rect x="20" y="364" width="860" height="52" rx="14" fill="#fffdf8" stroke="#e8914a" stroke-width="3" stroke-dasharray="9 5"/>
+  <text class="band" x="450" y="396" text-anchor="middle">La détection est le filet de sécurité : elle ne remplace aucune des trois barrières.</text>
+  <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.72;0.8;1" dur="14s" repeatCount="indefinite"/>
+  </g>
+</svg>

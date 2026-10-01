@@ -1,0 +1,5 @@
+Vague Acoustique — slugs (ils existeront tous) : acoustique-le-bruit-en-db, acoustique-les-seuils, acoustique-mesurer, acoustique-pac-voisinage, acoustique-traiter-le-bruit.
+Sous-ligne : Acoustique (couleur #6d28d9), scène : ../../img/scene-acoustique.webp (elle existe).
+Sources officielles attendues : Code de la santé publique R. 1336-4 à R. 1336-11 (bruits de voisinage, émergence — citez les articles lus sur Légifrance), arrêté du 30 juin 1999 (acoustique des bâtiments d'habitation), Code du travail R. 4431-* (bruit au travail : valeurs d'exposition), INRS, ADEME ou ministère de la transition écologique pour les PAC. Normes payantes (NF S 31-010, NF EN ISO 3744…) : objet seulement.
+Rappel : les décibels ne s'additionnent pas arithmétiquement — une règle enseignée seulement avec sa source (ou démontrée à partir de la définition logarithmique, sans valeur inventée).
+Chercher d'abord dans le fonds de l'enseignant : node C:/git/HAL-v3/scripts/chercher-rag.js "<sujet>".

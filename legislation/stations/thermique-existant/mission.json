@@ -1,0 +1,36 @@
+{
+  "slug": "thermique-existant",
+  "branche": "Thermique",
+  "titre": "Mission : remplacer la chaudière, ou rénover tout l'immeuble ?",
+  "client": "Le propriétaire d'un petit immeuble ancien de logements locatifs, dont la chaudière collective est en fin de vie.",
+  "situation": "Le propriétaire veut remplacer sa chaudière par une pompe à chaleur. Il s'interroge : « Faut-il en profiter pour tout rénover, ou puis-je m'en tenir à la chaudière ? » Il croit aussi que la RE2020, vue à la télévision, s'applique à son immeuble. Votre responsable vous demande de préparer la réponse avant le devis : quel cadre s'applique à un bâtiment existant, ce que juge chaque logique de rénovation, et ce qu'il faut vérifier avant de proposer l'équipement.",
+  "piece_a_produire": "Un tableau comparatif à deux colonnes (rénovation par élément / rénovation globale) : ce qui est jugé, ce qui déclenche l'exigence, l'avantage et la limite pour le client ; suivi de deux phrases de recommandation avant devis.",
+  "questions": [
+    { "q": "Quel cadre réglementaire s'applique à un bâtiment déjà construit, et est-ce la RE2020 ?", "ecran": 1,
+      "reponse": "La RT existant, un cadre distinct pensé pour les travaux sur l'existant. La RE2020 s'applique aux bâtiments neufs ; la RT existant n'en est pas une version allégée." },
+    { "q": "Le propriétaire remplace une seule fenêtre : qu'est-ce qui est jugé, et par rapport à quoi ?", "ecran": 3,
+      "reponse": "Uniquement la fenêtre remplacée, par rapport à un niveau de performance minimal fixé par arrêté pour son type. Le reste du bâtiment n'est pas concerné : l'exigence est ciblée." },
+    { "q": "Qu'est-ce qui déclenche l'exigence par élément ?", "ecran": 5,
+      "reponse": "Le geste de remplacement lui-même (changer une chaudière, poser une isolation, remplacer des fenêtres), sur ce composant précis. Nul besoin d'un projet de rénovation globale." },
+    { "q": "Vous remplacez une chaudière par une pompe à chaleur : à quel moment vérifiez-vous le niveau minimal exigé pour l'équipement, et pourquoi ?", "ecran": 6,
+      "reponse": "Avant de proposer le devis, pas après : c'est votre intervention qui déclenche l'exigence, et l'équipement posé doit respecter le niveau minimal fixé pour son type." }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Répondez vrai ou faux à chaque phrase et corrigez celles qui sont fausses (5 minutes).",
+    "items": [
+      "Remplacer une chaudière par une pompe à chaleur déclenche une exigence sur l'équipement posé.",
+      "La RT existant est une simple version allégée de la RE2020.",
+      "Une rénovation globale juge le bâtiment entier, bâti et systèmes réunis.",
+      "Une rénovation par élément garantit que le bâtiment progresse au global."
+    ],
+    "corrige": "1 vrai ; 2 faux (c'est un cadre pensé spécifiquement pour l'existant) ; 3 vrai ; 4 faux (chaque geste isolé peut être conforme sans que le bâtiment progresse beaucoup au global)."
+  },
+  "badge": "Bon cadre, bon devis",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP5", "CP6"],
+    "attestation_2025": [],
+    "justification": "CP6 (chauffage / eau chaude sanitaire) parce que le remplacement du générateur déclenche l'exigence, et CP5 (déperditions) parce que l'isolation et les menuiseries relèvent des mêmes logiques de rénovation."
+  }
+}

@@ -47,7 +47,8 @@ const PREFIXES = {
 };
 /* Les deux stations de la sous-ligne Fluidique ne portent pas de préfixe
    commun : leurs noms sont antérieurs à la convention. */
-const CAS_PARTICULIERS = { "fgaz-3": "regl-fluidique", "aptitude-capacite": "regl-fluidique" };
+const CAS_PARTICULIERS = { "fgaz-3": "regl-fluidique", "aptitude-capacite": "regl-fluidique",
+  "en-378": "regl-fluidique", "tracabilite-fluides": "regl-fluidique" };
 
 /* --- Les couleurs, lues dans le plan --------------------------------- */
 const plan = readFileSync(PLAN, "utf8");

@@ -1,8 +1,8 @@
 /* Station 3-2 — La brasure forte sous azote. Source : sources-metier/3-brasures.md (partie 3-2)
    Référence retenue en cas de désaccord : le TP-06 « brasage fort sous azote » de 1re MFER et le cours G10
-   (la pratique actuelle de F. Henninot), puis la fiche 03 du Centre du cuivre. Treize désaccords relevés entre
-   fiches (température, flux, flamme, côté chauffé, refroidissement) : chacun est marqué aValider.
-   L'allumage, le réglage et l'extinction du chalumeau relèvent de la station 2.2. */
+   (la pratique actuelle de F. Henninot), puis la fiche 03 du Centre du cuivre. Les désaccords entre fiches
+   (température, flux, flamme, côté chauffé, refroidissement, débit d'azote) sont TRANCHÉS le 30/09/2026 :
+   voir DECISIONS-2026-09-30.md. L'allumage, le réglage et l'extinction du chalumeau relèvent de la station 2.2. */
 CUIVREZO.stations.push({
   id: '3-2', ligne: 3, titre: 'La brasure forte sous azote', duree: '40 min', vignette: 'images/3-2-forte.webp',
   sources: ['sources-metier/3-brasures.md'],
@@ -11,7 +11,6 @@ CUIVREZO.stations.push({
     titre: 'Un joint brasé plein, propre à l’intérieur',
     texte: 'L’apport a rempli le joint tout autour ; le cuivre n’est pas brûlé ; l’intérieur du tube est resté couleur cuivre, sans calamine.',
     criteres: ['Cordon fin et régulier tout autour, ni trou ni interruption', 'Cuivre à peine coloré, jamais noirci', 'Intérieur couleur cuivre : pas de calamine', 'Étanche : l’épreuve à l’azote en jugera'],
-    aValider: 'Codes du référentiel posés d’après la fiche C3.4 (« brasage fort et/ou brasage tendre ») : à confirmer',
     figure: { svg: 'brasure', etat: 'reussie', legende: 'L’apport remplit le jeu ; un petit cordon régulier au bord.' },
     narration: 'La brasure forte est le raccord le plus courant d’un circuit frigorifique. Elle doit tenir la pression, et rester étanche des années. Mais elle a un ennemi invisible : à cette température, l’intérieur du tube se couvre d’écailles noires, la calamine, qui partiront un jour dans le circuit boucher un détendeur ou un filtre. C’est pour cela qu’on brase sous azote. Dans cette station, deux réussites comptent : un joint plein dehors, et un tube propre dedans.'
   },
@@ -24,7 +23,7 @@ CUIVREZO.stations.push({
       { nom: 'L’azote : bouteille, détendeur, débitmètre, tuyau', detail: 'pour balayer l’intérieur du tube' },
       { nom: 'Le tampon abrasif', detail: 'pour nettoyer les deux pièces' },
       { nom: 'L’écran de brasage, le tapis anti-feu, l’extincteur', detail: 'la zone autour du joint est protégée' },
-      { nom: 'Lunettes teintées, gants à manchettes, tablier', detail: 'lunettes de teinte 4 à 7, selon la fiche de poste' }
+      { nom: 'Lunettes teintées, gants à manchettes, tablier', detail: 'lunettes à verres teintés : le professeur donne le numéro de teinte, d’après la buse' }
     ],
     narration: 'Le matériel se partage en trois familles. Le feu : le poste oxyacétylénique, vérifié à la station deux point un. L’apport : des baguettes de cuivre-phosphore, qui brasent le cuivre sur le cuivre sans flux. Et l’azote, avec son détendeur et son débitmètre, qui va circuler dans le tube pendant toute la brasure. Autour, on protège : écran, tapis anti-feu, extincteur à portée. Et sur vous : lunettes teintées, gants à manchettes, tablier.'
   },
@@ -47,27 +46,23 @@ CUIVREZO.stations.push({
     { titre: 'Choisir la baguette', texte: 'Cuivre sur cuivre : baguette de cuivre-phosphore, sans flux. Cuivre sur laiton : baguette à l’argent, avec flux.',
       pointCle: 'Jamais de cuivre-phosphore sur de l’acier.',
       pourquoi: 'Le phosphore nettoie le cuivre tout seul pendant la brasure : c’est pour cela qu’il se passe de flux. Sur un raccord en laiton, il ne suffit plus.',
-      aValider: 'Flux avec le cuivre-phosphore : « sans flux » dans trois sources, « décapant sur les deux parties » dans le TP de 2010',
       figure: { svg: 'brasure', etat: 'baguette' }, clip: 'clips/3-2/04-baguette.mp4',
       narration: 'Deux baguettes, deux usages. Pour un joint de cuivre sur cuivre, le cuivre-phosphore : le phosphore qu’il contient nettoie le cuivre pendant la brasure, il se passe donc de flux. Pour un raccord en laiton, on prend une baguette à l’argent, avec un flux. Et jamais de cuivre-phosphore sur de l’acier : le joint serait fragile.' },
-    { titre: 'Ouvrir l’azote avant d’allumer', texte: 'Branchez l’azote au tube, ouvrez un débit léger et continu, vérifiez qu’il sort à l’autre bout.',
+    { titre: 'Ouvrir l’azote avant d’allumer', texte: 'Branchez l’azote au tube, ouvrez le débit réglé par le professeur au débitmètre (léger et continu), vérifiez qu’il sort à l’autre bout.',
       pointCle: 'L’azote d’abord, la flamme ensuite.',
       pourquoi: 'L’azote chasse l’air du tube. Sans oxygène à l’intérieur, le cuivre chaud ne se couvre pas de calamine.',
-      aValider: 'Débit d’azote : « léger et continu » partout, aucune valeur en L/min dans les fiches (le TP la fait donner par le professeur)',
       figure: { svg: 'brasure', etat: 'azote' }, clip: 'clips/3-2/05-azote.mp4',
       narration: 'Voici le geste qui fait la différence. Avant même d’allumer, on branche l’azote au tube et on ouvre un débit léger, continu. On vérifie avec la main qu’il sort bien à l’autre bout. L’azote chasse l’air du tube ; sans oxygène à l’intérieur, le cuivre chauffé ne peut plus former de calamine. Le débit exact, c’est le professeur qui vous le donne.' },
-    { titre: 'Allumer et régler la flamme', texte: 'Allumez le chalumeau comme à la station 2.2 et réglez une flamme ni sifflante, ni fumeuse.',
+    { titre: 'Allumer et régler la flamme', texte: 'Allumez le chalumeau comme à la station 2.2, devant le professeur, et réglez une flamme neutre : ni sifflante, ni fumeuse.',
       pointCle: 'Une flamme neutre : dard net et arrondi.',
       pourquoi: 'Une flamme oxydante brûle le cuivre ; une flamme trop carburante salit le joint.',
-      aValider: 'Flamme : « carburante pour le cuivre » dans deux fiches, « neutre à légèrement réductrice » dans G10, « ni sifflante ni fumeuse » dans le TP-06',
       figure: { svg: 'flamme', etat: 'neutre' }, clip: 'clips/3-2/06-flamme.mp4',
-      narration: 'On allume le chalumeau exactement comme à la station deux point deux, et l’on règle la flamme : ni sifflante, ni fumeuse. C’est la flamme neutre, au dard net et arrondi. Une flamme oxydante, qui siffle, brûlerait le cuivre ; une flamme trop chargée en acétylène salirait le joint.' },
-    { titre: 'Chauffer les deux pièces', texte: 'Chauffez le joint en tournant autour, sur les deux pièces, jusqu’au rouge sombre.',
+      narration: 'On allume le chalumeau exactement comme à la station deux point deux, devant le professeur, et l’on règle la flamme : ni sifflante, ni fumeuse. C’est la flamme neutre, au dard net et arrondi. Une flamme oxydante, qui siffle, brûlerait le cuivre ; une flamme trop chargée en acétylène salirait le joint.' },
+    { titre: 'Chauffer les deux pièces', texte: 'Chauffez d’abord le tube, juste avant l’emboîture, puis la femelle. Balayez de l’un à l’autre, en tournant autour, jusqu’au rouge sombre.',
       pointCle: 'On chauffe le tube, pas la baguette.',
       pourquoi: 'L’apport ne coule que vers le métal chaud. Si un seul côté est chaud, il n’ira que d’un côté.',
-      aValider: 'Température : cinq valeurs dans les fiches (600 à 900 °C) ; couleur « rouge sombre » (fiche 03) ou « rouge terne ». Côté chauffé d’abord : trois versions',
       figure: { svg: 'brasure', etat: 'chauffe' }, clip: 'clips/3-2/07-chauffer.mp4',
-      narration: 'On chauffe le joint en faisant tourner la flamme autour, sur les deux pièces, pour qu’elles montent ensemble en température. On attend que le cuivre prenne une couleur rouge sombre. C’est le tube qu’on chauffe, pas la baguette : le métal d’apport ne coulera que vers le cuivre chaud. Un côté froid, et l’apport ne fera qu’un demi-tour.' },
+      narration: 'On commence par le tube, juste avant l’emboîture, puis on passe à la femelle, et l’on balaie de l’un à l’autre en faisant tourner la flamme autour, pour que les deux pièces montent ensemble en température. On attend que le cuivre prenne une couleur rouge sombre, à peine rouge, que l’on voit surtout à l’ombre. C’est le tube qu’on chauffe, pas la baguette : le métal d’apport ne coulera que vers le cuivre chaud. Un côté froid, et l’apport ne fera qu’un demi-tour.' },
     { titre: 'Présenter la baguette', texte: 'Posez la baguette sur le joint, du côté opposé à la flamme.',
       pointCle: 'Elle fond au contact du cuivre chaud, jamais dans la flamme.',
       pourquoi: 'Fondue dans la flamme, elle se pose en goutte sur un tube froid : le joint paraît fait, il n’est pas brasé.',
@@ -78,12 +73,11 @@ CUIVREZO.stations.push({
       pourquoi: 'L’apport aspiré par capillarité remplit le jeu : un cordon qui fait tout le tour annonce un joint plein.',
       figure: { svg: 'brasure', etat: 'capillarite' }, clip: 'clips/3-2/09-suivre.mp4',
       narration: 'Regardez : l’apport fondu disparaît dans le joint, aspiré par le jeu. On le suit tout autour du tube. Quand un petit anneau fin et régulier fait le tour complet, le joint est plein. Inutile d’en ajouter : le surplus ne rend pas le joint plus solide, il coule à l’intérieur.' },
-    { titre: 'Retirer la flamme, laisser refroidir', texte: 'Écartez la flamme progressivement. Laissez refroidir à l’air, sans toucher. Coupez l’azote une fois le tube froid.',
+    { titre: 'Retirer la flamme, laisser refroidir', texte: 'Écartez la flamme progressivement. Laissez refroidir à l’air, sans toucher, et jamais à l’eau. Coupez l’azote une fois le tube froid.',
       pointCle: 'L’azote reste ouvert jusqu’au refroidissement.',
-      pourquoi: 'Le cuivre encore chaud s’oxyde aussi : on protège l’intérieur jusqu’au bout. Et un tube brûlant ne change pas d’aspect : il brûle sans prévenir.',
-      aValider: 'Refroidissement : « jamais à l’eau » (TP-06, G10) contre « eau après refroidissement » (fiche 03)',
+      pourquoi: 'Le cuivre encore chaud s’oxyde aussi : on protège l’intérieur jusqu’au bout. L’eau sur un joint chaud le fissure par le choc, et elle n’a rien à faire dans un circuit frigorifique. Et un tube brûlant ne change pas d’aspect : il brûle sans prévenir.',
       figure: { svg: 'brasure', etat: 'azote' }, clip: 'clips/3-2/10-refroidir.mp4',
-      narration: 'On écarte la flamme doucement, puis on laisse refroidir à l’air, sans toucher. Un tube brasé brûlant a exactement le même aspect qu’un tube froid : c’est comme cela qu’on se brûle. L’azote reste ouvert jusqu’au refroidissement, parce que le cuivre encore chaud continue de s’oxyder. Ensuite seulement, on coupe l’azote, et l’on éteint le chalumeau comme à la station deux point deux.' }
+      narration: 'On écarte la flamme doucement, puis on laisse refroidir à l’air, sans toucher, et jamais à l’eau : le choc pourrait fissurer le joint, et l’eau n’a rien à faire dans un circuit frigorifique. Un tube brasé brûlant a exactement le même aspect qu’un tube froid : c’est comme cela qu’on se brûle. L’azote reste ouvert jusqu’au refroidissement, parce que le cuivre encore chaud continue de s’oxyder. Ensuite seulement, on coupe l’azote, et l’on éteint le chalumeau comme à la station deux point deux.' }
   ],
   pieges: [
     { titre: 'La surchauffe', voit: 'Cuivre noirci, bleui ou écaillé ; apport coulé loin du joint.', cause: 'Flamme trop forte, ou trop longtemps au même endroit.',
@@ -115,7 +109,7 @@ CUIVREZO.stations.push({
       figure: { svg: 'poste', etat: 'secours' }, narration: 'Dernier contrôle : tout est éteint, fermé, et rien ne couve.' }
   ],
   prof: {
-    verifie: ['Le poste vérifié avant d’allumer', 'L’azote qui sort, avant la flamme', 'Le joint : cordon plein, cuivre non brûlé', 'La coupe de la pièce d’essai : intérieur propre', 'Plus tard : l’épreuve d’étanchéité à l’azote'],
+    verifie: ['Le poste vérifié avant d’allumer', 'L’azote qui sort au débit réglé, avant la flamme', 'L’allumage, fait devant lui', 'Le joint : cordon plein, cuivre non brûlé', 'La coupe de la pièce d’essai : intérieur propre', 'Plus tard : l’épreuve d’étanchéité à l’azote'],
     narration: 'Le professeur intervient trois fois : il vérifie le poste avant l’allumage, il constate que l’azote sort avant que la flamme ne s’approche, puis il coupe votre pièce d’essai pour regarder l’intérieur. C’est cette coupe qui dit la vérité d’une brasure sous azote.'
   }
 });

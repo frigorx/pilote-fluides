@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="t-pc" aria-describedby="d-pc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pc">Présomption de conformité : une voie sûre, pas la seule</title>
+  <desc id="d-pc">À gauche, une exigence : les objectifs de sécurité de l'arrêté du 3 août 2016 pour un logement neuf. Deux voies en partent. La voie du haut, en trait plein : vous suivez la norme NF C 15-100, et vous êtes présumé conforme, sans rien avoir à prouver de plus. La voie du bas, en trait tireté : vous choisissez une autre solution, et vous devez démontrer qu'elle apporte le même résultat, c'est la solution équivalente. Une bande rappelle que la même logique vaut pour une norme européenne harmonisée : la présomption, pas l'obligation. Image fixe.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#3730a3; }
+    .hb   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .wht  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <g><rect x="20" y="140" width="220" height="140" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="130" y="182" text-anchor="middle">L'exigence</text><text class="lbl" x="130" y="210" text-anchor="middle">objectifs de sécurité</text><text class="lbl" x="130" y="234" text-anchor="middle">de l'arrêté du 3 août 2016</text><text class="lbl" x="130" y="258" text-anchor="middle">(logement neuf)</text></g>
+  <g><polyline points="242,210 275,210 275,84 298,84" fill="none" stroke="#1b3a63" stroke-width="4"/><polygon points="300,84 278,73 278,95" fill="#1b3a63"/><polyline points="242,210 275,210 275,336 298,336" fill="none" stroke="#1b3a63" stroke-width="4" stroke-dasharray="9 7"/><polygon points="300,336 278,325 278,347" fill="#1b3a63"/></g>
+  <g><rect x="310" y="34" width="270" height="100" rx="12" fill="#fffdf8" stroke="#3730a3" stroke-width="4"/><text class="h" x="445" y="76" text-anchor="middle">Vous suivez la norme</text><text class="lbl" x="445" y="104" text-anchor="middle">NF C 15-100</text></g>
+  <g><rect x="310" y="286" width="270" height="100" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="9 7"/><text class="h" x="445" y="328" text-anchor="middle">Vous choisissez</text><text class="lbl" x="445" y="356" text-anchor="middle">une autre solution</text></g>
+  <g><line x1="582" y1="84" x2="640" y2="84" stroke="#1b3a63" stroke-width="4"/><polygon points="652,84 630,73 630,95" fill="#1b3a63"/><line x1="582" y1="336" x2="640" y2="336" stroke="#1b3a63" stroke-width="4" stroke-dasharray="9 7"/><polygon points="652,336 630,325 630,347" fill="#1b3a63"/></g>
+  <g><rect x="664" y="34" width="216" height="100" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="5"/><text class="h" x="772" y="76" text-anchor="middle">Présumé conforme</text><text class="lbl" x="772" y="104" text-anchor="middle">rien à prouver de plus</text></g>
+  <g><rect x="664" y="286" width="216" height="100" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="9 7"/><text class="h" x="772" y="328" text-anchor="middle">À démontrer</text><text class="lbl" x="772" y="356" text-anchor="middle">solution équivalente</text></g>
+  <g><rect x="20" y="400" width="860" height="32" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text class="band" x="450" y="423" text-anchor="middle">Même logique pour une norme européenne harmonisée : présomption, pas obligation</text></g>
+</svg>

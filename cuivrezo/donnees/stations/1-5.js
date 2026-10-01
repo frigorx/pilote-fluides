@@ -1,7 +1,8 @@
 /* Station 1-5 — Cintrer à la cintreuse (repères L, R et 0). Source : sources-metier/1-4-1-5-cintrage.md (partie 2)
    Repères portés par le bras tournant. L = cote prise depuis l'extrémité GAUCHE (écrit dans les fiches) ;
-   R = cote prise depuis l'extrémité DROITE (lu sur un dessin, jamais écrit) ; 0 = lecture de l'angle
-   sur la forme graduée (0 en face de 90 = coude à 90°). Ordre « 0 R L » : trois sources sur quatre.
+   R = cote prise depuis l'extrémité DROITE (dessin CINTRAGE 1 p. 8 et article abcclim, décidé le 30/09/2026) ;
+   0 = lecture de l'angle sur la forme graduée (0 en face de 90 = coude à 90°). Ordre « 0 R L » : trois
+   sources sur quatre ; à vérifier UNE FOIS sur la cintreuse de l'atelier (liste du professeur).
    Pièce de référence : pièce 1 du niveau 3 de tp-cintrage (1/4″, coupe 144, cote 80 sur L). */
 CUIVREZO.stations.push({
   id: '1-5', ligne: 1, titre: 'Cintrer à la cintreuse (L, R, 0)', duree: '30 min', vignette: 'images/1-5-cintreuse.webp',
@@ -16,7 +17,7 @@ CUIVREZO.stations.push({
   },
   materiel: {
     titre: 'Je sors mon matériel',
-    figure: { svg: 'cintreuse', etat: 'reperes', aValider: 'Position et ordre des repères 0, R, L à vérifier sur la cintreuse de l’atelier' },
+    figure: { svg: 'cintreuse', etat: 'reperes' },
     items: [
       { nom: 'La cintreuse du bon diamètre', detail: 'son marquage (1/4″, 3/8″) est celui du tube' },
       { nom: 'Le tube 1/4″ coupé à 144 mm', detail: 'coupé d’équerre et ébavuré : stations 1.2 et 1.3' },
@@ -34,13 +35,11 @@ CUIVREZO.stations.push({
     { titre: 'Choisir le repère : L ou R', texte: 'La cote part de l’extrémité gauche du tube ? Ce sera L. De l’extrémité droite ? Ce sera R.',
       pointCle: 'L comme Left, gauche. R comme Right, droite.',
       pourquoi: 'Le coude s’enroule d’un côté du trait. Le repère compense ce décalage selon le côté d’où vient la cote.',
-      aValider: 'La règle de R est lue sur un dessin (CINTRAGE 1, p. 8), elle n’est écrite dans aucune fiche',
       figure: { svg: 'cintreuse', etat: 'placer-L' }, clip: 'clips/1-5/02-choisir-repere.mp4',
       narration: 'Avant de tracer, on se demande de quel bout part la cote. Si elle part de l’extrémité gauche du tube, on posera le trait sur L, comme Left, gauche. Si elle part de l’extrémité droite, sur R, comme Right, droite. Pourquoi deux repères ? Parce que le coude s’enroule d’un côté du trait, et que ce décalage ne se compense pas de la même façon selon le côté d’où vient la cote.' },
     { titre: 'Tracer la cote finie', texte: 'Depuis le bout choisi, tracez la cote du plan : 80 mm pour la pièce 1.',
       pointCle: 'On trace la cote finie, telle qu’elle est sur le plan.',
       pourquoi: 'Avec la cintreuse, pas de soustraction : c’est le repère L ou R qui tient compte du rayon.',
-      aValider: 'Aucune fiche ne dit pourquoi on ne retire pas le rayon avec L : hypothèse, le repère le compense (distance 0→L à mesurer)',
       figure: { svg: 'mesure', etat: 'butee' }, clip: 'clips/1-5/03-tracer.mp4',
       narration: 'On trace la cote telle qu’elle est sur le plan : quatre-vingts millimètres depuis l’extrémité gauche, pour la pièce une. Avec la cintrette, il fallait retirer le rayon. Ici, non : c’est le repère L, ou R, qui en tient compte à votre place. C’est tout l’intérêt de ces lettres.' },
     { titre: 'Ouvrir la cintreuse', texte: 'Dépliez le bras tournant vers l’avant, dans le prolongement de la butée.',
@@ -56,7 +55,6 @@ CUIVREZO.stations.push({
     { titre: 'Ou sur R, si la cote part de la droite', texte: 'Même geste, mais le trait se pose en face de R.',
       pointCle: 'Le repère suit le bout d’où part la cote.',
       pourquoi: 'Sur une pièce à plusieurs coudes, on passe parfois d’un repère à l’autre selon le sens des cotes.',
-      aValider: 'Règle de R lue sur un dessin, et ordre des repères 0 R L ou 0 L R à vérifier sur l’outil',
       figure: { svg: 'cintreuse', etat: 'placer-R' }, clip: 'clips/1-5/06-sur-R.mp4',
       narration: 'Si la cote du plan part de l’extrémité droite, le geste est le même, mais le trait se pose en face de R. Sur une pièce à plusieurs coudes, les cotes ne partent pas toujours du même côté : on choisit le repère à chaque coude, en regardant d’où part la cote.' },
     { titre: 'Ramener le bras', texte: 'Main gauche : poignée et tube. Main droite : ramenez le bras vers vous, d’un seul mouvement.',
@@ -79,9 +77,8 @@ CUIVREZO.stations.push({
     { titre: 'La mauvaise cintreuse', voit: 'Un tube écrasé, ou des cotes fausses.', cause: 'Une cintreuse 1/4″ pour un tube 3/8″, ou l’inverse.',
       eviter: 'Vérifier le marquage avant de commencer.', geste: 0, figure: { svg: 'cintreuse', etat: 'reperes' },
       narration: 'Premier piège : la cintreuse d’un autre diamètre. Soit le tube s’écrase dans une gorge trop petite, soit il glisse dans une gorge trop grande. Et même s’il passe, le rayon n’est pas celui pour lequel le plan a été calculé.' },
-    { titre: 'Le mauvais repère', voit: 'Une branche fausse de plusieurs millimètres.', cause: 'Trait posé sur L alors que la cote partait de la droite, ou l’inverse.',
+    { titre: 'Le mauvais repère', voit: 'Une branche nettement fausse.', cause: 'Trait posé sur L alors que la cote partait de la droite, ou l’inverse.',
       eviter: 'Se demander à chaque coude : d’où part la cote ?', geste: 1,
-      aValider: 'L’erreur produite par un mauvais repère n’est chiffrée dans aucune fiche : à mesurer sur l’outil',
       figure: { svg: 'cintreuse', etat: 'placer-R' },
       narration: 'Deuxième piège : poser le trait sur le mauvais repère. La pièce est fausse de la distance qui sépare L de R. Un seul réflexe l’évite : avant chaque coude, se demander de quel bout part la cote.' },
     { titre: 'Le trait mal aligné', voit: 'Une branche un peu trop longue ou trop courte.', cause: 'Le trait n’était pas pile sur le repère.',
@@ -95,9 +92,8 @@ CUIVREZO.stations.push({
       narration: 'Dernier piège, sur les pièces à plusieurs coudes : la pièce vrillée, qui ne tient pas à plat. Le sens de travail a changé en cours de route. De gauche à droite, toujours.' }
   ],
   controles: [
-    { question: 'Les branches mesurent-elles 80 et 70 mm à l’axe (± 1) ?', comment: 'Mesurez chaque branche jusqu’à l’axe de l’autre.', siNon: 'Vérifiez le repère utilisé et l’alignement du trait.', geste: 1,
-      aValider: 'Méthode de mesure à l’axe non écrite pour la cintreuse',
-      figure: { img: 'images/reprises/piece-1-coude-1-4.svg', alt: 'Plan de la pièce 1' }, narration: 'Premier contrôle : les deux branches, à l’axe, au millimètre.' },
+    { question: 'Les branches mesurent-elles 80 et 70 mm à l’axe (± 1) ?', comment: 'Plaquez la branche contre la butée, mesurez jusqu’au bord extérieur de l’autre branche, retirez la moitié du diamètre du tube (3,2 mm en 1/4″).', siNon: 'Vérifiez le repère utilisé et l’alignement du trait.', geste: 1,
+      figure: { img: 'images/reprises/piece-1-coude-1-4.svg', alt: 'Plan de la pièce 1' }, narration: 'Premier contrôle : les deux branches, à l’axe, au millimètre. On mesure jusqu’au bord extérieur de l’autre branche, et l’on retire la moitié du diamètre du tube.' },
     { question: 'Le coude est-il à 90° ?', comment: 'Posez l’équerre contre les deux branches.', siNon: 'Reprenez un tout petit peu à la cintreuse.', geste: 7,
       figure: { svg: 'coude', etat: 'equerre' }, narration: 'Deuxième contrôle : l’angle, à l’équerre.' },
     { question: 'Le tube est-il ni écrasé ni fortement marqué ?', comment: 'Regardez le coude de près.', siNon: 'Pièce à refaire : bon diamètre de cintreuse, mouvement continu.', geste: 6,
@@ -115,7 +111,7 @@ CUIVREZO.stations.push({
     ]
   },
   prof: {
-    verifie: ['Le repère choisi (L ou R) et pourquoi', 'L’angle lu au 0 du bras, puis à l’équerre', 'Les cotes à l’axe, au millimètre', 'L’aspect du coude'],
+    verifie: ['Le repère choisi (L ou R) et pourquoi', 'L’angle lu au 0 du bras, puis à l’équerre', 'Les cotes à l’axe, au millimètre', 'L’aspect du coude', 'Une fois, sur la cintreuse de l’atelier : l’ordre des repères 0, R, L comme sur la figure, et la distance du L au 0, voisine du rayon de cintrage (14,3 mm en 1/4″)'],
     narration: 'Le professeur vous demande quel repère vous avez utilisé, et pourquoi. C’est la vraie preuve : savoir expliquer le choix entre L et R. Puis il mesure la pièce. Les pièces suivantes du TP, un U, trois coudes, deux plans, se font avec exactement la même méthode.'
   }
 });

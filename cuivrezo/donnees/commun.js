@@ -1,6 +1,6 @@
 /* CuivRézo — le commun des stations : lignes, référentiel. SOURCE UNIQUE avec donnees/stations/*.js.
    node outils/construire.mjs assemble le tout dans donnees/stations.js (fichier fabriqué : ne pas l'éditer).
-   Chaque station suit le contrat des six temps (moteur/station.js). Chaque texte affiché a sa
+   Chaque station suit le contrat des six temps écrits (moteur/station.js ; le défi, septième temps, se tire de ces données). Chaque texte affiché a sa
    `narration` à part, écrite pour l'oreille (charte VOIX-ET-NARRATION). Vouvoiement.
    `aValider` : ce qui n'est pas dans les fiches de F. Henninot et attend sa validation (visible avec ?revue).
    Codes du référentiel : sources-metier/referentiel-cap-ifca.md (arrêté du 2 juin 2015, CAP IFCA). */

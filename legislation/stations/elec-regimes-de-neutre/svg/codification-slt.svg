@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 460" role="img"
+     aria-labelledby="t-cod" aria-describedby="d-cod" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cod">Les deux lettres d'un régime de neutre</title>
+  <desc id="d-cod">Un tableau à quatre cases. Les lignes donnent la première lettre, la situation du neutre de la source : T, relié à la terre, ou I, isolé. Les colonnes donnent la deuxième lettre, la situation des masses : T, reliées à la terre, ou N, reliées au neutre. Trois cases portent un régime normalisé : TT, TN et IT. La quatrième, IN, est en pointillé : elle n'est pas normalisée.</desc>
+  <style>
+    .t { font:bold 22px 'Trebuchet MS',Calibri,sans-serif; fill:#10233c; }
+    .h { font:bold 20px 'Trebuchet MS',Calibri,sans-serif; fill:#1b3a63; }
+    .l { font:17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .lb { font:bold 17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .m { font:16px Calibri,'Segoe UI',sans-serif; fill:#5a6b7d; }
+    .big { font:bold 60px 'Trebuchet MS',Calibri,sans-serif; fill:#a16207; }
+    .w { font:bold 30px 'Trebuchet MS',Calibri,sans-serif; fill:#fffdf8; }
+  </style>
+  <defs>
+    <marker id="fl-cod" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,1 L11,6 L1,11 z" fill="#b45309" stroke="#10233c" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <text class="t" x="20" y="40" text-anchor="start">Deux lettres, trois régimes normalisés</text>
+
+  <!-- en-têtes de colonnes : 2e lettre -->
+  <text class="h" x="535" y="92" text-anchor="middle">2e lettre : les masses de l'installation</text>
+  <text class="lb" x="395" y="128" text-anchor="middle">T : reliées à la terre</text>
+  <text class="lb" x="675" y="128" text-anchor="middle">N : reliées au neutre</text>
+
+  <!-- en-têtes de lignes : 1re lettre -->
+  <text class="h" x="20" y="92" text-anchor="start">1re lettre :</text>
+  <text class="h" x="20" y="116" text-anchor="start">le neutre de la source</text>
+  <text class="lb" x="20" y="234" text-anchor="start">T : neutre relié</text>
+  <text class="lb" x="20" y="256" text-anchor="start">à la terre</text>
+  <text class="lb" x="20" y="374" text-anchor="start">I : neutre isolé</text>
+  <text class="lb" x="20" y="396" text-anchor="start">(ou impédant)</text>
+
+  <rect x="260" y="150" width="270" height="130" rx="14" fill="#fbf1dd" stroke="#a16207" stroke-width="3"/>
+  <text class="big" x="395" y="218" text-anchor="middle">TT</text>
+  <text class="l" x="395" y="254" text-anchor="middle">neutre : terre · masses : terre</text>
+  <rect x="540" y="150" width="270" height="130" rx="14" fill="#fbf1dd" stroke="#a16207" stroke-width="3"/>
+  <text class="big" x="675" y="218" text-anchor="middle">TN</text>
+  <text class="l" x="675" y="254" text-anchor="middle">neutre : terre · masses : neutre</text>
+  <rect x="260" y="290" width="270" height="130" rx="14" fill="#fbf1dd" stroke="#a16207" stroke-width="3"/>
+  <text class="big" x="395" y="358" text-anchor="middle">IT</text>
+  <text class="l" x="395" y="394" text-anchor="middle">neutre : isolé · masses : terre</text>
+  <rect x="540" y="290" width="270" height="130" rx="14" fill="#f1ede4" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="9 7"/>
+  <text class="m" x="675" y="350" text-anchor="middle" style="font-size:36px;font-weight:bold">IN</text>
+  <text class="m" x="675" y="388" text-anchor="middle">non normalisé</text>
+  <text class="m" x="20" y="444" text-anchor="start">Le régime TN a trois versions, notées par une troisième lettre : C, S ou C-S (écran 5).</text>
+</svg>

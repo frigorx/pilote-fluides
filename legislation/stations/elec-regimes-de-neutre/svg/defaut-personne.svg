@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 510" role="img"
+     aria-labelledby="t-per" aria-describedby="d-per" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-per">Un défaut d'isolement sans conducteur de protection : la personne referme le circuit</title>
+  <desc id="d-per">À gauche, un poste transformateur dont le neutre est relié à une prise de terre plantée dans le sol. Au centre, une machine dont la carcasse est sous tension : un éclair montre le contact entre la phase et la carcasse, et aucun conducteur de protection ne relie la carcasse à la terre. À droite, une personne, dessinée en pictogramme plein, pose la main sur la carcasse. Un trait orange épais suit le trajet du courant de défaut : de la phase à la carcasse, à travers la personne, jusqu'au sol, puis, en pointillés dans le sol, jusqu'à la prise de terre du poste et au neutre. Des points animés parcourent ce trajet ; à l'arrêt, le trajet complet reste tracé.</desc>
+  <style>
+    .t { font:bold 22px 'Trebuchet MS',Calibri,sans-serif; fill:#10233c; }
+    .h { font:bold 20px 'Trebuchet MS',Calibri,sans-serif; fill:#1b3a63; }
+    .l { font:17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .lb { font:bold 17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .m { font:16px Calibri,'Segoe UI',sans-serif; fill:#5a6b7d; }
+    .big { font:bold 60px 'Trebuchet MS',Calibri,sans-serif; fill:#a16207; }
+    .w { font:bold 30px 'Trebuchet MS',Calibri,sans-serif; fill:#fffdf8; }
+  </style>
+  <defs>
+    <marker id="fl-per" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,1 L11,6 L1,11 z" fill="#b45309" stroke="#10233c" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <rect x="10" y="360" width="840" height="110" rx="6" fill="#efe6d5" stroke="#d8c9a8" stroke-width="2"/>
+  <text class="m" x="830" y="385" text-anchor="end">Sol</text>
+  <rect x="40" y="80" width="120" height="110" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="85.6" cy="143" r="24" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="114.4" cy="143" r="24" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="100" y="68" text-anchor="middle">Poste</text>
+  <path d="M160,105 H440 M160,165 H440" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M190,165 V360" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="190" cy="165" r="6" fill="#1b3a63"/>
+  <path d="M184,330 H196 V390 L190,400 L184,390 Z" fill="#c9c2b3" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="l" x="300" y="93" text-anchor="middle">Phase</text>
+  <text class="l" x="300" y="190" text-anchor="middle">Neutre</text>
+
+  <rect x="440" y="70" width="160" height="130" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="6"/>
+  <!-- halo du courant de défaut, sous les conducteurs -->
+  <path d="M160,105 H570" fill="none" stroke="#e8914a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <path d="M570,140 H690 V360" fill="none" stroke="#e8914a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <path d="M690,360 V395 H190 V360" fill="none" stroke="#e8914a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" stroke-dasharray="16 12"/>
+  <path d="M190,360 V165 H160" fill="none" stroke="#e8914a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <!-- machine : carcasse sans conducteur de protection -->
+  <path d="M440,105 H570 M440,165 H520" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M570,108 L561,119.4 L577,125.4 L568,138" fill="none" stroke="#c0392b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="h" x="520" y="58" text-anchor="middle">Machine</text>
+  <text class="lb" x="520" y="232" text-anchor="middle">Carcasse sous tension</text>
+  <text class="l" x="520" y="254" text-anchor="middle">(défaut d'isolement)</text>
+
+  <!-- la personne : pictogramme plein -->
+  <circle cx="700" cy="88" r="18" fill="#1b3a63"/>
+  <rect x="680" y="112" width="40" height="100" rx="16" fill="#1b3a63"/>
+  <rect x="683" y="200" width="15" height="160" rx="6" fill="#1b3a63"/>
+  <rect x="703" y="200" width="15" height="160" rx="6" fill="#1b3a63"/>
+  <path d="M684,140 H602" fill="none" stroke="#1b3a63" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M602,140 H690 V360" fill="none" stroke="#e8914a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <text class="lb" x="700" y="50" text-anchor="middle">Personne</text>
+  <text class="l" x="775" y="140" text-anchor="start">Le courant</text>
+  <text class="l" x="775" y="162" text-anchor="start">la traverse</text>
+
+  <path d="M380,105 L383.0,105.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-per)"/><path d="M640,140 L643.0,140.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-per)"/><path d="M690,250 L690.0,253.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-per)"/><path d="M450,395 L447.0,395.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-per)"/><path d="M190,260 L190.0,257.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-per)"/>
+
+  <text class="l" x="190" y="435" text-anchor="middle">Prise de terre du poste</text>
+  
+  <path d="M30,488 H90" fill="none" stroke="#e8914a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <text class="l" x="105" y="494" text-anchor="start">Trajet du courant de défaut</text>
+  
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M160,105 H570 V140 H690 V395 H190 V165 H160" keyPoints="0;0;1;1" keyTimes="0;0.050;0.500;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.050;0.060;0.490;0.500;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M160,105 H570 V140 H690 V395 H190 V165 H160" keyPoints="0;0;1;1" keyTimes="0;0.095;0.545;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.095;0.105;0.535;0.545;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M160,105 H570 V140 H690 V395 H190 V165 H160" keyPoints="0;0;1;1" keyTimes="0;0.140;0.590;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.140;0.150;0.580;0.590;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+</svg>

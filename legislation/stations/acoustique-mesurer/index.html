@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Mesurer — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le sonomètre (classe, pondération A, constante de temps, étalonnage), le protocole d'une mesure d'émergence (ambiant puis résiduel), le rapport de mesure et les erreurs de débutant.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/acoustique-mesurer/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Acoustique (#6d28d9).
+     « Mesurer — sonomètre et protocole ». Niveau BTS / technicien d'études CVC.
+     Produite le 30/09/2026 sur le gabarit aptitude-capacite ; 8 écrans + 4 questions.
+     Fond, sources et « À sourcer » : FOND.md. Mission du livret : mission.json.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer. Les MP3 de ces
+     narrations ne sont pas encore fabriqués : la voix du navigateur sert
+     de filet (voix-index.js ne les connaît pas).
+
+     Aucune valeur non sourcée : les seuils de l'émergence sont dans la
+     station « Les seuils » ; seuls 25 et 30 décibels pondérés A (art.
+     R. 1336-6) figurent ici, avec leur source (FOND.md).
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Acoustique · niveau BTS</p>
+  <h1>Mesurer — sonomètre et protocole</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-acoustique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez régler et contrôler un <strong>sonomètre</strong> (classe, pondération A, constante de temps, étalonnage avant et après), conduire le <strong>protocole d'une mesure d'émergence</strong> — bruit ambiant machine en marche, bruit résiduel machine arrêtée, mêmes conditions —, dire ce que contient un <strong>rapport de mesure</strong>, et éviter les trois erreurs de débutant : mesurer trop près, oublier le résiduel, laisser le vent sur le micro.</p>
+  </div>
+  <p class="depart-note"><strong>Référentiel</strong> : TP TECVC, REAC TP-00133 — compétences <strong>CP9</strong> (climatisation) et <strong>CP7</strong> (ventilation tertiaire) : vérifier, mesure à l'appui, qu'une installation respecte ses contraintes acoustiques.</p>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez d'abord à gauche : une unité extérieure fixée au mur d'une maison, et ses ondes qui vont vers la fenêtre du voisin. Ce voisin dit que cela le gêne. C'est une impression, sincère mais impossible à discuter. Le droit demande autre chose : une émergence, c'est-à-dire l'écart entre le bruit avec la machine et le bruit sans elle. Regardez les deux cartes du bas : d'un côté ce que dit le plaignant, de l'autre ce que vous devez établir, un niveau mesuré, avec sa méthode. Cette station vous apprend à produire ce niveau.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Une plainte se traite par une mesure</h2>
+    <p>Un voisin se plaint du bruit d'une unité extérieure. Sa gêne est réelle, mais une impression ne se discute pas : ce qu'on attend d'un technicien, c'est une <strong>mesure</strong>, faite avec une méthode qu'un autre pourrait reproduire.</p>
+    <p>Le Code de la santé publique parle d'<strong>émergence</strong> (art. R. 1336-7) : l'écart entre le <strong>bruit ambiant</strong>, celui qui comprend le bruit en cause, et le <strong>bruit résiduel</strong>, celui des bruits habituels en l'absence du bruit en cause. Cette valeur ne s'entend pas, elle se mesure — et elle concerne le bruit <strong>perçu par autrui</strong> (art. R. 1336-6, pour le bruit d'une activité professionnelle, sportive, culturelle ou de loisir — le cas d'un commerce et de sa climatisation).</p>
+    <p>Les limites auxquelles on compare le résultat sont l'objet de la station <a href="../acoustique-les-seuils/">Les seuils</a>. Ici, on apprend à <strong>produire le chiffre</strong>, proprement.</p>
+    <figure>
+      <img src="svg/plainte-et-mesure.svg" alt="À gauche une maison dont le mur porte une unité extérieure ; des ondes en arcs violets partent de l'unité vers la fenêtre du logement de droite, où un habitant est représenté par un pictogramme plein. En bas, deux cartes reliées par une flèche orange : ce que dit le plaignant, « Ça me gêne », et ce que le technicien doit établir, un niveau mesuré avec sa méthode.">
+      <figcaption>Le plaignant dit « ça me gêne » ; le technicien doit établir un niveau mesuré.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici la chaîne du sonomètre, de gauche à droite. Le microphone capte les variations de pression de l'air. Le signal passe par un filtre de pondération, qui pèse chaque fréquence à la manière de l'oreille. Un détecteur applique la constante de temps, c'est-à-dire la vitesse à laquelle l'appareil réagit. L'intégrateur moyenne l'énergie sur la durée du relevé. L'écran affiche le résultat en décibels. Regardez la bande du bas : pour un bruit de voisinage, l'arrêté demande un sonomètre intégrateur homologué, de classe 1 ou de classe 2, deux niveaux d'exactitude de l'appareil.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le sonomètre : de l'air à l'affichage</h2>
+    <p>Un sonomètre est une <strong>chaîne</strong> : le <strong>microphone</strong> capte la pression de l'air ; un <strong>filtre</strong> de pondération pèse chaque fréquence ; un <strong>détecteur</strong> règle la vitesse de réaction ; un <strong>intégrateur</strong> moyenne l'énergie sur la durée ; l'<strong>affichage</strong> donne le niveau en décibels.</p>
+    <p>Pour les bruits de voisinage, l'arrêté du 5 décembre 2006 relatif aux modalités de mesurage impose, dans sa rédaction issue de l'arrêté du 1<sup>er</sup> août 2013, « un sonomètre intégrateur homologué de classe 1 ou de classe 2 ». La <strong>classe</strong> dit l'exactitude de l'appareil : la classe 1 est plus exigeante que la classe 2.</p>
+    <p>La construction et le contrôle des sonomètres relèvent de l'arrêté du 27 octobre 1989 modifié. Les normes de construction (NF S 31-009 pour les sonomètres, NF S 31-109 pour les sonomètres intégrateurs-moyenneurs) sont payantes : on n'en retient ici que l'objet.</p>
+    <figure>
+      <img src="svg/chaine-sonometre.svg" alt="Cinq blocs alignés de gauche à droite reliés par des flèches : le microphone qui capte la pression de l'air, le filtre de pondération A qui imite l'oreille, le détecteur qui règle la vitesse de réaction, l'intégrateur qui moyenne l'énergie sur la durée, l'affichage en décibels. Au-dessus du premier bloc, une flèche orange venue de la pression acoustique. En bas, une bande : pour un bruit de voisinage, sonomètre intégrateur homologué de classe 1 ou de classe 2. L'animation éclaire les blocs l'un après l'autre ; l'image fixe est complète.">
+      <figcaption>Cinq blocs en chaîne, du microphone à l'affichage, et l'exigence de classe 1 ou 2.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="À gauche, la courbe violette montre comment la pondération A traite les fréquences : les graves sont très atténuées, comme le fait l'oreille. La ligne grise en tirets représente un appareil sans pondération. C'est pourquoi le Code de la santé publique exprime l'émergence globale en décibels pondérés A. À droite, un bruit qui fluctue, en gris. La réponse rapide, en orange, le suit de près ; la réponse lente, en bleu, le lisse. La ligne violette en tirets est le niveau continu équivalent : une seule valeur pour toute la durée du relevé. Ces réglages se notent dans le rapport.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Pondération A et constante de temps</h2>
+    <p>La <strong>pondération A</strong> imite la sensibilité de l'oreille : elle atténue fortement les graves. L'émergence globale s'exprime en <strong>décibels pondérés A</strong>, notés dB(A) ; l'émergence <strong>spectrale</strong>, elle, se cherche par bandes d'octave (art. R. 1336-8) — l'arrêté de 2006 parle d'ailleurs d'une émergence « par bandes de fréquences ».</p>
+    <p>La <strong>constante de temps</strong> règle la vitesse de l'appareil : en réponse <strong>rapide</strong> il suit les variations, en réponse <strong>lente</strong> il les lisse. Le <strong>niveau continu équivalent</strong>, noté <strong>LAeq</strong> (« A » pour la pondération), est la valeur unique qui contiendrait la même énergie que le bruit réel sur toute la durée : c'est ce que calcule l'<strong>intégrateur</strong>.</p>
+    <p>Quel réglage employer pour quel indicateur : c'est la méthode normalisée qui le précise. Vous notez ce que vous avez choisi ; vous ne le laissez pas au hasard.</p>
+    <figure>
+      <img src="svg/ponderation-et-temps.svg" alt="Deux graphiques. À gauche, la sensibilité en fonction de la fréquence, des graves aux aigus : une ligne grise en tirets horizontale pour un appareil sans pondération, et une courbe violette pour la pondération A, très basse dans les graves, qui monte puis redescend légèrement dans les aigus. À droite, le niveau sonore en fonction du temps : un bruit qui fluctue en gris, la réponse rapide en orange qui le suit de près, la réponse lente en bleu qui le lisse, et une ligne violette en tirets, le niveau continu équivalent, une seule valeur pour toute la durée. Une légende sous chaque graphique. L'animation trace les courbes l'une après l'autre ; l'image fixe est complète.">
+      <figcaption>À gauche la pondération A, à droite la constante de temps et le niveau continu équivalent.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Trois temps, de gauche à droite. Avant la série, on pose le calibreur sur le microphone : c'est une source qui produit un niveau connu. On note ce que lit l'appareil et, si besoin, son réglage. Pendant la série, on ne touche plus à rien. Après la série, on contrôle de nouveau avec le même calibreur et on note l'écart avec l'avant. En bas, les deux issues : si l'écart reste dans la tolérance, la série est utilisable ; sinon elle est à refaire. Cette tolérance se lit dans la notice de l'appareil et dans la méthode retenue.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Étalonner avant, étalonner après</h2>
+    <p>Le <strong>calibreur</strong> est une source sonore qui produit un niveau connu. On le pose sur le microphone et on regarde ce que lit l'appareil :</p>
+    <ol>
+      <li><strong>Avant la série</strong> : on note le niveau lu et, si besoin, le réglage fait ;</li>
+      <li><strong>Pendant</strong> : on ne touche plus ni au matériel ni aux réglages ;</li>
+      <li><strong>Après la série</strong> : même calibreur, même microphone, et on note l'<strong>écart</strong> avec le contrôle d'avant.</li>
+    </ol>
+    <p>Si l'écart reste dans la tolérance, la série est utilisable ; sinon elle est <strong>à refaire</strong>. Cette tolérance se lit dans la notice de l'appareil et dans la méthode retenue : on ne l'invente pas.</p>
+    <p><strong>À ne pas confondre</strong> : l'étalonnage de terrain, fait à chaque série avec le calibreur (objet de la norme NF S 31-139 sur les calibreurs acoustiques), et la <strong>vérification périodique</strong> de l'appareil, qui relève de la réglementation des instruments de mesure. L'un ne remplace pas l'autre.</p>
+    <figure>
+      <img src="svg/etalonnage-avant-apres.svg" alt="Trois cartes reliées par des flèches orange : 1, avant, un calibreur posé sur le microphone, on note le niveau lu et le réglage éventuel ; 2, pendant, le sonomètre et ses ondes, on relève l'ambiant puis le résiduel sans toucher au matériel ; 3, après, le même calibreur sur le même micro, on note l'écart avec le contrôle d'avant. En dessous, deux issues : à gauche, encadrée d'un trait plein avec une coche, écart dans la tolérance, la série est utilisable ; à droite, encadrée d'un trait tireté avec une croix, écart hors tolérance, la série est à refaire. Une ligne rappelle que la tolérance se lit dans la notice et la méthode. L'animation fait apparaître les blocs dans l'ordre ; l'image fixe est complète.">
+      <figcaption>Avant, pendant, après : et deux issues selon l'écart.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="C'est le cœur du protocole. À gauche, première prise : la machine fonctionne, le sonomètre est en place, on relève le bruit ambiant, qui contient la machine et tous les bruits habituels. À droite, seconde prise : la machine est arrêtée, le sonomètre n'a pas bougé, on relève le bruit résiduel, celui des seuls bruits habituels, ici en gris. La bande du bas donne le résultat : l'émergence est l'écart entre les deux. Elle n'a de sens que si tout le reste est identique : même point, même heure, mêmes réglages.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le relevé : ambiant, puis résiduel</h2>
+    <p>Les gestes se suivent dans cet ordre :</p>
+    <ol>
+      <li>installer le sonomètre <strong>au point retenu</strong> et étalonner ;</li>
+      <li><strong>machine en marche</strong> : relever le <strong>bruit ambiant</strong> — la machine et les bruits habituels ;</li>
+      <li><strong>arrêter la machine</strong>, sans déplacer le sonomètre : relever le <strong>bruit résiduel</strong> — les bruits habituels seuls ;</li>
+      <li>en déduire l'<strong>émergence</strong>.</li>
+    </ol>
+    <p class="formule" style="white-space:nowrap;overflow-x:auto">Émergence = niveau ambiant − niveau résiduel</p>
+    <p><strong>Pourquoi mesurer le résiduel plutôt que le deviner ?</strong> Un niveau en décibels est le logarithme d'une énergie : <span style="white-space:nowrap">L = 10 × log₁₀ (I / I₀)</span>. Ce sont les <em>énergies</em> qui s'additionnent : l'énergie ambiante est l'énergie résiduelle plus celle de la machine. Les <em>niveaux</em> ne s'additionnent pas — le niveau ambiant n'est donc pas la somme des deux niveaux, et on ne peut pas retrouver l'un sans mesurer l'autre.</p>
+    <p>Tout le reste doit rester <strong>identique</strong> entre les deux relevés : même point, même heure, même météo, mêmes réglages. Seule la machine change.</p>
+    <figure>
+      <img src="svg/releve-ambiant-residuel.svg" alt="Deux panneaux côte à côte. À gauche, machine en marche : une unité extérieure émet des ondes violettes vers un sonomètre monté sur trépied ; des arcs gris sur le bord droit représentent les bruits habituels ; on relève le bruit ambiant, machine plus bruits habituels. À droite, machine arrêtée : la même unité, grisée et sans ondes, le sonomètre au même endroit, les mêmes arcs gris ; on relève le bruit résiduel, bruits habituels seuls. Une bande en bas donne la formule : émergence égale niveau ambiant moins niveau résiduel, et une ligne rappelle que tout le reste est identique. L'animation éclaire d'abord le panneau de gauche, puis celui de droite, puis la bande ; l'image fixe est complète.">
+      <figcaption>Première prise machine en marche, seconde prise machine arrêtée, puis la différence.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Vue de dessus : à gauche l'installation et son unité extérieure, à droite le logement du plaignant. Le texte parle du bruit perçu par autrui : le sonomètre va donc là où il est perçu. Le premier repère, tout près de l'unité, est barré d'une croix : il mesure la machine, pas ce que reçoit le voisin. Le second, dans la pièce du plaignant, est le bon endroit. Le Code distingue d'ailleurs l'intérieur des pièces principales, fenêtres ouvertes ou fermées, et les autres cas. En bas, trois choses à noter : l'heure de la gêne, la météo et la durée.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Où, quand, par quel temps</h2>
+    <p><strong>Où ?</strong> Là où le bruit est <strong>perçu</strong> : à l'intérieur d'une pièce principale du logement, fenêtres ouvertes ou fermées, ou à l'extérieur selon le cas. L'article R. 1336-6 fait la différence : l'émergence n'est recherchée que si le niveau de bruit ambiant mesuré dépasse <strong>25 décibels pondérés A</strong> dans une pièce principale, ou <strong>30 décibels pondérés A</strong> dans les autres cas. Mesurer au ras de l'unité ne dit rien de ce que reçoit le voisin.</p>
+    <p><strong>Quand ?</strong> À l'heure où la gêne se produit : les limites d'émergence ne sont pas les mêmes le jour et la nuit (art. R. 1336-7) — leurs valeurs sont dans la station <a href="../acoustique-les-seuils/">Les seuils</a>.</p>
+    <p><strong>Par quel temps ?</strong> La météo fait partie des conditions que la méthode encadre : l'arrêté de 2006 renvoie aux prescriptions de la norme NF S 31-010 (payante) pour l'appareillage, les conditions de mesure, la météorologie et l'acquisition des données. On note vent et pluie ; s'ils sortent du cadre de la méthode, on <strong>reporte</strong>. La hauteur du microphone, la distance aux parois et la durée du relevé sont, elles aussi, dans la norme : on les <strong>note</strong> au lieu de les deviner.</p>
+    <figure>
+      <img src="svg/ou-et-quand-mesurer.svg" alt="Vue de dessus. À gauche, l'installation avec son unité extérieure contre le mur ; au centre, la limite de propriété en tirets ; à droite, le logement du plaignant, dont une fenêtre donne sur l'installation. Deux repères pour le microphone : un premier, barré d'une croix orange, tout près de l'unité ; un second, coché, dans la pièce chez le plaignant. En bas, trois conditions à noter avec leur pictogramme : l'heure de la gêne, le jour et la nuit ; la météo, vent et pluie ; la durée de chaque relevé.">
+      <figcaption>Vue de dessus : un repère barré, un repère coché, et trois conditions à noter.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Une mesure sans rapport n'existe pas. Regardez la feuille : huit lignes, chacune avec sa case cochée. On y trouve l'objet et le demandeur, le lieu, la date, l'heure et la durée, la météo, le matériel avec la date de sa dernière vérification, l'étalonnage avant et après avec l'écart, la position du microphone en plan ou en photo, le fonctionnement de la machine pendant la mesure, et enfin les trois résultats : ambiant, résiduel et émergence. Le tout doit permettre à quelqu'un d'autre de refaire la mesure dans les mêmes conditions.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le rapport de mesure</h2>
+    <p>Un rapport de mesure sérieux tient sur quelques lignes, mais aucune ne manque :</p>
+    <ul>
+      <li>l'<strong>objet</strong> et le <strong>demandeur</strong> ; le <strong>lieu</strong>, la <strong>date</strong>, l'<strong>heure</strong> et la <strong>durée</strong> ;</li>
+      <li>la <strong>météo</strong> pendant la mesure ;</li>
+      <li>le <strong>matériel</strong> (modèle, classe) et la date de sa dernière vérification ;</li>
+      <li>l'<strong>étalonnage</strong> avant et après, avec l'écart ;</li>
+      <li>la <strong>position du microphone</strong> (plan, photo) et le <strong>fonctionnement de la machine</strong> pendant la mesure ;</li>
+      <li>les trois résultats : <strong>ambiant</strong>, <strong>résiduel</strong>, <strong>émergence</strong>.</li>
+    </ul>
+    <p>Le critère est simple : <strong>quelqu'un d'autre doit pouvoir refaire la mesure</strong> dans les mêmes conditions. Le détail exigé dépend de la méthode retenue ; cette liste est le socle d'un rapport que l'on peut défendre.</p>
+    <p><strong>Autre cadre, autre méthode</strong> : le bruit subi par les salariés se mesure selon la norme NF EN ISO 9612 (arrêté du 11 décembre 2015), avec un mesurage renouvelé au moins tous les 5 ans et conservé 10 ans (INRS ; Code du travail, art. R. 4431-1 et R. 4433-2 à R. 4433-7). Ne mélangez pas les deux rapports.</p>
+    <figure>
+      <img src="svg/rapport-de-mesure.svg" alt="Une feuille intitulée « Rapport de mesure » avec huit lignes, chacune précédée d'une case cochée, en deux colonnes : objet et demandeur ; lieu, date, heure et durée ; météo pendant la mesure ; matériel et date de sa vérification ; étalonnage avant et après avec l'écart ; position du micro par plan ou photo ; fonctionnement de la machine ; résultats ambiant, résiduel et émergence. Sous la feuille, une bande : le rapport doit permettre à quelqu'un d'autre de refaire la mesure dans les mêmes conditions. L'animation coche les lignes une à une ; l'image fixe est complète.">
+      <figcaption>Huit lignes cochées : de l'objet aux trois résultats.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Trois cartes, trois erreurs de débutant, chacune marquée d'une croix orange. Première : mesurer trop près de la machine. Vous relevez la machine, pas ce que reçoit le voisin. Deuxième : oublier le résiduel. Sans lui, vous avez un niveau, mais pas d'émergence, donc aucune conclusion possible. Troisième : laisser le vent souffler sur le microphone. Le souffle s'ajoute au bruit mesuré : on protège le micro et on note la météo. La ligne du bas donne le réflexe qui les couvre toutes : étalonner avant et après.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Les trois erreurs de débutant, et le bilan</h2>
+    <ul>
+      <li><strong>Trop près de la machine</strong> : vous relevez la machine, pas le bruit perçu par le voisin. On mesure là où il est perçu.</li>
+      <li><strong>Pas de bruit résiduel</strong> : sans lui, un niveau isolé ne dit rien de l'émergence. Toujours deux relevés, dans les mêmes conditions.</li>
+      <li><strong>Vent sur le microphone</strong> : le souffle s'ajoute au bruit. On protège le micro, on note la météo, on reporte si elle sort du cadre de la méthode.</li>
+    </ul>
+    <p><strong>Le bilan</strong> : un sonomètre intégrateur de classe 1 ou 2 ; un réglage noté (pondération A, constante de temps) ; un étalonnage avant et après ; deux relevés, ambiant puis résiduel, au même point ; un rapport qui permet de refaire.</p>
+    <p class="formule">Le réflexe : étalonner avant et après.</p>
+    <figure>
+      <img src="svg/erreurs-de-debutant.svg" alt="Trois cartes, chacune marquée d'une croix orange dans le coin. Première carte, trop près de la machine : une unité extérieure avec ses ondes et un sonomètre tout proche ; le niveau relevé n'est pas celui reçu par le voisin. Deuxième carte, pas de bruit résiduel : on ne relève que la machine en marche et ses ondes, jamais la machine arrêtée ; sans résiduel, pas d'émergence. Troisième carte, vent sur le microphone : des lignes de vent gris soufflent vers un sonomètre ; le souffle s'ajoute au bruit mesuré, il faut protéger le micro et noter la météo. En bas, la consigne : et toujours, étalonner avant et après.">
+      <figcaption>Trois erreurs barrées d'une croix, et le réflexe qui les couvre.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Comment se calcule l'émergence globale ? Reprenez la bande du bas du schéma de l'écran cinq avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Comment se calcule l'émergence globale ?</h2>
+    <figure class="vignette">
+      <img src="svg/releve-ambiant-residuel.svg" alt="Vignette de rappel : Deux panneaux côte à côte.">
+      <figcaption>Rappel de l'écran 5 — deux relevés, puis l'écart.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La somme des niveaux ambiant et résiduel</button>
+      <button type="button" data-answer="b">Le niveau de la machine seule, mesuré de près</button>
+      <button type="button" data-answer="bonne">Ambiant moins résiduel, mesurés au même point</button>
+      <button type="button" data-answer="d">Le niveau résiduel moins le niveau de la machine</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'article R. 1336-7 définit l'émergence comme la différence entre le bruit ambiant, qui comprend le bruit en cause, et le bruit résiduel. Les décibels ne s'additionnent pas : on ne calcule jamais une somme de niveaux."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. À quels moments contrôle-t-on le sonomètre avec le calibreur, pour une série de mesures ? Regardez les trois cartes de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Quand étalonne-t-on le sonomètre pour une série de mesures ?</h2>
+    <figure class="vignette">
+      <img src="svg/etalonnage-avant-apres.svg" alt="Vignette de rappel : Trois cartes reliées par des flèches orange : 1, avant, un calibreur posé sur le microphone, on note le niveau lu et le réglage éventuel ; 2, pendant, le sonomètre et ses ondes, on relève l'ambiant puis le résiduel sans toucher au matériel ; 3, après, le même calibreur sur le même micro, on note l'écart avec le contrôle d'avant.">
+      <figcaption>Rappel de l'écran 4 — avant, pendant, après.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Avant la série et après, en notant l'écart</button>
+      <button type="button" data-answer="b">Une seule fois, avant la première mesure</button>
+      <button type="button" data-answer="c">Une fois par an, au laboratoire, cela suffit</button>
+      <button type="button" data-answer="d">Seulement si l'appareil est de classe 2</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le contrôle avant et le contrôle après encadrent la série : c'est l'écart entre les deux qui dit si elle est utilisable. La vérification périodique en laboratoire est un autre contrôle, elle ne remplace pas l'étalonnage de terrain."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Vous avez placé le sonomètre au ras de l'unité extérieure, au lieu de chez le plaignant. Quel est le défaut ? Reprenez les deux repères de l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Vous mesurez au ras de l'unité extérieure. Quel est le défaut ?</h2>
+    <figure class="vignette">
+      <img src="svg/ou-et-quand-mesurer.svg" alt="Vignette de rappel : Vue de dessus.">
+      <figcaption>Rappel de l'écran 6 — le repère barré, le repère coché.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Aucun : plus on est près, plus la mesure est précise</button>
+      <button type="button" data-answer="b">Il faut retrancher une correction fixée par le Code de la santé publique</button>
+      <button type="button" data-answer="c">Un sonomètre de classe 2 ne peut pas mesurer de près</button>
+      <button type="button" data-answer="bonne">Ce n'est pas le niveau perçu par le voisin</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le Code parle du bruit perçu par autrui : on mesure là où il est perçu, pas au ras de la source. Près de la machine, on relève surtout la machine."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Le jour de la mesure, un vent soutenu souffle sur le site. Que faites-vous ? Pensez à la carte du vent, à l'écran huit.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un vent soutenu souffle le jour de la mesure. Que faites-vous ?</h2>
+    <figure class="vignette">
+      <img src="svg/erreurs-de-debutant.svg" alt="Vignette de rappel : Trois cartes, chacune marquée d'une croix orange dans le coin.">
+      <figcaption>Rappel de l'écran 8 — les trois erreurs de débutant.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Je mesure quand même : la protection du micro compense tout le vent</button>
+      <button type="button" data-answer="bonne">Je contrôle la météo et je reporte si elle sort du cadre</button>
+      <button type="button" data-answer="c">Je mesure du côté abrité et j'écris « vent fort » dans le rapport</button>
+      <button type="button" data-answer="d">Je mesure plus longtemps pour que le vent se moyenne</button>
+    </div>
+    <p class="feedback" hidden data-explication="La météo fait partie des conditions que la méthode encadre. Une protection sur le micro aide, mais elle ne rend pas valable une mesure faite hors du cadre : on note la météo et on reporte."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../acoustique-les-seuils/"><strong>Les seuils</strong></a> (même sous-ligne)
+      — les limites d'émergence auxquelles on compare le résultat d'une mesure.</li>
+    <li><a href="../acoustique-le-bruit-en-db/"><strong>Le bruit en dB</strong></a> (même sous-ligne)
+      — le décibel, l'échelle logarithmique, et pourquoi les niveaux ne s'additionnent pas.</li>
+    <li><a href="../acoustique-pac-voisinage/"><strong>PAC et voisinage</strong></a> (même sous-ligne)
+      — le cas d'une pompe à chaleur : où l'unité se pose, ce que le voisin reçoit.</li>
+    <li><a href="../acoustique-traiter-le-bruit/"><strong>Traiter le bruit</strong></a> (même sous-ligne)
+      — que faire quand la mesure donne raison au plaignant.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ : voix.js donne la narration,
+     prof-vocal.js enchaîne les écrans tout seul et s'arrête sur les questions.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

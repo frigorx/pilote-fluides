@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-pac" aria-describedby="d-pac" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pac">Une pompe à chaleur qui ne chauffe pas : quatre questions</title>
+  <desc id="d-pac">En haut, un bandeau pose le cas : une pompe à chaleur installée ne chauffe pas le
+    logement. En dessous, quatre cartes numérotées se suivent : quand, après la réception ; quel
+    élément, dissociable ou non ; quel effet, le logement devient-il impropre à sa destination ;
+    quelle cause, avec la question de la cause étrangère. Une bande en bas précise que le résultat
+    dépend des faits établis, pas d'un réflexe. L'animation fait passer un cadre orange sur les quatre
+    cartes, l'une après l'autre ; l'image fixe montre les quatre cartes sans cadre.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#fffdf8; }
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#3730a3; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- Le cas -->
+  <rect x="30" y="20" width="840" height="56" rx="14" fill="#1b3a63"/>
+  <text class="ttl" x="450" y="55" text-anchor="middle">Le cas : la pompe à chaleur posée ne chauffe pas le logement</text>
+
+  <!-- Carte 1 -->
+  <rect x="22" y="100" width="205" height="170" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="num" x="124" y="130" text-anchor="middle">1 · Quand ?</text>
+  <text class="lbl" x="124" y="162" text-anchor="middle">Après la réception,</text>
+  <text class="lbl" x="124" y="184" text-anchor="middle">depuis combien</text>
+  <text class="lbl" x="124" y="206" text-anchor="middle">de temps ?</text>
+  <text class="sm" x="124" y="244" text-anchor="middle">1 an · 2 ans · 10 ans</text>
+
+  <!-- Carte 2 -->
+  <rect x="239" y="100" width="205" height="170" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="num" x="341" y="130" text-anchor="middle">2 · Quel élément ?</text>
+  <text class="lbl" x="341" y="162" text-anchor="middle">La pompe à chaleur</text>
+  <text class="lbl" x="341" y="184" text-anchor="middle">se dépose-t-elle sans</text>
+  <text class="lbl" x="341" y="206" text-anchor="middle">abîmer l'ouvrage ?</text>
+  <text class="sm" x="341" y="244" text-anchor="middle">dissociable ou non</text>
+
+  <!-- Carte 3 -->
+  <rect x="456" y="100" width="205" height="170" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="num" x="558" y="130" text-anchor="middle">3 · Quel effet ?</text>
+  <text class="lbl" x="558" y="162" text-anchor="middle">Le logement devient-il</text>
+  <text class="lbl" x="558" y="184" text-anchor="middle">impropre à sa</text>
+  <text class="lbl" x="558" y="206" text-anchor="middle">destination ?</text>
+  <text class="sm" x="558" y="244" text-anchor="middle">ou seulement moins bon</text>
+
+  <!-- Carte 4 -->
+  <rect x="673" y="100" width="205" height="170" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="num" x="775" y="130" text-anchor="middle">4 · Quelle cause ?</text>
+  <text class="lbl" x="775" y="162" text-anchor="middle">Étude, pose, matériel :</text>
+  <text class="lbl" x="775" y="184" text-anchor="middle">d'où vient le</text>
+  <text class="lbl" x="775" y="206" text-anchor="middle">désordre ?</text>
+  <text class="sm" x="775" y="244" text-anchor="middle">cause étrangère ?</text>
+
+  <!-- Cadre qui parcourt les cartes (absent de l'image fixe) -->
+  <rect x="17" y="95" width="215" height="180" rx="15" fill="none" stroke="#e8914a" stroke-width="5" opacity="0">
+    <animate attributeName="x" calcMode="discrete" values="17;17;234;451;668;668" keyTimes="0;0.10;0.30;0.50;0.70;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;1;1;0;0" keyTimes="0;0.09;0.10;0.30;0.50;0.89;0.90;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Le résultat -->
+  <rect x="30" y="298" width="840" height="120" rx="14" fill="#e7e4ee" stroke="#3730a3" stroke-width="3" stroke-dasharray="14 8"/>
+  <text class="qui" x="450" y="334" text-anchor="middle" style="fill:#3730a3">Selon les réponses : parfait achèvement, bon fonctionnement,</text>
+  <text class="qui" x="450" y="358" text-anchor="middle" style="fill:#3730a3">décennale, ou aucune de ces garanties.</text>
+  <text class="lbl" x="450" y="392" text-anchor="middle">Le résultat dépend des faits établis, pas d'un réflexe.</text>
+</svg>

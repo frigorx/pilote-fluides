@@ -1,0 +1,35 @@
+{
+  "slug": "thermique-re2020",
+  "branche": "Thermique",
+  "titre": "Mission : un excellent carbone ne rattrape pas un Bbio dépassé",
+  "client": "Un cabinet d'architectes qui dépose le permis d'une petite résidence de logements et demande à Clim'Études Sud un point d'étape sur les calculs.",
+  "situation": "Les premiers calculs du projet montrent un très bon résultat sur l'impact carbone (IC), mais un Bbio qui dépasse son seuil. L'architecte pense que le bon résultat sur l'IC compense le dépassement et propose de garder le bâti tel quel. Il envisage par ailleurs une chaudière au gaz pour tenir le budget. Votre responsable vous demande de rédiger la réponse : ce que juge chacune des trois exigences, pourquoi elles ne se compensent pas, et ce que change le choix de l'énergie.",
+  "piece_a_produire": "Une note de synthèse d'une page : un tableau à trois lignes (Bbio, Cep, IC) précisant ce que chaque exigence juge et sur quoi le projet peut agir, puis cinq lignes de réponse à l'architecte sur la compensation et sur le choix de l'énergie.",
+  "questions": [
+    { "q": "Que juge le Bbio, et pourquoi deux bâtiments au bâti identique ont-ils le même Bbio, quel que soit le chauffage installé ?", "ecran": 2,
+      "reponse": "Le Bbio juge la qualité du bâti (orientation, compacité, isolation), indépendamment des équipements. Il existe justement à côté du Cep pour juger le bâti seul, avant tout choix d'équipement." },
+    { "q": "Quels usages le Cep additionne-t-il ?", "ecran": 3,
+      "reponse": "Tous les usages d'énergie du bâtiment : chauffage, refroidissement, eau chaude sanitaire, éclairage et auxiliaires. C'est l'héritier de ce que mesurait la RT2012, mais il ne travaille plus seul." },
+    { "q": "Un projet est excellent sur l'IC mais dépasse son seuil de Bbio : passe-t-il ? Justifiez.", "ecran": 5,
+      "reponse": "Non. Chaque exigence a son propre seuil, contrôlé indépendamment ; ce n'est pas une moyenne. Le très bon résultat sur l'une ne rattrape jamais le dépassement sur l'autre." },
+    { "q": "À bâti identique, en quoi le choix d'une pompe à chaleur plutôt que d'une chaudière au gaz change-t-il le résultat ?", "ecran": 7,
+      "reponse": "L'IC compte l'impact carbone de l'énergie utilisée sur toute la durée de vie : une énergie carbonée pèse plus lourd. Le choix change donc directement le résultat sur l'IC et la capacité du projet à passer sous son seuil." }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque action de conception à l'exigence de la RE2020 sur laquelle elle agit (Bbio, Cep ou IC), en une ligne de justification chacune.",
+    "items": [
+      "Étudier l'orientation, la compacité et l'isolation du bâtiment",
+      "Choisir des matériaux dont la fabrication émet peu de carbone",
+      "Regarder le total du chauffage, du refroidissement, de l'eau chaude sanitaire, de l'éclairage et des auxiliaires"
+    ],
+    "corrige": "1 → Bbio (qualité du bâti, indépendante des équipements) ; 2 → IC (l'analyse de cycle de vie compte la fabrication des matériaux) ; 3 → Cep (somme de tous les usages d'énergie)."
+  },
+  "badge": "Trois seuils, trois contrôles",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP5", "CP6"],
+    "attestation_2025": [],
+    "justification": "CP5 (déperditions) parce que le Bbio juge la qualité du bâti, et CP6 (chauffage / eau chaude sanitaire) parce que le Cep et l'IC pèsent le choix de l'énergie et du générateur."
+  }
+}

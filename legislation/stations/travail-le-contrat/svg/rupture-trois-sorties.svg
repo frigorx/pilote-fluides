@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" role="img"
+     aria-labelledby="t-rup" aria-describedby="d-rup" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-rup">Trois façons de quitter un CDI</title>
+  <desc id="d-rup">En haut, un cadre « CDI en cours ». Trois traits en descendent vers trois colonnes. La
+    démission : le salarié décide, sa volonté est claire et sans équivoque, le préavis est fixé par la
+    convention, les usages ou le contrat. La rupture conventionnelle : d'un commun accord, ni licenciement
+    ni démission, au moins un entretien, un délai de rétractation de 15 jours calendaires, puis
+    homologation par l'administration. Le licenciement : l'employeur décide, il convoque à un entretien
+    préalable, avec au moins cinq jours ouvrables entre la convocation et l'entretien, puis envoie une
+    lettre qui énonce le motif.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:18px; fill:#fffdf8; }
+    .who  { font-size:15px; fill:#fffdf8; }
+    .top  { font-weight:bold; font-size:19px; fill:#10233c; }
+    .ln   { font-size:15px; fill:#10233c; }
+    .lb   { font-weight:bold; font-size:15px; fill:#9d174d; }
+  </style>
+
+  <rect x="290" y="16" width="220" height="48" rx="10" fill="#f6e6ee" stroke="#9d174d" stroke-width="3"/>
+  <text class="top" x="400" y="47" text-anchor="middle">CDI en cours</text>
+
+  <g stroke="#5a6b7d" stroke-width="3" fill="none" stroke-linejoin="round">
+    <path d="M400,64 V92 H140 V116"/>
+    <path d="M400,64 V116"/>
+    <path d="M400,64 V92 H660 V116"/>
+  </g>
+
+  <!-- démission -->
+  <rect x="20" y="116" width="240" height="404" rx="12" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <path d="M20,128 Q20,116 32,116 H248 Q260,116 260,128 V176 H20 Z" fill="#9d174d"/>
+  <text class="ttl" x="140" y="146" text-anchor="middle">Démission</text>
+  <text class="who" x="140" y="168" text-anchor="middle">décision du salarié</text>
+  <text class="ln" x="36" y="212">Sa volonté doit être</text>
+  <text class="ln" x="36" y="234">claire et sans équivoque.</text>
+  <text class="lb" x="36" y="278">Le préavis</text>
+  <text class="ln" x="36" y="300">Sa durée est fixée par la</text>
+  <text class="ln" x="36" y="322">convention collective, les</text>
+  <text class="ln" x="36" y="344">usages ou le contrat.</text>
+  <text class="lb" x="36" y="388">Pas de règle unique</text>
+  <text class="ln" x="36" y="410">Aller lire sa convention</text>
+  <text class="ln" x="36" y="432">et son contrat.</text>
+
+  <!-- rupture conventionnelle -->
+  <rect x="280" y="116" width="240" height="404" rx="12" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <path d="M280,128 Q280,116 292,116 H508 Q520,116 520,128 V176 H280 Z" fill="#9d174d"/>
+  <text class="ttl" x="400" y="146" text-anchor="middle">Rupture conventionnelle</text>
+  <text class="who" x="400" y="168" text-anchor="middle">d'un commun accord</text>
+  <text class="ln" x="296" y="212">Ni licenciement, ni</text>
+  <text class="ln" x="296" y="234">démission. Au moins un</text>
+  <text class="ln" x="296" y="256">entretien, puis une</text>
+  <text class="ln" x="296" y="278">convention signée.</text>
+  <text class="lb" x="296" y="322">Rétractation</text>
+  <text class="ln" x="296" y="344">15 jours calendaires.</text>
+  <text class="lb" x="296" y="388">Homologation</text>
+  <text class="ln" x="296" y="410">par l'administration</text>
+  <text class="ln" x="296" y="432">du travail, ensuite.</text>
+  <text class="lb" x="296" y="476">Indemnité</text>
+  <text class="ln" x="296" y="498">au moins légale.</text>
+
+  <!-- licenciement -->
+  <rect x="540" y="116" width="240" height="404" rx="12" fill="#fffdf8" stroke="#9d174d" stroke-width="2.5"/>
+  <path d="M540,128 Q540,116 552,116 H768 Q780,116 780,128 V176 H540 Z" fill="#9d174d"/>
+  <text class="ttl" x="660" y="146" text-anchor="middle">Licenciement</text>
+  <text class="who" x="660" y="168" text-anchor="middle">décision de l'employeur</text>
+  <text class="lb" x="556" y="212">Avant</text>
+  <text class="ln" x="556" y="234">Convocation à un entretien</text>
+  <text class="ln" x="556" y="256">préalable, où le salarié</text>
+  <text class="ln" x="556" y="278">peut être assisté.</text>
+  <text class="lb" x="556" y="322">Délai</text>
+  <text class="ln" x="556" y="344">5 jours ouvrables au moins</text>
+  <text class="ln" x="556" y="366">avant l'entretien.</text>
+  <text class="lb" x="556" y="410">Après</text>
+  <text class="ln" x="556" y="432">Une lettre qui énonce</text>
+  <text class="ln" x="556" y="454">le motif du licenciement.</text>
+</svg>

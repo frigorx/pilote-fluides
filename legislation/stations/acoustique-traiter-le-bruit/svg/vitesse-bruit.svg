@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-vb" aria-describedby="d-vb" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-vb">La vitesse de l'air dans la gaine et le bruit</title>
+  <desc id="d-vb">Deux gaines pour le même débit d'air. À gauche, une petite section : trois flèches longues dans une gaine étroite, donc de l'air rapide, et trois grands arcs violets de bruit à la bouche. À droite, une grande section : trois flèches courtes dans une gaine large, donc de l'air lent, et un seul petit arc de bruit. En bas, une phrase rappelle que pour un même débit, agrandir la section fait baisser la vitesse et donc le bruit d'écoulement.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .t20 { font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lblb{ font-size:17px; font-weight:bold; fill:#1b3a63; }
+    .sub { font-size:16px; fill:#5a6b7d; }
+    .aer { font-size:17px; font-weight:bold; fill:#5b21b6; }
+    .sol { font-size:17px; font-weight:bold; fill:#9a4d0a; }
+    .band{ font-size:18px; font-weight:bold; fill:#10233c; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f5689"/></marker>
+  </defs>
+
+  <text class="lbl" x="400" y="34" text-anchor="middle" fill="#5a6b7d">À débit d'air égal</text>
+  <text class="t20" x="228" y="80" text-anchor="middle">Petite section</text>
+  <text class="t20" x="610" y="80" text-anchor="middle">Grande section</text>
+
+  <rect x="40" y="170" width="300" height="60" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M55,200 H140" stroke="#2f5689" stroke-width="5" fill="none" marker-end="url(#ah)"/><path d="M160,200 H245" stroke="#2f5689" stroke-width="5" fill="none" marker-end="url(#ah)"/><path d="M265,200 H330" stroke="#2f5689" stroke-width="5" fill="none" marker-end="url(#ah)"/>
+  <rect x="340" y="165" width="12" height="70" fill="#cfd8e3" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M374.1,182.8 A28,28 0 0 1 374.1,217.2" fill="none" stroke="#6d28d9" stroke-width="5" stroke-linecap="round"/>
+  <path d="M394.6,166.8 A54,54 0 0 1 394.6,233.2" fill="none" stroke="#6d28d9" stroke-width="4" stroke-linecap="round"/>
+  <path d="M415,150.7 A80,80 0 0 1 415,249.3" fill="none" stroke="#6d28d9" stroke-width="3" stroke-linecap="round"/>
+
+  <rect x="460" y="120" width="300" height="160" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <path d="M480,200 H530" stroke="#2f5689" stroke-width="5" fill="none" marker-end="url(#ah)"/><path d="M560,200 H610" stroke="#2f5689" stroke-width="5" fill="none" marker-end="url(#ah)"/><path d="M640,200 H690" stroke="#2f5689" stroke-width="5" fill="none" marker-end="url(#ah)"/>
+  <rect x="760" y="155" width="12" height="90" fill="#cfd8e3" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M784.6,190.1 A16,16 0 0 1 784.6,209.9" fill="none" stroke="#6d28d9" stroke-width="2" stroke-linecap="round"/>
+
+  <text class="sol" x="228" y="330" text-anchor="middle">Air rapide : bruit d'air fort</text>
+  <text class="lblb" x="610" y="330" text-anchor="middle">Air lent : bruit d'air faible</text>
+
+  <rect x="60" y="370" width="680" height="90" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="400" y="405" text-anchor="middle">Pour un même débit, une plus grande section</text>
+  <text class="band" x="400" y="432" text-anchor="middle">fait baisser la vitesse, donc le bruit d'écoulement.</text>
+</svg>

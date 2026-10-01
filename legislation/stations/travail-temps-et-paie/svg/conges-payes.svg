@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img"
+     aria-labelledby="t-cp" aria-describedby="d-cp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cp">Les congés payés : un compteur, deux calendriers, une indemnité</title>
+  <desc id="d-cp">En haut, douze cartes bleues alignées, chacune marquée deux virgule cinq : un mois de travail effectif donne deux jours et demi ouvrables. Une accolade en dessous : douze mois font trente jours ouvrables, soit cinq semaines. Au milieu, deux calendriers d'acquisition : pour le cas général, une barre bleue du premier juin au trente et un mai de l'année suivante ; pour les entreprises du bâtiment affiliées à une caisse de congés payés, une barre brune du premier avril au trente et un mars. En bas, l'indemnité de congés : le dixième de la rémunération brute totale de la période de référence, ou le maintien du salaire qu'on aurait perçu en travaillant, le plus élevé des deux.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#1b3a63; }
+    .h   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .hw  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#ffffff; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lw  { font-size:17px; fill:#ffffff; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Les congés payés : le compteur, les dates, l'indemnité</text>
+  <rect x="46" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="76.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="114" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="144.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="182" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="212.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="250" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="280.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="318" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="348.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="386" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="416.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="454" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="484.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="522" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="552.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="590" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="620.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="658" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="688.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="726" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="756.0" y="93" text-anchor="middle">2,5</text>
+  <rect x="794" y="60" width="60" height="50" rx="10" fill="#1b3a63"/>
+  <text class="hw" x="824.0" y="93" text-anchor="middle">2,5</text>
+  <path d="M46 118 L46 128 L854 128 L854 118" fill="none" stroke="#1b3a63" stroke-width="3.5" stroke-linejoin="round"/>
+  <text class="h" x="450" y="160" text-anchor="middle">12 mois de travail effectif = 30 jours ouvrables (5 semaines)</text>
+  <text class="h" x="40" y="208" text-anchor="start">Cas général : la période d'acquisition</text>
+  <rect x="40" y="220" width="820" height="32" rx="6" fill="#1b3a63"/>
+  <text class="hw" x="450" y="243" text-anchor="middle">12 mois</text>
+  <text class="lbl" x="40" y="278" text-anchor="start">1er juin</text>
+  <text class="lbl" x="860" y="278" text-anchor="end">31 mai de l'année suivante</text>
+  <text class="h" x="40" y="316" text-anchor="start">Entreprises du bâtiment affiliées à une caisse de congés payés</text>
+  <rect x="40" y="328" width="820" height="32" rx="6" fill="#a8410b"/>
+  <text class="hw" x="450" y="351" text-anchor="middle">12 mois</text>
+  <text class="lbl" x="40" y="386" text-anchor="start">1er avril</text>
+  <text class="lbl" x="860" y="386" text-anchor="end">31 mars de l'année suivante</text>
+  <rect x="40" y="412" width="370" height="88" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="h" x="225" y="440" text-anchor="middle">Le dixième</text>
+  <text class="lbl" x="225" y="464" text-anchor="middle">de la rémunération brute totale</text>
+  <text class="lbl" x="225" y="486" text-anchor="middle">de la période de référence</text>
+  <rect x="490" y="412" width="370" height="88" rx="10" fill="#fffdf8" stroke="#a8410b" stroke-width="3"/>
+  <text class="h" x="675" y="440" text-anchor="middle">Le maintien</text>
+  <text class="lbl" x="675" y="464" text-anchor="middle">du salaire qu'on aurait perçu</text>
+  <text class="lbl" x="675" y="486" text-anchor="middle">en continuant à travailler</text>
+  <text class="h" x="450" y="450" text-anchor="middle">le plus</text>
+  <text class="h" x="450" y="474" text-anchor="middle">élevé</text>
+</svg>

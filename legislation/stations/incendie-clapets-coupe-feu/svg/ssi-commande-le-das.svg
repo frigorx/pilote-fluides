@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"
+     aria-labelledby="t-ss" aria-describedby="d-ss" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ss">Le système de sécurité incendie commande le clapet à distance</title>
+  <desc id="d-ss">Schéma de principe. En haut à gauche, un détecteur de fumée d'où sortent quelques volutes. Une
+    flèche grise le relie au centralisateur, le CMSI, un boîtier bleu. Du CMSI part une ligne orange qui va vers
+    la droite puis descend jusqu'à un petit boîtier de commande posé sur une gaine. Dans la gaine, une lame
+    articulée : ouverte en position d'attente, elle se ferme quand l'ordre arrive. En bas, un encadré rappelle
+    que si un système de sécurité incendie de catégorie A ou B est exigé, seuls les clapets télécommandés depuis
+    le centralisateur sont autorisés au droit des parois de compartimentage. L'animation montre l'alarme, le
+    trajet de l'ordre, puis la fermeture ; l'image fixe montre l'état final, clapet fermé.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .box { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#fffdf8; }
+    .cap { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .band { font-size:17px; fill:#10233c; }
+  </style>
+  <rect width="800" height="520" fill="#fffdf8"/>
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.92;0.945;0.985;1" dur="14s" repeatCount="indefinite"/>
+  <text class="ttl" x="400" y="34" text-anchor="middle">L'ordre part du système de sécurité incendie</text>
+
+  <!-- détecteur -->
+  <g fill="#94a3b8">
+    <circle cx="46" cy="150" r="10"/><circle cx="34" cy="122" r="12"/><circle cx="52" cy="94" r="9"/>
+  </g>
+  <circle cx="108" cy="122" r="32" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="108" cy="122" r="9" fill="#1b3a63"/>
+  <text class="lbl" x="100" y="182" text-anchor="middle">Détecteur</text>
+
+  <!-- alarme : anneaux animés -->
+  <circle cx="108" cy="122" r="34" fill="none" stroke="#b91c1c" stroke-width="3" opacity="0">
+    <animate attributeName="r" values="34;34;66;66" keyTimes="0;0.08;0.20;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.9;0;0" keyTimes="0;0.08;0.09;0.20;1" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="108" cy="122" r="34" fill="none" stroke="#b91c1c" stroke-width="3" opacity="0">
+    <animate attributeName="r" values="34;34;66;66" keyTimes="0;0.14;0.26;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.9;0;0" keyTimes="0;0.14;0.15;0.26;1" dur="14s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- détecteur -> CMSI -->
+  <line x1="150" y1="122" x2="226" y2="122" stroke="#e8914a" stroke-width="5">
+    <animate attributeName="stroke" values="#5a6b7d;#5a6b7d;#e8914a;#e8914a;#5a6b7d;#5a6b7d"
+             keyTimes="0;0.18;0.22;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+  </line>
+  <polygon points="224,110 248,122 224,134" fill="#e8914a">
+    <animate attributeName="fill" values="#5a6b7d;#5a6b7d;#e8914a;#e8914a;#5a6b7d;#5a6b7d"
+             keyTimes="0;0.18;0.22;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+  </polygon>
+  <text class="mut" x="190" y="106" text-anchor="middle">alarme</text>
+
+  <!-- CMSI -->
+  <rect x="250" y="86" width="140" height="72" rx="10" fill="#1b3a63"/>
+  <text class="box" x="320" y="132" text-anchor="middle">CMSI</text>
+  <text class="mut" x="320" y="182" text-anchor="middle">centralisateur de mise</text>
+  <text class="mut" x="320" y="202" text-anchor="middle">en sécurité incendie</text>
+
+  <!-- CMSI -> boîtier de commande : l'ordre -->
+  <path d="M390 122 H560 V266" fill="none" stroke="#e8914a" stroke-width="5" stroke-linejoin="round"
+        pathLength="100" stroke-dasharray="100" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" values="100;100;0;0;100;100" keyTimes="0;0.28;0.52;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+  </path>
+  <polygon points="548,262 560,284 572,262" fill="#e8914a">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.50;0.52;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+  </polygon>
+  <circle cx="0" cy="0" r="9" fill="#e8914a" stroke="#b45309" stroke-width="2" opacity="0">
+    <animateMotion path="M390 122 H560 V270" dur="14s" repeatCount="indefinite" calcMode="linear"
+                   keyPoints="0;0;1;1" keyTimes="0;0.28;0.52;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.285;0.52;0.525;1" dur="14s" repeatCount="indefinite"/>
+  </circle>
+  <text class="lbl" x="582" y="196">ordre de fermeture</text>
+
+  <!-- boîtier de commande posé sur la gaine -->
+  <rect x="530" y="286" width="60" height="36" rx="6" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lbl" x="606" y="290">commande</text>
+  <text class="lbl" x="606" y="310">du clapet</text>
+
+  <!-- gaine et lame -->
+  <rect x="60" y="322" width="680" height="90" fill="#fffdf8"/>
+  <line x1="60" y1="322" x2="530" y2="322" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="590" y1="322" x2="740" y2="322" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="60" y1="412" x2="740" y2="412" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="90" y1="367" x2="500" y2="367" stroke="#5a6b7d" stroke-width="4"/>
+  <polygon points="498,356 520,367 498,378" fill="#5a6b7d"/>
+  <text class="mut" x="290" y="352" text-anchor="middle">l'air circule</text>
+
+  <g transform="rotate(0 560 326)">
+    <rect x="556" y="326" width="8" height="82" rx="2" fill="#1b3a63"/>
+    <animateTransform attributeName="transform" type="rotate"
+      values="-90 560 326;-90 560 326;0 560 326;0 560 326;-90 560 326;-90 560 326"
+      keyTimes="0;0.54;0.62;0.95;0.965;1" calcMode="spline"
+      keySplines="0 0 1 1;0.6 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <circle cx="560" cy="326" r="7" fill="#1b3a63"/>
+
+  <!-- légendes d'état -->
+  <text class="cap" x="400" y="447" text-anchor="middle" opacity="0">Position d'attente : la lame est ouverte
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.54;0.58;0.965;0.98;1" dur="14s" repeatCount="indefinite"/>
+  </text>
+  <text class="cap" x="400" y="447" text-anchor="middle">Position de sécurité : le clapet est fermé
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.60;0.65;0.95;0.965;1" dur="14s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- rappel réglementaire -->
+  <rect x="20" y="460" width="760" height="52" rx="12" fill="#fbe7e4" stroke="#b91c1c" stroke-width="2"/>
+  <text class="band" x="400" y="482" text-anchor="middle">SSI de catégorie A ou B exigé : au droit des parois de compartimentage,</text>
+  <text class="band" x="400" y="503" text-anchor="middle">seuls les clapets télécommandés depuis le CMSI sont autorisés.</text>
+  </g>
+</svg>

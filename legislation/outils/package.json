@@ -1,0 +1,10 @@
+{
+  "name": "legislation-outils",
+  "private": true,
+  "description": "Outils du réseau Législation (carnet papier : QR et docx).",
+  "type": "commonjs",
+  "dependencies": {
+    "docx": "9.8.1",
+    "qrcode": "1.5.4"
+  }
+}

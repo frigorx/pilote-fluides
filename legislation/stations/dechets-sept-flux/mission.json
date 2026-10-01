@@ -1,0 +1,50 @@
+{
+  "slug": "dechets-sept-flux",
+  "branche": "Déchets",
+  "titre": "Mission : La benne juste",
+  "client": "Le chef de chantier d'un immeuble de bureaux en rénovation, où plusieurs corps de métier partagent les mêmes bennes.",
+  "situation": "Le lot climatisation de Clim'Études Sud produit du cuivre, des cartons et des palettes, des chutes de bois de support, des chutes d'isolant, une gaine plastique abîmée et une bouteille de fluide non réutilisable. Les bennes sont communes, et la benne « tout-venant » est déjà pleine parce que d'autres y jettent tout. Le chef de chantier demande à chaque lot de dire dans quelle benne va quoi.",
+  "piece_a_produire": "Un tableau « déchet → matière → benne » pour le lot climatisation, avec une ligne à part pour ce qui ne va dans aucune benne de tri.",
+  "questions": [
+    {
+      "q": "Comment un chantier organise-t-il ses bennes, et à quoi reste réservée la benne « tout-venant » ?",
+      "ecran": 2,
+      "reponse": "Par grande famille de matière : métaux, bois, plastiques, verre, papier-carton, plâtre, fraction minérale ou inerte. Le tout-venant est réservé à ce qui ne peut vraiment être trié dans aucune de ces familles."
+    },
+    {
+      "q": "Où vont les chutes d'isolant d'un frigoriste, et pourquoi ?",
+      "ecran": 3,
+      "reponse": "Souvent non recyclables, elles vont dans la benne qui correspond à leur nature, en pratique le tout-venant. Jamais dans une benne de matière triée."
+    },
+    {
+      "q": "Donnez les deux raisons de trier plutôt que de tout mélanger.",
+      "ecran": 4,
+      "reponse": "Une matière triée peut être recyclée et garde sa valeur (le cuivre trié vaut plus que mélangé) ; une matière mélangée part en tout-venant, donc en filière moins favorable et plus coûteuse."
+    },
+    {
+      "q": "Où va une bouteille de fluide récupéré non réutilisable ?",
+      "ecran": 6,
+      "reponse": "Dans une filière à part, tracée, hors des bennes de tri : ni tout-venant, ni benne métaux malgré la bouteille métallique."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Associez chaque déchet à sa benne : métaux, bois, plastiques, papier-carton, tout-venant, ou filière dangereuse à part.",
+    "items": [
+      "Chutes de cuivre",
+      "Cartons d'emballage",
+      "Chutes de bois de support",
+      "Chutes d'isolant non recyclables",
+      "Gaine plastique",
+      "Huile usagée"
+    ],
+    "corrige": "Cuivre : métaux. Cartons : papier-carton. Bois : bois. Isolant non recyclable : tout-venant. Gaine plastique : plastiques. Huile usagée : filière dangereuse à part, tracée."
+  },
+  "badge": "La benne juste",
+  "duree_min": 20,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. Le tri des déchets de chantier n'est pas une compétence du référentiel TP TECVC."
+  }
+}

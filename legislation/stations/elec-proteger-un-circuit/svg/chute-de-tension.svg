@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-ct" aria-describedby="d-ct" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ct">Chute de tension sur une longue ligne : la section limite la perte</title>
+  <desc id="d-ct">Deux lignes d'alimentation de même longueur, du départ à gauche jusqu'au bout de ligne à droite. Au-dessus de chaque
+    ligne, cinq barres verticales figurent la tension le long du trajet. En haut, une ligne de petite section, fine :
+    les barres diminuent nettement, la tension est faible en bout de ligne. En bas, une ligne de grande section, épaisse :
+    les barres diminuent peu, la tension est mieux tenue en bout de ligne. Une bande rappelle que plus la ligne est longue,
+    plus la section doit grandir, même si le courant n'échauffe pas le câble. L'animation fait décroître les barres
+    de gauche à droite ; l'image fixe montre la situation finale.</desc>
+  <style>
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .chaud { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .tiede { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#047857; }
+    .band{ font-size:16px; fill:#10233c; }
+  </style>
+
+  <text class="mut" x="282" y="40" text-anchor="middle">départ</text>
+  <text class="mut" x="682" y="40" text-anchor="middle">bout de ligne</text>
+
+  <!-- Ligne 1 : petite section -->
+  <text class="qui" x="20" y="104">Petite section</text>
+  <text class="mut" x="20" y="128">chute forte</text>
+  <rect x="260" y="60" width="44" height="90" rx="4" fill="#2f5689"/>
+  <rect x="360" y="72" width="44" height="78" rx="4" fill="#2f5689">
+    <animate attributeName="height" values="90;90;78;78" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="60;60;72;72" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="460" y="86" width="44" height="64" rx="4" fill="#2f5689">
+    <animate attributeName="height" values="90;90;64;64" keyTimes="0;0.22;0.30;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="60;60;86;86" keyTimes="0;0.22;0.30;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="560" y="100" width="44" height="50" rx="4" fill="#2f5689">
+    <animate attributeName="height" values="90;90;50;50" keyTimes="0;0.28;0.36;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="60;60;100;100" keyTimes="0;0.28;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="660" y="114" width="44" height="36" rx="4" fill="#e8914a">
+    <animate attributeName="height" values="90;90;36;36" keyTimes="0;0.34;0.42;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="60;60;114;114" keyTimes="0;0.34;0.42;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="240" y="165" width="480" height="6" rx="3" fill="#5a6b7d"/>
+  <text class="chaud" x="745" y="104">tension faible</text>
+  <text class="mut" x="745" y="128">en bout de ligne</text>
+
+  <!-- Ligne 2 : grande section -->
+  <text class="qui" x="20" y="244">Grande section</text>
+  <text class="mut" x="20" y="268">chute réduite</text>
+  <rect x="260" y="195" width="44" height="90" rx="4" fill="#2f5689"/>
+  <rect x="360" y="201" width="44" height="84" rx="4" fill="#2f5689">
+    <animate attributeName="height" values="90;90;84;84" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="195;195;201;201" keyTimes="0;0.16;0.24;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="460" y="207" width="44" height="78" rx="4" fill="#2f5689">
+    <animate attributeName="height" values="90;90;78;78" keyTimes="0;0.22;0.30;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="195;195;207;207" keyTimes="0;0.22;0.30;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="560" y="213" width="44" height="72" rx="4" fill="#2f5689">
+    <animate attributeName="height" values="90;90;72;72" keyTimes="0;0.28;0.36;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="195;195;213;213" keyTimes="0;0.28;0.36;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="660" y="219" width="44" height="66" rx="4" fill="#2f5689">
+    <animate attributeName="height" values="90;90;66;66" keyTimes="0;0.34;0.42;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="195;195;219;219" keyTimes="0;0.34;0.42;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="240" y="300" width="480" height="16" rx="6" fill="#5a6b7d"/>
+  <text class="tiede" x="745" y="244">tension mieux</text>
+  <text class="mut" x="745" y="268">tenue en bout</text>
+
+  <rect x="20" y="336" width="860" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="360" text-anchor="middle" font-weight="bold">Plus la ligne est longue, plus la section doit grandir,</text>
+  <text class="band" x="450" y="379" text-anchor="middle">même si le courant n'échauffe pas le câble.</text>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 505" role="img"
+     aria-labelledby="t-tt" aria-describedby="d-tt" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-tt">Régime TT : le courant de défaut boucle par la terre</title>
+  <desc id="d-tt">À gauche, un poste transformateur dont le neutre est relié à une première prise de terre. À droite, une machine dont la carcasse est reliée par un conducteur de protection à une seconde prise de terre, distincte de la première. Un éclair montre un défaut entre la phase et la carcasse. Un trait orange suit le trajet du courant : de la phase à la carcasse, par le conducteur de protection jusqu'à la prise de terre de l'installation, puis, en pointillés, à travers le sol jusqu'à la prise de terre du poste, et enfin le neutre qui remonte vers le transformateur. Des points animés parcourent ce trajet ; à l'arrêt, il reste tracé.</desc>
+  <style>
+    .t { font:bold 22px 'Trebuchet MS',Calibri,sans-serif; fill:#10233c; }
+    .h { font:bold 20px 'Trebuchet MS',Calibri,sans-serif; fill:#1b3a63; }
+    .l { font:17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .lb { font:bold 17px Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .m { font:16px Calibri,'Segoe UI',sans-serif; fill:#5a6b7d; }
+    .big { font:bold 60px 'Trebuchet MS',Calibri,sans-serif; fill:#a16207; }
+    .w { font:bold 30px 'Trebuchet MS',Calibri,sans-serif; fill:#fffdf8; }
+  </style>
+  <defs>
+    <marker id="fl-tt" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,1 L11,6 L1,11 z" fill="#b45309" stroke="#10233c" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <rect x="10" y="320" width="840" height="130" rx="6" fill="#efe6d5" stroke="#d8c9a8" stroke-width="2"/>
+  <text class="m" x="830" y="345" text-anchor="end">Sol</text>
+  <rect x="40" y="80" width="120" height="110" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="85.6" cy="143" r="24" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="114.4" cy="143" r="24" fill="none" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lb" x="100" y="68" text-anchor="middle">Poste</text>
+
+  <!-- machine (dessinée avant le halo : le trajet doit rester visible dedans) -->
+  <rect x="500" y="70" width="170" height="130" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="6"/>
+  <!-- halo du courant de défaut, sous les conducteurs -->
+  <path d="M160,105 H560" fill="none" stroke="#e8914a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <path d="M560,140 H620 V320" fill="none" stroke="#e8914a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <path d="M620,320 V400 H190 V320" fill="none" stroke="#e8914a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" stroke-dasharray="16 12"/>
+  <path d="M190,320 V165 H160" fill="none" stroke="#e8914a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <!-- conducteurs -->
+  <path d="M160,105 H500 M160,165 H500" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M190,165 V320" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="190" cy="165" r="6" fill="#1b3a63"/>
+  <path d="M184,320 H196 V390 L190,400 L184,390 Z" fill="#c9c2b3" stroke="#5a6b7d" stroke-width="2"/>
+  <path d="M620,200 V320" fill="none" stroke="#1e7e54" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M614,320 H626 V390 L620,400 L614,390 Z" fill="#c9c2b3" stroke="#5a6b7d" stroke-width="2"/>
+
+  <!-- machine -->
+  <path d="M500,105 H560 M500,165 H545" fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M560,108 L551,119.4 L567,125.4 L558,138" fill="none" stroke="#c0392b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="h" x="585" y="58" text-anchor="middle">Machine</text>
+  <text class="l" x="690" y="128" text-anchor="start">Carcasse</text>
+  <text class="l" x="690" y="150" text-anchor="start">(masse)</text>
+
+  <text class="l" x="300" y="93" text-anchor="middle">Phase</text>
+  <text class="l" x="300" y="190" text-anchor="middle">Neutre</text>
+  <text class="l" x="210" y="232" text-anchor="start">Neutre relié à la terre</text>
+  <text class="l" x="608" y="270" text-anchor="end">Conducteur de protection (PE)</text>
+
+  <path d="M400,105 L403.0,105.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-tt)"/><path d="M620,250 L620.0,253.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-tt)"/><path d="M400,400 L397.0,400.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-tt)"/><path d="M190,250 L190.0,247.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-tt)"/><path d="M178,165 L175.0,165.0" stroke="#b45309" stroke-width="2" marker-end="url(#fl-tt)"/>
+
+  <text class="l" x="190" y="435" text-anchor="middle">Prise de terre du poste</text>
+  <text class="l" x="620" y="435" text-anchor="middle">Prise de terre de l'installation</text>
+  
+  <path d="M30,484 H90" fill="none" stroke="#e8914a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <text class="l" x="105" y="490" text-anchor="start">Trajet du courant de défaut</text>
+  <path d="M440,484 H500" fill="none" stroke="#e8914a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" stroke-dasharray="12 8"/>
+  <text class="l" x="515" y="490" text-anchor="start">dans le sol</text>
+  
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M160,105 H560 V140 H620 V400 H190 V165 H160" keyPoints="0;0;1;1" keyTimes="0;0.050;0.500;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.050;0.060;0.490;0.500;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M160,105 H560 V140 H620 V400 H190 V165 H160" keyPoints="0;0;1;1" keyTimes="0;0.095;0.545;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.095;0.105;0.535;0.545;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6.5" fill="#c0392b" stroke="#10233c" stroke-width="1.5" opacity="0">
+    <animateMotion dur="13s" repeatCount="indefinite" calcMode="linear" path="M160,105 H560 V140 H620 V400 H190 V165 H160" keyPoints="0;0;1;1" keyTimes="0;0.140;0.590;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.140;0.150;0.580;0.590;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,36 @@
+/* CuivRézo — <cuivre-3d> : habillage de la scène 3D (chargé dans l'ombre du composant).
+   Charte inerWeb : fond crème, jamais de thème sombre. Textes ≥ 16 px, cibles ≥ 48 px. */
+:host{--navy:#1b3a63;--ink:#10233c;--muted:#56657a;--paper:#fffdf8;--cream:#f7f1e7;--orange:#c9451a;
+  font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);contain:layout paint}
+.cadre{border-radius:14px;background:radial-gradient(ellipse at 50% 42%,#fffefb 0%,#fbf5ea 62%,#f3eadb 100%)}
+.scene{cursor:grab;touch-action:pan-y;outline:none;border-radius:14px;-webkit-tap-highlight-color:transparent}
+.scene.prend{cursor:grabbing}
+.scene:focus-visible{box-shadow:inset 0 0 0 4px rgba(255,107,53,.55)}
+canvas{display:block}
+.fils{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.fil{stroke:#56657a;stroke-width:1.6}.fil.g{stroke:var(--orange)}
+.pt{fill:#56657a}.pt.g{fill:var(--orange)}
+.etiq{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lab{position:absolute;left:0;top:0;white-space:nowrap;font:800 18px/1.1 Calibri,"Segoe UI",system-ui,Arial,sans-serif;
+  padding:5px 11px 6px;border-radius:999px;background:rgba(255,253,248,.95);border:2px solid var(--navy);color:var(--navy);
+  box-shadow:0 2px 6px rgba(16,35,60,.16);will-change:transform}
+.lab.g{border-color:var(--orange);color:#a23610}
+.attente{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:var(--muted);
+  background:linear-gradient(100deg,transparent 30%,rgba(232,145,74,.16) 50%,transparent 70%);background-size:220% 100%;animation:balaie 1.6s linear infinite}
+.attente[hidden]{display:none}
+@keyframes balaie{from{background-position:120% 0}to{background-position:-120% 0}}
+.legende{font-size:17px;line-height:1.3;min-height:1.3em;text-align:center;color:var(--muted);padding:5px 10px 0}
+.barre{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;padding:6px 8px 4px}
+.barre[hidden]{display:none}
+.curseur{display:flex;align-items:center;gap:10px;flex:1 1 260px;min-width:200px;font-weight:700;font-size:17px;color:var(--navy)}
+.lib{white-space:nowrap;min-width:9.5em}
+.lib b{color:var(--orange)}
+input[type=range]{flex:1;min-width:100px;height:44px;margin:0;accent-color:var(--orange);cursor:pointer}
+button{min-height:48px;padding:0 16px;font:700 17px/1 Calibri,"Segoe UI",system-ui,Arial,sans-serif;color:var(--navy);
+  background:var(--paper);border:2px solid var(--navy);border-radius:12px;cursor:pointer}
+button.plein{background:var(--navy);color:#fff}
+button:hover{border-color:var(--orange)}
+button:focus-visible{outline:4px solid rgba(255,107,53,.6);outline-offset:2px}
+@media (max-width:560px){.lab{font-size:16px;padding:4px 9px 5px}.legende{font-size:16px}}
+@media print{.barre{display:none}}
+@media (prefers-reduced-motion:reduce){.attente{animation:none}}

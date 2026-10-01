@@ -1,0 +1,36 @@
+{
+  "slug": "thermique-cee",
+  "branche": "Thermique",
+  "titre": "Mission : l'aide pour la pompe à chaleur, avant de signer",
+  "client": "Le responsable technique d'une association qui gère un foyer de logements et veut remplacer un ancien chauffage par une pompe à chaleur.",
+  "situation": "Le responsable a entendu parler d'une « prime » pour les travaux d'économie d'énergie. Il demande qui la finance, à qui elle est versée, et s'il peut commander les travaux dès cette semaine pour tenir son planning. Il ne sait pas non plus si le choix de l'entreprise qui pose la machine a une incidence sur l'aide. Votre responsable vous demande de préparer le premier rendez-vous : le circuit de l'aide, ce qu'on peut lui promettre, et l'ordre des étapes à respecter.",
+  "piece_a_produire": "Une fiche d'une page pour le premier rendez-vous : le circuit de l'aide en quatre étapes (qui fixe, qui finance, qui fait les travaux, ce qui revient prouver), puis une check-list de cinq points à vérifier avant de signer un devis.",
+  "questions": [
+    { "q": "Qui est légalement « obligé » dans le dispositif des certificats d'économie d'énergie, et de quoi ?", "ecran": 1,
+      "reponse": "Les vendeurs d'énergie (électricité, gaz, carburants), appelés les obligés, sont soumis à une obligation d'économies d'énergie fixée par l'État. Ce ne sont pas les clients qui sont obligés de faire des travaux." },
+    { "q": "Que prouve un certificat d'économie d'énergie, et à qui ?", "ecran": 3,
+      "reponse": "Que des travaux d'économie d'énergie ont bien été réalisés. Le vendeur d'énergie réunit des certificats pour prouver à l'État qu'il a rempli son obligation." },
+    { "q": "Le responsable demande le montant exact de l'aide : que lui répondez-vous, et pourquoi ?", "ecran": 4,
+      "reponse": "Il n'existe pas de chiffre unique à retenir : le montant dépend du dossier, de l'énergie remplacée et du fournisseur choisi, et se vérifie devis par devis." },
+    { "q": "Pourquoi la qualification de l'entreprise qui réalise les travaux est-elle un point d'attention ?", "ecran": 6,
+      "reponse": "En général, les travaux doivent être réalisés par un professionnel qualifié pour compter dans le dispositif. Sans cette qualification, le même chantier, bien réalisé, peut ne pas ouvrir droit à l'aide." }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Remettez dans le bon ordre ces quatre étapes d'un dossier d'aide, de la première à la dernière (5 minutes).",
+    "items": [
+      "Démarrer le chantier",
+      "Établir le devis",
+      "Informer le client de l'ordre des étapes dès le premier rendez-vous",
+      "Faire valider l'aide"
+    ],
+    "corrige": "1 : informer le client dès le premier rendez-vous ; 2 : établir le devis ; 3 : faire valider l'aide ; 4 : démarrer le chantier. Démarrer avant d'avoir fait valider l'aide peut la faire perdre définitivement."
+  },
+  "badge": "Aide sécurisée",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP6"],
+    "attestation_2025": [],
+    "justification": "CP6 (chauffage / eau chaude sanitaire) parce que le remplacement d'un générateur par une pompe à chaleur est le cas type des travaux financés."
+  }
+}

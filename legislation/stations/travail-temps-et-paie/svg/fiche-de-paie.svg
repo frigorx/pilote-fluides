@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" role="img"
+     aria-labelledby="t-pai" aria-describedby="d-pai" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pai">Une fiche de paie se lit de haut en bas</title>
+  <desc id="d-pai">À gauche, une feuille découpée en sept bandes numérotées, chacune avec un intitulé et une barre grise à la place du montant. Bande un : vous et vos heures, avec les taux. Bande deux : le salaire brut. Bande trois : les cotisations. Bande quatre : le net à payer avant impôt. Bande cinq : le net imposable. Bande six : l'impôt à la source. Bande sept : les congés. À droite, une phrase par bande explique ce qu'on y lit. Dans l'animation, un cadre rose descend bande après bande ; l'image fixe montre les sept bandes et leurs explications. Aucun montant n'est écrit : ils changent, la structure reste.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#1b3a63; }
+    .h   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .hw  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#ffffff; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lw  { font-size:17px; fill:#ffffff; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">De haut en bas, sept bandes à lire dans l'ordre</text>
+  <rect x="30" y="52" width="450" height="510" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2.5"/>
+  <rect x="45" y="68" width="420" height="58" rx="8" fill="#eef3f9" stroke="#c7d3e2" stroke-width="1.5"/>
+  <circle cx="76" cy="97" r="17" fill="#9d174d"/>
+  <text x="76" y="104" text-anchor="middle" class="hw">1</text>
+  <text class="h" x="104" y="103" text-anchor="start">Vous et vos heures</text>
+  <rect x="372" y="90" width="76" height="14" rx="7" fill="#c5ceda"/>
+  <text class="lbl" x="510" y="92" text-anchor="start">Heures normales et supplémentaires,</text>
+  <text class="lbl" x="510" y="116" text-anchor="start">taux appliqués, convention collective</text>
+  <rect x="45" y="138" width="420" height="58" rx="8" fill="#eef3f9" stroke="#c7d3e2" stroke-width="1.5"/>
+  <circle cx="76" cy="167" r="17" fill="#9d174d"/>
+  <text x="76" y="174" text-anchor="middle" class="hw">2</text>
+  <text class="h" x="104" y="173" text-anchor="start">Salaire brut</text>
+  <rect x="372" y="160" width="76" height="14" rx="7" fill="#c5ceda"/>
+  <text class="lbl" x="510" y="162" text-anchor="start">Le salaire avant toute retenue</text>
+  <text class="lbl" x="510" y="186" text-anchor="start">(ce n'est pas ce que vous recevez)</text>
+  <rect x="45" y="208" width="420" height="58" rx="8" fill="#eef3f9" stroke="#c7d3e2" stroke-width="1.5"/>
+  <circle cx="76" cy="237" r="17" fill="#9d174d"/>
+  <text x="76" y="244" text-anchor="middle" class="hw">3</text>
+  <text class="h" x="104" y="243" text-anchor="start">Cotisations</text>
+  <rect x="372" y="230" width="76" height="14" rx="7" fill="#c5ceda"/>
+  <text class="lbl" x="510" y="232" text-anchor="start">Part salarié : retirée du brut.</text>
+  <text class="lbl" x="510" y="256" text-anchor="start">Part employeur : payée en plus.</text>
+  <rect x="45" y="278" width="420" height="58" rx="8" fill="#eef3f9" stroke="#c7d3e2" stroke-width="1.5"/>
+  <circle cx="76" cy="307" r="17" fill="#9d174d"/>
+  <text x="76" y="314" text-anchor="middle" class="hw">4</text>
+  <text class="h" x="104" y="313" text-anchor="start">Net à payer avant impôt</text>
+  <rect x="372" y="300" width="76" height="14" rx="7" fill="#c5ceda"/>
+  <text class="lbl" x="510" y="302" text-anchor="start">Ce qui reste après les cotisations,</text>
+  <text class="lbl" x="510" y="326" text-anchor="start">avant l'impôt sur le revenu</text>
+  <rect x="45" y="348" width="420" height="58" rx="8" fill="#eef3f9" stroke="#c7d3e2" stroke-width="1.5"/>
+  <circle cx="76" cy="377" r="17" fill="#9d174d"/>
+  <text x="76" y="384" text-anchor="middle" class="hw">5</text>
+  <text class="h" x="104" y="383" text-anchor="start">Net imposable</text>
+  <rect x="372" y="370" width="76" height="14" rx="7" fill="#c5ceda"/>
+  <text class="lbl" x="510" y="372" text-anchor="start">La base du calcul de l'impôt :</text>
+  <text class="lbl" x="510" y="396" text-anchor="start">ce n'est pas le net à payer</text>
+  <rect x="45" y="418" width="420" height="58" rx="8" fill="#eef3f9" stroke="#c7d3e2" stroke-width="1.5"/>
+  <circle cx="76" cy="447" r="17" fill="#9d174d"/>
+  <text x="76" y="454" text-anchor="middle" class="hw">6</text>
+  <text class="h" x="104" y="453" text-anchor="start">Impôt à la source</text>
+  <rect x="372" y="440" width="76" height="14" rx="7" fill="#c5ceda"/>
+  <text class="lbl" x="510" y="442" text-anchor="start">L'impôt retenu chaque mois, puis</text>
+  <text class="lbl" x="510" y="466" text-anchor="start">la somme réellement reçue</text>
+  <rect x="45" y="488" width="420" height="58" rx="8" fill="#eef3f9" stroke="#c7d3e2" stroke-width="1.5"/>
+  <circle cx="76" cy="517" r="17" fill="#9d174d"/>
+  <text x="76" y="524" text-anchor="middle" class="hw">7</text>
+  <text class="h" x="104" y="523" text-anchor="start">Congés</text>
+  <rect x="372" y="510" width="76" height="14" rx="7" fill="#c5ceda"/>
+  <text class="lbl" x="510" y="512" text-anchor="start">Dates prises et indemnité, si un congé</text>
+  <text class="lbl" x="510" y="536" text-anchor="start">tombe dans la période payée</text>
+  <rect x="39" y="62" width="432" height="70" rx="12" fill="none" stroke="#9d174d" stroke-width="4.5" opacity="0">
+    <animate attributeName="y" calcMode="discrete" values="62;132;202;272;342;412;482" keyTimes="0.000;0.154;0.268;0.382;0.496;0.610;0.724" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.85;0.90;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+</svg>

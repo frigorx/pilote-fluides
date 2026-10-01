@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img"
+     aria-labelledby="t-ac" aria-describedby="d-ac" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ac">L'audit de chantier : ce que l'auditeur contrôle</title>
+  <desc id="d-ac">À gauche, un chantier de maison et une loupe : l'audit se fait sur un chantier réel. À droite,
+    une fiche de contrôle de sept lignes cochées : devis descriptif détaillé ; travaux conformes aux règles de
+    l'art ; procès-verbal de réception remis ; facture détaillée et attestations pour les aides ; levée des
+    réserves selon le moment du contrôle ; notices, garanties et entretien remis ; cohérence entre devis,
+    facture et réalisation. Deux bandes en bas : le label est délivré pour quatre ans avec un suivi annuel, et
+    un défaut majeur rend le contrôle insatisfaisant. L'animation coche les lignes une à une ; l'image fixe
+    montre toutes les lignes cochées.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#3730a3; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .gris{ font-size:16px; fill:#5a6b7d; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+
+  <!-- Le chantier -->
+  <polygon points="40,190 130,120 220,190" fill="#1b3a63"/>
+  <rect x="58" y="190" width="144" height="100" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="112" y="234" width="36" height="56" fill="#e8914a"/>
+  <circle cx="236" cy="96" r="26" fill="none" stroke="#3730a3" stroke-width="6"/>
+  <line x1="255" y1="115" x2="272" y2="132" stroke="#3730a3" stroke-width="8" stroke-linecap="round"/>
+  <text class="qui" x="130" y="328" text-anchor="middle">Un chantier réel</text>
+  <text class="lbl" x="130" y="352" text-anchor="middle">contrôlé par audit</text>
+
+  <!-- La fiche de contrôle -->
+  <rect x="290" y="16" width="590" height="326" rx="14" fill="#fffdf8" stroke="#3730a3" stroke-width="3"/>
+  <text class="ttl" x="585" y="50" text-anchor="middle">Ce que l'auditeur vérifie</text>
+
+  <g>
+    <circle cx="322" cy="84" r="12" fill="#047857"/><path d="M315,84 l5,6 l10,-12" fill="none" stroke="#fffdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.08;0.12;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="lbl" x="346" y="90">Devis descriptif détaillé (marques, modèles)</text>
+
+  <g>
+    <circle cx="322" cy="120" r="12" fill="#047857"/><path d="M315,120 l5,6 l10,-12" fill="none" stroke="#fffdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.17;0.21;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="lbl" x="346" y="126">Travaux conformes aux règles de l'art (DTU, avis techniques)</text>
+
+  <g>
+    <circle cx="322" cy="156" r="12" fill="#047857"/><path d="M315,156 l5,6 l10,-12" fill="none" stroke="#fffdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.26;0.30;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="lbl" x="346" y="162">Procès-verbal de réception remis</text>
+
+  <g>
+    <circle cx="322" cy="192" r="12" fill="#047857"/><path d="M315,192 l5,6 l10,-12" fill="none" stroke="#fffdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.35;0.39;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="lbl" x="346" y="198">Facture détaillée et attestations pour les aides</text>
+
+  <g>
+    <circle cx="322" cy="228" r="12" fill="#047857"/><path d="M315,228 l5,6 l10,-12" fill="none" stroke="#fffdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.48;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="lbl" x="346" y="234">Levée des réserves, selon le moment du contrôle</text>
+
+  <g>
+    <circle cx="322" cy="264" r="12" fill="#047857"/><path d="M315,264 l5,6 l10,-12" fill="none" stroke="#fffdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.53;0.57;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="lbl" x="346" y="270">Notices, garanties, entretien remis au client</text>
+
+  <g>
+    <circle cx="322" cy="300" r="12" fill="#047857"/><path d="M315,300 l5,6 l10,-12" fill="none" stroke="#fffdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.66;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <text class="lbl" x="346" y="306">Cohérence entre devis, facture et réalisation</text>
+
+  <!-- Deux bandes -->
+  <rect x="20" y="362" width="860" height="38" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="387" text-anchor="middle">Label délivré pour 4 ans, avec un suivi annuel : les chantiers sont audités</text>
+  <rect x="20" y="408" width="860" height="38" rx="14" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text class="band" x="450" y="433" text-anchor="middle">Un défaut majeur rend le contrôle insatisfaisant</text>
+</svg>

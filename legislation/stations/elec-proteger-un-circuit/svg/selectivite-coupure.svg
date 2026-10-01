@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img"
+     aria-labelledby="t-se" aria-describedby="d-se" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-se">Sélectivité et pouvoir de coupure</title>
+  <desc id="d-se">Un arbre de distribution. En haut, le disjoncteur de tête, en vert : il reste fermé. En dessous, trois départs :
+    le départ 1 alimente l'éclairage, le départ 2 alimente le compresseur, le départ 3 alimente les prises. Un éclair orange
+    marque un court-circuit sur le départ du compresseur. Seul le disjoncteur de ce départ est ouvert, en rouge ; la tête
+    et les deux autres départs restent verts, sous tension : c'est la sélectivité. À droite, une carte rappelle le pouvoir
+    de coupure : chaque appareil doit pouvoir couper le plus gros court-circuit possible à son point d'installation.
+    Une bande résume : seul l'appareil le plus proche du défaut s'ouvre. L'animation montre le défaut apparaître puis
+    le départ concerné s'ouvrir ; l'image fixe montre le résultat.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .ok  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#047857; }
+    .ko  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- Traits de l'arbre -->
+  <g stroke="#5a6b7d" stroke-width="3" fill="none">
+    <path d="M300,80 V130"/>
+    <path d="M120,130 H480"/>
+    <path d="M120,130 V190"/><path d="M300,130 V190"/><path d="M480,130 V190"/>
+    <path d="M120,244 V290"/><path d="M300,244 V290"/><path d="M480,244 V290"/>
+  </g>
+
+  <!-- Tête -->
+  <rect x="180" y="24" width="240" height="56" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="ttl" x="300" y="50" text-anchor="middle">Disjoncteur de tête</text>
+  <text class="ok" x="300" y="70" text-anchor="middle">fermé</text>
+
+  <!-- Départ 1 -->
+  <rect x="45" y="190" width="150" height="54" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="ttl" x="120" y="222" text-anchor="middle">Départ 1</text>
+  <rect x="45" y="290" width="150" height="46" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="120" y="319" text-anchor="middle">Éclairage</text>
+  <text class="ok" x="120" y="368" text-anchor="middle">reste alimenté</text>
+
+  <!-- Départ 3 -->
+  <rect x="405" y="190" width="150" height="54" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <text class="ttl" x="480" y="222" text-anchor="middle">Départ 3</text>
+  <rect x="405" y="290" width="150" height="46" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="480" y="319" text-anchor="middle">Prises</text>
+  <text class="ok" x="480" y="368" text-anchor="middle">reste alimenté</text>
+
+  <!-- Départ 2 : le défaut -->
+  <rect x="225" y="190" width="150" height="54" rx="12" fill="#fbe7e4" stroke="#c0392b" stroke-width="3">
+    <animate attributeName="fill" values="#e3f5ec;#e3f5ec;#fbe7e4;#fbe7e4" keyTimes="0;0.35;0.45;1" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#1e7e54;#1e7e54;#c0392b;#c0392b" keyTimes="0;0.35;0.45;1" dur="12s" repeatCount="indefinite"/>
+  </rect>
+  <text class="ttl" x="300" y="222" text-anchor="middle">Départ 2</text>
+  <rect x="225" y="290" width="150" height="46" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lbl" x="300" y="319" text-anchor="middle">Compresseur</text>
+  <g>
+    <text class="ko" x="300" y="368" text-anchor="middle">seul à s'ouvrir</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.45;0.55;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <path d="M330,256 L318,272 L326,272 L316,290 L338,268 L329,268 L336,256 Z" fill="#e8914a" stroke="#10233c" stroke-width="1.5" stroke-linejoin="round"/>
+    <text class="ko" x="352" y="278">court-circuit</text>
+    <animate attributeName="opacity" values="0;0.2;1;1;1" keyTimes="0;0.20;0.28;0.9;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Carte pouvoir de coupure -->
+  <rect x="590" y="24" width="290" height="230" rx="14" fill="#fffdf8" stroke="#a16207" stroke-width="3"/>
+  <rect x="590" y="24" width="290" height="42" rx="14" fill="#a16207"/>
+  <rect x="590" y="52" width="290" height="14" fill="#a16207"/>
+  <text x="735" y="53" text-anchor="middle" font-family="'Trebuchet MS',Calibri,sans-serif" font-weight="bold" font-size="18" fill="#fffdf8">Pouvoir de coupure</text>
+  <text class="lbl" x="735" y="100" text-anchor="middle">Chaque appareil doit pouvoir</text>
+  <text class="lbl" x="735" y="124" text-anchor="middle">couper le plus gros</text>
+  <text class="lbl" x="735" y="148" text-anchor="middle">court-circuit possible</text>
+  <text class="lbl" x="735" y="172" text-anchor="middle">à l'endroit où il est posé.</text>
+  <text class="ttl" x="735" y="214" text-anchor="middle">Plus près de la source,</text>
+  <text class="ttl" x="735" y="238" text-anchor="middle">plus le court-circuit est fort.</text>
+
+  <rect x="20" y="404" width="860" height="46" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="433" text-anchor="middle">Sélectivité : seul l'appareil le plus proche du défaut s'ouvre.</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" role="img"
+     aria-labelledby="t-pd" aria-describedby="d-pd">
+  <title id="t-pd">La pose : au droit de la paroi, calfeutrée, accessible</title>
+  <desc id="d-pd">Coupe d'une paroi coupe-feu hachurée, verticale, traversée par une gaine horizontale. Au niveau de la
+    paroi, le corps du clapet, un boîtier bleu clair plus long que l'épaisseur de la paroi, avec sa lame ouverte.
+    Entre le corps du clapet et le bord du percement, deux bandes orange, en haut et en bas : le calfeutrement, qui
+    remplit le vide et rend à la paroi sa résistance au feu. À gauche du clapet, sur le dessus de la gaine, une
+    trappe d'accès fermée par deux vis, qui permet d'atteindre le mécanisme. Un encadré en bas rappelle que le
+    degré annoncé vaut pour la pose décrite dans le procès-verbal d'essai.</desc>
+  <style>
+    text { font-family:Calibri,'Segoe UI',sans-serif; fill:#10233c; }
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; }
+    .lbl { font-size:18px; }
+    .lb2 { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; }
+  </style>
+  <defs>
+    <pattern id="hach" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#e2e8f0"/>
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#94a3b8" stroke-width="3"/>
+    </pattern>
+    <pattern id="calf" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="10" height="10" fill="#f6c79a"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#e8914a" stroke-width="3"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="490" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="30" text-anchor="middle">Une pose qui rend son degré à la paroi</text>
+  <text class="lb2" x="380" y="60" text-anchor="middle">Paroi coupe-feu</text>
+
+  <!-- paroi -->
+  <rect x="350" y="72" width="60" height="298" fill="url(#hach)" stroke="#1b3a63" stroke-width="3"/>
+  <!-- calfeutrement dans le percement -->
+  <rect x="351" y="170" width="58" height="140" fill="url(#calf)"/>
+  <!-- gaine -->
+  <rect x="60" y="190" width="680" height="100" fill="#fffdf8"/>
+  <line x1="60" y1="190" x2="740" y2="190" stroke="#1b3a63" stroke-width="4"/>
+  <line x1="60" y1="290" x2="740" y2="290" stroke="#1b3a63" stroke-width="4"/>
+  <!-- corps du clapet, plus long que la paroi -->
+  <rect x="326" y="184" width="108" height="112" rx="4" fill="#e6edf6" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="336" y="237" width="88" height="6" rx="2" fill="#1b3a63"/>
+  <circle cx="336" cy="240" r="6" fill="#1b3a63"/>
+
+  <!-- trappe d'accès -->
+  <rect x="254" y="174" width="52" height="16" rx="2" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="262" cy="182" r="3" fill="#1b3a63"/>
+  <circle cx="298" cy="182" r="3" fill="#1b3a63"/>
+  <text class="lbl" x="280" y="142" text-anchor="middle">Trappe d'accès</text>
+  <text class="lbl" x="280" y="162" text-anchor="middle">au mécanisme</text>
+
+  <text class="lbl" x="620" y="172" text-anchor="middle">Gaine</text>
+
+  <!-- étiquettes du bas, avec repères -->
+  <text class="lb2" x="170" y="412" text-anchor="middle">Clapet coupe-feu,</text>
+  <text class="lbl" x="170" y="434" text-anchor="middle">au droit de la paroi</text>
+  <line x1="230" y1="396" x2="334" y2="300" stroke="#5a6b7d" stroke-width="2"/>
+  <circle cx="334" cy="300" r="4" fill="#5a6b7d"/>
+
+  <text class="lb2" x="590" y="412" text-anchor="middle">Calfeutrement</text>
+  <text class="lbl" x="590" y="434" text-anchor="middle">rend sa résistance à la paroi</text>
+  <line x1="540" y1="396" x2="412" y2="306" stroke="#5a6b7d" stroke-width="2"/>
+  <circle cx="412" cy="306" r="4" fill="#5a6b7d"/>
+
+  <rect x="20" y="450" width="760" height="34" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="400" y="473" text-anchor="middle">Le degré annoncé vaut pour la pose décrite dans le procès-verbal d'essai</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img"
+     aria-labelledby="t-290" aria-describedby="d-290" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-290">Le piège : le R290 est A3, pas A2L</title>
+  <desc id="d-290">En haut à gauche, une carte grise porte l'erreur fréquente, « le R290 est A2L, comme le R32 »,
+    barrée d'un trait rouge. En haut à droite, une carte verte porte la vérité : le R290, le propane, est A3,
+    un hydrocarbure pur très inflammable. Au milieu, une échelle d'inflammabilité horizontale avec quatre graduations :
+    1, non inflammable ; 2L, faiblement inflammable ; 2, inflammable ; 3, très inflammable. Le R32 est posé
+    sur la graduation 2L, le R290 sur la graduation 3, à l'autre bout de l'échelle. Une bande en bas donne le repère :
+    un hydrocarbure pur est toujours A3, le R32 et les HFO comme le R1234yf sont A2L.
+    L'animation montre l'erreur, la barre en rouge, puis la vérité ; l'image fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .qui  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#5a6b7d; }
+    .quiv { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#0f766e; }
+    .faux { font-size:22px; fill:#5a6b7d; font-style:italic; }
+    .vrai { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .tick { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .mk   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+  <defs>
+    <linearGradient id="gr" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#cfe3d9"/><stop offset="0.4" stop-color="#f6d9b0"/><stop offset="1" stop-color="#e58f7f"/>
+    </linearGradient>
+  </defs>
+
+  <text class="ttl" x="450" y="32" text-anchor="middle">Deux fluides de la transition, deux classes très différentes</text>
+
+  <!-- L'erreur -->
+  <rect x="20" y="52" width="400" height="120" rx="14" fill="#f3f4f6" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="8 5"/>
+  <text class="qui" x="40" y="84">L'erreur fréquente</text>
+  <text class="faux" x="40" y="126">« Le R290 est A2L, comme le R32. »</text>
+  <line x1="36" y1="121" x2="404" y2="121" stroke="#c0392b" stroke-width="4" stroke-dasharray="370">
+    <animate attributeName="stroke-dashoffset" values="370;370;0;0" keyTimes="0;0.16;0.28;1" dur="13s" repeatCount="indefinite"/>
+  </line>
+  <text class="lbl" x="40" y="156">Faux : ce n'est pas la même famille.</text>
+
+  <!-- La vérité -->
+  <g>
+    <rect x="480" y="52" width="400" height="120" rx="14" fill="#e2ede7" stroke="#0f766e" stroke-width="4"/>
+    <text class="quiv" x="500" y="84">Ce qui est vrai</text>
+    <text class="vrai" x="500" y="122">R290 (propane) = A3</text>
+    <text class="lbl" x="500" y="152">hydrocarbure pur : très inflammable</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.42;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- L'échelle -->
+  <text class="lbl" x="100" y="216" font-weight="bold">Échelle d'inflammabilité</text>
+  <rect x="100" y="288" width="700" height="16" rx="8" fill="url(#gr)" stroke="#2f5689" stroke-width="2"/>
+  <g stroke="#1b3a63" stroke-width="3">
+    <line x1="175" y1="284" x2="175" y2="308"/><line x1="350" y1="284" x2="350" y2="308"/>
+    <line x1="525" y1="284" x2="525" y2="308"/><line x1="700" y1="284" x2="700" y2="308"/>
+  </g>
+  <text class="tick" x="175" y="338" text-anchor="middle">1</text>
+  <text class="tick" x="350" y="338" text-anchor="middle">2L</text>
+  <text class="tick" x="525" y="338" text-anchor="middle">2</text>
+  <text class="tick" x="700" y="338" text-anchor="middle">3</text>
+  <text class="lbl" x="175" y="360" text-anchor="middle">non inflammable</text>
+  <text class="lbl" x="350" y="360" text-anchor="middle">faiblement</text>
+  <text class="lbl" x="350" y="380" text-anchor="middle">inflammable</text>
+  <text class="lbl" x="525" y="360" text-anchor="middle">inflammable</text>
+  <text class="lbl" x="700" y="360" text-anchor="middle">très</text>
+  <text class="lbl" x="700" y="380" text-anchor="middle">inflammable</text>
+
+  <!-- Repères posés sur l'échelle -->
+  <line x1="350" y1="262" x2="350" y2="286" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="350" cy="248" r="14" fill="#0f766e" stroke="#10233c" stroke-width="2"/>
+  <text class="mk" x="350" y="222" text-anchor="middle">R32</text>
+
+  <line x1="700" y1="262" x2="700" y2="286" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="700" cy="248" r="14" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+  <circle cx="700" cy="248" r="14" fill="none" stroke="#e8914a" stroke-width="3" opacity="0">
+    <animate attributeName="r" values="14;14;30;30" keyTimes="0;0.44;0.60;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.9;0;0" keyTimes="0;0.44;0.48;0.62;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <text class="mk" x="700" y="222" text-anchor="middle">R290</text>
+
+  <!-- Bande repère -->
+  <rect x="20" y="398" width="860" height="44" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="426" text-anchor="middle">Hydrocarbure pur (propane, isobutane) : toujours A3. R32 et HFO (R1234yf) : A2L.</text>
+</svg>

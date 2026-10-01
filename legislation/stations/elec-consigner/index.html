@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Consigner — VAT, les 4 étapes — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : la consignation électrique avant d'intervenir sur une pompe à chaleur ou un groupe — séparer, condamner, identifier, vérifier l'absence de tension, puis mise à la terre si elle est prescrite — et la consignation du fluide sous pression et des pièces mobiles.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/elec-consigner/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Électrique.
+     Produite le 30/09/2026 sur le gabarit aptitude-capacite ; fond dans
+     FOND.md (sources : INRS ED 6109 et ED 6127, Code du travail
+     R. 4544-3 à R. 4544-10, arrêté du 5 juillet 2024).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer. Les narrations
+     n'ont pas encore leur MP3 (edge-tts, à fabriquer) : le navigateur
+     parle en attendant.
+
+     data-prototype : la station attend sa relecture métier.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Électrique · niveau BTS</p>
+  <h1>Consigner — VAT, les 4 étapes</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-electrique.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire pourquoi un arrêt ne suffit pas, enchaîner dans l'ordre les opérations d'une consignation électrique — <strong>séparer, condamner, identifier, vérifier l'absence de tension</strong>, puis mettre à la terre et en court-circuit quand elle est prescrite —, dire qui consigne et avec quel papier, et repérer que le <strong>fluide sous pression</strong> et les <strong>pièces mobiles</strong> d'un groupe se consignent aussi.</p>
+  </div>
+  <p class="depart-note"><strong>Référentiel</strong> : TP TECVC, REAC TP-00133 — Hors REAC : culture professionnelle du technicien et du chargé d'affaires.</p>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez le schéma. À gauche, le réseau. Au milieu, un sectionneur, fermé. À droite, un groupe extérieur, arrêté au bouton, voyant éteint. En orange, la tension arrive jusqu'au contacteur de la machine, qui est ouvert : au-delà, le trait est gris. Le bouton a coupé la commande, pas l'alimentation. C'est la confusion que décrit l'Institut national de recherche et de sécurité : la victime se croit en sécurité parce que la machine ne tourne pas. Le Code du travail demande donc que l'installation soit identifiée et consignée, et que la tension ne revienne pas pendant les travaux.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Arrêté n'est pas consigné</h2>
+    <p>Des équipements mis à l'arrêt pour une intervention sont à l'origine d'accidents souvent graves : contact avec des pièces nues sous tension, avec des fluides sous pression, ou avec des pièces mécaniques qui bougent de façon imprévue. Le plus souvent, <strong>la victime se croit en sécurité parce que la machine ne fonctionne pas</strong> : c'est la confusion entre l'arrêt et le niveau de sécurité (INRS, brochure ED 6109).</p>
+    <p>Pour le risque électrique, le Code du travail pose la règle : les travaux se font <strong>hors tension</strong>, sauf si l'évaluation des risques montre que la mise hors tension est dangereuse ou techniquement impossible (art. R. 4544-4). La partie d'installation doit être <strong>préalablement identifiée et consignée</strong>, de sorte qu'aucune tension ne subsiste pendant les travaux ; la tension ne peut être rétablie qu'après déconsignation, et seulement si ce rétablissement ne présente aucun risque (art. R. 4544-5).</p>
+    <div class="encadre encadre--cle">
+      <span class="mot">Consigner, c'est…</span>
+      <p>une procédure de mise en sécurité qui protège les personnes et les équipements contre le maintien accidentel, l'apparition ou la réapparition intempestive d'une énergie ou d'un fluide dangereux (INRS, ED 6109, définitions).</p>
+    </div>
+    <figure>
+      <img src="svg/arret-pas-consigne.svg" alt="Schéma de principe de gauche à droite. Le réseau alimente, par un trait orange qui signifie sous tension, un sectionneur représenté fermé, puis un groupe extérieur. Dans le groupe, le trait orange s'arrête devant un contacteur ouvert ; au-delà, le trait est gris, hors tension, jusqu'au compresseur. En bas du groupe, un bouton d'arrêt est enfoncé et son voyant est éteint. Une bande rappelle que le bouton a coupé la commande, pas l'alimentation.">
+      <figcaption>Le bouton a coupé la commande. En amont du contacteur, tout reste sous tension.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici les opérations de la consignation électrique, dans l'ordre imposé. Quatre cercles pleins : séparer, condamner, identifier, puis vérifier l'absence de tension. À droite, un cinquième cercle en pointillé : la mise à la terre et en court-circuit, seulement quand elle est prescrite. Les barres du dessous le rappellent : les quatre premières se font toujours, la cinquième dépend de l'installation. Regardez la phrase du bas : avant de séparer, on sait exactement sur quel équipement on va travailler. L'ordre n'est pas une habitude, c'est une prescription de l'INRS.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Les opérations, dans l'ordre imposé</h2>
+    <p>L'INRS décrit la consignation électrique en <strong>cinq opérations</strong>, à appliquer <strong>dans l'ordre spécifié</strong> (ED 6109, § 5.1) :</p>
+    <ol>
+      <li><strong>Séparer</strong> l'équipement, préalablement identifié, de toute source d'énergie électrique ;</li>
+      <li><strong>Condamner</strong> en position d'ouverture les organes de séparation ;</li>
+      <li><strong>Identifier</strong> sur le lieu de travail l'équipement concerné ;</li>
+      <li><strong>Vérifier l'absence de tension</strong> (VAT) ;</li>
+      <li><strong>Mettre à la terre et en court-circuit</strong>, immédiatement après la VAT — mais cette opération n'est pas toujours requise en basse tension : la norme NF C 18-510 fait foi.</li>
+    </ol>
+    <p>D'où le titre de la station : <strong>quatre étapes, jusqu'à la VAT</strong>, puis une cinquième quand elle est prescrite.</p>
+    <div class="encadre encadre--note">
+      <span class="mot">Toutes énergies</span>
+      <p>Pour une énergie quelconque, l'INRS décrit quatre phases : séparation ; condamnation et signalisation ; dissipation ; vérification et identification. En électricité, la mise à la terre est la dissipation, et elle suit la VAT (ED 6109, § 4.1).</p>
+    </div>
+    <figure>
+      <img src="svg/ordre-des-etapes.svg" alt="Cinq cercles reliés par des flèches, de gauche à droite. Les quatre premiers sont pleins et numérotés : séparer, condamner, identifier, vérifier l'absence de tension. Le cinquième est en pointillé : mise à la terre et en court-circuit. Une barre indique que les quatre premières se font toujours, la cinquième si elle est prescrite. Une bande rappelle qu'avant la première opération l'équipement est préalablement identifié.">
+      <figcaption>Quatre cercles pleins, un cinquième en pointillé : il n'est posé que si la situation l'exige.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Sur le schéma, une armoire. En haut, la tension arrive en amont : le trait est orange. Regardez la lame du sectionneur : elle s'ouvre, et le fil du dessous devient gris, hors tension. C'est la séparation, tous les pôles ouverts, neutre compris. Puis un cadenas bloque la manœuvre, et une pancarte porte les mots condamné, défense de manœuvrer sans autorisation, avec un nom, une date et une heure. C'est la condamnation. En bas à droite, la plaque du sectionneur porte le même repère que le groupe : c'est l'identification, pour ne pas ouvrir le mauvais circuit.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Séparer, condamner, identifier</h2>
+    <ul>
+      <li><strong>Séparer</strong> : l'équipement est isolé de façon certaine de <strong>toutes les sources possibles de tension, amont et aval</strong>. La séparation se constate : vue directe des contacts, retrait d'un pont, d'un fusible ou d'une fiche de prise. Le contre-exemple de l'INRS : une armoire ouverte, fusibles laissés à disposition, neutre non coupé.</li>
+      <li><strong>Condamner</strong> : maintenir la séparation par un blocage mécanique (serrure, cadenas) de l'organe ouvert, avec un moyen dédié — pas le cadenas d'un casier — et une signalisation très visible : une pancarte « CONDAMNÉ — DÉFENSE DE MANŒUVRER SANS AUTORISATION », avec nom, date, heure, repère.</li>
+      <li><strong>Identifier</strong> : s'assurer, sur le lieu de travail, que l'équipement consigné est bien celui prévu, pour ne pas intervenir sur un autre. L'appareil de séparation doit lui-même être identifié de façon durable.</li>
+    </ul>
+    <div class="encadre encadre--piege">
+      <span class="mot">Le piège</span>
+      <p>Une commande locale d'arrêt ne sépare pas forcément de toutes les sources : condensateurs, seconde alimentation, circuits de commande. La séparation suit la procédure, pas l'intuition (HoCourant, module M9).</p>
+    </div>
+    <figure>
+      <img src="svg/separer-condamner.svg" alt="À gauche, une armoire avec un sectionneur représenté sur un seul conducteur. Le conducteur amont est orange, sous tension. La lame du sectionneur s'ouvre ; le conducteur aval devient gris, hors tension. Un cadenas bloque le sectionneur ouvert. En haut à droite, une pancarte rouge porte CONDAMNÉ, DÉFENSE DE MANŒUVRER SANS AUTORISATION, avec nom, date, heure et repère. En bas à droite, deux groupes portent chacun une plaque de repère, Q1 et Q2 ; la plaque Q2 est entourée : le repère du sectionneur est celui du groupe.">
+      <figcaption>La lame s'ouvre, le cadenas et la pancarte la maintiennent ouverte, le repère évite de se tromper de circuit.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Trois vignettes se suivent. À gauche, on contrôle d'abord le vérificateur sur une source connue : son voyant s'allume. Au milieu, on l'applique sur chaque conducteur, les phases et le neutre, et le voyant reste éteint : une coche verte par conducteur. À droite, on le contrôle de nouveau : il s'allume encore, donc il fonctionnait pendant la mesure. Sous les vignettes, la règle : ni voltmètre, ni tournevis testeur, mais un vérificateur d'absence de tension, conçu pour cela, utilisé sur le lieu de travail.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Vérifier l'absence de tension : la VAT</h2>
+    <p>La VAT se fait <strong>sur chacun des conducteurs actifs, neutre compris</strong>, avec un <strong>vérificateur d'absence de tension spécialement conçu</strong> à cet effet, <strong>au lieu de travail</strong> (INRS, ED 6109, § 5.1). Les appareils de mesurage et les détecteurs de type voltmètre, tournevis testeur, etc. ne sont pas des VAT.</p>
+    <p>Le vérificateur se <strong>contrôle avant et après</strong>, sur une source connue : c'est ce qui prouve qu'il fonctionnait au moment où il indiquait « pas de tension ». Si le contrôle d'après échoue, la vérification n'est pas validée : on reprend (pratique enseignée en formation à l'habilitation, HoCourant M3 et M9).</p>
+    <p>La VAT est elle-même une opération sur une installation qui peut être sous tension : elle demande donc les mesures de sécurité correspondantes (ED 6109, § 4.1).</p>
+    <div class="encadre encadre--piege">
+      <span class="mot">Ce qu'un VAT ne fait pas</span>
+      <p>Un détecteur conforme indique sans ambiguïté la présence ou l'absence de la tension de service ; il ne détecte pas les tensions induites (INRS, ED 6109).</p>
+    </div>
+    <figure>
+      <img src="svg/verifier-absence-tension.svg" alt="Trois vignettes côte à côte, chacune avec un vérificateur d'absence de tension dont le voyant est en haut. Première vignette : le vérificateur est contrôlé sur une source connue, voyant allumé. Deuxième vignette : il est appliqué sur chaque conducteur, L1, L2, L3 et neutre ; le voyant reste éteint et une coche verte marque chaque conducteur. Troisième vignette : nouveau contrôle sur la source connue, voyant allumé. Une bande rappelle qu'il faut un vérificateur conçu pour cela, pas un voltmètre ni un tournevis testeur.">
+      <figcaption>Le voyant allumé avant et après est ce qui donne sa valeur au voyant éteint du milieu.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Quatre traits horizontaux : les trois phases et le neutre. Regardez l'ordre des gestes. D'abord, le câble de terre se raccorde côté terre, en bas. Ensuite seulement, la barre de court-circuit vient se poser sur chaque conducteur, neutre compris. Cette opération suit immédiatement la vérification d'absence de tension, et se fait au plus près de la zone de travail. La bande du bas le rappelle : en basse tension, elle n'est pas toujours requise. La norme NF C 18-510 dit quand.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Mise à la terre et en court-circuit : la cinquième opération</h2>
+    <p>Les électriciens l'appellent mise à la terre et en court-circuit ; pour les autres énergies, on parle de <strong>dissipation</strong>. Elle est réalisée <strong>immédiatement après la VAT</strong>, sur tous les conducteurs actifs, neutre compris, <strong>au plus près de la zone de travail</strong>, avec des équipements conçus à cet effet (INRS, ED 6109, § 5.1).</p>
+    <ul>
+      <li>Elle protège contre les réalimentations éventuelles, amont ou aval, ou produites par des sources autonomes, et participe à la protection contre l'induction et le couplage capacitif. Elle dissipe aussi l'énergie accumulée, par exemple dans des condensateurs.</li>
+      <li>Ordre des gestes : la mise à la terre se raccorde <strong>côté terre avant</strong> d'être raccordée côté conducteur.</li>
+      <li><strong>Elle n'est pas toujours requise en basse tension</strong> : se référer à la norme NF C 18-510.</li>
+    </ul>
+    <div class="encadre encadre--note">
+      <span class="mot">Sur une pompe à chaleur ou un groupe</span>
+      <p>La procédure de consignation est définie par l'employeur, après analyse des risques et en accord avec la notice du constructeur (ED 6109, § 4.2) : c'est elle qui dit si cette opération est prescrite. À ne pas confondre avec la terre de protection de l'installation.</p>
+    </div>
+    <figure>
+      <img src="svg/terre-court-circuit.svg" alt="Quatre traits horizontaux gris représentent les trois phases L1, L2, L3 et le neutre N. Une barre verticale orange les relie tous entre eux par des pinces, et un câble la relie à un symbole de terre en bas. À droite, deux repères numérotés : 1, le côté terre d'abord ; 2, puis sur tous les conducteurs actifs, neutre compris. Une bande rappelle qu'en basse tension cette opération n'est pas toujours requise et que la norme NF C 18-510 précise quand.">
+      <figcaption>Numéro 1 : la terre d'abord. Numéro 2 : les conducteurs ensuite.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Deux personnes et deux papiers. En haut, le chargé de consignation, habilité pour cela, remet au chargé de travaux l'attestation de consignation : la preuve écrite que la zone est consignée. Au milieu, la bande rappelle que pendant les travaux la tension ne peut pas revenir. En bas, le chemin inverse : à la fin, le chargé de travaux rend un avis de fin de travail, et c'est le chargé de consignation qui déconsigne. L'encadré donne l'ordre habituel du retour : d'abord les protections et les mises à la terre, puis la condamnation, puis la refermeture de l'appareil de séparation.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Qui consigne, avec quel papier, et le retour</h2>
+    <p>Les opérations sur les installations électriques ne peuvent être effectuées que par des travailleurs <strong>habilités</strong> (Code du travail, art. R. 4544-9), l'habilitation étant délivrée par l'employeur après une formation (art. R. 4544-10). Pour consigner, le symbole est <strong>C</strong> : <strong>BC</strong> en basse tension, <strong>HC</strong> en haute tension (INRS, ED 6127).</p>
+    <p>Le <strong>chargé de consignation</strong> est la personne désignée par son employeur pour consigner et déconsigner un équipement et délivrer les attestations correspondantes ; il peut faire exécuter les opérations par le personnel placé sous sa responsabilité (ED 6109). Les documents de l'opération : l'<strong>attestation de consignation</strong> (en une ou deux étapes), puis l'<strong>avis de fin de travail</strong> (ED 6127).</p>
+    <p>La <strong>déconsignation</strong> est généralement conduite dans l'ordre inverse (ED 6109, § 5.2) : retirer écrans, protecteurs et balisages ; déposer les mises en court-circuit puis les mises à la terre, en commençant par l'extrémité côté conducteur actif ; retirer la condamnation ; refermer l'organe de séparation.</p>
+    <div class="encadre encadre--piege">
+      <span class="mot">Le piège</span>
+      <p>« Dans l'ordre inverse » n'est pas un automatisme : la déconsignation ne consiste pas systématiquement à refaire les opérations à l'envers, elle suit l'analyse des risques et le besoin de tester (ED 6109, § 4.1). Et jamais « pour voir si ça marche » : la tension ne revient qu'après déconsignation, si son rétablissement ne présente aucun risque (art. R. 4544-5).</p>
+    </div>
+    <figure>
+      <img src="svg/attestation-retour.svg" alt="Schéma en trois bandes. En haut, de gauche à droite : le chargé de consignation, habilité BC, remet une attestation de consignation, représentée par une feuille, au chargé de travaux. Au milieu, une bande rappelle que pendant les travaux la tension ne peut pas revenir. En bas, de droite à gauche : le chargé de travaux rend un avis de fin de travail au chargé de consignation, qui déconsigne. Un encadré résume le retour : protections et mises à la terre, condamnation, refermeture de l'appareil de séparation.">
+      <figcaption>Un papier à l'aller, un papier au retour, et une seule personne qui déconsigne.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="À gauche, trois cartes : électrique, fluidique, mécanique. Un groupe extérieur cumule les trois. À droite, le circuit du fluide. Regardez : les deux vannes se ferment, la vanne de purge s'ouvre entre elles, et l'aiguille du manomètre retombe à zéro. Sur un circuit frigorifique, cette purge n'est pas un rejet : le fluide se récupère. C'est là que la directive sur les équipements sous pression rejoint la consignation : un circuit sous pression se consigne comme un circuit sous tension, avec ses organes de séparation, de purge et sa vérification. Et couper l'électricité ne consigne ni le fluide, ni les pièces mobiles.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Les autres énergies : le pont vers la DESP</h2>
+    <p>Un groupe extérieur cumule trois énergies. L'INRS traite chacune par une procédure (ED 6109, chap. 5 à 7), et leur ordre dépend de l'analyse des risques : la consignation mécanique des pales d'un ventilateur exige, par exemple, la consignation électrique préalable de son moteur (§ 4.1).</p>
+    <ul>
+      <li><strong>Fluidique</strong> (fluide sous pression) : séparation de toute arrivée de fluide, dissipation (purge), condamnation des organes de séparation en position fermée et des organes de purge en position ouverte, vérification de l'absence de risque résiduel (§ 6.1). Une vanne seule peut fuir : elle ne suffit que si une légère fuite est sans risque ; deux vannes fermées et une purge intermédiaire ouverte forment un isolement renforcé.</li>
+      <li><strong>Mécanique</strong> : des pièces peuvent bouger sous l'effet d'une énergie cinétique ou potentielle — vent sur des pales, chute d'une masse, détente d'un ressort. Séparation, dissipation, immobilisation, vérification (§ 7).</li>
+    </ul>
+    <div class="encadre encadre--cle">
+      <span class="mot">Le pont vers la DESP</span>
+      <p>Le circuit frigorifique est un équipement sous pression (<a href="../desp-en-service/">DESP, en service</a>) : sa consignation s'appuie sur des organes de séparation et de purge prévus dès la conception, avec des instructions du constructeur (ED 6109, § 3 et § 6.1). Sur ce circuit, la purge n'est pas un rejet à l'air libre : le fluide frigorigène se récupère (<a href="../fgaz-3/">F-Gaz 3</a>).</p>
+    </div>
+    <figure>
+      <img src="svg/autres-energies.svg" alt="À gauche, trois cartes empilées : électrique (sectionneur ouvert et condamné, tension vérifiée absente), fluidique (vannes fermées, purge ouverte, absence de pression vérifiée), mécanique (pales immobilisées, masses calées, ressorts détendus). À droite, un circuit de fluide avec deux vannes fermées ; entre elles, une branche porte une vanne de purge ouverte, dont le fluide est récupéré, et une autre branche descend vers un manomètre dont l'aiguille est revenue à zéro. Une bande rappelle que couper l'électricité ne consigne ni le fluide ni les pièces mobiles.">
+      <figcaption>Les vannes se ferment, la purge s'ouvre, l'aiguille retombe : la pression est vérifiée absente.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan, en quatre cartes. Un : hors tension se prouve, un arrêt ne suffit pas. Deux : l'ordre, séparer, condamner, identifier, vérifier l'absence de tension, puis la mise à la terre quand elle est prescrite. Trois : une personne habilitée, un papier, et un retour placé sous son autorité. Quatre : l'électricité n'est pas la seule énergie, le fluide sous pression et les pièces mobiles se consignent aussi. En bas, le réflexe du technicien : avant de toucher, savoir qui a consigné quoi, et où est la preuve.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Un arrêt n'est pas une consignation : <strong>la mise hors tension se prouve</strong>.</li>
+      <li>L'ordre : <strong>séparer, condamner, identifier, vérifier l'absence de tension</strong>, puis mise à la terre et en court-circuit si elle est prescrite.</li>
+      <li>Un <strong>chargé de consignation habilité</strong> (BC en basse tension), une <strong>attestation de consignation</strong>, un <strong>avis de fin de travail</strong>, puis la déconsignation.</li>
+      <li>Le fluide sous pression et les pièces mobiles se consignent aussi : <strong>couper l'électricité ne suffit pas</strong>.</li>
+    </ul>
+    <p class="formule">Le réflexe : savoir qui a consigné quoi, et où est la preuve.</p>
+    <figure>
+      <img src="svg/bilan-consignation.svg" alt="Quatre cartes numérotées : prouver et ne pas supposer, dans l'ordre, une personne et un papier, toutes les énergies. Une bande en bas donne le réflexe : avant de toucher, savoir qui a consigné, quoi, et où est la preuve.">
+      <figcaption>Quatre idées à retenir, et un réflexe.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Dans quel ordre s'enchaînent les opérations d'une consignation électrique ? Reprenez le schéma de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Dans quel ordre s'enchaînent les opérations d'une consignation électrique ?</h2>
+    <figure class="vignette">
+      <img src="svg/ordre-des-etapes.svg" alt="Vignette de rappel : quatre cercles pleins, séparer, condamner, identifier, vérifier l'absence de tension, et un cinquième en pointillé, la mise à la terre et en court-circuit si elle est prescrite.">
+      <figcaption>Rappel de l'écran 2 — quatre cercles pleins, un cinquième en pointillé.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Séparer, identifier, condamner, VAT, puis mise à la terre si prescrite</button>
+      <button type="button" data-answer="b">VAT, séparer, condamner, identifier, puis mise à la terre si prescrite</button>
+      <button type="button" data-answer="bonne">Séparer, condamner, identifier, VAT, puis mise à la terre si prescrite</button>
+      <button type="button" data-answer="d">Condamner, séparer, VAT, identifier, puis mise à la terre si prescrite</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'INRS impose l'ordre : séparer, condamner, identifier, vérifier l'absence de tension, puis mettre à la terre et en court-circuit quand elle est prescrite. On sépare avant de condamner, et la VAT porte sur l'équipement identifié."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un technicien vérifie l'absence de tension avec un multimètre réglé en voltmètre. Cette vérification est-elle valable ? Regardez la bande du bas de l'illustration de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un technicien vérifie l'absence de tension avec un multimètre réglé en voltmètre. Est-ce valable ?</h2>
+    <figure class="vignette">
+      <img src="svg/verifier-absence-tension.svg" alt="Vignette de rappel : les trois temps de la VAT, contrôle du vérificateur sur une source connue, vérification de chaque conducteur, nouveau contrôle, et la bande qui exclut le voltmètre et le tournevis testeur.">
+      <figcaption>Rappel de l'écran 4 — le vérificateur, contrôlé avant et après.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Non : un voltmètre n'est pas un vérificateur d'absence de tension</button>
+      <button type="button" data-answer="b">Oui, si l'appareil est bien étalonné et de précision suffisante</button>
+      <button type="button" data-answer="c">Oui, à condition de ne mesurer qu'entre phases, sans le neutre</button>
+      <button type="button" data-answer="d">Oui, tant que l'installation a été séparée et condamnée avant</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les appareils de mesurage et les détecteurs de type voltmètre ou tournevis testeur ne sont pas des VAT. Il faut un vérificateur d'absence de tension conçu à cet effet, utilisé sur chaque conducteur actif, neutre compris, au lieu de travail."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Sur un chantier, qui peut consigner une installation électrique en basse tension et délivrer l'attestation de consignation ? Reprenez le schéma de l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Qui peut consigner une installation en basse tension et délivrer l'attestation de consignation ?</h2>
+    <figure class="vignette">
+      <img src="svg/attestation-retour.svg" alt="Vignette de rappel : le chargé de consignation remet l'attestation de consignation au chargé de travaux, puis reçoit l'avis de fin de travail et déconsigne.">
+      <figcaption>Rappel de l'écran 6 — un papier à l'aller, un papier au retour.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Tout technicien qui a un cadenas et un vérificateur d'absence de tension</button>
+      <button type="button" data-answer="b">Le chargé de travaux, puisque c'est lui qui va intervenir sur l'installation</button>
+      <button type="button" data-answer="c">Le client, propriétaire de l'installation, sans habilitation particulière</button>
+      <button type="button" data-answer="bonne">Un chargé de consignation habilité BC, désigné par son employeur</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le chargé de consignation est désigné par son employeur pour consigner, déconsigner et délivrer les attestations ; en basse tension, il est habilité BC. Posséder un cadenas ou un vérificateur ne tient pas lieu d'habilitation."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. La puissance d'un groupe extérieur est consignée. Avant de démonter l'hélice du ventilateur, que reste-t-il à traiter ? Souvenez-vous des trois cartes de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">La puissance du groupe est consignée. Avant de démonter l'hélice, que reste-t-il à traiter ?</h2>
+    <figure class="vignette">
+      <img src="svg/autres-energies.svg" alt="Vignette de rappel : trois cartes, électrique, fluidique et mécanique, et le circuit de fluide avec ses deux vannes fermées, sa purge et son manomètre.">
+      <figcaption>Rappel de l'écran 7 — trois énergies, un seul groupe.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Rien : l'énergie électrique était la seule en cause ici</button>
+      <button type="button" data-answer="bonne">Les pales : le vent peut encore les mettre en mouvement</button>
+      <button type="button" data-answer="c">Seulement la pression du fluide, qui entraîne l'hélice</button>
+      <button type="button" data-answer="d">Rien : la pancarte « condamné » bloque tout mouvement</button>
+    </div>
+    <p class="feedback" hidden data-explication="Consigner l'énergie motrice n'exclut pas tout mouvement : vent, masse, ressort peuvent mettre des pièces en mouvement. L'INRS cite la mise en mouvement des pales d'un extracteur sous l'action du vent : il faut alors les immobiliser, c'est la consignation mécanique."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../elec-habilitation/"><strong>Habilitation électrique</strong></a> (même sous-ligne)
+      — qui a le droit de consigner : le symbole BC, l'employeur qui habilite.</li>
+    <li><a href="../elec-terre-differentiel/"><strong>Terre et différentiel</strong></a> (même sous-ligne)
+      — la terre de protection de l'installation, à ne pas confondre avec la mise à la terre de consignation.</li>
+    <li><a href="../risques-neuf-principes/"><strong>Les 9 principes de prévention</strong></a> (Risques professionnels)
+      — consigner, c'est éliminer le risque à la source plutôt que s'en protéger.</li>
+    <li><a href="../desp-en-service/"><strong>La DESP en service</strong></a> (La DESP)
+      — le circuit frigorifique est un équipement sous pression : sa consignation fluidique en découle.</li>
+    <li><a href="https://inerweb.fr/hocourant/"><strong>HoCourant</strong></a> (réseau technique)
+      — le module M9 « Mettre en sécurité : la consignation », en films.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

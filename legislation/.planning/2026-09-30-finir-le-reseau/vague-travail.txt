@@ -1,0 +1,6 @@
+Vague Droit du travail — slugs (ils existeront tous) : travail-le-contrat, travail-temps-et-paie, travail-droits-devoirs, travail-se-former, travail-s-installer.
+Sous-ligne : Droit du travail (couleur #9d174d), scène : ../../img/scene-travail.webp (elle existe).
+Public : jeunes de BTS / TP TECVC, souvent apprentis ou futurs salariés du bâtiment : concret, utile pour soi-même (« ce que dit votre contrat »). Conventions collectives du bâtiment (ETAM IDCC 2609, ouvriers du bâtiment) et bureaux d'études (IDCC 1486) : ne citer une disposition que si elle est lue dans le texte.
+Sources officielles attendues : Code du travail (Légifrance, code.travail.gouv.fr), service-public.fr, travail-emploi.gouv.fr, moncompteformation.gouv.fr, France VAE, URSSAF / autoentrepreneur.urssaf.fr, BPI Création. Tout seuil, montant, taux, durée ou plafond non lu à la source du jour → omis et « À sourcer ». Les montants évoluent chaque année : préférer la règle au chiffre.
+Référentiel : « Hors REAC : culture professionnelle du technicien et du chargé d'affaires » sauf lien honnête.
+Chercher d'abord dans le fonds de l'enseignant : node C:/git/HAL-v3/scripts/chercher-rag.js "<sujet>".

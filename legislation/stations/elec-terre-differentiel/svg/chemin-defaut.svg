@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-cd" aria-describedby="d-cd" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cd">Le chemin du courant de défaut : une boucle par la terre</title>
+  <desc id="d-cd">Une boucle. À gauche, une source d'énergie dont le point neutre est relié à une prise de terre. Un câble de phase va vers la carcasse d'une pompe à chaleur. À l'intérieur, le conducteur touche la carcasse au point de défaut, entouré de rouge. Le courant passe dans la carcasse, descend par le conducteur de protection jusqu'à la prise de terre de l'installation, traverse le sol en trait tireté et rejoint la prise de terre de la source. Des flèches orange donnent le sens. L'animation fait circuler un point le long de cette boucle ; l'image fixe est complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .sub { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .acc { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#a16207; }
+    .wht { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#fff; }
+    .bad { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .nw { white-space:nowrap; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Le courant de défaut boucle : source, carcasse, terre, source</text>
+  <rect x="30" y="380" width="840" height="46" fill="#efe6d8"/>
+  <text class="mut" x="860" y="420" text-anchor="end">le sol</text>
+  <rect x="40" y="100" width="130" height="110" rx="10" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <text class="lbl" x="105" y="150" text-anchor="middle">Source</text><text class="lbl" x="105" y="174" text-anchor="middle">d'énergie</text>
+  <rect x="520" y="90" width="260" height="150" rx="8" fill="#eef3f9" stroke="#1b3a63" stroke-width="4"/>
+  <text class="mut" x="520" y="78" text-anchor="start">Carcasse de la pompe à chaleur (masse)</text>
+  <rect x="524" y="128" width="88" height="24" rx="10" fill="#f6d3ae" stroke="#e8914a" stroke-width="2"/>
+  <line x1="170" y1="140" x2="640" y2="140" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>
+  <line x1="640" y1="140" x2="640" y2="240" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="640" cy="240" r="13" fill="none" stroke="#c0392b" stroke-width="4"/>
+  <text class="lbl" x="640" y="272" text-anchor="middle">point de défaut</text>
+  <text class="lbl" x="300" y="122" text-anchor="middle">phase</text>
+  <line x1="720" y1="240" x2="720" y2="330" stroke="#1b3a63" stroke-width="4"/>
+  <text class="lbl" x="705" y="312" text-anchor="end">conducteur de protection</text>
+  <line x1="105" y1="210" x2="105" y2="330" stroke="#1b3a63" stroke-width="4"/>
+  <g stroke="#1b3a63" stroke-width="4" stroke-linecap="round"><line x1="698" y1="330" x2="742" y2="330"/><line x1="705.48" y1="339" x2="734.52" y2="339"/><line x1="713.84" y1="348" x2="726.16" y2="348"/></g><g stroke="#1b3a63" stroke-width="4" stroke-linecap="round"><line x1="83" y1="330" x2="127" y2="330"/><line x1="90.48" y1="339" x2="119.52" y2="339"/><line x1="98.84" y1="348" x2="111.16" y2="348"/></g>
+  <text class="lbl" x="752" y="338" text-anchor="start">prise de terre</text><text class="lbl" x="752" y="360" text-anchor="start">de l'installation</text>
+  <text class="lbl" x="142" y="338" text-anchor="start">prise de terre</text><text class="lbl" x="142" y="360" text-anchor="start">de la source</text>
+  <path d="M720,350 L720,392 L105,392 L105,350" fill="none" stroke="#e8914a" stroke-width="4" stroke-dasharray="10 7" stroke-linecap="round"/>
+  <text class="lbl" x="420" y="372" text-anchor="middle">le courant traverse le sol</text>
+  <g fill="#e8914a"><polygon points="330,132 352,140 330,148"/><polygon points="712,266 728,266 720,286"/><polygon points="440,384 418,392 440,400"/><polygon points="97,282 113,282 105,262"/></g>
+  <circle r="8" fill="#e8914a" opacity="0">
+    <animateMotion path="M170,140 L640,140 L640,240 L720,240 L720,392 L105,392 L105,210" keyPoints="0;0;1;1" keyTimes="0;0.06;0.6;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.072;0.588;0.6;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="8" fill="#e8914a" opacity="0">
+    <animateMotion path="M170,140 L640,140 L640,240 L720,240 L720,392 L105,392 L105,210" keyPoints="0;0;1;1" keyTimes="0;0.16;0.7;1" calcMode="linear" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.172;0.688;0.7;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+</svg>

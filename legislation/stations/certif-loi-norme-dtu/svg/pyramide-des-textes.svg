@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" aria-labelledby="t-pyr" aria-describedby="d-pyr" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pyr">La pyramide des textes qui obligent</title>
+  <desc id="d-pyr">Une pyramide à quatre étages, du bas vers le haut. En bas, l'arrêté, pris par un ministre pour les détails techniques d'application. Au-dessus, le décret, qui précise la loi. Au-dessus encore, la loi, votée par le Parlement. Tout en haut, le droit de l'Union européenne, en deux cases côte à côte : le règlement européen, qui s'applique tel quel, et la directive européenne, que chaque État doit transposer. Une bande rappelle que chaque étage doit respecter celui du dessus. En dessous, un cadre en trait tireté, hors de la pyramide, rappelle que la norme, le DTU et l'avis technique n'obligent pas par eux-mêmes. À l'animation, les étages se posent un par un en partant du bas ; l'image fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#3730a3; }
+    .hb   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .wht  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <g><text class="ttl" x="450" y="36" text-anchor="middle">Les textes qui obligent : une pyramide</text></g>
+  <g>
+    <rect x="70" y="300" width="760" height="62" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="450" y="328" text-anchor="middle">Arrêté</text><text class="lbl" x="450" y="351" text-anchor="middle">un ministre fixe le détail technique d'application</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.12;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="130" y="230" width="640" height="62" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="450" y="258" text-anchor="middle">Décret</text><text class="lbl" x="450" y="281" text-anchor="middle">le pouvoir réglementaire précise la loi</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.23;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="190" y="160" width="520" height="62" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><text class="h" x="450" y="188" text-anchor="middle">Loi</text><text class="lbl" x="450" y="211" text-anchor="middle">votée par le Parlement</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.27;0.34;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="250" y="60" width="400" height="92" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="3"/><line x1="450" y1="60" x2="450" y2="152" stroke="#3730a3" stroke-width="3"/><text class="h" x="350" y="92" text-anchor="middle">Règlement (UE)</text><text class="lbl" x="350" y="118" text-anchor="middle">s'applique tel quel</text><text class="h" x="550" y="92" text-anchor="middle">Directive (UE)</text><text class="lbl" x="550" y="118" text-anchor="middle">à transposer</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.38;0.45;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="70" y="376" width="760" height="36" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text class="band" x="450" y="401" text-anchor="middle">Chaque étage doit respecter celui du dessus</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.62;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="70" y="424" width="760" height="36" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="9 7"/><text class="band" x="450" y="448" text-anchor="middle">Hors pyramide : norme, DTU, avis technique — ils n'obligent pas seuls</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.70;0.78;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

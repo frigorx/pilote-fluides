@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img"
+     aria-labelledby="t-sub" aria-describedby="d-sub" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-sub">Le lien de subordination : trois pouvoirs de l'employeur</title>
+  <desc id="d-sub">À gauche, un immeuble figure l'employeur ; à droite, un pictogramme plein figure le salarié. Entre les deux, trois flèches orientées de l'employeur vers le salarié : il donne des ordres et des directives, il contrôle l'exécution du travail, il sanctionne les manquements. En bas, une bande dit que l'exécution d'un travail sous cette autorité est le lien de subordination. L'animation fait apparaître les flèches l'une après l'autre ; l'image fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .ha   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#9d174d; }
+    .b    { font-size:17px; fill:#10233c; }
+    .bb   { font-size:17px; font-weight:bold; fill:#10233c; }
+    .ba   { font-size:17px; font-weight:bold; fill:#9d174d; }
+    .bo   { font-size:17px; font-weight:bold; fill:#b45309; }
+    .g    { font-size:16px; fill:#5a6b7d; }
+    .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <text class="ttl" x="400" y="36" text-anchor="middle">Trois pouvoirs, un seul lien</text>
+  <g transform="translate(100 190) scale(1.5)"><rect x="-36" y="-44" width="72" height="88" rx="4" fill="#1b3a63"/><rect x="-24" y="-32" width="12" height="12" fill="#fffdf8"/><rect x="-6" y="-32" width="12" height="12" fill="#fffdf8"/><rect x="12" y="-32" width="12" height="12" fill="#fffdf8"/><rect x="-24" y="-12" width="12" height="12" fill="#fffdf8"/><rect x="-6" y="-12" width="12" height="12" fill="#fffdf8"/><rect x="12" y="-12" width="12" height="12" fill="#fffdf8"/><rect x="-8" y="16" width="16" height="28" fill="#fffdf8"/></g>
+  <text class="h" x="100" y="290" text-anchor="middle">L'employeur</text>
+  <g transform="translate(700 190) scale(1.7)"><circle cx="0" cy="-34" r="16" fill="#9d174d"/><path d="M-28 34 V4 Q-28 -12 -12 -12 H12 Q28 -12 28 4 V34 Z" fill="#9d174d"/></g>
+  <text class="h" x="700" y="290" text-anchor="middle" style="fill:#9d174d">Le salarié</text>
+  <g>
+    <text class="bb" x="400" y="120" text-anchor="middle">Il donne des ordres et des directives</text>
+    <line x1="230" y1="142" x2="556" y2="142" stroke="#1b3a63" stroke-width="4"/>
+    <polygon points="578,142 562,133 562,151" fill="#1b3a63"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.08;0.16;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="bb" x="400" y="200" text-anchor="middle">Il contrôle l'exécution du travail</text>
+    <line x1="230" y1="222" x2="556" y2="222" stroke="#1b3a63" stroke-width="4"/>
+    <polygon points="578,222 562,213 562,231" fill="#1b3a63"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.32;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="bb" x="400" y="280" text-anchor="middle">Il sanctionne les manquements</text>
+    <line x1="230" y1="302" x2="556" y2="302" stroke="#1b3a63" stroke-width="4"/>
+    <polygon points="578,302 562,293 562,311" fill="#1b3a63"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4;0.48;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <rect x="30" y="360" width="740" height="76" rx="14" fill="#f3e1e3" stroke="#9d174d" stroke-width="2.5"/>
+  <g>
+    <text class="bb" x="400" y="392" text-anchor="middle">Un travail exécuté sous cette autorité :</text>
+    <text class="bb" x="400" y="418" text-anchor="middle">voilà ce que les juges appellent le lien de subordination</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.64;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

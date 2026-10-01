@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le marquage CE — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le marquage CE est la déclaration du fabricant, pas un label de qualité ; la déclaration des performances des produits de construction ; les autres textes qui visent un appareil CVC ; ce que le technicien d'études vérifie avant de prescrire.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/certif-marquage-ce/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Certifications & normes.
+     Le marquage CE : produits & DoP.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Aucun MP3 fabriqué pour cette station : elle parle avec la voix du
+     navigateur (filet) tant que la chaîne edge-tts n'a pas été lancée.
+
+     Sources : voir FOND.md (règlement (UE) 305/2011, règlement (UE)
+     2024/3110, règlement (CE) 765/2008 art. 30, directives 2014/68/UE et
+     2009/125/CE, règlement (UE) 2023/1230) — lues sur EUR-Lex le 30/09/2026.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Certifications &amp; normes · niveau BTS</p>
+  <h1>Le marquage CE — produits &amp; DoP</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-certifs.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez que le marquage CE n'est pas un label de qualité mais la <strong>déclaration du fabricant</strong> qu'il respecte les textes européens applicables à son produit. Vous savez lire une <strong>déclaration des performances</strong> (DoP) de produit de construction, situer les autres textes qui visent un appareil CVC, et dire ce que vous vérifiez avant de prescrire — y compris quand le marquage manque.</p>
+    <p><strong>Référentiel :</strong> TP TECVC, REAC TP-00133 — compétences <strong>CP9</strong> (climatisation) et <strong>CP10</strong> (centrale de traitement d'air), quand vous choisissez et prescrivez un appareil à partir des données du constructeur.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez l'usine, à gauche : c'est le fabricant. Une flèche la relie au produit, et sur ce produit, une petite plaque porte les deux lettres C E. Sous eux, l'encadré violet dit ce que ces deux lettres signifient vraiment : le fabricant déclare que son produit respecte les exigences des textes européens qui le concernent, et il en assume la responsabilité. Rien de plus. Les deux cartes rouges écartent des idées fausses : le C E n'est pas un label de qualité, et personne ne le délivre au fabricant, qui l'appose lui-même. C'est une promesse, pas une note.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Le CE : une déclaration, pas un label</h2>
+    <p>Le marquage CE ne peut être apposé que par <strong>le fabricant ou son mandataire</strong>. En l'apposant, le fabricant indique qu'il <strong>assume la responsabilité de la conformité</strong> du produit avec toutes les exigences applicables des textes européens d'harmonisation qui prévoient ce marquage (règlement (CE) n° 765/2008, article 30).</p>
+    <p>Trois idées à écarter. Le CE n'est <strong>pas un label de qualité</strong> : il ne dit pas « meilleur », il dit « conforme aux textes qui s'appliquent ». Il n'est <strong>pas délivré</strong> : même quand un organisme notifié intervient dans le contrôle de la production, son numéro <em>suit</em> le CE, il ne le remplace pas. Et il n'est apposé que sur les produits pour lesquels un texte européen le prévoit expressément.</p>
+    <p>C'est aussi <strong>le seul marquage</strong> qui atteste cette conformité, et il est interdit d'apposer un signe qui pourrait en faire confondre la signification.</p>
+    <figure>
+      <img src="svg/ce-declaration.svg" alt="À gauche, une usine schématique : le fabricant, ou son mandataire. Une flèche mène à un produit dont la plaque porte les lettres CE. Un encadré résume ce que le fabricant déclare : son produit respecte les exigences applicables des textes européens qui le concernent, et il en assume la responsabilité. À droite, trois cartes : le CE n'est pas un label de qualité, il n'est pas un certificat délivré, et c'est le seul marquage qui atteste cette conformité européenne. Une note dit qu'un signe qui prêterait à confusion avec le CE est interdit.">
+      <figcaption>Le CE, c'est la parole du fabricant : il déclare, personne ne le lui délivre.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Suivez le petit colis orange, sur la gauche, avec sa feuille : il descend étape par étape. D'abord le fabricant : il établit la documentation technique et la déclaration des performances, appose le C E, et conserve le tout dix ans. Ensuite, en tirets, l'importateur, seulement si le produit vient de hors de l'Union européenne. Puis le distributeur, qui vérifie le C E, les documents et la notice avant de livrer. Puis l'entreprise et le bureau d'études, qui comparent les performances déclarées à ce que le projet demande. Enfin le chantier : en cas de non-conformité, on remonte la chaîne.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le chemin du produit jusqu'au chantier</h2>
+    <p>Pour un produit de construction (règlement (UE) n° 305/2011), la responsabilité se répartit le long de la chaîne :</p>
+    <ul>
+      <li>le <strong>fabricant</strong> établit la déclaration des performances, appose le CE, et <strong>conserve la documentation technique et la déclaration dix ans</strong> après la mise sur le marché (article 11) ;</li>
+      <li>l'<strong>importateur</strong>, si le produit vient de hors de l'Union, s'assure que le fabricant a fait le nécessaire avant de le mettre sur le marché (article 13) ;</li>
+      <li>le <strong>distributeur</strong> vérifie le CE, les documents et la notice ; au moindre doute sur la conformité, il ne met pas le produit à disposition (article 14).</li>
+    </ul>
+    <p>La déclaration accompagne le produit, sur papier ou par voie électronique ; une copie papier est fournie au destinataire qui la demande (article 7). Un importateur ou un distributeur qui commercialise le produit sous son propre nom, ou le modifie, est <strong>traité comme un fabricant</strong> (article 15).</p>
+    <figure>
+      <img src="svg/chemin-du-produit.svg" alt="Cinq étapes de haut en bas, reliées par une ligne verticale, avec un colis orange et sa feuille qui descendent de l'une à l'autre : le fabricant, l'importateur (en tirets, seulement pour un produit venu de hors de l'Union), le distributeur, l'entreprise et le bureau d'études, puis le chantier. Chaque étape porte sa vérification. Une non-conformité se traite en remontant la chaîne.">
+      <figcaption>Le colis descend la chaîne ; chaque maillon vérifie ce qui le concerne.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Voici l'arbre de décision. En haut, un produit de construction : un produit destiné à entrer durablement dans l'ouvrage. La question, dans l'encadré violet : est-il couvert par une norme harmonisée, ou a-t-il une évaluation technique européenne ? Si oui, suivez le trait plein vert : le fabricant établit une déclaration des performances, puis appose le C E. Si non, le trait tireté rouge mène à l'absence de déclaration et de C E, au titre de ce règlement. L'encadré orange, en bas, rappelle trois dérogations possibles, comme la pièce faite sur mesure pour un ouvrage unique.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Produits de construction : quand la DoP s'impose</h2>
+    <p>Un <strong>produit de construction</strong> est un produit fabriqué et mis sur le marché pour être incorporé de façon durable dans un ouvrage, et dont les performances influent sur celles de l'ouvrage. Lorsqu'il est <strong>couvert par une norme harmonisée</strong> ou conforme à une <strong>évaluation technique européenne</strong>, le fabricant établit une déclaration des performances (DoP) à la mise sur le marché ; le CE est apposé quand elle existe, et pas sans elle (règlement (UE) n° 305/2011, articles 2, 4 et 8).</p>
+    <p>Trois dérogations sont possibles pour un produit couvert : la pièce faite <strong>sur mesure</strong> pour un ouvrage unique identifié, le produit <strong>fabriqué sur le chantier</strong>, la fabrication <strong>traditionnelle</strong> pour un ouvrage protégé — et seulement si aucun texte, national ou européen, n'exige la déclaration (article 5).</p>
+    <p><strong>Ce texte évolue.</strong> Le règlement (UE) 2024/3110 abroge le règlement 305/2011 à compter du 8 janvier 2026, mais les articles sur la déclaration des performances restent applicables jusqu'au 8 janvier 2040 aux produits couverts par des normes harmonisées en vigueur à cette date (articles 94 et 95). Le ministère chargé de la construction indique que les deux versions coexistent jusqu'en 2040. La déclaration devient, dans le nouveau régime, une « déclaration des performances et de la conformité ».</p>
+    <figure>
+      <img src="svg/quand-une-dop.svg" alt="Un arbre de décision. Un produit de construction ; question : est-il couvert par une norme harmonisée ou une évaluation technique européenne ? Oui, trait plein vert : le fabricant établit une déclaration des performances puis appose le CE. Non, trait tireté rouge : pas de déclaration ni de CE au titre de ce règlement. En bas, trois dérogations possibles : pièce sur mesure pour un ouvrage unique, produit fabriqué sur le chantier, fabrication traditionnelle pour un ouvrage protégé, si aucun texte n'exige la déclaration.">
+      <figcaption>Trait plein : le chemin qui mène à la DoP et au CE. Trait tireté : celui qui n'y mène pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Regardez la feuille se déplier, de haut en bas. Elle commence par l'identité du produit : son code de produit type, son numéro de lot ou de série, son usage prévu. Puis le fabricant, et le système qui a servi à vérifier la constance des performances. Au milieu, le tableau : pour chaque caractéristique essentielle, la performance déclarée et la norme harmonisée utilisée. Remarquez, en orange, les trois lettres N P D : performance non déterminée, le fabricant ne s'engage pas sur cette valeur. En bas, sa signature : il répond seul de ce qu'il déclare.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La DoP qui se déplie</h2>
+    <p>La déclaration des performances suit un modèle (annexe III du règlement 305/2011). Elle identifie le <strong>produit type</strong>, son <strong>usage prévu</strong>, le <strong>fabricant</strong>, le <strong>système d'évaluation et de vérification de la constance des performances</strong>, puis liste les <strong>caractéristiques essentielles</strong> avec leur performance, exprimée par un niveau, une classe ou une description, et la norme harmonisée employée.</p>
+    <p>Deux mots à connaître. <strong>NPD</strong> : « performance non déterminée », inscrit en face d'une caractéristique listée pour laquelle le fabricant ne déclare rien ; au moins une caractéristique pertinente doit pourtant être déclarée (article 6). Et le <strong>système</strong> (1+, 1, 2+, 3 ou 4) dit qui a vérifié quoi : dans le système 4, le fabricant fait tout et aucun organisme notifié n'intervient (annexe V).</p>
+    <p>La déclaration est établie <strong>sous la seule responsabilité du fabricant</strong>. Une performance peut se déclarer par classe : pour la réaction au feu, la station <a href="../incendie-euroclasses/">Euroclasses</a> montre le cas.</p>
+    <figure>
+      <img src="svg/dop-qui-se-deplie.svg" alt="Une feuille intitulée déclaration des performances, avec ses rubriques numérotées : code du produit type, numéro de type ou de lot, usage prévu, fabricant, mandataire, système d'évaluation, organisme notifié, puis un tableau caractéristique, performance, spécification, dont une ligne porte NPD, et la mention de la responsabilité du fabricant. Trois remarques à droite : NPD veut dire performance non déterminée, un organisme notifié intervient ou non selon le système, et le fabricant seul répond.">
+      <figcaption>La feuille se déplie de haut en bas ; les trois encadrés à droite se lisent en dernier.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Voici une étiquette schématique. En haut, les lettres C E, suivies des deux derniers chiffres de l'année de première apposition. Dessous, les lignes qui les suivent, regroupées par les accolades de droite en quatre questions. Qui répond du produit : le fabricant et son adresse. Quel produit et quelle déclaration : le code du produit type et le numéro de la déclaration des performances. Pour quel usage et à quel niveau : c'est ce que vous comparez avec votre projet. Et, en orange, qui a contrôlé : un organisme notifié, quand il intervient. Le bandeau du bas dit où poser le marquage.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Lire le CE sur un produit</h2>
+    <p>Le règlement liste ce qui suit le CE : les <strong>deux derniers chiffres de l'année</strong> de première apposition, le <strong>nom et l'adresse</strong> du fabricant, le <strong>code unique du produit type</strong>, le <strong>numéro de la déclaration des performances</strong>, le <strong>niveau ou la classe</strong> déclarés, la <strong>norme harmonisée</strong> appliquée, le <strong>numéro de l'organisme notifié</strong> le cas échéant, et l'<strong>usage prévu</strong> (article 9).</p>
+    <p>Le marquage est visible, lisible et indélébile, sur le produit ou sur une étiquette attachée ; si la nature du produit ne le permet pas, sur l'emballage ou les documents d'accompagnement. Il est apposé <strong>avant la mise sur le marché</strong>.</p>
+    <p>Pour vous, le numéro de la déclaration est la clé : il sert à retrouver la DoP complète auprès du fabricant.</p>
+    <figure>
+      <img src="svg/etiquette-ce-lisible.svg" alt="Une étiquette schématique : les lettres CE et les deux derniers chiffres de l'année, puis le fabricant, le code du produit type, le numéro de la déclaration des performances, l'usage prévu, le niveau ou la classe, la norme harmonisée et le numéro d'organisme notifié. Des accolades les regroupent en quatre questions : qui répond, quel produit et quelle déclaration, pour quel usage et à quel niveau, qui a contrôlé. Une bande donne l'emplacement du marquage.">
+      <figcaption>Quatre questions pour lire une étiquette. L'ordre des lignes est schématique.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Au centre, un appareil de chauffage, de ventilation ou de climatisation, avec sa plaque C E. Autour, les textes européens qui peuvent le viser, et qui apparaissent un à un. À gauche, les produits de construction, les équipements sous pression, les machines. À droite, le matériel électrique et l'écoconception. La carte en tirets, en bas à droite, c'est l'étiquette énergie : elle informe l'acheteur, mais ce n'est pas un marquage C E. Le message du bandeau : un seul C E, mais plusieurs textes derrière. À vous de savoir lesquels visent l'appareil que vous étudiez.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Les autres produits CVC : un CE, plusieurs textes</h2>
+    <p>Un appareil relève rarement d'un seul texte. En apposant le CE, le fabricant engage sa responsabilité sur <strong>toutes les exigences applicables</strong> des textes d'harmonisation qui prévoient ce marquage. Pour un appareil CVC, il peut s'agir :</p>
+    <ul>
+      <li>des <strong>équipements sous pression</strong> (directive 2014/68/UE : déclaration UE de conformité, marquage CE) — voir la station <a href="../desp-marquage-papiers/">Marquage &amp; papiers</a> ;</li>
+      <li>des <strong>machines</strong> (directive 2006/42/CE, remplacée par le règlement (UE) 2023/1230 à partir du 14 janvier 2027), du <strong>matériel électrique</strong> (directive 2014/35/UE) et de la <strong>compatibilité électromagnétique</strong> (directive 2014/30/UE) ;</li>
+      <li>de l'<strong>écoconception</strong> : pour un produit couvert par une mesure d'exécution, un CE et une déclaration de conformité sont exigés (directive 2009/125/CE, article 5, remplacée par le règlement (UE) 2024/1781, dont les mesures existantes restent applicables).</li>
+    </ul>
+    <p>L'<strong>étiquette énergie</strong> (règlement (UE) 2017/1369) est autre chose : un cadre d'information qui aide le client à choisir un produit plus performant. Voir <a href="../impact-ecoconception/">Écoconception</a>.</p>
+    <figure>
+      <img src="svg/autres-textes-cvc.svg" alt="Au centre, un appareil CVC avec un ventilateur et une plaque CE. Autour, six cartes : produits de construction (règlement 305/2011), équipements sous pression (directive 2014/68/UE), machines (directive 2006/42/CE puis règlement 2023/1230), matériel électrique (directives 2014/35/UE et 2014/30/UE), écoconception (directive 2009/125/CE puis règlement 2024/1781), et en tirets l'étiquette énergie (règlement 2017/1369), qui informe l'acheteur sans être un CE. Un bandeau dit que le CE engage le fabricant sur toutes les exigences applicables.">
+      <figcaption>Les cartes apparaissent une à une ; le CE se pose en dernier.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Quatre cartes, quatre situations où le C E manque. En bleu, le produit n'est pas couvert par une norme harmonisée : ce n'est pas un défaut, aucune déclaration des performances n'est prévue. En rouge, le produit est couvert mais n'a ni C E ni déclaration : on ne le prescrit pas, on ne l'accepte pas. En orange, un C E est collé mais sans déclaration : le logo ne suffit pas, on le signale. En violet, le produit fabriqué sur mesure ou sur le chantier : une dérogation existe, sous conditions, et celui qui l'incorpore en répond.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Le produit sans marquage</h2>
+    <p>Un CE absent n'a pas toujours la même signification. <strong>Avant de conclure, vérifiez si le produit est couvert</strong> par une norme harmonisée :</p>
+    <ul>
+      <li><strong>non couvert</strong> : pas de déclaration prévue par ce règlement, donc pas de CE à ce titre ; ce n'est pas un défaut, mais la justification des performances est à demander au fabricant ;</li>
+      <li><strong>couvert, ni CE ni déclaration</strong> : le produit n'aurait pas dû être mis à disposition (l'importateur et le distributeur doivent s'en assurer, articles 13 et 14) ; on ne le prescrit pas, on ne l'accepte pas ;</li>
+      <li><strong>CE sans déclaration</strong> : le CE n'est apposé que si une déclaration des performances a été établie (article 8) ; sans elle, le marquage est douteux et se signale ;</li>
+      <li><strong>sur mesure ou sur le chantier</strong> : dérogation possible sous conditions (article 5) ; le fabricant est alors responsable de l'incorporation en sécurité du produit.</li>
+    </ul>
+    <p>Les États membres doivent assurer l'application correcte du régime du CE et prévoir des sanctions en cas d'usage non conforme (règlement (CE) n° 765/2008, article 30).</p>
+    <figure>
+      <img src="svg/produit-sans-marquage.svg" alt="Quatre cartes situation-réflexe. Produit non couvert par une norme harmonisée : ce n'est pas un défaut, les performances se justifient autrement, à demander au fabricant par écrit. Produit couvert sans CE ni déclaration, en rouge : on ne le prescrit pas, on ne l'accepte pas. CE collé sans déclaration, en orange : marquage douteux, on le signale. Produit sur mesure ou fait sur le chantier : dérogation possible sous conditions, celui qui l'incorpore en répond.">
+      <figcaption>Quatre situations, quatre réflexes : le rouge est le seul cas où l'on refuse tout de suite.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Voici la liste du technicien d'études, six cases à parcourir avant de prescrire. Chacune répond à une erreur réelle. On croit qu'un C E prouve que le produit convient : la première case rappelle qu'il dit seulement que le fabricant a déclaré. On oublie l'usage prévu : la deuxième le rappelle. On accepte un N P D sur une performance exigée : c'est la troisième. Les deux suivantes sécurisent les papiers, la dernière les autres textes. Et le bandeau violet résume tout : la déclaration des performances se lit en entier, pas seulement l'étiquette.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Le CE est la <strong>déclaration du fabricant</strong>, pas un label de qualité ni un certificat délivré.</li>
+      <li>Produit de construction couvert par une norme harmonisée : <strong>CE et DoP</strong> vont ensemble, et le fabricant garde ses papiers dix ans.</li>
+      <li>La DoP se lit : <strong>usage prévu</strong>, performances déclarées, <strong>NPD</strong>, système de vérification.</li>
+      <li>Un appareil CVC peut relever de <strong>plusieurs textes</strong> qui prévoient chacun le CE.</li>
+      <li>Sans marquage : d'abord <strong>savoir si le produit est couvert</strong>, puis agir.</li>
+    </ul>
+    <p class="formule">Le réflexe : lire la DoP en entier, pas seulement l'étiquette.</p>
+    <figure>
+      <img src="svg/bilan-avant-prescrire.svg" alt="Une liste de six cases cochées : produit couvert par une norme harmonisée, donc CE et déclaration attendus ; usage prévu conforme au sien ; chaque performance exigée déclarée et non NPD ; fabricant et produit type identifiables ; déclaration et notice fournies dans la langue requise ; autres textes applicables à l'appareil. Un bandeau violet donne le réflexe : lire la déclaration des performances, pas seulement l'étiquette.">
+      <figcaption>Six cases avant de prescrire ou d'accepter un produit.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un produit porte le marquage C E. Qui l'a apposé, et que dit-il ? Choisissez parmi les quatre propositions.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Le marquage CE est apposé par qui, et que dit-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/ce-declaration.svg" alt="Vignette de rappel : le fabricant, une flèche vers le produit qui porte le CE, et les cartes qui écartent le label de qualité et le certificat délivré.">
+      <figcaption>Rappel de l'écran 1 — le CE, c'est la parole du fabricant.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un laboratoire indépendant, qui certifie la qualité du produit</button>
+      <button type="button" data-answer="bonne">Le fabricant, qui déclare respecter les textes applicables</button>
+      <button type="button" data-answer="c">L'administration, après avoir contrôlé le produit</button>
+      <button type="button" data-answer="d">Le distributeur, qui garantit le produit à l'acheteur</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le CE est apposé par le fabricant ou son mandataire, qui assume ainsi la responsabilité de la conformité du produit avec les exigences applicables. Ce n'est ni un label de qualité ni un certificat délivré par un tiers."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un négociant reçoit un produit de construction couvert par une norme harmonisée, mais sans marquage C E ni déclaration des performances. Que doit-il faire ? Reprenez le chemin du produit de l'écran deux avant de répondre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un produit couvert arrive chez le négociant sans CE ni DoP. Que fait-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/chemin-du-produit.svg" alt="Vignette de rappel : les cinq étapes du chemin du produit, du fabricant au chantier, avec la vérification propre à chacune.">
+      <figcaption>Rappel de l'écran 2 — chaque maillon vérifie avant de passer le produit.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le revendre en prévenant l'acheteur que le CE manque</button>
+      <button type="button" data-answer="b">Apposer lui-même un CE, puisqu'il connaît bien le produit</button>
+      <button type="button" data-answer="c">Réclamer le CE au bureau d'études qui a prescrit le produit</button>
+      <button type="button" data-answer="bonne">Ne pas le livrer tant que la conformité n'est pas établie</button>
+    </div>
+    <p class="feedback" hidden data-explication="Avant de mettre un produit à disposition, le distributeur s'assure qu'il porte le CE et qu'il est accompagné des documents requis. Au moindre doute, il ne le livre pas tant que la conformité n'est pas établie. Seul le fabricant ou son mandataire peut apposer le CE."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Combien de temps le fabricant conserve-t-il la déclaration des performances et la documentation technique d'un produit de construction ? Regardez la feuille de l'écran quatre si besoin.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Le fabricant conserve la DoP et la documentation technique…</h2>
+    <figure class="vignette">
+      <img src="svg/dop-qui-se-deplie.svg" alt="Vignette de rappel : la feuille de la déclaration des performances, avec son tableau, sa ligne NPD et la responsabilité du fabricant.">
+      <figcaption>Rappel de l'écran 4 — la DoP, rubrique par rubrique.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Dix ans après la mise sur le marché du produit</button>
+      <button type="button" data-answer="b">Deux ans après la livraison du produit sur le chantier</button>
+      <button type="button" data-answer="c">Tant que le produit reste vendu au catalogue du fabricant</button>
+      <button type="button" data-answer="d">Vingt ans, par prudence à l'égard de l'ouvrage entier</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le règlement 305/2011 impose au fabricant de conserver la documentation technique et la déclaration des performances pendant dix ans après la mise sur le marché du produit (article 11)."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Le cahier des charges exige une performance donnée. La déclaration des performances du produit proposé porte N P D sur cette caractéristique. Que faites-vous ? Pensez à la liste de l'écran huit.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Le cahier des charges exige une performance ; la DoP porte NPD dessus. Que faire ?</h2>
+    <figure class="vignette">
+      <img src="svg/bilan-avant-prescrire.svg" alt="Vignette de rappel : la liste de six cases avant de prescrire, dont « chaque performance exigée est-elle déclarée, et non NPD ».">
+      <figcaption>Rappel de l'écran 8 — six cases avant de prescrire.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">L'accepter : le marquage CE prouve que le produit convient</button>
+      <button type="button" data-answer="b">Le déclarer conforme si le fabricant est réputé sérieux</button>
+      <button type="button" data-answer="bonne">Ne pas s'en contenter : cette performance n'est pas déclarée</button>
+      <button type="button" data-answer="d">Compléter la déclaration soi-même avec la valeur attendue</button>
+    </div>
+    <p class="feedback" hidden data-explication="NPD veut dire performance non déterminée : le fabricant ne s'engage pas sur cette caractéristique. Le CE ne comble pas ce vide. On demande la performance au fabricant, ou l'on choisit un autre produit ; on ne complète jamais une déclaration à sa place."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — il se lit dès l'accueil, hors du mode cours. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../certif-loi-norme-dtu/"><strong>Loi, norme ou DTU ?</strong></a> (même sous-ligne)
+      — le CE renvoie à des normes harmonisées : qui oblige quoi, et ce qu'une norme change.</li>
+    <li><a href="../desp-marquage-papiers/"><strong>Marquage &amp; papiers</strong></a> (autre sous-ligne : La DESP)
+      — le même CE et la même déclaration de conformité, vus pour un équipement sous pression.</li>
+    <li><a href="../impact-ecoconception/"><strong>Écoconception</strong></a> (autre sous-ligne : Impact environnemental)
+      — l'appareil marqué CE porte aussi une étiquette énergie, qui est autre chose.</li>
+    <li><a href="../incendie-euroclasses/"><strong>Euroclasses</strong></a> (autre sous-ligne : Incendie)
+      — une performance au feu se déclare par classe dans la DoP.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
+     écrans tout seul et s'arrête sur les questions.
+
+     Aucun audio fabriqué pour cette station : voix du navigateur en filet. Pour lui
+     donner la voix edge-tts : build/voix/collecter-narrations.mjs puis
+     generer-audios-edge-tts.py --confirmer.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

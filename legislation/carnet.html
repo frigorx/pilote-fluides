@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Mon carnet — inerWeb Législation</title>
+<meta name="description" content="Le carnet du chargé d'affaires du réseau Législation : vos tampons de mission, vos certificats de branche, votre progression sur l'année. Tout reste sur votre appareil.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/carnet.html">
+<!-- ===================================================================
+     MON CARNET — la face numérique du carnet du chargé d'affaires.
+     Même habillage que le plan (index.html). Chaque station est une mission
+     de Clim'Études Sud (entreprise fictive) ; ≥ 3 bonnes réponses sur 4 =
+     un tampon ; une sous-ligne complète = un certificat de branche ; les
+     onze certificats = le diplôme maison « Chargé d'affaires réglementaire ».
+
+     DONNÉES : moteur-legislation/carnet-data.json, généré par
+     outils/poser-les-missions.mjs (plan + progression + missions).
+     TAMPONS : localStorage « inerweb-legislation-tampons », posés par
+     moteur-legislation/missions.js. Rien ne quitte l'appareil.
+     =================================================================== -->
+<style>
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --ok:#1e7e54; --ok-bg:#e3f5ec;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .entete .reseau-nom { font-family:var(--titre); font-weight:bold; font-size:17px;
+                        color:var(--bleu); border-left:2px solid var(--ligne); padding-left:12px; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:15px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
+           border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+
+  .page { max-width:1080px; margin:0 auto; padding:0 20px 28px; }
+
+  .accroche { margin:26px 0 0; }
+  .pastille { display:inline-block; font-size:12px; font-weight:bold; color:#fff;
+              background:var(--orange); padding:3px 12px; border-radius:999px;
+              white-space:nowrap; letter-spacing:.4px; margin-bottom:12px; }
+  h1 { margin:0 0 10px; font-family:var(--titre); font-weight:bold; font-size:38px;
+       line-height:1.15; color:var(--bleu); text-wrap:pretty; }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0 0 20px; font-size:18px; color:var(--mut); max-width:38em; text-wrap:pretty; }
+  .chapo strong { color:var(--txt); }
+
+  .bloc { background:var(--carte); border:1px solid var(--ligne);
+          border-radius:var(--r); box-shadow:var(--ombre); }
+
+  /* ---- Le tableau de bord : compteurs et actions ---- */
+  .bord { margin-top:6px; padding:18px 22px; display:flex; gap:22px; flex-wrap:wrap; align-items:center; }
+  .compteur { display:flex; flex-direction:column; min-width:140px; }
+  .compteur b { font-family:var(--titre); font-size:34px; line-height:1; color:var(--bleu); }
+  .compteur span { font-size:14px; color:var(--mut); margin-top:4px; }
+  .barre { flex:1 1 220px; min-width:200px; }
+  .barre .rail { height:14px; border-radius:999px; background:var(--ligne); overflow:hidden; }
+  .barre .rail i { display:block; height:100%; width:0; background:var(--ok); border-radius:999px;
+                   transition:width .5s; }
+  .barre p { margin:6px 0 0; font-size:14px; color:var(--mut); }
+  .actions { display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { font:bold 15px var(--titre); color:#fff; background:var(--bleu); border:2px solid var(--bleu);
+         border-radius:999px; padding:10px 20px; cursor:pointer; text-decoration:none; display:inline-block; }
+  .btn:hover { background:var(--orange); border-color:var(--orange); color:#fff; }
+  .btn[hidden] { display:none; }
+  .btn--clair { background:var(--carte); color:var(--bleu); }
+  .btn--clair:hover { background:var(--carte); color:var(--orange); border-color:var(--orange); }
+
+  /* ---- Le diplôme maison ---- */
+  .diplome { margin-top:16px; padding:18px 22px; border:2px solid var(--ok); background:var(--ok-bg);
+             border-radius:var(--r); font-family:var(--titre); color:var(--ok); font-weight:bold; font-size:19px; }
+  .diplome[hidden] { display:none; }
+
+  /* ---- La frise P1 -> P5 ---- */
+  .titre-section { font-family:var(--titre); font-size:22px; color:var(--bleu); margin:32px 0 6px; }
+  .aide { margin:0 0 14px; color:var(--mut); font-size:15.5px; max-width:60ch; }
+  .frise { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5,1fr); gap:0; }
+  .frise li { position:relative; padding:34px 10px 0 0; }
+  .frise li::before { content:""; position:absolute; left:0; right:0; top:11px; height:6px; background:var(--ligne); }
+  .frise li:first-child::before { border-radius:999px 0 0 999px; }
+  .frise li:last-child::before { border-radius:0 999px 999px 0; }
+  .frise li::after { content:""; position:absolute; left:0; top:0; width:28px; height:28px; border-radius:50%;
+                     background:var(--carte); border:5px solid var(--bleu-clair); }
+  .frise li.fait::after { background:var(--ok); border-color:var(--ok); }
+  .frise li.fait::before { background:var(--ok); }
+  .frise .p-id { font-family:var(--titre); font-weight:bold; font-size:14px; color:var(--bleu-clair); letter-spacing:.5px; }
+  .frise .p-titre { display:block; font-family:var(--titre); font-weight:bold; font-size:16px; line-height:1.25; color:var(--txt); }
+  .frise .p-sem { display:block; font-size:13.5px; color:var(--mut); }
+  .frise .p-cpt { display:block; font-size:13.5px; font-weight:bold; color:var(--bleu); margin-top:2px; }
+  .frise a { text-decoration:none; color:inherit; display:block; }
+  .frise a:hover .p-titre { color:var(--orange); }
+  @media (max-width:760px) {
+    .frise { grid-template-columns:1fr; }
+    .frise li { padding:0 0 18px 42px; }
+    .frise li::before { left:11px; right:auto; top:0; bottom:0; width:6px; height:auto; border-radius:0 !important; }
+    .frise li::after { top:0; }
+  }
+
+  /* ---- Une période ---- */
+  .periode { margin-top:34px; }
+  .periode > h2 { font-family:var(--titre); font-size:24px; color:var(--bleu); margin:0; }
+  .periode > h2 span { font-size:15px; font-weight:normal; color:var(--mut); margin-left:10px; }
+  .periode > .pourquoi { margin:4px 0 14px; color:var(--mut); max-width:64ch; font-size:16px; }
+
+  /* ---- Une sous-ligne : ses stations en cases de tampons ---- */
+  .branche { --c:var(--bleu); margin-top:16px; padding:0 0 16px; border-left:8px solid var(--c); overflow:hidden; }
+  .branche header { display:flex; gap:14px; align-items:center; flex-wrap:wrap; padding:14px 22px 6px; }
+  .branche h3 { margin:0; font-family:var(--titre); font-size:20px; color:var(--c); }
+  .branche h3 small { font-size:14px; font-weight:normal; color:var(--mut); margin-left:8px; }
+  .certif { margin-left:auto; font-family:var(--titre); font-weight:bold; font-size:14px; padding:4px 14px;
+            border-radius:999px; border:2px dashed var(--c); color:var(--mut); background:var(--carte); }
+  .certif.obtenu { border-style:solid; border-color:var(--ok); color:var(--ok); background:var(--ok-bg); }
+  .cases { list-style:none; margin:8px 0 0; padding:0 22px; display:grid; gap:12px;
+           grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); }
+  .case { display:flex; gap:12px; align-items:center; padding:10px 12px; border:1.5px dashed var(--c);
+          border-radius:12px; background:var(--carte); text-decoration:none; color:var(--txt); min-height:88px; }
+  a.case:hover { border-color:var(--orange); color:var(--txt); }
+  .case .rond { flex:0 0 64px; width:64px; height:64px; }
+  .case .rond svg { width:100%; height:100%; display:block; }
+  .case .nom { display:block; font-family:var(--titre); font-weight:bold; font-size:15.5px; line-height:1.25; }
+  .case .badge { display:block; font-size:14px; color:var(--c); font-weight:bold; }
+  .case .etat { display:block; font-size:13.5px; color:var(--mut); }
+  .case--gagne { border-style:solid; background:#fff; }
+  .case--avenir { border-color:var(--ligne); background:transparent; color:var(--mut); }
+
+  .note-bas { margin-top:30px; font-size:14.5px; color:var(--mut); max-width:70ch; }
+
+  /* ---- Impression : le carnet numérique tient sur le papier ---- */
+  @media print {
+    @page { margin:14mm; }
+    body { background:#fff; font-size:13pt; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .entete, .actions, .evite, .note-bas .ne-pas-imprimer { display:none !important; }
+    .bloc { box-shadow:none; }
+    .branche, .periode > h2, .case { break-inside:avoid; }
+    .periode { break-before:auto; }
+    .cases { grid-template-columns:repeat(2,1fr); }
+    .barre .rail i { transition:none; }
+    .titre-section, .periode > h2 { break-after:avoid; }
+  }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="./" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="./">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+  <div class="accroche">
+    <div class="pastille">NIVEAU BTS · CARNET</div>
+    <h1>Mon <em>carnet</em> de chargé d'affaires.</h1>
+    <p class="chapo" id="fil-rouge">Vous êtes jeune technicien d'études chez Clim'Études Sud.</p>
+  </div>
+
+  <p class="chapo">Chaque station est une <strong>mission</strong> confiée par votre entreprise. Avec
+  <strong>3 bonnes réponses sur 4</strong> ou plus, vous gagnez le <strong>tampon</strong> de la mission ;
+  une sous-ligne complète donne un <strong>certificat de branche</strong>.</p>
+
+  <div class="bloc bord" id="bord" aria-live="polite">
+    <div class="compteur"><b id="n-tampons">0</b><span id="l-tampons">tampon</span></div>
+    <div class="compteur"><b id="n-certifs">0</b><span id="l-certifs">certificat de branche</span></div>
+    <div class="barre">
+      <div class="rail"><i id="rail"></i></div>
+      <p id="l-rail"></p>
+    </div>
+    <div class="actions">
+      <button class="btn" type="button" id="imprimer">Imprimer mon carnet</button>
+      <a class="btn btn--clair lien-pdf" id="lien-pdf" href="carnet/carnet-eleve.pdf" hidden>Le carnet papier complet (PDF)</a>
+      <a class="btn btn--clair lien-pdf" href="carnet/carnet-eleve-P1.pdf" hidden>Carnet P1 (PDF)</a>
+      <a class="btn btn--clair lien-pdf" href="carnet/carnet-eleve-P2.pdf" hidden>Carnet P2 (PDF)</a>
+      <a class="btn btn--clair lien-pdf" href="carnet/carnet-eleve-P3.pdf" hidden>Carnet P3 (PDF)</a>
+      <a class="btn btn--clair lien-pdf" href="carnet/carnet-eleve-P4.pdf" hidden>Carnet P4 (PDF)</a>
+      <a class="btn btn--clair lien-pdf" href="carnet/carnet-eleve-P5.pdf" hidden>Carnet P5 (PDF)</a>
+    </div>
+  </div>
+
+  <div class="diplome" id="diplome" hidden>🏅 Les onze certificats sont réunis : diplôme maison « Chargé d'affaires réglementaire ».</div>
+
+  <h2 class="titre-section">Mon année en cinq périodes</h2>
+  <p class="aide">Une période, un bloc de missions. La pastille devient verte quand toutes les missions de la période ont leur tampon.</p>
+  <ol class="frise" id="frise"></ol>
+
+  <div id="periodes"></div>
+
+  <p class="note-bas">Les tampons et les certificats restent <strong>sur cet appareil</strong> (dans ce navigateur) :
+  rien n'est envoyé, personne d'autre ne les voit. Le tampon numérique se confirme sur le <strong>carnet papier</strong> :
+  votre professeur le signe après la mission. Les cases en gris sont des missions qui ouvriront plus tard.</p>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var CLE = "inerweb-legislation-tampons";
+  var racine = document.getElementById("periodes");
+
+  function lire() {
+    try { return JSON.parse(window.localStorage.getItem(CLE) || "{}") || {}; } catch (e) { return {}; }
+  }
+  function el(nom, classe, texte) {
+    var n = document.createElement(nom);
+    if (classe) n.className = classe;
+    if (texte != null) n.textContent = texte;
+    return n;
+  }
+  function pluriel(n, mot) { return n + " " + mot + (n > 1 ? "s" : ""); }
+
+  /* Le rond d'une case : tampon plein (gagné) ou cercle vide numéroté. */
+  function rond(gagne, couleur, date, rang) {
+    var s = '<svg viewBox="0 0 64 64" aria-hidden="true">';
+    if (gagne) {
+      s += '<g transform="rotate(-8 32 32)" fill="none" stroke="' + couleur + '">' +
+           '<circle cx="32" cy="32" r="29" stroke-width="3.5"/><circle cx="32" cy="32" r="24" stroke-width="1.2"/></g>' +
+           '<path d="M19 33 l9 9 l18 -20" fill="none" stroke="' + couleur + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>';
+    } else {
+      s += '<circle cx="32" cy="32" r="28" fill="none" stroke="' + couleur + '" stroke-width="2.5" stroke-dasharray="5 5" opacity=".7"/>' +
+           '<text x="32" y="40" text-anchor="middle" font-family="Trebuchet MS, Calibri, Arial, sans-serif" font-size="22" font-weight="bold" fill="' + couleur + '" opacity=".7">' + rang + "</text>";
+    }
+    return s + "</svg>";
+  }
+
+  function dessiner(D) {
+    var tampons = lire();
+    var parId = {};
+    D.sous_lignes.forEach(function (sl) { parId[sl.id] = sl; });
+
+    var totalStations = 0, totalOuvertes = 0, gagnes = 0, certifs = 0, nbSL = 0;
+    racine.textContent = "";
+    var frise = document.getElementById("frise");
+    frise.textContent = "";
+
+    D.periodes.forEach(function (p) {
+      var pOuvertes = 0, pGagnes = 0, complete = true;
+      var sec = el("section", "periode");
+      sec.id = p.id;
+      var h2 = el("h2", null, p.id + " — " + p.titre);
+      h2.appendChild(el("span", null, "semaines " + p.semaines));
+      sec.appendChild(h2);
+      sec.appendChild(el("p", "pourquoi", p.pourquoi));
+
+      p.sous_lignes.forEach(function (id) {
+        var sl = parId[id];
+        if (!sl) return;
+        nbSL++;
+        var c = sl.couleur || "#1b3a63";
+        var bloc = el("section", "bloc branche");
+        bloc.style.setProperty("--c", c);
+        var nOuv = 0, nGag = 0;
+        var ul = el("ul", "cases");
+        sl.stations.forEach(function (st, i) {
+          totalStations++;
+          var ouverte = !!(st.slug && st.mission);
+          var t = st.slug ? tampons[st.slug] : null;
+          var gagne = ouverte && !!t;
+          if (ouverte) { totalOuvertes++; nOuv++; pOuvertes++; }
+          if (gagne) { gagnes++; nGag++; pGagnes++; }
+          var li = el("li");
+          var cas = ouverte ? el("a", "case" + (gagne ? " case--gagne" : "")) : el("div", "case case--avenir");
+          if (ouverte) cas.href = "stations/" + st.slug + "/";
+          var r = el("span", "rond"); r.innerHTML = rond(gagne, c, t && t.date, i + 1);
+          var tx = el("span");
+          tx.appendChild(el("span", "nom", st.nom));
+          if (ouverte) {
+            tx.appendChild(el("span", "badge", st.mission.badge || ""));
+            tx.appendChild(el("span", "etat", gagne
+              ? "Gagné" + (t.date ? " le " + t.date : "") + (t.score ? " · " + t.score + "/" + (t.sur || 4) : "")
+              : "À gagner" + (st.mission.duree_min ? " · " + st.mission.duree_min + " min" : "")));
+          } else {
+            tx.appendChild(el("span", "etat", "Mission à venir"));
+          }
+          cas.appendChild(r); cas.appendChild(tx); li.appendChild(cas); ul.appendChild(li);
+        });
+        var complet = sl.stations.length > 0 && nGag === sl.stations.length;
+        if (complet) certifs++; else complete = false;
+        var hd = el("header");
+        var h3 = el("h3", null, (sl.ico ? sl.ico + " " : "") + sl.nom);
+        h3.appendChild(el("small", null, sl.sous));
+        hd.appendChild(h3);
+        hd.appendChild(el("span", "certif" + (complet ? " obtenu" : ""),
+          complet ? "🏅 Certificat obtenu" : "Certificat : " + nGag + " / " + sl.stations.length));
+        bloc.appendChild(hd);
+        bloc.appendChild(ul);
+        sec.appendChild(bloc);
+      });
+      racine.appendChild(sec);
+
+      var li = el("li", (pOuvertes > 0 && pGagnes === pOuvertes && complete) ? "fait" : "");
+      var a = el("a"); a.href = "#" + p.id;
+      a.appendChild(el("span", "p-id", p.id));
+      a.appendChild(el("span", "p-titre", p.titre));
+      a.appendChild(el("span", "p-sem", "semaines " + p.semaines));
+      a.appendChild(el("span", "p-cpt", pGagnes + " / " + pOuvertes + " tampons"));
+      li.appendChild(a); frise.appendChild(li);
+    });
+
+    document.getElementById("n-tampons").textContent = gagnes;
+    document.getElementById("l-tampons").textContent = "tampon" + (gagnes > 1 ? "s" : "") + " sur " + totalOuvertes + " mission" + (totalOuvertes > 1 ? "s" : "") + " ouverte" + (totalOuvertes > 1 ? "s" : "");
+    document.getElementById("n-certifs").textContent = certifs;
+    document.getElementById("l-certifs").textContent = "certificat" + (certifs > 1 ? "s" : "") + " de branche sur " + nbSL;
+    document.getElementById("rail").style.width = (totalOuvertes ? Math.round(gagnes / totalOuvertes * 100) : 0) + "%";
+    document.getElementById("l-rail").textContent = totalOuvertes
+      ? gagnes + " sur " + totalOuvertes + " missions ouvertes · " + (totalStations - totalOuvertes) + " à venir"
+      : "Aucune mission ouverte pour l'instant.";
+    document.getElementById("diplome").hidden = !(nbSL && certifs === nbSL);
+    if (D.fil_rouge) {
+      document.getElementById("fil-rouge").textContent = D.fil_rouge;
+    }
+  }
+
+  /* Le lien vers le carnet papier n'apparaît que si le PDF existe. */
+  function testerPdf() {
+    var liens = document.querySelectorAll("a.lien-pdf");
+    if (!window.fetch) return;
+    Array.prototype.forEach.call(liens, function (a) {
+      fetch(a.getAttribute("href"), { method: "HEAD" })
+        .then(function (r) { if (r.ok) a.hidden = false; })
+        .catch(function () {});
+    });
+  }
+
+  document.getElementById("imprimer").addEventListener("click", function () { window.print(); });
+
+  fetch("moteur-legislation/carnet-data.json", { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error("données absentes"); return r.json(); })
+    .then(function (D) {
+      dessiner(D);
+      window.addEventListener("storage", function (e) { if (e.key === CLE) dessiner(D); });
+    })
+    .catch(function () {
+      racine.appendChild(el("p", "aide", "Le carnet ne peut pas se charger ici : ouvrez-le depuis le site (pas depuis un fichier)."));
+    });
+  testerPdf();
+})();
+</script>
+
+<script src="../moteur/lisibilite.js"></script>
+<script src="../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

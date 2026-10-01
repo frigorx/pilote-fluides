@@ -1,0 +1,36 @@
+{
+  "slug": "en-378",
+  "branche": "Fluidique & thermique",
+  "titre": "Mission : le fluide du hall d'accueil",
+  "client": "Un gestionnaire de bâtiment tertiaire qui remplace la climatisation d'un hall d'accueil ouvert aux visiteurs.",
+  "situation": "L'installateur pressenti propose un groupe au R290 « parce que c'est un fluide naturel, faiblement inflammable comme le R32 posé dans l'autre bâtiment du site ». Le seul emplacement prévu pour l'unité est un petit local technique attenant au hall, accessible au personnel comme aux visiteurs égarés. Le gestionnaire vous demande, à vous technicien d'études, si l'on peut suivre cette proposition. Vous devez qualifier le fluide, le local et l'emplacement avant de vous prononcer sur la charge.",
+  "piece_a_produire": "Une note d'une page au client : classe de sécurité du fluide proposé, catégorie d'accès du local, emplacement envisagé (système direct ou indirect), méthode pour vérifier la charge contre la limite de la norme en vigueur (sans inventer de valeur), et les leviers proposés si la charge dépasse la limite.",
+  "questions": [
+    { "q": "Que disent la lettre et le chiffre de la classe A3 ?", "ecran": 2,
+      "reponse": "La lettre A indique une faible toxicité, le chiffre 3 une très forte inflammabilité. La classe A3 est celle des hydrocarbures purs, comme le propane (R290)." },
+    { "q": "Le local technique est accessible au personnel et aux visiteurs : quelle catégorie d'accès retenez-vous, et que change-t-elle pour la limite de charge ?", "ecran": 4,
+      "reponse": "Un local où des personnes non averties peuvent entrer relève de l'accès général (catégorie a). Plus le public est large et non averti, plus la limite de charge est sévère : la même machine peut être admise dans un local en accès autorisé et refusée ici." },
+    { "q": "Pourquoi la même machine peut-elle être admise dans un grand local et refusée dans un petit ?", "ecran": 6,
+      "reponse": "Après une fuite totale, la concentration est la masse de fluide divisée par le volume du local. À masse égale, un petit local atteint plus vite la limite de concentration, donc la charge admise y est plus faible." },
+    { "q": "Le client propose de supprimer la ventilation du local technique parce qu'un détecteur de fuite sera posé. Que répondez-vous ?", "ecran": 7,
+      "reponse": "Refuser : la détection est un filet de sécurité, pas la première barrière. Les barrières de base restent limiter les points de fuite, ventiler en continu et choisir un matériel adapté au fluide." }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Ces quatre phrases figurent dans le brouillon de l'installateur. Deux sont fausses : lesquelles, et par quoi les remplacer ? (5 minutes, sur papier)",
+    "items": [
+      "A. Le R290 est un hydrocarbure pur : sa classe de sécurité est A3.",
+      "B. Le R290 est A2L comme le R32, donc les mêmes règles de charge s'appliquent.",
+      "C. La limite de charge dépend aussi de la catégorie d'accès du local.",
+      "D. Le détecteur de fuite permet de supprimer la ventilation du local technique."
+    ],
+    "corrige": "B et D sont fausses. B : le R290 est A3, pas A2L, donc la limite de charge, la zone autour de la machine et le matériel ne sont pas ceux d'un A2L. D : le détecteur est un filet de sécurité ; il ne remplace ni la limitation des fuites, ni la ventilation continue, ni le choix d'un matériel adapté."
+  },
+  "badge": "Tampon « Bonne classe »",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP9"],
+    "attestation_2025": ["1.07", "1.08", "11.03", "12.02", "12.03"],
+    "justification": "La CP9 (étude de climatisation) impose de choisir un fluide et un emplacement compatibles avec la charge admissible du local ; les codes 1.07, 1.08, 11.03, 12.02 et 12.03 de l'attestation d'aptitude 2025 portent sur les classes de fluides, les limites de charge, les normes de sécurité, la détection-ventilation et le calcul de charge."
+  }
+}

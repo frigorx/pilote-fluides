@@ -1,0 +1,50 @@
+{
+  "slug": "certif-loi-norme-dtu",
+  "branche": "Certifications & normes",
+  "titre": "Mission : Ce que dit le CCTP, et ce qui oblige vraiment",
+  "client": "Le responsable d'une entreprise de CVC qui vient de recevoir le CCTP d'un appel d'offres et demande : « Là-dedans, qu'est-ce qui est la loi, et qu'est-ce que je peux discuter ? »",
+  "situation": "Le CCTP d'un lot chauffage-climatisation cite, dans le même paragraphe, un règlement européen, une norme électrique, une norme de sécurité des systèmes frigorifiques, le DTU du lot et un procédé sous avis technique. Le responsable a tout lu comme « la réglementation » et craint de devoir tout appliquer à la lettre. Votre responsable d'études vous demande de trier ces références avant la remise de l'offre : ce qui oblige par un texte, ce qui oblige par le contrat, ce qui donne seulement une présomption, ce qui éclaire.",
+  "piece_a_produire": "Un tableau d'une page, une ligne par référence du CCTP : sa nature (texte, norme, DTU, avis technique), ce qui l'oblige (texte de la pyramide, arrêté qui la rend obligatoire, ou le contrat), et l'édition à vérifier dans le dossier. Sous le tableau, deux phrases pour le responsable : « Une norme ne nous oblige pas parce qu'elle existe » et « Ce que le marché cite, nous l'appliquons ».",
+  "questions": [
+    {
+      "q": "Quelle différence entre un règlement et une directive européens pour une entreprise française ?",
+      "ecran": 2,
+      "reponse": "Le règlement est obligatoire dans tous ses éléments et directement applicable : l'entreprise l'applique tel quel (exemple : F-Gaz 3, règlement (UE) 2024/573). La directive lie l'État quant au résultat : il la transpose par une loi, un décret ou un arrêté, et l'entreprise applique ce texte français."
+    },
+    {
+      "q": "Qu'est-ce qui peut rendre une norme d'application obligatoire, et à quelle condition ?",
+      "ecran": 4,
+      "reponse": "Un arrêté signé du ministre chargé de l'industrie et du ou des ministres intéressés (article 17 du décret n° 2009-697). La norme doit être consultable gratuitement : le Conseil d'État (28 juillet 2017, n° 402752) a annulé l'article d'un arrêté qui rendait obligatoires deux parties de la NF EN 378 sans garantir cet accès."
+    },
+    {
+      "q": "Que change la présomption de conformité pour une installation électrique de logement neuf conçue selon la NF C 15-100 ?",
+      "ecran": 5,
+      "reponse": "Depuis l'arrêté du 3 août 2016, l'installation qui suit la norme est présumée conforme aux objectifs de sécurité du texte : rien à prouver de plus. Une solution équivalente reste possible, mais c'est à celui qui la choisit de la démontrer."
+    },
+    {
+      "q": "Un CCTP renvoie au NF DTU du lot sans qu'aucun arrêté ne le rende obligatoire : s'impose-t-il ? Pourquoi ?",
+      "ecran": 7,
+      "reponse": "Oui, par le contrat : les contrats légalement formés tiennent lieu de loi à ceux qui les ont faits (Code civil, art. 1103), donc ce que le marché cite s'impose à l'entreprise. Ce n'est ni la loi ni un arrêté qui l'impose."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Classez chaque référence dans la bonne colonne : « oblige par un texte », « oblige par le contrat », « présomption de conformité », « éclaire seulement ». Justifiez en une phrase.",
+    "items": [
+      "Règlement (UE) 2024/573",
+      "Un arrêté qui rend une norme d'application obligatoire",
+      "NF C 15-100 pour un logement neuf",
+      "NF DTU cité par le marché",
+      "Avis technique du CSTB pour un procédé nouveau",
+      "Une norme citée nulle part dans le marché ni dans un texte"
+    ],
+    "corrige": "Règlement (UE) 2024/573 : oblige par un texte (règlement, directement applicable). Arrêté qui rend une norme obligatoire : oblige par un texte (la norme devient obligatoire, et doit être consultable gratuitement). NF C 15-100 pour un logement neuf : présomption de conformité (arrêté du 3 août 2016). NF DTU cité par le marché : oblige par le contrat. Avis technique : éclaire seulement. Norme citée nulle part : volontaire, elle n'oblige pas."
+  },
+  "badge": "Le bon étage",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": ["1.00", "11.03"],
+    "justification": "Hors REAC TECVC : culture professionnelle du technicien d'études et du chargé d'affaires (savoir ce qui oblige dans un dossier). Côté attestation 2025 : la législation de l'Union et nationale applicable (1.00) et les réglementations et normes de sécurité applicables aux réfrigérants (11.03)."
+  }
+}

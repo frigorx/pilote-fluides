@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" role="img"
+     aria-labelledby="t-chemin" aria-describedby="d-chemin" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-chemin">Le chemin d'un produit, du fabricant au chantier</title>
+  <desc id="d-chemin">Cinq étapes de haut en bas, reliées par une ligne verticale. Un colis orange, accompagné d'une
+    feuille, descend de l'une à l'autre. Un : le fabricant établit la documentation technique et la déclaration des
+    performances, appose le CE et les conserve dix ans. Deux, en tirets car elle n'existe que si le produit vient
+    de hors de l'Union : l'importateur vérifie que le fabricant a fait le nécessaire. Trois : le distributeur vérifie
+    le CE, les documents et la notice avant de livrer. Quatre : l'entreprise et le bureau d'études reçoivent la
+    déclaration et comparent les performances déclarées à ce qui est demandé. Cinq : le chantier, où le produit
+    entre dans l'ouvrage ; en cas de non-conformité, on remonte la chaîne. L'animation fait descendre le colis
+    étape par étape ; l'image fixe montre le colis arrivé au chantier.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .nm  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#1b3a63; }
+    .tx  { font-size:17px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .no  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+
+  <text class="ttl" x="450" y="32" text-anchor="middle">Le chemin du produit jusqu'au chantier</text>
+
+  <!-- rail des étapes -->
+  <path d="M 40 100 V 480" stroke="#c9d3df" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- piste du colis -->
+  <path d="M 96 100 V 480" stroke="#e8914a" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" fill="none"/>
+
+  <!-- Étape 1 : fabricant -->
+  <g>
+    <circle cx="40" cy="100" r="18" fill="#3730a3"/>
+    <text class="no" x="40" y="107" text-anchor="middle">1</text>
+    <text class="nm" x="140" y="92">Le fabricant</text>
+    <text class="tx" x="140" y="116">Établit la documentation technique et la déclaration des performances,</text>
+    <text class="tx" x="140" y="138">appose le CE, et conserve le tout pendant dix ans.</text>
+    <path d="M 140 152 H 880" stroke="#e3e8ee" stroke-width="2"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.02;0.07;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Étape 2 : importateur (tirets : conditionnel) -->
+  <g>
+    <circle cx="40" cy="195" r="18" fill="#fffdf8" stroke="#3730a3" stroke-width="3" stroke-dasharray="5 4"/>
+    <text class="nm" x="40" y="202" text-anchor="middle" style="fill:#3730a3">2</text>
+    <text class="nm" x="140" y="187">L'importateur <tspan class="sm" font-weight="normal" font-family="Calibri, 'Segoe UI', sans-serif">— seulement si le produit vient de hors de l'Union</tspan></text>
+    <text class="tx" x="140" y="211">Vérifie que le fabricant a fait le nécessaire : déclaration, CE, notice.</text>
+    <text class="tx" x="140" y="233">Sinon, il ne met pas le produit sur le marché.</text>
+    <path d="M 140 247 H 880" stroke="#e3e8ee" stroke-width="2"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.29;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Étape 3 : distributeur -->
+  <g>
+    <circle cx="40" cy="290" r="18" fill="#3730a3"/>
+    <text class="no" x="40" y="297" text-anchor="middle">3</text>
+    <text class="nm" x="140" y="282">Le distributeur</text>
+    <text class="tx" x="140" y="306">Vérifie le CE, les documents et la notice avant de mettre à disposition.</text>
+    <text class="tx" x="140" y="328">Un doute sur la conformité : il ne livre pas tant que ce n'est pas réglé.</text>
+    <path d="M 140 342 H 880" stroke="#e3e8ee" stroke-width="2"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.42;0.47;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Étape 4 : entreprise et bureau d'études -->
+  <g>
+    <circle cx="40" cy="385" r="18" fill="#3730a3"/>
+    <text class="no" x="40" y="392" text-anchor="middle">4</text>
+    <text class="nm" x="140" y="377">L'entreprise et le bureau d'études</text>
+    <text class="tx" x="140" y="401">Reçoivent la déclaration des performances, sur papier ou par voie électronique.</text>
+    <text class="tx" x="140" y="423">Comparent les performances déclarées à ce que le projet demande.</text>
+    <path d="M 140 437 H 880" stroke="#e3e8ee" stroke-width="2"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.60;0.65;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Étape 5 : chantier -->
+  <g>
+    <circle cx="40" cy="480" r="18" fill="#1e7e54"/>
+    <text class="no" x="40" y="487" text-anchor="middle">5</text>
+    <text class="nm" x="140" y="472">Le chantier</text>
+    <text class="tx" x="140" y="496">Le produit entre dans l'ouvrage. Une non-conformité se traite en remontant</text>
+    <text class="tx" x="140" y="518">la chaîne : distributeur, importateur, fabricant.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.78;0.83;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Le colis et sa feuille : position de repos = arrivé au chantier -->
+  <g transform="translate(0,380)">
+    <rect x="82" y="87" width="26" height="26" rx="4" fill="#e8914a" stroke="#10233c" stroke-width="2"/>
+    <path d="M 82 100 H 108 M 95 87 V 113" stroke="#10233c" stroke-width="1.5"/>
+    <rect x="112" y="89" width="16" height="22" rx="2" fill="#fffdf8" stroke="#3730a3" stroke-width="2"/>
+    <path d="M 116 96 H 124 M 116 101 H 124 M 116 106 H 121" stroke="#3730a3" stroke-width="1.5"/>
+    <animateTransform attributeName="transform" type="translate" additive="replace"
+      values="0 0; 0 0; 0 95; 0 95; 0 190; 0 190; 0 285; 0 285; 0 380; 0 380"
+      keyTimes="0;0.16;0.24;0.34;0.42;0.52;0.60;0.70;0.78;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+</svg>

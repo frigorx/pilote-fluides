@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-dd" aria-describedby="d-dd" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dd">Deux moyens à eau, deux logiques</title>
+  <desc id="d-dd">Deux cartes côte à côte. À gauche, le robinet d'incendie armé : un dévidoir avec son tuyau, moyen de première intervention qu'un occupant formé déroule pour viser le foyer. À droite, la tête de sprinkler fixée sous un tuyau au plafond : extinction automatique, la tête s'ouvre seule à la chaleur, sans personne sur place. Une bande en bas rappelle le point commun : de l'eau sous pression dans un réseau de tuyaux.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#b91c1c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <!-- Carte RIA -->
+  <rect x="20" y="20" width="415" height="230" rx="14" fill="#fffdf8" stroke="#b91c1c" stroke-width="3"/>
+  <text class="qui" x="40" y="54">Robinet d'incendie armé</text>
+  <!-- pictogramme : dévidoir + tuyau + lance -->
+  <circle cx="90" cy="150" r="46" fill="none" stroke="#1b3a63" stroke-width="5"/>
+  <circle cx="90" cy="150" r="16" fill="#b91c1c"/>
+  <path d="M136,150 C150,200 120,225 96,222" fill="none" stroke="#2f5689" stroke-width="7" stroke-linecap="round"/>
+  <path d="M96,222 L70,232" fill="none" stroke="#1b3a63" stroke-width="9" stroke-linecap="round"/>
+  <text class="lbl" x="185" y="112">Première intervention</text>
+  <text class="lbl" x="185" y="146">Un occupant formé</text>
+  <text class="lbl" x="185" y="170">déroule le tuyau</text>
+  <text class="lbl" x="185" y="194">et vise le foyer.</text>
+
+  <!-- Carte sprinkler -->
+  <rect x="465" y="20" width="415" height="230" rx="14" fill="#fffdf8" stroke="#b91c1c" stroke-width="3"/>
+  <text class="qui" x="485" y="54">Sprinkler</text>
+  <!-- pictogramme : tuyau, tête, ampoule, déflecteur -->
+  <rect x="490" y="82" width="130" height="14" rx="4" fill="#2f5689"/>
+  <rect x="558" y="96" width="14" height="28" fill="#5a6b7d"/>
+  <rect x="551" y="124" width="28" height="16" rx="3" fill="#5a6b7d"/>
+  <ellipse cx="565" cy="160" rx="9" ry="20" fill="#b91c1c"/>
+  <path d="M553,140 L540,196 M577,140 L590,196" fill="none" stroke="#5a6b7d" stroke-width="4"/>
+  <line x1="534" y1="196" x2="596" y2="196" stroke="#1b3a63" stroke-width="6" stroke-linecap="round"/>
+  <text class="lbl" x="650" y="112">Extinction automatique</text>
+  <text class="lbl" x="650" y="146">La tête s'ouvre seule,</text>
+  <text class="lbl" x="650" y="170">à la chaleur, sans</text>
+  <text class="lbl" x="650" y="194">personne sur place.</text>
+
+  <rect x="20" y="272" width="860" height="52" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="304" text-anchor="middle">Point commun : de l'eau sous pression dans un réseau de tuyaux</text>
+</svg>

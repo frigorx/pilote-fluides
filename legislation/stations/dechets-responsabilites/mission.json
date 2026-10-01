@@ -1,0 +1,49 @@
+{
+  "slug": "dechets-responsabilites",
+  "branche": "Déchets",
+  "titre": "Mission : « Ce n'est plus notre problème »",
+  "client": "Le chef d'équipe d'une entreprise partenaire qui dépose un groupe de condensation dans une supérette avec Clim'Études Sud.",
+  "situation": "Un ferrailleur de passage propose de reprendre sur place le groupe déposé, avec son huile et deux bouteilles de fluide, « sans papier, on va gagner du temps ». Le chef d'équipe hésite et lance : « une fois chargé, ce n'est plus notre problème ». Personne n'a vérifié que ce repreneur est autorisé à recevoir ces déchets. Votre responsable vous demande une réponse écrite avant que le camion ne parte.",
+  "piece_a_produire": "Une check-list « Avant de remettre un déchet » de quatre à cinq points, et deux phrases pour répondre au chef d'équipe.",
+  "questions": [
+    {
+      "q": "Quelle est la différence entre le producteur et le détenteur d'un déchet ?",
+      "ecran": 1,
+      "reponse": "Le producteur est celui dont l'activité fait naître le déchet ; le détenteur en a la garde à un instant donné. Deux maillons de la même chaîne de responsabilité."
+    },
+    {
+      "q": "Que doit faire celui qui remet un déchet avant de le confier à quelqu'un ?",
+      "ecran": 2,
+      "reponse": "S'assurer que le destinataire est autorisé à prendre ce déchet en charge. Sinon, il reste responsable si le déchet est mal géré."
+    },
+    {
+      "q": "Jusqu'où la responsabilité du producteur s'étend-elle ?",
+      "ecran": 3,
+      "reponse": "Jusqu'à l'élimination ou la valorisation finale du déchet, pas seulement jusqu'à la première remise."
+    },
+    {
+      "q": "Un fluide récupéré est-il toujours un déchet ? Distinguez les deux devenirs.",
+      "ecran": 5,
+      "reponse": "Non. Réemployé sur la même machine, il reste un fluide en service. S'il n'est pas réutilisable (contaminé, mélangé, non identifiable), il devient un déchet dangereux, dont le frigoriste producteur reste responsable."
+    }
+  ],
+  "defi": {
+    "type": "vrai-faux",
+    "consigne": "Vrai ou faux ? Justifiez chaque réponse en une phrase.",
+    "items": [
+      "Le déchet a quitté mon camion : je n'en suis plus responsable.",
+      "J'ai remis mes chutes de cuivre à un ferrailleur sans vérifier son autorisation : ma responsabilité reste engagée.",
+      "Sans registre, je peux prouver ma bonne gestion en cas de contrôle."
+    ],
+    "corrige": "Faux (la responsabilité suit le déchet jusqu'à sa filière finale) ; Vrai (il faut vérifier que le repreneur est autorisé) ; Faux (sans trace écrite, la bonne pratique ne se prouve pas)."
+  },
+  "badge": "Le maillon vérifié",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "5.08"
+    ],
+    "justification": "Hors REAC : culture professionnelle du technicien et du chargé d'affaires. La gestion et la remise des fluides et huiles fluorés, y compris contaminés, relèvent côté attestation 2025 du code 5.08."
+  }
+}

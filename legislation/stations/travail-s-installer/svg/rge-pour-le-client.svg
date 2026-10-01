@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-rge" aria-describedby="d-rge" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rge">La mention RGE : ce dont le client a besoin pour toucher son aide</title>
+  <desc id="d-rge">De gauche à droite : le client, pictogramme plein, qui attend une aide ; au centre une rosette
+    portant la mention RGE, reconnu garant de l'environnement, qui doit correspondre aux travaux ; à droite un
+    bloc, l'aide du client. Des flèches relient les trois éléments. En dessous, trois pastilles : la mention est
+    propre à un domaine de travaux, elle se vérifie sur l'annuaire officiel, et « en cours de qualification »
+    ne compte pas. Une bande rappelle que s'immatriculer ne donne pas la mention : elle se demande à un organisme.</desc>
+  <defs>
+    <marker id="pt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5a6b7d"/>
+    </marker>
+  </defs>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .rge { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:34px; fill:#fffdf8; }
+    .quic{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .clair{ font-size:17px; fill:#fffdf8; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Le client a l'aide si l'entreprise a la mention</text>
+
+  <!-- Client -->
+  <circle cx="110" cy="100" r="28" fill="#1b3a63"/>
+  <path d="M60 190 Q60 138 110 138 Q160 138 160 190 Z" fill="#1b3a63"/>
+  <text class="qui" x="110" y="220" text-anchor="middle">Le client</text>
+  <text class="lbl" x="110" y="244" text-anchor="middle">attend une aide</text>
+  <line x1="180" y1="150" x2="330" y2="150" stroke="#5a6b7d" stroke-width="3" marker-end="url(#pt)"/>
+
+  <!-- Rosette RGE -->
+  <circle cx="450" cy="150" r="76" fill="#9d174d" stroke="#10233c" stroke-width="3"/>
+  <text class="rge" x="450" y="162" text-anchor="middle">RGE</text>
+  <text class="qui" x="450" y="262" text-anchor="middle">La mention de l'entreprise</text>
+  <text class="lbl" x="450" y="286" text-anchor="middle">pour ces travaux précis</text>
+  <line x1="540" y1="150" x2="690" y2="150" stroke="#5a6b7d" stroke-width="3" marker-end="url(#pt)"/>
+
+  <!-- Aide -->
+  <rect x="700" y="96" width="170" height="108" rx="14" fill="#1e7e54" stroke="#10233c" stroke-width="3"/>
+  <text class="quic" x="785" y="142" text-anchor="middle">L'aide</text>
+  <text class="clair" x="785" y="170" text-anchor="middle">du client</text>
+
+  <rect x="20" y="312" width="270" height="52" rx="12" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <text class="lbl" x="155" y="344" text-anchor="middle">Propre à un domaine de travaux</text>
+  <rect x="315" y="312" width="270" height="52" rx="12" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <text class="lbl" x="450" y="344" text-anchor="middle">Vérifiable sur l'annuaire officiel</text>
+  <rect x="610" y="312" width="270" height="52" rx="12" fill="#fbe7e4" stroke="#c0392b" stroke-width="2"/>
+  <text class="lbl" x="745" y="344" text-anchor="middle">« En cours » ne compte pas</text>
+
+  <rect x="20" y="384" width="860" height="42" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="411" text-anchor="middle">S'immatriculer ne donne pas la mention : elle se demande à un organisme.</text>
+</svg>

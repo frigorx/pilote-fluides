@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-add" aria-describedby="d-add" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-add">30 dB plus 30 dB font 33 dB, pas 60</title>
+  <desc id="d-add">Trois barres. Une barre grise de 30 dB représente le bruit résiduel, la pompe à chaleur arrêtée. Une barre orange de 30 dB représente la pompe à chaleur seule. Entre elles, un signe plus. Après un signe égal, une troisième barre à 33 dB représente le bruit ambiant, pompe en marche : elle ne dépasse les deux autres que de 3 dB. À droite, un encadré donne l'émergence : 33 moins 30, soit 3 dB, et rappelle qu'un niveau bien plus faible que l'autre n'ajoute presque rien.</desc>
+  <style>
+    .ttl  { font-weight:bold; font-size:22px; fill:#10233c; }
+    .num  { font-weight:bold; font-size:26px; fill:#10233c; }
+    .op   { font-weight:bold; font-size:40px; fill:#5a6b7d; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .lblb { font-size:18px; font-weight:bold; fill:#1b3a63; }
+    .big  { font-weight:bold; font-size:28px; fill:#b45309; }
+  </style>
+
+  <text class="ttl" x="400" y="34" text-anchor="middle">Des décibels : 30 + 30 = 33, pas 60</text>
+
+  <line x1="50" y1="380" x2="500" y2="380" stroke="#5a6b7d" stroke-width="3"/>
+
+  <!-- barre 1 : bruit résiduel -->
+  <rect x="70" y="140" width="100" height="240" fill="#b9c2cd" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="num" x="120" y="124" text-anchor="middle">30</text>
+  <text class="lbl" x="120" y="406" text-anchor="middle">Bruit résiduel</text>
+  <text class="lbl" x="120" y="427" text-anchor="middle">PAC arrêtée</text>
+
+  <text class="op" x="205" y="270" text-anchor="middle">+</text>
+
+  <!-- barre 2 : PAC seule -->
+  <rect x="240" y="140" width="100" height="240" fill="#f2c08e" stroke="#b45309" stroke-width="3"/>
+  <text class="num" x="290" y="124" text-anchor="middle">30</text>
+  <text class="lbl" x="290" y="406" text-anchor="middle">Bruit de la</text>
+  <text class="lbl" x="290" y="427" text-anchor="middle">PAC seule</text>
+
+  <text class="op" x="375" y="270" text-anchor="middle">=</text>
+
+  <!-- barre 3 : ambiant -->
+  <rect x="410" y="116" width="100" height="264" fill="#b9c2cd" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="410" y="116" width="100" height="24" fill="#f2c08e" stroke="#b45309" stroke-width="3"/>
+  <text class="num" x="460" y="100" text-anchor="middle">33</text>
+  <text class="lbl" x="460" y="406" text-anchor="middle">Bruit ambiant</text>
+  <text class="lbl" x="460" y="427" text-anchor="middle">PAC en marche</text>
+
+  <!-- encadré émergence -->
+  <rect x="545" y="90" width="235" height="150" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lblb" x="662" y="122" text-anchor="middle">Émergence</text>
+  <text class="lbl" x="662" y="146" text-anchor="middle">ambiant − résiduel</text>
+  <text class="big" x="662" y="196" text-anchor="middle">33 − 30 = 3 dB</text>
+
+  <rect x="545" y="260" width="235" height="170" rx="14" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="lblb" x="662" y="290" text-anchor="middle">À retenir</text>
+  <text class="lbl" x="662" y="318" text-anchor="middle">Deux niveaux égaux :</text>
+  <text class="lbl" x="662" y="340" text-anchor="middle">+ 3 dB seulement.</text>
+  <text class="lbl" x="662" y="370" text-anchor="middle">Un niveau bien plus faible</text>
+  <text class="lbl" x="662" y="392" text-anchor="middle">que l'autre : presque rien.</text>
+</svg>

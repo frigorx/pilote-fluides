@@ -1,0 +1,47 @@
+{
+  "slug": "acoustique-les-seuils",
+  "branche": "Acoustique",
+  "titre": "Mission : Une machine sur le toit, un voisin qui ne dort plus",
+  "client": "Le gérant d'un petit commerce alimentaire qui a fait poser un groupe froid sur le toit de son local et reçoit la plainte écrite d'un voisin dont la chambre donne de ce côté.",
+  "situation": "Le groupe froid tourne toute la nuit. Le voisin se plaint d'un ronflement qui l'empêche de dormir et menace d'appeler la mairie. Le gérant répond que « la machine est neuve et respecte sa fiche technique ». Votre responsable vous demande de préparer, avant la visite, ce que la réglementation regarde vraiment : pas le niveau seul de la machine, mais son émergence par rapport au bruit habituel du lieu, de nuit, avec le terme correctif qui correspond à sa durée de fonctionnement.",
+  "piece_a_produire": "Une note d'une page au gérant : (1) la définition de l'émergence en une phrase, (2) la limite qui s'applique de nuit à une machine qui tourne plus de huit heures, terme correctif compris, (3) les deux mesures à faire relever — avec la machine en marche, puis à l'arrêt, dans la chambre du voisin — et la condition de seuil à vérifier avant tout calcul, (4) qui peut constater et ce que le gérant risque si la limite est dépassée.",
+  "questions": [
+    {
+      "q": "Comment définit-on l'émergence globale, et quelles sont les deux mesures qu'elle demande ?",
+      "ecran": 2,
+      "reponse": "C'est la différence entre le niveau de bruit ambiant, machine en marche, et le niveau de bruit résiduel, machine à l'arrêt (article R. 1336-7). Il faut donc mesurer les deux niveaux ; le niveau de la machine seul ne suffit pas."
+    },
+    {
+      "q": "Quelle est la valeur limite de l'émergence de nuit pour un bruit présent plus de huit heures, terme correctif compris ?",
+      "ecran": 4,
+      "reponse": "La base de nuit est de 3 dB(A) et le terme correctif est nul au-delà de huit heures : la limite est de 3 dB(A) (article R. 1336-7)."
+    },
+    {
+      "q": "À partir de quel niveau de bruit ambiant l'émergence est-elle recherchée, dans une pièce principale d'un logement et dans les autres cas ?",
+      "ecran": 5,
+      "reponse": "Elle n'est recherchée que si le niveau ambiant mesuré, bruit particulier compris, dépasse 25 dB(A) dans une pièce principale d'un logement (fenêtres ouvertes ou fermées), ou 30 dB(A) dans les autres cas (article R. 1336-6)."
+    },
+    {
+      "q": "Dans le Code du travail, quelles sont les trois valeurs d'exposition quotidienne au bruit en dB(A), et en quoi diffèrent-elles de l'émergence ?",
+      "ecran": 7,
+      "reponse": "80 dB(A) (valeur d'exposition inférieure), 85 dB(A) (valeur supérieure) et 87 dB(A) (valeur limite), article R. 4431-2. Ce sont des niveaux absolus rapportés à une journée de travail, alors que l'émergence est une différence entre deux niveaux."
+    }
+  ],
+  "defi": {
+    "type": "calcul",
+    "consigne": "Trois cas, en dB(A), dans une pièce principale de logement. Pour chacun, calculez l'émergence, la limite (base + terme correctif) et concluez : conforme ou non conforme ? Les niveaux sont des chiffres d'exercice.",
+    "items": [
+      "Cas 1 — jour, machine présente 3 heures cumulées : résiduel 40, ambiant 44.",
+      "Cas 2 — nuit, machine présente toute la nuit, plus de 8 heures : résiduel 32, ambiant 36.",
+      "Cas 3 — jour, bruit présent 1 minute ou moins : résiduel 45, ambiant 55."
+    ],
+    "corrige": "Cas 1 : émergence 44 − 40 = 4 ; limite 5 + 2 = 7 (durée de plus de 2 h à 4 h : terme 2) ; 4 ≤ 7, conforme. Cas 2 : émergence 36 − 32 = 4 ; limite 3 + 0 = 3 ; 4 > 3, non conforme. Cas 3 : émergence 55 − 45 = 10 ; limite 5 + 6 = 11 ; 10 ≤ 11, conforme. Dans les trois cas le niveau ambiant dépasse 25 dB(A) : l'émergence est bien recherchée."
+  },
+  "badge": "Oreille de voisin",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP9", "CP7"],
+    "attestation_2025": [],
+    "justification": "CP9 (climatisation) et CP7 (ventilation tertiaire) : le groupe froid, la pompe à chaleur ou le ventilateur prescrit est un équipement d'activité professionnelle dont le bruit est jugé par l'émergence ; la partie bruit au travail relève de la culture professionnelle du technicien et du chargé d'affaires, hors REAC."
+  }
+}

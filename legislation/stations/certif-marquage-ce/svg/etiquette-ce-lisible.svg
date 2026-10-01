@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img"
+     aria-labelledby="t-etiq" aria-describedby="d-etiq" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-etiq">Lire le marquage CE d'un produit de construction</title>
+  <desc id="d-etiq">À gauche, une étiquette schématique. En haut, les lettres CE suivies des deux derniers chiffres de
+    l'année de première apposition. En dessous, sept lignes : le fabricant, le code du produit type, le numéro de la
+    déclaration des performances, l'usage prévu, le niveau ou la classe déclarés, la norme harmonisée appliquée, le
+    numéro de l'organisme notifié s'il en existe un. À droite, des accolades regroupent ces lignes en quatre
+    questions : qui répond du produit, de quel produit et de quelle déclaration il s'agit, pour quel usage et à quel
+    niveau, et qui a contrôlé. Une bande rappelle que le marquage est apposé sur le produit, sinon sur l'emballage ou
+    les documents d'accompagnement, avant la mise sur le marché.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#10233c; }
+    .nm  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .tx  { font-size:18px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .ce  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:40px; fill:#3730a3; }
+    .fld { font-size:18px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="450" y="30" text-anchor="middle">Lire le CE sur un produit de construction</text>
+
+  <!-- L'étiquette -->
+  <rect x="30" y="50" width="400" height="378" rx="12" fill="#ffffff" stroke="#1b3a63" stroke-width="3"/>
+  <text class="ce" x="60" y="100">CE</text>
+  <text class="fld" x="140" y="98">AA</text>
+  <text class="sm" x="176" y="98">année de première apposition</text>
+  <path d="M 46 116 H 414" stroke="#c9d3df" stroke-width="2"/>
+
+  <text class="fld" x="60" y="150">Fabricant : nom, adresse</text>
+  <text class="fld" x="60" y="196">Code du produit type</text>
+  <text class="fld" x="60" y="242">N° de la déclaration des performances</text>
+  <text class="fld" x="60" y="288">Usage prévu</text>
+  <text class="fld" x="60" y="334">Niveau ou classe déclarés</text>
+  <text class="fld" x="60" y="380">Norme harmonisée appliquée</text>
+  <path d="M 46 394 H 414" stroke="#c9d3df" stroke-width="2" stroke-dasharray="6 5"/>
+  <text class="fld" x="60" y="414" fill="#5a6b7d" style="fill:#5a6b7d">N° d'organisme notifié, s'il existe</text>
+
+  <!-- Accolades et questions -->
+  <!-- Qui : ligne Fabricant (y ~150) -->
+  <path d="M 446 138 Q 456 138 456 148 V 152 Q 456 162 466 162" stroke="#3730a3" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text class="nm" x="482" y="150">Qui répond du produit ?</text>
+  <text class="sm" x="482" y="172">le fabricant, joignable à son adresse</text>
+
+  <!-- Quel produit : lignes 2 et 3 (y 196 à 242) -->
+  <path d="M 446 182 Q 456 182 456 192 V 208 Q 456 218 466 218 Q 456 218 456 228 V 244 Q 456 254 446 254" stroke="#3730a3" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text class="nm" x="482" y="212">Quel produit, quelle déclaration ?</text>
+  <text class="sm" x="482" y="234">de quoi retrouver la DoP du produit</text>
+
+  <!-- Pour quoi et à quel niveau : lignes 4, 5, 6 (y 288 à 380) -->
+  <path d="M 446 274 Q 456 274 456 284 V 316 Q 456 326 466 326 Q 456 326 456 336 V 368 Q 456 378 446 378" stroke="#3730a3" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text class="nm" x="482" y="316">Pour quel usage, à quel niveau ?</text>
+  <text class="sm" x="482" y="338">à comparer avec ce que le projet exige</text>
+
+  <!-- Contrôlé par qui : ligne 7 (y 412) -->
+  <path d="M 446 398 Q 456 398 456 408 V 412 Q 456 422 466 422" stroke="#e8914a" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 0"/>
+  <text class="nm" x="482" y="412" style="fill:#8a5a00">Qui a contrôlé ?</text>
+  <text class="sm" x="482" y="434">un tiers, selon le système d'évaluation</text>
+
+  <!-- Bande du bas -->
+  <rect x="30" y="448" width="840" height="60" rx="12" fill="#e7e4ee" stroke="#3730a3" stroke-width="2"/>
+  <text class="tx" x="450" y="474" text-anchor="middle">Sur le produit, sinon sur l'emballage ou les documents d'accompagnement,</text>
+  <text class="tx" x="450" y="497" text-anchor="middle">et toujours avant la mise sur le marché. L'ordre des lignes ici est schématique.</text>
+</svg>

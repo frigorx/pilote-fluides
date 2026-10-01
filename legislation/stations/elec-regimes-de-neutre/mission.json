@@ -1,0 +1,39 @@
+{
+  "slug": "elec-regimes-de-neutre",
+  "branche": "Électrique",
+  "titre": "Mission : quel régime de neutre derrière cette unité extérieure ?",
+  "client": "Le gestionnaire d'un petit immeuble de bureaux, qui fait ajouter une unité extérieure de climatisation et une centrale de traitement d'air.",
+  "situation": "Le plan électrique du bâtiment ne dit pas clairement quel régime de neutre alimente le futur local technique, et l'électricien du client parle de « différentiel » sans préciser où il se trouve. Vous préparez le lot CVC : vous devez dire au client quelle protection couvrira chaque machine, ce que le raccordement exige du côté du conducteur de protection, et quel point vérifier à la mise en service. Une unité extérieure sera posée à l'autre bout du bâtiment, loin du tableau : le câble sera long.",
+  "piece_a_produire": "Une note d'une page au client : le régime de neutre relevé (ou la question posée pour le connaître), le trajet du courant de défaut en une phrase, la protection attendue en tête du circuit de chaque machine, les deux points de vérification au raccordement, et une alerte sur la longueur du câble de l'unité extérieure.",
+  "questions": [
+    { "q": "Que décrivent la première et la deuxième lettre d'un régime de neutre ?",
+      "ecran": 1,
+      "reponse": "La première lettre décrit le neutre du transformateur (T : relié à la terre, I : isolé). La deuxième décrit les masses des appareils (T : reliées à la terre, N : reliées au neutre)." },
+    { "q": "En TT, par où boucle le courant de défaut, et pourquoi faut-il un dispositif différentiel ?",
+      "ecran": 3,
+      "reponse": "Il boucle par la terre, en traversant deux prises de terre dont la résistance limite le courant. Ce courant est trop faible pour qu'un disjoncteur réagisse vite alors que la carcasse est dangereuse : le dispositif différentiel coupe." },
+    { "q": "En TN, qu'est-ce qui coupe, et quelle condition faut-il vérifier sur une ligne longue ?",
+      "ecran": 4,
+      "reponse": "Le disjoncteur ou le fusible, car le défaut est un court-circuit phase-neutre par le conducteur de protection. Il faut vérifier que le courant de défaut reste assez fort au bout de la ligne pour faire réagir la protection dans le temps maximal fixé par les normes." },
+    { "q": "En IT, que se passe-t-il au premier défaut, puis au second, et que faites-vous si le contrôleur d'isolement signale une alarme ?",
+      "ecran": 6,
+      "reponse": "Premier défaut : courant très faible, pas de coupure, le contrôleur permanent d'isolement signale. Second défaut sur une autre phase avec masses reliées : court-circuit, les protections coupent. On prévient l'exploitant pour traiter le défaut dès l'alarme, sans neutraliser le contrôleur." }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Sur papier, en 5 minutes : reliez chaque régime (TT, TN, IT) à ce qui coupe au premier défaut, puis à votre premier geste au raccordement.",
+    "items": [
+      "TT · TN · IT",
+      "Le dispositif différentiel · Le disjoncteur ou le fusible · Personne : le contrôleur d'isolement signale",
+      "Contrôler le différentiel · Vérifier le déclenchement (impédance de boucle) · Signaler toute alarme à l'exploitant"
+    ],
+    "corrige": "TT : le dispositif différentiel coupe ; on contrôle le différentiel. TN : le disjoncteur ou le fusible coupe ; on vérifie le déclenchement, donc la boucle de défaut. IT : personne ne coupe au premier défaut, le contrôleur permanent d'isolement signale ; on signale toute alarme à l'exploitant. Dans les trois cas, la masse de la machine est d'abord reliée au conducteur de protection."
+  },
+  "badge": "Tampon « Boucle de défaut »",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP9", "CP10"],
+    "attestation_2025": [],
+    "justification": "Le régime de neutre décide de la protection et du raccordement électrique des unités de climatisation (CP9) et des centrales de traitement d'air (CP10) que le technicien d'études prescrit ; hors périmètre de l'attestation d'aptitude fluides 2025."
+  }
+}

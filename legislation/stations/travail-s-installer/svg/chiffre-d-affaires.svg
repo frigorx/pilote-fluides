@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img"
+     aria-labelledby="t-ca" aria-describedby="d-ca" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ca">Le chiffre d'affaires commande les cotisations et le régime</title>
+  <desc id="d-ca">En haut, une chaîne de trois blocs : le chiffre d'affaires, multiplié par le taux de l'activité,
+    égale les cotisations sociales. Une bande rappelle que la base est le chiffre d'affaires et que le matériel
+    acheté ne la réduit pas. Au milieu, une barre horizontale représente le chiffre d'affaires de l'année : elle
+    grandit et dépasse un repère rouge en pointillé, le plafond du régime. À droite, un encadré indique
+    que deux années de suite au-dessus du plafond conduisent au régime réel. Une bande en bas
+    dit qu'une société peut alors être envisagée. Dans l'animation, la chaîne se déroule, puis la barre grandit ;
+    l'image fixe montre tout.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#1b3a63; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .op  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:38px; fill:#5a6b7d; }
+    .res { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#fffdf8; }
+    .resl{ font-size:17px; fill:#fffdf8; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#10233c; }
+    .rouge{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+  </style>
+  <text class="ttl" x="450" y="32" text-anchor="middle">Tout part du chiffre d'affaires</text>
+
+  <g>
+    <rect x="20" y="52" width="250" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="145" y="98" text-anchor="middle">Chiffre d'affaires</text>
+    <text class="lbl" x="145" y="126" text-anchor="middle">ce que vous déclarez</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.10;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="op" x="300" y="115" text-anchor="middle">×</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.11;0.14;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="330" y="52" width="240" height="100" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <text class="qui" x="450" y="98" text-anchor="middle">Taux de l'activité</text>
+    <text class="lbl" x="450" y="126" text-anchor="middle">fixé par la catégorie</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.15;0.21;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="op" x="600" y="115" text-anchor="middle">=</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.25;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="630" y="52" width="250" height="100" rx="14" fill="#9d174d" stroke="#10233c" stroke-width="3"/>
+    <text class="res" x="755" y="98" text-anchor="middle">Cotisations</text>
+    <text class="resl" x="755" y="126" text-anchor="middle">sans chiffre : rien à payer</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.26;0.33;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="20" y="172" width="860" height="40" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <g>
+    <text class="band" x="450" y="198" text-anchor="middle">La base, c'est le chiffre d'affaires : le matériel acheté ne la réduit pas.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.34;0.40;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- La barre du chiffre d'affaires de l'année -->
+  <text class="lbl" x="40" y="262">Chiffre d'affaires de l'année</text>
+  <rect x="40" y="290" width="540" height="44" rx="6" fill="#e8914a">
+    <animate attributeName="width" values="0;0;540;540" keyTimes="0;0.45;0.68;1" dur="13s" repeatCount="indefinite"/>
+  </rect>
+  <line x1="40" y1="350" x2="590" y2="350" stroke="#5a6b7d" stroke-width="2"/>
+  <g>
+    <line x1="470" y1="272" x2="470" y2="356" stroke="#c0392b" stroke-width="4" stroke-dasharray="8 6"/>
+    <text class="rouge" x="470" y="380" text-anchor="middle">plafond du régime</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.50;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="620" y="270" width="260" height="84" rx="14" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+    <text class="band" x="750" y="304" text-anchor="middle">Deux années de suite</text>
+    <text class="band" x="750" y="332" text-anchor="middle">au-dessus : régime réel</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.68;0.76;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+
+  <rect x="20" y="410" width="860" height="56" rx="14" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <g>
+    <text class="band" x="450" y="445" text-anchor="middle">Quand l'activité grandit, on étudie la société : responsabilité limitée aux apports.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.78;0.86;1" dur="13s" repeatCount="indefinite"/>
+  </g>
+</svg>

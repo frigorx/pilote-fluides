@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-cs" aria-describedby="d-cs" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-cs">Qui constate, et ce qui peut suivre</title>
+  <desc id="d-cs">Une chaîne de quatre cartes reliées par des flèches : la plainte d'un voisin, la mesure par un
+    agent habilité, le procès-verbal, puis la suite. En dessous, deux encadrés. À gauche, ceux qui peuvent
+    constater : les officiers de police judiciaire, dont le maire, les inspecteurs de l'environnement, les
+    agents de santé, les agents communaux habilités. À droite, ce qui peut suivre : une amende de contravention
+    de cinquième classe, et des mesures administratives. L'animation déroule la chaîne carte après carte.</desc>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#10233c">De la plainte à la sanction</text>
+
+  <!-- carte 1 -->
+  <g>
+    <rect x="20" y="62" width="165" height="110" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text x="102" y="102" text-anchor="middle" font-size="21" font-weight="bold" fill="#1b3a63">La plainte</text>
+    <text x="102" y="132" text-anchor="middle" font-size="17" fill="#10233c">un voisin</text>
+    <text x="102" y="153" text-anchor="middle" font-size="17" fill="#10233c">signale le bruit</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.04;0.10;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="189" y1="117" x2="209" y2="117" stroke="#5a6b7d" stroke-width="3"/>
+    <polygon points="216,117 207,111 207,123" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.12;0.16;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- carte 2 -->
+  <g>
+    <rect x="218" y="62" width="165" height="110" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text x="300" y="102" text-anchor="middle" font-size="21" font-weight="bold" fill="#1b3a63">La mesure</text>
+    <text x="300" y="132" text-anchor="middle" font-size="17" fill="#10233c">ambiant et résiduel,</text>
+    <text x="300" y="153" text-anchor="middle" font-size="17" fill="#10233c">par un agent habilité</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.22;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="387" y1="117" x2="407" y2="117" stroke="#5a6b7d" stroke-width="3"/>
+    <polygon points="414,117 405,111 405,123" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.28;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- carte 3 -->
+  <g>
+    <rect x="416" y="62" width="165" height="110" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+    <text x="498" y="102" text-anchor="middle" font-size="20" font-weight="bold" fill="#1b3a63">Le procès-verbal</text>
+    <text x="498" y="132" text-anchor="middle" font-size="17" fill="#10233c">l'agent consigne</text>
+    <text x="498" y="153" text-anchor="middle" font-size="17" fill="#10233c">les mesures</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.28;0.34;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="585" y1="117" x2="605" y2="117" stroke="#5a6b7d" stroke-width="3"/>
+    <polygon points="612,117 603,111 603,123" fill="#5a6b7d"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.40;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <!-- carte 4 -->
+  <g>
+    <rect x="614" y="62" width="165" height="110" rx="12" fill="#ede3f4" stroke="#6d28d9" stroke-width="3"/>
+    <text x="696" y="102" text-anchor="middle" font-size="21" font-weight="bold" fill="#6d28d9">La suite</text>
+    <text x="696" y="132" text-anchor="middle" font-size="17" fill="#10233c">amende ou mesures</text>
+    <text x="696" y="153" text-anchor="middle" font-size="17" fill="#10233c">administratives</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.40;0.46;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- encadré : qui constate -->
+  <g>
+    <rect x="20" y="212" width="375" height="276" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+    <text x="40" y="248" font-size="21" font-weight="bold" fill="#1b3a63">Qui peut constater</text>
+    <g font-size="18" fill="#10233c">
+      <text x="40" y="284">• les officiers de police</text>
+      <text x="54" y="306">judiciaire, dont le maire</text>
+      <text x="40" y="338">• les inspecteurs de</text>
+      <text x="54" y="360">l'environnement</text>
+      <text x="40" y="392">• les agents de santé</text>
+      <text x="54" y="414">(agence régionale de santé)</text>
+      <text x="40" y="446">• les agents communaux</text>
+      <text x="54" y="468">habilités et assermentés</text>
+    </g>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.52;0.60;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- encadré : ce qui suit -->
+  <g>
+    <rect x="410" y="212" width="370" height="276" rx="14" fill="#fffdf8" stroke="#6d28d9" stroke-width="3"/>
+    <text x="430" y="248" font-size="21" font-weight="bold" fill="#6d28d9">Ce qui peut suivre</text>
+    <g font-size="18" fill="#10233c">
+      <text x="430" y="284">• une amende : contravention</text>
+      <text x="444" y="306">de cinquième classe</text>
+      <text x="444" y="328">(article R. 1337-6)</text>
+      <text x="430" y="366">• des mesures administratives</text>
+      <text x="444" y="388">prises par l'autorité</text>
+      <text x="444" y="410">compétente (article R. 1336-11)</text>
+    </g>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.70;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

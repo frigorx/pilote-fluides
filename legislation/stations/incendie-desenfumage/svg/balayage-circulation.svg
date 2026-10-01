@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-f4" aria-describedby="d-f4" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-f4">Le balayage d'une circulation désenfumée mécaniquement</title>
+  <desc id="d-f4">Coupe d'une circulation horizontale. À gauche, en bas, une bouche d'amenée d'air ; une
+    flèche bleue en tirets court le long du sol vers la droite. Sous le plafond, une couche de fumée
+    grise. À droite, au plafond, une bouche d'extraction raccordée par un conduit vertical à un
+    ventilateur d'extraction posé au-dessus. Un foyer brûle au milieu, près du sol. Sous le schéma, une
+    ligne de cote relie l'amenée d'air et l'extraction, avec la distance maximale à respecter.
+    L'animation montre des bouffées de fumée qui glissent sous le plafond vers la bouche puis montent dans
+    le conduit, pendant que l'air neuf balaie le sol ; l'image fixe montre le flux établi.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .bd  { font-weight:bold; font-size:17px; fill:#10233c; }
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ttl" x="400" y="38" text-anchor="middle">Amener l'air en bas, extraire les fumées en haut</text>
+
+  <!-- la circulation -->
+  <rect x="40" y="200" width="720" height="180" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <!-- couche de fumée sous le plafond -->
+  <rect x="43" y="203" width="714" height="56" fill="#5a6b7d" fill-opacity="0.6"/>
+
+  <!-- conduit et ventilateur d'extraction -->
+  <rect x="590" y="126" width="30" height="74" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="572" y="198" width="66" height="10" fill="#b91c1c"/>
+  <circle cx="605" cy="100" r="24" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <g>
+    <path d="M605,100 L605,80 M605,100 L622,110 M605,100 L588,110" stroke="#1b3a63" stroke-width="4" fill="none"/>
+    <animateTransform attributeName="transform" type="rotate" additive="replace" values="0 605 100;360 605 100" dur="1.4s" repeatCount="indefinite"/>
+  </g>
+  <text class="bd" x="566" y="106" text-anchor="end">Ventilateur d'extraction</text>
+  <text class="lbl" x="566" y="160" text-anchor="end">Bouche d'extraction,</text>
+  <text class="lbl" x="566" y="182" text-anchor="end">en partie haute</text>
+
+  <!-- bouche d'amenée d'air, en bas à gauche -->
+  <rect x="52" y="322" width="26" height="50" fill="#fffdf8" stroke="#2f5689" stroke-width="3"/>
+  <path d="M55,332 H75 M55,342 H75 M55,352 H75 M55,362 H75" stroke="#2f5689" stroke-width="2.5"/>
+
+  <!-- l'air neuf balaie le sol -->
+  <line x1="96" y1="348" x2="500" y2="348" stroke="#2f5689" stroke-width="4.5" stroke-dasharray="20 14">
+    <animate attributeName="stroke-dashoffset" values="0;-34" dur="1.4s" repeatCount="indefinite"/>
+  </line>
+  <polygon points="526,348 502,336 502,360" fill="#2f5689"/>
+
+  <!-- le foyer -->
+  <path d="M300,380 C280,364 290,346 298,332 C301,348 316,352 318,368 C319,376 313,380 300,380 Z" fill="#e8914a" stroke="#1b3a63" stroke-width="2.5"/>
+  <path d="M300,380 C292,373 295,365 300,357 C305,366 309,370 308,376 C307,379 304,380 300,380 Z" fill="#b91c1c"/>
+
+  <!-- bouffées de fumée vers la bouche puis dans le conduit (animées, invisibles à l'arrêt) -->
+  <circle cx="330" cy="232" r="9" fill="#5a6b7d" opacity="0">
+    <animate attributeName="cx" values="330;330;605;605;605" keyTimes="0;0.05;0.30;0.42;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="232;232;232;150;150" keyTimes="0;0.05;0.30;0.42;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.9;0.9;0;0" keyTimes="0;0.05;0.08;0.40;0.43;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="330" cy="240" r="8" fill="#5a6b7d" opacity="0">
+    <animate attributeName="cx" values="330;330;605;605;605" keyTimes="0;0.2;0.45;0.57;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="240;240;240;150;150" keyTimes="0;0.2;0.45;0.57;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.9;0.9;0;0" keyTimes="0;0.2;0.23;0.55;0.58;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="330" cy="226" r="10" fill="#5a6b7d" opacity="0">
+    <animate attributeName="cx" values="330;330;605;605;605" keyTimes="0;0.35;0.60;0.72;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="226;226;226;150;150" keyTimes="0;0.35;0.60;0.72;1" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.9;0.9;0;0" keyTimes="0;0.35;0.38;0.70;0.73;1" dur="13s" repeatCount="indefinite"/>
+  </circle>
+
+  <text class="lbl" x="44" y="188">Fumées sous le plafond</text>
+  <text class="bd" x="65" y="406" text-anchor="middle">Amenée</text>
+  <text class="bd" x="65" y="428" text-anchor="middle">d'air</text>
+  <text class="lbl" x="308" y="406" text-anchor="middle">Foyer</text>
+
+  <!-- ligne de cote -->
+  <line x1="100" y1="430" x2="605" y2="430" stroke="#1b3a63" stroke-width="2.5"/>
+  <line x1="100" y1="420" x2="100" y2="440" stroke="#1b3a63" stroke-width="2.5"/>
+  <line x1="605" y1="420" x2="605" y2="440" stroke="#1b3a63" stroke-width="2.5"/>
+  <text class="bd" x="400" y="468" text-anchor="middle">Entre amenée d'air et extraction : 15 m au plus en ligne droite, 10 m sinon.</text>
+</svg>

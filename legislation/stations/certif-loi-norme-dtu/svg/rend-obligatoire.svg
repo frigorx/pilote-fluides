@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="t-ro" aria-describedby="d-ro" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-ro">La flèche « rend obligatoire »</title>
+  <desc id="d-ro">Une flèche horizontale part d'une norme en trait tireté, à gauche, application volontaire, et arrive à une norme en trait plein, à droite, application obligatoire. Au-dessus de la flèche, un arrêté cosigné par le ministre chargé de l'industrie et par le ou les ministres intéressés est relié à la flèche : c'est lui qui la déclenche. Sous la flèche, la mention « rend obligatoire ». En dessous, un cadre pose la condition : la norme doit être consultable gratuitement. Enfin une bande rappelle la décision du Conseil d'État du 28 juillet 2017, numéro 402752 : l'article d'un arrêté qui rendait obligatoires deux parties de la NF EN 378 a été annulé, l'accès libre et gratuit n'étant pas garanti. À l'animation, l'arrêté apparaît, la flèche se trace et la norme de droite passe en trait plein ; l'image fixe est complète.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#10233c; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#3730a3; }
+    .hb   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+    .sm   { font-size:16px; fill:#5a6b7d; }
+    .band { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .wht  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#fffdf8; }
+  </style>
+  <g><rect x="20" y="150" width="240" height="96" rx="12" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3" stroke-dasharray="9 7"/><text class="h" x="140" y="190" text-anchor="middle">Une norme</text><text class="lbl" x="140" y="218" text-anchor="middle">application volontaire</text></g>
+  <g>
+    <rect x="640" y="150" width="240" height="96" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="5"/><text class="h" x="760" y="190" text-anchor="middle">La même norme</text><text class="lbl" x="760" y="218" text-anchor="middle">application obligatoire</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.30;0.38;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="200" y="30" width="500" height="76" rx="12" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text class="hb" x="450" y="62" text-anchor="middle">Un arrêté</text><text class="lbl" x="450" y="90" text-anchor="middle">cosigné : ministre de l'industrie + ministres intéressés</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.13;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="450" y1="108" x2="450" y2="196" stroke="#1b3a63" stroke-width="3"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.14;0.18;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="262" y1="198" x2="622" y2="198" stroke="#1b3a63" stroke-width="5" stroke-dasharray="360" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="360;360;0;0" keyTimes="0;0.18;0.30;1" dur="12s" repeatCount="indefinite"/>
+    </line>
+    <polygon points="638,198 612,185 612,211" fill="#1b3a63"/>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.29;0.33;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <text class="hb" x="450" y="230" text-anchor="middle">rend obligatoire</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.28;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="20" y="272" width="860" height="50" rx="12" fill="#e8e7f6" stroke="#3730a3" stroke-width="2"/><text class="band" x="450" y="305" text-anchor="middle">Condition : la norme doit être consultable gratuitement</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.48;0.56;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <rect x="20" y="342" width="860" height="72" rx="12" fill="#fffdf8" stroke="#e8914a" stroke-width="3"/><text class="band" x="450" y="372" text-anchor="middle">Conseil d'État, 28 juillet 2017, n° 402752 : article annulé</text><text class="lbl" x="450" y="398" text-anchor="middle">il rendait obligatoires deux parties de la NF EN 378 sans garantir l'accès gratuit</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.76;1" dur="12s" repeatCount="indefinite"/>
+  </g>
+</svg>

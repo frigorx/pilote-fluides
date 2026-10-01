@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img"
+     aria-labelledby="t-dc" aria-describedby="d-dc" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-dc">Le courant d'un moteur de compresseur au démarrage</title>
+  <desc id="d-dc">Un graphique du courant en fonction du temps. La courbe ocre part de zéro, monte très haut au démarrage,
+    c'est la pointe de démarrage, puis redescend et se stabilise sur le courant nominal, indiqué par un trait tireté gris.
+    Un trait tireté rouge, plus haut que la pointe, marque le réglage magnétique du disjoncteur moteur : il doit être
+    au-dessus de la pointe pour ne pas déclencher au démarrage. À droite, deux repères : le réglage magnétique au-dessus
+    de la pointe, et le courant de la plaque signalétique qui sert de réglage au thermique. Une bande résume : le démarrage
+    ne doit pas déclencher, une surcharge prolongée si. L'animation trace la courbe de gauche à droite ; l'image fixe
+    montre la courbe complète.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .ko  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#c0392b; }
+    .ocre{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#a16207; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+
+  <text class="mut" x="90" y="36">courant</text>
+  <g stroke="#5a6b7d" stroke-width="2" fill="none">
+    <path d="M90,46 V320 H620"/>
+    <path d="M90,220 H620" stroke-dasharray="7 6"/>
+  </g>
+  <path d="M90,60 H620" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="7 6"/>
+  <text class="mut" x="620" y="346" text-anchor="end">temps</text>
+
+  <!-- Courbe de démarrage : pointe puis retour au nominal -->
+  <path d="M92,320 C102,320 112,140 128,132 C150,124 170,190 230,214 C270,224 330,220 620,220"
+        fill="none" stroke="#a16207" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+        pathLength="1000" stroke-dasharray="1000" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" values="1000;1000;0;0" keyTimes="0;0.08;0.40;1" dur="12s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Repères à droite -->
+  <text class="ko" x="640" y="58">réglage magnétique :</text>
+  <text class="lbl" x="640" y="80">au-dessus de la pointe</text>
+  <text class="ocre" x="175" y="100">pointe de démarrage</text>
+  <text class="lbl" x="175" y="122">plusieurs fois le nominal</text>
+  <text class="ttl" x="640" y="218">courant de la plaque :</text>
+  <text class="lbl" x="640" y="240">réglage du thermique</text>
+
+  <rect x="20" y="356" width="860" height="36" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="band" x="450" y="380" text-anchor="middle">Le démarrage ne doit pas déclencher ; une surcharge prolongée, si.</text>
+</svg>

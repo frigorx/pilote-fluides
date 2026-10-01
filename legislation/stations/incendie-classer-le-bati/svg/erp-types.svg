@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 510" role="img"
+     aria-labelledby="t-typ" aria-describedby="d-typ" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-typ">Le type d'un ERP : une lettre par activité</title>
+  <desc id="d-typ">Quatorze tuiles rangées en cinq lignes, une par type d'établissement recevant du public installé dans un bâtiment,
+    chacune portant sa lettre et son activité : J accueil de personnes âgées ou handicapées, L réunions, conférences et spectacles,
+    M magasins de vente et centres commerciaux, N restaurants et débits de boissons, O hôtels et pensions de famille,
+    P salles de danse et de jeux, R enseignement et colonies de vacances, S bibliothèques et centres de documentation,
+    T salles d'exposition, U établissements sanitaires, V culte, W administrations, banques et bureaux, encadrée en rouge,
+    X établissements sportifs couverts, Y musées. En bas, une bande liste les établissements spéciaux : plein air, chapiteaux,
+    structures gonflables, parcs de stationnement couverts, hôtels-restaurants d'altitude, gares, établissements flottants,
+    refuges de montagne.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .let { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:32px; fill:#1b3a63; }
+    .let-w { fill:#b91c1c; }
+    .nom { font-size:16px; fill:#10233c; }
+    .not { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#5a6b7d; }
+    .sp  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+  </style>
+  <text class="ttl" x="400" y="32" text-anchor="middle">Le type : une lettre par activité</text>
+  <g>
+    <rect x="20" y="52" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="34" y="93">J</text>
+    <text class="nom" x="76" y="80">Accueil de personnes âgées</text>
+    <text class="nom" x="76" y="102">ou handicapées</text>
+  </g>
+  <g>
+    <rect x="280" y="52" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="294" y="93">L</text>
+    <text class="nom" x="336" y="80">Réunions, conférences,</text>
+    <text class="nom" x="336" y="102">spectacles, usage multiple</text>
+  </g>
+  <g>
+    <rect x="540" y="52" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="554" y="93">M</text>
+    <text class="nom" x="596" y="80">Magasins de vente,</text>
+    <text class="nom" x="596" y="102">centres commerciaux</text>
+  </g>
+  <g>
+    <rect x="20" y="122" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="34" y="163">N</text>
+    <text class="nom" x="76" y="150">Restaurants,</text>
+    <text class="nom" x="76" y="172">débits de boissons</text>
+  </g>
+  <g>
+    <rect x="280" y="122" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="294" y="163">O</text>
+    <text class="nom" x="336" y="150">Hôtels,</text>
+    <text class="nom" x="336" y="172">pensions de famille</text>
+  </g>
+  <g>
+    <rect x="540" y="122" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="554" y="163">P</text>
+    <text class="nom" x="596" y="150">Salles de danse,</text>
+    <text class="nom" x="596" y="172">salles de jeux</text>
+  </g>
+  <g>
+    <rect x="20" y="192" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="34" y="233">R</text>
+    <text class="nom" x="76" y="220">Enseignement,</text>
+    <text class="nom" x="76" y="242">colonies de vacances</text>
+  </g>
+  <g>
+    <rect x="280" y="192" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="294" y="233">S</text>
+    <text class="nom" x="336" y="220">Bibliothèques,</text>
+    <text class="nom" x="336" y="242">centres de documentation</text>
+  </g>
+  <g>
+    <rect x="540" y="192" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="554" y="233">T</text>
+    <text class="nom" x="596" y="229">Salles d’exposition</text>
+  </g>
+  <g>
+    <rect x="20" y="262" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="34" y="303">U</text>
+    <text class="nom" x="76" y="299">Établissements sanitaires</text>
+  </g>
+  <g>
+    <rect x="280" y="262" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="294" y="303">V</text>
+    <text class="nom" x="336" y="299">Établissements de culte</text>
+  </g>
+  <g>
+    <rect x="540" y="262" width="245" height="62" rx="10" fill="#fbeaea" stroke="#b91c1c" stroke-width="4"/>
+    <text class="let let-w" x="554" y="303">W</text>
+    <text class="nom" x="596" y="290">Administrations, banques,</text>
+    <text class="nom" x="596" y="312">bureaux</text>
+  </g>
+  <g>
+    <rect x="20" y="332" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="34" y="373">X</text>
+    <text class="nom" x="76" y="360">Établissements sportifs</text>
+    <text class="nom" x="76" y="382">couverts</text>
+  </g>
+  <g>
+    <rect x="280" y="332" width="245" height="62" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+    <text class="let" x="294" y="373">Y</text>
+    <text class="nom" x="336" y="369">Musées</text>
+  </g>
+  <g>
+    <text class="not" x="662" y="374" text-anchor="middle">La lettre vient de l'activité,</text>
+    <text class="not" x="662" y="396" text-anchor="middle">pas de la taille</text>
+  </g>
+  <rect x="20" y="410" width="760" height="92" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="sp" x="400" y="434" text-anchor="middle">Établissements spéciaux</text>
+  <text class="nom" x="400" y="460" text-anchor="middle">PA plein air · CTS chapiteaux, tentes · SG structures gonflables · PS parcs de stationnement</text>
+  <text class="nom" x="400" y="484" text-anchor="middle">OA hôtels-restaurants d'altitude · GA gares · EF établissements flottants · REF refuges</text>
+</svg>

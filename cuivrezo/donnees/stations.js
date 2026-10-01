@@ -1,7 +1,7 @@
 /* FICHIER FABRIQUÉ par outils/construire.mjs — ne pas éditer : corriger donnees/commun.js ou donnees/stations/*.js */
 /* CuivRézo — le commun des stations : lignes, référentiel. SOURCE UNIQUE avec donnees/stations/*.js.
    node outils/construire.mjs assemble le tout dans donnees/stations.js (fichier fabriqué : ne pas l'éditer).
-   Chaque station suit le contrat des six temps (moteur/station.js). Chaque texte affiché a sa
+   Chaque station suit le contrat des six temps écrits (moteur/station.js ; le défi, septième temps, se tire de ces données). Chaque texte affiché a sa
    `narration` à part, écrite pour l'oreille (charte VOIX-ET-NARRATION). Vouvoiement.
    `aValider` : ce qui n'est pas dans les fiches de F. Henninot et attend sa validation (visible avec ?revue).
    Codes du référentiel : sources-metier/referentiel-cap-ifca.md (arrêté du 2 juin 2015, CAP IFCA). */
@@ -40,7 +40,8 @@ CUIVREZO.echelle = [
 ];
 
 /* Station 1-0 — Mon poste de travail. Source : sources-metier/1-0-poste-de-travail.md
-   L'étau est presque absent des fiches : ce qui le concerne est marqué aValider. */
+   L'étau est presque absent des fiches : mordaches, posture et hauteur TRANCHÉES le 30/09/2026 (DECISIONS-2026-09-30.md),
+   de même que les lunettes (pendant tout le façonnage). */
 CUIVREZO.stations.push({
   id: '1-0', ligne: 1, titre: 'Mon poste de travail', duree: '10 min',
   sources: ['sources-metier/1-0-poste-de-travail.md'],
@@ -58,7 +59,7 @@ CUIVREZO.stations.push({
     items: [
       { nom: 'Le bleu de travail', detail: 'ou une combinaison en coton, ni trop large, ni trop juste' },
       { nom: 'Les chaussures de sécurité', detail: 'aux pieds dès l’entrée dans l’atelier' },
-      { nom: 'Les lunettes de protection', detail: 'pour couper et ébavurer' },
+      { nom: 'Les lunettes de protection', detail: 'sur les yeux pendant tout le façonnage' },
       { nom: 'Les gants de travail anti-coupure', detail: 'pour manipuler un tube coupé' },
       { nom: 'La fiche de sécurité à cocher', detail: 'celle de la séance du jour' },
       { nom: 'Le bac de récupération des chutes', detail: 'à portée de main, près de l’établi' }
@@ -91,18 +92,16 @@ CUIVREZO.stations.push({
       pourquoi: 'La fiche vous fait penser aux risques avant de les rencontrer. Le visa du professeur vous autorise à commencer.',
       figure: { img: 'images/reprises/fiche-securite.webp', alt: 'La fiche de sécurité à cocher', legende: 'La fiche de sécurité de l’atelier.' }, clip: 'clips/1-0/05-fiche.mp4',
       narration: 'La fiche de sécurité se remplit avant de commencer, pas après. On coche la tâche du jour, ici le façonnage. On coche les risques qu’elle apporte : les coupures, les projections, l’écrasement. Puis les protections qui y répondent. La fiche ne sert pas à faire plaisir au professeur : elle vous oblige à penser au danger avant de le rencontrer. Quand elle est visée, vous pouvez commencer.' },
-    { titre: 'Lunettes et gants, au bon moment', texte: 'Lunettes sur les yeux avant toute coupe et tout ébavurage. Gants pour toucher un tube coupé.',
+    { titre: 'Lunettes et gants, au bon moment', texte: 'Lunettes sur les yeux pendant tout le façonnage : couper, ébavurer, cintrer, évaser. Gants pour toucher un tube coupé.',
       pointCle: 'Jamais de gants près d’un outil qui tourne tout seul, comme une perceuse à colonne.',
       pourquoi: 'La limaille vole vers les yeux, le bord coupé tranche les doigts. Mais un gant happé par une machine entraîne la main.',
-      aValider: 'Les fiches se contredisent sur les lunettes : « dès qu’on coupe » ou « pendant tout le façonnage »',
       figure: { img: 'images/reprises/epi-porter-correctement.svg', alt: 'Lunettes portées sur les yeux, pas sur le front' }, clip: 'clips/1-0/06-epi.mp4',
-      narration: 'Les lunettes se portent sur les yeux, pas sur le front, dès que vous coupez ou ébavurez : la limaille de cuivre vole. Les gants protègent vos doigts du bord tranchant d’un tube coupé. Une seule exception, et elle est importante : près d’une machine qui tourne toute seule, comme une perceuse à colonne, on ne porte pas de gants, parce qu’un gant happé entraîne la main avec lui.' },
-    { titre: 'Je serre l’étau sans me pincer', texte: 'Serrez progressivement, les doigts hors de l’axe de serrage. Pour un tube, des mordaches.',
+      narration: 'Les lunettes se portent sur les yeux, pas sur le front, pendant tout le façonnage, pas seulement au moment de couper : la limaille vole aussi quand on ébavure, quand on cintre, quand on évase. Les gants protègent vos doigts du bord tranchant d’un tube coupé. Une seule exception, et elle est importante : près d’une machine qui tourne toute seule, comme une perceuse à colonne, on ne porte pas de gants, parce qu’un gant happé entraîne la main avec lui.' },
+    { titre: 'Je serre l’étau sans me pincer', texte: 'Serrez progressivement, les doigts hors de l’axe de serrage. Pour un tube, des mordaches. Pieds stables, face à l’étau, mors à hauteur du coude.',
       pointCle: 'Juste de quoi tenir : un tube en cuivre s’écrase vite.',
       pourquoi: 'Entre les mors, c’est la zone de pincement. Et des mors striés marquent ou écrasent un tube mince.',
-      aValider: 'Mordaches, hauteur de l’étau et posture : absents des fiches, pris du savoir général',
       figure: { img: 'images/1-0-etau.webp', alt: 'Serrer un tube dans un étau à mordaches' }, clip: 'clips/1-0/07-etau.mp4',
-      narration: 'L’étau tient la pièce pour vous, mais il ne fait pas la différence entre un tube et un doigt. On serre progressivement, et les doigts restent hors de l’axe, jamais entre les mors. Pour un tube de cuivre, on pose des mordaches, des mors doux, parce que les mors striés marquent le cuivre, et qu’un serrage trop fort l’écrase. Juste de quoi tenir, pas plus.' },
+      narration: 'L’étau tient la pièce pour vous, mais il ne fait pas la différence entre un tube et un doigt. On serre progressivement, et les doigts restent hors de l’axe, jamais entre les mors. Pour un tube de cuivre, on pose des mordaches, des mors doux, parce que les mors striés marquent le cuivre, et qu’un serrage trop fort l’écrase. Juste de quoi tenir, pas plus. Et l’étau est à la bonne hauteur quand les mors sont au niveau de votre coude : ni penché, ni les bras en l’air.' },
     { titre: 'Je range au fil de l’eau', texte: 'Chaque outil tranchant revient à sa place. Chaque chute va au bac, debout, tout de suite.',
       pointCle: 'Jamais d’outil chez le voisin, jamais de chute sur l’établi.',
       pourquoi: 'Les chutes coupent, et un outil qui traîne tombe ou se perd.',
@@ -202,12 +201,11 @@ CUIVREZO.stations.push({
       pourquoi: 'Si le zéro est décalé, toutes les mesures le seront aussi.',
       figure: { svg: 'vernier', etat: 'zero' }, clip: 'clips/1-1/03-zero.mp4',
       narration: 'Avant toute mesure, on ferme les becs du pied à coulisse et on regarde les deux zéros : celui de la règle et celui du vernier, la petite échelle qui coulisse. Ils doivent être alignés. Un peu de saleté entre les becs, et le zéro se décale : toutes vos mesures seraient fausses, sans que vous le sachiez.' },
-    { titre: 'Poser les becs sur l’extérieur du tube', texte: 'Ouvrez, posez le tube entre les grands becs, refermez jusqu’au contact, sans serrer.',
+    { titre: 'Poser les becs sur l’extérieur du tube', texte: 'Ouvrez, posez le tube entre les grands becs, bien en travers de son axe, refermez jusqu’au contact, sans serrer. Refaites la mesure après un quart de tour du tube.',
       pointCle: 'C’est le diamètre EXTÉRIEUR qui nomme le tube.',
       pourquoi: 'Le raccord et l’écrou se montent sur l’extérieur du tube : c’est donc lui qui compte, et c’est lui que porte le nom.',
-      aValider: 'Position exacte des becs (perpendiculaires, deux mesures à 90°) : non décrite dans les fiches',
       figure: { img: 'images/1-1-pied.webp', alt: 'Les becs du pied à coulisse sur l’extérieur du tube' }, clip: 'clips/1-1/04-becs.mp4',
-      narration: 'On ouvre le pied à coulisse et on place le tube entre les grands becs, bien en travers, puis on referme jusqu’à ce que les becs touchent le tube, sans serrer. On mesure l’extérieur, parce que c’est sur l’extérieur que viennent le raccord et l’écrou. C’est pour cela que le nom d’un tube frigorifique est toujours celui de son diamètre extérieur.' },
+      narration: 'On ouvre le pied à coulisse et on place le tube entre les grands becs, bien en travers, puis on referme jusqu’à ce que les becs touchent le tube, sans serrer. On mesure l’extérieur, parce que c’est sur l’extérieur que viennent le raccord et l’écrou. C’est pour cela que le nom d’un tube frigorifique est toujours celui de son diamètre extérieur. Puis on tourne le tube d’un quart de tour et on mesure encore : si les deux valeurs sont presque les mêmes, le tube est rond.' },
     { titre: 'Lire la mesure', texte: 'Les millimètres entiers se lisent à gauche du zéro du vernier. Puis cherchez le trait du vernier qui tombe pile sur un trait de la règle : c’est le dixième.',
       pointCle: '9 mm entiers, trait aligné sur le 5 : 9,5 mm.',
       pourquoi: 'Le vernier partage le millimètre en dix. Le trait aligné dit combien de dixièmes s’ajoutent.',
@@ -216,9 +214,8 @@ CUIVREZO.stations.push({
     { titre: 'Trouver le nom du tube', texte: 'Tapez votre mesure : la station cherche le tube frigorifique le plus proche.',
       pointCle: 'Votre mesure tombe près d’une ligne du tableau.',
       pourquoi: 'Un tube réel n’est jamais au centième près : on cherche la ligne la plus proche. Si aucune n’est proche, la mesure est à refaire.',
-      aValider: 'Écart toléré de 0,4 mm avant de refuser : choix de la station',
       figure: { outil: 'identifier' }, clip: null,
-      narration: 'Votre mesure ne tombe jamais pile sur la valeur du tableau : le tube a une petite tolérance de fabrication, et votre lecture aussi. On cherche donc la ligne la plus proche. Tapez votre mesure : la station vous donne le nom du tube. Si elle ne trouve aucun tube proche, c’est presque toujours que le zéro était décalé, ou que les becs ne touchaient pas l’extérieur.' },
+      narration: 'Votre mesure ne tombe jamais pile sur la valeur du tableau : le tube a une petite tolérance de fabrication, et votre lecture aussi. On cherche donc la ligne la plus proche. Tapez votre mesure : la station vous donne le nom du tube. Proche veut dire à moins de quatre dixièmes de millimètre : deux tubes voisins du tableau sont toujours plus éloignés que cela. Si elle ne trouve aucun tube proche, c’est presque toujours que le zéro était décalé, ou que les becs ne touchaient pas l’extérieur.' },
     { titre: 'Vérifier par le calcul', texte: 'Un pouce vaut 25,4 mm. La fraction multipliée par 25,4 donne les millimètres.',
       pointCle: '3/8 = 0,375 ; 0,375 × 25,4 = 9,525 ; arrondi : 9,53 mm.',
       pourquoi: 'Le calcul vous rend indépendant du tableau : sur chantier, vous retrouvez n’importe quel diamètre.',
@@ -269,9 +266,9 @@ CUIVREZO.stations.push({
 
 /* Station 1-2 — Mesurer et tracer. Source : sources-metier/1-2-mesurer-tracer.md
    ATTENTION : aucune fiche ne décrit ce geste complet sur tube droit. Le pas à pas est reconstitué
-   à partir de fragments (tp-cintrage : mesurer contre une butée ; fiches de façonnage) : il est à
-   faire valider par F. Henninot avant de filmer. L'instrument de traçage (feutre, crayon, pointe)
-   n'est pas tranché par les fiches. */
+   à partir de fragments (tp-cintrage : mesurer contre une butée ; fiches de façonnage). Chaque point
+   a été TRANCHÉ le 30/09/2026 (DECISIONS-2026-09-30.md), dont l'instrument de traçage : le feutre fin,
+   jamais la pointe à tracer sur le cuivre. Le geste se confirme au tournage. */
 CUIVREZO.stations.push({
   id: '1-2', ligne: 1, titre: 'Mesurer et tracer', duree: '15 min',
   sources: ['sources-metier/1-2-mesurer-tracer.md'],
@@ -289,7 +286,7 @@ CUIVREZO.stations.push({
     items: [
       { nom: 'Le mètre à ruban', detail: 'crochet en bon état' },
       { nom: 'L’équerre', detail: 'posée à plat : c’est la butée' },
-      { nom: 'Le feutre fin', detail: 'pour un trait fin et visible', aValider: 'Instrument de traçage à trancher : feutre, crayon ou pointe à tracer' },
+      { nom: 'Le feutre fin', detail: 'pour un trait fin et visible, sans rayer le cuivre' },
       { nom: 'Le plan, ou la cote à tracer', detail: 'donné par le professeur' },
       { nom: 'Le tube, bout coupé d’équerre', detail: 'le bout de départ doit être droit' }
     ],
@@ -309,21 +306,18 @@ CUIVREZO.stations.push({
     { titre: 'Plaquer le tube contre la butée', texte: 'Posez l’équerre à plat sur l’établi. Poussez le bout de référence du tube contre elle.',
       pointCle: 'Le bout touche l’équerre, sans jour.',
       pourquoi: 'La butée fixe le départ de la mesure : il ne peut plus glisser pendant que vous lisez.',
-      aValider: 'La mesure contre une butée est écrite pour un coude fini (tp-cintrage) ; sa reprise pour un tube droit est à valider',
       figure: { img: 'images/1-2-tracer.webp', alt: 'Tube plaqué contre l’équerre' }, clip: 'clips/1-2/03-butee.mp4',
       narration: 'Voici le cœur de la méthode. On pose l’équerre à plat sur l’établi, et on pousse le bout du tube contre elle. Pourquoi ? Parce qu’un mètre tenu en l’air, au bout d’un tube qui roule, se décale à chaque seconde. Contre une butée, le point de départ ne bouge plus.' },
     { titre: 'Poser le mètre contre la même butée', texte: 'Posez le ruban le long du tube, son crochet poussé contre l’équerre.',
       pointCle: 'Tube et mètre partent du même point.',
       pourquoi: 'Le crochet du mètre bouge un peu : poussé contre une butée, il recule de son épaisseur, et la mesure reste juste.',
-      aValider: 'Le jeu du crochet n’est décrit dans aucune fiche : savoir général',
       figure: { svg: 'mesure', etat: 'butee' }, clip: 'clips/1-2/04-metre.mp4',
       narration: 'On déroule le mètre le long du tube, et on pousse son crochet contre la même équerre. Tube et mètre partent maintenant du même point. Vous avez peut-être remarqué que le crochet d’un mètre bouge un peu : ce n’est pas un défaut. Il recule de son épaisseur quand on le pousse, et avance quand on l’accroche, pour que la mesure reste juste dans les deux cas.' },
     { titre: 'Lire la cote de face', texte: 'Placez l’œil juste au-dessus de la graduation.',
       pointCle: 'L’œil au-dessus du trait, jamais de biais.',
-      pourquoi: 'Vue de biais, la graduation semble décalée de un ou deux millimètres.',
-      aValider: 'L’erreur de lecture de biais n’est pas dans les fiches',
+      pourquoi: 'Vue de biais, la graduation semble décalée de un ou deux millimètres, parfois plus.',
       figure: { svg: 'mesure', etat: 'lecture' }, clip: 'clips/1-2/05-lire.mp4',
-      narration: 'Pour lire, on met l’œil juste au-dessus de la graduation. Le ruban est posé à côté du tube, pas dessus : vu de biais, le trait de la graduation semble glisser d’un ou deux millimètres. Deux millimètres, c’est la tolérance entière d’une pièce de CAP.' },
+      narration: 'Pour lire, on met l’œil juste au-dessus de la graduation. Le ruban est posé à côté du tube, pas dessus : vu de biais, le trait de la graduation semble glisser d’un ou deux millimètres, parfois plus. Deux millimètres, c’est la tolérance entière d’une pièce de CAP.' },
     { titre: 'Marquer un trait fin', texte: 'Au feutre fin, marquez un petit trait sur le tube, pile en face de la graduation.',
       pointCle: 'Un trait fin : son milieu est la cote.',
       pourquoi: 'Un trait épais fait un millimètre de large : on ne sait plus de quel côté couper.',
@@ -332,7 +326,6 @@ CUIVREZO.stations.push({
     { titre: 'Faire le tour du tube', texte: 'Tenez le feutre immobile sur le trait et faites tourner le tube : le trait fait le tour.',
       pointCle: 'Le tube tourne, le feutre ne bouge pas.',
       pourquoi: 'Le coupe-tube tourne autour du tube : il doit trouver le trait partout. Et un trait qui fait le tour montre tout de suite s’il est de travers.',
-      aValider: 'La méthode du tour complet n’est décrite dans aucune fiche : seul le résultat est demandé',
       figure: { svg: 'mesure', etat: 'trait' }, clip: 'clips/1-2/07-tour.mp4',
       narration: 'Un petit trait d’un côté ne suffit pas : le coupe-tube tourne autour du tube, et la molette doit trouver le trait sur tout le tour. On tient le feutre immobile, posé sur le trait, et on fait rouler le tube d’un tour. Le trait se referme sur lui-même. S’il ne se referme pas, le feutre a bougé : on recommence.' },
     { titre: 'Remesurer', texte: 'Replacez tube et mètre contre la butée, et relisez. Trois mesures, pas une seule.',
@@ -346,20 +339,19 @@ CUIVREZO.stations.push({
       eviter: 'Choisir le bout de référence avant de mesurer, et s’y tenir.', geste: 1, figure: { svg: 'mesure', etat: 'butee' },
       narration: 'Premier piège : mesurer depuis le mauvais bout. Le nombre est juste, l’emplacement est faux. Sur un tube droit, cela ne change rien ; sur une pièce à plusieurs coudes, tout est décalé.' },
     { titre: 'Le tube qui ne touche pas la butée', voit: 'Une pièce trop longue ou trop courte de quelques millimètres.', cause: 'Un jour entre le bout du tube et l’équerre.',
-      eviter: 'Pousser le tube contre l’équerre à chaque mesure.', geste: 2, aValider: 'Piège déduit de la méthode, non écrit dans les fiches',
+      eviter: 'Pousser le tube contre l’équerre à chaque mesure.', geste: 2,
       figure: { svg: 'mesure', etat: 'butee' },
       narration: 'Deuxième piège : le tube a reculé, et un jour s’est ouvert entre son bout et l’équerre. La mesure part de l’équerre, pas du tube : la cote est fausse du jour exactement. On repousse le tube contre la butée à chaque mesure.' },
     { titre: 'La lecture de biais', voit: 'Un ou deux millimètres d’écart, sans comprendre pourquoi.', cause: 'L’œil n’était pas au-dessus de la graduation.',
-      eviter: 'L’œil juste au-dessus du trait.', geste: 4, aValider: 'Non écrit dans les fiches', figure: { svg: 'mesure', etat: 'parallaxe' },
+      eviter: 'L’œil juste au-dessus du trait.', geste: 4, figure: { svg: 'mesure', etat: 'parallaxe' },
       narration: 'Troisième piège, sournois : la lecture de biais. Le mètre dit juste, mais l’œil le lit de côté, et on croit voir soixante-douze au lieu de soixante-dix. La solution tient en une position : l’œil au-dessus du trait.' },
     { titre: 'Le trait épais', voit: 'On hésite au moment de couper : à gauche ou à droite du trait ?', cause: 'Feutre trop gros, ou trait repassé plusieurs fois.',
-      eviter: 'Un feutre fin, un seul trait.', geste: 5, aValider: 'Non écrit dans les fiches', figure: { svg: 'mesure', etat: 'lecture' },
+      eviter: 'Un feutre fin, un seul trait.', geste: 5, figure: { svg: 'mesure', etat: 'lecture' },
       narration: 'Quatrième piège : le trait trop épais. Il fait un millimètre de large, et on ne sait plus où couper. Un feutre fin, un seul passage.' },
     { titre: 'La rayure profonde', voit: 'Un sillon gravé dans le cuivre.', cause: 'Une pointe à tracer appuyée sur le tube.',
       eviter: 'Tracer au feutre fin, sans entailler la paroi.', geste: 5,
-      aValider: 'Hypothèse : la paroi fait 0,6 à 1 mm ; une rayure profonde pourrait la fragiliser. À trancher par F. Henninot',
       figure: { svg: 'tube', etat: 'section' },
-      narration: 'Dernier piège possible : graver le trait à la pointe à tracer. La paroi d’un tube frigorifique ne fait qu’un millimètre environ ; une entaille profonde l’affaiblit à l’endroit même où l’on va la travailler. Le feutre fin suffit.' }
+      narration: 'Dernier piège : graver le trait à la pointe à tracer. Sur le cuivre, on ne grave jamais. La paroi d’un tube frigorifique ne fait qu’un millimètre environ ; une entaille profonde l’affaiblit à l’endroit même où l’on va la travailler. Le feutre fin suffit.' }
   ],
   controles: [
     { question: 'Mon trait est-il à la cote du plan ?', comment: 'Tube et mètre contre la butée, lisez de face.', siNon: 'Effacez et retracez à la bonne cote.', geste: 2,
@@ -371,7 +363,7 @@ CUIVREZO.stations.push({
     { question: 'Le trait fait-il tout le tour ?', comment: 'Faites rouler le tube : le trait se referme sur lui-même.', siNon: 'Refaites le tour, feutre immobile.', geste: 6,
       figure: { svg: 'mesure', etat: 'trait' }, narration: 'Quatrième contrôle : le trait fait le tour du tube et se referme.' },
     { question: 'Le trait est-il perpendiculaire au tube ?', comment: 'Posez l’équerre contre le tube : le trait suit son bord.', siNon: 'Refaites le tour du tube, plus lentement.', geste: 6,
-      aValider: 'Méthode de contrôle non décrite dans les fiches', figure: { svg: 'bout', etat: 'equerre' },
+      figure: { svg: 'bout', etat: 'equerre' },
       narration: 'Dernier contrôle : le trait est bien droit, perpendiculaire au tube.' }
   ],
   prof: {
@@ -400,7 +392,7 @@ CUIVREZO.stations.push({
       { nom: 'L’alésoir ou l’ébavureur', detail: 'la lame fixée sur le côté du coupe-tube, ou un stylo ébavureur' },
       { nom: 'Le tube, tracé à la cote', detail: 'voir la station 1.2 : mesurer et tracer' },
       { nom: 'Le mètre et l’équerre', detail: 'pour contrôler la longueur et l’équerrage' },
-      { nom: 'Lunettes et gants de travail', detail: 'un bord de tube coupé est tranchant', aValider: 'EPI : les fiches d’origine n’en parlent pas' }
+      { nom: 'Lunettes et gants de travail', detail: 'lunettes sur les yeux pendant tout le façonnage ; gants pour toucher le tube coupé, dont le bord est tranchant' }
     ],
     narration: 'Avant de couper, tout est sur l’établi. Le coupe-tube d’abord. Regardez la molette, ce petit disque tranchant, et en face, les deux galets. Ce sont les galets qui tiennent l’outil perpendiculaire au tube : voilà pourquoi un coupe-tube coupe droit. Une scie, elle, coupe de travers et laisse des échardes ; pour ces tubes, en froid, elle n’a pas sa place. À côté, l’alésoir ou l’ébavureur, qui enlèvera la fine bavure que la molette laisse toujours à l’intérieur. Cochez chaque outil quand il est devant vous.'
   },
@@ -423,7 +415,6 @@ CUIVREZO.stations.push({
     { titre: 'Faire un premier tour lent', texte: 'Tournez le coupe-tube une fois autour du tube, lentement.',
       pointCle: 'Ce premier tour trace un repère tout autour du tube.',
       pourquoi: 'C’est le chemin que la molette va creuser. S’il fait une spirale au lieu d’un cercle, l’outil est de travers : reposez-le.',
-      aValider: 'Le contrôle de la spirale n’est pas dans les fiches d’origine',
       figure: { svg: 'coupeTube', etat: 'tourner' }, clip: 'clips/1-3/04-premier-tour.mp4',
       narration: 'Le premier tour se fait lentement. La molette grave un repère tout autour du tube : c’est le chemin qu’elle va creuser ensuite. Regardez-le. Un repère qui se referme sur lui-même, c’est un outil bien posé. Un repère qui part en spirale, c’est un outil de travers : on desserre, on repose, et on recommence.' },
     { titre: 'Tourner, dans un sens puis dans l’autre', texte: 'Faites tourner l’outil autour du tube en poussant, puis en tirant la poignée.',
@@ -449,7 +440,6 @@ CUIVREZO.stations.push({
     { titre: 'Ébavurer l’extérieur', texte: 'Passez l’ébavureur sur l’arête extérieure pour casser le fil de métal.',
       pointCle: 'Un tour léger suffit.',
       pourquoi: 'L’arête extérieure coupe les doigts et accroche à l’entrée d’un raccord.',
-      aValider: 'L’ébavurage extérieur n’est décrit que dans le cours G10 (habilitation), pas dans les fiches d’atelier',
       figure: { svg: 'ebavurer', etat: 'exterieur' }, clip: 'clips/1-3/09-ebavurer-ext.mp4',
       narration: 'Dernier geste : l’arête extérieure. Elle aussi garde un fil de métal, qui coupe les doigts et accroche quand on enfile le tube dans un raccord. Un tour léger de l’ébavureur suffit à le casser. Votre pièce est coupée. Il reste à la contrôler.' }
   ],
@@ -478,7 +468,6 @@ CUIVREZO.stations.push({
   controles: [
     { question: 'La coupe est-elle d’équerre ?', comment: 'Posez l’équerre contre la face du tube : aucun jour ne doit passer.',
       siNon: 'Recoupez quelques millimètres plus loin, le tube bien posé sur les galets.', geste: 1,
-      aValider: 'Contrôle à l’équerre : non décrit dans les fiches d’origine',
       figure: { svg: 'bout', etat: 'equerre' },
       narration: 'Premier contrôle, l’équerrage. On pose l’équerre contre la face du tube et on regarde s’il passe du jour. Pas de jour, la coupe est d’équerre.' },
     { question: 'La face est-elle plane ?', comment: 'Regardez la face de profil : ni creux, ni bosse.',
@@ -489,7 +478,6 @@ CUIVREZO.stations.push({
       narration: 'Troisième contrôle : l’intérieur. Le doigt ganté ne doit accrocher sur aucun rebord, et à contre-jour, le bord est net.' },
     { question: 'Le tube est-il resté rond ?', comment: 'Regardez le bout de face. En cas de doute, mesurez le diamètre dans deux sens au pied à coulisse : les deux mesures sont égales.',
       siNon: 'Un bout ovalisé ne se rattrape pas : recoupez plus loin, en serrant moins fort.', geste: 5,
-      aValider: 'Mesure dans deux sens : non décrite dans les fiches d’origine',
       figure: { svg: 'bout', etat: 'ovale' },
       narration: 'Quatrième contrôle : le tube est-il resté rond ? Regardez-le de face. Au moindre doute, deux mesures au pied à coulisse, dans deux sens différents, doivent donner le même diamètre.' },
     { question: 'La longueur est-elle à la cote ?', comment: 'Mesurez au mètre, le crochet contre le bout du tube.',
@@ -521,7 +509,7 @@ CUIVREZO.stations.push({
     titre: 'Un coude à 90°, 300 mm à l’axe',
     texte: 'Le coude est d’équerre, la branche mesure 300 mm jusqu’à l’axe de l’autre branche, et le tube n’est ni écrasé ni vrillé.',
     criteres: ['Angle de 90°, contrôlé à l’équerre', 'Cote de 300 mm à l’axe, à ± 3 mm', 'Tube ni écrasé ni marqué', 'Ligne de contrôle droite : pas de vrille'],
-    figure: { svg: 'coude', etat: 'equerre', legende: 'Un coude d’équerre, sans écrasement.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'coude90', angle: '90', cote: '300' }, legende: 'Le coude à 90°, 300 mm à l’axe. Tournez-le du doigt.' },
     narration: 'Le cintrage remplace un raccord par un coude fait dans le tube lui-même. Moins de raccords, c’est moins de brasures, moins de fuites et moins de pertes de charge. Mais un coude se rate de trois façons : trop long, écrasé, ou vrillé. Cette station vous apprend à les éviter toutes les trois. Et vous allez découvrir vous-même le chiffre qui rend un coude juste : le rayon de votre cintrette.'
   },
   materiel: {
@@ -549,7 +537,7 @@ CUIVREZO.stations.push({
     { titre: 'Trouver le rayon de votre cintrette', texte: 'Sur une chute : tracez à 300 mm, posez ce trait sur le 0, cintrez à 90°. Mesurez la branche à l’axe, contre la butée.',
       pointCle: 'Rc = ce que vous mesurez − 300.',
       pourquoi: 'Le coude ne commence pas au trait : il s’enroule autour de la forme. La branche finie est donc plus longue de la valeur du rayon.',
-      figure: { svg: 'coude', etat: 'rc' }, clip: 'clips/1-4/03-essai.mp4',
+      figure: { composant: 'cuivre-3d', attributs: { piece: 'coude90', angle: '90', cote: '300' }, legende: 'Le rayon Rc : du centre du coude à l’axe du tube.' }, clip: 'clips/1-4/03-essai.mp4',
       narration: 'Voici l’expérience qui rend tout le reste juste. Sur une chute, tracez un trait à trois cents millimètres, posez-le sur le repère zéro, et cintrez à quatre-vingt-dix degrés. Puis plaquez la branche contre la butée et mesurez jusqu’à l’axe de l’autre branche. Vous ne trouvez pas trois cents : vous trouvez davantage. La différence, c’est le rayon de votre cintrette, le chiffre qu’on appelle R c. Notez-le : c’est lui qui corrigera tous vos traçages.' },
     { titre: 'Tracer le début du cintrage', texte: 'Sur la pièce, depuis le bout de référence, tracez à 300 − Rc.',
       pointCle: 'Cette soustraction ne vaut que pour un coude à 90°.',
@@ -598,10 +586,9 @@ CUIVREZO.stations.push({
       narration: 'Dernier piège : un angle un peu ouvert. On s’est arrêté au repère, mais le cuivre s’est détendu. C’est l’équerre qui décide, pas le repère.' }
   ],
   controles: [
-    { question: 'La branche mesure-t-elle 300 mm à l’axe (± 3) ?', comment: 'Plaquez la branche contre la butée, mesurez jusqu’au bord de l’autre branche, retirez la moitié du diamètre du tube. Trois mesures.',
+    { question: 'La branche mesure-t-elle 300 mm à l’axe (± 3) ?', comment: 'Plaquez la branche contre la butée, mesurez jusqu’au bord de l’autre branche, retirez la moitié du diamètre du tube (par exemple 7,9 mm pour un tube 5/8″). Trois mesures.',
       siNon: 'Trop long : Rc non retiré. Trop court : trait mal posé sur le 0.', geste: 3,
-      aValider: 'Retrait de la moitié du diamètre : écrit pour le multicouche Ø16 (8 mm) ; pour le cuivre, D/2 du tube utilisé',
-      figure: { svg: 'coude', etat: 'rc' }, narration: 'Premier contrôle : la cote à l’axe, contre la butée, trois fois.' },
+      figure: { svg: 'coude', etat: 'rc' }, narration: 'Premier contrôle : la cote à l’axe, contre la butée, trois fois. On mesure jusqu’au bord de l’autre branche, et l’on retire la moitié du diamètre du tube.' },
     { question: 'Le coude est-il à 90° ?', comment: 'Posez l’équerre : les deux branches la touchent.', siNon: 'Reprenez un tout petit peu à la cintrette, sans forcer.', geste: 6,
       figure: { svg: 'coude', etat: 'equerre' }, narration: 'Deuxième contrôle : l’équerre touche les deux branches.' },
     { question: 'Le tube est-il resté rond dans le coude ?', comment: 'Une chute de tube passe encore dans le coude.', siNon: 'Coude écrasé : pièce à refaire, plus lentement.', geste: 5,
@@ -619,8 +606,9 @@ CUIVREZO.stations.push({
 
 /* Station 1-5 — Cintrer à la cintreuse (repères L, R et 0). Source : sources-metier/1-4-1-5-cintrage.md (partie 2)
    Repères portés par le bras tournant. L = cote prise depuis l'extrémité GAUCHE (écrit dans les fiches) ;
-   R = cote prise depuis l'extrémité DROITE (lu sur un dessin, jamais écrit) ; 0 = lecture de l'angle
-   sur la forme graduée (0 en face de 90 = coude à 90°). Ordre « 0 R L » : trois sources sur quatre.
+   R = cote prise depuis l'extrémité DROITE (dessin CINTRAGE 1 p. 8 et article abcclim, décidé le 30/09/2026) ;
+   0 = lecture de l'angle sur la forme graduée (0 en face de 90 = coude à 90°). Ordre « 0 R L » : trois
+   sources sur quatre ; à vérifier UNE FOIS sur la cintreuse de l'atelier (liste du professeur).
    Pièce de référence : pièce 1 du niveau 3 de tp-cintrage (1/4″, coupe 144, cote 80 sur L). */
 CUIVREZO.stations.push({
   id: '1-5', ligne: 1, titre: 'Cintrer à la cintreuse (L, R, 0)', duree: '30 min', vignette: 'images/1-5-cintreuse.webp',
@@ -635,7 +623,7 @@ CUIVREZO.stations.push({
   },
   materiel: {
     titre: 'Je sors mon matériel',
-    figure: { svg: 'cintreuse', etat: 'reperes', aValider: 'Position et ordre des repères 0, R, L à vérifier sur la cintreuse de l’atelier' },
+    figure: { svg: 'cintreuse', etat: 'reperes' },
     items: [
       { nom: 'La cintreuse du bon diamètre', detail: 'son marquage (1/4″, 3/8″) est celui du tube' },
       { nom: 'Le tube 1/4″ coupé à 144 mm', detail: 'coupé d’équerre et ébavuré : stations 1.2 et 1.3' },
@@ -653,13 +641,11 @@ CUIVREZO.stations.push({
     { titre: 'Choisir le repère : L ou R', texte: 'La cote part de l’extrémité gauche du tube ? Ce sera L. De l’extrémité droite ? Ce sera R.',
       pointCle: 'L comme Left, gauche. R comme Right, droite.',
       pourquoi: 'Le coude s’enroule d’un côté du trait. Le repère compense ce décalage selon le côté d’où vient la cote.',
-      aValider: 'La règle de R est lue sur un dessin (CINTRAGE 1, p. 8), elle n’est écrite dans aucune fiche',
       figure: { svg: 'cintreuse', etat: 'placer-L' }, clip: 'clips/1-5/02-choisir-repere.mp4',
       narration: 'Avant de tracer, on se demande de quel bout part la cote. Si elle part de l’extrémité gauche du tube, on posera le trait sur L, comme Left, gauche. Si elle part de l’extrémité droite, sur R, comme Right, droite. Pourquoi deux repères ? Parce que le coude s’enroule d’un côté du trait, et que ce décalage ne se compense pas de la même façon selon le côté d’où vient la cote.' },
     { titre: 'Tracer la cote finie', texte: 'Depuis le bout choisi, tracez la cote du plan : 80 mm pour la pièce 1.',
       pointCle: 'On trace la cote finie, telle qu’elle est sur le plan.',
       pourquoi: 'Avec la cintreuse, pas de soustraction : c’est le repère L ou R qui tient compte du rayon.',
-      aValider: 'Aucune fiche ne dit pourquoi on ne retire pas le rayon avec L : hypothèse, le repère le compense (distance 0→L à mesurer)',
       figure: { svg: 'mesure', etat: 'butee' }, clip: 'clips/1-5/03-tracer.mp4',
       narration: 'On trace la cote telle qu’elle est sur le plan : quatre-vingts millimètres depuis l’extrémité gauche, pour la pièce une. Avec la cintrette, il fallait retirer le rayon. Ici, non : c’est le repère L, ou R, qui en tient compte à votre place. C’est tout l’intérêt de ces lettres.' },
     { titre: 'Ouvrir la cintreuse', texte: 'Dépliez le bras tournant vers l’avant, dans le prolongement de la butée.',
@@ -675,7 +661,6 @@ CUIVREZO.stations.push({
     { titre: 'Ou sur R, si la cote part de la droite', texte: 'Même geste, mais le trait se pose en face de R.',
       pointCle: 'Le repère suit le bout d’où part la cote.',
       pourquoi: 'Sur une pièce à plusieurs coudes, on passe parfois d’un repère à l’autre selon le sens des cotes.',
-      aValider: 'Règle de R lue sur un dessin, et ordre des repères 0 R L ou 0 L R à vérifier sur l’outil',
       figure: { svg: 'cintreuse', etat: 'placer-R' }, clip: 'clips/1-5/06-sur-R.mp4',
       narration: 'Si la cote du plan part de l’extrémité droite, le geste est le même, mais le trait se pose en face de R. Sur une pièce à plusieurs coudes, les cotes ne partent pas toujours du même côté : on choisit le repère à chaque coude, en regardant d’où part la cote.' },
     { titre: 'Ramener le bras', texte: 'Main gauche : poignée et tube. Main droite : ramenez le bras vers vous, d’un seul mouvement.',
@@ -698,9 +683,8 @@ CUIVREZO.stations.push({
     { titre: 'La mauvaise cintreuse', voit: 'Un tube écrasé, ou des cotes fausses.', cause: 'Une cintreuse 1/4″ pour un tube 3/8″, ou l’inverse.',
       eviter: 'Vérifier le marquage avant de commencer.', geste: 0, figure: { svg: 'cintreuse', etat: 'reperes' },
       narration: 'Premier piège : la cintreuse d’un autre diamètre. Soit le tube s’écrase dans une gorge trop petite, soit il glisse dans une gorge trop grande. Et même s’il passe, le rayon n’est pas celui pour lequel le plan a été calculé.' },
-    { titre: 'Le mauvais repère', voit: 'Une branche fausse de plusieurs millimètres.', cause: 'Trait posé sur L alors que la cote partait de la droite, ou l’inverse.',
+    { titre: 'Le mauvais repère', voit: 'Une branche nettement fausse.', cause: 'Trait posé sur L alors que la cote partait de la droite, ou l’inverse.',
       eviter: 'Se demander à chaque coude : d’où part la cote ?', geste: 1,
-      aValider: 'L’erreur produite par un mauvais repère n’est chiffrée dans aucune fiche : à mesurer sur l’outil',
       figure: { svg: 'cintreuse', etat: 'placer-R' },
       narration: 'Deuxième piège : poser le trait sur le mauvais repère. La pièce est fausse de la distance qui sépare L de R. Un seul réflexe l’évite : avant chaque coude, se demander de quel bout part la cote.' },
     { titre: 'Le trait mal aligné', voit: 'Une branche un peu trop longue ou trop courte.', cause: 'Le trait n’était pas pile sur le repère.',
@@ -714,9 +698,8 @@ CUIVREZO.stations.push({
       narration: 'Dernier piège, sur les pièces à plusieurs coudes : la pièce vrillée, qui ne tient pas à plat. Le sens de travail a changé en cours de route. De gauche à droite, toujours.' }
   ],
   controles: [
-    { question: 'Les branches mesurent-elles 80 et 70 mm à l’axe (± 1) ?', comment: 'Mesurez chaque branche jusqu’à l’axe de l’autre.', siNon: 'Vérifiez le repère utilisé et l’alignement du trait.', geste: 1,
-      aValider: 'Méthode de mesure à l’axe non écrite pour la cintreuse',
-      figure: { img: 'images/reprises/piece-1-coude-1-4.svg', alt: 'Plan de la pièce 1' }, narration: 'Premier contrôle : les deux branches, à l’axe, au millimètre.' },
+    { question: 'Les branches mesurent-elles 80 et 70 mm à l’axe (± 1) ?', comment: 'Plaquez la branche contre la butée, mesurez jusqu’au bord extérieur de l’autre branche, retirez la moitié du diamètre du tube (3,2 mm en 1/4″).', siNon: 'Vérifiez le repère utilisé et l’alignement du trait.', geste: 1,
+      figure: { img: 'images/reprises/piece-1-coude-1-4.svg', alt: 'Plan de la pièce 1' }, narration: 'Premier contrôle : les deux branches, à l’axe, au millimètre. On mesure jusqu’au bord extérieur de l’autre branche, et l’on retire la moitié du diamètre du tube.' },
     { question: 'Le coude est-il à 90° ?', comment: 'Posez l’équerre contre les deux branches.', siNon: 'Reprenez un tout petit peu à la cintreuse.', geste: 7,
       figure: { svg: 'coude', etat: 'equerre' }, narration: 'Deuxième contrôle : l’angle, à l’équerre.' },
     { question: 'Le tube est-il ni écrasé ni fortement marqué ?', comment: 'Regardez le coude de près.', siNon: 'Pièce à refaire : bon diamètre de cintreuse, mouvement continu.', geste: 6,
@@ -734,7 +717,7 @@ CUIVREZO.stations.push({
     ]
   },
   prof: {
-    verifie: ['Le repère choisi (L ou R) et pourquoi', 'L’angle lu au 0 du bras, puis à l’équerre', 'Les cotes à l’axe, au millimètre', 'L’aspect du coude'],
+    verifie: ['Le repère choisi (L ou R) et pourquoi', 'L’angle lu au 0 du bras, puis à l’équerre', 'Les cotes à l’axe, au millimètre', 'L’aspect du coude', 'Une fois, sur la cintreuse de l’atelier : l’ordre des repères 0, R, L comme sur la figure, et la distance du L au 0, voisine du rayon de cintrage (14,3 mm en 1/4″)'],
     narration: 'Le professeur vous demande quel repère vous avez utilisé, et pourquoi. C’est la vraie preuve : savoir expliquer le choix entre L et R. Puis il mesure la pièce. Les pièces suivantes du TP, un U, trois coudes, deux plans, se font avec exactement la même méthode.'
   }
 });
@@ -743,8 +726,9 @@ CUIVREZO.stations.push({
    Vocabulaire des fiches : le « dudgeon » est l'évasement frigorifique à 45° (dudgeonnière, écrou, huile,
    clé dynamométrique) ; le « collet battu » est le geste de plomberie (collerette plate au marteau, joint),
    qui demande un recuit au chalumeau : il n'est pas traité ici.
-   Dépassement et couples : fiche d'atelier « FICHE SYNTHESE Travail tube cuivre froid » et « Faire un dudgeon » ;
-   la notice du fabricant de l'appareil fait foi sur chantier. */
+   Dépassement et couples : DÉCIDÉS le 30/09/2026 (DECISIONS-2026-09-30.md) d'après la notice d'un fabricant
+   d'appareil (Carrier 42HQE/38YE, p. 8), plus fiable que la fiche d'atelier (unité « N/m » fausse) ;
+   la notice de l'appareil raccordé fait foi sur chantier. */
 CUIVREZO.stations.push({
   id: '1-6', ligne: 1, titre: 'Le dudgeon', duree: '25 min',
   sources: ['sources-metier/1-6-collet-battu.md'],
@@ -753,7 +737,7 @@ CUIVREZO.stations.push({
     titre: 'Un dudgeon régulier, l’écrou en place',
     texte: 'Le bout du tube est évasé en cône à 45°, lisse, sans fissure. L’écrou, enfilé avant, vient le coiffer et se visse sur le raccord.',
     criteres: ['Cône régulier, lisse, sans fissure ni marque d’outil', 'Épaisseur uniforme, bien centré', 'Il épouse le raccord : ni trop grand, ni trop petit', 'L’écrou enfilé, dans le bon sens'],
-    figure: { svg: 'dudgeon', etat: 'controle', legende: 'Le dudgeon réussi, l’écrou qui vient le coiffer.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'dudgeon', angle: '45' }, legende: 'Le dudgeon réussi, l’écrou qui vient le coiffer.' },
     narration: 'Le dudgeon est un raccord sans flamme. Le bout du tube est évasé en cône, et un écrou vient le plaquer contre un raccord en laiton : métal contre métal, sans joint. C’est ce qui raccorde, par exemple, les liaisons d’une climatisation. Tout repose sur la qualité du cône : trop petit, il fuit ; trop grand, l’écrou ne passe plus ; fendu, il fuira un jour. Et un raccord qui fuit, c’est du fluide frigorigène dans l’atmosphère.'
   },
   materiel: {
@@ -763,7 +747,7 @@ CUIVREZO.stations.push({
       { nom: 'Le tube recuit, coupé d’équerre et ébavuré', detail: 'station 1.3 : c’est la moitié de la réussite' },
       { nom: 'L’écrou du bon diamètre', detail: 'celui du raccord' },
       { nom: 'La dudgeonnière', detail: 'une barre à trous et un étrier à cône de 45°' },
-      { nom: 'L’huile frigorifique', detail: 'une goutte sur les cônes au montage', aValider: 'L’huile : citée par la fiche de synthèse, formulation ambiguë dans « Faire un dudgeon »' },
+      { nom: 'L’huile frigorifique', detail: 'une goutte sur les cônes au montage ; le professeur donne l’huile' },
       { nom: 'Deux clés, dont une dynamométrique', detail: 'pour serrer au bon couple' },
       { nom: 'Le raccord', detail: 'pour l’essai de montage' }
     ],
@@ -781,11 +765,10 @@ CUIVREZO.stations.push({
       figure: { svg: 'dudgeon', etat: 'ecrou' }, clip: 'clips/1-6/02-ecrou.mp4',
       narration: 'Le geste qu’on oublie une fois, et jamais deux : enfiler l’écrou avant d’évaser. Une fois le cône formé, l’écrou ne passe plus par-dessus. Il ne reste alors qu’à recouper le tube et tout recommencer. L’écrou s’enfile dans le bon sens : son filetage regarde le bout du tube.' },
     { titre: 'Serrer le tube dans la barre', texte: 'Dans le trou du bon diamètre, côté chanfrein. Le tube dépasse de la cote A, puis on serre les écrous papillons.',
-      pointCle: 'Dépassement A (fiche) : 1/4″ 1,3 · 3/8″ 1,6 · 1/2″ 1,8 · 5/8″ 2 mm.',
+      pointCle: 'Dépassement A, entre le mini et le maxi de la notice d’un appareil : 1/4″ 0,7 à 1,3 · 3/8″ 1,0 à 1,6 · 1/2″ 1,0 à 1,8 · 5/8″ 2,2 à 2,4 mm.',
       pourquoi: 'Le métal qui dépasse est celui qui formera le cône. Trop, le cône est trop grand ; pas assez, il est trop petit.',
-      aValider: 'Dépassement de la fiche d’atelier ; la notice d’un fabricant donne une fourchette voisine (0,7 à 1,3 mm en 1/4″)',
       figure: { svg: 'dudgeon', etat: 'mors' }, clip: 'clips/1-6/03-barre.mp4',
-      narration: 'On place le tube dans le trou de son diamètre, du côté chanfreiné de la barre, et on le fait dépasser d’une petite hauteur, qu’on appelle A : un virgule trois millimètre en un quart, un virgule six en trois huitièmes, d’après la fiche de l’atelier. C’est ce métal qui dépasse qui va former le cône. Puis on serre les deux écrous papillons : le tube ne doit plus bouger.' },
+      narration: 'On place le tube dans le trou de son diamètre, du côté chanfreiné de la barre, et on le fait dépasser d’une petite hauteur, qu’on appelle A. Pour un quart de pouce, entre sept dixièmes et un virgule trois millimètre ; pour un trois huitièmes, entre un et un virgule six millimètre : ce sont les valeurs de la notice d’un fabricant, et le professeur vous donne celles de la dudgeonnière de l’atelier. C’est ce métal qui dépasse qui va former le cône. Puis on serre les deux écrous papillons : le tube ne doit plus bouger.' },
     { titre: 'Poser l’étrier', texte: 'Posez l’étrier sur la barre, le cône bien au centre du tube, et bloquez-le.',
       pointCle: 'Le cône au centre, sinon le dudgeon sera décentré.',
       pourquoi: 'Un cône qui entre de biais pousse le métal d’un seul côté.',
@@ -804,15 +787,13 @@ CUIVREZO.stations.push({
     { titre: 'Huiler et visser à la main', texte: 'Une goutte d’huile frigorifique sur les cônes. Présentez le tube sur le raccord et vissez l’écrou à la main, jusqu’au contact.',
       pointCle: 'À la main d’abord : l’écrou doit se visser sans résistance.',
       pourquoi: 'Un écrou qui force à la main est mal engagé : à la clé, il abîmerait le filetage.',
-      aValider: 'L’huile sur les cônes : à confirmer',
       figure: { img: 'images/1-6-serrage.webp', alt: 'Le tube présenté sur le raccord, l’écrou vissé' }, clip: 'clips/1-6/07-main.mp4',
       narration: 'Au montage, une goutte d’huile frigorifique sur les cônes aide les deux surfaces à glisser l’une sur l’autre. On présente le tube bien dans l’axe du raccord, et on visse l’écrou à la main, jusqu’au contact. S’il force à la main, c’est qu’il est mal engagé : on dévisse, on recommence. La clé ne sert qu’à finir le serrage.' },
     { titre: 'Serrer au couple, à deux clés', texte: 'Clé dynamométrique sur l’écrou, contre-clé sur le raccord. Serrez jusqu’au couple.',
-      pointCle: 'Couples de la fiche : 1/4″ 18 · 3/8″ 22 · 1/2″ 42 N·m. Sur chantier, la notice de l’appareil fait foi.',
+      pointCle: 'Couples de la notice d’un appareil : 1/4″ 15,7 · 3/8″ 29,4 · 1/2″ 29,4 · 5/8″ 73,6 N·m. Sur chantier, la notice de l’appareil fait foi.',
       pourquoi: 'Pas assez serré, le raccord fuit. Trop serré, le dudgeon s’écrase ou l’écrou casse. La contre-clé empêche le raccord de tourner et de tordre le tube.',
-      aValider: 'Couples de la fiche d’atelier (unité écrite « N/m ») ; une notice de fabricant donne 15,7 · 29,4 · 29,4 N·m',
       figure: { svg: 'dudgeon', etat: 'serrage' }, clip: 'clips/1-6/08-couple.mp4',
-      narration: 'Le serrage final se fait à deux clés. La clé dynamométrique sur l’écrou, parce qu’elle mesure l’effort : trop peu, le raccord fuit ; trop, le dudgeon s’écrase ou l’écrou casse. Et une contre-clé sur le raccord, qui l’empêche de tourner et de tordre le tube. Le couple dépend du diamètre. Sur un appareil réel, c’est la notice du fabricant qui le donne.' }
+      narration: 'Le serrage final se fait à deux clés. La clé dynamométrique sur l’écrou, parce qu’elle mesure l’effort : trop peu, le raccord fuit ; trop, le dudgeon s’écrase ou l’écrou casse. Et une contre-clé sur le raccord, qui l’empêche de tourner et de tordre le tube. Le couple dépend du diamètre, et il se compte en newtons-mètres. Par exemple, la notice d’un appareil donne quinze virgule sept newtons-mètres pour un quart de pouce, et vingt-neuf virgule quatre pour un trois huitièmes. Sur un appareil réel, c’est toujours la notice du fabricant qui fait foi.' }
   ],
   pieges: [
     { titre: 'L’écrou oublié', voit: 'Un beau dudgeon… et l’écrou resté sur l’établi.', cause: 'On a évasé avant d’enfiler l’écrou.',
@@ -852,9 +833,9 @@ CUIVREZO.stations.push({
 /* Station 1-7 — L'emboîture à la pince (l'expandeur). Source : sources-metier/1-7-emboiture.md
    Outil des fiches : la « pince à emboîture (expandeur) » et ses têtes, une par diamètre.
    Serrage en trois temps avec un quart de tour (fiche « T.P Les assemblages par emboîture ») ;
-   recuit exigé sur tube écroui seulement (lecture proposée, à trancher) : la station part d'un tube
-   recuit en couronne, le recuit au chalumeau relève de la ligne 2.
-   Profondeur d'emboîture : cinq règles différentes dans les fiches, aucune retenue ici : à trancher. */
+   recuit exigé sur tube écroui seulement (DÉCIDÉ le 30/09/2026) : la station part d'un tube recuit en
+   couronne, le recuit d'une barre est fait par le professeur, au chalumeau (ligne 2).
+   Profondeur d'emboîture : DÉCIDÉE le 30/09/2026, de 1 à 1,5 fois le diamètre (DECISIONS-2026-09-30.md). */
 CUIVREZO.stations.push({
   id: '1-7', ligne: 1, titre: 'L’emboîture à la pince', duree: '20 min', vignette: 'images/1-7-pince.webp',
   sources: ['sources-metier/1-7-emboiture.md'],
@@ -863,7 +844,7 @@ CUIVREZO.stations.push({
     titre: 'Un bout élargi où l’autre tube entre juste',
     texte: 'Le bout du tube est élargi, droit dans l’axe, sans fente. Un tube du même diamètre y entre sans forcer et sans jouer : il est prêt pour la brasure.',
     criteres: ['L’autre tube entre sans forcer, et sans jouer', 'Emboîture sans fente ni bavure', 'Régulière, ronde, alignée sur l’axe du tube', 'Profondeur d’emboîture conforme'],
-    figure: { svg: 'emboiture', etat: 'profil', legende: 'Le tube mâle dans l’emboîture : un jeu de quelques dixièmes.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'emboiture', angle: '90' }, legende: 'Le tube mâle dans l’emboîture : un jeu de quelques dixièmes.' },
     narration: 'Pour raccorder deux tubes de même diamètre, on peut ajouter un manchon, avec deux brasures. Ou bien élargir le bout de l’un pour y glisser l’autre : une seule brasure, donc une seule fuite possible au lieu de deux. C’est l’emboîture. Tout son secret tient dans un jeu minuscule entre les deux tubes : assez pour que la brasure s’y glisse, pas assez pour que le tube joue. Le seul contrôle qui compte, c’est l’essai : l’autre tube doit entrer sans forcer, et sans jouer.'
   },
   materiel: {
@@ -872,7 +853,7 @@ CUIVREZO.stations.push({
     items: [
       { nom: 'La pince à emboîture', detail: 'l’expandeur, avec son jeu de têtes' },
       { nom: 'La tête du diamètre du tube', detail: 'une tête par diamètre' },
-      { nom: 'Un tube recuit, coupé d’équerre et ébavuré', detail: 'en couronne ; une barre écrouie se recuit d’abord : voir le professeur', aValider: 'Recuit exigé sur tube écroui seulement : lecture proposée, les fiches divergent' },
+      { nom: 'Un tube recuit, coupé d’équerre et ébavuré', detail: 'en couronne, il se travaille tel quel ; une barre écrouie est recuite d’abord par le professeur, au chalumeau' },
       { nom: 'Un bout du même tube pour l’essai', detail: 'c’est lui qui dira si l’emboîture est bonne' },
       { nom: 'Le mètre et le feutre', detail: 'pour la profondeur d’emboîture' }
     ],
@@ -907,7 +888,6 @@ CUIVREZO.stations.push({
     { titre: 'Tourner d’un quart de tour', texte: 'Pince desserrée, tournez-la d’un quart de tour dans le tube.',
       pointCle: 'Entre deux serrages, un quart de tour.',
       pourquoi: 'Les segments laissent de petites marques entre eux. En tournant, le serrage suivant les efface : l’emboîture reste ronde.',
-      aValider: 'Le quart de tour est dans une fiche ; une autre dit « parfois », une autre n’en parle pas. Le pourquoi n’est écrit nulle part',
       figure: { svg: 'emboiture', etat: 'tourner' }, clip: 'clips/1-7/06-quart.mp4',
       narration: 'La pince desserrée, on la fait tourner d’un quart de tour dans le tube. La tête est faite de segments séparés par de petits espaces : chaque serrage laisse une trace à leur place. En tournant avant de serrer de nouveau, on répartit le travail, et l’emboîture reste bien ronde.' },
     { titre: 'Serrer aux deux tiers, puis jusqu’à la butée', texte: 'Serrez aux deux tiers, desserrez, puis serrez jusqu’à la butée de la pince.',
@@ -947,9 +927,8 @@ CUIVREZO.stations.push({
       figure: { svg: 'emboiture', etat: 'fissure' }, narration: 'Troisième contrôle : aucune fente au bord.' },
     { question: 'Est-elle ronde et dans l’axe ?', comment: 'Regardez le bout de face, puis de profil.', siNon: 'Recoupez : tube à la main, pince dans l’axe, quart de tour.', geste: 5,
       figure: { svg: 'emboiture', etat: 'ovale' }, narration: 'Quatrième contrôle : ronde, et bien dans l’axe du tube.' },
-    { question: 'La profondeur est-elle conforme ?', comment: 'Mesurez la longueur élargie.', siNon: 'Voyez la profondeur demandée avec le professeur.', geste: 6,
-      aValider: 'Profondeur : cinq règles incompatibles dans les fiches (1 à 1,5 fois le diamètre, le diamètre, diamètre + 1 mm, 10 mm fixes…)',
-      figure: { svg: 'emboiture', etat: 'profil' }, narration: 'Dernier contrôle : la longueur élargie, celle que demande le plan.' }
+    { question: 'La profondeur est-elle conforme ?', comment: 'Mesurez la longueur élargie : au moins le diamètre du tube, au plus une fois et demie ce diamètre (de 14 à 21 mm pour un tube de 14).', siNon: 'Trop courte : recoupez et recommencez, tête enfilée jusqu’à la butée. Si le plan demande autre chose, voyez le professeur.', geste: 6,
+      figure: { svg: 'emboiture', etat: 'profil' }, narration: 'Dernier contrôle : la longueur élargie. Elle doit valoir au moins le diamètre du tube, et au plus une fois et demie ce diamètre.' }
   ],
   prof: {
     verifie: ['L’essai d’emboîtement : sans forcer, sans jouer', 'L’emboîture : sans fente, ronde, dans l’axe', 'Le geste : trois serrages, quart de tour, tube à la main', 'Avant de braser : il voit toutes les emboîtures'],
@@ -959,8 +938,9 @@ CUIVREZO.stations.push({
 
 /* Station 2-1 — Le poste oxyacétylénique en sécurité. Source : sources-metier/2-chalumeau.md (partie 2-1)
    Référence : INRS ED 742, fiche de poste CDG, fiches de l'atelier. Ogive O blanche, A marron.
-   Pressions de réglage : 0,8 à 2,5 bar (O) et 0,2 à 0,5 bar (A) selon les fiches ; la valeur du lycée
-   n'est écrite nulle part : c'est le professeur qui la donne. Jamais plus de 1,5 bar d'acétylène (INRS). */
+   Pressions de réglage : valeurs RÉGLÉES PAR LE PROFESSEUR d'après la notice du chalumeau et de la buse
+   (INRS ED 742 : « réglages conseillés par le fabricant ») ; jamais plus de 1,5 bar d'acétylène (INRS).
+   Ordre du poste : le gaz combustible s'ouvre en dernier et se ferme en premier (DECISIONS-2026-09-30.md). */
 CUIVREZO.stations.push({
   id: '2-1', ligne: 2, titre: 'Le poste oxyacétylénique en sécurité', duree: '20 min', vignette: 'images/2-1-poste.webp',
   sources: ['sources-metier/2-chalumeau.md'],
@@ -969,7 +949,6 @@ CUIVREZO.stations.push({
     titre: 'Un poste prêt à allumer, vérifié, sans fuite',
     texte: 'Rien n’est allumé. Les bouteilles sont debout et arrimées, les pressions réglées, le poste est étanche, et le professeur l’a visé.',
     criteres: ['Protections portées, zone dégagée, extincteur repéré', 'Bouteilles debout, arrimées ; gaz reconnus à l’ogive', 'Basse pression réglée à la valeur donnée', 'Aucune bulle à l’eau savonneuse ; visa du professeur'],
-    aValider: 'Codes du référentiel (T12, C3.1, S6.2, S6.3) posés par analogie avec la station 1.0 : à confirmer',
     figure: { img: 'images/2-1-poste.webp', alt: 'Le poste oxyacétylénique : deux bouteilles arrimées, détendeurs, tuyaux, chalumeau' },
     narration: 'Le chalumeau oxyacétylénique produit une flamme de plus de trois mille degrés. Il est indispensable pour braser, et il ne pardonne aucune négligence : l’oxygène fait flamber ce qui est gras, l’acétylène devient instable sous pression, un retour de flamme peut remonter les tuyaux. Cette station ne vous fait pas allumer. Elle vous apprend à préparer et à vérifier le poste, pour que l’allumage, qui se fera toujours devant le professeur, se passe sans surprise.'
   },
@@ -987,23 +966,21 @@ CUIVREZO.stations.push({
     narration: 'Voici le poste. Deux bouteilles, reconnaissables à la couleur de leur ogive, la partie haute : blanche pour l’oxygène, marron pour l’acétylène. Sur chacune, un détendeur, qui abaisse la pression de la bouteille à celle du travail. Puis deux tuyaux, bleu pour l’oxygène, rouge pour l’acétylène, et près du chalumeau, les clapets anti-retour, qui arrêtent une flamme qui voudrait remonter. On vérifie chaque élément avant d’y mettre la main.'
   },
   gestes: [
-    { titre: 'M’équiper', texte: 'Lunettes teintées, gants et tablier en cuir, tenue en coton, pantalon sur les chaussures.',
+    { titre: 'M’équiper', texte: 'Lunettes à verres teintés avec protections sur les côtés, gants et tablier en cuir, tenue en coton, pantalon sur les chaussures. Le professeur vous donne le numéro de teinte.',
       pointCle: 'Rien de gras sur moi ni sur mes gants.',
       pourquoi: 'La flamme rayonne et projette. Et un tissu gras au contact de l’oxygène peut s’enflammer tout seul.',
-      aValider: 'Teinte des lunettes : « 4 à 7 » (fiche CDG), « 5 minimum » (séance 1.2), selon le débit de la buse (INRS)',
       figure: { img: 'images/reprises/epi-familles.svg', alt: 'Les protections' }, clip: 'clips/2-1/01-epi.mp4',
-      narration: 'On s’équipe avant de toucher au poste. Des lunettes teintées, contre le rayonnement de la flamme. Des gants et un tablier en cuir, une tenue en coton, le pantalon par-dessus les chaussures pour qu’une projection n’y tombe pas. Et rien de gras : un tissu ou un gant graisseux, au contact de l’oxygène, peut s’enflammer tout seul.' },
+      narration: 'On s’équipe avant de toucher au poste. Des lunettes à verres teintés, avec des protections sur les côtés, contre le rayonnement de la flamme et les projections. Le numéro de teinte dépend de la buse : c’est le professeur qui vous le donne. Des gants et un tablier en cuir, une tenue en coton, le pantalon par-dessus les chaussures pour qu’une projection n’y tombe pas. Et rien de gras : un tissu ou un gant graisseux, au contact de l’oxygène, peut s’enflammer tout seul.' },
     { titre: 'Dégager la zone', texte: 'Un mètre libre autour du poste. Repérez l’extincteur.',
       pointCle: 'Ni chiffon, ni carton, ni produit inflammable.',
       pourquoi: 'L’oxygène active le moindre départ de feu.',
       figure: { svg: 'poste', etat: 'secours' }, clip: 'clips/2-1/02-zone.mp4',
       narration: 'On dégage un mètre autour du poste : rien qui puisse brûler. L’oxygène rend un feu beaucoup plus violent. Et on repère l’extincteur, pour ne pas avoir à le chercher.' },
-    { titre: 'Contrôler les bouteilles', texte: 'Debout, arrimées par leur chaîne, loin de toute chaleur. Reconnaissez-les à l’ogive.',
+    { titre: 'Contrôler les bouteilles', texte: 'Debout, à la verticale, arrimées par leur chaîne, loin de toute chaleur. Reconnaissez-les à l’ogive. Une bouteille d’acétylène qui a été couchée ne s’utilise pas : prévenez le professeur.',
       pointCle: 'L’acétylène ne se couche jamais.',
       pourquoi: 'Couchée, l’acétylène laisse couler l’acétone qui la stabilise. Et une bouteille chauffée voit sa pression monter.',
-      aValider: 'Inclinaison tolérée de l’acétylène : « jamais couchée » (INRS), « 45° maximum » ou « au moins 30° » selon deux fiches',
       figure: { svg: 'oa', etat: 'poste' }, clip: 'clips/2-1/03-bouteilles.mp4',
-      narration: 'On regarde les bouteilles. Debout, retenues par leur chaîne, loin de toute source de chaleur. L’acétylène, surtout, ne se couche jamais : à l’intérieur, il est dissous dans un liquide qui le stabilise, et couchée, ce liquide s’écoule par le robinet. On reconnaît chaque gaz à la couleur de l’ogive, pas à l’étiquette qui a pu tomber.' },
+      narration: 'On regarde les bouteilles. Debout, retenues par leur chaîne, loin de toute source de chaleur. L’acétylène, surtout, ne se couche jamais : à l’intérieur, il est dissous dans un liquide qui le stabilise, et couchée, ce liquide s’écoule par le robinet. Une bouteille d’acétylène qui a été couchée ne se sert pas : on prévient le professeur. On reconnaît chaque gaz à la couleur de l’ogive, pas à l’étiquette qui a pu tomber.' },
     { titre: 'Vérifier le détendeur et le chalumeau fermés', texte: 'Vis de détente desserrées à fond, robinets du chalumeau fermés.',
       pointCle: 'Vis desserrée : rien ne passe vers le chalumeau.',
       pourquoi: 'Si la vis est serrée à l’ouverture de la bouteille, la pression arrive d’un coup sur le détendeur et dans les tuyaux.',
@@ -1022,15 +999,13 @@ CUIVREZO.stations.push({
     { titre: 'Régler la basse pression d’oxygène', texte: 'Vissez la vis de détente jusqu’à la valeur donnée par le professeur.',
       pointCle: 'La valeur de l’atelier, pas une valeur au hasard.',
       pourquoi: 'Le chalumeau et la buse sont prévus pour une pression donnée : trop, la flamme se décolle ; pas assez, elle claque.',
-      aValider: 'Basse pression d’oxygène : de 0,8 à 2,5 bar selon les fiches ; la valeur du lycée n’est écrite nulle part',
       figure: { svg: 'oa', etat: 'detendeur' }, clip: 'clips/2-1/07-bp-o.mp4',
-      narration: 'On visse doucement la vis de détente, en regardant le manomètre de basse pression, jusqu’à la valeur que donne le professeur pour l’atelier. Les fiches donnent des valeurs voisines, autour d’un bar : c’est la valeur affichée au poste qui fait foi.' },
-    { titre: 'Ouvrir et régler l’acétylène', texte: 'Même geste sur la bouteille d’acétylène, clé laissée dessus. Basse pression à la valeur donnée.',
+      narration: 'On visse doucement la vis de détente, en regardant le manomètre de basse pression, jusqu’à la valeur que donne le professeur pour l’atelier. Cette valeur dépend du chalumeau et de sa buse, d’après la notice du fabricant : ce n’est pas à vous de la deviner, c’est la valeur affichée au poste qui fait foi.' },
+    { titre: 'Ouvrir et régler l’acétylène', texte: 'Toujours après l’oxygène : même geste sur la bouteille d’acétylène, clé laissée dessus. Basse pression à la valeur donnée.',
       pointCle: 'Jamais plus de 1,5 bar d’acétylène.',
       pourquoi: 'Au-delà, l’acétylène peut se décomposer violemment, même sans flamme.',
-      aValider: 'Ordre d’ouverture oxygène puis acétylène : une seule fiche (TP 002) ; basse pression d’acétylène 0,2 à 0,5 bar selon les fiches',
       figure: { svg: 'oa', etat: 'ouvrir' }, clip: 'clips/2-1/08-ouvrir-a.mp4',
-      narration: 'Même geste pour l’acétylène : un quart de tour, lentement, de côté. On laisse la clé sur le robinet, pour pouvoir le refermer aussitôt. Puis on règle sa basse pression à la valeur donnée, toujours faible : quelques dixièmes de bar. L’acétylène ne s’utilise jamais au-dessus d’un bar et demi : au-delà, il peut se décomposer violemment, même sans flamme.' },
+      narration: 'Même geste pour l’acétylène, toujours après l’oxygène : le gaz combustible s’ouvre en dernier. Un quart de tour, lentement, de côté. On laisse la clé sur le robinet, pour pouvoir le refermer aussitôt. Puis on règle sa basse pression à la valeur que donne le professeur. L’acétylène ne s’utilise jamais au-dessus d’un bar et demi : au-delà, il peut se décomposer violemment, même sans flamme.' },
     { titre: 'Chercher les fuites à l’eau savonneuse', texte: 'Au pinceau, sur les détendeurs, les robinets et les raccords. Une bulle, c’est une fuite.',
       pointCle: 'Jamais une flamme pour chercher une fuite.',
       pourquoi: 'Une fuite de gaz sur un poste qu’on va allumer, c’est un départ de feu assuré.',
@@ -1069,7 +1044,7 @@ CUIVREZO.stations.push({
       figure: { svg: 'oa', etat: 'savon' }, narration: 'Dernier contrôle : pas une bulle.' }
   ],
   prof: {
-    verifie: ['La fiche de sécurité, signée', 'Le poste : bouteilles, détendeurs, tuyaux, clapets', 'Les pressions et l’étanchéité', 'Son visa : sans lui, pas d’allumage'],
+    verifie: ['La fiche de sécurité, signée', 'Le poste : bouteilles, détendeurs, tuyaux, clapets', 'Les pressions (valeurs de la notice du chalumeau, acétylène au plus 1,5 bar) et l’étanchéité', 'La teinte des lunettes, choisie d’après la buse (NF EN 169 : n° 4 jusqu’à 70 l/h d’acétylène, n° 5 jusqu’à 200, n° 6 jusqu’à 800, n° 7 au-delà)', 'Son visa : sans lui, pas d’allumage'],
     narration: 'Le professeur vérifie le poste à son tour, sans complaisance : c’est sa signature qui autorise l’allumage. Un poste bien préparé, c’est la moitié de la sécurité du chalumeau. L’autre moitié, c’est l’allumage, la flamme et l’extinction : la station suivante.'
   }
 });
@@ -1077,9 +1052,10 @@ CUIVREZO.stations.push({
 /* Station 2-2 — Allumer, régler, éteindre la flamme. Source : sources-metier/2-chalumeau.md (partie 2-2)
    RÈGLE DES FICHES : le professeur est présent à CHAQUE allumage ; aucun élève seul à un poste allumé.
    La station prépare le geste, elle ne remplace pas la surveillance.
-   Allumage : oxygène un peu, acétylène largement, allumer, régler (INRS ED 742 et sept autres fiches) ;
-   trois fiches ouvrent l'acétylène d'abord : désaccord signalé. Extinction : acétylène d'abord (toutes
-   les fiches). Fin de travail : ordre de la majorité des fiches ; l'INRS diffère sur le moment des vis. */
+   DÉCIDÉ le 30/09/2026 (DECISIONS-2026-09-30.md) : le gaz combustible s'ouvre en dernier et se ferme en premier.
+   Allumage : oxygène un peu, acétylène largement, allumer, régler (INRS ED 742 p. 22). Extinction : acétylène,
+   un peu d'oxygène, oxygène (INRS). Fin de travail : bouteilles fermées (acétylène d'abord), purge à zéro,
+   vis desserrées, robinets du chalumeau refermés (OPPBTP, notice WELDTEAM, cinq fiches). */
 CUIVREZO.stations.push({
   id: '2-2', ligne: 2, titre: 'Allumer, régler, éteindre la flamme', duree: '25 min', vignette: 'images/2-2-allumer.webp',
   sources: ['sources-metier/2-chalumeau.md'],
@@ -1088,7 +1064,6 @@ CUIVREZO.stations.push({
     titre: 'Une flamme neutre, allumée et éteinte dans l’ordre',
     texte: 'Devant le professeur, vous allumez, vous réglez une flamme neutre, vous nommez les deux autres, et vous éteignez dans le bon ordre.',
     criteres: ['Allumage dans l’ordre, avec l’allumeur à pierre', 'Flamme neutre : dard net, arrondi, ni sifflement ni fumée', 'Les deux autres flammes reconnues et nommées', 'Extinction dans l’ordre, poste refermé en fin de travail'],
-    aValider: 'Codes du référentiel posés par analogie : à confirmer',
     figure: { svg: 'flamme', etat: 'neutre', legende: 'La flamme neutre : un dard net, arrondi, bien délimité.' },
     narration: 'Allumer un chalumeau n’a rien de difficile, à condition de toujours faire les gestes dans le même ordre. C’est l’ordre qui protège : il évite le claquement à l’allumage, la fumée noire, et le retour de flamme à l’extinction. Dans cette station, vous apprenez cet ordre et vous apprenez à lire la flamme. Mais retenez la règle de l’atelier : vous n’allumez jamais seul, le professeur est toujours là.'
   },
@@ -1112,9 +1087,8 @@ CUIVREZO.stations.push({
     { titre: 'Ouvrir un peu l’oxygène', texte: 'Ouvrez légèrement le robinet bleu.',
       pointCle: 'Un filet d’oxygène, pas plus.',
       pourquoi: 'Ce filet évite les flammèches noires et fumeuses de l’acétylène pur à l’allumage.',
-      aValider: 'Ordre d’allumage : oxygène d’abord dans huit fiches et l’INRS ; acétylène d’abord dans trois fiches (TP2, instructions, soudage OA)',
       figure: { svg: 'oa', etat: 'allumer' }, clip: 'clips/2-2/02-oxygene.mp4',
-      narration: 'Premier robinet : l’oxygène, le bleu, ouvert légèrement. Juste un filet. Il évite qu’à l’allumage l’acétylène brûle seul, en flammèches noires et en suie.' },
+      narration: 'Premier robinet : l’oxygène, le bleu, ouvert légèrement. Juste un filet. Il évite qu’à l’allumage l’acétylène brûle seul, en flammèches noires et en suie. C’est l’ordre que recommande l’INRS : l’oxygène d’abord, le gaz combustible ensuite.' },
     { titre: 'Ouvrir largement l’acétylène', texte: 'Ouvrez le robinet rouge, largement.',
       pointCle: 'Et on allume aussitôt.',
       pourquoi: 'L’acétylène qui sort sans être allumé s’accumule autour de vous.',
@@ -1132,26 +1106,24 @@ CUIVREZO.stations.push({
       narration: 'On ouvre maintenant l’oxygène, doucement, en regardant le cœur de la flamme, le dard. Il est d’abord long et entouré d’un voile blanc : c’est la flamme carburante. À mesure que l’oxygène arrive, le voile se retire. Dès qu’il a disparu et que le dard est net, arrondi, on s’arrête : c’est la flamme neutre. Si l’on continue, le dard raccourcit, s’affine, et la flamme se met à siffler : elle est oxydante.' },
     { titre: 'Reconnaître les trois flammes', texte: 'Carburante : dard long, voile blanc. Neutre : dard net, arrondi. Oxydante : dard court, pointu, qui siffle.',
       pointCle: 'Le professeur vous demande de les nommer.',
-      pourquoi: 'Chaque travail demande sa flamme. Savoir les lire, c’est savoir corriger.',
-      aValider: 'Flamme pour braser le cuivre : neutre (deux fiches), carburante (deux fiches), neutre à légèrement réductrice (G10)',
+      pourquoi: 'Chaque travail demande sa flamme. Pour braser le cuivre, on règle une flamme neutre, jamais oxydante. Savoir les lire, c’est savoir corriger.',
       figure: { svg: 'flamme', etat: 'trois' }, clip: 'clips/2-2/06-trois.mp4',
-      narration: 'Il faut savoir reconnaître les trois flammes d’un coup d’œil. La carburante, trop riche en acétylène : un dard long, entouré d’un voile blanc. La neutre : un dard net et arrondi. L’oxydante, trop riche en oxygène : un dard court et pointu, et une flamme qui siffle. Le professeur vous les fera nommer.' },
+      narration: 'Il faut savoir reconnaître les trois flammes d’un coup d’œil. La carburante, trop riche en acétylène : un dard long, entouré d’un voile blanc. La neutre : un dard net et arrondi. L’oxydante, trop riche en oxygène : un dard court et pointu, et une flamme qui siffle. Pour braser le cuivre, vous garderez la flamme neutre, jamais l’oxydante, qui noircit le cuivre. Le professeur vous les fera nommer.' },
     { titre: 'Ne jamais poser le chalumeau allumé', texte: 'Pendant le travail, le chalumeau reste en main. Pour le poser, on l’éteint.',
       pointCle: 'Même « une seconde ».',
       pourquoi: 'Un chalumeau posé allumé glisse, tourne, et brûle ce qu’il touche.',
       figure: { svg: 'poste', etat: 'secours' }, clip: 'clips/2-2/07-poser.mp4',
       narration: 'Un chalumeau allumé ne se pose jamais, même une seconde, même sur l’établi. Il bascule, tourne, et la flamme part vers un tuyau ou une main. Pour le poser, on l’éteint.' },
-    { titre: 'Éteindre : l’acétylène d’abord', texte: 'Fermez d’abord le robinet d’acétylène, puis celui d’oxygène.',
+    { titre: 'Éteindre : l’acétylène d’abord', texte: 'Fermez d’abord le robinet d’acétylène. Laissez l’oxygène s’échapper un court instant, puis fermez le robinet d’oxygène.',
       pointCle: 'Rouge d’abord, bleu ensuite.',
       pourquoi: 'En coupant d’abord le gaz combustible, la flamme s’éteint net, sans claquement ni suie.',
       figure: { svg: 'oa', etat: 'eteindre' }, clip: 'clips/2-2/08-eteindre.mp4',
-      narration: 'Pour éteindre, on ferme d’abord le robinet d’acétylène, le rouge : la flamme s’éteint net. Puis celui d’oxygène, le bleu. Toutes les fiches de l’atelier sont d’accord sur cet ordre. Le chalumeau éteint se pose sur son crochet, et on surveille la zone : rien ne doit couver.' },
-    { titre: 'En fin de travail, refermer le poste', texte: 'Fermez les bouteilles, purgez les tuyaux par le chalumeau jusqu’à zéro, desserrez les vis de détente, refermez les robinets.',
+      narration: 'Pour éteindre, on ferme d’abord le robinet d’acétylène, le rouge : la flamme s’éteint net. On laisse l’oxygène s’échapper un court instant, pour chasser ce qui reste d’acétylène dans le chalumeau, puis on ferme celui d’oxygène, le bleu. C’est l’ordre de l’INRS, et toutes les fiches de l’atelier sont d’accord. Le chalumeau éteint se pose sur son crochet, et on surveille la zone : rien ne doit couver.' },
+    { titre: 'En fin de travail, refermer le poste', texte: 'Fermez les deux bouteilles, l’acétylène d’abord. Ouvrez les robinets du chalumeau et purgez jusqu’à zéro aux deux manomètres, loin de toute flamme. Desserrez les vis de détente. Refermez les robinets du chalumeau.',
       pointCle: 'Les manomètres retombent à zéro.',
       pourquoi: 'Un poste laissé sous pression fuit pendant la nuit, et fatigue les détendeurs.',
-      aValider: 'Moment où l’on desserre les vis : avant de fermer les bouteilles (INRS, un cours) ou après la purge (cinq fiches)',
       figure: { svg: 'oa', etat: 'fin' }, clip: 'clips/2-2/09-fin.mp4',
-      narration: 'À la fin du travail, on referme tout le poste. On ferme les deux bouteilles. On purge : les robinets du chalumeau ouverts, le gaz resté dans les tuyaux s’échappe jusqu’à ce que les manomètres retombent à zéro. On desserre les vis de détente, et on referme les robinets du chalumeau. Le poste est au repos, sans pression.' }
+      narration: 'À la fin du travail, on referme tout le poste, toujours dans le même ordre. D’abord les deux bouteilles, en commençant par l’acétylène : le gaz combustible se ferme en premier. Ensuite on purge : on ouvre les robinets du chalumeau, dans un endroit aéré, loin de toute flamme, et le gaz resté dans les tuyaux s’échappe jusqu’à ce que les manomètres retombent à zéro. Alors seulement, on desserre les vis de détente, et on referme les robinets du chalumeau. Le poste est au repos, sans aucune pression.' }
   ],
   pieges: [
     { titre: 'Le chalumeau ouvert, pas allumé', voit: 'Du gaz s’échappe pendant qu’on cherche l’allumeur.', cause: 'Hésitation, allumeur pas prêt.',
@@ -1191,7 +1163,9 @@ CUIVREZO.stations.push({
 /* Station 3-1 — La brasure tendre à l'étain. Source : sources-metier/3-brasures.md (partie 3-1)
    Référence : fiche 02 « brasure tendre » du Centre du cuivre et le cours CICLA. Usage : eau sanitaire et
    chauffage ; en froid, on brase fort (cours T10 de 1re MFER) : la station le dit.
-   Le réglage du chalumeau propane est absent des fiches (« le professeur donne les consignes »). */
+   DÉCIDÉ le 30/09/2026 (DECISIONS-2026-09-30.md) : le chalumeau propane s'allume et se règle devant le
+   professeur, d'après la notice du chalumeau ; le décapant va sur les deux surfaces à assembler ; pas de
+   couleur de chauffe, le fil d'étain fait le test. */
 CUIVREZO.stations.push({
   id: '3-1', ligne: 3, titre: 'La brasure tendre à l’étain', duree: '30 min', vignette: 'images/3-1-tendre.webp',
   sources: ['sources-metier/3-brasures.md'],
@@ -1200,7 +1174,6 @@ CUIVREZO.stations.push({
     titre: 'Un anneau d’étain régulier, étanche',
     texte: 'L’étain a filé tout autour du joint et forme un anneau régulier. Le cuivre n’est pas noirci, le décapant est essuyé.',
     criteres: ['Anneau d’étain régulier, tout autour du joint', 'Cuivre non noirci, non brûlé', 'Décapant essuyé, pas de coulure à l’intérieur', 'Pièces restées immobiles pendant le refroidissement'],
-    aValider: 'Codes du référentiel posés d’après la fiche C3.4 (« brasage fort et/ou brasage tendre ») : à confirmer',
     figure: { img: 'images/3-1-tendre.webp', alt: 'L’étain file autour d’un joint chauffé au chalumeau propane', legende: 'L’étain touche le cuivre chaud et file tout autour.' },
     narration: 'La brasure tendre se fait à basse température : l’étain fond vers deux cent cinquante degrés, bien avant que le cuivre ne rougisse. Elle sert sur les réseaux d’eau sanitaire et de chauffage. Sur un circuit frigorifique, qui monte en pression, on brase fort : ce sera la station suivante. Mais le principe est le même, et il est plus facile à voir ici : un métal fondu qui file tout seul dans un joint chaud et propre.'
   },
@@ -1211,7 +1184,7 @@ CUIVREZO.stations.push({
       { nom: 'Le fil d’étain', detail: 'étain-cuivre ou étain-argent : jamais d’étain-plomb sur l’eau potable' },
       { nom: 'La pâte décapante', detail: 'adaptée à la brasure tendre' },
       { nom: 'Le tampon abrasif et un chiffon propre', detail: 'pour nettoyer avant, essuyer après' },
-      { nom: 'Le chalumeau propane', detail: 'réglé selon les consignes du professeur', aValider: 'Allumage et réglage du propane absents des fiches' },
+      { nom: 'Le chalumeau propane', detail: 'allumé et réglé devant le professeur, d’après la notice du chalumeau' },
       { nom: 'Le pare-flamme', detail: 'derrière le joint' },
       { nom: 'L’emboîture prête', detail: 'station 1.7 : le tube entre sans forcer ni jouer' }
     ],
@@ -1233,23 +1206,21 @@ CUIVREZO.stations.push({
       pourquoi: 'L’étain ne mouille pas un cuivre oxydé.',
       figure: { svg: 'brasure', etat: 'capillarite' }, clip: 'clips/3-1/03-nettoyer.mp4',
       narration: 'On nettoie au tampon abrasif l’extérieur du tube mâle et l’intérieur de l’emboîture, jusqu’à ce que le cuivre brille. L’étain ne s’accroche pas à un cuivre terni : il roulerait dessus en billes.' },
-    { titre: 'Étaler le décapant sur le mâle', texte: 'Une fine couche de pâte décapante sur le mâle, sans excès, tube tenu vers le haut.',
-      pointCle: 'Peu, et pas de coulure à l’intérieur.',
+    { titre: 'Étaler le décapant sur les deux pièces', texte: 'Une fine couche de pâte décapante sur le mâle, et une autre à l’intérieur de l’emboîture, sans excès, tube tenu vers le haut.',
+      pointCle: 'Peu, sur les deux pièces, et pas de coulure dans le tube.',
       pourquoi: 'Le décapant protège le cuivre de l’oxydation à la chauffe. En excès, il coule dans le tube.',
-      aValider: 'Décapant sur le mâle seul (trois fiches) ou sur les deux parties (TP de 2010)',
       figure: { svg: 'brasure', etat: 'capillarite' }, clip: 'clips/3-1/04-decapant.mp4',
-      narration: 'On étale une fine couche de pâte décapante sur le tube mâle, et seulement là. Juste de quoi couvrir : le surplus ne sert à rien, il coule à l’intérieur du tube. Le décapant empêche le cuivre de s’oxyder pendant la chauffe, pour que l’étain puisse s’y accrocher.' },
+      narration: 'On étale une fine couche de pâte décapante sur le tube mâle, et une autre à l’intérieur de l’emboîture : partout où l’étain devra s’accrocher. Juste de quoi couvrir : le surplus ne sert à rien, il coule à l’intérieur du tube. Le décapant empêche le cuivre de s’oxyder pendant la chauffe, pour que l’étain puisse s’y accrocher.' },
     { titre: 'Emboîter en tournant', texte: 'Emboîtez les deux pièces en tournant un peu.',
       pointCle: 'Le décapant se répartit tout autour.',
       pourquoi: 'Un côté sans décapant, c’est un côté où l’étain ne prend pas.',
       figure: { svg: 'emboiture', etat: 'profil' }, clip: 'clips/3-1/05-emboiter.mp4',
       narration: 'On emboîte en faisant tourner un peu le tube : le décapant se répartit sur tout le tour du joint.' },
-    { titre: 'Chauffer modérément', texte: 'Allumez le chalumeau propane et chauffez toute la longueur de l’emboîture.',
+    { titre: 'Chauffer modérément', texte: 'Le chalumeau propane est allumé et réglé devant le professeur. Chauffez toute la longueur de l’emboîture, en balayant.',
       pointCle: 'Modérément : le cuivre ne doit ni noircir ni rougir.',
-      pourquoi: 'L’étain fond vers 250 °C. Au-delà, on oxyde le cuivre, et l’étain n’y adhère plus.',
-      aValider: 'Couleur et temps de chauffe du tendre : absents des fiches',
+      pourquoi: 'L’étain fond vers 250 °C. Au-delà, on oxyde le cuivre, et l’étain n’y adhère plus. Il n’y a pas de couleur à attendre : c’est le fil d’étain, au geste suivant, qui dit si le tube est assez chaud.',
       figure: { svg: 'brasure', etat: 'chauffe' }, clip: 'clips/3-1/06-chauffer.mp4',
-      narration: 'On allume le chalumeau propane selon les consignes du professeur, et l’on chauffe toute la longueur de l’emboîture, en tournant. Modérément : l’étain fond vers deux cent cinquante degrés, le cuivre ne doit ni noircir ni rougir. Trop chauffé, il s’oxyde, et l’étain n’y tient plus.' },
+      narration: 'Le chalumeau propane s’allume et se règle devant le professeur, d’après la notice du chalumeau. Ensuite, on chauffe toute la longueur de l’emboîture, en balayant. Modérément : l’étain fond vers deux cent cinquante degrés, le cuivre ne doit ni noircir ni rougir. Trop chauffé, il s’oxyde, et l’étain n’y tient plus. Il n’y a pas de couleur à attendre : c’est le fil d’étain, au geste suivant, qui dira si le tube est assez chaud.' },
     { titre: 'Toucher le joint avec l’étain', texte: 'Écartez la flamme et touchez le joint avec le fil d’étain.',
       pointCle: 'L’étain fond au contact du tube chaud, pas dans la flamme.',
       pourquoi: 'Si le tube est assez chaud, c’est lui qui fait fondre l’étain et l’aspire dans le joint.',
@@ -1294,16 +1265,16 @@ CUIVREZO.stations.push({
       figure: { svg: 'brasure', etat: 'seche' }, narration: 'Dernier contrôle : pas de goutte posée sur le joint.' }
   ],
   prof: {
-    verifie: ['Les emboîtures, avant de braser', 'Le joint : anneau complet, cuivre propre', 'Le décapant essuyé', 'Plus tard : l’étanchéité, à la solution moussante'],
+    verifie: ['Le chalumeau propane, allumé et réglé devant lui', 'Les emboîtures, avant de braser', 'Le joint : anneau complet, cuivre propre', 'Le décapant essuyé', 'Plus tard : l’étanchéité, à la solution moussante'],
     narration: 'Le professeur regarde vos emboîtures avant la brasure, puis le joint fini. L’étanchéité se vérifiera ensuite, sous pression, à la solution moussante. La station suivante passe à la brasure forte, celle des circuits frigorifiques.'
   }
 });
 
 /* Station 3-2 — La brasure forte sous azote. Source : sources-metier/3-brasures.md (partie 3-2)
    Référence retenue en cas de désaccord : le TP-06 « brasage fort sous azote » de 1re MFER et le cours G10
-   (la pratique actuelle de F. Henninot), puis la fiche 03 du Centre du cuivre. Treize désaccords relevés entre
-   fiches (température, flux, flamme, côté chauffé, refroidissement) : chacun est marqué aValider.
-   L'allumage, le réglage et l'extinction du chalumeau relèvent de la station 2.2. */
+   (la pratique actuelle de F. Henninot), puis la fiche 03 du Centre du cuivre. Les désaccords entre fiches
+   (température, flux, flamme, côté chauffé, refroidissement, débit d'azote) sont TRANCHÉS le 30/09/2026 :
+   voir DECISIONS-2026-09-30.md. L'allumage, le réglage et l'extinction du chalumeau relèvent de la station 2.2. */
 CUIVREZO.stations.push({
   id: '3-2', ligne: 3, titre: 'La brasure forte sous azote', duree: '40 min', vignette: 'images/3-2-forte.webp',
   sources: ['sources-metier/3-brasures.md'],
@@ -1312,7 +1283,6 @@ CUIVREZO.stations.push({
     titre: 'Un joint brasé plein, propre à l’intérieur',
     texte: 'L’apport a rempli le joint tout autour ; le cuivre n’est pas brûlé ; l’intérieur du tube est resté couleur cuivre, sans calamine.',
     criteres: ['Cordon fin et régulier tout autour, ni trou ni interruption', 'Cuivre à peine coloré, jamais noirci', 'Intérieur couleur cuivre : pas de calamine', 'Étanche : l’épreuve à l’azote en jugera'],
-    aValider: 'Codes du référentiel posés d’après la fiche C3.4 (« brasage fort et/ou brasage tendre ») : à confirmer',
     figure: { svg: 'brasure', etat: 'reussie', legende: 'L’apport remplit le jeu ; un petit cordon régulier au bord.' },
     narration: 'La brasure forte est le raccord le plus courant d’un circuit frigorifique. Elle doit tenir la pression, et rester étanche des années. Mais elle a un ennemi invisible : à cette température, l’intérieur du tube se couvre d’écailles noires, la calamine, qui partiront un jour dans le circuit boucher un détendeur ou un filtre. C’est pour cela qu’on brase sous azote. Dans cette station, deux réussites comptent : un joint plein dehors, et un tube propre dedans.'
   },
@@ -1325,7 +1295,7 @@ CUIVREZO.stations.push({
       { nom: 'L’azote : bouteille, détendeur, débitmètre, tuyau', detail: 'pour balayer l’intérieur du tube' },
       { nom: 'Le tampon abrasif', detail: 'pour nettoyer les deux pièces' },
       { nom: 'L’écran de brasage, le tapis anti-feu, l’extincteur', detail: 'la zone autour du joint est protégée' },
-      { nom: 'Lunettes teintées, gants à manchettes, tablier', detail: 'lunettes de teinte 4 à 7, selon la fiche de poste' }
+      { nom: 'Lunettes teintées, gants à manchettes, tablier', detail: 'lunettes à verres teintés : le professeur donne le numéro de teinte, d’après la buse' }
     ],
     narration: 'Le matériel se partage en trois familles. Le feu : le poste oxyacétylénique, vérifié à la station deux point un. L’apport : des baguettes de cuivre-phosphore, qui brasent le cuivre sur le cuivre sans flux. Et l’azote, avec son détendeur et son débitmètre, qui va circuler dans le tube pendant toute la brasure. Autour, on protège : écran, tapis anti-feu, extincteur à portée. Et sur vous : lunettes teintées, gants à manchettes, tablier.'
   },
@@ -1348,27 +1318,23 @@ CUIVREZO.stations.push({
     { titre: 'Choisir la baguette', texte: 'Cuivre sur cuivre : baguette de cuivre-phosphore, sans flux. Cuivre sur laiton : baguette à l’argent, avec flux.',
       pointCle: 'Jamais de cuivre-phosphore sur de l’acier.',
       pourquoi: 'Le phosphore nettoie le cuivre tout seul pendant la brasure : c’est pour cela qu’il se passe de flux. Sur un raccord en laiton, il ne suffit plus.',
-      aValider: 'Flux avec le cuivre-phosphore : « sans flux » dans trois sources, « décapant sur les deux parties » dans le TP de 2010',
       figure: { svg: 'brasure', etat: 'baguette' }, clip: 'clips/3-2/04-baguette.mp4',
       narration: 'Deux baguettes, deux usages. Pour un joint de cuivre sur cuivre, le cuivre-phosphore : le phosphore qu’il contient nettoie le cuivre pendant la brasure, il se passe donc de flux. Pour un raccord en laiton, on prend une baguette à l’argent, avec un flux. Et jamais de cuivre-phosphore sur de l’acier : le joint serait fragile.' },
-    { titre: 'Ouvrir l’azote avant d’allumer', texte: 'Branchez l’azote au tube, ouvrez un débit léger et continu, vérifiez qu’il sort à l’autre bout.',
+    { titre: 'Ouvrir l’azote avant d’allumer', texte: 'Branchez l’azote au tube, ouvrez le débit réglé par le professeur au débitmètre (léger et continu), vérifiez qu’il sort à l’autre bout.',
       pointCle: 'L’azote d’abord, la flamme ensuite.',
       pourquoi: 'L’azote chasse l’air du tube. Sans oxygène à l’intérieur, le cuivre chaud ne se couvre pas de calamine.',
-      aValider: 'Débit d’azote : « léger et continu » partout, aucune valeur en L/min dans les fiches (le TP la fait donner par le professeur)',
       figure: { svg: 'brasure', etat: 'azote' }, clip: 'clips/3-2/05-azote.mp4',
       narration: 'Voici le geste qui fait la différence. Avant même d’allumer, on branche l’azote au tube et on ouvre un débit léger, continu. On vérifie avec la main qu’il sort bien à l’autre bout. L’azote chasse l’air du tube ; sans oxygène à l’intérieur, le cuivre chauffé ne peut plus former de calamine. Le débit exact, c’est le professeur qui vous le donne.' },
-    { titre: 'Allumer et régler la flamme', texte: 'Allumez le chalumeau comme à la station 2.2 et réglez une flamme ni sifflante, ni fumeuse.',
+    { titre: 'Allumer et régler la flamme', texte: 'Allumez le chalumeau comme à la station 2.2, devant le professeur, et réglez une flamme neutre : ni sifflante, ni fumeuse.',
       pointCle: 'Une flamme neutre : dard net et arrondi.',
       pourquoi: 'Une flamme oxydante brûle le cuivre ; une flamme trop carburante salit le joint.',
-      aValider: 'Flamme : « carburante pour le cuivre » dans deux fiches, « neutre à légèrement réductrice » dans G10, « ni sifflante ni fumeuse » dans le TP-06',
       figure: { svg: 'flamme', etat: 'neutre' }, clip: 'clips/3-2/06-flamme.mp4',
-      narration: 'On allume le chalumeau exactement comme à la station deux point deux, et l’on règle la flamme : ni sifflante, ni fumeuse. C’est la flamme neutre, au dard net et arrondi. Une flamme oxydante, qui siffle, brûlerait le cuivre ; une flamme trop chargée en acétylène salirait le joint.' },
-    { titre: 'Chauffer les deux pièces', texte: 'Chauffez le joint en tournant autour, sur les deux pièces, jusqu’au rouge sombre.',
+      narration: 'On allume le chalumeau exactement comme à la station deux point deux, devant le professeur, et l’on règle la flamme : ni sifflante, ni fumeuse. C’est la flamme neutre, au dard net et arrondi. Une flamme oxydante, qui siffle, brûlerait le cuivre ; une flamme trop chargée en acétylène salirait le joint.' },
+    { titre: 'Chauffer les deux pièces', texte: 'Chauffez d’abord le tube, juste avant l’emboîture, puis la femelle. Balayez de l’un à l’autre, en tournant autour, jusqu’au rouge sombre.',
       pointCle: 'On chauffe le tube, pas la baguette.',
       pourquoi: 'L’apport ne coule que vers le métal chaud. Si un seul côté est chaud, il n’ira que d’un côté.',
-      aValider: 'Température : cinq valeurs dans les fiches (600 à 900 °C) ; couleur « rouge sombre » (fiche 03) ou « rouge terne ». Côté chauffé d’abord : trois versions',
       figure: { svg: 'brasure', etat: 'chauffe' }, clip: 'clips/3-2/07-chauffer.mp4',
-      narration: 'On chauffe le joint en faisant tourner la flamme autour, sur les deux pièces, pour qu’elles montent ensemble en température. On attend que le cuivre prenne une couleur rouge sombre. C’est le tube qu’on chauffe, pas la baguette : le métal d’apport ne coulera que vers le cuivre chaud. Un côté froid, et l’apport ne fera qu’un demi-tour.' },
+      narration: 'On commence par le tube, juste avant l’emboîture, puis on passe à la femelle, et l’on balaie de l’un à l’autre en faisant tourner la flamme autour, pour que les deux pièces montent ensemble en température. On attend que le cuivre prenne une couleur rouge sombre, à peine rouge, que l’on voit surtout à l’ombre. C’est le tube qu’on chauffe, pas la baguette : le métal d’apport ne coulera que vers le cuivre chaud. Un côté froid, et l’apport ne fera qu’un demi-tour.' },
     { titre: 'Présenter la baguette', texte: 'Posez la baguette sur le joint, du côté opposé à la flamme.',
       pointCle: 'Elle fond au contact du cuivre chaud, jamais dans la flamme.',
       pourquoi: 'Fondue dans la flamme, elle se pose en goutte sur un tube froid : le joint paraît fait, il n’est pas brasé.',
@@ -1379,12 +1345,11 @@ CUIVREZO.stations.push({
       pourquoi: 'L’apport aspiré par capillarité remplit le jeu : un cordon qui fait tout le tour annonce un joint plein.',
       figure: { svg: 'brasure', etat: 'capillarite' }, clip: 'clips/3-2/09-suivre.mp4',
       narration: 'Regardez : l’apport fondu disparaît dans le joint, aspiré par le jeu. On le suit tout autour du tube. Quand un petit anneau fin et régulier fait le tour complet, le joint est plein. Inutile d’en ajouter : le surplus ne rend pas le joint plus solide, il coule à l’intérieur.' },
-    { titre: 'Retirer la flamme, laisser refroidir', texte: 'Écartez la flamme progressivement. Laissez refroidir à l’air, sans toucher. Coupez l’azote une fois le tube froid.',
+    { titre: 'Retirer la flamme, laisser refroidir', texte: 'Écartez la flamme progressivement. Laissez refroidir à l’air, sans toucher, et jamais à l’eau. Coupez l’azote une fois le tube froid.',
       pointCle: 'L’azote reste ouvert jusqu’au refroidissement.',
-      pourquoi: 'Le cuivre encore chaud s’oxyde aussi : on protège l’intérieur jusqu’au bout. Et un tube brûlant ne change pas d’aspect : il brûle sans prévenir.',
-      aValider: 'Refroidissement : « jamais à l’eau » (TP-06, G10) contre « eau après refroidissement » (fiche 03)',
+      pourquoi: 'Le cuivre encore chaud s’oxyde aussi : on protège l’intérieur jusqu’au bout. L’eau sur un joint chaud le fissure par le choc, et elle n’a rien à faire dans un circuit frigorifique. Et un tube brûlant ne change pas d’aspect : il brûle sans prévenir.',
       figure: { svg: 'brasure', etat: 'azote' }, clip: 'clips/3-2/10-refroidir.mp4',
-      narration: 'On écarte la flamme doucement, puis on laisse refroidir à l’air, sans toucher. Un tube brasé brûlant a exactement le même aspect qu’un tube froid : c’est comme cela qu’on se brûle. L’azote reste ouvert jusqu’au refroidissement, parce que le cuivre encore chaud continue de s’oxyder. Ensuite seulement, on coupe l’azote, et l’on éteint le chalumeau comme à la station deux point deux.' }
+      narration: 'On écarte la flamme doucement, puis on laisse refroidir à l’air, sans toucher, et jamais à l’eau : le choc pourrait fissurer le joint, et l’eau n’a rien à faire dans un circuit frigorifique. Un tube brasé brûlant a exactement le même aspect qu’un tube froid : c’est comme cela qu’on se brûle. L’azote reste ouvert jusqu’au refroidissement, parce que le cuivre encore chaud continue de s’oxyder. Ensuite seulement, on coupe l’azote, et l’on éteint le chalumeau comme à la station deux point deux.' }
   ],
   pieges: [
     { titre: 'La surchauffe', voit: 'Cuivre noirci, bleui ou écaillé ; apport coulé loin du joint.', cause: 'Flamme trop forte, ou trop longtemps au même endroit.',
@@ -1416,7 +1381,7 @@ CUIVREZO.stations.push({
       figure: { svg: 'poste', etat: 'secours' }, narration: 'Dernier contrôle : tout est éteint, fermé, et rien ne couve.' }
   ],
   prof: {
-    verifie: ['Le poste vérifié avant d’allumer', 'L’azote qui sort, avant la flamme', 'Le joint : cordon plein, cuivre non brûlé', 'La coupe de la pièce d’essai : intérieur propre', 'Plus tard : l’épreuve d’étanchéité à l’azote'],
+    verifie: ['Le poste vérifié avant d’allumer', 'L’azote qui sort au débit réglé, avant la flamme', 'L’allumage, fait devant lui', 'Le joint : cordon plein, cuivre non brûlé', 'La coupe de la pièce d’essai : intérieur propre', 'Plus tard : l’épreuve d’étanchéité à l’azote'],
     narration: 'Le professeur intervient trois fois : il vérifie le poste avant l’allumage, il constate que l’azote sort avant que la flamme ne s’approche, puis il coupe votre pièce d’essai pour regarder l’intérieur. C’est cette coupe qui dit la vérité d’une brasure sous azote.'
   }
 });
@@ -1424,8 +1389,9 @@ CUIVREZO.stations.push({
 /* Station 4-1 — Le chapeau de gendarme. Source : sources-metier/4-pieces-complexes.md (partie 1)
    Méthode retenue : « METHODE CHAPEAU DE GENDARME CUIVRE » du dossier CAP IFCA (C3-Réaliser) et fiches
    voisines : coude central d'abord (60 à 90°), puis deux coudes de moitié, A et B à égale distance de l'axe.
-   Les fiches divergent fortement (définition de l'axe, espacement des coudes, angles, outil) : aucune
-   n'emploie les repères L et R ; chaque choix est marqué aValider. Tolérance des fiches : ± 2 mm. */
+   Les fiches divergent (définition de l'axe, espacement des coudes, angles, outil) parce qu'elles décrivent
+   des outils différents : choix TRANCHÉS le 30/09/2026 (DECISIONS-2026-09-30.md). Aucune n'emploie les
+   repères L et R. Tolérance des fiches : ± 2 mm. */
 CUIVREZO.stations.push({
   id: '4-1', ligne: 4, titre: 'Le chapeau de gendarme', duree: '45 min', vignette: 'images/4-1-chapeau.webp',
   sources: ['sources-metier/4-pieces-complexes.md'],
@@ -1434,8 +1400,7 @@ CUIVREZO.stations.push({
     titre: 'Un contournement symétrique, branches alignées',
     texte: 'Le tube passe par-dessus l’obstacle avec un coude central et deux coudes de moitié. Les deux côtés sont égaux, les deux branches restent sur la même ligne.',
     criteres: ['Hauteur H conforme au plan', 'Les deux côtés du chapeau égaux', 'Les deux branches alignées sur une même droite', 'Pièce plane, tube ni écrasé ni marqué (cotes à ± 2 mm)'],
-    aValider: 'Méthode retenue parmi cinq (définition de l’axe, espacement des coudes, angles, outil) : à confirmer',
-    figure: { svg: 'chapeau', etat: 'plan', legende: 'Le chapeau passe au-dessus de l’obstacle ; H se mesure d’axe à axe.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'chapeau', angle: '90' }, legende: 'Le chapeau passe au-dessus de l’obstacle ; H se mesure d’axe à axe.' },
     narration: 'Sur un chantier, un tube rencontre souvent un autre tube, une gaine, un support. Plutôt que de couper et d’ajouter des raccords, on le fait passer par-dessus d’un seul morceau : c’est le chapeau de gendarme. Un coude au sommet, deux coudes plus doux de chaque côté. Sa difficulté n’est pas dans chaque coude, que vous savez faire : elle est dans la symétrie. Les deux branches doivent repartir exactement sur la même ligne.'
   },
   materiel: {
@@ -1451,29 +1416,25 @@ CUIVREZO.stations.push({
     narration: 'Le chapeau se fait avec les outils que vous connaissez : la cintrette ou la cintreuse, le mètre, le feutre. Il s’y ajoute la règle, qui dira si les deux branches sont alignées, et la fausse équerre, qui compare les angles. Le plan donne la hauteur H du chapeau, d’axe à axe, et l’emplacement de l’obstacle.'
   },
   gestes: [
-    { titre: 'Repérer l’axe du chapeau', texte: 'Sur le plan, repérez où passe le milieu de l’obstacle. Reportez-le sur le tube : c’est l’axe du chapeau.',
+    { titre: 'Repérer l’axe du chapeau', texte: 'Sur le plan, repérez où passe le milieu de l’obstacle. Reportez cette cote sur le tube, contre la butée : c’est l’axe du chapeau.',
       pointCle: 'L’axe au-dessus du centre de l’obstacle.',
       pourquoi: 'Tout le chapeau se construit symétriquement autour de cet axe : s’il est décalé, le chapeau l’est aussi.',
-      aValider: 'Position de l’axe : cote + 20 mm, cote − B (tableau), cote − R + 2 cm, M + 2 cm selon les fiches',
       figure: { svg: 'chapeau', etat: 'traits' }, clip: 'clips/4-1/01-axe.mp4',
       narration: 'Tout part de l’axe du chapeau : l’endroit du tube qui passera exactement au-dessus du milieu de l’obstacle. On le repère sur le plan, on le reporte sur le tube, en mesurant contre une butée comme toujours. Le chapeau entier va se construire symétriquement autour de ce trait.' },
-    { titre: 'Tracer A et B, à égale distance', texte: 'De part et d’autre de l’axe, tracez A et B à la même distance, sur tout le tour du tube.',
+    { titre: 'Tracer A et B, à égale distance', texte: 'De part et d’autre de l’axe, tracez A et B à la même distance, donnée par le plan, sur tout le tour du tube.',
       pointCle: 'Même distance des deux côtés.',
       pourquoi: 'A et B sont les deux coudes de moitié. S’ils ne sont pas à égale distance, le chapeau penche.',
-      aValider: 'Distance axe–A : « X = ½ Ø tube + ½ Ø obstacle + 10 mm » (fiche 08), « 2 × H » (recueil de façonnage), tableau par diamètre d’obstacle (fiche 10)',
       figure: { svg: 'chapeau', etat: 'traits' }, clip: 'clips/4-1/02-a-b.mp4',
       narration: 'De chaque côté de l’axe, on trace deux repères, A et B, à exactement la même distance, et sur tout le tour du tube. Ce seront les deux coudes de moitié. La distance dépend de la hauteur du chapeau et de la taille de l’obstacle : c’est le plan, ou le professeur, qui la donne.' },
     { titre: 'Choisir l’angle central', texte: 'L’angle du coude central dépend de la hauteur : entre 60 et 90°.',
       pointCle: 'Plus le chapeau est haut, plus le coude central est fermé.',
       pourquoi: 'Les deux coudes de côté font chacun la moitié de cet angle : c’est ce qui ramène les branches sur la même ligne.',
-      aValider: 'Angle central : 60 à 90° (méthode CAP), 30 à 120° (autre méthode), 90° puis deux 45° (recueil)',
       figure: { svg: 'chapeau', etat: 'central' }, clip: 'clips/4-1/03-angle.mp4',
       narration: 'On choisit l’angle du coude central, entre soixante et quatre-vingt-dix degrés, selon la hauteur à franchir. Le principe à comprendre est simple : chaque coude de côté fera exactement la moitié de cet angle. Soixante au centre, trente de chaque côté. Quatre-vingt-dix au centre, quarante-cinq de chaque côté. C’est cette moitié qui ramène les deux branches sur la même ligne.' },
     { titre: 'Cintrer le coude central', texte: 'Placez l’axe sur l’outil, au milieu du coude, et cintrez à l’angle choisi.',
       pointCle: 'L’axe au milieu du coude, pas au début.',
       pourquoi: 'Le coude central doit être partagé en deux par l’axe, pour que les deux côtés soient égaux.',
-      aValider: 'Position de l’axe sur l’outil : « à la moitié de l’angle » (60° → repère 30°) dans la méthode CAP',
-      figure: { svg: 'chapeau', etat: 'central' }, clip: 'clips/4-1/04-central.mp4',
+      figure: { composant: 'cuivre-3d', attributs: { piece: 'chapeau', angle: '54' } }, clip: 'clips/4-1/04-central.mp4',
       narration: 'On commence par le coude du sommet. L’axe tracé sur le tube doit tomber au milieu du coude, pas à son début : on le place donc sur l’outil à la moitié de l’angle, par exemple sur le repère trente pour un coude de soixante. Puis on cintre jusqu’à l’angle choisi.' },
     { titre: 'Cintrer le coude A, à la moitié', texte: 'Placez le repère A sur l’outil et cintrez à la moitié de l’angle central, dans l’autre sens.',
       pointCle: 'Le coude de côté tourne en sens inverse du coude central.',
@@ -1516,7 +1477,7 @@ CUIVREZO.stations.push({
       figure: { svg: 'chapeau', etat: 'controle' }, narration: 'Dernier contrôle : la pièce plane, les coudes ronds.' }
   ],
   prof: {
-    verifie: ['Le positionnement dans l’outil, avant le premier coude', 'La hauteur H et l’alignement des branches', 'La symétrie et la planéité', 'L’aspect des trois coudes'],
+    verifie: ['La distance de A et B à l’axe, prise sur son plan', 'Le positionnement dans l’outil, avant le premier coude', 'La hauteur H et l’alignement des branches', 'La symétrie et la planéité', 'L’aspect des trois coudes'],
     narration: 'Les fiches de l’atelier demandent d’appeler le professeur une fois le tube positionné dans l’outil, avant de cintrer : c’est le moment où une erreur se corrige encore. Puis il contrôle la pièce finie : hauteur, alignement, symétrie, planéité.'
   }
 });
@@ -1525,7 +1486,8 @@ CUIVREZO.stations.push({
    Méthode retenue : la méthode de chantier à 45° (fiche Rothenberger 8, recueil de façonnage, analyse
    baïonnette) : premier coude à 45°, retourner, régler le décalage à la règle, second coude à 45°.
    Les fiches divergent sur l'angle (20/45/60° selon la hauteur ; formule Rothenberger 90° × d / 2 Rc +
-   correctif) : marqué aValider. Tolérance des fiches : ± 2 mm. */
+   correctif) : TRANCHÉ le 30/09/2026, 45° pour tous les exercices (DECISIONS-2026-09-30.md).
+   Tolérance des fiches : ± 2 mm. */
 CUIVREZO.stations.push({
   id: '4-2', ligne: 4, titre: 'La baïonnette', duree: '35 min', vignette: 'images/4-2-baionnette.webp',
   sources: ['sources-metier/4-pieces-complexes.md'],
@@ -1534,8 +1496,7 @@ CUIVREZO.stations.push({
     titre: 'Deux branches parallèles, décalées à la cote',
     texte: 'Deux coudes égaux en sens opposés décalent le tube parallèlement à lui-même, de la valeur du plan.',
     criteres: ['Les deux branches parallèles', 'Le décalage à la cote du plan (± 2 mm)', 'Les deux coudes au même angle', 'Pièce plane, tube ni écrasé ni pincé'],
-    aValider: 'Angle retenu : 45° (méthode de chantier) ; d’autres fiches donnent 20, 45 ou 60° selon la hauteur, ou une formule avec correctif',
-    figure: { svg: 'baionnette', etat: 'plan', legende: 'Deux coudes égaux, en sens opposés : le décalage.' },
+    figure: { composant: 'cuivre-3d', attributs: { piece: 'baionnette', angle: '90' }, legende: 'Deux coudes égaux, en sens opposés : le décalage.' },
     narration: 'La baïonnette sert à rattraper une différence d’axe : un tube qui doit se décaler de quelques centimètres pour rejoindre un raccord, ou pour longer un mur. Deux coudes identiques, en sens opposés, et le tube repart parallèle à lui-même. Tout tient dans ce mot : parallèle. Si les deux coudes ne sont pas exactement égaux, les branches divergent, et le raccord n’arrive jamais en face.'
   },
   materiel: {
@@ -1558,7 +1519,7 @@ CUIVREZO.stations.push({
     { titre: 'Cintrer le premier coude à 45°', texte: 'Placez le trait au départ du cintrage et cintrez à 45°. Contrôlez à la fausse équerre.',
       pointCle: '45°, pas « à peu près ».',
       pourquoi: 'Le second coude devra être exactement le même : c’est celui-ci qui sert de modèle.',
-      figure: { svg: 'baionnette', etat: 'premier' }, clip: 'clips/4-2/02-premier.mp4',
+      figure: { composant: 'cuivre-3d', attributs: { piece: 'baionnette', angle: '45' } }, clip: 'clips/4-2/02-premier.mp4',
       narration: 'On place le trait au départ du cintrage, et l’on cintre à quarante-cinq degrés. On vérifie tout de suite à la fausse équerre : ce premier coude sert de modèle au second, qui devra lui être parfaitement identique.' },
     { titre: 'Retourner le tube', texte: 'Sortez le tube et retournez-le, pour cintrer le second coude dans l’autre sens.',
       pointCle: 'Le second coude tourne en sens inverse, dans le même plan.',
@@ -1568,7 +1529,6 @@ CUIVREZO.stations.push({
     { titre: 'Régler le décalage à la règle', texte: 'Faites coulisser le tube dans l’outil jusqu’à ce que le décalage mesuré soit celui du plan, règle parallèle au tube.',
       pointCle: 'Le décalage se mesure d’axe à axe.',
       pourquoi: 'C’est la position du second coude qui décide du décalage final.',
-      aValider: 'Réglage du second coude : à la règle (Rothenberger), à H/3 (fiche 09), « milieu du cintre » (recueil)',
       figure: { svg: 'baionnette', etat: 'deplacer' }, clip: 'clips/4-2/04-decalage.mp4',
       narration: 'Voici le geste qui fait la baïonnette. On fait coulisser le tube dans l’outil, et l’on mesure, avec la règle posée parallèle au tube, l’écart entre la première branche et la ligne du futur second coude. Quand cet écart est celui du plan, d’axe à axe, on bloque le tube.' },
     { titre: 'Cintrer le second coude à 45°', texte: 'Cintrez jusqu’à ce que les deux branches soient parallèles.',

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img"
+     aria-labelledby="t-rncp" aria-describedby="d-rncp" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-rncp">Une certification du répertoire national : le TP TECVC</title>
+  <desc id="d-rncp">À gauche, la carte d'identité du titre professionnel de technicien d'études en chauffage,
+    ventilation et climatisation : fiche numéro RNCP37292, niveau 5, enregistrée jusqu'au 10 mai 2028. À droite, trois
+    blocs de compétences reliés à la carte par un trait : représenter les équipements et les réseaux ; réaliser
+    l'étude de plomberie, de chauffage, d'eau chaude sanitaire et de ventilation mécanique contrôlée ; réaliser
+    l'étude de climatisation et de traitement d'air. Une bande en bas rappelle qu'un bloc peut s'obtenir par la
+    formation, par le compte personnel de formation ou par la validation des acquis.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#1b3a63; }
+    .code { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#9d174d; }
+    .lbl  { font-size:18px; fill:#10233c; }
+    .lblb { font-size:18px; fill:#10233c; font-weight:bold; }
+    .bc   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#9d174d; }
+  </style>
+
+  <!-- Carte d'identité -->
+  <rect x="20" y="24" width="400" height="290" rx="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lbl" x="40" y="58" style="fill:#5a6b7d">Répertoire national des certifications</text>
+  <text class="lbl" x="40" y="80" style="fill:#5a6b7d">professionnelles (RNCP)</text>
+  <text class="ttl" x="40" y="122">TP Technicien d'études en</text>
+  <text class="ttl" x="40" y="148">chauffage, ventilation et</text>
+  <text class="ttl" x="40" y="174">climatisation (TECVC)</text>
+  <text class="code" x="40" y="222">RNCP37292</text>
+  <text class="lblb" x="40" y="256">Niveau 5</text>
+  <text class="lbl" x="40" y="282">Enregistré jusqu'au 10 mai 2028</text>
+
+  <!-- Trait de liaison -->
+  <path d="M 424 169 H 452 M 452 79 V 320 M 452 79 H 476 M 452 204 H 476 M 452 320 H 476" stroke="#1b3a63" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Blocs -->
+  <rect x="478" y="24" width="402" height="110" rx="14" fill="#f3e4eb" stroke="#9d174d" stroke-width="2"/>
+  <text class="bc" x="496" y="54">Bloc 1</text>
+  <text class="lbl" x="496" y="82">Représenter les équipements et</text>
+  <text class="lbl" x="496" y="106">les réseaux d'une installation</text>
+
+  <rect x="478" y="144" width="402" height="120" rx="14" fill="#f3e4eb" stroke="#9d174d" stroke-width="2"/>
+  <text class="bc" x="496" y="172">Bloc 2</text>
+  <text class="lbl" x="496" y="198">Étude de plomberie, de chauffage,</text>
+  <text class="lbl" x="496" y="220">d'eau chaude sanitaire et de</text>
+  <text class="lbl" x="496" y="242">ventilation mécanique contrôlée</text>
+
+  <rect x="478" y="274" width="402" height="92" rx="14" fill="#f3e4eb" stroke="#9d174d" stroke-width="2"/>
+  <text class="bc" x="496" y="302">Bloc 3</text>
+  <text class="lbl" x="496" y="328">Étude de climatisation et de</text>
+  <text class="lbl" x="496" y="350">traitement d'air</text>
+
+  <!-- Bande -->
+  <rect x="20" y="384" width="860" height="36" rx="12" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="lblb" x="450" y="408" text-anchor="middle">Un bloc s'obtient par la formation, le compte personnel de formation ou la VAE.</text>
+</svg>

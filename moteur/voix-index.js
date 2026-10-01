@@ -39864,6 +39864,2393 @@ window.PILOTE_VOIX_INDEX = {
       "octets": 79776,
       "voix": "fr-FR-RemyMultilingualNeural",
       "empreinteTexte": "63ff7580ffd57ebc"
+    },
+    "006fc90a-595": {
+      "fichier": "audio/006fc90a-595.mp3",
+      "sha256": "208d0abe8b6e9122",
+      "octets": 202464,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "79b008bd0ca8f0bf"
+    },
+    "00fe0c60-612": {
+      "fichier": "audio/00fe0c60-612.mp3",
+      "sha256": "66a0a51029adb008",
+      "octets": 197280,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "bc04fe732940b7eb"
+    },
+    "018cdca5-625": {
+      "fichier": "audio/018cdca5-625.mp3",
+      "sha256": "f0fdcb8078ca73a3",
+      "octets": 207648,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "a9445633c9f554f1"
+    },
+    "018d4e6c-535": {
+      "fichier": "audio/018d4e6c-535.mp3",
+      "sha256": "e9a9c43d5b58dfc1",
+      "octets": 191952,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "0a8e2473a1778bd7"
+    },
+    "034fbd93-524": {
+      "fichier": "audio/034fbd93-524.mp3",
+      "sha256": "16dcf2ff6b84d127",
+      "octets": 169632,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "8b184a23985a7181"
+    },
+    "038d6a8a-551": {
+      "fichier": "audio/038d6a8a-551.mp3",
+      "sha256": "f19bb1f369c976c1",
+      "octets": 183024,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f1ab8593acc664ff"
+    },
+    "041c694f-569": {
+      "fichier": "audio/041c694f-569.mp3",
+      "sha256": "6e926740e37450e3",
+      "octets": 191232,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "8158eb650fb7274e"
+    },
+    "0642910e-132": {
+      "fichier": "audio/0642910e-132.mp3",
+      "sha256": "e19dbc87fd55e1d5",
+      "octets": 48672,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2908c7a0edf90e55"
+    },
+    "0887eb30-153": {
+      "fichier": "audio/0887eb30-153.mp3",
+      "sha256": "2f2bb2db366129d1",
+      "octets": 50832,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2c6f3d3572bca5e3"
+    },
+    "0d48d520-215": {
+      "fichier": "audio/0d48d520-215.mp3",
+      "sha256": "aab1e35a5fac18ab",
+      "octets": 82800,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "79d600ca4db0c3a8"
+    },
+    "0e18c361-156": {
+      "fichier": "audio/0e18c361-156.mp3",
+      "sha256": "d242f7d3514e6c16",
+      "octets": 51552,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2dab239ed20f7354"
+    },
+    "0e213244-38": {
+      "fichier": "audio/0e213244-38.mp3",
+      "sha256": "fcdca2a3b621d5cf",
+      "octets": 15552,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "63148c381e4b56e0"
+    },
+    "0e853e5c-546": {
+      "fichier": "audio/0e853e5c-546.mp3",
+      "sha256": "d6ad3db208bf93ea",
+      "octets": 205776,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "11d62bab83363f8b"
+    },
+    "1098d8b2-576": {
+      "fichier": "audio/1098d8b2-576.mp3",
+      "sha256": "ba000af01356958c",
+      "octets": 193968,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "099408b705723ec5"
+    },
+    "13585a98-143": {
+      "fichier": "audio/13585a98-143.mp3",
+      "sha256": "7c07f72fcbb9ed31",
+      "octets": 51984,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "fec647b0afdc0205"
+    },
+    "1465c12f-192": {
+      "fichier": "audio/1465c12f-192.mp3",
+      "sha256": "b69166031c8a7e94",
+      "octets": 59760,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "eb7f3e6116e38fde"
+    },
+    "14fd0d3d-582": {
+      "fichier": "audio/14fd0d3d-582.mp3",
+      "sha256": "f46c8b1ca0888833",
+      "octets": 220176,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "bcd745eab509a0c1"
+    },
+    "1548da49-604": {
+      "fichier": "audio/1548da49-604.mp3",
+      "sha256": "4fdc3d657d673fd8",
+      "octets": 209520,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "fc322bfae3c4ab41"
+    },
+    "1612f1f2-564": {
+      "fichier": "audio/1612f1f2-564.mp3",
+      "sha256": "b68b732a31819a0c",
+      "octets": 233568,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "686e7cb2a0c1a8f1"
+    },
+    "17403ad0-513": {
+      "fichier": "audio/17403ad0-513.mp3",
+      "sha256": "f06886d95d81aca5",
+      "octets": 165024,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "6043714fcb6eb019"
+    },
+    "17c6ffd4-184": {
+      "fichier": "audio/17c6ffd4-184.mp3",
+      "sha256": "6cdf73e9318bc3ed",
+      "octets": 69552,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a85f3b24de1e0429"
+    },
+    "188a1702-596": {
+      "fichier": "audio/188a1702-596.mp3",
+      "sha256": "192ff5f0b5264820",
+      "octets": 208224,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "ee0d17a13596f1d0"
+    },
+    "19a5d14c-113": {
+      "fichier": "audio/19a5d14c-113.mp3",
+      "sha256": "b3707303a1767128",
+      "octets": 45360,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "fcc2414e5a8506a2"
+    },
+    "1a310952-213": {
+      "fichier": "audio/1a310952-213.mp3",
+      "sha256": "b0cb2382521da7e4",
+      "octets": 91872,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "00c8e292737a5ae6"
+    },
+    "1ae062af-595": {
+      "fichier": "audio/1ae062af-595.mp3",
+      "sha256": "d26596966cf40b88",
+      "octets": 208512,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "fb984f55fde4f016"
+    },
+    "1aedd88c-570": {
+      "fichier": "audio/1aedd88c-570.mp3",
+      "sha256": "d3d2f2b3b29bfa1c",
+      "octets": 202320,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "20e5ca86384b9c7f"
+    },
+    "1b033f44-583": {
+      "fichier": "audio/1b033f44-583.mp3",
+      "sha256": "b339554792ecdd36",
+      "octets": 181440,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "17edabc49afe0408"
+    },
+    "1d250464-217": {
+      "fichier": "audio/1d250464-217.mp3",
+      "sha256": "c3056b33eed2ac39",
+      "octets": 67392,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "101bc0e403841de7"
+    },
+    "1e700b5e-525": {
+      "fichier": "audio/1e700b5e-525.mp3",
+      "sha256": "9d5276c737830f89",
+      "octets": 173232,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "1e3c10e515f5f376"
+    },
+    "20cbc4ca-627": {
+      "fichier": "audio/20cbc4ca-627.mp3",
+      "sha256": "d51e3fbee951462d",
+      "octets": 215856,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6be8d69316b79e10"
+    },
+    "210ff1cc-608": {
+      "fichier": "audio/210ff1cc-608.mp3",
+      "sha256": "87441a0fe96733e4",
+      "octets": 204624,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "cc66a100b467b26f"
+    },
+    "211f079b-568": {
+      "fichier": "audio/211f079b-568.mp3",
+      "sha256": "f339d1ca5b19287f",
+      "octets": 196848,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "eff7ca243942808c"
+    },
+    "213b5bb4-591": {
+      "fichier": "audio/213b5bb4-591.mp3",
+      "sha256": "da785ae253798f30",
+      "octets": 212976,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "251a43aa804f51ca"
+    },
+    "21e55bf5-170": {
+      "fichier": "audio/21e55bf5-170.mp3",
+      "sha256": "9c75384fc4d380fc",
+      "octets": 59040,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "b32adb58afe17768"
+    },
+    "22508cc5-565": {
+      "fichier": "audio/22508cc5-565.mp3",
+      "sha256": "1df2ff303acdb79d",
+      "octets": 179136,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "e0b15d92ae635a24"
+    },
+    "2296cbea-556": {
+      "fichier": "audio/2296cbea-556.mp3",
+      "sha256": "8470a2202a4685d4",
+      "octets": 190368,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "838e571573b031b1"
+    },
+    "22bd30ef-574": {
+      "fichier": "audio/22bd30ef-574.mp3",
+      "sha256": "f59bdf3e552c27f1",
+      "octets": 208368,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a01bf1e1a39314b6"
+    },
+    "22cd272b-589": {
+      "fichier": "audio/22cd272b-589.mp3",
+      "sha256": "986f8f70bd696410",
+      "octets": 186048,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "de8e289dde3c02ef"
+    },
+    "234375ba-588": {
+      "fichier": "audio/234375ba-588.mp3",
+      "sha256": "f1a890b2263f6fa1",
+      "octets": 192096,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6ce4344056ae33ba"
+    },
+    "23c5fb73-632": {
+      "fichier": "audio/23c5fb73-632.mp3",
+      "sha256": "5f32895c600bba39",
+      "octets": 223200,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a357e9d208bf9b8a"
+    },
+    "240f5144-545": {
+      "fichier": "audio/240f5144-545.mp3",
+      "sha256": "ec92a0400cfc8ac9",
+      "octets": 217440,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a48f7b2a0722ff93"
+    },
+    "24c4b603-236": {
+      "fichier": "audio/24c4b603-236.mp3",
+      "sha256": "acb6d3bd7279acc4",
+      "octets": 70128,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "e5c9daa6b4f38047"
+    },
+    "24f91ce9-164": {
+      "fichier": "audio/24f91ce9-164.mp3",
+      "sha256": "40d01186fb148c0b",
+      "octets": 52848,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "4d68824805ebaaf2"
+    },
+    "25ce5cc0-534": {
+      "fichier": "audio/25ce5cc0-534.mp3",
+      "sha256": "6fecb683982b6c4f",
+      "octets": 173808,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "852de676cc0f5430"
+    },
+    "26a8ad83-527": {
+      "fichier": "audio/26a8ad83-527.mp3",
+      "sha256": "4b191e8649201116",
+      "octets": 169344,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "bfb46f89c4ebd1b7"
+    },
+    "27dc68c8-610": {
+      "fichier": "audio/27dc68c8-610.mp3",
+      "sha256": "2361ed52c2fa2c73",
+      "octets": 213696,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "91aa68d1a0d8f359"
+    },
+    "28725024-564": {
+      "fichier": "audio/28725024-564.mp3",
+      "sha256": "64a8cf9d55d87edc",
+      "octets": 180144,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "3f9915d5c7678eff"
+    },
+    "2b715baa-538": {
+      "fichier": "audio/2b715baa-538.mp3",
+      "sha256": "b076d404897354a4",
+      "octets": 166896,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "102d4a437d2c930e"
+    },
+    "2c08f847-229": {
+      "fichier": "audio/2c08f847-229.mp3",
+      "sha256": "2e1abb9d133e37b1",
+      "octets": 82512,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "1b4b079ec421bd8c"
+    },
+    "2c40a9e9-229": {
+      "fichier": "audio/2c40a9e9-229.mp3",
+      "sha256": "9e59c5269919e93e",
+      "octets": 83952,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d72bd7ffacd8ff0e"
+    },
+    "2c957e46-217": {
+      "fichier": "audio/2c957e46-217.mp3",
+      "sha256": "518ba5d4575fc964",
+      "octets": 68112,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "cf5edff6d4ab6197"
+    },
+    "2ce294ba-526": {
+      "fichier": "audio/2ce294ba-526.mp3",
+      "sha256": "734371334633664a",
+      "octets": 168768,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "a5d7c49d1cce4839"
+    },
+    "2cfa25a6-163": {
+      "fichier": "audio/2cfa25a6-163.mp3",
+      "sha256": "9627df87df5a98f0",
+      "octets": 63072,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "2c1fc51a4217a929"
+    },
+    "2dbbae30-566": {
+      "fichier": "audio/2dbbae30-566.mp3",
+      "sha256": "cd1f00e369cf54b4",
+      "octets": 186624,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "fa6d39fb02995441"
+    },
+    "2e9cc209-518": {
+      "fichier": "audio/2e9cc209-518.mp3",
+      "sha256": "43bad305c3640c97",
+      "octets": 172080,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "ff5eef6399345db2"
+    },
+    "30922941-213": {
+      "fichier": "audio/30922941-213.mp3",
+      "sha256": "6f9d1a1986938b02",
+      "octets": 79056,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "8b545afbd05431dc"
+    },
+    "310a1542-533": {
+      "fichier": "audio/310a1542-533.mp3",
+      "sha256": "620cb51f5ced8cc2",
+      "octets": 191808,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "33af672e8363336c"
+    },
+    "3302e9e9-552": {
+      "fichier": "audio/3302e9e9-552.mp3",
+      "sha256": "194428aea3dd6ff5",
+      "octets": 193536,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "b295e4659666eb18"
+    },
+    "338cc35d-548": {
+      "fichier": "audio/338cc35d-548.mp3",
+      "sha256": "0e057bfe18f3c58c",
+      "octets": 203040,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "4cba39704e05126f"
+    },
+    "3452bf5a-533": {
+      "fichier": "audio/3452bf5a-533.mp3",
+      "sha256": "37be90c070c23485",
+      "octets": 175104,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "e95600271ceb13c8"
+    },
+    "345db237-588": {
+      "fichier": "audio/345db237-588.mp3",
+      "sha256": "adb008a5e5b2cd14",
+      "octets": 217296,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "15dd6636e48e2fb7"
+    },
+    "34f357b5-501": {
+      "fichier": "audio/34f357b5-501.mp3",
+      "sha256": "d8d5c6450f74c13c",
+      "octets": 171360,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "436187571d0eb455"
+    },
+    "351c6284-179": {
+      "fichier": "audio/351c6284-179.mp3",
+      "sha256": "48876988d12f09f6",
+      "octets": 63792,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "025505ee6479ae44"
+    },
+    "35dc965a-200": {
+      "fichier": "audio/35dc965a-200.mp3",
+      "sha256": "ea0f6787c75bba21",
+      "octets": 77904,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a985a1b6a266c82e"
+    },
+    "361240c2-599": {
+      "fichier": "audio/361240c2-599.mp3",
+      "sha256": "4cb41e18f0d40ceb",
+      "octets": 198144,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "42c8d7d67ab4608b"
+    },
+    "367f3b31-550": {
+      "fichier": "audio/367f3b31-550.mp3",
+      "sha256": "00724e803f9b77a8",
+      "octets": 199440,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "4c8c08511b54e666"
+    },
+    "378f3e59-580": {
+      "fichier": "audio/378f3e59-580.mp3",
+      "sha256": "faceb14a2d625443",
+      "octets": 191952,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "c53ae2f57eefa2a4"
+    },
+    "37d74a29-536": {
+      "fichier": "audio/37d74a29-536.mp3",
+      "sha256": "54eab146c8bb8d8a",
+      "octets": 170064,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "32aee035b3f35eab"
+    },
+    "38bf9232-615": {
+      "fichier": "audio/38bf9232-615.mp3",
+      "sha256": "295bfe449e31140d",
+      "octets": 188064,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7e3434048d0a6609"
+    },
+    "390c1472-512": {
+      "fichier": "audio/390c1472-512.mp3",
+      "sha256": "5e345146dd5f144f",
+      "octets": 166896,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7b2554d793ff02f5"
+    },
+    "398c9078-598": {
+      "fichier": "audio/398c9078-598.mp3",
+      "sha256": "2f7c92084080deba",
+      "octets": 201024,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2a48c4ebf0aec504"
+    },
+    "3a6804bb-543": {
+      "fichier": "audio/3a6804bb-543.mp3",
+      "sha256": "76b0da12183cb82f",
+      "octets": 184752,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b9076f22531680cc"
+    },
+    "3ae36ef8-250": {
+      "fichier": "audio/3ae36ef8-250.mp3",
+      "sha256": "d0b6531d3a8554c7",
+      "octets": 83376,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "72f11e9e42ddb346"
+    },
+    "3b73cdd9-499": {
+      "fichier": "audio/3b73cdd9-499.mp3",
+      "sha256": "f51d0dbe1c252255",
+      "octets": 167904,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "633f218f53776845"
+    },
+    "3b8dfd9d-478": {
+      "fichier": "audio/3b8dfd9d-478.mp3",
+      "sha256": "b7d337dce47ef74f",
+      "octets": 181440,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "322f65b47b62928d"
+    },
+    "3c0094ba-543": {
+      "fichier": "audio/3c0094ba-543.mp3",
+      "sha256": "979cb93dbecc535f",
+      "octets": 197136,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c3a07d2ac40ca4cd"
+    },
+    "3cc622f3-209": {
+      "fichier": "audio/3cc622f3-209.mp3",
+      "sha256": "8805213cf07c5d6a",
+      "octets": 69984,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "e63772c8f68af4c5"
+    },
+    "3d234525-528": {
+      "fichier": "audio/3d234525-528.mp3",
+      "sha256": "9363876adbcd5b8b",
+      "octets": 187056,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "61f4f582bea3db85"
+    },
+    "3d6cfb0f-151": {
+      "fichier": "audio/3d6cfb0f-151.mp3",
+      "sha256": "e99714949e0e79c6",
+      "octets": 56304,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "ff55ca2e40adf922"
+    },
+    "3d6dcfb1-622": {
+      "fichier": "audio/3d6dcfb1-622.mp3",
+      "sha256": "fa631b615007e9bd",
+      "octets": 230112,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9d042bbce142f400"
+    },
+    "3d9f622e-222": {
+      "fichier": "audio/3d9f622e-222.mp3",
+      "sha256": "42e5eb54b5289905",
+      "octets": 72144,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "02677c0c63deafb3"
+    },
+    "3e094461-578": {
+      "fichier": "audio/3e094461-578.mp3",
+      "sha256": "b91122dac1358f99",
+      "octets": 187632,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "81bf3d7c86e7f114"
+    },
+    "3fc464d2-619": {
+      "fichier": "audio/3fc464d2-619.mp3",
+      "sha256": "5430615d8da5e923",
+      "octets": 213264,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "05d56b6efe01afeb"
+    },
+    "3fea4dfb-544": {
+      "fichier": "audio/3fea4dfb-544.mp3",
+      "sha256": "e281e3bd109090e8",
+      "octets": 207648,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "96a858ab29f71faa"
+    },
+    "406e0ce3-545": {
+      "fichier": "audio/406e0ce3-545.mp3",
+      "sha256": "5e75b4e67ecb5def",
+      "octets": 203184,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "dde51c2e17df5790"
+    },
+    "40a9fffc-557": {
+      "fichier": "audio/40a9fffc-557.mp3",
+      "sha256": "ee7fa51be25920cc",
+      "octets": 177696,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "3f1359352a79e781"
+    },
+    "415f393e-568": {
+      "fichier": "audio/415f393e-568.mp3",
+      "sha256": "7aeb2946a13ca2b1",
+      "octets": 204192,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ae3a119d138d54f7"
+    },
+    "41b0272b-565": {
+      "fichier": "audio/41b0272b-565.mp3",
+      "sha256": "632e39436b6b8fca",
+      "octets": 218016,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c7a673ac9dc6806d"
+    },
+    "41ef8604-568": {
+      "fichier": "audio/41ef8604-568.mp3",
+      "sha256": "f2cc23bbedacc527",
+      "octets": 191664,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "493618521c1652ad"
+    },
+    "422ba8d2-189": {
+      "fichier": "audio/422ba8d2-189.mp3",
+      "sha256": "bc19800c5d81cfa8",
+      "octets": 61056,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2fbca0c7bc5e2e63"
+    },
+    "43194668-501": {
+      "fichier": "audio/43194668-501.mp3",
+      "sha256": "537a021757a95921",
+      "octets": 173808,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "739a9c3562673ae5"
+    },
+    "433aaadd-592": {
+      "fichier": "audio/433aaadd-592.mp3",
+      "sha256": "eb27c4d3ecae0014",
+      "octets": 204480,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "81e08db5f61465d7"
+    },
+    "436d7e07-586": {
+      "fichier": "audio/436d7e07-586.mp3",
+      "sha256": "5add971fcd16ad79",
+      "octets": 198576,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "41ccdb4f0b6642aa"
+    },
+    "43a8e64b-602": {
+      "fichier": "audio/43a8e64b-602.mp3",
+      "sha256": "3da76fb312cfe5f1",
+      "octets": 190656,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "8a9be2bcf4cd42c0"
+    },
+    "441abc2b-546": {
+      "fichier": "audio/441abc2b-546.mp3",
+      "sha256": "0277537c45bf18ec",
+      "octets": 181872,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "e6cff9fe8e393efd"
+    },
+    "44591ca8-535": {
+      "fichier": "audio/44591ca8-535.mp3",
+      "sha256": "4a38b5aa325094d9",
+      "octets": 175680,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "0f06d3bca17f0b60"
+    },
+    "44afbadc-209": {
+      "fichier": "audio/44afbadc-209.mp3",
+      "sha256": "bef6f168c51126d5",
+      "octets": 66816,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "b28699169564fe10"
+    },
+    "458908c7-565": {
+      "fichier": "audio/458908c7-565.mp3",
+      "sha256": "c524a80ea33877dd",
+      "octets": 210528,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "eb18cffb617d5a59"
+    },
+    "459a4591-572": {
+      "fichier": "audio/459a4591-572.mp3",
+      "sha256": "d0f936cce03d2a50",
+      "octets": 231984,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "48d617075f7aa273"
+    },
+    "47c93a55-571": {
+      "fichier": "audio/47c93a55-571.mp3",
+      "sha256": "a429a8997a9493c9",
+      "octets": 174672,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "450b9c67a61e373c"
+    },
+    "48765de5-536": {
+      "fichier": "audio/48765de5-536.mp3",
+      "sha256": "56ed28f1404ed3c2",
+      "octets": 188784,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "bfe2c72dcf2c485e"
+    },
+    "489aaed9-594": {
+      "fichier": "audio/489aaed9-594.mp3",
+      "sha256": "2f414a4a896f2e1e",
+      "octets": 208800,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "acef28f0322d55c0"
+    },
+    "4a96a1b4-516": {
+      "fichier": "audio/4a96a1b4-516.mp3",
+      "sha256": "12412e7a49769149",
+      "octets": 191808,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b33d3314003e153e"
+    },
+    "4b25cd32-184": {
+      "fichier": "audio/4b25cd32-184.mp3",
+      "sha256": "dc9978c71a4865bf",
+      "octets": 63648,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "d720cd51dac650b9"
+    },
+    "4bbf9e14-523": {
+      "fichier": "audio/4bbf9e14-523.mp3",
+      "sha256": "03b385fe875407c9",
+      "octets": 189504,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "0d6c2c7eb559c445"
+    },
+    "4be82309-205": {
+      "fichier": "audio/4be82309-205.mp3",
+      "sha256": "e4478fb838ccb50d",
+      "octets": 69696,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e2736d058408e0fb"
+    },
+    "4c6c74b7-588": {
+      "fichier": "audio/4c6c74b7-588.mp3",
+      "sha256": "647b23b664a7f507",
+      "octets": 174240,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f18f94e441eb50d0"
+    },
+    "4cd010df-567": {
+      "fichier": "audio/4cd010df-567.mp3",
+      "sha256": "f4deca7e9d19f8f5",
+      "octets": 194400,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "39a778b876888468"
+    },
+    "4d231750-231": {
+      "fichier": "audio/4d231750-231.mp3",
+      "sha256": "d29a2d9f8dfc8f3c",
+      "octets": 79056,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "ea753a546b839c56"
+    },
+    "4e76b046-285": {
+      "fichier": "audio/4e76b046-285.mp3",
+      "sha256": "27f125f5b42134a9",
+      "octets": 88848,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "0bd2a8c82bb582f7"
+    },
+    "4eb968be-230": {
+      "fichier": "audio/4eb968be-230.mp3",
+      "sha256": "2ab18fc886ec92d8",
+      "octets": 75024,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "db8b9eb04a4907f4"
+    },
+    "52a8166c-562": {
+      "fichier": "audio/52a8166c-562.mp3",
+      "sha256": "152cec50e62c1021",
+      "octets": 204192,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "f7dd712067c8b265"
+    },
+    "52a972a4-152": {
+      "fichier": "audio/52a972a4-152.mp3",
+      "sha256": "eb72af0e4f011b87",
+      "octets": 60768,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "4a7c9fe9097166a1"
+    },
+    "53534a4b-610": {
+      "fichier": "audio/53534a4b-610.mp3",
+      "sha256": "9355ee488e063658",
+      "octets": 224208,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "37018c3e45960de9"
+    },
+    "536a682c-192": {
+      "fichier": "audio/536a682c-192.mp3",
+      "sha256": "b460829a65ad70b0",
+      "octets": 68112,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "c8a1b135268d605f"
+    },
+    "53d90303-166": {
+      "fichier": "audio/53d90303-166.mp3",
+      "sha256": "c429485d999b3024",
+      "octets": 57024,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "1b5b9c0eaa95f2af"
+    },
+    "546426ad-554": {
+      "fichier": "audio/546426ad-554.mp3",
+      "sha256": "c07f43e8cabe1a4f",
+      "octets": 207360,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "f380c9dbb04ca292"
+    },
+    "54df741e-654": {
+      "fichier": "audio/54df741e-654.mp3",
+      "sha256": "ff77dbe083287447",
+      "octets": 219456,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c35f841e21ba0d15"
+    },
+    "577ad678-641": {
+      "fichier": "audio/577ad678-641.mp3",
+      "sha256": "43ac1af2b2b1e586",
+      "octets": 231264,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "7d8f688c4bbb7995"
+    },
+    "578f4ddf-549": {
+      "fichier": "audio/578f4ddf-549.mp3",
+      "sha256": "e1b6603404b8f514",
+      "octets": 181152,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "de7b88dc5459d272"
+    },
+    "57e3ef02-563": {
+      "fichier": "audio/57e3ef02-563.mp3",
+      "sha256": "c592eec85162e5a9",
+      "octets": 181584,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "7fef2eee6d2442b0"
+    },
+    "58e7c94d-581": {
+      "fichier": "audio/58e7c94d-581.mp3",
+      "sha256": "a4890f61c3b2d306",
+      "octets": 187488,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "baf33b7f4afccebb"
+    },
+    "5a743dd0-145": {
+      "fichier": "audio/5a743dd0-145.mp3",
+      "sha256": "da48b15ea037c53a",
+      "octets": 57168,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e7cd00e5c19d86b9"
+    },
+    "5ab0dcfc-545": {
+      "fichier": "audio/5ab0dcfc-545.mp3",
+      "sha256": "7dac6de3f5e6411a",
+      "octets": 179568,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "67fd7323a9c0b1be"
+    },
+    "5dbc59e0-674": {
+      "fichier": "audio/5dbc59e0-674.mp3",
+      "sha256": "d8108a4b537d102b",
+      "octets": 234576,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "68d0afa0174d4885"
+    },
+    "5e568d2f-549": {
+      "fichier": "audio/5e568d2f-549.mp3",
+      "sha256": "8b9ad3b5f27b7795",
+      "octets": 218160,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "822445f882d6d3c6"
+    },
+    "5e78c7d5-135": {
+      "fichier": "audio/5e78c7d5-135.mp3",
+      "sha256": "a83dadf5923e7b75",
+      "octets": 50256,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6b7b0019f8f2a4a8"
+    },
+    "5ec3f0b4-176": {
+      "fichier": "audio/5ec3f0b4-176.mp3",
+      "sha256": "cbf6dfbaebdbdd46",
+      "octets": 58752,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "46b220b250ae1423"
+    },
+    "60ecb956-611": {
+      "fichier": "audio/60ecb956-611.mp3",
+      "sha256": "9637e110b1de3b4f",
+      "octets": 196416,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "784a53d1ee0747ad"
+    },
+    "60f027e4-577": {
+      "fichier": "audio/60f027e4-577.mp3",
+      "sha256": "52eae54b03e32923",
+      "octets": 209664,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "16e0249c42467318"
+    },
+    "63ad84af-534": {
+      "fichier": "audio/63ad84af-534.mp3",
+      "sha256": "d12aabf54ee18fee",
+      "octets": 198144,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b62e750e9c18f3c3"
+    },
+    "6402aec2-152": {
+      "fichier": "audio/6402aec2-152.mp3",
+      "sha256": "9b35334c822f6700",
+      "octets": 70704,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "03cae730810628e8"
+    },
+    "64e906ea-206": {
+      "fichier": "audio/64e906ea-206.mp3",
+      "sha256": "6c8c8a4babf48cd1",
+      "octets": 82368,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9b0447a9a555ace1"
+    },
+    "6803d89b-609": {
+      "fichier": "audio/6803d89b-609.mp3",
+      "sha256": "822322db227a2baa",
+      "octets": 195264,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "37cb9ebbd1ce0dcb"
+    },
+    "682849d6-608": {
+      "fichier": "audio/682849d6-608.mp3",
+      "sha256": "47b99f4969f4f47a",
+      "octets": 208800,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "74da08747f43e39c"
+    },
+    "6a54a689-613": {
+      "fichier": "audio/6a54a689-613.mp3",
+      "sha256": "bde6ecba3af66df6",
+      "octets": 224640,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9dd25ff7b45af103"
+    },
+    "6aa84ede-165": {
+      "fichier": "audio/6aa84ede-165.mp3",
+      "sha256": "7367fb03f6ef60b6",
+      "octets": 66528,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "15303fee966e3cd2"
+    },
+    "6b377345-120": {
+      "fichier": "audio/6b377345-120.mp3",
+      "sha256": "d54582d032e68baf",
+      "octets": 52416,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "0cd89b28482b925c"
+    },
+    "6cd732ee-566": {
+      "fichier": "audio/6cd732ee-566.mp3",
+      "sha256": "8d1dc936df9b9171",
+      "octets": 214128,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ba50007fd8bb695a"
+    },
+    "6cf7cebe-548": {
+      "fichier": "audio/6cf7cebe-548.mp3",
+      "sha256": "ebc0c0112aa186c2",
+      "octets": 199440,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "176bd7fdf2cf7252"
+    },
+    "6d071e03-203": {
+      "fichier": "audio/6d071e03-203.mp3",
+      "sha256": "3051681dbc868b09",
+      "octets": 66816,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "5d25a60674d2cb42"
+    },
+    "6d3c8183-593": {
+      "fichier": "audio/6d3c8183-593.mp3",
+      "sha256": "a052762179bdb6f7",
+      "octets": 209232,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "000f72189c985a02"
+    },
+    "6d529da0-121": {
+      "fichier": "audio/6d529da0-121.mp3",
+      "sha256": "f8b5bf1ef4e9c292",
+      "octets": 56592,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e06915d02332b034"
+    },
+    "6e02c39f-181": {
+      "fichier": "audio/6e02c39f-181.mp3",
+      "sha256": "5d005cae41ae39bd",
+      "octets": 62352,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "d049efcd0a632ad7"
+    },
+    "70a60bd9-199": {
+      "fichier": "audio/70a60bd9-199.mp3",
+      "sha256": "ec64890be618b299",
+      "octets": 73872,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "13232860a4ce9eaa"
+    },
+    "70b9e254-570": {
+      "fichier": "audio/70b9e254-570.mp3",
+      "sha256": "3e18ecc4a98cdc9e",
+      "octets": 205344,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "8563f8333452000f"
+    },
+    "72060753-545": {
+      "fichier": "audio/72060753-545.mp3",
+      "sha256": "88c68ed294b33a27",
+      "octets": 170928,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "8651fdf93ff6829c"
+    },
+    "72876386-562": {
+      "fichier": "audio/72876386-562.mp3",
+      "sha256": "6e64fa97965c4ace",
+      "octets": 202032,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9c0b0c31721d6266"
+    },
+    "72ee87b4-535": {
+      "fichier": "audio/72ee87b4-535.mp3",
+      "sha256": "a4fa4b680bdd1f2b",
+      "octets": 168192,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7f9209a2ec0869a4"
+    },
+    "75403c2a-237": {
+      "fichier": "audio/75403c2a-237.mp3",
+      "sha256": "4c038adfb25221fb",
+      "octets": 87696,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "80784409980cf119"
+    },
+    "760c1e0d-628": {
+      "fichier": "audio/760c1e0d-628.mp3",
+      "sha256": "4e26000bea8dc333",
+      "octets": 194544,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7929133ccf15d22e"
+    },
+    "76414b5e-580": {
+      "fichier": "audio/76414b5e-580.mp3",
+      "sha256": "07e8bbee899fd5c2",
+      "octets": 194400,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7212195e6beafc38"
+    },
+    "7695f795-211": {
+      "fichier": "audio/7695f795-211.mp3",
+      "sha256": "fab532c98dc21a5a",
+      "octets": 66816,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "809ce650331add7e"
+    },
+    "7699c828-526": {
+      "fichier": "audio/7699c828-526.mp3",
+      "sha256": "ca675c1027ad4342",
+      "octets": 175536,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "13e984cf0844fc98"
+    },
+    "76c97d10-189": {
+      "fichier": "audio/76c97d10-189.mp3",
+      "sha256": "af7b53a8b0700e9d",
+      "octets": 70848,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "46f9337f7caeb8f9"
+    },
+    "77aba7a6-637": {
+      "fichier": "audio/77aba7a6-637.mp3",
+      "sha256": "066c601ef7e60bae",
+      "octets": 217584,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "f1ccb2709db8385f"
+    },
+    "77dc6a99-620": {
+      "fichier": "audio/77dc6a99-620.mp3",
+      "sha256": "b5f59ad462edda96",
+      "octets": 190800,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f62c1ca2dd87bfb9"
+    },
+    "785e7196-198": {
+      "fichier": "audio/785e7196-198.mp3",
+      "sha256": "0be18aa3dc7bd285",
+      "octets": 61632,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7f3bbe25850bfcec"
+    },
+    "787639c1-562": {
+      "fichier": "audio/787639c1-562.mp3",
+      "sha256": "a7c8482554072821",
+      "octets": 207216,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "25b992e99a6eea4c"
+    },
+    "7896422c-205": {
+      "fichier": "audio/7896422c-205.mp3",
+      "sha256": "9945ef43470aab49",
+      "octets": 68832,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "a044051176e68319"
+    },
+    "7a27b494-555": {
+      "fichier": "audio/7a27b494-555.mp3",
+      "sha256": "de48f1b617168546",
+      "octets": 219312,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ffa7ee1e27b13271"
+    },
+    "7afcefd6-528": {
+      "fichier": "audio/7afcefd6-528.mp3",
+      "sha256": "7245be0d79c1f0b6",
+      "octets": 189216,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "38a2d889bd45fcdc"
+    },
+    "7f4849ba-554": {
+      "fichier": "audio/7f4849ba-554.mp3",
+      "sha256": "da9d88e08e50db89",
+      "octets": 220464,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e875ed7c6b493736"
+    },
+    "7f6db356-579": {
+      "fichier": "audio/7f6db356-579.mp3",
+      "sha256": "371ef68f654b25d1",
+      "octets": 205632,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "7a3cc400f995737d"
+    },
+    "81242331-525": {
+      "fichier": "audio/81242331-525.mp3",
+      "sha256": "bf38c61b8ab34af9",
+      "octets": 160128,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f1f28a5a45925dfe"
+    },
+    "83517ef7-570": {
+      "fichier": "audio/83517ef7-570.mp3",
+      "sha256": "9bc6f69e060bd874",
+      "octets": 204192,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d7a6da2eba260631"
+    },
+    "835b950e-574": {
+      "fichier": "audio/835b950e-574.mp3",
+      "sha256": "e0155dba9a36b924",
+      "octets": 194832,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "99b81a9a2479016e"
+    },
+    "83da4a0b-572": {
+      "fichier": "audio/83da4a0b-572.mp3",
+      "sha256": "58708bf97ea50659",
+      "octets": 203904,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ef665e4493c14132"
+    },
+    "84916ed6-583": {
+      "fichier": "audio/84916ed6-583.mp3",
+      "sha256": "085aa8695f5bba16",
+      "octets": 189648,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "68776ac5bd7a2628"
+    },
+    "85a78d14-631": {
+      "fichier": "audio/85a78d14-631.mp3",
+      "sha256": "6c0440cd7817be58",
+      "octets": 217296,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "711212b869474106"
+    },
+    "860dfa15-610": {
+      "fichier": "audio/860dfa15-610.mp3",
+      "sha256": "c6b66e41c5cb6f27",
+      "octets": 204912,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "084a17e7dd14df5f"
+    },
+    "86ac38da-544": {
+      "fichier": "audio/86ac38da-544.mp3",
+      "sha256": "f1c34f9c99815e8c",
+      "octets": 197280,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "4bf944b506225143"
+    },
+    "86d6da1a-543": {
+      "fichier": "audio/86d6da1a-543.mp3",
+      "sha256": "0d2358a4da244137",
+      "octets": 187632,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "af6523a097e19655"
+    },
+    "8749bf9d-525": {
+      "fichier": "audio/8749bf9d-525.mp3",
+      "sha256": "3952ecb852ddb002",
+      "octets": 171792,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "263f24d27e2c4d71"
+    },
+    "87963f5d-595": {
+      "fichier": "audio/87963f5d-595.mp3",
+      "sha256": "54a3c348b60cee9d",
+      "octets": 192528,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "30a6d918054594fe"
+    },
+    "88da9d7c-552": {
+      "fichier": "audio/88da9d7c-552.mp3",
+      "sha256": "76ac6621c535e084",
+      "octets": 178560,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "c6b447b1bc0468bc"
+    },
+    "893b74ca-633": {
+      "fichier": "audio/893b74ca-633.mp3",
+      "sha256": "1b483bba1e3c086c",
+      "octets": 223488,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e4b357b8ac881135"
+    },
+    "89bcd734-571": {
+      "fichier": "audio/89bcd734-571.mp3",
+      "sha256": "ae362a0191741d2b",
+      "octets": 204048,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "17abb3148f25544d"
+    },
+    "8b0e2b75-122": {
+      "fichier": "audio/8b0e2b75-122.mp3",
+      "sha256": "e9868532723a4668",
+      "octets": 40896,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "422c10568563335c"
+    },
+    "8b5b73d1-227": {
+      "fichier": "audio/8b5b73d1-227.mp3",
+      "sha256": "128f0de85c2d9824",
+      "octets": 73872,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "fe01af2d61622554"
+    },
+    "8c0e6d21-551": {
+      "fichier": "audio/8c0e6d21-551.mp3",
+      "sha256": "5ae87da1b15287e1",
+      "octets": 203616,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "2b9e9c5f39b935ce"
+    },
+    "8c72644f-159": {
+      "fichier": "audio/8c72644f-159.mp3",
+      "sha256": "1a38299476e14871",
+      "octets": 55152,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "999f70877ae19116"
+    },
+    "8d469cf7-619": {
+      "fichier": "audio/8d469cf7-619.mp3",
+      "sha256": "53143f3996a56c07",
+      "octets": 228960,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "73e50ca2635de043"
+    },
+    "8e148847-623": {
+      "fichier": "audio/8e148847-623.mp3",
+      "sha256": "58361537336c5ce9",
+      "octets": 207648,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "45b37b6e6b249ecd"
+    },
+    "8eecb34c-126": {
+      "fichier": "audio/8eecb34c-126.mp3",
+      "sha256": "be21c8a45f9f516b",
+      "octets": 57168,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "42329aca45b86c9b"
+    },
+    "8efef216-129": {
+      "fichier": "audio/8efef216-129.mp3",
+      "sha256": "665c78c9c93e30d9",
+      "octets": 51696,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "88c22ee84acaec63"
+    },
+    "8fd1a012-592": {
+      "fichier": "audio/8fd1a012-592.mp3",
+      "sha256": "c7efdbeefef74fde",
+      "octets": 178848,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "3bdb3fc8f121e69d"
+    },
+    "8fd2e59d-548": {
+      "fichier": "audio/8fd2e59d-548.mp3",
+      "sha256": "5f60e60c1a2fee6d",
+      "octets": 176112,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "5c39f894bf23ce12"
+    },
+    "90509e8d-177": {
+      "fichier": "audio/90509e8d-177.mp3",
+      "sha256": "526fbb61f360055d",
+      "octets": 66528,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d458b05a0404a868"
+    },
+    "90a1cf78-585": {
+      "fichier": "audio/90a1cf78-585.mp3",
+      "sha256": "ee3efdfbbb98b1b3",
+      "octets": 182880,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f160f4e23e37d645"
+    },
+    "90e555bf-517": {
+      "fichier": "audio/90e555bf-517.mp3",
+      "sha256": "1349d786f584c369",
+      "octets": 219888,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "7c612ea5820d7a5d"
+    },
+    "911c9175-173": {
+      "fichier": "audio/911c9175-173.mp3",
+      "sha256": "06ea75c3f2838293",
+      "octets": 63936,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d41dc277547a54bc"
+    },
+    "91a2e1e1-560": {
+      "fichier": "audio/91a2e1e1-560.mp3",
+      "sha256": "1fc788988757438d",
+      "octets": 176256,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "ad5e8082103c5b9c"
+    },
+    "92507b0f-627": {
+      "fichier": "audio/92507b0f-627.mp3",
+      "sha256": "64794f18bc72d9c3",
+      "octets": 199008,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "0a6807bbfb44170a"
+    },
+    "9301f3bb-256": {
+      "fichier": "audio/9301f3bb-256.mp3",
+      "sha256": "789f664f04e39ae5",
+      "octets": 85968,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "4d1b1ed8e0e0d5bb"
+    },
+    "930c3c37-623": {
+      "fichier": "audio/930c3c37-623.mp3",
+      "sha256": "0ad40899b38471e0",
+      "octets": 207360,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "14ffc3a1df633277"
+    },
+    "94516b8e-526": {
+      "fichier": "audio/94516b8e-526.mp3",
+      "sha256": "2561e7a80ea4a1f8",
+      "octets": 169056,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "13a60f504e7909d5"
+    },
+    "950e7c48-566": {
+      "fichier": "audio/950e7c48-566.mp3",
+      "sha256": "b44049e544a64f95",
+      "octets": 197280,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "7eb961bfbe792b3b"
+    },
+    "95fed052-552": {
+      "fichier": "audio/95fed052-552.mp3",
+      "sha256": "41929b0d83a046aa",
+      "octets": 196128,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "fd370dbfa80676cf"
+    },
+    "9909691a-590": {
+      "fichier": "audio/9909691a-590.mp3",
+      "sha256": "1e693876cf7b5916",
+      "octets": 197856,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "dd376e34247c0e8a"
+    },
+    "998409df-570": {
+      "fichier": "audio/998409df-570.mp3",
+      "sha256": "eea5612c050171c7",
+      "octets": 192384,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2f903ad66f079323"
+    },
+    "999fb6ad-544": {
+      "fichier": "audio/999fb6ad-544.mp3",
+      "sha256": "ece4718406424b0d",
+      "octets": 177840,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "a1b1d3fd5fd47cd0"
+    },
+    "9a960396-490": {
+      "fichier": "audio/9a960396-490.mp3",
+      "sha256": "10f01b3dca572b44",
+      "octets": 162720,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "12c0439e88246ce7"
+    },
+    "9ad8a045-566": {
+      "fichier": "audio/9ad8a045-566.mp3",
+      "sha256": "785aec575d16906a",
+      "octets": 181872,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "d7c5f17daec26999"
+    },
+    "9c3bae27-625": {
+      "fichier": "audio/9c3bae27-625.mp3",
+      "sha256": "b279745620dd1cc1",
+      "octets": 202896,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "3758dabe35e48f48"
+    },
+    "9cb95200-581": {
+      "fichier": "audio/9cb95200-581.mp3",
+      "sha256": "6932d0ee819d768c",
+      "octets": 202752,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "68d3eac7c4b3303c"
+    },
+    "9d2f8d9c-154": {
+      "fichier": "audio/9d2f8d9c-154.mp3",
+      "sha256": "bbd587906462469e",
+      "octets": 48816,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "21a7376769f22186"
+    },
+    "9e8c5efd-567": {
+      "fichier": "audio/9e8c5efd-567.mp3",
+      "sha256": "bb45c88a299330b0",
+      "octets": 186048,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "c32991c8621cfdaa"
+    },
+    "9fad652a-171": {
+      "fichier": "audio/9fad652a-171.mp3",
+      "sha256": "e6c1b24fcfd45860",
+      "octets": 57888,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "199a37da80ccc513"
+    },
+    "a116db98-222": {
+      "fichier": "audio/a116db98-222.mp3",
+      "sha256": "f22698194ee0bf7f",
+      "octets": 81360,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9da2d949015ab3f8"
+    },
+    "a17ac791-584": {
+      "fichier": "audio/a17ac791-584.mp3",
+      "sha256": "dcd427037717e642",
+      "octets": 202608,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "e03b1ee11e1d1e50"
+    },
+    "a192dd5d-545": {
+      "fichier": "audio/a192dd5d-545.mp3",
+      "sha256": "c36e4976f9e43212",
+      "octets": 186480,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f3ce5a4a50865ec3"
+    },
+    "a265ce68-653": {
+      "fichier": "audio/a265ce68-653.mp3",
+      "sha256": "1c20d9b987e51b39",
+      "octets": 227664,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "0f83d8415b2a073f"
+    },
+    "a34d52c7-598": {
+      "fichier": "audio/a34d52c7-598.mp3",
+      "sha256": "806bbf8886fd0311",
+      "octets": 180000,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "23b36a096070501c"
+    },
+    "a387c69a-248": {
+      "fichier": "audio/a387c69a-248.mp3",
+      "sha256": "1349abf583005493",
+      "octets": 76752,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "0c84e47a8ed3c13f"
+    },
+    "a704062a-197": {
+      "fichier": "audio/a704062a-197.mp3",
+      "sha256": "3d6826d5bd747c48",
+      "octets": 64080,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "34d4655c65c5c3cf"
+    },
+    "a74fdb83-612": {
+      "fichier": "audio/a74fdb83-612.mp3",
+      "sha256": "fdb318ee6b1233f9",
+      "octets": 227376,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b3392e8a8fc199f8"
+    },
+    "a801c943-663": {
+      "fichier": "audio/a801c943-663.mp3",
+      "sha256": "2308c6a54587761e",
+      "octets": 214416,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "d9035274140512d6"
+    },
+    "a834ee17-514": {
+      "fichier": "audio/a834ee17-514.mp3",
+      "sha256": "97a731e28cb9a7c5",
+      "octets": 189792,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "0de571a57e0e3a29"
+    },
+    "a860877a-446": {
+      "fichier": "audio/a860877a-446.mp3",
+      "sha256": "52763d4cfa637c3b",
+      "octets": 172656,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "9028f171c83c5697"
+    },
+    "a8e6c1d4-226": {
+      "fichier": "audio/a8e6c1d4-226.mp3",
+      "sha256": "7611c5c2a7b3b5a3",
+      "octets": 84240,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "0e1eaecbf5fada65"
+    },
+    "a901a9e9-161": {
+      "fichier": "audio/a901a9e9-161.mp3",
+      "sha256": "552cf23d5f299bbf",
+      "octets": 62352,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "837c3c98e2106330"
+    },
+    "a9bf45dd-550": {
+      "fichier": "audio/a9bf45dd-550.mp3",
+      "sha256": "ffdf40d0c529f4d2",
+      "octets": 191520,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "eec3c41971787964"
+    },
+    "aa3cf57a-508": {
+      "fichier": "audio/aa3cf57a-508.mp3",
+      "sha256": "c366f8f065acf0d9",
+      "octets": 184320,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e5a574e4c4bb111e"
+    },
+    "aa67b7a2-544": {
+      "fichier": "audio/aa67b7a2-544.mp3",
+      "sha256": "8ddd508b59f46ca8",
+      "octets": 207504,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b16d874622be5ff9"
+    },
+    "abaf9a50-571": {
+      "fichier": "audio/abaf9a50-571.mp3",
+      "sha256": "3f1c16b94bd04798",
+      "octets": 195840,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "3c4d87294e458a58"
+    },
+    "acb556e1-550": {
+      "fichier": "audio/acb556e1-550.mp3",
+      "sha256": "d3ff4d08b1298a93",
+      "octets": 204336,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a872c0bca2097cfc"
+    },
+    "acd8d692-502": {
+      "fichier": "audio/acd8d692-502.mp3",
+      "sha256": "6669079e95b35d9b",
+      "octets": 162144,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "4a8af23b2c8f476d"
+    },
+    "ad9aa4e8-257": {
+      "fichier": "audio/ad9aa4e8-257.mp3",
+      "sha256": "68effa70d62fa3c5",
+      "octets": 91440,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9cd1f45b709a3668"
+    },
+    "af1a1ce6-187": {
+      "fichier": "audio/af1a1ce6-187.mp3",
+      "sha256": "e1cc83f448e49871",
+      "octets": 65520,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "d4717bcca6095f8b"
+    },
+    "b169ea6d-603": {
+      "fichier": "audio/b169ea6d-603.mp3",
+      "sha256": "de53544d79bcc112",
+      "octets": 203472,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "c99f391c25462907"
+    },
+    "b276e4a4-594": {
+      "fichier": "audio/b276e4a4-594.mp3",
+      "sha256": "ea04b5b73552fa6c",
+      "octets": 195120,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "bb94195060e474a4"
+    },
+    "b34c050a-204": {
+      "fichier": "audio/b34c050a-204.mp3",
+      "sha256": "9edd22ec40b7d9c6",
+      "octets": 67248,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "d428d6eadb71c26f"
+    },
+    "b4d2a878-472": {
+      "fichier": "audio/b4d2a878-472.mp3",
+      "sha256": "3e93ac4d30e81f35",
+      "octets": 154512,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "64d34c261e9984dc"
+    },
+    "b535379d-504": {
+      "fichier": "audio/b535379d-504.mp3",
+      "sha256": "16db28f21b71b4af",
+      "octets": 165744,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "a459abd7e5c59ddc"
+    },
+    "b550cb48-554": {
+      "fichier": "audio/b550cb48-554.mp3",
+      "sha256": "c731bde55059a24c",
+      "octets": 189648,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "c5289cb5330bf705"
+    },
+    "b57691df-201": {
+      "fichier": "audio/b57691df-201.mp3",
+      "sha256": "bc39e001979aa768",
+      "octets": 70128,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "55a9ed63ed8d80f9"
+    },
+    "b6369c4e-220": {
+      "fichier": "audio/b6369c4e-220.mp3",
+      "sha256": "c710b3be1ec9c181",
+      "octets": 71424,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "bb1925ab84d847d9"
+    },
+    "b6c021cd-574": {
+      "fichier": "audio/b6c021cd-574.mp3",
+      "sha256": "3b081ea1ef6e248e",
+      "octets": 178560,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "a5d14cd4cf4c1a1a"
+    },
+    "b764a3ae-569": {
+      "fichier": "audio/b764a3ae-569.mp3",
+      "sha256": "bc33fd609791d5ba",
+      "octets": 180432,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "d0a858f2abebd5f9"
+    },
+    "b7aaf2e3-183": {
+      "fichier": "audio/b7aaf2e3-183.mp3",
+      "sha256": "8266241b5ab8e21d",
+      "octets": 61344,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "600878b2dacfaa33"
+    },
+    "b7e29c36-593": {
+      "fichier": "audio/b7e29c36-593.mp3",
+      "sha256": "a11655b96a310684",
+      "octets": 201024,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "3a0339d6d6d00e3c"
+    },
+    "b98b9867-245": {
+      "fichier": "audio/b98b9867-245.mp3",
+      "sha256": "aede9adc924c12ae",
+      "octets": 74304,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "32c232f208a24ccc"
+    },
+    "ba9ea8f3-176": {
+      "fichier": "audio/ba9ea8f3-176.mp3",
+      "sha256": "e57068486bce4135",
+      "octets": 61200,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "8471912652d3297a"
+    },
+    "bada8575-207": {
+      "fichier": "audio/bada8575-207.mp3",
+      "sha256": "3936b261dfb557ec",
+      "octets": 75024,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "37bd6f062887d9bf"
+    },
+    "bb305cc9-197": {
+      "fichier": "audio/bb305cc9-197.mp3",
+      "sha256": "f9142f9a36741bc1",
+      "octets": 67536,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "92df11342bef7b84"
+    },
+    "bb4fd752-229": {
+      "fichier": "audio/bb4fd752-229.mp3",
+      "sha256": "b30f28a8047ae29b",
+      "octets": 75456,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7695a8cf69dd67e2"
+    },
+    "bb838258-173": {
+      "fichier": "audio/bb838258-173.mp3",
+      "sha256": "ef7b9ddd062a9d28",
+      "octets": 63216,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "2f5ad8eb3da2c1a5"
+    },
+    "bc3b1b2e-226": {
+      "fichier": "audio/bc3b1b2e-226.mp3",
+      "sha256": "a46b9f1fb0b76220",
+      "octets": 88416,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e12cc74cf8019cc4"
+    },
+    "bc6b0f17-183": {
+      "fichier": "audio/bc6b0f17-183.mp3",
+      "sha256": "3f96ef18a56208de",
+      "octets": 55728,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2b820edf4c71b361"
+    },
+    "beb949d9-617": {
+      "fichier": "audio/beb949d9-617.mp3",
+      "sha256": "0c9ddaab011613c1",
+      "octets": 244368,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "119450fc1c5e1673"
+    },
+    "bf88c198-568": {
+      "fichier": "audio/bf88c198-568.mp3",
+      "sha256": "0dffd729700bcddd",
+      "octets": 195840,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b1479d457efd6fa9"
+    },
+    "c126f49b-627": {
+      "fichier": "audio/c126f49b-627.mp3",
+      "sha256": "955fc99505471195",
+      "octets": 210096,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "65ebee62cbbcc78d"
+    },
+    "c17a67e3-253": {
+      "fichier": "audio/c17a67e3-253.mp3",
+      "sha256": "6426bdfab8b0c199",
+      "octets": 80352,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "758cef585fdb3663"
+    },
+    "c1f57f76-595": {
+      "fichier": "audio/c1f57f76-595.mp3",
+      "sha256": "bfaa41f92a7efac5",
+      "octets": 205632,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "1ac5047ec2200ef4"
+    },
+    "c3061b87-571": {
+      "fichier": "audio/c3061b87-571.mp3",
+      "sha256": "42343ee8f250040e",
+      "octets": 174096,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "c5ec16ad60f7dee2"
+    },
+    "c40d5586-589": {
+      "fichier": "audio/c40d5586-589.mp3",
+      "sha256": "429275947e5501bb",
+      "octets": 205920,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "0354a9823494fcc0"
+    },
+    "c6087c3b-588": {
+      "fichier": "audio/c6087c3b-588.mp3",
+      "sha256": "b1739976d9f8729c",
+      "octets": 180432,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "659ecd81876fe28f"
+    },
+    "c63b1a86-566": {
+      "fichier": "audio/c63b1a86-566.mp3",
+      "sha256": "edd82d3a7728db00",
+      "octets": 233712,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "1e0cf15a7b5d0eaf"
+    },
+    "c63bc69b-521": {
+      "fichier": "audio/c63bc69b-521.mp3",
+      "sha256": "5deae35b9217ad7e",
+      "octets": 158400,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "e037d3abc4c058f4"
+    },
+    "c66abfac-176": {
+      "fichier": "audio/c66abfac-176.mp3",
+      "sha256": "603cc8b688d23ff2",
+      "octets": 59616,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "88836d6f262eaff5"
+    },
+    "c6ef3e97-212": {
+      "fichier": "audio/c6ef3e97-212.mp3",
+      "sha256": "99ee03a51bff2f23",
+      "octets": 80208,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "f77976d8b04c03e4"
+    },
+    "c74cfb97-610": {
+      "fichier": "audio/c74cfb97-610.mp3",
+      "sha256": "48212bf7f6a50915",
+      "octets": 229104,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "ea32a1cb32cea1d9"
+    },
+    "c9320c80-510": {
+      "fichier": "audio/c9320c80-510.mp3",
+      "sha256": "4662ec1e36290456",
+      "octets": 180864,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "8a4f9f766b9ad9e3"
+    },
+    "c981a5ed-656": {
+      "fichier": "audio/c981a5ed-656.mp3",
+      "sha256": "bb2e4f5bec97fcb3",
+      "octets": 242064,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "36fc5081eda2d0e3"
+    },
+    "c9d7f85f-528": {
+      "fichier": "audio/c9d7f85f-528.mp3",
+      "sha256": "502bc12eae87f970",
+      "octets": 189792,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6f5c377172083859"
+    },
+    "cae21cf2-154": {
+      "fichier": "audio/cae21cf2-154.mp3",
+      "sha256": "656f651720f698d5",
+      "octets": 63792,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a1f7d95001c12f7e"
+    },
+    "cb58633d-592": {
+      "fichier": "audio/cb58633d-592.mp3",
+      "sha256": "8c53d404e7c42f32",
+      "octets": 233712,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "573ce281d93238ea"
+    },
+    "cbc23aab-622": {
+      "fichier": "audio/cbc23aab-622.mp3",
+      "sha256": "28647b6c4d985197",
+      "octets": 224352,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "c40f5b1c179fc07a"
+    },
+    "cc540db4-164": {
+      "fichier": "audio/cc540db4-164.mp3",
+      "sha256": "148c77c899133d3a",
+      "octets": 60192,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "f3514f6a42c92206"
+    },
+    "cc9e4036-165": {
+      "fichier": "audio/cc9e4036-165.mp3",
+      "sha256": "1382c17a296cd414",
+      "octets": 63936,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "f61b9e2e5065b9d5"
+    },
+    "ccc03d83-553": {
+      "fichier": "audio/ccc03d83-553.mp3",
+      "sha256": "f3daf40ddb6216e2",
+      "octets": 199152,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "878f5f7354971ec9"
+    },
+    "cfc8b35e-237": {
+      "fichier": "audio/cfc8b35e-237.mp3",
+      "sha256": "398934375a191764",
+      "octets": 74016,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "91d8cf87bc50eb91"
+    },
+    "d059f70f-708": {
+      "fichier": "audio/d059f70f-708.mp3",
+      "sha256": "693947b4156c11fd",
+      "octets": 211968,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "194fbcdf75c41823"
+    },
+    "d086c468-200": {
+      "fichier": "audio/d086c468-200.mp3",
+      "sha256": "554cfe484f4a8d02",
+      "octets": 75600,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "67aeee417b2c0f51"
+    },
+    "d0afc353-580": {
+      "fichier": "audio/d0afc353-580.mp3",
+      "sha256": "4c6909046eaf497f",
+      "octets": 196128,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "caadab9ff5db9ff6"
+    },
+    "d244dc78-563": {
+      "fichier": "audio/d244dc78-563.mp3",
+      "sha256": "851f64266512c114",
+      "octets": 179424,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "07dee79fc7c4c9c4"
+    },
+    "d2cb66e5-519": {
+      "fichier": "audio/d2cb66e5-519.mp3",
+      "sha256": "7ef70a48a927b4a8",
+      "octets": 166032,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "692a94b17cda5807"
+    },
+    "d3fccaa9-164": {
+      "fichier": "audio/d3fccaa9-164.mp3",
+      "sha256": "4aff5d2088a7d234",
+      "octets": 60048,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "f16f485d6f233ae0"
+    },
+    "d491cebd-207": {
+      "fichier": "audio/d491cebd-207.mp3",
+      "sha256": "2486824795a90a03",
+      "octets": 73008,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "8153a9ea4966d74e"
+    },
+    "d5b4faa4-569": {
+      "fichier": "audio/d5b4faa4-569.mp3",
+      "sha256": "c3c096f65a456f6f",
+      "octets": 196992,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "44d507dbfd8ab4da"
+    },
+    "d762bd71-593": {
+      "fichier": "audio/d762bd71-593.mp3",
+      "sha256": "6054a78499558787",
+      "octets": 220752,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "097854d25903bcf4"
+    },
+    "d78c87b6-220": {
+      "fichier": "audio/d78c87b6-220.mp3",
+      "sha256": "b1e07613b7794ea4",
+      "octets": 78336,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "aaf5b76597622cf4"
+    },
+    "d799a6ae-584": {
+      "fichier": "audio/d799a6ae-584.mp3",
+      "sha256": "badc88e5e25f6885",
+      "octets": 212112,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "01f561d2f1d09602"
+    },
+    "d7be3ed4-130": {
+      "fichier": "audio/d7be3ed4-130.mp3",
+      "sha256": "213c2be285043a2b",
+      "octets": 47376,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "13aa8191e87b46a0"
+    },
+    "d7d9163a-499": {
+      "fichier": "audio/d7d9163a-499.mp3",
+      "sha256": "645a78858ca13bde",
+      "octets": 178128,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "d510066bb92371ae"
+    },
+    "d839989f-556": {
+      "fichier": "audio/d839989f-556.mp3",
+      "sha256": "53213d4cab5758fc",
+      "octets": 192528,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b005aaebb3a951da"
+    },
+    "d87b7f72-544": {
+      "fichier": "audio/d87b7f72-544.mp3",
+      "sha256": "56d927ed3a37e954",
+      "octets": 188640,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "cdfbb432a9a98202"
+    },
+    "d95caf8d-235": {
+      "fichier": "audio/d95caf8d-235.mp3",
+      "sha256": "e8bdd18fe7dc35a4",
+      "octets": 71280,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "21c3d458904091de"
+    },
+    "d9a2070e-204": {
+      "fichier": "audio/d9a2070e-204.mp3",
+      "sha256": "4b07ff7ad451c1d5",
+      "octets": 66240,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "dd0f8efd2b4f65fd"
+    },
+    "da5e5345-558": {
+      "fichier": "audio/da5e5345-558.mp3",
+      "sha256": "19cc2beae6d61671",
+      "octets": 196992,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6b696b502075494d"
+    },
+    "db43a54c-146": {
+      "fichier": "audio/db43a54c-146.mp3",
+      "sha256": "d95fb2560f349852",
+      "octets": 66240,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "930cfe021f69dc0c"
+    },
+    "dbae0a8f-148": {
+      "fichier": "audio/dbae0a8f-148.mp3",
+      "sha256": "ef9077dcdd96fb8c",
+      "octets": 53856,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "41e7a9dfd5b72eae"
+    },
+    "dc32eabe-511": {
+      "fichier": "audio/dc32eabe-511.mp3",
+      "sha256": "6daad025f7cd0483",
+      "octets": 218880,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "14a3e03370b976a8"
+    },
+    "dc34af7f-579": {
+      "fichier": "audio/dc34af7f-579.mp3",
+      "sha256": "0ded8780722ed316",
+      "octets": 194544,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "cdc2029e781eaba7"
+    },
+    "de53aee6-226": {
+      "fichier": "audio/de53aee6-226.mp3",
+      "sha256": "27548c2db7af87ae",
+      "octets": 72288,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "b1732e34ddbf6eb3"
+    },
+    "df7124a6-211": {
+      "fichier": "audio/df7124a6-211.mp3",
+      "sha256": "f04ed4af171dcba2",
+      "octets": 70416,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "26ca55131910be7b"
+    },
+    "dffbe637-609": {
+      "fichier": "audio/dffbe637-609.mp3",
+      "sha256": "f5e5e9e93ee86e75",
+      "octets": 213552,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "9113c8c44f303e37"
+    },
+    "e35d4045-563": {
+      "fichier": "audio/e35d4045-563.mp3",
+      "sha256": "1288b38223c4ff58",
+      "octets": 206784,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "93e32c87c3b8ee5a"
+    },
+    "e4750546-150": {
+      "fichier": "audio/e4750546-150.mp3",
+      "sha256": "b4dac24f4831dab6",
+      "octets": 56448,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "36f07bbea7554cfd"
+    },
+    "e48646d2-604": {
+      "fichier": "audio/e48646d2-604.mp3",
+      "sha256": "1e0a59ca788ea777",
+      "octets": 225504,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e56266342539770a"
+    },
+    "e6ae5c9a-213": {
+      "fichier": "audio/e6ae5c9a-213.mp3",
+      "sha256": "3a414f363f29f0f1",
+      "octets": 73296,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "3f7a0086239af3db"
+    },
+    "e88469a8-509": {
+      "fichier": "audio/e88469a8-509.mp3",
+      "sha256": "5a223076363f95ce",
+      "octets": 199008,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "6f9734a7e54ddf18"
+    },
+    "e8bfcbff-591": {
+      "fichier": "audio/e8bfcbff-591.mp3",
+      "sha256": "71ecb804d2a89cc6",
+      "octets": 201456,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "0bebfaf0823020e6"
+    },
+    "eabcb5a6-585": {
+      "fichier": "audio/eabcb5a6-585.mp3",
+      "sha256": "8e7dc13e58f9a04d",
+      "octets": 194688,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "b26a46246973d5da"
+    },
+    "ebc58c4e-226": {
+      "fichier": "audio/ebc58c4e-226.mp3",
+      "sha256": "89a3f18d4887adb8",
+      "octets": 73872,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "81907d79ddbe9cb4"
+    },
+    "ebd302f2-234": {
+      "fichier": "audio/ebd302f2-234.mp3",
+      "sha256": "455107527d23b470",
+      "octets": 87840,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "8426fd62cc02f788"
+    },
+    "ec2f77ca-590": {
+      "fichier": "audio/ec2f77ca-590.mp3",
+      "sha256": "ff427a52515aaf59",
+      "octets": 189792,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7e852352de1d5cb4"
+    },
+    "ec9b61c1-210": {
+      "fichier": "audio/ec9b61c1-210.mp3",
+      "sha256": "2ec852cbf8457399",
+      "octets": 74592,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2254378183f843b0"
+    },
+    "ef292d71-581": {
+      "fichier": "audio/ef292d71-581.mp3",
+      "sha256": "c5969838e695becb",
+      "octets": 190080,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "56891445674e6649"
+    },
+    "efa56844-510": {
+      "fichier": "audio/efa56844-510.mp3",
+      "sha256": "6acf7212a47006b1",
+      "octets": 170496,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "c6d527a29b39ba24"
+    },
+    "efae03bb-634": {
+      "fichier": "audio/efae03bb-634.mp3",
+      "sha256": "6793c6c3d6388303",
+      "octets": 218016,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "dcd11e88da20360e"
+    },
+    "efb51c70-189": {
+      "fichier": "audio/efb51c70-189.mp3",
+      "sha256": "d12af3e11bfb466d",
+      "octets": 64800,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7eb9d4a83a7e7bca"
+    },
+    "f0824d68-136": {
+      "fichier": "audio/f0824d68-136.mp3",
+      "sha256": "fdc07b276525f080",
+      "octets": 54720,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "2ff5d9ace29f2755"
+    },
+    "f1e4e911-204": {
+      "fichier": "audio/f1e4e911-204.mp3",
+      "sha256": "b9042a25d9828a83",
+      "octets": 77040,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "94309a43d238b2e9"
+    },
+    "f22e9cb9-614": {
+      "fichier": "audio/f22e9cb9-614.mp3",
+      "sha256": "12158cbe19b04507",
+      "octets": 208512,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "21feb68ad555d3bf"
+    },
+    "f28697ee-582": {
+      "fichier": "audio/f28697ee-582.mp3",
+      "sha256": "c36a1d2a02798a6a",
+      "octets": 207360,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "03437e0a196e1eb4"
+    },
+    "f33e7c34-610": {
+      "fichier": "audio/f33e7c34-610.mp3",
+      "sha256": "8cfac1ea28bd4a16",
+      "octets": 196704,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "45bf7faa063b46e8"
+    },
+    "f3876558-576": {
+      "fichier": "audio/f3876558-576.mp3",
+      "sha256": "e9c4a28c96235bca",
+      "octets": 197424,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f44f65a5c538e548"
+    },
+    "f56d2456-582": {
+      "fichier": "audio/f56d2456-582.mp3",
+      "sha256": "3381c4e8a422c98e",
+      "octets": 197712,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "f7e2edcafe469e2b"
+    },
+    "f645c0c0-210": {
+      "fichier": "audio/f645c0c0-210.mp3",
+      "sha256": "c8648cdb014ebecd",
+      "octets": 72144,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "9013d54de86eb618"
+    },
+    "f755fd1f-156": {
+      "fichier": "audio/f755fd1f-156.mp3",
+      "sha256": "d21a6ea74e4bb2f2",
+      "octets": 51264,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "885f360e63a2ee0d"
+    },
+    "f7c03bd9-522": {
+      "fichier": "audio/f7c03bd9-522.mp3",
+      "sha256": "4d17c0671b6fe5ff",
+      "octets": 171216,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "b4d46e20e2b6db42"
+    },
+    "f7e21c47-577": {
+      "fichier": "audio/f7e21c47-577.mp3",
+      "sha256": "786515d94be0e492",
+      "octets": 178704,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "0a0357e7e249233b"
+    },
+    "f800e291-573": {
+      "fichier": "audio/f800e291-573.mp3",
+      "sha256": "94533c823c5605cc",
+      "octets": 185184,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "9e532702376a813e"
+    },
+    "f89e510e-561": {
+      "fichier": "audio/f89e510e-561.mp3",
+      "sha256": "fc5638a5be775343",
+      "octets": 194688,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "a745648fa3657592"
+    },
+    "f8ea3041-542": {
+      "fichier": "audio/f8ea3041-542.mp3",
+      "sha256": "c74c82357960a6d1",
+      "octets": 169200,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "7417473af6e6640a"
+    },
+    "fa967781-591": {
+      "fichier": "audio/fa967781-591.mp3",
+      "sha256": "7308101f8ec36b01",
+      "octets": 214848,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "e2a5f08fa79603bc"
+    },
+    "fad995cb-568": {
+      "fichier": "audio/fad995cb-568.mp3",
+      "sha256": "51cfb98912996f2a",
+      "octets": 185184,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "286bcb43f5ead7f9"
+    },
+    "fb1d268a-240": {
+      "fichier": "audio/fb1d268a-240.mp3",
+      "sha256": "86de186559fe2b34",
+      "octets": 85392,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "05193608cc7ee4fb"
+    },
+    "fb535a3a-176": {
+      "fichier": "audio/fb535a3a-176.mp3",
+      "sha256": "599d522e7858eb5b",
+      "octets": 56160,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f7d5434cafc0c0ee"
+    },
+    "fb8654cb-129": {
+      "fichier": "audio/fb8654cb-129.mp3",
+      "sha256": "22748ec682ea55ca",
+      "octets": 43776,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "f429e6106279f5a3"
+    },
+    "fba40aa0-618": {
+      "fichier": "audio/fba40aa0-618.mp3",
+      "sha256": "fc9e59abfc672b6c",
+      "octets": 222336,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "a9070fc703a91973"
+    },
+    "fd98060a-510": {
+      "fichier": "audio/fd98060a-510.mp3",
+      "sha256": "655e6ffbfabb10d9",
+      "octets": 196704,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "2b33c0353a11d877"
+    },
+    "fdf26046-588": {
+      "fichier": "audio/fdf26046-588.mp3",
+      "sha256": "e18bedf5ade6122e",
+      "octets": 191664,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "5728e9523cb1d430"
+    },
+    "ff15d443-198": {
+      "fichier": "audio/ff15d443-198.mp3",
+      "sha256": "12b197ff42c1737a",
+      "octets": 66528,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "78031c52c15bc177"
+    },
+    "ff1df5dd-191": {
+      "fichier": "audio/ff1df5dd-191.mp3",
+      "sha256": "43f4eb69a98c1702",
+      "octets": 68544,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "0cc7c1be7d642850"
+    },
+    "ffe0b691-656": {
+      "fichier": "audio/ffe0b691-656.mp3",
+      "sha256": "98f9a585f6693945",
+      "octets": 225216,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "41b551d1ef7315a6"
+    },
+    "4ecabb29-645": {
+      "fichier": "audio/4ecabb29-645.mp3",
+      "sha256": "1f1a15b686c7e95f",
+      "octets": 226944,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "49639f30514a6d06"
+    },
+    "53d4b24f-577": {
+      "fichier": "audio/53d4b24f-577.mp3",
+      "sha256": "d39f0ebd3c3269f4",
+      "octets": 204480,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "6bd681ba28ee23f2"
+    },
+    "6a6e1e83-640": {
+      "fichier": "audio/6a6e1e83-640.mp3",
+      "sha256": "df0f4cc782f75790",
+      "octets": 202752,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "055850b7d233d796"
     }
   },
   "moteurEdgeTts": {

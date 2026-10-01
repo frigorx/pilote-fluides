@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"
+     aria-labelledby="t-obl" aria-describedby="d-obl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-obl">Les formations qui conditionnent l'exercice et celles que l'on choisit</title>
+  <desc id="d-obl">Deux colonnes. À gauche, en trait plein : les formations obligatoires pour exercer, avec deux
+    cartes, l'habilitation électrique, délivrée par l'employeur après une formation, et l'attestation d'aptitude
+    aux fluides, détenue par la personne et à maintenir. À droite, en trait tireté : les formations choisies, à votre
+    initiative, avec trois cartes : le compte personnel de formation, la validation des acquis de l'expérience et le
+    bilan de compétences. Une bande en bas donne la règle : une formation qui conditionne l'exercice est du temps de
+    travail, rémunéré.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; }
+    .h    { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl  { font-size:17px; fill:#10233c; }
+  </style>
+
+  <text class="ttl" x="30" y="36" fill="#1b3a63">Obligatoire pour exercer</text>
+  <text class="ttl" x="470" y="36" fill="#9d174d">Choisie, à votre initiative</text>
+
+  <!-- Colonne gauche -->
+  <rect x="20" y="52" width="410" height="128" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="h" x="38" y="82">Habilitation électrique</text>
+  <text class="lbl" x="38" y="108">délivrée par l'employeur,</text>
+  <text class="lbl" x="38" y="130">après une formation théorique</text>
+  <text class="lbl" x="38" y="152">et pratique</text>
+
+  <rect x="20" y="194" width="410" height="128" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="h" x="38" y="224">Attestation d'aptitude aux fluides</text>
+  <text class="lbl" x="38" y="250">détenue par la personne,</text>
+  <text class="lbl" x="38" y="272">à maintenir par une remise</text>
+  <text class="lbl" x="38" y="294">à niveau périodique</text>
+
+  <!-- Colonne droite -->
+  <rect x="470" y="52" width="410" height="80" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3" stroke-dasharray="14 8"/>
+  <text class="h" x="488" y="82">Compte personnel de formation</text>
+  <text class="lbl" x="488" y="108">vous décidez, vous financez</text>
+
+  <rect x="470" y="146" width="410" height="80" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3" stroke-dasharray="14 8"/>
+  <text class="h" x="488" y="176">Validation des acquis de l'expérience</text>
+  <text class="lbl" x="488" y="202">votre expérience devient un titre</text>
+
+  <rect x="470" y="240" width="410" height="80" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3" stroke-dasharray="14 8"/>
+  <text class="h" x="488" y="270">Bilan de compétences</text>
+  <text class="lbl" x="488" y="296">faire le point pour choisir la suite</text>
+
+  <!-- Règle -->
+  <rect x="20" y="342" width="860" height="82" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="2"/>
+  <text class="h" x="450" y="374" text-anchor="middle">Règle : une formation qui conditionne l'exercice est du temps de travail.</text>
+  <text class="lbl" x="450" y="402" text-anchor="middle">Elle compte comme travail effectif : la rémunération est maintenue.</text>
+</svg>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le contrat — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : le CDI comme forme normale, le CDD et l'intérim et leurs motifs limités, l'apprentissage et la professionnalisation, la période d'essai, ce que contient un contrat écrit, la convention collective lue sur la fiche de paie, et les trois façons de quitter un CDI.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/travail-le-contrat/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Droit du travail.
+     Première station de la ligne : le contrat (CDI, CDD, apprentissage).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas renommer.
+
+     Aucun chiffre non sourcé : chaque valeur (durées d'essai, délais,
+     formulaires) est lue dans une fiche officielle citée dans FOND.md.
+     Les montants (rémunération d'un apprenti, indemnités) sont OMIS.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Droit du travail · niveau BTS</p>
+  <h1>Le contrat — CDI, CDD, apprentissage</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-travail.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire pourquoi le <strong>CDI</strong> est la forme normale de l'embauche, quels <strong>motifs</strong> autorisent un CDD ou une mission d'intérim, ce que l'apprentissage et la professionnalisation engagent (employeur, maître d'apprentissage ou tuteur, centre de formation), ce que doit contenir un <strong>contrat écrit</strong>, comment retrouver votre <strong>convention collective</strong> sur la fiche de paie, et quelles sont les trois façons de <strong>quitter</strong> un CDI.</p>
+  </div>
+
+  <div class="chapeau">
+    <span class="mot">Référentiel</span>
+    <p>Hors REAC : culture professionnelle du technicien et du chargé d'affaires (TP TECVC, REAC TP-00133 — aucune des compétences CP1 à CP10 n'est évaluée ici). Cette station sert d'abord à lire <strong>vos propres papiers</strong> : contrat, fiche de paie, convention.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez d'abord le grand cadre au centre : c'est le contrat à durée indéterminée, le CDI, la forme normale et générale de l'embauche. Autour de lui, quatre cadres aux traits tirés : ce sont les exceptions, le contrat à durée déterminée, l'intérim, l'apprentissage et la professionnalisation. Chacune est encadrée par la loi. En bas, deux encadrés sur l'écrit. À temps plein, il n'est pas obligatoire, et sans écrit le contrat est un CDI. À temps partiel, l'écrit est obligatoire. Dans tous les cas, signer un contrat protège les deux parties.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Le CDI : la règle, pas une option</h2>
+    <p>Le <strong>contrat à durée indéterminée (CDI)</strong> est la forme normale et générale de l'embauche. Le CDD, l'intérim, l'apprentissage et la professionnalisation sont des <strong>exceptions</strong> : chacune a ses conditions, que les écrans suivants détaillent.</p>
+    <p><strong>L'écrit.</strong> À temps plein, un écrit n'est pas obligatoire, et sans écrit le contrat conclu est un CDI. À temps partiel, l'écrit est obligatoire. En pratique, un contrat signé reste toujours préférable, surtout si une période d'essai est prévue. À l'embauche, l'employeur doit aussi remettre au salarié une liste précise d'informations sur la relation de travail.</p>
+    <figure>
+      <img src="svg/cdi-forme-normale.svg" alt="Au centre, un grand cadre plein : le CDI, contrat à durée indéterminée, forme normale et générale de l'embauche. Autour, quatre cadres en tirets : le CDD, l'intérim, l'apprentissage et la professionnalisation, présentés comme des exceptions encadrées par la loi. En bas, deux encadrés : à temps plein l'écrit n'est pas obligatoire et sans écrit le contrat est un CDI ; à temps partiel l'écrit est obligatoire.">
+      <figcaption>Un cadre plein pour la règle, quatre cadres en tirets pour les exceptions.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="À gauche, quatre bandeaux : ce sont quatre des cas prévus par la loi pour un contrat à durée déterminée ou une mission d'intérim. Remplacer une personne absente, faire face à un surcroît temporaire d'activité, un emploi saisonnier, attendre l'arrivée d'un salarié en CDI. Juste dessous, l'encadré marqué d'une croix : occuper durablement un emploi permanent est exclu. À droite, deux montages. Le CDD, c'est un seul contrat entre l'employeur et le salarié. L'intérim en compte deux : le contrat de mission, signé avec l'agence, puis le contrat de mise à disposition entre l'agence et l'entreprise utilisatrice.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">CDD et intérim : durée limitée, motifs limités</h2>
+    <p>Un <strong>CDD</strong> ne peut être conclu que pour l'exécution d'<strong>une tâche précise et temporaire</strong>, dans des cas prévus par la loi : remplacer un salarié absent, faire face à un accroissement temporaire d'activité, un emploi saisonnier, attendre l'arrivée d'un salarié en CDI, et quelques autres (travaux urgents de sécurité, certains emplois d'usage). <strong>Jamais</strong> pour occuper durablement un emploi permanent de l'entreprise.</p>
+    <ul>
+      <li>Le CDD est <strong>écrit</strong>, avec l'indication précise de son <strong>motif</strong>, et remis au salarié au plus tard sous <strong>2 jours ouvrables</strong>. Sans écrit ni motif précis, le salarié peut demander sa requalification en CDI.</li>
+      <li>L'<strong>intérim</strong> repose sur <strong>deux contrats</strong> : le contrat de mission (intérimaire et agence d'intérim), écrit et remis sous 2 jours ouvrables, et le contrat de mise à disposition (agence et entreprise utilisatrice).</li>
+    </ul>
+    <figure>
+      <img src="svg/cdd-interim-motifs.svg" alt="À gauche, quatre motifs autorisés empilés : remplacer un salarié absent, accroissement temporaire d'activité, emploi saisonnier, attendre l'arrivée d'un salarié en CDI ; en dessous un encadré en tirets marqué d'une croix, jamais occuper durablement un emploi permanent, et un encadré qui rappelle l'écrit, le motif précis et la remise sous 2 jours ouvrables. À droite, deux montages : le CDD, un seul contrat entre employeur et salarié ; l'intérim, l'intérimaire, l'agence d'intérim et l'entreprise utilisatrice reliés par le contrat de mission puis le contrat de mise à disposition.">
+      <figcaption>Regardez les motifs s'allumer un à un : la liste est courte, et elle est limitative.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deux schémas côte à côte. À gauche, l'apprentissage. En haut, un pictogramme : l'apprenti. Deux liens en partent, vers l'employeur, qui le forme au poste, et vers le centre de formation d'apprentis, le CFA, qui assure l'enseignement théorique, au moins un quart de la durée du contrat. Sous l'employeur, l'encadré rose : le maître d'apprentissage, un salarié volontaire, directement responsable de la formation de l'apprenti. À droite, la professionnalisation suit le même principe, avec un tuteur à la place du maître d'apprentissage. Dans les deux cas, le contrat est écrit, sur un formulaire officiel.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Apprentissage et professionnalisation : trois acteurs</h2>
+    <p>L'<strong>apprentissage</strong> associe une formation pratique en entreprise et un enseignement théorique en <strong>centre de formation d'apprentis (CFA)</strong>. Le contrat est <strong>écrit</strong> (formulaire cerfa n° 10103), pour une durée de 6 mois à 3 ans. Il engage trois acteurs :</p>
+    <ul>
+      <li>l'<strong>employeur</strong> assure la formation pratique et confie des tâches conformes à une progression annuelle définie avec le CFA ;</li>
+      <li>le <strong>maître d'apprentissage</strong> est directement responsable de la formation de l'apprenti : un salarié, volontaire, majeur, aux compétences professionnelles et pédagogiques requises ;</li>
+      <li>le <strong>CFA</strong> dispense l'enseignement théorique, au moins <strong>25 %</strong> de la durée du contrat.</li>
+    </ul>
+    <p>Le <strong>contrat de professionnalisation</strong> vise une qualification par alternance entre formation en centre et pratique en entreprise ; il est écrit (cerfa n° 12434), en CDD ou en CDI, avec un <strong>tuteur</strong> : un salarié qualifié et volontaire, désigné par l'employeur. Le salaire d'un apprenti dépend de son âge et de son année de formation : les montants changent, ils se lisent à la source du jour.</p>
+    <figure>
+      <img src="svg/alternance-deux-contrats.svg" alt="Deux schémas côte à côte. À gauche, l'apprentissage : un pictogramme d'apprenti relié à son employeur qui le forme au poste et au CFA qui assure l'enseignement théorique, au moins 25 % de la durée du contrat ; sous l'employeur, le maître d'apprentissage, un salarié volontaire. Bandeau : contrat écrit, cerfa n° 10103, de 6 mois à 3 ans. À droite, la professionnalisation : un salarié en alternance relié à son employeur et à une formation en centre, avec un tuteur désigné par l'employeur. Bandeau : contrat écrit, cerfa n° 12434, qualification par alternance.">
+      <figcaption>Le maître d'apprentissage et le tuteur sont dans l'entreprise, jamais au CFA.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="En haut, la longue barre d'un CDI, et tout au début un petit tronçon orange : la période d'essai. Elle n'est pas automatique, le contrat ou la lettre d'engagement doit la prévoir. Dessous, trois barres alignées sur un axe gradué en mois. Pour les employés et les ouvriers, deux mois. Pour les agents de maîtrise et les techniciens, trois mois : c'est la ligne qui concerne le plus souvent un diplômé de BTS. Pour les cadres, quatre. Le tronçon en tirets montre le renouvellement, possible une seule fois. En bas, ses trois conditions : la convention collective le permet, la clause est claire, le salarié accepte par écrit.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La période d'essai : une clause, une durée bornée</h2>
+    <p>La période d'essai permet à l'employeur d'évaluer les compétences du salarié, et au salarié de voir si le poste lui convient. Elle <strong>ne se présume pas</strong> : elle doit figurer dans le <strong>contrat de travail ou la lettre d'engagement</strong>.</p>
+    <ul>
+      <li>Durée maximale en CDI : <strong>2 mois</strong> pour les employés et ouvriers, <strong>3 mois</strong> pour les agents de maîtrise et techniciens, <strong>4 mois</strong> pour les cadres.</li>
+      <li>Renouvellement, <strong>une seule fois</strong>, et seulement si la convention collective le permet, si la clause figure clairement au contrat et si le salarié donne son accord par écrit pendant la période initiale : 4, 6 ou 8 mois au plus.</li>
+    </ul>
+    <p>Les durées des contrats à durée limitée (CDD, mission d'intérim) et celles de l'apprentissage suivent d'autres règles : elles se lisent dans les textes du jour.</p>
+    <figure>
+      <img src="svg/periode-essai.svg" alt="Une frise : la barre d'un CDI dont le début, en orange, est la période d'essai si le contrat la prévoit. En dessous, trois barres sur un axe en mois : employés et ouvriers, 2 mois, 4 si renouvelée ; agents de maîtrise et techniciens, 3 mois, 6 si renouvelée ; cadres, 4 mois, 8 si renouvelée. Un encadré donne les trois conditions du renouvellement : la convention collective le permet, la clause figure au contrat, le salarié donne son accord par écrit.">
+      <figcaption>Orange : la durée initiale. Tirets : le renouvellement, une seule fois.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Voici une feuille de contrat qui se déplie. Elle porte neuf lignes, et pendant l'animation chacune s'allume à son tour : l'identité des parties, la fonction et la qualification, le lieu de travail, la durée du travail, la rémunération, les congés payés, la période d'essai, le préavis, la convention collective. À droite, trois encadrés. Pour un CDI, le contenu est libre, sauf mentions imposées par la convention collective. Pour un CDD ou un apprentissage, l'écrit est obligatoire, avec des mentions fixées par la loi. Et selon le poste, on peut y trouver une clause de non-concurrence ou de mobilité.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Le contrat écrit : ce qu'il contient</h2>
+    <p>Pour un <strong>CDI</strong>, le contenu est <strong>libre</strong>, sauf si la convention collective impose des mentions. En pratique, on y lit :</p>
+    <ul>
+      <li>l'identité et l'adresse des parties, la fonction et la qualification, le lieu de travail ;</li>
+      <li>la durée du travail, la rémunération, les congés payés ;</li>
+      <li>la période d'essai, les délais de préavis ;</li>
+      <li>selon le poste, une clause de non-concurrence ou de mobilité.</li>
+    </ul>
+    <p>Pour un <strong>CDD</strong>, la loi impose les mentions : le motif précis, la date de fin (ou une durée minimale), la désignation du poste, la qualification du salarié remplacé, la rémunération, la convention collective applicable. Le <strong>contrat d'apprentissage</strong> doit indiquer l'employeur et son effectif, le diplôme préparé, le salaire par année, l'identité et les compétences du maître d'apprentissage.</p>
+    <figure>
+      <img src="svg/contrat-se-deplie.svg" alt="Une feuille de contrat de travail dépliée, avec neuf lignes : identité et adresse des parties, fonction et qualification, lieu de travail, durée du travail, rémunération, congés payés, période d'essai si elle est prévue, délais de préavis, convention collective applicable. À droite, trois encadrés : pour un CDI le contenu est libre sauf mentions imposées par la convention collective ; pour un CDD ou un apprentissage l'écrit est obligatoire avec des mentions imposées par la loi ; selon le poste, clause de non-concurrence ou de mobilité.">
+      <figcaption>La feuille se déplie, puis chaque ligne s'allume : c'est la liste à repasser avant de signer.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="À gauche, un bulletin de paie schématique, dont les lignes grises sont des rubriques. Une seule ligne est bordée d'orange : celle de la convention collective, avec son intitulé et son numéro IDCC, l'identifiant de la convention collective. Trois traits en partent. Le premier mène à Légifrance, qui publie les conventions étendues. Le deuxième au Code du travail numérique, où un outil retrouve la convention à partir du nom de l'entreprise, de son numéro SIRET ou de l'IDCC. Le troisième au lieu de travail, où l'employeur tient une copie à jour. Trouver sa convention, c'est lire une ligne de sa fiche de paie.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">La convention collective : la ligne de la fiche de paie</h2>
+    <p>Une <strong>convention collective</strong> est un texte négocié entre représentants des employeurs et des salariés d'un secteur : conditions de travail, salaires, congés, droits et obligations. Elle peut prévoir des règles <strong>plus favorables</strong> que le Code du travail (par exemple des indemnités de licenciement plus élevées), et dans certains cas des règles moins favorables.</p>
+    <ul>
+      <li><strong>Comment la trouver.</strong> L'intitulé de la convention doit apparaître sur le <strong>bulletin de paie</strong>, et peut figurer au contrat. Chaque convention porte un numéro <strong>IDCC</strong> (de 1 à 4 chiffres), qui évite toute confusion.</li>
+      <li><strong>Où lire le texte.</strong> Sur Légifrance (conventions étendues), avec l'outil de recherche du Code du travail numérique (nom de l'entreprise, SIRET ou IDCC), ou sur le lieu de travail : l'employeur en tient une copie à jour à disposition.</li>
+    </ul>
+    <p>Une entreprise du bâtiment et un bureau d'études n'ont pas la même convention : c'est le numéro de <strong>votre</strong> fiche de paie qui la désigne, jamais le métier que l'on devine.</p>
+    <figure>
+      <img src="svg/convention-fiche-de-paie.svg" alt="Un bulletin de paie schématique dont une ligne, bordée d'orange, porte l'intitulé de la convention collective et son numéro IDCC. Trois traits en partent vers trois lieux de lecture : Légifrance, le Code du travail numérique et le lieu de travail. Un encadré rappelle que l'IDCC est un numéro de 1 à 4 chiffres.">
+      <figcaption>Une seule ligne du bulletin ouvre la porte vers le texte de votre convention.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Trois colonnes partent d'un CDI en cours. À gauche, la démission : c'est le salarié qui décide, sa volonté doit être claire et sans équivoque, et la durée du préavis dépend de la convention collective, des usages ou du contrat. Au centre, la rupture conventionnelle : un accord des deux parties, ni démission ni licenciement, avec un délai de rétractation de quinze jours calendaires avant l'homologation par l'administration. À droite, le licenciement : c'est l'employeur qui décide, il convoque à un entretien préalable, puis envoie une lettre qui énonce le motif.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Quitter un CDI : trois voies</h2>
+    <ul>
+      <li><strong>La démission</strong> est la décision du salarié, qui doit exprimer une volonté claire et sans équivoque. La loi ne fixe pas la durée du préavis : elle vient de la convention collective, des usages ou du contrat.</li>
+      <li><strong>La rupture conventionnelle</strong> rompt un CDI d'un commun accord : ni licenciement, ni démission. Au moins un entretien, une convention signée, un droit de rétractation de <strong>15 jours calendaires</strong>, puis une demande d'homologation à l'administration (DDETSPP), qui dispose de <strong>15 jours ouvrables</strong>. L'indemnité ne peut pas être inférieure à l'indemnité légale de licenciement.</li>
+      <li><strong>Le licenciement</strong> est la décision de l'employeur. Il convoque le salarié à un <strong>entretien préalable</strong> (au moins <strong>5 jours ouvrables</strong> entre la convocation et l'entretien), puis lui envoie une <strong>lettre qui énonce le motif</strong>.</li>
+    </ul>
+    <p>Ce sont des principes : chaque voie a ses règles de détail, ses indemnités et ses recours, que l'on ne devine pas et que l'on vérifie dans les textes.</p>
+    <figure>
+      <img src="svg/rupture-trois-sorties.svg" alt="Un cadre « CDI en cours » d'où partent trois traits vers trois colonnes. Démission : décision du salarié, volonté claire et sans équivoque, préavis fixé par la convention, les usages ou le contrat. Rupture conventionnelle : d'un commun accord, au moins un entretien, rétractation de 15 jours calendaires, homologation par l'administration, indemnité au moins légale. Licenciement : décision de l'employeur, convocation à un entretien préalable, 5 jours ouvrables au moins avant l'entretien, lettre qui énonce le motif.">
+      <figcaption>Qui décide ? Le salarié, les deux ensemble, ou l'employeur : c'est la première question de chaque colonne.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient en quatre lignes à cocher, à gauche, avec la même case pour chacune. Quel contrat vous lie, avec son motif et sa durée ? Quelle période d'essai est prévue, ou pas ? Quelle convention collective s'applique, lisible sur la fiche de paie ? Et comment en sortir : le préavis et les modes de rupture. À droite, une feuille et une loupe : ce sont vos propres papiers. Le réflexe professionnel, c'est de les lire une fois, crayon en main, avant qu'un désaccord n'oblige à le faire dans l'urgence.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>Le <strong>CDI</strong> est la règle ; CDD, intérim, apprentissage et professionnalisation sont des exceptions encadrées.</li>
+      <li>Un CDD ou une mission d'intérim ont un <strong>motif précis</strong>, jamais un emploi permanent ; l'alternance engage l'employeur, un <strong>maître d'apprentissage ou un tuteur</strong> et un centre de formation.</li>
+      <li>La <strong>période d'essai</strong> se prévoit par écrit, sa durée est bornée, son renouvellement aussi.</li>
+      <li>La <strong>convention collective</strong> se lit sur la fiche de paie, avec son IDCC.</li>
+      <li>On quitte un CDI par <strong>démission</strong>, <strong>rupture conventionnelle</strong> ou <strong>licenciement</strong>.</li>
+    </ul>
+    <p class="formule">Le réflexe : lire son contrat et sa fiche de paie, crayon en main.</p>
+    <figure>
+      <img src="svg/bilan-ce-que-dit-votre-contrat.svg" alt="Quatre lignes numérotées avec une case cochée : quel contrat, quelle période d'essai, quelle convention collective, comment en sortir. À droite, une feuille de papier surmontée d'une loupe, qui représente vos propres papiers à lire.">
+      <figcaption>Quatre cases, quatre lignes de vos propres papiers.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Un bureau d'études veut embaucher un technicien en CDD pour pourvoir durablement un poste qui existe en permanence dans l'entreprise. Que peut-on dire de ce projet ? Reprenez la liste des motifs de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Un CDD pour pourvoir durablement un poste permanent : que dire ?</h2>
+    <figure class="vignette">
+      <img src="svg/cdd-interim-motifs.svg" alt="Vignette de rappel : les quatre motifs autorisés d'un CDD ou d'une mission d'intérim, et l'encadré barré d'une croix, jamais occuper durablement un emploi permanent.">
+      <figcaption>Rappel de l'écran 2 — la liste des motifs est courte.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">C'est possible si la date de fin est écrite dans le contrat</button>
+      <button type="button" data-answer="b">C'est possible un an, puis le CDD devient un CDI d'office</button>
+      <button type="button" data-answer="bonne">Non : un CDD sert une tâche précise et temporaire</button>
+      <button type="button" data-answer="d">Oui : l'entreprise choisit librement la forme du contrat</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un CDD ne peut être conclu que pour l'exécution d'une tâche précise et temporaire, dans les cas prévus par la loi, avec son motif précis écrit dans le contrat. Occuper durablement un emploi permanent n'en fait pas partie : c'est le rôle du CDI."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Vous êtes embauché comme technicien en CDI. Votre contrat ne dit rien de la période d'essai. Que se passe-t-il ? Repensez à ce que montre la frise de l'écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Technicien en CDI, contrat muet sur la période d'essai : que se passe-t-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/periode-essai.svg" alt="Vignette de rappel : la période d'essai, petit tronçon orange au début d'un CDI, et les durées maximales par catégorie.">
+      <figcaption>Rappel de l'écran 4 — l'essai est une clause du contrat.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Elle n'existe pas : le contrat ou la lettre doit la prévoir</button>
+      <button type="button" data-answer="a">Elle existe de plein droit, et dure trois mois pour un technicien</button>
+      <button type="button" data-answer="c">Elle existe, et l'employeur en fixe seul la durée</button>
+      <button type="button" data-answer="d">Elle existe pour les deux premiers mois seulement</button>
+    </div>
+    <p class="feedback" hidden data-explication="La période d'essai ne se présume pas : elle doit être prévue dans le contrat de travail ou la lettre d'engagement. Les trois mois sont un plafond pour les agents de maîtrise et techniciens, pas une durée automatique."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Où lit-on d'abord le nom de la convention collective qui s'applique à vous ? Souvenez-vous de la ligne bordée d'orange, sur l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Où lit-on d'abord la convention collective qui s'applique à vous ?</h2>
+    <figure class="vignette">
+      <img src="svg/convention-fiche-de-paie.svg" alt="Vignette de rappel : un bulletin de paie dont une ligne bordée d'orange porte la convention collective, avec trois traits vers les lieux où lire son texte.">
+      <figcaption>Rappel de l'écran 6 — une ligne du bulletin.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Sur l'extrait Kbis de l'entreprise, à la rubrique activité</button>
+      <button type="button" data-answer="b">Dans le règlement intérieur, et nulle part ailleurs</button>
+      <button type="button" data-answer="c">Sur le diplôme préparé, BTS ou bac professionnel</button>
+      <button type="button" data-answer="bonne">Sur votre bulletin de paie, avec son intitulé</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'intitulé de la convention collective doit apparaître sur le bulletin de paie. Le numéro IDCC permet ensuite de retrouver le texte, sur Légifrance, avec l'outil du Code du travail numérique, ou auprès de l'employeur."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un salarié en CDI et son employeur veulent se séparer d'un commun accord. Quelle voie choisir, et quelle garantie garde le salarié ? Reprenez les trois colonnes de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Salarié et employeur veulent se séparer d'un commun accord : quelle voie ?</h2>
+    <figure class="vignette">
+      <img src="svg/rupture-trois-sorties.svg" alt="Vignette de rappel : trois colonnes partant d'un CDI, démission, rupture conventionnelle et licenciement, chacune avec ses étapes.">
+      <figcaption>Rappel de l'écran 7 — qui décide ?</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La démission, avec l'indemnité légale de licenciement</button>
+      <button type="button" data-answer="bonne">La rupture conventionnelle, avec un délai de rétractation</button>
+      <button type="button" data-answer="c">Le licenciement, sans entretien puisque tout le monde est d'accord</button>
+      <button type="button" data-answer="d">Un simple accord oral, sans document à signer</button>
+    </div>
+    <p class="feedback" hidden data-explication="La rupture conventionnelle rompt un CDI d'un commun accord : ni démission, ni licenciement. Convention signée, rétractation possible pendant 15 jours calendaires, puis homologation par l'administration ; l'indemnité ne peut pas être inférieure à l'indemnité légale de licenciement."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Les quatre
+     stations voisines de la sous-ligne Droit du travail sont produites dans
+     la même vague : les liens sont réels. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../travail-temps-et-paie/"><strong>Temps de travail et paie</strong></a> (même sous-ligne)
+      — la fiche de paie que l'écran 6 a ouverte : ce qu'elle contient et ce qu'elle doit vous dire.</li>
+    <li><a href="../travail-droits-devoirs/"><strong>Droits et devoirs</strong></a> (même sous-ligne)
+      — ce que le contrat crée de part et d'autre, une fois signé.</li>
+    <li><a href="../travail-se-former/"><strong>Se former</strong></a> (même sous-ligne)
+      — l'alternance vue côté formation : compte de formation, VAE, reconversion.</li>
+    <li><a href="../travail-s-installer/"><strong>S'installer à son compte</strong></a> (même sous-ligne)
+      — l'autre voie que le contrat de travail : travailler pour soi.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+
+     VOIX FABRIQUÉE : aucun MP3 n'existe encore pour cette station dans
+     l'index global voix-index.js ; elle parle donc avec la voix du navigateur.
+     Pour lui donner la voix edge-tts : build/voix/collecter-narrations.mjs
+     puis generer-audios-edge-tts.py --confirmer.
+
+     data-prototype : la station attend sa relecture métier. -->
+<script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

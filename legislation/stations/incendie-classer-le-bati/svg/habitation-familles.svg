@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 572" role="img"
+     aria-labelledby="t-hab" aria-describedby="d-hab" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-hab">L'habitation : quatre familles selon la hauteur</title>
+  <desc id="d-hab">Cinq bâtiments de hauteur croissante posés sur une ligne de sol, de gauche à droite. Première famille : une maison
+    avec un toit, un étage au plus sur rez-de-chaussée. Deuxième famille : un immeuble bas, maisons plus hautes ou collectifs de
+    trois étages au plus sur rez-de-chaussée. Troisième famille : un immeuble dont le plancher bas du logement le plus haut, repéré
+    par un trait orange, est à 28 mètres au plus, avec des sous-classes A et B. Quatrième famille : un immeuble plus haut dont le
+    plancher bas du logement le plus haut, repéré par un trait orange, est à 50 mètres au plus. Cinquième bâtiment, en rouge :
+    au-delà de 50 mètres, c'est un immeuble de grande hauteur. Deux lignes en tirets rouges marquent 28 et 50 mètres. Schéma non
+    à l'échelle pour les deux premières familles.</desc>
+  <defs>
+    <pattern id="fen" width="30" height="24" patternUnits="userSpaceOnUse">
+      <rect x="8" y="7" width="14" height="10" fill="#5a6b7d" opacity="0.55"/>
+    </pattern>
+  </defs>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .seuil{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#b91c1c; }
+    .nom { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nom-r { fill:#b91c1c; }
+    .not { font-size:16px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="400" y="30" text-anchor="middle">Les familles d'habitation, du plus bas au plus haut</text>
+  <line x1="20" y1="140" x2="780" y2="140" stroke="#b91c1c" stroke-width="2.5" stroke-dasharray="10 7"/>
+  <line x1="20" y1="285" x2="780" y2="285" stroke="#b91c1c" stroke-width="2.5" stroke-dasharray="10 7"/>
+  <line x1="20" y1="64" x2="52" y2="64" stroke="#e8914a" stroke-width="5"/>
+  <text class="not" x="62" y="70">Trait orange : plancher bas du logement le plus haut</text>
+  <text class="seuil" x="20" y="130">50 m</text>
+  <text class="seuil" x="20" y="275">28 m</text>
+  <rect x="35" y="424" width="110" height="46" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="35" y="424" width="110" height="46" fill="url(#fen)"/>
+  <polygon points="27,424 90,394 153,424" fill="#5a6b7d" stroke="#1b3a63" stroke-width="3"/>
+  <text class="nom" x="90" y="382" text-anchor="middle">1re famille</text>
+  <rect x="187" y="370" width="110" height="100" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="187" y="370" width="110" height="100" fill="url(#fen)"/>
+  <text class="nom" x="242" y="358" text-anchor="middle">2e famille</text>
+  <rect x="339" y="268" width="110" height="202" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="339" y="268" width="110" height="202" fill="url(#fen)"/>
+  <text class="nom" x="394" y="256" text-anchor="middle">3e famille</text>
+  <line x1="339" y1="300" x2="449" y2="300" stroke="#e8914a" stroke-width="5"/>
+  <rect x="491" y="130" width="110" height="340" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="491" y="130" width="110" height="340" fill="url(#fen)"/>
+  <text class="nom" x="546" y="118" text-anchor="middle">4e famille</text>
+  <line x1="491" y1="160" x2="601" y2="160" stroke="#e8914a" stroke-width="5"/>
+  <rect x="643" y="60" width="110" height="410" fill="#fbeaea" stroke="#b91c1c" stroke-width="3"/>
+  <rect x="643" y="60" width="110" height="410" fill="url(#fen)"/>
+  <text class="nom nom-r" x="698" y="48" text-anchor="middle">IGH</text>
+  <line x1="643" y1="100" x2="753" y2="100" stroke="#e8914a" stroke-width="5"/>
+  <text class="not" x="90" y="494" text-anchor="middle">Maisons, un étage</text>
+  <text class="not" x="90" y="514" text-anchor="middle">au plus sur</text>
+  <text class="not" x="90" y="534" text-anchor="middle">rez-de-chaussée</text>
+  <text class="not" x="242" y="494" text-anchor="middle">Maisons plus hautes</text>
+  <text class="not" x="242" y="514" text-anchor="middle">et collectifs :</text>
+  <text class="not" x="242" y="534" text-anchor="middle">trois étages au plus</text>
+  <text class="not" x="394" y="494" text-anchor="middle">Logement le plus</text>
+  <text class="not" x="394" y="514" text-anchor="middle">haut : plancher bas</text>
+  <text class="not" x="394" y="534" text-anchor="middle">à 28 m au plus</text>
+  <text class="not" x="394" y="554" text-anchor="middle">sous-classes A et B</text>
+  <text class="not" x="546" y="494" text-anchor="middle">Logement le plus</text>
+  <text class="not" x="546" y="514" text-anchor="middle">haut : plancher bas</text>
+  <text class="not" x="546" y="534" text-anchor="middle">à 50 m au plus</text>
+  <text class="not" x="698" y="494" text-anchor="middle">Au-delà de 50 m :</text>
+  <text class="not" x="698" y="514" text-anchor="middle">immeuble de grande</text>
+  <text class="not" x="698" y="534" text-anchor="middle">hauteur</text>
+  <line x1="20" y1="470" x2="780" y2="470" stroke="#1b3a63" stroke-width="5"/>
+</svg>

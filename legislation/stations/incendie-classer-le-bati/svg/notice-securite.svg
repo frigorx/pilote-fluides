@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-not" aria-describedby="d-not">
+  <title id="t-not">La notice de sécurité : les rubriques du lot CVC</title>
+  <desc id="d-not">À gauche, une notice descriptive de sécurité en cinq rubriques : renseignements principaux avec type, catégorie et effectif ;
+    construction avec résistance au feu, réaction au feu, secteurs et compartiments ; désenfumage, encadré en rouge ; chauffage et ventilation d'air,
+    encadré en rouge ; système de sécurité incendie. Les deux rubriques rouges sont celles que remplit le lot CVC. À droite, quatre étapes reliées
+    par des flèches vers le bas : demande d'autorisation de travaux ou permis de construire, avis de la commission de sécurité, visite de réception,
+    autorisation d'ouverture par le maire. En bas à droite, une légende explique la couleur rouge.</desc>
+  <style>
+    text { font-family: Calibri, 'Segoe UI', sans-serif; }
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#10233c; }
+    .rub { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:17px; fill:#1b3a63; }
+    .rub-r { fill:#b91c1c; }
+    .nom { font-size:16px; fill:#10233c; }
+    .gr  { font-size:16px; fill:#5a6b7d; font-style:italic; }
+    .dt  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="400" y="30" text-anchor="middle">La notice de sécurité, pièce du dossier</text>
+  <rect x="20" y="46" width="450" height="440" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="dt" x="36" y="74">Notice descriptive de sécurité</text>
+  <rect x="36" y="84" width="418" height="60" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="rub" x="50" y="108">Renseignements principaux</text>
+  <text class="nom" x="50" y="131">type, catégorie, effectif</text>
+  <rect x="36" y="152" width="418" height="60" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="rub" x="50" y="176">Construction</text>
+  <text class="nom" x="50" y="199">résistance et réaction au feu, compartiments</text>
+  <rect x="36" y="220" width="418" height="60" rx="8" fill="#fbeaea" stroke="#b91c1c" stroke-width="3"/>
+  <text class="rub rub-r" x="50" y="244">Désenfumage</text>
+  <text class="nom" x="50" y="267">naturel ou mécanique, manuel ou automatique</text>
+  <rect x="36" y="288" width="418" height="60" rx="8" fill="#fbeaea" stroke="#b91c1c" stroke-width="3"/>
+  <text class="rub rub-r" x="50" y="312">Chauffage et ventilation d’air</text>
+  <text class="nom" x="50" y="335">mode de chauffage, puissance, organes de coupure</text>
+  <rect x="36" y="356" width="418" height="60" rx="8" fill="#fffdf8" stroke="#5a6b7d" stroke-width="2"/>
+  <text class="rub" x="50" y="380">Système de sécurité incendie</text>
+  <text class="nom" x="50" y="403">catégorie de SSI de A à E, alarme</text>
+  <rect x="500" y="84" width="280" height="60" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2.5"/>
+  <text class="rub" x="514" y="110">Autorisation de travaux</text>
+  <text class="nom" x="514" y="132">ou permis de construire</text>
+  <line x1="640" y1="144" x2="640" y2="164" stroke="#1b3a63" stroke-width="3"/>
+  <polygon points="632,160 648,160 640,170" fill="#1b3a63"/>
+  <rect x="500" y="170" width="280" height="60" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2.5"/>
+  <text class="rub" x="514" y="196">Avis de la commission</text>
+  <text class="nom" x="514" y="218">de sécurité, notice à l’appui</text>
+  <line x1="640" y1="230" x2="640" y2="250" stroke="#1b3a63" stroke-width="3"/>
+  <polygon points="632,246 648,246 640,256" fill="#1b3a63"/>
+  <rect x="500" y="256" width="280" height="60" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2.5"/>
+  <text class="rub" x="514" y="282">Visite de réception</text>
+  <text class="nom" x="514" y="304">avant l’ouverture au public</text>
+  <line x1="640" y1="316" x2="640" y2="336" stroke="#1b3a63" stroke-width="3"/>
+  <polygon points="632,332 648,332 640,342" fill="#1b3a63"/>
+  <rect x="500" y="342" width="280" height="60" rx="10" fill="#eef3f9" stroke="#2f5689" stroke-width="2.5"/>
+  <text class="rub" x="514" y="368">Autorisation d’ouverture</text>
+  <text class="nom" x="514" y="390">par arrêté du maire</text>
+  <rect x="36" y="436" width="26" height="26" rx="5" fill="#fbeaea" stroke="#b91c1c" stroke-width="3"/>
+  <text class="nom" x="74" y="455">Rubriques du lot CVC</text>
+  <text class="gr" x="500" y="440">Exemple : notice descriptive de</text>
+  <text class="gr" x="500" y="462">sécurité d’une préfecture (2015)</text>
+</svg>

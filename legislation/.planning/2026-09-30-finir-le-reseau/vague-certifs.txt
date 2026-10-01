@@ -1,0 +1,5 @@
+Vague Certifications & normes — slugs (ils existeront tous) : certif-loi-norme-dtu, certif-marquage-ce, certif-rge-qualipac, certif-garanties.
+Sous-ligne : Certifications & normes (couleur #3730a3), scène : ../../img/scene-certifs.webp (elle existe).
+Sources officielles attendues : décret 2009-697 (normalisation, normes d'application obligatoire), règlement (UE) 305/2011 (produits de construction, DoP, marquage CE), directive / règlements des machines et équipements le cas échéant, décret et arrêtés RGE (écoconditionnalité des aides, ADEME, service-public.fr, france-renov.gouv.fr), Code civil articles 1792 à 1792-7 (garanties décennale, biennale, parfait achèvement), Code des assurances L. 241-1 et L. 242-1. Organismes de qualification (Qualit'EnR / QualiPAC, Qualibat…) : ce qu'ils publient eux-mêmes.
+Aucun montant d'aide ni seuil non lu dans le texte.
+Chercher d'abord dans le fonds de l'enseignant : node C:/git/HAL-v3/scripts/chercher-rag.js "<sujet>".

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img"
+     aria-labelledby="t-pl" aria-describedby="d-pl" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pl">La durée légale n'est pas un plafond : les plafonds sont plus loin</title>
+  <desc id="d-pl">Une échelle horizontale de zéro à quarante-huit heures par semaine. Le trait bleu s'arrête à trente-cinq heures, la durée légale, seuil à partir duquel une heure devient supplémentaire. Deux repères plus loin : quarante-quatre heures, plafond de la moyenne sur douze semaines consécutives, et quarante-huit heures, plafond absolu sur une semaine. Sous l'échelle, quatre cartes : la durée légale de trente-cinq heures, le plafond moyen de quarante-quatre heures sur douze semaines, le plafond absolu de quarante-huit heures, et le plafond du jour de dix heures qu'un accord peut porter à douze. Un bandeau rappelle que les moins de dix-huit ans ont des limites plus basses : huit heures par jour et trente-cinq par semaine.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:21px; fill:#1b3a63; }
+    .h   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#10233c; }
+    .hw  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:19px; fill:#ffffff; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .lw  { font-size:17px; fill:#ffffff; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .big { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:26px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="34" text-anchor="middle">Sur une semaine : un seuil, puis deux plafonds</text>
+  <rect x="40" y="110" width="792.0" height="38" rx="6" fill="#dfe5ec"/>
+  <rect x="40" y="110" width="577.5" height="38" rx="6" fill="#1b3a63"/>
+  <rect x="611.5" y="110" width="6" height="38" rx="0" fill="#1b3a63"/>
+  <line x1="40.0" y1="148" x2="40.0" y2="168" stroke="#5a6b7d" stroke-width="3"/>
+  <text class="h" style="fill:#5a6b7d" x="36.0" y="194" text-anchor="start">0 h</text>
+  <line x1="617.5" y1="148" x2="617.5" y2="168" stroke="#1b3a63" stroke-width="3"/>
+  <text class="h" style="fill:#1b3a63" x="617.5" y="194" text-anchor="middle">35 h</text>
+  <line x1="766.0" y1="148" x2="766.0" y2="168" stroke="#a8410b" stroke-width="3"/>
+  <text class="h" style="fill:#a8410b" x="766.0" y="194" text-anchor="middle">44 h</text>
+  <line x1="832.0" y1="148" x2="832.0" y2="168" stroke="#8a2f2f" stroke-width="3"/>
+  <text class="h" style="fill:#8a2f2f" x="832.0" y="194" text-anchor="middle">48 h</text>
+  <text class="hw" x="328.75" y="136" text-anchor="middle">durée légale</text>
+  <text class="lbl" x="691.75" y="136" text-anchor="middle"></text>
+  <rect x="30.0" y="240" width="200" height="168" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="30.0" y="240" width="200" height="42" rx="10" fill="#1b3a63"/>
+  <rect x="30.0" y="262" width="200" height="20" rx="0" fill="#1b3a63"/>
+  <text class="hw" x="130.0" y="268" text-anchor="middle">Durée légale</text>
+  <text class="h" x="130.0" y="322" text-anchor="middle">35 h par semaine</text>
+  <text class="lbl" x="130.0" y="356" text-anchor="middle">temps complet ; au-delà,</text>
+  <text class="lbl" x="130.0" y="380" text-anchor="middle">heures supplémentaires</text>
+  <rect x="243.3" y="240" width="200" height="168" rx="10" fill="#fffdf8" stroke="#a8410b" stroke-width="3"/>
+  <rect x="243.3" y="240" width="200" height="42" rx="10" fill="#a8410b"/>
+  <rect x="243.3" y="262" width="200" height="20" rx="0" fill="#a8410b"/>
+  <text class="hw" x="343.3" y="268" text-anchor="middle">Plafond moyen</text>
+  <text class="h" x="343.3" y="322" text-anchor="middle">44 h en moyenne</text>
+  <text class="lbl" x="343.3" y="356" text-anchor="middle">sur 12 semaines</text>
+  <text class="lbl" x="343.3" y="380" text-anchor="middle">consécutives</text>
+  <rect x="456.6" y="240" width="200" height="168" rx="10" fill="#fffdf8" stroke="#8a2f2f" stroke-width="3"/>
+  <rect x="456.6" y="240" width="200" height="42" rx="10" fill="#8a2f2f"/>
+  <rect x="456.6" y="262" width="200" height="20" rx="0" fill="#8a2f2f"/>
+  <text class="hw" x="556.6" y="268" text-anchor="middle">Plafond absolu</text>
+  <text class="h" x="556.6" y="322" text-anchor="middle">48 h maximum</text>
+  <text class="lbl" x="556.6" y="356" text-anchor="middle">au cours d'une</text>
+  <text class="lbl" x="556.6" y="380" text-anchor="middle">même semaine</text>
+  <rect x="669.9000000000001" y="240" width="200" height="168" rx="10" fill="#fffdf8" stroke="#5a6b7d" stroke-width="3"/>
+  <rect x="669.9000000000001" y="240" width="200" height="42" rx="10" fill="#5a6b7d"/>
+  <rect x="669.9000000000001" y="262" width="200" height="20" rx="0" fill="#5a6b7d"/>
+  <text class="hw" x="769.9000000000001" y="268" text-anchor="middle">Plafond du jour</text>
+  <text class="h" x="769.9000000000001" y="322" text-anchor="middle">10 h par jour</text>
+  <text class="lbl" x="769.9000000000001" y="356" text-anchor="middle">un accord peut aller</text>
+  <text class="lbl" x="769.9000000000001" y="380" text-anchor="middle">jusqu'à 12 h</text>
+  <rect x="30" y="430" width="840" height="64" rx="10" fill="#eef3f9" stroke="#9d174d" stroke-width="2.5"/>
+  <text class="h" x="450" y="458" text-anchor="middle">Avant 18 ans, les limites sont plus basses :</text>
+  <text class="lbl" x="450" y="482" text-anchor="middle">8 h par jour et 35 h par semaine (dérogations limitées)</text>
+</svg>

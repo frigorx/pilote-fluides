@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img"
+     aria-labelledby="t-pie" aria-describedby="d-pie" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-pie">Deux pièges de l'installation à son compte</title>
+  <desc id="d-pie">Deux panneaux. À gauche, la sous-traitance déguisée : une carte verte dit que celui dont les
+    conditions de travail sont définies par lui-même ou par le contrat est présumé indépendant ; une carte
+    rouge dit qu'un lien de subordination juridique permanente peut faire établir un contrat de travail.
+    À droite, le prix trop bas : une barre représente le chiffre d'affaires, découpée en trois parts sans
+    valeurs, les cotisations, les frais, et ce qui reste ; un texte rappelle que les cotisations se
+    calculent sur le chiffre d'affaires, pas sur ce qui reste. Une bande en bas conseille de partir du coût complet.</desc>
+  <style>
+    .ttl { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:22px; fill:#1b3a63; }
+    .tit { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#9d174d; }
+    .qui { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+    .lbl { font-size:17px; fill:#10233c; }
+    .sm  { font-size:16px; fill:#5a6b7d; }
+    .blanc{ font-size:16px; font-weight:bold; fill:#fffdf8; }
+    .band{ font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:18px; fill:#10233c; }
+  </style>
+  <text class="ttl" x="450" y="32" text-anchor="middle">Deux pièges à connaître avant de s'installer</text>
+
+  <!-- Panneau gauche : sous-traitance déguisée -->
+  <rect x="20" y="52" width="420" height="330" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+  <text class="tit" x="230" y="86" text-anchor="middle">Sous-traitance déguisée</text>
+
+  <rect x="40" y="104" width="380" height="120" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/>
+  <circle cx="76" cy="164" r="18" fill="#1e7e54"/>
+  <path d="M67 164 L74 172 L86 156" fill="none" stroke="#fffdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="qui" x="108" y="138">Présumé indépendant</text>
+  <text class="lbl" x="108" y="166">Conditions de travail définies</text>
+  <text class="lbl" x="108" y="190">par vous ou par le contrat.</text>
+
+  <rect x="40" y="244" width="380" height="120" rx="12" fill="#fbe7e4" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="76" cy="304" r="18" fill="#c0392b"/>
+  <path d="M68 296 L84 312 M84 296 L68 312" fill="none" stroke="#fffdf8" stroke-width="4" stroke-linecap="round"/>
+  <text class="qui" x="108" y="278">Contrat de travail possible</text>
+  <text class="lbl" x="108" y="306">Lien de subordination juridique</text>
+  <text class="lbl" x="108" y="330">permanente, malgré l'immatriculation.</text>
+
+  <!-- Panneau droit : prix trop bas -->
+  <rect x="460" y="52" width="420" height="330" rx="14" fill="#fffdf8" stroke="#9d174d" stroke-width="3"/>
+  <text class="tit" x="670" y="86" text-anchor="middle">Prix trop bas</text>
+  <text class="lbl" x="670" y="122" text-anchor="middle">Le chiffre d'affaires d'un chantier</text>
+  <rect x="490" y="140" width="130" height="50" fill="#9d174d"/>
+  <rect x="620" y="140" width="110" height="50" fill="#5a6b7d"/>
+  <rect x="730" y="140" width="120" height="50" fill="#1e7e54"/>
+  <text class="sm" x="555" y="216" text-anchor="middle">cotisations</text>
+  <text class="sm" x="675" y="216" text-anchor="middle">frais</text>
+  <text class="sm" x="790" y="216" text-anchor="middle">ce qui reste</text>
+  <text class="lbl" x="670" y="262" text-anchor="middle">Les cotisations se calculent sur le tout,</text>
+  <text class="lbl" x="670" y="288" text-anchor="middle">pas sur ce qui reste.</text>
+  <text class="lbl" x="670" y="326" text-anchor="middle">Frais et assurances restent à votre charge.</text>
+  <text class="sm" x="670" y="358" text-anchor="middle">schéma sans valeurs</text>
+
+  <rect x="20" y="402" width="860" height="52" rx="14" fill="#fbeaf1" stroke="#9d174d" stroke-width="2"/>
+  <text class="band" x="450" y="435" text-anchor="middle">Avant de donner un prix : partir du coût complet, assurances et temps passé compris.</text>
+</svg>

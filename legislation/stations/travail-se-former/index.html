@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Se former — inerWeb Législation</title>
+<meta name="description" content="Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/travail-se-former/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Droit du travail.
+     « Se former » — CPF, VAE. Bâtie sur le gabarit aptitude-capacite.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Les narrations de cette station ne sont pas encore fabriquées en MP3 :
+     la voix du navigateur sert de filet jusqu'à la fabrication (edge-tts).
+
+     Toute valeur (montants, durées, périodicités) a été lue à la source
+     officielle le 30/09/2026 et est citée dans FOND.md ; ce qui n'a pas
+     été lu y figure sous « À sourcer ».
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerWeb Édu">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Droit du travail · niveau BTS</p>
+  <h1>Se former — CPF, VAE</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene"><img src="../../img/scene-travail.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire <strong>qui décide de quelle formation</strong> — l'employeur, vous, ou un texte —, ouvrir et utiliser <strong>votre compte personnel de formation</strong>, lancer <strong>une validation des acquis de l'expérience</strong>, lire la fiche d'une certification du <strong>répertoire national</strong> et préparer <strong>votre entretien de parcours professionnel</strong>.</p>
+  </div>
+
+  <div class="chapeau">
+    <span class="mot">Référentiel</span>
+    <p>TP Technicien d'études en CVC (REAC TP-00133) : <strong>hors REAC</strong>, culture professionnelle du technicien et du chargé d'affaires. Le TP TECVC sert ici d'<strong>exemple de certification</strong> (fiche RNCP37292), pas d'objet d'étude : les compétences CP1 à CP10 ne portent pas sur le droit de la formation.</p>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez d'abord le bandeau du haut : les fluides changent, les textes aussi, donc on se forme toute sa vie dans ce métier. Dessous, deux cartes. À gauche, le bâtiment : c'est l'employeur. Il doit adapter chacun à son poste, maintenir sa capacité à occuper un emploi, et prévoir les actions dans son plan de développement des compétences. À droite, le pictogramme : c'est vous, avec un droit personnel, le compte personnel de formation, et la possibilité de faire valider votre expérience. Tout en bas, le pont vers l'attestation d'aptitude aux fluides, qui elle aussi se maintient.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Se former : deux initiatives, un même but</h2>
+    <p>Dans le froid et le génie climatique, <strong>les fluides changent et les textes aussi</strong>. Se former n'est pas une étape de jeunesse : c'est un devoir de l'employeur, un droit de chaque salarié, et parfois la condition même pour exercer.</p>
+    <ul>
+      <li><strong>L'employeur</strong> « assure l'adaptation des salariés à leur poste de travail » et « veille au maintien de leur capacité à occuper un emploi », au regard de l'évolution des emplois, des technologies et des organisations. Les actions prévues figurent, le cas échéant, dans son <strong>plan de développement des compétences</strong> (Code du travail, art. L. 6321-1).</li>
+      <li><strong>Vous</strong> détenez un <strong>compte personnel de formation</strong> qui vous suit toute votre vie active, et vous pouvez faire reconnaître votre expérience par la <strong>validation des acquis de l'expérience</strong> (VAE).</li>
+    </ul>
+    <p><strong>Le pont à retenir</strong> : l'attestation d'aptitude aux fluides est le meilleur exemple d'un papier qui ne s'acquiert pas une fois pour toutes. Elle se maintient — voir la station voisine « Aptitude &amp; capacité ».</p>
+    <figure>
+      <img src="svg/deux-initiatives.svg" alt="Un bandeau : les fluides changent, les textes aussi, on se forme toute sa vie. Dessous, deux cartes : à gauche l'employeur, avec un pictogramme de bâtiment, qui adapte chacun à son poste, maintient sa capacité à occuper un emploi et prévoit les actions dans le plan de développement des compétences ; à droite vous, avec un pictogramme de personne, en trait tireté, qui ouvrez et utilisez votre compte personnel de formation et pouvez faire valider votre expérience. Une bande en bas fait le pont vers l'attestation d'aptitude aux fluides, qui se maintient.">
+      <figcaption>Trait plein : ce que l'employeur doit. Trait tireté : ce que vous décidez.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici un réservoir : c'est votre compte personnel de formation. Chaque année de travail, une nouvelle couche s'empile, de l'an un à l'an quatre, jusqu'au trait tireté orange qui marque le plafond du compte. À droite, trois cartes. En vert : si vous changez d'employeur, le compte vous suit, intact. En vert encore : si vous perdez votre emploi, il reste utilisable, mais il n'est plus alimenté. En rouge, tireté : un proche ne peut pas vous le demander, le compte ne se cède pas. Retenez le titre : il est attaché à la personne, pas au contrat.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Le compte personnel de formation : comment il se remplit</h2>
+    <p>Le compte personnel de formation (CPF) a remplacé le droit individuel à la formation. Il est ouvert <strong>dès l'entrée sur le marché du travail et jusqu'au départ à la retraite</strong>. Les gestes :</p>
+    <ol>
+      <li><strong>Créer votre compte</strong> sur moncompteformation.gouv.fr : votre numéro de sécurité sociale suffit.</li>
+      <li><strong>Consulter vos droits</strong> : ils s'affichent en euros.</li>
+      <li><strong>Comprendre l'alimentation</strong> : à partir d'un mi-temps, <strong>500 € par an</strong>, dans la <strong>limite totale de 5 000 €</strong> ; en dessous d'un mi-temps, le montant est proportionnel. L'entreprise ou un organisme comme France Travail peuvent y ajouter de l'argent.</li>
+    </ol>
+    <p><strong>Le compte est attaché à la personne, pas au contrat</strong> : il vous suit si vous changez d'employeur ; si vous perdez votre emploi, il reste utilisable mais n'est plus alimenté ; il ne peut être ni cédé ni donné.</p>
+    <p class="formule">Montants lus sur service-public.gouv.fr (page vérifiée le 27 juin 2026, consultée le 30/09/2026). Ils évoluent : vérifiez-les sur moncompteformation.gouv.fr.</p>
+    <figure>
+      <img src="svg/cpf-compte.svg" alt="Un réservoir gradué en quatre années : quatre couches s'empilent, une par année de travail, sous un trait tireté orange marquant le plafond du compte. Une flèche indique que le compte est alimenté chaque année de travail. À droite, trois cartes : en vert, le compte vous suit quand vous changez d'employeur ; en vert, il reste utilisable mais n'est plus alimenté quand vous perdez votre emploi ; en rouge tireté, il ne se cède pas à un proche.">
+      <figcaption>Les couches montent chaque année ; le compte, lui, ne quitte jamais son titulaire.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Quatre cartes numérotées, de gauche à droite : quatre gestes, dans l'ordre. Un : choisir une formation éligible, par exemple certifiante, ou une validation des acquis. Deux : la question de l'employeur. Hors temps de travail, aucun accord à demander ; sur le temps de travail, il faut une autorisation d'absence, et l'employeur peut refuser. Trois : vous participez au financement, sauf si votre employeur abonde le compte. Quatre : si la formation coûte plus que vos droits, d'autres financeurs peuvent compléter. La bande orange du bas prévient : certaines actions sont plafonnées, dont les habilitations électriques.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Le compte personnel de formation : comment on l'utilise</h2>
+    <p>L'initiative est la vôtre : c'est à vous d'engager la démarche sur le site Mon compte formation. Un conseiller en évolution professionnelle peut vous aider, gratuitement.</p>
+    <ol>
+      <li><strong>Choisir une formation éligible</strong> : certifiante, préparant une validation des acquis, bilan de compétences, création ou reprise d'entreprise, certains permis.</li>
+      <li><strong>Prévenir l'employeur, ou pas</strong> : hors temps de travail, pas d'accord à demander. Sur le temps de travail, demandez une <strong>autorisation d'absence au moins 60 jours avant</strong> le début — <strong>120 jours</strong> si la formation dure plus de 6 mois. L'employeur peut alors refuser.</li>
+      <li><strong>Participer au financement</strong> : une participation obligatoire de <strong>150 €</strong>, indexée sur l'inflation et revue chaque 1<sup>er</sup> janvier. Elle ne s'applique pas si votre employeur abonde votre compte.</li>
+      <li><strong>Compléter</strong> si la formation coûte plus que vos droits : employeur, opérateur de compétences, région, France Travail…</li>
+    </ol>
+    <p><strong>Attention aux plafonds</strong> : depuis le 26 février 2026, les certifications et habilitations du répertoire spécifique (exemples cités : CACES, <strong>habilitations électriques</strong>) sont plafonnées à <strong>1 500 €</strong> de droits du compte ; les bilans de compétences à <strong>1 600 €</strong>.</p>
+    <figure>
+      <img src="svg/cpf-utiliser.svg" alt="Quatre cartes numérotées reliées par des flèches : 1, choisir une formation éligible ; 2, prévenir l'employeur seulement si la formation a lieu sur le temps de travail, par une autorisation d'absence ; 3, participer au financement, sauf abondement de l'employeur ; 4, compléter le financement si la formation coûte plus que les droits. Une bande orange rappelle que certaines actions, dont les habilitations électriques et les bilans de compétences, sont plafonnées.">
+      <figcaption>Quatre gestes, dans l'ordre — et le geste 2 dépend du moment où la formation a lieu.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Regardez l'escalier : cinq marches qui montent, et chacune s'allume dans l'ordre. Un : vous déposez votre candidature sur la plateforme France VAE. Deux : un accompagnement, facultatif. Trois : la recevabilité, avec un dossier de faisabilité qui met en regard vos activités et le titre visé. Quatre : le dossier de validation, qui décrit ce que vous avez réellement fait. Cinq : le jury, par entretien oral ou mise en situation. La flèche du haut mène à la décision : titre accordé, accordé en partie, ou non accordé. En bas, le salarié a droit à un congé de quarante-huit heures par session.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">La VAE : faire reconnaître son expérience</h2>
+    <p>La validation des acquis de l'expérience (VAE) transforme une expérience, professionnelle ou non, en <strong>certification inscrite au RNCP</strong> : diplôme, titre professionnel ou certificat de qualification professionnelle — ou en un ou plusieurs <strong>blocs de compétences</strong>. L'expérience doit avoir un <strong>rapport direct</strong> avec la certification visée. Il n'est <strong>plus nécessaire de justifier d'au moins un an d'expérience</strong>.</p>
+    <ol>
+      <li><strong>Candidature</strong> sur la plateforme France VAE (vae.gouv.fr).</li>
+      <li><strong>Accompagnement</strong>, facultatif.</li>
+      <li><strong>Recevabilité</strong> : le dossier de faisabilité met en relation vos activités avec le référentiel de la certification.</li>
+      <li><strong>Dossier de validation</strong> : activités, situations, compétences mobilisées.</li>
+      <li><strong>Jury</strong> : entretien oral et/ou mise en situation. Il attribue le titre, l'accorde en partie en indiquant quoi compléter, ou ne l'attribue pas.</li>
+    </ol>
+    <p><strong>Financement</strong> : compte personnel de formation (avec la participation de 150 €, sauf abondement de l'employeur), plan de développement des compétences de l'employeur, ou association Transitions Pro. <strong>Congé VAE</strong> : demande écrite au plus tard 30 jours avant ; 48 heures par session d'évaluation, rémunération maintenue.</p>
+    <figure>
+      <img src="svg/vae-parcours.svg" alt="Un escalier de cinq marches montantes : 1, candidature sur France VAE ; 2, accompagnement facultatif ; 3, recevabilité par le dossier de faisabilité ; 4, dossier de validation ; 5, jury par entretien oral ou mise en situation. Une flèche part de la cinquième marche vers une carte, la décision du jury : titre accordé, accordé en partie avec ce qu'il faut compléter, ou non accordé. Une bande en bas rappelle le congé de quarante-huit heures.">
+      <figcaption>Cinq marches, une décision à trois issues — la voie du milieu existe : « accordé en partie ».</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="À gauche, la carte d'identité d'une certification d'exemple : le titre professionnel de technicien d'études en chauffage, ventilation et climatisation. Sa fiche porte le numéro RNCP trente-sept deux cent quatre-vingt-douze, elle est de niveau cinq, et son enregistrement court jusqu'au dix mai deux mille vingt-huit. RNCP, c'est le répertoire national des certifications professionnelles. À droite, le trait relie la carte à ses trois blocs de compétences. Un bloc est une partie identifiée du titre : on peut l'obtenir par la formation, avec le compte personnel de formation, ou par la validation des acquis.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Titres professionnels et RNCP : l'exemple du TP TECVC</h2>
+    <p>Le <strong>répertoire national des certifications professionnelles (RNCP)</strong> recense les certifications reconnues : diplômes, titres professionnels, certificats de qualification professionnelle. C'est là que se lit ce que la VAE et le compte de formation peuvent viser.</p>
+    <p>La fiche du <strong>TP Technicien d'études en chauffage, ventilation et climatisation</strong> (TECVC), lue sur le site de France compétences :</p>
+    <ul>
+      <li>code <strong>RNCP37292</strong>, état « active », <strong>niveau 5</strong> ;</li>
+      <li>enregistrement au RNCP jusqu'au <strong>10 mai 2028</strong> (arrêté du 15 décembre 2022, Journal officiel du 24 décembre 2022) ;</li>
+      <li><strong>trois blocs de compétences</strong> : représenter les équipements et les réseaux ; étude de plomberie, de chauffage, d'eau chaude sanitaire et de VMC ; étude de climatisation et de traitement d'air. Chaque bloc est un certificat de compétences professionnelles.</li>
+    </ul>
+    <p><strong>Pourquoi lire la fiche</strong> : une date d'échéance, un niveau et des blocs sont des informations utiles avant de monter un projet de formation ou de VAE.</p>
+    <figure>
+      <img src="svg/titre-rncp.svg" alt="À gauche, la carte d'identité du titre professionnel de technicien d'études en chauffage, ventilation et climatisation : fiche RNCP37292, niveau 5, enregistré jusqu'au 10 mai 2028. Un trait la relie à trois blocs de compétences : représenter les équipements et les réseaux ; étude de plomberie, chauffage, eau chaude sanitaire et ventilation mécanique contrôlée ; étude de climatisation et de traitement d'air. Une bande précise qu'un bloc s'obtient par la formation, le compte personnel de formation ou la VAE.">
+      <figcaption>Une carte d'identité et trois blocs : chaque bloc peut s'obtenir seul.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="En haut, la carte dit de quoi parle l'entretien de parcours professionnel : vos compétences, votre parcours, vos besoins de formation, vos souhaits d'évolution, l'usage de votre compte. Et une phrase en gras : il ne s'agit pas d'évaluer votre travail. Suivez ensuite la ligne de temps, sans échelle. À l'embauche, vous êtes informé. Dans la première année, le premier entretien. Quatre ans après, un entretien. Huit ans après, le repère orange : un entretien qui fait aussi l'état des lieux. Les trois pastilles du bas disent ce qu'on y vérifie : une formation suivie, une certification acquise, une progression.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">L'entretien de parcours professionnel : le rendez-vous avec l'employeur</h2>
+    <p>Texte lu à la source (Code du travail, art. L. 6315-1, version mise à jour au 31/12/2025) :</p>
+    <ul>
+      <li>à l'embauche, le salarié est <strong>informé</strong> qu'il bénéficie d'un entretien au cours de <strong>sa première année</strong> ;</li>
+      <li>puis <strong>tous les quatre ans</strong>, s'il reste dans l'entreprise. Un accord collectif peut fixer une autre périodicité, sans excéder quatre ans ;</li>
+      <li>il porte sur les compétences, le parcours, les <strong>besoins de formation</strong>, les souhaits d'évolution (reconversion, bilan de compétences, VAE) et l'<strong>activation du compte personnel de formation</strong> ;</li>
+      <li>il <strong>ne porte pas sur l'évaluation du travail</strong>, se déroule pendant le temps de travail et donne lieu à un document dont vous recevez une copie ;</li>
+      <li><strong>tous les huit ans</strong>, un <strong>état des lieux récapitulatif</strong> vérifie une formation suivie, des éléments de certification acquis, une progression salariale ou professionnelle. Dans les entreprises d'au moins cinquante salariés, un défaut d'entretiens et de formation vaut <strong>abondement du compte</strong>.</li>
+    </ul>
+    <p class="formule">Beaucoup de guides encore en ligne parlent d'un entretien « tous les deux ans » : c'est l'ancienne rédaction. Relisez toujours l'article en vigueur.</p>
+    <figure>
+      <img src="svg/entretien-frise.svg" alt="Une carte rappelle de quoi parle l'entretien : compétences, parcours, besoins de formation, souhaits d'évolution, usage du compte de formation, sans évaluer le travail. Une ligne de temps non à l'échelle porte quatre repères : l'embauche, où le salarié est informé ; le premier entretien dans la première année ; un entretien quatre ans après ; un entretien huit ans après, repère orange, qui fait aussi l'état des lieux. Trois pastilles listent ce que l'état des lieux vérifie : une formation suivie, une certification acquise, une progression salariale ou professionnelle.">
+      <figcaption>Un rendez-vous pour parler de votre avenir, pas de votre travail du mois.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Deux colonnes, deux logiques. À gauche, en trait plein, ce qui est obligatoire pour exercer. L'habilitation électrique : c'est l'employeur qui la délivre, après une formation théorique et pratique. L'attestation d'aptitude aux fluides : elle est à la personne, et elle se maintient par une remise à niveau périodique. À droite, en trait tireté, ce que vous choisissez : le compte personnel de formation, la validation des acquis, le bilan de compétences. La bande orange donne la règle : une formation qui conditionne l'exercice compte comme du temps de travail, avec la rémunération maintenue.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Formations obligatoires, formations choisies</h2>
+    <p><strong>La règle</strong> (Code du travail, art. L. 6321-2) : toute action de formation qui conditionne l'exercice d'une activité ou d'une fonction, en application d'une convention internationale ou de dispositions légales et réglementaires, <strong>constitue un temps de travail effectif</strong> et donne lieu au <strong>maintien de la rémunération</strong>.</p>
+    <ul>
+      <li><strong>Habilitation électrique</strong> : les opérations sur les installations électriques ou dans leur voisinage ne peuvent être faites que par des travailleurs habilités (art. R. 4544-9). L'habilitation est <strong>délivrée par l'employeur</strong>, qui s'assure au préalable que le travailleur a reçu la formation théorique et pratique (art. R. 4544-10).</li>
+      <li><strong>Attestation d'aptitude aux fluides</strong> : détenue par la personne ; depuis le régime de 2025, elle demande une <strong>remise à niveau a minima tous les 7 ans</strong> — détail dans la station « Aptitude &amp; capacité ».</li>
+      <li><strong>Formations choisies</strong> : compte personnel de formation, VAE, bilan de compétences — <strong>votre initiative</strong>.</li>
+    </ul>
+    <p>Le compte personnel de formation peut financer une habilitation électrique, dans la limite du plafond vu à l'écran 3.</p>
+    <figure>
+      <img src="svg/obligatoire-ou-choisi.svg" alt="Deux colonnes. À gauche, en trait plein, la formation obligatoire pour exercer : l'habilitation électrique, délivrée par l'employeur après une formation théorique et pratique, et l'attestation d'aptitude aux fluides, détenue par la personne et à maintenir par une remise à niveau périodique. À droite, en trait tireté, les formations choisies : le compte personnel de formation, la validation des acquis de l'expérience et le bilan de compétences. Une bande en bas donne la règle : une formation qui conditionne l'exercice est du temps de travail, rémunérée.">
+      <figcaption>À gauche, un texte l'impose ; à droite, vous décidez.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan tient dans un escalier de cinq marches, et le pictogramme orange le monte marche après marche. Se former d'abord, avec un diplôme ou un titre. Maintenir ce qui est obligatoire : l'habilitation et l'attestation d'aptitude. Financer avec le compte personnel de formation. Reconnaître son expérience par la validation des acquis. Et piloter l'ensemble avec l'entretien de parcours, tous les quatre ans. Le personnage s'arrête sur la dernière marche. Le réflexe, en bas : connaître la date de sa dernière habilitation et de son attestation.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan et le réflexe</h2>
+    <ul>
+      <li>L'employeur <strong>adapte et maintient</strong> ; vous <strong>choisissez et construisez</strong> ; un texte <strong>impose</strong> certaines formations pour exercer.</li>
+      <li>Le compte personnel de formation est <strong>attaché à la personne</strong> : il vous suit d'employeur en employeur.</li>
+      <li>Sur le temps de travail, la formation demande une <strong>autorisation d'absence</strong> ; hors temps de travail, aucun accord.</li>
+      <li>La <strong>VAE</strong> mène à un titre ou à des blocs du RNCP, sans condition de durée minimale d'expérience.</li>
+      <li>L'<strong>entretien de parcours</strong> revient tous les quatre ans et ne juge pas votre travail.</li>
+    </ul>
+    <p class="formule">Le réflexe : connaître la date de sa dernière habilitation et de son attestation d'aptitude.</p>
+    <figure>
+      <img src="svg/escalier-bilan.svg" alt="Un escalier de cinq marches montantes : se former d'abord ; maintenir, avec l'habilitation et l'aptitude ; financer par le compte personnel de formation ; reconnaître son expérience par la validation des acquis ; piloter par l'entretien de parcours tous les quatre ans. Un pictogramme de personne orange gravit l'escalier et s'arrête sur la dernière marche. Une phrase donne le réflexe : connaître la date de sa dernière habilitation et de son attestation.">
+      <figcaption>Cinq marches, un même mouvement : monter en compétence tout au long du métier.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Vous quittez votre employeur pour rejoindre un autre bureau d'études. Que devient l'argent de votre compte personnel de formation ? Reprenez le réservoir de l'écran deux avant de répondre.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Vous changez de bureau d'études. Que devient votre compte personnel de formation ?</h2>
+    <figure class="vignette">
+      <img src="svg/cpf-compte.svg" alt="Vignette de rappel : le réservoir du compte personnel de formation, et les trois cartes qui disent qu'il vous suit, qu'il reste utilisable au chômage et qu'il ne se cède pas.">
+      <figcaption>Rappel de l'écran 2 — un compte attaché à la personne.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Il repart à zéro, comme un compte neuf</button>
+      <button type="button" data-answer="b">Il reste chez l'ancien employeur, qui le conserve</button>
+      <button type="button" data-answer="bonne">Il vous suit : le compte est à vous</button>
+      <button type="button" data-answer="d">Il est bloqué tant que le nouveau contrat n'est pas confirmé</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le compte est attaché à la personne, pas au contrat : vous le gardez si vous changez d'employeur, et même si vous perdez votre emploi. Dire qu'il repart à zéro est une idée reçue."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Vous voulez suivre une formation financée par votre compte, pendant vos heures de travail. Que devez-vous faire ? Regardez la deuxième carte de l'écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Formation financée par votre compte, sur vos heures de travail : que faire ?</h2>
+    <figure class="vignette">
+      <img src="svg/cpf-utiliser.svg" alt="Vignette de rappel : les quatre étapes d'utilisation du compte, dont la deuxième sur le temps de travail et l'autorisation d'absence.">
+      <figcaption>Rappel de l'écran 3 — l'étape 2 dépend du moment de la formation.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Demander une autorisation d'absence à l'employeur</button>
+      <button type="button" data-answer="b">Rien : l'employeur ne peut jamais s'opposer à l'utilisation du compte</button>
+      <button type="button" data-answer="c">Attendre que l'employeur inscrive lui-même la formation à son plan</button>
+      <button type="button" data-answer="d">Demander d'abord l'accord de l'opérateur de compétences</button>
+    </div>
+    <p class="feedback" hidden data-explication="Sur le temps de travail, il faut une autorisation d'absence, demandée au moins 60 jours avant, ou 120 jours si la formation dure plus de 6 mois ; l'employeur peut refuser. Hors temps de travail, aucun accord n'est nécessaire."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Un salarié reste dans la même entreprise. À quel rythme a-t-il droit à l'entretien de parcours professionnel, selon l'article du Code du travail lu à la source ? Suivez la ligne de temps de l'écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">À quel rythme l'entretien de parcours professionnel revient-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/entretien-frise.svg" alt="Vignette de rappel : la ligne de temps de l'entretien, de l'embauche jusqu'à l'entretien avec état des lieux huit ans après.">
+      <figcaption>Rappel de l'écran 6 — les repères de la ligne de temps.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Tous les deux ans, et un état des lieux tous les six ans</button>
+      <button type="button" data-answer="b">Chaque année, en même temps que l'évaluation du travail</button>
+      <button type="button" data-answer="c">Tous les huit ans, avec l'état des lieux récapitulatif</button>
+      <button type="button" data-answer="bonne">Dans l'année de l'embauche, puis tous les quatre ans</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le texte en vigueur lu à la source prévoit un entretien dans la première année, puis tous les quatre ans, et un état des lieux récapitulatif tous les huit ans. L'entretien ne porte pas sur l'évaluation du travail. Les deux ans et les six ans sont l'ancienne rédaction."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Une action de formation conditionne l'exercice d'une activité, en application d'un texte légal ou réglementaire. Comment ce temps de formation est-il compté ? Rappelez-vous la bande orange de l'écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Une formation qui conditionne l'exercice d'une activité : comment est-elle comptée ?</h2>
+    <figure class="vignette">
+      <img src="svg/obligatoire-ou-choisi.svg" alt="Vignette de rappel : deux colonnes, formations obligatoires pour exercer à gauche, formations choisies à droite, et la règle du temps de travail en bas.">
+      <figcaption>Rappel de l'écran 7 — obligatoire ou choisie.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Comme du temps libre : la formation reste à la charge du salarié</button>
+      <button type="button" data-answer="bonne">Comme du temps de travail effectif, rémunération maintenue</button>
+      <button type="button" data-answer="c">Comme des congés, pris sur les jours de repos du salarié</button>
+      <button type="button" data-answer="d">Comme du travail seulement si le salarié en fait la demande écrite</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'article L. 6321-2 du Code du travail le dit : une telle formation constitue un temps de travail effectif et la rémunération est maintenue par l'entreprise pendant sa réalisation."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (Fluidique &amp; thermique)
+      — l'exemple type d'un papier qui se maintient : remise à niveau tous les sept ans.</li>
+    <li><a href="../elec-habilitation/"><strong>L'habilitation</strong></a> (Électrique)
+      — l'habilitation est délivrée par l'employeur après une formation : le cas de formation obligatoire.</li>
+    <li><a href="../travail-le-contrat/"><strong>Le contrat</strong></a> (même sous-ligne)
+      — ce que le contrat et la convention collective prévoient pour la formation.</li>
+    <li><a href="../travail-s-installer/"><strong>S'installer à son compte</strong></a> (même sous-ligne)
+      — l'indépendant se forme aussi : la VAE et le compte de formation restent ouverts.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+</body>
+</html>

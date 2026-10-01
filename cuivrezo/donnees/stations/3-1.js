@@ -1,7 +1,9 @@
 /* Station 3-1 — La brasure tendre à l'étain. Source : sources-metier/3-brasures.md (partie 3-1)
    Référence : fiche 02 « brasure tendre » du Centre du cuivre et le cours CICLA. Usage : eau sanitaire et
    chauffage ; en froid, on brase fort (cours T10 de 1re MFER) : la station le dit.
-   Le réglage du chalumeau propane est absent des fiches (« le professeur donne les consignes »). */
+   DÉCIDÉ le 30/09/2026 (DECISIONS-2026-09-30.md) : le chalumeau propane s'allume et se règle devant le
+   professeur, d'après la notice du chalumeau ; le décapant va sur les deux surfaces à assembler ; pas de
+   couleur de chauffe, le fil d'étain fait le test. */
 CUIVREZO.stations.push({
   id: '3-1', ligne: 3, titre: 'La brasure tendre à l’étain', duree: '30 min', vignette: 'images/3-1-tendre.webp',
   sources: ['sources-metier/3-brasures.md'],
@@ -10,7 +12,6 @@ CUIVREZO.stations.push({
     titre: 'Un anneau d’étain régulier, étanche',
     texte: 'L’étain a filé tout autour du joint et forme un anneau régulier. Le cuivre n’est pas noirci, le décapant est essuyé.',
     criteres: ['Anneau d’étain régulier, tout autour du joint', 'Cuivre non noirci, non brûlé', 'Décapant essuyé, pas de coulure à l’intérieur', 'Pièces restées immobiles pendant le refroidissement'],
-    aValider: 'Codes du référentiel posés d’après la fiche C3.4 (« brasage fort et/ou brasage tendre ») : à confirmer',
     figure: { img: 'images/3-1-tendre.webp', alt: 'L’étain file autour d’un joint chauffé au chalumeau propane', legende: 'L’étain touche le cuivre chaud et file tout autour.' },
     narration: 'La brasure tendre se fait à basse température : l’étain fond vers deux cent cinquante degrés, bien avant que le cuivre ne rougisse. Elle sert sur les réseaux d’eau sanitaire et de chauffage. Sur un circuit frigorifique, qui monte en pression, on brase fort : ce sera la station suivante. Mais le principe est le même, et il est plus facile à voir ici : un métal fondu qui file tout seul dans un joint chaud et propre.'
   },
@@ -21,7 +22,7 @@ CUIVREZO.stations.push({
       { nom: 'Le fil d’étain', detail: 'étain-cuivre ou étain-argent : jamais d’étain-plomb sur l’eau potable' },
       { nom: 'La pâte décapante', detail: 'adaptée à la brasure tendre' },
       { nom: 'Le tampon abrasif et un chiffon propre', detail: 'pour nettoyer avant, essuyer après' },
-      { nom: 'Le chalumeau propane', detail: 'réglé selon les consignes du professeur', aValider: 'Allumage et réglage du propane absents des fiches' },
+      { nom: 'Le chalumeau propane', detail: 'allumé et réglé devant le professeur, d’après la notice du chalumeau' },
       { nom: 'Le pare-flamme', detail: 'derrière le joint' },
       { nom: 'L’emboîture prête', detail: 'station 1.7 : le tube entre sans forcer ni jouer' }
     ],
@@ -43,23 +44,21 @@ CUIVREZO.stations.push({
       pourquoi: 'L’étain ne mouille pas un cuivre oxydé.',
       figure: { svg: 'brasure', etat: 'capillarite' }, clip: 'clips/3-1/03-nettoyer.mp4',
       narration: 'On nettoie au tampon abrasif l’extérieur du tube mâle et l’intérieur de l’emboîture, jusqu’à ce que le cuivre brille. L’étain ne s’accroche pas à un cuivre terni : il roulerait dessus en billes.' },
-    { titre: 'Étaler le décapant sur le mâle', texte: 'Une fine couche de pâte décapante sur le mâle, sans excès, tube tenu vers le haut.',
-      pointCle: 'Peu, et pas de coulure à l’intérieur.',
+    { titre: 'Étaler le décapant sur les deux pièces', texte: 'Une fine couche de pâte décapante sur le mâle, et une autre à l’intérieur de l’emboîture, sans excès, tube tenu vers le haut.',
+      pointCle: 'Peu, sur les deux pièces, et pas de coulure dans le tube.',
       pourquoi: 'Le décapant protège le cuivre de l’oxydation à la chauffe. En excès, il coule dans le tube.',
-      aValider: 'Décapant sur le mâle seul (trois fiches) ou sur les deux parties (TP de 2010)',
       figure: { svg: 'brasure', etat: 'capillarite' }, clip: 'clips/3-1/04-decapant.mp4',
-      narration: 'On étale une fine couche de pâte décapante sur le tube mâle, et seulement là. Juste de quoi couvrir : le surplus ne sert à rien, il coule à l’intérieur du tube. Le décapant empêche le cuivre de s’oxyder pendant la chauffe, pour que l’étain puisse s’y accrocher.' },
+      narration: 'On étale une fine couche de pâte décapante sur le tube mâle, et une autre à l’intérieur de l’emboîture : partout où l’étain devra s’accrocher. Juste de quoi couvrir : le surplus ne sert à rien, il coule à l’intérieur du tube. Le décapant empêche le cuivre de s’oxyder pendant la chauffe, pour que l’étain puisse s’y accrocher.' },
     { titre: 'Emboîter en tournant', texte: 'Emboîtez les deux pièces en tournant un peu.',
       pointCle: 'Le décapant se répartit tout autour.',
       pourquoi: 'Un côté sans décapant, c’est un côté où l’étain ne prend pas.',
       figure: { svg: 'emboiture', etat: 'profil' }, clip: 'clips/3-1/05-emboiter.mp4',
       narration: 'On emboîte en faisant tourner un peu le tube : le décapant se répartit sur tout le tour du joint.' },
-    { titre: 'Chauffer modérément', texte: 'Allumez le chalumeau propane et chauffez toute la longueur de l’emboîture.',
+    { titre: 'Chauffer modérément', texte: 'Le chalumeau propane est allumé et réglé devant le professeur. Chauffez toute la longueur de l’emboîture, en balayant.',
       pointCle: 'Modérément : le cuivre ne doit ni noircir ni rougir.',
-      pourquoi: 'L’étain fond vers 250 °C. Au-delà, on oxyde le cuivre, et l’étain n’y adhère plus.',
-      aValider: 'Couleur et temps de chauffe du tendre : absents des fiches',
+      pourquoi: 'L’étain fond vers 250 °C. Au-delà, on oxyde le cuivre, et l’étain n’y adhère plus. Il n’y a pas de couleur à attendre : c’est le fil d’étain, au geste suivant, qui dit si le tube est assez chaud.',
       figure: { svg: 'brasure', etat: 'chauffe' }, clip: 'clips/3-1/06-chauffer.mp4',
-      narration: 'On allume le chalumeau propane selon les consignes du professeur, et l’on chauffe toute la longueur de l’emboîture, en tournant. Modérément : l’étain fond vers deux cent cinquante degrés, le cuivre ne doit ni noircir ni rougir. Trop chauffé, il s’oxyde, et l’étain n’y tient plus.' },
+      narration: 'Le chalumeau propane s’allume et se règle devant le professeur, d’après la notice du chalumeau. Ensuite, on chauffe toute la longueur de l’emboîture, en balayant. Modérément : l’étain fond vers deux cent cinquante degrés, le cuivre ne doit ni noircir ni rougir. Trop chauffé, il s’oxyde, et l’étain n’y tient plus. Il n’y a pas de couleur à attendre : c’est le fil d’étain, au geste suivant, qui dira si le tube est assez chaud.' },
     { titre: 'Toucher le joint avec l’étain', texte: 'Écartez la flamme et touchez le joint avec le fil d’étain.',
       pointCle: 'L’étain fond au contact du tube chaud, pas dans la flamme.',
       pourquoi: 'Si le tube est assez chaud, c’est lui qui fait fondre l’étain et l’aspire dans le joint.',
@@ -104,7 +103,7 @@ CUIVREZO.stations.push({
       figure: { svg: 'brasure', etat: 'seche' }, narration: 'Dernier contrôle : pas de goutte posée sur le joint.' }
   ],
   prof: {
-    verifie: ['Les emboîtures, avant de braser', 'Le joint : anneau complet, cuivre propre', 'Le décapant essuyé', 'Plus tard : l’étanchéité, à la solution moussante'],
+    verifie: ['Le chalumeau propane, allumé et réglé devant lui', 'Les emboîtures, avant de braser', 'Le joint : anneau complet, cuivre propre', 'Le décapant essuyé', 'Plus tard : l’étanchéité, à la solution moussante'],
     narration: 'Le professeur regarde vos emboîtures avant la brasure, puis le joint fini. L’étanchéité se vérifiera ensuite, sous pression, à la solution moussante. La station suivante passe à la brasure forte, celle des circuits frigorifiques.'
   }
 });

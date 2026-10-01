@@ -1,0 +1,49 @@
+{
+  "slug": "acoustique-pac-voisinage",
+  "branche": "Acoustique",
+  "titre": "Mission : la pompe à chaleur qui donne sur la chambre du voisin",
+  "client": "Des propriétaires d'une maison de ville mitoyenne qui veulent remplacer leur chaudière par une pompe à chaleur air-eau et hésitent entre deux emplacements pour l'unité extérieure.",
+  "situation": "Le bureau d'études a retenu une pompe à chaleur air-eau. Deux emplacements sont possibles : dans l'angle de la courette, contre deux murs, à quelques mètres de la fenêtre de chambre du voisin ; ou le long du mur du jardin, plus loin de cette fenêtre, en terrain dégagé. Le client craint un litige : la rue est très calme la nuit. Votre responsable vous demande d'éclairer le choix avant que l'installateur ne commande le socle.",
+  "piece_a_produire": "Une note d'une page au client : la puissance acoustique lue sur la fiche du fabricant (avec le mode auquel elle se rapporte), le niveau estimé devant la fenêtre du voisin pour chacun des deux emplacements (calcul montré), l'émergence de nuit pour un bruit résiduel supposé, la recommandation, puis la liste des formalités à vérifier : mairie et PLU, copropriété s'il y en a une, information du voisin.",
+  "questions": [
+    {
+      "q": "Sur la fiche technique, que représente la puissance acoustique Lw, et pourquoi ne peut-on pas la comparer directement au niveau relevé chez le voisin ?",
+      "ecran": 2,
+      "reponse": "Lw caractérise ce que la machine émet, indépendamment de son environnement ; elle est mesurée en laboratoire et sert à comparer les appareils. Le niveau chez le voisin est une pression acoustique Lp, qui dépend de la distance et de l'emplacement : ce ne sont pas les mêmes grandeurs."
+    },
+    {
+      "q": "Par rapport à une machine posée au sol, de combien le niveau reçu augmente-t-il contre un mur, dans un angle, dans une cour intérieure ? Que gagne-t-on à sortir la machine de l'angle ?",
+      "ecran": 4,
+      "reponse": "Contre un mur : + 3 dB(A) ; dans un angle : + 6 dB(A) ; dans une cour intérieure : + 9 dB(A) au moins (fiche AFPAC n° 1). Sortir de l'angle rapporte 6 dB(A), autant que doubler la distance."
+    },
+    {
+      "q": "Un bruit résiduel de 30 dB et un bruit de pompe à chaleur de 30 dB : quel niveau ambiant, et quelle émergence ?",
+      "ecran": 5,
+      "reponse": "33 dB : deux niveaux égaux ajoutent 10·log 2, soit environ 3 dB (les décibels ne s'additionnent pas comme des nombres). L'émergence, différence entre ambiant et résiduel, est de 3 dB."
+    },
+    {
+      "q": "Le voisin d'un commerce et le voisin d'un particulier sont gênés par une pompe à chaleur. Quel critère du code de la santé publique s'applique dans chaque cas ?",
+      "ecran": 7,
+      "reponse": "Particulier chez lui : article R. 1336-5, aucun bruit particulier ne doit porter atteinte à la tranquillité du voisinage, sans seuil chiffré. Usage professionnel : articles R. 1336-6 à R. 1336-8, émergence limitée (5 dB(A) le jour, 3 dB(A) la nuit, plus un terme correctif), recherchée au-dessus de 25 ou 30 dB(A) de bruit ambiant."
+    }
+  ],
+  "defi": {
+    "type": "calcul",
+    "consigne": "Valeurs d'exercice, non tirées d'une fiche réelle : Lw = 60 dB(A), unité posée au sol, fenêtre du voisin à 4 m, bruit résiduel de nuit de 25 dB(A). Avec Lp = Lw − 20·log r − 8, calculez le niveau devant la fenêtre au sol, puis dans un angle (écart de la fiche AFPAC), puis l'émergence dans chaque cas. Que devient le niveau à 8 m ?",
+    "items": [
+      "Lp au sol à 4 m",
+      "Lp dans un angle à 4 m",
+      "Émergence au sol",
+      "Émergence dans l'angle",
+      "Lp au sol à 8 m"
+    ],
+    "corrige": "Au sol à 4 m : 60 − 12 − 8 ≈ 40 dB(A). Dans un angle : 40 + 6 = 46 dB(A). Émergence au sol : ambiant = 10·log(10^2,5 + 10^4) ≈ 40 dB(A), soit ≈ 15 dB. Dans l'angle : ambiant ≈ 46 dB(A), soit ≈ 21 dB. À 8 m au sol : ≈ 34 dB(A), 6 dB de moins qu'à 4 m. Ces émergences sont des repères de bureau d'études : la limite légale de 3 dB(A) la nuit ne vaut, comme critère chiffré, que pour un usage professionnel."
+  },
+  "badge": "Oreille fine",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": ["CP1", "CP6", "CP9"],
+    "attestation_2025": [],
+    "justification": "CP1 pour choisir et reporter l'emplacement de l'unité extérieure sur le plan d'implantation, CP6 pour la pompe à chaleur air-eau du chauffage et de l'eau chaude sanitaire, CP9 pour l'unité extérieure d'un climatiseur ; station non fluidique, donc sans code d'attestation 2025."
+  }
+}
