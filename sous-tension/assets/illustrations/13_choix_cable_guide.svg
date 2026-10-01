@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>Guide de choix simplifié</dc:title>
+      <dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator>
+      <dc:rights><cc:Agent><dc:title>© 2026 inerWeb — F. Henninot — tous droits réservés sur l’illustration</dc:title></cc:Agent></dc:rights>
+      <dc:publisher><cc:Agent><dc:title>inerWeb</dc:title></cc:Agent></dc:publisher>
+      <dc:date>2026</dc:date>
+      <dc:identifier>inerweb.fh@gmail.com</dc:identifier>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
+    </cc:Work>
+    <cc:License rdf:about="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    </cc:License>
+  </rdf:RDF>
+</metadata>
+<title id="title">Guide de choix simplifié</title>
+<desc id="desc">Illustration pédagogique originale pour un cours sur les câbles électriques.</desc>
+<style>
+  .bg{fill:#f7f7f5;}
+  .card{fill:#fff;stroke:#e6e6e2;stroke-width:2;}
+  .title{font:700 32px Arial, sans-serif;fill:#1b3a63;}
+  .subtitle{font:700 22px Arial, sans-serif;fill:#2b2b2b;}
+  .txt{font:18px Arial, sans-serif;fill:#2b2b2b;}
+  .small{font:15px Arial, sans-serif;fill:#5b6472;}
+  .label{font:700 16px Arial, sans-serif;fill:#fff;}
+  .blue{fill:#1b3a63;}
+  .orange{fill:#ff6b35;}
+  .copper{fill:#d98b3a;}
+  .brown{fill:#6b4226;}
+  .green{fill:#2e7d32;}
+  .yellow{fill:#f4c430;}
+  .grey{fill:#5b6472;}
+  .dark{fill:#2b2b2b;}
+  .aluminium{fill:#cfd6df;}
+  .stroke-blue{stroke:#1b3a63;}
+  .stroke-dark{stroke:#2b2b2b;}
+  .stroke-grey{stroke:#5b6472;}
+  .stroke-orange{stroke:#ff6b35;}
+  .stroke-copper{stroke:#d98b3a;}
+  .stroke-green{stroke:#2e7d32;}
+  .line{fill:none;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<rect class="bg" width="100%" height="100%"/>
+
+<text x="45" y="55" class="title">Choisir un câble : le raisonnement simple</text>
+<rect x="50" y="95" width="800" height="370" rx="24" class="card"/>
+<g font-family="Arial, sans-serif" font-size="18" fill="#1c1c1c">
+  <rect x="95" y="135" width="250" height="55" rx="14" fill="#eaf0f7" stroke="#1b3a63" stroke-width="3"/>
+  <text x="220" y="170" text-anchor="middle" font-weight="700">Fixe ou mobile ?</text>
+  <rect x="95" y="245" width="250" height="55" rx="14" fill="#eaf7ef" stroke="#2e7d32" stroke-width="3"/>
+  <text x="220" y="280" text-anchor="middle" font-weight="700">Intérieur ou extérieur ?</text>
+  <rect x="555" y="135" width="250" height="55" rx="14" fill="#fff2e9" stroke="#ff6b35" stroke-width="3"/>
+  <text x="680" y="170" text-anchor="middle" font-weight="700">Risque mécanique ?</text>
+  <rect x="555" y="245" width="250" height="55" rx="14" fill="#f5f0ff" stroke="#5b6472" stroke-width="3"/>
+  <text x="680" y="280" text-anchor="middle" font-weight="700">Parasites / variateur ?</text>
+  <rect x="325" y="345" width="250" height="55" rx="14" fill="#fffbe8" stroke="#d98b3a" stroke-width="3"/>
+  <text x="450" y="380" text-anchor="middle" font-weight="700">Section + protection</text>
+</g>
+<g stroke="#5b6472" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M345 162 H555"/><path d="M220 190 V245"/><path d="M680 190 V245"/>
+  <path d="M345 272 C400 315, 410 330, 450 345"/>
+  <path d="M555 272 C500 315, 490 330, 450 345"/>
+</g>
+<text x="95" y="430" class="small">On ne récite pas un code : on justifie un choix.</text>
+
+</svg>

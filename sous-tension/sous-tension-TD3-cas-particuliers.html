@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<title>TD3 — Cas particuliers et dimensionnement | inerWeb Édu</title>
+<style>
+  :root{
+    color-scheme: light only;
+    --blue:#1b3a63; --blue-light:#e8eef5; --blue-pale:#f3f6fa;
+    --orange:#ff6b35; --orange-pale:#fff1ea;
+    --bg:#f7f7f5; --card:#ffffff; --text:#1c1c1c; --muted:#5b6472;
+    --green:#2e7d32; --green-pale:#eaf5ea; --red:#b3261e; --red-pale:#fbeceb;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{ background:var(--bg); color:var(--text); margin:0; padding:0;
+    font-family:'Calibri','Candara','Segoe UI',sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3{ font-family:'Trebuchet MS','Trebuchet',sans-serif; font-weight:700; color:var(--blue); line-height:1.3; }
+  p, li{ text-align:left; } ul{ padding-left:1.2em; } strong{ color:var(--blue); } a{ color: var(--blue); }
+
+  .app{ max-width:760px; margin:0 auto; padding:0 16px 100px; }
+  .topbar{ background:var(--blue); color:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; position:sticky; top:0; z-index:20; }
+  .topbar .flake{ font-size:22px; }
+  .topbar .brand{ font-family:'Trebuchet MS',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; gap:6px; }
+  .topbar .badge-edu{ background:var(--orange); color:#fff; font-size:11px; padding:2px 7px; border-radius:20px; font-weight:700; }
+  .topbar .niveau-tag{ margin-left:auto; font-size:12px; background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; white-space:nowrap; }
+
+  h1.main-title{ font-size:21px; margin:20px 0 4px; }
+  .subtitle{ color:var(--muted); margin:0 0 6px; font-size:15px; }
+  .td-progress{ font-size:12.5px; color:var(--orange); font-weight:700; margin:0 0 18px; }
+
+  .stepper{ display:flex; align-items:center; margin:18px 0 24px; }
+  .stepper .node{ width:28px;height:28px;border-radius:50%; background:#fff;border:2px solid #cfd6de;
+    display:flex;align-items:center;justify-content:center; font-size:12px;font-weight:700;color:#9aa4b1; flex-shrink:0; transition:all .25s; }
+  .stepper .wire{ flex:1;height:3px;background:#cfd6de; }
+  .stepper .wire.on{ background:var(--orange); }
+  .stepper .node.done{ background:var(--orange); border-color:var(--orange); color:#fff; }
+  .stepper .node.current{ border-color:var(--blue); color:var(--blue); box-shadow:0 0 0 4px var(--blue-light); }
+
+  .screen{ display:none; animation:fade .3s ease; } .screen.active{ display:block; }
+  @keyframes fade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+  .card{ background:var(--card); border-radius:var(--radius); padding:18px; margin-bottom:14px; border:1px solid #e6e6e2; }
+  .card h2{ margin-top:0; font-size:18px; } .card h3{ font-size:16px; margin:0 0 8px; }
+
+  .point-note{ border-left:4px solid var(--orange); background:var(--orange-pale); padding:10px 14px; border-radius:8px; font-size:14.5px; margin:10px 0; }
+  .point-note strong{ color: var(--orange); }
+  .usage-reveal{ display:none; background:var(--green-pale); border-left:4px solid var(--green); padding:10px 14px; border-radius:8px; margin-top:10px; font-size:14.5px; }
+  .usage-reveal.shown{ display:block; }
+
+  button{ font-family:'Calibri','Candara',sans-serif; font-size:15px; cursor:pointer; }
+  .btn{ background:var(--blue); color:#fff; border:none; padding:11px 18px; border-radius:10px; font-weight:700; transition:transform .1s, background .2s; }
+  .btn:hover{ background:#142c4c; } .btn:active{ transform:scale(0.97); }
+  .btn.secondary{ background:#fff; color:var(--blue); border:2px solid var(--blue); }
+  .btn.secondary:hover{ background:var(--blue-pale); } .btn:disabled{ opacity:.4; cursor:not-allowed; }
+
+  .niveau-choice{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+  @media (max-width:520px){ .niveau-choice{ grid-template-columns:1fr; } }
+  .niveau-btn{ background:#fff; border:2px solid var(--blue-light); border-radius:var(--radius); padding:18px 14px; text-align:left; transition:.15s; }
+  .niveau-btn:hover{ border-color:var(--blue); background:var(--blue-pale); }
+  .niveau-btn .emoji{ font-size:26px; } .niveau-btn h3{ margin:8px 0 4px; } .niveau-btn p{ margin:0; font-size:13.5px; color:var(--muted); }
+
+  .scenario{ border:1px solid #e6e6e2; border-radius:10px; padding:12px 14px; margin-bottom:12px; }
+  .scenario p.desc{ margin:0 0 10px; }
+  .scenario .choices{ display:flex; gap:8px; flex-wrap:wrap; }
+  .choice-btn{ background:#fff; border:2px solid var(--blue); color:var(--blue); padding:8px 14px; border-radius:8px; font-weight:700; }
+  .choice-btn:hover{ background:var(--blue-pale); }
+  .choice-btn.correct{ background:var(--green-pale); border-color:var(--green); color:var(--green); border-style:solid; border-width:3px; }
+  .choice-btn.wrong{ background:var(--red-pale); border-color:var(--red); color:var(--red); border-style:dashed; border-width:3px; }
+  .scenario .feedback{ display:none; margin-top:8px; font-size:14px; padding:8px 10px; border-radius:8px; }
+  .scenario .feedback.shown{ display:block; }
+  .scenario .feedback.ok{ background:var(--green-pale); color:var(--green); }
+  .scenario .feedback.ko{ background:var(--red-pale); color:var(--red); }
+
+  table{ width:100%; border-collapse:collapse; margin:10px 0; font-size:14.5px; }
+  th,td{ border:1px solid #e0e0dc; padding:7px 8px; text-align:center; }
+  th{ background:var(--blue-pale); color:var(--blue); }
+  td.rowlabel{ background:var(--blue-pale); color:var(--blue); font-weight:700; text-align:left; }
+
+  .svg-wrap{ text-align:center; margin:14px 0; }
+  .svg-wrap svg{ max-width:100%; height:auto; }
+  .svg-caption{ font-size:13px; color:var(--muted); margin-top:4px; }
+
+  .slider-row{ margin:16px 0; }
+  .slider-row label{ font-weight:700; display:block; margin-bottom:6px; }
+  .slider-row output{ color:var(--orange); font-weight:700; }
+  input[type=range]{ width:100%; accent-color: var(--orange); }
+  .gauge{ height:18px; border-radius:10px; background:#e6e6e2; overflow:hidden; margin-top:10px; }
+  .gauge-fill{ height:100%; width:20%; background:linear-gradient(90deg,#8fb3d9,var(--orange)); transition:width .25s; }
+  .gauge-label{ text-align:center; font-weight:700; color:var(--blue); margin-top:6px; font-family:'Trebuchet MS',sans-serif; }
+
+  details{ margin-top:10px; background:var(--blue-pale); border-radius:8px; padding:8px 12px; }
+  details summary{ cursor:pointer; font-weight:700; color:var(--blue); }
+
+  .only-approfondi{ display:none; } body.niveau-approfondi .only-approfondi{ display:block; }
+
+  select{ font-size:16px; padding:8px 10px; border-radius:8px; border:2px solid var(--blue-light); color:var(--text); background:#fff; }
+  .compare-result{ display:flex; gap:12px; align-items:center; margin-top:14px; flex-wrap:wrap; }
+  .compare-box{ flex:1; min-width:130px; background:var(--blue-pale); border-radius:10px; padding:12px; text-align:center; }
+  .compare-box.alu{ background:var(--orange-pale); }
+  .compare-box .val{ font-size:24px; font-weight:700; color:var(--blue); font-family:'Trebuchet MS',sans-serif; }
+  .compare-box.alu .val{ color:#b34a1f; }
+  .arrow{ font-size:22px; color:var(--muted); }
+
+  .memory-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:14px; }
+  @media (max-width:420px){ .memory-grid{ grid-template-columns:repeat(2,1fr); } }
+  .memory-card{ aspect-ratio:1; background:var(--blue); color:#fff; border:none; border-radius:10px;
+    display:flex; align-items:center; justify-content:center; font-size:12px; text-align:center; padding:6px; font-weight:700; font-family:'Trebuchet MS',sans-serif; }
+  .memory-card.face-down{ background:var(--blue); color:#fff; font-size:22px; }
+  .memory-card.wrong-flash{ background:var(--red); }
+  .memory-card.matched{ background:var(--green-pale); color:var(--green); border:2px solid var(--green); }
+  .memory-status{ text-align:center; margin-top:10px; font-weight:700; color:var(--blue); font-family:'Trebuchet MS',sans-serif; }
+
+  .quiz-q{ margin-bottom:18px; } .quiz-q p.q-text{ font-weight:700; margin-bottom:8px; }
+  .quiz-opt{ display:block; width:100%; text-align:left; background:#fff; border:2px solid #dfe3e8; border-radius:8px; padding:9px 12px; margin-bottom:6px; font-size:14.5px; }
+  .quiz-opt:hover{ border-color:var(--blue); }
+  .quiz-opt.correct{ border-color:var(--green); background:var(--green-pale); border-style:solid; border-width:3px; }
+  .quiz-opt.wrong{ border-color:var(--red); background:var(--red-pale); border-style:dashed; border-width:3px; }
+  .quiz-opt:disabled{ cursor:default; }
+  .score-box{ text-align:center; background:var(--blue); color:#fff; border-radius:var(--radius); padding:20px; margin:16px 0; }
+  .score-box .big{ font-size:34px; font-weight:700; font-family:'Trebuchet MS',sans-serif; }
+
+  .checklist li{ margin-bottom:6px; } .checklist li::marker{ color: var(--orange); }
+
+  .nav-footer{ position:fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid #e0e0dc; padding:10px 16px; display:flex; gap:10px; justify-content:space-between; z-index:20; }
+  .nav-footer .btn{ flex:1; max-width:220px; }
+  .signature{ text-align:center; color:var(--muted); font-size:12px; margin:30px 0 10px; }
+
+  .gloss{ border-bottom:2px dotted var(--orange); color:var(--blue); font-weight:700; cursor:pointer; white-space:nowrap; }
+  .help-fab{ position:fixed; right:16px; bottom:76px; width:52px; height:52px; border-radius:50%; background:var(--orange); color:#fff; border:none; font-size:22px; font-weight:700; box-shadow:0 4px 10px rgba(0,0,0,.25); z-index:30; cursor:pointer; }
+  .gloss-overlay{ display:none; position:fixed; inset:0; background:rgba(27,58,99,0.55); z-index:40; align-items:flex-end; justify-content:center; }
+  .gloss-overlay.open{ display:flex; }
+  .gloss-panel{ background:#fff; width:100%; max-width:520px; border-radius:16px 16px 0 0; padding:18px 18px 26px; max-height:75vh; overflow-y:auto; }
+  .gloss-panel h3{ margin-top:0; }
+  .gloss-close{ display:block; margin:14px auto 0; background:var(--blue); color:#fff; border:none; padding:9px 20px; border-radius:10px; font-weight:700; }
+  .gloss-item{ margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid #eee; } .gloss-item:last-child{ border-bottom:none; }
+  .gloss-item .term{ color:var(--orange); font-family:'Trebuchet MS',sans-serif; font-weight:700; }
+  .gloss-item p{ margin:2px 0 0; font-size:14.5px; }
+  .gloss-icon{ text-align:center; margin:6px 0 12px; }
+  .gloss-icon svg{ width:130px; max-width:60%; height:auto; }
+  .gloss-item{ position:relative; }
+  .gloss-icon-sm{ float:right; width:70px; margin:0 0 4px 10px; }
+  .gloss-icon-sm svg{ width:70px; height:auto; }
+
+  .dys-fab{ position:fixed; right:16px; bottom:136px; width:52px; height:52px; border-radius:50%;
+    background:var(--blue); color:#fff; border:none; font-size:15px; font-weight:700;
+    box-shadow:0 4px 10px rgba(0,0,0,.25); z-index:30; cursor:pointer; }
+  .dys-fab[aria-pressed="true"]{ background:var(--green); }
+  body.dys-mode, body.dys-mode input, body.dys-mode button, body.dys-mode select{ font-family:'Atkinson Hyperlegible','Calibri',sans-serif !important; }
+  body.dys-mode{ font-size:19px; line-height:1.9; letter-spacing:0.3px; word-spacing:1.5px; }
+  body.dys-mode h1, body.dys-mode h2, body.dys-mode h3{ letter-spacing:0.2px; }
+  body.dys-mode .svg-caption, body.dys-mode .subtitle, body.dys-mode .td-progress{ font-size:15px; }
+
+  /* ---- illustrations pédagogiques ---- */
+  .illustration-card{ margin:18px 0; padding:14px; border:1px solid #e6e6e2; border-radius:var(--radius); background:var(--card); box-shadow:0 6px 16px rgba(27,58,99,.06); }
+  .illustration-card img{ display:block; max-width:100%; height:auto; margin:0 auto; }
+  .illustration-card figcaption{ margin-top:10px; font-size:14px; color:var(--muted); text-align:center; line-height:1.45; }
+  body.dys-mode .illustration-card figcaption{ font-size:15px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="flake">❄</span>
+  <span class="brand">inerWeb <span class="badge-edu">Édu</span></span>
+  <span class="niveau-tag" id="niveauTag">Niveau : à choisir</span>
+</div>
+
+<div class="app">
+
+  <h1 class="main-title">⚡ Sous tension — TD3 : cas particuliers</h1>
+  <p class="subtitle">Câbles armés, blindés, aluminium, sécurité incendie — et les sections.</p>
+  <p class="td-progress">TD 3 sur 3 — durée indicative : 1h</p>
+
+  <div class="stepper" id="stepper"></div>
+
+  <!-- ============ ACCUEIL ============ -->
+  <div class="screen active" id="screen-accueil">
+    <div class="card">
+      <h2>Avant de commencer</h2>
+      <p>Dans les TD1 et TD2, tu as vu les câbles et les fils qu'on croise <strong>tous les jours</strong>. Ce TD3 couvre des cas plus particuliers, mais que tu rencontreras vraiment sur le terrain :</p>
+      <ul>
+        <li>Un câble <strong>armé</strong> et un câble <strong>blindé</strong>, ce n'est pas la même chose,</li>
+        <li>Pourquoi certains câbles sont en <strong>aluminium</strong>,</li>
+        <li>Pourquoi certains circuits ont besoin d'un câble <strong>anti-incendie</strong>,</li>
+        <li>Comment raisonner sur la <strong>grosseur</strong> d'un câble.</li>
+      </ul>
+      <div class="point-note"><strong>À savoir :</strong> il existe des milliers de câbles dans le métier — ce TD ne les couvre pas tous, mais te donne la logique pour comprendre les autres le jour où tu les croiseras.</div>
+    </div>
+    <div class="card">
+      <h3>Choisis ton niveau</h3>
+      <div class="niveau-choice">
+        <button class="niveau-btn" onclick="choisirNiveau('decouverte')"><div class="emoji">🔍</div><h3>Découverte</h3><p>CAP · 2nde TNE.</p></button>
+        <button class="niveau-btn" onclick="choisirNiveau('approfondi')"><div class="emoji">📐</div><h3>Approfondi</h3><p>Bac Pro.</p></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ARMÉ OU BLINDÉ ============ -->
+  <div class="screen" id="screen-arme">
+    <div class="card">
+      <h2>1. Armé ou blindé ? Ce n'est pas pareil</h2>
+      <p>Ces deux mots sont souvent confondus. Pourtant ils protègent contre des choses complètement différentes :</p>
+      <table>
+        <tr><th></th><th><span class="gloss" data-term="armé">Armé</span></th><th><span class="gloss" data-term="blindé">Blindé</span></th></tr>
+        <tr><td class="rowlabel">Protège contre</td><td>les chocs, l'écrasement</td><td>les perturbations électriques</td></tr>
+        <tr><td class="rowlabel">Comment</td><td>un feuillard d'acier autour de la gaine</td><td>une tresse ou un écran de cuivre relié à la terre</td></tr>
+        <tr><td class="rowlabel">Exemple</td><td>câble enterré directement en pleine terre</td><td>liaison entre un variateur de vitesse et un moteur</td></tr>
+      </table>
+      <div class="point-note"><strong>Un câble armé ne protège pas des perturbations électriques</strong>, et un câble blindé ne protège pas forcément des chocs. Confondre les deux peut coûter cher sur un chantier.</div>
+      <div class="point-note"><strong>À retenir simplement :</strong> un câble <strong>armé</strong> protège surtout contre les <strong>agressions mécaniques</strong> ; un câble <strong>blindé</strong> protège surtout contre les <strong>perturbations électromagnétiques</strong>. Ce n'est pas le même problème, ce n'est pas le même choix technique.</div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/07_arme_vs_blinde.svg" alt="Différence entre câble armé et câble blindé">
+      <figcaption>Armé = protection mécanique. Blindé = protection contre les parasites électromagnétiques.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>👀 U1000 RVFV — le câble armé</h3>
+      <p style="font-size:13.5px;color:var(--muted)">Norme NF C 32-322 · version armée du U1000 R2V</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 200 200" width="140" height="140">
+          <circle cx="100" cy="100" r="90" fill="#2b2b2b"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#8a8a8a" stroke-width="6" stroke-dasharray="4 3"/>
+          <circle cx="100" cy="100" r="70" fill="#3a3a3a"/>
+          <circle cx="100" cy="62" r="24" fill="#6b4226" stroke="#1b3a63" stroke-width="1"/><circle cx="100" cy="62" r="9" fill="#d98b3a"/>
+          <circle cx="74" cy="122" r="24" fill="#2f6fb0" stroke="#1b3a63" stroke-width="1"/><circle cx="74" cy="122" r="9" fill="#d98b3a"/>
+          <circle cx="126" cy="122" r="24" fill="#2e7d32" stroke="#1b3a63" stroke-width="1"/><circle cx="126" cy="122" r="9" fill="#d98b3a"/>
+        </svg>
+        <p class="svg-caption">L'anneau pointillé gris = le <strong>feuillard d'acier</strong> (l'armure), entre la gaine intérieure et la gaine extérieure.</p>
+      </div>
+      <p><strong>U</strong>(UTE) <strong>1000</strong>(1000V) <strong>R</strong>(isolant PR) <strong>V</strong>(gaine intérieure PVC) <strong>F</strong>(feuillard d'acier) <strong>V</strong>(gaine extérieure PVC).</p>
+      <p>Usage : c'est un câble armé prévu pour les <strong>installations fixes</strong>. Il peut être posé en <strong>enterré direct</strong> lorsque les <strong>règles de pose sont respectées</strong> : profondeur adaptée, lit de pose, grillage avertisseur, protection mécanique aux remontées et absence de contrainte particulière non prévue. On l'utilise aussi en extérieur sur chemin de câbles quand une protection mécanique est nécessaire.</p>
+      <div class="point-note"><strong>À ne pas retenir comme « je jette le câble dans la terre ».</strong> Même avec un câble armé, la pose enterrée doit respecter des règles : sans elles, l'armure ne suffit pas.</div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/08_pose_enterree_rvfv.svg" alt="Pose enterrée d'un câble armé avec grillage avertisseur et lit de pose">
+      <figcaption>Un câble armé enterré doit être posé correctement : profondeur, lit de pose, signalisation et protection aux remontées.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>👀 Câble blindé — pour les variateurs de vitesse</h3>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 380 140" width="100%" style="max-width:320px;">
+          <rect x="10" y="45" width="70" height="50" rx="6" fill="#1b3a63"/>
+          <text x="45" y="75" font-family="'Trebuchet MS',sans-serif" font-size="11" fill="#fff" text-anchor="middle">variateur</text>
+          <path d="M80,70 L300,70" stroke="#7a7a7a" stroke-width="14" stroke-linecap="round"/>
+          <path d="M80,70 L300,70" stroke="none" stroke-width="14" stroke-dasharray="3 4" stroke-linecap="round"/>
+          <g stroke="#c9c9c9" stroke-width="1" fill="none">
+            <path d="M85,63 Q100,55 115,63 Q130,71 145,63 Q160,55 175,63 Q190,71 205,63 Q220,55 235,63 Q250,71 265,63 Q280,55 295,63"/>
+            <path d="M85,77 Q100,69 115,77 Q130,85 145,77 Q160,69 175,77 Q190,85 205,77 Q220,69 235,77 Q250,85 265,77 Q280,69 295,77"/>
+          </g>
+          <text x="190" y="55" font-family="'Trebuchet MS',sans-serif" font-size="10" fill="var(--blue)" text-anchor="middle">tresse de cuivre (écran)</text>
+          <rect x="300" y="45" width="70" height="50" rx="25" fill="#5b6472"/>
+          <text x="335" y="75" font-family="'Trebuchet MS',sans-serif" font-size="11" fill="#fff" text-anchor="middle">moteur</text>
+          <text x="45" y="115" font-family="'Trebuchet MS',sans-serif" font-size="16" text-anchor="middle">⏚</text>
+          <text x="335" y="115" font-family="'Trebuchet MS',sans-serif" font-size="16" text-anchor="middle">⏚</text>
+        </svg>
+        <p class="svg-caption">L'écran (tresse de cuivre) enveloppe les conducteurs et doit être relié à la <span class="gloss" data-term="mise à la terre">terre</span> aux <strong>deux bouts</strong> (⏚), variateur et moteur, avec des presse-étoupes spéciaux CEM.</p>
+      </div>
+      <p>Un variateur découpe le courant très rapidement (des dizaines de milliers de fois par seconde) pour piloter la vitesse du moteur. Cette découpe génère des <span class="gloss" data-term="perturbations CEM">perturbations haute fréquence</span> qui peuvent gêner des capteurs ou des liaisons radio à proximité. Le blindage capte ces perturbations et les évacue à la terre, avant qu'elles ne rayonnent dans l'atelier.</p>
+      <div class="point-note"><strong>À retenir :</strong> plus le variateur est puissant et plus le câble est long, plus les perturbations sont importantes. Le blindage n'est donc pas juste une option pour « faire bien », c'est un vrai besoin technique.</div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/09_variateur_moteur_blinde.svg" alt="Liaison entre variateur et moteur avec câble blindé">
+      <figcaption>Entre un variateur et un moteur, le câble blindé limite les perturbations électromagnétiques si le blindage est bien raccordé.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>Vérifie</h3>
+      <div class="scenario" id="a1">
+        <p class="desc">Un câble qui doit être enterré directement, sans fourreau, dans un sol caillouteux.</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,true,'a1')">Armé</button>
+          <button class="choice-btn" onclick="repondreQ(this,false,'a1')">Blindé (sans armure)</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="a2">
+        <p class="desc">Un câble entre un variateur de vitesse et un moteur, à proximité de capteurs sensibles.</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,false,'a2')">Armé (sans écran)</button>
+          <button class="choice-btn" onclick="repondreQ(this,true,'a2')">Blindé</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CUIVRE OU ALUMINIUM ============ -->
+  <div class="screen" id="screen-alu">
+    <div class="card">
+      <h2>2. Cuivre ou aluminium ?</h2>
+      <p>Un câble n'est pas toujours en cuivre. Certains ont une âme en <strong>aluminium</strong> — reconnaissable au « A » dans leur code.</p>
+      <ul>
+        <li><strong>Cuivre</strong> : très bon conducteur → pour une même intensité, la section reste petite. Le choix par défaut dans le bâtiment.</li>
+        <li><strong>Aluminium</strong> : moins bon conducteur, mais plus léger et moins cher → utilisé pour les <strong>grosses sections</strong> (branchements, réseaux de distribution), à condition d'augmenter la section.</li>
+      </ul>
+      <div class="point-note"><strong>Repère utilisé dans la profession :</strong> pour transporter le même courant, une section en aluminium doit faire environ <strong>1,65 fois</strong> la section équivalente en cuivre. En résidentiel, l'aluminium est généralement évité en dessous de 16 mm².</div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/10_cuivre_vs_aluminium.svg" alt="Comparaison entre conducteur en cuivre et conducteur en aluminium">
+      <figcaption>Le cuivre et l'aluminium conduisent le courant, mais ils ne se raccordent pas avec les mêmes contraintes.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>👀 U1000 AR2V</h3>
+      <p>Même famille que le U1000 R2V du TD1, avec un « A » en plus : <strong>U1000 <span style="color:var(--orange)">A</span>R2V</strong> = âme en aluminium au lieu du cuivre.</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 200 200" width="140" height="140">
+          <circle cx="100" cy="100" r="88" fill="#3a3a3a" stroke="#000" stroke-width="3"/>
+          <circle cx="100" cy="62" r="30" fill="#6b4226" stroke="#1b3a63" stroke-width="1"/><circle cx="100" cy="62" r="16" fill="#c7c7c7"/>
+          <circle cx="70" cy="128" r="30" fill="#2f6fb0" stroke="#1b3a63" stroke-width="1"/><circle cx="70" cy="128" r="16" fill="#c7c7c7"/>
+          <circle cx="130" cy="128" r="30" fill="#2e7d32" stroke="#1b3a63" stroke-width="1"/><circle cx="130" cy="128" r="16" fill="#c7c7c7"/>
+        </svg>
+        <p class="svg-caption">Les âmes sont grises (aluminium) et plus <strong>grosses</strong> que dans un câble cuivre équivalent en intensité — c'est le compromis du « moins bon conducteur ».</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Comparateur</h3>
+      <p>Choisis une section en cuivre, découvre la section équivalente en aluminium.</p>
+      <select id="selectCu" onchange="majComparateur()">
+        <option value="1.5">1,5 mm²</option>
+        <option value="2.5">2,5 mm²</option>
+        <option value="4">4 mm²</option>
+        <option value="6">6 mm²</option>
+        <option value="10" selected>10 mm²</option>
+        <option value="16">16 mm²</option>
+        <option value="25">25 mm²</option>
+        <option value="35">35 mm²</option>
+      </select>
+      <div class="compare-result">
+        <div class="compare-box"><div>Cuivre</div><div class="val" id="cuVal">10 mm²</div></div>
+        <div class="arrow">➡</div>
+        <div class="compare-box alu"><div>Aluminium équivalent</div><div class="val" id="aluVal">16 mm²</div></div>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-top:10px;">Estimation pédagogique arrondie à la section normalisée la plus proche. Pour un vrai chantier, se référer à la documentation du fabricant.</p>
+    </div>
+
+    <div class="card">
+      <h3>Vérifie</h3>
+      <div class="scenario" id="al1">
+        <p class="desc">Pour transporter le même courant qu'un câble cuivre, un câble aluminium doit avoir une section…</p>
+        <div class="choices">
+          <button class="choice-btn" data-correct="false" onclick="repondreQ(this,false,'al1')">Plus petite</button>
+          <button class="choice-btn" data-correct="true" onclick="repondreQ(this,true,'al1')">Plus grande</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>✏️ Entraîne-toi — un câble qui combine deux notions</h3>
+      <p>Voici un câble que tu n'as jamais vu écrit en entier : <strong>U1000 ARVFV</strong>. Tu as pourtant déjà toutes les clés. Décompose-le lettre par lettre en t'appuyant sur ce TD (le « A » de l'aluminium) et sur ce que tu viens de voir sur l'armure (le « F » du feuillard).</p>
+      <div class="scenario" id="tr-arvfv">
+        <p class="desc">Le « A » puis le « F » de <strong>U1000 <span style="color:var(--orange)">A</span>RV<span style="color:var(--orange)">F</span>V</strong> signifient…</p>
+        <div class="choices">
+          <button class="choice-btn" data-correct="true" onclick="repondreTrain(this,true,'tr-arvfv')">âme aluminium + feuillard d'acier (armé)</button>
+          <button class="choice-btn" data-correct="false" onclick="repondreTrain(this,false,'tr-arvfv')">âme aluminium + blindage cuivre</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="usage-reveal" id="tr-arvfv-recap">
+        <strong>Exact :</strong> c'est un câble <strong>aluminium</strong> ET <strong>armé</strong>. La version renforcée du U1000 AR2V : on la trouve enterrée directement, sur les réseaux de distribution où on veut à la fois le coût de l'aluminium et la protection mécanique de l'armure. Le « F » = feuillard, jamais un blindage : celui-ci ne s'écrit pas dans le code de la même façon.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SÉCURITÉ INCENDIE ============ -->
+  <div class="screen" id="screen-incendie">
+    <div class="card">
+      <h2>3. Sécurité incendie : réaction ou résistance ?</h2>
+      <p>Deux idées différentes, souvent mélangées :</p>
+      <table>
+        <tr><th><span class="gloss" data-term="réaction au feu">Réaction au feu</span></th><th><span class="gloss" data-term="résistance au feu">Résistance au feu</span></th></tr>
+        <tr><td>Comment le câble lui-même brûle : peu ou beaucoup de fumée, propagation ou non</td><td>Le circuit continue-t-il de <strong>fonctionner</strong> pendant l'incendie, pour un temps donné</td></tr>
+      </table>
+      <div class="point-note"><strong>Pourquoi ça compte :</strong> lors d'une évacuation, la fumée tue souvent avant les flammes — et certains circuits (alarme, éclairage de secours, désenfumage) doivent continuer à fonctionner pour que tout le monde puisse sortir.</div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/11_reaction_resistance_feu.svg" alt="Différence entre réaction au feu et résistance au feu d'un câble électrique">
+      <figcaption>La réaction au feu décrit le comportement du câble face au feu. La résistance au feu concerne le maintien du fonctionnement.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>👀 Deux exemples de câbles sécurité incendie</h3>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 380 100" width="100%" style="max-width:320px;">
+          <rect x="10" y="30" width="300" height="40" rx="20" fill="#ff6b35"/>
+          <text x="160" y="55" font-family="'Trebuchet MS',sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">CR1-C1</text>
+        </svg>
+        <p class="svg-caption">Gaine <strong>orange</strong> très reconnaissable. « CR1 » = résistance au feu (le circuit continue à fonctionner). « C1 » = non-propagateur d'incendie. Utilisé pour les circuits qui ne doivent jamais s'arrêter : alarme incendie, éclairage de sécurité, désenfumage.</p>
+      </div>
+      <p><span class="gloss" data-term="FR-N1X6G3">FR-N1X6G3</span> est un autre câble de la même famille de sécurité incendie, avec une gaine <span class="gloss" data-term="LSZH">LSZH</span> (faible fumée, sans halogène). Il existe plusieurs normes selon les cas — sur un vrai chantier, on vérifie toujours la classification exigée dans le cahier des charges.</p>
+    </div>
+
+    <div class="card">
+      <h3>Vérifie</h3>
+      <div class="scenario" id="i1">
+        <p class="desc">Le circuit d'un désenfumage, qui doit continuer à fonctionner PENDANT l'incendie, a besoin surtout de…</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,false,'i1')">Réaction au feu</button>
+          <button class="choice-btn" onclick="repondreQ(this,true,'i1')">Résistance au feu</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SECTIONS ET DIAMÈTRES ============ -->
+  <div class="screen" id="screen-sections">
+    <div class="card">
+      <h2>4. Plus long, plus fort, plus gros</h2>
+      <p><strong>Deux facteurs</strong> font grossir la section d'un câble :</p>
+      <ul>
+        <li>🔺 <strong>L'intensité</strong> qui le traverse. Plus il y a de courant, plus le câble chauffe s'il est trop fin.</li>
+        <li>📏 <strong>La longueur</strong> du câble. Plus c'est long, plus la <span class="gloss" data-term="chute de tension">chute de tension</span> est importante.</li>
+      </ul>
+      <div class="point-note"><strong>Image simple :</strong> un câble, c'est comme un tuyau d'eau. Un gros débit ou un long trajet demande un tuyau plus large, sinon la pression chute et ça chauffe par frottement.</div>
+    </div>
+
+    <div class="card">
+      <h3>D'un coup d'œil : plus la section grandit…</h3>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 340 90" width="100%" style="max-width:320px;">
+          <line x1="20" y1="70" x2="300" y2="20" stroke="#2f6fb0" stroke-width="4" stroke-linecap="round"/>
+          <line x1="20" y1="72" x2="300" y2="30" stroke="#2f6fb0" stroke-width="8" stroke-linecap="round"/>
+          <line x1="20" y1="75" x2="300" y2="42" stroke="#2f6fb0" stroke-width="14" stroke-linecap="round"/>
+          <line x1="20" y1="78" x2="300" y2="56" stroke="#2f6fb0" stroke-width="22" stroke-linecap="round"/>
+          <text x="30" y="65" font-family="'Trebuchet MS',sans-serif" font-size="11" fill="var(--blue)">1,5</text>
+          <text x="300" y="60" font-family="'Trebuchet MS',sans-serif" font-size="11" fill="var(--blue)">10 mm²</text>
+        </svg>
+        <p class="svg-caption">Section qui grandit = passage plus large pour le courant, moins d'échauffement.</p>
+      </div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/12_section_chute_tension.svg" alt="Influence de la section d'un conducteur sur la chute de tension">
+      <figcaption>Plus la longueur ou la puissance augmente, plus la section doit être choisie avec soin.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>Teste le raisonnement</h3>
+      <div class="slider-row">
+        <label>Longueur du câble : <output id="outLong">15</output> m</label>
+        <input type="range" id="sliderLong" min="5" max="50" value="15" oninput="majGauge()">
+      </div>
+      <div class="slider-row">
+        <label>Intensité à faire passer : <output id="outInt">10</output> A</label>
+        <input type="range" id="sliderInt" min="2" max="40" value="10" oninput="majGauge()">
+      </div>
+      <div class="gauge"><div class="gauge-fill" id="gaugeFill"></div></div>
+      <div class="gauge-label" id="gaugeLabel">Section recommandée : moyenne</div>
+    </div>
+
+    <div class="card only-approfondi">
+      <h3>📐 Repères chiffrés (Bac Pro)</h3>
+      <p>Pour un câble en <strong>cuivre</strong>, posé dans des conditions courantes :</p>
+      <table>
+        <tr><th>Section</th><th>1,5 mm²</th><th>2,5 mm²</th><th>6 mm²</th><th>10 mm²</th></tr>
+        <tr><th>Intensité max indicative</th><td>16 A</td><td>20 A</td><td>32 A</td><td>40 A</td></tr>
+      </table>
+      <div class="point-note"><strong>Attention :</strong> ce sont des repères, pas une vérité absolue. Le dimensionnement officiel se fait avec la norme <strong>NF C 15-100</strong> et le guide <strong>UTE C 15-105</strong>, qui tiennent compte du mode de pose, du regroupement de câbles et de la température.</div>
+      <details>
+        <summary>Comment les pros vérifient la longueur (sans le détail du calcul)</summary>
+        <p style="margin-top:8px;">Une formule officielle relie <strong>section</strong>, <strong>longueur</strong>, <strong>intensité</strong> et <strong>chute de tension admissible</strong> (3 % en éclairage, 5 % pour le reste). Plus le trajet est long et le courant fort, plus la section doit grandir pour rester dans la limite. Les coefficients exacts sont dans le guide UTE C 15-105.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- ============ JEU DE MÉMOIRE ============ -->
+  <div class="screen" id="screen-memoire">
+    <div class="card">
+      <h2>5. Jeu de mémoire — retrouve les paires</h2>
+      <p>Clique deux cartes. Si elles correspondent, la paire reste affichée.</p>
+      <div class="memory-grid" id="memoryGrid"></div>
+      <div class="memory-status" id="memoryStatus">0 / 8 paires trouvées</div>
+      <div style="text-align:center;margin-top:14px;"><button class="btn secondary" onclick="initMemory()">🔄 Recommencer le jeu</button></div>
+    </div>
+  </div>
+
+  <!-- ============ QUIZ + SYNTHÈSE FINALE ============ -->
+  <div class="screen" id="screen-quiz">
+    <div class="card">
+      <h2>6. Synthèse</h2>
+      <p>6 questions pour vérifier ce qui est acquis dans ce TD3.</p>
+    </div>
+    <div class="card" id="quizContainer"></div>
+    <div class="card">
+      <h3>Ce que je sais faire maintenant</h3>
+      <ul class="checklist">
+        <li>Je sais faire la différence entre un câble <strong>armé</strong> (chocs) et un câble <strong>blindé</strong> (perturbations électriques).</li>
+        <li>Je sais pourquoi certains câbles sont en <strong>aluminium</strong>, et ce que ça change pour la section.</li>
+        <li>Je sais distinguer <strong>réaction au feu</strong> et <strong>résistance au feu</strong>.</li>
+        <li>Je sais expliquer pourquoi une plus grande longueur ou intensité demande une section plus grosse.</li>
+      </ul>
+      <div class="point-note"><strong>Bilan des 3 TD :</strong> tu as maintenant vu 8 câbles et fils différents (H07RN-F, U1000 R2V, H05VV-F, H07V-U, H07V-K, H05V-K, U1000 RVFV, U1000 AR2V), plus les câbles blindés et sécurité incendie. Ce n'est pas tout l'univers du câble électrique — mais tu as la logique pour comprendre les autres.</div>
+    </div>
+
+    <div class="card">
+      <h3>🧭 Choisir un câble : la bonne méthode</h3>
+      <p>Pour choisir un câble, je ne récite pas un code. Je vérifie&nbsp;:</p>
+      <ul>
+        <li>fixe ou mobile&nbsp;;</li>
+        <li>intérieur ou extérieur&nbsp;;</li>
+        <li>risque mécanique&nbsp;;</li>
+        <li>présence d'un variateur ou de parasites&nbsp;;</li>
+        <li>intensité, longueur, chute de tension&nbsp;;</li>
+        <li>protection électrique associée&nbsp;;</li>
+        <li>règles de pose.</li>
+      </ul>
+      <div class="point-note">Le code du câble vient <strong>à la fin</strong>, une fois que le besoin est posé — pas l'inverse.</div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/13_choix_cable_guide.svg" alt="Méthode simplifiée pour choisir un câble électrique">
+      <figcaption>Le choix d'un câble dépend de l'usage, du lieu, des contraintes mécaniques, des parasites, de l'intensité et de la protection.</figcaption>
+    </figure>
+  </div>
+
+  <p class="signature">TD 3/3</p>
+</div>
+
+<button class="dys-fab" id="dysFab" onclick="toggleDys()" aria-pressed="false" aria-label="Activer le mode police adaptée DYS">Aa</button>
+<button class="help-fab" onclick="openFullLexique()" aria-label="Ouvrir le lexique">?</button>
+<div class="gloss-overlay" id="glossOverlay" onclick="if(event.target===this) closeGloss()">
+  <div class="gloss-panel" id="glossPanel"></div>
+</div>
+
+<div class="nav-footer">
+  <button class="btn secondary" id="btnPrev" onclick="allerEcran(current-1)">◀ Précédent</button>
+  <button class="btn" id="btnNext" onclick="allerEcran(current+1)">Suivant ▶</button>
+</div>
+
+<script>
+const screens = ['screen-accueil','screen-arme','screen-alu','screen-incendie','screen-sections','screen-memoire','screen-quiz'];
+let current = 0;
+let niveau = null;
+
+function buildStepper(){
+  const st = document.getElementById('stepper'); st.innerHTML = '';
+  const total = screens.length - 1;
+  for(let i=1;i<=total;i++){
+    const node = document.createElement('div'); node.className = 'node'; node.id = 'node'+i; node.textContent = i;
+    st.appendChild(node);
+    if(i<total){ const wire = document.createElement('div'); wire.className = 'wire'; wire.id = 'wire'+i; st.appendChild(wire); }
+  }
+}
+buildStepper();
+
+function refreshStepper(){
+  const total = screens.length - 1;
+  for(let i=1;i<=total;i++){
+    const node = document.getElementById('node'+i);
+    node.classList.remove('done','current');
+    if(current > i) node.classList.add('done'); else if(current === i) node.classList.add('current');
+    if(i<total){ document.getElementById('wire'+i).classList.toggle('on', current > i); }
+  }
+}
+
+function allerEcran(idx){
+  if(idx < 0 || idx > screens.length-1) return;
+  if(idx > 0 && niveau === null){ idx = 0; }
+  document.getElementById(screens[current]).classList.remove('active');
+  current = idx;
+  document.getElementById(screens[current]).classList.add('active');
+  refreshStepper();
+  document.getElementById('btnPrev').disabled = (current===0);
+  document.getElementById('btnNext').style.visibility = (current===screens.length-1) ? 'hidden' : 'visible';
+  window.scrollTo({top:0, behavior:'smooth'});
+  if(screens[current] === 'screen-memoire') initMemory();
+  if(screens[current] === 'screen-quiz') buildQuiz();
+}
+
+function choisirNiveau(n){
+  niveau = n;
+  document.body.classList.remove('niveau-decouverte','niveau-approfondi');
+  document.body.classList.add('niveau-'+n);
+  document.getElementById('niveauTag').textContent = 'Niveau : ' + (n==='decouverte' ? 'Découverte (CAP/2nde)' : 'Approfondi (Bac Pro)');
+  allerEcran(1);
+}
+
+function toggleDys(){
+  document.body.classList.toggle('dys-mode');
+  const on = document.body.classList.contains('dys-mode');
+  document.getElementById('dysFab').setAttribute('aria-pressed', on);
+}
+
+function repondreQ(btn, correct, groupId){
+  const group = document.getElementById(groupId);
+  const fb = group.querySelector('.feedback');
+  group.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+  btn.classList.add(correct ? 'correct':'wrong');
+  btn.textContent = (correct ? '✓ ' : '✗ ') + btn.textContent;
+  if(!correct){
+    const goodBtn = group.querySelector('.choice-btn[data-correct="true"]');
+    if(goodBtn && goodBtn !== btn){ goodBtn.classList.add('correct'); goodBtn.textContent = '✓ ' + goodBtn.textContent; }
+  }
+  fb.classList.add('shown', correct ? 'ok':'ko');
+  fb.textContent = correct ? '✅ Exact.' : '❌ Repense à ce que chaque protection est censée faire.';
+}
+
+function repondreTrain(btn, correct, groupId){
+  const group = document.getElementById(groupId);
+  const fb = group.querySelector('.feedback');
+  if(correct){
+    group.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+    btn.classList.remove('wrong'); btn.classList.add('correct');
+    btn.textContent = '✓ ' + btn.textContent;
+    fb.classList.add('shown','ok'); fb.textContent = '✅ Exact.';
+    const recap = document.getElementById(groupId + '-recap');
+    if(recap) recap.classList.add('shown');
+  } else {
+    btn.classList.add('wrong');
+    fb.classList.add('shown','ko');
+    fb.textContent = '❌ Le blindage (écran cuivre) ne s\'écrit pas comme l\'armure. Repense au « F » = feuillard.';
+  }
+}
+
+/* ---- comparateur cuivre/alu ---- */
+const aluStandards = [16,25,35,50,70,95,120,150,185,240];
+function majComparateur(){
+  const cu = parseFloat(document.getElementById('selectCu').value);
+  document.getElementById('cuVal').textContent = cu + ' mm²';
+  const cible = cu * 1.65;
+  let alu = aluStandards.find(v => v >= cible);
+  if(!alu) alu = aluStandards[aluStandards.length-1];
+  document.getElementById('aluVal').textContent = (cu < 16 ? '⚠ non standard' : alu + ' mm²');
+}
+majComparateur();
+
+/* ---- sliders sections ---- */
+function majGauge(){
+  const L = parseInt(document.getElementById('sliderLong').value);
+  const I = parseInt(document.getElementById('sliderInt').value);
+  document.getElementById('outLong').textContent = L;
+  document.getElementById('outInt').textContent = I;
+  const score = Math.min(100, Math.round((I/40)*65 + (L/50)*35));
+  document.getElementById('gaugeFill').style.width = Math.max(15,score) + '%';
+  let label = 'petite section';
+  if(score > 70) label = 'grosse section'; else if(score > 40) label = 'section moyenne';
+  document.getElementById('gaugeLabel').textContent = 'Section recommandée (raisonnement) : ' + label;
+}
+majGauge();
+
+/* ---- jeu de mémoire ---- */
+const memoryPairs = [
+  {code:'Armé', meaning:'Protège des chocs mécaniques (feuillard acier)'},
+  {code:'Blindé', meaning:'Protège des perturbations électriques (écran cuivre relié à la terre)'},
+  {code:'AR2V', meaning:'Version aluminium du câble R2V'},
+  {code:'×1,65', meaning:"Facteur d'équivalence de section aluminium par rapport au cuivre"},
+  {code:'CR1', meaning:'Résistance au feu : le circuit continue de fonctionner'},
+  {code:'C1', meaning:"Non-propagateur d'incendie"},
+  {code:'LSZH', meaning:'Faible fumée, sans halogène'},
+  {code:'Chute de tension', meaning:'Perte de tension le long du câble, plus forte si le câble est long'}
+];
+let memoryState = { cards:[], first:null, second:null, lock:false, matched:0 };
+function initMemory(){
+  const grid = document.getElementById('memoryGrid'); grid.innerHTML = '';
+  let cards = [];
+  memoryPairs.forEach((p,i)=>{
+    cards.push({pairId:i, text:p.code, revealed:false, matched:false});
+    cards.push({pairId:i, text:p.meaning, revealed:false, matched:false});
+  });
+  cards.sort(()=>Math.random()-0.5);
+  memoryState = { cards, first:null, second:null, lock:false, matched:0, moves:0 };
+  document.getElementById('memoryStatus').innerHTML = '0 / 8 paires · <span style="color:var(--orange)">0 coup</span>';
+  cards.forEach((c, idx)=>{
+    const b = document.createElement('button');
+    b.className = 'memory-card face-down'; b.textContent = '?';
+    b.onclick = ()=>flipCard(idx); b.id = 'mcard'+idx;
+    grid.appendChild(b);
+  });
+}
+function majMemoryStatus(){
+  const done = memoryState.matched >= memoryPairs.length;
+  const coups = memoryState.moves + ' coup' + (memoryState.moves>1?'s':'');
+  if(done){
+    let msg = '\ud83c\udf89 Termin\u00e9 en ' + coups + ' !';
+    if(memoryState.moves <= 10) msg += ' Score parfait ou presque !';
+    else if(memoryState.moves <= 16) msg += ' Bien jou\u00e9.';
+    document.getElementById('memoryStatus').innerHTML = msg;
+  } else {
+    document.getElementById('memoryStatus').innerHTML = memoryState.matched + ' / 8 paires \u00b7 <span style="color:var(--orange)">' + coups + '</span>';
+  }
+}
+function flipCard(idx){
+  if(memoryState.lock) return;
+  const c = memoryState.cards[idx];
+  if(c.revealed || c.matched) return;
+  const el = document.getElementById('mcard'+idx);
+  c.revealed = true; el.textContent = c.text; el.classList.remove('face-down');
+  if(memoryState.first === null){ memoryState.first = idx; return; }
+  memoryState.second = idx; memoryState.lock = true; memoryState.moves++;
+  const c1 = memoryState.cards[memoryState.first];
+  const c2 = memoryState.cards[memoryState.second];
+  if(c1.pairId === c2.pairId){
+    c1.matched = true; c2.matched = true;
+    const el1 = document.getElementById('mcard'+memoryState.first);
+    const el2 = document.getElementById('mcard'+memoryState.second);
+    el1.classList.add('matched'); el2.classList.add('matched');
+    el1.textContent = '✓ ' + el1.textContent; el2.textContent = '✓ ' + el2.textContent;
+    memoryState.matched++;
+    majMemoryStatus();
+    memoryState.first = null; memoryState.second = null; memoryState.lock = false;
+  } else {
+    majMemoryStatus();
+    document.getElementById('mcard'+memoryState.first).classList.add('wrong-flash');
+    document.getElementById('mcard'+memoryState.second).classList.add('wrong-flash');
+    setTimeout(()=>{
+      [memoryState.first, memoryState.second].forEach(i=>{
+        const cc = memoryState.cards[i]; cc.revealed = false;
+        const e = document.getElementById('mcard'+i);
+        e.textContent = '?'; e.classList.add('face-down'); e.classList.remove('wrong-flash');
+      });
+      memoryState.first = null; memoryState.second = null; memoryState.lock = false;
+    }, 900);
+  }
+}
+
+/* ---- quiz ---- */
+const quizData = [
+  { q:"Un câble armé protège principalement contre…", options:["les chocs et l'écrasement","les perturbations électriques","le feu"], correct:0 },
+  { q:"Le blindage d'un câble pour variateur doit être relié à la terre…", options:["seulement côté variateur","seulement côté moteur","aux deux bouts"], correct:2 },
+  { q:"Pour transporter le même courant, l'aluminium demande une section…", options:["identique au cuivre","environ 1,65 fois plus grande que le cuivre","plus petite que le cuivre"], correct:1 },
+  { q:"« CR1 » sur un câble sécurité incendie signifie…", options:["non-propagateur de flamme uniquement","le circuit continue à fonctionner pendant l'incendie","le câble ne peut jamais brûler"], correct:1 },
+  { q:"Plus un câble est long, à intensité égale…", options:["moins la section doit être grosse","plus la section doit être grosse","la longueur n'a aucun effet"], correct:1 },
+  { q:"U1000 AR2V : le « A » signale…", options:["une âme aluminium","un câble armé","une norme allemande"], correct:0 }
+];
+function buildQuiz(){
+  const c = document.getElementById('quizContainer');
+  if(c.dataset.built) return; c.dataset.built = '1';
+  let score = 0;
+  quizData.forEach((item, qi)=>{
+    const block = document.createElement('div'); block.className = 'quiz-q';
+    const p = document.createElement('p'); p.className = 'q-text'; p.textContent = (qi+1) + '. ' + item.q;
+    block.appendChild(p);
+    item.options.forEach((opt, oi)=>{
+      const b = document.createElement('button'); b.className = 'quiz-opt'; b.textContent = opt;
+      b.onclick = ()=>{
+        block.querySelectorAll('.quiz-opt').forEach(x=>x.disabled=true);
+        if(oi === item.correct){ b.classList.add('correct'); b.textContent = '✓ ' + b.textContent; score++; }
+        else {
+          b.classList.add('wrong'); b.textContent = '✗ ' + b.textContent;
+          const correctBtn = block.children[item.correct+1];
+          correctBtn.classList.add('correct'); correctBtn.textContent = '✓ ' + correctBtn.textContent;
+        }
+        document.getElementById('scoreBig').textContent = score + ' / ' + quizData.length;
+      };
+      block.appendChild(b);
+    });
+    c.appendChild(block);
+  });
+  const scoreBox = document.createElement('div'); scoreBox.className = 'score-box';
+  scoreBox.innerHTML = '<div>Score</div><div class="big" id="scoreBig">0 / ' + quizData.length + '</div>';
+  c.appendChild(scoreBox);
+}
+
+/* ---- lexique d'aide ---- */
+const glossIcons = {
+  arme: '<svg viewBox="0 0 120 60"><circle cx="60" cy="30" r="26" fill="#2b2b2b"/><circle cx="60" cy="30" r="20" fill="none" stroke="#8a8a8a" stroke-width="4" stroke-dasharray="4 3"/><circle cx="60" cy="30" r="10" fill="#d98b3a"/></svg>',
+  blinde: '<svg viewBox="0 0 120 60"><line x1="15" y1="30" x2="105" y2="30" stroke="#7a7a7a" stroke-width="16" stroke-linecap="round"/><g stroke="#c9c9c9" stroke-width="1.4" fill="none"><path d="M18,24 Q33,18 48,24 Q63,30 78,24 Q93,18 102,24"/><path d="M18,36 Q33,30 48,36 Q63,42 78,36 Q93,30 102,36"/></g></svg>',
+  terre: '<svg viewBox="0 0 120 60"><line x1="60" y1="10" x2="60" y2="34" stroke="#5b6472" stroke-width="4"/><line x1="44" y1="34" x2="76" y2="34" stroke="#5b6472" stroke-width="4"/><line x1="50" y1="42" x2="70" y2="42" stroke="#5b6472" stroke-width="4"/><line x1="55" y1="50" x2="65" y2="50" stroke="#5b6472" stroke-width="4"/></svg>',
+  cem: '<svg viewBox="0 0 120 60"><circle cx="35" cy="30" r="6" fill="#ff6b35"/><g stroke="#ff6b35" stroke-width="2.5" fill="none"><path d="M48,18 Q58,30 48,42"/><path d="M58,12 Q73,30 58,48"/><path d="M68,8 Q88,30 68,52"/></g></svg>',
+  reaction: '<svg viewBox="0 0 120 60"><path d="M60,48 Q45,40 48,26 Q52,32 56,28 Q54,18 66,10 Q62,24 72,26 Q76,36 68,44 Q64,46 60,48Z" fill="#ff6b35"/><g fill="#b0b0b0"><circle cx="45" cy="16" r="3"/><circle cx="80" cy="20" r="3"/><circle cx="72" cy="10" r="2.5"/></g></svg>',
+  resistance: '<svg viewBox="0 0 120 60"><path d="M25,48 Q18,36 22,24 Q26,30 30,26 Q28,18 36,12 Q33,24 42,26 Q46,34 40,44Z" fill="#ff6b35"/><rect x="58" y="24" width="52" height="12" rx="6" fill="#ff6b35"/><path d="M62,30 h44" stroke="#fff" stroke-width="2"/></svg>',
+  lszh: '<svg viewBox="0 0 120 60"><rect x="30" y="22" width="60" height="18" rx="9" fill="#ff6b35"/><g fill="none" stroke="#b0b0b0" stroke-width="2" opacity="0.5"><path d="M45,18 q4,-6 0,-10"/><path d="M60,18 q4,-6 0,-10"/><path d="M75,18 q4,-6 0,-10"/></g></svg>',
+  chute: '<svg viewBox="0 0 120 60"><line x1="12" y1="16" x2="108" y2="44" stroke="#2f6fb0" stroke-width="4" stroke-dasharray="5 4"/><text x="12" y="12" font-family="sans-serif" font-size="10" fill="#1b3a63">230V</text><text x="88" y="58" font-family="sans-serif" font-size="10" fill="#b3261e">↓ moins</text></svg>'
+};
+const lexique = {
+  'armé': {def:"Un câble entouré d'un feuillard d'acier, pour résister aux chocs mécaniques et à l'écrasement (par exemple sous terre).", svg:glossIcons.arme},
+  'blindé': {def:"Un câble entouré d'une tresse ou d'un écran de cuivre, relié à la terre, pour capter et évacuer les perturbations électriques au lieu de les laisser rayonner.", svg:glossIcons.blinde},
+  'mise à la terre': {def:"Le raccordement d'un élément métallique au sol, pour évacuer un courant indésirable (défaut ou perturbation) au lieu qu'il traverse une personne ou perturbe un équipement.", svg:glossIcons.terre},
+  'perturbations CEM': {def:"Des signaux électriques indésirables à haute fréquence, capables de perturber d'autres appareils à proximité. CEM = Compatibilité ÉlectroMagnétique.", svg:glossIcons.cem},
+  'réaction au feu': {def:"La façon dont un câble se comporte quand il brûle lui-même : plus ou moins de fumée, propagation ou non de la flamme.", svg:glossIcons.reaction},
+  'résistance au feu': {def:"La capacité d'un circuit à continuer de fonctionner pendant un incendie, pendant une durée donnée.", svg:glossIcons.resistance},
+  'FR-N1X6G3': {def:"Un câble de la famille sécurité incendie, à gaine LSZH, utilisé pour des circuits critiques dans les établissements recevant du public."},
+  'LSZH': {def:"Low Smoke Zero Halogen : une gaine qui dégage très peu de fumée et pas de gaz halogénés toxiques en cas d'incendie.", svg:glossIcons.lszh},
+  'chute de tension': {def:"La perte de tension entre le départ et l'arrivée d'un câble, à cause de sa résistance électrique. Plus le câble est long, plus elle est importante.", svg:glossIcons.chute}
+};
+function defOf(term){ const e = lexique[term]; return e ? (typeof e === 'string' ? e : e.def) : "Définition à venir."; }
+function svgOf(term){ const e = lexique[term]; return (e && typeof e === 'object' && e.svg) ? e.svg : ''; }
+function openGloss(term){
+  const panel = document.getElementById('glossPanel');
+  const icon = svgOf(term);
+  panel.innerHTML = '<h3>' + term + '</h3>' + (icon ? '<div class="gloss-icon">' + icon + '</div>' : '') + '<p style="font-size:15px;">' + defOf(term) + '</p><button class="gloss-close" onclick="closeGloss()">Fermer</button>';
+  document.getElementById('glossOverlay').classList.add('open');
+}
+function openFullLexique(){
+  const panel = document.getElementById('glossPanel');
+  let html = '<h3>📖 Lexique — TD3</h3>';
+  Object.keys(lexique).forEach(term=>{ const icon = svgOf(term); html += '<div class="gloss-item">' + (icon ? '<div class="gloss-icon-sm">' + icon + '</div>' : '') + '<span class="term">' + term + '</span><p>' + defOf(term) + '</p></div>'; });
+  html += '<button class="gloss-close" onclick="closeGloss()">Fermer</button>';
+  panel.innerHTML = html;
+  document.getElementById('glossOverlay').classList.add('open');
+}
+function closeGloss(){ document.getElementById('glossOverlay').classList.remove('open'); }
+document.addEventListener('click', (e)=>{ if(e.target.classList.contains('gloss')){ openGloss(e.target.dataset.term); } });
+
+refreshStepper();
+document.getElementById('btnPrev').disabled = true;
+</script>
+<!-- La marque et la mention de droits viennent du site principal :
+     une source pour tous les satellites, zéro divergence (20/08/2026). -->
+<script src="../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

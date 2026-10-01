@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<title>TD2 — Le monde du tableau électrique | inerWeb Édu</title>
+<style>
+  :root{
+    color-scheme: light only;
+    --blue:#1b3a63; --blue-light:#e8eef5; --blue-pale:#f3f6fa;
+    --orange:#ff6b35; --orange-pale:#fff1ea;
+    --bg:#f7f7f5; --card:#ffffff; --text:#1c1c1c; --muted:#5b6472;
+    --green:#2e7d32; --green-pale:#eaf5ea; --red:#b3261e; --red-pale:#fbeceb;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{ background:var(--bg); color:var(--text); margin:0; padding:0;
+    font-family:'Calibri','Candara','Segoe UI',sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3{ font-family:'Trebuchet MS','Trebuchet',sans-serif; font-weight:700; color:var(--blue); line-height:1.3; }
+  p, li{ text-align:left; } ul{ padding-left:1.2em; } strong{ color:var(--blue); } a{ color: var(--blue); }
+
+  .app{ max-width:760px; margin:0 auto; padding:0 16px 100px; }
+  .topbar{ background:var(--blue); color:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; position:sticky; top:0; z-index:20; }
+  .topbar .flake{ font-size:22px; }
+  .topbar .brand{ font-family:'Trebuchet MS',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; gap:6px; }
+  .topbar .badge-edu{ background:var(--orange); color:#fff; font-size:11px; padding:2px 7px; border-radius:20px; font-weight:700; }
+  .topbar .niveau-tag{ margin-left:auto; font-size:12px; background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; white-space:nowrap; }
+
+  h1.main-title{ font-size:21px; margin:20px 0 4px; }
+  .subtitle{ color:var(--muted); margin:0 0 6px; font-size:15px; }
+  .td-progress{ font-size:12.5px; color:var(--orange); font-weight:700; margin:0 0 18px; }
+
+  .stepper{ display:flex; align-items:center; margin:18px 0 24px; }
+  .stepper .node{ width:28px;height:28px;border-radius:50%; background:#fff;border:2px solid #cfd6de;
+    display:flex;align-items:center;justify-content:center; font-size:12px;font-weight:700;color:#9aa4b1; flex-shrink:0; transition:all .25s; }
+  .stepper .wire{ flex:1;height:3px;background:#cfd6de; }
+  .stepper .wire.on{ background:var(--orange); }
+  .stepper .node.done{ background:var(--orange); border-color:var(--orange); color:#fff; }
+  .stepper .node.current{ border-color:var(--blue); color:var(--blue); box-shadow:0 0 0 4px var(--blue-light); }
+
+  .screen{ display:none; animation:fade .3s ease; } .screen.active{ display:block; }
+  @keyframes fade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+  .card{ background:var(--card); border-radius:var(--radius); padding:18px; margin-bottom:14px; border:1px solid #e6e6e2; }
+  .card h2{ margin-top:0; font-size:18px; } .card h3{ font-size:16px; margin:0 0 8px; }
+
+  .point-note{ border-left:4px solid var(--orange); background:var(--orange-pale); padding:10px 14px; border-radius:8px; font-size:14.5px; margin:10px 0; }
+  .point-note strong{ color: var(--orange); }
+  .usage-reveal{ display:none; background:var(--green-pale); border-left:4px solid var(--green); padding:10px 14px; border-radius:8px; margin-top:10px; font-size:14.5px; }
+  .usage-reveal.shown{ display:block; }
+
+  button{ font-family:'Calibri','Candara',sans-serif; font-size:15px; cursor:pointer; }
+  .btn{ background:var(--blue); color:#fff; border:none; padding:11px 18px; border-radius:10px; font-weight:700; transition:transform .1s, background .2s; }
+  .btn:hover{ background:#142c4c; } .btn:active{ transform:scale(0.97); }
+  .btn.secondary{ background:#fff; color:var(--blue); border:2px solid var(--blue); }
+  .btn.secondary:hover{ background:var(--blue-pale); } .btn:disabled{ opacity:.4; cursor:not-allowed; }
+
+  .niveau-choice{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+  @media (max-width:520px){ .niveau-choice{ grid-template-columns:1fr; } }
+  .niveau-btn{ background:#fff; border:2px solid var(--blue-light); border-radius:var(--radius); padding:18px 14px; text-align:left; transition:.15s; }
+  .niveau-btn:hover{ border-color:var(--blue); background:var(--blue-pale); }
+  .niveau-btn .emoji{ font-size:26px; } .niveau-btn h3{ margin:8px 0 4px; } .niveau-btn p{ margin:0; font-size:13.5px; color:var(--muted); }
+
+  .scenario{ border:1px solid #e6e6e2; border-radius:10px; padding:12px 14px; margin-bottom:12px; }
+  .scenario p.desc{ margin:0 0 10px; }
+  .scenario .choices{ display:flex; gap:8px; flex-wrap:wrap; }
+  .choice-btn{ background:#fff; border:2px solid var(--blue); color:var(--blue); padding:8px 14px; border-radius:8px; font-weight:700; }
+  .choice-btn:hover{ background:var(--blue-pale); }
+  .choice-btn.correct{ background:var(--green-pale); border-color:var(--green); color:var(--green); }
+  .choice-btn.wrong{ background:var(--red-pale); border-color:var(--red); color:var(--red); }
+  .scenario .feedback{ display:none; margin-top:8px; font-size:14px; padding:8px 10px; border-radius:8px; }
+  .scenario .feedback.shown{ display:block; }
+  .scenario .feedback.ok{ background:var(--green-pale); color:var(--green); }
+  .scenario .feedback.ko{ background:var(--red-pale); color:var(--red); }
+
+  table{ width:100%; border-collapse:collapse; margin:10px 0; font-size:14.5px; }
+  th,td{ border:1px solid #e0e0dc; padding:7px 8px; text-align:center; }
+  th{ background:var(--blue-pale); color:var(--blue); }
+  td.rowlabel{ background:var(--blue-pale); color:var(--blue); font-weight:700; text-align:left; }
+
+  .svg-wrap{ text-align:center; margin:14px 0; }
+  .svg-wrap svg{ max-width:100%; height:auto; }
+  .svg-caption{ font-size:13px; color:var(--muted); margin-top:4px; }
+
+  .memory-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:14px; }
+  @media (max-width:420px){ .memory-grid{ grid-template-columns:repeat(2,1fr); } }
+  .memory-card{ aspect-ratio:1; background:var(--blue); color:#fff; border:none; border-radius:10px;
+    display:flex; align-items:center; justify-content:center; font-size:12px; text-align:center; padding:6px; font-weight:700; font-family:'Trebuchet MS',sans-serif; }
+  .memory-card.face-down{ background:var(--blue); color:#fff; font-size:22px; }
+  .memory-card.wrong-flash{ background:var(--red); }
+  .memory-card.matched{ background:var(--green-pale); color:var(--green); border:2px solid var(--green); }
+  .memory-status{ text-align:center; margin-top:10px; font-weight:700; color:var(--blue); font-family:'Trebuchet MS',sans-serif; }
+
+  .quiz-q{ margin-bottom:18px; } .quiz-q p.q-text{ font-weight:700; margin-bottom:8px; }
+  .quiz-opt{ display:block; width:100%; text-align:left; background:#fff; border:2px solid #dfe3e8; border-radius:8px; padding:9px 12px; margin-bottom:6px; font-size:14.5px; }
+  .quiz-opt:hover{ border-color:var(--blue); }
+  .quiz-opt.correct{ border-color:var(--green); background:var(--green-pale); }
+  .quiz-opt.wrong{ border-color:var(--red); background:var(--red-pale); }
+  .quiz-opt:disabled{ cursor:default; }
+  .score-box{ text-align:center; background:var(--blue); color:#fff; border-radius:var(--radius); padding:20px; margin:16px 0; }
+  .score-box .big{ font-size:34px; font-weight:700; font-family:'Trebuchet MS',sans-serif; }
+
+  .checklist li{ margin-bottom:6px; } .checklist li::marker{ color: var(--orange); }
+
+  .nav-footer{ position:fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid #e0e0dc; padding:10px 16px; display:flex; gap:10px; justify-content:space-between; z-index:20; }
+  .nav-footer .btn{ flex:1; max-width:220px; }
+  .signature{ text-align:center; color:var(--muted); font-size:12px; margin:30px 0 10px; }
+
+  .gloss{ border-bottom:2px dotted var(--orange); color:var(--blue); font-weight:700; cursor:pointer; white-space:nowrap; }
+  .help-fab{ position:fixed; right:16px; bottom:76px; width:52px; height:52px; border-radius:50%; background:var(--orange); color:#fff; border:none; font-size:22px; font-weight:700; box-shadow:0 4px 10px rgba(0,0,0,.25); z-index:30; cursor:pointer; }
+  .gloss-overlay{ display:none; position:fixed; inset:0; background:rgba(27,58,99,0.55); z-index:40; align-items:flex-end; justify-content:center; }
+  .gloss-overlay.open{ display:flex; }
+  .gloss-panel{ background:#fff; width:100%; max-width:520px; border-radius:16px 16px 0 0; padding:18px 18px 26px; max-height:75vh; overflow-y:auto; }
+  .gloss-panel h3{ margin-top:0; }
+  .gloss-close{ display:block; margin:14px auto 0; background:var(--blue); color:#fff; border:none; padding:9px 20px; border-radius:10px; font-weight:700; }
+  .gloss-item{ margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid #eee; } .gloss-item:last-child{ border-bottom:none; }
+  .gloss-item .term{ color:var(--orange); font-family:'Trebuchet MS',sans-serif; font-weight:700; }
+  .gloss-item p{ margin:2px 0 0; font-size:14.5px; }
+  .gloss-icon{ text-align:center; margin:6px 0 12px; }
+  .gloss-icon svg{ width:130px; max-width:60%; height:auto; }
+  .gloss-item{ position:relative; }
+  .gloss-icon-sm{ float:right; width:70px; margin:0 0 4px 10px; }
+  .gloss-icon-sm svg{ width:70px; height:auto; }
+
+  .dys-fab{ position:fixed; right:16px; bottom:136px; width:52px; height:52px; border-radius:50%;
+    background:var(--blue); color:#fff; border:none; font-size:15px; font-weight:700;
+    box-shadow:0 4px 10px rgba(0,0,0,.25); z-index:30; cursor:pointer; }
+  .dys-fab[aria-pressed="true"]{ background:var(--green); }
+  body.dys-mode, body.dys-mode input, body.dys-mode button, body.dys-mode select{ font-family:'Atkinson Hyperlegible','Calibri',sans-serif !important; }
+  body.dys-mode{ font-size:19px; line-height:1.9; letter-spacing:0.3px; word-spacing:1.5px; }
+  body.dys-mode h1, body.dys-mode h2, body.dys-mode h3{ letter-spacing:0.2px; }
+  body.dys-mode .svg-caption, body.dys-mode .subtitle, body.dys-mode .td-progress{ font-size:15px; }
+
+  .choice-btn.correct, .quiz-opt.correct{ border-style:solid; border-width:3px; }
+  .choice-btn.wrong, .quiz-opt.wrong{ border-style:dashed; border-width:3px; }
+
+  /* ---- illustrations pédagogiques ---- */
+  .illustration-card{ margin:18px 0; padding:14px; border:1px solid #e6e6e2; border-radius:var(--radius); background:var(--card); box-shadow:0 6px 16px rgba(27,58,99,.06); }
+  .illustration-card img{ display:block; max-width:100%; height:auto; margin:0 auto; }
+  .illustration-card figcaption{ margin-top:10px; font-size:14px; color:var(--muted); text-align:center; line-height:1.45; }
+  body.dys-mode .illustration-card figcaption{ font-size:15px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="flake">❄</span>
+  <span class="brand">inerWeb <span class="badge-edu">Édu</span></span>
+  <span class="niveau-tag" id="niveauTag">Niveau : à choisir</span>
+</div>
+
+<div class="app">
+
+  <h1 class="main-title">⚡ Sous tension — TD2 : le tableau électrique</h1>
+  <p class="subtitle">Fils unifilaires, rigide ou souple : lesquels, où, pourquoi.</p>
+  <p class="td-progress">TD 2 sur 3 — durée indicative : 1h</p>
+
+  <div class="stepper" id="stepper"></div>
+
+  <!-- ============ ACCUEIL ============ -->
+  <div class="screen active" id="screen-accueil">
+    <div class="card">
+      <h2>Avant de commencer</h2>
+      <p>Dans le TD1, tu as appris à lire des <strong>câbles</strong> (plusieurs fils réunis sous une gaine). Ici, on entre dans un tableau électrique : on y trouve surtout des <strong>fils uniques</strong>, choisis et posés un par un.</p>
+      <ul>
+        <li>Pourquoi on n'utilise pas de câble tout fait à l'intérieur d'un tableau,</li>
+        <li>La différence entre un fil <strong>rigide</strong> et un fil <strong>souple</strong>,</li>
+        <li><strong>Quand</strong> utiliser lequel — pas juste comment les reconnaître.</li>
+      </ul>
+      <div class="point-note"><strong>À savoir :</strong> ce TD répond à une question précise que se posent beaucoup de débutants : « le tableau ne bouge pas, pourquoi utiliser du fil souple dedans ? » La réponse arrive au module 3.</div>
+    </div>
+    <div class="card">
+      <h3>Choisis ton niveau</h3>
+      <div class="niveau-choice">
+        <button class="niveau-btn" onclick="choisirNiveau('decouverte')"><div class="emoji">🔍</div><h3>Découverte</h3><p>CAP · 2nde TNE.</p></button>
+        <button class="niveau-btn" onclick="choisirNiveau('approfondi')"><div class="emoji">📐</div><h3>Approfondi</h3><p>Bac Pro.</p></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FIL VS CÂBLE ============ -->
+  <div class="screen" id="screen-vocab">
+    <div class="card">
+      <h2>1. Pourquoi des fils uniques dans un tableau ?</h2>
+      <p>Un câble tout fait (comme le U1000 R2V du TD1) a un nombre de fils <strong>fixé à l'avance</strong> par le fabricant, tous du même chemin, à la même longueur.</p>
+      <p>Dans un tableau électrique, chaque connexion part dans une direction différente : un disjoncteur ici, un bornier là, un contacteur plus loin. Il faut pouvoir choisir <strong>la couleur</strong>, <strong>la longueur</strong> et <strong>le chemin</strong> de chaque fil, un par un.</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 380 150" width="100%" style="max-width:340px;">
+          <rect x="10" y="55" width="90" height="34" rx="17" fill="#2b2b2b"/>
+          <path d="M100,63 L150,50" stroke="#6b4226" stroke-width="8" stroke-linecap="round"/>
+          <path d="M100,72 L150,72" stroke="#2f6fb0" stroke-width="8" stroke-linecap="round"/>
+          <path d="M100,81 L150,95" stroke="#2e7d32" stroke-width="8" stroke-linecap="round"/>
+          <text x="55" y="76" font-family="'Trebuchet MS',sans-serif" font-size="11" fill="#fff" text-anchor="middle">câble</text>
+
+          <path d="M210,30 Q240,50 210,70" stroke="#2f6fb0" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <path d="M240,50 Q270,20 300,45" stroke="#6b4226" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <path d="M210,90 Q250,110 290,85" stroke="#7a7a7a" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <path d="M230,110 Q260,130 300,120" stroke="#2e7d32" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <text x="255" y="145" font-family="'Trebuchet MS',sans-serif" font-size="11" fill="var(--blue)" text-anchor="middle">fils unifilaires : chacun son chemin</text>
+        </svg>
+        <p class="svg-caption">À gauche, un câble : tout le monde va au même endroit. À droite, des <span class="gloss" data-term="fil unifilaire">fils unifilaires</span> : chacun part où on en a besoin.</p>
+      </div>
+    </div>
+    <figure class="illustration-card">
+      <img src="assets/illustrations/05_tableau_fils_uniques.svg" alt="Tableau électrique simplifié câblé avec des fils isolés">
+      <figcaption>Dans un tableau, on utilise souvent des fils isolés pour garder un câblage lisible, propre et modifiable.</figcaption>
+    </figure>
+    <div class="card">
+      <h3>Vérifie</h3>
+      <div class="scenario" id="v1">
+        <p class="desc">Pour câbler l'intérieur d'un tableau électrique, avec des connexions qui partent dans toutes les directions, on utilise plutôt…</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,false,'v1')">un câble tout fait</button>
+          <button class="choice-btn" onclick="repondreQ(this,true,'v1')">des fils unifilaires</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DÉCODEUR ============ -->
+  <div class="screen" id="screen-decoder">
+    <div class="card">
+      <h2>2. Trois fils à connaître</h2>
+      <p>Tu connais déjà le sens de <strong>U</strong> (rigide, âme pleine) et de <strong>K</strong> (souple, multibrins) depuis le TD1. On les retrouve ici, appliqués aux fils de tableau.</p>
+    </div>
+
+    <div class="card">
+      <h3>👀 H07V-U — le rigide</h3>
+      <p style="font-size:13.5px;color:var(--muted)">450/750 V · <span class="gloss" data-term="âme">âme</span> pleine, classe 1</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 380 120" width="100%" style="max-width:320px;">
+          <path d="M20,60 L300,60" stroke="#2f6fb0" stroke-width="16" stroke-linecap="round"/>
+          <circle cx="308" cy="60" r="8" fill="#d98b3a"/>
+        </svg>
+        <p class="svg-caption">Un seul fil (couleur choisie selon le circuit). Bout <strong>plein et lisse</strong> → garde sa forme, ne se plie pas facilement.</p>
+      </div>
+      <p>Usage : liaisons <strong>longues et droites</strong> — dans une gaine <span class="gloss" data-term="ICTA">ICTA</span>, entre le disjoncteur de branchement et le tableau, câblage de puissance fixe.</p>
+    </div>
+
+    <div class="card">
+      <h3>👀 H07V-K — le souple, puissance</h3>
+      <p style="font-size:13.5px;color:var(--muted)">450/750 V · <span class="gloss" data-term="âme">âme</span> <span class="gloss" data-term="classe 5">classe 5</span>, multibrins</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 380 120" width="100%" style="max-width:320px;">
+          <path d="M20,90 Q120,20 220,70 T300,50" stroke="#6b4226" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <g stroke="#c97a2a" stroke-width="1.8" fill="none" stroke-linecap="round">
+            <path d="M300,50 q6,-10 12,-15"/><path d="M300,50 q10,-2 17,-4"/><path d="M300,50 q10,4 16,8"/><path d="M300,50 q6,10 10,15"/>
+          </g>
+        </svg>
+        <p class="svg-caption">Se plie facilement, épouse les formes. Bout <strong>effiloché</strong> → beaucoup de petits brins.</p>
+      </div>
+      <p>Usage : câblage <strong>interne d'un tableau ou d'une armoire</strong> — connexions entre disjoncteurs, contacteurs, bornes, souvent avec des coudes serrés. Circuits de puissance.</p>
+      <div class="point-note"><strong>Raccordement :</strong> un conducteur souple multibrins se raccorde généralement avec un <span class="gloss" data-term="embout">embout</span> adapté si la borne ou le constructeur l'exige. Cela évite les brins coupés, les mauvais serrages et les échauffements.</div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/06_embout_fil_souple.svg" alt="Comparaison entre fil souple sans embout et fil souple avec embout de câblage">
+      <figcaption>Sur un fil souple, l'embout améliore la qualité du raccordement lorsque la borne ou le constructeur l'exige.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>👀 H05V-K — le souple, signal</h3>
+      <p style="font-size:13.5px;color:var(--muted)">300/500 V · même construction que le H07V-K, en plus fin</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 380 120" width="100%" style="max-width:320px;">
+          <path d="M20,85 Q120,30 220,65 T300,50" stroke="#7a7a7a" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <g stroke="#c97a2a" stroke-width="1.4" fill="none" stroke-linecap="round">
+            <path d="M300,50 q5,-8 9,-12"/><path d="M300,50 q8,-1 13,-2"/><path d="M300,50 q8,3 12,6"/>
+          </g>
+        </svg>
+        <p class="svg-caption">Même souplesse que le H07V-K, mais en <strong>petites sections</strong> (0,75 à 1 mm² en pratique) : pas fait pour la puissance.</p>
+      </div>
+      <p>Usage : câblage de <strong>commande</strong> et de <strong>signal</strong> — bobines de relais, capteurs, circuits basse puissance à l'intérieur d'une armoire.</p>
+      <div class="point-note"><strong>À nuancer :</strong> le H05V-K est un conducteur souple léger, souvent utilisé pour la commande, la signalisation ou les petits circuits internes. Mais son usage dépend <strong>toujours</strong> de la section, du courant, de la tension et de la protection associée — ce n'est pas « le fil du signal » et rien d'autre.</div>
+      <div class="point-note"><strong>Le même schéma que le TD1 :</strong> comme H07RN-F/H05VV-F, le « 07 » sert aux usages exigeants et le « 05 » aux usages plus légers.</div>
+    </div>
+
+    <div class="card">
+      <h3>✏️ Entraîne-toi — un quatrième fil jamais vu</h3>
+      <p>Il existe un fil <strong>H07V-R</strong> que tu n'as pas encore rencontré. À toi de deviner ce qu'il est, en t'appuyant sur ce que tu sais déjà. Rappel du TD1 : <strong>U</strong> = âme pleine (rigide), <strong>K</strong> = multibrins (souple)… et <strong>R</strong> ?</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 380 120" width="100%" style="max-width:320px;">
+          <path d="M20,70 L300,70" stroke="#2f6fb0" stroke-width="16" stroke-linecap="round"/>
+          <g fill="#d98b3a"><circle cx="306" cy="64" r="4"/><circle cx="314" cy="64" r="4"/><circle cx="306" cy="72" r="4"/><circle cx="314" cy="72" r="4"/><circle cx="310" cy="68" r="4"/><circle cx="322" cy="68" r="4"/></g>
+        </svg>
+        <p class="svg-caption">Indice visuel : l'âme n'est ni un seul gros fil plein (comme le U), ni une masse de brins très fins (comme le K), mais <strong>quelques brins moyens câblés ensemble</strong>.</p>
+      </div>
+      <div class="scenario" id="tr-R">
+        <p class="desc"><strong>H07V-R</strong> est un fil…</p>
+        <div class="choices">
+          <button class="choice-btn" data-correct="true" onclick="repondreTrain(this,true,'tr-R')">rigide, mais à âme câblée (semi-rigide)</button>
+          <button class="choice-btn" data-correct="false" onclick="repondreTrain(this,false,'tr-R')">très souple comme le K</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="usage-reveal" id="tr-R-recap">
+        <strong>Exact :</strong> le « R » = âme rigide mais <strong>câblée</strong> (plusieurs brins moyens), un intermédiaire entre le U (plein) et le K (multibrins fins). On l'utilise là où on veut un fil un peu plus maniable que le U tout en gardant de la tenue.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ RIGIDE OU SOUPLE : COMMENT CHOISIR ============ -->
+  <div class="screen" id="screen-choisir">
+    <div class="card">
+      <h2>3. Rigide ou souple : comment choisir ?</h2>
+      <p>Le tableau électrique ne bouge pas. Alors pourquoi utiliser du fil souple à l'intérieur ?</p>
+      <div class="point-note"><strong>Réponse :</strong> ce n'est pas le tableau qui doit bouger, c'est le <strong>fil</strong> qui doit épouser un chemin plein d'angles, entre des composants serrés les uns contre les autres. Le rigide garde sa forme (bien pour une ligne droite) ; le souple se laisse guider (bien pour un parcours tordu).</div>
+      <table>
+        <tr><th></th><th>Rigide (H07V-U)</th><th>Souple (H07V-K / H05V-K)</th></tr>
+        <tr><td class="rowlabel">Âme</td><td>pleine, un seul brin</td><td>multibrins fins</td></tr>
+        <tr><td class="rowlabel">Se plie</td><td>difficilement, garde sa forme</td><td>facilement, épouse les formes</td></tr>
+        <tr><td class="rowlabel">Terrain de jeu</td><td>lignes longues et droites, gaines</td><td>câblage serré, coudes multiples</td></tr>
+        <tr><td class="rowlabel">Vibrations</td><td>peut casser à force de plier</td><td>résiste bien aux manipulations répétées</td></tr>
+      </table>
+      <p>Exemple concret : la liaison compteur → tableau (une seule ligne droite dans une gaine) est en <strong>H07V-U</strong>. Une fois <em>dans</em> le tableau, pour relier un <span class="gloss" data-term="disjoncteur">disjoncteur</span> à un <span class="gloss" data-term="contacteur">contacteur</span> juste à côté avec un coude serré, on passe en <strong>H07V-K</strong>.</p>
+    </div>
+    <div class="card">
+      <h3>Vérifie</h3>
+      <div class="scenario" id="c1">
+        <p class="desc">Une liaison longue et parfaitement droite, dans une gaine ICTA murale.</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,true,'c1')">Rigide (H07V-U)</button>
+          <button class="choice-btn" onclick="repondreQ(this,false,'c1')">Souple (H07V-K)</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="c2">
+        <p class="desc">Une connexion entre deux composants voisins dans un tableau, avec un coude serré.</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,false,'c2')">Rigide (H07V-U)</button>
+          <button class="choice-btn" onclick="repondreQ(this,true,'c2')">Souple (H07V-K)</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SITUATIONS ============ -->
+  <div class="screen" id="screen-situations">
+    <div class="card">
+      <h2>4. Mets tes réflexes à l'épreuve</h2>
+      <p>Cette fois, 3 choix possibles à chaque fois : H07V-U, H07V-K ou H05V-K.</p>
+    </div>
+    <div class="card">
+      <div class="scenario" id="s1">
+        <p class="desc">🔗 Câblage de puissance à l'intérieur d'une armoire industrielle, entre un <span class="gloss" data-term="disjoncteur">disjoncteur</span> moteur et un <span class="gloss" data-term="contacteur">contacteur</span>, plusieurs coudes serrés.</p>
+        <div class="choices">
+          <button class="choice-btn" data-correct="false" onclick="repondreQ(this,false,'s1')">H07V-U</button>
+          <button class="choice-btn" data-correct="true" onclick="repondreQ(this,true,'s1')">H07V-K</button>
+          <button class="choice-btn" data-correct="false" onclick="repondreQ(this,false,'s1')">H05V-K</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="s2">
+        <p class="desc">📏 Liaison longue et rectiligne entre le disjoncteur de branchement et le tableau principal, dans une gaine murale.</p>
+        <div class="choices">
+          <button class="choice-btn" data-correct="true" onclick="repondreQ(this,true,'s2')">H07V-U</button>
+          <button class="choice-btn" data-correct="false" onclick="repondreQ(this,false,'s2')">H07V-K</button>
+          <button class="choice-btn" data-correct="false" onclick="repondreQ(this,false,'s2')">H05V-K</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="s3">
+        <p class="desc">📡 Câblage d'un circuit de commande basse tension pour la <span class="gloss" data-term="bobine">bobine</span> d'un <span class="gloss" data-term="relais">relais</span>, petite section.</p>
+        <div class="choices">
+          <button class="choice-btn" data-correct="false" onclick="repondreQ(this,false,'s3')">H07V-U</button>
+          <button class="choice-btn" data-correct="false" onclick="repondreQ(this,false,'s3')">H07V-K</button>
+          <button class="choice-btn" data-correct="true" onclick="repondreQ(this,true,'s3')">H05V-K</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ JEU DE MÉMOIRE ============ -->
+  <div class="screen" id="screen-memoire">
+    <div class="card">
+      <h2>5. Jeu de mémoire — retrouve les paires</h2>
+      <p>Clique deux cartes. Si elles correspondent, la paire reste affichée.</p>
+      <div class="memory-grid" id="memoryGrid"></div>
+      <div class="memory-status" id="memoryStatus">0 / 8 paires trouvées</div>
+      <div style="text-align:center;margin-top:14px;"><button class="btn secondary" onclick="initMemory()">🔄 Recommencer le jeu</button></div>
+    </div>
+  </div>
+
+  <!-- ============ QUIZ ============ -->
+  <div class="screen" id="screen-quiz">
+    <div class="card">
+      <h2>6. Synthèse</h2>
+      <p>6 questions pour vérifier ce qui est acquis dans ce TD2.</p>
+    </div>
+    <div class="card" id="quizContainer"></div>
+    <div class="card">
+      <h3>Ce que je sais faire maintenant</h3>
+      <ul class="checklist">
+        <li>Je sais pourquoi on utilise des <strong>fils unifilaires</strong> plutôt qu'un câble dans un tableau.</li>
+        <li>Je sais reconnaître <strong>H07V-U</strong> (rigide), <strong>H07V-K</strong> et <strong>H05V-K</strong> (souples).</li>
+        <li>Je sais <strong>expliquer pourquoi</strong> on choisit rigide ou souple selon le chemin à suivre, pas juste selon si ça bouge.</li>
+        <li>Je sais distinguer un usage <strong>puissance</strong> (H07V-K) d'un usage <strong>signal/commande</strong> (H05V-K).</li>
+      </ul>
+      <div class="point-note"><strong>Prochaine étape (TD3) :</strong> les câbles avancés — armés/blindés (variateurs de vitesse), aluminium, sécurité incendie — et les sections/diamètres.</div>
+    </div>
+  </div>
+
+  <p class="signature">TD 2/3</p>
+</div>
+
+<button class="dys-fab" id="dysFab" onclick="toggleDys()" aria-pressed="false" aria-label="Activer le mode police adaptée DYS">Aa</button>
+<button class="help-fab" onclick="openFullLexique()" aria-label="Ouvrir le lexique">?</button>
+<div class="gloss-overlay" id="glossOverlay" onclick="if(event.target===this) closeGloss()">
+  <div class="gloss-panel" id="glossPanel"></div>
+</div>
+
+<div class="nav-footer">
+  <button class="btn secondary" id="btnPrev" onclick="allerEcran(current-1)">◀ Précédent</button>
+  <button class="btn" id="btnNext" onclick="allerEcran(current+1)">Suivant ▶</button>
+</div>
+
+<script>
+const screens = ['screen-accueil','screen-vocab','screen-decoder','screen-choisir','screen-situations','screen-memoire','screen-quiz'];
+let current = 0;
+let niveau = null;
+
+function buildStepper(){
+  const st = document.getElementById('stepper'); st.innerHTML = '';
+  const total = screens.length - 1;
+  for(let i=1;i<=total;i++){
+    const node = document.createElement('div'); node.className = 'node'; node.id = 'node'+i; node.textContent = i;
+    st.appendChild(node);
+    if(i<total){ const wire = document.createElement('div'); wire.className = 'wire'; wire.id = 'wire'+i; st.appendChild(wire); }
+  }
+}
+buildStepper();
+
+function refreshStepper(){
+  const total = screens.length - 1;
+  for(let i=1;i<=total;i++){
+    const node = document.getElementById('node'+i);
+    node.classList.remove('done','current');
+    if(current > i) node.classList.add('done'); else if(current === i) node.classList.add('current');
+    if(i<total){ document.getElementById('wire'+i).classList.toggle('on', current > i); }
+  }
+}
+
+function allerEcran(idx){
+  if(idx < 0 || idx > screens.length-1) return;
+  if(idx > 0 && niveau === null){ idx = 0; }
+  document.getElementById(screens[current]).classList.remove('active');
+  current = idx;
+  document.getElementById(screens[current]).classList.add('active');
+  refreshStepper();
+  document.getElementById('btnPrev').disabled = (current===0);
+  document.getElementById('btnNext').style.visibility = (current===screens.length-1) ? 'hidden' : 'visible';
+  window.scrollTo({top:0, behavior:'smooth'});
+  if(screens[current] === 'screen-memoire') initMemory();
+  if(screens[current] === 'screen-quiz') buildQuiz();
+}
+
+function choisirNiveau(n){
+  niveau = n;
+  document.getElementById('niveauTag').textContent = 'Niveau : ' + (n==='decouverte' ? 'Découverte (CAP/2nde)' : 'Approfondi (Bac Pro)');
+  allerEcran(1);
+}
+
+function toggleDys(){
+  document.body.classList.toggle('dys-mode');
+  const on = document.body.classList.contains('dys-mode');
+  document.getElementById('dysFab').setAttribute('aria-pressed', on);
+}
+
+function repondreQ(btn, correct, groupId){
+  const group = document.getElementById(groupId);
+  const fb = group.querySelector('.feedback');
+  group.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+  btn.classList.add(correct ? 'correct':'wrong');
+  btn.textContent = (correct ? '✓ ' : '✗ ') + btn.textContent;
+  if(!correct){
+    const goodBtn = group.querySelector('.choice-btn[data-correct="true"]');
+    if(goodBtn && goodBtn !== btn){ goodBtn.classList.add('correct'); goodBtn.textContent = '✓ ' + goodBtn.textContent; }
+  }
+  fb.classList.add('shown', correct ? 'ok':'ko');
+  fb.textContent = correct ? '✅ Exact.' : '❌ Repense au chemin que doit suivre le fil : droit ou tordu ? Puissance ou signal ?';
+}
+
+function repondreTrain(btn, correct, groupId){
+  const group = document.getElementById(groupId);
+  const fb = group.querySelector('.feedback');
+  if(correct){
+    group.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+    btn.classList.remove('wrong'); btn.classList.add('correct');
+    btn.textContent = '✓ ' + btn.textContent;
+    fb.classList.add('shown','ok'); fb.textContent = '✅ Exact.';
+    const recap = document.getElementById(groupId + '-recap');
+    if(recap) recap.classList.add('shown');
+  } else {
+    btn.classList.add('wrong');
+    fb.classList.add('shown','ko');
+    fb.textContent = '❌ Souviens-toi : U = plein, K = beaucoup de brins fins. Réessaie.';
+  }
+}
+
+/* ---- jeu de mémoire ---- */
+const memoryPairs = [
+  {code:'H07V-U', meaning:'Rigide, âme pleine — lignes longues et droites'},
+  {code:'H07V-K', meaning:'Souple, puissance — câblage interne de tableau'},
+  {code:'H05V-K', meaning:'Souple, signal — commande, petite section'},
+  {code:'fil unifilaire', meaning:'Un seul conducteur isolé, posé individuellement'},
+  {code:'câble', meaning:'Plusieurs fils réunis sous une gaine commune'},
+  {code:'classe 5', meaning:"Norme de souplesse : âme faite de nombreux brins très fins"},
+  {code:'cuivre étamé', meaning:"Cuivre recouvert d'une fine couche d'étain, résiste mieux à la corrosion"},
+  {code:'ICTA', meaning:'Gaine annelée cintrable dans laquelle on fait passer des fils'}
+];
+let memoryState = { cards:[], first:null, second:null, lock:false, matched:0 };
+function initMemory(){
+  const grid = document.getElementById('memoryGrid'); grid.innerHTML = '';
+  let cards = [];
+  memoryPairs.forEach((p,i)=>{
+    cards.push({pairId:i, text:p.code, revealed:false, matched:false});
+    cards.push({pairId:i, text:p.meaning, revealed:false, matched:false});
+  });
+  cards.sort(()=>Math.random()-0.5);
+  memoryState = { cards, first:null, second:null, lock:false, matched:0, moves:0 };
+  document.getElementById('memoryStatus').innerHTML = '0 / 8 paires · <span style="color:var(--orange)">0 coup</span>';
+  cards.forEach((c, idx)=>{
+    const b = document.createElement('button');
+    b.className = 'memory-card face-down'; b.textContent = '?';
+    b.onclick = ()=>flipCard(idx); b.id = 'mcard'+idx;
+    grid.appendChild(b);
+  });
+}
+function majMemoryStatus(){
+  const done = memoryState.matched >= memoryPairs.length;
+  const coups = memoryState.moves + ' coup' + (memoryState.moves>1?'s':'');
+  if(done){
+    let msg = '\ud83c\udf89 Termin\u00e9 en ' + coups + ' !';
+    if(memoryState.moves <= 10) msg += ' Score parfait ou presque !';
+    else if(memoryState.moves <= 16) msg += ' Bien jou\u00e9.';
+    document.getElementById('memoryStatus').innerHTML = msg;
+  } else {
+    document.getElementById('memoryStatus').innerHTML = memoryState.matched + ' / 8 paires \u00b7 <span style="color:var(--orange)">' + coups + '</span>';
+  }
+}
+function flipCard(idx){
+  if(memoryState.lock) return;
+  const c = memoryState.cards[idx];
+  if(c.revealed || c.matched) return;
+  const el = document.getElementById('mcard'+idx);
+  c.revealed = true; el.textContent = c.text; el.classList.remove('face-down');
+  if(memoryState.first === null){ memoryState.first = idx; return; }
+  memoryState.second = idx; memoryState.lock = true; memoryState.moves++;
+  const c1 = memoryState.cards[memoryState.first];
+  const c2 = memoryState.cards[memoryState.second];
+  if(c1.pairId === c2.pairId){
+    c1.matched = true; c2.matched = true;
+    const el1 = document.getElementById('mcard'+memoryState.first);
+    const el2 = document.getElementById('mcard'+memoryState.second);
+    el1.classList.add('matched'); el2.classList.add('matched');
+    el1.textContent = '✓ ' + el1.textContent; el2.textContent = '✓ ' + el2.textContent;
+    memoryState.matched++;
+    majMemoryStatus();
+    memoryState.first = null; memoryState.second = null; memoryState.lock = false;
+  } else {
+    majMemoryStatus();
+    document.getElementById('mcard'+memoryState.first).classList.add('wrong-flash');
+    document.getElementById('mcard'+memoryState.second).classList.add('wrong-flash');
+    setTimeout(()=>{
+      [memoryState.first, memoryState.second].forEach(i=>{
+        const cc = memoryState.cards[i]; cc.revealed = false;
+        const e = document.getElementById('mcard'+i);
+        e.textContent = '?'; e.classList.add('face-down'); e.classList.remove('wrong-flash');
+      });
+      memoryState.first = null; memoryState.second = null; memoryState.lock = false;
+    }, 900);
+  }
+}
+
+/* ---- quiz ---- */
+const quizData = [
+  { q:"Dans un tableau électrique, pourquoi préfère-t-on des fils unifilaires à un câble tout fait ?", options:["C'est moins cher","Chaque connexion part dans une direction différente","Les câbles n'existent pas en petite section"], correct:1 },
+  { q:"Le H07V-U est fait pour…", options:["des lignes longues et droites","du câblage serré plein de coudes","les circuits de signal uniquement"], correct:0 },
+  { q:"Pourquoi utilise-t-on du souple DANS un tableau qui ne bouge pas ?", options:["Parce que c'est obligatoire par la loi","Parce que le fil doit épouser un chemin plein d'angles serrés","Parce que le souple est moins cher"], correct:1 },
+  { q:"Le H05V-K est plutôt réservé…", options:["aux circuits de puissance","aux circuits de commande et de signal, petite section","aux lignes enterrées"], correct:1 },
+  { q:"H07V-K et H05V-K ont la même construction. Ce qui change, c'est…", options:["la couleur uniquement","la tension assignée (450/750V contre 300/500V)","le fabricant"], correct:1 },
+  { q:"Un fil avec un bout de cuivre plein et lisse (pas effiloché) est…", options:["souple","rigide","forcément en aluminium"], correct:1 }
+];
+function buildQuiz(){
+  const c = document.getElementById('quizContainer');
+  if(c.dataset.built) return; c.dataset.built = '1';
+  let score = 0;
+  quizData.forEach((item, qi)=>{
+    const block = document.createElement('div'); block.className = 'quiz-q';
+    const p = document.createElement('p'); p.className = 'q-text'; p.textContent = (qi+1) + '. ' + item.q;
+    block.appendChild(p);
+    item.options.forEach((opt, oi)=>{
+      const b = document.createElement('button'); b.className = 'quiz-opt'; b.textContent = opt;
+      b.onclick = ()=>{
+        block.querySelectorAll('.quiz-opt').forEach(x=>x.disabled=true);
+        if(oi === item.correct){ b.classList.add('correct'); b.textContent = '✓ ' + b.textContent; score++; }
+        else {
+          b.classList.add('wrong'); b.textContent = '✗ ' + b.textContent;
+          const correctBtn = block.children[item.correct+1];
+          correctBtn.classList.add('correct'); correctBtn.textContent = '✓ ' + correctBtn.textContent;
+        }
+        document.getElementById('scoreBig').textContent = score + ' / ' + quizData.length;
+      };
+      block.appendChild(b);
+    });
+    c.appendChild(block);
+  });
+  const scoreBox = document.createElement('div'); scoreBox.className = 'score-box';
+  scoreBox.innerHTML = '<div>Score</div><div class="big" id="scoreBig">0 / ' + quizData.length + '</div>';
+  c.appendChild(scoreBox);
+}
+
+/* ---- lexique d'aide ---- */
+const glossIcons = {
+  unifilaire: '<svg viewBox="0 0 120 60"><path d="M15,45 Q40,10 65,40 Q85,58 105,25" stroke="#2f6fb0" stroke-width="12" fill="none" stroke-linecap="round"/></svg>',
+  icta: '<svg viewBox="0 0 120 60"><g stroke="#5b6472" stroke-width="4" fill="none"><path d="M12,20 h96 M12,30 h96 M12,40 h96"/></g><rect x="12" y="16" width="96" height="28" rx="14" fill="none" stroke="#1b3a63" stroke-width="2"/></svg>',
+  ame: '<svg viewBox="0 0 120 60"><line x1="10" y1="30" x2="110" y2="30" stroke="#d98b3a" stroke-width="16" stroke-linecap="round"/></svg>',
+  disjoncteur: '<svg viewBox="0 0 120 60"><rect x="45" y="10" width="30" height="40" rx="4" fill="#1b3a63"/><rect x="53" y="6" width="14" height="12" rx="3" fill="#ff6b35"/></svg>',
+  contacteur: '<svg viewBox="0 0 120 60"><line x1="15" y1="30" x2="45" y2="30" stroke="#1b3a63" stroke-width="4"/><line x1="45" y1="30" x2="72" y2="16" stroke="#1b3a63" stroke-width="4"/><line x1="75" y1="30" x2="105" y2="30" stroke="#1b3a63" stroke-width="4"/><circle cx="45" cy="30" r="4" fill="#ff6b35"/><circle cx="75" cy="30" r="4" fill="#ff6b35"/></svg>',
+  bobine: '<svg viewBox="0 0 120 60"><path d="M20,30 q8,-16 16,0 q8,-16 16,0 q8,-16 16,0 q8,-16 16,0 q8,-16 16,0" stroke="#c97a2a" stroke-width="4" fill="none"/></svg>'
+};
+const lexique = {
+  'fil unifilaire': {def:"Un conducteur isolé unique, choisi et posé individuellement — par opposition à un câble qui en réunit plusieurs.", svg:glossIcons.unifilaire},
+  'ICTA': {def:"Une gaine annelée, cintrable à la main, dans laquelle on fait passer un ou plusieurs fils pour les protéger dans un mur.", svg:glossIcons.icta},
+  'classe 5': {def:"La norme qui définit une âme très souple, faite de nombreux brins de cuivre fins."},
+  'cuivre étamé': {def:"Du cuivre recouvert d'une fine couche d'étain, pour mieux résister à la corrosion dans le temps."},
+  'âme': {def:"La partie centrale d'un fil, en métal (cuivre ou aluminium) : c'est elle qui conduit vraiment le courant.", svg:glossIcons.ame},
+  'disjoncteur': {def:"Un interrupteur de sécurité qui coupe automatiquement le courant s'il détecte un problème (surcharge, court-circuit).", svg:glossIcons.disjoncteur},
+  'contacteur': {def:"Un interrupteur commandé à distance, souvent utilisé pour allumer ou éteindre un gros appareil comme un moteur.", svg:glossIcons.contacteur},
+  'relais': {def:"Un petit composant qui utilise un signal faible pour commander un circuit plus puissant, comme un interrupteur télécommandé.", svg:glossIcons.contacteur},
+  'bobine': {def:"La partie d'un relais ou d'un contacteur qui, une fois traversée par le courant, actionne le mécanisme.", svg:glossIcons.bobine},
+  'embout': {def:"Un petit tube métallique serti au bout d'un fil souple : il rassemble tous les brins pour un serrage propre et fiable dans une borne."}
+};
+function defOf(term){ const e = lexique[term]; return e ? (typeof e === 'string' ? e : e.def) : "Définition à venir."; }
+function svgOf(term){ const e = lexique[term]; return (e && typeof e === 'object' && e.svg) ? e.svg : ''; }
+function openGloss(term){
+  const panel = document.getElementById('glossPanel');
+  const icon = svgOf(term);
+  panel.innerHTML = '<h3>' + term + '</h3>' + (icon ? '<div class="gloss-icon">' + icon + '</div>' : '') + '<p style="font-size:15px;">' + defOf(term) + '</p><button class="gloss-close" onclick="closeGloss()">Fermer</button>';
+  document.getElementById('glossOverlay').classList.add('open');
+}
+function openFullLexique(){
+  const panel = document.getElementById('glossPanel');
+  let html = '<h3>📖 Lexique — TD2</h3>';
+  Object.keys(lexique).forEach(term=>{ const icon = svgOf(term); html += '<div class="gloss-item">' + (icon ? '<div class="gloss-icon-sm">' + icon + '</div>' : '') + '<span class="term">' + term + '</span><p>' + defOf(term) + '</p></div>'; });
+  html += '<button class="gloss-close" onclick="closeGloss()">Fermer</button>';
+  panel.innerHTML = html;
+  document.getElementById('glossOverlay').classList.add('open');
+}
+function closeGloss(){ document.getElementById('glossOverlay').classList.remove('open'); }
+document.addEventListener('click', (e)=>{ if(e.target.classList.contains('gloss')){ openGloss(e.target.dataset.term); } });
+
+refreshStepper();
+document.getElementById('btnPrev').disabled = true;
+</script>
+<!-- La marque et la mention de droits viennent du site principal :
+     une source pour tous les satellites, zéro divergence (20/08/2026). -->
+<script src="../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

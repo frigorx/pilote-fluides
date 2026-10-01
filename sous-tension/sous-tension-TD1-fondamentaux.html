@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<title>TD1 — Les fondamentaux du câble électrique | inerWeb Édu</title>
+<style>
+  :root{
+    color-scheme: light only;
+    --blue:#1b3a63;
+    --blue-light:#e8eef5;
+    --blue-pale:#f3f6fa;
+    --orange:#ff6b35;
+    --orange-pale:#fff1ea;
+    --bg:#f7f7f5;
+    --card:#ffffff;
+    --text:#1c1c1c;
+    --muted:#5b6472;
+    --green:#2e7d32;
+    --green-pale:#eaf5ea;
+    --red:#b3261e;
+    --red-pale:#fbeceb;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    background:var(--bg);
+    color:var(--text);
+    margin:0; padding:0;
+    font-family:'Calibri','Candara','Segoe UI',sans-serif;
+    font-size:16px;
+    line-height:1.5;
+  }
+  h1,h2,h3,.title-font{
+    font-family:'Trebuchet MS','Trebuchet',sans-serif;
+    font-weight:700;
+    color:var(--blue);
+    line-height:1.3;
+  }
+  p, li{ text-align:left; }
+  ul{ padding-left:1.2em; }
+  strong{ color:var(--blue); }
+  a{ color: var(--blue); }
+
+  .app{ max-width:760px; margin:0 auto; padding:0 16px 100px; }
+
+  .topbar{
+    background:var(--blue); color:#fff;
+    padding:14px 16px;
+    display:flex; align-items:center; gap:12px;
+    position:sticky; top:0; z-index:20;
+  }
+  .topbar .flake{ font-size:22px; }
+  .topbar .brand{
+    font-family:'Trebuchet MS',sans-serif; font-weight:700; font-size:15px;
+    display:flex; align-items:center; gap:6px;
+  }
+  .topbar .badge-edu{
+    background:var(--orange); color:#fff; font-size:11px;
+    padding:2px 7px; border-radius:20px; font-weight:700;
+  }
+  .topbar .niveau-tag{
+    margin-left:auto; font-size:12px;
+    background:rgba(255,255,255,0.15);
+    padding:4px 10px; border-radius:20px; white-space:nowrap;
+  }
+
+  h1.main-title{ font-size:21px; margin:20px 0 4px; }
+  .subtitle{ color:var(--muted); margin:0 0 6px; font-size:15px; }
+  .td-progress{ font-size:12.5px; color:var(--orange); font-weight:700; margin:0 0 18px; }
+
+  .stepper{ display:flex; align-items:center; margin:18px 0 24px; }
+  .stepper .node{
+    width:28px;height:28px;border-radius:50%;
+    background:#fff;border:2px solid #cfd6de;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;color:#9aa4b1;
+    flex-shrink:0; transition:all .25s;
+  }
+  .stepper .wire{ flex:1;height:3px;background:#cfd6de; }
+  .stepper .wire.on{ background:var(--orange); }
+  .stepper .node.done{ background:var(--orange); border-color:var(--orange); color:#fff; }
+  .stepper .node.current{ border-color:var(--blue); color:var(--blue); box-shadow:0 0 0 4px var(--blue-light); }
+
+  .screen{ display:none; animation:fade .3s ease; }
+  .screen.active{ display:block; }
+  @keyframes fade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+  .card{
+    background:var(--card); border-radius:var(--radius);
+    padding:18px; margin-bottom:14px; border:1px solid #e6e6e2;
+  }
+  .card h2{ margin-top:0; font-size:18px; }
+  .card h3{ font-size:16px; margin:0 0 8px; }
+
+  .point-note{
+    border-left:4px solid var(--orange); background:var(--orange-pale);
+    padding:10px 14px; border-radius:8px; font-size:14.5px; margin:10px 0;
+  }
+  .point-note strong{ color: var(--orange); }
+
+  button{ font-family:'Calibri','Candara',sans-serif; font-size:15px; cursor:pointer; }
+  .btn{
+    background:var(--blue); color:#fff; border:none;
+    padding:11px 18px; border-radius:10px; font-weight:700;
+    transition:transform .1s, background .2s;
+  }
+  .btn:hover{ background:#142c4c; }
+  .btn:active{ transform:scale(0.97); }
+  .btn.secondary{ background:#fff; color:var(--blue); border:2px solid var(--blue); }
+  .btn.secondary:hover{ background:var(--blue-pale); }
+  .btn:disabled{ opacity:.4; cursor:not-allowed; }
+
+  .niveau-choice{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+  @media (max-width:520px){ .niveau-choice{ grid-template-columns:1fr; } }
+  .niveau-btn{
+    background:#fff; border:2px solid var(--blue-light); border-radius:var(--radius);
+    padding:18px 14px; text-align:left; transition:.15s;
+  }
+  .niveau-btn:hover{ border-color:var(--blue); background:var(--blue-pale); }
+  .niveau-btn .emoji{ font-size:26px; }
+  .niveau-btn h3{ margin:8px 0 4px; }
+  .niveau-btn p{ margin:0; font-size:13.5px; color:var(--muted); }
+
+  .cable-tag{ display:flex; flex-wrap:wrap; gap:6px; margin:14px 0; }
+  .seg{
+    background:var(--blue-pale); border:2px solid var(--blue-light); color:var(--blue);
+    font-weight:700; padding:8px 12px; border-radius:8px;
+    font-family:'Trebuchet MS',sans-serif; font-size:16px; letter-spacing:.5px;
+  }
+  .seg.done{ background:var(--orange-pale); border-color:var(--orange); color:#b34a1f; }
+  .seg-panel{ display:none; background:var(--blue-pale); border-radius:8px; padding:10px 12px; margin:6px 0 12px; font-size:14.5px; }
+  .seg-panel.open{ display:block; }
+  .usage-reveal{
+    display:none; background:var(--green-pale); border-left:4px solid var(--green);
+    padding:10px 14px; border-radius:8px; margin-top:10px; font-size:14.5px;
+  }
+  .usage-reveal.shown{ display:block; }
+
+  .scenario{ border:1px solid #e6e6e2; border-radius:10px; padding:12px 14px; margin-bottom:12px; }
+  .scenario p.desc{ margin:0 0 10px; }
+  .scenario .choices{ display:flex; gap:8px; flex-wrap:wrap; }
+  .choice-btn{
+    background:#fff; border:2px solid var(--blue); color:var(--blue);
+    padding:8px 14px; border-radius:8px; font-weight:700;
+  }
+  .choice-btn:hover{ background:var(--blue-pale); }
+  .choice-btn.correct{ background:var(--green-pale); border-color:var(--green); color:var(--green); }
+  .choice-btn.wrong{ background:var(--red-pale); border-color:var(--red); color:var(--red); }
+  .scenario .feedback{ display:none; margin-top:8px; font-size:14px; padding:8px 10px; border-radius:8px; }
+  .scenario .feedback.shown{ display:block; }
+  .scenario .feedback.ok{ background:var(--green-pale); color:var(--green); }
+  .scenario .feedback.ko{ background:var(--red-pale); color:var(--red); }
+
+  table{ width:100%; border-collapse:collapse; margin:10px 0; font-size:14.5px; }
+  th,td{ border:1px solid #e0e0dc; padding:7px 8px; text-align:center; }
+  th{ background:var(--blue-pale); color:var(--blue); }
+
+  .svg-wrap{ text-align:center; margin:14px 0; }
+  .svg-wrap svg{ max-width:100%; height:auto; }
+  .svg-caption{ font-size:13px; color:var(--muted); margin-top:4px; }
+
+  .memory-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:14px; }
+  @media (max-width:420px){ .memory-grid{ grid-template-columns:repeat(2,1fr); } }
+  .memory-card{
+    aspect-ratio:1; background:var(--blue); color:#fff; border:none;
+    border-radius:10px; display:flex; align-items:center; justify-content:center;
+    font-size:12.5px; text-align:center; padding:6px; font-weight:700;
+    font-family:'Trebuchet MS',sans-serif;
+  }
+  .memory-card.face-down{ background:var(--blue); color:#fff; font-size:22px; }
+  .memory-card.wrong-flash{ background:var(--red); }
+  .memory-card.matched{ background:var(--green-pale); color:var(--green); border:2px solid var(--green); }
+  .memory-status{ text-align:center; margin-top:10px; font-weight:700; color:var(--blue); font-family:'Trebuchet MS',sans-serif; }
+
+  .quiz-q{ margin-bottom:18px; }
+  .quiz-q p.q-text{ font-weight:700; margin-bottom:8px; }
+  .quiz-opt{
+    display:block; width:100%; text-align:left; background:#fff;
+    border:2px solid #dfe3e8; border-radius:8px; padding:9px 12px;
+    margin-bottom:6px; font-size:14.5px;
+  }
+  .quiz-opt:hover{ border-color:var(--blue); }
+  .quiz-opt.correct{ border-color:var(--green); background:var(--green-pale); }
+  .quiz-opt.wrong{ border-color:var(--red); background:var(--red-pale); }
+  .quiz-opt:disabled{ cursor:default; }
+  .score-box{
+    text-align:center; background:var(--blue); color:#fff;
+    border-radius:var(--radius); padding:20px; margin:16px 0;
+  }
+  .score-box .big{ font-size:34px; font-weight:700; font-family:'Trebuchet MS',sans-serif; }
+
+  .checklist li{ margin-bottom:6px; }
+  .checklist li::marker{ color: var(--orange); }
+
+  .nav-footer{
+    position:fixed; left:0; right:0; bottom:0; background:#fff;
+    border-top:1px solid #e0e0dc; padding:10px 16px;
+    display:flex; gap:10px; justify-content:space-between; z-index:20;
+  }
+  .nav-footer .btn{ flex:1; max-width:220px; }
+
+  .signature{ text-align:center; color:var(--muted); font-size:12px; margin:30px 0 10px; }
+
+  /* ---- lexique d'aide ---- */
+  .gloss{
+    border-bottom:2px dotted var(--orange);
+    color:var(--blue); font-weight:700; cursor:pointer;
+    white-space:nowrap;
+  }
+  .help-fab{
+    position:fixed; right:16px; bottom:76px;
+    width:52px; height:52px; border-radius:50%;
+    background:var(--orange); color:#fff; border:none;
+    font-size:22px; font-weight:700;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    z-index:30; cursor:pointer;
+  }
+  .gloss-overlay{
+    display:none; position:fixed; inset:0; background:rgba(27,58,99,0.55);
+    z-index:40; align-items:flex-end; justify-content:center;
+  }
+  .gloss-overlay.open{ display:flex; }
+  .gloss-panel{
+    background:#fff; width:100%; max-width:520px;
+    border-radius:16px 16px 0 0; padding:18px 18px 26px;
+    max-height:75vh; overflow-y:auto;
+  }
+  .gloss-panel h3{ margin-top:0; }
+  .gloss-close{
+    display:block; margin:14px auto 0; background:var(--blue); color:#fff;
+    border:none; padding:9px 20px; border-radius:10px; font-weight:700;
+  }
+  .gloss-item{ margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid #eee; }
+  .gloss-item:last-child{ border-bottom:none; }
+  .gloss-item .term{ color:var(--orange); font-family:'Trebuchet MS',sans-serif; font-weight:700; }
+  .gloss-item p{ margin:2px 0 0; font-size:14.5px; }
+  .gloss-icon{ text-align:center; margin:6px 0 12px; }
+  .gloss-icon svg{ width:130px; max-width:60%; height:auto; }
+  .gloss-item{ position:relative; }
+  .gloss-icon-sm{ float:right; width:70px; margin:0 0 4px 10px; }
+  .gloss-icon-sm svg{ width:70px; height:auto; }
+
+  /* ---- mode DYS ---- */
+  .dys-fab{
+    position:fixed; right:16px; bottom:136px;
+    width:52px; height:52px; border-radius:50%;
+    background:var(--blue); color:#fff; border:none;
+    font-size:15px; font-weight:700;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    z-index:30; cursor:pointer;
+  }
+  .dys-fab[aria-pressed="true"]{ background:var(--green); }
+  body.dys-mode, body.dys-mode input, body.dys-mode button, body.dys-mode select{
+    font-family:'Atkinson Hyperlegible','Calibri',sans-serif !important;
+  }
+  body.dys-mode{ font-size:19px; line-height:1.9; letter-spacing:0.3px; word-spacing:1.5px; }
+  body.dys-mode h1, body.dys-mode h2, body.dys-mode h3{ letter-spacing:0.2px; }
+  body.dys-mode .svg-caption, body.dys-mode .subtitle, body.dys-mode .td-progress{ font-size:15px; }
+
+  /* ---- repère non couleur pour daltoniens ---- */
+  .choice-btn.correct, .quiz-opt.correct{ border-style:solid; border-width:3px; }
+  .choice-btn.wrong, .quiz-opt.wrong{ border-style:dashed; border-width:3px; }
+
+  /* ---- illustrations pédagogiques ---- */
+  .illustration-card{ margin:18px 0; padding:14px; border:1px solid #e6e6e2; border-radius:var(--radius); background:var(--card); box-shadow:0 6px 16px rgba(27,58,99,.06); }
+  .illustration-card img{ display:block; max-width:100%; height:auto; margin:0 auto; }
+  .illustration-card figcaption{ margin-top:10px; font-size:14px; color:var(--muted); text-align:center; line-height:1.45; }
+  body.dys-mode .illustration-card figcaption{ font-size:15px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="flake">❄</span>
+  <span class="brand">inerWeb <span class="badge-edu">Édu</span></span>
+  <span class="niveau-tag" id="niveauTag">Niveau : à choisir</span>
+</div>
+
+<div class="app">
+
+  <h1 class="main-title">⚡ Sous tension — TD1 : les fondamentaux</h1>
+  <p class="subtitle">Vocabulaire, décodage, formes de câble, jeu de mémoire.</p>
+  <p class="td-progress">TD 1 sur 3 — durée indicative : 1h</p>
+
+  <div class="stepper" id="stepper"></div>
+
+  <!-- ============ ACCUEIL / NIVEAU ============ -->
+  <div class="screen active" id="screen-accueil">
+    <div class="card">
+      <h2>Avant de commencer</h2>
+      <p>Un câble mal choisi peut <strong>chauffer, s'user trop vite ou tomber en panne</strong>. Dans ce premier TD, tu vas apprendre à :</p>
+      <ul>
+        <li><strong>distinguer</strong> fil, conducteur et câble,</li>
+        <li><strong>lire</strong> le code écrit sur la gaine d'un câble,</li>
+        <li><strong>reconnaître</strong> la forme et la coupe d'un câble.</li>
+      </ul>
+      <div class="point-note"><strong>À savoir :</strong> il existe des milliers de câbles différents dans le métier. Ce TD te donne la logique de lecture avec 3 câbles très courants. Les TD suivants iront plus loin (câbles de tableau, câbles armés, sections).</div>
+    </div>
+    <div class="card">
+      <h3>Choisis ton niveau</h3>
+      <div class="niveau-choice">
+        <button class="niveau-btn" onclick="choisirNiveau('decouverte')">
+          <div class="emoji">🔍</div>
+          <h3>Découverte</h3>
+          <p>CAP · 2nde TNE.</p>
+        </button>
+        <button class="niveau-btn" onclick="choisirNiveau('approfondi')">
+          <div class="emoji">📐</div>
+          <h3>Approfondi</h3>
+          <p>Bac Pro.</p>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ VOCABULAIRE ============ -->
+  <div class="screen" id="screen-vocab">
+    <div class="card">
+      <h2>1. Fil, conducteur ou câble ?</h2>
+      <p>Sur un chantier, on confond souvent ces trois mots. Pourtant chacun désigne une chose précise :</p>
+      <ul>
+        <li><strong>Le <span class="gloss" data-term="conducteur">conducteur</span></strong> : c'est la partie métallique qui laisse passer le courant (le cuivre ou l'aluminium à l'intérieur). Seul, il n'est pas isolé.</li>
+        <li><strong>Le fil</strong> (ou conducteur <span class="gloss" data-term="isolé">isolé</span>) : un conducteur entouré de sa propre <span class="gloss" data-term="isolant">matière isolante</span>.</li>
+        <li><strong>Le câble</strong> : <strong>plusieurs</strong> fils réunis sous une <span class="gloss" data-term="gaine">gaine</span> commune.</li>
+      </ul>
+      <div class="point-note"><strong>Image simple :</strong> un fil, c'est un spaghetti dans son sachet individuel. Un câble, c'est plusieurs spaghettis réunis dans un même sachet.</div>
+      <div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:14px;margin:16px 0 4px;text-align:center;">
+        <div>
+          <svg viewBox="0 0 100 100" width="76" height="76"><circle cx="50" cy="50" r="30" fill="#d98b3a"/></svg>
+          <p style="font-size:12.5px;color:var(--muted);margin:4px 0 0;">Conducteur nu</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 100 100" width="76" height="76"><circle cx="50" cy="50" r="38" fill="#f3f6fa" stroke="#1b3a63" stroke-width="4"/><circle cx="50" cy="50" r="18" fill="#d98b3a"/></svg>
+          <p style="font-size:12.5px;color:var(--muted);margin:4px 0 0;">Fil isolé</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 100 100" width="76" height="76">
+            <circle cx="50" cy="50" r="46" fill="#ffb37a" stroke="#b34a1f" stroke-width="4"/>
+            <circle cx="50" cy="32" r="15" fill="#f3f6fa" stroke="#1b3a63" stroke-width="2.5"/><circle cx="50" cy="32" r="6" fill="#d98b3a"/>
+            <circle cx="36" cy="60" r="15" fill="#f3f6fa" stroke="#1b3a63" stroke-width="2.5"/><circle cx="36" cy="60" r="6" fill="#d98b3a"/>
+            <circle cx="64" cy="60" r="15" fill="#f3f6fa" stroke="#1b3a63" stroke-width="2.5"/><circle cx="64" cy="60" r="6" fill="#d98b3a"/>
+          </svg>
+          <p style="font-size:12.5px;color:var(--muted);margin:4px 0 0;">Câble (plusieurs fils réunis)</p>
+        </div>
+      </div>
+    </div>
+    <figure class="illustration-card">
+      <img src="assets/illustrations/01_fil_conducteur_cable.svg" alt="Différence entre conducteur, fil isolé et câble électrique">
+      <figcaption>Un conducteur est le métal. Un fil est un conducteur isolé. Un câble regroupe plusieurs fils dans une gaine.</figcaption>
+    </figure>
+    <div class="card">
+      <h3>En vrai, ça ressemble à quoi ?</h3>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 200 200" width="150" height="150">
+          <circle cx="100" cy="100" r="90" fill="#2b2b2b"/>
+          <circle cx="100" cy="100" r="58" fill="#6b4226"/>
+          <circle cx="100" cy="100" r="24" fill="#d98b3a"/>
+          <circle cx="92" cy="92" r="4.5" fill="#c97a2a"/>
+          <circle cx="108" cy="92" r="4.5" fill="#c97a2a"/>
+          <circle cx="100" cy="108" r="4.5" fill="#c97a2a"/>
+          <circle cx="100" cy="100" r="4.5" fill="#c97a2a"/>
+        </svg>
+        <p class="svg-caption">Zoom sur un seul fil : <strong style="color:#2b2b2b">gaine</strong> (noire, extérieure) → <strong style="color:#6b4226">isolant</strong> (ici marron = phase) → <strong style="color:#d98b3a">cuivre</strong> (l'âme, au centre, faite de petits brins torsadés).</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Vérifie</h3>
+      <div class="scenario" id="v1">
+        <p class="desc">Le H07RN-F contient une phase, un neutre et une terre sous une seule gaine caoutchouc. C'est donc…</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,true,'v1')">un câble</button>
+          <button class="choice-btn" onclick="repondreQ(this,false,'v1')">un fil</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="v2">
+        <p class="desc">Le cuivre nu, avant toute isolation, s'appelle…</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,true,'v2')">un conducteur</button>
+          <button class="choice-btn" onclick="repondreQ(this,false,'v2')">un câble</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DÉCODEUR ============ -->
+  <div class="screen" id="screen-decoder">
+    <div class="card">
+      <h2>2. Décoder l'étiquette d'un câble</h2>
+      <p>Chaque câble porte un <strong>code écrit sur sa gaine</strong>. Ce n'est pas un nom commercial : c'est une carte d'identité normalisée.</p>
+    </div>
+
+    <div class="card">
+      <h3>🧠 Le principe général</h3>
+      <p>Chaque code s'écrit dans cet ordre :</p>
+      <p style="text-align:center;font-family:'Trebuchet MS',sans-serif;font-weight:700;color:var(--blue);margin:12px 0;">[Norme] [Tension] [Isolant] [Gaine] [-Souplesse de l'âme]</p>
+      <table>
+        <tr><th>Position</th><th>Ce que ça indique</th><th>Exemples</th></tr>
+        <tr><td><strong>Norme</strong></td><td>Européenne ou française</td><td>H = harmonisé (Europe) · U = norme française UTE</td></tr>
+        <tr><td><strong>Tension</strong></td><td>Tension maximale supportée</td><td>05 = 300/500 V · 07 = 450/750 V · 1000 = 1000 V</td></tr>
+        <tr><td><strong>Isolant</strong></td><td>Matériau qui isole chaque fil</td><td>V = PVC · R = réticulé/EPR · N = néoprène</td></tr>
+        <tr><td><span class="gloss" data-term="âme">Âme</span></td><td>Souple ou rigide, cuivre ou aluminium</td><td>-F/-K = souple · -U = rigide · (rien) = cuivre · A = aluminium</td></tr>
+      </table>
+      <div class="point-note"><strong>À retenir :</strong> une lettre garde à peu près le même sens partout, mais sa <strong>position</strong> compte. Tu verras plus loin que « H » veut dire autre chose selon où il apparaît dans le code.</div>
+    </div>
+
+    <div class="card">
+      <h3>👀 Câble n°1 : <span style="color:var(--orange)">H07RN-F</span></h3>
+      <p style="font-size:13.5px;color:var(--muted)">Norme NF C 32-102 / harmonisation européenne HD 22.4</p>
+      <p>Touche chaque bloc : essaie d'abord de deviner avec la table ci-dessus, puis vérifie.</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 400 200" width="100%" style="max-width:340px;">
+          <rect x="10" y="78" width="230" height="42" rx="21" fill="#1c1c1c"/>
+          <rect x="18" y="82" width="210" height="6" rx="3" fill="#3a3a3a" opacity="0.7"/>
+          <text x="125" y="105" font-family="'Trebuchet MS',sans-serif" font-size="19" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">H07RN-F</text>
+          <path d="M235,88 Q 290,70 335,55" stroke="#6b4226" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <g stroke="#c97a2a" stroke-width="1.8" fill="none" stroke-linecap="round">
+            <path d="M335,55 q6,-10 12,-15"/><path d="M335,55 q10,-4 17,-6"/>
+            <path d="M335,55 q10,2 17,3"/><path d="M335,55 q7,8 12,14"/>
+          </g>
+          <path d="M235,99 L 345,99" stroke="#2f6fb0" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <g stroke="#c97a2a" stroke-width="1.8" fill="none" stroke-linecap="round">
+            <path d="M345,99 q10,-8 17,-10"/><path d="M345,99 q12,0 19,0"/><path d="M345,99 q10,8 17,10"/>
+          </g>
+          <path d="M235,110 Q 290,128 335,145" stroke="#2e7d32" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M235,110 Q 290,128 335,145" stroke="#f4c430" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="6 8"/>
+          <g stroke="#c97a2a" stroke-width="1.8" fill="none" stroke-linecap="round">
+            <path d="M335,145 q6,10 11,16"/><path d="M335,145 q10,4 17,6"/><path d="M335,145 q10,-3 17,-5"/>
+          </g>
+        </svg>
+        <p class="svg-caption">Le vrai câble : gaine noire marquée <strong>H07RN-F</strong>, 3 fils qui dépassent (marron/bleu/vert-jaune) terminés par des petits brins de cuivre effilochés → ça, c'est le <strong>multibrins</strong>.</p>
+      </div>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 200 200" width="140" height="140">
+          <circle cx="100" cy="100" r="88" fill="#2b2b2b" stroke="#000" stroke-width="3"/>
+          <circle cx="100" cy="62" r="26" fill="#6b4226" stroke="#1b3a63" stroke-width="1"/>
+          <circle cx="95" cy="55" r="3.5" fill="#c97a2a"/><circle cx="107" cy="55" r="3.5" fill="#c97a2a"/><circle cx="100" cy="66" r="3.5" fill="#c97a2a"/><circle cx="100" cy="58" r="3.5" fill="#c97a2a"/>
+          <circle cx="72" cy="125" r="26" fill="#2f6fb0" stroke="#1b3a63" stroke-width="1"/>
+          <circle cx="67" cy="118" r="3.5" fill="#c97a2a"/><circle cx="79" cy="118" r="3.5" fill="#c97a2a"/><circle cx="72" cy="129" r="3.5" fill="#c97a2a"/><circle cx="72" cy="121" r="3.5" fill="#c97a2a"/>
+          <circle cx="128" cy="125" r="26" fill="#2e7d32" stroke="#1b3a63" stroke-width="1"/>
+          <circle cx="123" cy="118" r="3.5" fill="#c97a2a"/><circle cx="135" cy="118" r="3.5" fill="#c97a2a"/><circle cx="128" cy="129" r="3.5" fill="#c97a2a"/><circle cx="128" cy="121" r="3.5" fill="#c97a2a"/>
+        </svg>
+        <p class="svg-caption">Et vu en coupe (tranche du câble) : gaine caoutchouc épaisse (noire) — 3 conducteurs (marron/bleu/vert) faits de <strong>petits brins torsadés</strong>.</p>
+      </div>
+      <div class="cable-tag" id="tagH07">
+        <button class="seg" data-target="h07-H">H</button>
+        <button class="seg" data-target="h07-07">07</button>
+        <button class="seg" data-target="h07-R">R</button>
+        <button class="seg" data-target="h07-N">N</button>
+        <button class="seg" data-target="h07-F">-F</button>
+      </div>
+      <div class="seg-panel" id="h07-H"><strong>H</strong> — câble <span class="gloss" data-term="harmonisé">harmonisé</span> : il respecte une norme commune à toute l'Europe.</div>
+      <div class="seg-panel" id="h07-07"><strong>07</strong> — <span class="gloss" data-term="tension assignée">tension assignée</span> <strong>450/750 V</strong>.</div>
+      <div class="seg-panel" id="h07-R"><strong>R</strong> — isolant en <span class="gloss" data-term="EPR">EPR</span> (caoutchouc réticulé).</div>
+      <div class="seg-panel" id="h07-N"><strong>N</strong> — gaine extérieure en <span class="gloss" data-term="polychloroprène">polychloroprène</span> (néoprène). Protège des chocs, de l'eau, des huiles.</div>
+      <div class="seg-panel" id="h07-F"><strong>-F</strong> — <span class="gloss" data-term="âme">âme</span> souple, <span class="gloss" data-term="multibrins">nombreux petits brins</span> de cuivre fins.</div>
+      <div class="usage-reveal" id="usage-h07">
+        <strong>Usage typique :</strong> câble souple, résistant à l'eau et aux chocs → <strong>rallonge de chantier</strong>, outil portatif, pompe immergée, environnement humide.
+      </div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/04_h07rnf_cordon_chantier.svg" alt="Câble H07RN-F souple et robuste pour usage chantier ou atelier">
+      <figcaption>Le H07RN-F est souple, mais il reste robuste : il est adapté aux usages exigeants.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>👀 Câble n°2 : <span style="color:var(--blue)">U1000 R2V</span></h3>
+      <p style="font-size:13.5px;color:var(--muted)">Norme NF C 32-321 (système français UTE, non harmonisé)</p>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 400 200" width="100%" style="max-width:340px;">
+          <rect x="10" y="78" width="230" height="42" rx="10" fill="#3a3a3a"/>
+          <rect x="18" y="82" width="210" height="6" rx="3" fill="#5a5a5a" opacity="0.7"/>
+          <text x="125" y="105" font-family="'Trebuchet MS',sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">U1000 R2V</text>
+          <path d="M235,88 Q 290,70 335,55" stroke="#6b4226" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <circle cx="340" cy="53" r="6" fill="#d98b3a"/>
+          <path d="M235,99 L 345,99" stroke="#2f6fb0" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <circle cx="350" cy="99" r="6" fill="#d98b3a"/>
+          <path d="M235,110 Q 290,128 335,145" stroke="#2e7d32" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M235,110 Q 290,128 335,145" stroke="#f4c430" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="6 8"/>
+          <circle cx="340" cy="147" r="6" fill="#d98b3a"/>
+        </svg>
+        <p class="svg-caption">Le vrai câble : gaine PVC grise/noire marquée <strong>U1000 R2V</strong>, 3 fils rigides — chaque bout de cuivre est <strong>plein et lisse</strong> (pas de frisottis) → ça, c'est le <strong>monobrin</strong>.</p>
+      </div>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 200 200" width="140" height="140">
+          <circle cx="100" cy="100" r="88" fill="#3a3a3a" stroke="#000" stroke-width="3"/>
+          <circle cx="100" cy="62" r="26" fill="#6b4226" stroke="#1b3a63" stroke-width="1"/><circle cx="100" cy="62" r="10" fill="#d98b3a"/>
+          <circle cx="72" cy="125" r="26" fill="#2f6fb0" stroke="#1b3a63" stroke-width="1"/><circle cx="72" cy="125" r="10" fill="#d98b3a"/>
+          <circle cx="128" cy="125" r="26" fill="#2e7d32" stroke="#1b3a63" stroke-width="1"/><circle cx="128" cy="125" r="10" fill="#d98b3a"/>
+          <circle cx="100" cy="102" r="9" fill="#8a8a8a"/>
+        </svg>
+        <p class="svg-caption">Et vu en coupe : gaine PVC — 3 conducteurs (marron/bleu/vert) avec une âme <strong>pleine</strong>. Le petit rond gris = bourrage (le « 2 » du code).</p>
+      </div>
+      <div class="cable-tag" id="tagR2V">
+        <button class="seg" data-target="r2v-U">U</button>
+        <button class="seg" data-target="r2v-1000">1000</button>
+        <button class="seg" data-target="r2v-ame">(rien)</button>
+        <button class="seg" data-target="r2v-R">R</button>
+        <button class="seg" data-target="r2v-2">2</button>
+        <button class="seg" data-target="r2v-V">V</button>
+      </div>
+      <div class="seg-panel" id="r2v-U"><strong>U</strong> — <span class="gloss" data-term="norme UTE">norme française UTE</span> (pas harmonisée, contrairement au « H »).</div>
+      <div class="seg-panel" id="r2v-1000"><strong>1000</strong> — <span class="gloss" data-term="tension assignée">tension assignée</span> <strong>1000 V</strong>.</div>
+      <div class="seg-panel" id="r2v-ame"><strong>Absence de lettre</strong> après 1000 = <span class="gloss" data-term="âme">âme</span> <span class="gloss" data-term="monobrin">rigide</span> en <strong>cuivre</strong>. (Un « A » signalerait de l'aluminium.)</div>
+      <div class="seg-panel" id="r2v-R"><strong>R</strong> — isolant en <span class="gloss" data-term="polyéthylène réticulé">polyéthylène réticulé (PR)</span>. Attention : « R » ne veut pas dire la même chose que dans H07RN-F !</div>
+      <div class="seg-panel" id="r2v-2"><strong>2</strong> — <span class="gloss" data-term="bourrage">gaine de protection épaisse</span> sous la gaine extérieure.</div>
+      <div class="seg-panel" id="r2v-V"><strong>V</strong> — gaine extérieure en <span class="gloss" data-term="PVC">PVC</span>.</div>
+      <div class="usage-reveal" id="usage-r2v">
+        <strong>Usage typique :</strong> câble rigide, pas fait pour bouger → <strong>installation fixe</strong> : mur, gaine, goulotte, tableau électrique.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>✏️ Entraîne-toi — décode un câble jamais vu</h3>
+      <p>Voici un troisième câble, <strong>H05VV-F</strong>. À toi de décoder, en t'aidant du principe général. Réessaie si tu te trompes.</p>
+      <div class="scenario" id="tr-H">
+        <p class="desc"><strong>H</strong> →</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreTrain(this,true,'tr-H')">Norme harmonisée européenne</button>
+          <button class="choice-btn" onclick="repondreTrain(this,false,'tr-H')">Âme aluminium</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="tr-05">
+        <p class="desc"><strong>05</strong> →</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreTrain(this,false,'tr-05')">1000 V</button>
+          <button class="choice-btn" onclick="repondreTrain(this,true,'tr-05')">300/500 V</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="tr-V1">
+        <p class="desc"><strong>V</strong> (isolant) →</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreTrain(this,true,'tr-V1')">PVC</button>
+          <button class="choice-btn" onclick="repondreTrain(this,false,'tr-V1')">Néoprène</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="tr-V2">
+        <p class="desc"><strong>V</strong> (gaine) →</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreTrain(this,true,'tr-V2')">PVC</button>
+          <button class="choice-btn" onclick="repondreTrain(this,false,'tr-V2')">Polyéthylène réticulé</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="tr-F">
+        <p class="desc"><strong>-F</strong> →</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreTrain(this,false,'tr-F')">Âme rigide</button>
+          <button class="choice-btn" onclick="repondreTrain(this,true,'tr-F')">Âme souple multibrins</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="usage-reveal" id="train-recap">
+        <strong>Bilan :</strong> H05VV-F = câble harmonisé, 300/500 V, isolé et gainé en PVC, âme souple. Le câble classique des appareils domestiques légers — ni assez costaud pour un chantier, ni fait pour être encastré.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📐 Après les lettres : les chiffres de composition</h3>
+      <p>Sur l'emballage, le code est souvent suivi d'un nombre comme <strong>3G1,5</strong> ou <strong>4x2,5</strong>. Ça ne parle plus de la gaine ou de l'isolant : ça dit <strong>combien de fils</strong> il y a, et <strong>lesquels</strong>.</p>
+      <table>
+        <tr><th>Écriture</th><th>Signification</th></tr>
+        <tr><td><strong>nG</strong> (ex. 3G1,5)</td><td>n fils, dont le <span class="gloss" data-term="fil de terre">fil de terre</span> (<span class="gloss" data-term="G (composition)">codé G</span>)</td></tr>
+        <tr><td><strong>n x</strong> (ex. 4x2,5)</td><td>n fils, <span class="gloss" data-term="x (composition)">sans fil de terre</span></td></tr>
+      </table>
+      <div class="point-note"><strong>Attention :</strong> tous les câbles n'ont pas de terre. Un appareil à double isolation (dit « classe II ») n'en a pas besoin → câble « x », pas « G ». Confondre les deux peut rendre une installation dangereuse ou non conforme.</div>
+      <p style="font-size:14.5px;">Exemple : <strong>H07RN-F 3G1,5</strong> = phase + neutre + terre, 1,5 mm² chacun. <strong>H05VV-F 2x0,75</strong> = phase + neutre seulement, pas de terre, 0,75 mm² chacun.</p>
+    </div>
+
+    <div class="card">
+      <h3>Vérifie</h3>
+      <div class="scenario" id="g1">
+        <p class="desc">Un câble noté <strong>4G2,5</strong> a-t-il un fil de terre ?</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,true,'g1')">Oui</button>
+          <button class="choice-btn" onclick="repondreQ(this,false,'g1')">Non</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="g2">
+        <p class="desc">Un câble noté <strong>2x1,5</strong> a-t-il un fil de terre ?</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,false,'g2')">Oui</button>
+          <button class="choice-btn" onclick="repondreQ(this,true,'g2')">Non</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SITUATIONS ============ -->
+  <div class="screen" id="screen-situations">
+    <div class="card">
+      <h2>3. Mets tes réflexes à l'épreuve</h2>
+      <p>Pour chaque situation, choisis le câble adapté. Une seule question compte vraiment : <strong>est-ce que ce câble va bouger ?</strong></p>
+    </div>
+    <div class="card">
+      <div class="scenario" id="s1">
+        <p class="desc">🔧 Une perceuse électroportative sur un chantier.</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,true,'s1')">H07RN-F</button>
+          <button class="choice-btn" onclick="repondreQ(this,false,'s1')">U1000 R2V</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="s2">
+        <p class="desc">🏠 Le circuit d'éclairage d'un salon, câblé une fois pour toutes dans une cloison.</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,false,'s2')">H07RN-F</button>
+          <button class="choice-btn" onclick="repondreQ(this,true,'s2')">U1000 R2V</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="s3">
+        <p class="desc">🌧️ Une pompe immergée dans un puits, exposée en permanence à l'eau.</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,true,'s3')">H07RN-F</button>
+          <button class="choice-btn" onclick="repondreQ(this,false,'s3')">U1000 R2V</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="s4">
+        <p class="desc">☕ Le cordon d'alimentation d'une bouilloire de cuisine.</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,true,'s4')">H05VV-F</button>
+          <button class="choice-btn" onclick="repondreQ(this,false,'s4')">U1000 R2V</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FORMES ET COUPES ============ -->
+  <div class="screen" id="screen-formes">
+    <div class="card">
+      <h2>4. Rond ou plat ? Et à l'intérieur ?</h2>
+      <p>Le code d'un câble dit aussi <strong>sa forme</strong>. Regarde bien où la lettre apparaît :</p>
+      <table>
+        <tr><th>Écriture</th><th>Forme</th></tr>
+        <tr><td>Rien de particulier</td><td>Câble <strong>rond</strong> (le plus courant)</td></tr>
+        <tr><td>« H » après l'isolant</td><td>Câble <strong>plat</strong>, divisible à la main</td></tr>
+        <tr><td>« H2 » après l'isolant</td><td>Câble <strong>plat</strong>, non divisible</td></tr>
+      </table>
+      <div class="point-note"><strong>Piège classique :</strong> tu as vu que « H » en <strong>première position</strong> veut dire « harmonisé ». Le même « H », plus loin dans le code, veut dire « plat » ! Exemple : <strong>H05VV-F</strong> (rond) et son cousin <strong>H05VVH2-F</strong> (plat, même famille électrique).</div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/02_anatomie_cable_coupe.svg" alt="Coupe d'un câble montrant la gaine, l'isolant et les conducteurs">
+      <figcaption>La coupe d'un câble permet de repérer la gaine extérieure, les isolants et les âmes conductrices.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>En coupe : ce qu'il y a dedans</h3>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 260 260" width="220" height="220">
+          <circle cx="130" cy="130" r="115" fill="#ffb37a" stroke="#b34a1f" stroke-width="4"/>
+          <circle cx="130" cy="80" r="34" fill="#f3f6fa" stroke="#1b3a63" stroke-width="3"/>
+          <circle cx="130" cy="80" r="14" fill="#d98b3a"/>
+          <circle cx="95" cy="165" r="34" fill="#f3f6fa" stroke="#1b3a63" stroke-width="3"/>
+          <circle cx="95" cy="165" r="14" fill="#d98b3a"/>
+          <circle cx="165" cy="165" r="34" fill="#f3f6fa" stroke="#1b3a63" stroke-width="3"/>
+          <circle cx="165" cy="165" r="14" fill="#d98b3a"/>
+        </svg>
+        <p class="svg-caption"><strong style="color:#b34a1f">Orange</strong> = gaine extérieure · <strong>blanc</strong> = isolant de chaque fil · <strong style="color:#d98b3a">brun</strong> = âme (conducteur). Câble <strong>rond</strong> à 3 conducteurs (ex. H07RN-F 3G en phase/neutre/terre).</p>
+      </div>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 260 140" width="220" height="118">
+          <rect x="10" y="20" width="240" height="100" rx="50" fill="#e8eef5" stroke="#1b3a63" stroke-width="4"/>
+          <line x1="130" y1="25" x2="130" y2="115" stroke="#1b3a63" stroke-width="2" stroke-dasharray="6 5"/>
+          <circle cx="90" cy="70" r="34" fill="#fff" stroke="#1b3a63" stroke-width="3"/><circle cx="90" cy="70" r="14" fill="#d98b3a"/>
+          <circle cx="170" cy="70" r="34" fill="#fff" stroke="#1b3a63" stroke-width="3"/><circle cx="170" cy="70" r="14" fill="#d98b3a"/>
+        </svg>
+        <p class="svg-caption">Câble plat <span class="gloss" data-term="divisible">DIVISIBLE</span> (H) : le pointillé au milieu montre où on peut le <strong>séparer à la main</strong> sur quelques centimètres. Pratique quand les 2 fils doivent rejoindre des bornes éloignées l'une de l'autre — cordon de lampe, sonnette, appareil léger.</p>
+      </div>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 260 140" width="220" height="118">
+          <rect x="10" y="20" width="240" height="100" rx="50" fill="#dfe6ee" stroke="#1b3a63" stroke-width="4"/>
+          <circle cx="90" cy="70" r="34" fill="#fff" stroke="#1b3a63" stroke-width="3"/><circle cx="90" cy="70" r="14" fill="#d98b3a"/>
+          <circle cx="170" cy="70" r="34" fill="#fff" stroke="#1b3a63" stroke-width="3"/><circle cx="170" cy="70" r="14" fill="#d98b3a"/>
+        </svg>
+        <p class="svg-caption">Câble plat <strong>NON divisible</strong> (H2) : pas de pointillé — la gaine reste <strong>une seule pièce</strong> sur toute la longueur. Utile pour un câblage de signal (téléphone, sonnette murale) qui doit rester bien protégé sans risque de s'ouvrir.</p>
+      </div>
+      <div class="point-note"><strong>Pourquoi le rond domine sur les gros câbles :</strong> une forme ronde répartit les contraintes de façon égale tout autour → plus solide face aux chocs et à la torsion. Le plat est réservé aux usages légers, peu sollicités mécaniquement.</div>
+    </div>
+
+    <div class="card">
+      <h3>Un exemple concret où le non-divisible est indispensable</h3>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 260 140" width="220" height="118">
+          <path d="M20,100 L60,30 L100,100 L140,30 L180,100 L210,30" stroke="#1b3a63" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="195" y="95" width="45" height="26" rx="4" fill="#5b6472"/>
+          <circle cx="207" cy="121" r="5" fill="#2b2b2b"/><circle cx="230" cy="121" r="5" fill="#2b2b2b"/>
+        </svg>
+        <p class="svg-caption">Alimentation d'un <strong>pont roulant</strong> ou d'un <strong>ascenseur</strong> : le câble se plie en accordéon (des <span class="gloss" data-term="festons">festons</span>) à chaque passage du chariot ou de la cabine, des milliers de fois. S'il pouvait se diviser, il finirait par se déchirer à force de plier. Il doit rester une seule pièce solide → toujours du <strong>non-divisible</strong> ici.</p>
+      </div>
+    </div>
+
+    <figure class="illustration-card">
+      <img src="assets/illustrations/03_multibrin_vs_monobrin.svg" alt="Comparaison entre conducteur monobrin et conducteur multibrins">
+      <figcaption>Un conducteur monobrin est plus rigide. Un conducteur multibrins est plus souple.</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>Vérifie</h3>
+      <div class="scenario" id="f1">
+        <p class="desc">H05VV<strong>H2</strong>-F : quelle forme ?</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,false,'f1')">Rond</button>
+          <button class="choice-btn" onclick="repondreQ(this,true,'f1')">Plat, non divisible</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="scenario" id="f2">
+        <p class="desc">Le câble d'alimentation d'un pont roulant, qui se plie sans arrêt en accordéon, doit être…</p>
+        <div class="choices">
+          <button class="choice-btn" onclick="repondreQ(this,false,'f2')">Divisible</button>
+          <button class="choice-btn" onclick="repondreQ(this,true,'f2')">Non divisible</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ JEU DE MÉMOIRE ============ -->
+  <div class="screen" id="screen-memoire">
+    <div class="card">
+      <h2>5. Jeu de mémoire — retrouve les paires</h2>
+      <p>Clique deux cartes. Si le code et sa signification correspondent, la paire reste affichée.</p>
+      <div class="memory-grid" id="memoryGrid"></div>
+      <div class="memory-status" id="memoryStatus">0 / 8 paires trouvées</div>
+      <div style="text-align:center;margin-top:14px;">
+        <button class="btn secondary" onclick="initMemory()">🔄 Recommencer le jeu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SYNTHÈSE / QUIZ ============ -->
+  <div class="screen" id="screen-quiz">
+    <div class="card">
+      <h2>6. Synthèse</h2>
+      <p>7 questions pour vérifier ce qui est acquis dans ce TD1.</p>
+    </div>
+    <div class="card" id="quizContainer"></div>
+    <div class="card">
+      <h3>Ce que je sais faire maintenant</h3>
+      <ul class="checklist">
+        <li>Je sais <strong>distinguer</strong> conducteur, fil et câble.</li>
+        <li>Je sais <strong>lire</strong> les grandes lignes du code écrit sur un câble (H07RN-F, U1000 R2V, H05VV-F).</li>
+        <li>Je sais <strong>choisir</strong> un câble souple ou rigide selon que l'installation bouge ou non.</li>
+        <li>Je sais reconnaître un câble <strong>rond</strong> ou <strong>plat</strong> à partir de son code.</li>
+        <li>Je sais dire si un câble a un <strong>fil de terre</strong> à partir de sa composition (G ou x).</li>
+      </ul>
+      <div class="point-note"><strong>Prochaine étape (TD2) :</strong> les fils de tableau électrique (H07V-U, H07V-K) et leurs coupes.</div>
+    </div>
+  </div>
+
+  <p class="signature">TD 1/3</p>
+</div>
+
+<button class="dys-fab" id="dysFab" onclick="toggleDys()" aria-pressed="false" aria-label="Activer le mode police adaptée DYS">Aa</button>
+<button class="help-fab" onclick="openFullLexique()" aria-label="Ouvrir le lexique">?</button>
+
+<div class="gloss-overlay" id="glossOverlay" onclick="if(event.target===this) closeGloss()">
+  <div class="gloss-panel" id="glossPanel"></div>
+</div>
+
+<div class="nav-footer">
+  <button class="btn secondary" id="btnPrev" onclick="allerEcran(current-1)">◀ Précédent</button>
+  <button class="btn" id="btnNext" onclick="allerEcran(current+1)">Suivant ▶</button>
+</div>
+
+<script>
+const screens = ['screen-accueil','screen-vocab','screen-decoder','screen-situations','screen-formes','screen-memoire','screen-quiz'];
+let current = 0;
+let niveau = null;
+
+function buildStepper(){
+  const st = document.getElementById('stepper');
+  st.innerHTML = '';
+  const total = screens.length - 1;
+  for(let i=1;i<=total;i++){
+    const node = document.createElement('div');
+    node.className = 'node'; node.id = 'node'+i; node.textContent = i;
+    st.appendChild(node);
+    if(i<total){
+      const wire = document.createElement('div');
+      wire.className = 'wire'; wire.id = 'wire'+i;
+      st.appendChild(wire);
+    }
+  }
+}
+buildStepper();
+
+function refreshStepper(){
+  const total = screens.length - 1;
+  for(let i=1;i<=total;i++){
+    const node = document.getElementById('node'+i);
+    node.classList.remove('done','current');
+    if(current > i) node.classList.add('done');
+    else if(current === i) node.classList.add('current');
+    if(i<total){
+      document.getElementById('wire'+i).classList.toggle('on', current > i);
+    }
+  }
+}
+
+function allerEcran(idx){
+  if(idx < 0 || idx > screens.length-1) return;
+  if(idx > 0 && niveau === null){ idx = 0; }
+  document.getElementById(screens[current]).classList.remove('active');
+  current = idx;
+  document.getElementById(screens[current]).classList.add('active');
+  refreshStepper();
+  document.getElementById('btnPrev').disabled = (current===0);
+  document.getElementById('btnNext').style.visibility = (current===screens.length-1) ? 'hidden' : 'visible';
+  window.scrollTo({top:0, behavior:'smooth'});
+  if(screens[current] === 'screen-memoire') initMemory();
+  if(screens[current] === 'screen-quiz') buildQuiz();
+}
+
+function choisirNiveau(n){
+  niveau = n;
+  document.getElementById('niveauTag').textContent = 'Niveau : ' + (n==='decouverte' ? 'Découverte (CAP/2nde)' : 'Approfondi (Bac Pro)');
+  allerEcran(1);
+}
+
+/* ---- décodeur ---- */
+document.querySelectorAll('.seg').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const target = document.getElementById(btn.dataset.target);
+    target.classList.toggle('open');
+    btn.classList.add('done');
+    checkAllRevealed(btn.closest('.cable-tag'));
+  });
+});
+function checkAllRevealed(container){
+  const segs = container.querySelectorAll('.seg');
+  const allDone = [...segs].every(s=>s.classList.contains('done'));
+  if(allDone){
+    if(container.id === 'tagH07') document.getElementById('usage-h07').classList.add('shown');
+    if(container.id === 'tagR2V') document.getElementById('usage-r2v').classList.add('shown');
+  }
+}
+function toggleDys(){
+  document.body.classList.toggle('dys-mode');
+  const on = document.body.classList.contains('dys-mode');
+  document.getElementById('dysFab').setAttribute('aria-pressed', on);
+}
+
+function repondreQ(btn, correct, groupId){
+  const group = document.getElementById(groupId);
+  const fb = group.querySelector('.feedback');
+  group.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+  btn.classList.add(correct ? 'correct':'wrong');
+  btn.textContent = (correct ? '✓ ' : '✗ ') + btn.textContent;
+  fb.classList.add('shown', correct ? 'ok':'ko');
+  fb.textContent = correct ? '✅ Exact.' : '❌ Regarde plus haut, puis compare avec la logique du cours.';
+}
+
+const trainDone = {};
+function repondreTrain(btn, correct, groupId){
+  const group = document.getElementById(groupId);
+  const fb = group.querySelector('.feedback');
+  if(correct){
+    group.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+    btn.classList.remove('wrong'); btn.classList.add('correct');
+    btn.textContent = '✓ ' + btn.textContent;
+    fb.classList.add('shown','ok'); fb.textContent = '✅ Exact.';
+    trainDone[groupId] = true;
+    if(Object.keys(trainDone).length === 5){
+      document.getElementById('train-recap').classList.add('shown');
+    }
+  } else {
+    btn.classList.add('wrong');
+    fb.classList.add('shown','ko');
+    fb.textContent = '❌ Regarde la table du principe général juste au-dessus, et réessaie.';
+  }
+}
+
+/* ---- jeu de mémoire ---- */
+const memoryPairs = [
+  {code:'H', meaning:'Norme harmonisée européenne'},
+  {code:'U', meaning:'Norme française UTE'},
+  {code:'07', meaning:'450/750 V'},
+  {code:'1000', meaning:'1000 V'},
+  {code:'N', meaning:'Gaine polychloroprène (néoprène)'},
+  {code:'-F', meaning:'Âme souple multibrins'},
+  {code:'V', meaning:'Isolant ou gaine en PVC'},
+  {code:'(rien)', meaning:'Âme rigide en cuivre'}
+];
+let memoryState = { cards:[], first:null, second:null, lock:false, matched:0 };
+function initMemory(){
+  const grid = document.getElementById('memoryGrid');
+  grid.innerHTML = '';
+  let cards = [];
+  memoryPairs.forEach((p,i)=>{
+    cards.push({pairId:i, text:p.code, revealed:false, matched:false});
+    cards.push({pairId:i, text:p.meaning, revealed:false, matched:false});
+  });
+  cards.sort(()=>Math.random()-0.5);
+  memoryState = { cards, first:null, second:null, lock:false, matched:0, moves:0 };
+  document.getElementById('memoryStatus').innerHTML = '0 / 8 paires · <span style="color:var(--orange)">0 coup</span>';
+  cards.forEach((c, idx)=>{
+    const b = document.createElement('button');
+    b.className = 'memory-card face-down';
+    b.textContent = '?';
+    b.onclick = ()=>flipCard(idx);
+    b.id = 'mcard'+idx;
+    grid.appendChild(b);
+  });
+}
+function majMemoryStatus(){
+  const done = memoryState.matched >= memoryPairs.length;
+  const coups = memoryState.moves + ' coup' + (memoryState.moves>1?'s':'');
+  if(done){
+    let msg = '🎉 Terminé en ' + coups + ' !';
+    if(memoryState.moves <= 10) msg += ' Score parfait ou presque !';
+    else if(memoryState.moves <= 16) msg += ' Bien joué.';
+    document.getElementById('memoryStatus').innerHTML = msg;
+  } else {
+    document.getElementById('memoryStatus').innerHTML = memoryState.matched + ' / 8 paires · <span style="color:var(--orange)">' + coups + '</span>';
+  }
+}
+function flipCard(idx){
+  if(memoryState.lock) return;
+  const c = memoryState.cards[idx];
+  if(c.revealed || c.matched) return;
+  const el = document.getElementById('mcard'+idx);
+  c.revealed = true;
+  el.textContent = c.text;
+  el.classList.remove('face-down');
+
+  if(memoryState.first === null){
+    memoryState.first = idx;
+    return;
+  }
+  memoryState.second = idx;
+  memoryState.lock = true;
+  memoryState.moves++;
+  const c1 = memoryState.cards[memoryState.first];
+  const c2 = memoryState.cards[memoryState.second];
+  if(c1.pairId === c2.pairId){
+    c1.matched = true; c2.matched = true;
+    const el1 = document.getElementById('mcard'+memoryState.first);
+    const el2 = document.getElementById('mcard'+memoryState.second);
+    el1.classList.add('matched'); el2.classList.add('matched');
+    el1.textContent = '✓ ' + el1.textContent; el2.textContent = '✓ ' + el2.textContent;
+    memoryState.matched++;
+    majMemoryStatus();
+    memoryState.first = null; memoryState.second = null; memoryState.lock = false;
+  } else {
+    majMemoryStatus();
+    document.getElementById('mcard'+memoryState.first).classList.add('wrong-flash');
+    document.getElementById('mcard'+memoryState.second).classList.add('wrong-flash');
+    setTimeout(()=>{
+      [memoryState.first, memoryState.second].forEach(i=>{
+        const cc = memoryState.cards[i];
+        cc.revealed = false;
+        const e = document.getElementById('mcard'+i);
+        e.textContent = '?';
+        e.classList.add('face-down');
+        e.classList.remove('wrong-flash');
+      });
+      memoryState.first = null; memoryState.second = null; memoryState.lock = false;
+    }, 900);
+  }
+}
+
+/* ---- quiz ---- */
+const quizData = [
+  { q:"Un conducteur seul, sans isolant, c'est…", options:["un câble","un fil","un conducteur nu"], correct:2 },
+  { q:"Dans H07RN-F, que signifie le « H » ?", options:["Norme française uniquement","Câble harmonisé au niveau européen","Âme en cuivre"], correct:1 },
+  { q:"Un câble U1000 R2V est plutôt destiné à…", options:["une rallonge de chantier","une installation fixe (mur, gaine, tableau)","une pompe immergée"], correct:1 },
+  { q:"Le cordon souple d'une bouilloire correspond à…", options:["U1000 R2V","H07RN-F","H05VV-F"], correct:2 },
+  { q:"Un code portant « H2 » après l'isolant indique un câble…", options:["rond","plat, non divisible","armé"], correct:1 },
+  { q:"Pourquoi le câble rond est-il privilégié pour les usages exigeants ?", options:["Il coûte moins cher","Il répartit mieux les contraintes mécaniques","Il est toujours en aluminium"], correct:1 },
+  { q:"Un câble noté « 4x1,5 » a…", options:["un fil de terre","pas de fil de terre","une âme aluminium"], correct:1 }
+];
+function buildQuiz(){
+  const c = document.getElementById('quizContainer');
+  if(c.dataset.built) return;
+  c.dataset.built = '1';
+  let score = 0;
+  quizData.forEach((item, qi)=>{
+    const block = document.createElement('div');
+    block.className = 'quiz-q';
+    const p = document.createElement('p');
+    p.className = 'q-text';
+    p.textContent = (qi+1) + '. ' + item.q;
+    block.appendChild(p);
+    item.options.forEach((opt, oi)=>{
+      const b = document.createElement('button');
+      b.className = 'quiz-opt';
+      b.textContent = opt;
+      b.onclick = ()=>{
+        block.querySelectorAll('.quiz-opt').forEach(x=>x.disabled=true);
+        if(oi === item.correct){ b.classList.add('correct'); b.textContent = '✓ ' + b.textContent; score++; }
+        else {
+          b.classList.add('wrong'); b.textContent = '✗ ' + b.textContent;
+          const correctBtn = block.children[item.correct+1];
+          correctBtn.classList.add('correct'); correctBtn.textContent = '✓ ' + correctBtn.textContent;
+        }
+        document.getElementById('scoreBig').textContent = score + ' / ' + quizData.length;
+      };
+      block.appendChild(b);
+    });
+    c.appendChild(block);
+  });
+  const scoreBox = document.createElement('div');
+  scoreBox.className = 'score-box';
+  scoreBox.innerHTML = '<div>Score</div><div class="big" id="scoreBig">0 / ' + quizData.length + '</div>';
+  c.appendChild(scoreBox);
+}
+
+/* ---- lexique d'aide ---- */
+/* mini-illustrations réutilisables pour le glossaire */
+const glossIcons = {
+  conducteur: '<svg viewBox="0 0 120 60"><line x1="10" y1="30" x2="110" y2="30" stroke="#d98b3a" stroke-width="16" stroke-linecap="round"/></svg>',
+  gaine: '<svg viewBox="0 0 120 60"><rect x="10" y="14" width="100" height="32" rx="16" fill="#2b2b2b"/><circle cx="45" cy="30" r="9" fill="#6b4226"/><circle cx="45" cy="30" r="4" fill="#d98b3a"/><circle cx="75" cy="30" r="9" fill="#2f6fb0"/><circle cx="75" cy="30" r="4" fill="#d98b3a"/></svg>',
+  isole: '<svg viewBox="0 0 120 60"><circle cx="60" cy="30" r="22" fill="#6b4226"/><circle cx="60" cy="30" r="9" fill="#d98b3a"/></svg>',
+  multibrins: '<svg viewBox="0 0 120 60"><line x1="15" y1="30" x2="85" y2="30" stroke="#6b4226" stroke-width="18" stroke-linecap="round"/><g stroke="#c97a2a" stroke-width="2" fill="none" stroke-linecap="round"><path d="M85,30 q10,-9 18,-13"/><path d="M85,30 q11,-3 19,-5"/><path d="M85,30 q11,3 19,5"/><path d="M85,30 q10,9 18,13"/></g></svg>',
+  monobrin: '<svg viewBox="0 0 120 60"><line x1="15" y1="30" x2="90" y2="30" stroke="#6b4226" stroke-width="18" stroke-linecap="round"/><circle cx="98" cy="30" r="8" fill="#d98b3a"/></svg>',
+  terre: '<svg viewBox="0 0 120 60"><line x1="15" y1="30" x2="88" y2="30" stroke="#2e7d32" stroke-width="16" stroke-linecap="round"/><line x1="15" y1="30" x2="88" y2="30" stroke="#f4c430" stroke-width="5" stroke-dasharray="7 9" stroke-linecap="round"/><line x1="98" y1="16" x2="98" y2="44" stroke="#5b6472" stroke-width="3"/><line x1="90" y1="44" x2="106" y2="44" stroke="#5b6472" stroke-width="3"/><line x1="93" y1="50" x2="103" y2="50" stroke="#5b6472" stroke-width="3"/></svg>',
+  bourrage: '<svg viewBox="0 0 120 60"><circle cx="60" cy="30" r="26" fill="#3a3a3a"/><circle cx="52" cy="22" r="8" fill="#6b4226"/><circle cx="70" cy="24" r="8" fill="#2f6fb0"/><circle cx="60" cy="40" r="8" fill="#2e7d32"/><circle cx="60" cy="30" r="5" fill="#8a8a8a"/></svg>',
+  divisible: '<svg viewBox="0 0 120 60"><rect x="12" y="18" width="96" height="24" rx="12" fill="#e8eef5" stroke="#1b3a63" stroke-width="2"/><line x1="60" y1="20" x2="60" y2="40" stroke="#1b3a63" stroke-width="2" stroke-dasharray="4 3"/><circle cx="38" cy="30" r="7" fill="#d98b3a"/><circle cx="82" cy="30" r="7" fill="#d98b3a"/></svg>',
+  festons: '<svg viewBox="0 0 120 60"><path d="M12,45 L30,15 L48,45 L66,15 L84,45 L102,15" stroke="#1b3a63" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  pvc: '<svg viewBox="0 0 120 60"><rect x="20" y="18" width="80" height="24" rx="12" fill="#2f6fb0"/></svg>',
+  neoprene: '<svg viewBox="0 0 120 60"><rect x="20" y="16" width="80" height="28" rx="14" fill="#1c1c1c"/><rect x="26" y="20" width="68" height="5" rx="2" fill="#3a3a3a"/></svg>',
+  tension: '<svg viewBox="0 0 120 60"><path d="M55,10 L45,32 L58,32 L48,50 L75,26 L60,26 L70,10 Z" fill="#ff6b35"/></svg>'
+};
+const lexique = {
+  'conducteur': {def:"La partie en métal (cuivre ou aluminium) qui laisse passer le courant. Sans protection autour.", svg:glossIcons.conducteur},
+  'isolant': {def:"La matière qui empêche le courant de sortir du fil. Exemples : PVC, caoutchouc.", svg:glossIcons.isole},
+  'isolé': {def:"Qui est recouvert d'un isolant, donc protégé.", svg:glossIcons.isole},
+  'gaine': {def:"L'enveloppe extérieure qui protège tout le câble : chocs, eau, huiles…", svg:glossIcons.gaine},
+  'harmonisé': {def:"Qui suit une norme commune à toute l'Europe (pas juste la France)."},
+  'norme UTE': {def:"Un système de codage français plus ancien, encore très utilisé sur les chantiers."},
+  'EPR': {def:"Un caoutchouc isolant qui résiste bien à la chaleur. On dit aussi « caoutchouc réticulé »."},
+  'PVC': {def:"Un plastique souple, utilisé comme isolant ou comme gaine.", svg:glossIcons.pvc},
+  'polychloroprène': {def:"Un caoutchouc très résistant aux chocs, à l'eau et aux huiles. On l'appelle aussi néoprène.", svg:glossIcons.neoprene},
+  'polyéthylène réticulé': {def:"Un plastique isolant qui résiste bien à la chaleur, utilisé dans les câbles fixes."},
+  'multibrins': {def:"Fait de plusieurs petits fils fins tressés ensemble → rend le câble souple.", svg:glossIcons.multibrins},
+  'monobrin': {def:"Fait d'un seul fil plein → rend le câble rigide.", svg:glossIcons.monobrin},
+  'bourrage': {def:"La matière de remplissage à l'intérieur du câble, qui garde sa forme ronde.", svg:glossIcons.bourrage},
+  'tension assignée': {def:"La tension électrique maximale que le câble peut supporter sans danger.", svg:glossIcons.tension},
+  'G (composition)': {def:"Indique que le fil de terre (vert/jaune) fait partie des conducteurs du câble.", svg:glossIcons.terre},
+  'x (composition)': {def:"Indique que le câble n'a PAS de fil de terre parmi ses conducteurs."},
+  'âme': {def:"La partie centrale d'un fil, en métal (cuivre ou aluminium) : c'est elle qui conduit vraiment le courant. Un synonyme de « conducteur » quand on parle de l'intérieur d'un fil.", svg:glossIcons.conducteur},
+  'fil de terre': {def:"Le conducteur de sécurité, toujours rayé vert et jaune. Cette couleur est réservée UNIQUEMENT à la terre, dans toute l'Europe, pour qu'on ne la confonde jamais avec un autre fil. En cas de défaut électrique (un fil dénudé qui touche une carcasse métallique, par exemple), c'est lui qui évacue le courant dangereux vers le sol au lieu de traverser une personne.", svg:glossIcons.terre},
+  'caoutchouc réticulé': {def:"Un caoutchouc traité pour résister à la chaleur et à l'usure. « Réticulé » = ses molécules ont été reliées en réseau, ce qui le rend plus solide. C'est ce que désigne le « R » de EPR."},
+  'divisible': {def:"Se dit d'un câble plat qu'on peut séparer à la main en deux fils distincts, sur quelques centimètres, sans outil.", svg:glossIcons.divisible},
+  'festons': {def:"Les plis en accordéon que fait un câble quand il suit un chariot ou une cabine qui se déplace, par exemple sur un pont roulant ou un ascenseur.", svg:glossIcons.festons}
+};
+function defOf(term){ const e = lexique[term]; return e ? (typeof e === 'string' ? e : e.def) : "Définition à venir."; }
+function svgOf(term){ const e = lexique[term]; return (e && typeof e === 'object' && e.svg) ? e.svg : ''; }
+function openGloss(term){
+  const panel = document.getElementById('glossPanel');
+  const icon = svgOf(term);
+  panel.innerHTML = '<h3>' + term + '</h3>' + (icon ? '<div class="gloss-icon">' + icon + '</div>' : '') + '<p style="font-size:15px;">' + defOf(term) + '</p><button class="gloss-close" onclick="closeGloss()">Fermer</button>';
+  document.getElementById('glossOverlay').classList.add('open');
+}
+function openFullLexique(){
+  const panel = document.getElementById('glossPanel');
+  let html = '<h3>📖 Lexique — tous les mots du TD</h3>';
+  Object.keys(lexique).forEach(term=>{
+    const icon = svgOf(term);
+    html += '<div class="gloss-item">' + (icon ? '<div class="gloss-icon-sm">' + icon + '</div>' : '') + '<span class="term">' + term + '</span><p>' + defOf(term) + '</p></div>';
+  });
+  html += '<button class="gloss-close" onclick="closeGloss()">Fermer</button>';
+  panel.innerHTML = html;
+  document.getElementById('glossOverlay').classList.add('open');
+}
+function closeGloss(){ document.getElementById('glossOverlay').classList.remove('open'); }
+document.addEventListener('click', (e)=>{
+  if(e.target.classList.contains('gloss')){
+    openGloss(e.target.dataset.term);
+  }
+});
+
+refreshStepper();
+document.getElementById('btnPrev').disabled = true;
+</script>
+<!-- La marque et la mention de droits viennent du site principal :
+     une source pour tous les satellites, zéro divergence (20/08/2026). -->
+<script src="../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

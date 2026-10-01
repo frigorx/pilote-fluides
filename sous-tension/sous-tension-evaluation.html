@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<title>Évaluation — Les câbles électriques | inerWeb Édu</title>
+<style>
+  :root{
+    color-scheme: light only;
+    --blue:#1b3a63; --blue-light:#e8eef5; --blue-pale:#f3f6fa;
+    --orange:#ff6b35; --orange-pale:#fff1ea;
+    --bg:#f7f7f5; --card:#ffffff; --text:#1c1c1c; --muted:#5b6472;
+    --green:#2e7d32; --green-pale:#eaf5ea; --red:#b3261e; --red-pale:#fbeceb;
+    --amber:#c77700; --amber-pale:#fdf3e0;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{ background:var(--bg); color:var(--text); margin:0; padding:0;
+    font-family:'Calibri','Candara','Segoe UI',sans-serif; font-size:16px; line-height:1.5; }
+  h1,h2,h3{ font-family:'Trebuchet MS','Trebuchet',sans-serif; font-weight:700; color:var(--blue); line-height:1.3; }
+  p,li{ text-align:left; } a{ color:var(--blue); }
+
+  .topbar{ background:var(--blue); color:#fff; padding:14px 16px; display:flex; align-items:center; gap:12px; position:sticky; top:0; z-index:20; }
+  .topbar .flake{ font-size:22px; }
+  .topbar .brand{ font-family:'Trebuchet MS',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; gap:6px; }
+  .topbar .badge-edu{ background:var(--orange); color:#fff; font-size:11px; padding:2px 7px; border-radius:20px; font-weight:700; }
+  .topbar .home{ margin-left:auto; color:#fff; text-decoration:none; font-size:13px; background:rgba(255,255,255,.15); padding:5px 12px; border-radius:20px; }
+
+  .app{ max-width:760px; margin:0 auto; padding:0 16px 60px; }
+
+  h1.main-title{ font-size:22px; margin:20px 0 4px; }
+  .subtitle{ color:var(--muted); margin:0 0 18px; font-size:15px; }
+
+  .card{ background:var(--card); border-radius:var(--radius); padding:18px; margin-bottom:14px; border:1px solid #e6e6e2; }
+  .card h2{ margin-top:0; font-size:18px; } .card h3{ font-size:16px; margin:0 0 8px; }
+  .point-note{ border-left:4px solid var(--orange); background:var(--orange-pale); padding:10px 14px; border-radius:8px; font-size:14px; margin:10px 0; }
+  .point-note strong{ color:var(--orange); }
+
+  button{ font-family:'Calibri','Candara',sans-serif; font-size:15px; cursor:pointer; }
+  .btn{ background:var(--blue); color:#fff; border:none; padding:12px 20px; border-radius:10px; font-weight:700; }
+  .btn:hover{ background:#142c4c; } .btn:disabled{ opacity:.4; cursor:not-allowed; }
+  .btn.secondary{ background:#fff; color:var(--blue); border:2px solid var(--blue); }
+
+  .screen{ display:none; } .screen.active{ display:block; }
+
+  /* choix filière */
+  .filiere-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
+  @media (max-width:560px){ .filiere-grid{ grid-template-columns:1fr; } }
+  .filiere-btn{ background:#fff; border:2px solid var(--blue-light); border-radius:var(--radius); padding:16px; text-align:left; transition:.15s; }
+  .filiere-btn:hover{ border-color:var(--blue); background:var(--blue-pale); }
+  .filiere-btn .fname{ font-family:'Trebuchet MS',sans-serif; font-weight:700; color:var(--blue); font-size:16px; }
+  .filiere-btn .flabel{ font-size:12.5px; color:var(--muted); margin-top:2px; }
+  .filiere-btn .fcomp{ font-size:12.5px; color:var(--orange); font-weight:700; margin-top:6px; }
+
+  .ident-row{ margin-top:14px; }
+  .ident-row label{ font-weight:700; font-size:14px; display:block; margin-bottom:4px; color:var(--blue); }
+  .ident-row input{ width:100%; font-size:16px; padding:10px; border-radius:8px; border:2px solid var(--blue-light); }
+
+  /* progression */
+  .qbar{ height:8px; background:#e6e6e2; border-radius:6px; overflow:hidden; margin:6px 0 2px; }
+  .qbar-fill{ height:100%; background:var(--orange); width:0%; transition:width .3s; }
+  .qcount{ font-size:12.5px; color:var(--muted); text-align:right; }
+
+  .q-text{ font-weight:700; font-size:16px; margin:6px 0 12px; }
+  .q-context{ font-size:13.5px; color:var(--muted); margin-bottom:10px; }
+  .qopt{ display:block; width:100%; text-align:left; background:#fff; border:2px solid #dfe3e8; border-radius:10px; padding:12px 14px; margin-bottom:8px; font-size:15px; transition:.12s; }
+  .qopt:hover{ border-color:var(--blue); background:var(--blue-pale); }
+  .qopt.selected{ border-color:var(--orange); background:var(--orange-pale); border-width:3px; }
+
+  .svg-wrap{ text-align:center; margin:6px 0 12px; } .svg-wrap svg{ max-width:100%; height:auto; }
+
+  .nav{ display:flex; gap:10px; justify-content:space-between; margin-top:8px; }
+  .nav .btn{ flex:1; max-width:220px; }
+
+  /* résultats */
+  .score-hero{ text-align:center; background:linear-gradient(120deg,#1b3a63,#2b5488); color:#fff; border-radius:var(--radius); padding:26px 18px; margin-bottom:16px; }
+  .score-hero .note{ font-size:52px; font-weight:700; font-family:'Trebuchet MS',sans-serif; line-height:1; }
+  .score-hero .sur{ font-size:22px; opacity:.8; }
+  .score-hero .mention{ margin-top:8px; font-size:15px; opacity:.95; }
+
+  .posit-card{ border-radius:var(--radius); padding:18px; margin-bottom:14px; border:1px solid #e6e6e2; background:#fff; }
+  .posit-comp{ font-family:'Trebuchet MS',sans-serif; font-weight:700; color:var(--blue); font-size:15px; }
+  .posit-filiere{ font-size:13px; color:var(--muted); margin-bottom:12px; }
+  .posit-scale{ display:flex; gap:4px; margin:12px 0 6px; }
+  .posit-step{ flex:1; text-align:center; padding:8px 4px; border-radius:8px; font-size:12px; font-weight:700; background:var(--blue-pale); color:var(--muted); border:2px solid transparent; }
+  .posit-step.on{ color:#fff; }
+  .posit-step.on.na{ background:var(--red); border-color:var(--red); }
+  .posit-step.on.ec{ background:var(--amber); border-color:var(--amber); }
+  .posit-step.on.a{ background:var(--green); border-color:var(--green); }
+  .posit-verdict{ font-size:14.5px; padding:10px 14px; border-radius:8px; margin-top:8px; }
+  .posit-verdict.na{ background:var(--red-pale); color:var(--red); }
+  .posit-verdict.ec{ background:var(--amber-pale); color:var(--amber); }
+  .posit-verdict.a{ background:var(--green-pale); color:var(--green); }
+
+  .review-item{ border-left:4px solid #dfe3e8; padding:8px 12px; margin-bottom:8px; font-size:14px; border-radius:0 8px 8px 0; }
+  .review-item.ok{ border-color:var(--green); background:var(--green-pale); }
+  .review-item.ko{ border-color:var(--red); background:var(--red-pale); }
+  .review-item .rq{ font-weight:700; }
+  .review-item .ra{ font-size:13px; margin-top:3px; }
+
+  .prof-box{ background:#fff; border:2px dashed var(--blue-light); border-radius:var(--radius); padding:16px; margin-top:8px; font-size:14px; }
+  .prof-box h3{ margin-top:0; }
+  .prof-line{ font-family:'Trebuchet MS',sans-serif; background:var(--blue-pale); border-radius:8px; padding:10px 12px; margin-top:8px; font-size:13.5px; color:var(--blue); word-break:break-word; }
+  .copy-btn{ background:var(--orange); color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:700; margin-top:10px; }
+
+  .signature{ text-align:center; color:var(--muted); font-size:12px; margin:24px 0 0; }
+
+  /* DYS */
+  .dys-fab{ position:fixed; right:16px; bottom:16px; width:52px; height:52px; border-radius:50%; background:var(--blue); color:#fff; border:none; font-size:15px; font-weight:700; box-shadow:0 4px 10px rgba(0,0,0,.25); z-index:30; cursor:pointer; }
+  .dys-fab[aria-pressed="true"]{ background:var(--green); }
+  body.dys-mode, body.dys-mode input, body.dys-mode button{ font-family:'Atkinson Hyperlegible','Calibri',sans-serif !important; }
+  body.dys-mode{ font-size:19px; line-height:1.9; letter-spacing:0.3px; word-spacing:1.5px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="flake">❄</span>
+  <span class="brand">inerWeb <span class="badge-edu">Édu</span></span>
+  <a class="home" href="index.html">↩ Accueil</a>
+</div>
+
+<div class="app">
+  <h1 class="main-title">🎯 Évaluation — les câbles électriques</h1>
+  <p class="subtitle">Note sur 20 et positionnement par rapport au référentiel.</p>
+
+  <!-- ====== ÉCRAN 1 : CHOIX FILIÈRE + IDENTITÉ ====== -->
+  <div class="screen active" id="screen-setup">
+    <div class="card">
+      <h2>1. Choisis ta filière</h2>
+      <p style="font-size:14.5px;">Les questions sont les mêmes pour tous : ce qui change, c'est la <strong>compétence du référentiel</strong> sur laquelle tu seras positionné.</p>
+      <div class="filiere-grid" id="filiereGrid"></div>
+    </div>
+    <div class="card" id="identCard" style="display:none;">
+      <h3>2. Ton identité (pour le compte-rendu prof)</h3>
+      <div class="ident-row">
+        <label for="nomEleve">Nom et prénom</label>
+        <input type="text" id="nomEleve" placeholder="Ex. Dupont Léa" autocomplete="off">
+      </div>
+      <div class="ident-row" style="margin-top:12px;">
+        <label for="classeEleve">Classe (facultatif)</label>
+        <input type="text" id="classeEleve" placeholder="Ex. 1CAP IFCA" autocomplete="off">
+      </div>
+      <div class="point-note" id="compRappel"></div>
+      <div style="text-align:center; margin-top:14px;">
+        <button class="btn" onclick="demarrer()">Commencer l'évaluation ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== ÉCRAN 2 : QUESTIONS ====== -->
+  <div class="screen" id="screen-quiz">
+    <div class="card">
+      <div class="qbar"><div class="qbar-fill" id="qbarFill"></div></div>
+      <div class="qcount" id="qcount">Question 1 / 15</div>
+      <div id="qzone"></div>
+      <div class="nav">
+        <button class="btn secondary" id="btnPrevQ" onclick="prevQ()">◀ Précédent</button>
+        <button class="btn" id="btnNextQ" onclick="nextQ()">Suivant ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== ÉCRAN 3 : RÉSULTATS ====== -->
+  <div class="screen" id="screen-result">
+    <div class="score-hero">
+      <div><span class="note" id="finalNote">0</span><span class="sur"> / 20</span></div>
+      <div class="mention" id="finalMention"></div>
+    </div>
+
+    <div class="posit-card">
+      <div class="posit-comp" id="positComp"></div>
+      <div class="posit-filiere" id="positFiliere"></div>
+      <div class="posit-scale" id="positScale"></div>
+      <div class="posit-verdict" id="positVerdict"></div>
+    </div>
+
+    <div class="card">
+      <h3>📋 Détail des réponses</h3>
+      <div id="reviewZone"></div>
+    </div>
+
+    <div class="card">
+      <h3>👨‍🏫 Compte-rendu pour le professeur</h3>
+      <p style="font-size:13.5px;color:var(--muted);">Ligne prête à recopier (note + compétence + positionnement).</p>
+      <div class="prof-box">
+        <div class="prof-line" id="profLine"></div>
+        <button class="copy-btn" onclick="copierLigne()">📋 Copier la ligne</button>
+        <span id="copyOk" style="font-size:13px;color:var(--green);margin-left:8px;"></span>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="btn secondary" onclick="recommencer()">🔄 Refaire l'évaluation</button>
+    </div>
+  </div>
+
+</div>
+
+<button class="dys-fab" id="dysFab" onclick="toggleDys()" aria-pressed="false" aria-label="Mode police adaptée DYS">Aa</button>
+
+<script>
+/* ============================================================
+   RÉFÉRENTIELS — une compétence câblage par filière
+   Codes officiels (skill referentiels-froid).
+   ============================================================ */
+const filieres = {
+  ifca: {
+    nom: "CAP IFCA",
+    label: "Installateur en Froid et Conditionnement d'Air",
+    comp: "C3.6 Câbler",
+    compDetail: "Réaliser le câblage électrique d'une installation frigorifique.",
+    echelle: "3",  // Non acquis / En cours / Acquis
+  },
+  mfer: {
+    nom: "BAC PRO MFER",
+    label: "Métiers du Froid et des Énergies Renouvelables",
+    comp: "C4 Organiser et sécuriser",
+    compDetail: "Organiser l'intervention et sécuriser, dont le choix et le raccordement des liaisons électriques.",
+    echelle: "3",
+  },
+  tne: {
+    nom: "2nde TNE",
+    label: "Transition Numérique et Énergétique",
+    comp: "CC5",
+    compDetail: "Compétence du bloc transversal Froid / Climatisation (découverte des liaisons électriques).",
+    echelle: "5",  // NE / NA / EC / A / E
+  },
+  cvc: {
+    nom: "TP Sup CVC",
+    label: "Technicien d'études CVC (niveau BE)",
+    comp: "Choix et justification des composants d'une installation",
+    compDetail: "Sélectionner et justifier les liaisons électriques dans un dossier d'études. (Libellé pédagogique — se référer au RNCP37292 pour le libellé officiel exact.)",
+    echelle: "3",
+  }
+};
+
+/* ============================================================
+   BANQUE DE QUESTIONS — 15 questions (dont 3 situations pro), barème /20
+   Chaque question : énoncé, options, index correct, points.
+   Total pondéré ramené à /20.
+   ============================================================ */
+const questions = [
+  { q:"Un conducteur métallique entouré d'un isolant, mais seul, s'appelle…",
+    opts:["un câble","un fil","une gaine"], correct:1, pts:1 },
+  { q:"Plusieurs fils réunis sous une même gaine, c'est…",
+    opts:["un fil","un câble","un conducteur nu"], correct:1, pts:1 },
+  { q:"Dans H07RN-F, le « H » de tête signifie que le câble est…",
+    opts:["français uniquement","harmonisé au niveau européen","en cuivre"], correct:1, pts:1 },
+  { q:"Le « -F » (ou « -K ») en fin de code indique une âme…",
+    opts:["souple (multibrins)","rigide (un seul brin plein)","en aluminium"], correct:0, pts:2 },
+  { q:"Le U1000 R2V est surtout destiné à…",
+    opts:["une rallonge de chantier qui bouge","une installation fixe (mur, gaine, tableau)","une pompe immergée"], correct:1, pts:2 },
+  { q:"Dans une composition « 3G1,5 », le « G » indique…",
+    opts:["la présence du fil de terre (vert/jaune)","l'absence de fil de terre","une gaine renforcée"], correct:0, pts:2 },
+  { q:"La couleur vert/jaune est réservée exclusivement…",
+    opts:["à la phase","au neutre","au fil de terre"], correct:2, pts:1 },
+  { q:"Dans un tableau électrique, pour un câblage serré plein de coudes, on préfère un fil…",
+    opts:["rigide (H07V-U)","souple (H07V-K)","toujours en aluminium"], correct:1, pts:2 },
+  { q:"Un câble ARMÉ (feuillard d'acier) protège surtout contre…",
+    opts:["les perturbations électriques","les chocs et l'écrasement","le feu"], correct:1, pts:2 },
+  { q:"Un câble BLINDÉ, pour un variateur de vitesse, sert à…",
+    opts:["résister à l'écrasement","évacuer les perturbations électriques vers la terre","augmenter la section"], correct:1, pts:2 },
+  { q:"Pour transporter le même courant, un câble aluminium par rapport au cuivre doit avoir une section…",
+    opts:["plus petite","identique","plus grande"], correct:2, pts:1 },
+  { q:"Sur un câble de sécurité incendie, « CR1 » signifie que…",
+    opts:["le câble ne brûle jamais","le circuit continue de fonctionner pendant l'incendie","le câble est en aluminium"], correct:1, pts:1 },
+  /* --- situations professionnelles --- */
+  { q:"Situation : un moteur est alimenté par un variateur de vitesse situé à plusieurs mètres. Quel type de câble privilégier ?",
+    opts:["un câble armé, pour résister aux chocs","un câble blindé, avec le blindage correctement raccordé à la terre","n'importe quel câble souple de section suffisante"], correct:1, pts:2 },
+  { q:"Situation : une alimentation doit passer en enterré dans une cour. Peut-on utiliser n'importe quel câble ?",
+    opts:["oui, tout câble isolé convient si on l'enterre assez profond","non : il faut un câble adapté (ex. armé selon le cas) ET respecter les règles de pose (profondeur, lit de pose, grillage avertisseur, protection aux remontées)","oui, à condition qu'il soit en aluminium"], correct:1, pts:2 },
+  { q:"Situation : dans une armoire, un fil souple multibrins est raccordé sur une borne à vis. Quel point faut-il vérifier ?",
+    opts:["rien, on serre directement les brins dans la borne","s'il faut un embout (exigé par la borne ou le constructeur), pour éviter brins coupés, mauvais serrage et échauffement","qu'il soit remplacé par un fil rigide dans tous les cas"], correct:1, pts:2 }
+];
+const TOTAL_PTS = questions.reduce((s,q)=>s+q.pts,0); // note toujours ramenée à /20
+
+/* ============================================================
+   ÉTAT
+   ============================================================ */
+let currentFiliere = null;
+let answers = new Array(questions.length).fill(null);
+let qIndex = 0;
+
+/* ---- setup filières ---- */
+function buildFilieres(){
+  const grid = document.getElementById('filiereGrid');
+  grid.innerHTML = '';
+  Object.keys(filieres).forEach(key=>{
+    const f = filieres[key];
+    const b = document.createElement('button');
+    b.className = 'filiere-btn';
+    b.onclick = ()=>choisirFiliere(key, b);
+    b.innerHTML = '<div class="fname">'+f.nom+'</div><div class="flabel">'+f.label+'</div><div class="fcomp">↳ '+f.comp+'</div>';
+    grid.appendChild(b);
+  });
+}
+buildFilieres();
+
+function choisirFiliere(key, btn){
+  currentFiliere = key;
+  document.querySelectorAll('.filiere-btn').forEach(b=>b.style.borderColor='');
+  btn.style.borderColor = 'var(--orange)';
+  const f = filieres[key];
+  document.getElementById('identCard').style.display = 'block';
+  document.getElementById('compRappel').innerHTML = '<strong>Compétence évaluée :</strong> '+f.comp+' — '+f.compDetail;
+  document.getElementById('identCard').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function demarrer(){
+  if(!currentFiliere){ alert("Choisis d'abord une filière."); return; }
+  qIndex = 0;
+  answers = new Array(questions.length).fill(null);
+  showScreen('screen-quiz');
+  renderQ();
+}
+
+/* ---- questions ---- */
+function renderQ(){
+  const q = questions[qIndex];
+  document.getElementById('qcount').textContent = 'Question '+(qIndex+1)+' / '+questions.length;
+  document.getElementById('qbarFill').style.width = ((qIndex)/questions.length*100)+'%';
+  let html = '<div class="q-text">'+(qIndex+1)+'. '+q.q+'</div>';
+  html += '<div>';
+  q.opts.forEach((opt, i)=>{
+    const sel = (answers[qIndex]===i) ? ' selected' : '';
+    html += '<button class="qopt'+sel+'" onclick="choisirRep('+i+')">'+opt+'</button>';
+  });
+  html += '</div>';
+  document.getElementById('qzone').innerHTML = html;
+  document.getElementById('btnPrevQ').style.visibility = (qIndex===0)?'hidden':'visible';
+  document.getElementById('btnNextQ').textContent = (qIndex===questions.length-1) ? 'Voir mon résultat ✓' : 'Suivant ▶';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function choisirRep(i){
+  answers[qIndex] = i;
+  renderQ();
+}
+function prevQ(){ if(qIndex>0){ qIndex--; renderQ(); } }
+function nextQ(){
+  if(answers[qIndex]===null){ alert("Choisis une réponse avant de continuer."); return; }
+  if(qIndex < questions.length-1){ qIndex++; renderQ(); }
+  else { terminer(); }
+}
+
+/* ---- calcul note + positionnement ---- */
+function terminer(){
+  let pts = 0;
+  questions.forEach((q,i)=>{ if(answers[i]===q.correct) pts += q.pts; });
+  const note20 = Math.round(pts / TOTAL_PTS * 20 * 10) / 10; // arrondi 0,1
+  const pct = pts / TOTAL_PTS * 100;
+
+  // mention
+  let mention = "";
+  if(pct >= 85) mention = "Excellent — maîtrise solide";
+  else if(pct >= 65) mention = "Bien — compétence en bonne voie";
+  else if(pct >= 45) mention = "Des bases, à consolider";
+  else mention = "Notion à revoir, ne lâche pas";
+
+  document.getElementById('finalNote').textContent = note20.toString().replace('.', ',');
+  document.getElementById('finalMention').textContent = mention;
+
+  afficherPositionnement(pct);
+  afficherReview();
+  construireLigneProf(note20, pct);
+  showScreen('screen-result');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* positionnement selon l'échelle de la filière */
+function afficherPositionnement(pct){
+  const f = filieres[currentFiliere];
+  document.getElementById('positComp').textContent = '↳ ' + f.comp;
+  document.getElementById('positFiliere').textContent = f.nom + ' — ' + f.label;
+
+  const scaleEl = document.getElementById('positScale');
+  const verdictEl = document.getElementById('positVerdict');
+  scaleEl.innerHTML = '';
+
+  let steps, activeIdx, cls, verdict;
+
+  if(f.echelle === "5"){
+    // 2nde TNE : NE / NA / EC / A / E
+    steps = [
+      {code:'NE', lib:'Non évalué'},
+      {code:'NA', lib:'Non atteint'},
+      {code:'EC', lib:'En cours'},
+      {code:'A',  lib:'Atteint'},
+      {code:'E',  lib:'Expert'}
+    ];
+    if(pct >= 90){ activeIdx=4; cls='a'; verdict="Positionnement : E — Expert. L'élève dépasse les attendus de découverte sur les liaisons électriques."; }
+    else if(pct >= 65){ activeIdx=3; cls='a'; verdict="Positionnement : A — Atteint. Les attendus de découverte sont maîtrisés."; }
+    else if(pct >= 40){ activeIdx=2; cls='ec'; verdict="Positionnement : EC — En cours d'acquisition. Les bases sont là, à consolider."; }
+    else { activeIdx=1; cls='na'; verdict="Positionnement : NA — Non atteint pour l'instant. Reprendre les séances 1 à 3."; }
+  } else {
+    // CAP / Bac Pro / TP : Non acquis / En cours / Acquis
+    steps = [
+      {code:'Non acquis', lib:''},
+      {code:'En cours', lib:''},
+      {code:'Acquis', lib:''}
+    ];
+    if(pct >= 65){ activeIdx=2; cls='a'; verdict="Positionnement : ACQUIS. La compétence "+f.comp+" est maîtrisée sur ce point."; }
+    else if(pct >= 40){ activeIdx=1; cls='ec'; verdict="Positionnement : EN COURS. Des acquis réels, encore à stabiliser sur "+f.comp+"."; }
+    else { activeIdx=0; cls='na'; verdict="Positionnement : NON ACQUIS pour l'instant sur "+f.comp+". Reprendre les séances."; }
+  }
+
+  steps.forEach((s, i)=>{
+    const on = (i===activeIdx) ? ' on '+cls : '';
+    const div = document.createElement('div');
+    div.className = 'posit-step'+on;
+    div.innerHTML = '<div>'+s.code+'</div>'+(s.lib?'<div style="font-size:10px;font-weight:400;">'+s.lib+'</div>':'');
+    scaleEl.appendChild(div);
+  });
+  verdictEl.className = 'posit-verdict '+cls;
+  verdictEl.textContent = verdict;
+}
+
+function afficherReview(){
+  const zone = document.getElementById('reviewZone');
+  zone.innerHTML = '';
+  questions.forEach((q,i)=>{
+    const ok = (answers[i]===q.correct);
+    const div = document.createElement('div');
+    div.className = 'review-item ' + (ok?'ok':'ko');
+    let html = '<div class="rq">'+(ok?'✓':'✗')+' Q'+(i+1)+' — '+q.q+'</div>';
+    if(!ok){
+      const donnee = (answers[i]!==null) ? q.opts[answers[i]] : '(sans réponse)';
+      html += '<div class="ra">Ta réponse : '+donnee+'<br>Bonne réponse : <strong>'+q.opts[q.correct]+'</strong></div>';
+    }
+    div.innerHTML = html;
+    zone.appendChild(div);
+  });
+}
+
+function construireLigneProf(note20, pct){
+  const f = filieres[currentFiliere];
+  const nom = (document.getElementById('nomEleve').value.trim()) || '[Nom élève]';
+  const classe = document.getElementById('classeEleve').value.trim();
+  let posit;
+  if(f.echelle === "5"){
+    posit = pct>=90?'E (Expert)':pct>=65?'A (Atteint)':pct>=40?'EC (En cours)':'NA (Non atteint)';
+  } else {
+    posit = pct>=65?'Acquis':pct>=40?'En cours':'Non acquis';
+  }
+  const noteTxt = note20.toString().replace('.', ',');
+  let ligne = nom;
+  if(classe) ligne += ' ('+classe+')';
+  ligne += ' — ' + f.nom + ' — Évaluation câbles électriques — Note : ' + noteTxt + '/20 — ' + f.comp + ' : ' + posit;
+  document.getElementById('profLine').textContent = ligne;
+}
+
+function copierLigne(){
+  const txt = document.getElementById('profLine').textContent;
+  navigator.clipboard.writeText(txt).then(()=>{
+    document.getElementById('copyOk').textContent = '✓ copié';
+    setTimeout(()=>{ document.getElementById('copyOk').textContent=''; }, 2000);
+  }).catch(()=>{
+    document.getElementById('copyOk').textContent = 'copie manuelle';
+  });
+}
+
+function recommencer(){
+  currentFiliere = null;
+  answers = new Array(questions.length).fill(null);
+  qIndex = 0;
+  document.getElementById('identCard').style.display = 'none';
+  document.querySelectorAll('.filiere-btn').forEach(b=>b.style.borderColor='');
+  document.getElementById('nomEleve').value = '';
+  document.getElementById('classeEleve').value = '';
+  showScreen('screen-setup');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function toggleDys(){
+  document.body.classList.toggle('dys-mode');
+  document.getElementById('dysFab').setAttribute('aria-pressed', document.body.classList.contains('dys-mode'));
+}
+</script>
+<!-- La marque et la mention de droits viennent du site principal :
+     une source pour tous les satellites, zéro divergence (20/08/2026). -->
+<script src="../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TD Triphasé & Couplage Moteur — inerWeb Édu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 8px;
+            color: #0f172a;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 16px;
+            max-width: 520px;
+            width: 100%;
+            margin: 0 auto 16px;
+            box-shadow: 0 4px 20px rgba(15,23,42,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            gap: 8px;
+        }
+        .header-left { display: flex; flex-direction: column; gap: 2px; }
+        .header-title-row { display: flex; align-items: center; gap: 8px; }
+        h1#headerTitle { font-size: 0.95rem; color: #0f172a; font-weight: 700; }
+        .section { font-size: 0.75rem; color: #64748b; }
+        .logo-marque svg { height: 34px; width: auto; display: block; }
+        .score-badge {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: none;
+        }
+        .progress { display: flex; gap: 3px; margin-bottom: 12px; }
+        .progress div {
+            height: 5px;
+            flex: 1;
+            background: #e2e8f0;
+            border-radius: 999px;
+            transition: background 0.2s;
+        }
+        .progress div.done { background: #22c55e; }
+        .progress div.active { background: #3b82f6; }
+        .step { display: none; animation: fadeIn 0.25s ease-out; }
+        .step.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 { font-size: 1.05rem; margin-bottom: 8px; color: #1d4ed8; text-align: center; }
+        h2.green { color: #16a34a; }
+        h2.amber { color: #d97706; }
+        h2.purple { color: #7c3aed; }
+        p { font-size: 0.9rem; color: #475569; line-height: 1.55; margin-bottom: 6px; }
+        .emoji { font-size: 2.3rem; text-align: center; display: block; margin-bottom: 6px; }
+        .center { text-align: center; }
+        ul { margin: 6px 0 6px 18px; }
+        li { font-size: 0.9rem; color: #475569; margin-bottom: 4px; }
+        .card {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        .card.dark { background: #0f172a; border-color: #1f2937; color: #e5e7eb; }
+        .card.dark p, .card.dark ul, .card.dark li { color: #e5e7eb; }
+        .card.success { background: #ecfdf5; border-color: #86efac; }
+        .card.warning { background: #fffbeb; border-color: #facc15; }
+        .card.info { background: #eff6ff; border-color: #bfdbfe; }
+        .card.error { background: #fef2f2; border-color: #fca5a5; }
+        .level-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        .level-badge.eval { background: #fee2e2; color: #b91c1c; }
+        .level-badge.warning { background: #fef3c7; color: #92400e; }
+        .input-group { margin: 10px 0; }
+        .input-group label { display: block; font-size: 0.8rem; color: #64748b; margin-bottom: 4px; font-weight: 500; }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: #3b82f6; }
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 8px;
+            padding: 11px 14px;
+            border-radius: 10px;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .btn:active { transform: scale(0.97); }
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(37,99,235,0.4);
+        }
+        .btn-secondary { background: #f1f5f9; color: #0f172a; border: 1px solid #e2e8f0; }
+        .btn-warning { background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; }
+        .btn-success { background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff; }
+        .btn-small { padding: 8px 12px; font-size: 0.85rem; width: auto; margin: 4px; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .btn-quiz {
+            width: 100%;
+            text-align: left;
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 9px;
+            padding: 9px 10px;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .btn-quiz:hover { border-color: #60a5fa; background: #eff6ff; }
+        .btn-quiz.correct { border-color: #22c55e; background: #ecfdf5; }
+        .btn-quiz.wrong { border-color: #ef4444; background: #fef2f2; }
+        .quiz-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748b; margin-bottom: 6px; }
+        .svg-box {
+            background: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            padding: 8px;
+            margin: 6px 0 8px;
+        }
+        .svg-box svg { width: 100%; height: auto; display: block; }
+        .formula {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #f59e0b;
+            text-align: center;
+            font-weight: 700;
+            color: #92400e;
+            font-size: 1rem;
+        }
+        .formula small { display: block; margin-top: 3px; font-size: 0.75rem; font-weight: 400; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 6px 4px; text-align: left; }
+        th { background: #f9fafb; font-weight: 600; }
+        .tag { display: inline-block; font-size: 0.7rem; padding: 2px 6px; border-radius: 999px; background: #e5e7eb; color: #111827; }
+        .anim-controls { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 8px 0; }
+        .anim-controls button {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            background: #e2e8f0;
+            color: #475569;
+            font-size: 0.85rem;
+        }
+        .anim-controls button:hover { background: #cbd5e1; }
+        .anim-controls button.active { background: #3b82f6; color: #fff; }
+        .anim-controls button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .legende { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 6px 0; padding: 6px; background: #f8fafc; border-radius: 8px; font-size: 0.75rem; color: #64748b; }
+        .legende-item { display: flex; align-items: center; gap: 4px; }
+        .step-explanation {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 8px 0;
+            min-height: 60px;
+        }
+        .step-explanation h4 { font-size: 0.9rem; color: #1d4ed8; margin-bottom: 4px; }
+        .step-explanation p { font-size: 0.85rem; margin: 0; }
+        
+        /* Voltmètre */
+        .voltmetre {
+            background: linear-gradient(180deg, #1f2937, #111827);
+            border: 4px solid #374151;
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-align: center;
+            margin: 10px auto;
+            width: fit-content;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .voltmetre-titre { color: #9ca3af; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .voltmetre-ecran {
+            background: #000;
+            border: 3px solid #4b5563;
+            border-radius: 6px;
+            padding: 10px 16px;
+        }
+        .voltmetre-valeur {
+            font-family: 'Courier New', monospace;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #22c55e;
+            text-shadow: 0 0 12px #22c55e;
+        }
+        .voltmetre-unite { font-family: 'Courier New', monospace; font-size: 1rem; color: #22c55e; margin-left: 4px; }
+        
+        /* Recap tensions */
+        .recap-tensions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .recap-item {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+        .recap-item.simple { border: 2px solid #7c3aed; }
+        .recap-item.composee { border: 2px solid #d97706; }
+        .recap-item .label { font-size: 0.7rem; color: #64748b; margin-bottom: 4px; }
+        .recap-item .valeur { font-size: 1.2rem; font-weight: 700; }
+        .recap-item.simple .valeur { color: #7c3aed; }
+        .recap-item.composee .valeur { color: #d97706; }
+        
+        /* Plan déroulé */
+        .plan-deroulement {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin-bottom: 12px;
+            font-size: 0.75rem;
+        }
+        .plan-deroulement .plan-titre {
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+        .plan-etapes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .plan-etape {
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            color: #64748b;
+            font-size: 0.7rem;
+        }
+        .plan-etape.active {
+            background: #3b82f6;
+            color: white;
+            font-weight: 600;
+        }
+        .plan-etape.done {
+            background: #22c55e;
+            color: white;
+        }
+        
+        /* Mini QCM */
+        .mini-qcm {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 12px 0;
+        }
+        .mini-qcm h4 {
+            color: #92400e;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .mini-qcm-question {
+            font-size: 0.9rem;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .mini-qcm-choices {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .mini-qcm-choice {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .mini-qcm-choice:hover { border-color: #f59e0b; }
+        .mini-qcm-choice.selected { border-color: #3b82f6; background: #eff6ff; }
+        .mini-qcm-choice.correct { border-color: #22c55e; background: #dcfce7; }
+        .mini-qcm-choice.wrong { border-color: #ef4444; background: #fee2e2; }
+        .mini-qcm-choice.disabled { pointer-events: none; opacity: 0.8; }
+        .mini-qcm-feedback {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: none;
+        }
+        .mini-qcm-feedback.show { display: block; }
+        .mini-qcm-feedback.ok { background: #dcfce7; color: #166534; }
+        .mini-qcm-feedback.ko { background: #fee2e2; color: #991b1b; }
+        
+        /* Définition encadrée */
+        .definition {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 10px 12px;
+            margin: 8px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition strong { color: #1d4ed8; }
+        
+        /* ========================================
+           STYLES POUR LES EXERCICES INTERACTIFS
+           ======================================== */
+        
+        .exercice-interactif {
+            background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+            border: 2px solid #0ea5e9;
+            border-radius: 12px;
+            padding: 14px;
+            margin: 14px 0;
+        }
+        .exercice-interactif h4 {
+            color: #0369a1;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Drag & Drop amélioré - zones plus grandes */
+        .exo-dropzone-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        .exo-dropzone {
+            min-width: 100px;
+            min-height: 70px;
+            border: 3px dashed #94a3b8;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            background: #f8fafc;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .exo-dropzone:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+        .exo-dropzone.dragover {
+            border-color: #3b82f6;
+            background: #dbeafe;
+            border-style: solid;
+            transform: scale(1.05);
+        }
+        .exo-dropzone.correct {
+            border-color: #22c55e;
+            background: #dcfce7;
+            border-style: solid;
+        }
+        .exo-dropzone.wrong {
+            border-color: #ef4444;
+            background: #fee2e2;
+            border-style: solid;
+        }
+        .exo-dropzone-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .exo-dropzone .drop-content {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 0.9rem;
+            min-height: 24px;
+        }
+        
+        .exo-draggable-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 12px 0;
+            padding: 12px;
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        .exo-draggable {
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #1e293b;
+            border-radius: 8px;
+            cursor: grab;
+            font-weight: 700;
+            font-size: 0.9rem;
+            user-select: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .exo-draggable:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .exo-draggable:active {
+            cursor: grabbing;
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+        .exo-draggable.placed {
+            opacity: 0.4;
+            pointer-events: none;
+            transform: scale(0.95);
+        }
+        
+        /* Bouton vérifier */
+        .btn-verifier {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.95rem;
+            margin-top: 12px;
+            width: 100%;
+            transition: transform 0.1s;
+        }
+        .btn-verifier:hover {
+            filter: brightness(1.1);
+        }
+        .btn-verifier:active {
+            transform: scale(0.98);
+        }
+        
+        /* Feedback exercice */
+        .exo-feedback {
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: none;
+        }
+        .exo-feedback.show { display: block; }
+        .exo-feedback.success {
+            background: #dcfce7;
+            color: #166534;
+            border: 2px solid #86efac;
+        }
+        .exo-feedback.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #fca5a5;
+        }
+        
+        /* Print */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .container { box-shadow: none; border: 1px solid #ccc; max-width: 100%; }
+        }
+        
+        /* ========== AJOUTS CLAUDE : Modal d'aide + Bouton ? ========== */
+        .help-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(59,130,246,0.4);
+            transition: transform 0.15s;
+            z-index: 10;
+        }
+        .help-btn:hover { transform: scale(1.1); }
+        .help-btn:active { transform: scale(0.95); }
+        
+        .help-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            animation: fadeIn 0.2s;
+        }
+        .help-modal.show { display: flex; align-items: center; justify-content: center; }
+        
+        .help-content {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 460px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            animation: slideUp 0.25s;
+            position: relative;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .help-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s;
+        }
+        .help-close:hover { background: #e2e8f0; }
+        .help-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1d4ed8;
+            margin-bottom: 12px;
+            padding-right: 30px;
+        }
+        .help-text {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .help-example {
+            background: #eff6ff;
+            border-left: 3px solid #3b82f6;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #1e40af;
+        }
+        /* ========== FIN AJOUTS CLAUDE ========== */
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-left">
+            <div class="header-title-row">
+                <div class="logo-marque">
+                    <svg viewBox="0 0 180 50" aria-label="inerWeb Édu">
+                        <rect x="0" y="8" width="180" height="34" rx="10" fill="#0f172a"/>
+                        <text x="14" y="30" fill="#38bdf8" font-size="18" font-family="Segoe UI, system-ui" font-weight="700">inerWeb Édu</text>
+                        <text x="95" y="30" fill="#e5e7eb" font-size="10" font-family="Segoe UI, system-ui">inerweb.fr</text>
+                    </svg>
+                </div>
+                <h1 id="headerTitle">TD Triphasé & Couplage</h1>
+            </div>
+            <div class="section" id="headerSection">Introduction</div>
+        </div>
+        <div class="score-badge" id="scoreBadge"><span id="scoreValue">0</span>/20</div>
+    </div>
+    <div class="progress" id="progressBar"></div>
+    <div class="plan-deroulement no-print" id="planDeroulement">
+        <div class="plan-titre">📋 Plan du cours :</div>
+        <div class="plan-etapes" id="planEtapes"></div>
+    </div>
+    <div id="stepsContainer"></div>
+</div>
+
+<script>
+let currentStep = 0;
+let totalSteps = 0;
+let startTime = null;
+let studentName = "";
+let studentClasse = "";
+let score = 0;
+let answers = [];
+let evalIndex = 0;
+
+// Tensions
+const V_SIMPLE = 230;
+const V_COMPOSEE = 400;
+
+// Animation génératrice
+let animRunning = false;
+let animId = null;
+let rotorAngle = 0;
+let nbPhases = 1;
+
+// Animation vectorielle
+let vecStep = 0;
+
+// Animation tensions
+let tensionStep = 0;
+
+// Compétences par classe
+const competenceProfiles = {
+    "CAP IFCA": [
+        { code: "C1.2", label: "Comprendre le réseau triphasé et les tensions", sections: ["triphasé"] },
+        { code: "C2.4", label: "Lire une plaque moteur et choisir le couplage", sections: ["couplage", "plaque"] },
+        { code: "C3.1", label: "Câbler correctement un moteur triphasé", sections: ["plaque"] }
+    ],
+    "2nde TNE": [
+        { code: "COMP1", label: "Interpréter les grandeurs électriques (U, V, √3)", sections: ["triphasé"] },
+        { code: "COMP2", label: "Analyser une plaque signalétique", sections: ["plaque"] },
+        { code: "COMP3", label: "Choisir le couplage adapté au réseau", sections: ["couplage"] }
+    ],
+    "Bac Pro MFER": [
+        { code: "C4.2", label: "Adapter le couplage moteur à l'installation", sections: ["couplage", "plaque"] },
+        { code: "C3.3", label: "Vérifier la cohérence des protections", sections: ["protection"] },
+        { code: "C2.1", label: "Argumenter un choix de couplage et protection", sections: ["triphasé", "couplage", "protection"] }
+    ]
+};
+
+// Questions évaluation (20)
+const evalQuestions = [
+    { q: "Combien de phases comporte un réseau triphasé ?", choices: ["2", "3", "4", "5"], correct: 1, section: "triphasé" },
+    { q: "En France, la tension simple standard est :", choices: ["120 V", "230 V", "400 V", "690 V"], correct: 1, section: "triphasé" },
+    { q: "La tension composée standard en France est :", choices: ["208 V", "230 V", "400 V", "690 V"], correct: 2, section: "triphasé" },
+    { q: "Le rapport U / V vaut :", choices: ["√2 ≈ 1,41", "√3 ≈ 1,73", "2", "3"], correct: 1, section: "triphasé" },
+    { q: "La somme vectorielle des 3 tensions vaut :", choices: ["V", "U", "0", "3×V"], correct: 2, section: "triphasé" },
+    { q: "Sur un moteur 230/400 V, 230 V correspond au couplage :", choices: ["Étoile (Y)", "Triangle (Δ)", "Série", "Monophasé"], correct: 1, section: "couplage" },
+    { q: "Moteur 230/400 V sur réseau 400 V : couplage ?", choices: ["Triangle (Δ)", "Étoile (Y)", "Mixte", "Impossible"], correct: 1, section: "couplage" },
+    { q: "Moteur 230/400 V sur réseau 230 V triphasé : couplage ?", choices: ["Triangle (Δ)", "Étoile (Y)", "Série", "Impossible"], correct: 0, section: "couplage" },
+    { q: "Moteur 400/690 V sur réseau 400 V : couplage ?", choices: ["Triangle (Δ)", "Étoile (Y)", "Monophasé", "Impossible"], correct: 0, section: "couplage" },
+    { q: "Le symbole du couplage étoile est :", choices: ["Y", "Δ", "★", "T"], correct: 0, section: "couplage" },
+    { q: "Sur une plaque CEI, la rangée du haut est :", choices: ["U1 V1 W1", "U2 V2 W2", "L1 L2 L3", "X Y Z"], correct: 0, section: "plaque" },
+    { q: "La rangée du bas est généralement :", choices: ["U2 V2 W2", "W2 U2 V2", "L1 L2 L3", "N L1 L2"], correct: 1, section: "plaque" },
+    { q: "En couplage Δ, combien de barrettes verticales ?", choices: ["1", "2", "3", "6"], correct: 2, section: "plaque" },
+    { q: "En couplage Y, les barrettes sont :", choices: ["Verticales", "Horizontales en bas", "En diagonale", "Absentes"], correct: 1, section: "plaque" },
+    { q: "La norme CEI 60034-8 concerne :", choices: ["Les couleurs de fils", "Les désignations des bornes", "Les chutes de tension", "Les niveaux sonores"], correct: 1, section: "plaque" },
+    { q: "Le disjoncteur magnéto-thermique protège contre :", choices: ["La surtension", "Surintensités et courts-circuits", "La foudre", "Les harmoniques"], correct: 1, section: "protection" },
+    { q: "En monophasé, on alimente via :", choices: ["Deux phases", "Phase et neutre", "Deux neutres", "Phase et terre"], correct: 1, section: "protection" },
+    { q: "Le terme 'biphasé' désigne souvent :", choices: ["Deux phases d'un triphasé", "Phase + neutre", "Deux neutres", "Deux terres"], correct: 0, section: "protection" },
+    { q: "Aux États-Unis, on trouve :", choices: ["120/208 V", "230/400 V", "400/690 V", "90/150 V"], correct: 0, section: "triphasé" },
+    { q: "Quand on modifie un couplage, il faut :", choices: ["Changer le moteur", "Revoir le réglage du DJ", "Changer la tension réseau", "Ajouter un neutre"], correct: 1, section: "protection" }
+];
+
+// Étapes animation tensions
+const tensionSteps = [
+    { titre: "🔌 Réseau triphasé EDF", texte: `<p>Voici les 4 conducteurs d'un réseau triphasé :</p><p>• <strong style="color:#ef4444;">L1</strong>, <strong style="color:#f97316;">L2</strong>, <strong style="color:#8b5cf6;">L3</strong> = les 3 phases</p><p>• <strong style="color:#3b82f6;">N</strong> = le neutre</p><p style="margin-top:8px;">👉 Clique sur <strong>Suivant</strong> pour mesurer les tensions !</p>`, mesure: null, tension: "---" },
+    { titre: "📏 Mesure n°1 : entre N et L1", texte: `<p>Je branche le voltmètre entre <strong style="color:#3b82f6;">N</strong> et <strong style="color:#ef4444;">L1</strong></p><p style="margin-top:8px;">➡️ Le voltmètre affiche : <strong style="color:#7c3aed;">${V_SIMPLE} V</strong></p>`, mesure: { de: "N", vers: "L1", x: 100 }, tension: V_SIMPLE },
+    { titre: "📏 Mesure n°2 : entre N et L2", texte: `<p>Je branche le voltmètre entre <strong style="color:#3b82f6;">N</strong> et <strong style="color:#f97316;">L2</strong></p><p style="margin-top:8px;">➡️ Le voltmètre affiche : <strong style="color:#7c3aed;">${V_SIMPLE} V</strong></p><p style="font-size:0.8rem;color:#64748b;margin-top:4px;">💡 Pareil que la première mesure !</p>`, mesure: { de: "N", vers: "L2", x: 140 }, tension: V_SIMPLE },
+    { titre: "📏 Mesure n°3 : entre N et L3", texte: `<p>Je branche le voltmètre entre <strong style="color:#3b82f6;">N</strong> et <strong style="color:#8b5cf6;">L3</strong></p><p style="margin-top:8px;">➡️ Le voltmètre affiche : <strong style="color:#7c3aed;">${V_SIMPLE} V</strong></p><p style="font-size:0.8rem;color:#64748b;margin-top:4px;">💡 Encore ${V_SIMPLE}V ! Les 3 sont identiques.</p>`, mesure: { de: "N", vers: "L3", x: 180 }, tension: V_SIMPLE },
+    { titre: "✅ Tension SIMPLE = ${V_SIMPLE}V", texte: `<p><strong style="color:#7c3aed;font-size:1.05rem;">TENSION SIMPLE</strong></p><p style="margin:6px 0;">Quand on mesure entre une <strong>phase</strong> et le <strong>neutre</strong> :</p><p style="color:#7c3aed;font-weight:700;">➡️ On trouve toujours <strong>${V_SIMPLE} V</strong></p><p style="font-size:0.8rem;margin-top:6px;">C'est la tension de nos prises à la maison ! 🏠</p>`, mesure: null, tension: V_SIMPLE, type: "simple" },
+    { titre: "📏 Mesure n°4 : entre L1 et L2", texte: `<p>Je branche le voltmètre entre <strong style="color:#ef4444;">L1</strong> et <strong style="color:#f97316;">L2</strong></p><p>Cette fois, c'est entre <strong>deux phases</strong> !</p><p style="margin-top:8px;">➡️ Le voltmètre affiche : <strong style="color:#d97706;">${V_COMPOSEE} V</strong></p><p style="font-size:0.8rem;color:#64748b;margin-top:4px;">😮 C'est plus que ${V_SIMPLE}V !</p>`, mesure: { de: "L1", vers: "L2", x: 220 }, tension: V_COMPOSEE },
+    { titre: "📏 Mesure n°5 : entre L2 et L3", texte: `<p>Je branche le voltmètre entre <strong style="color:#f97316;">L2</strong> et <strong style="color:#8b5cf6;">L3</strong></p><p style="margin-top:8px;">➡️ Le voltmètre affiche : <strong style="color:#d97706;">${V_COMPOSEE} V</strong></p>`, mesure: { de: "L2", vers: "L3", x: 260 }, tension: V_COMPOSEE },
+    { titre: "📏 Mesure n°6 : entre L1 et L3", texte: `<p>Je branche le voltmètre entre <strong style="color:#ef4444;">L1</strong> et <strong style="color:#8b5cf6;">L3</strong></p><p style="margin-top:8px;">➡️ Le voltmètre affiche : <strong style="color:#d97706;">${V_COMPOSEE} V</strong></p><p style="font-size:0.8rem;color:#64748b;margin-top:4px;">💡 Toutes les mesures phase-phase donnent ${V_COMPOSEE}V !</p>`, mesure: { de: "L1", vers: "L3", x: 300 }, tension: V_COMPOSEE },
+    { titre: "✅ Tension COMPOSÉE = ${V_COMPOSEE}V", texte: `<p><strong style="color:#d97706;font-size:1.05rem;">TENSION COMPOSÉE</strong></p><p style="margin:6px 0;">Quand on mesure entre <strong>deux phases</strong> :</p><p style="color:#d97706;font-weight:700;">➡️ On trouve toujours <strong>${V_COMPOSEE} V</strong></p><p style="font-size:0.8rem;margin-top:6px;">C'est la tension pour les moteurs triphasés ! ⚡</p>`, mesure: null, tension: V_COMPOSEE, type: "composee", showRecap: true, showFormule: true }
+];
+
+function generateSteps() {
+    const c = document.getElementById("stepsContainer");
+    let html = "";
+
+    // STEP 0 : INTRO
+    html += `
+    <div class="step active" data-step="0">
+        <span class="emoji">⚡🔧</span>
+        <h2>TD Triphasé & Couplage Moteur</h2>
+        <div class="card info">
+            <p><strong>Objectif :</strong> comprendre le triphasé, les couplages Δ / Y, la plaque à bornes.</p>
+            <ul>
+                <li>Du monophasé au triphasé</li>
+                <li>Tensions simple et composée</li>
+                <li>Couplages Triangle (Δ) et Étoile (Y)</li>
+                <li>Plaque à bornes et barrettes</li>
+                <li>Évaluation : 20 questions</li>
+            </ul>
+        </div>
+        <div class="input-group">
+            <label>Ton nom et prénom :</label>
+            <input id="studentNameInput" type="text" placeholder="Ex : Martin DUPONT">
+        </div>
+        <div class="input-group">
+            <label>Ta classe :</label>
+            <select id="classeSelect">
+                <option value="">-- Choisir --</option>
+                <option value="CAP IFCA">CAP IFCA</option>
+                <option value="2nde TNE">2nde TNE</option>
+                <option value="Bac Pro MFER">Bac Pro MFER</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" onclick="startTD()">Commencer le TD</button>
+    </div>
+    `;
+
+    // STEP 1 : GÉNÉRATEUR ANIMÉ PROGRESSIF
+    html += `
+    <div class="step" data-step="1">
+        <span class="level-badge">Partie 1 – Du monophasé au triphasé</span>
+        <h2>Origine du courant alternatif</h2>
+        <div class="card">
+            <p>Le courant alternatif est produit par un <strong>alternateur</strong> : un aimant (rotor) tourne devant des bobines.</p>
+        </div>
+        <div class="svg-box">
+            <svg viewBox="0 0 420 180" id="svgGen">
+                <circle cx="90" cy="90" r="65" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+                <g id="bobine1">
+                    <circle cx="90" cy="30" r="12" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+                    <text x="90" y="16" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="700">L1</text>
+                </g>
+                <g id="bobine2" style="opacity:0">
+                    <g transform="rotate(120 90 90)">
+                        <circle cx="90" cy="30" r="12" fill="#ffedd5" stroke="#f97316" stroke-width="2"/>
+                        <text x="90" y="16" text-anchor="middle" font-size="9" fill="#f97316" font-weight="700">L2</text>
+                    </g>
+                </g>
+                <g id="bobine3" style="opacity:0">
+                    <g transform="rotate(240 90 90)">
+                        <circle cx="90" cy="30" r="12" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+                        <text x="90" y="16" text-anchor="middle" font-size="9" fill="#8b5cf6" font-weight="700">L3</text>
+                    </g>
+                </g>
+                <g id="rotor">
+                    <ellipse cx="90" cy="90" rx="28" ry="10" fill="#facc15" stroke="#d97706" stroke-width="2"/>
+                    <text x="65" y="94" font-size="8" fill="#dc2626" font-weight="700">S</text>
+                    <text x="108" y="94" font-size="8" fill="#1d4ed8" font-weight="700">N</text>
+                </g>
+                <circle cx="90" cy="90" r="5" fill="#6b7280"/>
+                <path d="M165 90 L185 90" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+                <defs><marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/></marker></defs>
+                <g transform="translate(195,0)">
+                    <line x1="10" y1="90" x2="210" y2="90" stroke="#e2e8f0" stroke-width="1"/>
+                    <line x1="10" y1="30" x2="10" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+                    <text x="215" y="95" font-size="9" fill="#94a3b8">t</text>
+                    <path id="sin1" d="" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+                    <path id="sin2" d="" fill="none" stroke="#f97316" stroke-width="2.5"/>
+                    <path id="sin3" d="" fill="none" stroke="#8b5cf6" stroke-width="2.5"/>
+                </g>
+            </svg>
+        </div>
+        <div class="anim-controls">
+            <button onclick="toggleAnim()" id="btnAnim">▶ Démarrer</button>
+            <button onclick="resetAnim()">⟲ Reset</button>
+        </div>
+        <div class="anim-controls">
+            <button onclick="setPhases(1)" id="btnP1" class="active">1 bobine (mono)</button>
+            <button onclick="setPhases(2)" id="btnP2">2 bobines</button>
+            <button onclick="setPhases(3)" id="btnP3">3 bobines (tri)</button>
+        </div>
+        <div id="phaseExplanation" class="step-explanation">
+            <h4>🔌 Monophasé (1 bobine)</h4>
+            <p>Une seule bobine = une seule sinusoïde. C'est le courant qu'on utilise à la maison.</p>
+        </div>
+        <button class="btn btn-primary" onclick="stopAnim();nextStep();">Mesurer les tensions →</button>
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(0)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 2 : TENSIONS - NOUVELLE VERSION PÉDAGOGIQUE
+    html += `
+    <div class="step" data-step="2" style="position:relative;">
+        <button class="help-btn no-print" onclick="showHelp('tensions')" title="Aide">?</button>
+        <span class="level-badge">Partie 1 – Tensions</span>
+        <h2>Mesurer les tensions</h2>
+        
+        <div class="svg-box">
+            <svg viewBox="0 0 380 180" id="svgTensions">
+                <line x1="50" y1="30" x2="320" y2="30" stroke="#ef4444" stroke-width="4"/>
+                <circle cx="50" cy="30" r="6" fill="#ef4444"/>
+                <text x="340" y="36" font-size="14" fill="#ef4444" font-weight="700">L1</text>
+                
+                <line x1="50" y1="70" x2="320" y2="70" stroke="#f97316" stroke-width="4"/>
+                <circle cx="50" cy="70" r="6" fill="#f97316"/>
+                <text x="340" y="76" font-size="14" fill="#f97316" font-weight="700">L2</text>
+                
+                <line x1="50" y1="110" x2="320" y2="110" stroke="#8b5cf6" stroke-width="4"/>
+                <circle cx="50" cy="110" r="6" fill="#8b5cf6"/>
+                <text x="340" y="116" font-size="14" fill="#8b5cf6" font-weight="700">L3</text>
+                
+                <line x1="50" y1="150" x2="320" y2="150" stroke="#3b82f6" stroke-width="4"/>
+                <circle cx="50" cy="150" r="6" fill="#3b82f6"/>
+                <text x="340" y="156" font-size="14" fill="#3b82f6" font-weight="700">N</text>
+                
+                <g id="filMesure" style="display:none;">
+                    <line id="filLigne" x1="100" y1="30" x2="100" y2="150" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,3"/>
+                    <circle id="point1" cx="100" cy="30" r="8" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+                    <circle id="point2" cx="100" cy="150" r="8" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+                </g>
+            </svg>
+        </div>
+        
+        <div class="voltmetre">
+            <div class="voltmetre-titre">Voltmètre AC</div>
+            <div class="voltmetre-ecran">
+                <span class="voltmetre-valeur" id="voltValeur">---</span>
+                <span class="voltmetre-unite">V</span>
+            </div>
+        </div>
+        
+        <div class="step-explanation" id="tensionExplication">
+            <h4>🔌 Réseau triphasé EDF</h4>
+            <p>Voici les 4 conducteurs : <strong style="color:#ef4444;">L1</strong>, <strong style="color:#f97316;">L2</strong>, <strong style="color:#8b5cf6;">L3</strong> (phases) et <strong style="color:#3b82f6;">N</strong> (neutre).</p>
+            <p style="margin-top:6px;">👉 Clique sur <strong>Suivant</strong> pour mesurer !</p>
+        </div>
+        
+        <div class="anim-controls">
+            <button onclick="prevTensionStep()" id="btnTensionPrev" disabled>← Précédent</button>
+            <button onclick="nextTensionStep()" id="btnTensionNext">Suivant →</button>
+        </div>
+        
+        <button class="btn btn-primary" onclick="nextStep()" id="btnToRecap" style="display:none;">Voir le récapitulatif →</button>
+        
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(1)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 3 : RÉCAPITULATIF TENSIONS ET √3
+    html += `
+    <div class="step" data-step="3" style="position:relative;">
+        <button class="help-btn no-print" onclick="showHelp('sqrt3')" title="Aide">?</button>
+        <span class="level-badge">Partie 1 – Tensions</span>
+        <h2>Récapitulatif</h2>
+        
+        <div class="recap-tensions">
+            <div class="recap-item simple">
+                <div class="label">Tension SIMPLE<br>(Phase ↔ Neutre)</div>
+                <div class="valeur">${V_SIMPLE} V</div>
+            </div>
+            <div class="recap-item composee">
+                <div class="label">Tension COMPOSÉE<br>(Phase ↔ Phase)</div>
+                <div class="valeur">${V_COMPOSEE} V</div>
+            </div>
+        </div>
+        
+        <div class="card success">
+            <h4 style="text-align:center;color:#166534;margin-bottom:8px;">🧮 Quel est le rapport ?</h4>
+            <p style="text-align:center;font-size:1.3rem;font-weight:700;color:#1e293b;">${V_COMPOSEE} ÷ ${V_SIMPLE} = <span style="color:#dc2626;">1,73</span></p>
+            <p style="text-align:center;margin-top:8px;font-size:1rem;">Ce nombre, c'est <strong style="color:#dc2626;font-size:1.2rem;">√3</strong> (racine de 3)</p>
+            <p style="text-align:center;font-size:0.9rem;color:#475569;margin-top:6px;">👉 Vous le retrouverez <strong>TOUJOURS</strong> en triphasé !</p>
+        </div>
+        
+        <div class="card info" style="border-left:4px solid #3b82f6;">
+            <p style="font-weight:600;color:#1d4ed8;margin-bottom:6px;">💡 D'où vient ce √3 ?</p>
+            <p style="font-size:0.9rem;color:#475569;">Les 3 bobines sont décalées de <strong>120°</strong>.</p>
+            <p style="font-size:0.9rem;color:#475569;">On coupe le cercle en 3 parties égales → ça donne ce rapport √3.</p>
+        </div>
+        
+        <div class="formula">
+            📌 À RETENIR :<br>
+            <span style="font-size:1.3rem;">U = V × 1,73</span>
+            <small>Tension composée = Tension simple × √3</small>
+        </div>
+        
+        <!-- EXERCICE FORMATIF : Vérifie que tu as compris les tensions -->
+        <div class="exercice-interactif" id="exo-tensions">
+            <h4>🎯 Vérifie que tu as compris</h4>
+            <p style="font-size:0.85rem;margin-bottom:12px;">Associe chaque mesure à la bonne tension :</p>
+            
+            <div class="exo-draggable-container">
+                <div class="exo-draggable" draggable="true" data-value="230">230 V</div>
+                <div class="exo-draggable" draggable="true" data-value="400">400 V</div>
+            </div>
+            
+            <div class="exo-dropzone-container">
+                <div class="exo-dropzone" id="drop-phase-neutre" data-accept="230">
+                    <div class="exo-dropzone-label">Entre une PHASE et le NEUTRE</div>
+                    <div class="drop-content"></div>
+                </div>
+                <div class="exo-dropzone" id="drop-phase-phase" data-accept="400">
+                    <div class="exo-dropzone-label">Entre DEUX PHASES</div>
+                    <div class="drop-content"></div>
+                </div>
+            </div>
+            
+            <button class="btn-verifier" onclick="verifierTensions()">Vérifier ✓</button>
+            <div class="exo-feedback" id="exo-tensions-feedback"></div>
+        </div>
+        
+        <button class="btn btn-primary" onclick="nextStep()">Somme vectorielle →</button>
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(2)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 4 : SOMME VECTORIELLE
+    html += `
+    <div class="step" data-step="4">
+        <span class="level-badge">Partie 1 – Triphasé</span>
+        <h2>Somme vectorielle = 0</h2>
+        <div class="svg-box">
+            <svg viewBox="0 0 360 220" id="svgVec">
+                <circle cx="100" cy="120" r="4" fill="#475569"/>
+                <text x="90" y="140" font-size="9" fill="#64748b">O</text>
+                <g id="vec1" style="opacity:1">
+                    <line x1="100" y1="120" x2="100" y2="40" stroke="#ef4444" stroke-width="3"/>
+                    <polygon points="100,35 94,48 106,48" fill="#ef4444"/>
+                    <text x="110" y="50" font-size="12" fill="#ef4444" font-weight="700">V1</text>
+                </g>
+                <g id="vec2" style="opacity:0">
+                    <line x1="100" y1="120" x2="30" y2="160" stroke="#16a34a" stroke-width="3"/>
+                    <polygon points="25,163 38,153 42,168" fill="#16a34a"/>
+                    <text x="10" y="175" font-size="12" fill="#16a34a" font-weight="700">V2</text>
+                </g>
+                <g id="vec2b" style="opacity:0">
+                    <line x1="100" y1="40" x2="30" y2="80" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,3"/>
+                    <polygon points="25,83 38,73 42,88" fill="#16a34a"/>
+                </g>
+                <g id="vecR" style="opacity:0">
+                    <line x1="100" y1="120" x2="30" y2="80" stroke="#d97706" stroke-width="3"/>
+                    <polygon points="25,83 38,73 42,88" fill="#d97706"/>
+                    <text x="40" y="95" font-size="11" fill="#d97706" font-weight="700">V1+V2</text>
+                </g>
+                <g id="vec3" style="opacity:0">
+                    <line x1="100" y1="120" x2="170" y2="160" stroke="#2563eb" stroke-width="3"/>
+                    <polygon points="175,163 158,168 162,153" fill="#2563eb"/>
+                    <text x="178" y="170" font-size="12" fill="#2563eb" font-weight="700">V3</text>
+                </g>
+                <g id="vecEq" style="opacity:0">
+                    <rect x="195" y="35" width="155" height="90" rx="8" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+                    <text x="205" y="60" font-size="12" fill="#d97706" font-weight="700">V1 + V2 = −V3</text>
+                    <text x="205" y="85" font-size="11" fill="#475569">Donc :</text>
+                    <text x="205" y="110" font-size="14" fill="#16a34a" font-weight="700">V1 + V2 + V3 = 0</text>
+                </g>
+            </svg>
+        </div>
+        <div id="vecExplanation" class="step-explanation">
+            <h4>Étape 1/5 : Vecteur V1</h4>
+            <p>On représente la tension V1 (phase L1) par un vecteur vers le haut. Cliquez sur "Suivant" pour continuer.</p>
+        </div>
+        <div class="anim-controls">
+            <button onclick="prevVecStep()" id="btnVecPrev" disabled>← Précédent</button>
+            <button onclick="nextVecStep()" id="btnVecNext">Suivant →</button>
+            <button onclick="resetVec()">⟲ Reset</button>
+        </div>
+        <div class="card success" style="margin-top:10px;">
+            <p><strong>Conséquence :</strong> en triphasé équilibré, les 3 courants s'annulent → le neutre ne transporte aucun courant.</p>
+        </div>
+        
+        <div class="mini-qcm" id="qcm-p1">
+            <h4>🧪 Mini-évaluation Partie 1</h4>
+            <div class="mini-qcm-question">La somme vectorielle V1 + V2 + V3 est égale à :</div>
+            <div class="mini-qcm-choices">
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p1', this, false)">3V (triple de la tension)</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p1', this, false)">√3 × V</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p1', this, true)">0 (zéro)</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p1', this, false)">U (tension composée)</div>
+            </div>
+            <div class="mini-qcm-feedback ok" id="qcm-p1-ok">✅ Correct ! Les 3 vecteurs s'annulent, leur somme vaut 0.</div>
+            <div class="mini-qcm-feedback ko" id="qcm-p1-ko">❌ Incorrect. La bonne réponse est <strong>0</strong> : les 3 vecteurs décalés de 120° s'annulent.</div>
+        </div>
+        
+        <button class="btn btn-warning" onclick="nextStep()">Couplage Triangle (Δ) →</button>
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(3)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 5 : TRIANGLE
+    html += `
+    <div class="step" data-step="5" style="position:relative;">
+        <button class="help-btn no-print" onclick="showHelp('couplage-triangle')" title="Aide">?</button>
+        <span class="level-badge">Partie 2 – Couplages</span>
+        <h2 class="amber">Couplage Triangle (Δ)</h2>
+        <div class="card">
+            <p>En <strong>Triangle (Δ)</strong>, les 3 enroulements forment une <strong>boucle fermée</strong>. Chaque sommet reçoit une phase.</p>
+        </div>
+        <div class="svg-box">
+            <svg viewBox="0 0 300 230">
+                <text x="150" y="18" text-anchor="middle" font-size="16" fill="#d97706" font-weight="700">Δ</text>
+                <polygon points="150,35 265,190 35,190" fill="none" stroke="#d97706" stroke-width="3"/>
+                <circle cx="207" cy="112" r="18" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+                <text x="207" y="117" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="700">U</text>
+                <circle cx="150" cy="190" r="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+                <text x="150" y="195" text-anchor="middle" font-size="11" fill="#166534" font-weight="700">V</text>
+                <circle cx="93" cy="112" r="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                <text x="93" y="117" text-anchor="middle" font-size="11" fill="#1d4ed8" font-weight="700">W</text>
+                <circle cx="150" cy="35" r="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                <text x="150" y="20" text-anchor="middle" font-size="11" fill="#92400e" font-weight="700">L1</text>
+                <circle cx="265" cy="190" r="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                <text x="285" y="195" font-size="11" fill="#92400e" font-weight="700">L2</text>
+                <circle cx="35" cy="190" r="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                <text x="12" y="195" font-size="11" fill="#92400e" font-weight="700">L3</text>
+                <defs><marker id="arrOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#d97706"/></marker></defs>
+                <line x1="160" y1="45" x2="250" y2="175" stroke="#d97706" stroke-width="2.5" marker-end="url(#arrOrange)"/>
+                <text x="225" y="95" font-size="13" fill="#d97706" font-weight="700">${V_COMPOSEE}V</text>
+            </svg>
+        </div>
+        <div class="legende" style="flex-direction:column;align-items:flex-start;gap:4px;">
+            <div style="font-weight:600;font-size:0.8rem;color:#475569;">Légende :</div>
+            <div class="legende-item">
+                <svg width="60" height="24"><circle cx="12" cy="12" r="10" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="#b91c1c" font-weight="700">U</text><circle cx="32" cy="12" r="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="32" y="16" text-anchor="middle" font-size="8" fill="#166534" font-weight="700">V</text><circle cx="52" cy="12" r="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="52" y="16" text-anchor="middle" font-size="8" fill="#1d4ed8" font-weight="700">W</text></svg>
+                <span>= Les 3 bobines du moteur triphasé</span>
+            </div>
+            <div class="legende-item">
+                <svg width="24" height="24"><circle cx="12" cy="12" r="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/></svg>
+                <span>= Alimentation réseau (L1, L2, L3)</span>
+            </div>
+        </div>
+        <div class="card warning">
+            <p>En Δ, chaque bobine reçoit la <strong>tension composée U = ${V_COMPOSEE}V</strong> directement.</p>
+            <p>→ Utilisé quand réseau = <strong>petite tension</strong> de la plaque.</p>
+        </div>
+        <button class="btn btn-success" onclick="nextStep()">Couplage Étoile (Y) →</button>
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(4)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 6 : ÉTOILE
+    html += `
+    <div class="step" data-step="6" style="position:relative;">
+        <button class="help-btn no-print" onclick="showHelp('couplage-etoile')" title="Aide">?</button>
+        <span class="level-badge">Partie 2 – Couplages</span>
+        <h2 class="green">Couplage Étoile (Y)</h2>
+        <div class="card">
+            <p>En <strong>Étoile (Y)</strong>, les 3 enroulements ont un point commun : le <strong>point neutre N</strong>.</p>
+        </div>
+        <div class="svg-box">
+            <svg viewBox="0 0 320 230">
+                <text x="160" y="18" text-anchor="middle" font-size="16" fill="#16a34a" font-weight="700">Y</text>
+                <circle cx="160" cy="120" r="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+                <text x="160" y="126" text-anchor="middle" font-size="12" fill="#166534" font-weight="700">N</text>
+                <line x1="160" y1="102" x2="160" y2="65" stroke="#ef4444" stroke-width="3"/>
+                <circle cx="160" cy="55" r="14" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+                <text x="160" y="60" text-anchor="middle" font-size="10" fill="#b91c1c" font-weight="700">U</text>
+                <line x1="160" y1="41" x2="160" y2="35" stroke="#ef4444" stroke-width="2"/>
+                <circle cx="160" cy="28" r="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                <text x="178" y="25" font-size="10" fill="#92400e" font-weight="700">L1</text>
+                <line x1="173" y1="130" x2="220" y2="165" stroke="#16a34a" stroke-width="3"/>
+                <circle cx="230" cy="175" r="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+                <text x="230" y="180" text-anchor="middle" font-size="10" fill="#166534" font-weight="700">V</text>
+                <line x1="241" y1="183" x2="255" y2="192" stroke="#16a34a" stroke-width="2"/>
+                <circle cx="265" cy="200" r="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                <text x="283" y="205" font-size="10" fill="#92400e" font-weight="700">L2</text>
+                <line x1="147" y1="130" x2="100" y2="165" stroke="#2563eb" stroke-width="3"/>
+                <circle cx="90" cy="175" r="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                <text x="90" y="180" text-anchor="middle" font-size="10" fill="#1d4ed8" font-weight="700">W</text>
+                <line x1="79" y1="183" x2="65" y2="192" stroke="#2563eb" stroke-width="2"/>
+                <circle cx="55" cy="200" r="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                <text x="37" y="205" font-size="10" fill="#92400e" font-weight="700">L3</text>
+                <defs><marker id="arrViolet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/></marker><marker id="arrOrangeY" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#d97706"/></marker></defs>
+                <line x1="180" y1="35" x2="180" y2="110" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arrViolet)"/>
+                <text x="195" y="75" font-size="12" fill="#7c3aed" font-weight="700">${V_SIMPLE}V</text>
+                <text x="195" y="88" font-size="8" fill="#7c3aed">(simple)</text>
+                <line x1="172" y1="28" x2="253" y2="188" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arrOrangeY)"/>
+                <text x="230" y="95" font-size="12" fill="#d97706" font-weight="700">${V_COMPOSEE}V</text>
+                <text x="230" y="108" font-size="8" fill="#d97706">(composée)</text>
+            </svg>
+        </div>
+        <div class="legende" style="flex-direction:column;align-items:flex-start;gap:4px;">
+            <div style="font-weight:600;font-size:0.8rem;color:#475569;">Légende :</div>
+            <div class="legende-item">
+                <svg width="60" height="24"><circle cx="12" cy="12" r="10" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="#b91c1c" font-weight="700">U</text><circle cx="32" cy="12" r="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="32" y="16" text-anchor="middle" font-size="8" fill="#166534" font-weight="700">V</text><circle cx="52" cy="12" r="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="52" y="16" text-anchor="middle" font-size="8" fill="#1d4ed8" font-weight="700">W</text></svg>
+                <span>= Les 3 bobines du moteur triphasé</span>
+            </div>
+        </div>
+        <div class="formula">U = V × √3<small>${V_COMPOSEE}V = ${V_SIMPLE}V × 1,732</small></div>
+        <div class="card success">
+            <p>En Y, chaque bobine reçoit la <strong>tension simple V = ${V_SIMPLE}V</strong>.</p>
+            <p>→ Utilisé quand réseau = <strong>grande tension</strong> de la plaque.</p>
+        </div>
+        <div class="formula">Réseau = petite tension plaque → <strong style="color:#d97706;">Δ</strong><br>Réseau = grande tension plaque → <strong style="color:#16a34a;">Y</strong></div>
+        
+        <div class="mini-qcm" id="qcm-p2">
+            <h4>🧪 Mini-évaluation Partie 2</h4>
+            <div class="mini-qcm-question">Moteur 230/400V sur réseau 400V : quel couplage ?</div>
+            <div class="mini-qcm-choices">
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p2', this, false)">Triangle (Δ)</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p2', this, true)">Étoile (Y)</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p2', this, false)">Les deux sont possibles</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p2', this, false)">Impossible à câbler</div>
+            </div>
+            <div class="mini-qcm-feedback ok" id="qcm-p2-ok">✅ Correct ! 400V = grande tension de la plaque → Étoile (Y).</div>
+            <div class="mini-qcm-feedback ko" id="qcm-p2-ko">❌ Incorrect. Réseau 400V = <strong>grande tension</strong> de la plaque → <strong>Étoile (Y)</strong>.</div>
+        </div>
+        
+        <button class="btn btn-primary" onclick="nextStep()">Plaque à bornes →</button>
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(5)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 7 : PLAQUE À BORNES
+    html += `
+    <div class="step" data-step="7" style="position:relative;">
+        <button class="help-btn no-print" onclick="showHelp('plaque')" title="Aide">?</button>
+        <span class="level-badge">Partie 3 – Plaque à bornes</span>
+        <h2>Plaque à bornes (CEI 60034-8)</h2>
+        
+        <div class="definition">
+            <p><strong>🔧 Qu'est-ce qu'une plaque à bornes ?</strong></p>
+            <p>C'est l'<strong>interface de connexion</strong> située sur le moteur. Elle permet d'accéder aux <strong>enroulements</strong> (bobines) pour les câbler selon le couplage souhaité (Δ ou Y).</p>
+        </div>
+        
+        <div class="definition">
+            <p><strong>📜 Qu'est-ce que la norme CEI ?</strong></p>
+            <p><strong>CEI</strong> = Commission Électrotechnique Internationale. C'est l'organisme qui définit les <strong>standards mondiaux</strong> en électricité. La norme <strong>CEI 60034-8</strong> définit la disposition des bornes sur les moteurs.</p>
+        </div>
+        
+        <div class="card">
+            <p>La plaque comporte <strong>6 bornes</strong> reliées aux 3 bobines du moteur :</p>
+            <ul>
+                <li><strong>Haut :</strong> U1 – V1 – W1 (entrées bobines)</li>
+                <li><strong>Bas :</strong> W2 – U2 – V2 (sorties bobines, décalées !)</li>
+            </ul>
+        </div>
+        <div class="svg-box">
+            <svg viewBox="0 0 300 220">
+                <rect x="25" y="15" width="250" height="190" rx="12" fill="#f9fafb" stroke="#94a3b8" stroke-width="2"/>
+                <text x="150" y="35" text-anchor="middle" font-size="11" fill="#64748b" font-weight="600">PLAQUE À BORNES</text>
+                <circle cx="75" cy="65" r="16" fill="#fff" stroke="#ef4444" stroke-width="2"/><circle cx="75" cy="65" r="6" fill="#fbbf24"/><text x="75" y="45" text-anchor="middle" font-size="11" fill="#ef4444" font-weight="700">U1</text>
+                <circle cx="150" cy="65" r="16" fill="#fff" stroke="#16a34a" stroke-width="2"/><circle cx="150" cy="65" r="6" fill="#fbbf24"/><text x="150" y="45" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="700">V1</text>
+                <circle cx="225" cy="65" r="16" fill="#fff" stroke="#2563eb" stroke-width="2"/><circle cx="225" cy="65" r="6" fill="#fbbf24"/><text x="225" y="45" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="700">W1</text>
+                <path d="M75,81 L75,90 L68,98 L82,108 L68,118 L82,128 L75,136 L75,145" fill="none" stroke="#ef4444" stroke-width="2"/>
+                <path d="M150,81 L150,90 L143,98 L157,108 L143,118 L157,128 L150,136 L150,145" fill="none" stroke="#16a34a" stroke-width="2"/>
+                <path d="M225,81 L225,90 L218,98 L232,108 L218,118 L232,128 L225,136 L225,145" fill="none" stroke="#2563eb" stroke-width="2"/>
+                <path d="M75,145 Q75,155 112,158 Q150,161 150,170" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <path d="M150,145 Q150,155 187,158 Q225,161 225,170" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <path d="M225,145 Q225,155 150,160 Q75,165 75,170" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <circle cx="75" cy="180" r="16" fill="#fff" stroke="#2563eb" stroke-width="2"/><circle cx="75" cy="180" r="6" fill="#fbbf24"/><text x="75" y="205" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="700">W2</text>
+                <circle cx="150" cy="180" r="16" fill="#fff" stroke="#ef4444" stroke-width="2"/><circle cx="150" cy="180" r="6" fill="#fbbf24"/><text x="150" y="205" text-anchor="middle" font-size="11" fill="#ef4444" font-weight="700">U2</text>
+                <circle cx="225" cy="180" r="16" fill="#fff" stroke="#16a34a" stroke-width="2"/><circle cx="225" cy="180" r="6" fill="#fbbf24"/><text x="225" y="205" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="700">V2</text>
+            </svg>
+        </div>
+        <div class="legende"><div class="legende-item"><svg width="30" height="20"><path d="M5,10 L8,5 L12,15 L16,5 L20,15 L24,5 L27,10" fill="none" stroke="#64748b" stroke-width="2"/></svg> = Bobine (enroulement)</div></div>
+        <button class="btn btn-warning" onclick="nextStep()">Couplage Δ sur plaque →</button>
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(6)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 8 : BARRETTES TRIANGLE
+    html += `
+    <div class="step" data-step="8">
+        <span class="level-badge">Partie 3 – Plaque à bornes</span>
+        <h2 class="amber">Barrettes couplage Δ (Triangle)</h2>
+        <div class="card"><p><strong>Triangle = 3 côtés = 3 barrettes verticales</strong></p></div>
+        <div class="svg-box">
+            <svg viewBox="0 0 300 180">
+                <rect x="25" y="10" width="250" height="160" rx="12" fill="#f9fafb" stroke="#94a3b8" stroke-width="2"/>
+                <circle cx="75" cy="50" r="14" fill="#fff" stroke="#ef4444" stroke-width="2"/><text x="75" y="32" text-anchor="middle" font-size="10" fill="#ef4444" font-weight="700">U1</text>
+                <circle cx="150" cy="50" r="14" fill="#fff" stroke="#16a34a" stroke-width="2"/><text x="150" y="32" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="700">V1</text>
+                <circle cx="225" cy="50" r="14" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="225" y="32" text-anchor="middle" font-size="10" fill="#2563eb" font-weight="700">W1</text>
+                <circle cx="75" cy="130" r="14" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="75" y="155" text-anchor="middle" font-size="10" fill="#2563eb" font-weight="700">W2</text>
+                <circle cx="150" cy="130" r="14" fill="#fff" stroke="#ef4444" stroke-width="2"/><text x="150" y="155" text-anchor="middle" font-size="10" fill="#ef4444" font-weight="700">U2</text>
+                <circle cx="225" cy="130" r="14" fill="#fff" stroke="#16a34a" stroke-width="2"/><text x="225" y="155" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="700">V2</text>
+                <rect x="68" y="40" width="14" height="100" rx="4" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+                <rect x="143" y="40" width="14" height="100" rx="4" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+                <rect x="218" y="40" width="14" height="100" rx="4" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+                <text x="75" y="8" text-anchor="middle" font-size="9" fill="#d97706" font-weight="700">L1</text>
+                <text x="150" y="8" text-anchor="middle" font-size="9" fill="#d97706" font-weight="700">L2</text>
+                <text x="225" y="8" text-anchor="middle" font-size="9" fill="#d97706" font-weight="700">L3</text>
+            </svg>
+        </div>
+        <div class="card warning"><p>Les barrettes relient : <strong>U1↔W2</strong> | <strong>V1↔U2</strong> | <strong>W1↔V2</strong></p><p>L'alimentation arrive sur U1, V1, W1.</p></div>
+        <button class="btn btn-success" onclick="nextStep()">Couplage Y sur plaque →</button>
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(7)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 9 : BARRETTES ÉTOILE
+    html += `
+    <div class="step" data-step="9">
+        <span class="level-badge">Partie 3 – Plaque à bornes</span>
+        <h2 class="green">Barrettes couplage Y (Étoile)</h2>
+        <div class="card"><p><strong>Étoile = 1 point neutre = 2 barrettes horizontales en bas</strong></p></div>
+        <div class="svg-box">
+            <svg viewBox="0 0 300 180">
+                <rect x="25" y="10" width="250" height="160" rx="12" fill="#f9fafb" stroke="#94a3b8" stroke-width="2"/>
+                <circle cx="75" cy="50" r="14" fill="#fff" stroke="#ef4444" stroke-width="2"/><text x="75" y="32" text-anchor="middle" font-size="10" fill="#ef4444" font-weight="700">U1</text>
+                <circle cx="150" cy="50" r="14" fill="#fff" stroke="#16a34a" stroke-width="2"/><text x="150" y="32" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="700">V1</text>
+                <circle cx="225" cy="50" r="14" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="225" y="32" text-anchor="middle" font-size="10" fill="#2563eb" font-weight="700">W1</text>
+                <circle cx="75" cy="130" r="14" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="75" y="155" text-anchor="middle" font-size="10" fill="#2563eb" font-weight="700">W2</text>
+                <circle cx="150" cy="130" r="14" fill="#fff" stroke="#ef4444" stroke-width="2"/><text x="150" y="155" text-anchor="middle" font-size="10" fill="#ef4444" font-weight="700">U2</text>
+                <circle cx="225" cy="130" r="14" fill="#fff" stroke="#16a34a" stroke-width="2"/><text x="225" y="155" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="700">V2</text>
+                <rect x="63" y="123" width="100" height="14" rx="4" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+                <rect x="137" y="123" width="100" height="14" rx="4" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+                <text x="75" y="8" text-anchor="middle" font-size="9" fill="#16a34a" font-weight="700">L1</text>
+                <text x="150" y="8" text-anchor="middle" font-size="9" fill="#16a34a" font-weight="700">L2</text>
+                <text x="225" y="8" text-anchor="middle" font-size="9" fill="#16a34a" font-weight="700">L3</text>
+                <text x="150" y="118" text-anchor="middle" font-size="8" fill="#16a34a" font-weight="700">Point N</text>
+            </svg>
+        </div>
+        <div class="card success"><p>Les barrettes relient : <strong>W2-U2-V2</strong> ensemble → point neutre.</p><p>L'alimentation arrive sur U1, V1, W1.</p></div>
+        
+        <div class="mini-qcm" id="qcm-p3">
+            <h4>🧪 Mini-évaluation Partie 3</h4>
+            <div class="mini-qcm-question">En couplage Étoile, les barrettes sont positionnées :</div>
+            <div class="mini-qcm-choices">
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p3', this, false)">3 verticales</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p3', this, true)">2 horizontales en bas</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p3', this, false)">3 horizontales</div>
+                <div class="mini-qcm-choice" onclick="checkMiniQCM('qcm-p3', this, false)">En diagonale</div>
+            </div>
+            <div class="mini-qcm-feedback ok" id="qcm-p3-ok">✅ Correct ! Étoile = 2 barrettes horizontales en bas pour créer le point neutre.</div>
+            <div class="mini-qcm-feedback ko" id="qcm-p3-ko">❌ Incorrect. En Étoile : <strong>2 barrettes horizontales en bas</strong> (point neutre). Triangle = 3 verticales.</div>
+        </div>
+        
+        <!-- EXERCICE FORMATIF : Associer couplage et barrettes -->
+        <div class="exercice-interactif" id="exo-barrettes">
+            <h4>🎯 Vérifie que tu as compris</h4>
+            <p style="font-size:0.85rem;margin-bottom:12px;">Associe chaque couplage à la bonne position des barrettes :</p>
+            
+            <div class="exo-draggable-container">
+                <div class="exo-draggable" draggable="true" data-value="triangle">Couplage TRIANGLE (Δ)</div>
+                <div class="exo-draggable" draggable="true" data-value="etoile">Couplage ÉTOILE (Y)</div>
+            </div>
+            
+            <div class="exo-dropzone-container">
+                <div class="exo-dropzone" id="drop-3-verticales" data-accept="triangle">
+                    <div class="exo-dropzone-label">3 barrettes VERTICALES</div>
+                    <div class="drop-content"></div>
+                </div>
+                <div class="exo-dropzone" id="drop-2-horizontales" data-accept="etoile">
+                    <div class="exo-dropzone-label">2 barrettes HORIZONTALES en bas</div>
+                    <div class="drop-content"></div>
+                </div>
+            </div>
+            
+            <button class="btn-verifier" onclick="verifierBarrettes()">Vérifier ✓</button>
+            <div class="exo-feedback" id="exo-barrettes-feedback"></div>
+        </div>
+        
+        <button class="btn btn-primary" onclick="startEval()">Passer à l'évaluation →</button>
+        <div style="margin-top:10px;">
+            <button class="btn btn-secondary" onclick="showStep(8)">← Retour</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 10 : ÉVALUATION
+    html += `
+    <div class="step" data-step="10">
+        <span class="level-badge eval">Évaluation finale</span>
+        <h2 class="amber">20 questions</h2>
+        <div class="card">
+            <div class="quiz-meta"><div>Question <span id="qIdx">1</span>/20</div><div class="tag" id="qTag">triphasé</div></div>
+            <p id="qTxt" style="margin-bottom:8px;font-weight:500;"></p>
+            <div id="qChoices"></div>
+            <button class="btn btn-secondary" onclick="nextQ()" id="btnNextQ" disabled>Question suivante →</button>
+        </div>
+    </div>
+    `;
+
+    // STEP 11 : RÉSULTATS
+    html += `
+    <div class="step" data-step="11">
+        <span class="emoji" id="resEmoji">🎓</span>
+        <h2 id="resTitle">Résultats</h2>
+        <div class="card" style="text-align:center;">
+            <p id="finalScore" style="font-size:2.2rem;font-weight:700;">0/20</p>
+            <p id="resMsg" style="margin-top:4px;"></p>
+            <p style="margin-top:8px;font-size:0.85rem;color:#64748b;">Élève : <strong id="resNom"></strong> • Classe : <strong id="resClasse"></strong></p>
+        </div>
+        <div class="card dark"><p style="font-size:0.9rem;margin-bottom:4px;font-weight:600;">Détail par thème</p><div id="details"></div></div>
+        <div class="card"><p style="font-size:0.9rem;margin-bottom:4px;font-weight:600;">Évaluation par compétences</p><div id="compTable"></div></div>
+        <div class="input-group"><label>Email du professeur :</label><input type="email" id="emailProf" placeholder="professeur@etablissement.fr"/></div>
+        <button class="btn btn-primary" onclick="sendEmail()">📧 Envoyer par email</button>
+        <button class="btn btn-success" onclick="exportPDF()" style="margin-top:8px;">📄 Télécharger mon bilan PDF</button>
+        <button class="btn btn-warning" onclick="showStep(12)" style="margin-top:8px;">📚 Pour aller plus loin →</button>
+        <button class="btn btn-secondary" onclick="location.reload()" style="margin-top:8px;">🔄 Recommencer</button>
+    </div>
+    `;
+
+    // STEP 12 : POUR ALLER PLUS LOIN
+    html += `
+    <div class="step" data-step="12">
+        <span class="level-badge warning">📚 Pour aller plus loin</span>
+        <h2 class="purple">Cas particuliers</h2>
+        <div class="card"><p><strong>1️⃣ Moteur en monophasé</strong></p><ul><li>Alimentation : <strong>1 phase + 1 neutre</strong></li><li>Condensateur pour créer le déphasage</li><li>Protection par disjoncteur magnéto-thermique</li></ul></div>
+        <div class="card info"><p><strong>2️⃣ Le "biphasé" (abus de langage)</strong></p><ul><li>En réalité : <strong>2 phases d'un réseau triphasé</strong></li><li>On obtient alors la tension composée (${V_COMPOSEE}V)</li></ul></div>
+        <div class="card error"><p><strong>3️⃣ Moteur Part Winding (Y/Y)</strong></p><ul><li>Affiche une seule tension + <strong>Y/Y</strong></li><li>Peut avoir <strong>6 bornes</strong> (point commun interne) ou <strong>12 bornes</strong></li><li style="color:#dc2626;font-weight:600;">⚠️ Ne pas câbler comme un moteur classique !</li></ul></div>
+        <div class="card success" style="border-left:4px solid #16a34a;"><p><strong>⭐ Règle d'or du câblage moteur :</strong></p><p style="font-size:0.9rem;margin-top:6px;">Le réglage du <strong>disjoncteur magnéto-thermique</strong> se fait en fonction de :</p><ul style="margin-top:6px;"><li>Le <strong>couplage</strong> choisi (Δ ou Y)</li><li>La <strong>tension du réseau</strong></li><li>L'<strong>intensité nominale (In)</strong> de la plaque</li></ul></div>
+        <div class="card dark"><p style="font-size:0.9rem;"><strong>🇺🇸 Aux États-Unis :</strong> 120V / 208V</p><p style="font-size:0.8rem;color:#94a3b8;">Le rapport √3 reste le même : 208 ≈ 120 × 1,73</p></div>
+        <button class="btn btn-secondary" onclick="showStep(11)">← Retour aux résultats</button>
+        <button class="btn btn-primary" onclick="location.reload()" style="margin-top:8px;">🔄 Recommencer le TD</button>
+    </div>
+    `;
+
+    c.innerHTML = html;
+    totalSteps = 13;
+    initProgress();
+    renderQ();
+}
+
+function initProgress() {
+    const bar = document.getElementById("progressBar");
+    bar.innerHTML = "";
+    for (let i = 0; i < totalSteps; i++) {
+        const d = document.createElement("div");
+        if (i === 0) d.classList.add("active");
+        bar.appendChild(d);
+    }
+    // Plan déroulé
+    const planLabels = ["Intro", "Alternateur", "Tensions", "√3", "Vecteurs", "Triangle", "Étoile", "Plaque", "Barr. Δ", "Barr. Y", "Éval", "Résultats", "Bonus"];
+    const planDiv = document.getElementById("planEtapes");
+    planDiv.innerHTML = "";
+    planLabels.forEach((label, i) => {
+        const span = document.createElement("span");
+        span.className = "plan-etape" + (i === 0 ? " active" : "");
+        span.textContent = label;
+        span.onclick = () => { if (i <= currentStep || i === 0) showStep(i); };
+        planDiv.appendChild(span);
+    });
+}
+
+function showStep(idx) {
+    const steps = document.querySelectorAll(".step");
+    if (idx < 0 || idx >= steps.length) return;
+    steps.forEach((s, i) => s.classList.toggle("active", i === idx));
+    currentStep = idx;
+    const bar = document.querySelectorAll(".progress div");
+    bar.forEach((b, i) => { b.classList.remove("active", "done"); if (i < currentStep) b.classList.add("done"); if (i === currentStep) b.classList.add("active"); });
+    const sections = ["Introduction", "Alternateur", "Tensions", "Récapitulatif √3", "Vecteurs", "Triangle", "Étoile", "Plaque", "Barrettes Δ", "Barrettes Y", "Évaluation", "Résultats", "Pour aller plus loin"];
+    document.getElementById("headerSection").textContent = sections[idx] || "";
+    // Mise à jour plan déroulé
+    const planEtapes = document.querySelectorAll(".plan-etape");
+    planEtapes.forEach((e, i) => {
+        e.classList.remove("active", "done");
+        if (i < currentStep) e.classList.add("done");
+        if (i === currentStep) e.classList.add("active");
+    });
+    window.scrollTo(0, 0);
+}
+
+function startTD() {
+    const n = document.getElementById("studentNameInput");
+    const c = document.getElementById("classeSelect");
+    if (!n.value.trim()) { alert("Entre ton nom."); return; }
+    if (!c.value) { alert("Choisis ta classe."); return; }
+    studentName = n.value.trim();
+    studentClasse = c.value;
+    startTime = new Date();
+    showStep(1);
+}
+
+function nextStep() { showStep(currentStep + 1); }
+
+// =============== ANIMATION GÉNÉRATRICE ===============
+function toggleAnim() { animRunning ? stopAnim() : startAnim(); }
+function startAnim() { animRunning = true; document.getElementById("btnAnim").textContent = "⏸ Pause"; document.getElementById("btnAnim").classList.add("active"); anim(); }
+function stopAnim() { animRunning = false; document.getElementById("btnAnim").textContent = "▶ Démarrer"; document.getElementById("btnAnim").classList.remove("active"); if (animId) cancelAnimationFrame(animId); }
+function resetAnim() { stopAnim(); rotorAngle = 0; document.getElementById("rotor").setAttribute("transform", "rotate(0 90 90)"); document.getElementById("sin1").setAttribute("d", ""); document.getElementById("sin2").setAttribute("d", ""); document.getElementById("sin3").setAttribute("d", ""); }
+
+function setPhases(n) {
+    nbPhases = n;
+    document.getElementById("btnP1").classList.toggle("active", n === 1);
+    document.getElementById("btnP2").classList.toggle("active", n === 2);
+    document.getElementById("btnP3").classList.toggle("active", n === 3);
+    document.getElementById("bobine2").style.opacity = n >= 2 ? "1" : "0";
+    document.getElementById("bobine3").style.opacity = n >= 3 ? "1" : "0";
+    const expl = document.getElementById("phaseExplanation");
+    if (n === 1) expl.innerHTML = `<h4>🔌 Monophasé (1 bobine)</h4><p>Une seule bobine = une seule sinusoïde. C'est le courant domestique (prise 230V).</p>`;
+    else if (n === 2) expl.innerHTML = `<h4>⚡ Deux bobines</h4><p>Deux bobines décalées = 2 sinusoïdes décalées de 120°.</p>`;
+    else expl.innerHTML = `<h4>⚡⚡⚡ Triphasé (3 bobines)</h4><p>Trois bobines à 120° = 3 sinusoïdes décalées. C'est le triphasé industriel !</p>`;
+    resetAnim();
+}
+
+function anim() {
+    if (!animRunning) return;
+    rotorAngle += 2; if (rotorAngle > 720) rotorAngle = 0;
+    document.getElementById("rotor").setAttribute("transform", `rotate(${rotorAngle} 90 90)`);
+    const maxX = Math.min(rotorAngle / 720 * 200, 200);
+    let d1 = "M10,90", d2 = "M10,90", d3 = "M10,90";
+    for (let x = 0; x <= maxX; x += 2) {
+        const a = x / 200 * 4 * Math.PI;
+        d1 += ` L${10+x},${90 - Math.sin(a) * 55}`;
+        if (nbPhases >= 2) d2 += ` L${10+x},${90 - Math.sin(a - 2*Math.PI/3) * 55}`;
+        if (nbPhases >= 3) d3 += ` L${10+x},${90 - Math.sin(a - 4*Math.PI/3) * 55}`;
+    }
+    document.getElementById("sin1").setAttribute("d", d1);
+    document.getElementById("sin2").setAttribute("d", nbPhases >= 2 ? d2 : "");
+    document.getElementById("sin3").setAttribute("d", nbPhases >= 3 ? d3 : "");
+    animId = requestAnimationFrame(anim);
+}
+
+// =============== ANIMATION TENSIONS ===============
+const posY = { L1: 30, L2: 70, L3: 110, N: 150 };
+
+function nextTensionStep() {
+    if (tensionStep < tensionSteps.length) {
+        const e = tensionSteps[tensionStep];
+        document.getElementById("tensionExplication").innerHTML = `<h4>${e.titre}</h4>${e.texte}`;
+        
+        const voltDisplay = document.getElementById("voltValeur");
+        voltDisplay.textContent = e.tension;
+        if (e.tension == V_SIMPLE) { voltDisplay.style.color = "#a855f7"; voltDisplay.style.textShadow = "0 0 12px #a855f7"; }
+        else if (e.tension == V_COMPOSEE) { voltDisplay.style.color = "#f59e0b"; voltDisplay.style.textShadow = "0 0 12px #f59e0b"; }
+        else { voltDisplay.style.color = "#22c55e"; voltDisplay.style.textShadow = "0 0 12px #22c55e"; }
+        
+        const filMesure = document.getElementById("filMesure");
+        if (e.mesure) {
+            const y1 = posY[e.mesure.de], y2 = posY[e.mesure.vers], x = e.mesure.x;
+            document.getElementById("filLigne").setAttribute("x1", x);
+            document.getElementById("filLigne").setAttribute("y1", Math.min(y1, y2));
+            document.getElementById("filLigne").setAttribute("x2", x);
+            document.getElementById("filLigne").setAttribute("y2", Math.max(y1, y2));
+            document.getElementById("point1").setAttribute("cx", x); document.getElementById("point1").setAttribute("cy", y1);
+            document.getElementById("point2").setAttribute("cx", x); document.getElementById("point2").setAttribute("cy", y2);
+            filMesure.style.display = "block";
+        } else { filMesure.style.display = "none"; }
+        
+        // À la dernière étape, afficher le bouton vers le récapitulatif
+        if (e.showRecap) {
+            document.getElementById("btnToRecap").style.display = "block";
+        }
+        
+        tensionStep++;
+        document.getElementById("btnTensionPrev").disabled = false;
+        if (tensionStep >= tensionSteps.length) { document.getElementById("btnTensionNext").disabled = true; document.getElementById("btnTensionNext").textContent = "✓ Terminé"; }
+    }
+}
+
+function prevTensionStep() {
+    if (tensionStep > 1) {
+        tensionStep -= 2;
+        nextTensionStep();
+    } else if (tensionStep === 1) {
+        tensionStep = 0;
+        document.getElementById("tensionExplication").innerHTML = tensionSteps[0].texte.replace("<h4>", `<h4>${tensionSteps[0].titre}</h4>`);
+        document.getElementById("voltValeur").textContent = "---"; document.getElementById("voltValeur").style.color = "#22c55e";
+        document.getElementById("filMesure").style.display = "none";
+        document.getElementById("recapTensions").style.display = "none";
+        document.getElementById("formuleTensions").style.display = "none";
+        document.getElementById("btnToVectors").style.display = "none";
+        document.getElementById("btnTensionPrev").disabled = true;
+        document.getElementById("btnTensionNext").disabled = false;
+        document.getElementById("btnTensionNext").textContent = "Suivant →";
+    }
+}
+
+// =============== ANIMATION VECTORIELLE ===============
+const vecExplanations = [
+    { title: "Étape 1/5 : Vecteur V1", text: "On représente la tension V1 (phase L1) par un vecteur vers le haut.", el: "vec1" },
+    { title: "Étape 2/5 : Vecteur V2", text: "On ajoute le vecteur V2 (phase L2), décalé de 120°.", el: "vec2" },
+    { title: "Étape 3/5 : Report de V2", text: "On reporte V2 à la pointe de V1 (règle du parallélogramme).", el: "vec2b" },
+    { title: "Étape 4/5 : Somme V1+V2", text: "La résultante V1+V2 va de l'origine à la pointe de V2 reporté.", el: "vecR" },
+    { title: "Étape 5/5 : V3 = opposé", text: "V3 est exactement opposé à V1+V2. Donc V1 + V2 + V3 = 0 !", el: "vec3" },
+    { title: "✅ Conclusion", text: "La somme des 3 vecteurs est nulle !", el: "vecEq" }
+];
+
+function nextVecStep() {
+    if (vecStep < vecExplanations.length) {
+        const step = vecExplanations[vecStep];
+        document.getElementById(step.el).style.transition = "opacity 0.5s";
+        document.getElementById(step.el).style.opacity = "1";
+        document.getElementById("vecExplanation").innerHTML = `<h4>${step.title}</h4><p>${step.text}</p>`;
+        vecStep++;
+        document.getElementById("btnVecPrev").disabled = false;
+        if (vecStep >= vecExplanations.length) document.getElementById("btnVecNext").disabled = true;
+    }
+}
+
+function prevVecStep() {
+    if (vecStep > 1) { // Ne pas descendre en dessous de 1 (V1)
+        vecStep--;
+        document.getElementById(vecExplanations[vecStep].el).style.opacity = "0";
+        if (vecStep > 0) { 
+            const prev = vecExplanations[vecStep - 1]; 
+            document.getElementById("vecExplanation").innerHTML = `<h4>${prev.title}</h4><p>${prev.text}</p>`; 
+        }
+        document.getElementById("btnVecPrev").disabled = vecStep <= 1;
+        document.getElementById("btnVecNext").disabled = false;
+    }
+}
+
+function resetVec() {
+    vecStep = 1; // On commence à 1 car V1 est déjà visible
+    vecExplanations.forEach((s, i) => { 
+        document.getElementById(s.el).style.opacity = i === 0 ? "1" : "0"; // V1 reste visible
+    });
+    document.getElementById("vecExplanation").innerHTML = `<h4>Étape 1/5 : Vecteur V1</h4><p>On représente la tension V1 (phase L1) par un vecteur vers le haut. Cliquez sur "Suivant" pour continuer.</p>`;
+    document.getElementById("btnVecPrev").disabled = true;
+    document.getElementById("btnVecNext").disabled = false;
+}
+
+// =============== ÉVALUATION ===============
+function startEval() { evalIndex = 0; score = 0; answers = []; document.getElementById("scoreBadge").style.display = "inline-flex"; document.getElementById("scoreValue").textContent = "0"; showStep(10); renderQ(); }
+
+function renderQ() {
+    const q = evalQuestions[evalIndex];
+    document.getElementById("qIdx").textContent = evalIndex + 1;
+    document.getElementById("qTxt").textContent = q.q;
+    document.getElementById("qTag").textContent = q.section;
+    const box = document.getElementById("qChoices"); box.innerHTML = "";
+    q.choices.forEach((ch, i) => { const btn = document.createElement("button"); btn.className = "btn-quiz"; btn.textContent = ch; btn.onclick = () => selectAns(i); box.appendChild(btn); });
+    document.getElementById("btnNextQ").disabled = true;
+    document.getElementById("btnNextQ").textContent = evalIndex === evalQuestions.length - 1 ? "Voir les résultats →" : "Question suivante →";
+}
+
+function selectAns(i) {
+    const q = evalQuestions[evalIndex];
+    const btns = document.querySelectorAll("#qChoices .btn-quiz");
+    btns.forEach((b, j) => { b.onclick = null; if (j === q.correct) b.classList.add("correct"); if (j === i && j !== q.correct) b.classList.add("wrong"); });
+    if (i === q.correct) score++;
+    document.getElementById("scoreValue").textContent = score;
+    answers.push({ idx: evalIndex, ok: i === q.correct, section: q.section });
+    document.getElementById("btnNextQ").disabled = false;
+}
+
+function nextQ() { if (evalIndex < evalQuestions.length - 1) { evalIndex++; renderQ(); } else { finishEval(); showStep(11); } }
+
+function finishEval() {
+    document.getElementById("finalScore").textContent = score + "/20";
+    document.getElementById("finalScore").style.color = score >= 10 ? "#16a34a" : "#dc2626";
+    document.getElementById("resNom").textContent = studentName;
+    document.getElementById("resClasse").textContent = studentClasse;
+    const e = document.getElementById("resEmoji"), t = document.getElementById("resTitle"), m = document.getElementById("resMsg");
+    if (score >= 16) { e.textContent = "🥇"; t.textContent = "Excellent !"; m.textContent = "Tu maîtrises très bien le sujet."; }
+    else if (score >= 12) { e.textContent = "✅"; t.textContent = "Satisfaisant"; m.textContent = "L'essentiel est compris."; }
+    else if (score >= 8) { e.textContent = "🧐"; t.textContent = "À renforcer"; m.textContent = "Certaines notions sont à revoir."; }
+    else { e.textContent = "⚠️"; t.textContent = "Insuffisant"; m.textContent = "Reprends le cours depuis le début."; }
+    const stats = {};
+    answers.forEach(a => { if (!stats[a.section]) stats[a.section] = { t: 0, c: 0 }; stats[a.section].t++; if (a.ok) stats[a.section].c++; });
+    let dHtml = "";
+    Object.entries(stats).forEach(([n, d]) => { const p = Math.round(d.c / d.t * 100); dHtml += `<p style="display:flex;justify-content:space-between;margin:3px 0;font-size:0.85rem;"><span>${n}</span><span style="color:${p>=60?'#16a34a':'#dc2626'};font-weight:600;">${d.c}/${d.t} (${p}%)</span></p>`; });
+    document.getElementById("details").innerHTML = dHtml;
+    buildComp(stats);
+}
+
+function buildComp(stats) {
+    const cont = document.getElementById("compTable");
+    if (!studentClasse || !competenceProfiles[studentClasse]) { cont.innerHTML = "<p style='font-size:0.85rem;'>Aucun profil pour cette classe.</p>"; return; }
+    const prof = competenceProfiles[studentClasse];
+    let html = `<table><tr><th>Code</th><th>Compétence</th><th style="text-align:center;">Niveau</th></tr>`;
+    prof.forEach(c => {
+        let tot = 0, cor = 0;
+        c.sections.forEach(s => { if (stats[s]) { tot += stats[s].t; cor += stats[s].c; } });
+        let pct = tot > 0 ? Math.round(cor / tot * 100) : 0;
+        let niv = "Non évalué", bg = "#e5e7eb", col = "#111";
+        if (tot > 0) {
+            if (pct < 40) { niv = "Non acquis"; bg = "#fee2e2"; col = "#b91c1c"; }
+            else if (pct < 60) { niv = "En cours"; bg = "#fef9c3"; col = "#92400e"; }
+            else if (pct < 85) { niv = "Acquis"; bg = "#dcfce7"; col = "#166534"; }
+            else { niv = "Parfait"; bg = "#bbf7d0"; col = "#166534"; }
+        }
+        html += `<tr><td>${c.code}</td><td>${c.label}</td><td style="text-align:center;"><span style="display:inline-block;padding:2px 6px;border-radius:999px;background:${bg};color:${col};font-size:0.7rem;">${niv} (${pct}%)</span></td></tr>`;
+    });
+    html += "</table>";
+    cont.innerHTML = html;
+}
+
+function sendEmail() {
+    const email = document.getElementById("emailProf").value;
+    if (!email) { alert("Entre l'email."); return; }
+    const dur = Math.round((new Date() - startTime) / 60000);
+    const subj = encodeURIComponent(`TD Triphasé - ${studentName} (${studentClasse}) - ${score}/20`);
+    let body = `RÉSULTAT TD TRIPHASÉ & COUPLAGE\n================================\n\nÉlève : ${studentName}\nClasse : ${studentClasse}\nDate : ${new Date().toLocaleDateString('fr-FR')}\nDurée : ${dur} min\nScore : ${score}/20\n\n`;
+    body += `DÉTAIL :\n`;
+    answers.forEach((a, i) => { body += `Q${i+1} [${a.section}] : ${a.ok ? '✓' : '✗'}\n`; });
+    window.location.href = `mailto:${email}?subject=${subj}&body=${encodeURIComponent(body)}`;
+}
+
+document.addEventListener("DOMContentLoaded", generateSteps);
+
+// =============== MINI QCM ===============
+function checkMiniQCM(qcmId, el, isCorrect) {
+    const qcmBox = document.getElementById(qcmId);
+    const choices = qcmBox.querySelectorAll('.mini-qcm-choice');
+    
+    // Désactiver tous les choix
+    choices.forEach(c => {
+        c.classList.add('disabled');
+        c.onclick = null;
+    });
+    
+    // Marquer la réponse
+    if (isCorrect) {
+        el.classList.add('correct');
+        document.getElementById(qcmId + '-ok').classList.add('show');
+    } else {
+        el.classList.add('wrong');
+        document.getElementById(qcmId + '-ko').classList.add('show');
+    }
+}
+
+// =============== DRAG & DROP AMÉLIORÉ ===============
+let draggedElement = null;
+
+// Initialiser le drag & drop après le chargement
+document.addEventListener('DOMContentLoaded', function() {
+    // Attendre que les steps soient générés
+    setTimeout(initDragDrop, 300);
+});
+
+function initDragDrop() {
+    // Tous les éléments draggables
+    document.querySelectorAll('.exo-draggable').forEach(function(el) {
+        el.addEventListener('dragstart', handleDragStart);
+        el.addEventListener('dragend', handleDragEnd);
+        // Support tactile
+        el.addEventListener('touchstart', handleTouchStart, {passive: false});
+        el.addEventListener('touchmove', handleTouchMove, {passive: false});
+        el.addEventListener('touchend', handleTouchEnd);
+    });
+    
+    // Toutes les zones de dépôt
+    document.querySelectorAll('.exo-dropzone').forEach(function(zone) {
+        zone.addEventListener('dragover', handleDragOver);
+        zone.addEventListener('dragleave', handleDragLeave);
+        zone.addEventListener('drop', handleDrop);
+    });
+}
+
+function handleDragStart(e) {
+    draggedElement = e.target;
+    e.target.style.opacity = '0.6';
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', e.target.dataset.value);
+}
+
+function handleDragEnd(e) {
+    e.target.style.opacity = '1';
+    // Enlever tous les effets dragover
+    document.querySelectorAll('.exo-dropzone').forEach(function(z) {
+        z.classList.remove('dragover');
+    });
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    e.currentTarget.classList.add('dragover');
+}
+
+function handleDragLeave(e) {
+    e.currentTarget.classList.remove('dragover');
+}
+
+function handleDrop(e) {
+    e.preventDefault();
+    var dropzone = e.currentTarget;
+    dropzone.classList.remove('dragover');
+    
+    var value = e.dataTransfer.getData('text/plain');
+    var content = dropzone.querySelector('.drop-content');
+    
+    if (content && draggedElement) {
+        content.textContent = draggedElement.textContent;
+        content.dataset.value = value;
+        draggedElement.classList.add('placed');
+    }
+}
+
+// Support tactile amélioré
+var touchDragElement = null;
+var touchClone = null;
+
+function handleTouchStart(e) {
+    touchDragElement = e.target;
+    // Créer un clone pour le suivi visuel
+    touchClone = e.target.cloneNode(true);
+    touchClone.style.position = 'fixed';
+    touchClone.style.pointerEvents = 'none';
+    touchClone.style.opacity = '0.8';
+    touchClone.style.zIndex = '9999';
+    touchClone.style.transform = 'scale(1.1)';
+    document.body.appendChild(touchClone);
+    
+    e.target.style.opacity = '0.4';
+    e.preventDefault();
+}
+
+function handleTouchMove(e) {
+    if (!touchClone) return;
+    var touch = e.touches[0];
+    touchClone.style.left = (touch.clientX - 50) + 'px';
+    touchClone.style.top = (touch.clientY - 25) + 'px';
+    
+    // Highlight de la zone sous le doigt
+    var elementUnder = document.elementFromPoint(touch.clientX, touch.clientY);
+    document.querySelectorAll('.exo-dropzone').forEach(function(z) {
+        z.classList.remove('dragover');
+    });
+    if (elementUnder && elementUnder.classList.contains('exo-dropzone')) {
+        elementUnder.classList.add('dragover');
+    } else if (elementUnder && elementUnder.closest('.exo-dropzone')) {
+        elementUnder.closest('.exo-dropzone').classList.add('dragover');
+    }
+    
+    e.preventDefault();
+}
+
+function handleTouchEnd(e) {
+    if (!touchDragElement) return;
+    
+    // Trouver la zone sous le doigt
+    var touch = e.changedTouches[0];
+    var elementUnder = document.elementFromPoint(touch.clientX, touch.clientY);
+    var dropzone = null;
+    
+    if (elementUnder && elementUnder.classList.contains('exo-dropzone')) {
+        dropzone = elementUnder;
+    } else if (elementUnder && elementUnder.closest('.exo-dropzone')) {
+        dropzone = elementUnder.closest('.exo-dropzone');
+    }
+    
+    if (dropzone) {
+        var content = dropzone.querySelector('.drop-content');
+        if (content) {
+            content.textContent = touchDragElement.textContent;
+            content.dataset.value = touchDragElement.dataset.value;
+            touchDragElement.classList.add('placed');
+        }
+    }
+    
+    // Nettoyer
+    touchDragElement.style.opacity = '1';
+    if (touchClone && touchClone.parentNode) {
+        touchClone.parentNode.removeChild(touchClone);
+    }
+    document.querySelectorAll('.exo-dropzone').forEach(function(z) {
+        z.classList.remove('dragover');
+    });
+    
+    touchDragElement = null;
+    touchClone = null;
+}
+
+// =============== FONCTIONS DE VÉRIFICATION ===============
+
+function verifierTensions() {
+    var zones = {
+        'drop-phase-neutre': '230',
+        'drop-phase-phase': '400'
+    };
+    var correct = 0;
+    var total = 0;
+    
+    for (var zoneId in zones) {
+        var zone = document.getElementById(zoneId);
+        if (!zone) continue;
+        var content = zone.querySelector('.drop-content');
+        var value = content ? content.dataset.value : null;
+        total++;
+        
+        zone.classList.remove('correct', 'wrong');
+        if (value === zones[zoneId]) {
+            zone.classList.add('correct');
+            correct++;
+        } else if (value) {
+            zone.classList.add('wrong');
+        }
+    }
+    
+    var feedback = document.getElementById('exo-tensions-feedback');
+    if (correct === total) {
+        feedback.textContent = '✅ Parfait ! 230V entre phase-neutre, 400V entre deux phases.';
+        feedback.className = 'exo-feedback success show';
+    } else {
+        feedback.textContent = '❌ Pas tout à fait. Rappel : Phase-Neutre = 230V, Phase-Phase = 400V.';
+        feedback.className = 'exo-feedback error show';
+    }
+}
+
+function verifierBarrettes() {
+    var zones = {
+        'drop-3-verticales': 'triangle',
+        'drop-2-horizontales': 'etoile'
+    };
+    var correct = 0;
+    var total = 0;
+    
+    for (var zoneId in zones) {
+        var zone = document.getElementById(zoneId);
+        if (!zone) continue;
+        var content = zone.querySelector('.drop-content');
+        var value = content ? content.dataset.value : null;
+        total++;
+        
+        zone.classList.remove('correct', 'wrong');
+        if (value === zones[zoneId]) {
+            zone.classList.add('correct');
+            correct++;
+        } else if (value) {
+            zone.classList.add('wrong');
+        }
+    }
+    
+    var feedback = document.getElementById('exo-barrettes-feedback');
+    if (correct === total) {
+        feedback.textContent = '✅ Parfait ! Triangle = 3 verticales, Étoile = 2 horizontales en bas.';
+        feedback.className = 'exo-feedback success show';
+    } else {
+        feedback.textContent = '❌ Pas tout à fait. Triangle = 3 barrettes verticales, Étoile = 2 horizontales.';
+        feedback.className = 'exo-feedback error show';
+    }
+}
+
+// =============== AJOUTS CLAUDE : EXPORT PDF + AIDES + SAUVEGARDE ===============
+
+// ----- Export PDF avec jsPDF -----
+function exportPDF() {
+    if (typeof jspdf === 'undefined') {
+        alert('⚠️ Erreur : jsPDF non chargé. Vérifiez votre connexion ou utilisez une version offline.');
+        return;
+    }
+    
+    const { jsPDF } = jspdf;
+    const doc = new jsPDF();
+    
+    // En-tête avec la marque
+    doc.setFillColor(15, 23, 42);
+    doc.rect(0, 0, 210, 35, 'F');
+    doc.setTextColor(56, 189, 248);
+    doc.setFontSize(22);
+    doc.setFont(undefined, 'bold');
+    doc.text('inerWeb Édu', 15, 20);
+    doc.setTextColor(229, 231, 235);
+    doc.setFontSize(10);
+    doc.setFont(undefined, 'normal');
+    doc.text('inerweb.fr', 15, 27);
+    
+    // Titre du document
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(16);
+    doc.setFont(undefined, 'bold');
+    doc.text('Bilan TD Triphasé & Couplages', 15, 50);
+    
+    // Informations élève
+    doc.setFontSize(11);
+    doc.setFont(undefined, 'normal');
+    doc.text(`Élève : ${studentName}`, 15, 65);
+    doc.text(`Classe : ${studentClasse}`, 15, 72);
+    doc.text(`Date : ${new Date().toLocaleDateString('fr-FR')}`, 15, 79);
+    const duree = startTime ? Math.round((new Date() - startTime) / 60000) : 0;
+    doc.text(`Durée : ${duree} minutes`, 15, 86);
+    
+    // Score global
+    doc.setFontSize(14);
+    doc.setFont(undefined, 'bold');
+    const scoreColor = score >= 10 ? [22, 197, 94] : [220, 38, 38];
+    doc.setTextColor(scoreColor[0], scoreColor[1], scoreColor[2]);
+    doc.text(`Score : ${score}/20`, 15, 100);
+    
+    // Appréciation
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(10);
+    doc.setFont(undefined, 'normal');
+    let appreciation = '';
+    if (score >= 16) appreciation = 'Excellent ! Tu maîtrises très bien le sujet.';
+    else if (score >= 12) appreciation = 'Satisfaisant. L\'essentiel est compris.';
+    else if (score >= 8) appreciation = 'À renforcer. Certaines notions sont à revoir.';
+    else appreciation = 'Insuffisant. Reprends le cours depuis le début.';
+    doc.text(appreciation, 15, 108);
+    
+    // Détail par thème
+    doc.setFontSize(12);
+    doc.setFont(undefined, 'bold');
+    doc.text('Détail par thème :', 15, 125);
+    doc.setFontSize(10);
+    doc.setFont(undefined, 'normal');
+    
+    const stats = {};
+    answers.forEach(a => {
+        if (!stats[a.section]) stats[a.section] = { t: 0, c: 0 };
+        stats[a.section].t++;
+        if (a.ok) stats[a.section].c++;
+    });
+    
+    let yPos = 135;
+    Object.entries(stats).forEach(([nom, data]) => {
+        const pct = Math.round(data.c / data.t * 100);
+        doc.text(`• ${nom} : ${data.c}/${data.t} (${pct}%)`, 20, yPos);
+        yPos += 7;
+    });
+    
+    // Compétences évaluées
+    yPos += 10;
+    if (yPos > 250) {
+        doc.addPage();
+        yPos = 20;
+    }
+    doc.setFontSize(12);
+    doc.setFont(undefined, 'bold');
+    doc.text('Compétences évaluées :', 15, yPos);
+    yPos += 10;
+    
+    if (studentClasse && competenceProfiles[studentClasse]) {
+        const prof = competenceProfiles[studentClasse];
+        doc.setFontSize(9);
+        doc.setFont(undefined, 'normal');
+        
+        prof.forEach(c => {
+            if (yPos > 270) {
+                doc.addPage();
+                yPos = 20;
+            }
+            let tot = 0, cor = 0;
+            c.sections.forEach(s => {
+                if (stats[s]) { tot += stats[s].t; cor += stats[s].c; }
+            });
+            let pct = tot > 0 ? Math.round(cor / tot * 100) : 0;
+            let niv = pct < 40 ? 'Non acquis' : pct < 60 ? 'En cours' : pct < 85 ? 'Acquis' : 'Parfait';
+            
+            doc.text(`${c.code} - ${c.label}`, 20, yPos);
+            doc.text(`${niv} (${pct}%)`, 150, yPos);
+            yPos += 6;
+        });
+    }
+    
+    // Pied de page
+    const totalPages = doc.internal.pages.length - 1;
+    for (let i = 1; i <= totalPages; i++) {
+        doc.setPage(i);
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text(`Document généré par inerweb.fr - Page ${i}/${totalPages}`, 105, 290, { align: 'center' });
+    }
+    
+    // Télécharger
+    const filename = `TD_Triphase_${studentName.replace(/\s+/g, '_')}_${new Date().toISOString().slice(0,10)}.pdf`;
+    doc.save(filename);
+}
+
+// ----- Système d'aide contextuelle -----
+const helpContents = {
+    'tensions': {
+        title: '📏 Aide : Tensions simple et composée',
+        text: 'La tension simple (V) se mesure entre une phase et le neutre. La tension composée (U) se mesure entre deux phases. En France : V = 230V et U = 400V.',
+        example: 'Exemple : dans une prise domestique, tu as 230V (une phase + le neutre). Pour un moteur triphasé, on utilise les 400V entre deux phases.'
+    },
+    'sqrt3': {
+        title: '🧮 Aide : Le rapport √3',
+        text: 'Le rapport entre tension composée et tension simple vaut toujours √3 (environ 1,73). C\'est une propriété mathématique du triphasé avec 3 phases décalées de 120°.',
+        example: 'Calcul : 400V ÷ 230V = 1,74 ≈ √3. Tu retrouveras toujours ce nombre en triphasé !'
+    },
+    'couplage-triangle': {
+        title: '🔺 Aide : Couplage Triangle (Δ)',
+        text: 'En couplage Triangle, chaque enroulement du moteur reçoit la tension composée (400V). Les barrettes forment 3 traits verticaux sur le bornier.',
+        example: 'Moteur 230/400V sur réseau 230V triphasé → Couplage Triangle pour que les enroulements reçoivent 230V.'
+    },
+    'couplage-etoile': {
+        title: '⭐ Aide : Couplage Étoile (Y)',
+        text: 'En couplage Étoile, chaque enroulement du moteur reçoit la tension simple (230V). Les barrettes forment 2 traits horizontaux en bas du bornier.',
+        example: 'Moteur 230/400V sur réseau 400V → Couplage Étoile pour que les enroulements reçoivent 230V (400V ÷ √3).'
+    },
+    'plaque': {
+        title: '📋 Aide : Plaque à bornes CEI',
+        text: 'La plaque à bornes suit la norme CEI 60034-8. Rangée du haut : U1-V1-W1 (entrées). Rangée du bas : W2-U2-V2 (sorties). Les barrettes relient ces bornes selon le couplage choisi.',
+        example: 'Astuce : pour le Triangle, tu relies chaque sortie à l\'entrée suivante (U1-W2, V1-U2, W1-V2). Pour l\'Étoile, tu relies toutes les sorties ensemble (U2-V2-W2).'
+    }
+};
+
+function showHelp(helpId) {
+    const modal = document.getElementById('helpModal');
+    const content = helpContents[helpId];
+    if (!content) return;
+    
+    document.getElementById('helpTitle').textContent = content.title;
+    document.getElementById('helpText').innerHTML = content.text;
+    document.getElementById('helpExample').innerHTML = `<strong>💡 Exemple :</strong> ${content.example}`;
+    
+    modal.classList.add('show');
+}
+
+function closeHelp() {
+    document.getElementById('helpModal').classList.remove('show');
+}
+
+// Fermer la modal en cliquant en dehors
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('helpModal');
+    if (e.target === modal) closeHelp();
+});
+
+// ----- Sauvegarde localStorage (optionnel) -----
+function saveProgress() {
+    const data = {
+        step: currentStep,
+        score: score,
+        answers: answers,
+        name: studentName,
+        classe: studentClasse,
+        time: startTime
+    };
+    localStorage.setItem('tdTriphase_progress', JSON.stringify(data));
+}
+
+function loadProgress() {
+    const saved = localStorage.getItem('tdTriphase_progress');
+    if (!saved) return false;
+    
+    try {
+        const data = JSON.parse(saved);
+        currentStep = data.step;
+        score = data.score;
+        answers = data.answers;
+        studentName = data.name;
+        studentClasse = data.classe;
+        startTime = data.time;
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
+
+// Sauvegarder automatiquement à chaque changement d'étape
+const originalNextStep = nextStep;
+nextStep = function() {
+    originalNextStep();
+    saveProgress();
+};
+
+// =============== FIN AJOUTS CLAUDE ===============
+</script>
+<!-- ========== AJOUTS CLAUDE : jsPDF + Modal d'aide ========== -->
+<!-- jsPDF pour export PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Modal d'aide contextuelle -->
+<div id="helpModal" class="help-modal">
+    <div class="help-content">
+        <button class="help-close" onclick="closeHelp()">×</button>
+        <div class="help-title" id="helpTitle">Aide</div>
+        <div class="help-text" id="helpText"></div>
+        <div class="help-example" id="helpExample"></div>
+    </div>
+</div>
+<!-- ========== FIN AJOUTS CLAUDE ========== -->
+
+<!-- La marque et la mention de droits viennent du site principal :
+     une source pour tous les satellites, zéro divergence (20/08/2026). -->
+<script src="../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>
