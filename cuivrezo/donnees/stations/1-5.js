@@ -3,7 +3,11 @@
    R = cote prise depuis l'extrémité DROITE (dessin CINTRAGE 1 p. 8 et article abcclim, décidé le 30/09/2026) ;
    0 = lecture de l'angle sur la forme graduée (0 en face de 90 = coude à 90°). Ordre « 0 R L » : trois
    sources sur quatre ; à vérifier UNE FOIS sur la cintreuse de l'atelier (liste du professeur).
-   Pièce de référence : pièce 1 du niveau 3 de tp-cintrage (1/4″, coupe 144, cote 80 sur L). */
+   Pièce de référence : pièce 1 du niveau 3 de tp-cintrage (1/4″, coupe 144, cote 80 sur L).
+   Mise en place du tube, dictée par Franck le 01/10/2026 (le geste le plus dur pour les élèves) : bras en
+   l'air, tube engagé et bloqué par le CROCHET FIXE (on ne le rabat pas), bras rabattu, trait sur L (pas de
+   rayon à ajouter) ou sur 0 (cote moins Rc). Sa fiche « ETAPE CINTRAGE 90 » : « L du bras mobile bien en face
+   de la marque ». */
 CUIVREZO.stations.push({
   id: '1-5', ligne: 1, titre: 'Cintrer à la cintreuse (L, R, 0)', duree: '30 min', vignette: 'images/1-5-cintreuse.webp',
   sources: ['sources-metier/1-4-1-5-cintrage.md', 'C:/git/tp-cintrage/niveau-3-data.js'],
@@ -24,7 +28,7 @@ CUIVREZO.stations.push({
       { nom: 'Feutre fin, mètre ou réglet', detail: 'pour tracer la cote' },
       { nom: 'L’équerre', detail: 'pour contrôler l’angle' }
     ],
-    narration: 'Regardez l’outil. Une forme ronde, graduée : zéro, quarante-cinq, quatre-vingt-dix, cent quatre-vingts. Un crochet qui serre le tube contre la forme. Un bras fixe, et un bras tournant qui porte trois repères : zéro, R et L. Chaque cintreuse ne fait qu’un diamètre : son marquage, un quart ou trois huitièmes, doit être celui du tube. Son rayon lui est propre.'
+    narration: 'Regardez l’outil. Une forme ronde, graduée : zéro, quarante-cinq, quatre-vingt-dix, cent quatre-vingts. En haut du bras fixe, un crochet fixe qui bloque le tube contre la forme. Un bras fixe, et un bras tournant qui porte trois repères : zéro, R et L. Chaque cintreuse ne fait qu’un diamètre : son marquage, un quart ou trois huitièmes, doit être celui du tube. Son rayon lui est propre.'
   },
   gestes: [
     { titre: 'Prendre la bonne cintreuse', texte: 'Le marquage de la cintreuse doit être celui du tube : 1/4″ avec 1/4″.',
@@ -42,36 +46,51 @@ CUIVREZO.stations.push({
       pourquoi: 'Avec la cintreuse, pas de soustraction : c’est le repère L ou R qui tient compte du rayon.',
       figure: { svg: 'mesure', etat: 'butee' }, clip: 'clips/1-5/03-tracer.mp4',
       narration: 'On trace la cote telle qu’elle est sur le plan : quatre-vingts millimètres depuis l’extrémité gauche, pour la pièce une. Avec la cintrette, il fallait retirer le rayon. Ici, non : c’est le repère L, ou R, qui en tient compte à votre place. C’est tout l’intérêt de ces lettres.' },
-    { titre: 'Ouvrir la cintreuse', texte: 'Dépliez le bras tournant vers l’avant, dans le prolongement de la butée.',
-      pointCle: 'Le 0 du bras en face du 0 de la forme.',
-      pourquoi: 'Le coude se mesure à partir de ce point de départ.',
-      figure: { svg: 'cintreuse', etat: 'reperes' }, clip: 'clips/1-5/04-ouvrir.mp4',
-      narration: 'On ouvre la cintreuse : le bras tournant se déplie vers l’avant, dans le prolongement de la butée. Le zéro du bras est alors en face du zéro de la forme. C’est le point de départ du coude.' },
-    { titre: 'Poser le trait sur L', texte: 'Glissez le tube dans la gorge, trait exactement en face de L. Rabattez le crochet.',
+    { titre: 'Lever le bras tournant', texte: 'Levez le bras tournant, bras en l’air : le guide s’écarte de la forme.',
+      pointCle: 'Bras en l’air : la gorge est libre.',
+      pourquoi: 'Tant que le guide est posé sur la forme, le tube ne peut pas entrer dans la gorge.',
+      figure: { svg: 'cintreuse', etat: 'lever' }, clip: 'clips/1-5/04-lever.mp4',
+      narration: 'On commence par lever le bras tournant, bras en l’air. Le guide s’écarte de la forme, et la gorge est libre : le tube va pouvoir s’y poser.' },
+    { titre: 'Engager le tube sous le crochet fixe', texte: 'Posez le tube dans la gorge et glissez-le sous le crochet, en haut du bras fixe.',
+      pointCle: 'Le tube est bloqué par le crochet.',
+      pourquoi: 'Pendant le coude, c’est le crochet qui retient le tube. Un tube hors du crochet glisse : le coude part de travers ou se plisse.',
+      figure: { svg: 'cintreuse', etat: 'engager' }, clip: 'clips/1-5/05-engager.mp4',
+      narration: 'On pose le tube dans la gorge de la forme, et on le glisse sous le crochet, en haut du bras fixe. Faites bien attention à ce point : le tube doit être bloqué par le crochet. S’il passe au-dessus, rien ne le retient, et il glissera pendant le coude.' },
+    { titre: 'Rabattre le bras tournant', texte: 'Rabattez le bras : le guide vient se poser sur le tube.',
+      pointCle: 'Le guide est posé sur le tube ; le tube peut encore coulisser.',
+      pourquoi: 'Le guide porte les repères 0, R et L : il doit être sur le tube pour qu’on y aligne le trait.',
+      figure: { svg: 'cintreuse', etat: 'rabattre' }, clip: 'clips/1-5/06-rabattre.mp4',
+      narration: 'On rabat le bras tournant : le guide vient se poser sur le tube. Le tube peut encore coulisser dans la gorge. C’est maintenant qu’on va le placer, au millimètre, grâce aux repères gravés sur le guide.' },
+    { titre: 'Amener le trait sur L', texte: 'Faites coulisser le tube jusqu’à ce que le trait soit exactement en face de L.',
       pointCle: 'Exactement sur le repère : un millimètre d’écart, un millimètre d’erreur.',
-      pourquoi: 'Le crochet tient le tube pendant que le bras l’enroule : sans lui, le tube glisse.',
-      figure: { svg: 'cintreuse', etat: 'placer-L' }, clip: 'clips/1-5/05-sur-L.mp4',
-      narration: 'On glisse le tube dans la gorge et on le fait coulisser jusqu’à ce que le trait soit exactement en face du repère L. Puis on rabat le crochet, qui bloque le tube contre la forme. Vérifiez une dernière fois l’alignement : c’est ici que se joue la précision de la pièce.' },
+      pourquoi: 'Avec L, on trace la cote du plan telle quelle : pas de rayon de cintrage à ajouter.',
+      figure: { svg: 'cintreuse', etat: 'placer-L' }, clip: 'clips/1-5/07-sur-L.mp4',
+      narration: 'On fait coulisser le tube jusqu’à ce que le trait soit exactement en face du repère L. Avec L, pas de rayon de cintrage à ajouter : la cote du plan suffit. Vérifiez une dernière fois l’alignement : c’est ici que se joue la précision de la pièce.' },
     { titre: 'Ou sur R, si la cote part de la droite', texte: 'Même geste, mais le trait se pose en face de R.',
       pointCle: 'Le repère suit le bout d’où part la cote.',
       pourquoi: 'Sur une pièce à plusieurs coudes, on passe parfois d’un repère à l’autre selon le sens des cotes.',
-      figure: { svg: 'cintreuse', etat: 'placer-R' }, clip: 'clips/1-5/06-sur-R.mp4',
+      figure: { svg: 'cintreuse', etat: 'placer-R' }, clip: 'clips/1-5/08-sur-R.mp4',
       narration: 'Si la cote du plan part de l’extrémité droite, le geste est le même, mais le trait se pose en face de R. Sur une pièce à plusieurs coudes, les cotes ne partent pas toujours du même côté : on choisit le repère à chaque coude, en regardant d’où part la cote.' },
+    { titre: 'Ou sur le 0, si vous avez retiré Rc', texte: 'Vous avez tracé la cote moins Rc, comme à la cintrette ? Posez alors le trait en face du 0.',
+      pointCle: 'Le 0 : le coude commence au trait.',
+      pourquoi: 'Le 0 ne compense rien : le rayon, c’est vous qui l’avez retiré en traçant.',
+      figure: { svg: 'cintreuse', etat: 'placer-0' }, clip: 'clips/1-5/09-sur-0.mp4',
+      narration: 'Il existe une autre façon de faire : tracer la cote moins le rayon de cintrage, comme à la cintrette, puis poser le trait en face du zéro. Le zéro marque l’endroit où le coude commence. Il ne compense rien : le calcul, c’est vous qui l’avez fait en traçant. Avec L, ce calcul est inutile.' },
     { titre: 'Ramener le bras', texte: 'Main gauche : poignée et tube. Main droite : ramenez le bras vers vous, d’un seul mouvement.',
       pointCle: 'Progressivement, sans à-coup.',
       pourquoi: 'Un mouvement haché ovalise ou plisse le tube.',
-      figure: { svg: 'cintreuse', etat: 'cintrer' }, clip: 'clips/1-5/07-cintrer.mp4',
+      figure: { svg: 'cintreuse', etat: 'cintrer' }, clip: 'clips/1-5/10-cintrer.mp4',
       narration: 'La main gauche tient la poignée fixe et le tube ; la main droite ramène le bras tournant vers vous. D’un seul mouvement, régulier. Regardez le tube s’enrouler autour de la forme : le bras le pousse dans la gorge, pendant que le crochet le retient.' },
     { titre: 'Arrêter quand le 0 est face au 90', texte: 'Le 0 du bras arrive en face du 90 de la forme : arrêtez. Tenez compte de la détente.',
       pointCle: '0 face à 90 : coude à 90°.',
       pourquoi: 'La forme est graduée en degrés, et le 0 du bras est l’aiguille qui les lit.',
-      figure: { svg: 'cintreuse', etat: 'angle' }, clip: 'clips/1-5/08-angle.mp4',
+      figure: { svg: 'cintreuse', etat: 'angle' }, clip: 'clips/1-5/11-angle.mp4',
       narration: 'Le zéro du bras sert maintenant d’aiguille. Il avance devant les graduations de la forme : quarante-cinq, puis quatre-vingt-dix. Quand il est en face de quatre-vingt-dix, le coude est à quatre-vingt-dix degrés : on s’arrête. Comme pour la cintrette, le cuivre se détend un peu quand on relâche : on vérifie à l’équerre.' },
-    { titre: 'Dégager, puis enchaîner', texte: 'Redépliez le bras, ouvrez le crochet, sortez le tube. Coude suivant : mesurez depuis l’axe de la branche déjà cintrée.',
+    { titre: 'Dégager, puis enchaîner', texte: 'Relevez le bras, dégagez le tube du crochet, sortez-le. Coude suivant : mesurez depuis l’axe de la branche déjà cintrée.',
       pointCle: 'Toujours de gauche à droite, avec le même mouvement du bras.',
       pourquoi: 'Travailler toujours dans le même sens évite de se tromper de repère et de vriller la pièce.',
-      figure: { img: 'images/1-5-cintreuse.webp', alt: 'Coude à 90° dans la cintreuse' }, clip: 'clips/1-5/09-enchainer.mp4',
-      narration: 'On redéplie le bras, on ouvre le crochet, et le tube sort. Pour une pièce à plusieurs coudes, la cote suivante se mesure depuis l’axe de la branche qu’on vient de cintrer. Et on travaille toujours dans le même sens, de gauche à droite, comme on écrit : c’est ce qui évite de se tromper de repère.' }
+      figure: { img: 'images/1-5-cintreuse.webp', alt: 'Coude à 90° dans la cintreuse' }, clip: 'clips/1-5/12-enchainer.mp4',
+      narration: 'On relève le bras, on dégage le tube du crochet, et il sort. Pour une pièce à plusieurs coudes, la cote suivante se mesure depuis l’axe de la branche qu’on vient de cintrer. Et on travaille toujours dans le même sens, de gauche à droite, comme on écrit : c’est ce qui évite de se tromper de repère.' }
   ],
   pieges: [
     { titre: 'La mauvaise cintreuse', voit: 'Un tube écrasé, ou des cotes fausses.', cause: 'Une cintreuse 1/4″ pour un tube 3/8″, ou l’inverse.',
@@ -81,24 +100,27 @@ CUIVREZO.stations.push({
       eviter: 'Se demander à chaque coude : d’où part la cote ?', geste: 1,
       figure: { svg: 'cintreuse', etat: 'placer-R' },
       narration: 'Deuxième piège : poser le trait sur le mauvais repère. La pièce est fausse de la distance qui sépare L de R. Un seul réflexe l’évite : avant chaque coude, se demander de quel bout part la cote.' },
+    { titre: 'Le tube hors du crochet', voit: 'Le tube glisse pendant le coude : coude décalé ou plissé.', cause: 'Le tube est passé au-dessus du crochet fixe, pas dessous.',
+      eviter: 'Avant de rabattre le bras, vérifier que le crochet bloque le tube.', geste: 4, figure: { svg: 'cintreuse', etat: 'hors-crochet' },
+      narration: 'Troisième piège, le plus fréquent : le tube posé au-dessus du crochet, au lieu de dessous. Rien ne le retient : pendant le coude, il glisse. Avant de rabattre le bras, un coup d’œil au crochet : le tube doit être dessous, bloqué.' },
     { titre: 'Le trait mal aligné', voit: 'Une branche un peu trop longue ou trop courte.', cause: 'Le trait n’était pas pile sur le repère.',
-      eviter: 'Aligner exactement, puis rabattre le crochet.', geste: 4, figure: { svg: 'cintreuse', etat: 'placer-L' },
-      narration: 'Troisième piège : le bon repère, mais un alignement approximatif. Avec un millimètre de tolérance, il n’y a pas de place pour l’à-peu-près.' },
-    { titre: 'Le tube plissé ou écrasé', voit: 'Des plis dans le coude, ou un tube aplati.', cause: 'Mouvement haché, crochet mal serré.',
-      eviter: 'Un seul mouvement continu.', geste: 6, figure: { svg: 'coude', etat: 'pli' },
-      narration: 'Quatrième piège : le coude plissé ou aplati. Le mouvement a été haché, ou le crochet n’a pas tenu le tube. Un seul mouvement, régulier.' },
+      eviter: 'Aligner exactement avant de cintrer.', geste: 6, figure: { svg: 'cintreuse', etat: 'placer-L' },
+      narration: 'Quatrième piège : le bon repère, mais un alignement approximatif. Avec un millimètre de tolérance, il n’y a pas de place pour l’à-peu-près.' },
+    { titre: 'Le tube plissé ou écrasé', voit: 'Des plis dans le coude, ou un tube aplati.', cause: 'Mouvement haché, ou tube mal bloqué par le crochet.',
+      eviter: 'Un seul mouvement continu.', geste: 9, figure: { svg: 'coude', etat: 'pli' },
+      narration: 'Cinquième piège : le coude plissé ou aplati. Le mouvement a été haché, ou le crochet n’a pas tenu le tube. Un seul mouvement, régulier.' },
     { titre: 'La pièce vrillée', voit: 'La pièce ne tient pas à plat sur l’établi.', cause: 'Le sens de cintrage a changé, ou le tube a tourné entre deux coudes.',
-      eviter: 'Toujours de gauche à droite, même mouvement du bras.', geste: 8, figure: { svg: 'coude', etat: 'vrille' },
+      eviter: 'Toujours de gauche à droite, même mouvement du bras.', geste: 11, figure: { svg: 'coude', etat: 'vrille' },
       narration: 'Dernier piège, sur les pièces à plusieurs coudes : la pièce vrillée, qui ne tient pas à plat. Le sens de travail a changé en cours de route. De gauche à droite, toujours.' }
   ],
   controles: [
     { question: 'Les branches mesurent-elles 80 et 70 mm à l’axe (± 1) ?', comment: 'Plaquez la branche contre la butée, mesurez jusqu’au bord extérieur de l’autre branche, retirez la moitié du diamètre du tube (3,2 mm en 1/4″).', siNon: 'Vérifiez le repère utilisé et l’alignement du trait.', geste: 1,
       figure: { img: 'images/reprises/piece-1-coude-1-4.svg', alt: 'Plan de la pièce 1' }, narration: 'Premier contrôle : les deux branches, à l’axe, au millimètre. On mesure jusqu’au bord extérieur de l’autre branche, et l’on retire la moitié du diamètre du tube.' },
-    { question: 'Le coude est-il à 90° ?', comment: 'Posez l’équerre contre les deux branches.', siNon: 'Reprenez un tout petit peu à la cintreuse.', geste: 7,
+    { question: 'Le coude est-il à 90° ?', comment: 'Posez l’équerre contre les deux branches.', siNon: 'Reprenez un tout petit peu à la cintreuse.', geste: 10,
       figure: { svg: 'coude', etat: 'equerre' }, narration: 'Deuxième contrôle : l’angle, à l’équerre.' },
-    { question: 'Le tube est-il ni écrasé ni fortement marqué ?', comment: 'Regardez le coude de près.', siNon: 'Pièce à refaire : bon diamètre de cintreuse, mouvement continu.', geste: 6,
+    { question: 'Le tube est-il ni écrasé ni fortement marqué ?', comment: 'Regardez le coude de près.', siNon: 'Pièce à refaire : bon diamètre de cintreuse, mouvement continu.', geste: 9,
       figure: { svg: 'coude', etat: 'ovale' }, narration: 'Troisième contrôle : le coude est rond et propre.' },
-    { question: 'La pièce est-elle plane ?', comment: 'Posez-la à plat : elle touche l’établi partout.', siNon: 'Le tube a tourné : gardez le même sens de travail.', geste: 8,
+    { question: 'La pièce est-elle plane ?', comment: 'Posez-la à plat : elle touche l’établi partout.', siNon: 'Le tube a tourné : gardez le même sens de travail.', geste: 11,
       figure: { svg: 'coude', etat: 'vrille' }, narration: 'Dernier contrôle : la pièce est plane.' }
   ],
   suite: {
