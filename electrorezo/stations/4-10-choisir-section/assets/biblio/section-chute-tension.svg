@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+<metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <cc:Work rdf:about="">
+      <dc:title>Section et chute de tension</dc:title>
+      <dc:creator><cc:Agent><dc:title>inerWeb — F. Henninot</dc:title></cc:Agent></dc:creator>
+      <dc:rights><cc:Agent><dc:title>© 2026 inerWeb — F. Henninot — tous droits réservés sur l’illustration</dc:title></cc:Agent></dc:rights>
+      <dc:publisher><cc:Agent><dc:title>inerWeb</dc:title></cc:Agent></dc:publisher>
+      <dc:date>2026</dc:date>
+      <dc:identifier>inerweb.fh@gmail.com</dc:identifier>
+      <cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
+    </cc:Work>
+    <cc:License rdf:about="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+      <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+      <cc:prohibits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    </cc:License>
+  </rdf:RDF>
+</metadata>
+<title id="title">Section et chute de tension</title>
+<desc id="desc">Illustration pédagogique originale pour un cours sur les câbles électriques.</desc>
+<style>
+  .bg{fill:#f7f7f5;}
+  .card{fill:#fff;stroke:#e6e6e2;stroke-width:2;}
+  .title{font:700 32px Arial, sans-serif;fill:#1b3a63;}
+  .subtitle{font:700 22px Arial, sans-serif;fill:#2b2b2b;}
+  .txt{font:18px Arial, sans-serif;fill:#2b2b2b;}
+  .small{font:15px Arial, sans-serif;fill:#5b6472;}
+  .label{font:700 16px Arial, sans-serif;fill:#fff;}
+  .blue{fill:#1b3a63;}
+  .orange{fill:#ff6b35;}
+  .copper{fill:#d98b3a;}
+  .brown{fill:#6b4226;}
+  .green{fill:#2e7d32;}
+  .yellow{fill:#f4c430;}
+  .grey{fill:#5b6472;}
+  .dark{fill:#2b2b2b;}
+  .aluminium{fill:#cfd6df;}
+  .stroke-blue{stroke:#1b3a63;}
+  .stroke-dark{stroke:#2b2b2b;}
+  .stroke-grey{stroke:#5b6472;}
+  .stroke-orange{stroke:#ff6b35;}
+  .stroke-copper{stroke:#d98b3a;}
+  .stroke-green{stroke:#2e7d32;}
+  .line{fill:none;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<rect class="bg" width="100%" height="100%"/>
+
+<text x="45" y="55" class="title">Plus c’est long et puissant, plus la section doit être adaptée</text>
+<rect x="55" y="100" width="790" height="345" rx="24" class="card"/>
+<g transform="translate(110 170)">
+  <text x="0" y="-25" class="subtitle">Petite section</text>
+  <line x1="0" y1="60" x2="270" y2="60" stroke="#d98b3a" stroke-width="16" stroke-linecap="round"/>
+  <path d="M295 35 l35 25 l-35 25" fill="none" stroke="#ff6b35" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="0" y="135" class="small">Plus de résistance → chute de tension plus forte</text>
+</g>
+<g transform="translate(110 320)">
+  <text x="0" y="-25" class="subtitle">Grande section</text>
+  <line x1="0" y1="40" x2="270" y2="40" stroke="#d98b3a" stroke-width="44" stroke-linecap="round"/>
+  <path d="M295 15 l35 25 l-35 25" fill="none" stroke="#2e7d32" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="0" y="105" class="small">Moins de résistance → meilleure alimentation</text>
+</g>
+<g transform="translate(570 185)">
+  <rect x="0" y="0" width="180" height="130" rx="18" fill="#eef2f6" stroke="#1b3a63" stroke-width="5"/>
+  <text x="90" y="58" class="subtitle" text-anchor="middle">Récepteur</text>
+  <text x="90" y="90" class="small" text-anchor="middle">moteur / PAC / groupe</text>
+</g>
+
+</svg>

@@ -16,7 +16,7 @@
      dangerDeMesure,                 l'avertissement du temps 3, facultatif
      ecriture{symbole, unite, nomUnite, multiples[[quoi, vaut]]},
      surUnePlaque[],                 où on la lit dans la vraie vie
-     quiz[], jeu | retenir[], objectifs, credits[], correspondances[] }) */
+     quiz[], final() + finalTitre | jeu | retenir[], objectifs, credits[], correspondances[] }) */
 
 const ModeleGrandeur = (() => {
   'use strict';
@@ -136,7 +136,9 @@ const ModeleGrandeur = (() => {
       const w = el('div', 'workspace');
       const g = el('div'), d = el('div');
       Station.monterQuiz(g, D.quiz);
-      if (D.jeu) Station.monterJeu(d, D.jeu);
+      /* un outil final facultatif (4.10 : le tableau des sections), à côté des questions */
+      if (D.final) { const c = carte(D.finalTitre || 'Pour finir'); c.appendChild(D.final()); d.appendChild(c); }
+      else if (D.jeu) Station.monterJeu(d, D.jeu);
       else {
         const c = carte('Ce qu’il faut retenir');
         D.retenir.forEach(x => { const p = el('p'); p.innerHTML = x; c.appendChild(p); });

@@ -2,7 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.9', ligne: 4,
-  kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 9' + ' · fin de ligne',
+  kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 9',
   titre: "Le câble : section et désignation",
   narration: NARRATION,
 
@@ -122,5 +122,6 @@ ModeleAppareil.construire({
   correspondances: [
     { ligne: 1, couleur: '#1b3a63', texte: "1.8 Surcharge et court-circuit" },
     { ligne: 4, couleur: '#c0392b', texte: "4.3 Disjoncteur magnéto-thermique" },
+    { ligne: 4, couleur: '#c0392b', texte: "4.10 Choisir la section" },
     { ligne: 8, couleur: '#7c3aed', texte: "8.1 Le trait et le point" } ]
 });

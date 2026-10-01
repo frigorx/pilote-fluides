@@ -1,7 +1,7 @@
 /* ÉlectroRézo — la liste ordonnée des stations du réseau.
    ÉCRIT PAR outils/construire-reseau.mjs — ne pas modifier à la main.
    Relancer l'outil après toute création ou tout renommage de station.
-   59 stations, 8 lignes. */
+   60 stations, 8 lignes. */
 
 const RESEAU = {
   lignes: {
@@ -44,6 +44,7 @@ const RESEAU = {
     { id: '4.7', ligne: 4, dossier: '4-7-relais-thermique', titre: 'Le relais thermique', genre: 'femme' },
     { id: '4.8', ligne: 4, dossier: '4-8-terre', titre: 'La terre et la liaison équipotentielle', genre: 'homme' },
     { id: '4.9', ligne: 4, dossier: '4-9-cable-section', titre: 'Le câble : section et désignation', genre: 'femme' },
+    { id: '4.10', ligne: 4, dossier: '4-10-choisir-section', titre: 'Choisir la section d’un câble', genre: 'homme' },
     { id: '5.1', ligne: 5, dossier: '5-1-contact-no-nf', titre: 'Le contact : repos et travail', genre: 'femme' },
     { id: '5.2', ligne: 5, dossier: '5-2-contacteur', titre: 'Le contacteur', genre: 'femme' },
     { id: '5.3', ligne: 5, dossier: '5-3-contact-auxiliaire', titre: 'Le contact auxiliaire', genre: 'homme' },
