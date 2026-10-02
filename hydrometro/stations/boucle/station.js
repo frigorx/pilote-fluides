@@ -1,6 +1,13 @@
 "use strict";
 
 (() => {
+  /* la vue 3D de l’installation (le dessin reste en « En schéma » et à l’impression) */
+  const CLE_3D = ((document.currentScript && document.currentScript.src) || "").replace(/^[^?]*/, "");
+  const vue3d = (el, spec) => {
+    const go = () => window.HydroVue3D.brancher(el, spec);
+    if (window.HydroVue3D) return go();
+    const sc = document.createElement("script"); sc.src = "../_commun/3d/station3d.js" + CLE_3D; sc.onload = go; document.head.appendChild(sc);
+  };
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -154,7 +161,7 @@
       control: "intro"
     },
     {
-      short: "Fermer", narration: "Voici le point qui doit être parfaitement clair avant d'aller plus loin. Le départ et le retour ne sont pas deux installations différentes. C'est le même trajet, la même eau, vue à deux moments de son parcours. Au départ, elle est chaude et part travailler. Au retour, elle est plus froide et revient se recharger. Beaucoup de débutants raisonnent comme s'il s'agissait de deux circuits séparés, et se retrouvent bloqués devant le moindre dépannage. La conséquence pratique est directe : si un seul tronçon est coupé quelque part, plus rien ne circule — nulle part.", kicker: "2 · Comprendre", title: "Départ et retour : un seul trajet",
+      short: "Fermer", vue3d: { modele: "installation", titre: "L’installation en 3D" }, narration: "Voici le point qui doit être parfaitement clair avant d'aller plus loin. Le départ et le retour ne sont pas deux installations différentes. C'est le même trajet, la même eau, vue à deux moments de son parcours. Au départ, elle est chaude et part travailler. Au retour, elle est plus froide et revient se recharger. Beaucoup de débutants raisonnent comme s'il s'agissait de deux circuits séparés, et se retrouvent bloqués devant le moindre dépannage. La conséquence pratique est directe : si un seul tronçon est coupé quelque part, plus rien ne circule — nulle part.", kicker: "2 · Comprendre", title: "Départ et retour : un seul trajet",
       lead: "Le départ et le retour ne sont pas deux circuits indépendants.",
       body: ["Le départ emmène l’eau de la production vers l’émetteur. Le retour ramène cette même eau vers la production.", "Si un tronçon manque, le schéma ne démontre plus la continuité de la boucle."],
       key: "La clé : départ + usage + retour ferment le trajet.",
@@ -594,6 +601,7 @@
     els.keyBox.textContent = lesson.key;
     els.controls.innerHTML = controlsFor(lesson.control);
     els.scene.innerHTML = lesson.control === "practice" ? "" : lesson.scene;
+    if (lesson.vue3d) vue3d(els.scene, lesson.vue3d);
     els.equivalent.textContent = lesson.equivalent;
     if (lesson.control === "practice") renderPractice();
     wireControls(lesson.control);

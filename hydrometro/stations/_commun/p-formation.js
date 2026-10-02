@@ -1,6 +1,21 @@
 (() => {
   "use strict";
 
+  /* la vue 3D de l’appareil, sur l’étape « Voir fonctionner » (rang 2) ; le dessin reste en « En schéma » */
+  const CLE_3D = ((document.currentScript && document.currentScript.src) || "").replace(/^[^?]*/, "");
+  const VUES_3D = {
+    energie: { modele: "installation", titre: "L’installation en 3D" },
+    puissance: { modele: "compteurEnergie", titre: "Le compteur d’énergie en 3D" },
+    "delta-t": { modele: "thermometres", titre: "Les thermomètres en 3D" },
+    mesurer: { modele: "thermometres", titre: "Les thermomètres en 3D" },
+    debit: { modele: "debitmetre", titre: "Le débitmètre en 3D", rang: 0 }
+  };
+  const vue3d = (el, spec) => {
+    const go = () => window.HydroVue3D.brancher(el, spec);
+    if (window.HydroVue3D) return go();
+    const sc = document.createElement("script"); sc.src = "../_commun/3d/station3d.js" + CLE_3D; sc.onload = go; document.head.appendChild(sc);
+  };
+
   const routes = {
     P: ["boucle", "energie", "debit", "delta-t", "puissance", "mesurer"],
     E: ["production", "echangeur", "debit", "circulateur", "pertes", "vase", "securite"],
@@ -91,7 +106,7 @@
     const id = window.location.pathname.split("/").filter(Boolean).slice(-2, -1)[0];
     const lessons = lessonsFor(id);
     const style = document.createElement("link");
-    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261002-0708"; document.head.append(style);
+    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261002-0809"; document.head.append(style);
     document.body.classList.add("p-course-active");
 
     const $ = (selector, root = document) => root.querySelector(selector);
@@ -260,6 +275,7 @@
       /* La scène commune ne change pas d'une étape à l'autre : le repère numéroté de l'étape
          (groupe data-demo) est mis en évidence, les autres restent normaux (lot 3, 13/09/2026). */
       const rang = lessons.indexOf(lesson);
+      if (VUES_3D[id] && rang === (VUES_3D[id].rang === undefined ? 2 : VUES_3D[id].rang)) vue3d($("#pScene"), VUES_3D[id]);
       $$("[data-demo]", $("#pScene")).forEach((part, index) => part.classList.toggle("p-demo-current", index === rang));
       $("#pControls").innerHTML = `<button type="button" id="pRunDemo">Montrer pas à pas</button>`; $("#pRunDemo").addEventListener("click", runDemo);
       next.disabled = false;

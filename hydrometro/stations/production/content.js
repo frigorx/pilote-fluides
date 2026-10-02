@@ -1,6 +1,14 @@
 (() => {
   "use strict";
 
+  /* la vue 3D de l’appareil (le dessin reste en « En schéma » et à l’impression) */
+  const V3D = ((document.currentScript && document.currentScript.src) || "").replace(/^[^?]*/, "");   /* la clé ?v= de la livraison suit jusqu’à la 3D */
+  const vue3d = (modele, titre) => el => {
+    const go = () => window.HydroVue3D.brancher(el, { modele, titre });
+    if (window.HydroVue3D) return go();
+    const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
+  };
+
   const shell = (id, title, desc, body) => `
     <svg viewBox="0 0 720 420" role="img" aria-labelledby="${id}-title ${id}-desc">
       <title id="${id}-title">${title}</title>
@@ -105,7 +113,7 @@
         cap: "Montrez le départ et le retour du générateur.",
         tp: "Repérez le départ, le retour et la fonction de l’équipement.",
         bts: "Séparez la fonction hydraulique, la source d’énergie et la technologie.",
-        scene: network("prod-ident"),
+        scene: network("prod-ident"),wire:vue3d("pacAirEau","La pompe à chaleur en 3D"),
         equivalent: "Le retour entre dans un bloc générateur. Le départ en sort vers les usages. Le bloc transfère de l’énergie à l’eau ou en retire selon le service.",
         action: {
           type: "choice", prompt: "Choisissez la fonction commune.",

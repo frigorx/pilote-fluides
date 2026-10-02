@@ -74,7 +74,9 @@
     vanne3voies: 'vannes', vanneEquilibrage: 'vannes',
     echangeurPlaques: 'echangeurs',
     ballonTampon: 'ballons', bouteilleDecouplage: 'ballons',
-    collecteur: 'distribution', radiateur: 'distribution'
+    collecteur: 'distribution', radiateur: 'distribution',
+    installation: 'installations', pacAirEau: 'production',
+    compteurEnergie: 'mesure', thermometres: 'mesure', pertesCharge: 'reseau', debitmetre: 'reseau'
   };
   /* une famille qui assemble les modèles des autres les charge d'abord */
   const DEPEND = { variation: ['moteur'] };
@@ -426,6 +428,9 @@
       if (m.userData.allumee) return;
       const base = m.userData.matAvantSurbrillance = m.material;
       const src = this._matOrig.get(m) || base;
+      /* un marquage (K.gravure : texture transparente) rendu opaque devient un rectangle noir :
+         on le laisse tel quel, la pièce s'allume autour de lui (HydroMétro, 02/10/2026) */
+      if (src.isMeshBasicMaterial && src.map && src.transparent && !m.userData.voile) { m.userData.allumee = true; return; }
       const c = src.clone();
       if (m.userData.voile) {
         /* un voile posé sur une zone (une ligne de plaque) : il s'allume sans cacher ce qu'il couvre */

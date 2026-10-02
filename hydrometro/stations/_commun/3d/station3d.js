@@ -28,7 +28,8 @@
     const jeton = Math.random().toString(36).slice(2);
     scene.dataset.vue3d = jeton;
     try { await assurerMoteur(); } catch (e) { return; }      /* hors ligne sans copie : le dessin reste */
-    if (scene.dataset.vue3d !== jeton) return;                /* l'élève a déjà changé d'étape */
+    /* l'élève a déjà changé d'étape (la scène a été redessinée, ou une autre vue 3D demandée) */
+    if (scene.dataset.vue3d !== jeton || scene.innerHTML !== dessin) return;
     const bloc = window.Electro3D.bloc({
       modele: o.modele, mode: o.mode || 'comprendre', options: o.options || null, titre: o.titre,
       schema: () => { const d = document.createElement('div'); d.innerHTML = dessin; return d; },
