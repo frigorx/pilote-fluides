@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "genereLe": "2026-09-30T08:28:06.017Z",
-  "total": 5750,
+  "genereLe": "2026-10-02T10:37:25.645Z",
+  "total": 5802,
   "narrations": [
     {
       "cle": "00060401-70",
@@ -850,6 +850,14 @@
       ]
     },
     {
+      "cle": "040abd7f-50",
+      "texte": "Le volant s'arrête à 1,8 : le réglage est retrouvé",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "040b6a34-103",
       "texte": "Faux. Il permet le transfert de chaleur en assurant la circulation et les niveaux de pression du cycle.",
       "type": "feedback",
@@ -1647,6 +1655,14 @@
       ]
     },
     {
+      "cle": "08b34da0-31",
+      "texte": "Ouvrir toutes les vannes à fond",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "08bdfe82-90",
       "texte": "Structure complète : un autre technicien peut comprendre ce qui a été vu, fait et attendu.",
       "type": "interface",
@@ -2196,6 +2212,15 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/bilan-thermique-performance-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "0b603109-11",
+      "texte": "▶ Tout voir",
+      "type": "interface",
+      "sources": [
+        "hydrometro/stations/_commun/3d/electro3d.js",
+        "aerorezo/stations/_commun/3d/electro3d.js"
       ]
     },
     {
@@ -2926,6 +2951,14 @@
       ]
     },
     {
+      "cle": "0f735a1e-27",
+      "texte": "Quel est le premier geste ?",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "0f7b2948-904",
       "texte": "Ni moteur, ni pièce mobile. Une tuyère transforme la pression en vitesse, puis la vitesse en pression. L'éjecteur n'a rien d'un compresseur : c'est un tube profilé. Le fluide moteur haute pression y accélère, sa pression chute, et cette dépression aspire un second débit. Détente dans la tuyère : le fluide moteur accélère, sa pression tombe sous la pression d'aspiration. Entraînement : la dépression aspire la vapeur basse pression par l'orifice latéral, les deux débits se mélangent. Recompression : dans le diffuseur, la vitesse retombe et la pression remonte jusqu'à la pression intermédiaire. Le point clé : C'est la vitesse au col de la tuyère qui crée la dépression. Aucun moteur n'intervient : l'énergie vient du fluide haute pression lui-même. Ce que montre le schéma. Coupe schématique d'un éjecteur : tuyère, col, chambre de mélange, diffuseur, et l'allure de la pression le long du parcours.",
       "type": "capture",
@@ -3083,6 +3116,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/nomenclature-interactive/nomenclature.js"
+      ]
+    },
+    {
+      "cle": "10979228-57",
+      "texte": "Revérifier toutes les branches et rédiger le compte rendu",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -4109,6 +4150,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/co2-r744/cours.js"
+      ]
+    },
+    {
+      "cle": "15f38276-34",
+      "texte": "Fermer complètement la vanne (0,0)",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -5860,14 +5909,6 @@
       ]
     },
     {
-      "cle": "1ece4bf5-439",
-      "texte": "Suivez la boucle et nommez les quatre flux à voix haute, dans l'ordre où l'air les parcourt. Puis, pour chaque tronçon, posez-vous une seule question : de quel côté se trouve la pression la plus forte ? Repérez enfin où se trouve le ventilateur dans le circuit. C'est là que l'écart naît, et tout le reste du trajet en découle. Si vous ne savez pas dire de quel côté est la dépression, vous ne pouvez pas dire dans quel sens l'air circule.",
-      "type": "narration",
-      "sources": [
-        "aerorezo/stations/air-circule/manifest.js"
-      ]
-    },
-    {
       "cle": "1ee89b8c-51",
       "texte": "Avant de choisir une bobine, que faut-il vérifier ?",
       "type": "feedback",
@@ -6272,6 +6313,14 @@
       ]
     },
     {
+      "cle": "204bc308-27",
+      "texte": "Mesurer l'écart de pression",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "204bf5b8-46",
       "texte": "Croiser niveaux, retour, températures, régimes",
       "type": "choix",
@@ -6518,6 +6567,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/app.js"
+      ]
+    },
+    {
+      "cle": "2151e33d-26",
+      "texte": "J'ouvre davantage la vanne",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -7777,6 +7834,14 @@
       ]
     },
     {
+      "cle": "27aef8fe-81",
+      "texte": "Pourquoi la branche éloignée reçoit-elle si peu d'eau alors que tout est ouvert ?",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "27d77cdb-25",
       "texte": "Étape validée. Continuez.",
       "type": "interface",
@@ -8155,14 +8220,6 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/separateur-eclatement-pedagogique/module.js"
-      ]
-    },
-    {
-      "cle": "29f3db3b-609",
-      "texte": "Un avertissement avant de toucher aux curseurs. Le simulateur de cette escale est celui du calcul sur l'air : il chiffre un débit, pas un mur. Ce qu'il montre, en revanche, vaut pour les deux. Bougez le second curseur, celui de l'écart de température, en laissant le premier où il est. La puissance suit l'écart, exactement comme le fait une paroi : deux fois plus d'écart, deux fois plus de chaleur qui passe. Revenez ensuite à votre point de départ et bougez le premier curseur. La puissance double encore. Pour une paroi, ce rôle-là est tenu par la surface : deux fois plus grande, deux fois plus d'apport.",
-      "type": "narration",
-      "sources": [
-        "aerorezo/stations/transmission/manifest.js"
       ]
     },
     {
@@ -8989,6 +9046,14 @@
       ]
     },
     {
+      "cle": "2e5e557d-559",
+      "texte": "À vous de faire le tour, et à voix haute : c'est important. Dire le nom d'un flux oblige à savoir d'où vient l'air et où il va, alors que l'œil, lui, glisse sur le dessin sans rien vérifier. Partez de l'air neuf et allez jusqu'à l'air rejeté. Ensuite, sur chaque morceau du trajet, cherchez le côté où la pression est la plus basse. Vous verrez que tout se décide en un seul point, le ventilateur. Du côté où l'air y arrive, il est en dépression ; du côté où il en sort, en surpression. Sur un chantier, c'est ce repère qui vous évitera de mesurer à l'envers.",
+      "type": "narration",
+      "sources": [
+        "aerorezo/stations/air-circule/manifest.js"
+      ]
+    },
+    {
       "cle": "2e6bee0e-20",
       "texte": "ÉBULLITION SOUS VIDE",
       "type": "interface",
@@ -9636,6 +9701,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/lignes/M/parcours.js"
+      ]
+    },
+    {
+      "cle": "3296d84e-31",
+      "texte": "Réglez la position de la vanne.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -10507,6 +10580,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/chaleur-circuit-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "371bf883-517",
+      "texte": "Trois curseurs, trois grandeurs : le coefficient U de la paroi, sa surface, et l'écart de température entre ses deux faces. Partez d'un mur isolé, avec U à zéro virgule trois, dix mètres carrés et douze kelvins d'écart. Doublez l'écart : la chaleur qui passe double. Revenez, et doublez la surface : elle double encore. Remettez dix mètres carrés, puis passez U à deux virgule huit, comme un double vitrage. Même surface, même écart, et pourtant plus de neuf fois plus de chaleur. C'est souvent le vitrage qui décide.",
+      "type": "narration",
+      "sources": [
+        "aerorezo/stations/transmission/manifest.js"
       ]
     },
     {
@@ -11718,6 +11799,14 @@
       ]
     },
     {
+      "cle": "3dc78040-547",
+      "texte": "Dernière idée, et c'est elle qui sépare le bricolage du réglage. Les branches d'un réseau se partagent la même pompe : quand vous fermez un peu la branche A, son eau ne disparaît pas, elle part vers B et C. Régler une vanne déplace donc les débits des autres. C'est pourquoi on ne règle jamais une vanne au hasard, puis la suivante, en espérant que tout tombe juste. On suit une méthode, on règle dans un ordre défini, et à la fin on revérifie toutes les branches. Le compte rendu garde la trace de chaque position, de chaque mesure et de la date.",
+      "type": "narration",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "3ddd11b0-118",
       "texte": "L'énergie absorbée par un kilogramme de fluide frigorigène dans l'évaporateur constitue l'effet frigorifique massique.",
       "type": "fragment",
@@ -11819,6 +11908,20 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "3e5d117d-10",
+      "texte": "inerweb.fr",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/detendeur-interactif/marque.js",
+        "packs/fluides/res/electrovanne-interactive/marque.js",
+        "packs/fluides/res/module-compresseur/marque.js",
+        "packs/fluides/res/parcours-manometres/shared/marque.js",
+        "packs/fluides/res/regulateurs-kv-pedagogiques/marque.js",
+        "packs/fluides/res/surchauffe-sous-refroidissement-interactif/marque.js",
+        "hydrometro/assets/marque.js"
       ]
     },
     {
@@ -13311,6 +13414,14 @@
       ]
     },
     {
+      "cle": "45a0ea0c-24",
+      "texte": "Que reste-t-il à faire ?",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "45aaf3d1-621",
       "texte": "Le régulateur mécanique de niveau, que les ateliers appellent souvent le pot A C et R, se monte à la place du voyant du carter. Son fonctionnement est simple et robuste : quand le niveau d'huile baisse, un flotteur descend, ouvre un pointeau, et laisse entrer l'huile ; quand le niveau remonte, le flotteur referme l'alimentation. Trois conditions pour qu'il travaille correctement : il doit être horizontal, adapté au compresseur, et alimenté avec le différentiel de pression prévu. Et voici sa limite, qu'il faut connaître : il ajoute l'huile manquante, mais il ne sait pas retirer un excès déjà présent dans le carter.",
       "type": "narration",
@@ -13368,6 +13479,14 @@
       "type": "interface",
       "sources": [
         "hydrometro/stations/vase/content.js"
+      ]
+    },
+    {
+      "cle": "45eeef17-136",
+      "texte": "Les branches proches résistent moins : elles prennent le débit. La vanne d'équilibrage ajoute la résistance qui manque sur ces branches.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -14574,6 +14693,15 @@
       ]
     },
     {
+      "cle": "4d308b86-11",
+      "texte": "Commencer ▶",
+      "type": "interface",
+      "sources": [
+        "hydrometro/stations/_commun/3d/electro3d.js",
+        "aerorezo/stations/_commun/3d/electro3d.js"
+      ]
+    },
+    {
       "cle": "4d361f04-49",
       "texte": "Unité coincée en niche, avec pressostat HP shunté",
       "type": "choix",
@@ -14587,6 +14715,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/releves/content.js"
+      ]
+    },
+    {
+      "cle": "4d4ed1f7-18",
+      "texte": "Je change de vanne",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -14930,6 +15066,14 @@
       ]
     },
     {
+      "cle": "4efb4f46-69",
+      "texte": "Le réseau n'est pas équilibré : la branche proche prend trop de débit",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "4efdbfcc-538",
       "texte": "Que mesure exactement l'indicateur carbone de la réglementation environnementale ? Deux périmètres réunis. D'abord la construction, qui regroupe la fabrication et le transport de tout ce qui compose le bâtiment. Ensuite l'exploitation, c'est-à-dire ce qu'il consomme une fois en service. C'est une nouveauté importante par rapport aux réglementations précédentes, qui ne regardaient que la consommation annuelle. Concrètement, un bâtiment très performant construit avec des matériaux très émetteurs n'est plus automatiquement bien classé.",
       "type": "data-narration",
@@ -14951,6 +15095,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/_regules-commun/catalog.js"
+      ]
+    },
+    {
+      "cle": "4f124f46-31",
+      "texte": "La chaudière est trop puissante",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -15680,6 +15832,14 @@
       ]
     },
     {
+      "cle": "532a03bf-605",
+      "texte": "Voici le geste de base, celui de la notice. On veut régler la vanne à deux tours trois dixièmes. Premier geste : fermer complètement, l'indicateur affiche zéro. Deuxième geste : ouvrir jusqu'à deux virgule trois. Troisième geste : avec la clé six pans de trois millimètres, visser la tige intérieure dans le sens des aiguilles d'une montre, jusqu'à la butée. Le réglage est mémorisé. Dernier geste, la vérification : refermer la vanne, puis la rouvrir à fond. Le volant doit s'arrêter tout seul à deux virgule trois. Si quelqu'un ferme la vanne pour une intervention, il retrouvera le réglage sans calcul.",
+      "type": "narration",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "533a9b3f-99",
       "texte": "Trop tôt · l'outillage n'a pas encore été vérifié. Un GO sans toutes les preuves est un mauvais GO.",
       "type": "interface",
@@ -15877,6 +16037,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/pressostat-combine-kp15/index.html"
+      ]
+    },
+    {
+      "cle": "5472752b-25",
+      "texte": "Visser la tige intérieure",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -19284,6 +19452,14 @@
       ]
     },
     {
+      "cle": "664cdcae-24",
+      "texte": "La vanne ne s'ouvre plus",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "664d6ca1-15",
       "texte": "Voir le bilan ↓",
       "type": "interface",
@@ -19517,6 +19693,14 @@
       "type": "composition",
       "sources": [
         "packs/fluides/res/regulateurs-kv-pedagogiques/app.js"
+      ]
+    },
+    {
+      "cle": "67deb026-569",
+      "texte": "Afficher un chiffre ne suffit pas : il faut prouver le débit. Branchez l'appareil de mesure sur les deux prises de pression. Il lit l'écart de pression aux bornes de la vanne et, connaissant la position, il calcule le débit avec la valeur Kv de la notice. Ici, la branche doit recevoir deux cent cinquante litres par heure. Vanne ouverte en grand, elle en prend beaucoup trop. Fermez progressivement : l'écart de pression aux prises augmente, le débit diminue. Arrêtez-vous quand vous êtes à cinq pour cent de la cible, puis bloquez la tige intérieure à cette position.",
+      "type": "narration",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -19772,6 +19956,15 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/etancheite-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "68f1bca9-16",
+      "texte": "Étape suivante ▶",
+      "type": "interface",
+      "sources": [
+        "hydrometro/stations/_commun/3d/electro3d.js",
+        "aerorezo/stations/_commun/3d/electro3d.js"
       ]
     },
     {
@@ -20401,6 +20594,14 @@
       ]
     },
     {
+      "cle": "6c2f580f-68",
+      "texte": "Que se passe-t-il si un collègue ferme puis rouvre la vanne à fond ?",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "6c3d1fce-25",
       "texte": "Pour remplacer les unités",
       "type": "choix",
@@ -20502,6 +20703,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/filtre-deshydrateur-pedagogique/app.js"
+      ]
+    },
+    {
+      "cle": "6cdf0752-55",
+      "texte": "Ordonnez les gestes pour afficher et bloquer 2,3 tours.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -20971,6 +21180,23 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "6f3807a9-102",
+      "texte": "Le volant règle et affiche, la tige mémorise la butée, les prises permettent de mesurer sans démonter.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
+      "cle": "6f6d452e-12",
+      "texte": "⊟ Rassembler",
+      "type": "interface",
+      "sources": [
+        "hydrometro/stations/_commun/3d/electro3d.js",
+        "aerorezo/stations/_commun/3d/electro3d.js"
       ]
     },
     {
@@ -21696,6 +21922,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/vase/content.js"
+      ]
+    },
+    {
+      "cle": "73c6908c-54",
+      "texte": "Recommencer par la branche la plus proche sans mesurer",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -23539,6 +23773,14 @@
       ]
     },
     {
+      "cle": "7ec57ab8-61",
+      "texte": "Sans réglage, l'eau passe par le chemin qui résiste le moins.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "7ec6c1d6-88",
       "texte": "À COMPARER · Hors du repère pédagogique 5–10 K ; vérifiez la documentation constructeur.",
       "type": "interface",
@@ -23775,6 +24017,14 @@
       "type": "choix",
       "sources": [
         "hydrometro/stations/decouplage/content.js"
+      ]
+    },
+    {
+      "cle": "804950fb-612",
+      "texte": "On passe aux réglages. Trouvez d'abord le débit des deux bouches avec la gaine de départ, et gardez en tête la vitesse que cela donne. Puis descendez d'un seul cran de diamètre. La surface, elle, fond bien plus vite que le diamètre, parce qu'elle suit son carré. Pour faire passer le même air par un passage plus étroit, il n'a pas le choix : il doit aller plus vite. Et un air qui va vite siffle aux bouches, freine davantage, et oblige le ventilateur à forcer. C'est pour ça qu'on ne monte pas la gaine qui reste au fond du camion : le débit serait là, mais l'occupant, lui, finirait par couper sa ventilation.",
+      "type": "narration",
+      "sources": [
+        "aerorezo/stations/dimensionner-vmc/manifest.js"
       ]
     },
     {
@@ -25911,6 +26161,14 @@
       ]
     },
     {
+      "cle": "8d295f7f-19",
+      "texte": "Rien, c'est terminé",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "8d363fd8-501",
       "texte": "Un différentiel serré coûte cher, et c'est contre-intuitif. Le resserrer semble donner une chambre plus précise — la température varie moins, cela paraît mieux réglé. En réalité, la machine se met à battre : elle démarre et s'arrête sans arrêt, ce qu'on appelle les cycles courts. Chaque démarrage use le compresseur, dégrade le rendement, et perturbe le retour d'huile. Le différentiel n'est pas un défaut de précision qu'on cherche à réduire : c'est ce qui donne à la machine le temps de travailler.",
       "type": "narration",
@@ -26662,6 +26920,14 @@
       ]
     },
     {
+      "cle": "9180df8c-34",
+      "texte": "Associez chaque organe à son rôle.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "9188a2e6-22",
       "texte": "Dans la flèche de sens",
       "type": "choix",
@@ -26691,14 +26957,6 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/acoustique-traiter-le-bruit/index.html"
-      ]
-    },
-    {
-      "cle": "91a53b31-478",
-      "texte": "Une branche doit transporter le débit de deux bouches. Réglez le diamètre et la vitesse jusqu'à obtenir ce débit, puis regardez la vitesse que vous avez obtenue. Est-elle raisonnable pour un logement ? Réduisez ensuite le diamètre d'un cran, comme si vous n'aviez que cette gaine en stock. Le débit, vous pouvez le retrouver. Mais regardez ce qu'est devenue la vitesse, et demandez-vous ce que l'occupant entendra la nuit, dans sa chambre, avec cette gaine au-dessus du plafond.",
-      "type": "narration",
-      "sources": [
-        "aerorezo/stations/dimensionner-vmc/manifest.js"
       ]
     },
     {
@@ -29749,6 +30007,14 @@
       ]
     },
     {
+      "cle": "a31a7f0a-30",
+      "texte": "Je note 320 l/h et je m'arrête",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "a31fbdc6-16",
       "texte": "Passer au quiz →",
       "type": "interface",
@@ -30117,6 +30383,14 @@
       "type": "narration",
       "sources": [
         "hydrometro/app.js"
+      ]
+    },
+    {
+      "cle": "a5aa7e0c-30",
+      "texte": "Il faut changer le circulateur",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -30923,6 +31197,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/technologie-huiles-frigorifiques/module.js"
+      ]
+    },
+    {
+      "cle": "a990e30b-550",
+      "texte": "Avant de toucher, apprenez à lire la vanne. Trois organes comptent. Le volant porte un indicateur : il donne la position en tours entiers et en dixièmes, de zéro, vanne fermée, à quatre, pleine ouverture. Au-delà de quatre tours, le débit n'augmente pratiquement plus. Au centre du volant se cache une tige intérieure, que l'on manœuvre avec une clé six pans de trois millimètres : c'est elle qui mémorise le réglage. Enfin, de part et d'autre du clapet, deux prises de pression, fermées par un capuchon : c'est là qu'on branche l'appareil de mesure.",
+      "type": "narration",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -31963,6 +32245,14 @@
       ]
     },
     {
+      "cle": "aef2845b-29",
+      "texte": "Afficher la position en tours",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "af04b577-327",
       "texte": "Le détecteur doit être prêt et adapté. Avant le balayage, identifiez le fluide, vérifiez que l'appareil convient, appliquez son autocontrôle et préparez des conditions qui ne dispersent pas le prélèvement. Les exigences exactes viennent de la procédure actuelle et de la notice. Quel ensemble permet un résultat interprétable ?",
       "type": "composition",
@@ -32386,6 +32676,14 @@
       "type": "composition",
       "sources": [
         "packs/fluides/res/filtre-deshydrateur-pedagogique/app.js"
+      ]
+    },
+    {
+      "cle": "b119a021-43",
+      "texte": "Quelle est l'explication la plus probable ?",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -33384,6 +33682,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/co2-r744/cours.js"
+      ]
+    },
+    {
+      "cle": "b6773d4d-42",
+      "texte": "Je ferme un peu la vanne, puis je remesure",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -35379,6 +35685,14 @@
       ]
     },
     {
+      "cle": "c11b8148-26",
+      "texte": "La vanne revient à 4 tours",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "c126f49b-627",
       "texte": "Deux bandes. En haut, la journée : après six heures de travail, une pause d'au moins vingt minutes ; et une fois la journée finie, au moins onze heures de repos de suite avant de reprendre. En dessous, la semaine : six jours de travail au plus, puis le repos hebdomadaire, vingt-quatre heures consécutives auxquelles s'ajoutent les onze heures de repos quotidien. Le Code prévoit le dimanche pour ce repos. Dans le bâtiment, la convention des ouvriers organise en principe la semaine sur cinq jours, avec deux jours de repos de suite. Un chantier pressé n'efface pas ces repos, sauf urgence ou dérogation prévue par les textes.",
       "type": "data-narration",
@@ -35794,6 +36108,14 @@
       "type": "choix",
       "sources": [
         "hydrometro/stations/tampon/content.js"
+      ]
+    },
+    {
+      "cle": "c3ce9e69-33",
+      "texte": "Le radiateur éloigné est en panne",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -37272,6 +37594,14 @@
       ]
     },
     {
+      "cle": "cb3d2b9b-90",
+      "texte": "Fermer, ouvrir à la position, bloquer avec la tige, vérifier : c'est l'ordre de la notice.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "cb4013ea-86",
       "texte": "Le point n'est pas dans la plage 2,0 à 2,4 m³/h. Ajustez un seul réglage puis relisez.",
       "type": "interface",
@@ -37633,6 +37963,14 @@
       "type": "narration",
       "sources": [
         "aerorezo/stations/pertes-lineaires/manifest.js"
+      ]
+    },
+    {
+      "cle": "cd194419-100",
+      "texte": "Chaque réglage modifie les autres : une vérification finale et un compte rendu concluent le travail.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -38094,6 +38432,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/pressostat-combine-kp15/index.html"
+      ]
+    },
+    {
+      "cle": "d020c9bb-29",
+      "texte": "Brancher l'appareil de mesure",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -38585,6 +38931,14 @@
       ]
     },
     {
+      "cle": "d2ca5230-68",
+      "texte": "La tige intérieure limite l'ouverture : c'est la mémoire du réglage.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "d2cb66e5-519",
       "texte": "Regardez la machine à gauche, posée sur la dalle, et le local occupé à droite. Deux chemins les relient. En violet, le chemin aérien : les ondes partent dans l'air et entrent par la fenêtre ouverte. En orange, le chemin solidien : la vibration de la machine passe dans la dalle, qui la conduit jusque sous le local, où elle ressort en bruit. Une même machine emprunte souvent les deux. Et c'est ce qui commande la suite : on ne coupe pas l'air comme on coupe une structure. Il faut d'abord savoir par où le bruit passe.",
       "type": "data-narration",
@@ -38689,6 +39043,14 @@
       ]
     },
     {
+      "cle": "d3524a14-557",
+      "texte": "Commençons par la raison d'être de cette vanne. Dans un réseau, toutes les branches sont ouvertes, et pourtant elles ne reçoivent pas la même quantité d'eau. L'eau prend le chemin qui lui résiste le moins : la branche proche de la chaudière se sert la première, la branche éloignée reçoit ce qui reste. Résultat sur le terrain : un radiateur brûlant près de la chaufferie, un autre tiède au bout du couloir, et un client qui appelle. La vanne d'équilibrage sert à freiner volontairement les branches trop favorisées, pour que chacune reçoive le débit prévu.",
+      "type": "narration",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "d3552fd9-57",
       "texte": "Que signifie la majuscule dans R‑407A, R‑407B ou R‑407C ?",
       "type": "feedback",
@@ -38774,6 +39136,14 @@
       "type": "voiceStep",
       "sources": [
         "packs/fluides/res/chaleur-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "d3c0084d-72",
+      "texte": "Vous venez de régler A puis B. Le débit de A a encore changé. Pourquoi ?",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -39712,6 +40082,14 @@
       ]
     },
     {
+      "cle": "d839ed76-61",
+      "texte": "On part toujours de la vanne fermée pour compter la position.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "d8434969-510",
       "texte": "Régulateurs de pression et organes de sécurité. Fonctionnement interne. Trois régulateurs, trois endroits du circuit, trois raisons. Modulation normale ou ouverture de secours La pression agit sur une membrane ou un clapet. Le ressort établit l'équilibre correspondant à la fonction. Le régulateur module son ouverture pendant le fonctionnement normal. La soupape de sécurité reste fermée et ne s'ouvre qu'au seuil prévu. Cette planche vient du cours : c'est la même image que le stagiaire retrouvera en fiche.",
       "type": "capture",
@@ -39917,6 +40295,14 @@
       "type": "choix",
       "sources": [
         "hydrometro/stations/releves/content.js"
+      ]
+    },
+    {
+      "cle": "d96dacb7-13",
+      "texte": "Ouvrir à fond",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -40801,6 +41187,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/incendie-sprinkler-ria/index.html"
+      ]
+    },
+    {
+      "cle": "de57020d-84",
+      "texte": "Trop de débit : on ajoute de la résistance, puis on vérifie par une nouvelle mesure.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -42498,6 +42892,14 @@
       ]
     },
     {
+      "cle": "e7a3526f-20",
+      "texte": "Le réglage est perdu",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
       "cle": "e7a48066-36",
       "texte": "bout à son tour : température stable",
       "type": "interface",
@@ -43712,7 +44114,8 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/chaine-intervention-interactive/app.js",
-        "packs/fluides/res/intervention-hydrocarbures-interactive/app.js"
+        "packs/fluides/res/intervention-hydrocarbures-interactive/app.js",
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -44788,6 +45191,15 @@
       ]
     },
     {
+      "cle": "f3e8a1ef-8",
+      "texte": "⊞ Éclaté",
+      "type": "interface",
+      "sources": [
+        "hydrometro/stations/_commun/3d/electro3d.js",
+        "aerorezo/stations/_commun/3d/electro3d.js"
+      ]
+    },
+    {
       "cle": "f3f5b4b6-303",
       "texte": "Regardez la rangée de bennes : métaux, bois, plastiques, verre, papier-carton, plâtre, et une fraction minérale ou inerte — sept familles, chacune sa benne. À droite, séparée par un trait pointillé, la benne tout-venant : elle ne reçoit que ce qui ne peut vraiment être trié dans aucune de ces familles.",
       "type": "data-narration",
@@ -44989,6 +45401,14 @@
       "type": "capture",
       "sources": [
         "packs/fluides/res/co2-r744/transcritique/mesures"
+      ]
+    },
+    {
+      "cle": "f53cc267-23",
+      "texte": "Mémoriser le préréglage",
+      "type": "choix",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {
@@ -46547,6 +46967,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/desp-en-service/index.html"
+      ]
+    },
+    {
+      "cle": "fe403f4b-107",
+      "texte": "Toutes les branches dépendent de la même pompe : on règle avec méthode et on revérifie l'ensemble à la fin.",
+      "type": "feedback",
+      "sources": [
+        "hydrometro/stations/reglage-equilibrage/content.js"
       ]
     },
     {

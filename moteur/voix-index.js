@@ -42251,6 +42251,20 @@ window.PILOTE_VOIX_INDEX = {
       "octets": 202752,
       "voix": "fr-FR-VivienneMultilingualNeural",
       "empreinteTexte": "055850b7d233d796"
+    },
+    "2e5e557d-559": {
+      "fichier": "audio/2e5e557d-559.mp3",
+      "sha256": "310f86942c433b08",
+      "octets": 180288,
+      "voix": "fr-FR-VivienneMultilingualNeural",
+      "empreinteTexte": "5c59bc6b8996eab5"
+    },
+    "804950fb-612": {
+      "fichier": "audio/804950fb-612.mp3",
+      "sha256": "3c5436c16e290b5e",
+      "octets": 202464,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "ac848c14640d352b"
     }
   },
   "moteurEdgeTts": {
