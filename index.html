@@ -470,6 +470,11 @@
   .tuile .suite { margin-top:auto; padding-top:8px; color:var(--orange);
                   font-weight:bold; font-size:14px; }
 
+  .pro-liens { display:flex; flex-wrap:wrap; gap:6px 14px; margin:10px 0 0; padding:0; list-style:none; font-size:14px; }
+  .pro-liens a { color:var(--bleu); font-weight:bold; }
+  .vous-venez .tuiles { grid-template-columns:repeat(3,1fr); }
+  @media (max-width:720px) { .vous-venez .tuiles { grid-template-columns:1fr; } .vous-venez .tuile p { display:block; } }
+
   /* ---- LE HALL (17/09/2026) : phrase, recherche, carte animée, chiffres, vignettes ---- */
   .hall { display:grid; grid-template-columns:1.05fr .95fr; gap:36px; align-items:center; margin:28px 0 0; }
   .hall-texte .chapo { max-width:34em; }
@@ -874,6 +879,36 @@
       <div class="chiffre"><b>+ de 6 900</b><span>narrations audio</span></div>
 <!-- CHIFFRES-ACCUEIL FIN -->
   </div>
+
+  <section class="vous-venez" aria-labelledby="titre-venez">
+    <h2 id="titre-venez">Vous venez pour quoi ?</h2>
+    <div class="tuiles">
+      <div class="tuile">
+        <div class="emoji">🎒</div>
+        <h3>J’apprends</h3>
+        <p>Je découvre le métier, je révise ou je suis mon cours.</p>
+        <div><a class="bouton" href="quartier/">Commencer</a></div>
+      </div>
+      <div class="tuile">
+        <div class="emoji">🎓</div>
+        <h3>J’enseigne / je forme</h3>
+        <p>Je cherche une séance, un support, une activité ou une évaluation.</p>
+        <div><a class="bouton" href="formateurs.html">Préparer ma séance</a></div>
+      </div>
+      <div class="tuile">
+        <div class="emoji">🔧</div>
+        <h3>Je suis professionnel</h3>
+        <p>Je cherche vite une information technique, réglementaire ou un outil.</p>
+        <div><a class="bouton" href="#recherche-accueil">Trouver une information</a></div>
+        <ul class="pro-liens">
+          <li><a href="aerorezo/stations/diagnostic/">Diagnostic</a></li>
+          <li><a href="legislation/">Fluides &amp; réglementation</a></li>
+          <li><a href="f/mise-en-service/">Mise en service</a></li>
+          <li><a href="rezotools/">Outils</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <section class="hall-reseaux" id="reseaux" aria-labelledby="titre-reseaux">
     <h2 id="titre-reseaux">Neuf réseaux, une carte chacun</h2>
