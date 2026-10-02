@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-63.0 -43.0 118.0 58.0" width="118" height="58">
+<!-- enfriadora-1 — converti de enfriadora-1.elmt par outils\elmt-vers-svg.py -->
+<rect x="-63.0" y="-43.0" width="118.0" height="58.0" fill="#ffffff"/>
+<rect x="-46" y="-22" width="4" height="4" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-2.28" x2="47.05" y2="-2.28" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-49" y="-24" width="3" height="8" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-11.06" x2="47.05" y2="-11.06" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-49" y1="-21" x2="-47" y2="-21" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-6.67" x2="47.05" y2="-6.67" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="2.1" x2="47.05" y2="2.1" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-49" y1="-19" x2="-47" y2="-19" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-39" y="5.39" width="3" height="3.29" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-17.63" x2="47.05" y2="-17.63" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-15.44" x2="47.05" y2="-15.44" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-19.83" x2="47.05" y2="-19.83" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-24.21" x2="47.05" y2="-24.21" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-42.05" y="-34.08" width="89.09" height="39.48" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-0.09" x2="47.05" y2="-0.09" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-8.86" x2="47.05" y2="-8.86" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-34.08" x2="-1" y2="4.3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-28.6" x2="47.05" y2="-28.6" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-13.25" x2="47.05" y2="-13.25" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-4.48" x2="47.05" y2="-4.48" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-26.41" x2="47.05" y2="-26.41" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-22" x2="47.05" y2="-22" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-30.79" x2="47.05" y2="-30.79" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="7,-34.08 11,-37.37 37,-37.37 41,-34.08 40,-34.08" stroke="black" stroke-width="1" fill="none"/>
+<rect x="40" y="5.39" width="3" height="3.29" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-38" y="-28.6" width="11" height="6.58" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="red"/>
+<rect x="-46" y="-2" width="4" height="4" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-49" y="-4" width="3" height="8" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-49" y1="-1" x2="-47" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-49" y1="1" x2="-47" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-39,-15 -32,-15 -36,-16 -36,-14 -33,-15" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-31,0 -38,0 -33,-1 -33,1 -38,0" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-36,-24 -32,-27 -32,-23 -28,-27" stroke="blue" stroke-width="1" fill="none"/>
+<line x1="-30" y1="-25" x2="-28" y2="-27" stroke="blue" stroke-width="1" fill="none"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.0 -30.0 78.0 58.0" width="78" height="58">
+<!-- ud-exte-split — converti de ud-exte-split.elmt par outils\elmt-vers-svg.py -->
+<rect x="-25.0" y="-30.0" width="78.0" height="58.0" fill="#fffdf8"/>
+<ellipse cx="2.40" cy="-2.79" rx="7.07" ry="6.09" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="2.39" cy="-2.79" rx="9.63" ry="8.54" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="25.41" y="13.07" width="5.57" height="2.44" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="33.77" y="-1.1" width="1.39" height="1.22" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="3.03" cy="-2.79" rx="15.41" ry="13.41" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-16.37" y="-22.3" width="50.13" height="35.36" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="34.94" y="-2.32" width="2.79" height="3.66" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="21.23" y1="-19.91" x2="21.23" y2="13.12" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="24" y="-16.2" width="7" height="2.44" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-12.19" y="13.07" width="5.57" height="2.44" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="33.77" y="9.41" width="1.39" height="1.22" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="35.75" y="8.19" width="2.79" height="3.66" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-16.37" y1="-19.86" x2="33.77" y2="-19.86" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="3.18" y1="-16.2" x2="3.18" y2="9.41" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-12.38" y1="-2.79" x2="18.45" y2="-2.79" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="3.04" cy="-2.79" rx="12.85" ry="10.97" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="3.04" cy="-2.78" rx="3.85" ry="3.66" stroke="black" stroke-width="0.4" fill="none"/>
+</svg>

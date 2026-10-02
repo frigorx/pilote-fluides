@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1b3a63">
+<title>CartoClim — la climatisation, station par station</title>
+<meta name="description" content="CartoClim, réseau inerWeb de la climatisation : comprendre un climatiseur, du besoin à la panne, en stations de dix minutes.">
+<style>
+:root{--navy:#1b3a63;--ink:#10233c;--muted:#637285;--cream:#f7f1e7;--paper:#fffdf8;--orange-deep:#c9451a;--logo:#e8914a;--line:rgba(27,58,99,.16);--shadow:0 2px 10px rgba(27,58,99,.10)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.55 Calibri,"Segoe UI",system-ui,Arial,sans-serif}
+h1,h2,h3{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy);margin:0 0 .4em}
+h1{font-size:1.9rem;letter-spacing:-.015em}h2{font-size:1.4rem}h3{font-size:1.2rem}
+a{color:#3d7fca}
+.topbar{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:10px 20px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+.topbar .logo{height:52px;width:auto}
+.topbar .baseline{color:var(--muted);font-size:1rem}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap;font-size:.95rem}
+main{max-width:1440px;margin:0 auto;padding:18px 16px 30px}
+.intro{display:flex;gap:24px;align-items:flex-end;flex-wrap:wrap;margin-bottom:10px}
+.intro p{margin:0;max-width:62ch}
+.eyebrow{color:var(--orange-deep);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.9rem;margin:0}
+.carte-boite{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:8px}
+#carte{width:100%;height:auto;display:block}
+#carte .lbl{font-family:Calibri,"Segoe UI",Arial,sans-serif;font-size:15px;fill:var(--ink)}
+#carte .lbl.neuf{font-weight:700;fill:var(--navy)}
+#carte .gare{cursor:pointer}
+#carte .gare:focus{outline:none}
+#carte .gare:focus .halo,#carte .gare:hover .halo{opacity:1}
+#carte .halo{opacity:0;fill:none;stroke:var(--logo);stroke-width:3;stroke-dasharray:5 4}
+#carte .terminus{font:700 15px "Trebuchet MS",Arial,sans-serif;fill:#fff}
+.legende{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding:8px 12px 4px;font-size:.98rem}
+.legende svg{vertical-align:middle;margin-right:6px}
+.code{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font:700 16px "Trebuchet MS",Arial,sans-serif;vertical-align:middle}
+.lignes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px}
+.carteb{background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:16px 18px}
+.ligne-carte{border-top:8px solid var(--c)}
+.ligne-carte h2{display:flex;gap:8px;align-items:center;font-size:1.2rem}
+.ligne-carte .compte{color:var(--muted);font-size:.95rem;margin:0 0 6px}
+.ligne-carte ol{margin:0;padding-left:1.4em}
+.ligne-carte li a{color:var(--ink);text-decoration:none}
+.ligne-carte li a:hover,.ligne-carte li a:focus{text-decoration:underline;color:var(--navy)}
+.ligne-carte li.neuf a{font-weight:700;color:var(--navy)}
+.ligne-carte li .ou{color:var(--muted);font-size:.9rem}
+.mode{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px}
+.mode p{margin:0}
+.mode strong{color:var(--navy)}
+footer{max-width:1440px;margin:0 auto;padding:0 16px 30px;color:var(--muted);font-size:.9rem}
+@media (max-width:900px){.topbar nav{margin-left:0}}
+@media print{.topbar{box-shadow:none}body{background:#fff}.carteb,.carte-boite{box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <!-- Logo figé, § 3.4 de la charte : seul le mot du cartouche change. L'orange du logo est #e8914a. -->
+  <svg class="logo" viewBox="0 0 310 66" role="img" aria-label="inerWeb CartoClim">
+    <text fill="#1b3a63" font-size="36" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="112" height="30"/>
+    <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" x="246" y="29" text-anchor="middle">CartoClim</text>
+  </svg>
+  <span class="baseline">La climatisation, de l’envie de fraîcheur à la panne</span>
+  <nav aria-label="Les autres réseaux inerWeb">
+    <a href="https://inerweb.fr/plan.html">⇄ Thermo-techno</a>
+    <a href="https://inerweb.fr/aerorezo/">⇄ AéroRézo</a>
+    <a href="https://inerweb.fr/hydrometro/">⇄ HydroMétro</a>
+    <a href="https://inerweb.fr/electrorezo/">⇄ ÉlectroRézo</a>
+  </nav>
+</header>
+
+<main>
+  <div class="intro">
+    <div>
+      <p class="eyebrow" id="stats">Réseau climatisation</p>
+      <h1>Comprendre un climatiseur, du besoin à la panne.</h1>
+    </div>
+    <p>Choisissez une gare. Les gares rondes sont les stations de CartoClim ; les gares carrées <strong>↗</strong> mènent aux stations des autres réseaux inerWeb qui en parlent déjà.</p>
+  </div>
+
+  <div class="carte-boite">
+    <svg id="carte" viewBox="0 0 1400 940" role="group" aria-label="Carte du réseau CartoClim"></svg>
+    <div class="legende" id="legende"></div>
+  </div>
+
+  <div class="lignes" id="lignes"></div>
+
+  <div class="mode">
+    <section class="carteb"><p><strong>Une station = dix minutes.</strong> Cinq temps : découvrir, comprendre, manipuler, représenter, vérifier. Une voix qui explique, des images qui bougent, des questions pour vérifier.</p></section>
+    <section class="carteb"><p><strong>Pour tout le monde.</strong> Une seule lecture, celle du technicien : pas de niveau à choisir. Chaque station s’ouvre seule, hors ligne, sur téléphone comme au tableau.</p></section>
+    <section class="carteb"><p><strong>Rien n’est écrit deux fois.</strong> Le cycle, l’air, l’eau, l’électricité et la réglementation ont déjà leurs réseaux : CartoClim y renvoie, et ne garde que la climatisation.</p></section>
+  </div>
+  <!-- La porte 3D : la rue du frigoriste (maison, commerce), calque Clim — montée ici quand la rue sera livrée sur le site. -->
+</main>
+<footer>© inerWeb 2026 · symboles : collection QElectroTech, licence CC BY 3.0.</footer>
+
+<script src="reseau/gares.js"></script>
+<script>
+'use strict';
+const W = 1400, H = 940;
+const { lignes: LIGNES, gares: GARES, reseaux: RESEAUX, site: SITE } = CARTOCLIM;
+const NS = 'http://www.w3.org/2000/svg';
+const svg = document.getElementById('carte');
+function el(nom, attrs, parent) {
+  const e = document.createElementNS(NS, nom);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const echapper = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const rayon = g => g.l.length > 1 ? 15 : 10;
+const adresse = g => g.s === 'neuf' ? 'stations/' + g.dossier + '/index.html' : SITE + g.u;
+
+/* ---------- les tracés, un bout de ligne et la lettre au terminus ---------- */
+const segments = [];
+for (const code in LIGNES) {
+  const L = LIGNES[code], t = L.trace, bout = L.terminus;
+  el('polyline', {points: t.map(p => p.join(',')).join(' '), fill: 'none', stroke: L.couleur, 'stroke-width': 8, 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}, svg);
+  for (let i = 0; i < t.length - 1; i++) segments.push([t[i], t[i + 1]]);
+  /* le terminus prolonge la fin du tracé — sauf la ligne 4, dont le terminus est à l'ouest */
+  const depuis = code === '4' ? t[1] : t[t.length - 1];
+  el('line', {x1: depuis[0], y1: depuis[1], x2: bout[0], y2: bout[1], stroke: L.couleur, 'stroke-width': 8}, svg);
+  segments.push([depuis, bout]);
+  el('circle', {cx: bout[0], cy: bout[1], r: 17, fill: L.couleur}, svg);
+  const lettre = el('text', {x: bout[0], y: bout[1] + 5.5, 'text-anchor': 'middle', class: 'terminus'}, svg);
+  lettre.textContent = L.lettre;
+}
+const boitesTerminus = Object.values(LIGNES).map(L => ({x1: L.terminus[0] - 19, x2: L.terminus[0] + 19, y1: L.terminus[1] - 19, y2: L.terminus[1] + 19}));
+
+/* ---------- les gares ---------- */
+const calqueGares = el('g', {}, svg);
+function arc(x, y, r, a0, a1) {
+  const p = a => [x + r * Math.cos(a), y + r * Math.sin(a)];
+  const [x0, y0] = p(a0), [x1, y1] = p(a1);
+  return `M${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 ${a1 - a0 > Math.PI ? 1 : 0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+}
+for (const g of GARES) {
+  const [x, y] = g.p;
+  const grp = el('g', {class: 'gare', tabindex: 0, role: 'link', 'data-id': g.id,
+    'aria-label': g.titre + (g.s === 'neuf' ? '' : ' — sur ' + RESEAUX[g.r])}, calqueGares);
+  el('circle', {class: 'halo', cx: x, cy: y, r: rayon(g) + 9}, grp);
+  if (g.l.length > 1) {
+    el('circle', {cx: x, cy: y, r: 15, fill: '#fffdf8'}, grp);
+    const n = g.l.length, pas = 2 * Math.PI / n;
+    g.l.forEach((c, i) => el('path', {d: arc(x, y, 15, -Math.PI / 2 + i * pas + 0.12, -Math.PI / 2 + (i + 1) * pas - 0.12), fill: 'none', stroke: LIGNES[c].couleur, 'stroke-width': 6}, grp));
+  } else if (g.s === 'neuf') {
+    el('circle', {cx: x, cy: y, r: 10, fill: '#fffdf8', stroke: LIGNES[g.l[0]].couleur, 'stroke-width': 4}, grp);
+  } else {
+    el('rect', {x: x - 10, y: y - 10, width: 20, height: 20, rx: 4, fill: '#fffdf8', stroke: '#10233c', 'stroke-width': 3}, grp);
+    el('rect', {x: x - 4, y: y - 4, width: 8, height: 8, rx: 1, fill: LIGNES[g.l[0]].couleur}, grp);
+  }
+  const ouvrir = () => { location.href = adresse(g); };
+  grp.addEventListener('click', ouvrir);
+  grp.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ouvrir(); } });
+}
+
+/* ---------- les étiquettes : placées une à une, sans toucher un tracé, une gare ni une autre étiquette ---------- */
+const INTERLIGNE = 18;
+function mesurer(texte, gras) {
+  const t = el('text', {x: -999, y: -999, class: 'lbl' + (gras ? ' neuf' : '')}, svg);
+  t.textContent = texte;
+  const w = t.getComputedTextLength();
+  t.remove();
+  return w;
+}
+function rectSegment(b, s, marge) {
+  const [[x0, y0], [x1, y1]] = s;
+  const n = Math.max(2, Math.ceil(Math.hypot(x1 - x0, y1 - y0) / 3));
+  for (let i = 0; i <= n; i++) {
+    const x = x0 + (x1 - x0) * i / n, y = y0 + (y1 - y0) * i / n;
+    if (x > b.x1 - marge && x < b.x2 + marge && y > b.y1 - marge && y < b.y2 + marge) return true;
+  }
+  return false;
+}
+const chevauche = (a, b, m) => a.x1 < b.x2 + m && a.x2 > b.x1 - m && a.y1 < b.y2 + m && a.y2 > b.y1 - m;
+const boitesGares = GARES.map(g => ({id: g.id, x1: g.p[0] - rayon(g) - 2, x2: g.p[0] + rayon(g) + 2, y1: g.p[1] - rayon(g) - 2, y2: g.p[1] + rayon(g) + 2})).concat(boitesTerminus);
+function libre(b, deja) {
+  if (b.x1 < 4 || b.x2 > W - 4 || b.y1 < 4 || b.y2 > H - 4) return false;
+  if (segments.some(s => rectSegment(b, s, 6))) return false;
+  if (boitesGares.some(o => chevauche(b, o, 3))) return false;
+  return !deja.some(o => chevauche(b, o, 10));
+}
+const calqueTextes = el('g', {}, svg);
+const placees = [];
+const ordre = GARES.slice().sort((a, b) => b.l.length - a.l.length);
+for (const g of ordre) {
+  const [x, y] = g.p, r = rayon(g);
+  const lig = g.court.split('|').map((t, i, a) => i === a.length - 1 && g.s === 'existe' ? t + ' ↗' : t);
+  const w = Math.max(...lig.map(t => mesurer(t, g.s === 'neuf')));
+  const h = lig.length * INTERLIGNE;
+  const c = {
+    dessus:  {x1: x - w / 2, x2: x + w / 2, y1: y - r - 8 - h, y2: y - r - 8},
+    dessous: {x1: x - w / 2, x2: x + w / 2, y1: y + r + 8, y2: y + r + 8 + h},
+    droite:  {x1: x + r + 10, x2: x + r + 10 + w, y1: y - h / 2, y2: y + h / 2},
+    gauche:  {x1: x - r - 10 - w, x2: x - r - 10, y1: y - h / 2, y2: y + h / 2},
+    dessusDroite: {x1: x + 6, x2: x + 6 + w, y1: y - r - 8 - h, y2: y - r - 8},
+    dessousDroite: {x1: x + 6, x2: x + 6 + w, y1: y + r + 8, y2: y + r + 8 + h},
+    dessusGauche: {x1: x - 6 - w, x2: x - 6, y1: y - r - 8 - h, y2: y - r - 8},
+    dessousGauche: {x1: x - 6 - w, x2: x - 6, y1: y + r + 8, y2: y + r + 8 + h}
+  };
+  let choix = ['dessus', 'dessous', 'droite', 'gauche', 'dessusDroite', 'dessousDroite', 'dessusGauche', 'dessousGauche'].map(k => c[k]).find(b => libre(b, placees));
+  if (!choix) { choix = c.dessus; choix.force = true; }
+  placees.push(Object.assign(choix, {id: g.id}));
+  const t = el('text', {class: 'lbl' + (g.s === 'neuf' ? ' neuf' : ''), 'data-id': g.id, 'pointer-events': 'none'}, calqueTextes);
+  lig.forEach((ligne, i) => {
+    const ts = el('tspan', {x: choix.x1.toFixed(1), y: (choix.y1 + 14 + i * INTERLIGNE).toFixed(1)}, t);
+    ts.textContent = ligne;
+  });
+}
+svg.appendChild(calqueGares);
+
+/* ---------- légende, chiffres, lignes ---------- */
+const nbNeuf = GARES.filter(g => g.s === 'neuf').length;
+document.getElementById('stats').textContent =
+  `Réseau climatisation · ${Object.keys(LIGNES).length} lignes · ${GARES.length} gares · ${nbNeuf} stations CartoClim · ${GARES.length - nbNeuf} correspondances`;
+document.getElementById('legende').innerHTML =
+  Object.values(LIGNES).map(L => `<span><svg width="34" height="20"><line x1="4" y1="10" x2="30" y2="10" stroke="${L.couleur}" stroke-width="8" stroke-linecap="round"/></svg><strong>${L.lettre}</strong> ${L.nom}</span>`).join('') +
+  `<span><svg width="24" height="24"><circle cx="12" cy="12" r="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/></svg><strong>station CartoClim</strong></span>` +
+  `<span><svg width="24" height="24"><rect x="3" y="3" width="18" height="18" rx="4" fill="#fffdf8" stroke="#10233c" stroke-width="3"/><rect x="9" y="9" width="6" height="6" fill="#637285"/></svg><strong>↗ autre réseau</strong></span>` +
+  `<span><svg width="34" height="34"><circle cx="17" cy="17" r="13" fill="#fffdf8" stroke="#637285" stroke-width="5" stroke-dasharray="18 4"/></svg><strong>correspondance</strong> entre lignes</span>`;
+
+document.getElementById('lignes').innerHTML = Object.entries(LIGNES).map(([code, L]) => {
+  const gs = GARES.filter(g => g.l.includes(+code));
+  return `<section class="carteb ligne-carte" style="--c:${L.couleur}">
+    <h2><span class="code">${L.lettre}</span>${L.nom}</h2>
+    <p class="compte">${L.sous} · ${gs.length} gares</p>
+    <ol>${gs.map(g => `<li class="${g.s}"><a href="${adresse(g)}">${echapper(g.court.replace('|', ' '))}</a>${g.s === 'existe' ? ` <span class="ou">↗ ${RESEAUX[g.r]}</span>` : ''}</li>`).join('')}</ol>
+  </section>`;
+}).join('');
+
+/* ---------- contrôle : relu sur le rendu réel (outils/controler-carte.mjs) ---------- */
+window.controleCarte = function () {
+  const defauts = [];
+  const boites = [...calqueTextes.querySelectorAll('text')].map(t => { const b = t.getBBox(); return {id: t.dataset.id, x1: b.x, x2: b.x + b.width, y1: b.y, y2: b.y + b.height}; });
+  for (const b of boites) {
+    if (segments.some(s => rectSegment(b, s, 4))) defauts.push(b.id + ' touche un tracé');
+    if (boitesGares.some(o => chevauche(b, o, 1))) defauts.push(b.id + ' touche une gare');
+    if (b.x1 < 0 || b.x2 > W || b.y1 < 0 || b.y2 > H) defauts.push(b.id + ' sort du cadre');
+  }
+  for (let i = 0; i < boites.length; i++) for (let j = i + 1; j < boites.length; j++)
+    if (chevauche(boites[i], boites[j], 2)) defauts.push(boites[i].id + ' touche ' + boites[j].id);
+  return {gares: GARES.length, etiquettes: boites.length, forcees: placees.filter(p => p.force).map(p => p.id), defauts};
+};
+</script>
+<script src="assets/marque.js" data-cartouche="CartoClim" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* CartoClim 3.2 — textes POUR L'OREILLE, registre « professeur à l'épaule ».
+   La voix explique, elle ne lit pas l'écran (00-charte/VOIX-ET-NARRATION.md).
+   Non validés, aucun MP3 fabriqué. */
+const NARRATION = {
+
+  decouvrir: `Regardez la première photo. Deux boîtiers, et une télécommande.
+Le boîtier avec la grille ronde, c'est l'unité extérieure. Elle vit dehors, sur la façade ou au sol,
+et c'est elle qui fait le bruit. Le boîtier allongé, c'est l'unité intérieure. Elle est au mur de la
+pièce, et c'est elle qui souffle.
+Le mot split veut dire séparé. On a coupé la machine en deux pour laisser dehors ce qui chauffe et
+ce qui ronronne, et garder dedans seulement ce qui souffle.
+Entre les deux, vous ne les voyez pas sur la photo, deux tubes de cuivre et un câble traversent le mur.
+Sur la seconde photo, l'unité intérieure est posée au sol, comme un radiateur. On l'appelle une
+console. La forme change, la machine est la même. C'est le climatiseur que vous rencontrerez le plus
+souvent : à poser, à mettre en service, et à dépanner.`,
+
+  comprendre: `Ouvrons les deux boîtiers, et suivons la chaleur.
+Dans l'unité intérieure, il y a une batterie, une sorte de radiateur à ailettes très serrées, et une
+turbine qui aspire l'air de la pièce et le pousse à travers. Dans cette batterie, le fluide est froid.
+Quand l'air chaud de la pièce le traverse, le fluide bout, il s'évapore, et il prend la chaleur de
+l'air. L'air ressort plus frais. C'est le premier pas du dessin.
+Le fluide est devenu un gaz. Il quitte la pièce par le gros tube, celui qu'on appelle la ligne gaz,
+et il traverse le mur.
+Dehors, le compresseur l'aspire et le comprime. En sortie, ce gaz est chaud, plus chaud que l'air
+extérieur, et sous haute pression.
+Il entre alors dans la batterie de l'unité extérieure, le condenseur. L'hélice la balaie avec l'air
+du dehors. Le gaz se refroidit et redevient liquide. La chaleur qu'il avait prise dans la pièce, il
+la rend à l'air extérieur. C'est pour cela que l'unité extérieure souffle de l'air chaud.
+Reste à ramener ce liquide à basse pression. C'est le détendeur : un passage très étroit, parfois un
+simple tube capillaire. La pression tombe d'un coup, le liquide devient froid, et il repart vers la
+pièce par le petit tube, la ligne liquide. Et le tour recommence.
+Un dernier point, que les clients remarquent avant tout : l'eau. L'air de la pièce est humide. Sur la
+batterie froide, cette humidité se dépose en gouttes, comme sur une bouteille sortie du frigo. Les
+gouttes tombent dans un bac, et un tuyau les évacue dehors. Ce tuyau fait partie de la machine : s'il
+est bouché ou mal posé, c'est le plafond du client qui coule.
+Appuyez sur Dérouler, et regardez le fluide faire le tour.`,
+
+  manipuler: `À vous. Le split réversible du salon : cochez ce qu'il sait faire.
+Refroidir, oui, c'est son premier métier. Chauffer, oui aussi, parce qu'il est réversible : une vanne
+dans l'unité extérieure inverse le sens du fluide, et la batterie intérieure devient chaude. Nous le
+verrons à la station deux point six.
+Mais renouveler l'air, non. Et c'est l'erreur la plus fréquente. Un split brasse l'air de la pièce, il
+le refroidit ou le réchauffe, mais il ne fait entrer aucun air du dehors. L'unité extérieure ne
+communique avec la pièce que par les deux tubes de fluide. Pour de l'air neuf, il faut une ventilation.
+Ensuite, le raccordement. Entre les deux unités, vous raccordez quatre choses. Les deux tubes de
+cuivre, avec des raccords à dudgeon serrés au couple. Le câble qui relie les deux unités, et
+l'alimentation de l'unité extérieure. Et le tuyau d'évacuation de l'eau, en pente, jusqu'à dehors.
+Avant d'ouvrir les vannes, on tire au vide, et on vérifie l'étanchéité.
+Un piège pour finir. Un split est livré préchargé en fluide, mais pour une longueur de tubes précise,
+écrite dans la notice. Si vos liaisons sont plus longues, il manquera du fluide. Si elles sont plus
+courtes, il y en aura trop. On ne devine pas, on lit la notice, et on pèse.`,
+
+  representer: `Deux symboles, pour les deux unités.
+L'unité intérieure murale se dessine comme un boîtier allongé, avec sa grille de soufflage. L'unité
+extérieure, comme un boîtier avec son hélice et ses deux raccords.
+Sur un plan, l'unité intérieure est posée dans la pièce qu'elle traite, et l'unité extérieure sur la
+façade, au sol ou en toiture. Les deux traits qui les relient sont les liaisons. Regardez bien leurs
+cotes : la longueur et le dénivelé commandent la charge de fluide, et le constructeur fixe une limite.
+Cherchez aussi le tuyau de condensats. S'il n'est pas tracé jusqu'à son évacuation, il manquera sur le
+chantier. Et retenez deux lettres : U I pour l'unité intérieure, U E pour l'unité extérieure.`
+};

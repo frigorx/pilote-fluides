@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-35.0 -31.0 98.0 58.0" width="98" height="58">
+<!-- Cassette — converti de cassette.elmt par outils\elmt-vers-svg.py -->
+<rect x="-35.0" y="-31.0" width="98.0" height="58.0" fill="#ffffff"/>
+<line x1="-7" y1="14" x2="48" y2="14" stroke="black" stroke-width="1" fill="none"/>
+<line x1="39" y1="7" x2="45" y2="12" stroke="black" stroke-width="1" fill="none"/>
+<line x1="40" y1="7" x2="46" y2="12" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-18" y1="7" x2="-12" y2="12" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-24" y="-5" width="4" height="2" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-20,0 -28,1 -28,2 38,2 38,1 30,0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-24" y="-10" width="4" height="2" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-28" y1="2" x2="-11" y2="16" stroke="black" stroke-width="1" fill="none"/>
+<line x1="38" y1="1" x2="56" y2="16" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-11" y1="16" x2="56" y2="16" stroke="black" stroke-width="1" fill="none"/>
+<line x1="49" y1="-5.3" x2="49" y2="9.32" stroke="black" stroke-width="1" fill="none"/>
+<line x1="35" y1="-17" x2="49" y2="-6" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-18" y1="5" x2="37" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-17" y1="7" x2="-11" y2="12" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-13,7 -7,12 41,12 35,7" stroke="black" stroke-width="1" fill="black"/>
+<line x1="-16" y1="-20" x2="-16" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="35" y1="-17" x2="35" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="26" y1="-20" x2="26" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-19" y1="0" x2="-19" y2="-16" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-19,-17 -16,-21 26,-21 35,-17" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-19" y1="0" x2="31" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="49" y1="-3" x2="52" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="28,-14 33,-12 31,-15" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-18,-15 -17,-16 -21,-17" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="39.50" cy="-7.50" rx="1.50" ry="1.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="39" y1="-6" x2="41" y2="-8" stroke="black" stroke-width="1" fill="none"/>
+</svg>

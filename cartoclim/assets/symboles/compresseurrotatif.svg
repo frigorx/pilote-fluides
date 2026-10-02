@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-29.0 -24.0 58.0 48.0" width="58" height="48">
+<!-- Compresseur rotatif — converti de compresseurrotatif.elmt par outils\elmt-vers-svg.py -->
+<rect x="-29.0" y="-24.0" width="58.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.00" cy="0.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="white"/>
+<ellipse cx="0.00" cy="0.00" rx="3.50" ry="3.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-2" x2="0" y2="2" stroke="black" stroke-width="1" fill="none"/>
+<line x1="3" y1="0" x2="0" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-15" y1="0" x2="-16" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="15" y1="0" x2="16" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-7" y1="-13" x2="13" y2="-7" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-7" y1="13" x2="13" y2="7" stroke="black" stroke-width="1" fill="none"/>
+</svg>

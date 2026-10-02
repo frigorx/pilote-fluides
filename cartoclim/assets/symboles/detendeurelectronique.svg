@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.0 -25.0 48.0 38.0" width="48" height="38">
+<!-- Détendeur électronique — converti de detendeurelectronique.elmt par outils\elmt-vers-svg.py -->
+<rect x="-24.0" y="-25.0" width="48.0" height="38.0" fill="#ffffff"/>
+<ellipse cx="0.00" cy="-12.00" rx="5.83" ry="5.83" stroke="black" stroke-width="1" fill="white"/>
+<text x="-3.5" y="-11" font-family="Arial,sans-serif" font-size="3" fill="#000000">TCE</text>
+<polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0" stroke="black" stroke-width="1" fill="white"/>
+<line x1="0" y1="0" x2="0" y2="-6" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="11" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="0" x2="-11" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</svg>

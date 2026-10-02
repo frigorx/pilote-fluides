@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14.0 -25.0 28.0 38.0" width="28" height="38">
+<!-- Terre — converti de terre.elmt par outils\elmt-vers-svg.py -->
+<rect x="-14.0" y="-25.0" width="28.0" height="38.0" fill="#fffdf8"/>
+<line x1="-3" y1="4" x2="3" y2="4" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="2" x2="5" y2="2" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-7" y1="0" x2="7" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</svg>
