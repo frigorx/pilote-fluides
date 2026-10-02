@@ -41,6 +41,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
 
 const ROOT = 'C:/git/pilote-fluides';
 const SORTIE = path.join(ROOT, 'docs/catalogue-2026-09');
@@ -449,6 +450,44 @@ for (const ext of [
     // L'adresse ne se compose pas comme les autres : elle ne part pas d'inerweb.fr.
     stations[stations.length - 1].url = ext.base + (f === 'index.html' ? '' : f);
     stations[stations.length - 1].chemin = `${ext.racine}/${f}`;
+  }
+}
+
+/* --- Les arrêts du plan que les dossiers ne montrent pas (02/10/2026) ---
+   Le relevé par dossier de res/ ignorait 37 des 108 arrêts du plan : les
+   étapes du CO₂ (un module, treize arrêts ?e=…), « S'évaluer » (cartes de
+   formation.html), la boîte à outils et les correspondances. On lit donc
+   moteur/plan-donnees.js, la source du plan, et on ajoute chaque arrêt dont
+   ni l'identifiant ni l'adresse ne sont déjà relevés (sous-tension/, fgaz… le
+   sont plus haut, sous leur propre réseau : pas de doublon). */
+{
+  const ctx = { window: {} };
+  vm.createContext(ctx);
+  vm.runInContext(lire(path.join(ROOT, 'moteur/plan-donnees.js')) || '', ctx);
+  const plan = ctx.window.PLAN_DONNEES || {};
+  const vus = new Set();
+  const arrets = [];
+  const parcourir = (o, groupe) => {
+    if (Array.isArray(o)) return o.forEach((x) => parcourir(x, groupe));
+    if (!o || typeof o !== 'object') return;
+    if (o.id && o.href && o.nom && !vus.has(o.id)) { vus.add(o.id); arrets.push({ ...o, groupe }); }
+    for (const k in o) if (typeof o[k] === 'object') parcourir(o[k], groupe);
+  };
+  for (const k in plan) if (k !== 'SUPPORTS') parcourir(plan[k], k);
+  const absolue = (h) => (/^https?:/.test(h) ? h : SITE + h).replace(/index\.html$/, '');
+  const dejaIds = new Set(stations.filter((s) => s.reseau === 'Plan thermo-techno').map((s) => s.id));
+  const dejaUrls = new Set(stations.map((s) => s.url.replace(/index\.html$/, '')));
+  for (const a of arrets) {
+    if (dejaIds.has(a.id) || dejaUrls.has(absolue(a.href))) continue;
+    ajouter({
+      reseau: 'Plan thermo-techno',
+      id: a.id,
+      titre: nettoyer(a.nom),
+      ligne: a.groupe,
+      resume: a.sous ? nettoyer(a.sous) : null,
+      chemin: a.href,
+    });
+    stations[stations.length - 1].url = absolue(a.href);
   }
 }
 

@@ -2,9 +2,9 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**347 stations** réparties en 13 réseaux.
+**379 stations** réparties en 13 réseaux.
 
-## Plan thermo-techno — 72 stations
+## Plan thermo-techno — 104 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -80,6 +80,38 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [TraxOil : comment il travaille](https://inerweb.fr/packs/fluides/res/traxoil-pedagogique/) | — | — | — | — |
 | [La vanne de service — trois positions, deux prises](https://inerweb.fr/packs/fluides/res/vanne-service-interactive/) | — | — | 4.01 4.05 5.01 6.01 6.06 | Cours interactif sur la vanne de service à deux prises : les trois positions en coupe animée, la voie de service P et la prise permanente P1, le sens BP et HP, le geste de raccordement du manifold et deux mini-jeux corrigés. |
 | [Comprendre le voyant liquide](https://inerweb.fr/packs/fluides/res/voyant-liquide-pedagogique/) | — | — | 1.05 7.05 9.09 12.07 | Parcours interactif pour comprendre le voyant liquide frigorifique, avec ou sans indicateur d’humidité. |
+| [Le NRD](https://inerweb.fr/packs/fluides/res/regulateur-kvr-nrd/index.html?etape=nrd) | LIGNES | — | — | repressuriser le réservoir |
+| [Pressostats en autonomie](https://frigorx.github.io/inerweb-pressostats/) | LIGNES | — | — | s’entraîner seul, KP1 et KP5 |
+| [La Frise des Fluides](https://inerweb.fr/packs/fluides/res/frise-vivante/frise-vivante.html) | LIGNES | — | — | l’histoire racontée |
+| [Pourquoi le CO₂](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=pourquoi) | CO2 | — | — | hors quota, mais 120 bar |
+| [Carte d’identité](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=identite) | CO2 | — | — | 31 °C · 73,8 bar · 57 bar à l’arrêt |
+| [Le point critique](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=point-critique) | CO2 | — | — | ce qui disparaît au-dessus |
+| [Le point triple](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=point-triple) | CO2 | — | — | charger d’abord en phase gazeuse |
+| [Cycle subcritique](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=subcritique) | CO2 | — | — | quand il fait frais |
+| [Cycle transcritique](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=transcritique) | CO2 | — | — | plus de condensation |
+| [La HP optimale](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=hp-optimale) | CO2 | — | — | la HP devient un réglage |
+| [Sécurité R744](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=securite) | CO2 | — | — | pression, asphyxie, froid |
+| [La centrale booster](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=booster) | CENTRALES | — | — | bouteille flash, deux étages |
+| [Sur le diagramme](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=booster-diagramme) | CENTRALES | — | — | le circuit et le tracé ensemble |
+| [Les architectures](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=familles) | CENTRALES | — | — | cascade, parallèle, éjecteurs |
+| [Compresseurs](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=compresseurs) | CENTRALES | — | — | piston, variateur, relevé |
+| [L’éjecteur](https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=ejecteur) | CENTRALES | — | — | récupérer l’énergie de détente |
+| [Positionnement](https://inerweb.fr/formation.html?carte=ex-pos) | CEINTURE | — | — | où j’en suis, avant tout |
+| [Réviser — 14 séries](https://inerweb.fr/formation.html?carte=rev-g1) | CEINTURE | — | — | groupe par groupe |
+| [Échauffement niv. 1](https://inerweb.fr/formation.html?carte=ex-ech) | CEINTURE | — | — | les fondamentaux |
+| [Défi technicien](https://inerweb.fr/formation.html?carte=ex-defi) | CEINTURE | — | — | diagnostics niv. 2 |
+| [Examen blanc E](https://inerweb.fr/formation.html?carte=ex-e) | CEINTURE | — | — | étanchéité |
+| [Examen blanc D](https://inerweb.fr/formation.html?carte=ex-d) | CEINTURE | — | — | récupération |
+| [Examen blanc A2](https://inerweb.fr/formation.html?carte=ex-a2) | CEINTURE | — | — | petites charges |
+| [Examen blanc A1](https://inerweb.fr/formation.html?carte=ex-a1) | CEINTURE | — | — | toutes opérations |
+| [Manomètres](https://frigorx.github.io/Iner.web-tools-beta/manometres_v5.html) | OUTILS | — | — | lire la pression, trouver la T° |
+| [Réglette P/T](https://frigorx.github.io/Iner.web-tools-beta/reglette_v5.html) | OUTILS | — | — | la correspondance d’un coup d’œil |
+| [Identifier un fluide](https://frigorx.github.io/Iner.web-tools-beta/identification_v5.html) | OUTILS | — | — | retrouver lequel c’est |
+| [Charge maxi A2L](https://frigorx.github.io/Iner.web-tools-beta/charge_a2l_v5.html) | OUTILS | — | — | R-32 : la limite par local |
+| [CO₂ & F-Gas](https://frigorx.github.io/Iner.web-tools-beta/co2_fgas_v5.html) | OUTILS | — | — | équivalent CO₂, périodicité |
+| [Aéraulique](https://frigorx.github.io/Iner.web-tools-beta/aeraulique_v5.html) | OUTILS | — | — | débits, gaines, pertes de charge |
+| [Diagnostic](https://frigorx.github.io/Iner.web-tools-beta/diagnostic_depannage_v5.html) | OUTILS | — | — | la panne, pas à pas |
+| [🧊 inerWeb Fluide](https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/) | CORRESPONDANCES | — | — | le logiciel de traçabilité |
 
 ## Plan — capsules — 24 stations
 
@@ -163,8 +195,8 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le confort d'été](https://inerweb.fr/legislation/stations/thermique-confort-ete/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : la nouveauté de la RE2020 qui concerne directement le climaticien — mesurer l'inconfort en degrés-heures, et traiter d'abord par la conception avant de climatiser. |
 | [Le DPE](https://inerweb.fr/legislation/stations/thermique-dpe/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce que mesure le diagnostic de performance énergétique, comment se lit l'étiquette de A à G, ce qu'il déclenche pour un propriétaire, et ses limites. |
 | [RT de l'existant](https://inerweb.fr/legislation/stations/thermique-existant/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : les règles de la thermique en rénovation, quand on remplace un équipement ou qu'on isole, et la différence entre une rénovation élément par élément et une rénovation globale. |
-| [Pourquoi une RT ?](https://inerweb.fr/legislation/stations/thermique-pourquoi-une-rt/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : la réglementation thermique française, née du choc pétrolier de 1974, renforcée par étapes jusqu'à la RT2012, puis remplacée par la RE2020 qui ajoute le carbone et le confort d'été. |
-| [La RE2020](https://inerweb.fr/legislation/stations/thermique-re2020/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : les trois exigences de la RE2020 — Bbio, Cep, IC — ce qui change vraiment par rapport à la RT2012, et pourquoi l'indicateur carbone pousse vers la pompe à chaleur. |
+| [Pourquoi une RT ?](https://inerweb.fr/legislation/stations/thermique-pourquoi-une-rt/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : la réglementation thermique française, née du choc pétrolier de 1973, renforcée par étapes jusqu'à la RT2012, puis remplacée par la RE2020 qui ajoute le carbone et le confort d'été. |
+| [La RE2020](https://inerweb.fr/legislation/stations/thermique-re2020/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : les six indicateurs de la RE2020 ce qui change vraiment par rapport à la RT2012, et pourquoi l'indicateur carbone pousse vers la pompe à chaleur. |
 | [Traçabilité](https://inerweb.fr/legislation/stations/tracabilite-fluides/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : suivre un fluide frigorigène du chargement à la filière de traitement — fiche d'intervention, registre, bordereau de suivi BSFF dans Trackdéchets, qui signe quoi, ce que vérifie un contrôle. |
 | [Droits & devoirs](https://inerweb.fr/legislation/stations/travail-droits-devoirs/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : le lien de subordination, l'obligation de sécurité de l'employeur, les devoirs du salarié, le droit d'alerte et de retrait, le règlement intérieur et la discipline, le CSE, l'inspection du travail et la santé au travail. |
 | [Le contrat](https://inerweb.fr/legislation/stations/travail-le-contrat/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : le CDI comme forme normale, le CDD et l'intérim et leurs motifs limités, l'apprentissage et la professionnalisation, la période d'essai, ce que contient un contrat écrit, la convention collective lue sur la fiche de paie, et les trois façons de quitter un CDI. |

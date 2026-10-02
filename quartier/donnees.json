@@ -521,6 +521,16 @@
      "r": "Thermo-techno"
     },
     {
+     "nom": "Le NRD",
+     "href": "https://inerweb.fr/packs/fluides/res/regulateur-kvr-nrd/index.html?etape=nrd",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Pressostats en autonomie",
+     "href": "https://frigorx.github.io/inerweb-pressostats/",
+     "r": "Thermo-techno"
+    },
+    {
      "nom": "Ce qui éclate — la pression",
      "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=s4",
      "r": "Capsules sécurité"
@@ -641,6 +651,71 @@
     {
      "nom": "TraxOil : comment il travaille",
      "href": "https://inerweb.fr/packs/fluides/res/traxoil-pedagogique/",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Pourquoi le CO₂",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=pourquoi",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Carte d’identité",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=identite",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Le point critique",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=point-critique",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Le point triple",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=point-triple",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Cycle subcritique",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=subcritique",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Cycle transcritique",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=transcritique",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "La HP optimale",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=hp-optimale",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Sécurité R744",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=securite",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "La centrale booster",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=booster",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Sur le diagramme",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=booster-diagramme",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Les architectures",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=familles",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Compresseurs",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=compresseurs",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "L’éjecteur",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/index.html?e=ejecteur",
      "r": "Thermo-techno"
     },
     {
@@ -1703,6 +1778,86 @@
      "r": "Thermo-techno"
     },
     {
+     "nom": "Positionnement",
+     "href": "https://inerweb.fr/formation.html?carte=ex-pos",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Réviser — 14 séries",
+     "href": "https://inerweb.fr/formation.html?carte=rev-g1",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Échauffement niv. 1",
+     "href": "https://inerweb.fr/formation.html?carte=ex-ech",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Défi technicien",
+     "href": "https://inerweb.fr/formation.html?carte=ex-defi",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Examen blanc E",
+     "href": "https://inerweb.fr/formation.html?carte=ex-e",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Examen blanc D",
+     "href": "https://inerweb.fr/formation.html?carte=ex-d",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Examen blanc A2",
+     "href": "https://inerweb.fr/formation.html?carte=ex-a2",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Examen blanc A1",
+     "href": "https://inerweb.fr/formation.html?carte=ex-a1",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Manomètres",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/manometres_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Réglette P/T",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/reglette_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Identifier un fluide",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/identification_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Charge maxi A2L",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/charge_a2l_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "CO₂ & F-Gas",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/co2_fgas_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Aéraulique",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/aeraulique_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Diagnostic",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/diagnostic_depannage_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "🧊 inerWeb Fluide",
+     "href": "https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/",
+     "r": "Thermo-techno"
+    },
+    {
      "nom": "Les organes qui trahissent une fuite",
      "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g1d",
      "r": "Capsules sécurité"
@@ -2279,6 +2434,11 @@
     {
      "nom": "Couche d'ozone et ODP",
      "href": "https://inerweb.fr/packs/fluides/res/film-ozone/",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "La Frise des Fluides",
+     "href": "https://inerweb.fr/packs/fluides/res/frise-vivante/frise-vivante.html",
      "r": "Thermo-techno"
     },
     {
