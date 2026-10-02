@@ -3,6 +3,15 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 02/10 — CARTOCLIM : 7e RÉSEAU, LA CLIMATISATION, EN LIGNE (`e6eb96af`)
+>
+> `cartoclim/` est **GÉNÉRÉ** depuis l'atelier `C:gitcartoclim` (`node outils/livrer.mjs`, puis `git add cartoclim` seul,
+> `node outils/attester.mjs --racine https://inerweb.fr/cartoclim` : 184/184 servis). 20 stations, 38 gares dont 18
+> correspondances vers les autres réseaux, 160 MP3 prouvés par transcription. **Aucun code de référentiel sur le site**
+> (décision de Franck). Pas encore dans `moteur/reseaux.js` ni au catalogue des stations : `C:gitcartoclimdocsINTEGRATION-SITE.md`
+> dit quoi faire quand la session du quartier aura commité `index.html`, `build/accueil.mjs`, `moteur/reseaux.js`.
+> Reprise : `C:gitcartoclimREPRISE.md`. Reste : bon à tirer métier (`A-VALIDER-PAR-FRANCK.md`).
+
 > ## 02/10 — AÉRORÉZO EN 3D : 13 APPAREILS DANS 26 STATIONS, EN LIGNE (`517e3536`)
 >
 > `aerorezo/` est **GÉNÉRÉ** depuis l’atelier `C:\git\aerorezo` : `node outils/livrer.mjs --simuler` puis `--ecrire`,
