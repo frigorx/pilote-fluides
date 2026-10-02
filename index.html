@@ -472,7 +472,8 @@
 
   .pro-liens { display:flex; flex-wrap:wrap; gap:6px 14px; margin:10px 0 0; padding:0; list-style:none; font-size:14px; }
   .pro-liens a { color:var(--bleu); font-weight:bold; }
-  .vous-venez .tuiles { grid-template-columns:repeat(3,1fr); }
+  .vous-venez .tuiles { grid-template-columns:repeat(2,1fr); }
+  @media (min-width:1000px) { .vous-venez .tuiles { grid-template-columns:repeat(4,1fr); } }
   @media (max-width:720px) { .vous-venez .tuiles { grid-template-columns:1fr; } .vous-venez .tuile p { display:block; } }
 
   /* ---- LE HALL (17/09/2026) : phrase, recherche, carte animée, chiffres, vignettes ---- */
@@ -888,6 +889,12 @@
         <h3>J’apprends</h3>
         <p>Je découvre le métier, je révise ou je suis mon cours.</p>
         <div><a class="bouton" href="quartier/">Commencer</a></div>
+      </div>
+      <div class="tuile">
+        <div class="emoji">🎯</div>
+        <h3>Je me situe</h3>
+        <p>Où j’en suis, avant de commencer ? 22 questions qui ne comptent pas.</p>
+        <div><a class="bouton" href="f/positionnement/">Faire le test d’entrée</a></div>
       </div>
       <div class="tuile">
         <div class="emoji">🎓</div>
