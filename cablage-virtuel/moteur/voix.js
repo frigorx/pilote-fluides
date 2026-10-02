@@ -130,7 +130,7 @@ function contexte() {
   if (TUTO) {
     const v = P.get('tuto'), cle = 'cablage-virtuel:tuto:' + ID + (v ? ':' + v : '');
     let i = 0; try { i = JSON.parse(sessionStorage.getItem(cle) || '{"i":0}').i || 0; } catch (e) { /* rien */ }
-    if (v === 'bornier') return [['born-1', 'born-2', 'born-3', null, 'born-4', 'born-5', 'born-7'][i] || null];   // le tutoriel du bornier
+    if (v === 'bornier') return [['born-1', 'born-2', 'born-3', 'born-4', 'born-terre', 'born-5', 'born-7'][i] || null];   // le tutoriel du bornier
     return ['tuto-' + i];
   }
   const e = window.CABLAGE_ETAT && window.CABLAGE_ETAT(); if (!e) return null;

@@ -555,17 +555,29 @@ const PONT_BASE = 18, PONT_PAS = 8;
 function estPont(A, B) {
   return A.rep !== B.rep && rangDe(A.rep) === 5 && rangDe(B.rep) === 5 && A.o === B.o && (A.o === 0 || A.o === 2);
 }
-function cheminPont(A, B, niv) {
-  if (A.o !== B.o) {   // 30/09 : deux blocs VOISINS pris de côtés opposés : un cavalier court entre les deux blocs, jamais la goulotte
-    const d = PONT_BASE + niv * PONT_PAS, xm = (A.x + B.x) / 2, yA = A.y + (A.o === 0 ? -d : d), yB = B.y + (B.o === 0 ? -d : d);
+function cheminPont(A, B, niv, xm = (A.x + B.x) / 2, ya = A.y) {
+  if (A.o !== B.o) {   // 30/09 : deux blocs pris de côtés opposés : un cavalier court, il passe dans l'intervalle voisin de B, jamais la goulotte
+    const d = PONT_BASE + niv * PONT_PAS, yA = ya + (A.o === 0 ? -d : d), yB = B.y + (B.o === 0 ? -d : d);
     return [[A.x, A.y], [A.x, yA], [xm, yA], [xm, yB], [B.x, yB], [B.x, B.y]];
   }
   const y = A.y + (A.o === 0 ? -1 : 1) * (PONT_BASE + niv * PONT_PAS);
   return [[A.x, A.y], [A.x, y], [B.x, y], [B.x, B.y]];
 }
-function estCavalier(A, B) {   // bornier, blocs voisins (un pas au plus), l'un pris côté armoire, l'autre côté terrain
-  return A.rep !== B.rep && rangDe(A.rep) === 5 && rangDe(B.rep) === 5 && A.o !== B.o && (A.o === 0 || A.o === 2) && (B.o === 0 || B.o === 2)
-    && Math.abs(A.x - B.x) <= 40 && Math.abs(A.y - B.y) <= 30;
+/* Bornier, l'un pris côté armoire, l'autre côté terrain, sur la même rangée, au plus deux blocs entre eux (02/10 : un bloc PE entre deux
+   blocs, les terres XAT du n° 9 ; en vue réelle le bloc est haut, l'écart vertical ne dit rien) : rend l'abscisse du passage et la hauteur
+   à franchir côté A (un bloc PE enjambé est plus haut que les autres), sinon null. */
+function cavalier(A, B) {
+  if (A.rep === B.rep || rangDe(A.rep) !== 5 || rangDe(B.rep) !== 5 || A.o === B.o || !(A.o === 0 || A.o === 2) || !(B.o === 0 || B.o === 2)
+    || A.ligne !== B.ligne || Math.abs(A.y - B.y) > 120) return null;
+  const a = Math.min(A.x, B.x), b = Math.max(A.x, B.x), entre = {}, haut = A.o === 0 ? Math.min : Math.max;
+  let ya = A.y;
+  Object.values(bornes).forEach(t => {
+    if (t.rep === A.rep || t.rep === B.rep || rangDe(t.rep) !== 5 || t.ligne !== A.ligne || t.x <= a || t.x >= b) return;
+    entre[t.rep] = t.x; if (t.o === A.o) ya = haut(ya, t.y);
+  });
+  const xs = Object.values(entre); if (xs.length > 2) return null;
+  const voisin = xs.length ? xs.reduce((m, x) => Math.abs(x - B.x) < Math.abs(m - B.x) ? x : m) : A.x;
+  return { xm: (voisin + B.x) / 2, ya };
 }
 function sortieDe(b) { return b.o === 1 ? [b.x + SORTIE, b.y] : b.o === 3 ? [b.x - SORTIE, b.y] : [b.x, b.y]; }
 function couloirs(l) { return Math.max(1, Math.floor((l - 2 * MARGE_GOULOTTE) / COULOIR) + 1); }
@@ -587,7 +599,8 @@ function attribuerCouloirs() {
   fils.forEach(f => {
     const A = bornes[f.de], B = bornes[f.a];
     if (estPont(A, B)) { f.route = { pont: true, niv: libre(occP[A.o], Math.min(A.x, B.x), Math.max(A.x, B.x)) }; return; }
-    if (estCavalier(A, B)) { const a = Math.min(A.x, B.x), b = Math.max(A.x, B.x); f.route = { pont: true, niv: Math.max(libre(occP[0], a, b), libre(occP[2], a, b)) }; return; }
+    const cav = cavalier(A, B);
+    if (cav) { const a = Math.min(A.x, B.x), b = Math.max(A.x, B.x); f.route = { pont: true, xm: cav.xm, ya: cav.ya, niv: Math.max(libre(occP[0], a, b), libre(occP[2], a, b)) }; return; }
     if (direct(A, B)) { f.route = { direct: true }; return; }
     const r = { gA: goulotteDe(A), gB: goulotteDe(B), pA: sortieDe(A), pB: sortieDe(B), cote: -1 };
     if (r.gA === r.gB) {
@@ -608,7 +621,7 @@ function pointsFil(f) {
   const A = bornes[f.de], B = bornes[f.a];
   if (!EX.platine) return cheminSimple(A, B, f.idx);
   const r = f.route;
-  if (r.pont) return cheminPont(A, B, r.niv);
+  if (r.pont) return cheminPont(A, B, r.niv, r.xm, r.ya);
   let pts = [[A.x, A.y]];
   if (r.direct) pts = cheminDirect(A, B, f.idx);
   else {

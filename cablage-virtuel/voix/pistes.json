@@ -395,11 +395,11 @@
    "texte": "Une borne de bornier a deux vis, une en haut, une en bas, reliées entre elles à l’intérieur : le courant passe de l’une à l’autre. Ces deux vis n’ont pas de numéro, on les désigne par leur côté. En haut, le côté armoire : c’est là qu’arrivent les fils qui viennent des appareils. En bas, le côté terrain : c’est là que se branchent les câbles qui partent vers le moteur, ou qui arrivent du réseau. On dit donc : XA3, côté terrain. Posez le fil qui part de L1 sur XA3, côté terrain."
   },
   "born-4": {
-   "fichier": "mp3/born-4-d019ae719d4f.mp3",
-   "duree": 34.3,
-   "mots": 108,
-   "mots_s": 3.15,
-   "texte": "Regardez les couleurs. La borne verte et jaune, c’est la borne de terre. Elle est plus haute que les autres parce que son pied, en métal, se serre directement sur le rail : elle relie la terre à toute la structure de l’armoire. La borne bleue, c’est le neutre. Les autres portent les phases. Ces couleurs évitent les erreurs : un conducteur vert et jaune va toujours sur une borne verte et jaune. Sur certains schémas, la borne de terre n’a même pas de repère : un nom n’est pas obligatoire, on la reconnaît à sa couleur et à sa place. Posez le conducteur de terre de l’arrivée sur sa borne."
+   "fichier": "mp3/born-4-9bf69b677303.mp3",
+   "duree": 20.5,
+   "mots": 57,
+   "mots_s": 2.78,
+   "texte": "Posez maintenant les deux autres phases, L2 et L3, de la même façon : chacune sur sa borne, côté terrain. Puis le neutre. Regardez les couleurs : la borne bleue, c’est le neutre ; les autres portent les phases. Ces couleurs évitent les erreurs. Le fil à poser clignote sur la carte : lisez le repère au bout de son trait."
   },
   "born-5": {
    "fichier": "mp3/born-5-289e1d667986.mp3",
@@ -1163,6 +1163,13 @@
    "mots": 28,
    "mots_s": 2.84,
    "texte": "Voici le pressostat du condenseur. Ce n’est pas une sécurité : il met en marche le ventilateur du condenseur quand la haute pression monte, et l’arrête quand elle redescend."
+  },
+  "born-terre": {
+   "fichier": "mp3/born-terre-76f670384855.mp3",
+   "duree": 28.0,
+   "mots": 92,
+   "mots_s": 3.29,
+   "texte": "Reste la terre. La borne verte et jaune, c’est la borne de terre. Elle est plus haute que les autres parce que son pied, en métal, se serre directement sur le rail : elle relie la terre à toute la structure de l’armoire. Un conducteur vert et jaune va toujours sur une borne verte et jaune. Sur certains schémas, la borne de terre n’a même pas de repère : un nom n’est pas obligatoire, on la reconnaît à sa couleur et à sa place. Posez le conducteur de terre de l’arrivée sur sa borne."
   }
  }
 }

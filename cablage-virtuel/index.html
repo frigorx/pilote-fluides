@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — le réseau</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20260930-0834">
-<link rel="stylesheet" href="moteur/accueil.css?v=20260930-0834">
+<link rel="stylesheet" href="moteur/cablage.css?v=20261002-1628">
+<link rel="stylesheet" href="moteur/accueil.css?v=20261002-1628">
 </head>
 <body class="reseau">
 <header class="barre">
@@ -73,10 +73,10 @@
     </div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20260930-0834';</script>
-<script src="exercices/index.js?v=20260930-0834"></script>
-<script src="moteur/reseau.js?v=20260930-0834"></script>
-<script src="moteur/documents.js?v=20260930-0834"></script>
+<script>window.CABLAGE_VERSION = '20261002-1628';</script>
+<script src="exercices/index.js?v=20261002-1628"></script>
+<script src="moteur/reseau.js?v=20261002-1628"></script>
+<script src="moteur/documents.js?v=20261002-1628"></script>
 <script>
 (function(){
 'use strict';
@@ -282,7 +282,7 @@ function remplirStation() {
   $('#st-niv').textContent = s.niveau; $('#st-niv').hidden = depart;   // le Départ : « Départ · Départ » disait deux fois la même chose
   $('#st-titre').textContent = s.titre; $('#st-sous').textContent = s.sous;
   $('#st-apprend').textContent = s.apprend;
-  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20260930-0834';
+  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20261002-1628';
   img.alt = 'Le schéma : ' + R.titre(ex, s.titre);
   // les fils à poser
   const faits = $('#st-faits'), mien = ++jeton;
@@ -413,6 +413,6 @@ window.addEventListener('pageshow', e => { if (e.persisted) route(); });   // re
 route();
 })();
 </script>
-<script src="moteur/marque.js?v=20260930-0834" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20261002-1628" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>
