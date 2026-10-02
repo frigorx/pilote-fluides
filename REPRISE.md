@@ -11,6 +11,19 @@
 > (mélanges) ; la réglette lit la rosée côté aspiration. R448A/R449A/R454B/R454C étaient faux de 5 à 23 %,
 > R1234yf −8 %, R513A −22 %. Suite : `CLAUDE-ESPACE-TRAVAIL/REZOTOOLS-PARKING.md`.
 
+> ## 02/10 (nuit) — LES ANIMATIONS JOUENT PARTOUT : `moteur/animations.js` + interrupteur « Animations » (Aa)
+>
+> Constat de F. Henninot sur un Pixel 10 : beaucoup d'animations ne se lançaient pas. Cause : 238 pages
+> obéissaient à `prefers-reduced-motion`. Or ce réglage est actif sans qu'on l'ait voulu (Windows sans effets
+> d'animation, Android « Supprimer les animations ») : 16 modules des packs posaient `* { animation… }`, la 3D
+> ne tournait plus, Législation coupait ses entrées. **Décision de Franck** : un interrupteur manuel pour les
+> vieux PC, plus le réglage du système. `moteur/animations.js` (sans defer, en tête de `<head>`) fait répondre
+> `matchMedia` et réécrit les `@media (prefers-reduced-motion…)` selon l'interrupteur (clé `inerweb_animations`,
+> case « Animations » du panneau Aa de `lisibilite.js`). **Pose : `node build/animations.mjs`** (307 pages,
+> 37 familles ; `--verifier` sort en erreur s'il en manque une). Les `livrer.mjs` d'aerorezo, hydrometro,
+> electrorezo et cartoclim l'injectent eux-mêmes. **🔴 Après toute livraison de cuivrezo, cablage-virtuel,
+> quartier, hocourant ou r408 : relancer `node build/animations.mjs`.**
+
 > ## 02/10 (soir) — LÉGISLATION FINALISÉE EN LIGNE, SOUS TENSION RAPATRIÉ VALIDÉ
 >
 > Feu vert de F. Henninot. Seuls les fichiers `legislation/` et `.gitignore` ont été reportés

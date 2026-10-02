@@ -6,6 +6,8 @@
      <script src=".../moteur/lisibilite.js"></script>
    Il pose un bouton flottant « Aa » qui ouvre un petit panneau :
      · taille du texte  − / + (70 % → 160 %, zoom global de la page) ;
+     · « Animations » : l'interrupteur du site pour les ordinateurs lents
+       (lu par moteur/animations.js) ;
      · « Police adaptée (DYS) » : bascule vers Lexend, police VARIABLE
        embarquée (moteur/polices/Lexend-variable.woff2, licence OFL) —
        formes de lettres espacées et sans ambiguïté, conçue pour la
@@ -23,6 +25,7 @@
   window.__piloteLisibilite = true;
 
   var CLE = "pilote_lisibilite";
+  var CLE_ANIM = "inerweb_animations"; // même clé que moteur/animations.js
   var MIN = 70, MAX = 160, PAS = 10;
 
   // Racine du dossier moteur/, déduite de l'adresse de ce script.
@@ -92,7 +95,7 @@
     var b = document.createElement("button");
     b.id = "lisib-bouton";
     b.type = "button";
-    b.title = "Lisibilité : taille du texte, police adaptée (DYS)";
+    b.title = "Lisibilité : taille du texte, police adaptée (DYS), animations";
     b.setAttribute("aria-label", "Réglages de lisibilité");
     b.setAttribute("aria-expanded", "false");
     b.setAttribute("aria-controls", "lisib-panneau");
@@ -108,6 +111,7 @@
       '<span id="lisib-taille"></span>' +
       '<button type="button" class="pm" id="lisib-plus" aria-label="Agrandir le texte">+</button></div>' +
       '<label><input type="checkbox" id="lisib-dys"> Police adaptée (DYS)</label>' +
+      '<label title="Décocher sur un ordinateur lent : les animations s\'arrêtent sur tout le site"><input type="checkbox" id="lisib-anim"> Animations</label>' +
       '<button type="button" id="lisib-raz">Réinitialiser</button>';
 
     document.body.appendChild(b);
@@ -139,6 +143,14 @@
     });
     document.getElementById("lisib-dys").addEventListener("change", function (e) {
       etat.dys = !!e.target.checked; memoriser(); appliquer();
+    });
+    /* L'interrupteur « Animations » (moteur/animations.js) : clé partagée
+       par tout le site ; la page se recharge pour repartir du bon état. */
+    var anim = document.getElementById("lisib-anim");
+    try { anim.checked = localStorage.getItem(CLE_ANIM) !== "non"; } catch (e) { anim.checked = true; }
+    anim.addEventListener("change", function (e) {
+      try { localStorage.setItem(CLE_ANIM, e.target.checked ? "oui" : "non"); } catch (err) { /* tant pis */ }
+      location.reload();
     });
     document.getElementById("lisib-raz").addEventListener("click", function () {
       etat = { taille: 100, dys: false }; memoriser(); appliquer();
