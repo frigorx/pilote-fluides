@@ -110,6 +110,10 @@
    ],
    "vues": [
     {
+     "titre": "L’armoire de l’atelier, en 3D",
+     "href": "https://inerweb.fr/electrorezo/armoire.html"
+    },
+    {
      "titre": "L’électricité pas à pas (ÉlectroRézo)",
      "href": "https://inerweb.fr/electrorezo/"
     },
@@ -662,8 +666,8 @@
     "elec"
    ],
    "entree": {
-    "titre": "Le contacteur",
-    "href": "https://inerweb.fr/electrorezo/stations/5-2-contacteur/"
+    "titre": "Ouvrir l’armoire en 3D (ÉlectroRézo)",
+    "href": "https://inerweb.fr/electrorezo/armoire.html"
    },
    "porte": {
     "titre": "Câbler l’armoire dans le simulateur",
