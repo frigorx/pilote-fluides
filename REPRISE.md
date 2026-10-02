@@ -46,7 +46,7 @@
 > `electrorezo/` est **GÉNÉRÉ** depuis l'atelier `C:\git\electrorezo` (`node outils/livrer.mjs`, puis `build/version.mjs`,
 > commiter `electrorezo/` et les seules clés de version, `node outils/attester.mjs`). Neuf : 35 modèles 3D, loupe sur les
 > photos, `electrorezo/armoire.html` (coin d'atelier 3D, 14 zones, la carte du réseau s'allume dans les deux sens).
-> Le quartier : « L'armoire électrique du froid » ouvre cette armoire (source `maquette-entree-technique/zones.mjs`).
+> Le quartier : « L'armoire électrique du froid » ouvre cette armoire (source `C:/git/quartier-technique/zones.mjs`).
 > Reprises : `chantier-3d/PROMPT-REPRISE-3D.md`, `chantier-armoire/REPRISE.md` dans l'atelier. Reste : essai PC lycée + téléphone.
 
 > ## 02/10 soir — LE QUARTIER TECHNIQUE : NOUVELLE PORTE D'ENTRÉE EN 3D, EN LIGNE (`f5be8b65`, `cf55a885`)
@@ -57,11 +57,12 @@
 > Au clic : la **vue réseau** (une ligne de métro par réseau). Mode léger automatique sur les postes lents.
 > Dans le hall de l'accueil : l'aperçu 3D (`quartier/apercu.jpg`) en symétrie avec la carte des réseaux, rendue
 > cliquable par un script de la page (liens lus dans les vignettes : le bloc CARTE-RESEAUX généré n'est pas touché).
-> 🔴 **`quartier/` est GÉNÉRÉ** : ne pas l'éditer ici. Atelier = `CLAUDE-ESPACE-TRAVAIL/maquette-entree-technique/`
+> 🔴 **`quartier/` est GÉNÉRÉ** : ne pas l'éditer ici. Atelier = dépôt privé `C:/git/quartier-technique` (sous git depuis le 02/10)
 > (source `zones.mjs`, `PLAN.md` fait foi) ; livrer par `node donnees3d.mjs && node livrer.mjs`, puis commiter `quartier/` seul.
 > Nom : « quartier technique », jamais « frigoriste » dans les textes visibles (décision de Franck).
-> Restent : stations « comment marche un split » et « circuit frigorifique de la PAC » ; brancher le réseau
-> climatisation que Franck écrit ; liste des appareils dans `catalogue-stations.mjs` (il ignore 37 arrêts du plan).
+> ✅ 02/10 : split et circuit de la PAC comblés par CartoClim ; `outils/catalogue-stations.mjs` lit `moteur/plan-donnees.js`
+> (les 108 arrêts retrouvables, `1165f758`) → 373 stations au quartier, 0 sans zone. Reste : R408 et Câblage virtuel
+> encore recopiés à la main dans les EXTRAS de `zones.mjs`.
 
 > ## 27/09 soir — ACCÈS ENSEIGNANT : LE PRODUIT « CABLAGE » (INDICE 5) EST BRANCHÉ ET EN LIGNE (`ffd0e977`, `be0c0d3d`)
 >
