@@ -3,6 +3,14 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 02/10 — RÉZOTOOLS EN LIGNE + RÉGLETTE P-T CORRIGÉE
+>
+> `rezotools/` (satellite, hors PAGES) : 7 familles, 33 liens, 13 calculettes dans `calculettes/` =
+> FICHIERS GÉNÉRÉS depuis `C:/git/Iner.web-tools-beta` (`node outils/livrer-rezotools.mjs`).
+> `packs/fluides/res/outils/fluides-data.js` recalculé avec CoolProp : `p` = BULLE, `pr` = ROSÉE
+> (mélanges) ; la réglette lit la rosée côté aspiration. R448A/R449A/R454B/R454C étaient faux de 5 à 23 %,
+> R1234yf −8 %, R513A −22 %. Suite : `CLAUDE-ESPACE-TRAVAIL/REZOTOOLS-PARKING.md`.
+
 > ## 02/10 (soir) — LÉGISLATION FINALISÉE EN LIGNE, SOUS TENSION RAPATRIÉ VALIDÉ
 >
 > Feu vert de F. Henninot. Seuls les fichiers `legislation/` et `.gitignore` ont été reportés
