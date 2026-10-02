@@ -78,6 +78,16 @@ const CSS = `
 .r3d-go:hover{background:var(--orange);color:#fff}
 .r3d-porte{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;border:2px solid var(--bleu);color:var(--bleu);text-decoration:none;font-weight:bold}
 .r3d-porte:hover{border-color:var(--orange);color:var(--orange)}
+.r3d-carte{display:grid;gap:4px}
+.r3d-ct{margin:0;font:bold 15px/1.3 'Trebuchet MS',Calibri,Arial,sans-serif;color:var(--mut)}
+.r3d-carte svg{display:block;overflow:visible}
+.r3d-cr{font:bold 15px 'Trebuchet MS',Calibri,Arial,sans-serif}
+.r3d-cn{font-weight:normal;fill:var(--mut)}
+.r3d-cs{font:14px Calibri,'Segoe UI',system-ui,Arial,sans-serif;fill:var(--txt)}
+.r3d-cs.dep{font-weight:bold;fill:var(--bleu)}
+.r3d-carte a:hover .r3d-cs,.r3d-carte a:focus .r3d-cs{fill:var(--orange);text-decoration:underline}
+.r3d-cl{stroke-dasharray:1;stroke-dashoffset:0;animation:r3d-tracer .9s ease-out both}
+@keyframes r3d-tracer{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .r3d-st summary{cursor:pointer;color:var(--bleu);font-weight:bold;min-height:32px}
 .r3d-st ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}
 .r3d-st li a{display:block;padding:6px 12px;border:1px solid var(--ligne);border-left:5px solid var(--c);border-radius:10px;background:#fff;color:var(--txt);text-decoration:none;min-height:40px}
@@ -235,11 +245,49 @@ export function monterRue(hote, options) {
       '<div class="r3d-corps"><p class="r3d-question">' + esc(z.question) + "</p>" +
       '<p style="margin:0"><a class="r3d-go" href="' + esc(z.entree.href) + '">Commencer ici : ' + esc(z.entree.titre) + ' <span aria-hidden="true">→</span></a></p>' +
       (z.porte ? '<p style="margin:0"><a class="r3d-porte" href="' + esc(z.porte.href) + '">' + esc(z.porte.titre) + ' <span aria-hidden="true">→</span></a></p>' : "") +
-      '<details class="r3d-st"><summary>Les ' + z.stations.length + " stations de cet appareil</summary><ul>" +
-      z.stations.map(function (s) { return '<li><a href="' + esc(s.href) + '">' + esc(s.nom) + "</a></li>"; }).join("") + "</ul></details>" +
+      carteReseau(z) +
       '<p class="r3d-chips">Allumer le domaine : ' + chips + "</p></div>";
     pan.hidden = false;
     pan.style.animation = "none"; void pan.offsetWidth; pan.style.animation = "";
+  }
+
+  /* LA VUE RÉSEAU — l'âme d'inerWeb : les stations d'un appareil ne sont pas une liste mais
+     une carte. L'appareil au centre, un tronc, et une ligne de métro par réseau, ses stations
+     en arrêts (la station « Commencer ici » est l'arrêt plein). Les lignes se tracent à l'ouverture,
+     comme la carte des réseaux de l'accueil ; au repos le dessin est complet. */
+  function carteReseau(z) {
+    const groupes = [], parNom = {};
+    z.stations.forEach(function (s) {
+      if (!parNom[s.r]) { parNom[s.r] = { nom: s.r, st: [] }; groupes.push(parNom[s.r]); }
+      parNom[s.r].st.push(s);
+    });
+    const r0 = (z.stations.find(function (s) { return s.href === z.entree.href; }) || {}).r;
+    groupes.sort(function (a, b) { return (b.nom === r0) - (a.nom === r0) || b.st.length - a.st.length; });
+    const W = 340, HX = 24, LX = 56, TX = 72, PAS = 25, couleurs = etat.d.reseaux || {};
+    let y = 64, traits = "", arrets = "", textes = "";
+    const coupe = function (t) { return t.length > 40 ? t.slice(0, 39).replace(/\s+\S*$/, "") + "…" : t; };
+    groupes.forEach(function (g) {
+      const c = couleurs[g.nom] || "#1b3a63";
+      traits += '<path class="r3d-cl" pathLength="1" d="M' + HX + " " + (y - 26) + " Q" + HX + " " + y + " " + (HX + 18) + " " + y + "H" + LX + '" stroke="' + c + '" stroke-width="5" fill="none"/>';
+      textes += '<text x="' + (LX + 10) + '" y="' + (y + 5) + '" class="r3d-cr" fill="' + c + '">' + esc(g.nom) + ' <tspan class="r3d-cn">· ' + g.st.length + "</tspan></text>";
+      const y1 = y + 24, y2 = y1 + (g.st.length - 1) * PAS;
+      traits += '<path class="r3d-cl" pathLength="1" d="M' + LX + " " + y + "V" + y2 + '" stroke="' + c + '" stroke-width="6" stroke-linecap="round" fill="none"/>';
+      g.st.forEach(function (s, i) {
+        const sy = y1 + i * PAS, depart = s.href === z.entree.href;
+        arrets += depart
+          ? '<circle cx="' + LX + '" cy="' + sy + '" r="8.5" fill="' + c + '" stroke="#fffdf8" stroke-width="2"/><circle cx="' + LX + '" cy="' + sy + '" r="3" fill="#fffdf8"/>'
+          : '<circle cx="' + LX + '" cy="' + sy + '" r="6" fill="#fffdf8" stroke="' + c + '" stroke-width="3"/>';
+        textes += '<a href="' + esc(s.href) + '"><title>' + esc(s.nom) + '</title><text x="' + TX + '" y="' + (sy + 5) + '" class="r3d-cs' + (depart ? " dep" : "") + '">' + esc(coupe(s.nom)) + "</text></a>";
+      });
+      y = y2 + 46;
+    });
+    const H = y - 20;
+    const tronc = groupes.length > 1 ? '<path d="M' + HX + " 48V" + (H - 66 - (groupes[groupes.length - 1].st.length - 1) * PAS) + '" stroke="#1b3a63" stroke-width="3" opacity=".35" fill="none"/>' : "";
+    return '<section class="r3d-carte" aria-label="Les ' + z.stations.length + ' stations de cet appareil, en carte de réseau">' +
+      '<p class="r3d-ct">Son réseau : ' + z.stations.length + " stations sur " + groupes.length + " ligne" + (groupes.length > 1 ? "s" : "") + "</p>" +
+      '<svg viewBox="0 0 ' + W + " " + H + '" width="100%" role="group">' + tronc + traits + arrets +
+      '<circle cx="' + HX + '" cy="26" r="21" fill="#fffdf8" stroke="' + esc(z.couleur) + '" stroke-width="5"/><text x="' + HX + '" y="33" text-anchor="middle" font-size="20">' + esc(z.ico) + "</text>" +
+      textes + "</svg></section>";
   }
 
   function selectionner(id, opts) {

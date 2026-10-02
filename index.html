@@ -479,6 +479,39 @@
   .hall-carte { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
                 box-shadow:var(--ombre); padding:14px 18px; }
   .hall-carte svg { display:block; width:100%; height:auto; }
+  /* ---- LE QUARTIER TECHNIQUE dans le hall (F. Henninot, 02/10/2026) : la vue 3D prend la place
+     de la carte des réseaux, qui reste à côté en petit. Un clic l’agrandit sur place (dialogue). ---- */
+  .hall-droite { display:grid; gap:12px; }
+  .hall-quartier { position:relative; display:block; border-radius:var(--r); overflow:hidden; border:1px solid var(--ligne);
+                   box-shadow:var(--ombre); background:#f3eee3; color:var(--bleu); text-decoration:none; }
+  .hall-quartier img { display:block; width:100%; height:auto; transition:transform .6s ease; }
+  .hall-quartier:hover img, .hall-quartier:focus-visible img { transform:scale(1.025); }
+  .hall-quartier:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+  .hq-badge { position:absolute; left:12px; top:12px; background:var(--carte); color:var(--bleu); border:2px solid var(--bleu);
+              font:bold 14px/1.1 "Trebuchet MS",Calibri,Arial,sans-serif; padding:6px 12px; border-radius:999px; }
+  .hq-go { position:absolute; right:12px; bottom:12px; background:var(--bleu); color:#fff; font:bold 16px/1.2 "Trebuchet MS",Calibri,Arial,sans-serif;
+           padding:10px 18px; border-radius:999px; box-shadow:0 4px 14px rgba(16,35,60,.3); }
+  .hall-quartier:hover .hq-go { background:var(--orange); }
+  /* symétrie : les deux cadres ont la même largeur et la même hauteur */
+  .hall-quartier, .hall-droite .hall-carte { aspect-ratio:16/10; width:100%; }
+  .hall-quartier img { width:100%; height:100%; object-fit:cover; }
+  .hall-droite .hall-carte { padding:10px 14px; display:flex; align-items:center; justify-content:center; position:relative; }
+  .hall-droite .hall-carte svg { width:auto; height:100%; max-width:100%; }
+  .hall-carte a.cr-lien rect { fill:transparent; transition:fill .2s; }
+  .hall-carte a.cr-lien:hover rect, .hall-carte a.cr-lien:focus rect { fill:rgba(255,107,53,.12); }
+  .hall-carte a.cr-lien:focus { outline:none; }
+  .hall-carte a.cr-lien:focus-visible rect { stroke:var(--orange); stroke-width:3; }
+  .hc-badge { position:absolute; left:12px; bottom:12px; background:var(--carte); color:var(--bleu); border:2px solid var(--bleu);
+             font:bold 14px/1.1 "Trebuchet MS",Calibri,Arial,sans-serif; padding:6px 12px; border-radius:999px; pointer-events:none; }
+  .quartier-grand { width:min(1500px,97vw); max-width:none; max-height:96vh; padding:0; border:0; border-radius:var(--r);
+                    background:var(--fond); box-shadow:0 20px 60px rgba(16,35,60,.45); overflow:auto; }
+  .quartier-grand::backdrop { background:rgba(16,35,60,.55); }
+  .qg-barre { position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; padding:10px 16px;
+              background:var(--bleu); color:#fff; }
+  .qg-barre strong { font:bold 18px/1.2 "Trebuchet MS",Calibri,Arial,sans-serif; margin-right:auto; }
+  .qg-barre a { color:#fff; font-weight:bold; }
+  .qg-barre button { width:44px; height:44px; border-radius:50%; border:0; background:rgba(255,255,255,.18); color:#fff; font-size:26px; cursor:pointer; }
+  #quartier-3d { padding:12px 16px 18px; }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 
   .chiffres { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:24px 0 0; }
@@ -677,6 +710,12 @@
         <a class="bouton creux" href="plan.html">Voir le grand plan</a>
       </div>
     </div>
+    <div class="hall-droite">
+      <a class="hall-quartier" href="quartier/" data-quartier aria-label="Entrer dans le quartier technique en 3D : touchez un appareil pour trouver ses cours">
+        <img src="quartier/apercu.jpg" width="1240" height="698" alt="Le quartier technique en 3D : l’immeuble des règles, un commerce en coupe avec sa chambre froide, ses vitrines et ses machines sur le toit, une maison avec sa pompe à chaleur, et la camionnette du technicien.">
+        <span class="hq-badge">🏙️ Le quartier technique · 3D</span>
+        <span class="hq-go">Entrer : touchez un appareil →</span>
+      </a>
     <div class="hall-carte">
       <!-- CARTE-RESEAUX DEBUT (générée par build/accueil.mjs — ne pas éditer à la main) -->
 <svg class="carte-reseaux" viewBox="0 0 640 494" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cr-titre">
@@ -760,7 +799,54 @@
 </svg>
 <!-- CARTE-RESEAUX FIN -->
     </div>
+    </div>
   </section>
+  <!-- Le quartier en grand : la 3D ne se charge qu’au clic (l’accueil reste léger). Sans dialogue
+       ou sans script, le lien mène simplement à la page quartier/. -->
+  <dialog class="quartier-grand" id="quartier-grand" aria-label="Le quartier technique en 3D">
+    <div class="qg-barre"><strong>🏙️ Le quartier technique</strong><a href="quartier/">Ouvrir la page du quartier</a>
+      <button type="button" data-fermer aria-label="Fermer le quartier">×</button></div>
+    <div id="quartier-3d"></div>
+  </dialog>
+  <script type="module">
+    const lien = document.querySelector("[data-quartier]"), dlg = document.getElementById("quartier-grand");
+    let monte = false;
+    if (lien && dlg && typeof dlg.showModal === "function") {
+      lien.addEventListener("click", function (e) {
+        if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
+        dlg.showModal();
+        if (!monte) { monte = true; import("./quartier/entree.js").then(function (m) { m.monterRue(document.getElementById("quartier-3d")); }); }
+      });
+      dlg.querySelector("[data-fermer]").addEventListener("click", function () { dlg.close(); });
+      dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    }
+    /* La carte des réseaux devient cliquable : chaque ligne mène à son réseau (lien lu dans sa
+       vignette, plus bas), le rond central aux cartes de tous les réseaux. */
+    (function () {
+      const carte = document.querySelector(".hall-droite .hall-carte"), svg = carte && carte.querySelector("svg.carte-reseaux");
+      if (!svg) return;
+      const NS = "http://www.w3.org/2000/svg", vignettes = Array.from(document.querySelectorAll(".v-nom a"));
+      function lien(href, titre, x, y, w, h, rond) {
+        const a = document.createElementNS(NS, "a"); a.setAttribute("href", href); a.setAttribute("class", "cr-lien");
+        a.setAttribute("aria-label", titre);
+        const r = document.createElementNS(NS, "rect"); r.setAttribute("x", x); r.setAttribute("y", y); r.setAttribute("width", w); r.setAttribute("height", h); r.setAttribute("rx", rond);
+        const t = document.createElementNS(NS, "title"); t.textContent = titre;
+        a.appendChild(t); a.appendChild(r); svg.appendChild(a);
+      }
+      svg.setAttribute("role", "group");
+      const vb = svg.viewBox.baseVal;
+      svg.querySelectorAll("text.cr-t").forEach(function (t) {
+        const nom = t.textContent.trim(), v = vignettes.find(function (a) { return a.textContent.toLowerCase().indexOf(nom.toLowerCase()) >= 0; });
+        if (nom === "inerWeb" || !v) return;
+        const y = parseFloat(t.getAttribute("y"));
+        lien(v.getAttribute("href"), "Entrer dans " + nom, 230, y - 32, vb.width - 234, 56, 12);
+      });
+      lien("#reseaux", "Voir les cartes de tous les réseaux", 40, vb.height / 2 - 60, 120, 120, 60);
+      const b = document.createElement("span"); b.className = "hc-badge"; b.textContent = "🚇 Les cartes des réseaux";
+      carte.appendChild(b);
+    })();
+  </script>
 
   <div class="chiffres" aria-label="Le site en chiffres">
     <!-- CHIFFRES-ACCUEIL DEBUT (générés par build/accueil.mjs — ne pas éditer à la main) -->
