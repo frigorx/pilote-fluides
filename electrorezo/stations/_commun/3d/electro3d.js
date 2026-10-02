@@ -65,7 +65,8 @@
     cablePrise: 'reseaux', cable5G: 'reseaux', etoile: 'reseaux', champTournant: 'reseaux',
     troisDefauts: 'defauts', priseDeTerre: 'defauts', cablesSections: 'defauts',
     electroAimant: 'machines', transformateur: 'machines', moteurMonophase: 'machines', machineCC: 'machines', plaqueABornes: 'machines',
-    gradateur: 'variation', variateur: 'variation'
+    gradateur: 'variation', variateur: 'variation',
+    armoire: 'armoire'
   };
   /* une famille qui assemble les modèles des autres les charge d'abord */
   const DEPEND = { variation: ['moteur'] };
@@ -331,6 +332,7 @@
       });
       this._fantomes = (M.fantome || []).filter(Boolean);
       this._matOrig = new Map();
+      if (M.legendeTitre) d.legendeTitre.textContent = M.legendeTitre;
       this._construireLegende();
       this._construireCommandes(M.commandes || []);
       (this._reglesEnAttente || []).forEach(([id, v, extra]) => this._reglerCommande(id, v, extra));
@@ -395,6 +397,8 @@
         p._desc.hidden = !on;
       });
       this._majSurbrillance();
+      /* la page peut suivre le choix (l'armoire d'entrée ouvre les stations de la zone) */
+      this.dispatchEvent(new CustomEvent('e3d-choix', { bubbles: true, detail: { id } }));
       if (id) {
         const p = this._pieces.find(x => x.id === id);
         if (p && p._li.scrollIntoView && this._dom.cote.scrollHeight > this._dom.cote.clientHeight) p._li.scrollIntoView({ block: 'nearest' });

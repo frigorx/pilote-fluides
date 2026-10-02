@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ÉlectroRézo — Entrer par l’armoire</title>
+<meta name="description" content="ÉlectroRézo : un coin d’atelier en 3D — l’armoire, le moteur, l’établi. Cliquez sur ce que vous reconnaissez, ses stations s’ouvrent.">
+<link rel="stylesheet" href="stations/_commun/station.css">
+<style>
+/* la page d'entrée : l'armoire en 3D, et la fiche de la zone choisie */
+.entete-armoire{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;padding:.55rem 16px;background:var(--paper);border-bottom:1px solid var(--line)}
+.entete-armoire .marque{font-weight:800;color:var(--navy);text-decoration:none}
+.entete-armoire .marque span{background:#e8913a;color:#fff;border-radius:8px;padding:.05rem .45rem;margin-left:.3rem;font-size:.85em}
+.entete-armoire h1{font-size:1.15rem;margin:0;color:var(--navy)}
+.vues{margin-left:auto;display:flex;border:2px solid var(--navy);border-radius:12px;overflow:hidden}
+.vues a{padding:.4rem .9rem;font-weight:700;color:var(--navy);text-decoration:none;background:var(--paper)}
+.vues a[aria-current]{background:var(--navy);color:#fff}
+.page-armoire{max-width:1500px;margin:.7rem auto 1.5rem;padding:0 16px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:.9rem;align-items:start}
+@media (max-width:980px){.page-armoire{grid-template-columns:1fr}}
+.page-armoire .e3d-bt-ralenti{display:none}
+.fiche{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.8rem 1rem;position:sticky;top:.6rem}
+.fiche h2{margin:.1rem 0 .2rem;color:var(--navy);font-size:1.2rem}
+.fiche .ou{color:var(--muted);margin:0 0 .4rem;font-size:.92em}
+.fiche .phrase{margin:.2rem 0 .6rem}
+.fiche .commencer{display:block;text-align:center;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:.55rem .8rem;margin:.4rem 0 .7rem}
+.fiche ol{margin:0;padding-left:0;list-style:none}
+.fiche li{border-top:1px solid var(--line);padding:.35rem 0}
+.fiche li a{color:var(--ink);text-decoration:none}.fiche li a:hover{text-decoration:underline}
+.fiche li b{color:var(--navy);display:inline-block;min-width:2.6em}
+.fiche li.renvoi a{color:var(--muted)}.fiche li i{color:var(--muted);font-size:.88em}
+.fiche .repli button{display:flex;gap:.5rem;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:.4rem 0;font:inherit;color:var(--ink);min-height:0}
+/* la carte du réseau sous la 3D : la zone choisie s'y allume */
+.carte-armoire{margin-top:.8rem;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.6rem .8rem}
+.carte-tete{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.carte-tete h2{font-size:1.05rem;margin:0;color:var(--navy)}
+.carte-tete p{margin:0;color:var(--muted);font-size:.9em;flex:1}
+.carte-tete button{min-height:36px;padding:.25rem .7rem}
+#carte svg{display:block;width:100%;height:auto;margin-top:.4rem;border-radius:12px}
+#carte svg a, #carte svg path{transition:opacity .35s}
+#carte svg.filtre a{opacity:.18}
+#carte svg.filtre path[stroke-width="9"]{opacity:.18}
+#carte svg.filtre path.vive{opacity:1}
+#carte svg.filtre a.aussi{opacity:.6}
+#carte svg.filtre a.allume{opacity:1}
+#carte svg a.allume circle:not(.cible){stroke:#c2410c;stroke-width:7;r:14}
+#carte svg a.allume text{font-weight:800}
+.fiche .repli button span{background:var(--navy);color:#fff;border-radius:50%;width:1.5rem;height:1.5rem;display:grid;place-items:center;font-size:.8em;font-weight:700;flex:none}
+</style>
+</head>
+<body>
+<header class="entete-armoire">
+  <a class="marque" href="index.html">inerWeb<span>ÉlectroRézo</span></a>
+  <h1>Entrer par l’armoire</h1>
+  <nav class="vues" aria-label="Deux entrées dans le réseau">
+    <a href="armoire.html" aria-current="page">L’armoire</a>
+    <a href="carte-reseau.html">La carte du réseau</a>
+  </nav>
+</header>
+
+<main class="page-armoire">
+  <div>
+    <electro-3d id="armoire" modele="armoire" mode="decouvrir"></electro-3d>
+    <section class="carte-armoire" aria-label="La carte du réseau">
+      <div class="carte-tete"><h2>Sur la carte du réseau</h2>
+        <p id="carteNote">Choisissez une zone : ses stations s’allument ici, avec leurs lignes.</p>
+        <button type="button" id="toute">Toute la carte</button></div>
+      <div id="carte"></div>
+    </section>
+  </div>
+  <aside class="fiche" id="fiche" aria-live="polite">
+    <h2>Un coin d’atelier</h2>
+    <p class="phrase">Cliquez sur ce que vous reconnaissez — l’armoire, le moteur, l’établi — ou sur son nom dans la liste « Les zones ». Ses stations s’affichent ici.</p>
+    <p class="ou">Chaque appareil se manipule en détail dans sa station. La <a href="carte-reseau.html">carte du réseau</a> reste l’autre entrée.</p>
+    <div class="repli" hidden></div>
+  </aside>
+</main>
+
+<script src="assets/armoire-zones.js"></script>
+<script src="assets/armoire-carte.js"></script>
+<script src="stations/_commun/3d/electro3d.js"></script>
+<script>
+(() => {
+  const Z = window.ZONES_ARMOIRE || [], e = document.getElementById('armoire'), fiche = document.getElementById('fiche');
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const lien = s => s.ailleurs ? s.ailleurs.url : s.url;
+  const intro = fiche.innerHTML;
+
+  function montrer(id, defiler) {
+    const z = Z.find(x => x.id === id);
+    if (!z) { fiche.innerHTML = intro; return; }
+    const n = Z.indexOf(z) + 1, premiere = z.stations.find(s => !s.renvoi);
+    fiche.innerHTML = `<h2>${n} · ${esc(z.nom)}</h2><p class="ou">${esc(z.ou)}</p><p class="phrase">${esc(z.phrase)}</p>
+      <a class="commencer" href="${lien(premiere)}">Commencer par ${premiere.id} · ${esc(premiere.titre)}</a>
+      <ol>${z.stations.map(s => `<li class="${s.renvoi ? 'renvoi' : ''}"><a href="${lien(s)}"><b>${s.id}</b>${esc(s.titre)}</a>${s.renvoi ? ' <i>— aussi ailleurs</i>' : ''}${s.ailleurs ? ` <i>→ ${esc(s.ailleurs.titre)}</i>` : ''}</li>`).join('')}</ol>`;
+    if (defiler && innerWidth < 980) fiche.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ---------- la carte : les stations de la zone s'allument, la vue se resserre sur elles ---------- */
+  const hote = document.getElementById('carte'), note = document.getElementById('carteNote');
+  hote.innerHTML = window.CARTE_SVG || '';
+  const svg = hote.querySelector('svg');
+  const TOUT = [0, 0, 1800, 1200];
+  let vb = TOUT.slice(), anim = 0;
+  const lignes = svg ? [...svg.querySelectorAll('path[stroke-width="9"]')] : [];   /* dans l'ordre : lignes 1 à 8 */
+  const noeuds = svg ? [...svg.querySelectorAll('a')] : [];
+  if (svg) { svg.removeAttribute('width'); svg.removeAttribute('height'); }
+  const poser = v => { vb = v; svg.setAttribute('viewBox', v.map(x => x.toFixed(1)).join(' ')); };
+  const viser = cible => {
+    cancelAnimationFrame(anim);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { poser(cible); return; }
+    const de = vb.slice(), t0 = performance.now();
+    const pas = t => { const k = Math.min(1, (t - t0) / 450), e2 = k * (2 - k); poser(de.map((x, i) => x + (cible[i] - x) * e2)); if (k < 1) anim = requestAnimationFrame(pas); };
+    anim = requestAnimationFrame(pas);
+  };
+  function allumer(z) {
+    if (!svg) return;
+    svg.classList.toggle('filtre', !!z);
+    noeuds.forEach(a => a.classList.remove('allume', 'aussi'));
+    lignes.forEach(p => p.classList.remove('vive'));
+    if (!z) { note.textContent = 'Choisissez une zone : ses stations s’allument ici, avec leurs lignes.'; viser(TOUT); return; }
+    const pts = [];
+    z.stations.forEach(s => {
+      const a = noeuds.find(n => n.getAttribute('href') === s.url); if (!a) return;
+      a.classList.add(s.renvoi ? 'aussi' : 'allume');
+      const l = lignes[+s.id.split('.')[0] - 1]; if (l && !s.renvoi) l.classList.add('vive');
+      const c = a.querySelector('circle'); if (!s.renvoi) pts.push([+c.getAttribute('cx'), +c.getAttribute('cy')]);
+    });
+    const lg = new Set(z.stations.filter(s => !s.renvoi).map(s => s.id.split('.')[0]));
+    note.textContent = z.nom + ' : ' + z.stations.filter(s => !s.renvoi).length + ' stations, sur ' + (lg.size > 1 ? lg.size + ' lignes' : 'la ligne ' + [...lg][0]) + '.';
+    if (!pts.length) return;
+    /* le cadre : les stations allumées, avec leurs noms (au-dessus du rond), au format de la carte */
+    let x0 = Math.min(...pts.map(p => p[0])) - 160, x1 = Math.max(...pts.map(p => p[0])) + 160;
+    let y0 = Math.min(...pts.map(p => p[1])) - 110, y1 = Math.max(...pts.map(p => p[1])) + 80;
+    let w = Math.max(x1 - x0, 720), h = Math.max(y1 - y0, 480);
+    if (w / h > 1.5) h = w / 1.5; else w = h * 1.5;
+    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    w = Math.min(w, 1800); h = Math.min(h, 1200);
+    viser([Math.max(0, Math.min(1800 - w, cx - w / 2)), Math.max(0, Math.min(1200 - h, cy - h / 2)), w, h]);
+  }
+  document.getElementById('toute').addEventListener('click', () => viser(TOUT));
+
+  e.addEventListener('e3d-choix', ev => { montrer(ev.detail.id, true); allumer(Z.find(x => x.id === ev.detail.id)); });
+  /* sans WebGL ou sans réseau : la 3D se retire, la liste des zones devient la porte */
+  e.addEventListener('e3d-repli', () => {
+    e.hidden = true;
+    const r = fiche.querySelector('.repli'); r.hidden = false;
+    Z.forEach((z, i) => {
+      const b = document.createElement('button'); b.type = 'button';
+      b.innerHTML = `<span>${i + 1}</span>${esc(z.nom)}`;
+      b.addEventListener('click', () => { montrer(z.id, true); allumer(z); });
+      r.appendChild(b);
+    });
+  });
+})();
+</script>
+<script src="assets/marque.js" data-cartouche="ÉlectroRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>
