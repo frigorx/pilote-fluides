@@ -13,6 +13,7 @@
   "Travail en hauteur": "#1b3a63",
   "CuivRézo": "#b45309",
   "FormaRézo": "#0f766e",
+  "CartoClim": "#0e7490",
   "Mission F-Gaz": "#1e40af",
   "AquiBlue": "#0891b2"
  },
@@ -67,6 +68,10 @@
     "cta"
    ],
    "vues": [
+    {
+     "titre": "Le réseau climatisation (CartoClim)",
+     "href": "https://inerweb.fr/cartoclim/"
+    },
     {
      "titre": "Les apports de chaleur (AéroRézo)",
      "href": "https://inerweb.fr/aerorezo/"
@@ -292,7 +297,7 @@
      "r": "Thermo-techno"
     },
     {
-     "nom": "La carte d’identité du R134a",
+     "nom": "TD 04 — La carte d’identité du R134a",
      "href": "https://inerweb.fr/formarezo/stations/1-1-carte-r134a/",
      "r": "FormaRézo"
     }
@@ -881,7 +886,7 @@
     },
     {
      "nom": "TD Triphasé & Couplage Moteur",
-     "href": "https://frigorx.github.io/sous-tension/td-triphase.html",
+     "href": "https://inerweb.fr/sous-tension/td-triphase.html",
      "r": "Sous tension"
     },
     {
@@ -1089,27 +1094,27 @@
     },
     {
      "nom": "Sous tension — Parcours câbles électriques",
-     "href": "https://frigorx.github.io/sous-tension/",
+     "href": "https://inerweb.fr/sous-tension/",
      "r": "Sous tension"
     },
     {
      "nom": "TD1 — Les fondamentaux du câble électrique",
-     "href": "https://frigorx.github.io/sous-tension/sous-tension-TD1-fondamentaux.html",
+     "href": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
      "r": "Sous tension"
     },
     {
      "nom": "TD2 — Le monde du tableau électrique",
-     "href": "https://frigorx.github.io/sous-tension/sous-tension-TD2-tableau-electrique.html",
+     "href": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
      "r": "Sous tension"
     },
     {
      "nom": "TD3 — Cas particuliers et dimensionnement",
-     "href": "https://frigorx.github.io/sous-tension/sous-tension-TD3-cas-particuliers.html",
+     "href": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
      "r": "Sous tension"
     },
     {
      "nom": "Évaluation — Les câbles électriques",
-     "href": "https://frigorx.github.io/sous-tension/sous-tension-evaluation.html",
+     "href": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
      "r": "Sous tension"
     },
     {
@@ -1138,7 +1143,7 @@
    "id": "clim",
    "nom": "La climatisation de la chambre",
    "ico": "🌬️",
-   "question": "Pourquoi la chambre a-t-elle si chaud l’été ?",
+   "question": "Comment la clim rafraîchit-elle la chambre ?",
    "lieu": "La maison",
    "couleur": "#3d7fca",
    "calques": [
@@ -1147,11 +1152,91 @@
     "chauffage"
    ],
    "entree": {
-    "titre": "D’où vient la chaleur ?",
-    "href": "https://inerweb.fr/aerorezo/stations/internes-solaires/"
+    "titre": "Le split : deux unités, un circuit",
+    "href": "https://inerweb.fr/cartoclim/stations/3-2-split/"
    },
    "porte": null,
    "stations": [
+    {
+     "nom": "Le split : deux unités, un circuit",
+     "href": "https://inerweb.fr/cartoclim/stations/3-2-split/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Climatiser, c’est quoi ?",
+     "href": "https://inerweb.fr/cartoclim/stations/1-1-climatiser/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "La vanne 4 voies : froid ou chaud",
+     "href": "https://inerweb.fr/cartoclim/stations/2-6-vanne-4-voies/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Les modes et la télécommande : froid, chaud, déshumidification, ventilation",
+     "href": "https://inerweb.fr/cartoclim/stations/5-1-modes-telecommande/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Les condensats : pente, siphon, pompe de relevage",
+     "href": "https://inerweb.fr/cartoclim/stations/4-4-condensats/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "L’entretien : filtres, batteries, bac à condensats",
+     "href": "https://inerweb.fr/cartoclim/stations/5-3-entretien/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Les codes défauts : lire ce que dit la machine",
+     "href": "https://inerweb.fr/cartoclim/stations/5-6-codes-defauts/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Rotatif et scroll : les compresseurs de la clim",
+     "href": "https://inerweb.fr/cartoclim/stations/2-3-rotatif-scroll/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "L’Inverter : la vitesse suit le besoin",
+     "href": "https://inerweb.fr/cartoclim/stations/2-4-inverter/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Détendre : capillaire et détendeur électronique",
+     "href": "https://inerweb.fr/cartoclim/stations/2-5-detendre/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Poser les deux unités : emplacement, supports, dégagements",
+     "href": "https://inerweb.fr/cartoclim/stations/4-1-poser-les-unites/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Les liaisons frigorifiques : longueur, dénivelé, isolant",
+     "href": "https://inerweb.fr/cartoclim/stations/4-2-liaisons-frigorifiques/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Alimenter et relier les deux unités",
+     "href": "https://inerweb.fr/cartoclim/stations/4-5-alimentation/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Le monobloc : mobile, fenêtre, sans unité extérieure",
+     "href": "https://inerweb.fr/cartoclim/stations/3-1-monobloc/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Mural, console, cassette, gainable : choisir l’unité intérieure",
+     "href": "https://inerweb.fr/cartoclim/stations/3-3-unites-interieures/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Le multisplit : une unité extérieure, plusieurs pièces",
+     "href": "https://inerweb.fr/cartoclim/stations/3-4-multisplit/",
+     "r": "CartoClim"
+    },
     {
      "nom": "Le dégivrage par inversion de cycle",
      "href": "https://inerweb.fr/packs/fluides/res/degivrage-inversion-cycle/",
@@ -1224,7 +1309,10 @@
     "titre": "Le trajet de l’eau chaude",
     "href": "https://inerweb.fr/hydrometro/stations/boucle/"
    },
-   "porte": null,
+   "porte": {
+    "titre": "Le circuit frigorifique de la PAC (CartoClim)",
+    "href": "https://inerweb.fr/cartoclim/stations/3-7-pac-air-eau/"
+   },
    "stations": [
     {
      "nom": "Bitube — Réseau à construire",
@@ -1312,6 +1400,11 @@
      "r": "HydroMétro"
     },
     {
+     "nom": "Régler une vanne d’équilibrage",
+     "href": "https://inerweb.fr/hydrometro/stations/reglage-equilibrage/",
+     "r": "HydroMétro"
+    },
+    {
      "nom": "Relevés — La preuve exploitable",
      "href": "https://inerweb.fr/hydrometro/stations/releves/",
      "r": "HydroMétro"
@@ -1335,6 +1428,11 @@
      "nom": "Vase d’expansion",
      "href": "https://inerweb.fr/hydrometro/stations/vase/",
      "r": "HydroMétro"
+    },
+    {
+     "nom": "La PAC air/eau : haute, moyenne et basse température",
+     "href": "https://inerweb.fr/cartoclim/stations/3-7-pac-air-eau/",
+     "r": "CartoClim"
     }
    ]
   },
@@ -1433,6 +1531,21 @@
    },
    "porte": null,
    "stations": [
+    {
+     "nom": "Le roof-top : tout sur le toit",
+     "href": "https://inerweb.fr/cartoclim/stations/3-6-roof-top/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Groupe d’eau glacée et ventilo-convecteurs",
+     "href": "https://inerweb.fr/cartoclim/stations/3-8-eau-glacee/",
+     "r": "CartoClim"
+    },
+    {
+     "nom": "Le DRV : un réseau de fluide à débit variable",
+     "href": "https://inerweb.fr/cartoclim/stations/3-5-drv/",
+     "r": "CartoClim"
+    },
     {
      "nom": "Lire une CTA",
      "href": "https://inerweb.fr/aerorezo/stations/architecture-cta/",
