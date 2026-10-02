@@ -44,7 +44,7 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "../_commun/formative-shared.css?v=20261002-1215";
+  style.href = "../_commun/formative-shared.css?v=20261002-1547";
   document.head.append(style);
 
   const $ = (selector, root = document) => root.querySelector(selector);
