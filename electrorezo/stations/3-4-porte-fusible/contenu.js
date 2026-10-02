@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '3.4', ligne: 3,
+  vue3d: { modele: 'porteFusible' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 3 Couper et isoler · Station 4 · ⇄ ligne 4',
   titre: 'Le porte-fusible',
   narration: NARRATION,

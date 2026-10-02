@@ -148,6 +148,8 @@ ${ecart ? `<line x1="150" y1="${206 - ecart}" x2="390" y2="${206 - ecart}" strok
 <text x="350" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${U2 < U1 ? 'Il abaisse' : U2 > U1 ? 'Il élève' : 'Il laisse la tension telle quelle'}</text>
 
 <rect x="230" y="76" width="180" height="200" rx="4" fill="none" stroke="${C.gris}" stroke-width="16"/>
+<rect class="flux-alt" x="230" y="76" width="180" height="200" rx="4" fill="none" stroke="#3d7fca" stroke-width="3" stroke-dasharray="10 9" opacity=".95"/>
+<style>@media print{.flux-alt{display:none}}</style>
 <text x="320" y="300" text-anchor="middle" font-size="12" fill="${C.gris}">le circuit magnétique — aucune liaison électrique entre les deux côtés</text>
 
 ${bob(222, N1, C.navy)}
@@ -173,6 +175,16 @@ ${bob(410, N2, C.orange)}
 
 <text x="350" y="324" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">La tension descend, le courant monte. Le produit des deux ne bouge pas.</text>`;
     };
+    /* le flux ALTERNATIF : les tirets bleus vont et viennent dans le fer, au rythme du réseau
+       (ralenti) — c'est lui qui relie les deux bobinages, sans aucun fil entre eux */
+    const debutFlux = performance.now();
+    const flux = now => {
+      if (!d.isConnected && now - debutFlux > 2000) return;
+      const r = d.querySelector('.flux-alt');
+      if (r) r.setAttribute('stroke-dashoffset', (32 * Math.sin((now - debutFlux) / 1000 * Math.PI)).toFixed(1));
+      requestAnimationFrame(flux);
+    };
+    requestAnimationFrame(flux);
     peindre();
     hote.appendChild(d);
     reglette(hote, 'tr', 'Les spires du secondaire', 20, 2000, 10, N2, v => v + ' spires', v => { N2 = v; peindre(); });
@@ -263,7 +275,7 @@ ${avec
 <rect x="400" y="80" width="260" height="170" rx="10" fill="${C.creme}" stroke="${C.trait}"/>
 ${avec
   ? `<text x="530" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="${C.vert}">Le condensateur décale</text>
-     <text x="530" y="142" text-anchor="middle" font-size="12.5" fill="${C.gris}">Il retarde le courant de l’auxiliaire</text>
+     <text x="530" y="142" text-anchor="middle" font-size="12.5" fill="${C.gris}">Il avance le courant de l’auxiliaire</text>
      <text x="530" y="162" text-anchor="middle" font-size="12.5" fill="${C.gris}">par rapport à celui du principal.</text>
      <text x="530" y="192" text-anchor="middle" font-size="12.5" fill="${C.gris}">Deux courants décalés, deux enroulements</text>
      <text x="530" y="212" text-anchor="middle" font-size="12.5" fill="${C.gris}">décalés : le champ se met à tourner.</text>
@@ -315,6 +327,26 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
   'vitesse réglable — mais les balais s’usent')}
 
 <text x="380" y="292" text-anchor="middle" font-size="13" fill="${C.gris}">Le variateur de fréquence a donné à l’asynchrone la souplesse du continu, sans les balais. C’est ce qui l’a fait gagner.</text>`;
+    /* le mouvement : dans chaque cadre, le CHAMP (repère bleu, à l'intérieur) et le ROTOR (point
+       sur l'anneau). Asynchrone : le rotor traîne derrière le champ (écart exagéré pour se voir) ;
+       synchrone : il reste accroché ; continu : pas de champ tournant, le rotor tourne entre ses
+       balais. Les repères tournent hors des textes (rayons 25 et 34). */
+    const NS = 'http://www.w3.org/2000/svg';
+    const rond = (r, couleur) => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', r); c.setAttribute('fill', couleur); c.setAttribute('stroke', '#fffdf8'); c.setAttribute('stroke-width', '1.5'); d.appendChild(c); return c; };
+    const MOT = [
+      { cx: 140, champ: rond(3.5, C.bleu), rotor: rond(4.5, C.orange), k: 0.72 },
+      { cx: 380, champ: rond(3.5, C.bleu), rotor: rond(4.5, C.vert), k: 1 },
+      { cx: 620, champ: null, rotor: rond(4.5, C.bleu), k: 0.9 }
+    ];
+    const poser = (c, cx, r, a) => { c.setAttribute('cx', (cx + r * Math.cos(a)).toFixed(1)); c.setAttribute('cy', (172 + r * Math.sin(a)).toFixed(1)); };
+    const debut = performance.now();
+    const image = now => {
+      if (!d.isConnected && now - debut > 2000) return;
+      const t = (now - debut) / 1000, w = 2 * Math.PI * 0.25;
+      MOT.forEach(m => { if (m.champ) poser(m.champ, m.cx, 25, w * t - Math.PI / 2); poser(m.rotor, m.cx, 34, w * m.k * t - Math.PI / 2); });
+      requestAnimationFrame(image);
+    };
+    image(debut);
     return bloc(d, [], null,
       'Trois familles, trois compromis. Aucune n’est meilleure : chacune répond à un besoin différent.');
   }
@@ -328,12 +360,16 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
     const peindre = () => {
       const k = U / 400;
       const couple = Math.round(k * k * 100);        /* le couple suit le CARRÉ de la tension */
-      const vitesse = Math.round(1435 + (1 - k) * 40);
+      /* à charge constante, le glissement grandit comme 1/k² : la vitesse BAISSE un peu (corrigé le
+         02/10 : l'ancienne formule la faisait monter). Couple maximal ≈ 2,5 fois le nominal : sous
+         k² = 0,4 (≈ 253 V), il ne suffit plus et le moteur cale. */
+      const cale = k * k < 0.4;
+      const vitesse = cale ? 0 : Math.round(1500 * (1 - 0.0433 / (k * k)));
       const I = 3.84 / Math.max(0.35, k * k) * 0.62 + 1.4;
       d.innerHTML = `
 <rect x="8" y="8" width="684" height="304" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="350" y="40" text-anchor="middle" font-size="17" font-weight="700"
-      fill="${couple < 55 ? C.rouge : C.navy}">${couple < 55 ? 'Le couple ne suffit plus : le moteur cale' : 'La vitesse tient à peine — le couple, lui, s’écroule'}</text>
+      fill="${cale ? C.rouge : C.navy}">${cale ? 'Le couple ne suffit plus : le moteur cale' : 'La vitesse tient à peine — le couple, lui, s’écroule'}</text>
 
 <rect x="50" y="74" width="180" height="170" rx="10" fill="${C.creme}" stroke="${C.trait}"/>
 <text x="140" y="102" text-anchor="middle" font-size="12" fill="${C.gris}">la tension appliquée</text>
@@ -345,16 +381,16 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
 <rect x="260" y="74" width="180" height="170" rx="10" fill="${C.creme}" stroke="${C.trait}"/>
 <text x="350" y="102" text-anchor="middle" font-size="12" fill="${C.gris}">le couple disponible</text>
 <text x="350" y="140" text-anchor="middle" font-size="26" font-weight="700"
-      fill="${couple < 55 ? C.rouge : C.orange}">${couple} %</text>
+      fill="${cale ? C.rouge : C.orange}">${couple} %</text>
 <text x="350" y="176" text-anchor="middle" font-size="12" fill="${C.gris}">il suit le CARRÉ de la tension</text>
 <rect x="286" y="196" width="128" height="16" rx="8" fill="none" stroke="${C.orange}" stroke-width="2"/>
-<rect x="288" y="198" width="${(124 * k * k).toFixed(0)}" height="12" rx="6" fill="${couple < 55 ? C.rouge : C.orange}"/>
+<rect x="288" y="198" width="${(124 * k * k).toFixed(0)}" height="12" rx="6" fill="${cale ? C.rouge : C.orange}"/>
 
 <rect x="470" y="74" width="180" height="170" rx="10" fill="${C.creme}" stroke="${C.trait}"/>
 <text x="560" y="102" text-anchor="middle" font-size="12" fill="${C.gris}">la vitesse</text>
 <text x="560" y="140" text-anchor="middle" font-size="26" font-weight="700" fill="${C.gris}">${vitesse}</text>
 <text x="560" y="164" text-anchor="middle" font-size="12" fill="${C.gris}">tr/min</text>
-<text x="560" y="196" text-anchor="middle" font-size="12" fill="${C.gris}">elle bouge à peine</text>
+<text x="560" y="196" text-anchor="middle" font-size="12" fill="${C.gris}">${cale ? 'il s’arrête' : 'elle baisse à peine'}</text>
 <text x="560" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="${C.navy}">et l’intensité monte : ${nb(I, 1)} A</text>
 
 <text x="350" y="290" text-anchor="middle" font-size="13" fill="${C.gris}">Baisser la tension d’un moteur asynchrone ne le ralentit presque pas. Ça l’affaiblit, et ça le fait chauffer.</text>`;
@@ -384,7 +420,10 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
         const y = frac < seuil ? 170 : 170 - 74 * Math.sin(p * Math.PI) * (p % 2 < 1 ? 1 : -1);
         pts.push((100 + i) + ',' + Math.min(244, Math.max(96, y)).toFixed(1));
       }
-      const eff = Math.round(230 * Math.sqrt(Math.max(0, 1 - seuil)));
+      /* valeur efficace d'une sinusoïde coupée à l'angle α : U √(1 − α/π + sin 2α / 2π)
+         (corrigé le 02/10 : le terme en sin 2α manquait — 77 V au lieu de 22 V à 160°) */
+      const a = seuil * Math.PI;
+      const eff = Math.round(230 * Math.sqrt(Math.max(0, 1 - a / Math.PI + Math.sin(2 * a) / (2 * Math.PI))));
       d.innerHTML = `
 <rect x="8" y="8" width="684" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="350" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Le gradateur découpe, il n’abaisse pas</text>

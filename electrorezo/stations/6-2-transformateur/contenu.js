@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '6.2', ligne: 6,
+  vue3d: { modele: 'transformateur', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 6 Machines · Station 2',
   titre: "Le transformateur",
   narration: NARRATION,

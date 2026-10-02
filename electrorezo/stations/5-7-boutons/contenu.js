@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.7', ligne: 5,
+  vue3d: { modele: 'boutons' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 7',
   titre: "Bouton-poussoir et sélecteur",
   narration: NARRATION,

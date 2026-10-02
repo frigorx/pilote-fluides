@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '2.6', ligne: 2,
+  vue3d: { modele: 'champTournant' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 2 Les réseaux · Station 6',
   titre: "Le champ tournant",
   narration: NARRATION,

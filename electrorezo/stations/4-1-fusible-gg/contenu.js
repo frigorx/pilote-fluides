@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.1', ligne: 4,
+  vue3d: { modele: 'cartouche', options: { type: 'gG' } },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 1',
   titre: "Le fusible gG",
   narration: NARRATION,

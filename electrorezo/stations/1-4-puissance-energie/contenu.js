@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '1.4', ligne: 1,
+  vue3d: { modele: 'circuit', options: { experience: 'puissance' } },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 4',
   titre: "La puissance et l’énergie",
   narration: NARRATION,

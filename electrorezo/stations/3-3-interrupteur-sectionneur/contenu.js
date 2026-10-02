@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '3.3', ligne: 3,
+  vue3d: { modele: 'interSectionneur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 3 Couper et isoler · Station 3',
   titre: 'L’interrupteur-sectionneur',
   narration: NARRATION,

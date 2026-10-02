@@ -2,6 +2,8 @@
 
 ModeleGrandeur.construire({
   id: '1.2', ligne: 1,
+  vue3d: { modele: 'circuit', options: { experience: 'tension' } },   /* 3D */
+  vue3dMesure: { modele: 'multimetre', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 2',
   titre: "La tension",
   narration: NARRATION,

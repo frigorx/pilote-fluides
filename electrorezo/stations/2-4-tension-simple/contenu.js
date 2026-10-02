@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '2.4', ligne: 2,
+  vue3d: { modele: 'etoile' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 2 Les réseaux · Station 4',
   titre: "La tension simple",
   narration: NARRATION,

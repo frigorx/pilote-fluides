@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '1.6', ligne: 1,
+  vue3d: { modele: 'alternateur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 6',
   titre: "La fréquence",
   narration: NARRATION,

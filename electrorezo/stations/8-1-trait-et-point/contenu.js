@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.1',
+  vue3d: { modele: 'cablePrise', piece: 'ames' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 1',
   titre: 'Le trait et le point',
   lettre: 'conducteur',

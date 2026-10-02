@@ -58,7 +58,8 @@ ModeleAppareil.construire({
     "Sur le schéma de puissance, on descend toujours : <strong>sectionnement</strong>, puis <strong>protection</strong>, puis <strong>contacteur</strong>, puis <strong>moteur</strong>.",
     "Sur le schéma de commande, on descend aussi : <strong>sécurités</strong>, puis <strong>ordres</strong>, puis <strong>auto-maintien</strong>, puis <strong>bobine</strong>.",
     "La <strong>bobine est toujours en bas</strong>, juste au-dessus du neutre. Si vous la cherchez, commencez par là.",
-    "Chaque fil de l’armoire porte à ses deux bouts un repère qui figure sur le plan. C’est ce qui rend un dépannage possible dix ans plus tard."
+    "Chaque fil de l’armoire porte à ses deux bouts un repère qui figure sur le plan. C’est ce qui rend un dépannage possible dix ans plus tard.",
+    "À vous de le câbler : <a href=\"https://inerweb.fr/cablage-virtuel/jouer.html?ex=demarrage-direct-tri&amp;mode=guide\" target=\"_blank\" rel=\"noopener\">le même départ moteur dans le Câblage virtuel</a> — Q1, KM1, F1, le bornier XB et M1, posés fil par fil."
   ],
   piege: "Ne cherchez jamais un appareil sur une seule page. Un contacteur est écrit à deux endroits, un relais thermique aussi, un bouton parfois à trois. Si vous ne trouvez pas le second morceau, c’est qu’il faut tourner la page — pas que le plan est faux.",
 

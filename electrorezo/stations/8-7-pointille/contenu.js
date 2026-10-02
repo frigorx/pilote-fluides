@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.7',
+  vue3d: { modele: 'contacteur', piece: 'equipage' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 7',
   titre: "Le pointillé",
   lettre: 'pointille',

@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.8', ligne: 5,
+  vue3d: { modele: 'arretUrgence' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 8',
   titre: "Arrêt d’urgence et signalisation",
   narration: NARRATION,

@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.3', ligne: 5,
+  vue3d: { modele: 'contacteur', options: { blocAdditif: true } },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 3',
   titre: "Le contact auxiliaire",
   narration: NARRATION,
@@ -29,7 +30,7 @@ ModeleAppareil.construire({
   scene: () => SchemasCommande.autoMaintien(),
 
   technologie: [
-    ["Le même porte-contacts", "les auxiliaires sont montés sur la barre qui porte les contacts de puissance. Ils basculent donc <strong>exactement</strong> en même temps."],
+    ["Le même porte-contacts", "les auxiliaires sont montés sur la barre qui porte les contacts de puissance. Ils suivent donc le même mouvement, dans un ordre fixe : les NF s’ouvrent <strong>avant</strong> que les NO se ferment."],
     ["Des pastilles fines", "quelques ampères tout au plus. Il n’y a pas de boîtier d’arc au-dessus : ces contacts ne sont pas faits pour couper de la puissance."],
     ["Des blocs additionnels", "quand les contacts intégrés ne suffisent pas, on clipse un bloc sur le côté ou en façade. Il se pilote par le même mouvement."],
     ["Le contact miroir", "un NF dont le constructeur garantit qu’il ne peut pas être fermé en même temps qu’un contact de puissance soudé. C’est un contact de sécurité."]

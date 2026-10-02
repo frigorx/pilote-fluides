@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.4',
+  vue3d: { modele: 'cartouche', options: { type: 'gG' } },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 4',
   titre: "Le rectangle",
   lettre: 'rectangle',

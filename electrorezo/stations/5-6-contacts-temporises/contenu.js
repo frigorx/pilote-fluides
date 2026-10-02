@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.6', ligne: 5,
+  vue3d: { modele: 'relaisTemporise', options: { fonction: 'repos' }, defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 6',
   titre: "Les contacts temporisés",
   narration: NARRATION,

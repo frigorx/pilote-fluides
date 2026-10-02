@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.6',
+  vue3d: { modele: 'disjoncteur', piece: 'bobine' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 6',
   titre: "Le déclencheur magnétique",
   lettre: 'magnetique',

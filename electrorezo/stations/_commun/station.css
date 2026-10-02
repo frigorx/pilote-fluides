@@ -158,6 +158,17 @@ dialog h2{margin-top:0;color:var(--navy)}
               border:1px solid var(--line);background:var(--paper)}
 .vignette figcaption{margin-top:.45rem;font-size:.9em;color:var(--muted);line-height:1.35}
 .vignette figcaption strong{color:var(--navy)}
+/* la loupe : la vignette s'ouvre en grand (station.js) */
+.vignette{position:relative}
+.vignette img{cursor:zoom-in}
+.vignette::after{content:'🔍';position:absolute;top:.9rem;right:.9rem;pointer-events:none;
+                 background:var(--paper);border:1px solid var(--line);border-radius:50%;
+                 width:2rem;height:2rem;display:grid;place-items:center;font-size:1rem}
+#dlgLoupe{max-width:96vw;max-height:96vh;padding:.7rem;text-align:center}
+#dlgLoupe img{display:block;margin:0 auto;max-width:calc(96vw - 2.4rem);max-height:80vh;
+              min-height:50vh;object-fit:contain;cursor:zoom-out}
+#dlgLoupe p{margin:.5rem 0;color:var(--muted)}
+#dlgLoupe::backdrop{background:rgba(247,241,231,.88)}
 @media (max-width:620px){.bande-visuelle .fleche{transform:rotate(90deg);width:100%;text-align:center}}
 
 /* ---------- credit discret sous une image ---------- */

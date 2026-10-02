@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.5',
+  vue3d: { modele: 'relaisThermique', piece: 'bilames' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 5',
   titre: "Le déclencheur thermique",
   lettre: 'thermique',

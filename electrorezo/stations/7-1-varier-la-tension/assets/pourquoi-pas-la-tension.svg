@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img"
-     aria-label="Quand la tension passe de 400 à 280 volts, la vitesse ne perd que quelques tours par minute, tandis que le couple tombe à la moitié et que l’intensité monte.">
+     aria-label="Quand la tension passe de 400 à 280 volts, la vitesse ne perd que quelques dizaines de tours par minute, tandis que le couple tombe à la moitié et que l’intensité monte.">
 <rect width="520" height="300" fill="#fffdf8"/>
 <text x="260" y="30" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
       font-weight="700" fill="#1b3a63">De 400 volts à 280 volts</text>

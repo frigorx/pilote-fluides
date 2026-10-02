@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.7', ligne: 4,
+  vue3d: { modele: 'relaisThermique' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 7',
   titre: "Le relais thermique",
   narration: NARRATION,

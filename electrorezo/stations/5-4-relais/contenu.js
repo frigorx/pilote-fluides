@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.4', ligne: 5,
+  vue3d: { modele: 'relais' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 4',
   titre: "Le relais électromécanique",
   narration: NARRATION,

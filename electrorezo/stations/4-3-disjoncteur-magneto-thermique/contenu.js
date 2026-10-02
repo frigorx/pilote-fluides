@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.3', ligne: 4,
+  vue3d: { modele: 'disjoncteur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 3',
   titre: "Le disjoncteur magnéto-thermique",
   narration: NARRATION,

@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '6.5', ligne: 6,
+  vue3d: { modele: 'moteurMonophase' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 6 Machines · Station 5',
   titre: "Le moteur monophasé",
   narration: NARRATION,

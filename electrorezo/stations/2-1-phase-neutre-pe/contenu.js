@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '2.1', ligne: 2,
+  vue3d: { modele: 'cablePrise' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 2 Les réseaux · Station 1',
   titre: "Phase, neutre et protection",
   narration: NARRATION,

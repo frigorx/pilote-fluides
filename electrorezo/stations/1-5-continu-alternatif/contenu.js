@@ -2,6 +2,8 @@
 
 ModeleGrandeur.construire({
   id: '1.5', ligne: 1,
+  vue3d: { modele: 'circuit', options: { experience: 'alternatif' } },   /* 3D */
+  vue3dMesure: { modele: 'multimetre', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 5',
   titre: "Continu et alternatif",
   narration: NARRATION,

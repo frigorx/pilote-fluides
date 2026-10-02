@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.6', ligne: 4,
+  vue3d: { modele: 'differentiel', options: { variante: 'DD' } },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 6',
   titre: "Le disjoncteur différentiel",
   narration: NARRATION,

@@ -2,6 +2,8 @@
 
 ModeleGrandeur.construire({
   id: '1.9', ligne: 1,
+  vue3d: { modele: 'multimetre' },   /* 3D */
+  vue3dMesure: { modele: 'pince' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 9',
   titre: "Mesurer : multimètre et pince",
   narration: NARRATION,

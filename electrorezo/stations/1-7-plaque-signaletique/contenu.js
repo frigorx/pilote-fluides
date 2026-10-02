@@ -2,6 +2,8 @@
 
 ModeleGrandeur.construire({
   id: '1.7', ligne: 1,
+  vue3d: { modele: 'moteurAsynchrone', options: { vue: 'plaque' } },   /* 3D */
+  vue3dMesure: { modele: 'pince' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 7',
   titre: "Lire une plaque signalétique",
   narration: NARRATION,

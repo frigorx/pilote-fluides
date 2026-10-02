@@ -396,6 +396,24 @@ const Station = (() => {
     hote.appendChild(el('p', 'credit', texte));
   }
 
+  /* La loupe : une photo de la bande s'ouvre en grand — un tableau, une courbe, un catalogue
+     illisibles en vignette se lisent enfin. */
+  document.addEventListener('click', e => {
+    const im = e.target.closest && e.target.closest('.vignette img');
+    if (!im) return;
+    let d = document.getElementById('dlgLoupe');
+    if (!d) {
+      d = document.createElement('dialog'); d.id = 'dlgLoupe';
+      d.innerHTML = '<img alt=""><p></p><form method="dialog"><button>Fermer</button></form>';
+      d.addEventListener('click', ev => { if (ev.target === d || ev.target.tagName === 'IMG') d.close(); });
+      document.body.appendChild(d);
+    }
+    d.querySelector('img').src = im.src; d.querySelector('img').alt = im.alt;
+    const fc = im.closest('figure').querySelector('figcaption');
+    d.querySelector('p').textContent = fc ? fc.textContent : '';
+    d.showModal();
+  });
+
   return { demarrer, monterQuiz, monterJeu, couperVoix, credit, etat: S,
            auDemontage: f => S.nettoyages.push(f) };
 })();

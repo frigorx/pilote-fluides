@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '7.1', ligne: 7,
+  vue3d: { modele: 'gradateur', options: { charge: 'moteur' }, defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 7 Faire varier · Station 1',
   titre: "Faire varier la tension",
   narration: NARRATION,
@@ -13,7 +14,7 @@ ModeleGrandeur.construire({
 
   photos: [
     { src: 'assets/pourquoi-pas-la-tension.svg',
-      alt: "Deux colonnes comparées : quand la tension passe de 400 à 280 volts, la vitesse ne perd que quelques tours par minute, tandis que le couple tombe à la moitié.",
+      alt: "Deux colonnes comparées : quand la tension passe de 400 à 280 volts, la vitesse ne perd que quelques dizaines de tours par minute, tandis que le couple tombe à la moitié.",
       titre: "Ce que ça change vraiment.", sous: "La vitesse tient, le couple s’écroule." }
   ],
   creditPhoto: 'Coupe dessinée pour cette station. Détail dans « Crédits ».',
@@ -71,7 +72,7 @@ ModeleGrandeur.construire({
     { question: "Qu’est-ce qui fixe la vitesse d’un moteur asynchrone ?",
       confirmation: "La fréquence, et le nombre de pôles. Pas la tension.",
       reponses: [
-        { texte: "La tension appliquée.", pourquoi: "Elle ne fait varier la vitesse que de quelques tours." },
+        { texte: "La tension appliquée.", pourquoi: "Elle ne fait varier la vitesse que de quelques dizaines de tours." },
         { texte: "La fréquence et le nombre de pôles.", juste: true },
         { texte: "L’intensité absorbée.", pourquoi: "L’intensité est une conséquence de la charge, pas une cause de vitesse." },
         { texte: "Le couplage étoile ou triangle.", pourquoi: "Le couplage change la tension vue par les bobinages, pas la vitesse." } ] },

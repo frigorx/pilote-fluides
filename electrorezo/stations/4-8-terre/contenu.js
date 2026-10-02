@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.8', ligne: 4,
+  vue3d: { modele: 'priseDeTerre' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 8',
   titre: "La terre et la liaison équipotentielle",
   narration: NARRATION,

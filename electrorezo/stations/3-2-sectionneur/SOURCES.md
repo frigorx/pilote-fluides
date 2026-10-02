@@ -8,7 +8,7 @@ Trouvées par `node outils/chercher-images.mjs "sectionneur coupure visible cons
 | Fichier local | Origine | Comment elle a été trouvée |
 |---|---|---|
 | `assets/biblio/condamnation-cadenas.png` | base de connaissances inerWeb, document de cours | recherche « sectionneur coupure visible consignation » |
-| `assets/biblio/sectionneur.jpeg` | base de connaissances inerWeb, document de cours | recherche « sectionneur coupure visible consignation » |
+| `assets/biblio/sectionneur.jpeg` | base de connaissances inerWeb, document de cours | recherche « sectionneur coupure visible consignation » | — **retirée de l’affichage le 02/10/2026 : c’est un interrupteur-sectionneur à fusibles (poignée latérale), pas un sectionneur (Franck)**
 
 ⚠️ **Droits.** Ces images viennent des documents de cours des collègues. Décision de
 F. Henninot le 28/08 : **on garde, on cite discrètement, on remplacera en cas de souci.**

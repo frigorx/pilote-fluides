@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.9', ligne: 4,
+  vue3d: { modele: 'cablesSections' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 9',
   titre: "Le câble : section et désignation",
   narration: NARRATION,

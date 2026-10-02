@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.9',
+  vue3d: { modele: 'contacteur', piece: 'bornes' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 9',
   titre: "Les repères",
   lettre: 'borne',

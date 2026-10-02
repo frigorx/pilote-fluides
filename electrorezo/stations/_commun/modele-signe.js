@@ -42,6 +42,10 @@ const ModeleSigne = (() => {
       D.pourquoiCetteForme.forEach(x => { const p = el('p'); p.innerHTML = x; d.appendChild(p); });
       w.append(g, d);
       hote.appendChild(w);
+      /* la lettre, dans l'appareil réel : la pièce qu'elle dessine s'allume */
+      const v3 = window.Electro3D ? Electro3D.pourStation(D.vue3d, 'decouvrir', null, 'Dans l’appareil réel',
+        'La pièce allumée, c’est elle que la lettre dessine.') : null;
+      if (v3) { v3.style.marginTop = '.9rem'; hote.appendChild(v3); }
     }
 
     /* ---------------------------------------------- 3 · la retrouver */

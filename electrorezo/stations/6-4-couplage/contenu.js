@@ -108,6 +108,10 @@
 
   function tempsDecouvrir(hote) {
     const w = el('div', 'workspace');
+    /* le moteur en 3D, la boîte à bornes allumée : on sait où l'on va câbler */
+    const v3 = window.Electro3D ? Electro3D.pourStation({ modele: 'moteurAsynchrone', piece: 'boite' }, 'decouvrir', null,
+      'Le moteur en 3D', 'La boîte à bornes est allumée : c’est là qu’on va travailler.') : null;
+    if (v3) hote.appendChild(v3);
 
     /* Du général au particulier : le moteur, puis l'endroit où l'on câble, puis la plaque
        qui dit quoi faire. Photos réelles de la bibliothèque — voir SOURCES.md. */
@@ -165,6 +169,26 @@
 
   function tempsComprendre(hote) {
     const w = el('div', 'workspace');
+    /* la scène attendue depuis le 28/08 : la plaque à bornes en 3D, pas à pas ; le dessin
+       fixe reste à un clic (« En schéma ») et prend sa place si la 3D ne s'ouvre pas */
+    const v3 = window.Electro3D ? Electro3D.pourStation({ modele: 'plaqueABornes' }, 'comprendre', () => {
+      const svg = plaqueSVG();
+      svg.querySelector('#cArrivee').setAttribute('opacity', '1');
+      svg.querySelector('#cInterne').setAttribute('opacity', '1');
+      return svg;
+    }, 'Le mécanisme, en 3D') : null;
+    if (v3) {
+      hote.appendChild(v3);
+      const d0 = carte('Ce que la scène explique');
+      [['Trois bobinages, six bouts', 'Trois fils de cuivre enroulés autour du fer. Chacun a un début et une fin : six extrémités, six vis.'],
+       ['Le décalage volontaire', 'La rangée du bas est décalée d’un cran. C’est ce décalage qui permet de poser les barrettes bien droites, sans les croiser.'],
+       ['Deux tensions à la fois', 'Entre deux fils du réseau : 400 V. Entre un fil et le neutre : 230 V. Les deux existent en même temps.'],
+       ['L’étoile', 'Deux barrettes couchées relient les trois vis du bas. Chaque bobinage est tendu entre un fil et le point commun : il reçoit 230 V.'],
+       ['Le triangle', 'Trois barrettes debout referment la boucle. Chaque bobinage est branché entre deux fils : il reçoit 400 V.']]
+        .forEach(([t, x]) => { d0.appendChild(el('p', null, '')).innerHTML = '<strong>' + t + '</strong> — ' + x; });
+      w.classList.add('seul'); w.append(d0); hote.appendChild(w);
+      return;
+    }
     const g = carte('Le mécanisme');
     const att = el('div', 'fiche');
     att.appendChild(el('p', null, '🎬 Emplacement de la scène animée — en fabrication chez Claude Design.'));

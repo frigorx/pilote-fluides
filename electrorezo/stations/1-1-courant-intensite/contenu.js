@@ -2,6 +2,8 @@
 
 ModeleGrandeur.construire({
   id: '1.1', ligne: 1,
+  vue3d: { modele: 'circuit', options: { experience: 'courant' } },   /* 3D */
+  vue3dMesure: { modele: 'pince' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 1',
   titre: "Le courant et l’intensité",
   narration: NARRATION,

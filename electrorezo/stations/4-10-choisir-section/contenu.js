@@ -4,6 +4,7 @@
 
 ModeleGrandeur.construire({
   id: '4.10', ligne: 4,
+  vue3d: { modele: 'cablesSections', options: { iz: [17.5, 24, 41, 76] }, defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 10 · fin de ligne',
   titre: "Choisir la section d’un câble",
   narration: NARRATION,

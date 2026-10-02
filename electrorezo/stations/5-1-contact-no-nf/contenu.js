@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.1', ligne: 5,
+  vue3d: { modele: 'blocContacts' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 1',
   titre: "Le contact : repos et travail",
   narration: NARRATION,
@@ -35,7 +36,7 @@ ModeleAppareil.construire({
   variantes: [
     "<strong>Normalement ouvert (NO)</strong> — au repos, il ne laisse pas passer. Il se ferme quand on agit. Repères de bornes <strong>13-14</strong>, <strong>43-44</strong>.",
     "<strong>Normalement fermé (NF, ou NC)</strong> — au repos, il laisse passer. Il s’ouvre quand on agit. Repères <strong>11-12</strong>, <strong>21-22</strong>.",
-    "<strong>Inverseur</strong> — les deux dans le même bloc, avec un point commun. Un NO et un NF qui basculent ensemble. Repères <strong>11-12-14</strong>.",
+    "<strong>Inverseur</strong> — les deux dans le même bloc, avec un point commun. Un NF et un NO menés par la même lame : le NF s’ouvre d’abord, le NO se ferme juste après. Repères <strong>11-12-14</strong>.",
     "<strong>Contact à ouverture forcée</strong> — sa liaison mécanique est rigide : si les pastilles se soudent, le mécanisme les arrache quand même. Obligatoire sur les sécurités."
   ],
 

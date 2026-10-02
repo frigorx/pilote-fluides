@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '6.1', ligne: 6,
+  vue3d: { modele: 'electroAimant', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 6 Machines · Station 1',
   titre: "La bobine et l’électro-aimant",
   narration: NARRATION,

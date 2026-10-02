@@ -28,6 +28,9 @@ const ModeleGrandeur = (() => {
     /* ---------------------------------------------- 1 · l'idée */
     function decouvrir(hote) {
       const w = el('div', 'workspace');
+      const v3 = window.Electro3D ? Electro3D.pourStation(D.vue3d, 'decouvrir', null, 'L’expérience en 3D',
+        'Tournez-la à la souris ou au doigt. Survolez un nom : la pièce s’allume.') : null;
+      if (v3) hote.appendChild(v3);
       const g = carte('De quoi on parle');
       const bande = el('div', 'bande-visuelle');
       D.photos.forEach((p, i) => {
@@ -49,7 +52,7 @@ const ModeleGrandeur = (() => {
       d.appendChild(el('p', null, D.lIdee));
       if (D.ouOnLaRencontre) d.appendChild(el('p', null, D.ouOnLaRencontre));
       d.appendChild(el('p', 'legende', 'Écoutez d’abord, puis passez au temps suivant.'));
-      w.append(g, d);
+      if (w.classList.contains('seul')) w.append(d); else w.append(g, d);
       hote.appendChild(w);
     }
 
@@ -57,7 +60,8 @@ const ModeleGrandeur = (() => {
     function comprendre(hote) {
       const w = el('div', 'workspace');
       const g = carte('Ce qui se passe vraiment');
-      g.appendChild(D.scene());
+      const v3 = window.Electro3D ? Electro3D.pourStation(D.vue3d, 'comprendre', D.scene, 'Ce qui se passe vraiment') : null;
+      if (v3) { hote.appendChild(v3); w.classList.add('seul'); } else g.appendChild(D.scene());
 
       const d = carte('Le raisonnement');
       D.ceQuiSePasse.forEach(([t, x]) => {
@@ -69,7 +73,7 @@ const ModeleGrandeur = (() => {
         D.aRetenir.forEach(x => { const li = el('li'); li.innerHTML = x; ul.appendChild(li); });
         d.appendChild(ul);
       }
-      w.append(g, d);
+      if (w.classList.contains('seul')) w.append(d); else w.append(g, d);
       hote.appendChild(w);
     }
 
@@ -78,7 +82,8 @@ const ModeleGrandeur = (() => {
     function manipuler(hote) {
       const w = el('div', 'workspace');
       const g = carte('La mesurer');
-      g.appendChild(D.mesure());
+      const v3 = window.Electro3D ? Electro3D.pourStation(D.vue3dMesure, 'comprendre', D.mesure, 'La mesurer') : null;
+      if (v3) { hote.appendChild(v3); w.classList.add('seul'); } else g.appendChild(D.mesure());
 
       const d = carte('Comment on s’y prend');
       const ul = el('ul');
@@ -89,7 +94,7 @@ const ModeleGrandeur = (() => {
         p.innerHTML = '<span class="signe">⚠</span>' + D.dangerDeMesure;
         d.appendChild(p);
       }
-      w.append(g, d);
+      if (w.classList.contains('seul')) w.append(d); else w.append(g, d);
       hote.appendChild(w);
     }
 
@@ -127,7 +132,7 @@ const ModeleGrandeur = (() => {
 
       const d = carte('Où vous la lirez');
       D.surUnePlaque.forEach(x => { const p = el('p'); p.innerHTML = x; d.appendChild(p); });
-      w.append(g, d);
+      if (w.classList.contains('seul')) w.append(d); else w.append(g, d);
       hote.appendChild(w);
     }
 
@@ -144,7 +149,7 @@ const ModeleGrandeur = (() => {
         D.retenir.forEach(x => { const p = el('p'); p.innerHTML = x; c.appendChild(p); });
         d.appendChild(c);
       }
-      w.append(g, d);
+      if (w.classList.contains('seul')) w.append(d); else w.append(g, d);
       hote.appendChild(w);
     }
 

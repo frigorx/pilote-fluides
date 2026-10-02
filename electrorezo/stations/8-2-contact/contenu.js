@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.2',
+  vue3d: { modele: 'blocContacts', piece: 'pontNO' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 2',
   titre: "Le contact",
   lettre: 'contact',

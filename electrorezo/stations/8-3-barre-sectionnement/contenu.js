@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.3',
+  vue3d: { modele: 'sectionneur', piece: 'lames' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 3',
   titre: "La barre du sectionnement",
   lettre: 'sectionnement',

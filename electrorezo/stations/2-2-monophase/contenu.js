@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '2.2', ligne: 2,
+  vue3d: { modele: 'circuit', options: { experience: 'monophase' } },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 2 Les réseaux · Station 2',
   titre: "Le réseau monophasé",
   narration: NARRATION,

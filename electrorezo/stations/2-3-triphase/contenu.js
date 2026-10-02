@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '2.3', ligne: 2,
+  vue3d: { modele: 'cable5G' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 2 Les réseaux · Station 3',
   titre: "Le réseau triphasé",
   narration: NARRATION,

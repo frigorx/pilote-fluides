@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.5', ligne: 5,
+  vue3d: { modele: 'relaisTemporise', options: { fonction: 'travail' } },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 5',
   titre: "Le relais temporisé",
   narration: NARRATION,

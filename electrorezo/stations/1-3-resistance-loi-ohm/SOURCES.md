@@ -1,7 +1,6 @@
 # Sources — 1.3 La résistance et la loi d’Ohm
 
 ## Illustrations
-- `loi-ohm-lampe.jpeg`
 - `uab-egale-r-fois-i.png`
 
 Trouvées par `node outils/chercher-images.mjs`, dans la base de connaissances inerWeb

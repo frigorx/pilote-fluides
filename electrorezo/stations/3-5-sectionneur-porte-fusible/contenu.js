@@ -3,6 +3,7 @@
 
 ModeleAppareil.construire({
   id: '3.5', ligne: 3,
+  vue3d: { modele: 'sectionneurPF' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 3 Couper et isoler · Station 5 · fin de ligne · ⇄ ligne 4',
   titre: 'Le sectionneur porte-fusible',
   narration: NARRATION,

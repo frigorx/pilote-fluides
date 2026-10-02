@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '6.3', ligne: 6,
+  vue3d: { modele: 'moteurAsynchrone' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 6 Machines · Station 3',
   titre: "Le moteur asynchrone triphasé",
   narration: NARRATION,

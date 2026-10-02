@@ -2,6 +2,8 @@
 
 ModeleGrandeur.construire({
   id: '1.3', ligne: 1,
+  vue3d: { modele: 'circuit', options: { experience: 'ohm' } },   /* 3D */
+  vue3dMesure: { modele: 'multimetre' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 3',
   titre: "La résistance et la loi d’Ohm",
   narration: NARRATION,
@@ -12,9 +14,6 @@ ModeleGrandeur.construire({
   ],
 
   photos: [
-    { src: 'assets/biblio/loi-ohm-lampe.jpeg',
-      alt: "Schéma d’une lampe traversée par 0,25 ampère, de résistance 20 ohms, avec le calcul U égale R fois I qui donne 5 volts.",
-      titre: "Trois nombres liés.", sous: "Fixez-en deux : le troisième est décidé." },
     { src: 'assets/biblio/uab-egale-r-fois-i.png',
       alt: "Document présentant deux fois la même relation : en haut Uab égale R électrique fois I, en bas la transposition thermique, écart de température égal à résistance thermique fois flux.",
       titre: "La relation, écrite.", sous: "En haut l’électricité. En bas, la même idée transposée à la chaleur." }

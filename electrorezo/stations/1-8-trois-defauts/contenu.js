@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '1.8', ligne: 1,
+  vue3d: { modele: 'troisDefauts' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 8',
   titre: "Les trois défauts",
   narration: NARRATION,

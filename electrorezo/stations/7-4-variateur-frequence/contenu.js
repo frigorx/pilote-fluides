@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '7.4', ligne: 7,
+  vue3d: { modele: 'variateur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 7 Faire varier · Station 4 · terminus',
   titre: "Le variateur de fréquence",
   narration: NARRATION,

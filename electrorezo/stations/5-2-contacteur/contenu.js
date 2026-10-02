@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.2', ligne: 5,
+  vue3d: { modele: 'contacteur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 2',
   titre: "Le contacteur",
   narration: NARRATION,

@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '7.2', ligne: 7,
+  vue3d: { modele: 'gradateur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 7 Faire varier · Station 2',
   titre: "Le variateur de tension",
   narration: NARRATION,
@@ -93,7 +94,7 @@ ModeleAppareil.construire({
       confirmation: "Non : le couple s’écroule et la vitesse ne bouge presque pas.",
       reponses: [
         { texte: "Oui, avec un condensateur en plus.", pourquoi: "Le condensateur n’intervient pas dans ce problème." },
-        { texte: "Oui, dans une plage limitée.", pourquoi: "La vitesse varie de quelques tours seulement, avant que le moteur ne cale." },
+        { texte: "Oui, dans une plage limitée.", pourquoi: "La vitesse ne varie que de quelques dizaines de tours, avant que le moteur ne cale." },
         { texte: "Oui, s’il est triphasé.", pourquoi: "Le nombre de phases ne change rien à ce comportement." },
         { texte: "Non.", juste: true } ] },
 

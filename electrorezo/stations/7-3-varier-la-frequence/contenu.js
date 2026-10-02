@@ -2,6 +2,7 @@
 
 ModeleGrandeur.construire({
   id: '7.3', ligne: 7,
+  vue3d: { modele: 'moteurAsynchrone', options: { pilotage: 'frequence' }, defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 7 Faire varier · Station 3',
   titre: "Faire varier la fréquence",
   narration: NARRATION,

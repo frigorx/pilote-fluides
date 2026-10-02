@@ -25,7 +25,11 @@ const ModeleAppareil = (() => {
     /* -------------------------------------------------- temps 1 : découvrir */
     function decouvrir(hote) {
       const w = el('div', 'workspace');
-      const g = carte('L’objet');
+      /* l'objet en 3D, s'il est déclaré : on le tourne, on survole ses pièces */
+      const v3 = window.Electro3D ? Electro3D.pourStation(D.vue3d, 'decouvrir', null, 'L’objet en 3D',
+        'Tournez-le à la souris ou au doigt. Survolez le nom d’une pièce : elle s’allume.') : null;
+      if (v3) hote.appendChild(v3);
+      const g = carte(v3 ? 'En photo' : 'L’objet');
       const bande = el('div', 'bande-visuelle');
       D.photos.forEach((p, i) => {
         if (i) bande.appendChild(el('div', 'fleche', '➜'));
@@ -43,8 +47,9 @@ const ModeleAppareil = (() => {
       Station.credit(g, D.creditPhoto || 'Photographies : base de connaissances inerWeb. Détail dans « Crédits ».');
 
       const d = carte('À quoi ça sert');
-      d.appendChild(el('p', null, D.aQuoiCaSert));
-      if (D.ouOnLeTrouve) { d.appendChild(el('p', null, D.ouOnLeTrouve)); }
+      const pHtml = x => { const p = el('p'); p.innerHTML = x; return p; };   /* ces textes portent <strong>, <em> */
+      d.appendChild(pHtml(D.aQuoiCaSert));
+      if (D.ouOnLeTrouve) { d.appendChild(pHtml(D.ouOnLeTrouve)); }
       d.appendChild(el('p', 'legende', 'Écoutez d’abord, puis passez au temps suivant.'));
       w.append(g, d);
       hote.appendChild(w);
@@ -59,7 +64,10 @@ const ModeleAppareil = (() => {
       });
       /* Règle de maison : aucune page sans illustration. Le temps 2 parle du
          mécanisme — on le montre. */
-      if (D.scene) g.insertBefore(D.scene(), g.querySelector('p'));
+      /* en 3D : on l'ouvre et on le fait marcher ; la scène dessinée reste à un clic */
+      const v3 = window.Electro3D ? Electro3D.pourStation(D.vue3d, 'comprendre', D.scene || null, 'Dedans, et en marche') : null;
+      if (v3) hote.appendChild(v3);
+      else if (D.scene) g.insertBefore(D.scene(), g.querySelector('p'));
 
       const d = carte('Les variantes');
       const ul = el('ul');
@@ -67,7 +75,7 @@ const ModeleAppareil = (() => {
       d.appendChild(ul);
       if (D.reglage) {
         d.appendChild(el('h2', null, 'Le réglage'));
-        d.appendChild(el('p', null, D.reglage));
+        const p = el('p'); p.innerHTML = D.reglage; d.appendChild(p);
       }
       w.append(g, d);
       hote.appendChild(w);

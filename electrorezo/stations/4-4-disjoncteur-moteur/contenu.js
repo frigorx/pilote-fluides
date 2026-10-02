@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.4', ligne: 4,
+  vue3d: { modele: 'disjoncteurMoteur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 4',
   titre: "Le disjoncteur moteur",
   narration: NARRATION,

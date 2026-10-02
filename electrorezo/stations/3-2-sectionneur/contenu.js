@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '3.2', ligne: 3,
+  vue3d: { modele: 'sectionneur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 3 Couper et isoler · Station 2',
   titre: 'Le sectionneur',
   narration: NARRATION,
@@ -11,10 +12,6 @@ ModeleAppareil.construire({
   ],
 
   photos: [
-    { src: 'assets/biblio/sectionneur.jpeg',
-      alt: 'Photo d’un sectionneur blanc muni d’une poignée noire de manœuvre.',
-      titre: 'Un sectionneur.',
-      sous: 'Il ressemble à un interrupteur. Il ne fait pas le même métier.' },
     { src: 'assets/biblio/condamnation-cadenas.png',
       alt: 'Photo d’une main tenant la poignée rouge d’un appareil de coupure sur un tableau électrique, fermée par un cadenas.',
       titre: 'La condamnation.',
@@ -114,8 +111,6 @@ ModeleAppareil.construire({
   objectifs: '<p><strong>Objectif.</strong> Comprendre que le sectionneur est un appareil de sécurité et non de commande : distance d’ouverture garantie, condamnation par cadenas, coupure visible — et surtout aucune aptitude à couper en charge.</p>',
 
   credits: [
-    { quoi: 'Photo « sectionneur »', source: 'base de connaissances inerWeb',
-      detail: 'document de cours indexé — recherche « sectionneur coupure visible consignation »' },
     { quoi: 'Photo « condamnation par cadenas »', source: 'base de connaissances inerWeb',
       detail: 'document de cours indexé, même recherche' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',

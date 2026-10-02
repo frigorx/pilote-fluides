@@ -11,7 +11,7 @@ parce que c'est ce qui explique l'existence de toute la ligne sept.`,
 
   comprendre: `Servez-vous du curseur, et regardez les trois cadres.
 Baissez la tension. Quatre cents volts, trois cent cinquante, trois cents.
-Regardez le troisième cadre, la vitesse : elle ne bouge presque pas. Quelques tours par minute.
+Regardez le troisième cadre, la vitesse : elle ne bouge presque pas. Quelques dizaines de tours par minute.
 Maintenant regardez le deuxième, le couple : il s'effondre.
 À soixante-dix pour cent de la tension, il ne reste que la moitié du couple. Retenez ce chiffre,
 il est parlant.

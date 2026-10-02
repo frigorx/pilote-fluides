@@ -3,6 +3,7 @@
 
 ModeleAppareil.construire({
   id: '3.1', ligne: 3,
+  vue3d: { modele: 'interrupteur' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 3 Couper et isoler · Station 1',
   titre: 'L’interrupteur',
   narration: NARRATION,

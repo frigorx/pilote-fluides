@@ -2,6 +2,7 @@
 
 ModeleAppareil.construire({
   id: '6.6', ligne: 6,
+  vue3d: { modele: 'machineCC', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 6 Machines · Station 6',
   titre: "Synchrone et courant continu",
   narration: NARRATION,

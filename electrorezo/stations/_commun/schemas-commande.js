@@ -375,6 +375,28 @@ ${[500, 570, 640].map(x => `
 
 <line x1="130" y1="252" x2="730" y2="252" stroke="${C.navy}" stroke-width="2"/>
 <text x="730" y="270" text-anchor="end" font-size="12" fill="${C.gris}">le temps →</text>`;
+    /* le temps qui passe : un curseur balaie le chronogramme, deux points suivent la bobine et le
+       contact et s'allument quand ils sont actifs — on VOIT le contact attendre, puis basculer.
+       Le curseur passe hors des lignes de texte ; il ne sort pas à l'impression. Pas de condition
+       « animations réduites » : ce mouvement porte le contenu (règle du réseau). */
+    const NS = 'http://www.w3.org/2000/svg';
+    const g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'curseur-temps');
+    const st = document.createElementNS(NS, 'style'); st.textContent = '@media print{.curseur-temps{display:none}}';
+    const trait = (y1, y2) => { const l = document.createElementNS(NS, 'line'); l.setAttribute('y1', y1); l.setAttribute('y2', y2); l.setAttribute('stroke', C.navy); l.setAttribute('stroke-width', '2'); l.setAttribute('opacity', '.55'); g.appendChild(l); return l; };
+    const point = () => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', '8'); c.setAttribute('stroke', '#fffdf8'); c.setAttribute('stroke-width', '2'); g.appendChild(c); return c; };
+    const l1 = trait(78, 124), l2 = trait(196, 248), pb = point(), pc = point();
+    d.append(st, g);
+    const debut = performance.now();
+    const image = (now) => {
+      if (!d.isConnected && now - debut > 2000) return;
+      const u = ((now - debut) / 9000) % 1, x = 130 + 600 * u;
+      const bob = x >= t0 && x < t2, con = x >= bascule && x < retour;
+      [l1, l2].forEach(l => { l.setAttribute('x1', x); l.setAttribute('x2', x); });
+      pb.setAttribute('cx', x); pb.setAttribute('cy', bob ? 80 : 120); pb.setAttribute('fill', bob ? C.navy : '#9aa6b5');
+      pc.setAttribute('cx', x); pc.setAttribute('cy', con ? 200 : 240); pc.setAttribute('fill', con ? C.orange : '#9aa6b5');
+      requestAnimationFrame(image);
+    };
+    requestAnimationFrame(image);
     return d;
   }
 

@@ -2,6 +2,7 @@
 
 ModeleSigne.construire({
   id: '8.8',
+  vue3d: { modele: 'contacteur', piece: 'bobine' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 8',
   titre: "La bobine et le rond",
   lettre: 'bobine',
