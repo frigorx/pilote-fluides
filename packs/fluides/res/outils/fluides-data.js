@@ -1,6 +1,7 @@
 /* Base fluides — extraite de FRIGOLO « réglette fluides » (frigorx/inerweb-frigolo,
    données interpolées, sources publiques). GWP de R-32, R-134a, R-404A et R-410A
    alignés sur les valeurs Mission F-GAZ déjà citées dans les fiches du pack.
+   Tables R1234yf et R513A recalculées avec CoolProp 8.0 le 02/10/2026 (écarts de 8 % et 22 % corrigés).
    Valeurs PÉDAGOGIQUES — en intervention : fiche du fluide + doc constructeur. */
 window.FLUIDES = {
  "R22": {
@@ -487,23 +488,23 @@ window.FLUIDES = {
   "table": [
    {
     "t": -40,
-    "p": 0.458
+    "p": 0.615
    },
    {
     "t": -20,
-    "p": 1.15
+    "p": 1.521
    },
    {
     "t": 0,
-    "p": 2.475
+    "p": 3.234
    },
    {
     "t": 20,
-    "p": 4.768
+    "p": 6.137
    },
    {
     "t": 40,
-    "p": 8.43
+    "p": 10.667
    }
   ]
  },
@@ -519,43 +520,43 @@ window.FLUIDES = {
   "table": [
    {
     "t": -40,
-    "p": 0.565
+    "p": 0.622
    },
    {
     "t": -30,
-    "p": 0.9
+    "p": 0.989
    },
    {
     "t": -20,
-    "p": 1.377
+    "p": 1.509
    },
    {
     "t": -10,
-    "p": 2.034
+    "p": 2.218
    },
    {
     "t": 0,
-    "p": 2.914
+    "p": 3.159
    },
    {
     "t": 10,
-    "p": 4.062
+    "p": 4.376
    },
    {
     "t": 20,
-    "p": 5.527
+    "p": 5.918
    },
    {
     "t": 30,
-    "p": 7.362
+    "p": 7.836
    },
    {
     "t": 40,
-    "p": 9.622
+    "p": 10.185
    },
    {
     "t": 50,
-    "p": 12.367
+    "p": 13.023
    }
   ]
  },
