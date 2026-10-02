@@ -2748,6 +2748,14 @@ une page web est un écart gratuit — d'autant que de vraies capsules vidéo ex
 
 ## 5. Pièges — lus dans le sang, à ne pas réapprendre
 
+**Piège du 02/10 — le logo de retour à l'accueil.**
+
+- **`moteur/retour-accueil.js` est posé par `build/retour-accueil.mjs`** sur 687 pages (comme
+  `animations.mjs`). Après toute livraison d'un atelier qui réécrit ses pages, relancer
+  `node build/retour-accueil.mjs`, sinon les pages relivrées perdent le chemin vers l'accueil.
+  Le script ne superpose jamais un logo : il rend cliquable le logo inerWeb existant, ou pose
+  une fine barre dans le flux. Un logo fixe en surimpression a été refusé par Franck (02/10).
+
 **Pièges du 18/08 — marque, symboles, examens.**
 
 - **8 copies de `marque.js`.** Les modules autonomes en embarquent chacun une pour tourner hors
@@ -2879,6 +2887,13 @@ pression · **croix du frigoriste** : détendeur gauche, compresseur droite, con
 ---
 
 ## 6. Ce qui reste à faire
+
+> **Audit de l'accueil (02/10 soir)** : fait et en ligne — logo vers l'accueil partout, « Neuf
+> réseaux », actualités repliées, 4 portes (J'apprends · Je me situe · J'enseigne · Je suis
+> professionnel), Formateurs recentrée (MIT replié en bas). Reste : filtres CAP / Bac Pro / BTS
+> du catalogue ; liens Diagnostic (AéroRézo par défaut) et Habilitation (`portail.html`) à
+> trancher par Franck ; entrées directes ÉlectroRézo (armoire + carte en grand) et HoCourant
+> (livre + réseau dès l'arrivée) — chats à ouvrir, messages dans `FINITIONS-INERWEB.md`.
 
 > **Manipulations virtuelles (14/08) — PLAN SOLDÉ le jour même** : les 4 briques faites
 > (KVL intégré · écrans d'inspection · compresseur-interactif + Module Compresseur FRIGOLO
