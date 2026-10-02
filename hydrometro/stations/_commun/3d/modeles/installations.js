@@ -3,7 +3,7 @@
    Z vers l'avant (+Z = vers l'élève ; le mur est en z = 0). Les tubes sont à z = 62.
 
    CE QUE L'ÉLÈVE DOIT VOIR : une chaudière murale (caisson blanc, quatre piquages dessous) ; le DÉPART
-   en cuivre repéré d'un ruban rouge, qui passe par le circulateur et monte à deux branches ; chaque
+   en cuivre repéré d'un ruban rouge, qui passe par le circulateur et monte à trois branches (A, B, C) ; chaque
    branche a un radiateur et une vanne d'équilibrage ; le RETOUR en cuivre repéré d'un ruban bleu, avec
    son filtre, ramène l'eau à la chaudière ; un vase d'expansion et, au point haut du départ, un purgeur
    automatique. « Voir l'eau » rend les tubes, la chaudière et les radiateurs transparents : des grains
@@ -15,7 +15,7 @@
    ctx.options : { depart: 'normal' | 'branche-froide' } — « branche-froide » ouvre sur la vanne B fermée.
 
    Tout est fabriqué ici en version simplifiée (circulateur, radiateur, vases, vannes) : les modèles
-   complets de ces appareils pèsent 25 000 à 37 000 triangles chacun, l'installation en tient 80 000. */
+   complets de ces appareils pèsent 25 000 à 37 000 triangles chacun, l'installation en tient 80 000. Les branches A et C sont identiques (C se comporte comme A dans tous les états). */
 (() => {
   'use strict';
   if (!window.Electro3D) return;
@@ -34,7 +34,7 @@
     const YD = 880, YR = 130, YC = 1000;                  /* départ, retour, dessous de la chaudière */
     const XRET = -1040, XECS = -965, XEFS = -890, XDEP = -815;   /* les quatre piquages */
     const PX = -640, NUT = 110;                           /* centre du circulateur ; demi-longueur avec ses écrous */
-    const XA = -380, XB = 260;                            /* bord gauche des radiateurs A et B */
+    const XA = -380, XB = 260, XC = 900;                    /* bord gauche des radiateurs A, B et C */
     const LR = 500, HR = 560, Y0 = 250, Y1 = Y0 + HR;     /* un radiateur : 500 × 560 */
     const YT = Y1 - 40, YO = Y0 + 40;                     /* piquage haut (arrivée), piquage bas (sortie) */
     const XVENT = -150, FX = -740;                        /* le purgeur ; le filtre */
@@ -105,9 +105,9 @@
 
     /* ================================================================ LE DÉCOR : mur, plinthe, sol */
     const decor = new T.Group(); racine.add(decor);
-    decor.add(bx(4000, 1960, 20, platre, -700, 880, -10));
-    decor.add(bx(4000, 40, 440, dalleMat, -700, -20, 200));
-    decor.add(bx(4000, 90, 12, plinthe, -700, 45, 6));
+    decor.add(bx(4600, 1960, 20, platre, -400, 880, -10));
+    decor.add(bx(4600, 40, 440, dalleMat, -400, -20, 200));
+    decor.add(bx(4600, 90, 12, plinthe, -400, 45, 6));
 
     /* ================================================================ LES TUBES
        Une polyligne aux coudes arrondis, rendue comme une courbe (longueur d'arc régulière) ; les
@@ -190,7 +190,8 @@
         racine.add(f.objet); flots.push({ f, flow: o.flow, fnT });
       });
     };
-    const debitDe = k => (k === 'tot' ? S.fA + S.fB : k === 'A' ? S.fA : k === 'B' ? S.fB : 0);
+    /* C se comporte comme A : même débit, même chaleur */
+    const debitDe = k => (k === 'tot' ? 2 * S.fA + S.fB : k === 'BC' ? S.fA + S.fB : (k === 'A' || k === 'C') ? S.fA : k === 'B' ? S.fB : 0);
 
     /* ================================================================ LA CHAUDIÈRE */
     const chaudiere = new T.Group();
@@ -233,14 +234,18 @@
     const tDP = chemin([[PX - NUT, YD], [PX + NUT, YD]], 1);                       /* dans le circulateur */
     const tD1a = chemin([[PX + NUT, YD], [xi(XA), YD]], 1);
     const tD1b = chemin([[xi(XA), YD], [XVENT, YD]], 1);
-    const tD2 = chemin([[XVENT, YD], [xi(XB), YD], [xi(XB), YT], [XB, YT]], 40);
+    const tD2 = chemin([[XVENT, YD], [xi(XB), YD]], 1);
+    const tD3 = chemin([[xi(XB), YD], [xi(XC), YD]], 1);
+    const tDB = chemin([[xi(XB), YD], [xi(XB), YT], [XB, YT]], 40);
+    const tDC = chemin([[xi(XC), YD], [xi(XC), YT], [XC, YT]], 40);
     const tDA = chemin([[xi(XA), YD], [xi(XA), YT], [XA, YT]], 40);
-    [tD0, tD1a, tD1b, tD2, tDA].forEach(c => depart.add(fantomable(coque(c, cuivre), 0.2)));
-    [tD0, tDP, tD1a, tD1b, tD2, tDA].forEach(c => { const e = eauTube(c); e.regler(1, 1); });
+    [tD0, tD1a, tD1b, tD2, tD3, tDB, tDC, tDA].forEach(c => depart.add(fantomable(coque(c, cuivre), 0.2)));
+    [tD0, tDP, tD1a, tD1b, tD2, tD3, tDB, tDC, tDA].forEach(c => { const e = eauTube(c); e.regler(1, 1); });
     flotsDe(tD0, { flow: 'tot' }); flotsDe(tDP, { flow: 'tot', pas: 60 }); flotsDe(tD1a, { flow: 'tot', pas: 60 });
-    flotsDe(tD1b, { flow: 'B' }); flotsDe(tD2, { flow: 'B' }); flotsDe(tDA, { flow: 'A' });
+    flotsDe(tD1b, { flow: 'BC' }); flotsDe(tD2, { flow: 'BC' }); flotsDe(tD3, { flow: 'C' });
+    flotsDe(tDB, { flow: 'B' }); flotsDe(tDC, { flow: 'C' }); flotsDe(tDA, { flow: 'A' });
     /* repères de couleur : un ruban rouge, comme sur le chantier */
-    [[-300, YD], [40, YD]].forEach(([x, y]) => depart.add(ringX(12.2, 10.6, x, x + 9, rubanR, y, ZP)));
+    [[-300, YD], [40, YD], [520, YD]].forEach(([x, y]) => depart.add(ringX(12.2, 10.6, x, x + 9, rubanR, y, ZP)));
     depart.add(ringY(12.2, 10.6, 930, 939, rubanR, XDEP, ZP));
     racine.add(depart);
 
@@ -325,13 +330,14 @@
       });
       return { g, regler, fleches };
     };
-    const radA = faireRadiateur(XA), radB = faireRadiateur(XB);
+    const radA = faireRadiateur(XA), radB = faireRadiateur(XB), radC = faireRadiateur(XC);
 
     /* l'eau dans le radiateur (grains) : par le haut vers la droite, en bas par le canal de droite, retour vers la gauche */
     const interieur = xl => chemin([[xl, YT], [xl + LR - 45, YT], [xl + LR - 45, YO], [xl, YO]], 25);
-    const iA = interieur(XA), iB = interieur(XB);
+    const iA = interieur(XA), iB = interieur(XB), iC = interieur(XC);
     flotsDe(iA, { flow: 'A', rayon: 5, pas: 80, parts: [[0, 0.33, () => S.tA0], [0.33, 0.67, () => (S.tA0 + S.tA1) / 2], [0.67, 1, () => S.tA1]] });
     flotsDe(iB, { flow: 'B', rayon: 5, pas: 80, parts: [[0, 0.33, () => S.tB0], [0.33, 0.67, () => (S.tB0 + S.tB1) / 2], [0.67, 1, () => S.tB1]] });
+    flotsDe(iC, { flow: 'C', rayon: 5, pas: 80, parts: [[0, 0.33, () => S.tA0], [0.33, 0.67, () => (S.tA0 + S.tA1) / 2], [0.67, 1, () => S.tA1]] });
 
     /* ================================================================ LES VANNES D'ÉQUILIBRAGE (simplifiées) */
     const faireVanne = xc => {
@@ -350,27 +356,33 @@
       racine.add(g);
       return { g, poser, ecrire };
     };
-    const vanA = faireVanne(XA - 55), vanB = faireVanne(XB - 55);
-    vanA.ecrire(2.5);
+    const vanA = faireVanne(XA - 55), vanB = faireVanne(XB - 55), vanC = faireVanne(XC - 55);
+    vanA.ecrire(2.5); vanC.ecrire(2.5);
 
     /* ================================================================ LE RETOUR (bleu) */
     const retour = new T.Group();
     const lSortie = 25, lVanne = 85;      /* la vanne occupe de 25 à 85 mm après le piquage du radiateur */
     const tRoA = chemin([[XA, YO], [xo(XA), YO], [xo(XA), YR]], 40);
-    const tRoB = chemin([[XB, YO], [xo(XB), YO], [xo(XB), YR], [xo(XA), YR]], 40);
+    const tRoB = chemin([[XB, YO], [xo(XB), YO], [xo(XB), YR]], 40);          /* B se jette dans le collecteur */
+    const tRoC = chemin([[XC, YO], [xo(XC), YO], [xo(XC), YR], [xo(XA), YR]], 40);   /* C : le collecteur jusqu'à A */
+    const uJ = (() => { let b = 0, bd = 1e9; for (let i = 0; i <= 400; i++) { const p = tRoC.getPointAt(i / 400), d = Math.abs(p.x - xo(XB)) + Math.abs(p.y - YR); if (d < bd) { bd = d; b = i / 400; } } return b; })();
     const tR2 = chemin([[xo(XA), YR], [XRET, YR], [XRET, YC]], 40);
     const dFiltre = [-510 - (FX + 58), -510 - (FX - 58)];
     retour.add(fantomable(coque(tRoA, cuivre, [[lSortie, lVanne]]), 0.2));
     retour.add(fantomable(coque(tRoB, cuivre, [[lSortie, lVanne]]), 0.2));
+    retour.add(fantomable(coque(tRoC, cuivre, [[lSortie, lVanne]]), 0.2));
     retour.add(fantomable(coque(tR2, cuivre, [dFiltre]), 0.2));
-    const eRoA = eauTube(tRoA), eRoB = eauTube(tRoB), eR2 = eauTube(tR2);
+    const eRoA = eauTube(tRoA), eRoB = eauTube(tRoB), eRoC = eauTube(tRoC), eR2 = eauTube(tR2);
     flotsDe(tRoA, { flow: 'A', parts: [[0, 1, () => S.tA1]] });
     flotsDe(tRoB, { flow: 'B', parts: [[0, 1, () => S.tB1]] });
+    flotsDe(tRoC, { flow: 'C', parts: [[0, uJ, () => S.tA1]] });
+    flotsDe(tRoC, { flow: 'BC', parts: [[uJ, 1, () => tBC()]] });
     flotsDe(tR2, { flow: 'tot', parts: [[0, 1, () => tRet()]] });
-    [[60, YR], [-250, YR], [-450, YR]].forEach(([x, y]) => retour.add(ringX(12.2, 10.6, x, x + 9, rubanB, y, ZP)));
+    [[60, YR], [-250, YR], [-450, YR], [520, YR]].forEach(([x, y]) => retour.add(ringX(12.2, 10.6, x, x + 9, rubanB, y, ZP)));
     retour.add(ringX(12.2, 10.6, -620, -611, rubanB, YR, ZP), ringY(12.2, 10.6, 930, 939, rubanB, XRET, ZP));
     racine.add(retour);
-    const tRet = () => { const q = S.fA + S.fB; return q > 0.03 ? (S.fA * S.tA1 + S.fB * S.tB1) / q : Math.min(S.tA1, S.tB1); };
+    const tBC = () => { const q = S.fA + S.fB; return q > 0.03 ? (S.fA * S.tA1 + S.fB * S.tB1) / q : Math.min(S.tA1, S.tB1); };
+    const tRet = () => { const q = 2 * S.fA + S.fB; return q > 0.03 ? (2 * S.fA * S.tA1 + S.fB * S.tB1) / q : Math.min(S.tA1, S.tB1); };
 
     /* ================================================================ LE FILTRE (à tamis) */
     const filtre = new T.Group(); filtre.position.set(FX, YR, ZP);
@@ -433,20 +445,21 @@
     const colliers = new T.Group();
     const collierH = (x, y) => { colliers.add(ringX(14, 11, x - 4, x + 4, zingue, y, ZP, 16), bx(8, 10, ZP - 11, zingue, x, y, (ZP - 11) / 2)); };
     const collierV = (x, y) => { colliers.add(ringY(14, 11, y - 4, y + 4, zingue, x, ZP, 16), bx(10, 8, ZP - 11, zingue, x, y, (ZP - 11) / 2)); };
-    [[-330, YD], [-70, YD], [100, YD], [-100, YR], [-340, YR], [-560, YR], [-900, YR]].forEach(([x, y]) => collierH(x, y));
-    [[XRET, 300], [XRET, 640], [XRET, 860], [xo(XA), 200], [xo(XB), 200], [xi(XA), 825], [xi(XB), 825]].forEach(([x, y]) => collierV(x, y));
+    [[-330, YD], [-70, YD], [100, YD], [500, YD], [-100, YR], [-340, YR], [-560, YR], [-900, YR], [300, YR]].forEach(([x, y]) => collierH(x, y));
+    [[XRET, 300], [XRET, 640], [XRET, 860], [xo(XA), 200], [xo(XB), 200], [xi(XA), 825], [xi(XB), 825], [xo(XC), 200], [xi(XC), 825]].forEach(([x, y]) => collierV(x, y));
     racine.add(colliers);
 
-    /* ================================================================ LES PIÈCES (11) */
+    /* ================================================================ LES PIÈCES (12) */
     const pieces = [
       { id: 'chaudiere', nom: 'La chaudière', objets: [chaudiere], desc: 'Elle chauffe l’eau. Dessous, quatre piquages : le retour à gauche, d’où l’eau froide arrive, le départ à droite, d’où l’eau chaude repart. Les deux du milieu servent à l’eau sanitaire.' },
       { id: 'depart', nom: 'Le départ (ruban rouge)', objets: [depart], ancre: [-250, YD, ZP], desc: 'Le tube en cuivre qui emmène l’eau chaude vers les radiateurs. Un ruban rouge le repère : on ne confond jamais départ et retour.' },
       { id: 'circulateur', nom: 'Le circulateur', objets: [pompe], desc: 'Une petite pompe sur le départ. Elle ne chauffe pas l’eau : elle la pousse, pour qu’elle fasse le tour de la boucle.' },
       { id: 'radA', nom: 'Le radiateur de la branche A', objets: [radA.g], desc: 'Il donne la chaleur de l’eau à la pièce. L’eau entre en haut, chaude, et ressort en bas, plus froide.' },
       { id: 'vanneA', nom: 'La vanne d’équilibrage A', objets: [vanA.g], desc: 'Sur le tube de sortie du radiateur. Son réglage (le chiffre dans la fenêtre) limite le débit de la branche. Réglée une fois par le chauffagiste, on n’y touche plus.' },
-      { id: 'radB', nom: 'Le radiateur de la branche B', objets: [radB.g], desc: 'Le deuxième radiateur, sur sa propre branche. S’il reste froid alors que l’autre chauffe, le problème est sur cette branche.' },
+      { id: 'radB', nom: 'Le radiateur de la branche B', objets: [radB.g], desc: 'Le deuxième radiateur, sur sa propre branche. S’il reste froid alors que les deux autres chauffent, le problème est sur cette branche.' },
       { id: 'vanneB', nom: 'La vanne d’équilibrage B', objets: [vanB.g], desc: 'Même vanne que la A, sur la branche B. Fermée, le volant est vissé à fond et le chiffre indique 0 : plus d’eau dans la branche.' },
-      { id: 'retour', nom: 'Le retour (ruban bleu)', objets: [retour], ancre: [-300, YR, ZP], desc: 'Le tube qui ramène l’eau refroidie vers la chaudière. Les deux branches s’y rejoignent. Un ruban bleu le repère.' },
+      { id: 'radC', nom: 'Le radiateur de la branche C (et sa vanne)', objets: [radC.g, vanC.g], desc: 'Le troisième radiateur, monté comme le A, avec sa propre vanne d’équilibrage sur la sortie. Il chauffe comme le A.' },
+      { id: 'retour', nom: 'Le retour (ruban bleu)', objets: [retour], ancre: [-300, YR, ZP], desc: 'Le tube qui ramène l’eau refroidie vers la chaudière. Les trois branches s’y rejoignent. Un ruban bleu le repère.' },
       { id: 'filtre', nom: 'Le filtre', objets: [filtre], desc: 'Il retient les boues et la rouille pour protéger la chaudière et le circulateur. Un tamis dans le bouchon : on le nettoie de temps en temps.' },
       { id: 'vase', nom: 'Le vase d’expansion', objets: [vase], desc: 'L’eau chaude prend plus de place que l’eau froide. Le vase encaisse cet excès : une membrane sépare l’eau d’un coussin de gaz.' },
       { id: 'purgeur', nom: 'Le purgeur automatique', objets: [purgeur], desc: 'Posé au point le plus haut. L’air monte jusqu’à lui et sort. S’il reste de l’air dans les tubes, l’eau passe mal.' }
@@ -454,11 +467,11 @@
 
     /* ================================================================ LES TEXTES */
     const TEXTES = {
-      'normal': '<strong>Tout fonctionne.</strong> L’eau part rouge de la chaudière, donne sa chaleur dans les deux radiateurs et revient bleue.',
+      'normal': '<strong>Tout fonctionne.</strong> L’eau part rouge de la chaudière, donne sa chaleur dans les trois radiateurs et revient bleue.',
       'air': '<strong>Air en point haut.</strong> Une poche d’air s’est installée dans le purgeur, en haut du circuit. L’eau passe mal : le débit baisse partout et les radiateurs chauffent moins. Il faut purger.',
-      'vanne-b': '<strong>Vanne de la branche B fermée.</strong> L’eau ne passe plus dans la branche B : son radiateur reste froid. La branche A, elle, chauffe comme avant.',
+      'vanne-b': '<strong>Vanne de la branche B fermée.</strong> L’eau ne passe plus dans la branche B : son radiateur reste froid. Les branches A et C, elles, chauffent comme avant.',
       'reglage-b': '<strong>Branche B mal réglée.</strong> La vanne est presque fermée (0,5 au lieu de 2,5) : un filet d’eau passe, le radiateur B chauffe à peine.',
-      'filtre': '<strong>Filtre encrassé.</strong> Les boues bouchent le tamis : l’eau passe plus difficilement dans tout le circuit. Le débit baisse dans les deux branches.',
+      'filtre': '<strong>Filtre encrassé.</strong> Les boues bouchent le tamis : l’eau passe plus difficilement dans tout le circuit. Le débit baisse dans les trois branches.',
       'arret': '<strong>Circulateur à l’arrêt.</strong> L’eau ne bouge plus nulle part. La chaudière chauffe toujours la même eau, et les radiateurs refroidissent peu à peu. <em>À l’écran, ce refroidissement est accéléré.</em>'
     };
     const majTexte = () => {
@@ -477,8 +490,9 @@
     const poser = () => {
       eauSerp.regler(0.12, 1);
       eRoA.regler(S.tA1, S.tA1); eRoB.regler(S.tB1, S.tB1); eR2.regler(tRet(), tRet());
-      radA.regler(S.tA0, S.tA1); radB.regler(S.tB0, S.tB1);
-      vanA.poser(2.5); vanB.poser(S.preB);
+      radA.regler(S.tA0, S.tA1); radB.regler(S.tB0, S.tB1); radC.regler(S.tA0, S.tA1);
+      eRoC.regler(S.tA1, S.tA1);
+      vanA.poser(2.5); vanB.poser(S.preB); vanC.poser(2.5);
       poserVase(S.vase);
       leds.forEach((m, i) => { m.material = S.pw > 0.5 && i === 0 ? ledMarche : ledEteinte; });
       flammes.visible = S.pw > 0.3;
@@ -504,6 +518,7 @@
       });
       radA.fleches(clamp((S.tA0 - 0.15) / 0.7, 0, 1));
       radB.fleches(clamp((S.tB0 - 0.15) / 0.7, 0, 1));
+      radC.fleches(clamp((S.tA0 - 0.15) / 0.7, 0, 1));
     };
 
     /* ---------------------------------------------------------------- la vue « voir l'eau » */
@@ -523,14 +538,14 @@
         vue: { azimut: 14, elevation: 8, zoom: 2.3, cible: [-905, 1250, 110] },
         texte: 'L’eau froide du retour entre dans la chaudière, passe dans l’échangeur au-dessus de la flamme et repart chaude : elle devient rouge.' },
       { titre: 'L’eau chaude part par le départ', piece: 'depart', voirDedans: true, actions: [['etat', 'normal']],
-        vue: { azimut: 10, elevation: 10, zoom: 1.6, cible: [-280, 830, 90] },
-        texte: 'Le départ, repéré en rouge, emmène l’eau chaude vers les deux radiateurs. À chaque branche, l’eau se partage.' },
+        vue: { azimut: 10, elevation: 10, zoom: 1.15, cible: [30, 830, 90] },
+        texte: 'Le départ, repéré en rouge, emmène l’eau chaude vers les trois radiateurs. À chaque branche, l’eau se partage.' },
       { titre: 'Le radiateur donne sa chaleur à la pièce', piece: 'radA', voirDedans: true, actions: [['etat', 'normal']],
         vue: { azimut: 18, elevation: 10, zoom: 2.8, cible: [-130, 520, 110] },
         texte: 'L’eau entre chaude en haut du radiateur et ressort en bas, plus froide. La chaleur qu’elle a perdue part dans la pièce : ce sont les flèches orange.' },
       { titre: 'L’eau refroidie revient par le retour', piece: 'retour', voirDedans: true, actions: [['etat', 'normal']],
-        vue: { azimut: -6, elevation: 12, zoom: 1.7, cible: [-420, 400, 70] },
-        texte: 'Les deux branches se rejoignent dans le retour, repéré en bleu. C’est la même eau qui revient à la chaudière pour être réchauffée.' },
+        vue: { azimut: -6, elevation: 12, zoom: 1.0, cible: [-20, 400, 70] },
+        texte: 'Les trois branches se rejoignent dans le retour, repéré en bleu. C’est la même eau qui revient à la chaudière pour être réchauffée.' },
       { titre: 'Le circulateur fait tourner l’eau', piece: 'circulateur', voirDedans: true, actions: [['etat', 'normal']],
         vue: { azimut: 42, elevation: 24, zoom: 4, cible: [-640, 900, 130] },
         texte: 'La roue du circulateur pousse l’eau dans le départ. Il ne la chauffe pas, il la fait circuler. Essayez « Circulateur à l’arrêt » : l’eau s’arrête partout.' },
@@ -538,8 +553,8 @@
         vue: { azimut: -12, elevation: 8, zoom: 2.6, cible: [-1190, 700, 150] },
         texte: 'En chauffant, l’eau prend plus de place. Elle entre dans le vase et repousse la membrane, qui serre le gaz. Sans le vase, la pression monterait trop.' },
       { titre: 'Une branche reste froide', piece: 'vanneB', voirDedans: true, actions: [['etat', 'vanne-b']],
-        vue: { azimut: 14, elevation: 10, zoom: 2.4, cible: [330, 520, 100] },
-        texte: 'La vanne de la branche B est fermée : plus d’eau chaude dans le radiateur B. On le constate à la main : B est froid, A est chaud. Et sur la vanne : le volant est vissé, le chiffre est à 0.' }
+        vue: { azimut: 14, elevation: 10, zoom: 1.7, cible: [400, 520, 100] },
+        texte: 'La vanne de la branche B est fermée : plus d’eau chaude dans le radiateur B. On le constate à la main : B est froid, A et C sont chauds. Et sur la vanne : le volant est vissé, le chiffre est à 0.' }
     ];
 
     /* ================================================================ LES COMMANDES */
@@ -549,9 +564,9 @@
         ['reglage-b', 'Branche B mal réglée'], ['filtre', 'Filtre encrassé'], ['arret', 'Circulateur à l’arrêt']] }
     ];
 
-    const cadre = [chaudiere, vase, radB.g, radA.g, retour];
+    const cadre = [chaudiere, vase, radC.g, radB.g, radA.g, retour];
     const vueIni = Object.assign({ cadre, marge: 0.66 }, vueBase,
-      opts.depart === 'branche-froide' ? { cible: [60, 560, 100], zoom: 1.4, azimut: 14, elevation: 10 } : {});
+      opts.depart === 'branche-froide' ? { cible: [380, 560, 100], zoom: 0.95, azimut: 14, elevation: 10 } : {});
 
     return {
       racine, pieces, commandes, etapes,

@@ -122,7 +122,7 @@
     const C = (m, couleur) => { const c = K.propre(m); if (couleur !== undefined) c.color.setHex(couleur); c.side = T.DoubleSide; return c; };
     const peinture = C(M.fonte, 0xb5302a); peinture.roughness = 0.45;
     const dedans = C(M.fonte, 0xcfd2d6);
-    const pied = C(M.fonte, 0x2f353c);
+    const patte = C(M.acier, 0x5d6672), mur = C(M.fonte, 0xe6e2d8); mur.roughness = 0.9;
     const laiton = C(M.laiton), cuivre = C(M.cuivre), acier = C(M.acier, 0xd5dade);
     const noir = C(M.plastiqueNoir), caoutchouc = C(M.caoutchouc, 0x4a4f57), grip = C(M.plastiqueRouge);
 
@@ -144,7 +144,7 @@
     const PY = 60, GY = 134;                         /* axe de la tuyauterie ; centre des cadrans */
     const V_TOT = 18, VEAU0 = 2.16, DELTA = 4.5;     /* litres : cuve, eau à froid, eau en plus à chaud */
     const M_FROID = 1 - 2 * VEAU0 / V_TOT, M_CHAUD = 1 - 2 * (VEAU0 + DELTA) / V_TOT, M_PLAT = 0.03;
-    const pression = mm => { const vw = (1 - mm) * V_TOT / 2; return 2.2 * V_TOT / (V_TOT - vw) - 1; };  /* bar, précharge 1,2 bar */
+    const pression = mm => { const vw = (1 - mm) * V_TOT / 2; return 2.2 * (V_TOT - VEAU0) / (V_TOT - vw) - 1; };  /* bar : 1,2 à froid (comme la station), environ 2,1 à chaud */
 
     /* ================================================================ LA CUVE */
     const vase = new T.Group(); vase.position.y = Ye; racine.add(vase);
@@ -173,18 +173,19 @@
     /* le piquage du raccord : un manchon d'acier soudé au fond (filetage 3/4") */
     const piquage = O.anneauY(13.4, 9.6, 128 - Ye, 154 - Ye, acier, 32); peauBasse.add(piquage);
 
-    /* les pieds : trois tubes soudés sous la cuve, le vase tient debout tout seul */
-    const piedsG = new T.Group(); coqueBasse.add(piedsG);
-    [30, 150, 270].forEach(deg => {
-      const a = deg * D, cx = Math.cos(a), cz = Math.sin(a);
-      const A = new T.Vector3(cx * (Ro - 1), -70, cz * (Ro - 1)), F = new T.Vector3(cx * 195, -Ye + 3, cz * 195);
-      const dir = F.clone().sub(A), L = dir.length();
-      const tube = new T.Mesh(new T.CylinderGeometry(7, 7, L, 18), pied);
-      tube.position.copy(A).addScaledVector(dir, 0.5);
-      tube.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), dir.clone().normalize());
-      piedsG.add(tube);
-      const patin = O.cylY(16, -Ye, -Ye + 4, pied, 24); patin.position.x = F.x; patin.position.z = F.z; piedsG.add(patin);
-    });
+    /* le mur et la console : le vase est accroché, par l'arrière, à une patte d'acier vissée au mur.
+       Tout est en arrière du plan de coupe (z <= 0) : rien n'est coupé, rien ne gêne la vue. */
+    const ZM = -170;                                  /* face avant du mur */
+    const murG = new T.Group(); racine.add(murG);
+    murG.add(K.mesh(K.boite(560, 640, 30, 0.5), mur, 0, 310, ZM - 15));
+    const consoleG = new T.Group(); racine.add(consoleG);
+    consoleG.add(K.mesh(K.boite(380, 44, 5, 1), patte, 0, 291, ZM + 2.5));      /* la patte : un rail vissé au mur */
+    [-165, 165].forEach(x => { const vis = O.cylZ(6, ZM + 5, ZM + 9, acier, 6); vis.position.set(x, 291, 0); consoleG.add(vis); });
+    consoleG.add(K.mesh(K.boite(60, 44, 20, 1), patte, 0, 291, ZM + 15));       /* le bras vers la cuve */
+    const collier = new T.Mesh(new T.CylinderGeometry(Ro + 4, Ro + 4, 30, 40, 1, true, Math.PI - 0.9, 1.8), patte);
+    collier.position.y = 291; consoleG.add(collier);
+    /* deux supports sous le tube : il ne porte pas sur le vase */
+    [-150, 150].forEach(x => consoleG.add(K.mesh(K.boite(16, 5, 170, 0.5), patte, x, 46.5, ZM / 2)));
 
     /* la valve de gonflage, comme celle d'un pneu, et son capuchon */
     const valveG = new T.Group(); coqueHaute.add(valveG);
@@ -329,7 +330,7 @@
       E.coupe = on;
       const plan = on ? [new T.Plane(new T.Vector3(0, 0, -1), 0)] : null;
       const exclus = new Set();
-      [faces, thermo.g, mano.g, piedsG, ...flots.map(f => f.objet)].forEach(g => g.traverse(o => exclus.add(o)));
+      [faces, thermo.g, mano.g, ...flots.map(f => f.objet)].forEach(g => g.traverse(o => exclus.add(o)));
       racine.traverse(o => {
         if (!o.isMesh || exclus.has(o)) return;
         [o.material, o.userData.matAvantSurbrillance].forEach(mat => { if (mat) { mat.clippingPlanes = plan; mat.needsUpdate = true; } });
@@ -346,7 +347,8 @@
       { id: 'eau', nom: 'L’eau de l’installation', objets: [facesEau], desc: 'L’eau du chauffage, côté raccord. Elle est bleue quand elle est froide, rouge quand elle est chaude. Elle ne touche jamais le gaz.' },
       { id: 'valve', nom: 'La valve de gonflage', objets: [valveG, facesValve], desc: 'Comme sur un pneu : elle sert à gonfler le gaz et à contrôler sa pression. Son capuchon la protège. On n’y touche pas sans y être autorisé : la mesure demande de vider d’abord le côté eau.' },
       { id: 'raccord', nom: 'Le robinet et l’écrou du raccord', objets: [robinetG, facesRaccord], desc: 'Un robinet d’arrêt et un écrou. Robinet fermé, on peut vider le vase et le dévisser sans vider tout le chauffage.' },
-      { id: 'pieds', nom: 'Les trois pieds', objets: [piedsG], desc: 'Trois tubes soudés sous la cuve. Le vase tient debout sans peser sur la tuyauterie.' },
+      { id: 'console', nom: 'La console murale en acier', objets: [consoleG], desc: 'Une patte d’acier vissée dans le mur, avec un bras et un collier qui tiennent la cuve par l’arrière. Le vase est accroché au mur : il ne pèse pas sur la tuyauterie.' },
+      { id: 'mur', nom: 'Le mur', objets: [murG], desc: 'Le pan de mur qui porte le vase. Le raccord part du bas du vase : on le voit relié au tube de cuivre.' },
       { id: 'tuyauterie', nom: 'La tuyauterie et le té', objets: [tubeG, facesTube], desc: 'Un tube de cuivre de l’installation et un té en laiton. L’eau circule là, et le vase se branche sur le té.' },
       { id: 'manometre', nom: 'Le manomètre', objets: [mano.g], desc: 'Il donne la pression de l’eau, en bar. On y voit la pression monter quand l’eau chauffe. La zone rouge, c’est le seuil de la soupape.' },
       { id: 'thermometre', nom: 'Le thermomètre', objets: [thermo.g], desc: 'Il donne la température de l’eau, en degrés.' }
@@ -374,7 +376,7 @@
         vue: { azimut: 12, elevation: 12, zoom: 1.35, cible: [0, 245, 0] },
         texte: 'L’eau se resserre et ressort du vase. Le gaz se détend et repousse la membrane vers le fond : la pression redescend.' },
       { titre: 'Démonté : deux coques, une membrane, une valve', piece: 'coque', voirDedans: false, eclate: true, actions: [['phase', 'froid']],
-        texte: 'Robinet fermé et vase vidé, on dévisse l’écrou et on lève le vase. En usine, la membrane est prise entre deux coques soudées : ici on les écarte pour la voir.' }
+        texte: 'Robinet fermé et vase vidé, on dévisse l’écrou et on décroche le vase de sa console. En usine, la membrane est prise entre deux coques soudées : ici on les écarte pour la voir.' }
     ];
 
     const eclate = [
@@ -482,7 +484,7 @@
       caout: O.uni(0x2c3035),
       plast: O.uni(0x8c2f26),
       blanc: O.uni(0xc9c7c0),
-      eau: new T.MeshStandardMaterial({ color: 0x8fc3f0, roughness: 0.3, transparent: true, opacity: 0.68, depthWrite: false, side: T.DoubleSide })
+      eau: new T.MeshStandardMaterial({ color: 0xd9472b, roughness: 0.3, transparent: true, opacity: 0.68, depthWrite: false, side: T.DoubleSide })
     };
     const faces = new T.Group(); faces.visible = false; racine.add(faces);
     const grp = () => { const g = new T.Group(); faces.add(g); return g; };
@@ -508,14 +510,13 @@
     /* ================================================================ L'EAU QUI S'ÉCHAPPE */
     const V = (x, y, z) => new T.Vector3(x, y, z);
     const cFuite = new T.CatmullRomCurve3([V(0, 20, ZF), V(0, 33, ZF), V(8, 41, ZF), V(18, 48, ZF), V(46, 48, ZF), V(68, 48, ZF), V(75, 42, ZF), V(75, 0, ZF), V(75, -18, ZF), V(75, -46, ZF)], false, 'centripetal');
-    const fuite = K.courant(cFuite, { pas: 8, rayon: 2.4, couleur: 0x1f4f8f, vitesse: 90 });
+    const fuite = K.courant(cFuite, { pas: 8, rayon: 2.4, couleur: 0xd9472b, vitesse: 90 });
     fuite.objet.visible = false; racine.add(fuite.objet);
 
     /* ================================================================ L'ÉTAT */
     const E = { v: 80, phase: 'veille', coupe: false, demonte: false };
     let Pm = 80, mesuresTxt = '', rendreCoupe = false;
     const mob = K.mobile(0, 1100, 48);
-    const cBas = new T.Color(0x8fc3f0), cHaut = new T.Color(0x1f4f8f), cEau = new T.Color();
     const levee = v => v >= 100 ? 1.6 + Math.min(1, (v - 100) / 10) * (LEV_MAX - 1.6) : 0;
     const phraseEtat = () => E.v < 100
       ? '<strong>La soupape est fermée.</strong> Le ressort tient le clapet sur son siège : l’eau reste dans l’installation.'
@@ -530,7 +531,6 @@
       const l = mob.x;
       mobile.position.y = l; fMobile.position.y = l;
       ressort.position.y = 73 + l; ressort.longueur(Math.max(4, 23 - l));
-      cEau.copy(cBas).lerp(cHaut, K.clamp((Pm - 50) / 70, 0, 1)); H.eau.color.copy(cEau);
       mano.regler(SEUIL * Pm / 100);
       const ouverte = l > 0.3;
       fEauOuverte.visible = ouverte && E.coupe && !E.demonte;

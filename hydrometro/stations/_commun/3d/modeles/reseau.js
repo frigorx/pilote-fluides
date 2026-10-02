@@ -4,21 +4,22 @@
    ── pertesCharge ──────────────────────────────────────────────────────────────────────────
    Repère : un banc en L posé sur un panneau. L'eau entre à gauche (-X), suit un tube de cuivre droit,
    tourne dans un coude (en X = 0), puis file vers l'élève (+Z) : prise de pression, vanne à boule,
-   prise, filtre à tamis, prise, sortie. Cinq manomètres (cadran, bar) mesurent la pression à chaque
-   endroit : le 1er à l'entrée, le 2e après le tube droit, le 3e après le coude, le 4e après la vanne,
-   le 5e après le filtre.
+   prise, filtre à tamis en Y, prise, sortie. Cinq manomètres (cadran 0-2,5 bar) mesurent la pression à
+   chaque endroit : le 1er à l'entrée, le 2e après le tube droit, le 3e après le coude, le 4e après la
+   vanne, le 5e après le filtre.
 
    CE QUE L'ÉLÈVE DOIT VOIR : la pression BAISSE le long du trajet. Un peu dans le tube droit
    (perte régulière, le frottement), beaucoup à chaque obstacle (pertes singulières : coude, vanne,
    filtre). Plus de débit, bien plus de perte (à peu près le carré). Un filtre encrassé coûte très cher.
 
-   « Voir en coupe » tranche tout par le plan horizontal de l'axe des tubes (le dessus est retiré) :
-   on voit de dessus le tube, le coude, la boule percée de la vanne, le tamis ; les faces coupées sont
-   hachurées, l'eau est teintée (bleu foncé = pression forte, bleu clair = pression faible) et ses grains
-   vont plus vite dans les étranglements. Les manomètres restent entiers (on ne coupe pas un instrument).
+   « Voir en coupe » tranche les tubes, le coude et la vanne par le plan horizontal de l'axe (le dessus
+   est retiré) ; le FILTRE EN Y, lui, est coupé par le plan vertical de son axe (la moitié côté -X est
+   retirée) : c'est le seul moyen de voir l'eau traverser le tamis, dans la branche inclinée vers le bas.
+   Les faces coupées sont hachurées, l'eau est teintée (bleu foncé = pression forte, bleu clair = pression
+   faible) et ses grains vont plus vite dans les étranglements. Les manomètres restent entiers.
 
-   Valeurs d'EXEMPLE, comme celles de la station (Δp = K × Q², K en bar par (m³/h)²) : exagérées par
-   rapport à un banc réel pour que les aiguilles bougent à l'œil. À confirmer avec les relevés de l'atelier. */
+   Valeurs de la STATION (Δp = K × Q², perte en mCE, K en mCE par (m³/h)²) : 2 mCE à 2 m³/h, et pour la
+   vanne k = 0,2 + 4 × (fermeture)². Les cadrans restent gradués en bar (1 bar ≈ 10,2 mCE). */
 (() => {
   'use strict';
   if (!window.Electro3D) return;
@@ -110,7 +111,7 @@
       for (let k = 0; k <= n; k++) {
         const v = k * mineur, grand = k % kM === 0, p0 = pt(v, 100), p1 = pt(v, grand ? 80 : 90);
         g.strokeStyle = '#1f2933'; g.lineWidth = grand ? 4 : 2; g.beginPath(); g.moveTo(p0[0], p0[1]); g.lineTo(p1[0], p1[1]); g.stroke();
-        if (grand) { const q = pt(v, 62); g.fillText(String(Math.round(v * 100) / 100), q[0], q[1]); }
+        if (grand) { const q = pt(v, 62); g.fillText(String(Math.round(v * 100) / 100).replace('.', ','), q[0], q[1]); }
       }
       g.font = '800 30px Calibri, "Segoe UI", Arial, sans-serif'; g.fillText(unite, cx, cy + 56);
       const t = new T.CanvasTexture(c); t.colorSpace = T.SRGBColorSpace; t.anisotropy = 4;
@@ -144,8 +145,16 @@
     const X0 = -435;                          /* début du tube (entrée, côté union) */
     const XG1 = -355, XG2 = -105;             /* prises 1 et 2, sur le tube droit */
     const ZG3 = 100, ZV = 180, ZG4 = 240, ZF = 350, ZG5 = 450, ZU = 475;
-    const Y_PAN = -52;                        /* dessus du panneau */
-    const P0 = 5.0;                           /* pression d'entrée, bar */
+    const Y_PAN = -130;                       /* dessus du panneau : le banc est sur des colliers hauts, pour que le bouchon et le tamis sortent vers le bas */
+    const P0 = 2.3;                           /* pression d'entrée, bar (cadran 0-2,5 bar) */
+    const MCE = 10.2;                         /* 1 bar ≈ 10,2 mCE */
+    const c45 = Math.SQRT1_2;
+    /* le filtre en Y : le repère de la branche a son axe Y le long de la branche (inclinée à 45° vers le bas,
+       dans le sens de l'eau) ; « a » = distance sur l'axe de la branche depuis l'axe du tube, « r » = écart en travers */
+    const Y_AM = 3, Y_AW = 4, Y_S0 = Y_AM + Y_AW;      /* épaulement : de 3 à 7 ; le tamis commence à 7 */
+    const Y_S1 = 44, Y_CAP = 52;                        /* fond du tamis ; début du bouchon */
+    const Y_RSI = 10, Y_RSE = 12, Y_RCH = 16.5, Y_RBO = 21, Y_RH = 19;   /* tamis (int., ext.), chambre, fût, moyeu */
+    const PRISE_W = -4;                                 /* les grains passent un peu devant le plan de coupe du filtre */
     const COUDE_LONG = RC * Math.PI / 2;
 
     /* ---------------------------------------------------------------- matières */
@@ -160,7 +169,7 @@
       const c = document.createElement('canvas'); c.width = c.height = 16;
       const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, 16, 16);
       x.fillStyle = '#000'; x.beginPath(); x.arc(8, 8, 4.2, 0, Math.PI * 2); x.fill();
-      const t = new T.CanvasTexture(c); t.wrapS = t.wrapT = T.RepeatWrapping; t.repeat.set(52, 22); return t;
+      const t = new T.CanvasTexture(c); t.wrapS = t.wrapT = T.RepeatWrapping; t.repeat.set(24, 9); return t;
     })();
     const tamisMat = new T.MeshStandardMaterial({ color: 0xc9d0d8, metalness: 0.8, roughness: 0.4, alphaMap: alphaTamis, alphaTest: 0.5, side: T.DoubleSide });
 
@@ -175,20 +184,20 @@
     support.add(K.mesh(K.boite(665, 16, 685, 4), panneauMat, -207.5, Y_PAN - 8, 257.5));
     const collier = (axe, p) => {
       const g = new T.Group();
-      g.add(K.mesh(K.boite(axe === 'x' ? 26 : 30, 37, axe === 'x' ? 30 : 26, 2), grisColl, 0, -33.5, 0));
+      g.add(K.mesh(K.boite(axe === 'x' ? 26 : 30, -15 - Y_PAN, axe === 'x' ? 30 : 26, 2), grisColl, 0, (-15 + Y_PAN) / 2, 0));
       const s = axe === 'x' ? A.anneauX(17, 14.4, -4, 4, zingue, 32) : A.anneauZ(17, 14.4, -4, 4, zingue, 32);
       g.add(s);
       if (axe === 'x') g.position.set(p, 0, 0); else g.position.set(CX, 0, p);
       return g;
     };
     [-250, -35].forEach(x => support.add(collier('x', x)));
-    [115, 268, 430].forEach(z => support.add(collier('z', z)));
+    [115, 268, 466].forEach(z => support.add(collier('z', z)));
     racine.add(support);
 
     /* ================================================================ LES TUBES (régulière) */
     const tubes = new T.Group();
     tubes.add(tubeX(X0, 0, cuivre));
-    tubes.add(tubeZ(RC, ZV - 28, cuivre), tubeZ(ZV + 28, ZF - 46, cuivre), tubeZ(ZF + 46, ZU + 10, cuivre));
+    tubes.add(tubeZ(RC, ZV - 28, cuivre), tubeZ(ZV + 28, ZF - 64, cuivre), tubeZ(ZF + 64, ZU + 10, cuivre));
     racine.add(tubes);
 
     /* ================================================================ LE COUDE (singulière) */
@@ -245,38 +254,43 @@
     poignee.add(K.mesh(K.boite(19, 9, 80, 3), rouge, 0, 49.5, 62));
     poignee.add(A.hexY(7.5, 0, 51.5, 58, zingue));
 
-    /* ================================================================ LE FILTRE À TAMIS */
+    /* ================================================================ LE FILTRE À TAMIS EN Y
+       Un corps de laiton en Y : le tube le traverse, une branche part à 45° vers le bas dans le sens de l'eau.
+       Dans la branche : le tamis (un tube percé, ouvert côté entrée, fermé au fond) et, au bout, le bouchon de
+       nettoyage. L'eau entre dans le tamis, le traverse de l'intérieur vers l'extérieur, remonte autour et sort. */
     const filtre = new T.Group(); filtre.position.set(CX, 0, ZF); racine.add(filtre);
-    const couvercle = new T.Group(); couvercle.position.set(CX, 0, ZF); racine.add(couvercle);
-    const panier = new T.Group(); panier.position.set(CX, 0, ZF); racine.add(panier);
-    const RF_I = 38, RF_E = 44, RP_I = 24.5, RP_E = 26;
+    const tamis = new T.Group(); tamis.position.set(CX, 0, ZF); tamis.rotation.x = 135 * D; racine.add(tamis);
+    const bouchon = new T.Group(); bouchon.position.set(CX, 0, ZF); bouchon.rotation.x = 135 * D; racine.add(bouchon);
     {
-      filtre.add(A.anneauY(RF_E, RF_I, -46, 34, bronze, 56));
-      filtre.add(A.cylY(RF_E, -46, -40, bronze, 56));
+      filtre.add(A.anneauZ(Y_RH, RI, -36, 36, bronze, 48));
       [-1, 1].forEach(s => {
         filtre.add(A.anneauZ(18, 14, s > 0 ? 36 : -64, s > 0 ? 64 : -36, bronze, 28));
         filtre.add(A.anneauZ(20.5, 18, s > 0 ? 52 : -64, s > 0 ? 64 : -52, bronze, 6));
       });
-      couvercle.add(A.cylY(50, 34, 46, bronze, 56), A.cylY(14, 46, 52, bronze, 28));
-      for (let i = 0; i < 6; i++) { const a = i * 60 * D, v = K.vis(3.8, { croix: false, matiere: zingue }); v.position.set(Math.cos(a) * 41, 46, Math.sin(a) * 41); couvercle.add(v); }
-      /* le panier : tôle perforée ouverte du côté de l'entrée (-Z), fond plein, collerette en haut */
-      const prof = [new T.Vector2(RP_I, -34), new T.Vector2(RP_E, -34), new T.Vector2(RP_E, 32), new T.Vector2(RP_I, 32), new T.Vector2(RP_I, -34)];
-      panier.add(new T.Mesh(new T.LatheGeometry(prof, 56, -149 * D, 298 * D), tamisMat));
-      panier.add(A.cylY(RP_E, -36, -34, inox, 48), A.anneauY(36, RP_I, 30, 34, inox, 56));
+      /* la branche (repère tourné : Y le long de la branche) : fût, épaulement où le tamis prend appui */
+      const boss = new T.Group(); boss.rotation.x = 135 * D; filtre.add(boss);
+      boss.add(A.anneauY(Y_RBO, Y_RCH, 14, Y_CAP, bronze, 40), A.anneauY(Y_RCH, Y_RSI, Y_AM, Y_S0, bronze, 40));
+      /* le tamis : tôle perforée, collerette, fond plein */
+      const g = new T.CylinderGeometry((Y_RSI + Y_RSE) / 2, (Y_RSI + Y_RSE) / 2, Y_S1 - Y_S0, 40, 1, true);
+      const m = new T.Mesh(g, tamisMat); m.position.y = (Y_S0 + Y_S1) / 2; tamis.add(m);
+      tamis.add(A.anneauY(Y_RCH, Y_RSI, Y_S0, Y_S0 + 3, inox, 40), A.cylY(Y_RSE, Y_S1, Y_S1 + 2, inox, 40));
+      /* le bouchon de nettoyage : tête ronde (plus large que la branche), gradin, écrou six pans */
+      bouchon.add(A.cylY(22, Y_CAP, Y_CAP + 4, bronze, 40), A.cylY(19, Y_CAP + 4, Y_CAP + 6.5, bronze, 40), A.hexY(11, 0, Y_CAP + 6.5, Y_CAP + 10, bronze));
     }
-    /* les saletés : des petits cailloux bruns collés au tamis, du côté où le jet arrive (visibles si encrassé) */
-    const saletes = new T.Group(); panier.add(saletes);
+    /* les saletés : des petits cailloux bruns collés à l'intérieur du tamis (visibles quand le filtre est démonté) */
+    const saletes = new T.Group(); tamis.add(saletes);
     {
       let g = 7;
       const alea = () => { g = (g * 16807) % 2147483647; return g / 2147483647; };
       for (let i = 0; i < 26; i++) {
-        const th = (38 + alea() * 104) * D, r = 22.8 - alea() * 3, y = -3 - alea() * 28, s = 2.6 + alea() * 2.4;
+        const th = alea() * 2 * Math.PI, r = Y_RSI - 1.3 - alea() * 1.2, a = 14 + alea() * (Y_S1 - 18), s = 1.5 + alea() * 1.3;
         const m = new T.Mesh(new T.IcosahedronGeometry(s, 0), boue);
-        m.position.set(Math.cos(th) * r, y, Math.sin(th) * r); m.rotation.set(alea() * 3, alea() * 3, alea() * 3);
+        m.position.set(Math.cos(th) * r, a, Math.sin(th) * r); m.rotation.set(alea() * 3, alea() * 3, alea() * 3);
         m.scale.set(1, 0.7 + alea() * 0.5, 1); m.userData.sansOmbre = true; m.castShadow = false;
         saletes.add(m);
       }
     }
+
 
     /* ================================================================ LES PRISES ET LES MANOMÈTRES */
     const prises = new T.Group(), jauges = new T.Group();
@@ -290,7 +304,7 @@
       g.add(A.cylZ(9, 12.5, 20, laiton, 24), A.anneauZ(6, 3.5, 20, 38, laiton, 20));
       prises.add(g);
       const jg = new T.Group(); jg.position.set(p.px, 0, p.pz); jg.rotation.y = p.o;
-      const j = A.jauge({ acier: inox, noir }, 6, 1, 0.2, 'bar', [5.5, 6]);
+      const j = A.jauge({ acier: inox, noir }, 2.5, 0.5, 0.1, 'bar');
       j.g.scale.setScalar(1.3); j.g.position.z = 38 + 9 * 1.3; jg.add(j.g);
       jauges.add(jg); p.regler = j.regler;
       p.tr = (lx, lz) => p.o === 0 ? [p.px + lx, p.pz + lz] : [p.px + lz, p.pz - lx];
@@ -305,8 +319,8 @@
       inox: A.hachures('#2f3944', '#0d1217', 2.4),
       cuivre: A.uni(0xb8683c, { metalness: 0.3, roughness: 0.5 }),
       ptfe: A.uni(0xf1efe8),
-      tamis: A.damier('#a9b3be', '#3a4551', 1.2),
-      boue: A.uni(0x6d4b2c, { transparent: true, opacity: 1 })
+      tamis: A.damier('#c4ccd6', '#2e3742', 3),
+      boue: new T.MeshBasicMaterial({ color: 0x8a5a2b, transparent: true, opacity: 1, side: T.DoubleSide, toneMapped: false })
     };
     const faces = new T.Group(); faces.visible = false; racine.add(faces);
     const grp = (parent) => { const g = new T.Group(); (parent || faces).add(g); return g; };
@@ -321,7 +335,7 @@
       coupe(X0, 0, [XG1, XG2]).forEach(([a, b]) => strips.push(R(a, b, RI, RE)));
       strips.push(R(X0, 0, -RE, -RI));
       /* tubes d'après : côté +X interrompu en G3, G4, G5 */
-      [[RC, ZV - 28, [ZG3]], [ZV + 28, ZF - 46, [ZG4]], [ZF + 46, ZU + 10, [ZG5]]].forEach(([a, b, t]) => {
+      [[RC, ZV - 28, [ZG3]], [ZV + 28, ZF - 64, [ZG4]], [ZF + 64, ZU + 10, [ZG5]]].forEach(([a, b, t]) => {
         coupe(a, b, t).forEach(([u, w]) => strips.push(R(CX + RI, CX + RE, u, w)));
         strips.push(R(CX - RE, CX - RI, a, b));
       });
@@ -365,19 +379,43 @@
       };
       A.faceDe([cap(1), cap(-1)], H.inox, 0.16, facesBille);
     }
-    /* le filtre : paroi, manchons, conduit d'entrée, tamis, gâteau de saletés (repère local, centré sur le filtre) */
+    /* le filtre en Y : coupe VERTICALE par l'axe (plan x = CX, vu depuis -X : l'eau va de gauche à droite).
+       Polygones dessinés dans le repère local du filtre : (z le long du tube, y vers le haut). On les empile vers
+       la caméra (x de plus en plus négatif) : corps, eau d'après le tamis, eau d'avant, pièces, saletés. */
     const facesFiltre = new T.Group(); facesFiltre.position.set(CX, 0, ZF); faces.add(facesFiltre);
-    const facesCorpsF = grp(facesFiltre), facesPanier = grp(facesFiltre);
-    const ZI = -Math.sqrt(RP_I * RP_I - RI * RI);      /* où le panier rencontre le conduit : -21,07 */
+    const faceV = (polys, mat, couche) => {
+      const g = new T.ShapeGeometry(polys.map(p => new T.Shape(p.map(q => new T.Vector2(q[0], q[1])))));
+      g.rotateY(-Math.PI / 2);
+      const m = new T.Mesh(g, mat); m.position.x = -0.05 * couche; m.userData.sansOmbre = true; m.castShadow = false;
+      if (mat.transparent) m.userData.voile = true;
+      facesFiltre.add(m); return m;
+    };
+    const br = (a, r) => [c45 * (a + r), c45 * (r - a)];                       /* repère de la branche → (z, y) */
+    const brR = (a0, a1, r0, r1) => [br(a0, r0), br(a1, r0), br(a1, r1), br(a0, r1)];
+    const zyR = (z0, z1, y0, y1) => [[z0, y0], [z1, y0], [z1, y1], [z0, y1]];
+    const zL = Y_AM / c45;                                                     /* où l'épaulement coupe le tube : z - y = 4,24 */
+    let eauApresF, eauAvantF;
     {
-      A.faceDe([A.arc(0, 0, RF_I, RF_E, -70.8, 70.8), A.arc(0, 0, RF_I, RF_E, 109.2, 250.8)], H.bronze, 0.12, facesCorpsF);
-      const man = [...S(14, 18, 36, 64), ...S(14, 18, -64, -36), ...S(RI, 14, 36, 46), ...S(RI, 14, -46, -36), ...S(RI, 14, -36, ZI)];
-      A.faceDe(man, H.bronze, 0.12, facesCorpsF);
-      A.faceDe([...S(RI, RE, 46, 64), ...S(RI, RE, -64, -46)], H.cuivre, 0.14, facesCorpsF);
-      A.faceDe([A.arc(0, 0, RP_I, RP_E, -59.3, 239.3)], H.tamis, 0.14, facesPanier);
+      faceV([zyR(-36, 36, -Y_RH, Y_RH), zyR(36, 64, -18, 18), zyR(-64, -36, -18, 18), zyR(52, 64, 18, 20.5), zyR(52, 64, -20.5, -18),
+        zyR(-64, -52, 18, 20.5), zyR(-64, -52, -20.5, -18), brR(0, Y_CAP, -Y_RBO, Y_RBO)], H.bronze, 1);
+      const eau = (couleur, polys, couche) => {
+        const m = faceV(polys, new T.MeshBasicMaterial({ color: couleur, toneMapped: false, side: T.DoubleSide }), couche); return m;
+      };
+      eauApresF = eau(0x9ccbf2, [zyR(-64, 64, -RI, RI), brR(Y_S0, Y_CAP, -Y_RCH, Y_RCH)], 2);
+      eauAvantF = eau(0x2c6fc2, [[[-64, -RI], [zL - RI, -RI], [zL + RI, RI], [-64, RI]], brR(Y_AM, Y_S1, -Y_RSI, Y_RSI)], 3);
+      faceV([brR(Y_AM, Y_S0, Y_RSI, 26), brR(Y_AM, Y_S0, -Y_RBO, -Y_RSI)], H.bronze, 4);
+      faceV([brR(Y_S0, Y_S0 + 3, Y_RSE, Y_RCH), brR(Y_S0, Y_S0 + 3, -Y_RCH, -Y_RSE), brR(Y_S1, Y_S1 + 2, -Y_RSE, Y_RSE)], H.inox, 4);
+      faceV([brR(Y_S0, Y_S1, Y_RSI, Y_RSE), brR(Y_S0, Y_S1, -Y_RSE, -Y_RSI)], H.tamis, 4);
+      faceV([brR(Y_CAP, Y_CAP + 4, -22, 22), brR(Y_CAP + 4, Y_CAP + 6.5, -19, 19), brR(Y_CAP + 6.5, Y_CAP + 10, -9.5, 9.5)], H.laiton, 4);
+      faceV([zyR(46, 64, RI, RE), zyR(46, 64, -RE, -RI), zyR(-64, -46, RI, RE), zyR(-64, -46, -RE, -RI)], H.cuivre, 4);
     }
-    const facesBoue = grp(facesFiltre); facesBoue.visible = false;
-    A.faceDe([A.arc(0, 0, 20.5, RP_I, 40, 140)], H.boue, 0.18, facesBoue);
+    const facesBoue = new T.Group(); facesBoue.visible = false; facesFiltre.add(facesBoue);
+    {
+      const g = new T.ShapeGeometry([brR(Y_S0 + 3, Y_S1, 7.8, Y_RSI), brR(Y_S0 + 3, Y_S1, -Y_RSI, -7.8), brR(Y_S1 - 2.2, Y_S1, -7.8, 7.8)].map(p => new T.Shape(p.map(q => new T.Vector2(q[0], q[1])))));
+      g.rotateY(-Math.PI / 2);
+      const m = new T.Mesh(g, H.boue); m.position.x = -0.25; m.userData.sansOmbre = true; m.userData.voile = true; m.castShadow = false;
+      facesBoue.add(m);
+    }
     /* les prises : parois (laiton) */
     const facesPrises = grp();
     {
@@ -396,9 +434,11 @@
     };
     const E = { q: 2, c: 20, d: 0, coupe: false, demonte: false };
     const cur = { q: 2, c: 20, d: 0 };
+    /* pertes en mCE (modèle de la station : Δp = K × Q²) : tube 0,03 · coude 0,05 · vanne 0,2 + 4 × fermeture² · filtre 0,06 propre, 0,40 encrassé.
+       À 2 m³/h, vanne à 20 %, filtre propre : 2,00 mCE en tout, comme la station. Les cadrans lisent des bar (÷ 10,2). */
     const chutes = (q, c, d) => {
-      let dt = 0.03 * q * q, dc = 0.06 * q * q, dv = (0.04 + 0.2 * Math.pow(c / 90, 2)) * q * q, df = (0.06 + 0.24 * d) * q * q;
-      const tot = dt + dc + dv + df, lim = P0 - 0.3;
+      let dt = 0.03 * q * q, dc = 0.05 * q * q, dv = (0.2 + 4 * Math.pow(c / 100, 2)) * q * q, df = (0.06 + 0.34 * d) * q * q;
+      const tot = dt + dc + dv + df, lim = (P0 - 0.3) * MCE;
       if (tot > lim) { const k = lim / tot; dt *= k; dc *= k; dv *= k; df *= k; }
       return { dt, dc, dv, df, tot: dt + dc + dv + df };
     };
@@ -411,9 +451,9 @@
     let pAprVanne = P0, pAprFiltre = P0;      /* pression juste avant et juste après le tamis */
     const majNoeuds = () => {
       const f = chutes(cur.q, cur.c, cur.d);
-      const p1 = P0 - f.dt, p2 = p1 - f.dc, p3 = p2 - f.dv, p4 = p3 - f.df;
+      const p1 = P0 - f.dt / MCE, p2 = p1 - f.dc / MCE, p3 = p2 - f.dv / MCE, p4 = p3 - f.df / MCE;
       noeuds = [[0, P0], [XG1 - X0, P0], [XG2 - X0, p1], [-X0, p1], [-X0 + COUDE_LONG, p2],
-        [sLeg2(ZV - 22), p2], [sLeg2(ZV + 22), p3], [sLeg2(ZF - 60), p3], [sLeg2(ZF + 60), p4], [sLeg2(ZU + 10), p4]];
+        [sLeg2(ZV - 22), p2], [sLeg2(ZV + 22), p3], [sLeg2(ZF - 64), p3], [sLeg2(ZF + 64), p4], [sLeg2(ZU + 10), p4]];
       pAprVanne = p3; pAprFiltre = p4;
       return f;
     };
@@ -448,31 +488,14 @@
       for (let i = 0; i <= 28; i++) { const a = b0 + (2 * Math.PI - 2 * b0) * i / 28; p.push([CX + RCH * Math.cos(a), ZV + RCH * Math.sin(a)]); }
       addCell(p, pAt);
     }
-    rectCells(CX - RI, CX + RI, ZV + 28, ZF - 46, pAt, 'z', []);
-    /* le filtre : avant le tamis (dans le panier et son conduit) et après (autour, et la sortie) */
-    {
-      const a = [[CX + RI, ZF - 46], [CX + RI, ZF + ZI]];
-      for (let i = 0; i <= 40; i++) { const t = (-59.3 + (239.3 + 59.3) * i / 40) * D; a.push([CX + RP_I * Math.cos(t), ZF + RP_I * Math.sin(t)]); }
-      a.push([CX - RI, ZF + ZI], [CX - RI, ZF - 46]);
-      addCell(a, pConst(() => pAprVanne));
-      const yO = Math.sqrt(RF_I * RF_I - 14 * 14), yI = Math.sqrt(RP_E * RP_E - 14 * 14), th = ang => ang * D;
-      const o0 = -Math.acos(14 / RF_I) / D, o1 = Math.asin(RI / RF_I) / D;                 /* -68,4 ; 19,2 → 70,8 = 90 - 19,2 */
-      const b = [[CX + 14, ZF - yI], [CX + 14, ZF - yO]];
-      for (let i = 0; i <= 24; i++) { const t = th(o0 + (70.8 - o0) * i / 24); b.push([CX + RF_I * Math.cos(t), ZF + RF_I * Math.sin(t)]); }
-      b.push([CX + RI, ZF + 46], [CX - RI, ZF + 46]);
-      for (let i = 0; i <= 24; i++) { const t = th(109.2 + (248.4 - 109.2) * i / 24); b.push([CX + RF_I * Math.cos(t), ZF + RF_I * Math.sin(t)]); }
-      b.push([CX - 14, ZF - yI]);
-      for (let i = 0; i <= 40; i++) { const t = th(237.4 + (-57.4 - 237.4) * i / 40); b.push([CX + RP_E * Math.cos(t), ZF + RP_E * Math.sin(t)]); }
-      void o1;
-      addCell(b, pConst(() => pAprFiltre));
-    }
-    rectCells(CX - RI, CX + RI, ZF + 46, ZU + 10, pAt, 'z', []);
+    rectCells(CX - RI, CX + RI, ZV + 28, ZF - 64, pAt, 'z', []);
+    rectCells(CX - RI, CX + RI, ZF + 64, ZU + 10, pAt, 'z', []);
     /* les canaux des prises */
     PRISES.forEach(p => addCell([[-3.5, 12.5], [3.5, 12.5], [3.5, 38], [-3.5, 38]].map(q => p.tr(q[0], q[1])), pConst(() => pTap(p))));
 
     /* l'eau (la coupe) : bleu moyen clair → bleu soutenu ; les grains, plus sombres, pour qu'on les suive */
-    const cClair = new T.Color(0x9ccbf2), cMarine = new T.Color(0x2c6fc2), gClair = new T.Color(0xeaf5ff), gMarine = new T.Color(0x0c2a5e), cTmp = new T.Color();
-    const tP = p => clamp((p - (P0 - 3)) / 3, 0, 1);
+    const cClair = new T.Color(0xb4dcf7), cMarine = new T.Color(0x1f58a8), gClair = new T.Color(0xeaf5ff), gMarine = new T.Color(0x0c2a5e), cTmp = new T.Color();
+    const tP = p => clamp((p - (P0 - 0.5)) / 0.5, 0, 1);      /* 0,5 bar d'écart = toute l'échelle des bleus */
     const couleurP = p => cTmp.copy(cClair).lerp(cMarine, tP(p));
     const couleurG = p => cTmp.copy(gClair).lerp(gMarine, tP(p));
     let eauMesh = null, eauXZ = null, eauPf = null, eauCol = null;
@@ -498,12 +521,13 @@
       const { xs, zs } = eauXZ;
       for (let i = 0; i < xs.length; i++) { const c = couleurP(eauPf[i](xs[i], zs[i])); eauCol.setXYZ(i, c.r, c.g, c.b); }
       eauCol.needsUpdate = true;
+      eauAvantF.material.color.copy(couleurP(pAprVanne)); eauApresF.material.color.copy(couleurP(pAprFiltre));
     };
 
     /* ================================================================ LES GRAINS D'EAU
        Trois files de grains suivent le trajet : le tube, le coude, la vanne (dans le trou de la boule,
        à l'angle réel), le filtre (à travers le tamis). Ils vont plus vite là où le passage se rétrécit. */
-    const LANES = [{ a: 6, psi: 160 }, { a: 0, psi: 100 }, { a: -6, psi: 20 }];
+    const LANES = [{ a: 6, ex: 0 }, { a: 0, ex: 1 }, { a: -6, ex: 2 }];
     const NG = 40, NT = LANES.length * NG, YG = -3.5;
     const thetaBille = () => 0.689 * cur.c * D;        /* 90 % de fermeture : 62 °, où le trou ne laisse plus qu'un filet */
     const trajet = (l) => {
@@ -514,12 +538,16 @@
       pts.push(V(CX - a, YG, 115), V(CX - a, YG, ZV - 42));
       const tb = thetaBille(), sn = Math.sin(tb), cs = Math.cos(tb);
       pts.push(V(CX - a * 0.6, YG, ZV - 28), V(CX - 9 * sn, YG, ZV - 11 * cs), V(CX + 9 * sn, YG, ZV + 11 * cs), V(CX - a * 0.6, YG, ZV + 28));
-      pts.push(V(CX - a, YG, ZV + 50), V(CX - a, YG, ZF - 70), V(CX - a * 0.7, YG, ZF - 44), V(CX - a * 0.4, YG, ZF - 30));
-      const cp = Math.cos(l.psi * D), sp = Math.sin(l.psi * D);
-      pts.push(V(CX + 10 * cp, YG, ZF + 10 * sp), V(CX + 20 * cp, YG, ZF + 20 * sp), V(CX + 31 * cp, YG, ZF + 31 * sp));
-      const n = Math.max(1, Math.round(Math.abs(l.psi - 90) / 20));
-      for (let i = 1; i <= n; i++) { const t = (l.psi + (90 - l.psi) * i / n) * D; pts.push(V(CX + 32 * Math.cos(t), YG, ZF + 32 * Math.sin(t))); }
-      pts.push(V(CX - a * 0.4, YG, ZF + 46), V(CX - a, YG, ZF + 75), V(CX - a, YG, ZU + 20));
+      pts.push(V(CX - a, YG, ZV + 50), V(CX - a, YG, ZF - 82));
+      /* dans le filtre : les grains passent un peu devant le plan de coupe, dans le plan de l'axe (z, y) */
+      const W = (z, y) => V(CX + PRISE_W, y, ZF + z);
+      const P = (aa, rr) => { const q = br(aa, rr); return W(q[0], q[1]); };
+      const rho = a, yl = rho - 3;
+      pts.push(W(-60, yl), W(-30, yl));
+      if (l.ex === 0) pts.push(P(9, rho), P(16, rho), P(20, 8), P(20.5, 14.5), W(31, -1), W(50, yl));
+      else if (l.ex === 1) pts.push(P(10, rho), P(22, rho), P(30, 8), P(31, 14.5), W(42, -3), W(52, yl));
+      else pts.push(P(10, rho), P(24, rho), P(33, -9), P(36, -14.3), P(47, -14), P(49, -8), P(49, 4), P(47.5, 12), P(38, 14), P(26, 14.5), W(40, -3), W(52, yl));
+      pts.push(V(CX - a * 0.5, YG, ZF + 80), V(CX - a, YG, ZU + 20));
       return new T.CatmullRomCurve3(pts, false, 'centripetal');
     };
     let courbes = [], longueurs = [];
@@ -528,13 +556,14 @@
     grains.userData.sansOmbre = true; grains.castShadow = false; grains.frustumCulled = false; grains.visible = false;
     racine.add(grains);
     const U = new Float32Array(NT); for (let i = 0; i < NT; i++) U[i] = ((i % NG) + 0.35 * Math.floor(i / NG)) / NG;
+    const dansFiltre = p => Math.abs(p.z - ZF) < 64 && Math.abs(p.x - CX) < 12;
+    const brAR = p => { const z = p.z - ZF; return [c45 * (z - p.y), c45 * (z + p.y)]; };      /* (a, r) dans le repère de la branche */
     const mult = p => {
       let m = 1;
       const dv = Math.hypot(p.x - CX, p.z - ZV);
       const kv = 1 + 5 * Math.pow(cur.c / 90, 2);
       m += (kv - 1) * Math.exp(-Math.pow(dv / 17, 2));
-      const rf = Math.hypot(p.x - CX, p.z - ZF);
-      if (rf < RF_I + 2) { m = 0.7; if (rf > 24 && rf < 28.5) m = 1 + 1.6 * cur.d; }
+      if (dansFiltre(p)) { m = 0.7; const [a, r] = brAR(p); if (a > Y_S0 && a < Y_S1 && Math.abs(r) > 8.5 && Math.abs(r) < 13.5) m = 1.5; }
       return m;
     };
     const posG = V(0, 0, 0), m4 = new T.Matrix4(), qI = new T.Quaternion(), scG = new T.Vector3(), coG = new T.Color();
@@ -547,11 +576,10 @@
           let u = U[k]; u -= Math.floor(u);
           c.getPointAt(u, posG);
           u += v0 * mult(posG) * dt / L; U[k] = u - Math.floor(u);
-          scG.setScalar(Math.min(1, u / 0.015, (1 - u) / 0.015));
+          scG.setScalar(Math.min(1, u / 0.015, (1 - u) / 0.015) * (dansFiltre(posG) ? 0.65 : 1));
           m4.compose(posG, qI, scG); grains.setMatrixAt(k, m4);
-          const rf = Math.hypot(posG.x - CX, posG.z - ZF);
           let pp;
-          if (rf < RF_I + 2) { const avant = rf < RP_E - 0.5 || (posG.z < ZF + ZI + 2 && Math.abs(posG.x - CX) < 14); pp = avant ? pAprVanne : pAprFiltre; }
+          if (dansFiltre(posG)) { const [a, r] = brAR(posG); const avant = a < Y_AM + 0.5 || (a < Y_S1 + 1 && Math.abs(r) < Y_RSE - 0.6); pp = avant ? pAprVanne : pAprFiltre; }
           else pp = pAt(posG.x, posG.z);
           coG.copy(couleurG(pp)); grains.setColorAt(k, coG);
         }
@@ -561,43 +589,50 @@
 
     /* ================================================================ L'ÉTAT : débit, fermeture et encrassement gouvernent tout */
     let tbPrec = -1;
+    /* les cailloux ne se montrent que filtre démonté ou fermé : en coupe, la face de coupe porte le gâteau de saletés */
+    const majSaletes = () => { saletes.visible = cur.d > 0.02 && !(E.coupe && !E.demonte); };
     const aiguilles = () => PRISES.forEach(p => p.regler(pTap(p)));
     const appliquer = () => {
       majNoeuds();
       aiguilles();
       const tb = thetaBille();
       bille.rotation.y = tb; facesBille.rotation.y = tb; poignee.rotation.y = tb;
-      saletes.scale.setScalar(Math.max(0.001, cur.d)); saletes.visible = cur.d > 0.02;
+      saletes.scale.setScalar(Math.max(0.001, cur.d)); majSaletes();
       facesBoue.visible = cur.d > 0.02; H.boue.opacity = cur.d;
       recolorerEau();
       if (Math.abs(tb - tbPrec) > 1e-4 || !courbes.length) { majTrajets(); tbPrec = tb; }
     };
     const majTexte = () => {
-      const f = chutes(E.q, E.c, E.d), pf = P0 - f.tot;
+      const f = chutes(E.q, E.c, E.d);
       const plus = [['le tube droit', f.dt], ['le coude', f.dc], ['la vanne', f.dv], ['le filtre', f.df]].sort((u, v) => v[1] - u[1])[0];
       ctx.mesures([
         { libelle: 'Le débit', valeur: nb(E.q, 1) + ' m³/h' },
-        { libelle: 'La pression perdue sur tout le banc', valeur: nb(f.tot, 2) + ' bar' },
-        { libelle: 'Ce qui freine le plus', valeur: plus[0][0].toUpperCase() + plus[0].slice(1) + ' (' + nb(plus[1], 2) + ' bar)' }
+        { libelle: 'La perte de charge du banc', valeur: nb(f.tot, 2) + ' mCE' },
+        { libelle: 'Ce qui freine le plus', valeur: plus[0][0].toUpperCase() + plus[0].slice(1) + ' (' + nb(plus[1], 2) + ' mCE)' }
       ]);
-      ctx.dire('<strong>Débit ' + nb(E.q, 1) + ' m³/h.</strong> La pression passe de ' + nb(P0, 2) + ' bar à l’entrée à ' + nb(pf, 2) + ' bar à la sortie. '
-        + 'Le tube droit en prend ' + nb(f.dt, 2) + ' bar, le coude ' + nb(f.dc, 2) + ', la vanne ' + nb(f.dv, 2) + ' et le filtre ' + nb(f.df, 2) + '. <em>Valeurs d’exemple.</em>');
+      ctx.dire('<strong>Débit ' + nb(E.q, 1) + ' m³/h.</strong> Le banc perd ' + nb(f.tot, 2) + ' mCE en tout (' + nb(f.tot / MCE, 2) + ' bar) : '
+        + 'le tube droit ' + nb(f.dt, 2) + ', le coude ' + nb(f.dc, 2) + ', la vanne ' + nb(f.dv, 2) + ' et le filtre ' + nb(f.df, 2) + ' mCE. '
+        + 'Les manomètres se lisent en bar : 1 bar vaut environ 10 mCE.');
     };
 
+    /* deux plans : horizontal (l'axe des tubes, dessus retiré) pour le banc, vertical (l'axe du filtre, côté -X retiré) pour le filtre en Y */
     const appliquerCoupe = actif => {
-      const plan = actif ? [new T.Plane(new T.Vector3(0, -1, 0), 0)] : null;
-      const exclus = new Set();
+      const planH = actif ? [new T.Plane(new T.Vector3(0, -1, 0), 0)] : null;
+      const planV = actif ? [new T.Plane(new T.Vector3(1, 0, 0), -CX)] : null;
+      const exclus = new Set(), enV = new Set();
       [faces, grains, jauges, saletes].forEach(g => g.traverse(o => exclus.add(o)));
+      [filtre, tamis, bouchon].forEach(g => g.traverse(o => enV.add(o)));
       racine.traverse(o => {
         if (!o.isMesh || exclus.has(o)) return;
+        const plan = enV.has(o) ? planV : planH;
         [o.material, o.userData.matAvantSurbrillance].forEach(m => { if (m) { m.clippingPlanes = plan; m.clipShadows = true; m.needsUpdate = true; } });
       });
       faces.visible = actif;
       poignee.visible = !actif;
       const bb = new T.Box3();
-      racine.traverse(o => { if (o.isMesh && !exclus.has(o) && !o.userData.sansOmbre) { bb.setFromObject(o); if (bb.min.y > 0.5) o.castShadow = !actif; } });
+      racine.traverse(o => { if (o.isMesh && !exclus.has(o) && !enV.has(o) && !o.userData.sansOmbre) { bb.setFromObject(o); if (bb.min.y > 0.5) o.castShadow = !actif; } });
     };
-    const majVisibilite = () => { grains.visible = E.coupe && !E.demonte; };
+    const majVisibilite = () => { grains.visible = E.coupe && !E.demonte; majSaletes(); };
     const basculerCoupe = on => { E.coupe = on; appliquerCoupe(on && !E.demonte); majVisibilite(); };
 
     appliquer(); majTexte(); majVisibilite(); poserGrains(0);
@@ -608,12 +643,12 @@
       { id: 'coude', nom: 'Le coude', objets: [coude, facesCoude], desc: 'L’eau doit tourner à angle droit. Elle se bouscule dans le virage et perd de la pression d’un coup : c’est une perte singulière.' },
       { id: 'vanne', nom: 'La vanne à boule', objets: [vanne, bille, facesVanne], desc: 'Une boule percée d’un trou tourne dans le corps. Trou dans l’axe du tube : l’eau passe. Boule tournée : le trou se décale et le passage se réduit.' },
       { id: 'poignee', nom: 'La poignée de la vanne', objets: [poignee], desc: 'Elle tourne avec la boule. Poignée dans le sens du tube : vanne ouverte. Poignée de travers : vanne fermée en partie.' },
-      { id: 'filtre', nom: 'Le filtre à tamis', objets: [filtre, couvercle, facesFiltre], desc: 'Un corps en bronze avec un couvercle vissé. L’eau entre dans le panier, le traverse, puis repart. On dévisse le couvercle pour le nettoyer.' },
-      { id: 'panier', nom: 'Le tamis', objets: [panier], desc: 'Un panier à petits trous : il laisse passer l’eau et retient les saletés. S’il s’encrasse, l’eau passe mal et la perte monte beaucoup.' },
-      { id: 'manometres', nom: 'Les cinq manomètres', objets: [prises, jauges, facesPrises], desc: 'Chacun mesure la pression à son endroit, en bar. Du premier au dernier, l’aiguille descend : l’eau perd de la pression le long du trajet.' },
+      { id: 'filtre', nom: 'Le filtre à tamis en Y', objets: [filtre, bouchon, facesFiltre], desc: 'Un corps en laiton en forme de Y. L’eau entre à gauche, descend dans la branche, traverse le tamis, puis repart à droite. Le bouchon, au bout de la branche, se dévisse pour nettoyer.' },
+      { id: 'tamis', nom: 'Le tamis', objets: [tamis], desc: 'Un tube percé de petits trous, dans la branche. L’eau le traverse de l’intérieur vers l’extérieur et les saletés restent dedans. S’il s’encrasse, l’eau passe mal et la perte monte beaucoup.' },
+      { id: 'manometres', nom: 'Les cinq manomètres', objets: [prises, jauges, facesPrises], desc: 'Chacun mesure la pression à son endroit, en bar. Du premier au dernier, l’aiguille descend : l’eau perd de la pression le long du trajet. Les écarts sont petits : 1 bar vaut environ 10 mCE.' },
       { id: 'raccords', nom: 'Les raccords union et les flexibles', objets: [raccords, facesRaccords], desc: 'Ils relient le banc au reste de l’installation. L’eau entre à gauche et sort vers vous.' },
-      { id: 'support', nom: 'Le panneau et les colliers', objets: [support], desc: 'Le banc est posé sur un panneau. Des colliers tiennent le tube bien horizontal.' },
-      { id: 'eau', nom: 'L’eau', objets: [grains, eauMesh], desc: 'En coupe, elle est teintée : bleu foncé là où la pression est forte, bleu clair là où elle est faible. Ses grains vont plus vite dans les passages étroits.' }
+      { id: 'support', nom: 'Le panneau et les colliers', objets: [support], desc: 'Le banc est monté sur un panneau. De grands colliers tiennent le tube bien horizontal et laissent la place sous le filtre pour sortir le tamis.' },
+      { id: 'eau', nom: 'L’eau', objets: [grains, eauMesh], desc: 'En coupe, elle est teintée : bleu foncé là où la pression est forte, bleu clair là où elle est faible. Ses grains vont plus vite dans les passages étroits et lentement dans le filtre.' }
     ];
 
     const commandes = [
@@ -626,35 +661,35 @@
     const etapes = [
       { titre: 'Le banc d’essai, tel qu’on le monte', piece: 'tube', voirDedans: false, eclate: false, actions: ETAT(2, 20, 'propre'),
         vue: { azimut: 42, elevation: 42, zoom: 1.05, cible: [-200, 0, 270] },
-        texte: 'Un tube de cuivre, un coude, une vanne et un filtre. Cinq manomètres mesurent la pression à chaque endroit du trajet. L’eau entre à gauche et sort vers vous.' },
+        texte: 'Un tube de cuivre, un coude, une vanne et un filtre à tamis en Y. Cinq manomètres, gradués en bar, mesurent la pression à chaque endroit. L’eau entre à gauche et sort vers vous.' },
       { titre: 'On coupe : l’eau frotte contre le tube droit', piece: 'tube', voirDedans: true, eclate: false, actions: ETAT(2, 20, 'propre'),
         vue: { azimut: 6, elevation: 58, zoom: 1.7, cible: [-230, 0, 40] },
-        texte: 'Dans le tube droit, l’eau frotte contre la paroi sur toute la longueur. La pression baisse un peu : la deuxième aiguille est un tout petit peu plus bas que la première.' },
+        texte: 'Dans le tube droit, l’eau frotte contre la paroi sur toute la longueur. À 2,0 m³/h, la perte est de 0,12 mCE, soit à peine 0,01 bar : l’aiguille ne bouge presque pas, mais la perte existe.' },
       { titre: 'Au coude, l’eau tourne : la pression chute d’un coup', piece: 'coude', voirDedans: true, eclate: false, actions: ETAT(2, 20, 'propre'),
         vue: { azimut: 38, elevation: 60, zoom: 1.9, cible: [-40, 0, 50] },
-        texte: 'L’eau est bousculée dans le virage. En quelques centimètres, elle perd plus de pression que sur toute la longueur du tube droit.' },
-      { titre: 'On ferme la vanne à moitié : le passage se réduit', piece: 'vanne', voirDedans: true, eclate: false, ralenti: true, actions: ETAT(2, 60, 'propre'),
+        texte: 'L’eau est bousculée dans le virage. En quelques centimètres, le coude prend 0,20 mCE : plus que 250 mm de tube droit.' },
+      { titre: 'On ferme la vanne : le passage se réduit', piece: 'vanne', voirDedans: true, eclate: false, ralenti: true, actions: ETAT(2, 60, 'propre'),
         vue: { azimut: 52, elevation: 64, zoom: 3.0, cible: [CX + 10, 0, ZV] },
-        texte: 'La poignée tourne, la boule aussi : son trou se décale et le passage se rétrécit. L’eau s’y engouffre plus vite, et la pression chute fort juste après la vanne.' },
-      { titre: 'Le filtre s’encrasse : le tamis se bouche', piece: 'panier', voirDedans: true, eclate: false, ralenti: true, actions: ETAT(2, 60, 'encrasse'),
-        vue: { azimut: 52, elevation: 62, zoom: 2.2, cible: [CX + 15, 0, ZF + 30] },
-        texte: 'Les saletés se collent sur le tamis et bouchent les trous. L’eau a du mal à passer : la pression tombe d’un coup entre l’avant et l’arrière du filtre.' },
-      { titre: 'On augmente le débit : la perte monte bien plus vite', piece: 'manometres', voirDedans: true, eclate: false, actions: ETAT(3, 60, 'encrasse'),
+        texte: 'La poignée tourne, la boule aussi : son trou se décale et le passage se rétrécit. L’eau s’y engouffre plus vite. La vanne perd maintenant 6,56 mCE (0,64 bar), contre 1,44 mCE vanne presque ouverte.' },
+      { titre: 'Le filtre s’encrasse : le tamis se bouche', piece: 'tamis', voirDedans: true, eclate: false, ralenti: true, actions: ETAT(2, 20, 'encrasse'),
+        vue: { azimut: 270, elevation: 10, zoom: 3.1, cible: [CX, -26, ZF + 30] },
+        texte: 'L’eau entre dans le tamis, le traverse et ressort autour. Les saletés se collent à l’intérieur et bouchent les trous : le filtre perd 1,60 mCE au lieu de 0,24, et l’écart entre le manomètre avant et le manomètre après se creuse.' },
+      { titre: 'On augmente le débit : la perte monte bien plus vite', piece: 'manometres', voirDedans: true, eclate: false, actions: ETAT(3, 20, 'encrasse'),
         vue: { azimut: 40, elevation: 58, zoom: 1.05, cible: [-200, 0, 270] },
-        texte: 'Le débit passe de 2,0 à 3,0 m³/h : une fois et demie plus d’eau. La perte, elle, est multipliée par plus de deux. Elle grandit à peu près comme le carré du débit.' },
-      { titre: 'Démonté : on sort le tamis pour le nettoyer', piece: 'panier', voirDedans: false, eclate: true, actions: ETAT(2, 20, 'encrasse'),
-        texte: 'La poignée et le couvercle s’enlèvent, puis le tamis sort par le haut avec ses saletés. Rincé, il remet le filtre à neuf.' }
+        texte: 'Le débit passe de 2,0 à 3,0 m³/h : une fois et demie plus d’eau. La perte du banc passe de 3,4 à 7,6 mCE, soit 2,25 fois plus. Elle grandit comme le carré du débit.' },
+      { titre: 'Démonté : on sort le tamis pour le nettoyer', piece: 'tamis', voirDedans: false, eclate: true, actions: ETAT(2, 20, 'encrasse'),
+        texte: 'On dévisse le bouchon, au bout de la branche, puis on tire le tamis. Les saletés restent à l’intérieur : rincé, il remet le filtre à neuf.' }
     ];
 
+    /* le bouchon sort d'abord, puis le tamis, dans l'axe de la branche (45° vers le bas, dans le sens de l'eau) */
     const eclate = [
-      { objets: [poignee], vers: [0, 130, 0], debut: 0, fin: 0.4 },
-      { objets: [couvercle], vers: [0, 210, 0], debut: 0.2, fin: 0.65 },
-      { objets: [panier], vers: [0, 110, 0], debut: 0.5, fin: 1 }
+      { objets: [bouchon], vers: [0, -62 * c45, 62 * c45], debut: 0, fin: 0.55 },
+      { objets: [tamis], vers: [0, -42 * c45, 42 * c45], debut: 0.45, fin: 1 }
     ];
 
     return {
       racine, pieces, commandes, etapes, eclate,
-      eclateVue: { azimut: 52, elevation: 24, zoom: 1.3, cible: [CX, 100, 330] },
+      eclateVue: { azimut: 270, elevation: 14, zoom: 2.2, cible: [CX, -40, ZF + 40] },
       vue: ctx.mode === 'decouvrir' ? { azimut: 42, elevation: 40, zoom: 1.05, cible: [-200, 0, 270], cadre: [tubes, coude, vanne, filtre, jauges], marge: 1.0 }
                                     : { azimut: 40, elevation: 56, zoom: 1.05, cible: [-200, 0, 270], cadre: [tubes, coude, vanne, filtre, jauges], marge: 1.0 },
       phrase: undefined,
