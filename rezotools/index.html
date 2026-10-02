@@ -18,8 +18,8 @@
      SATELLITE comme quartier/ et legislation/ : hors PAGES de build/version.mjs.
      calculettes/ = FICHIERS GÉNÉRÉS depuis C:/git/Iner.web-tools-beta
      (node outils/livrer-rezotools.mjs). Cette page-ci s'écrit à la main.
-     Pas encore en ligne ici : les calculettes du moteur cerveau_v5.js
-     (écarts mesurés de 7 à 31 % sur 5 fluides) — voir REZOTOOLS-PARKING.md.
+     Moteur cerveau_v5.js passé aux tables CoolProp le 02/10/2026. Non publiée :
+     co2_fgas_v5 (règlement 517/2014 abrogé ; la téqCO₂ est dans la carte d'identité du fluide).
      =================================================================== -->
 <style>
   :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
@@ -69,7 +69,7 @@
     <section class="famille" aria-labelledby="f1">
       <h2 id="f1">Lire et convertir</h2>
       <ul>
-        <li><a href="../packs/fluides/res/outils/reglette.html"><span class="ico">🔧</span><span class="nom">Réglette pression ↔ température</span><span class="quoi">17 fluides, pression relative ou absolue</span></a></li>
+        <li><a href="calculettes/reglette.html"><span class="ico">🔧</span><span class="nom">Réglette pression ↔ température</span><span class="quoi">48 fluides, bulle et rosée des mélanges</span></a></li>
         <li><a href="calculettes/pressure.html"><span class="ico">🔧</span><span class="nom">Pression</span><span class="quoi">bar, psi, kPa, MPa</span></a></li>
         <li><a href="calculettes/temp.html"><span class="ico">🔧</span><span class="nom">Température</span><span class="quoi">°C, °F, K</span></a></li>
         <li><a href="calculettes/power.html"><span class="ico">🔧</span><span class="nom">Puissance</span><span class="quoi">kW, BTU/h, tonne frigo, kcal/h</span></a></li>
@@ -91,6 +91,9 @@
       <h2 id="f3">Dépanner</h2>
       <ul>
         <li><a href="../packs/fluides/res/surchauffe-sous-refroidissement-interactif/"><span class="ico">🎓</span><span class="nom">Surchauffe et sous-refroidissement</span><span class="quoi">de la pression et du thermomètre au résultat en K</span></a></li>
+        <li><a href="calculettes/diagnostic.html"><span class="ico">🔧</span><span class="nom">Diagnostic et dépannage</span><span class="quoi">pressions et températures relevées → pistes de panne</span></a></li>
+        <li><a href="calculettes/incondensables.html"><span class="ico">🔧</span><span class="nom">Test d’incondensables</span><span class="quoi">pression à l’arrêt comparée à la saturation</span></a></li>
+        <li><a href="calculettes/identification.html"><span class="ico">🔧</span><span class="nom">Identifier un fluide</span><span class="quoi">pression et température d’une bouteille au repos</span></a></li>
         <li><a href="calculettes/pincement.html"><span class="ico">🔧</span><span class="nom">Pincement d’un échangeur</span><span class="quoi">évaporateur ou condenseur, avec pistes de diagnostic</span></a></li>
         <li><a href="../packs/fluides/res/pression-temperature-interactive/"><span class="ico">🎓</span><span class="nom">Pression et température</span><span class="quoi">la saturation et le glissement des mélanges</span></a></li>
       </ul>

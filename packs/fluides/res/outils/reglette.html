@@ -51,7 +51,7 @@
 
   <div class="resultats">
     <div class="tuile"><div class="v" id="pabs">≈ 4,0</div><div class="u">bar absolus (+ ~1 bar)</div></div>
-    <div class="tuile accent"><div class="v" id="tsat">—</div><div class="u">T° de saturation</div></div>
+    <div class="tuile accent"><div class="v" id="tsat">—</div><div class="u" id="tsat-u">T° de saturation</div></div>
     <div class="tuile"><div class="v" id="glide">—</div><div class="u">glide (zéotrope)</div></div>
   </div>
 
@@ -98,13 +98,15 @@
   });
   sel.value = "R32";
 
-  function tSat(f, pAbs) {
-    var t = f.table;
-    if (pAbs <= t[0].p) return null;
-    if (pAbs >= t[t.length - 1].p) return null;
+  /* rosee = true : colonne de rosée (pr) des mélanges à glissement, pour la surchauffe ;
+     sinon colonne de bulle (p), pour le sous-refroidissement (tables CoolProp, 02/10/2026). */
+  function tSat(f, pAbs, rosee) {
+    var t = f.table, c = rosee && t[0].pr !== undefined ? "pr" : "p";
+    if (pAbs <= t[0][c]) return null;
+    if (pAbs >= t[t.length - 1][c]) return null;
     for (var i = 0; i < t.length - 1; i++) {
-      if (pAbs >= t[i].p && pAbs <= t[i + 1].p) {
-        var r = (pAbs - t[i].p) / (t[i + 1].p - t[i].p);
+      if (pAbs >= t[i][c] && pAbs <= t[i + 1][c]) {
+        var r = (pAbs - t[i][c]) / (t[i + 1][c] - t[i][c]);
         return t[i].t + r * (t[i + 1].t - t[i].t);
       }
     }
@@ -118,8 +120,11 @@
     var pAbs = pRel + PATM;
     affP.textContent = fr(pRel, 1);
     elAbs.textContent = "≈ " + fr(pAbs, 1);
-    var ts = tSat(f, pAbs);
+    var ts = tSat(f, pAbs, mode === "asp");
     elSat.textContent = ts === null ? "hors table" : fr(ts, 1) + " °C";
+    document.getElementById("tsat-u").textContent = f.glide > 0.5
+      ? (mode === "asp" ? "T° de rosée (vapeur saturée)" : "T° de bulle (liquide saturé)")
+      : "T° de saturation";
     elGl.textContent = f.glide > 0.5 ? fr(f.glide, 1) + " K" : "≈ 0";
 
     verdict.className = "verdict";
