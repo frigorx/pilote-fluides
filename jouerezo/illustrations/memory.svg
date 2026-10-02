@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <!-- Memory : deux cartes, l'une retournée (flocon), l'autre de dos — charte inerWeb -->
+  <rect x="6" y="14" width="30" height="40" rx="5" fill="#1b3a63"/>
+  <circle cx="21" cy="34" r="6" fill="#2d5590"/>
+  <rect x="26" y="8" width="30" height="40" rx="5" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <g stroke="#1b3a63" stroke-width="2.5" stroke-linecap="round">
+    <line x1="41" y1="18" x2="41" y2="38"/><line x1="31" y1="28" x2="51" y2="28"/>
+    <line x1="34" y1="21" x2="48" y2="35"/><line x1="48" y1="21" x2="34" y2="35"/>
+  </g>
+  <circle cx="51" cy="13" r="4" fill="#ff6b35"/>
+</svg>

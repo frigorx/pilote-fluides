@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <!-- Le bon ordre : trois étapes empilées, la dernière en accent — charte inerWeb -->
+  <g stroke="#1b3a63" stroke-width="2.5">
+    <rect x="18" y="8" width="40" height="12" rx="6" fill="#cfe0f3"/>
+    <rect x="18" y="26" width="40" height="12" rx="6" fill="#cfe0f3"/>
+    <rect x="18" y="44" width="40" height="12" rx="6" fill="#fffdf8"/>
+  </g>
+  <circle cx="10" cy="14" r="5" fill="#1b3a63"/>
+  <circle cx="10" cy="32" r="5" fill="#1b3a63"/>
+  <circle cx="10" cy="50" r="5" fill="#ff6b35"/>
+  <path d="M24 50 l4 4 l8 -8" fill="none" stroke="#ff6b35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1b3a63">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>JouéRézo — les jeux du métier — inerWeb</title>
+<meta name="description" content="JouéRézo, le réseau de jeux d'inerWeb : Memory des symboles, le bon ordre des gestes, chrono vrai ou faux, QCM éclair, l'intrus, et une nuit à l'atelier avec les zombies du R-22.">
+<!-- ===================================================================
+     JOUÉRÉZO — réseau de jeux (F. Henninot, carte blanche du 02/10/2026).
+     Réseau CACHÉ pour l'instant : pas d'entrée depuis l'accueil, le plan
+     ni le quartier 3D ; noindex. Atelier : C:/git/jouerezo (fait foi),
+     copie servie par outils/livrer.mjs. Les jeux rejouent le contenu des
+     stations existantes : rien n'est écrit ici qui ne soit déjà en ligne.
+     =================================================================== -->
+<link rel="stylesheet" href="jouerezo.css?v=20261002-2208">
+<style>
+  .hero { display: grid; gap: 10px; }
+  .hero .accroche { font-size: 1.15rem; max-width: 50rem; }
+  .regles { display: grid; gap: 6px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .regles p { padding: 10px 14px; background: var(--carte); border: 1px solid var(--ligne); border-radius: 10px; font-size: .98rem; }
+  .regles strong { color: var(--bleu); }
+</style>
+<script defer src="../moteur/retour-accueil.js?v=ff0ca829c0"></script>
+</head>
+<body>
+<a class="evite" href="#liste-jeux">Aller aux jeux</a>
+<header id="haut" class="haut"></header>
+<main class="page">
+  <section class="hero">
+    <h1>JouéRézo — les jeux du métier</h1>
+    <p class="accroche">Deux minutes, un téléphone, et on révise sans s'en apercevoir : les symboles, les fluides, l'ordre des gestes, la sécurité. Tout ce qu'on joue ici vient des stations d'inerweb.fr, et chaque partie finit par une porte pour revoir ce qui a manqué.</p>
+    <div class="regles">
+      <p><strong>Pour qui ?</strong> Ceux qui ont fini leur travail, ceux qui attendent, ceux qui veulent se mesurer.</p>
+      <p><strong>Un code à la fin.</strong> Chaque partie donne un code court. Votre enseignant peut vous le demander.</p>
+      <p><strong>Rigueur dedans, folie dehors.</strong> Le zombie peut tout dire ; les réponses, elles, sont celles du métier.</p>
+    </div>
+  </section>
+  <section id="liste-jeux" class="jeux" aria-label="Les jeux"></section>
+  <p class="legende">Les symboles viennent de la bibliothèque inerWeb (collection QElectroTech, CC BY 3.0). Les questions d'électricité et de travail en hauteur sont celles de HoCourant et de R408. Les classes et les PRP des fluides sont ceux des planches HabFluide ; en intervention, la fiche du fluide fait foi.</p>
+  <nav class="actions" aria-label="Ailleurs sur le site">
+    <a class="btn sec" href="../plan.html">Plan des réseaux</a>
+    <a class="btn sec" href="../quartier/">Le quartier technique</a>
+    <a class="btn sec" href="../rezotools/">RézoTools</a>
+  </nav>
+</main>
+<script src="donnees/themes.js?v=20261002-2208"></script>
+<script src="moteur/commun.js?v=20261002-2208"></script>
+<script src="../moteur/lisibilite.js"></script>
+<script src="../moteur/marque.js" data-cartouche="JouéRézo" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

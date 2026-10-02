@@ -1,0 +1,9 @@
+Use your built-in image generation tool to create ONE image. Do not write code and do not draw with PIL, matplotlib or SVG.
+
+Subject: a playful flat illustration for the home page of a game hub about the refrigeration and air-conditioning trade. A small workshop bench at night seen from the front: on the bench, a stack of playing cards fanned out, a stopwatch, a magnifying glass and a numbered-step checklist board. Behind the bench, a friendly cartoon zombie technician in a blue work jacket, drawn as a simple rounded silhouette with a slight smile, peeks over the bench holding a wrench, harmless and funny. A round moon in the top right corner. Everything is cheerful, like a board-game box cover, not scary.
+
+Style (strict): flat vector-like drawing, clean full navy outlines (#1b3a63), light blue flat fills (#cfe0f3 and #dfe9f5), ONE accent colour orange (#ff6b35) used sparingly (the stopwatch hand, one card, the wrench head), cream background (#f7f1e7). No gradients, no drop shadows, no textures, no photorealism. Simple rounded shapes, generous empty space around the scene.
+
+Format: 1536 x 1024 landscape.
+
+Strictly avoid: text, letters, numbers, labels, logos, brands, writing on the cards or the board, blood, gore, wounds, exposed bones, realistic faces, fire, cigarettes, any real refrigerant cylinder label, any circuit diagram or technical schematic.

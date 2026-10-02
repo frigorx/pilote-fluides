@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <!-- Nuit à l'atelier : une lune, une main qui surgit avec une clé — charte inerWeb -->
+  <circle cx="48" cy="14" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="52" cy="11" r="7" fill="#cfe0f3"/>
+  <rect x="4" y="50" width="56" height="8" rx="2" fill="#1b3a63"/>
+  <path d="M18 50 v-16 a4 4 0 0 1 8 0 v-10 a4 4 0 0 1 8 0 v12 a3 3 0 0 1 6 0 v14 z" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round"/>
+  <g transform="rotate(-35 44 34)">
+    <rect x="40" y="26" width="8" height="18" rx="2" fill="#ff6b35" stroke="#c9451a" stroke-width="2"/>
+    <path d="M38 22 h12 v6 l-3 3 h-6 l-3 -3 z" fill="#ff6b35" stroke="#c9451a" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <!-- L'intrus : trois ronds, un carré de trop — charte inerWeb -->
+  <circle cx="18" cy="18" r="10" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="46" cy="18" r="10" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="18" cy="46" r="10" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="36" y="36" width="20" height="20" rx="3" fill="#ff6b35" stroke="#c9451a" stroke-width="2.5"/>
+  <circle cx="46" cy="46" r="14" fill="none" stroke="#1b3a63" stroke-width="2" stroke-dasharray="4 3"/>
+</svg>
