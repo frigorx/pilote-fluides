@@ -3,6 +3,14 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 02/10 — ÉLECTRORÉZO : REFONTE 3D ET « ENTRER PAR L'ARMOIRE », EN LIGNE (`2ee47c6d` → `f6e0a93c`)
+>
+> `electrorezo/` est **GÉNÉRÉ** depuis l'atelier `C:\git\electrorezo` (`node outils/livrer.mjs`, puis `build/version.mjs`,
+> commiter `electrorezo/` et les seules clés de version, `node outils/attester.mjs`). Neuf : 35 modèles 3D, loupe sur les
+> photos, `electrorezo/armoire.html` (coin d'atelier 3D, 14 zones, la carte du réseau s'allume dans les deux sens).
+> Le quartier : « L'armoire électrique du froid » ouvre cette armoire (source `maquette-entree-technique/zones.mjs`).
+> Reprises : `chantier-3d/PROMPT-REPRISE-3D.md`, `chantier-armoire/REPRISE.md` dans l'atelier. Reste : essai PC lycée + téléphone.
+
 > ## 02/10 soir — LE QUARTIER TECHNIQUE : NOUVELLE PORTE D'ENTRÉE EN 3D, EN LIGNE (`f5be8b65`, `cf55a885`)
 >
 > Franck : une entrée « pour M. Lambda », sur le modèle du bâtiment Législation, centrée sur le cœur de métier.
