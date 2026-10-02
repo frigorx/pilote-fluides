@@ -70,7 +70,7 @@
     var gagne = !!(lire()[slug]);
     if (mission.badge) {
       pied.appendChild(el("span", "mission-carte__puce" + (gagne ? " mission-carte__puce--gagne" : ""),
-        (gagne ? "✓ Tampon gagné : " : "Tampon à gagner : ") + mission.badge));
+        (gagne ? "✓ Quiz réussi : " : "Tampon à gagner : ") + mission.badge));
     }
     if (mission.duree_min) pied.appendChild(el("span", "mission-carte__puce", "Environ " + mission.duree_min + " min"));
     var lien = el("a", "mission-carte__lien", "Mon carnet →");
@@ -119,7 +119,7 @@
       '<circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="6.5"/>' +
       '<circle cx="100" cy="100" r="85" fill="none" stroke="currentColor" stroke-width="2.4"/>' +
       '<circle cx="100" cy="100" r="52" fill="none" stroke="currentColor" stroke-width="2.4"/>' +
-      arcTexte(uid + "h", "CLIM'ÉTUDES SUD") + arcTexte(uid + "b", "MISSION VALIDÉE") +
+      arcTexte(uid + "h", "CLIM'ÉTUDES SUD") + arcTexte(uid + "b", "QUIZ RÉUSSI") +
       noms +
       '<text x="100" y="' + (y0 + l.length * 24 - 2) + '" text-anchor="middle" font-size="13" fill="currentColor" ' +
       'font-family="Trebuchet MS, Calibri, Arial, sans-serif">' + esc(date) + "</text>" +
@@ -152,8 +152,8 @@
         t[slug] = { badge: badge, date: date, score: meilleur, sur: total };
         ecrire(t);
       }
-      texte.appendChild(el("h3", null, "Tampon gagné : " + badge));
-      texte.appendChild(el("p", null, bonnes + " bonnes réponses sur " + total + ". Faites signer le tampon par votre professeur sur le carnet papier, à côté de la mission."));
+      texte.appendChild(el("h3", null, "Quiz réussi : " + badge));
+      texte.appendChild(el("p", null, bonnes + " bonnes réponses sur " + total + ". La mission reste à valider : rendez votre production et justifiez-la auprès du professeur."));
       var lien = el("a", null, "Voir mon carnet →");
       lien.href = "../../carnet.html";
       var p = el("p"); p.appendChild(lien); texte.appendChild(p);

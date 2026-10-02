@@ -2,36 +2,62 @@
   "_role": "Progression annuelle du réseau Législation (BTS / TP TECVC) et fil rouge du carnet du chargé d'affaires. Décision d'architecte du 30/09/2026. L'ordre des stations DANS une sous-ligne est celui du plan (tableau RESEAU de index.html) ; ce fichier ne range que les sous-lignes.",
   "entreprise": "Clim'Études Sud",
   "entreprise_note": "Entreprise fictive : un bureau d'études et d'installation CVC de taille moyenne (une vingtaine de salariés), chantiers de logements et de tertiaire.",
-  "fil_rouge": "Vous entrez comme jeune technicien d'études chez Clim'Études Sud. D'abord on vous apprend à travailler en sécurité et à ne toucher qu'à ce que vous avez le droit de toucher ; puis on vous confie des dossiers de plus en plus complets, du fluide à l'enveloppe du bâtiment ; en fin d'année, vous défendez un dossier d'affaire complet devant le client — et vous savez ce que dit votre propre contrat.",
+  "fil_rouge": "Vous êtes jeune technicien d’études chez Clim’Études Sud. Vous traitez les missions, de la sécurité aux choix CVC, puis défendez un conseil réglementaire au client dans la mission finale.",
   "periodes": [
     {
-      "id": "P1", "titre": "Arriver en sécurité", "semaines": "1 à 6",
+      "id": "P1",
+      "titre": "Arriver en sécurité",
+      "semaines": "1 à 6",
       "pourquoi": "Avant tout geste sur une installation : les risques, l'habilitation, la consignation. C'est l'ordre du chantier réel.",
-      "sous_lignes": ["secu-risques", "regl-electrique"]
+      "sous_lignes": [
+        "secu-risques",
+        "regl-electrique"
+      ]
     },
     {
-      "id": "P2", "titre": "Le fluide et la machine", "semaines": "7 à 14",
+      "id": "P2",
+      "titre": "Le fluide et la machine",
+      "semaines": "7 à 14",
       "pourquoi": "Le cœur du métier de frigoriste : qui a le droit de manipuler, dans quel local, avec quelle traçabilité, et ce que dit la loi des récipients sous pression.",
-      "sous_lignes": ["regl-fluidique", "regl-desp"]
+      "sous_lignes": [
+        "regl-fluidique",
+        "regl-desp"
+      ]
     },
     {
-      "id": "P3", "titre": "Le bâtiment qui consomme", "semaines": "15 à 22",
+      "id": "P3",
+      "titre": "Le bâtiment qui consomme",
+      "semaines": "15 à 22",
       "pourquoi": "Le technicien d'études dimensionne pour un bâtiment : la réglementation thermique fixe le cadre, l'acoustique fixe la place de la machine.",
-      "sous_lignes": ["regl-thermique", "regl-acoustique"]
+      "sous_lignes": [
+        "regl-thermique",
+        "regl-acoustique"
+      ]
     },
     {
-      "id": "P4", "titre": "Le bâtiment qui protège", "semaines": "23 à 28",
+      "id": "P4",
+      "titre": "Le bâtiment qui protège",
+      "semaines": "23 à 28",
       "pourquoi": "Le lot CVC traverse les murs coupe-feu et participe au désenfumage : l'incendie s'étudie une fois le bâtiment compris.",
-      "sous_lignes": ["regl-incendie", "regl-certifs"]
+      "sous_lignes": [
+        "regl-incendie",
+        "regl-certifs"
+      ]
     },
     {
-      "id": "P5", "titre": "L'affaire complète", "semaines": "29 à 36",
+      "id": "P5",
+      "titre": "L'affaire complète",
+      "semaines": "29 à 36",
       "pourquoi": "Fin de vie, bilan carbone, et le cadre du contrat de travail : ce qu'il faut pour porter une affaire seul, et pour se situer soi-même.",
-      "sous_lignes": ["secu-dechets", "secu-impact", "regl-travail"]
+      "sous_lignes": [
+        "secu-dechets",
+        "secu-impact",
+        "regl-travail"
+      ]
     }
   ],
   "tampons": {
-    "regle": "Un tampon par station : il se gagne en terminant la station avec au moins 3 bonnes réponses sur 4, puis se fait signer sur papier par le professeur après la mission.",
-    "certificats": "Une sous-ligne complète donne un certificat de branche (ex. « Certificat Électrique »). Les onze certificats forment le diplôme maison « Chargé d'affaires réglementaire » du carnet."
+    "regle": "Le quiz réussi (au moins 3/4) donne un badge de connaissances. Le professeur signe la mission après examen de la production et justification individuelle.",
+    "certificats": "Les certificats de branche sont des repères pédagogiques internes. Ils ne constituent ni un diplôme reconnu, ni une habilitation, ni une validation complète des compétences du TP."
   }
 }

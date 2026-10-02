@@ -203,3 +203,7 @@ des accessoires de sécurité.*
    associés avec leurs codes) n'a pas été renseigné dans cette station :
    à faire avant tout envoi à Claude Design, conformément à la règle de
    vérification obligatoire des documents pédagogiques.
+
+## Correction du 1er octobre 2026
+
+Les écrans corrigés remplacent toute assimilation antérieure du groupe DESP à la NF EN 378, du champ au classement, ou du récipient fixe à la bouteille transportable. Sources : Code de l’environnement R557-9-1, R557-9-2 et R557-9-3 (Légifrance, section 9). Les valeurs détaillées et la relecture métier restent à valider.

@@ -12,7 +12,7 @@
     { "q": "Suivez le courant de défaut depuis la source jusqu'à son retour : quels éléments traverse-t-il, et que se passe-t-il si le conducteur de protection est coupé ?",
       "ecran": 3,
       "reponse": "Phase, point de défaut, carcasse, conducteur de protection, prise de terre, sol, prise de terre de la source (schéma TT). Sans conducteur de protection, la boucle est coupée : le dispositif ne détecte rien et la carcasse reste sous tension." },
-    { "q": "Que compare un dispositif différentiel, et quelle sensibilité retient-on pour protéger les personnes ? Citez deux cas où l'INRS la rend obligatoire.",
+    { "q": "Que compare un dispositif différentiel, et quelle sensibilité retient-on pour protéger les personnes ? Citez deux cas d’obligation présentés dans la documentation INRS.",
       "ecran": 6,
       "reponse": "Il compare le courant d'aller et le courant de retour. La haute sensibilité est de 30 mA ou moins. Elle est obligatoire, par exemple, pour les prises de courant jusqu'à 32 A, les locaux mouillés, les installations temporaires, les salles d'eau et les logements." },
     { "q": "Le bouton test ne fait pas tomber le levier : que concluez-vous, et pourquoi ne peut-on pas s'en tenir à « pas de défaut détecté » ?",

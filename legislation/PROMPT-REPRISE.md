@@ -1,5 +1,9 @@
 # PROMPT-REPRISE — le réseau Législation
 
+## 01/10/2026 — corrections pédagogiques et préparation locale à la publication
+
+Lire d'abord [le contrôle de publication](CONTROLE-PUBLICATION-2026-10-01.md) pour le dernier état du chantier. Travail local dans `C:\git\pilote-fluides-chantier`, non poussé et non publié ; aucune indexation RAG avant BAT. Les indications historiques de 122 pages et de validation par tampon ci-dessous sont remplacées par : carnet élève 124 pages, tampon de réussite au quiz seulement, production professionnelle évaluée séparément. Guide, mission finale et aide décroissante ajoutés ; corrections ciblées dans huit stations ; sept PDF et dépendance 3D locale préparés pour inclusion Git. Les contrôles de liens et de QR passent ; la réserve de remplissage du livret professeur et la relecture métier restent explicites dans le rapport.
+
 > **À LIRE EN PREMIER** dans toute nouvelle session sur ce chantier.
 > Ouvert le 23/08/2026. Dernière mise à jour : **30/09/2026** — LE RÉSEAU EST COMPLET (57 stations), carnet du
 > chargé d'affaires, bâtiment 3D. (27/09 : audit des 29 premières, plan replié, scènes Codex.)

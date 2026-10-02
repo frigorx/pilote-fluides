@@ -6,26 +6,38 @@
   "situation": "Un technicien de votre entreprise doit intervenir sur l'armoire électrique d'un groupe de production d'eau glacée : rechercher une panne sur le circuit de commande et remplacer un contacteur, puis, le lendemain, un stagiaire viendrait nettoyer l'intérieur du local technique. Le client demande par courriel qui est autorisé à faire quoi, et sur quelle base. Votre responsable vous charge de préparer la réponse : elle doit dire qui délivre les habilitations, quel symbole correspond à chaque geste, et ce qui rend le titre valable.",
   "piece_a_produire": "Une note d'une page au client : un tableau geste / symbole d'habilitation / condition de validité, et trois phrases rappelant qui habilite et sur quel texte.",
   "questions": [
-    { "q": "Qui délivre l'habilitation électrique d'un technicien, et sur quel article du Code du travail cela repose-t-il ?", "ecran": 3,
-      "reponse": "L'employeur, après s'être assuré de la formation théorique et pratique du travailleur (article R. 4544-10). L'organisme de formation forme, le médecin atteste l'absence de contre-indication, mais ni l'un ni l'autre n'habilite." },
-    { "q": "Lisez le symbole B2V, caractère par caractère.", "ecran": 4,
-      "reponse": "B : basse tension ; 2 : chargé de travaux ; V : voisinage. C'est un chargé de travaux en basse tension qui peut travailler au voisinage de pièces nues sous tension." },
-    { "q": "Quel symbole pour rechercher une panne sur un circuit de commande et remplacer un contacteur en basse tension ? Pourquoi pas BS ?", "ecran": 6,
-      "reponse": "BR (intervention générale : entretien, dépannage). BS se limite à une liste courte (fusible, lampe, prise, interrupteur à l'identique, raccordement à un circuit en attente, réarmement) qui ne comprend pas le contacteur." },
-    { "q": "Que doit détenir en plus le travailleur dont l'habilitation autorise le voisinage de pièces nues sous tension, depuis le 1er octobre 2025 ?", "ecran": 7,
-      "reponse": "Une attestation d'absence de contre-indication médicale, délivrée par le médecin du travail (elle remplace le suivi individuel renforcé). Sans elle, l'habilitation n'est pas valable." }
+    {
+      "q": "Qui délivre l'habilitation électrique d'un technicien, et sur quel article du Code du travail cela repose-t-il ?",
+      "ecran": 3,
+      "reponse": "L'employeur, après s'être assuré de la formation théorique et pratique du travailleur (article R. 4544-10). L'organisme de formation forme, le médecin atteste l'absence de contre-indication, mais ni l'un ni l'autre n'habilite."
+    },
+    {
+      "q": "Lisez le symbole B2V, caractère par caractère.",
+      "ecran": 4,
+      "reponse": "B : basse tension ; 2 : chargé de travaux ; V : voisinage. C'est un chargé de travaux en basse tension qui peut travailler au voisinage de pièces nues sous tension."
+    },
+    {
+      "q": "Quel symbole pour rechercher une panne sur un circuit de commande et remplacer un contacteur en basse tension ? Pourquoi pas BS ?",
+      "ecran": 6,
+      "reponse": "BR (intervention générale : entretien, dépannage). BS se limite à une liste courte (fusible, lampe, prise, interrupteur à l'identique, raccordement à un circuit en attente, réarmement) qui ne comprend pas le contacteur."
+    },
+    {
+      "q": "Que doit détenir en plus le travailleur dont l'habilitation autorise le voisinage de pièces nues sous tension, depuis le 1er octobre 2025 ?",
+      "ecran": 7,
+      "reponse": "Une attestation d'absence de contre-indication médicale, délivrée par le médecin du travail (elle remplace le suivi individuel renforcé). Sans elle, l'habilitation n'est pas valable."
+    }
   ],
   "defi": {
     "type": "relier",
     "consigne": "Reliez chaque geste au symbole d'habilitation qui le couvre (B0, BS, BR, BC, ou aucune habilitation).",
     "items": [
-      "Nettoyer un local technique en basse tension, près de pièces nues sous tension, sans toucher à l'installation",
+      "Nettoyer un local en basse tension dans la zone de voisinage simple délimitée, sans entrer en zone de voisinage renforcé",
       "Remplacer à l'identique une prise de courant sur un circuit terminal mis hors tension par vous-même",
       "Rechercher une panne et remplacer un contacteur sur un circuit de commande, avec un exécutant",
       "Consigner une armoire pour qu'une autre équipe y travaille, sans rien faire d'autre",
       "Brancher un appareil sur une prise, comme prévu par le constructeur"
     ],
-    "corrige": "1 → B0 ; 2 → BS ; 3 → BR (avec un exécutant B1 au plus) ; 4 → BC ; 5 → aucune habilitation (utilisation normale d'un appareil)."
+    "corrige": "1 → B0, dans les limites du titre et de la zone simple ; jamais B0V ; 2 → BS ; 3 → BR (avec un exécutant B1 au plus) ; 4 → BC ; 5 → aucune habilitation (utilisation normale d'un appareil)."
   },
   "badge": "Titre en règle",
   "duree_min": 25,

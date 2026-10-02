@@ -3,8 +3,8 @@
   "branche": "Acoustique",
   "titre": "Mission : la pompe à chaleur qui donne sur la chambre du voisin",
   "client": "Des propriétaires d'une maison de ville mitoyenne qui veulent remplacer leur chaudière par une pompe à chaleur air-eau et hésitent entre deux emplacements pour l'unité extérieure.",
-  "situation": "Le bureau d'études a retenu une pompe à chaleur air-eau. Deux emplacements sont possibles : dans l'angle de la courette, contre deux murs, à quelques mètres de la fenêtre de chambre du voisin ; ou le long du mur du jardin, plus loin de cette fenêtre, en terrain dégagé. Le client craint un litige : la rue est très calme la nuit. Votre responsable vous demande d'éclairer le choix avant que l'installateur ne commande le socle.",
-  "piece_a_produire": "Une note d'une page au client : la puissance acoustique lue sur la fiche du fabricant (avec le mode auquel elle se rapporte), le niveau estimé devant la fenêtre du voisin pour chacun des deux emplacements (calcul montré), l'émergence de nuit pour un bruit résiduel supposé, la recommandation, puis la liste des formalités à vérifier : mairie et PLU, copropriété s'il y en a une, information du voisin.",
+  "situation": "Cas pédagogique fictif. Reprenez les données du défi : Lw = 60 dB(A) en fonctionnement étudié, bruit résiduel nocturne = 25 dB(A). Position A : angle de deux murs, fenêtre du voisin à 4 m. Position B : sol dégagé, fenêtre à 8 m. Aucun obstacle acoustique supplémentaire n’est modélisé. Comparez les deux implantations avant de conseiller le client.",
+  "piece_a_produire": "Une note d’une page : hypothèses de ce cas fictif, Lp et émergence estimés en A et B avec les formules du défi, recommandation et limites de l’estimation, puis formalités à vérifier. Ces données ne sont pas une fiche fabricant. Pour un chantier réel, joindre plan coté, fiche acoustique et mesures du bruit résiduel.",
   "questions": [
     {
       "q": "Sur la fiche technique, que représente la puissance acoustique Lw, et pourquoi ne peut-on pas la comparer directement au niveau relevé chez le voisin ?",
@@ -12,9 +12,9 @@
       "reponse": "Lw caractérise ce que la machine émet, indépendamment de son environnement ; elle est mesurée en laboratoire et sert à comparer les appareils. Le niveau chez le voisin est une pression acoustique Lp, qui dépend de la distance et de l'emplacement : ce ne sont pas les mêmes grandeurs."
     },
     {
-      "q": "Par rapport à une machine posée au sol, de combien le niveau reçu augmente-t-il contre un mur, dans un angle, dans une cour intérieure ? Que gagne-t-on à sortir la machine de l'angle ?",
+      "q": "Quels écarts la fiche AFPAC donne-t-elle pour un mur, un angle et une cour ? Quel gain entre l’angle et le sol dégagé à distance égale ?",
       "ecran": 4,
-      "reponse": "Contre un mur : + 3 dB(A) ; dans un angle : + 6 dB(A) ; dans une cour intérieure : + 9 dB(A) au moins (fiche AFPAC n° 1). Sortir de l'angle rapporte 6 dB(A), autant que doubler la distance."
+      "reponse": "Repères par rapport au sol dégagé : mur +3, angle +6, cour au moins +9 dB(A). Angle vers sol dégagé : gain de 6 dB ; angle vers un mur seul : 3 dB. Ces repères ne remplacent pas l’étude du site."
     },
     {
       "q": "Un bruit résiduel de 30 dB et un bruit de pompe à chaleur de 30 dB : quel niveau ambiant, et quelle émergence ?",
@@ -42,7 +42,11 @@
   "badge": "Oreille fine",
   "duree_min": 25,
   "referentiel": {
-    "tecvc": ["CP1", "CP6", "CP9"],
+    "tecvc": [
+      "CP1",
+      "CP6",
+      "CP9"
+    ],
     "attestation_2025": [],
     "justification": "CP1 pour choisir et reporter l'emplacement de l'unité extérieure sur le plan d'implantation, CP6 pour la pompe à chaleur air-eau du chauffage et de l'eau chaude sanitaire, CP9 pour l'unité extérieure d'un climatiseur ; station non fluidique, donc sans code d'attestation 2025."
   }

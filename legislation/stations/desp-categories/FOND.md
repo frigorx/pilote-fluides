@@ -223,3 +223,7 @@ le réseau (station desp-la-directive).
    graduation, comme demandé.
 4. **Le référentiel BTS d'adossement** n'étant pas tranché, aucun code de
    tâche ou de savoir associé n'est inséré dans cette station.
+
+## Correction du 1er octobre 2026
+
+Les écrans corrigés remplacent toute assimilation antérieure du groupe DESP à la NF EN 378, du champ au classement, ou du récipient fixe à la bouteille transportable. Sources : Code de l’environnement R557-9-1, R557-9-2 et R557-9-3 (Légifrance, section 9). Les valeurs détaillées et la relecture métier restent à valider.

@@ -6,14 +6,26 @@
   "situation": "Le directeur vous transmet la plaquette d'un fournisseur d'équipements. Elle vante des performances « conformes à la RT2012 » et affirme que ce texte suffit pour un permis de construire déposé aujourd'hui. Il a aussi retenu de sa formation quelques valeurs de seuil qu'il aimerait réutiliser dans son dossier. Votre responsable vous demande de lui expliquer d'où vient la réglementation thermique, ce que la RT2012 mesurait, ce que la RE2020 change, et pourquoi il ne faut pas citer un seuil de mémoire.",
   "piece_a_produire": "Une note d'une page au directeur : une frise de 1974 à la RE2020 (quatre jalons), un encadré « ce que mesurait la RT2012 / ce que la RE2020 ajoute », et deux phrases sur le réflexe à adopter avant de citer une valeur réglementaire.",
   "questions": [
-    { "q": "Quel événement est à l'origine de la première réglementation thermique française, et de quel type de problème s'agissait-il ?", "ecran": 1,
-      "reponse": "Le choc pétrolier de 1974. Le problème était d'abord économique et d'indépendance énergétique (approvisionnement en énergie devenu incertain et coûteux), pas d'abord écologique." },
-    { "q": "Quels sont les deux volets que la RT2012 ne mesurait pas et que la RE2020 fait entrer dans le contrôle ?", "ecran": 3,
-      "reponse": "L'impact carbone (matériaux et énergie sur tout le cycle de vie) et le confort d'été. La RT2012 ne mesurait que la consommation d'énergie du bâtiment neuf." },
-    { "q": "Pour un bâtiment neuf, quel texte remplace la RT2012, et que doit-on retenir de ce remplacement plutôt qu'une date ?", "ecran": 4,
-      "reponse": "La RE2020 remplace la RT2012 pour le neuf. Il faut retenir le mécanisme (un nouveau texte remplace l'ancien) ; la date de bascule et les valeurs se vérifient sur le texte en vigueur au moment du dossier." },
-    { "q": "Pourquoi l'indicateur carbone de la RE2020 fait-il pencher le choix vers la pompe à chaleur ?", "ecran": 6,
-      "reponse": "Il compte l'impact carbone de l'énergie et des matériaux sur tout le cycle de vie : une énergie carbonée pèse plus lourd dans le calcul, une solution qui émet peu de carbone à l'usage est favorisée. C'est un mécanisme de calcul, pas une interdiction." }
+    {
+      "q": "Quel événement est à l'origine de la première réglementation thermique française, et de quel type de problème s'agissait-il ?",
+      "ecran": 1,
+      "reponse": "Le choc pétrolier de 1973 précède la première RT de 1974 : économie et indépendance énergétique."
+    },
+    {
+      "q": "Quels indicateurs existaient dans la RT2012 ? Qu’apporte la RE2020 au carbone et au confort d’été ?",
+      "ecran": 3,
+      "reponse": "RT2012 : Bbio, Cep, Tic selon le bâtiment. RE2020 : notamment Ic énergie, Ic construction, Cep,nr et DH. DH remplace Tic ; le confort d’été existait déjà."
+    },
+    {
+      "q": "Pour un bâtiment neuf, quel texte remplace la RT2012, et que doit-on retenir de ce remplacement plutôt qu'une date ?",
+      "ecran": 4,
+      "reponse": "La RE2020 succède progressivement à la RT2012. Vérifier l’usage, le lieu, la date et les dispositions particulières avant de choisir le texte."
+    },
+    {
+      "q": "Pourquoi l'indicateur carbone de la RE2020 fait-il pencher le choix vers la pompe à chaleur ?",
+      "ecran": 6,
+      "reponse": "Il compte l'impact carbone de l'énergie et des matériaux sur tout le cycle de vie : une énergie carbonée pèse plus lourd dans le calcul, une solution qui émet peu de carbone à l'usage est favorisée. C'est un mécanisme de calcul, pas une interdiction."
+    }
   ],
   "defi": {
     "type": "trouver-l-erreur",
@@ -21,10 +33,10 @@
     "items": [
       "La première réglementation thermique est née en 1974 d'une préoccupation avant tout écologique.",
       "La RT2012 mesurait la consommation d'énergie, l'impact carbone et le confort d'été.",
-      "Pour un bâtiment neuf, la RE2020 remplace la RT2012.",
+      "La RE2020 succède progressivement à la RT2012, selon le champ d’application du projet.",
       "Une valeur de seuil apprise en formation reste valable : il est inutile de la revérifier."
     ],
-    "corrige": "Phrase 3 exacte. Phrase 1 fausse : la crise pétrolière de 1974 est un problème d'indépendance énergétique avant d'être un problème de climat. Phrase 2 fausse : la RT2012 ne mesurait que la consommation d'énergie. Phrase 4 fausse : les seuils changent, on vérifie le texte en vigueur au moment du chantier."
+    "corrige": "Phrase 3 exacte. 1 : première RT en 1974 après le choc pétrolier de 1973, avec un objectif énergétique. 2 : RT2012 = Bbio, Cep, Tic, sans indicateurs carbone. 4 : vérifier le texte et le champ applicables au dossier."
   },
   "badge": "Frise à jour",
   "duree_min": 25,

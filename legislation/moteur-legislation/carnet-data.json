@@ -1,7 +1,7 @@
 {
  "_role": "Généré par outils/poser-les-missions.mjs depuis index.html (RESEAU), progression.json et les mission.json. Ne pas éditer.",
  "entreprise": "Clim'Études Sud",
- "fil_rouge": "Vous entrez comme jeune technicien d'études chez Clim'Études Sud. D'abord on vous apprend à travailler en sécurité et à ne toucher qu'à ce que vous avez le droit de toucher ; puis on vous confie des dossiers de plus en plus complets, du fluide à l'enveloppe du bâtiment ; en fin d'année, vous défendez un dossier d'affaire complet devant le client — et vous savez ce que dit votre propre contrat.",
+ "fil_rouge": "Vous êtes jeune technicien d’études chez Clim’Études Sud. Vous traitez les missions, de la sécurité aux choix CVC, puis défendez un conseil réglementaire au client dans la mission finale.",
  "periodes": [
   {
    "id": "P1",
@@ -56,8 +56,8 @@
   }
  ],
  "tampons": {
-  "regle": "Un tampon par station : il se gagne en terminant la station avec au moins 3 bonnes réponses sur 4, puis se fait signer sur papier par le professeur après la mission.",
-  "certificats": "Une sous-ligne complète donne un certificat de branche (ex. « Certificat Électrique »). Les onze certificats forment le diplôme maison « Chargé d'affaires réglementaire » du carnet."
+  "regle": "Le quiz réussi (au moins 3/4) donne un badge de connaissances. Le professeur signe la mission après examen de la production et justification individuelle.",
+  "certificats": "Les certificats de branche sont des repères pédagogiques internes. Ils ne constituent ni un diplôme reconnu, ni une habilitation, ni une validation complète des compétences du TP."
  },
  "sous_lignes": [
   {
@@ -84,7 +84,7 @@
      "slug": "thermique-re2020",
      "mission": {
       "titre": "Mission : un excellent carbone ne rattrape pas un Bbio dépassé",
-      "badge": "Trois seuils, trois contrôles",
+      "badge": "Six indicateurs, sans compensation",
       "duree_min": 25
      }
     },

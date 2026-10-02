@@ -195,3 +195,8 @@ des climatiseurs, pompes à chaleur… avec compresseur entraîné par moteur é
     pas été repris ; seule la valeur « zone calme, typiquement 25 dB(A) » du CidB l'est.
 12. **Résultat du calcul d'exercice** à confronter, avant diffusion, à une fiche réelle et à un
     calcul d'acousticien (NF EN ISO 9613-2, norme payante, non lue).
+
+## Relecture du 1er octobre 2026
+
+Corrections synchronisées avec mission.json et le carnet. Sources de contrôle : Données fictives déjà présentes dans le défi ; aucune fiche constructeur attribuée.
+La relecture générale et les réserves non traitées restent distinctes de ces corrections ciblées.

@@ -255,3 +255,8 @@ imprimé en A4 noir et blanc.
 
 Pièce jointe à l'envoi : `packs/fluides/res/svg/aptitude-capacite.svg` (base de
 l'écran 6).
+
+## Relecture du 1er octobre 2026
+
+Corrections synchronisées avec mission.json et le carnet. Sources de contrôle : https://www.ecologie.gouv.fr/sites/default/files/documents/Note_pedagogique_Evolution_FGAZ_2024_573.pdf (pages 3-4) ; règlement UE 2024/573, article 5
+La relecture générale et les réserves non traitées restent distinctes de ces corrections ciblées.

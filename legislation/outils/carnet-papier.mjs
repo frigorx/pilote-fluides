@@ -51,12 +51,14 @@ const D = SANS_DOCX ? null : require("docx");
 const NAVY = "1B3A63", ORANGE = "E8914A", GRIS = "56657A", TXT = "10233C";
 const CP = { CP1: "plans d’implantation", CP2: "modélisation", CP3: "réseaux sanitaires", CP4: "VMC", CP5: "déperditions",
   CP6: "chauffage / ECS", CP7: "ventilation tertiaire", CP8: "apports", CP9: "climatisation", CP10: "CTA" };
+const PEDAGOGIE = JSON.parse(readFileSync(join(RACINE, "pedagogie.json"), "utf8"));
+const indice = (s, q) => ["P1", "P2"].includes(s.periode.id) ? `(station, écran ${q.ecran})` : "(source à retrouver)";
 const ECHELLE = [
   { n: 0, nom: "Non évalué", critere: "Mission non traitée, ou étudiant absent (absence notée ABS, distincte du 0)." },
-  { n: 1, nom: "Non acquis", critere: "Moins de 3 bonnes réponses sur 4, ou pièce absente ou hors sujet : la notion est à reprendre avec le professeur." },
-  { n: 2, nom: "En cours", critere: "Tampon obtenu, mais pièce incomplète ou reprise nécessaire après remarque du professeur." },
-  { n: 3, nom: "Acquis", critere: "Tampon obtenu, pièce complète et juste, défi réussi." },
-  { n: 4, nom: "Parfaitement maîtrisé", critere: "Tout du premier coup, et l’étudiant justifie chaque réponse en citant le texte ou l’écran de la station." },
+  { n: 1, nom: "Non acquis", critere: "Pièce absente, hors sujet ou raisonnement non maîtrisé malgré l’aide : reprendre les notions et la méthode." },
+  { n: 2, nom: "En cours", critere: "Production partielle ; données, source ou justification à reprendre avec une aide identifiée." },
+  { n: 3, nom: "Acquis", critere: "Pièce cohérente, source vérifiée, calcul ou raisonnement juste et justification individuelle sans aide décisive." },
+  { n: 4, nom: "Parfaitement maîtrisé", critere: "Production autonome et argumentée ; l’étudiant vérifie les limites et adapte sa décision à une donnée nouvelle." },
 ];
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const hm = (min) => (min >= 60 ? `${Math.floor(min / 60)} h ${String(min % 60).padStart(2, "0")}` : `${min} min`);
@@ -353,7 +355,7 @@ function pagesMission(s, qrs) {
     <div class="bloc"><span class="lib">Le client</span>${esc(m.client)}</div>
     <div class="bloc"><span class="lib">La situation</span>${esc(m.situation)}</div>
     <div class="bloc"><span class="lib">La pièce à produire</span>${esc(m.piece_a_produire)}</div>
-    <div class="grow"><div class="lib2">Ma pièce : je la prépare ici, puis je la rends</div>${ZONE}</div>
+    <div class="grow"><div class="lib2">Ma pièce : brouillon ici, feuille jointe si nécessaire</div>${ZONE}</div>
     <p class="rappel"><b>Je travaille :</b> ${esc(travaille)}</p>
     <div class="bas">
       <div class="qr">${qrs.get(s.slug)}<div>Scannez : la station</div></div>
@@ -365,7 +367,7 @@ function pagesMission(s, qrs) {
   const verso = `<section class="page" ${couleur(s)}>
     ${bandeauHtml(s)}
     <p class="lib2">Questions et défi · ${esc(m.titre)}</p>
-    ${m.questions.map((q, i) => `<div class="q"><div class="qt"><span class="qn">${i + 1}</span><span>${esc(q.q)} <span class="ecr">(station, écran ${esc(q.ecran)})</span></span></div>${ZONE}</div>`).join("")}
+    ${m.questions.map((q, i) => `<div class="q"><div class="qt"><span class="qn">${i + 1}</span><span>${esc(q.q)} <span class="ecr">${esc(indice(s, q))}</span></span></div>${ZONE}</div>`).join("")}
     <div class="defi"><span class="tete">Défi · ${esc(TYPES[m.defi.type] || m.defi.type)}</span><p>${esc(m.defi.consigne)}</p>${defiHtml(m.defi)}${ZONE}</div>
     ${piedHtml(ligneCodes(m), `mission ${n} · verso`)}
   </section>`;
@@ -391,7 +393,7 @@ function pagesOuverture(M, rimg) {
     <div class="etapes">
       <div class="etape"><span class="n">1</span><span class="t"><b>Une mission = une station.</b> Chaque mission est une feuille recto-verso du carnet : un client, une situation, une pièce à produire.</span></div>
       <div class="etape"><span class="n">2</span><span class="t"><b>Scannez le QR</b> en bas de la première page : la station s’ouvre sur votre téléphone ou votre tablette. Faites-la en entier.</span></div>
-      <div class="etape"><span class="n">3</span><span class="t"><b>Remplissez la mission</b> : votre pièce sur le recto, les quatre questions et le défi sur le verso. Chaque question dit dans quel écran de la station se trouve la réponse.</span></div>
+      <div class="etape"><span class="n">3</span><span class="t"><b>Remplissez la mission</b> : votre pièce sur le recto, les quatre questions et le défi sur le verso. En P1–P2, un écran vous guide ; en P3–P5, recherchez la source.</span></div>
       <div class="etape"><span class="n">4</span><span class="t"><b>Faites signer le tampon</b> par le professeur, qui regarde votre pièce. Sur la station, 3 bonnes réponses sur 4 donnent aussi un tampon numérique.</span></div>
     </div>
     <div class="encadre"><b>Les certificats.</b> ${esc(M.tampons.certificats)} Cochez-les sur la carte des tampons.</div>
@@ -428,7 +430,7 @@ function pagesOuverture(M, rimg) {
   const certs = `<section class="page"><h1 class="titrepage">Mes certificats</h1>
     <p>${esc(M.tampons.regle)}</p>
     <div class="certifs">${M.lignes.map((l) => `<div class="certif" style="--c:${esc(l.couleur)}"><div class="h">Certificat ${esc(l.nom)}</div><div>${pluriel(l.stations.length, "mission", "missions")} · signé le : ____________</div></div>`).join("")}</div>
-    <div class="diplome"><div class="grand">Chargé d’affaires réglementaire</div><p>Les ${M.lignes.length} certificats de branche réunis. Diplôme maison de ${esc(M.entreprise)}.</p><p style="margin-top:4mm">Nom : ______________________ &nbsp; Date : ______________ &nbsp; Signature :</p></div>
+    <div class="diplome"><div class="grand">Chargé d’affaires réglementaire</div><p>Les ${M.lignes.length} certificats de branche réunis. Parcours interne de ${esc(M.entreprise)}.</p><p style="margin-top:4mm">Nom : ______________________ &nbsp; Date : ______________ &nbsp; Signature :</p></div>
     ${piedHtml("Une branche terminée donne un certificat", "certificats")}</section>`;
   return { couv, mode, frise, carteHtml, certs, nbMissions, duree };
 }
@@ -478,6 +480,10 @@ function pagesPeriode(M, pe, sts, rimg) {
 
 const SCRIPT_DEBORD = `<script>(function(){var d=[];document.querySelectorAll('.page').forEach(function(p,i){if(p.scrollHeight>p.clientHeight+1){p.setAttribute('data-debord',p.scrollHeight-p.clientHeight);d.push(i+1)}});var z=[];document.querySelectorAll('.page').forEach(function(p,i){var q=[].map.call(p.querySelectorAll('.zone'),function(e){return e.clientHeight}).filter(Boolean);if(q.length)z.push((i+1)+':'+Math.round(Math.min.apply(null,q)*25.4/96))});document.documentElement.setAttribute('data-zmin',z.join(','));document.documentElement.setAttribute('data-debords',d.join(','));document.documentElement.setAttribute('data-fait','1')})()</script>`;
 
+function pagesPedagogie() {
+  return PEDAGOGIE.pages.map(p => `<section class="page"><h1 class="titrepage">${esc(p.titre)}</h1>${p.blocs.map(b => `<div class="bloc"><span class="lib">${esc(b.titre)}</span>${esc(b.texte)}</div>`).join("")}${piedHtml("TP TECVC · critères et autonomie", "guide pédagogique")}</section>`);
+}
+
 async function carnetEleveHtml(M, pe = null) {
   const sts = pe ? M.stations.filter((s) => s.periode.id === pe.id) : M.stations;
   const qrs = new Map();
@@ -486,6 +492,7 @@ async function carnetEleveHtml(M, pe = null) {
   let pages;
   if (pe) { const o = pagesPeriode(M, pe, sts, rimg); pages = [o.couv, o.carte, ...sts.flatMap((s) => pagesMission(s, qrs)), ...pagesGlossaire(M, sts)]; }
   else { const o = pagesOuverture(M, rimg); pages = [o.couv, o.mode, o.frise, ...o.carteHtml, o.certs, ...sts.flatMap((s) => pagesMission(s, qrs)), ...pagesGlossaire(M, sts)]; }
+  pages.push(...pagesPedagogie());
   const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Mon carnet du chargé d’affaires${pe ? " — " + pe.id : ""} — inerWeb Législation</title>
 <meta name="robots" content="noindex"><style>${CSS_COMMUN}${CSS_ELEVE}</style></head><body>
 ${pages.join("\n").replaceAll("__TOTAL__", String(M.total))}
@@ -551,11 +558,11 @@ function livretHtml(M, rimg) {
 
   const methode = `<h2 class="sautavant">Comment conduire une mission</h2>
     <ol>
-      <li><b>L’étudiant scanne le QR</b> de la première page de sa mission et fait la station en entier (environ 25 à 35 minutes).</li>
-      <li><b>Il remplit sa feuille</b> : la pièce à produire sur le recto ; les quatre questions et le défi sur le verso. Chaque question renvoie à un écran de la station : c’est là qu’on le renvoie s’il n’a pas trouvé.</li>
+      <li><b>L’étudiant scanne le QR</b> de la première page de sa mission et fait la station en entier (durée indicative : cours puis travail écrit, à adapter).</li>
+      <li><b>Il remplit sa feuille</b> : la pièce à produire sur le recto ; les quatre questions et le défi sur le verso. En P1–P2, les questions indiquent un écran ; en P3–P5, l’étudiant retrouve la source. Le corrigé conserve les repères pour une aide ponctuelle.</li>
       <li><b>Vous regardez la pièce</b> et le défi avec les corrigés de ce livret, puis vous <b>tamponnez et datez</b>. Le tampon de la station (3 bonnes réponses sur 4) ne remplace pas votre signature.</li>
       <li><b>Vous positionnez</b> avec la grille de la branche : un niveau de 0 à 4 par compétence mobilisée et par pièce. Rien n’est noté sur 20.</li>
-      <li><b>Une branche terminée</b> donne un certificat ; les ${M.lignes.length} certificats donnent le diplôme maison « Chargé d’affaires réglementaire ».</li>
+      <li><b>Une branche terminée</b> donne un certificat ; les ${M.lignes.length} certificats donnent le parcours interne « Chargé d’affaires réglementaire ».</li>
     </ol>
     <h2>L’échelle à cinq niveaux</h2>
     <table><tr><th class="cr" style="width:12mm">Niveau</th><th style="width:44mm">Nom</th><th>Critère observable</th></tr>${ECHELLE.map((e) => `<tr><td class="cr"><b>${e.n}</b></td><td><b>${esc(e.nom)}</b></td><td>${esc(e.critere)}</td></tr>`).join("")}</table>
@@ -590,7 +597,7 @@ function livretHtml(M, rimg) {
 
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Livret du professeur — carnet du chargé d’affaires</title>
 <meta name="robots" content="noindex"><style>${CSS_COMMUN}${CSS_PROF}</style></head><body><div class="doc">
-${cover}${methode}${progression}
+${cover}${methode}${PEDAGOGIE.pages.map(p => `<h2 class="sautavant">${esc(p.titre)}</h2>${p.blocs.map(b => `<h3>${esc(b.titre)}</h3><p>${esc(b.texte)}</p>`).join("")}`).join("")}${progression}
 <h1 style="margin-top:6mm">Les missions, branche par branche</h1><p class="rap">Chaque mission : corrigés, points de vigilance ; chaque branche se termine par sa grille de 0 à 4.</p>
 ${branches}</div></body></html>`;
 }
@@ -674,7 +681,7 @@ async function docxEleve(M, fichier, pe = null) {
   /* mode d'emploi */
   const etapes = [["Une mission = une station.", " Chaque mission est une feuille recto-verso du carnet : un client, une situation, une pièce à produire."],
     ["Scannez le QR", " en bas de la première page : la station s’ouvre sur votre téléphone ou votre tablette. Faites-la en entier."],
-    ["Remplissez la mission :", " votre pièce sur le recto, les quatre questions et le défi sur le verso. Chaque question dit dans quel écran de la station se trouve la réponse."],
+    ["Remplissez la mission :", " votre pièce sur le recto, les quatre questions et le défi sur le verso. En P1–P2, un écran vous guide ; en P3–P5, recherchez la source."],
     ["Faites signer le tampon", " par le professeur, qui regarde votre pièce. Sur la station, 3 bonnes réponses sur 4 donnent aussi un tampon numérique."]];
   secs.push(section([titre("Comment ça marche", 56),
     table([rowT([cell([p([t(`${M.entreprise}, une entreprise fictive. `, { bold: true }), t(M.fil_rouge)])], LARGEUR, { borders: cadre(ORANGE, 8), shading: { type: ShadingType.CLEAR, fill: "FDF3E8" } })])], [LARGEUR]),
@@ -721,7 +728,7 @@ async function docxEleve(M, fichier, pe = null) {
   for (let k = 0; k < M.lignes.length; k += 2) rangs.push(rowT([0, 1].map((j) => { const l = M.lignes[k + j]; return l ? cell([p(t(`Certificat ${l.nom}`, { bold: true, color: hex(l.couleur) })), p(t(`${pluriel(l.stations.length, "mission", "missions")} · signé le : ________`))], wC, { borders: cadre(hex(l.couleur), 10) }) : cell([p(t(""))], wC, { borders: aucun }); }), { height: { value: mmT(28), rule: HeightRule.ATLEAST } }));
   secs.push(section([titre("Mes certificats", 56), p(t(M.tampons.regle)), espace(3), table(rangs, [wC, wC]), espace(5),
     table([rowT([cell([p(t("Chargé d’affaires réglementaire", { bold: true, color: NAVY, size: 44, font: "Trebuchet MS" }), { alignment: AlignmentType.CENTER }),
-      p(t(`Les ${M.lignes.length} certificats de branche réunis. Diplôme maison de ${M.entreprise}.`), { alignment: AlignmentType.CENTER }),
+      p(t(`Les ${M.lignes.length} certificats de branche réunis. Parcours interne de ${M.entreprise}.`), { alignment: AlignmentType.CENTER }),
       p(t("Nom : ______________________   Date : ____________   Signature :"), { alignment: AlignmentType.CENTER, spacing: { before: 160 } })], LARGEUR, { borders: cadre(NAVY, 18, BorderStyle.DOUBLE) })])], [LARGEUR])],
     pied("Une branche terminée donne un certificat", "certificats")));
 
@@ -770,7 +777,7 @@ async function docxEleve(M, fichier, pe = null) {
     const hRecto = 10 + hTxt(m.titre, 186, 26, true) + 4 + [["Le client ", m.client], ["La situation ", m.situation], ["La pièce à produire ", m.piece_a_produire]].reduce((a, [l, x]) => a + hTxt(l + x, 178, 14) + 5, 0) + 9 + 9 + 42 + 6;
     secs.push(section([bandeau(s), p(t(m.titre, { bold: true, size: 44, color: NAVY, font: "Trebuchet MS" }), { spacing: { before: 60, after: 60 } }),
       bloc("Le client", m.client, coul), espace(2), bloc("La situation", m.situation, coul), espace(2), bloc("La pièce à produire", m.piece_a_produire, coul), espace(2),
-      p(t("Ma pièce : je la prépare ici, puis je la rends", { bold: true, color: NAVY })), zone(HAUT - hRecto - 3),
+      p(t("Ma pièce : brouillon ici, feuille jointe si nécessaire", { bold: true, color: NAVY })), zone(HAUT - hRecto - 3),
       p([t("Je travaille : ", { bold: true }), t(travaille, { color: GRIS })], { spacing: { before: 60, after: 60 } }),
       table([rowT([
         cell([p(new ImageRun({ type: "png", data: qr, transformation: { width: 118, height: 118 } }), { alignment: AlignmentType.CENTER }), p(t("Scannez : la station", { size: 28 }), { alignment: AlignmentType.CENTER })], mmT(40), { borders: aucun }),
@@ -780,13 +787,13 @@ async function docxEleve(M, fichier, pe = null) {
 
     /* verso */
     const it = m.defi.items || [];
-    const hQ = m.questions.map((q) => hTxt(`${q.q} (station, écran ${q.ecran})`, 170, 14) + 3);
+    const hQ = m.questions.map((q) => hTxt(`${q.q} ${indice(s, q)}`, 170, 14) + 3);
     const hD = 8 + hTxt(m.defi.consigne, 176, 14) + it.reduce((a, x) => a + hTxt(x, 165, 14) + 2, 0) + 6;
     const libre = HAUT - 10 - hTxt(m.titre, 186, 14, true) - hQ.reduce((a, b) => a + b, 0) - hD - 4 * 3 - 5;
     const zD = Math.max(20, libre * 0.3), zQ = Math.max(11, (libre - zD) / 4);
     const marque = (x) => (m.defi.type === "vrai-faux" ? [t(x + "     "), t("V ☐   F ☐", { bold: true, color: NAVY, font: "Segoe UI Symbol" })] : m.defi.type === "classer" || m.defi.type === "trouver-l-erreur" ? [t("☐  ", { font: "Segoe UI Symbol" }), t(x)] : [t(x)]);
     secs.push(section([bandeau(s, " · questions et défi"), p(t("Questions et défi · " + m.titre, { bold: true, color: NAVY }), { spacing: { before: 40, after: 40 } }),
-      ...m.questions.flatMap((q, i) => [p([t(`${i + 1}. `, { bold: true, color: coul }), t(q.q + " "), t(`(station, écran ${q.ecran})`, { bold: true, color: GRIS })], { spacing: { before: 60, after: 20 } }), zone(zQ)]),
+      ...m.questions.flatMap((q, i) => [p([t(`${i + 1}. `, { bold: true, color: coul }), t(q.q + " "), t(indice(s, q), { bold: true, color: GRIS })], { spacing: { before: 60, after: 20 } }), zone(zQ)]),
       table([rowT([cell([
         p([t(` Défi · ${TYPES[m.defi.type] || m.defi.type} `, { bold: true, color: "FFFFFF", shading: { type: ShadingType.CLEAR, fill: coul } })]),
         p(t(m.defi.consigne)), ...it.map((x) => p(marque(x), { indent: { left: 200 }, spacing: { after: 20 } })), zone(zD, coul)], LARGEUR, { borders: cadre(coul, 8), verticalAlign: VerticalAlign.TOP })])], [LARGEUR])],
@@ -809,6 +816,7 @@ async function docxEleve(M, fichier, pe = null) {
     table(attRows.slice(0, moitie).map(([c, l]) => rowCode(c, l)), [mmT(18), LARGEUR - mmT(18)])], pied("Codes du référentiel", "codes 1/2")));
   secs.push(section([titre("Les codes (suite) et mes notes", 48), table(attRows.slice(moitie).map(([c, l]) => rowCode(c, l)), [mmT(18), LARGEUR - mmT(18)]), espace(3), p(t("Mes notes", { bold: true, color: NAVY })), zone(HAUT - 14 - reste - 18)], pied("Codes du référentiel", "codes 2/2")));
 
+  for (const page of PEDAGOGIE.pages) secs.push(section([titre(page.titre, 44), ...page.blocs.flatMap(b => [p(t(b.titre, {bold:true, color:NAVY})), p(t(b.texte)), espace(2)])], pied("TP TECVC · critères et autonomie", "guide pédagogique")));
   const doc = new Document({ creator: "inerWeb", title: "Mon carnet du chargé d’affaires" + (pe ? " — " + pe.id : ""), styles: { default: { document: { run: { font: "Calibri", size: 28 } } } }, sections: secs });
   writeFileSync(fichier, await Packer.toBuffer(doc));
   return secs.length;
@@ -837,15 +845,16 @@ async function docxProf(M, fichier) {
     p([t(`${M.entreprise}. `, { bold: true }), t(M.fil_rouge)]),
     p([t("Le tampon. ", { bold: true }), t(`${M.tampons.regle} ${M.tampons.certificats}`)]),
     h2("Comment conduire une mission", { pageBreakBefore: true }),
-    ...["L’étudiant scanne le QR de la première page de sa mission et fait la station en entier (environ 25 à 35 minutes).",
-      "Il remplit sa feuille : la pièce à produire sur le recto ; les quatre questions et le défi sur le verso. Chaque question renvoie à un écran de la station : c’est là qu’on le renvoie s’il n’a pas trouvé.",
+    ...["L’étudiant scanne le QR de la première page de sa mission et fait la station en entier (durée indicative : cours puis travail écrit, à adapter).",
+      "Il remplit sa feuille : la pièce à produire sur le recto ; les quatre questions et le défi sur le verso. En P1–P2, les questions indiquent un écran ; en P3–P5, l’étudiant retrouve la source. Le corrigé conserve les repères pour une aide ponctuelle.",
       "Vous regardez la pièce et le défi avec les corrigés de ce livret, puis vous tamponnez et datez. Le tampon de la station (3 bonnes réponses sur 4) ne remplace pas votre signature.",
       "Vous positionnez avec la grille de la branche : un niveau de 0 à 4 par compétence mobilisée et par pièce. Rien n’est noté sur 20.",
-      `Une branche terminée donne un certificat ; les ${M.lignes.length} certificats donnent le diplôme maison « Chargé d’affaires réglementaire ».`].map((x, k) => p([t(`${k + 1}. `, { bold: true }), t(x)], { indent: { left: 340, hanging: 340 } })),
+      `Une branche terminée donne un certificat ; les ${M.lignes.length} certificats donnent le parcours interne « Chargé d’affaires réglementaire ».`].map((x, k) => p([t(`${k + 1}. `, { bold: true }), t(x)], { indent: { left: 340, hanging: 340 } })),
     h2("L’échelle à cinq niveaux"),
     table([new TableRow({ children: [entete("Niveau", mmT(18)), entete("Nom", mmT(44)), entete("Critère observable", LARGEUR - mmT(62))] }),
       ...ECHELLE.map((e) => rowT([cell([p(t(String(e.n), { bold: true }), { alignment: AlignmentType.CENTER })], mmT(18), { borders: cadre() }), cell([p(t(e.nom, { bold: true }))], mmT(44), { borders: cadre() }), cell([p(t(e.critere))], LARGEUR - mmT(62), { borders: cadre() })]))], [mmT(18), mmT(44), LARGEUR - mmT(62)]),
     p(t("Les critères portent sur ce qui s’observe dans la pièce et sur la station. Ils ne se convertissent pas en note sur 20.", { color: GRIS }), { spacing: { before: 60 } }),
+    ...PEDAGOGIE.pages.flatMap(page => [h2(page.titre, {pageBreakBefore:true}), ...page.blocs.flatMap(b => [h3(b.titre), p(t(b.texte))])]),
     h2("La progression de l’année", { pageBreakBefore: true }),
     p(t(`${M.total} missions, ${nbM} prêtes, durée cumulée des missions prêtes : environ ${hm(dTot)}. L’ordre des périodes est celui du chantier réel : la sécurité d’abord, l’affaire complète à la fin.`, { color: GRIS })),
     ...M.periodes.flatMap((pe) => {
@@ -900,6 +909,7 @@ if (sansSlug.length) console.log("Sans dossier de station (pas de QR) : " + sans
 
 const el = await carnetEleveHtml(M);
 writeFileSync(join(SORTIE, "qr-attendus.json"), JSON.stringify(Object.fromEntries(M.stations.filter((s) => s.slug && s.mission).map((s) => [String(s.numero), urlStation(s.slug)])), null, 1) + "\n");
+writeFileSync(join(SORTIE, "guide-pedagogique.html"), `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Utiliser le carnet en TP TECVC</title><style>${CSS_COMMUN}${CSS_ELEVE}@media screen{.page{height:auto;min-height:297mm;overflow:visible;max-width:100%;margin:auto}.pied{position:static}}</style></head><body><p><a href="../carnet.html">Retour au carnet</a></p>${pagesPedagogie().join("")}</body></html>`);
 const fEleveHtml = join(SORTIE, "carnet-eleve.html");
 writeFileSync(fEleveHtml, el.html);
 const fLivretHtml = join(SORTIE, "livret-professeur.html");

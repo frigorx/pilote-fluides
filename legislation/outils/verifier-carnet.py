@@ -32,7 +32,7 @@ import glob
 fichiers = [(os.path.basename(x), 14, 20) for x in sorted(glob.glob(os.path.join(dossier, 'carnet-eleve*.pdf')))] + [('livret-professeur.pdf', 13, 18)]
 for nom, seuil, pied in fichiers:
     f = os.path.join(dossier, nom)
-    if not os.path.exists(f): print('absent :', nom); continue
+    if not os.path.exists(f): print('absent :', nom); ko += 1; continue
     n, tailles, sous, bas = polices(f, seuil, pied)
     total = sum(tailles.values()) or 1
     print(f'== {nom} : {n} pages')
@@ -50,7 +50,7 @@ att = os.path.join(dossier, 'qr-attendus.json')
 if os.path.exists(att):
     attendus = json.load(open(att, encoding='utf-8')); det = cv2.QRCodeDetector()
     for f in sorted(glob.glob(os.path.join(dossier, 'carnet-eleve*.pdf'))):
-        doc = fitz.open(f); vus = 0; faux = 0
+        doc = fitz.open(f); vus = 0; faux = 0; numeros = set()
         for i, page in enumerate(doc):
             m = re.search(r'mission (\d+)/\d+ · recto', page.get_text())
             if not m or m.group(1) not in attendus: continue
@@ -64,7 +64,13 @@ if os.path.exists(att):
                     if lu: break
                 if lu: break
             vus += 1
+            numeros.add(m.group(1))
             if lu != attendus[m.group(1)]: faux += 1; print(f'   QR FAUX page {i+1} : lu « {lu} » attendu « {attendus[m.group(1)]} »')
         print(f'== QR {os.path.basename(f)} : {vus} relus dans le PDF, {faux} faux')
         ko += faux > 0 or vus == 0
+        if os.path.basename(f) == 'carnet-eleve.pdf' and numeros != set(attendus):
+            print('   QR manquants ou inattendus :', sorted(set(attendus) ^ numeros))
+            ko += 1
+else:
+    print('absent : qr-attendus.json'); ko += 1
 sys.exit(1 if ko else 0)

@@ -223,3 +223,8 @@ médicale ✔** · c) un diplôme d'électricien · d) un certificat annuel de l
 - **Sanctions pénales chiffrées** en cas d'absence d'habilitation : non trouvées, non données.
 - Date de mise à jour de la page INRS affichée « 20/05/2022 » alors que son contenu décrit le
   régime d'octobre 2025 : à revérifier sur la brochure ED 6127 à jour.
+
+## Relecture du 1er octobre 2026
+
+Corrections synchronisées avec mission.json et le carnet. Sources de contrôle : https://www.inrs.fr/risques/electriques/habilitation-electrique-foire-aux-questions.html
+La relecture générale et les réserves non traitées restent distinctes de ces corrections ciblées.

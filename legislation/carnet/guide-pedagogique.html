@@ -1,0 +1,115 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Utiliser le carnet en TP TECVC</title><style>
+@page { size: A4; margin: 0 }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+html, body { margin: 0; padding: 0 }
+:root { --navy: #1b3a63; --or: #e8914a; --gris: #56657a; --txt: #10233c; --trait: #8fa0b3 }
+body { font: 14pt/1.28 Calibri, 'Segoe UI', Arial, sans-serif; color: var(--txt); background: #fff }
+h1, h2, h3, .titre { font-family: 'Trebuchet MS', Calibri, Arial, sans-serif; color: var(--navy); margin: 0 }
+p { margin: 0 }
+b, strong { font-weight: bold }
+@media screen { body { background: #d9e0e8 } .page { margin: 8mm auto; box-shadow: 0 1mm 4mm rgba(0,0,0,.25) } }
+
+.page { width: 210mm; height: 297mm; padding: 9mm 12mm 6mm; display: flex; flex-direction: column; gap: 2.6mm; overflow: hidden; break-after: page; background: #fff }
+.page:last-child { break-after: auto }
+.bandeau { white-space: nowrap; display: flex; justify-content: space-between; gap: 4mm; background: var(--c); color: #fff; font-weight: bold; padding: 1.6mm 4mm; border-radius: 2mm }
+h1 { font-size: 21pt; line-height: 1.12 }
+.bloc { border-left: 1.4mm solid var(--c); padding-left: 3.2mm }
+.bloc > .lib { display: block; font-weight: bold; color: var(--c); }
+.grow { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0 }
+.zone { flex: 1 1 0; min-height: 15mm; border: .4mm solid var(--trait); border-radius: 2mm; overflow: hidden;
+  display: flex; flex-direction: column-reverse }
+.zone i { flex: none; height: 8.4mm; border-top: .3mm solid #b3bfcd }
+.lib2 { font-weight: bold; color: var(--navy) }
+.bas { display: flex; gap: 4mm; align-items: stretch }
+.qr { width: 38mm; flex: none; text-align: center; line-height: 1.15 }
+.qr svg { width: 33mm; height: 33mm; display: block; margin: 0 auto 1mm }
+.tampon { flex: 1; border: .5mm dashed var(--gris); border-radius: 2mm; padding: 2mm 3mm; color: var(--gris); font-weight: bold; min-height: 38mm }
+.badge { width: 60mm; flex: none; display: flex; flex-direction: column; justify-content: space-between; gap: 2mm }
+.badge .nom { font-weight: bold; color: var(--c); font-size: 15pt; line-height: 1.15 }
+.pied { border-top: .7mm solid var(--or); padding-top: 1.4mm; line-height: 1.2 }
+.pied .l1 { font-weight: bold; color: var(--navy) }
+.pied .l2 { display: flex; justify-content: space-between; color: var(--gris) }
+.marque b { color: var(--navy) } .marque i { font-family: 'Segoe Script', cursive; font-style: normal; color: var(--navy) }
+.q { flex: 1 1 auto; display: flex; flex-direction: column; gap: 1mm }
+.q .qt { display: flex; gap: 3mm }
+.q .qn { flex: none; width: 9mm; height: 9mm; border-radius: 50%; background: var(--c); color: #fff; font-weight: bold; text-align: center; line-height: 9mm }
+.q .ecr { color: var(--gris); font-weight: bold; white-space: nowrap }
+.defi { flex: 1.5 1 auto; display: flex; flex-direction: column; gap: 1.4mm; border: .5mm solid var(--c); border-radius: 2mm; padding: 2mm 3.4mm }
+.defi .tete { font-weight: bold; color: #fff; background: var(--c); border-radius: 1.4mm; padding: .6mm 3mm; align-self: flex-start }
+.defi ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 1mm }
+.defi li { display: flex; gap: 2.5mm; align-items: baseline }
+.defi li .txt { flex: 1 }
+.case { display: inline-block; flex: none; width: 6.2mm; height: 6.2mm; border: .45mm solid var(--navy); border-radius: 1mm; vertical-align: -1.2mm }
+.vf { flex: none; white-space: nowrap; font-weight: bold; color: var(--navy) }
+.blanc { flex: 0 0 36mm; border-bottom: .4mm solid var(--navy); height: 6mm }
+.relier { display: flex; gap: 6mm } .relier ul { flex: 1 }
+.liaisons { font-weight: bold; color: var(--navy) }
+.rappel { color: var(--gris) }
+/* couverture */
+.couv { padding: 0; gap: 0; background: #fff }
+.couv img { width: 210mm; height: 152mm; object-fit: cover; display: block }
+.couv .corps { flex: 1; padding: 9mm 14mm 8mm; display: flex; flex-direction: column; gap: 5mm }
+.couv h1 { font-size: 34pt; line-height: 1.05 }
+.couv .sous { font-size: 17pt; color: var(--gris); font-weight: bold }
+.couv .champs { margin-top: auto; display: flex; flex-direction: column; gap: 4mm }
+.couv .champ { font-size: 17pt; font-weight: bold; color: var(--navy); border-bottom: .5mm solid var(--trait); padding-bottom: 1mm }
+.couv .pied { margin: 0 14mm 8mm }
+/* pages d'ouverture */
+.titrepage { font-size: 26pt; line-height: 1.1; border-bottom: .8mm solid var(--or); padding-bottom: 2mm }
+.etapes { flex: 1; display: flex; flex-direction: column; gap: 4mm; counter-reset: e }
+.etape { flex: 1; display: flex; gap: 5mm; align-items: center; border: .5mm solid var(--trait); border-radius: 3mm; padding: 3mm 5mm }
+.etape .n { flex: none; width: 15mm; height: 15mm; border-radius: 50%; background: var(--navy); color: #fff; font: bold 24pt/15mm 'Trebuchet MS', sans-serif; text-align: center }
+.etape .t { font-size: 17pt; line-height: 1.22 } .etape .t b { color: var(--navy) }
+.encadre { border: .5mm solid var(--or); background: #fdf3e8; border-radius: 3mm; padding: 3.5mm 5mm }
+.frise { flex: 1; display: flex; flex-direction: column; position: relative; padding-left: 16mm }
+.frise::before { content: ""; position: absolute; left: 6.6mm; top: 6mm; bottom: 6mm; width: 1.6mm; background: var(--trait) }
+.per { flex: 1; position: relative; padding: 2.4mm 0 2.4mm 0; display: flex; flex-direction: column; gap: 1.4mm; justify-content: center }
+.per .pt { position: absolute; left: -16mm; top: 50%; margin-top: -7mm; width: 14mm; height: 14mm; border-radius: 50%; background: var(--navy); color: #fff; font: bold 17pt/14mm 'Trebuchet MS', sans-serif; text-align: center }
+.per h3 { font-size: 18pt }
+.per .meta { color: var(--or); font-weight: bold; filter: brightness(.78) }
+.chips { display: flex; flex-wrap: wrap; gap: 2mm }
+.chip { background: var(--c); color: #fff; font-weight: bold; border-radius: 999px; padding: .4mm 3.4mm }
+.carte { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 2mm }
+.cp { display: flex; flex-direction: column; gap: 1.6mm }
+.cper { font: bold 16pt 'Trebuchet MS', sans-serif; color: var(--navy); border-bottom: .6mm solid var(--or); padding-bottom: .6mm }
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm 6mm; align-items: start }
+.cbloc { display: flex; flex-direction: column; gap: 0; break-inside: avoid }
+.cbloc .ch { background: var(--c); color: #fff; font-weight: bold; padding: 0 3mm; min-height: var(--h); border-radius: 1.4mm; display: flex; justify-content: space-between; align-items: center; gap: 2mm }
+.cbloc .ch .cert { display: flex; gap: 1.6mm; align-items: center; white-space: nowrap }
+.cbloc .ch .cert .case { border-color: #fff; width: 5mm; height: 5mm }
+.cst { display: flex; gap: 2.4mm; align-items: center; line-height: 1.1; min-height: var(--h) }
+.cst .case { width: 5.6mm; height: 5.6mm }
+.cst .no { color: var(--gris); font-weight: bold; min-width: 8mm }
+/* carnet d'une période */
+.couvp img { width: 210mm; height: 92mm; object-fit: cover; display: block }
+.couvp { padding: 0; gap: 0 }
+.couvp .corps { flex: 1; padding: 6mm 12mm 0; display: flex; flex-direction: column; gap: 3.4mm }
+.couvp h1 { font-size: 30pt; line-height: 1.05 }
+.couvp .meta { font-size: 16pt; font-weight: bold; color: #b8692e }
+.couvp .pq { font-size: 16pt; line-height: 1.25 }
+.couvp .champs { margin-top: auto; display: flex; flex-direction: column; gap: 3mm; padding-bottom: 3mm }
+.couvp .champ { font-size: 16pt; font-weight: bold; color: var(--navy); border-bottom: .5mm solid var(--trait); padding-bottom: 1mm }
+.couvp .pied { margin: 0 12mm 6mm }
+.hfrise { display: flex; gap: 2mm }
+.hf { flex: 1; border: .5mm solid var(--trait); border-radius: 2mm; padding: 1.4mm 2mm; color: var(--gris); line-height: 1.15 }
+.hf b { display: block; font-size: 16pt; font-family: 'Trebuchet MS', sans-serif }
+.hf.on { background: var(--navy); border-color: var(--navy); color: #fff }
+.cartes3 { flex: 1; display: flex; flex-direction: column; gap: 3mm }
+.csl { flex: var(--n) 1 0; display: flex; flex-direction: column; gap: 1.4mm; min-height: 0 }
+.csl .ch { background: var(--c); color: #fff; font-weight: bold; padding: .8mm 3mm; border-radius: 1.4mm; display: flex; justify-content: space-between; align-items: center }
+.csl .ch .cert { display: flex; gap: 1.6mm; align-items: center; white-space: nowrap }
+.csl .ch .cert .case { border-color: #fff; width: 5mm; height: 5mm }
+.cards { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 2.4mm; min-height: 0 }
+.card { border: .5mm solid var(--c); border-radius: 2mm; padding: 1.4mm 2.4mm; display: flex; flex-direction: column; gap: 1mm; min-height: 0 }
+.card .nm { font-weight: bold; line-height: 1.12 } .card .nm span { color: var(--c) }
+.card .st { flex: 1; border: .45mm dashed var(--gris); border-radius: 1.6mm; color: var(--gris); padding: .6mm 2mm; min-height: 9mm }
+.certifs { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; grid-auto-rows: 1fr }
+.certif { border: .6mm solid var(--c); border-radius: 3mm; padding: 2.5mm 4mm; display: flex; flex-direction: column; justify-content: space-between; gap: 1mm }
+.certif .h { font-weight: bold; color: var(--c) }
+.diplome { border: 1mm double var(--navy); border-radius: 3mm; padding: 4mm 6mm; text-align: center; background: #f3f6fa }
+.diplome .grand { font: bold 22pt 'Trebuchet MS', sans-serif; color: var(--navy) }
+.glos { display: flex; flex-direction: column; gap: 1.6mm }
+.glos .r { display: flex; gap: 3mm; align-items: baseline }
+.glos .code { flex: none; min-width: 17mm; background: var(--navy); color: #fff; font-weight: bold; text-align: center; border-radius: 1.2mm; padding: 0 1.5mm }
+.glos .lib { flex: 1; line-height: 1.2 }
+@media screen{.page{height:auto;min-height:297mm;overflow:visible;max-width:100%;margin:auto}.pied{position:static}}</style></head><body><p><a href="../carnet.html">Retour au carnet</a></p><section class="page"><h1 class="titrepage">Du cours à une décision professionnelle</h1><div class="bloc"><span class="lib">D’où vient la situation ?</span>Le carnet fournit une commande fictive. Le QR ouvre le cours associé. Une mission peut rester une analyse qualitative. Si elle demande une fiche machine, un plan, un CCTP ou un relevé absent, le formateur le fournit avant l’activité, ou fait identifier les informations manquantes. On n’invente pas une donnée réelle.</div><div class="bloc"><span class="lib">Avec un sujet de BTS ou un chantier d’alternant</span>Conserver l’objectif de la mission et joindre les seules annexes utiles, avec leur origine et leur date. Pour une entreprise : autorisation, anonymisation et retrait des données sensibles. Pour un sujet de BTS : vérifier l’adéquation au TP TECVC. Un corrigé ne fait pas partie du dossier élève.</div><div class="bloc"><span class="lib">Une aide qui diminue</span>P1–P2 : les questions indiquent l’écran utile. P3–P5 : chercher soi-même dans le cours ; demander l’indice au professeur si nécessaire. Terminer chaque mission par une justification individuelle, sans le cours, puis expliquer ce qui changerait si une donnée du cas changeait.</div><div class="bloc"><span class="lib">Ce qui est évalué</span>Quatre critères : données et limites identifiées ; source pertinente et datée ; raisonnement ou calcul vérifiable ; décision expliquée au client. Le quiz contrôle des connaissances. Le professeur apprécie séparément la production et l’autonomie avec les niveaux 0 à 4. Les badges internes ne délivrent ni diplôme ni habilitation.</div><div class="bloc"><span class="lib">Temps et trace</span>Les durées des missions sont des estimations de travail guidé, pas une mesure du temps nécessaire à la maîtrise. Ajouter la recherche documentaire, la correction et l’oral. Rendre les pièces longues sur une feuille jointe : les lignes du carnet servent aussi de brouillon.</div><div class="pied"><div class="l1">TP TECVC · critères et autonomie</div><div class="l2"><span class="marque"><b>iner</b><i>Web</i> · Législation · Clim’Études Sud</span><span>guide pédagogique</span></div></div></section><section class="page"><h1 class="titrepage">Mission finale : défendre un conseil au client</h1><div class="bloc"><span class="lib">La commande et les ressources</span>Reprendre le cas fictif PAC chez le voisin, avec ses deux implantations et ses données de calcul. Le propriétaire demande une recommandation compréhensible, les points à vérifier avant travaux et les limites de l’étude. Utiliser le carnet, les cours et leurs sources. Ce dossier réglementaire ne remplace pas le dimensionnement complet d’une installation.</div><div class="bloc"><span class="lib">Le travail demandé</span>Préparer individuellement trois pages maximum : 1) schéma d’implantation des deux options et hypothèses ; 2) comparaison acoustique chiffrée et conseil argumenté ; 3) vérifications à effectuer pour les intervenants, le fluide, les déchets et les formalités. Distinguer faits disponibles, hypothèses et pièces à demander. Ne pas appliquer automatiquement la RE2020 à ce remplacement dans l’existant.</div><div class="bloc"><span class="lib">Le déroulement</span>Prévoir deux heures de préparation après les missions utiles, puis cinq minutes de présentation et cinq minutes d’échange par élève. Le formateur peut adapter cette durée. Pendant l’oral, il change une donnée du cas : l’élève explique ce qu’il faut recalculer ou revérifier, sans recevoir la solution.</div><div class="bloc"><span class="lib">Les critères de réussite</span>Identifier Lw et Lp, montrer la comparaison des implantations et le calcul logarithmique, ne pas transformer une estimation en garantie réglementaire, proposer les vérifications pertinentes et répondre au changement de donnée. Positionner chacun des quatre critères de la page précédente de 0 à 4 ; garder la preuve individuelle et les aides reçues.</div><div class="bloc"><span class="lib">Le lien avec le TP TECVC</span>Cette activité apporte des éléments sur l’implantation et la justification de choix CVC. Une simple note réglementaire ne prouve pas à elle seule la maîtrise complète des CP du référentiel. Le professeur croise ces observations avec les études techniques et les autres évaluations de la formation.</div><div class="pied"><div class="l1">TP TECVC · critères et autonomie</div><div class="l2"><span class="marque"><b>iner</b><i>Web</i> · Législation · Clim’Études Sud</span><span>guide pédagogique</span></div></div></section></body></html>

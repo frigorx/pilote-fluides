@@ -27,7 +27,7 @@
      rotationAuto  false pour ne jamais tourner seul
    ===================================================================== */
 
-const THREE_URL = "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.min.js";
+const THREE_URL = new URL("./vendor/three.module.min.js", import.meta.url).href;
 const CLE_TAMPONS = "inerweb-legislation-tampons";
 
 /* Les onze zones du bâtiment <-> les onze sous-lignes du plan. */

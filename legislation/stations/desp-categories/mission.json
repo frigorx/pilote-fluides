@@ -6,22 +6,34 @@
   "situation": "L'exploitant voudrait conserver son réservoir tampon en changeant de fluide, et pense que la catégorie d'un équipement est fixée une fois pour toutes à la fabrication, sur la seule base de la pression. Il ne sait pas non plus pourquoi certains équipements demandent l'intervention d'un organisme extérieur et d'autres non. Votre responsable vous demande de préparer une fiche qui explique comment se construit une catégorie, comment le groupe du fluide la fait bouger, et où on la lit sur le terrain.",
   "piece_a_produire": "Une fiche d'une page « Comment se lit une catégorie » : les trois critères croisés, la définition des groupes 1 et 2, un exemple avec le même réservoir et deux fluides, et une réponse de cinq lignes à l'exploitant.",
   "questions": [
-    { "q": "Quels trois éléments se croisent pour donner la catégorie d'un équipement ?", "ecran": 2,
-      "reponse": "La pression maximale admissible (PS), le volume de l'équipement (ou le diamètre pour une tuyauterie) et le groupe du fluide contenu. Changer un seul des trois peut changer la catégorie." },
-    { "q": "Comment le groupe du fluide déplace-t-il la frontière entre les catégories du diagramme croisé ?", "ecran": 4,
-      "reponse": "Pour un fluide du groupe 1 (dangereux), la frontière se rapproche de l'origine : une combinaison pression-volume plus modeste suffit à atteindre une catégorie plus haute. Pour un fluide du groupe 2, il faut aller plus loin sur les deux axes." },
-    { "q": "Qu'est-ce qui change dans le contrôle quand la catégorie monte, de la catégorie I vers la catégorie IV ?", "ecran": 5,
-      "reponse": "En catégorie I, le fabricant peut assurer seul l'évaluation de conformité. En montant vers la catégorie IV, l'intervention d'un organisme extérieur devient nécessaire, jusqu'à l'inspection de l'équipement par un tiers pour les catégories les plus hautes." },
-    { "q": "Un même réservoir tampon, à PS et volume identiques, contient d'abord un fluide du groupe 2 puis un fluide du groupe 1 : sa catégorie est-elle la même ?", "ecran": 6,
-      "reponse": "Pas forcément : le fluide fait partie du classement. Avec un fluide du groupe 1 (inflammable ou toxique), le même réservoir peut basculer dans une catégorie plus haute. Le fluide change la catégorie, pas seulement le contenant." }
+    {
+      "q": "Quels trois éléments se croisent pour donner la catégorie d'un équipement ?",
+      "ecran": 2,
+      "reponse": "La pression maximale admissible (PS), le volume de l'équipement (ou le diamètre pour une tuyauterie) et le groupe du fluide contenu. Changer un seul des trois peut changer la catégorie."
+    },
+    {
+      "q": "Comment le groupe du fluide déplace-t-il la frontière entre les catégories du diagramme croisé ?",
+      "ecran": 4,
+      "reponse": "Pour un fluide du groupe 1 (dangereux), la frontière se rapproche de l'origine : une combinaison pression-volume plus modeste suffit à atteindre une catégorie plus haute. Pour un fluide du groupe 2, il faut aller plus loin sur les deux axes."
+    },
+    {
+      "q": "Qu'est-ce qui change dans le contrôle quand la catégorie monte, de la catégorie I vers la catégorie IV ?",
+      "ecran": 5,
+      "reponse": "En catégorie I, le fabricant peut assurer seul l'évaluation de conformité. En montant vers la catégorie IV, l'intervention d'un organisme extérieur devient nécessaire, jusqu'à l'inspection de l'équipement par un tiers pour les catégories les plus hautes."
+    },
+    {
+      "q": "Un même réservoir tampon, à PS et volume identiques, contient d'abord un fluide du groupe 2 puis un fluide du groupe 1 : sa catégorie est-elle la même ?",
+      "ecran": 6,
+      "reponse": "Pas forcément. Le groupe CLP, l’état du fluide, la famille d’équipement et les caractéristiques de conception déterminent le tableau applicable. Un changement de fluide exige une étude, pas une simple modification de plaque."
+    }
   ],
   "defi": {
     "type": "trouver-l-erreur",
     "consigne": "Deux de ces quatre phrases sont fausses. Trouvez-les et corrigez-les (5 minutes).",
     "items": [
-      "Un fluide inflammable ou toxique au sens de la norme NF EN 378 relève du groupe 1 de la DESP.",
+      "Le groupe DESP se vérifie avec les classes et catégories CLP visées par le texte, sans équivalence automatique avec NF EN 378.",
       "La catégorie d'un équipement se recalcule sur le chantier à partir des valeurs mesurées.",
-      "Le marquage CE, la déclaration de conformité, la notice et les accessoires de sécurité accompagnent l'équipement conforme.",
+      "Pour un équipement de catégorie I à IV, vérifier le marquage CE, la déclaration, la notice et les protections applicables.",
       "Pour un fluide du groupe 2, la frontière entre catégories se rapproche de l'origine du diagramme."
     ],
     "corrige": "Phrases 2 et 4 fausses. 2 : la catégorie ne se recalcule pas sur le terrain, elle se lit sur la plaque et dans la notice. 4 : c'est pour le groupe 1 que la frontière se rapproche de l'origine ; pour le groupe 2, il faut aller plus loin sur les deux axes. Phrases 1 et 3 exactes."
@@ -30,7 +42,9 @@
   "duree_min": 25,
   "referentiel": {
     "tecvc": [],
-    "attestation_2025": ["11.03"],
+    "attestation_2025": [
+      "11.03"
+    ],
     "justification": "Hors REAC pour le TP TECVC : culture réglementaire du technicien et du chargé d'affaires. Côté attestation d'aptitude 2025, le code 11.03 (fluides inflammables, toxiques ou nécessitant une pression de fonctionnement plus élevée) rejoint la notion de groupe du fluide."
   }
 }

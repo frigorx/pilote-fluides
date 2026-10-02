@@ -73,3 +73,8 @@ __pycache__/
 packs/fluides/res/*/tests/screenshots/
 # FormaRézo : ses PDF d'élève partent (livrer.py de l'atelier)
 !formarezo/**/*.pdf
+
+# Carnets publics du réseau Législation, régénérés et contrôlés.
+!legislation/carnet/carnet-eleve.pdf
+!legislation/carnet/carnet-eleve-P[1-5].pdf
+!legislation/carnet/livret-professeur.pdf
