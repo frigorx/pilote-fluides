@@ -322,3 +322,55 @@
     poser();
   }
 })();
+
+/* =====================================================================
+   GARDE DE DOMAINE — décision F. Henninot 02/10/2026.
+   ---------------------------------------------------------------------
+   Une page qui tourne ailleurs que chez inerWeb (site aspiré puis
+   republié) affiche en tête un bandeau qui renvoie à l'original.
+   Pas de chiffrement, pas de blocage : la doctrine du 14/07/2026 tient
+   (le verrou est le droit et la preuve, jamais l'obfuscation).
+   Le bandeau ne dit PAS « copie interdite » : sous CC BY-NC-ND, une
+   copie non commerciale qui cite inerWeb est permise. Il dit où vit la
+   version à jour — le copieur pressé republie notre adresse.
+   Exemptés : inerweb.fr, frigorx.github.io, file:// (classe hors
+   ligne), localhost et réseaux privés (serveur de salle, multiposte).
+   SCEAU : chaîne fixe, cherchable (recherche de code GitHub, moteurs)
+   pour retrouver les copies : inerweb-sceau-7f3a9c2e
+   ===================================================================== */
+(function () {
+  "use strict";
+  if (window.__gardeInerweb) return;
+  window.__gardeInerweb = "inerweb-sceau-7f3a9c2e";
+
+  var h = (location.hostname || "").toLowerCase().replace(/^\[|\]$/g, "");
+  if (
+    location.protocol === "file:" ||
+    h === "" || (h.indexOf(".") === -1 && h.indexOf(":") === -1) ||
+    h === "inerweb.fr" || /\.inerweb\.fr$/.test(h) ||
+    h === "frigorx.github.io" ||
+    h === "127.0.0.1" || h === "::1" || /\.localhost$/.test(h) || /\.test$/.test(h) ||
+    /^10\./.test(h) || /^192\.168\./.test(h) || /^172\.(1[6-9]|2\d|3[01])\./.test(h)
+  ) return;
+
+  function poser() {
+    if (document.getElementById("garde-inerweb")) return;
+    var b = document.createElement("div");
+    b.id = "garde-inerweb";
+    b.setAttribute("role", "note");
+    b.style.cssText =
+      "position:relative;z-index:2147483646;margin:0;padding:10px 16px;" +
+      "background:#fdf1e7;color:#2b2b2b;border-bottom:3px solid #e8914a;" +
+      "font:600 15px/1.4 system-ui,sans-serif;text-align:center";
+    b.appendChild(document.createTextNode("Cette page est une copie hors du site d’origine. Version à jour : "));
+    var a = document.createElement("a");
+    a.href = "https://inerweb.fr/";
+    a.textContent = "inerweb.fr";
+    a.style.cssText = "color:#b85a12;text-decoration:underline";
+    b.appendChild(a);
+    b.appendChild(document.createTextNode(" — © inerWeb"));
+    document.body.insertBefore(b, document.body.firstChild);
+  }
+  if (document.body) poser();
+  else document.addEventListener("DOMContentLoaded", poser);
+})();
