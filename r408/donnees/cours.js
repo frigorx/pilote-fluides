@@ -26,7 +26,7 @@ const COURS = {
   ]},
 
   M2: { ecrans: [
-    { type: "notion", titre: "Qui fait quoi sur le chantier", img: "codex:acteurs-echafaudage", r408: ["DC1.b.01", "DC1.b.02", "DC1.b.03"],
+    { type: "notion", titre: "Qui fait quoi sur le chantier", img: "sc:signaler-responsable", r408: ["DC1.b.01", "DC1.b.02", "DC1.b.03"],
       html: "<p>Plusieurs personnes interviennent autour d'un échafaudage, chacune avec son rôle : le <strong>concepteur</strong> ou <strong>constructeur</strong> fournit un matériel conforme et sa notice ; l'<strong>employeur</strong> organise la formation, l'aptitude médicale et les vérifications ; le <strong>chef de chantier</strong> organise le travail sur place ; le <strong>monteur</strong> monte et démonte la structure ; le <strong>vérificateur</strong> contrôle son état ; l'<strong>utilisateur</strong> travaille dessus, sans la monter ni la modifier.</p>" },
     { type: "cle", titre: "La clé",
       html: "<p>En formation, vous êtes <strong>utilisateur</strong>. Personne ne monte, ne vérifie ou n'utilise un échafaudage sans l'<strong>autorisation de l'employeur</strong>, donnée après une formation qui délivre une <strong>attestation de compétences formation</strong>.</p>" },
@@ -43,7 +43,7 @@ const COURS = {
       html: "<p>Face au risque de chute, les mesures ne se choisissent pas au hasard : il y a un ordre. D'abord, si c'est possible, on <strong>travaille depuis le sol</strong> pour supprimer le risque. Sinon, on met en place une <strong>protection collective</strong> — elle profite à tout le monde. La protection individuelle vient seulement en <strong>dernier recours</strong>.</p>" },
     { type: "notion", titre: "Le garde-corps, en trois pièces", img: "sc:garde-corps-trois-elements", r408: ["R-10"],
       html: "<p>Le <strong>garde-corps</strong> est la protection collective la plus courante. Il comporte trois éléments : la <strong>lisse</strong> (la barre du haut, celle qu'on tient), la <strong>lisse intermédiaire</strong> (à mi-hauteur), et la <strong>plinthe</strong> (en bas, elle arrête ce qui glisse au sol).</p>" },
-    { type: "notion", titre: "Les hauteurs à respecter", img: "codex:garde-corps-cotes", r408: ["R-10"],
+    { type: "notion", titre: "Les hauteurs à respecter", r408: ["R-10"],
       html: "<p>Ces trois éléments ont des dimensions fixées par la loi : la lisse est placée entre <strong>1 mètre et 1,10 m</strong> du plancher ; la plinthe fait <strong>10 à 15 cm</strong> de haut ; la lisse intermédiaire se place <strong>à mi-hauteur</strong> entre les deux.</p>" },
     { type: "cle", titre: "La clé", img: "sc:harnais-ancrage",
       html: "<p>Le <strong>harnais</strong>, relié par une longe à un <strong>point d'ancrage</strong> (un point fixe, prévu pour ça), n'intervient que si la protection collective est impossible. Et avant de poser un équipement, on vérifie toujours que l'accès lui-même est sûr.</p>" },
@@ -131,7 +131,7 @@ const COURS = {
   ]},
 
   M9: { ecrans: [
-    { type: "notion", titre: "L'examen de la structure", img: "codex:etat-montant-corrosion", r408: ["3.4.01", "3.4.02", "3.4.03", "3.4.04", "3.4.05", "3.4.10", "3.4.11", "3.4.12"],
+    { type: "notion", titre: "L'examen de la structure", img: "sc:semelle-cale-verin", r408: ["3.4.01", "3.4.02", "3.4.03", "3.4.04", "3.4.05", "3.4.10", "3.4.11", "3.4.12"],
       html: "<p>On regarde d'abord la structure : les appuis (semelle, cale, vérin) tiennent-ils, sans désordre ? L'échafaudage est-il bien vertical ? Les éléments de calage sont-ils tous en place ? Les montants ne sont ni <strong>déformés</strong> ni rongés par la <strong>corrosion</strong>, et aucune fixation ne joue. Les <strong>amarrages</strong> et les <strong>contreventements</strong> (les barres qui rigidifient) sont présents, en nombre, et bien serrés.</p>" },
     { type: "notion", titre: "Planchers et garde-corps", img: "sc:element-manquant", r408: ["3.4.06", "3.4.07", "3.4.08", "3.4.09"],
       html: "<p>Chaque niveau de plancher doit rester complet, plan, horizontal, et bien verrouillé — rien ne doit pouvoir se soulever, et la <strong>trappe</strong> doit se refermer normalement. Aucun plancher n'est <strong>encombré</strong> : on dégage ce qui traîne. Le garde-corps est vérifié sur toute sa longueur : une seule lisse manquante crée un vide dangereux, à signaler aussitôt.</p>" },
@@ -160,7 +160,7 @@ const COURS = {
       html: "<p>Monter sans ses <strong>EPI</strong> (casque, gants, chaussures de sécurité, et harnais si la notice l'exige pendant le montage) expose inutilement le monteur ; le harnais se clipse alors sur un point d'ancrage prévu sur l'échafaudage lui-même, jamais improvisé. Improviser un amarrage à la façade non prévu par la notice expose aussi.</p>" },
     { type: "notion", titre: "Réceptionner et vérifier le matériel", img: "sc:verification-checklist", r408: ["2.3.01", "2.3.03", "2.3.04", "2.3.05"],
       html: "<p>Avant de monter, on organise le chantier : une <strong>zone de travail</strong> et une <strong>zone de stockage</strong> sont délimitées. Le matériel livré est <strong>réceptionné</strong> et rangé à l'abri ; chaque élément est contrôlé, et un élément abîmé part au <strong>rebut</strong> : il ne se monte pas. On choisit enfin l'outillage nécessaire au montage prévu.</p>" },
-    { type: "notion", titre: "Ce qui arrête un montage avant de commencer", img: "codex:ligne-electrique-echafaudage", r408: ["R-05", "R-07"],
+    { type: "notion", titre: "Ce qui arrête un montage avant de commencer", img: "sc:amarrage-facade", r408: ["R-05", "R-07"],
       html: "<p>D'autres points arrêtent le montage avant qu'il ne commence. Une <strong>ligne électrique aérienne</strong> à proximité impose une distance de sécurité — <strong>3 mètres</strong> jusqu'à 50 000 volts, <strong>5 mètres</strong> au-delà : on signale, sans mesurer soi-même la tension. Et un échafaudage de pied doit toujours être <strong>ancré ou amarré</strong>, ou stabilisé par un moyen équivalent, avant d'être utilisé : sans cela, on ne monte pas dessus.</p>" },
     { type: "cle", titre: "La clé", r408: ["R-11"],
       html: "<p>Sol vérifié, implantation choisie, balisage posé, amarrages prévus, EPI portés : tout se prépare <strong>avant</strong> de monter le premier élément. Une fois l'échafaudage monté, un <strong>panneau</strong> y est fixé : conditions d'utilisation, accès interdit aux personnes non autorisées, charges admissibles — sans lui, personne n'utilise l'échafaudage.</p>" },

@@ -106,7 +106,7 @@ const FILIERES = [
     palierCible: "P2",
     formationR408: "F4",
     profilR408: "utilisateur et vérificateur journalier",
-    objectif: "Utiliser des échafaudages de pied en sécurité et les vérifier chaque jour avant de monter : compétence C3.4, évaluée en EP3 (coefficient 2). L'attestation R408 est exigée à l'inscription à l'examen (arrêté du 29 août 2022, article 6).",
+    objectif: "Utiliser des échafaudages de pied en sécurité et les vérifier chaque jour avant de monter : compétence C3.4, évaluée en EP3 (coefficient 2). L'attestation R408 est exigée à l'inscription à l'examen (arrêté du 29 août 2022, article 6). Elle est délivrée à l'issue de la formation par un formateur habilité, celui de l'établissement ou celui d'un organisme extérieur : votre professeur vous dira lequel.",
     taches: [
       { code: "T7",  libelle: "Mettre en oeuvre les premières mesures de protection provisoires des personnes et des biens" },
       { code: "T18", libelle: "Poser les éléments de sécurité permanents" },
@@ -129,6 +129,16 @@ const FILIERES = [
     noteReferentiel: "La compétence C3.4 du CAP Étancheur (EP3, UP3, coefficient 2) renvoie explicitement à la R408 (annexe 5) et à la R457 ; le savoir S7.9 cite R408, R457, R430 et R431. Le parcours va jusqu'au palier P2, vérification journalière incluse (formation F4 de la R408, domaines DC1, DC3, DC4). Le montage reste ouvert « pour aller plus loin ».",
   },
 ];
+
+/* Compétence positionnée à chaque évaluation (fin de leçon dans le livret, test global),
+   par palier et par filière. null = palier hors du parcours de la filière.
+   Échelle 0-4 de F. Henninot : 0 non évalué · 1 non acquis · 2 en cours · 3 acquis · 4 parfaitement maîtrisé. */
+const COMPETENCES_EVALUEES = {
+  P0: { mpi: "C3.2",  etancheur: "C3.2" },
+  P1: { mpi: "C3.13", etancheur: "C3.4" },
+  P2: { mpi: "C3.13", etancheur: "C3.4" },
+  P3: { mpi: "C3.13", etancheur: null },
+};
 
 /* Les modules. `codesR408` renvoie aux compétences du document de
    référence ; « utilisation », « verification » et « montage » sont les
