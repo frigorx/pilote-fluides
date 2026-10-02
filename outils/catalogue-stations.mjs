@@ -300,6 +300,59 @@ for (const nom of dossiers('electrorezo/stations')) {
   });
 }
 
+/* --- CartoClim : contenu.js, même moule qu'ÉlectroRézo (02/10/2026) ---- */
+for (const nom of dossiers('cartoclim/stations')) {
+  const dir = path.join(ROOT, 'cartoclim/stations', nom);
+  const txt = lire(path.join(dir, 'contenu.js')) || '';
+  if (!txt) continue;
+  const html = lire(path.join(dir, 'index.html')) || '';
+  const ligne = /(?:^|[\s{,])ligne\s*:\s*(\d+)/.exec(txt);
+  ajouter({
+    reseau: 'CartoClim',
+    id: nom,
+    titre: champJs(txt, 'titre') || titreHtml(html),
+    ligne: ligne ? `Ligne ${ligne[1]}` : null,
+    resume: phrase(champJs(txt, 'aQuoiCaSert')) || descriptionHtml(html),
+    missionProf: phrase(champJs(txt, 'ouOnLeTrouve')),
+    chemin: `cartoclim/stations/${nom}/`,
+  });
+}
+
+/* --- CuivRézo : une seule table, donnees/stations.js (02/10/2026) ------
+   Chaque station y est un objet { id, ligne, titre, duree } suivi de ses
+   écrans ; le premier titre qui suit est l'objectif, il sert de résumé. */
+{
+  const txt = lire(path.join(ROOT, 'cuivrezo/donnees/stations.js')) || '';
+  const lignes = {};
+  const ml = /lignes\s*=\s*\{([^}]*)\}/.exec(txt);
+  if (ml) for (const m of ml[1].matchAll(/(\d+):\s*'([^']+)'/g)) lignes[m[1]] = m[2];
+  for (const m of txt.matchAll(/id:\s*'(\d-\d)',\s*ligne:\s*(\d),\s*titre:\s*'([^']+)'/g)) {
+    const suite = txt.slice(m.index + m[0].length, m.index + m[0].length + 400);
+    const obj = /titre:\s*'([^']+)'/.exec(suite);
+    ajouter({
+      reseau: 'CuivRézo',
+      id: m[1],
+      titre: m[3],
+      ligne: `Ligne ${m[2]}` + (lignes[m[2]] ? ' — ' + lignes[m[2]] : ''),
+      resume: obj ? obj[1] : null,
+      chemin: `cuivrezo/stations/${m[1]}/`,
+    });
+  }
+}
+
+/* --- FormaRézo : une page par station (02/10/2026) ---------------------- */
+for (const nom of dossiers('formarezo/stations')) {
+  const html = lire(path.join(ROOT, 'formarezo/stations', nom, 'index.html'));
+  if (!html) continue;
+  ajouter({
+    reseau: 'FormaRézo',
+    id: nom,
+    titre: (titreHtml(html) || '').replace(/&#x27;|&#39;/g, '’'),   /* l'apostrophe est encodée dans le <title> */
+    resume: descriptionHtml(html),
+    chemin: `formarezo/stations/${nom}/`,
+  });
+}
+
 /* --- inerWeb HoCourant : un module = une brique de cours -------------
    Structure à part : une seule page, les modules vivent dans donnees/.
    Le nom vient de la table MODULES (programme.js), le sujet du résumé du
@@ -373,7 +426,8 @@ for (const app of [
    Un dépôt absent du disque est simplement sauté : `inerweb-pressostats`
    est publié mais n'a pas de copie locale ici. */
 for (const ext of [
-  { racine: 'C:/git/sous-tension', base: 'https://frigorx.github.io/sous-tension/' },
+  // 02/10/2026 — Sous tension est rapatrié dans ce dépôt (8ef69bc4) : on lit sa copie ici.
+  { racine: path.join(ROOT, 'sous-tension'), base: SITE + 'sous-tension/' },
   { racine: 'C:/git/qcm-travail-hauteur', base: 'https://frigorx.github.io/qcm-travail-hauteur/' },
   { racine: 'C:/git/inerweb-fgaz', base: 'https://frigorx.github.io/inerweb-fgaz/' },
 ]) {

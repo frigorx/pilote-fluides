@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 282,
+  "total": 347,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -1399,17 +1399,143 @@
     },
     {
       "reseau": "Législation",
+      "id": "acoustique-le-bruit-en-db",
+      "titre": "Le bruit en dB",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qu'est un son, le décibel et l'échelle logarithmique, la pondération A, la puissance acoustique Lw et la pression acoustique Lp, l'addition de deux sources et l'effet de la distance.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qu'est un son, le décibel et l'échelle logarithmique, la pondération A, la puissance acoustique Lw et la pression acoustique Lp, l'addition de deux sources et l'effet de la distance."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/acoustique-le-bruit-en-db/",
+      "chemin": "legislation/stations/acoustique-le-bruit-en-db/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "acoustique-les-seuils",
+      "titre": "Les seuils",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le bruit de voisinage d'une activité ou d'un équipement, l'émergence (bruit ambiant moins bruit résiduel), les valeurs limites de jour et de nuit avec leur terme correctif, qui constate et ce qui peut suivre, et les valeurs d'exposition au bruit du Code du travail.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le bruit de voisinage d'une activité ou d'un équipement, l'émergence (bruit ambiant moins bruit résiduel), les valeurs limites de jour et de nuit avec leur terme correctif, qui constate et ce qui peut suivre, et les valeurs d'exposition au bruit du Code du travail."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/acoustique-les-seuils/",
+      "chemin": "legislation/stations/acoustique-les-seuils/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "acoustique-mesurer",
+      "titre": "Mesurer",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le sonomètre (classe, pondération A, constante de temps, étalonnage), le protocole d'une mesure d'émergence (ambiant puis résiduel), le rapport de mesure et les erreurs de débutant.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le sonomètre (classe, pondération A, constante de temps, étalonnage), le protocole d'une mesure d'émergence (ambiant puis résiduel), le rapport de mesure et les erreurs de débutant."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/acoustique-mesurer/",
+      "chemin": "legislation/stations/acoustique-mesurer/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "acoustique-pac-voisinage",
+      "titre": "PAC & voisinage",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : lire la puissance acoustique d'une fiche technique, ce que changent la distance et l'emplacement, la nuit, le droit du bruit de voisinage, l'urbanisme et la copropriété — l'unité extérieure d'une pompe à chaleur face au voisin.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : lire la puissance acoustique d'une fiche technique, ce que changent la distance et l'emplacement, la nuit, le droit du bruit de voisinage, l'urbanisme et la copropriété — l'unité extérieure d'une pompe à chaleur face au voisin."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/acoustique-pac-voisinage/",
+      "chemin": "legislation/stations/acoustique-pac-voisinage/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "acoustique-traiter-le-bruit",
+      "titre": "Traiter le bruit",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les deux chemins du bruit (l'air et la structure), agir à la source, sur le chemin ou chez le récepteur, plots antivibratiles, manchettes souples, silencieux dans les gaines, vitesse d'air et bruit, et les erreurs classiques.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les deux chemins du bruit (l'air et la structure), agir à la source, sur le chemin ou chez le récepteur, plots antivibratiles, manchettes souples, silencieux dans les gaines, vitesse d'air et bruit, et les erreurs classiques."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/acoustique-traiter-le-bruit/",
+      "chemin": "legislation/stations/acoustique-traiter-le-bruit/"
+    },
+    {
+      "reseau": "Législation",
       "id": "aptitude-capacite",
       "titre": "Aptitude & capacité",
       "ligne": null,
-      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'examen, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie.",
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'évaluation, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie.",
       "niveaux": {
-        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'examen, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie."
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'évaluation, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie."
       },
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/legislation/stations/aptitude-capacite/",
       "chemin": "legislation/stations/aptitude-capacite/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "certif-garanties",
+      "titre": "Les garanties",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la réception des travaux, point de départ de tout, puis le parfait achèvement, le bon fonctionnement (biennale) et la décennale, les deux assurances obligatoires, et le cas d'une pompe à chaleur qui ne chauffe pas.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la réception des travaux, point de départ de tout, puis le parfait achèvement, le bon fonctionnement (biennale) et la décennale, les deux assurances obligatoires, et le cas d'une pompe à chaleur qui ne chauffe pas."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/certif-garanties/",
+      "chemin": "legislation/stations/certif-garanties/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "certif-loi-norme-dtu",
+      "titre": "Loi, norme ou DTU ?",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la pyramide des textes qui obligent, la norme volontaire par principe, la flèche « rend obligatoire », la présomption de conformité, le DTU et l'avis technique, et la lecture d'un CCTP.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la pyramide des textes qui obligent, la norme volontaire par principe, la flèche « rend obligatoire », la présomption de conformité, le DTU et l'avis technique, et la lecture d'un CCTP."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/certif-loi-norme-dtu/",
+      "chemin": "legislation/stations/certif-loi-norme-dtu/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "certif-marquage-ce",
+      "titre": "Le marquage CE",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le marquage CE est la déclaration du fabricant, pas un label de qualité ; la déclaration des performances des produits de construction ; les autres textes qui visent un appareil CVC ; ce que le technicien d'études vérifie avant de prescrire.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le marquage CE est la déclaration du fabricant, pas un label de qualité ; la déclaration des performances des produits de construction ; les autres textes qui visent un appareil CVC ; ce que le technicien d'études vérifie avant de prescrire."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/certif-marquage-ce/",
+      "chemin": "legislation/stations/certif-marquage-ce/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "certif-rge-qualipac",
+      "titre": "RGE & QualiPAC",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la mention RGE et l'écoconditionnalité des aides, QualiPAC et les autres signes de qualité, ce que l'entreprise doit tenir, l'audit de chantier, l'annuaire officiel, et la différence avec l'attestation de capacité fluides.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la mention RGE et l'écoconditionnalité des aides, QualiPAC et les autres signes de qualité, ce que l'entreprise doit tenir, l'audit de chantier, l'annuaire officiel, et la différence avec l'attestation de capacité fluides."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/certif-rge-qualipac/",
+      "chemin": "legislation/stations/certif-rge-qualipac/"
     },
     {
       "reseau": "Législation",
@@ -1553,6 +1679,104 @@
     },
     {
       "reseau": "Législation",
+      "id": "elec-consigner",
+      "titre": "Consigner — VAT, les 4 étapes",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la consignation électrique avant d'intervenir sur une pompe à chaleur ou un groupe — séparer, condamner, identifier, vérifier l'absence de tension, puis mise à la terre si elle est prescrite — et la consignation du fluide sous pression et des pièces mobiles.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la consignation électrique avant d'intervenir sur une pompe à chaleur ou un groupe — séparer, condamner, identifier, vérifier l'absence de tension, puis mise à la terre si elle est prescrite — et la consignation du fluide sous pression et des pièces mobiles."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/elec-consigner/",
+      "chemin": "legislation/stations/elec-consigner/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "elec-habilitation",
+      "titre": "L'habilitation",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : l'obligation d'habilitation électrique (Code du travail), la norme NF C 18-510, qui habilite, la lecture d'un symbole, B0, BS, BR, le titre, l'attestation médicale et le recyclage.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : l'obligation d'habilitation électrique (Code du travail), la norme NF C 18-510, qui habilite, la lecture d'un symbole, B0, BS, BR, le titre, l'attestation médicale et le recyclage."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/elec-habilitation/",
+      "chemin": "legislation/stations/elec-habilitation/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "elec-nf-c-15-100",
+      "titre": "NF C 15-100",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qu'est la norme des installations électriques à basse tension, son statut réel depuis 2016, ses six objectifs, la logique du tableau, l'alimentation d'une pompe à chaleur ou d'une centrale de traitement d'air, la terre et le Consuel.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ce qu'est la norme des installations électriques à basse tension, son statut réel depuis 2016, ses six objectifs, la logique du tableau, l'alimentation d'une pompe à chaleur ou d'une centrale de traitement d'air, la terre et le Consuel."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/elec-nf-c-15-100/",
+      "chemin": "legislation/stations/elec-nf-c-15-100/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "elec-proteger-un-circuit",
+      "titre": "Protéger un circuit",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi un conducteur chauffe, la règle d'or « la protection protège le câble », le choix de la section et du calibre, la chute de tension, le pouvoir de coupure, la sélectivité et la protection d'un moteur de compresseur.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi un conducteur chauffe, la règle d'or « la protection protège le câble », le choix de la section et du calibre, la chute de tension, le pouvoir de coupure, la sélectivité et la protection d'un moteur de compresseur."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/elec-proteger-un-circuit/",
+      "chemin": "legislation/stations/elec-proteger-un-circuit/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "elec-regimes-de-neutre",
+      "titre": "Régimes de neutre",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les deux lettres d'un régime de neutre, TT, TN et IT, le chemin du courant de défaut dans chacun, et ce que cela change pour le technicien qui raccorde une machine.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : les deux lettres d'un régime de neutre, TT, TN et IT, le chemin du courant de défaut dans chacun, et ce que cela change pour le technicien qui raccorde une machine."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/elec-regimes-de-neutre/",
+      "chemin": "legislation/stations/elec-regimes-de-neutre/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "elec-terre-differentiel",
+      "titre": "Terre & différentiel",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : contact direct et indirect, défaut d'isolement sur une masse, chemin du courant de défaut par la terre, conducteur de protection, dispositif différentiel, sensibilité 30 mA, bouton test et vérifications à la mise en service.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : contact direct et indirect, défaut d'isolement sur une masse, chemin du courant de défaut par la terre, conducteur de protection, dispositif différentiel, sensibilité 30 mA, bouton test et vérifications à la mise en service."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/elec-terre-differentiel/",
+      "chemin": "legislation/stations/elec-terre-differentiel/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "en-378",
+      "titre": "NF EN 378",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la norme NF EN 378, les classes de sécurité des fluides, les catégories d'accès, l'emplacement du système, pourquoi la charge est limitée, la détection et la ventilation.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la norme NF EN 378, les classes de sécurité des fluides, les catégories d'accès, l'emplacement du système, pourquoi la charge est limitée, la détection et la ventilation."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/en-378/",
+      "chemin": "legislation/stations/en-378/"
+    },
+    {
+      "reseau": "Législation",
       "id": "fgaz-3",
       "titre": "F-Gaz 3, le règlement (UE) 2024/573",
       "ligne": null,
@@ -1634,6 +1858,90 @@
       "missionProf": null,
       "url": "https://inerweb.fr/legislation/stations/impact-tewi/",
       "chemin": "legislation/stations/impact-tewi/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "incendie-clapets-coupe-feu",
+      "titre": "Clapets coupe-feu",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la gaine qui traverse une paroi coupe-feu, le clapet qui rétablit le degré de la paroi, le déclenchement thermique et la télécommande par le SSI, la pose, l'accès et la vérification annuelle.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : la gaine qui traverse une paroi coupe-feu, le clapet qui rétablit le degré de la paroi, le déclenchement thermique et la télécommande par le SSI, la pose, l'accès et la vérification annuelle."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/incendie-clapets-coupe-feu/",
+      "chemin": "legislation/stations/incendie-clapets-coupe-feu/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "incendie-classer-le-bati",
+      "titre": "Classer le bâti",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ERP, IGH, habitation et lieux de travail — pourquoi on classe, le type et la catégorie d'un ERP, la hauteur d'un IGH, les familles d'habitation, et ce que le classement change pour le lot CVC.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : ERP, IGH, habitation et lieux de travail — pourquoi on classe, le type et la catégorie d'un ERP, la hauteur d'un IGH, les familles d'habitation, et ce que le classement change pour le lot CVC."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/incendie-classer-le-bati/",
+      "chemin": "legislation/stations/incendie-classer-le-bati/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "incendie-desenfumage",
+      "titre": "Le désenfumage",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi les fumées tuent avant les flammes, désenfumage naturel ou mécanique, balayage, ce qui revient au lot CVC, l'ordre de démarrage du ventilateur, l'arrêt de la CTA, et le cas des bureaux.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : pourquoi les fumées tuent avant les flammes, désenfumage naturel ou mécanique, balayage, ce qui revient au lot CVC, l'ordre de démarrage du ventilateur, l'arrêt de la CTA, et le cas des bureaux."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/incendie-desenfumage/",
+      "chemin": "legislation/stations/incendie-desenfumage/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "incendie-euroclasses",
+      "titre": "Euroclasses",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : réaction au feu (A1 à F, fumée, gouttelettes) et résistance au feu (R, E, I en minutes), deux questions différentes, ce que cela change pour un isolant de gaine, un fourreau ou un calfeutrement de traversée.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : réaction au feu (A1 à F, fumée, gouttelettes) et résistance au feu (R, E, I en minutes), deux questions différentes, ce que cela change pour un isolant de gaine, un fourreau ou un calfeutrement de traversée."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/incendie-euroclasses/",
+      "chemin": "legislation/stations/incendie-euroclasses/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "incendie-sprinkler-ria",
+      "titre": "Sprinkler & RIA",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le robinet d'incendie armé et le sprinkler, la tête qui s'ouvre seule à la chaleur, la source d'eau et le poste de contrôle, pourquoi c'est un lot du bureau d'études CVC, et le pont vers la directive sur les équipements sous pression.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le robinet d'incendie armé et le sprinkler, la tête qui s'ouvre seule à la chaleur, la source d'eau et le poste de contrôle, pourquoi c'est un lot du bureau d'études CVC, et le pont vers la directive sur les équipements sous pression."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/incendie-sprinkler-ria/",
+      "chemin": "legislation/stations/incendie-sprinkler-ria/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "incendie-ssi",
+      "titre": "Le SSI",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le système de sécurité incendie comme un chef d'orchestre — détection, mise en sécurité, catégories A à E, zones, scénario, ce que le lot CVC doit fournir, réception et entretien.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le système de sécurité incendie comme un chef d'orchestre — détection, mise en sécurité, catégories A à E, zones, scénario, ce que le lot CVC doit fournir, réception et entretien."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/incendie-ssi/",
+      "chemin": "legislation/stations/incendie-ssi/"
     },
     {
       "reseau": "Législation",
@@ -1802,6 +2110,90 @@
       "missionProf": null,
       "url": "https://inerweb.fr/legislation/stations/thermique-re2020/",
       "chemin": "legislation/stations/thermique-re2020/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "tracabilite-fluides",
+      "titre": "Traçabilité",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : suivre un fluide frigorigène du chargement à la filière de traitement — fiche d'intervention, registre, bordereau de suivi BSFF dans Trackdéchets, qui signe quoi, ce que vérifie un contrôle.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : suivre un fluide frigorigène du chargement à la filière de traitement — fiche d'intervention, registre, bordereau de suivi BSFF dans Trackdéchets, qui signe quoi, ce que vérifie un contrôle."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/tracabilite-fluides/",
+      "chemin": "legislation/stations/tracabilite-fluides/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "travail-droits-devoirs",
+      "titre": "Droits & devoirs",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le lien de subordination, l'obligation de sécurité de l'employeur, les devoirs du salarié, le droit d'alerte et de retrait, le règlement intérieur et la discipline, le CSE, l'inspection du travail et la santé au travail.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le lien de subordination, l'obligation de sécurité de l'employeur, les devoirs du salarié, le droit d'alerte et de retrait, le règlement intérieur et la discipline, le CSE, l'inspection du travail et la santé au travail."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/travail-droits-devoirs/",
+      "chemin": "legislation/stations/travail-droits-devoirs/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "travail-le-contrat",
+      "titre": "Le contrat",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le CDI comme forme normale, le CDD et l'intérim et leurs motifs limités, l'apprentissage et la professionnalisation, la période d'essai, ce que contient un contrat écrit, la convention collective lue sur la fiche de paie, et les trois façons de quitter un CDI.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : le CDI comme forme normale, le CDD et l'intérim et leurs motifs limités, l'apprentissage et la professionnalisation, la période d'essai, ce que contient un contrat écrit, la convention collective lue sur la fiche de paie, et les trois façons de quitter un CDI."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/travail-le-contrat/",
+      "chemin": "legislation/stations/travail-le-contrat/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "travail-s-installer",
+      "titre": "S'installer",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : s'installer à son compte dans le froid et la climatisation — la micro-entreprise, le droit d'exercer, les cotisations sur le chiffre d'affaires, l'attestation de capacité, l'assurance décennale, la mention RGE, et les pièges.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : s'installer à son compte dans le froid et la climatisation — la micro-entreprise, le droit d'exercer, les cotisations sur le chiffre d'affaires, l'attestation de capacité, l'assurance décennale, la mention RGE, et les pièges."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/travail-s-installer/",
+      "chemin": "legislation/stations/travail-s-installer/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "travail-se-former",
+      "titre": "Se former",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/travail-se-former/",
+      "chemin": "legislation/stations/travail-se-former/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "travail-temps-et-paie",
+      "titre": "Temps & paie",
+      "ligne": null,
+      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés.",
+      "niveaux": {
+        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/travail-temps-et-paie/",
+      "chemin": "legislation/stations/travail-temps-et-paie/"
     },
     {
       "reseau": "HydroMétro",
@@ -2192,6 +2584,30 @@
     },
     {
       "reseau": "HydroMétro",
+      "id": "reglage-equilibrage",
+      "titre": "Régler une vanne d’équilibrage",
+      "ligne": "D",
+      "resume": "Mesurer l’écart de pression, en déduire le débit et corriger la position jusqu’à la cible.",
+      "niveaux": {
+        "tp": "Mesurer l’écart de pression, en déduire le débit et corriger la position jusqu’à la cible.",
+        "bts": "Justifier une méthode de réglage tenant compte de l’influence des branches."
+      },
+      "competences": [
+        "BTS C14",
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "CAP C4.4",
+        "CAP C4.5",
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/reglage-equilibrage/",
+      "chemin": "hydrometro/stations/reglage-equilibrage/"
+    },
+    {
+      "reseau": "HydroMétro",
       "id": "releves",
       "titre": "Relevés — La preuve exploitable",
       "ligne": "M",
@@ -2356,11 +2772,11 @@
       "id": "apport-sensible",
       "titre": "Apport sensible",
       "ligne": "C",
-      "resume": "Associe une hausse de température à un apport sensible.",
+      "resume": "Associez une hausse de température à un apport sensible.",
       "niveaux": {
-        "cap": "Associe une hausse de température à un apport sensible.",
-        "bac": "Calcule la puissance nécessaire pour changer la température d’un débit d’air.",
-        "bts": "Mène un bilan sensible avec débits massiques et conditions de calcul explicites."
+        "cap": "Associez une hausse de température à un apport sensible.",
+        "bac": "Calculez la puissance nécessaire pour changer la température d’un débit d’air.",
+        "bts": "Menez un bilan sensible avec débits massiques et conditions de calcul explicites."
       },
       "competences": null,
       "missionProf": "Chiffrer la puissance nécessaire pour amener un débit d’air à la température voulue dans un local.",
@@ -3133,6 +3549,18 @@
     },
     {
       "reseau": "ÉlectroRézo",
+      "id": "4-10-choisir-section",
+      "titre": "Choisir la section d’un câble",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 d’ÉlectroRézo : choisir la section d’un câble.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur chaque chantier : alimenter un groupe de condensation au fond du jardin, une chambre froide au bout de l’atelier, une pompe à chaleur dans un garage. Le courant ne change pas, la distance si — et c’est souvent elle qui décide.",
+      "url": "https://inerweb.fr/electrorezo/stations/4-10-choisir-section/",
+      "chemin": "electrorezo/stations/4-10-choisir-section/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
       "id": "4-2-fusible-am",
       "titre": "Le fusible aM",
       "ligne": "Ligne 4",
@@ -3588,6 +4016,426 @@
       "chemin": "electrorezo/stations/8-9-reperes/"
     },
     {
+      "reseau": "CartoClim",
+      "id": "1-1-climatiser",
+      "titre": "Climatiser, c’est quoi ?",
+      "ligne": "Ligne 1",
+      "resume": "Climatiser, c’est rendre une pièce confortable : une bonne température, une bonne humidité, un air qui circule sans courant d’air. Pour cela, le climatiseur sait faire cinq choses : refroidir ; chauffer , s’il est réversible ",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Il ne fait pas tout. Il ne renouvelle pas l’air : il reprend celui de la pièce et n’en fait entrer aucun du dehors. Et il ne fabrique pas de froid : il déplace la chaleur de la pièce vers dehors, et il consomme de l’électricité pour cela.",
+      "url": "https://inerweb.fr/cartoclim/stations/1-1-climatiser/",
+      "chemin": "cartoclim/stations/1-1-climatiser/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "2-3-rotatif-scroll",
+      "titre": "Rotatif et scroll : les compresseurs de la clim",
+      "ligne": "Ligne 2",
+      "resume": "À mettre le fluide en mouvement et en pression : le compresseur aspire le gaz froid qui sort de l’évaporateur et le refoule chaud, sous haute pression, vers le condenseur. Il ne fabrique pas le froid , mais sans lui rien ne circule.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Le rotatif équipe le plus souvent les petits splits et les monoblocs. Le scroll équipe les splits de forte puissance, les DRV, les roof-top et les pompes à chaleur.",
+      "url": "https://inerweb.fr/cartoclim/stations/2-3-rotatif-scroll/",
+      "chemin": "cartoclim/stations/2-3-rotatif-scroll/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "2-4-inverter",
+      "titre": "L’Inverter : la vitesse suit le besoin",
+      "ligne": "Ligne 2",
+      "resume": "À faire suivre la vitesse du compresseur au besoin de la pièce . Un compresseur classique n’a que deux états : à fond, ou arrêté.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur les climatiseurs récents : le mot « Inverter » est écrit sur l’unité extérieure.",
+      "url": "https://inerweb.fr/cartoclim/stations/2-4-inverter/",
+      "chemin": "cartoclim/stations/2-4-inverter/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "2-5-detendre",
+      "titre": "Détendre : capillaire et détendeur électronique",
+      "ligne": "Ligne 2",
+      "resume": "À faire tomber la pression du liquide . À la sortie du condenseur, le fluide est liquide et sous haute pression. Pour aller prendre la chaleur de la pièce, il doit arriver dans l’évaporateur à basse pression , et froid : alors il bout.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans l’ unité extérieure , sur le circuit du liquide, entre le condenseur et l’évaporateur. Le capillaire se voit sur les petits splits ; le détendeur électronique, sur l’Inverter et sur les machines réversibles.",
+      "url": "https://inerweb.fr/cartoclim/stations/2-5-detendre/",
+      "chemin": "cartoclim/stations/2-5-detendre/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "2-6-vanne-4-voies",
+      "titre": "La vanne 4 voies : froid ou chaud",
+      "ligne": "Ligne 2",
+      "resume": "À inverser le sens du fluide dans les deux échangeurs, pour que la même machine fasse du froid l’été et du chaud l’hiver. Le compresseur, lui, ne change jamais de sens : la vanne change seulement la route que prend le fluide.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans l’unité extérieure de tous les climatiseurs et pompes à chaleur air-air réversibles, près du compresseur. Elle sert aussi à dégivrer l’unité extérieure l’hiver : on passe quelques minutes en mode froid.",
+      "url": "https://inerweb.fr/cartoclim/stations/2-6-vanne-4-voies/",
+      "chemin": "cartoclim/stations/2-6-vanne-4-voies/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "3-1-monobloc",
+      "titre": "Le monobloc : mobile, fenêtre, sans unité extérieure",
+      "ligne": "Ligne 3",
+      "resume": "À refroidir une pièce sans unité extérieure . « Monobloc » veut dire un seul bloc : le compresseur, le condenseur, le détendeur et l’évaporateur sont tous dans le même boîtier.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans les situations provisoires ou sans travaux : une pièce à rafraîchir pour l’été, un local où l’on ne peut rien fixer en façade, un dépannage en attendant mieux.",
+      "url": "https://inerweb.fr/cartoclim/stations/3-1-monobloc/",
+      "chemin": "cartoclim/stations/3-1-monobloc/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "3-2-split",
+      "titre": "Le split : deux unités, un circuit",
+      "ligne": "Ligne 3",
+      "resume": "À refroidir une pièce — et, presque toujours aujourd’hui, à la chauffer. « Split » veut dire séparé : la machine est coupée en deux. L’unité intérieure, au mur, souffle l’air ; l’unité extérieure, dehors, rejette la chaleur.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans une chambre, un bureau, un petit commerce, une salle informatique. C’est le climatiseur le plus vendu, et celui que le technicien pose, met en service et dépanne le plus souvent.",
+      "url": "https://inerweb.fr/cartoclim/stations/3-2-split/",
+      "chemin": "cartoclim/stations/3-2-split/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "3-3-unites-interieures",
+      "titre": "Mural, console, cassette, gainable : choisir l’unité intérieure",
+      "ligne": "Ligne 3",
+      "resume": "À choisir la bonne forme d’unité intérieure. Dans un split, c’est la seule partie que les occupants voient et entendent. On la choisit selon la pièce, la hauteur, le faux plafond, où va l’eau et qui nettoiera les filtres .",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "La murale dans une chambre ou un petit bureau ; la console là où l’on veut chauffer depuis le sol ; la cassette dans une salle de réunion ou un bureau ouvert ",
+      "url": "https://inerweb.fr/cartoclim/stations/3-3-unites-interieures/",
+      "chemin": "cartoclim/stations/3-3-unites-interieures/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "3-4-multisplit",
+      "titre": "Le multisplit : une unité extérieure, plusieurs pièces",
+      "ligne": "Ligne 3",
+      "resume": "À climatiser plusieurs pièces avec un seul groupe extérieur . Un split relie une unité intérieure à une unité extérieure ; le multisplit garde une seule unité extérieure et lui relie plusieurs unités intérieures, une par pièce.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans un logement avec un séjour et des chambres, dans un petit commerce ou un cabinet qui a plusieurs pièces, partout où l’on veut éviter de poser un boîtier dehors par pièce.",
+      "url": "https://inerweb.fr/cartoclim/stations/3-4-multisplit/",
+      "chemin": "cartoclim/stations/3-4-multisplit/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "3-5-drv",
+      "titre": "Le DRV : un réseau de fluide à débit variable",
+      "ligne": "Ligne 3",
+      "resume": "À climatiser tout un bâtiment avec un seul réseau de fluide . DRV veut dire débit de réfrigérant variable — certains constructeurs disent VRV ou VRF.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans le tertiaire : bureaux, hôtels, commerces. Le groupe est en général posé en toiture, sans local technique. Les unités sont dans les faux-plafonds (cassettes, gainables) ou en allège, sous la fenêtre (consoles).",
+      "url": "https://inerweb.fr/cartoclim/stations/3-5-drv/",
+      "chemin": "cartoclim/stations/3-5-drv/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "3-6-roof-top",
+      "titre": "Le roof-top : tout sur le toit",
+      "ligne": "Ligne 3",
+      "resume": "À climatiser un grand volume depuis le toit . Le roof-top est un caisson unique qui contient tout : le circuit frigorifique complet, une batterie qui refroidit (ou chauffe) l’air, un ventilateur qui le pousse dans des gaines, une entrée d’a…",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur le toit d’un supermarché, d’un entrepôt, d’une salle de sport, d’un atelier : là où beaucoup de monde occupe une grande surface. De la salle, on ne voit que les bouches de soufflage au plafond ; toute la machine est dehors.",
+      "url": "https://inerweb.fr/cartoclim/stations/3-6-roof-top/",
+      "chemin": "cartoclim/stations/3-6-roof-top/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "3-7-pac-air-eau",
+      "titre": "La PAC air/eau : haute, moyenne et basse température",
+      "ligne": "Ligne 3",
+      "resume": "À chauffer l’eau d’une maison avec la chaleur de l’air du dehors. C’est le même cycle qu’un split, mais l’échangeur intérieur ne chauffe plus de l’air : il chauffe de l’ eau , qui part vers un plancher chauffant , des radiateurs ou un ballo…",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans une maison neuve ou ancienne, à la place d’une chaudière — ou en relève de chaudière : la pompe à chaleur chauffe tant que son rendement est acceptable, la chaudière existante prend le relais quand il fait trop froid.",
+      "url": "https://inerweb.fr/cartoclim/stations/3-7-pac-air-eau/",
+      "chemin": "cartoclim/stations/3-7-pac-air-eau/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "3-8-eau-glacee",
+      "titre": "Groupe d’eau glacée et ventilo-convecteurs",
+      "ligne": "Ligne 3",
+      "resume": "À refroidir tout un bâtiment avec un seul circuit frigorifique . Le groupe fabrique de l’ eau glacée ",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans le tertiaire : bureaux, hôtels, bâtiments publics, et dans l’industrie — partout où il y a beaucoup de pièces à climatiser. Le groupe est dehors (terrasse, toiture) ou dans un local technique ",
+      "url": "https://inerweb.fr/cartoclim/stations/3-8-eau-glacee/",
+      "chemin": "cartoclim/stations/3-8-eau-glacee/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "4-1-poser-les-unites",
+      "titre": "Poser les deux unités : emplacement, supports, dégagements",
+      "ligne": "Ligne 4",
+      "resume": "Le client a choisi son split : il reste à le poser . Poser, c’est choisir deux emplacements et leur donner un support solide, de niveau . L’unité intérieure se fixe au mur de la pièce ",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "C’est le premier geste du chantier, avant les tubes, le câble et le tirage au vide. Un emplacement raté ne se rattrape pas avec une belle finition : bruit, panne en plein été, eau dans le mur. Il faut tout reprendre.",
+      "url": "https://inerweb.fr/cartoclim/stations/4-1-poser-les-unites/",
+      "chemin": "cartoclim/stations/4-1-poser-les-unites/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "4-2-liaisons-frigorifiques",
+      "titre": "Les liaisons frigorifiques : longueur, dénivelé, isolant",
+      "ligne": "Ligne 4",
+      "resume": "Le split est posé : l’unité intérieure dans la pièce, l’unité extérieure dehors. Il reste à les relier . Le fluide fait l’aller-retour par deux tubes de cuivre : le petit porte le liquide, le gros porte le gaz.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur tous les chantiers de split, entre la pose des unités et la mise en service. La liaison traverse le mur, longe la façade, parfois une goulotte.",
+      "url": "https://inerweb.fr/cartoclim/stations/4-2-liaisons-frigorifiques/",
+      "chemin": "cartoclim/stations/4-2-liaisons-frigorifiques/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "4-4-condensats",
+      "titre": "Les condensats : pente, siphon, pompe de relevage",
+      "ligne": "Ligne 4",
+      "resume": "Un climatiseur qui refroidit fabrique de l’eau : l’air de la pièce, refroidi par la batterie, y dépose son humidité. Cette eau tombe dans un bac, et c’est à vous de la faire sortir . Tuyau bien posé, personne n’y pense.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur toutes les machines qui refroidissent : murale, cassette, gainable. Elles produisent toutes de l’eau, donc on prévoit toujours son évacuation avant de poser.",
+      "url": "https://inerweb.fr/cartoclim/stations/4-4-condensats/",
+      "chemin": "cartoclim/stations/4-4-condensats/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "4-5-alimentation",
+      "titre": "Alimenter et relier les deux unités",
+      "ligne": "Ligne 4",
+      "resume": "Un split fixe ne démarre que si ses deux unités sont alimentées et reliées entre elles .",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "On intervient à trois endroits : au tableau , qui porte la protection de la machine ; à côté de l’unité extérieure, où se trouve l’ interrupteur de proximité ; et sous les capots des deux unités, devant les borniers .",
+      "url": "https://inerweb.fr/cartoclim/stations/4-5-alimentation/",
+      "chemin": "cartoclim/stations/4-5-alimentation/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "5-1-modes-telecommande",
+      "titre": "Les modes et la télécommande : froid, chaud, déshumidification, ventilation",
+      "ligne": "Ligne 5",
+      "resume": "À dire à la machine ce qu’on veut : quel mode, quelle température, quelle vitesse de turbine.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Avec tous les splits : c’est ce que le client a en main tous les jours. C’est aussi le dernier geste de la mise en service : avant de laisser l’appareil, le technicien essaie chaque mode, écoute la machine et regarde l’eau sortir.",
+      "url": "https://inerweb.fr/cartoclim/stations/5-1-modes-telecommande/",
+      "chemin": "cartoclim/stations/5-1-modes-telecommande/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "5-3-entretien",
+      "titre": "L’entretien : filtres, batteries, bac à condensats",
+      "ligne": "Ligne 5",
+      "resume": "Un client appelle : « ça refroidit moins », « ça givre devant », « ça coule au plafond ». Presque toujours, la machine n’est pas cassée : elle est encrassée . Un climatiseur brasse de l’air, et l’air porte de la poussière.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur tout split : chez le particulier, au bureau, dans un petit commerce. Deux personnes s’en occupent. L’utilisateur lave ses filtres.",
+      "url": "https://inerweb.fr/cartoclim/stations/5-3-entretien/",
+      "chemin": "cartoclim/stations/5-3-entretien/"
+    },
+    {
+      "reseau": "CartoClim",
+      "id": "5-6-codes-defauts",
+      "titre": "Les codes défauts : lire ce que dit la machine",
+      "ligne": "Ligne 5",
+      "resume": "Le client appelle : « Il ne marche plus, et ça clignote. » Le split est à l’arrêt, une LED clignote sur l’unité intérieure ou un code s’affiche sur un écran. Ce n’est pas un caprice : c’est la carte électronique qui parle.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Sur la plupart des climatiseurs : une LED qui clignote sur l’unité intérieure, un code sur l’écran de l’unité ou de la télécommande, parfois une LED sous le capot de l’unité extérieure.",
+      "url": "https://inerweb.fr/cartoclim/stations/5-6-codes-defauts/",
+      "chemin": "cartoclim/stations/5-6-codes-defauts/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "1-0",
+      "titre": "Mon poste de travail",
+      "ligne": "Ligne 1 — Les gestes de base",
+      "resume": "Un poste prêt, un élève protégé",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/1-0/",
+      "chemin": "cuivrezo/stations/1-0/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "1-1",
+      "titre": "Reconnaître le tube",
+      "ligne": "Ligne 1 — Les gestes de base",
+      "resume": "Le bon tube, nommé juste",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/1-1/",
+      "chemin": "cuivrezo/stations/1-1/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "1-2",
+      "titre": "Mesurer et tracer",
+      "ligne": "Ligne 1 — Les gestes de base",
+      "resume": "Un trait fin, à la bonne cote, sur tout le tour",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/1-2/",
+      "chemin": "cuivrezo/stations/1-2/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "1-3",
+      "titre": "Couper et ébavurer",
+      "ligne": "Ligne 1 — Les gestes de base",
+      "resume": "Un tube coupé d’équerre, sans bavure",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/1-3/",
+      "chemin": "cuivrezo/stations/1-3/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "1-4",
+      "titre": "Cintrer à la cintrette",
+      "ligne": "Ligne 1 — Les gestes de base",
+      "resume": "Un coude à 90°, 300 mm à l’axe",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/1-4/",
+      "chemin": "cuivrezo/stations/1-4/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "1-5",
+      "titre": "Cintrer à la cintreuse (L, R, 0)",
+      "ligne": "Ligne 1 — Les gestes de base",
+      "resume": "Un coude à 90°, à la cote, du premier coup",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/1-5/",
+      "chemin": "cuivrezo/stations/1-5/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "1-6",
+      "titre": "Le dudgeon",
+      "ligne": "Ligne 1 — Les gestes de base",
+      "resume": "Un dudgeon régulier, l’écrou en place",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/1-6/",
+      "chemin": "cuivrezo/stations/1-6/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "1-7",
+      "titre": "L’emboîture à la pince",
+      "ligne": "Ligne 1 — Les gestes de base",
+      "resume": "Un bout élargi où l’autre tube entre juste",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/1-7/",
+      "chemin": "cuivrezo/stations/1-7/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "2-1",
+      "titre": "Le poste oxyacétylénique en sécurité",
+      "ligne": "Ligne 2 — Le chalumeau",
+      "resume": "Un poste prêt à allumer, vérifié, sans fuite",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/2-1/",
+      "chemin": "cuivrezo/stations/2-1/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "2-2",
+      "titre": "Allumer, régler, éteindre la flamme",
+      "ligne": "Ligne 2 — Le chalumeau",
+      "resume": "Une flamme neutre, allumée et éteinte dans l’ordre",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/2-2/",
+      "chemin": "cuivrezo/stations/2-2/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "3-1",
+      "titre": "La brasure tendre à l’étain",
+      "ligne": "Ligne 3 — Braser",
+      "resume": "Un anneau d’étain régulier, étanche",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/3-1/",
+      "chemin": "cuivrezo/stations/3-1/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "3-2",
+      "titre": "La brasure forte sous azote",
+      "ligne": "Ligne 3 — Braser",
+      "resume": "Un joint brasé plein, propre à l’intérieur",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/3-2/",
+      "chemin": "cuivrezo/stations/3-2/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "4-1",
+      "titre": "Le chapeau de gendarme",
+      "ligne": "Ligne 4 — Les pièces complexes",
+      "resume": "Un contournement symétrique, branches alignées",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/4-1/",
+      "chemin": "cuivrezo/stations/4-1/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "4-2",
+      "titre": "La baïonnette",
+      "ligne": "Ligne 4 — Les pièces complexes",
+      "resume": "Deux branches parallèles, décalées à la cote",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/4-2/",
+      "chemin": "cuivrezo/stations/4-2/"
+    },
+    {
+      "reseau": "FormaRézo",
+      "id": "1-1-carte-r134a",
+      "titre": "TD 04 — La carte d’identité du R134a",
+      "ligne": null,
+      "resume": null,
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/formarezo/stations/1-1-carte-r134a/",
+      "chemin": "formarezo/stations/1-1-carte-r134a/"
+    },
+    {
       "reseau": "HoCourant",
       "id": "M1",
       "titre": "Le danger électrique",
@@ -3980,8 +4828,8 @@
       "niveaux": null,
       "competences": null,
       "missionProf": null,
-      "url": "https://frigorx.github.io/sous-tension/",
-      "chemin": "C:/git/sous-tension/index.html"
+      "url": "https://inerweb.fr/sous-tension/",
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -3992,8 +4840,8 @@
       "niveaux": null,
       "competences": null,
       "missionProf": null,
-      "url": "https://frigorx.github.io/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "C:/git/sous-tension/sous-tension-TD1-fondamentaux.html"
+      "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -4004,8 +4852,8 @@
       "niveaux": null,
       "competences": null,
       "missionProf": null,
-      "url": "https://frigorx.github.io/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "C:/git/sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -4016,8 +4864,8 @@
       "niveaux": null,
       "competences": null,
       "missionProf": null,
-      "url": "https://frigorx.github.io/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "C:/git/sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -4028,8 +4876,8 @@
       "niveaux": null,
       "competences": null,
       "missionProf": null,
-      "url": "https://frigorx.github.io/sous-tension/sous-tension-evaluation.html",
-      "chemin": "C:/git/sous-tension/sous-tension-evaluation.html"
+      "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -4040,8 +4888,8 @@
       "niveaux": null,
       "competences": null,
       "missionProf": null,
-      "url": "https://frigorx.github.io/sous-tension/td-triphase.html",
-      "chemin": "C:/git/sous-tension/td-triphase.html"
+      "url": "https://inerweb.fr/sous-tension/td-triphase.html",
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",
