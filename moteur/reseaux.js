@@ -16,6 +16,11 @@
    le réseau lui-même porte un bandeau de chantier (décision F. Henninot
    attendue sur ces mentions, audit du 12/09 piste 10) ; (3) l'ordre du
    tableau est l'ordre d'affichage.
+   Champs facultatifs : `accroche` (suite du titre après « — »),
+   `stations` / `lignes` (comptes forcés quand le catalogue ne suit pas),
+   `chiffres` (texte libre à la place de « N stations · N lignes », ex.
+   « 11 modules · 4 paliers »), `pdf` ({ titre, href } : document à
+   télécharger, ajouté après les raccourcis).
    ===================================================================== */
 /* RESEAUX DEBUT */
 window.INERWEB_RESEAUX = [
@@ -47,10 +52,11 @@ window.INERWEB_RESEAUX = [
     emoji: "📜",
     adresse: "legislation/index.html",
     couleur: "#1e40af",
-    sousTitre: "Le cadre du métier : réglementation, sécurité, environnement. Deux lignes mères, onze sous-lignes.",
+    sousTitre: "Le cadre du métier : réglementation, sécurité, environnement. Onze sous-lignes, un bâtiment en 3D pour s’y orienter, et un carnet de missions de chargé d’affaires.",
     niveaux: "BTS",
-    etat: "en construction",
+    etat: "en relecture",
     catalogue: ["Législation"],
+    stations: 57, /* le catalogue n'en relève encore que 29 : 57 dossiers dans legislation/stations */
     lignes: 11, /* deux lignes mères, onze sous-lignes (legislation/index.html) ; le catalogue ne porte pas la ligne */
     vignette: "icones/reseaux/legislation.svg",
     entree: { titre: "F-Gaz 3, le règlement 2024/573", href: "legislation/stations/fgaz-3/" },
@@ -125,19 +131,21 @@ window.INERWEB_RESEAUX = [
     couleur: "#b06a00",
     sousTitre: "Se préparer à l’habilitation électrique, de B0 à BR, palier par palier.",
     niveaux: "tous niveaux",
-    etat: "en relecture",
+    etat: "",
     catalogue: ["HoCourant"],
     vignette: "icones/reseaux/hocourant.svg",
     entree: { titre: "Le danger électrique", href: "hocourant/?module=M1" },
     raccourcis: [
       { titre: "Les domaines de tension", href: "hocourant/?module=M4" },
       { titre: "La consignation", href: "hocourant/?module=M9" }
-    ]
+    ],
+    pdf: { titre: "📕 Le livre — PDF disponible", href: "hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" }
   },
   {
     id: "r408",
-    nom: "inerWeb R408 — Travail en hauteur",
-    court: "R408",
+    nom: "inerWeb R408",
+    accroche: "Travail en hauteur",
+    court: "inerWeb R408",
     emoji: "🪜",
     adresse: "r408/index.html",
     couleur: "#1b3a63",
@@ -145,16 +153,21 @@ window.INERWEB_RESEAUX = [
     niveaux: "CAP",
     etat: "en relecture",
     catalogue: ["R408"],
+    stations: 11, /* hors catalogue : 11 modules, 4 paliers (comme HoCourant, un module = une station, un palier = une ligne) */
+    lignes: 4,
+    chiffres: "11 modules · 4 paliers",
     vignette: "icones/reseaux/r408.svg",
     entree: { titre: "Le risque de chute", href: "r408/?module=M1" },
     raccourcis: [
       { titre: "Utiliser en sécurité", href: "r408/?module=M7" },
       { titre: "La vérification journalière", href: "r408/?module=M9" }
-    ]
+    ],
+    pdf: { titre: "📕 Le livret — PDF disponible", href: "r408/livret/inerWeb.fr-R408-Livret-eleve-A5.pdf?v=v1" }
   },
   {
     id: "cuivrezo",
-    nom: "CuivRézo — Les gestes du cuivre",
+    nom: "CuivRézo",
+    accroche: "Les gestes du cuivre",
     court: "CuivRézo",
     emoji: "🔥",
     adresse: "cuivrezo/index.html",
@@ -169,8 +182,29 @@ window.INERWEB_RESEAUX = [
     entree: { titre: "Mon poste de travail", href: "cuivrezo/stations/1-0/" },
     raccourcis: [
       { titre: "Cintrer à la cintrette", href: "cuivrezo/stations/1-4/" },
-      { titre: "Le poste oxyacétylénique", href: "cuivrezo/stations/2-1/" },
-      { titre: "La brasure forte sous azote", href: "cuivrezo/stations/3-2/" }
+      { titre: "Le poste oxyacétylénique", href: "cuivrezo/stations/2-1/" }
+    ],
+    pdf: { titre: "📄 Les fiches de poste — PDF", href: "cuivrezo/papier/CuivRezo-fiches-de-poste-ELEVE.pdf" }
+  },
+  {
+    id: "cartoclim",
+    nom: "CartoClim",
+    accroche: "La climatisation, station par station",
+    court: "CartoClim",
+    emoji: "❄️",
+    adresse: "cartoclim/index.html",
+    couleur: "#3d7fca",
+    sousTitre: "Comprendre un climatiseur, du besoin à la panne : le split, le multisplit, le DRV, le roof-top, la PAC air/eau, l’eau glacée — et ce qu’on pose, raccorde, règle et entretient. Relié aux autres réseaux, jamais recopié.",
+    niveaux: "CAP · Bac pro · BTS",
+    etat: "en relecture",
+    catalogue: [],
+    stations: 20, /* 38 gares dont 18 correspondances vers les autres réseaux */
+    lignes: 5,
+    vignette: "cartoclim/stations/3-2-split/assets/biblio/898384a2af.png",
+    entree: { titre: "Climatiser, c’est quoi ?", href: "cartoclim/stations/1-1-climatiser/" },
+    raccourcis: [
+      { titre: "Le split : deux unités, un circuit", href: "cartoclim/stations/3-2-split/" },
+      { titre: "La vanne 4 voies : froid ou chaud", href: "cartoclim/stations/2-6-vanne-4-voies/" }
     ]
   }
 ];

@@ -73,7 +73,7 @@ function existe(href) {
 }
 const manquantes = [];
 for (const r of RESEAUX) {
-  for (const h of [r.adresse, r.vignette, r.entree.href, ...r.raccourcis.map((x) => x.href)]) if (!existe(h)) manquantes.push(`${r.id} → ${h}`);
+  for (const h of [r.adresse, r.vignette, r.entree.href, ...r.raccourcis.map((x) => x.href), ...(r.pdf ? [r.pdf.href] : [])]) if (!existe(h)) manquantes.push(`${r.id} → ${h}`);
 }
 if (manquantes.length) { console.error("accueil.mjs : adresses introuvables sur le disque :\n  " + manquantes.join("\n  ")); process.exit(1); }
 
@@ -92,12 +92,14 @@ const chiffres = [
 const vignettes = RESEAUX.map((r) => {
   const c = comptes.find((x) => x.id === r.id);
   const etat = r.etat ? ` <span class="v-etat">${ech(r.etat)}</span>` : "";
-  const raccourcis = r.raccourcis.map((x) => `<a href="${ech(x.href)}">${ech(x.titre)}</a>`).join("\n        ");
+  const raccourcis = r.raccourcis.map((x) => `<a href="${ech(x.href)}">${ech(x.titre)}</a>`)
+    .concat(r.pdf ? [`<a href="${ech(r.pdf.href)}" download>${ech(r.pdf.titre)}</a>`] : []).join("\n        ");
+  const nombres = ech(r.chiffres || `${c.stations} stations · ${c.lignes} lignes`);
   return `      <article class="vignette" style="--c:${r.couleur}">
         <a class="v-carte" href="${ech(r.adresse)}" aria-label="Entrer dans ${ech(r.nom)}"><img src="${ech(r.vignette)}" alt="" loading="lazy" width="400" height="190"></a>
         <div class="v-corps">
-          <h3 class="v-nom"><a href="${ech(r.adresse)}">${r.emoji} ${ech(r.nom)}</a></h3>
-          <p class="v-chiffres">${c.stations} stations · ${c.lignes} lignes <span class="v-niv">${ech(r.niveaux)}</span>${etat}</p>
+          <h3 class="v-nom"><a href="${ech(r.adresse)}">${r.emoji} ${ech(r.nom)}${r.accroche ? " — " + ech(r.accroche) : ""}</a></h3>
+          <p class="v-chiffres">${nombres} <span class="v-niv">${ech(r.niveaux)}</span>${etat}</p>
           <p class="v-det">${ech(r.sousTitre)}</p>
           <p class="v-entrees"><a class="v-entree" href="${ech(r.entree.href)}">▶ ${ech(r.entree.titre)}</a>
         ${raccourcis}</p>
@@ -137,7 +139,7 @@ RESEAUX.forEach((r, i) => {
     svg += `<circle class="cr-s" cx="${x.toFixed(1)}" cy="${y}" r="6.5" fill="#fffdf8" stroke="${r.couleur}" stroke-width="3.5" style="animation-delay:${(i * 0.18 + 0.9 + j * 0.05).toFixed(2)}s"/>\n`;
   }
   svg += `<text x="${xFin + 16}" y="${y + 5}" class="cr-t" fill="${r.couleur}">${ech(r.court)}</text>\n`;
-  svg += `<text x="${xFin + 16}" y="${y + 22}" class="cr-n">${c.stations} stations · ${c.lignes} lignes</text>\n`;
+  svg += `<text x="${xFin + 16}" y="${y + 22}" class="cr-n">${ech(r.chiffres || `${c.stations} stations · ${c.lignes} lignes`)}</text>\n`;
 });
 svg += `</svg>`;
 
