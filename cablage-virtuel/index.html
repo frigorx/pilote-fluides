@@ -2,13 +2,11 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<script src="../moteur/animations.js?v=c71a0f27da"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — le réseau</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20261002-1628">
-<link rel="stylesheet" href="moteur/accueil.css?v=20261002-1628">
-<script defer src="../moteur/retour-accueil.js?v=ff0ca829c0"></script>
+<link rel="stylesheet" href="moteur/cablage.css?v=20261002-2200">
+<link rel="stylesheet" href="moteur/accueil.css?v=20261002-2200">
 </head>
 <body class="reseau">
 <header class="barre">
@@ -75,10 +73,10 @@
     </div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20261002-1628';</script>
-<script src="exercices/index.js?v=20261002-1628"></script>
-<script src="moteur/reseau.js?v=20261002-1628"></script>
-<script src="moteur/documents.js?v=20261002-1628"></script>
+<script>window.CABLAGE_VERSION = '20261002-2200';</script>
+<script src="exercices/index.js?v=20261002-2200"></script>
+<script src="moteur/reseau.js?v=20261002-2200"></script>
+<script src="moteur/documents.js?v=20261002-2200"></script>
 <script>
 (function(){
 'use strict';
@@ -284,7 +282,7 @@ function remplirStation() {
   $('#st-niv').textContent = s.niveau; $('#st-niv').hidden = depart;   // le Départ : « Départ · Départ » disait deux fois la même chose
   $('#st-titre').textContent = s.titre; $('#st-sous').textContent = s.sous;
   $('#st-apprend').textContent = s.apprend;
-  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20261002-1628';
+  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20261002-2200';
   img.alt = 'Le schéma : ' + R.titre(ex, s.titre);
   // les fils à poser
   const faits = $('#st-faits'), mien = ++jeton;
@@ -299,8 +297,12 @@ function remplirStation() {
   // le chemin, avec ses coches
   const k = cle(s, quai), f = faites(k, res);
   const etapes = etapesPour(reg.atelier).filter(e => !(depart && e.id === 'essai'));   // le tutoriel ne passe pas par l'essai
-  $('#st-chemin').innerHTML = etapes.map((e, i) => '<li class="' + (f.has(e.id) ? 'faite' : '') + '"><span>' + (f.has(e.id) ? '✓ ' : '') + (i + 1) + ' ' + e.nom +
-    (f.has(e.id) ? '<small class="lecteur"> (réussie)</small>' : '') + '</span></li>').join('');
+  // 02/10 (Franck : « aller directement sur la rubrique qui nous intéresse », pour revenir en arrière ou reprendre en spirale) :
+  // chaque étape s'ouvre d'un appui (l'essai se lance depuis le câblage) ; le tutoriel garde son chemin, en texte
+  $('#st-chemin').innerHTML = etapes.map((e, i) => '<li class="' + (f.has(e.id) ? 'faite' : '') + '">' +
+    (depart ? '<span>' : '<a href="' + lienJouer(ex, e.act, reg.mode, reg.atelier, reg.platine) + '" title="Ouvrir l’étape ' + (i + 1) + (e.id === 'essai' ? ' (elle se lance depuis le câblage)' : '') + '">') +
+    (f.has(e.id) ? '✓ ' : '') + (i + 1) + ' ' + e.nom +
+    (f.has(e.id) ? '<small class="lecteur"> (réussie)</small>' : '') + (depart ? '</span>' : '</a>') + '</li>').join('');
   // UN gros bouton (la prochaine chose à faire) et, au besoin, un lien discret (repartir du début, refaire)
   const go = $('#st-go'), rep = $('#st-reprendre'), mesRes = res.filter(e => e.exercice === k);
   const debut = depart ? TUTO : lienJouer(ex, 'colorier', reg.mode, reg.atelier, reg.platine);
@@ -415,6 +417,6 @@ window.addEventListener('pageshow', e => { if (e.persisted) route(); });   // re
 route();
 })();
 </script>
-<script src="moteur/marque.js?v=20261002-1628" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20261002-2200" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

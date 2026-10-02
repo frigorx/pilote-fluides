@@ -353,13 +353,15 @@ function construirePlatine() {
   svgPlatine.addEventListener('pointerleave', () => { if (!trace) aimanter(null); });
 }
 
+// 02/10 : la platine peut être tournée d'un quart (installerZoom) : les bornes vivent dans le groupe tourné, on lit SON repère
+function ctmPlatine() { return (svgPlatine.querySelector('g.tourne') || svgPlatine).getScreenCTM(); }
 function point(e) {
   const p = svgPlatine.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
-  return p.matrixTransform(svgPlatine.getScreenCTM().inverse());
+  return p.matrixTransform(ctmPlatine().inverse());
 }
 function borneProche(pt) {
   // 30/09 (pavé tactile) : dézoomé, la prise ne descend jamais sous 14 px d'écran ; la borne la plus proche l'emporte toujours
-  const m = svgPlatine.getScreenCTM(), parPx = m && m.a ? 1 / m.a : 1;
+  const m = ctmPlatine(), parPx = m && Math.hypot(m.a, m.b) ? 1 / Math.hypot(m.a, m.b) : 1;
   let meilleure = null, dmin = Math.max(RAYON_PRISE, 14 * parPx);
   Object.values(bornes).forEach(b => { const d = Math.hypot(b.x - pt.x, b.y - pt.y); if (d < dmin) { dmin = d; meilleure = b; } });
   return meilleure;
@@ -452,7 +454,7 @@ const DOIGT = 8;
 let choix = null;
 function candidatsDoigt(e) {
   if (e.pointerType !== 'touch' && e.pointerType !== 'pen') return [];
-  const m = svgPlatine.getScreenCTM(), pt = point(e); if (!m) return [];
+  const m = ctmPlatine(), pt = point(e); if (!m) return [];
   const l = Object.values(bornes).filter(b => Math.hypot(b.x - pt.x, b.y - pt.y) < RAYON_PRISE)
     .map(b => ({ b, d: Math.hypot(m.a * b.x + m.c * b.y + m.e - e.clientX, m.b * b.x + m.d * b.y + m.f - e.clientY) }))
     .sort((p, q) => p.d - q.d);
@@ -830,18 +832,20 @@ function suivreFil(de, a) {
   const [vx, vy, vw, vh] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
   const LISIBLE = 0.7;   // une borne de 9 d'unité de rayon fait alors 13 px de diamètre à l'écran
   const k = Math.min(cw / vw, ch / vh), m = 2 * RAYON_BORNE;
+  // 02/10 : platine tournée d'un quart, on raisonne dans le repère de la vue (celui du viewBox)
+  const V = (r) => z.versVue ? z.versVue(r) : r, P = (b) => V({ x: b.x, y: b.y, w: 0, h: 0 }), q1 = P(b1), q2 = P(b2);
   const vue = b => b.x >= vx + m && b.x <= vx + vw - m && b.y >= vy + m && b.y <= vy + vh - m;
-  if (vue(b1) && vue(b2) && k >= LISIBLE - 0.05) return;
-  const x1 = Math.min(b1.x, b2.x) - 60, x2 = Math.max(b1.x, b2.x) + 60, y1 = Math.min(b1.y, b2.y) - 60, y2 = Math.max(b1.y, b2.y) + 60;
+  if (vue(q1) && vue(q2) && k >= LISIBLE - 0.05) return;
+  const x1 = Math.min(q1.x, q2.x) - 60, x2 = Math.max(q1.x, q2.x) + 60, y1 = Math.min(q1.y, q2.y) - 60, y2 = Math.max(q1.y, q2.y) + 60;
   let w = Math.max(x2 - x1, cw / LISIBLE), h = Math.max(y2 - y1, ch / LISIBLE);
   if (w / h < cw / ch) w = h * cw / ch; else h = w * ch / cw;
   // la bande reste sur la platine : on la glisse à l'intérieur de l'étendue des bornes plutôt que de montrer du vide
-  const tout = Object.values(bornes), cadre = svg.querySelector('.fond-platine.cadre') || svg.querySelector('.fond-platine'),
-        c = cadre ? cadre.getBBox() : { x: tout[0].x, y: tout[0].y, width: 0, height: 0 };
-  const ex1 = Math.min(c.x, ...tout.map(b => b.x - 60)), ex2 = Math.max(c.x + c.width, ...tout.map(b => b.x + 60)),
-        ey1 = Math.min(c.y, ...tout.map(b => b.y - 60)), ey2 = Math.max(c.y + c.height, ...tout.map(b => b.y + 60));
+  const tout = Object.values(bornes).map(P), cadre = svg.querySelector('.fond-platine.cadre') || svg.querySelector('.fond-platine'),
+        bb = cadre && cadre.getBBox(), c = bb ? V({ x: bb.x, y: bb.y, w: bb.width, h: bb.height }) : { x: tout[0].x, y: tout[0].y, w: 0, h: 0 };
+  const ex1 = Math.min(c.x, ...tout.map(b => b.x - 60)), ex2 = Math.max(c.x + c.w, ...tout.map(b => b.x + 60)),
+        ey1 = Math.min(c.y, ...tout.map(b => b.y - 60)), ey2 = Math.max(c.y + c.h, ...tout.map(b => b.y + 60));
   const caler = (c, t, e1, e2) => (t >= e2 - e1 ? (e1 + e2) / 2 - t / 2 : Math.min(Math.max(c - t / 2, e1), e2 - t));
-  z.cadrer({ x: caler((x1 + x2) / 2, w, ex1, ex2), y: caler((y1 + y2) / 2, h, ey1, ey2), w, h }, 0, cw / ch);
+  z.cadrer({ x: caler((x1 + x2) / 2, w, ex1, ex2), y: caler((y1 + y2) / 2, h, ey1, ey2), w, h, vue: true }, 0, cw / ch);
 }
 function compterAide(n) {
   if (n === undefined) aides++; else aides = n;
@@ -1392,9 +1396,38 @@ function lancerCarte() {
    borne reste le geste du fil), boutons − + ⤢ dans l'entête. Le zoom joue sur le viewBox :
    les coordonnées des bornes ne changent pas. */
 function installerZoom(svg, options) {
-  const base = (svg.getAttribute('viewBox') || '0 0 100 100').split(/[\s,]+/).map(Number);
+  const base0 = (svg.getAttribute('viewBox') || '0 0 100 100').split(/[\s,]+/).map(Number);
+  let base = base0.slice();
   const etat = { x: base[0], y: base[1], w: base[2], h: base[3] };
+  /* 02/10 (Franck : « faire tourner les schémas à 90° », le dessin est en hauteur, l'écran en largeur) : un quart de tour à
+     gauche. Le dessin passe dans un groupe tourné ; le viewBox reste celui de la vue (zoom et déplacement n'en savent rien) ;
+     une zone donnée en unités du dessin est tournée avant d'être cadrée ; les textes restent droits, chacun sur son centre. */
+  let quart = 0, gT = null, aRedresser = false;
+  const versVue = (z) => quart ? { x: z.y, y: -z.x - (z.w || 0), w: z.h || 0, h: z.w || 0 } : z;   // rotate(-90) : (x, y) → (y, −x)
+  const redresser = () => {
+    if (!svg.getBoundingClientRect().width) { aRedresser = true; return; }   // panneau caché : getBBox rendrait 0, on attend qu'il se montre
+    aRedresser = false;
+    gT.querySelectorAll('text, .pastille').forEach(t => {
+      if (!('rot' in t.dataset)) t.dataset.rot = t.getAttribute('transform') || '';
+      if (!quart) { if (t.dataset.rot) t.setAttribute('transform', t.dataset.rot); else t.removeAttribute('transform'); return; }
+      const b = t.getBBox();
+      t.setAttribute('transform', (t.dataset.rot ? t.dataset.rot + ' ' : '') + 'rotate(90 ' + (b.x + b.width / 2).toFixed(1) + ' ' + (b.y + b.height / 2).toFixed(1) + ')');
+    });
+  };
+  const tourner = (q) => {
+    quart = q ? 1 : 0;
+    if (!gT) {
+      gT = document.createElementNS('http://www.w3.org/2000/svg', 'g'); gT.setAttribute('class', 'tourne');
+      while (svg.firstChild) gT.appendChild(svg.firstChild);
+      svg.appendChild(gT);
+    }
+    if (quart) gT.setAttribute('transform', 'rotate(-90)'); else gT.removeAttribute('transform');
+    base = quart ? [base0[1], -base0[0] - base0[2], base0[3], base0[2]] : base0.slice();
+    redresser();
+    ajuster();
+  };
   const appliquer = () => {
+    if (aRedresser) redresser();
     svg.setAttribute('viewBox', [etat.x, etat.y, etat.w, etat.h].map(v => v.toFixed(1)).join(' '));
     // unités du dessin par pixel d'écran : un fil garde une épaisseur minimale à l'écran (cablage.css), même dézoomé
     const r = svg.getBoundingClientRect();
@@ -1416,6 +1449,7 @@ function installerZoom(svg, options) {
   // cadrer une zone (x, y, w, h en unités du SVG) au rapport `ratio` (largeur / hauteur du panneau, sinon celui du dessin) :
   // la platine seule, sans ce qui est dessous (Franck, 28/09, écran adaptatif)
   const cadrer = (z, marge, ratio) => {
+    if (!z.vue) z = versVue(z);   // une zone en unités du dessin ; `vue: true` : déjà dans la vue (suivreFil)
     marge = marge || 0; const r = ratio || base[2] / base[3];
     let w = z.w + 2 * marge, h = z.h + 2 * marge;
     if (w / h < r) w = h * r; else h = w / r;
@@ -1424,7 +1458,14 @@ function installerZoom(svg, options) {
     w = Math.max(base[2] / 8, w); h = w / r;
     etat.x = z.x + z.w / 2 - w / 2; etat.y = z.y + z.h / 2 - h / 2; etat.w = w; etat.h = h; appliquer();
   };
-  svg.addEventListener('wheel', (e) => { e.preventDefault(); zoomer(e.deltaY < 0 ? 1.2 : 1 / 1.2, pt(e)); }, { passive: false });
+  // 02/10 (Franck : « selon les ordinateurs et les pads, zoomer / dézoomer peut être compliqué ») : le zoom suit l'ampleur du
+  // geste (un cran de molette ≈ 1,2 × ; un pavé tactile envoie beaucoup de petits deltas, son pincement arrive avec Ctrl) et la
+  // sensibilité choisie dans « Affichage » ; un seul évènement ne dépasse jamais 1,65 ×
+  svg.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const d = e.deltaY * (e.deltaMode === 1 ? 33 : e.deltaMode === 2 ? 400 : 1) * (e.ctrlKey ? 10 : 1);
+    zoomer(Math.exp(Math.max(-0.5, Math.min(0.5, -d * 0.00182 * sensZoom))), pt(e));
+  }, { passive: false });
   const doigts = new Map(); let pan = null, pince = null;
   svg.addEventListener('pointerdown', (e) => {
     doigts.set(e.pointerId, { x: e.clientX, y: e.clientY });
@@ -1452,8 +1493,15 @@ function installerZoom(svg, options) {
   });
   const fin = (e) => { doigts.delete(e.pointerId); if (doigts.size < 2) pince = null; pan = null; };
   svg.addEventListener('pointerup', fin); svg.addEventListener('pointercancel', fin);
-  return { zoomer, ajuster, cadrer };
+  return { zoomer, ajuster, cadrer, tourner, quart: () => quart, versVue };
 }
+// la sensibilité du zoom (molette, pavé tactile), réglée dans « Affichage » (moteur/ecran.js), gardée sur l'appareil
+const CLE_ZOOM = 'cablage-virtuel:zoom';
+let sensZoom = (() => { try { const v = parseFloat(localStorage.getItem(CLE_ZOOM)); return v >= 0.2 && v <= 4 ? v : 1; } catch (err) { return 1; } })();
+window.CABLAGE_ZOOM = { sens: () => sensZoom, regler: (v) => { sensZoom = v; try { localStorage.setItem(CLE_ZOOM, String(v)); } catch (err) { /* stockage indisponible */ } } };
+// le quart de tour de chaque panneau (carte, platine), gardé sur l'appareil
+const CLE_TOUR = 'cablage-virtuel:tourner';
+function tours() { try { const t = JSON.parse(localStorage.getItem(CLE_TOUR)); return t && typeof t === 'object' ? t : {}; } catch (err) { return {}; } }
 function zonePlatine() {   // les appareils dessinés et toutes les bornes (l'arrivée du réseau et les moteurs compris)
   const svg = svgPlatine; if (!svg) return null;
   const boites = [...svg.querySelectorAll('#symboles .app, .borne')].map(el => { try { return el.getBBox(); } catch (err) { return null; } })
@@ -1466,6 +1514,17 @@ function zonePlatine() {   // les appareils dessinés et toutes les bornes (l'ar
 function brancherZoom(panneau, z) {
   panneau._zoom = z;   // l'écran adaptatif (moteur/ecran.js) cadre la platine seule
   panneau.querySelectorAll('button.zoom').forEach(b => {
+    if (b.dataset.zoom === 'tourner') {
+      const peindre = () => b.setAttribute('aria-pressed', String(!!z.quart()));
+      b.onclick = () => {
+        z.tourner(!z.quart()); peindre();
+        const t = tours(); t[panneau.id] = z.quart(); try { localStorage.setItem(CLE_TOUR, JSON.stringify(t)); } catch (err) { /* stockage indisponible */ }
+        if (panneau.id === 'platine' && window.CABLAGE_SUIVRE) window.CABLAGE_SUIVRE();   // en Guidé, le fil en cours reste en vue
+      };
+      if (tours()[panneau.id]) z.tourner(1);
+      peindre();
+      return;
+    }
     b.onclick = () => (b.dataset.zoom === 'plus' ? z.zoomer(1.4) : b.dataset.zoom === 'moins' ? z.zoomer(1 / 1.4) : z.ajuster());
   });
 }
@@ -1608,11 +1667,15 @@ charger(ID, (ex) => {
   // quai c ; le titre complet de l'exercice en infobulle et dans l'onglet
   const court = TUTO && RESEAU ? (RESEAU.stations.find(s => s.id === 'depart') || {}).titre : SD ? SD.station.titre + (SD.quai === 'c' ? ' — la commande' : '') : '';
   document.title = 'Câblage virtuel — ' + titre;
-  $('#titre').textContent = court || titre; $('#titre').title = titre;
+  // 02/10 : sous 1180 px, les étapes gardent leur nom (Franck ne les avait pas vues) ; le titre s'y réduit à « Câblage n° 10 »
+  // (+ « — la commande »), la suite masquée (moteur/cablage.css) ; le titre complet reste en infobulle
+  const tt = court || titre, i = tt.indexOf(' : '), j = tt.indexOf(' — la commande', i);
+  $('#titre').textContent = i > 0 ? tt.slice(0, i) : tt; $('#titre').title = titre;
+  if (i > 0) { const s = document.createElement('span'); s.className = 'titre-suite'; s.textContent = tt.slice(i, j > i ? j : tt.length); $('#titre').append(s, j > i ? tt.slice(j) : ''); }
   construireNomenclature();
   if (ACTIVITE === 'realiser' && VUE !== 'carte') { lancerRealiser(); return; }
   construireCarte();
-  if (VUE !== 'carte' && ACTIVITE !== 'cabler') { lancerCarte(); return; }
+  if (VUE !== 'carte' && ACTIVITE !== 'cabler') { lancerCarte(); document.dispatchEvent(new Event('cablage-carte-prete')); return; }   // 02/10 : le menu Affichage (moteur/ecran.js)
   $('#carte').classList.add('numeros');   // les numeros de bornes sont le sujet : visibles d'emblee
   brancherZoom($('#carte'), installerZoom($('#carte-corps svg'), {}));
   if (VUE === 'carte') { vueCarte(); return; }

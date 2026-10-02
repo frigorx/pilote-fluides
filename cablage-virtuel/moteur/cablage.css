@@ -72,7 +72,10 @@ body.jeu .barre .titre{white-space:normal;line-height:1.2;display:-webkit-box;-w
 .barre .titre[title]{cursor:default}
 @media (max-width:1340px){body.jeu .barre .logo{display:none}}   /* 30/09 (E11) : sous 1340 px, la place va au titre de la station */
 @media (max-width:1400px){body.jeu .barre .titre{font-size:14px}}   /* 30/09 : à 1366, le n° 10 commande tenait sur 3 lignes en 16 px */
-@media (max-width:1180px){.barre .etape:not([aria-current]) .nom{display:none}.barre .etape:not([aria-current]){padding:0 6px}}   /* 1040 → 1180 (E11) ; le numéro reste (X10) */
+/* 02/10 (Franck n'avait pas vu les étapes : « je n'avais pas vu les boutons ») : les noms restent jusqu'à 1000 px ; sous 1180 px,
+   c'est l'étiquette « prototype » qui cède sa place */
+@media (max-width:1180px){body.jeu .barre .tag-proto{display:none}body.jeu .barre .titre-suite{display:none}}   /* « Câblage n° 10 », entier en infobulle */
+@media (max-width:1000px){.barre .etape:not([aria-current]) .nom{display:none}.barre .etape:not([aria-current]){padding:0 6px}}   /* 1040 → 1180 (E11) → 1000 (02/10) ; le numéro reste (X10) */
 
 /* ---- consigne ---- */
 .consigne{display:flex;align-items:center;gap:12px;padding:8px 14px;background:#fff;border-bottom:1px solid var(--ligne);min-height:56px}
@@ -231,6 +234,7 @@ body.vue-carte .scene{grid-template-columns:1fr;grid-template-rows:1fr}
 #platine .fond-platine{fill:#f7f9fb}
 #platine .fond-platine.cadre{stroke:#9aa7b5;stroke-width:3}   /* la vraie platine : le réseau et le moteur sont dehors */
 .panneau .entete button.zoom{min-width:40px;padding:0 8px;font-size:18px;line-height:1;margin-left:2px}
+.panneau .entete button.zoom[aria-pressed="true"]{background:var(--bleu);border-color:var(--bleu);color:#fff}   /* 02/10 : tourné d'un quart */
 
 /* ---- colorier et repérer (parties A et B du TP) : la carte seule, platine masquée ---- */
 .barre .activites button{font-weight:700}

@@ -80,10 +80,13 @@ body.reseau a:focus-visible,body.reseau button:focus-visible,body.reseau summary
 .quais button[aria-pressed="true"]{border:2px solid var(--marine);font-weight:700;box-shadow:inset 0 -3px 0 var(--marine)}
 .quais button[aria-pressed="true"]::before{content:"● "}
 .chemin{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center;font-size:.95rem;color:var(--gris)}
-/* le chemin se lit, il ne se touche pas : du texte et des séparateurs, aucune bordure de bouton */
+/* 02/10 : chaque étape s'ouvre d'un appui (on entre où l'on veut) ; le tutoriel garde son chemin en texte */
 .chemin li{display:inline-flex;align-items:center;gap:8px}
 .chemin li:not(:last-child)::after{content:"·";color:var(--gris)}   /* le séparateur finit la ligne : une ligne repliée commence par une étape */
-.chemin .faite span{color:var(--vert);font-weight:700}
+.chemin .faite span,.chemin .faite a{color:var(--vert);font-weight:700}
+.chemin a{display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border:1.5px solid var(--filet-app);border-radius:999px;
+  background:var(--papier);color:var(--marine);text-decoration:none}
+.chemin a:hover,.chemin a:focus-visible{border-color:var(--marine);background:#e8eef6}
 .prof{margin:0;font-weight:700;color:var(--marine);background:#e8eef6;border-radius:10px;padding:6px 12px}
 .actions{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
 .gros{display:inline-flex;align-items:center;min-height:48px;background:var(--orange);color:#fff;text-decoration:none;border-radius:14px;

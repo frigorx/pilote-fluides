@@ -6,8 +6,8 @@
    - plein écran · la carte sur un autre écran · les repères (nomenclature) montrés ou repliés.
    Les choix sont gardés sur l'appareil. Sur un petit écran, le menu s'ouvre UNE fois pour proposer, jamais pour imposer.
    Sur un seul panneau, un gros bouton en tête du panneau bascule vers l'autre. La feuille élève (PDF) est dans « Plus »
-   (29/09). Le deuxième écran (vue=carte), les étapes Colorier / Repérer (la carte seule, déjà) et Réaliser ne sont pas
-   concernés. */
+   (29/09). Le deuxième écran (vue=carte) et Réaliser ne sont pas concernés ; en Colorier / Repérer (la carte seule), le menu
+   garde le plein écran, le zoom et la voix, sans disposition (02/10). */
 (function () {
 'use strict';
 const $ = s => document.querySelector(s);
@@ -23,15 +23,17 @@ const TAILLES = [['petite', 'Petite'], ['moyenne', 'Moyenne'], ['grande', 'Grand
 
 let fait = false;
 document.addEventListener('cablage-pret', demarrer);
+document.addEventListener('cablage-carte-prete', demarrer);   // colorier, repérer (02/10)
 if (document.querySelector('#platine-corps svg')) demarrer();   // l'exercice était déjà là (rechargement servi du cache)
 function demarrer() {
   if (fait) return; fait = true;
   const API = window.CABLAGE_API;
   if (!API || API.vue === 'carte' || API.activite === 'realiser') return;   // Réaliser : la platine seule, sa colonne à côté
   const EX = API.ex(), ID = EX && EX.id;
-  const surCarte = document.body.classList.contains('sur-carte');
+  // colorier, repérer : la carte est seule, pas de disposition à choisir ; 02/10 (Franck : « la sélection d'affichage a disparu »,
+  // le bouton n'existait qu'à l'étape 3) : le menu y reste, pour le plein écran, le zoom, la voix
+  const carteSeule = document.body.classList.contains('sur-carte');
   // (la feuille élève est passée dans « Plus », 29/09 : moteur/cablage.js, majFeuille)
-  if (surCarte) return;   // colorier, repérer : la carte est seule, rien à choisir
 
   // ---- les préférences, gardées sur l'appareil
   // sans choix : côte à côte sur un écran large, l'un sous l'autre sur un écran étroit ou en portrait (comme avant)
@@ -48,21 +50,24 @@ function demarrer() {
     const b = document.createElement('button'); b.className = 'basculer'; b.textContent = texte; b.onclick = () => { pref.dispo = versDispo; garder(); appliquer(); };
     const entete = panneau.querySelector('.entete'); entete.insertBefore(b, entete.querySelector('.spacer').nextSibling);
   };
-  bascule($('#carte'), 'platine', 'Platine ›');
-  bascule($('#platine'), 'carte', '‹ Carte');
+  if (!carteSeule) { bascule($('#carte'), 'platine', 'Platine ›'); bascule($('#platine'), 'carte', '‹ Carte'); }
 
   // ---- le menu
   const voile = document.createElement('div'); voile.className = 'voile'; voile.id = 'voile-affichage';
   voile.innerHTML =
     '<div class="resultat menu-affichage" role="dialog" aria-labelledby="titre-affichage">' +
     '<h2 id="titre-affichage">Affichage</h2><p class="astuce" id="astuce-affichage" hidden></p>' +
-    '<h3>Disposition</h3><div class="choix" id="choix-dispo">' +
+    '<h3 id="titre-dispo">Disposition</h3><div class="choix" id="choix-dispo">' +
     DISPOS.map(([v, nom, aide]) => '<button data-dispo="' + v + '"><b>' + nom + '</b><small>' + aide + '</small></button>').join('') + '</div>' +
     '<h3 id="titre-taille">Place de la carte</h3><div class="choix ligne" id="choix-taille">' +
     TAILLES.map(([v, nom]) => '<button data-taille="' + v + '">' + nom + '</button>').join('') + '</div>' +
-    '<h3>Aussi</h3><div class="choix ligne" id="choix-autres">' +
+    '<h3 id="titre-aussi">Aussi</h3><div class="choix ligne" id="choix-autres">' +
     '<button id="aff-plein-ecran">⛶ Plein écran</button><button id="aff-autre-ecran">Carte sur un autre écran</button>' +
     '<button id="aff-reperes">Repères</button></div>' +
+    // 02/10 (Franck : « un réglage de sensibilité de souris ; selon les ordinateurs et les pads, zoomer / dézoomer peut être compliqué »)
+    '<h3>Zoom à la molette ou au pavé tactile</h3><div class="choix ligne" id="choix-zoom">' +
+    '<label style="display:flex;align-items:center;gap:8px;font:600 14px system-ui,sans-serif">Lent <input type="range" id="aff-zoom" min="0.2" max="3" step="0.1" style="width:170px"> Rapide <span id="aff-zoom-v"></span></label>' +
+    '<small style="color:var(--mut,#5b6b7d);font-size:13.5px">Le bouton ⟲ de la carte et de la platine les tourne d’un quart de tour.</small></div>' +
     // 30/09 (voix V3) : la voix du professeur se règle ici, pas par un bouton de plus ; la vitesse, obligatoire (doctrine § 5)
     '<h3>Voix du professeur</h3><div class="choix ligne" id="choix-voix"><button id="aff-voix">Voix</button>' +
     '<label style="display:flex;align-items:center;gap:8px;font:600 14px system-ui,sans-serif">Vitesse <input type="range" id="aff-vitesse" min="0.6" max="1.4" step="0.05" style="width:150px"> <span id="aff-vitesse-v"></span></label></div>' +
@@ -83,12 +88,18 @@ function demarrer() {
   const V = () => window.CABLAGE_VOIX;
   $('#aff-voix').onclick = () => { if (V()) { V().regler({ actif: !V().reglage().actif }); peindre(); } };
   $('#aff-vitesse').oninput = (e) => { if (V()) { V().regler({ vitesse: +e.target.value }); peindre(); } };
+  const Z = () => window.CABLAGE_ZOOM;
+  $('#aff-zoom').oninput = (e) => { if (Z()) { Z().regler(+e.target.value); peindre(); } };
 
   function peindre() {
     voile.querySelectorAll('#choix-dispo button').forEach(b => b.classList.toggle('actif', b.dataset.dispo === pref.dispo));
     voile.querySelectorAll('#choix-taille button').forEach(b => b.classList.toggle('actif', b.dataset.taille === pref.taille));
-    const deux = pref.dispo === 'colonnes' || pref.dispo === 'lignes';
+    const deux = !carteSeule && (pref.dispo === 'colonnes' || pref.dispo === 'lignes');
     $('#titre-taille').hidden = !deux; $('#choix-taille').hidden = !deux;
+    $('#titre-dispo').hidden = carteSeule; $('#titre-aussi').textContent = carteSeule ? 'L’écran' : 'Aussi'; $('#choix-dispo').hidden = carteSeule; $('#aff-autre-ecran').hidden = carteSeule;
+    const zs = Z() && Z().sens();
+    $('#choix-zoom').hidden = !zs;
+    if (zs) { $('#aff-zoom').value = zs; $('#aff-zoom-v').textContent = zs.toFixed(1).replace('.', ',') + '×'; }
     if (pref.dispo === 'lignes') $('#titre-taille').textContent = 'Hauteur de la carte'; else $('#titre-taille').textContent = 'Place de la carte';
     const pe = $('#aff-plein-ecran'); pe.classList.toggle('actif', !!document.fullscreenElement); pe.textContent = document.fullscreenElement ? '⛶ Quitter le plein écran' : '⛶ Plein écran';
     const r = $('#aff-reperes'); r.classList.toggle('actif', pref.reperes); r.textContent = pref.reperes ? 'Repères : montrés' : 'Repères : repliés';
@@ -116,6 +127,7 @@ function demarrer() {
   }
   function appliquer() {
     const b = document.body.classList;
+    if (carteSeule) { b.toggle('reperes-replies', !pref.reperes); return; }   // la carte seule : sa mise en page est celle de l'étape
     ['dispo-colonnes', 'dispo-lignes', 'vue-platine', 'vue-carte-seule', 'vue-papier', 'un-panneau', 'taille-petite', 'taille-moyenne', 'taille-grande', 'reperes-replies'].forEach(c => b.remove(c));
     if (pref.dispo === 'platine') b.add('vue-platine', 'un-panneau');
     else if (pref.dispo === 'papier') b.add('vue-platine', 'vue-papier', 'un-panneau');
@@ -135,7 +147,7 @@ function demarrer() {
   // 30/09 (constat E5) : un petit écran, la première fois sur cet appareil : plus de fenêtre qui s'ouvre toute seule. Une petite
   // bulle accrochée au bouton « Affichage », qui ne prend pas le doigt et ne couvre pas la zone de travail ; elle se ferme au
   // premier geste ou toute seule après 8 s, et ne revient plus. Pas par-dessus le tutoriel de prise en main.
-  if (PETIT() && !pref.propose && new URLSearchParams(location.search).get('tuto') === null) {
+  if (!carteSeule && PETIT() && !pref.propose && new URLSearchParams(location.search).get('tuto') === null) {
     pref.propose = true; garder();
     const bulle = document.createElement('div'); bulle.className = 'bulle-affichage'; bulle.id = 'bulle-affichage'; bulle.setAttribute('role', 'status');
     bulle.textContent = 'Écran petit ? Choisissez votre affichage ici.';
