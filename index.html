@@ -9,9 +9,9 @@
 <meta name="theme-color" content="#1b3a63">
 <link rel="apple-touch-icon" href="icones/apple-touch-icon-180.png">
 <title>inerWeb Édu — le froid et la climatisation, station par station</title>
-<meta name="description" content="Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.">
+<meta name="description" content="Neuf réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.">
 <meta property="og:title" content="inerWeb Édu — le froid et la climatisation, station par station">
-<meta property="og:description" content="Six réseaux de cours interactifs et gratuits, rangés comme des lignes de métro : le froid, l’eau, l’air, l’électricité, la réglementation, l’habilitation. Une voix qui explique, sans compte.">
+<meta property="og:description" content="Neuf réseaux de cours interactifs et gratuits, rangés comme des lignes de métro : le froid, l’eau, l’air, l’électricité, la réglementation, l’habilitation. Une voix qui explique, sans compte.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://inerweb.fr/">
 <link rel="canonical" href="https://inerweb.fr/">
@@ -343,6 +343,7 @@
   .nouveautes h3 { font-family:var(--titre); color:var(--txt); font-size:15px;
                    margin:10px 0 6px; padding-top:10px; border-top:1px solid var(--ligne); }
   .nouveautes ul { margin:0; padding-left:22px; }
+  .nouveautes .nv-anciennes > summary { min-height:40px; padding:10px 0; font-size:15px; color:var(--mut); }
   .nouveautes li { margin:7px 0; font-size:15px; }
   .nouveautes li .d { color:var(--mut); font-size:14.5px; }
   /* Étiquettes : la forme et le mot portent l'information, pas la seule
@@ -587,6 +588,7 @@
     .tuile h3 { font-size:16px; }
   }
 </style>
+<script defer src="moteur/retour-accueil.js?v=ff0ca829c0"></script>
 </head>
 <body>
 <a class="evite" href="#contenu">Aller au contenu</a>
@@ -874,9 +876,9 @@
   </div>
 
   <section class="hall-reseaux" id="reseaux" aria-labelledby="titre-reseaux">
-    <h2 id="titre-reseaux">Six réseaux, une carte chacun</h2>
+    <h2 id="titre-reseaux">Neuf réseaux, une carte chacun</h2>
     <p class="sous">Chaque réseau est un plan de métro : des lignes par thème, un cours à chaque station, une voix qui explique. Vous entrez où vous voulez, vous changez de ligne quand vous voulez.</p>
-    <p class="glisser" aria-hidden="true">← Faites glisser pour voir les six réseaux →</p>
+    <p class="glisser" aria-hidden="true">← Faites glisser pour voir les neuf réseaux →</p>
     <div class="grille-reseaux">
       <!-- RESEAUX DEBUT (générés par build/accueil.mjs — ne pas éditer à la main) -->
       <article class="vignette" style="--c:#0c4a6e">
@@ -1162,6 +1164,7 @@
           <span class="d">— la phrase dite s’affiche dans la bulle discrète sur les 13 stations ; les limites de l’intervention BR sont corrigées (circuits jusqu’à 1 000 V et 63 A, 500 V pour connecter ou déconnecter en présence de tension) ; le livre gagne un index de conformité au référentiel de formation et cinq pages de cours (124 pages).</span></li>
       </ul>
 
+      <details class="nv-anciennes"><summary>Actualités précédentes</summary>
       <h3>29 septembre 2026</h3>
       <ul>
         <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cablage-virtuel/">🗺️ Le simulateur de câblage devient un réseau</a>
@@ -1269,6 +1272,7 @@
         <li><span class="nv-etiq nv-corr">correction</span>Publication <span class="d">— les fichiers commençant par « . » ou « _ » n’étaient pas mis en ligne.</span></li>
         <li><span class="nv-etiq">ouverture</span><strong>Le réseau ouvre</strong> <span class="d">— 60 stations sur le plan, la formation habilitation complète dans l’application.</span></li>
       </ul>
+      </details>
 
     </div>
   </details>
