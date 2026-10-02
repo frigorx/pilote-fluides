@@ -3,6 +3,13 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 02/10 — AÉRORÉZO EN 3D : 13 APPAREILS DANS 26 STATIONS, EN LIGNE (`517e3536`)
+>
+> `aerorezo/` est **GÉNÉRÉ** depuis l’atelier `C:\git\aerorezo` : `node outils/livrer.mjs --simuler` puis `--ecrire`,
+> commiter `aerorezo/` seul. Plus de `build/version.mjs` pour AéroRézo : la livraison pose `?v=` sur `app.js` et
+> `moteur.js`, la clé suit jusqu’à la 3D. `lisibilite.js` (« Aa ») est désormais réinjecté par la livraison — ne plus
+> l’ajouter à la main dans `aerorezo/`. Reprise : `PROMPT-REPRISE.md` et `chantier-3d/PLAN-3D.md` dans l’atelier.
+
 > ## 02/10 — ÉLECTRORÉZO : REFONTE 3D ET « ENTRER PAR L'ARMOIRE », EN LIGNE (`2ee47c6d` → `f6e0a93c`)
 >
 > `electrorezo/` est **GÉNÉRÉ** depuis l'atelier `C:\git\electrorezo` (`node outils/livrer.mjs`, puis `build/version.mjs`,
