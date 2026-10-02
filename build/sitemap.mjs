@@ -28,6 +28,7 @@ const INDEXEES = [
   { fichier: "index.html", url: "https://inerweb.fr/" },
   { fichier: "plan.html", url: "https://inerweb.fr/plan.html" },
   { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
+  { fichier: "quartier/index.html", url: "https://inerweb.fr/quartier/" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
   {
     fichier: "packs/fluides/res/chaleur-interactive/index.html",

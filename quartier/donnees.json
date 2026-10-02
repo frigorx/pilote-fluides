@@ -1,0 +1,1832 @@
+{
+ "genere": "node donnees3d.mjs (depuis zones.mjs et le catalogue)",
+ "calques": [
+  {
+   "id": "froid",
+   "nom": "Le froid",
+   "grand": true,
+   "couleur": "#3d7fca",
+   "trait": "plein",
+   "zones": [
+    "frigo",
+    "chambre-froide",
+    "vitrine",
+    "groupe",
+    "salle-machines",
+    "clim",
+    "pac"
+   ],
+   "vues": [
+    {
+     "titre": "Les organes du circuit",
+     "href": "https://inerweb.fr/plan.html#ligne=organes"
+    },
+    {
+     "titre": "La régulation",
+     "href": "https://inerweb.fr/plan.html#ligne=regules"
+    },
+    {
+     "titre": "L’huile",
+     "href": "https://inerweb.fr/plan.html#ligne=huile"
+    },
+    {
+     "titre": "Le CO₂",
+     "href": "https://inerweb.fr/plan.html#ligne=co2"
+    },
+    {
+     "titre": "Tout le plan",
+     "href": "https://inerweb.fr/plan.html"
+    }
+   ]
+  },
+  {
+   "id": "clim",
+   "nom": "La clim",
+   "grand": true,
+   "couleur": "#0e7490",
+   "trait": "mixte",
+   "zones": [
+    "clim",
+    "cta"
+   ],
+   "vues": [
+    {
+     "titre": "Les apports de chaleur (AéroRézo)",
+     "href": "https://inerweb.fr/aerorezo/"
+    },
+    {
+     "titre": "Le circuit frigorifique (général)",
+     "href": "https://inerweb.fr/plan.html"
+    }
+   ]
+  },
+  {
+   "id": "chauffage",
+   "nom": "Le chauffage",
+   "grand": true,
+   "couleur": "#c9451a",
+   "trait": "tirete",
+   "zones": [
+    "pac",
+    "clim"
+   ],
+   "vues": [
+    {
+     "titre": "Les tuyaux d’eau chaude (HydroMétro)",
+     "href": "https://inerweb.fr/hydrometro/"
+    },
+    {
+     "titre": "Le circuit frigorifique (général)",
+     "href": "https://inerweb.fr/plan.html"
+    }
+   ]
+  },
+  {
+   "id": "elec",
+   "nom": "L’électricité",
+   "grand": false,
+   "couleur": "#7c3aed",
+   "trait": "pointille",
+   "zones": [
+    "armoire",
+    "tableau"
+   ],
+   "vues": [
+    {
+     "titre": "L’électricité pas à pas (ÉlectroRézo)",
+     "href": "https://inerweb.fr/electrorezo/"
+    },
+    {
+     "titre": "L’habilitation (HoCourant)",
+     "href": "https://inerweb.fr/hocourant/"
+    },
+    {
+     "titre": "Câbler (simulateur)",
+     "href": "https://inerweb.fr/cablage-virtuel/"
+    }
+   ]
+  },
+  {
+   "id": "air",
+   "nom": "L’air",
+   "grand": false,
+   "couleur": "#1b6e5a",
+   "trait": "double",
+   "zones": [
+    "vmc",
+    "cta"
+   ],
+   "vues": [
+    {
+     "titre": "AéroRézo",
+     "href": "https://inerweb.fr/aerorezo/"
+    }
+   ]
+  },
+  {
+   "id": "regles",
+   "nom": "Les règles",
+   "grand": false,
+   "couleur": "#1e40af",
+   "trait": "aucun",
+   "zones": [
+    "bureau"
+   ],
+   "vues": [
+    {
+     "titre": "Le bâtiment Législation",
+     "href": "https://inerweb.fr/legislation/"
+    }
+   ]
+  },
+  {
+   "id": "gestes",
+   "nom": "Les gestes",
+   "grand": false,
+   "couleur": "#b45309",
+   "trait": "aucun",
+   "zones": [
+    "camionnette",
+    "etabli",
+    "echafaudage"
+   ],
+   "vues": [
+    {
+     "titre": "CuivRézo",
+     "href": "https://inerweb.fr/cuivrezo/"
+    },
+    {
+     "titre": "inerWeb R408",
+     "href": "https://inerweb.fr/r408/"
+    }
+   ]
+  }
+ ],
+ "batiments": [
+  {
+   "id": "commerce",
+   "nom": "Le commerce",
+   "zones": [
+    "chambre-froide",
+    "vitrine",
+    "salle-machines",
+    "armoire",
+    "groupe",
+    "cta"
+   ]
+  },
+  {
+   "id": "maison",
+   "nom": "La maison",
+   "zones": [
+    "frigo",
+    "clim",
+    "pac",
+    "vmc",
+    "tableau"
+   ]
+  },
+  {
+   "id": "rue",
+   "nom": "La rue",
+   "zones": [
+    "camionnette",
+    "etabli",
+    "echafaudage"
+   ]
+  },
+  {
+   "id": "immeuble",
+   "nom": "L’immeuble des règles",
+   "zones": [
+    "bureau"
+   ]
+  }
+ ],
+ "zones": [
+  {
+   "id": "frigo",
+   "nom": "Le réfrigérateur de la cuisine",
+   "ico": "🧊",
+   "question": "Comment mon frigo chasse-t-il la chaleur ?",
+   "lieu": "La maison",
+   "couleur": "#3d7fca",
+   "calques": [
+    "froid"
+   ],
+   "entree": {
+    "titre": "Du glaçon au circuit",
+    "href": "https://inerweb.fr/packs/fluides/res/chaleur-interactive/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Du glaçon au circuit",
+     "href": "https://inerweb.fr/packs/fluides/res/chaleur-interactive/"
+    },
+    {
+     "nom": "La chaleur dans le circuit",
+     "href": "https://inerweb.fr/packs/fluides/res/chaleur-circuit-interactif/"
+    },
+    {
+     "nom": "Le circuit, organe par organe",
+     "href": "https://inerweb.fr/packs/fluides/res/circuit-organe-par-organe/"
+    },
+    {
+     "nom": "Pression et température",
+     "href": "https://inerweb.fr/packs/fluides/res/pression-temperature-interactive/"
+    },
+    {
+     "nom": "Académie froid-clim",
+     "href": "https://inerweb.fr/packs/fluides/res/froid-clim-academie/"
+    },
+    {
+     "nom": "Diagramme enthalpique frigorifique interactif",
+     "href": "https://inerweb.fr/packs/fluides/res/diagramme-enthalpique/"
+    },
+    {
+     "nom": "Surchauffe et sous-refroidissement",
+     "href": "https://inerweb.fr/packs/fluides/res/surchauffe-sous-refroidissement-interactif/"
+    },
+    {
+     "nom": "Décrypter le code d’un fluide",
+     "href": "https://inerweb.fr/packs/fluides/res/nomenclature-interactive/"
+    },
+    {
+     "nom": "Pourquoi la température glisse ?",
+     "href": "https://inerweb.fr/packs/fluides/res/glissement-temperature/"
+    },
+    {
+     "nom": "la technologie des organes",
+     "href": "https://inerweb.fr/packs/fluides/res/tome-3-technologie-organes/"
+    },
+    {
+     "nom": "La carte d’identité du R134a",
+     "href": "https://inerweb.fr/formarezo/stations/1-1-carte-r134a/"
+    }
+   ]
+  },
+  {
+   "id": "chambre-froide",
+   "nom": "La chambre froide",
+   "ico": "❄️",
+   "question": "D’où vient le froid dans la chambre froide ?",
+   "lieu": "Le commerce",
+   "couleur": "#3d7fca",
+   "calques": [
+    "froid"
+   ],
+   "entree": {
+    "titre": "L’évaporateur",
+    "href": "https://inerweb.fr/packs/fluides/res/evaporateur-interactif/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Évaporateur — installer, régler, vérifier",
+     "href": "https://inerweb.fr/packs/fluides/res/evaporateur-interactif/"
+    },
+    {
+     "nom": "Le détendeur thermostatique en détail",
+     "href": "https://inerweb.fr/packs/fluides/res/detendeur-interactif/"
+    },
+    {
+     "nom": "L'électrovanne de ligne liquide",
+     "href": "https://inerweb.fr/packs/fluides/res/electrovanne-interactive/"
+    },
+    {
+     "nom": "Le dégivrage électrique",
+     "href": "https://inerweb.fr/packs/fluides/res/degivrage-electrique/"
+    },
+    {
+     "nom": "Le dégivrage par gaz chauds",
+     "href": "https://inerweb.fr/packs/fluides/res/degivrage-gaz-chauds/"
+    },
+    {
+     "nom": "Le dégivrage naturel",
+     "href": "https://inerweb.fr/packs/fluides/res/degivrage-naturel/"
+    },
+    {
+     "nom": "Sans dégivrage commandé",
+     "href": "https://inerweb.fr/packs/fluides/res/sans-degivrage-commande/"
+    },
+    {
+     "nom": "La commande directe",
+     "href": "https://inerweb.fr/packs/fluides/res/commande-directe-thermostat/"
+    },
+    {
+     "nom": "Le régulateur électronique",
+     "href": "https://inerweb.fr/packs/fluides/res/regulateur-electronique-interactif/"
+    },
+    {
+     "nom": "Le pump-down unique",
+     "href": "https://inerweb.fr/packs/fluides/res/pump-down-unique/"
+    },
+    {
+     "nom": "Le pump-down automatique",
+     "href": "https://inerweb.fr/packs/fluides/res/pump-down-automatique/"
+    },
+    {
+     "nom": "Le pump-down amélioré",
+     "href": "https://inerweb.fr/packs/fluides/res/pump-down-ameliore/"
+    },
+    {
+     "nom": "Bilan thermique et performance énergétique",
+     "href": "https://inerweb.fr/packs/fluides/res/bilan-thermique-performance-interactif/"
+    },
+    {
+     "nom": "Les régules",
+     "href": "https://inerweb.fr/packs/fluides/res/regules-interactif/"
+    },
+    {
+     "nom": "Le pupitre de réglage",
+     "href": "https://inerweb.fr/packs/fluides/res/pupitre-reglage-interactif/"
+    }
+   ]
+  },
+  {
+   "id": "vitrine",
+   "nom": "La vitrine réfrigérée",
+   "ico": "🥩",
+   "question": "Pourquoi la vitrine porte-t-elle l’étiquette « gaz inflammable » ?",
+   "lieu": "Le commerce",
+   "couleur": "#3d7fca",
+   "calques": [
+    "froid"
+   ],
+   "entree": {
+    "titre": "Le gaz de la vitrine : le propane",
+    "href": "https://inerweb.fr/packs/fluides/res/hydrocarbures-a1-a2/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Mission 290 — autoriser ou suspendre",
+     "href": "https://inerweb.fr/packs/fluides/res/hydrocarbures-a1-a2/"
+    },
+    {
+     "nom": "Intervenir sur un circuit hydrocarbure",
+     "href": "https://inerweb.fr/packs/fluides/res/intervention-hydrocarbures-interactive/"
+    },
+    {
+     "nom": "Les classes de sécurité",
+     "href": "https://inerweb.fr/packs/fluides/res/cours-classes-securite/"
+    },
+    {
+     "nom": "Explosif avant d'être perceptible",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=cl2"
+    },
+    {
+     "nom": "La flamme interdite",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=s3"
+    }
+   ]
+  },
+  {
+   "id": "groupe",
+   "nom": "Le groupe frigorifique du toit",
+   "ico": "🌀",
+   "question": "Pourquoi la machine du toit souffle-t-elle de l’air chaud ?",
+   "lieu": "Le commerce",
+   "couleur": "#3d7fca",
+   "calques": [
+    "froid"
+   ],
+   "entree": {
+    "titre": "Le compresseur",
+    "href": "https://inerweb.fr/packs/fluides/res/compresseur-interactif/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Compresseur — installer, régler, vérifier",
+     "href": "https://inerweb.fr/packs/fluides/res/compresseur-interactif/"
+    },
+    {
+     "nom": "Module Compresseur Frigorifique",
+     "href": "https://inerweb.fr/packs/fluides/res/module-compresseur/"
+    },
+    {
+     "nom": "Condenseur — installer, régler, vérifier",
+     "href": "https://inerweb.fr/packs/fluides/res/condenseur-interactif/"
+    },
+    {
+     "nom": "Comprendre la bouteille liquide",
+     "href": "https://inerweb.fr/packs/fluides/res/bouteille-liquide-pedagogique/"
+    },
+    {
+     "nom": "Comprendre le filtre-déshydrateur",
+     "href": "https://inerweb.fr/packs/fluides/res/filtre-deshydrateur-pedagogique/"
+    },
+    {
+     "nom": "Comprendre le voyant liquide",
+     "href": "https://inerweb.fr/packs/fluides/res/voyant-liquide-pedagogique/"
+    },
+    {
+     "nom": "La vanne de service",
+     "href": "https://inerweb.fr/packs/fluides/res/vanne-service-interactive/"
+    },
+    {
+     "nom": "Le pressostat BP de sécurité",
+     "href": "https://inerweb.fr/packs/fluides/res/pressostat-bp-kp1/"
+    },
+    {
+     "nom": "Le pressostat HP de sécurité",
+     "href": "https://inerweb.fr/packs/fluides/res/pressostat-hp-kp5/"
+    },
+    {
+     "nom": "Le pressostat combiné KP15",
+     "href": "https://inerweb.fr/packs/fluides/res/pressostat-combine-kp15/"
+    },
+    {
+     "nom": "Le régulateur de pression de carter",
+     "href": "https://inerweb.fr/packs/fluides/res/regulateur-kvl-pedagogique/"
+    },
+    {
+     "nom": "Le KVR et le NRD",
+     "href": "https://inerweb.fr/packs/fluides/res/regulateur-kvr-nrd/"
+    },
+    {
+     "nom": "La famille des régulateurs KV",
+     "href": "https://inerweb.fr/packs/fluides/res/regulateurs-kv-pedagogiques/"
+    },
+    {
+     "nom": "Ce qui éclate — la pression",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=s4"
+    },
+    {
+     "nom": "Soupapes & sécurités",
+     "href": "https://inerweb.fr/legislation/stations/desp-soupapes-securites/"
+    }
+   ]
+  },
+  {
+   "id": "salle-machines",
+   "nom": "La salle des machines",
+   "ico": "⚙️",
+   "question": "Que cache le local technique du commerce ?",
+   "lieu": "Le commerce",
+   "couleur": "#3d7fca",
+   "calques": [
+    "froid"
+   ],
+   "entree": {
+    "titre": "Le froid au CO₂",
+    "href": "https://inerweb.fr/packs/fluides/res/co2-r744/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "La ligne CO₂ / R744",
+     "href": "https://inerweb.fr/packs/fluides/res/co2-r744/"
+    },
+    {
+     "nom": "Le circuit d’huile",
+     "href": "https://inerweb.fr/packs/fluides/res/circuit-huile-interactif/"
+    },
+    {
+     "nom": "Le clapet différentiel d’huile",
+     "href": "https://inerweb.fr/packs/fluides/res/clapet-differentiel-huile-pedagogique/"
+    },
+    {
+     "nom": "Diagnostic : lire l’architecture et le retour",
+     "href": "https://inerweb.fr/packs/fluides/res/diagnostic-circuit-huile/"
+    },
+    {
+     "nom": "Diagnostic : pression, distribution et conclusion",
+     "href": "https://inerweb.fr/packs/fluides/res/diagnostic-circuit-huile-conclure/"
+    },
+    {
+     "nom": "La chaîne de l’huile : séparer et stocker",
+     "href": "https://inerweb.fr/packs/fluides/res/elements-circuit-huile/"
+    },
+    {
+     "nom": "La chaîne de l’huile : mettre sous pression et régler",
+     "href": "https://inerweb.fr/packs/fluides/res/elements-circuit-huile-regler/"
+    },
+    {
+     "nom": "Le pressostat d’huile : la pression nette",
+     "href": "https://inerweb.fr/packs/fluides/res/pressostat-differentiel-huile-pedagogique/"
+    },
+    {
+     "nom": "Le pressostat d’huile : temporisation et sécurité",
+     "href": "https://inerweb.fr/packs/fluides/res/pressostat-huile-securite/"
+    },
+    {
+     "nom": "Le régulateur d’huile mécanique AC&R",
+     "href": "https://inerweb.fr/packs/fluides/res/regulateur-huile-mecanique-pedagogique/"
+    },
+    {
+     "nom": "Le réservoir d’huile",
+     "href": "https://inerweb.fr/packs/fluides/res/reservoir-huile-pedagogique/"
+    },
+    {
+     "nom": "Le retour d’huile naturel",
+     "href": "https://inerweb.fr/packs/fluides/res/retour-huile-naturel/"
+    },
+    {
+     "nom": "Vérifier le retour d’huile",
+     "href": "https://inerweb.fr/packs/fluides/res/retour-huile-verifier/"
+    },
+    {
+     "nom": "Le séparateur à éclatement",
+     "href": "https://inerweb.fr/packs/fluides/res/separateur-eclatement-pedagogique/"
+    },
+    {
+     "nom": "Le séparateur d’huile",
+     "href": "https://inerweb.fr/packs/fluides/res/separateur-huile-pedagogique/"
+    },
+    {
+     "nom": "Choisir et contrôler l’huile",
+     "href": "https://inerweb.fr/packs/fluides/res/technologie-huiles-choix-controle/"
+    },
+    {
+     "nom": "Les familles d’huile",
+     "href": "https://inerweb.fr/packs/fluides/res/technologie-huiles-frigorifiques/"
+    },
+    {
+     "nom": "TraxOil : monter et diagnostiquer",
+     "href": "https://inerweb.fr/packs/fluides/res/traxoil-installer/"
+    },
+    {
+     "nom": "TraxOil : comment il travaille",
+     "href": "https://inerweb.fr/packs/fluides/res/traxoil-pedagogique/"
+    },
+    {
+     "nom": "CO₂ : deux dangers mortels",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=cl3"
+    },
+    {
+     "nom": "Se protéger du CO₂",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=cl4"
+    },
+    {
+     "nom": "CO₂ et NH₃ — reconnaître, ne pas intervenir",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g13"
+    }
+   ]
+  },
+  {
+   "id": "armoire",
+   "nom": "L’armoire électrique du froid",
+   "ico": "⚡",
+   "question": "Qui donne l’ordre aux machines de démarrer ?",
+   "lieu": "Le commerce",
+   "couleur": "#7c3aed",
+   "calques": [
+    "elec"
+   ],
+   "entree": {
+    "titre": "Le contacteur",
+    "href": "https://inerweb.fr/electrorezo/stations/5-2-contacteur/"
+   },
+   "porte": {
+    "titre": "Câbler l’armoire dans le simulateur",
+    "href": "https://inerweb.fr/cablage-virtuel/"
+   },
+   "stations": [
+    {
+     "nom": "L’interrupteur",
+     "href": "https://inerweb.fr/electrorezo/stations/3-1-interrupteur/"
+    },
+    {
+     "nom": "Le sectionneur",
+     "href": "https://inerweb.fr/electrorezo/stations/3-2-sectionneur/"
+    },
+    {
+     "nom": "L’interrupteur-sectionneur",
+     "href": "https://inerweb.fr/electrorezo/stations/3-3-interrupteur-sectionneur/"
+    },
+    {
+     "nom": "Le porte-fusible",
+     "href": "https://inerweb.fr/electrorezo/stations/3-4-porte-fusible/"
+    },
+    {
+     "nom": "Le sectionneur porte-fusible",
+     "href": "https://inerweb.fr/electrorezo/stations/3-5-sectionneur-porte-fusible/"
+    },
+    {
+     "nom": "Le contact : repos et travail",
+     "href": "https://inerweb.fr/electrorezo/stations/5-1-contact-no-nf/"
+    },
+    {
+     "nom": "Le contacteur",
+     "href": "https://inerweb.fr/electrorezo/stations/5-2-contacteur/"
+    },
+    {
+     "nom": "Le contact auxiliaire",
+     "href": "https://inerweb.fr/electrorezo/stations/5-3-contact-auxiliaire/"
+    },
+    {
+     "nom": "Le relais électromécanique",
+     "href": "https://inerweb.fr/electrorezo/stations/5-4-relais/"
+    },
+    {
+     "nom": "Le relais temporisé",
+     "href": "https://inerweb.fr/electrorezo/stations/5-5-relais-temporise/"
+    },
+    {
+     "nom": "Les contacts temporisés",
+     "href": "https://inerweb.fr/electrorezo/stations/5-6-contacts-temporises/"
+    },
+    {
+     "nom": "Bouton-poussoir et sélecteur",
+     "href": "https://inerweb.fr/electrorezo/stations/5-7-boutons/"
+    },
+    {
+     "nom": "Arrêt d’urgence et signalisation",
+     "href": "https://inerweb.fr/electrorezo/stations/5-8-securite-signalisation/"
+    },
+    {
+     "nom": "Lire un schéma : puissance et commande",
+     "href": "https://inerweb.fr/electrorezo/stations/5-9-lire-un-schema/"
+    },
+    {
+     "nom": "La bobine et l’électro-aimant",
+     "href": "https://inerweb.fr/electrorezo/stations/6-1-bobine-electro-aimant/"
+    },
+    {
+     "nom": "Le transformateur",
+     "href": "https://inerweb.fr/electrorezo/stations/6-2-transformateur/"
+    },
+    {
+     "nom": "Le moteur asynchrone triphasé",
+     "href": "https://inerweb.fr/electrorezo/stations/6-3-moteur-asynchrone/"
+    },
+    {
+     "nom": "L’atelier du lundi matin",
+     "href": "https://inerweb.fr/electrorezo/stations/6-4-couplage/"
+    },
+    {
+     "nom": "Le moteur monophasé",
+     "href": "https://inerweb.fr/electrorezo/stations/6-5-moteur-monophase/"
+    },
+    {
+     "nom": "Synchrone et courant continu",
+     "href": "https://inerweb.fr/electrorezo/stations/6-6-synchrone-et-continu/"
+    },
+    {
+     "nom": "Faire varier la tension",
+     "href": "https://inerweb.fr/electrorezo/stations/7-1-varier-la-tension/"
+    },
+    {
+     "nom": "Le variateur de tension",
+     "href": "https://inerweb.fr/electrorezo/stations/7-2-variateur-tension/"
+    },
+    {
+     "nom": "Faire varier la fréquence",
+     "href": "https://inerweb.fr/electrorezo/stations/7-3-varier-la-frequence/"
+    },
+    {
+     "nom": "Le variateur de fréquence",
+     "href": "https://inerweb.fr/electrorezo/stations/7-4-variateur-frequence/"
+    },
+    {
+     "nom": "Le trait et le point",
+     "href": "https://inerweb.fr/electrorezo/stations/8-1-trait-et-point/"
+    },
+    {
+     "nom": "Déchiffrer",
+     "href": "https://inerweb.fr/electrorezo/stations/8-10-dechiffrer/"
+    },
+    {
+     "nom": "Le jeu des symboles",
+     "href": "https://inerweb.fr/electrorezo/stations/8-11-jeu-des-symboles/"
+    },
+    {
+     "nom": "Le contact",
+     "href": "https://inerweb.fr/electrorezo/stations/8-2-contact/"
+    },
+    {
+     "nom": "La barre du sectionnement",
+     "href": "https://inerweb.fr/electrorezo/stations/8-3-barre-sectionnement/"
+    },
+    {
+     "nom": "Le rectangle",
+     "href": "https://inerweb.fr/electrorezo/stations/8-4-rectangle/"
+    },
+    {
+     "nom": "Le déclencheur thermique",
+     "href": "https://inerweb.fr/electrorezo/stations/8-5-declencheur-thermique/"
+    },
+    {
+     "nom": "Le déclencheur magnétique",
+     "href": "https://inerweb.fr/electrorezo/stations/8-6-declencheur-magnetique/"
+    },
+    {
+     "nom": "Le pointillé",
+     "href": "https://inerweb.fr/electrorezo/stations/8-7-pointille/"
+    },
+    {
+     "nom": "La bobine et le rond",
+     "href": "https://inerweb.fr/electrorezo/stations/8-8-bobine-et-rond/"
+    },
+    {
+     "nom": "Les repères",
+     "href": "https://inerweb.fr/electrorezo/stations/8-9-reperes/"
+    },
+    {
+     "nom": "Le fusible gG",
+     "href": "https://inerweb.fr/electrorezo/stations/4-1-fusible-gg/"
+    },
+    {
+     "nom": "Le fusible aM",
+     "href": "https://inerweb.fr/electrorezo/stations/4-2-fusible-am/"
+    },
+    {
+     "nom": "Le disjoncteur moteur",
+     "href": "https://inerweb.fr/electrorezo/stations/4-4-disjoncteur-moteur/"
+    },
+    {
+     "nom": "Le relais thermique",
+     "href": "https://inerweb.fr/electrorezo/stations/4-7-relais-thermique/"
+    },
+    {
+     "nom": "La protection minimum",
+     "href": "https://inerweb.fr/packs/fluides/res/protection-minimum-serie/"
+    },
+    {
+     "nom": "Câblage virtuel (28 exercices)",
+     "href": "https://inerweb.fr/cablage-virtuel/"
+    },
+    {
+     "nom": "TD Triphasé & Couplage Moteur",
+     "href": "https://frigorx.github.io/sous-tension/td-triphase.html"
+    },
+    {
+     "nom": "Le danger électrique",
+     "href": "https://inerweb.fr/hocourant/?module=M1"
+    },
+    {
+     "nom": "Observer et analyser avant d'agir",
+     "href": "https://inerweb.fr/hocourant/?module=M2"
+    },
+    {
+     "nom": "Choisir les mesures de prévention",
+     "href": "https://inerweb.fr/hocourant/?module=M3"
+    },
+    {
+     "nom": "Les domaines de tension",
+     "href": "https://inerweb.fr/hocourant/?module=M4"
+    },
+    {
+     "nom": "Le courant et le corps humain",
+     "href": "https://inerweb.fr/hocourant/?module=M5"
+    },
+    {
+     "nom": "L'habilitation et ses symboles",
+     "href": "https://inerweb.fr/hocourant/?module=M6"
+    },
+    {
+     "nom": "Zones, distances et acteurs",
+     "href": "https://inerweb.fr/hocourant/?module=M7"
+    },
+    {
+     "nom": "Le parcours B0, H0 et H0V",
+     "href": "https://inerweb.fr/hocourant/?module=M8"
+    },
+    {
+     "nom": "Mettre en sécurité : la consignation",
+     "href": "https://inerweb.fr/hocourant/?module=M9"
+    },
+    {
+     "nom": "BS et BE Manœuvre",
+     "href": "https://inerweb.fr/hocourant/?module=M10"
+    },
+    {
+     "nom": "B1, B1V : exécuter des travaux",
+     "href": "https://inerweb.fr/hocourant/?module=M11"
+    },
+    {
+     "nom": "Incident, accident, incendie",
+     "href": "https://inerweb.fr/hocourant/?module=M12"
+    },
+    {
+     "nom": "BR : l'intervention générale",
+     "href": "https://inerweb.fr/hocourant/?module=M13"
+    },
+    {
+     "nom": "Consigner avant de toucher",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=s5"
+    },
+    {
+     "nom": "Consigner — VAT, les 4 étapes",
+     "href": "https://inerweb.fr/legislation/stations/elec-consigner/"
+    },
+    {
+     "nom": "L'habilitation",
+     "href": "https://inerweb.fr/legislation/stations/elec-habilitation/"
+    }
+   ]
+  },
+  {
+   "id": "tableau",
+   "nom": "Le tableau électrique de la maison",
+   "ico": "🔌",
+   "question": "Pourquoi le disjoncteur saute-t-il ?",
+   "lieu": "La maison",
+   "couleur": "#7c3aed",
+   "calques": [
+    "elec"
+   ],
+   "entree": {
+    "titre": "Le disjoncteur",
+    "href": "https://inerweb.fr/electrorezo/stations/4-3-disjoncteur-magneto-thermique/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Le courant et l’intensité",
+     "href": "https://inerweb.fr/electrorezo/stations/1-1-courant-intensite/"
+    },
+    {
+     "nom": "La tension",
+     "href": "https://inerweb.fr/electrorezo/stations/1-2-tension/"
+    },
+    {
+     "nom": "La résistance et la loi d’Ohm",
+     "href": "https://inerweb.fr/electrorezo/stations/1-3-resistance-loi-ohm/"
+    },
+    {
+     "nom": "La puissance et l’énergie",
+     "href": "https://inerweb.fr/electrorezo/stations/1-4-puissance-energie/"
+    },
+    {
+     "nom": "Continu et alternatif",
+     "href": "https://inerweb.fr/electrorezo/stations/1-5-continu-alternatif/"
+    },
+    {
+     "nom": "La fréquence",
+     "href": "https://inerweb.fr/electrorezo/stations/1-6-frequence/"
+    },
+    {
+     "nom": "Lire une plaque signalétique",
+     "href": "https://inerweb.fr/electrorezo/stations/1-7-plaque-signaletique/"
+    },
+    {
+     "nom": "Les trois défauts",
+     "href": "https://inerweb.fr/electrorezo/stations/1-8-trois-defauts/"
+    },
+    {
+     "nom": "Mesurer : multimètre et pince",
+     "href": "https://inerweb.fr/electrorezo/stations/1-9-mesurer/"
+    },
+    {
+     "nom": "Phase, neutre et protection",
+     "href": "https://inerweb.fr/electrorezo/stations/2-1-phase-neutre-pe/"
+    },
+    {
+     "nom": "Le réseau monophasé",
+     "href": "https://inerweb.fr/electrorezo/stations/2-2-monophase/"
+    },
+    {
+     "nom": "Le réseau triphasé",
+     "href": "https://inerweb.fr/electrorezo/stations/2-3-triphase/"
+    },
+    {
+     "nom": "La tension simple",
+     "href": "https://inerweb.fr/electrorezo/stations/2-4-tension-simple/"
+    },
+    {
+     "nom": "La tension composée",
+     "href": "https://inerweb.fr/electrorezo/stations/2-5-tension-composee/"
+    },
+    {
+     "nom": "Le champ tournant",
+     "href": "https://inerweb.fr/electrorezo/stations/2-6-champ-tournant/"
+    },
+    {
+     "nom": "Le disjoncteur magnéto-thermique",
+     "href": "https://inerweb.fr/electrorezo/stations/4-3-disjoncteur-magneto-thermique/"
+    },
+    {
+     "nom": "L’interrupteur différentiel",
+     "href": "https://inerweb.fr/electrorezo/stations/4-5-interrupteur-differentiel/"
+    },
+    {
+     "nom": "Le disjoncteur différentiel",
+     "href": "https://inerweb.fr/electrorezo/stations/4-6-disjoncteur-differentiel/"
+    },
+    {
+     "nom": "La terre et la liaison équipotentielle",
+     "href": "https://inerweb.fr/electrorezo/stations/4-8-terre/"
+    },
+    {
+     "nom": "Le câble : section et désignation",
+     "href": "https://inerweb.fr/electrorezo/stations/4-9-cable-section/"
+    },
+    {
+     "nom": "Choisir la section d’un câble",
+     "href": "https://inerweb.fr/electrorezo/stations/4-10-choisir-section/"
+    },
+    {
+     "nom": "Sous tension — Parcours câbles électriques",
+     "href": "https://frigorx.github.io/sous-tension/"
+    },
+    {
+     "nom": "TD1 — Les fondamentaux du câble électrique",
+     "href": "https://frigorx.github.io/sous-tension/sous-tension-TD1-fondamentaux.html"
+    },
+    {
+     "nom": "TD2 — Le monde du tableau électrique",
+     "href": "https://frigorx.github.io/sous-tension/sous-tension-TD2-tableau-electrique.html"
+    },
+    {
+     "nom": "TD3 — Cas particuliers et dimensionnement",
+     "href": "https://frigorx.github.io/sous-tension/sous-tension-TD3-cas-particuliers.html"
+    },
+    {
+     "nom": "Évaluation — Les câbles électriques",
+     "href": "https://frigorx.github.io/sous-tension/sous-tension-evaluation.html"
+    },
+    {
+     "nom": "NF C 15-100",
+     "href": "https://inerweb.fr/legislation/stations/elec-nf-c-15-100/"
+    },
+    {
+     "nom": "Protéger un circuit",
+     "href": "https://inerweb.fr/legislation/stations/elec-proteger-un-circuit/"
+    },
+    {
+     "nom": "Régimes de neutre",
+     "href": "https://inerweb.fr/legislation/stations/elec-regimes-de-neutre/"
+    },
+    {
+     "nom": "Terre & différentiel",
+     "href": "https://inerweb.fr/legislation/stations/elec-terre-differentiel/"
+    }
+   ]
+  },
+  {
+   "id": "clim",
+   "nom": "La climatisation de la chambre",
+   "ico": "🌬️",
+   "question": "Pourquoi la chambre a-t-elle si chaud l’été ?",
+   "lieu": "La maison",
+   "couleur": "#3d7fca",
+   "calques": [
+    "froid",
+    "clim",
+    "chauffage"
+   ],
+   "entree": {
+    "titre": "D’où vient la chaleur ?",
+    "href": "https://inerweb.fr/aerorezo/stations/internes-solaires/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Le dégivrage par inversion de cycle",
+     "href": "https://inerweb.fr/packs/fluides/res/degivrage-inversion-cycle/"
+    },
+    {
+     "nom": "Pose et dépose du manifold 2 voies sur vannes de service Rotolock",
+     "href": "https://inerweb.fr/packs/fluides/res/pose-manifold-2-voies-interactive/"
+    },
+    {
+     "nom": "Apport sensible",
+     "href": "https://inerweb.fr/aerorezo/stations/apport-sensible/"
+    },
+    {
+     "nom": "Apport latent",
+     "href": "https://inerweb.fr/aerorezo/stations/apport-latent/"
+    },
+    {
+     "nom": "Parois et écarts de température",
+     "href": "https://inerweb.fr/aerorezo/stations/transmission/"
+    },
+    {
+     "nom": "Occupants, équipements et soleil",
+     "href": "https://inerweb.fr/aerorezo/stations/internes-solaires/"
+    },
+    {
+     "nom": "Air neuf et sélection",
+     "href": "https://inerweb.fr/aerorezo/stations/air-neuf-selection/"
+    },
+    {
+     "nom": "Évaluation",
+     "href": "https://inerweb.fr/aerorezo/stations/evaluation-c/"
+    },
+    {
+     "nom": "PAC & voisinage",
+     "href": "https://inerweb.fr/legislation/stations/acoustique-pac-voisinage/"
+    },
+    {
+     "nom": "RGE & QualiPAC",
+     "href": "https://inerweb.fr/legislation/stations/certif-rge-qualipac/"
+    },
+    {
+     "nom": "Le confort d'été",
+     "href": "https://inerweb.fr/legislation/stations/thermique-confort-ete/"
+    }
+   ]
+  },
+  {
+   "id": "pac",
+   "nom": "La pompe à chaleur et les radiateurs",
+   "ico": "♨️",
+   "question": "Comment l’eau chaude arrive-t-elle aux radiateurs ?",
+   "lieu": "La maison",
+   "couleur": "#3d7fca",
+   "calques": [
+    "froid",
+    "chauffage"
+   ],
+   "entree": {
+    "titre": "Le trajet de l’eau chaude",
+    "href": "https://inerweb.fr/hydrometro/stations/boucle/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Bitube — Réseau à construire",
+     "href": "https://inerweb.fr/hydrometro/stations/bitube/"
+    },
+    {
+     "nom": "Boucle",
+     "href": "https://inerweb.fr/hydrometro/stations/boucle/"
+    },
+    {
+     "nom": "Circulateur",
+     "href": "https://inerweb.fr/hydrometro/stations/circulateur/"
+    },
+    {
+     "nom": "Débit",
+     "href": "https://inerweb.fr/hydrometro/stations/debit/"
+    },
+    {
+     "nom": "Découplage — Trois régimes de débit",
+     "href": "https://inerweb.fr/hydrometro/stations/decouplage/"
+    },
+    {
+     "nom": "Écart ΔT",
+     "href": "https://inerweb.fr/hydrometro/stations/delta-t/"
+    },
+    {
+     "nom": "Diagnostic — Enquête hydraulique",
+     "href": "https://inerweb.fr/hydrometro/stations/diagnostic/"
+    },
+    {
+     "nom": "Échangeur",
+     "href": "https://inerweb.fr/hydrometro/stations/echangeur/"
+    },
+    {
+     "nom": "Énergie",
+     "href": "https://inerweb.fr/hydrometro/stations/energie/"
+    },
+    {
+     "nom": "Équilibrage — Banc à trois branches",
+     "href": "https://inerweb.fr/hydrometro/stations/equilibrage/"
+    },
+    {
+     "nom": "Mesurer",
+     "href": "https://inerweb.fr/hydrometro/stations/mesurer/"
+    },
+    {
+     "nom": "Mission réseau — Une branche reste froide",
+     "href": "https://inerweb.fr/hydrometro/stations/mission/"
+    },
+    {
+     "nom": "Monotube — Suivez l’eau",
+     "href": "https://inerweb.fr/hydrometro/stations/monotube/"
+    },
+    {
+     "nom": "Pertes de charge",
+     "href": "https://inerweb.fr/hydrometro/stations/pertes/"
+    },
+    {
+     "nom": "Plancher chauffant",
+     "href": "https://inerweb.fr/hydrometro/stations/plancher/"
+    },
+    {
+     "nom": "Production",
+     "href": "https://inerweb.fr/hydrometro/stations/production/"
+    },
+    {
+     "nom": "Puissance",
+     "href": "https://inerweb.fr/hydrometro/stations/puissance/"
+    },
+    {
+     "nom": "Relevés — La preuve exploitable",
+     "href": "https://inerweb.fr/hydrometro/stations/releves/"
+    },
+    {
+     "nom": "Sécurité",
+     "href": "https://inerweb.fr/hydrometro/stations/securite/"
+    },
+    {
+     "nom": "Volume tampon — Quatre piquages",
+     "href": "https://inerweb.fr/hydrometro/stations/tampon/"
+    },
+    {
+     "nom": "Vanne trois voies",
+     "href": "https://inerweb.fr/hydrometro/stations/v3v/"
+    },
+    {
+     "nom": "Vase d’expansion",
+     "href": "https://inerweb.fr/hydrometro/stations/vase/"
+    }
+   ]
+  },
+  {
+   "id": "vmc",
+   "nom": "La VMC de la salle de bains",
+   "ico": "💨",
+   "question": "Pourquoi faut-il renouveler l’air de la maison ?",
+   "lieu": "La maison",
+   "couleur": "#1b6e5a",
+   "calques": [
+    "air"
+   ],
+   "entree": {
+    "titre": "Pourquoi ventiler ?",
+    "href": "https://inerweb.fr/aerorezo/stations/besoin-air/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Pourquoi ventiler ?",
+     "href": "https://inerweb.fr/aerorezo/stations/besoin-air/"
+    },
+    {
+     "nom": "VMC simple flux",
+     "href": "https://inerweb.fr/aerorezo/stations/simple-flux/"
+    },
+    {
+     "nom": "VMC hygroréglable",
+     "href": "https://inerweb.fr/aerorezo/stations/hygroreglable/"
+    },
+    {
+     "nom": "VMC double flux",
+     "href": "https://inerweb.fr/aerorezo/stations/double-flux/"
+    },
+    {
+     "nom": "Étudier un réseau VMC",
+     "href": "https://inerweb.fr/aerorezo/stations/dimensionner-vmc/"
+    },
+    {
+     "nom": "Évaluation",
+     "href": "https://inerweb.fr/aerorezo/stations/evaluation-v/"
+    },
+    {
+     "nom": "L’air se déplace",
+     "href": "https://inerweb.fr/aerorezo/stations/air-circule/"
+    },
+    {
+     "nom": "Débit, vitesse, section",
+     "href": "https://inerweb.fr/aerorezo/stations/debit-vitesse/"
+    },
+    {
+     "nom": "Trois pressions",
+     "href": "https://inerweb.fr/aerorezo/stations/pressions/"
+    },
+    {
+     "nom": "L’humidité relative",
+     "href": "https://inerweb.fr/aerorezo/stations/hygrometrie/"
+    },
+    {
+     "nom": "Point de rosée et air humide",
+     "href": "https://inerweb.fr/aerorezo/stations/rosee-psychro/"
+    },
+    {
+     "nom": "Évaluation",
+     "href": "https://inerweb.fr/aerorezo/stations/evaluation-a/"
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "nom": "La centrale de traitement d’air",
+   "ico": "🏭",
+   "question": "Comment le magasin respire-t-il ?",
+   "lieu": "Le commerce",
+   "couleur": "#0e7490",
+   "calques": [
+    "clim",
+    "air"
+   ],
+   "entree": {
+    "titre": "Le chemin de l’air dans la centrale",
+    "href": "https://inerweb.fr/aerorezo/stations/architecture-cta/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Lire une CTA",
+     "href": "https://inerweb.fr/aerorezo/stations/architecture-cta/"
+    },
+    {
+     "nom": "Batteries chaude et froide",
+     "href": "https://inerweb.fr/aerorezo/stations/batteries/"
+    },
+    {
+     "nom": "Humidifier, déshumidifier, réguler",
+     "href": "https://inerweb.fr/aerorezo/stations/humidifier-reguler/"
+    },
+    {
+     "nom": "Mélange et filtration",
+     "href": "https://inerweb.fr/aerorezo/stations/melange-filtration/"
+    },
+    {
+     "nom": "Récupération d’énergie",
+     "href": "https://inerweb.fr/aerorezo/stations/recuperation/"
+    },
+    {
+     "nom": "Évaluation",
+     "href": "https://inerweb.fr/aerorezo/stations/evaluation-t/"
+    },
+    {
+     "nom": "Choisir les conduits",
+     "href": "https://inerweb.fr/aerorezo/stations/conduits/"
+    },
+    {
+     "nom": "Pertes de charge linéaires",
+     "href": "https://inerweb.fr/aerorezo/stations/pertes-lineaires/"
+    },
+    {
+     "nom": "Accidents de parcours",
+     "href": "https://inerweb.fr/aerorezo/stations/pertes-singulieres/"
+    },
+    {
+     "nom": "Sections circulaires et rectangulaires",
+     "href": "https://inerweb.fr/aerorezo/stations/sections/"
+    },
+    {
+     "nom": "Ventilateur et équilibrage",
+     "href": "https://inerweb.fr/aerorezo/stations/ventilateur-equilibrage/"
+    },
+    {
+     "nom": "Évaluation",
+     "href": "https://inerweb.fr/aerorezo/stations/evaluation-d/"
+    },
+    {
+     "nom": "Diagnostiquer sans deviner",
+     "href": "https://inerweb.fr/aerorezo/stations/diagnostic/"
+    },
+    {
+     "nom": "Choisir l’instrument",
+     "href": "https://inerweb.fr/aerorezo/stations/instruments/"
+    },
+    {
+     "nom": "Mesurer un débit",
+     "href": "https://inerweb.fr/aerorezo/stations/mesure-debit/"
+    },
+    {
+     "nom": "Mesurer température et humidité",
+     "href": "https://inerweb.fr/aerorezo/stations/mesure-humidite/"
+    },
+    {
+     "nom": "Mesurer les pressions",
+     "href": "https://inerweb.fr/aerorezo/stations/pressions-reseau/"
+    },
+    {
+     "nom": "Évaluation",
+     "href": "https://inerweb.fr/aerorezo/stations/evaluation-m/"
+    },
+    {
+     "nom": "Clapets coupe-feu",
+     "href": "https://inerweb.fr/legislation/stations/incendie-clapets-coupe-feu/"
+    },
+    {
+     "nom": "Le désenfumage",
+     "href": "https://inerweb.fr/legislation/stations/incendie-desenfumage/"
+    }
+   ]
+  },
+  {
+   "id": "camionnette",
+   "nom": "La camionnette du technicien",
+   "ico": "🚐",
+   "question": "Que fait le technicien en arrivant ?",
+   "lieu": "La rue",
+   "couleur": "#b45309",
+   "calques": [
+    "gestes"
+   ],
+   "entree": {
+    "titre": "Les étapes d’une intervention",
+    "href": "https://inerweb.fr/packs/fluides/res/fil-conducteur-intervention/"
+   },
+   "porte": {
+    "titre": "Mesurer en Bluetooth avec AquiBlue",
+    "href": "https://inerweb.fr/aquiblue/"
+   },
+   "stations": [
+    {
+     "nom": "La chaîne de l’intervention",
+     "href": "https://inerweb.fr/packs/fluides/res/chaine-intervention-interactive/"
+    },
+    {
+     "nom": "Le fil conducteur d'une intervention",
+     "href": "https://inerweb.fr/packs/fluides/res/fil-conducteur-intervention/"
+    },
+    {
+     "nom": "Parcours manomètres",
+     "href": "https://inerweb.fr/packs/fluides/res/parcours-manometres/"
+    },
+    {
+     "nom": "Poser et déposer le manifold 4 voies",
+     "href": "https://inerweb.fr/packs/fluides/res/pose-manifold-interactive/"
+    },
+    {
+     "nom": "Récupérer le fluide",
+     "href": "https://inerweb.fr/packs/fluides/res/recuperation-fluide-interactive/"
+    },
+    {
+     "nom": "Mission Bouteilles",
+     "href": "https://inerweb.fr/packs/fluides/res/mission-bouteilles/"
+    },
+    {
+     "nom": "L’étanchéité — de l’indice à la preuve",
+     "href": "https://inerweb.fr/packs/fluides/res/etancheite-interactive/"
+    },
+    {
+     "nom": "Les organes qui trahissent une fuite",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g1d"
+    },
+    {
+     "nom": "Contrôles avant mise en service",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g3"
+    },
+    {
+     "nom": "Récupérer sans émettre",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g5a"
+    },
+    {
+     "nom": "Peser, charger, stocker, tracer",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g5b"
+    },
+    {
+     "nom": "Préparation de chantier",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=p7"
+    },
+    {
+     "nom": "L'air qui manque",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=s1"
+    },
+    {
+     "nom": "Le froid brûle — projections et gelures",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=s2"
+    },
+    {
+     "nom": "Exercice — deux installations, deux impacts",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=x1"
+    },
+    {
+     "nom": "Exercice — la machine ne fait plus de froid",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=x2"
+    },
+    {
+     "nom": "Détective — la bouteille de récupération",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=x3"
+    },
+    {
+     "nom": "Détective — le contrôle qui tourne mal",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=x4"
+    },
+    {
+     "nom": "Détective — intervention sur monobloc R-290",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=x5"
+    },
+    {
+     "nom": "Acquisition de données Bluetooth",
+     "href": "https://inerweb.fr/aquiblue/"
+    },
+    {
+     "nom": "Mission F-GAZ V6",
+     "href": "https://frigorx.github.io/inerweb-fgaz/"
+    },
+    {
+     "nom": "Traçabilité",
+     "href": "https://inerweb.fr/legislation/stations/tracabilite-fluides/"
+    },
+    {
+     "nom": "F-Gaz 3, le règlement (UE) 2024/573",
+     "href": "https://inerweb.fr/legislation/stations/fgaz-3/"
+    }
+   ]
+  },
+  {
+   "id": "etabli",
+   "nom": "L’établi : le cuivre et la flamme",
+   "ico": "🔥",
+   "question": "Comment le technicien travaille-t-il le cuivre ?",
+   "lieu": "La rue",
+   "couleur": "#b45309",
+   "calques": [
+    "gestes"
+   ],
+   "entree": {
+    "titre": "Mon poste de travail",
+    "href": "https://inerweb.fr/cuivrezo/stations/1-0/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Mon poste de travail",
+     "href": "https://inerweb.fr/cuivrezo/stations/1-0/"
+    },
+    {
+     "nom": "Reconnaître le tube",
+     "href": "https://inerweb.fr/cuivrezo/stations/1-1/"
+    },
+    {
+     "nom": "Mesurer et tracer",
+     "href": "https://inerweb.fr/cuivrezo/stations/1-2/"
+    },
+    {
+     "nom": "Couper et ébavurer",
+     "href": "https://inerweb.fr/cuivrezo/stations/1-3/"
+    },
+    {
+     "nom": "Cintrer à la cintrette",
+     "href": "https://inerweb.fr/cuivrezo/stations/1-4/"
+    },
+    {
+     "nom": "Cintrer à la cintreuse (L, R, 0)",
+     "href": "https://inerweb.fr/cuivrezo/stations/1-5/"
+    },
+    {
+     "nom": "Le dudgeon",
+     "href": "https://inerweb.fr/cuivrezo/stations/1-6/"
+    },
+    {
+     "nom": "L’emboîture à la pince",
+     "href": "https://inerweb.fr/cuivrezo/stations/1-7/"
+    },
+    {
+     "nom": "Le poste oxyacétylénique en sécurité",
+     "href": "https://inerweb.fr/cuivrezo/stations/2-1/"
+    },
+    {
+     "nom": "Allumer, régler, éteindre la flamme",
+     "href": "https://inerweb.fr/cuivrezo/stations/2-2/"
+    },
+    {
+     "nom": "La brasure tendre à l’étain",
+     "href": "https://inerweb.fr/cuivrezo/stations/3-1/"
+    },
+    {
+     "nom": "La brasure forte sous azote",
+     "href": "https://inerweb.fr/cuivrezo/stations/3-2/"
+    },
+    {
+     "nom": "Le chapeau de gendarme",
+     "href": "https://inerweb.fr/cuivrezo/stations/4-1/"
+    },
+    {
+     "nom": "La baïonnette",
+     "href": "https://inerweb.fr/cuivrezo/stations/4-2/"
+    },
+    {
+     "nom": "Tuyauterie et brasage sous azote",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g10"
+    },
+    {
+     "nom": "La bouteille d'azote et son mano-détendeur",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=p4"
+    }
+   ]
+  },
+  {
+   "id": "echafaudage",
+   "nom": "L’échafaudage contre la façade",
+   "ico": "🪜",
+   "question": "Comment monter sur le toit sans tomber ?",
+   "lieu": "La rue",
+   "couleur": "#b45309",
+   "calques": [
+    "gestes"
+   ],
+   "entree": {
+    "titre": "Le risque de chute",
+    "href": "https://inerweb.fr/r408/?module=M1"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Le risque de chute",
+     "href": "https://inerweb.fr/r408/?module=M1"
+    },
+    {
+     "nom": "Qui fait quoi : acteurs et responsabilités",
+     "href": "https://inerweb.fr/r408/?module=M2"
+    },
+    {
+     "nom": "Les protections, dans l’ordre",
+     "href": "https://inerweb.fr/r408/?module=M3"
+    },
+    {
+     "nom": "Signaler, rendre compte, réagir",
+     "href": "https://inerweb.fr/r408/?module=M4"
+    },
+    {
+     "nom": "Les échafaudages : familles et domaines d’emploi",
+     "href": "https://inerweb.fr/r408/?module=M5"
+    },
+    {
+     "nom": "La notice du fabricant et l’étiquette",
+     "href": "https://inerweb.fr/r408/?module=M6"
+    },
+    {
+     "nom": "Utiliser un échafaudage en sécurité",
+     "href": "https://inerweb.fr/r408/?module=M7"
+    },
+    {
+     "nom": "Les vérifications : qui, quand, sur quel fondement",
+     "href": "https://inerweb.fr/r408/?module=M8"
+    },
+    {
+     "nom": "La vérification journalière",
+     "href": "https://inerweb.fr/r408/?module=M9"
+    },
+    {
+     "nom": "Préparer le montage",
+     "href": "https://inerweb.fr/r408/?module=M10"
+    },
+    {
+     "nom": "Monter et démonter une structure simple",
+     "href": "https://inerweb.fr/r408/?module=M11"
+    },
+    {
+     "nom": "QCM — Le travail en hauteur",
+     "href": "https://frigorx.github.io/qcm-travail-hauteur/"
+    },
+    {
+     "nom": "En hauteur",
+     "href": "https://inerweb.fr/legislation/stations/risques-hauteur/"
+    },
+    {
+     "nom": "Les EPI",
+     "href": "https://inerweb.fr/legislation/stations/risques-epi/"
+    }
+   ]
+  },
+  {
+   "id": "bureau",
+   "nom": "L’immeuble des règles",
+   "ico": "📜",
+   "question": "Quelles règles s’imposent au technicien ?",
+   "lieu": "L’immeuble des règles",
+   "couleur": "#1e40af",
+   "calques": [
+    "regles"
+   ],
+   "entree": {
+    "titre": "Entrer dans l’immeuble des règles",
+    "href": "https://inerweb.fr/legislation/"
+   },
+   "porte": null,
+   "stations": [
+    {
+     "nom": "Le bruit en dB",
+     "href": "https://inerweb.fr/legislation/stations/acoustique-le-bruit-en-db/"
+    },
+    {
+     "nom": "Les seuils",
+     "href": "https://inerweb.fr/legislation/stations/acoustique-les-seuils/"
+    },
+    {
+     "nom": "Mesurer",
+     "href": "https://inerweb.fr/legislation/stations/acoustique-mesurer/"
+    },
+    {
+     "nom": "PAC & voisinage",
+     "href": "https://inerweb.fr/legislation/stations/acoustique-pac-voisinage/"
+    },
+    {
+     "nom": "Traiter le bruit",
+     "href": "https://inerweb.fr/legislation/stations/acoustique-traiter-le-bruit/"
+    },
+    {
+     "nom": "Aptitude & capacité",
+     "href": "https://inerweb.fr/legislation/stations/aptitude-capacite/"
+    },
+    {
+     "nom": "Les garanties",
+     "href": "https://inerweb.fr/legislation/stations/certif-garanties/"
+    },
+    {
+     "nom": "Loi, norme ou DTU ?",
+     "href": "https://inerweb.fr/legislation/stations/certif-loi-norme-dtu/"
+    },
+    {
+     "nom": "Le marquage CE",
+     "href": "https://inerweb.fr/legislation/stations/certif-marquage-ce/"
+    },
+    {
+     "nom": "RGE & QualiPAC",
+     "href": "https://inerweb.fr/legislation/stations/certif-rge-qualipac/"
+    },
+    {
+     "nom": "Déchets dangereux",
+     "href": "https://inerweb.fr/legislation/stations/dechets-dangereux/"
+    },
+    {
+     "nom": "La REP bâtiment",
+     "href": "https://inerweb.fr/legislation/stations/dechets-rep-batiment/"
+    },
+    {
+     "nom": "Responsabilités",
+     "href": "https://inerweb.fr/legislation/stations/dechets-responsabilites/"
+    },
+    {
+     "nom": "Trier : les 7 flux",
+     "href": "https://inerweb.fr/legislation/stations/dechets-sept-flux/"
+    },
+    {
+     "nom": "Valoriser",
+     "href": "https://inerweb.fr/legislation/stations/dechets-valoriser/"
+    },
+    {
+     "nom": "Catégories I à IV",
+     "href": "https://inerweb.fr/legislation/stations/desp-categories/"
+    },
+    {
+     "nom": "En service",
+     "href": "https://inerweb.fr/legislation/stations/desp-en-service/"
+    },
+    {
+     "nom": "La directive",
+     "href": "https://inerweb.fr/legislation/stations/desp-la-directive/"
+    },
+    {
+     "nom": "Marquage & papiers",
+     "href": "https://inerweb.fr/legislation/stations/desp-marquage-papiers/"
+    },
+    {
+     "nom": "Soupapes & sécurités",
+     "href": "https://inerweb.fr/legislation/stations/desp-soupapes-securites/"
+    },
+    {
+     "nom": "Consigner — VAT, les 4 étapes",
+     "href": "https://inerweb.fr/legislation/stations/elec-consigner/"
+    },
+    {
+     "nom": "L'habilitation",
+     "href": "https://inerweb.fr/legislation/stations/elec-habilitation/"
+    },
+    {
+     "nom": "NF C 15-100",
+     "href": "https://inerweb.fr/legislation/stations/elec-nf-c-15-100/"
+    },
+    {
+     "nom": "Protéger un circuit",
+     "href": "https://inerweb.fr/legislation/stations/elec-proteger-un-circuit/"
+    },
+    {
+     "nom": "Régimes de neutre",
+     "href": "https://inerweb.fr/legislation/stations/elec-regimes-de-neutre/"
+    },
+    {
+     "nom": "Terre & différentiel",
+     "href": "https://inerweb.fr/legislation/stations/elec-terre-differentiel/"
+    },
+    {
+     "nom": "NF EN 378",
+     "href": "https://inerweb.fr/legislation/stations/en-378/"
+    },
+    {
+     "nom": "F-Gaz 3, le règlement (UE) 2024/573",
+     "href": "https://inerweb.fr/legislation/stations/fgaz-3/"
+    },
+    {
+     "nom": "ACV & carbone",
+     "href": "https://inerweb.fr/legislation/stations/impact-acv-carbone/"
+    },
+    {
+     "nom": "Écoconception",
+     "href": "https://inerweb.fr/legislation/stations/impact-ecoconception/"
+    },
+    {
+     "nom": "Montréal → Kigali",
+     "href": "https://inerweb.fr/legislation/stations/impact-montreal-kigali/"
+    },
+    {
+     "nom": "PRP & ODP",
+     "href": "https://inerweb.fr/legislation/stations/impact-prp-odp/"
+    },
+    {
+     "nom": "Le TEWI",
+     "href": "https://inerweb.fr/legislation/stations/impact-tewi/"
+    },
+    {
+     "nom": "Clapets coupe-feu",
+     "href": "https://inerweb.fr/legislation/stations/incendie-clapets-coupe-feu/"
+    },
+    {
+     "nom": "Classer le bâti",
+     "href": "https://inerweb.fr/legislation/stations/incendie-classer-le-bati/"
+    },
+    {
+     "nom": "Le désenfumage",
+     "href": "https://inerweb.fr/legislation/stations/incendie-desenfumage/"
+    },
+    {
+     "nom": "Euroclasses",
+     "href": "https://inerweb.fr/legislation/stations/incendie-euroclasses/"
+    },
+    {
+     "nom": "Sprinkler & RIA",
+     "href": "https://inerweb.fr/legislation/stations/incendie-sprinkler-ria/"
+    },
+    {
+     "nom": "Le SSI",
+     "href": "https://inerweb.fr/legislation/stations/incendie-ssi/"
+    },
+    {
+     "nom": "Zones ATEX",
+     "href": "https://inerweb.fr/legislation/stations/risques-atex/"
+    },
+    {
+     "nom": "Risque chimique",
+     "href": "https://inerweb.fr/legislation/stations/risques-chimique/"
+    },
+    {
+     "nom": "Le DUERP",
+     "href": "https://inerweb.fr/legislation/stations/risques-duerp/"
+    },
+    {
+     "nom": "Les EPI",
+     "href": "https://inerweb.fr/legislation/stations/risques-epi/"
+    },
+    {
+     "nom": "En hauteur",
+     "href": "https://inerweb.fr/legislation/stations/risques-hauteur/"
+    },
+    {
+     "nom": "Les 9 principes",
+     "href": "https://inerweb.fr/legislation/stations/risques-neuf-principes/"
+    },
+    {
+     "nom": "Les CEE",
+     "href": "https://inerweb.fr/legislation/stations/thermique-cee/"
+    },
+    {
+     "nom": "Le confort d'été",
+     "href": "https://inerweb.fr/legislation/stations/thermique-confort-ete/"
+    },
+    {
+     "nom": "Le DPE",
+     "href": "https://inerweb.fr/legislation/stations/thermique-dpe/"
+    },
+    {
+     "nom": "RT de l'existant",
+     "href": "https://inerweb.fr/legislation/stations/thermique-existant/"
+    },
+    {
+     "nom": "Pourquoi une RT ?",
+     "href": "https://inerweb.fr/legislation/stations/thermique-pourquoi-une-rt/"
+    },
+    {
+     "nom": "La RE2020",
+     "href": "https://inerweb.fr/legislation/stations/thermique-re2020/"
+    },
+    {
+     "nom": "Traçabilité",
+     "href": "https://inerweb.fr/legislation/stations/tracabilite-fluides/"
+    },
+    {
+     "nom": "Droits & devoirs",
+     "href": "https://inerweb.fr/legislation/stations/travail-droits-devoirs/"
+    },
+    {
+     "nom": "Le contrat",
+     "href": "https://inerweb.fr/legislation/stations/travail-le-contrat/"
+    },
+    {
+     "nom": "S'installer",
+     "href": "https://inerweb.fr/legislation/stations/travail-s-installer/"
+    },
+    {
+     "nom": "Se former",
+     "href": "https://inerweb.fr/legislation/stations/travail-se-former/"
+    },
+    {
+     "nom": "Temps & paie",
+     "href": "https://inerweb.fr/legislation/stations/travail-temps-et-paie/"
+    },
+    {
+     "nom": "Effet de serre, PRP et climat",
+     "href": "https://inerweb.fr/packs/fluides/res/film-effet-de-serre/"
+    },
+    {
+     "nom": "Couche d'ozone et ODP",
+     "href": "https://inerweb.fr/packs/fluides/res/film-ozone/"
+    },
+    {
+     "nom": "Ce que la loi vous impose",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g0"
+    },
+    {
+     "nom": "Impact environnemental et F-Gas",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g2"
+    },
+    {
+     "nom": "Quarante ans d'histoire : de l'ozone au climat",
+     "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g2a"
+    }
+   ]
+  }
+ ]
+}
