@@ -331,6 +331,12 @@
       root.innerHTML=dessin+controls([{id:"rate",label:"Perte linéaire",value:a.rate,min:.1,max:3,step:.1,unit:"Pa/m"},{id:"length",label:"Longueur",value:a.length,min:1,max:80,unit:"m"},{id:"local",label:"Pertes singulières",value:a.local,min:0,max:150,unit:"Pa"}],"");
       wire(["rate","length","local"],()=>{$("calcResult").textContent=`Perte de la branche : ${(+$('rate').value*+$('length').value + +$('local').value).toFixed(1)} Pa.`;});return;
     }
+    /* Une paroi (station Parois) : P = U × A × ΔT. Le dessin « heat » est une batterie, hors sujet
+       ici — il n'est pas posé ; la paroi elle-même se voit en 3D au temps Comprendre. */
+    if(a.kind==="heat"&&a.mode==="wall"){
+      root.innerHTML=controls([{id:"uval",label:"Coefficient U",value:a.u,min:.1,max:6,step:.1,unit:"W/(m²·K)"},{id:"area",label:"Surface A",value:a.area,min:1,max:40,unit:"m²"},{id:"delta",label:"Écart ΔT",value:a.delta,min:1,max:25,unit:"K"}],"");
+      wire(["uval","area","delta"],()=>{const p=+$("uval").value*+$("area").value*+$("delta").value;$("calcResult").textContent=`Puissance qui traverse cette paroi : ${p.toFixed(0)} W (P = U × A × ΔT).`;});return;
+    }
     if(a.kind==="heat"){
       root.innerHTML=dessin+controls([{id:"airflow",label:"Débit d’air",value:a.flow,min:100,max:5000,step:50,unit:"m³/h"},{id:"delta",label:"Écart de température",value:a.delta,min:1,max:25,step:.5,unit:"K"}],"");
       wire(["airflow","delta"],()=>{const p=1.2*1005*(+$('airflow').value/3600)*+$('delta').value;$("calcResult").textContent=`Puissance sensible indicative : ${(p/1000).toFixed(2)} kW (ρ = 1,2 kg/m³, cₚ = 1005 J/kg·K).`;});return;
