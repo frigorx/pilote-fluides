@@ -59,12 +59,27 @@
       im.userData.sansOmbre = true; im.castShadow = false; im.frustumCulled = false;
       const rg = [], co = new T.Color(), m4 = new T.Matrix4(), q = new T.Quaternion(), sc = new T.Vector3(), p = new T.Vector3();
       for (let i = 0; i < nombre; i++) { rg.push(rang(i)); im.setColorAt(i, co); }
-      const E = { courbe: null, L: 1, s: 0, part: 1, v: vitesse };
+      const E = { courbe: null, L: 1, s: 0, part: 1, v: vitesse, tab: null };
+      /* zones : [{ u0, u1, k }] — sur ce bout du trajet (fractions de longueur) l'eau va k fois plus vite
+         (un passage rétréci) ; sans zones, vitesse uniforme comme avant. trajet(pts, fr => zones) : la
+         fonction reçoit fraction(point) pour placer la zone sur la courbe construite */
+      const versU = phi => {
+        if (!E.tab) return phi;
+        const N = E.tab.length - 1; let a = 0, b = N;
+        while (b - a > 1) { const m = (a + b) >> 1; if (E.tab[m] <= phi) a = m; else b = m; }
+        return (a + (phi - E.tab[a]) / Math.max(1e-9, E.tab[a + 1] - E.tab[a])) / N;
+      };
+      /* la fraction de longueur du trajet la plus proche d'un point (pour placer une zone) */
+      const fraction = pt => {
+        let m = 0, d = 1e9; const q2 = new T.Vector3();
+        for (let j = 0; j <= 200; j++) { E.courbe.getPointAt(j / 200, q2); const dd = q2.distanceToSquared(pt); if (dd < d) { d = dd; m = j / 200; } }
+        return m;
+      };
       const poser = () => {
         if (!E.courbe) return;
         for (let i = 0; i < nombre; i++) {
           let u = (i / nombre + E.s / E.L) % 1; if (u < 0) u += 1;
-          E.courbe.getPointAt(u, p);
+          E.courbe.getPointAt(versU(u), p);
           sc.setScalar(clamp((E.part - rg[i]) / 0.08, 0, 1)); m4.compose(p, q, sc); im.setMatrixAt(i, m4);
           coul(p, co); im.setColorAt(i, co);
         }
@@ -72,7 +87,20 @@
       };
       return {
         objet: im,
-        trajet(pts) { E.courbe = new T.CatmullRomCurve3(pts, false, 'centripetal'); E.L = E.courbe.getLength(); poser(); },
+        trajet(pts, zones) {
+          E.courbe = new T.CatmullRomCurve3(pts, false, 'centripetal'); E.L = E.courbe.getLength();
+          E.tab = null;
+          if (typeof zones === 'function') zones = zones(fraction);
+          if (zones && zones.length) {
+            const N = 96, tab = [0];
+            for (let j = 0; j < N; j++) {
+              const um = (j + 0.5) / N; let k = 1; zones.forEach(z => { if (um >= z.u0 && um <= z.u1) k = z.k; });
+              tab.push(tab[j] + 1 / k);
+            }
+            E.tab = tab.map(x => x / tab[N]);
+          }
+          poser();
+        },
         regler(part) { E.part = part; poser(); },
         vitesse(v) { E.v = v; },
         animer(dt) { E.s += dt * E.v; poser(); }
@@ -687,4 +715,490 @@
       }
     };
   }, { famille: 'vannes', titre: 'La vanne d’équilibrage', stations: ['equilibrage'] });
+
+  /* ================================================================ vanneReglage
+     La vanne d'équilibrage À RÉGLER (station « Régler une vanne d'équilibrage »). Source : la notice de la
+     vanne d'équilibrage à prises de pression de l'atelier (banc RA20), DN 15. Aucune marque.
+     Repère : comme vanneEquilibrage — l'eau va de -X (entrée) vers +X (sortie), Y vers le haut, +Z vers l'avant.
+
+     LA MÉCANIQUE (ce qui se voit en coupe) : le volant fait tourner une broche creuse filetée ; un écrou, porté
+     par le clapet, monte ou descend dessus (2 mm par tour, 4 tours = 8 mm). Le clapet porte aussi un petit
+     poussoir qui monte DANS la broche creuse. Au centre du volant, on atteint avec une clé six pans de 3 mm la
+     TIGE INTÉRIEURE : on la visse vers le bas jusqu'à ce qu'elle touche le poussoir. Le clapet ne peut plus
+     monter plus haut : on peut fermer, puis rouvrir, le volant s'arrête au préréglage.
+
+     LE VOLANT : le chiffre des dixièmes passe devant le repère orange (graduation 0 à 9 sur la tranche) ; le
+     nombre de tours entiers s'affiche dans la petite fenêtre sous le volant. 0,0 = fermée, 4,0 = grande
+     ouverture. Ouvrir = tourner à gauche (sens inverse des aiguilles d'une montre, vu du dessus).
+
+     LES VALEURS : Kv de la notice (tours → Kv), interpolation linéaire. Branche : pression disponible constante
+     20 kPa = perte de la vanne + perte du reste de la branche (radiateur, Kv équivalent 1,0) ;
+     q (m³/h) = √0,20 / √(1/Kv² + 1/1,0²) ; Δp de la vanne (kPa) = 100·(q/Kv)².
+     « Voir en coupe » tranche tout (volant, broche, tige, clapet) par le plan z = 0 ; seuls l'eau, la clé et
+     l'appareil de mesure restent entiers. */
+  Electro3D.definir('vanneReglage', (T, K, ctx) => {
+    const M = K.mat;
+    const A = aides(T, K);
+    const C = A.C;
+    const racine = new T.Group();
+    const D = Math.PI / 180;
+
+    const laiton = C(M.laiton, 0xd9bb68), cuivre = C(M.cuivre), inox = C(M.acier, 0xd5dade);
+    const caout = C(M.caoutchouc), marine = C(M.plastiqueMarine), noir = C(M.plastiqueNoir), sombre = C(M.plastiqueSombre);
+    const zingue = C(M.zingue), orange = C(M.plastiqueOrange);
+    const tigeMat = C(M.acier, 0xe2792d), cleMat = C(M.acier, 0x5b6673);
+
+    /* ---------------------------------------------------------------- cotes (mm) */
+    const RC = 27, RO = 32, RB = 10, RH = 18;       /* chambre, extérieur du corps, alésage, écrou six pans */
+    const Y_SIEGE = 28, PAS = 2, TOURS_MAX = 4;      /* dessus du siège ; mm de levée par tour ; grande ouverture */
+    const TUBE = 110;
+    const R_T = 6.4, R_TI = 3.6, Y_T0 = 40, Y_T1 = 96;  /* la broche creuse : rayon, alésage, de y à y */
+    const R_R = 3.0, L_R = 32, ROD_LIBRE = 70;          /* la tige intérieure : rayon, longueur, bas de la tige quand elle est dévissée */
+    const PIN_H = 30, PITCH = 1.5;                       /* haut du poussoir au-dessus du clapet ; pas de la tige (mm par tour) */
+    const surX = (g, x) => { g.rotateZ(Math.PI / 2); g.translate(x, 0, 0); return g; };
+    const anneauX = (rExt, rInt, x0, x1, mat, seg) => new T.Mesh(surX(K.anneau(rExt, rInt, x1 - x0, seg || 40), (x0 + x1) / 2), mat);
+    const calme = o => { o.userData.sansOmbre = true; o.castShadow = false; return o; };
+    const grav = (t, h, o) => { const m = K.gravure(t, h, o); m.userData.voile = true; return m; };
+
+    /* ================================================================ LA NOTICE : tours → Kv, débit, écart de pression */
+    const KV = [[0, 0], [0.5, 0.127], [1, 0.212], [1.5, 0.314], [2, 0.571], [2.5, 0.877], [3, 1.38], [3.5, 1.98], [4, 2.52]];
+    const kvDe = p => {
+      p = clamp(p, 0, TOURS_MAX);
+      for (let i = 1; i < KV.length; i++) if (p <= KV[i][0]) return KV[i - 1][1] + (KV[i][1] - KV[i - 1][1]) * (p - KV[i - 1][0]) / (KV[i][0] - KV[i - 1][0]);
+      return KV[KV.length - 1][1];
+    };
+    const P_DISPO = 0.20, KV_RAD = 1.0;                   /* bar ; Kv équivalent du reste de la branche */
+    const debitDe = p => { const kv = kvDe(p); return kv <= 0 ? 0 : Math.sqrt(P_DISPO) / Math.sqrt(1 / (kv * kv) + 1 / (KV_RAD * KV_RAD)); };   /* m³/h */
+    const ecartDe = p => { const kv = kvDe(p); return kv <= 0 ? P_DISPO * 100 : 100 * Math.pow(debitDe(p) / kv, 2); };                               /* kPa */
+    const Q_MAX = debitDe(TOURS_MAX);
+    const hDe = p => p * PAS;                              /* levée du clapet, mm */
+    const yTige = p => Y_SIEGE + hDe(p) + PIN_H;           /* où le bas de la tige touche le poussoir quand le clapet est à p tours */
+
+    /* ================================================================ LE CORPS */
+    const corps = new T.Group();
+    corps.add(K.mesh(K.anneau(RO, RC, 74, 56), laiton, 0, 15, 0));
+    corps.add(K.mesh(K.cylindre(RO, 5, 56), laiton, 0, -24.5, 0));
+    corps.add(K.mesh(new T.BoxGeometry(5, 50, 2 * Math.sqrt(RC * RC - 11.5 * 11.5)), laiton, 11.5, 3, 0));
+    /* la flèche de sens de l'eau, moulée en relief sur la face avant (épousant le cylindre) */
+    {
+      const sh = [[-15, -2.6], [2, -2.6], [2, -8], [15, 0], [2, 8], [2, 2.6], [-15, 2.6]];
+      const dense = [];
+      sh.forEach((a, i) => { const b = sh[(i + 1) % sh.length], n = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / 2.5)); for (let j = 0; j < n; j++) dense.push(new T.Vector2(a[0] + (b[0] - a[0]) * j / n, a[1] + (b[1] - a[1]) * j / n)); });
+      const g = new T.ExtrudeGeometry(new T.Shape(dense), { depth: 2.2, bevelEnabled: false });
+      const pos = g.attributes.position;
+      for (let i = 0; i < pos.count; i++) { const x = pos.getX(i), z = pos.getZ(i), r = RO - 1.2 + z; pos.setX(i, r * Math.sin(x / RO)); pos.setZ(i, r * Math.cos(x / RO)); pos.setY(i, pos.getY(i) + 14); }
+      g.computeVertexNormals();
+      corps.add(new T.Mesh(g, laiton));
+    }
+    racine.add(corps);
+
+    const siege = new T.Group();
+    {
+      const pts = [], t0 = Math.acos(14 / RC) / D;
+      for (let i = 0; i <= 40; i++) { const th = (t0 + (360 - 2 * t0) * i / 40) * D; pts.push(new T.Vector2(RC * Math.cos(th), -RC * Math.sin(th))); }
+      const sh = new T.Shape(pts);
+      const h = new T.Path(); h.absarc(0, 0, 7.5, 0, Math.PI * 2, true); sh.holes.push(h);
+      const g = new T.ExtrudeGeometry(sh, { depth: 5, bevelEnabled: false, curveSegments: 24 });
+      g.rotateX(-Math.PI / 2); g.translate(0, 23, 0);
+      siege.add(new T.Mesh(g, laiton));
+    }
+    racine.add(siege);
+
+    const raccords = new T.Group();
+    [-1, 1].forEach(sens => {
+      const g = new T.Group(); if (sens < 0) g.rotation.y = Math.PI;
+      g.add(anneauX(14, RB, 27, 48, laiton));
+      g.add(A.hexa(RH, RB, 48, 12, laiton));
+      g.add(anneauX(11, RB, 60, TUBE, cuivre));
+      raccords.add(g);
+    });
+    racine.add(raccords);
+
+    /* les deux prises de pression, à 45°, dans le plan de la coupe : chacune porte son capuchon ;
+       quand l'appareil est branché, le capuchon est dévissé et un raccord rapide prend sa place */
+    const prises = {}, capuchons = {}, raccordsMesure = {};
+    [-1, 1].forEach(sens => {
+      const nom = sens < 0 ? 'amont' : 'aval';
+      const g = new T.Group();
+      const axe = new T.Group(); axe.position.set(sens * 32, 24, 0); axe.rotation.z = -sens * 45 * D;
+      axe.add(K.mesh(K.anneau(5.5, 2.5, 18, 28), laiton, 0, 5, 0));
+      axe.add(K.mesh(K.anneau(8, 2.5, 4, 6), laiton, 0, 4, 0));
+      const cap = new T.Group(); cap.add(K.mesh(K.cylindre(6.8, 7, 28), marine, 0, 17.5, 0)); axe.add(cap);
+      const con = new T.Group(); con.visible = false;
+      con.add(K.mesh(K.cylindre(6.4, 9, 6), noir, 0, 17, 0)); con.add(K.mesh(K.cylindre(3.2, 5, 16), noir, 0, 23.5, 0)); axe.add(con);
+      g.add(axe); racine.add(g);
+      prises[nom] = g; capuchons[nom] = cap; raccordsMesure[nom] = con;
+    });
+
+    /* ================================================================ LE CHAPEAU (fixe) : repère, fenêtre des tours entiers */
+    const chapeau = new T.Group();
+    chapeau.add(K.mesh(K.anneau(RO, 9, 6, 56), laiton, 0, 55, 0));
+    chapeau.add(K.mesh(K.anneau(15, 9, 12, 40), laiton, 0, 64, 0));
+    chapeau.add(K.mesh(K.anneau(17, 6.8, 5, 6), laiton, 0, 72.5, 0));         /* l'écrou de presse-étoupe */
+    for (let i = 0; i < 4; i++) {
+      const a = (45 + i * 90) * D, v = K.vis(3.3, { croix: false, matiere: zingue });
+      v.position.set(Math.cos(a) * 29.5, 58, Math.sin(a) * 29.5); chapeau.add(v);
+    }
+    chapeau.add(K.mesh(K.boite(6, 4, 21, 0.8), laiton, 0, 66, 24));            /* le bras qui porte la fenêtre et le repère */
+    chapeau.add(K.mesh(K.boite(26, 15, 3, 0.8), noir, 0, 66, 34.5));            /* la plaque de la fenêtre */
+    const fenetre = K.ecran(22, 11, { fond: '#f2efe6', encre: '#10233c', texte: ['4'] });
+    fenetre.mesh.position.set(0, 66, 36.1); fenetre.mesh.userData.voile = true; chapeau.add(fenetre.mesh);
+    chapeau.add(K.mesh(K.boite(2.6, 9, 2.2, 0.5), orange, 0, 76.5, 31.2));      /* le repère : contre la tranche du volant, sous le chiffre */
+    racine.add(chapeau);
+
+    /* ================================================================ LE CLAPET (monte et descend) : rondelle, corps, écrou, poussoir */
+    const clapet = new T.Group();
+    clapet.add(K.mesh(K.cylindre(11.5, 2, 40), caout, 0, 1, 0));
+    clapet.add(K.mesh(K.cylindre(11.5, 7, 40), inox, 0, 5.5, 0));
+    clapet.add(K.mesh(K.anneau(8.6, 6.6, 14, 32), inox, 0, 16, 0));            /* l'écrou, sur la broche */
+    clapet.add(K.mesh(K.cylindre(R_R, PIN_H - 9, 20), inox, 0, 9 + (PIN_H - 9) / 2, 0));   /* le poussoir, dans la broche creuse */
+    racine.add(clapet);
+
+    /* ================================================================ LE VOLANT ET SA BROCHE CREUSE (tournent) */
+    const volant = new T.Group();
+    volant.add(K.mesh(K.anneau(R_T, R_TI, Y_T1 - Y_T0, 28), inox, 0, (Y_T0 + Y_T1) / 2, 0));
+    const filet = K.ressort(R_T + 0.5, 26, 12, 0.55, inox); filet.position.y = 42; volant.add(filet);
+    volant.add(K.mesh(K.anneau(30, R_T, 14, 64), marine, 0, 85, 0));
+    volant.add(K.mesh(K.anneau(13, R_T, 4, 40), noir, 0, 94, 0));
+    for (let k = 0; k < 10; k++) {                                             /* la graduation des dixièmes : 0 à 9, croissante vers la gauche */
+      const pivot = new T.Group(); pivot.rotation.y = -k * 36 * D;
+      const t = grav(String(k), 6.5, { couleur: '#f1efe8' }); t.position.set(0, 85, 30.3); pivot.add(t);
+      const tr = new T.Group(); tr.rotation.y = -(k * 36 + 18) * D;
+      tr.add(K.mesh(new T.BoxGeometry(0.9, 5, 0.6), K.plastique(0xf1efe8, 0.5), 0, 85, 30.2));
+      volant.add(pivot, tr);
+    }
+    racine.add(volant);
+
+    /* ================================================================ LA TIGE INTÉRIEURE (tourne avec le volant, descend quand on la visse) */
+    const tige = new T.Group();
+    tige.add(K.mesh(K.cylindre(R_R, L_R, 20), tigeMat, 0, 0, 0));
+    tige.add(K.mesh(K.cylindre(1.95, 0.6, 6), sombre, 0, L_R / 2 + 0.05, 0));  /* l'empreinte six pans, en haut */
+    racine.add(tige);
+
+    /* ================================================================ LA CLÉ SIX PANS (3 mm) : n'apparaît que pour visser ou dévisser */
+    const cle = new T.Group(); cle.visible = false;
+    cle.add(K.mesh(K.cylindre(1.73, 40, 6), cleMat, 0, 20 - 4, 0));              /* la branche longue, dans l'empreinte */
+    {
+      const coude = new T.Mesh(surX(K.cylindre(2.0, 38, 14), 19 + 1.7), cleMat); coude.position.y = 36; cle.add(coude);   /* la branche courte, horizontale */
+      cle.add(K.mesh(K.sphere(2.2, 12), cleMat, 0, 36, 0));
+      const poignee = K.mesh(K.cylindre(3.6, 22, 16), noir, 0, 0, 0); poignee.rotation.z = Math.PI / 2; poignee.position.set(30, 36, 0); cle.add(poignee);
+    }
+    racine.add(cle);
+
+    /* ================================================================ L'APPAREIL D'ÉQUILIBRAGE (générique, sans marque) */
+    const appareil = new T.Group(); appareil.visible = false;
+    const AZ0 = 52, AZ1 = 140, AHF = 12, AHB = 46, AW = 134, AYS = -25.8;
+    const ALPHA = Math.atan((AHB - AHF) / (AZ1 - AZ0));
+    {
+      const sh = new T.Shape([[-AZ0, AYS], [-AZ1, AYS], [-AZ1, AYS + AHF], [-AZ0, AYS + AHB]].map(q => new T.Vector2(q[0], q[1])));
+      const g = new T.ExtrudeGeometry(sh, { depth: AW - 2.4, bevelEnabled: true, bevelSize: 1.2, bevelThickness: 1.2, bevelSegments: 2 });
+      g.rotateY(Math.PI / 2); g.translate(-(AW - 2.4) / 2, 0, 0);
+      appareil.add(new T.Mesh(g, marine));
+      const n = new T.Vector3(0, Math.cos(ALPHA), Math.sin(ALPHA));
+      const surPente = (t, dx, dn) => new T.Vector3(dx, AYS + AHF + t * (AHB - AHF), AZ1 - t * (AZ1 - AZ0)).addScaledVector(n, dn);
+      const cadre = K.mesh(K.boite(108, 54, 1.6, 0.6), noir); cadre.position.copy(surPente(0.6, 0, 0.5)); cadre.rotation.x = -(Math.PI / 2 - ALPHA); appareil.add(cadre);
+      const ecran = K.ecran(98, 34, { fond: '#c9d6b3', encre: '#1a2a14', texte: ['', ''] });
+      ecran.mesh.position.copy(surPente(0.6, 0, 1.4)); ecran.mesh.rotation.x = -(Math.PI / 2 - ALPHA); ecran.mesh.userData.voile = true; appareil.add(ecran.mesh);
+      appareil.userData.ecran = ecran;
+      [-26, 0, 26].forEach(dx => { const b = K.mesh(K.cylindre(5, 3, 20), orange); b.position.copy(surPente(0.1, dx, 1.5)); b.rotation.x = ALPHA; appareil.add(b); });
+      [-1, 1].forEach(s => {                                                     /* les deux prises du boîtier, derrière, et leur flexible */
+        const port = K.mesh(K.cylindre(5, 9, 20), noir); port.rotation.x = Math.PI / 2; port.position.set(s * 38, -5, AZ0 - 4); appareil.add(port);
+        const dessus = new T.CatmullRomCurve3([
+          new T.Vector3(s * 50.4, 42.4, 0), new T.Vector3(s * 58, 50, 0), new T.Vector3(s * 68, 46, 10), new T.Vector3(s * 68, 28, 24),
+          new T.Vector3(s * 60, 8, 36), new T.Vector3(s * 46, -3, 43), new T.Vector3(s * 38, -5, 44)]);
+        appareil.add(new T.Mesh(new T.TubeGeometry(dessus, 60, 3.2, 10, false), caout));
+      });
+    }
+    racine.add(appareil);
+
+    /* ================================================================ LES FACES DE COUPE (plan z = 0, hachures à 45°) */
+    const Hm = {
+      laiton: A.hachures('#b08f45', '#6a511c', 6),
+      inox: A.hachures('#8793a0', '#262e38', 3.2),
+      marine: A.hachures('#3f5a80', '#14294a', 4),
+      tige: A.hachures('#e2792d', '#6b320e', 3),
+      cuivre: A.uni(0xb8683c, { metalness: 0.3, roughness: 0.5 }),
+      caout: A.uni(0x1c1e21),
+      noir: A.uni(0x2a2d31)
+    };
+    const faces = new T.Group(); faces.visible = false; racine.add(faces);
+    const faceXY = (polys, mat, z, groupe) => {
+      const m = new T.Mesh(new T.ShapeGeometry(polys.map(p => new T.Shape(p.map(q => new T.Vector2(q[0], q[1]))))), mat);
+      m.position.z = z; m.userData.sansOmbre = true; m.castShadow = false; if (mat.transparent) m.userData.voile = true;
+      (groupe || faces).add(m); return m;
+    };
+    const R = (x0, x1, y0, y1) => [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
+    const MX = polys => polys.map(p => p.map(q => [-q[0], q[1]]));
+    const groupeFaces = () => { const g = new T.Group(); faces.add(g); return g; };
+
+    const facesCorps = groupeFaces();
+    const paroi = [R(-32, -27, -22, -10), [[-32, 10], [-27, 10], [-27, 15.46], [-32, 20.46]], [[-32, 27.54], [-27, 22.54], [-27, 52], [-32, 52]]];
+    faceXY([R(-32, 32, -27, -22), ...paroi, ...MX(paroi), R(9, 14, -22, 23), R(-48, -32, 10, 14), R(-48, -32, -14, -10), R(32, 48, 10, 14), R(32, 48, -14, -10)], Hm.laiton, 0.03, facesCorps);
+    const facesSiege = groupeFaces();
+    faceXY([R(-27, -7.5, 23, 28), R(7.5, 14, 23, 28)], Hm.laiton, 0.03, facesSiege);
+    const facesRaccords = groupeFaces();
+    {
+      const l = [R(-60, -48, 10, 15.59), R(-60, -48, -15.59, -10)];
+      faceXY([...l, ...MX(l)], Hm.laiton, 0.03, facesRaccords);
+      const c = [R(-TUBE, -60, 10, 11), R(-TUBE, -60, -11, -10)];
+      faceXY([...c, ...MX(c)], Hm.cuivre, 0.03, facesRaccords);
+    }
+    const facesChapeau = groupeFaces();
+    faceXY([R(-32, -9, 52, 58), R(9, 32, 52, 58), R(-15, -9, 58, 70), R(9, 15, 58, 70), R(-14.72, -6.8, 70, 75), R(6.8, 14.72, 70, 75)], Hm.laiton, 0.03, facesChapeau);
+    const facesClapet = groupeFaces();                                          /* suit le clapet */
+    faceXY([R(-11.5, 11.5, 0, 2)], Hm.caout, 0.04, facesClapet);
+    faceXY([R(-11.5, 11.5, 2, 9), R(-8.6, -6.6, 9, 23), R(6.6, 8.6, 9, 23), R(-R_R, R_R, 9, PIN_H)], Hm.inox, 0.04, facesClapet);
+    const facesVolant = groupeFaces();
+    faceXY([R(-R_T, -R_TI, Y_T0, Y_T1), R(R_TI, R_T, Y_T0, Y_T1)], Hm.inox, 0.04, facesVolant);
+    faceXY([R(-30, -R_T, 78, 92), R(R_T, 30, 78, 92), R(-13, -R_T, 92, 96), R(R_T, 13, 92, 96)], Hm.marine, 0.04, facesVolant);
+    const facesTige = groupeFaces();                                            /* suit la tige */
+    faceXY([R(-R_R, R_R, -L_R / 2, L_R / 2)], Hm.tige, 0.05, facesTige);
+
+    /* une prise : sa paroi, son capuchon (ou son raccord rapide) et le canal qui la relie à la chambre */
+    const eauAmont = A.eau(0x4b84cc), eauAval = A.eau(0x4b84cc);
+    const facesPrises = {}, canaux = { amont: null, aval: null }, faceCap = {}, faceRac = {};
+    [-1, 1].forEach(sens => {
+      const nom = sens < 0 ? 'amont' : 'aval', g = facesPrises[nom] = groupeFaces();
+      const Pt = new T.Vector2(sens * 32, 24), d = new T.Vector2(sens * 0.7071, 0.7071), n = new T.Vector2(d.y, -d.x);
+      const bande = (s0, s1, v0, v1) => [[s0, v0], [s1, v0], [s1, v1], [s0, v1]].map(([s, v]) => [Pt.x + s * d.x + v * n.x, Pt.y + s * d.y + v * n.y]);
+      faceXY([bande(-4, 14, 2.5, 5.5), bande(-4, 14, -5.5, -2.5)], Hm.laiton, 0.04, g);
+      faceCap[nom] = faceXY([bande(14, 21, -6.8, 6.8)], Hm.marine, 0.04, g);
+      faceRac[nom] = faceXY([bande(12.5, 21.5, -6.4, 6.4), bande(21.5, 26, -3.2, 3.2)], Hm.noir, 0.04, g); faceRac[nom].visible = false;
+      const Pg = new T.Vector2(-32, 24), dg = new T.Vector2(-0.7071, 0.7071), ng = new T.Vector2(0.7071, 0.7071);
+      const bout = v => [Pg.x + 14 * dg.x + v * ng.x, Pg.y + 14 * dg.y + v * ng.y];
+      const lg = [[-27, 15.46], bout(-2.5), bout(2.5), [-27, 22.54]];
+      canaux[nom] = sens < 0 ? lg : lg.map(q => [-q[0], q[1]]);
+    });
+
+    const facesEau = groupeFaces();
+    faceXY([R(-TUBE, -27, -10, 10), R(-27, 9, -22, 23), R(-7.5, 7.5, 23, 28), canaux.amont], eauAmont, -0.3, facesEau);
+    faceXY([R(-27, 27, 28, 52), R(14, 27, -22, 28), R(27, TUBE, -10, 10), canaux.aval], eauAval, -0.3, facesEau);
+
+    /* ================================================================ L'EAU QUI CIRCULE
+       Moins de grains quand le débit baisse ; vitesse moyenne proportionnelle au débit ; dans le passage rétréci
+       entre clapet et siège, l'eau file plus vite (zone d'accélération). */
+    const V = (x, y, z) => new T.Vector3(x, y, z);
+    const cAmont = new T.Color(0x2a5aa8), cAval = new T.Color(0x2a5aa8), cClair = new T.Color(0xa7d0f5);
+    const fluxEau = A.flux(36, 60, (p, co) => {
+      const t = clamp(Math.max(p.x / 6, (p.y - 25) / 4), 0, 1), s = t * t * (3 - 2 * t);
+      co.copy(cAmont).lerp(cAval, s);
+    });
+    racine.add(fluxEau.objet);
+
+    /* ================================================================ L'ÉTAT */
+    const E = {
+      p: TOURS_MAX, pCible: TOURS_MAX,      /* tours ouverts : affichés / demandés */
+      butee: null,                          /* le préréglage bloqué (tours), ou null */
+      rodY: ROD_LIBRE, appareil: false,
+      cle: { etat: 'hors', t: 0 },
+      seq: null, pause: 0,
+      coupe: false, demonte: false
+    };
+    let hPrec = -1;
+    const limite = () => (E.butee === null ? TOURS_MAX : E.butee);
+    const cibleEff = () => Math.min(E.pCible, limite());
+    const arrondi = x => Math.round(x * 10) / 10;
+
+    const ecrireAppareil = () => {
+      if (!E.appareil) return;
+      const p = cibleEff();
+      appareil.userData.ecran.ecrire(['Δp  ' + nb(ecartDe(p), 1) + ' kPa', 'Débit  ' + nb(debitDe(p) * 1000, 0) + ' l/h'], { aligne: 'left', grand: false });
+    };
+    const majMesures = () => {
+      const p = cibleEff(), kv = kvDe(p);
+      ctx.mesures([
+        { libelle: 'La position du volant', valeur: nb(p, 1) + ' tours' },
+        { libelle: 'Le Kv de la vanne', valeur: nb(kv, 3) + ' m³/h' },
+        { libelle: 'L’écart de pression de la vanne', valeur: nb(ecartDe(p), 1) + ' kPa' },
+        { libelle: 'Le débit de la branche', valeur: nb(debitDe(p) * 1000, 0) + ' l/h' }
+      ]);
+    };
+    const majTexte = () => {
+      majMesures(); ecrireAppareil();
+      const p = cibleEff(), q = nb(debitDe(p) * 1000, 0), dp = nb(ecartDe(p), 1);
+      let t;
+      if (E.butee !== null) t = '<strong>Préréglage bloqué à ' + nb(E.butee, 1) + ' tours.</strong> La tige intérieure est vissée jusqu’à la butée : le volant ne peut plus s’ouvrir au-delà de ce chiffre. Position du volant : ' + nb(p, 1) + '. Débit : ' + q + ' l/h.';
+      else if (p <= 0) t = '<strong>Vanne fermée (0,0).</strong> Le clapet est posé sur le siège : l’eau ne passe pas.';
+      else t = '<strong>Volant à ' + nb(p, 1) + ' tour' + (p >= 2 ? 's' : '') + '.</strong> Le clapet est à ' + nb(hDe(p), 1) + ' mm du siège. D’après la notice, le Kv vaut ' + nb(kvDe(p), 3) + ' : la branche reçoit ' + q + ' l/h.';
+      if (E.appareil) t += ' L’appareil affiche ' + dp + ' kPa et ' + q + ' l/h.';
+      ctx.dire(t);
+    };
+
+    const majFlux = h => {
+      const p = h / PAS, q = debitDe(p), part = Math.pow(q / Q_MAX, 0.7), gy = Y_SIEGE + h / 2;
+      if (Math.abs(h - hPrec) > 0.02) {
+        fluxEau.trajet([V(-TUBE + 4, 0, 0), V(-40, 0, 0), V(-26, 0, 0), V(-14, 4, 0), V(-5, 14, 0), V(0, 22, 0), V(2, 26, 0), V(6, gy, 0), V(14, gy + 3, 0), V(19, Math.max(gy + 4, 33), 0), V(21, 26, 0), V(20.5, 12, 0), V(21, 2, 0), V(28, 0, 0), V(TUBE - 4, 0, 0)],
+          fr => [{ u0: fr(V(2, 26, 0)), u1: fr(V(19, Math.max(gy + 4, 33), 0)), k: clamp(6 / Math.max(h, 0.3), 1, 7) }]);
+        hPrec = h;
+      }
+      fluxEau.regler(part);
+      fluxEau.vitesse(70 * q / Q_MAX);
+      const t = clamp(ecartDe(p) / P_DISPO / 100, 0.08, 1);
+      cAval.copy(cAmont).lerp(cClair, t);
+      eauAval.color.setHex(0x4b84cc).lerp(new T.Color(0xcfe5f8), t);
+    };
+
+    /* le volant (et la tige, le clapet qui le suivent) à p tours */
+    const poserP = p => {
+      const h = hDe(p);
+      clapet.position.y = Y_SIEGE + h; facesClapet.position.y = Y_SIEGE + h;
+      volant.rotation.y = p * 360 * D;
+      poserTige();
+      const entiers = Math.floor(p + 1e-6);
+      if (E.entiers !== entiers) { E.entiers = entiers; fenetre.ecrire([String(entiers)], { aligne: 'center' }); }
+      majFlux(h);
+    };
+    /* la tige repose sur le poussoir si elle l'a rejoint ; la clé tourne en même temps qu'elle */
+    const poserTige = () => {
+      const bas = Math.max(E.rodY, yTige(E.p));
+      tige.position.y = bas + L_R / 2; facesTige.position.y = bas + L_R / 2;
+      const aTour = -(ROD_LIBRE - E.rodY) / PITCH * 360 * D;
+      tige.rotation.y = E.p * 360 * D + aTour;
+      cle.rotation.y = E.p * 360 * D + aTour;
+      return aTour;
+    };
+    const poserCle = off => { cle.position.set(0, tige.position.y + L_R / 2 - 3.5 + off, 0); };
+
+    const appliquerCoupe = actif => {
+      const plan = actif ? [new T.Plane(new T.Vector3(0, 0, -1), 0)] : null;
+      const exclus = new Set();
+      [faces, fluxEau.objet, cle, appareil].forEach(g => g.traverse(o => exclus.add(o)));
+      racine.traverse(o => {
+        if (!o.isMesh || exclus.has(o)) return;
+        [o.material, o.userData.matAvantSurbrillance].forEach(m => { if (m) { m.clippingPlanes = plan; m.clipShadows = true; m.needsUpdate = true; } });
+      });
+      faces.visible = actif;
+    };
+    const majVisibilite = () => {
+      fluxEau.objet.visible = E.coupe && !E.demonte;
+      appareil.visible = E.appareil && !E.demonte;
+      cle.visible = E.cle.etat !== 'hors' && !E.demonte;
+      ['amont', 'aval'].forEach(n => {
+        capuchons[n].visible = !E.appareil; raccordsMesure[n].visible = E.appareil;
+        faceCap[n].visible = !E.appareil; faceRac[n].visible = E.appareil;
+      });
+    };
+    const basculerCoupe = on => { E.coupe = on; appliquerCoupe(on && !E.demonte); majVisibilite(); };
+
+    poserP(E.p); poserCle(0); majTexte(); majVisibilite();
+
+    /* ---------------------------------------------------------------- pièces */
+    const pieces = [
+      { id: 'corps', nom: 'Le corps de la vanne', objets: [corps, facesCorps], desc: 'La pièce en laiton, pleine d’eau. Une flèche en relief donne le sens de l’eau : elle entre à gauche, passe sous le clapet et sort à droite.' },
+      { id: 'siege', nom: 'Le siège', objets: [siege, facesSiege], desc: 'Un plateau percé d’un trou rond. Toute l’eau passe par ce trou : le clapet vient s’y poser pour fermer.' },
+      { id: 'clapet', nom: 'Le clapet et son poussoir', objets: [clapet, facesClapet], desc: 'Il monte et descend au-dessus du siège : plus il est près, plus le passage est étroit. Le petit poussoir qui monte dans la broche sert de butée.' },
+      { id: 'volant', nom: 'Le volant et sa broche', objets: [volant, facesVolant], desc: 'Le volant fait tourner la broche : à chaque tour, le clapet monte ou descend de 2 mm. Les tours entiers se lisent dans la fenêtre, les dixièmes sur le volant.' },
+      { id: 'tige', nom: 'La tige intérieure de préréglage', objets: [tige, facesTige], desc: 'Au centre du volant. Avec une clé six pans de 3 mm, on la visse jusqu’à ce qu’elle touche le poussoir : le clapet ne monte plus au-delà, le réglage est mémorisé.' },
+      { id: 'chapeau', nom: 'Le chapeau, le repère et la fenêtre', objets: [chapeau, facesChapeau], desc: 'Il ferme le corps par le haut et ne tourne pas. Le repère orange et la petite fenêtre servent à lire la position du volant.' },
+      { id: 'priseAmont', nom: 'La prise avant le clapet', objets: [prises.amont, facesPrises.amont], desc: 'Une prise de pression avec son capuchon. On dévisse le capuchon pour brancher l’appareil de mesure : c’est là que la pression est la plus forte.' },
+      { id: 'priseAval', nom: 'La prise après le clapet', objets: [prises.aval, facesPrises.aval], desc: 'La même, côté sortie. L’écart de pression entre les deux prises permet de calculer le débit.' },
+      { id: 'raccords', nom: 'Les raccords et les tubes', objets: [raccords, facesRaccords], desc: 'Un écrou à six pans et un tube de cuivre de chaque côté : la vanne se pose dans le circuit, l’eau entre à gauche.' },
+      { id: 'appareil', nom: 'L’appareil de mesure', objets: [appareil], desc: 'Un boîtier relié aux deux prises par deux flexibles. Il mesure l’écart de pression et en déduit le débit.' }
+    ];
+
+    /* ---------------------------------------------------------------- commandes (libellés de la station) */
+    const commandes = [
+      { id: 'position', type: 'curseur', libelle: 'Position de la vanne', min: 0, max: TOURS_MAX, pas: 0.1, valeur: TOURS_MAX, format: v => nb(v, 1) + ' tours' },
+      { id: 'mesure', type: 'choix', valeur: 'sans', options: [['sans', 'Sans appareil'], ['avec', 'Appareil de mesure branché']] },
+      { id: 'bloquer', type: 'action', libelle: 'Bloquer le préréglage', accent: true },
+      { id: 'fermer', type: 'action', libelle: 'Fermer la vanne' },
+      { id: 'rouvrir', type: 'action', libelle: 'Rouvrir jusqu’à la butée' }
+    ];
+
+    const COUPE = { azimut: 0, elevation: 7, zoom: 1.45, cible: [0, 44, 0] };
+    const etapes = [
+      { titre: 'On ferme complètement la vanne', piece: 'volant', voirDedans: true, eclate: false, actions: [['mesure', 'sans'], ['butee', 'libre'], ['position', 0]],
+        vue: COUPE,
+        texte: 'On tourne le volant à droite jusqu’au bout : l’indicateur lit 0,0. Le clapet est posé sur le siège, l’eau ne passe plus. C’est le point de départ du réglage.' },
+      { titre: 'On ouvre à la position voulue : 2,3', piece: 'clapet', voirDedans: true, eclate: false, actions: [['position', 2.3]],
+        vue: COUPE,
+        texte: 'On tourne le volant à gauche jusqu’à 2,3 : 2 tours entiers dans la fenêtre, 3 dixièmes sur le volant. Le clapet monte et l’eau passe.' },
+      { titre: 'On visse la tige intérieure jusqu’à la butée', piece: 'tige', voirDedans: true, eclate: false, actions: [['butee', 'bloquee']],
+        vue: { azimut: 0, elevation: 6, zoom: 1.5, cible: [0, 74, 0] },
+        texte: 'Au centre du volant, la clé six pans de 3 mm visse la tige vers le bas. Elle s’arrête quand elle touche le poussoir du clapet : le réglage est mémorisé.' },
+      { titre: 'On vérifie : on ferme, puis on rouvre', piece: 'volant', voirDedans: true, eclate: false, actions: [['verifier', true]], duree: 8,
+        vue: { azimut: 0, elevation: 6, zoom: 1.75, cible: [0, 58, 0] },
+        texte: 'Le volant ferme la vanne, puis la rouvre : il s’arrête tout seul à 2,3. La tige touche le poussoir, le clapet ne monte pas plus haut.' },
+      { titre: 'On branche l’appareil de mesure', piece: 'priseAmont', voirDedans: false, eclate: false, actions: [['mesure', 'avec']],
+        vue: { azimut: 12, elevation: 21, zoom: 1.0, cible: [0, 22, 60] },
+        texte: 'On dévisse les deux capuchons et on relie les prises à l’appareil par deux flexibles. Il affiche l’écart de pression et le débit calculé, en l/h : on les lit sans faire de calcul.' },
+      { titre: 'Démonté : le volant, la tige, le clapet', piece: 'clapet', voirDedans: false, eclate: true, actions: [['mesure', 'sans']],
+        texte: 'On retire le volant avec sa tige, puis le chapeau. Le clapet et son poussoir sortent par le haut ; le corps reste sur le tuyau.' }
+    ];
+
+    const eclate = [
+      { objets: [tige], vers: [0, 160, 0], debut: 0, fin: 0.4 },
+      { objets: [volant], vers: [0, 105, 0], debut: 0.15, fin: 0.6 },
+      { objets: [chapeau], vers: [0, 62, 0], debut: 0.4, fin: 0.8 },
+      { objets: [clapet], vers: [0, 40, 0], debut: 0.6, fin: 1 }
+    ];
+
+    const poserEtat = () => {          /* après un changement d'état : textes, appareil, visibilité */
+      majTexte(); majVisibilite();
+    };
+
+    return {
+      racine, pieces, commandes, etapes, eclate,
+      eclateVue: { azimut: 34, elevation: 16, zoom: 0.62, cible: [0, 120, 0] },
+      vue: ctx.mode === 'decouvrir' ? { azimut: 30, elevation: 20, zoom: 1.35, cible: [0, 40, 0], cadre: [corps, chapeau, volant, raccords], marge: 1.0 }
+                                    : { azimut: 0, elevation: 7, zoom: 1.45, cible: [0, 44, 0], cadre: [corps, chapeau, volant, raccords], marge: 1.0 },
+      phrase: undefined,
+      libellesFantome: ['◐ Voir en coupe', '◑ Refermer'],
+      basculerFantome: basculerCoupe,
+      fantomeAuDepart: ctx.mode === 'comprendre',
+      agir(id, v) {
+        if (id === 'position') {
+          E.seq = null;
+          E.pCible = clamp(arrondi(+v), 0, TOURS_MAX);
+          if (E.pCible > limite()) ctx.regler('position', limite());
+        } else if (id === 'mesure') {
+          E.appareil = (v === 'avec'); ctx.regler('mesure', v);
+        } else if (id === 'bloquer' || id === 'butee') {
+          const bloquer = id === 'bloquer' ? E.butee === null : v === 'bloquee';
+          if (bloquer) { E.butee = cibleEff(); E.pCible = Math.min(E.pCible, E.butee); }
+          else E.butee = null;
+          ctx.regler('bloquer', undefined, { libelle: E.butee === null ? 'Bloquer le préréglage' : 'Libérer le préréglage' });
+        } else if (id === 'fermer') {
+          E.seq = null; E.pCible = 0; ctx.regler('position', 0);
+        } else if (id === 'rouvrir') {
+          E.seq = null; E.pCible = TOURS_MAX; ctx.regler('position', limite());
+        } else if (id === 'verifier') {
+          E.seq = 'ferme'; E.pCible = 0; ctx.regler('position', 0);
+        }
+        poserEtat(); ctx.reveiller();
+      },
+      surEclate(on) { E.demonte = on; appliquerCoupe(E.coupe && !on); majVisibilite(); },
+      animer(dt) {
+        let actif = false;
+        /* la séquence « on ferme puis on rouvre » */
+        if (E.seq === 'ferme' && E.p <= 1e-3) { E.seq = 'pause'; E.pause = 0.35; }
+        if (E.seq === 'pause') { E.pause -= dt; actif = true; if (E.pause <= 0) { E.seq = 'ouvre'; E.pCible = TOURS_MAX; ctx.regler('position', limite()); poserEtat(); } }
+        if (E.seq === 'ouvre' && Math.abs(E.p - cibleEff()) < 1e-3) E.seq = null;
+        /* le volant : tourne à vitesse constante, s'arrête net à la butée */
+        const c = cibleEff();
+        if (Math.abs(c - E.p) > 1e-4) {
+          const d = 2.4 * dt; E.p = E.p < c ? Math.min(c, E.p + d) : Math.max(c, E.p - d);
+          poserP(E.p); actif = true;
+        }
+        /* la tige et la clé : la clé entre, visse (ou dévisse) la tige, ressort */
+        const cibleRod = E.butee === null ? ROD_LIBRE : yTige(E.butee);
+        const K_ = E.cle;
+        if (K_.etat === 'hors' && Math.abs(E.rodY - cibleRod) > 1e-3) { K_.etat = 'entre'; K_.t = 0; majVisibilite(); }
+        if (K_.etat === 'entre') {
+          K_.t = Math.min(1, K_.t + dt / 0.3); poserCle(45 * (1 - K_.t) * (1 - K_.t)); actif = true;
+          if (K_.t >= 1) K_.etat = 'tourne';
+        } else if (K_.etat === 'tourne') {
+          const d = 9 * dt; E.rodY = E.rodY < cibleRod ? Math.min(cibleRod, E.rodY + d) : Math.max(cibleRod, E.rodY - d);
+          poserTige(); poserCle(0); actif = true;
+          if (Math.abs(E.rodY - cibleRod) < 1e-3) { K_.etat = 'sort'; K_.t = 0; }
+        } else if (K_.etat === 'sort') {
+          K_.t = Math.min(1, K_.t + dt / 0.3); poserCle(45 * K_.t * K_.t); actif = true;
+          if (K_.t >= 1) { K_.etat = 'hors'; majVisibilite(); }
+        } else if (Math.abs(E.rodY - cibleRod) <= 1e-3) { poserTige(); }
+        const visible = E.coupe && !E.demonte;
+        if (visible) fluxEau.animer(dt);
+        return actif || visible;
+      }
+    };
+  }, { famille: 'vannes', titre: 'Régler une vanne d’équilibrage', stations: ['reglage-equilibrage'] });
 })();

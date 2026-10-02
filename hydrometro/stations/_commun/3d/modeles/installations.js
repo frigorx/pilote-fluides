@@ -12,7 +12,8 @@
 
    UN CHOIX D'ÉTAT sert les trois stations (Boucle, Diagnostic, Mission) : Normal, Air en point haut,
    Vanne de la branche B fermée, Branche B mal réglée, Filtre encrassé, Circulateur à l'arrêt.
-   ctx.options : { depart: 'normal' | 'branche-froide' } — « branche-froide » ouvre sur la vanne B fermée.
+   ctx.options : { depart: 'normal' | 'branche-froide' | 'mal-reglee' } — « branche-froide » ouvre sur la vanne B fermée,
+   « mal-reglee » sur l'état « Branche B mal réglée » (vanne presque fermée).
 
    Tout est fabriqué ici en version simplifiée (circulateur, radiateur, vases, vannes) : les modèles
    complets de ces appareils pèsent 25 000 à 37 000 triangles chacun, l'installation en tient 80 000. Les branches A et C sont identiques (C se comporte comme A dans tous les états). */
@@ -167,7 +168,7 @@
     };
 
     /* ================================================================ L'ÉTAT : ce que chaque choix fait */
-    const E = { etat: opts.depart === 'branche-froide' ? 'vanne-b' : 'normal', fantome: false, t: 0, vaseCible: 1, delaiVase: 0, ange: 0 };
+    const E = { etat: opts.depart === 'branche-froide' ? 'vanne-b' : opts.depart === 'mal-reglee' ? 'reglage-b' : 'normal', fantome: false, t: 0, vaseCible: 1, delaiVase: 0, ange: 0 };
     /* fA, fB : débit relatif de chaque branche ; tA, tB : chaleur de l'eau en haut et en bas du radiateur
        (0 = bleu froid, 1 = rouge chaud) ; preB : le réglage affiché sur la vanne B ; air, enc : de 0 à 1 */
     const CIBLES = {

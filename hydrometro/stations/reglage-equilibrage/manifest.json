@@ -1,0 +1,113 @@
+{
+  "id": "reglage-equilibrage",
+  "title": "Régler une vanne d’équilibrage",
+  "lines": [
+    "D"
+  ],
+  "status": "SATELLITE D5",
+  "version": "2026-10-02-r1",
+  "levels": {
+    "CAP": {
+      "competencies": [
+        "CAP C4.4",
+        "CAP C4.5"
+      ]
+    },
+    "TP": {
+      "objective": "Mesurer l’écart de pression, en déduire le débit et corriger la position jusqu’à la cible.",
+      "learn": [
+        "Lire la vanne : volant, tige intérieure, prises.",
+        "Afficher et bloquer un préréglage selon la notice.",
+        "Atteindre un débit cible à 5 % près par la mesure."
+      ],
+      "competencies": [
+        "RNCP38748-BC01",
+        "RNCP38748-BC03"
+      ],
+      "prompt": "Régler une vanne d’équilibrage à prises de pression jusqu’au débit cible et rendre compte."
+    },
+    "BTS": {
+      "objective": "Justifier une méthode de réglage tenant compte de l’influence des branches.",
+      "learn": [
+        "Calculer q = Kv × √Δp.",
+        "Expliquer l’interaction des branches.",
+        "Ordonner le réglage et la revérification."
+      ],
+      "competencies": [
+        "BTS C2",
+        "BTS C7",
+        "BTS C8",
+        "BTS C14"
+      ],
+      "prompt": "Proposer et justifier l’ordre d’un réglage d’équilibrage."
+    }
+  },
+  "modalities": [
+    "MESURE",
+    "RÉGLAGE",
+    "DIAGNOSTIC",
+    "COMPTE RENDU",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Vanne d’équilibrage à prises de pression",
+    "rule": "Lire, afficher, bloquer, mesurer, corriger, revérifier.",
+    "success": "250 l/h à 5 % près sur la branche du banc.",
+    "feedback": "La position affichée n’est pas une preuve : la mesure l’est."
+  },
+  "virtualPractice": {
+    "description": "Branche à 20 kPa disponibles, reste de la branche Kv 1,0, vanne DN 15 aux Kv de la notice.",
+    "measures": [
+      "tours",
+      "kPa",
+      "l/h"
+    ],
+    "controls": [
+      "position de la vanne"
+    ],
+    "limits": [
+      "Pression disponible supposée constante.",
+      "Une seule branche modélisée à l’étape Mesurer."
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": true,
+    "dimensions": [
+      "mesurer",
+      "régler",
+      "expliquer",
+      "rendre compte"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "Notice de la vanne d’équilibrage du banc RA20 (dossier technique, fonds ERM) : Kv DN 15, procédure de préréglage, q = Kv × √Δp",
+    "Notice STA du banc VC30 (même procédure)",
+    "../equilibrage/manifest.json (station mère D5)"
+  ],
+  "assets": [
+    "content.js#svg-scenes",
+    "../_commun/3d/modeles/vannes.js#vanneReglage",
+    "../_commun/3d/modeles/installations.js#installation"
+  ],
+  "architectureVersion": "2026-08-23-formative-lines-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire la situation",
+      "voir l’explication",
+      "observer le schéma",
+      "manipuler avec aide",
+      "résumer et poursuivre"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne"
+  },
+  "satelliteOf": "equilibrage"
+}

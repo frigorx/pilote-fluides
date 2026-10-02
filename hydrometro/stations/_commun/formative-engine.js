@@ -44,7 +44,7 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "../_commun/formative-shared.css?v=20261002-0903";
+  style.href = "../_commun/formative-shared.css?v=20261002-1215";
   document.head.append(style);
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -82,6 +82,7 @@
   }
 
   function nextDestination() {
+    if (config.suite) return config.suite;   /* station satellite : sa suite est déclarée (hors du tracé des lignes) */
     const line = activeLine();
     const route = routes[line];
     const index = route.indexOf(config.id);
@@ -275,6 +276,12 @@
     els.nextBtn.disabled = true;
     const destination = nextDestination();
     els.nextBtn.textContent = current === config.steps.length - 1 ? destination.label : "Continuer";
+    /* « Pour aller plus loin » : une station satellite se propose sur la dernière étape, à côté de la suite */
+    if (config.plusLoin) {
+      let lien = document.getElementById("plusLoin");
+      if (!lien) { lien = document.createElement("a"); lien.id = "plusLoin"; lien.className = "secondary plus-loin"; lien.href = config.plusLoin.href; lien.textContent = config.plusLoin.label; els.nextBtn.before(lien); }
+      lien.hidden = current !== config.steps.length - 1;
+    }
     els.stepCount.textContent = `${current + 1} / ${config.steps.length}`;
   }
 

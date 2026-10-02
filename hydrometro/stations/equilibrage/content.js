@@ -49,7 +49,7 @@
     <rect x="140" y="320" width="480" height="70" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="380" y="347" text-anchor="middle" font-size="20" font-weight="700">UNE VANNE RÉELLE SE RÈGLE</text><text x="380" y="375" text-anchor="middle" font-size="20" font-weight="700">AVEC SA MÉTHODE ET SES DONNÉES</text>`);
 
   window.STATION_CONFIG = {
-    code: "D5", id: "equilibrage", title: "Équilibrage — Banc à trois branches", next: "poursuivre vers la station Plancher chauffant",
+    code: "D5", id: "equilibrage", title: "Équilibrage — Banc à trois branches", next: "poursuivre vers la station Plancher chauffant", plusLoin: { href: "../reglage-equilibrage/index.html?line=D", label: "Pour aller plus loin : régler une vanne" },
     levels: {
       CAP: { objective: "Lire les trois débits et repérer celui qui manque à la cible.", assessment: "lire un débitmètre et comparer à la cible" },
       TP: { objective: "Relever, régler une branche, stabiliser puis comparer les débits.", assessment: "respecter l’ordre de réglage et produire un compte rendu" },

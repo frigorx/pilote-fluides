@@ -71,7 +71,7 @@
     /* HydroMétro */
     circulateur: 'pompes',
     vaseExpansion: 'securite', soupape: 'securite',
-    vanne3voies: 'vannes', vanneEquilibrage: 'vannes',
+    vanne3voies: 'vannes', vanneEquilibrage: 'vannes', vanneReglage: 'vannes',
     echangeurPlaques: 'echangeurs',
     ballonTampon: 'ballons', bouteilleDecouplage: 'ballons',
     collecteur: 'distribution', radiateur: 'distribution',
