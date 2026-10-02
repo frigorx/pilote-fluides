@@ -42265,6 +42265,13 @@ window.PILOTE_VOIX_INDEX = {
       "octets": 202464,
       "voix": "fr-FR-RemyMultilingualNeural",
       "empreinteTexte": "ac848c14640d352b"
+    },
+    "371bf883-517": {
+      "fichier": "audio/371bf883-517.mp3",
+      "sha256": "acf609ed50e7a376",
+      "octets": 204048,
+      "voix": "fr-FR-RemyMultilingualNeural",
+      "empreinteTexte": "634a568fb0db53d5"
     }
   },
   "moteurEdgeTts": {
