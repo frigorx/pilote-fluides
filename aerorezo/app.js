@@ -233,9 +233,57 @@
        à la place de l'autre : l'élève doit pouvoir mettre un mot sur ce qu'il voit. */
     $("activity").innerHTML=`<section class="concept-panel decouverte">${dessin||""}<p class="eyebrow">Le phénomène en trois repères</p>${sequenceMarkup(labels)}<p class="concept-caption">Observe la scène, puis nomme chaque repère avant de passer à l’explication.</p></section>`;
   }
+  /* La vue 3D de l’appareil (chantier du 02/10/2026, moteur repris d’HydroMétro) : au temps
+     Comprendre, l’objet réel qu’on tourne, qu’on coupe et qu’on fait fonctionner pas à pas.
+     Le dessin de la station reste à un clic (« En schéma ») et c’est lui qui sort à l’impression.
+     Découvrir et Manipuler gardent leur dessin : leurs textes le décrivent. Les stations absentes
+     de cette table s’expliquent mieux en 2D (humidité relative, besoin d’air, apports internes, méthode
+     de diagnostic, évaluations) : elles n’ont pas de 3D.
+     En file://, le navigateur refuse le module Three.js : rien n’est posé, la station reste telle quelle. */
+  const VUES_3D={
+    "air-circule":{modele:"cta",titre:"Les quatre airs d’une centrale, en 3D"},
+    "architecture-cta":{modele:"cta",titre:"La centrale de traitement d’air en 3D"},
+    "melange-filtration":{modele:"cta",titre:"Le mélange et le filtre, dans la centrale en 3D",piece:"registres"},
+    "air-neuf-selection":{modele:"cta",titre:"L’air neuf traité par la centrale, en 3D",piece:"prise"},
+    "humidifier-reguler":{modele:"cta",titre:"L’humidificateur et les sondes, dans la centrale en 3D",piece:"humidificateur"},
+    "simple-flux":{modele:"logementVMC",titre:"Le logement et sa VMC simple flux, en 3D"},
+    "dimensionner-vmc":{modele:"logementVMC",titre:"Le réseau de VMC du logement, en 3D",piece:"gaines"},
+    "hygroreglable":{modele:"boucheHygro",titre:"La bouche hygroréglable en coupe, en 3D",options:{rh:68}},
+    "double-flux":{modele:"caissonDoubleFlux",titre:"Le caisson double flux en 3D"},
+    "recuperation":{modele:"caissonDoubleFlux",titre:"L’échangeur à plaques en 3D",options:{outdoor:2,extract:22,supply:17}},
+    "conduits":{modele:"gaines",titre:"Les conduits sous le faux plafond, en 3D"},
+    "sections":{modele:"gaines",titre:"Sections rondes et rectangulaires, en 3D"},
+    "pertes-lineaires":{modele:"reseauPertes",titre:"La pression le long d’un réseau, en 3D"},
+    "pertes-singulieres":{modele:"reseauPertes",titre:"Les accidents du réseau, en 3D",options:{rate:0.7,length:18,local:32}},
+    "ventilateur-equilibrage":{modele:"ventilateur",titre:"Le ventilateur centrifuge et son registre, en 3D"},
+    "transmission":{modele:"paroi",titre:"La chaleur qui traverse un mur et sa fenêtre, en 3D"},
+    "batteries":{modele:"batterie",titre:"La batterie chaude et froide, en 3D"},
+    "apport-sensible":{modele:"batterie",titre:"L’air qui traverse une batterie, en 3D",options:{mode:"chaude",debit:800,ecart:8}},
+    "apport-latent":{modele:"batterie",titre:"L’eau que retire une batterie froide, en 3D",options:{mode:"froide",debit:2500,ecart:12,temperature:26,rh:65}},
+    "pressions":{modele:"pitot",titre:"Le tube de Pitot et son manomètre, en 3D"},
+    "pressions-reseau":{modele:"pitot",titre:"Mesurer les pressions sur le chantier, en 3D",options:{statique:180,dynamique:70}},
+    "rosee-psychro":{modele:"hygrometre",titre:"La buée sur une paroi froide, en 3D",options:{temperature:24,rh:60}},
+    "mesure-humidite":{modele:"hygrometre",titre:"Mesurer l’air et la paroi, en 3D"},
+    "instruments":{modele:"mallette",titre:"La mallette de mesure aéraulique, en 3D"},
+    "debit-vitesse":{modele:"anemometre",titre:"La vitesse dans une gaine, en 3D",options:{variante:"profil"}},
+    "mesure-debit":{modele:"anemometre",titre:"Le relevé de vitesse en douze points, en 3D"}
+  };
+  /* la clé ?v= posée sur app.js à la livraison (outils/livrer.mjs) suit jusqu'à la 3D */
+  const SRC_APP=(document.currentScript&&document.currentScript.src)||"";
+  const CLE_3D=SRC_APP.replace(/^[^?]*/,"");
+  const DOSSIER_3D=SRC_APP.replace(/app\.js(\?.*)?$/,"")+"stations/_commun/3d/";
+  function poserVue3D(s){
+    const vue=VUES_3D[s.id];
+    if(!vue||location.protocol==="file:")return;
+    const hote=document.createElement("div");hote.className="vue3d-hote";
+    $("activity").prepend(hote);
+    const go=()=>window.AeroVue3D.brancher(hote,{modele:vue.modele,titre:vue.titre,piece:vue.piece,options:vue.options,schema:sceneDe(s)||""});
+    if(window.AeroVue3D)return go();
+    const balise=document.createElement("script");balise.src=DOSSIER_3D+"station3d.js"+CLE_3D;balise.onload=go;balise.onerror=()=>hote.remove();document.head.appendChild(balise);
+  }
   function renderMethodScene(s){
     const relation=s.formula||"Observation → comparaison → décision";
-    $("activity").innerHTML=`<section class="concept-panel method-panel"><p class="eyebrow">La méthode professionnelle</p>${sequenceMarkup(["Données utiles",relation,"Contrôle de cohérence"],"method-sequence")}<p class="concept-caption">${escapeText(s.method)}</p></section>`;
+    $("activity").innerHTML=`<section class="concept-panel method-panel"><p class="eyebrow">La méthode professionnelle</p>${sequenceMarkup(["Données utiles",relation,"Contrôle de cohérence"],"method-sequence")}<p class="concept-caption">${escapeText(s.method)}</p></section>`;poserVue3D(s);
   }
   function renderLocalCheck(s){
     if(!state.localCheck||state.localCheck.stationId!==s.id)state.localCheck={stationId:s.id,index:0,completed:false,answered:false};

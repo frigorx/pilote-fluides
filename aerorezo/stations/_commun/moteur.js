@@ -8,6 +8,7 @@
 (function () {
   "use strict";
 
+  const CLE = ((document.currentScript && document.currentScript.src) || "").replace(/^[^?]*/, "");
   const brique = (window.AEROREZO_STATIONS || [])[0];
   const socle = document.getElementById("socle");
   if (!brique || !socle) return;
@@ -117,7 +118,8 @@
     document.body.appendChild(balise);
   });
 
-  charger("../../carte.js").then(() => charger("../../app.js")).then(() => {
+  /* la clé ?v= posée sur ce fichier à la livraison suit jusqu'au moteur du réseau (et à la 3D) */
+  charger("../../carte.js" + CLE).then(() => charger("../../app.js" + CLE)).then(() => {
     /* Le moteur du réseau leur donne un comportement de navigation interne ; ici il n y a
        pas de réseau à rejoindre, ils ramènent au plan complet. */
     for (const id of ["backNetwork", "exitStation"]) {

@@ -236,11 +236,13 @@
         `<path class="pi-tige" d="M360 110v-34M360 145h-22"/>` + `<circle class="pi-point" cx="338" cy="145" r="4"/>` +
         fort(360, 66, "Tube de Pitot") + mot(365, 210, "ouvert face au flux", "start") +
         /* le manomètre, hors de la gaine */
-        caisson(250, 236, 140, 44) + fort(320, 264, "p totale = p s + p d") +
+        /* branché entre la prise statique et le nez du Pitot, il lit leur ÉCART : la pression
+           dynamique (l'étiquette annonçait la totale — corrigé au chantier 3D du 02/10/2026) */
+        caisson(250, 236, 140, 44) + fort(320, 264, "p d = p t − p s") +
         `<path class="pi-liaison" d="M180 76h-60v190h130M360 76h60v190H390"/>`;
       return {
         svg,
-        texte: "Deux prises dans la même gaine : l'une perpendiculaire à la paroi lit la pression statique, l'autre ouverte face au flux ajoute la pression dynamique. Leur somme est la pression totale."
+        texte: "Deux prises dans la même gaine : l'une perpendiculaire à la paroi lit la pression statique, l'autre ouverte face au flux lit la pression totale. Le manomètre branché entre les deux lit leur écart : la pression dynamique."
       };
     },
 
@@ -366,7 +368,13 @@
     },
 
     /* 7 — Le récupérateur : deux flux qui se croisent sans se mélanger. */
-    recovery() {
+    /* Les températures viennent de la station (double flux 5 / 21 / 17 °C, récupération 2 / 22 / 17 °C) ;
+       le dessin les portait figées à 2 / 21 / 16 °C, faux pour les deux (relevé au chantier 3D du 02/10/2026).
+       L'air rejeté se déduit du bilan à débits égaux : ce que l'air neuf gagne, l'air extrait le perd. */
+    recovery(variante, v) {
+      v = v || {};
+      const ext = v.outdoor ?? 2, extr = v.extract ?? 22, souf = v.supply ?? 17, rej = extr - (souf - ext);
+      const deg = t => `${String(t).replace(".", ",")} °C`;
       let plaques = "";
       for (let i = 1; i < 7; i++) plaques += `M${182 + i * 38} 92l-76 116`;
       const svg =
@@ -379,12 +387,12 @@
         gaine(40, 92, 140, 34) + flux(55, 109, 165, 3) +
         gaine(370, 92, 140, 34) + flux(385, 109, 495, 3) +
         fort(45, 78, "Air extérieur", "start") + fort(510, 78, "Air soufflé", "end") +
-        mot(45, 146, "2 °C", "start") + mot(510, 146, "16 °C", "end") +
+        mot(45, 146, deg(ext), "start") + mot(510, 146, deg(souf), "end") +
         /* flux extrait → rejeté, en bas */
         gaine(370, 174, 140, 34) + flux(495, 191, 385, 3) +
         gaine(40, 174, 140, 34) + flux(165, 191, 55, 3) +
         fort(510, 226, "Air extrait", "end") + fort(45, 226, "Air rejeté", "start") +
-        mot(510, 166, "21 °C", "end") + mot(45, 166, "7 °C", "start") +
+        mot(510, 166, deg(extr), "end") + mot(45, 166, deg(rej), "start") +
         mot(320, 272, "L'efficacité se calcule sur les températures des bons flux.");
       return {
         svg,
@@ -461,7 +469,8 @@
         mot(305, 84, "un serpentin traverse les ailettes") +
         gaine(400, 100, 170, 90) + flux(418, 145, 555, 3) +
         fort(60, 240, "Air entrant", "start") + mot(60, 262, "26 °C", "start") +
-        fort(580, 240, "Air sortant", "end") + mot(580, 262, froide ? "14 °C" : "34 °C", "end") +
+        /* la sortie suit l'écart de la station (elle était figée à 34 / 14 °C — chantier 3D, 02/10/2026) */
+        fort(580, 240, "Air sortant", "end") + mot(580, 262, `${String(26 + (froide ? -1 : 1) * ((v && v.delta) || (froide ? 12 : 8))).replace(".", ",")} °C`, "end") +
         (froide
           ? `<path class="pi-bac" d="M228 190v22h154v-22"/>` +
             `<path class="pi-siphon" d="M305 212v20a14 14 0 0 0 28 0v-14"/>` +

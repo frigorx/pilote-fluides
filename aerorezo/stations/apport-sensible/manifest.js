@@ -14,22 +14,22 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Associe une hausse de température à un apport sensible.",
-  bac: "Calcule la puissance nécessaire pour changer la température d’un débit d’air.",
-  bts: "Mène un bilan sensible avec débits massiques et conditions de calcul explicites.",
+  cap: "Associez une hausse de température à un apport sensible.",
+  bac: "Calculez la puissance nécessaire pour changer la température d’un débit d’air.",
+  bts: "Menez un bilan sensible avec débits massiques et conditions de calcul explicites.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "L’air entre dans la batterie par la gauche et en ressort par la droite. Regarde les deux étiquettes de température, à l’entrée et à la sortie. C’est le même air, le même débit, et exactement la même quantité de vapeur d’eau : une seule chose a changé au passage, sa température. Cette chaleur-là porte un nom — elle est dite sensible, parce qu’un thermomètre la sent. Toute la station tient dans une question : combien de watts faut-il pour obtenir ce changement, ou pour l’empêcher ?",
+  decouverte: "L’air entre dans la batterie par la gauche et en ressort par la droite. Regardez les deux étiquettes de température, à l’entrée et à la sortie. C’est le même air, le même débit, et exactement la même quantité de vapeur d’eau : une seule chose a changé au passage, sa température. Cette chaleur-là porte un nom — elle est dite sensible, parce qu’un thermomètre la sent. Toute la station tient dans une question : combien de watts faut-il pour obtenir ce changement, ou pour l’empêcher ?",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Changer la température d’un air coûte d’autant plus cher qu’il y a plus d’air à traiter et que l’écart demandé est grand. Trois grandeurs commandent le calcul : le débit qui traverse, l’écart de température entre l’entrée et la sortie, et l’énergie qu’il faut pour réchauffer un kilogramme d’air d’un degré.\n\nCette dernière ne bouge presque pas : environ 1 005 joules par kilogramme et par degré. Il reste à passer du volume à la masse, avec la masse volumique de l’air — environ 1,2 kg/m³ dans les conditions d’un local. Elle diminue quand l’air se réchauffe et quand on monte en altitude : à ce niveau de calcul on la prend constante, et on l’écrit dans les hypothèses.\n\nLe vrai piège est ailleurs. Le débit est écrit en m³/h sur les plans, alors que la relation le demande en m³/s. Il faut donc diviser par 3 600 avant de multiplier. Oublier cette division, c’est annoncer une puissance 3 600 fois trop grande.\n\nEn regroupant la masse volumique, la chaleur massique et cette division, on obtient le raccourci que tout le monde emploie sur le terrain : environ 0,34 W par m³/h et par degré d’écart. Un débit de 800 m³/h avec 8 K d’écart demande donc à peu près 2 150 W, soit un peu plus de 2 kW. Ce raccourci est commode, mais il ne dispense pas de savoir d’où il vient.\n\nLe contrôle de cohérence vient en dernier. En confort, l’écart entre l’air soufflé et l’air du local reste en général de 8 à 10 K : au-delà, le courant d’air froid se sent au poste de travail ; en deçà, il faut souffler beaucoup plus d’air pour la même puissance.",
 
-  method: "Convertis le débit en mètres cubes par seconde, applique la relation, puis vérifie que l’écart de soufflage reste tenable en confort.",
+  method: "Convertissez le débit en mètres cubes par seconde, appliquez la relation, puis vérifiez que l’écart de soufflage reste tenable en confort.",
   formula: "P = ρ × cₚ × Qᵥ × ΔT  ·  ρ ≈ 1,2 kg/m³, cₚ ≈ 1005 J/(kg·K), Qᵥ en m³/s  ·  raccourci : P(W) ≈ 0,34 × Qᵥ(m³/h) × ΔT",
 
   /* Manipuler — une action précise, avec des valeurs concrètes. */
-  consigne: "Règle le débit sur 800 m³/h et l’écart sur 8 K, puis note la puissance affichée. Double ensuite le débit sans toucher à l’écart, et regarde de combien elle monte. Reviens à 800 m³/h et double cette fois l’écart : compare les deux résultats. Termine en cherchant le débit qu’il faudrait pour retrouver cette même puissance avec un écart de seulement 4 K.",
-  lecture: "La puissance s’affiche en kilowatts sous les curseurs. C’est un besoin du local, pas une machine de catalogue. Regarde surtout le couple qui la produit : la même puissance s’obtient avec beaucoup d’air peu refroidi, ou avec peu d’air très refroidi. Le premier choix coûte des gaines et de la place, le second fait des courants d’air froid sur les gens. Le calcul ne tranche pas — c’est le projet qui tranche.",
+  consigne: "Réglez le débit sur 800 m³/h et l’écart sur 8 K, puis notez la puissance affichée. Doublez ensuite le débit sans toucher à l’écart, et regardez de combien elle monte. Revenez à 800 m³/h et doublez cette fois l’écart : comparez les deux résultats. Terminez en cherchant le débit qu’il faudrait pour retrouver cette même puissance avec un écart de seulement 4 K.",
+  lecture: "La puissance s’affiche en kilowatts sous les curseurs. C’est un besoin du local, pas une machine de catalogue. Regardez surtout le couple qui la produit : la même puissance s’obtient avec beaucoup d’air peu refroidi, ou avec peu d’air très refroidi. Le premier choix coûte des gaines et de la place, le second fait des courants d’air froid sur les gens. Le calcul ne tranche pas — c’est le projet qui tranche.",
 
   /* Ce que le modèle ne dit pas. Écrit, jamais sous-entendu. */
   limites: "Ce calcul ne compte que la température. L’eau que l’air perd ou gagne au passage n’y figure pas : c’est la charge latente, et elle se calcule à part. La masse volumique est prise constante alors qu’elle dépend de la température et de l’altitude. Enfin, la puissance obtenue est celle qu’il faut à l’air : la machine devra fournir davantage, à cause des pertes des gaines et de la chaleur dégagée par le ventilateur.",
