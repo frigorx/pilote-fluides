@@ -363,9 +363,9 @@
     stations: [
       /* L'id historique « corr-cables » est GARDÉ : le trajet des visiteurs
          qui l'ont déjà ouverte en correspondance reste marqué. */
-      { id: "corr-cables", href: "https://frigorx.github.io/sous-tension/",
+      { id: "corr-cables", href: "sous-tension/",
         nom: "Sous tension", sous: "lire et choisir les câbles" },
-      { id: "elec-triphase", href: "https://frigorx.github.io/sous-tension/td-triphase.html",
+      { id: "elec-triphase", href: "sous-tension/td-triphase.html",
         nom: "TD Triphasé", sous: "couplages étoile & triangle" }
     ]
   };
