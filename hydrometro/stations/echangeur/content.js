@@ -1,6 +1,14 @@
 (() => {
   "use strict";
 
+  /* la vue 3D de l’appareil (le dessin reste en « En schéma » et à l’impression) */
+  const V3D = ((document.currentScript && document.currentScript.src) || "").replace(/^[^?]*/, "");   /* la clé ?v= de la livraison suit jusqu’à la 3D */
+  const vue3d = (modele, titre) => el => {
+    const go = () => window.HydroVue3D.brancher(el, { modele, titre });
+    if (window.HydroVue3D) return go();
+    const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
+  };
+
   const shell = (id, title, desc, body) => `
     <svg viewBox="0 0 720 420" role="img" aria-labelledby="${id}-title ${id}-desc">
       <title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc>
@@ -186,7 +194,7 @@
         short: "Identifier", kicker: "repérer", title: "Du symbole à la coupe",
         text: "Le symbole sert à lire le schéma. La coupe simplifiée explique ce que le symbole ne montre pas.",
         cap: "Reconnaissez l’échangeur à ses deux circuits séparés.", tp: "Reconnaissez l’échangeur et ses quatre piquages.", bts: "Distinguez représentation normalisée, modèle et appareil réel.",
-        scene: symbol, equivalent: "Le symbole validé est accompagné d’une coupe originale : des plaques séparent deux circuits.",
+        scene: symbol,wire:vue3d("echangeurPlaques","L’échangeur à plaques en 3D"), equivalent: "Le symbole validé est accompagné d’une coupe originale : des plaques séparent deux circuits.",
         action: { type: "choice", prompt: "Que représente la coupe ?", options: [{label:"Deux circuits séparés par des plaques"},{label:"Une cuve où les eaux se mélangent"},{label:"Un circulateur double"},{label:"Une soupape"}], correct: 0, explain: "Le transfert thermique traverse les plaques, mais les deux fluides restent séparés dans le modèle normal." }
       },
       {
