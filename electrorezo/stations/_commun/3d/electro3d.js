@@ -387,6 +387,8 @@
     }
 
     _survoler(id) { this._survolee = id; this._majSurbrillance(); }
+    /* allumer une pièce depuis la page (la carte de l'armoire, survolée) */
+    survoler(id) { if (this._pieces) this._survoler(id || null); }
 
     choisir(id) {
       this._choisie = id;

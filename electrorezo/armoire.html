@@ -7,7 +7,7 @@
 <meta name="description" content="ÉlectroRézo : un coin d’atelier en 3D — l’armoire, le moteur, l’établi. Cliquez sur ce que vous reconnaissez, ses stations s’ouvrent.">
 <link rel="stylesheet" href="stations/_commun/station.css">
 <style>
-/* la page d'entrée : l'armoire en 3D, et la fiche de la zone choisie */
+/* la page d'entrée : l'armoire en 3D, la fiche de la zone choisie, la carte du réseau qui s'allume */
 .entete-armoire{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;padding:.55rem 16px;background:var(--paper);border-bottom:1px solid var(--line)}
 .entete-armoire .marque{font-weight:800;color:var(--navy);text-decoration:none}
 .entete-armoire .marque span{background:#e8913a;color:#fff;border-radius:8px;padding:.05rem .45rem;margin-left:.3rem;font-size:.85em}
@@ -15,22 +15,33 @@
 .vues{margin-left:auto;display:flex;border:2px solid var(--navy);border-radius:12px;overflow:hidden}
 .vues a{padding:.4rem .9rem;font-weight:700;color:var(--navy);text-decoration:none;background:var(--paper)}
 .vues a[aria-current]{background:var(--navy);color:#fff}
-.page-armoire{max-width:1500px;margin:.7rem auto 1.5rem;padding:0 16px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:.9rem;align-items:start}
-@media (max-width:980px){.page-armoire{grid-template-columns:1fr}}
+.page-armoire{max-width:1600px;margin:.7rem auto 1.5rem;padding:0 16px;display:grid;grid-template-columns:1fr;gap:.9rem;align-items:start}
+/* grand écran : la 3D reste à l'écran pendant qu'on parcourt la fiche et la carte (le survol de la carte l'allume) */
+@media (min-width:1200px){
+  .page-armoire{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+  .col-3d{position:sticky;top:.5rem}
+  .page-armoire .e3d{grid-template-columns:1fr}
+  .page-armoire .e3d-cote{display:none}
+  .page-armoire .e3d-scene{max-height:calc(100vh - 330px);min-height:300px}
+}
 .page-armoire .e3d-bt-ralenti{display:none}
-.fiche{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.8rem 1rem;position:sticky;top:.6rem}
+.fiche{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.8rem 1rem}
 .fiche h2{margin:.1rem 0 .2rem;color:var(--navy);font-size:1.2rem}
-.fiche .ou{color:var(--muted);margin:0 0 .4rem;font-size:.92em}
+.fiche .ou{color:var(--muted);margin:.4rem 0 0;font-size:.92em}
 .fiche .phrase{margin:.2rem 0 .6rem}
+.fiche .retour{background:none;border:0;padding:0;min-height:0;color:var(--navy);font:inherit;font-size:.92em;text-decoration:underline;cursor:pointer}
 .fiche .commencer{display:block;text-align:center;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:.55rem .8rem;margin:.4rem 0 .7rem}
 .fiche ol{margin:0;padding-left:0;list-style:none}
 .fiche li{border-top:1px solid var(--line);padding:.35rem 0}
 .fiche li a{color:var(--ink);text-decoration:none}.fiche li a:hover{text-decoration:underline}
 .fiche li b{color:var(--navy);display:inline-block;min-width:2.6em}
 .fiche li.renvoi a{color:var(--muted)}.fiche li i{color:var(--muted);font-size:.88em}
-.fiche .repli button{display:flex;gap:.5rem;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:.4rem 0;font:inherit;color:var(--ink);min-height:0}
-/* la carte du réseau sous la 3D : la zone choisie s'y allume */
-.carte-armoire{margin-top:.8rem;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.6rem .8rem}
+.zones-liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 1rem}
+.zones-liste button{display:flex;gap:.5rem;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:.4rem 0;font:inherit;color:var(--ink);min-height:0}
+.zones-liste button:hover{color:var(--navy);font-weight:700}
+.zones-liste button span{background:var(--navy);color:#fff;border-radius:50%;width:1.5rem;height:1.5rem;display:grid;place-items:center;font-size:.8em;font-weight:700;flex:none}
+/* la carte du réseau : la zone choisie s'y allume */
+.carte-armoire{margin-top:.9rem;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.6rem .8rem}
 .carte-tete{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
 .carte-tete h2{font-size:1.05rem;margin:0;color:var(--navy)}
 .carte-tete p{margin:0;color:var(--muted);font-size:.9em;flex:1}
@@ -44,7 +55,6 @@
 #carte svg.filtre a.allume{opacity:1}
 #carte svg a.allume circle:not(.cible){stroke:#c2410c;stroke-width:7;r:14}
 #carte svg a.allume text{font-weight:800}
-.fiche .repli button span{background:var(--navy);color:#fff;border-radius:50%;width:1.5rem;height:1.5rem;display:grid;place-items:center;font-size:.8em;font-weight:700;flex:none}
 </style>
 </head>
 <body>
@@ -58,8 +68,11 @@
 </header>
 
 <main class="page-armoire">
-  <div>
+  <div class="col-3d">
     <electro-3d id="armoire" modele="armoire" mode="decouvrir"></electro-3d>
+  </div>
+  <div class="col-droite">
+    <aside class="fiche" id="fiche" aria-live="polite"></aside>
     <section class="carte-armoire" aria-label="La carte du réseau">
       <div class="carte-tete"><h2>Sur la carte du réseau</h2>
         <p id="carteNote">Choisissez une zone : ses stations s’allument ici, avec leurs lignes.</p>
@@ -67,12 +80,6 @@
       <div id="carte"></div>
     </section>
   </div>
-  <aside class="fiche" id="fiche" aria-live="polite">
-    <h2>Un coin d’atelier</h2>
-    <p class="phrase">Cliquez sur ce que vous reconnaissez — l’armoire, le moteur, l’établi — ou sur son nom dans la liste « Les zones ». Ses stations s’affichent ici.</p>
-    <p class="ou">Chaque appareil se manipule en détail dans sa station. La <a href="carte-reseau.html">carte du réseau</a> reste l’autre entrée.</p>
-    <div class="repli" hidden></div>
-  </aside>
 </main>
 
 <script src="assets/armoire-zones.js"></script>
@@ -83,16 +90,42 @@
   const Z = window.ZONES_ARMOIRE || [], e = document.getElementById('armoire'), fiche = document.getElementById('fiche');
   const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const lien = s => s.ailleurs ? s.ailleurs.url : s.url;
-  const intro = fiche.innerHTML;
+  const allumer3d = id => { if (e.survoler) e.survoler(id); };
+
+  /* choisir une zone : par la 3D si elle est là (elle renvoie e3d-choix), sinon directement */
+  const choisir = id => {
+    if (!e.hidden && e._pieces) e.choisir(id);
+    else { montrer(id, true); allumer(Z.find(x => x.id === id)); }
+  };
+
+  /* la fiche au repos : les quatorze zones en boutons (la seule porte si la 3D manque) */
+  function accueil() {
+    fiche.innerHTML = '<h2>Un coin d’atelier</h2>' +
+      '<p class="phrase">Cliquez sur ce que vous reconnaissez dans la 3D, sur une zone ci-dessous, ou survolez une station de la carte : sa zone s’allume dans l’armoire.</p>' +
+      '<div class="zones-liste"></div>' +
+      '<p class="ou">Chaque appareil se manipule en détail dans sa station. La <a href="carte-reseau.html">carte du réseau</a> reste l’autre entrée.</p>';
+    const r = fiche.querySelector('.zones-liste');
+    Z.forEach((z, i) => {
+      const b = document.createElement('button'); b.type = 'button';
+      b.innerHTML = '<span>' + (i + 1) + '</span>' + esc(z.nom);
+      b.addEventListener('click', () => choisir(z.id));
+      b.addEventListener('pointerenter', () => allumer3d(z.id));
+      b.addEventListener('pointerleave', () => allumer3d(null));
+      r.appendChild(b);
+    });
+  }
 
   function montrer(id, defiler) {
     const z = Z.find(x => x.id === id);
-    if (!z) { fiche.innerHTML = intro; return; }
+    if (!z) { accueil(); return; }
     const n = Z.indexOf(z) + 1, premiere = z.stations.find(s => !s.renvoi);
-    fiche.innerHTML = `<h2>${n} · ${esc(z.nom)}</h2><p class="ou">${esc(z.ou)}</p><p class="phrase">${esc(z.phrase)}</p>
-      <a class="commencer" href="${lien(premiere)}">Commencer par ${premiere.id} · ${esc(premiere.titre)}</a>
-      <ol>${z.stations.map(s => `<li class="${s.renvoi ? 'renvoi' : ''}"><a href="${lien(s)}"><b>${s.id}</b>${esc(s.titre)}</a>${s.renvoi ? ' <i>— aussi ailleurs</i>' : ''}${s.ailleurs ? ` <i>→ ${esc(s.ailleurs.titre)}</i>` : ''}</li>`).join('')}</ol>`;
-    if (defiler && innerWidth < 980) fiche.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    fiche.innerHTML = '<button type="button" class="retour">← Toutes les zones</button>' +
+      '<h2>' + n + ' · ' + esc(z.nom) + '</h2><p class="ou">' + esc(z.ou) + '</p><p class="phrase">' + esc(z.phrase) + '</p>' +
+      '<a class="commencer" href="' + lien(premiere) + '">Commencer par ' + premiere.id + ' · ' + esc(premiere.titre) + '</a>' +
+      '<ol>' + z.stations.map(s => '<li class="' + (s.renvoi ? 'renvoi' : '') + '"><a href="' + lien(s) + '"><b>' + s.id + '</b>' + esc(s.titre) + '</a>' +
+        (s.renvoi ? ' <i>— aussi ailleurs</i>' : '') + (s.ailleurs ? ' <i>→ ' + esc(s.ailleurs.titre) + '</i>' : '') + '</li>').join('') + '</ol>';
+    fiche.querySelector('.retour').addEventListener('click', () => choisir(null));
+    if (defiler && innerWidth < 1200) fiche.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   /* ---------- la carte : les stations de la zone s'allument, la vue se resserre sur elles ---------- */
@@ -106,6 +139,7 @@
   if (svg) { svg.removeAttribute('width'); svg.removeAttribute('height'); }
   const poser = v => { vb = v; svg.setAttribute('viewBox', v.map(x => x.toFixed(1)).join(' ')); };
   const viser = cible => {
+    if (!svg) return;
     cancelAnimationFrame(anim);
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { poser(cible); return; }
     const de = vb.slice(), t0 = performance.now();
@@ -139,18 +173,23 @@
   }
   document.getElementById('toute').addEventListener('click', () => viser(TOUT));
 
-  e.addEventListener('e3d-choix', ev => { montrer(ev.detail.id, true); allumer(Z.find(x => x.id === ev.detail.id)); });
-  /* sans WebGL ou sans réseau : la 3D se retire, la liste des zones devient la porte */
-  e.addEventListener('e3d-repli', () => {
-    e.hidden = true;
-    const r = fiche.querySelector('.repli'); r.hidden = false;
-    Z.forEach((z, i) => {
-      const b = document.createElement('button'); b.type = 'button';
-      b.innerHTML = `<span>${i + 1}</span>${esc(z.nom)}`;
-      b.addEventListener('click', () => { montrer(z.id, true); allumer(z); });
-      r.appendChild(b);
-    });
+  /* le sens inverse : survoler une station de la carte allume sa zone dans la 3D */
+  const zoneDe = {};
+  Z.forEach(z => z.stations.forEach(s => { if (!s.renvoi) zoneDe[s.url] = z; }));
+  noeuds.forEach(a => {
+    const z = zoneDe[a.getAttribute('href')]; if (!z) return;
+    const titre = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+    titre.textContent = a.getAttribute('aria-label') + ' — dans l’armoire : ' + z.nom;
+    a.appendChild(titre);
+    const on = () => { allumer3d(z.id); note.textContent = a.getAttribute('aria-label') + ' : dans l’armoire, ' + z.nom.charAt(0).toLowerCase() + z.nom.slice(1) + '.'; };
+    a.addEventListener('pointerenter', on); a.addEventListener('focus', on);
+    a.addEventListener('pointerleave', () => allumer3d(null)); a.addEventListener('blur', () => allumer3d(null));
   });
+
+  e.addEventListener('e3d-choix', ev => { montrer(ev.detail.id, true); allumer(Z.find(x => x.id === ev.detail.id)); });
+  /* sans WebGL ou sans réseau : la 3D se retire, la liste des zones reste la porte */
+  e.addEventListener('e3d-repli', () => { e.hidden = true; });
+  accueil();
 })();
 </script>
 <script src="assets/marque.js" data-cartouche="ÉlectroRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
