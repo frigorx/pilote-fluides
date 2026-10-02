@@ -3,6 +3,18 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 02/10 — L'ACCUEIL SE RÉGÉNÈRE DE NOUVEAU, PLUS DE RETOUCHE À LA MAIN (`a159b77d` → `85fbbbd3`)
+>
+> `node build/accueil.mjs` redonnait un accueil faux (R408 à « 0 stations », livres disparus) : l'index avait été
+> retouché à la main. `moteur/reseaux.js` porte maintenant tout : champs facultatifs `accroche` (suite du titre après
+> « — »), `chiffres` (texte libre, « 11 modules · 4 paliers »), `pdf` ({ titre, href }, refusé s'il manque sur le disque),
+> `stations`/`lignes` forcés (Législation 57 : le catalogue n'en relève que 29). CartoClim posé (🌡️, `#0e7490` du calque
+> Clim). **Règle : toute vignette se change dans `reseaux.js`, puis `accueil.mjs`, puis `version.mjs` — jamais dans index.html.**
+> Piège : le `plan.html` du disque porte encore une modification non commitée d'une autre session (Sous tension rapatrié,
+> avec `legislation/index.html` et `moteur/plan-donnees.js`) — à elle de commiter et de relancer `version.mjs`.
+> Piège 2 : sessions parallèles = jamais de message de commit dans un nom fixe (`%TEMP%\msg2.txt` partagé a fait
+> partir un recalcul de version sous un message HydroMétro, corrigé avant push). Reste : `sw.js` gardé 4 h par Cloudflare.
+
 > ## 02/10 — CARTOCLIM : 7e RÉSEAU, LA CLIMATISATION, EN LIGNE (`e6eb96af`)
 >
 > `cartoclim/` est **GÉNÉRÉ** depuis l'atelier `C:gitcartoclim` (`node outils/livrer.mjs`, puis `git add cartoclim` seul,
