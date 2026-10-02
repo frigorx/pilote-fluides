@@ -3,6 +3,16 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 02/10 (soir) — LÉGISLATION FINALISÉE EN LIGNE, SOUS TENSION RAPATRIÉ VALIDÉ
+>
+> Feu vert de F. Henninot. Seuls les fichiers `legislation/` et `.gitignore` ont été reportés
+> depuis la branche `chantier-2026-09-30` ; sa partie CuivRézo, déjà dépassée par `main`, a été
+> laissée de côté. Mis en ligne : carnet 124 p. et PDF, livret professeur, guide pédagogique,
+> 8 stations corrigées. Contrôle `verifier-livraison.py` vert (64 réponses HTTP). Version `b714a64f0f`.
+> Les 3 fichiers « Sous tension rapatrié » (liens internes `sous-tension/`) sont commités (`4ae4480c`) :
+> le piège noté plus bas est levé. Réserve conservée : 5 pages du livret professeur sous le seuil
+> de remplissage, MP3 des narrations corrigées non régénérés.
+
 > ## 02/10 — L'ACCUEIL SE RÉGÉNÈRE DE NOUVEAU, PLUS DE RETOUCHE À LA MAIN (`a159b77d` → `85fbbbd3`)
 >
 > `node build/accueil.mjs` redonnait un accueil faux (R408 à « 0 stations », livres disparus) : l'index avait été
