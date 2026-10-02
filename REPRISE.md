@@ -3,6 +3,20 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 02/10 soir — LE QUARTIER TECHNIQUE : NOUVELLE PORTE D'ENTRÉE EN 3D, EN LIGNE (`f5be8b65`, `cf55a885`)
+>
+> Franck : une entrée « pour M. Lambda », sur le modèle du bâtiment Législation, centrée sur le cœur de métier.
+> `quartier/` : un commerce (froid, CO₂, CTA), une maison (frigo, clim, PAC, VMC, tableau), l'immeuble des règles
+> (→ legislation/) et la camionnette du technicien ; 15 appareils, 320 stations rangées, 7 domaines en calques.
+> Au clic : la **vue réseau** (une ligne de métro par réseau). Mode léger automatique sur les postes lents.
+> Dans le hall de l'accueil : l'aperçu 3D (`quartier/apercu.jpg`) en symétrie avec la carte des réseaux, rendue
+> cliquable par un script de la page (liens lus dans les vignettes : le bloc CARTE-RESEAUX généré n'est pas touché).
+> 🔴 **`quartier/` est GÉNÉRÉ** : ne pas l'éditer ici. Atelier = `CLAUDE-ESPACE-TRAVAIL/maquette-entree-technique/`
+> (source `zones.mjs`, `PLAN.md` fait foi) ; livrer par `node donnees3d.mjs && node livrer.mjs`, puis commiter `quartier/` seul.
+> Nom : « quartier technique », jamais « frigoriste » dans les textes visibles (décision de Franck).
+> Restent : stations « comment marche un split » et « circuit frigorifique de la PAC » ; brancher le réseau
+> climatisation que Franck écrit ; liste des appareils dans `catalogue-stations.mjs` (il ignore 37 arrêts du plan).
+
 > ## 27/09 soir — ACCÈS ENSEIGNANT : LE PRODUIT « CABLAGE » (INDICE 5) EST BRANCHÉ ET EN LIGNE (`ffd0e977`, `be0c0d3d`)
 >
 > Franck : « un code pour le câblage ». Deuxième produit réellement branché après l’habilitation. Table `build/produits.mjs`
