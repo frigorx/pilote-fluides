@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>RézoTools — les calculettes du frigoriste — inerWeb</title>
+<meta name="description" content="Les calculettes et outils de terrain d’inerWeb, rangés par besoin : lire et convertir, régler, dépanner, réglementation, air et eau, thermique, électricité.">
+<link rel="canonical" href="https://inerweb.fr/rezotools/">
+<meta property="og:title" content="RézoTools — les calculettes du frigoriste — inerWeb">
+<meta property="og:description" content="Pression, température, puissance, débits, surchauffe, pressostats, téqCO₂ : les outils de terrain d’inerWeb, rangés par besoin.">
+<meta property="og:image" content="https://inerweb.fr/icones/og-inerweb-1200x630.png">
+<meta property="og:url" content="https://inerweb.fr/rezotools/">
+<!-- ===================================================================
+     RÉZOTOOLS — page d'outils (décision F. Henninot, 02/10/2026) : des
+     liens vers ce qui existe déjà, rangés en 7 familles, UN lien par calcul.
+     SATELLITE comme quartier/ et legislation/ : hors PAGES de build/version.mjs.
+     calculettes/ = FICHIERS GÉNÉRÉS depuis C:/git/Iner.web-tools-beta
+     (node outils/livrer-rezotools.mjs). Cette page-ci s'écrit à la main.
+     Pas encore en ligne ici : les calculettes du moteur cerveau_v5.js
+     (écarts mesurés de 7 à 31 % sur 5 fluides) — voir REZOTOOLS-PARKING.md.
+     =================================================================== -->
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:84rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  .haut { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; font-size:16px; }
+  .haut a { font-weight:bold; text-decoration:none; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.2rem); line-height:1.15; margin:0; text-wrap:balance; }
+  .chapo { margin:0; max-width:48rem; font-size:18px; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+  .familles { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; align-items:start; }
+  .famille { background:var(--carte); border:1px solid var(--ligne); border-top:5px solid var(--bleu); border-radius:12px; padding:14px 16px 10px; }
+  .famille h2 { font-family:var(--titre); color:var(--bleu); font-size:1.3rem; margin:0 0 8px; }
+  .famille ul { list-style:none; margin:0; padding:0; display:grid; gap:2px; }
+  .famille li a { display:grid; grid-template-columns:auto 1fr; gap:2px 10px; padding:8px 6px; border-radius:8px; text-decoration:none; color:var(--txt); }
+  .famille li a:hover, .famille li a:focus-visible { background:#eef3f9; }
+  .famille li a:focus-visible { outline:3px solid var(--orange); outline-offset:1px; }
+  .ico { grid-row:span 2; font-size:20px; line-height:1.4; }
+  .nom { font-weight:bold; color:var(--bleu); }
+  .quoi { color:var(--mut); font-size:15.5px; line-height:1.4; }
+  .prudence { margin:0; padding:12px 16px; background:#fff6ec; border-left:5px solid var(--orange); border-radius:8px; max-width:60rem; }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller aux outils</a>
+<div class="page">
+  <nav class="haut" aria-label="Retour">
+    <a href="../">← inerweb.fr</a>
+    <a href="../plan.html">Plan des réseaux</a>
+    <a href="../quartier/">Le quartier technique</a>
+  </nav>
+
+  <header>
+    <h1>RézoTools — les calculettes du frigoriste</h1>
+  </header>
+  <p class="chapo">Une mesure, un chiffre à trouver : choisissez votre besoin. Chaque calcul n’a qu’une seule porte.</p>
+  <p class="legende">🔧 résultat direct, pour le chantier · 🎓 pas à pas, pour apprendre à calculer soi-même</p>
+
+  <main id="contenu" class="familles">
+
+    <section class="famille" aria-labelledby="f1">
+      <h2 id="f1">Lire et convertir</h2>
+      <ul>
+        <li><a href="../packs/fluides/res/outils/reglette.html"><span class="ico">🔧</span><span class="nom">Réglette pression ↔ température</span><span class="quoi">17 fluides, pression relative ou absolue</span></a></li>
+        <li><a href="calculettes/pressure.html"><span class="ico">🔧</span><span class="nom">Pression</span><span class="quoi">bar, psi, kPa, MPa</span></a></li>
+        <li><a href="calculettes/temp.html"><span class="ico">🔧</span><span class="nom">Température</span><span class="quoi">°C, °F, K</span></a></li>
+        <li><a href="calculettes/power.html"><span class="ico">🔧</span><span class="nom">Puissance</span><span class="quoi">kW, BTU/h, tonne frigo, kcal/h</span></a></li>
+        <li><a href="calculettes/pouce-mm.html"><span class="ico">🔧</span><span class="nom">Pouce ↔ mm</span><span class="quoi">tubes cuivre et longueurs</span></a></li>
+        <li><a href="../packs/fluides/res/parcours-manometres/"><span class="ico">🎓</span><span class="nom">Lire un manomètre</span><span class="quoi">relatif, absolu, échelles de température</span></a></li>
+      </ul>
+    </section>
+
+    <section class="famille" aria-labelledby="f2">
+      <h2 id="f2">Régler</h2>
+      <ul>
+        <li><a href="../packs/fluides/res/pressostat-bp-kp1/"><span class="ico">🎓</span><span class="nom">Pressostat BP (KP1)</span><span class="quoi">enclenchement, déclenchement, différentiel</span></a></li>
+        <li><a href="../packs/fluides/res/pressostat-hp-kp5/"><span class="ico">🎓</span><span class="nom">Pressostat HP (KP5)</span><span class="quoi">consigne de sécurité haute pression</span></a></li>
+        <li><a href="../packs/fluides/res/pressostat-combine-kp15/"><span class="ico">🎓</span><span class="nom">Pressostat combiné (KP15)</span><span class="quoi">réglage HP et BP sur un même appareil</span></a></li>
+      </ul>
+    </section>
+
+    <section class="famille" aria-labelledby="f3">
+      <h2 id="f3">Dépanner</h2>
+      <ul>
+        <li><a href="../packs/fluides/res/surchauffe-sous-refroidissement-interactif/"><span class="ico">🎓</span><span class="nom">Surchauffe et sous-refroidissement</span><span class="quoi">de la pression et du thermomètre au résultat en K</span></a></li>
+        <li><a href="calculettes/pincement.html"><span class="ico">🔧</span><span class="nom">Pincement d’un échangeur</span><span class="quoi">évaporateur ou condenseur, avec pistes de diagnostic</span></a></li>
+        <li><a href="../packs/fluides/res/pression-temperature-interactive/"><span class="ico">🎓</span><span class="nom">Pression et température</span><span class="quoi">la saturation et le glissement des mélanges</span></a></li>
+      </ul>
+    </section>
+
+    <section class="famille" aria-labelledby="f4">
+      <h2 id="f4">Réglementation</h2>
+      <ul>
+        <li><a href="../packs/fluides/res/outils/fiche-fluide.html"><span class="ico">🔧</span><span class="nom">Carte d’identité du fluide</span><span class="quoi">classe de sécurité, PRP, charge en téqCO₂</span></a></li>
+        <li><a href="../packs/fluides/res/hydrocarbures-a1-a2/"><span class="ico">🎓</span><span class="nom">Mission 290</span><span class="quoi">propane : surface minimale selon la charge</span></a></li>
+        <li><a href="../packs/fluides/res/mission-bouteilles/"><span class="ico">🎓</span><span class="nom">Mission bouteilles</span><span class="quoi">masse de fluide : brut moins tare</span></a></li>
+        <li><a href="../legislation/"><span class="ico">🎓</span><span class="nom">Législation</span><span class="quoi">les textes, expliqués station par station</span></a></li>
+      </ul>
+    </section>
+
+    <section class="famille" aria-labelledby="f5">
+      <h2 id="f5">Air et eau</h2>
+      <ul>
+        <li><a href="calculettes/air-power.html"><span class="ico">🔧</span><span class="nom">Puissance sur l’air</span><span class="quoi">débit d’air et écart de température</span></a></li>
+        <li><a href="calculettes/airflow-grid.html"><span class="ico">🔧</span><span class="nom">Débit d’une grille</span><span class="quoi">à partir des vitesses à l’anémomètre</span></a></li>
+        <li><a href="calculettes/water-flow.html"><span class="ico">🔧</span><span class="nom">Débit d’eau</span><span class="quoi">puissance, débit et écart de température</span></a></li>
+        <li><a href="../aerorezo/"><span class="ico">🎓</span><span class="nom">AéroRézo</span><span class="quoi">le réseau de l’air : ventilation, gaines, débits</span></a></li>
+        <li><a href="../hydrometro/"><span class="ico">🎓</span><span class="nom">HydroMétro</span><span class="quoi">le réseau de l’eau : circuits, pompes, débits</span></a></li>
+      </ul>
+    </section>
+
+    <section class="famille" aria-labelledby="f6">
+      <h2 id="f6">Thermique</h2>
+      <ul>
+        <li><a href="calculettes/cop.html"><span class="ico">🔧</span><span class="nom">COP, EER et coût annuel</span><span class="quoi">comparer deux machines</span></a></li>
+        <li><a href="../packs/fluides/res/bilan-thermique-performance-interactif/"><span class="ico">🎓</span><span class="nom">Bilan thermique et performance</span><span class="quoi">parois, bilan sur 24 h, SCOP</span></a></li>
+        <li><a href="../packs/fluides/res/module-compresseur/"><span class="ico">🎓</span><span class="nom">Compresseur</span><span class="quoi">cylindrée, débit, rendement volumétrique</span></a></li>
+        <li><a href="../packs/fluides/res/diagramme-enthalpique/"><span class="ico">🎓</span><span class="nom">Diagramme enthalpique</span><span class="quoi">tracer le cycle et lire le COP</span></a></li>
+        <li><a href="../aquiblue/"><span class="ico">🔧</span><span class="nom">AquiBlue</span><span class="quoi">relevés de sondes Bluetooth sur le diagramme</span></a></li>
+      </ul>
+    </section>
+
+    <section class="famille" aria-labelledby="f7">
+      <h2 id="f7">Électricité</h2>
+      <ul>
+        <li><a href="../electrorezo/stations/1-3-resistance-loi-ohm/"><span class="ico">🎓</span><span class="nom">Loi d’Ohm</span><span class="quoi">tension, intensité, résistance</span></a></li>
+        <li><a href="../electrorezo/stations/1-4-puissance-energie/"><span class="ico">🎓</span><span class="nom">Puissance et énergie</span><span class="quoi">watts, kilowattheures, coût</span></a></li>
+        <li><a href="../electrorezo/stations/4-10-choisir-section/"><span class="ico">🎓</span><span class="nom">Choisir une section de câble</span><span class="quoi">les critères, dans l’ordre</span></a></li>
+        <li><a href="../sous-tension/sous-tension-TD3-cas-particuliers.html"><span class="ico">🎓</span><span class="nom">Cas particuliers de section</span><span class="quoi">passage du cuivre à l’aluminium</span></a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <p class="prudence">Ces outils donnent des ordres de grandeur pour apprendre et pour l’atelier. Sur une installation, la documentation du constructeur et la fiche du fluide font foi.</p>
+</div>
+<script src="../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>
