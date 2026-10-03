@@ -6,6 +6,8 @@
      <script src=".../moteur/lisibilite.js"></script>
    Il pose un bouton flottant « Aa » qui ouvre un petit panneau :
      · taille du texte  − / + (70 % → 160 %, zoom global de la page) ;
+     · « Animations » : l'interrupteur du site pour les ordinateurs lents
+       (lu par moteur/animations.js) ;
      · « Police adaptée (DYS) » : bascule vers Lexend, police VARIABLE
        embarquée (moteur/polices/Lexend-variable.woff2, licence OFL) —
        formes de lettres espacées et sans ambiguïté, conçue pour la
@@ -23,6 +25,7 @@
   window.__piloteLisibilite = true;
 
   var CLE = "pilote_lisibilite";
+  var CLE_ANIM = "inerweb_animations"; // même clé que moteur/animations.js
   var MIN = 70, MAX = 160, PAS = 10;
 
   // Racine du dossier moteur/, déduite de l'adresse de ce script.
@@ -82,7 +85,16 @@
     "#lisib-panneau label{display:flex;align-items:center;gap:8px;cursor:pointer;margin:10px 0 4px}" +
     "#lisib-panneau input[type=checkbox]{width:20px;height:20px}" +
     "#lisib-raz{background:none;border:none;color:#5a6b7d;text-decoration:underline;cursor:pointer;padding:0;font-size:13px}" +
-    "@media print{#lisib-bouton,#lisib-panneau{display:none!important}}";
+    /* La croix range le bouton (Franck, 03/10 : il recouvrait du contenu sur téléphone) ; un petit
+       onglet au bord droit le rend. Rangé pour la session seulement : il revient à la visite suivante. */
+    "#lisib-masquer{position:fixed;right:8px;bottom:120px;z-index:59;width:22px;height:22px;border-radius:50%;" +
+    "border:1.5px solid #1B3A63;background:#fff;color:#1B3A63;font:700 14px/1 Calibri,sans-serif;cursor:pointer;padding:0}" +
+    "#lisib-onglet{position:fixed;right:0;bottom:96px;z-index:58;width:22px;height:40px;border-radius:8px 0 0 8px;" +
+    "border:2px solid #1B3A63;border-right:0;background:#fff;color:#1B3A63;font:700 12px/1 'Trebuchet MS',Calibri,sans-serif;" +
+    "cursor:pointer;padding:0;display:none}" +
+    "html.lisib-range #lisib-bouton,html.lisib-range #lisib-masquer,html.lisib-range #lisib-panneau{display:none!important}" +
+    "html.lisib-range #lisib-onglet{display:block}" +
+    "@media print{#lisib-bouton,#lisib-panneau,#lisib-masquer,#lisib-onglet{display:none!important}}";
 
   var style = document.createElement("style");
   style.textContent = css;
@@ -92,7 +104,7 @@
     var b = document.createElement("button");
     b.id = "lisib-bouton";
     b.type = "button";
-    b.title = "Lisibilité : taille du texte, police adaptée (DYS)";
+    b.title = "Lisibilité : taille du texte, police adaptée (DYS), animations";
     b.setAttribute("aria-label", "Réglages de lisibilité");
     b.setAttribute("aria-expanded", "false");
     b.setAttribute("aria-controls", "lisib-panneau");
@@ -108,10 +120,27 @@
       '<span id="lisib-taille"></span>' +
       '<button type="button" class="pm" id="lisib-plus" aria-label="Agrandir le texte">+</button></div>' +
       '<label><input type="checkbox" id="lisib-dys"> Police adaptée (DYS)</label>' +
+      '<label title="Décocher sur un ordinateur lent : les animations s\'arrêtent sur tout le site"><input type="checkbox" id="lisib-anim"> Animations</label>' +
       '<button type="button" id="lisib-raz">Réinitialiser</button>';
 
     document.body.appendChild(b);
     document.body.appendChild(p);
+
+    var x = document.createElement("button");
+    x.id = "lisib-masquer"; x.type = "button"; x.textContent = "×";
+    x.title = "Ranger le bouton Aa"; x.setAttribute("aria-label", "Ranger le bouton de lisibilité");
+    var o = document.createElement("button");
+    o.id = "lisib-onglet"; o.type = "button"; o.textContent = "Aa";
+    o.title = "Ressortir le bouton Aa"; o.setAttribute("aria-label", "Ressortir le bouton de lisibilité");
+    document.body.appendChild(x);
+    document.body.appendChild(o);
+    function ranger(oui) {
+      document.documentElement.classList.toggle("lisib-range", oui);
+      try { if (oui) sessionStorage.setItem("lisib_range", "1"); else sessionStorage.removeItem("lisib_range"); } catch (e) { /* tant pis */ }
+    }
+    try { if (sessionStorage.getItem("lisib_range") === "1") ranger(true); } catch (e) { /* tant pis */ }
+    x.addEventListener("click", function () { basculer(false); ranger(true); o.focus(); });
+    o.addEventListener("click", function () { ranger(false); b.focus(); });
 
     /* Le bouton annonce son état, le panneau se ferme par Échap, et le
        focus revient à ce qui l'a ouvert : sinon il reste dans le vide,
@@ -139,6 +168,14 @@
     });
     document.getElementById("lisib-dys").addEventListener("change", function (e) {
       etat.dys = !!e.target.checked; memoriser(); appliquer();
+    });
+    /* L'interrupteur « Animations » (moteur/animations.js) : clé partagée
+       par tout le site ; la page se recharge pour repartir du bon état. */
+    var anim = document.getElementById("lisib-anim");
+    try { anim.checked = localStorage.getItem(CLE_ANIM) !== "non"; } catch (e) { anim.checked = true; }
+    anim.addEventListener("change", function (e) {
+      try { localStorage.setItem(CLE_ANIM, e.target.checked ? "oui" : "non"); } catch (err) { /* tant pis */ }
+      location.reload();
     });
     document.getElementById("lisib-raz").addEventListener("click", function () {
       etat = { taille: 100, dys: false }; memoriser(); appliquer();
