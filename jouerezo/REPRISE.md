@@ -2,6 +2,10 @@
 
 > Point d'entrée pour reprendre le chantier. L'état vit ici, pas en mémoire. `LISEZ-MOI.md` décrit le produit.
 
+## État au 03/10/2026 (midi)
+
+- **Le dépanneur n'est plus un jeu de JouéRézo** (Franck, 03/10 : « je supprime des jeux le dépannage »). Il a sa station : **SimuRézo**, `inerweb.fr/simurezo/` (atelier `C:gitinerweb-dep`, chat « Circuit frigorifique réaliste »), refonte complète qui a repris les deux scènes. Ici restent, hors page, `moteur/depanneur*.js`, `donnees/depanneur.js`, les deux feuilles de scène et `duel/` : la source d'origine, à ne pas relivrer (drapeau `station: true` dans JR_JEUX).
+
 ## État au 03/10/2026 (matin)
 
 - **EN LIGNE, caché** : `https://inerweb.fr/jouerezo/` — dix jeux (le dépanneur ajouté le 03/10 à 6 h). Site `pilote-fluides` : nuit `5d4fe44d` + `f4a2526e` (six jeux, image d'accueil), matin : livraison v2 (schéma, Qui suis-je, pendu, vrai et symbole, outils). Poussés depuis un worktree détaché de `origin/main`.
@@ -29,7 +33,9 @@ Franck a jugé la scène v1 « bof » : il veut « un vrai circuit frigorifique 
 - Recommandation : B, en lui empruntant à A le point « aspiration » au bulbe et le filtre + voyant au groupe.
 - Franck (03/10, 7 h) : « j'aime beaucoup les deux… les 2 en fonction des exercices, histoire de varier ». Fait : `moteur/depanneur-scene-coupe.js` (A, `window.JR_SCENE_COUPE`, `svg.scene.coupe`) et `moteur/depanneur-scene-atelier.js` (B, `window.JR_SCENE_ATELIER`, `svg.scene.atelier`), feuilles `depanneur-scene-coupe.css` / `-atelier.css` (keyframes préfixées `scc-` / `sca-`, aucune règle commune), `depanneur.js` alterne une situation sur deux (`i % 2`). L'ancienne scène et sa section CSS sont retirées ; `fabriquer-pages.mjs` pose les deux feuilles et les deux scripts sur la seule page du dépanneur ; `livrer.mjs` exclut `duel/` et tamponne les feuilles. Joué 3 situations PC + téléphone (375 px, page non élargie), console vide. Livré sur le site (clé `20261003-0731`, commit site `8be6266b` depuis un worktree détaché d'`origin/main` : le `main` local du site avait 3 commits non poussés d'un autre chat, à rebaser par lui).
 - Remarque de Franck sur le condenseur (« les arrondis des fins de serpentin dans le mauvais sens ») : c'était la scène atelier, drapeau de balayage des arcs inversé dans `rangs()` (les coudes de retour rentraient dans la batterie) ; corrigé, serpentin rentré de 10 px pour que les coudes se voient en entier. La coupe vivante était juste.
-- Suite : « le reste du développement » du dépanneur, que Franck doit décrire.
+- **03/10, 8 h 20 — la coupe vivante suit désormais la Croix du frigoriste** (règle absolue de Franck, oubliée dans le cahier du duel) : groupe en haut (compresseur à droite, condenseur au centre, bouteille, filtre, voyant vers la gauche), chambre en bas (détendeur à gauche, évaporateur, bulbe sur l'aspiration), repères 1-4, prises BP/HP aux vannes du compresseur. Livrée (site `3b9b3d07`, clé `20261003-0821`).
+- **Incident de livraison, 8 h 25** : `livrer.mjs` copiait tout l'atelier, y compris les fichiers NON COMMITÉS du jeu « voyage » qu'un autre chat fabrique en parallèle dans ce même atelier (voyage.html, moteur/voyage-*.js, voyage/voix/*.mp3…) : partis en ligne dans `3b9b3d07`, retirés dans `f72bae49`. Depuis, `livrer.mjs` ne livre que les fichiers suivis par git (`git ls-files`) et affiche ce qu'il ignore. **Chat « voyage » : rien à faire de votre côté, vos fichiers sont intacts dans l'atelier ; livrez-les quand ils sont commités.**
+- « Le reste du développement » du dépanneur devient un produit à part : **inerWeb Dép** (`C:\git\inerweb-dep`, LIRE son `task_plan.md`). JouéRézo garde son dépanneur tel quel.
 
 ## Restes
 

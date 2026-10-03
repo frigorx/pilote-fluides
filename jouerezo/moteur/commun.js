@@ -185,7 +185,7 @@
   JR.accueil = function () {
     const zone = document.getElementById("liste-jeux");
     if (!zone) return;
-    zone.innerHTML = Object.keys(window.JR_JEUX).map(function (id) {
+    zone.innerHTML = Object.keys(window.JR_JEUX).filter(id => !window.JR_JEUX[id].station).map(function (id) {
       const m = window.JR_JEUX[id];
       const themes = (window.JR_THEMES[id] || []).map(t =>
         '<li><a href="' + id + '.html?t=' + JR.esc(t.id) + '">' + JR.esc(t.emoji + " " + t.nom) + '</a></li>').join("");

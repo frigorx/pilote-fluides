@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<script src="../moteur/animations.js?v=7bddbcaafd"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#1b3a63">
@@ -16,7 +15,7 @@
      copie servie par outils/livrer.mjs. Les jeux rejouent le contenu des
      stations existantes : rien n'est écrit ici qui ne soit déjà en ligne.
      =================================================================== -->
-<link rel="stylesheet" href="jouerezo.css?v=20261003-0821">
+<link rel="stylesheet" href="jouerezo.css?v=20261003-0959">
 <style>
   .hero { display: grid; gap: 10px; }
   .hero .accroche { font-size: 1.15rem; max-width: 50rem; }
@@ -42,6 +41,15 @@
     </div>
   </section>
   <section id="liste-jeux" class="jeux" aria-label="Les jeux"></section>
+  <!-- ressource complémentaire (Voyage dans tous ses états) : carte posée à la main, PAS par JR_JEUX (fabriquer-pages.mjs écraserait voyage.html) -->
+  <section class="jeux" aria-label="En complément">
+    <section class="carte jeu" aria-labelledby="j-voyage">
+      <div class="entete"><img src="illustrations/voyage.svg" alt="" width="64" height="64">
+        <div><h2 id="j-voyage"><a href="voyage.html">Voyage dans tous ses états</a></h2>
+          <p class="phrase">Suivez une molécule de fluide frigorigène dans tout le circuit : huit organes, comment ils marchent, une question à chaque arrêt.</p></div></div>
+      <ul class="themes"><li><a href="voyage.html">▶ Le voyage animé</a></li><li><a href="voyage/livret/voyage-dans-tous-ses-etats.pdf">📄 Le livret A5 (PDF)</a></li></ul>
+    </section>
+  </section>
   <p class="legende">Les symboles viennent de la bibliothèque inerWeb (collection QElectroTech, CC BY 3.0). Les questions d'électricité et de travail en hauteur sont celles de HoCourant et de R408. Les classes et les PRP des fluides sont ceux des planches HabFluide ; en intervention, la fiche du fluide fait foi.</p>
   <nav class="actions" aria-label="Ailleurs sur le site">
     <a class="btn sec" href="../plan.html">Plan des réseaux</a>
@@ -50,14 +58,14 @@
   </nav>
 </main>
 <!-- scripts -->
-<script src="donnees/schemas.js?v=20261003-0821"></script>
-<script src="donnees/reel-symbole.js?v=20261003-0821"></script>
-<script src="donnees/definitions.js?v=20261003-0821"></script>
-<script src="donnees/banque-electrorezo.js?v=20261003-0821"></script>
-<script src="donnees/aventure.js?v=20261003-0821"></script>
-<script src="donnees/depanneur.js?v=20261003-0821"></script>
-<script src="donnees/themes.js?v=20261003-0821"></script>
-<script src="moteur/commun.js?v=20261003-0821"></script>
+<script src="donnees/schemas.js?v=20261003-0959"></script>
+<script src="donnees/reel-symbole.js?v=20261003-0959"></script>
+<script src="donnees/definitions.js?v=20261003-0959"></script>
+<script src="donnees/banque-electrorezo.js?v=20261003-0959"></script>
+<script src="donnees/aventure.js?v=20261003-0959"></script>
+<script src="donnees/depanneur.js?v=20261003-0959"></script>
+<script src="donnees/themes.js?v=20261003-0959"></script>
+<script src="moteur/commun.js?v=20261003-0959"></script>
 <!-- /scripts -->
 <script src="../moteur/lisibilite.js"></script>
 <script src="../moteur/marque.js" data-cartouche="JouéRézo" data-licence="cc-by-nc-nd"></script>

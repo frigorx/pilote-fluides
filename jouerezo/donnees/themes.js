@@ -46,7 +46,7 @@ window.JR_JEUX = {
   pendu: { nom: "Le pendu du frigo", lettre: "P", emoji: "🌡️",
     phrase: "Un mot du métier, lettre par lettre. Chaque lettre fausse fait chauffer le compresseur.",
     regle: "Cinq mots. L'indice, c'est la définition. Huit lettres fausses et le compresseur grille." },
-  depanneur: { nom: "Le dépanneur", lettre: "R", emoji: "🔧",
+  depanneur: { nom: "Le dépanneur", lettre: "R", emoji: "🔧", station: true, /* retiré de la liste des jeux (Franck, 03/10 : « je supprime des jeux le dépannage ») : devient une station à part */
     phrase: "Une chambre froide en panne. Branchez le manifold, pincez le thermomètre, regardez, touchez, puis nommez la panne.",
     regle: "Trois situations. Vous choisissez vos relevés comme sur le chantier ; les pressions se lisent sur le cadran, la surchauffe et le sous-refroidissement se calculent. Puis vous concluez. Moins de relevés inutiles, meilleur coefficient." }
 };
