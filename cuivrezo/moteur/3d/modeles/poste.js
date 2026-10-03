@@ -138,13 +138,14 @@
     const crochet = (x, y) => K.cylZ(5, 50, M.zingue, x, y, 40);
     racine.add(panneau);
 
-    /* 3. la cintrette : la roue en haut, la poignée fixe et son crochet, le bras mobile qui pend */
+    /* 3. la cintrette, d'après le croquis de Franck (images/consignes/1-4-cintrette-reference.png) : la roue en haut,
+       la poignée fixe verticale sous la roue et son crochet, le bras mobile à droite qui prolonge le guide */
     const cintrette = G(
       K.cylZ(72, 22, M.zingue, 0, 0, 0), K.mesh(K.tore(72, 7, 10, 48), M.acierSombre, 0, 0, 0),
       ...[0, 1, 2, 3, 4, 5].map(i => K.cylZ(13, 24, M.sombre, Math.cos(i * Math.PI / 3) * 42, Math.sin(i * Math.PI / 3) * 42, 0)),
       K.cylZ(14, 30, M.acierSombre, 0, 0, 2),
       P(26, 400, 16, M.acier, -30, -215, -14), K.cylY(17, 130, M.caoutchouc, -30, -360, -14),
-      Pr(36, 46, 28, 4, M.acierSombre, -88, 6, -4)
+      Pr(36, 46, 28, 4, M.acierSombre, -58, 66, -4)   /* le crochet, en haut à gauche de la roue (croquis de Franck, 01/10) */
     );
     const brasCintrette = G(P(26, 380, 16, M.acier, 0, -190, 0), Pr(40, 70, 30, 6, M.acierSombre, 0, -95, 6),
       K.cylY(17, 130, M.caoutchouc, 0, -330, 0));
