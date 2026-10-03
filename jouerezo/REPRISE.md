@@ -20,14 +20,16 @@
 8. Les six vues d'outils (planche Codex découpée) à la place des photos d'atelier.
 9. **La scène vivante du dépanneur** (`moteur/depanneur-scene.js`) : tableau composé par Fable avec les vues d'organes du Tome 3 (évaporateur, condenseur, détendeur, filtre), un compresseur dessiné, les tuyaux, le voyant, les prises BP/HP, le manifold (logique d'aiguille du module « pose du manifold »), le thermomètre électronique et la pince. Ce n'est pas un schéma technique mais une scène de jeu ; à valider par Franck (demande du 03/10 : « animation des éléments frigo, lecture de mano plus réaliste et vivant »).
 
-## Duel « scène du dépanneur » (03/10/2026, après-midi) — EN ATTENTE DU CHOIX DE FRANCK
+## Duel « scène du dépanneur » (03/10/2026) — TRANCHÉ : LES DEUX, EN ALTERNANCE, LIVRÉ
 
 Franck a jugé la scène v1 « bof » : il veut « un vrai circuit frigorifique en fonctionnement, plus réaliste, peut-être un peu de 3D », dans l'esprit de Frigodiag (KOTZA, son ancien professeur) mais « du 21e siècle » ; la méthode surchauffe / sous-refroidissement reste le cœur du jeu. Pas de téléchargement des démos KOTZA (refusé par Franck : « je ne veux pas refaire ça »).
 
 - Cahier unique : `duel/CAHIER.md`. Deux pistes, même API que `moteur/depanneur-scene.js` (le jeu ne change pas) : `duel/A-coupe-vivante/` (2D à plat, on voit dedans) et `duel/B-isometrique-atelier/` (2,5D façon atelier). Page côte à côte : `duel/index.html` → `http://localhost:8797/jouerezo/duel/index.html` (serveur `node outils/servir.mjs`).
 - Vérifié : `node --check`, console vide, huit gestes, six cas, textes ≥ 12 px, pas de texte sur un tube.
 - Recommandation : B, en lui empruntant à A le point « aspiration » au bulbe et le filtre + voyant au groupe.
-- Suite : quand Franck a choisi, remplacer `moteur/depanneur-scene.js` et la section « scène » de `jouerezo.css` par la piste retenue, rejouer `depanneur.html` au format téléphone, livrer ; puis « le reste du développement » (Franck n'a pas encore dit quoi).
+- Franck (03/10, 7 h) : « j'aime beaucoup les deux… les 2 en fonction des exercices, histoire de varier ». Fait : `moteur/depanneur-scene-coupe.js` (A, `window.JR_SCENE_COUPE`, `svg.scene.coupe`) et `moteur/depanneur-scene-atelier.js` (B, `window.JR_SCENE_ATELIER`, `svg.scene.atelier`), feuilles `depanneur-scene-coupe.css` / `-atelier.css` (keyframes préfixées `scc-` / `sca-`, aucune règle commune), `depanneur.js` alterne une situation sur deux (`i % 2`). L'ancienne scène et sa section CSS sont retirées ; `fabriquer-pages.mjs` pose les deux feuilles et les deux scripts sur la seule page du dépanneur ; `livrer.mjs` exclut `duel/` et tamponne les feuilles. Joué 3 situations PC + téléphone (375 px, page non élargie), console vide. Livré sur le site (clé `20261003-0731`, commit site `8be6266b` depuis un worktree détaché d'`origin/main` : le `main` local du site avait 3 commits non poussés d'un autre chat, à rebaser par lui).
+- Remarque de Franck sur le condenseur (« les arrondis des fins de serpentin dans le mauvais sens ») : c'était la scène atelier, drapeau de balayage des arcs inversé dans `rangs()` (les coudes de retour rentraient dans la batterie) ; corrigé, serpentin rentré de 10 px pour que les coudes se voient en entier. La coupe vivante était juste.
+- Suite : « le reste du développement » du dépanneur, que Franck doit décrire.
 
 ## Restes
 

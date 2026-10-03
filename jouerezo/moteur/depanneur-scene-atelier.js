@@ -113,7 +113,7 @@
       o += '<path d="' + d + '"/>'; c += '<path d="' + d + '" stroke="' + col + '"/>';
       fl += '<path class="sc-flux ' + cls(i, n) + '" d="' + d + '"/>';
       if (i < n - 1) {                                  /* coude de retour, du côté où le rang se termine */
-        const fin = gd ? x1 : x0, b = "M" + fin + " " + y + " A" + rb + " " + rb + " 0 0 " + (gd ? 0 : 1) + " " + fin + " " + r1(y + p);
+        const fin = gd ? x1 : x0, b = "M" + fin + " " + y + " A" + rb + " " + rb + " 0 0 " + (gd ? 1 : 0) + " " + fin + " " + r1(y + p);
         o += '<path d="' + b + '"/>'; c += '<path d="' + b + '" stroke="' + col + '"/>';
       }
     }
@@ -267,7 +267,7 @@
     s += '<rect x="608" y="548" width="16" height="12" fill="#3b4756"/><rect x="940" y="548" width="16" height="12" fill="#3b4756"/>';
     /* condenseur à air : batterie (ailettes + rangs), hélice par-dessus */
     s += vol(600, 338, 148, 194, 48, "url(#sc-ailettes)", "url(#sc-g-tole)", "#b3c0cf");
-    s += '<g clip-path="url(#sc-clip-cond)">' + rangs(606, 742, 352, 520, 12, (i, n) => mix("#c0392b", "#c9451a", Math.min(1, i / (n * .6))), (i, n) => (i < n * .5 ? "hp" : "liq"), false) + "</g>";
+    s += '<g clip-path="url(#sc-clip-cond)">' + rangs(616, 732, 352, 520, 12, (i, n) => mix("#c0392b", "#c9451a", Math.min(1, i / (n * .6))), (i, n) => (i < n * .5 ? "hp" : "liq"), false) + "</g>";
     if (S.encrasse) s += '<rect x="600" y="338" width="148" height="194" fill="url(#sc-saleté)" class="sc-saleté"/><path d="M604 346 q34 -9 70 2 t70 -3 M604 520 q40 8 72 -3 t68 4" stroke="#6b5636" stroke-width="5" fill="none" opacity=".45" stroke-linecap="round"/>';
     s += helice(674, 435, 46, S.ventCond, 5);
     /* chaleur rejetée au-dessus du condenseur */
