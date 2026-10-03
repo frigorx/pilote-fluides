@@ -58,9 +58,9 @@
 
   /* ---------- rendu ---------- */
   const racine = document.getElementById("vue");
-  function rendre(html, titreDoc) {
+  function rendre(html, titreDoc, cadreDejaPlace) {
     stationArreter(); sta = null;          /* changer de vue coupe la voix */
-    racine.innerHTML = cadreRessource + html;
+    racine.innerHTML = (cadreDejaPlace ? "" : cadreRessource) + html;
     document.title = (titreDoc ? titreDoc + " · " : "") + "inerWeb HoCourant";
     const h1 = racine.querySelector("h1");
     if (h1) { h1.setAttribute("tabindex", "-1"); h1.focus({ preventScroll: true }); }
@@ -92,12 +92,39 @@
     "Les distances et limites applicables sont celles enseignées " +
     "pour l'installation concernée.</p></footer>";
 
+  /* ---------- le réseau : les paliers sont les lignes, les modules leurs stations ----------
+     Franck, 02/10 : l'accueil montre dès l'arrivée le LIVRE et le RÉSEAU, en grand, sans clic ni
+     défilement. Une station ouvre sa fiche (comme ?module=Mx) ; une station découverte est pleine. */
+  function reseauHtml() {
+    let lignes = "";
+    PALIERS.forEach((p) => {
+      let stations = "";
+      for (const mo of modulesDuPalier(p.id)) {
+        const fait = !!etat.decouvertes[mo.id];
+        stations += '<li><button class="rz-station' + (fait ? " rz-fait" : "") + '" data-fiche="' + mo.id + '">' +
+          '<span class="rz-point" aria-hidden="true"></span><span class="rz-nom">' + seq(mo.nom) + "</span>" +
+          (fait ? '<span class="sr-only"> (découverte)</span>' : "") + "</button></li>";
+      }
+      lignes += '<div class="rz-ligne"><span class="rz-terminus" title="' + seq(p.nom) + '">' + seq(p.sigle) + "</span>" +
+        '<ol class="rz-stations">' + stations + "</ol></div>";
+    });
+    return '<section class="carte rz-carte" aria-labelledby="rz-titre">' +
+      '<h2 id="rz-titre">Le réseau <small>— cinq lignes, de S0 à BR · touchez une station</small></h2>' +
+      '<div class="rz-plan">' + lignes + "</div></section>";
+  }
+
   /* ---------- vue : accueil ---------- */
   function vueAccueil() {
     const m = mission();
     rendre(
       entete(null) +
       "<h1>Préparer son habilitation électrique</h1>" +
+      '<div class="accueil-ame">' + reseauHtml() +
+      '<a class="carte ame-livre" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download title="Télécharger le livret (PDF)">' +
+      '<img src="livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livret HoCourant" width="672" height="954">' +
+      '<span class="ame-livre-texte"><strong>Le livre</strong><span>124 pages · PDF</span>' +
+      '<span class="btn btn-primaire">Télécharger</span></span></a></div>' +
+      cadreRessource +
       '<div class="carte accent"><p><strong>Comment ça marche ?</strong> Votre formateur vous donne un ' +
       "<strong>code de mission</strong> — par exemple <span class=\"badge badge-code\">B0-K7-3M</span> : " +
       "le niveau à obtenir, votre code personnel, la date limite. Vous le saisissez une fois, et l'application " +
@@ -130,7 +157,7 @@
       '<div class="btn-ligne"><button class="btn btn-secondaire" data-aller="lot">Générer des codes</button>' +
       '<button class="btn btn-secondaire" data-aller="verif">Vérifier un code</button></div></div>' +
       pied,
-      "Accueil"
+      "Accueil", true
     );
   }
 
