@@ -326,7 +326,7 @@ export function decor(H) {
   feuillu(4.0, -6.3, 1.15);          /* au bout de l'allée de droite */
   conifere(9.2, -6.25, 8.6, 1.25);   /* jardin de la maison, derrière la cuisine */
   feuillu(16.9, -6.0, 1.35);         /* jardin, côté droit (hors de l'aplomb de la maison) */
-  feuillu(19.3, -2.2, 1.2);          /* bande gazonnée à droite de la maison, encadre la PAC */
+  feuillu(19.8, -6.2, 1.2);          /* derrière la salle d'arcade, côté droit (hors de l'emprise du pavillon) */
 
   /* =====================================================================
      8. LE JARDIN DE LA MAISON : haie taillée au fond, clôture en lattes

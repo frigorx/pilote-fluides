@@ -12,9 +12,12 @@
    Emprise : x −22..−13,5 ; z −5,5..2,6 ; quatre niveaux de 3,2 m
    (y 0..12,8) et un acrotère jusqu'à 13,4. La façade sur rue est posée
    en z = 1,75 : auvent, brise-soleil, ailettes et drapeaux tiennent
-   ainsi dans l'emprise (rien au-delà de z = 2,6).
-   Toute la géométrie est dans la zone « bureau » : un clic n'importe où
-   sur l'immeuble ouvre le réseau des règles.
+   ainsi dans l'emprise (rien au-delà de z = 2,6, sauf la marquise du cinéma,
+   qui avance jusqu'à z = 3,55 au-dessus du trottoir).
+   Toute la géométrie est dans la zone « bureau », sauf le cinéma de quartier
+   (zone « cinema » : travée gauche du rez-de-chaussée et sa marquise) et le
+   local à louer (décor, travée droite) : un clic sur le reste de l'immeuble
+   ouvre le réseau des règles.
    ===================================================================== */
 export function immeuble(H) {
   const P = H.P, Z = "bureau";
@@ -148,10 +151,11 @@ export function immeuble(H) {
   const ETG = { a: 0.85, b: 2.65 }, RDC = { a: 0.6, b: 2.6 };
   const baie = function (c, w, n, x) { return Object.assign({ c: c, w: w, a: n.a, b: n.b }, x || {}); };
   /* façade sur rue : travées 1, 2, 4, 5 vitrées ; la travée 3 est l'entrée puis le mur-rideau.
-     Au rez-de-chaussée, les travées 2 et 4 sont pleines : la plaque et l'interphone s'y posent. */
+     Au rez-de-chaussée, trois ouvertures : les portes du cinéma (à gauche), le hall (au centre) et
+     le local à louer (à droite) ; la plaque et l'interphone se posent sur les piles qui les séparent. */
   const XF = [-21.1, -19.6, -15.9, -14.4];
   mur("x", XG, XD, ZA, +1, function (i) {
-    if (i === 0) return [baie(XF[0], 1.1, RDC), baie(XF[3], 1.1, RDC), { c: -17.75, w: 2.0, a: 0, b: 2.75, type: "vide" }];
+    if (i === 0) return [{ c: -20.55, w: 1.3, a: 0, b: 2.75, type: "vide" }, { c: -17.75, w: 2.0, a: 0, b: 2.75, type: "vide" }, { c: -14.84, w: 2.08, a: 0, b: 2.75, type: "vide" }];
     return XF.map(function (c) { return baie(c, 1.1, ETG); }).concat([{ c: -17.75, w: 2.0, a: 0, b: HN, type: "vide" }]);
   }, { socle: true });
   /* pignon droit, côté allée : au rez-de-chaussée, la porte et la ventilation du local technique */
@@ -252,7 +256,7 @@ export function immeuble(H) {
   });
   [-18.6, -17.75, -16.9].forEach(function (x) { cy(Z, "#fff3c4", x, 2.855, 2.15, 0.06, 0.012, { seg: 10, lum: 1 }); });
   /* la plaque bleue à la balance, cerclée d'or, fixée par quatre rosaces */
-  const PX = -15.9, PY = 1.2;
+  const PX = -16.32, PY = 1.2;
   bx(Z, P.or, PX - 0.39, PX + 0.39, PY - 0.04, PY + 0.94, ZA + 0.04, ZA + 0.06);
   bx(Z, P.bleu, PX - 0.35, PX + 0.35, PY, PY + 0.9, ZA + 0.06, ZA + 0.075);
   [[-0.3, 0.05], [0.3, 0.05], [-0.3, 0.85], [0.3, 0.85]].forEach(function (r) {
@@ -271,17 +275,243 @@ export function immeuble(H) {
       ext(Z, G, [[-0.09, 0], [0.09, 0], [0.055, -0.05], [-0.055, -0.05]], 0.01, xp, b + 0.255, z);   /* plateau */
     });
   })(PX, PY + 0.18, ZA + 0.075);
-  /* interphone à défilement et défibrillateur (DAE) sur la travée 2 */
+  /* interphone à défilement, sur la pile entre le cinéma et le hall */
   bx(Z, "#c9ced6", -19.2, -18.98, 1.12, 1.56, ZA + 0.04, ZA + 0.065, { edge: 1 });
   bx(Z, "#1e2630", -19.17, -19.01, 1.38, 1.5, ZA + 0.065, ZA + 0.07);
   bx(Z, "#8fe3ff", -19.15, -19.03, 1.4, 1.48, ZA + 0.07, ZA + 0.072, { lum: 1 });
   for (let r = 0; r < 3; r++) for (let c = 0; c < 2; c++) bx(Z, "#3a424c", -19.16 + c * 0.08, -19.1 + c * 0.08, 1.17 + r * 0.06, 1.21 + r * 0.06, ZA + 0.065, ZA + 0.072);
-  bx(Z, "#2e9d5a", -20.12, -19.62, 1.0, 1.62, ZA + 0.04, ZA + 0.17, { edge: 1 });
-  bx(Z, "#f7f5ef", -20.06, -19.68, 1.06, 1.56, ZA + 0.17, ZA + 0.175, { t: 0.5 });
-  sp(Z, "#f7f5ef", -19.91, 1.36, ZA + 0.178, 0.045, 0.045, 0.006, { seg: 8, seg2: 4 });   /* cœur blanc */
-  sp(Z, "#f7f5ef", -19.83, 1.36, ZA + 0.178, 0.045, 0.045, 0.006, { seg: 8, seg2: 4 });
-  bxr(Z, "#f7f5ef", -19.87, 1.31, ZA + 0.178, 0.085, 0.085, 0.01, 0, 0, 45);
-  bxr(Z, "#2e9d5a", -19.87, 1.33, ZA + 0.186, 0.012, 0.09, 0.004, 0, 0, -25);           /* éclair */
+
+  /* =====================================================================
+     4 bis. LE CINÉMA DE QUARTIER (zone « cinema ») : la travée gauche du rez-de-chaussée
+        portes doubles vitrées sous une marquise à ampoules, deux vitrines d'affiches
+        éclairées, le hall rouge deviné derrière le verre (caisse, moquette, portes de salle)
+     ===================================================================== */
+  const CN = "cinema";
+  const ROUGE = "#9b1b34", MOQ = "#b02440", BORD = "#8c2c40", LAITON = "#c9a24a", SOMBRE = "#2e2328", CREME = "#f1e8d2";
+  const DX0 = -21.2, DX1 = -19.9, DXC = -20.55;                  /* l'ouverture des portes et son axe */
+  const ZG = E(ZA, 1, 0.15, 0.18), ZO = E(ZA, 1, 0.12, 0.21);    /* vitrage et ossature, en retrait comme au hall */
+  const ZS = ZA + 0.04;                                          /* face du soubassement en pierre */
+
+  /* les portes : deux vantaux vitrés, plinthes en laiton, tirants, imposte à petits-bois */
+  bx(CN, P.verre, DX0, DX1, 0.03, 2.75, ZG[0], ZG[1], { t: 0.2 });
+  [[DX0, DX0 + 0.07], [DX1 - 0.07, DX1], [DXC - 0.04, DXC + 0.04]].forEach(function (m) { bx(CN, SOMBRE, m[0], m[1], 0, 2.75, ZO[0], ZO[1]); });
+  bx(CN, SOMBRE, DX0, DX1, 2.68, 2.75, ZO[0], ZO[1]);
+  bx(CN, SOMBRE, DX0, DX1, 2.2, 2.26, ZO[0], ZO[1]);
+  [DX0 + 0.43, DX1 - 0.43].forEach(function (x) { bx(CN, SOMBRE, x - 0.012, x + 0.012, 2.26, 2.68, ZO[0] + 0.02, ZO[1] - 0.02); });
+  [[DX0 + 0.07, DXC - 0.04], [DXC + 0.04, DX1 - 0.07]].forEach(function (v) {
+    bx(CN, SOMBRE, v[0], v[1], 2.14, 2.2, ZO[0], ZO[1]);                                  /* traverse haute du vantail */
+    bx(CN, LAITON, v[0], v[1], 0.03, 0.2, ZO[1], ZO[1] + 0.015, { edge: 1 });             /* plinthe en laiton */
+  });
+  [DXC - 0.12, DXC + 0.12].forEach(function (x) {
+    cyv(CN, LAITON, x, 0.78, 1.62, ZA - 0.08, 0.014, { seg: 8 });                         /* grands tirants */
+    tube(CN, LAITON, x, 0.86, ZA - 0.08, x, 0.86, ZO[1], 0.008, { seg: 5 });
+    tube(CN, LAITON, x, 1.54, ZA - 0.08, x, 1.54, ZO[1], 0.008, { seg: 5 });
+  });
+  bx(CN, "#cfc8b8", DX0, DX1, 0, 0.035, 1.5, ZS, { edge: 1 });                            /* seuil */
+  bx(CN, LAITON, DX0 + 0.07, DX1 - 0.07, 0.035, 0.045, ZO[0] - 0.02, ZO[1] + 0.06);
+
+  /* le tapis rouge : sur le parvis jusqu'au seuil, puis dans le hall ; poteaux et cordon de velours */
+  bx(CN, MOQ, DXC - 0.5, DXC + 0.5, 0.03, 0.048, ZS, 2.58);
+  [DXC - 0.5, DXC + 0.47].forEach(function (x) { bx(CN, "#e0b64a", x, x + 0.03, 0.048, 0.052, ZS, 2.58); });
+  [-1, 1].forEach(function (s) {
+    const x = DXC + s * 0.66;
+    [2.0, 2.5].forEach(function (z) {
+      cy(CN, LAITON, x, 0.04, z, 0.075, 0.02, { seg: 12 });
+      cyv(CN, LAITON, x, 0.045, 0.88, z, 0.016, { seg: 8 });
+      sp(CN, LAITON, x, 0.91, z, 0.033, 0.033, 0.033, { seg: 8, seg2: 6 });
+    });
+    canal(CN, "#8a1730", [[x, 0.8, 2.0], [x, 0.7, 2.25], [x, 0.8, 2.5]], 0.012, { seg: 5 });
+  });
+
+  /* le hall, vu à travers les portes : moquette, murs bordeaux, portes de salle capitonnées, caisse */
+  bx(CN, MOQ, DXC - 0.55, DXC + 0.55, 0.02, 0.05, -0.93, 1.5);
+  [DXC - 0.55, DXC + 0.52].forEach(function (x) { bx(CN, "#e0b64a", x, x + 0.03, 0.05, 0.054, -0.93, 1.5); });
+  bx(CN, BORD, XI0, -19.72, 0.02, 2.9, -0.98, -0.93);                                       /* mur du fond */
+  bx(CN, "#6a2030", XI0, -19.72, 0.02, 0.9, -0.93, -0.91);                                   /* lambris */
+  bx(CN, LAITON, XI0, -19.72, 0.9, 0.93, -0.93, -0.9);                                       /* main courante */
+  bx(CN, BORD, -19.72, -19.7, 0.02, 2.9, -0.93, 1.45);                                       /* mur de droite, habillé */
+  bx(CN, LAITON, -21.0, -19.8, 0, 2.12, -0.93, -0.89);                                       /* chambranle des portes de salle */
+  [[-20.97, -20.43], [-20.37, -19.83]].forEach(function (v, k) {
+    bx(CN, "#a83048", v[0], v[1], 0.02, 2.08, -0.89, -0.86, { edge: 1 });
+    for (let q = 1; q < 4; q++) bx(CN, "#82223a", v[0] + q * 0.135 - 0.006, v[0] + q * 0.135 + 0.006, 0.1, 1.2, -0.86, -0.853);   /* capitonnage */
+    const hx = (v[0] + v[1]) / 2;
+    cy(CN, LAITON, hx, 1.5, -0.855, 0.085, 0.012, { axe: "z", seg: 14 });                     /* hublot : anneau, verre éclairé */
+    cy(CN, "#cfe8ff", hx, 1.5, -0.846, 0.065, 0.01, { axe: "z", seg: 14, lum: 1 });
+    bx(CN, LAITON, k ? v[0] + 0.04 : v[1] - 0.08, k ? v[0] + 0.08 : v[1] - 0.04, 0.85, 1.2, -0.86, -0.845);   /* plaque de poussée */
+  });
+  [-21.28, -19.52].forEach(function (x) { bx(CN, "#ffe3a0", x - 0.04, x + 0.04, 1.75, 1.95, -0.93, -0.89, { lum: 1 }); });   /* appliques */
+  /* la caisse : guichet vitré sur son comptoir en bois, lampe allumée, machine à billets */
+  bx(CN, "#7a4a34", -21.5, -20.7, 0.02, 1.05, 0.15, 0.75, { edge: 1 });
+  bx(CN, "#ffd9a0", -21.46, -20.74, 1.3, 1.92, 0.16, 0.18, { lum: 1 });                        /* fond de la cabine, éclairé */
+  bx(CN, LAITON, -21.5, -20.7, 0.9, 0.93, 0.75, 0.78);
+  bx(CN, "#7a5638", -21.54, -20.66, 1.05, 1.09, 0.1, 0.8, { edge: 1 });
+  bx(CN, P.verre, -21.5, -20.7, 1.09, 1.98, 0.72, 0.74, { t: 0.2 });
+  bx(CN, P.verre, -20.72, -20.7, 1.09, 1.95, 0.15, 0.72, { t: 0.2 });
+  [-21.5, -20.73].forEach(function (x) { bx(CN, SOMBRE, x, x + 0.03, 1.09, 1.98, 0.7, 0.75); });
+  bx(CN, SOMBRE, -21.5, -20.7, 1.95, 2.0, 0.15, 0.75);
+  bx(CN, "#ffd68a", -21.35, -20.85, 1.9, 1.94, 0.3, 0.6, { lum: 1 });
+  bx(CN, "#d9d4c8", -21.2, -20.95, 1.09, 1.28, 0.3, 0.5, { edge: 1 });
+  bx(CN, "#8fe3ff", -21.17, -20.98, 1.2, 1.26, 0.5, 0.505, { lum: 1 });
+
+  /* les deux vitrines d'affiches, encastrées dans les piles de pierre : caisson, cadre en laiton,
+     bandeau lumineux, verre. Les affiches sont faites de boîtes et de sphères éclairées, sans lettre. */
+  function vitrineAffiche(cx, fond, dessin) {
+    const x0 = cx - 0.28, x1 = cx + 0.28, yb = 0.98, yh = 2.08, zf = ZS, Y0 = 1.03, pz = zf + 0.066;
+    bx(CN, SOMBRE, x0, x1, yb, yh, zf, zf + 0.06, { edge: 1 });
+    bx(CN, fond, cx - 0.24, cx + 0.24, Y0, Y0 + 0.9, zf + 0.06, pz, { lum: 1 });
+    bx(CN, "#fff0c8", cx - 0.24, cx + 0.24, Y0 + 0.9, 2.03, zf + 0.06, pz, { lum: 1 });     /* bandeau lumineux du haut */
+    bx(CN, SOMBRE, cx - 0.24, cx + 0.24, Y0 + 0.9, Y0 + 0.915, pz, pz + 0.004);
+    bx(CN, LAITON, x0, x1, yb, yb + 0.05, zf + 0.06, zf + 0.11, { edge: 1 });
+    bx(CN, LAITON, x0, x1, yh - 0.05, yh, zf + 0.06, zf + 0.11, { edge: 1 });
+    bx(CN, LAITON, x0, x0 + 0.04, yb, yh, zf + 0.06, zf + 0.11, { edge: 1 });
+    bx(CN, LAITON, x1 - 0.04, x1, yb, yh, zf + 0.06, zf + 0.11, { edge: 1 });
+    bx(CN, P.verre, cx - 0.24, cx + 0.24, Y0, 2.03, zf + 0.095, zf + 0.1, { t: 0.16 });
+    /* les trois outils du dessin : boîte, disque, boîte tournée ; u,v partent du coin bas gauche, au centre de l'affiche */
+    const B = function (hex, u0, u1, v0, v1, dz) { bx(CN, hex, cx + u0, cx + u1, Y0 + v0, Y0 + v1, pz, pz + 0.004 + (dz || 0), { lum: 1 }); };
+    const S = function (hex, u, v, r, dz) { sp(CN, hex, cx + u, Y0 + v, pz + 0.004 + (dz || 0), r, r, 0.003, { lum: 1, seg: 14, seg2: 6 }); };
+    const R = function (hex, u, v, w, h, rot, dz) { bxr(CN, hex, cx + u, Y0 + v, pz + 0.006 + (dz || 0), w, h, 0.004, 0, 0, rot, { lum: 1 }); };
+    const X = function (hex, pts, u, v, dz) { ext(CN, hex, pts, 0.004, cx + u, Y0 + v, pz + 0.004 + (dz || 0), { lum: 1 }); };
+    dessin(B, S, R, X);
+  }
+
+  /* affiche 1 : « Voyage dans tous ses états » : la mascotte (molécule bleue, deux oreilles rondes)
+     sur fond crème, les trois états de l'eau, un serpentin de cuivre au pied */
+  vitrineAffiche(DXC - 0.98, "#f7edd2", function (B, S, R) {
+    B("#1d5fa6", -0.24, 0.24, 0, 0.07);                                     /* bande basse */
+    B("#1d5fa6", -0.24, 0.24, 0.8, 0.9);                                    /* bandeau du titre, sans lettre */
+    B("#e0a82e", -0.24, 0.24, 0.785, 0.8);
+    for (let k = 0; k < 9; k++) B("#c3ccd4", -0.152 + k * 0.0375, -0.144 + k * 0.0375, 0.09, 0.25);   /* ailettes */
+    B("#c97b48", -0.24, 0.19, 0.096, 0.124, 0.006);                        /* le serpentin de cuivre : trois passes, deux coudes */
+    B("#c97b48", -0.19, 0.19, 0.156, 0.184, 0.006);
+    B("#c97b48", -0.19, 0.24, 0.216, 0.244, 0.006);
+    B("#c97b48", 0.172, 0.2, 0.096, 0.184, 0.006);
+    B("#c97b48", -0.2, -0.172, 0.156, 0.244, 0.006);
+    B("#6fb6d8", -0.178, -0.102, 0.272, 0.348);                            /* glaçon */
+    B("#cdeefa", -0.17, -0.11, 0.28, 0.34, 0.006);
+    R("#1a5fae", 0, 0.343, 0.05, 0.05, 45); S("#1a5fae", 0, 0.305, 0.04, 0);                 /* goutte */
+    R("#2d86d8", 0, 0.343, 0.04, 0.04, 45, 0.006); S("#2d86d8", 0, 0.305, 0.033, 0.006);
+    [[0.115, 0.295, 0.03], [0.15, 0.318, 0.034], [0.18, 0.295, 0.028]].forEach(function (c) { S("#9fb3c0", c[0], c[1], c[2], 0); });   /* vapeur */
+    [[0.115, 0.295, 0.023], [0.15, 0.318, 0.027], [0.18, 0.295, 0.021]].forEach(function (c) { S("#eef3f6", c[0], c[1], c[2], 0.006); });
+    [-1, 1].forEach(function (s) {                                          /* la mascotte : deux oreilles rondes, une sphère bleue */
+      S("#1a5fae", s * 0.105, 0.69, 0.063, 0); S("#2d86d8", s * 0.105, 0.69, 0.056, 0.004); S("#8cc6f5", s * 0.105, 0.69, 0.03, 0.008);
+    });
+    S("#1a5fae", 0, 0.57, 0.15, 0.012); S("#2d86d8", 0, 0.57, 0.138, 0.016);
+    S("#86c3f5", -0.07, 0.64, 0.03, 0.022);
+    [-1, 1].forEach(function (s) {
+      S("#142a52", s * 0.05, 0.59, 0.018, 0.024); S("#ffffff", s * 0.05 + 0.006, 0.597, 0.006, 0.03);
+      S("#ff9db3", s * 0.09, 0.545, 0.018, 0.022);
+      R("#142a52", s * 0.03, 0.532, 0.03, 0.01, s * 25, 0.022);
+    });
+    R("#142a52", 0, 0.525, 0.045, 0.01, 0, 0.022);
+  });
+
+  /* affiche 2 : les films des régules : un flocon sur fond bleu nuit, une chambre froide au pied */
+  vitrineAffiche(DXC + 0.98, "#13264f", function (B, S, R, X) {
+    B("#e8f6ff", -0.24, 0.24, 0.84, 0.9);                                   /* givre en haut, et ses glaçons */
+    for (let k = 0; k < 10; k++) {
+      const L = 0.05 + (k % 3) * 0.03;
+      X("#e8f6ff", [[0, 0], [0.034, 0], [0.017, -L]], -0.22 + k * 0.049, 0.84, 0);
+    }
+    B("#7fc7ec", -0.24, 0.24, 0, 0.07);                                     /* givre en bas */
+    B("#bfe4f6", -0.24, 0.24, 0.07, 0.085);
+    [0, 60, 120].forEach(function (a) {
+      R("#dff3ff", 0, 0.5, 0.34, 0.022, a, 0.004);                            /* le flocon : trois diamètres, des branches en V */
+      [1, -1].forEach(function (s) {
+        const t0 = a + (s > 0 ? 0 : 180);
+        [0.07, 0.12].forEach(function (r) {
+          [1, -1].forEach(function (sg) {
+            const t = (t0 + sg * 60) * Math.PI / 180, p = t0 * Math.PI / 180;
+            R("#dff3ff", r * Math.cos(p) + 0.035 * Math.cos(t), 0.5 + r * Math.sin(p) + 0.035 * Math.sin(t), 0.07, 0.016, t0 + sg * 60, 0.004);
+          });
+        });
+      });
+    });
+    S("#ffffff", 0, 0.5, 0.03, 0.012);
+    [[-0.19, 0.64], [0.2, 0.62], [-0.21, 0.34], [0.2, 0.38]].forEach(function (p) { R("#cfe9ff", p[0], p[1], 0.022, 0.022, 45, 0.004); });
+    B("#9fb0bd", -0.13, 0.13, 0.115, 0.275);                                /* la chambre froide : caisson, porte, poignée, voyant */
+    B("#eef3f6", -0.12, 0.12, 0.125, 0.265, 0.006);
+    B("#cdd9e2", -0.03, 0.1, 0.13, 0.25, 0.012);
+    B("#667482", -0.015, -0.005, 0.17, 0.21, 0.018);
+    S("#ff5a5a", -0.08, 0.2, 0.012, 0.018);
+  });
+
+  /* la marquise : dalle qui avance de 1,7 m au-dessus du trottoir, jupe rouge et or, pellicule au centre,
+     une rangée d'ampoules allumées sur la tranche et sur les côtés, deux tirants vers la façade */
+  const XM0 = -22.0, XM1 = -19.4, ZM = 3.44, ZMF = 3.52;
+  bx(CN, "#efe6d0", XM0, XM1, 2.98, 3.0, ZA + 0.09, ZM, { edge: 1 });                      /* dessous clair */
+  bx(CN, ROUGE, XM0, XM1, 3.0, 3.22, ZA + 0.09, ZM, { edge: 1 });                          /* dalle */
+  bx(CN, "#8f98a3", XM0 + 0.02, XM1 - 0.02, 3.22, 3.24, ZA + 0.1, ZM - 0.02);               /* étanchéité */
+  bx(CN, ROUGE, XM0, XM1, 2.9, 3.27, ZM, ZMF, { edge: 1 });                                /* la jupe */
+  bx(CN, P.or, XM0 - 0.005, XM1 + 0.005, 3.235, 3.27, ZM, ZMF + 0.015);                   /* filets d'or */
+  bx(CN, P.or, XM0 - 0.005, XM1 + 0.005, 2.9, 2.935, ZM, ZMF + 0.015);
+  bx(CN, P.or, XM0 - 0.005, XM0 + 0.04, 2.9, 3.27, ZM, ZMF + 0.015);
+  bx(CN, P.or, XM1 - 0.04, XM1 + 0.005, 2.9, 3.27, ZM, ZMF + 0.015);
+  bx(CN, P.or, XM0 - 0.005, XM0 + 0.005, 3.08, 3.12, ZA + 0.09, ZM);                      /* filet d'or sur les côtés */
+  bx(CN, P.or, XM1 - 0.005, XM1 + 0.005, 3.08, 3.12, ZA + 0.09, ZM);
+  /* ampoules : deux rangées sur la jupe (haut et bas), une sur chaque côté */
+  bx(CN, "#3a2a2f", XM0 + 0.06, XM1 - 0.06, 3.205, 3.225, ZMF + 0.005, ZMF + 0.02);
+  bx(CN, "#3a2a2f", XM0 + 0.06, XM1 - 0.06, 2.945, 2.965, ZMF + 0.005, ZMF + 0.02);
+  for (let x = XM0 + 0.1, k = 0; x < XM1 - 0.05; x += 0.1, k++) {
+    const c = k % 2 ? "#fff6d6" : "#ffe9a8";
+    sp(CN, c, x, 3.215, ZMF + 0.025, 0.024, 0.024, 0.024, { seg: 6, seg2: 4, lum: 1 });
+    sp(CN, c, x, 2.955, ZMF + 0.025, 0.024, 0.024, 0.024, { seg: 6, seg2: 4, lum: 1 });
+  }
+  [XM0 - 0.012, XM1 + 0.012].forEach(function (x) {
+    for (let z = ZA + 0.25, k = 0; z < ZM - 0.05; z += 0.14, k++) sp(CN, k % 2 ? "#fff6d6" : "#ffe9a8", x, 3.1, z, 0.022, 0.022, 0.022, { seg: 6, seg2: 4, lum: 1 });
+  });
+  /* la pellicule : bande noire à perforations, sept images de couleur éclairées */
+  bx(CN, "#15171c", -21.5, -19.9, 2.985, 3.185, ZMF, ZMF + 0.02);
+  for (let x = -21.47; x < -19.92; x += 0.07) {
+    bx(CN, "#f6efdc", x, x + 0.035, 3.158, 3.176, ZMF + 0.02, ZMF + 0.026, { lum: 1 });
+    bx(CN, "#f6efdc", x, x + 0.035, 2.994, 3.012, ZMF + 0.02, ZMF + 0.026, { lum: 1 });
+  }
+  ["#f0b13c", "#3d8fd6", "#ee5d86", "#f6efdc", "#3d8fd6", "#f0b13c", "#ee5d86"].forEach(function (c, k) {
+    bx(CN, c, -21.47 + k * 0.22, -21.47 + k * 0.22 + 0.19, 3.03, 3.14, ZMF + 0.02, ZMF + 0.026, { lum: 1 });
+  });
+  /* dessous : quatre spots allumés, bandeau lumineux le long de la jupe */
+  [-21.5, -20.9, -20.3, -19.7].forEach(function (x) { cy(CN, "#fff3c4", x, 2.974, 2.75, 0.07, 0.012, { seg: 10, lum: 1 }); });
+  bx(CN, "#ffe9b0", XM0 + 0.2, XM1 - 0.2, 2.974, 2.98, 3.3, 3.36, { lum: 1 });
+  /* tirants en acier, fixés sur la façade sous les appuis du premier étage */
+  [DXC - 1.0, DXC + 1.0].forEach(function (x) {
+    tube(CN, P.acierF, x, 3.27, ZM - 0.04, x, 3.9, ZA + 0.04, 0.018, { seg: 6 });
+    bx(CN, P.acierF, x - 0.06, x + 0.06, 3.84, 3.96, ZA, ZA + 0.04);
+    bx(CN, P.acierF, x - 0.05, x + 0.05, 3.22, 3.3, ZM - 0.1, ZM);
+  });
+
+  /* =====================================================================
+     4 ter. LE LOCAL À LOUER (décor) : la travée droite du rez-de-chaussée
+        vitrine en blanc de Meudon, bandeau d'enseigne vide, porte, panneau « à louer » sans lettre
+     ===================================================================== */
+  const LX0 = -15.88, LX1 = -13.8, LXM = -14.68, GRIS = "#59606a";
+  bx(null, PIERRE, LX0, LXM, 0, 0.42, 1.5, ZS - 0.02, { edge: 1 });                         /* allège en pierre */
+  bx(null, "#ece5d5", LX0 - 0.02, LXM + 0.02, 0.42, 0.46, 1.5, ZS + 0.01, { edge: 1 });
+  bx(null, "#eceae2", LX0, LXM, 0.46, 2.2, ZG[0], ZG[1], { t: 0.97 });                      /* verre blanchi, presque opaque */
+  bx(null, "#eceae2", LXM + 0.06, LX1, 0.03, 2.2, ZG[0], ZG[1], { t: 0.97 });
+  for (let k = 0; k < 8; k++) {                                                              /* coups de brosse du blanc d'Espagne */
+    bxr(null, k % 2 ? "#fbfaf6" : "#d3cfc2", LX0 + 0.12 + k * 0.145 + (k % 3) * 0.04, 0.85 + ((k * 37) % 10) * 0.095, ZG[1] + 0.003, 0.5, 0.045, 0.004, 0, 0, -20 + (k % 4) * 9);
+  }
+  [[LX0, LX0 + 0.06], [LXM - 0.06, LXM + 0.06], [LX1 - 0.06, LX1]].forEach(function (m) { bx(null, GRIS, m[0], m[1], 0.46, 2.26, ZO[0], ZO[1]); });
+  bx(null, GRIS, LX0, LXM, 0.46, 0.52, ZO[0], ZO[1]);
+  bx(null, GRIS, LX0, LX1, 2.2, 2.26, ZO[0], ZO[1]);
+  [[LXM + 0.06, LXM + 0.11], [LX1 - 0.11, LX1 - 0.06]].forEach(function (m) { bx(null, GRIS, m[0], m[1], 0, 2.2, ZO[0], ZO[1]); });   /* montants du vantail */
+  bx(null, GRIS, LXM + 0.06, LX1 - 0.06, 0, 0.14, ZO[0], ZO[1]);
+  bx(null, "#c9d0d8", LXM + 0.12, LXM + 0.135, 0.8, 1.5, ZA - 0.1, ZA - 0.075);
+  tube(null, "#c9d0d8", LXM + 0.1275, 0.86, ZA - 0.1, LXM + 0.1275, 0.86, ZO[1], 0.008, { seg: 5 });
+  tube(null, "#c9d0d8", LXM + 0.1275, 1.44, ZA - 0.1, LXM + 0.1275, 1.44, ZO[1], 0.008, { seg: 5 });
+  bx(null, "#2a313b", LXM + 0.115, LXM + 0.145, 0.95, 1.08, ZA - 0.075, ZA - 0.06);          /* serrure */
+  bx(null, "#9aa5b1", LXM + 0.06, LX1, 0, 0.03, 1.5, ZS, { edge: 1 });                      /* seuil */
+  /* le bandeau d'enseigne : cadre gris, panneau mat et trace claire de l'ancienne enseigne, quatre vis */
+  bx(null, GRIS, LX0, LX1, 2.26, 2.75, ZO[0] + 0.02, ZO[1] + 0.12, { edge: 1 });
+  bx(null, "#d8d4c6", LX0 + 0.04, LX1 - 0.04, 2.3, 2.71, ZO[1] + 0.12, ZO[1] + 0.135);
+  bx(null, "#e5e1d4", LX0 + 0.25, LX1 - 0.25, 2.37, 2.64, ZO[1] + 0.135, ZO[1] + 0.14);
+  [[LX0 + 0.12, 2.35], [LX0 + 0.12, 2.66], [LX1 - 0.12, 2.35], [LX1 - 0.12, 2.66]].forEach(function (v) {
+    cy(null, "#6e7480", v[0], v[1], ZO[1] + 0.14, 0.012, 0.01, { axe: "z", seg: 6 });
+  });
+  /* le panneau « à louer » : rectangle rouge, trois barres blanches (pas de lettre) */
+  bx(null, "#c93636", -15.5, -15.1, 1.1, 1.65, ZG[1] + 0.003, ZG[1] + 0.012);
+  bx(null, "#fafaf6", -15.46, -15.14, 1.5, 1.59, ZG[1] + 0.012, ZG[1] + 0.016);
+  bx(null, "#fafaf6", -15.44, -15.16, 1.34, 1.39, ZG[1] + 0.012, ZG[1] + 0.016);
+  bx(null, "#fafaf6", -15.44, -15.26, 1.24, 1.29, ZG[1] + 0.012, ZG[1] + 0.016);
 
   /* =====================================================================
      5. LES DRAPEAUX : France et Europe, sur hampes inclinées à 25°,
@@ -476,11 +706,19 @@ export function immeuble(H) {
   gardeCorps([XI1 - 0.3, ZI1 - 0.3], [XI1 - 0.3, -4.5]);
 
   /* =====================================================================
-     9. LA ZONE : surface de clic sur tout l'immeuble, repère, caméra
+     9. LES ZONES : surfaces de clic, repères, caméras
      ===================================================================== */
-  H.proxy(Z, -22, -13.5, 0, 15.3, -5.5, 2.6);
+  /* « bureau » : tout l'immeuble SAUF le cinéma, donc les étages, le rez-de-chaussée à droite de la pile
+     de l'interphone, et l'arrière de la travée du cinéma (derrière le plan de façade z = 1,75) */
+  H.proxy(Z, -22, -13.5, 3.3, 15.3, -5.5, 2.6);
+  H.proxy(Z, -19.25, -13.5, 0, 3.3, -5.5, 2.6);
+  H.proxy(Z, -22, -19.25, 0, 3.3, -5.5, 1.75);
   H.ancre(Z, -17.75, 8.0, 2.6);
+  /* « cinema » : la devanture, les vitrines d'affiches et la marquise */
+  H.proxy(CN, -22.0, -19.25, 0, 3.3, 1.75, 3.55);
+  H.ancre(CN, -20.4, 3.9, 3.6);
   return {
-    bureau: { zoom: 0.66, az: [-15, 30], el: 10, foyer: [-17.75, 7.5, -1.2] }
+    bureau: { zoom: 0.66, az: [-15, 30], el: 10, foyer: [-17.75, 7.5, -1.2] },
+    cinema: { zoom: 0.22, az: [-20, 8], el: 8, foyer: [-20.4, 1.8, 2.8] }
   };
 }

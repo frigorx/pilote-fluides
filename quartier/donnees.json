@@ -15,7 +15,13 @@
   "FormaRézo": "#0f766e",
   "CartoClim": "#0e7490",
   "Mission F-Gaz": "#1e40af",
-  "AquiBlue": "#0891b2"
+  "AquiBlue": "#0891b2",
+  "Le Voyage": "#c2410c",
+  "Les régules": "#0c4a6e",
+  "JouéRézo": "#be185d",
+  "SimuRézo": "#b91c1c",
+  "RézoTools": "#15803d",
+  "HabFluide": "#0369a1"
  },
  "genere": "node donnees3d.mjs (depuis zones.mjs et le catalogue)",
  "calques": [
@@ -30,6 +36,7 @@
     "chambre-froide",
     "vitrine",
     "groupe",
+    "depannage",
     "salle-machines",
     "clim",
     "pac"
@@ -174,7 +181,8 @@
    "zones": [
     "camionnette",
     "etabli",
-    "echafaudage"
+    "echafaudage",
+    "depannage"
    ],
    "vues": [
     {
@@ -184,6 +192,35 @@
     {
      "titre": "inerWeb R408",
      "href": "https://inerweb.fr/r408/"
+    },
+    {
+     "titre": "Les calculettes (RézoTools)",
+     "href": "https://inerweb.fr/rezotools/"
+    }
+   ]
+  },
+  {
+   "id": "jouer",
+   "nom": "Voir et jouer",
+   "grand": false,
+   "couleur": "#be185d",
+   "trait": "aucun",
+   "zones": [
+    "cinema",
+    "arcade"
+   ],
+   "vues": [
+    {
+     "titre": "Les jeux du métier (JouéRézo)",
+     "href": "https://inerweb.fr/jouerezo/"
+    },
+    {
+     "titre": "Le simulateur de panne (SimuRézo)",
+     "href": "https://inerweb.fr/simurezo/"
+    },
+    {
+     "titre": "Le voyage interactif",
+     "href": "https://inerweb.fr/jouerezo/voyage.html"
     }
    ]
   }
@@ -198,6 +235,7 @@
     "salle-machines",
     "armoire",
     "groupe",
+    "depannage",
     "cta"
    ]
   },
@@ -218,14 +256,16 @@
    "zones": [
     "camionnette",
     "etabli",
-    "echafaudage"
+    "echafaudage",
+    "arcade"
    ]
   },
   {
    "id": "immeuble",
    "nom": "L’immeuble des règles",
    "zones": [
-    "bureau"
+    "bureau",
+    "cinema"
    ]
   }
  ],
@@ -1923,6 +1963,16 @@
      "r": "AquiBlue"
     },
     {
+     "nom": "Les 13 calculettes du technicien",
+     "href": "https://inerweb.fr/rezotools/",
+     "r": "RézoTools"
+    },
+    {
+     "nom": "Calculette : la réglette pression-température",
+     "href": "https://inerweb.fr/rezotools/calculettes/reglette.html",
+     "r": "RézoTools"
+    },
+    {
      "nom": "Mission F-GAZ V6",
      "href": "https://frigorx.github.io/inerweb-fgaz/",
      "r": "Mission F-Gaz"
@@ -2455,6 +2505,240 @@
      "nom": "Quarante ans d'histoire : de l'ozone au climat",
      "href": "https://inerweb.fr/packs/fluides/res/capsules/?c=g2a",
      "r": "Capsules sécurité"
+    }
+   ]
+  },
+  {
+   "id": "cinema",
+   "nom": "Le cinéma du quartier",
+   "ico": "🎬",
+   "question": "Qu’est-ce qu’on projette ce soir ?",
+   "lieu": "L’immeuble des règles",
+   "couleur": "#be185d",
+   "calques": [
+    "jouer"
+   ],
+   "entree": {
+    "titre": "Voir le film : Voyage dans tous ses états",
+    "href": "https://inerweb.fr/voyage/"
+   },
+   "porte": {
+    "titre": "Le voyage interactif",
+    "href": "https://inerweb.fr/jouerezo/voyage.html"
+   },
+   "stations": [
+    {
+     "nom": "Le film : Voyage dans tous ses états, en entier ou par chapitre",
+     "href": "https://inerweb.fr/voyage/",
+     "r": "Le Voyage"
+    },
+    {
+     "nom": "Le voyage interactif, chapitre par chapitre",
+     "href": "https://inerweb.fr/jouerezo/voyage.html",
+     "r": "Le Voyage"
+    },
+    {
+     "nom": "Film — La commande directe",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — La protection minimum",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — La migration de liquide",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — Le pump-down automatique",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — Le pump-down amélioré",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — Le pump-down unique",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — Sans dégivrage commandé",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — Le dégivrage naturel",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — Le dégivrage électrique",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — Le dégivrage par gaz chauds",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html",
+     "r": "Les régules"
+    },
+    {
+     "nom": "Film — Le dégivrage par inversion de cycle",
+     "href": "https://inerweb.fr/packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html",
+     "r": "Les régules"
+    }
+   ]
+  },
+  {
+   "id": "arcade",
+   "nom": "La salle d’arcade",
+   "ico": "🕹️",
+   "question": "On fait une partie ?",
+   "lieu": "La rue",
+   "couleur": "#be185d",
+   "calques": [
+    "jouer"
+   ],
+   "entree": {
+    "titre": "Entrer dans la salle : les jeux du métier",
+    "href": "https://inerweb.fr/jouerezo/"
+   },
+   "porte": {
+    "titre": "La grande borne : le simulateur de panne (SimuRézo)",
+    "href": "https://inerweb.fr/simurezo/"
+   },
+   "stations": [
+    {
+     "nom": "Les neuf jeux du métier",
+     "href": "https://inerweb.fr/jouerezo/",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "Memory",
+     "href": "https://inerweb.fr/jouerezo/memory.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "Le bon ordre",
+     "href": "https://inerweb.fr/jouerezo/ordre.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "Chrono vrai ou faux",
+     "href": "https://inerweb.fr/jouerezo/chrono.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "QCM éclair",
+     "href": "https://inerweb.fr/jouerezo/qcm.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "L’intrus",
+     "href": "https://inerweb.fr/jouerezo/intrus.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "Nuit à l’atelier",
+     "href": "https://inerweb.fr/jouerezo/aventure.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "Compléter le schéma",
+     "href": "https://inerweb.fr/jouerezo/schema.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "Qui suis-je ?",
+     "href": "https://inerweb.fr/jouerezo/quisuisje.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "Le pendu du frigo",
+     "href": "https://inerweb.fr/jouerezo/pendu.html",
+     "r": "JouéRézo"
+    },
+    {
+     "nom": "Le simulateur de panne frigorifique",
+     "href": "https://inerweb.fr/simurezo/",
+     "r": "SimuRézo"
+    }
+   ]
+  },
+  {
+   "id": "depannage",
+   "nom": "Le dépannage sur le toit",
+   "ico": "🔧",
+   "question": "La chambre froide ne descend plus : que disent les manomètres ?",
+   "lieu": "Le commerce",
+   "couleur": "#3d7fca",
+   "calques": [
+    "froid",
+    "gestes"
+   ],
+   "entree": {
+    "titre": "Dépanner avec le simulateur (SimuRézo)",
+    "href": "https://inerweb.fr/simurezo/"
+   },
+   "porte": {
+    "titre": "Lire les manomètres",
+    "href": "https://inerweb.fr/packs/fluides/res/parcours-manometres/"
+   },
+   "stations": [
+    {
+     "nom": "Le simulateur de panne frigorifique",
+     "href": "https://inerweb.fr/simurezo/",
+     "r": "SimuRézo"
+    },
+    {
+     "nom": "Le simulateur à télécharger (un seul fichier)",
+     "href": "https://inerweb.fr/simurezo/simurezo.html",
+     "r": "SimuRézo"
+    },
+    {
+     "nom": "Parcours manomètres",
+     "href": "https://inerweb.fr/packs/fluides/res/parcours-manometres/",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Pose et dépose du manifold 2 voies sur vannes de service Rotolock",
+     "href": "https://inerweb.fr/packs/fluides/res/pose-manifold-2-voies-interactive/",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Poser et déposer le manifold 4 voies",
+     "href": "https://inerweb.fr/packs/fluides/res/pose-manifold-interactive/",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Manomètres",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/manometres_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Réglette P/T",
+     "href": "https://frigorx.github.io/Iner.web-tools-beta/reglette_v5.html",
+     "r": "Thermo-techno"
+    },
+    {
+     "nom": "Le manifold : quelle vanne ouvre quoi",
+     "href": "https://inerweb.fr/f/a-manifold-lecture/",
+     "r": "HabFluide"
+    },
+    {
+     "nom": "Le poste de récupération : circuit complet et manifold branché",
+     "href": "https://inerweb.fr/f/a-circuit-complet-manifold/",
+     "r": "HabFluide"
+    },
+    {
+     "nom": "Calculette : le diagnostic",
+     "href": "https://inerweb.fr/rezotools/calculettes/diagnostic.html",
+     "r": "RézoTools"
     }
    ]
   }

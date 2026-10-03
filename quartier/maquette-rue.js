@@ -7,14 +7,14 @@
    ===================================================================== */
 import { creerAtelier } from "./noyau.js";
 
-const MODULES = ["decor", "immeuble", "commerce", "maison", "rue", "traces"];
+const MODULES = ["decor", "immeuble", "commerce", "maison", "rue", "arcade", "depannage", "traces"];
 /* Les tracés de chaque calque (tuyaux, gaines, câbles) sont des pseudo-zones :
    ils s'allument avec leur calque et grisent avec les autres. */
 export const TRACES = ["froid", "clim", "chauffage", "elec", "air"];
 
 /* Cadrage de la vue d'ensemble : toute la rue tient à l'écran. */
 export const VUE = {
-  cible: [-1.5, 5.2, -0.5], az: 22, el: 12, largeur: 22.5, hauteur: 8.6,
+  cible: [0.2, 5.2, -0.5], az: 22, el: 12, largeur: 26.1, hauteur: 10.0,
   balancement: [-14, 38], bornes: [-24, 22, -2, 15, -9, 11],
   soleil: [-26, 36, 30], ombre: [-34, 34, 24, -20]
 };
