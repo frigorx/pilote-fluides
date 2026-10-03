@@ -1,0 +1,26 @@
+/* =====================================================================
+   voyage.css — la page « Voyage dans tous ses états » (en plus de jouerezo.css)
+   Image d'abord : le cadre prend toute la largeur utile, au format de la scène
+   (1600 × 770). Commandes de 48 px minimum. Aucun thème sombre.
+   ===================================================================== */
+.vy { max-width: 1100px; margin: 0 auto; display: grid; gap: 12px; }
+.vy-cadre { position: relative; background: #f7f1e7; border: 1px solid var(--ligne); border-radius: 14px; overflow: hidden; box-shadow: var(--ombre); }
+.vy-cadre svg { display: block; width: 100%; height: auto; aspect-ratio: 1600 / 770; }
+.vy-depart { position: absolute; left: 50%; bottom: 8%; transform: translateX(-50%); font-size: 1.15rem; }
+.vy-sous { min-height: 3.4em; font-size: 1.25rem; line-height: 1.45; font-weight: 600; color: var(--txt);
+  background: var(--carte); border: 1px solid var(--ligne); border-radius: 12px; padding: 10px 14px; margin: 0; }
+.vy-commandes { display: flex; flex-wrap: wrap; gap: 8px; }
+.vy-chapitres { display: flex; flex-wrap: wrap; gap: 6px; }
+.vy-chap { min-height: 48px; padding: 6px 12px; border: 2px solid var(--bleu); border-radius: 24px; background: var(--carte);
+  color: var(--bleu); font-weight: bold; cursor: pointer; }
+.vy-chap[aria-current="step"] { background: var(--bleu); color: #fff; }
+.vy-question h2 { margin-bottom: 10px; }
+.vy-choix { display: grid; gap: 8px; }
+.vy-choix .btn { justify-content: flex-start; text-align: left; white-space: normal; }
+.vy-retour { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.vy-apropos p { margin: 6px 0; }
+.vy-tourner { display: none; }
+@media (orientation: portrait) and (max-width: 700px) { .vy-tourner { display: block; color: var(--mut); font-size: .95rem; } }
+/* mode image (livret) : la scène seule, plein cadre */
+body.vy-image { margin: 0; background: #f7f1e7; }
+body.vy-image svg { display: block; width: 100vw; height: auto; }

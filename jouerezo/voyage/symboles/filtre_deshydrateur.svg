@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25 -10 50 20" overflow="visible"><!-- Filtre déshydrateur, d'après la planche Eduscol « le circuit frigorifique » donnée par Franck le 03/10/2026 : rectangle, un trait pointillé de chaque côté, croix pointillée au milieu. -->
+<line x1="-23.5" y1="0" x2="-15" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="15" y1="0" x2="23.5" y2="0" stroke="#000" stroke-width="1"/>
+<rect x="-15" y="-6" width="30" height="12" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="-11" y1="-6" x2="-11" y2="6" stroke="#000" stroke-width="0.8" stroke-dasharray="1.2 1"/>
+<line x1="11" y1="-6" x2="11" y2="6" stroke="#000" stroke-width="0.8" stroke-dasharray="1.2 1"/>
+<line x1="-11" y1="-6" x2="11" y2="6" stroke="#000" stroke-width="0.8" stroke-dasharray="1.2 1"/>
+<line x1="-11" y1="6" x2="11" y2="-6" stroke="#000" stroke-width="0.8" stroke-dasharray="1.2 1"/>
+<circle cx="-23.5" cy="0" r="1.5" fill="#000"/>
+<circle cx="23.5" cy="0" r="1.5" fill="#000"/>
+</svg>

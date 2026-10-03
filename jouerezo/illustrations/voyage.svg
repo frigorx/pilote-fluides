@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" role="img" aria-label="La molécule du voyage"><title>Voyage dans tous ses états</title>
+<circle r="46" fill="#ff6b35" opacity=".2"/>
+<g stroke="#1b3a63" stroke-width="3.5"><circle cx="-26" cy="-16" r="12" fill="#a9c8ea"/><circle cx="26" cy="-16" r="12" fill="#a9c8ea"/><circle cx="0" cy="29" r="12" fill="#a9c8ea"/><circle r="27" fill="#f2f8ff"/></g>
+<path d="M -27 6 Q 0 0 27 6 L 27 20 Q 0 34 -27 20 Z" fill="#2f6fb8" opacity=".9"/>
+<ellipse cx="-10" cy="-14" rx="8" ry="4" fill="#fff" opacity=".8" transform="rotate(-28 -10 -14)"/>
+<g stroke="#1b3a63" stroke-width="2"><ellipse cx="-9" cy="-3" rx="5.4" ry="7" fill="#fff"/><ellipse cx="9" cy="-3" rx="5.4" ry="7" fill="#fff"/></g>
+<circle cx="-8" cy="-2" r="3" fill="#1b3a63"/><circle cx="10" cy="-2" r="3" fill="#1b3a63"/>
+<path d="M -9 9 Q 0 17 9 9" fill="none" stroke="#1b3a63" stroke-width="3" stroke-linecap="round"/>
+</svg>
