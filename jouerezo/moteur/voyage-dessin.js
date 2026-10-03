@@ -299,10 +299,10 @@
   D.SYM = window.VOYAGE_SYM || "voyage/symboles/";
   D.ORGANES = {
     evaporateur: { f: "echangeur_a_air", a: 1, nom: "évaporateur" },
-    compresseur: { f: "compresseur_piston", a: 1.25, nom: "compresseur" },
+    compresseur: { f: "compresseur_general", a: 1.25, nom: "compresseur" },
     condenseur: { f: "echangeur_a_air", a: 1, nom: "condenseur" },
-    bouteille: { f: "bouteille_liquide", a: 0.54, nom: "bouteille" },
-    filtre: { f: "filtre_deshydrateur", a: 2.5, nom: "filtre" },
+    bouteille: { f: "bouteille_liquide_verticale", a: 0.54, nom: "bouteille" },
+    filtre: { f: "filtre_deshydrateur", a: 2, nom: "filtre" },
     voyant: { f: "voyant_liquide", a: 2.5, nom: "voyant" },
     electrovanne: { f: "electrovanne_frigo", a: 1.33, nom: "électrovanne" },
     detendeur: { f: "detendeur_thermo_ext", a: 1, nom: "détendeur" }
