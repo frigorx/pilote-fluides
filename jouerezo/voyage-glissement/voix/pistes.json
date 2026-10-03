@@ -1,0 +1,390 @@
+{
+ "intro-0": {
+  "f": "cd8626c22051.mp3",
+  "d": 4.272
+ },
+ "intro-1": {
+  "f": "482d09be3070.mp3",
+  "d": 5.136
+ },
+ "intro-2": {
+  "f": "2732caa5c161.mp3",
+  "d": 5.64
+ },
+ "intro-3": {
+  "f": "7c4567d38f13.mp3",
+  "d": 5.448
+ },
+ "intro-4": {
+  "f": "3010d3308261.mp3",
+  "d": 8.232
+ },
+ "intro-5": {
+  "f": "5e81f0edcb03.mp3",
+  "d": 5.232
+ },
+ "intro-6": {
+  "f": "05fc9beec936.mp3",
+  "d": 6.528
+ },
+ "intro-7": {
+  "f": "eb4c779cc008.mp3",
+  "d": 4.944
+ },
+ "caracteres-0": {
+  "f": "00253be15fa3.mp3",
+  "d": 5.568
+ },
+ "caracteres-1": {
+  "f": "c5e469c784b3.mp3",
+  "d": 9.168
+ },
+ "caracteres-2": {
+  "f": "49f8a76d5af5.mp3",
+  "d": 6.84
+ },
+ "caracteres-3": {
+  "f": "371eb1d444aa.mp3",
+  "d": 5.616
+ },
+ "caracteres-4": {
+  "f": "57f215c326e5.mp3",
+  "d": 3.576
+ },
+ "caracteres-5": {
+  "f": "10d496308060.mp3",
+  "d": 3.432
+ },
+ "caracteres-6": {
+  "f": "72268883351e.mp3",
+  "d": 8.664
+ },
+ "caracteres-7": {
+  "f": "9f33bdb28530.mp3",
+  "d": 4.896
+ },
+ "palier-0": {
+  "f": "0f811662ff7d.mp3",
+  "d": 7.344
+ },
+ "palier-1": {
+  "f": "4522e87c730b.mp3",
+  "d": 3.888
+ },
+ "palier-2": {
+  "f": "fd7dd2ac90a2.mp3",
+  "d": 6.576
+ },
+ "palier-3": {
+  "f": "4dba41c6c0d0.mp3",
+  "d": 4.032
+ },
+ "palier-4": {
+  "f": "e3f66ba21a74.mp3",
+  "d": 3.96
+ },
+ "palier-5": {
+  "f": "cd8ad5cf6d3d.mp3",
+  "d": 4.656
+ },
+ "palier-6": {
+  "f": "98de4ab6704a.mp3",
+  "d": 7.584
+ },
+ "palier-7": {
+  "f": "55c94f35170f.mp3",
+  "d": 5.688
+ },
+ "detente-0": {
+  "f": "9c94f7c0eedc.mp3",
+  "d": 6.456
+ },
+ "detente-1": {
+  "f": "24ed191e7e1b.mp3",
+  "d": 6.888
+ },
+ "detente-2": {
+  "f": "f09ada08eb6d.mp3",
+  "d": 5.544
+ },
+ "detente-3": {
+  "f": "80d9ff1524da.mp3",
+  "d": 5.328
+ },
+ "detente-4": {
+  "f": "5b6bd4784eb7.mp3",
+  "d": 7.176
+ },
+ "detente-5": {
+  "f": "cca1fc90d817.mp3",
+  "d": 6.96
+ },
+ "rythme-0": {
+  "f": "78a1858e88f9.mp3",
+  "d": 5.232
+ },
+ "rythme-1": {
+  "f": "983524005998.mp3",
+  "d": 4.464
+ },
+ "rythme-2": {
+  "f": "0acb9957e34a.mp3",
+  "d": 6.312
+ },
+ "rythme-3": {
+  "f": "3d4d643ee8fd.mp3",
+  "d": 4.632
+ },
+ "rythme-4": {
+  "f": "3a7f076c7ac1.mp3",
+  "d": 5.592
+ },
+ "rythme-5": {
+  "f": "70592ddfbf6f.mp3",
+  "d": 7.248
+ },
+ "rythme-6": {
+  "f": "e029e5111177.mp3",
+  "d": 8.256
+ },
+ "glisse-0": {
+  "f": "7a8a7a8cb036.mp3",
+  "d": 5.568
+ },
+ "glisse-1": {
+  "f": "17618bf9a168.mp3",
+  "d": 5.52
+ },
+ "glisse-2": {
+  "f": "4d7e4fcf1147.mp3",
+  "d": 4.8
+ },
+ "glisse-3": {
+  "f": "5fd5c37ad0fd.mp3",
+  "d": 4.704
+ },
+ "glisse-4": {
+  "f": "1de118395fda.mp3",
+  "d": 4.08
+ },
+ "glisse-5": {
+  "f": "cc37851eb40c.mp3",
+  "d": 5.184
+ },
+ "glisse-6": {
+  "f": "4c0c1e2652ca.mp3",
+  "d": 5.376
+ },
+ "glisse-7": {
+  "f": "5eb328106dbe.mp3",
+  "d": 9.192
+ },
+ "bulle-rosee-0": {
+  "f": "fdf197c58ef9.mp3",
+  "d": 4.44
+ },
+ "bulle-rosee-1": {
+  "f": "8443be9e2309.mp3",
+  "d": 5.16
+ },
+ "bulle-rosee-2": {
+  "f": "69592a54c1a5.mp3",
+  "d": 4.656
+ },
+ "bulle-rosee-3": {
+  "f": "9ca21f0c48ce.mp3",
+  "d": 5.688
+ },
+ "bulle-rosee-4": {
+  "f": "ce369b252108.mp3",
+  "d": 5.4
+ },
+ "bulle-rosee-5": {
+  "f": "bc9f81f1848f.mp3",
+  "d": 7.848
+ },
+ "bulle-rosee-6": {
+  "f": "5e7faf177214.mp3",
+  "d": 7.224
+ },
+ "bulle-rosee-7": {
+  "f": "050f4bc98eef.mp3",
+  "d": 5.04
+ },
+ "surchauffe-0": {
+  "f": "83cf415f35c2.mp3",
+  "d": 5.688
+ },
+ "surchauffe-1": {
+  "f": "0c011788437b.mp3",
+  "d": 3.696
+ },
+ "surchauffe-2": {
+  "f": "617b50638f31.mp3",
+  "d": 5.928
+ },
+ "surchauffe-3": {
+  "f": "6e0302b6fefc.mp3",
+  "d": 5.952
+ },
+ "surchauffe-4": {
+  "f": "1d52b700f351.mp3",
+  "d": 4.584
+ },
+ "surchauffe-5": {
+  "f": "6cac971bf52d.mp3",
+  "d": 5.064
+ },
+ "surchauffe-6": {
+  "f": "5779bae64dab.mp3",
+  "d": 6.024
+ },
+ "surchauffe-7": {
+  "f": "756a2f9b9269.mp3",
+  "d": 6.24
+ },
+ "condenseur-0": {
+  "f": "bdeee16f91de.mp3",
+  "d": 5.4
+ },
+ "condenseur-1": {
+  "f": "73d7d2fe3524.mp3",
+  "d": 4.104
+ },
+ "condenseur-2": {
+  "f": "b8fcfbf50708.mp3",
+  "d": 5.136
+ },
+ "condenseur-3": {
+  "f": "e635b52b1231.mp3",
+  "d": 5.304
+ },
+ "condenseur-4": {
+  "f": "1a6e3d209ffa.mp3",
+  "d": 7.08
+ },
+ "condenseur-5": {
+  "f": "9f90d9d1cf67.mp3",
+  "d": 5.64
+ },
+ "condenseur-6": {
+  "f": "34395b144512.mp3",
+  "d": 7.248
+ },
+ "condenseur-7": {
+  "f": "6dc9f47b7691.mp3",
+  "d": 5.88
+ },
+ "sous-refroidissement-0": {
+  "f": "d226d9556e52.mp3",
+  "d": 5.064
+ },
+ "sous-refroidissement-1": {
+  "f": "3eef8c180916.mp3",
+  "d": 4.248
+ },
+ "sous-refroidissement-2": {
+  "f": "7c5ca6e7e8ed.mp3",
+  "d": 5.328
+ },
+ "sous-refroidissement-3": {
+  "f": "1bb83fbaf565.mp3",
+  "d": 6.504
+ },
+ "sous-refroidissement-4": {
+  "f": "91b724527f62.mp3",
+  "d": 4.032
+ },
+ "sous-refroidissement-5": {
+  "f": "7995afb2627e.mp3",
+  "d": 5.712
+ },
+ "sous-refroidissement-6": {
+  "f": "4674ef84a746.mp3",
+  "d": 4.992
+ },
+ "sous-refroidissement-7": {
+  "f": "6ae4119b6504.mp3",
+  "d": 5.352
+ },
+ "charge-0": {
+  "f": "1915ead92f84.mp3",
+  "d": 5.64
+ },
+ "charge-1": {
+  "f": "757433371d39.mp3",
+  "d": 7.416
+ },
+ "charge-2": {
+  "f": "7f47837e72d4.mp3",
+  "d": 6.648
+ },
+ "charge-3": {
+  "f": "5f959a39c748.mp3",
+  "d": 7.176
+ },
+ "charge-4": {
+  "f": "90bcc5feae49.mp3",
+  "d": 6.504
+ },
+ "charge-5": {
+  "f": "4ec9384f2eda.mp3",
+  "d": 6.024
+ },
+ "charge-6": {
+  "f": "eff540f8a290.mp3",
+  "d": 4.8
+ },
+ "charge-7": {
+  "f": "bfdb0ac92b7b.mp3",
+  "d": 6.672
+ },
+ "familles-0": {
+  "f": "5283807d8039.mp3",
+  "d": 2.616
+ },
+ "familles-1": {
+  "f": "6415e658ee1b.mp3",
+  "d": 10.584
+ },
+ "familles-2": {
+  "f": "b3d82b5ab4b5.mp3",
+  "d": 7.344
+ },
+ "familles-3": {
+  "f": "12737229b989.mp3",
+  "d": 6.744
+ },
+ "familles-4": {
+  "f": "450e00b5133d.mp3",
+  "d": 9.768
+ },
+ "familles-5": {
+  "f": "381ec8f3bb8a.mp3",
+  "d": 8.952
+ },
+ "resume-0": {
+  "f": "4bf191c713c8.mp3",
+  "d": 3.624
+ },
+ "resume-1": {
+  "f": "55289104162c.mp3",
+  "d": 6.192
+ },
+ "resume-2": {
+  "f": "a63d0a6af439.mp3",
+  "d": 6.888
+ },
+ "resume-3": {
+  "f": "faf0ac94f8ab.mp3",
+  "d": 7.512
+ },
+ "resume-4": {
+  "f": "b438a8bca6df.mp3",
+  "d": 6.576
+ },
+ "resume-5": {
+  "f": "4ad65ccbc4f0.mp3",
+  "d": 5.208
+ }
+}

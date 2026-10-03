@@ -1,0 +1,119 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "dans un mélange qui glisse",
+  "duree": 54,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "caracteres",
+  "num": "1",
+  "titre": "Trois caractères",
+  "sous": "un seul mélange",
+  "duree": 54,
+  "video": "chapitre-01-trois-caracteres.mp4",
+  "affiche": "chapitre-01-trois-caracteres.jpg"
+ },
+ {
+  "id": "palier",
+  "num": "2",
+  "titre": "Palier ou pente",
+  "sous": "chauffer à pression constante",
+  "duree": 50,
+  "video": "chapitre-02-palier-ou-pente.mp4",
+  "affiche": "chapitre-02-palier-ou-pente.jpg"
+ },
+ {
+  "id": "detente",
+  "num": "3",
+  "titre": "La détente",
+  "sous": "l'entrée de l'évaporateur",
+  "duree": 43,
+  "video": "chapitre-03-la-detente.mp4",
+  "affiche": "chapitre-03-la-detente.jpg"
+ },
+ {
+  "id": "rythme",
+  "num": "4",
+  "titre": "Toutes ensemble",
+  "sous": "mais pas au même pas",
+  "duree": 47,
+  "video": "chapitre-04-toutes-ensemble.mp4",
+  "affiche": "chapitre-04-toutes-ensemble.jpg"
+ },
+ {
+  "id": "glisse",
+  "num": "5",
+  "titre": "La température glisse",
+  "sous": "jusqu'à la dernière goutte",
+  "duree": 50,
+  "video": "chapitre-05-la-temperature-glisse.mp4",
+  "affiche": "chapitre-05-la-temperature-glisse.jpg"
+ },
+ {
+  "id": "bulle-rosee",
+  "num": "6",
+  "titre": "Bulle et rosée",
+  "sous": "deux températures pour une pression",
+  "duree": 51,
+  "video": "chapitre-06-bulle-et-rosee.mp4",
+  "affiche": "chapitre-06-bulle-et-rosee.jpg"
+ },
+ {
+  "id": "surchauffe",
+  "num": "7",
+  "titre": "La surchauffe",
+  "sous": "se compte depuis la rosée",
+  "duree": 49,
+  "video": "chapitre-07-la-surchauffe.mp4",
+  "affiche": "chapitre-07-la-surchauffe.jpg"
+ },
+ {
+  "id": "condenseur",
+  "num": "8",
+  "titre": "Le condenseur",
+  "sous": "le glissement à l'envers",
+  "duree": 52,
+  "video": "chapitre-08-le-condenseur.mp4",
+  "affiche": "chapitre-08-le-condenseur.jpg"
+ },
+ {
+  "id": "sous-refroidissement",
+  "num": "9",
+  "titre": "Le sous-refroidissement",
+  "sous": "se compte depuis la bulle",
+  "duree": 47,
+  "video": "chapitre-09-le-sous-refroidissement.mp4",
+  "affiche": "chapitre-09-le-sous-refroidissement.jpg"
+ },
+ {
+  "id": "charge",
+  "num": "10",
+  "titre": "Garder le bon mélange",
+  "sous": "la charge et les fuites",
+  "duree": 57,
+  "video": "chapitre-10-garder-le-bon-melange.mp4",
+  "affiche": "chapitre-10-garder-le-bon-melange.jpg"
+ },
+ {
+  "id": "familles",
+  "num": "11",
+  "titre": "Qui glisse ?",
+  "sous": "les autres fluides",
+  "duree": 51,
+  "video": "chapitre-11-qui-glisse.mp4",
+  "affiche": "chapitre-11-qui-glisse.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Le glissement en quatre phrases",
+  "sous": "l'essentiel à retenir",
+  "duree": 50,
+  "video": "chapitre-12-le-glissement-en-quatre-phrases.mp4",
+  "affiche": "chapitre-12-le-glissement-en-quatre-phrases.jpg"
+ }
+]
