@@ -1,0 +1,119 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "dans une centrale frigorifique",
+  "duree": 63,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "meuble",
+  "num": "1",
+  "titre": "Le meuble frigorifique",
+  "sous": "un poste parmi d'autres",
+  "duree": 48,
+  "video": "chapitre-01-le-meuble-frigorifique.mp4",
+  "affiche": "chapitre-01-le-meuble-frigorifique.jpg"
+ },
+ {
+  "id": "glissement",
+  "num": "2",
+  "titre": "Je bous en me réchauffant",
+  "sous": "le glissement de température",
+  "duree": 55,
+  "video": "chapitre-02-je-bous-en-me-rechauffant.mp4",
+  "affiche": "chapitre-02-je-bous-en-me-rechauffant.jpg"
+ },
+ {
+  "id": "collecteur",
+  "num": "3",
+  "titre": "Le collecteur d'aspiration",
+  "sous": "toutes les vapeurs se rejoignent",
+  "duree": 40,
+  "video": "chapitre-03-le-collecteur-d-aspiration.mp4",
+  "affiche": "chapitre-03-le-collecteur-d-aspiration.jpg"
+ },
+ {
+  "id": "compresseurs",
+  "num": "4",
+  "titre": "Plusieurs compresseurs",
+  "sous": "montés en parallèle",
+  "duree": 50,
+  "video": "chapitre-04-plusieurs-compresseurs.mp4",
+  "affiche": "chapitre-04-plusieurs-compresseurs.jpg"
+ },
+ {
+  "id": "bp",
+  "num": "5",
+  "titre": "La basse pression commande",
+  "sous": "le capteur et le régulateur",
+  "duree": 37,
+  "video": "chapitre-05-la-basse-pression-commande.mp4",
+  "affiche": "chapitre-05-la-basse-pression-commande.jpg"
+ },
+ {
+  "id": "etages",
+  "num": "6",
+  "titre": "Un de plus, un de moins",
+  "sous": "la marche étagée",
+  "duree": 46,
+  "video": "chapitre-06-un-de-plus-un-de-moins.mp4",
+  "affiche": "chapitre-06-un-de-plus-un-de-moins.jpg"
+ },
+ {
+  "id": "variateur",
+  "num": "7",
+  "titre": "Le variateur",
+  "sous": "le compresseur de tête",
+  "duree": 41,
+  "video": "chapitre-07-le-variateur.mp4",
+  "affiche": "chapitre-07-le-variateur.jpg"
+ },
+ {
+  "id": "refoulement",
+  "num": "8",
+  "titre": "Le collecteur de refoulement",
+  "sous": "et l'huile des compresseurs",
+  "duree": 39,
+  "video": "chapitre-08-le-collecteur-de-refoulement.mp4",
+  "affiche": "chapitre-08-le-collecteur-de-refoulement.jpg"
+ },
+ {
+  "id": "condenseur",
+  "num": "9",
+  "titre": "Le condenseur sur le toit",
+  "sous": "le glissement, dans l'autre sens",
+  "duree": 48,
+  "video": "chapitre-09-le-condenseur-sur-le-toit.mp4",
+  "affiche": "chapitre-09-le-condenseur-sur-le-toit.jpg"
+ },
+ {
+  "id": "bouteille",
+  "num": "10",
+  "titre": "La bouteille et la ligne liquide",
+  "sous": "le retour au rayon frais",
+  "duree": 33,
+  "video": "chapitre-10-la-bouteille-et-la-ligne-liquide.mp4",
+  "affiche": "chapitre-10-la-bouteille-et-la-ligne-liquide.jpg"
+ },
+ {
+  "id": "surveillance",
+  "num": "11",
+  "titre": "Ce que l'on surveille",
+  "sous": "l'œil du technicien",
+  "duree": 56,
+  "video": "chapitre-11-ce-que-l-on-surveille.mp4",
+  "affiche": "chapitre-11-ce-que-l-on-surveille.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "La centrale en un tour",
+  "sous": "l'essentiel à retenir",
+  "duree": 53,
+  "video": "chapitre-12-la-centrale-en-un-tour.mp4",
+  "affiche": "chapitre-12-la-centrale-en-un-tour.jpg"
+ }
+]

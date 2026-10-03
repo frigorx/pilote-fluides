@@ -40,6 +40,7 @@ const INDEXEES = [
   { fichier: "voyage/vis.html", url: "https://inerweb.fr/voyage/vis.html" },
   { fichier: "voyage/booster.html", url: "https://inerweb.fr/voyage/booster.html" },
   { fichier: "voyage/sous-refroidisseur.html", url: "https://inerweb.fr/voyage/sous-refroidisseur.html" },
+  { fichier: "voyage/centrale.html", url: "https://inerweb.fr/voyage/centrale.html" },
   {
     fichier: "packs/fluides/res/chaleur-interactive/index.html",
     url: "https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html",
