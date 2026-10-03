@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <script src="../moteur/animations.js?v=7bddbcaafd"></script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ÉlectroRézo — Entrer par l’armoire</title>
+<title>ÉlectroRézo — le réseau de l’électrotechnique</title>
 <meta name="description" content="ÉlectroRézo : un coin d’atelier en 3D — l’armoire, le moteur, l’établi. Cliquez sur ce que vous reconnaissez, ses stations s’ouvrent.">
+<link rel="canonical" href="https://inerweb.fr/electrorezo/">
 <link rel="stylesheet" href="stations/_commun/station.css">
 <style>
 /* la page d'entrée : l'armoire en 3D, la fiche de la zone choisie, la carte du réseau qui s'allume */
@@ -42,7 +43,8 @@
 .zones-liste button:hover{color:var(--navy);font-weight:700}
 .zones-liste button span{background:var(--navy);color:#fff;border-radius:50%;width:1.5rem;height:1.5rem;display:grid;place-items:center;font-size:.8em;font-weight:700;flex:none}
 /* la carte du réseau : la zone choisie s'y allume */
-.carte-armoire{margin-top:.9rem;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.6rem .8rem}
+.fiche{margin-top:.9rem}
+.carte-armoire{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.6rem .8rem}
 .carte-tete{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
 .carte-tete h2{font-size:1.05rem;margin:0;color:var(--navy)}
 .carte-tete p{margin:0;color:var(--muted);font-size:.9em;flex:1}
@@ -62,10 +64,11 @@
 <body>
 <header class="entete-armoire">
   <a class="marque" href="index.html">inerWeb<span>ÉlectroRézo</span></a>
-  <h1>Entrer par l’armoire</h1>
-  <nav class="vues" aria-label="Deux entrées dans le réseau">
+  <h1>Le réseau de l’électrotechnique</h1>
+  <nav class="vues" aria-label="Trois entrées dans le réseau">
     <a href="armoire.html" aria-current="page">L’armoire</a>
-    <a href="carte-reseau.html">La carte du réseau</a>
+    <a href="carte-reseau.html">La carte en grand</a>
+    <a href="lignes.html">Les 8 lignes</a>
   </nav>
 </header>
 
@@ -74,13 +77,13 @@
     <electro-3d id="armoire" modele="armoire" mode="decouvrir"></electro-3d>
   </div>
   <div class="col-droite">
-    <aside class="fiche" id="fiche" aria-live="polite"></aside>
     <section class="carte-armoire" aria-label="La carte du réseau">
       <div class="carte-tete"><h2>Sur la carte du réseau</h2>
         <p id="carteNote">Choisissez une zone : ses stations s’allument ici, avec leurs lignes.</p>
         <button type="button" id="toute">Toute la carte</button></div>
       <div id="carte"></div>
     </section>
+    <aside class="fiche" id="fiche" aria-live="polite"></aside>
   </div>
 </main>
 

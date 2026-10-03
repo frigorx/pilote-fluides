@@ -186,6 +186,18 @@
     chargé d'affaires : une année chez Clim'Études Sud, du premier jour au conseil réglementaire argumenté.</p>
   </div>
 
+  <!-- LE BÂTIMENT RÉGLEMENTAIRE (3D) — porte d'entrée du réseau : onze zones, onze sous-lignes.
+       C'est un PLUS : le plan ci-dessous reste la vraie navigation (repli automatique sans WebGL).
+       Composant : batiment3d/batiment.js. Zones lues dans batiment3d/zones.json (généré depuis
+       le tableau RESEAU de cette page : node batiment3d/generer-zones.mjs). -->
+  <section class="bloc" id="batiment" aria-label="Le bâtiment réglementaire, en 3D" style="margin-top:26px">
+    <div class="titre-bloc">
+      <h2>🏢 Le bâtiment réglementaire</h2>
+      <span>onze zones, onze sous-lignes du réseau : tournez, survolez, touchez</span>
+    </div>
+    <div id="batiment3d" style="padding:14px 20px 22px"></div>
+  </section>
+
   <!-- CE QUI EST OUVERT — posé le 24/08 après le test de F. Henninot : il a
        parcouru le plan et conclu qu'aucun lien n'était cliquable. Le lien
        existait, mais il mesurait 116 × 24 px, perdu parmi 57 pastilles
@@ -209,18 +221,6 @@
     <p class="o-note">Les cours n'ont pas encore été relus par un professionnel : certaines valeurs
     réglementaires y sont volontairement absentes plutôt qu'approximatives.</p>
   </div>
-
-  <!-- LE BÂTIMENT RÉGLEMENTAIRE (3D) — porte d'entrée du réseau : onze zones, onze sous-lignes.
-       C'est un PLUS : le plan ci-dessous reste la vraie navigation (repli automatique sans WebGL).
-       Composant : batiment3d/batiment.js. Zones lues dans batiment3d/zones.json (généré depuis
-       le tableau RESEAU de cette page : node batiment3d/generer-zones.mjs). -->
-  <section class="bloc" id="batiment" aria-label="Le bâtiment réglementaire, en 3D" style="margin-top:26px">
-    <div class="titre-bloc">
-      <h2>🏢 Le bâtiment réglementaire</h2>
-      <span>onze zones, onze sous-lignes du réseau : tournez, survolez, touchez</span>
-    </div>
-    <div id="batiment3d" style="padding:14px 20px 22px"></div>
-  </section>
 
   <section class="bloc plan" id="carte" aria-label="Plan du réseau Législation">
     <div class="titre-bloc">
