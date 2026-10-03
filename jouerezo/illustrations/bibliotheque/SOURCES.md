@@ -55,3 +55,10 @@ Les vues isolées d'organes frigorifiques ne sont pas copiées : elles sont lues
 | `reel_signalisation/voyant_vert__reel_` | avec repères |
 | `sources/terre` | avec repères |
 | `transformateurs/transfo_monophase` | sans repères |
+
+## Vues isolées d'outils (`illustrations/outils/`)
+
+Six vues fabriquées pour JouéRézo le 03/10/2026 avec le générateur d'images de l'abonnement ChatGPT (Codex), en une seule planche
+(`illustrations/consignes/planche-outils.txt`, source `planche-outils-source.png`), découpée par ffmpeg : manifold, pompe à vide,
+vacuomètre, balance de charge, station de récupération, détecteur de fuite. Aides à la reconnaissance, jamais des documents constructeur ;
+aucun texte ni marque. Elles remplacent les photos d'atelier du pack, écartées par F. Henninot (encombrées, de travers).

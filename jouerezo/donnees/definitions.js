@@ -52,14 +52,18 @@ window.JR_DEFINITIONS = [
   { mot: "multimètre", famille: "outil", def: "Tension, résistance, continuité : je suis l'appareil à molette de toutes les mesures électriques de l'atelier.", porte: { t: "ÉlectroRézo 1.9 — Mesurer", h: "../electrorezo/stations/1-9-mesurer/" } }
 ];
 
-/* Les outils en photo (Memory « Les outils ») — photos déjà servies par le site :
-   photos d'atelier du pack (publiées sur décision de l'auteur, CATALOGUE.md),
-   stations CuivRézo (images/, légendes des stations), ÉlectroRézo 1.2 et 1.9. */
+/* Les outils en image (Memory « Les outils ») :
+   · vues isolées fabriquées pour JouéRézo (illustrations/outils/, planche Codex du 03/10/2026,
+     aides à la reconnaissance comme celles du Tome 3) — les photos d'atelier du pack ont été
+     écartées par Franck (encombrées, de travers) ;
+   · stations CuivRézo (images/, légendes des stations), ÉlectroRézo 1.2 et 1.9 (vues isolées). */
 window.JR_OUTILS_PHOTOS = [
-  { nom: "Manifold", src: "../packs/fluides/res/photos/manifold-branche.jpg" },
-  { nom: "Pompe à vide", src: "../packs/fluides/res/photos/pompe-a-vide.png" },
-  { nom: "Vacuomètre", src: "../packs/fluides/res/photos/vacuometre.png" },
-  { nom: "Balance de charge", src: "../packs/fluides/res/photos/balance.jpg" },
+  { nom: "Manifold", src: "illustrations/outils/manifold.webp" },
+  { nom: "Pompe à vide", src: "illustrations/outils/pompe-a-vide.webp" },
+  { nom: "Vacuomètre", src: "illustrations/outils/vacuometre.webp" },
+  { nom: "Balance de charge", src: "illustrations/outils/balance.webp" },
+  { nom: "Station de récupération", src: "illustrations/outils/station-recuperation.webp" },
+  { nom: "Détecteur de fuite", src: "illustrations/outils/detecteur-fuite.webp" },
   { nom: "Coupe-tube", src: "../cuivrezo/images/1-3-couper.webp" },
   { nom: "Ébavureur", src: "../cuivrezo/images/1-3-ebavurer.webp" },
   { nom: "Cintrette", src: "../cuivrezo/images/1-4-cintrette.webp" },
