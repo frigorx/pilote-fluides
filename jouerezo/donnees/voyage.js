@@ -18,22 +18,22 @@ window.VOYAGE_RECIT = {
   titre: "Voyage dans tous ses états",
   sousTitre: "le circuit frigorifique raconté par une molécule",
   voix: { nom: "fr-FR-RemyMultilingualNeural", debit: "-5%" },
-  referentiel: {
-    diplome: "CAP IFCA",
-    taches: [["T2", "Compléter les documents de traçabilité des fluides frigorigènes"],
-             ["T13", "Tirer au vide, charger et contrôler l'installation sous tension"],
-             ["T14", "Régler l'installation en fonctionnement"]],
-    savoirs: [["S0.1", "Réglementation et impacts environnementaux"],
-              ["S0.2", "Gestion de l'environnement du site et des déchets"],
-              ["S5.1", "Systèmes thermodynamiques à détente directe"],
-              ["S5.2", "Fluides frigorigènes, huiles frigorifiques"],
-              ["S5.6", "Réseaux, matériels électriques et de régulation"]]
+  /* page de l'enseignant GÉNÉRIQUE (Franck, 03/10 : « pas de diplôme Éduc nat ») : vitrine publique, toutes formations */
+  enseignant: {
+    public: "toutes les formations du froid et de la climatisation",
+    notions: [["Le rôle des quatre organes principaux, dans le sens du fluide", "1, 2, 3, 8"],
+              ["La ligne liquide : bouteille, filtre déshydrateur, voyant, électrovanne", "4 à 7"],
+              ["Les changements d'état : ébullition, condensation, surchauffe, sous-refroidissement", "1, 3, 8"],
+              ["L'étanchéité, le PRP, la récupération du fluide", "9, 10"],
+              ["Les familles de fluides, d'hier à demain", "la famille"],
+              ["Le tour complet : absorber, comprimer, rejeter, détendre", "le tour"]],
+    usage: "Le film dure 9 minutes. Il se regarde d'un trait, ou en trois temps avec une question entre chacun : les organes principaux (1 à 3), la ligne liquide et le détendeur (4 à 8), puis la fuite, la récupération et les fluides. Le module pose une question à chaque organe ; le livret se lit seul, un QR code par chapitre. Ce voyage ouvre le sujet : il ne remplace ni le cours ni les travaux pratiques."
   },
   /* logo du lycée en fin de vidéo : VIDE tant que la direction n'a pas donné son accord (un emplacement marqué
      le remplace). Le jour venu : logoLycee: "voyage/logos/logo-lycee-jacques-raynaud.png" (fichier à recopier depuis
      progression-2a-cap-ifca/logos/), puis node outils/voyage-film.mjs et refaire les rendus. */
   logoLycee: "",
-  credit: "L'idée de faire raconter le circuit par une molécule rappelle « Voyage extraordinaire avec une molécule de fréon 12 » (A. Delalande, 1948) et le feuilleton paru dans la RPF dans les années 1980. Texte, dessins et animation : inerWeb (F. Henninot), réalisés avec une IA ; voix de synthèse. Symboles adaptés de la collection QElectroTech (CC BY 3.0). Licence CC BY-NC-ND.",
+  credit: "L'idée de ce parcours vient du souvenir de lecture de « Voyage extraordinaire avec une molécule de R 12 : roman frigorifique », d'André Delalande. Conception pédagogique : F. Henninot — inerWeb. Texte, dessins et animation réalisés avec l'assistance d'une intelligence artificielle ; voix de synthèse. Symboles d'après la planche Éduscol « Le circuit frigorifique » et la collection QElectroTech (CC BY 3.0). Licence CC BY-NC-ND.",
   scenes: [
     { id: "intro", num: "", titre: "Mon voyage", sous: "un circuit fermé", carte: null,
       phrases: [
@@ -138,16 +138,16 @@ window.VOYAGE_RECIT = {
       phrases: [
         "Voici le voyant liquide : une petite fenêtre sur le circuit.",
         "On y regarde passer le fluide, machine en marche.",
-        "Si c'est plein et clair, comme maintenant, tout va bien.",
-        "Si on voit passer des bulles, il manque peut-être du fluide, ou le filtre est bouché.",
+        "Si c'est plein et clair, comme maintenant, c'est bon signe. Mais ce n'est qu'un indice : on le confirme par des mesures.",
+        "Si on voit passer des bulles, il manque peut-être du fluide, le filtre est peut-être bouché, ou le liquide n'est pas assez sous-refroidi.",
         "Au centre, une pastille change de couleur s'il y a de l'humidité : verte, c'est sec ; jaune, c'est humide.",
         "Moi, on me voit passer : plein, pas de bulles."
       ],
       question: { q: "Au voyant, on voit passer des bulles. Que peut-on penser ?",
-        choix: [["Il manque peut-être du fluide, ou le filtre est bouché.", 1],
+        choix: [["Il manque peut-être du fluide, le filtre est bouché, ou le liquide n'est pas assez sous-refroidi.", 1],
                 ["Il y a trop de fluide dans le circuit.", 0],
                 ["La pastille est en panne.", 0]],
-        pourquoi: "Au voyant, le fluide doit passer liquide, plein. Des bulles disent qu'une partie s'est déjà vaporisée : manque de fluide ou filtre qui freine le passage." } },
+        pourquoi: "Au voyant, le fluide doit passer liquide, plein. Des bulles disent qu'une partie s'est déjà vaporisée : manque de fluide, filtre qui freine le passage, ou liquide pas assez sous-refroidi. Le voyant donne un indice ; les mesures confirment." } },
     { id: "electrovanne", num: "7", titre: "L'électrovanne", sous: "un robinet électrique", organe: "electrovanne", pres: 2,
       role: "ouvre ou ferme la ligne liquide",
       carte: [10.5, 12.5], puces: [["HP", "haute pression"], ["liq", "liquide"]],
@@ -173,32 +173,32 @@ window.VOYAGE_RECIT = {
         "Derrière moi, la haute pression. Devant moi, le passage le plus étroit du circuit.",
         "Je me faufile par un trou minuscule, et ma pression chute d'un coup.",
         "Une partie de mes voisines se met à bouillir aussitôt, et nous voilà toutes très froides.",
-        "Le bulbe surveille la sortie de l'évaporateur : si la vapeur y sort trop chaude, il pousse sur la membrane, et le détendeur ouvre plus.",
+        "Le bulbe surveille la sortie de l'évaporateur : si la surchauffe y est trop élevée, il pousse sur la membrane, et le détendeur ouvre davantage.",
         "Il garde ainsi la bonne surchauffe : l'évaporateur est bien rempli, sans liquide pour le compresseur.",
         "Et me revoilà à l'évaporateur. Je recommence, des milliers de tours, pendant des années."
       ],
-      question: { q: "En sortie d'évaporateur, le bulbe sent une vapeur trop chaude. Que fait le détendeur ?",
-        choix: [["Il ouvre plus, pour laisser passer plus de fluide.", 1],
+      question: { q: "En sortie d'évaporateur, la surchauffe est trop élevée. Que fait le détendeur ?",
+        choix: [["Il ouvre davantage, pour laisser passer plus de fluide.", 1],
                 ["Il se ferme complètement.", 0],
                 ["Il arrête le compresseur.", 0]],
-        pourquoi: "Vapeur trop chaude en sortie = l'évaporateur manque de fluide. Le bulbe pousse sur la membrane : le pointeau s'écarte, le détendeur ouvre plus." } },
+        pourquoi: "Surchauffe trop élevée en sortie = l'évaporateur manque de fluide. Le bulbe pousse sur la membrane : le pointeau s'écarte, le détendeur ouvre davantage." } },
     { id: "fuite", num: "9", titre: "La fuite", sous: "une voisine s'échappe",
       carte: [9.2, 9.2], puces: [["fuite", "fuite"]],
       phrases: [
         "Un jour, un raccord se desserre, à force de vibrations.",
         "Ma voisine s'échappe par la fuite.",
         "Pour la machine, c'est une mauvaise nouvelle : un circuit fermé ne consomme pas de fluide.",
-        "S'il en manque, c'est qu'il y a une fuite, et la machine fait de moins en moins de froid.",
+        "S'il en manque, on cherche pourquoi : le plus souvent, c'est une fuite. Et la machine fait de moins en moins de froid.",
         "Pour la planète aussi : dans l'air, ma voisine agit comme une couverture, elle retient la chaleur autour de la Terre.",
         ["Le PRP dit combien, comparé au CO2. Pour certains fluides, plusieurs milliers de fois plus.",
          "Le P R P dit combien, comparé au C O deux. Pour certains fluides, plusieurs milliers de fois plus."],
         "Voilà pourquoi on contrôle l'étanchéité des circuits, et pourquoi on répare avant de recharger."
       ],
-      question: { q: "Un circuit manque de fluide. Que faut-il en conclure ?",
-        choix: [["Il y a une fuite : un circuit fermé ne consomme pas de fluide.", 1],
-                ["C'est normal : le fluide s'use avec le temps.", 0],
-                ["Il suffit d'en rajouter chaque année.", 0]],
-        pourquoi: "Le fluide tourne en rond sans s'user. S'il en manque, il est sorti quelque part : on cherche la fuite, on répare, puis on recharge." } },
+      question: { q: "Un circuit manque de fluide. Que faut-il faire ?",
+        choix: [["Chercher la cause, d'abord une fuite.", 1],
+                ["Rien : le fluide s'use avec le temps.", 0],
+                ["En rajouter chaque année, sans chercher.", 0]],
+        pourquoi: "Le fluide tourne en rond sans s'user. S'il en manque, il est sorti quelque part, ou la charge de départ était trop faible : on cherche la fuite, on répare, puis on recharge." } },
     { id: "recuperation", num: "10", titre: "La récupération", sous: "jamais dans l'air",
       carte: [2.5, 2.5], puces: [["recup", "récupération"]],
       phrases: [

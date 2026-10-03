@@ -141,7 +141,7 @@
     D.el("path", { d: "M 690 360 A 150 150 0 0 1 860 328", fill: "none", stroke: "#fff", "stroke-width": 8, opacity: 0.55, "stroke-linecap": "round" }, g);
     D.etiquette(g, 560, 322, "fenêtre en verre", { "text-anchor": "end" }); D.trait(g, 566, 314, 690, 368);
     D.etiquette(g, 1064, 664, "pastille d'humidité"); D.trait(g, 1060, 656, 836, 500);
-    const pas = pastilles(g, 60, "start", [["plein et clair : tout va bien", "#1e7e54", 2, 2], ["des bulles : manque de fluide, ou filtre bouché", D.ORANGE, 3, 3],
+    const pas = pastilles(g, 60, "start", [["plein et clair : bon signe, à confirmer par des mesures", "#1e7e54", 2, 2], ["des bulles : manque de fluide, filtre bouché, ou pas assez sous-refroidi", D.ORANGE, 3, 3],
       ["pastille verte = sec · jaune = humide", D.BLEU, 4, 4], ["plein, pas de bulles ✓", "#1e7e54", 5, 5]]);
     const mila = D.heroine(devant, { r: 30 });
     const tj = c.A(4, 0.55), tv = c.A(4, 0.9);

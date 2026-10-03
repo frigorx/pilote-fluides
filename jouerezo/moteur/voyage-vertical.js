@@ -88,7 +88,7 @@
       D.heroine(fin, { r: 54 })({ x: 540, y: 1060, t: 1, humeur: "sourire", etat: "liquide", temp: 0.1 });
       D.lignes(fin, 540, 1230, ["Tout le voyage, gratuit :", "inerweb.fr"], Object.assign({ "text-anchor": "middle", "font-size": 58, fill: D.BLEU }, titreFont), 70);
       D.signature(fin, 540, 1360, 900);
-      D.texte(fin, 540, 1560, "Formations froid et climatisation : CAP IFCA · Bac pro MFER", { "text-anchor": "middle", "font-size": 32, fill: "#3b4a5e", "font-weight": 600, "font-family": "Calibri, Arial, sans-serif" });
+      D.texte(fin, 540, 1560, "Pour toutes les formations du froid et de la climatisation", { "text-anchor": "middle", "font-size": 32, fill: "#3b4a5e", "font-weight": 600, "font-family": "Calibri, Arial, sans-serif" });
     }
     function rendreSerie(t) {
       let e = episodes.find(x => t < x.debut + x.duree) || episodes[episodes.length - 1];

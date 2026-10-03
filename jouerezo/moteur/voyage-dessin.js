@@ -295,17 +295,18 @@
 
   /* ---------- les organes : leurs symboles normalisés (bibliothèque de Franck, voyage/symboles/) ----------
      Pas de photos (Franck, 03/10) : le dessin, c'est la coupe animée ; le symbole, c'est ce que l'élève
-     retrouvera sur les schémas. a = largeur / hauteur du symbole. */
+     retrouvera sur les schémas. vb = viewBox du SVG ; axe = le point du symbole posé sur le tuyau (milieu
+     de ses raccordements), pour que la carte du circuit le pose dans le sens du fluide. */
   D.SYM = window.VOYAGE_SYM || "voyage/symboles/";
   D.ORGANES = {
-    evaporateur: { f: "echangeur_a_air", a: 1, nom: "évaporateur" },
-    compresseur: { f: "compresseur_general", a: 1.25, nom: "compresseur" },
-    condenseur: { f: "echangeur_a_air", a: 1, nom: "condenseur" },
-    bouteille: { f: "bouteille_liquide_verticale", a: 0.54, nom: "bouteille" },
-    filtre: { f: "filtre_deshydrateur", a: 2, nom: "filtre" },
-    voyant: { f: "voyant_liquide", a: 2.5, nom: "voyant" },
-    electrovanne: { f: "electrovanne_frigo", a: 1.33, nom: "électrovanne" },
-    detendeur: { f: "detendeur_thermo_ext", a: 1, nom: "détendeur" }
+    evaporateur: { f: "echangeur_a_air_eduscol", vb: [-22, -32, 44, 64], axe: [10, 0], nom: "évaporateur" },
+    compresseur: { f: "compresseur_general", vb: [-24, -20, 50, 40], axe: [0, 0], nom: "compresseur" },
+    condenseur: { f: "echangeur_a_air_eduscol", vb: [-22, -32, 44, 64], axe: [10, 0], nom: "condenseur" },
+    bouteille: { f: "bouteille_liquide_verticale", vb: [-14, -26, 28, 52], axe: [0, -24.5], nom: "bouteille" },
+    filtre: { f: "filtre_deshydrateur", vb: [-25, -10, 40, 20], axe: [-4.875, 0.495], nom: "filtre" },
+    voyant: { f: "voyant_liquide", vb: [-15, -10, 50, 20], axe: [9.8, -0.054], nom: "voyant" },
+    electrovanne: { f: "electrovanne_frigo", vb: [-19, -21, 40, 30], axe: [0, 0], nom: "électrovanne" },
+    detendeur: { f: "detendeur_thermo_ext", vb: [-19, -28, 40, 40], axe: [0, 0], nom: "détendeur", lettres: [0, -12, 4.6, "TC"] }
   };
   D.image = function (parent, nom, x, y, l, h) {
     const o = D.ORGANES[nom], embarque = window.VOYAGE_SYM_DATA && window.VOYAGE_SYM_DATA[o.f]; // le film embarque les symboles
@@ -379,10 +380,30 @@
   /* ---------- le circuit des huit organes (repère 1000 × 620, dans le sens du fluide) ---------- */
   D.CIRCUIT_PTS = [[390, 545], [650, 545], [890, 545], [890, 400], [890, 240], [890, 85], [745, 85], [495, 85], [400, 85],
     [290, 85], [190, 85], [95, 85], [95, 190], [95, 320], [95, 545], [390, 545]];
-  const PLACES = { evaporateur: [520, 545, 150, 150], compresseur: [890, 320, 160, 130], condenseur: [620, 85, 150, 150],
-    bouteille: [400, 85, 46, 86], filtre: [290, 85, 96, 40], voyant: [190, 85, 96, 40], electrovanne: [95, 190, 84, 64], detendeur: [95, 320, 100, 100] };
-  const NOMS = { evaporateur: [520, 452, "middle"], compresseur: [790, 326, "end"], condenseur: [620, 194, "middle"], bouteille: [400, 166, "middle"],
-    filtre: [290, 146, "middle"], voyant: [190, 146, "middle"], electrovanne: [148, 198, "start"], detendeur: [158, 328, "start"] };
+  /* chaque symbole posé DANS LE SENS DU FLUIDE (Franck, 03/10) : [x, y du tuyau, échelle, rotation, miroir].
+     Échangeurs couchés sur leur branche, ventilateur dehors ; compresseur refoulement en haut ; électrovanne et
+     détendeur debout sur la branche qui descend ; bouteille pendue sous le tuyau, arrivée à droite, tube plongeur à gauche. */
+  const PLACES = { evaporateur: [520, 545, 2.4, -90], compresseur: [890, 320, 3.2, -90], condenseur: [620, 85, 2.4, 90],
+    bouteille: [400, 85, 1.65, 0, true], filtre: [290, 85, 2, 0], voyant: [190, 85, 1.92, 0], electrovanne: [95, 190, 2.1, 90], detendeur: [95, 320, 2.5, 90] };
+  const NOMS = { evaporateur: [520, 490, "middle"], compresseur: [790, 326, "end"], condenseur: [620, 184, "middle"], bouteille: [400, 206, "middle"],
+    filtre: [290, 146, "middle"], voyant: [190, 146, "middle"], electrovanne: [162, 198, "start"], detendeur: [188, 328, "start"] };
+  function poser(parent, nom, px, py, s, rot, miroir) { // renvoie le cadre [x, y, l, h] du symbole posé
+    const o = D.ORGANES[nom], [vx, vy, vl, vh] = o.vb, [ax, ay] = o.axe, embarque = window.VOYAGE_SYM_DATA && window.VOYAGE_SYM_DATA[o.f];
+    const g = D.el("g", { transform: "translate(" + px + " " + py + ") rotate(" + rot + ") scale(" + (miroir ? -s : s) + " " + s + ") translate(" + (-ax) + " " + (-ay) + ")" }, parent);
+    D.el("image", { href: embarque || D.SYM + o.f + ".svg", x: vx, y: vy, width: vl, height: vh }, g);
+    const c = Math.round(Math.cos(rot * Math.PI / 180)), si = Math.round(Math.sin(rot * Math.PI / 180));
+    if (o.lettres && rot) { // les lettres du symbole (TC) restent droites quand il est tourné
+      const [lx, ly, lr, lt] = o.lettres, u = (lx - ax) * s, v = (ly - ay) * s, qx = px + u * c - v * si, qy = py + u * si + v * c;
+      D.el("circle", { cx: qx, cy: qy, r: lr * s, fill: "#fff" }, parent);
+      D.texte(parent, qx, qy + 2.1 * s, lt, { "text-anchor": "middle", "font-size": 6 * s, fill: "#333", "font-family": "sans-serif" });
+    }
+    const pts = [[vx, vy], [vx + vl, vy], [vx, vy + vh], [vx + vl, vy + vh]].map(([x, y]) => {
+      const u = (x - ax) * (miroir ? -s : s), v = (y - ay) * s;
+      return [px + u * c - v * si, py + u * si + v * c];
+    });
+    const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+    return [Math.min(...xs), Math.min(...ys), Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)];
+  }
   D.circuitPoint = function (w) {
     const nb = D.CIRCUIT_PTS.length - 1;
     w = ((w % nb) + nb) % nb;
@@ -396,11 +417,17 @@
     D.el("polyline", { points: pts, fill: "none", stroke: "#e7a978", "stroke-width": 6, "stroke-linejoin": "round" }, g);
     const reperes = {};
     for (const nom in PLACES) {
-      const [cx, cy, w, h] = PLACES[nom];
-      reperes[nom] = D.el("rect", { x: cx - w / 2 - 10, y: cy - h / 2 - 10, width: w + 20, height: h + 20, rx: 14, fill: "#fff", stroke: "rgba(27,58,99,.3)", "stroke-width": 3 }, g);
-      D.image(g, nom, cx - w / 2, cy - h / 2, w, h);
+      const cadre = D.el("rect", { rx: 14, fill: "#fff", stroke: "rgba(27,58,99,.3)", "stroke-width": 3 }, g);
+      const [x0, y0, w, h] = poser(g, nom, ...PLACES[nom]);
+      Object.entries({ x: x0 - 10, y: y0 - 10, width: w + 20, height: h + 20 }).forEach(([k, v]) => cadre.setAttribute(k, v.toFixed(1)));
+      reperes[nom] = cadre;
       if (noms) { const [nx, ny, a] = NOMS[nom]; D.etiquette(g, nx, ny, D.ORGANES[nom].nom, { "text-anchor": a, "font-size": 30, "font-weight": 700, fill: D.BLEU }); }
     }
+    // le bulbe du détendeur, posé sur le tuyau à la sortie de l'évaporateur, relié à la tête TC par le capillaire (Franck, 03/10)
+    const [, , ds, drot] = PLACES.detendeur, cap = [PLACES.detendeur[0] + 20 * ds * Math.sin(drot * Math.PI / 180), PLACES.detendeur[1]];
+    D.el("polyline", { points: [cap, [cap[0], 440], [660, 440], [660, 521]].map(p => p.join(",")).join(" "), fill: "none", stroke: "#000", "stroke-width": 2.5 }, g);
+    D.el("rect", { x: 644, y: 521, width: 32, height: 14, rx: 7, fill: "#fff", stroke: "#000", "stroke-width": 2.5 }, g);
+    if (noms) D.etiquette(g, 688, 512, "bulbe", { "font-size": 26, "font-weight": 700, fill: D.BLEU });
     return { g: g, k: k, ecran: (cx, cy) => [x + cx * k, y + cy * k],
       surligne: (nom, oui) => { reperes[nom].setAttribute("stroke", oui ? "#ff6b35" : "rgba(27,58,99,.3)"); reperes[nom].setAttribute("stroke-width", oui ? 9 : 3); } };
   };

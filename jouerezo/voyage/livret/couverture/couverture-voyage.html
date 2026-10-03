@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Couverture — inerWeb Voyage dans tous ses états</title>
+<!-- Source de la couverture du livret (même gabarit que HoCourant et R408). Rendu : node outils/voyage-couverture.mjs -->
+<style>
+  body { margin: 0; background: #1b3a63; }
+  .page { width: 559px; height: 794px; box-sizing: border-box; padding: 36px 40px 30px; background: #1b3a63; color: #ffffff; font-family: "Segoe UI", "Trebuchet MS", Calibri, Arial, sans-serif; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+  .haut { display: flex; align-items: center; justify-content: space-between; }
+  .site { font-size: 15px; font-weight: 700; color: #ffffff; letter-spacing: .2px; }
+  .par { font-size: 11px; color: rgba(255,255,255,.55); margin-top: 6px; }
+  .titre { margin: 22px 0 0; font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif; font-weight: 700; font-size: 58px; line-height: .98; letter-spacing: -1px; }
+  .titre .orange { color: #ff6b35; }
+  .sous { margin: 12px 0 0; font-size: 19px; font-weight: 700; color: #ffffff; }
+  .genre { margin: 4px 0 0; font-size: 15px; font-weight: 700; color: #ff6b35; }
+  .publics { margin: 6px 0 0; font-size: 12px; color: rgba(255,255,255,.75); }
+  .milieu { display: flex; gap: 22px; align-items: center; margin-top: 24px; }
+  .carte { background: #fffdf8; border-radius: 16px; overflow: hidden; }
+  .carte.illu { width: 262px; height: 196px; display: flex; align-items: center; justify-content: center; }
+  .carte.illu img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .qr { width: 130px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .qr .carte { width: 118px; height: 118px; padding: 8px; box-sizing: border-box; }
+  .qr img { width: 100%; height: 100%; display: block; }
+  .qr .legende { font-size: 12px; font-weight: 700; text-align: center; line-height: 1.25; }
+  .interactif { margin: 24px 0 0; font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,.92); }
+  .interactif strong { color: #ffffff; }
+  .paliers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+  .palier { border: 1.5px solid #ff6b35; border-radius: 6px; padding: 9px 4px 8px; text-align: center; }
+  .palier .sigle { display: block; font-family: "Trebuchet MS", Arial, sans-serif; font-weight: 700; font-size: 17px; color: #ff6b35; }
+  .palier .mot { display: block; font-size: 11px; color: #ffffff; margin-top: 2px; }
+  .bas { margin-top: auto; border-top: 1px solid rgba(255,255,255,.28); padding-top: 12px; }
+  .bas .nom { font-size: 17px; font-weight: 700; margin: 0; }
+  .bas .role { font-size: 12.5px; color: rgba(255,255,255,.8); margin: 3px 0 0; }
+</style>
+<script defer src="../../../../moteur/retour-accueil.js?v=ff0ca829c0"></script>
+</head>
+<body>
+<div class="page">
+  <div class="haut">
+    <svg xmlns="http://www.w3.org/2000/svg" width="248" height="34" viewBox="0 0 300 40" role="img" aria-label="inerWeb Voyage">
+      <text fill="#ffffff" font-size="26px" x="2" y="30">❄️</text>
+      <text fill="#ffffff" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="25px" font-weight="bold" x="40" y="29">iner</text>
+      <text fill="#ffffff" font-family="Segoe Script, Brush Script MT, cursive" font-size="25px" x="88" y="29">Web</text>
+      <line stroke="#e8914a" stroke-width="2" x1="40" x2="146" y1="32" y2="32"/>
+      <rect fill="#e8914a" x="152" y="7" rx="5" ry="5" width="78" height="24"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="191" y="24" text-anchor="middle">Voyage</text>
+    </svg>
+    <span class="site">inerweb.fr</span>
+  </div>
+  <p class="par">par F. Henninot</p>
+
+  <h1 class="titre">Voyage dans<br><span class="orange">tous ses états</span></h1>
+  <p class="sous">Le circuit frigorifique raconté par une molécule</p>
+  <p class="genre">Livret illustré</p>
+  <p class="publics">Toutes les formations du froid et de la climatisation</p>
+
+  <div class="milieu">
+    <div class="carte illu"><img src="illustration.jpg" alt="La molécule sur le circuit frigorifique et ses huit organes"></div>
+    <div class="qr">
+      <div class="carte"><img src="qr-module.png" alt="QR code vers le voyage animé"></div>
+      <p class="legende">Scannez : le voyage s'anime</p>
+    </div>
+  </div>
+
+  <p class="interactif"><strong>Livret interactif</strong> — 13 QR codes ouvrent chaque chapitre animé et raconté sur inerweb.fr, avec une question à chaque organe. Le film complet dure 9 minutes.</p>
+
+  <div class="paliers">
+    <div class="palier"><span class="sigle">absorber</span><span class="mot">évaporateur</span></div>
+    <div class="palier"><span class="sigle">comprimer</span><span class="mot">compresseur</span></div>
+    <div class="palier"><span class="sigle">rejeter</span><span class="mot">condenseur</span></div>
+    <div class="palier"><span class="sigle">détendre</span><span class="mot">détendeur</span></div>
+  </div>
+
+  <div class="bas">
+    <p class="nom">F. Henninot</p>
+    <p class="role">Enseignant en filière froid et climatisation</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-22 -32 44 64" overflow="visible"><!-- Échangeur à air (évaporateur, condenseur), dessin exact de la planche Eduscol « le circuit frigorifique » (Franck, 03/10/2026) : le tube TRAVERSE le cadre de haut en bas, ses ailettes le coupent en travers, le ventilateur à côté. Raccordements en haut (10, -30) et en bas (10, 30). L'ancien echangeur_a_air.svg garde ses points en bas pour les modules qui y sont raccordés. -->
+<rect x="-20" y="-25" width="40" height="50" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="10" y1="-30" x2="10" y2="30" stroke="#000" stroke-width="1"/>
+<line x1="5" y1="-15" x2="15" y2="-15" stroke="#000" stroke-width="1"/>
+<line x1="5" y1="-5" x2="15" y2="-5" stroke="#000" stroke-width="1"/>
+<line x1="5" y1="5" x2="15" y2="5" stroke="#000" stroke-width="1"/>
+<line x1="5" y1="15" x2="15" y2="15" stroke="#000" stroke-width="1"/>
+<circle cx="-8.5" cy="0" r="10.5" fill="none" stroke="#000" stroke-width="1"/>
+<g transform="translate(-8.5 0)" fill="none" stroke="#000" stroke-width="0.8">
+<path d="M 0 0 C 3 -1.7 6.5 -1.7 9 0 C 6.5 1.7 3 1.7 0 0 Z" transform="rotate(180)"/>
+<path d="M 0 0 C 3 -1.7 6.5 -1.7 9 0 C 6.5 1.7 3 1.7 0 0 Z" transform="rotate(-60)"/>
+<path d="M 0 0 C 3 -1.7 6.5 -1.7 9 0 C 6.5 1.7 3 1.7 0 0 Z" transform="rotate(60)"/>
+</g>
+<circle cx="10" cy="-30" r="1.5" fill="#000"/>
+<circle cx="10" cy="30" r="1.5" fill="#000"/>
+</svg>

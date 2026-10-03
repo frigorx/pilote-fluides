@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Quatrième de couverture — inerWeb Voyage dans tous ses états</title>
+<!-- Source de la 4e de couverture (gabarit R408). Le crédit (id="credit") est repris de donnees/voyage.js au rendu. -->
+<style>
+  body { margin: 0; background: #1b3a63; }
+  .page { width: 559px; height: 794px; box-sizing: border-box; padding: 40px 40px 30px; background: #1b3a63; color: #ffffff; font-family: "Segoe UI", "Trebuchet MS", Calibri, Arial, sans-serif; display: flex; flex-direction: column; overflow: hidden; }
+  .haut { display: flex; align-items: center; justify-content: space-between; }
+  .site { font-size: 15px; font-weight: 700; }
+  h2 { font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif; font-size: 30px; line-height: 1.1; margin: 34px 0 0; }
+  h2 .orange { color: #ff6b35; white-space: nowrap; }
+  p { font-size: 14.5px; line-height: 1.5; margin: 14px 0 0; color: rgba(255,255,255,.92); }
+  .reseaux { margin: 18px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; }
+  .reseaux li { font-size: 13px; padding: 8px 10px; border: 1px solid rgba(255,255,255,.28); border-radius: 6px; }
+  .reseaux li strong { color: #ff6b35; }
+  .qrs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+  .qrbloc { display: flex; gap: 12px; align-items: center; }
+  .carte { background: #fffdf8; border-radius: 14px; width: 104px; height: 104px; padding: 7px; box-sizing: border-box; flex: none; }
+  .carte img { width: 100%; height: 100%; display: block; }
+  .qrbloc p { margin: 0; font-size: 13px; line-height: 1.4; }
+  .qrbloc p strong { display: block; font-size: 15px; margin-bottom: 3px; }
+  .prof { margin-top: 22px; border: 1.5px dashed #f2b263; border-radius: 8px; padding: 10px 12px; font-size: 12.5px; line-height: 1.4; color: #ffe9d3; }
+  .prof strong { color: #ffd39b; }
+  .bas { margin-top: auto; border-top: 1px solid rgba(255,255,255,.28); padding-top: 12px; font-size: 11.5px; color: rgba(255,255,255,.75); line-height: 1.45; }
+</style>
+<script defer src="../../../../moteur/retour-accueil.js?v=ff0ca829c0"></script>
+</head>
+<body>
+<div class="page">
+  <div class="haut">
+    <svg xmlns="http://www.w3.org/2000/svg" width="248" height="34" viewBox="0 0 300 40" role="img" aria-label="inerWeb Voyage">
+      <text fill="#ffffff" font-size="26px" x="2" y="30">❄️</text>
+      <text fill="#ffffff" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="25px" font-weight="bold" x="40" y="29">iner</text>
+      <text fill="#ffffff" font-family="Segoe Script, Brush Script MT, cursive" font-size="25px" x="88" y="29">Web</text>
+      <line stroke="#e8914a" stroke-width="2" x1="40" x2="146" y1="32" y2="32"/>
+      <rect fill="#e8914a" x="152" y="7" rx="5" ry="5" width="78" height="24"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="191" y="24" text-anchor="middle">Voyage</text>
+    </svg>
+    <span class="site">inerweb.fr</span>
+  </div>
+
+  <h2>Le livret, le film et le module <span class="orange">ne font qu'un</span></h2>
+  <p>Chaque chapitre de ce livret renvoie à son passage animé et raconté en ligne, avec une question à chaque organe. Le film se regarde en entier ou épisode par épisode. Aucun compte, aucune donnée personnelle.</p>
+
+  <ul class="reseaux">
+    <li><strong>HoCourant</strong> — l'habilitation électrique, de B0 à BR</li>
+    <li><strong>HabFluide</strong> — l'attestation fluides frigorigènes</li>
+    <li><strong>R408</strong> — le travail en hauteur sur échafaudage</li>
+    <li><strong>Les réseaux</strong> — froid, hydraulique, air, électrotechnique, législation</li>
+  </ul>
+
+  <div class="qrs">
+    <div class="qrbloc"><div class="carte"><img src="qr-film.png" alt="QR code vers le film"></div><p><strong>Le film</strong>inerweb.fr/voyage</p></div>
+    <div class="qrbloc"><div class="carte"><img src="qr-inerweb.png" alt="QR code vers inerweb.fr"></div><p><strong>inerweb.fr</strong>Des cours interactifs et gratuits, sans compte.</p></div>
+  </div>
+
+  <div class="prof"><strong>Pour l'enseignant</strong> — une porte d'entrée dans le circuit frigorifique, pour toutes les formations du froid et de la climatisation. Le voyage ouvre le sujet : il ne remplace ni le cours ni les travaux pratiques.</div>
+
+  <div class="bas"><span id="credit">Crédit repris de donnees/voyage.js au rendu.</span><br>© inerWeb — F. Henninot · inerweb.fh@gmail.com</div>
+</div>
+</body>
+</html>

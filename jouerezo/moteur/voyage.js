@@ -63,8 +63,7 @@
       R.scenes.map((s, i) => '<button type="button" class="vy-chap" data-i="' + i + '">' + JR.esc((s.num ? s.num + " · " : "") + s.titre) + '</button>').join("") +
       '</nav>' +
       '<section class="carte vy-apropos"><h2>Pour l\'enseignant</h2>' +
-      '<p><strong>' + JR.esc(R.referentiel.diplome) + '</strong> — tâches : ' + R.referentiel.taches.map(x => '<abbr title="' + JR.esc(x[1]) + '">' + x[0] + '</abbr>').join(", ") +
-      ' · savoirs : ' + R.referentiel.savoirs.map(x => '<abbr title="' + JR.esc(x[1]) + '">' + x[0] + '</abbr>').join(", ") + '.</p>' +
+      '<p>Une porte d\'entrée dans le circuit frigorifique, pour ' + JR.esc(R.enseignant.public) + '. ' + JR.esc(R.enseignant.usage) + '</p>' +
       '<ul class="portes">' + R.portes.map(p => '<li><a href="' + JR.esc(p.h) + '">' + JR.esc(p.t) + '</a></li>').join("") + '</ul>' +
       '<p class="legende">' + JR.esc(R.credit) + '</p></section>' +
       '</section>';

@@ -236,7 +236,7 @@
     const cir = D.circuit(g, 330, 150, 960, true);
     const VERBES = [["evaporateur", "1. absorber", 1, "#2f6fb8", [0, 2]], ["compresseur", "2. comprimer", 2, "#c0392b", [2, 5]],
       ["condenseur", "3. rejeter", 3, D.ORANGE, [5, 7.6]], ["detendeur", "4. détendre", 4, "#1e7e54", [7.6, 15]]];
-    const lignes = VERBES.map(([, mot, k, coul], i) => ({ k: k, t: D.texte(g, 785, 380 + i * 52, mot, { "text-anchor": "middle", "font-size": 46, "font-weight": 700, fill: coul, "font-family": "Trebuchet MS, Arial, sans-serif" }) }));
+    const lignes = VERBES.map(([, mot, k, coul], i) => ({ k: k, t: D.texte(g, 785, 402 + i * 48, mot, { "text-anchor": "middle", "font-size": 46, "font-weight": 700, fill: coul, "font-family": "Trebuchet MS, Arial, sans-serif" }) }));
     const petite = D.heroine(g, { r: 30 }), grande = D.heroine(g, { r: 60 });
     const tempDe = w => D.courbe([[0, 0.05], [2, 0.12], [4, 0.95], [6, 0.85], [7, 0.55], [12.5, 0.5], [13.3, 0.05], [15, 0.05]], w, true);
     return function (t) {
