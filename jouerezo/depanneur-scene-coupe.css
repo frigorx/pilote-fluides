@@ -30,10 +30,16 @@ svg.scene.coupe .sc-ail.chaud { stroke: #d2bfa9; }
 svg.scene.coupe .sc-titre { font: bold 16px "Trebuchet MS", Calibri, Arial, sans-serif; fill: #1b3a63; text-anchor: middle; }
 svg.scene.coupe .sc-lib { font: 13px Calibri, Arial, sans-serif; fill: #10233c; text-anchor: middle; }
 svg.scene.coupe .sc-lib.gauche { text-anchor: start; }
+svg.scene.coupe .sc-lib.droite { text-anchor: end; }
 svg.scene.coupe .sc-leg-titre { font: bold 14px "Trebuchet MS", Calibri, Arial, sans-serif; fill: #1b3a63; text-anchor: start; }
 svg.scene.coupe .sc-alerte { font: bold 13px Calibri, Arial, sans-serif; fill: #c0392b; text-anchor: middle; }
 svg.scene.coupe .sc-lcd { font: bold 20px Consolas, monospace; fill: #1b3a63; text-anchor: middle; dominant-baseline: central; }
 svg.scene.coupe .sc-gauge-mot { font: bold 12px "Trebuchet MS", Arial, sans-serif; text-anchor: middle; }
+
+/* ---- repères des conduites (1 refoulement, 2 ligne liquide, 3 sortie du détendeur, 4 aspiration) ---- */
+svg.scene.coupe .sc-rep { pointer-events: none; }
+svg.scene.coupe .sc-rep circle { fill: #fff; stroke: #3d7fca; stroke-width: 2.5; }
+svg.scene.coupe .sc-rep-n { font: bold 13px Calibri, Arial, sans-serif; fill: #1b3a63; text-anchor: middle; dominant-baseline: central; }
 
 /* ---- les tubes : la paroi, le fluide dedans, le flux qui circule ---- */
 svg.scene.coupe .sc-paroi { fill: none; stroke: #1b3a63; stroke-width: 15; stroke-linecap: round; stroke-linejoin: round; }

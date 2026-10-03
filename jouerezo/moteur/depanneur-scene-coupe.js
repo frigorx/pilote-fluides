@@ -16,6 +16,16 @@
    aiguilles jusqu'à la pression), le thermomètre électronique se pince sur
    un tube (l'afficheur compte), la pince ampèremétrique se referme sur le
    câble, la main touche un tube (halo chaud ou froid).
+   DISPOSITION : la CROIX DU FRIGORISTE, toujours. DÉTENDEUR à GAUCHE,
+   COMPRESSEUR à DROITE, CONDENSEUR en HAUT, ÉVAPORATEUR en BAS. Moitié haute
+   (dehors, groupe de condensation) = haute pression ; moitié basse (chambre
+   froide) = basse pression ; la paroi hachurée les sépare. Le fluide tourne
+   dans le sens inverse des aiguilles d'une montre : haut (condenseur) →
+   gauche (détendeur) → bas (évaporateur) → droite (compresseur) → haut.
+   Conduites repérées : 1 refoulement (compresseur → condenseur), 2 ligne
+   liquide (condenseur → bouteille → filtre → voyant → descend à gauche →
+   détendeur), 3 sortie du détendeur (liquide + vapeur), 4 aspiration
+   (évaporateur → monte à droite → compresseur).
    CE QUI EST RÉEMPLOYÉ : de moteur/depanneur-scene.js, les expressions
    régulières qui lisent le cas, angle() (échelle BP −1 à 10 bar, HP −1 à
    30 bar, de −135° à +135°, même lecture que les cadrans à couronnes du
@@ -39,28 +49,33 @@
 
   function angle(p, cote) { const [a, b] = VB[cote]; return -135 + 270 * (Math.min(b, Math.max(a, p)) - a) / (b - a); }
 
-  /* ---------- la géométrie du circuit (viewBox 1000 × 690) ----------
-     Chambre à gauche, mur, groupe dehors à droite. Cycle lu dans le sens
-     inverse des aiguilles : compresseur (haut droite) → refoulement → condenseur
-     → bouteille → filtre → voyant → ligne liquide qui traverse le mur et monte
-     au détendeur → évaporateur → aspiration qui traverse le mur → compresseur. */
-  const EV = { x1: 170, x2: 332, y0: 242, dy: -24, n: 6 };   /* évaporateur : 6 rangées, la 1re (entrée) en bas */
-  const CD = { x1: 558, x2: 738, y0: 386, dy: 26, n: 4 };    /* condenseur : 4 rangées, la 1re (entrée) en haut */
-  const D_STUB = "M357 242 H332";                            /* sortie du détendeur → 1re rangée */
-  const D_ASP = "M332 122 H508 V150 H784";                   /* aspiration : évaporateur → mur → vanne du compresseur */
-  const D_REF = "M784 248 H770 V386 H738";                   /* refoulement : vanne → condenseur */
-  const D_LIQ_A = "M738 464 H770 V524";                      /* sortie du condenseur → bouteille */
-  const D_LIQ_B = "M762 590 H424 V242 H387";                 /* bouteille → filtre → voyant → mur → détendeur */
-  const PT = { bp: [590, 150], hp: [770, 346], tasp: [420, 122], tliq: [770, 500], tref: [770, 300], pince: [960, 556] };
-  /* le cordon du thermomètre suit des couloirs libres (pas de texte dessous) depuis le boîtier posé en haut, entre les deux titres */
+  /* ---------- la géométrie du circuit (viewBox 1000 × 736) ----------
+     Moitié haute (y 64 à 372) : dehors, haute pression. Paroi hachurée (y 372 à 402).
+     Moitié basse (y 402 à 724) : chambre froide, basse pression.
+     Compresseur à droite, condenseur au centre-haut (ventilateur à sa gauche, pour que le
+     refoulement arrive à droite sans traverser l'hélice), liquide qui sort à gauche et passe
+     bouteille, filtre, voyant avant de descendre le long du bord gauche jusqu'au détendeur,
+     à gauche de l'évaporateur ; l'aspiration sort à droite de l'évaporateur (ventilateur à sa
+     droite, le tube passe au-dessus) et monte à droite jusqu'au compresseur. */
+  const EV = { x1: 312, x2: 472, y0: 636, dy: -24, n: 5 };   /* évaporateur : 5 rangées, la 1re (entrée) en bas, la dernière (sortie) en haut */
+  const CD = { x1: 330, x2: 490, y0: 112, dy: 24, n: 5 };    /* condenseur : 5 rangées, la 1re (entrée) en haut, la dernière (sortie) en bas */
+  const D_REF = "M784 210 H762 V112 H490";                   /* 1 · refoulement : vanne du compresseur → monte → 1re rangée du condenseur */
+  const D_LIQ_A = "M330 208 H288 V252";                      /* 2 · sortie du condenseur → haut de la bouteille */
+  const D_LIQ_B = "M280 322 H50 V636 H236";                  /* 2 · bouteille → filtre → voyant → descend à gauche → détendeur */
+  const D_STUB = "M264 636 H312";                            /* 3 · sortie du détendeur → 1re rangée de l'évaporateur */
+  const D_ASP = "M472 540 H506 V504 H814 V338";              /* 4 · évaporateur → au-dessus du ventilateur → monte à droite → vanne du compresseur */
+  const PT = { bp: [814, 356], hp: [762, 150], tasp: [760, 504], tliq: [50, 440], tref: [700, 112], pince: [942, 131] };
+  /* le cordon du thermomètre suit des couloirs libres (rien dessous) depuis le boîtier posé en haut, à droite du titre */
   const CORDON = {
-    tasp: "M487 58 V84 H420 V108",
-    tref: "M487 58 V74 H700 V290 Q700 298 708 298 H758",
-    tliq: "M487 58 V74 H494 V556 H730 V500 H758"
+    tasp: "M850 30 H972 V534 H760 V504",
+    tref: "M700 30 V112",
+    tliq: "M700 22 H30 V440 H50"
   };
 
   /* serpentin : n rangées entre x1 et x2, la première à y0, pas dy (signé). Chaque rangée est
-     donnée seule (pour colorer par état) et le tout en un seul tracé continu (pour la paroi). */
+     donnée seule (pour colorer par état) et le tout en un seul tracé continu (pour la paroi).
+     Les coudes de retour sont tournés vers l'EXTÉRIEUR du bloc d'ailettes : le drapeau de balayage
+     vaut 1 quand la direction de la rangée et le signe de dy vont dans le même sens, sinon 0. */
   function serpentin(g, depDroite) {
     const r = Math.abs(g.dy) / 2, rows = [], segs = []; let dir = depDroite ? -1 : 1, depart = "";
     for (let i = 0; i < g.n; i++) {
@@ -77,6 +92,8 @@
   const fluide = (d, genre, coul) => '<path class="sc-fl ' + genre + '"' + (coul ? ' style="stroke:' + coul + '"' : "") + ' d="' + d + '"/>';
   const flux = (d, classes) => classes.split(" ").map(k => '<path class="sc-flux ' + k + '" d="' + d + '"/>').join("");
   const lib = (x, y, t, cls) => '<text x="' + x + '" y="' + y + '" class="' + (cls || "sc-lib") + '">' + esc(t) + '</text>';
+  /* repère de conduite : petit cercle blanc cerclé de bleu, chiffre en gras */
+  const rep = (n, x, y) => '<g class="sc-rep"><circle cx="' + x + '" cy="' + y + '" r="10"/><text x="' + x + '" y="' + y + '" class="sc-rep-n">' + n + '</text></g>';
 
   function ailettes(x1, x2, y1, y2, pas) {
     let s = ""; for (let x = x1; x <= x2; x += pas) s += '<line x1="' + x + '" y1="' + y1 + '" x2="' + x + '" y2="' + y2 + '"/>';
@@ -108,101 +125,99 @@
     const compresseurFaible = c.panne === "compresseur";
     const niveau = bulles ? 0.2 : 0.62;                       /* bouteille : bas quand le voyant bulle, sinon normal */
 
-    const ev = serpentin(EV, true), cd = serpentin(CD, true);
+    const ev = serpentin(EV, false), cd = serpentin(CD, true);
     const evTout = D_STUB + " " + ev.segs.join(" ");
-    const rangsGivre = givre === "bloc" || givre === "fin" ? [0, 1, 2, 3, 4, 5] : givre === "partiel" ? [0, 1] : [];
-    /* états du fluide dans l'évaporateur : mélange près du détendeur, vapeur seule sur les 2 dernières rangées */
-    const evEtat = i => i < 2 ? "mel gout" : i < 4 ? "mel2" : "bp";
+    const rangsGivre = givre === "bloc" || givre === "fin" ? [0, 1, 2, 3, 4] : givre === "partiel" ? [0, 1] : [];
+    /* états du fluide dans l'évaporateur (la rangée 0, en bas, touche le détendeur) : mélange d'abord, vapeur seule sur les 2 dernières rangées */
+    const evEtat = i => i < 2 ? "mel gout" : i < 3 ? "mel2" : "bp";
     /* … et dans le condenseur : vapeur chaude, puis gouttes qui se forment, puis liquide */
-    const cdEtat = i => i === 0 ? "hp" : i === 1 ? "hp gout c" : i === 2 ? "liq gout c" : "liq";
+    const cdEtat = i => i < 2 ? "hp" : i === 2 ? "hp gout c" : i === 3 ? "liq gout c" : "liq";
 
     const sch = [];
-    sch.push('<svg class="scene coupe" viewBox="0 0 1000 690" role="img" aria-label="' + esc(inst.nom + ", " + inst.fluideNom + " : coupe à plat du circuit. Chambre froide à gauche avec son évaporateur ventilé, groupe de condensation à droite avec compresseur, condenseur, bouteille, filtre et voyant ; ligne liquide et aspiration traversent le mur. Le fluide circule dans les tubes avec son état en chaque point.") + '">');
+    sch.push('<svg class="scene coupe" viewBox="0 0 1000 736" role="img" aria-label="' + esc(inst.nom + ", " + inst.fluideNom + " : coupe à plat du circuit, disposé en croix du frigoriste. Moitié haute, dehors : groupe de condensation avec le compresseur à droite, le condenseur ventilé en haut, la bouteille, le filtre déshydrateur et le voyant ; la ligne liquide descend à gauche jusqu'au détendeur. Moitié basse : chambre froide avec son évaporateur ventilé, l'aspiration remonte à droite jusqu'au compresseur. Le fluide circule dans les tubes avec son état en chaque point.") + '">');
     sch.push('<defs>' +
       '<pattern id="sc-mur" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="9" height="9" fill="#ece3d3"/><line x1="0" y1="0" x2="0" y2="9" stroke="#b3a48b" stroke-width="3"/></pattern>' +
       '<pattern id="sc-crasse" width="18" height="18" patternUnits="userSpaceOnUse"><rect width="18" height="18" fill="#7a5a38" opacity=".45"/><circle cx="4" cy="5" r="3.2" fill="#4a3320"/><circle cx="13" cy="12" r="3.8" fill="#4a3320"/><circle cx="10" cy="3" r="1.8" fill="#8a6a45"/><circle cx="3" cy="14" r="2" fill="#8a6a45"/></pattern>' +
       '<pattern id="sc-billes" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.9" fill="#a8742f"/><circle cx="6" cy="6" r="1.9" fill="#a8742f"/></pattern>' +
-      '<clipPath id="sc-clip-voyant"><circle cx="560" cy="590" r="13"/></clipPath>' +
-      '<clipPath id="sc-clip-coque"><rect x="803" y="123" width="114" height="136" rx="31"/></clipPath><clipPath id="sc-clip-bout"><rect x="747" y="523" width="46" height="89" rx="19"/></clipPath>' +
+      '<clipPath id="sc-clip-voyant"><circle cx="100" cy="322" r="13"/></clipPath>' +
+      '<clipPath id="sc-clip-coque"><rect x="803" y="123" width="114" height="136" rx="31"/></clipPath><clipPath id="sc-clip-bout"><rect x="265" y="255" width="46" height="89" rx="19"/></clipPath>' +
       '</defs>');
 
-    /* ---- fonds : chambre, mur, dehors ---- */
-    sch.push('<rect class="sc-fond-ch" x="16" y="64" width="436" height="608"/>');
-    sch.push('<rect class="sc-fond-dehors" x="482" y="64" width="498" height="608"/>');
-    sch.push('<rect class="sc-mur" x="452" y="64" width="30" height="608"/>');
-    sch.push(lib(234, 50, "Chambre froide · consigne " + inst.consigne, "sc-titre"));
-    sch.push(lib(760, 50, "Groupe de condensation, à l'extérieur", "sc-titre"));
+    /* ---- fonds : dehors en haut, paroi, chambre en bas ---- */
+    sch.push('<rect class="sc-fond-dehors" x="16" y="64" width="968" height="308"/>');
+    sch.push('<rect class="sc-fond-ch" x="16" y="402" width="968" height="322"/>');
+    sch.push('<rect class="sc-mur" x="16" y="372" width="968" height="30"/>');
+    sch.push(lib(500, 50, "Groupe de condensation, à l'extérieur", "sc-titre"));
+    sch.push(lib(500, 428, "Chambre froide · consigne " + inst.consigne, "sc-titre"));
 
-    /* ================= ÉVAPORATEUR (dans la chambre) ================= */
-    sch.push('<rect class="sc-batterie" x="152" y="104" width="198" height="154" rx="6"/>');
-    sch.push(ailettes(160, 342, 108, 254, 9));
+    /* ================= ÉVAPORATEUR (dans la chambre, moitié basse) ================= */
+    sch.push('<rect class="sc-batterie" x="306" y="526" width="172" height="124" rx="6"/>');
+    sch.push(ailettes(314, 470, 530, 646, 9));
     if (ventEvap && givre !== "bloc") {
-      let air = ""; for (let k = 0; k < 5; k++) air += '<path d="M346 ' + (134 + 24 * k) + ' H154"/>';
+      let air = ""; for (let k = 0; k < 4; k++) air += '<path d="M310 ' + (552 + 24 * k) + ' H474"/>';
       sch.push('<g class="sc-air froid">' + air + '</g>');
     }
     sch.push(rangsGivre.map(i => '<path class="sc-givre" d="' + ev.rows[i] + '"/>').join(""));
     sch.push(paroi(evTout));
     sch.push(fluide(D_STUB, "mel"));
-    sch.push(ev.rows.map((d, i) => fluide(d, "ev", mix("#9fd1f4", "#3d7fca", i / 5))).join(""));
+    sch.push(ev.rows.map((d, i) => fluide(d, "ev", mix("#9fd1f4", "#3d7fca", i / 4))).join(""));
     sch.push(flux(D_STUB, "mel gout"));
     sch.push(ev.rows.map((d, i) => flux(d, evEtat(i))).join(""));
-    if (givre === "bloc") sch.push('<rect class="sc-voile" x="152" y="104" width="198" height="154" rx="6" style="opacity:.9"/>' + cristaux(152, 104, 198, 154, 26));
-    else if (givre === "partiel") sch.push('<rect class="sc-voile" x="152" y="204" width="198" height="54" rx="6" style="opacity:.8"/>' + cristaux(152, 204, 198, 54, 10));
-    else if (givre === "fin") sch.push('<rect class="sc-voile" x="152" y="104" width="198" height="154" rx="6" style="opacity:.16"/>');
-    /* ventilateur de l'évaporateur */
-    sch.push('<rect class="sc-carter" x="32" y="104" width="112" height="154" rx="10"/>');
-    sch.push(helice(88, 181, 40, ventEvap, 0.8));
-    sch.push(lib(191, 282, "évaporateur ventilé"));
-    if (givre === "bloc") sch.push(lib(191, 302, "bloc de givre", "sc-alerte"));
-    if (!ventEvap) sch.push(lib(88, givre === "bloc" ? 320 : 302, "hélice immobile", "sc-alerte"));
+    if (givre === "bloc") sch.push('<rect class="sc-voile" x="306" y="526" width="172" height="124" rx="6" style="opacity:.9"/>' + cristaux(306, 526, 172, 124, 22));
+    else if (givre === "partiel") sch.push('<rect class="sc-voile" x="306" y="596" width="172" height="54" rx="6" style="opacity:.8"/>' + cristaux(306, 596, 172, 54, 9));
+    else if (givre === "fin") sch.push('<rect class="sc-voile" x="306" y="526" width="172" height="124" rx="6" style="opacity:.16"/>');
+    /* ventilateur de l'évaporateur : à droite du bloc, l'aspiration passe au-dessus */
+    sch.push('<rect class="sc-carter" x="530" y="526" width="112" height="124" rx="10"/>');
+    sch.push(helice(586, 588, 40, ventEvap, 0.8));
+    sch.push(lib(392, 672, "évaporateur ventilé"));
+    if (givre === "bloc") sch.push(lib(392, 690, "bloc de givre", "sc-alerte"));
+    if (!ventEvap) sch.push(lib(586, 672, "hélice immobile", "sc-alerte"));
 
-    /* ================= LIGNES : aspiration, refoulement, liquide ================= */
+    /* ================= LIGNES : aspiration (4), refoulement (1) ================= */
     if (aspGivree) sch.push('<path class="sc-givre asp" d="' + D_ASP + '"/><path class="sc-givre-grain" d="' + D_ASP + '"/>');
     sch.push(paroi(D_ASP) + fluide(D_ASP, "bp") + flux(D_ASP, "bp"));
     sch.push(paroi(D_REF) + fluide(D_REF, "hp") + flux(D_REF, "hp"));
 
-    /* ================= CONDENSEUR (dehors) ================= */
-    sch.push('<rect class="sc-batterie chaud" x="540" y="368" width="216" height="114" rx="6"/>');
-    sch.push(ailettes(548, 750, 372, 478, 9).replace('class="sc-ail"', 'class="sc-ail chaud"'));
-    if (ventCond) { let air = ""; for (let k = 0; k < 3; k++) air += '<path d="M546 ' + (399 + 26 * k) + ' H752"/>'; sch.push('<g class="sc-air chaud">' + air + '</g>'); }
+    /* ================= CONDENSEUR (dehors, moitié haute) ================= */
+    sch.push('<rect class="sc-batterie chaud" x="324" y="98" width="172" height="124" rx="6"/>');
+    sch.push(ailettes(332, 488, 102, 218, 9).replace('class="sc-ail"', 'class="sc-ail chaud"'));
+    if (ventCond) { let air = ""; for (let k = 0; k < 4; k++) air += '<path d="M492 ' + (124 + 24 * k) + ' H328"/>'; sch.push('<g class="sc-air chaud">' + air + '</g>'); }
     sch.push(paroi(cd.tout));
-    sch.push(cd.rows.map((d, i) => fluide(d, "cd", mix("#c0392b", "#c9451a", i / 3))).join(""));
+    sch.push(cd.rows.map((d, i) => fluide(d, "cd", mix("#c0392b", "#c9451a", i / 4))).join(""));
     sch.push(cd.rows.map((d, i) => flux(d, cdEtat(i))).join(""));
-    if (encrasse) sch.push('<rect class="sc-crasse" x="540" y="368" width="216" height="114" rx="6" fill="url(#sc-crasse)" opacity=".62"/>');
-    sch.push('<rect class="sc-carter" x="790" y="366" width="160" height="118" rx="10"/>');
-    sch.push(helice(870, 425, 44, ventCond, 0.9));
-    sch.push(lib(640, 506, "condenseur ventilé"));
-    let ligneAlerte = 522;
-    if (encrasse) { sch.push(lib(640, ligneAlerte, "ailettes bouchées", "sc-alerte")); ligneAlerte += 16; }
-    if (!ventCond) sch.push(lib(870, 524, "hélice immobile", "sc-alerte"));
+    if (encrasse) sch.push('<rect class="sc-crasse" x="324" y="98" width="172" height="124" rx="6" fill="url(#sc-crasse)" opacity=".62"/>');
+    /* ventilateur du condenseur : à gauche du bloc, le refoulement arrive à droite */
+    sch.push('<rect class="sc-carter" x="150" y="98" width="112" height="124" rx="10"/>');
+    sch.push(helice(206, 160, 40, ventCond, 0.9));
+    sch.push(lib(410, 242, "condenseur ventilé"));
+    if (encrasse) sch.push(lib(410, 258, "ailettes bouchées", "sc-alerte"));
+    if (!ventCond) sch.push(lib(206, 242, "hélice immobile", "sc-alerte"));
 
-    /* ================= FILTRE (sous le tube), LIGNE LIQUIDE, VOYANT, BOUTEILLE ================= */
-    sch.push('<rect class="sc-filtre" x="618" y="572" width="64" height="36" rx="10"/><rect x="626" y="578" width="48" height="24" rx="4" fill="url(#sc-billes)"/>' +
-      '<rect class="sc-bride" x="611" y="565" width="9" height="50" rx="3"/><rect class="sc-bride" x="680" y="565" width="9" height="50" rx="3"/>');
+    /* ================= BOUTEILLE, FILTRE, VOYANT, LIGNE LIQUIDE (2) ================= */
+    sch.push('<rect class="sc-filtre" x="158" y="304" width="64" height="36" rx="10"/><rect x="166" y="310" width="48" height="24" rx="4" fill="url(#sc-billes)"/>' +
+      '<rect class="sc-bride" x="151" y="297" width="9" height="50" rx="3"/><rect class="sc-bride" x="220" y="297" width="9" height="50" rx="3"/>');
     sch.push(paroi(D_LIQ_A) + fluide(D_LIQ_A, "liq") + flux(D_LIQ_A, "liq"));
     sch.push(paroi(D_LIQ_B) + fluide(D_LIQ_B, "liq") + flux(D_LIQ_B, "liq"));
     /* voyant : la vitre au milieu du tube */
-    sch.push('<rect class="sc-laiton" x="540" y="570" width="40" height="40" rx="8"/><circle class="sc-vitre" cx="560" cy="590" r="16"/>' +
-      '<circle cx="560" cy="590" r="13" fill="#e9a27c"/>' +
-      '<g clip-path="url(#sc-clip-voyant)"><path class="sc-flux liq" d="M575 590 H545" style="stroke:rgba(201,69,26,.55);stroke-width:5"/>' +
-      (bulles ? '<g class="sc-bulles"><circle cx="566" cy="584" r="3.2"/><circle cx="560" cy="595" r="2.6"/><circle cx="553" cy="587" r="3"/><circle cx="569" cy="596" r="2.2"/><circle cx="557" cy="582" r="2"/></g>' : "") + '</g>' +
-      (pastille ? '<circle cx="560" cy="590" r="4.5" fill="#1e7e54" stroke="#fff" stroke-width="1.5"/>' : "") +
-      '<path d="M552 582 a10 10 0 0 1 8 -4" stroke="#fff" stroke-width="2" fill="none" opacity=".7" stroke-linecap="round"/>');
-    sch.push(lib(560, 630, "voyant"));
-    sch.push(lib(650, 630, "filtre") + lib(650, 646, "déshydrateur"));
+    sch.push('<rect class="sc-laiton" x="80" y="302" width="40" height="40" rx="8"/><circle class="sc-vitre" cx="100" cy="322" r="16"/>' +
+      '<circle cx="100" cy="322" r="13" fill="#e9a27c"/>' +
+      '<g clip-path="url(#sc-clip-voyant)"><path class="sc-flux liq" d="M115 322 H85" style="stroke:rgba(201,69,26,.55);stroke-width:5"/>' +
+      (bulles ? '<g class="sc-bulles"><circle cx="106" cy="316" r="3.2"/><circle cx="100" cy="327" r="2.6"/><circle cx="93" cy="319" r="3"/><circle cx="109" cy="328" r="2.2"/><circle cx="97" cy="314" r="2"/></g>' : "") + '</g>' +
+      (pastille ? '<circle cx="100" cy="322" r="4.5" fill="#1e7e54" stroke="#fff" stroke-width="1.5"/>' : "") +
+      '<path d="M92 314 a10 10 0 0 1 8 -4" stroke="#fff" stroke-width="2" fill="none" opacity=".7" stroke-linecap="round"/>');
+    sch.push(lib(100, 284, "voyant"));
+    sch.push(lib(190, 268, "filtre") + lib(190, 284, "déshydrateur"));
     /* bouteille de liquide : niveau visible, tube plongeur en fantôme */
-    const nivY = Math.round(612 - niveau * 86);
-    sch.push('<rect class="sc-bouteille fond" x="744" y="520" width="52" height="95" rx="22"/>' +
-      '<g clip-path="url(#sc-clip-bout)"><g class="sc-vague"><path d="M727 ' + nivY + ' q10 -5 20 0 t20 0 t20 0 t20 0 t20 0 V620 H727 Z" fill="#c9451a"/></g></g>' +
-      '<path class="sc-plongeur" d="M770 524 V606"/><rect class="sc-bouteille cadre" x="744" y="520" width="52" height="95" rx="22"/>');
-    sch.push(lib(770, 637, "bouteille de liquide"));
+    const nivY = Math.round(344 - niveau * 86);
+    sch.push('<rect class="sc-bouteille fond" x="262" y="252" width="52" height="95" rx="22"/>' +
+      '<g clip-path="url(#sc-clip-bout)"><g class="sc-vague"><path d="M245 ' + nivY + ' q10 -5 20 0 t20 0 t20 0 t20 0 t20 0 V352 H245 Z" fill="#c9451a"/></g></g>' +
+      '<path class="sc-plongeur" d="M288 256 V338"/><rect class="sc-bouteille cadre" x="262" y="252" width="52" height="95" rx="22"/>');
+    sch.push(lib(324, 300, "bouteille de liquide", "sc-lib gauche"));
 
     /* ================= COMPRESSEUR (fantôme), pressostat, câble ================= */
-    sch.push('<path class="sc-capillaire" d="M742 180 V158 M766 193 H792 V240"/><circle class="sc-raccord" cx="742" cy="158" r="2.6"/><circle class="sc-raccord" cx="792" cy="240" r="2.6"/>');
-    sch.push('<rect class="sc-pressostat" x="722" y="180" width="44" height="26" rx="5"/><circle cx="738" cy="193" r="7" fill="#f7f1e7" stroke="#84b7ec" stroke-width="1.5"/><circle cx="754" cy="193" r="7" fill="#f7f1e7" stroke="#84b7ec" stroke-width="1.5"/>');
-    sch.push(lib(744, 223, "pressostat") + lib(744, 239, "HP/BP"));
-    sch.push('<path class="sc-cable" d="M938 167 H960 V672"/><path class="sc-cable-reflet" d="M938 167 H960 V672"/>');
-    sch.push('<g class="sc-compresseur' + (compresseurFaible ? " faible" : " vibre") + '" style="transform-origin:860px 190px">' +
+    /* le compresseur est dessiné à sa place d'origine puis descendu de 60 : coque y 180 à 322 */
+    sch.push('<path class="sc-cable" d="M938 227 H942 V68"/><path class="sc-cable-reflet" d="M938 227 H942 V68"/>');
+    sch.push('<g transform="translate(0 60)"><g class="sc-compresseur' + (compresseurFaible ? " faible" : " vibre") + '" style="transform-origin:860px 190px">' +
       '<rect class="sc-coque" x="800" y="120" width="120" height="142" rx="34"/>' +
       '<rect class="sc-bornier" x="918" y="150" width="20" height="34" rx="4"/>' +
       '<g class="sc-fantome" clip-path="url(#sc-clip-coque)">' +
@@ -213,35 +228,42 @@
         '<path class="sc-arbre" d="M860 138 V224"/>' +
         '<circle cx="860" cy="224" r="11"/><g class="sc-vilebrequin" style="transform-origin:860px 224px"><path d="M860 224 V214"/></g>' +
         '<rect x="884" y="212" width="32" height="24" rx="2"/><rect class="sc-piston" x="889" y="217" width="12" height="14" rx="2"/>' +
-      '</g></g>');
-    sch.push('<rect class="sc-laiton" x="784" y="142" width="16" height="16" rx="3"/><rect class="sc-laiton" x="784" y="240" width="16" height="16" rx="3"/>');
-    sch.push(lib(860, 284, "compresseur"));
+      '</g></g>' +
+      '<rect class="sc-laiton" x="784" y="142" width="16" height="16" rx="3"/><rect class="sc-laiton" x="806" y="262" width="16" height="16" rx="3"/></g>');
+    sch.push(lib(884, 340, "compresseur"));
+    /* pressostat HP/BP, dans l'angle entre les deux vannes : un capillaire vers le refoulement (haut), un vers l'aspiration (bas) */
+    sch.push('<path class="sc-capillaire" d="M766 280 V220 M780 293 H790 V330 H806"/><circle class="sc-raccord" cx="766" cy="220" r="2.6"/><circle class="sc-raccord" cx="806" cy="330" r="2.6"/>');
+    sch.push('<rect class="sc-pressostat" x="736" y="280" width="44" height="26" rx="5"/><circle cx="752" cy="293" r="7" fill="#f7f1e7" stroke="#84b7ec" stroke-width="1.5"/><circle cx="768" cy="293" r="7" fill="#f7f1e7" stroke="#84b7ec" stroke-width="1.5"/>');
+    sch.push(lib(730, 289, "pressostat", "sc-lib droite") + lib(730, 305, "HP/BP", "sc-lib droite"));
 
-    /* ================= DÉTENDEUR et son bulbe ================= */
-    sch.push('<path class="sc-capillaire" d="M372 216 C378 190 366 165 372 139"/>');
-    sch.push('<rect class="sc-bulbe" x="354" y="128" width="36" height="11" rx="5.5"/><path class="sc-collier" d="M361 113 V141 M383 113 V141"/>');
-    sch.push('<path class="sc-laiton" d="M358 230 L372 242 L358 254 Z M386 230 L372 242 L386 254 Z"/><path class="sc-laiton" d="M360 228 a12 12 0 0 1 24 0 Z"/>');
-    sch.push(lib(372, 276, "détendeur"));
-    sch.push(lib(382, 172, "bulbe", "sc-lib gauche"));
+    /* ================= DÉTENDEUR (à gauche, entrée de l'évaporateur) et son bulbe (sur l'aspiration, sortie de l'évaporateur) ================= */
+    sch.push('<path class="sc-capillaire" d="M250 610 V470 Q250 460 260 460 H550 Q560 460 560 470 V487"/>');
+    sch.push('<rect class="sc-bulbe" x="542" y="487" width="36" height="11" rx="5.5"/><path class="sc-collier" d="M549 483 V514 M571 483 V514"/>');
+    sch.push('<path class="sc-laiton" d="M236 624 L250 636 L236 648 Z M264 624 L250 636 L264 648 Z"/><path class="sc-laiton" d="M238 622 a12 12 0 0 1 24 0 Z"/>');
+    sch.push(lib(250, 672, "détendeur"));
+    sch.push(lib(586, 486, "bulbe", "sc-lib gauche"));
 
     /* ================= THERMOSTAT D'AMBIANCE ================= */
-    sch.push('<rect class="sc-boitier" x="40" y="350" width="150" height="58" rx="10"/><rect class="sc-ecran" x="48" y="358" width="134" height="30" rx="5"/>' +
-      '<text x="115" y="373" class="sc-lcd" id="sc-tchambre">' + esc(temp(c.tChambre !== undefined ? c.tChambre : 0)) + ' °C</text>' +
-      '<circle cx="70" cy="399" r="3" fill="#84b7ec"/><circle cx="115" cy="399" r="3" fill="#ff6b35"/><circle cx="160" cy="399" r="3" fill="#fffdf8"/>');
-    sch.push(lib(115, 430, "thermostat d'ambiance"));
+    sch.push('<rect class="sc-boitier" x="76" y="480" width="150" height="58" rx="10"/><rect class="sc-ecran" x="84" y="488" width="134" height="30" rx="5"/>' +
+      '<text x="151" y="503" class="sc-lcd" id="sc-tchambre">' + esc(temp(c.tChambre !== undefined ? c.tChambre : 0)) + ' °C</text>' +
+      '<circle cx="106" cy="529" r="3" fill="#84b7ec"/><circle cx="151" cy="529" r="3" fill="#ff6b35"/><circle cx="196" cy="529" r="3" fill="#fffdf8"/>');
+    sch.push(lib(151, 560, "thermostat d'ambiance"));
 
     /* ================= LÉGENDE : le fluide dans les tubes ================= */
-    sch.push(lib(40, 480, "Le fluide dans les tubes", "sc-leg-titre"));
+    sch.push(lib(700, 562, "Le fluide dans les tubes", "sc-leg-titre"));
     [["bp", "bp", "vapeur basse pression"], ["hp", "hp", "vapeur chaude haute pression"], ["liq", "liq", "liquide sous-refroidi"], ["mel", "mel gout", "liquide + vapeur, après le détendeur"]].forEach((e, i) => {
-      const y = 514 + i * 34, d = "M40 " + y + " H94";
-      sch.push(paroi(d) + fluide(d, e[0]) + flux(d, e[1]) + lib(108, y + 5, e[2], "sc-lib gauche"));
+      const y = 596 + i * 34, d = "M700 " + y + " H754";
+      sch.push(paroi(d) + fluide(d, e[0]) + flux(d, e[1]) + lib(768, y + 5, e[2], "sc-lib gauche"));
     });
+
+    /* ================= REPÈRES DES CONDUITES : 1 refoulement, 2 ligne liquide, 3 sortie du détendeur, 4 aspiration ================= */
+    sch.push(rep(1, 762, 185) + rep(2, 50, 352) + rep(3, 288, 636) + rep(4, 814, 440));
 
     /* ================= POINTS DE RELEVÉ ================= */
     sch.push('<g class="sc-points">' +
-      point("bp", PT.bp, "prise BP", 0, -20, "middle") + point("hp", PT.hp, "prise HP", 18, 5, "start") +
-      point("tasp", PT.tasp, "aspiration", 0, 30, "middle") + point("tliq", PT.tliq, "ligne liquide", 18, 5, "start") +
-      point("tref", PT.tref, "refoulement", 18, 5, "start") + point("pince", PT.pince, "câble", -16, 5, "end") +
+      point("bp", PT.bp, "prise BP", 18, 5, "start") + point("hp", PT.hp, "prise HP", 18, 5, "start") +
+      point("tasp", PT.tasp, "aspiration", 0, -20, "middle") + point("tliq", PT.tliq, "ligne liquide", 18, 5, "start") +
+      point("tref", PT.tref, "refoulement", 12, -16, "start") + point("pince", PT.pince, "câble", -8, -38, "end") +
       '</g>');
 
     /* ================= INSTRUMENTS (cachés tant qu'on ne les branche pas) ================= */
@@ -308,26 +330,28 @@
       '<circle cx="' + x + '" cy="' + y + '" r="4.5" fill="#333"/>';
   }
   function manifold() {
-    /* posé dans la zone libre sous la ligne d'aspiration, à gauche du compresseur */
-    return '<g id="sc-manifold" class="sc-instrument"><rect x="488" y="186" width="190" height="128" rx="16" fill="#1b3a63"/><rect x="496" y="194" width="174" height="92" rx="10" fill="#f7f1e7"/>' +
-      gauge(538, 240, "BP", "sc-aig-bp") + gauge(628, 240, "HP", "sc-aig-hp") +
-      '<text x="583" y="302" class="sc-lcd" style="font-size:13px;fill:#fff">MANIFOLD</text>' +
-      '<rect x="528" y="178" width="20" height="10" rx="3" fill="#1f6fa8"/><rect x="676" y="266" width="10" height="20" rx="3" fill="#b3261e"/>' +
-      '<path id="sc-flex-bp" class="sc-flex bp" d="M538 180 C538 158 590 176 590 156"/>' +
-      '<path id="sc-flex-hp" class="sc-flex hp" d="M682 276 C720 276 738 346 759 346"/></g>';
+    /* posé dans la zone libre de la moitié haute, entre le condenseur et le compresseur : flexible bleu qui descend
+       à la prise BP sur la vanne de service d'aspiration du compresseur (conduite 4, côté groupe), flexible rouge vers la
+       prise HP sur le refoulement (conduite 1) ; aucun des deux ne croise un tube */
+    return '<g id="sc-manifold" class="sc-instrument"><rect x="528" y="140" width="190" height="128" rx="16" fill="#1b3a63"/><rect x="536" y="148" width="174" height="92" rx="10" fill="#f7f1e7"/>' +
+      gauge(578, 194, "BP", "sc-aig-bp") + gauge(668, 194, "HP", "sc-aig-hp") +
+      '<text x="623" y="256" class="sc-lcd" style="font-size:13px;fill:#fff">MANIFOLD</text>' +
+      '<rect x="568" y="268" width="20" height="10" rx="3" fill="#1f6fa8"/><rect x="716" y="176" width="10" height="20" rx="3" fill="#b3261e"/>' +
+      '<path id="sc-flex-bp" class="sc-flex bp" d="M578 278 C578 340 700 356 806 356"/>' +
+      '<path id="sc-flex-hp" class="sc-flex hp" d="M726 186 C742 186 746 150 758 150"/></g>';
   }
   function thermometre() {
-    return '<g id="sc-thermo" class="sc-instrument"><path id="sc-sonde-halo" d="M487 58 V58" class="sc-cordon-halo"/><path id="sc-sonde-cordon" d="M487 58 V58" class="sc-cordon"/>' +
-      '<rect x="392" y="2" width="190" height="56" rx="12" fill="#1b3a63"/><rect x="402" y="8" width="170" height="34" rx="6" fill="#eaf2e6" stroke="#0f2440" stroke-width="2"/>' +
-      '<text id="sc-lcd-thermo" x="487" y="26" class="sc-lcd" style="font-size:24px">20 °C</text>' +
-      '<circle cx="442" cy="50" r="3.5" fill="#84b7ec"/><circle cx="487" cy="50" r="3.5" fill="#d17d43"/><circle cx="532" cy="50" r="3.5" fill="#fffdf8"/>' +
-      '<g id="sc-sonde-pince" transform="translate(478 47)"><rect width="18" height="22" rx="4" fill="#1b3a63" stroke="#fff" stroke-width="1.5"/><circle cx="9" cy="8" r="3" fill="#84b7ec"/></g></g>';
+    return '<g id="sc-thermo" class="sc-instrument"><path id="sc-sonde-halo" d="M775 30 V30" class="sc-cordon-halo"/><path id="sc-sonde-cordon" d="M775 30 V30" class="sc-cordon"/>' +
+      '<rect x="680" y="2" width="190" height="56" rx="12" fill="#1b3a63"/><rect x="690" y="8" width="170" height="34" rx="6" fill="#eaf2e6" stroke="#0f2440" stroke-width="2"/>' +
+      '<text id="sc-lcd-thermo" x="775" y="26" class="sc-lcd" style="font-size:24px">20 °C</text>' +
+      '<circle cx="730" cy="50" r="3.5" fill="#84b7ec"/><circle cx="775" cy="50" r="3.5" fill="#d17d43"/><circle cx="820" cy="50" r="3.5" fill="#fffdf8"/>' +
+      '<g id="sc-sonde-pince" transform="translate(766 47)"><rect width="18" height="22" rx="4" fill="#1b3a63" stroke="#fff" stroke-width="1.5"/><circle cx="9" cy="8" r="3" fill="#84b7ec"/></g></g>';
   }
   function pinceAmp() {
     /* mâchoire jaune qui se referme sur le câble vertical, boîtier à gauche */
-    return '<g id="sc-pince" class="sc-instrument"><rect x="850" y="542" width="90" height="62" rx="8" fill="#1b3a63"/><rect x="856" y="548" width="78" height="28" rx="4" fill="#eaf2e6"/>' +
-      '<text id="sc-lcd-pince" x="895" y="563" class="sc-lcd" style="font-size:13px">0 % In</text>' +
-      '<circle class="sc-machoire" cx="960" cy="556" r="17" fill="none" stroke="#d1a000" stroke-width="6"/></g>';
+    return '<g id="sc-pince" class="sc-instrument"><rect x="832" y="100" width="90" height="62" rx="8" fill="#1b3a63"/><rect x="838" y="106" width="78" height="28" rx="4" fill="#eaf2e6"/>' +
+      '<text id="sc-lcd-pince" x="877" y="121" class="sc-lcd" style="font-size:13px">0 % In</text>' +
+      '<circle class="sc-machoire" cx="942" cy="131" r="17" fill="none" stroke="#d1a000" stroke-width="6"/></g>';
   }
   function compter(noeud, de, a, duree, fmt) {
     const t0 = performance.now();
