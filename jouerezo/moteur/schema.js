@@ -34,8 +34,9 @@
   function demarrer(theme, main) {
     main.innerHTML =
       '<h1>' + JR.esc(theme.emoji + " " + theme.nom) + '</h1>' +
-      '<p class="chapo" id="s-consigne">' + JR.esc(theme.kind === "fluide" ? theme.data.consigne : "Des symboles manquent sur ce schéma. Touchez une pièce, puis l'emplacement qui porte son repère — ou faites-la glisser.") + '</p>' +
-      '<div class="bord"><span>Placés : <span id="s-places">0</span> / <span id="s-total">…</span></span><span>Erreurs : <span id="s-erreurs">0</span></span></div>' +
+      '<p class="chapo" id="s-consigne">' + JR.esc(theme.kind === "fluide" ? theme.data.consigne : "Sur ce schéma, des symboles ont été retirés : chaque emplacement vide porte son repère (Q, KM, F, M, S, H, B, Y…). Chaque pièce porte son nom. Touchez une pièce, puis l'emplacement dont le repère lui correspond — ou faites-la glisser.") + '</p>' +
+      '<div class="bord"><span>Placés : <span id="s-places">0</span> / <span id="s-total">…</span></span><span>Erreurs : <span id="s-erreurs">0</span></span>' +
+      (theme.kind === "cablage" ? '<span class="zoom"><button type="button" class="btn sec" id="s-moins" aria-label="Réduire le schéma">−</button><button type="button" class="btn sec" id="s-plus" aria-label="Agrandir le schéma">+</button></span>' : "") + '</div>' +
       '<div class="plateau" id="s-plateau" role="group" aria-label="Pièces à placer"><p class="legende" id="s-tenue">Chargement du schéma…</p></div>' +
       '<div class="schema-boite" id="s-boite"></div>' +
       '<div id="s-retour"></div>';
@@ -50,6 +51,15 @@
         plateau.innerHTML = '<p class="legende" id="s-tenue">Touchez une pièce.</p>';
         etat.pieces.forEach(p => plateau.appendChild(piece(p)));
         etat.slots.forEach(s => brancherSlot(s));
+        /* zoom du câblage : la largeur de base vient de chargerCablage (style.minWidth) */
+        if (theme.kind === "cablage") {
+          let zoom = 1; const base = parseFloat(r.svg.style.minWidth) || 900;
+          const appliquer = function () { r.svg.style.minWidth = Math.round(base * zoom) + "px"; };
+          main.querySelector("#s-moins").addEventListener("click", function () { zoom = Math.max(0.5, zoom - 0.25); appliquer(); });
+          main.querySelector("#s-plus").addEventListener("click", function () { zoom = Math.min(3, zoom + 0.25); appliquer(); });
+          /* on arrive sur le premier emplacement vide, pas sur le coin du schéma */
+          setTimeout(function () { etat.slots[0].rect.scrollIntoView({ block: "nearest", inline: "center" }); }, 50);
+        }
       });
 
     /* ---------- pièces du plateau ---------- */
@@ -192,7 +202,7 @@
           return { g: g, type: g.dataset.type, x: m ? +m[1] : 0, y: m ? +m[2] : 0, pris: false };
         });
         const positions = {}; (e.carte.appareils || []).forEach(a => { positions[a.repere] = a; });
-        const reperes = el("g", { id: "jr-reperes", "font-family": "Arial, sans-serif", "font-size": 11, "font-weight": "bold", fill: "#1b3a63" }, svg);
+        const reperes = el("g", { id: "jr-reperes", "font-family": "Arial, sans-serif", "font-size": 14, "font-weight": "bold", fill: "#1b3a63", stroke: "#ffffff", "stroke-width": 3, "paint-order": "stroke" }, svg);
         const candidats = [];
         e.appareils.forEach(function (a) {
           const p = positions[a.repere]; if (!p) return;
@@ -206,19 +216,21 @@
         });
         if (!candidats.length) return null;
 
-        /* retirer n symboles : contenu mis de côté, emplacement à la place */
-        const choisis = JR.tirer(candidats, Math.min(c.n, candidats.length));
+        /* retirer n symboles — un seul par TYPE de symbole (trois moteurs identiques ne feraient qu'embrouiller) :
+           contenu mis de côté, emplacement à la place */
+        const vus = new Set(), choisis = [];
+        JR.melanger(candidats).forEach(function (ch) { if (choisis.length < c.n && !vus.has(ch.a.type)) { vus.add(ch.a.type); choisis.push(ch); } });
         const slots = [], pieces = [];
         choisis.forEach(function (ch) {
           const g = ch.g, bb = g.getBBox();
           const enfants = [...g.childNodes];
           enfants.forEach(n => n.remove());
-          const rect = el("rect", { x: bb.x - 4, y: bb.y - 4, width: bb.width + 8, height: bb.height + 8, rx: 4 }, g);
-          slots.push({ id: ch.repere, type: ch.a.type, rect: rect, label: ch.repere + " (" + ch.a.nom + ")",
-            remplir: function () { rect.remove(); enfants.forEach(n => g.appendChild(n)); el("rect", { x: bb.x - 4, y: bb.y - 4, width: bb.width + 8, height: bb.height + 8, rx: 4, class: "cadre-ok" }, g); } });
+          const rect = el("rect", { x: bb.x - 8, y: bb.y - 8, width: bb.width + 16, height: bb.height + 16, rx: 6 }, g);
+          slots.push({ id: ch.repere, type: ch.a.type, rect: rect, label: ch.repere,
+            remplir: function () { rect.remove(); enfants.forEach(n => g.appendChild(n)); el("rect", { x: bb.x - 6, y: bb.y - 6, width: bb.width + 12, height: bb.height + 12, rx: 6, class: "cadre-ok" }, g); } });
           const corps = ch.a.symbole.replace(/^<g[^>]*>/, "").replace(/<\/g>\s*$/, "");
           pieces.push({ id: ch.repere, type: ch.a.type, nom: ch.a.nom,
-            html: '<svg viewBox="' + (bb.x - 3) + " " + (bb.y - 3) + " " + (bb.width + 6) + " " + (bb.height + 6) + '" aria-hidden="true">' + corps + '</svg>' });
+            html: '<svg viewBox="' + (bb.x - 3) + " " + (bb.y - 3) + " " + (bb.width + 6) + " " + (bb.height + 6) + '" aria-hidden="true">' + corps + '</svg><span>' + JR.esc(ch.a.nom) + '</span>' });
         });
         return { svg: svg, slots: slots, pieces: pieces,
           apres: "Les repères disent la fonction : Q coupe ou protège, KM commande la puissance, F protège, M tourne, S donne l'ordre, H signale, B mesure, Y ouvre ou ferme." };
