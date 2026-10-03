@@ -18,7 +18,8 @@
      épisode par épisode »). Page SATELLITE écrite à la main (comme rezotools/).
      videos/ = FICHIERS GÉNÉRÉS depuis l'atelier C:/git/jouerezo :
        node outils/voyage-film.mjs --chapitres <film-final.mp4> <ce-dossier>/videos
-     (douze chapitres 16:9, une affiche chacun, chapitres.json).
+     (treize chapitres 16:9, une affiche chacun, chapitres.json, et film-complet.mp4 :
+     le film INTÉGRAL d'un seul fichier, lu par défaut — Franck, 03/10).
      La version interactive et le livret vivent dans jouerezo/ (voyage.html, voyage/livret/).
      =================================================================== -->
 <style>
@@ -77,18 +78,19 @@
     <h1>Voyage dans tous ses états</h1>
     <p class="sous-titre">le circuit frigorifique raconté par une molécule</p>
   </header>
-  <p class="chapo">Une molécule de fluide frigorigène fait le tour d'une chambre froide : l'évaporateur, le compresseur, le condenseur, la ligne liquide, le détendeur… puis la fuite et la récupération. Passez tout le voyage d'un trait, ou cochez seulement les épisodes dont vous avez besoin.</p>
+  <p class="chapo">Une molécule de fluide frigorigène fait le tour d'une chambre froide : l'évaporateur, le compresseur, le condenseur, la ligne liquide, le détendeur… puis la fuite et la récupération. Regardez le film en entier, ou cochez seulement les épisodes dont vous avez besoin.</p>
 
   <main id="contenu" style="display:grid;gap:16px">
-    <div class="ecran"><video id="lecteur" controls playsinline preload="metadata" poster="videos/chapitre-00-mon-voyage.jpg"></video></div>
-    <p class="etat" id="etat" aria-live="polite">Choisissez : tout le voyage, ou les épisodes cochés.</p>
+    <div class="ecran"><video id="lecteur" controls playsinline preload="metadata" poster="videos/chapitre-00-mon-voyage.jpg" src="videos/film-complet.mp4"></video></div>
+    <p class="etat" id="etat" aria-live="polite">Le film en entier est prêt : lancez-le, ou passez les épisodes cochés.</p>
     <div class="commandes">
-      <button type="button" class="btn" id="tout">▶ Tout le voyage</button>
+      <button type="button" class="btn" id="tout">▶ Le film en entier</button>
       <button type="button" class="btn" id="selection">▶ Passer les épisodes cochés</button>
       <button type="button" class="btn sec" id="precedent" aria-label="Épisode précédent">⏮</button>
       <button type="button" class="btn sec" id="suivant" aria-label="Épisode suivant">⏭</button>
       <button type="button" class="btn sec" id="cocher">Tout cocher</button>
       <button type="button" class="btn sec" id="decocher">Tout décocher</button>
+      <a class="btn sec" href="videos/film-complet.mp4" download="voyage-dans-tous-ses-etats.mp4">⬇ Télécharger le film (MP4)</a>
     </div>
     <h2>Les épisodes</h2>
     <ol class="episodes" id="episodes" aria-label="Les épisodes"></ol>
@@ -96,11 +98,11 @@
 
   <section class="portes" aria-label="Les autres portes">
     <div class="carte"><h2>🧩 La version interactive</h2><p>Le même voyage, chapitre par chapitre, avec une question à chaque organe et un code de partie à rendre à l'enseignant.</p><p><a class="btn sec" href="../jouerezo/voyage.html">Ouvrir le voyage interactif</a></p></div>
-    <div class="carte"><h2>📄 Le livret A5</h2><p>27 pages à imprimer : pour chaque organe, son symbole, ce que raconte la molécule, deux images et une question ; un QR code mène à chaque épisode interactif.</p><p><a class="btn sec" href="../jouerezo/voyage/livret/voyage-dans-tous-ses-etats.pdf">Télécharger le livret (PDF)</a></p></div>
-    <div class="carte"><h2>Pour l'enseignant</h2><p><strong>CAP IFCA</strong> — tâches : <abbr title="Compléter les documents de traçabilité des fluides frigorigènes">T2</abbr>, <abbr title="Tirer au vide, charger et contrôler l'installation sous tension">T13</abbr>, <abbr title="Régler l'installation en fonctionnement">T14</abbr> · savoirs : <abbr title="Réglementation et impacts environnementaux">S0.1</abbr>, <abbr title="Gestion de l'environnement du site et des déchets">S0.2</abbr>, <abbr title="Systèmes thermodynamiques à détente directe">S5.1</abbr>, <abbr title="Fluides frigorigènes, huiles frigorifiques">S5.2</abbr>, <abbr title="Réseaux, matériels électriques et de régulation">S5.6</abbr>.</p><p>Les sous-titres sont dans l'image : le film se passe aussi sans le son.</p></div>
+    <div class="carte"><h2>📄 Le livret A5</h2><p>28 pages à imprimer : pour chaque organe, son symbole, ce que raconte la molécule, deux images et une question ; un QR code mène à chaque épisode interactif.</p><p><a class="btn sec" href="../jouerezo/voyage/livret/voyage-dans-tous-ses-etats.pdf">Télécharger le livret (PDF)</a></p></div>
+    <div class="carte"><h2>Pour l'enseignant</h2><p>Une porte d'entrée dans le circuit frigorifique, pour toutes les formations du froid et de la climatisation. Le film se regarde d'un trait, ou en trois temps avec une question entre chacun : les organes principaux (1 à 3), la ligne liquide et le détendeur (4 à 8), puis la fuite, la récupération et les fluides. Il ouvre le sujet : il ne remplace ni le cours ni les travaux pratiques.</p><p>Les sous-titres sont dans l'image : le film se passe aussi sans le son.</p></div>
   </section>
 
-  <p class="legende">L'idée de faire raconter le circuit par une molécule rappelle « Voyage extraordinaire avec une molécule de fréon 12 » (A. Delalande, 1948) et le feuilleton paru dans la RPF dans les années 1980. Texte, dessins et animation : inerWeb (F. Henninot), réalisés avec une IA ; voix de synthèse. Symboles adaptés de la collection QElectroTech (CC BY 3.0). Licence CC BY-NC-ND.</p>
+  <p class="legende">L'idée de ce parcours vient du souvenir de lecture de «&nbsp;Voyage extraordinaire avec une molécule de R&nbsp;12&nbsp;: roman frigorifique&nbsp;», d'André Delalande. Conception pédagogique : F. Henninot — inerWeb. Texte, dessins et animation réalisés avec l'assistance d'une intelligence artificielle ; voix de synthèse. Symboles d'après la planche Éduscol «&nbsp;Le circuit frigorifique&nbsp;» et la collection QElectroTech (CC BY 3.0). Licence CC BY-NC-ND.</p>
 </div>
 <script>
 (function () {
@@ -118,7 +120,7 @@
         '<p class="quoi">' + esc(c.sous) + ' · <a class="interactif" href="../jouerezo/voyage.html?c=' + esc(c.id) + '">version interactive</a></p></li>';
     }).join("");
     var total = chap.reduce(function (a, c) { return a + c.duree; }, 0);
-    document.getElementById("tout").textContent = "▶ Tout le voyage (" + mmss(total) + ")";
+    document.getElementById("tout").textContent = "▶ Le film en entier (" + mmss(total) + ")";
     grille.querySelectorAll(".vignette").forEach(function (b) { b.addEventListener("click", function () { lancer([Number(b.dataset.i)]); }); });
   }
   function coches() { return Array.prototype.filter.call(grille.querySelectorAll("input"), function (x) { return x.checked; }).map(function (x) { return Number(x.dataset.i); }); }
@@ -135,8 +137,15 @@
     file = liste; pos = 0; jouer();
     L.scrollIntoView({ behavior: "smooth", block: "center" });
   }
-  L.addEventListener("ended", function () { if (pos < file.length - 1) { pos++; jouer(); } else { etat.textContent = "Fin de la sélection."; } });
-  document.getElementById("tout").addEventListener("click", function () { lancer(chap.map(function (c, i) { return i; })); });
+  function entier() { // le film intégral, d'un seul fichier
+    file = []; pos = 0;
+    L.src = "videos/film-complet.mp4"; L.poster = "videos/chapitre-00-mon-voyage.jpg";
+    L.play().catch(function () {});
+    etat.textContent = "Le film en entier"; marquer();
+    L.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  L.addEventListener("ended", function () { if (!file.length) { etat.textContent = "Fin du film."; } else if (pos < file.length - 1) { pos++; jouer(); } else { etat.textContent = "Fin de la sélection."; } });
+  document.getElementById("tout").addEventListener("click", entier);
   document.getElementById("selection").addEventListener("click", function () { lancer(coches()); });
   document.getElementById("precedent").addEventListener("click", function () { if (file.length && pos > 0) { pos--; jouer(); } });
   document.getElementById("suivant").addEventListener("click", function () { if (file.length && pos < file.length - 1) { pos++; jouer(); } });
