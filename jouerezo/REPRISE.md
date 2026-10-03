@@ -20,6 +20,15 @@
 8. Les six vues d'outils (planche Codex découpée) à la place des photos d'atelier.
 9. **La scène vivante du dépanneur** (`moteur/depanneur-scene.js`) : tableau composé par Fable avec les vues d'organes du Tome 3 (évaporateur, condenseur, détendeur, filtre), un compresseur dessiné, les tuyaux, le voyant, les prises BP/HP, le manifold (logique d'aiguille du module « pose du manifold »), le thermomètre électronique et la pince. Ce n'est pas un schéma technique mais une scène de jeu ; à valider par Franck (demande du 03/10 : « animation des éléments frigo, lecture de mano plus réaliste et vivant »).
 
+## Duel « scène du dépanneur » (03/10/2026, après-midi) — EN ATTENTE DU CHOIX DE FRANCK
+
+Franck a jugé la scène v1 « bof » : il veut « un vrai circuit frigorifique en fonctionnement, plus réaliste, peut-être un peu de 3D », dans l'esprit de Frigodiag (KOTZA, son ancien professeur) mais « du 21e siècle » ; la méthode surchauffe / sous-refroidissement reste le cœur du jeu. Pas de téléchargement des démos KOTZA (refusé par Franck : « je ne veux pas refaire ça »).
+
+- Cahier unique : `duel/CAHIER.md`. Deux pistes, même API que `moteur/depanneur-scene.js` (le jeu ne change pas) : `duel/A-coupe-vivante/` (2D à plat, on voit dedans) et `duel/B-isometrique-atelier/` (2,5D façon atelier). Page côte à côte : `duel/index.html` → `http://localhost:8797/jouerezo/duel/index.html` (serveur `node outils/servir.mjs`).
+- Vérifié : `node --check`, console vide, huit gestes, six cas, textes ≥ 12 px, pas de texte sur un tube.
+- Recommandation : B, en lui empruntant à A le point « aspiration » au bulbe et le filtre + voyant au groupe.
+- Suite : quand Franck a choisi, remplacer `moteur/depanneur-scene.js` et la section « scène » de `jouerezo.css` par la piste retenue, rejouer `depanneur.html` au format téléphone, livrer ; puis « le reste du développement » (Franck n'a pas encore dit quoi).
+
 ## Restes
 
 - Entrée depuis l'accueil et le quartier 3D : attendre la décision de Franck (« pas tout de suite »).

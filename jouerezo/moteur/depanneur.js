@@ -104,7 +104,7 @@
       '<text x="150" y="243" font-size="13" font-family="Calibri,Arial,sans-serif" fill="#637285" text-anchor="middle">' + JR.esc(ou) + '</text></svg>';
   }
 
-  /* l'installation vivante est dans depanneur-scene.js (window.JR_SCENE) */
+  /* l'installation vivante alterne : coupe (depanneur-scene-coupe.js) et atelier (depanneur-scene-atelier.js), une situation sur deux */
 
   /* ---------- la partie ---------- */
   function demarrer(theme, main) {
@@ -133,7 +133,7 @@
         '<div class="actions"><button type="button" class="btn" id="d-conclure">Conclure : nommer la panne</button></div></section>' +
         '<div id="d-retour"></div>';
       const zone = main.querySelector("#d-releve"), meth = main.querySelector("#d-methode");
-      const scene = window.JR_SCENE.monter(main.querySelector("#d-scene"), c, inst, { bp: bp, hp: hp });
+      const scene = (i % 2 ? window.JR_SCENE_ATELIER : window.JR_SCENE_COUPE).monter(main.querySelector("#d-scene"), c, inst, { bp: bp, hp: hp });
       main.querySelector("#d-scene").addEventListener("releve", e => montrer(e.detail));
 
       function compter(o) { if (!releves.has(o)) { releves.add(o); main.querySelector("#d-nb").textContent = releves.size; } }
