@@ -1,0 +1,119 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "en deux étages",
+  "duree": 54,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "marche",
+  "num": "1",
+  "titre": "La marche trop haute",
+  "sous": "un seul compresseur ?",
+  "duree": 41,
+  "video": "chapitre-01-la-marche-trop-haute.mp4",
+  "affiche": "chapitre-01-la-marche-trop-haute.jpg"
+ },
+ {
+  "id": "evaporateur",
+  "num": "2",
+  "titre": "L'évaporateur",
+  "sous": "je bous très froid",
+  "duree": 45,
+  "video": "chapitre-02-l-evaporateur.mp4",
+  "affiche": "chapitre-02-l-evaporateur.jpg"
+ },
+ {
+  "id": "compresseurBP",
+  "num": "3",
+  "titre": "Le compresseur BP",
+  "sous": "le premier étage",
+  "duree": 39,
+  "video": "chapitre-03-le-compresseur-bp.mp4",
+  "affiche": "chapitre-03-le-compresseur-bp.jpg"
+ },
+ {
+  "id": "bouteille",
+  "num": "4",
+  "titre": "La bouteille intermédiaire",
+  "sous": "je plonge dans le liquide",
+  "duree": 46,
+  "video": "chapitre-04-la-bouteille-intermediaire.mp4",
+  "affiche": "chapitre-04-la-bouteille-intermediaire.jpg"
+ },
+ {
+  "id": "pression",
+  "num": "5",
+  "titre": "La pression intermédiaire",
+  "sous": "partager le travail",
+  "duree": 41,
+  "video": "chapitre-05-la-pression-intermediaire.mp4",
+  "affiche": "chapitre-05-la-pression-intermediaire.jpg"
+ },
+ {
+  "id": "compresseurHP",
+  "num": "6",
+  "titre": "Le compresseur HP",
+  "sous": "le deuxième étage",
+  "duree": 38,
+  "video": "chapitre-06-le-compresseur-hp.mp4",
+  "affiche": "chapitre-06-le-compresseur-hp.jpg"
+ },
+ {
+  "id": "condenseur",
+  "num": "7",
+  "titre": "Je redeviens liquide",
+  "sous": "condenseur et réservoir",
+  "duree": 34,
+  "video": "chapitre-07-je-redeviens-liquide.mp4",
+  "affiche": "chapitre-07-je-redeviens-liquide.jpg"
+ },
+ {
+  "id": "flotteur",
+  "num": "8",
+  "titre": "Le régulateur à flotteur",
+  "sous": "la première détente",
+  "duree": 43,
+  "video": "chapitre-08-le-regulateur-a-flotteur.mp4",
+  "affiche": "chapitre-08-le-regulateur-a-flotteur.jpg"
+ },
+ {
+  "id": "liquide",
+  "num": "9",
+  "titre": "Le liquide refroidi",
+  "sous": "puis la deuxième détente",
+  "duree": 45,
+  "video": "chapitre-09-le-liquide-refroidi.mp4",
+  "affiche": "chapitre-09-le-liquide-refroidi.jpg"
+ },
+ {
+  "id": "gain",
+  "num": "10",
+  "titre": "Le gain",
+  "sous": "deux marches au lieu d'une",
+  "duree": 38,
+  "video": "chapitre-10-le-gain.mp4",
+  "affiche": "chapitre-10-le-gain.jpg"
+ },
+ {
+  "id": "surveillance",
+  "num": "11",
+  "titre": "Ce que l'on surveille",
+  "sous": "l'œil du technicien",
+  "duree": 44,
+  "video": "chapitre-11-ce-que-l-on-surveille.mp4",
+  "affiche": "chapitre-11-ce-que-l-on-surveille.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Le voyage en deux marches",
+  "sous": "l'essentiel à retenir",
+  "duree": 49,
+  "video": "chapitre-12-le-voyage-en-deux-marches.mp4",
+  "affiche": "chapitre-12-le-voyage-en-deux-marches.jpg"
+ }
+]
