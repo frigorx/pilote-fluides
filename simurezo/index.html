@@ -19,10 +19,12 @@
      scripts) ; rien n'est chargé du réseau.
      RÉEMPLOI : classes b-* de la maquette B ; charte inerWeb, thème clair.
      API : les id lus par jeu.js (accueil, commencer, chip-*, coef, appel-*,
-     reperes, scene, dernier, zoom, boutons .b-rel[data-r], carnet, calc-sr,
-     calc-sc, alertes, diagramme, phrase, familles, pannes, valider, doute-*,
-     retour-corps, suivante, fin-corps, aa).
-     DÉPEND : style.css, jeu.js, diagramme.js, les deux scènes.
+     reperes, scene, dernier, zoom, boutons .b-rel[data-r], aide-releves, carnet,
+     cadrans (niveaux 2 et 3 : un cadran par manifold lu, DEP_CADRAN), calc-clair
+     (niveau 1 : calc-sr, calc-sc), saisies (niveaux 2 et 3 : la surchauffe et le
+     sous-refroidissement se saisissent), leg-calc, alertes, diagramme, phrase,
+     familles, pannes, valider, doute-*, retour-corps, suivante, fin-corps, aa).
+     DÉPEND : style.css, jeu.js, diagramme.js, cadran.js, les deux scènes.
      =================================================================== -->
 <style>
 /* =====================================================================
@@ -30,7 +32,8 @@
    ---------------------------------------------------------------------
    RÔLE : la mise en page de la page unique : bandeau collé, étapes pleine
    largeur, scène collée sous le bandeau au téléphone, barre des relevés,
-   carnet, diagramme, conclusion, retour, fin de partie.
+   carnet, cadrans à couronnes et saisies (niveaux 2 et 3), diagramme, conclusion,
+   retour, fin de partie.
    Charte inerWeb : jetons copiés du :root de src/scenes/_jouerezo-reference.css.
    Thème clair seulement. Texte jamais sous 14 px (.875rem) hors de la scène ;
    le bouton Aa agrandit tout (la scène, elle, se met à l'échelle de sa largeur).
@@ -251,6 +254,57 @@ button { font: inherit; }
 .b-calc { display: grid; gap: 8px; margin-top: 12px; }
 @media (min-width: 560px) { .b-calc { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 860px) { .b-liste { grid-template-columns: 1fr 1fr; gap: 0 28px; } .b-liste li.vide { grid-column: 1 / -1; } }
+.b-dern .b-pastille { margin-left: 8px; vertical-align: middle; white-space: nowrap; }
+
+/* ---- niveaux 2 et 3 : le grand cadran à couronnes, la saisie de ce qu'on lit (voir cadran.js) ----
+   La température se lit à l'aiguille sur la couronne ; la surchauffe et le sous-refroidissement se calculent et se saisissent.
+   Les messages portent trois canaux : couleur, style de trait, signe et mot. */
+.b-cadrans { display: grid; gap: 16px; margin-top: 14px; }
+.b-cadran { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; align-content: start; min-width: 0; padding: 12px; border-radius: 12px; background: #fff;
+  border: 1px solid var(--ligne); border-top: 6px solid var(--bp); }
+.b-cadran.hp { border-top-color: var(--hp); }
+.b-cadran-svg { width: 100%; max-width: 470px; margin-inline: auto; }
+.b-cadran-svg svg { display: block; width: 100%; height: auto; }
+@media (min-width: 760px) { .b-cadrans { grid-template-columns: 1fr 1fr; align-items: start; } }
+.b-saisies { display: grid; gap: 12px; margin-top: 12px; }
+.b-saisie { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; min-width: 0; padding: 10px 12px; border-radius: 10px; background: #eef3f9; border-left: 5px solid var(--bleu-vif); }
+.b-saisie label { font-weight: bold; color: var(--bleu); }
+.b-saisie-ligne { display: flex; gap: 8px; align-items: stretch; }
+.b-saisie input { flex: 1; min-width: 0; min-height: 48px; padding: 6px 12px; border: 2px solid var(--bleu); border-radius: 10px; background: #fff;
+  color: var(--txt); font: bold 1.2rem Consolas, monospace; }
+.b-saisie input:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255,107,53,.5); }
+.b-saisie input:disabled { background: #f1f3f5; color: var(--mut); border-color: #9fb0c3; }
+.b-saisie .btn { flex: none; padding-inline: 16px; }
+.b-msg { color: var(--mut); font-size: .95rem; }
+.b-msg:empty { display: none; }
+.b-msg.ok, .b-msg.nok { padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1rem; }
+.b-msg.ok { border: 3px double var(--acquis); background: #eef7f1; color: #17603f; }
+.b-msg.ok::before { content: "✓ "; }
+.b-formule { display: block; white-space: nowrap; margin: 2px 0; }
+.b-msg.nok { border: 3px dashed var(--echec); background: #fbeeec; color: #8a2a20; }
+.b-msg.nok::before { content: "✗ "; }
+@media (min-width: 760px) { .b-saisies { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+/* le dessin du cadran : couleur par .cad.bp / .cad.hp, texte en unités du viewBox 520 × 520 (≥ 14 px dès 335 px de large) */
+.cad { --c: var(--bp); }
+.cad.hp { --c: var(--hp); }
+.cad-bague { fill: var(--c); }
+.cad-face { fill: #fdfdfb; stroke: #22303f; stroke-width: 2; }
+.cad-tp { stroke: #22303f; }
+.cad-tp.maj { stroke-width: 4; } .cad-tp.moy { stroke-width: 2.6; } .cad-tp.min { stroke-width: 1.5; }
+.cad-num { font: bold 27px Calibri, "Segoe UI", Arial, sans-serif; fill: #22303f; text-anchor: middle; dominant-baseline: central; }
+.cad-arc { fill: none; stroke: var(--c); stroke-width: 2.6; }
+.cad-tc { stroke: var(--c); }
+.cad-tc.t1 { stroke-width: 1.4; } .cad-tc.t5 { stroke-width: 2.4; } .cad-tc.t10 { stroke-width: 3.2; }
+.cad-cn { font: bold 25px Calibri, "Segoe UI", Arial, sans-serif; fill: var(--c); text-anchor: middle; dominant-baseline: central; }
+.cad-nom { font: bold 42px "Trebuchet MS", Calibri, Arial, sans-serif; fill: var(--c); text-anchor: middle; dominant-baseline: central; }
+.cad-fl { font: bold 28px Calibri, "Segoe UI", Arial, sans-serif; fill: var(--c); text-anchor: middle; dominant-baseline: central; }
+.cad-leg { font: 24px Calibri, "Segoe UI", Arial, sans-serif; fill: #22303f; text-anchor: middle; dominant-baseline: central; }
+.cad-aig { transform-origin: 260px 260px; transition: transform 1.3s cubic-bezier(.22,.68,.2,1); }
+.cad-aig-corps { fill: #14202e; stroke: #fff; stroke-width: 2; paint-order: stroke; }
+.cad-moyeu { fill: #333; stroke: #fff; stroke-width: 2; }
+.cad-moyeu-c { fill: #bbb; }
+@media (prefers-reduced-motion: reduce) { .cad-aig { transition: none; } }
 
 /* repères visuels posés sur la scène par le bouton « regarder » */
 .b-anneau { fill: rgba(255,107,53,.08); stroke: var(--orange); stroke-width: 6; stroke-dasharray: 12 7; pointer-events: none; animation: b-anneau 2.2s ease-out forwards; }
@@ -650,9 +704,9 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
       <div class="b-col">
         <h3 id="h-niveau">Votre niveau</h3>
         <div class="b-choix" role="group" aria-labelledby="h-niveau">
-          <button type="button" class="b-choix-btn" data-niveau="1" aria-pressed="true"><b>Niveau 1</b><span>Croix du frigoriste : le fluide se voit dans les tubes.</span></button>
-          <button type="button" class="b-choix-btn" data-niveau="2" aria-pressed="false"><b>Niveau 2</b><span>Croix, tubes nus : le fluide ne se voit plus, il faut mesurer.</span></button>
-          <button type="button" class="b-choix-btn" data-niveau="3" aria-pressed="false"><b>Niveau 3</b><span>L'atelier, avec le test à l'arrêt et le test de rendement.</span></button>
+          <button type="button" class="b-choix-btn" data-niveau="1" aria-pressed="true"><b>Niveau 1</b><span>Croix du frigoriste : le fluide se voit dans les tubes, les valeurs se lisent en clair.</span></button>
+          <button type="button" class="b-choix-btn" data-niveau="2" aria-pressed="false"><b>Niveau 2</b><span>Croix, tubes nus : le fluide ne se voit plus, il faut mesurer. La température se lit sur le cadran.</span></button>
+          <button type="button" class="b-choix-btn" data-niveau="3" aria-pressed="false"><b>Niveau 3</b><span>L'atelier, avec le test à l'arrêt et le test de rendement. La température se lit sur le cadran.</span></button>
         </div>
       </div>
       <div class="b-col">
@@ -703,7 +757,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     </div>
 
     <div class="b-barre" role="group" aria-label="Les relevés">
-      <p class="b-aide">Touchez un bouton, ou un rond orange dans la scène. Chaque relevé affiche la valeur lue.</p>
+      <p class="b-aide" id="aide-releves">Touchez un bouton, ou un rond orange dans la scène. Chaque relevé affiche la valeur lue.</p>
       <div class="b-groupe">
         <h3>Pressions et courant</h3>
         <div class="b-btns">
@@ -748,11 +802,13 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
       </div>
       <div class="b-alertes" id="alertes" role="status" aria-live="polite" hidden></div>
       <ol class="b-liste" id="carnet"></ol>
-      <div class="b-calc">
+      <div class="b-cadrans" id="cadrans" hidden></div>
+      <div class="b-calc" id="calc-clair">
         <button type="button" class="btn sec" id="calc-sr" disabled>Calculer la surchauffe</button>
         <button type="button" class="btn sec" id="calc-sc" disabled>Calculer le sous-refroidissement</button>
       </div>
-      <p class="b-leg" style="margin-top:8px">La surchauffe demande la BP et l'aspiration ; le sous-refroidissement, la HP et la ligne liquide.</p>
+      <div class="b-saisies" id="saisies" hidden></div>
+      <p class="b-leg" id="leg-calc" style="margin-top:8px">La surchauffe demande la BP et l'aspiration ; le sous-refroidissement, la HP et la ligne liquide.</p>
     </div>
     <a class="btn b-suite" id="suite2" href="#cycle" aria-disabled="true">Faites 2 relevés pour déplier le cycle (0 / 2)</a>
   </section>
@@ -2041,6 +2097,158 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
 </script>
 <script>
 /* =====================================================================
+   cadran.js — le grand cadran à couronnes de SimuRézo
+   ---------------------------------------------------------------------
+   RÔLE : dessiner, en SVG, le cadran d'un manifold sur lequel l'élève LIT la
+   température de saturation (niveaux 2 et 3). Une échelle de pression
+   (bar relatifs : −1 à 10 pour la BP, −1 à 30 pour la HP, de −135° à +135°
+   comme les scènes), une aiguille qui glisse jusqu'à la pression, et, à
+   l'intérieur, UNE couronne de températures de saturation du fluide de
+   l'installation (rosée côté BP, bulle côté HP) : un trait tous les 1 K, un
+   plus long tous les 5 K, le plus long tous les 10 K ; les chiffres sont
+   posés là où la place le permet (les dizaines d'abord, puis les cinq).
+   Aucun chiffre ne se superpose à un autre, ni à l'aiguille : ceux qu'elle
+   touche s'effacent, l'élève lit le trait entre les chiffres qui l'encadrent.
+   La température n'est écrite nulle part : c'est l'aiguille sur la couronne.
+   RÉEMPLOI : cadran() de C:/git/jouerezo/moteur/depanneur.js (port de
+   l'interro n° 3 : bague colorée, échelle de pression, couronne, aiguille,
+   chiffre effacé sous l'aiguille) ; ici une seule couronne, celle du fluide,
+   calculée par DEP_TABLES au lieu de la table CoolProp de JouéRézo.
+   API : window.DEP_CADRAN = {
+     monter(conteneur, cote, fluideId, pRel) → { pression(pRel), detruire() }
+       cote : "BP" | "HP" ; fluideId : comme dans fluides.json ("R134a",
+       "R449A", "R290") ; pRel : pression lue, en bar relatifs. L'aiguille
+       part de −135° et glisse jusqu'à pRel ; pression() la déplace.
+   }
+   Les traits de la couronne portent data-t (la température qu'ils marquent),
+   pour les tests ; les chiffres, la classe cad-lab.
+   DÉPEND : DEP_TABLES (pRosee, pBulle, tRosee, tBulle, abs, rel). Mise en
+   forme : classes cad-* de src/ecran/style.css (couleur par .cad.bp / .cad.hp).
+   ===================================================================== */
+(function () {
+  "use strict";
+  const C = 260;                                    /* centre du cadran (viewBox 520 × 520) */
+  const R_BAGUE = 254, R_FACE = 244, R_TRAIT = 234, R_NUM = 188, R_ARC = 150, R_ETIQ = 120, R_AIG = 226;
+  const LONG_PRESSION = { maj: 26, moy: 18, min: 10 };
+  const LONG_COURONNE = { 10: 19, 5: 13, 1: 7 };
+  const P_TABLE_MIN = 0.4;                          /* la table de saturation commence à 0,4 bar absolu (comme diagramme.js) */
+  const F_NUM = 27, F_ETIQ = 25;                    /* tailles du texte, en unités du viewBox : ≥ 14 px dès que le cadran fait 335 px de large */
+  const MARGE_AIGUILLE = 7;                         /* demi-largeur de l'aiguille + un peu d'air, pour effacer les chiffres qu'elle touche */
+  const CFG = {
+    BP: { vmin: -1, vmax: 10, pas: [1, 0.5, 0.1], rosee: true, quoi: "température d'évaporation" },
+    HP: { vmin: -1, vmax: 30, pas: [5, 1, 0.5], rosee: false, tmin: 0, quoi: "température de condensation" }
+  };
+
+  const T = () => window.DEP_TABLES;
+  const angleDe = (p, cfg) => -135 + 270 * (p - cfg.vmin) / (cfg.vmax - cfg.vmin);
+  const pt = (r, deg) => { const a = deg * Math.PI / 180; return [C + r * Math.sin(a), C - r * Math.cos(a)]; };
+  const f1 = x => (Math.round(x * 10) / 10).toString();
+  const entier = t => (t < 0 ? "−" + (-t) : String(t));
+  const nomFluide = id => String(id).replace(/^R(\d+)([A-Za-z]*)$/, "R-$1$2");
+  const rectDe = (cx, cy, txt, fs) => ({ cx: cx, cy: cy, w: String(txt).length * 0.6 * fs, h: 1.2 * fs });
+  const seTouchent = (a, b, marge) => Math.abs(a.cx - b.cx) < (a.w + b.w) / 2 + marge && Math.abs(a.cy - b.cy) < (a.h + b.h) / 2 + marge;
+
+  /* les températures entières de la couronne, avec l'angle où la pression de saturation les place */
+  function temperatures(cfg, fluide) {
+    const t = T(), pMax = t.abs(cfg.vmax);
+    const lo = cfg.rosee ? t.tRosee(fluide, P_TABLE_MIN) : Math.max(cfg.tmin, t.tBulle(fluide, P_TABLE_MIN));
+    const hi = cfg.rosee ? t.tRosee(fluide, pMax) : t.tBulle(fluide, pMax);
+    const pts = [];
+    for (let k = Math.ceil(lo); k <= Math.floor(hi); k++) {
+      const pAbs = cfg.rosee ? t.pRosee(fluide, k) : t.pBulle(fluide, k);
+      pts.push({ t: k, a: angleDe(t.rel(pAbs), cfg) });
+    }
+    return pts;
+  }
+
+  function monter(conteneur, cote, fluideId, pRel) {
+    const cfg = CFG[cote], nom = nomFluide(fluideId), s = [], etiq = [];
+    const etiquette = (cx, cy, txt, fs, cls) => {
+      s.push('<text class="' + cls + ' cad-lab" data-i="' + etiq.length + '" x="' + f1(cx) + '" y="' + f1(cy) + '">' + txt + "</text>");
+      etiq.push(rectDe(cx, cy, txt, fs));
+    };
+
+    s.push('<svg viewBox="0 0 520 520" class="cad ' + cote.toLowerCase() + '" role="img" aria-label="">');
+    s.push('<circle class="cad-bague" cx="' + C + '" cy="' + C + '" r="' + R_BAGUE + '"/><circle class="cad-face" cx="' + C + '" cy="' + C + '" r="' + R_FACE + '"/>');
+
+    /* l'échelle de pression : traits tous les 0,1 (BP) ou 0,5 (HP) bar, chiffres sur les grands traits */
+    const majeur = cfg.pas[0], moyen = cfg.pas[1], mineur = cfg.pas[2], n = Math.round((cfg.vmax - cfg.vmin) / mineur);
+    for (let k = 0; k <= n; k++) {
+      const v = Math.round((cfg.vmin + k * mineur) * 1000) / 1000, est = pas => Math.abs(v / pas - Math.round(v / pas)) < 1e-6;
+      const type = est(majeur) ? "maj" : est(moyen) ? "moy" : "min", a = angleDe(v, cfg);
+      const p1 = pt(R_TRAIT, a), p2 = pt(R_TRAIT - LONG_PRESSION[type], a);
+      s.push('<line class="cad-tp ' + type + '" x1="' + f1(p1[0]) + '" y1="' + f1(p1[1]) + '" x2="' + f1(p2[0]) + '" y2="' + f1(p2[1]) + '"/>');
+    }
+    for (let k = 0; k <= n; k++) {
+      const v = Math.round((cfg.vmin + k * mineur) * 1000) / 1000;
+      if (Math.abs(v / majeur - Math.round(v / majeur)) > 1e-6) continue;
+      const q = pt(R_NUM, angleDe(v, cfg));
+      etiquette(q[0], q[1], entier(Math.round(v)), F_NUM, "cad-num");
+    }
+
+    /* la couronne : l'arc, les traits de 1, 5 et 10 K, les chiffres */
+    const pts = temperatures(cfg, fluideId);
+    if (pts.length > 1) {
+      const a0 = pts[0], a1 = pts[pts.length - 1], d0 = pt(R_ARC, a0.a), d1 = pt(R_ARC, a1.a);
+      s.push('<path class="cad-arc" d="M' + f1(d0[0]) + " " + f1(d0[1]) + " A" + R_ARC + " " + R_ARC + " 0 " + (a1.a - a0.a > 180 ? 1 : 0) + " 1 " + f1(d1[0]) + " " + f1(d1[1]) + '"/>');
+      pts.forEach((p, i) => {
+        const dix = p.t % 10 === 0, cinq = p.t % 5 === 0, voisin = pts[i > 0 ? i - 1 : i + 1];
+        if (!cinq && Math.abs(p.a - voisin.a) * Math.PI / 180 * R_ARC < 3) return;      /* trop serré : le trait d'un kelvin se tait */
+        const type = dix ? 10 : cinq ? 5 : 1, q1 = pt(R_ARC, p.a), q2 = pt(R_ARC + LONG_COURONNE[type], p.a);
+        s.push('<line class="cad-tc t' + type + '" data-t="' + p.t + '" x1="' + f1(q1[0]) + '" y1="' + f1(q1[1]) + '" x2="' + f1(q2[0]) + '" y2="' + f1(q2[1]) + '"/>');
+      });
+      /* les chiffres : les dizaines d'abord, puis les multiples de 5 qui trouvent encore de la place */
+      const poses = [];
+      const candidats = pts.filter(p => p.t % 10 === 0).concat(pts.filter(p => p.t % 5 === 0 && p.t % 10 !== 0));
+      candidats.forEach(p => {
+        const q = pt(R_ETIQ, p.a), r = rectDe(q[0], q[1], entier(p.t), F_ETIQ);
+        if (poses.some(x => seTouchent(x.r, r, 5))) return;
+        poses.push({ p: p, r: r });
+      });
+      poses.sort((x, y) => x.p.t - y.p.t).forEach(x => etiquette(x.r.cx, x.r.cy, entier(x.p.t), F_ETIQ, "cad-cn"));
+    }
+
+    /* le bas du cadran, resté libre : le côté, le fluide, ce que dit la couronne, l'unité de l'échelle */
+    s.push('<text class="cad-nom" x="' + C + '" y="322">' + cote + "</text>");
+    s.push('<text class="cad-fl" x="' + C + '" y="364">' + nom + "</text>");
+    s.push('<text class="cad-leg" x="' + C + '" y="398">couronne en °C</text>');
+    s.push('<text class="cad-leg" x="' + C + '" y="442">bar</text>');
+
+    /* l'aiguille (le groupe tourne autour du centre) et son moyeu */
+    s.push('<g class="cad-aig" style="transform: rotate(-135deg)"><path class="cad-aig-corps" d="M' + C + " " + (C - R_AIG) + " L" + (C + 6) + " " + (C - 2) + " L" + (C + 3) + " " + (C + 30) + " L" + (C - 3) + " " + (C + 30) + " L" + (C - 6) + " " + (C - 2) + ' Z"/></g>');
+    s.push('<circle class="cad-moyeu" cx="' + C + '" cy="' + C + '" r="15"/><circle class="cad-moyeu-c" cx="' + C + '" cy="' + C + '" r="5"/></svg>');
+
+    conteneur.innerHTML = s.join("");
+    const svg = conteneur.querySelector("svg"), aig = svg.querySelector(".cad-aig"), textes = Array.from(svg.querySelectorAll(".cad-lab"));
+    let enVie = true;
+
+    /* les chiffres que l'aiguille touche s'effacent : on suit son tracé, du moyeu à la pointe */
+    function effacer(a) {
+      const touches = new Set();
+      for (let r = 14; r <= R_AIG; r += 3) {
+        const q = pt(r, a);
+        etiq.forEach((e, i) => { if (Math.abs(q[0] - e.cx) <= e.w / 2 + MARGE_AIGUILLE && Math.abs(q[1] - e.cy) <= e.h / 2 + MARGE_AIGUILLE) touches.add(i); });
+      }
+      textes.forEach((t, i) => { if (touches.has(i)) t.setAttribute("visibility", "hidden"); else t.removeAttribute("visibility"); });
+    }
+    function pression(p) {
+      if (!enVie) return;
+      const a = Math.max(-140, Math.min(140, angleDe(p, cfg)));
+      aig.style.transform = "rotate(" + a.toFixed(2) + "deg)";
+      effacer(a);
+      svg.setAttribute("aria-label", "Manomètre " + cote + " de " + nom + " : échelle de pression en bar, couronne de la " + cfg.quoi + " en °C. L'aiguille est sur " + f1(p).replace(".", ",").replace("-", "−") + " bar.");
+    }
+    pression(-1);                                       /* départ au bas de l'échelle ; effacer() n'a rien touché de plus que l'aiguille au repos */
+    if (typeof pRel === "number" && isFinite(pRel)) { void svg.getBoundingClientRect(); pression(pRel); }
+    return { pression: pression, detruire: function () { enVie = false; conteneur.textContent = ""; } };
+  }
+
+  window.DEP_CADRAN = { monter: monter };
+})();
+
+</script>
+<script>
+/* =====================================================================
    jeu.js — le jeu de SimuRézo (ex-inerWeb Dép) : la partie, les relevés, la conclusion
    ---------------------------------------------------------------------
    RÔLE : conduire une partie de 8 situations de dépannage. À l'accueil on
@@ -2050,13 +2258,25 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
    situation avec DEP_GEN, monte la scène, et ne montre que ce que l'élève
    relève : chaque relevé inscrit au carnet la valeur LUE dans la situation
    (rien n'est inventé : les textes viennent de pannes.json et du générateur).
+   Deux régimes de lecture. Niveau 1 : les valeurs se lisent en clair, la
+   surchauffe (SR) et le sous-refroidissement (SC) se calculent sur demande.
+   Niveaux 2 et 3 : le carnet ne donne que la PRESSION ; un grand cadran à
+   couronnes (DEP_CADRAN) apparaît sous le carnet, l'élève y lit la température
+   de saturation et la saisit (±1 K), puis saisit SR et SC (±1 K) : une faute
+   rappelle la méthode et laisse une seconde chance, la deuxième faute donne
+   la valeur et coûte 8 au coefficient. Les points 1 et 3 du diagramme ne se
+   posent qu'après SR et SC (les points 2 et 4 suivent les relevés comme au
+   niveau 1) : le tracé est automatique, pas la lecture.
    Deux relevés font se déplier le diagramme (DEP_DIAG), qui se trace tout seul.
-   La conclusion se fait par les 8 familles puis la panne, ou par « deux causes
-   restent possibles » (deux causes + le contrôle qui reste). Le coefficient
+   La conclusion se fait par les 8 familles puis la panne (une famille qui n'a
+   qu'une panne la sélectionne d'elle-même), ou par « deux causes restent
+   possibles » (deux causes + le contrôle qui reste). Le coefficient
    (affiché seulement au retour) : 100, moins 8 par relevé absent de
-   panne.utiles, moins 20 si la conclusion est fausse ; « deux causes » vaut
-   0 de pénalité si la vraie panne est dans les deux ET si le contrôle nommé
-   est dans panne.utiles, sinon −20. Coefficient de partie = moyenne.
+   panne.utiles, moins 8 par lecture ratée (niveaux 2 et 3), moins 20 si la
+   conclusion est fausse ; « deux causes » vaut 0 de pénalité si la vraie panne
+   est dans les deux ET si le contrôle nommé est dans panne.utiles, sinon −20.
+   Au retour, « Ce qui aurait tranché » nomme les relevés utiles non faits.
+   Coefficient de partie = moyenne.
    CODE DE RESTITUTION : DEP-<niveau>-<inst>-<justes>/8-<coef>-<ctrl>, avec
    <inst> = initiale + chiffres de l'installation (P134, N449, P290) et
    <ctrl> = 2 caractères d'un hachage simple des champs précédents.
@@ -2065,14 +2285,14 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
    principe SR/SC « sur demande » et le code de restitution de JouéRézo.
    API : window.DEP_JEU = { _situation (lecture : la situation en cours,
    pour les tests), _ctrl(texte), N } ; démarre seul sur DOMContentLoaded.
-   DÉPEND : DEP_TABLES, DEP_GEN, DEP_DIAG, JR_SCENE_COUPE, JR_SCENE_ATELIER ;
+   DÉPEND : DEP_TABLES, DEP_GEN, DEP_DIAG, DEP_CADRAN, JR_SCENE_COUPE, JR_SCENE_ATELIER ;
    les JSON <script id="dep-installations | dep-pannes | dep-fluides">.
    ===================================================================== */
 (function () {
   "use strict";
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
-  const N_SITUATIONS = 8, MALUS_INUTILE = 8, MALUS_FAUX = 20;
+  const N_SITUATIONS = 8, MALUS_INUTILE = 8, MALUS_FAUX = 20, MALUS_LECTURE = 8, TOLERANCE = 1;
   const MOINS = "−";
   /* pannes.md § 1, plage « normal » de l'intensité : absente d'installations.json */
   const INTENSITE_NORMALE = [80, 110];
@@ -2080,7 +2300,11 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
   /* un relevé de la barre → le nom qu'il porte dans panne.utiles */
   const UTILE = { aevap: "air-evap", acond: "air-cond", revap: "evap", rcond: "cond", tou: "toucher", arret: "test-arret", rend: "test-rendement" };
   const utileDe = id => UTILE[id] || id;
-  const T = () => window.DEP_TABLES, GEN = () => window.DEP_GEN, DIAG = () => window.DEP_DIAG;
+  const RELEVE_DE = {}; Object.keys(UTILE).forEach(k => { RELEVE_DE[UTILE[k]] = k; });
+  const releveDe = nom => RELEVE_DE[nom] || nom;                             /* le nom dans panne.utiles → le relevé de la barre */
+  const METHODE = ["bp", "hp", "tasp", "tliq", "tref"];                      /* les cinq relevés de la méthode : pas « ce qui tranchait » */
+  const T = () => window.DEP_TABLES, GEN = () => window.DEP_GEN, DIAG = () => window.DEP_DIAG, CAD = () => window.DEP_CADRAN;
+  const lit = () => E.niveau >= 2;                                           /* niveaux 2 et 3 : le relevé se LIT sur l'instrument */
 
   /* ---------- petits outils : nombres à la française, éléments ---------- */
   function nb(v, d) {
@@ -2109,7 +2333,8 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
   const E = {
     niveau: 1, instId: null, pannes: [], n: 0, resultats: [], s: null, rel: null, scene: null,
     lus: new Set(), calcules: new Set(), points: new Set(), deplie: false, conclu: false,
-    choix: null, doute: { causes: [], controle: null }
+    choix: null, doute: { causes: [], controle: null },
+    lec: {}, cad: {}, rate: 0           /* niveaux 2 et 3 : l'état de chaque lecture (bp, hp, sr, sc), les cadrans montés, les lectures ratées */
   };
 
   function chargerDonnees() {
@@ -2178,6 +2403,9 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     const s = GEN().situation(inst, panne);
     E.s = s; E.lus = new Set(); E.calcules = new Set(); E.points = new Set();
     E.deplie = false; E.conclu = false; E.choix = null; E.doute = { causes: [], controle: null };
+    Object.keys(E.cad).forEach(k => E.cad[k].detruire());
+    E.cad = {}; E.rate = 0; E.lec = {};
+    Object.keys(LEC).forEach(k => { E.lec[k] = { n: 0, fini: false, donnee: false }; });
     E.rel = construireReleves(s);
 
     $("#chip-sit").textContent = E.n + " / " + N_SITUATIONS;
@@ -2261,9 +2489,12 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     const filtre = sg.filtreEcart ? "sortie du filtre nettement plus froide" : "même température des deux côtés";
     const toucher = /filtre/.test(c.toucher) ? c.toucher : c.toucher + " ; filtre : " + filtre;
     const sc = () => E.scene;
+    /* niveau 1 : la couronne est lue pour l'élève ; niveaux 2 et 3 : le carnet ne donne que la pression, la température se lit sur le cadran */
+    const repBP = lit() ? "la température se lit sur le cadran BP, plus bas" : "couronne : t évap " + deg(s.tEvap);
+    const repHP = lit() ? "la température se lit sur le cadran HP, plus bas" : "couronne : t cond " + deg(s.tCond);
     return {
-      bp: { lib: "Manifold BP", ctrl: "Lire le manifold BP", val: bar(s.bp), rep: "couronne : t évap " + deg(s.tEvap), geste: () => sc().manifold("BP"), zone: "bp" },
-      hp: { lib: "Manifold HP", ctrl: "Lire le manifold HP", val: bar(s.hp), rep: "couronne : t cond " + deg(s.tCond), geste: () => sc().manifold("HP"), zone: "hp" },
+      bp: { lib: "Manifold BP", ctrl: "Lire le manifold BP", val: bar(s.bp), rep: repBP, geste: () => sc().manifold("BP"), zone: "bp" },
+      hp: { lib: "Manifold HP", ctrl: "Lire le manifold HP", val: bar(s.hp), rep: repHP, geste: () => sc().manifold("HP"), zone: "hp" },
       pince: { lib: "Pince ampèremétrique", ctrl: "Mesurer l'intensité à la pince", val: nb(s.intensite, 0) + " % de In", rep: "normal : " + entre(INTENSITE_NORMALE) + " % de In", geste: () => sc().pince(s.intensite), zone: "pince" },
       tasp: { lib: "Thermomètre aspiration", ctrl: "Mesurer la température d'aspiration", val: deg(s.tAsp), geste: () => sc().thermo("tasp", s.tAsp), zone: "tasp" },
       tliq: { lib: "Thermomètre ligne liquide", ctrl: "Mesurer la température de la ligne liquide", val: deg(s.tLiq), geste: () => sc().thermo("tliq", s.tLiq), zone: "tliq" },
@@ -2318,25 +2549,149 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     if (!E.lus.has(id)) {
       E.lus.add(id); carnet(r);
       const b = $('.b-rel[data-r="' + id + '"]'); if (b) b.classList.add("fait");
+      if (lit() && LEC[id] && LEC[id].cote) ouvrirCadran(id);
     }
     dernier(r.lib, r.val);
     apresReleve();
   }
 
+  /* la valeur d'une surchauffe ou d'un sous-refroidissement, sa plage, et le mot du verdict */
+  function verdictDe(k) {
+    const C = CALC[k], v = C.valeur(E.s), pl = C.plage(E.s);
+    return { v: v, pl: pl, mot: v > pl[1] ? C.mots[0] : v < pl[0] ? C.mots[1] : C.mots[2] };
+  }
   function calculer(k) {
     if (E.conclu || E.calcules.has(k)) return;
-    const C = CALC[k], s = E.s, v = C.valeur(s), pl = C.plage(s);
-    const verdict = v > pl[1] ? C.mots[0] : v < pl[0] ? C.mots[1] : C.mots[2];
+    const C = CALC[k], s = E.s, d = verdictDe(k), v = d.v, pl = d.pl, verdict = d.mot;
     E.calcules.add(k);
     carnet({ lib: C.lib, val: nb(v, 0) + " K", rep: C.phrase(s) + " · plage " + entre(pl) + " K" }, true, verdict);
     dernier(C.court, nb(v, 0) + " K · " + verdict);
     apresReleve();
   }
 
+  /* ---------- niveaux 2 et 3 : l'élève LIT le cadran, puis SAISIT ce qu'il lit ----------
+     bp, hp : la température de saturation lue sur la couronne ; sr, sc : l'écart calculé. Tolérance ±1 K ;
+     une faute rappelle la méthode et laisse une seconde chance ; la deuxième faute donne la valeur (−8). */
+  const LEC = {
+    bp: { cote: "BP", lib: "t évap lue", vrai: s => s.tEvap,
+      rappel: "Relisez l'aiguille : cherchez le trait de la couronne bleue qu'elle croise, entre les deux chiffres les plus proches." },
+    hp: { cote: "HP", lib: "t cond lue", vrai: s => s.tCond,
+      rappel: "Relisez l'aiguille : cherchez le trait de la couronne rouge qu'elle croise, entre les deux chiffres les plus proches." },
+    sr: { vrai: s => s.tAsp - s.tEvap, besoin: ["bp", "tasp"], apres: "bp",
+      rappel: ["Rappel : surchauffe =", "T aspiration − t évap", "Reprenez ces deux valeurs dans le carnet."] },
+    sc: { vrai: s => s.tCond - s.tLiq, besoin: ["hp", "tliq"], apres: "hp",
+      rappel: ["Rappel : sous-refroidissement =", "t cond − T ligne liquide", "Reprenez ces deux valeurs dans le carnet."] }
+  };
+  const A_FAIRE = { bp: ["bloc-bp", "Lire le cadran BP"], hp: ["bloc-hp", "Lire le cadran HP"], sr: ["saisie-sr", "Calculer la surchauffe"], sc: ["saisie-sc", "Calculer le sous-refroidissement"] };
+  const MANQUE = { bp: "le manifold BP", hp: "le manifold HP", tasp: "la température d'aspiration", tliq: "la température de la ligne liquide" };
+
+  /* une lecture est à faire quand son relevé est fait (cadran), ou quand ses relevés et la lecture qui la précède le sont (calcul) */
+  function dispo(k) {
+    const Q = LEC[k], L = E.lec[k];
+    if (E.conclu || L.fini) return false;
+    return Q.cote ? E.lus.has(k) : Q.besoin.every(x => E.lus.has(x)) && E.lec[Q.apres].fini;
+  }
+  /* texte : une phrase, ou [début, formule, fin] : la formule tient sur sa propre ligne, jamais coupée */
+  function message(k, texte, etat) {
+    const m = $("#msg-" + k); m.textContent = "";
+    if (Array.isArray(texte)) m.append(texte[0] + " ", el("b", "b-formule", texte[1]), " " + texte[2]); else m.textContent = texte;
+    m.className = "b-msg" + (etat ? " " + etat : "");
+  }
+  function formulaire(k, etiquette, bouton) {
+    const f = el("form", "b-saisie"); f.id = "saisie-" + k; f.noValidate = true;
+    const lab = el("label", "", etiquette); lab.htmlFor = "in-" + k;
+    const ligne = el("div", "b-saisie-ligne"), inp = el("input"), ok = el("button", "btn", bouton);
+    inp.type = "number"; inp.step = "1"; inp.id = "in-" + k; inp.autocomplete = "off";
+    ok.type = "submit"; ok.id = "ok-" + k;
+    const msg = el("p", "b-msg"); msg.id = "msg-" + k; msg.setAttribute("aria-live", "polite");
+    ligne.append(inp, ok); f.append(lab, ligne, msg);
+    f.addEventListener("submit", e => { e.preventDefault(); repondre(k, inp.valueAsNumber); });
+    return f;
+  }
+  function ouvrirCadran(k) {
+    const Q = LEC[k], s = E.s, nom = s.inst.fluideNom, bp = k === "bp";
+    const bloc = el("section", "b-cadran " + k); bloc.id = "bloc-" + k; bloc.setAttribute("aria-labelledby", "t-cad-" + k);
+    const h = el("h3", "", "Cadran " + Q.cote + " · " + nom); h.id = "t-cad-" + k;
+    const aide = el("p", "b-leg", "Échelle extérieure : la pression, en bar. Couronne " + (bp ? "bleue" : "rouge") + " : la température " + (bp ? "d'évaporation" : "de condensation")
+      + " de " + nom + ", en °C. Lisez-la là où l'aiguille la croise.");
+    const dessin = el("div", "b-cadran-svg");
+    /* au téléphone la scène reste collée en haut : titre, cadran et saisie tiennent dans ce qui reste de l'écran ; l'aide vient après */
+    bloc.append(h, dessin, formulaire(k, "Température " + (bp ? "d'évaporation" : "de condensation") + " lue (°C)", "Je lis"), aide);
+    const zone = $("#cadrans"); zone.hidden = false;
+    if (bp && zone.firstChild) zone.insertBefore(bloc, zone.firstChild); else zone.append(bloc);
+    E.cad[k] = CAD().monter(dessin, Q.cote, s.inst.fluide, bp ? s.bp : s.hp);
+  }
+  function repondre(k, saisi) {
+    const L = E.lec[k], Q = LEC[k];
+    if (E.conclu || L.fini) return;
+    if (!isFinite(saisi)) { message(k, "Tapez un nombre, par exemple " + MOINS + "9.", "nok"); return; }
+    L.n += 1;
+    const vrai = Q.vrai(E.s), juste = Math.abs(saisi - vrai) <= TOLERANCE + 1e-9;
+    if (!juste && L.n < 2) {
+      message(k, Array.isArray(Q.rappel) ? [Q.rappel[0], Q.rappel[1], Q.rappel[2] + " Il vous reste un essai."] : Q.rappel + " Il vous reste un essai.", "nok");
+      return;
+    }
+    L.fini = true; L.donnee = !juste;
+    if (L.donnee) E.rate += 1;
+    $("#in-" + k).disabled = true; $("#ok-" + k).disabled = true;
+    const perte = " Elle compte " + MOINS + MALUS_LECTURE + " sur votre coefficient.";
+    if (Q.cote) {
+      message(k, juste ? (saisi === vrai ? "Bien lu : " : "Bien lu, à 1 K près : la valeur retenue est ") + deg(vrai) + "." : "La valeur est donnée : " + deg(vrai) + "." + perte, juste ? "ok" : "nok");
+      carnet({ lib: Q.lib, val: deg(vrai), rep: juste ? "lue sur le cadran " + Q.cote : "valeur donnée après deux essais" });
+      dernier(Q.lib, deg(vrai));
+      apresReleve();
+    } else {
+      const d = verdictDe(k), dit = nb(vrai, 0) + " K · " + d.mot + " (plage " + entre(d.pl) + " K).";
+      message(k, juste ? CALC[k].lib.toLowerCase() + " " + dit : "La valeur est donnée : " + CALC[k].lib.toLowerCase() + " " + dit + perte, juste ? "ok" : "nok");
+      calculer(k);
+    }
+  }
+  /* les saisies de SR et SC s'ouvrent quand leurs relevés et la lecture du cadran sont faits ; sinon on dit ce qui manque */
+  function majSaisies() {
+    if (!lit()) return;
+    ["sr", "sc"].forEach(k => {
+      const Q = LEC[k], L = E.lec[k]; if (L.fini) return;
+      const ok = dispo(k);
+      $("#in-" + k).disabled = !ok; $("#ok-" + k).disabled = !ok;
+      if (L.n > 0) return;
+      const m = Q.besoin.filter(x => !E.lus.has(x)).map(x => MANQUE[x]);
+      if (E.lus.has(Q.apres) && !E.lec[Q.apres].fini) m.push("la lecture du cadran " + LEC[Q.apres].cote);
+      message(k, ok ? "" : "À faire d'abord : " + m.join(", ") + ".");
+    });
+  }
+  /* sous la scène, collée au téléphone : un lien vers la prochaine lecture à faire, pour ne pas chercher le cadran plus bas */
+  function defiler(cible) {
+    const poste = $("#poste"), colle = getComputedStyle(poste).position === "sticky";
+    const haut = $("#bandeau").offsetHeight + (colle ? poste.offsetHeight : 0) + 8;
+    window.scrollTo({ top: cible.getBoundingClientRect().top + window.pageYOffset - haut, behavior: "smooth" });
+  }
+  function majAction() {
+    const d = $("#dernier"), vieux = $(".b-pastille", d); if (vieux) vieux.remove();
+    const k = lit() ? Object.keys(LEC).find(dispo) : null;
+    if (!k) return;
+    const a = el("a", "b-pastille vue", A_FAIRE[k][1] + " ↓"); a.href = "#" + A_FAIRE[k][0];
+    a.addEventListener("click", e => { e.preventDefault(); defiler($("#" + A_FAIRE[k][0])); });
+    d.append(a);
+  }
+  function monterLectures() {
+    const zone = $("#saisies"), cad = $("#cadrans");
+    cad.textContent = ""; cad.hidden = true; zone.textContent = ""; zone.hidden = !lit();
+    $("#calc-clair").hidden = lit();
+    $("#aide-releves").textContent = lit()
+      ? "Touchez un bouton, ou un rond orange dans la scène. Un manifold donne la pression : la température, vous la lisez sur le cadran qui apparaît sous le carnet."
+      : "Touchez un bouton, ou un rond orange dans la scène. Chaque relevé affiche la valeur lue.";
+    $("#leg-calc").textContent = lit()
+      ? "La surchauffe demande la température d'évaporation lue sur le cadran BP et la température d'aspiration ; le sous-refroidissement, la température de condensation lue sur le cadran HP et la température de la ligne liquide."
+      : "La surchauffe demande la BP et l'aspiration ; le sous-refroidissement, la HP et la ligne liquide.";
+    if (lit()) { zone.append(formulaire("sr", "Surchauffe (K)", "Je calcule"), formulaire("sc", "Sous-refroidissement (K)", "Je calcule")); majSaisies(); }
+  }
+
   /* ---------- ce qui change après chaque relevé ---------- */
   function apresReleve() {
     const n = E.lus.size;
     ["sr", "sc"].forEach(k => { $("#calc-" + k).disabled = !CALC[k].besoin.every(x => E.lus.has(x)) || E.calcules.has(k); });
+    majSaisies();
+    majAction();
     majAlertes();
     majDiagramme();
     $$(".cpt").forEach(e => { e.textContent = Math.min(n, 2) + " / 2"; });
@@ -2369,16 +2724,17 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     const f = inst.fluide, t = T(), pB = t.pRosee(f, inst.tEvap), pH = t.pBulle(f, inst.tCond), tr = t.tRosee(f, pH), h3 = t.hLiquide(f, inst.tCond, inst.sc);
     return [{ p: pB, h: t.hVapeur(f, inst.tEvap, inst.sr) }, { p: pH, h: t.hVapeur(f, tr, inst.tRef - tr) }, { p: pH, h: h3 }, { p: pB, h: h3 }];
   }
-  /* point n : les relevés dont il dépend ; l'enthalpie suit la méthode du contrat */
+  /* point n : les relevés dont il dépend ; l'enthalpie suit la méthode du contrat.
+     Niveaux 2 et 3 : les points 1 et 3 attendent aussi la surchauffe et le sous-refroidissement saisis par l'élève (calc). */
   const POINTS = [
-    { n: 1, besoin: ["bp", "tasp"] }, { n: 2, besoin: ["hp", "tref"] }, { n: 3, besoin: ["hp", "tliq"] }, { n: 4, besoin: ["bp", "hp", "tliq"] }
+    { n: 1, besoin: ["bp", "tasp"], calc: "sr" }, { n: 2, besoin: ["hp", "tref"] }, { n: 3, besoin: ["hp", "tliq"], calc: "sc" }, { n: 4, besoin: ["bp", "hp", "tliq"] }
   ];
   function majDiagramme() {
     const s = E.s, f = s.inst.fluide, t = T(), pB = t.abs(s.bp), pH = t.abs(s.hp), d = DIAG();
     if (E.lus.has("bp")) d.isobare("BP", pB);
     if (E.lus.has("hp")) d.isobare("HP", pH);
     POINTS.forEach(P => {
-      if (E.points.has(P.n) || !P.besoin.every(k => E.lus.has(k))) return;
+      if (E.points.has(P.n) || !P.besoin.every(k => E.lus.has(k)) || (lit() && P.calc && !E.calcules.has(P.calc))) return;
       E.points.add(P.n);
       const tr = t.tRosee(f, pH);
       const h = P.n === 1 ? t.hVapeur(f, s.tEvap, s.tAsp - s.tEvap)
@@ -2397,6 +2753,8 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     const sr = s.tAsp - s.tEvap, sc = s.tCond - s.tLiq;
     if (place(1)) dits.push(sr > pl.sr[1] ? "Le point 1 est loin à droite de la cloche : la vapeur est très surchauffée."
       : sr < pl.sr[0] ? "Le point 1 est tout près de la cloche : la vapeur est à peine surchauffée." : "Le point 1 est à une distance normale de la cloche.");
+    else if (lit() && L.has("bp") && L.has("tasp")) dits.push("Le point 1 attend la surchauffe : lisez le cadran BP, puis saisissez-la.");
+    if (!place(3) && lit() && L.has("hp") && L.has("tliq")) dits.push("Le point 3 attend le sous-refroidissement : lisez le cadran HP, puis saisissez-le.");
     if (place(3)) dits.push(sc < pl.sc[0] ? (sc <= 1 ? "Le point 3 touche la cloche : le liquide n'est pas sous-refroidi." : "Le point 3 est trop près de la cloche : le liquide est peu sous-refroidi.")
       : sc > pl.sc[1] ? "Le point 3 est loin à gauche de la cloche : le liquide est très sous-refroidi." : "Le point 3 est à une distance normale de la cloche.");
     if (place(2)) dits.push(s.tRef > pl.tRef[1] ? "Le point 2 est très à droite : le refoulement est anormalement chaud."
@@ -2457,6 +2815,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
       const x = el("button", "b-pan", panneDe(id).nom); x.type = "button"; x.dataset.id = id; x.setAttribute("aria-pressed", "false"); z.append(x);
     });
     $("#precise").hidden = false;
+    const seules = $$(".b-pan", z); if (seules.length === 1) choisirPanne(seules[0]);        /* une seule panne dans la famille : elle est choisie */
     setTimeout(() => $("#precise").scrollIntoView({ behavior: "smooth", block: "center" }), 60);
   }
   function choisirPanne(b) {
@@ -2501,7 +2860,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     E.conclu = true;
     const s = E.s, p = s.panne, utiles = new Set(p.utiles);
     const lus = Array.from(E.lus), inutiles = lus.filter(id => !utiles.has(utileDe(id))), utilesLus = lus.filter(id => utiles.has(utileDe(id)));
-    let coef = 100 - MALUS_INUTILE * inutiles.length, juste, cls, signe, texte;
+    let coef = 100 - MALUS_INUTILE * inutiles.length - MALUS_LECTURE * E.rate, juste, cls, signe, texte;
     if (choix.type === "panne") {
       juste = choix.id === p.id;
       cls = juste ? "ok" : "nok"; signe = juste ? "✓" : "✗";
@@ -2516,13 +2875,15 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     }
     if (!juste) coef -= MALUS_FAUX;
     coef = Math.max(0, Math.min(100, coef));
-    E.resultats.push({ n: E.n, panne: p.nom, id: p.id, juste: juste, coef: coef, inutiles: inutiles.length });
+    E.resultats.push({ n: E.n, panne: p.nom, id: p.id, juste: juste, coef: coef, inutiles: inutiles.length, ratees: E.rate });
     majCoefBandeau();
 
     const gauche = el("div"), droite = el("div");
     const verdict = el("div", "b-verdict " + cls); verdict.append(el("span", "signe", signe), el("p", "", texte));
     verdict.firstChild.setAttribute("aria-hidden", "true");
-    gauche.append(verdict, bloc("Ce qui tranchait", el("p", "", p.controle)));
+    /* les relevés utiles hors méthode que l'élève n'a pas faits : le titre le dit */
+    const manquants = p.utiles.filter(u => METHODE.indexOf(u) < 0).map(releveDe).filter(id => E.rel[id] && !E.lus.has(id));
+    gauche.append(verdict, bloc(manquants.length ? "Ce qui aurait tranché — vous n'avez pas relevé : " + manquants.map(id => E.rel[id].lib).join(" ; ") : "Ce qui tranchait", el("p", "", p.controle)));
     const tags = el("ul", "b-tags");
     utilesLus.forEach(id => tags.append(el("li", "utile", E.rel[id].lib)));
     inutiles.forEach(id => tags.append(el("li", "inutile", E.rel[id].lib)));
@@ -2533,7 +2894,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
 
     const cb = el("div", "b-coefbloc");
     cb.append(el("h3", "", "Votre coefficient"), el("p", "gros", coef + " %"),
-      el("p", "b-leg", "100, moins " + MALUS_INUTILE + " par relevé pas utile (" + inutiles.length + " ici), moins " + MALUS_FAUX + " si la conclusion est fausse."));
+      el("p", "b-leg", "100, moins " + MALUS_INUTILE + " par relevé pas utile (" + inutiles.length + " ici)" + (lit() ? ", moins " + MALUS_LECTURE + " par lecture ratée (" + E.rate + " ici)" : "") + ", moins " + MALUS_FAUX + " si la conclusion est fausse."));
     const fin = el("div", "b-fin"), derniere = E.n >= N_SITUATIONS;
     const suite = el("button", "btn", derniere ? "Voir mon score" : "Situation suivante"); suite.type = "button"; suite.id = "suivante";
     suite.addEventListener("click", () => (derniere ? finDePartie() : situationSuivante()));
@@ -2543,6 +2904,8 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
 
     $$(".b-fam, .b-pan, #doute, #valider, #valider-doute").forEach(b => { b.setAttribute("aria-disabled", "true"); if (b.tagName === "BUTTON" && b.id) b.disabled = true; });
     $$(".b-rel").forEach(b => b.setAttribute("aria-disabled", "true"));
+    $$(".b-saisie input, .b-saisie button").forEach(x => { x.disabled = true; });
+    majAction();
     const r = $("#retour"); r.classList.remove("verrou"); $(".b-pli", r).classList.add("ouvert");
     setTimeout(() => r.scrollIntoView({ behavior: "smooth", block: "start" }), 560);
   }
@@ -2614,6 +2977,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     $("#nb").textContent = "0"; $("#alertes").textContent = ""; $("#alertes").hidden = true;
     $("#dernier").textContent = ""; $("#dernier").append(el("span", "lib", "Dernier relevé"), el("span", "val", "aucun pour l'instant"));
     ["sr", "sc"].forEach(k => { $("#calc-" + k).disabled = true; });
+    monterLectures();
     $("#lien-cycle").classList.remove("vue");
     $$(".cpt").forEach(e => { e.textContent = "0 / 2"; });
     const suite = $("#suite2"); suite.textContent = "Faites 2 relevés pour déplier le cycle (0 / 2)"; suite.setAttribute("aria-disabled", "true");
