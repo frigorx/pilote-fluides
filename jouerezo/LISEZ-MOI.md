@@ -1,13 +1,13 @@
 # JouéRézo — le réseau de jeux d'inerWeb
 
 > Atelier : `C:\git\jouerezo` (fait foi). Copie servie : `C:\git\pilote-fluides\jouerezo\` → `https://inerweb.fr/jouerezo/`.
-> Né dans la nuit du 02 au 03/10/2026 sur carte blanche de F. Henninot ; neuf jeux depuis le 03/10 au matin.
+> Né dans la nuit du 02 au 03/10/2026 sur carte blanche de F. Henninot ; dix jeux depuis le 03/10 au matin.
 > **Réseau caché** pour l'instant : aucune entrée depuis l'accueil, le plan ni le quartier 3D ; `noindex` sur toutes les pages.
 > Périmètre voulu par Franck : **froid classique, pas de clim** (CartoClim reste hors des jeux).
 
 ## Ce que c'est
 
-Neuf jeux courts, jouables au téléphone, qui rejouent le contenu des stations existantes. Rien n'est écrit ici qui ne soit déjà en ligne, rien n'est redessiné :
+Dix jeux courts, jouables au téléphone, qui rejouent le contenu des stations existantes. Rien n'est écrit ici qui ne soit déjà en ligne, rien n'est redessiné :
 
 | Jeu | Page | Moteur | Thèmes | D'où vient le contenu |
 |---|---|---|---|---|
@@ -20,6 +20,7 @@ Neuf jeux courts, jouables au téléphone, qui rejouent le contenu des stations 
 | **Compléter le schéma** | `schema.html` | `moteur/schema.js` | la croix du frigoriste, la ligne liquide, 11 câblages (démarrage direct, pump-down, chambre froide négative, EP2 2022, bac 2008) | circuits décrits dans `donnees/schemas.js` avec les symboles de la bibliothèque curée ; câblages **chargés en direct** depuis `../cablage-virtuel/exercices/<id>.js` (carte SVG convertie des .qet de Franck) |
 | **Qui suis-je ?** | `quisuisje.html` | `moteur/quisuisje.js` | organes du froid, outils, appareils électriques, tout | `donnees/definitions.js` (écrit ici depuis HabFluide et CuivRézo) + `donnees/banque-electrorezo.js` (FABRIQUÉ depuis les stations ÉlectroRézo, champ « à quoi ça sert ») |
 | **Le pendu du frigo** | `pendu.html` | `moteur/pendu.js` | les mêmes banques | les mêmes ; pas de bonhomme : un compresseur qui chauffe |
+| **Le dépanneur** | `depanneur.html` | `moteur/depanneur.js` | chambre froide positive (R-134a), négative (R-404A), les deux | `donnees/depanneur.js` (12 situations, valeurs d'exercice écrites par Fable, à relire) ; **dans l'esprit de Frigodiag (KOTZA)** : le dépanneur choisit ses relevés (manifold, thermomètre, voyant, givre, condenseur, toucher, pince), les pressions se lisent sur le cadran (port du générateur de l'interro n° 3, couronnes R-134a et R-404A, tables CoolProp de `../rezotools/calculettes/cerveau_v5.js`), thermomètre électronique, méthode surchauffe / sous-refroidissement, fiche T6, coefficient d'efficacité |
 
 Chaque partie finit par un **code de partie** (`JR-<lettre du jeu>-<thème>-<score>/<total>-<contrôle>`, alphabet sans O/0/I/L/1 comme HoCourant) et par des **portes** vers les stations à revoir. Le meilleur score reste sur l'appareil (`localStorage`).
 
@@ -36,8 +37,9 @@ donnees/reel-symbole.js   paires élément réel ↔ symbole (et inventaire des 
 donnees/definitions.js    définitions froid + outils, photos d'outils
 donnees/banque-electrorezo.js   FABRIQUÉ par outils/extraire-banques.mjs
 donnees/aventure.js   le scénario de l'aventure
+donnees/depanneur.js  les situations du dépanneur (plages, pannes, cas)
 donnees/themes.js     JR_JEUX + JR_THEMES : dérive tout des fichiers ci-dessus (chargés AVANT lui)
-illustrations/*.svg   neuf icônes faites main (charte) ; accueil.webp (Codex) ; bibliotheque/ (copies curées, SOURCES.md)
+illustrations/*.svg   dix icônes faites main (charte) ; accueil.webp (Codex) ; bibliotheque/ (copies curées, SOURCES.md)
 outils/servir.mjs     serveur local : /jouerezo/ depuis l'atelier, le reste depuis pilote-fluides (port 8797) ; /sw.js bloqué
 outils/livrer.mjs     copie vers pilote-fluides/jouerezo/ (+ clé ?v= datée) — --ecrire pour écrire, --cible pour un worktree
 outils/fabriquer-pages.mjs · extraire-banques.mjs · copier-bibliotheque.mjs

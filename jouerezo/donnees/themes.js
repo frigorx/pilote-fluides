@@ -45,7 +45,10 @@ window.JR_JEUX = {
     regle: "Dix définitions tirées au sort. Un seul nom est juste ; on vous dit où le revoir." },
   pendu: { nom: "Le pendu du frigo", lettre: "P", emoji: "🌡️",
     phrase: "Un mot du métier, lettre par lettre. Chaque lettre fausse fait chauffer le compresseur.",
-    regle: "Cinq mots. L'indice, c'est la définition. Huit lettres fausses et le compresseur grille." }
+    regle: "Cinq mots. L'indice, c'est la définition. Huit lettres fausses et le compresseur grille." },
+  depanneur: { nom: "Le dépanneur", lettre: "R", emoji: "🔧",
+    phrase: "Une chambre froide en panne. Branchez le manifold, pincez le thermomètre, regardez, touchez, puis nommez la panne.",
+    regle: "Trois situations. Vous choisissez vos relevés comme sur le chantier ; les pressions se lisent sur le cadran, la surchauffe et le sous-refroidissement se calculent. Puis vous concluez. Moins de relevés inutiles, meilleur coefficient." }
 };
 
 /* ---------- portes partagées ---------- */
@@ -354,3 +357,22 @@ JR_THEMES.quisuisje = [
   { id: "tout", nom: "Tout mélangé", emoji: "🎲", mots: MOTS_FROID.concat(MOTS_OUTILS, MOTS_ELEC), portes: P.symbolesFroid.concat(P_MOTS_OUTILS, P.symbolesElec) }
 ];
 JR_THEMES.pendu = JR_THEMES.quisuisje;
+
+/* =====================================================================
+   LE DÉPANNEUR — les situations de donnees/depanneur.js, par installation
+   ===================================================================== */
+JR_THEMES.depanneur = (function (DP) {
+  if (!DP) return [];
+  const portes = [
+    { t: "Fiche T6 — Le raisonnement de diagnostic (1re MFER)", h: "../f/etancheite-3/" },
+    { t: "Deux écarts, deux points de mesure (HabFluide)", h: "../f/a-mesures-surchauffe-sous-refroidissement/" },
+    { t: "La lecture croisée : manomètre, table, thermomètre", h: "../f/a-lecture-table/" },
+    { t: "L'écart qui annonce l'encrassement (condenseur)", h: "../f/a-condenseur-ecart-encrassement/" },
+    { t: "RézoTools — Diagnostic et dépannage", h: "../rezotools/calculettes/diagnostic.html" }
+  ];
+  return [
+    { id: "positif", nom: "Chambre froide positive (R-134a)", emoji: "🧊", cas: DP.cas.filter(c => c.inst === "positif"), portes: portes },
+    { id: "negatif", nom: "Chambre froide négative (R-404A)", emoji: "❄️", cas: DP.cas.filter(c => c.inst === "negatif"), portes: portes },
+    { id: "tout", nom: "Les deux chambres", emoji: "🎲", cas: DP.cas, portes: portes }
+  ];
+})(window.JR_DEPANNEUR);

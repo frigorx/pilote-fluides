@@ -4,7 +4,7 @@
 
 ## État au 03/10/2026 (matin)
 
-- **EN LIGNE, caché** : `https://inerweb.fr/jouerezo/` — neuf jeux. Site `pilote-fluides` : nuit `5d4fe44d` + `f4a2526e` (six jeux, image d'accueil), matin : livraison v2 (schéma, Qui suis-je, pendu, vrai et symbole, outils). Poussés depuis un worktree détaché de `origin/main`.
+- **EN LIGNE, caché** : `https://inerweb.fr/jouerezo/` — dix jeux (le dépanneur ajouté le 03/10 à 6 h). Site `pilote-fluides` : nuit `5d4fe44d` + `f4a2526e` (six jeux, image d'accueil), matin : livraison v2 (schéma, Qui suis-je, pendu, vrai et symbole, outils). Poussés depuis un worktree détaché de `origin/main`.
 - Atelier : `C:\git\jouerezo`, distant privé `github.com/frigorx/jouerezo` (branche `master`).
 - Décisions de Franck (03/10 matin, à la voix) : glisser-déposer sur les schémas électriques et le circuit fluide ; les vrais éléments et les symboles de la bibliothèque ; des définitions ; un pendu ; les outils ; **froid classique seulement, pas de clim**.
 
@@ -16,6 +16,8 @@
 4. Les 34 définitions froid et outils (`donnees/definitions.js`) : chaque phrase vient d'une planche ou d'une station ; à relire comme un énoncé.
 5. Symboles retirés du Memory électrique parce qu'indiscernables à 70 px : disjoncteur unipolaire, sectionneur, interrupteur-sectionneur (EN 60617), résistance (même rectangle que la bobine). Vanne à boisseau retirée du Memory froid.
 6. Texte de l'aventure (12 scènes), 32 questions fluides, image d'accueil Codex (zombie « tout sourire »).
+7. **Le dépanneur** (`donnees/depanneur.js`) : les 12 situations (températures de saturation, aspiration, liquide, refoulement, intensité, observations) sont des valeurs d'exercice écrites par Fable, cohérentes avec les plages de RézoTools et la fiche T6 ; les signatures de pannes et les actions aussi. À relire comme un sujet. Les pressions affichées en viennent par les tables CoolProp (rosée côté BP, bulle côté HP).
+8. Les six vues d'outils (planche Codex découpée) à la place des photos d'atelier.
 
 ## Restes
 

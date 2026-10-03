@@ -192,3 +192,27 @@ svg.schema .cadre-ok { fill: none; stroke: var(--acquis); stroke-width: 1.5; str
 .touche.ok { background: #e9f5ee; }
 .touche.nok { background: #fbeceb; }
 @media (min-width: 560px) { .clavier { grid-template-columns: repeat(13, 1fr); } }
+
+/* ---- Le dépanneur ---- */
+.eyebrow { color: var(--orange-texte); font-weight: bold; text-transform: uppercase; letter-spacing: .04em; font-size: .9rem; }
+.dep-cas { display: grid; gap: 8px; }
+.dep-circuit { max-width: 32rem; margin: 0 auto; }
+svg.installation { display: block; width: 100%; height: auto; }
+svg.installation .tuyau { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 10 8; animation: circule 1.4s linear infinite; }
+svg.installation .hp-vap { stroke: #c0392b; } svg.installation .hp-liq { stroke: #c9451a; }
+svg.installation .bp-mel { stroke: #3d7fca; } svg.installation .bp-vap { stroke: #7fb3e6; }
+@keyframes circule { to { stroke-dashoffset: -36; } }
+svg.installation .lib { font: bold 12px Calibri, Arial, sans-serif; fill: var(--bleu); text-anchor: middle; }
+svg.installation .pt { fill: #fff6ec; stroke: var(--orange-texte); stroke-width: 2.5; cursor: pointer; }
+svg.installation .pt.actif { fill: var(--orange); }
+svg.installation .pt-lib { font: 11px Calibri, Arial, sans-serif; fill: var(--mut); text-anchor: middle; }
+.dep-outils { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 10px; }
+.dep-outils .btn { min-height: 44px; font-size: .95rem; padding: 6px 10px; }
+.dep-releve { margin-top: 12px; }
+.instrument { display: grid; gap: 8px; justify-items: center; }
+.instrument .cadran { width: min(100%, 300px); height: auto; }
+.instrument .thermo { width: min(100%, 260px); height: auto; }
+.instrument p { max-width: 36rem; }
+.observation { padding: 10px 14px; background: #eef3f9; border-left: 5px solid var(--bleu); border-radius: 8px; }
+.dep-methode { display: grid; gap: 10px; margin-top: 10px; }
+.retour em { font-style: normal; color: var(--bleu); font-weight: bold; }
