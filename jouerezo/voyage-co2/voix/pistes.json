@@ -1,0 +1,374 @@
+{
+ "intro-0": {
+  "f": "e4cc4c0e46fd.mp3",
+  "d": 5.208
+ },
+ "intro-1": {
+  "f": "45fab52526c6.mp3",
+  "d": 7.632
+ },
+ "intro-2": {
+  "f": "78f140455675.mp3",
+  "d": 7.464
+ },
+ "intro-3": {
+  "f": "7b2ee34e8fcb.mp3",
+  "d": 4.104
+ },
+ "intro-4": {
+  "f": "e79e56e43831.mp3",
+  "d": 4.872
+ },
+ "intro-5": {
+  "f": "e2c0ca8c8805.mp3",
+  "d": 5.232
+ },
+ "intro-6": {
+  "f": "d52546bb3f27.mp3",
+  "d": 4.008
+ },
+ "intro-7": {
+  "f": "2dec3e69a8cf.mp3",
+  "d": 3.072
+ },
+ "evaporateur-0": {
+  "f": "745ebe46abef.mp3",
+  "d": 6.504
+ },
+ "evaporateur-1": {
+  "f": "43fb7d0d2e74.mp3",
+  "d": 3.192
+ },
+ "evaporateur-2": {
+  "f": "5ffd9f66e9ad.mp3",
+  "d": 4.512
+ },
+ "evaporateur-3": {
+  "f": "3ff8718935be.mp3",
+  "d": 5.928
+ },
+ "evaporateur-4": {
+  "f": "439218fa4891.mp3",
+  "d": 3.768
+ },
+ "evaporateur-5": {
+  "f": "2e95c6e52ca3.mp3",
+  "d": 3.936
+ },
+ "evaporateur-6": {
+  "f": "f52b7917c2c6.mp3",
+  "d": 6.576
+ },
+ "compresseur-0": {
+  "f": "c78aaec065be.mp3",
+  "d": 7.704
+ },
+ "compresseur-1": {
+  "f": "907246ae0416.mp3",
+  "d": 3.432
+ },
+ "compresseur-2": {
+  "f": "a5a08705667c.mp3",
+  "d": 5.784
+ },
+ "compresseur-3": {
+  "f": "595c8f4db6bf.mp3",
+  "d": 2.736
+ },
+ "compresseur-4": {
+  "f": "642a8ccedfe5.mp3",
+  "d": 5.064
+ },
+ "compresseur-5": {
+  "f": "a330f769d2fb.mp3",
+  "d": 3.24
+ },
+ "compresseur-6": {
+  "f": "8990d7d35e55.mp3",
+  "d": 6.36
+ },
+ "compresseur-7": {
+  "f": "6903fb716773.mp3",
+  "d": 4.392
+ },
+ "critique-0": {
+  "f": "b83e3f6071a0.mp3",
+  "d": 4.872
+ },
+ "critique-1": {
+  "f": "72e15a8e3a61.mp3",
+  "d": 6.48
+ },
+ "critique-2": {
+  "f": "384e53510d85.mp3",
+  "d": 5.448
+ },
+ "critique-3": {
+  "f": "03cd39c95203.mp3",
+  "d": 7.272
+ },
+ "critique-4": {
+  "f": "4b6775257741.mp3",
+  "d": 5.496
+ },
+ "critique-5": {
+  "f": "de0b22f131b1.mp3",
+  "d": 3.816
+ },
+ "critique-6": {
+  "f": "781817950cd4.mp3",
+  "d": 9.984
+ },
+ "refroidisseur-0": {
+  "f": "8f19d81c4dc7.mp3",
+  "d": 9.888
+ },
+ "refroidisseur-1": {
+  "f": "03cf7a26d616.mp3",
+  "d": 5.376
+ },
+ "refroidisseur-2": {
+  "f": "5841934fe71c.mp3",
+  "d": 5.4
+ },
+ "refroidisseur-3": {
+  "f": "c5a74ecd0df8.mp3",
+  "d": 5.208
+ },
+ "refroidisseur-4": {
+  "f": "c4ac99d5503f.mp3",
+  "d": 6.264
+ },
+ "refroidisseur-5": {
+  "f": "f7f206d7c970.mp3",
+  "d": 3.912
+ },
+ "refroidisseur-6": {
+  "f": "7d7a6e14aef6.mp3",
+  "d": 5.208
+ },
+ "refroidisseur-7": {
+  "f": "2986600ae479.mp3",
+  "d": 6.384
+ },
+ "detendeur-hp-0": {
+  "f": "a0fa26a92a70.mp3",
+  "d": 6.264
+ },
+ "detendeur-hp-1": {
+  "f": "386d71ff0599.mp3",
+  "d": 4.608
+ },
+ "detendeur-hp-2": {
+  "f": "863591c0b36c.mp3",
+  "d": 6.648
+ },
+ "detendeur-hp-3": {
+  "f": "90ea20073fe2.mp3",
+  "d": 6.072
+ },
+ "detendeur-hp-4": {
+  "f": "dd15d4d4831e.mp3",
+  "d": 6.576
+ },
+ "detendeur-hp-5": {
+  "f": "7a72cf1f3b4c.mp3",
+  "d": 5.04
+ },
+ "detendeur-hp-6": {
+  "f": "97ef2a4b264d.mp3",
+  "d": 7.488
+ },
+ "detendeur-hp-7": {
+  "f": "74b5f097b27d.mp3",
+  "d": 3.6
+ },
+ "bouteille-0": {
+  "f": "4573f13e13ff.mp3",
+  "d": 6.648
+ },
+ "bouteille-1": {
+  "f": "3387a8d82ce3.mp3",
+  "d": 3.912
+ },
+ "bouteille-2": {
+  "f": "2085d3d1c42a.mp3",
+  "d": 3.936
+ },
+ "bouteille-3": {
+  "f": "f9d83c15d13a.mp3",
+  "d": 5.568
+ },
+ "bouteille-4": {
+  "f": "82d8db69d1b7.mp3",
+  "d": 3.408
+ },
+ "bouteille-5": {
+  "f": "5b62173c5b84.mp3",
+  "d": 4.296
+ },
+ "bouteille-6": {
+  "f": "764023390d29.mp3",
+  "d": 6.36
+ },
+ "gaz-detente-0": {
+  "f": "3096d2f050d6.mp3",
+  "d": 5.688
+ },
+ "gaz-detente-1": {
+  "f": "177384814119.mp3",
+  "d": 4.176
+ },
+ "gaz-detente-2": {
+  "f": "e461e6cb0332.mp3",
+  "d": 3.6
+ },
+ "gaz-detente-3": {
+  "f": "117bd903271c.mp3",
+  "d": 5.952
+ },
+ "gaz-detente-4": {
+  "f": "3193af96463e.mp3",
+  "d": 3.096
+ },
+ "gaz-detente-5": {
+  "f": "3adcdae7934d.mp3",
+  "d": 5.496
+ },
+ "gaz-detente-6": {
+  "f": "023ab9855ae9.mp3",
+  "d": 5.28
+ },
+ "detendeur-0": {
+  "f": "e4a0d5ca013f.mp3",
+  "d": 7.8
+ },
+ "detendeur-1": {
+  "f": "50174724c2b8.mp3",
+  "d": 4.704
+ },
+ "detendeur-2": {
+  "f": "264ff266768e.mp3",
+  "d": 3.96
+ },
+ "detendeur-3": {
+  "f": "128f491f902b.mp3",
+  "d": 5.808
+ },
+ "detendeur-4": {
+  "f": "aaa721366a80.mp3",
+  "d": 4.992
+ },
+ "detendeur-5": {
+  "f": "8d5d234c9983.mp3",
+  "d": 7.248
+ },
+ "detendeur-6": {
+  "f": "220d0650a676.mp3",
+  "d": 6.336
+ },
+ "detendeur-7": {
+  "f": "0a490c31f20e.mp3",
+  "d": 3.792
+ },
+ "arret-0": {
+  "f": "14cc66057dcd.mp3",
+  "d": 2.736
+ },
+ "arret-1": {
+  "f": "4fdcd3866c89.mp3",
+  "d": 8.016
+ },
+ "arret-2": {
+  "f": "c7c706baa72a.mp3",
+  "d": 3.624
+ },
+ "arret-3": {
+  "f": "3865417e89c0.mp3",
+  "d": 6.72
+ },
+ "arret-4": {
+  "f": "e1ca20345de5.mp3",
+  "d": 8.976
+ },
+ "arret-5": {
+  "f": "b028ad5bd1ae.mp3",
+  "d": 4.704
+ },
+ "fuite-0": {
+  "f": "be153f803003.mp3",
+  "d": 4.776
+ },
+ "fuite-1": {
+  "f": "c6b0794300ce.mp3",
+  "d": 4.128
+ },
+ "fuite-2": {
+  "f": "fd2ac5461a68.mp3",
+  "d": 4.848
+ },
+ "fuite-3": {
+  "f": "2e79a774964c.mp3",
+  "d": 6.48
+ },
+ "fuite-4": {
+  "f": "907d94fa749c.mp3",
+  "d": 5.76
+ },
+ "fuite-5": {
+  "f": "150e8f5d813c.mp3",
+  "d": 5.232
+ },
+ "neige-0": {
+  "f": "9e0cf009d60e.mp3",
+  "d": 4.08
+ },
+ "neige-1": {
+  "f": "640adc73e693.mp3",
+  "d": 3.24
+ },
+ "neige-2": {
+  "f": "4aeb430f564a.mp3",
+  "d": 5.208
+ },
+ "neige-3": {
+  "f": "3105a59f9061.mp3",
+  "d": 7.056
+ },
+ "neige-4": {
+  "f": "af28a74da651.mp3",
+  "d": 4.656
+ },
+ "neige-5": {
+  "f": "89ca4c6f6dc6.mp3",
+  "d": 4.656
+ },
+ "resume-0": {
+  "f": "3bbd463a3b5d.mp3",
+  "d": 2.592
+ },
+ "resume-1": {
+  "f": "800802dc0f1d.mp3",
+  "d": 4.776
+ },
+ "resume-2": {
+  "f": "bacea38227a5.mp3",
+  "d": 4.2
+ },
+ "resume-3": {
+  "f": "b47aafe66877.mp3",
+  "d": 4.128
+ },
+ "resume-4": {
+  "f": "59868c333e06.mp3",
+  "d": 5.4
+ },
+ "resume-5": {
+  "f": "5b2657a4e3eb.mp3",
+  "d": 5.208
+ },
+ "resume-6": {
+  "f": "20132cf3612c.mp3",
+  "d": 6.72
+ }
+}
