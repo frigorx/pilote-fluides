@@ -44,6 +44,7 @@ button { font: inherit; }
 
 /* ---- page ---- */
 .page { max-width: 60rem; margin: 0 auto; padding: 16px 16px 56px; display: grid; gap: 18px; }
+.page > * { min-width: 0; } /* un enfant de grille ne doit jamais élargir la page (scène ou schéma défilants) */
 .chapo { font-size: 1.05rem; max-width: 46rem; }
 .legende { color: var(--mut); font-size: .95rem; }
 .carte { background: var(--carte); border: 1px solid var(--ligne); border-radius: 14px; padding: 14px 16px; box-shadow: var(--ombre); }
@@ -216,3 +217,39 @@ svg.installation .pt-lib { font: 11px Calibri, Arial, sans-serif; fill: var(--mu
 .observation { padding: 10px 14px; background: #eef3f9; border-left: 5px solid var(--bleu); border-radius: 8px; }
 .dep-methode { display: grid; gap: 10px; margin-top: 10px; }
 .retour em { font-style: normal; color: var(--bleu); font-weight: bold; }
+
+/* ---- la scène vivante du dépanneur ---- */
+.dep-scene { max-width: 60rem; margin: 0 auto; overflow: auto; }
+svg.scene { display: block; width: 100%; min-width: 640px; height: auto; }
+svg.scene .sc-titre { font: bold 16px "Trebuchet MS", Calibri, Arial, sans-serif; fill: var(--bleu); text-anchor: middle; }
+svg.scene .sc-lib { font: 12px Calibri, Arial, sans-serif; fill: var(--mut); text-anchor: middle; }
+svg.scene .sc-alerte { font: bold 13px Calibri, Arial, sans-serif; fill: var(--echec); text-anchor: middle; }
+svg.scene .sc-lcd { font: bold 20px Consolas, monospace; fill: #1b3a63; text-anchor: middle; dominant-baseline: central; }
+svg.scene .sc-gauge-mot { font: bold 13px "Trebuchet MS", Arial, sans-serif; text-anchor: middle; }
+svg.scene .sc-tuyau { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+svg.scene .sc-tuyau.hp { stroke: #c0392b; } svg.scene .sc-tuyau.liq { stroke: #c9451a; } svg.scene .sc-tuyau.bp { stroke: #3d7fca; }
+svg.scene .sc-tuyau.bp.givre { stroke: #dfe9f5; stroke-width: 11; }
+svg.scene .sc-flux { fill: none; stroke: #fff; stroke-width: 2.5; stroke-dasharray: 6 14; stroke-linecap: round; animation: sc-circule 1.2s linear infinite; opacity: .9; }
+svg.scene .sc-flux.bp { animation-direction: normal; } svg.scene .sc-flux.liq { animation-duration: 1.6s; }
+@keyframes sc-circule { to { stroke-dashoffset: -40; } }
+svg.scene .sc-helice.tourne { animation: sc-tourne 1s linear infinite; }
+@keyframes sc-tourne { to { transform: rotate(360deg); } }
+svg.scene .sc-compresseur.vibre { animation: sc-vibre .12s linear infinite alternate; }
+svg.scene .sc-compresseur.faible { animation: sc-vibre .4s linear infinite alternate; opacity: .85; }
+@keyframes sc-vibre { from { transform: translate(-1px, 0); } to { transform: translate(1px, 0.5px); } }
+svg.scene .sc-air path { animation: sc-souffle 1s linear infinite; }
+@keyframes sc-souffle { to { stroke-dashoffset: -18; } }
+svg.scene .sc-bulles circle { animation: sc-bulle 1.4s linear infinite; }
+svg.scene .sc-bulles circle:nth-child(2) { animation-delay: .5s; } svg.scene .sc-bulles circle:nth-child(3) { animation-delay: .9s; }
+@keyframes sc-bulle { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-34px); opacity: .2; } }
+svg.scene .sc-pt circle { fill: #fff6ec; stroke: var(--orange-texte); stroke-width: 3; cursor: pointer; }
+svg.scene .sc-pt.actif circle { fill: var(--orange); }
+svg.scene .sc-pt:focus-visible circle { stroke: var(--bleu); stroke-width: 5; outline: none; }
+svg.scene .sc-pt-lib { font: bold 12px Calibri, Arial, sans-serif; fill: var(--bleu); text-anchor: middle; paint-order: stroke; stroke: #fff; stroke-width: 4; }
+svg.scene .sc-instrument { opacity: 0; transition: opacity .5s; pointer-events: none; }
+svg.scene .sc-instrument.visible { opacity: 1; }
+svg.scene .sc-aiguille { stroke: #1a1a1a; stroke-width: 4; stroke-linecap: round; transition: transform .9s cubic-bezier(.2,.75,.25,1); }
+svg.scene .sc-flex { fill: none; stroke-width: 7; stroke-linecap: round; opacity: .15; transition: opacity .6s; }
+svg.scene .sc-flex.bp { stroke: #1f6fa8; } svg.scene .sc-flex.hp { stroke: #b3261e; }
+svg.scene .sc-flex.branche { opacity: 1; }
+#sc-halo { transition: opacity .4s; }

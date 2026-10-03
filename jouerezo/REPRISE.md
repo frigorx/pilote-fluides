@@ -18,6 +18,7 @@
 6. Texte de l'aventure (12 scènes), 32 questions fluides, image d'accueil Codex (zombie « tout sourire »).
 7. **Le dépanneur** (`donnees/depanneur.js`) : les 12 situations (températures de saturation, aspiration, liquide, refoulement, intensité, observations) sont des valeurs d'exercice écrites par Fable, cohérentes avec les plages de RézoTools et la fiche T6 ; les signatures de pannes et les actions aussi. À relire comme un sujet. Les pressions affichées en viennent par les tables CoolProp (rosée côté BP, bulle côté HP).
 8. Les six vues d'outils (planche Codex découpée) à la place des photos d'atelier.
+9. **La scène vivante du dépanneur** (`moteur/depanneur-scene.js`) : tableau composé par Fable avec les vues d'organes du Tome 3 (évaporateur, condenseur, détendeur, filtre), un compresseur dessiné, les tuyaux, le voyant, les prises BP/HP, le manifold (logique d'aiguille du module « pose du manifold »), le thermomètre électronique et la pince. Ce n'est pas un schéma technique mais une scène de jeu ; à valider par Franck (demande du 03/10 : « animation des éléments frigo, lecture de mano plus réaliste et vivant »).
 
 ## Restes
 

@@ -104,23 +104,7 @@
       '<text x="150" y="243" font-size="13" font-family="Calibri,Arial,sans-serif" fill="#637285" text-anchor="middle">' + JR.esc(ou) + '</text></svg>';
   }
 
-  /* ---------- l'installation animée ---------- */
-  function circuit(etat) {
-    const LIB = "illustrations/bibliotheque/";
-    return '<svg viewBox="0 0 480 300" class="installation" role="img" aria-label="Le circuit frigorifique : compresseur à droite, condenseur en haut, détendeur à gauche, évaporateur en bas ; le fluide circule.">' +
-      '<path class="tuyau hp-vap" d="M 360 150 V 60 H 300"/><path class="tuyau hp-liq" d="M 180 60 H 120 V 150"/>' +
-      '<path class="tuyau bp-mel" d="M 120 150 V 240 H 180"/><path class="tuyau bp-vap" d="M 300 240 H 360 V 150"/>' +
-      '<rect x="205" y="32" width="70" height="56" fill="#fffdf8"/><image href="' + LIB + 'frigo_schema/echangeur_a_air.svg" x="205" y="32" width="70" height="56"/>' +
-      '<rect x="330" y="120" width="60" height="60" fill="#fffdf8"/><image href="' + LIB + 'frigo_schema/compresseur_general.svg" x="330" y="120" width="60" height="60"/>' +
-      '<rect x="205" y="212" width="70" height="56" fill="#fffdf8"/><image href="' + LIB + 'frigo_schema/echangeur_a_air.svg" x="205" y="212" width="70" height="56"/>' +
-      '<rect x="90" y="120" width="60" height="60" fill="#fffdf8"/><image href="' + LIB + 'frigo_schema/detendeur_thermo_int.svg" x="90" y="120" width="60" height="60"/>' +
-      '<text x="240" y="20" class="lib">condenseur</text><text x="360" y="200" class="lib">compresseur</text><text x="240" y="290" class="lib">évaporateur</text><text x="120" y="200" class="lib">détendeur</text>' +
-      '<g class="points">' +
-      '<circle cx="330" cy="240" r="9" class="pt" data-pt="bp"/><text x="330" y="262" class="pt-lib">BP · aspiration</text>' +
-      '<circle cx="150" cy="60" r="9" class="pt" data-pt="hp"/><text x="150" y="48" class="pt-lib">HP · liquide</text>' +
-      '<circle cx="360" cy="90" r="9" class="pt" data-pt="ref"/><text x="400" y="94" class="pt-lib">refoulement</text>' +
-      '</g></svg>';
-  }
+  /* l'installation vivante est dans depanneur-scene.js (window.JR_SCENE) */
 
   /* ---------- la partie ---------- */
   function demarrer(theme, main) {
@@ -139,7 +123,7 @@
         '<p class="question">' + JR.esc(c.symptome) + '</p>' +
         '<p class="legende"><strong>Le client :</strong> ' + JR.esc(c.client) + '</p>' +
         '<p class="legende">Repères pour cette installation : évaporation ' + temp(pl.tEvap[0]) + ' à ' + temp(pl.tEvap[1]) + ' · condensation ' + temp(pl.tCond[0]) + ' à ' + temp(pl.tCond[1]) + ' · surchauffe ' + pl.sr[0] + ' à ' + pl.sr[1] + ' K · sous-refroidissement ' + pl.sc[0] + ' à ' + pl.sc[1] + ' K.</p></section>' +
-        '<section class="carte"><div class="dep-circuit">' + circuit() + '</div>' +
+        '<section class="carte"><div class="dep-scene" id="d-scene"></div>' +
         '<p class="legende">Choisissez vos relevés, comme sur le chantier. Chaque relevé compte : un bon dépanneur mesure ce qui départage ses hypothèses.</p>' +
         '<div class="dep-outils" role="group" aria-label="Relevés possibles">' +
         [["bp", "Manifold BP"], ["hp", "Manifold HP"], ["tasp", "Thermomètre aspiration"], ["tliq", "Thermomètre ligne liquide"], ["tref", "Thermomètre refoulement"], ["voyant", "Voyant liquide"], ["evap", "Regarder l'évaporateur"], ["cond", "Regarder le condenseur"], ["toucher", "Toucher les tubes"], ["pince", "Pince ampèremétrique"]]
@@ -149,11 +133,16 @@
         '<div class="actions"><button type="button" class="btn" id="d-conclure">Conclure : nommer la panne</button></div></section>' +
         '<div id="d-retour"></div>';
       const zone = main.querySelector("#d-releve"), meth = main.querySelector("#d-methode");
+      const scene = window.JR_SCENE.monter(main.querySelector("#d-scene"), c, inst, { bp: bp, hp: hp });
+      main.querySelector("#d-scene").addEventListener("releve", e => montrer(e.detail));
 
       function compter(o) { if (!releves.has(o)) { releves.add(o); main.querySelector("#d-nb").textContent = releves.size; } }
       function montrer(o) {
         JR.sons.tap(); compter(o);
-        main.querySelectorAll(".pt").forEach(p => p.classList.toggle("actif", (o === "bp" && p.dataset.pt === "bp") || (o === "hp" && p.dataset.pt === "hp") || (o === "tref" && p.dataset.pt === "ref") || (o === "tasp" && p.dataset.pt === "bp") || (o === "tliq" && p.dataset.pt === "hp")));
+        if (o === "bp" || o === "hp") scene.manifold(o.toUpperCase());
+        else if (o === "tasp" || o === "tliq" || o === "tref") scene.thermo(o, { tasp: c.tAsp, tliq: c.tLiq, tref: c.tRef }[o]);
+        else if (o === "pince") scene.pince(c.intensite);
+        else if (o === "toucher") scene.toucher("tasp");
         const H = {
           bp: '<div class="instrument">' + cadran("BP", bp) + '<p>Manifold branché sur l\'aspiration. Lisez la pression en bar, puis la température d\'évaporation sur la couronne <strong>' + JR.esc(inst.fluideNom) + '</strong>.</p></div>',
           hp: '<div class="instrument">' + cadran("HP", hp) + '<p>Manifold branché côté liquide. Lisez la pression en bar, puis la température de condensation sur la couronne <strong>' + JR.esc(inst.fluideNom) + '</strong>.</p></div>',
@@ -170,7 +159,6 @@
         methode();
       }
       main.querySelectorAll(".outil").forEach(b => b.addEventListener("click", () => montrer(b.dataset.o)));
-      main.querySelectorAll(".pt").forEach(p => p.addEventListener("click", () => montrer(p.dataset.pt === "ref" ? "tref" : p.dataset.pt)));
 
       /* la méthode : surchauffe quand BP + aspiration sont relevés, sous-refroidissement quand HP + liquide */
       function methode() {

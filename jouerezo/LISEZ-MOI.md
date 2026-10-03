@@ -38,6 +38,7 @@ donnees/definitions.js    définitions froid + outils, photos d'outils
 donnees/banque-electrorezo.js   FABRIQUÉ par outils/extraire-banques.mjs
 donnees/aventure.js   le scénario de l'aventure
 donnees/depanneur.js  les situations du dépanneur (plages, pannes, cas)
+moteur/depanneur-scene.js   la scène vivante du dépanneur (chambre froide, groupe, manifold, thermomètre, pince ; animations CSS)
 donnees/themes.js     JR_JEUX + JR_THEMES : dérive tout des fichiers ci-dessus (chargés AVANT lui)
 illustrations/*.svg   dix icônes faites main (charte) ; accueil.webp (Codex) ; bibliotheque/ (copies curées, SOURCES.md)
 outils/servir.mjs     serveur local : /jouerezo/ depuis l'atelier, le reste depuis pilote-fluides (port 8797) ; /sw.js bloqué
