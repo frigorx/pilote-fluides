@@ -29,3 +29,59 @@ main{max-width:1000px;margin:0 auto;padding:0 1rem 2rem}
 .prof a{display:inline-block;margin-top:1rem;padding:.6rem 1rem;border:2px solid var(--navy);border-radius:12px;color:var(--navy);font-weight:700;text-decoration:none}
 .arrets .vignette{width:96px;height:64px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--cream)}
 @media (max-width:600px){.arrets .vignette{width:64px;height:44px}.arrets a{gap:.5rem;padding:.4rem .6rem}}
+/* ---------- l'arrivée (03/10) : le poste 3D et le plan du réseau d'un coup d'œil (modèle : l'armoire d'ÉlectroRézo) ---------- */
+.entete{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.4rem;max-width:1600px;padding:.7rem 16px .3rem}
+.entete .entete-titre{display:flex;align-items:baseline;gap:.2rem 1rem;flex-wrap:wrap}
+.entete h1{font-size:1.7em}
+.entete .accroche{margin:0}
+.entete .passeport-bandeau{margin:0 0 0 auto;padding:.3rem .7rem;flex:0 0 auto;flex-wrap:nowrap;border-width:2px}
+.entete .passeport-bandeau .gros-nombre{font-size:1.15em;white-space:nowrap}
+.entete .passeport-bandeau p{display:none}
+.entete .passeport-bandeau .bouton-lien{white-space:nowrap;padding:.35rem .8rem}
+.porte{max-width:1600px;margin:.6rem auto 1.4rem;padding:0 16px;display:grid;grid-template-columns:1fr;gap:.9rem;align-items:start}
+@media (min-width:1100px){
+  .porte{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+  .porte-3d{position:sticky;top:.5rem}
+  .porte .e3d-scene{max-height:calc(100vh - 220px);min-height:320px}
+}
+.porte .e3d{grid-template-columns:1fr}
+.porte .e3d-cote,.porte .e3d-bt-ralenti{display:none}
+.plan,.fiche{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.7rem .9rem}
+.fiche{margin-top:.9rem}
+.plan h2{margin:0 0 .5rem;font:800 1.05em "Trebuchet MS",Calibri,sans-serif;color:var(--navy)}
+.plan h2 small{font:400 .75em Calibri,"Segoe UI",sans-serif;color:var(--muted)}
+.rz-plan{display:flex;flex-direction:column;gap:.35rem}
+.rz-ligne{display:flex;gap:.6rem;align-items:flex-start}
+.rz-terminus{flex:0 0 2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:50%;background:var(--copper);color:#fff;font-weight:800}
+.rz-corps{flex:1;min-width:0}
+.rz-titre{display:block;font-weight:800;color:var(--navy);font-size:.8em;margin:.1rem 0}
+.rz-stations{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap}
+.rz-stations li{position:relative;flex:0 0 25%;min-width:0}
+.rz-stations li::before{content:"";position:absolute;left:50%;right:-50%;top:.85rem;height:5px;background:var(--copper);border-radius:3px}
+.rz-stations li:last-child::before,.rz-stations li:nth-child(4n)::before{display:none}
+.rz-station{position:relative;display:flex;flex-direction:column;align-items:center;padding:.25rem .15rem;border-radius:8px;color:var(--ink);text-decoration:none;text-align:center}
+.rz-station:hover,.rz-station:focus-visible{background:var(--copper-soft)}
+.rz-point{position:relative;z-index:1;width:1.15rem;height:1.15rem;border-radius:50%;border:4px solid var(--copper);background:var(--paper)}
+.rz-station.fait .rz-point{background:var(--copper)}
+.rz-nom{margin-top:.2rem;font-size:.68em;line-height:1.2}
+.rz-nom b{color:var(--copper)}
+.rz-avenir .rz-terminus{background:#b9c2cc}
+.rz-avenir .rz-titre{color:var(--muted);font-weight:700;padding-top:.5rem}
+.rz-plan.filtre .rz-station{opacity:.3}
+.rz-plan.filtre .rz-station.allume{opacity:1;background:var(--copper-soft)}
+.rz-plan.filtre .rz-station.allume .rz-point{border-color:#c2410c;box-shadow:0 0 0 4px rgba(194,65,12,.25)}
+.fiche h2{margin:.1rem 0 .2rem;color:var(--navy);font:800 1.1em "Trebuchet MS",Calibri,sans-serif}
+.fiche .phrase{margin:.2rem 0 .6rem;font-size:.9em}
+.fiche .retour{background:none;border:0;padding:0;color:var(--navy);font:inherit;font-size:.85em;text-decoration:underline;cursor:pointer}
+.fiche .commencer{display:block;text-align:center;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:.55rem .8rem;margin:.4rem 0 .7rem}
+.fiche ol{list-style:none;margin:0;padding:0}
+.fiche li a{display:flex;gap:.7rem;align-items:center;padding:.4rem 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none}
+.fiche li img{width:84px;height:56px;object-fit:cover;border-radius:8px;border:1px solid var(--line);flex:none}
+.fiche li b{color:var(--copper)}
+.fiche li small{display:block;color:var(--muted);font-size:.85em}
+.zones-liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0 1rem}
+.zones-liste button{display:flex;gap:.5rem;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:.4rem 0;font:inherit;font-size:.88em;color:var(--ink);cursor:pointer}
+.zones-liste button:hover,.zones-liste button:focus-visible{color:var(--navy);font-weight:700}
+.zones-liste button span{background:var(--copper);color:#fff;border-radius:50%;width:1.5rem;height:1.5rem;display:grid;place-items:center;font-size:.8em;font-weight:700;flex:none}
+main .intro{margin:.2rem 0 1rem;max-width:70ch}
+@media (max-width:600px){.rz-stations li{flex-basis:50%}.rz-stations li:nth-child(4n)::before{display:block}.rz-stations li:nth-child(2n)::before{display:none}.rz-nom{font-size:.75em}}

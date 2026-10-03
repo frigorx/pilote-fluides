@@ -8,24 +8,63 @@
 <meta name="robots" content="noindex">
 <title>CuivRézo · les gestes du cuivre</title>
 <meta name="description" content="CuivRézo : un assistant de geste pour l’atelier de façonnage du cuivre. L’élève apprend seul le geste attendu, le professeur le confirme.">
-<link rel="stylesheet" href="moteur/accueil.css?v=bf578d2e">
-<link rel="stylesheet" href="moteur/defis.css?v=bf578d2e">
+<link rel="stylesheet" href="moteur/accueil.css?v=ca006ecc">
+<link rel="stylesheet" href="moteur/defis.css?v=ca006ecc">
 <script defer src="../moteur/retour-accueil.js?v=ff0ca829c0"></script>
 </head>
 <body>
 <header class="entete">
-  <h1>Cuiv<b>Rézo</b></h1>
-  <p class="accroche">Les gestes du cuivre, à votre poste d’atelier.</p>
-  <p>Chaque station vous guide pas à pas jusqu’à une pièce réussie : ce que vous devez obtenir, le matériel,
-  le geste écran par écran, les pièges, votre propre contrôle. Quand tout est bon, vous appelez votre
-  professeur : il confirme le geste.</p>
+  <div class="entete-titre"><h1>Cuiv<b>Rézo</b></h1>
+  <p class="accroche">Les gestes du cuivre, à votre poste d’atelier.</p></div>
   <div class="passeport-bandeau">
     <span class="gros-nombre" data-compte="total"></span>
     <p>Chaque station réussie, avec son défi, vous donne un tampon. Vos tampons restent sur cet appareil : rien n’est envoyé.</p>
     <a class="bouton-lien plein" href="passeport.html">Mon passeport</a>
   </div>
 </header>
+<section class="porte" aria-label="Le poste d’atelier et le plan du réseau">
+  <div class="porte-3d"><electro-3d id="poste" modele="poste" mode="decouvrir"></electro-3d></div>
+  <div class="porte-droite">
+    <section class="plan" aria-labelledby="plan-titre">
+      <h2 id="plan-titre">Le plan du réseau <small>— 14 stations · touchez une station</small></h2>
+      <div class="rz-plan">
+        <div class="rz-ligne"><span class="rz-terminus" title="Les gestes de base">1</span>
+          <div class="rz-corps"><span class="rz-titre">Les gestes de base</span><ol class="rz-stations">
+            <li><a class="rz-station" href="stations/1-0/" data-id="1-0"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.0</b> Mon poste de travail</span></a></li>
+            <li><a class="rz-station" href="stations/1-1/" data-id="1-1"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.1</b> Reconnaître le tube</span></a></li>
+            <li><a class="rz-station" href="stations/1-2/" data-id="1-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.2</b> Mesurer et tracer</span></a></li>
+            <li><a class="rz-station" href="stations/1-3/" data-id="1-3"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.3</b> Couper et ébavurer</span></a></li>
+            <li><a class="rz-station" href="stations/1-4/" data-id="1-4"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.4</b> Cintrer à la cintrette</span></a></li>
+            <li><a class="rz-station" href="stations/1-5/" data-id="1-5"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.5</b> Cintrer à la cintreuse (L, R, 0)</span></a></li>
+            <li><a class="rz-station" href="stations/1-6/" data-id="1-6"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.6</b> Le dudgeon</span></a></li>
+            <li><a class="rz-station" href="stations/1-7/" data-id="1-7"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.7</b> L’emboîture à la pince</span></a></li>
+          </ol></div></div>
+        <div class="rz-ligne"><span class="rz-terminus" title="Le chalumeau">2</span>
+          <div class="rz-corps"><span class="rz-titre">Le chalumeau</span><ol class="rz-stations">
+            <li><a class="rz-station" href="stations/2-1/" data-id="2-1"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>2.1</b> Le poste oxyacétylénique en sécurité</span></a></li>
+            <li><a class="rz-station" href="stations/2-2/" data-id="2-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>2.2</b> Allumer, régler, éteindre la flamme</span></a></li>
+          </ol></div></div>
+        <div class="rz-ligne"><span class="rz-terminus" title="Braser">3</span>
+          <div class="rz-corps"><span class="rz-titre">Braser</span><ol class="rz-stations">
+            <li><a class="rz-station" href="stations/3-1/" data-id="3-1"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>3.1</b> La brasure tendre à l’étain</span></a></li>
+            <li><a class="rz-station" href="stations/3-2/" data-id="3-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>3.2</b> La brasure forte sous azote</span></a></li>
+          </ol></div></div>
+        <div class="rz-ligne"><span class="rz-terminus" title="Les pièces complexes">4</span>
+          <div class="rz-corps"><span class="rz-titre">Les pièces complexes</span><ol class="rz-stations">
+            <li><a class="rz-station" href="stations/4-1/" data-id="4-1"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>4.1</b> Le chapeau de gendarme</span></a></li>
+            <li><a class="rz-station" href="stations/4-2/" data-id="4-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>4.2</b> La baïonnette</span></a></li>
+          </ol></div></div>
+        <div class="rz-ligne rz-avenir"><span class="rz-terminus">5</span><div class="rz-corps"><span class="rz-titre">Le réseau complet — à venir</span></div></div>
+      </div>
+    </section>
+    <aside class="fiche" id="fiche" aria-live="polite"></aside>
+  </div>
+</section>
 <main>
+  <p class="intro">Chaque station vous guide pas à pas jusqu’à une pièce réussie : ce que vous devez obtenir, le matériel,
+  le geste écran par écran, les pièges, votre propre contrôle. Quand tout est bon, vous appelez votre
+  professeur : il confirme le geste. Chaque station réussie, avec son défi, vous donne un tampon :
+  vos tampons restent sur cet appareil, rien n’est envoyé.</p>
 
   <section class="ligne">
     <h2><span class="pastille">1</span> Les gestes de base <span class="ligne-tp" data-compte="1"></span></h2>
@@ -147,7 +186,7 @@
   </section>
   <p class="prof"><a href="prof/">Espace professeur : mode d’emploi, matériel, grilles</a></p>
 </main>
-<script src="moteur/defis.js?v=bf578d2e"></script>
+<script src="moteur/defis.js?v=ca006ecc"></script>
 <script>
 /* l'état de chaque station, lu sur cet appareil seulement */
 document.querySelectorAll('.arrets a').forEach(a => {
@@ -159,6 +198,60 @@ document.querySelectorAll('.arrets a').forEach(a => {
 });
 CuivDefis.remplir();
 </script>
-<script src="moteur/marque.js?v=bf578d2e" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+<script src="moteur/3d/electro3d.js?v=ca006ecc"></script>
+<script src="moteur/3d/modeles/poste.js?v=ca006ecc"></script>
+<script>
+/* la porte (03/10) : le poste 3D, le plan du réseau qui s'allume, la fiche de la zone choisie */
+(() => {
+  const Z = [{"id":"poste","nom":"Mon poste de travail","phrase":"L’établi dégagé, les lunettes et les gants à portée, le bac pour les chutes : tout commence là.","stations":[{"id":"1-0","titre":"Mon poste de travail","obtenir":"Un poste prêt, un élève protégé","img":"images/1-0-poste.webp"}]},{"id":"tubes","nom":"Les tubes, en couronne et en barre","phrase":"En couronne, le tube est recuit ; en barre, il est écroui. On le reconnaît avant de le couper.","stations":[{"id":"1-1","titre":"Reconnaître le tube","obtenir":"Le bon tube, nommé juste","img":"images/1-1-livraison.webp"}]},{"id":"tracer","nom":"Le mètre, l’équerre et le feutre","phrase":"Mesurer juste, tracer fin, sur tout le tour du tube.","stations":[{"id":"1-2","titre":"Mesurer et tracer","obtenir":"Un trait fin, à la bonne cote, sur tout le tour","img":"images/1-2-tracer.webp"}]},{"id":"couper","nom":"Le coupe-tube et l’ébavureur","phrase":"Une coupe d’équerre, puis plus aucune bavure.","stations":[{"id":"1-3","titre":"Couper et ébavurer","obtenir":"Un tube coupé d’équerre, sans bavure","img":"images/1-3-couper.webp"}]},{"id":"cintrette","nom":"La cintrette","phrase":"Le tube s’enroule sur la roue : un coude à la main.","stations":[{"id":"1-4","titre":"Cintrer à la cintrette","obtenir":"Un coude à 90°, 300 mm à l’axe","img":"images/1-4-cintrette.webp"}]},{"id":"cintreuse","nom":"La cintreuse","phrase":"Un coude à la cote, en visant le bon repère : L, R ou 0.","stations":[{"id":"1-5","titre":"Cintrer à la cintreuse (L, R, 0)","obtenir":"Un coude à 90°, à la cote, du premier coup","img":"images/1-5-cintreuse.webp"}]},{"id":"dudgeon","nom":"La dudgeonnière","phrase":"Un évasement à 45°, l’écrou en place, pour un raccord vissé.","stations":[{"id":"1-6","titre":"Le dudgeon","obtenir":"Un dudgeon régulier, l’écrou en place","img":"images/1-6-dudgeon.webp"}]},{"id":"pince","nom":"La pince à emboîture","phrase":"Élargir un bout pour que l’autre tube y entre juste.","stations":[{"id":"1-7","titre":"L’emboîture à la pince","obtenir":"Un bout élargi où l’autre tube entre juste","img":"images/1-7-pince.webp"}]},{"id":"oxy","nom":"Le poste oxyacétylénique","phrase":"Deux bouteilles, deux détendeurs, deux tuyaux, un chalumeau : la sécurité d’abord, la flamme ensuite.","stations":[{"id":"2-1","titre":"Le poste oxyacétylénique en sécurité","obtenir":"Un poste prêt à allumer, vérifié, sans fuite","img":"images/2-1-poste.webp"},{"id":"2-2","titre":"Allumer, régler, éteindre la flamme","obtenir":"Une flamme neutre, allumée et éteinte dans l’ordre","img":"images/2-2-allumer.webp"}]},{"id":"tendre","nom":"Le chalumeau propane et l’étain","phrase":"Derrière le pare-flamme, l’étain coule dans l’emboîture chauffée.","stations":[{"id":"3-1","titre":"La brasure tendre à l’étain","obtenir":"Un anneau d’étain régulier, étanche","img":"images/3-1-tendre.webp"}]},{"id":"azote","nom":"L’azote, pour braser fort","phrase":"L’azote balaie l’intérieur du tube pendant la brasure forte : il reste propre.","stations":[{"id":"3-2","titre":"La brasure forte sous azote","obtenir":"Un joint brasé plein, propre à l’intérieur","img":"images/3-2-forte.webp"}]},{"id":"pieces","nom":"Les pièces façonnées","phrase":"Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.","stations":[{"id":"4-1","titre":"Le chapeau de gendarme","obtenir":"Un contournement symétrique, branches alignées","img":"images/4-1-chapeau.webp"},{"id":"4-2","titre":"La baïonnette","obtenir":"Deux branches parallèles, décalées à la cote","img":"images/4-2-baionnette.webp"}]}];
+  const e = document.getElementById('poste'), fiche = document.getElementById('fiche'), plan = document.querySelector('.rz-plan');
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const zoneDe = id => Z.find(z => z.stations.some(s => s.id === id));
+  const allumer3d = id => { if (e.survoler) e.survoler(id || null); };
+  const allumerPlan = z => {
+    plan.classList.toggle('filtre', !!z);
+    plan.querySelectorAll('.rz-station').forEach(a => a.classList.toggle('allume', !!z && z.stations.some(s => s.id === a.dataset.id)));
+  };
+  /* par la 3D si elle est là (elle renvoie e3d-choix), sinon directement */
+  const choisir = id => { if (!e.hidden && e._pieces && e._pieces.length) e.choisir(id); else montrer(id, true); };
+  function accueil() {
+    fiche.innerHTML = '<h2>Un poste d’atelier</h2><p class="phrase">Cliquez sur un outil dans la 3D ou sur une zone ci-dessous ; survolez une station du plan : son outil s’allume.</p><div class="zones-liste"></div>';
+    const r = fiche.querySelector('.zones-liste');
+    Z.forEach((z, i) => {
+      const b = document.createElement('button'); b.type = 'button';
+      b.innerHTML = '<span>' + (i + 1) + '</span>' + esc(z.nom);
+      b.addEventListener('click', () => choisir(z.id));
+      b.addEventListener('pointerenter', () => allumer3d(z.id));
+      b.addEventListener('pointerleave', () => allumer3d(null));
+      r.appendChild(b);
+    });
+  }
+  function montrer(id, defiler) {
+    const z = Z.find(x => x.id === id);
+    allumerPlan(z);
+    if (!z) { accueil(); return; }
+    const p = z.stations[0];
+    fiche.innerHTML = '<button type="button" class="retour">← Toutes les zones</button>' +
+      '<h2>' + (Z.indexOf(z) + 1) + ' · ' + esc(z.nom) + '</h2><p class="phrase">' + esc(z.phrase) + '</p>' +
+      '<a class="commencer" href="stations/' + p.id + '/">Commencer par ' + p.id.replace('-', '.') + ' · ' + esc(p.titre) + '</a>' +
+      '<ol>' + z.stations.map(s => '<li><a href="stations/' + s.id + '/">' + (s.img ? '<img src="' + s.img + '" alt="" loading="lazy">' : '') +
+        '<span><b>' + s.id.replace('-', '.') + '</b> ' + esc(s.titre) + '<small>' + esc(s.obtenir) + '</small></span></a></li>').join('') + '</ol>';
+    fiche.querySelector('.retour').addEventListener('click', () => choisir(null));
+    if (defiler && innerWidth < 1100) fiche.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  e.addEventListener('e3d-choix', ev => montrer(ev.detail.id, true));
+  plan.querySelectorAll('.rz-station').forEach(a => {
+    const z = zoneDe(a.dataset.id);
+    let m = {}; try { m = JSON.parse(localStorage.getItem('cuivrezo:' + a.dataset.id)) || {}; } catch (er) {}
+    if (m.confirmation && m.confirmation.niveau != null) a.classList.add('fait');
+    a.addEventListener('pointerenter', () => allumer3d(z && z.id));
+    a.addEventListener('pointerleave', () => allumer3d(null));
+    a.addEventListener('focus', () => allumer3d(z && z.id));
+    a.addEventListener('blur', () => allumer3d(null));
+  });
+  accueil();
+})();
+</script>
+<script src="moteur/marque.js?v=ca006ecc" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>
