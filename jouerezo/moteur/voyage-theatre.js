@@ -38,6 +38,7 @@
     svg.innerHTML = "";
     D.defs(svg);
     D.el("rect", { width: 1600, height: H, fill: D.CREME }, svg);
+    if (o.film) D.filigrane(svg, [[800, 450], [330, 225], [1270, 680]], 380); // la vidéo seulement, pas le module
     const scene = D.el("g", {}, svg), vitrine = D.el("g", {}, svg), haut = D.el("g", {}, svg), carte = D.el("g", {}, svg), bas = D.el("g", {}, svg);
     const scenes = R.scenes.map(s => horaire(s, o.pistes));
     let courant = -1, maj = null, mini = null, majMini = null, sousTitre = null, vue = null, finVue = 0;

@@ -1,0 +1,110 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "une molécule d'ammoniac",
+  "duree": 60,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "separateur",
+  "num": "1",
+  "titre": "La bouteille séparatrice",
+  "sous": "ma réserve de liquide",
+  "duree": 43,
+  "video": "chapitre-01-la-bouteille-separatrice.mp4",
+  "affiche": "chapitre-01-la-bouteille-separatrice.jpg"
+ },
+ {
+  "id": "evaporateur",
+  "num": "2",
+  "titre": "L'évaporateur noyé",
+  "sous": "plein de liquide",
+  "duree": 60,
+  "video": "chapitre-02-l-evaporateur-noye.mp4",
+  "affiche": "chapitre-02-l-evaporateur-noye.jpg"
+ },
+ {
+  "id": "retour",
+  "num": "3",
+  "titre": "Le retour à la bouteille",
+  "sous": "on se sépare",
+  "duree": 40,
+  "video": "chapitre-03-le-retour-a-la-bouteille.mp4",
+  "affiche": "chapitre-03-le-retour-a-la-bouteille.jpg"
+ },
+ {
+  "id": "compresseur",
+  "num": "4",
+  "titre": "Le compresseur ouvert",
+  "sous": "on me serre",
+  "duree": 43,
+  "video": "chapitre-04-le-compresseur-ouvert.mp4",
+  "affiche": "chapitre-04-le-compresseur-ouvert.jpg"
+ },
+ {
+  "id": "huile",
+  "num": "5",
+  "titre": "Le séparateur d'huile",
+  "sous": "l'huile reste en arrière",
+  "duree": 42,
+  "video": "chapitre-05-le-separateur-d-huile.mp4",
+  "affiche": "chapitre-05-le-separateur-d-huile.jpg"
+ },
+ {
+  "id": "condenseur",
+  "num": "6",
+  "titre": "Le condenseur évaporatif",
+  "sous": "je redeviens liquide",
+  "duree": 51,
+  "video": "chapitre-06-le-condenseur-evaporatif.mp4",
+  "affiche": "chapitre-06-le-condenseur-evaporatif.jpg"
+ },
+ {
+  "id": "reservoir",
+  "num": "7",
+  "titre": "Le réservoir haute pression",
+  "sous": "et l'air qui s'invite",
+  "duree": 43,
+  "video": "chapitre-07-le-reservoir-haute-pression.mp4",
+  "affiche": "chapitre-07-le-reservoir-haute-pression.jpg"
+ },
+ {
+  "id": "flotteur",
+  "num": "8",
+  "titre": "Le régulateur à flotteur",
+  "sous": "il tient le niveau",
+  "duree": 54,
+  "video": "chapitre-08-le-regulateur-a-flotteur.mp4",
+  "affiche": "chapitre-08-le-regulateur-a-flotteur.jpg"
+ },
+ {
+  "id": "pot-huile",
+  "num": "9",
+  "titre": "Le pot à huile",
+  "sous": "l'huile qui s'est échappée",
+  "duree": 50,
+  "video": "chapitre-09-le-pot-a-huile.mp4",
+  "affiche": "chapitre-09-le-pot-a-huile.jpg"
+ },
+ {
+  "id": "fuite",
+  "num": "10",
+  "titre": "La fuite",
+  "sous": "on me sent tout de suite",
+  "duree": 55,
+  "video": "chapitre-10-la-fuite.mp4",
+  "affiche": "chapitre-10-la-fuite.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Le tour en entier",
+  "sous": "l'essentiel à retenir",
+  "duree": 50,
+  "video": "chapitre-11-le-tour-en-entier.mp4",
+  "affiche": "chapitre-11-le-tour-en-entier.jpg"
+ }
+]

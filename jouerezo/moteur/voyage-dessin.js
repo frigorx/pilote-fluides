@@ -331,6 +331,22 @@
     D.texte(g, 712, 590, "Entrons dedans…", { "font-size": 34, "font-weight": 700, fill: D.ORANGE, "font-family": "Calibri, Arial, sans-serif" });
     return g;
   };
+  /* le filigrane des vidéos (Franck, 03/10 : contre le vol, il survit au recadrage) : le logo de la charte,
+     cartouche « Studio » (la chaîne inerWeb Studio), + « by inerweb.fr » — peu d'exemplaires, pâles, dans le fond */
+  D.filigrane = function (parent, points, l) {
+    const g = D.el("g", { opacity: 0.1, "aria-hidden": "true", "data-layout-allow-overlap": "" }, parent), k = l / 400;
+    points.forEach(p => {
+      const m = D.el("g", { transform: "translate(" + p[0] + " " + p[1] + ") rotate(-12) scale(" + k + ") translate(-200 -66)" }, g);
+      D.texte(m, 0, 80, "❄️", { "font-size": 56, fill: D.BLEU });
+      D.texte(m, 76, 75, "iner", { "font-size": 52, "font-weight": 700, fill: D.BLEU, "font-family": "Trebuchet MS, Trebuchet, sans-serif" });
+      D.texte(m, 171, 75, "Web", { "font-size": 52, fill: D.BLEU, "font-family": "Segoe Script, Brush Script MT, cursive" });
+      D.el("line", { x1: 76, x2: 276, y1: 80, y2: 80, stroke: "#e8914a", "stroke-width": 4 }, m);
+      D.el("rect", { x: 281, y: 8, rx: 7, width: 120, height: 38, fill: "#e8914a" }, m);
+      D.texte(m, 341, 34, "Studio", { "text-anchor": "middle", "font-size": 22, "font-weight": 700, fill: "#fff", "font-family": "Segoe UI, Helvetica, Arial, sans-serif" });
+      D.texte(m, 76, 122, "by inerweb.fr", { "font-size": 30, "font-weight": 700, fill: D.BLEU, "font-family": "Trebuchet MS, Trebuchet, sans-serif" });
+    });
+    return g;
+  };
   /* la signature commune des vidéos : logo inerWeb (charte, 00-charte/logo-inerweb.html) + « en partenariat
      avec » + le logo du lycée. Tant que la direction n'a pas donné son accord (Franck, 03/10), un EMPLACEMENT
      marqué le remplace : le jour venu, renseigner VOYAGE_RECIT.logoLycee et refaire les vidéos. */

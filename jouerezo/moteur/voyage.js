@@ -23,9 +23,11 @@
   window.JR_JEUX.voyage = { nom: R.titre, lettre: "V", emoji: "🧳" };
   const ecrit = p => Array.isArray(p) ? p[0] : p;
   const BASE = window.VOYAGE_BASE || "";
+  const VOIX = BASE + (R.dossier || "voyage") + "/voix/"; // une édition (NH₃, CO₂) a ses voix dans son dossier
+  const FILM = R.film || "../voyage/", LIVRET = R.livret || "../voyage/voyage-dans-tous-ses-etats.pdf"; // station du film et livret de l'édition
 
   async function charger() {
-    return { pistes: await fetch(BASE + "voyage/voix/pistes.json").then(r => r.json()) };
+    return { pistes: await fetch(VOIX + "pistes.json").then(r => r.json()) };
   }
 
   function modeImage(res) {
@@ -51,7 +53,7 @@
   function lecteur(res) {
     const haut = document.getElementById("haut"); // la barre d'un module de formation inerweb.fr, pas celle des jeux
     haut.className = "haut";
-    haut.innerHTML = '<a href="../">← inerweb.fr</a><span>' + JR.esc(R.titre) + '</span><a href="../voyage/">Le film</a>';
+    haut.innerHTML = '<a href="../">← inerweb.fr</a><span>' + JR.esc(R.titre) + '</span><a href="' + FILM + '">Le film</a>';
     const main = document.getElementById("jeu");
     main.innerHTML =
       '<section class="vy">' +
@@ -90,7 +92,7 @@
       if (!voix || k < 0) return;
       const h = th.scenes[i], dans = t - h.T[k];
       if (dans < 0 || t > h.E[k]) return;
-      audio.src = BASE + "voyage/voix/" + res.pistes[R.scenes[i].id + "-" + k].f;
+      audio.src = VOIX + res.pistes[R.scenes[i].id + "-" + k].f;
       audio.currentTime = depuis ? dans : 0;
       audio.play().catch(() => {});
     }
@@ -148,8 +150,8 @@
             '<p>Code à donner à votre enseignant : <span class="code">' + JR.code("voyage", "etats", score, total) + '</span></p>' +
             '<h3>Pour aller plus loin</h3><ul class="portes">' + R.portes.map(p => '<li><a href="' + JR.esc(p.h) + '">' + JR.esc(p.t) + '</a></li>').join("") + '</ul>' +
             '<div class="actions"><button type="button" class="btn vy-refaire">Refaire le voyage</button>' +
-            '<a class="btn sec" href="../voyage/">Le film</a>' +
-            '<a class="btn sec" href="../voyage/voyage-dans-tous-ses-etats.pdf">Le livret (PDF)</a></div></section>';
+            '<a class="btn sec" href="' + FILM + '">Le film</a>' +
+            '<a class="btn sec" href="' + LIVRET + '">Le livret (PDF)</a></div></section>';
           main.querySelector(".vy-refaire").addEventListener("click", () => location.reload());
           main.querySelector("h2").focus();
           JR.sons.fin();

@@ -29,6 +29,7 @@
     const cid = "vm-cadre-v";
     D.el("rect", { x: 0, y: Y0 - 8, width: 1080, height: 630 * K + 16 }, D.el("clipPath", { id: cid }, svg));
     D.el("rect", { x: 0, y: Y0 - 8, width: 1080, height: 630 * K + 16, fill: "#fbf7f0" }, svg);
+    D.filigrane(svg, [[540, 580], [270, 1180], [810, 1640]], 400);
     const cadre = D.el("g", { "clip-path": "url(#" + cid + ")" }, svg);
     const plateau = D.el("g", { transform: "translate(0 " + (Y0 - CROP * K) + ") scale(" + K + ")" }, cadre);
     const scene = D.el("g", {}, plateau), vitrine = D.el("g", {}, plateau);
