@@ -20,7 +20,8 @@
    `stations` / `lignes` (comptes forcés quand le catalogue ne suit pas),
    `chiffres` (texte libre à la place de « N stations · N lignes », ex.
    « 11 modules · 4 paliers »), `pdf` ({ titre, href } : document à
-   télécharger, ajouté après les raccourcis).
+   télécharger, ajouté après les raccourcis), `points` (nombre de ronds sur
+   la carte des réseaux quand le réseau n'a pas de lignes, ex. les jeux).
    ===================================================================== */
 /* RESEAUX DEBUT */
 window.INERWEB_RESEAUX = [
@@ -94,7 +95,7 @@ window.INERWEB_RESEAUX = [
     couleur: "#1b6e5a",
     sousTitre: "L’air dans les gaines : hygrométrie, VMC, distribution, climatisation, centrales de traitement d’air.",
     niveaux: "CAP · Bac pro · BTS",
-    etat: "en relecture",
+    etat: "",
     catalogue: ["AéroRézo"],
     vignette: "icones/reseaux/aerorezo.svg",
     entree: { titre: "L’air se déplace", href: "aerorezo/stations/air-circule/" },
@@ -182,9 +183,9 @@ window.INERWEB_RESEAUX = [
     entree: { titre: "Mon poste de travail", href: "cuivrezo/stations/1-0/" },
     raccourcis: [
       { titre: "Cintrer à la cintrette", href: "cuivrezo/stations/1-4/" },
-      { titre: "Le poste oxyacétylénique", href: "cuivrezo/stations/2-1/" }
-    ],
-    pdf: { titre: "📄 Les fiches de poste — PDF", href: "cuivrezo/papier/CuivRezo-fiches-de-poste-ELEVE.pdf" }
+      { titre: "Le poste oxyacétylénique", href: "cuivrezo/stations/2-1/" },
+      { titre: "📄 Les fiches de poste", href: "cuivrezo/papier/fiches-de-poste.html" } /* le PDF est exclu du dépôt (.gitignore) : 404 en ligne, 03/10 */
+    ]
   },
   {
     id: "cartoclim",
@@ -196,7 +197,7 @@ window.INERWEB_RESEAUX = [
     couleur: "#0e7490" /* calque « Clim » de la rue 3D (maquette-entree-technique/zones.mjs) */,
     sousTitre: "Comprendre un climatiseur, du besoin à la panne : le split, le multisplit, le DRV, le roof-top, la PAC air/eau, le chauffe-eau thermodynamique, l’eau glacée — et ce qu’on pose, raccorde, règle et entretient. Relié aux autres réseaux, jamais recopié.",
     niveaux: "CAP · Bac pro · BTS",
-    etat: "en relecture",
+    etat: "",
     catalogue: [],
     stations: 21, /* 39 gares dont 18 correspondances vers les autres réseaux */
     lignes: 5,
@@ -205,6 +206,72 @@ window.INERWEB_RESEAUX = [
     raccourcis: [
       { titre: "Le split : deux unités, un circuit", href: "cartoclim/stations/3-2-split/" },
       { titre: "La vanne 4 voies : froid ou chaud", href: "cartoclim/stations/2-6-vanne-4-voies/" }
+    ]
+  },
+  /* Jeux, simulateur, films : rangés dans la grille des réseaux sur décision de
+     F. Henninot (03/10/2026). Pas de stations au catalogue : `chiffres` dit ce
+     qu'on y trouve, `points` pose les ronds de la carte des réseaux. */
+  {
+    id: "jouerezo",
+    nom: "JouéRézo",
+    accroche: "Les jeux du métier",
+    court: "JouéRézo",
+    emoji: "🎮",
+    adresse: "jouerezo/index.html",
+    couleur: "#15803d",
+    sousTitre: "Neuf jeux pour retenir le froid classique : Memory, le bon ordre, chrono vrai ou faux, QCM éclair, l’intrus, Nuit à l’atelier, compléter le schéma, Qui suis-je ?, le pendu du frigo. Un code de partie à rendre en fin de jeu.",
+    niveaux: "CAP · Bac pro",
+    etat: "",
+    catalogue: [],
+    chiffres: "9 jeux",
+    points: 9,
+    vignette: "jouerezo/illustrations/accueil.webp",
+    entree: { titre: "Memory", href: "jouerezo/memory.html" },
+    raccourcis: [
+      { titre: "Compléter le schéma", href: "jouerezo/schema.html" },
+      { titre: "Qui suis-je ?", href: "jouerezo/quisuisje.html" },
+      { titre: "Le pendu du frigo", href: "jouerezo/pendu.html" }
+    ]
+  },
+  {
+    id: "simurezo",
+    nom: "SimuRézo",
+    accroche: "Le simulateur de panne",
+    court: "SimuRézo",
+    emoji: "🛠️",
+    adresse: "simurezo/index.html",
+    couleur: "#b91c1c",
+    sousTitre: "Dépanner une chambre froide : relever les valeurs sur l’installation, voir le cycle se tracer sur le diagramme, puis conclure. Trois niveaux, de la Croix du frigoriste à l’atelier, en R-134a, R-449A ou R-290.",
+    niveaux: "CAP → BTS",
+    etat: "",
+    catalogue: [],
+    chiffres: "3 niveaux · 8 situations",
+    points: 3,
+    vignette: "icones/reseaux/simurezo.jpg",
+    entree: { titre: "Commencer une partie", href: "simurezo/index.html" },
+    raccourcis: [
+      { titre: "Télécharger le simulateur (sans réseau)", href: "simurezo/simurezo.html" }
+    ]
+  },
+  {
+    id: "studio",
+    nom: "inerWeb Studio",
+    accroche: "Les films",
+    court: "Studio",
+    emoji: "🎬",
+    adresse: "studio/index.html",
+    couleur: "#be185d" /* le cinéma du quartier (quartier/index.html, app-cinema) */,
+    sousTitre: "Tous les films du site dans une seule salle : le Voyage dans tous ses états, les onze films de la régulation, l’effet de serre et la couche d’ozone. Chaque film mène à son cours.",
+    niveaux: "tous niveaux",
+    etat: "",
+    catalogue: [],
+    chiffres: "14 films",
+    points: 3,
+    vignette: "voyage/videos/chapitre-00-mon-voyage.jpg",
+    entree: { titre: "Voyage dans tous ses états", href: "voyage/index.html" },
+    raccourcis: [
+      { titre: "La régulation en films", href: "studio/index.html#t-regules" },
+      { titre: "Effet de serre et ozone", href: "studio/index.html#t-climat" }
     ]
   }
 ];

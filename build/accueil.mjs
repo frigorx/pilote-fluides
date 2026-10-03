@@ -83,7 +83,7 @@ const arrondi = (n) => (n >= 1000 ? Math.floor(n / 100) * 100 : n);
 const ech = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 
 const chiffres = [
-  { v: total.reseaux, l: "réseaux de cours" },
+  { v: total.reseaux, l: "réseaux" },
   { v: total.stations, l: "stations, un cours chacune" },
   { v: total.lignes, l: "lignes à suivre" },
   { v: arrondi(total.audio), l: "narrations audio", prefixe: "+ de " },
@@ -133,7 +133,7 @@ RESEAUX.forEach((r, i) => {
   const xFin = 440, xDroite = 300;
   const delai = (i * 0.18).toFixed(2);
   svg += `<path class="cr-l" d="M ${hubX + 44} ${hubY} C ${hubX + 130} ${hubY}, ${xDroite - 60} ${y}, ${xDroite} ${y} L ${xFin} ${y}" stroke="${r.couleur}" style="animation-delay:${delai}s"/>\n`;
-  const n = Math.min(c.lignes, 8);
+  const n = Math.min(r.points ?? c.lignes, 8);
   for (let j = 0; j < n; j++) {
     const x = xDroite + 10 + (j * (xFin - xDroite - 20)) / Math.max(n - 1, 1);
     svg += `<circle class="cr-s" cx="${x.toFixed(1)}" cy="${y}" r="6.5" fill="#fffdf8" stroke="${r.couleur}" stroke-width="3.5" style="animation-delay:${(i * 0.18 + 0.9 + j * 0.05).toFixed(2)}s"/>\n`;

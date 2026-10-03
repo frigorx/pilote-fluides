@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>inerWeb Studio — les films d'inerweb.fr</title>
+<meta name="description" content="Tous les films d'inerweb.fr dans une seule salle : le Voyage dans tous ses états, les onze films de la régulation, l'effet de serre et la couche d'ozone. Chaque film mène à son cours.">
+<link rel="canonical" href="https://inerweb.fr/studio/">
+<meta property="og:title" content="inerWeb Studio — les films d'inerweb.fr">
+<meta property="og:description" content="Le circuit frigorifique, la régulation, la réglementation : les films du site, chacun relié à son cours.">
+<meta property="og:image" content="https://inerweb.fr/voyage/videos/chapitre-00-mon-voyage.jpg">
+<meta property="og:url" content="https://inerweb.fr/studio/">
+<!-- ===================================================================
+     inerWeb STUDIO — la salle des films (F. Henninot, 03/10/2026 : « le réseau
+     inerWeb Studio qui reprend les vidéos », marque inerWeb, rangé dans la grille
+     des réseaux de l'accueil). Page SATELLITE écrite à la main, comme voyage/ :
+     elle ne copie aucun film, elle mène à chacun et à son cours.
+     Sources : voyage/ (atelier C:/git/jouerezo), les films des régules
+     (packs/fluides/res/_regules-commun/films, catalogue catalog.js), les deux
+     films de Législation (packs/fluides/res/film-*).
+     vignettes/ = captures des films (régules à 7 s, Législation à 9 s ; Chrome sans écran,
+     1280×720 réduit en 640×360). Un nouveau film = une carte de plus ici.
+     =================================================================== -->
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:84rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  .haut { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; font-size:16px; }
+  .haut a { font-weight:bold; text-decoration:none; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.35rem; margin:0 0 4px; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.05rem; line-height:1.3; margin:0; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; max-width:52rem; font-size:18px; }
+  .salle { display:grid; gap:10px; }
+  .salle > p { margin:0; color:var(--mut); max-width:52rem; }
+  .vedette { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:18px; align-items:center;
+             background:var(--carte); border:1px solid var(--ligne); border-top:6px solid var(--studio); border-radius:14px; padding:14px; }
+  .vedette .affiche { position:relative; display:block; border-radius:10px; overflow:hidden; background:#0b1626; }
+  .vedette .affiche img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .vedette p { margin:0 0 10px; }
+  .films { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); gap:14px; }
+  .film { background:var(--carte); border:1px solid var(--ligne); border-top:5px solid var(--studio); border-radius:12px; padding:8px 10px 12px; display:grid; gap:8px; align-content:start; }
+  .film .affiche { position:relative; display:block; border-radius:8px; overflow:hidden; background:#0b1626; }
+  .film .affiche img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .jouer { position:absolute; left:6px; bottom:6px; background:var(--orange-texte); color:#fff; font-size:14px; font-weight:bold; padding:1px 8px; border-radius:6px; }
+  .duree { position:absolute; right:6px; bottom:6px; background:rgba(16,35,60,.85); color:#fff; font-size:14px; padding:1px 7px; border-radius:6px; }
+  .film .num { color:var(--mut); font-size:15px; margin:0; }
+  .liens { display:flex; flex-wrap:wrap; gap:8px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font:inherit; font-size:16px; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:15.5px; max-width:60rem; }
+  @media (max-width:760px) { .vedette { grid-template-columns:1fr; } }
+</style>
+<script defer src="../moteur/retour-accueil.js?v=ff0ca829c0"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller aux films</a>
+<div class="page">
+  <nav class="haut" aria-label="Retour">
+    <a href="../">← inerweb.fr</a>
+    <a href="../plan.html">Plan des réseaux</a>
+    <a href="../quartier/">Le quartier technique</a>
+  </nav>
+
+  <header>
+    <h1>🎬 inerWeb Studio</h1>
+    <p class="sous-titre">les films d'inerweb.fr</p>
+  </header>
+  <p class="chapo">Tous les films du site dans une seule salle. Chaque film mène à son cours : on regarde d'abord, puis on va comprendre et s'exercer dans la station.</p>
+
+  <main id="contenu" style="display:grid;gap:28px">
+    <section class="salle" aria-labelledby="t-voyage">
+      <h2 id="t-voyage">Le circuit frigorifique</h2>
+      <article class="vedette">
+        <a class="affiche" href="../voyage/" aria-label="Voir le film Voyage dans tous ses états">
+          <img src="../voyage/videos/chapitre-00-mon-voyage.jpg" alt="Le circuit d'une chambre froide et la molécule qui va le parcourir" width="640" height="360">
+          <span class="jouer">▶ voir</span><span class="duree">8 min 57</span></a>
+        <div>
+          <h3>Voyage dans tous ses états</h3>
+          <p>Une molécule de fluide frigorigène fait le tour d'une chambre froide : l'évaporateur, le compresseur, le condenseur, la ligne liquide, le détendeur, puis la fuite et la récupération. Le film en entier, ou épisode par épisode (13 épisodes).</p>
+          <p class="liens"><a class="btn" href="../voyage/">▶ Le film</a>
+            <a class="btn sec" href="../voyage/module.html">La version interactive</a></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="salle" aria-labelledby="t-regules">
+      <h2 id="t-regules">La régulation, en onze films</h2>
+      <p>Le schéma électrique et l'installation frigorifique, côte à côte : on voit chaque contact se fermer et le fluide suivre. Chaque film a sa station, avec ses planches pas à pas et ses questions.</p>
+      <ul class="films">
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html"><img src="vignettes/regules-01-commande-directe-v2.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 1</p><h3>La commande directe</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/commande-directe-thermostat/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html"><img src="vignettes/regules-02-protection-minimum.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 2</p><h3>La protection minimum</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/protection-minimum-serie/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html"><img src="vignettes/regules-02b-migration-de-liquide.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 2</p><h3>La migration de liquide</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/protection-minimum-serie/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html"><img src="vignettes/regules-03-pump-down-automatique.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 3</p><h3>Le pump-down automatique</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/pump-down-automatique/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html"><img src="vignettes/regules-04-pump-down-ameliore.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 4</p><h3>Le pump-down amélioré</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/pump-down-ameliore/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html"><img src="vignettes/regules-05-pump-down-unique.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 5</p><h3>Le pump-down unique</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/pump-down-unique/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html"><img src="vignettes/regules-06-sans-degivrage-commande.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 6</p><h3>Sans dégivrage commandé</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/sans-degivrage-commande/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html"><img src="vignettes/regules-07-degivrage-naturel.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 7</p><h3>Le dégivrage naturel</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/degivrage-naturel/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html"><img src="vignettes/regules-08-pump-down-et-degivrage-electrique.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 8</p><h3>Le dégivrage électrique</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/degivrage-electrique/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html"><img src="vignettes/regules-09-gaz-chauds.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 9</p><h3>Le dégivrage par gaz chauds</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/degivrage-gaz-chauds/index.html">La station</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html"><img src="vignettes/regules-10-inversion-de-cycle.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <p class="num">Station 10</p><h3>Le dégivrage par inversion de cycle</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/degivrage-inversion-cycle/index.html">La station</a></p></li>
+      </ul>
+    </section>
+
+    <section class="salle" aria-labelledby="t-climat">
+      <h2 id="t-climat">Les fluides et l'environnement</h2>
+      <p>Deux films narrés pour comprendre pourquoi la réglementation des fluides frigorigènes existe.</p>
+      <ul class="films">
+        <li class="film"><a class="affiche" href="../packs/fluides/res/film-effet-de-serre/index.html"><img src="vignettes/film-effet-de-serre.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <h3>Effet de serre, PRP et climat</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/film-effet-de-serre/index.html">▶ Le film</a><a class="btn sec" href="../legislation/stations/impact-prp-odp/">La station PRP et ODP</a></p></li>
+        <li class="film"><a class="affiche" href="../packs/fluides/res/film-ozone/index.html"><img src="vignettes/film-ozone.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
+          <h3>Couche d'ozone et ODP</h3>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/film-ozone/index.html">▶ Le film</a><a class="btn sec" href="../legislation/stations/impact-prp-odp/">La station PRP et ODP</a></p></li>
+      </ul>
+    </section>
+  </main>
+
+  <p class="legende">Pour l'enseignant : chaque film se projette en classe et ouvre le sujet. Il ne remplace ni le cours ni les travaux pratiques : la station qui le suit porte les planches, les questions et la trace écrite. Conception pédagogique : F. Henninot — inerWeb. Films réalisés avec l'assistance d'une intelligence artificielle ; voix de synthèse. Licence CC BY-NC-ND.</p>
+</div>
+<script src="../moteur/marque.js" data-cartouche="Studio" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>
