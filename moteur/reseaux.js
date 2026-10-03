@@ -194,11 +194,11 @@ window.INERWEB_RESEAUX = [
     emoji: "🌡️",
     adresse: "cartoclim/index.html",
     couleur: "#0e7490" /* calque « Clim » de la rue 3D (maquette-entree-technique/zones.mjs) */,
-    sousTitre: "Comprendre un climatiseur, du besoin à la panne : le split, le multisplit, le DRV, le roof-top, la PAC air/eau, l’eau glacée — et ce qu’on pose, raccorde, règle et entretient. Relié aux autres réseaux, jamais recopié.",
+    sousTitre: "Comprendre un climatiseur, du besoin à la panne : le split, le multisplit, le DRV, le roof-top, la PAC air/eau, le chauffe-eau thermodynamique, l’eau glacée — et ce qu’on pose, raccorde, règle et entretient. Relié aux autres réseaux, jamais recopié.",
     niveaux: "CAP · Bac pro · BTS",
     etat: "en relecture",
     catalogue: [],
-    stations: 20, /* 38 gares dont 18 correspondances vers les autres réseaux */
+    stations: 21, /* 39 gares dont 18 correspondances vers les autres réseaux */
     lignes: 5,
     vignette: "cartoclim/stations/3-2-split/assets/biblio/898384a2af.png",
     entree: { titre: "Climatiser, c’est quoi ?", href: "cartoclim/stations/1-1-climatiser/" },

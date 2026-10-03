@@ -1,4 +1,4 @@
-/* CartoClim 3.8 — textes POUR L'OREILLE, registre « professeur à l'épaule ».
+/* CartoClim 3.9 — textes POUR L'OREILLE, registre « professeur à l'épaule ».
    La voix explique, elle ne lit pas l'écran (00-charte/VOIX-ET-NARRATION.md).
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {

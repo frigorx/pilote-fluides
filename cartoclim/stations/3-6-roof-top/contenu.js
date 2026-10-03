@@ -161,6 +161,6 @@ ModeleAppareil.construire({
     { ligne: 2, couleur: '#3D7FCA', texte: "2.1 Le circuit, organe par organe", url: lien('2.1') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.6 La vanne 4 voies : froid ou chaud", url: lien('2.6') },
     { ligne: 3, couleur: '#6B5FB5', texte: "3.2 Le split : deux unités, un circuit", url: lien('3.2') },
-    { ligne: 3, couleur: '#6B5FB5', texte: "3.9 Lire une CTA (AéroRézo)", url: lien('3.9') },
+    { ligne: 3, couleur: '#6B5FB5', texte: "3.10 Lire une CTA (AéroRézo)", url: lien('3.10') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.4 Les condensats : pente, siphon, pompe de relevage", url: lien('4.4') } ]
 });

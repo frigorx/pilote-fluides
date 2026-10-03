@@ -1,11 +1,11 @@
-/* CartoClim 3.8 — Groupe d'eau glacée et ventilo-convecteurs : l'eau fait le tour du bâtiment. Écrite le 02/10/2026. */
+/* CartoClim 3.9 — Groupe d'eau glacée et ventilo-convecteurs : l'eau fait le tour du bâtiment. Écrite le 02/10/2026. */
 
 const lien = id => (typeof RESEAU !== 'undefined' && RESEAU.urlDe) ? RESEAU.urlDe(id) : null;
 const hydro = (page, texte) => '<a href="https://inerweb.fr/hydrometro/stations/' + page + '/">' + texte + '</a>';
 
 ModeleAppareil.construire({
-  id: '3.8', ligne: 3,
-  kicker: 'CartoClim · Ligne 3 Les familles · Station 8',
+  id: '3.9', ligne: 3,
+  kicker: 'CartoClim · Ligne 3 Les familles · Station 9',
   titre: "Groupe d’eau glacée et ventilo-convecteurs",
   narration: NARRATION,
 
@@ -42,7 +42,7 @@ ModeleAppareil.construire({
     "<strong>Deux tubes</strong> — un seul réseau, un départ et un retour : de l’eau froide l’été, de l’eau chaude l’hiver, pour toutes les pièces en même temps. Le thermostat de chaque ventilo-convecteur a alors un commutateur été/hiver.",
     "<strong>Quatre tubes</strong> — deux réseaux, un froid et un chaud, disponibles en même temps : une pièce au soleil refroidit pendant que sa voisine chauffe. Le ventilo-convecteur est raccordé aux deux, souvent par deux batteries.",
     "<strong>Un groupe réversible</strong> — le groupe lui-même peut produire de l’eau chaude, comme une pompe à chaleur air/eau. C’est la station 3.7.",
-    "<strong>Une centrale de traitement d’air</strong> — le même groupe peut alimenter la grande batterie d’une CTA, qui traite l’air neuf de tout un bâtiment. C’est la station 3.9."
+    "<strong>Une centrale de traitement d’air</strong> — le même groupe peut alimenter la grande batterie d’une CTA, qui traite l’air neuf de tout un bâtiment. C’est la station 3.10."
   ],
   reglage: "Au <strong>thermostat</strong> du ventilo-convecteur : la température voulue, la vitesse du ventilateur, et, sur un réseau deux tubes, le commutateur été/hiver. Sur le réseau, une <strong>vanne</strong> règle l’eau qui passe dans chaque ventilo-convecteur ; au groupe, le régulateur tient la température de l’eau. Que chaque pièce reçoive sa part d’eau, c’est l’affaire de l’équilibrage : " + hydro('debit', 'HydroMétro : Débit') + " et " + hydro('pertes', 'Pertes de charge') + ".",
 
@@ -158,7 +158,7 @@ ModeleAppareil.construire({
   correspondances: [
     { ligne: 2, couleur: '#3D7FCA', texte: "2.1 Le circuit, organe par organe", url: lien('2.1') },
     { ligne: 3, couleur: '#6B5FB5', texte: "3.7 La PAC air/eau", url: lien('3.7') },
-    { ligne: 3, couleur: '#6B5FB5', texte: "3.9 Lire une CTA", url: lien('3.9') },
+    { ligne: 3, couleur: '#6B5FB5', texte: "3.10 Lire une CTA", url: lien('3.10') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.4 Les condensats : pente, siphon, pompe de relevage", url: lien('4.4') },
     { ligne: 5, couleur: '#B06A00', texte: "5.3 L’entretien : filtres, batteries, bac à condensats", url: lien('5.3') } ]
 });

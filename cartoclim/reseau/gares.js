@@ -1,4 +1,4 @@
-/* CartoClim — LA source unique des 38 gares du réseau.
+/* CartoClim — LA source unique des 39 gares du réseau.
    Lue par l'accueil (la carte) et par outils/construire-reseau.mjs (qui en tire
    stations/_commun/reseau.js, l'ordre des stations pour le bouton Suivant).
    Une gare « neuf » est une station de CartoClim : `dossier` sous stations/.
@@ -11,7 +11,7 @@ const CARTOCLIM = {
   lignes: {
     1: { lettre: 'B', nom: 'Le besoin',    sous: 'Pourquoi climatiser ?',                couleur: '#C9451A', trace: [[180,300],[360,120],[980,120]],  terminus: [1030,120] },
     2: { lettre: 'M', nom: 'La machine',   sous: 'Le cycle dans un climatiseur',         couleur: '#3D7FCA', trace: [[180,300],[1220,300]],           terminus: [1270,300] },
-    3: { lettre: 'F', nom: 'Les familles', sous: 'Du mobile à l’eau glacée',             couleur: '#6B5FB5', trace: [[180,300],[360,480],[1240,480]],  terminus: [1290,480] },
+    3: { lettre: 'F', nom: 'Les familles', sous: 'Du mobile à l’eau glacée',             couleur: '#6B5FB5', trace: [[180,300],[360,480],[1250,480]],  terminus: [1300,480] },
     4: { lettre: 'I', nom: 'Installer',    sous: 'Poser, raccorder, mettre en service',  couleur: '#1E7E54', trace: [[540,480],[360,660],[1260,660]],  terminus: [310,660] },
     5: { lettre: 'E', nom: 'Exploiter',    sous: 'Utiliser, entretenir, dépanner',       couleur: '#B06A00', trace: [[1260,660],[1260,840],[330,840]], terminus: [280,840] }
   },
@@ -36,15 +36,18 @@ const CARTOCLIM = {
     { id: '3.1', l: [3], p: [440,480], court: 'Monobloc', titre: 'Le monobloc : mobile, fenêtre, sans unité extérieure', s: 'neuf', dossier: '3-1-monobloc', src: ['CLIMATISATION Sé1 Sq2.docx', 'energieplus — Climatiseur individuel.pdf (tiers : documentation seulement)'] },
     { id: '3.2', l: [3,4], p: [540,480], court: 'Le split', titre: 'Le split : deux unités, un circuit', s: 'neuf', dossier: '3-2-split',
       src: ['Climatiseur split.pdf (fonds Bac pro MFER)', 'sq2 se1 TP1 — CLIM FROID SEUL SPLIT (pdf + pptx)', 'MONTAGE CLIMATISEUR SPLIT.pdf'], sym: ['split-pared','ud-exte-split'] },
-    { id: '3.3', l: [3], p: [640,480], court: 'Unités intérieures', titre: 'Mural, console, cassette, gainable : choisir l’unité intérieure', s: 'neuf', dossier: '3-3-unites-interieures', src: ['CLIMATISATION Sq1 Se2b — généralités et production.docx', 'CLIMATISATION SE1 SC2.pptx'], sym: ['split-pared','cassette','split-suelo'] },
-    { id: '3.4', l: [3], p: [740,480], court: 'Multisplit', titre: 'Le multisplit : une unité extérieure, plusieurs pièces', s: 'neuf', dossier: '3-4-multisplit', src: ['peu de fonds : station à écrire'], sym: ['ud-exte-split','split-pared'] },
-    { id: '3.5', l: [3], p: [840,480], court: 'DRV · VRV', titre: 'Le DRV : un réseau de fluide à débit variable', s: 'neuf', dossier: '3-5-drv', src: ['S14 — Module VRV/DRV (séance 1re MFER)', '6.4 Technologie (VRV).pdf', 'VRV.doc (BTS FED)'], sym: ['vrv-exterior','caja-reparto-vrv'] },
-    { id: '3.6', l: [3], p: [940,480], court: 'Roof-top', titre: 'Le roof-top : tout sur le toit', s: 'neuf', dossier: '3-6-roof-top', src: ['Roof-top.doc', 'Exercice roof-top.doc', 'Exercice N°2 roof-top.doc'], sym: ['roof-top-simple'] },
-    { id: '3.7', l: [3], p: [1040,480], court: 'PAC air/eau', titre: 'La PAC air/eau : haute, moyenne et basse température', s: 'neuf', dossier: '3-7-pac-air-eau',
+    { id: '3.3', l: [3], p: [630,480], court: 'Unités intérieures', titre: 'Mural, console, cassette, gainable : choisir l’unité intérieure', s: 'neuf', dossier: '3-3-unites-interieures', src: ['CLIMATISATION Sq1 Se2b — généralités et production.docx', 'CLIMATISATION SE1 SC2.pptx'], sym: ['split-pared','cassette','split-suelo'] },
+    { id: '3.4', l: [3], p: [719,480], court: 'Multisplit', titre: 'Le multisplit : une unité extérieure, plusieurs pièces', s: 'neuf', dossier: '3-4-multisplit', src: ['peu de fonds : station à écrire'], sym: ['ud-exte-split','split-pared'] },
+    { id: '3.5', l: [3], p: [807,480], court: 'DRV · VRV', titre: 'Le DRV : un réseau de fluide à débit variable', s: 'neuf', dossier: '3-5-drv', src: ['S14 — Module VRV/DRV (séance 1re MFER)', '6.4 Technologie (VRV).pdf', 'VRV.doc (BTS FED)'], sym: ['vrv-exterior','caja-reparto-vrv'] },
+    { id: '3.6', l: [3], p: [896,480], court: 'Roof-top', titre: 'Le roof-top : tout sur le toit', s: 'neuf', dossier: '3-6-roof-top', src: ['Roof-top.doc', 'Exercice roof-top.doc', 'Exercice N°2 roof-top.doc'], sym: ['roof-top-simple'] },
+    { id: '3.7', l: [3], p: [984,480], court: 'PAC air/eau', titre: 'La PAC air/eau : haute, moyenne et basse température', s: 'neuf', dossier: '3-7-pac-air-eau',
       src: ['13 Le fonctionnement PAC.docx', 'PRWA1000005A — Installation PAC-WT05.pdf (banc ERM WA10)', 'DTWA1000023A — Utilisation pompe à chaleur (WT05)', 'plancher chauffant.pdf', 'BALLONS TAMPONS — fiche Thermador'], sym: ['pac_air_eau_ui','ud-exte-split'],
       note: 'Ajoutée par Franck le 02/10 : l’unité extérieure côté fluide, le module hydraulique, les familles HT/MT/BT, relève de chaudière, plancher, radiateurs, ECS. Le côté eau reste chez HydroMétro (Production, Boucle).' },
-    { id: '3.8', l: [3], p: [1140,480], court: 'Eau glacée', titre: 'Groupe d’eau glacée et ventilo-convecteurs', s: 'neuf', dossier: '3-8-eau-glacee', src: ['TP groupe d’eau glacée.doc', '3.1 Technologie (groupe d’eau glacée).pdf', 'banc ERM VC10 ventilo-convecteurs (fiche machine du lycée)'], sym: ['enfriadora-1','fancoil-bajo'] },
-    { id: '3.9', l: [3], p: [1240,480], court: 'CTA', titre: 'Lire une CTA', s: 'existe', r: 'aero', u: 'aerorezo/stations/architecture-cta/' },
+    { id: '3.8', l: [3], p: [1073,480], court: 'Chauffe-eau|thermo', titre: 'Le chauffe-eau thermodynamique : la chaleur de l’air pour l’eau chaude', s: 'neuf', dossier: '3-8-chauffe-eau-thermo',
+      src: ['Architecture du système Chauffe-eau thermodynamique — banc ERM TH10 du lycée (briefs/_sources-th10/)', 'eau chaude sanitaire.doc', 'Cours l’eau chaude sanitaire prof.doc', 'TP 01 - Ballon ECS.odt', 'TP Raccordement chauffe-eau electrique.doc (CAP IFCA)'], sym: ['ballon_ecs_elec','interacumulador','termo-electrico'],
+      note: 'Ajoutée par Franck le 03/10 : le chauffe-eau thermodynamique, « vraie gare » juste après la PAC air/eau. Le banc ERM TH10 du lycée en est un. Eau glacée et CTA renumérotées 3.9 et 3.10 ; leurs dossiers et adresses ne changent pas.' },
+    { id: '3.9', l: [3], p: [1161,480], court: 'Eau glacée', titre: 'Groupe d’eau glacée et ventilo-convecteurs', s: 'neuf', dossier: '3-8-eau-glacee', src: ['TP groupe d’eau glacée.doc', '3.1 Technologie (groupe d’eau glacée).pdf', 'banc ERM VC10 ventilo-convecteurs (fiche machine du lycée)'], sym: ['enfriadora-1','fancoil-bajo'] },
+    { id: '3.10', l: [3], p: [1250,480], court: 'CTA', titre: 'Lire une CTA', s: 'existe', r: 'aero', u: 'aerorezo/stations/architecture-cta/' },
 
     { id: '4.1', l: [4], p: [360,660], court: 'Poser les unités', titre: 'Poser les deux unités : emplacement, supports, dégagements', s: 'neuf', dossier: '4-1-poser-les-unites', src: ['MONTAGE CLIMATISEUR SPLIT (pdf + docx)', 'HabFluide ch. 10 — Installer l’unité extérieure', 'cours habilitation G7 — Installer une unité extérieure sans fuite'], sym: ['soporte-ud-ext','ud-exte-split'] },
     { id: '4.2', l: [4], p: [460,660], court: 'Liaisons', titre: 'Les liaisons frigorifiques : longueur, dénivelé, isolant', s: 'neuf', dossier: '4-2-liaisons-frigorifiques', src: ['MONTAGE CLIMATISEUR SPLIT', 'C1 TD1 RACCORD MATIÈRE RESSOURCE.docx'] },

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-56.0 -92.0 118.0 188.0" width="118" height="188">
+<!-- ballon ECS electrique — converti de ballon_ecs_elec.elmt par outils\elmt-vers-svg.py -->
+<rect x="-56.0" y="-92.0" width="118.0" height="188.0" fill="#ffffff"/>
+<text x="-37" y="-24" font-family="Arial,sans-serif" font-size="9" fill="#000000">Ballon
+ ECS</text>
+<polyline points="0,82 -10,70 9,65 -10,60 10,56 -10,50 10,45 -11,40 10,35 -10,30 2,30" stroke="black" stroke-width="1" fill="none"/>
+<rect x="41" y="10" width="11" height="1" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-31" y="60" width="1" height="25" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="29" y="-80" width="1" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="50" y1="-60" x2="50" y2="70" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-50" y1="-59" x2="-50" y2="70" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -50.00,70.00 A 50.00,12.50 0 0 0 50.00,70.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 50.00,-60.00 A 50.00,12.50 0 0 0 -50.00,-60.00" stroke="black" stroke-width="1" fill="none"/>
+</svg>

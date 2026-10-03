@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**379 stations** réparties en 13 réseaux.
+**380 stations** réparties en 13 réseaux.
 
 ## Plan thermo-techno — 104 stations
 
@@ -338,7 +338,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [La bobine et le rond](https://inerweb.fr/electrorezo/stations/8-8-bobine-et-rond/) | Ligne 5 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
 | [Les repères](https://inerweb.fr/electrorezo/stations/8-9-reperes/) | Ligne 5 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
 
-## CartoClim — 20 stations
+## CartoClim — 21 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -354,6 +354,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le DRV : un réseau de fluide à débit variable](https://inerweb.fr/cartoclim/stations/3-5-drv/) | Ligne 3 | — | — | À climatiser tout un bâtiment avec un seul réseau de fluide . DRV veut dire débit de réfrigérant variable — certains constructeurs disent VRV ou VRF. |
 | [Le roof-top : tout sur le toit](https://inerweb.fr/cartoclim/stations/3-6-roof-top/) | Ligne 3 | — | — | À climatiser un grand volume depuis le toit . Le roof-top est un caisson unique qui contient tout : le circuit frigorifique complet, une batterie qui refroidit (ou chauffe) l’air, un ventilateur qui le pousse dans des gaines, une entrée d’a… |
 | [La PAC air/eau : haute, moyenne et basse température](https://inerweb.fr/cartoclim/stations/3-7-pac-air-eau/) | Ligne 3 | — | — | À chauffer l’eau d’une maison avec la chaleur de l’air du dehors. C’est le même cycle qu’un split, mais l’échangeur intérieur ne chauffe plus de l’air : il chauffe de l’ eau , qui part vers un plancher chauffant , des radiateurs ou un ballo… |
+| [Le chauffe-eau thermodynamique : la chaleur de l’air pour l’eau chaude](https://inerweb.fr/cartoclim/stations/3-8-chauffe-eau-thermo/) | Ligne 3 | — | — | À chauffer l’eau du robinet avec la chaleur de l’air — et seulement elle. C’est une petite pompe à chaleur posée sur un ballon d’eau chaude : le même cycle que la PAC air/eau (station 3.7), mais tout dans un seul appareil, et pour l’eau cha… |
 | [Groupe d’eau glacée et ventilo-convecteurs](https://inerweb.fr/cartoclim/stations/3-8-eau-glacee/) | Ligne 3 | — | — | À refroidir tout un bâtiment avec un seul circuit frigorifique . Le groupe fabrique de l’ eau glacée  |
 | [Poser les deux unités : emplacement, supports, dégagements](https://inerweb.fr/cartoclim/stations/4-1-poser-les-unites/) | Ligne 4 | — | — | Le client a choisi son split : il reste à le poser . Poser, c’est choisir deux emplacements et leur donner un support solide, de niveau . L’unité intérieure se fixe au mur de la pièce  |
 | [Les liaisons frigorifiques : longueur, dénivelé, isolant](https://inerweb.fr/cartoclim/stations/4-2-liaisons-frigorifiques/) | Ligne 4 | — | — | Le split est posé : l’unité intérieure dans la pièce, l’unité extérieure dehors. Il reste à les relier . Le fluide fait l’aller-retour par deux tubes de cuivre : le petit porte le liquide, le gros porte le gaz. |
@@ -424,7 +425,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Espace formateurs](https://inerweb.fr/formateurs.html) | — | — | — | Projeter une ressource inerWeb en cours, réemployer le moteur technique (MIT), demander une adaptation. Contenus CC BY-NC-ND 4.0. |
 | [Habilitation fluides frigorigènes (démonstrateur)](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
 | [Bibliothèque d'animations et de supports — habilitation fluides frigorigènes](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
-| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte. |
+| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Neuf réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte. |
 | [Matrice compétences × contenu × questions — habilitation fluides](https://inerweb.fr/matrice.html) | — | — | — | Pack habilitation fluides frigorigènes — catégories A1 · A2 · D · E · arrêté du 21 novembre 2025, annexe II.B (136 compétences). Généré par node build/matrice.mjs depuis le contenu publié : ce tableau ne se saisit pas, il se relève. |
 | [Le métier de frigoriste](https://inerweb.fr/metier.html) | — | — | — | Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études. |
 | [Le lien à garder — Habilitation fluides frigorigènes](https://inerweb.fr/partage.html) | — | — | — | Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien. |

@@ -1,6 +1,6 @@
 /* CartoClim — la liste ordonnée des gares du réseau.
    ÉCRIT PAR outils/construire-reseau.mjs depuis reseau/gares.js — ne pas modifier à la main.
-   38 gares, 5 lignes. Une gare avec `url` est une correspondance vers inerweb.fr. */
+   39 gares, 5 lignes. Une gare avec `url` est une correspondance vers inerweb.fr. */
 
 const RESEAU = {
   lignes: {
@@ -31,8 +31,9 @@ const RESEAU = {
     { id: '3.5', ligne: 3, dossier: '3-5-drv', titre: 'Le DRV : un réseau de fluide à débit variable', genre: 'homme' },
     { id: '3.6', ligne: 3, dossier: '3-6-roof-top', titre: 'Le roof-top : tout sur le toit', genre: 'femme' },
     { id: '3.7', ligne: 3, dossier: '3-7-pac-air-eau', titre: 'La PAC air/eau : haute, moyenne et basse température', genre: 'homme' },
-    { id: '3.8', ligne: 3, dossier: '3-8-eau-glacee', titre: 'Groupe d’eau glacée et ventilo-convecteurs', genre: 'femme' },
-    { id: '3.9', ligne: 3, url: 'https://inerweb.fr/aerorezo/stations/architecture-cta/', titre: 'Lire une CTA' },
+    { id: '3.8', ligne: 3, dossier: '3-8-chauffe-eau-thermo', titre: 'Le chauffe-eau thermodynamique : la chaleur de l’air pour l’eau chaude', genre: 'femme' },
+    { id: '3.9', ligne: 3, dossier: '3-8-eau-glacee', titre: 'Groupe d’eau glacée et ventilo-convecteurs', genre: 'femme' },
+    { id: '3.10', ligne: 3, url: 'https://inerweb.fr/aerorezo/stations/architecture-cta/', titre: 'Lire une CTA' },
     { id: '4.1', ligne: 4, dossier: '4-1-poser-les-unites', titre: 'Poser les deux unités : emplacement, supports, dégagements', genre: 'homme' },
     { id: '4.2', ligne: 4, dossier: '4-2-liaisons-frigorifiques', titre: 'Les liaisons frigorifiques : longueur, dénivelé, isolant', genre: 'femme' },
     { id: '4.3', ligne: 4, url: 'https://inerweb.fr/cuivrezo/stations/1-6/', titre: 'Le dudgeon' },

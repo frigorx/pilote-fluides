@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 379,
+  "total": 380,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -4161,6 +4161,18 @@
     },
     {
       "reseau": "CartoClim",
+      "id": "3-8-chauffe-eau-thermo",
+      "titre": "Le chauffe-eau thermodynamique : la chaleur de l’air pour l’eau chaude",
+      "ligne": "Ligne 3",
+      "resume": "À chauffer l’eau du robinet avec la chaleur de l’air — et seulement elle. C’est une petite pompe à chaleur posée sur un ballon d’eau chaude : le même cycle que la PAC air/eau (station 3.7), mais tout dans un seul appareil, et pour l’eau cha…",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": "Dans la cave, le garage ou la buanderie d’une maison : une pièce non chauffée, où il prend la chaleur de l’air. On peut aussi le raccorder à des gaines vers l’extérieur. Posé dans une pièce chauffée, il prendrait la chaleur du chauffage.",
+      "url": "https://inerweb.fr/cartoclim/stations/3-8-chauffe-eau-thermo/",
+      "chemin": "cartoclim/stations/3-8-chauffe-eau-thermo/"
+    },
+    {
+      "reseau": "CartoClim",
       "id": "3-8-eau-glacee",
       "titre": "Groupe d’eau glacée et ventilo-convecteurs",
       "ligne": "Ligne 3",
@@ -4704,7 +4716,7 @@
       "id": "index",
       "titre": "le froid et la climatisation, station par station",
       "ligne": null,
-      "resume": "Six réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+      "resume": "Neuf réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4829,7 +4841,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/index.html"
+      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -4841,7 +4853,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -4853,7 +4865,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -4865,7 +4877,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -4877,7 +4889,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -4889,7 +4901,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/td-triphase.html"
+      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

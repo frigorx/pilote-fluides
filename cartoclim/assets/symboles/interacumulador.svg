@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-39.0 -48.0 68.0 88.0" width="68" height="88">
+<!-- interacumulador — converti de interacumulador.elmt par outils\elmt-vers-svg.py -->
+<rect x="-39.0" y="-48.0" width="68.0" height="88.0" fill="#ffffff"/>
+<line x1="20" y1="-30" x2="20" y2="21" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 20.00,-30.00 A 20.00,5.00 0 0 0 -20.00,-30.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -20.00,21.00 A 20.00,5.00 0 0 0 20.00,21.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-20" y1="-30" x2="-20" y2="21" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-24,-6 10,-6 -10,0 10,6 -24,6" stroke="black" stroke-width="1" fill="none"/>
+</svg>

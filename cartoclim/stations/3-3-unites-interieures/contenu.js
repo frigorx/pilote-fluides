@@ -162,7 +162,7 @@ ModeleAppareil.construire({
   correspondances: [
     { ligne: 3, couleur: '#6B5FB5', texte: "3.2 Le split : deux unités, un circuit", url: lien('3.2') },
     { ligne: 3, couleur: '#6B5FB5', texte: "3.4 Le multisplit : plusieurs pièces", url: lien('3.4') },
-    { ligne: 3, couleur: '#6B5FB5', texte: "3.9 Lire une CTA : l’air et les conduits (AéroRézo)", url: lien('3.9') },
+    { ligne: 3, couleur: '#6B5FB5', texte: "3.10 Lire une CTA : l’air et les conduits (AéroRézo)", url: lien('3.10') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.4 Les condensats : pente, siphon, pompe", url: lien('4.4') },
     { ligne: 5, couleur: '#B06A00', texte: "5.3 L’entretien : filtres, batteries, bac", url: lien('5.3') } ]
 });
