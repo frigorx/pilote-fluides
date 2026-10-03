@@ -1,0 +1,128 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "au sous-refroidisseur de liquide",
+  "duree": 50,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "condenseur",
+  "num": "1",
+  "titre": "Le condenseur",
+  "sous": "trois zones",
+  "duree": 49,
+  "video": "chapitre-01-le-condenseur.mp4",
+  "affiche": "chapitre-01-le-condenseur.jpg"
+ },
+ {
+  "id": "plusDeFroid",
+  "num": "2",
+  "titre": "Plus de froid",
+  "sous": "pour chaque kilo",
+  "duree": 38,
+  "video": "chapitre-02-plus-de-froid.mp4",
+  "affiche": "chapitre-02-plus-de-froid.jpg"
+ },
+ {
+  "id": "vapeurDetente",
+  "num": "3",
+  "titre": "La vapeur de détente",
+  "sous": "du travail sans froid",
+  "duree": 32,
+  "video": "chapitre-03-la-vapeur-de-detente.mp4",
+  "affiche": "chapitre-03-la-vapeur-de-detente.jpg"
+ },
+ {
+  "id": "bulles",
+  "num": "4",
+  "titre": "Pas de bulles",
+  "sous": "la ligne liquide",
+  "duree": 35,
+  "video": "chapitre-04-pas-de-bulles.mp4",
+  "affiche": "chapitre-04-pas-de-bulles.jpg"
+ },
+ {
+  "id": "echangeur",
+  "num": "5",
+  "titre": "Le sous-refroidisseur",
+  "sous": "un échangeur à plaques",
+  "duree": 41,
+  "video": "chapitre-05-le-sous-refroidisseur.mp4",
+  "affiche": "chapitre-05-le-sous-refroidisseur.jpg"
+ },
+ {
+  "id": "premierTour",
+  "num": "6",
+  "titre": "Premier tour",
+  "sous": "le liquide principal",
+  "duree": 34,
+  "video": "chapitre-06-premier-tour.mp4",
+  "affiche": "chapitre-06-premier-tour.jpg"
+ },
+ {
+  "id": "lesVis",
+  "num": "7",
+  "titre": "Dans les vis",
+  "sous": "une vapeur arrive",
+  "duree": 39,
+  "video": "chapitre-07-dans-les-vis.mp4",
+  "affiche": "chapitre-07-dans-les-vis.jpg"
+ },
+ {
+  "id": "piquage",
+  "num": "8",
+  "titre": "Second tour",
+  "sous": "je prends le piquage",
+  "duree": 39,
+  "video": "chapitre-08-second-tour.mp4",
+  "affiche": "chapitre-08-second-tour.jpg"
+ },
+ {
+  "id": "ebullition",
+  "num": "9",
+  "titre": "Je bous dans l'échangeur",
+  "sous": "de l'autre côté des plaques",
+  "duree": 35,
+  "video": "chapitre-09-je-bous-dans-l-echangeur.mp4",
+  "affiche": "chapitre-09-je-bous-dans-l-echangeur.jpg"
+ },
+ {
+  "id": "orifice",
+  "num": "10",
+  "titre": "L'orifice économiseur",
+  "sous": "une entrée au milieu",
+  "duree": 40,
+  "video": "chapitre-10-l-orifice-economiseur.mp4",
+  "affiche": "chapitre-10-l-orifice-economiseur.jpg"
+ },
+ {
+  "id": "autres",
+  "num": "11",
+  "titre": "D'autres façons",
+  "sous": "de sous-refroidir",
+  "duree": 53,
+  "video": "chapitre-11-d-autres-facons.mp4",
+  "affiche": "chapitre-11-d-autres-facons.jpg"
+ },
+ {
+  "id": "mesure",
+  "num": "12",
+  "titre": "Ce que l'on mesure",
+  "sous": "l'œil du technicien",
+  "duree": 54,
+  "video": "chapitre-12-ce-que-l-on-mesure.mp4",
+  "affiche": "chapitre-12-ce-que-l-on-mesure.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Le voyage en deux chemins",
+  "sous": "l'essentiel à retenir",
+  "duree": 48,
+  "video": "chapitre-13-le-voyage-en-deux-chemins.mp4",
+  "affiche": "chapitre-13-le-voyage-en-deux-chemins.jpg"
+ }
+]
