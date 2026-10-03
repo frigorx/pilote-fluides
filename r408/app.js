@@ -61,9 +61,9 @@
 
   /* ---------- rendu ---------- */
   const racine = document.getElementById("vue");
-  function rendre(html, titreDoc) {
+  function rendre(html, titreDoc, bandeauDejaPlace) {
     stationArreter(); sta = null;          /* changer de vue coupe la voix */
-    racine.innerHTML = bandeauPrototype + html;
+    racine.innerHTML = (bandeauDejaPlace ? "" : bandeauPrototype) + html;
     document.title = (titreDoc ? titreDoc + " · " : "") + "inerWeb R408";
     const h1 = racine.querySelector("h1");
     if (h1) { h1.setAttribute("tabindex", "-1"); h1.focus({ preventScroll: true }); }
@@ -98,12 +98,39 @@
     "référentiels officiels des diplômes. Les distances et limites applicables sont celles enseignées " +
     "pour l'installation concernée.</p></footer>";
 
+  /* ---------- le réseau : les paliers sont les lignes, les modules leurs stations ----------
+     Franck, 03/10 (même entrée que HoCourant) : l'accueil montre dès l'arrivée le LIVRE et le
+     RÉSEAU, en grand, sans clic ni défilement. Une station ouvre sa fiche ; une station découverte est pleine. */
+  function reseauHtml() {
+    let lignes = "";
+    PALIERS.forEach((p) => {
+      let stations = "";
+      for (const mo of modulesDuPalier(p.id)) {
+        const fait = !!etat.decouvertes[mo.id];
+        stations += '<li><button class="rz-station' + (fait ? " rz-fait" : "") + '" data-fiche="' + mo.id + '">' +
+          '<span class="rz-point" aria-hidden="true"></span><span class="rz-nom">' + seq(mo.nom) + "</span>" +
+          (fait ? '<span class="sr-only"> (découverte)</span>' : "") + "</button></li>";
+      }
+      lignes += '<div class="rz-ligne"><span class="rz-terminus" title="' + seq(p.nom) + '">' + seq(p.sigle) + "</span>" +
+        '<ol class="rz-stations">' + stations + "</ol></div>";
+    });
+    return '<section class="carte rz-carte" aria-labelledby="rz-titre">' +
+      '<h2 id="rz-titre">Le réseau <small>— quatre lignes, de S0 à MO · touchez une station</small></h2>' +
+      '<div class="rz-plan">' + lignes + "</div></section>";
+  }
+
   /* ---------- vue : accueil ---------- */
   function vueAccueil() {
     const m = mission();
     rendre(
       entete(null) +
       "<h1>Se préparer au travail en hauteur</h1>" +
+      '<div class="accueil-ame">' + reseauHtml() +
+      '<a class="carte ame-livre" href="livret/inerWeb.fr-R408-Livret-eleve-A5.pdf" download title="Télécharger le livret (PDF)">' +
+      '<img src="livret/couverture-r408-web.jpg" alt="Couverture du livret R408" width="672" height="955">' +
+      '<span class="ame-livre-texte"><strong>Le livre</strong><span>112 pages · PDF</span>' +
+      '<span class="btn btn-primaire">Télécharger</span></span></a></div>' +
+      bandeauPrototype +
       '<div class="carte accent"><p><strong>Comment ça marche ?</strong> Votre enseignant vous donne un ' +
       "<strong>code de mission</strong> — par exemple <span class=\"badge badge-code\">S0-K7-3M</span> : " +
       "le niveau à obtenir, votre code personnel, la date limite. Vous le saisissez une fois, et l'application " +
@@ -117,17 +144,12 @@
           '<button class="btn btn-secondaire" data-aller="code">Changer de code</button></div></div>'
         : '<div class="btn-ligne"><button class="btn btn-primaire" data-aller="code">J\'ai un code de mission →</button>' +
           '<button class="btn btn-secondaire" data-aller="libre">Découvrir sans code</button></div>') +
-      // Le livret A5 existe (build/livret.mjs, inc. 5) : carte de téléchargement,
-      // sur le modèle simplifié d'HoCourant (pas de couverture image ici).
-      '<div class="carte"><h2>Le livret élève <span class="badge badge-pdf">PDF disponible</span></h2>' +
-      "<p>Le support de cours complet, à imprimer en A5.</p>" +
-      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-R408-Livret-eleve-A5.pdf" download>Le livret élève — PDF</a></div></div>' +
       '<div class="carte"><h2>Espace enseignant</h2>' +
       "<p>Générer les codes d'un groupe, ou lire le code qu'un élève rapporte.</p>" +
       '<div class="btn-ligne"><button class="btn btn-secondaire" data-aller="lot">Générer des codes</button>' +
       '<button class="btn btn-secondaire" data-aller="verif">Vérifier un code</button></div></div>' +
       pied,
-      "Accueil"
+      "Accueil", true
     );
   }
 
