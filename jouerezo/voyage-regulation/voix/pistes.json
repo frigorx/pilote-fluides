@@ -1,0 +1,398 @@
+{
+ "intro-0": {
+  "f": "ddf63b96f687.mp3",
+  "d": 4.344
+ },
+ "intro-1": {
+  "f": "5d815589ba3b.mp3",
+  "d": 6.432
+ },
+ "intro-2": {
+  "f": "25391f3f5160.mp3",
+  "d": 6.216
+ },
+ "intro-3": {
+  "f": "cd9323b44f9c.mp3",
+  "d": 6.552
+ },
+ "intro-4": {
+  "f": "86e1b87a0e12.mp3",
+  "d": 7.32
+ },
+ "intro-5": {
+  "f": "d8f04e8e786c.mp3",
+  "d": 5.856
+ },
+ "intro-6": {
+  "f": "8a5f84d68ee5.mp3",
+  "d": 3.096
+ },
+ "centrale-0": {
+  "f": "94be0b033daa.mp3",
+  "d": 6.864
+ },
+ "centrale-1": {
+  "f": "5b540d1436da.mp3",
+  "d": 4.536
+ },
+ "centrale-2": {
+  "f": "d635d9b734d9.mp3",
+  "d": 5.928
+ },
+ "centrale-3": {
+  "f": "8276a882ebfa.mp3",
+  "d": 7.464
+ },
+ "centrale-4": {
+  "f": "9809f41bbbcc.mp3",
+  "d": 8.568
+ },
+ "centrale-5": {
+  "f": "efc1eeebd8cc.mp3",
+  "d": 8.808
+ },
+ "bilan-0": {
+  "f": "51924b531316.mp3",
+  "d": 4.248
+ },
+ "bilan-1": {
+  "f": "3c9f8e5b8dc1.mp3",
+  "d": 6.48
+ },
+ "bilan-2": {
+  "f": "a093ba9eb314.mp3",
+  "d": 5.88
+ },
+ "bilan-3": {
+  "f": "16882b10d136.mp3",
+  "d": 6.6
+ },
+ "bilan-4": {
+  "f": "12e95d82802f.mp3",
+  "d": 8.52
+ },
+ "bilan-5": {
+  "f": "15138aeb8770.mp3",
+  "d": 7.344
+ },
+ "bilan-6": {
+  "f": "d6cffa9c4c12.mp3",
+  "d": 4.152
+ },
+ "consigne-0": {
+  "f": "00a94c6173c3.mp3",
+  "d": 4.344
+ },
+ "consigne-1": {
+  "f": "88c262199042.mp3",
+  "d": 5.952
+ },
+ "consigne-2": {
+  "f": "702f0d0b7a99.mp3",
+  "d": 2.76
+ },
+ "consigne-3": {
+  "f": "39d9d8a354dc.mp3",
+  "d": 5.52
+ },
+ "consigne-4": {
+  "f": "68469a724e5b.mp3",
+  "d": 4.392
+ },
+ "consigne-5": {
+  "f": "5699defc884b.mp3",
+  "d": 4.488
+ },
+ "zone-0": {
+  "f": "564a3fc108dc.mp3",
+  "d": 8.04
+ },
+ "zone-1": {
+  "f": "da2ed5f2a7ce.mp3",
+  "d": 4.368
+ },
+ "zone-2": {
+  "f": "dd8ba71596b1.mp3",
+  "d": 5.136
+ },
+ "zone-3": {
+  "f": "22d221446924.mp3",
+  "d": 4.728
+ },
+ "zone-4": {
+  "f": "4ee891d097ee.mp3",
+  "d": 9.048
+ },
+ "zone-5": {
+  "f": "eeddc2f1fa43.mp3",
+  "d": 4.08
+ },
+ "zone-6": {
+  "f": "09ea5926a90e.mp3",
+  "d": 7.56
+ },
+ "tempo-0": {
+  "f": "043d26cc57b3.mp3",
+  "d": 5.04
+ },
+ "tempo-1": {
+  "f": "0745b7968543.mp3",
+  "d": 7.752
+ },
+ "tempo-2": {
+  "f": "d240a34215f6.mp3",
+  "d": 4.488
+ },
+ "tempo-3": {
+  "f": "4f92449f34f2.mp3",
+  "d": 5.544
+ },
+ "tempo-4": {
+  "f": "961c330434c9.mp3",
+  "d": 5.856
+ },
+ "tempo-5": {
+  "f": "5124082d7fad.mp3",
+  "d": 7.368
+ },
+ "tempo-6": {
+  "f": "0e2ec23b2d1b.mp3",
+  "d": 7.992
+ },
+ "journee-0": {
+  "f": "527ff68e9302.mp3",
+  "d": 6.36
+ },
+ "journee-1": {
+  "f": "97946fa0406c.mp3",
+  "d": 7.488
+ },
+ "journee-2": {
+  "f": "de722345f6eb.mp3",
+  "d": 6.36
+ },
+ "journee-3": {
+  "f": "b44a1e6718ca.mp3",
+  "d": 7.104
+ },
+ "journee-4": {
+  "f": "d1fd44eb5acc.mp3",
+  "d": 4.392
+ },
+ "journee-5": {
+  "f": "ef616b83059e.mp3",
+  "d": 7.344
+ },
+ "journee-6": {
+  "f": "051987badaeb.mp3",
+  "d": 7.464
+ },
+ "journee-7": {
+  "f": "9c645eb7c373.mp3",
+  "d": 5.832
+ },
+ "permutation-0": {
+  "f": "f89285b36185.mp3",
+  "d": 6.336
+ },
+ "permutation-1": {
+  "f": "3a30336a09eb.mp3",
+  "d": 6.288
+ },
+ "permutation-2": {
+  "f": "2a61d638591f.mp3",
+  "d": 3.768
+ },
+ "permutation-3": {
+  "f": "d51e99104fa1.mp3",
+  "d": 4.128
+ },
+ "permutation-4": {
+  "f": "f6cf699831de.mp3",
+  "d": 6.048
+ },
+ "permutation-5": {
+  "f": "f47b4566b478.mp3",
+  "d": 9.288
+ },
+ "delestage-0": {
+  "f": "62b45412b7be.mp3",
+  "d": 6.792
+ },
+ "delestage-1": {
+  "f": "3a52901e787d.mp3",
+  "d": 8.328
+ },
+ "delestage-2": {
+  "f": "b1196f247b3c.mp3",
+  "d": 4.44
+ },
+ "delestage-3": {
+  "f": "3a8f22d54e87.mp3",
+  "d": 7.488
+ },
+ "delestage-4": {
+  "f": "de520788cc0a.mp3",
+  "d": 7.56
+ },
+ "delestage-5": {
+  "f": "1a91507e9d48.mp3",
+  "d": 5.448
+ },
+ "ventilateurs-0": {
+  "f": "e6dc8d25c0dd.mp3",
+  "d": 6.888
+ },
+ "ventilateurs-1": {
+  "f": "75793554f9a9.mp3",
+  "d": 4.032
+ },
+ "ventilateurs-2": {
+  "f": "326bf2073e8d.mp3",
+  "d": 5.496
+ },
+ "ventilateurs-3": {
+  "f": "429593b1b0bc.mp3",
+  "d": 7.68
+ },
+ "ventilateurs-4": {
+  "f": "48d0c8adef1f.mp3",
+  "d": 8.52
+ },
+ "ventilateurs-5": {
+  "f": "879164cae1e4.mp3",
+  "d": 7.944
+ },
+ "ventilateurs-6": {
+  "f": "3fe88d25f9b7.mp3",
+  "d": 4.656
+ },
+ "hpfixe-0": {
+  "f": "5b67bb48beb9.mp3",
+  "d": 5.04
+ },
+ "hpfixe-1": {
+  "f": "799588f631dc.mp3",
+  "d": 5.496
+ },
+ "hpfixe-2": {
+  "f": "6b262e38c34e.mp3",
+  "d": 5.064
+ },
+ "hpfixe-3": {
+  "f": "d94b4a7e7b46.mp3",
+  "d": 5.784
+ },
+ "hpfixe-4": {
+  "f": "b281a6ab97f8.mp3",
+  "d": 4.344
+ },
+ "hpfixe-5": {
+  "f": "6153da4b0f42.mp3",
+  "d": 6.6
+ },
+ "hpflottante-0": {
+  "f": "3c470e79dd11.mp3",
+  "d": 3.144
+ },
+ "hpflottante-1": {
+  "f": "86e723747baa.mp3",
+  "d": 8.136
+ },
+ "hpflottante-2": {
+  "f": "fdafcebc8d72.mp3",
+  "d": 7.056
+ },
+ "hpflottante-3": {
+  "f": "b4d460aeb9d1.mp3",
+  "d": 4.872
+ },
+ "hpflottante-4": {
+  "f": "39483c480957.mp3",
+  "d": 6.096
+ },
+ "hpflottante-5": {
+  "f": "311187463684.mp3",
+  "d": 6.768
+ },
+ "hpflottante-6": {
+  "f": "98831005bfb9.mp3",
+  "d": 2.76
+ },
+ "plancher-0": {
+  "f": "5460e6dadf10.mp3",
+  "d": 3.168
+ },
+ "plancher-1": {
+  "f": "387f972b8b31.mp3",
+  "d": 7.44
+ },
+ "plancher-2": {
+  "f": "0113bb328c98.mp3",
+  "d": 7.08
+ },
+ "plancher-3": {
+  "f": "54e7703f8c1b.mp3",
+  "d": 8.856
+ },
+ "plancher-4": {
+  "f": "8db3f13b4085.mp3",
+  "d": 6.984
+ },
+ "plancher-5": {
+  "f": "d60caeeb17db.mp3",
+  "d": 7.8
+ },
+ "ecran-0": {
+  "f": "c7c6b4312f2b.mp3",
+  "d": 4.584
+ },
+ "ecran-1": {
+  "f": "726ea965c7a3.mp3",
+  "d": 6.552
+ },
+ "ecran-2": {
+  "f": "04a1e6b4a88c.mp3",
+  "d": 6.456
+ },
+ "ecran-3": {
+  "f": "09fd512e0c5e.mp3",
+  "d": 7.416
+ },
+ "ecran-4": {
+  "f": "6ab4591e88f4.mp3",
+  "d": 7.68
+ },
+ "ecran-5": {
+  "f": "e087b21d8e6d.mp3",
+  "d": 5.712
+ },
+ "resume-0": {
+  "f": "638e18c13a5a.mp3",
+  "d": 2.496
+ },
+ "resume-1": {
+  "f": "a9300ecc2f86.mp3",
+  "d": 4.2
+ },
+ "resume-2": {
+  "f": "de3191ae2fb4.mp3",
+  "d": 8.04
+ },
+ "resume-3": {
+  "f": "dfd947e14cb5.mp3",
+  "d": 5.208
+ },
+ "resume-4": {
+  "f": "24ec4ba850cc.mp3",
+  "d": 3.624
+ },
+ "resume-5": {
+  "f": "094910c94a07.mp3",
+  "d": 6.096
+ },
+ "resume-6": {
+  "f": "cccd51889484.mp3",
+  "d": 3.912
+ }
+}

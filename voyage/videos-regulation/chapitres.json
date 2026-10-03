@@ -1,0 +1,137 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "dans le cerveau d'une centrale",
+  "duree": 48,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "centrale",
+  "num": "1",
+  "titre": "Quatre compresseurs",
+  "sous": "deux capteurs, un régulateur",
+  "duree": 47,
+  "video": "chapitre-01-quatre-compresseurs.mp4",
+  "affiche": "chapitre-01-quatre-compresseurs.jpg"
+ },
+ {
+  "id": "bilan",
+  "num": "2",
+  "titre": "Pourquoi la basse pression bouge",
+  "sous": "la vapeur qui arrive, la vapeur qui part",
+  "duree": 49,
+  "video": "chapitre-02-pourquoi-la-basse-pression-bouge.mp4",
+  "affiche": "chapitre-02-pourquoi-la-basse-pression-bouge.jpg"
+ },
+ {
+  "id": "consigne",
+  "num": "3",
+  "titre": "La consigne",
+  "sous": "la basse pression que l'on veut tenir",
+  "duree": 33,
+  "video": "chapitre-03-la-consigne.mp4",
+  "affiche": "chapitre-03-la-consigne.jpg"
+ },
+ {
+  "id": "zone",
+  "num": "4",
+  "titre": "La zone neutre",
+  "sous": "la bande où l'on ne touche à rien",
+  "duree": 48,
+  "video": "chapitre-04-la-zone-neutre.mp4",
+  "affiche": "chapitre-04-la-zone-neutre.jpg"
+ },
+ {
+  "id": "tempo",
+  "num": "5",
+  "titre": "Les temporisations",
+  "sous": "attendre avant d'agir",
+  "duree": 50,
+  "video": "chapitre-05-les-temporisations.mp4",
+  "affiche": "chapitre-05-les-temporisations.jpg"
+ },
+ {
+  "id": "journee",
+  "num": "6",
+  "titre": "Une journée au rayon frais",
+  "sous": "un de plus, un de moins",
+  "duree": 58,
+  "video": "chapitre-06-une-journee-au-rayon-frais.mp4",
+  "affiche": "chapitre-06-une-journee-au-rayon-frais.jpg"
+ },
+ {
+  "id": "permutation",
+  "num": "7",
+  "titre": "Chacun son tour",
+  "sous": "la permutation des compresseurs",
+  "duree": 41,
+  "video": "chapitre-07-chacun-son-tour.mp4",
+  "affiche": "chapitre-07-chacun-son-tour.jpg"
+ },
+ {
+  "id": "delestage",
+  "num": "8",
+  "titre": "Le garde-fou",
+  "sous": "quand la basse pression tombe trop bas",
+  "duree": 45,
+  "video": "chapitre-08-le-garde-fou.mp4",
+  "affiche": "chapitre-08-le-garde-fou.jpg"
+ },
+ {
+  "id": "ventilateurs",
+  "num": "9",
+  "titre": "Les ventilateurs du condenseur",
+  "sous": "la haute pression régulée",
+  "duree": 51,
+  "video": "chapitre-09-les-ventilateurs-du-condenseur.mp4",
+  "affiche": "chapitre-09-les-ventilateurs-du-condenseur.jpg"
+ },
+ {
+  "id": "hpfixe",
+  "num": "10",
+  "titre": "La haute pression fixe",
+  "sous": "l'hiver, de l'énergie perdue",
+  "duree": 37,
+  "video": "chapitre-10-la-haute-pression-fixe.mp4",
+  "affiche": "chapitre-10-la-haute-pression-fixe.jpg"
+ },
+ {
+  "id": "hpflottante",
+  "num": "11",
+  "titre": "La haute pression flottante",
+  "sous": "elle suit l'air du dehors",
+  "duree": 44,
+  "video": "chapitre-11-la-haute-pression-flottante.mp4",
+  "affiche": "chapitre-11-la-haute-pression-flottante.jpg"
+ },
+ {
+  "id": "plancher",
+  "num": "12",
+  "titre": "Le plancher",
+  "sous": "la limite basse de la haute pression",
+  "duree": 46,
+  "video": "chapitre-12-le-plancher.mp4",
+  "affiche": "chapitre-12-le-plancher.jpg"
+ },
+ {
+  "id": "ecran",
+  "num": "13",
+  "titre": "L'écran du régulateur",
+  "sous": "ce que lit le technicien",
+  "duree": 43,
+  "video": "chapitre-13-l-ecran-du-regulateur.mp4",
+  "affiche": "chapitre-13-l-ecran-du-regulateur.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "La régulation en un tour",
+  "sous": "l'essentiel à retenir",
+  "duree": 48,
+  "video": "chapitre-14-la-regulation-en-un-tour.mp4",
+  "affiche": "chapitre-14-la-regulation-en-un-tour.jpg"
+ }
+]
