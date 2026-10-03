@@ -1,7 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Icône d'onglet du site : le flocon de la marque sur le bleu charte.
-       Référencée par les pages racine ; favicon.ico (même dessin, 16-48 px)
-       répond aux navigateurs qui le réclament d'office (30/09/2026). -->
-  <rect width="64" height="64" rx="14" fill="#1b3a63"/>
-  <text x="32" y="44" font-size="34" text-anchor="middle">❄️</text>
+  <!-- Icône d'onglet du site : « iW » blanc sur le cartouche orange du logo
+       (#e8914a, charte § 3.4). Plus de flocon depuis le 03/10/2026 : celui-ci
+       se confondait dans Google avec frigotechpro.com (même flocon, même bleu).
+       Lettres tracées, sans police : le rendu est le même sur tous les écrans.
+       favicon.ico et icones/*.png reprennent ce dessin. -->
+  <rect width="64" height="64" rx="14" fill="#e8914a"/>
+  <g fill="#fff" transform="translate(-2.4 -0.6)"><rect x="9" y="27" width="8" height="24" rx="1.5"/><circle cx="13" cy="17.5" r="5"/><polyline points="23,26 30.5,49 39.5,31 48.5,49 56,26" fill="none" stroke="#fff" stroke-width="7.5" stroke-linejoin="round" stroke-linecap="round"/></g>
 </svg>
