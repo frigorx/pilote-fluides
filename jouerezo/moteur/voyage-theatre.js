@@ -17,7 +17,7 @@
 (function () {
   "use strict";
   const D = window.VOYAGE_DESSIN;
-  const ECART = 0.45, DEBUT = 1.2, DEBUT_INTRO = 4.2, FIN_SCENE = 1.6, FIN = 6;
+  const ECART = 0.45, DEBUT = 1.2, DEBUT_INTRO = 4.2, FIN_SCENE = 1.6, FIN = 9; // carte de fin : 9 s pour lire
   const COUL = { BP: D.BLEU, HP: D.ORANGE, froid: "#2f6fb8", chaud: "#c0392b", fuite: "#c0392b", recup: "#1e7e54", liq: "#2f6fb8" };
 
   function horaire(s, pistes) {
@@ -144,7 +144,7 @@
         D.heroine(scene, { r: 40 })({ x: 800, y: 445, t: 1, humeur: "sourire", etat: "liquide", temp: 0.1 });
         D.texte(scene, 800, 548, "Tout le voyage, gratuit : inerweb.fr", { "text-anchor": "middle", "font-size": 44, "font-weight": 700, fill: D.BLEU, "font-family": "Trebuchet MS, Arial, sans-serif" });
         D.signature(scene, 800, 582, 1100);
-        D.lignes(scene, 800, 735, couper(R.credit, 165), { "text-anchor": "middle", "font-size": 18, fill: "#3b4a5e", "font-family": "Calibri, Arial, sans-serif" }, 22);
+        D.texte(scene, 800, 750, R.creditCourt, { "text-anchor": "middle", "font-size": 27, "font-weight": 600, fill: "#3b4a5e", "font-family": "Calibri, Arial, sans-serif" });
         if (sousTitre) sousTitre.innerHTML = "";
         derniereLigne = "";
       }

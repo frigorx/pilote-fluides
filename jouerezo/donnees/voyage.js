@@ -33,7 +33,10 @@ window.VOYAGE_RECIT = {
      le remplace). Le jour venu : logoLycee: "voyage/logos/logo-lycee-jacques-raynaud.png" (fichier à recopier depuis
      progression-2a-cap-ifca/logos/), puis node outils/voyage-film.mjs et refaire les rendus. */
   logoLycee: "",
-  credit: "L'idée de ce parcours vient du souvenir de lecture de « Voyage extraordinaire avec une molécule de R 12 : roman frigorifique », d'André Delalande. Conception pédagogique : F. Henninot — inerWeb. Texte, dessins et animation réalisés avec l'assistance d'une intelligence artificielle ; voix de synthèse. Symboles d'après la planche Éduscol « Le circuit frigorifique » et la collection QElectroTech (CC BY 3.0). Licence CC BY-NC-ND.",
+  /* fin du film : une mention COURTE et lisible (relecture du 03/10) ; le crédit complet va dans la description
+     (node outils/voyage-film.mjs --description) et reste en entier dans le module et le livret */
+  creditCourt: "D'après une idée d'André Delalande · inerWeb — F. Henninot, avec l'aide d'une IA · voix de synthèse · CC BY-NC-ND",
+  credit: "L'idée de ce parcours vient du souvenir de lecture de « Voyage extraordinaire avec une molécule de Fréon 12 : roman frigorifique », d'André Delalande (1946). Conception pédagogique : F. Henninot — inerWeb. Texte, dessins et animation réalisés avec l'assistance d'une intelligence artificielle ; voix de synthèse. Symboles d'après la planche Éduscol « Le circuit frigorifique » et la collection QElectroTech (CC BY 3.0). Licence CC BY-NC-ND.",
   scenes: [
     { id: "intro", num: "", titre: "Mon voyage", sous: "un circuit fermé", carte: null,
       phrases: [
