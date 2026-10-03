@@ -3,8 +3,12 @@
    ---------------------------------------------------------------------
    RÔLE : jouer les chapitres l'un après l'autre (voix phrase par phrase,
    sous-titre sous l'image), poser la question du chapitre, compter les
-   bonnes réponses du premier coup, finir par le panneau commun de
-   JouéRézo (code de partie). Sans son, tout reste lisible au même rythme.
+   bonnes réponses du premier coup, finir par son propre panneau (code
+   pour l'enseignant). Sans son, tout reste lisible au même rythme.
+   C'est un MODULE DE FORMATION, pas un jeu (Franck, 03/10 : « ne pas
+   mélanger les genres ») : barre et fin à lui, rien de JouéRézo à l'écran.
+   En ligne : inerweb.fr/voyage/module.html (outils/livrer-voyage.mjs), qui
+   pose window.VOYAGE_BASE = "../jouerezo/" (voix, symboles).
    ENTRÉES : window.VOYAGE_RECIT, voyage/voix/pistes.json, les symboles
    des organes (voyage/symboles/, chargés par les scènes).
    MODE IMAGE : ?image=<scène>&k=<phrase>&f=<0..1> (ou &t=<s>) rend une
@@ -18,9 +22,10 @@
   window.JR_JEUX = window.JR_JEUX || {};
   window.JR_JEUX.voyage = { nom: R.titre, lettre: "V", emoji: "🧳" };
   const ecrit = p => Array.isArray(p) ? p[0] : p;
+  const BASE = window.VOYAGE_BASE || "";
 
   async function charger() {
-    return { pistes: await fetch("voyage/voix/pistes.json").then(r => r.json()) };
+    return { pistes: await fetch(BASE + "voyage/voix/pistes.json").then(r => r.json()) };
   }
 
   function modeImage(res) {
@@ -44,7 +49,9 @@
   }
 
   function lecteur(res) {
-    JR.enTete(R.titre);
+    const haut = document.getElementById("haut"); // la barre d'un module de formation inerweb.fr, pas celle des jeux
+    haut.className = "haut";
+    haut.innerHTML = '<a href="../">← inerweb.fr</a><span>' + JR.esc(R.titre) + '</span><a href="../voyage/">Le film</a>';
     const main = document.getElementById("jeu");
     main.innerHTML =
       '<section class="vy">' +
@@ -83,7 +90,7 @@
       if (!voix || k < 0) return;
       const h = th.scenes[i], dans = t - h.T[k];
       if (dans < 0 || t > h.E[k]) return;
-      audio.src = "voyage/voix/" + res.pistes[R.scenes[i].id + "-" + k].f;
+      audio.src = BASE + "voyage/voix/" + res.pistes[R.scenes[i].id + "-" + k].f;
       audio.currentTime = depuis ? dans : 0;
       audio.play().catch(() => {});
     }
@@ -135,8 +142,17 @@
           if (i < R.scenes.length - 1) { aller(i + 1); return; }
           const total = R.scenes.filter(x => x.question).length, score = Object.values(reponses).filter(Boolean).length;
           audio.pause(); fini = true;
-          JR.fin({ jeu: "voyage", theme: { id: "etats", nom: "", portes: R.portes }, score: score, total: total, unite: "du premier coup",
-            texte: "Vous avez fait le tour complet du circuit, et même au-delà.", rejouer: () => location.reload() });
+          main.innerHTML = '<section class="carte fin" aria-live="polite"><h2 tabindex="-1">Fin du voyage</h2>' +
+            '<p class="score">' + score + ' / ' + total + ' du premier coup</p>' +
+            '<p>Vous avez fait le tour complet du circuit, et même au-delà.</p>' +
+            '<p>Code à donner à votre enseignant : <span class="code">' + JR.code("voyage", "etats", score, total) + '</span></p>' +
+            '<h3>Pour aller plus loin</h3><ul class="portes">' + R.portes.map(p => '<li><a href="' + JR.esc(p.h) + '">' + JR.esc(p.t) + '</a></li>').join("") + '</ul>' +
+            '<div class="actions"><button type="button" class="btn vy-refaire">Refaire le voyage</button>' +
+            '<a class="btn sec" href="../voyage/">Le film</a>' +
+            '<a class="btn sec" href="../voyage/voyage-dans-tous-ses-etats.pdf">Le livret (PDF)</a></div></section>';
+          main.querySelector(".vy-refaire").addEventListener("click", () => location.reload());
+          main.querySelector("h2").focus();
+          JR.sons.fin();
         });
         z.querySelector(".vy-continuer").focus();
       }));

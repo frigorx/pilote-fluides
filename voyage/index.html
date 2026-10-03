@@ -20,7 +20,8 @@
        node outils/voyage-film.mjs --chapitres <film-final.mp4> <ce-dossier>/videos
      (treize chapitres 16:9, une affiche chacun, chapitres.json, et film-complet.mp4 :
      le film INTÉGRAL d'un seul fichier, lu par défaut — Franck, 03/10).
-     La version interactive et le livret vivent dans jouerezo/ (voyage.html, voyage/livret/).
+     Le module de formation (module.html) et le livret (PDF) sont écrits ici par outils/livrer-voyage.mjs de l'atelier ;
+     ses moteurs, voix et symboles restent servis depuis jouerezo/ (invisible pour le visiteur).
      =================================================================== -->
 <style>
   :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
@@ -71,7 +72,6 @@
     <a href="../">← inerweb.fr</a>
     <a href="../plan.html">Plan des réseaux</a>
     <a href="../quartier/">Le quartier technique</a>
-    <a href="../jouerezo/">JouéRézo</a>
   </nav>
 
   <header>
@@ -97,8 +97,8 @@
   </main>
 
   <section class="portes" aria-label="Les autres portes">
-    <div class="carte"><h2>🧩 La version interactive</h2><p>Le même voyage, chapitre par chapitre, avec une question à chaque organe et un code de partie à rendre à l'enseignant.</p><p><a class="btn sec" href="../jouerezo/voyage.html">Ouvrir le voyage interactif</a></p></div>
-    <div class="carte"><h2>📄 Le livret A5</h2><p>28 pages à imprimer : pour chaque organe, son symbole, ce que raconte la molécule, deux images et une question ; un QR code mène à chaque épisode interactif.</p><p><a class="btn sec" href="../jouerezo/voyage/livret/voyage-dans-tous-ses-etats.pdf">Télécharger le livret (PDF)</a></p></div>
+    <div class="carte"><h2>🧩 La version interactive</h2><p>Le même voyage, chapitre par chapitre, avec une question à chaque organe et un code à rendre à l'enseignant.</p><p><a class="btn sec" href="module.html">Ouvrir le voyage interactif</a></p></div>
+    <div class="carte"><h2>📄 Le livret A5</h2><p>28 pages à imprimer : pour chaque organe, son symbole, ce que raconte la molécule, deux images et une question ; un QR code mène à chaque épisode interactif.</p><p><a class="btn sec" href="voyage-dans-tous-ses-etats.pdf">Télécharger le livret (PDF)</a></p></div>
     <div class="carte"><h2>Pour l'enseignant</h2><p>Une porte d'entrée dans le circuit frigorifique, pour toutes les formations du froid et de la climatisation. Le film se regarde d'un trait, ou en trois temps avec une question entre chacun : les organes principaux (1 à 3), la ligne liquide et le détendeur (4 à 8), puis la fuite, la récupération et les fluides. Il ouvre le sujet : il ne remplace ni le cours ni les travaux pratiques.</p><p>Les sous-titres sont dans l'image : le film se passe aussi sans le son.</p></div>
   </section>
 
@@ -117,7 +117,7 @@
         '<button type="button" class="vignette" data-i="' + i + '" aria-label="Voir seulement l\'épisode ' + i + ' : ' + esc(c.titre) + '">' +
         '<img src="videos/' + esc(c.affiche) + '" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span><span class="duree">' + mmss(c.duree) + '</span></button>' +
         '<label><input type="checkbox" data-i="' + i + '" checked><span><b>Épisode ' + i + '</b> · ' + esc(c.titre) + '</span></label>' +
-        '<p class="quoi">' + esc(c.sous) + ' · <a class="interactif" href="../jouerezo/voyage.html?c=' + esc(c.id) + '">version interactive</a></p></li>';
+        '<p class="quoi">' + esc(c.sous) + ' · <a class="interactif" href="module.html?c=' + esc(c.id) + '">version interactive</a></p></li>';
     }).join("");
     var total = chap.reduce(function (a, c) { return a + c.duree; }, 0);
     document.getElementById("tout").textContent = "▶ Le film en entier (" + mmss(total) + ")";

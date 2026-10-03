@@ -297,7 +297,7 @@
      Pas de photos (Franck, 03/10) : le dessin, c'est la coupe animée ; le symbole, c'est ce que l'élève
      retrouvera sur les schémas. vb = viewBox du SVG ; axe = le point du symbole posé sur le tuyau (milieu
      de ses raccordements), pour que la carte du circuit le pose dans le sens du fluide. */
-  D.SYM = window.VOYAGE_SYM || "voyage/symboles/";
+  D.SYM = window.VOYAGE_SYM || (window.VOYAGE_BASE || "") + "voyage/symboles/";
   D.ORGANES = {
     evaporateur: { f: "echangeur_a_air_eduscol", vb: [-22, -32, 44, 64], axe: [10, 0], nom: "évaporateur" },
     compresseur: { f: "compresseur_general", vb: [-24, -20, 50, 40], axe: [0, 0], nom: "compresseur" },
