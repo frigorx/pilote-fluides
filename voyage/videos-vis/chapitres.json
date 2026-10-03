@@ -1,0 +1,119 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "dans un compresseur à vis",
+  "duree": 50,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "aspiration",
+  "num": "1",
+  "titre": "L'aspiration",
+  "sous": "le filtre et le moteur",
+  "duree": 41,
+  "video": "chapitre-01-l-aspiration.mp4",
+  "affiche": "chapitre-01-l-aspiration.jpg"
+ },
+ {
+  "id": "vis",
+  "num": "2",
+  "titre": "Les deux vis",
+  "sous": "un mâle et une femelle",
+  "duree": 42,
+  "video": "chapitre-02-les-deux-vis.mp4",
+  "affiche": "chapitre-02-les-deux-vis.jpg"
+ },
+ {
+  "id": "enfermee",
+  "num": "3",
+  "titre": "Je suis enfermée",
+  "sous": "l'alvéole se ferme",
+  "duree": 28,
+  "video": "chapitre-03-je-suis-enfermee.mp4",
+  "affiche": "chapitre-03-je-suis-enfermee.jpg"
+ },
+ {
+  "id": "compression",
+  "num": "4",
+  "titre": "La compression",
+  "sous": "l'alvéole rétrécit",
+  "duree": 36,
+  "video": "chapitre-04-la-compression.mp4",
+  "affiche": "chapitre-04-la-compression.jpg"
+ },
+ {
+  "id": "huile",
+  "num": "5",
+  "titre": "L'huile injectée",
+  "sous": "trois métiers",
+  "duree": 45,
+  "video": "chapitre-05-l-huile-injectee.mp4",
+  "affiche": "chapitre-05-l-huile-injectee.jpg"
+ },
+ {
+  "id": "refoulement",
+  "num": "6",
+  "titre": "Le refoulement",
+  "sous": "la fenêtre de sortie",
+  "duree": 40,
+  "video": "chapitre-06-le-refoulement.mp4",
+  "affiche": "chapitre-06-le-refoulement.jpg"
+ },
+ {
+  "id": "tiroir",
+  "num": "7",
+  "titre": "Le tiroir",
+  "sous": "régler la puissance",
+  "duree": 45,
+  "video": "chapitre-07-le-tiroir.mp4",
+  "affiche": "chapitre-07-le-tiroir.jpg"
+ },
+ {
+  "id": "separateur",
+  "num": "8",
+  "titre": "Le séparateur d'huile",
+  "sous": "chacun son chemin",
+  "duree": 51,
+  "video": "chapitre-08-le-separateur-d-huile.mp4",
+  "affiche": "chapitre-08-le-separateur-d-huile.jpg"
+ },
+ {
+  "id": "economiseur",
+  "num": "9",
+  "titre": "Une porte de plus",
+  "sous": "l'économiseur",
+  "duree": 48,
+  "video": "chapitre-09-une-porte-de-plus.mp4",
+  "affiche": "chapitre-09-une-porte-de-plus.jpg"
+ },
+ {
+  "id": "arret",
+  "num": "10",
+  "titre": "À l'arrêt",
+  "sous": "jamais à l'envers",
+  "duree": 33,
+  "video": "chapitre-10-a-l-arret.mp4",
+  "affiche": "chapitre-10-a-l-arret.jpg"
+ },
+ {
+  "id": "surveillance",
+  "num": "11",
+  "titre": "Ce que l'on surveille",
+  "sous": "l'œil du technicien",
+  "duree": 39,
+  "video": "chapitre-11-ce-que-l-on-surveille.mp4",
+  "affiche": "chapitre-11-ce-que-l-on-surveille.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Le voyage en quatre temps",
+  "sous": "l'essentiel à retenir",
+  "duree": 46,
+  "video": "chapitre-12-le-voyage-en-quatre-temps.mp4",
+  "affiche": "chapitre-12-le-voyage-en-quatre-temps.jpg"
+ }
+]

@@ -30,6 +30,14 @@ const INDEXEES = [
   { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
   { fichier: "quartier/index.html", url: "https://inerweb.fr/quartier/" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
+  // inerWeb Studio (03/10/2026) : la salle des films et la station de chaque film.
+  // Les modules interactifs (voyage/module*.html) restent noindex : ils sont la version
+  // interactive du même contenu, la station du film est la page d'atterrissage.
+  { fichier: "studio/index.html", url: "https://inerweb.fr/studio/" },
+  { fichier: "voyage/index.html", url: "https://inerweb.fr/voyage/" },
+  { fichier: "voyage/co2.html", url: "https://inerweb.fr/voyage/co2.html" },
+  { fichier: "voyage/nh3.html", url: "https://inerweb.fr/voyage/nh3.html" },
+  { fichier: "voyage/vis.html", url: "https://inerweb.fr/voyage/vis.html" },
   {
     fichier: "packs/fluides/res/chaleur-interactive/index.html",
     url: "https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html",

@@ -393,6 +393,49 @@ for (const app of [
   });
 }
 
+/* --- inerWeb Studio : les films et leurs versions interactives ----------
+   03/10/2026 : les pages de voyage/ (station de chaque film, module de
+   formation) et la salle studio/ n'étaient relevées par rien — l'indexeur
+   vide puis remplit la couche, une publication effaçait ce qu'une session
+   avait indexé à la main. Désormais relevées ici, comme les stations.
+   Écartés : les dossiers de vidéos et le PDF (pas des pages). */
+for (const f of (fs.existsSync(path.join(ROOT, 'voyage')) ? fs.readdirSync(path.join(ROOT, 'voyage')) : [])
+  .filter((x) => x.endsWith('.html')).sort()) {
+  const html = lire(path.join(ROOT, 'voyage', f)) || '';
+  ajouter({
+    reseau: 'inerWeb Studio',
+    id: 'voyage/' + f.replace(/\.html$/, ''),
+    titre: titreHtml(html),
+    resume: descriptionHtml(html) || phrase(premierParagraphe(html)),
+    chemin: 'voyage/' + (f === 'index.html' ? '' : f),
+  });
+}
+{
+  const html = lire(path.join(ROOT, 'studio/index.html'));
+  if (html) ajouter({ reseau: 'inerWeb Studio', id: 'studio', titre: titreHtml(html),
+    resume: descriptionHtml(html) || phrase(premierParagraphe(html)), chemin: 'studio/' });
+}
+
+/* --- Les autres applications du site (03/10/2026) ----------------------
+   JouéRézo, SimuRézo, le quartier et RézoTools : une page d'entrée chacun,
+   indexée comme AquiBlue et HoCourant ci-dessus. */
+for (const app of [
+  { id: 'jouerezo', chemin: 'jouerezo/', titre: 'JouéRézo' },
+  { id: 'simurezo', chemin: 'simurezo/', titre: 'SimuRézo' },
+  { id: 'quartier', chemin: 'quartier/', titre: 'Le quartier technique' },
+  { id: 'rezotools', chemin: 'rezotools/', titre: 'RézoTools' },
+]) {
+  const html = lire(path.join(ROOT, app.chemin, 'index.html'));
+  if (!html) continue;
+  ajouter({
+    reseau: 'Applications',
+    id: app.id,
+    titre: titreHtml(html) || app.titre,
+    resume: descriptionHtml(html) || phrase(premierParagraphe(html)),
+    chemin: app.chemin,
+  });
+}
+
 /* --- Les pages du site ------------------------------------------------
    « L'intégralité des stations ET du projet », demande du 15/09/2026. Une
    page qui n'a ni description ni paragraphe de 60 caractères est une page

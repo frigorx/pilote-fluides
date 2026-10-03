@@ -261,15 +261,16 @@ window.INERWEB_RESEAUX = [
     emoji: "🎬",
     adresse: "studio/index.html",
     couleur: "#be185d" /* le cinéma du quartier (quartier/index.html, app-cinema) */,
-    sousTitre: "Tous les films du site dans une seule salle : le Voyage dans tous ses états et ses éditions à l’ammoniac et au CO₂, les onze films de la régulation, l’effet de serre et la couche d’ozone. Chaque film mène à son cours.",
+    sousTitre: "Tous les films du site dans une seule salle : le Voyage dans tous ses états, ses éditions à l’ammoniac et au CO₂, ses éditions « machines et régulations » (le compresseur à vis…), les onze films de la régulation, l’effet de serre et la couche d’ozone. Chaque film mène à son cours.",
     niveaux: "tous niveaux",
     etat: "",
     catalogue: [],
-    chiffres: "16 films",
+    chiffres: "17 films",
     points: 3,
     vignette: "voyage/videos/chapitre-00-mon-voyage.jpg",
     entree: { titre: "Voyage dans tous ses états", href: "voyage/index.html" },
     raccourcis: [
+      { titre: "Les éditions du Voyage", href: "studio/index.html#t-editions" },
       { titre: "La régulation en films", href: "studio/index.html#t-regules" },
       { titre: "Effet de serre et ozone", href: "studio/index.html#t-climat" }
     ]

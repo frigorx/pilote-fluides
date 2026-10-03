@@ -39,7 +39,9 @@
     D.defs(svg);
     D.el("rect", { width: 1600, height: H, fill: D.CREME }, svg);
     if (o.film) D.filigrane(svg, [[800, 450], [330, 225], [1270, 680]], 380); // la vidéo seulement, pas le module
-    const scene = D.el("g", {}, svg), vitrine = D.el("g", {}, svg), haut = D.el("g", {}, svg), carte = D.el("g", {}, svg), bas = D.el("g", {}, svg);
+    const scene = D.el("g", {}, svg), vitrine = D.el("g", {}, svg), haut = D.el("g", {}, svg), carte = D.el("g", {}, svg), bas = D.el("g", {}, svg), dia = D.el("g", {}, svg);
+    // écran partagé (Franck, 03/10) : une édition qui charge window.VOYAGE_DIAGRAMME montre son cycle sur le diagramme enthalpique (moteur/voyage-diagramme.js)
+    const diag = window.VOYAGE_DIAGRAMME && D.diagramme ? D.diagramme(dia, window.VOYAGE_DIAGRAMME) : null, VC = D.VITRINE_C || [710, 425];
     const scenes = R.scenes.map(s => horaire(s, o.pistes));
     let courant = -1, maj = null, mini = null, majMini = null, sousTitre = null, vue = null, finVue = 0;
 
@@ -105,7 +107,7 @@
       if (vue) { // la vitrine grossit puis s'efface : on entre dans l'organe
         dedans = D.lisse((t - finVue + 0.2) / 0.9);
         const z = 1 + 0.04 * D.borne(t / finVue, 0, 1) + 0.8 * dedans;
-        vue.setAttribute("transform", "translate(710 425) scale(" + z.toFixed(3) + ") translate(-710 -425)");
+        vue.setAttribute("transform", "translate(" + VC[0] + " " + VC[1] + ") scale(" + z.toFixed(3) + ") translate(" + (-VC[0]) + " " + (-VC[1]) + ")");
         vitrine.setAttribute("opacity", (fondu * (1 - dedans)).toFixed(3));
       }
       scene.setAttribute("opacity", (fondu * (vue ? 0.22 + 0.78 * dedans : 1)).toFixed(3));
@@ -114,6 +116,15 @@
         const w = r.carte !== undefined && t > finVue ? r.carte : s.carte[0] + (s.carte[1] - s.carte[0]) * (t > finVue ? D.lisse((t - finVue) / (h.D - finVue)) : 0);
         const [x, y] = mini.ecran(...D.circuitPoint(w));
         majMini({ x: x, y: y, s: 0.6, t: t, temp: r.temp, etat: r.etat, humeur: r.humeur });
+      }
+      if (diag) { // le point de la molécule sur le diagramme : r.diag (la scène) ou s.diag (le récit), comme la carte
+        dia.setAttribute("opacity", o.nu ? 0 : 1);
+        const avance = t > finVue ? D.lisse((t - finVue) / (h.D - finVue)) : 0;
+        const w = r.diag !== undefined ? r.diag : s.diag ? s.diag[0] + (s.diag[1] - s.diag[0]) * avance : null;
+        const w0 = r.diag !== undefined ? (r.diag0 !== undefined ? r.diag0 : null) : s.diag ? s.diag[0] : null;
+        const vus = r.calques || {};
+        if (!r.calques) for (const id in (s.calques || {})) vus[id] = t >= h.T[s.calques[id]] - 0.15;
+        diag.maj(w0, w, vus, { t: t, temp: r.temp, etat: r.etat, humeur: r.humeur });
       }
       if (sousTitre) {
         let k = -1;
@@ -140,6 +151,7 @@
       if (!finPosee) { // carte de fin
         finPosee = true; courant = -1;
         [scene, vitrine, haut, carte].forEach(g => { g.innerHTML = ""; g.setAttribute("opacity", 1); });
+        dia.setAttribute("opacity", 0);
         D.texte(scene, 800, 300, R.titre, { "text-anchor": "middle", "font-size": 76, "font-weight": 700, fill: D.BLEU, "font-family": "Trebuchet MS, Arial, sans-serif" });
         D.texte(scene, 800, 370, R.sousTitre, { "text-anchor": "middle", "font-size": 38, fill: D.ORANGE, "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" });
         D.heroine(scene, { r: 40 })({ x: 800, y: 445, t: 1, humeur: "sourire", etat: "liquide", temp: 0.1 });

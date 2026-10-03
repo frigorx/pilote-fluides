@@ -24,7 +24,7 @@
   const ecrit = p => Array.isArray(p) ? p[0] : p;
   const BASE = window.VOYAGE_BASE || "";
   const VOIX = BASE + (R.dossier || "voyage") + "/voix/"; // une édition (NH₃, CO₂) a ses voix dans son dossier
-  const FILM = R.film || "../voyage/", LIVRET = R.livret || "../voyage/voyage-dans-tous-ses-etats.pdf"; // station du film et livret de l'édition
+  const FILM = R.film || "../voyage/", LIVRET = R.livret === undefined ? "../voyage/voyage-dans-tous-ses-etats.pdf" : R.livret; // station du film et livret de l'édition ("" : pas de livret)
 
   async function charger() {
     return { pistes: await fetch(VOIX + "pistes.json").then(r => r.json()) };
@@ -151,7 +151,7 @@
             '<h3>Pour aller plus loin</h3><ul class="portes">' + R.portes.map(p => '<li><a href="' + JR.esc(p.h) + '">' + JR.esc(p.t) + '</a></li>').join("") + '</ul>' +
             '<div class="actions"><button type="button" class="btn vy-refaire">Refaire le voyage</button>' +
             '<a class="btn sec" href="' + FILM + '">Le film</a>' +
-            '<a class="btn sec" href="' + LIVRET + '">Le livret (PDF)</a></div></section>';
+            (LIVRET ? '<a class="btn sec" href="' + LIVRET + '">Le livret (PDF)</a>' : "") + '</div></section>';
           main.querySelector(".vy-refaire").addEventListener("click", () => location.reload());
           main.querySelector("h2").focus();
           JR.sons.fin();

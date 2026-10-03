@@ -22,21 +22,28 @@
 
   function creer(svg, o) {
     const R = o.recit;
+    /* écran partagé (édition vis, 03/10) : la scène tient dans x < 965. Franck : « côte à côte, pas l'une au-dessus de
+       l'autre » → en haut, la scène (à 0,56, x 0 → 540) et le diagramme (à 0,88, x 548 → 1072) côte à côte ; dessous, le
+       sous-titre ; en bas, la carte du circuit comme d'habitude */
+    const DIAG = window.VOYAGE_DIAGRAMME && D.diagramme ? window.VOYAGE_DIAGRAMME : null, KS = DIAG ? 0.56 : K, VC = D.VITRINE_C || [710, 425];
     svg.setAttribute("viewBox", "0 0 1080 1920");
     svg.innerHTML = "";
     D.defs(svg);
     D.el("rect", { width: 1080, height: 1920, fill: D.CREME }, svg);
     const cid = "vm-cadre-v";
-    D.el("rect", { x: 0, y: Y0 - 8, width: 1080, height: 630 * K + 16 }, D.el("clipPath", { id: cid }, svg));
-    D.el("rect", { x: 0, y: Y0 - 8, width: 1080, height: 630 * K + 16, fill: "#fbf7f0" }, svg);
+    const HB = DIAG ? 413 : 630 * K + 16; // hauteur de la bande des images
+    D.el("rect", { x: 0, y: Y0 - 8, width: DIAG ? 540 : 1080, height: HB }, D.el("clipPath", { id: cid }, svg));
+    D.el("rect", { x: 0, y: Y0 - 8, width: 1080, height: HB, fill: "#fbf7f0" }, svg);
     D.filigrane(svg, [[540, 580], [270, 1180], [810, 1640]], 400);
     const cadre = D.el("g", { "clip-path": "url(#" + cid + ")" }, svg);
-    const plateau = D.el("g", { transform: "translate(0 " + (Y0 - CROP * K) + ") scale(" + K + ")" }, cadre);
+    const plateau = D.el("g", { transform: "translate(0 " + (Y0 + (DIAG ? 26 : 0) - CROP * KS) + ") scale(" + KS + ")" }, cadre);
     const scene = D.el("g", {}, plateau), vitrine = D.el("g", {}, plateau);
     const haut = D.el("g", {}, svg), sous = D.el("g", {}, svg), carte = D.el("g", {}, svg), fin = D.el("g", {}, svg);
     // inerweb.fr + le lycée, EN PERMANENCE (Franck, 03/10) : la bande du haut, au-dessus du titre
     const marque = D.el("g", {}, svg);
     D.signature(marque, 540, 16, 760);
+    const dg = D.el("g", { transform: "translate(-323.2 111.5) scale(0.88)" }, svg); // le panneau (990, 296, 596 × 460) → x 548 → 1072, y 372 → 777
+    const diag = DIAG ? D.diagramme(dg, DIAG) : null;
     const H = R.scenes.map(s => window.VOYAGE_THEATRE.horaire(s, o.pistes));
     let debut = 0;
     const episodes = H.map((h, i) => { const e = { i: i, debut: debut, D: h.D, duree: h.D + FIN_EP }; debut += e.duree; return e; });
@@ -76,13 +83,14 @@
       const txt = Array.isArray(p) ? p[0] : p;
       if (txt === ligne) return;
       ligne = txt; sous.innerHTML = "";
-      const l = D.couper(txt, 30), y0 = 1060 - (l.length - 1) * 33;
+      const l = D.couper(txt, 30), y0 = (DIAG ? 990 : 1060) - (l.length - 1) * 33; // écran partagé : sous la bande (y 773), au-dessus de la carte (y 1290)
       D.lignes(sous, 540, y0, l, { "text-anchor": "middle", "font-size": 56, fill: "#10233c", "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" }, 66);
     }
     function carteDeFin(i) {
       if (etatFin === i) return;
       etatFin = i;
       [scene, vitrine, sous, carte].forEach(g => { g.innerHTML = ""; });
+      dg.setAttribute("opacity", 0);
       const suivant = R.scenes[i + 1];
       D.texte(fin, 540, 820, suivant ? "Épisode suivant" : "Fin du voyage", { "text-anchor": "middle", "font-size": 44, fill: D.ORANGE, "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" });
       if (suivant) D.texte(fin, 540, 900, suivant.titre, Object.assign({ "text-anchor": "middle", "font-size": 64, fill: D.BLEU }, titreFont));
@@ -101,7 +109,7 @@
       if (vue) {
         dedans = D.lisse((lt - finVue + 0.2) / 0.9);
         const z = 1 + 0.04 * D.borne(lt / finVue, 0, 1) + 0.8 * dedans;
-        vue.setAttribute("transform", "translate(710 425) scale(" + z.toFixed(3) + ") translate(-710 -425)");
+        vue.setAttribute("transform", "translate(" + VC[0] + " " + VC[1] + ") scale(" + z.toFixed(3) + ") translate(" + (-VC[0]) + " " + (-VC[1]) + ")");
         vitrine.setAttribute("opacity", (1 - dedans).toFixed(3));
       }
       const fondu = D.fenetre(lt, 0, h.D, 0.5);
@@ -111,6 +119,15 @@
         const w = r.carte !== undefined && lt > finVue ? r.carte : s.carte[0];
         const [x, y] = cir.ecran(...D.circuitPoint(w));
         majMini({ x: x, y: y, s: 0.85, t: lt, temp: r.temp !== undefined ? r.temp : 0.1, etat: r.etat || "liquide", humeur: r.humeur });
+      }
+      if (diag) { // comme le théâtre : r.diag (la scène) ou s.diag (le récit)
+        dg.setAttribute("opacity", 1);
+        const avance = lt > finVue ? D.lisse((lt - finVue) / (h.D - finVue)) : 0;
+        const w = r.diag !== undefined ? r.diag : s.diag ? s.diag[0] + (s.diag[1] - s.diag[0]) * avance : null;
+        const w0 = r.diag !== undefined ? (r.diag0 !== undefined ? r.diag0 : null) : s.diag ? s.diag[0] : null;
+        const vus = r.calques || {};
+        if (!r.calques) for (const id in (s.calques || {})) vus[id] = lt >= h.T[s.calques[id]] - 0.15;
+        diag.maj(w0, w, vus, { t: lt, temp: r.temp, etat: r.etat, humeur: r.humeur });
       }
       sousTitre(s, h, lt);
     }
