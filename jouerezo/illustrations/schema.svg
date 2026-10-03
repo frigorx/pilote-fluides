@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <!-- Compléter le schéma : un circuit avec un emplacement vide, la pièce qui arrive — charte inerWeb -->
+  <path d="M 10 14 H 54 V 50 H 10 Z" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+  <circle cx="54" cy="32" r="7" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="24" y="8" width="16" height="12" rx="2" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="24" y="44" width="16" height="12" rx="2" fill="#cfe0f3" stroke="#1b3a63" stroke-width="2.5"/>
+  <rect x="3" y="25" width="14" height="14" rx="3" fill="#fff6ec" stroke="#1b3a63" stroke-width="2" stroke-dasharray="3 2"/>
+  <g transform="translate(26 28)">
+    <rect x="-7" y="-7" width="14" height="14" rx="3" fill="#ff6b35" stroke="#c9451a" stroke-width="2"/>
+    <path d="M -2 0 H -14" stroke="#c9451a" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M -10 -4 L -14 0 L -10 4" fill="none" stroke="#c9451a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

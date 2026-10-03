@@ -1,0 +1,51 @@
+# JouéRézo — reprise
+
+> Point d'entrée pour reprendre le chantier. L'état vit ici, pas en mémoire. `LISEZ-MOI.md` décrit le produit.
+
+## État au 03/10/2026 (matin)
+
+- **EN LIGNE, caché** : `https://inerweb.fr/jouerezo/` — neuf jeux. Site `pilote-fluides` : nuit `5d4fe44d` + `f4a2526e` (six jeux, image d'accueil), matin : livraison v2 (schéma, Qui suis-je, pendu, vrai et symbole, outils). Poussés depuis un worktree détaché de `origin/main`.
+- Atelier : `C:\git\jouerezo`, distant privé `github.com/frigorx/jouerezo` (branche `master`).
+- Décisions de Franck (03/10 matin, à la voix) : glisser-déposer sur les schémas électriques et le circuit fluide ; les vrais éléments et les symboles de la bibliothèque ; des définitions ; un pendu ; les outils ; **froid classique seulement, pas de clim**.
+
+## À faire relire par Franck (décisions prises seul)
+
+1. Marque inerWeb (le réseau vit sur inerweb.fr).
+2. Les 11 câblages retenus pour « Compléter le schéma » (`donnees/schemas.js`) : 1, 1-commande, 2, 7, 7-commande, 8, 8-commande, 10, 10-commande, 12, 12-commande. Les n° 3 à 6 (inversion, étoile-triangle, Dahlander) et 9, 11, 13 sont là s'il les veut : une ligne chacun.
+3. Les paires réel ↔ symbole (`donnees/reel-symbole.js`) : 18 électriques, 13 froid. Le condenseur à air et l'évaporateur à air ont le même symbole : seul le condenseur est joué.
+4. Les 34 définitions froid et outils (`donnees/definitions.js`) : chaque phrase vient d'une planche ou d'une station ; à relire comme un énoncé.
+5. Symboles retirés du Memory électrique parce qu'indiscernables à 70 px : disjoncteur unipolaire, sectionneur, interrupteur-sectionneur (EN 60617), résistance (même rectangle que la bobine). Vanne à boisseau retirée du Memory froid.
+6. Texte de l'aventure (12 scènes), 32 questions fluides, image d'accueil Codex (zombie « tout sourire »).
+
+## Restes
+
+- Entrée depuis l'accueil et le quartier 3D : attendre la décision de Franck (« pas tout de suite »).
+- Rattacher le code de partie (`JR-…`) à HAL Claw (`commun.js` → `JR.code`).
+- Indexer le réseau au RAG une fois validé.
+- Les mini-jeux « par ligne » de CartoClim v2 : à héberger ici si Franck le veut (hors périmètre « pas de clim » pour l'instant).
+- Le site `pilote-fluides/REPRISE.md` n'a pas été touché (fichier partagé).
+
+## Vérifier sans navigateur
+
+```bash
+cd /c/git/jouerezo && for f in moteur/*.js donnees/*.js outils/*.mjs; do node --check "$f" || echo "ERREUR $f"; done
+node -e "
+const fs=require('fs');const w={};for(const d of ['schemas','reel-symbole','definitions','banque-electrorezo','aventure','themes'])new Function('window',fs.readFileSync('donnees/'+d+'.js','utf8'))(w);
+const T=w.JR_THEMES;for(const j of Object.keys(T))console.log(j,':',T[j].map(t=>t.id+'('+(t.paires?t.paires.length:t.mots?t.mots.length:t.series?t.series.length:t.questions?t.questions.length:t.kind||'')+')').join(' '));
+for(const t of T.memory){const b=t.paires.map(p=>p.b.txt||p.b.src);const d=b.filter((x,i)=>b.indexOf(x)!==i);if(d.length)console.log('DOUBLON',t.id,d)}
+for(const t of T.memory)for(const p of t.paires)for(const f of [p.a,p.b]){if(f.img&&!fs.existsSync('C:/git/pilote-fluides/symboles/svg/'+f.img+'.svg'))console.log('SYMBOLE ABSENT',f.img);if(f.src&&f.src.startsWith('illustrations/')&&!fs.existsSync(f.src))console.log('ABSENT',f.src);if(f.src&&f.src.startsWith('../')&&!fs.existsSync('C:/git/pilote-fluides/'+f.src.slice(3)))console.log('ABSENT SITE',f.src)}
+for(const s of w.JR_AVENTURE.zombies.scenes){const n=s.choix.filter(c=>c.bon).length;if(s.choix.length&&n!==1)console.log('SCENE',s.titre,'bons=',n)}
+console.log('contrôle fini')"
+```
+
+Puis `node outils/servir.mjs` et jouer chaque jeu jusqu'au panneau de fin au format téléphone (375 px).
+
+## Pièges rencontrés
+
+- Un commentaire de bloc qui contient `a-*/` se ferme tout seul (`*/`) : écrire `a-…/`.
+- `git worktree add` dans le scratchpad échoue (« Filename too long ») : chemin court `C:\git\_wt-jouerezo`.
+- Le filigrane `marque.js` ne se remesure que sur `resize` : `commun.js` lui envoie l'événement à chaque changement d'écran.
+- Les banques HoCourant, R408 et les exercices du Câblage virtuel déclarent des `const` : jamais deux `<script>`, toujours `fetch` + `Function`.
+- **Le service worker du site** (racine `pilote-fluides`, scripts « cache d'abord ») s'installe aussi sur `localhost:8797` et sert ensuite de VIEUX fichiers de l'atelier : `servir.mjs` répond 404 à `/sw.js` depuis le 03/10 ; si un navigateur l'a déjà, le désinscrire (`navigator.serviceWorker.getRegistrations()`).
+- Les câblages n'ont pas de texte de repère dans leur SVG : les repères (Q1, KM1…) sont posés par le moteur depuis `carte.appareils` (position du repère) ; l'appariement appareil ↔ groupe se fait par le groupe du bon type le plus proche.
+- Deux constructions GitHub Pages qui se suivent : la première est annulée (« errored » dans l'API), pas échouée.

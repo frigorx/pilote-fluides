@@ -36,7 +36,16 @@ window.JR_JEUX = {
     regle: "Quatre mots : trois vont ensemble, un est de trop. Touchez l'intrus. On vous dit pourquoi." },
   aventure: { nom: "Nuit à l'atelier", lettre: "A", emoji: "🧟",
     phrase: "Un zombie frigoriste rôde. Chaque geste sûr le repousse. Chaque geste faux lui fait gagner un pas.",
-    regle: "Une histoire à choix. Trois cœurs. Un mauvais geste coûte un cœur ; à zéro, le zombie vous embauche." }
+    regle: "Une histoire à choix. Trois cœurs. Un mauvais geste coûte un cœur ; à zéro, le zombie vous embauche." },
+  schema: { nom: "Compléter le schéma", lettre: "S", emoji: "🧩",
+    phrase: "Des symboles manquent sur un vrai schéma de câblage ou sur le circuit frigorifique : remettez-les à leur place.",
+    regle: "Touchez une pièce du plateau, puis l'emplacement qui porte son repère — ou faites-la glisser. Une mauvaise place compte une erreur." },
+  quisuisje: { nom: "Qui suis-je ?", lettre: "D", emoji: "🗣️",
+    phrase: "Une définition, trois noms : l'organe, l'outil ou l'appareil qui parle, c'est lequel ?",
+    regle: "Dix définitions tirées au sort. Un seul nom est juste ; on vous dit où le revoir." },
+  pendu: { nom: "Le pendu du frigo", lettre: "P", emoji: "🌡️",
+    phrase: "Un mot du métier, lettre par lettre. Chaque lettre fausse fait chauffer le compresseur.",
+    regle: "Cinq mots. L'indice, c'est la définition. Huit lettres fausses et le compresseur grille." }
 };
 
 /* ---------- portes partagées ---------- */
@@ -85,9 +94,16 @@ const P = {
   ]
 };
 
-/* ---------- utilitaire local : paires image ↔ nom ---------- */
-function sym(id, nom) { return { a: { img: id, alt: "" }, b: { txt: nom } }; }
+/* ---------- utilitaires locaux : paires image ↔ nom, mot ↔ mot, image ↔ image ---------- */
+function sym(id, nom) { return { a: { img: id, alt: "" }, b: { txt: nom }, nom: nom }; }
 function txt(a, b) { return { a: { txt: a }, b: { txt: b } }; }
+const BIB = "illustrations/bibliotheque/";
+function reel(p) { return { nom: p.nom, a: { src: p.reel.src || (BIB + p.reel.lib + ".svg"), alt: "" }, b: { src: BIB + p.sym.lib + ".svg", alt: "" } }; }
+function photo(p) { return { nom: p.nom, a: { src: p.src, alt: "" }, b: { txt: p.nom } }; }
+/* les banques de mots (Qui suis-je ?, pendu) : écrites ici (definitions.js) + fabriquées des stations ÉlectroRézo */
+const MOTS_FROID = (window.JR_DEFINITIONS || []).filter(d => d.famille === "froid");
+const MOTS_OUTILS = (window.JR_DEFINITIONS || []).filter(d => d.famille === "outil");
+const MOTS_ELEC = (window.JR_ELECTROREZO || []).map(e => ({ mot: e.mot, def: e.def, ou: e.ou, porte: e.porte }));
 
 const JR_THEMES = window.JR_THEMES = {};
 
@@ -157,6 +173,13 @@ JR_THEMES.memory = [
       txt("R-22", "HCFC · du chlore · interdit"),
       txt("R-12", "CFC · chlore + fluor · interdit, tueur d'ozone")
     ] },
+  { id: "vrai-symbole-elec", nom: "Le vrai et le symbole : électricité", emoji: "🔌", type: "image", portes: P.symbolesElec,
+    paires: ((window.JR_REEL_SYMBOLE || {}).elec || []).map(reel) },
+  { id: "vrai-symbole-froid", nom: "Le vrai et le symbole : froid", emoji: "🧊", type: "image", portes: P.symbolesFroid,
+    paires: ((window.JR_REEL_SYMBOLE || {}).froid || []).map(reel) },
+  { id: "outils", nom: "Les outils", emoji: "🧰", type: "image",
+    portes: [{ t: "CuivRézo — les gestes de base", h: "../cuivrezo/" }, { t: "HabFluide — Le manifold : lire, brancher", h: "../f/mise-en-service-3/" }, { t: "ÉlectroRézo 1.9 — Mesurer", h: "../electrorezo/stations/1-9-mesurer/" }],
+    paires: (window.JR_OUTILS_PHOTOS || []).map(photo) },
   { id: "risques", nom: "Un risque, une protection", emoji: "🦺", type: "texte", portes: P.securite,
     paires: [
       txt("Projection de fluide vers les yeux", "Lunettes de protection, et sortir de l'axe"),
@@ -240,6 +263,14 @@ JR_THEMES.intrus = [
     { q: "Trois éléments d'un garde-corps et un intrus", bons: ["Lisse haute", "Lisse intermédiaire", "Plinthe"], intrus: "Tabouret sur le plancher", pourquoi: "Un tabouret sur un plancher d'échafaudage, c'est une chute en préparation." },
     { q: "Trois temps de la préparation de chantier et un intrus", bons: ["Reconnaître", "Identifier les risques", "Se protéger"], intrus: "Braser", pourquoi: "On brase après avoir préparé, jamais à la place." }
   ] },
+  { id: "outils", nom: "Les outils", emoji: "🧰", portes: [{ t: "CuivRézo — les gestes de base", h: "../cuivrezo/" }, { t: "Le tirage au vide : la courbe qui descend", h: "../f/a-tirage-au-vide/" }, { t: "La pesée : deux pesées, jamais une", h: "../f/a-pesee-charge/" }], series: [
+    { q: "Trois outils pour façonner le cuivre et un intrus", bons: ["Cintreuse", "Dudgeonnière", "Pince à emboîture"], intrus: "Vacuomètre", pourquoi: "Le vacuomètre lit le vide ; les trois autres plient, évasent ou élargissent le tube." },
+    { q: "Trois choses du tirage au vide et un intrus", bons: ["Pompe à vide", "Vacuomètre", "Vanne d'isolement"], intrus: "Chalumeau", pourquoi: "Le chalumeau brase ; il n'a rien à faire pendant un tirage au vide." },
+    { q: "Trois outils de la coupe et un intrus", bons: ["Coupe-tube", "Ébavureur", "Étau à mordaches"], intrus: "Balance de charge", pourquoi: "La balance pèse la bouteille ; elle ne touche pas au tube." },
+    { q: "Trois appareils de mesure et un intrus", bons: ["Manifold", "Vacuomètre", "Pince ampèremétrique"], intrus: "Cintrette", pourquoi: "La cintrette plie le tube ; les trois autres mesurent une pression, un vide ou un courant." },
+    { q: "Trois choses de la récupération et un intrus", bons: ["Station de récupération", "Balance de charge", "Bouteille compatible identifiée"], intrus: "Bouteille d'oxygène", pourquoi: "L'oxygène n'entre jamais dans un circuit frigorifique : explosion sur l'huile." },
+    { q: "Trois choses de l'épreuve de pression et un intrus", bons: ["Bouteille d'azote", "Mano-détendeur", "Manifold"], intrus: "Pompe à vide", pourquoi: "La pompe à vide vient APRÈS l'épreuve, pour tirer au vide un circuit étanche." }
+  ] },
   { id: "organes", nom: "Organes et appareils", emoji: "⚙️", portes: P.symbolesFroid.concat(P.symbolesElec), series: [
     { q: "Trois organes du cycle et un intrus", bons: ["Compresseur", "Condenseur", "Évaporateur"], intrus: "Manomètre", pourquoi: "Le quatrième organe, c'est le détendeur. Le manomètre mesure, il ne fait pas le cycle." },
     { q: "Trois compresseurs et un intrus", bons: ["À piston", "Scroll", "À vis"], intrus: "Thermostatique", pourquoi: "Thermostatique, c'est un détendeur." },
@@ -302,3 +333,24 @@ JR_THEMES.qcm = JR_THEMES.chrono;
 JR_THEMES.aventure = [
   { id: "zombies", nom: "Les zombies du R-22", emoji: "🧟", portes: P.securite.concat(P.gestes) }
 ];
+
+/* =====================================================================
+   COMPLÉTER LE SCHÉMA — un thème par schéma (donnees/schemas.js)
+   ===================================================================== */
+JR_THEMES.schema = (function (S) {
+  if (!S) return [];
+  return S.fluides.map(f => ({ id: "fluide-" + f.id, nom: f.titre, emoji: "❄️", kind: "fluide", data: f, portes: f.portes }))
+    .concat(S.cablages.map(c => ({ id: c.id, nom: c.titre, emoji: "⚡", kind: "cablage", data: c, portes: S.portesCablage })));
+})(window.JR_SCHEMAS);
+
+/* =====================================================================
+   QUI SUIS-JE ? et LE PENDU — mêmes banques de mots
+   ===================================================================== */
+const P_MOTS_OUTILS = [{ t: "CuivRézo — les gestes de base", h: "../cuivrezo/" }, { t: "HabFluide — Récupérer, peser, tracer", h: "../f/recuperation/" }, { t: "HabFluide — Contrôles avant mise en service", h: "../f/mise-en-service/" }];
+JR_THEMES.quisuisje = [
+  { id: "froid", nom: "Les organes du froid", emoji: "❄️", mots: MOTS_FROID, portes: P.fluides.slice(-1).concat(P.symbolesFroid) },
+  { id: "outils", nom: "Les outils", emoji: "🧰", mots: MOTS_OUTILS, portes: P_MOTS_OUTILS },
+  { id: "electricite", nom: "Les appareils électriques (ÉlectroRézo)", emoji: "⚡", mots: MOTS_ELEC, portes: P.symbolesElec },
+  { id: "tout", nom: "Tout mélangé", emoji: "🎲", mots: MOTS_FROID.concat(MOTS_OUTILS, MOTS_ELEC), portes: P.symbolesFroid.concat(P_MOTS_OUTILS, P.symbolesElec) }
+];
+JR_THEMES.pendu = JR_THEMES.quisuisje;

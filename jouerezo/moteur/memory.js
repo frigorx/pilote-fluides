@@ -15,6 +15,7 @@
 
   function face(f) {
     if (f.img) return '<span class="face">' + JR.img(f.img, f.alt) + '</span>';
+    if (f.src) return '<span class="face"><img src="' + JR.esc(f.src) + '" alt="' + JR.esc(f.alt || "") + '" loading="lazy"></span>';
     return '<span class="face texte">' + JR.esc(f.txt) + '</span>';
   }
 
@@ -29,11 +30,13 @@
       '<h1>' + JR.esc(theme.emoji + " " + theme.nom) + '</h1>' +
       '<p class="chapo">' + JR.esc(window.JR_JEUX.memory.regle) + '</p>' +
       '<div class="bord"><span>Paires : <span id="m-paires">0</span> / ' + PAIRES + '</span><span>Coups : <span id="m-coups">0</span></span></div>' +
-      '<div class="grille-memory" id="m-grille" role="group" aria-label="Cartes du Memory"></div>';
-    const grille = main.querySelector("#m-grille");
+      '<div class="grille-memory" id="m-grille" role="group" aria-label="Cartes du Memory"></div>' +
+      '<p class="legende" id="m-trouvees" aria-live="polite"></p>';
+    const grille = main.querySelector("#m-grille"), nomsTrouves = [];
     ordre.forEach(function (c, idx) {
       const b = JR.el('<button type="button" class="carte-memory" aria-label="Carte ' + (idx + 1) + ', face cachée"><span class="dos" aria-hidden="true">❄️</span>' + face(c.f) + '</button>');
       b.dataset.paire = c.paire;
+      b.dataset.nom = tirage[c.paire].nom || tirage[c.paire].b.txt || "";
       b.addEventListener("click", function () { retourner(b, c); });
       grille.appendChild(b);
     });
@@ -47,6 +50,7 @@
       coups++; main.querySelector("#m-coups").textContent = coups;
       if (premiere.dataset.paire === b.dataset.paire) {
         premiere.classList.add("trouvee"); b.classList.add("trouvee");
+        if (b.dataset.nom) { nomsTrouves.push(b.dataset.nom); main.querySelector("#m-trouvees").textContent = "Trouvé : " + nomsTrouves.join(" · "); premiere.setAttribute("aria-label", b.dataset.nom); b.setAttribute("aria-label", b.dataset.nom); }
         premiere = null; trouvees++;
         main.querySelector("#m-paires").textContent = trouvees;
         JR.sons.ok();
