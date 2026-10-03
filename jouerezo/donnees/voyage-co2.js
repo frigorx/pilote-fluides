@@ -23,6 +23,7 @@ window.VOYAGE_RECIT = {
   sousTitre: "le CO₂ transcritique raconté par une molécule",
   edition: "CO₂",
   dossier: "voyage-co2",
+  film: "../voyage/co2.html", livret: "../voyage/voyage-dans-tous-ses-etats-co2.pdf", // liens « Le film » et « Le livret » du module en ligne
   voix: { nom: "fr-FR-RemyMultilingualNeural", debit: "-5%" },
   enseignant: {
     public: "toutes les formations du froid et de la climatisation, après le circuit de base",
@@ -259,7 +260,7 @@ window.VOYAGE_RECIT = {
         pourquoi: "Le compresseur porte le CO₂ à 90 bar et à plus de 100 °C, au-dessus du point critique : il en sort supercritique. Le refroidisseur de gaz le refroidit sans le condenser, puis le détendeur haute pression le fait redevenir liquide et vapeur." } }
   ],
   portes: [
-    { t: "Le premier voyage : le circuit de base", h: "voyage.html" },
+    { t: "Le premier voyage : le circuit de base", h: "../voyage/module.html" },
     { t: "La ligne CO₂ / R744", h: "../packs/fluides/res/co2-r744/" },
     { t: "Le point critique", h: "../packs/fluides/res/co2-r744/index.html?e=point-critique" },
     { t: "Le cycle transcritique", h: "../packs/fluides/res/co2-r744/index.html?e=transcritique" },

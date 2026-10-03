@@ -1,0 +1,119 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "une molécule de CO₂",
+  "duree": 51,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "evaporateur",
+  "num": "1",
+  "titre": "L'évaporateur",
+  "sous": "je prends la chaleur",
+  "duree": 40,
+  "video": "chapitre-01-l-evaporateur.mp4",
+  "affiche": "chapitre-01-l-evaporateur.jpg"
+ },
+ {
+  "id": "compresseur",
+  "num": "2",
+  "titre": "Le compresseur",
+  "sous": "on me serre très fort",
+  "duree": 45,
+  "video": "chapitre-02-le-compresseur.mp4",
+  "affiche": "chapitre-02-le-compresseur.jpg"
+ },
+ {
+  "id": "critique",
+  "num": "3",
+  "titre": "Le point critique",
+  "sous": "ni liquide, ni vapeur",
+  "duree": 49,
+  "video": "chapitre-03-le-point-critique.mp4",
+  "affiche": "chapitre-03-le-point-critique.jpg"
+ },
+ {
+  "id": "refroidisseur",
+  "num": "4",
+  "titre": "Le refroidisseur de gaz",
+  "sous": "je refroidis sans me condenser",
+  "duree": 54,
+  "video": "chapitre-04-le-refroidisseur-de-gaz.mp4",
+  "affiche": "chapitre-04-le-refroidisseur-de-gaz.jpg"
+ },
+ {
+  "id": "detendeur-hp",
+  "num": "5",
+  "titre": "Le détendeur haute pression",
+  "sous": "il choisit la haute pression",
+  "duree": 52,
+  "video": "chapitre-05-le-detendeur-haute-pression.mp4",
+  "affiche": "chapitre-05-le-detendeur-haute-pression.jpg"
+ },
+ {
+  "id": "bouteille",
+  "num": "6",
+  "titre": "La bouteille intermédiaire",
+  "sous": "on se sépare",
+  "duree": 40,
+  "video": "chapitre-06-la-bouteille-intermediaire.mp4",
+  "affiche": "chapitre-06-la-bouteille-intermediaire.jpg"
+ },
+ {
+  "id": "gaz-detente",
+  "num": "7",
+  "titre": "La vanne de gaz de détente",
+  "sous": "un raccourci pour la vapeur",
+  "duree": 39,
+  "video": "chapitre-07-la-vanne-de-gaz-de-detente.mp4",
+  "affiche": "chapitre-07-la-vanne-de-gaz-de-detente.jpg"
+ },
+ {
+  "id": "detendeur",
+  "num": "8",
+  "titre": "Le détendeur de l'évaporateur",
+  "sous": "deux détendeurs, deux missions",
+  "duree": 51,
+  "video": "chapitre-08-le-detendeur-de-l-evaporateur.mp4",
+  "affiche": "chapitre-08-le-detendeur-de-l-evaporateur.jpg"
+ },
+ {
+  "id": "arret",
+  "num": "9",
+  "titre": "À l'arrêt",
+  "sous": "la pression monte",
+  "duree": 40,
+  "video": "chapitre-09-a-l-arret.mp4",
+  "affiche": "chapitre-09-a-l-arret.jpg"
+ },
+ {
+  "id": "fuite",
+  "num": "10",
+  "titre": "La fuite",
+  "sous": "je prends la place de l'air",
+  "duree": 36,
+  "video": "chapitre-10-la-fuite.mp4",
+  "affiche": "chapitre-10-la-fuite.jpg"
+ },
+ {
+  "id": "neige",
+  "num": "11",
+  "titre": "La neige carbonique",
+  "sous": "si on me vide trop vite",
+  "duree": 34,
+  "video": "chapitre-11-la-neige-carbonique.mp4",
+  "affiche": "chapitre-11-la-neige-carbonique.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Tous mes états",
+  "sous": "l'essentiel à retenir",
+  "duree": 48,
+  "video": "chapitre-12-tous-mes-etats.mp4",
+  "affiche": "chapitre-12-tous-mes-etats.jpg"
+ }
+]
