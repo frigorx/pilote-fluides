@@ -922,8 +922,16 @@ html:has(body.zoome) { height: auto; overflow: visible; }
         </select>
         <button class="tool-button compact" id="readingButton" type="button" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
         <button class="tool-button compact" id="fullscreenButton" type="button" aria-label="Afficher en plein écran">⛶</button>
+        <a class="tool-button" id="porteFilm" href="../../../../voyage/booster.html" style="display:none;align-items:center;gap:4px;text-decoration:none" title="Voyage dans tous ses états — la centrale booster CO₂ racontée par une molécule">▶ <span>Le film</span></a>
       </div>
     </header>
+    <script>/* porte « ▶ Le film » (inerWeb Studio, 03/10/2026) : montrée seulement sur les escales de la centrale booster ;
+       moteur.js réécrit ?e= à chaque escale, et le titre #courseName change avec elle */
+    (function () {
+      var porte = document.getElementById("porteFilm"), nom = document.getElementById("courseName");
+      var voir = function () { porte.style.display = /^booster(-diagramme)?$/.test(new URLSearchParams(location.search).get("e") || "") ? "inline-flex" : "none"; };
+      new MutationObserver(voir).observe(nom, { childList: true, characterData: true, subtree: true }); voir();
+    })();</script>
 
     <nav class="escales" id="escales" aria-label="Les escales de la ligne CO₂"></nav>
 

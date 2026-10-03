@@ -1,0 +1,119 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "dans une centrale booster",
+  "duree": 57,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "evaporateur-bt",
+  "num": "1",
+  "titre": "L'évaporateur des surgelés",
+  "sous": "le froid négatif",
+  "duree": 44,
+  "video": "chapitre-01-l-evaporateur-des-surgeles.mp4",
+  "affiche": "chapitre-01-l-evaporateur-des-surgeles.jpg"
+ },
+ {
+  "id": "compresseur-bt",
+  "num": "2",
+  "titre": "Le compresseur basse température",
+  "sous": "le premier étage",
+  "duree": 42,
+  "video": "chapitre-02-le-compresseur-basse-temperature.mp4",
+  "affiche": "chapitre-02-le-compresseur-basse-temperature.jpg"
+ },
+ {
+  "id": "booster",
+  "num": "3",
+  "titre": "Pourquoi « booster » ?",
+  "sous": "deux étages en série",
+  "duree": 50,
+  "video": "chapitre-03-pourquoi-booster.mp4",
+  "affiche": "chapitre-03-pourquoi-booster.jpg"
+ },
+ {
+  "id": "aspiration-mt",
+  "num": "4",
+  "titre": "L'aspiration moyenne température",
+  "sous": "trois chemins se rejoignent",
+  "duree": 52,
+  "video": "chapitre-04-l-aspiration-moyenne-temperature.mp4",
+  "affiche": "chapitre-04-l-aspiration-moyenne-temperature.jpg"
+ },
+ {
+  "id": "compresseur-mt",
+  "num": "5",
+  "titre": "Le compresseur moyenne température",
+  "sous": "le second étage",
+  "duree": 41,
+  "video": "chapitre-05-le-compresseur-moyenne-temperature.mp4",
+  "affiche": "chapitre-05-le-compresseur-moyenne-temperature.jpg"
+ },
+ {
+  "id": "refroidisseur",
+  "num": "6",
+  "titre": "Le refroidisseur de gaz",
+  "sous": "je refroidis sans me condenser",
+  "duree": 52,
+  "video": "chapitre-06-le-refroidisseur-de-gaz.mp4",
+  "affiche": "chapitre-06-le-refroidisseur-de-gaz.jpg"
+ },
+ {
+  "id": "detendeur-hp",
+  "num": "7",
+  "titre": "Le détendeur haute pression",
+  "sous": "il choisit la haute pression",
+  "duree": 46,
+  "video": "chapitre-07-le-detendeur-haute-pression.mp4",
+  "affiche": "chapitre-07-le-detendeur-haute-pression.jpg"
+ },
+ {
+  "id": "bouteille",
+  "num": "8",
+  "titre": "La bouteille intermédiaire",
+  "sous": "trois chemins se séparent",
+  "duree": 51,
+  "video": "chapitre-08-la-bouteille-intermediaire.mp4",
+  "affiche": "chapitre-08-la-bouteille-intermediaire.jpg"
+ },
+ {
+  "id": "gaz-detente",
+  "num": "9",
+  "titre": "La vanne de gaz de détente",
+  "sous": "le raccourci de la vapeur",
+  "duree": 52,
+  "video": "chapitre-09-la-vanne-de-gaz-de-detente.mp4",
+  "affiche": "chapitre-09-la-vanne-de-gaz-de-detente.jpg"
+ },
+ {
+  "id": "froid-positif",
+  "num": "10",
+  "titre": "Le froid positif",
+  "sous": "ma voisine part vers les produits frais",
+  "duree": 40,
+  "video": "chapitre-10-le-froid-positif.mp4",
+  "affiche": "chapitre-10-le-froid-positif.jpg"
+ },
+ {
+  "id": "detendeur-bt",
+  "num": "11",
+  "titre": "Le détendeur des surgelés",
+  "sous": "quatre réglages, quatre missions",
+  "duree": 55,
+  "video": "chapitre-11-le-detendeur-des-surgeles.mp4",
+  "affiche": "chapitre-11-le-detendeur-des-surgeles.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Le tour en deux étages",
+  "sous": "l'essentiel à retenir",
+  "duree": 56,
+  "video": "chapitre-12-le-tour-en-deux-etages.mp4",
+  "affiche": "chapitre-12-le-tour-en-deux-etages.jpg"
+ }
+]

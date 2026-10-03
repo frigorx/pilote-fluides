@@ -38,6 +38,7 @@ const INDEXEES = [
   { fichier: "voyage/co2.html", url: "https://inerweb.fr/voyage/co2.html" },
   { fichier: "voyage/nh3.html", url: "https://inerweb.fr/voyage/nh3.html" },
   { fichier: "voyage/vis.html", url: "https://inerweb.fr/voyage/vis.html" },
+  { fichier: "voyage/booster.html", url: "https://inerweb.fr/voyage/booster.html" },
   {
     fichier: "packs/fluides/res/chaleur-interactive/index.html",
     url: "https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html",

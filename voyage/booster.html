@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Voyage dans tous ses états, la centrale booster CO₂ — racontée par une molécule — inerWeb</title>
+<meta name="description" content="Suivez une molécule de CO₂ dans la centrale booster d’un supermarché : l’étage basse température qui refoule dans l’aspiration moyenne température, trois chemins qui se rejoignent puis se séparent, le refroidisseur de gaz, le détendeur haute pression, la bouteille intermédiaire et la vanne de gaz de détente — avec le cycle chiffré sur le diagramme enthalpique. Le film en entier ou épisode par épisode.">
+<link rel="canonical" href="https://inerweb.fr/voyage/booster.html">
+<meta property="og:title" content="Voyage dans tous ses états, la centrale booster CO₂ — inerWeb">
+<meta property="og:description" content="La centrale booster CO₂ racontée par une molécule, avec son cycle sur le diagramme enthalpique : le film en entier ou épisode par épisode, et la version interactive.">
+<meta property="og:image" content="https://inerweb.fr/voyage/videos-booster/chapitre-00-mon-voyage.jpg">
+<meta property="og:url" content="https://inerweb.fr/voyage/booster.html">
+<!-- ===================================================================
+     VOYAGE DANS TOUS SES ÉTATS, ÉDITION « CENTRALE BOOSTER CO₂ » — la station du film, dans inerWeb Studio.
+     Copie adaptée de voyage/co2.html (même lecteur : film entier ou épisodes cochés). Page SATELLITE écrite à la main.
+     Pas de livret pour cette édition (film + série + module).
+     videos-booster/ = FICHIERS GÉNÉRÉS depuis l'atelier C:/git/jouerezo-booster (branche voyage-booster) :
+       RECIT=voyage-booster node outils/voyage-film.mjs --chapitres <film-final.mp4> <ce-dossier>/videos-booster
+     module-booster.html : la page voyage-booster.html de l'atelier, chemins vers ../jouerezo/ (comme livrer-voyage.mjs) ;
+     moteurs, voix (jouerezo/voyage-booster/voix) et symboles servis depuis jouerezo/.
+     =================================================================== -->
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:84rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:20px; }
+  .haut { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; font-size:16px; }
+  .haut a { font-weight:bold; text-decoration:none; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.3rem; margin:0 0 8px; }
+  .chapo { margin:0; max-width:52rem; font-size:18px; }
+  .sous-titre { margin:2px 0 0; color:var(--orange-texte); font-weight:bold; font-size:18px; }
+  .ecran { background:#0b1626; border-radius:14px; overflow:hidden; }
+  .ecran video { display:block; width:100%; aspect-ratio:16/9; background:#0b1626; }
+  .etat { margin:0; font-weight:bold; color:var(--bleu); min-height:1.6em; }
+  .commandes { display:flex; flex-wrap:wrap; gap:8px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; min-height:48px; padding:8px 18px; border-radius:24px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font:inherit; font-weight:bold; cursor:pointer; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn:hover, .btn:focus-visible { box-shadow:0 0 0 3px rgba(255,107,53,.55); outline:none; }
+  .episodes { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr)); gap:14px; }
+  .ep { background:var(--carte); border:1px solid var(--ligne); border-top:5px solid var(--bleu); border-radius:12px; padding:8px 10px 10px; display:grid; gap:6px; }
+  .ep.encours { border-top-color:var(--orange); box-shadow:0 0 0 3px rgba(255,107,53,.35); }
+  .vignette { position:relative; padding:0; border:0; border-radius:8px; overflow:hidden; cursor:pointer; background:#0b1626; }
+  .vignette img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
+  .vignette .duree { position:absolute; right:6px; bottom:6px; background:rgba(16,35,60,.85); color:#fff; font-size:14px; padding:1px 7px; border-radius:6px; }
+  .vignette .jouer { position:absolute; left:6px; bottom:6px; background:var(--orange-texte); color:#fff; font-size:14px; font-weight:bold; padding:1px 8px; border-radius:6px; }
+  .ep label { display:flex; gap:8px; align-items:flex-start; cursor:pointer; min-height:44px; padding-top:4px; }
+  .ep input { width:22px; height:22px; margin:3px 0 0; accent-color:var(--bleu); flex:none; }
+  .ep .quoi { color:var(--mut); font-size:15.5px; line-height:1.35; margin:0; }
+  .ep .interactif { font-size:15.5px; }
+  .portes { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:14px; }
+  .carte { background:var(--carte); border:1px solid var(--ligne); border-radius:12px; padding:14px 16px; }
+  .legende { margin:0; color:var(--mut); font-size:15.5px; max-width:60rem; }
+  @media (max-width:640px) { .btn { width:100%; justify-content:center; } }
+</style>
+<script defer src="../moteur/retour-accueil.js?v=ff0ca829c0"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <nav class="haut" aria-label="Retour">
+    <a href="../">← inerweb.fr</a>
+    <a href="../plan.html">Plan des réseaux</a>
+    <a href="../quartier/">Le quartier technique</a>
+    <a href="../studio/">🎬 inerWeb Studio</a>
+    <a href="co2.html">Le premier voyage CO₂ : la centrale transcritique</a>
+    <a href="../packs/fluides/res/co2-r744/index.html?e=booster">La ligne CO₂ : la centrale booster</a>
+  </nav>
+
+  <header>
+    <h1>Voyage dans tous ses états — la centrale booster CO₂</h1>
+    <p class="sous-titre">racontée par une molécule, avec son cycle sur le diagramme enthalpique</p>
+  </header>
+  <p class="chapo">Dans un supermarché, une seule centrale fait le froid positif des produits frais et le froid négatif des surgelés, avec un seul fluide : le CO₂. Une molécule prend le chemin le plus long : l'évaporateur des surgelés, le compresseur basse température qui la refoule dans l'aspiration moyenne température, trois chemins qui se rejoignent, le compresseur moyenne température, le refroidisseur de gaz, le détendeur haute pression, la bouteille où trois chemins se séparent… À droite de l'écran, son point avance sur le diagramme enthalpique, chiffré en bar absolus. Ce voyage suppose connu <a href="co2.html">le premier voyage CO₂</a>. Regardez le film en entier, ou cochez seulement les épisodes dont vous avez besoin.</p>
+
+  <main id="contenu" style="display:grid;gap:16px">
+    <div class="ecran"><video id="lecteur" controls playsinline preload="metadata" poster="videos-booster/chapitre-00-mon-voyage.jpg?v=20261003-booster" src="videos-booster/film-complet.mp4?v=20261003-booster"></video></div>
+    <p class="etat" id="etat" aria-live="polite">Le film en entier est prêt : lancez-le, ou passez les épisodes cochés.</p>
+    <div class="commandes">
+      <button type="button" class="btn" id="tout">▶ Le film en entier</button>
+      <button type="button" class="btn" id="selection">▶ Passer les épisodes cochés</button>
+      <button type="button" class="btn sec" id="precedent" aria-label="Épisode précédent">⏮</button>
+      <button type="button" class="btn sec" id="suivant" aria-label="Épisode suivant">⏭</button>
+      <button type="button" class="btn sec" id="cocher">Tout cocher</button>
+      <button type="button" class="btn sec" id="decocher">Tout décocher</button>
+      <a class="btn sec" href="videos-booster/film-complet.mp4?v=20261003-booster" download="voyage-dans-tous-ses-etats-booster-co2.mp4">⬇ Télécharger le film (MP4)</a>
+    </div>
+    <h2>Les épisodes</h2>
+    <ol class="episodes" id="episodes" aria-label="Les épisodes"></ol>
+  </main>
+
+  <section class="portes" aria-label="Les autres portes">
+    <div class="carte"><h2>🧩 La version interactive</h2><p>Le même voyage, chapitre par chapitre, avec une question à chaque organe et un code à rendre à l'enseignant.</p><p><a class="btn sec" href="module-booster.html">Ouvrir le voyage interactif</a></p></div>
+    <div class="carte"><h2>Pour l'enseignant</h2><p>Une porte d'entrée vers la centrale booster CO₂, après le premier voyage CO₂. Le film se regarde d'un trait, ou en trois temps : les deux étages (1 à 5), la haute pression et la bouteille (6 à 9), les meubles et le réglage (10, 11). Les chiffres sont des valeurs d'illustration, en bar absolus : la plaque et la documentation de l'installation font foi. Il ouvre le sujet : il ne remplace ni le cours, ni les travaux pratiques.</p><p>Les sous-titres sont dans l'image : le film se passe aussi sans le son.</p></div>
+  </section>
+
+  <p class="legende">L'idée de ce parcours vient du souvenir de lecture de «&nbsp;Voyage extraordinaire avec une molécule de Fréon&nbsp;12&nbsp;: roman frigorifique&nbsp;», d'André Delalande (1946). Conception pédagogique : F. Henninot — inerWeb. Texte, dessins et animation réalisés avec l'assistance d'une intelligence artificielle ; voix de synthèse. Symboles d'après la planche Éduscol «&nbsp;Le circuit frigorifique&nbsp;» et la collection QElectroTech (CC BY 3.0). Licence CC BY-NC-ND.</p>
+</div>
+<script>
+(function () {
+  "use strict";
+  var L = document.getElementById("lecteur"), etat = document.getElementById("etat"), grille = document.getElementById("episodes");
+  var chap = [], file = [], pos = 0;
+  var mmss = function (s) { return Math.floor(s / 60) + " min " + String(s % 60).padStart(2, "0"); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  function dessiner() {
+    grille.innerHTML = chap.map(function (c, i) {
+      return '<li class="ep" data-i="' + i + '">' +
+        '<button type="button" class="vignette" data-i="' + i + '" aria-label="Voir seulement l\'épisode ' + i + ' : ' + esc(c.titre) + '">' +
+        '<img src="videos-booster/' + esc(c.affiche) + '?v=20261003-booster" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span><span class="duree">' + mmss(c.duree) + '</span></button>' +
+        '<label><input type="checkbox" data-i="' + i + '" checked><span><b>Épisode ' + i + '</b> · ' + esc(c.titre) + '</span></label>' +
+        '<p class="quoi">' + esc(c.sous) + ' · <a class="interactif" href="module-booster.html?c=' + esc(c.id) + '">version interactive</a></p></li>';
+    }).join("");
+    var total = chap.reduce(function (a, c) { return a + c.duree; }, 0);
+    document.getElementById("tout").textContent = "▶ Le film en entier (" + mmss(total) + ")";
+    grille.querySelectorAll(".vignette").forEach(function (b) { b.addEventListener("click", function () { lancer([Number(b.dataset.i)]); }); });
+  }
+  function coches() { return Array.prototype.filter.call(grille.querySelectorAll("input"), function (x) { return x.checked; }).map(function (x) { return Number(x.dataset.i); }); }
+  function marquer() { grille.querySelectorAll(".ep").forEach(function (li) { li.classList.toggle("encours", file.length > 0 && Number(li.dataset.i) === file[pos]); }); }
+  function jouer() {
+    var c = chap[file[pos]];
+    L.src = "videos-booster/" + c.video + "?v=20261003-booster"; L.poster = "videos-booster/" + c.affiche + "?v=20261003-booster";
+    L.play().catch(function () {});
+    etat.textContent = "Épisode " + file[pos] + " · " + c.titre + " — " + (pos + 1) + " / " + file.length;
+    marquer();
+  }
+  function lancer(liste) {
+    if (!liste.length) { etat.textContent = "Aucun épisode coché : cochez ceux à passer."; return; }
+    file = liste; pos = 0; jouer();
+    L.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  function entier() { // le film intégral, d'un seul fichier
+    file = []; pos = 0;
+    L.src = "videos-booster/film-complet.mp4?v=20261003-booster"; L.poster = "videos-booster/chapitre-00-mon-voyage.jpg?v=20261003-booster";
+    L.play().catch(function () {});
+    etat.textContent = "Le film en entier"; marquer();
+    L.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  L.addEventListener("ended", function () { if (!file.length) { etat.textContent = "Fin du film."; } else if (pos < file.length - 1) { pos++; jouer(); } else { etat.textContent = "Fin de la sélection."; } });
+  document.getElementById("tout").addEventListener("click", entier);
+  document.getElementById("selection").addEventListener("click", function () { lancer(coches()); });
+  document.getElementById("precedent").addEventListener("click", function () { if (file.length && pos > 0) { pos--; jouer(); } });
+  document.getElementById("suivant").addEventListener("click", function () { if (file.length && pos < file.length - 1) { pos++; jouer(); } });
+  document.getElementById("cocher").addEventListener("click", function () { grille.querySelectorAll("input").forEach(function (x) { x.checked = true; }); });
+  document.getElementById("decocher").addEventListener("click", function () { grille.querySelectorAll("input").forEach(function (x) { x.checked = false; }); });
+  fetch("videos-booster/chapitres.json").then(function (r) { return r.json(); }).then(function (c) { chap = c; dessiner(); })
+    .catch(function () { etat.textContent = "Les épisodes n'ont pas pu se charger."; });
+})();
+</script>
+<script src="../moteur/marque.js" data-cartouche="&#160;&#160;&#160;&#160;" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>

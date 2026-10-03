@@ -1,0 +1,370 @@
+{
+ "intro-0": {
+  "f": "2abc25792a68.mp3",
+  "d": 5.784
+ },
+ "intro-1": {
+  "f": "9a17704b1102.mp3",
+  "d": 3.432
+ },
+ "intro-2": {
+  "f": "427066b4808e.mp3",
+  "d": 6.408
+ },
+ "intro-3": {
+  "f": "6c7953935c6d.mp3",
+  "d": 6.408
+ },
+ "intro-4": {
+  "f": "66fda58e73fb.mp3",
+  "d": 7.224
+ },
+ "intro-5": {
+  "f": "f77d40b497a7.mp3",
+  "d": 8.472
+ },
+ "intro-6": {
+  "f": "ec62e83f5751.mp3",
+  "d": 7.152
+ },
+ "intro-7": {
+  "f": "18533270ee43.mp3",
+  "d": 2.712
+ },
+ "evaporateur-bt-0": {
+  "f": "9a529af74022.mp3",
+  "d": 5.76
+ },
+ "evaporateur-bt-1": {
+  "f": "a1aaf08376df.mp3",
+  "d": 3.168
+ },
+ "evaporateur-bt-2": {
+  "f": "7f368e271de0.mp3",
+  "d": 6.024
+ },
+ "evaporateur-bt-3": {
+  "f": "798767c29d45.mp3",
+  "d": 4.92
+ },
+ "evaporateur-bt-4": {
+  "f": "a9e9a4d308e8.mp3",
+  "d": 3.6
+ },
+ "evaporateur-bt-5": {
+  "f": "d96b31da5613.mp3",
+  "d": 7.248
+ },
+ "evaporateur-bt-6": {
+  "f": "4f36d2b72072.mp3",
+  "d": 7.584
+ },
+ "compresseur-bt-0": {
+  "f": "66d21c0fc6b4.mp3",
+  "d": 6.984
+ },
+ "compresseur-bt-1": {
+  "f": "3725c5dc506f.mp3",
+  "d": 4.296
+ },
+ "compresseur-bt-2": {
+  "f": "3634375aa0f9.mp3",
+  "d": 5.208
+ },
+ "compresseur-bt-3": {
+  "f": "529b3f05e435.mp3",
+  "d": 4.44
+ },
+ "compresseur-bt-4": {
+  "f": "7b3e4d1666d9.mp3",
+  "d": 4.272
+ },
+ "compresseur-bt-5": {
+  "f": "40f71f526901.mp3",
+  "d": 3.96
+ },
+ "compresseur-bt-6": {
+  "f": "ec6da837e85b.mp3",
+  "d": 6.888
+ },
+ "booster-0": {
+  "f": "18f9a398cc4e.mp3",
+  "d": 3.552
+ },
+ "booster-1": {
+  "f": "f63c5f58b142.mp3",
+  "d": 5.256
+ },
+ "booster-2": {
+  "f": "c5de0de56b03.mp3",
+  "d": 5.736
+ },
+ "booster-3": {
+  "f": "4e47728e61c9.mp3",
+  "d": 5.664
+ },
+ "booster-4": {
+  "f": "364657d5cb5d.mp3",
+  "d": 7.296
+ },
+ "booster-5": {
+  "f": "e9a6aa721683.mp3",
+  "d": 9.504
+ },
+ "booster-6": {
+  "f": "cc1986f5ec4d.mp3",
+  "d": 7.584
+ },
+ "aspiration-mt-0": {
+  "f": "451f9d4df18d.mp3",
+  "d": 7.128
+ },
+ "aspiration-mt-1": {
+  "f": "e232d2b147cb.mp3",
+  "d": 2.784
+ },
+ "aspiration-mt-2": {
+  "f": "483aadc4cbde.mp3",
+  "d": 5.832
+ },
+ "aspiration-mt-3": {
+  "f": "36eb12c92306.mp3",
+  "d": 7.368
+ },
+ "aspiration-mt-4": {
+  "f": "a9494fb0d77c.mp3",
+  "d": 7.584
+ },
+ "aspiration-mt-5": {
+  "f": "7a443d85958d.mp3",
+  "d": 7.656
+ },
+ "aspiration-mt-6": {
+  "f": "99723df2c62c.mp3",
+  "d": 8.04
+ },
+ "compresseur-mt-0": {
+  "f": "14fdcca43c06.mp3",
+  "d": 4.248
+ },
+ "compresseur-mt-1": {
+  "f": "6709d26478c6.mp3",
+  "d": 5.592
+ },
+ "compresseur-mt-2": {
+  "f": "d86f4cf97e6f.mp3",
+  "d": 5.496
+ },
+ "compresseur-mt-3": {
+  "f": "380fe18b8d0e.mp3",
+  "d": 5.28
+ },
+ "compresseur-mt-4": {
+  "f": "1ccd5b89abf6.mp3",
+  "d": 3.312
+ },
+ "compresseur-mt-5": {
+  "f": "4e0ee2bf69f8.mp3",
+  "d": 6.408
+ },
+ "compresseur-mt-6": {
+  "f": "6aea58210484.mp3",
+  "d": 5.016
+ },
+ "refroidisseur-0": {
+  "f": "63152be8500c.mp3",
+  "d": 4.128
+ },
+ "refroidisseur-1": {
+  "f": "d0a3746ff852.mp3",
+  "d": 5.352
+ },
+ "refroidisseur-2": {
+  "f": "31b9fb17cb31.mp3",
+  "d": 8.88
+ },
+ "refroidisseur-3": {
+  "f": "0d4a6b98f992.mp3",
+  "d": 7.776
+ },
+ "refroidisseur-4": {
+  "f": "d33d34eecc3f.mp3",
+  "d": 6.24
+ },
+ "refroidisseur-5": {
+  "f": "acfaafbf3101.mp3",
+  "d": 8.472
+ },
+ "refroidisseur-6": {
+  "f": "bb4fc67d906f.mp3",
+  "d": 6.096
+ },
+ "detendeur-hp-0": {
+  "f": "a0fa26a92a70.mp3",
+  "d": 6.264
+ },
+ "detendeur-hp-1": {
+  "f": "386d71ff0599.mp3",
+  "d": 4.608
+ },
+ "detendeur-hp-2": {
+  "f": "8a04ea8d320b.mp3",
+  "d": 6.24
+ },
+ "detendeur-hp-3": {
+  "f": "2fa246fca1f8.mp3",
+  "d": 5.808
+ },
+ "detendeur-hp-4": {
+  "f": "faab83de7af0.mp3",
+  "d": 4.656
+ },
+ "detendeur-hp-5": {
+  "f": "4e57734cade7.mp3",
+  "d": 6.768
+ },
+ "detendeur-hp-6": {
+  "f": "0e25a96e38b6.mp3",
+  "d": 5.712
+ },
+ "bouteille-0": {
+  "f": "4573f13e13ff.mp3",
+  "d": 6.648
+ },
+ "bouteille-1": {
+  "f": "3387a8d82ce3.mp3",
+  "d": 3.912
+ },
+ "bouteille-2": {
+  "f": "60c6ccf18ba4.mp3",
+  "d": 8.136
+ },
+ "bouteille-3": {
+  "f": "18981bf46715.mp3",
+  "d": 9.144
+ },
+ "bouteille-4": {
+  "f": "82d8db69d1b7.mp3",
+  "d": 3.408
+ },
+ "bouteille-5": {
+  "f": "783be830f80f.mp3",
+  "d": 8.184
+ },
+ "bouteille-6": {
+  "f": "232713e99ca7.mp3",
+  "d": 6.144
+ },
+ "gaz-detente-0": {
+  "f": "3096d2f050d6.mp3",
+  "d": 5.688
+ },
+ "gaz-detente-1": {
+  "f": "6340c50812a3.mp3",
+  "d": 5.28
+ },
+ "gaz-detente-2": {
+  "f": "dbf133c9b7fd.mp3",
+  "d": 7.2
+ },
+ "gaz-detente-3": {
+  "f": "f3991235a3ad.mp3",
+  "d": 4.464
+ },
+ "gaz-detente-4": {
+  "f": "95c9e2cf77be.mp3",
+  "d": 8.304
+ },
+ "gaz-detente-5": {
+  "f": "005acb9638e5.mp3",
+  "d": 5.544
+ },
+ "gaz-detente-6": {
+  "f": "950783b84d71.mp3",
+  "d": 9.552
+ },
+ "froid-positif-0": {
+  "f": "82ab4720517c.mp3",
+  "d": 6.384
+ },
+ "froid-positif-1": {
+  "f": "a599767cd7b5.mp3",
+  "d": 6.552
+ },
+ "froid-positif-2": {
+  "f": "55d69e222adc.mp3",
+  "d": 3.288
+ },
+ "froid-positif-3": {
+  "f": "5b0894567229.mp3",
+  "d": 5.208
+ },
+ "froid-positif-4": {
+  "f": "9dccd3d602ec.mp3",
+  "d": 6.744
+ },
+ "froid-positif-5": {
+  "f": "771e0a8f842f.mp3",
+  "d": 6.792
+ },
+ "detendeur-bt-0": {
+  "f": "e5c9c973e3b4.mp3",
+  "d": 5.568
+ },
+ "detendeur-bt-1": {
+  "f": "28a183cc5de6.mp3",
+  "d": 6.072
+ },
+ "detendeur-bt-2": {
+  "f": "50174724c2b8.mp3",
+  "d": 4.704
+ },
+ "detendeur-bt-3": {
+  "f": "c32ce718d341.mp3",
+  "d": 5.88
+ },
+ "detendeur-bt-4": {
+  "f": "6c4215439008.mp3",
+  "d": 6.528
+ },
+ "detendeur-bt-5": {
+  "f": "43bad22b2d12.mp3",
+  "d": 9.168
+ },
+ "detendeur-bt-6": {
+  "f": "ed6e17c3ba33.mp3",
+  "d": 6.696
+ },
+ "detendeur-bt-7": {
+  "f": "c296d516096c.mp3",
+  "d": 4.44
+ },
+ "resume-0": {
+  "f": "3bbd463a3b5d.mp3",
+  "d": 2.592
+ },
+ "resume-1": {
+  "f": "3ddbb8dc249f.mp3",
+  "d": 6.168
+ },
+ "resume-2": {
+  "f": "5a8c8db9707c.mp3",
+  "d": 8.04
+ },
+ "resume-3": {
+  "f": "bfc05eadca90.mp3",
+  "d": 7.296
+ },
+ "resume-4": {
+  "f": "880bf97da357.mp3",
+  "d": 6.888
+ },
+ "resume-5": {
+  "f": "c5904b70b7fd.mp3",
+  "d": 5.712
+ },
+ "resume-6": {
+  "f": "87d6c1bac3cb.mp3",
+  "d": 4.632
+ }
+}
