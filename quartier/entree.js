@@ -32,7 +32,7 @@ const CSS = `
 .r3d-coeur{position:relative;display:grid}
 .r3d-scene{grid-area:1/1;position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--ligne);
   background:radial-gradient(ellipse 80% 70% at 50% 34%,#ffffff 0%,#f8f3e8 55%,#ece5d5 100%);
-  aspect-ratio:16/9;min-height:440px;max-height:86vh;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none}
+  width:100%;aspect-ratio:16/9;min-height:440px;max-height:86vh;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none}
 .r3d-scene:focus-visible{box-shadow:0 0 0 3px var(--orange)}
 .r3d-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
 .r3d-canvas.vise{cursor:pointer}
