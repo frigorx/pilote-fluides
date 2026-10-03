@@ -31,6 +31,11 @@
       document.body.setAttribute("data-pret", "1");
       return;
     }
+    if (JR.param("image") === "film") { // ?image=film&t=<s> : une image du film 16:9 (bande du bas comprise)
+      window.VOYAGE_THEATRE.creer(document.getElementById("vy-svg"), { recit: R, pistes: res.pistes, film: true }).rendreFilm(Number(JR.param("t") || 0));
+      document.body.setAttribute("data-pret", "1");
+      return;
+    }
     const th = window.VOYAGE_THEATRE.creer(document.getElementById("vy-svg"), { recit: R, pistes: res.pistes, nu: JR.param("nu") === "1" });
     const i = R.scenes.findIndex(s => s.id === JR.param("image")), h = th.scenes[i];
     const k = Number(JR.param("k") || 0), f = Number(JR.param("f") || 0.5);

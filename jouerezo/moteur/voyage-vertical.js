@@ -16,7 +16,7 @@
    ===================================================================== */
 (function () {
   "use strict";
-  const D = window.VOYAGE_DESSIN, FIN_EP = 4.5, K = 0.675, Y0 = 312, CROP = 140;
+  const D = window.VOYAGE_DESSIN, FIN_EP = 4.5, K = 0.675, Y0 = 368, CROP = 140;
   const COUL = { BP: D.BLEU, HP: D.ORANGE, froid: "#2f6fb8", chaud: "#c0392b", fuite: "#c0392b", recup: "#1e7e54", liq: "#2f6fb8" };
   const titreFont = { "font-family": "Trebuchet MS, Arial, sans-serif", "font-weight": 700 };
 
@@ -33,6 +33,9 @@
     const plateau = D.el("g", { transform: "translate(0 " + (Y0 - CROP * K) + ") scale(" + K + ")" }, cadre);
     const scene = D.el("g", {}, plateau), vitrine = D.el("g", {}, plateau);
     const haut = D.el("g", {}, svg), sous = D.el("g", {}, svg), carte = D.el("g", {}, svg), fin = D.el("g", {}, svg);
+    // inerweb.fr + le lycée, EN PERMANENCE (Franck, 03/10) : la bande du haut, au-dessus du titre
+    const marque = D.el("g", {}, svg);
+    D.signature(marque, 540, 16, 760);
     const H = R.scenes.map(s => window.VOYAGE_THEATRE.horaire(s, o.pistes));
     let debut = 0;
     const episodes = H.map((h, i) => { const e = { i: i, debut: debut, D: h.D, duree: h.D + FIN_EP }; debut += e.duree; return e; });
@@ -42,10 +45,10 @@
       courant = i; etatFin = -1;
       const s = R.scenes[i], h = H[i];
       [scene, vitrine, haut, sous, carte, fin].forEach(g => { g.innerHTML = ""; g.setAttribute("opacity", 1); });
-      D.texte(haut, 540, 74, R.titre.toUpperCase(), Object.assign({ "text-anchor": "middle", "font-size": 34, fill: D.ORANGE, "letter-spacing": 2 }, titreFont));
-      const ep = D.pastille(haut, 540, 150, i ? "Épisode " + i + " / " + (R.scenes.length - 1) : "Épisode 0 · la bande-annonce", D.BLEU, 34, "middle");
-      D.texte(haut, 540, 232, s.titre, Object.assign({ "text-anchor": "middle", "font-size": s.titre.length > 20 ? 58 : 66, fill: D.BLEU }, titreFont));
-      D.texte(haut, 540, 282, s.sous, { "text-anchor": "middle", "font-size": 38, fill: D.ORANGE, "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" });
+      D.texte(haut, 540, 152, R.titre.toUpperCase(), Object.assign({ "text-anchor": "middle", "font-size": 34, fill: D.ORANGE, "letter-spacing": 2 }, titreFont));
+      const ep = D.pastille(haut, 540, 214, i ? "Épisode " + i + " / " + (R.scenes.length - 1) : "Épisode 0 · la bande-annonce", D.BLEU, 34, "middle");
+      D.texte(haut, 540, 292, s.titre, Object.assign({ "text-anchor": "middle", "font-size": s.titre.length > 20 ? 58 : 66, fill: D.BLEU }, titreFont));
+      D.texte(haut, 540, 340, s.sous, { "text-anchor": "middle", "font-size": 38, fill: D.ORANGE, "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" });
       const ctx = { T: h.T, E: h.E, D: h.D, A: (k, f) => h.T[k] + (f || 0) * (h.E[k] - h.T[k]), film: true, recit: R };
       maj = window.VOYAGE_SCENES[s.id](scene, ctx);
       vue = s.organe && s.pres ? D.carteIdentite(vitrine, s) : null;
@@ -53,14 +56,14 @@
       ligne = null;
       cir = null;
       if (s.carte) {
-        cir = D.circuit(carte, 210, 1236, 660, false);
+        cir = D.circuit(carte, 240, 1290, 600, false);
         if (s.organe) cir.surligne(s.organe, true);
         majMini = D.heroine(carte, { r: 30 });
         const rang = D.el("g", {}, carte);
         let x = 0;
         (s.puces || []).forEach((p, k) => {
-          if (k) { D.texte(rang, x + 8, 1676, /BP|HP/.test(s.puces[0][0]) && /BP|HP/.test(p[0]) ? "→" : "·", { "font-size": 38, fill: D.BLEU, "font-weight": 700 }); x += 44; }
-          x += D.pastille(rang, x, 1676, p[1], COUL[p[0]] || D.BLEU, 34).largeur;
+          if (k) { D.texte(rang, x + 8, 1714, /BP|HP/.test(s.puces[0][0]) && /BP|HP/.test(p[0]) ? "→" : "·", { "font-size": 38, fill: D.BLEU, "font-weight": 700 }); x += 44; }
+          x += D.pastille(rang, x, 1714, p[1], COUL[p[0]] || D.BLEU, 34).largeur;
         });
         rang.setAttribute("transform", "translate(" + (540 - x / 2).toFixed(1) + " 0)");
       }
@@ -72,7 +75,7 @@
       const txt = Array.isArray(p) ? p[0] : p;
       if (txt === ligne) return;
       ligne = txt; sous.innerHTML = "";
-      const l = D.couper(txt, 30), y0 = 1000 - (l.length - 1) * 33;
+      const l = D.couper(txt, 30), y0 = 1060 - (l.length - 1) * 33;
       D.lignes(sous, 540, y0, l, { "text-anchor": "middle", "font-size": 56, fill: "#10233c", "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" }, 66);
     }
     function carteDeFin(i) {

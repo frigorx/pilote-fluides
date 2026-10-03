@@ -108,7 +108,7 @@
     const vent = D.ventilateur(g, 130, 255, 42);
     D.etiquette(g, 190, 268, "air tiède de la chambre");
     D.etiquette(g, 280, 712, "air refroidi");
-    D.etiquette(g, 60, 328, "entrée", { "font-weight": 700 }); D.etiquette(g, 60, 366, "liquide froid");
+    D.etiquette(g, 60, 328, "entrée", { "font-weight": 700 }); D.etiquette(g, 60, 366, "mélange froid"); // liquide + un peu de vapeur, comme à la sortie du détendeur
     D.etiquette(g, 1540, 328, "sortie", { "font-weight": 700, "text-anchor": "end" }); D.etiquette(g, 1540, 366, "vapeur", { "text-anchor": "end" });
     const ebul = D.pastille(g, 800, 724, "ébullition : le liquide fait des bulles", "#2f6fb8", 30, "middle");
     const surch = D.pastille(g, 1430, 640, "surchauffe", D.ORANGE, 30, "middle");

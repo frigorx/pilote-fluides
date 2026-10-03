@@ -78,7 +78,9 @@
     function poserBas() {
       bas.innerHTML = ""; sousTitre = null;
       if (!o.film) return;
-      D.el("rect", { x: 50, y: 782, width: 1500, height: 104, rx: 20, fill: "#fffdf8", stroke: "rgba(27,58,99,.22)", "stroke-width": 2 }, bas);
+      D.el("rect", { x: 40, y: 784, width: 1250, height: 108, rx: 20, fill: "#fffdf8", stroke: "rgba(27,58,99,.22)", "stroke-width": 2 }, bas);
+      D.el("rect", { x: 1302, y: 784, width: 284, height: 108, rx: 16, fill: "#fffdf8", stroke: "rgba(27,58,99,.22)", "stroke-width": 2 }, bas);
+      D.signaturePermanente(bas, 1316, 790, 256); // inerweb.fr + le lycée, en permanence (Franck, 03/10)
       sousTitre = D.el("g", {}, bas);
     }
 
@@ -119,8 +121,8 @@
         if (ligne !== derniereLigne) {
           derniereLigne = ligne;
           sousTitre.innerHTML = "";
-          const l = couper(ligne, 74);
-          D.lignes(sousTitre, 800, l.length > 1 ? 826 : 846, l, { "text-anchor": "middle", "font-size": 34, fill: "#10233c", "font-family": "Calibri, Arial, sans-serif", "font-weight": 600 }, 42);
+          const l = couper(ligne, 66), y0 = l.length > 2 ? 816 : l.length > 1 ? 830 : 848;
+          D.lignes(sousTitre, 665, y0, l, { "text-anchor": "middle", "font-size": 31, fill: "#10233c", "font-family": "Calibri, Arial, sans-serif", "font-weight": 600 }, 34);
         }
       }
       return r;

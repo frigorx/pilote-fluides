@@ -1,0 +1,119 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "un circuit fermé",
+  "duree": 44,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "evaporateur",
+  "num": "1",
+  "titre": "L'évaporateur",
+  "sous": "je prends la chaleur",
+  "duree": 46,
+  "video": "chapitre-01-l-evaporateur.mp4",
+  "affiche": "chapitre-01-l-evaporateur.jpg"
+ },
+ {
+  "id": "compresseur",
+  "num": "2",
+  "titre": "Le compresseur",
+  "sous": "on me serre",
+  "duree": 49,
+  "video": "chapitre-02-le-compresseur.mp4",
+  "affiche": "chapitre-02-le-compresseur.jpg"
+ },
+ {
+  "id": "condenseur",
+  "num": "3",
+  "titre": "Le condenseur",
+  "sous": "je rends la chaleur",
+  "duree": 43,
+  "video": "chapitre-03-le-condenseur.mp4",
+  "affiche": "chapitre-03-le-condenseur.jpg"
+ },
+ {
+  "id": "bouteille",
+  "num": "4",
+  "titre": "La bouteille de liquide",
+  "sous": "la réserve",
+  "duree": 27,
+  "video": "chapitre-04-la-bouteille-de-liquide.mp4",
+  "affiche": "chapitre-04-la-bouteille-de-liquide.jpg"
+ },
+ {
+  "id": "filtre",
+  "num": "5",
+  "titre": "Le filtre déshydrateur",
+  "sous": "ni eau, ni saleté",
+  "duree": 30,
+  "video": "chapitre-05-le-filtre-deshydrateur.mp4",
+  "affiche": "chapitre-05-le-filtre-deshydrateur.jpg"
+ },
+ {
+  "id": "voyant",
+  "num": "6",
+  "titre": "Le voyant liquide",
+  "sous": "une fenêtre sur le circuit",
+  "duree": 31,
+  "video": "chapitre-06-le-voyant-liquide.mp4",
+  "affiche": "chapitre-06-le-voyant-liquide.jpg"
+ },
+ {
+  "id": "electrovanne",
+  "num": "7",
+  "titre": "L'électrovanne",
+  "sous": "un robinet électrique",
+  "duree": 34,
+  "video": "chapitre-07-l-electrovanne.mp4",
+  "affiche": "chapitre-07-l-electrovanne.jpg"
+ },
+ {
+  "id": "detendeur",
+  "num": "8",
+  "titre": "Le détendeur",
+  "sous": "le passage étroit",
+  "duree": 51,
+  "video": "chapitre-08-le-detendeur.mp4",
+  "affiche": "chapitre-08-le-detendeur.jpg"
+ },
+ {
+  "id": "fuite",
+  "num": "9",
+  "titre": "La fuite",
+  "sous": "une voisine s'échappe",
+  "duree": 41,
+  "video": "chapitre-09-la-fuite.mp4",
+  "affiche": "chapitre-09-la-fuite.jpg"
+ },
+ {
+  "id": "recuperation",
+  "num": "10",
+  "titre": "La récupération",
+  "sous": "jamais dans l'air",
+  "duree": 40,
+  "video": "chapitre-10-la-recuperation.mp4",
+  "affiche": "chapitre-10-la-recuperation.jpg"
+ },
+ {
+  "id": "famille",
+  "num": "",
+  "titre": "La famille",
+  "sous": "d'hier à demain",
+  "duree": 55,
+  "video": "chapitre-11-la-famille.mp4",
+  "affiche": "chapitre-11-la-famille.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Le tour en quatre verbes",
+  "sous": "l'essentiel à retenir",
+  "duree": 34,
+  "video": "chapitre-12-le-tour-en-quatre-verbes.mp4",
+  "affiche": "chapitre-12-le-tour-en-quatre-verbes.jpg"
+ }
+]

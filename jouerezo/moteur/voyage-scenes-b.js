@@ -190,7 +190,11 @@
     D.etiquette(g, 596, 384, "bobine", { "text-anchor": "end" }); D.trait(g, 600, 376, 690, 376);
     D.etiquette(g, 596, 262, "ressort", { "text-anchor": "end" }); D.trait(g, 600, 256, 784, 300);
     D.etiquette(g, 800, 712, "noyau en acier", { "text-anchor": "middle" }); D.trait(g, 800, 684, 800, 600);
-    const etat = { ferme: D.pastille(g, 60, 748, "fermée : la bobine n'a pas de courant", "#c0392b", 30), ouvert: D.pastille(g, 60, 748, "ouverte : la bobine est un aimant, le noyau monte", "#1e7e54", 30) };
+    // le badge suit la voix, un état à la fois (relecture du 03/10 : plus de « fermée » pendant que la bobine reçoit du courant)
+    const etat = { ferme: D.pastille(g, 60, 748, "fermée : la bobine n'a pas de courant", "#c0392b", 30),
+      courant: D.pastille(g, 60, 748, "courant : la bobine devient un aimant", D.ORANGE, 30),
+      ouvert: D.pastille(g, 60, 748, "ouverte : le noyau est levé, le liquide passe", "#1e7e54", 30),
+      coupe: D.pastille(g, 60, 748, "courant coupé : le ressort referme", D.ORANGE, 30) };
     const mila = D.heroine(fond, { r: 30 });
     const tOn = c.A(2, 0.6), tHaut = c.A(3, 0.4), tOff = c.A(4, 0.35), tBas = c.A(4, 0.6);
     return function (t) {
@@ -205,7 +209,8 @@
       cable.setAttribute("stroke", courant ? "#ff6b35" : "#9aa7b5"); cable.setAttribute("stroke-dashoffset", courant ? (-t * 60).toFixed(1) : 0);
       contour.setAttribute("stroke", courant ? "#ff6b35" : D.BLEU);
       lampe.setAttribute("fill", courant ? "#2e9e57" : "#c9d4e2");
-      etat.ouvert.setAttribute("opacity", ouvre > 0.5 ? 1 : 0); etat.ferme.setAttribute("opacity", ouvre > 0.5 || t < c.T[2] + 0.8 ? 0 : 1);
+      const badge = t < c.T[2] + 0.8 ? "" : t < tOn ? "ferme" : t < tHaut + 0.25 ? "courant" : t < tOff ? "ouvert" : t < tBas + 0.4 ? "coupe" : "ferme";
+      for (const k in etat) etat[k].setAttribute("opacity", k === badge ? 1 : 0);
       const coule = D.borne(t, tHaut, tOff + 0.3) - tHaut; // le liquide n'avance que vanne ouverte
       flux.forEach(f => f(coule, 150));
       const x = D.courbe([[c.T[2], 200], [tHaut + 0.3, 330], [c.E[3] + 0.4, 1300], [c.T[5], 1310], [c.D - 0.2, 1640]], t);

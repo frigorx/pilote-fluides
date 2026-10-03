@@ -235,7 +235,21 @@ window.VOYAGE_RECIT = {
         choix: [["Il abîmait la couche d'ozone.", 1],
                 ["Il ne faisait pas assez de froid.", 0],
                 ["Il était trop cher.", 0]],
-        pourquoi: "Le R-12 est un CFC : en montant dans le ciel, il détruit la couche d'ozone. Le protocole de Montréal (1987) a arrêté ces fluides." } }
+        pourquoi: "Le R-12 est un CFC : en montant dans le ciel, il détruit la couche d'ozone. Le protocole de Montréal (1987) a arrêté ces fluides." } },
+    { id: "resume", num: "", titre: "Le tour en quatre verbes", sous: "l'essentiel à retenir", carte: null,
+      phrases: [
+        "Pour finir, refaisons le tour en quatre verbes.",
+        "Dans l'évaporateur, j'absorbe la chaleur de la chambre.",
+        "Dans le compresseur, on me comprime.",
+        "Dans le condenseur, je rejette la chaleur dehors.",
+        "Dans le détendeur, je me détends : ma pression chute.",
+        "Absorber, comprimer, rejeter, détendre : et le tour recommence."
+      ],
+      question: { q: "Dans quel ordre la molécule fait-elle le tour ?",
+        choix: [["Absorber, comprimer, rejeter, détendre.", 1],
+                ["Comprimer, absorber, détendre, rejeter.", 0],
+                ["Rejeter, absorber, détendre, comprimer.", 0]],
+        pourquoi: "Évaporateur, compresseur, condenseur, détendeur : elle absorbe la chaleur, on la comprime, elle rejette la chaleur, elle se détend. Puis tout recommence." } }
   ],
   portes: [
     { t: "La croix du frigoriste", h: "../f/a-croix-frigoriste/" },

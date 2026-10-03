@@ -354,6 +354,28 @@
     return g;
   };
 
+  /* la signature en petit, EN PERMANENCE à l'écran (Franck, 03/10 : « le logo inerweb.fr en permanence avec le logo du
+     lycée, durant toute la vidéo ») : le logo en haut, « en partenariat avec » et le logo du lycée (ou son emplacement) dessous */
+  D.signaturePermanente = function (parent, x, y, l) {
+    const g = D.el("g", {}, parent), k = l / 470;
+    const iw = D.el("g", { transform: "translate(" + x + " " + y + ") scale(" + k + ")" }, g);
+    D.texte(iw, 0, 80, "❄️", { "font-size": 56, fill: D.BLEU });
+    D.texte(iw, 76, 75, "iner", { "font-size": 52, "font-weight": 700, fill: D.BLEU, "font-family": "Trebuchet MS, Trebuchet, sans-serif" });
+    D.texte(iw, 171, 75, "Web", { "font-size": 52, fill: D.BLEU, "font-family": "Segoe Script, Brush Script MT, cursive" });
+    D.texte(iw, 276, 75, ".fr", { "font-size": 52, "font-weight": 700, fill: D.BLEU, "font-family": "Trebuchet MS, Trebuchet, sans-serif" });
+    D.el("line", { x1: 76, x2: 334, y1: 80, y2: 80, stroke: "#e8914a", "stroke-width": 4 }, iw);
+    D.el("rect", { x: 342, y: 8, rx: 7, width: 110, height: 38, fill: "#e8914a" }, iw);
+    const y2 = y + 96 * k, h2 = 60 * k;
+    D.texte(g, x, y2 + 4 * k, "en partenariat avec", { "font-size": 24 * k, fill: "#3b4a5e", "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" });
+    const logo = window.VOYAGE_LOGO_LYCEE || (window.VOYAGE_RECIT && window.VOYAGE_RECIT.logoLycee);
+    if (logo) D.el("image", { href: logo, x: x, y: y2 + 12 * k, width: l, height: h2, preserveAspectRatio: "xMinYMid meet" }, g);
+    else {
+      D.el("rect", { x: x, y: y2 + 12 * k, width: l, height: h2, rx: 8 * k, fill: "#fff", stroke: "#9aa7b5", "stroke-width": 2, "stroke-dasharray": "8 6" }, g);
+      D.texte(g, x + l / 2, y2 + 12 * k + h2 / 2 + 9 * k, "logo du lycée", { "text-anchor": "middle", "font-size": 26 * k, fill: "#637285", "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" });
+    }
+    return g;
+  };
+
   /* ---------- le circuit des huit organes (repère 1000 × 620, dans le sens du fluide) ---------- */
   D.CIRCUIT_PTS = [[390, 545], [650, 545], [890, 545], [890, 400], [890, 240], [890, 85], [745, 85], [495, 85], [400, 85],
     [290, 85], [190, 85], [95, 85], [95, 190], [95, 320], [95, 545], [390, 545]];

@@ -57,7 +57,7 @@
     D.etiquette(g, 245, 640, "bulbe", { "text-anchor": "end" });
     D.etiquette(g, 320, 730, "sortie de l'évaporateur", { "text-anchor": "middle" });
     const flash = D.lignes(g, 1300, 612, ["une partie bout :", "ça refroidit le reste"], { "text-anchor": "middle", "font-size": 32, fill: "#2f6fb8", "font-weight": 700, "font-family": "Calibri, Arial, sans-serif" }, 40);
-    const ouvre = D.pastille(g, 1540, 724, "vapeur trop chaude : le détendeur ouvre plus", D.ORANGE, 28, "end");
+    const ouvre = D.pastille(g, 1540, 724, "surchauffe trop élevée : le détendeur ouvre davantage", D.ORANGE, 28, "end");
     const mila = D.heroine(fondHP, { r: 30 });
     const tPousse = c.A(5, 0.45);
     return function (t) {
@@ -228,6 +228,31 @@
       detruit.setAttribute("opacity", D.lisse((t - c.T[6]) / 0.5).toFixed(2));
       jamais.setAttribute("opacity", D.lisse((t - c.T[7]) / 0.5).toFixed(2));
       return { temp: 0.4, etat: "liquide", humeur: "sourire" };
+    };
+  };
+
+  /* ---------- le tour en quatre verbes (relecture du 03/10 : remettre l'essentiel en mémoire à la fin) ---------- */
+  S.resume = function (g, c) {
+    const cir = D.circuit(g, 330, 150, 960, true);
+    const VERBES = [["evaporateur", "1. absorber", 1, "#2f6fb8", [0, 2]], ["compresseur", "2. comprimer", 2, "#c0392b", [2, 5]],
+      ["condenseur", "3. rejeter", 3, D.ORANGE, [5, 7.6]], ["detendeur", "4. détendre", 4, "#1e7e54", [7.6, 15]]];
+    const lignes = VERBES.map(([, mot, k, coul], i) => ({ k: k, t: D.texte(g, 785, 380 + i * 52, mot, { "text-anchor": "middle", "font-size": 46, "font-weight": 700, fill: coul, "font-family": "Trebuchet MS, Arial, sans-serif" }) }));
+    const petite = D.heroine(g, { r: 30 }), grande = D.heroine(g, { r: 60 });
+    const tempDe = w => D.courbe([[0, 0.05], [2, 0.12], [4, 0.95], [6, 0.85], [7, 0.55], [12.5, 0.5], [13.3, 0.05], [15, 0.05]], w, true);
+    return function (t) {
+      const rep = [[c.T[1], 0]];
+      VERBES.forEach(([, , k, , [a, b]]) => { rep.push([c.T[k], a]); rep.push([c.E[k], b]); });
+      rep.push([c.T[5], 15]); rep.push([c.E[5], 30]);
+      const w = D.courbe(rep, t, true), wm = ((w % 15) + 15) % 15;
+      VERBES.forEach(([nom, , k], i) => {
+        const vu = t > c.T[k] - 0.1;
+        cir.surligne(nom, (t > c.T[k] && t < c.E[k] + 0.3) || t > c.T[5]);
+        lignes[i].t.setAttribute("opacity", vu ? 1 : 0.12);
+      });
+      const [px, py] = cir.ecran(...D.circuitPoint(w));
+      petite({ x: px, y: py, s: 0.85, t: t, temp: tempDe(wm), etat: wm > 0.6 && wm < 6.8 ? "vapeur" : "liquide", humeur: "sourire" });
+      grande({ x: 160, y: 470 + Math.sin(t * 2.2) * 8, t: t, temp: 0.1, etat: "liquide", regard: [1, 0], humeur: "sourire" });
+      return {};
     };
   };
 
