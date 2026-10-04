@@ -24,3 +24,8 @@ figure.scene-journee .choix button:focus-visible { outline:3px solid var(--orang
 figure.scene-journee .legende { margin:10px 16px 0; padding:0; border:0; font-size:19px; line-height:1.5; color:var(--txt); }
 figure.scene-journee .legende:last-child { margin-bottom:14px; color:var(--mut); }
 @media print { figure.scene-journee .choix { display:none; } }
+
+/* ---- la suite de la journée (04/10/2026) : les scènes posées sous les puces de la liste (<li>), bord à bord comme le pilote ---- */
+figure.scene-journee.scene-suite { margin:14px -26px 10px -48px; border-top:1px solid var(--ligne); border-radius:0; }
+figure.scene-journee.scene-suite .choix button { flex:1 1 120px; padding:.3em .6em; }
+figure.scene-journee.scene-suite .choix button.primary { flex:0 1 auto; padding:.3em .9em; }

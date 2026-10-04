@@ -1,0 +1,17 @@
+Symboles des scènes de metier.html (04/10/2026)
+
+Copies SANS RETOUCHE de la collection QElectroTech convertie en SVG
+(C:/git/bibliotheque-symboles-energie/svg/60_energy/21_refrigeration/Frio/),
+licence CC BY 3.0, https://github.com/qelectrotech/qelectrotech-elements :
+
+  recuperador-refrig.svg  groupe de récupération  (equipo-frigorifico/accesorios-frio/recuperador-refrig.svg)
+  botella-refrig.svg      bouteille de fluide      (sinopticosfrio/accesorios/botella-refrig.svg)
+  bomba-vacio.svg         pompe à vide             (equipo-frigorifico/accesorios-frio/bomba-vacio.svg)
+  manometro.svg           vacuomètre               (equipo-frigorifico/accesorios-frio/manometro.svg)
+
+Les autres symboles (manifold manometres.svg, vanne de service vanne_isolement.svg,
+détendeur detendeur_thermo_ext.svg, voyant voyant_liquide.svg) sont ceux de la
+bibliothèque curée de F. Henninot, lus en place dans packs/fluides/res/symboles/.
+La balance, le chalumeau et sa flamme, le thermomètre à pince et le manomètre
+n'existent pas en symbole dans les bibliothèques : ils sont dessinés dans les scènes
+(instruments : recopiés de packs/fluides/res/surchauffe-sous-refroidissement-interactif/scene-mesure.js).

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-17.0 -42.0 88.0 88.0" width="88" height="88">
+<!-- Pompe à vide — converti de recuperador-refrig.elmt par outils\elmt-vers-svg.py -->
+<rect x="-17.0" y="-42.0" width="88.0" height="88.0" fill="#ffffff"/>
+<line x1="14" y1="4" x2="20" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="10.50" cy="14.50" rx="0.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="15,-4 12,-4 10,-2 10,0 10,1 12,2 14,1 16,-1 16,-3" stroke="red" stroke-width="1" fill="none"/>
+<polyline points="10,12 8.48,15 8.48,18 10,17" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="10.62" cy="6.66" rx="0.47" ry="1.66" stroke="red" stroke-width="1" fill="red"/>
+<polyline points="23.45,-9.9 25.35,-18.18 46.25,-26.47 46.25,-17.36 45.3,-17.36" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="-2.44" rx="0.47" ry="1.66" stroke="blue" stroke-width="1" fill="blue"/>
+<polygon points="-6.1,16.95 12.9,33.52 12.9,8.67 22.4,0.38 3.4,-16.18 -6.1,-7.9" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="9.67" cy="6.66" rx="0.47" ry="1.66" stroke="red" stroke-width="1" fill="red"/>
+<polygon points="-8,16.95 12.9,36 60.4,16.95 60.4,-16.18 41.4,-32.75 3.4,-17.84 -8,-7.9" stroke="black" stroke-width="1" fill="none"/>
+<line x1="23.25" y1="0.38" x2="60.5" y2="-16.53" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="23.45,-9.9 20.6,-12.39 22.5,-20.67 42.45,-28.95 46.25,-26.47" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="27.25,-11.56 28.2,-16.53 43.4,-23.15 43.4,-16.53 46.25,-18.18" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="43.4,-17.36 40.55,-19 40.55,-21.5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="23.45" y1="-9.9" x2="27.25" y2="-11.56" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.17" cy="-2.44" rx="0.47" ry="1.66" stroke="blue" stroke-width="1" fill="blue"/>
+<line x1="1" y1="-6" x2="7" y2="-11" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="9,-8 6,-8 4,-6 4,-4 4,-3 6,-2 8,-3 10,-5 10,-7" stroke="blue" stroke-width="1" fill="none"/>
+<line x1="7" y1="-5" x2="7" y2="-8" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="13" y1="-1" x2="14" y2="-3" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="-1.00" cy="13.50" rx="1.00" ry="1.50" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="10.00" cy="23.00" rx="1.00" ry="2.00" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-0.50" cy="6.50" rx="0.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-1,4 -2.52,7 -2.52,10 -1,9" stroke="black" stroke-width="1" fill="none"/>
+</svg>
