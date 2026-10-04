@@ -9,12 +9,28 @@
     const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
   };
 
+  /* L'EAU COULE (04/10/2026) : un tuyau d'eau du dessin est un <path> sans trait (sa pointe de flèche reste) qui porte
+     data-eau (chaude, froide, tiede, ou deux nombres « 1 0.3 » : de 0 = froid à 1 = chaud, du début à la fin du tube),
+     parfois data-debit (1 = normal) et data-debut. Le moteur commun _commun/ecoulement.js les lit dans l'ordre du
+     dessin et y fait couler l'eau ; la largeur de l'eau est le trait d'origine moins 3. Sans tuyau, il pose le filigrane. */
+  const eau = (plus = {}) => el => {
+    const svg = el.querySelector("svg"), eq = document.getElementById("sceneEquivalent");
+    if (!svg || !window.HydroEcoulement) return null;
+    const tubes = [...svg.querySelectorAll("[data-eau]")].map(p => {
+      const [a, b] = p.dataset.eau.split(" "), t = { d: p.getAttribute("d"), eau: b === undefined ? a : [+a, +b], largeur: p.getAttribute("stroke-width") - 3 };
+      if (p.dataset.debit) t.debit = +p.dataset.debit;
+      if (p.dataset.debut) t.debut = +p.dataset.debut;
+      return t;
+    });
+    return window.HydroEcoulement.brancher(svg, Object.assign({ tubes, annonce: { el: eq, base: eq ? eq.textContent : "" } }, plus));
+  };
+
   const shell = (id, title, desc, body) => `
     <svg viewBox="0 0 720 420" role="img" aria-labelledby="${id}-title ${id}-desc">
       <title id="${id}-title">${title}</title>
       <desc id="${id}-desc">${desc}</desc>
       <defs>
-        <marker id="arrow-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1b3a63"/></marker>
+        <marker id="arrow-${id}" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1b3a63"/></marker>
         <pattern id="warm-${id}" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 10L10 0" stroke="#c9451a" stroke-width="2"/></pattern>
         <pattern id="cool-${id}" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#3d7fca"/></pattern>
       </defs>${body}
@@ -61,7 +77,7 @@
     "Des points de mesure sont placés sur le départ et le retour. Le débit est contrôlé sur le circuit. Les valeurs doivent être comparées au dossier de l’installation.",
     `<rect x="250" y="120" width="220" height="180" rx="24" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
      <text x="360" y="205" text-anchor="middle" font-size="24" font-weight="700">GÉNÉRATEUR</text>
-     <path d="M470 155H640" stroke="#c9451a" stroke-width="12" marker-end="url(#arrow-prod-measure)"/><path d="M640 265H470" stroke="#3d7fca" stroke-width="12" marker-end="url(#arrow-prod-measure)"/>
+     <path d="M470 155H640" stroke="none" stroke-width="12" data-eau="chaude" marker-end="url(#arrow-prod-measure)"/><path d="M640 265H470" stroke="none" stroke-width="12" data-eau="froide" marker-end="url(#arrow-prod-measure)"/>
      <circle cx="535" cy="155" r="25" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="535" y="162" text-anchor="middle" font-size="19" font-weight="700">T₁</text>
      <circle cx="535" cy="265" r="25" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="535" y="272" text-anchor="middle" font-size="19" font-weight="700">T₂</text>
      <rect x="45" y="174" width="185" height="72" rx="14" fill="url(#cool-prod-measure)" stroke="#3d7fca" stroke-width="4"/><text x="138" y="206" text-anchor="middle" font-size="19" font-weight="700">DOSSIER</text><text x="138" y="230" text-anchor="middle" font-size="19">conditions attendues</text>
@@ -113,7 +129,7 @@
         cap: "Montrez le départ et le retour du générateur.",
         tp: "Repérez le départ, le retour et la fonction de l’équipement.",
         bts: "Séparez la fonction hydraulique, la source d’énergie et la technologie.",
-        scene: network("prod-ident"),wire:vue3d("pacAirEau","La pompe à chaleur en 3D"),
+        scene: network("prod-ident"),wire: el => { eau()(el); vue3d("pacAirEau","La pompe à chaleur en 3D")(el); },
         equivalent: "Le retour entre dans un bloc générateur. Le départ en sort vers les usages. Le bloc transfère de l’énergie à l’eau ou en retire selon le service.",
         action: {
           type: "choice", prompt: "Choisissez la fonction commune.",
@@ -134,7 +150,7 @@
         cap: "Montrez la chaudière, la pompe à chaleur ou le groupe d’eau glacée.",
         tp: "Associez le bon mot au bon niveau de description.",
         bts: "Construisez une comparaison à partir du service, puis des contraintes techniques.",
-        scene: technologies,
+        scene: technologies, wire: eau(),
         equivalent: "Trois technologies différentes convergent vers une même fonction hydraulique : transférer de l’énergie avec l’eau du réseau.",
         action: {
           type: "match", prompt: "Associez chaque terme à sa catégorie.",
@@ -154,7 +170,7 @@
         cap: "Repérez les deux sondes de température T1 et T2.",
         tp: "Suivez le sens de circulation et localisez les deux températures.",
         bts: "Reliez les relevés au bilan du système et à leurs conditions de mesure.",
-        scene: measurements,
+        scene: measurements, wire: eau(),
         equivalent: "Deux sondes T1 et T2 encadrent le générateur. Le sens est indiqué par des flèches et les mots départ et retour.",
         action: {
           type: "choice", prompt: "Quel relevé permet de commencer à vérifier le service rendu ?",
@@ -175,7 +191,7 @@
         cap: "Comptez les blocs allumés après avoir bougé le curseur.",
         tp: "Observez quels blocs seraient appelés dans cette représentation simplifiée.",
         bts: "Expliquez pourquoi une vraie comparaison exige puissances, régimes d’eau, rendements et contraintes du projet.",
-        scene: loadScene,
+        scene: loadScene, wire: eau(),
         equivalent: (value) => `Besoin relatif réglé à ${value} pour cent. Le nombre de blocs actifs augmente par paliers dans ce modèle qualitatif.`,
         action: {
           type: "range", prompt: "Faites varier la charge et verbalisez l’effet.", label: "Besoin relatif", min: 20, max: 100, step: 5, value: 50,
@@ -192,7 +208,7 @@
         cap: "Signalez une température anormale sans rien démonter.",
         tp: "Préparez un compte rendu factuel avant toute action corrective.",
         bts: "Comparez l’état mesuré au point attendu avant de justifier une cause probable.",
-        scene: diagnosis,
+        scene: diagnosis, wire: eau(),
         equivalent: "La démarche va du dossier aux mesures, puis à la comparaison et enfin à une hypothèse provisoire.",
         action: {
           type: "sequence", prompt: "Placez la démarche dans l’ordre.",

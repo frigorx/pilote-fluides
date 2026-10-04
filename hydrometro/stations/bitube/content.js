@@ -9,16 +9,25 @@
     const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
   };
 
-  const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
+  /* L’eau coule dans les schémas (04/10/2026) : les tubes ne se colorent plus ici, chaque scène DÉCLARE les siens
+     (« eaux », plus bas) et le moteur commun _commun/ecoulement.js y fait couler l’eau, chaude au départ, froide au
+     retour. Les pointes de flèche (fl-…) gardent une taille fixe ; les mots restent dessinés par-dessus l’eau.
+     Une scène sans tube ne reçoit que le filigrane inerWeb (charte R9). */
+  const brancherEau = (el, decl) => {
+    const eq = document.getElementById("sceneEquivalent");
+    return window.HydroEcoulement && window.HydroEcoulement.brancher(el.querySelector("svg"), Object.assign({ annonce: { el: eq, base: eq.textContent } }, decl || { tubes: [] }));
+  };
+
+  const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker><marker id="fl-${id}" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
 
   const parallelScene = svg("bi-parallel", "Réseau bitube à trois branches parallèles", "Une conduite de départ alimente trois branches d’émetteurs. Chaque branche rejoint une conduite de retour commune. Les émetteurs ne sont pas traversés successivement par la même branche. Un repère EAU peut parcourir la branche 2 ; le texte décrit chaque passage.", `
     <text x="380" y="35" text-anchor="middle" font-size="22" font-weight="700">DÉPART COMMUN → BRANCHES → RETOUR COMMUN</text>
-    <path d="M75 100H685" stroke="#c9451a" stroke-width="15" marker-end="url(#arr-bi-parallel)"/><path d="M685 340H75" stroke="#3d7fca" stroke-width="15" marker-end="url(#arr-bi-parallel)"/>
-    ${[190,380,570].map((x,i)=>`<g><path d="M${x} 100V340" stroke="#1b3a63" stroke-width="9"/><image href="assets/radiateur.svg" x="${x-52}" y="185" width="104" height="78"/><rect x="${x-65}" y="277" width="130" height="32" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="${x}" y="299" text-anchor="middle" font-size="20" font-weight="700">BRANCHE ${i+1}</text></g>`).join("")}
+    <path d="M75 100H685" stroke="none" stroke-width="15" marker-end="url(#fl-bi-parallel)"/><path d="M685 340H75" stroke="none" stroke-width="15" marker-end="url(#fl-bi-parallel)"/>
+    ${[190,380,570].map((x,i)=>`<g><path d="M${x} 100V340" stroke="none" stroke-width="9"/><image href="assets/radiateur.svg" x="${x-52}" y="185" width="104" height="78"/><rect x="${x-65}" y="277" width="130" height="32" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="${x}" y="299" text-anchor="middle" font-size="20" font-weight="700">BRANCHE ${i+1}</text></g>`).join("")}
     <text x="105" y="78" font-size="20" font-weight="700">DÉPART</text><text x="105" y="380" font-size="20" font-weight="700">RETOUR</text>
     <rect x="215" y="371" width="330" height="42" rx="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text x="380" y="397" text-anchor="middle" font-size="20">Trois chemins en parallèle</text>
     <path id="bi-flux-chemin" d="M75 100H380V340H75" fill="none" stroke="none"/>
-    <g id="bi-flux-marqueur" transform="translate(75 100)"><circle r="15" fill="#3d7fca" stroke="#fffdf8" stroke-width="3"/><text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#fffdf8">EAU</text></g>`);
+    <g id="bi-flux-marqueur" transform="translate(75 100)"><circle r="27" fill="#3d7fca" stroke="#fffdf8" stroke-width="4"/><text y="7" text-anchor="middle" font-size="20" font-weight="700" fill="#fffdf8">EAU</text></g>`);
 
   const parallelSceneAnimee = parallelScene + `
     <div class="flux-controls">
@@ -92,9 +101,9 @@
     const totals = reverse ? [30,30,30] : [10,20,30];
     return svg(`bi-${reverse?"reverse":"direct"}`, reverse ? "Retour inversé pédagogique" : "Retour direct pédagogique", reverse ? "Dans le retour inversé pédagogique, le premier émetteur alimenté parcourt le retour le plus long et le dernier le plus court. Les longueurs totales sont rapprochées à 30 mètres dans cet exemple." : "Dans le retour direct pédagogique, le premier émetteur alimenté a aussi le retour le plus court. Les longueurs totales valent 10, 20 et 30 mètres dans cet exemple.", `
       <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700">${reverse?"RETOUR INVERSÉ":"RETOUR DIRECT"} · DONNÉES PÉDAGOGIQUES</text>
-      <path d="M80 90H680" stroke="#c9451a" stroke-width="13" marker-end="url(#arr-bi-${reverse?"reverse":"direct"})"/>
-      <path d="${reverse?"M680 350H80":"M80 350H680"}" stroke="#3d7fca" stroke-width="13" marker-end="url(#arr-bi-${reverse?"reverse":"direct"})"/>
-      ${[190,380,570].map((x,i)=>`<g><path d="M${x} 90V350" stroke="#1b3a63" stroke-width="8"/><image href="assets/radiateur.svg" x="${x-48}" y="180" width="96" height="72"/><rect x="${x-72}" y="273" width="144" height="60" rx="11" fill="#fffdf8" stroke="${totals[i]===totals[0]&&reverse?"#1e7e54":"#1b3a63"}" stroke-width="${reverse?5:3}"/><text x="${x}" y="298" text-anchor="middle" font-size="20" font-weight="700">CHEMIN ${i+1}</text><text x="${x}" y="322" text-anchor="middle" font-size="20">${totals[i]} m</text></g>`).join("")}
+      <path d="M80 90H680" stroke="none" stroke-width="13" marker-end="url(#fl-bi-${reverse?"reverse":"direct"})"/>
+      <path d="${reverse?"M680 350H80":"M80 350H680"}" stroke="none" stroke-width="13" marker-end="url(#fl-bi-${reverse?"reverse":"direct"})"/>
+      ${[190,380,570].map((x,i)=>`<g><path d="M${x} 90V350" stroke="none" stroke-width="8"/><image href="assets/radiateur.svg" x="${x-48}" y="180" width="96" height="72"/><rect x="${x-72}" y="273" width="144" height="60" rx="11" fill="#fffdf8" stroke="${totals[i]===totals[0]&&reverse?"#1e7e54":"#1b3a63"}" stroke-width="${reverse?5:3}"/><text x="${x}" y="298" text-anchor="middle" font-size="20" font-weight="700">CHEMIN ${i+1}</text><text x="${x}" y="322" text-anchor="middle" font-size="20">${totals[i]} m</text></g>`).join("")}
       <text x="380" y="392" text-anchor="middle" font-size="20"><tspan x="380">Longueur seule ≠ perte de charge réelle :</tspan><tspan x="380" dy="24">diamètres, débits et singularités comptent aussi.</tspan></text>`);
   }
 
@@ -102,7 +111,7 @@
     const index = 20 + fittings * 3;
     return svg("bi-resistance", "Chemin hydraulique et résistances locales", `Le chemin pédagogique comporte 20 mètres de tube et ${fittings} singularités. L’indice comparatif vaut ${index}. Cet indice sans unité sert seulement à montrer que la longueur ne suffit pas.`, `
       <text x="380" y="35" text-anchor="middle" font-size="22" font-weight="700">COMPARER LE CHEMIN COMPLET</text>
-      <path d="M70 215H690" stroke="#3d7fca" stroke-width="15" marker-end="url(#arr-bi-resistance)"/>
+      <path d="M70 215H690" stroke="none" stroke-width="15" marker-end="url(#fl-bi-resistance)"/>
       ${Array.from({length:fittings},(_,i)=>`<g transform="translate(${250+i*(260/Math.max(1,fittings-1))} 215)"><path d="M-28 -38L0 0L-28 38M28 -38L0 0L28 38" fill="#fffdf8" stroke="#1b3a63" stroke-width="6"/></g>`).join("")}
       <rect x="55" y="90" width="270" height="72" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text x="190" y="120" text-anchor="middle" font-size="20" font-weight="700">TUBE : 20 m</text><text x="190" y="146" text-anchor="middle" font-size="20">diamètre identique</text>
       <rect x="440" y="280" width="250" height="72" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="565" y="309" text-anchor="middle" font-size="20" font-weight="700">${fittings} SINGULARITÉ(S)</text><text x="565" y="335" text-anchor="middle" font-size="20">indice : ${index}</text>`);
@@ -112,6 +121,33 @@
     ${["Tracer","Inventorier","Calculer","Mesurer","Équilibrer"].map((t,i)=>`<g transform="translate(${90+i*145} 215)"><circle r="38" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/><text y="6" text-anchor="middle" font-size="20" font-weight="700">${i+1}</text><text y="70" text-anchor="middle" font-size="20" font-weight="700">${t}</text>${i<4?`<path d="M43 0H95" stroke="#3d7fca" stroke-width="5" marker-end="url(#arr-bi-method)"/>`:""}</g>`).join("")}
     <text x="380" y="70" text-anchor="middle" font-size="22" font-weight="700">DIRECT OU INVERSÉ : VÉRIFIER, PAS SUPPOSER</text>
     <text x="380" y="365" text-anchor="middle" font-size="20"><tspan x="380">Le retour inversé rapproche les chemins ;</tspan><tspan x="380" dy="24">il ne les rend pas automatiquement identiques.</tspan></text>`);
+
+  /* l’eau de chaque étape (dans l’ordre des étapes) : les tubes de la scène, dans l’ordre où l’eau les parcourt.
+     largeur = épaisseur d’origine − 3 ; debut = chemin déjà fait par l’eau sur le départ au piquage de la branche ;
+     une branche qui traverse un émetteur va du chaud (1) au froid (0). Rien : filigrane seul (3D : pas d’eau). */
+  const eaux = [
+    /* 1 · l’eau coule à la vitesse du repère EAU (850 unités de trajet en 10 s) */
+    el => ({ vitesse: el.querySelector("#bi-flux-chemin").getTotalLength() / 10, tubes: [
+      { d: "M75 100H685", eau: "chaude", largeur: 12 },
+      { d: "M190 100V340", eau: [1, 0], largeur: 6, debut: 115 },
+      { d: "M380 100V340", eau: [1, 0], largeur: 6, debut: 305 },
+      { d: "M570 100V340", eau: [1, 0], largeur: 6, debut: 495 },
+      { d: "M685 340H75", eau: "froide", largeur: 12 }
+    ] }),
+    /* 2 · vue 3D */
+    null,
+    /* 3 · scène redessinée à chaque choix : pas de mise en route ; le retour inversé change de sens */
+    el => ({ miseEnRoute: false, tubes: [
+      { d: "M80 90H680", eau: "chaude", largeur: 10 },
+      { d: "M190 90V350", eau: [1, 0], largeur: 5 },
+      { d: "M380 90V350", eau: [1, 0], largeur: 5 },
+      { d: "M570 90V350", eau: [1, 0], largeur: 5 },
+      { d: el.querySelector("#bi-reverse-title") ? "M680 350H80" : "M80 350H680", eau: "froide", largeur: 10 }
+    ] }),
+    /* 4 · le chemin complet, curseur : pas de mise en route */
+    { miseEnRoute: false, tubes: [{ d: "M70 215H690", eau: "tiede", largeur: 12 }] }
+    /* 5 · méthode : filigrane seul */
+  ];
 
   window.STATION_CONFIG = {
     code: "D2", id: "bitube", title: "Bitube — Réseau à construire", next: "ouvrir la correspondance Pertes de charge",
@@ -136,4 +172,13 @@
     summaryScene: methodScene,
     summaryEquivalent: "Synthèse : construire les branches entre départ et retour, tracer chaque chemin, comparer direct et inversé puis vérifier les pertes réelles."
   };
+
+  /* l’eau d’abord (elle se pose sous le dessin), puis la mécanique propre à l’étape (repère EAU, vue 3D) */
+  window.STATION_CONFIG.steps.forEach((etape, i) => {
+    const mecanique = etape.wire;
+    etape.wire = el => {
+      const pilote = brancherEau(el, typeof eaux[i] === "function" ? eaux[i](el) : eaux[i]);
+      if (mecanique) mecanique(el, pilote);
+    };
+  });
 })();

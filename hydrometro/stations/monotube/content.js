@@ -11,17 +11,26 @@
 
   const fr = (n, d = 2) => n.toFixed(d).replace(".", ",");
 
+  /* L’eau coule dans les schémas (04/10/2026) : les tubes ne se colorent plus ici, chaque scène DÉCLARE les siens
+     (« eaux », plus bas) et le moteur commun _commun/ecoulement.js y fait couler l’eau. Les pointes de flèche
+     (fl-…) gardent une taille fixe ; les mots restent dessinés par-dessus l’eau. Une scène sans tube ne reçoit
+     que le filigrane inerWeb (charte R9). */
+  const brancherEau = (el, decl) => {
+    const eq = document.getElementById("sceneEquivalent");
+    return window.HydroEcoulement && window.HydroEcoulement.brancher(el.querySelector("svg"), Object.assign({ annonce: { el: eq, base: eq.textContent } }, decl || { tubes: [] }));
+  };
+
   const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc">
     <title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc>
-    <defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
+    <defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker><marker id="fl-${id}" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
 
   const routeScene = svg("mono-route", "Réseau monotube à dérivations", "Une seule boucle principale dessert trois radiateurs dans l’ordre. À chaque radiateur, une partie du débit peut passer par l’émetteur et l’autre par un bypass avant de se rejoindre en aval. Un repère EAU peut parcourir la boucle ; le texte décrit chaque passage.", `
     <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700">CAS ÉTUDIÉ : MONOTUBE À DÉRIVATIONS</text>
-    <path id="mono-flux-chemin" d="M85 95H675Q715 95 715 140V315Q715 355 675 355H85Q45 355 45 315V140Q45 95 85 95" fill="none" stroke="#1b3a63" stroke-width="14" marker-end="url(#arr-mono-route)"/>
-    ${[175,380,585].map((x, i) => `<g><path d="M${x-50} 95V205Q${x-50} 230 ${x} 230H${x+50}Q${x+50} 205 ${x+50} 95" fill="none" stroke="#3d7fca" stroke-width="9"/><path d="M${x-45} 95H${x+45}" stroke="#c9451a" stroke-width="6" stroke-dasharray="9 7"/><image href="assets/radiateur.svg" x="${x-48}" y="165" width="96" height="72"/><rect x="${x-58}" y="250" width="116" height="30" rx="7" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="${x}" y="271" text-anchor="middle" font-size="20" font-weight="700">Émetteur ${i+1}</text></g>`).join("")}
+    <path id="mono-flux-chemin" d="M85 95H675Q715 95 715 140V315Q715 355 675 355H85Q45 355 45 315V140Q45 95 85 95" fill="none" stroke="none" stroke-width="14" marker-end="url(#fl-mono-route)"/>
+    ${[175,380,585].map((x, i) => `<g><path d="M${x-50} 95V205Q${x-50} 230 ${x} 230H${x+50}Q${x+50} 205 ${x+50} 95" fill="none" stroke="none" stroke-width="9"/><path d="M${x-45} 95H${x+45}" stroke="#c9451a" stroke-width="6" stroke-dasharray="9 7"/><image href="assets/radiateur.svg" x="${x-48}" y="165" width="96" height="72"/><rect x="${x-58}" y="250" width="116" height="30" rx="7" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="${x}" y="271" text-anchor="middle" font-size="20" font-weight="700">Émetteur ${i+1}</text></g>`).join("")}
     <rect x="60" y="366" width="150" height="34" rx="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text x="135" y="388" text-anchor="middle" font-size="20" font-weight="700">PRODUCTION</text>
-    <text x="470" y="414" text-anchor="middle" font-size="20">Bleu : dérivation · orange : bypass · flèche : sens</text>
-    <g id="mono-flux-marqueur" transform="translate(85 95)"><circle r="15" fill="#3d7fca" stroke="#fffdf8" stroke-width="3"/><text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#fffdf8">EAU</text></g>`);
+    <text x="470" y="414" text-anchor="middle" font-size="20">Dérivation : par l’émetteur · orange : bypass · flèche : sens</text>
+    <g id="mono-flux-marqueur" transform="translate(85 95)"><circle r="27" fill="#3d7fca" stroke="#fffdf8" stroke-width="4"/><text y="7" text-anchor="middle" font-size="20" font-weight="700" fill="#fffdf8">EAU</text></g>`);
 
   const routeSceneAnimee = routeScene + `
     <div class="flux-controls">
@@ -99,9 +108,9 @@
     const mixed = branch * 52 + bypass * 60;
     return svg("mono-bypass", "Partage du débit dans une dérivation monotube", `Donnée pédagogique : le débit principal vaut 1,00 mètre cube par heure. ${fr(branch)} passe dans l’émetteur et ${fr(bypass)} dans le bypass. Avec 60 degrés en amont et 52 degrés en sortie d’émetteur, le mélange aval vaut ${fr(mixed,1)} degrés.`, `
       <text x="380" y="34" text-anchor="middle" font-size="21" font-weight="700">PARTAGE PUIS MÉLANGE · MODÈLE PÉDAGOGIQUE</text>
-      <path d="M65 120H695" stroke="#1b3a63" stroke-width="15" marker-end="url(#arr-mono-bypass)"/>
-      <path d="M245 120V275Q245 310 300 310H460Q515 310 515 275V120" fill="none" stroke="#3d7fca" stroke-width="${8 + branch * 12}"/>
-      <path d="M260 120H500" stroke="#c9451a" stroke-width="${8 + bypass * 10}" stroke-dasharray="11 8"/>
+      <path d="M65 120H695" stroke="none" stroke-width="15" data-part="${percent}" marker-end="url(#fl-mono-bypass)"/>
+      <path d="M245 120V275Q245 310 300 310H460Q515 310 515 275V120" fill="none" stroke="none" stroke-width="${8 + branch * 12}"/>
+      <path d="M260 120H500" stroke="none" stroke-width="${8 + bypass * 10}" stroke-dasharray="11 8"/>
       <image href="assets/radiateur.svg" x="332" y="240" width="96" height="72"/>
       <rect x="80" y="175" width="190" height="74" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text x="175" y="204" text-anchor="middle" font-size="20" font-weight="700">DÉBIT PRINCIPAL</text><text x="175" y="231" text-anchor="middle" font-size="20">1,00 m³/h · 60 °C</text>
       <rect x="490" y="175" width="205" height="74" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="592" y="204" text-anchor="middle" font-size="20" font-weight="700">MÉLANGE AVAL</text><text x="592" y="231" text-anchor="middle" font-size="20">1,00 m³/h · ${fr(mixed,1)} °C</text>
@@ -110,16 +119,16 @@
   }
 
   const temperatureScene = svg("mono-temp", "Évolution pédagogique des températures d’amont en aval", "Dans ce cas pédagogique à trois émetteurs, la température mélangée de la boucle vaut 60 degrés avant le premier, 57 degrés avant le deuxième, 54 degrés avant le troisième et 52 degrés au retour. Ces valeurs ne sont pas universelles.", `
-    <path d="M70 220H690" stroke="#1b3a63" stroke-width="14" marker-end="url(#arr-mono-temp)"/>
+    <path d="M70 220H690" stroke="none" stroke-width="14" marker-end="url(#fl-mono-temp)"/>
     ${[[130,"60 °C","AMONT"],[310,"57 °C","APRÈS E1"],[490,"54 °C","APRÈS E2"],[650,"52 °C","RETOUR"]].map(([x,t,l],i)=>`<g><circle cx="${x}" cy="222" r="46" fill="#fffdf8" stroke="${i===0?"#1e7e54":"#3d7fca"}" stroke-width="${i===0?5:4}"/><text x="${x}" y="212" text-anchor="middle" font-size="20" font-weight="700">${t}</text><text x="${x}" y="241" text-anchor="middle" font-size="20">${l}</text></g>`).join("")}
     <text x="380" y="75" text-anchor="middle" font-size="22" font-weight="700">L’AVAL REÇOIT L’ÉTAT LAISSÉ PAR L’AMONT</text>
     <rect x="80" y="295" width="600" height="120" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="380" y="323" text-anchor="middle" font-size="20" font-weight="700"><tspan x="380">DONNÉES PÉDAGOGIQUES,</tspan><tspan x="380" dy="24">PAS UN DIMENSIONNEMENT</tspan></text><text x="380" y="390" text-anchor="middle" font-size="20">Les températures réelles dépendent du réseau et des puissances.</text>`);
 
   const methodScene = svg("mono-method", "Méthode de lecture d’un monotube", "La démarche est posée sur le réseau : suivre le sens sur la conduite, repérer la dérivation et son bypass, attendre l’état stable, relever la température avant l’émetteur soit 60 degrés et après l’émetteur soit 54 degrés dans cet exemple, puis justifier par écrit.", `
     <text x="380" y="40" text-anchor="middle" font-size="22" font-weight="700">LA MÉTHODE SE LIT SUR LE RÉSEAU</text>
-    <path d="M70 210H690" stroke="#1b3a63" stroke-width="13" marker-end="url(#arr-mono-method)"/>
+    <path d="M70 210H690" stroke="none" stroke-width="13" marker-end="url(#fl-mono-method)"/>
     <path d="M340 210H420" stroke="#c9451a" stroke-width="6" stroke-dasharray="9 7"/>
-    <path d="M340 210V252M420 210V252" stroke="#3d7fca" stroke-width="8"/>
+    <path d="M340 210V252M420 210V252" stroke="none" stroke-width="8"/>
     <image href="assets/radiateur.svg" x="332" y="252" width="96" height="72"/>
     <text x="380" y="343" text-anchor="middle" font-size="20" font-weight="700">émetteur</text>
     ${[[115,"1","Suivre le sens"],[330,"2","Repérer la dérivation"],[545,"3","Attendre l’état stable"]].map(([x,n,l]) => `<g><circle cx="${x}" cy="150" r="16" fill="#e3f5ec" stroke="#1e7e54" stroke-width="4"/><text x="${x}" y="156" text-anchor="middle" font-size="20" font-weight="700">${n}</text><text x="${x}" y="118" text-anchor="middle" font-size="20" font-weight="700">${l}</text><path d="M${x} 168V198" stroke="#1e7e54" stroke-width="3" stroke-dasharray="4 4"/></g>`).join("")}
@@ -133,6 +142,43 @@
     <path d="M625 297H705M625 314H705M625 331H685" stroke="rgba(27,58,99,.35)" stroke-width="3"/>
     <text x="665" y="368" text-anchor="middle" font-size="20" font-weight="700">Justifier par écrit</text>
     <text x="380" y="412" text-anchor="middle" font-size="20">Une observation n’est pas encore un diagnostic : comparer dans le même état.</text>`);
+
+  /* l’eau de chaque étape (dans l’ordre des étapes) : les tubes de la scène, dans l’ordre où l’eau les parcourt.
+     largeur = épaisseur d’origine − 3 ; debut = chemin déjà fait par l’eau sur la boucle au piquage de la dérivation ;
+     debit < 1 : une branche qui a moins d’eau. Les températures suivent le modèle (60 → 52 °C : de chaud à tiède).
+     Rien : filigrane seul (3D : pas d’eau). */
+  const derivation = (x, eau, plus = {}) => Object.assign({ d: `M${x - 50} 95V205Q${x - 50} 230 ${x} 230H${x + 50}Q${x + 50} 205 ${x + 50} 95`, eau, largeur: 6, debut: 359 + x - 135 }, plus);
+  const eaux = [
+    /* 1 · l’eau part de la production, monte, traverse les trois émetteurs en se refroidissant puis revient ;
+       elle avance à la vitesse du repère EAU (un tour en 12 s) */
+    el => ({ vitesse: el.querySelector("#mono-flux-chemin").getTotalLength() / 12, tubes: [
+      { d: "M135 355H85Q45 355 45 315V140Q45 95 85 95", eau: "chaude", largeur: 11 },
+      { d: "M85 95H675Q715 95 715 140", eau: [1, 0.55], largeur: 11 },
+      derivation(175, [1, 0.6]), derivation(380, [0.85, 0.55]), derivation(585, [0.75, 0.5]),
+      { d: "M715 140V315Q715 355 675 355H135", eau: "tiede", largeur: 11, debut: 1018 }
+    ] }),
+    /* 2 · vue 3D */
+    null,
+    /* 3 · scène redessinée à chaque geste du curseur : pas de mise en route ; la part qui traverse l’émetteur
+       (data-part, en %) donne la largeur d’origine et la vitesse de chaque chemin entre les deux piquages */
+    el => {
+      const part = +el.querySelector("[data-part]").dataset.part / 100;
+      return { miseEnRoute: false, tubes: [
+        { d: "M65 120H245", eau: "chaude", largeur: 12 },
+        { d: "M245 120V275Q245 310 300 310H460Q515 310 515 275V120", eau: [1, 0.5], largeur: 5 + 12 * part, debit: part },
+        { d: "M245 120H515", eau: "chaude", largeur: 5 + 10 * (1 - part), debit: 1 - part },
+        { d: "M515 120H695", eau: [0.8, 0.8], largeur: 12 }
+      ] };
+    },
+    /* 4 · les températures baissent d’amont en aval */
+    { tubes: [{ d: "M70 220H690", eau: [1, 0.5], largeur: 11 }] },
+    /* 5 · la méthode : une dérivation sur la conduite */
+    { tubes: [
+      { d: "M70 210H690", eau: [1, 0.6], largeur: 10 },
+      { d: "M340 210V252", eau: "chaude", largeur: 5, debut: 270 },
+      { d: "M420 252V210", eau: "tiede", largeur: 5, debut: 330 }
+    ] }
+  ];
 
   window.STATION_CONFIG = {
     code: "D1", id: "monotube", title: "Monotube — Suivez l’eau", next: "poursuivre vers la station Bitube",
@@ -157,4 +203,13 @@
     summaryScene: methodScene,
     summaryEquivalent: "Synthèse : suivre la boucle, distinguer dérivation et bypass, comparer amont et aval puis mesurer dans un état stabilisé."
   };
+
+  /* l’eau d’abord (elle se pose sous le dessin), puis la mécanique propre à l’étape (repère EAU, vue 3D) */
+  window.STATION_CONFIG.steps.forEach((etape, i) => {
+    const mecanique = etape.wire;
+    etape.wire = el => {
+      const pilote = brancherEau(el, typeof eaux[i] === "function" ? eaux[i](el) : eaux[i]);
+      if (mecanique) mecanique(el, pilote);
+    };
+  });
 })();

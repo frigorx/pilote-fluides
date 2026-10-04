@@ -9,11 +9,27 @@
     const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
   };
 
+  /* L'EAU COULE (04/10/2026) : un tuyau d'eau du dessin est un <path> sans trait (sa pointe de flèche reste) qui porte
+     data-eau (chaude, froide, tiede, ou deux nombres « 1 0.3 » : de 0 = froid à 1 = chaud, du début à la fin du tube),
+     parfois data-debit (1 = normal) et data-debut. Le moteur commun _commun/ecoulement.js les lit dans l'ordre du
+     dessin et y fait couler l'eau ; la largeur de l'eau est le trait d'origine moins 3. Sans tuyau, il pose le filigrane. */
+  const eau = (plus = {}) => el => {
+    const svg = el.querySelector("svg"), eq = document.getElementById("sceneEquivalent");
+    if (!svg || !window.HydroEcoulement) return null;
+    const tubes = [...svg.querySelectorAll("[data-eau]")].map(p => {
+      const [a, b] = p.dataset.eau.split(" "), t = { d: p.getAttribute("d"), eau: b === undefined ? a : [+a, +b], largeur: p.getAttribute("stroke-width") - 3 };
+      if (p.dataset.debit) t.debit = +p.dataset.debit;
+      if (p.dataset.debut) t.debut = +p.dataset.debut;
+      return t;
+    });
+    return window.HydroEcoulement.brancher(svg, Object.assign({ tubes, annonce: { el: eq, base: eq ? eq.textContent : "" } }, plus));
+  };
+
   const shell = (id, title, desc, body) => `
     <svg viewBox="0 0 720 420" role="img" aria-labelledby="${id}-title ${id}-desc">
       <title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc>
       <defs>
-        <marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker>
+        <marker id="arr-${id}" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1b3a63"/></marker>
         <pattern id="hot-${id}" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 10L10 0" stroke="#c9451a" stroke-width="2"/></pattern>
         <pattern id="cold-${id}" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="#3d7fca"/></pattern>
         <pattern id="foul-${id}" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 0L8 8M8 0L0 8" stroke="#b06a00" stroke-width="1.5"/></pattern>
@@ -50,13 +66,11 @@
   </defs>
   <rect x="10" y="10" width="740" height="410" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
   <text x="380" y="46" text-anchor="middle" font-size="22" font-weight="700" fill="#1b3a63">ÉCHANGE À CONTRE-COURANT</text>
-  <rect x="200" y="90" width="360" height="220" rx="16" fill="#f3f7fb" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="200" y="90" width="360" height="220" rx="16" fill="none" stroke="#1b3a63" stroke-width="3"/>
   <g id="ech-primaire">
-    <path d="M60 140 H190" stroke="#c9451a" stroke-width="12" fill="none"/>
-    <path d="M200 140 H560" stroke="#e8875f" stroke-width="12" fill="none"/>
-    <path d="M200 140 H560" id="ech-primaire-flux" stroke="#fffdf8" stroke-width="4" stroke-dasharray="14 18" fill="none" opacity="0"/>
-    <path d="M60 140 H185" stroke="#c9451a" stroke-width="12" fill="none" marker-end="url(#ech-fl-o)"/>
-    <path d="M570 140 H700" stroke="#e8a37f" stroke-width="12" fill="none" marker-end="url(#ech-fl-o)"/>
+    <path d="M60 140 H700" stroke="none" stroke-width="12" fill="none" data-eau="1 0.3" data-debut="0"/>
+    <path d="M60 140 H185" stroke="none" stroke-width="12" fill="none" marker-end="url(#ech-fl-o)"/>
+    <path d="M570 140 H700" stroke="none" stroke-width="12" fill="none" marker-end="url(#ech-fl-o)"/>
   </g>
   <g id="ech-plaques">
     <rect x="200" y="186" width="360" height="28" fill="#1b3a63" opacity=".85"/>
@@ -68,11 +82,9 @@
     </g>
   </g>
   <g id="ech-secondaire">
-    <path d="M700 260 H570" stroke="#3d7fca" stroke-width="12" fill="none"/>
-    <path d="M560 260 H200" stroke="#7fa9dd" stroke-width="12" fill="none"/>
-    <path d="M560 260 H200" id="ech-secondaire-flux" stroke="#fffdf8" stroke-width="4" stroke-dasharray="14 18" fill="none" opacity="0"/>
-    <path d="M700 260 H575" stroke="#3d7fca" stroke-width="12" fill="none" marker-end="url(#ech-fl-b)"/>
-    <path d="M190 260 H60" stroke="#9fbfe6" stroke-width="12" fill="none" marker-end="url(#ech-fl-b)"/>
+    <path d="M700 260 H60" stroke="none" stroke-width="12" fill="none" data-eau="0 0.55" data-debut="0"/>
+    <path d="M700 260 H575" stroke="none" stroke-width="12" fill="none" marker-end="url(#ech-fl-b)"/>
+    <path d="M190 260 H60" stroke="none" stroke-width="12" fill="none" marker-end="url(#ech-fl-b)"/>
   </g>
   <g font-size="20" font-weight="700" text-anchor="middle">
     <g id="ech-t1"><rect x="40" y="86" width="120" height="36" rx="10" fill="#fffdf8" stroke="#c9451a" stroke-width="2"/><text x="100" y="111" fill="#c9451a">T1 · chaud</text></g>
@@ -95,15 +107,25 @@
 </div>`;
 
   function brancherEchange(scene) {
-    const fluxP = scene.querySelector("#ech-primaire-flux");
-    const fluxS = scene.querySelector("#ech-secondaire-flux");
+    /* l'eau : à l'arrêt tant que l'échange n'est pas lancé (le libellé « Circuits à l'arrêt » reste vrai) ; elle part au clic
+       sur « Lancer l'échange » — le chaud avance dans le primaire pendant les 3,2 s de la démonstration, puis les circuits
+       restent en marche ; « Recommencer » et « Rejouer » remettent l'eau à froid, à l'arrêt (le moteur n'a pas de remise à zéro :
+       on retire ses couches et on le rebranche) */
+    let pilote = null;
+    const eauAuRepos = () => {
+      if (pilote) pilote.arreter();
+      scene.querySelectorAll(".eau-dessous, .eau-dessus").forEach(n => n.remove());
+      pilote = eau()(scene);
+      if (pilote) pilote.debit(0);
+    };
+    eauAuRepos();
     const chaleur = scene.querySelector("#ech-chaleur");
     const t2 = scene.querySelector("#ech-t2");
     const t4 = scene.querySelector("#ech-t4");
     const etat = scene.querySelector(".flux-etat");
     const lire = scene.querySelector('[data-flux="lire"]');
     const rejouer = scene.querySelector('[data-flux="rejouer"]');
-    if (!fluxP || !fluxS || !chaleur || !t2 || !t4 || !etat || !lire || !rejouer) return;
+    if (!chaleur || !t2 || !t4 || !etat || !lire || !rejouer) return;
     const neutre = "#8a97a8";
     const messages = [
       [0, "Le primaire chaud entre à gauche, le secondaire froid entre à droite : ils circulent en sens contraire."],
@@ -117,10 +139,6 @@
     }
     let avancement = 0, enLecture = false, derniereFrame = 0;
     function positionner(p) {
-      fluxP.style.opacity = p > 0 ? "1" : "0";
-      fluxS.style.opacity = p > 0 ? "1" : "0";
-      fluxP.setAttribute("stroke-dashoffset", String(-Math.round(p * 640)));
-      fluxS.setAttribute("stroke-dashoffset", String(-Math.round(p * 640)));
       chaleur.style.opacity = p >= .35 ? "1" : "0";
       teindre(t2, p >= .85 ? "#3d7fca" : neutre);
       teindre(t4, p >= .85 ? "#c9451a" : neutre);
@@ -134,17 +152,19 @@
       avancement = Math.min(1, avancement + (temps - derniereFrame) / 3200);
       derniereFrame = temps;
       positionner(avancement);
-      if (avancement >= 1) { enLecture = false; lire.textContent = "▶ Rejouer l’échange"; return; }
+      if (avancement >= 1) { enLecture = false; lire.textContent = "▶ Rejouer l’échange"; if (pilote) pilote.debit(1); return; }
       requestAnimationFrame(animer);
     }
     lire.addEventListener("click", () => {
-      if (enLecture) { enLecture = false; lire.textContent = "▶ Reprendre"; return; }
-      if (avancement >= 1) avancement = 0;
+      if (enLecture) { enLecture = false; lire.textContent = "▶ Reprendre"; if (pilote) pilote.debit(0); return; }
+      if (avancement >= 1) { avancement = 0; eauAuRepos(); }
+      if (pilote) pilote.debit(1.8);
       enLecture = true; derniereFrame = 0; lire.textContent = "Ⅱ Pause";
       requestAnimationFrame(animer);
     });
     rejouer.addEventListener("click", () => {
       enLecture = false; avancement = 0; delete etat.dataset.cle;
+      eauAuRepos();
       positionner(0); lire.textContent = "▶ Lancer l’échange";
       etat.textContent = "Circuits à l’arrêt. Lancez l’échange : le texte décrit chaque phase.";
     });
@@ -159,7 +179,7 @@
       `<text x="360" y="40" text-anchor="middle" font-size="21" font-weight="700">MODÈLE QUALITATIF · INDICES RELATIFS</text>
        <rect x="210" y="70" width="300" height="270" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
        ${Array.from({length:8},(_,i)=>`<rect x="${245+i*31}" y="100" width="12" height="205" rx="5" fill="${i<fouled ? "url(#foul-ex-foul)" : (i%2 ? "url(#hot-ex-foul)" : "url(#cold-ex-foul)")}" stroke="${i<fouled ? "#b06a00" : "#1b3a63"}" stroke-width="2"/>`).join("")}
-       <path d="M65 135H210" stroke="#c9451a" stroke-width="12" marker-end="url(#arr-ex-foul)"/><path d="M655 280H510" stroke="#3d7fca" stroke-width="12" marker-end="url(#arr-ex-foul)"/>
+       <path d="M65 135H210" stroke="none" stroke-width="12" data-eau="chaude" marker-end="url(#arr-ex-foul)"/><path d="M655 280H510" stroke="none" stroke-width="12" data-eau="froide" marker-end="url(#arr-ex-foul)"/>
        <g transform="translate(52 352)"><text x="0" y="0" font-size="19" font-weight="700">TRANSFERT : ${transfer}/100</text><text x="365" y="0" font-size="19" font-weight="700">RÉSISTANCE : ${resistance}/100</text></g>
        <text x="360" y="400" text-anchor="middle" font-size="19">Tendance simulée : encrassement ↑ · échange ↓ · résistance hydraulique ↑</text>`);
   };
@@ -169,7 +189,7 @@
     `<rect x="255" y="90" width="210" height="245" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
      ${Array.from({length:7},(_,i)=>`<path d="M${285+i*25} 120V305" stroke="${i%2 ? "#c9451a" : "#3d7fca"}" stroke-width="8"/>`).join("")}
      ${[[155,115,"P1"],[155,305,"P2"],[565,305,"S1"],[565,115,"S2"]].map(([x,y,t])=>`<circle cx="${x}" cy="${y}" r="27" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="${x}" y="${y+6}" text-anchor="middle" font-size="19" font-weight="700">${t}</text>`).join("")}
-     <path d="M182 115H255M255 305H182" stroke="#c9451a" stroke-width="10"/><path d="M538 305H465M465 115H538" stroke="#3d7fca" stroke-width="10"/>
+     <path d="M182 115H255" stroke="none" stroke-width="10" data-eau="chaude"/><path d="M255 305H182" stroke="none" stroke-width="10" data-eau="chaude" data-debut="283"/><path d="M538 305H465" stroke="none" stroke-width="10" data-eau="froide"/><path d="M465 115H538" stroke="none" stroke-width="10" data-eau="froide"/>
      <g transform="translate(267 35)"><circle cx="20" cy="20" r="18" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="4 3"/><circle cx="230" cy="20" r="18" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="4 3"/><text x="125" y="26" text-anchor="middle" font-size="19" font-weight="700">Δp échangeur</text></g>
      <text x="360" y="382" text-anchor="middle" font-size="19" font-weight="700">TEMPÉRATURES + DÉBITS + PRESSION DIFFÉRENTIELLE</text>`);
 
@@ -194,7 +214,7 @@
         short: "Identifier", kicker: "repérer", title: "Du symbole à la coupe",
         text: "Le symbole sert à lire le schéma. La coupe simplifiée explique ce que le symbole ne montre pas.",
         cap: "Reconnaissez l’échangeur à ses deux circuits séparés.", tp: "Reconnaissez l’échangeur et ses quatre piquages.", bts: "Distinguez représentation normalisée, modèle et appareil réel.",
-        scene: symbol,wire:vue3d("echangeurPlaques","L’échangeur à plaques en 3D"), equivalent: "Le symbole validé est accompagné d’une coupe originale : des plaques séparent deux circuits.",
+        scene: symbol,wire: el => { eau()(el); vue3d("echangeurPlaques","L’échangeur à plaques en 3D")(el); }, equivalent: "Le symbole validé est accompagné d’une coupe originale : des plaques séparent deux circuits.",
         action: { type: "choice", prompt: "Que représente la coupe ?", options: [{label:"Deux circuits séparés par des plaques"},{label:"Une cuve où les eaux se mélangent"},{label:"Un circulateur double"},{label:"Une soupape"}], correct: 0, explain: "Le transfert thermique traverse les plaques, mais les deux fluides restent séparés dans le modèle normal." }
       },
       {
@@ -210,7 +230,7 @@
         short: "Effet", kicker: "observer", title: "Faire varier l’encrassement",
         text: "Déplacez l’indice. Observez deux tendances liées : transfert thermique et résistance hydraulique.",
         cap: "Suivez la barre de transfert quand l’indice augmente.", tp: "Décrivez le symptôme sans conclure à une cause unique.", bts: "Reliez la tendance à des mesures de températures, débits et pression différentielle.",
-        scene: foulScene, equivalent:(value)=>`Indice relatif d’encrassement ${value} sur 100. Le modèle fait diminuer le transfert et augmenter la résistance.`,
+        scene: foulScene, wire: eau({ miseEnRoute: false }), equivalent:(value)=>`Indice relatif d’encrassement ${value} sur 100. Le modèle fait diminuer le transfert et augmenter la résistance.`,
         action:{ type:"range", prompt:"Modifiez l’état interne simplifié.", label:"Indice d’encrassement", min:0,max:100,step:10,value:20, evaluate:(value)=>({readout:`${value}/100`, observation:value<40?"État peu encrassé dans le modèle.":value<80?"Le transfert baisse et la résistance augmente : des mesures sont nécessaires.":"État très dégradé dans le modèle. Il faut confirmer la cause avant toute décision."}) }
       },
       {
@@ -218,7 +238,7 @@
         short: "Mesurer", kicker: "mesurer", title: "Construire une preuve",
         text: "Quatre températures seules ne suffisent pas toujours. Ajoutez les débits et la perte de pression de chaque côté utile.",
         cap: "Relevez les quatre températures avant de conclure.", tp: "Préparez des relevés traçables dans un état stabilisé.", bts: "Utilisez les quatre températures et les débits pour le bilan; comparez la perte de charge au dossier.",
-        scene: measure, equivalent:"Les points P1, P2, S1 et S2 portent les températures. Des prises de pression encadrent l’échangeur; les débits sont relevés sur les deux circuits.",
+        scene: measure, wire: eau(), equivalent:"Les points P1, P2, S1 et S2 portent les températures. Des prises de pression encadrent l’échangeur; les débits sont relevés sur les deux circuits.",
         action:{ type:"choice", prompt:"Quel jeu de relevés est le plus complet pour vérifier le service ?", options:[{label:"4 températures + 2 débits + Δp"},{label:"Une température extérieure"},{label:"Le bruit seul"},{label:"La couleur des plaques"}], correct:0, explain:"Le bilan thermique utilise températures et débits. La pression différentielle renseigne la résistance hydraulique dans les conditions relevées." }
       },
       {
@@ -226,7 +246,7 @@
         short: "Vérifier", kicker: "hypothèse", title: "Diagnostiquer sans nettoyer au hasard",
         text: "Air, débit inadéquat ou encrassement peuvent produire des symptômes proches. Ordonnez la démarche.",
         cap:"Signalez l’anomalie sans nettoyer l’échangeur.", tp:"Signalez l’anomalie et préparez le contrôle ciblé selon la procédure du site.", bts:"Croisez bilan thermique et hydraulique avant de retenir puis tester une hypothèse.",
-        scene:diag, equivalent:"La chaîne est : état connu, quatre températures et débits, perte de pression, comparaison, puis hypothèse.",
+        scene:diag, wire: eau(), equivalent:"La chaîne est : état connu, quatre températures et débits, perte de pression, comparaison, puis hypothèse.",
         action:{ type:"sequence", prompt:"Placez les contrôles dans l’ordre.", items:["Définir l’état de service","Relever 4 T° et débits","Mesurer ou relever Δp","Comparer puis formuler l’hypothèse"], correctOrder:[0,1,2,3], explain:"Le nettoyage ou le remplacement vient seulement après une hypothèse étayée et la procédure adaptée." }
       }
     ],

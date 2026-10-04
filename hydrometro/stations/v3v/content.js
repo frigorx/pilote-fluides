@@ -11,7 +11,16 @@
 
   const fr = (n, d = 2) => n.toFixed(d).replace(".", ",");
 
-  const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
+  /* L’eau coule dans les schémas (04/10/2026) : les tubes ne se colorent plus ici, chaque scène DÉCLARE les siens
+     (« eaux », plus bas) et le moteur commun _commun/ecoulement.js y fait couler l’eau. Les pointes de flèche
+     (fl-…) gardent une taille fixe ; les mots restent dessinés par-dessus l’eau. Une scène sans tube ne reçoit
+     que le filigrane inerWeb (charte R9). */
+  const brancherEau = (el, decl) => {
+    const eq = document.getElementById("sceneEquivalent");
+    return window.HydroEcoulement && window.HydroEcoulement.brancher(el.querySelector("svg"), Object.assign({ annonce: { el: eq, base: eq.textContent } }, decl || { tubes: [] }));
+  };
+
+  const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker><marker id="fl-${id}" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
 
   const portsScene = svg("v3-ports", "Vanne trois voies avec ports A, B et AB", "Le modèle pédagogique suppose AB commun. A est à gauche, AB à droite et B en bas, comme dans la vue 3D et la scène animée. Le marquage réel du corps et la notice restent prioritaires.", `
     <text x="380" y="40" text-anchor="middle" font-size="22" font-weight="700">IDENTIFIER AVANT DE RACCORDER</text>
@@ -31,13 +40,13 @@
   <rect x="10" y="10" width="740" height="410" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
   <text x="380" y="46" text-anchor="middle" font-size="22" font-weight="700" fill="#1b3a63">VANNE TROIS VOIES : LE MÉLANGE SE RÈGLE</text>
   <g id="v3v-conduites" stroke-width="12" fill="none">
-    <path d="M60 200 H300" stroke="#1b3a63"/>
-    <path d="M380 340 V280" stroke="#1b3a63"/>
-    <path d="M460 200 H700" stroke="#1b3a63"/>
+    <path d="M60 200 H300" stroke="none"/>
+    <path d="M380 340 V280" stroke="none"/>
+    <path d="M460 200 H700" stroke="none"/>
   </g>
-  <g id="v3v-flux-a"><path d="M70 200 H250" stroke="#c9451a" stroke-width="6" fill="none" marker-end="url(#v3v-fl-o)"/></g>
-  <g id="v3v-flux-b"><path d="M380 335 V260" stroke="#3d7fca" stroke-width="6" fill="none" marker-end="url(#v3v-fl-b)"/></g>
-  <g id="v3v-sortie"><path d="M470 200 H660" stroke="#b06a00" stroke-width="6" fill="none" marker-end="url(#v3v-fl-m)"/></g>
+  <g id="v3v-flux-a"><path d="M70 200 H250" stroke="#c9451a" stroke-width="3" fill="none" marker-end="url(#v3v-fl-o)"/></g>
+  <g id="v3v-flux-b"><path d="M380 335 V260" stroke="#3d7fca" stroke-width="3" fill="none" marker-end="url(#v3v-fl-b)"/></g>
+  <g id="v3v-sortie"><path d="M470 200 H660" stroke="#b06a00" stroke-width="3" fill="none" marker-end="url(#v3v-fl-m)"/></g>
   <g id="v3v-corps">
     <circle cx="380" cy="200" r="80" fill="#f3f7fb" stroke="#1b3a63" stroke-width="4"/>
     <g id="v3v-boisseau" transform="rotate(45 380 200)">
@@ -70,7 +79,7 @@
   <p class="flux-etat" aria-live="polite">Position 50 % : les deux voies se mélangent, la sortie est tiède.</p>
 </div>`;
 
-  function brancherV3V(scene) {
+  function brancherV3V(scene, pilote) {
     const boisseau = scene.querySelector("#v3v-boisseau");
     const fluxA = scene.querySelector("#v3v-flux-a");
     const fluxB = scene.querySelector("#v3v-flux-b");
@@ -80,10 +89,12 @@
     const etat = scene.querySelector(".flux-etat");
     const boutons = Array.from(scene.querySelectorAll("[data-position]"));
     if (!boisseau || !fluxA || !fluxB || !sortieTrait || !posTexte || !etatTexte || !etat || !boutons.length) return;
+    /* l’eau : A, B puis trois conduites AB superposées (froide, tiède, chaude), dont une seule se montre */
+    const sorties = [...scene.querySelectorAll(".eau-tube")].slice(2);
     const etats = {
-      0: { angle: 0, aOp: .12, bOp: 1, couleur: "#3d7fca", mot: "froide", phrase: "Position 0 % : seule la voie B passe, la sortie est froide." },
-      50: { angle: 45, aOp: .6, bOp: .6, couleur: "#b06a00", mot: "tiède", phrase: "Position 50 % : les deux voies se mélangent, la sortie est tiède." },
-      100: { angle: 90, aOp: 1, bOp: .12, couleur: "#c9451a", mot: "chaude", phrase: "Position 100 % : seule la voie A passe, la sortie est chaude." }
+      0: { angle: 0, aOp: .12, bOp: 1, couleur: "#3d7fca", mot: "froide", phrase: "Position 0 % : seule la voie B passe, la sortie est froide.", eau: 0 },
+      50: { angle: 45, aOp: .6, bOp: .6, couleur: "#b06a00", mot: "tiède", phrase: "Position 50 % : les deux voies se mélangent, la sortie est tiède.", eau: 1 },
+      100: { angle: 90, aOp: 1, bOp: .12, couleur: "#c9451a", mot: "chaude", phrase: "Position 100 % : seule la voie A passe, la sortie est chaude.", eau: 2 }
     };
     let angleActuel = 45, cible = 50, animeEn = false, derniereFrame = 0;
     function peindre(valeur) {
@@ -94,6 +105,11 @@
       sortieTrait.setAttribute("stroke", e.couleur);
       fluxA.style.opacity = String(e.aOp);
       fluxB.style.opacity = String(e.bOp);
+      if (pilote) {
+        pilote.debit(e.aOp, 0);
+        pilote.debit(e.bOp, 1);
+        sorties.forEach((g, k) => { g.style.display = k === e.eau ? "" : "none"; });
+      }
     }
     function animer(temps) {
       if (!animeEn) return;
@@ -123,7 +139,7 @@
 
   const divertScene = svg("v3-divert", "Montage en répartition", "Le débit entre par la voie commune AB puis se répartit vers A et B. Le symbole de la vanne trois voies est au centre et les flèches divergent depuis AB.", `
     <text x="380" y="38" text-anchor="middle" font-size="23" font-weight="700">RÉPARTITION : AB → A + B</text>
-    <path d="M380 370V255M315 170H90M445 170H670" fill="none" stroke="#1b3a63" stroke-width="14" marker-end="url(#arr-v3-divert)"/>
+    <path d="M380 370V255M315 170H90M445 170H670" fill="none" stroke="none" stroke-width="14" marker-end="url(#fl-v3-divert)"/>
     <circle cx="380" cy="190" r="80" fill="#fffdf8" stroke="#1b3a63" stroke-width="6"/>
     <image href="assets/vanne_3_voies.svg" x="310" y="120" width="140" height="140"/>
     <text x="115" y="145" font-size="20" font-weight="700">A · sortie 1</text><text x="515" y="145" font-size="20" font-weight="700">B · sortie 2</text><rect x="400" y="376" width="270" height="34" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="405" y="400" font-size="20" font-weight="700">AB · arrivée commune</text>
@@ -133,6 +149,30 @@
     ${["Lire corps","Repérer AB","Tracer sens","Tester","Mesurer"].map((t,i)=>`<g transform="translate(${90+i*145} 215)"><circle r="38" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/><text y="6" text-anchor="middle" font-size="20" font-weight="700">${i+1}</text><text y="70" text-anchor="middle" font-size="20" font-weight="700">${t}</text>${i<4?`<path d="M43 0H95" stroke="#3d7fca" stroke-width="5" marker-end="url(#arr-v3-method)"/>`:""}</g>`).join("")}
     <text x="380" y="68" text-anchor="middle" font-size="22" font-weight="700">LE NOM DES VOIES NE SUFFIT PAS : CONTRÔLER LE SENS AUTORISÉ</text>
     <text x="380" y="350" text-anchor="middle" font-size="20">Le symbole montre une fonction ;</text><text x="380" y="375" text-anchor="middle" font-size="20">la vanne réelle impose sa documentation.</text>`);
+
+  /* l’eau de chaque étape (dans l’ordre des étapes) : les tubes de la scène, dans l’ordre où l’eau les parcourt.
+     largeur = épaisseur d’origine − 3 ; debit < 1 : une voie qui a moins d’eau. Rien : filigrane seul (3D : pas d’eau). */
+  const eauBoisseau = { miseEnRoute: false, tubes: [
+    { d: "M60 200H300", eau: "chaude", largeur: 9 },                 /* voie A : le départ chaud */
+    { d: "M380 340V280", eau: "froide", largeur: 9 },                /* voie B : le retour */
+    { d: "M460 200H700", eau: "froide", largeur: 9 },                /* voie AB : la sortie, froide, tiède ou chaude selon la position */
+    { d: "M460 200H700", eau: "tiede", largeur: 9 },
+    { d: "M460 200H700", eau: "chaude", largeur: 9 }
+  ] };
+  const eaux = [
+    /* 1 · vue 3D */
+    null,
+    /* 2 et 4 · le boisseau tourne : la scène règle elle-même le débit des voies et la couleur de la sortie (brancherV3V) */
+    eauBoisseau,
+    /* 3 · la répartition : l’eau arrive par AB et se partage entre A et B */
+    { tubes: [
+      { d: "M380 358V255", eau: "tiede", largeur: 11 },   /* l’arrivée commence sous le cartouche « flèches divergentes » */
+      { d: "M315 170H90", eau: "tiede", largeur: 11, debit: 0.5 },
+      { d: "M445 170H670", eau: "tiede", largeur: 11, debit: 0.5 }
+    ] },
+    eauBoisseau
+    /* 5 · contrôle : filigrane seul */
+  ];
 
   window.STATION_CONFIG = {
     code: "D4", id: "v3v", title: "Vanne trois voies — Trois voies, une fonction", next: "poursuivre vers la station Équilibrage",
@@ -157,4 +197,13 @@
     summaryScene: methodScene,
     summaryEquivalent: "Synthèse : identifier les voies, distinguer convergence et divergence, vérifier la conservation puis contrôler le matériel réel."
   };
+
+  /* l’eau d’abord (elle se pose sous le dessin), puis la mécanique propre à l’étape (boisseau animé, vue 3D) */
+  window.STATION_CONFIG.steps.forEach((etape, i) => {
+    const mecanique = etape.wire;
+    etape.wire = el => {
+      const pilote = brancherEau(el, typeof eaux[i] === "function" ? eaux[i](el) : eaux[i]);
+      if (mecanique) mecanique(el, pilote);
+    };
+  });
 })();

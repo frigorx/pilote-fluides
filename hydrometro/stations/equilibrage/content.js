@@ -9,6 +9,14 @@
     const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
   };
 
+  /* L’eau coule dans les schémas (04/10/2026) : les tubes ne se colorent plus ici, chaque scène DÉCLARE les siens
+     (« eaux », plus bas) et le moteur commun _commun/ecoulement.js y fait couler l’eau. Les mots restent dessinés
+     par-dessus l’eau. Une scène sans tube ne reçoit que le filigrane inerWeb (charte R9). */
+  const brancherEau = (el, decl) => {
+    const eq = document.getElementById("sceneEquivalent");
+    return window.HydroEcoulement && window.HydroEcoulement.brancher(el.querySelector("svg"), Object.assign({ annonce: { el: eq, base: eq.textContent } }, decl || { tubes: [] }));
+  };
+
   const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
   const flows = (closure) => ({ a: 1.6 - .01 * closure, b: .85 + .0025 * closure, c: .55 + .0075 * closure });
   const branchBars = (values) => [[210,"A",values.a],[380,"B",values.b],[550,"C",values.c]].map(([x,label,q]) => {
@@ -25,8 +33,8 @@
 
   const decisionScene = svg("bal-decision", "Choisir la branche à régler", "La branche A est au-dessus de sa cible. L’action pédagogique consiste à ajouter progressivement de la résistance sur A, puis à laisser le réseau se stabiliser avant un nouveau relevé.", `
     <text x="380" y="38" text-anchor="middle" font-size="22" font-weight="700">AGIR SUR LA BRANCHE FAVORISÉE</text>
-    <path d="M110 110H650M650 110V330H110" fill="none" stroke="#1b3a63" stroke-width="12"/>
-    ${[220,380,540].map((x,i)=>`<g><path d="M${x} 110V330" stroke="#3d7fca" stroke-width="9"/><image href="assets/radiateur.svg" x="${x-43}" y="180" width="86" height="65"/>${i===0?`<image href="assets/vanne_manuelle.svg" x="${x-38}" y="120" width="76" height="45"/>`:""}<rect x="${x-140}" y="268" width="125" height="34" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="${x-78}" y="291" text-anchor="middle" font-size="20" font-weight="700">${["A · 1,60","B · 0,85","C · 0,55"][i]}</text></g>`).join("")}
+    <path d="M110 110H650M650 110V330H110" fill="none" stroke="none" stroke-width="12"/>
+    ${[220,380,540].map((x,i)=>`<g><path d="M${x} 110V330" stroke="none" stroke-width="9"/><image href="assets/radiateur.svg" x="${x-43}" y="180" width="86" height="65"/>${i===0?`<image href="assets/vanne_manuelle.svg" x="${x-38}" y="120" width="76" height="45"/>`:""}<rect x="${x-140}" y="268" width="125" height="34" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="${x-78}" y="291" text-anchor="middle" font-size="20" font-weight="700">${["A · 1,60","B · 0,85","C · 0,55"][i]}</text></g>`).join("")}
     <rect x="70" y="350" width="380" height="55" rx="13" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="260" y="383" text-anchor="middle" font-size="20" font-weight="700">RÉGLAGE UNIQUE : VANNE A</text>`);
 
   function predictionScene(closure = 40) {
@@ -47,6 +55,24 @@
     <text x="380" y="44" text-anchor="middle" font-size="23" font-weight="700">LA TRACE DE L’INTERVENTION</text>
     ${[[120,"1","État initial"],[250,"2","Action"],[380,"3","Stable"],[510,"4","Relevé"],[640,"5","Conclusion"]].map(([x,n,t],i)=>`<g><circle cx="${x}" cy="205" r="38" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/><text x="${x}" y="213" text-anchor="middle" font-size="20" font-weight="700">${n}</text><text x="${x}" y="277" text-anchor="middle" font-size="20" font-weight="700">${t}</text>${i<4?`<path d="M${Number(x)+43} 205H${Number(x)+87}" stroke="#3d7fca" stroke-width="5" marker-end="url(#arr-bal-report)"/>`:""}</g>`).join("")}
     <rect x="140" y="320" width="480" height="70" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="380" y="347" text-anchor="middle" font-size="20" font-weight="700">UNE VANNE RÉELLE SE RÈGLE</text><text x="380" y="375" text-anchor="middle" font-size="20" font-weight="700">AVEC SA MÉTHODE ET SES DONNÉES</text>`);
+
+  /* l’eau de chaque étape (dans l’ordre des étapes) : les tubes de la scène, dans l’ordre où l’eau les parcourt.
+     largeur = épaisseur d’origine − 3 ; debut = chemin déjà fait par l’eau sur le départ au piquage de la branche ;
+     debit < 1 : une branche qui a moins d’eau (ici le débit de la scène : A 1,60 · B 0,85 · C 0,55 L/min, repère 1,60).
+     Rien : filigrane seul (3D : pas d’eau). */
+  const eaux = [
+    /* 1 · vue 3D */
+    null,
+    /* 2 · le banc : départ, trois branches en parallèle qui traversent chacune un émetteur, retour */
+    { tubes: [
+      { d: "M110 110H650", eau: "chaude", largeur: 9 },
+      { d: "M220 110V330", eau: [1, 0], largeur: 6, debut: 110, debit: 1 },
+      { d: "M380 110V330", eau: [1, 0], largeur: 6, debut: 270, debit: 0.85 / 1.6 },
+      { d: "M540 110V330", eau: [1, 0], largeur: 6, debut: 430, debit: 0.55 / 1.6 },
+      { d: "M650 110V330H110", eau: "froide", largeur: 9 }
+    ] }
+    /* 3, 4 et 5 · débits en barres, compte rendu : filigrane seul */
+  ];
 
   window.STATION_CONFIG = {
     code: "D5", id: "equilibrage", title: "Équilibrage — Banc à trois branches", next: "poursuivre vers la station Plancher chauffant", plusLoin: { href: "../reglage-equilibrage/index.html?line=D", label: "Pour aller plus loin : régler une vanne" },
@@ -71,4 +97,13 @@
     summaryScene: reportScene,
     summaryEquivalent: "Synthèse : état initial, action unique, stabilisation, nouveau relevé, comparaison et compte rendu avec limites."
   };
+
+  /* l’eau d’abord (elle se pose sous le dessin), puis la mécanique propre à l’étape (vue 3D) */
+  window.STATION_CONFIG.steps.forEach((etape, i) => {
+    const mecanique = etape.wire;
+    etape.wire = el => {
+      const pilote = brancherEau(el, typeof eaux[i] === "function" ? eaux[i](el) : eaux[i]);
+      if (mecanique) mecanique(el, pilote);
+    };
+  });
 })();

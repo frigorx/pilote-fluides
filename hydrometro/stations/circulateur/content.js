@@ -11,6 +11,14 @@
     const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
   };
 
+  /* L’eau coule dans les schémas (04/10/2026) : les tubes ne se colorent plus ici, chaque scène DÉCLARE les siens
+     (« eaux », plus bas) et le moteur commun _commun/ecoulement.js y fait couler l’eau et tourner le circulateur.
+     Les mots restent dessinés par-dessus l’eau. Une scène sans tube ne reçoit que le filigrane inerWeb (charte R9). */
+  const brancherEau = (el, decl) => {
+    const eq = document.getElementById("sceneEquivalent");
+    return window.HydroEcoulement && window.HydroEcoulement.brancher(el.querySelector("svg"), Object.assign({ annonce: { el: eq, base: eq.textContent } }, decl || { tubes: [] }));
+  };
+
   const shell = (id, title, desc, body) => `<svg viewBox="0 0 720 420" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker><pattern id="run-${id}" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9L9 0" stroke="#3d7fca" stroke-width="2"/></pattern></defs>${body}</svg>`;
 
   const symbol = shell("circ-symbol", "Circulateur et sens d’écoulement",
@@ -70,10 +78,10 @@
   <rect x="10" y="10" width="740" height="410" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/>
   <text x="380" y="46" text-anchor="middle" font-size="22" font-weight="700" fill="#1b3a63">LA POMPE ET LE RÉSEAU DÉCIDENT ENSEMBLE</text>
   <g id="cir-boucle">
-    <path id="cir-trajet" d="M120 120 H300 V330 H120 Z" fill="none" stroke="#1b3a63" stroke-width="12"/>
-    <path d="M120 120 H300 V330 H120 Z" id="cir-ecoulement" fill="none" stroke="#7fa9dd" stroke-width="5" stroke-dasharray="12 16"/>
+    <path id="cir-trajet" d="M120 120 H300 V330 H120 Z" fill="none" stroke="none" stroke-width="12"/>
+    <path d="M120 120 H300 V330 H120 Z" id="cir-ecoulement" fill="none" stroke="none" stroke-width="5" stroke-dasharray="12 16"/>
     <g id="cir-pompe">
-      <circle cx="120" cy="225" r="36" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
+      <circle cx="120" cy="225" r="36" fill="none" stroke="#1b3a63" stroke-width="4"/>
       <path d="M100 245 L140 205" stroke="#1b3a63" stroke-width="3"/>
       <path d="M120 189 V261 M84 225 H156" stroke="#1b3a63" stroke-width="3" opacity=".5"/>
     </g>
@@ -114,7 +122,7 @@
   <p class="flux-etat" aria-live="polite">Vanne ouverte : le point de fonctionnement est à droite, débit maximal.</p>
 </div>`;
 
-  function brancherVanne(scene) {
+  function brancherVanne(scene, pilote) {
     const reseau = scene.querySelector("#cir-courbe-reseau");
     const point = scene.querySelector("#cir-point");
     const clapet = scene.querySelector("#cir-vanne-clapet");
@@ -130,6 +138,7 @@
       const angle = melange(ouverte.clapet, fermee.clapet, p);
       clapet.setAttribute("transform", `rotate(${angle.toFixed(1)} 210 330)`);
       reseau.setAttribute("d", p < .5 ? ouverte.reseau : fermee.reseau);
+      if (pilote) pilote.debit(1 - 0.6 * p);   /* moins de débit quand la vanne se ferme : l’eau ralentit */
       const x = melange(597, 478, p), y = melange(236, 176, p);
       point.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
     }
@@ -155,8 +164,8 @@
 
   const measurements = shell("circ-measure", "Points de mesure autour du circulateur",
     "Deux prises de pression encadrent le circulateur, un débitmètre est placé sur la boucle et la commande est relevée. Le bruit reste un symptôme, pas une mesure suffisante.",
-    `<path d="M70 225H650" stroke="#1b3a63" stroke-width="15"/>
-     <circle cx="360" cy="225" r="72" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><path d="M325 260L420 225L325 190Z" fill="url(#run-circ-measure)" stroke="#3d7fca" stroke-width="4"/>
+    `<path d="M70 225H650" stroke="none" stroke-width="15"/>
+     <circle cx="360" cy="225" r="72" fill="none" stroke="#1b3a63" stroke-width="4"/><path d="M325 260L420 225L325 190Z" fill="url(#run-circ-measure)" stroke="#3d7fca" stroke-width="4"/>
      <circle cx="218" cy="225" r="24" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="4 4"/><text x="218" y="231" text-anchor="middle" font-size="19" font-weight="700">p₁</text>
      <circle cx="502" cy="225" r="24" fill="#fff4e0" stroke="#b06a00" stroke-width="3" stroke-dasharray="4 4"/><text x="502" y="231" text-anchor="middle" font-size="19" font-weight="700">p₂</text>
      <rect x="535" y="78" width="135" height="70" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text x="603" y="108" text-anchor="middle" font-size="19" font-weight="700">DÉBIT</text><text x="603" y="132" text-anchor="middle" font-size="19">Q (m³/h)</text>
@@ -178,6 +187,21 @@
      <text x="510" y="103" text-anchor="middle" font-size="19">Q = 2,0 m³/h · Δp = 0,30 bar</text>
      <text x="510" y="125" text-anchor="middle" font-size="19">bruit atténué · à confirmer</text>
      <rect x="150" y="292" width="420" height="62" rx="16" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="5 5"/><text x="360" y="319" text-anchor="middle" font-size="19" font-weight="700">Bruit ≠ preuve d’une pompe défectueuse</text><text x="360" y="342" text-anchor="middle" font-size="19">vérifier aussi réseau, air, vannes et débit</text>`);
+
+  /* l’eau de chaque étape (dans l’ordre des étapes) : les tubes de la scène, dans l’ordre où l’eau les parcourt,
+     et le circulateur dessiné (r = rayon du cercle de la pompe). largeur = épaisseur d’origine − 3.
+     Rien : filigrane seul (3D : pas d’eau). */
+  const eauBoucle = { tubes: [{ d: "M120 120H300V330H120Z", eau: "tiede", largeur: 9 }], circulateurs: [{ x: 120, y: 225, r: 36, eau: "tiede" }] };
+  const eaux = [
+    /* 1 · vue 3D */
+    null,
+    /* 2 et 3 · la boucle animée : l’eau ralentit quand la vanne se ferme (brancherVanne) */
+    eauBoucle,
+    eauBoucle,
+    /* 4 · les points de mesure autour du circulateur */
+    { tubes: [{ d: "M70 225H650", eau: "tiede", largeur: 12 }], circulateurs: [{ x: 360, y: 225, r: 72, eau: "tiede" }] }
+    /* 5 · démarche : filigrane seul */
+  ];
 
   window.STATION_CONFIG = {
     code:"E4", id:"circulateur", title:"Circulateur", next:"poursuivre vers les pertes de charge",
@@ -202,4 +226,13 @@
     summaryScene:curveScene({k:.5,speed:1,id:"circ-summary"}),
     summaryEquivalent:"Synthèse : le point de fonctionnement est la rencontre de la courbe pompe et de la courbe réseau. Une vanne ou une vitesse modifie cette rencontre."
   };
+
+  /* l’eau d’abord (elle se pose sous le dessin), puis la mécanique propre à l’étape (vanne animée, vue 3D) */
+  window.STATION_CONFIG.steps.forEach((etape, i) => {
+    const mecanique = etape.wire;
+    etape.wire = el => {
+      const pilote = brancherEau(el, typeof eaux[i] === "function" ? eaux[i](el) : eaux[i]);
+      if (mecanique) mecanique(el, pilote);
+    };
+  });
 })();

@@ -14,8 +14,12 @@
     const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
   };
 
+  /* L'EAU COULE (04/10/2026) : aucun tuyau dans ces scènes (barres, cartes, tableau) ; le moteur commun
+     _commun/ecoulement.js pose seulement le filigrane inerWeb. */
+  const filigrane = (el) => { const svg = el.querySelector("svg"); if (svg && window.HydroEcoulement) window.HydroEcoulement.brancher(svg, { tubes: [] }); };
+
   const fr = (n, d = 1) => n.toFixed(d).replace(".", ",");
-  const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc>${body}</svg>`;
+  const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs></defs>${body}</svg>`;
 
   /* Kv de la vanne DN 15 selon le nombre de tours (notice) ; interpolation linéaire */
   const KV = [[0.5, 0.127], [1, 0.212], [1.5, 0.314], [2, 0.571], [2.5, 0.877], [3, 1.38], [3.5, 1.98], [4, 2.52]];
@@ -93,25 +97,25 @@
       { short: "Pourquoi", narration: "Commençons par la raison d'être de cette vanne. Dans un réseau, toutes les branches sont ouvertes, et pourtant elles ne reçoivent pas la même quantité d'eau. L'eau prend le chemin qui lui résiste le moins : la branche proche de la chaudière se sert la première, la branche éloignée reçoit ce qui reste. Résultat sur le terrain : un radiateur brûlant près de la chaufferie, un autre tiède au bout du couloir, et un client qui appelle. La vanne d'équilibrage sert à freiner volontairement les branches trop favorisées, pour que chacune reçoive le débit prévu.",
         kicker: "comprendre", title: "Toutes les branches sont ouvertes, et pourtant…", text: "Sans réglage, la branche la plus proche prend plus d’eau que prévu et la plus éloignée en manque.",
         cap: "Montrez la branche qui reçoit trop d’eau et celle qui en manque.", tp: "Comparez chaque débit au besoin de 250 l/h.", bts: "Reliez l’écart de débit à la différence de résistance des chemins.",
-        scene: besoinScene, wire: vue3d("installation", "L’installation en 3D", { depart: "mal-reglee" }),
+        scene: besoinScene, wire: (el) => { filigrane(el); vue3d("installation", "L’installation en 3D", { depart: "mal-reglee" })(el); },
         equivalent: "Sans réglage : A, proche, 380 l/h ; B 250 l/h ; C, éloignée, 120 l/h ; besoin 250 l/h par branche.",
         action: { type: "choice", prompt: "Pourquoi la branche éloignée reçoit-elle si peu d’eau alors que tout est ouvert ?", options: [{ label: "L’eau passe d’abord par les chemins qui résistent le moins" }, { label: "Le circulateur est trop faible pour elle seule" }, { label: "Les radiateurs éloignés sont toujours plus petits" }, { label: "L’eau refroidit avant d’arriver" }], correct: 0, explain: "Les branches proches résistent moins : elles prennent le débit. La vanne d’équilibrage ajoute la résistance qui manque sur ces branches." } },
       { short: "Lire", narration: "Avant de toucher, apprenez à lire la vanne. Trois organes comptent. Le volant porte un indicateur : il donne la position en tours entiers et en dixièmes, de zéro, vanne fermée, à quatre, pleine ouverture. Au-delà de quatre tours, le débit n'augmente pratiquement plus. Au centre du volant se cache une tige intérieure, que l'on manœuvre avec une clé six pans de trois millimètres : c'est elle qui mémorise le réglage. Enfin, de part et d'autre du clapet, deux prises de pression, fermées par un capuchon : c'est là qu'on branche l'appareil de mesure.",
         kicker: "repérer", title: "Volant, tige intérieure, prises de pression", text: "Repérez les trois organes et à quoi sert chacun.",
         cap: "Montrez le volant, la tige intérieure et les deux prises.", tp: "Associez chaque organe à son rôle dans le réglage.", bts: "Expliquez pourquoi la mesure se fait aux bornes de la vanne et pas ailleurs.",
-        scene: vanneScene, wire: vue3d("vanneReglage", "La vanne d’équilibrage en 3D"),
+        scene: vanneScene, wire: (el) => { filigrane(el); vue3d("vanneReglage", "La vanne d’équilibrage en 3D")(el); },
         equivalent: "Trois organes : le volant et son indicateur en tours de 0,0 à 4,0 ; la tige intérieure à la clé six pans de 3 mm qui bloque le préréglage ; deux prises de pression pour la mesure.",
         action: { type: "match", prompt: "Associez chaque organe à son rôle.", options: ["Afficher la position en tours", "Mémoriser le préréglage", "Mesurer l’écart de pression"], items: [{ label: "Le volant et son indicateur", answer: 0 }, { label: "La tige intérieure (six pans 3 mm)", answer: 1 }, { label: "Les deux prises de pression", answer: 2 }], explain: "Le volant règle et affiche, la tige mémorise la butée, les prises permettent de mesurer sans démonter." } },
       { short: "Afficher", narration: "Voici le geste de base, celui de la notice. On veut régler la vanne à deux tours trois dixièmes. Premier geste : fermer complètement, l'indicateur affiche zéro. Deuxième geste : ouvrir jusqu'à deux virgule trois. Troisième geste : avec la clé six pans de trois millimètres, visser la tige intérieure dans le sens des aiguilles d'une montre, jusqu'à la butée. Le réglage est mémorisé. Dernier geste, la vérification : refermer la vanne, puis la rouvrir à fond. Le volant doit s'arrêter tout seul à deux virgule trois. Si quelqu'un ferme la vanne pour une intervention, il retrouvera le réglage sans calcul.",
         kicker: "manipuler", title: "Afficher un préréglage et le bloquer", text: "Remettez dans l’ordre les gestes de la notice pour afficher 2,3 tours.",
         cap: "Remettez les quatre gestes dans l’ordre.", tp: "Expliquez à quoi sert la vérification finale.", bts: "Expliquez l’intérêt de la butée pour une intervention ultérieure.",
-        scene: procedureScene, wire: vue3d("vanneReglage", "La vanne d’équilibrage en 3D"),
+        scene: procedureScene, wire: (el) => { filigrane(el); vue3d("vanneReglage", "La vanne d’équilibrage en 3D")(el); },
         equivalent: "Quatre gestes : fermer complètement, ouvrir à 2,3, visser la tige intérieure jusqu’à la butée avec la clé six pans de 3 mm, vérifier en fermant puis en rouvrant jusqu’à la butée.",
         action: { type: "sequence", prompt: "Ordonnez les gestes pour afficher et bloquer 2,3 tours.", items: ["Visser la tige intérieure jusqu’à la butée", "Fermer complètement la vanne (0,0)", "Vérifier : fermer puis rouvrir, arrêt à 2,3", "Ouvrir jusqu’à 2,3"], correctOrder: [1, 3, 0, 2], explain: "Fermer, ouvrir à la position, bloquer avec la tige, vérifier : c’est l’ordre de la notice." } },
       { short: "Mesurer", narration: "Afficher un chiffre ne suffit pas : il faut prouver le débit. Branchez l'appareil de mesure sur les deux prises de pression. Il lit l'écart de pression aux bornes de la vanne et, connaissant la position, il calcule le débit avec la valeur Kv de la notice. Ici, la branche doit recevoir deux cent cinquante litres par heure. Vanne ouverte en grand, elle en prend beaucoup trop. Fermez progressivement : l'écart de pression aux prises augmente, le débit diminue. Arrêtez-vous quand vous êtes à cinq pour cent de la cible, puis bloquez la tige intérieure à cette position.",
         kicker: "mesurer et corriger", title: "Trouver la position qui donne 250 l/h", text: "Changez la position de la vanne. L’appareil affiche l’écart de pression et le débit calculé.",
         cap: "Lisez le débit affiché après chaque réglage.", tp: "Cherchez la position qui donne 250 l/h à 5 % près.", bts: "Vérifiez le calcul : débit = Kv × √ écart (en bar).",
-        scene: kvScene,
+        scene: kvScene, wire: filigrane,
         equivalent: (v) => { const b = branche(Number(v)); return `Position ${fr(Number(v))} tours : Kv ${fr(b.kv, 2)}, écart de pression ${fr(b.dp)} kPa, débit ${Math.round(b.q)} l/h pour une cible de 250 l/h.`; },
         action: { type: "range", prompt: "Réglez la position de la vanne.", label: "Position (tours)", min: 0.5, max: 4, step: 0.1, value: 4,
           evaluate: (v) => { const b = branche(Number(v)), ecart = (b.q - CIBLE) / CIBLE; const ok = Math.abs(ecart) <= 0.05;
@@ -119,7 +123,7 @@
       { short: "Méthode", narration: "Dernière idée, et c'est elle qui sépare le bricolage du réglage. Les branches d'un réseau se partagent la même pompe : quand vous fermez un peu la branche A, son eau ne disparaît pas, elle part vers B et C. Régler une vanne déplace donc les débits des autres. C'est pourquoi on ne règle jamais une vanne au hasard, puis la suivante, en espérant que tout tombe juste. On suit une méthode, on règle dans un ordre défini, et à la fin on revérifie toutes les branches. Le compte rendu garde la trace de chaque position, de chaque mesure et de la date.",
         kicker: "conclure", title: "Régler une branche change les autres", text: "Toute action sur une vanne modifie le débit des autres branches.",
         cap: "Dites ce qui arrive aux autres branches quand on ferme A.", tp: "Expliquez pourquoi on revérifie toutes les branches à la fin.", bts: "Proposez un ordre de réglage et justifiez la revérification finale.",
-        scene: ordreScene,
+        scene: ordreScene, wire: filigrane,
         equivalent: "Avant : A 380, B 250, C 120 l/h. Après avoir fermé un peu A : A 270, B 285, C 195 l/h. Les trois débits bougent ensemble.",
         action: { type: "choice", prompt: "Vous venez de régler A puis B. Le débit de A a encore changé. Pourquoi ?", options: [{ label: "Régler B a modifié la pression disponible pour A : les branches s’influencent" }, { label: "La vanne A est défectueuse" }, { label: "L’appareil de mesure se trompe" }, { label: "Le préréglage de A s’est desserré tout seul" }], correct: 0, explain: "Toutes les branches dépendent de la même pompe : on règle avec méthode et on revérifie l’ensemble à la fin." } }
     ],

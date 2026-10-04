@@ -8,6 +8,13 @@
     if (window.HydroVue3D) return go();
     const s = document.createElement("script"); s.src = "../_commun/3d/station3d.js" + V3D; s.onload = go; document.head.appendChild(s);
   };
+  /* L’eau coule dans les schémas (04/10/2026) : les tubes ne se colorent plus ici, chaque scène DÉCLARE les siens
+     (« eaux », plus bas) et le moteur commun _commun/ecoulement.js y fait couler l’eau. Les mots restent dessinés
+     par-dessus l’eau. Une scène sans tube ne reçoit que le filigrane inerWeb (charte R9). */
+  const brancherEau = (el, decl) => {
+    const eq = document.getElementById("sceneEquivalent");
+    return window.HydroEcoulement && window.HydroEcoulement.brancher(el.querySelector("svg"), Object.assign({ annonce: { el: eq, base: eq.textContent } }, decl || { tubes: [] }));
+  };
   const shell=(id,title,desc,body)=>`<svg viewBox="0 0 720 420" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker><pattern id="warm-${id}" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9L9 0" stroke="#c9451a" stroke-width="2"/></pattern><pattern id="cool-${id}" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="#3d7fca"/></pattern></defs>${body}</svg>`;
   const tamponAnimee=`<svg viewBox="0 0 760 430" role="img" aria-labelledby="tam-titre tam-desc" font-family="Calibri, 'Segoe UI', system-ui, Arial, sans-serif">
   <title id="tam-titre">Ballon tampon : le sens de circulation dépend du régime</title>
@@ -25,16 +32,16 @@
     <rect x="570" y="150" width="150" height="130" rx="14" fill="#f3f7fb" stroke="#1b3a63" stroke-width="3"/>
     <text x="645" y="195" fill="#1b3a63">DISTRIBUTION</text><text x="645" y="222" fill="#637285">émetteurs</text><text x="645" y="248" fill="#637285">du bâtiment</text>
   </g>
-  <g stroke-width="12" fill="none" stroke="#1b3a63">
+  <g stroke-width="12" fill="none" stroke="none">
     <path d="M190 130 H310"/><path d="M190 300 H310"/><path d="M450 130 H570"/><path d="M450 300 H570"/>
   </g>
   <g id="tam-flux-prod">
-    <path d="M200 130 H290" stroke="#c9451a" stroke-width="6" fill="none" marker-end="url(#tam-fl-o)"/>
-    <path d="M300 300 H210" stroke="#3d7fca" stroke-width="6" fill="none" marker-end="url(#tam-fl-b)"/>
+    <path d="M200 130 H290" stroke="#c9451a" stroke-width="3" fill="none" marker-end="url(#tam-fl-o)"/>
+    <path d="M300 300 H210" stroke="#3d7fca" stroke-width="3" fill="none" marker-end="url(#tam-fl-b)"/>
   </g>
   <g id="tam-flux-dist">
-    <path d="M460 130 H550" stroke="#c9451a" stroke-width="6" fill="none" marker-end="url(#tam-fl-o)"/>
-    <path d="M560 300 H470" stroke="#3d7fca" stroke-width="6" fill="none" marker-end="url(#tam-fl-b)"/>
+    <path d="M460 130 H550" stroke="#c9451a" stroke-width="3" fill="none" marker-end="url(#tam-fl-o)"/>
+    <path d="M560 300 H470" stroke="#3d7fca" stroke-width="3" fill="none" marker-end="url(#tam-fl-b)"/>
   </g>
   <g id="tam-ballon">
     <rect x="310" y="90" width="140" height="250" rx="30" fill="#f3f7fb" stroke="#1b3a63" stroke-width="4"/>
@@ -66,7 +73,7 @@
   <p class="flux-etat" aria-live="polite">Production = besoin : rien ne traverse le ballon.</p>
 </div>`;
 
-  function brancherTampon(scene) {
+  function brancherTampon(scene, pilote) {
     const chaud = scene.querySelector("#tam-chaud");
     const froid = scene.querySelector("#tam-froid");
     const niveau = scene.querySelector("#tam-niveau");
@@ -77,9 +84,9 @@
     const boutons = Array.from(scene.querySelectorAll("[data-regime]"));
     if (!chaud || !froid || !niveau || !sens || !fluxProd || !regimeTexte || !etat || !boutons.length) return;
     const regimes = {
-      charge: { y: 265, angle: 0, opacite: 1, prod: 9, mot: "CHARGE", phrase: "Production > besoin : l’eau chaude descend dans le ballon, il se charge." },
-      equilibre: { y: 215, angle: 0, opacite: 0, prod: 6, mot: "ÉQUILIBRE", phrase: "Production = besoin : rien ne traverse le ballon." },
-      decharge: { y: 165, angle: 180, opacite: 1, prod: 4, mot: "DÉCHARGE", phrase: "Besoin > production : le ballon restitue son eau chaude, il se décharge." }
+      charge: { y: 265, angle: 0, opacite: 1, prod: 4.5, mot: "CHARGE", phrase: "Production > besoin : l’eau chaude descend dans le ballon, il se charge." },
+      equilibre: { y: 215, angle: 0, opacite: 0, prod: 3, mot: "ÉQUILIBRE", phrase: "Production = besoin : rien ne traverse le ballon." },
+      decharge: { y: 165, angle: 180, opacite: 1, prod: 2, mot: "DÉCHARGE", phrase: "Besoin > production : le ballon restitue son eau chaude, il se décharge." }
     };
     function peindre(cle) {
       const r = regimes[cle];
@@ -90,6 +97,7 @@
       sens.setAttribute("opacity", String(r.opacite));
       sens.setAttribute("transform", `translate(380 215) rotate(${r.angle})`);
       fluxProd.querySelectorAll("path").forEach((chemin) => chemin.setAttribute("stroke-width", String(r.prod)));
+      if (pilote) { pilote.debit(r.prod / 3, 0); pilote.debit(r.prod / 3, 1); }   /* l’eau de la production va plus ou moins vite : charge, équilibre, décharge */
       regimeTexte.textContent = r.mot;
       etat.textContent = r.phrase;
     }
@@ -101,15 +109,42 @@
     if (mode === 1) return tamponAnimee;
     const id=`tam-mode-${mode}`;
     const data=[
-      {title:"DEUX PIQUAGES · EN SÉRIE",desc:"Le même débit traverse le ballon. Le volume utile contribue à l’inertie. Il n’y a pas deux circuits hydrauliquement séparés dans ce schéma.",body:`<path d="M45 115H285M435 305H675" stroke="#1b3a63" stroke-width="12"/><image href="assets/ballon-tampon.svg" x="285" y="75" width="150" height="270"/><path d="M130 115H255" stroke="#c9451a" stroke-width="6" marker-end="url(#arr-${id})"/><path d="M585 305H465" stroke="#3d7fca" stroke-width="6" marker-end="url(#arr-${id})"/><text x="360" y="55" text-anchor="middle" font-size="20" font-weight="700">UN SEUL CHEMIN</text><text x="360" y="385" text-anchor="middle" font-size="19">Inertie : oui · Découplage : non démontré</text>`},
+      {title:"DEUX PIQUAGES · EN SÉRIE",desc:"Le même débit traverse le ballon. Le volume utile contribue à l’inertie. Il n’y a pas deux circuits hydrauliquement séparés dans ce schéma.",body:`<path d="M45 115H285M435 305H675" stroke="none" stroke-width="12"/><image href="assets/ballon-tampon.svg" x="285" y="75" width="150" height="270"/><path d="M130 115H255" stroke="#c9451a" stroke-width="6" marker-end="url(#arr-${id})"/><path d="M585 305H465" stroke="#3d7fca" stroke-width="6" marker-end="url(#arr-${id})"/><text x="360" y="55" text-anchor="middle" font-size="20" font-weight="700">UN SEUL CHEMIN</text><text x="360" y="385" text-anchor="middle" font-size="19">Inertie : oui · Découplage : non démontré</text>`},
       {title:"QUATRE PIQUAGES · PRIMAIRE / SECONDAIRE",desc:"Deux circuits et deux circulateurs sont reliés au volume commun. Ce schéma peut assurer inertie et découplage hydraulique; les transferts internes restent à analyser.",body:`<image href="assets/ballon-tampon.svg" x="285" y="75" width="150" height="270"/><path d="M45 130H300M300 295H45M420 130H675M675 295H420" stroke="#1b3a63" stroke-width="11"/><circle cx="120" cy="130" r="26" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><circle cx="600" cy="130" r="26" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="120" y="136" text-anchor="middle" font-size="19" font-weight="700">P1</text><text x="600" y="136" text-anchor="middle" font-size="19" font-weight="700">P2</text><path d="M165 130H260M555 130H460" stroke="#c9451a" stroke-width="6" marker-end="url(#arr-${id})"/><text x="360" y="55" text-anchor="middle" font-size="20" font-weight="700">DEUX CIRCUITS · VOLUME COMMUN</text><text x="360" y="385" text-anchor="middle" font-size="19">Inertie + découplage possibles dans ce schéma</text>`},
-      {title:"PIQUAGE EN DÉRIVATION",desc:"Le ballon est raccordé sur une branche latérale. La part du volume réellement traversée dépend des conditions hydrauliques; aucun découplage n’est démontré par le dessin seul.",body:`<path d="M45 155H675" stroke="#1b3a63" stroke-width="12"/><path d="M360 155V235" stroke="#1b3a63" stroke-width="10"/><image href="assets/ballon-tampon.svg" x="285" y="215" width="150" height="190"/><path d="M110 155H300" stroke="#c9451a" stroke-width="6" marker-end="url(#arr-${id})"/><text x="360" y="55" text-anchor="middle" font-size="20" font-weight="700">BRANCHE LATÉRALE</text><rect x="440" y="245" width="240" height="85" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="5 4"/><text x="560" y="278" text-anchor="middle" font-size="19" font-weight="700">VOLUME UTILE ?</text><text x="560" y="305" text-anchor="middle" font-size="19">circulation à vérifier</text>`}
+      {title:"PIQUAGE EN DÉRIVATION",desc:"Le ballon est raccordé sur une branche latérale. La part du volume réellement traversée dépend des conditions hydrauliques; aucun découplage n’est démontré par le dessin seul.",body:`<path d="M45 155H675" stroke="none" stroke-width="12"/><path d="M360 155V235" stroke="none" stroke-width="10"/><image href="assets/ballon-tampon.svg" x="285" y="215" width="150" height="190"/><path d="M110 155H300" stroke="#c9451a" stroke-width="6" marker-end="url(#arr-${id})"/><text x="360" y="55" text-anchor="middle" font-size="20" font-weight="700">BRANCHE LATÉRALE</text><rect x="440" y="245" width="240" height="85" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="5 4"/><text x="560" y="278" text-anchor="middle" font-size="19" font-weight="700">VOLUME UTILE ?</text><text x="560" y="305" text-anchor="middle" font-size="19">circulation à vérifier</text>`}
     ][mode]||null;
     return shell(id,data.title,data.desc,data.body);
   };
   const roles=shell("tam-roles","Fonctions attribuées avec prudence","Trois cartes distinguent fonction montrée, fonction à vérifier et fonction non démontrée. La forme du ballon ne suffit pas.",`<rect x="30" y="75" width="210" height="270" rx="20" fill="#fffdf8" stroke="#1e7e54" stroke-width="5"/><text x="135" y="115" text-anchor="middle" font-size="19" font-weight="700">MONTRÉE</text><text x="135" y="170" text-anchor="middle" font-size="19">volume d’eau</text><text x="135" y="205" text-anchor="middle" font-size="19">chemin traversé</text><rect x="255" y="75" width="210" height="270" rx="20" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="5 4"/><text x="360" y="115" text-anchor="middle" font-size="19" font-weight="700">À VÉRIFIER</text><text x="360" y="170" text-anchor="middle" font-size="19">volume utile</text><text x="360" y="205" text-anchor="middle" font-size="19">transferts internes</text><text x="360" y="240" text-anchor="middle" font-size="19">températures</text><rect x="480" y="75" width="210" height="270" rx="20" fill="#fbe7e4" stroke="#c0392b" stroke-width="4" stroke-dasharray="9 6"/><text x="585" y="115" text-anchor="middle" font-size="19" font-weight="700">NON AUTOMATIQUE</text><text x="585" y="170" text-anchor="middle" font-size="19">découplage</text><text x="585" y="205" text-anchor="middle" font-size="19">stratification</text><text x="585" y="240" text-anchor="middle" font-size="19">rendement</text>`);
   const useful=(value=60)=>shell("tam-useful","Part de volume balayée dans un modèle qualitatif",`La part représentée comme balayée vaut ${value} pour cent du volume dessiné. Cette commande qualitative ne calcule pas le volume utile réel d’un produit.`,`<path d="M260 45C205 45 185 95 185 210S205 375 260 375H460C515 375 535 325 535 210S515 45 460 45Z" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/><clipPath id="clip-tam-useful"><path d="M260 45C205 45 185 95 185 210S205 375 260 375H460C515 375 535 325 535 210S515 45 460 45Z"/></clipPath><rect x="185" y="${375-3.3*value}" width="350" height="${3.3*value}" fill="url(#cool-tam-useful)" clip-path="url(#clip-tam-useful)"/><path d="M185 110H70M535 310H650" stroke="#1b3a63" stroke-width="11"/><text x="360" y="205" text-anchor="middle" font-size="28" font-weight="700">${value} %</text><text x="360" y="238" text-anchor="middle" font-size="19">part balayée représentée</text><text x="360" y="405" text-anchor="middle" font-size="19">Donnée qualitative du scénario · pas un dimensionnement</text>`);
   const method=shell("tam-method","Vérifier les fonctions du raccordement","Cinq étapes : lire les piquages, suivre les débits, observer le volume mobilisé, vérifier les transferts et températures, conclure seulement sur les fonctions prouvées.",`<g fill="#fffdf8" stroke="#1b3a63" stroke-width="3">${["PIQUAGES","DÉBITS","VOLUME","TRANSFERT","CONCLURE"].map((t,i)=>`<rect x="${10+i*142}" y="150" width="135" height="110" rx="15"/><text x="${77+i*142}" y="194" text-anchor="middle" font-size="19" font-weight="700">${t}</text><text x="${77+i*142}" y="228" text-anchor="middle" font-size="19">${i+1}</text>`).join("")}</g>${[0,1,2,3].map(i=>`<path d="M${145+i*142} 205H${152+i*142}" stroke="#c9451a" stroke-width="5" marker-end="url(#arr-tam-method)"/>`).join("")}`);
+
+  /* l’eau de chaque étape (dans l’ordre des étapes) : les tubes de la scène, dans l’ordre où l’eau les parcourt.
+     largeur = épaisseur d’origine − 3 ; debut = chemin déjà fait par l’eau avant l’entrée du tube ; debit < 1 : un
+     tube qui a moins d’eau. Rien : filigrane seul (3D : pas d’eau). */
+  const ballon = miseEnRoute => ({ miseEnRoute, tubes: [
+    { d: "M190 130H310", eau: "chaude", largeur: 9 },                 /* production : le départ vers le ballon */
+    { d: "M310 300H190", eau: "froide", largeur: 9 },                 /* production : le retour (le sens des flèches) */
+    { d: "M450 130H570", eau: "chaude", largeur: 9, debut: 260 },     /* distribution : le départ */
+    { d: "M570 300H450", eau: "froide", largeur: 9 }                  /* distribution : le retour */
+  ] });
+  const eaux = [
+    /* 1 · le ballon se charge, s’équilibre ou se décharge (brancherTampon règle le débit de la production) */
+    ballon(true),
+    /* 2 · scène redessinée à chaque choix : pas de mise en route ; trois raccordements, reconnus à leur titre */
+    el => {
+      if (el.querySelector("#tam-titre")) return ballon(false);
+      if (el.querySelector("#tam-mode-0-title")) return { miseEnRoute: false, tubes: [
+        { d: "M45 115H285", eau: "chaude", largeur: 9 },
+        { d: "M675 305H435", eau: "froide", largeur: 9 }
+      ] };
+      return { miseEnRoute: false, tubes: [
+        { d: "M45 155H675", eau: "chaude", largeur: 9 },
+        { d: "M360 155V235", eau: "chaude", largeur: 7, debit: 0.5 }
+      ] };
+    }
+    /* 3 · fonctions attribuées, 4 · vue 3D, 5 · vérification : filigrane seul */
+  ];
 
   window.STATION_CONFIG={code:"M4",id:"tampon",title:"Volume tampon — Quatre piquages",next:"poursuivre vers le découplage",levels:{CAP:{objective:"Reconnaître le ballon tampon et suivre le chemin de l’eau.",assessment:"nommer le ballon et suivre un piquage"},TP:{objective:"Reconnaître le raccordement et attribuer seulement les fonctions visibles.",assessment:"lire les piquages, suivre le chemin et limiter la conclusion"},BTS:{objective:"Analyser volume utile, transferts et découplage selon l’architecture.",assessment:"comparer les montages et justifier les fonctions avec leurs conditions"}},steps:[
     {short:"Rôle",narration: "Un ballon tampon n'a pas une fonction unique, et c'est la source de bien des malentendus. Ce qu'il apporte à coup sûr, c'est du volume, donc de l'inertie : l'installation réagit plus lentement, et le générateur cesse de démarrer et de s'arrêter sans cesse. Tout le reste — découpler deux circuits, stratifier des températures, stocker de l'énergie pour plus tard — dépend entièrement de la façon dont il est raccordé et des conditions de fonctionnement. Deux ballons identiques, piqués différemment, ne rendent pas le même service. Le volume ne fait pas la fonction.", kicker:"observer",title:"Un ballon n’a pas une seule fonction",text:"Le volume apporte une possibilité d’inertie. Cliquez les trois régimes pour voir le ballon se charger, s’équilibrer ou se décharger. Les autres fonctions dépendent du raccordement et des conditions.",cap:"Montrez le ballon et l’eau qu’il contient.",tp:"Distinguez volume, inertie et découplage.",bts:"Séparez propriété géométrique, fonction hydraulique et performance à vérifier.",scene:tamponAnimee,wire:brancherTampon,equivalent:"Le volume peut contribuer à l’inertie; découplage et stratification restent à démontrer.",action:{type:"choice",prompt:"Quelle affirmation est prudente ?",options:[{label:"Le raccordement détermine les fonctions réellement assurées"},{label:"Tout ballon découple automatiquement"},{label:"Quatre piquages garantissent toute performance"},{label:"Le volume nominal est toujours entièrement utile"}],correct:0,explain:"Il faut suivre les circuits et vérifier les conditions avant d’attribuer une fonction."}},
@@ -123,4 +158,13 @@
     {context:"Le volume nominal est connu.",question:"Que faut-il encore vérifier ?",options:["La part réellement mobilisée dans les conditions du système","La couleur de la cuve","Le nom du fabricant seul","Un seuil universel"],correct:0,explain:"Le volume utile dépend du raccordement et du fonctionnement."},
     {context:"Un dossier attribue trois fonctions au ballon sans schéma.",question:"Quelle démarche adopter ?",options:["Lire piquages, débits et températures avant de confirmer","Recopier les fonctions","Supposer un découplage","Ignorer le raccordement"],correct:0,explain:"Chaque fonction doit être reliée à une preuve du montage."}
   ],summaryScene:connection(1),summaryEquivalent:"Synthèse : le montage quatre piquages peut associer inertie et découplage; les transferts et le volume utile restent à vérifier."};
+
+  /* l’eau d’abord (elle se pose sous le dessin), puis la mécanique propre à l’étape (ballon animé, vue 3D) */
+  window.STATION_CONFIG.steps.forEach((etape, i) => {
+    const mecanique = etape.wire;
+    etape.wire = el => {
+      const pilote = brancherEau(el, typeof eaux[i] === "function" ? eaux[i](el) : eaux[i]);
+      if (mecanique) mecanique(el, pilote);
+    };
+  });
 })();

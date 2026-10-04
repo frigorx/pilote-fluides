@@ -10,10 +10,11 @@
     mesurer: { modele: "thermometres", titre: "Les thermomètres en 3D" },
     debit: { modele: "debitmetre", titre: "Le débitmètre en 3D", rang: 0 }
   };
-  const vue3d = (el, spec) => {
-    const go = () => window.HydroVue3D.brancher(el, spec);
+  /* apres : appelé quand le bloc 3D est en place, ou abandonné (le dessin reste alors tel quel) */
+  const vue3d = (el, spec, apres) => {
+    const go = () => window.HydroVue3D.brancher(el, spec).finally(apres);
     if (window.HydroVue3D) return go();
-    const sc = document.createElement("script"); sc.src = "../_commun/3d/station3d.js" + CLE_3D; sc.onload = go; document.head.appendChild(sc);
+    const sc = document.createElement("script"); sc.src = "../_commun/3d/station3d.js" + CLE_3D; sc.onload = go; sc.onerror = apres; document.head.appendChild(sc);
   };
 
   const routes = {
@@ -23,14 +24,29 @@
     M: ["mesurer", "releves", "equilibrage", "tampon", "decouplage", "diagnostic", "mission"]
   };
 
-  const sceneShell = (id, title, desc, body) => `<svg viewBox="0 0 760 420" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1b3a63"/></marker></defs><rect x="12" y="12" width="736" height="396" rx="24" fill="#fffdf8" stroke="rgba(27,58,99,.18)"/>${body}</svg>`;
+  const sceneShell = (id, title, desc, body) => `<svg viewBox="0 0 760 420" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1b3a63"/></marker></defs><rect x="12" y="12" width="736" height="396" rx="24" fill="#fffdf8" stroke="rgba(27,58,99,.18)"/>${body}</svg>`;
 
   const scenes = {
-    energie: sceneShell("course-energy", "Chaîne de transfert d’énergie", "Production, eau, émetteur et local sont reliés dans l’ordre. L’eau transporte et l’émetteur transfère vers le local.", `<g data-demo="1" class="p-demo-part"><rect x="40" y="150" width="150" height="110" rx="18" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="7 5"/><text x="115" y="210" text-anchor="middle" font-size="19" font-weight="700">PRODUCTION</text></g><g data-demo="2" class="p-demo-part"><path d="M190 205H355" stroke="#3d7fca" stroke-width="13" marker-end="url(#arr-course-energy)"/><text x="272" y="180" text-anchor="middle" font-size="17" font-weight="700">EAU</text></g><g data-demo="3" class="p-demo-part"><rect x="365" y="135" width="145" height="140" rx="18" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="438" y="210" text-anchor="middle" font-size="19" font-weight="700">ÉMETTEUR</text></g><g data-demo="4" class="p-demo-part"><path d="M510 205H610" stroke="#c9451a" stroke-width="8" stroke-dasharray="8 7" marker-end="url(#arr-course-energy)"/><rect x="620" y="150" width="100" height="110" rx="18" fill="#f7f1e7" stroke="#1b3a63" stroke-width="4"/><text x="670" y="210" text-anchor="middle" font-size="19" font-weight="700">LOCAL</text></g><text x="380" y="340" text-anchor="middle" font-size="17">L’eau circule ; l’énergie est transférée.</text>`),
-    debit: sceneShell("course-flow", "Point de fonctionnement pompe-réseau", "La courbe pompe descend, la courbe réseau monte et leur intersection donne le débit obtenu.", `<g data-demo="1" class="p-demo-part"><path d="M80 340V70M80 340H690" stroke="#1b3a63" stroke-width="4"/><text x="390" y="390" text-anchor="middle" font-size="16">DÉBIT Q</text><text x="24" y="205" transform="rotate(-90 24 205)" text-anchor="middle" font-size="16">HAUTEUR H</text></g><g data-demo="2" class="p-demo-part"><path d="M90 95C270 110 470 190 650 330" fill="none" stroke="#3d7fca" stroke-width="7"/><text x="510" y="130" font-size="17" font-weight="700">COURBE POMPE</text></g><g data-demo="3" class="p-demo-part"><path d="M90 340Q360 305 650 90" fill="none" stroke="#c9451a" stroke-width="7" stroke-dasharray="11 8"/><text x="500" y="285" font-size="17" font-weight="700">COURBE RÉSEAU</text></g><g data-demo="4" class="p-demo-part"><circle cx="388" cy="228" r="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="7"/><path d="M388 228V340M80 228H388" stroke="#1e7e54" stroke-width="3" stroke-dasharray="6 5"/><text x="415" y="214" font-size="18" font-weight="700">POINT OBTENU</text></g>`),
-    "delta-t": sceneShell("course-dt", "Deux températures comparables autour du même émetteur", "Une sonde est placée au départ immédiat et une autre au retour immédiat du même émetteur. L’état doit être stabilisé.", `<g data-demo="1" class="p-demo-part"><path d="M90 105H650" stroke="#c9451a" stroke-width="14" marker-end="url(#arr-course-dt)"/><text x="300" y="80" text-anchor="middle" font-size="18" font-weight="700">DÉPART</text></g><g data-demo="2" class="p-demo-part"><rect x="570" y="120" width="135" height="160" rx="20" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="638" y="205" text-anchor="middle" font-size="18" font-weight="700">ÉMETTEUR</text></g><g data-demo="3" class="p-demo-part"><path d="M650 315H90" stroke="#3d7fca" stroke-width="14" marker-end="url(#arr-course-dt)"/><text x="300" y="350" text-anchor="middle" font-size="18" font-weight="700">RETOUR</text></g><g data-demo="4" class="p-demo-part"><circle cx="520" cy="105" r="22" fill="#fffdf8" stroke="#c9451a" stroke-width="6"/><text x="520" y="112" text-anchor="middle" font-size="16" font-weight="700">T₁</text><circle cx="520" cy="315" r="22" fill="#fffdf8" stroke="#3d7fca" stroke-width="6"/><text x="520" y="322" text-anchor="middle" font-size="16" font-weight="700">T₂</text><text x="245" y="220" text-anchor="middle" font-size="24" font-weight="700">ΔT = T₁ − T₂</text><text x="245" y="253" text-anchor="middle" font-size="16">mêmes points · même état stabilisé</text></g>`),
+    energie: sceneShell("course-energy", "Chaîne de transfert d’énergie", "Production, eau, émetteur et local sont reliés dans l’ordre. L’eau transporte et l’émetteur transfère vers le local.", `<g data-demo="1" class="p-demo-part"><rect x="40" y="150" width="150" height="110" rx="18" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="7 5"/><text x="115" y="210" text-anchor="middle" font-size="19" font-weight="700">PRODUCTION</text></g><g data-demo="2" class="p-demo-part"><path d="M190 205H355" fill="none" stroke="none" marker-end="url(#arr-course-energy)"/><text x="272" y="180" text-anchor="middle" font-size="19" font-weight="700">EAU</text></g><g data-demo="3" class="p-demo-part"><rect x="365" y="135" width="145" height="140" rx="18" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="438" y="210" text-anchor="middle" font-size="19" font-weight="700">ÉMETTEUR</text></g><g data-demo="4" class="p-demo-part"><path d="M510 205H610" stroke="#c9451a" stroke-width="8" stroke-dasharray="8 7" marker-end="url(#arr-course-energy)"/><rect x="620" y="150" width="100" height="110" rx="18" fill="#f7f1e7" stroke="#1b3a63" stroke-width="4"/><text x="670" y="210" text-anchor="middle" font-size="19" font-weight="700">LOCAL</text></g><text x="380" y="340" text-anchor="middle" font-size="19">L’eau circule ; l’énergie est transférée.</text>`),
+    debit: sceneShell("course-flow", "Point de fonctionnement pompe-réseau", "La courbe pompe descend, la courbe réseau monte et leur intersection donne le débit obtenu.", `<g data-demo="1" class="p-demo-part"><path d="M80 340V70M80 340H690" stroke="#1b3a63" stroke-width="4"/><text x="390" y="390" text-anchor="middle" font-size="19">DÉBIT Q</text><text x="48" y="205" transform="rotate(-90 48 205)" text-anchor="middle" font-size="19">HAUTEUR H</text></g><g data-demo="2" class="p-demo-part"><path d="M90 95C270 110 470 190 650 330" fill="none" stroke="#3d7fca" stroke-width="7"/><rect x="108" y="30" width="182" height="38" rx="12" fill="#fffdf8" stroke="#3d7fca" stroke-width="3"/><text x="199" y="56" text-anchor="middle" font-size="19" font-weight="700">COURBE POMPE</text></g><g data-demo="3" class="p-demo-part"><path d="M90 340Q360 305 650 90" fill="none" stroke="#c9451a" stroke-width="7" stroke-dasharray="11 8"/><rect x="498" y="30" width="196" height="38" rx="12" fill="#fffdf8" stroke="#c9451a" stroke-width="3" stroke-dasharray="9 6"/><text x="596" y="56" text-anchor="middle" font-size="19" font-weight="700">COURBE RÉSEAU</text></g><g data-demo="4" class="p-demo-part"><circle cx="465" cy="210" r="14" fill="#fffdf8" stroke="#1e7e54" stroke-width="7"/><path d="M465 210V340M80 210H465" stroke="#1e7e54" stroke-width="3" stroke-dasharray="6 5"/><path d="M465 138V191" stroke="#1e7e54" stroke-width="3"/><rect x="377" y="100" width="176" height="36" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="3"/><text x="465" y="125" text-anchor="middle" font-size="19" font-weight="700">POINT OBTENU</text></g>`),
+    "delta-t": sceneShell("course-dt", "Deux températures comparables autour du même émetteur", "Une sonde est placée au départ immédiat et une autre au retour immédiat du même émetteur. L’état doit être stabilisé.", `<g data-demo="1" class="p-demo-part"><path d="M90 105H650" fill="none" stroke="none" marker-end="url(#arr-course-dt)"/><text x="300" y="80" text-anchor="middle" font-size="18" font-weight="700">DÉPART</text></g><g data-demo="2" class="p-demo-part"><rect x="570" y="120" width="135" height="160" rx="20" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="638" y="205" text-anchor="middle" font-size="18" font-weight="700">ÉMETTEUR</text></g><g data-demo="3" class="p-demo-part"><path d="M650 315H90" fill="none" stroke="none" marker-end="url(#arr-course-dt)"/><text x="300" y="350" text-anchor="middle" font-size="18" font-weight="700">RETOUR</text></g><g data-demo="4" class="p-demo-part"><circle cx="520" cy="105" r="22" fill="#fffdf8" stroke="#c9451a" stroke-width="6"/><text x="520" y="112" text-anchor="middle" font-size="18" font-weight="700">T₁</text><circle cx="520" cy="315" r="22" fill="#fffdf8" stroke="#3d7fca" stroke-width="6"/><text x="520" y="322" text-anchor="middle" font-size="18" font-weight="700">T₂</text><text x="245" y="220" text-anchor="middle" font-size="24" font-weight="700">ΔT = T₁ − T₂</text><text x="245" y="253" text-anchor="middle" font-size="18">mêmes points · même état stabilisé</text></g>`),
     puissance: sceneShell("course-power", "Relation entre puissance, débit et écart de température", "Trois cartes montrent la puissance P, le débit Q et l’écart delta T, reliés par la formule pratique pour l’eau.", `<g data-demo="1" class="p-demo-part"><rect x="55" y="110" width="180" height="170" rx="22" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="7 5"/><text x="145" y="165" text-anchor="middle" font-size="22" font-weight="700">PUISSANCE P</text><text x="145" y="220" text-anchor="middle" font-size="30" font-weight="700">kW</text></g><g data-demo="2" class="p-demo-part"><rect x="290" y="110" width="180" height="170" rx="22" fill="#fffdf8" stroke="#3d7fca" stroke-width="4"/><text x="380" y="165" text-anchor="middle" font-size="22" font-weight="700">DÉBIT Q</text><text x="380" y="220" text-anchor="middle" font-size="25" font-weight="700">m³/h</text></g><g data-demo="3" class="p-demo-part"><rect x="525" y="110" width="180" height="170" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="615" y="165" text-anchor="middle" font-size="22" font-weight="700">ÉCART ΔT</text><text x="615" y="220" text-anchor="middle" font-size="30" font-weight="700">K</text></g><g data-demo="4" class="p-demo-part"><rect x="170" y="320" width="420" height="62" rx="18" fill="#e3f5ec" stroke="#1e7e54" stroke-width="6"/><text x="380" y="359" text-anchor="middle" font-size="26" font-weight="700">P ≈ 1,16 × Q × ΔT</text></g>`),
-    mesurer: sceneShell("course-measure", "Construire une mesure traçable", "Grandeur, instrument, point, unité, état et heure forment ensemble une preuve exploitable.", `<g data-demo="1" class="p-demo-part"><rect x="35" y="115" width="150" height="180" rx="20" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="110" y="160" text-anchor="middle" font-size="18" font-weight="700">GRANDEUR</text><text x="110" y="215" text-anchor="middle" font-size="16">débit ?</text><text x="110" y="245" text-anchor="middle" font-size="16">température ?</text></g><g data-demo="2" class="p-demo-part"><rect x="215" y="115" width="150" height="180" rx="20" fill="#fffdf8" stroke="#3d7fca" stroke-width="4"/><text x="290" y="160" text-anchor="middle" font-size="18" font-weight="700">INSTRUMENT</text><text x="290" y="220" text-anchor="middle" font-size="16">plage · état</text></g><g data-demo="3" class="p-demo-part"><rect x="395" y="115" width="150" height="180" rx="20" fill="#fffdf8" stroke="#c9451a" stroke-width="4" stroke-dasharray="9 6"/><text x="470" y="160" text-anchor="middle" font-size="18" font-weight="700">POINT + UNITÉ</text><text x="470" y="220" text-anchor="middle" font-size="16">où ? combien ?</text></g><g data-demo="4" class="p-demo-part"><rect x="575" y="115" width="150" height="180" rx="20" fill="#e3f5ec" stroke="#1e7e54" stroke-width="6"/><text x="650" y="160" text-anchor="middle" font-size="18" font-weight="700">CONTEXTE</text><text x="650" y="210" text-anchor="middle" font-size="16">état · heure</text><text x="650" y="245" text-anchor="middle" font-size="16">avant / après</text></g><text x="380" y="355" text-anchor="middle" font-size="20" font-weight="700">Une valeur seule ne suffit pas.</text>`)
+    mesurer: sceneShell("course-measure", "Construire une mesure traçable", "Grandeur, instrument, point, unité, état et heure forment ensemble une preuve exploitable.", `<g data-demo="1" class="p-demo-part"><rect x="35" y="115" width="150" height="180" rx="20" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/><text x="110" y="160" text-anchor="middle" font-size="18" font-weight="700">GRANDEUR</text><text x="110" y="215" text-anchor="middle" font-size="18">débit ?</text><text x="110" y="245" text-anchor="middle" font-size="18">température ?</text></g><g data-demo="2" class="p-demo-part"><rect x="215" y="115" width="150" height="180" rx="20" fill="#fffdf8" stroke="#3d7fca" stroke-width="4"/><text x="290" y="160" text-anchor="middle" font-size="18" font-weight="700">INSTRUMENT</text><text x="290" y="220" text-anchor="middle" font-size="18">plage · état</text></g><g data-demo="3" class="p-demo-part"><rect x="395" y="115" width="150" height="180" rx="20" fill="#fffdf8" stroke="#c9451a" stroke-width="4" stroke-dasharray="9 6"/><text x="470" y="160" text-anchor="middle" font-size="18" font-weight="700">POINT + UNITÉ</text><text x="470" y="220" text-anchor="middle" font-size="18">où ? combien ?</text></g><g data-demo="4" class="p-demo-part"><rect x="575" y="115" width="150" height="180" rx="20" fill="#e3f5ec" stroke="#1e7e54" stroke-width="6"/><text x="650" y="160" text-anchor="middle" font-size="18" font-weight="700">CONTEXTE</text><text x="650" y="210" text-anchor="middle" font-size="18">état · heure</text><text x="650" y="245" text-anchor="middle" font-size="18">avant / après</text></g><text x="380" y="355" text-anchor="middle" font-size="20" font-weight="700">Une valeur seule ne suffit pas.</text>`)
+  };
+
+  /* L'EAU DES SCÈNES (04/10/2026) — chaque station déclare ses tubes au moteur commun _commun/ecoulement.js,
+     qui dessine l'eau SOUS le dessin de la scène et la fait couler (une nappe, jamais des billes). Le d d'un
+     tube est celui de la balise de la scène ; cette balise garde son marker-end mais perd son trait
+     (stroke="none") : la pointe de flèche reste dessinée par-dessus l'eau. Largeur = épaisseur d'origine − 3 ;
+     Delta-T : chaude au départ, froide au retour. Énergie : l'eau reste BLEUE, comme la légende de la station
+     (« flèche bleue = eau, flèche pointillée = énergie »). Débit, Puissance et Mesurer n'ont pas de tube : le
+     moteur n'y pose que le filigrane inerWeb. */
+  const eaux = {
+    energie: { tubes: [{ d: "M190 205H355", eau: "froide", largeur: 10 }] },
+    "delta-t": { tubes: [{ d: "M90 105H650", eau: "chaude", largeur: 11 }, { d: "M650 315H90", eau: "froide", largeur: 11 }] },
+    debit: { tubes: [] },
+    puissance: { tubes: [] },
+    mesurer: { tubes: [] }
   };
 
   const catalogue = {
@@ -94,7 +110,8 @@
       title, lead: data.leads[index], body: data.bodies[index], key: data.keys[index],
       equivalent: `${data.leads[index]} ${data.bodies[index]}`,
       narration: (data.narrations || [])[index] || "",
-      scene: scenes[id]
+      scene: scenes[id],
+      eau: eaux[id]
     }));
   }
 
@@ -106,7 +123,7 @@
     const id = window.location.pathname.split("/").filter(Boolean).slice(-2, -1)[0];
     const lessons = lessonsFor(id);
     const style = document.createElement("link");
-    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261004-0853"; document.head.append(style);
+    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261004-1052"; document.head.append(style);
     document.body.classList.add("p-course-active");
 
     const $ = (selector, root = document) => root.querySelector(selector);
@@ -201,6 +218,7 @@
     const total = lessons.length + 2;
     let current = 0;
     let furthest = 0;
+    let rendu = 0; /* numéro de l'affichage en cours : changer d'étape invalide l'eau qu'une vue 3D attendait */
     let practiceReady = false;
     let timers = [];
     let speechRun = 0;
@@ -266,6 +284,16 @@
       return (stationConfig.levels[selected] || stationConfig.levels.TP).objective;
     }
 
+    /* L'eau de la scène (04/10/2026) : le moteur commun la pose SOUS le dessin. Sur une étape à vue 3D, le dessin
+       d'origine n'existe plus : station3d.js en garde une copie dans l'onglet « En schéma » (par innerHTML) et c'est
+       sur cette copie que l'eau se pose, une fois la 3D en place. */
+    function eauDeLaScene(eau) {
+      const scene = $("#pScene");
+      const svg = $(".vue3d-schema svg", scene) || $("svg", scene);
+      if (!eau || !svg || !window.HydroEcoulement || svg.querySelector(".eau-dessous")) return;
+      window.HydroEcoulement.brancher(svg, Object.assign({ annonce: { el: $("#pEquivalent"), base: $("#pEquivalent").textContent } }, eau));
+    }
+
     function renderCourseLesson(lesson) {
       course.classList.remove("hidden"); activity.classList.add("hidden");
       $("#pKicker").textContent = `Station ${id} · ${lesson.kicker}`;
@@ -275,8 +303,13 @@
       /* La scène commune ne change pas d'une étape à l'autre : le repère numéroté de l'étape
          (groupe data-demo) est mis en évidence, les autres restent normaux (lot 3, 13/09/2026). */
       const rang = lessons.indexOf(lesson);
-      if (VUES_3D[id] && rang === (VUES_3D[id].rang === undefined ? 2 : VUES_3D[id].rang)) vue3d($("#pScene"), VUES_3D[id]);
       $$("[data-demo]", $("#pScene")).forEach((part, index) => part.classList.toggle("p-demo-current", index === rang));
+      /* station3d.js se règle sur le dessin tel qu'il est à l'appel et renonce si la scène a bougé depuis : toute
+         retouche de la scène passe donc AVANT la vue 3D (04/10/2026 ; avant, elle suivait et la 3D manquait au
+         second passage sur l'étape). Sans 3D, l'eau se pose tout de suite. */
+      const mien = rendu;
+      if (VUES_3D[id] && rang === (VUES_3D[id].rang === undefined ? 2 : VUES_3D[id].rang)) vue3d($("#pScene"), VUES_3D[id], () => { if (mien === rendu) eauDeLaScene(lesson.eau); });
+      else eauDeLaScene(lesson.eau);
       $("#pControls").innerHTML = `<button type="button" id="pRunDemo">Montrer pas à pas</button>`; $("#pRunDemo").addEventListener("click", runDemo);
       next.disabled = false;
     }
@@ -286,14 +319,15 @@
       course.classList.remove("hidden"); activity.classList.add("hidden");
       $("#pKicker").textContent = "7 · Synthèse"; $("#pTitle").textContent = "Vous avez observé, compris puis manipulé";
       $("#pLead").textContent = data.keys[3]; $("#pBody").innerHTML = `<p>${data.leads[4]}</p><p>La note viendra une seule fois, dans la station Évaluation située à la fin de la ligne.</p>`;
-      $("#pLevel").innerHTML = `<strong>Suite :</strong> ${destination.label}.`; $("#pKey").textContent = data.keys[4]; $("#pScene").innerHTML = scenes[id]; $("#pEquivalent").textContent = `${data.leads[0]} ${data.keys[3]}`;
+      $("#pLevel").innerHTML = `<strong>Suite :</strong> ${destination.label}.`; $("#pKey").textContent = data.keys[4]; $("#pScene").innerHTML = scenes[id]; $("#pEquivalent").textContent = `${data.leads[0]} ${data.keys[3]}`; eauDeLaScene(eaux[id]);
       $("#pControls").innerHTML = `<button type="button" id="pRunDemo">Rejouer la démonstration</button>`; $("#pRunDemo").addEventListener("click", runDemo); next.disabled = false;
     }
 
     function render() {
-      stopDemo(); stopSpeech(""); quiz.classList.add("hidden"); result.classList.add("hidden"); renderProgress(); prev.disabled = current === 0;
+      rendu += 1; stopDemo(); stopSpeech(""); quiz.classList.add("hidden"); result.classList.add("hidden"); renderProgress(); prev.disabled = current === 0;
       if (current < lessons.length) renderCourseLesson(lessons[current]);
-      else if (current === lessons.length) { course.classList.add("hidden"); activity.classList.remove("hidden"); next.disabled = !practiceReady; }
+      /* l'essai guidé cache la scène : on la vide, le dessin quitte la page et l'eau s'arrête d'elle-même (moteur commun) */
+      else if (current === lessons.length) { course.classList.add("hidden"); activity.classList.remove("hidden"); $("#pScene").innerHTML = ""; next.disabled = !practiceReady; }
       else renderSummary();
       count.textContent = `${current + 1} / ${total}`;
       next.textContent = current < lessons.length ? "Continuer" : current === lessons.length ? "Voir la synthèse" : nextDestination().label;

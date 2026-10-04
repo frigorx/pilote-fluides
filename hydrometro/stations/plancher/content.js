@@ -11,6 +11,14 @@
 
   const fr = (n, d = 2) => n.toFixed(d).replace(".", ",");
 
+  /* L’eau coule dans les schémas (04/10/2026) : les tubes ne se colorent plus ici, chaque scène DÉCLARE les siens
+     (« eaux », plus bas) et le moteur commun _commun/ecoulement.js y fait couler l’eau. Les mots restent dessinés
+     par-dessus l’eau. Une scène sans tube ne reçoit que le filigrane inerWeb (charte R9). */
+  const brancherEau = (el, decl) => {
+    const eq = document.getElementById("sceneEquivalent");
+    return window.HydroEcoulement && window.HydroEcoulement.brancher(el.querySelector("svg"), Object.assign({ annonce: { el: eq, base: eq.textContent } }, decl || { tubes: [] }));
+  };
+
   const svg = (id, title, desc, body) => `<svg viewBox="0 0 760 430" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${title}</title><desc id="${id}-desc">${desc}</desc><defs><marker id="arr-${id}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3Z" fill="#1b3a63"/></marker></defs>${body}</svg>`;
 
   const collectorScene = svg("floor-collector", "Collecteurs d’un plancher chauffant à trois boucles", "Le collecteur de départ porte trois débitmètres. Le collecteur de retour porte trois organes de réglage. Chaque paire dessert une boucle nommée A, B ou C.", `
@@ -35,8 +43,8 @@
     const ok = Math.abs(qa - 1.8) <= .05;
     return svg("floor-setting", "Prévision de réglage de la boucle A", `Sous l’hypothèse pédagogique d’une différence de pression maintenue, une ouverture de ${opening} pour cent prévoit ${fr(qa)} litre par minute sur A. B reste à 1,20 et C à 0,80 dans ce modèle simplifié.`, `
       <text x="380" y="34" text-anchor="middle" font-size="21" font-weight="700">RÉGLAGE DE A · MODÈLE À Δp MAINTENUE</text>
-      <path d="M110 115H650M650 115V335H110" fill="none" stroke="#1b3a63" stroke-width="12"/>
-      ${[[220,"A",qa],[390,"B",1.2],[560,"C",.8]].map(([x,l,q],i)=>`<g><path d="M${x} 115V335" stroke="#3d7fca" stroke-width="9"/><circle cx="${x}" cy="205" r="45" fill="#fffdf8" stroke="${i===0?(ok?"#1e7e54":"#b06a00"):"#1e7e54"}" stroke-width="${i===0&&ok?5:4}" stroke-dasharray="${i===0&&!ok?"6 5":"0"}"/><text x="${x}" y="199" text-anchor="middle" font-size="20" font-weight="700">${l}</text><text x="${x}" y="224" text-anchor="middle" font-size="20">${fr(q)} L/min</text></g>`).join("")}
+      <path d="M110 115H650M650 115V335H110" fill="none" stroke="none" stroke-width="12"/>
+      ${[[220,"A",qa],[390,"B",1.2],[560,"C",.8]].map(([x,l,q],i)=>`<g><path d="M${x} 115V335" stroke="none" stroke-width="9" data-q="${q}"/><circle cx="${x}" cy="205" r="45" fill="#fffdf8" stroke="${i===0?(ok?"#1e7e54":"#b06a00"):"#1e7e54"}" stroke-width="${i===0&&ok?5:4}" stroke-dasharray="${i===0&&!ok?"6 5":"0"}"/><text x="${x}" y="199" text-anchor="middle" font-size="20" font-weight="700">${l}</text><text x="${x}" y="224" text-anchor="middle" font-size="20">${fr(q)} L/min</text></g>`).join("")}
       <rect x="75" y="280" width="250" height="80" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/><text x="200" y="310" text-anchor="middle" font-size="20" font-weight="700">OUVERTURE A : ${opening} %</text><text x="200" y="338" text-anchor="middle" font-size="20">cible A : 1,80 L/min</text>
       <rect x="430" y="280" width="260" height="80" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="560" y="309" text-anchor="middle" font-size="20" font-weight="700">PRÉVISION À CONFIRMER</text><text x="560" y="336" text-anchor="middle" font-size="20">stabiliser puis relire</text>`);
   }
@@ -45,6 +53,30 @@
     ${["Associer","Relever","Régler","Stabiliser","Remesurer"].map((t,i)=>`<g transform="translate(${90+i*145} 210)"><circle r="38" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/><text y="6" text-anchor="middle" font-size="20" font-weight="700">${i+1}</text><text y="70" text-anchor="middle" font-size="20" font-weight="700">${t}</text>${i<4?`<path d="M43 0H95" stroke="#3d7fca" stroke-width="5" marker-end="url(#arr-floor-method)"/>`:""}</g>`).join("")}
     <text x="380" y="65" text-anchor="middle" font-size="22" font-weight="700">UN REPÈRE DE BOUCLE DOIT SUIVRE JUSQU’AU COMPTE RENDU</text>
     <rect x="120" y="315" width="520" height="80" rx="14" fill="#fff4e0" stroke="#b06a00" stroke-width="4" stroke-dasharray="6 5"/><text x="380" y="348" text-anchor="middle" font-size="20" font-weight="700"><tspan x="380">VIRTUEL : AUCUN DESSERRAGE, PURGE</tspan><tspan x="380" dy="24">NI ACTION SUR UN CIRCUIT RÉEL</tspan></text>`);
+
+  /* l’eau de chaque étape (dans l’ordre des étapes) : les tubes de la scène, dans l’ordre où l’eau les parcourt.
+     largeur = épaisseur d’origine − 3 ; debut = chemin déjà fait par l’eau sur le départ au piquage de la boucle ;
+     debit < 1 : une boucle qui a moins d’eau (le débit de la scène, data-q, rapporté à la cible 1,80 L/min de A).
+     Rien : filigrane seul (3D : pas d’eau). */
+  const eaux = [
+    /* 1 · vue 3D */
+    null,
+    /* 2 et 3 · zones, débits en barres : filigrane seul */
+    null,
+    null,
+    /* 4 · scène redessinée à chaque geste du curseur : pas de mise en route ; A prend plus d’eau à mesure qu’on l’ouvre */
+    el => {
+      const [qa, qb, qc] = [...el.querySelectorAll("[data-q]")].map(p => +p.dataset.q / 1.8);
+      return { miseEnRoute: false, tubes: [
+        { d: "M110 115H650", eau: "chaude", largeur: 9 },
+        { d: "M220 115V335", eau: [1, 0], largeur: 6, debut: 110, debit: qa },
+        { d: "M390 115V335", eau: [1, 0], largeur: 6, debut: 280, debit: qb },
+        { d: "M560 115V335", eau: [1, 0], largeur: 6, debut: 450, debit: qc },
+        { d: "M650 115V335H110", eau: "froide", largeur: 9 }
+      ] };
+    }
+    /* 5 · procédure : filigrane seul */
+  ];
 
   window.STATION_CONFIG = {
     code: "D6", id: "plancher", title: "Plancher chauffant — Collecteur mystère", next: "terminer le parcours de la ligne D",
@@ -69,4 +101,13 @@
     summaryScene: methodScene,
     summaryEquivalent: "Synthèse : associer chaque zone, lire mesure et cible, agir sur un seul réglage, stabiliser puis remesurer toutes les boucles."
   };
+
+  /* l’eau d’abord (elle se pose sous le dessin), puis la mécanique propre à l’étape (vue 3D) */
+  window.STATION_CONFIG.steps.forEach((etape, i) => {
+    const mecanique = etape.wire;
+    etape.wire = el => {
+      const pilote = brancherEau(el, typeof eaux[i] === "function" ? eaux[i](el) : eaux[i]);
+      if (mecanique) mecanique(el, pilote);
+    };
+  });
 })();
