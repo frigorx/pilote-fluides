@@ -22,8 +22,15 @@ Aucune photo de bornier ouvert n'était exploitable sans marque ou filigrane : l
   proximité), `bornier5x.svg` (bornier), `terre.svg` — `C:\git\bibliotheque-symboles-energie\svg\10_electric\10_allpole\`
   (sous-dossiers `200_fuses_protective_gears`, `130_terminals_terminal_strips`, `110_network_supplies`).
   Seul changement : le fond blanc `#ffffff` remplacé par `#fffdf8` (charte). Aucun symbole redessiné.
-- La scène du temps 2 et le récapitulatif sont des schémas de principe en blocs et en fils ; ils ne redessinent
-  aucun symbole. Les pictogrammes du temps 3 (bouclier, deux unités reliées, fiche) sont des icônes, pas des symboles.
+- `differentiel_2p--sans-reperes.svg` (interrupteur différentiel deux pôles, sans texte) — bibliothèque curée
+  `C:\git\usine-contenu\bibliotheque-symboles\svg\protections\`, trouvé par `chercher-rag.js --source ressource
+  "symbole différentiel 2P"` ; copié tel quel (04/10/2026), sans fond ni retouche. Choisi plutôt que les
+  « interrupteur différentiel » QElectroTech, qui portent la croix du disjoncteur : on ne veut pas faire croire à deux
+  disjoncteurs empilés.
+- La scène (temps 1 et 2) pose ces symboles TELS QUELS, en images (`<image href="assets/…">`) : différentiel,
+  disjoncteur, interrupteur de proximité, terre, deux borniers. Seuls les fils, les gaines et les boîtes sont tracés
+  par le programme. Le récapitulatif du temps 5 reste un schéma de principe en blocs. Les pictogrammes du temps 3
+  (bouclier, deux unités reliées, fiche) sont des icônes, pas des symboles.
 
 ## Fond (texte)
 - `MONTAGE CLIMATISEUR SPLIT.docx` : deux câbles rigides (alimentation, liaison entre les deux unités) ; borniers à
