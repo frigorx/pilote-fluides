@@ -16,9 +16,9 @@ Aucun texte dans l'image : le titre se pose en HTML. Marque inerWeb. Licence CC 
 
 ## Affiches de la salle (`studio/affiches/`, style « affiche de cinéma peinte », filigrane inerWeb Studio dedans)
 
-- `saga-voyage.webp` — la saga « Voyage dans tous ses états » : une petite goutte de fluide, sac au dos, devant un
-  paysage de tuyaux de cuivre, un compresseur comme une montagne, un condenseur dans la lumière chaude, un évaporateur
-  givré dans le froid bleu.
+- `saga-voyage.webp` — la saga « Les voyages extraordinaires » (animation dessinée à la main) : l'héroïne des films, la
+  molécule bleue au visage souriant, debout sur un long tuyau de cuivre qui file comme une route à travers une plaine
+  d'herbe, sous un grand ciel du soir.
 - `serie-regulation.webp` — la série « La régulation » : le technicien à l'armoire d'une chambre froide, lumière
   orange du voyant contre le bleu de la buée.
 - `doc-effet-de-serre.webp` — le documentaire « Effet de serre, PRP et climat » : la Terre et son atmosphère qui
