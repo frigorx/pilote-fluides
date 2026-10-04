@@ -43,3 +43,11 @@ pressostat « une seule fois ») · sans dégivrage commandé (évaporateur dont
 dégivrage naturel (l'horloge chef d'orchestre, l'évaporateur souffle sur son givre) · dégivrage électrique (résistances
 orange entre les ailettes) · gaz chauds (le compresseur souffle dans la ligne de dérivation à électrovanne) · inversion de
 cycle (la vanne quatre voies aiguilleur, évaporateur chaud, condenseur grelottant).
+
+## Affiches des tomes 1 à 3 de la saga (`studio/affiches/tome-0*-16x9.webp`, 1200 × 675, 04/10/2026)
+
+Même dessin que l'affiche de la saga (animation dessinée à la main, aquarelle, héroïne des films d'après capture) :
+tome 1, le circuit de base — l'héroïne marche sur un tuyau de cuivre vers une petite chambre froide blanche posée dans
+une plaine au matin · tome 2, édition NH₃ — l'héroïne au pied d'une haute bouteille séparatrice en acier, brume d'aube ·
+tome 3, édition CO₂ — l'héroïne sur le toit d'un supermarché à côté d'un refroidisseur de gaz à trois ventilateurs, chaleur
+d'été. Aucun texte.
