@@ -262,17 +262,18 @@ window.INERWEB_RESEAUX = [
     emoji: "🎬",
     adresse: "studio/index.html",
     couleur: "#be185d" /* le cinéma du quartier (quartier/index.html, app-cinema) */,
-    sousTitre: "Tous les films du site dans une seule salle : le Voyage dans tous ses états, ses éditions à l’ammoniac et au CO₂, ses éditions « machines et régulations » (le glissement, le compresseur à vis, le sous-refroidisseur, les centrales frigorifiques et leur régulation, la centrale booster CO₂, le bi-étagé), les onze films de la régulation, l’effet de serre et la couche d’ozone. Chaque film mène à son cours.",
+    sousTitre: "Tous les films du site dans une seule salle : le Voyage dans tous ses états, ses éditions à l’ammoniac et au CO₂, ses éditions « machines et régulations » (le glissement, le compresseur à vis, le sous-refroidisseur, les centrales frigorifiques et leur régulation, la centrale booster CO₂, le bi-étagé), les onze films de la régulation, les dix mini-films sécurité « Ça aurait pu mal finir », l’effet de serre et la couche d’ozone. Chaque film mène à son cours.",
     niveaux: "tous niveaux",
     etat: "",
     catalogue: [],
-    chiffres: "23 films",
-    points: 3,
+    chiffres: "33 films",
+    points: 4,
     vignette: "voyage/videos/chapitre-00-mon-voyage.jpg",
     entree: { titre: "Voyage dans tous ses états", href: "voyage/index.html" },
     raccourcis: [
       { titre: "Les éditions du Voyage", href: "studio/index.html#t-editions" },
       { titre: "La régulation en films", href: "studio/index.html#t-regules" },
+      { titre: "Ça aurait pu mal finir", href: "studio/index.html#t-securite" },
       { titre: "Effet de serre et ozone", href: "studio/index.html#t-climat" }
     ]
   }

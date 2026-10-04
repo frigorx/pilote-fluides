@@ -2,14 +2,15 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
+<script src="../moteur/animations.js?v=7bddbcaafd"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1b3a63">
 <title>inerWeb Studio — les films d'inerweb.fr</title>
-<meta name="description" content="Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la série de la régulation en onze épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.">
+<meta name="description" content="Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.">
 <link rel="canonical" href="https://inerweb.fr/studio/">
 <meta property="og:title" content="inerWeb Studio — les films d'inerweb.fr">
-<meta property="og:description" content="Une saga, une série, deux documentaires : les films du site, chacun relié à son cours.">
+<meta property="og:description" content="Une saga, deux séries, deux documentaires : les films du site, chacun relié à son cours.">
 <meta property="og:image" content="https://inerweb.fr/voyage/videos/chapitre-00-mon-voyage.jpg">
 <meta property="og:url" content="https://inerweb.fr/studio/">
 <!-- ===================================================================
@@ -112,7 +113,7 @@
     <h1>🎬 inerWeb Studio</h1>
     <p class="sous-titre">les films d'inerweb.fr</p>
   </header>
-  <p class="chapo">À l'affiche : une saga, une série et deux documentaires. On choisit une affiche, on lit la critique, on regarde, puis on va comprendre et s'exercer dans la station du cours.</p>
+  <p class="chapo">À l'affiche : une saga, deux séries et deux documentaires. On choisit une affiche, on lit la critique, on regarde, puis on va comprendre et s'exercer dans la station du cours.</p>
 
   <main id="contenu" style="display:grid;gap:28px">
     <ul class="galerie" id="affiches" aria-label="Les affiches">
@@ -129,6 +130,13 @@
           <span class="rayon">Série · saison 1</span>
           <span class="titre">La régulation</span></a>
         <p class="pitch"><b>Série.</b> Onze épisodes courts dans la même chambre froide : à chaque fois un contact de plus, et le fluide obéit.</p>
+      </li>
+      <li>
+        <a class="affiche" href="#t-securite">
+          <img src="affiches/serie-securite.webp" alt="" width="800" height="1200" loading="lazy">
+          <span class="rayon">Mini-films · saison 1</span>
+          <span class="titre">Ça aurait pu mal finir</span></a>
+        <p class="pitch"><b>Mini-films.</b> La sécurité à l'atelier façon film d'horreur, pour rire : la bêtise, l'outil qui râle, puis le bon geste.</p>
       </li>
       <li>
         <a class="affiche" href="#t-climat">
@@ -278,6 +286,69 @@
           <p class="num">Épisode 11 · station 10</p><h3>Le dégivrage par inversion de cycle</h3>
           <p>Une vanne quatre voies inverse le circuit : l'évaporateur devient condenseur le temps de la fonte.</p>
           <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html">▶ Le film</a><a href="../packs/fluides/res/degivrage-inversion-cycle/index.html">La station</a></p></li>
+      </ol>
+    </section>
+
+    <!-- ========== LES MINI-FILMS SÉCURITÉ ========== -->
+    <section class="fiche" id="t-securite" aria-labelledby="h-securite">
+      <p class="retour"><a href="#affiches">← Toutes les affiches</a></p>
+      <div class="entete">
+        <a class="affiche" href="securite/securite-01-atelier.html" aria-label="Commencer par l'épisode 1"><img src="affiches/serie-securite.webp" alt="" width="800" height="1200" loading="lazy"><span class="titre">Ça aurait pu mal finir</span></a>
+        <div>
+          <h2 id="h-securite">Ça aurait pu mal finir — saison 1 « À l'atelier »</h2>
+          <p class="meta">Mini-films · 10 épisodes de 2 min 30 à 3 min 15 · 28 min en tout · chaque épisode se regarde seul</p>
+          <dl class="critique">
+            <p class="accroche">Notre bonhomme fait la bêtise, l'outil râle, on rembobine, et il refait tout proprement.</p>
+            <div><dt>De quoi ça parle.</dt><dd>Dix situations de l'atelier : la tenue, les équipements de protection, la meuleuse, la perceuse, le port de charges, le chalumeau, la bouteille d'azote, le fluide frigorigène, le point chaud et la petite coupure. À chaque fois, l'objet qui risque gros prend la parole.</dd></div>
+            <div><dt>Ce qu'on sait à la fin.</dt><dd>Le bon geste de chaque situation, et sa règle en une phrase. Chaque règle s'appuie sur une source : INRS, code du travail, notices des fabricants.</dd></div>
+            <div><dt>À voir.</dt><dd>En CAP et en Bac Pro, en ouverture d'une séance d'atelier : un épisode, puis la règle au tableau.</dd></div>
+          </dl>
+          <p class="liens"><a class="btn" href="securite/securite-01-atelier.html">▶ Commencer : épisode 1</a></p>
+        </div>
+      </div>
+
+      <h3 class="sous">Les dix épisodes <small>Chaque épisode a son affiche : l'objet du jour, personnifié, qui en a vu d'autres.</small></h3>
+      <ol class="rangee">
+        <li class="carte"><a class="vue" href="securite/securite-01-atelier.html"><img src="affiches/episode-securite-01-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 41</span></a>
+          <p class="num">Épisode 1</p><h3>L'atelier n'est pas une cour de récré</h3>
+          <p>Tenue, allées libres, rien qui pend, et l'outil abîmé se signale.</p>
+          <p class="portes"><a href="securite/securite-01-atelier.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-02-epi.html"><img src="affiches/episode-securite-02-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 58</span></a>
+          <p class="num">Épisode 2</p><h3>Le défilé de mode du chantier</h3>
+          <p>Le bon équipement de protection pour le bon risque.</p>
+          <p class="portes"><a href="securite/securite-02-epi.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-03-le-carter.html"><img src="affiches/episode-securite-03-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 14</span></a>
+          <p class="num">Épisode 3</p><h3>Le carter, c'est pas décoratif</h3>
+          <p>Meuleuse d'angle : carter, bon disque, deux mains, arrêt complet.</p>
+          <p class="portes"><a href="securite/securite-03-le-carter.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-04-perceuse.html"><img src="affiches/episode-securite-04-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 47</span></a>
+          <p class="num">Épisode 4</p><h3>Le foret qui fait tourner le monde</h3>
+          <p>Perceuse : pièce dans l'étau, foret serré, rien qui pend.</p>
+          <p class="portes"><a href="securite/securite-04-perceuse.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-05-manutention.html"><img src="affiches/episode-securite-05-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 34</span></a>
+          <p class="num">Épisode 5</p><h3>Le compresseur ne se soulève pas avec le dos</h3>
+          <p>Un chariot d'abord, un camarade ensuite, soulever en dernier.</p>
+          <p class="portes"><a href="securite/securite-05-manutention.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-06-chalumeau.html"><img src="affiches/episode-securite-06-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 54</span></a>
+          <p class="num">Épisode 6</p><h3>Le retour de flamme</h3>
+          <p>Chalumeau : bouteilles attachées, pas de graisse, l'ordre d'allumage.</p>
+          <p class="portes"><a href="securite/securite-06-chalumeau.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-07-azote.html"><img src="affiches/episode-securite-07-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 32</span></a>
+          <p class="num">Épisode 7</p><h3>La bouteille qui voulait s'envoler</h3>
+          <p>Azote seul, détendeur toujours, bouteille attachée.</p>
+          <p class="portes"><a href="securite/securite-07-azote.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-08-fluide.html"><img src="affiches/episode-securite-08-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 51</span></a>
+          <p class="num">Épisode 8</p><h3>Le froid qui brûle</h3>
+          <p>Fluide frigorigène : il gèle en se détendant, il empoisonne en chauffant.</p>
+          <p class="portes"><a href="securite/securite-08-fluide.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-09-point-chaud.html"><img src="affiches/episode-securite-09-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 35</span></a>
+          <p class="num">Épisode 9</p><h3>Le brasage et l'isolant</h3>
+          <p>Point chaud : éloigner, protéger, surveiller deux heures.</p>
+          <p class="portes"><a href="securite/securite-09-point-chaud.html">▶ Le film</a></p></li>
+        <li class="carte"><a class="vue" href="securite/securite-10-coupure.html"><img src="affiches/episode-securite-10-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 37</span></a>
+          <p class="num">Épisode 10</p><h3>Une coupure, ce n'est rien…</h3>
+          <p>Tout accident se signale ; protéger, alerter, secourir.</p>
+          <p class="portes"><a href="securite/securite-10-coupure.html">▶ Le film</a></p></li>
       </ol>
     </section>
 
