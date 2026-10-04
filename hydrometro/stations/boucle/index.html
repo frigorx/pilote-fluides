@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light">
   <title>HydroMétro P1 — Comprendre une boucle</title>
-  <link rel="stylesheet" href="station.css?v=20261002-2017">
+  <link rel="stylesheet" href="station.css?v=20261004-0853">
   <script src="../../../moteur/animations.js?v=7bddbcaafd"></script>
-  <script src="../../../moteur/voix-index.js?v=20261002-2017"></script>
-  <script src="../../../moteur/prononciation.js?v=20261002-2017"></script>
-  <script src="../../../moteur/voix.js?v=20261002-2017"></script>
-  <script src="../../../moteur/reglage-voix.js?v=20261002-2017"></script>
+  <script src="../../../moteur/voix-index.js?v=20261004-0853"></script>
+  <script src="../../../moteur/prononciation.js?v=20261004-0853"></script>
+  <script src="../../../moteur/voix.js?v=20261004-0853"></script>
+  <script src="../../../moteur/reglage-voix.js?v=20261004-0853"></script>
 <script defer src="../../../moteur/retour-accueil.js?v=ff0ca829c0"></script>
 </head>
 <body>
@@ -39,9 +39,12 @@
           <p id="keyBox" class="key-box"></p>
           <div id="lessonControls" class="lesson-controls"></div>
         </div>
-        <div class="scene-panel">
-          <div id="scene" class="scene"></div>
-          <p id="sceneEquivalent" class="scene-equivalent" aria-live="polite"></p>
+        <div class="visuels">
+          <div class="scene-panel">
+            <div id="scene" class="scene"></div>
+            <p id="sceneEquivalent" class="scene-equivalent" aria-live="polite"></p>
+          </div>
+          <aside id="vue3dPanel" class="vue3d-panel" aria-label="L’installation de chauffage en 3D"></aside>
         </div>
       </article>
     </section>
@@ -70,10 +73,11 @@
     <div class="dialog-actions"><button id="closeInfo" type="button">Fermer</button></div>
   </dialog>
 
-  <script src="shell.js?v=20261002-2017"></script>
-  <script src="station.js?v=20261002-2017"></script>
+  <script src="shell.js?v=20261004-0853"></script>
+  <script src="../_commun/ecoulement.js?v=20261004-0853"></script>
+  <script src="station.js?v=20261004-0853"></script>
   <script src="../../assets/logo-entete.js" defer></script>
   <script src="../../assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" defer></script>
-  <script src="../../../moteur/prof-vocal.js?v=20261002-2017"></script>
+  <script src="../../../moteur/prof-vocal.js?v=20261004-0853"></script>
 </body>
 </html>

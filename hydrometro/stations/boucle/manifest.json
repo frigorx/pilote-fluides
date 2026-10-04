@@ -63,7 +63,7 @@
       "résumer"
     ],
     "demonstrations": 5,
-    "animationStartsOnlyOnUserAction": true,
+    "animationStartsOnlyOnUserAction": false,
     "visibleTextEquivalent": true,
     "voice": "facultative, déclenchée au clic, sans autoplay",
     "explanationBeforeAction": true,

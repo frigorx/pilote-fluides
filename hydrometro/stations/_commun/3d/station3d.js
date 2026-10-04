@@ -5,7 +5,8 @@
    (le petit chargeur en tête de content.js charge ce fichier à la demande).
 
    Le dessin n'est pas perdu : il devient l'onglet « En schéma », il revient seul si la 3D
-   échoue (pas de WebGL), et c'est lui qui sort à l'impression. */
+   échoue (pas de WebGL), et c'est lui qui sort à l'impression.
+   Option schema: false — la 3D dans son propre panneau, À CÔTÉ du schéma (pas d'onglet). */
 (() => {
   'use strict';
   if (window.HydroVue3D) return;
@@ -32,7 +33,8 @@
     if (scene.dataset.vue3d !== jeton || scene.innerHTML !== dessin) return;
     const bloc = window.Electro3D.bloc({
       modele: o.modele, mode: o.mode || 'comprendre', options: o.options || null, titre: o.titre,
-      schema: () => { const d = document.createElement('div'); d.innerHTML = dessin; return d; },
+      /* schema: false — la 3D a son propre panneau, le schéma reste à côté (Boucle, 04/10/2026) */
+      schema: o.schema === false ? null : () => { const d = document.createElement('div'); d.innerHTML = dessin; return d; },
       defaut: o.defaut || null, choisir: o.piece || null
     });
     scene.innerHTML = '';

@@ -34,6 +34,9 @@ body {
   font-size: clamp(14px, 1.15vw, 17px);
   line-height: 1.45;
 }
+/* le site glisse sa barre « retour à l'accueil » en tête du body : sans cette rangée en plus, la
+   barre de progression prenait la rangée 1fr et volait 60 px au schéma (constaté le 04/10/2026) */
+body:has(> #inerweb-retour-accueil-barre) { grid-template-rows: auto auto auto minmax(0, 1fr) auto; }
 
 button, input, select { font: inherit; }
 
@@ -262,11 +265,45 @@ dialog { max-width: min(720px, calc(100% - 1rem)); border: 2px solid var(--navy)
 dialog::backdrop { background: rgba(16, 35, 60, .38); }
 .dialog-actions { display: flex; justify-content: flex-end; margin-top: .7rem; }
 
-.svg-pipe { fill: none; stroke: var(--navy); stroke-width: 15; stroke-linecap: round; stroke-linejoin: round; }
-.svg-depart { fill: none; stroke: var(--orange-deep); stroke-width: 8; stroke-linecap: round; }
-.svg-return { fill: none; stroke: var(--blue); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 13 8; }
+/* les flèches de convention, posées sur l'eau qui coule (04/10/2026 : les tubes et l'eau viennent
+   de _commun/ecoulement.js ; le départ reste plein et orange, le retour en tirets) */
+.svg-depart { fill: none; stroke: var(--orange-deep); stroke-width: 3; stroke-linecap: round; }
+.svg-return { fill: none; stroke: var(--navy); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 12 8; }
 .svg-label { fill: var(--ink); font: 800 18px Calibri, sans-serif; }
-.svg-small { fill: var(--muted); font: 700 14px Calibri, sans-serif; }
+/* les mots des scènes : 24 unités dans un dessin de 640 de large, soit 14 pt (≥ 18,7 px) à 1280 px */
+.eti { fill: var(--ink); font: 800 24px Calibri, "Segoe UI", sans-serif; }
+.eti-2 { fill: #45556a; font: 700 24px Calibri, "Segoe UI", sans-serif; }
+
+/* le schéma et la vue 3D, côte à côte : la 3D se voit dès l'arrivée, sans bouton (04/10/2026) */
+.visuels { min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(0, 1.25fr) minmax(0, 1fr); gap: .55rem; }
+.vue3d-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: .45rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px rgba(27, 58, 99, .1);
+}
+.vue3d-panel > .vue3d { margin: 0; }
+.vue3d-panel .vue3d-tete { margin-bottom: .35rem; }
+.vue3d-panel .vue3d-tete h2 { font-size: max(19px, 1.3em); }
+/* le filigrane inerWeb derrière l'installation (charte R9) : le fond de la scène 3D est transparent */
+.vue3d-panel .e3d-scene {
+  background-image: url("../_commun/filigrane-hydro.svg"), radial-gradient(ellipse at 50% 36%, #fffdf8 0%, #f9f4ea 46%, #efe5d3 100%);
+  background-repeat: repeat, no-repeat;
+  background-size: 230px auto, cover;
+  background-position: center, center;
+}
+@media (min-width: 1100px) {
+  .lesson-card { grid-template-columns: minmax(330px, .5fr) minmax(0, 1.5fr); }
+  .visuels { grid-template-rows: none; grid-template-columns: minmax(0, 1fr) minmax(0, .66fr); }
+  /* colonne étroite : la légende des pièces passe sous l'image 3D */
+  .vue3d-panel .e3d { grid-template-columns: minmax(0, 1fr); }
+  .vue3d-panel .e3d-scene { aspect-ratio: 4 / 3; min-height: 0; }
+}
 
 @media (max-width: 760px) {
   body { font-size: 12.5px; }
@@ -292,6 +329,10 @@ dialog::backdrop { background: rgba(16, 35, 60, .38); }
   main { padding: .28rem; }
   .lesson-card { grid-template-columns: 1fr; grid-template-rows: minmax(0, 52%) minmax(0, 48%); gap: .28rem; }
   .lesson-copy, .scene-panel { border-radius: 12px; }
+  /* téléphone : le schéma occupe la moitié basse, la vue 3D le suit en faisant défiler cette moitié */
+  .visuels { display: block; overflow-y: auto; overscroll-behavior: contain; }
+  .visuels > .scene-panel { height: 100%; }
+  .vue3d-panel { margin-top: .28rem; overflow: visible; border-radius: 12px; padding: .25rem; }
   .lesson-copy { gap: .26rem; padding: .42rem; }
   .lesson-kicker { font-size: .68em; }
   .step-lead { font-size: 1em; line-height: 1.24; }
@@ -328,7 +369,8 @@ dialog::backdrop { background: rgba(16, 35, 60, .38); }
 
 @media print {
   body { display: block; max-height: none; overflow: visible; background: #fff; color: #000; }
-  .topbar, .course-progress, .footer, button, dialog, .lesson-controls { display: none !important; }
+  .topbar, .course-progress, .footer, button, dialog, .lesson-controls, .vue3d-panel { display: none !important; }
+  .visuels { display: block; }
   main { overflow: visible; }
   .course-view { display: block; }
   .lesson-card { display: block; }

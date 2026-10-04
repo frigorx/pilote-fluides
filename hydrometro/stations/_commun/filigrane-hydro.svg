@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" aria-hidden="true">
+  <!-- Filigrane inerWeb (charte R9) : logo officiel, cartouche « Hydro », « by inerweb.fr », pâle et incliné.
+       Tuile de fond de la vue 3D des stations HydroMétro (04/10/2026) ; le même logo est posé dans les schémas
+       par _commun/ecoulement.js. -->
+  <g opacity="0.1" transform="rotate(-12 230 150) translate(20 85)">
+    <text x="0" y="80" font-size="56" fill="#1b3a63">❄️</text>
+    <text x="76" y="75" font-size="52" font-weight="700" fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif">iner</text>
+    <text x="171" y="75" font-size="52" fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive">Web</text>
+    <line x1="76" x2="276" y1="80" y2="80" stroke="#e8914a" stroke-width="4"/>
+    <rect x="281" y="8" rx="7" width="120" height="38" fill="#e8914a"/>
+    <text x="341" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif">Hydro</text>
+    <text x="76" y="122" font-size="30" font-weight="700" fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif">by inerweb.fr</text>
+  </g>
+</svg>
