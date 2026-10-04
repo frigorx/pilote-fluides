@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 380,
+  "total": 398,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -4628,6 +4628,306 @@
       "chemin": "hocourant/"
     },
     {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/bietage",
+      "titre": "Voyage dans tous ses états, l’installation bi-étagée — racontée par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule d’ammoniac dans une installation bi-étagée de surgélation : pourquoi un seul compresseur ne suffit pas, le compresseur BP, la bouteille intermédiaire où la vapeur barbote et se refroidit, la pression intermédiaire, le compresseur HP, la détente en deux fois — avec son cycle sur le diagramme enthalpique, en même temps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/bietage.html",
+      "chemin": "voyage/bietage.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/booster",
+      "titre": "Voyage dans tous ses états, la centrale booster CO₂ — racontée par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de CO₂ dans la centrale booster d’un supermarché : l’étage basse température qui refoule dans l’aspiration moyenne température, trois chemins qui se rejoignent puis se séparent, le refroidisseur de gaz, le détendeur haute pression, la bouteille intermédiaire et la vanne de gaz de détente — avec le cycle chiffré sur le diagramme enthalpique. Le film en entier ou épisode par épisode.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/booster.html",
+      "chemin": "voyage/booster.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/centrale",
+      "titre": "Voyage dans tous ses états, les centrales frigorifiques — racontées par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de R-134a, dans le mélange R449A, à travers la centrale d’un supermarché : le meuble et son électrovanne, le glissement de température, le collecteur d’aspiration, les compresseurs en parallèle, la basse pression qui commande, la marche étagée et le variateur, le condenseur sur le toit — avec son cycle sur le diagramme enthalpique, en même temps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/centrale.html",
+      "chemin": "voyage/centrale.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/co2",
+      "titre": "Voyage dans tous ses états, édition CO₂ — le CO₂ transcritique raconté par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de CO₂ dans la centrale transcritique d’un supermarché : le point critique, le refroidisseur de gaz, le détendeur haute pression, la bouteille intermédiaire et la vapeur de détente, la pression à l’arrêt, la fuite et la neige carbonique. Le film en entier ou épisode par épisode.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/co2.html",
+      "chemin": "voyage/co2.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/glissement",
+      "titre": "Voyage dans tous ses états, le glissement de température raconté par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de R134a et ses deux sœurs du R407C : pourquoi un mélange bout en se réchauffant à pression constante, bulle et rosée sur le diagramme enthalpique, surchauffe depuis la rosée, sous-refroidissement depuis la bulle, charge en liquide. Le film en entier ou épisode par épisode.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/glissement.html",
+      "chemin": "voyage/glissement.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/index",
+      "titre": "Voyage dans tous ses états — le circuit frigorifique raconté par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de fluide frigorigène dans tout le circuit d'une chambre froide : huit organes, comment ils marchent, la fuite, la récupération. Le film en entier ou épisode par épisode.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/",
+      "chemin": "voyage/"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-bietage",
+      "titre": "Voyage dans tous ses états, l’installation bi-étagée — module de formation",
+      "ligne": null,
+      "resume": "L’installation bi-étagée à l’ammoniac racontée par une molécule : deux compresseurs, la bouteille intermédiaire, la pression intermédiaire, la détente en deux fois — avec son cycle sur le diagramme enthalpique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-bietage.html",
+      "chemin": "voyage/module-bietage.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-booster",
+      "titre": "Voyage dans tous ses états, la centrale booster CO₂ — module de formation",
+      "ligne": null,
+      "resume": "La centrale booster CO₂ racontée par une molécule : étage basse température, aspiration moyenne température, refroidisseur de gaz, détendeur haute pression, bouteille intermédiaire et vanne de gaz de détente — avec son cycle chiffré sur le diagramme enthalpique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-booster.html",
+      "chemin": "voyage/module-booster.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-centrale",
+      "titre": "Voyage dans tous ses états, les centrales frigorifiques — module de formation",
+      "ligne": null,
+      "resume": "La centrale frigorifique de supermarché racontée par une molécule : meubles en parallèle, glissement du R449A, collecteurs, compresseurs en parallèle, régulation par la basse pression, variateur, condenseur — avec son cycle sur le diagramme enthalpique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-centrale.html",
+      "chemin": "voyage/module-centrale.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-co2",
+      "titre": "Voyage dans tous ses états, édition CO₂ — module de formation",
+      "ligne": null,
+      "resume": "La centrale CO₂ transcritique racontée par une molécule : point critique, refroidisseur de gaz, détendeur haute pression, bouteille intermédiaire, pression à l’arrêt, neige carbonique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-co2.html",
+      "chemin": "voyage/module-co2.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-glissement",
+      "titre": "Voyage dans tous ses états, le glissement de température — module de formation",
+      "ligne": null,
+      "resume": "Le glissement de température raconté par une molécule de R134a et ses sœurs du R407C : bulle, rosée, isothermes penchées sur le diagramme enthalpique, surchauffe depuis la rosée, sous-refroidissement depuis la bulle, charge en liquide.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-glissement.html",
+      "chemin": "voyage/module-glissement.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-nh3",
+      "titre": "Voyage dans tous ses états, édition NH₃ — module de formation",
+      "ligne": null,
+      "resume": "L’ammoniac en régime noyé raconté par une molécule : bouteille séparatrice, évaporateur noyé, thermosiphon, compresseur ouvert, séparateur d’huile, condenseur évaporatif, flotteur, pot à huile, sécurité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-nh3.html",
+      "chemin": "voyage/module-nh3.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-regulation",
+      "titre": "Voyage dans tous ses états, la régulation d'une centrale — module de formation",
+      "ligne": null,
+      "resume": "La régulation d'une centrale frigorifique à quatre compresseurs racontée par une molécule : zone neutre de basse pression, temporisations, permutation, délestage, haute pression régulée, fixe puis flottante, plancher — avec l'écran du régulateur.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-regulation.html",
+      "chemin": "voyage/module-regulation.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-sous-refroidisseur",
+      "titre": "Voyage dans tous ses états, le sous-refroidisseur de liquide — module de formation",
+      "ligne": null,
+      "resume": "Le sous-refroidisseur de liquide raconté par une molécule : trois zones du condenseur, plus de froid par kilo, vapeur de détente, pas de bulles au détendeur, échangeur à plaques, piquage et orifice économiseur — avec son cycle sur le diagramme enthalpique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-sous-refroidisseur.html",
+      "chemin": "voyage/module-sous-refroidisseur.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-vis",
+      "titre": "Voyage dans tous ses états, le compresseur à vis — module de formation",
+      "ligne": null,
+      "resume": "Le compresseur à vis raconté par une molécule : rotors mâle et femelle, alvéoles, huile injectée, Vi, tiroir, séparateur d’huile, économiseur — avec son cycle sur le diagramme enthalpique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-vis.html",
+      "chemin": "voyage/module-vis.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module",
+      "titre": "Voyage dans tous ses états — module de formation",
+      "ligne": null,
+      "resume": "Le circuit frigorifique raconté par une molécule de fluide frigorigène : évaporateur, compresseur, condenseur, détendeur, fuite, récupération.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module.html",
+      "chemin": "voyage/module.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/nh3",
+      "titre": "Voyage dans tous ses états, édition NH₃ — l'ammoniac en régime noyé raconté par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule d’ammoniac dans une installation industrielle en régime noyé : bouteille séparatrice, évaporateur noyé, thermosiphon, compresseur ouvert, séparateur d’huile, condenseur évaporatif, flotteur, pot à huile, sécurité. Le film en entier ou épisode par épisode.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/nh3.html",
+      "chemin": "voyage/nh3.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/regulation",
+      "titre": "Voyage dans tous ses états, la régulation d’une centrale — raconté par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de fluide frigorigène dans une centrale de supermarché à quatre compresseurs : pourquoi la basse pression bouge, la consigne, la zone neutre, les temporisations, la permutation, le délestage, puis la haute pression tenue par les ventilateurs, fixe ou flottante, jusqu’à son plancher — avec l’écran du régulateur, en même temps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/regulation.html",
+      "chemin": "voyage/regulation.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/sous-refroidisseur",
+      "titre": "Voyage dans tous ses états, le sous-refroidisseur de liquide — raconté par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de fluide frigorigène dans le sous-refroidisseur de liquide d’une grosse installation à compresseur à vis : les trois zones du condenseur, plus de froid par kilo, la vapeur de détente, pas de bulles au détendeur, l’échangeur à plaques, le piquage et l’orifice économiseur — avec son cycle sur le diagramme enthalpique, en même temps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/sous-refroidisseur.html",
+      "chemin": "voyage/sous-refroidisseur.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/vis",
+      "titre": "Voyage dans tous ses états, le compresseur à vis — raconté par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de fluide frigorigène dans un compresseur à vis : les rotors mâle et femelle, l’alvéole qui se ferme sans clapet puis rétrécit, l’huile injectée, le Vi, le tiroir, le séparateur d’huile, l’économiseur — avec son cycle sur le diagramme enthalpique, en même temps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/vis.html",
+      "chemin": "voyage/vis.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "studio",
+      "titre": "les films d'inerweb.fr",
+      "ligne": null,
+      "resume": "Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/studio/",
+      "chemin": "studio/"
+    },
+    {
+      "reseau": "Applications",
+      "id": "jouerezo",
+      "titre": "JouéRézo — les jeux du métier",
+      "ligne": null,
+      "resume": "JouéRézo, le réseau de jeux d'inerWeb : Memory des symboles, le bon ordre des gestes, chrono vrai ou faux, QCM éclair, l'intrus, et une nuit à l'atelier avec les zombies du R-22.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/jouerezo/",
+      "chemin": "jouerezo/"
+    },
+    {
+      "reseau": "Applications",
+      "id": "simurezo",
+      "titre": "SimuRézo · simulateur de panne frigorifique · inerWeb",
+      "ligne": null,
+      "resume": "Huit situations de dépannage : vous relevez les valeurs sur l'installation, le cycle se trace sur le diagramme, puis vous concluez.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/simurezo/",
+      "chemin": "simurezo/"
+    },
+    {
+      "reseau": "Applications",
+      "id": "quartier",
+      "titre": "Le quartier technique",
+      "ligne": null,
+      "resume": "Entrez dans les cours d’inerWeb par ce que vous voyez : un commerce, une maison, l’immeuble des règles et la camionnette du technicien, en 3D. Touchez un appareil (frigo, chambre froide, clim, pompe à chaleur, VMC, tableau électrique…) pour apprendre comment il marche.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/quartier/",
+      "chemin": "quartier/"
+    },
+    {
+      "reseau": "Applications",
+      "id": "rezotools",
+      "titre": "RézoTools — les calculettes du frigoriste",
+      "ligne": null,
+      "resume": "Les calculettes et outils de terrain d’inerWeb, rangés par besoin : lire et convertir, régler, dépanner, réglementation, air et eau, thermique, électricité.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/rezotools/",
+      "chemin": "rezotools/"
+    },
+    {
       "reseau": "Pages du site",
       "id": "charte",
       "titre": "Charte graphique inerWeb",
@@ -4650,30 +4950,6 @@
       "missionProf": null,
       "url": "https://inerweb.fr/comprendre-les-codes.html",
       "chemin": "comprendre-les-codes.html"
-    },
-    {
-      "reseau": "Pages du site",
-      "id": "documents",
-      "titre": "Documents du projet — Habilitation fluides frigorigènes",
-      "ligne": null,
-      "resume": "Dispositif d'habilitation aux fluides frigorigènes — A1 · A2 · D · E · retour au portail",
-      "niveaux": null,
-      "competences": null,
-      "missionProf": null,
-      "url": "https://inerweb.fr/documents.html",
-      "chemin": "documents.html"
-    },
-    {
-      "reseau": "Pages du site",
-      "id": "dossier",
-      "titre": "Centre d'habilitation fluides frigorigènes — dossier de présentation",
-      "ligne": null,
-      "resume": "Projet d'ouverture d'un centre d'habilitation aux fluides frigorigènes au Lycée Jacques Raynaud. Dossier, budget prévisionnel et outil pédagogique en fonctionnement.",
-      "niveaux": null,
-      "competences": null,
-      "missionProf": null,
-      "url": "https://inerweb.fr/dossier.html",
-      "chemin": "dossier.html"
     },
     {
       "reseau": "Pages du site",
@@ -4716,24 +4992,12 @@
       "id": "index",
       "titre": "le froid et la climatisation, station par station",
       "ligne": null,
-      "resume": "Neuf réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro. Une voix qui explique, du CAP au BTS, sans compte.",
+      "resume": "Douze réseaux gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro : des cours interactifs, des jeux, un simulateur de panne et des films. Une voix qui explique, du CAP au BTS, sans compte.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/index.html",
       "chemin": "index.html"
-    },
-    {
-      "reseau": "Pages du site",
-      "id": "matrice",
-      "titre": "Matrice compétences × contenu × questions — habilitation fluides",
-      "ligne": null,
-      "resume": "Pack habilitation fluides frigorigènes — catégories A1 · A2 · D · E · arrêté du 21 novembre 2025, annexe II.B (136 compétences). Généré par node build/matrice.mjs depuis le contenu publié : ce tableau ne se saisit pas, il se relève.",
-      "niveaux": null,
-      "competences": null,
-      "missionProf": null,
-      "url": "https://inerweb.fr/matrice.html",
-      "chemin": "matrice.html"
     },
     {
       "reseau": "Pages du site",
@@ -4773,54 +5037,6 @@
     },
     {
       "reseau": "Pages du site",
-      "id": "planning",
-      "titre": "Planning de formation — habilitation fluides frigorigènes",
-      "ligne": null,
-      "resume": "Habilitation à la manipulation des fluides frigorigènes · arrêté du 21 novembre 2025",
-      "niveaux": null,
-      "competences": null,
-      "missionProf": null,
-      "url": "https://inerweb.fr/planning.html",
-      "chemin": "planning.html"
-    },
-    {
-      "reseau": "Pages du site",
-      "id": "portail",
-      "titre": "Habilitation fluides frigorigènes — dossier de présentation",
-      "ligne": null,
-      "resume": "Dispositif de formation à l'habilitation aux fluides frigorigènes (A1, A2, D, E) — autoformation, projection en salle, préparation pratique. Construit sur le référentiel de l'arrêté du 21 novembre 2025.",
-      "niveaux": null,
-      "competences": null,
-      "missionProf": null,
-      "url": "https://inerweb.fr/portail.html",
-      "chemin": "portail.html"
-    },
-    {
-      "reseau": "Pages du site",
-      "id": "pratique",
-      "titre": "La partie pratique — manipulation fluidique",
-      "ligne": null,
-      "resume": "TP formatif et évaluation de la manipulation fluidique : feuilles de guidance pas-à-pas, visas formateur, grille par compétence. Présentation.",
-      "niveaux": null,
-      "competences": null,
-      "missionProf": null,
-      "url": "https://inerweb.fr/pratique.html",
-      "chemin": "pratique.html"
-    },
-    {
-      "reseau": "Pages du site",
-      "id": "relecture",
-      "titre": "Relecture — pack habilitation fluides (bon à tirer)",
-      "ligne": null,
-      "resume": "Généré le 25/07/2026 depuis le pack publié (82 cartes, 269 questions). Pour chaque élément : ✅ = validé · ✏ = à corriger (noter la correction en marge). Les réponses correctes sont en vert gras .",
-      "niveaux": null,
-      "competences": null,
-      "missionProf": null,
-      "url": "https://inerweb.fr/relecture.html",
-      "chemin": "relecture.html"
-    },
-    {
-      "reseau": "Pages du site",
       "id": "seances",
       "titre": "Ouvrir une séance à une classe",
       "ligne": null,
@@ -4841,7 +5057,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/index.html"
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -4853,7 +5069,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -4865,7 +5081,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -4877,7 +5093,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -4889,7 +5105,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -4901,7 +5117,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "C:\\git\\pf-livraison-cet\\sous-tension/td-triphase.html"
+      "chemin": "C:\\git\\pilote-fluides\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",
