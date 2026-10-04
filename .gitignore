@@ -78,3 +78,7 @@ packs/fluides/res/*/tests/screenshots/
 !legislation/carnet/carnet-eleve.pdf
 !legislation/carnet/carnet-eleve-P[1-5].pdf
 !legislation/carnet/livret-professeur.pdf
+
+# Bon à tirer de relecture du pack (fiches, compétences, questions ET CORRIGÉS) : généré en local par
+# build/relecture.mjs pour annoter, jamais publié (Franck, 04/10/2026 : « la retirer du site »).
+relecture.html

@@ -444,7 +444,9 @@ for (const app of [
    qui ne portent que des formulaires. */
 {
   const HORS = new Set(['404.html', 'hors-ligne.html', 'mentions.html',
-    'activer.html', 'demander-un-acces.html']);
+    'activer.html', 'demander-un-acces.html',
+    // l'ancien projet habilitation, sorti du catalogue (Franck, 04/10/2026) ; le portail reste relié depuis formateurs.html
+    'portail.html', 'pratique.html', 'planning.html', 'matrice.html', 'dossier.html', 'documents.html', 'relecture.html']);
   const racine = fs.readdirSync(path.join(ROOT))
     .filter((f) => f.endsWith('.html') && !HORS.has(f))
     .sort();
