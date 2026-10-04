@@ -17,4 +17,30 @@ même moteur que les modules condenseur, évaporateur et compresseur.
   de sécurité et de contrôle côté condenseur).
 - Le détail écran par écran est dans couverture.json. Relié à la fiche g9b.
 
+DESSIN VIVANT (04/10/2026, chantier « Animer les réseaux »)
+  scene-geste.js, en haut de chaque écran : à gauche, la main du technicien
+  (le bonhomme de HoCourant) règle la façade d'un thermostat de chambre froide,
+  la molette de consigne puis la vis du différentiel ; à droite, ce que le
+  réglage change : la température de la chambre, tracée entre l'arrêt du froid
+  (la consigne) et la relance (consigne + différentiel), l'état du contact
+  (fermé : le froid tourne), le compresseur et le thermomètre à part qui lit le
+  point d'action. La courbe est CALCULÉE (une chambre simulée : le froid tourne,
+  la température descend ; le contact s'ouvre, elle remonte) : le contact, le
+  compresseur, le thermomètre et la courbe lisent la même simulation.
+  Cinq étapes : la consigne, le différentiel, le cycle, le différentiel trop
+  serré (courts-cycles), la preuve à l'instrument. Chaque dossier ouvre la
+  sienne : Comprendre la consigne, Régler le « trop serré », Contrôler la preuve.
+  Sixième étape, « en pression » : même logique avec un pressostat (la main sur
+  sa vis) et un manomètre dont l'aiguille va de l'arrêt au redémarrage ; elle
+  s'ouvre, par ÉCRAN, sur « Le limiteur basse pression » (pressostat BP, cadran
+  0-4 bar, valeurs du simulateur : arrêt 0,6 bar, redémarrage 1,4 bar) et sur
+  « Côté condenseur » (pressostat de contrôle, ventilateur, cadran SANS chiffre :
+  l'écran n'en donne aucun) et y reste : pas de thermostat sur ces deux écrans
+  (SCENE_GESTE.dossier(dossier, écran), appelé par app.js).
+  Texte replié à 3 lignes (« Lire tout le texte »), la voix le lit en entier.
+  Valeurs d'exercice (celles du simulateur de l'écran Régler 1) : la notice et
+  l'installation font foi. Symboles de la bibliothèque, jamais redessinés (voir
+  SOURCES.md). Le titre long passe sur deux lignes (il élargissait la carte
+  au-delà de l'écran) et les activités sont resserrées sous le dessin.
+
 Ouvrir : index.html (hors ligne, aucune dépendance distante).
