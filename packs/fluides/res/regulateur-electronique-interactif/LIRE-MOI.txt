@@ -22,4 +22,28 @@ visuels sont dessinés (voir SOURCES-IMAGES.md).
 - Marques citées à titre descriptif, sans affiliation ; mention complète sur la
   page d'accueil.
 
+DESSIN VIVANT (04/10/2026, chantier « Animer les réseaux »)
+  scene-geste.js, en haut de chaque écran : à gauche, la main du technicien
+  (le bonhomme de HoCourant) appuie sur les touches du régulateur, vu de près
+  (celui de la couverture, à l'échelle 0,85) ; à droite, le montage : la sonde
+  dans la chambre froide, le même régulateur en petit, le compresseur et la
+  résistance de dégivrage. Cinq étapes : lire, consigne, différentiel, le froid
+  (arrêt à la consigne, relance au-dessus, et entre les deux le contact garde
+  son état), dégivrer (▼ maintenu : la résistance chauffe, le givre fond, l'eau
+  s'égoutte, le ventilateur attend). Chaque écran ouvre l'étape de son dossier.
+  Tout nombre se lit sur l'afficheur : valeurs du cours (consigne 4 puis 2 °C,
+  différentiel 2 puis 3 K, relance 5 °C, 4,6 °C de la couverture), entre ces
+  repères l'afficheur suit la température de la chambre. Texte replié à
+  3 lignes (« Lire tout le texte »), la voix le lit en entier. Symboles de la
+  bibliothèque, jamais redessinés (voir SOURCES-IMAGES.md). Le dessin lit
+  jouerezo/moteur/voyage-dessin.js et ../symboles/ ; sans eux il se masque et
+  le cours reste complet.
+  Hauteur (1280 × 800) : activités resserrées sous le dessin (bloc du pupitre),
+  pourtour du dessin resserré, et sur les 7 écrans à activité haute (sonde,
+  façades, dégivrage, bornier) le dessin est à 905 px de large (légendes
+  18,8 px, plancher 18,7). 17 écrans sur 24 défilent de 130 px au plus ; 3, 10,
+  11, 12, 15, 19 et 22 défilent encore de 186 à 469 px : leurs activités font de
+  470 à 717 px à elles seules (11 et 22 défileraient d'environ 185 px même sans
+  dessin).
+
 Ouvrir : index.html (hors ligne, aucune dépendance distante).
