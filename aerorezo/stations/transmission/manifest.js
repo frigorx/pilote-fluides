@@ -7,11 +7,11 @@
 
    Rédigée le 27/08/2026 sur le moule de la station pilote — voir CONTRAT-CONTENU.md.
 
-   ⚠️ Réserve remontée au chat de fusion : l'activité `heat` affiche la scène de la
-   batterie et deux curseurs débit-écart. Une station sur les parois demanderait une
-   scène de paroi et un couple U-surface. Le texte le dit à l'élève au lieu de le taire :
-   la manipulation sert ici à montrer la proportionnalité, pas à chiffrer un mur.
-   Voir RAPPORT-LIGNE-C.md. */
+   ✅ Réserve de fusion levée le 04/10/2026 : l'activité `heat` en mode `wall` ne dessine plus
+   une batterie. Le schéma est une paroi en coupe avec sa fenêtre (scenes.js, fonction `paroi`),
+   la chaîne des repères de Découvrir est propre à la paroi (app.js), et le texte et la
+   narration de Découvrir décrivent ce dessin. Le simulateur chiffre une paroi : P = U × A × ΔT
+   (réécrit le 02/10/2026). Historique : RAPPORT-LIGNE-C.md. */
 (window.AEROREZO_STATIONS = window.AEROREZO_STATIONS || []).push({
   line: "C",
   id: "transmission",
@@ -24,7 +24,7 @@
   bts: "Établissez les hypothèses et séparez les zones et régimes pertinents.",
 
   /* Découvrir — ce que l'élève observe, pas ce qu'il doit conclure. */
-  decouverte: "La scène montre une surface d’échange traversée par de la chaleur : l’air arrive d’un côté, ressort de l’autre à une température différente, et entre les deux il y a une paroi. Un mur, un vitrage, une toiture font la même chose, en beaucoup plus lent et sans qu’on le voie. Tant qu’il fait plus chaud dehors que dedans, la chaleur entre par toutes les parois du local, le jour comme la nuit. Elle ne demande la permission à personne : elle suit l’écart de température. Reste à savoir combien elle apporte, et par où.",
+  decouverte: "La scène montre un mur en coupe et sa fenêtre. À gauche, le dedans, chaud ; à droite, le dehors, plus froid. La chaleur traverse la paroi sans qu’on la voie : de fines flèches à travers le mur isolé, de grosses flèches à travers la fenêtre, qui laisse passer bien plus. Ici elle sort ; l’été, c’est l’inverse. Tant qu’il fait plus chaud dehors que dedans, la chaleur entre par toutes les parois du local, le jour comme la nuit. Elle ne demande la permission à personne : elle suit l’écart de température. Reste à savoir combien elle apporte, et par où.",
 
   /* Comprendre — le raisonnement déroulé dans l'ordre où on le fait vraiment. */
   explication: "Trois choses décident de ce qui traverse une paroi : sa surface, l’écart de température entre ses deux faces, et sa qualité. Cette qualité s’écrit avec un coefficient noté U — le nombre de watts qui traversent un mètre carré de cette paroi pour un degré d’écart. Plus il est petit, mieux la paroi isole.\n\nLe calcul se fait alors paroi par paroi, jamais en bloc. Chaque mur, chaque vitrage, chaque toiture a sa surface et son coefficient : on calcule sa part, puis on additionne. Prendre une valeur moyenne pour tout le bâtiment paraît plus rapide, mais cela efface précisément ce qui compte — un vitrage laisse passer plusieurs fois plus qu’un mur isolé de même surface, et c’est souvent lui qui décide de la puissance.\n\nEn climatisation, l’écart à retenir n’est pas toujours la simple différence entre l’air extérieur et l’air du local. Une paroi exposée au soleil monte bien au-delà de la température de l’air : on lui applique un écart corrigé, donné par les documents de calcul du projet. Une paroi lourde restitue de plus sa chaleur avec plusieurs heures de retard, et le maximum du bâtiment ne tombe pas à midi.\n\nToutes les parois ne donnent pas sur l’extérieur. Un mur qui sépare deux locaux climatisés à la même température ne transmet rien. Le même mur donnant sur un couloir non traité, un garage ou des combles transmet, et il faut alors connaître la température de l’autre côté.\n\nLe contrôle de cohérence porte sur les surfaces : additionnez celles que vous avez prises en compte et comparez-les au plan. Une paroi oubliée, une surface comptée deux fois, une hauteur sous plafond fausse — ce sont les erreurs les plus fréquentes, bien avant l’erreur de coefficient.",
@@ -45,7 +45,7 @@
   /* Ce que la voix dit — texte à part, écrit pour l'oreille.
      Règle et contrôles : 00-charte/VOIX-ET-NARRATION.md, node tests/voix.mjs. */
   narration: {
-    decouvrir: "Regardez cette surface d’échange, traversée par de la chaleur. L’air arrive d’un côté, il ressort de l’autre à une température différente, et entre les deux, il y a une paroi. Un mur, un vitrage, une toiture font exactement la même chose, en beaucoup plus lent, et sans qu’on puisse rien voir. Tant qu’il fait plus chaud dehors que dedans, la chaleur entre par toutes les parois du local, le jour comme la nuit. Elle ne demande la permission à personne : elle suit l’écart de température. Toute la question est de savoir combien elle apporte, et par où elle passe.",
+    decouvrir: "Regardez ce mur vu en coupe, avec sa fenêtre. D’un côté, le dedans, chaud. De l’autre, le dehors, plus froid. La chaleur traverse la paroi, et on ne la voit pas : ici, ce sont des flèches. Fines à travers le mur isolé, bien plus grosses à travers la fenêtre. Sur ce dessin, la chaleur sort. En été, c’est l’inverse : tant qu’il fait plus chaud dehors que dedans, elle entre par toutes les parois du local, le jour comme la nuit. Elle ne demande la permission à personne : elle suit l’écart de température. Toute la question est de savoir combien elle apporte, et par où elle passe.",
 
     comprendre: "Trois choses décident de ce qui traverse une paroi. Sa surface, l’écart de température entre ses deux faces, et sa qualité. Cette qualité s’écrit avec un coefficient, qui dit combien de watts traversent un mètre carré de paroi pour un degré d’écart. Plus il est petit, mieux la paroi isole. Le calcul se mène ensuite paroi par paroi, jamais en bloc. Chaque mur, chaque fenêtre, chaque toiture a sa surface et son coefficient : on calcule sa part, et on additionne. Prendre une valeur moyenne pour tout le bâtiment semble plus rapide, mais cela efface justement ce qui compte. Un vitrage laisse passer plusieurs fois plus qu’un mur isolé de la même taille, et c’est très souvent lui qui décide de la puissance à installer. Dernier point, propre à la climatisation : une paroi au soleil devient bien plus chaude que l’air extérieur. On lui applique alors un écart corrigé, donné par les documents de calcul du projet.",
 

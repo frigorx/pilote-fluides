@@ -227,7 +227,7 @@
   const sceneDe=s=>scenes?scenes.rendre(s.activity.kind,s.id,s.activity):null;
 
   function renderDiscovery(s){
-    const labels=conceptLabels[s.activity.kind]||conceptLabels.choice;
+    const labels=s.activity.kind==="heat"&&s.activity.mode==="wall"?["Paroi (U × surface)","Écart de température","Puissance qui traverse"]:conceptLabels[s.activity.kind]||conceptLabels.choice;
     const dessin=sceneDe(s);
     /* La scène montre le phénomène ; la chaîne de repères le nomme. Les deux, pas l'un
        à la place de l'autre : l'élève doit pouvoir mettre un mot sur ce qu'il voit. */

@@ -75,15 +75,18 @@
      mouvement. Sous prefers-reduced-motion, le défilement s'arrête, le dessin reste entier. */
   let compteurClip = 0;
 
-  function chevrons(depart, pas, nombre, horizontal, transverse) {
+  /* `demi` : demi-hauteur du chevron, 7 par défaut. Une scène qui doit montrer qu'un flux est
+     plus fort qu'un autre (la paroi) le dessine plus gros, sans autre primitive. */
+  function chevrons(depart, pas, nombre, horizontal, transverse, demi) {
     let d = "";
     const sens = Math.sign(pas) || 1;
+    const h = demi || 7;
     /* de -1 à nombre : le chevron d'indice -1 est celui qui rebouche la file */
     for (let i = -1; i < nombre; i++) {
       const long = depart + pas * (i + 0.5);
       d += horizontal
-        ? `M${(long - 7 * sens).toFixed(1)} ${transverse - 7}l${(7 * sens).toFixed(1)} 7l${(-7 * sens).toFixed(1)} 7`
-        : `M${transverse - 7} ${(long - 7 * sens).toFixed(1)}l7 ${(7 * sens).toFixed(1)}l7 ${(-7 * sens).toFixed(1)}`;
+        ? `M${(long - h * sens).toFixed(1)} ${transverse - h}l${(h * sens).toFixed(1)} ${h}l${(-h * sens).toFixed(1)} ${h}`
+        : `M${transverse - h} ${(long - h * sens).toFixed(1)}l${h} ${(h * sens).toFixed(1)}l${h} ${(-h * sens).toFixed(1)}`;
     }
     return d;
   }
@@ -104,12 +107,13 @@
   const dureeFlux = (pas, vitesse) =>
     Math.min(2.2, Math.max(0.8, Math.abs(pas) / 55)) / (vitesse > 0 ? vitesse : 1);
 
-  function flux(x1, y, x2, nombre, classe, vitesse) {
+  function flux(x1, y, x2, nombre, classe, vitesse, demi) {
     const pas = (x2 - x1) / nombre;
-    const d = chevrons(x1, pas, nombre, true, y);
+    const h = demi || 7;
+    const d = chevrons(x1, pas, nombre, true, y, h);
     const gauche = Math.min(x1, x2), droite = Math.max(x1, x2);
     /* la découpe part du bord de la file, pour que le chevron de réserve reste caché */
-    const clip = {x: gauche - 9, y: y - 15, w: droite - gauche + 18, h: 30};
+    const clip = {x: gauche - h - 2, y: y - h - 8, w: droite - gauche + 2 * h + 4, h: 2 * h + 16};
     return fluxAnime(d, clip, pas, true, classe, dureeFlux(pas, vitesse));
   }
 
@@ -184,6 +188,91 @@
   const cote = (x1, y, x2, texte) =>
     `<path class="pi-cote" d="M${x1} ${y - 5}v10M${x2} ${y - 5}v10M${x1} ${y}h${x2 - x1}"/>` +
     `<text class="pi-mot" x="${(x1 + x2) / 2}" y="${y - 10}" text-anchor="middle">${ech(texte)}</text>`;
+
+  /* ---------- la paroi ---------- */
+
+  /* Un mur en coupe et sa fenêtre — la station « Parois et écarts de température ».
+     Le dedans est à gauche, le dehors à droite, et la même chaleur traverse deux parois de qualité
+     très différente. Le dessin suit la 3D de la station (modèle `paroi`) : une pièce à 20 °C, un mur
+     de plâtre, isolant, béton et enduit, une fenêtre à double vitrage ; U = 0,3 pour le mur isolé et
+     2,8 pour la fenêtre, comme la consigne. L'épaisseur du flux suit U × ΔT, le flux par mètre carré :
+     à écart égal, le rapport des deux files de chevrons est celui des deux U (même loi que dans la 3D,
+     où la cadence suit la racine du flux). */
+  function paroi(v) {
+    v = v || {};
+    const virg = n => String(n).replace(".", ",");
+    const uMur = v.u > 0 ? v.u : 0.3, uFen = 2.8;
+    const ecart = v.delta > 0 ? v.delta : 12, dehors = 20 - ecart;
+    const GROS = 26, petit = Math.max(3, Math.round(GROS * uMur / uFen));
+    const vite = u => 1.5 * Math.sqrt(u / uFen);
+
+    /* le mur : x de la face intérieure, hauteur des deux pans, ouverture de la fenêtre entre eux */
+    const X = 214, HAUT = 58, BAS = 226, F1 = 108, F2 = 176, H = F1 - HAUT;
+    const COUCHES = [["plâtre", 9], ["isolant", 61], ["béton", 122], ["enduit", 9]];
+    const LARG = COUCHES.reduce((somme, [, l]) => somme + l, 0);
+
+    /* Un pan de mur en coupe : quatre couches, l'isolant en zigzag, le béton en pointillé.
+       Les deux hachures se reconnaissent sans couleur, donc à l'impression noir et blanc. */
+    const pan = y => {
+      let svg = "", x = X;
+      for (const [nom, l] of COUCHES) {
+        svg += `<rect class="pi-couche" x="${x}" y="${y}" width="${l}" height="${H}"/>`;
+        if (nom === "isolant") {
+          let d = "";
+          for (const dx of [10, 28, 46]) d += `M${x + dx} ${y + 4}` + "l6 5l-6 5".repeat(4);
+          svg += `<path class="pi-plaque" d="${d}"/>`;
+        }
+        if (nom === "béton") {
+          let d = "";
+          for (let k = 0; k < 4; k++) d += `M${x + 8 + (k % 2) * 4.5} ${y + 9 + 11 * k}h${l - 16}`;
+          svg += `<path class="pi-beton" d="${d}"/>`;
+        }
+        x += l;
+      }
+      return svg + `<rect class="pi-mur" x="${X}" y="${y}" width="${LARG}" height="${H}"/>`;
+    };
+
+    /* le nom de chaque couche, au-dessus du mur, relié à elle par un court repère */
+    const AMARRES = {"plâtre": [224, "end"], "isolant": [null, "middle"], "béton": [null, "middle"], "enduit": [404, "start"]};
+    let noms = "", x = X;
+    for (const [nom, l] of COUCHES) {
+      const centre = x + l / 2;
+      const [ancre, ancrage] = AMARRES[nom];
+      noms += mot(ancre ?? centre, 40, nom, ancrage) + `<path class="pi-repere" d="M${centre} 46v10"/>`;
+      x += l;
+    }
+
+    const svg =
+      /* le dedans, chaud, et le dehors, froid : la teinte confirme, les mots disent */
+      `<rect class="pi-chaud" x="20" y="${HAUT}" width="${X - 20}" height="${BAS - HAUT}"/>` +
+      `<rect class="pi-froid" x="${X + LARG}" y="${HAUT}" width="${620 - X - LARG}" height="${BAS - HAUT}"/>` +
+      fort(117, 40, "Dedans · 20 °C") + fort(518, 40, `Dehors · ${virg(dehors)} °C`) +
+      /* le mur en coupe, coupé en son milieu par la fenêtre */
+      pan(HAUT) + pan(F2) + noms +
+      /* la fenêtre : un cadre en haut et en bas, deux vitres entre eux */
+      `<rect class="pi-caisson" x="332" y="${F1}" width="30" height="9"/>` +
+      `<rect class="pi-caisson" x="332" y="${F2 - 9}" width="30" height="9"/>` +
+      `<path class="pi-gaine" d="M340 ${F1 + 9}v${F2 - F1 - 18}M354 ${F1 + 9}v${F2 - F1 - 18}"/>` +
+      /* ce que dit chaque file de chevrons, à son extrémité */
+      fort(478, 80, "Mur isolé", "start") + mot(478, 99, `U = ${virg(uMur)} W/(m²·K)`, "start") +
+      fort(478, 128, "Fenêtre", "start") + mot(478, 147, "double vitrage", "start") +
+      mot(478, 166, `U = ${virg(uFen)} W/(m²·K)`, "start") +
+      fort(478, 198, "Mur isolé", "start") + mot(478, 217, `U = ${virg(uMur)} W/(m²·K)`, "start") +
+      /* la chaleur : du dedans vers le dehors, fine à travers le mur, grosse et rapide par la fenêtre */
+      flux(176, 83, 436, 12, "pi-chaleur pi-fin", vite(uMur), petit) +
+      flux(176, 142, 436, 4, "pi-chaleur pi-epais", vite(uFen), GROS) +
+      flux(176, 201, 436, 12, "pi-chaleur pi-fin", vite(uMur), petit) +
+      fort(320, 254, `P = U × A × ΔT · ici ΔT = 20 − ${virg(dehors)} = ${virg(ecart)} K`) +
+      mot(320, 276, "Si dehors est plus chaud que dedans, la chaleur entre : le calcul ne change pas.");
+    return {
+      svg,
+      texte: `Un mur isolé et sa fenêtre, vus en coupe : dedans, il fait 20 °C ; dehors, ${virg(dehors)} °C. ` +
+        `La chaleur traverse la paroi du chaud vers le froid : des chevrons fins à travers le mur isolé ` +
+        `(U = ${virg(uMur)}), de gros chevrons, plus rapides, à travers la fenêtre à double vitrage ` +
+        `(U = ${virg(uFen)}). La puissance s'écrit P = U × A × ΔT. Si dehors est plus chaud que dedans, ` +
+        `le sens s'inverse et le calcul ne change pas.`
+    };
+  }
 
   /* ---------- les treize scènes ---------- */
 
@@ -458,6 +547,8 @@
 
     /* 10 — La batterie : serpentin et ailettes, pas un rectangle plein. */
     heat(variante, v) {
+      /* La station « Parois » (mode wall) ne chauffe pas un air : elle chiffre une paroi. */
+      if (v && v.mode === "wall") return paroi(v);
       const froide = variante === "froide";
       const svg =
         gaine(40, 100, 170, 90) + flux(58, 145, 195, 3) +

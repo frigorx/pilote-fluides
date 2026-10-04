@@ -110,6 +110,15 @@
 .pi-personne-corps{fill:none;stroke:var(--navy);stroke-width:2.5}
 .pi-liaison{fill:none;stroke:var(--muted);stroke-width:2;stroke-dasharray:5 5}
 .pi-souffle{fill:none;stroke:var(--navy);stroke-width:2}
+/* La paroi (station Parois) : chevrons de chaleur plus ou moins gros selon le flux, couches de la coupe,
+   dedans chaud et dehors froid. La forme dit le sens et la matière ; la teinte ne fait que confirmer. */
+.pi-flux.pi-chaleur{stroke:var(--orange-text)}
+.pi-chaleur.pi-fin{stroke-width:2}
+.pi-chaleur.pi-epais{stroke-width:5}
+.pi-couche{fill:var(--paper);stroke:var(--navy);stroke-width:1.5}
+.pi-beton{fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:round;stroke-dasharray:.1 9;opacity:.5}
+.pi-chaud{fill:var(--orange);opacity:.1}
+.pi-froid{fill:var(--blue);opacity:.12}
 @media(max-width:760px){.scene{max-height:30vh}.pi-mot{font-size:12px}.pi-fort{font-size:13px}}
 /* Le mouvement s arrete, le dessin reste entier : le sens est porte par la forme du
    chevron, jamais par le deplacement. */
