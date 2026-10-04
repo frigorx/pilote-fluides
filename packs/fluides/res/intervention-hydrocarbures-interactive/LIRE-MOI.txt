@@ -112,3 +112,32 @@ Les représentations sont des fils d’opérations et des cartes de décision. E
 ne montrent aucun raccordement technique à imiter sans le matériel réel et ne
 remplacent jamais la démonstration du formateur.
 
+DESSIN VIVANT (04/10/2026, chantier « Animer les réseaux »)
+-----------------------------------------------------------
+
+scene-geste.js, en haut de chaque écran. À gauche, le geste en gros plan : la
+main du technicien (le bonhomme de HoCourant) sur la pièce qui agit — le
+composant, une vanne du manifold, le mano-détendeur, le détecteur. À droite, le
+circuit hydrocarbure et la conséquence visible :
+
+  1. Ouvrir : sous azote, en zone ventilée et balisée, détecteur posé près du
+     travail ; on dépose le composant, on monte le neuf, on referme.
+  2. Éprouver : l'azote ne passe que par le mano-détendeur ; la pression monte,
+     puis elle tient — ou elle chute et l'azote s'échappe par le raccord neuf
+     (STOP, on localise). Une fois sur deux : l'étape alterne à chaque départ.
+  3. Tirer au vide : on ouvre, la pompe aspire l'air et l'humidité.
+  4. Observer : on isole la pompe, on l'arrête, le vacuomètre dit si le vide tient.
+  5. Charger : le R-290 passe de la bouteille, posée sur la balance, vers le
+     circuit ; on ferme à la masse prévue.
+  6. Contrôler : le détecteur adapté passe aux raccords ; la vapeur qui fuit se
+     voit ; un signal répété suspend la remise en service.
+
+Chaque écran ouvre l'étape de son dossier (Préparer et Ouvrir : étape 1 ;
+Éprouver : 2 ; Sécher et charger : 3 ; Contrôler et tracer : 6 ; Contrôle : 1).
+Texte replié à 3 lignes (« Lire tout le texte »), la voix le lit en entier : les
+titres, textes, consignes, narrations (donc les MP3) et contrôles n'ont pas
+changé. Aucune valeur de pression, de vide, de durée ni de masse n'est dessinée.
+Symboles et pictogrammes ne sont jamais redessinés (voir SOURCES.md). Le dessin
+n'est pas un schéma de raccordement à imiter : il montre l'ordre et la
+conséquence ; le geste réel se fait sur le poste dédié, avec la procédure du
+site.

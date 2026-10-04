@@ -1,4 +1,4 @@
-@import url("../condenseur-interactif/styles.css?v=20260802-2");
+@import url("../condenseur-interactif/styles.css?v=20261004-1");
 
 :root{--mission:#c9451a;--mission-soft:#fff0e8}
 .brand-mark{background:var(--orange-dark)}
@@ -25,3 +25,7 @@
 @media(max-width:900px){.dossier-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){.dossier-grid{grid-template-columns:repeat(2,1fr)}.branch-panel{gap:4px}.branch-context{font-size:9px;padding:5px}.branch-choices{gap:4px}.branch-choice{padding:6px;border-radius:8px}.branch-choice strong{font-size:11px}.branch-choice small{font-size:9px}.consequence{min-height:44px;padding:5px;font-size:9px}.consequence strong{font-size:10px}.return-safe{font-size:9px;padding:5px 8px}.route-node{min-width:58px;min-height:40px;padding:4px;font-size:8px}.route-arrow{font-size:13px}.tool-strip{gap:3px}.tool-card{font-size:8px;padding:4px}.tool-card img{width:32px;height:32px}.evidence{gap:4px}.evidence-card{padding:5px;font-size:9px}}
 @media(min-width:901px){.home{padding-block:14px 10px}}
+/* ---- Le dessin du geste (scene-geste.js, 04/10/2026). Le repli à 3 lignes, le bouton, la barre pas à pas et la grille viennent du bloc « Le dessin vivant » de ../condenseur-interactif/styles.css (importé plus haut, porté par :has()) ; ici, le cadre du dessin et le titre de l’écran (la base le coupe en « … » dès que la carte tient dans l’écran), qui n’existent que là où #scene-lecon existe. ---- */
+.scene-lecon .scene-geste{display:block;flex:1 1 0;min-width:0;height:auto;background:#fdfbf5;border:1px solid var(--line);border-radius:16px}
+@media(min-width:651px){.lesson-card:has(.scene-lecon) .lesson-heading h2{white-space:normal;overflow:visible;text-overflow:clip;font-size:clamp(20px,2.2vw,28px);line-height:1.05}}
+@media(max-width:900px){.scene-lecon .scene-geste{flex:none;width:100%}}
