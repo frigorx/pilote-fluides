@@ -32,6 +32,7 @@
      parle d'un « registre national numérique », sans nom propre ni date.
      =================================================================== -->
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../scenes/scenes.css">
 <!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
 <script defer src="../../../moteur/retour-accueil.js?v=ff0ca829c0"></script>
 </head>
@@ -64,7 +65,7 @@
   <p class="fil-sous-ligne">Déchets · niveau BTS</p>
   <h1>Déchets dangereux — BSD et traçabilité</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
-  <figure class="scene"><img src="../../img/scene-dechets.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+  <figure class="scene" data-scene-branche="dechets" data-station="dechets-dangereux"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -281,6 +282,10 @@
 </div>
 
 <script src="app.js"></script>
+<!-- La scène animée de la branche (04/10/2026) : SceneKit et VOYAGE_DESSIN, lus, jamais modifiés. -->
+<script src="../../../cartoclim/stations/_commun/scene-kit.js"></script>
+<script src="../../../jouerezo/moteur/voyage-dessin.js"></script>
+<script src="../../scenes/dechets.js"></script>
 
 <!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
      reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les

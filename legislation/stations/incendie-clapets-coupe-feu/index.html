@@ -29,6 +29,7 @@
      valeur chiffrée est le seuil de 70 °C de l'article CH 32 § 6.
      =================================================================== -->
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../scenes/scenes.css">
 <!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
 <script defer src="../../../moteur/retour-accueil.js?v=ff0ca829c0"></script>
 </head>
@@ -60,7 +61,7 @@
   <p class="fil-sous-ligne">Incendie · niveau BTS</p>
   <h1>Clapets coupe-feu — traversées et dispositifs actionnés de sécurité</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
-  <figure class="scene"><img src="../../img/scene-incendie.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+  <figure class="scene" data-scene-branche="incendie" data-station="incendie-clapets-coupe-feu"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -292,6 +293,10 @@
 </div>
 
 <script src="app.js"></script>
+<!-- La scène animée de la branche (04/10/2026) : SceneKit et VOYAGE_DESSIN, lus, jamais modifiés. -->
+<script src="../../../cartoclim/stations/_commun/scene-kit.js"></script>
+<script src="../../../jouerezo/moteur/voyage-dessin.js"></script>
+<script src="../../scenes/incendie.js"></script>
 
 <!-- Le moteur du site : voix.js donne la narration, prof-vocal.js enchaîne les
      écrans tout seul et s'arrête sur les questions. data-prototype : la

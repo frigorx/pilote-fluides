@@ -35,6 +35,7 @@
      seul le mécanisme est enseigné. Voir FOND.md, section « à sourcer ».
      =================================================================== -->
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../scenes/scenes.css">
 <!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
 <script defer src="../../../moteur/retour-accueil.js?v=ff0ca829c0"></script>
 </head>
@@ -67,7 +68,7 @@
   <p class="fil-sous-ligne">Impact environnemental · niveau BTS</p>
   <h1>Le TEWI — l'impact total d'une machine</h1>
   <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
-  <figure class="scene"><img src="../../img/scene-impact.webp" alt="" width="1536" height="1024" loading="lazy"></figure>
+  <figure class="scene" data-scene-branche="impact" data-station="impact-tewi"></figure>
 
   <div class="chapeau">
     <span class="mot">Objectif</span>
@@ -295,6 +296,10 @@
 </div>
 
 <script src="app.js"></script>
+<!-- La scène animée de la branche (04/10/2026) : SceneKit et VOYAGE_DESSIN, lus, jamais modifiés. -->
+<script src="../../../cartoclim/stations/_commun/scene-kit.js"></script>
+<script src="../../../jouerezo/moteur/voyage-dessin.js"></script>
+<script src="../../scenes/impact.js"></script>
 
 <!-- Le moteur du site, en relatif depuis ../../../moteur/ (02/09 : le dossier
      reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne les
