@@ -46,6 +46,9 @@ window.JR_JEUX = {
   pendu: { nom: "Le pendu du frigo", lettre: "P", emoji: "🌡️",
     phrase: "Un mot du métier, lettre par lettre. Chaque lettre fausse fait chauffer le compresseur.",
     regle: "Cinq mots. L'indice, c'est la définition. Huit lettres fausses et le compresseur grille." },
+  heros: { nom: "Le circuit dont vous êtes le héros", lettre: "H", emoji: "💧", /* moteur de l'aventure (data-jeu="heros"), scénario dans heros.js */
+    phrase: "Vous êtes une molécule de fluide frigorigène. Faites le tour du circuit : à chaque organe, une énigme.",
+    regle: "Huit organes, huit énigmes, trois cœurs. Une bonne réponse vous fait passer l'organe : parfois, vous changez d'état. Une mauvaise vous laisse sur place, avec un indice et la station à revoir." },
   depanneur: { nom: "Le dépanneur", lettre: "R", emoji: "🔧", station: true, /* retiré de la liste des jeux (Franck, 03/10 : « je supprime des jeux le dépannage ») : devient une station à part */
     phrase: "Une chambre froide en panne. Branchez le manifold, pincez le thermomètre, regardez, touchez, puis nommez la panne.",
     regle: "Trois situations. Vous choisissez vos relevés comme sur le chantier ; les pressions se lisent sur le cadran, la surchauffe et le sous-refroidissement se calculent. Puis vous concluez. Moins de relevés inutiles, meilleur coefficient." }
@@ -335,6 +338,16 @@ JR_THEMES.qcm = JR_THEMES.chrono;
 /* l'aventure vit dans aventure.js (donnees/) */
 JR_THEMES.aventure = [
   { id: "zombies", nom: "Les zombies du R-22", emoji: "🧟", portes: P.securite.concat(P.gestes) }
+];
+
+/* « Le circuit dont vous êtes le héros » : le scénario vit dans heros.js (donnees/), les scènes dans heros-scenes.js */
+JR_THEMES.heros = [
+  { id: "froid", nom: "La chambre froide (R-134a)", emoji: "🧊",
+    portes: [{ t: "Le circuit, organe par organe (station du plan)", h: "../packs/fluides/res/circuit-organe-par-organe/" },
+      { t: "La ligne liquide : chaque organe protège le suivant", h: "../f/a-ligne-liquide-protection/" },
+      { t: "La croix du frigoriste : organes, états et énergie", h: "../f/a-croix-frigoriste-etats/" },
+      { t: "Voyage dans tous ses états : le circuit raconté par la molécule", h: "../voyage/module.html" },
+      { t: "Le diagramme enthalpique, courbe par courbe", h: "../packs/fluides/res/diagramme-enthalpique/" }] }
 ];
 
 /* =====================================================================

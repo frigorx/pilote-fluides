@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="64" height="64" role="img" aria-label="La molécule dans son tuyau">
+<title>Le circuit dont vous êtes le héros</title>
+<defs>
+<linearGradient id="vm-cuivre" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7a3f1c">
+</stop>
+<stop offset="0.32" stop-color="#e7a978">
+</stop>
+<stop offset="0.62" stop-color="#c57a45">
+</stop>
+<stop offset="1" stop-color="#6e3818">
+</stop>
+</linearGradient>
+</defs>
+<rect x="-10" y="30" width="220" height="140" rx="8" fill="url(#vm-cuivre)">
+</rect>
+<rect x="-10" y="42" width="220" height="116" fill="#f4f8fc">
+</rect>
+<g transform="translate(100.0 102.0) scale(1.35)" opacity="1">
+<circle r="51" fill="#ff6b35" opacity="0.22">
+</circle>
+<g transform="scale(1.000 1.000)">
+<circle cx="-29.4" cy="-18" r="13.8" stroke="#1b3a63" stroke-width="3.5" fill="rgb(120,161,207)">
+</circle>
+<circle cx="29.4" cy="-18" r="13.8" stroke="#1b3a63" stroke-width="3.5" fill="rgb(120,161,207)">
+</circle>
+<circle cx="0" cy="32.400000000000006" r="13.8" stroke="#1b3a63" stroke-width="3.5" fill="rgb(120,161,207)">
+</circle>
+<clipPath id="vm-h-1">
+<circle r="28.5">
+</circle>
+</clipPath>
+<circle r="30" fill="#f2f8ff" fill-opacity="0.75">
+</circle>
+<g clip-path="url(#vm-h-1)">
+<path opacity="0.92" d="M -30.0 -14.1 L -22.5 -14.2 L -15.0 -12.9 L -7.5 -11.1 L 0.0 -10.2 L 7.5 -10.9 L 15.0 -12.6 L 22.5 -14.1 L 30.0 -14.2 L 30 36 L -30 36 Z" fill="rgb(68,124,189)">
+</path>
+<path fill="none" stroke="#fff" stroke-width="2.2" opacity="0.8" d="M -30.0 -14.1 L -22.5 -14.2 L -15.0 -12.9 L -7.5 -11.1 L 0.0 -10.2 L 7.5 -10.9 L 15.0 -12.6 L 22.5 -14.1 L 30.0 -14.2">
+</path>
+<circle fill="#fff" fill-opacity="0.45" stroke="#fff" stroke-width="1.6" cx="-17.0" cy="-8.5" r="3.7" opacity="1.00">
+</circle>
+<circle fill="#fff" fill-opacity="0.45" stroke="#fff" stroke-width="1.6" cx="-8.2" cy="20.6" r="1.8" opacity="1.00">
+</circle>
+<circle fill="#fff" fill-opacity="0.45" stroke="#fff" stroke-width="1.6" cx="1.0" cy="11.9" r="2.4" opacity="1.00">
+</circle>
+<circle fill="#fff" fill-opacity="0.45" stroke="#fff" stroke-width="1.6" cx="9.3" cy="3.2" r="2.9" opacity="1.00">
+</circle>
+<circle fill="#fff" fill-opacity="0.45" stroke="#fff" stroke-width="1.6" cx="16.2" cy="-5.5" r="3.5" opacity="1.00">
+</circle>
+<circle r="2.4" cx="17.8" cy="4.8" fill="rgb(68,124,189)" opacity="0">
+</circle>
+<circle r="2.4" cx="-13.6" cy="-16.3" fill="rgb(68,124,189)" opacity="0">
+</circle>
+<circle r="2.4" cx="0.3" cy="-10.3" fill="rgb(68,124,189)" opacity="0">
+</circle>
+<circle r="2.4" cx="13.2" cy="12.8" fill="rgb(68,124,189)" opacity="0">
+</circle>
+<circle r="2.4" cx="-17.9" cy="14.7" fill="rgb(68,124,189)" opacity="0">
+</circle>
+<circle r="2.4" cx="10.7" cy="-7.8" fill="rgb(68,124,189)" opacity="0">
+</circle>
+</g>
+<circle r="30" fill="none" stroke="#1b3a63" stroke-width="3.5">
+</circle>
+<ellipse cx="-10.799999999999999" cy="-14.399999999999999" rx="8.4" ry="4.2" fill="#fff" opacity="0.75" transform="rotate(-28 -10.799999999999999 -14.399999999999999)">
+</ellipse>
+<circle cx="-16.8" cy="7.800000000000001" r="4.2" fill="#f08a8a" opacity="0.55">
+</circle>
+<circle cx="16.8" cy="7.800000000000001" r="4.2" fill="#f08a8a" opacity="0.55">
+</circle>
+<ellipse cx="-9.6" cy="-3.5999999999999996" rx="6" ry="7.800000000000001" fill="#fff" stroke="#1b3a63" stroke-width="2">
+</ellipse>
+<circle cx="-8.2" cy="-3.0" r="3.3" fill="#1b3a63">
+</circle>
+<ellipse cx="9.6" cy="-3.5999999999999996" rx="6" ry="7.800000000000001" fill="#fff" stroke="#1b3a63" stroke-width="2">
+</ellipse>
+<circle cx="11.0" cy="-3.0" r="3.3" fill="#1b3a63">
+</circle>
+<rect x="-16.5" y="-12" width="13.8" height="9" fill="none">
+</rect>
+<rect x="2.6999999999999993" y="-12" width="13.8" height="9" fill="none">
+</rect>
+<path fill="none" stroke="#1b3a63" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M -10.200000000000001 9 Q 0 18.6 10.200000000000001 9">
+</path>
+<path d="M 0 -9 Q 7 2 0 7 Q -7 2 0 -9 Z" fill="#8fc3f0" stroke="#1b3a63" stroke-width="1.5" transform="translate(27.6 -23.400000000000002)" opacity="0">
+</path>
+</g>
+</g>
+<linearGradient id="vm-liq-2" x1="-10" x2="210" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="rgb(68,124,189)">
+</stop>
+<stop offset="0.125" stop-color="rgb(68,124,189)">
+</stop>
+<stop offset="0.25" stop-color="rgb(68,124,189)">
+</stop>
+<stop offset="0.375" stop-color="rgb(68,124,189)">
+</stop>
+<stop offset="0.5" stop-color="rgb(68,124,189)">
+</stop>
+<stop offset="0.625" stop-color="rgb(68,124,189)">
+</stop>
+<stop offset="0.75" stop-color="rgb(68,124,189)">
+</stop>
+<stop offset="0.875" stop-color="rgb(68,124,189)">
+</stop>
+<stop offset="1" stop-color="rgb(68,124,189)">
+</stop>
+</linearGradient>
+<path fill="url(#vm-liq-2)" opacity="0.82" d="M -10 158 L -10 103.1 L 10 100.2 L 30 96.3 L 50 94.8 L 70 96.4 L 90 99.2 L 110 100.5 L 130 100.1 L 150 100.4 L 170 102.4 L 190 104.7 L 210 104.4 L 210 158 Z">
+</path>
+<path fill="none" stroke="#fff" stroke-width="3" opacity="0.75" stroke-linecap="round" d="M -10 103.1 L 10 100.2 L 30 96.3 L 50 94.8 L 70 96.4 L 90 99.2 L 110 100.5 L 130 100.1 L 150 100.4 L 170 102.4 L 190 104.7 L 210 104.4">
+</path>
+<circle cx="40" cy="140" r="6" fill="#fff" fill-opacity="0.35" stroke="#fff" stroke-width="2">
+</circle>
+<circle cx="62" cy="128" r="4" fill="#fff" fill-opacity="0.35" stroke="#fff" stroke-width="2">
+</circle>
+<circle cx="150" cy="136" r="5" fill="#fff" fill-opacity="0.35" stroke="#fff" stroke-width="2">
+</circle>
+<circle cx="170" cy="146" r="3.5" fill="#fff" fill-opacity="0.35" stroke="#fff" stroke-width="2">
+</circle>
+</svg>

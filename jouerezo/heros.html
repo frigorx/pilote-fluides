@@ -3,13 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
 <meta name="theme-color" content="#1b3a63">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <title>Le circuit dont vous êtes le héros — JouéRézo inerWeb</title>
 <meta name="description" content="Vous êtes une molécule de fluide frigorigène. Faites le tour du circuit : à chaque organe, une énigme.">
 <!-- Page écrite à la main (pilote du 04/10/2026), sur le gabarit d'outils/fabriquer-pages.mjs : le moteur de l'aventure
-     (moteur/aventure.js) relancé sous le nom « heros », le scénario dans donnees/heros.js, les scènes dessinées dans
+     (moteur/aventure.js) relancé sous le nom « heros », le jeu dans donnees/themes.js, le scénario dans donnees/heros.js, les scènes dessinées dans
      donnees/heros-scenes.js (briques VOYAGE_DESSIN). Styles propres au jeu ci-dessous : rien ne change pour les autres jeux. -->
 <link rel="stylesheet" href="jouerezo.css?v=20261004-0851">
 <style>
@@ -49,10 +48,11 @@ body, .haut, .legende, .chapo, .theme-carte { font-size: 19px; }
 <a class="evite" href="#jeu">Aller au jeu</a>
 <header id="haut" class="haut"></header>
 <main id="jeu" class="page"></main>
-<script src="donnees/heros.js?v=20261004-0851"></script>
+<script src="donnees/themes.js?v=20261004-0930"></script>
+<script src="donnees/heros.js?v=20261004-0930"></script>
 <script src="moteur/voyage-dessin.js?v=20261004-0851"></script>
 <script src="moteur/voyage-diagramme.js?v=20261004-0851"></script>
-<script src="donnees/heros-scenes.js?v=20261004-0851"></script>
+<script src="donnees/heros-scenes.js?v=20261004-0930"></script>
 <script src="moteur/commun.js?v=20261004-0851"></script>
 <script src="moteur/aventure.js?v=20261004-0851" data-jeu="heros"></script>
 <script src="../moteur/lisibilite.js"></script>

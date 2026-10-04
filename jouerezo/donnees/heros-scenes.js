@@ -42,7 +42,8 @@
     vapHP: { pression: "haute", forme: "vapeur", mot: "vapeur", chaleur: "très chaude", temp: 0.95, niveau: 0.95 }
   };
   /* où se trouve chaque organe sur le circuit de D.circuit (repère 1000 × 620, places de voyage-dessin.js) */
-  const PLACE = { bouteille: [400, 85], detendeur: [95, 320], evaporateur: [520, 545], compresseur: [890, 320], condenseur: [620, 85] };
+  const PLACE = { bouteille: [400, 85], filtre: [290, 85], voyant: [190, 85], electrovanne: [95, 190], detendeur: [95, 320],
+    evaporateur: [520, 545], compresseur: [890, 320], condenseur: [620, 85] };
 
   /* ---------- petites briques ---------- */
   function filigrane(parent, points, l) { // le filigrane R9 du Voyage, cartouche au nom du produit (charte : « Cartouche = nom du produit »)
@@ -103,11 +104,11 @@
   /* ---------- les scènes : function (svg) → { organe, nom, avant, apres, carte, bascule, maj(t, phase, tp) → progression 0..1 } ---------- */
   const S = {};
 
-  /* le départ : la bouteille de liquide en coupe ; l'héroïne au fond, dans la nappe */
-  S.depart = function (svg) {
+  /* la bouteille de liquide en coupe : arrivée (du condenseur) en haut à droite, départ par le tube plongeur
+     à gauche — les deux tuyaux pleins de liquide ; l'héroïne au fond, dans la nappe. Sert à l'ouverture et au 1er organe. */
+  function bouteille(svg) {
     toile(svg);
     const X0 = 380, X1 = 620, YH = 130, YB = 580;
-    // arrivée (du condenseur) par le haut, à droite ; départ par le tube plongeur, à gauche — les deux pleins de liquide
     const arrivee = plein(svg, tube(svg, 576, 40, 444, 64), ETATS.liqHP.temp, 3, -60);
     const depart = plein(svg, tube(svg, -20, 40, 460, 64), ETATS.liqHP.temp, 4, -60);
     D.el("rect", { x: X0, y: YH, width: X1 - X0, height: YB - YH, rx: 74, fill: "url(#vm-acier-h)", stroke: "#56636f", "stroke-width": 3 }, svg);
@@ -123,13 +124,174 @@
     D.el("rect", { x: 583, y: 92, width: 16, height: 62, fill: D.couleur(ETATS.liqHP.temp, false), opacity: 0.82 }, svg);
     const liq = D.liquide(dedans, { x0: X0, x1: X1, yh: YH + 16, yb: YB - 16, niveau: () => 0.6, couleur: () => D.couleur(ETATS.liqHP.temp, false) });
     const gouttes = D.bulles(D.el("g", {}, dedans), 10, 19, true);
+    const haut = D.el("g", {}, svg); // hors de la coupe : l'héroïne quand elle est remontée dans le tuyau du haut
     const mila = D.heroine(dedans, { r: 30 }); // dessinée après la nappe : au fond du liquide, on la voit (le liquide bouge en elle)
-    return { organe: "bouteille", nom: "Bouteille de liquide", avant: "liqHP", apres: "liqHP", carte: [8, 8], bascule: 0,
+    return { mila: mila, dedans: dedans, haut: haut,
       maj: function (t) {
         liq.maj(t); arrivee(t); depart(t);
         gouttes(t, q => { const x = 591 + (q - 0.5) * 12; return [x, 150, liq.surface(x, t), 1, D.couleur(ETATS.liqHP.temp, false)]; });
-        mila({ x: 525, y: 470 + Math.sin(t * 1.7) * 7, s: 1.75, t: t, temp: ETATS.liqHP.temp, etat: "liquide", humeur: "sourire", regard: [-0.8, 0.3] });
+      } };
+  }
+  /* l'ouverture : l'héroïne attend au fond de la bouteille */
+  S.depart = function (svg) {
+    const b = bouteille(svg);
+    return { organe: "bouteille", nom: "Bouteille de liquide", avant: "liqHP", apres: "liqHP", carte: [8, 8], bascule: 0,
+      maj: function (t) {
+        b.maj(t);
+        b.mila({ x: 525, y: 470 + Math.sin(t * 1.7) * 7, s: 1.75, t: t, temp: ETATS.liqHP.temp, etat: "liquide", humeur: "sourire", regard: [-0.8, 0.3] });
         return 0;
+      } };
+  };
+  /* 1er organe, la bouteille : on repart par le tube plongeur, qui prend le fluide au fond, là où il est liquide */
+  S.bouteille = function (svg) {
+    const b = bouteille(svg);
+    return { organe: "bouteille", nom: "Bouteille de liquide", avant: "liqHP", apres: "liqHP", carte: [8, 8.5], bascule: 0,
+      maj: function (t, phase, tp) {
+        b.maj(t);
+        let x = 525, y = 470 + Math.sin(t * 1.7) * 7, s = 1.75, humeur = "sourire", regard = [-0.8, 0.3], p = 0;
+        if (phase === "passe") { // vers l'entrée du tube plongeur, on y remonte, on repart par le tuyau du haut
+          if (tp < 1) { const a = D.lisse(tp); x = D.lerp(525, 425, a); y = D.lerp(470, 528, a); s = D.lerp(1.75, 0.32, a); humeur = "surprise"; }
+          else if (tp < 2.4) { const a = D.lisse((tp - 1) / 1.4); x = 425; y = D.lerp(528, 72, a); s = 0.32; humeur = "surprise"; regard = [0, -1]; }
+          else { const a = D.lisse((tp - 2.4) / 1.2); x = D.lerp(425, 150, a); y = 72; s = D.lerp(0.32, 0.5, a); regard = [-1, 0]; }
+          p = D.borne(tp / 3.6, 0, 1);
+        } else if (phase === "bloque") { // elle monte vers le haut de la bouteille… et redescend
+          y = D.courbe([[0, 470], [0.7, 345], [1.4, 470]], tp);
+          humeur = tp < 0.6 ? "surprise" : "triste"; regard = [0, -1];
+        }
+        plan(b.mila, y < 150 ? b.haut : b.dedans);
+        b.mila({ x: x, y: y, s: s, t: t, temp: ETATS.liqHP.temp, etat: "liquide", humeur: humeur, regard: regard });
+        return p;
+      } };
+  };
+
+  /* le filtre déshydrateur en coupe : des grains qui boivent l'humidité, une grille qui arrête les saletés.
+     L'héroïne passe, toujours liquide, sans humidité et sans saleté (Voyage, relecture du 03/10). */
+  S.filtre = function (svg) {
+    toile(svg);
+    const LIQ = D.couleur(ETATS.liqHP.temp, false);
+    const entree = plein(svg, tube(svg, -20, 300, 290, 140), ETATS.liqHP.temp, 5, 80), sortie = plein(svg, tube(svg, 730, 300, 290, 140), ETATS.liqHP.temp, 6, 80);
+    D.el("rect", { x: 230, y: 170, width: 540, height: 400, rx: 84, fill: "url(#vm-noir)" }, svg); // le corps
+    D.el("path", { d: "M 420 192 H 588 M 566 180 L 592 192 L 566 204", fill: "none", stroke: "#fff", "stroke-width": 7, "stroke-linecap": "round", "stroke-linejoin": "round" }, svg); // la flèche : le sens de passage
+    D.el("rect", { x: 262, y: 214, width: 476, height: 324, rx: 52, fill: "#f4f8fc" }, svg);
+    D.el("rect", { x: 262, y: 214, width: 476, height: 324, rx: 52, fill: LIQ, opacity: 0.45 }, svg); // plein de liquide
+    const flux = D.courant(svg, 270, 730, 230, 520, 8, 8);
+    const r = D.alea(13);
+    D.el("rect", { x: 400, y: 226, width: 246, height: 300, rx: 12, fill: "#e8dcc2", opacity: 0.55 }, svg); // les grains (ils boivent l'humidité)
+    for (let i = 0; i < 11; i++) for (let j = 0; j < 14; j++)
+      D.el("circle", { cx: 411 + i * 22.4 + (r() - 0.5) * 5, cy: 237 + j * 21.4 + (r() - 0.5) * 5, r: 9.5, fill: "#efe3c6", stroke: "#b59b6a", "stroke-width": 1.5 }, svg);
+    D.el("line", { x1: 684, y1: 226, x2: 684, y2: 526, stroke: "#6b7785", "stroke-width": 12, "stroke-dasharray": "7 6" }, svg); // la grille
+    const objets = D.el("g", {}, svg), EAU = [], SAL = [];
+    for (let i = 0; i < 6; i++) EAU.push({ f: i / 6, x: 414 + r() * 210, y: 244 + r() * 266, e: D.el("path", { d: "M 0 -12 Q 9 2 0 9 Q -9 2 0 -12 Z", fill: "#3d9be9", stroke: "#fff", "stroke-width": 2 }, objets) });
+    for (let i = 0; i < 5; i++) SAL.push({ f: i / 5 + 0.1, y: 244 + r() * 266, e: D.el("path", { d: "M -7 -4 L -2 -8 L 6 -5 L 8 3 L 1 8 L -6 5 Z", fill: "#3f3f3f" }, objets) });
+    const dessus = D.el("g", {}, svg);
+    const mila = D.heroine(dessus, { r: 30 });
+    function cycle(o, t, per, arret, xa, ya) { // arrivée avec le liquide, prise (dans les grains ou contre la grille), puis effacée
+      const k = D.frac(t / per + o.f), y0 = 370 + Math.sin(o.f * 20) * 30;
+      const x = k < 0.45 ? D.lerp(-10, arret, k / 0.45) : k < 0.6 ? D.lerp(arret, xa, (k - 0.45) / 0.15) : xa;
+      const y = k < 0.45 ? y0 : k < 0.6 ? D.lerp(y0, ya, (k - 0.45) / 0.15) : ya;
+      o.e.setAttribute("transform", "translate(" + x.toFixed(1) + " " + y.toFixed(1) + ") scale(" + (k > 0.6 ? 0.7 : 1) + ")");
+      o.e.setAttribute("opacity", ((k > 0.6 ? 0.8 : 1) * (1 - D.lisse((k - 0.9) / 0.1))).toFixed(2));
+    }
+    return { organe: "filtre", nom: "Filtre déshydrateur", avant: "liqHP", apres: "liqHP", carte: [8.6, 9.4], bascule: 0,
+      maj: function (t, phase, tp) {
+        entree(t); sortie(t); flux(t, 80);
+        EAU.forEach(o => cycle(o, t, 5, 404, o.x, o.y)); // l'eau reste prise dans les grains
+        SAL.forEach(o => cycle(o, t, 6, 676, 676, o.y)); // les saletés restent contre la grille
+        let x = 140, y = 370 + Math.sin(t * 2) * 4, s = 1.2, humeur = "sourire", p = 0;
+        if (phase === "passe") {
+          x = D.courbe([[0, 140], [3.6, 870]], tp);
+          y = 370 + (x > 280 && x < 720 ? Math.sin((x - 280) / 440 * Math.PI * 2) * 50 : 0);
+          s = 1.2 - 0.45 * D.fenetre(x, 650, 718, 22) - 0.25 * D.fenetre(x, 280, 720, 40);
+          p = D.borne(tp / 3.6, 0, 1);
+        } else if (phase === "bloque") {
+          x = D.courbe([[0, 140], [0.5, 215], [1.1, 150]], tp);
+          humeur = tp < 0.4 ? "surprise" : "triste";
+        }
+        mila({ x: x, y: y, s: s, t: t, temp: ETATS.liqHP.temp, etat: "liquide", humeur: humeur, regard: [1, 0] });
+        return p;
+      } };
+  };
+
+  /* le voyant liquide, vu de face : une fenêtre sur le circuit, plein et sans bulles ; au centre, la pastille d'humidité */
+  S.voyant = function (svg) {
+    toile(svg);
+    const LIQ = D.couleur(ETATS.liqHP.temp, false);
+    tube(svg, -20, 300, 360, 140); tube(svg, 660, 300, 360, 140);
+    [[330, 380], [620, 670]].forEach(([a, b]) => D.el("polygon", { points: [a, 286, b, 286, b + 12, 370, b, 454, a, 454, a - 12, 370].join(" "), fill: "url(#vm-laiton)", stroke: "#7c5c18", "stroke-width": 2 }, svg));
+    D.el("rect", { x: 330, y: 150, width: 340, height: 440, rx: 46, fill: "url(#vm-laiton)", stroke: "#7c5c18", "stroke-width": 3 }, svg);
+    D.el("circle", { cx: 500, cy: 370, r: 172, fill: "#6f5214" }, svg);
+    const cid = "heros-vitre-" + Math.random().toString(36).slice(2, 8), clip = D.el("clipPath", { id: cid }, svg);
+    D.el("circle", { cx: 500, cy: 370, r: 158 }, clip);
+    D.el("rect", { x: -20, y: 312, width: 360, height: 116 }, clip);
+    D.el("rect", { x: 660, y: 312, width: 360, height: 116 }, clip);
+    const vitre = D.el("g", { "clip-path": "url(#" + cid + ")" }, svg);
+    D.el("rect", { x: -20, y: 150, width: 1040, height: 440, fill: "#f4f8fc" }, vitre);
+    D.el("rect", { x: -20, y: 150, width: 1040, height: 440, fill: LIQ, opacity: 0.72 }, vitre); // plein de liquide, pas de bulles
+    const flux = D.courant(vitre, -20, 1020, 226, 516, 16, 7);
+    const devant = D.el("g", {}, vitre);
+    D.el("circle", { cx: 500, cy: 370, r: 40, fill: "#2e9e57", stroke: "#fff", "stroke-width": 6 }, svg); // la pastille d'humidité
+    D.el("path", { d: "M 392 262 A 152 152 0 0 1 562 230", fill: "none", stroke: "#fff", "stroke-width": 8, opacity: 0.55, "stroke-linecap": "round" }, svg); // le reflet de la vitre
+    const mila = D.heroine(devant, { r: 30 });
+    return { organe: "voyant", nom: "Voyant liquide", avant: "liqHP", apres: "liqHP", carte: [9.6, 10.4], bascule: 0,
+      maj: function (t, phase, tp) {
+        flux(t, 140);
+        let x = 150, humeur = "sourire", p = 0;
+        if (phase === "passe") { x = D.courbe([[0, 150], [3.4, 880]], tp); p = D.borne(tp / 3.4, 0, 1); }
+        else if (phase === "bloque") { x = D.courbe([[0, 150], [0.5, 230], [1.1, 160]], tp); humeur = tp < 0.4 ? "surprise" : "triste"; }
+        const y = (x > 344 && x < 656 ? 370 + 96 * Math.sin(Math.PI * (x - 344) / 312) : 370) + Math.sin(t * 2) * 3; // sous la pastille : on la voit passer
+        mila({ x: x, y: y, s: 1.1, t: t, temp: ETATS.liqHP.temp, etat: "liquide", humeur: humeur, regard: [1, 0] });
+        return p;
+      } };
+  };
+
+  /* l'électrovanne en coupe : la bobine sous courant devient un aimant et soulève le noyau, le passage s'ouvre ;
+     sans courant, le ressort pousse le noyau et ferme la ligne liquide (vanne fermée au repos) */
+  S.electrovanne = function (svg) {
+    toile(svg);
+    const LIQ = D.couleur(ETATS.liqHP.temp, false);
+    tube(svg, -20, 400, 360, 120); tube(svg, 660, 400, 360, 120);
+    D.el("rect", { x: 320, y: 370, width: 360, height: 190, rx: 24, fill: "url(#vm-laiton)", stroke: "#7c5c18", "stroke-width": 3 }, svg);
+    D.el("rect", { x: -20, y: 412, width: 1040, height: 96, fill: "#f4f8fc" }, svg); // le passage
+    D.el("rect", { x: -20, y: 412, width: 1040, height: 96, fill: LIQ, opacity: 0.82 }, svg);
+    const fluxA = D.courant(svg, -20, 480, 412, 508, 6, 4), fluxB = D.courant(svg, 520, 1020, 412, 508, 6, 5);
+    D.el("rect", { x: 472, y: 150, width: 56, height: 262, fill: "url(#vm-acier-h)" }, svg); // le tube du noyau
+    D.el("rect", { x: 480, y: 154, width: 40, height: 258, fill: "#eef2f6" }, svg);
+    const ressort = D.el("path", { fill: "none", stroke: "#5d6b7a", "stroke-width": 4, "stroke-linejoin": "round" }, svg);
+    const noyau = D.el("rect", { x: 482, width: 36, height: 196, rx: 6, fill: "url(#vm-acier-h)", stroke: "#4e5a66", "stroke-width": 2 }, svg);
+    const joint = D.el("rect", { x: 482, width: 36, height: 10, rx: 3, fill: "#1f2a36" }, svg);
+    const bob = D.el("g", {}, svg); // la bobine, de part et d'autre du tube
+    D.el("rect", { x: 404, y: 170, width: 68, height: 210, rx: 10, fill: "url(#vm-marine-h)" }, bob);
+    D.el("rect", { x: 528, y: 170, width: 68, height: 210, rx: 10, fill: "url(#vm-marine-h)" }, bob);
+    for (let k = 0; k < 10; k++) [412, 536].forEach(x => D.el("line", { x1: x, y1: 186 + k * 19, x2: x + 52, y2: 186 + k * 19, stroke: "#c57a45", "stroke-width": 7, "stroke-linecap": "round" }, bob));
+    const contour = D.el("rect", { x: 398, y: 164, width: 204, height: 222, rx: 14, fill: "none", "stroke-width": 4 }, svg);
+    const champ = D.el("g", {}, svg); // l'aimant : son champ, quand la bobine reçoit du courant
+    [[150, 118], [186, 146]].forEach(([rx, ry]) => D.el("ellipse", { cx: 500, cy: 275, rx: rx, ry: ry, fill: "none", stroke: "#ff6b35", "stroke-width": 4, "stroke-dasharray": "10 10" }, champ));
+    const cable = D.el("path", { d: "M 602 214 H 780 V 122", fill: "none", "stroke-width": 7, "stroke-linecap": "round", "stroke-dasharray": "16 10" }, svg);
+    D.el("rect", { x: 716, y: 62, width: 128, height: 60, rx: 10, fill: "#fff", stroke: D.BLEU, "stroke-width": 3 }, svg); // le thermostat de la chambre
+    D.el("rect", { x: 750, y: 70, width: 10, height: 34, rx: 5, fill: "#fff", stroke: D.BLEU, "stroke-width": 2.5 }, svg);
+    D.el("circle", { cx: 755, cy: 106, r: 8, fill: "#3d7fca", stroke: D.BLEU, "stroke-width": 2.5 }, svg);
+    const lampe = D.el("circle", { cx: 812, cy: 92, r: 11, stroke: D.BLEU, "stroke-width": 2 }, svg);
+    const dessus = D.el("g", {}, svg);
+    const mila = D.heroine(dessus, { r: 30 });
+    return { organe: "electrovanne", nom: "Électrovanne", avant: "liqHP", apres: "liqHP", carte: [11.6, 12.4], bascule: 0,
+      maj: function (t, phase, tp) {
+        const courant = phase === "passe" && tp > 0.2;
+        const ouvre = phase === "passe" ? D.lisse((tp - 0.45) / 0.5) : 0;
+        const haut = D.lerp(312, 204, ouvre); // haut du noyau : fermé, il descend jusqu'au fond du passage
+        noyau.setAttribute("y", haut.toFixed(1)); joint.setAttribute("y", (haut + 186).toFixed(1));
+        let d = "M 500 156";
+        for (let k = 1; k <= 8; k++) d += " L " + (k % 2 ? 488 : 512) + " " + (156 + (haut - 156) * k / 8).toFixed(1);
+        ressort.setAttribute("d", d);
+        champ.setAttribute("opacity", courant ? (0.5 + 0.4 * Math.sin(t * 6)).toFixed(2) : 0);
+        cable.setAttribute("stroke", courant ? "#ff6b35" : "#9aa7b5"); cable.setAttribute("stroke-dashoffset", courant ? (-t * 60).toFixed(1) : 0);
+        contour.setAttribute("stroke", courant ? "#ff6b35" : D.BLEU);
+        lampe.setAttribute("fill", courant ? "#2e9e57" : "#c9d4e2");
+        fluxA(phase === "passe" ? Math.max(0, tp - 0.9) : 0, 140); fluxB(phase === "passe" ? Math.max(0, tp - 0.9) : 0, 140); // vanne fermée : le liquide ne file pas
+        let x = 200, humeur = "sourire", p = 0;
+        if (phase === "passe") { x = D.courbe([[0, 200], [1, 230], [3.6, 860]], tp); p = D.borne(tp / 3.6, 0, 1); }
+        else if (phase === "bloque") { x = D.courbe([[0, 200], [0.6, 400], [1.3, 220]], tp); humeur = tp < 0.5 ? "surprise" : "triste"; }
+        mila({ x: x, y: 460 + Math.sin(t * 2) * 3, s: 1.0, t: t, temp: ETATS.liqHP.temp, etat: "liquide", humeur: humeur, regard: [1, 0] });
+        return p;
       } };
   };
 
@@ -338,7 +500,7 @@
     const fond = dia.g.querySelector("rect"), fil = filigrane(svg, [[Z.x + 150, Z.y + 120], [Z.x + Z.l / 2, Z.y + Z.h / 2], [Z.x + Z.l - 140, Z.y + Z.h - 110]], 190);
     if (fond) fond.after(fil); // le filigrane passe juste au-dessus du fond du diagramme, derrière les courbes
     const n = data.chemin.length - 1, VITESSE = 1; // un tour en 7 s, puis la molécule recommence
-    const SEUILS = { detendeur: 1, evaporateur: 3, compresseur: 4, condenseur: n };
+    const SEUILS = { ligne: 0, detendeur: 1, evaporateur: 3, compresseur: 4, condenseur: n }; // la ligne liquide : dès le départ (c'est là qu'elle part)
     return { organe: null, carte: null,
       maj: function (t) {
         const w = Math.max(0, t - 0.4) * VITESSE, m = w % n, vus = {};
