@@ -82,3 +82,7 @@ packs/fluides/res/*/tests/screenshots/
 # Bon à tirer de relecture du pack (fiches, compétences, questions ET CORRIGÉS) : généré en local par
 # build/relecture.mjs pour annoter, jamais publié (Franck, 04/10/2026 : « la retirer du site »).
 relecture.html
+
+# Doutes de rédaction du réseau Législation (bon à tirer interne) : servi publiquement jusqu'au 04/10/2026,
+# retiré du site sur décision de Franck (même règle que relecture.html). Il reste sur le disque, jamais publié.
+legislation/a-valider.html
