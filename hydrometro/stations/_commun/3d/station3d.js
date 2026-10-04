@@ -22,6 +22,7 @@
   const assurerMoteur = () => moteur || (moteur = (async () => {
     if (!window.Electro3D) await charger(BASE + 'electro3d.js' + Q);
     if (!window.Electro3DKit) await charger(BASE + 'kit.js' + Q);
+    if (!window.HydroNappe) await charger(BASE + 'modeles/nappe.js' + Q);     /* l'eau qui coule en nappe (modèles HydroMétro) */
   })());
 
   const brancher = async (scene, o) => {

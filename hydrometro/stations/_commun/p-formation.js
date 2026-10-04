@@ -123,7 +123,7 @@
     const id = window.location.pathname.split("/").filter(Boolean).slice(-2, -1)[0];
     const lessons = lessonsFor(id);
     const style = document.createElement("link");
-    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261004-1756"; document.head.append(style);
+    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261004-1836"; document.head.append(style);
     document.body.classList.add("p-course-active");
 
     const $ = (selector, root = document) => root.querySelector(selector);

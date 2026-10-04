@@ -58,7 +58,7 @@
 
   /* ================================================================ LE COMPTEUR D'ÉNERGIE THERMIQUE */
   Electro3D.definir('compteurEnergie', (T, K, ctx) => {
-    const M = K.mat;
+    const M = K.mat, N = HydroNappe(T, K);
     const A = aides(T, K);
     const C = A.C;
     const racine = new T.Group();
@@ -279,7 +279,8 @@
     faceXY([R(-XT, XT, YD - 10, YD + 10)], H.eauD, -3.8, facesEau);
 
     /* ================================================================ L'EAU QUI CIRCULE
-       Grains rouges au départ ; au retour, la teinte suit l'écart ΔT (rouge quand il est petit, bleu quand il est grand). */
+       Filet d'eau rouge au départ ; au retour, la teinte suit l'écart ΔT (rouge quand il est petit, bleu quand il est grand).
+       Des filets continus, jamais des grains : des bandes plus sombres y défilent dans le sens de l'eau. */
     const ligne = (x0, x1, y, pas) => { const p = [], n = Math.max(1, Math.round(Math.abs(x1 - x0) / pas)); for (let i = 0; i <= n; i++) p.push(V(x0 + (x1 - x0) * i / n, y, 0)); return p; };
     const RS = 17.5, NSP = 36;
     const ptsR = [...ligne(XT, 60, 0, 35), V(40, 0, 0), V(26, 0, 0), V(19, 3.5, 0), V(18, 13, 0), V(RS, 22, 0)];
@@ -288,10 +289,9 @@
     const cRetour = new T.CatmullRomCurve3(ptsR, false, 'centripetal');
     const ptsD = [...ligne(-XT, XS - 30, YD, 40), V(XS - 17, YD - 1, 0), V(XS - 8, YD - 5.5, 0), V(XS, YD - 8, 0), V(XS + 8, YD - 5.5, 0), V(XS + 17, YD - 1, 0), ...ligne(XS + 30, XT, YD, 40)];
     const cDepart = new T.CatmullRomCurve3(ptsD, false, 'centripetal');
-    const flotR = K.courant(cRetour, { pas: 14, rayon: 3.6, couleur: BLEU, vitesse: 70 });
-    const flotD = K.courant(cDepart, { pas: 14, rayon: 3.6, couleur: 0xb83a20, vitesse: 70 });
+    const flotR = N.filet(cRetour, { rayon: 3.6, couleur: BLEU, vitesse: 70, pas: 45 });
+    const flotD = N.filet(cDepart, { rayon: 3.6, couleur: 0xb83a20, vitesse: 70, pas: 45 });
     const flots = [flotR, flotD];
-    flots.forEach(f => { f.objet.material.side = T.DoubleSide; });   /* un grain coupé en deux se voit de l'intérieur */
     flots.forEach(f => racine.add(f.objet));
 
     /* ================================================================ L'ÉTAT */
@@ -455,7 +455,7 @@
      de chaleur restent entiers. Cotes EXAGÉRÉES : le vide autour de la tige fait 2,5 mm (1 mm sur un vrai
      doigt de gant) pour qu'on le voie ; la tige fait Ø6. */
   Electro3D.definir('thermometres', (T, K, ctx) => {
-    const M = K.mat;
+    const M = K.mat, N = HydroNappe(T, K);
     const A = aides(T, K);
     const C = A.C;
     const racine = new T.Group();
@@ -608,8 +608,8 @@
     /* le départ contourne le bout du doigt de gant, le retour aussi (la pointe descend à y0 - 4,5) */
     const cDepart = new T.CatmullRomCurve3([...ligne(-XT, XTH - 34, YD, 40), V(XTH - 18, YD - 2, 0), V(XTH - 9, YD - 6.5, 0), V(XTH, YD - 8, 0), V(XTH + 9, YD - 6.5, 0), V(XTH + 18, YD - 2, 0), ...ligne(XTH + 34, XT, YD, 40)], false, 'centripetal');
     const cRetour = new T.CatmullRomCurve3([...ligne(XT, XTH + 34, 0, 40), V(XTH + 18, -2, 0), V(XTH + 9, -6.5, 0), V(XTH, -8, 0), V(XTH - 9, -6.5, 0), V(XTH - 18, -2, 0), ...ligne(XTH - 34, -XT, 0, 40)], false, 'centripetal');
-    const flotD = K.courant(cDepart, { pas: 14, rayon: 3.4, couleur: 0xb83a20, vitesse: 70 });
-    const flotR = K.courant(cRetour, { pas: 14, rayon: 3.4, couleur: BLEU, vitesse: 70 });
+    const flotD = N.filet(cDepart, { rayon: 3.4, couleur: 0xb83a20, vitesse: 70, pas: 45 });
+    const flotR = N.filet(cRetour, { rayon: 3.4, couleur: BLEU, vitesse: 70, pas: 45 });
     const flotsEau = [flotD, flotR];
     const flots = [...flotsEau, ...flotsChaleur];
     flots.forEach(f => { f.objet.material.side = T.DoubleSide; });

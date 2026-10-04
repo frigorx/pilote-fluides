@@ -19,6 +19,7 @@
     const M = K.mat;
     const racine = new T.Group();
     const D = Math.PI / 180;
+    const N = HydroNappe(T, K);
 
     /* ---------------------------------------------------------------- matières à soi
        Tout ce qui se coupe a sa matière propre, double face (on voit l'intérieur des parois). */
@@ -269,9 +270,10 @@
     for (let k = 0; k <= 30; k++) { const a = (180 - k / 30 * 180) * D; ptsRef.push(V(Math.cos(a) * 45.5, Math.sin(a) * 45.5, 15.2)); }
     ptsRef.push(V(44, 0, 6), V(43, 0, -4), V(56, 0, ZP), V(120, 0, ZP), V(210, 0, ZP));
     const cRef = new T.CatmullRomCurve3(ptsRef, false, 'centripetal');
-    const flotAsp = K.courant(cAsp, { pas: 9, rayon: 2.3, couleur: 0x84b7ec, vitesse: 40 });
-    const flotRoue = spirales.map(c => K.courant(c, { pas: 8, rayon: 2.1, couleur: 0x3d7fca, vitesse: 30 }));
-    const flotRef = K.courant(cRef, { pas: 9, rayon: 2.4, couleur: 0x1b3a63, vitesse: 50 });
+    /* l'eau coule en filets continus (jamais des grains) : des bandes plus sombres y défilent, à la vitesse de l'eau */
+    const flotAsp = N.filet(cAsp, { rayon: 4, couleur: 0x84b7ec, vitesse: 40, pas: 40 });
+    const flotRoue = spirales.map(c => N.filet(c, { rayon: 2.4, couleur: 0x3d7fca, vitesse: 30, pas: 24 }));
+    const flotRef = N.filet(cRef, { rayon: 4, couleur: 0x1b3a63, vitesse: 50, pas: 40 });
     const flots = [flotAsp, ...flotRoue, flotRef];
     flots.forEach(f => racine.add(f.objet));
 

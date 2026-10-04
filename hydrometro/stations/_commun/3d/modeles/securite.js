@@ -117,7 +117,7 @@
 
   /* ================================================================== LE VASE D'EXPANSION */
   Electro3D.definir('vaseExpansion', (T, K, ctx) => {
-    const O = outils(T, K), D = O.D, M = K.mat;
+    const O = outils(T, K), D = O.D, M = K.mat, N = HydroNappe(T, K);
     const racine = new T.Group();
     const C = (m, couleur) => { const c = K.propre(m); if (couleur !== undefined) c.color.setHex(couleur); c.side = T.DoubleSide; return c; };
     const peinture = C(M.fonte, 0xb5302a); peinture.roughness = 0.45;
@@ -293,7 +293,8 @@
     const V = (x, y, z) => new T.Vector3(x, y, z), ZF = -3;
     const cB = new T.CatmullRomCurve3([V(-110, PY, ZF), V(-40, PY, ZF), V(-6, PY + 4, ZF), V(0, PY + 20, ZF), V(0, 110, ZF), V(0, Ye - 167, ZF)], false, 'centripetal');
     const lisiere = s => { const pts = []; for (let i = NP - 1; i >= NC; i--) pts.push(V(s * 0.93 * P[i][0], Ye + 0.93 * P[i][1], ZF)); return new T.CatmullRomCurve3(pts, false, 'centripetal'); };
-    const flots = [cB, lisiere(1), lisiere(-1)].map(c => K.courant(c, { pas: 9, rayon: 2.3, couleur: 0x2f7fd6, vitesse: 70 }));
+    /* l'eau qui entre et sort : trois filets continus (jamais des grains), des bandes plus sombres y défilent dans le sens de l'eau */
+    const flots = [N.filet(cB, { rayon: 5, couleur: 0x2f7fd6, vitesse: 70, pas: 40 }), ...[lisiere(1), lisiere(-1)].map(c => N.filet(c, { rayon: 2.6, couleur: 0x2f7fd6, vitesse: 70, pas: 40 }))];
     flots.forEach(f => { f.objet.visible = false; racine.add(f.objet); });
 
     /* ================================================================ L'ÉTAT */
@@ -429,7 +430,7 @@
      l'eau dépasse le tarage, elle soulève le clapet, l'eau s'échappe par la sortie vers l'entonnoir,
      la pression redescend et le ressort referme. */
   Electro3D.definir('soupape', (T, K, ctx) => {
-    const O = outils(T, K), M = K.mat;
+    const O = outils(T, K), M = K.mat, N = HydroNappe(T, K);
     const racine = new T.Group();
     const C = (m, couleur) => { const c = K.propre(m); if (couleur !== undefined) c.color.setHex(couleur); c.side = T.DoubleSide; return c; };
     const laiton = C(M.laiton), cuivre = C(M.cuivre), acier = C(M.acier, 0xd5dade), noir = C(M.plastiqueNoir);
@@ -510,7 +511,7 @@
     /* ================================================================ L'EAU QUI S'ÉCHAPPE */
     const V = (x, y, z) => new T.Vector3(x, y, z);
     const cFuite = new T.CatmullRomCurve3([V(0, 20, ZF), V(0, 33, ZF), V(8, 41, ZF), V(18, 48, ZF), V(46, 48, ZF), V(68, 48, ZF), V(75, 42, ZF), V(75, 0, ZF), V(75, -18, ZF), V(75, -46, ZF)], false, 'centripetal');
-    const fuite = K.courant(cFuite, { pas: 8, rayon: 2.4, couleur: 0xd9472b, vitesse: 90 });
+    const fuite = N.filet(cFuite, { rayon: 4, couleur: 0xd9472b, vitesse: 90, pas: 30 });     /* le jet : un filet continu, jamais des grains */
     fuite.objet.visible = false; racine.add(fuite.objet);
 
     /* ================================================================ L'ÉTAT */

@@ -22,6 +22,8 @@
     const D = Math.PI / 180;
     const V = (x, y, z) => new T.Vector3(x, y, z);
     const { clamp } = K;
+    const N = HydroNappe(T, K);
+    const ensemble = (...ns) => ({ set v(x) { ns.forEach(n => { n.v = x; }); } });      /* plusieurs nappes, une seule vitesse */
 
     /* ---------------------------------------------------------------- repères du modèle */
     const Y_S = 95, Y_R = -95, ZC = 50, RB = 17.5, RBI = 14.5;   /* axes des barres, tube Ø 35 × 3 */
@@ -146,7 +148,8 @@
       const g = new T.Group(); g.position.set(x, Y_S, ZC);
       g.add(hexY(12.5, 14, 34, laiton), ringY(12, 9.2, 34, 38, laiton));
       const tube = ringY(11, 9.2, 38, 116, verre); tube.userData.voile = true; calme(tube); g.add(tube);
-      const eau = cylY(9.1, 38, 116, eauTube); eau.userData.voile = true; calme(eau); g.add(eau);
+      const eau = cylY(9.1, 38, 116, eauTube.clone()); eau.userData.voile = true; calme(eau); g.add(eau);
+      const nappe = N.nappe(eau.material, 78, { pas: 26, quart: true, sens: 1 });                 /* l'eau monte */
       g.add(cylY(12.5, 116, 132, laiton));
       g.add(cylZ(8, 4, 24, laiton, 0, 124), hexZ(10.5, 14, 28, laiton, 0, 124));      /* la sortie vers le tube PER */
       /* la plaquette graduée, collée à gauche du tube, un peu en retrait */
@@ -159,7 +162,7 @@
       const u = grav('L/min', 3, { couleur: '#10233c' }); u.position.set(-19, 112, -0.1); g.add(u);
       const flotteur = K.mesh(K.sphere(6.5, 22), marine, 0, FY(0), 0); g.add(flotteur);
       racine.add(g);
-      return { g, flotteur, eau };
+      return { g, flotteur, eau, nappe };
     });
 
     /* ================================================================ LES VANNES DE RÉGLAGE (sur la barre de retour)
@@ -182,9 +185,10 @@
       }
       cap.add(K.mesh(new T.BoxGeometry(11, 0.7, 2.2), blanc, 0, 22.1, 0));             /* le repère du sens de rotation */
       g.add(cap);
-      const eau = cylY(7.4, 10, 46, eauBleue); eau.userData.voile = true; calme(eau); eau.visible = false; g.add(eau);
+      const eau = cylY(7.4, 10, 46, eauBleue.clone()); eau.userData.voile = true; calme(eau); eau.visible = false; g.add(eau);
+      const nappe = N.nappe(eau.material, 36, { pas: 22, quart: true, sens: -1 });                /* l'eau descend vers la barre de retour */
       racine.add(g);
-      return { g, cap, tige, eau };
+      return { g, cap, tige, eau, nappe };
     });
     const eauxCoupe = [];
     debits.forEach(d => {
@@ -324,16 +328,23 @@
       faceDe([...haut, R(-BL, BL, -RB, -RBI)], H.inox, 0.03, g);
     };
     paroiBarre(facesDepart); paroiBarre(facesRetour);
-    faceDe([polyEau()], H.eauR, -0.3, eDep);
-    faceDe([polyEau()], H.eauB, -0.3, eRet);
+    /* l'eau de la coupe coule en nappe : les bandes défilent sur ces faces (leurs UV sont en mm), dans le sens de l'eau —
+       le départ vers +X, le retour vers -X, dans les débitmètres vers le haut, dans les vannes vers le bas */
+    const eauDep = H.eauR.clone(), eauRet = H.eauB.clone();
+    faceDe([polyEau()], eauDep, -0.3, eDep);
+    faceDe([polyEau()], eauRet, -0.3, eRet);
+    const nappeDep = N.nappe(eauDep, 0, { pas: 60, sens: 1 }), nappeRet = N.nappe(eauRet, 0, { pas: 60, sens: -1 });
     /* les branches : l'eau du départ monte dans chaque débitmètre */
     XI.forEach((x, i) => {
-      faceDe([[[x - 8, 10], [x + 8, 10], [x + 8, 38], [x + 9.2, 38], [x + 9.2, 116], [x + 8, 116], [x + 8, 130], [x - 8, 130], [x - 8, 116], [x - 9.2, 116], [x - 9.2, 38], [x - 8, 38]]], H.eauR, -0.3, eDeb);
+      const mDeb = H.eauR.clone(), mVan = H.eauB.clone();
+      debits[i].nappe = ensemble(debits[i].nappe, N.nappe(mDeb, 0, { pas: 26, quart: true, sens: 1 }));
+      vannes[i].nappe = ensemble(vannes[i].nappe, N.nappe(mVan, 0, { pas: 22, quart: true, sens: -1 }));
+      faceDe([[[x - 8, 10], [x + 8, 10], [x + 8, 38], [x + 9.2, 38], [x + 9.2, 116], [x + 8, 116], [x + 8, 130], [x - 8, 130], [x - 8, 116], [x - 9.2, 116], [x - 9.2, 38], [x - 8, 38]]], mDeb, -0.3, eDeb);
       faceDe([...sym(x, 8, 12.5, 14, 34), ...sym(x, 9.2, 12, 34, 38), ...sym(x, 8, 12.5, 116, 132), R(x - 12.5, x + 12.5, 130, 132)], H.laiton, 0.04, facesDebit);
       faceDe(sym(x, 9.2, 11, 38, 116), H.verre, 0.04, facesDebit);
       faceDe([R(x - 27, x - 11, 38, 116)], uni(0xf1efe8), 0.02, facesDebit);
       /* l'eau du retour descend dans chaque vanne ; le clapet et le capuchon suivent le réglage */
-      faceDe([[[x - 7.5, 10], [x + 7.5, 10], [x + 7.5, 28], [x + 4, 28], [x + 4, 31], [x + 7.5, 31], [x + 7.5, 46], [x - 7.5, 46], [x - 7.5, 31], [x - 4, 31], [x - 4, 28], [x - 7.5, 28]]], H.eauB, -0.3, eVan);
+      faceDe([[[x - 7.5, 10], [x + 7.5, 10], [x + 7.5, 28], [x + 4, 28], [x + 4, 31], [x + 7.5, 31], [x + 7.5, 46], [x - 7.5, 46], [x - 7.5, 31], [x - 4, 31], [x - 4, 28], [x - 7.5, 28]]], mVan, -0.3, eVan);
       faceDe([...sym(x, 8, 12.5, 14, 24), ...sym(x, 7.5, 10.5, 24, 50), ...sym(x, 4, 7.5, 28, 31), ...sym(x, 2.5, 12, 50, 55), ...sym(x, 2.5, 8, 55, 70)], H.laiton, 0.04, facesVannes);
     });
     const faceVanne = XI.map(x => {
@@ -368,17 +379,6 @@
     const facesDalle = parentZ();
     faceDe([R(-350, 350, Y_DALLE - 40, Y_DALLE)], H.beton, 0.03, facesDalle);
 
-    /* ================================================================ L'EAU QUI CIRCULE (grains) */
-    const ligne = (a, b) => new T.LineCurve3(a, b);
-    const gS = ligne(V(Lx(-200), Y_S, ZC), V(BL - 4, Y_S, ZC)), gR = ligne(V(BL - 4, Y_R, ZC), V(Lx(-200), Y_R, ZC));
-    const grainsBarreDep = K.courant(gS, { pas: 12, rayon: 2.5, couleur: 0xd9472b, vitesse: 20 });
-    const grainsBarreRet = K.courant(gR, { pas: 12, rayon: 2.5, couleur: 0x2f7fd6, vitesse: 20 });
-    const grainsDebit = XI.map(x => K.courant(ligne(V(x, Y_S + 6, ZC), V(x, Y_S + 128, ZC)), { pas: 10, rayon: 2.3, couleur: 0xd9472b, vitesse: 24 }));
-    const grainsVanne = XI.map(x => K.courant(ligne(V(x, Y_R + 40, ZC), V(x, Y_R + 4, ZC)), { pas: 9, rayon: 2.2, couleur: 0x2f7fd6, vitesse: 24 }));
-    const courants = [grainsBarreDep, grainsBarreRet, ...grainsDebit, ...grainsVanne];
-    courants.forEach(c => { racine.add(c.objet); c.surCoupe = false; c.on = true; });
-    [grainsBarreDep, grainsBarreRet, ...grainsVanne].forEach(c => { c.surCoupe = true; });   /* ils sont dans l'acier : on ne les voit qu'en coupe */
-
     /* ================================================================ L'ÉTAT */
     const E = { coupe: false, demonte: false, dernier: null };
     const ou = BOUCLES.map(b => K.mobile(b.o0 / 100, 170, 21));     /* l'ouverture de la vanne, 0 → 1 */
@@ -407,21 +407,16 @@
       faceVanne[i].gt.position.y = COURSE * o; faceVanne[i].gc.position.y = 53 + COURSE * o;
       debits[i].flotteur.position.y = FY(fl[i].x);
     };
-    const visibles = () => {
-      courants.forEach(c => { c.objet.visible = c.on && !E.demonte && (!c.surCoupe || E.coupe); });
-    };
-    const reglerGrains = () => {
+    /* l'eau coule en nappe : les bandes avancent à la vitesse de l'eau, et s'immobilisent quand elle ne passe plus */
+    const reglerEau = () => {
       let total = 0;
       for (let i = 0; i < 3; i++) {
         const q = qNow(i); total += q;
-        const on = q > 0.02;
-        grainsDebit[i].regler({ debit: on ? 1 : 0, vitesse: 8 + q * 22 }); grainsDebit[i].on = on;
-        grainsVanne[i].regler({ debit: on ? 1 : 0, vitesse: 8 + q * 22 }); grainsVanne[i].on = on;
+        const v = q > 0.02 ? 8 + q * 22 : 0;
+        debits[i].nappe.v = v; vannes[i].nappe.v = v;
       }
-      const onT = total > 0.02;
-      grainsBarreDep.regler({ debit: onT ? 1 : 0, vitesse: 6 + total * 12 }); grainsBarreDep.on = onT;
-      grainsBarreRet.regler({ debit: onT ? 1 : 0, vitesse: 6 + total * 12 }); grainsBarreRet.on = onT;
-      visibles();
+      const vT = total > 0.02 ? 6 + total * 12 : 0;
+      nappeDep.v = vT; nappeRet.v = vT;
     };
     const majMesures = () => ctx.mesures(BOUCLES.map((b, i) => ({ libelle: 'La boucle ' + b.id, valeur: nb(qCible(i), 1) + ' L/min' })));
     const majTexte = () => {
@@ -437,18 +432,17 @@
       E.coupe = on;
       const plan = on ? [new T.Plane(new T.Vector3(0, 0, -1), ZC)] : null;
       const exclus = new Set();
-      [faces, ...debits.map(d => d.flotteur), ...courants.map(c => c.objet)].forEach(g => g.traverse(o => exclus.add(o)));
+      [faces, ...debits.map(d => d.flotteur)].forEach(g => g.traverse(o => exclus.add(o)));
       racine.traverse(o => {
         if (!o.isMesh || exclus.has(o)) return;
         [o.material, o.userData.matAvantSurbrillance].forEach(m => { if (m) { m.clippingPlanes = plan; m.needsUpdate = true; } });
       });
       faces.visible = on && !E.demonte;
       eauxCoupe.forEach(e => { e.visible = on; });
-      visibles();
     };
 
     for (let i = 0; i < 3; i++) { poser(i); colorier(i, qNow(i)); }
-    reglerGrains(); majTexte();
+    reglerEau(); majTexte();
 
     /* ---------------------------------------------------------------- pièces */
     const pieces = [
@@ -519,7 +513,7 @@
       },
       surEclate(on) {
         if (on && E.coupe && ctx.element && ctx.element.fantome) ctx.element.fantome(false);   /* on démonte la machine entière, pas sa coupe */
-        E.demonte = on; faces.visible = E.coupe && !on; visibles();
+        E.demonte = on; faces.visible = E.coupe && !on;
       },
       animer(dt) {
         for (let i = 0; i < 3; i++) {
@@ -529,8 +523,8 @@
           poser(i);
           if (m1 || m2) colorier(i, qNow(i));
         }
-        reglerGrains();
-        courants.forEach(c => { if (c.objet.visible) c.animer(dt); });
+        reglerEau();
+        N.animer(dt);
         return true;
       }
     };
@@ -554,6 +548,7 @@
     const D = Math.PI / 180;
     const { clamp } = K;
     const V = (x, y, z) => new T.Vector3(x, y, z);
+    const N = HydroNappe(T, K);
 
     const W = 800, NC = 24, PITCH = W / NC, CW = 26.5, PZ = 14;
     const ZR = 32, ZF = 81;                 /* axes des deux panneaux ; plan de coupe */
@@ -716,6 +711,9 @@
 
     const eauHaut = new T.MeshBasicMaterial({ color: 0xd9472b, side: T.DoubleSide }), eauBas = new T.MeshBasicMaterial({ color: 0x2f7fd6, side: T.DoubleSide });
     const eauCan = new T.MeshBasicMaterial({ vertexColors: true, side: T.DoubleSide });
+    /* l'eau des canaux coule de haut en bas : des bandes plus sombres descendent dans la nappe, à la vitesse prévue
+       (la même texture pour les 24 canaux, qui ont le même débit) ; eau arrêtée : elles s'immobilisent et s'estompent */
+    const nappeCan = N.nappe(eauCan, 530, { pas: 110, quart: true, sens: -1, fort: 0.7 });
     const eauAval = new T.MeshBasicMaterial({ color: 0xd9472b, side: T.DoubleSide }), eauChaude = new T.MeshBasicMaterial({ color: 0xd9472b, side: T.DoubleSide });
     const eauRetourMat = new T.MeshBasicMaterial({ color: 0x2f7fd6, side: T.DoubleSide });
     /* le panneau : la tôle (hachures) et, par-dessus, l'eau dans les collecteurs et les canaux */
@@ -748,14 +746,6 @@
     faceDe([R(395, 410, -5.5, 5.5)], eauAval, 0.1, ePurge);
     faceDe([R(411, 417, 11, 20), R(409, 419, 20, 24)], Hh.laiton, 0.35, facesPurge);
 
-    /* ================================================================ L'EAU : grains dans les canaux (en coupe) */
-    const grains = [];
-    for (let k = 0; k < NC; k++) {
-      const x = -W / 2 + (k + 0.5) * PITCH;
-      const g = K.courant(new T.LineCurve3(V(x, 262, ZF + 0.3), V(x, -262, ZF + 0.3)), { pas: 17, rayon: 2.1, couleur: 0xfff3e0, vitesse: 40 });
-      g.objet.visible = false; racine.add(g.objet); grains.push(g);
-    }
-
     /* ================================================================ L'ÉTAT */
     const E = { T: 18, part: 35, coupe: false, demonte: false };
     const ou = K.mobile(1, 150, 19);
@@ -780,11 +770,7 @@
       plugG.position.x = 8 * f; facesPlug.position.x = 8 * f;
       souffletG.scale.x = 1 + f * 8 / 32; facesSouf.scale.x = souffletG.scale.x;
     };
-    const visibles = () => {
-      const on = E.coupe && !E.demonte && qNow() > 0.02;
-      grains.forEach(g => { g.objet.visible = on; });
-    };
-    const reglerGrains = () => { const q = qNow(); grains.forEach(g => g.regler({ debit: q > 0.02 ? 1 : 0, vitesse: 40 + 190 * q })); visibles(); };
+    const reglerEau = () => { const q = qNow(); nappeCan.v = q > 0.02 ? 40 + 190 * q : 0; };
     const majTexte = () => {
       const o = ou.cible, q = E.part / 100 * o, pct = Math.round(o * 100);
       ctx.mesures([
@@ -801,16 +787,15 @@
       E.coupe = on;
       const plan = on ? [new T.Plane(new T.Vector3(0, 0, -1), ZF)] : null;
       const exclus = new Set();
-      [faces, ...grains.map(g => g.objet)].forEach(g => g.traverse(o => exclus.add(o)));
+      [faces].forEach(g => g.traverse(o => exclus.add(o)));
       racine.traverse(o => {
         if (!o.isMesh || exclus.has(o)) return;
         [o.material, o.userData.matAvantSurbrillance].forEach(m => { if (m) { m.clippingPlanes = plan; m.needsUpdate = true; } });
       });
       faces.visible = on && !E.demonte; eauChambre.visible = on;
-      visibles();
     };
 
-    poser(); colorier(qNow()); reglerGrains(); majTexte();
+    poser(); colorier(qNow()); reglerEau(); majTexte();
 
     /* ---------------------------------------------------------------- pièces */
     const pieces = [
@@ -881,16 +866,15 @@
       },
       surEclate(on) {
         if (on && E.coupe && ctx.element && ctx.element.fantome) ctx.element.fantome(false);
-        E.demonte = on; faces.visible = E.coupe && !on; visibles();
+        E.demonte = on; faces.visible = E.coupe && !on;
       },
       animer(dt) {
         const bouge = ou.pas(dt);
         poser();
         const q = qNow();
         if (bouge) colorier(q);
-        reglerGrains();
-        let vivant = false;
-        grains.forEach(g => { if (g.objet.visible) { g.animer(dt); vivant = true; } });
+        reglerEau();
+        const vivant = E.coupe && !E.demonte && N.animer(dt);      /* l'eau ne se voit qu'en coupe */
         return bouge || vivant;
       }
     };
