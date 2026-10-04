@@ -3,6 +3,32 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 03/10 (soir) → 04/10 (nuit) — SEPT « ÉDITIONS DU VOYAGE » EN LIGNE, STUDIO À 23 FILMS (`193e08b8` → `b5c5ee62`)
+>
+> Feu vert total de F. Henninot (« autonomie totale, aucun arrêt tant que tout n'est pas sur inerweb.fr »). Sept chats ont
+> fabriqué en parallèle, une session superviseur a publié (suivi : `CLAUDE-ESPACE-TRAVAIL/SUPERVISION-FILMS-STUDIO.md`).
+> En ligne, dans l'ordre : compresseur à vis, centrale booster CO₂, sous-refroidisseur, centrales frigorifiques, régulation
+> d'une centrale, bi-étagé NH₃, glissement R407C — chacun = `voyage/<éd>.html` (station du film, gabarit `co2.html`,
+> sans livret) + `voyage/videos-<éd>/` + `voyage/module-<éd>.html` (écran partagé : scène + **diagramme enthalpique**,
+> moteur commun `jouerezo/moteur/voyage-diagramme.js` venu de la branche `voyage-vis`, rétrocompatible : les éditions
+> originale, CO₂, NH₃ ne changent pas) + données, scènes, voix dans `jouerezo/` + vignette `studio/vignettes/<éd>.jpg`
+> + porte « 🎬 Le film » dans la station du cours (compresseur-interactif ×2, co2-r744 escales booster,
+> surchauffe-sous-refroidissement, regulateur-electronique, glissement-temperature ×2, nh3.html).
+> **Studio** : nouvelle salle « Les éditions du Voyage » (`studio/index.html#t-editions`), `reseaux.js` « 23 films »
+> + raccourci, `build/accueil.mjs`. **Maillage** : `voyage/` mène aux éditions (carte « Les autres voyages »), chaque
+> station montre « La suite ». **Cinéma du quartier** : 31 cours (les éditions CO₂/NH₃ y manquaient aussi).
+> **Sitemap** : studio/ + 9 stations de films (les modules restent noindex). **Catalogue RAG** :
+> `outils/catalogue-stations.mjs` relève désormais `voyage/*.html`, `studio/` et 4 applications (jouerezo, simurezo,
+> quartier, rezotools) — avant, l'indexation du 03/10 après-midi était hors script et aurait été effacée.
+> **Pièges** : (1) `curl` sans User-Agent navigateur → 403 Cloudflare, sonder avec `-A "Mozilla/5.0 …"` ;
+> (2) `build/retour-accueil.mjs` doit être relancé après toute page nouvelle (oublié pour 5 modules, rattrapé) ;
+> (3) jamais `git stash -u` dans un worktree où d'autres sessions écrivent (incident 22 h 40, restauré) ;
+> (4) le checkout qui sert au catalogue garde `docs/catalogue-2026-09` modifié après chaque relevé : le jeter avant `pull`.
+> **Reste / à décider par Franck** : les films sur `plan.html` (carte métro) — pictogramme 🎬 sur les stations plutôt
+> que 9 arrêts de plus ; relecture des récits glissement, régulation, sous-refroidisseur, bi-étagé (fabriqués par
+> délégation ; corriger = refaire seulement les pistes changées) ; voix edge-tts à remplacer avant YouTube ;
+> PARKING : 4 films CO₂, circuit d'huile, récupération de chaleur (`jouerezo/voyage-booster/REPRISE-VOYAGE-BOOSTER.md`).
+
 > ## 02/10 — RÉZOTOOLS EN LIGNE + RÉGLETTE P-T CORRIGÉE
 >
 > `rezotools/` (satellite, hors PAGES) : 7 familles, 33 liens, 13 calculettes dans `calculettes/` =
