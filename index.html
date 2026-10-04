@@ -19,6 +19,10 @@
   /* Le plan a quitté l'accueil pour plan.html le 17/09/2026. Les liens gravés dans les modules
      (#ligne=…, #carte, #chercher) et les recherches (#q=…) continuent d'y mener. */
   if (/^#(ligne=|q=|carte$|chercher$)/.test(location.hash)) location.replace("plan.html" + location.hash);
+  /* L'appli a quitté l'accueil pour formation.html le même jour. Les adresses du livre HabFluide
+     (inerweb.fr/f/…, générées par livre-habfluide/build/qr.mjs) visent encore « /?carte=… » :
+     sans ce renvoi, elles tombaient sur l'accueil (constaté par Franck le 04/10/2026). */
+  if (/[?&]carte=/.test(location.search)) location.replace("formation.html" + location.search + location.hash);
 </script>
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="inerWeb Édu">
@@ -1722,11 +1726,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=3e77bd72e5"></script>
-<script src="chiffres.gen.js?v=3e77bd72e5"></script>
+<script src="moteur/lisibilite.js?v=0f55b28ccd"></script>
+<script src="chiffres.gen.js?v=0f55b28ccd"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=3e77bd72e5" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=0f55b28ccd" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

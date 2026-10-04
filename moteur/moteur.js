@@ -397,15 +397,17 @@
      mémorisé ensuite — de quoi tester plusieurs équilibres en examen blanc
      sans toucher au code. Décision F. Henninot : « amener les gens à la
      réussite, pas à l'échec » — d'où un défaut à 2, pas plus haut. */
-  var CRANS = [
-    { nom: "Doux", coef: 1.15 },
-    { nom: "Standard", coef: 1.35 },
-    { nom: "Exigeant", coef: 1.55 },
-    { nom: "Sévère", coef: 1.75 },
-    { nom: "Cauchemar", coef: 2.0 },
-  ];
-
   function difficulteReglee() {
+    /* Déclaré DANS la fonction (04/10/2026) : un `var` du module n'est pas
+       encore rempli quand une adresse ?carte=<examen> ouvre l'examen dès le
+       premier render() — la page restait blanche (séries rev-g*, f/…). */
+    var CRANS = [
+      { nom: "Doux", coef: 1.15 },
+      { nom: "Standard", coef: 1.35 },
+      { nom: "Exigeant", coef: 1.55 },
+      { nom: "Sévère", coef: 1.75 },
+      { nom: "Cauchemar", coef: 2.0 },
+    ];
     var i = 1; // Standard
     try {
       var url = new URLSearchParams(location.search).get("difficulte");
