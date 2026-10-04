@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la première photo : un climatiseur au mur d'un bureau. Vous en croiserez toute votre vie
+  decouvrir: `Sous la scène, regardez la première photo : un climatiseur au mur d'un bureau. Vous en croiserez toute votre vie
 de technicien. Alors, une question simple pour commencer : que fait cet appareil ?
 Beaucoup de gens répondent : il fabrique du froid. C'est faux, et toute cette station tient dans cette
 différence. Un climatiseur ne fabrique pas de froid. Il prend la chaleur de la pièce, et il la jette

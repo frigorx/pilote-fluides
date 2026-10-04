@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la première photo : une main, une télécommande, un climatiseur au mur. Le geste que tout
+  decouvrir: `Sous la scène, regardez la première photo : une main, une télécommande, un climatiseur au mur. Le geste que tout
 le monde connaît, et pourtant la partie de la machine la plus mal comprise.
 Cette télécommande ne règle rien dans le circuit. Elle ne touche ni au compresseur, ni au fluide. Elle
 envoie un ordre, en infrarouge, comme celle d'un téléviseur. L'ordre arrive à la carte électronique de

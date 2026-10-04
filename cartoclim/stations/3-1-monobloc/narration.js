@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la première photo. Un climatiseur mobile, posé dans la pièce : un seul boîtier, et une grosse
+  decouvrir: `Sous la scène, regardez la première photo. Un climatiseur mobile, posé dans la pièce : un seul boîtier, et une grosse
 gaine blanche qui monte vers la fenêtre.
 Monobloc veut dire un seul bloc. Tout le circuit frigorifique est là-dedans, le compresseur, les deux batteries,
 le détendeur. Pas d'unité dehors, pas de tubes de cuivre. On le branche, on passe la gaine par la fenêtre, et il marche.

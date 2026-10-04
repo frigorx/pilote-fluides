@@ -27,9 +27,9 @@ ModeleAppareil.construire({
   scene: () => ScenesStation.trajetDeLaChaleur(),
 
   technologie: [
-    ["L’unité intérieure", "une batterie à ailettes (l’<strong>évaporateur</strong>), une <strong>turbine</strong> qui aspire l’air de la pièce et le souffle à travers, un filtre, des volets, un <strong>bac à condensats</strong>, deux sondes (air et batterie) et la carte électronique qui écoute la télécommande."],
+    ["L’unité intérieure", "un filtre, une batterie à ailettes (l’<strong>évaporateur</strong>), une <strong>turbine</strong> placée après elle, qui aspire l’air de la pièce à travers le filtre et la batterie, puis le souffle dans la pièce, des volets, un <strong>bac à condensats</strong>, deux sondes (air et batterie) et la carte électronique qui écoute la télécommande."],
     ["L’unité extérieure", "le <strong>compresseur</strong> — rotatif le plus souvent —, une batterie à ailettes (le <strong>condenseur</strong>) balayée par une hélice, le <strong>détendeur</strong> (capillaire ou électronique), la <strong>vanne 4 voies</strong> si l’appareil est réversible, et les <strong>deux vannes de service</strong> où se raccordent les tubes."],
-    ["Les liaisons", "deux tubes de cuivre isolés : le <strong>petit</strong> transporte le fluide <strong>liquide</strong>, le <strong>gros</strong> transporte le <strong>gaz</strong>, plus volumineux. À côté, le câble qui relie les deux unités et le tuyau d’évacuation de l’eau."],
+    ["Les liaisons", "deux tubes de cuivre isolés : le <strong>petit</strong> transporte le fluide <strong>liquide</strong> (en mode froid, un mélange de liquide et de vapeur à basse pression, après le détendeur), le <strong>gros</strong> transporte le <strong>gaz</strong>, plus volumineux. À côté, le câble qui relie les deux unités et le tuyau d’évacuation de l’eau."],
     ["Le cycle", "le même que dans toute machine frigorifique : le fluide <strong>s’évapore dedans</strong> en prenant la chaleur de l’air, le compresseur le comprime, il <strong>se condense dehors</strong> en rendant cette chaleur, le détendeur le ramène à basse pression. Le dessin le déroule pas à pas."]
   ],
 

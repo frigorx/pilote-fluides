@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la première photo. Dehors, un seul boîtier, avec sa grille. Dedans, deux unités
+  decouvrir: `Sous la scène, regardez la première photo. Dehors, un seul boîtier, avec sa grille. Dedans, deux unités
 murales, une par pièce. C'est un multisplit : une seule unité extérieure pour plusieurs unités intérieures.
 Pourquoi faire comme ça ? Pour ne pas poser un boîtier dehors par pièce. Sur une façade ou un balcon,
 la place est comptée, et trois boîtiers côte à côte, ce n'est ni joli ni commode.

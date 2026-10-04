@@ -3,7 +3,7 @@
    Aucun rythme d'entretien, aucune valeur chiffrée. Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la photo. La façade de l'unité intérieure est ouverte, et derrière, deux grilles
+  decouvrir: `Sous la scène, regardez la photo. La façade de l'unité intérieure est ouverte, et derrière, deux grilles
 sombres : ce sont les filtres. Ils arrêtent la poussière de la pièce avant qu'elle n'atteigne la batterie.
 Un climatiseur brasse de l'air, et l'air est plein de poussière. Tout ce qui passe se dépose quelque
 part : sur le filtre d'abord, puis sur la batterie, dans le bac où coule l'eau, et dehors sur l'autre

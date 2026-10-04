@@ -64,7 +64,7 @@ const ScenesStation = (() => {
   function trajetDeLaChaleur() {
     const D = window.VOYAGE_DESSIN;
     const d = svg('0 0 1000 640',
-      'Un split en coupe schématique, en marche en mode froid : l’unité extérieure en haut avec condenseur, hélice, compresseur et détendeur ; l’unité intérieure en bas avec la turbine, l’évaporateur et le bac à condensats ; deux tubes traversent le mur. L’air de la pièce entre tiède et ressort froid ; l’air du dehors ressort chaud ; le liquide coule dans le petit tube, la vapeur file dans le gros.');
+      'Un split en coupe schématique, en marche en mode froid : l’unité extérieure en haut avec condenseur, hélice, compresseur et détendeur ; l’unité intérieure en bas avec l’évaporateur, la turbine placée après lui et le bac à condensats ; deux tubes traversent le mur. L’air de la pièce traverse l’évaporateur, tiède, puis la turbine le souffle froid dans la pièce ; l’air du dehors ressort chaud ; un mélange de liquide et de vapeur coule dans le petit tube, la vapeur file dans le gros.');
     const FIGE = !!(window.inerwebAnimations && window.inerwebAnimations.actives === false);
     const RETRAIT = 0.4;                                   /* ce qui n'agit pas à cette étape */
     const CUIVRE = '#c57a45', CUIVRE_BORD = '#7a3f1c', CREUX = '#f4f8fc', EAU = '#4f9fc0';
@@ -91,10 +91,11 @@ const ScenesStation = (() => {
     ailettes('cond', 342, 96, 206);
     ailettes('evap', 352, 420, 528);
 
-    /* l'hélice (dehors) et la turbine (dedans) */
+    /* l'hélice (dehors) et la turbine (dedans). Split mural : la turbine tangentielle est APRÈS la batterie,
+       elle aspire l'air de la pièce à travers le filtre et la batterie, puis le souffle dans la pièce. */
     const helice = D.ventilateur(couche('helice'), 690, 151, 46);
     const turbine = (() => {
-      const g = D.el('g', { transform: 'translate(230 474)' }, couche('turbine')), r = 36;
+      const g = D.el('g', { transform: 'translate(702 469)' }, couche('turbine')), r = 30;
       D.el('circle', { r, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
       const roue = D.el('g', {}, g);
       for (let i = 0; i < 16; i++) D.el('path', { d: 'M ' + r * 0.56 + ' 0 Q ' + r * 0.8 + ' ' + (-r * 0.02) + ' ' + r * 0.88 + ' ' + (-r * 0.26),
@@ -146,6 +147,25 @@ const ScenesStation = (() => {
       (b, x, y, ang, f) => { b.setAttribute('cx', x.toFixed(1)); b.setAttribute('cy', y.toFixed(1));
         b.setAttribute('r', (0.6 + int * 0.33 * f).toFixed(1)); b.setAttribute('opacity', D.borne(f * 1.6, 0, 1).toFixed(2)); }));
 
+    /* mélange liquide + vapeur (petit tube en mode froid, après le détendeur) : le liquide reste un corps
+       continu — tube plein, reflets qui filent — et la vapeur y file en poches allongées de longueurs
+       inégales, nées au détendeur : jamais des billes isolées sur un tube vide */
+    const POCHES = [9, 5, 12, 6, 10, 4, 8];
+    const melange = (g, tr, int, couleur, v) => {
+      const t = { d: tr.d, fill: 'none', 'stroke-linejoin': 'round' };
+      D.el('path', Object.assign({ stroke: couleur, 'stroke-width': int, opacity: 0.92 }, t), g);
+      const reflet = D.el('path', Object.assign({ stroke: C.papier, 'stroke-width': 1.3, 'stroke-dasharray': '12 30', opacity: 0.4 }, t), g);
+      anime.push(t2 => reflet.setAttribute('stroke-dashoffset', (-(t2 * v) % 42).toFixed(1)));
+      anime.push(filer(g, tr, Math.max(4, Math.round(tr.L / 24)), v * 1.2,
+        (p, i) => Object.assign(D.el('line', { stroke: C.papier, 'stroke-linecap': 'round', 'stroke-width': (int * (0.5 + 0.12 * (i % 3))).toFixed(1) }, p), { _l: POCHES[i % POCHES.length] }),
+        (b, x, y, ang, f) => {
+          const dx = Math.cos(ang * Math.PI / 180) * b._l / 2, dy = Math.sin(ang * Math.PI / 180) * b._l / 2;
+          b.setAttribute('x1', (x - dx).toFixed(1)); b.setAttribute('y1', (y - dy).toFixed(1));
+          b.setAttribute('x2', (x + dx).toFixed(1)); b.setAttribute('y2', (y + dy).toFixed(1));
+          b.setAttribute('opacity', (0.95 * D.fenetre(f, 0, 1, 0.06)).toFixed(2));
+        }));
+    };
+
     /* le parcours, dans le sens du fluide (mode froid) */
     const refoul = trajet([[807, 196], [807, 48], [590, 48], [590, 113]]);
     const cond = trajet([[590, 113], [330, 113], ...coude(330, 113, 151, -1), [330, 151], [590, 151], ...coude(590, 151, 189, 1), [590, 189], [330, 189]]);
@@ -159,7 +179,7 @@ const ScenesStation = (() => {
     const [condV, condL] = couper(cond, 0.55);
     vapeur(g, condV, 8, 0.92, 55, 20, 0.55); liquide(g, condL, 8, D.couleur(0.62), 30);
     g = couche('liqHP'); tube(g, liqHP, 12, 6); liquide(g, liqHP, 6, D.couleur(0.62), 30);
-    g = couche('liqBP'); tube(g, liqBP, 12, 6); liquide(g, liqBP, 6, D.couleur(0.08), 32);
+    g = couche('liqBP'); tube(g, liqBP, 12, 6); melange(g, liqBP, 6, D.couleur(0.08), 32);
     g = couche('evap'); tube(g, evap, 14, 8);
     const [evapL, evapV] = couper(evap, 0.55);
     liquide(g, evapL, 8, D.couleur(0.08), 30); bulles(g, evapL, 8, 30); vapeur(g, evapV, 8, 0.16, 55, 20);
@@ -199,14 +219,14 @@ const ScenesStation = (() => {
     ecrire(760, 238, 'compresseur', 'compr', C.chaud, Object.assign({}, G, F));
     ecrire(290, 238, 'détendeur', 'detendeur', C.froid, Object.assign({}, G, F));
     ecrire(892, 293, 'le mur', null, null, { fill: C.gris });
-    ecrire(326, 321, 'petit tube : liquide', 'liqBP', C.orange, G);
+    ecrire(326, 321, 'petit tube : liquide + vapeur', 'liqBP', C.orange, G);
     ecrire(790, 321, 'gros tube : gaz', 'gaz', C.orange, Object.assign({}, G, F));
     ecrire(550, 368, 'UNITÉ INTÉRIEURE — dans la pièce', null, null, { 'font-size': 22, 'font-weight': 700, 'text-anchor': 'middle' });
     ecrire(126, 412, 'air de la pièce', 'airInt', C.ambre);
     ecrire(470, 408, 'évaporateur', 'evap', C.froid, Object.assign({}, G, M));
     ecrire(882, 408, 'air frais', 'airInt', C.froid);
     ecrire(882, 435, 'soufflé', 'airInt', C.froid);
-    ecrire(230, 542, 'turbine', 'turbine', C.navy, M);
+    ecrire(702, 424, 'turbine', 'turbine', C.navy, M);
     ecrire(470, 602, 'bac à condensats', 'bac', C.eau, M);
     ecrire(884, 556, '→ dehors', 'eau', C.eau);
 
@@ -239,7 +259,7 @@ const ScenesStation = (() => {
     };
 
     const etapes = [
-      { titre: 'L’air de la pièce traverse l’évaporateur', dire: 'La turbine aspire l’air de la pièce et le pousse à travers la batterie. Le fluide, qui est froid dedans, bout : il prend la chaleur de l’air. L’air ressort plus frais.',
+      { titre: 'L’air de la pièce traverse l’évaporateur', dire: 'La turbine aspire l’air de la pièce à travers le filtre et la batterie, puis le souffle dans la pièce. Le fluide, qui est froid dedans, bout : il prend la chaleur de l’air. L’air ressort plus frais.',
         peindre: () => allumer(0) },
       { titre: 'Le gaz part par le gros tube', dire: 'Devenu gaz, le fluide quitte l’unité intérieure par le gros tube, celui qu’on appelle la ligne gaz, et traverse le mur.',
         peindre: () => allumer(1) },
@@ -247,7 +267,7 @@ const ScenesStation = (() => {
         peindre: () => allumer(2) },
       { titre: 'Le condenseur rend la chaleur dehors', dire: 'L’hélice balaie le condenseur avec l’air extérieur. Le gaz chaud se refroidit, redevient liquide, et la chaleur de la pièce est rejetée dehors.',
         peindre: () => allumer(3) },
-      { titre: 'Le détendeur fait chuter la pression', dire: 'Le liquide passe le détendeur : sa pression tombe d’un coup, il devient froid, et il repart vers l’intérieur par le petit tube, la ligne liquide.',
+      { titre: 'Le détendeur fait chuter la pression', dire: 'Le liquide passe le détendeur : sa pression tombe d’un coup, il devient froid, une partie s’évapore déjà, et ce mélange de liquide et de vapeur repart vers l’intérieur par le petit tube, la ligne liquide.',
         peindre: () => allumer(4) },
       { titre: 'Et l’eau ? Les condensats', dire: 'L’air de la pièce, refroidi sur la batterie, lâche une partie de son humidité. Cette eau tombe dans le bac et s’évacue dehors par le tuyau de condensats.',
         peindre: () => allumer(5) }

@@ -343,7 +343,7 @@ const ScenesStation = (() => {
         dire: 'L’eau de l’air tombe dans le bac et part par le tuyau, jusqu’à dehors. Si quelque chose bouche le bac ou le tuyau, l’eau déborde : c’est le plafond du client qui coule. Le technicien verse de l’eau dans le bac et regarde si elle ressort au bout du tuyau.',
         peindre: () => allumer(2) },
       { titre: 'La turbine brasse l’air sans freiner',
-        dire: 'La turbine aspire l’air de la pièce et le souffle à travers la batterie. Encrassée, elle brasse moins d’air et vibre. Le technicien la nettoie et vérifie qu’elle tourne sans bruit anormal.',
+        dire: 'La turbine, placée après la batterie, aspire l’air de la pièce à travers le filtre et la batterie, puis le souffle dans la pièce. Encrassée, elle brasse moins d’air et vibre. Le technicien la nettoie et vérifie qu’elle tourne sans bruit anormal.',
         peindre: () => allumer(3) },
       { titre: 'La batterie extérieure respire',
         dire: 'Dehors, l’hélice pousse l’air à travers la batterie. Feuilles et poussière l’étouffent : l’air ne passe plus, la haute pression monte et la machine consomme plus. On nettoie à l’eau à basse pression ou au peigne à ailettes, jamais au jet puissant droit sur les ailettes.',

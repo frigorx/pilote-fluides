@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la première photo. Deux boîtiers, et une télécommande.
+  decouvrir: `Sous la scène, regardez la première photo. Deux boîtiers, et une télécommande.
 Le boîtier avec la grille ronde, c'est l'unité extérieure. Elle vit dehors, sur la façade ou au sol,
 et c'est elle qui fait le bruit. Le boîtier allongé, c'est l'unité intérieure. Elle est au mur de la
 pièce, et c'est elle qui souffle.
@@ -16,7 +16,8 @@ souvent : à poser, à mettre en service, et à dépanner.`,
 
   comprendre: `Ouvrons les deux boîtiers, et suivons la chaleur.
 Dans l'unité intérieure, il y a une batterie, une sorte de radiateur à ailettes très serrées, et une
-turbine qui aspire l'air de la pièce et le pousse à travers. Dans cette batterie, le fluide est froid.
+turbine, placée après elle. La turbine aspire l'air de la pièce à travers le filtre et la batterie, puis
+elle le souffle dans la pièce. Dans cette batterie, le fluide est froid.
 Quand l'air chaud de la pièce le traverse, le fluide bout, il s'évapore, et il prend la chaleur de
 l'air. L'air ressort plus frais. C'est le premier pas du dessin.
 Le fluide est devenu un gaz. Il quitte la pièce par le gros tube, celui qu'on appelle la ligne gaz,
@@ -27,8 +28,9 @@ Il entre alors dans la batterie de l'unité extérieure, le condenseur. L'hélic
 du dehors. Le gaz se refroidit et redevient liquide. La chaleur qu'il avait prise dans la pièce, il
 la rend à l'air extérieur. C'est pour cela que l'unité extérieure souffle de l'air chaud.
 Reste à ramener ce liquide à basse pression. C'est le détendeur : un passage très étroit, parfois un
-simple tube capillaire. La pression tombe d'un coup, le liquide devient froid, et il repart vers la
-pièce par le petit tube, la ligne liquide. Et le tour recommence.
+simple tube capillaire. La pression tombe d'un coup, le fluide devient froid, et une partie s'évapore
+déjà. Il repart vers la pièce par le petit tube, la ligne liquide : un mélange de liquide et de vapeur,
+à basse pression. Et le tour recommence.
 Un dernier point, que les clients remarquent avant tout : l'eau. L'air de la pièce est humide. Sur la
 batterie froide, cette humidité se dépose en gouttes, comme sur une bouteille sortie du frigo. Les
 gouttes tombent dans un bac, et un tuyau les évacue dehors. Ce tuyau fait partie de la machine : s'il

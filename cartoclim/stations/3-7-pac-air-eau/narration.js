@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la première photo. Un grand boîtier, une grille, un ventilateur au-dessus : c'est de la
+  decouvrir: `Sous la scène, regardez la première photo. Un grand boîtier, une grille, un ventilateur au-dessus : c'est de la
 famille de l'unité extérieure d'un split, et c'est normal, le principe est le même. Elle prend la
 chaleur de l'air du dehors, même quand il fait froid.
 La différence, la photo ne la montre pas. Ce qui sort de cette machine, ce n'est pas de l'air chaud,

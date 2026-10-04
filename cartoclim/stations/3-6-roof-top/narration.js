@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la première photo. Un grand caisson clair, posé sur un toit. Pas deux unités, comme sur un
+  decouvrir: `Sous la scène, regardez la première photo. Un grand caisson clair, posé sur un toit. Pas deux unités, comme sur un
 split : ici, tout est dans le même bloc. Le circuit de froid, un ventilateur, des filtres, une entrée d'air neuf.
 Roof-top veut dire : sur le toit. C'est une centrale de traitement d'air, qui a son propre froid.
 On le trouve au-dessus des grands volumes : un supermarché, un entrepôt, une salle de sport. De la salle, on ne

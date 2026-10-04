@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Regardez la première photo. Une unité extérieure, fixée au mur d'un bâtiment. Sur cette photo,
+  decouvrir: `Sous la scène, regardez la première photo. Une unité extérieure, fixée au mur d'un bâtiment. Sur cette photo,
 le chantier est déjà avancé : on voit les appareils de mise en service. Mais avant d'en arriver là, il a
 fallu lui amener le courant, et la relier à l'unité intérieure, de l'autre côté du mur.
 C'est tout l'objet de cette station. Un split ne démarre que si ses deux unités sont alimentées, et
