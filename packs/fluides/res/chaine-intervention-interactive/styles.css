@@ -1,4 +1,4 @@
-@import url("../condenseur-interactif/styles.css?v=20260802-2");
+@import url("../condenseur-interactif/styles.css?v=20261004-1");
 
 :root{--chain-blue:#3d7fca;--chain-yellow:#f6bd34;--chain-soft:#eef5fc}
 .brand-mark{background:var(--blue)}
@@ -17,6 +17,11 @@
 .full-chain{width:100%;display:flex;align-items:stretch;gap:4px}.full-chain .sequence-step{font-size:12px;padding:7px 4px}.full-chain .sequence-arrow{font-size:12px}
 .visual-host .cards,.visual-host .cards>*,.choice strong,.choice small,.check-card strong,.check-card small{min-width:0;overflow-wrap:anywhere}
 .check-card.good{border:4px double var(--ok);background:var(--ok-bg)}
+/* ---- Le dessin du geste (scene-geste.js, 04/10/2026). Quand il est là, les illustrations décoratives de bibliotheque/ (redites du dessin) s’effacent ; les schémas validés (../svg/) restent en vignette. Le repli à 3 lignes, le bouton, la barre pas à pas et la grille viennent du bloc
+   « Le dessin vivant » de ../condenseur-interactif/styles.css (importé plus haut, porté par :has()) ; ici, le dessin et la mise en page qui le portent. ---- */
+.lesson-content:has(.scene-lecon){grid-template-rows:auto minmax(min-content,1fr);overflow-y:auto}.scene-lecon{grid-column:1/-1;margin:0}
+.scene-lecon .scene-geste{display:block;flex:1 1 0;min-width:0;height:auto;background:#fdfbf5;border:1px solid var(--line);border-radius:16px}.lesson-content:has(.scene-lecon) .visual-split>img{max-height:140px}.lesson-content:has(.scene-lecon) .visual-split:has(>img[src*="bibliotheque"]){grid-template-columns:1fr}.lesson-content:has(.scene-lecon) .visual-split>img[src*="bibliotheque"]{display:none}
+@media(max-width:900px){.scene-lecon .scene-geste{flex:none;width:100%}}
 @media(max-width:900px){.dossier-grid{grid-template-columns:repeat(3,1fr)}.home-visual{display:block;margin:8px 0 0;border-radius:14px}.visual-collage>div{height:120px}.home-visual figcaption{padding:4px 8px;font-size:10px}.home-note{display:none}}
 @media(max-width:650px){.home .dossier-grid{display:none}.lesson-heading h2{font-size:16px;line-height:1.02}.visual-split{grid-template-columns:88px minmax(0,1fr);gap:4px}.visual-split>img{max-height:128px}.equipment-row{gap:3px}.equipment{padding:3px;font-size:8px}.equipment img{width:42px;height:42px}.equipment small{font-size:7px}.gauge-card{min-height:72px;padding:4px;font-size:8px}.gauge-card strong{font-size:13px}.center-hose{padding:4px;font-size:8px}.valve-board{gap:4px}.valve{min-height:62px;font-size:8px}.valve::before{font-size:25px}.route{gap:2px}.route-node{padding:4px 2px;font-size:7px}.route-arrow{font-size:10px}.vacuum-scene{gap:3px}.vacuum-device{min-height:88px;padding:3px;font-size:8px}.vacuum-device img{width:55px;height:52px}.vacuum-hose{width:30px;height:5px}.order-strip{gap:3px}.order-card{padding:4px 2px;font-size:7px}.order-card b{width:18px;height:18px;font-size:8px}.consequence{gap:4px}.consequence-card{padding:5px;font-size:8px}.consequence-card h3{font-size:12px}.phase{min-height:78px;padding:4px;font-size:8px}.phase strong{font-size:12px}.phase small{margin-top:25px}.full-chain{gap:1px}.full-chain .sequence-step{font-size:6px;padding:3px 1px}.full-chain .sequence-arrow{display:none}}
 @media(max-width:380px){.visual-split{grid-template-columns:62px minmax(0,1fr)}.visual-split>img{max-height:105px}}

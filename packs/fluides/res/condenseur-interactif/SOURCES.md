@@ -39,7 +39,7 @@ garde-fou du cours : une haute pression n’identifie jamais seule une cause.
 ## Images et représentation technique
 
 - Illustration de sommaire : `../bibliotheque/illu-g7b.webp`, ressource locale
-  validée par inerWeb ; elle sert à l’ambiance et ne porte aucune donnée métier.
+  validée par inerWeb ; elle sert à l’ambiance et ne porte aucune donnée métier. Depuis le 04/10/2026, l’accueil ne la charge plus : il montre le dessin vivant (`scene-condensation.js`, SVG calculé, aucune image).
 - Image de reconnaissance :
   `../tome-3-technologie-organes/images-organes/condenseur-air.webp`, déjà
   documentée dans le Tome 3. Elle montre un organe isolé et ne constitue pas un

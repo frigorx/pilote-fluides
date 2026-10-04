@@ -36,6 +36,24 @@ LE PARCOURS
 - Contrôle final distribué sur 5 questions. Le score n’est ni une habilitation
   ni une validation du geste sur plateau.
 
+DESSIN VIVANT (04/10/2026, chantier « Animer les réseaux »)
+----------------------------------------------------------
+
+scene-condensation.js : un tube du condenseur en coupe, au ralenti, et le point de la
+molécule sur le diagramme enthalpique. La vapeur chaude (HP) entre à droite et se refroidit
+sans changer d’état (désurchauffe) ; elle se condense à température constante, en gouttes
+puis en nappe de liquide (condensation) ; le liquide, tube plein, se refroidit encore
+(sous-refroidissement) et sort à gauche, pendant que l’air extérieur emporte la chaleur.
+Trois étapes, une par zone, un bouton par étape, Lecture / Pause. Le dessin remplace
+l’illustration de l’accueil (plus aucune image chargée) et se tient en haut de chaque écran :
+un écran = un dessin + 3 lignes ; le texte entier se déplie (« Lire tout le texte ») et la
+voix le lit. Moteurs relus, jamais modifiés : jouerezo/moteur/voyage-dessin.js et
+voyage-diagramme.js. Les activités sont resserrées sous le dessin (styles.css, rattachées à
+<body data-cours="condenseur">) ; seules les trois illustrations des écrans 2, 19 et 20
+gardent leur taille et font défiler l’écran.
+styles.css est importé par trois autres cours (@import) : les règles du dessin n’y
+s’appliquent que là où un dessin existe (:has).
+
 CE QUE CE COURS REMPLACE
 ------------------------
 

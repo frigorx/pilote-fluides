@@ -19,6 +19,16 @@ Consultation et vérification : 2 août 2026.
 - Pictogrammes locaux : `ico-manifold.png`, `ico-pompe-vide.png` et
   `ico-vacuometre.png`, dans `packs/fluides/res/bibliotheque/icones/`.
 
+## Symboles du dessin (scene-geste.js, 04/10/2026)
+
+- Manifold et vannes de service : bibliothèque curée de F. Henninot, déjà sur le
+  site (`packs/fluides/res/symboles/manometres.svg`, `vanne_isolement.svg`).
+- Pompe à vide et vacuomètre : `symboles/bomba-vacio.svg` et `symboles/manometro.svg`,
+  copies sans retouche de la collection QElectroTech convertie
+  (`C:/git/bibliotheque-symboles-energie/svg/60_energy/21_refrigeration/Frio/equipo-frigorifico/accesorios-frio/`),
+  licence CC BY 3.0, <https://github.com/qelectrotech/qelectrotech-elements>.
+- Le technicien : bonhomme de HoCourant, repris de `legislation/scenes/fluidique.js`.
+
 ## Limites
 
 Le parcours ne prescrit aucune valeur de vide, durée, pression, quantité ou

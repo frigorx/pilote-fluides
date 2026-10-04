@@ -35,6 +35,18 @@ LIMITES DE SÉCURITÉ
   avec un minimum d’émissions ; aucun rejet volontaire de réfrigérant n’est
   présenté comme une méthode.
 
+DESSIN VIVANT (04/10/2026, chantier « Animer les réseaux »)
+  scene-geste.js, en haut de chaque écran : à gauche, la main du technicien
+  (le bonhomme de HoCourant) tourne la vanne qui agit, vue de près ; à droite,
+  le montage où l’on voit la conséquence : vanne ouverte = la vapeur passe,
+  vanne fermée = rien ; sous vide, l’eau restée dans la ligne bout et part.
+  Six étapes : fermer, raccorder, tirer au vide, isoler, arrêter et observer,
+  déconnecter ; chaque écran ouvre l’étape de son dossier. Texte replié à
+  3 lignes (« Lire tout le texte »), la voix le lit en entier. Symboles de la
+  bibliothèque, jamais redessinés (voir SOURCES.md). Quand le dessin est là,
+  les illustrations décoratives de bibliotheque/ s’effacent des écrans ; les
+  trois schémas validés restent en vignette.
+
 ADRESSAGE
   index.html?dossier=manifold
   index.html?dossier=vide&ecran=2
