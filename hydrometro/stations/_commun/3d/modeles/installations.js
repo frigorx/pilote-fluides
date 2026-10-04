@@ -6,9 +6,10 @@
    en cuivre repéré d'un ruban rouge, qui passe par le circulateur et monte à trois branches (A, B, C) ; chaque
    branche a un radiateur et une vanne d'équilibrage ; le RETOUR en cuivre repéré d'un ruban bleu, avec
    son filtre, ramène l'eau à la chaudière ; un vase d'expansion et, au point haut du départ, un purgeur
-   automatique. « Voir l'eau » rend les tubes, la chaudière et les radiateurs transparents : des grains
-   suivent l'eau — rouge au départ, bleue au retour — et l'eau du radiateur passe du rouge au bleu :
-   c'est là qu'elle donne sa chaleur à la pièce (les flèches orange).
+   automatique. « Voir l'eau » rend les tubes, la chaudière et les radiateurs transparents : l'eau les
+   remplit en nappe continue — rouge au départ, bleue au retour — où des bandes défilent dans le sens
+   de l'eau, à la vitesse du débit (jamais de grains : le liquide se voit liquide) ; l'eau du radiateur
+   passe du rouge au bleu en descendant : c'est là qu'elle donne sa chaleur à la pièce (les flèches orange).
 
    UN CHOIX D'ÉTAT sert les trois stations (Boucle, Diagnostic, Mission) : Normal, Air en point haut,
    Vanne de la branche B fermée, Branche B mal réglée, Filtre encrassé, Circulateur à l'arrêt.
@@ -45,7 +46,7 @@
 
     /* ---------------------------------------------------------------- couleurs de l'eau */
     const ROUGE = 0xd9472b, BLEU = 0x2f7fd6;
-    const cR = new T.Color(ROUGE), cB = new T.Color(BLEU), cW = new T.Color(0xffffff), tmp = new T.Color(), tmp2 = new T.Color();
+    const cR = new T.Color(ROUGE), cB = new T.Color(BLEU), tmp = new T.Color(), tmp2 = new T.Color();
     const teinte = (t, out) => (out || tmp).copy(cB).lerp(cR, clamp(t, 0, 1));
 
     /* ---------------------------------------------------------------- matières à soi */
@@ -87,7 +88,7 @@
 
     /* ---------------------------------------------------------------- la vue « voir l'eau » :
        les enveloppes (tubes, caisson, panneaux, cuve) deviennent des fantômes, l'eau se voit dedans.
-       Un fantôme est un « voile » : la pièce allumée ne cache alors ni l'eau ni les grains. */
+       Un fantôme est un « voile » : la pièce allumée ne cache alors pas l'eau. */
     const fantomes = [], cacheFantome = new Map(), aretes = [];
     const fantomable = (obj, opacite) => {
       obj.traverse(m => {
@@ -111,8 +112,8 @@
     decor.add(bx(4600, 90, 12, plinthe, -400, 45, 6));
 
     /* ================================================================ LES TUBES
-       Une polyligne aux coudes arrondis, rendue comme une courbe (longueur d'arc régulière) ; les
-       grains et l'eau la suivent. */
+       Une polyligne aux coudes arrondis, rendue comme une courbe (longueur d'arc régulière) ; l'eau
+       la suit. */
     const Poly = class extends T.Curve {
       constructor(path) { super(); this.path = path; }
       getPoint(t, target) { return this.path.getPoint(t, target || new T.Vector3()); }
@@ -148,12 +149,38 @@
       iv.forEach(([s, e]) => { if (e - s < 2) return; g.add(tube(s === 0 && e === L ? courbe : partie(courbe, s / L, e / L), R_T, mat)); });
       return g;
     };
+    /* l'eau qui COULE : une nappe continue où des bandes plus sombres défilent dans le sens de l'eau,
+       comme la nappe du moteur 2D (ecoulement.js). Une texture de 64 × 2 : la ligne 0 porte les bandes,
+       la ligne 1 une eau unie ; offset.y choisit le mélange (l'eau arrêtée estompe ses bandes, 0,3 comme
+       en 2D) et offset.x les fait avancer. Rien d'autre à dessiner : pas un objet de plus, pas de shader. */
+    const PAS_NAPPE = 130;                                 /* une bande tous les 130 mm */
+    const texNappe = (() => {
+      const W = 64, c = document.createElement('canvas'); c.width = W; c.height = 2;
+      const x = c.getContext('2d'), im = x.createImageData(W, 2);
+      for (let i = 0; i < W; i++) {
+        const b = Math.round(255 * (0.2 + 0.8 * (0.5 + 0.5 * Math.cos(2 * Math.PI * i / W))));
+        [b, 255].forEach((v, j) => { const k = (j * W + i) * 4; im.data[k] = im.data[k + 1] = im.data[k + 2] = v; im.data[k + 3] = 255; });
+      }
+      x.putImageData(im, 0, 0);
+      const t = new T.CanvasTexture(c);
+      t.flipY = false; t.wrapS = T.RepeatWrapping; t.wrapT = T.ClampToEdgeWrapping;
+      t.minFilter = T.LinearFilter; t.generateMipmaps = false;
+      return t;
+    })();
+    const nappes = [];
+    /* longueur : le long du sens de la texture (mm) ; sens : +1 si l'eau va vers la fin de la texture ;
+       fort : le contraste des bandes (1 dans un tube fin ; moins dans la grande nappe d'un radiateur) */
+    const nappe = (mat, longueur, flow, sens, fort) => {
+      const tex = texNappe.clone(); tex.needsUpdate = true; tex.repeat.set(longueur / PAS_NAPPE, 0); tex.offset.y = 0.6;
+      mat.map = tex; const o = { tex, flow, sens, fort: fort || 1, k: 0.3 }; nappes.push(o); return o;
+    };
     /* l'eau dedans : un tube coloré (couleur par sommet), à régler de t0 à t1 le long du tube */
-    const eauTube = courbe => {
-      const n = Math.max(6, Math.round(courbe.getLength() / 45)), RAD = 6;
+    const eauTube = (courbe, flow) => {
+      const L = courbe.getLength(), n = Math.max(6, Math.round(L / 45)), RAD = 6;
       const g = new T.TubeGeometry(courbe, n, R_E, RAD, false);
       g.setAttribute('color', new T.BufferAttribute(new Float32Array(g.attributes.position.count * 3), 3));
-      const m = calme(new T.Mesh(g, eauMat)); m.renderOrder = 1; racine.add(m);
+      const m = calme(new T.Mesh(g, eauMat.clone())); m.renderOrder = 1; racine.add(m);
+      nappe(m.material, L, flow, 1);
       let cle = '';
       const regler = (t0, t1) => {
         const k = Math.round(t0 * 200) + '/' + Math.round(t1 * 200); if (k === cle) return; cle = k;
@@ -182,17 +209,11 @@
     const c0 = CIBLES[E.etat];
     const S = { fA: c0.fA, fB: c0.fB, tA0: c0.tA[0], tA1: c0.tA[1], tB0: c0.tB[0], tB1: c0.tB[1], pw: c0.pompe, air: c0.air, enc: c0.enc, preB: c0.preB, vase: 1, vRate: 0, rot: 0 };
 
-    /* ================================================================ LES GRAINS : l'eau qui circule */
-    const flots = [];
-    const flotsDe = (courbe, o) => {
-      (o.parts || [[0, 1, () => 1]]).forEach(([u0, u1, fnT]) => {
-        const f = K.courant(u0 === 0 && u1 === 1 ? courbe : partie(courbe, u0, u1), { pas: o.pas || 90, rayon: o.rayon || 6.2, couleur: 0xffffff, vitesse: 100 });
-        f.objet.geometry = new T.SphereGeometry(o.rayon || 5, 6, 4);
-        racine.add(f.objet); flots.push({ f, flow: o.flow, fnT });
-      });
-    };
+    /* ================================================================ LE DÉBIT : ce qui fait couler la nappe */
     /* C se comporte comme A : même débit, même chaleur */
     const debitDe = k => (k === 'tot' ? 2 * S.fA + S.fB : k === 'BC' ? S.fA + S.fB : (k === 'A' || k === 'C') ? S.fA : k === 'B' ? S.fB : 0);
+    /* le vase : l'eau entre quand il se remplit, sort quand il se vide (débit signé) ; le purgeur : un cul-de-sac */
+    const debitSigne = k => { if (k !== 'vase') return k ? debitDe(k) : 0; const q = S.vRate * 2.2; return Math.abs(q) < 0.1 ? 0 : q; };
 
     /* ================================================================ LA CHAUDIÈRE */
     const chaudiere = new T.Group();
@@ -226,8 +247,7 @@
     const serpentin = chemin([[XRET, YC], [XRET, 1110], [-1010, 1150, 110], [-1005, 1180, 150], [-840, 1180, 150], [-840, 1250, 150], [-1005, 1250, 150],
       [-1005, 1320, 150], [-815, 1320, 150], [-815, 1100, 150], [-815, 1040, ZP], [XDEP, YC]], 34);
     const coqueSerp = coque(serpentin, cuivre); fantomable(coqueSerp, 0.2); chaudiere.add(coqueSerp);
-    const eauSerp = eauTube(serpentin); eauSerp.regler(0.12, 1);
-    flotsDe(serpentin, { flow: 'tot', rayon: 5.6, pas: 80, parts: [[0, 0.34, () => 0.12], [0.34, 0.68, () => 0.5], [0.68, 1, () => 1]] });
+    const eauSerp = eauTube(serpentin, 'tot'); eauSerp.regler(0.12, 1);
 
     /* ================================================================ LE DÉPART (rouge) */
     const depart = new T.Group();
@@ -241,10 +261,8 @@
     const tDC = chemin([[xi(XC), YD], [xi(XC), YT], [XC, YT]], 40);
     const tDA = chemin([[xi(XA), YD], [xi(XA), YT], [XA, YT]], 40);
     [tD0, tD1a, tD1b, tD2, tD3, tDB, tDC, tDA].forEach(c => depart.add(fantomable(coque(c, cuivre), 0.2)));
-    [tD0, tDP, tD1a, tD1b, tD2, tD3, tDB, tDC, tDA].forEach(c => { const e = eauTube(c); e.regler(1, 1); });
-    flotsDe(tD0, { flow: 'tot' }); flotsDe(tDP, { flow: 'tot', pas: 60 }); flotsDe(tD1a, { flow: 'tot', pas: 60 });
-    flotsDe(tD1b, { flow: 'BC' }); flotsDe(tD2, { flow: 'BC' }); flotsDe(tD3, { flow: 'C' });
-    flotsDe(tDB, { flow: 'B' }); flotsDe(tDC, { flow: 'C' }); flotsDe(tDA, { flow: 'A' });
+    [[tD0, 'tot'], [tDP, 'tot'], [tD1a, 'tot'], [tD1b, 'BC'], [tD2, 'BC'], [tD3, 'C'], [tDB, 'B'], [tDC, 'C'], [tDA, 'A']]
+      .forEach(([c, flow]) => { const e = eauTube(c, flow); e.regler(1, 1); });
     /* repères de couleur : un ruban rouge, comme sur le chantier */
     [[-300, YD], [40, YD], [520, YD]].forEach(([x, y]) => depart.add(ringX(12.2, 10.6, x, x + 9, rubanR, y, ZP)));
     depart.add(ringY(12.2, 10.6, 930, 939, rubanR, XDEP, ZP));
@@ -286,7 +304,7 @@
     /* ================================================================ LES RADIATEURS (simplifiés, panneau acier) */
     const geoNerv = new T.BoxGeometry(22, HR - 90, 9);
     const consoleMat = C(M.plastique, 0xe4dfd3);
-    const faireRadiateur = xl => {
+    const faireRadiateur = (xl, flow) => {
       const g = new T.Group(), xc = xl + LR / 2, yc = (Y0 + Y1) / 2, xr = xl + LR;
       const corps = new T.Group();
       corps.add(K.mesh(K.boite(LR, HR, 46, 8), emaille, xc, yc, ZP));
@@ -298,10 +316,12 @@
       g.add(hexY(9, Y1 + 8, Y1 + 20, laiton, xr - 30, ZP), cylY(4, Y1 + 20, Y1 + 26, chrome, xr - 30, ZP, 12));   /* le purgeur à clé */
       [xl + 90, xr - 90].forEach(x => g.add(bx(34, 50, 24, consoleMat, x, Y0 + 60, 27)));
       racine.add(g);
-      /* l'eau dans le radiateur : une boîte, rouge en haut, bleue en bas */
+      /* l'eau dans le radiateur : une boîte, rouge en haut, bleue en bas ; ses bandes descendent
+         (texture tournée d'un quart de tour : elle avance le long de la hauteur, de haut en bas) */
       const geo = new T.BoxGeometry(LR - 26, HR - 36, 26);
       geo.setAttribute('color', new T.BufferAttribute(new Float32Array(geo.attributes.position.count * 3), 3));
-      const eau = calme(new T.Mesh(geo, eauBoite)); eau.position.set(xc, yc, ZP); eau.renderOrder = 1; racine.add(eau);
+      const eau = calme(new T.Mesh(geo, eauBoite.clone())); eau.position.set(xc, yc, ZP); eau.renderOrder = 1; racine.add(eau);
+      nappe(eau.material, HR - 36, flow, -1, 0.7).tex.rotation = Math.PI / 2;
       const regler = (tHaut, tBas) => {
         const col = geo.attributes.color, pos = geo.attributes.position;
         for (let i = 0; i < pos.count; i++) { teinte(pos.getY(i) > 0 ? tHaut : tBas, tmp2); col.setXYZ(i, tmp2.r, tmp2.g, tmp2.b); }
@@ -331,14 +351,7 @@
       });
       return { g, regler, fleches };
     };
-    const radA = faireRadiateur(XA), radB = faireRadiateur(XB), radC = faireRadiateur(XC);
-
-    /* l'eau dans le radiateur (grains) : par le haut vers la droite, en bas par le canal de droite, retour vers la gauche */
-    const interieur = xl => chemin([[xl, YT], [xl + LR - 45, YT], [xl + LR - 45, YO], [xl, YO]], 25);
-    const iA = interieur(XA), iB = interieur(XB), iC = interieur(XC);
-    flotsDe(iA, { flow: 'A', rayon: 5, pas: 80, parts: [[0, 0.33, () => S.tA0], [0.33, 0.67, () => (S.tA0 + S.tA1) / 2], [0.67, 1, () => S.tA1]] });
-    flotsDe(iB, { flow: 'B', rayon: 5, pas: 80, parts: [[0, 0.33, () => S.tB0], [0.33, 0.67, () => (S.tB0 + S.tB1) / 2], [0.67, 1, () => S.tB1]] });
-    flotsDe(iC, { flow: 'C', rayon: 5, pas: 80, parts: [[0, 0.33, () => S.tA0], [0.33, 0.67, () => (S.tA0 + S.tA1) / 2], [0.67, 1, () => S.tA1]] });
+    const radA = faireRadiateur(XA, 'A'), radB = faireRadiateur(XB, 'B'), radC = faireRadiateur(XC, 'C');
 
     /* ================================================================ LES VANNES D'ÉQUILIBRAGE (simplifiées) */
     const faireVanne = xc => {
@@ -373,12 +386,8 @@
     retour.add(fantomable(coque(tRoB, cuivre, [[lSortie, lVanne]]), 0.2));
     retour.add(fantomable(coque(tRoC, cuivre, [[lSortie, lVanne]]), 0.2));
     retour.add(fantomable(coque(tR2, cuivre, [dFiltre]), 0.2));
-    const eRoA = eauTube(tRoA), eRoB = eauTube(tRoB), eRoC = eauTube(tRoC), eR2 = eauTube(tR2);
-    flotsDe(tRoA, { flow: 'A', parts: [[0, 1, () => S.tA1]] });
-    flotsDe(tRoB, { flow: 'B', parts: [[0, 1, () => S.tB1]] });
-    flotsDe(tRoC, { flow: 'C', parts: [[0, uJ, () => S.tA1]] });
-    flotsDe(tRoC, { flow: 'BC', parts: [[uJ, 1, () => tBC()]] });
-    flotsDe(tR2, { flow: 'tot', parts: [[0, 1, () => tRet()]] });
+    /* le collecteur C coule deux fois plus vite après la jonction de B : deux nappes */
+    const eRoA = eauTube(tRoA, 'A'), eRoB = eauTube(tRoB, 'B'), eRoC = eauTube(partie(tRoC, 0, uJ), 'C'), eRoBC = eauTube(partie(tRoC, uJ, 1), 'BC'), eR2 = eauTube(tR2, 'tot');
     [[60, YR], [-250, YR], [-450, YR], [520, YR]].forEach(([x, y]) => retour.add(ringX(12.2, 10.6, x, x + 9, rubanB, y, ZP)));
     retour.add(ringX(12.2, 10.6, -620, -611, rubanB, YR, ZP), ringY(12.2, 10.6, 930, 939, rubanB, XRET, ZP));
     racine.add(retour);
@@ -417,8 +426,7 @@
     racine.add(vase);
     const tVase = chemin([[XRET, 420], [-1180, 420], [VX, 470, VZ], [VX, VY, VZ]], 40);
     const coqueVase = fantomable(coque(tVase, cuivre), 0.2); vase.add(coqueVase); coqueVase.position.set(-VX, -VY, -VZ);
-    const eVase = eauTube(tVase);
-    flotsDe(tVase, { flow: 'vase', rayon: 5.6, pas: 60 });
+    const eVase = eauTube(tVase, 'vase');
     const poserVase = n => {
       const ym = 60 + 160 * n;
       membrane.position.y = ym;
@@ -492,7 +500,7 @@
       eauSerp.regler(0.12, 1);
       eRoA.regler(S.tA1, S.tA1); eRoB.regler(S.tB1, S.tB1); eR2.regler(tRet(), tRet());
       radA.regler(S.tA0, S.tA1); radB.regler(S.tB0, S.tB1); radC.regler(S.tA0, S.tA1);
-      eRoC.regler(S.tA1, S.tA1);
+      eRoC.regler(S.tA1, S.tA1); eRoBC.regler(tBC(), tBC());
       vanA.poser(2.5); vanB.poser(S.preB); vanC.poser(2.5);
       poserVase(S.vase);
       leds.forEach((m, i) => { m.material = S.pw > 0.5 && i === 0 ? ledMarche : ledEteinte; });
@@ -505,17 +513,6 @@
       petites.forEach(o => {
         const u = (E.t * 0.28 + o.ph) % 1;
         o.m.position.y = 892 + u * 110; o.m.scale.setScalar(Math.max(0.01, o.r * S.air));
-      });
-      /* l'eau qui circule : les grains ne se voient que quand les tubes sont transparents */
-      flots.forEach(o => {
-        let q, sens = 1;
-        if (o.flow === 'vase') { q = Math.abs(S.vRate) * 2.2; sens = S.vRate >= 0 ? 1 : -1; if (q < 0.1) q = 0; }
-        else q = debitDe(o.flow);
-        const vu = E.fantome && q > 0.03;
-        o.f.objet.visible = vu;
-        if (!vu) return;
-        o.f.regler({ debit: clamp(0.35 + 0.65 * q, 0, 1), vitesse: Math.min(190, 100 * q), sens });
-        o.f.objet.material.color.copy(teinte(o.flow === 'vase' ? 0.15 + 0.65 * S.vase : o.fnT(), tmp2)).lerp(cW, 0.55);
       });
       radA.fleches(clamp((S.tA0 - 0.15) / 0.7, 0, 1));
       radB.fleches(clamp((S.tB0 - 0.15) / 0.7, 0, 1));
@@ -600,11 +597,19 @@
         roue.rotation.z = -S.rot; tournant.rotation.z = -S.rot;
         flammes.children.forEach((f, i) => { f.scale.y = 0.75 + 0.35 * Math.sin(E.t * 11 + i * 1.7); });
         const e = Math.max(0.001, S.enc); boues.scale.setScalar(e);
+        /* la nappe coule : ses bandes avancent dans le sens de l'eau, à 100 mm/s pour un débit 1 (190 au plus) */
+        let fondu = false;
+        nappes.forEach(o => {
+          const q = debitSigne(o.flow), v = Math.abs(q) > 0.03 ? Math.min(190, 100 * Math.abs(q)) * Math.sign(q) : 0;
+          o.tex.offset.x = (o.tex.offset.x - dt * v * o.sens / PAS_NAPPE) % 1;
+          const kc = (v ? 1 : 0.3) * o.fort; o.k = K.vers(o.k, kc, 2.5, dt); if (Math.abs(o.k - kc) > 0.004) fondu = true;
+          o.tex.offset.y = 0.25 + 0.5 * (1 - o.k);
+        });
         poser();
         const fini = Math.abs(S.fA - c.fA) + Math.abs(S.fB - c.fB) + Math.abs(S.tA0 - c.tA[0]) + Math.abs(S.tB0 - c.tB[0]) + Math.abs(S.tA1 - c.tA[1]) + Math.abs(S.tB1 - c.tB[1])
           + Math.abs(S.air - c.air) + Math.abs(S.enc - c.enc) + Math.abs(S.pw - c.pompe) + Math.abs(S.preB - c.preB) + Math.abs(S.vase - E.vaseCible) < 0.004 && E.delaiVase <= 0;
         const arrows = S.tA0 > 0.17 || S.tB0 > 0.17, rouleaux = E.fantome && (S.fA + S.fB > 0.03);
-        return !fini || arrows || rouleaux || S.pw > 0.01 || S.air > 0.03;
+        return !fini || arrows || rouleaux || (E.fantome && fondu) || S.pw > 0.01 || S.air > 0.03;
       },
       detruire() { cacheFantome.forEach(m => m.dispose()); }
     };
