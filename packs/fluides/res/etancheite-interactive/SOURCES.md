@@ -28,6 +28,29 @@ Consultation et vérification : 1er août 2026.
 - Pictogrammes locaux : `ico-registre.png` et `ico-detecteur-fuite.png`, dans
   `packs/fluides/res/bibliotheque/icones/`.
 
+## Symboles du dessin (scene-geste.js, 04/10/2026)
+
+- Manomètre et détecteur : `symboles/manometro.svg` et `symboles/detector-gas.svg`
+  (« Détecteur gaz »), copies sans retouche de la collection QElectroTech
+  convertie
+  (`C:/git/bibliotheque-symboles-energie/svg/60_energy/21_refrigeration/Frio/equipo-frigorifico/accesorios-frio/manometro.svg`
+  et `.../60_energy/11_water/01_Termicas-Fluidos2_Rafa/Gas/instalaciones-gas/detector-gas.svg`),
+  licence CC BY 3.0, <https://github.com/qelectrotech/qelectrotech-elements>.
+  C'est le seul détecteur de la collection : un symbole de détecteur de gaz
+  d'installation, pas celui d'un détecteur portatif de fluide frigorigène.
+  Seul ajout : la diode rouge s'allume (un halo posé sur sa place) quand il
+  réagit.
+- Raccord flare : aucun symbole normalisé dans les bibliothèques ; il est monté
+  avec les briques métal du moteur (écrous laiton sur le tube cuivre), comme les
+  piquages du pilote. Huile, solution moussante, vapeur : nappe, bulles et
+  molécules de `jouerezo/moteur/voyage-dessin.js` (lu, jamais modifié).
+- Le technicien : bonhomme de HoCourant, repris de `legislation/scenes/fluidique.js`.
+- Gestes et ordre : schémas validés `packs/fluides/res/svg/balayage-detecteur.svg`
+  et `recherche-fuite-geste.svg` (balayage lent, au contact, en partie basse ;
+  second passage pour confirmer) ; cours `habilitation-fluide/cours/CONTENU-04-G4-etancheite.md`
+  (le fluide entraîne l'huile, la solution moussante s'applique à l'extérieur
+  des assemblages).
+
 ## Limites
 
 Le cours ne donne aucune fréquence, sensibilité, pression d’épreuve, valeur de

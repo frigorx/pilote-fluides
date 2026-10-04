@@ -1,4 +1,4 @@
-@import url("../condenseur-interactif/styles.css?v=20260802-2");
+@import url("../condenseur-interactif/styles.css?v=20261004-1");
 
 :root{--leak:#3d7fca;--leak-soft:#eef5fc}
 .brand-mark{background:var(--blue)}
@@ -17,6 +17,11 @@
 .case-file{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.case-step{padding:9px;border:2px solid var(--line);border-radius:11px;background:var(--paper);text-align:center}.case-step strong{display:block;color:var(--navy)}.case-step.done{border:4px double var(--ok);background:var(--ok-bg)}
 .registry>*,.evidence-board>*,.detector-zones>*,.scope-grid>*,.case-file>*{min-width:0;overflow-wrap:anywhere}.photo-card,.photo-card>*{min-width:0}.detector-board img{display:block;max-width:100%;max-height:170px;margin:auto;object-fit:contain}
 .visual-host .cards,.visual-host .cards>*,.choice strong,.choice small,.check-card strong,.check-card small{min-width:0;overflow-wrap:anywhere}
+/* ---- Le dessin du geste (scene-geste.js, 04/10/2026). Quand il est là, les illustrations décoratives de bibliotheque/ (redites du dessin) s’effacent ; les schémas validés (../svg/) restent en vignette. Le repli à 3 lignes, le bouton, la barre pas à pas et la grille viennent du bloc
+   « Le dessin vivant » de ../condenseur-interactif/styles.css (importé plus haut, porté par :has()) ; ici, le dessin et la mise en page qui le portent. ---- */
+.lesson-content:has(.scene-lecon){grid-template-rows:auto minmax(min-content,1fr);overflow-y:auto}.scene-lecon{grid-column:1/-1;margin:0}
+.scene-lecon .scene-geste{display:block;flex:1 1 0;min-width:0;height:auto;background:#fdfbf5;border:1px solid var(--line);border-radius:16px}.lesson-content:has(.scene-lecon) .visual-split>img{max-height:140px}.lesson-content:has(.scene-lecon) .visual-split:has(>img[src*="bibliotheque"]){grid-template-columns:1fr}.lesson-content:has(.scene-lecon) .visual-split>img[src*="bibliotheque"]{display:none}
+@media(max-width:900px){.scene-lecon .scene-geste{flex:none;width:100%}}
 @media(max-width:900px){.dossier-grid{grid-template-columns:repeat(3,1fr)}.home-visual{display:block;margin:8px 0 0;border-radius:14px}.visual-collage>div{height:120px}.home-visual figcaption{padding:4px 8px;font-size:10px}.home-note{display:none}}
 @media(max-width:650px){.home .dossier-grid{display:none}.lesson-heading h2{font-size:16px;line-height:1.02}.law-note{padding:6px;font-size:9px}.law-note strong{font-size:12px}.method-line{gap:3px}.method-node{padding:5px;font-size:8px}.method-arrow{font-size:12px}.registry,.method-compare,.scope-grid{gap:4px}.registry button,.method-card,.scope-card{padding:5px;font-size:9px}.method-card h3,.scope-card h3{font-size:12px}.evidence-board{gap:3px}.evidence-card{padding:5px;font-size:8px}.detector-zones{gap:3px}.detector-zone{min-height:42px;font-size:8px}.case-file{gap:3px}.case-step{padding:4px 2px;font-size:7px}.sequence-arrow{display:none}.visual-split{grid-template-columns:88px minmax(0,1fr);gap:4px}.visual-split>img{max-height:128px}.visual-host .cards{grid-template-columns:1fr!important}.visual-strip{gap:3px}.visual-strip img{height:72px}.visual-strip figcaption{padding:2px;font-size:8px}.icon-scene{grid-template-columns:52px minmax(0,1fr);gap:4px}.icon-scene>img{width:50px;height:50px;padding:2px}}
 @media(max-width:380px){.visual-split{grid-template-columns:62px minmax(0,1fr)}.visual-split>img{max-height:104px}}

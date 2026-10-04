@@ -36,6 +36,22 @@ POINT RÉGLEMENTAIRE AU 1er AOÛT 2026
   chantier actuelle. La procédure en vigueur, la notice et les consignes de
   l’organisme priment toujours.
 
+DESSIN VIVANT (04/10/2026, chantier « Animer les réseaux »)
+  scene-geste.js, en haut de chaque écran : à gauche, la main du technicien
+  (le bonhomme de HoCourant) touche le raccord, lit le manomètre, balaye le
+  détecteur, applique la solution moussante, puis écrit au registre ; à droite,
+  la ligne cuivre et son raccord flare déjà repris, où l'on voit la
+  conséquence : l'huile suinte et goutte (nappe ambre), la vapeur s'échappe et
+  retombe, le détecteur réagit près du joint, des bulles se forment là où le
+  fluide s'échappe. Six étapes, l'ordre de l'enquête : voir et toucher,
+  mesurer, balayer, confirmer, test à la bulle, consigner ; chaque écran ouvre
+  l'étape de son dossier (orienter, soupçonner, localiser, comparer, tracer,
+  bilan). Aucune valeur de pression, de seuil ni de durée. Texte replié à
+  3 lignes (« Lire tout le texte »), la voix le lit en entier. Symboles de la
+  bibliothèque, jamais redessinés (voir SOURCES.md). Quand le dessin est là,
+  les illustrations décoratives de bibliotheque/ s'effacent des écrans ; les
+  schémas validés restent en vignette.
+
 ADRESSAGE
   index.html?dossier=orienter
   index.html?dossier=soupconner&ecran=2
