@@ -431,13 +431,17 @@
       <li><strong>Diagnostiquer</strong> une panne : écouter le client, écouter la machine, mesurer.
       Puis comparer aux valeurs attendues — pas à une impression.</li>
       <li><strong>Intervenir</strong> sur le circuit : manifold, récupération du fluide, brasage,
-      tirage au vide, charge à la balance. Le geste propre, dans l’ordre.</li>
+      tirage au vide, charge à la balance. Le geste propre, dans l’ordre.
+      <figure class="scene-journee scene-suite" data-scene-journee="intervenir"></figure></li>
       <li><strong>Régler</strong> : thermostats, pressostats, détendeurs, régulateur électronique —
-      et prouver le réglage à l’instrument.</li>
+      et prouver le réglage à l’instrument.
+      <figure class="scene-journee scene-suite" data-scene-journee="regler"></figure></li>
       <li><strong>Tracer</strong> : registre d’équipement, fiche d’intervention, pesée des fluides.
-      Ce qui n’est pas écrit n’a pas été fait.</li>
+      Ce qui n’est pas écrit n’a pas été fait.
+      <figure class="scene-journee scene-suite" data-scene-journee="tracer"></figure></li>
       <li><strong>Expliquer</strong> au client ce qui a été fait, et pourquoi. C’est la partie que
-      les jeunes techniciens sous-estiment le plus.</li>
+      les jeunes techniciens sous-estiment le plus.
+      <figure class="scene-journee scene-suite" data-scene-journee="expliquer"></figure></li>
     </ul>
     <div class="stations">
       <a href="packs/fluides/res/fil-conducteur-intervention/index.html">
@@ -448,6 +452,10 @@
 
   <div class="surtitre" id="preuve">Ce qu’on mesure, ce qu’on prouve</div>
   <div class="bloc liste">
+    <!-- La scène des grandeurs du tableau, dessinée et animée pas à pas : HP et BP, absolu ou relatif,
+         sous-refroidissement, COP et EER (la surchauffe renvoie à la scène de « Une journée type »).
+         Remplie par metier/scene-mesurer.js ; sans le script, la figure vide ne s'affiche pas. -->
+    <figure class="scene-journee" data-scene-journee="mesurer"></figure>
     <p style="margin:0">Un frigoriste ne dit pas « ça a l’air bon ». Il <strong>annonce une valeur</strong>,
     dans une plage attendue. Voilà les grandeurs qu’on relève sur presque toutes les installations.</p>
     <div class="tab-cadre">
@@ -616,9 +624,16 @@
 <script src="cartoclim/stations/_commun/scene-kit.js"></script>
 <script src="jouerezo/moteur/voyage-dessin.js"></script>
 <script src="metier/scene-journee.js?v=20261004"></script>
+<!-- Les scènes de la suite de la journée (04/10/2026) : le cadre commun, puis une scène par fichier. -->
+<script src="metier/scene-commun.js?v=20261004"></script>
+<script src="metier/scene-intervenir.js?v=20261004"></script>
+<script src="metier/scene-regler.js?v=20261004"></script>
+<script src="metier/scene-tracer.js?v=20261004"></script>
+<script src="metier/scene-expliquer.js?v=20261004"></script>
+<script src="metier/scene-mesurer.js?v=20261004"></script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=46c3025b7a"></script>
+<script src="moteur/lisibilite.js?v=0497824b13"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
-<script src="moteur/marque.js?v=46c3025b7a" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=0497824b13" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>
