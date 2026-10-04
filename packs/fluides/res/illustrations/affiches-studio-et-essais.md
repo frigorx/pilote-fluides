@@ -27,3 +27,19 @@ Aucun texte dans l'image : le titre se pose en HTML. Marque inerWeb. Licence CC 
   violet pâle, rayons froids.
 
 Sources PNG, consignes et composeurs du filigrane : `C:\Users\henni\Documents\inerweb-video\studio\affiches\essais\`.
+
+## Affiches des onze épisodes de la série « La régulation » (`studio/affiches/episode-*-16x9.webp`, 1200 × 675, 04/10/2026)
+
+Dessin inerWeb, organes personnifiés (visages, bras) mais de forme juste : régulateur électronique (afficheur, quatre
+boutons, sonde), pressostat basse pression de type KP (boîtier gris, fenêtre à deux échelles, deux vis de réglage, écrou
+laiton et capillaire), électrovanne (corps laiton en ligne, bobine et câble), compresseur hermétique (pot noir sur pieds),
+évaporateur (bloc à ailettes et grille de ventilateur), horloge de dégivrage (cadran à cavaliers), relais (cube
+transparent), vanne quatre voies (cylindre laiton, un tube dessus, trois dessous). Aucun texte. Scènes : commande
+directe (le régulateur tient le compresseur en laisse) · protection minimum (le pressostat videur devant le compresseur,
+tuyau d'aspiration pincé) · migration de liquide (nappe de liquide qui rampe vers le compresseur endormi, nuit) ·
+pump-down automatique (le régulateur claque l'électrovanne, le pressostat arrête le compresseur épuisé) · pump-down
+amélioré (le relais assis sur le compresseur qui veut redémarrer) · pump-down unique (compresseur en transat, petite fuite,
+pressostat « une seule fois ») · sans dégivrage commandé (évaporateur dont le givre fond dans le bac, compresseur endormi) ·
+dégivrage naturel (l'horloge chef d'orchestre, l'évaporateur souffle sur son givre) · dégivrage électrique (résistances
+orange entre les ailettes) · gaz chauds (le compresseur souffle dans la ligne de dérivation à électrovanne) · inversion de
+cycle (la vanne quatre voies aiguilleur, évaporateur chaud, condenseur grelottant).
