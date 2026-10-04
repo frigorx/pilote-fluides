@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 600" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 684" role="img"
      aria-labelledby="t-hp" aria-describedby="d-hp" font-family="Calibri, 'Segoe UI', sans-serif">
-  <title id="t-hp">Les neuf principes rangés par priorité, du plus efficace au dernier recours</title>
-  <desc id="d-hp">Une liste verticale de neuf rangées, numérotées de 1 à 9. Chaque rangée porte une barre
-    horizontale dont la longueur diminue de haut en bas, et un texte à droite qui nomme le principe.
-    Les huit premières rangées sont en bleu : éviter les risques, évaluer ce qui ne peut être évité,
-    combattre à la source, adapter le travail à l'homme, suivre l'évolution technique, remplacer par
-    moins dangereux, planifier la prévention, protection collective d'abord. La neuvième rangée, tout en
-    bas, est plus courte que les autres, tracée en orange avec un contour tireté, et porte le texte
-    « équipement individuel — dernier recours ». Une légende en haut indique « le plus efficace » et une
-    légende en bas indique « le moins efficace, utilisé en dernier ».</desc>
+  <title id="t-hp">Les neuf principes généraux de prévention (code du travail, art. L4121-2), puis l'équipement individuel en dernier recours</title>
+  <desc id="d-hp">Une liste verticale de neuf rangées, numérotées de 1 à 9, dans l'ordre de l'article L4121-2
+    du code du travail. Chaque rangée porte une barre bleue dont la longueur diminue de haut en bas, et un texte
+    qui nomme le principe : éviter les risques, évaluer ce qui ne peut être évité, combattre à la source, adapter
+    le travail à l'homme, suivre l'évolution technique, remplacer par moins dangereux, planifier la prévention,
+    protection collective d'abord, donner les instructions appropriées. Sous les neuf rangées, une bande plus
+    courte, en orange et en tireté, porte « équipement individuel — dernier recours » : le principe 8 fait passer
+    la protection collective avant l'individuelle. Une légende en haut indique « le plus efficace » et une légende
+    en bas « le moins efficace, utilisé en dernier ».</desc>
   <style>
     .lgd  { font-size:15px; font-style:italic; fill:#5a6b7d; }
     .num  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
@@ -28,7 +28,7 @@
   <!-- Rangée 2 -->
   <circle cx="34" cy="138" r="18" fill="#1b3a63"/><text class="num" x="34" y="144" text-anchor="middle">2</text>
   <rect x="62" y="126" width="560" height="26" rx="6" fill="#1b3a63"/>
-  <text class="txt" x="640" y="144">Évaluer ce qui ne peut pas être évité</text>
+  <text class="txt" x="640" y="136">Évaluer ce qui ne peut<tspan x="640" dy="18">pas être évité</tspan></text>
 
   <!-- Rangée 3 -->
   <circle cx="34" cy="196" r="18" fill="#1b3a63"/><text class="num" x="34" y="202" text-anchor="middle">3</text>
@@ -60,11 +60,15 @@
   <rect x="62" y="474" width="200" height="26" rx="6" fill="#1b3a63"/>
   <text class="txt" x="280" y="492">Protection collective d'abord</text>
 
-  <!-- Rangée 9 : EPI, dernier recours, en accent -->
-  <circle cx="34" cy="548" r="18" fill="#c2410c"/><text class="num" x="34" y="554" text-anchor="middle">9</text>
-  <rect x="62" y="534" width="140" height="28" rx="6" fill="#fffdf8" stroke="#c2410c" stroke-width="3" stroke-dasharray="6,4"/>
-  <text class="txt-last" x="220" y="554">Équipement individuel</text>
-  <text class="tag" x="220" y="576">DERNIER RECOURS — pas la première idée</text>
+  <!-- Rangée 9 : le neuvième principe du code du travail (art. L4121-2) -->
+  <circle cx="34" cy="544" r="18" fill="#1b3a63"/><text class="num" x="34" y="550" text-anchor="middle">9</text>
+  <rect x="62" y="532" width="140" height="26" rx="6" fill="#1b3a63"/>
+  <text class="txt" x="220" y="550">Donner les instructions appropriées</text>
 
-  <text class="lgd" x="20" y="596">↓ Le moins efficace — on n'y arrive qu'en dernier</text>
+  <!-- L'EPI : hors des neuf, en accent — le principe 8 fait passer le collectif avant l'individuel -->
+  <rect x="62" y="592" width="80" height="28" rx="6" fill="#fffdf8" stroke="#c2410c" stroke-width="3" stroke-dasharray="6,4"/>
+  <text class="txt-last" x="160" y="612">Équipement individuel (EPI)</text>
+  <text class="tag" x="160" y="636">DERNIER RECOURS — le principe 8 fait passer le collectif avant</text>
+
+  <text class="lgd" x="20" y="672">↓ Le moins efficace — on n'y arrive qu'en dernier</text>
 </svg>

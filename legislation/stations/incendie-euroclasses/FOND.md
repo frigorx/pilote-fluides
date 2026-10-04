@@ -54,7 +54,7 @@ déposées à compter du 1er octobre 2026 (art. 23).
 
 ## Écran 2 — L'échelle A1 à F
 Article 2 et annexe 1 (tableau I.1) : sept classes A1, A2, B, C, D, E, F. A1 sans suffixe ;
-A2, B, C, D suivies de s1/s2/s3 et d0/d1/d2 ; E suivie de d0/d1/d2 seulement ; F « aucune
+A2, B, C, D suivies de s1/s2/s3 et d0/d1/d2 ; E seule ou suivie de d2 seulement (« E » ou « E-d2 ») ; F « aucune
 performance déterminée ». Sols (tableau I.2) : mêmes classes avec l'indice « fl ». Article 5 :
 le classement s'appuie sur la norme NF EN 13501-1 — norme payante : **objet seulement**
 (classement des produits d'après leurs essais de réaction au feu).
