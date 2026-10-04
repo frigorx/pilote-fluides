@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1b3a63">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Le circuit dont vous êtes le héros — JouéRézo inerWeb</title>
+<meta name="description" content="Vous êtes une molécule de fluide frigorigène. Faites le tour du circuit : à chaque organe, une énigme.">
+<!-- Page écrite à la main (pilote du 04/10/2026), sur le gabarit d'outils/fabriquer-pages.mjs : le moteur de l'aventure
+     (moteur/aventure.js) relancé sous le nom « heros », le scénario dans donnees/heros.js, les scènes dessinées dans
+     donnees/heros-scenes.js (briques VOYAGE_DESSIN). Styles propres au jeu ci-dessous : rien ne change pour les autres jeux. -->
+<link rel="stylesheet" href="jouerezo.css?v=20261004-0851">
+<style>
+/* corps 14 pt minimum (≈ 18,7 px) partout dans le jeu */
+body, .haut, .legende, .chapo, .theme-carte { font-size: 19px; }
+.haut .marque { font-size: 1.3rem; }
+.scene .texte, .fin .texte { font-size: 1.25rem; }
+.fin h3 { font-size: 1.2rem; }
+.fin .texte p + p { margin-top: .6em; }
+/* la scène dessinée et sa bande d'état */
+.scene .vignette, .fin .vignette { font-size: 19px; line-height: 1.3; }
+.heros-scene { display: grid; gap: 10px; }
+.heros-svg { display: block; width: 100%; height: auto; border: 1px solid var(--ligne); border-radius: 14px; background: #f9fbfe; }
+.heros-etat { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.heros-etats { display: contents; }
+.heros-ou { flex: none; width: 150px; padding: 4px; background: #fff; border: 1px solid var(--ligne); border-radius: 10px; }
+.heros-carte { display: block; width: 100%; height: auto; }
+.heros-p { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 14px 4px 8px; font-weight: bold;
+  color: var(--txt); background: #fff; border: 2px solid var(--ligne); border-radius: 999px; }
+.heros-p svg { flex: none; width: 30px; height: 28px; }
+.heros-p.p-hp { background: #fdeee8; border-color: #c0392b; }
+.heros-p.p-bp { background: #e6f0fb; border-color: #2f6fb8; }
+.heros-organe img { flex: none; width: 44px; height: 44px; object-fit: contain; }
+.fin .vignette { width: 100%; max-width: 40rem; justify-self: center; }
+@media (max-width: 480px) { .heros-ou { width: 120px; } }
+.heros-diagramme { border: none; background: transparent; }
+/* grand écran : le dessin à gauche, l'énigme à droite (tout tient à 1280 × 800) */
+@media (min-width: 900px) {
+  .scene { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); grid-template-rows: auto auto auto auto 1fr; column-gap: 24px; align-items: start; }
+  .scene > .vignette { grid-column: 1; grid-row: 1 / -1; }
+  .scene > :not(.vignette) { grid-column: 2; }
+}
+</style>
+<script defer src="../moteur/retour-accueil.js?v=ff0ca829c0"></script>
+</head>
+<body>
+<a class="evite" href="#jeu">Aller au jeu</a>
+<header id="haut" class="haut"></header>
+<main id="jeu" class="page"></main>
+<script src="donnees/heros.js?v=20261004-0851"></script>
+<script src="moteur/voyage-dessin.js?v=20261004-0851"></script>
+<script src="moteur/voyage-diagramme.js?v=20261004-0851"></script>
+<script src="donnees/heros-scenes.js?v=20261004-0851"></script>
+<script src="moteur/commun.js?v=20261004-0851"></script>
+<script src="moteur/aventure.js?v=20261004-0851" data-jeu="heros"></script>
+<script src="../moteur/lisibilite.js"></script>
+<script src="../moteur/marque.js" data-cartouche="JouéRézo" data-licence="cc-by-nc-nd"></script>
+</body>
+</html>
