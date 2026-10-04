@@ -49,7 +49,7 @@
   "num": "5",
   "titre": "Le filtre déshydrateur",
   "sous": "ni eau, ni saleté",
-  "duree": 30,
+  "duree": 32,
   "video": "chapitre-05-le-filtre-deshydrateur.mp4",
   "affiche": "chapitre-05-le-filtre-deshydrateur.jpg"
  },
@@ -84,8 +84,8 @@
   "id": "fuite",
   "num": "9",
   "titre": "La fuite",
-  "sous": "une voisine s'échappe",
-  "duree": 43,
+  "sous": "une molécule s'échappe",
+  "duree": 46,
   "video": "chapitre-09-la-fuite.mp4",
   "affiche": "chapitre-09-la-fuite.jpg"
  },

@@ -296,21 +296,28 @@
   /* ---------- les organes : leurs symboles normalisés (bibliothèque de Franck, voyage/symboles/) ----------
      Pas de photos (Franck, 03/10) : le dessin, c'est la coupe animée ; le symbole, c'est ce que l'élève
      retrouvera sur les schémas. vb = viewBox du SVG ; axe = le point du symbole posé sur le tuyau (milieu
-     de ses raccordements), pour que la carte du circuit le pose dans le sens du fluide. */
+     de ses raccordements), pour que la carte du circuit le pose dans le sens du fluide.
+     img = l'organe « en vrai » sur la carte d'identité (voyage/organes/<img>.webp, voir SOURCES.md là-bas) :
+     demande de F. Alouche (03/10 soir), images de synthèse déjà en ligne sur le site, pas de vraies photos. */
   D.SYM = window.VOYAGE_SYM || (window.VOYAGE_BASE || "") + "voyage/symboles/";
+  D.ORG_IMG = (window.VOYAGE_BASE || "") + "voyage/organes/";
   D.ORGANES = {
-    evaporateur: { f: "echangeur_a_air_eduscol", vb: [-22, -32, 44, 64], axe: [10, 0], nom: "évaporateur" },
-    compresseur: { f: "compresseur_general", vb: [-24, -20, 50, 40], axe: [0, 0], nom: "compresseur" },
-    condenseur: { f: "echangeur_a_air_eduscol", vb: [-22, -32, 44, 64], axe: [10, 0], nom: "condenseur" },
-    bouteille: { f: "bouteille_liquide_verticale", vb: [-14, -26, 28, 52], axe: [0, -24.5], nom: "bouteille" },
-    filtre: { f: "filtre_deshydrateur", vb: [-25, -10, 40, 20], axe: [-4.875, 0.495], nom: "filtre" },
-    voyant: { f: "voyant_liquide", vb: [-15, -10, 50, 20], axe: [9.8, -0.054], nom: "voyant" },
-    electrovanne: { f: "electrovanne_frigo", vb: [-19, -21, 40, 30], axe: [0, 0], nom: "électrovanne" },
-    detendeur: { f: "detendeur_thermo_ext", vb: [-19, -28, 40, 40], axe: [0, 0], nom: "détendeur", lettres: [0, -12, 4.6, "TC"] }
+    evaporateur: { f: "echangeur_a_air_eduscol", vb: [-22, -32, 44, 64], axe: [10, 0], nom: "évaporateur", img: "evaporateur" },
+    compresseur: { f: "compresseur_general", vb: [-24, -20, 50, 40], axe: [0, 0], nom: "compresseur", img: "compresseur" },
+    condenseur: { f: "echangeur_a_air_eduscol", vb: [-22, -32, 44, 64], axe: [10, 0], nom: "condenseur", img: "condenseur" },
+    bouteille: { f: "bouteille_liquide_verticale", vb: [-14, -26, 28, 52], axe: [0, -24.5], nom: "bouteille", img: "bouteille" },
+    filtre: { f: "filtre_deshydrateur", vb: [-25, -10, 40, 20], axe: [-4.875, 0.495], nom: "filtre", img: "filtre" },
+    voyant: { f: "voyant_liquide", vb: [-15, -10, 50, 20], axe: [9.8, -0.054], nom: "voyant", img: "voyant" },
+    electrovanne: { f: "electrovanne_frigo", vb: [-19, -21, 40, 30], axe: [0, 0], nom: "électrovanne", img: "electrovanne" },
+    detendeur: { f: "detendeur_thermo_ext", vb: [-19, -28, 40, 40], axe: [0, 0], nom: "détendeur", lettres: [0, -12, 4.6, "TC"], img: "detendeur" }
   };
   D.image = function (parent, nom, x, y, l, h) {
     const o = D.ORGANES[nom], embarque = window.VOYAGE_SYM_DATA && window.VOYAGE_SYM_DATA[o.f]; // le film embarque les symboles
     return D.el("image", { href: embarque || D.SYM + o.f + ".svg", x: x, y: y, width: l, height: h, preserveAspectRatio: "xMidYMid meet" }, parent);
+  };
+  D.imageReelle = function (parent, nom, x, y, l, h) { // l'organe en vrai (le film l'embarque aussi, clé "organes/<img>")
+    const o = D.ORGANES[nom], embarque = window.VOYAGE_SYM_DATA && window.VOYAGE_SYM_DATA["organes/" + o.img];
+    return D.el("image", { href: embarque || D.ORG_IMG + o.img + ".webp", x: x, y: y, width: l, height: h, preserveAspectRatio: "xMidYMid meet" }, parent);
   };
 
   D.couper = function (s, max) { // découpe en lignes d'au plus max caractères
@@ -318,17 +325,25 @@
     s.split(" ").forEach(m => { if ((l[l.length - 1] + " " + m).trim().length > max) l.push(m); else l[l.length - 1] = (l[l.length - 1] + " " + m).trim(); });
     return l;
   };
-  /* la carte d'identité d'un organe (repère de la scène 1600 × 770) */
+  /* la carte d'identité d'un organe (repère de la scène 1600 × 770) : son symbole | l'organe en vrai | son rôle */
+  D.VITRINE_C = [800, 425]; // le centre de la carte (zoom du théâtre et de la version verticale)
   D.carteIdentite = function (parent, s) {
     // la coupe se devine derrière, à 22 % : chevauchement voulu (carte opaque), déclaré au contrôle HyperFrames
     const g = D.el("g", { "data-layout-allow-overlap": "" }, parent), o = D.ORGANES[s.organe], nom = o.nom[0].toUpperCase() + o.nom.slice(1);
-    D.el("rect", { x: 260, y: 190, width: 900, height: 470, rx: 28, fill: "#fffdf8", stroke: D.BLEU, "stroke-width": 4 }, g);
-    D.el("rect", { x: 296, y: 226, width: 380, height: 300, rx: 16, fill: "#fff", stroke: "rgba(27,58,99,.18)", "stroke-width": 2 }, g);
-    D.image(g, s.organe, 316, 246, 340, 260);
-    D.texte(g, 486, 566, "son symbole", { "text-anchor": "middle", "font-size": 28, fill: "#637285", "font-family": "Calibri, Arial, sans-serif", "font-weight": 600 });
-    D.texte(g, 712, 300, nom, { "font-size": 60, "font-weight": 700, fill: D.BLEU, "font-family": "Trebuchet MS, Arial, sans-serif" });
-    D.lignes(g, 712, 372, D.couper("Son rôle : " + s.role + ".", 22), { "font-size": 38, fill: "#10233c", "font-family": "Calibri, Arial, sans-serif", "font-weight": 600 }, 48);
-    D.texte(g, 712, 590, "Entrons dedans…", { "font-size": 34, "font-weight": 700, fill: D.ORANGE, "font-family": "Calibri, Arial, sans-serif" });
+    const legende = { "text-anchor": "middle", "font-size": 28, fill: "#637285", "font-family": "Calibri, Arial, sans-serif", "font-weight": 600 };
+    D.el("rect", { x: 100, y: 190, width: 1400, height: 470, rx: 28, fill: "#fffdf8", stroke: D.BLEU, "stroke-width": 4 }, g);
+    D.el("rect", { x: 136, y: 226, width: 380, height: 300, rx: 16, fill: "#fff", stroke: "rgba(27,58,99,.18)", "stroke-width": 2 }, g);
+    D.image(g, s.organe, 156, 246, 340, 260);
+    D.texte(g, 326, 566, "son symbole", legende);
+    if (o.img) {
+      D.el("rect", { x: 552, y: 226, width: 440, height: 300, rx: 16, fill: "#fff", stroke: "rgba(27,58,99,.18)", "stroke-width": 2 }, g);
+      D.imageReelle(g, s.organe, 572, 246, 400, 260);
+      D.texte(g, 772, 566, "en vrai, à l'atelier", legende);
+    }
+    // le texte commence sous la petite carte du circuit (théâtre : x ≥ 1206, y ≤ 282), qui recouvre le coin de la carte
+    D.texte(g, 1028, 338, nom, { "font-size": 60, "font-weight": 700, fill: D.BLEU, "font-family": "Trebuchet MS, Arial, sans-serif" });
+    D.lignes(g, 1028, 406, D.couper("Son rôle : " + s.role + ".", 22), { "font-size": 38, fill: "#10233c", "font-family": "Calibri, Arial, sans-serif", "font-weight": 600 }, 48);
+    D.texte(g, 1028, 604, "Entrons dedans…", { "font-size": 34, "font-weight": 700, fill: D.ORANGE, "font-family": "Calibri, Arial, sans-serif" });
     return g;
   };
   /* le filigrane des vidéos (Franck, 03/10 : contre le vol, il survit au recadrage) : le logo de la charte,

@@ -103,6 +103,7 @@
   };
 
   /* la carte d'identité : même cadre que l'original (la série verticale s'en sert), nom sur deux lignes s'il est long */
+  D.VITRINE_C = [710, 425]; // centre de CETTE carte (x 260…1160) : la carte de base est passée à 3 volets, centre 800 (04/10)
   D.carteIdentite = function (parent, s) {
     const g = D.el("g", { "data-layout-allow-overlap": "" }, parent), o = D.ORGANES[s.organe], nom = o.nom[0].toUpperCase() + o.nom.slice(1);
     D.el("rect", { x: 260, y: 190, width: 900, height: 470, rx: 28, fill: "#fffdf8", stroke: D.BLEU, "stroke-width": 4 }, g);

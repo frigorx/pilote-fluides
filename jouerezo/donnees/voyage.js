@@ -128,7 +128,7 @@ window.VOYAGE_RECIT = {
         "Dedans, des grains spéciaux boivent l'humidité, comme une éponge.",
         "Une goutte d'eau dans le circuit gèlerait dans le détendeur, et elle ferait de l'acide avec l'huile.",
         "Une grille retient aussi les saletés : copeaux de cuivre, poussières.",
-        "Moi, je passe à travers, propre et sèche."
+        "Moi, je passe à travers, toujours liquide, sans humidité et sans saleté."
       ],
       question: { q: "Pourquoi le filtre déshydrateur retient-il l'eau ?",
         choix: [["Elle gèlerait dans le détendeur et ferait de l'acide avec l'huile.", 1],
@@ -185,14 +185,14 @@ window.VOYAGE_RECIT = {
                 ["Il se ferme complètement.", 0],
                 ["Il arrête le compresseur.", 0]],
         pourquoi: "Surchauffe trop élevée en sortie = l'évaporateur manque de fluide. Le bulbe pousse sur la membrane : le pointeau s'écarte, le détendeur ouvre davantage." } },
-    { id: "fuite", num: "9", titre: "La fuite", sous: "une voisine s'échappe",
+    { id: "fuite", num: "9", titre: "La fuite", sous: "une molécule s'échappe",
       carte: [9.2, 9.2], puces: [["fuite", "fuite"]],
       phrases: [
         "Un jour, un raccord se desserre, à force de vibrations.",
-        "Ma voisine s'échappe par la fuite.",
+        "Une autre molécule de fluide, ma voisine, s'échappe par la fuite.",
         "Pour la machine, c'est une mauvaise nouvelle : un circuit fermé ne consomme pas de fluide.",
         "S'il en manque, on cherche pourquoi : le plus souvent, c'est une fuite. Et la machine fait de moins en moins de froid.",
-        "Pour la planète aussi : dans l'air, ma voisine agit comme une couverture, elle retient la chaleur autour de la Terre.",
+        "Pour la planète aussi : dans l'air, cette molécule agit comme une couverture, elle retient la chaleur autour de la Terre.",
         ["Le PRP dit combien, comparé au CO2. Pour certains fluides, plusieurs milliers de fois plus.",
          "Le P R P dit combien, comparé au C O deux. Pour certains fluides, plusieurs milliers de fois plus."],
         "Voilà pourquoi on contrôle l'étanchéité des circuits, et pourquoi on répare avant de recharger."
