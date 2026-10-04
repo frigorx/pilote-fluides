@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "genereLe": "2026-10-02T10:44:02.311Z",
-  "total": 5802,
+  "genereLe": "2026-10-04T16:16:45.351Z",
+  "total": 5824,
   "narrations": [
     {
       "cle": "00060401-70",
@@ -141,6 +141,14 @@
       "texte": "▶ Lecture",
       "type": "interface",
       "sources": [
+        "packs/fluides/res/chaine-intervention-interactive/scene-geste.js",
+        "packs/fluides/res/compresseur-interactif/scene-compression.js",
+        "packs/fluides/res/condenseur-interactif/scene-condensation.js",
+        "packs/fluides/res/etancheite-interactive/scene-geste.js",
+        "packs/fluides/res/evaporateur-interactif/scene-evaporation.js",
+        "packs/fluides/res/intervention-hydrocarbures-interactive/scene-geste.js",
+        "packs/fluides/res/pupitre-reglage-interactif/scene-geste.js",
+        "packs/fluides/res/regulateur-electronique-interactif/scene-geste.js",
         "packs/fluides/res/regulateur-kvr-nrd/index.html"
       ]
     },
@@ -1139,14 +1147,6 @@
       ]
     },
     {
-      "cle": "0597cf13-399",
-      "texte": "Cinq cartes, cinq équipements que vous connaissez déjà. La bouteille de fluide frigorigène, le réservoir de liquide, le séparateur d'huile et le condenseur portent tous l'étiquette récipient. La tuyauterie frigorifique qui les relie porte l'étiquette tuyauterie. La bande du bas rappelle la règle : chacun entre dans le champ de la directive dès qu'il dépasse le seuil de pression fixé par le texte.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/desp-la-directive/index.html"
-      ]
-    },
-    {
       "cle": "059a6494-61",
       "texte": "Avec Q = 2,0 m³/h et ΔT = 10 K, quelle puissance obtient-on ?",
       "type": "feedback",
@@ -1644,6 +1644,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/tampon/content.js"
+      ]
+    },
+    {
+      "cle": "08972624-178",
+      "texte": "La RT2012 associait Bbio pour les besoins, Cep pour la consommation et Tic pour le confort d'été des bâtiments concernés. Elle ne fixait pas les indicateurs carbone de la RE2020.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-pourquoi-une-rt/index.html"
       ]
     },
     {
@@ -2975,6 +2983,22 @@
       ]
     },
     {
+      "cle": "0f8cee41-20",
+      "texte": "compresseur : marche",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/desp.js"
+      ]
+    },
+    {
+      "cle": "0f975a60-16",
+      "texte": "T° de saturation",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/outils/reglette.html"
+      ]
+    },
+    {
       "cle": "0fa53872-600",
       "texte": "Cette vapeur séparée doit bien repartir quelque part. Une vanne, appelée vanne de gaz de détente, la renvoie directement à l'aspiration moyenne température, sans passer par les évaporateurs. Elle court-circuite les meubles, et c'est exactement ce qu'il faut : cette vapeur n'a rien à y faire, elle n'y produirait aucun froid et encombrerait le passage. Cette même vanne remplit un second rôle : elle règle la pression de la bouteille intermédiaire. Un seul organe, deux fonctions — et c'est pour cela qu'un défaut sur cette vanne se manifeste à la fois côté pression intermédiaire et côté aspiration.",
       "type": "narration",
@@ -3199,6 +3223,14 @@
       ]
     },
     {
+      "cle": "10f08d38-284",
+      "texte": "Après le choc pétrolier de 1973, la première réglementation thermique française apparaît en 1974. La RT2012 traite besoins, consommation et confort d'été. La RE2020 ajoute notamment le carbone et renouvelle les indicateurs. À chaque affaire, vérifiez le texte et le champ applicables.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-pourquoi-une-rt/index.html"
+      ]
+    },
+    {
       "cle": "110f6019-52",
       "texte": "La demande de température agit sur la ligne liquide.",
       "type": "feedback",
@@ -3351,6 +3383,14 @@
       ]
     },
     {
+      "cle": "123ba64a-172",
+      "texte": "Quatrième et dernière question. Pourquoi l'indicateur carbone de la RE2020 pousse-t-il vers la pompe à chaleur ? Rappelez-vous les limites de la comparaison à l'écran sept.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
+      ]
+    },
+    {
       "cle": "123bb037-34",
       "texte": "Associez chaque partie à son rôle.",
       "type": "feedback",
@@ -3403,7 +3443,17 @@
       "texte": "Écouter les explications",
       "type": "interface",
       "sources": [
-        "packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html"
+        "packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html",
+        "packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html",
+        "packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html",
+        "packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html",
+        "packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html",
+        "packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html",
+        "packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html",
+        "packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html",
+        "packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html",
+        "packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html",
+        "packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html"
       ]
     },
     {
@@ -3436,6 +3486,14 @@
       "type": "voiceStep",
       "sources": [
         "packs/fluides/res/surchauffe-sous-refroidissement-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "12ace96e-666",
+      "texte": "Six cartes, en deux rangées. B zéro : des opérations non électriques dans la zone de voisinage simple en basse tension. B zéro ne permet pas d'entrer en zone de voisinage renforcé ; B zéro V n'existe pas. B S : une intervention élémentaire, remplacer ou raccorder, toujours hors tension. B R, la carte mise en avant : le chargé d'intervention générale, celui de l'entretien et du dépannage. B C : il consigne pour les autres et ne fait rien d'autre. B E : une opération spécifique, précisée par un attribut. H zéro : même esprit que B zéro, mais en haute tension. Regardez la bande du bas : une habilitation couvre le risque électrique, pas les fluides frigorigènes.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/elec-habilitation/index.html"
       ]
     },
     {
@@ -4258,6 +4316,14 @@
       ]
     },
     {
+      "cle": "16365c40-238",
+      "texte": "La RE2020 remplace progressivement la RT2012. Pour un dossier réel, vérifiez l'usage, la localisation, la date de dépôt et les éventuelles dispositions particulières. Le nom RE2020 ne signifie pas que tous les projets ont basculé en 2020.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-pourquoi-une-rt/index.html"
+      ]
+    },
+    {
       "cle": "16429859-49",
       "texte": "Consigner, isoler, vérifier l'absence de pression",
       "type": "choix",
@@ -4546,6 +4612,14 @@
       ]
     },
     {
+      "cle": "17cac346-28",
+      "texte": "T° de bulle (liquide saturé)",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/outils/reglette.html"
+      ]
+    },
+    {
       "cle": "17cbab17-536",
       "texte": "Le filtre déshydrateur est un petit corps cylindrique installé sur la ligne liquide, en amont du voyant et du détendeur. Il porte presque toujours une flèche : elle indique le sens de circulation, et sur un modèle unidirectionnel elle doit être respectée sans discussion. Ne le confondez pas avec un simple filtre à tamis : son intérieur n'est pas une grille, mais un média capable de retenir deux choses très différentes. C'est un organe qu'on remplace régulièrement, et qui passe pourtant souvent inaperçu tant qu'il fait son travail.",
       "type": "narration",
@@ -4747,6 +4821,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/etancheite-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "18d8a899-9",
+      "texte": "1 machine",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/acoustique.js"
       ]
     },
     {
@@ -5632,8 +5714,13 @@
         "packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html",
         "packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html",
         "packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html",
+        "packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html",
         "packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html",
-        "packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html"
+        "packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html",
+        "packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html",
+        "packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html",
+        "packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html",
+        "packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html"
       ]
     },
     {
@@ -5818,14 +5905,6 @@
       "type": "speak",
       "sources": [
         "packs/fluides/res/chaleur-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "1e6c1600-399",
-      "texte": "Cinq blocs empilés dans une colonne, chacun représentant un poste de consommation : chauffage, refroidissement, eau chaude sanitaire, éclairage, auxiliaires comme les pompes et les ventilateurs. Une accolade à droite réunit les cinq blocs sous l'étiquette Cep, la consommation totale d'énergie primaire. Le message : le Cep ne regarde pas que le chauffage, il additionne tous les usages du bâtiment.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -6819,14 +6898,6 @@
       ]
     },
     {
-      "cle": "225c6d90-564",
-      "texte": "Regardez cette surface d'échange, traversée par de la chaleur. L'air arrive d'un côté, il ressort de l'autre à une température différente, et entre les deux, il y a une paroi. Un mur, un vitrage, une toiture font exactement la même chose, en beaucoup plus lent, et sans qu'on puisse rien voir. Tant qu'il fait plus chaud dehors que dedans, la chaleur entre par toutes les parois du local, le jour comme la nuit. Elle ne demande la permission à personne : elle suit l'écart de température. Toute la question est de savoir combien elle apporte, et par où elle passe.",
-      "type": "narration",
-      "sources": [
-        "aerorezo/stations/transmission/manifest.js"
-      ]
-    },
-    {
       "cle": "2280b535-8",
       "texte": "▶ Animer",
       "type": "interface",
@@ -6888,14 +6959,6 @@
       "type": "narration",
       "sources": [
         "hydrometro/app.js"
-      ]
-    },
-    {
-      "cle": "22d488c1-533",
-      "texte": "Le groupe du fluide se lit en deux colonnes. Le groupe un rassemble les fluides explosifs, inflammables, toxiques ou comburants — les plus dangereux. Le groupe deux rassemble tous les autres. Ce classement rejoint ce que vous connaissez déjà de la norme NF EN 378, qui range les fluides frigorigènes en A1, A2L, A2, A3, puis B1, B2L, B2 et B3. Un fluide inflammable ou toxique au sens de cette norme rejoint le groupe un de la directive. Autrement dit, le propane et l'ammoniac ne sont pas soumis aux mêmes exigences qu'un fluide A1.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/desp-categories/index.html"
       ]
     },
     {
@@ -8103,6 +8166,24 @@
       ]
     },
     {
+      "cle": "2916ac51-9",
+      "texte": "⏸ Arrêter",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/acoustique.js",
+        "legislation/scenes/certifs.js",
+        "legislation/scenes/dechets.js",
+        "legislation/scenes/desp.js",
+        "legislation/scenes/electrique.js",
+        "legislation/scenes/fluidique.js",
+        "legislation/scenes/impact.js",
+        "legislation/scenes/incendie.js",
+        "legislation/scenes/risques.js",
+        "legislation/scenes/thermique.js",
+        "legislation/scenes/travail.js"
+      ]
+    },
+    {
       "cle": "293e5546-50",
       "texte": "En partie haute, comme la plupart des gaz de fuite",
       "type": "choix",
@@ -8352,6 +8433,14 @@
       ]
     },
     {
+      "cle": "2ac1b955-15",
+      "texte": "machine arrêtée",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/acoustique.js"
+      ]
+    },
+    {
       "cle": "2ac7677a-543",
       "texte": "Prenons un cas concret : une recharge en toiture. Vous connaissez le geste, vous connaissez la machine. Mais quatre éléments peuvent transformer cette intervention ordinaire en situation dangereuse, et aucun ne concerne le froid. La coactivité : d'autres corps de métier travaillent au même endroit. L'accès : monter en toiture demande un moyen adapté. Les engins de levage à proximité. Et l'existence éventuelle d'une zone à atmosphère particulière. Seul le document du site pouvait vous donner ces quatre informations avant que vous montiez.",
       "type": "data-narration",
@@ -8373,14 +8462,6 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/compresseur-interactif/app.js"
-      ]
-    },
-    {
-      "cle": "2aeb789c-471",
-      "texte": "Une colonne verticale représente la pression, croissante vers le haut. Elle est coupée en deux par un trait tireté orange, marqué seuil fixé par le texte. En dessous, la zone hachurée : hors du champ de la DESP. Au-dessus, la zone pleine, en bleu foncé : dans le champ de la DESP. L'encadré à droite précise ce que croise ce seuil : la pression, avec le volume de l'équipement, ou le diamètre pour une tuyauterie. Aucun chiffre n'est donné : c'est le principe qui compte.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/desp-la-directive/index.html"
       ]
     },
     {
@@ -8799,14 +8880,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/chaleur-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "2d3c4755-354",
-      "texte": "Trois jauges verticales séparées, une pour Bbio, une pour Cep, une pour IC. Chaque jauge porte une zone haute hachurée en rouge, marquée au-delà : le projet échoue sur ce point. En dessous, la phrase confirme qu'un très bon résultat sur une jauge ne rattrape pas un mauvais résultat sur une autre : les trois doivent être respectées, chacune de son côté.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -9415,6 +9488,14 @@
       "type": "capture",
       "sources": [
         "packs/fluides/res/co2-r744/ejecteur/e-q2-juste"
+      ]
+    },
+    {
+      "cle": "308cb18e-36",
+      "texte": "Petit local : au-dessus de la limite",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/fluidique.js"
       ]
     },
     {
@@ -10543,6 +10624,14 @@
       ]
     },
     {
+      "cle": "3703ef9d-17",
+      "texte": "machine en marche",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/acoustique.js"
+      ]
+    },
+    {
       "cle": "37084442-654",
       "texte": "Suivez le trajet numéroté et nommez les quatre flux, un par un. Ensuite, dans votre tête, glissez les caissons entre le premier repère et le deuxième, dans l'ordre : les registres, le mélange, le filtre, les batteries, le ventilateur. Trois questions permettent de contrôler ce que vous avez composé. Le filtre est-il bien avant les batteries ? La prise d'air est-elle assez loin du rejet, pour que la centrale ne respire pas l'air qu'elle vient d'évacuer ? Et reste-t-il, devant chaque porte de visite, la place de l'ouvrir en grand ? Cette dernière question paraît secondaire. C'est pourtant elle qui décide si le filtre sera changé un jour, ou jamais.",
       "type": "narration",
@@ -11006,14 +11095,6 @@
       ]
     },
     {
-      "cle": "39a1e2b5-418",
-      "texte": "Un équipement, au centre, relié par quatre traits fins à quatre étiquettes qui l'entourent sans jamais le recouvrir. En haut à gauche : le marquage CE, apposé sur l'équipement. En haut à droite : la déclaration de conformité, établie par le fabricant. En bas à gauche : la notice d'instructions, fournie avec l'équipement. En bas à droite : les accessoires de sécurité, qui le protègent contre un dépassement de sa PS.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/desp-la-directive/index.html"
-      ]
-    },
-    {
       "cle": "39ca299e-162",
       "texte": "À reprendre. Environ 26 bar. Les 4 bar correspondraient à un R 404A à la même température : les pressions du dioxyde de carbone sont cinq à six fois plus élevées.",
       "type": "capture",
@@ -11242,6 +11323,14 @@
       ]
     },
     {
+      "cle": "3ac5d728-10",
+      "texte": "plus haute",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/desp.js"
+      ]
+    },
+    {
       "cle": "3aca6b36-524",
       "texte": "Retenez donc ceci : le même local n'a pas le même besoin toute l'année. La puissance de chauffage et la puissance de refroidissement viennent de scénarios distincts, calculés séparément. Et une mise en garde qui vaut pour toute votre carrière : on ne choisit pas une machine sur une règle au mètre carré. Ces règles d'atelier — tant de watts par mètre carré — ne tiennent compte ni de l'isolation, ni de l'orientation, ni des apports internes, ni de l'usage. Elles donnent parfois le bon résultat, et jamais la bonne raison.",
       "type": "narration",
@@ -11383,6 +11472,14 @@
       "type": "voiceStep",
       "sources": [
         "packs/fluides/res/glissement-temperature/app.js"
+      ]
+    },
+    {
+      "cle": "3bae2f09-263",
+      "texte": "Le Bbio traduit les besoins de chauffage, de refroidissement et d'éclairage liés à la conception du bâtiment. Orientation, isolation et protections solaires comptent. Changer seulement le générateur ne corrige pas un Bbio dépassé, à conditions d'étude identiques.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -12342,6 +12439,14 @@
       ]
     },
     {
+      "cle": "40b57c60-581",
+      "texte": "Regardez ce mur vu en coupe, avec sa fenêtre. D'un côté, le dedans, chaud. De l'autre, le dehors, plus froid. La chaleur traverse la paroi, et on ne la voit pas : ici, ce sont des flèches. Fines à travers le mur isolé, bien plus grosses à travers la fenêtre. Sur ce dessin, la chaleur sort. En été, c'est l'inverse : tant qu'il fait plus chaud dehors que dedans, elle entre par toutes les parois du local, le jour comme la nuit. Elle ne demande la permission à personne : elle suit l'écart de température. Toute la question est de savoir combien elle apporte, et par où elle passe.",
+      "type": "narration",
+      "sources": [
+        "aerorezo/stations/transmission/manifest.js"
+      ]
+    },
+    {
       "cle": "40bfe95a-43",
       "texte": "Transfert en baisse et résistance en hausse",
       "type": "choix",
@@ -13201,14 +13306,6 @@
       ]
     },
     {
-      "cle": "44a6c4e1-440",
-      "texte": "Trois cercles côte à côte, tous pleins cette fois. Le premier, dans le style déjà vu, porte consommation d'énergie : il existait déjà dans la RT2012. Les deux suivants, encadrés d'un trait plus épais pour marquer la nouveauté, portent impact carbone et confort d'été : ce sont exactement les deux cercles qui étaient barrés d'une croix à l'écran trois. Ils ne sont plus absents, ils sont désormais mesurés au même titre que la consommation.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-pourquoi-une-rt/index.html"
-      ]
-    },
-    {
       "cle": "44afbadc-209",
       "texte": "Quatrième question. Une pompe à chaleur alimente une boulangerie, et le voisin se plaint du bruit la nuit. Quel critère du code de la santé publique s'applique ? Souvenez-vous des deux régimes de l'écran sept.",
       "type": "data-narration",
@@ -13495,14 +13592,6 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/compresseur-interactif/app.js"
-      ]
-    },
-    {
-      "cle": "46018478-551",
-      "texte": "Récapitulons la ligne du temps. Mille neuf cent soixante-quatorze : le choc pétrolier et la première réglementation thermique. Puis les générations suivantes, qui resserrent l'exigence à chaque étape. La réglementation de deux mille douze, qui ne regardait que la consommation d'énergie. Et enfin la réglementation environnementale de deux mille vingt, qui ajoute deux exigences nouvelles : l'empreinte carbone du bâtiment sur tout son cycle de vie, et le confort d'été. C'est ce passage de la seule énergie à une vision plus large qu'il faut retenir.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-pourquoi-une-rt/index.html"
       ]
     },
     {
@@ -13998,6 +14087,21 @@
       "type": "fiche",
       "sources": [
         "packs/fluides/cartes.js#p4"
+      ]
+    },
+    {
+      "cle": "48f1e03e-18",
+      "texte": "Lire tout le texte",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/chaine-intervention-interactive/app.js",
+        "packs/fluides/res/compresseur-interactif/app.js",
+        "packs/fluides/res/condenseur-interactif/app.js",
+        "packs/fluides/res/etancheite-interactive/app.js",
+        "packs/fluides/res/evaporateur-interactif/app.js",
+        "packs/fluides/res/intervention-hydrocarbures-interactive/app.js",
+        "packs/fluides/res/pupitre-reglage-interactif/app.js",
+        "packs/fluides/res/regulateur-electronique-interactif/app.js"
       ]
     },
     {
@@ -15904,6 +16008,14 @@
       ]
     },
     {
+      "cle": "53c8c81d-28",
+      "texte": "Grand local : sous la limite",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/fluidique.js"
+      ]
+    },
+    {
       "cle": "53d4b24f-577",
       "texte": "Devant un matériau ou devant un mur, le feu pose deux questions à ne jamais confondre. À gauche, la réaction au feu : le matériau alimente-t-il le feu ? La réponse est une classe, de A1 à F, fixée par l'arrêté du 21 novembre 2002. À droite, la résistance au feu : l'ouvrage tient-il ? Ce sont des lettres et des minutes, et le texte de référence vient de changer : l'arrêté du vingt-deux mars deux mille vingt-six remplace celui de deux mille quatre sur la résistance, pas celui de la même date sur le désenfumage. Une bonne classe de réaction ne dit rien de la tenue d'un mur.",
       "type": "data-narration",
@@ -15989,6 +16101,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/_regules-commun/catalog.js"
+      ]
+    },
+    {
+      "cle": "542aacf5-28",
+      "texte": "T° de rosée (vapeur saturée)",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/outils/reglette.html"
       ]
     },
     {
@@ -16617,14 +16737,6 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/pose-manifold-2-voies-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "577ad678-641",
-      "texte": "À gauche, trois sensibilités couramment utilisées, dessinées à l'échelle : cinq cents, trois cents et trente milliampères. Plus la valeur est petite, plus le dispositif déclenche tôt. Trente milliampères, c'est la haute sensibilité, celle qui protège les personnes. À droite, les cas où l'INRS, l'Institut national de recherche et de sécurité, la rend obligatoire : prises de courant jusqu'à trente-deux ampères, locaux mouillés, installations temporaires comme les chantiers, salles d'eau, logements. Enfin, le texte au-dessus rappelle que la valeur de la prise de terre, multipliée par la sensibilité, ne doit pas dépasser cinquante volts.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/elec-terre-differentiel/index.html"
       ]
     },
     {
@@ -17390,6 +17502,14 @@
       ]
     },
     {
+      "cle": "5bd0d34f-187",
+      "texte": "Troisième question. Un bâtiment obtient un excellent résultat sur l'indicateur carbone mais dépasse le seuil du Bbio. Que se passe-t-il ? Repensez aux contrôles distincts de l'écran cinq.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
+      ]
+    },
+    {
       "cle": "5bdbcd5a-32",
       "texte": "Il n'a pas d'élément à remplacer",
       "type": "choix",
@@ -17619,14 +17739,6 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/elements-circuit-huile-regler/module.js"
-      ]
-    },
-    {
-      "cle": "5ceea6ef-472",
-      "texte": "Une maison compacte, bien orientée vers le soleil, dont les murs portent une couche d'isolation hachurée : ce sont les trois facteurs qui pèsent sur le Bbio, écrits en dessous, orientation, compacité, isolation. À droite, une chaudière et un climatiseur sont dessinés en trait pointillé et barrés d'une croix : le message est que les équipements n'entrent pas dans le calcul du Bbio. Regardez bien cette séparation : c'est le point le plus souvent confondu par les élèves.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -18019,6 +18131,14 @@
       "type": "narration",
       "sources": [
         "aerorezo/stations/diagnostic/manifest.js"
+      ]
+    },
+    {
+      "cle": "5f3b23b6-218",
+      "texte": "Énergie, carbone et confort d'été : trois thèmes, mais six indicateurs réglementaires. Bbio, Cep, Cep,nr, Ic énergie, Ic construction et DH ont chacun leur rôle. Un bon résultat ne compense pas un dépassement ailleurs.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -20120,6 +20240,21 @@
       ]
     },
     {
+      "cle": "6a05aa41-16",
+      "texte": "Replier le texte",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/chaine-intervention-interactive/app.js",
+        "packs/fluides/res/compresseur-interactif/app.js",
+        "packs/fluides/res/condenseur-interactif/app.js",
+        "packs/fluides/res/etancheite-interactive/app.js",
+        "packs/fluides/res/evaporateur-interactif/app.js",
+        "packs/fluides/res/intervention-hydrocarbures-interactive/app.js",
+        "packs/fluides/res/pupitre-reglage-interactif/app.js",
+        "packs/fluides/res/regulateur-electronique-interactif/app.js"
+      ]
+    },
+    {
       "cle": "6a09fa3b-49",
       "texte": "Quel organe change le sens fonctionnel du cycle ?",
       "type": "feedback",
@@ -21785,6 +21920,24 @@
       ]
     },
     {
+      "cle": "72a62701-10",
+      "texte": "▶ Dérouler",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/acoustique.js",
+        "legislation/scenes/certifs.js",
+        "legislation/scenes/dechets.js",
+        "legislation/scenes/desp.js",
+        "legislation/scenes/electrique.js",
+        "legislation/scenes/fluidique.js",
+        "legislation/scenes/impact.js",
+        "legislation/scenes/incendie.js",
+        "legislation/scenes/risques.js",
+        "legislation/scenes/thermique.js",
+        "legislation/scenes/travail.js"
+      ]
+    },
+    {
       "cle": "72a66e54-36",
       "texte": "Les débits sont forcément identiques",
       "type": "choix",
@@ -22090,6 +22243,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/retour-huile-naturel/module.js"
+      ]
+    },
+    {
+      "cle": "75145d4c-290",
+      "texte": "Identifiez l'usage du bâtiment et la date du projet. Relevez les six indicateurs dans l'étude et vérifiez leurs exigences respectives. Justifiez les modifications proposées. Les questions ci-dessous vérifient les notions ; seule votre production argumentée montre comment vous les utilisez.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -22507,6 +22668,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/filtre-deshydrateur-pedagogique/app.js"
+      ]
+    },
+    {
+      "cle": "77938005-552",
+      "texte": "Un toit, quatre colonnes. Le toit porte le nom du texte : la directive, équipements sous pression. Première colonne : les récipients, réservoirs, séparateurs. Deuxième : les tuyauteries, qui transportent le fluide sous pression. Troisième : les accessoires sous pression, ceux qui assurent une fonction de service. Quatrième : les accessoires de sécurité, ceux qui protègent l'équipement. Et la bande du bas ajoute un point important : le texte s'applique aussi aux ensembles, quand plusieurs équipements sont assemblés pour former un tout fonctionnel.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/desp-la-directive/index.html"
       ]
     },
     {
@@ -23241,6 +23410,14 @@
       ]
     },
     {
+      "cle": "7afc9ddd-249",
+      "texte": "Ic énergie concerne les consommations pendant l'exploitation. Ic construction concerne les composants, équipements et travaux de construction sur leur cycle de vie. Une fiche matériau et un choix d'énergie ne renseignent donc pas le même indicateur.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
+      ]
+    },
+    {
       "cle": "7afcefd6-528",
       "texte": "Le bilan tient en un tableau. À gauche, l'employeur ; à droite, le salarié ; trois lignes : le lien, la sécurité, les garde-fous. L'employeur ordonne, contrôle et sanctionne, mais il doit la sécurité et respecte une procédure écrite. Le salarié exécute de bonne foi, prend soin de la sécurité, et peut alerter puis se retirer d'un danger grave et imminent. En dessous, une bande rappelle les trois veilleurs. Et le réflexe, en bas : face à un danger grave et imminent, j'alerte, je me mets en sécurité, et je confirme par écrit.",
       "type": "data-narration",
@@ -23706,6 +23883,14 @@
       "type": "interface",
       "sources": [
         "hydrometro/stations/mesurer/station.js"
+      ]
+    },
+    {
+      "cle": "7e3226f0-15",
+      "texte": "besoin résiduel",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/thermique.js"
       ]
     },
     {
@@ -24538,6 +24723,14 @@
       ]
     },
     {
+      "cle": "8355094d-298",
+      "texte": "Le seuil de pression et les exclusions servent à déterminer le champ. Le classement vient ensuite : famille d'équipement, état et groupe du fluide, PS, volume ou DN. Ne pas confondre l'entrée dans le champ et les seuils de catégorie. Certains équipements dans le champ relèvent des règles de l'art.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/desp-la-directive/index.html"
+      ]
+    },
+    {
       "cle": "835b950e-574",
       "texte": "Trois colonnes, trois papiers qu'il ne faut pas confondre. La mention RGE, en indigo : elle appartient à l'entreprise, elle porte sur des travaux de rénovation énergétique et elle ouvre les aides de vos clients. L'attestation de capacité, en bleu : elle appartient aussi à l'entreprise, mais elle concerne les fluides frigorigènes, avec le personnel, l'outillage et les procédures. L'attestation d'aptitude, en vert : elle appartient à la personne, et elle se maintient au moins tous les sept ans. La bande du bas résume : trois objets, et aucun papier ne remplace un autre.",
       "type": "data-narration",
@@ -25031,6 +25224,14 @@
       ]
     },
     {
+      "cle": "85d47e06-304",
+      "texte": "Réservoir, séparateur, échangeur et tuyauterie doivent être examinés selon leur conception et leur usage. Une bouteille transportable de fluide relève d'un régime spécifique : ne pas l'assimiler automatiquement à un réservoir fixe. Pour un échangeur, lire sa documentation plutôt que présumer sa famille.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/desp-la-directive/index.html"
+      ]
+    },
+    {
       "cle": "85f0d174-636",
       "texte": "Le bloc au centre de l'image n'est pas un rectangle plein, et c'est important. Un serpentin de tubes le traverse de part en part, noyé dans un faisceau d'ailettes serrées. L'air passe entre les ailettes ; le fluide passe à l'intérieur des tubes. Les deux se frôlent, échangent de la chaleur, et ne se touchent jamais. C'est la forme même d'une batterie, et c'est à cette forme qu'on la reconnaît sur une installation. Regardez maintenant ce qui a été dessiné juste en dessous : un bac, et un tuyau qui fait une boucle. Personne n'a versé d'eau dans cette centrale. Il va pourtant en sortir, en continu, dès que la batterie fonctionnera.",
       "type": "narration",
@@ -25314,14 +25515,6 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js"
-      ]
-    },
-    {
-      "cle": "87732cd2-276",
-      "texte": "Les trois cartes Bbio, Cep, IC réapparaissent, plus petites, en ligne, réunies sous la mention RE2020. En dessous, une bande résume trois points : le Bbio juge le bâti seul, le Cep additionne tous les usages, l'IC compte tout le cycle de vie et pousse vers la pompe à chaleur.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -27024,14 +27217,6 @@
       ]
     },
     {
-      "cle": "9229ad3d-683",
-      "texte": "Voici la conversion qui pilote toute la réglementation. On ne raisonne plus en kilogrammes de fluide, mais en tonnes équivalent dioxyde de carbone : on prend la charge en kilogrammes, on la multiplie par le pouvoir de réchauffement du fluide, et l'on ramène le résultat en tonnes. Comparez deux installations qui contiennent la même chose : dix kilogrammes. Avec du R 404 A, dont le pouvoir de réchauffement dépasse trois mille neuf cents, cela fait un peu plus de trente-neuf tonnes équivalent. Avec du R 32, à six cent soixante-quinze, moins de sept. Même poids de fluide, presque six fois moins en équivalent — et ce sont ces tonnes-là qui déclenchent les obligations de contrôle.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/fgaz-3/index.html"
-      ]
-    },
-    {
       "cle": "922aa2cd-16",
       "texte": "Thermomètre seul",
       "type": "choix",
@@ -27093,6 +27278,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/circuit-organe-par-organe/app.js"
+      ]
+    },
+    {
+      "cle": "92b8af18-12",
+      "texte": "· au minimum",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/certifs.js"
       ]
     },
     {
@@ -27378,14 +27571,6 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/module-compresseur/index.html"
-      ]
-    },
-    {
-      "cle": "9485dfe4-384",
-      "texte": "Deux colonnes de barres, sans aucune valeur chiffrée. À gauche, une chaudière au gaz : sa barre d'impact carbone est haute, elle franchit la ligne pointillée du seuil à respecter. À droite, une pompe à chaleur : sa barre est basse, elle reste sous le seuil. Le message est visuel avant d'être écrit : à bâti identique, le choix de l'équipement change directement le résultat sur l'IC.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -29458,14 +29643,6 @@
       ]
     },
     {
-      "cle": "a033474a-164",
-      "texte": "Troisième question. Un bâtiment obtient un excellent résultat sur l'IC mais dépasse le seuil du Bbio. Que se passe-t-il ? Repensez aux trois jauges de l'écran cinq.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
-      ]
-    },
-    {
       "cle": "a041f0d0-488",
       "texte": "Ajoutons maintenant la sous-classe 2 L. Elle se place entre 1 et 2. Contrairement à une idée fréquente, un fluide 2 L propage bien une flamme lors de l'essai à 60 degrés Celsius. Mais sa vitesse maximale de combustion est limitée à 10 centimètres par seconde, sa limite inférieure d'inflammabilité est relativement élevée et sa chaleur de combustion reste limitée. Il faut donc davantage de conditions réunies pour l'enflammer, mais le risque n'est pas nul. R 32 et R 1234 y f sont A 2 L.",
       "type": "data-narration",
@@ -29791,6 +29968,14 @@
       ]
     },
     {
+      "cle": "a1e59afb-285",
+      "texte": "Pour les catégories I à IV, vérifier le marquage CE, la déclaration de conformité et la notice. Les équipements aux règles de l'art ne portent pas le CE au titre de la DESP. Les instructions et la protection adaptée restent nécessaires. Un autre texte peut imposer son propre marquage.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/desp-la-directive/index.html"
+      ]
+    },
+    {
       "cle": "a1e7502c-71",
       "texte": "Réglez une vanne à la fois, relevez le débit et comparez-le à la fiche.",
       "type": "feedback",
@@ -30025,14 +30210,6 @@
       ]
     },
     {
-      "cle": "a332f399-404",
-      "texte": "Une grande carte RT2012. À l'intérieur, un cercle plein, en trait continu, porte la mention consommation d'énergie du bâtiment neuf : c'est ce que la RT2012 mesurait. À côté, deux cercles en trait pointillé, barrés d'une croix, portent les mentions impact carbone et confort d'été : ces deux volets n'existaient pas dans la RT2012. Regardez bien les croix : c'est tout l'écran suivant qui se prépare ici.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-pourquoi-une-rt/index.html"
-      ]
-    },
-    {
       "cle": "a3371098-66",
       "texte": "Il n'y en a pas : au-dessus de 73,8 bar, le fluide ne condense pas",
       "type": "choix",
@@ -30190,14 +30367,6 @@
       "type": "narration",
       "sources": [
         "moteur/prof-vocal.js"
-      ]
-    },
-    {
-      "cle": "a41da882-132",
-      "texte": "Troisième question. Qu'est-ce que la RE2020 ajoute par rapport à la RT2012 ? Souvenez-vous des trois cercles pleins de l'écran cinq.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-pourquoi-une-rt/index.html"
       ]
     },
     {
@@ -30963,6 +31132,14 @@
       "type": "capture",
       "sources": [
         "packs/fluides/res/tome-3-technologie-organes/index.html?dossier=detendeur-electronique&ecran=7"
+      ]
+    },
+    {
+      "cle": "a88d248c-239",
+      "texte": "L'étude compare séparément les résultats aux limites applicables au projet. Un Bbio dépassé reste à corriger même si le carbone est favorable. Les seuils dépendent du contexte réglementaire : ne recopiez pas une valeur d'un autre bâtiment.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -32055,6 +32232,14 @@
       ]
     },
     {
+      "cle": "adec70bb-240",
+      "texte": "La RT2012 comportait Bbio, Cep et, pour les bâtiments concernés, Tic. La RE2020 introduit notamment les indicateurs carbone, Cep,nr et les degrés-heures DH. DH remplace l'approche Tic : le confort d'été n'apparaît pas pour la première fois.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
+      ]
+    },
+    {
       "cle": "adf35efa-60",
       "texte": "Que signifie « il n'existe plus de liquide sous 5,18 bar » ?",
       "type": "feedback",
@@ -32318,14 +32503,6 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/v3v/content.js"
-      ]
-    },
-    {
-      "cle": "af3ed252-382",
-      "texte": "Deux cartes reliées par une flèche. À gauche, la carte RT2012, grisée, avec la mention ancien texte, ne s'applique plus au dépôt de permis neuf. À droite, la carte RE2020, en couleur, avec la mention texte en vigueur pour le neuf. Entre les deux, une flèche porte le mot remplace, sans aucune date de bascule inscrite dessus : c'est un mécanisme à retenir, pas une date à mémoriser.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-pourquoi-une-rt/index.html"
       ]
     },
     {
@@ -32920,14 +33097,6 @@
       "type": "choix",
       "sources": [
         "hydrometro/lignes/M/parcours.js"
-      ]
-    },
-    {
-      "cle": "b2e0d292-565",
-      "texte": "La réglementation environnementale de deux mille vingt repose sur trois exigences, et il faut savoir les distinguer. La première, le besoin bioclimatique, mesure le besoin du bâti lui-même — indépendamment des équipements installés. Autrement dit : ce bâtiment, avec sa forme, son orientation et son isolation, demande-t-il beaucoup ou peu ? La deuxième, la consommation d'énergie primaire, mesure ce qu'il consomme réellement, tous usages confondus. La troisième, l'impact carbone, est la nouveauté : elle mesure les émissions sur tout le cycle de vie du bâtiment.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -33888,6 +34057,14 @@
       ]
     },
     {
+      "cle": "b7689e64-154",
+      "texte": "Troisième question. Qu'est-ce que la RE2020 ajoute par rapport à la RT2012 ? Distinguez la nouveauté carbone du confort d'été déjà présent dans la RT2012.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-pourquoi-une-rt/index.html"
+      ]
+    },
+    {
       "cle": "b768b5fe-28",
       "texte": "Une pression d'huile estimée",
       "type": "choix",
@@ -34134,6 +34311,14 @@
       "type": "composition",
       "sources": [
         "packs/fluides/res/filtre-deshydrateur-pedagogique/app.js"
+      ]
+    },
+    {
+      "cle": "b8b22dbe-302",
+      "texte": "Cep porte sur l'énergie primaire totale ; Cep,nr sur sa part non renouvelable. Le périmètre réglementaire comprend chauffage, froid, eau chaude, éclairage et auxiliaires, et selon le bâtiment certains usages des parkings, circulations et déplacements internes. Ce n'est pas toute la facture électrique.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -35309,6 +35494,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/clapet-differentiel-huile-pedagogique/module.js"
+      ]
+    },
+    {
+      "cle": "bedf4c31-17",
+      "texte": "DH : l'aire rouge",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/thermique.js"
       ]
     },
     {
@@ -36780,14 +36973,6 @@
       ]
     },
     {
-      "cle": "c74cfb97-610",
-      "texte": "Six cartes, en deux rangées. B zéro : un non-électricien qui travaille près de pièces nues sous tension, en basse tension, pour nettoyer ou peindre. B S : une intervention élémentaire, remplacer ou raccorder, toujours hors tension. B R, la carte mise en avant : le chargé d'intervention générale, celui de l'entretien et du dépannage. B C : il consigne pour les autres et ne fait rien d'autre. B E : une opération spécifique, précisée par un attribut. H zéro : même esprit que B zéro, mais en haute tension. Regardez la bande du bas : une habilitation couvre le risque électrique, pas les fluides frigorigènes.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/elec-habilitation/index.html"
-      ]
-    },
-    {
       "cle": "c7527f7f-38",
       "texte": "Que peut signaler une alarme TraxOil ?",
       "type": "feedback",
@@ -38176,6 +38361,14 @@
       ]
     },
     {
+      "cle": "ceab62cf-263",
+      "texte": "Le groupe 1 correspond aux classes et catégories de danger listées par le texte à partir du règlement CLP ; le groupe 2 réunit les autres fluides. Lire la fiche de données de sécurité et le texte applicable. La classe NF EN 378 ne remplace pas cette vérification.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/desp-categories/index.html"
+      ]
+    },
+    {
       "cle": "ceb9f44f-37",
       "texte": "Pour ralentir le débit vers le carter",
       "type": "choix",
@@ -38333,14 +38526,6 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/tome-3-technologie-organes/app.js"
-      ]
-    },
-    {
-      "cle": "cfc49881-564",
-      "texte": "Un toit, quatre colonnes. Le toit porte le nom du texte : la directive, équipements sous pression. Première colonne : les récipients, bouteilles, réservoirs, séparateurs. Deuxième : les tuyauteries, qui transportent le fluide sous pression. Troisième : les accessoires sous pression, ceux qui assurent une fonction de service. Quatrième : les accessoires de sécurité, ceux qui protègent l'équipement. Et la bande du bas ajoute un point important : le texte s'applique aussi aux ensembles, quand plusieurs équipements sont assemblés pour former un tout fonctionnel.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/desp-la-directive/index.html"
       ]
     },
     {
@@ -38611,6 +38796,14 @@
       ]
     },
     {
+      "cle": "d0e43efb-684",
+      "texte": "À gauche, trois sensibilités couramment utilisées, dessinées à l'échelle : cinq cents, trois cents et trente milliampères. Plus la valeur est petite, plus le courant différentiel de déclenchement est faible ; cela ne compare pas les temps de coupure. Trente milliampères, c'est la haute sensibilité, celle qui protège les personnes. À droite, les cas d'obligation présentés par l'INRS dans sa documentation : prises de courant jusqu'à trente-deux ampères, locaux mouillés, installations temporaires comme les chantiers, salles d'eau, logements. Enfin, le texte au-dessus rappelle que la valeur de la prise de terre, multipliée par la sensibilité, ne doit pas dépasser cinquante volts.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/elec-terre-differentiel/index.html"
+      ]
+    },
+    {
       "cle": "d0f68619-44",
       "texte": "Un flotteur commande un pointeau d'admission",
       "type": "choix",
@@ -38845,6 +39038,14 @@
     {
       "cle": "d22d7383-127",
       "texte": "Deuxième question. Que mesurait la RT2012, et que ne mesurait-elle pas ? Reprenez le schéma de l'écran trois avant de répondre.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-pourquoi-une-rt/index.html"
+      ]
+    },
+    {
+      "cle": "d2312d33-225",
+      "texte": "La RE2020 apporte des exigences carbone. Elle distingue aussi l'énergie primaire non renouvelable et remplace Tic par les degrés-heures DH. Il faut parler de confort d'été renforcé, pas de confort d'été inexistant auparavant.",
       "type": "data-narration",
       "sources": [
         "legislation/stations/thermique-pourquoi-une-rt/index.html"
@@ -40242,14 +40443,6 @@
       ]
     },
     {
-      "cle": "d903e357-556",
-      "texte": "Retenez deux échelles de nature différente. L'ODP fonctionne comme un interrupteur : nul, ou non nul — la molécule contient du chlore ou du brome, ou elle n'en contient pas. Le PRP est une échelle continue, mesurée par comparaison au dioxyde de carbone, et qui s'étend de zéro à plusieurs milliers. Un dernier point qui compte pour votre pratique : quand un mélange contient plusieurs composants, la valeur retenue pour le classement est celle du composant le plus élevé, pas une moyenne. Et le piège à éviter reste le même : un ODP nul ne dit rien du PRP.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/impact-prp-odp/index.html"
-      ]
-    },
-    {
       "cle": "d92b14c9-144",
       "texte": "Deuxième question. Un séparateur d'huile installé sur un circuit frigorifique relève-t-il de la directive ? Reprenez le schéma de l'écran trois.",
       "type": "data-narration",
@@ -41102,6 +41295,14 @@
       ]
     },
     {
+      "cle": "dde98a4f-10",
+      "texte": "plus basse",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/desp.js"
+      ]
+    },
+    {
       "cle": "ddf13e3a-41",
       "texte": "Ces huiles s'évaporent en quelques heures",
       "type": "choix",
@@ -41115,6 +41316,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/releves/content.js"
+      ]
+    },
+    {
+      "cle": "de074293-607",
+      "texte": "Retenez deux échelles de nature différente. L'ODP fonctionne comme un interrupteur : nul, ou non nul — la molécule contient du chlore ou du brome, ou elle n'en contient pas. Le PRP est une échelle continue, mesurée par comparaison au dioxyde de carbone, et qui s'étend de zéro à plusieurs milliers. Un dernier point qui compte pour votre pratique : quand un mélange contient plusieurs composants, son PRP est la moyenne des PRP de ses composants, pondérée par leur part en masse : moitié R-32, moitié R-125, cela donne 2088 pour le R-410A. Et le piège à éviter reste le même : un ODP nul ne dit rien du PRP.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/impact-prp-odp/index.html"
       ]
     },
     {
@@ -42523,6 +42732,14 @@
       ]
     },
     {
+      "cle": "e5f91ef9-243",
+      "texte": "Pour les HFC, multipliez la charge par le PRP puis divisez par mille. Un résultat différent ne signifie pas forcément une fréquence différente : il faut lire les tranches du règlement. Certains gaz de l'annexe II ont des seuils en kilogrammes.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/fgaz-3/index.html"
+      ]
+    },
+    {
       "cle": "e61273e4-21",
       "texte": "▶️ Lancer l'animation",
       "type": "interface",
@@ -43139,14 +43356,6 @@
       ]
     },
     {
-      "cle": "e91aee20-418",
-      "texte": "Deux colonnes face à face. À gauche, RT2012, avec une seule case pleine, consommation d'énergie. À droite, RE2020, avec quatre cases pleines : besoin du bâti, consommation d'énergie, impact carbone, confort d'été. Les deux cases consommation d'énergie sont alignées à la même hauteur dans les deux colonnes, pour montrer que ce volet est repris ; les trois autres cases de la colonne RE2020 portent la mention nouveau.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
-      ]
-    },
-    {
       "cle": "e9286ecb-85",
       "texte": "Variations d'aspiration, pertes de charge et régulateurs doivent être pris en compte.",
       "type": "feedback",
@@ -43193,6 +43402,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/bitube/content.js"
+      ]
+    },
+    {
+      "cle": "e9895fd8-17",
+      "texte": "fluide : groupe 2",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/desp.js"
       ]
     },
     {
@@ -43789,6 +44006,14 @@
       ]
     },
     {
+      "cle": "ec896491-17",
+      "texte": "fluide : groupe 1",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/desp.js"
+      ]
+    },
+    {
       "cle": "ec89addd-15",
       "texte": "Un rejet ouvert",
       "type": "choix",
@@ -44339,14 +44564,6 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/hydrocarbures-a1-a2/app.js"
-      ]
-    },
-    {
-      "cle": "ef8fadeb-159",
-      "texte": "Quatrième et dernière question. Pourquoi l'indicateur carbone de la RE2020 pousse-t-il vers la pompe à chaleur ? Souvenez-vous des deux barres de l'écran sept.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
       ]
     },
     {
@@ -45704,6 +45921,14 @@
       ]
     },
     {
+      "cle": "f6fe4488-245",
+      "texte": "Le chauffage choisi agit sur les consommations et leur impact carbone. Une PAC peut améliorer ces résultats ; sa présence ne prouve jamais à elle seule la conformité du projet. Il faut aussi traiter le bâti, la construction et l'inconfort d'été.",
+      "type": "data-narration",
+      "sources": [
+        "legislation/stations/thermique-re2020/index.html"
+      ]
+    },
+    {
       "cle": "f70f996d-42",
       "texte": "Le nombre ISO VG suffit à trancher l'huile",
       "type": "choix",
@@ -46149,14 +46374,6 @@
       ]
     },
     {
-      "cle": "f9ad0c69-606",
-      "texte": "L'impact carbone repose sur une analyse de cycle de vie, en quatre temps qui forment une boucle. La fabrication des matériaux d'abord — le béton, l'acier, l'isolant ont un coût carbone avant même d'arriver sur le chantier. La construction du bâtiment ensuite. Puis l'usage, sur toute sa durée de vie. Et enfin la fin de vie, avec le devenir des déchets de démolition. Le message est le même que pour le TEWI, transposé au bâtiment : l'impact ne se limite pas à ce qu'on consomme en fonctionnement. Un bâtiment très économe construit avec des matériaux très émetteurs n'est plus automatiquement bien classé.",
-      "type": "data-narration",
-      "sources": [
-        "legislation/stations/thermique-re2020/index.html"
-      ]
-    },
-    {
       "cle": "f9ad5089-101",
       "texte": "Les paliers sont pédagogiques. La régulation réelle vient des données du projet et des constructeurs.",
       "type": "feedback",
@@ -46591,6 +46808,22 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/co2-r744/cours.js"
+      ]
+    },
+    {
+      "cle": "fc21b984-11",
+      "texte": "obligatoire",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/certifs.js"
+      ]
+    },
+    {
+      "cle": "fc26e548-19",
+      "texte": "compresseur : arrêt",
+      "type": "interface",
+      "sources": [
+        "legislation/scenes/desp.js"
       ]
     },
     {
