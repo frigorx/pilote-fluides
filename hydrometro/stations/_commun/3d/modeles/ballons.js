@@ -8,8 +8,8 @@
    donne et ce que le bâtiment prend (descend en charge, monte en décharge, reste en équilibre).
 
    « Voir en coupe » tranche tout par le plan z = 0 : les faces coupées sont hachurées comme sur un
-   dessin de définition ; l'eau y est teintée (rouge pâle au chaud, bleu pâle au froid) ; les grains
-   qui avancent montrent le trajet de l'eau, leur couleur suit la température du point où ils passent. */
+   dessin de définition ; l'eau y est teintée (rouge pâle au chaud, bleu pâle au froid) ; des filets d'eau
+   continus, où des bandes avancent, montrent le trajet de l'eau : leur couleur suit la température du point où ils passent. */
 (() => {
   'use strict';
   if (!window.Electro3D) return;
@@ -73,7 +73,7 @@
 
   /* ====================================================================== LE BALLON TAMPON */
   Electro3D.definir('ballonTampon', (T, K, ctx) => {
-    const A = aides(T, K), faceDe = A.faceDe;
+    const A = aides(T, K), faceDe = A.faceDe, N = HydroNappe(T, K);
     const M = K.mat;
     const racine = new T.Group();
     const D = Math.PI / 180;
@@ -216,9 +216,11 @@
     const eau = new T.Mesh(geoEau, matEau); eau.position.z = 0.06;
     eau.userData.sansOmbre = true; eau.userData.sansCoupe = true; eau.userData.voile = true; eau.castShadow = false;
     const BL = new T.Color(0xffffff);
+    let niveauTeint = ET.niveau;                          /* le niveau pour lequel les filets d'eau ont leur teinte */
     const majEau = () => {
       rangs.forEach((r, i) => { tmp2.copy(coulEau(r.y)).lerp(BL, 0.38); col.set([tmp2.r, tmp2.g, tmp2.b, tmp2.r, tmp2.g, tmp2.b], i * 6); });
       geoEau.attributes.color.needsUpdate = true;
+      if (Math.abs(ET.niveau - niveauTeint) > 0.05) { niveauTeint = ET.niveau; filets.forEach(g => g.teindre()); }
     };
 
     /* ================================================================ LES FACES DE COUPE (plan z = 0) */
@@ -291,37 +293,25 @@
     voileEau.position.set(0, (tipT + tipB) / 2, 0.5); voileEau.userData.voile = true; voileEau.userData.sansOmbre = true; voileEau.userData.sansCoupe = true; voileEau.castShadow = false; voileEau.visible = false;
     racine.add(voileEau);
 
-    /* ================================================================ L'EAU QUI CIRCULE (grains teintés par la température)
+    /* ================================================================ L'EAU QUI CIRCULE (filets teintés par la température)
        Six trajets dans les tuyaux et à travers le ballon, plus un trajet vertical qui n'existe qu'en charge
-       (de haut en bas) ou en décharge (de bas en haut). La vitesse est proportionnelle au débit. */
+       (de haut en bas) ou en décharge (de bas en haut). Chaque trajet est un filet d'eau continu où des bandes
+       avancent ; leur vitesse est proportionnelle au débit. */
     const V = (x, y) => new T.Vector3(x, y, 0);
     const droite = (x0, y0, x1, y1) => new T.LineCurve3(V(x0, y0), V(x1, y1));
     const lisse = pts => new T.CatmullRomCurve3(pts.map(p => V(p[0], p[1])), false, 'centripetal');
-    const grainsSur = (courbe, pas) => {
-      const L = courbe.getLength(), N = Math.max(4, Math.round(L / pas));
-      const im = new T.InstancedMesh(K.sphere(7.5, 12), K.lumineux(0xffffff), N);
-      im.userData.sansOmbre = true; im.userData.sansCoupe = true; im.castShadow = false; im.frustumCulled = false;
-      const p = new T.Vector3(), m4 = new T.Matrix4(), q = new T.Quaternion(), sc = new T.Vector3(1, 1, 1);
-      const o = { objet: im, v: 0, s: 0 };
-      o.poser = () => {
-        for (let i = 0; i < N; i++) {
-          let u = (i / N + o.s / L) % 1; if (u < 0) u += 1;
-          courbe.getPointAt(u, p); m4.compose(p, q, sc); im.setMatrixAt(i, m4); im.setColorAt(i, coulEau(p.y));
-        }
-        im.instanceMatrix.needsUpdate = true; im.instanceColor.needsUpdate = true;
-      };
-      o.animer = dt => { o.s += o.v * dt; o.poser(); };
-      o.poser();
-      return o;
+    const filetSur = courbe => {
+      const f = N.filet(courbe, { rayon: 7, couleur: 0xffffff, vitesse: 0, opacite: 0.85, pas: 100, teinte: (u, out, p) => out.copy(coulEau(p.y)) });
+      f.objet.userData.sansCoupe = true; return f;
     };
     const F = {
-      lt: grainsSur(droite(-XP + 10, PH, -Ri + 6, PH), 44), at: grainsSur(droite(-Ri + 6, PH, Ri - 6, PH), 44), rt: grainsSur(droite(Ri - 6, PH, XP - 10, PH), 44),
-      lb: grainsSur(droite(-Ri + 6, PB, -XP + 10, PB), 44), ab: grainsSur(droite(Ri - 6, PB, -Ri + 6, PB), 44), rb: grainsSur(droite(XP - 10, PB, Ri - 6, PB), 44),
-      bas: grainsSur(lisse([[-Ri + 14, PH], [-150, PH - 22], [-30, PH - 110], [0, PH - 250], [0, PB + 260], [-30, PB + 110], [-150, PB + 22], [-Ri + 14, PB]]), 44),
-      haut: grainsSur(lisse([[Ri - 14, PB], [150, PB + 22], [30, PB + 110], [0, PB + 260], [0, PH - 250], [30, PH - 110], [150, PH - 22], [Ri - 14, PH]]), 44)
+      lt: filetSur(droite(-XP + 10, PH, -Ri + 6, PH)), at: filetSur(droite(-Ri + 6, PH, Ri - 6, PH)), rt: filetSur(droite(Ri - 6, PH, XP - 10, PH)),
+      lb: filetSur(droite(-Ri + 6, PB, -XP + 10, PB)), ab: filetSur(droite(Ri - 6, PB, -Ri + 6, PB)), rb: filetSur(droite(XP - 10, PB, Ri - 6, PB)),
+      bas: filetSur(lisse([[-Ri + 14, PH], [-150, PH - 22], [-30, PH - 110], [0, PH - 250], [0, PB + 260], [-30, PB + 110], [-150, PB + 22], [-Ri + 14, PB]])),
+      haut: filetSur(lisse([[Ri - 14, PB], [150, PB + 22], [30, PB + 110], [0, PB + 260], [0, PH - 250], [30, PH - 110], [150, PH - 22], [Ri - 14, PH]]))
     };
-    const grains = Object.values(F);
-    grains.forEach(g => { g.objet.visible = false; racine.add(g.objet); });
+    const filets = Object.values(F);
+    filets.forEach(g => { g.objet.visible = false; racine.add(g.objet); });
 
     /* ================================================================ L'ÉTAT */
     const REG = {
@@ -448,12 +438,12 @@
         ET.niveau = K.clamp(niv, NMIN, NMAX);
         ET.limite = niv < NMIN ? 'plein' : niv > NMAX ? 'vide' : (d > 0.04 && ET.niveau <= NMIN + 0.5) ? 'plein' : (d < -0.04 && ET.niveau >= NMAX - 0.5) ? 'vide' : '';
         if (ET.limite !== avant) majTexte();
-        const m = Math.min(ET.p, ET.s);
-        F.lt.v = F.lb.v = ET.p * VIT; F.rt.v = F.rb.v = ET.s * VIT; F.at.v = F.ab.v = m * VIT;
-        F.bas.v = Math.max(d, 0) * VIT; F.haut.v = Math.max(-d, 0) * VIT;
+        const m = Math.min(ET.p, ET.s), vit = (ks, q) => ks.forEach(k => F[k].regler({ vitesse: q * VIT }));
+        vit(['lt', 'lb'], ET.p); vit(['rt', 'rb'], ET.s); vit(['at', 'ab'], m);
+        vit(['bas'], Math.max(d, 0)); vit(['haut'], Math.max(-d, 0));
         visibles();
         const actif = ET.coupe && !ET.demonte;
-        if (actif) { majEau(); grains.forEach(g => { if (g.objet.visible) g.animer(dt); }); }
+        if (actif) { majEau(); filets.forEach(g => { if (g.objet.visible) g.animer(dt); }); }
         return actif;
       }
     };
@@ -464,7 +454,7 @@
      et le secondaire (circulateur à droite) s'y rejoignent. Même plan de coupe que le ballon : z = 0.
      L'eau y est colorée selon sa TEMPÉRATURE (40 °C bleu → 60 °C rouge), comme dans le calcul de la station. */
   Electro3D.definir('bouteilleDecouplage', (T, K, ctx) => {
-    const A = aides(T, K), faceDe = A.faceDe;
+    const A = aides(T, K), faceDe = A.faceDe, N = HydroNappe(T, K);
     const M = K.mat;
     const racine = new T.Group();
     const D = Math.PI / 180;
@@ -587,6 +577,7 @@
       rangs.forEach((r, i) => { tmp2.copy(cT(tY(r.y))).lerp(BL, 0.38); col.set([tmp2.r, tmp2.g, tmp2.b, tmp2.r, tmp2.g, tmp2.b], i * 6); });
       geoEau.attributes.color.needsUpdate = true;
       teinter(mPd, 60); teinter(mSr, 40); teinter(mSd, ET.tss); teinter(mPr, ET.trp); teinter(mPurge, ET.tHaut); teinter(mVid, ET.tBas);
+      filets.forEach(g => g.teindre());
     };
 
     /* ================================================================ LES FACES DE COUPE (plan z = 0) */
@@ -641,41 +632,29 @@
     racine.add(voileEau);
 
     /* ================================================================ L'EAU QUI CIRCULE
-       Des grains qui suivent les tuyaux et la bouteille ; leur couleur est la température du point où ils passent ;
-       leur vitesse est proportionnelle au débit de la boucle (ou à la différence, dans la bouteille). */
+       Des filets d'eau continus qui suivent les tuyaux et la bouteille, où des bandes avancent ; leur couleur est la
+       température du point où ils passent ; la vitesse des bandes est proportionnelle au débit de la boucle (ou à la
+       différence, dans la bouteille). */
     const V = (x, y) => new T.Vector3(x, y, 0);
     const droite = (x0, y0, x1, y1) => new T.LineCurve3(V(x0, y0), V(x1, y1));
     const lisseC = pts => new T.CatmullRomCurve3(pts.map(p => V(p[0], p[1])), false, 'centripetal');
-    const grainsSur = (courbe, pas, tempDe) => {
-      const L = courbe.getLength(), N = Math.max(3, Math.round(L / pas));
-      const im = new T.InstancedMesh(K.sphere(5, 10), K.lumineux(0xffffff), N);
-      im.userData.sansOmbre = true; im.userData.sansCoupe = true; im.castShadow = false; im.frustumCulled = false;
-      const p = new T.Vector3(), m4 = new T.Matrix4(), q = new T.Quaternion(), sc = new T.Vector3(1, 1, 1);
-      const o = { objet: im, v: 0, s: 0 };
-      o.poser = () => {
-        for (let i = 0; i < N; i++) {
-          let u = (i / N + o.s / L) % 1; if (u < 0) u += 1;
-          courbe.getPointAt(u, p); m4.compose(p, q, sc); im.setMatrixAt(i, m4); im.setColorAt(i, cT(tempDe(p, u)));
-        }
-        im.instanceMatrix.needsUpdate = true; im.instanceColor.needsUpdate = true;
-      };
-      o.animer = dt => { o.s += o.v * dt; o.poser(); };
-      o.poser();
-      return o;
+    const filetSur = (courbe, tempDe) => {
+      const f = N.filet(courbe, { rayon: 5, couleur: 0xffffff, vitesse: 0, opacite: 0.85, pas: 70, teinte: (u, out, p) => out.copy(cT(tempDe(p, u))) });
+      f.objet.userData.sansCoupe = true; return f;
     };
     const L0 = Ro - 6;
     const F = {
-      lt: grainsSur(droite(-XP + 10, PH, -L0, PH), 30, () => 60),
-      at: grainsSur(droite(-L0, PH, L0, PH), 22, p => lerp(60, ET.tss, lis((p.x + L0) / (2 * L0)))),
-      rt: grainsSur(droite(L0, PH, XP - 10, PH), 30, () => ET.tss),
-      lb: grainsSur(droite(-L0, PB, -XP + 10, PB), 30, () => ET.trp),
-      ab: grainsSur(droite(L0, PB, -L0, PB), 22, p => lerp(40, ET.trp, lis((L0 - p.x) / (2 * L0)))),
-      rb: grainsSur(droite(XP - 10, PB, L0, PB), 30, () => 40),
-      bas: grainsSur(lisseC([[-L0, PH], [-22, PH - 40], [0, PH - 90], [0, PB + 90], [-22, PB + 40], [-L0, PB]]), 24, p => lerp(60, ET.trp, lis((PH - p.y) / (PH - PB)))),
-      haut: grainsSur(lisseC([[L0, PB], [22, PB + 40], [0, PB + 90], [0, PH - 90], [22, PH - 40], [L0, PH]]), 24, p => lerp(40, ET.tss, lis((p.y - PB) / (PH - PB))))
+      lt: filetSur(droite(-XP + 10, PH, -L0, PH), () => 60),
+      at: filetSur(droite(-L0, PH, L0, PH), p => lerp(60, ET.tss, lis((p.x + L0) / (2 * L0)))),
+      rt: filetSur(droite(L0, PH, XP - 10, PH), () => ET.tss),
+      lb: filetSur(droite(-L0, PB, -XP + 10, PB), () => ET.trp),
+      ab: filetSur(droite(L0, PB, -L0, PB), p => lerp(40, ET.trp, lis((L0 - p.x) / (2 * L0)))),
+      rb: filetSur(droite(XP - 10, PB, L0, PB), () => 40),
+      bas: filetSur(lisseC([[-L0, PH], [-22, PH - 40], [0, PH - 90], [0, PB + 90], [-22, PB + 40], [-L0, PB]]), p => lerp(60, ET.trp, lis((PH - p.y) / (PH - PB)))),
+      haut: filetSur(lisseC([[L0, PB], [22, PB + 40], [0, PB + 90], [0, PH - 90], [22, PH - 40], [L0, PH]]), p => lerp(40, ET.tss, lis((p.y - PB) / (PH - PB))))
     };
-    const grains = Object.values(F);
-    grains.forEach(g => { g.objet.visible = false; racine.add(g.objet); });
+    const filets = Object.values(F);
+    filets.forEach(g => { g.objet.visible = false; racine.add(g.objet); });
 
     /* ================================================================ L'ÉTAT */
     const nb = (v, d) => v.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -789,12 +768,12 @@
       },
       animer(dt) {
         ET.qpv = K.vers(ET.qpv, ET.qp, 4, dt); ET.qsv = K.vers(ET.qsv, ET.qs, 4, dt);
-        const VIT = 34, d = ET.qpv - ET.qsv, m = Math.min(ET.qpv, ET.qsv);
-        F.lt.v = F.lb.v = ET.qpv * VIT; F.rt.v = F.rb.v = ET.qsv * VIT; F.at.v = F.ab.v = m * VIT;
-        F.bas.v = Math.max(d, 0) * VIT; F.haut.v = Math.max(-d, 0) * VIT;
+        const VIT = 34, d = ET.qpv - ET.qsv, m = Math.min(ET.qpv, ET.qsv), vit = (ks, q) => ks.forEach(k => F[k].regler({ vitesse: q * VIT }));
+        vit(['lt', 'lb'], ET.qpv); vit(['rt', 'rb'], ET.qsv); vit(['at', 'ab'], m);
+        vit(['bas'], Math.max(d, 0)); vit(['haut'], Math.max(-d, 0));
         visibles();
         const actif = ET.coupe && !ET.demonte;
-        if (actif) grains.forEach(g => { if (g.objet.visible) g.animer(dt); });
+        if (actif) filets.forEach(g => { if (g.objet.visible) g.animer(dt); });
         return actif;
       }
     };

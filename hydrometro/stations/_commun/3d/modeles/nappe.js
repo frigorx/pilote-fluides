@@ -21,9 +21,16 @@
        fort     : le contraste des bandes (1 dans un tube fin, moins dans une grande nappe) ;
        quart    : vrai si les bandes doivent courir le long de v (cylindre, plan) et non de u ;
        k0       : contraste de départ (0,3 : eau arrêtée au départ ; 1 : eau qui coule d'emblée).
-   N.filet(courbe, { rayon, couleur, vitesse, opacite, pas, fort })
+   N.filet(courbe, { rayon, couleur, vitesse, opacite, pas, fort, teinte })
        un filet d'eau : un tube translucide le long d'une courbe, bandes comprises. Même interface que
        K.courant (objet, regler({ vitesse, sens, debit }), animer(dt)) : il le remplace tel quel.
+       Options facultatives, pour une eau dont la couleur change le long du trajet (la température) :
+       teinte(u, out, p)  écrit dans `out` (THREE.Color) la couleur de l'eau au point p, à la fraction u de la
+                          longueur ; elle est portée par les sommets du tube (couleur de base = blanc) ;
+       f.teindre()        recalcule ces couleurs quand ce qui les gouverne a changé ;
+       f.retracer(courbe, zones)  remet le tube sur une autre courbe (le trajet bouge) sans refaire la matière ;
+                          zones = [{ u0, u1, k }] : sur cette part de la longueur (fractions) l'eau va k fois plus
+                          vite (un passage rétréci) ; la vitesse moyenne sur tout le trajet reste celle demandée.
    N.animer(dt) fait avancer les nappes de N.nappe (pas les filets, qui s'animent eux-mêmes) ; vrai tant que
        l'une bouge ou s'estompe encore. */
 (() => {
@@ -72,20 +79,43 @@
     const animer = dt => { let vivant = false; nappes.forEach(n => { if (n.avancer(dt)) vivant = true; }); return vivant; };
 
     const filet = (courbe, o) => {
-      const L = courbe.getLength();
-      const geo = new T.TubeGeometry(courbe, Math.max(8, Math.round(L / 10)), o.rayon || 3, 8, false);
-      const mat = new T.MeshBasicMaterial({ color: o.couleur, transparent: true, opacity: o.opacite || 0.8, depthWrite: false, side: T.DoubleSide, toneMapped: false });
-      const objet = new T.Mesh(geo, mat);
+      const R = o.rayon || 3, segs = L => Math.max(8, Math.round(L / 10)), P = new T.Vector3(), C = new T.Color();
+      const mat = new T.MeshBasicMaterial({ color: o.teinte ? 0xffffff : o.couleur, vertexColors: !!o.teinte, transparent: true, opacity: o.opacite || 0.8, depthWrite: false, side: T.DoubleSide, toneMapped: false });
+      const objet = new T.Mesh(new T.BufferGeometry(), mat);
       objet.userData.sansOmbre = true; objet.castShadow = false; objet.renderOrder = 1;
-      const n = fabriquer(mat, L, { pas: o.pas, fort: o.fort, k0: 1 });   /* il s'anime lui-même (animer), hors de N.animer */
+      const n = fabriquer(mat, 1, { pas: o.pas, fort: o.fort, k0: 1 });   /* il s'anime lui-même (animer), hors de N.animer */
       const etat = { vitesse: o.vitesse || 40, sens: 1, debit: 1 };
       const poser = () => { n.v = etat.debit > 0 ? etat.vitesse * etat.sens : 0; };
-      poser();
-      return {
-        objet, courbe, longueur: L, nappe: n,
+      const f = {
+        objet, courbe, longueur: 0, nappe: n,
         regler(p) { Object.assign(etat, p); poser(); },
-        animer(dt) { return n.avancer(dt); }
+        animer(dt) { return n.avancer(dt); },
+        teindre() {
+          if (!o.teinte) return;
+          const g = objet.geometry, tub = g.parameters.tubularSegments, rad = g.parameters.radialSegments;
+          let col = g.attributes.color; if (!col) { col = new T.BufferAttribute(new Float32Array(g.attributes.position.count * 3), 3); g.setAttribute('color', col); }
+          for (let i = 0; i <= tub; i++) {
+            f.courbe.getPointAt(i / tub, P); o.teinte(i / tub, C, P);
+            for (let j = 0; j <= rad; j++) col.setXYZ(i * (rad + 1) + j, C.r, C.g, C.b);
+          }
+          col.needsUpdate = true;
+        },
+        retracer(c, zones) {
+          const L = c.getLength(), ancienne = objet.geometry, g = new T.TubeGeometry(c, segs(L), R, 8, false);
+          f.courbe = c; f.longueur = L; objet.geometry = g; ancienne.dispose();
+          n.tex.repeat.set(L / n.pas, 0);
+          if (zones && zones.length) {      /* l'abscisse des bandes = la longueur « réduite » ds / k, ramenée à 0 → 1 */
+            const tub = g.parameters.tubularSegments, rad = g.parameters.radialSegments, uv = g.attributes.uv, sig = [0];
+            for (let i = 0; i < tub; i++) { const um = (i + 0.5) / tub; let k = 1; zones.forEach(z => { if (um >= z.u0 && um <= z.u1) k = z.k; }); sig.push(sig[i] + 1 / k); }
+            for (let i = 0; i <= tub; i++) for (let j = 0; j <= rad; j++) uv.setX(i * (rad + 1) + j, sig[i] / sig[tub]);
+            uv.needsUpdate = true;
+          }
+          f.teindre();
+        }
       };
+      f.retracer(courbe);
+      poser();
+      return f;
     };
 
     return { nappe, filet, animer };

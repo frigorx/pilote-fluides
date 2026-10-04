@@ -11,7 +11,8 @@
 
    « Capot retiré » (le bouton « Voir en coupe » du moteur) : le toit, la porte du compartiment technique
    et le côté droit s'enlèvent ; les ailettes, les tubes, la plaque du condenseur et le carter du compresseur
-   deviennent transparents ; le fluide, les grains qui circulent et les couleurs se voient dedans.
+   deviennent transparents ; le fluide qui circule (des bandes qui avancent sur son âme colorée), l'air (des grains,
+   car l'air est un gaz) et les couleurs se voient dedans.
    Pas de plan de coupe ici : aucun point du circuit ne doit être tranché.
 
    Couleurs du FLUIDE (un code d'écran, pas la couleur de l'appareil) : violet = basse pression (pâle : mélange
@@ -23,7 +24,7 @@
   if (!window.Electro3D) return;
 
   Electro3D.definir('pacAirEau', (T, K, ctx) => {
-    const M = K.mat;
+    const M = K.mat, N = HydroNappe(T, K);
     const D = Math.PI / 180;
     const racine = new T.Group();
     const clamp = K.clamp;
@@ -308,7 +309,7 @@
     const couleurFrigo = (u, out) => {
       const i = cF.de(u), b = cF.bornes[i], t = clamp((u - b.u0) / (b.u1 - b.u0), 0, 1);
       out.copy(b.s[2]).lerp(b.s[3], t);
-      return out.lerp(COL.neutre, 1 - kFrigo);
+      return out.lerp(COL.neutre, 1 - kFrigo * frigoVisible(b.nom));      /* hors de l'étape (ou à l'arrêt) : grisé */
     };
     const couleurEau = (u, out) => {
       const i = cE.de(u), b = cE.bornes[i], t = clamp((u - b.u0) / (b.u1 - b.u0), 0, 1);
@@ -343,18 +344,20 @@
     /* les tubes ne sortent pas du châssis sans passe-fil */
     [[285, 170], [385, 180]].forEach(([x, z]) => eauTubes.add(K.mesh(K.anneau(27, 15, 6, 28), caoutchouc, x, B + 3, z)));
 
-    /* le fluide à l'intérieur : une âme colorée dans chaque tube, et des grains qui avancent */
+    /* le fluide à l'intérieur : une âme colorée dans chaque tube (une matière par circuit), où des bandes plus sombres
+       avancent à la vitesse du fluide, dans le sens du circuit (la nappe : texture sur les UV du tube, 0 → 1 le long du trajet) */
     const fluides = new T.Group();
-    const noyauMat = std(0xffffff, 0.45, 0.1, { vertexColors: true });
-    const noyauF = tube(cF.glob, 3.2, 5, 22, noyauMat), noyauE = tube(cE.glob, 4.5, 6, 18, noyauMat);
+    const noyauMatF = std(0xffffff, 0.45, 0.1, { vertexColors: true }), noyauMatE = std(0xffffff, 0.45, 0.1, { vertexColors: true });
+    const noyauF = tube(cF.glob, 4.5, 6, 22, noyauMatF), noyauE = tube(cE.glob, 6, 8, 18, noyauMatE);
     [noyauF, noyauE].forEach(t => { t.mesh.userData.sansOmbre = true; t.mesh.castShadow = false; fluides.add(t.mesh); });
+    const bandesF = N.nappe(noyauMatF, cF.L, { pas: 60 }), bandesE = N.nappe(noyauMatE, cE.L, { pas: 70 });
 
-    const bille = new T.IcosahedronGeometry(1, 1), bille0 = new T.IcosahedronGeometry(1, 0);
+    const bille = new T.IcosahedronGeometry(1, 0);
     const perles = (courbe, o) => {
       const L = courbe.getLength(), N = Math.max(3, Math.round(L / o.pas));
       if (courbe.arcLengthDivisions < 1000) courbe.arcLengthDivisions = 1000;
       const pts = courbe.getSpacedPoints(Math.max(40, Math.round(L / 6)));
-      const im = new T.InstancedMesh(o.simple ? bille0 : bille, new T.MeshBasicMaterial({ color: 0xffffff, toneMapped: false }), N);
+      const im = new T.InstancedMesh(bille, new T.MeshBasicMaterial({ color: 0xffffff, toneMapped: false }), N);
       im.userData.sansOmbre = true; im.castShadow = false; im.frustumCulled = false;
       const m4 = new T.Matrix4(), q = new T.Quaternion(), sc = new T.Vector3(), p = new T.Vector3(), col = new T.Color();
       const et = { s: 0, on: true };
@@ -374,7 +377,7 @@
       return { objet: im, avancer(ds) { et.s += ds; poser(); }, regler(on) { et.on = on; poser(); }, poser };
     };
 
-    /* quels tronçons le grain montre-t-il, selon l'étape */
+    /* quels tronçons du fluide frigorigène l'étape met-elle en avant (les autres sont grisés) */
     const PH_FRIGO = {
       tout: null,
       evap: ['liqBP', 'coil', 'sortieBP'],
@@ -382,17 +385,17 @@
       cond: ['refoulement', 'hxR', 'liqHP', 'eev']
     };
     const frigoVisible = nom => { const l = PH_FRIGO[E.phase]; return !l || l.includes(nom) ? 1 : 0; };
-    const grainsFrigo = perles(cF.glob, { pas: 95, rayon: 6, simple: true, couleur: couleurFrigo, echelle: u => frigoVisible(cF.bornes[cF.de(u)].nom) });
-    const grainsEau = perles(cE.glob, { pas: 70, rayon: 8, couleur: couleurEau, echelle: () => 1, ouvert: true, clair: 0.3 });
     const eauVisible = () => E.phase === 'tout' || E.phase === 'cond';
 
-    /* dans la plaque : trois couches (eau – fluide – eau), un ruban coloré par couche, et des grains dans le sens de chaque fluide */
+    /* dans la plaque : trois couches (eau – fluide – eau), un ruban coloré par couche, où des bandes avancent dans le sens
+       de chaque fluide (sens = +1 vers le haut, -1 vers le bas) */
     const rubans = [];
-    const ruban = (x0, x1, h0, h1, z, fcol) => {
+    const ruban = (x0, x1, h0, h1, z, fcol, sens) => {
       const g = new T.BoxGeometry(x1 - x0, h1 - h0, 9, 1, 12, 1); g.translate((x0 + x1) / 2, B + (h0 + h1) / 2, z);
-      const m = new T.Mesh(g, new T.MeshBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.5, depthWrite: false, side: T.DoubleSide, toneMapped: false }));
+      const mat = new T.MeshBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.5, depthWrite: false, side: T.DoubleSide, toneMapped: false });
+      const m = new T.Mesh(g, mat);
       m.userData.sansOmbre = true; m.castShadow = false; fluides.add(m);
-      const r = { g, h0, h1, fcol, maj() {
+      const r = { g, h0, h1, fcol, nappe: N.nappe(mat, h1 - h0, { pas: 52, quart: true, sens }), maj() {
         const pos = g.attributes.position; let col = g.attributes.color;
         if (!col) { col = new T.BufferAttribute(new Float32Array(pos.count * 3), 3); g.setAttribute('color', col); }
         for (let i = 0; i < pos.count; i++) { r.fcol(clamp((pos.getY(i) - B - h0) / (h1 - h0), 0, 1), tmp); col.setXYZ(i, tmp.r, tmp.g, tmp.b); }
@@ -402,25 +405,16 @@
     };
     const fcR = (f, out) => out.copy(COL.ambre).lerp(COL.orange, f).lerp(COL.neutre, 1 - kFrigo);
     const fcW = (f, out) => chauffe(f, out);
-    ruban(200, 262, 80, 320, 115, fcR); ruban(238, 300, 80, 320, 131, fcW); ruban(238, 300, 80, 320, 99, fcW);
-    const lanes = [];
-    const lane = (x, z, bas, fcol) => {
-      const c = new T.CurvePath(); c.add(new T.LineCurve3(P(x, bas ? 100 : 300, z), P(x, bas ? 300 : 100, z)));
-      const p = perles(c, { pas: 52, rayon: 4, couleur: (u, out) => fcol(bas ? u : 1 - u, out), echelle: () => 1, ouvert: true, clair: 0.35, simple: true });
-      lanes.push(p); fluides.add(p.objet); return p;
-    };
-    [215, 245].forEach(x => lane(x, 115, false, fcR));              /* le fluide descend (de h 300 à h 100) */
-    [255].forEach(x => lane(x, 131, true, fcW));                /* l'eau monte */
-    [255, 285].forEach(x => lane(x, 99, true, fcW));
-    fluides.add(grainsFrigo.objet, grainsEau.objet);
+    const rubanFrigo = ruban(200, 262, 80, 320, 115, fcR, -1);                       /* le fluide descend (de h 300 à h 100) */
+    const rubansEau = [ruban(238, 300, 80, 320, 131, fcW, 1), ruban(238, 300, 80, 320, 99, fcW, 1)];      /* l'eau monte */
 
-    /* l'air : des grains qui entrent par l'arrière, traversent la batterie (ils se refroidissent), passent le ventilateur */
+    /* l'air (un gaz : des grains séparés, pas une nappe) : ils entrent par l'arrière, traversent la batterie (ils se refroidissent), passent le ventilateur */
     const lignesAir = [[0, 180], [180, 180], [45, 130], [135, 130], [225, 130], [315, 130]];
     const grainsAir = lignesAir.map(([a, r]) => {
       const x = FX + r * Math.cos(a * D), y = FY + r * Math.sin(a * D);
       const c = new T.CurvePath(); c.add(new T.LineCurve3(V(x, y, -440), V(x, y, 330)));
       const chaud = new T.Color(0xf2a05a), froid = new T.Color(0x4a9be0);
-      return perles(c, { pas: 60, rayon: 8, simple: true, ouvert: true, clair: 0.05, echelle: () => 1,
+      return perles(c, { pas: 60, rayon: 8, ouvert: true, clair: 0.05, echelle: () => 1,
         couleur: (u, out) => { const z = -440 + 770 * u, t = clamp((z + 210) / 50, 0, 1); return out.copy(chaud).lerp(froid, t * t * (3 - 2 * t)); } });
     });
     grainsAir.forEach(g => fluides.add(g.objet));
@@ -441,9 +435,8 @@
     };
     const majVisibilites = () => {
       const on = E.marche && !E.demonte;
-      grainsFrigo.regler(on); grainsEau.regler(on && eauVisible());
+      coloriser(noyauF, couleurFrigo);                      /* l'étape met en avant certains tronçons du fluide */
       grainsAir.forEach(g => g.regler(on && (E.phase === 'tout' || E.phase === 'evap')));
-      lanes.forEach(l => l.regler(on && (E.phase === 'tout' || E.phase === 'cond')));
     };
     const appliquerVue = () => {
       const ouvert = E.coupe && !E.demonte;
@@ -547,14 +540,14 @@
         rotorG.rotation.y = angOrb;
         orbite.position.set(5.5 * Math.cos(angOrb), 0, 5.5 * Math.sin(angOrb));
         majCouleurs();
-        const on = E.marche && !E.demonte;
-        if (on && vComp > 0.01) {
-          const vf = 40 + 150 * vComp;
-          grainsFrigo.avancer(vf * dt); grainsEau.avancer(110 * dt);
-          lanes.forEach((l, i) => l.avancer((i < 2 ? vf * 0.6 : 110 * 0.6) * dt));
-        }
+        const on = E.marche && !E.demonte, coule = on && vComp > 0.01, vf = 40 + 150 * vComp;
+        bandesF.v = coule ? vf : 0;                                  /* eau arrêtée : bandes immobiles, estompées */
+        bandesE.v = coule && eauVisible() ? 110 : 0;
+        rubanFrigo.nappe.v = coule && eauVisible() ? vf * 0.6 : 0;
+        rubansEau.forEach(r => { r.nappe.v = coule && eauVisible() ? 110 * 0.6 : 0; });
+        const vivant = N.animer(dt);
         if (on && vFan > 0.01) grainsAir.forEach(g => g.avancer(170 * vFan * dt));
-        return vFan > 0.01 || vComp > 0.01 || Math.abs(dEau - dTcible()) > 0.01 || Math.abs(vComp - s) > 0.001;
+        return vFan > 0.01 || vComp > 0.01 || vivant || Math.abs(dEau - dTcible()) > 0.01 || Math.abs(vComp - s) > 0.001;
       }
     };
   }, { famille: 'production', titre: 'La pompe à chaleur air/eau', stations: ['production'] });

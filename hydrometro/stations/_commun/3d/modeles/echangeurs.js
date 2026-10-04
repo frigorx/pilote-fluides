@@ -10,7 +10,8 @@
    « Voir en coupe » tranche l'appareil par un plan vertical qui passe par l'axe de deux piquages
    (le côté primaire, ou le côté secondaire selon l'étape) : on voit l'alternance des canaux, le
    collecteur qui alimente un canal sur deux, les collerettes qui bouchent l'autre, et l'eau dont la
-   teinte suit la température (rouge → violet → bleu).
+   teinte suit la température (rouge → violet → bleu) ; des bandes plus sombres y avancent dans le sens
+   de chaque circuit (le primaire descend, le secondaire monte, ou l'inverse si les raccords sont inversés).
    L'éclaté est PÉDAGOGIQUE : l'appareil réel est brasé, il ne se démonte pas. */
 (() => {
   'use strict';
@@ -18,7 +19,7 @@
 
   Electro3D.definir('echangeurPlaques', (T, K, ctx) => {
     const racine = new T.Group();
-    const M = K.mat;
+    const M = K.mat, N = HydroNappe(T, K);
 
     /* ---------------------------------------------------------------- cotes */
     const W = 112, H = 310, RC4 = 4;            /* plaque : largeur, hauteur, rayon d'angle */
@@ -166,19 +167,24 @@
     };
 
     const cotes = {}, eaux = [], piecesPrim = [], piecesSec = [];
-    const eauMesh = (s, segments, circuit, groupe, off) => {
+    /* axe = 'y' : un canal (l'eau va et vient le long de y) ; axe = 'z' : un collecteur (le long de z). `dir` = le sens
+       (+1 vers les y ou les z croissants) de l'eau de ce circuit quand le sens est « normal » ; l'abscisse des
+       bandes (u) est ce y ou ce z, en millimètres. */
+    const eauMesh = (s, segments, circuit, groupe, off, axe, dir) => {
       /* des bandes horizontales (en y) dont la couleur suit la température */
-      const n = segments.length, pos = new Float32Array(n * 12), col = new Float32Array(n * 12), idx = [];
+      const n = segments.length, pos = new Float32Array(n * 12), col = new Float32Array(n * 12), uv = new Float32Array(n * 8), idx = [];
       segments.forEach(([z0, z1, ya, yb], i) => {
         const x = XC(s) - s * off;
         pos.set([x, ya, z0, x, ya, z1, x, yb, z1, x, yb, z0], i * 12);
+        uv.set(axe === 'y' ? [ya, z0, ya, z1, yb, z1, yb, z0] : [z0, ya, z1, ya, z1, yb, z0, yb], i * 8);
         idx.push(i * 4, i * 4 + 1, i * 4 + 2, i * 4, i * 4 + 2, i * 4 + 3);
       });
       const g = new T.BufferGeometry();
-      g.setAttribute('position', new T.BufferAttribute(pos, 3)); g.setAttribute('color', new T.BufferAttribute(col, 3)); g.setIndex(idx);
-      const m = new T.Mesh(g, new T.MeshBasicMaterial({ vertexColors: true, side: T.DoubleSide, toneMapped: false }));
+      g.setAttribute('position', new T.BufferAttribute(pos, 3)); g.setAttribute('color', new T.BufferAttribute(col, 3)); g.setAttribute('uv', new T.BufferAttribute(uv, 2)); g.setIndex(idx);
+      const mat = new T.MeshBasicMaterial({ vertexColors: true, side: T.DoubleSide, toneMapped: false });
+      const m = new T.Mesh(g, mat);
       m.userData.sansOmbre = true; m.castShadow = false; groupe.add(m);
-      const e = { mesh: m, circuit, maj(fT) {
+      const e = { mesh: m, circuit, dir, nappe: N.nappe(mat, 0, { pas: 36, fort: 1 }), maj(fT) {
         segments.forEach(([z0, z1, ya, yb], i) => {
           const a = couleurT(circuit, fT(ya), 0.3), b = couleurT(circuit, fT(yb), 0.3);
           col.set([a.r, a.g, a.b, a.r, a.g, a.b, b.r, b.g, b.b, b.r, b.g, b.b], i * 12);
@@ -216,7 +222,8 @@
       plan(mince, HM.mince, 0.12, groupe, s); plan(epais, HM.inox, 0.14, groupe, s);
       /* --- l'eau --- */
       const zFin = ZAV + EPAIS + ZSTUB - 0.2;
-      [PY, -PY].forEach(y => eauMesh(s, [[ZAR, zFin, y - RH, y + RH]], circA, groupe, 0.04));
+      /* le collecteur d'entrée (où l'eau de ce circuit arrive de la façade) va vers l'arrière, celui de sortie vers l'avant */
+      [PY, -PY].forEach(y => eauMesh(s, [[ZAR, zFin, y - RH, y + RH]], circA, groupe, 0.04, 'z', (y > 0) === (circA === 'p') ? -1 : 1));
       for (let j = 0; j < NCH; j++) {
         const z0 = zP(j) + TP / 2, z1 = zP(j + 1) - TP / 2, circ = j % 2 === parA ? circA : (circA === 'p' ? 's' : 'p');
         const segs = [];
@@ -226,61 +233,16 @@
           const bouche = j % 2 !== parA && Math.abs(ym) > PY - RCOL && Math.abs(ym) < PY + RCOL;
           if (!bouche) segs.push([z0, z1, ya, yb]);
         }
-        eauMesh(s, segs, circ, groupe, 0.08);
+        eauMesh(s, segs, circ, groupe, 0.08, 'y', circ === 'p' ? -1 : 1);
       }
       cotes[s] = { groupe, circA, parA };
     });
 
     /* ================================================================ L'EAU QUI CIRCULE
-       Chaque grain prend la couleur de la température là où il se trouve. */
-    const ico = new T.IcosahedronGeometry(2.1, 0);
-    const fondu = u => { const f = a => { const t = K.clamp(a / 0.06, 0, 1); return t * t * (3 - 2 * t); }; return f(u) * f(1 - u); };
-    const ruisseau = (courbe, circuit) => {
-      const L = courbe.getLength(), N = Math.max(5, Math.round(L / 34));
-      const pts = courbe.getSpacedPoints(Math.max(40, Math.round(L / 3)));
-      const im = new T.InstancedMesh(ico, new T.MeshBasicMaterial({ color: 0xffffff, toneMapped: false }), N);
-      im.userData.sansOmbre = true; im.castShadow = false; im.frustumCulled = false;
-      const m4 = new T.Matrix4(), q = new T.Quaternion(), sc = new T.Vector3(), p = new T.Vector3(), col = new T.Color();
-      const et = { s: 0, sens: 1, fT: () => 60 };
-      const poser = () => {
-        for (let i = 0; i < N; i++) {
-          let u = (i / N + et.s / L) % 1; if (u < 0) u += 1;
-          const f = u * (pts.length - 1), a = Math.floor(f), b = Math.min(a + 1, pts.length - 1);
-          p.lerpVectors(pts[a], pts[b], f - a);
-          sc.setScalar(fondu(u)); m4.compose(p, q, sc); im.setMatrixAt(i, m4);
-          im.setColorAt(i, col.copy(couleurT(circuit, et.fT(p.y), 0)));
-        }
-        im.instanceMatrix.needsUpdate = true; im.instanceColor.needsUpdate = true;
-      };
-      poser();
-      return { objet: im, regler(o) { Object.assign(et, o); poser(); }, avancer(dt, v) { et.s += dt * v * et.sens; poser(); } };
-    };
-    /* le trajet d'un canal du circuit « de ce côté » : du piquage d'entrée à celui de sortie, en passant par le collecteur */
-    const trajetA = (s, zc) => {
-      const xg = XC(s) - s * 0.3, dir = s < 0 ? 1 : -1;   /* primaire : de haut en bas ; secondaire : de bas en haut */
-      const yIn = dir * PY, yOut = -yIn, zE = ZAV + EPAIS + ZSTUB + 3;
-      const c = new T.CurvePath();
-      c.add(new T.LineCurve3(V(xg, yIn, zE), V(xg, yIn, zc + 9)));
-      c.add(new T.QuadraticBezierCurve3(V(xg, yIn, zc + 9), V(xg, yIn, zc), V(xg, yIn - dir * 9, zc)));
-      c.add(new T.LineCurve3(V(xg, yIn - dir * 9, zc), V(xg, yOut + dir * 9, zc)));
-      c.add(new T.QuadraticBezierCurve3(V(xg, yOut + dir * 9, zc), V(xg, yOut, zc), V(xg, yOut, zc + 9)));
-      c.add(new T.LineCurve3(V(xg, yOut, zc + 9), V(xg, yOut, zE)));
-      return c;
-    };
-    /* un canal de l'autre circuit, vu au même plan : il va de bout en bout, bouché par les collerettes */
-    const trajetB = (s, zc) => {
-      const xg = XC(s) - s * 0.3, haut = s > 0;   /* côté +1 : l'autre circuit est le primaire (de haut en bas) */
-      return new T.LineCurve3(V(xg, haut ? 98 : -98, zc), V(xg, haut ? -98 : 98, zc));
-    };
-    const flotsDe = {};
-    [-1, 1].forEach(s => {
-      const g = cotes[s], A = [], B = [];
-      for (let j = 0; j < NCH; j++) {
-        const zc = zP(j) + PITCH / 2, f = ruisseau(j % 2 === g.parA ? trajetA(s, zc) : trajetB(s, zc), j % 2 === g.parA ? g.circA : (g.circA === 'p' ? 's' : 'p'));
-        g.groupe.add(f.objet); (j % 2 === g.parA ? A : B).push(f);
-              }
-      flotsDe[s] = { A, B };
-    });
+       L'eau de chaque canal et de chaque collecteur est une nappe continue (la face teintée par la température) où
+       des bandes plus sombres avancent : tant que le circuit coule, à 46 mm/s dans son sens ; sinon elles s'arrêtent
+       et s'estompent. Le sens et la vitesse se posent dans maj(), l'avance dans animer(). */
+    const V0 = 46;
 
     /* les flèches de chaleur qui traversent chaque plaque : du canal chaud vers le canal froid */
     const geoFleche = ZAXE(new T.ConeGeometry(2.6, 10, 8));
@@ -337,12 +299,10 @@
       const visible = E.coupe && !E.demonte, roule = visible && E.marche, deux = roule && E.circuits === 'deux';
       eaux.forEach(e => e.maj(e.circuit === 'p' ? pr.p : pr.s));
       const sensSec = E.sens === 'contre' ? 1 : -1;
+      eaux.forEach(e => { e.nappe.v = (e.circuit === 'p' ? roule : deux) ? V0 * e.dir * (e.circuit === 'p' ? 1 : sensSec) : 0; });
       [-1, 1].forEach(s => {
-        const c = cotes[s], f = flotsDe[s], ici = visible && E.cote === s;
+        const c = cotes[s], ici = visible && E.cote === s;
         c.groupe.visible = ici;
-        const prim = s < 0 ? f.A : f.B, sec = s < 0 ? f.B : f.A;
-        prim.forEach(x => { x.objet.visible = ici && roule; x.regler({ fT: pr.p, sens: 1 }); });
-        sec.forEach(x => { x.objet.visible = ici && deux; x.regler({ fT: pr.s, sens: sensSec }); });
         fleches[s].visible = ici && deux;
       });
       if (deux) poserFleches(pr.p, pr.s, 0);
@@ -427,13 +387,9 @@
       },
       surEclate(on) { E.demonte = on; appliquerCoupe(); },
       animer(dt, t) {
-        if (!(E.coupe && !E.demonte && E.marche)) return false;
-        const f = flotsDe[E.cote], V0 = 46;
-        (E.cote < 0 ? f.A : f.B).forEach(x => x.avancer(dt, V0));
-        if (E.circuits === 'deux') {
-          (E.cote < 0 ? f.B : f.A).forEach(x => x.avancer(dt, V0));
-          const pr = profil(); poserFleches(pr.p, pr.s, t || 0);
-        }
+        const vivant = N.animer(dt);      /* les bandes avancent, ou s'arrêtent en s'estompant */
+        if (!(E.coupe && !E.demonte && E.marche)) return vivant;
+        if (E.circuits === 'deux') { const pr = profil(); poserFleches(pr.p, pr.s, t || 0); }
         return true;
       }
     };

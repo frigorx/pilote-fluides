@@ -50,60 +50,35 @@
       g.rotateY(Math.PI / 2); g.translate(x0, 0, 0);
       return new T.Mesh(g, mat);
     };
-    /* l'eau qui circule : des grains qui avancent sur un trajet. Un grain n'est visible que si son
-       rang (suite de van der Corput) est sous la part de débit de sa voie : la part change sans
-       à-coup et les grains restent bien répartis. coul(p, co) règle la couleur du grain placé en p. */
-    const rang = i => { let r = 0, f = 0.5, n = i + 1; while (n > 0) { if (n & 1) r += f; n >>= 1; f /= 2; } return r; };
-    A.flux = (nombre, vitesse, coul) => {
-      const im = new T.InstancedMesh(new T.SphereGeometry(2.3, 8, 6), new T.MeshBasicMaterial({ color: 0xffffff, toneMapped: false }), nombre);
-      im.userData.sansOmbre = true; im.castShadow = false; im.frustumCulled = false;
-      const rg = [], co = new T.Color(), m4 = new T.Matrix4(), q = new T.Quaternion(), sc = new T.Vector3(), p = new T.Vector3();
-      for (let i = 0; i < nombre; i++) { rg.push(rang(i)); im.setColorAt(i, co); }
-      const E = { courbe: null, L: 1, s: 0, part: 1, v: vitesse, tab: null };
-      /* zones : [{ u0, u1, k }] — sur ce bout du trajet (fractions de longueur) l'eau va k fois plus vite
-         (un passage rétréci) ; sans zones, vitesse uniforme comme avant. trajet(pts, fr => zones) : la
-         fonction reçoit fraction(point) pour placer la zone sur la courbe construite */
-      const versU = phi => {
-        if (!E.tab) return phi;
-        const N = E.tab.length - 1; let a = 0, b = N;
-        while (b - a > 1) { const m = (a + b) >> 1; if (E.tab[m] <= phi) a = m; else b = m; }
-        return (a + (phi - E.tab[a]) / Math.max(1e-9, E.tab[a + 1] - E.tab[a])) / N;
-      };
+    /* l'eau qui circule : un filet d'eau continu le long d'un trajet, jamais des grains. Des bandes plus sombres y
+       avancent à la vitesse de l'eau : vitesse(v) en mm/s ; regler(part) = la part du débit de la voie (0 à 1) :
+       la vitesse des bandes la suit ; à 0, rien ne passe par ce trajet (voie fermée, clapet posé sur son siège) et le
+       filet disparaît, comme les grains avant lui : l'eau immobile du corps reste celle des faces de coupe. trajet(pts, zones) pose
+       le trajet ; zones = [{ u0, u1, k }] (ou une fonction qui reçoit fraction(point) pour les placer sur la courbe) :
+       sur ce bout du trajet l'eau va k fois plus vite (un passage rétréci). coul(p, co) règle la couleur de l'eau
+       placée en p ; teindre() la recalcule quand ce qui la gouverne a changé. */
+    A.flux = (vitesse, coul, rayon) => {
+      const N = HydroNappe(T, K), objet = new T.Group();
+      const E = { fil: null, part: 1, v: vitesse };
+      const regler = () => { if (E.fil) { E.fil.regler({ vitesse: E.v * E.part }); E.fil.objet.visible = E.v * E.part >= 0.5; } };
       /* la fraction de longueur du trajet la plus proche d'un point (pour placer une zone) */
-      const fraction = pt => {
+      const fraction = (c, pt) => {
         let m = 0, d = 1e9; const q2 = new T.Vector3();
-        for (let j = 0; j <= 200; j++) { E.courbe.getPointAt(j / 200, q2); const dd = q2.distanceToSquared(pt); if (dd < d) { d = dd; m = j / 200; } }
+        for (let j = 0; j <= 200; j++) { c.getPointAt(j / 200, q2); const dd = q2.distanceToSquared(pt); if (dd < d) { d = dd; m = j / 200; } }
         return m;
       };
-      const poser = () => {
-        if (!E.courbe) return;
-        for (let i = 0; i < nombre; i++) {
-          let u = (i / nombre + E.s / E.L) % 1; if (u < 0) u += 1;
-          E.courbe.getPointAt(versU(u), p);
-          sc.setScalar(clamp((E.part - rg[i]) / 0.08, 0, 1)); m4.compose(p, q, sc); im.setMatrixAt(i, m4);
-          coul(p, co); im.setColorAt(i, co);
-        }
-        im.instanceMatrix.needsUpdate = true; im.instanceColor.needsUpdate = true;
-      };
       return {
-        objet: im,
+        objet,
         trajet(pts, zones) {
-          E.courbe = new T.CatmullRomCurve3(pts, false, 'centripetal'); E.L = E.courbe.getLength();
-          E.tab = null;
-          if (typeof zones === 'function') zones = zones(fraction);
-          if (zones && zones.length) {
-            const N = 96, tab = [0];
-            for (let j = 0; j < N; j++) {
-              const um = (j + 0.5) / N; let k = 1; zones.forEach(z => { if (um >= z.u0 && um <= z.u1) k = z.k; });
-              tab.push(tab[j] + 1 / k);
-            }
-            E.tab = tab.map(x => x / tab[N]);
-          }
-          poser();
+          const c = new T.CatmullRomCurve3(pts, false, 'centripetal');
+          if (typeof zones === 'function') zones = zones(pt => fraction(c, pt));
+          if (!E.fil) { E.fil = N.filet(c, { rayon, couleur: 0xffffff, teinte: (u, out, p) => coul(p, out), vitesse, pas: 40 }); objet.add(E.fil.objet); }
+          E.fil.retracer(c, zones); regler();
         },
-        regler(part) { E.part = part; poser(); },
-        vitesse(v) { E.v = v; },
-        animer(dt) { E.s += dt * E.v; poser(); }
+        regler(part) { E.part = part; regler(); },
+        vitesse(v) { E.v = v; regler(); },
+        teindre() { if (E.fil) E.fil.teindre(); },
+        animer(dt) { if (E.fil) E.fil.animer(dt); }
       };
     };
     return A;
@@ -273,15 +248,15 @@
     faceDe([surPort(PORTS.AB, 27.6, TUBE, -RB, RB), disque(27.9, 56)], eauMix, -0.3, facesEau);
 
     /* ================================================================ L'EAU QUI CIRCULE
-       Des grains qui avancent sur un trajet. Un grain n'est visible que si son rang (suite de
-       van der Corput) est sous la part de débit de sa voie : la part change sans à-coup et les
-       grains restent bien répartis. Couleur de chaque grain : celle de sa voie, qui vire au
-       mélange quand il rejoint AB. */
+       Trois filets d'eau continus : la voie A, la voie B, puis la sortie AB où elles se rejoignent. Les bandes de
+       chaque voie avancent à la part de débit qu'elle laisse passer (fermée : l'eau y est arrêtée) ; la sortie AB
+       porte tout le débit, à vitesse constante. Couleur de l'eau : celle de sa voie, qui vire au mélange quand
+       elle rejoint AB. */
     const V = (x, y, z) => new T.Vector3(x, y, z);
     const cBase = { A: new T.Color(ROUGE), B: new T.Color(BLEU) }, cMix = new T.Color(BLEU);
     const virage = base => (p, co) => { const t = clamp((p.x - 4) / 24, 0, 1); co.copy(base).lerp(cMix, t * t * (3 - 2 * t)); };
-    const fluxA = A.flux(36, 40, virage(cBase.A)), fluxB = A.flux(36, 40, virage(cBase.B));
-    const flots = [fluxA, fluxB];
+    const fluxA = A.flux(40, virage(cBase.A), 5), fluxB = A.flux(40, virage(cBase.B), 5), fluxAB = A.flux(40, (p, co) => co.copy(cMix), 5);
+    const flots = [fluxA, fluxB, fluxAB];
     flots.forEach(f => racine.add(f.objet));
 
     /* ================================================================ L'ÉTAT : l'angle réel du secteur gouverne tout */
@@ -312,13 +287,15 @@
       const thA = (Math.max(180 - TB, 225 - E.alpha) + 180 + TB) / 2, thB = (90 - TB + Math.min(90 + TB, 135 - E.alpha)) / 2;
       const zA = clamp(RC * Math.sin(thA * D), -8, 8), xB = clamp(RC * Math.cos(thB * D), -1, 9);
       if (Math.abs(zA - derniere.zA) > 0.03 || Math.abs(xB - derniere.xB) > 0.03 || derniere.a < 0) {
-        fluxA.trajet([V(-TUBE + 4, 0, zA), V(-40, 0, zA), V(-27, 0, zA), V(-17, 0, zA * 0.5 - 6.5), V(0, 0, -10), V(15, 0, -6.5), V(29, 0, -1.5), V(60, 0, 0), V(TUBE - 4, 0, 0)]);
-        fluxB.trajet([V(xB, 0, TUBE - 4), V(xB, 0, 40), V(xB, 0, 29), V(xB + 3, 0, 19), V(15, 0, 9.5), V(29, 0, 2.5), V(60, 0, 0), V(TUBE - 4, 0, 0)]);
+        fluxA.trajet([V(-TUBE + 4, 0, zA), V(-40, 0, zA), V(-27, 0, zA), V(-17, 0, zA * 0.5 - 6.5), V(0, 0, -10), V(15, 0, -6.5), V(29, 0, -1.5), V(40, 0, 0)]);
+        fluxB.trajet([V(xB, 0, TUBE - 4), V(xB, 0, 40), V(xB, 0, 29), V(xB + 3, 0, 19), V(15, 0, 9.5), V(29, 0, 2.5), V(40, 0, 0)]);
+        fluxAB.trajet([V(40, 0, 0), V(60, 0, 0), V(TUBE - 4, 0, 0)]);
         derniere = { a: o.a, zA, xB };
       }
       fluxA.regler(o.a); fluxB.regler(o.b);
       cMix.set(BLEU).lerp(new T.Color(ROUGE), o.a);
       eauMix.color.copy(cMix).lerp(new T.Color(0xffffff), 0.12);
+      flots.forEach(f => f.teindre());
     };
     const poserAngle = () => {
       const r = E.alpha * D;
@@ -593,10 +570,10 @@
     /* ================================================================ L'EAU QUI CIRCULE */
     const V = (x, y, z) => new T.Vector3(x, y, z);
     const cAmont = new T.Color(0x2a5aa8), cAval = new T.Color(0x2a5aa8), cClair = new T.Color(0xa7d0f5);
-    const fluxEau = A.flux(36, 60, (p, co) => {
+    const fluxEau = A.flux(60, (p, co) => {
       const t = clamp(Math.max(p.x / 6, (p.y - 25) / 4), 0, 1), s = t * t * (3 - 2 * t);
       co.copy(cAmont).lerp(cAval, s);
-    });
+    }, 5);
     racine.add(fluxEau.objet);
 
     /* ================================================================ L'ÉTAT : la levée du clapet gouverne tout */
@@ -625,6 +602,7 @@
       }
       fluxEau.vitesse(75 * debit(cEff) / 1.6);
       cAval.copy(cAmont).lerp(cClair, clamp(ecart(cEff) / 16, 0.1, 1));
+      fluxEau.teindre();
       eauAval.color.setHex(0x4b84cc).lerp(new T.Color(0xcfe5f8), clamp(ecart(cEff) / 16, 0.1, 1));
     };
     const poser = h => {
@@ -975,14 +953,14 @@
     faceXY([R(-27, 27, 28, 52), R(14, 27, -22, 28), R(27, TUBE, -10, 10), canaux.aval], eauAval, -0.3, facesEau);
 
     /* ================================================================ L'EAU QUI CIRCULE
-       Moins de grains quand le débit baisse ; vitesse moyenne proportionnelle au débit ; dans le passage rétréci
-       entre clapet et siège, l'eau file plus vite (zone d'accélération). */
+       Un filet d'eau continu : ses bandes avancent à une vitesse moyenne proportionnelle au débit (débit nul : eau
+       arrêtée) ; dans le passage rétréci entre clapet et siège, l'eau file plus vite (zone d'accélération). */
     const V = (x, y, z) => new T.Vector3(x, y, z);
     const cAmont = new T.Color(0x2a5aa8), cAval = new T.Color(0x2a5aa8), cClair = new T.Color(0xa7d0f5);
-    const fluxEau = A.flux(36, 60, (p, co) => {
+    const fluxEau = A.flux(60, (p, co) => {
       const t = clamp(Math.max(p.x / 6, (p.y - 25) / 4), 0, 1), s = t * t * (3 - 2 * t);
       co.copy(cAmont).lerp(cAval, s);
-    });
+    }, 5);
     racine.add(fluxEau.objet);
 
     /* ================================================================ L'ÉTAT */
@@ -1025,16 +1003,16 @@
     };
 
     const majFlux = h => {
-      const p = h / PAS, q = debitDe(p), part = Math.pow(q / Q_MAX, 0.7), gy = Y_SIEGE + h / 2;
+      const p = h / PAS, q = debitDe(p), gy = Y_SIEGE + h / 2;
       if (Math.abs(h - hPrec) > 0.02) {
         fluxEau.trajet([V(-TUBE + 4, 0, 0), V(-40, 0, 0), V(-26, 0, 0), V(-14, 4, 0), V(-5, 14, 0), V(0, 22, 0), V(2, 26, 0), V(6, gy, 0), V(14, gy + 3, 0), V(19, Math.max(gy + 4, 33), 0), V(21, 26, 0), V(20.5, 12, 0), V(21, 2, 0), V(28, 0, 0), V(TUBE - 4, 0, 0)],
           fr => [{ u0: fr(V(2, 26, 0)), u1: fr(V(19, Math.max(gy + 4, 33), 0)), k: clamp(6 / Math.max(h, 0.3), 1, 7) }]);
         hPrec = h;
       }
-      fluxEau.regler(part);
       fluxEau.vitesse(70 * q / Q_MAX);
       const t = clamp(ecartDe(p) / P_DISPO / 100, 0.08, 1);
       cAval.copy(cAmont).lerp(cClair, t);
+      fluxEau.teindre();
       eauAval.color.setHex(0x4b84cc).lerp(new T.Color(0xcfe5f8), t);
     };
 
