@@ -123,6 +123,14 @@ Huit SVG, dont trois animés (SMIL autonome, sans script, état au repos = image
 8. **service-public.gouv.fr** — « Garantie décennale des constructeurs », F2034 : dix ans à compter de la
    réception ; assurance obligatoire avant l'ouverture du chantier ; sanctions pénales ; distincte de la
    dommages-ouvrage, souscrite par le maître d'ouvrage. https://www.service-public.gouv.fr/particuliers/vosdroits/F2034
+8 bis. **Légifrance — Code de l'artisanat**, art. R121-1 (en vigueur depuis le 01/07/2023), lu le 04/10/2026
+   : la personne qualifiée est titulaire d'un CAP, d'un BEP ou d'un diplôme ou titre de niveau égal ou
+   supérieur enregistré au RNCP, attestant une qualification dans le métier ; art. R121-3 : à défaut,
+   trois années d'expérience effective. D'où la phrase « Pour un BTS » de l'écran 2. ⚠️ La loi n° 96-603
+   (art. 16) et le décret n° 98-246 cités par la fiche INPI (n° 7) sont abrogés depuis le 01/07/2023
+   (ordonnance n° 2023-208) : leur contenu est repris aux art. L121-1 et R121-1 et suivants du Code de
+   l'artisanat.
+   https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006075116/LEGISCTA000047724792/
 9. **Légifrance** — Code des assurances, art. L241-1 (version du 08/08/2015) : toute personne dont la
    responsabilité décennale peut être engagée doit être assurée et en justifier à l'ouverture du chantier.
    https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031010281
