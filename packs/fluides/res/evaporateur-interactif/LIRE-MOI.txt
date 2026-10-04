@@ -17,6 +17,14 @@ CE QUE LE MODULE FAIT
 - Inspection guidée d’un évaporateur et construction d’un rapport d’état.
 - Contrôle final de 5 questions. Seuil pédagogique : 4/5. Ce résultat n’est
   ni une attestation ni un examen officiel.
+- Dessin vivant (04/10/2026, chantier « Animer les réseaux ») : scene-evaporation.js.
+  Le fluide qui bout dans le tube, en coupe, au ralenti (entrée, ébullition,
+  surchauffe ; couleur = température, nappe de liquide, bulles, air de la chambre),
+  et son point qui avance sur le diagramme enthalpique. Il remplace la photo de
+  l’accueil et se tient en haut de chaque écran : un écran = un dessin + 3 lignes,
+  le texte entier se déplie (« Lire tout le texte ») et la voix le lit.
+  Moteurs relus, jamais modifiés : jouerezo/moteur/voyage-dessin.js et
+  voyage-diagramme.js.
 
 CE QUE CE MODULE REMPLACE
 -------------------------

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Module interactif A1 sur l’installation, le réglage et la vérification d’un évaporateur : givre, dégivrage, régulation, inspection et rapport d’état.">
   <title>Évaporateur — installer, régler, vérifier | Pilote Fluides</title>
-  <link rel="stylesheet" href="styles.css?v=20260731-4">
+  <link rel="stylesheet" href="styles.css?v=20261004-1">
   <link rel="stylesheet" href="impression.css?v=20260731-4" media="print">
   <script src="../../../../moteur/plan-donnees.js"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
@@ -39,10 +39,7 @@
         </div>
       </div>
 
-      <figure class="home-visual">
-        <img src="images/evaporateur-air.webp" alt="Évaporateur à air isolé, avec batterie à ailettes, deux ventilateurs et bac inférieur.">
-        <figcaption>Reconnaître l’organe, puis lire ce qu’il montre.</figcaption>
-      </figure>
+      <figure class="home-visual scene-accueil" id="scene-accueil"></figure>
 
       <nav class="dossier-grid" id="dossier-grid" aria-label="Ouvrir directement un dossier"></nav>
 
@@ -79,8 +76,10 @@
         </header>
 
         <div class="lesson-content">
+          <figure class="scene-lecon" id="scene-lecon"></figure>
           <div class="lesson-copy">
             <p id="lesson-text"></p>
+            <button class="texte-entier" id="texte-entier" type="button" aria-expanded="false" aria-controls="lesson-text" hidden>Lire tout le texte</button>
             <p class="action-prompt" id="action-prompt"></p>
           </div>
           <section class="activity-zone" id="activity-zone" aria-label="Activité de l’étape"></section>
@@ -103,7 +102,10 @@
   <script src="../../../../moteur/voix.js?v=20260806-2"></script>
   <script src="../../../../moteur/reglage-voix.js?v=20260901-1"></script>
   <script src="../../../../moteur/prof-vocal.js?v=20260806-1"></script>
-  <script src="app.js?v=20260731-4"></script>
+  <script src="app.js?v=20261004-1"></script>
+  <script src="../../../../jouerezo/moteur/voyage-dessin.js?v=20261004-1"></script>
+  <script src="../../../../jouerezo/moteur/voyage-diagramme.js?v=20261004-1"></script>
+  <script src="scene-evaporation.js?v=20261004-1"></script>
   <script src="../../../../moteur/lisibilite.js"></script>
 <script src="../../../../moteur/marque.js" data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
 <script src="referentiel.js"></script>

@@ -684,6 +684,25 @@ body.summary-running { height: 100dvh; overflow: hidden; }
 
 .print-book { display: none; }
 
+/* ---- Le dessin vivant (scene-evaporation.js, 04/10/2026) : un écran = un dessin + 3 lignes, le reste à la voix ---- */
+.lesson-card{grid-template-columns:minmax(0,1fr)}
+.lesson-content{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);grid-template-rows:auto minmax(min-content,1fr);overflow-y:auto}
+.scene-lecon{grid-column:1/-1;margin:0;display:grid;gap:6px;justify-items:center}
+.scene-dessins{display:flex;gap:10px;align-items:flex-start;width:100%;max-width:max(956px,calc((100dvh - 533px)*3.548 + 10px))}
+.scene-dessins>svg{display:block;height:auto;min-width:0}
+.scene-lecon .scene-coupe{flex:640 1 0;background:#fdfbf5;border:1px solid var(--line);border-radius:16px}
+.scene-lecon .scene-diagramme{flex:460 1 0}
+.scene-barre{width:100%;max-width:max(956px,calc((100dvh - 533px)*3.548 + 10px));display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.scene-barre button{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;padding:5px 12px;font-weight:800;font-size:17px;cursor:pointer}
+.scene-barre .scene-etape{min-width:42px;font-size:19px;padding:4px 10px}.scene-barre button[aria-current="step"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.scene-legende{flex:1 1 320px;margin:0 0 0 6px;font-size:19px;line-height:1.3}.scene-legende strong{color:var(--navy)}
+.scene-accueil svg{display:block;width:100%;height:auto}.home-visual.scene-accueil{height:auto}.home-visual.scene-accueil .scene-legende-accueil{position:static;padding:10px 16px;border-radius:0;background:none;color:var(--muted);font-weight:700;font-size:19px;line-height:1.3}
+#lesson-text{font-size:clamp(16px,1.5vw,20px);line-height:1.38;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+.lesson-copy{justify-content:flex-start}.lesson-copy.texte-ouvert #lesson-text{display:block;-webkit-line-clamp:unset;line-clamp:none}
+.texte-entier{align-self:flex-start;margin-top:2px;padding:0;border:0;background:none;color:var(--orange-deep);font-weight:800;font-size:17px;line-height:1.3;text-decoration:underline;cursor:pointer}.action-prompt{font-size:19px;line-height:1.3;margin-top:8px !important}
+@media (max-width:900px){.scene-dessins{flex-direction:column;align-items:stretch}.scene-lecon .scene-coupe,.scene-lecon .scene-diagramme{flex:none;width:100%}}
+@media (max-width:760px){.lesson-card .lesson-content{grid-template-rows:auto auto minmax(min-content,1fr)}.home{height:auto;min-height:calc(100dvh - 42px);overflow:visible}.home-visual.scene-accueil{display:block;margin:10px 0}}
+
 @media (max-width: 1050px) {
   .lesson-content { grid-template-columns: minmax(210px, .62fr) minmax(0, 1.38fr); }
   .tool-button { padding-inline: 8px; }

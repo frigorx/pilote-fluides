@@ -1044,9 +1044,13 @@ function renderCurrent(moveFocus = true) {
   renderStepper(item);
   renderNavigation(item);
   updateUrl(item);
+  replierTexte();
   if (moveFocus) $("#lesson-title").focus({ preventScroll: true });
   if (autoplay) setTimeout(() => speakCurrent(), 350);
 }
+/* Un écran = un dessin + 3 lignes (04/10/2026) : le texte reste entier, replié à 3 lignes ; la voix le dit en entier. */
+function replierTexte(){const copie=$(".lesson-copy"),bouton=$("#texte-entier"),texte=$("#lesson-text"); $(".lesson-content").scrollTop=0; copie.classList.remove("texte-ouvert"); bouton.setAttribute("aria-expanded","false"); bouton.textContent="Lire tout le texte"; bouton.hidden=texte.scrollHeight<=texte.clientHeight+2;}
+function basculerTexte(){const copie=$(".lesson-copy"),ouvert=copie.classList.toggle("texte-ouvert"),bouton=$("#texte-entier"); bouton.setAttribute("aria-expanded",String(ouvert)); bouton.textContent=ouvert?"Replier le texte":"Lire tout le texte";}
 
 function renderReference(item) {
   $("#reference-box").innerHTML = item.codes.length
@@ -1267,6 +1271,7 @@ function bindGlobalEvents() {
   $("#stop-voice").addEventListener("click", () => stopSpeech());
   $("#slower").addEventListener("click", () => changeRate(-1));
   $("#faster").addEventListener("click", () => changeRate(1));
+  $("#texte-entier").addEventListener("click", basculerTexte);
   document.addEventListener("keydown", event => {
     if ($("#course-shell").hidden) return;
     const tag = event.target?.tagName;
