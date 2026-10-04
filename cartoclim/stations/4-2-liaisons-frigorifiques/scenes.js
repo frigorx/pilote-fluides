@@ -135,6 +135,25 @@ const ScenesStation = (() => {
       (b, x, y, ang, f) => { b.setAttribute('cx', x.toFixed(1)); b.setAttribute('cy', y.toFixed(1));
         b.setAttribute('r', (0.6 + int * 0.33 * f).toFixed(1)); b.setAttribute('opacity', D.borne(f * 1.6, 0, 1).toFixed(2)); }, h || 'f');
 
+    /* mélange liquide + vapeur (petit tube en mode froid, après le détendeur) : le liquide reste un corps continu
+       — tube plein, reflets qui filent — et la vapeur y file en poches allongées de longueurs inégales, nées au
+       détendeur : jamais des billes isolées sur un tube vide. Les poches suivent le trajet (même vivant) et l'horloge. */
+    const POCHES = [9, 5, 12, 6, 10, 4, 8];
+    const melange = (g, tr, int, couleur, v, h) => {
+      chemin(g, tr, { stroke: couleur, 'stroke-width': int, opacity: 0.92 });
+      const reflet = chemin(g, tr, { stroke: C.papier, 'stroke-width': 1.3, 'stroke-dasharray': '12 30', opacity: 0.4 });
+      const cl = clocks[h || 'f'];
+      anime.push(() => reflet.setAttribute('stroke-dashoffset', (-(cl.t * v) % 42).toFixed(1)));
+      filer(g, tr, Math.max(1, Math.round(tr.L / 24)), v * 1.2,
+        (p, i) => Object.assign(D.el('line', { stroke: C.papier, 'stroke-linecap': 'round', 'stroke-width': (int * (0.5 + 0.12 * (i % 3))).toFixed(1) }, p), { _l: POCHES[i % POCHES.length] }),
+        (b, x, y, ang, f) => {
+          const dx = Math.cos(ang * Math.PI / 180) * b._l / 2, dy = Math.sin(ang * Math.PI / 180) * b._l / 2;
+          b.setAttribute('x1', (x - dx).toFixed(1)); b.setAttribute('y1', (y - dy).toFixed(1));
+          b.setAttribute('x2', (x + dx).toFixed(1)); b.setAttribute('y2', (y + dy).toFixed(1));
+          b.setAttribute('opacity', (0.95 * D.fenetre(f, 0, 1, 0.06)).toFixed(2));
+        }, h || 'f');
+    };
+
     /* l'air : des chevrons qui avancent sur une ligne brisée ; leur couleur suit la température, o.temp(f, x, y) ;
        o.act : une grandeur douce (0..1) qui efface l'air quand la machine s'arrête ; o.h : son horloge */
     const souffle = (g0, pts, o) => {
@@ -226,13 +245,13 @@ const ScenesStation = (() => {
       };
       requestAnimationFrame(boucle);
     };
-    return { D, FIGE, S, clocks, horloge, vitesse, doux, viser, fond, couche, filer, chemin, tube, liquide, vapeur, bulles, souffle, chaleur,
+    return { D, FIGE, S, clocks, horloge, vitesse, doux, viser, fond, couche, filer, chemin, tube, liquide, melange, vapeur, bulles, souffle, chaleur,
       ailettes, detendeur, turbine, tourne, ecrire, allumer, demarrer, anime };
   }
 
   function liaison() {
     const d = svg('0 0 1000 640',
-      'Coupe schématique d’une liaison frigorifique : l’unité intérieure à gauche du mur, l’unité extérieure à droite, reliées par un petit tube pour le liquide et un gros tube pour le gaz, chacun dans son isolant. La longueur L se mesure le long des tubes, le dénivelé H est la différence de hauteur entre les deux unités. L’air traverse chaque unité ; le gaz file vers l’extérieur dans le gros tube, le liquide revient dans le petit.');
+      'Coupe schématique d’une liaison frigorifique : l’unité intérieure à gauche du mur, l’unité extérieure à droite, reliées par un petit tube pour le liquide (mêlé de vapeur en mode froid) et un gros tube pour le gaz, chacun dans son isolant. La longueur L se mesure le long des tubes, le dénivelé H est la différence de hauteur entre les deux unités. L’air traverse chaque unité ; le gaz file vers l’extérieur dans le gros tube, le liquide revient dans le petit.');
     const V = vivant(d, 1000, 640), D = V.D, { couche, ecrire, souffle, turbine, tourne, doux, viser, chemin } = V;
     const GY = 440, XE = [680, 750, 820], XM = [200, 500, 800];    /* le sol ; l'unité extérieure dans les trois cas ; le repère de L sur la règle */
     const M = { 'text-anchor': 'middle' }, G = { 'font-weight': 700 };
@@ -293,7 +312,7 @@ const ScenesStation = (() => {
     D.el('rect', { x: 668, y: 368, width: 12, height: 16, fill: C.navy }, suit(g));
     g = couche('liq');
     V.tube(g, trL, 12, 6);
-    V.liquide(g, trLr, 6, D.couleur(0.08), 30);
+    V.melange(g, trLr, 6, D.couleur(0.08), 30);   /* petit tube, du détendeur (dehors) à la pièce, en mode froid : un mélange liquide + vapeur */
     D.el('rect', { x: 240, y: 150, width: 10, height: 16, fill: C.navy }, g);
     D.el('rect', { x: 670, y: 403, width: 10, height: 16, fill: C.navy }, suit(g));
 
@@ -343,7 +362,7 @@ const ScenesStation = (() => {
     ecrire(40, 118, 'unité', 'ui', C.navy);
     ecrire(40, 145, 'intérieure', 'ui', C.navy);
     ecrire(292, 104, 'gros tube : gaz', 'gaz', C.orange);
-    ecrire(292, 193, 'petit tube : liquide', 'liq', C.orange);
+    ecrire(292, 193, 'petit tube : liquide + vapeur', 'liq', C.orange);
     ecrire(292, 225, 'un isolant continu', 'isoT', C.navy, G);
     ecrire(292, 252, 'sur chaque tube,', 'isoT', C.navy, G);
     ecrire(292, 279, 'fermé jusqu’au raccord', 'isoT', C.navy, G);
@@ -385,7 +404,7 @@ const ScenesStation = (() => {
 
     const etapes = [
       { titre: 'Deux tubes, deux diamètres',
-        dire: 'Le fluide passe d’une unité à l’autre par deux tubes de cuivre. Le petit porte le liquide, le gros porte le gaz. Les deux diamètres sont imposés : ils sont dans la notice.',
+        dire: 'Le fluide passe d’une unité à l’autre par deux tubes de cuivre. Le petit porte le liquide, mêlé de vapeur quand l’appareil refroidit, le gros porte le gaz. Les deux diamètres sont imposés : ils sont dans la notice.',
         peindre: () => peindre(0) },
       { titre: 'Chacun dans son isolant',
         dire: 'Une gaine entoure chaque tube, sans coupure du début à la fin, et jusqu’au raccord. Le gros tube, froid quand l’appareil refroidit, se couvrirait de gouttes s’il était nu.',
@@ -412,7 +431,7 @@ const ScenesStation = (() => {
     const cartes = [
       { t: 'Le tube', l: ['qualité frigorifique,', 'bouché et sec ;', 'on rebouche ce', 'qui attend'],
         p: x => `<line x1="${x - 36}" y1="214" x2="${x + 36}" y2="214" stroke="${C.orange}" stroke-width="10"/><rect x="${x - 46}" y="205" width="8" height="18" fill="${C.navy}"/><rect x="${x + 38}" y="205" width="8" height="18" fill="${C.navy}"/>` },
-      { t: 'Les diamètres', l: ['ceux de la notice :', 'petit tube : liquide,', 'gros tube : gaz'],
+      { t: 'Les diamètres', l: ['ceux de la notice :', 'petit tube : liquide', 'et vapeur en froid,', 'gros tube : gaz'],
         p: x => `<circle cx="${x - 24}" cy="214" r="8" fill="${C.creme}" stroke="${C.orange}" stroke-width="4"/><circle cx="${x + 16}" cy="214" r="15" fill="${C.creme}" stroke="${C.orange}" stroke-width="4"/>` },
       { t: 'L et H', l: ['dans la notice :', 'longueur mini et maxi,', 'dénivelé maxi ;', 'au-delà : appoint pesé'],
         p: x => `<path d="M${x - 40} 222 H${x + 6}" stroke="${C.navy}" stroke-width="2.5" marker-start="url(#cote5)" marker-end="url(#cote5)"/><text x="${x - 20}" y="212" font-size="15" font-weight="700" fill="${C.navy}">L</text><path d="M${x + 30} 194 V232" stroke="${C.navy}" stroke-width="2.5" marker-start="url(#cote5)" marker-end="url(#cote5)"/><text x="${x + 38}" y="218" font-size="15" font-weight="700" fill="${C.navy}">H</text>` },
@@ -443,7 +462,7 @@ ${c.l.map((ligne, k) => `<text x="${x}" y="${292 + k * 21}" text-anchor="middle"
 <g fill="none" stroke="${C.gris}" stroke-opacity=".45"><path d="M170 58 H650" stroke-width="26"/><path d="M170 88 H650" stroke-width="18"/></g>
 <g fill="none" stroke="${C.orange}"><path d="M170 58 H650" stroke-width="12"/><path d="M170 88 H650" stroke-width="7"/></g>
 <text x="410" y="38" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">gros tube : gaz</text>
-<text x="410" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">petit tube : liquide</text>
+<text x="410" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">petit tube : liquide + vapeur</text>
 ${fiches}`;
     return d;
   }

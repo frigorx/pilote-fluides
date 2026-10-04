@@ -17,7 +17,8 @@ voir à quoi elle sert.`,
 
   comprendre: `Suivons la liaison de bout en bout. Elle part de l'unité de la pièce, elle traverse le mur, elle
 rejoint l'unité du dehors.
-Deux tubes de cuivre, donc. Le petit porte le fluide liquide, le gros porte le gaz, qui prend beaucoup plus
+Deux tubes de cuivre, donc. Le petit porte le fluide liquide, ou, quand l'appareil refroidit, un mélange de liquide
+et de vapeur, après le détendeur. Le gros porte le gaz, qui prend beaucoup plus
 de place. Chacun a son isolant. Pourquoi ? Pensez à un verre d'eau glacée posé sur une table : il se couvre de
 gouttes. Le gros tube, quand l'appareil refroidit, est froid comme ce verre. S'il est nu, il ruisselle, et
 l'eau finit sur votre mur ou dans le faux plafond. Alors on l'enferme dans sa gaine, sans trou, du début

@@ -14,7 +14,7 @@ On le pose dans la cave, le garage ou la buanderie, là où l'on n'a pas besoin 
 prendre celle de l'air. Au lycée, le banc de l'atelier en est un vrai, avec ses instruments de mesure.`,
 
   comprendre: `Suivons la chaleur, en partant du bas du dessin.
-Un ventilateur aspire l'air de la pièce et le pousse à travers l'évaporateur, une batterie à ailettes. Le fluide
+Un ventilateur, placé après l'évaporateur, aspire l'air de la pièce à travers lui. L'évaporateur est une batterie à ailettes. Le fluide
 y est plus froid que l'air : il prend sa chaleur, il bout, il devient gaz. L'air ressort plus froid, et plus
 sec, parce qu'une partie de son humidité se dépose en gouttes, comme sur un split.
 Le compresseur comprime ce gaz. En sortie, il est plus chaud que l'eau du ballon : sans cela, il ne pourrait

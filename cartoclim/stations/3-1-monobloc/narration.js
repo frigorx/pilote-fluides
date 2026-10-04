@@ -14,8 +14,8 @@ Sur la seconde photo, un climatiseur de fenêtre : une moitié dans la pièce, l
 monobloc mural, avec deux trous dans le mur pour l'air. Nous les comparerons.`,
 
   comprendre: `Ouvrons le boîtier du mobile. Il contient deux courants d'air qui ne se mélangent jamais.
-Le premier, c'est l'air de la pièce. Un ventilateur le pousse à travers l'évaporateur, la batterie froide. Le fluide
-y bout, il prend la chaleur de l'air, et l'air ressort plus frais. C'est le premier pas.
+Le premier, c'est l'air de la pièce. Un ventilateur, placé après l'évaporateur, l'aspire à travers la batterie froide. Le fluide
+y bout, il prend la chaleur de l'air, et l'air ressort plus frais : le ventilateur le souffle dans la pièce. C'est le premier pas.
 Le second, c'est l'air du condenseur. Le fluide arrive chaud dans cette batterie : il faut un autre air pour le
 refroidir. Cet air se réchauffe, et la gaine le pousse dehors, par la fenêtre. C'est le deuxième pas.
 Voici le défaut du mobile. L'air qui part par la gaine, c'est de l'air de la pièce. La pièce en perd : elle manque

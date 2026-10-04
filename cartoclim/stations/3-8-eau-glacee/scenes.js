@@ -78,7 +78,7 @@ const ScenesStation = (() => {
   function circuit() {
     const D = window.VOYAGE_DESSIN;
     const d = svg('0 0 1000 660',
-      'Un groupe d’eau glacée à gauche, avec son propre circuit frigorifique ; une pompe, un tuyau de départ et un tuyau de retour ; trois pièces à droite, chacune avec un ventilo-convecteur : une batterie traversée par l’eau, un filtre, un ventilateur et un bac. L’eau, l’air et le fluide frigorigène circulent : les reflets, les chevrons et les molécules qui avancent montrent leur sens.');
+      'Un groupe d’eau glacée à gauche, avec son propre circuit frigorifique ; une pompe, un tuyau de départ et un tuyau de retour ; trois pièces à droite, chacune avec un ventilo-convecteur : un filtre, un ventilateur qui souffle l’air sur une batterie traversée par l’eau, et un bac. L’eau, l’air et le fluide frigorigène circulent : les reflets, les chevrons et les molécules qui avancent montrent leur sens.');
     const FIGE = !!(window.inerwebAnimations && window.inerwebAnimations.actives === false);
     const RETRAIT = 0.4;                                   /* ce qui n'agit pas à cette étape */
     const CUIVRE = '#c57a45', CUIVRE_BORD = '#7a3f1c', CREUX = '#f4f8fc', PAROI = '#6b7a8c', EAU_BAC = '#4f9fc0';
@@ -206,16 +206,17 @@ const ScenesStation = (() => {
 
     /* les trois ventilo-convecteurs : filtre, batterie (l'eau y passe du froid au tiède), turbine, bac */
     const turbines = [];
+    const XT = 646, RT = 32;                               /* la turbine est AVANT la batterie : elle aspire à travers le filtre et souffle sur la batterie */
     BR.forEach((b, i) => {
       const cy = b.cy, haut = i === 0;
       const gb = couche('batterie'), ga = couche('air');
-      /* l'air : de la pièce vers le filtre, la batterie, la turbine ; il sort plus frais */
-      D.el('line', { x1: 630, y1: cy - 30, x2: 630, y2: cy + 30, stroke: C.navy, 'stroke-width': 3, 'stroke-dasharray': '6 5' }, ga);
-      D.el('circle', { cx: 880, cy, r: 36, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, ga);
-      const roue = D.el('g', { transform: 'translate(880 ' + cy + ')' }, ga);
-      for (let k = 0; k < 16; k++) D.el('path', { d: 'M 20.2 0 Q 28.8 -0.7 31.7 -9.4', fill: 'none', stroke: C.navy, 'stroke-width': 2.6, 'stroke-linecap': 'round', transform: 'rotate(' + k * 22.5 + ')' }, roue);
-      D.el('circle', { cx: 880, cy, r: 18, fill: 'none', stroke: C.navy, 'stroke-width': 1.5, opacity: 0.5 }, ga);
-      turbines.push(a => roue.setAttribute('transform', 'translate(880 ' + cy + ') rotate(' + (a % 360).toFixed(1) + ')'));
+      /* l'air : de la pièce vers le filtre, la turbine, la batterie ; il sort plus frais */
+      D.el('line', { x1: 560, y1: cy - 30, x2: 560, y2: cy + 30, stroke: C.navy, 'stroke-width': 3, 'stroke-dasharray': '6 5' }, ga);
+      D.el('circle', { cx: XT, cy, r: RT, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, ga);
+      const roue = D.el('g', { transform: 'translate(' + XT + ' ' + cy + ')' }, ga);
+      for (let k = 0; k < 16; k++) D.el('path', { d: 'M ' + RT * 0.56 + ' 0 Q ' + RT * 0.8 + ' ' + (-RT * 0.02) + ' ' + RT * 0.88 + ' ' + (-RT * 0.26), fill: 'none', stroke: C.navy, 'stroke-width': 2.6, 'stroke-linecap': 'round', transform: 'rotate(' + k * 22.5 + ')' }, roue);
+      D.el('circle', { cx: XT, cy, r: RT / 2, fill: 'none', stroke: C.navy, 'stroke-width': 1.5, opacity: 0.5 }, ga);
+      turbines.push(a => roue.setAttribute('transform', 'translate(' + XT + ' ' + cy + ') rotate(' + (a % 360).toFixed(1) + ')'));
       /* la batterie : ailettes, trois passes d'eau (entrée en haut à gauche, sortie en bas à droite) */
       D.el('rect', { x: 706, y: cy - 30, width: 110, height: 60, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, gb);
       for (let k = 0; k < 9; k++) D.el('line', { x1: 722 + k * 10, y1: cy - 26, x2: 722 + k * 10, y2: cy + 26, stroke: C.trait, 'stroke-width': 2 }, gb);
@@ -227,9 +228,9 @@ const ScenesStation = (() => {
       D.el('rect', { x: 722, y: cy + 42, width: 80, height: 3, fill: EAU_BAC, stroke: 'none' }, ga);
       const gouttes = D.bulles(D.el('g', { transform: 'scale(0.5)' }, ga), 4, 32 + i, true);
       anime.push(t => gouttes(t, q => [(726 + q * 72) / 0.5, (cy + 30) / 0.5, (cy + 42) / 0.5, 1, EAU_BAC]));
-      /* l'air passe : tiède de la pièce, plus frais après la batterie */
-      air(ga, [[500, cy], [826, cy]], x => D.couleur(x < 706 ? 0.6 : x > 816 ? 0.2 : D.lerp(0.6, 0.2, (x - 706) / 110)), { echelle: haut ? 0.5 : 0.45 });
-      air(ga, [[880, cy - 42], [880, cy - (haut ? 100 : 72)]], () => D.couleur(0.2), { fondu: 8, pas: 30 });
+      /* l'air passe : tiède de la pièce, plus frais après la batterie, puis il est soufflé vers le haut */
+      air(ga, [[500, cy], [880, cy]], x => D.couleur(x < 706 ? 0.6 : x > 816 ? 0.2 : D.lerp(0.6, 0.2, (x - 706) / 110)), { echelle: haut ? 0.5 : 0.45 });
+      air(ga, [[880, cy - 8], [880, cy - (haut ? 100 : 72)]], () => D.couleur(0.2), { fondu: 8, pas: 30 });
     });
 
     /* les étiquettes, par-dessus tout ; chacune a sa place libre */
@@ -256,9 +257,9 @@ const ScenesStation = (() => {
     BOITES.forEach(([y], i) => ecrire(506, y + 46, 'ventilo-convecteur', null, null, G));
     const b0 = BR[0];
     ecrire(770, b0.cy - 48, 'batterie', 'batterie', C.froid, Object.assign({}, G, M));
-    ecrire(630, b0.cy + 80, 'filtre', 'air', C.navy, M);
+    ecrire(560, b0.cy + 80, 'filtre', 'air', C.navy, M);
     ecrire(762, b0.cy + 80, 'bac', 'air', C.eau, M);
-    ecrire(880, b0.cy + 80, 'turbine', 'air', C.navy, M);
+    ecrire(XT, b0.cy + 80, 'turbine', 'air', C.navy, M);
 
     /* une image : tout avance selon t */
     const image = t => { helice(t * 260); turbines.forEach(f => f(t * 320)); anime.forEach(f => f(t)); };

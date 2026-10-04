@@ -35,7 +35,7 @@ ModeleAppareil.construire({
   titreDedans: 'Les deux tubes',
   technologie: [
     ["Le tube", "du cuivre de <strong>qualité frigorifique</strong> : propre et sec à l’intérieur, livré <strong>bouché</strong> aux deux bouts, en couronne ou en barre. On le débouche au dernier moment, et on rebouche tout ce qui attend."],
-    ["Les deux diamètres", "imposés par la notice : le <strong>petit</strong> tube porte le liquide, le <strong>gros</strong> tube porte le gaz. On ne les devine pas, on ne les change pas."],
+    ["Les deux diamètres", "imposés par la notice : le <strong>petit</strong> tube porte le liquide (en mode froid, un mélange de liquide et de vapeur, après le détendeur), le <strong>gros</strong> tube porte le gaz. On ne les devine pas, on ne les change pas."],
     ["L’isolant", "une gaine sur <strong>chaque</strong> tube, <strong>sans coupure</strong> du début à la fin, <strong>fermée aux raccords</strong>. Sans elle, le tube froid se couvre de gouttes, et l’eau coule sur le mur."],
     ["La longueur L et le dénivelé H", "la <strong>longueur L</strong> se mesure <strong>le long des tubes</strong>, détours compris. Le <strong>dénivelé H</strong> est la différence de hauteur entre les deux unités. La notice donne une longueur minimale, une longueur maximale et un dénivelé maximal."],
     ["Les raccords", "des <strong>dudgeons</strong> serrés au couple, ou des <strong>brasures sous azote</strong>. Le geste du dudgeon est chez CuivRézo (station 4.3). Avant de raccorder : on coupe, on <strong>ébavure</strong> sans laisser un copeau dans le tube, on <strong>cintre</strong> sans écraser."]

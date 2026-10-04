@@ -14,7 +14,8 @@ forcément la même forme : mural, console, cassette, gainable. C'est la station
 
   comprendre: `Ouvrons le dessin. Dehors, le groupe : un compresseur, un condenseur et son hélice. Dedans,
 trois pièces, A, B et C. Chaque pièce a son unité, et chaque unité est reliée au groupe par ses deux
-tubes, le petit pour le liquide, le gros pour le gaz. Le groupe est unique : il n'y a qu'un compresseur,
+tubes, le petit pour le liquide, le gros pour le gaz. En mode froid, le petit porte en fait un mélange de liquide et
+de vapeur, après le détendeur du groupe. Le groupe est unique : il n'y a qu'un compresseur,
 et il sert tout le monde.
 La pièce B demande du froid. Sa carte le dit au groupe, qui ouvre la branche de B, et seulement celle-là.
 Le fluide ne va que vers cette pièce, et le compresseur tourne doucement, parce que la demande est

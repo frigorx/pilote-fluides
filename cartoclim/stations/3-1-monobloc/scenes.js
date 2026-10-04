@@ -278,7 +278,7 @@ const ScenesStation = (() => {
 
     const etapes = [
       { titre: 'L’air de la pièce traverse l’évaporateur',
-        dire: 'Un ventilateur pousse l’air de la pièce à travers la batterie froide. Le fluide y bout et prend la chaleur de l’air. L’air ressort plus frais, dans la pièce.',
+        dire: 'Un ventilateur, placé après la batterie, aspire l’air de la pièce à travers la batterie froide. Le fluide y bout et prend la chaleur de l’air. L’air ressort plus frais : le ventilateur le souffle dans la pièce.',
         peindre: () => allumer(0) },
       { titre: 'L’air du condenseur part dehors par la gaine',
         dire: 'Le condenseur rend sa chaleur à un autre courant d’air, qui ne se mélange jamais à celui de la pièce. Cet air se réchauffe : la gaine le pousse dehors, par la fenêtre.',

@@ -144,6 +144,25 @@ const ScenesStation = (() => {
       (b, x, y, ang, f) => { b.setAttribute('cx', x.toFixed(1)); b.setAttribute('cy', y.toFixed(1));
         b.setAttribute('r', (0.6 + int * 0.33 * f).toFixed(1)); b.setAttribute('opacity', D.borne(f * 1.6, 0, 1).toFixed(2)); }, h || 'f');
 
+    /* mélange liquide + vapeur (petit tube en mode froid, après le détendeur) : le liquide reste un corps continu
+       — tube plein, reflets qui filent — et la vapeur y file en poches allongées de longueurs inégales, nées au
+       détendeur : jamais des billes isolées sur un tube vide. Les poches suivent le trajet (même vivant) et l'horloge. */
+    const POCHES = [9, 5, 12, 6, 10, 4, 8];
+    const melange = (g, tr, int, couleur, v, h) => {
+      chemin(g, tr, { stroke: couleur, 'stroke-width': int, opacity: 0.92 });
+      const reflet = chemin(g, tr, { stroke: C.papier, 'stroke-width': 1.3, 'stroke-dasharray': '12 30', opacity: 0.4 });
+      const cl = clocks[h || 'f'];
+      anime.push(() => reflet.setAttribute('stroke-dashoffset', (-(cl.t * v) % 42).toFixed(1)));
+      filer(g, tr, Math.max(1, Math.round(tr.L / 24)), v * 1.2,
+        (p, i) => Object.assign(D.el('line', { stroke: C.papier, 'stroke-linecap': 'round', 'stroke-width': (int * (0.5 + 0.12 * (i % 3))).toFixed(1) }, p), { _l: POCHES[i % POCHES.length] }),
+        (b, x, y, ang, f) => {
+          const dx = Math.cos(ang * Math.PI / 180) * b._l / 2, dy = Math.sin(ang * Math.PI / 180) * b._l / 2;
+          b.setAttribute('x1', (x - dx).toFixed(1)); b.setAttribute('y1', (y - dy).toFixed(1));
+          b.setAttribute('x2', (x + dx).toFixed(1)); b.setAttribute('y2', (y + dy).toFixed(1));
+          b.setAttribute('opacity', (0.95 * D.fenetre(f, 0, 1, 0.06)).toFixed(2));
+        }, h || 'f');
+    };
+
     /* l'air : des chevrons qui avancent sur une ligne brisée ; leur couleur suit la température, o.temp(f, x, y) ;
        o.act : une grandeur douce (0..1) qui efface l'air quand la machine s'arrête ; o.h : son horloge */
     const souffle = (g0, pts, o) => {
@@ -235,14 +254,14 @@ const ScenesStation = (() => {
       };
       requestAnimationFrame(boucle);
     };
-    return { D, FIGE, S, clocks, horloge, vitesse, doux, viser, fond, couche, filer, chemin, tube, liquide, vapeur, bulles, souffle, chaleur,
+    return { D, FIGE, S, clocks, horloge, vitesse, doux, viser, fond, couche, filer, chemin, tube, liquide, melange, vapeur, bulles, souffle, chaleur,
       ailettes, detendeur, turbine, tourne, ecrire, allumer, demarrer, anime };
   }
 
   function plusieursPieces() {
     const d = svg('0 0 1000 640',
       'Un multisplit : une seule unité extérieure à gauche, trois pièces A, B et C à droite, chacune avec son unité intérieure reliée au groupe par deux tubes repérés, un petit et un gros. Le mur sépare le dehors du dedans. Le compresseur du groupe pousse le fluide dans un arbre de distribution : une branche par pièce, seule la branche ouverte coule ; l’air traverse le condenseur dehors et les unités en marche dedans.');
-    const V = vivant(d, 1000, 640), D = V.D, { couche, ecrire, souffle, turbine, tourne, doux, viser, vitesse, horloge, tube, liquide, vapeur, bulles, chemin } = V;
+    const V = vivant(d, 1000, 640), D = V.D, { couche, ecrire, souffle, turbine, tourne, doux, viser, vitesse, horloge, tube, liquide, melange, vapeur, bulles, chemin } = V;
     const YC = [148, 332, 516];                              /* le centre de chaque pièce et de sa paire de vannes */
     const CROIX = [1, 0, 2];                                 /* la paire A va à la pièce B quand les repères sont inversés */
     const M = { 'text-anchor': 'middle' }, F = { 'text-anchor': 'end' }, G = { 'font-weight': 700 }, GM = Object.assign({}, G, M), GF = Object.assign({}, G, F);
@@ -295,12 +314,12 @@ const ScenesStation = (() => {
       const sg = trajet([[388, yG], [304, yG]]);
       tube(g, sg, 18, 12); vapeur(g, sg, 12, 0.18, 55, 26, null, 'p' + r);
       liq(g, [[336, yL], [349, yL]], 'p' + r, 0.62);
-      liq(g, [[375, yL], [388, yL]], 'p' + r, 0.08);
+      { const t = trajet([[375, yL], [388, yL]]); tube(g, t, 12, 6); melange(g, t, 6, D.couleur(0.08), 30, 'p' + r); }   /* après le détendeur : un mélange */
       V.detendeur(g, 362, yL, 1.3);
       [yL, yG].forEach(y => D.el('rect', { x: 388, y: y - 7, width: 12, height: 14, fill: C.papier, stroke: C.navy, 'stroke-width': 2.5 }, g));
       /* les deux tubes de la pièce : gros = gaz, petit = liquide */
       tube(g, trG[r], 18, 12); vapeur(g, trGr[r], 12, 0.18, 55, 26, null, 'p' + r);
-      tube(g, trL[r], 12, 6); liquide(g, trL[r], 6, D.couleur(0.08), 30, 'p' + r);
+      tube(g, trL[r], 12, 6); melange(g, trL[r], 6, D.couleur(0.08), 30, 'p' + r);
     });
 
     /* ---------- les pièces : une unité intérieure chacune ---------- */
@@ -338,8 +357,8 @@ const ScenesStation = (() => {
     ecrire(56, 542, '= A + B + C', 'm4', C.ambre, G);
     ecrire(56, 515, 'A branché sur B,', 'm5', C.rouge, G);
     ecrire(56, 542, 'B branché sur A', 'm5', C.rouge, G);
-    ecrire(560, 44, 'petit tube : liquide', null, null, Object.assign({ fill: C.gris }, G));
-    ecrire(810, 44, 'gros tube : gaz', null, null, Object.assign({ fill: C.gris }, G));
+    ecrire(560, 44, 'petit tube : liquide + vapeur', null, null, Object.assign({ fill: C.gris }, G));
+    ecrire(976, 44, 'gros tube : gaz', null, null, Object.assign({ fill: C.gris }, GF));
     [0, 1, 2].forEach(k => {
       const yc = YC[k];
       ecrire(414, yc + 8, L[k], null, null, Object.assign({ 'font-size': 22 }, GM));
@@ -426,13 +445,13 @@ ${R.map((y, i) => `
 <text x="718" y="${y + 5}" font-size="13" font-weight="700" fill="${C.eau}">condensats</text>`).join('')}
 <text x="410" y="322" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">le même repère aux deux bouts : A dehors, A dedans</text>
 <line x1="20" y1="341" x2="56" y2="341" stroke="${C.froid}" stroke-width="4"/>
-<text x="64" y="345" font-size="13" fill="${C.gris}">petit tube : liquide</text>
-<line x1="210" y1="341" x2="246" y2="341" stroke="${C.froid}" stroke-width="9"/>
-<text x="254" y="345" font-size="13" fill="${C.gris}">gros tube : gaz</text>
-<line x1="380" y1="341" x2="416" y2="341" stroke="${C.navy}" stroke-width="3" stroke-dasharray="6 5"/>
-<text x="424" y="345" font-size="13" fill="${C.gris}">câble de liaison</text>
-<line x1="560" y1="341" x2="596" y2="341" stroke="${C.eau}" stroke-width="4"/>
-<text x="604" y="345" font-size="13" fill="${C.gris}">tuyau de condensats</text>`;
+<text x="64" y="345" font-size="13" fill="${C.gris}">petit tube : liquide + vapeur</text>
+<line x1="270" y1="341" x2="306" y2="341" stroke="${C.froid}" stroke-width="9"/>
+<text x="314" y="345" font-size="13" fill="${C.gris}">gros tube : gaz</text>
+<line x1="440" y1="341" x2="476" y2="341" stroke="${C.navy}" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="484" y="345" font-size="13" fill="${C.gris}">câble de liaison</text>
+<line x1="610" y1="341" x2="646" y2="341" stroke="${C.eau}" stroke-width="4"/>
+<text x="654" y="345" font-size="13" fill="${C.gris}">tuyau de condensats</text>`;
     return d;
   }
 
