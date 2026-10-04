@@ -1,0 +1,26 @@
+/* =====================================================================
+   metier/scene-journee.css — la scène dessinée de « Une journée type »
+   (metier.html, 04/10/2026). Hôte : <figure class="scene-journee">, en tête
+   du bloc de la section, bord à bord ; rempli par metier/scene-journee.js
+   avec le pas à pas de SceneKit (cartoclim/stations/_commun/scene-kit.js :
+   .pas-a-pas, .choix, .legende, button.primary). Variables : celles de
+   metier.html. Corps 14 pt minimum : 19 px pour les boutons et les phrases.
+   ===================================================================== */
+figure.scene-journee { margin:-22px -26px 18px; border-bottom:1px solid var(--ligne);
+                       border-radius:13px 13px 0 0; overflow:hidden; background:var(--carte); }
+figure.scene-journee:empty { display:none; }                    /* moteur absent : rien plutôt qu'un cadre vide */
+figure.scene-journee svg.scene { display:block; width:100%; height:auto; margin:0; border:0; background:#fffdf8; }
+figure.scene-journee .choix { display:flex; flex-wrap:wrap; gap:8px; margin:0 !important; padding:12px 16px 0; }
+figure.scene-journee .choix button {
+  flex:1 1 150px; min-height:44px; padding:.3em .9em; cursor:pointer;
+  font-family:var(--titre); font-weight:bold; font-size:19px;
+  border:2px solid var(--bleu); border-radius:999px; background:#fffdf8; color:var(--bleu);
+}
+figure.scene-journee .choix button:hover { border-color:var(--orange); }
+figure.scene-journee .choix button[aria-pressed="true"] { background:var(--bleu); color:#fffdf8; }
+figure.scene-journee .choix button.primary { flex:0 1 auto; background:#c9451a; border-color:#c9451a; color:#fffdf8; }
+figure.scene-journee .choix button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+/* .legende : la page l'emploie aussi pour les légendes des photos (cadre, bordures) — on les neutralise ici */
+figure.scene-journee .legende { margin:10px 16px 0; padding:0; border:0; font-size:19px; line-height:1.5; color:var(--txt); }
+figure.scene-journee .legende:last-child { margin-bottom:14px; color:var(--mut); }
+@media print { figure.scene-journee .choix { display:none; } }
