@@ -19,3 +19,13 @@ Repères pédagogiques employés dans le pack :
   La documentation constructeur reste prioritaire.
 
 Le module fonctionne hors ligne, sans voix, sans stockage et sans réseau.
+
+Dessin vivant (04/10/2026, chantier « Animer les réseaux ») : scene-mesure.js.
+  Au-dessus de l’activité de chaque étape : la ligne liquide (HP, le liquide
+  coule, plein) et l’aspiration (BP, la vapeur file), chacune avec son
+  manomètre (température de saturation lue SUR la couronne R-134a, chiffre
+  ôté sous l’aiguille) et son thermomètre électronique à pince ; au centre,
+  le diagramme : sous-refroidissement avant la bulle, surchauffe après la
+  rosée, écart en K (écarts agrandis, c’est écrit). La scène LIT la page
+  (étape, curseurs, mode du zéotrope) : app.js n’est pas modifié. Chiffres :
+  ceux du module seulement (table R-134a et exemple R-407C recopiés).
