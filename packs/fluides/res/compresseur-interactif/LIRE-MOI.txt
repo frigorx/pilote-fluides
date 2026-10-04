@@ -19,4 +19,11 @@ codes affichée écran par écran).
   vérifier) : les deux modules se complètent, ils ne se recouvrent pas.
 - Aucune valeur chiffrée inventée : notice et plaque signalétique font foi partout.
 
+- Dessin vivant (04/10/2026, chantier « Animer les réseaux ») : scene-compression.js.
+  La compression en coupe, au ralenti (aspiration, compression, refoulement ; couleur =
+  température), et son point qui monte sur le diagramme enthalpique. Il remplace
+  l'illustration de l'accueil et se tient en haut de chaque écran : un écran = un dessin
+  + 3 lignes, le texte entier se déplie (« Lire tout le texte ») et la voix le lit.
+  Moteurs relus, jamais modifiés : jouerezo/moteur/voyage-dessin.js et voyage-diagramme.js.
+
 Ouvrir : index.html (hors ligne, aucune dépendance distante).
