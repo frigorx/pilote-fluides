@@ -3,6 +3,34 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 04/10 — « ANIMER LES RÉSEAUX » : LES RÉSEAUX STATIQUES S'ANIMENT (`cb9a6709` → `5a14b449`)
+>
+> Un chef d'orchestre seul acteur git (worktree `pilote-fluides-superviseur-reseaux`), une vingtaine de sous-agents
+> (Opus pour les pilotes, Sonnet pour les séries), feu vert de F. Henninot réseau par réseau. Suivi complet, commits et
+> doutes : `CLAUDE-ESPACE-TRAVAIL/ANIMER-LES-RESEAUX-2026-10-04.md` § 7. **En ligne** :
+> **Législation** 11 branches / 57 stations (`legislation/scenes/<branche>.js`, une scène pas à pas par branche à la
+> place de l'image, chargé d'affaires = bonhomme de HoCourant) · **HydroMétro** 23 stations, l'eau coule
+> (`hydrometro/stations/_commun/ecoulement.js`, livré par `livrer.mjs --cible`) · **CartoClim** 21 stations, l'air circule
+> (`scene-devant.js` par station, scène devant les photos) · **thermo-techno** : compresseur, évaporateur, condenseur,
+> surchauffe/sous-refroidissement, chaîne de l'intervention, étanchéité, pupitre, régulateur, intervention-hydrocarbures
+> · **JouéRézo** « Le circuit dont vous êtes le héros » (10 jeux) · **Métier** : « Une journée type » en 6 scènes
+> (`metier/`) · **Voyage** v2 · **Studio** : affiches (galerie, 11 épisodes, tomes 1-3) et 10 mini-films sécurité
+> « Ça aurait pu mal finir » (`studio/securite/`, 33 films) · **relecture.html retirée** (corrigés en public ; elle
+> est dans `.gitignore`, `build/relecture.mjs` la produit en local) ; les 7 pages habilitation sorties du catalogue.
+> **Pièges** : (1) le mot-clé du réglage système de réduction des animations, même en COMMENTAIRE, fait réclamer
+> `moteur/animations.js` à toute la famille ; (2) `livrer.mjs` (HydroMétro, CartoClim) et les dépôts d'ateliers
+> perdent les balises animations/retour-accueil : relancer les deux scripts en écriture après chaque livraison ;
+> (3) livrer depuis l'état COMMITÉ de l'atelier (worktree détaché) quand des agents y travaillent encore ;
+> (4) un commit « clés de version » ne prend une page qu'après avoir vérifié que seule sa clé `?v=` a changé (sinon on
+> pousse le travail en cours d'un agent : `metier.html` à 14 h 20) ; (5) une clé demandée au CDN avant la publication du
+> fichier reste en 404 : changer la clé ; (6) `condenseur-interactif/styles.css` est importé par chaîne, étanchéité,
+> intervention-hydrocarbures : règles du dessin sous `:has()`.
+> **Reste** : AéroRézo (bon à tirer des 13 modèles 3D), R408 (séance), exercice « faire » (à éclaircir) ; textes de
+> stations faux relevés (§ 7 ligne A : PRP d'un mélange = moyenne pondérée, pyramide des 9 principes, euroclasse E…) ;
+> voix du temps 1 « regardez la photo » (CartoClim) ; HydroMétro : grains de la 3D « Voir l'eau », porte 3D des 21
+> autres stations ; lien formation.html → portail (demande une modification du moteur) ; tomes 4-10 et documentaires
+> du Studio (10/10).
+
 > ## 03/10 (soir) → 04/10 (nuit) — SEPT « ÉDITIONS DU VOYAGE » EN LIGNE, STUDIO À 23 FILMS (`193e08b8` → `b5c5ee62`)
 >
 > Feu vert total de F. Henninot (« autonomie totale, aucun arrêt tant que tout n'est pas sur inerweb.fr »). Sept chats ont
