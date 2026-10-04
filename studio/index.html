@@ -6,22 +6,24 @@
 <link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1b3a63">
 <title>inerWeb Studio — les films d'inerweb.fr</title>
-<meta name="description" content="Tous les films d'inerweb.fr dans une seule salle : le Voyage dans tous ses états, les onze films de la régulation, l'effet de serre et la couche d'ozone. Chaque film mène à son cours.">
+<meta name="description" content="Les films d'inerweb.fr présentés comme au cinéma : la saga du Voyage dans tous ses états en dix tomes, la série de la régulation en onze épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.">
 <link rel="canonical" href="https://inerweb.fr/studio/">
 <meta property="og:title" content="inerWeb Studio — les films d'inerweb.fr">
-<meta property="og:description" content="Le circuit frigorifique, la régulation, la réglementation : les films du site, chacun relié à son cours.">
+<meta property="og:description" content="Une saga, une série, deux documentaires : les films du site, chacun relié à son cours.">
 <meta property="og:image" content="https://inerweb.fr/voyage/videos/chapitre-00-mon-voyage.jpg">
 <meta property="og:url" content="https://inerweb.fr/studio/">
 <!-- ===================================================================
-     inerWeb STUDIO — la salle des films (F. Henninot, 03/10/2026 : « le réseau
-     inerWeb Studio qui reprend les vidéos », marque inerWeb, rangé dans la grille
-     des réseaux de l'accueil). Page SATELLITE écrite à la main, comme voyage/ :
-     elle ne copie aucun film, elle mène à chacun et à son cours.
-     Sources : voyage/ (atelier C:/git/jouerezo), les films des régules
-     (packs/fluides/res/_regules-commun/films, catalogue catalog.js), les deux
-     films de Législation (packs/fluides/res/film-*).
-     vignettes/ = captures des films (régules à 7 s, Législation à 9 s ; Chrome sans écran,
-     1280×720 réduit en 640×360). Un nouveau film = une carte de plus ici.
+     inerWeb STUDIO — la salle des films, version « affiches » (F. Henninot, 04/10/2026 :
+     « comme des affiches de cinéma ou de série, une galerie plus légère »). Marque inerWeb.
+     Page SATELLITE écrite à la main : elle ne copie aucun film, elle mène à chacun et à son cours.
+     Deux niveaux : la GALERIE (quatre affiches) puis la FICHE d'un titre (la critique, les tomes ou
+     les épisodes). Les ancres #t-voyage, #t-editions, #t-regules, #t-climat restent valables : sept
+     liens y pointent (accueil, moteur/reseaux.js, voyage/).
+     Affiches : affiches/*.webp, peintes par le générateur d'images de Codex sur consigne de Claude
+     (style « affiche de cinéma peinte », choix de Franck du 04/10), filigrane inerWeb posé dedans
+     (charte R9). Consignes et sources : C:/Users/henni/Documents/inerweb-video/studio/affiches/.
+     Vignettes des tomes et épisodes = captures réelles des films (vignettes/, voyage/videos*/).
+     Un nouveau film = une carte de plus dans sa fiche, et le compte sur l'affiche.
      =================================================================== -->
 <style>
   :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
@@ -36,36 +38,66 @@
   .haut { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; font-size:16px; }
   .haut a { font-weight:bold; text-decoration:none; }
   h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
-  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.35rem; margin:0 0 4px; }
-  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.05rem; line-height:1.3; margin:0; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.45rem; line-height:1.2; margin:0; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0; }
   .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
   .chapo { margin:0; max-width:52rem; font-size:18px; }
-  .salle { display:grid; gap:10px; }
-  .salle > p { margin:0; color:var(--mut); max-width:52rem; }
-  .vedette { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:18px; align-items:center;
-             background:var(--carte); border:1px solid var(--ligne); border-top:6px solid var(--studio); border-radius:14px; padding:14px; }
-  .vedette .affiche { position:relative; display:block; border-radius:10px; overflow:hidden; background:#0b1626; }
-  .vedette .affiche img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
-  .vedette p { margin:0 0 10px; }
-  .films { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); gap:14px; }
-  .film { background:var(--carte); border:1px solid var(--ligne); border-top:5px solid var(--studio); border-radius:12px; padding:8px 10px 12px; display:grid; gap:8px; align-content:start; }
-  .film .affiche { position:relative; display:block; border-radius:8px; overflow:hidden; background:#0b1626; }
-  .film .affiche img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
-  .jouer { position:absolute; left:6px; bottom:6px; background:var(--orange-texte); color:#fff; font-size:14px; font-weight:bold; padding:1px 8px; border-radius:6px; }
-  .duree { position:absolute; right:6px; bottom:6px; background:rgba(16,35,60,.85); color:#fff; font-size:14px; padding:1px 7px; border-radius:6px; }
-  .film .num { color:var(--mut); font-size:15px; margin:0; }
-  .liens { display:flex; flex-wrap:wrap; gap:8px; margin:0; }
+
+  /* ---- la galerie : quatre affiches ---- */
+  .galerie { list-style:none; margin:0; padding:0; display:grid; gap:18px 16px; min-width:0;
+             grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr)); }
+  @media (min-width:900px) { .galerie { grid-template-columns:repeat(4,minmax(0,1fr)); max-width:72rem; } }
+  .affiche { position:relative; display:block; border-radius:12px; overflow:hidden; background:#0b1626; box-shadow:0 6px 18px rgba(16,35,60,.25); text-decoration:none; }
+  .affiche img { display:block; width:100%; height:auto; aspect-ratio:2/3; object-fit:cover; }
+  .affiche .rayon { position:absolute; top:8px; left:8px; background:var(--orange-texte); color:#fff; font-size:13px; font-weight:bold; letter-spacing:.04em; text-transform:uppercase; padding:2px 8px; border-radius:6px; }
+  .affiche .titre { position:absolute; left:0; right:0; bottom:0; padding:34px 10px 12px; text-align:center; color:#fff;
+                    font-family:var(--titre); font-weight:bold; font-size:clamp(1rem,2vw,1.3rem); line-height:1.15; text-shadow:0 1px 4px #000, 0 0 12px rgba(0,0,0,.8);
+                    background:linear-gradient(to bottom, rgba(5,12,24,0), rgba(5,12,24,.88)); }
+  .affiche:hover img, .affiche:focus-visible img { filter:brightness(1.08); }
+  .affiche:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+  .pitch { margin:8px 2px 0; font-size:15.5px; line-height:1.4; color:var(--txt); }
+  .pitch b { color:var(--studio); }
+
+  /* ---- la fiche d'un titre ---- */
+  .fiche[hidden] { display:none; }
+  .fiche { display:grid; gap:18px; background:var(--carte); border:1px solid var(--ligne); border-top:6px solid var(--studio); border-radius:14px; padding:16px; }
+  .fiche .retour { font-size:15.5px; margin:0; }
+  .entete { display:grid; grid-template-columns:minmax(0,180px) minmax(0,1fr); gap:18px; align-items:start; }
+  .entete .affiche { box-shadow:0 4px 12px rgba(16,35,60,.25); }
+  .entete .affiche .titre { display:none; }
+  .meta { margin:4px 0 10px; color:var(--mut); font-size:15.5px; }
+  .critique { margin:0; display:grid; gap:6px; max-width:56rem; }
+  .critique p { margin:0; }
+  .critique .accroche { font-size:18px; font-style:italic; color:var(--bleu); }
+  .critique dt { font-weight:bold; color:var(--studio); float:left; margin-right:6px; }
+  .critique dd { margin:0; }
+  .liens { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 0; }
   .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
          background:var(--bleu); color:#fff; font:inherit; font-size:16px; font-weight:bold; text-decoration:none; }
   .btn.sec { background:var(--carte); color:var(--bleu); }
   .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+
+  /* ---- la rangée des tomes ou des épisodes ---- */
+  .rangee { list-style:none; margin:0; padding:0; display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr)); }
+  .carte { display:grid; gap:6px; align-content:start; }
+  .carte .vue { position:relative; display:block; border-radius:8px; overflow:hidden; background:#0b1626; }
+  .carte .vue img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .jouer { position:absolute; left:6px; bottom:6px; background:var(--orange-texte); color:#fff; font-size:14px; font-weight:bold; padding:1px 8px; border-radius:6px; }
+  .duree { position:absolute; right:6px; bottom:6px; background:rgba(16,35,60,.85); color:#fff; font-size:14px; padding:1px 7px; border-radius:6px; }
+  .carte .num { margin:0; color:var(--studio); font-weight:bold; font-size:14.5px; letter-spacing:.03em; text-transform:uppercase; }
+  .carte p { margin:0; font-size:15.5px; line-height:1.4; }
+  .carte .portes { display:flex; flex-wrap:wrap; gap:4px 14px; font-size:15.5px; }
+  .carte .portes a { display:inline-block; padding:6px 0; font-weight:bold; text-decoration:none; }
+  .carte .portes a:hover { text-decoration:underline; }
+  .sous { margin:6px 0 0; }
+  .sous small { display:block; color:var(--mut); font-size:15px; font-weight:normal; }
   .legende { margin:0; color:var(--mut); font-size:15.5px; max-width:60rem; }
-  @media (max-width:760px) { .vedette { grid-template-columns:1fr; } }
+  @media (max-width:560px) { .entete { grid-template-columns:minmax(0,120px) minmax(0,1fr); } .affiche .titre { padding:22px 6px 8px; } }
 </style>
 <script defer src="../moteur/retour-accueil.js?v=ff0ca829c0"></script>
 </head>
 <body>
-<a class="evite" href="#contenu">Aller aux films</a>
+<a class="evite" href="#contenu">Aller aux affiches</a>
 <div class="page">
   <nav class="haut" aria-label="Retour">
     <a href="../">← inerweb.fr</a>
@@ -77,195 +109,237 @@
     <h1>🎬 inerWeb Studio</h1>
     <p class="sous-titre">les films d'inerweb.fr</p>
   </header>
-  <p class="chapo">Tous les films du site dans une seule salle. Chaque film mène à son cours : on regarde d'abord, puis on va comprendre et s'exercer dans la station.</p>
+  <p class="chapo">À l'affiche : une saga, une série et deux documentaires. On choisit une affiche, on lit la critique, on regarde, puis on va comprendre et s'exercer dans la station du cours.</p>
 
   <main id="contenu" style="display:grid;gap:28px">
-    <section class="salle" aria-labelledby="t-voyage">
-      <h2 id="t-voyage">Le circuit frigorifique</h2>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/" aria-label="Voir le film Voyage dans tous ses états">
-          <img src="../voyage/videos/chapitre-00-mon-voyage.jpg" alt="Le circuit d'une chambre froide et la molécule qui va le parcourir" width="640" height="360">
-          <span class="jouer">▶ voir</span><span class="duree">8 min 57</span></a>
+    <ul class="galerie" id="affiches" aria-label="Les affiches">
+      <li>
+        <a class="affiche" href="#t-voyage">
+          <img src="affiches/saga-voyage.webp" alt="" width="800" height="1200">
+          <span class="rayon">Saga · 10 tomes</span>
+          <span class="titre">Voyage dans tous ses états</span></a>
+        <p class="pitch"><b>Saga.</b> Un road-movie à hauteur de molécule : le circuit frigorifique, puis d'autres fluides et d'autres machines.</p>
+      </li>
+      <li>
+        <a class="affiche" href="#t-regules">
+          <img src="affiches/serie-regulation.webp" alt="" width="800" height="1200" loading="lazy">
+          <span class="rayon">Série · saison 1</span>
+          <span class="titre">La régulation</span></a>
+        <p class="pitch"><b>Série.</b> Onze épisodes courts dans la même chambre froide : à chaque fois un contact de plus, et le fluide obéit.</p>
+      </li>
+      <li>
+        <a class="affiche" href="#t-climat">
+          <img src="affiches/doc-effet-de-serre.webp" alt="" width="800" height="1200" loading="lazy">
+          <span class="rayon">Documentaire</span>
+          <span class="titre">Effet de serre, PRP et climat</span></a>
+        <p class="pitch"><b>Documentaire.</b> Une minute pour comprendre pourquoi un kilo de fluide pèse des tonnes de CO₂.</p>
+      </li>
+      <li>
+        <a class="affiche" href="#t-ozone">
+          <img src="affiches/doc-ozone.webp" alt="" width="800" height="1200" loading="lazy">
+          <span class="rayon">Documentaire</span>
+          <span class="titre">Couche d'ozone et ODP</span></a>
+        <p class="pitch"><b>Documentaire.</b> Un bouclier fin comme une feuille, une fuite qui monte, et le monde qui signe à Montréal.</p>
+      </li>
+    </ul>
+
+    <!-- ========== LA SAGA ========== -->
+    <section class="fiche" id="t-voyage" aria-labelledby="h-voyage">
+      <p class="retour"><a href="#affiches">← Toutes les affiches</a></p>
+      <div class="entete">
+        <a class="affiche" href="../voyage/" aria-label="Commencer la saga par le tome 1"><img src="affiches/saga-voyage.webp" alt="" width="800" height="1200" loading="lazy"><span class="titre">Voyage dans tous ses états</span></a>
         <div>
-          <h3>Voyage dans tous ses états</h3>
-          <p>Une molécule de fluide frigorigène fait le tour d'une chambre froide : l'évaporateur, le compresseur, le condenseur, la ligne liquide, le détendeur, puis la fuite et la récupération. Le film en entier, ou épisode par épisode (13 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/">▶ Le film</a>
+          <h2 id="h-voyage">Voyage dans tous ses états</h2>
+          <p class="meta">Saga · 10 tomes de 9 à 11 min · 1 h 40 en tout · chaque tome se regarde seul</p>
+          <dl class="critique">
+            <p class="accroche">Un road-movie à hauteur de molécule.</p>
+            <div><dt>De quoi ça parle.</dt><dd>Une molécule de fluide frigorigène quitte l'évaporateur, se fait comprimer, se condense, se détend, et revient à son point de départ pour recommencer. Le film ne montre rien d'autre que ce qui se passe vraiment dans le tube, et c'est sa force. Tome après tome, elle change de fluide (ammoniac, CO₂) puis de machine (compresseur à vis, centrale, booster, bi-étagé), et son chemin se dessine en même temps sur le diagramme enthalpique.</dd></div>
+            <div><dt>Ce qu'on sait à la fin.</dt><dd>Nommer les quatre organes du circuit, dire l'état du fluide à chaque endroit, et retrouver le même chemin sur le diagramme.</dd></div>
+            <div><dt>À voir.</dt><dd>Le tome 1 dès les premières semaines de CAP ; les tomes 2 à 10 en Bac Pro et BTS, chacun juste avant la station de sa machine.</dd></div>
+          </dl>
+          <p class="liens"><a class="btn" href="../voyage/">▶ Commencer : tome 1</a>
             <a class="btn sec" href="../voyage/module.html">La version interactive</a></p>
         </div>
-      </article>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/nh3.html" aria-label="Voir le film Voyage dans tous ses états, édition NH₃">
-          <img src="../voyage/videos-nh3/chapitre-00-mon-voyage.jpg" alt="Le circuit d'une installation à l'ammoniac en régime noyé et la molécule qui va le parcourir" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">9 min 51</span></a>
-        <div>
-          <h3>Voyage dans tous ses états — édition NH₃</h3>
-          <p>Une molécule d'ammoniac fait le tour d'une installation industrielle en régime noyé : la bouteille séparatrice, l'évaporateur plein de liquide, le compresseur ouvert, le séparateur d'huile, le condenseur évaporatif, le flotteur, puis le pot à huile et la fuite. À voir après le circuit de base. Le film en entier, ou épisode par épisode (12 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/nh3.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-nh3.html">La version interactive</a></p>
-        </div>
-      </article>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/co2.html" aria-label="Voir le film Voyage dans tous ses états, édition CO₂">
-          <img src="../voyage/videos-co2/chapitre-00-mon-voyage.jpg" alt="La centrale CO₂ transcritique d'un supermarché et la molécule qui va la parcourir" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">9 min 36</span></a>
-        <div>
-          <h3>Voyage dans tous ses états — édition CO₂</h3>
-          <p>Une molécule de CO₂ fait le tour d'une centrale transcritique de supermarché : le point critique où elle devient supercritique, le refroidisseur de gaz qui la refroidit sans la condenser, le détendeur haute pression, la bouteille intermédiaire et la vapeur de détente, puis la pression à l'arrêt, la fuite et la neige carbonique. À voir après le circuit de base. Le film en entier, ou épisode par épisode (13 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/co2.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-co2.html">La version interactive</a></p>
-        </div>
-      </article>
+      </div>
+
+      <h3 class="sous">Tomes 1 à 3 — trois fluides <small>Le même voyage, dans trois fluides différents.</small></h3>
+      <ol class="rangee">
+        <li class="carte"><a class="vue" href="../voyage/"><img src="../voyage/videos/chapitre-00-mon-voyage.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">8 min 57</span></a>
+          <p class="num">Tome 1</p><h3>Le circuit de base</h3>
+          <p>Une molécule fait le tour d'une chambre froide : évaporateur, compresseur, condenseur, détendeur, puis la fuite et la récupération. 13 épisodes.</p>
+          <p class="portes"><a href="../voyage/">▶ Le film</a><a href="../voyage/module.html">Version interactive</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/nh3.html"><img src="../voyage/videos-nh3/chapitre-00-mon-voyage.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">9 min 51</span></a>
+          <p class="num">Tome 2</p><h3>Édition NH₃</h3>
+          <p>L'ammoniac dans une installation industrielle en régime noyé : bouteille séparatrice, compresseur ouvert, séparateur d'huile, condenseur évaporatif. Après le tome 1. 12 épisodes.</p>
+          <p class="portes"><a href="../voyage/nh3.html">▶ Le film</a><a href="../voyage/module-nh3.html">Version interactive</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/co2.html"><img src="../voyage/videos-co2/chapitre-00-mon-voyage.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">9 min 36</span></a>
+          <p class="num">Tome 3</p><h3>Édition CO₂</h3>
+          <p>Le CO₂ transcritique d'un supermarché : le point critique, le refroidisseur de gaz, la bouteille intermédiaire, la neige carbonique. Après le tome 1. 13 épisodes.</p>
+          <p class="portes"><a href="../voyage/co2.html">▶ Le film</a><a href="../voyage/module-co2.html">Version interactive</a></p></li>
+      </ol>
+
+      <h3 class="sous" id="t-editions">Tomes 4 à 10 — les machines et les régulations <small>La même molécule dans d'autres installations, avec le diagramme enthalpique qui avance en même temps.</small></h3>
+      <ol class="rangee" start="4">
+        <li class="carte"><a class="vue" href="../voyage/vis.html"><img src="vignettes/vis.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">9 min 05</span></a>
+          <p class="num">Tome 4</p><h3>Le compresseur à vis</h3>
+          <p>Les rotors, l'alvéole qui se ferme sans clapet, l'huile injectée, le tiroir, l'économiseur. Après le tome 1. 13 épisodes.</p>
+          <p class="portes"><a href="../voyage/vis.html">▶ Le film</a><a href="../voyage/module-vis.html">Version interactive</a><a href="../packs/fluides/res/compresseur-interactif/">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/booster.html"><img src="vignettes/booster.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">10 min 36</span></a>
+          <p class="num">Tome 5</p><h3>La centrale booster CO₂</h3>
+          <p>Une seule centrale pour le froid positif et le froid négatif : les deux étages, et le cycle chiffré sur le diagramme. Après le tome 3. 13 épisodes.</p>
+          <p class="portes"><a href="../voyage/booster.html">▶ Le film</a><a href="../voyage/module-booster.html">Version interactive</a><a href="../packs/fluides/res/co2-r744/index.html?e=booster">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/sous-refroidisseur.html"><img src="vignettes/sous-refroidisseur.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">9 min 48</span></a>
+          <p class="num">Tome 6</p><h3>Le sous-refroidisseur de liquide</h3>
+          <p>Deux tours dans l'échangeur : le liquide principal se refroidit, le piquage bout puis entre dans les vis par l'économiseur. Après le tome 4. 14 épisodes.</p>
+          <p class="portes"><a href="../voyage/sous-refroidisseur.html">▶ Le film</a><a href="../voyage/module-sous-refroidisseur.html">Version interactive</a><a href="../packs/fluides/res/surchauffe-sous-refroidissement-interactif/">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/centrale.html"><img src="vignettes/centrale.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">10 min 09</span></a>
+          <p class="num">Tome 7</p><h3>Les centrales frigorifiques</h3>
+          <p>La centrale d'un supermarché : les meubles, les compresseurs en parallèle, la basse pression qui commande, le variateur. Après le tome 1. 13 épisodes.</p>
+          <p class="portes"><a href="../voyage/centrale.html">▶ Le film</a><a href="../voyage/module-centrale.html">Version interactive</a><a href="../packs/fluides/res/compresseur-interactif/">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/regulation.html"><img src="vignettes/regulation.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">11 min 29</span></a>
+          <p class="num">Tome 8</p><h3>La régulation d'une centrale</h3>
+          <p>Le cerveau d'une centrale à quatre compresseurs : zone neutre, temporisations, permutation, haute pression fixe ou flottante. Après le tome 7. 15 épisodes.</p>
+          <p class="portes"><a href="../voyage/regulation.html">▶ Le film</a><a href="../voyage/module-regulation.html">Version interactive</a><a href="../packs/fluides/res/regulateur-electronique-interactif/">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/bietage.html"><img src="vignettes/bietage.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">9 min 19</span></a>
+          <p class="num">Tome 9</p><h3>L'installation bi-étagée</h3>
+          <p>L'ammoniac monte en deux étages pour faire très froid : deux compresseurs, la bouteille intermédiaire, la détente en deux fois. Après le tome 2. 13 épisodes.</p>
+          <p class="portes"><a href="../voyage/bietage.html">▶ Le film</a><a href="../voyage/module-bietage.html">Version interactive</a><a href="../voyage/nh3.html">Le tome 2</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/glissement.html"><img src="vignettes/glissement.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">10 min 56</span></a>
+          <p class="num">Tome 10</p><h3>Le glissement</h3>
+          <p>Trois molécules du R407C dans une climatisation : pourquoi un mélange bout en se réchauffant, la bulle et la rosée, la charge en liquide. Après le tome 1. 13 épisodes.</p>
+          <p class="portes"><a href="../voyage/glissement.html">▶ Le film</a><a href="../voyage/module-glissement.html">Version interactive</a><a href="../packs/fluides/res/glissement-temperature/">La station</a></p></li>
+      </ol>
     </section>
 
-    <!-- Les éditions du Voyage (03/10/2026, soir) : la même molécule dans d'autres machines et d'autres
-         régulations, avec le diagramme enthalpique qui avance en même temps que l'installation. Une carte par
-         film, posée par la session superviseur à chaque publication ; chaque carte mène au film, à la version
-         interactive et à la station du cours. -->
-    <section class="salle" aria-labelledby="t-editions">
-      <h2 id="t-editions">Les éditions du Voyage : machines et régulations</h2>
-      <p class="legende">La même molécule, d'autres installations. Chaque film part du circuit de base et montre, en même temps que la machine, le chemin de la molécule sur le diagramme enthalpique.</p>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/vis.html" aria-label="Voir le film Voyage dans tous ses états, le compresseur à vis">
-          <img src="vignettes/vis.jpg" alt="Le compresseur à vis et la molécule qui le traverse, avec son cycle sur le diagramme enthalpique" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">9 min 05</span></a>
+    <!-- ========== LA SÉRIE ========== -->
+    <section class="fiche" id="t-regules" aria-labelledby="h-regules">
+      <p class="retour"><a href="#affiches">← Toutes les affiches</a></p>
+      <div class="entete">
+        <a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html" aria-label="Commencer la série par l'épisode 1"><img src="affiches/serie-regulation.webp" alt="" width="800" height="1200" loading="lazy"><span class="titre">La régulation</span></a>
         <div>
-          <h3>Voyage dans tous ses états — le compresseur à vis</h3>
-          <p>Une molécule entre dans un compresseur à vis — les rotors, l'alvéole qui se ferme sans clapet, l'huile injectée, le tiroir, l'économiseur — et dessine son cycle sur le diagramme enthalpique, en même temps. À voir après le circuit de base. Le film en entier, ou épisode par épisode (13 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/vis.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-vis.html">La version interactive</a>
-            <a class="btn sec" href="../packs/fluides/res/compresseur-interactif/">La station du compresseur</a></p>
+          <h2 id="h-regules">La régulation — saison 1</h2>
+          <p class="meta">Série · 11 épisodes de 1 à 2 min · 17 min en tout · chaque épisode a sa station</p>
+          <dl class="critique">
+            <p class="accroche">Toujours le même décor, et à chaque épisode un contact de plus.</p>
+            <div><dt>De quoi ça parle.</dt><dd>Une chambre froide, son schéma électrique à gauche, son circuit frigorifique à droite. On regarde un contact se fermer et le fluide obéir : le thermostat, le pressostat, la vanne, l'horloge de dégivrage. La saison monte en difficulté : la commande directe d'abord, les pump-down ensuite, les dégivrages pour finir.</dd></div>
+            <div><dt>Ce qu'on sait à la fin.</dt><dd>Lire un schéma de commande de chambre froide et dire, contact par contact, ce que fait l'installation.</dd></div>
+            <div><dt>À voir.</dt><dd>En CAP 2<sup>e</sup> année et en Bac Pro, chaque épisode juste avant sa station, qui porte les planches pas à pas et les questions.</dd></div>
+          </dl>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html">▶ Commencer : épisode 1</a></p>
         </div>
-      </article>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/booster.html" aria-label="Voir le film Voyage dans tous ses états, la centrale booster CO₂">
-          <img src="vignettes/booster.jpg" alt="La centrale booster CO₂ à deux étages et la molécule qui la parcourt, avec son cycle chiffré sur le diagramme enthalpique" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">10 min 36</span></a>
-        <div>
-          <h3>Voyage dans tous ses états — la centrale booster CO₂</h3>
-          <p>Une seule centrale pour le froid positif et le froid négatif : une molécule de CO₂ passe les deux étages de la booster, et son cycle se dessine, chiffré, sur le diagramme enthalpique. À voir après l'édition CO₂. Le film en entier, ou épisode par épisode (13 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/booster.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-booster.html">La version interactive</a>
-            <a class="btn sec" href="../packs/fluides/res/co2-r744/index.html?e=booster">La station de la ligne CO₂</a></p>
-        </div>
-      </article>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/sous-refroidisseur.html" aria-label="Voir le film Voyage dans tous ses états, le sous-refroidisseur de liquide">
-          <img src="vignettes/sous-refroidisseur.jpg" alt="Le sous-refroidisseur à plaques et la molécule qui le traverse, avec son cycle sur le diagramme enthalpique" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">9 min 48</span></a>
-        <div>
-          <h3>Voyage dans tous ses états — le sous-refroidisseur de liquide</h3>
-          <p>Une molécule fait deux tours dans le sous-refroidisseur : le liquide principal s'y refroidit, le piquage y bout puis entre dans les vis par l'orifice économiseur — avec le diagramme enthalpique en parallèle. À voir après le compresseur à vis. Le film en entier, ou épisode par épisode (14 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/sous-refroidisseur.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-sous-refroidisseur.html">La version interactive</a>
-            <a class="btn sec" href="../packs/fluides/res/surchauffe-sous-refroidissement-interactif/">La station du sous-refroidissement</a></p>
-        </div>
-      </article>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/centrale.html" aria-label="Voir le film Voyage dans tous ses états, les centrales frigorifiques">
-          <img src="vignettes/centrale.jpg" alt="La centrale frigorifique d'un supermarché, ses compresseurs en parallèle et la molécule qui la parcourt, avec son cycle sur le diagramme enthalpique" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">10 min 09</span></a>
-        <div>
-          <h3>Voyage dans tous ses états — les centrales frigorifiques</h3>
-          <p>Une molécule de R-134a, dans le mélange R449A, fait le tour de la centrale d'un supermarché : les meubles, le glissement, les compresseurs en parallèle, la basse pression qui commande, le variateur — avec son cycle sur le diagramme enthalpique. À voir après le circuit de base. Le film en entier, ou épisode par épisode (13 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/centrale.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-centrale.html">La version interactive</a>
-            <a class="btn sec" href="../packs/fluides/res/compresseur-interactif/">La station du compresseur</a></p>
-        </div>
-      </article>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/regulation.html" aria-label="Voir le film Voyage dans tous ses états, la régulation d'une centrale">
-          <img src="vignettes/regulation.jpg" alt="Le régulateur d'une centrale à quatre compresseurs et la molécule qui la parcourt, avec l'écran du régulateur" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">11 min 29</span></a>
-        <div>
-          <h3>Voyage dans tous ses états — la régulation d'une centrale</h3>
-          <p>Une molécule fait visiter le cerveau d'une centrale à quatre compresseurs : la zone neutre, les temporisations, la permutation, puis la haute pression fixe ou flottante, avec l'écran du régulateur. À voir après les centrales frigorifiques. Le film en entier, ou épisode par épisode (15 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/regulation.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-regulation.html">La version interactive</a>
-            <a class="btn sec" href="../packs/fluides/res/regulateur-electronique-interactif/">La station du régulateur</a></p>
-        </div>
-      </article>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/bietage.html" aria-label="Voir le film Voyage dans tous ses états, l'installation bi-étagée">
-          <img src="vignettes/bietage.jpg" alt="L'installation bi-étagée à l'ammoniac, sa bouteille intermédiaire et la molécule qui la parcourt, avec son cycle sur le diagramme enthalpique" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">9 min 19</span></a>
-        <div>
-          <h3>Voyage dans tous ses états — l'installation bi-étagée</h3>
-          <p>Une molécule d'ammoniac monte en deux étages pour faire très froid : deux compresseurs, la bouteille intermédiaire où elle fait des bulles, la détente en deux fois — et le gain se lit sur le diagramme enthalpique. À voir après l'édition NH₃. Le film en entier, ou épisode par épisode (13 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/bietage.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-bietage.html">La version interactive</a>
-            <a class="btn sec" href="../voyage/nh3.html">L'édition NH₃, le voyage précédent</a></p>
-        </div>
-      </article>
-      <article class="vedette">
-        <a class="affiche" href="../voyage/glissement.html" aria-label="Voir le film Voyage dans tous ses états, le glissement">
-          <img src="vignettes/glissement.jpg" alt="Une climatisation au R407C et les trois molécules du mélange, avec la bulle et la rosée sur le diagramme enthalpique" width="640" height="360" loading="lazy">
-          <span class="jouer">▶ voir</span><span class="duree">10 min 56</span></a>
-        <div>
-          <h3>Voyage dans tous ses états — le glissement</h3>
-          <p>Une molécule de R134a et ses deux sœurs du R407C, le R32 et le R125, font le tour d'une climatisation : pourquoi un mélange bout en se réchauffant à pression constante, la bulle et la rosée sur le diagramme enthalpique, la surchauffe comptée depuis la rosée, le sous-refroidissement depuis la bulle, la charge en liquide. À voir après le circuit de base. Le film en entier, ou épisode par épisode (13 épisodes).</p>
-          <p class="liens"><a class="btn" href="../voyage/glissement.html">▶ Le film</a>
-            <a class="btn sec" href="../voyage/module-glissement.html">La version interactive</a>
-            <a class="btn sec" href="../packs/fluides/res/glissement-temperature/">La station du glissement</a></p>
-        </div>
-      </article>
+      </div>
+
+      <h3 class="sous">Les onze épisodes</h3>
+      <ol class="rangee">
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html"><img src="vignettes/regules-01-commande-directe-v2.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 38</span></a>
+          <p class="num">Épisode 1 · station 1</p><h3>La commande directe</h3>
+          <p>Le thermostat commande le compresseur directement : le contact se ferme, le froid part.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html">▶ Le film</a><a href="../packs/fluides/res/commande-directe-thermostat/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html"><img src="vignettes/regules-02-protection-minimum.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 38</span></a>
+          <p class="num">Épisode 2 · station 2</p><h3>La protection minimum</h3>
+          <p>Un pressostat basse pression en série protège le compresseur quand la pression tombe trop bas.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html">▶ Le film</a><a href="../packs/fluides/res/protection-minimum-serie/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html"><img src="vignettes/regules-02b-migration-de-liquide.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">59 s</span></a>
+          <p class="num">Épisode 3 · station 2</p><h3>La migration de liquide</h3>
+          <p>À l'arrêt, le fluide migre vers le carter du compresseur ; au redémarrage, la casse guette.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html">▶ Le film</a><a href="../packs/fluides/res/protection-minimum-serie/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html"><img src="vignettes/regules-03-pump-down-automatique.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 47</span></a>
+          <p class="num">Épisode 4 · station 3</p><h3>Le pump-down automatique</h3>
+          <p>Le thermostat ferme la vanne, le compresseur vide l'évaporateur, le pressostat l'arrête.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html">▶ Le film</a><a href="../packs/fluides/res/pump-down-automatique/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html"><img src="vignettes/regules-04-pump-down-ameliore.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 44</span></a>
+          <p class="num">Épisode 5 · station 4</p><h3>Le pump-down amélioré</h3>
+          <p>Le même tirage au vide, sans les courts cycles du compresseur.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html">▶ Le film</a><a href="../packs/fluides/res/pump-down-ameliore/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html"><img src="vignettes/regules-05-pump-down-unique.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 46</span></a>
+          <p class="num">Épisode 6 · station 5</p><h3>Le pump-down unique</h3>
+          <p>Un seul tirage au vide à chaque arrêt, et ce que fait l'installation en cas de fuite.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html">▶ Le film</a><a href="../packs/fluides/res/pump-down-unique/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html"><img src="vignettes/regules-06-sans-degivrage-commande.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 29</span></a>
+          <p class="num">Épisode 7 · station 6</p><h3>Sans dégivrage commandé</h3>
+          <p>Une chambre froide positive où le givre fond tout seul à l'arrêt, et la limite de cette solution.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html">▶ Le film</a><a href="../packs/fluides/res/sans-degivrage-commande/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html"><img src="vignettes/regules-07-degivrage-naturel.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 35</span></a>
+          <p class="num">Épisode 8 · station 7</p><h3>Le dégivrage naturel</h3>
+          <p>Une horloge arrête le froid à heures fixes ; le givre fond à l'air de la chambre.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html">▶ Le film</a><a href="../packs/fluides/res/degivrage-naturel/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html"><img src="vignettes/regules-08-pump-down-et-degivrage-electrique.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 47</span></a>
+          <p class="num">Épisode 9 · station 8</p><h3>Le dégivrage électrique</h3>
+          <p>L'horloge coupe le froid et allume les résistances ; puis la reprise du froid après la fonte.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html">▶ Le film</a><a href="../packs/fluides/res/degivrage-electrique/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html"><img src="vignettes/regules-09-gaz-chauds.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 36</span></a>
+          <p class="num">Épisode 10 · station 9</p><h3>Le dégivrage par gaz chauds</h3>
+          <p>Les gaz chauds du compresseur sont envoyés dans l'évaporateur pour faire fondre le givre.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html">▶ Le film</a><a href="../packs/fluides/res/degivrage-gaz-chauds/index.html">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html"><img src="vignettes/regules-10-inversion-de-cycle.jpg" alt="" width="640" height="360" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">1 min 31</span></a>
+          <p class="num">Épisode 11 · station 10</p><h3>Le dégivrage par inversion de cycle</h3>
+          <p>Une vanne quatre voies inverse le circuit : l'évaporateur devient condenseur le temps de la fonte.</p>
+          <p class="portes"><a href="../packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html">▶ Le film</a><a href="../packs/fluides/res/degivrage-inversion-cycle/index.html">La station</a></p></li>
+      </ol>
     </section>
 
-    <section class="salle" aria-labelledby="t-regules">
-      <h2 id="t-regules">La régulation, en onze films</h2>
-      <p>Le schéma électrique et l'installation frigorifique, côte à côte : on voit chaque contact se fermer et le fluide suivre. Chaque film a sa station, avec ses planches pas à pas et ses questions.</p>
-      <ul class="films">
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html"><img src="vignettes/regules-01-commande-directe-v2.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 1</p><h3>La commande directe</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-01-commande-directe-v2.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/commande-directe-thermostat/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html"><img src="vignettes/regules-02-protection-minimum.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 2</p><h3>La protection minimum</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-02-protection-minimum.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/protection-minimum-serie/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html"><img src="vignettes/regules-02b-migration-de-liquide.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 2</p><h3>La migration de liquide</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-02b-migration-de-liquide.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/protection-minimum-serie/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html"><img src="vignettes/regules-03-pump-down-automatique.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 3</p><h3>Le pump-down automatique</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-03-pump-down-automatique.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/pump-down-automatique/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html"><img src="vignettes/regules-04-pump-down-ameliore.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 4</p><h3>Le pump-down amélioré</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-04-pump-down-ameliore.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/pump-down-ameliore/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html"><img src="vignettes/regules-05-pump-down-unique.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 5</p><h3>Le pump-down unique</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-05-pump-down-unique.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/pump-down-unique/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html"><img src="vignettes/regules-06-sans-degivrage-commande.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 6</p><h3>Sans dégivrage commandé</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-06-sans-degivrage-commande.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/sans-degivrage-commande/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html"><img src="vignettes/regules-07-degivrage-naturel.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 7</p><h3>Le dégivrage naturel</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-07-degivrage-naturel.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/degivrage-naturel/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html"><img src="vignettes/regules-08-pump-down-et-degivrage-electrique.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 8</p><h3>Le dégivrage électrique</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-08-pump-down-et-degivrage-electrique.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/degivrage-electrique/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html"><img src="vignettes/regules-09-gaz-chauds.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 9</p><h3>Le dégivrage par gaz chauds</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-09-gaz-chauds.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/degivrage-gaz-chauds/index.html">La station</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html"><img src="vignettes/regules-10-inversion-de-cycle.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <p class="num">Station 10</p><h3>Le dégivrage par inversion de cycle</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/_regules-commun/films/regules-10-inversion-de-cycle.html">▶ Le film</a><a class="btn sec" href="../packs/fluides/res/degivrage-inversion-cycle/index.html">La station</a></p></li>
-      </ul>
+    <!-- ========== LES DOCUMENTAIRES ========== -->
+    <section class="fiche" id="t-climat" aria-labelledby="h-climat">
+      <p class="retour"><a href="#affiches">← Toutes les affiches</a></p>
+      <div class="entete">
+        <a class="affiche" href="../packs/fluides/res/film-effet-de-serre/index.html" aria-label="Voir le film Effet de serre, PRP et climat"><img src="affiches/doc-effet-de-serre.webp" alt="" width="800" height="1200" loading="lazy"><span class="titre">Effet de serre, PRP et climat</span></a>
+        <div>
+          <h2 id="h-climat">Effet de serre, PRP et climat</h2>
+          <p class="meta">Documentaire · 1 min · narré</p>
+          <dl class="critique">
+            <p class="accroche">Une minute pour comprendre pourquoi un kilo de fluide pèse des tonnes de CO₂.</p>
+            <div><dt>De quoi ça parle.</dt><dd>Le Soleil chauffe, la Terre renvoie, certains gaz piègent la chaleur, et le PRP met un chiffre sur chacun. Court, net, sans détour.</dd></div>
+            <div><dt>Ce qu'on sait à la fin.</dt><dd>Expliquer l'effet de serre en trois phrases et lire un PRP.</dd></div>
+            <div><dt>À voir.</dt><dd>Avant la station PRP et ODP, et avant toute séance sur la réglementation des fluides.</dd></div>
+          </dl>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/film-effet-de-serre/index.html">▶ Le film</a>
+            <a class="btn sec" href="../legislation/stations/impact-prp-odp/">La station PRP et ODP</a></p>
+        </div>
+      </div>
     </section>
 
-    <section class="salle" aria-labelledby="t-climat">
-      <h2 id="t-climat">Les fluides et l'environnement</h2>
-      <p>Deux films narrés pour comprendre pourquoi la réglementation des fluides frigorigènes existe.</p>
-      <ul class="films">
-        <li class="film"><a class="affiche" href="../packs/fluides/res/film-effet-de-serre/index.html"><img src="vignettes/film-effet-de-serre.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <h3>Effet de serre, PRP et climat</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/film-effet-de-serre/index.html">▶ Le film</a><a class="btn sec" href="../legislation/stations/impact-prp-odp/">La station PRP et ODP</a></p></li>
-        <li class="film"><a class="affiche" href="../packs/fluides/res/film-ozone/index.html"><img src="vignettes/film-ozone.jpg" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span></a>
-          <h3>Couche d'ozone et ODP</h3>
-          <p class="liens"><a class="btn" href="../packs/fluides/res/film-ozone/index.html">▶ Le film</a><a class="btn sec" href="../legislation/stations/impact-prp-odp/">La station PRP et ODP</a></p></li>
-      </ul>
+    <section class="fiche" id="t-ozone" aria-labelledby="h-ozone">
+      <p class="retour"><a href="#affiches">← Toutes les affiches</a></p>
+      <div class="entete">
+        <a class="affiche" href="../packs/fluides/res/film-ozone/index.html" aria-label="Voir le film Couche d'ozone et ODP"><img src="affiches/doc-ozone.webp" alt="" width="800" height="1200" loading="lazy"><span class="titre">Couche d'ozone et ODP</span></a>
+        <div>
+          <h2 id="h-ozone">Couche d'ozone et ODP</h2>
+          <p class="meta">Documentaire · moins d'1 min · narré</p>
+          <dl class="critique">
+            <p class="accroche">Un bouclier fin comme une feuille, tout là-haut.</p>
+            <div><dt>De quoi ça parle.</dt><dd>La couche d'ozone protège le vivant des ultraviolets. Une fuite de fluide chloré monte, la détruit, et le monde entier signe un accord pour l'arrêter : Montréal, 1987. Le film tient en moins d'une minute, et on s'en souvient.</dd></div>
+            <div><dt>Ce qu'on sait à la fin.</dt><dd>La différence entre ODP et PRP, et pourquoi les CFC ont disparu.</dd></div>
+            <div><dt>À voir.</dt><dd>Avec le film sur l'effet de serre, avant la station PRP et ODP.</dd></div>
+          </dl>
+          <p class="liens"><a class="btn" href="../packs/fluides/res/film-ozone/index.html">▶ Le film</a>
+            <a class="btn sec" href="../legislation/stations/impact-prp-odp/">La station PRP et ODP</a></p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <p class="legende">Pour l'enseignant : chaque film se projette en classe et ouvre le sujet. Il ne remplace ni le cours ni les travaux pratiques : la station qui le suit porte les planches, les questions et la trace écrite. Conception pédagogique : F. Henninot — inerWeb. Films réalisés avec l'assistance d'une intelligence artificielle ; voix de synthèse. Licence CC BY-NC-ND.</p>
+  <p class="legende">Pour l'enseignant : chaque film se projette en classe et ouvre le sujet. Il ne remplace ni le cours ni les travaux pratiques : la station qui le suit porte les planches, les questions et la trace écrite. Conception pédagogique : F. Henninot — inerWeb. Films, affiches et textes de présentation réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant ; voix de synthèse. Licence CC BY-NC-ND.</p>
 </div>
+<script>
+/* Galerie → fiche : sans adresse précise, on ne voit que les affiches ; « #t-voyage » (ou une ancre
+   héritée comme « #t-editions ») ouvre la fiche du titre et y descend. Sans JavaScript, tout est visible. */
+(function () {
+  var fiches = [].slice.call(document.querySelectorAll('.fiche'));
+  function fichePour(id) {
+    var el = id && document.getElementById(id);
+    while (el && el !== document.body) { if (el.classList && el.classList.contains('fiche')) return el; el = el.parentNode; }
+    return null;
+  }
+  function montrer() {
+    var id = location.hash.replace('#', ''), cible = fichePour(id);
+    fiches.forEach(function (f) { f.hidden = f !== cible; });
+    var el = id && document.getElementById(id);
+    if (el) el.scrollIntoView({ block: 'start' });
+  }
+  window.addEventListener('hashchange', montrer);
+  montrer();
+})();
+</script>
 <script src="../moteur/marque.js" data-cartouche="Studio" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>
