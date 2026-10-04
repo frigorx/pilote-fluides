@@ -1,18 +1,34 @@
 /* CartoClim 3.8 — scènes du chauffe-eau thermodynamique.
-   Temps 2, premier dessin : la chaleur de l'air jusqu'à l'eau du ballon, en cinq pas. Croix du frigoriste
-   (charte R6) : détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas. Le ballon
-   est dessiné en coupe, à côté de la croix ; le condenseur est ce tube enroulé contre sa paroi. Dans
-   l'appareil réel l'évaporateur est en haut, sous le capot : on ne retourne jamais la croix pour autant.
+   Temps 2 (et temps 1, devant les photos : scene-devant.js), premier dessin : la chaleur de l'air jusqu'à
+   l'eau du ballon, en cinq pas, avec l'AIR et le FLUIDE qui circulent (« Animer les réseaux », 04/10/2026,
+   sur le modèle de la 3.2). Croix du frigoriste (charte R6) : détendeur à gauche, compresseur à droite,
+   condenseur en haut, évaporateur en bas. Le ballon est dessiné en coupe, à côté de la croix ; le condenseur
+   est ce tube enroulé contre sa paroi, alimenté par le haut. Dans l'appareil réel l'évaporateur est en haut,
+   sous le capot : on ne retourne jamais la croix pour autant.
    Temps 2, second dessin : trois états de la cuve — la pompe à chaleur seule, avec l'appoint, on puise.
    Temps 5 : ce qu'on raccorde, puis les trois compteurs du banc du lycée.
-   Aucun texte sur un tracé : chaque étiquette a sa place libre, vérifiée par
-   outils/controler-station-navigateur.mjs. Aucune valeur chiffrée, sauf celles de la fiche du banc
-   (200 L, R-134a, 750 W, 1 800 W), qui ne figurent que dans le récapitulatif du temps 5. */
+
+   Ce qui bouge (tout se calcule à partir du temps t, requestAnimationFrame — ni SMIL ni animation CSS) :
+   · l'air : des chevrons qui montent à travers l'évaporateur, couleur = température (pièce tiède → plus froid) ;
+     le ventilateur tourne ;
+   · le fluide : LIQUIDE = tube plein, des reflets qui filent ; VAPEUR = petites molécules séparées ;
+     dans l'évaporateur le liquide bout (bulles), dans le tube enroulé la vapeur se condense (gouttes) ;
+   · l'eau : la chaleur du tube traverse la paroi (flèches), un reflet monte le long de la paroi, l'eau chaude
+     sort en haut et l'eau froide entre en bas (tubes pleins à reflets) ; les couches restent séparées ;
+   · le pas à pas allume la partie qui agit ; le reste continue de tourner, en retrait.
+   L'interrupteur « Animations » du site coupé (moteur/animations.js) : le dessin reste fixe, le pas à
+   pas marche.
+
+   Dessin : VOYAGE_DESSIN (jouerezo/moteur/voyage-dessin.js) — couleur de température, hélice, chevron,
+   flèche de chaleur, métal, filigrane R9. Aucun texte sur un tracé, ni sur le trajet d'un chevron ou d'une
+   molécule : vérifié par outils/controler-station-navigateur.mjs. Étiquettes en taille 21 dans 1 000 :
+   au moins 18,7 px quand la scène est devant, à 1 280 px. Aucune valeur chiffrée, sauf celles de la fiche
+   du banc (200 L, R-134a, 750 W, 1 800 W), qui ne figurent que dans le récapitulatif du temps 5. */
 const ScenesStation = (() => {
   'use strict';
   const { svg, C, pasAPas, etats } = SceneKit;
   const NBSP = String.fromCharCode(160);                 /* espace insécable : un nombre et son unité ne se séparent pas */
-  const bp = C.froid, hp = C.chaud;                    /* fluide : basse pression bleu · haute pression rouge */
+  const hp = C.chaud;                                  /* fluide : haute pression rouge */
   const eauChaude = C.ambre, eauFroide = C.eau;        /* eau sanitaire : chaude ambre · froide vert-bleu */
 
   /* Une pointe de flèche à taille fixe, quelle que soit l'épaisseur du trait. */
@@ -39,98 +55,243 @@ const ScenesStation = (() => {
   const serpentin = (x, y, n) => `M${x} ${y} q-22 12 0 24` + ' t0 24'.repeat(n - 1);
 
   /* ------------------------------------------------------------------------------------------
+     La circulation : un trajet (ligne brisée) et ce qui avance dessus.                          */
+  function trajet(pts) {
+    const seg = []; let L = 0;
+    for (let i = 1; i < pts.length; i++) {
+      const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], l = Math.hypot(x1 - x0, y1 - y0);
+      seg.push({ x0, y0, x1, y1, l, s: L }); L += l;
+    }
+    const a = s => {
+      const g = seg.find(k => s <= k.s + k.l) || seg[seg.length - 1], f = g.l ? (s - g.s) / g.l : 0;
+      return [g.x0 + (g.x1 - g.x0) * f, g.y0 + (g.y1 - g.y0) * f, Math.atan2(g.y1 - g.y0, g.x1 - g.x0) * 180 / Math.PI];
+    };
+    return { pts, L, a, d: 'M ' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L ') };
+  }
+  /* un coude de serpentin : demi-cercle de (x, ya) à (x, yb), bombé à droite (+1) ou à gauche (-1) */
+  function coude(x, ya, yb, sens) {
+    const r = Math.abs(yb - ya) / 2, cy = (ya + yb) / 2, v = yb > ya ? 1 : -1, p = [];
+    for (let i = 1; i < 10; i++) { const th = -Math.PI / 2 + Math.PI * i / 10; p.push([x + sens * r * Math.cos(th), cy + v * r * Math.sin(th)]); }
+    return p;
+  }
+  /* un tube enroulé contre une paroi verticale : n demi-vagues de hauteur h et d'amplitude a, de (xc, y0) vers le bas */
+  function ondes(xc, y0, n, h, a) {
+    const p = [];
+    for (let i = 0; i < n; i++) for (let j = 0; j < 8; j++) p.push([xc + (i % 2 ? 1 : -1) * a * Math.sin(Math.PI * j / 8), y0 + h * (i + j / 8)]);
+    p.push([xc, y0 + h * n]);
+    return p;
+  }
+  /* un trajet coupé à la fraction f de sa longueur : [l'amont, l'aval] */
+  function couper(tr, f) {
+    const [x, y] = tr.a(tr.L * f), amont = [tr.pts[0]];
+    let cumul = 0;
+    for (let i = 1; i < tr.pts.length; i++) {
+      cumul += Math.hypot(tr.pts[i][0] - tr.pts[i - 1][0], tr.pts[i][1] - tr.pts[i - 1][1]);
+      if (cumul >= tr.L * f) return [trajet(amont.concat([[x, y]])), trajet([[x, y]].concat(tr.pts.slice(i)))];
+      amont.push(tr.pts[i]);
+    }
+    return [tr, tr];
+  }
+  /* n repères régulièrement espacés qui avancent à v unités par seconde ; poser(repère, x, y, angle, f) */
+  function filer(parent, tr, n, v, creer, poser) {
+    const D = window.VOYAGE_DESSIN, rep = Array.from({ length: n }, (_, i) => creer(parent, i));
+    return t => rep.forEach((e, i) => {
+      const f = D.frac(i / n + t * v / tr.L), [x, y, ang] = tr.a(f * tr.L);
+      poser(e, x, y, ang, f);
+    });
+  }
+
+  /* ------------------------------------------------------------------------------------------
      Temps 2 — dessin 1 : la chaleur de l'air jusqu'à l'eau du ballon.                           */
   function trajetDeLaChaleur() {
-    const d = svg('0 0 900 640',
-      'Un chauffe-eau thermodynamique en schéma. À gauche, le circuit du fluide en croix : le détendeur à gauche, le compresseur à droite, le condenseur en haut — un tube enroulé contre la paroi du ballon — et l’évaporateur en bas, avec son ventilateur. À côté, le ballon d’eau chaude en coupe : l’eau chaude en haut, l’eau froide en bas.');
-    let etape = 0;
-    const on = (...ks) => ks.includes(etape);
-    const CUVE = 'M470 116 Q470 80 506 80 H614 Q650 80 650 116 V314 Q650 350 614 350 H506 Q470 350 470 314 Z';
+    const D = window.VOYAGE_DESSIN;
+    const d = svg('0 0 1000 640',
+      'Un chauffe-eau thermodynamique en schéma, en marche. À gauche, le circuit du fluide en croix : le détendeur à gauche, le compresseur à droite, le condenseur en haut — un tube enroulé contre la paroi du ballon — et l’évaporateur en bas, avec son ventilateur ; l’air de la pièce le traverse de bas en haut et ressort plus froid. À côté, le ballon d’eau chaude en coupe : l’eau chaude en haut, l’eau froide en bas ; la chaleur du tube traverse la paroi, l’eau chaude sort en haut, l’eau froide entre en bas.');
+    const FIGE = !!(window.inerwebAnimations && window.inerwebAnimations.actives === false);
+    const RETRAIT = 0.4;                                   /* ce qui n'agit pas à cette étape */
+    const CUIVRE = '#c57a45', CUIVRE_BORD = '#7a3f1c', CREUX = '#f4f8fc', EAU = '#4f9fc0';
+    const couche = c => D.el('g', { 'data-c': c }, d);     /* une partie du dessin, que le pas à pas allume */
+    const anime = [];                                      /* ce que chaque image fait avancer */
+    const CUVE = 'M560 110 Q560 74 596 74 H714 Q750 74 750 110 V316 Q750 352 714 352 H596 Q560 352 560 316 Z';
 
-    const peindre = () => {
-      const puise = on(4);
-      const ailettes = [0,1,2,3,4,5,6,7,8,9,10].map(i =>
-        `<line x1="${310 + i * 20}" y1="510" x2="${310 + i * 20}" y2="570" stroke="${C.trait}" stroke-width="2"/>`).join('');
-      d.innerHTML = `
-<defs>${pointe('ce1-hp', hp)}${pointe('ce1-bp', bp)}${pointe('ce1-chaud', eauChaude)}${pointe('ce1-froid', eauFroide)}${pointe('ce1-air', C.navy)}${pointe('ce1-chal', eauChaude)}</defs>
-<rect x="10" y="10" width="880" height="620" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
+    D.defs(d);
+    D.el('rect', { x: 6, y: 6, width: 988, height: 628, rx: 16, fill: C.papier, stroke: C.trait }, d);
+    /* filigrane R9 : logo officiel + « by inerweb.fr », 3 exemplaires dont un au centre, derrière tout ;
+       cartouche « CartoClim » (le nom du produit) à la place de « Studio » (les vidéos) */
+    D.filigrane(d, [[235, 178], [500, 330], [765, 482]], 250).querySelectorAll('text')
+      .forEach(t => { if (t.textContent === 'Studio') t.textContent = 'CartoClim'; });
 
-<!-- le ballon, en coupe : les couches d'eau, la paroi -->
-${couches('ce1-cuve', CUVE, 470, 180, 80, 350, 150)}
-${puise ? `<path d="${CUVE}" fill="none" stroke="${C.feu}" stroke-opacity=".3" stroke-width="16" stroke-linejoin="round"/>` : ''}
-<path d="${CUVE}" fill="none" stroke="${C.navy}" stroke-width="${puise ? 6 : 4}" stroke-linejoin="round"/>
-${puise ? `<line x1="474" y1="150" x2="646" y2="150" stroke="${C.navy}" stroke-width="2" stroke-dasharray="8 6"/>
-<line x1="474" y1="200" x2="646" y2="200" stroke="${C.navy}" stroke-width="2" stroke-dasharray="8 6"/>
-${T(560, 124, 'la plus chaude', { ancre: 'middle', taille: 15 })}
-${T(560, 332, 'la plus froide', { ancre: 'middle', taille: 15 })}` : ''}
-${on(2) ? `${fleches(['M484 150 h36', 'M484 182 h36', 'M484 262 h36', 'M484 294 h36'], eauChaude, 'ce1-chal', 4)}
-${T(566, 216, 'la chaleur', { ancre: 'middle', taille: 15, couleur: eauChaude })}
-${T(566, 238, 'traverse la paroi', { ancre: 'middle', taille: 15, couleur: eauChaude })}` : ''}
+    /* le ballon, en coupe : l'eau se range par couches (chaude en haut, froide en bas), la paroi ;
+       à gauche de la paroi un reflet monte : l'eau chauffée, plus légère, s'élève */
+    let g = couche('cuve');
+    D.el('clipPath', { id: 'ce8-cuve' }, g).appendChild(D.el('path', { d: CUVE }, null));
+    const bandes = D.el('g', { 'clip-path': 'url(#ce8-cuve)' }, g);
+    [[74, 76, C.chaud, 0.38], [150, 50, '#e07a2f', 0.3], [200, 152, C.bleu, 0.34]].forEach(([y, h, fill, op]) =>
+      D.el('rect', { x: 560, y, width: 190, height: h, fill, 'fill-opacity': op, stroke: 'none' }, bandes));
+    const montee = trajet([[572, 340], [572, 86]]);
+    D.el('path', { d: montee.d, fill: 'none', stroke: C.papier, 'stroke-width': 4, 'stroke-dasharray': '10 28', opacity: 0.9 }, g);
+    const reflet = g.lastChild;
+    anime.push(t => reflet.setAttribute('stroke-dashoffset', (-(t * 22) % 38).toFixed(1)));
+    D.el('path', { d: CUVE, fill: 'none', stroke: C.navy, 'stroke-width': 4, 'stroke-linejoin': 'round' }, g);
 
-<!-- l'eau sanitaire : sortie en haut, entrée en bas -->
-${tube('M648 130 H760', eauChaude, puise, 'ce1-chaud')}
-${T(662, 112, 'eau chaude', { couleur: puise ? eauChaude : C.gris })}
-${tube('M800 310 H652', eauFroide, puise, 'ce1-froid')}
-${T(662, 292, 'eau froide', { couleur: puise ? eauFroide : C.gris })}
+    /* les ailettes de l'évaporateur : l'air monte entre elles */
+    g = couche('evap');
+    for (let i = 0; i < 8; i++) D.el('line', { x1: 340 + i * 20, y1: 468, x2: 340 + i * 20, y2: 562, stroke: C.trait, 'stroke-width': 2 }, g);
 
-<!-- le condenseur, en haut de la croix : un tube enroulé contre la paroi -->
-${tube(serpentin(458, 112, 8), hp, on(2), null, 5)}
-${T(436, 198, 'condenseur', { ancre: 'end', couleur: on(2) ? hp : C.navy })}
-${T(436, 221, 'tube enroulé', { ancre: 'end', taille: 15, gras: false })}
-${T(436, 242, 'contre la cuve', { ancre: 'end', taille: 15, gras: false })}
+    /* le ventilateur, au-dessus de l'évaporateur */
+    const helice = D.ventilateur(couche('ventilo'), 410, 410, 50);
 
-<!-- haute pression : du compresseur au condenseur, puis du condenseur au détendeur -->
-${tube('M830 400 V46 H458 V112', hp, on(1, 2), 'ce1-hp')}
-${T(818, 240, 'gaz chaud', { ancre: 'end', couleur: on(1, 2) ? hp : C.gris, taille: 15 })}
-${tube('M458 304 V330 H110 V402', hp, on(3), 'ce1-hp')}
-${T(300, 316, 'liquide', { ancre: 'middle', couleur: on(3) ? hp : C.gris, taille: 15 })}
+    /* l'air : des chevrons qui montent ; leur couleur suit la température, qui change dans la batterie */
+    const air = (c, tr, temp, v = 75) => {
+      const k = 0.5, gc = D.el('g', { transform: 'scale(' + k + ')' }, couche(c));
+      anime.push(filer(gc, tr, Math.max(2, Math.round(tr.L / 49)), v, p => D.chevron(p),
+        (ch, x, y, ang, f) => ch(x / k, y / k, ang - 90, D.couleur(temp(f * tr.L)), D.fenetre(f, 0, 1, 0.06))));
+    };
+    [365, 410, 455].forEach(x => air('air', trajet([[x, 618], [x, 340]]),
+      s => s < 56 ? 0.58 : s > 150 ? 0.08 : D.lerp(0.58, 0.08, (s - 56) / 94)));      /* la batterie va de y = 562 à y = 468 */
 
-<!-- détendeur, à gauche (deux triangles pointe à pointe) -->
-<path d="M110 430 L94 402 H126 Z M110 430 L94 458 H126 Z" fill="${C.papier}" stroke="${on(3) ? C.feu : C.navy}" stroke-width="${on(3) ? 5 : 3}" stroke-linejoin="round"/>
-${T(136, 434, 'détendeur', { couleur: on(3) ? bp : C.navy })}
-${tube('M110 458 V520 H300', bp, on(3), 'ce1-bp')}
+    /* la chaleur du tube traverse la paroi et passe dans l'eau */
+    g = couche('chaleur');
+    const kC = 0.75, gC = D.el('g', { transform: 'scale(' + kC + ')' }, g);
+    [150, 182, 262, 294].forEach(y => {
+      const tr = trajet([[552, y], [650, y]]);
+      anime.push(filer(gC, tr, 2, 36, p => D.chaleur(p),
+        (a, x, yy, ang, f) => a(x / kC, yy / kC, ang - 90, D.fenetre(f, 0, 1, 0.2))));
+    });
 
-<!-- évaporateur, en bas : ailettes, serpentin, ventilateur au-dessus -->
-${ailettes}
-<g fill="none" stroke="${bp}" stroke-width="${on(0) ? 7 : 4}" stroke-linecap="round">
-  <path d="M300 520 H520 M300 540 H520 M300 560 H520"/>
-  <path d="M520 520 c18 0 18 20 0 20 M300 540 c-18 0 -18 20 0 20"/>
-</g>
-${T(410, 500, 'évaporateur', { ancre: 'middle', couleur: on(0) ? bp : C.navy })}
-<circle cx="410" cy="436" r="30" fill="none" stroke="${on(0) ? C.feu : C.navy}" stroke-width="3"/>
-<path d="M410 406 v60 M380 436 h60 M389 415 l42 42 M431 415 l-42 42" stroke="${on(0) ? C.feu : C.navy}" stroke-width="2"/>
-${T(452, 441, 'ventilateur', { couleur: C.gris, gras: false })}
-${on(0) ? `${fleches(['M350 612 V586', 'M410 612 V586', 'M470 612 V586'], C.navy, 'ce1-air', 3)}
-${T(500, 604, 'air de la pièce', { couleur: C.navy })}
-${fleches(['M395 398 V372', 'M425 398 V372'], bp, 'ce1-bp', 3)}
-${T(448, 388, 'air plus froid, plus sec', { couleur: bp, taille: 15 })}` : ''}
-${tube('M520 560 H830 V462', bp, on(1), 'ce1-bp')}
+    /* les tubes de cuivre, et ce qui coule dedans (ici, ces trois briques portent le nom de celles du dessin) */
+    const tube = (g, tr, ext, int) => {
+      const t = { d: tr.d, fill: 'none', 'stroke-linejoin': 'round', 'stroke-linecap': 'round' };
+      D.el('path', Object.assign({ stroke: CUIVRE_BORD, 'stroke-width': ext }, t), g);
+      D.el('path', Object.assign({ stroke: CUIVRE, 'stroke-width': ext - 3 }, t), g);
+      D.el('path', Object.assign({ stroke: CREUX, 'stroke-width': int }, t), g);
+    };
+    /* liquide : le tube plein, des reflets qui filent dans le sens du fluide */
+    const liquide = (g, tr, int, couleur, v) => {
+      const t = { d: tr.d, fill: 'none', 'stroke-linejoin': 'round' };
+      D.el('path', Object.assign({ stroke: couleur, 'stroke-width': int, opacity: 0.92 }, t), g);
+      const reflet = D.el('path', Object.assign({ stroke: C.papier, 'stroke-width': Math.max(1.6, int * 0.28), 'stroke-dasharray': '12 30', opacity: 0.85 }, t), g);
+      anime.push(t2 => reflet.setAttribute('stroke-dashoffset', (-(t2 * v) % 42).toFixed(1)));
+    };
+    /* vapeur : le creux à peine teinté, de petites molécules séparées ; gouttes(f) : où elles deviennent gouttes */
+    const vapeur = (g, tr, int, temp, v, pas, gouttes) => {
+      D.el('path', { d: tr.d, fill: 'none', stroke: D.couleur(temp, true), 'stroke-width': int, opacity: 0.25, 'stroke-linejoin': 'round' }, g);
+      anime.push(filer(g, tr, Math.max(2, Math.round(tr.L / pas)), v,
+        p => D.el('circle', { r: int * 0.3 }, p),
+        (m, x, y, ang, f) => {
+          const goutte = gouttes && f > gouttes;
+          m.setAttribute('cx', x.toFixed(1)); m.setAttribute('cy', y.toFixed(1));
+          m.setAttribute('fill', goutte ? D.couleur(0.62) : D.couleur(temp, true));
+          m.setAttribute('stroke', goutte ? 'none' : C.navy); m.setAttribute('stroke-opacity', 0.5);
+          m.setAttribute('r', (goutte ? int * 0.26 : int * 0.3).toFixed(1));
+        }));
+    };
+    /* les bulles de l'ébullition : elles naissent, grossissent et filent avec le liquide */
+    const bulles = (g, tr, int, v) => anime.push(filer(g, tr, Math.round(tr.L / 17), v,
+      p => D.el('circle', { fill: C.papier, 'fill-opacity': 0.55, stroke: C.papier, 'stroke-width': 1.2 }, p),
+      (b, x, y, ang, f) => { b.setAttribute('cx', x.toFixed(1)); b.setAttribute('cy', y.toFixed(1));
+        b.setAttribute('r', (0.6 + int * 0.33 * f).toFixed(1)); b.setAttribute('opacity', D.borne(f * 1.6, 0, 1).toFixed(2)); }));
 
-<!-- compresseur, à droite -->
-<rect x="790" y="400" width="80" height="60" rx="10" fill="${C.papier}" stroke="${on(1) ? C.feu : C.navy}" stroke-width="${on(1) ? 6 : 3}"/>
-${T(780, 436, 'compresseur', { ancre: 'end', couleur: on(1) ? hp : C.navy })}
+    /* le parcours, dans le sens du fluide : le condenseur est le tube enroulé contre la cuve, alimenté par le haut */
+    const refoul = trajet([[900, 410], [900, 40], [548, 40], [548, 100]]);
+    const cond = trajet(ondes(548, 100, 8, 24, 11));
+    const liqHP = trajet([[548, 292], [548, 322], [150, 322], [150, 395]]);
+    const liqBP = trajet([[150, 429], [150, 485], [330, 485]]);
+    const evap = trajet([[330, 485], [490, 485], ...coude(490, 485, 515, 1), [490, 515], [330, 515], ...coude(330, 515, 545, -1), [330, 545], [490, 545]]);
+    const gaz = trajet([[490, 545], [900, 545], [900, 470]]);
+    const eauC = trajet([[750, 120], [850, 120]]), eauF = trajet([[850, 300], [750, 300]]);
 
-<!-- légende des couleurs -->
-<path d="M40 585 H70" stroke="${hp}" stroke-width="6"/>${T(78, 590, 'haute pression', { couleur: hp, taille: 15 })}
-<path d="M40 610 H70" stroke="${bp}" stroke-width="6"/>${T(78, 615, 'basse pression', { couleur: bp, taille: 15 })}`;
+    g = couche('refoul'); tube(g, refoul, 16, 10); vapeur(g, refoul, 10, 0.95, 85, 20);
+    g = couche('cond'); tube(g, cond, 14, 8);
+    const [condV, condL] = couper(cond, 0.6);
+    vapeur(g, condV, 8, 0.92, 45, 18, 0.55); liquide(g, condL, 8, D.couleur(0.62), 30);
+    g = couche('liqHP'); tube(g, liqHP, 12, 6); liquide(g, liqHP, 6, D.couleur(0.62), 30);
+    g = couche('liqBP'); tube(g, liqBP, 12, 6); liquide(g, liqBP, 6, D.couleur(0.08), 32);
+    g = couche('evap'); tube(g, evap, 14, 8);
+    const [evapL, evapV] = couper(evap, 0.55);
+    liquide(g, evapL, 8, D.couleur(0.08), 30); bulles(g, evapL, 8, 30); vapeur(g, evapV, 8, 0.16, 55, 20);
+    g = couche('gaz'); tube(g, gaz, 20, 14); vapeur(g, gaz, 14, 0.18, 60, 26);
+
+    /* le compresseur et le détendeur */
+    g = couche('compr');
+    D.el('rect', { x: 860, y: 410, width: 80, height: 60, rx: 12, fill: 'url(#vm-acier)', stroke: C.navy, 'stroke-width': 3 }, g);
+    g = couche('detendeur');
+    D.el('path', { d: 'M138 395 h24 l-12 17 z M138 429 h24 l-12 -17 z', fill: C.papier, stroke: C.navy, 'stroke-width': 3, 'stroke-linejoin': 'round' }, g);
+
+    /* l'eau sanitaire : sortie en haut (chaude), entrée en bas (froide) */
+    g = couche('eauChaude'); tube(g, eauC, 12, 6); liquide(g, eauC, 6, D.couleur(0.72), 26);
+    g = couche('eauFroide'); tube(g, eauF, 12, 6); liquide(g, eauF, 6, EAU, 26);
+
+    /* les étiquettes, par-dessus tout ; chacune a sa place libre */
+    const etiquettes = [];
+    const ecrire = (x, y, s, c, coul, o) => {
+      const base = Object.assign({ 'font-size': 21, fill: C.navy }, o || {});
+      const t = D.texte(d, x, y, s, base);
+      if (c) etiquettes.push({ t, c, coul, gras: base['font-weight'] === 700 });
+      return t;
+    };
+    const G = { 'font-weight': 700 }, M = { 'text-anchor': 'middle' }, F = { 'text-anchor': 'end' };
+    ecrire(516, 190, 'condenseur', 'cond', C.chaud, Object.assign({}, G, F));
+    ecrire(516, 217, 'tube enroulé', null, null, F);
+    ecrire(516, 244, 'contre la cuve', null, null, F);
+    ecrire(340, 304, 'liquide', 'liqHP', C.orange, Object.assign({}, G, M));
+    ecrire(176, 429, 'détendeur', 'detendeur', C.froid, G);
+    ecrire(886, 210, 'gaz chaud', 'refoul', C.chaud, Object.assign({}, G, F));
+    ecrire(850, 446, 'compresseur', 'compr', C.chaud, Object.assign({}, G, F));
+    ecrire(474, 416, 'ventilateur', 'ventilo', C.navy);
+    ecrire(516, 521, 'évaporateur', 'evap', C.froid, G);
+    ecrire(490, 614, 'air de la pièce', 'air', C.ambre);
+    ecrire(480, 386, 'air plus froid, plus sec', 'air', C.froid);
+    ecrire(762, 100, 'eau chaude', 'eauChaude', C.ambre);
+    ecrire(762, 280, 'eau froide', 'eauFroide', C.eau);
+    ecrire(655, 108, 'la plus chaude', 'cuve', C.chaud, M);
+    ecrire(655, 218, 'la chaleur', 'chaleur', C.ambre, M);
+    ecrire(655, 245, 'traverse la paroi', 'chaleur', C.ambre, M);
+    ecrire(655, 336, 'la plus froide', 'cuve', C.froid, M);
+
+    /* une image : tout avance selon t */
+    const image = t => { helice(t * 260); anime.forEach(f => f(t)); };
+    image(1.6);
+    if (!FIGE) {
+      let vu = false;
+      const boucle = now => {
+        if (d.isConnected) { vu = true; image(now / 1000); }
+        else if (vu) return;                               /* on a quitté le temps : la boucle s'arrête */
+        requestAnimationFrame(boucle);
+      };
+      requestAnimationFrame(boucle);
+    }
+
+    /* le pas à pas : la partie qui agit s'allume, le reste tourne en retrait */
+    const ALLUME = [
+      ['air', 'ventilo', 'evap'],
+      ['compr', 'refoul', 'gaz'],
+      ['refoul', 'cond', 'chaleur', 'cuve'],
+      ['detendeur', 'liqHP', 'liqBP'],
+      ['cuve', 'eauChaude', 'eauFroide']
+    ];
+    const allumer = k => {
+      const on = new Set(ALLUME[k]);
+      d.querySelectorAll('[data-c]').forEach(e => e.setAttribute('opacity', on.has(e.getAttribute('data-c')) ? 1 : RETRAIT));
+      etiquettes.forEach(e => { const oui = on.has(e.c); e.t.setAttribute('fill', oui ? e.coul : C.navy); e.t.setAttribute('font-weight', oui || e.gras ? 700 : 400); });
     };
 
     const etapes = [
       { titre: 'L’air de la pièce traverse l’évaporateur',
         dire: 'Le ventilateur aspire l’air de la pièce et le fait passer dans l’évaporateur. Le fluide qui y circule est plus froid que cet air : il prend sa chaleur, bout et devient gaz. L’air ressort plus froid, et plus sec : une partie de son humidité se dépose en gouttes, les condensats.',
-        peindre: () => { etape = 0; peindre(); } },
+        peindre: () => allumer(0) },
       { titre: 'Le compresseur refoule un gaz chaud',
         dire: 'Le compresseur aspire ce gaz et le comprime. En sortie il est plus chaud que l’eau du ballon : sans cela, il ne pourrait pas la chauffer. Il part vers le condenseur.',
-        peindre: () => { etape = 1; peindre(); } },
+        peindre: () => allumer(1) },
       { titre: 'Le gaz chaud chauffe l’eau à travers la paroi',
         dire: 'Le condenseur est un tube enroulé contre la paroi extérieure de la cuve. Le gaz y cède sa chaleur à l’eau, à travers la paroi, et redevient liquide. Le fluide ne touche jamais l’eau qu’on boit : seule la chaleur traverse.',
-        peindre: () => { etape = 2; peindre(); } },
+        peindre: () => allumer(2) },
       { titre: 'Le détendeur : le fluide repart froid',
         dire: 'Le liquide passe le détendeur : sa pression tombe d’un coup, il redevient froid et repart vers l’évaporateur. Le tour recommence.',
-        peindre: () => { etape = 3; peindre(); } },
+        peindre: () => allumer(3) },
       { titre: 'L’eau chaude monte : on puise en haut',
         dire: 'L’eau chauffée, plus légère, monte et reste en haut de la cuve. On puise tout en haut ; l’eau froide entre en bas et ne se mélange pas : l’eau se range par couches.',
-        peindre: () => { etape = 4; peindre(); } }
+        peindre: () => allumer(4) }
     ];
     return pasAPas(d, etapes,
       'Dans l’appareil réel, l’évaporateur est en haut, sous le capot. Le dessin garde la croix du frigoriste : détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas. Le circuit est fermé et chargé en usine : on ne s’en occupe pas à la pose.');

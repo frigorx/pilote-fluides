@@ -1,11 +1,20 @@
 /* CartoClim 5.1 — scènes des modes et de la télécommande.
-   Temps 2 : une télécommande dessinée en grand (écran, touches de mode, + et −), l’ordre qui part en
-   infrarouge vers la carte de l’unité intérieure, puis trois cartes — compresseur, vanne 4 voies, turbine —
-   allumées ou éteintes selon le mode, et à droite ce qui sort de l’unité. Cinq pas : froid, chaud,
-   déshumidification, ventilation, automatique. Aucune valeur chiffrée : ni température, ni durée.
+   Temps 2 (et temps 1, devant les photos : scene-devant.js) : une télécommande dessinée en grand (écran,
+   touches de mode, + et −), l’ordre qui part en infrarouge vers la carte de l’unité intérieure, puis trois
+   cartes — compresseur, vanne 4 voies, turbine — allumées ou éteintes selon le mode, et à droite ce qui sort
+   de l’unité. Cinq pas : froid, chaud, déshumidification, ventilation, automatique. Aucune valeur chiffrée :
+   ni température, ni durée.
+   L’AIR circule (journée « Animer les réseaux », 04/10/2026, sur le modèle du pilote 3.2) : l’air de la pièce
+   entre dans l’unité (chevrons ambre), la turbine tourne, l’air ressort de la couleur du mode (bleu : plus
+   frais ; rouge : plus chaud ; bleu pâle : plus sec ; ambre : brassé ; en automatique il passe du bleu au
+   rouge, la carte choisit) ; l’ordre part en pointillés qui avancent ; l’eau des condensats coule dans son
+   tuyau quand il y en a. Tout se calcule à partir du temps t (requestAnimationFrame — ni SMIL ni animation
+   CSS). L’interrupteur « Animations » du site coupé (moteur/animations.js) : le dessin reste fixe, le pas à
+   pas marche. Le réglage du système, lui, n’arrête rien : c’est le cours qui bouge.
    Temps 5 : ce que lit la machine (la sonde, en hauteur) contre l’endroit où l’on est, et les cinq modes.
-   Aucun texte sur un tracé : chaque étiquette a sa place libre, vérifiée par
-   outils/controler-station-navigateur.mjs. */
+   Dessin : VOYAGE_DESSIN (jouerezo/moteur/voyage-dessin.js) — chevron, couleur de température, filigrane R9.
+   Aucun texte sur un tracé, ni sur le trajet d’un chevron : vérifié par outils/controler-station-navigateur.mjs.
+   Étiquettes en taille 21 dans 1 000 : au moins 18,7 px quand la scène est devant, à 1 280 px. */
 const ScenesStation = (() => {
   'use strict';
   const { svg, C, pasAPas } = SceneKit;
@@ -59,95 +68,196 @@ const ScenesStation = (() => {
       air: { cle: 'gris', mot: 'froid ou chaud', sub: 'la carte choisit', eau: 'selon le mode', pointille: true } }
   ];
 
+  /* ---------- la circulation : un trajet (ligne brisée) et ce qui avance dessus (briques du pilote 3.2) ---------- */
+  function trajet(pts) {
+    const seg = []; let L = 0;
+    for (let i = 1; i < pts.length; i++) {
+      const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], l = Math.hypot(x1 - x0, y1 - y0);
+      seg.push({ x0, y0, x1, y1, l, s: L }); L += l;
+    }
+    const a = s => {
+      const g = seg.find(k => s <= k.s + k.l) || seg[seg.length - 1], f = g.l ? (s - g.s) / g.l : 0;
+      return [g.x0 + (g.x1 - g.x0) * f, g.y0 + (g.y1 - g.y0) * f, Math.atan2(g.y1 - g.y0, g.x1 - g.x0) * 180 / Math.PI];
+    };
+    return { pts, L, a, d: 'M ' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L ') };
+  }
+  /* n repères régulièrement espacés qui avancent à v unités par seconde ; poser(repère, x, y, angle, f) */
+  function filer(parent, tr, n, v, creer, poser) {
+    const D = window.VOYAGE_DESSIN, rep = Array.from({ length: n }, (_, i) => creer(parent, i));
+    return t => rep.forEach((e, i) => {
+      const f = D.frac(i / n + t * v / tr.L), [x, y, ang] = tr.a(f * tr.L);
+      poser(e, x, y, ang, f);
+    });
+  }
+
   function lesModes() {
-    const d = svg('0 0 900 480',
-      'Une télécommande dessinée en grand, avec son écran et ses touches : flocon, soleil, goutte, ventilateur, A. L’ordre part en infrarouge vers la carte de l’unité intérieure, qui allume ou éteint le compresseur, la vanne 4 voies et la turbine, selon le mode choisi.');
-    let k = 0;
+    const D = window.VOYAGE_DESSIN;
+    const d = svg('0 0 1000 655',
+      'Une télécommande dessinée en grand, avec son écran et ses touches : flocon, soleil, goutte, ventilateur, A. L’ordre part en infrarouge vers la carte de l’unité intérieure, qui allume ou éteint le compresseur, la vanne 4 voies et la turbine, selon le mode choisi. L’air de la pièce entre dans l’unité intérieure et en ressort ; les chevrons qui avancent montrent son sens et sa couleur.');
+    const FIGE = !!(window.inerwebAnimations && window.inerwebAnimations.actives === false);
+    const CREUX = '#f4f8fc', CHAMBRE = 0.6;                /* l'air de la pièce : tiède */
+    const SORTIE = [0.08, 0.95, 0.3, CHAMBRE, null];       /* l'air qui sort, mode par mode ; null : la carte choisit */
+    const VITESSE = [1, 1, 0.35, 1, 1];                    /* la turbine tourne lentement pour sécher */
+    const anime = [];                                      /* ce que chaque image fait avancer */
+    let k = 0, tc = 1.6, tp = null, angle = 0;
 
-    const bouton = i => {
-      const m = MODES[i], [x, y] = m.tc, actif = i === k;
-      return `<circle cx="${x}" cy="${y}" r="21" fill="${actif ? 'rgba(255,107,53,.22)' : C.papier}" stroke="${actif ? C.feu : C.navy}" stroke-width="${actif ? 5 : 2.5}"/>
-${ico(m.icone, x - 14, y - 14, 28, actif ? C.ambre : C.navy, 2.4)}
-<text x="${x}" y="${y + 38}" text-anchor="middle" font-size="13" font-weight="${actif ? 700 : 400}" fill="${actif ? C.ambre : C.gris}">${m.mot}</text>`;
+    D.defs(d);
+    D.el('rect', { x: 6, y: 6, width: 988, height: 643, rx: 16, fill: C.papier, stroke: C.trait }, d);
+    /* filigrane R9 : logo officiel + « by inerweb.fr », 3 exemplaires dont un au centre, derrière tout ;
+       cartouche « CartoClim » (le nom du produit) à la place de « Studio » (les vidéos) */
+    D.filigrane(d, [[235, 186], [500, 345], [765, 504]], 250).querySelectorAll('text')
+      .forEach(t => { if (t.textContent === 'Studio') t.textContent = 'CartoClim'; });
+
+    const T = (g, x, y, s, o) => D.texte(g, x, y, s, Object.assign({ 'font-size': 21, fill: C.navy }, o || {}));
+    const M = { 'text-anchor': 'middle' }, G = { 'font-weight': 700 };
+    const nu = (g, h) => { const e = D.el('g', {}, g); if (h) e.innerHTML = h; return e; };
+
+    /* la télécommande : émetteur, écran qui répète le mode, consigne + et −, touches de mode, autres touches */
+    D.el('rect', { x: 24, y: 70, width: 226, height: 570, rx: 30, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, d);
+    D.el('rect', { x: 112, y: 58, width: 50, height: 12, rx: 3, fill: C.feu, stroke: C.navy, 'stroke-width': 2 }, d);
+    D.el('rect', { x: 44, y: 92, width: 186, height: 154, rx: 10, fill: C.papier, stroke: C.navy, 'stroke-width': 2.5 }, d);
+    const ecran = nu(d);
+    T(d, 137, 284, 'consigne', Object.assign({ fill: C.gris }, M));
+    [[87, 'M79 322 H95'], [187, 'M179 322 H195 M187 314 V330']].forEach(([x, p]) => {
+      D.el('circle', { cx: x, cy: 322, r: 18, fill: C.papier, stroke: C.navy, 'stroke-width': 2.5 }, d);
+      D.el('path', { d: p, fill: 'none', stroke: C.navy, 'stroke-width': 3, 'stroke-linecap': 'round' }, d);
+    });
+    const POS = [[67, 410], [137, 410], [207, 410], [102, 516], [172, 516]];
+    const touches = MODES.map((m, i) => {
+      const [x, y] = POS[i];
+      const rond = D.el('circle', { cx: x, cy: y, r: 24 }, d);
+      const ic = nu(d, ico(m.icone, x - 17, y - 17, 34, C.navy, 2.6));
+      return { rond, ic, lib: T(d, x, y + 48, m.mot, M) };
+    });
+    [47, 96, 145, 194].forEach(x => D.el('rect', { x, y: 594, width: 36, height: 26, rx: 6, fill: C.papier, stroke: C.navy, 'stroke-width': 2 }, d));
+
+    /* l'ordre part en infrarouge vers la carte : des pointillés qui avancent */
+    const ir = D.el('path', { d: 'M168 64 H282', fill: 'none', stroke: C.feu, 'stroke-width': 4, 'stroke-dasharray': '14 10', 'stroke-linecap': 'round' }, d);
+    anime.push(t => ir.setAttribute('stroke-dashoffset', (-(t * 48) % 24).toFixed(1)));
+    D.el('path', { d: 'M280 55 L292 64 L280 73 Z', fill: C.feu }, d);
+    T(d, 228, 46, 'infrarouge', Object.assign({ fill: C.ambre }, M, G));
+    D.el('rect', { x: 290, y: 44, width: 312, height: 40, rx: 20, fill: 'rgba(255,107,53,.12)', stroke: C.feu, 'stroke-width': 4 }, d);
+    T(d, 446, 71, 'carte de l’unité intérieure', Object.assign({}, M, G));
+
+    /* ce que la carte met en marche : trois cartes, qui changent d'état selon le mode */
+    const cartes = [[120, 'Compresseur'], [256, 'Vanne 4 voies'], [392, 'Turbine']].map(([y, titre]) => {
+      const cadre = D.el('rect', { x: 290, y, width: 312, height: 112, rx: 12 }, d);
+      T(d, 308, y + 34, titre, G);
+      return { cadre, etat: T(d, 308, y + 66, '', G), sub: T(d, 308, y + 96, '', { fill: C.gris }), voyant: D.el('circle', { cx: 572, cy: y + 54, r: 16, 'stroke-width': 3 }, d) };
+    });
+    const etatCarte = (c, o) => {
+      const nul = o.oui === false, tirets = (e, v) => v ? e.setAttribute('stroke-dasharray', '9 6') : e.removeAttribute('stroke-dasharray');
+      c.cadre.setAttribute('fill', nul ? C.creme : 'rgba(255,107,53,.10)');
+      c.cadre.setAttribute('stroke', nul ? C.trait : C.feu);
+      c.cadre.setAttribute('stroke-width', nul ? 3 : 5);
+      tirets(c.cadre, o.oui === null);
+      c.etat.textContent = o.etat; c.etat.setAttribute('fill', nul ? C.gris : C.ambre);
+      c.sub.textContent = o.sub;
+      c.voyant.setAttribute('fill', o.oui === true ? C.feu : C.papier);
+      c.voyant.setAttribute('stroke', nul ? C.gris : C.feu);
+      tirets(c.voyant, o.oui === null);
     };
-    const carte = (y, titre, o) => {
-      const nul = o.oui === false;
-      return `<rect x="345" y="${y}" width="265" height="92" rx="12" fill="${nul ? C.creme : 'rgba(255,107,53,.10)'}" stroke="${nul ? C.trait : C.feu}" stroke-width="${nul ? 3 : 5}"${o.oui === null ? ' stroke-dasharray="9 6"' : ''}/>
-<text x="362" y="${y + 30}" font-size="17" font-weight="700" fill="${C.navy}">${titre}</text>
-<text x="362" y="${y + 55}" font-size="15" font-weight="700" fill="${nul ? C.gris : C.ambre}">${o.etat}</text>
-<text x="362" y="${y + 77}" font-size="14" fill="${C.gris}">${o.sub}</text>
-<circle cx="580" cy="${y + 46}" r="15" fill="${o.oui === true ? C.feu : C.papier}" stroke="${nul ? C.gris : C.feu}" stroke-width="3"${o.oui === null ? ' stroke-dasharray="5 4"' : ''}/>`;
+    [['en action', true], ['à l’arrêt', false], ['selon l’écart', null]].forEach(([s, v], i) => {
+      const y = 556 + i * 30, p = { cx: 308, cy: y - 7, r: 9, 'stroke-width': 3, fill: v === true ? C.feu : C.papier, stroke: v === false ? C.gris : C.feu };
+      if (v === null) p['stroke-dasharray'] = '5 4';
+      D.el('circle', p, d);
+      T(d, 326, y, s, { fill: C.gris });
+    });
+
+    /* l'unité intérieure : l'air de la pièce entre, la sonde le lit, la turbine le pousse, l'air sort */
+    const air = (pts, coul) => {
+      const tr = trajet(pts), e = 0.5, fondu = 14 / tr.L, g = D.el('g', { transform: 'scale(' + e + ')' }, d);   /* D.chevron se place dans un groupe réduit */
+      anime.push(filer(g, tr, Math.max(2, Math.round(tr.L / 36)), 70, p => D.chevron(p),
+        (ch, x, y, ang, f) => ch(x / e, y / e, ang - 90, coul(), D.fenetre(f, 0, 1, fondu))));
     };
+    const sortie = () => D.couleur(SORTIE[k] === null ? 0.5 + 0.42 * Math.sin(tc * 0.8) : SORTIE[k]);
+    air([[700, 36], [700, 196]], () => D.couleur(CHAMBRE));
+    [700, 770, 840].forEach(x => air([[x, 308], [x, 428]], sortie));
+    D.el('rect', { x: 640, y: 200, width: 330, height: 100, rx: 14, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, d);
+    const sonde = D.el('circle', { cx: 664, cy: 224, r: 7 }, d);
+    const sondeT = T(d, 680, 231, 'sonde');
+    T(d, 656, 286, 'unité intérieure', G);
+    const roue = (() => {                                  /* la turbine : le cercle reste, la roue tourne */
+      const g = D.el('g', { transform: 'translate(902 250)' }, d), r = 32;
+      D.el('circle', { r, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
+      const w = D.el('g', {}, g);
+      for (let i = 0; i < 16; i++) D.el('path', { d: 'M ' + r * 0.56 + ' 0 Q ' + r * 0.8 + ' ' + (-r * 0.02) + ' ' + r * 0.88 + ' ' + (-r * 0.26),
+        fill: 'none', stroke: C.navy, 'stroke-width': 2.6, 'stroke-linecap': 'round', transform: 'rotate(' + i * 22.5 + ')' }, w);
+      D.el('circle', { r: r * 0.5, fill: 'none', stroke: C.navy, 'stroke-width': 1.5, opacity: 0.5 }, g);
+      return w;
+    })();
+    T(d, 730, 118, 'l’air de la pièce entre', { fill: C.ambre });
+    const motAir = T(d, 640, 470, '', G), subAir = T(d, 640, 500, '', { fill: C.gris });
 
-    const peindre = () => {
-      const m = MODES[k], a = m.air, eau = a.eau.startsWith('l’eau');
-      const coulAir = C[a.cle], texteAir = a.cle === 'doux' ? C.froid : coulAir;
-      const flecheAir = x => `<path d="M${x} 168 V228" fill="none" stroke="${coulAir}" stroke-width="${a.cle === 'doux' ? 4 : 6}"${a.pointille ? ' stroke-dasharray="10 7"' : ''} marker-end="url(#mk-${a.cle})"/>`;
-      d.innerHTML = `
-<defs>${['feu', 'navy', 'froid', 'chaud', 'doux', 'gris', 'eau'].map(marqueur).join('')}</defs>
-<rect x="10" y="10" width="880" height="460" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
+    /* l'eau des condensats : un tuyau plein d'eau, des reflets qui filent — ou un trait pointillé quand il n'y en a pas */
+    const eauG = D.el('g', {}, d), secG = D.el('g', {}, d);
+    const tuyau = trajet([[955, 301], [955, 520]]), tp2 = { d: tuyau.d, fill: 'none', 'stroke-linecap': 'round' };
+    D.el('path', Object.assign({ stroke: C.gris, 'stroke-width': 14 }, tp2), eauG);
+    D.el('path', Object.assign({ stroke: CREUX, 'stroke-width': 8 }, tp2), eauG);
+    D.el('path', Object.assign({ stroke: C.eau, 'stroke-width': 8, opacity: 0.9 }, tp2), eauG);
+    const reflet = D.el('path', Object.assign({ stroke: C.papier, 'stroke-width': 2, 'stroke-dasharray': '12 26', opacity: 0.85 }, tp2), eauG);
+    anime.push(t => reflet.setAttribute('stroke-dashoffset', (-(t * 30) % 38).toFixed(1)));
+    D.el('path', { d: tuyau.d, fill: 'none', stroke: C.trait, 'stroke-width': 3, 'stroke-dasharray': '6 6' }, secG);
+    const motEau = T(d, 975, 556, '', { 'text-anchor': 'end' });
 
-<!-- la télécommande : émetteur, écran qui répète le mode, consigne + et −, touches de mode, autres touches -->
-<rect x="40" y="56" width="180" height="400" rx="26" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
-<rect x="105" y="46" width="50" height="10" rx="3" fill="${C.feu}" stroke="${C.navy}" stroke-width="2"/>
-<rect x="58" y="76" width="144" height="112" rx="10" fill="${C.papier}" stroke="${C.navy}" stroke-width="2.5"/>
-${ico(m.icone, 92, 94, 76, m.coul, 5)}
-<text x="130" y="216" text-anchor="middle" font-size="14" fill="${C.gris}">consigne</text>
-<circle cx="88" cy="240" r="15" fill="${C.papier}" stroke="${C.navy}" stroke-width="2.5"/>
-<path d="M80 240 H96" stroke="${C.navy}" stroke-width="3" stroke-linecap="round"/>
-<circle cx="172" cy="240" r="15" fill="${C.papier}" stroke="${C.navy}" stroke-width="2.5"/>
-<path d="M164 240 H180 M172 232 V248" stroke="${C.navy}" stroke-width="3" stroke-linecap="round"/>
-${MODES.map((_, i) => bouton(i)).join('')}
-${[58, 96, 134, 172].map(x => `<rect x="${x}" y="424" width="30" height="22" rx="6" fill="${C.papier}" stroke="${C.navy}" stroke-width="2"/>`).join('')}
+    /* une image : tout avance selon t */
+    const image = t => {
+      const dt = tp === null ? 0 : Math.min(0.1, Math.max(0, t - tp));
+      tp = t; tc = t; angle += dt * 320 * VITESSE[k];
+      roue.setAttribute('transform', 'rotate(' + (angle % 360).toFixed(1) + ')');
+      anime.forEach(f => f(t));
+    };
+    if (!FIGE) {
+      let vu = false;
+      const boucle = now => {
+        if (d.isConnected) { vu = true; image(now / 1000); }
+        else if (vu) return;                               /* on a quitté le temps : la boucle s'arrête */
+        requestAnimationFrame(boucle);
+      };
+      requestAnimationFrame(boucle);
+    }
 
-<!-- l'ordre part en infrarouge vers la carte -->
-<path d="M160 51 H336" fill="none" stroke="${C.feu}" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#mk-feu)"/>
-<text x="248" y="40" text-anchor="middle" font-size="14" font-weight="700" fill="${C.ambre}">infrarouge</text>
-<rect x="345" y="30" width="265" height="40" rx="20" fill="rgba(255,107,53,.12)" stroke="${C.feu}" stroke-width="4"/>
-<text x="477" y="56" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">carte de l’unité intérieure</text>
-
-<!-- ce que la carte met en marche -->
-${carte(92, 'Compresseur', m.comp)}
-${carte(196, 'Vanne 4 voies', m.vanne)}
-${carte(300, 'Turbine', m.turb)}
-<circle cx="362" cy="437" r="9" fill="${C.feu}" stroke="${C.feu}" stroke-width="3"/>
-<text x="378" y="442" font-size="14" fill="${C.gris}">en action</text>
-<circle cx="462" cy="437" r="9" fill="${C.papier}" stroke="${C.gris}" stroke-width="3"/>
-<text x="478" y="442" font-size="14" fill="${C.gris}">à l’arrêt</text>
-<circle cx="552" cy="437" r="9" fill="${C.papier}" stroke="${C.feu}" stroke-width="3" stroke-dasharray="5 4"/>
-<text x="568" y="442" font-size="14" fill="${C.gris}">selon l’écart</text>
-
-<!-- l'unité intérieure : l'air de la pièce entre, la sonde le lit, l'air sort -->
-<text x="650" y="50" font-size="14" fill="${C.gris}">l’air de la pièce entre</text>
-<path d="M690 60 V86" fill="none" stroke="${C.navy}" stroke-width="4" marker-end="url(#mk-navy)"/>
-<rect x="650" y="92" width="220" height="64" rx="14" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
-<circle cx="690" cy="110" r="6" fill="${k === 4 ? C.feu : C.gris}"/>
-<text x="704" y="115" font-size="14" font-weight="${k === 4 ? 700 : 400}" fill="${k === 4 ? C.ambre : C.gris}">sonde</text>
-<text x="760" y="144" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">unité intérieure</text>
-${[680, 730, 780].map(flecheAir).join('')}
-<text x="650" y="258" font-size="17" font-weight="700" fill="${texteAir}">${a.mot}</text>
-<text x="650" y="279" font-size="14" fill="${C.gris}">${a.sub}</text>
-<path d="M852 156 V320" fill="none" stroke="${eau ? C.eau : C.trait}" stroke-width="${eau ? 5 : 3}"${eau ? ' marker-end="url(#mk-eau)"' : ' stroke-dasharray="6 6"'}/>
-${eau ? [190, 240].map(y => `<path d="M832 ${y} c-5 7 -8 11 -8 14 a8 8 0 0 0 16 0 c0 -3 -3 -7 -8 -14 z" fill="${C.eau}" stroke="none"/>`).join('') : ''}
-<text x="872" y="352" text-anchor="end" font-size="14" font-weight="700" fill="${eau ? C.eau : C.gris}">${a.eau}</text>`;
+    /* le pas à pas : le mode choisi s'allume, le reste tourne en retrait */
+    const allumer = i => {
+      k = i;
+      const m = MODES[i], a = m.air, eau = a.eau.startsWith('l’eau'), coulAir = C[a.cle];
+      ecran.innerHTML = ico(m.icone, 87, 119, 100, m.coul, 5);
+      touches.forEach((b, j) => {
+        const on = j === i;
+        b.rond.setAttribute('fill', on ? 'rgba(255,107,53,.22)' : C.papier);
+        b.rond.setAttribute('stroke', on ? C.feu : C.navy);
+        b.rond.setAttribute('stroke-width', on ? 5 : 2.5);
+        b.ic.firstChild.setAttribute('stroke', on ? C.ambre : C.navy);
+        b.lib.setAttribute('fill', on ? C.ambre : C.gris);
+        b.lib.setAttribute('font-weight', on ? 700 : 400);
+      });
+      etatCarte(cartes[0], m.comp); etatCarte(cartes[1], m.vanne); etatCarte(cartes[2], m.turb);
+      sonde.setAttribute('fill', i === 4 ? C.feu : C.gris);
+      sondeT.setAttribute('fill', i === 4 ? C.ambre : C.gris);
+      sondeT.setAttribute('font-weight', i === 4 ? 700 : 400);
+      motAir.textContent = a.mot; motAir.setAttribute('fill', a.cle === 'doux' ? C.froid : coulAir);
+      subAir.textContent = a.sub;
+      eauG.setAttribute('opacity', eau ? 1 : 0); secG.setAttribute('opacity', eau ? 0 : 1);
+      motEau.textContent = a.eau; motEau.setAttribute('fill', eau ? C.eau : C.gris); motEau.setAttribute('font-weight', eau ? 700 : 400);
+      image(tc);
     };
 
     const etapes = [
       { titre: 'Le flocon : du froid',
         dire: 'Vous appuyez sur le flocon. L’ordre part en infrarouge, la carte de l’unité intérieure le reçoit : elle lance le compresseur et la turbine, et place la vanne 4 voies dans le sens froid. La batterie intérieure devient froide, l’air qui la traverse ressort plus frais, et l’eau de l’air se dépose dans le bac.',
-        peindre: () => { k = 0; peindre(); } },
+        peindre: () => allumer(0) },
       { titre: 'Le soleil : du chaud',
         dire: 'Le soleil, pas le flocon : c’est la touche que les clients confondent le plus. La machine est la même, mais la vanne 4 voies inverse le sens du fluide. La batterie intérieure devient chaude, l’air ressort chaud. Un client qui appuie sur le soleil en plein été chauffe sa pièce.',
-        peindre: () => { k = 1; peindre(); } },
+        peindre: () => allumer(1) },
       { titre: 'La goutte : sécher l’air',
         dire: 'Déshumidification : du froid, mais à petite vitesse. La turbine tourne lentement, l’air s’attarde sur la batterie froide et y laisse son eau, sans que la pièce se refroidisse beaucoup. L’eau part par le tuyau de condensats, comme en mode froid. Ce n’est donc pas le mode froid.',
-        peindre: () => { k = 2; peindre(); } },
+        peindre: () => allumer(2) },
       { titre: 'Le ventilateur : brasser l’air',
         dire: 'Ventilation : le compresseur est arrêté, la vanne 4 voies ne sert à rien, seule la turbine tourne. L’air de la pièce est brassé, ni refroidi ni chauffé, et aucune eau n’est récupérée. Aucun air neuf n’entre : la télécommande ne sait pas faire cela.',
-        peindre: () => { k = 3; peindre(); } },
+        peindre: () => allumer(3) },
       { titre: 'A : la carte choisit',
         dire: 'Automatique : la carte compare la consigne avec la température que lit la sonde, à la reprise d’air de l’unité intérieure. Trop chaud : elle choisit le froid. Trop frais : le chaud, si l’appareil est réversible. Quand la sonde atteint la consigne, la machine s’arrête ou ralentit.',
-        peindre: () => { k = 4; peindre(); } }
+        peindre: () => allumer(4) }
     ];
     return pasAPas(d, etapes, 'Cinq modes, une seule machine. Le détail (vitesses, ordre de démarrage, noms des touches) change d’un modèle à l’autre : la notice fait foi.');
   }

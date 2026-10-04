@@ -1,6 +1,8 @@
 /* CartoClim 2.5 — scènes de la station « Détendre ».
    Temps 2, premier dessin : une coupe du passage étroit, en quatre pas — le liquide arrive sous haute
    pression, passe l'étranglement, la pression tombe et une partie bout, le mélange froid repart.
+   Ce premier dessin est animé (pilote « Animer les réseaux », 04/10/2026) et passe aussi devant les photos au
+   temps 1 (scene-devant.js) : le liquide file, bout d'un coup après l'étranglement, bulles et vapeur.
    Temps 2, second dessin : trois états à comparer — le tube capillaire (rien ne bouge) et le
    détendeur électronique (la carte commande, le moteur relève puis pousse l'aiguille).
    Temps 5 : un tableau dessiné, capillaire contre électronique.
@@ -17,59 +19,162 @@ const ScenesStation = (() => {
     `<marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="${couleur}"/></marker>`;
 
   /* ------------------------------------------------------------------------------------------
-     Temps 2 — dessin 1 : le passage étroit, en coupe, et la courbe de pression dessous.        */
+     Temps 1 (devant les photos : scene-devant.js) et temps 2 — dessin 1 : le passage étroit, en coupe, et la
+     courbe de pression dessous. Pilote « Animer les réseaux » (04/10/2026) : tout se calcule à partir du
+     temps t (requestAnimationFrame — ni SMIL ni animation CSS).
+       · le liquide chaud file vers l'étranglement : tube plein, des reflets qui avancent dans le sens du
+         fluide, en lignes de courant qui se resserrent ;
+       · juste après, la pression tombe : le niveau du liquide baisse (nappe qui ondule), des bulles naissent,
+         grossissent et éclatent à la surface, la vapeur file au-dessus, et le liquide se refroidit ;
+       · le pas à pas allume la partie qui agit ; le reste continue de tourner, en retrait.
+     Dessin : VOYAGE_DESSIN (jouerezo/moteur/voyage-dessin.js). Aucun texte sur un tracé ni sur ce qui bouge :
+     toute la matière est dans le canal, les étiquettes sont au-dessus et en dessous. Étiquettes en taille 21
+     dans 1 000 : 19,6 px à l'écran à 1 280 px. */
   function lePassageEtroit() {
-    const d = svg('0 0 820 330',
+    const D = window.VOYAGE_DESSIN;
+    const d = svg('0 0 1000 520',
       'Coupe d’un passage étroit : le liquide arrive à gauche sous haute pression, traverse un étranglement, puis repart à droite à basse pression, en mélange froid de liquide et de bulles. Sous la coupe, la courbe de pression tombe au niveau de l’étranglement.');
-    let etape = 0;
-    const lit = (k, c) => etape === k ? c : C.trait;      /* la pièce qui agit s'allume */
-    const bulles = [[468,112,6],[490,140,7],[510,95,6],[532,126,9],[552,100,7],[570,146,8],[592,112,10],[616,140,7],[636,96,9],[656,122,8]];
+    const FIGE = !!(window.inerwebAnimations && window.inerwebAnimations.actives === false);
+    const RETRAIT = 0.4;                                   /* ce qui n'agit pas à cette étape */
+    const CHAUD = D.couleur(0.62);                         /* le liquide qui sort du condenseur */
+    const couche = (c, o) => D.el('g', Object.assign({ 'data-c': c }, o || {}), d);   /* une partie du dessin, que le pas à pas allume */
+    const AU_CANAL = { 'clip-path': 'url(#pe-canal)' };
+    const SURBRILLANCE = { 'data-sur': '' };               /* n'existe que lorsqu'elle est allumée */
+    const anime = [];                                      /* ce que chaque image fait avancer */
+    const chemin = pts => 'M' + pts.map(p => p.join(' ')).join(' L');
 
-    const peindre = () => {
-      d.innerHTML = `
-<defs>${pointe('pe-hp', hp)}${pointe('pe-bp', bp)}</defs>
-<rect x="10" y="10" width="800" height="310" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
+    const defs = D.defs(d);
+    D.el('rect', { x: 6, y: 6, width: 988, height: 508, rx: 16, fill: C.papier, stroke: C.trait }, d);
+    /* filigrane R9 : logo officiel + « by inerweb.fr », 3 exemplaires dont un au centre, derrière tout ;
+       cartouche « CartoClim » (le nom du produit) à la place de « Studio » (les vidéos) */
+    D.filigrane(d, [[240, 150], [500, 262], [760, 374]], 250).querySelectorAll('text')
+      .forEach(t => { if (t.textContent === 'Studio') t.textContent = 'CartoClim'; });
 
-<!-- le liquide à gauche (haute pression) et le mélange à droite (basse pression) -->
-<polygon points="50,75 290,75 335,111 360,111 360,129 335,129 290,165 50,165" fill="${hp}" fill-opacity="${etape === 0 ? .3 : .12}" stroke="none"/>
-<polygon points="360,111 385,111 430,75 730,75 730,165 430,165 385,129 360,129" fill="${bp}" fill-opacity="${etape >= 2 ? .3 : .08}" stroke="none"/>
+    /* le canal : parois haute et basse ; l'étranglement va de x = 375 à 445 */
+    const haut = [[50, 110], [300, 110], [375, 173], [445, 173], [520, 110], [900, 110]];
+    const bas = haut.map(([x, y]) => [x, 370 - y]);        /* symétrique par rapport à l'axe y = 185 */
+    D.el('polygon', { points: haut.concat(bas.slice().reverse()).map(p => p.join(',')).join(' ') },
+      D.el('clipPath', { id: 'pe-canal' }, defs));
 
-<!-- les parois : un tube qui se rétrécit, puis s'élargit -->
-<path d="M50 75 H290 L335 111 H385 L430 75 H730" fill="none" stroke="${C.navy}" stroke-width="4" stroke-linejoin="round"/>
-<path d="M50 165 H290 L335 129 H385 L430 165 H730" fill="none" stroke="${C.navy}" stroke-width="4" stroke-linejoin="round"/>
-${etape === 1 ? `<path d="M290 75 L335 111 H385 L430 75 M290 165 L335 129 H385 L430 165" fill="none" stroke="${C.feu}" stroke-width="8" stroke-linejoin="round"/>` : ''}
+    /* liquide : le canal plein, des reflets qui filent dans le sens du fluide (trois lignes de courant) */
+    const plein = (g, x0, x1) => D.el('rect', { x: x0, y: 110, width: x1 - x0, height: 150, fill: CHAUD, opacity: 0.92,
+      stroke: 'none', 'shape-rendering': 'crispEdges' }, g);
+    const filet = (g, pts, ph) => {
+      const p = D.el('path', { d: chemin(pts), fill: 'none', stroke: C.papier, 'stroke-width': 4, 'stroke-linecap': 'round',
+        'stroke-dasharray': '14 36', opacity: 0.85 }, g);
+      anime.push(t => p.setAttribute('stroke-dashoffset', (-((t * 40 + ph) % 50)).toFixed(1)));
+    };
+    let g = couche('hp', AU_CANAL);
+    plein(g, 50, 300);
+    [[140, 0], [185, 17], [230, 34]].forEach(([y, ph]) => filet(g, [[50, y], [300, y]], ph));
+    g = couche('goulot', AU_CANAL);
+    plein(g, 300, 445);
+    [[140, 177, 0], [185, 185, 17], [230, 193, 34]].forEach(([y, yg, ph]) => filet(g, [[300, y], [375, yg], [445, yg]], ph));
 
-<text x="60" y="52" font-size="17" font-weight="700" fill="${etape === 0 ? hp : C.navy}">liquide, haute pression</text>
-<text x="360" y="52" text-anchor="middle" font-size="17" font-weight="700" fill="${etape === 1 ? C.orange : C.navy}">passage étroit</text>
-<text x="450" y="52" font-size="17" font-weight="700" fill="${etape >= 2 ? bp : C.navy}">mélange froid : liquide et bulles</text>
+    /* après l'étranglement : le liquide bout d'un coup. Le niveau baisse (le reste est de la vapeur), le
+       liquide se refroidit au fil de l'ébullition (il donne sa chaleur à la partie qui s'évapore) */
+    g = couche('bout', AU_CANAL);
+    D.el('rect', { x: 445, y: 110, width: 455, height: 150, fill: D.couleur(0.2, true), opacity: 0.22, stroke: 'none' }, g);
+    const niveau = x => D.lerp(1, 0.58, D.lisse((x - 470) / 130)) - 0.07 * D.lisse((x - 600) / 300);
+    const liq = D.liquide(g, { x0: 445, x1: 900, yh: 110, yb: 260, pas: 10, niveau,
+      couleur: x => D.couleur(D.lerp(0.62, 0.08, D.lisse((x - 450) / 260))) });
+    /* les bulles : elles naissent dans le liquide (plus nombreuses près du passage), grossissent en montant,
+       dérivent avec l'écoulement et éclatent à la surface */
+    const bulles = Array.from({ length: 36 }, (_, i) => {
+      const r = D.alea(7 + i);
+      return { p: r(), per: 1.6 + r() * 1.2, ph: r() * 6, taille: 6 + r() * 7,
+        c: D.el('circle', { fill: C.papier, 'fill-opacity': 0.5, stroke: C.papier, 'stroke-width': 1.6 }, g) };
+    });
+    /* la vapeur : de petites molécules séparées, qui n'existent qu'au-dessus de la surface */
+    const molecules = Array.from({ length: 12 }, (_, i) => {
+      const r = D.alea(60 + i);
+      return { x: r(), y: 120 + r() * 32, v: 45 + r() * 40, a: 3 + r() * 3, ph: r() * 6,
+        c: D.el('circle', { r: 4.5, fill: D.couleur(0.2, true), stroke: C.navy, 'stroke-opacity': 0.5 }, g) };
+    });
+    anime.push(t => {
+      liq.maj(t);
+      bulles.forEach(b => {
+        const u = (t + b.ph) / b.per, f = D.frac(u), q = D.frac(b.p + Math.floor(u) * 0.618);
+        const x = 490 + q * q * 300 + f * 60, s = liq.surface(x, t), y0 = D.lerp(s + 20, 248, D.frac(q * 7.3));
+        b.c.setAttribute('cx', x.toFixed(1)); b.c.setAttribute('cy', D.lerp(y0, s + 2, f).toFixed(1));
+        b.c.setAttribute('r', D.lerp(1.5, b.taille, f).toFixed(1)); b.c.setAttribute('opacity', D.fenetre(f, 0, 1, 0.15).toFixed(2));
+      });
+      molecules.forEach(m => {
+        const x = 470 + D.frac(m.x + t * m.v / 430) * 430, y = m.y + Math.sin(t * 1.9 + m.ph) * m.a, s = liq.surface(x, t);
+        m.c.setAttribute('cx', x.toFixed(1)); m.c.setAttribute('cy', y.toFixed(1));
+        m.c.setAttribute('opacity', D.borne((s - y - 9) / 10, 0, 1).toFixed(2));
+      });
+    });
 
-${etape === 0 ? `<path d="M72 120 H210" stroke="${hp}" stroke-width="5" marker-end="url(#pe-hp)"/>` : ''}
-${etape >= 2 ? bulles.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${C.papier}" stroke="${bp}" stroke-width="2.5"/>`).join('') : ''}
-${etape === 3 ? `<path d="M690 120 H772" stroke="${bp}" stroke-width="5" marker-end="url(#pe-bp)"/>
-<text x="800" y="192" text-anchor="end" font-size="17" font-weight="700" fill="${bp}">vers l’évaporateur</text>` : ''}
+    /* les parois : un tube qui se rétrécit, puis s'élargit — et l'étranglement en surbrillance à son pas */
+    [haut, bas].forEach(pts => D.el('path', { d: chemin(pts), fill: 'none', stroke: C.navy, 'stroke-width': 4, 'stroke-linejoin': 'round' }, d));
+    D.el('path', { d: 'M300 110 L375 173 H445 L520 110 M300 260 L375 197 H445 L520 260', fill: 'none', stroke: C.feu,
+      'stroke-width': 8, 'stroke-linejoin': 'round' }, couche('goulot', SURBRILLANCE));
 
-<!-- la courbe de pression, sous la coupe -->
-<path d="M50 225 H290" fill="none" stroke="${lit(0, hp)}" stroke-width="${etape === 0 ? 8 : 4}" stroke-linecap="round"/>
-<path d="M290 225 C340 225 380 295 430 295" fill="none" stroke="${lit(1, C.feu)}" stroke-width="${etape === 1 ? 8 : 4}" stroke-linecap="round"/>
-<path d="M430 295 H730" fill="none" stroke="${etape >= 2 ? bp : C.trait}" stroke-width="${etape >= 2 ? 8 : 4}" stroke-linecap="round"/>
-<text x="50" y="207" font-size="17" font-weight="700" fill="${etape === 0 ? hp : C.gris}">haute pression</text>
-<text x="170" y="290" font-size="17" font-weight="700" fill="${etape === 1 ? C.orange : C.gris}">la pression tombe</text>
-<text x="520" y="277" font-size="17" font-weight="700" fill="${etape >= 2 ? bp : C.gris}">basse pression</text>`;
+    /* la sortie : le mélange froid repart vers l'évaporateur */
+    g = couche('sortie');
+    D.el('path', { d: 'M910 185 H950', fill: 'none', stroke: bp, 'stroke-width': 5, 'stroke-linecap': 'round' }, g);
+    D.el('polygon', { points: '964,185 948,176 948,194', fill: bp, stroke: 'none' }, g);
+
+    /* la courbe de pression, sous la coupe : un trait pâle, et le même en couleur quand il agit */
+    const courbes = [['hp', 'M50 345 H300', hp], ['goulot', 'M300 345 C380 345 440 440 520 440', C.feu], ['bout', 'M520 440 H900', bp]];
+    courbes.forEach(([, dd]) => D.el('path', { d: dd, fill: 'none', stroke: C.trait, 'stroke-width': 4, 'stroke-linecap': 'round' }, d));
+    courbes.forEach(([c, dd, coul]) => D.el('path', { d: dd, fill: 'none', stroke: coul, 'stroke-width': 8, 'stroke-linecap': 'round' }, couche(c, SURBRILLANCE)));
+
+    /* les étiquettes, par-dessus tout ; chacune a sa place libre */
+    const etiquettes = [];
+    const ecrire = (x, y, s, c, coul, o) => {
+      const t = D.texte(d, x, y, s, Object.assign({ 'font-size': 21, 'font-weight': 700, fill: C.navy }, o || {}));
+      etiquettes.push({ t, c, coul });
+    };
+    const M = { 'text-anchor': 'middle' }, F = { 'text-anchor': 'end' };
+    ecrire(56, 84, 'liquide, haute pression', 'hp', hp);
+    ecrire(410, 84, 'passage étroit', 'goulot', C.orange, M);
+    ecrire(560, 84, 'mélange froid : liquide et bulles', 'bout', bp);
+    ecrire(56, 322, 'haute pression', 'hp', hp);
+    ecrire(390, 452, 'la pression tombe', 'goulot', C.orange, F);
+    ecrire(610, 418, 'basse pression', 'bout', bp);
+    ecrire(980, 296, 'vers l’évaporateur', 'sortie', bp, F);
+
+    /* une image : tout avance selon t */
+    const image = t => anime.forEach(f => f(t));
+    image(1.6);
+    if (!FIGE) {
+      let vu = false;
+      const boucle = now => {
+        if (d.isConnected) { vu = true; image(now / 1000); }
+        else if (vu) return;                               /* on a quitté le temps : la boucle s'arrête */
+        requestAnimationFrame(boucle);
+      };
+      requestAnimationFrame(boucle);
+    }
+
+    /* le pas à pas : la partie qui agit s'allume, le reste tourne en retrait */
+    const ALLUME = [
+      ['hp'],
+      ['goulot'],
+      ['bout'],
+      ['bout', 'sortie']
+    ];
+    const allumer = k => {
+      const on = new Set(ALLUME[k]);
+      d.querySelectorAll('[data-c]').forEach(e => e.setAttribute('opacity', on.has(e.getAttribute('data-c')) ? 1 : e.hasAttribute('data-sur') ? 0 : RETRAIT));
+      etiquettes.forEach(e => e.t.setAttribute('fill', on.has(e.c) ? e.coul : C.navy));
     };
 
     const etapes = [
       { titre: 'Le liquide arrive sous haute pression',
         dire: 'À la sortie du condenseur, le fluide est liquide et sous haute pression. Il arrive devant un passage très étroit.',
-        peindre: () => { etape = 0; peindre(); } },
+        peindre: () => allumer(0) },
       { titre: 'Il se faufile dans le passage étroit',
         dire: 'Le liquide est forcé de passer par ce passage très fin. Il perd presque toute sa pression en le traversant.',
-        peindre: () => { etape = 1; peindre(); } },
+        peindre: () => allumer(1) },
       { titre: 'Une partie du liquide bout d’un coup',
         dire: 'À basse pression, le liquide est trop chaud pour rester liquide : des bulles apparaissent. Pour bouillir, la partie qui s’évapore prend de la chaleur au reste du liquide, qui se refroidit.',
-        peindre: () => { etape = 2; peindre(); } },
+        peindre: () => allumer(2) },
       { titre: 'Le mélange froid part vers l’évaporateur',
         dire: 'Ce qui sort est un mélange froid de liquide et de vapeur. Dans l’évaporateur, le liquide finira de bouillir en prenant la chaleur de la pièce.',
-        peindre: () => { etape = 3; peindre(); } }
+        peindre: () => allumer(3) }
     ];
     return pasAPas(d, etapes, 'Ce passage étroit est, selon la machine, un tube capillaire ou un détendeur électronique : le dessin suivant les compare.');
   }
@@ -195,5 +300,5 @@ ${lignes.map(([nom, a, b], i) => {
     return d;
   }
 
-  return { detendre, recapitulatif };
+  return { detendre, lePassageEtroit, recapitulatif };
 })();

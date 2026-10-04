@@ -1,140 +1,289 @@
 /* CartoClim 3.6 — scènes du roof-top.
-   Temps 2 : le caisson en coupe, en six pas — l'air repris, l'air neuf qui se mélange, les filtres, la batterie,
-   le ventilateur, puis, à côté, le groupe frigorifique. Deux états commutables : mode froid (l'été) et mode
-   chaud (l'hiver, appareil réversible) : les couleurs du fluide et de l'air s'inversent, le dessin ne bouge pas.
+   Temps 2 (et temps 1, devant les photos : scene-devant.js) : le caisson en coupe, en six pas — l'air repris,
+   l'air neuf qui se mélange, les filtres, la batterie, le ventilateur, puis, à côté, le groupe frigorifique.
+   Deux états commutables : mode froid (l'été) et mode chaud (l'hiver, appareil réversible) : les couleurs du
+   fluide et de l'air s'inversent, le fluide change de sens, le dessin ne bouge pas.
    Croix du frigoriste (charte R6) : condenseur en haut (avec son hélice), détendeur à gauche, compresseur à droite,
    évaporateur en bas — ici la batterie du compartiment de l'air. Rouge = chaud, bleu = froid (charte).
-   Aucun texte sur un tracé : chaque étiquette a sa place libre, vérifiée par outils/controler-station-navigateur.mjs.
-   Temps 5 : ce qu'on raccorde sur le toit. */
+
+   L'AIR et le FLUIDE circulent (journée « Animer les réseaux », 04/10/2026, sur le modèle du pilote 3.2). Tout se
+   calcule à partir du temps t (requestAnimationFrame — ni SMIL ni animation CSS) :
+   · l'air : des chevrons qui avancent, couleur = température (air de la salle tiède, air neuf chaud l'été et froid
+     l'hiver, qui se mélangent, puis ressortent refroidis ou chauffés par la batterie) ; le ventilateur et l'hélice
+     tournent ; dehors, l'air balaie la batterie du groupe et sort par l'hélice ;
+   · le fluide : LIQUIDE = tube plein, des reflets qui filent ; VAPEUR = petites molécules séparées ; là où il bout
+     (évaporateur) des bulles, là où il se condense (condenseur) des gouttes ; en mode chaud la vanne 4 voies
+     croise ses voies et tout le circuit tourne à l'envers ;
+   · le pas à pas allume la partie qui agit ; le reste continue de tourner, en retrait.
+   L'interrupteur « Animations » du site coupé (moteur/animations.js) : le dessin reste fixe, le pas à pas marche.
+   Le réglage du système, lui, n'arrête rien : c'est le cours qui bouge.
+   Temps 5 : ce qu'on raccorde sur le toit.
+
+   Dessin : VOYAGE_DESSIN (jouerezo/moteur/voyage-dessin.js) — couleur de température, hélice, chevron, métal,
+   filigrane R9. Aucun texte sur un tracé, ni sur le trajet d'un chevron ou d'une molécule : vérifié par
+   outils/controler-station-navigateur.mjs. Étiquettes en taille 21 dans 1 000 : au moins 18,7 px quand la scène
+   est devant, à 1 280 px. */
 const ScenesStation = (() => {
   'use strict';
   const { svg, C, pasAPas, etats } = SceneKit;
   const ROUGE = C.chaud, BLEU = C.froid;
 
-  /* petit chevron plein, posé sur un tube pour dire dans quel sens le fluide y va */
-  const tri = (x, y, sens, s = 5) => ({
-    l: `${x - s},${y} ${x + s},${y - s} ${x + s},${y + s}`,
-    r: `${x + s},${y} ${x - s},${y - s} ${x - s},${y + s}`,
-    d: `${x},${y + s} ${x - s},${y - s} ${x + s},${y - s}`,
-    u: `${x},${y - s} ${x - s},${y + s} ${x + s},${y + s}`
-  })[sens];
-  const chev = (x, y, sens) => `<polygon points="${tri(x, y, sens)}" fill="${C.papier}" stroke="none"/>`;
+  /* ---------- la circulation : un trajet (ligne brisée) et ce qui avance dessus (briques du pilote 3.2) ---------- */
+  function trajet(pts) {
+    const seg = []; let L = 0;
+    for (let i = 1; i < pts.length; i++) {
+      const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], l = Math.hypot(x1 - x0, y1 - y0);
+      seg.push({ x0, y0, x1, y1, l, s: L }); L += l;
+    }
+    const a = s => {
+      const g = seg.find(k => s <= k.s + k.l) || seg[seg.length - 1], f = g.l ? (s - g.s) / g.l : 0;
+      return [g.x0 + (g.x1 - g.x0) * f, g.y0 + (g.y1 - g.y0) * f, Math.atan2(g.y1 - g.y0, g.x1 - g.x0) * 180 / Math.PI];
+    };
+    return { pts, L, a, d: 'M ' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L ') };
+  }
+  /* un coude de serpentin : demi-cercle de (x, ya) à (x, yb), bombé à droite (+1) ou à gauche (-1) */
+  function coude(x, ya, yb, sens) {
+    const r = Math.abs(yb - ya) / 2, cy = (ya + yb) / 2, v = yb > ya ? 1 : -1, p = [];
+    for (let i = 1; i < 10; i++) { const th = -Math.PI / 2 + Math.PI * i / 10; p.push([x + sens * r * Math.cos(th), cy + v * r * Math.sin(th)]); }
+    return p;
+  }
+  /* un trajet coupé à la fraction f de sa longueur : [l'amont, l'aval] */
+  function couper(tr, f) {
+    const [x, y] = tr.a(tr.L * f), amont = [tr.pts[0]];
+    let cumul = 0;
+    for (let i = 1; i < tr.pts.length; i++) {
+      cumul += Math.hypot(tr.pts[i][0] - tr.pts[i - 1][0], tr.pts[i][1] - tr.pts[i - 1][1]);
+      if (cumul >= tr.L * f) return [trajet(amont.concat([[x, y]])), trajet([[x, y]].concat(tr.pts.slice(i)))];
+      amont.push(tr.pts[i]);
+    }
+    return [tr, tr];
+  }
+  /* n repères régulièrement espacés qui avancent à v unités par seconde ; poser(repère, x, y, angle, f) */
+  function filer(parent, tr, n, v, creer, poser) {
+    const D = window.VOYAGE_DESSIN, rep = Array.from({ length: n }, (_, i) => creer(parent, i));
+    return t => rep.forEach((e, i) => {
+      const f = D.frac(i / n + t * v / tr.L), [x, y, ang] = tr.a(f * tr.L);
+      poser(e, x, y, ang, f);
+    });
+  }
 
   function roofTopEnCoupe() {
-    const d = svg('0 0 900 540',
-      'Un roof-top en coupe, posé sur le toit. À gauche, le compartiment de l’air : l’air repris de la salle et l’air neuf du dehors se mélangent, traversent les filtres, la batterie et le ventilateur, puis repartent dans la gaine de soufflage. À droite, le groupe frigorifique : le compresseur, le condenseur avec son hélice et le détendeur.');
-    let etape = 0, mode = 'froid';
-    const on = k => etape === k;
-    const hl = k => on(k) ? C.feu : C.navy;                 /* la pièce qui agit s'allume */
-    const sw = k => on(k) ? 5 : 3;
+    const D = window.VOYAGE_DESSIN;
+    const d = svg('0 0 1000 540',
+      'Un roof-top en coupe, posé sur le toit. À gauche, le compartiment de l’air : l’air repris de la salle et l’air neuf du dehors se mélangent, traversent les filtres, la batterie et le ventilateur, puis repartent dans la gaine de soufflage. À droite, le groupe frigorifique : le compresseur, le condenseur avec son hélice et le détendeur. L’air et le fluide circulent : les chevrons et les molécules qui avancent montrent leur sens.');
+    const FIGE = !!(window.inerwebAnimations && window.inerwebAnimations.actives === false);
+    const RETRAIT = 0.4;                                   /* ce qui n'agit pas à cette étape */
+    const CUIVRE = '#c57a45', CUIVRE_BORD = '#7a3f1c', CREUX = '#f4f8fc';
+    let etape = 0, mode = 'froid', tc = 1.6;
+    const froid = () => mode === 'froid';
+    const anime = [];                                      /* ce que chaque image fait avancer, quel que soit le mode */
+    const animeMode = { froid: [], chaud: [] };            /* et ce qui ne vaut que pour un mode */
+    const couche = (c, parent) => D.el('g', { 'data-c': c }, parent === undefined ? d : parent);   /* une partie du dessin, que le pas à pas allume */
 
+    D.defs(d);
+    D.el('rect', { x: 6, y: 6, width: 988, height: 528, rx: 16, fill: C.papier, stroke: C.trait }, d);
+
+    /* le caisson, ses deux compartiments ; le toit, avec ses deux ouvertures : reprise à gauche, soufflage à droite */
+    D.el('rect', { x: 30, y: 78, width: 940, height: 318, rx: 10, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, d);
+    /* filigrane R9 : logo officiel + « by inerweb.fr », 3 exemplaires dont un au centre, au-dessus du fond du caisson, derrière le reste ;
+       cartouche « CartoClim » (le nom du produit) à la place de « Studio » (les vidéos) */
+    D.filigrane(d, [[235, 150], [500, 279], [765, 407]], 250).querySelectorAll('text')
+      .forEach(t => { if (t.textContent === 'Studio') t.textContent = 'CartoClim'; });
+    D.el('path', { d: 'M600 78 V396', fill: 'none', stroke: C.navy, 'stroke-width': 2, 'stroke-dasharray': '10 7' }, d);
+    D.el('path', { d: 'M30 404 H70 M130 404 H540 M600 404 H970', fill: 'none', stroke: C.gris, 'stroke-width': 10, 'stroke-dasharray': '26 10' }, d);
+    D.el('path', { d: 'M70 404 V444 M130 404 V444 M540 404 V444 M600 404 V444', fill: 'none', stroke: C.navy, 'stroke-width': 3 }, d);
+
+    /* 1 · le caisson de mélange et ses volets ; 2 · les filtres ; 3 · les ailettes de la batterie ; 4 · le ventilateur */
+    let g = couche('melange');
+    D.el('rect', { x: 50, y: 290, width: 170, height: 94, rx: 6, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
+    D.el('path', { d: 'M114 292 L150 304 M72 382 L108 370', fill: 'none', stroke: C.navy, 'stroke-width': 4, 'stroke-linecap': 'round' }, g);
+    g = couche('neuf');
+    D.el('rect', { x: 100, y: 74, width: 80, height: 12, rx: 3, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
+    g = couche('filtres');
+    D.el('rect', { x: 250, y: 290, width: 26, height: 94, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
+    D.el('path', { d: 'M250 296 l26 12 l-26 12 l26 12 l-26 12 l26 12 l-26 12 l26 12', fill: 'none', stroke: C.navy, 'stroke-width': 2 }, g);
+    g = couche('batterie');
+    D.el('rect', { x: 332, y: 290, width: 80, height: 94, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
+    for (let i = 0; i < 9; i++) D.el('line', { x1: 340 + i * 8.5, y1: 296, x2: 340 + i * 8.5, y2: 378, stroke: C.trait, 'stroke-width': 2 }, g);
+    /* une roue de turbine : le cercle reste, la roue tourne */
+    const roue = (parent, x, y, r) => {
+      const c = D.el('g', { transform: 'translate(' + x + ' ' + y + ')' }, parent);
+      D.el('circle', { r, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, c);
+      const w = D.el('g', {}, c);
+      for (let i = 0; i < 16; i++) D.el('path', { d: 'M ' + r * 0.56 + ' 0 Q ' + r * 0.8 + ' ' + (-r * 0.02) + ' ' + r * 0.88 + ' ' + (-r * 0.26),
+        fill: 'none', stroke: C.navy, 'stroke-width': 2.6, 'stroke-linecap': 'round', transform: 'rotate(' + i * 22.5 + ')' }, w);
+      D.el('circle', { r: r * 0.5, fill: 'none', stroke: C.navy, 'stroke-width': 1.5, opacity: 0.5 }, c);
+      return a => w.setAttribute('transform', 'rotate(' + (a % 360).toFixed(1) + ')');
+    };
+    const ventilo = roue(couche('ventilateur'), 500, 337, 46);
+
+    /* 5 · le groupe frigorifique : hélice, ailettes du condenseur, compresseur, vanne 4 voies, détendeur */
+    g = couche('groupe');
+    const helice = D.ventilateur(g, 780, 128, 34);
+    D.el('rect', { x: 756, y: 194, width: 188, height: 66, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
+    for (let i = 0; i < 12; i++) D.el('line', { x1: 770 + i * 14, y1: 198, x2: 770 + i * 14, y2: 256, stroke: C.trait, 'stroke-width': 2 }, g);
+    D.el('rect', { x: 850, y: 292, width: 90, height: 32, rx: 6, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
+    D.el('rect', { x: 860, y: 340, width: 80, height: 40, rx: 10, fill: 'url(#vm-acier)', stroke: C.navy, 'stroke-width': 3 }, g);
+    D.el('path', { d: 'M654 230 v32 l18 -16 z M690 230 v32 l-18 -16 z', fill: C.papier, stroke: C.navy, 'stroke-width': 3, 'stroke-linejoin': 'round' }, g);
+
+    /* l'air : des chevrons qui avancent ; couleur(x, y) donne la couleur de l'air à l'endroit où il passe */
+    const T_REPRISE = () => froid() ? 0.55 : 0.42;        /* la salle : tiède l'été, plus fraîche l'hiver */
+    const T_NEUF = () => froid() ? 0.85 : 0.12;            /* le dehors : chaud l'été, froid l'hiver */
+    const T_MELANGE = () => 0.7 * T_REPRISE() + 0.3 * T_NEUF();
+    const T_SOUFFLE = () => froid() ? 0.08 : 0.92;         /* après la batterie : refroidi ou chauffé */
+    const T_REJET = () => froid() ? 0.97 : 0.02;           /* dehors, après la batterie du groupe */
+    const air = (c, pts, couleur, o = {}) => {
+      const tr = trajet(pts), e = o.echelle || 0.5, fondu = (o.fondu || 16) / tr.L, sc = D.el('g', { transform: 'scale(' + e + ')' }, c);   /* D.chevron se place dans un groupe réduit */
+      anime.push(filer(sc, tr, Math.max(2, Math.round(tr.L / (o.pas || 44))), o.v || 70, p => D.chevron(p),
+        (ch, x, y, ang, f) => ch(x / e, y / e, ang - 90, couleur(x, y), D.fenetre(f, 0, 1, fondu))));
+    };
+    air(couche('reprise'), [[100, 456], [100, 386]], () => D.couleur(T_REPRISE()));
+    air(couche('neuf'), [[140, 60], [140, 288]], () => D.couleur(T_NEUF()));
+    air(couche('air'), [[226, 337], [436, 337]], x => D.couleur(x < 332 ? T_MELANGE() : x > 412 ? T_SOUFFLE() : D.lerp(T_MELANGE(), T_SOUFFLE(), (x - 332) / 80)));
+    air(couche('soufflage'), [[552, 337], [572, 337], [572, 448]], () => D.couleur(T_SOUFFLE()));
+    air(couche('rejet'), [[780, 258], [780, 66]], (x, y) => D.couleur(y > 260 ? (froid() ? 0.8 : 0.12) : y < 194 ? T_REJET() : D.lerp(froid() ? 0.8 : 0.12, T_REJET(), (260 - y) / 66)));
+
+    /* les briques du fluide, pour un mode : tube de cuivre, liquide (tube plein à reflets), vapeur (molécules), bulles */
+    const brique = liste => {
+      const tube = (g, tr, ext, int) => {
+        const t = { d: tr.d, fill: 'none', 'stroke-linejoin': 'round', 'stroke-linecap': 'round' };
+        D.el('path', Object.assign({ stroke: CUIVRE_BORD, 'stroke-width': ext }, t), g);
+        D.el('path', Object.assign({ stroke: CUIVRE, 'stroke-width': ext - 3 }, t), g);
+        D.el('path', Object.assign({ stroke: CREUX, 'stroke-width': int }, t), g);
+      };
+      const liquide = (g, tr, int, couleur, v) => {
+        const t = { d: tr.d, fill: 'none', 'stroke-linejoin': 'round' };
+        D.el('path', Object.assign({ stroke: couleur, 'stroke-width': int, opacity: 0.92 }, t), g);
+        const reflet = D.el('path', Object.assign({ stroke: C.papier, 'stroke-width': Math.max(1.6, int * 0.28), 'stroke-dasharray': '12 30', opacity: 0.85 }, t), g);
+        liste.push(t2 => reflet.setAttribute('stroke-dashoffset', (-(t2 * v) % 42).toFixed(1)));
+      };
+      const vapeur = (g, tr, int, temp, v, pas, gouttes) => {
+        D.el('path', { d: tr.d, fill: 'none', stroke: D.couleur(temp, true), 'stroke-width': int, opacity: 0.25, 'stroke-linejoin': 'round' }, g);
+        liste.push(filer(g, tr, Math.max(2, Math.round(tr.L / pas)), v,
+          p => D.el('circle', { r: int * 0.3 }, p),
+          (m, x, y, ang, f) => {
+            const goutte = gouttes && f > gouttes;
+            m.setAttribute('cx', x.toFixed(1)); m.setAttribute('cy', y.toFixed(1));
+            m.setAttribute('fill', goutte ? D.couleur(0.62) : D.couleur(temp, true));
+            m.setAttribute('stroke', goutte ? 'none' : C.navy); m.setAttribute('stroke-opacity', 0.5);
+            m.setAttribute('r', (goutte ? int * 0.26 : int * 0.3).toFixed(1));
+          }));
+      };
+      const bulles = (g, tr, int, v) => liste.push(filer(g, tr, Math.round(tr.L / 17), v,
+        p => D.el('circle', { fill: C.papier, 'fill-opacity': 0.55, stroke: C.papier, 'stroke-width': 1.2 }, p),
+        (b, x, y, ang, f) => { b.setAttribute('cx', x.toFixed(1)); b.setAttribute('cy', y.toFixed(1));
+          b.setAttribute('r', (0.6 + int * 0.33 * f).toFixed(1)); b.setAttribute('opacity', D.borne(f * 1.6, 0, 1).toFixed(2)); }));
+      return { tube, liquide, vapeur, bulles };
+    };
+
+    /* le circuit, pour un mode, dans le sens du fluide. Les deux batteries sont en serpentin ; la ligne du liquide
+       (condenseur → détendeur → batterie de l'air) est droite ; la vanne 4 voies fait passer le fluide tout droit
+       (froid) ou en croix (chaud). Le condenseur est alimenté par le haut, le liquide sort en bas. */
+    const DEHORS = [[928, 210], [772, 210], ...coude(772, 210, 228, -1), [772, 228], [928, 228], ...coude(928, 228, 246, 1), [928, 246], [772, 246]];
+    const BOBINE = [[345, 312], [400, 312], ...coude(400, 312, 337, 1), [400, 337], [345, 337], ...coude(345, 337, 362, -1), [345, 362], [400, 362]];
+    const zone = D.el('g', {}, d);                         /* le circuit du mode choisi s'accroche ici */
+    const circuits = {};
+    ['froid', 'chaud'].forEach(m => {
+      const f = m === 'froid', B = brique(animeMode[m]);
+      const gB = couche('batterie', null), gG = couche('groupe', null);   /* détachés : on accroche le bon selon le mode */
+      circuits[m] = [gB, gG];
+      /* batterie du caisson : évaporateur l'été (le liquide bout), condenseur l'hiver (la vapeur se condense) */
+      const bob = trajet(f ? BOBINE : BOBINE.slice().reverse()), [b1, b2] = couper(bob, 0.55);
+      B.tube(gB, bob, 12, 7);
+      if (f) { B.liquide(gB, b1, 7, D.couleur(0.08), 30); B.bulles(gB, b1, 7, 30); B.vapeur(gB, b2, 7, 0.16, 55, 20); }
+      else { B.vapeur(gB, b1, 7, 0.92, 55, 20, 0.55); B.liquide(gB, b2, 7, D.couleur(0.62), 30); }
+      /* batterie de dehors : condenseur l'été, évaporateur l'hiver */
+      const deh = trajet(f ? DEHORS : DEHORS.slice().reverse()), [h1, h2] = couper(deh, 0.55);
+      B.tube(gG, deh, 12, 7);
+      if (f) { B.vapeur(gG, h1, 7, 0.92, 55, 20, 0.55); B.liquide(gG, h2, 7, D.couleur(0.62), 30); }
+      else { B.liquide(gG, h1, 7, D.couleur(0.08), 30); B.bulles(gG, h1, 7, 30); B.vapeur(gG, h2, 7, 0.16, 55, 20); }
+      /* les lignes : refoulement (vapeur chaude), liquide haute pression, liquide basse pression, gaz basse pression */
+      const refoul = trajet(f ? [[918, 340], [918, 282], [956, 282], [956, 210], [928, 210]]
+        : [[918, 340], [918, 324], [872, 292], [872, 272], [420, 272], [420, 362], [400, 362]]);
+      const liqHP = trajet(f ? [[772, 246], [690, 246]] : [[345, 312], [345, 246], [654, 246]]);
+      const liqBP = trajet(f ? [[654, 246], [345, 246], [345, 312]] : [[690, 246], [772, 246]]);
+      const gaz = trajet(f ? [[400, 362], [420, 362], [420, 272], [872, 272], [872, 340]]
+        : [[928, 210], [956, 210], [956, 282], [918, 282], [918, 292], [872, 324], [872, 340]]);
+      [[refoul, 14, 8], [liqHP, 12, 6], [liqBP, 12, 6], [gaz, 16, 10]].forEach(([tr, ext, int]) => B.tube(gG, tr, ext, int));
+      B.vapeur(gG, refoul, 8, 0.95, 85, 20);
+      B.liquide(gG, liqHP, 6, D.couleur(0.62), 30);
+      B.liquide(gG, liqBP, 6, D.couleur(0.08), 32);
+      B.vapeur(gG, gaz, 10, 0.18, 60, 26);
+    });
+
+    /* les étiquettes, par-dessus tout ; chacune a sa place libre. c = la couche qui l'allume ('*' : toujours) */
+    const etiquettes = [];
+    const ecrire = (x, y, s, c, coul, o) => {
+      const base = Object.assign({ 'font-size': 21, fill: C.navy }, o || {});
+      const t = D.texte(d, x, y, typeof s === 'function' ? s() : s, base);
+      if (c) etiquettes.push({ t, s, c, coul, gras: base['font-weight'] === 700, base: base.fill });
+      return t;
+    };
+    const G = { 'font-weight': 700 }, M = { 'text-anchor': 'middle' }, F = { 'text-anchor': 'end' }, GRIS = { fill: C.gris };
+    const pDehors = () => froid() ? ROUGE : BLEU, pBatterie = () => froid() ? BLEU : ROUGE;
+    ecrire(966, 36, () => froid() ? 'MODE FROID — l’été' : 'MODE CHAUD — l’hiver, appareil réversible', '*', pBatterie, Object.assign({}, G, F));
+    ecrire(196, 64, 'air neuf, de dehors', 'neuf', C.ambre);
+    ecrire(196, 108, 'TRAITEMENT DE L’AIR', null, null, G);
+    ecrire(196, 138, 'comme une centrale de traitement d’air', null, null, GRIS);
+    ecrire(620, 108, 'PRODUCTION', null, null, G);
+    ecrire(620, 138, 'DE FROID', null, null, G);
+    ecrire(160, 226, 'mélange', 'melange', C.orange);
+    ecrire(272, 226, 'filtres', 'filtres', C.orange, M);
+    ecrire(372, 226, 'batterie', 'batterie', pBatterie, Object.assign({}, M));
+    ecrire(500, 226, 'ventilateur', 'ventilateur', C.orange, M);
+    ecrire(24, 490, 'reprise de la salle', 'reprise', C.ambre);
+    ecrire(570, 490, 'soufflage vers la salle', 'soufflage', pBatterie, M);
+    ecrire(335, 470, 'la salle à climatiser', null, null, Object.assign({}, GRIS, M));
+    ecrire(966, 432, 'le toit', null, null, Object.assign({}, GRIS, F));
+    ecrire(956, 134, 'hélice', 'groupe', C.navy, F);
+    ecrire(956, 176, () => froid() ? 'condenseur' : 'évaporateur', 'groupe', pDehors, Object.assign({}, G, F));
+    ecrire(672, 214, 'détendeur', 'groupe', C.navy, M);
+    ecrire(836, 314, 'vanne 4 voies', 'groupe', C.navy, F);
+    ecrire(846, 368, 'compresseur', 'groupe', C.orange, F);
+    ecrire(764, 68, () => froid() ? 'air chaud rejeté' : 'air froid rejeté', 'rejet', pDehors, Object.assign({}, G, F));
+    /* la légende des couleurs */
+    D.el('rect', { x: 720, y: 503, width: 22, height: 12, fill: ROUGE, stroke: 'none' }, d);
+    ecrire(750, 515, 'chaud', null, null);
+    D.el('rect', { x: 850, y: 503, width: 22, height: 12, fill: BLEU, stroke: 'none' }, d);
+    ecrire(880, 515, 'froid', null, null);
+
+    /* une image : tout avance selon t */
+    const image = t => {
+      tc = t; helice(t * 260); ventilo(t * 320);
+      anime.forEach(f => f(t)); animeMode[mode].forEach(f => f(t));
+    };
+    if (!FIGE) {
+      let vu = false;
+      const boucle = now => {
+        if (d.isConnected) { vu = true; image(now / 1000); }
+        else if (vu) return;                               /* on a quitté le temps : la boucle s'arrête */
+        requestAnimationFrame(boucle);
+      };
+      requestAnimationFrame(boucle);
+    }
+
+    /* le pas à pas : la partie qui agit s'allume, le reste tourne en retrait */
+    const ALLUME = [
+      ['reprise'],
+      ['reprise', 'neuf', 'melange', 'air'],
+      ['filtres', 'air'],
+      ['batterie', 'air'],
+      ['ventilateur', 'soufflage'],
+      ['groupe', 'rejet']
+    ];
     const peindre = () => {
-      const froid = mode === 'froid';
-      const pDehors = froid ? ROUGE : BLEU;                  /* côté dehors : condenseur l'été, évaporateur l'hiver */
-      const pBatterie = froid ? BLEU : ROUGE;                /* côté batterie : évaporateur l'été, condenseur l'hiver */
-      const air2 = pBatterie;                                /* l'air qui sort de la batterie */
-      const fleche = (dd, col, w = 5) => `<path d="${dd}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linejoin="round" marker-end="url(#a-${col === BLEU ? 'b' : col === ROUGE ? 'r' : 'n'})"/>`;
-      const tube = (dd, col, w = 6) => `<path d="${dd}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linejoin="round"/>`;
-
-      d.innerHTML = `
-<defs>
-  <marker id="a-n" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="12" refY="8" orient="auto"><path d="M0 0 L16 8 L0 16 z" fill="${C.navy}"/></marker>
-  <marker id="a-b" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="12" refY="8" orient="auto"><path d="M0 0 L16 8 L0 16 z" fill="${BLEU}"/></marker>
-  <marker id="a-r" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="12" refY="8" orient="auto"><path d="M0 0 L16 8 L0 16 z" fill="${ROUGE}"/></marker>
-</defs>
-<rect x="10" y="10" width="880" height="520" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-<text x="40" y="34" font-size="16" font-weight="700" fill="${froid ? BLEU : ROUGE}">${froid ? 'MODE FROID — l’été' : 'MODE CHAUD — l’hiver, appareil réversible'}</text>
-
-<!-- le toit, avec ses deux ouvertures : reprise à gauche, soufflage à droite -->
-<path d="M30 442 H60 M110 442 H440 M490 442 H870" fill="none" stroke="${C.gris}" stroke-width="10" stroke-dasharray="26 10"/>
-<text x="866" y="466" text-anchor="end" font-size="14" fill="${C.gris}">le toit</text>
-<text x="290" y="486" text-anchor="middle" font-size="14" fill="${C.gris}">la salle à climatiser</text>
-
-<!-- le caisson, ses deux compartiments -->
-<rect x="40" y="70" width="820" height="366" rx="10" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
-<path d="M520 70 V436" fill="none" stroke="${C.navy}" stroke-width="2" stroke-dasharray="10 7"/>
-<text x="170" y="122" font-size="16" font-weight="700" fill="${C.navy}">TRAITEMENT DE L’AIR</text>
-<text x="170" y="144" font-size="14" fill="${C.gris}">comme une centrale de traitement d’air</text>
-<text x="538" y="100" font-size="16" font-weight="700" fill="${C.navy}">PRODUCTION</text>
-<text x="538" y="120" font-size="16" font-weight="700" fill="${C.navy}">DE FROID</text>
-
-<!-- gaines sous le toit -->
-<path d="M60 442 V496 M110 442 V496 M440 442 V496 M490 442 V496" fill="none" stroke="${C.navy}" stroke-width="3"/>
-<text x="85" y="518" text-anchor="middle" font-size="14" fill="${C.navy}">reprise de la salle</text>
-<text x="465" y="518" text-anchor="middle" font-size="14" fill="${C.navy}">soufflage vers la salle</text>
-
-<!-- la grille d'air neuf, sur le dessus -->
-<rect x="75" y="64" width="70" height="12" rx="3" fill="${C.papier}" stroke="${on(1) ? C.feu : C.navy}" stroke-width="${on(1) ? 4 : 2}"/>
-<text x="160" y="58" font-size="15" fill="${C.navy}">air neuf, de dehors</text>
-
-<!-- 1 · caisson de mélange, avec ses volets -->
-<rect x="55" y="315" width="125" height="95" rx="6" fill="${C.papier}" stroke="${hl(1)}" stroke-width="${sw(1)}"/>
-<path d="M95 320 L125 334 M70 405 L100 391" fill="none" stroke="${hl(1)}" stroke-width="4" stroke-linecap="round"/>
-<text x="140" y="427" text-anchor="middle" font-size="15" font-weight="700" fill="${on(1) ? C.orange : C.navy}">mélange</text>
-
-<!-- 2 · filtres -->
-<rect x="205" y="315" width="22" height="95" fill="${C.papier}" stroke="${hl(2)}" stroke-width="${sw(2)}"/>
-<path d="M205 319 l22 12 l-22 12 l22 12 l-22 12 l22 12 l-22 12 l22 12" fill="none" stroke="${hl(2)}" stroke-width="2"/>
-<text x="216" y="427" text-anchor="middle" font-size="15" font-weight="700" fill="${on(2) ? C.orange : C.navy}">filtres</text>
-
-<!-- 3 · batterie : évaporateur l'été, condenseur l'hiver -->
-<rect x="270" y="315" width="60" height="95" fill="${C.papier}" stroke="${hl(3)}" stroke-width="${sw(3)}"/>
-<g stroke="${C.trait}" stroke-width="2">${[0, 1, 2, 3, 4, 5, 6].map(i => `<line x1="${280 + i * 7}" y1="321" x2="${280 + i * 7}" y2="404"/>`).join('')}</g>
-<g stroke="${pBatterie}" stroke-width="${on(3) ? 6 : 4}" fill="none"><path d="M274 336 h52 M274 358 h52 M274 380 h52 M274 398 h52"/></g>
-<text x="300" y="427" text-anchor="middle" font-size="15" font-weight="700" fill="${on(3) ? pBatterie : C.navy}">batterie</text>
-
-<!-- 4 · ventilateur centrifuge et sa gaine de soufflage -->
-<circle cx="395" cy="362" r="34" fill="${C.papier}" stroke="${hl(4)}" stroke-width="${sw(4)}"/>
-<circle cx="395" cy="362" r="7" fill="none" stroke="${hl(4)}" stroke-width="3"/>
-<g fill="none" stroke="${hl(4)}" stroke-width="3" stroke-linecap="round">${[0, 60, 120, 180, 240, 300].map(a => `<path transform="rotate(${a} 395 362)" d="M402 362 q10 -3 20 6"/>`).join('')}</g>
-<path d="M429 335 H490 V436 M429 389 H440 V436" fill="none" stroke="${C.navy}" stroke-width="3"/>
-<text x="390" y="427" text-anchor="middle" font-size="15" font-weight="700" fill="${on(4) ? C.orange : C.navy}">ventilateur</text>
-
-<!-- 5 · le groupe frigorifique : condenseur en haut, hélice, compresseur à droite, détendeur à gauche -->
-<circle cx="680" cy="113" r="26" fill="${C.papier}" stroke="${hl(5)}" stroke-width="${sw(5)}"/>
-<path d="M680 87 v52 M654 113 h52" fill="none" stroke="${hl(5)}" stroke-width="3"/>
-<text x="716" y="118" font-size="15" fill="${C.gris}">hélice</text>
-<rect x="600" y="155" width="160" height="50" fill="${C.papier}" stroke="${hl(5)}" stroke-width="${sw(5)}"/>
-<g stroke="${C.trait}" stroke-width="2">${[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => `<line x1="${612 + i * 13.6}" y1="159" x2="${612 + i * 13.6}" y2="201"/>`).join('')}</g>
-<g stroke="${pDehors}" stroke-width="${on(5) ? 6 : 4}" fill="none"><path d="M604 167 h152 M604 180 h152 M604 193 h152"/></g>
-<text x="680" y="230" text-anchor="middle" font-size="15" font-weight="700" fill="${on(5) ? pDehors : C.navy}">${froid ? 'condenseur' : 'évaporateur'}</text>
-<path d="M539 234 h32 l-16 16 z M539 266 h32 l-16 -16 z" fill="${C.papier}" stroke="${C.navy}" stroke-width="3" stroke-linejoin="round"/>
-<text x="580" y="256" font-size="15" font-weight="700" fill="${C.navy}">détendeur</text>
-<rect x="735" y="366" width="80" height="50" rx="10" fill="${C.papier}" stroke="${hl(5)}" stroke-width="${sw(5)}"/>
-<text x="726" y="396" text-anchor="end" font-size="15" font-weight="700" fill="${on(5) ? C.orange : C.navy}">compresseur</text>
-<rect x="735" y="310" width="80" height="34" rx="6" fill="${C.papier}" stroke="${C.navy}" stroke-width="3"/>
-<text x="726" y="332" text-anchor="end" font-size="15" font-weight="700" fill="${C.navy}">vanne 4 voies</text>
-
-<!-- les tubes : couleur = côté chaud ou côté froid, le sens est donné par les chevrons -->
-${tube(`M795 310 V180 H760`, pDehors)}
-${tube(`M600 180 H555 V234`, pDehors)}
-${tube(`M555 266 V275 H285 V315`, pBatterie)}
-${tube(`M315 315 V297 H755 V310`, pBatterie)}
-${tube(`M755 344 V366`, BLEU)}
-${tube(`M795 344 V366`, ROUGE)}
-${froid
-  ? `${tube('M755 310 V344', BLEU, 5)}${tube('M795 310 V344', ROUGE, 5)}`
-  : `${tube('M795 344 L755 310', ROUGE, 5)}${tube('M755 344 L795 310', BLEU, 5)}`}
-${chev(795, 250, froid ? 'u' : 'd')}
-${chev(578, 180, froid ? 'l' : 'r')}
-${chev(420, 275, froid ? 'l' : 'r')}
-${chev(600, 297, froid ? 'r' : 'l')}
-${chev(755, 355, 'd')}${chev(795, 355, 'u')}
-
-<!-- les flux d'air, un par étape -->
-${on(0) ? `${fleche('M72 490 V396', C.navy)}${fleche('M98 490 V396', C.navy)}` : ''}
-${on(1) ? `${fleche('M95 48 V332', C.navy)}${fleche('M125 48 V332', C.navy)}${fleche('M72 490 V396', C.navy)}${fleche('M98 490 V396', C.navy)}${fleche('M140 362 H198', C.navy)}` : ''}
-${on(2) ? fleche('M186 362 H262', C.navy) : ''}
-${on(3) ? `${fleche('M236 362 H266', C.navy)}${fleche('M334 362 H356', air2)}` : ''}
-${on(4) ? fleche('M429 362 H465 V488', air2) : ''}
-${on(5) ? `${fleche('M662 64 V32', pDehors)}${fleche('M680 64 V32', pDehors)}${fleche('M698 64 V32', pDehors)}
-<text x="722" y="52" font-size="15" font-weight="700" fill="${pDehors}">${froid ? 'air chaud rejeté' : 'air froid rejeté'}</text>` : ''}
-
-<!-- légende des couleurs -->
-<rect x="600" y="470" width="16" height="9" fill="${ROUGE}" stroke="none"/>
-<text x="624" y="480" font-size="14" fill="${C.navy}">chaud</text>
-<rect x="690" y="470" width="16" height="9" fill="${BLEU}" stroke="none"/>
-<text x="714" y="480" font-size="14" fill="${C.navy}">froid</text>`;
+      Object.keys(circuits).forEach(m => circuits[m].forEach(c => {
+        if (m === mode) { if (!c.parentNode) zone.appendChild(c); } else if (c.parentNode) c.parentNode.removeChild(c);
+      }));
+      const on = new Set(ALLUME[etape]); on.add('*');
+      d.querySelectorAll('[data-c]').forEach(e => e.setAttribute('opacity', on.has(e.getAttribute('data-c')) ? 1 : RETRAIT));
+      etiquettes.forEach(e => {
+        const oui = on.has(e.c);
+        if (typeof e.s === 'function') e.t.textContent = e.s();
+        e.t.setAttribute('fill', oui ? (typeof e.coul === 'function' ? e.coul() : e.coul) : e.base);
+        e.t.setAttribute('font-weight', oui || e.gras ? 700 : 400);
+      });
+      image(tc);
     };
 
     const etapes = [

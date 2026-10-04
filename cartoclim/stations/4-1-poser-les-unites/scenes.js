@@ -1,150 +1,389 @@
 /* CartoClim 4.1 — scènes de la pose des deux unités.
-   Temps 2 : une façade en coupe, quatre pas (l'unité intérieure, la carotte, le support extérieur,
-   l'unité extérieure et ses dégagements d'air), avec une bascule « Bien posé / Mal posé » :
-   le mal posé dessine d'un coup les quatre défauts du même chantier (cloison légère, jet sur le lit,
-   carotte à contre-pente, support pas de niveau, unité enfermée) ; le pas actif met le sien en rouge.
+   Temps 2 (et temps 1, devant les photos : scene-devant.js) : une façade en coupe, quatre pas (l'unité
+   intérieure, la carotte, le support extérieur, l'unité extérieure et ses dégagements d'air), avec une
+   bascule « Bien posé / Mal posé » : le mal posé dessine d'un coup les quatre défauts du même chantier
+   (cloison légère, jet sur le lit, carotte à contre-pente, support pas de niveau, unité enfermée) ; le pas
+   actif met le sien en évidence — avec l'AIR qui circule (« Animer les réseaux », 04/10/2026).
    Temps 5 : une pose réussie, en un coup d'œil.
    Aucune cote chiffrée : les dégagements sont ceux de la notice.
-   Aucun texte sur un tracé : chaque étiquette a sa place libre, vérifiée par
-   outils/controler-station-navigateur.mjs. */
+
+   Ce qui bouge (tout se calcule à partir du temps t, requestAnimationFrame — ni SMIL ni animation CSS) :
+   · l'air de l'unité intérieure : des chevrons froids qui passent au-dessus du lit (bien posé) ou qui
+     tombent dessus (mal posé) ; la bascule les change, l'unité s'incline sur sa platine ;
+   · l'eau de la carotte : des gouttes qui descendent la pente et tombent dehors, ou qui refluent dans le
+     mur à contre-pente ;
+   · l'air de l'unité extérieure : il entre d'un côté, sort chaud de l'autre, l'hélice tourne ; enfermée,
+     elle aspire son propre air chaud (la boucle rouge) ;
+   · le support qui penche, la bulle du niveau qui se décale.
+   L'interrupteur « Animations » du site coupé (moteur/animations.js) : le dessin reste fixe, le pas à
+   pas et la bascule marchent. Le réglage du système, lui, n'arrête rien : c'est le cours qui bouge.
+
+   Dessin : VOYAGE_DESSIN (jouerezo/moteur/voyage-dessin.js). Aucun texte sur un tracé, ni sur le trajet d'un
+   chevron : vérifié par outils/controler-station-navigateur.mjs. Étiquettes en taille 21 dans 940 : au moins
+   18,7 px quand la scène est devant, à 1 280 px (colonne de droite : 23 rem). */
 const ScenesStation = (() => {
   'use strict';
   const { svg, C, pasAPas } = SceneKit;
 
+  /* ---------- la circulation : un trajet (ligne brisée) et ce qui avance dessus ---------- */
+  function trajet(pts) {
+    const seg = []; let L = 0;
+    for (let i = 1; i < pts.length; i++) {
+      const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], l = Math.hypot(x1 - x0, y1 - y0);
+      seg.push({ x0, y0, x1, y1, l, s: L }); L += l;
+    }
+    const a = s => {
+      const g = seg.find(k => s <= k.s + k.l) || seg[seg.length - 1], f = g.l ? (s - g.s) / g.l : 0;
+      return [g.x0 + (g.x1 - g.x0) * f, g.y0 + (g.y1 - g.y0) * f, Math.atan2(g.y1 - g.y0, g.x1 - g.x0) * 180 / Math.PI];
+    };
+    return { pts, L, a, d: 'M ' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L ') };
+  }
+  /* un coude de serpentin : demi-cercle de (x, ya) à (x, yb), bombé à droite (+1) ou à gauche (-1) */
+  function coude(x, ya, yb, sens) {
+    const r = Math.abs(yb - ya) / 2, cy = (ya + yb) / 2, v = yb > ya ? 1 : -1, p = [];
+    for (let i = 1; i < 10; i++) { const th = -Math.PI / 2 + Math.PI * i / 10; p.push([x + sens * r * Math.cos(th), cy + v * r * Math.sin(th)]); }
+    return p;
+  }
+  /* un trajet coupé à la fraction f de sa longueur : [l'amont, l'aval] */
+  function couper(tr, f) {
+    const [x, y] = tr.a(tr.L * f), amont = [tr.pts[0]];
+    let cumul = 0;
+    for (let i = 1; i < tr.pts.length; i++) {
+      cumul += Math.hypot(tr.pts[i][0] - tr.pts[i - 1][0], tr.pts[i][1] - tr.pts[i - 1][1]);
+      if (cumul >= tr.L * f) return [trajet(amont.concat([[x, y]])), trajet([[x, y]].concat(tr.pts.slice(i)))];
+      amont.push(tr.pts[i]);
+    }
+    return [tr, tr];
+  }
+  /* un trajet dont les points changent (une unité qui s'éloigne) : tr.maj(nouveaux points) */
+  function trajetVivant(pts) {
+    const tr = trajet(pts);
+    tr.vivant = true;
+    tr.maj = p => Object.assign(tr, trajet(p), { vivant: true, maj: tr.maj });
+    return tr;
+  }
+
+  const CUIVRE = '#c57a45', CUIVRE_BORD = '#7a3f1c', CREUX = '#f4f8fc', EAU = '#4f9fc0';
+  const RETRAIT = 0.4;                                     /* ce qui n'agit pas à cette étape */
+
+  /* ---------- l'atelier d'un dessin vivant ----------
+     Tout se calcule à partir du temps (requestAnimationFrame) — ni SMIL ni animation CSS. Des horloges :
+     « f » le fluide, « a » l'air ; une horloge qui s'arrête fige ce qu'elle mène, une qui accélère le presse
+     (le compresseur Inverter, un ventilateur). Des grandeurs douces (S) : une cible, que le dessin rejoint
+     sans à-coup. Le dessin est construit UNE fois : chaque étape ne fait qu'allumer ou régler. */
+  function vivant(d, W, Ht) {
+    const D = window.VOYAGE_DESSIN;
+    const FIGE = !!(window.inerwebAnimations && window.inerwebAnimations.actives === false);
+    const clocks = {}, S = {}, anime = [], couches = [], etiquettes = [];
+    let temps = 1.6;
+    const horloge = (nom, v0 = 1) => (clocks[nom] = { t: 1.6, v: v0, c: v0 });
+    const vitesse = (nom, x) => { clocks[nom].c = x; if (FIGE) { clocks[nom].v = x; image(temps); } };
+    const doux = (nom, v0) => (S[nom] = { v: v0, c: v0 });
+    const viser = (nom, x) => { S[nom].c = x; if (FIGE) { S[nom].v = x; image(temps); } };
+    horloge('f'); horloge('a');
+    D.defs(d);
+
+    /* le fond, et le filigrane R9 : logo officiel + « by inerweb.fr », 3 exemplaires dont un au centre, derrière
+       tout ; cartouche « CartoClim » (le nom du produit) à la place de « Studio » (les vidéos) */
+    const fond = () => {
+      D.el('rect', { x: 6, y: 6, width: W - 12, height: Ht - 12, rx: 16, fill: C.papier, stroke: C.trait }, d);
+      D.filigrane(d, [[W * 0.235, Ht * 0.278], [W * 0.5, Ht * 0.516], [W * 0.765, Ht * 0.753]], 250 * W / 1000).querySelectorAll('text')
+        .forEach(t => { if (t.textContent === 'Studio') t.textContent = 'CartoClim'; });
+    };
+    /* une partie du dessin, que le pas à pas allume */
+    const couche = (c, parent) => { const g = D.el('g', { 'data-c': c }, parent || d); couches.push({ g, c, v: 1, cible: 1 }); return g; };
+
+    /* n repères régulièrement espacés qui avancent à v unités par seconde sur l'horloge h, décalés de dec ; poser(repère, x, y, angle, f) */
+    const filer = (parent, tr, n, v, creer, poser, h, dec) => {
+      const rep = Array.from({ length: n }, (_, i) => creer(parent, i)), cl = clocks[h || 'a'];
+      anime.push(() => rep.forEach((e, i) => {
+        const f = D.frac(i / n + (dec || 0) + cl.t * v / tr.L), [x, y, ang] = tr.a(f * tr.L);
+        poser(e, x, y, ang, f);
+      }));
+    };
+    const chemin = (g, tr, at) => {
+      const p = D.el('path', Object.assign({ d: tr.d, fill: 'none', 'stroke-linejoin': 'round' }, at), g);
+      if (tr.vivant) anime.push(() => p.setAttribute('d', tr.d));
+      return p;
+    };
+
+    /* les tubes de cuivre, et ce qui coule dedans */
+    const tube = (g, tr, ext, int) => {
+      chemin(g, tr, { stroke: CUIVRE_BORD, 'stroke-width': ext, 'stroke-linecap': 'round' });
+      chemin(g, tr, { stroke: CUIVRE, 'stroke-width': ext - 3, 'stroke-linecap': 'round' });
+      chemin(g, tr, { stroke: CREUX, 'stroke-width': int, 'stroke-linecap': 'round' });
+    };
+    /* liquide : le tube plein, des reflets qui filent dans le sens du fluide */
+    const liquide = (g, tr, int, couleur, v, h) => {
+      chemin(g, tr, { stroke: couleur, 'stroke-width': int, opacity: 0.92 });
+      const reflet = chemin(g, tr, { stroke: C.papier, 'stroke-width': Math.max(1.6, int * 0.28), 'stroke-dasharray': '12 30', opacity: 0.85 });
+      const cl = clocks[h || 'f'];
+      anime.push(() => reflet.setAttribute('stroke-dashoffset', (-(cl.t * v) % 42).toFixed(1)));
+    };
+    /* vapeur : le creux à peine teinté, de petites molécules séparées ; gouttes(f) : où elles deviennent gouttes */
+    const vapeur = (g, tr, int, temp, v, pas, gouttes, h) => {
+      chemin(g, tr, { stroke: D.couleur(temp, true), 'stroke-width': int, opacity: 0.25 });
+      filer(g, tr, Math.max(2, Math.round(tr.L / pas)), v,
+        p => D.el('circle', { r: int * 0.3 }, p),
+        (m, x, y, ang, f) => {
+          const goutte = gouttes && f > gouttes;
+          m.setAttribute('cx', x.toFixed(1)); m.setAttribute('cy', y.toFixed(1));
+          m.setAttribute('fill', goutte ? D.couleur(0.62) : D.couleur(temp, true));
+          m.setAttribute('stroke', goutte ? 'none' : C.navy); m.setAttribute('stroke-opacity', 0.5);
+          m.setAttribute('r', (goutte ? int * 0.26 : int * 0.3).toFixed(1));
+        }, h || 'f');
+    };
+    /* les bulles de l'ébullition : elles naissent, grossissent et filent avec le liquide */
+    const bulles = (g, tr, int, v, h) => filer(g, tr, Math.round(tr.L / 17), v,
+      p => D.el('circle', { fill: C.papier, 'fill-opacity': 0.55, stroke: C.papier, 'stroke-width': 1.2 }, p),
+      (b, x, y, ang, f) => { b.setAttribute('cx', x.toFixed(1)); b.setAttribute('cy', y.toFixed(1));
+        b.setAttribute('r', (0.6 + int * 0.33 * f).toFixed(1)); b.setAttribute('opacity', D.borne(f * 1.6, 0, 1).toFixed(2)); }, h || 'f');
+
+    /* l'air : des chevrons qui avancent sur une ligne brisée ; leur couleur suit la température, o.temp(f, x, y) ;
+       o.act : une grandeur douce (0..1) qui efface l'air quand la machine s'arrête ; o.h : son horloge */
+    const souffle = (g0, pts, o) => {
+      const k = 0.5, g = D.el('g', { transform: 'scale(' + k + ')' }, g0), tr = trajet(pts);
+      filer(g, tr, o.n || Math.max(2, Math.round(tr.L / (o.pas || 48))), o.v || 75, p => D.chevron(p),
+        (ch, x, y, ang, f) => ch(x / k, y / k, ang - 90, D.couleur(o.temp(f, x, y)), D.fenetre(f, 0, 1, 0.06) * (o.act ? D.borne(o.act.v, 0, 1) : 1)), o.h || 'a', o.dec);
+      return tr;
+    };
+    /* des flèches de chaleur qui avancent sur une ligne brisée (D.chaleur pointe vers le bas à angle 0) */
+    const chaleur = (g0, pts, o) => {
+      const k = o.k || 0.8, g = D.el('g', { transform: 'scale(' + k + ')' }, g0), tr = trajet(pts);
+      filer(g, tr, o.n || Math.max(1, Math.round(tr.L / (o.pas || 90))), o.v || 55,
+        p => { const f = D.chaleur(p); if (o.couleur) p.lastChild.setAttribute('stroke', o.couleur); return f; },
+        (a, x, y, ang, f) => a(x / k, y / k, ang - 90, D.fenetre(f, 0, 1, 0.14) * (o.act ? D.borne(o.act.v, 0, 1) : 1)), o.h || 'a', o.dec);
+      return tr;
+    };
+
+    /* le détendeur électronique : le symbole normalisé de la bibliothèque (jouerezo/voyage/symboles/
+       detendeur_electronique--sans-reperes.svg), tracé recopié tel quel et posé sur un tube horizontal ;
+       le blanc devient le papier de la charte, le trait est un peu plus épais */
+    const detendeur = (g0, x, y, k) => {
+      const g = D.el('g', { transform: 'translate(' + x + ' ' + y + ') scale(' + k + ')' }, g0);
+      const sw = { stroke: C.navy, 'stroke-width': 2.4, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' };
+      D.el('circle', Object.assign({ cx: 0, cy: -12, r: 5.83, fill: C.papier }, sw), g);
+      D.el('polygon', Object.assign({ points: '2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0 0,0', fill: C.papier }, sw), g);
+      D.el('line', Object.assign({ x1: 0, y1: 0, x2: 0, y2: -6 }, sw), g);
+      D.el('line', Object.assign({ x1: 10, y1: 0, x2: 11, y2: 0 }, sw), g);
+      D.el('line', Object.assign({ x1: -10, y1: 0, x2: -11, y2: 0 }, sw), g);
+      D.el('circle', { cx: 11, cy: 0, r: 1.5, fill: C.navy, stroke: 'none' }, g);
+      D.el('circle', { cx: -11, cy: 0, r: 1.5, fill: C.navy, stroke: 'none' }, g);
+      return g;
+    };
+
+    /* les ailettes d'une batterie, derrière l'air et les tubes */
+    const ailettes = (g, x0, y1, y2, n, pas) => {
+      for (let i = 0; i < n; i++) D.el('line', { x1: x0 + i * pas, y1, x2: x0 + i * pas, y2, stroke: C.trait, 'stroke-width': 2 }, g);
+    };
+    /* la turbine (dedans) : la roue tourne, a est son angle en degrés */
+    const turbine = (g0, x, y, r) => {
+      const g = D.el('g', { transform: 'translate(' + x + ' ' + y + ')' }, g0);
+      D.el('circle', { r, fill: C.papier, stroke: C.navy, 'stroke-width': 3 }, g);
+      const roue = D.el('g', {}, g);
+      for (let i = 0; i < 16; i++) D.el('path', { d: 'M ' + r * 0.56 + ' 0 Q ' + r * 0.8 + ' ' + (-r * 0.02) + ' ' + r * 0.88 + ' ' + (-r * 0.26),
+        fill: 'none', stroke: C.navy, 'stroke-width': 2.6, 'stroke-linecap': 'round', transform: 'rotate(' + i * 22.5 + ')' }, roue);
+      D.el('circle', { r: r * 0.5, fill: 'none', stroke: C.navy, 'stroke-width': 1.5, opacity: 0.5 }, g);
+      return a => roue.setAttribute('transform', 'rotate(' + (a % 360).toFixed(1) + ')');
+    };
+    /* un ventilateur ou une turbine qui tourne de deg degrés par seconde de l'horloge h */
+    const tourne = (maj, deg, h) => { const cl = clocks[h || 'a']; anime.push(() => maj(cl.t * deg)); };
+
+    /* les étiquettes, par-dessus tout ; chacune a sa place libre. c : la couche qui l'allume, coul : sa couleur allumée */
+    const ecrire = (x, y, s, c, coul, o, parent) => {
+      const base = Object.assign({ 'font-size': 21, fill: C.navy }, o || {});
+      const t = D.texte(parent || d, x, y, s, base);
+      if (c) etiquettes.push({ t, c, coul, gras: base['font-weight'] === 700 });
+      return t;
+    };
+
+    /* une image : tout avance selon le temps */
+    const image = now => {
+      const dt = Math.min(0.1, Math.max(0, now - temps)); temps = now;
+      const k = Math.min(1, dt * 4);
+      for (const n in S) S[n].v += (S[n].c - S[n].v) * k;
+      for (const n in clocks) { const c = clocks[n]; c.v += (c.c - c.v) * Math.min(1, dt * 2.5); c.t += dt * c.v; c.dt = dt; }
+      couches.forEach(L => { L.v += (L.cible - L.v) * Math.min(1, dt * 6); L.g.setAttribute('opacity', L.v.toFixed(2)); });
+      anime.forEach(f => f());
+    };
+    /* le pas à pas : on allume ce qui agit, le reste continue de tourner en retrait ; montre : les couches
+       déjà apparues (les autres sont cachées, leurs étiquettes aussi) */
+    const allumer = (on, montre) => {
+      const voit = c => !montre || montre.has(c);
+      couches.forEach(L => { L.cible = !voit(L.c) ? 0 : on.has(L.c) ? 1 : RETRAIT; if (FIGE) L.v = L.cible; });
+      etiquettes.forEach(e => {
+        const oui = on.has(e.c);
+        e.t.setAttribute('fill', oui ? e.coul : C.navy);
+        e.t.setAttribute('font-weight', oui || e.gras ? 700 : 400);
+        e.t.setAttribute('display', voit(e.c) ? 'inline' : 'none');
+      });
+      image(temps);
+    };
+    const demarrer = () => {
+      image(temps);
+      if (FIGE) return;
+      let vu = false;
+      const boucle = now => {
+        if (d.isConnected) { vu = true; image(now / 1000); }
+        else if (vu) return;                               /* on a quitté le temps : la boucle s'arrête */
+        requestAnimationFrame(boucle);
+      };
+      requestAnimationFrame(boucle);
+    };
+    return { D, FIGE, S, clocks, horloge, vitesse, doux, viser, fond, couche, filer, chemin, tube, liquide, vapeur, bulles, souffle, chaleur,
+      ailettes, detendeur, turbine, tourne, ecrire, allumer, demarrer, anime };
+  }
+
   function poseDesDeuxUnites() {
-    const d = svg('0 0 820 480',
-      'Coupe d’une façade, la pièce à gauche et le dehors à droite. L’unité intérieure est fixée au mur sur sa platine, la carotte traverse le mur en pente vers l’extérieur, l’unité extérieure repose sur un support de niveau avec de l’air libre à l’aspiration et au soufflage.');
+    const d = svg('0 0 940 660',
+      'Coupe d’une façade, la pièce à gauche et le dehors à droite. L’unité intérieure est fixée au mur sur sa platine, la carotte traverse le mur en pente vers l’extérieur, l’unité extérieure repose sur un support de niveau avec de l’air libre à l’aspiration et au soufflage. L’air froid de l’unité intérieure passe au-dessus du lit ; dehors, l’air entre d’un côté et sort chaud de l’autre.');
     let etape = 0, mal = false;
     const malP = document.createElement('p');          /* la phrase « mal posé » du pas courant */
     malP.className = 'verdict bad'; malP.style.display = 'none';
 
+    const V = vivant(d, 940, 660), D = V.D, { couche, ecrire, souffle, doux, viser, horloge, chemin, tourne, anime } = V;
+    const SOL = 580, M = { 'text-anchor': 'middle' }, F = { 'text-anchor': 'end' }, G = { 'font-weight': 700 }, GM = Object.assign({}, G, M);
+    const pente = doux('pente', 0), tI = doux('tI', 0), tE = doux('tE', 0);    /* 0 : bien posé, 1 : mal posé */
+    horloge('w', 1);                                                          /* l'eau : elle descend la pente, ou reflue */
+    const defs = D.el('defs', {}, d);
+    D.el('clipPath', { id: 'm41-clip' }, defs).appendChild(D.el('rect', { x: 440, y: 72, width: 80, height: SOL - 72 }));
+
+    V.fond();
+    /* dedans / dehors, plafond, sol */
+    D.el('line', { x1: 20, y1: 72, x2: 440, y2: 72, stroke: C.gris, 'stroke-width': 3 }, d);
+    D.el('line', { x1: 20, y1: SOL, x2: 440, y2: SOL, stroke: C.gris, 'stroke-width': 3 }, d);
+    D.el('line', { x1: 520, y1: SOL, x2: 920, y2: SOL, stroke: C.gris, 'stroke-width': 3 }, d);
+    D.el('rect', { x: 540, y: 540, width: 380, height: 40, fill: C.air, 'fill-opacity': 0.35, stroke: 'none' }, d);
+    /* le lit */
+    D.el('path', { d: 'M60 558 V580 M282 558 V580', fill: 'none', stroke: C.navy, 'stroke-width': 3 }, d);
+    D.el('rect', { x: 46, y: 530, width: 250, height: 28, rx: 6, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, d);
+    D.el('rect', { x: 56, y: 518, width: 54, height: 14, rx: 7, fill: C.papier, stroke: C.navy, 'stroke-width': 2 }, d);
+
+    /* le mur : plein et hachuré, ou cloison creuse ; la platine y est fixée */
+    let g = couche('murB');
+    D.el('rect', { x: 440, y: 72, width: 80, height: SOL - 72, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, g);
+    const hach = D.el('g', { 'clip-path': 'url(#m41-clip)', stroke: C.trait, 'stroke-width': 2 }, g);
+    for (let y = 72; y < SOL; y += 22) D.el('line', { x1: 440, y1: y + 40, x2: 520, y2: y }, hach);
+    D.el('path', { d: 'M424 136 H458 M424 184 H458', fill: 'none', stroke: C.navy, 'stroke-width': 3 }, g);
+    g = couche('murM');
+    D.el('rect', { x: 440, y: 72, width: 9, height: SOL - 72, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, g);
+    D.el('rect', { x: 511, y: 72, width: 9, height: SOL - 72, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, g);
+    D.el('line', { x1: 480, y1: 72, x2: 480, y2: SOL, stroke: C.gris, 'stroke-width': 2, 'stroke-dasharray': '6 6' }, g);
+    D.el('path', { d: 'M424 136 H449 M424 184 H449', fill: 'none', stroke: C.navy, 'stroke-width': 3 }, g);
+
+    /* l'unité intérieure : sa platine, son air libre autour, son jet */
+    g = couche('ui0');
+    D.el('rect', { x: 262, y: 84, width: 180, height: 134, rx: 8, fill: 'none', stroke: C.gris, 'stroke-width': 2, 'stroke-dasharray': '7 5' }, g);
+    D.el('rect', { x: 434, y: 116, width: 8, height: 88, fill: C.navy, stroke: 'none' }, g);
+    g = couche('jetB');                                    /* bien posé : le jet passe au-dessus du lit */
+    [[318, 212, 120, 258], [348, 214, 150, 296]].forEach(([x1, y1, x2, y2], i) => souffle(g, [[x1, y1], [x2, y2]], { v: 70, pas: 52, dec: i * 0.5, temp: () => 0.1 }));
+    g = couche('jetM');                                    /* mal posé : il tombe droit sur le lit */
+    [[318, 212, 140, 500], [348, 214, 190, 508]].forEach(([x1, y1, x2, y2], i) => souffle(g, [[x1, y1], [x2, y2]], { v: 70, pas: 52, dec: i * 0.5, temp: () => 0.1 }));
+    const gI = D.el('g', {}, d);                           /* l'unité pivote autour de sa platine quand elle se décroche */
+    anime.push(() => gI.setAttribute('transform', 'rotate(' + (-5 * tI.v).toFixed(2) + ' 434 160)'));
+    g = couche('ui', gI);
+    D.el('path', { d: 'M434 120 H292 a12 12 0 0 0 -12 12 V188 a12 12 0 0 0 12 12 H434 Z', fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, g);
+    D.el('rect', { x: 296, y: 102, width: 68, height: 12, rx: 6, fill: C.papier, stroke: C.navy, 'stroke-width': 2 }, g);
+    const bulleI = D.el('circle', { cx: 330, cy: 108, r: 3.5, fill: C.navy, stroke: 'none' }, g);
+    D.el('rect', { x: 300, y: 190, width: 60, height: 6, rx: 3, fill: C.navy, stroke: 'none' }, g);
+    anime.push(() => bulleI.setAttribute('cx', (330 + 22 * tI.v).toFixed(1)));
+
+    /* la carotte : de l'unité au dehors, en pente vers l'extérieur ; mal posé, à contre-pente */
+    const yI = () => 250 + 16 * pente.v, yO = () => 266 - 16 * pente.v;
+    const trIn = trajetVivant([[424, 200], [424, 250], [440, 250]]), trCar = trajetVivant([[440, 250], [520, 266]]);
+    const trOut = trajetVivant([[520, 266], [556, 266], [556, 410], [690, 410]]);
+    anime.push(() => {
+      const a = yI(), b = yO();
+      trIn.maj([[424, 200], [424, a], [440, a]]); trCar.maj([[440, a], [520, b]]); trOut.maj([[520, b], [556, b], [556, 410], [690, 410]]);
+    });
+    g = couche('carotte');
+    chemin(g, trIn, { stroke: C.gris, 'stroke-width': 5 });
+    chemin(g, trCar, { stroke: C.navy, 'stroke-width': 22 });
+    chemin(g, trCar, { stroke: C.papier, 'stroke-width': 15 });
+    chemin(g, trCar, { stroke: C.gris, 'stroke-width': 5 });
+    chemin(g, trOut, { stroke: C.gris, 'stroke-width': 5 });
+    V.filer(g, trCar, 4, 24, p => D.el('circle', { r: 3.6, fill: EAU, stroke: 'none' }, p),
+      (c, x, y, ang, f) => { c.setAttribute('cx', x.toFixed(1)); c.setAttribute('cy', y.toFixed(1)); c.setAttribute('opacity', D.fenetre(f, 0, 1, 0.15).toFixed(2)); }, 'w');
+    /* bien posé : l'eau tombe dehors, devant la carotte ; mal posé : elle stagne dans le mur */
+    g = couche('eauB');
+    const gout = D.bulles(D.el('g', { transform: 'scale(.5)' }, g), 3, 41, true);
+    anime.push(() => gout(V.clocks.w.t, q => [(526 + q * 20) / 0.5, (yO() + 16) / 0.5, (yO() + 74) / 0.5, 1, EAU]));
+    D.el('path', { d: 'M548 214 L520 243', fill: 'none', stroke: C.gris, 'stroke-width': 2 }, g);
+    g = couche('eauM');
+    D.el('ellipse', { cx: 462, cy: 274, rx: 24, ry: 20, fill: 'none', stroke: C.eau, 'stroke-width': 2, 'stroke-dasharray': '4 4' }, g);
+    const stagne = [452, 464, 474].map(cx => D.el('circle', { cx, cy: 272, r: 3.6, fill: C.eau, stroke: 'none' }, g));
+    anime.push(() => stagne.forEach((c, k) => c.setAttribute('cy', (272 + 3 * Math.sin(V.clocks.w.t * 2.2 + k * 2)).toFixed(1))));
+    D.el('path', { d: 'M548 241 L520 262', fill: 'none', stroke: C.gris, 'stroke-width': 2 }, g);
+
+    /* le support et l'unité extérieure, qui penchent ensemble quand il n'est pas de niveau */
+    const gE = D.el('g', {}, d);
+    anime.push(() => gE.setAttribute('transform', 'rotate(' + (4.5 * tE.v).toFixed(2) + ' 522 440)'));
+    g = couche('support', gE);
+    D.el('rect', { x: 508, y: 436, width: 12, height: 10, fill: C.navy, stroke: 'none' }, g);
+    D.el('rect', { x: 508, y: 500, width: 12, height: 10, fill: C.navy, stroke: 'none' }, g);
+    D.el('path', { d: 'M520 440 H840', fill: 'none', stroke: C.navy, 'stroke-width': 6 }, g);
+    D.el('path', { d: 'M520 506 L640 440', fill: 'none', stroke: C.navy, 'stroke-width': 5 }, g);
+    D.el('rect', { x: 712, y: 430, width: 24, height: 10, fill: C.navy, stroke: 'none' }, g);
+    D.el('rect', { x: 788, y: 430, width: 24, height: 10, fill: C.navy, stroke: 'none' }, g);
+    D.el('rect', { x: 580, y: 424, width: 54, height: 12, rx: 6, fill: C.papier, stroke: C.navy, 'stroke-width': 2 }, g);
+    const bulleE = D.el('circle', { cx: 607, cy: 430, r: 3.5, fill: C.navy, stroke: 'none' }, g);
+    anime.push(() => bulleE.setAttribute('cx', (607 - 16 * tE.v).toFixed(1)));
+    g = couche('ue', gE);
+    D.el('rect', { x: 690, y: 320, width: 140, height: 110, rx: 8, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, g);
+    V.ailettes(g, 698, 330, 362, 3, 11);
+    tourne(D.ventilateur(g, 796, 358, 22), 260, 'a');
+
+    /* l'air de l'unité extérieure : bien posé, il entre d'un côté et sort chaud de l'autre ; enfermée, elle aspire son propre air chaud */
+    g = couche('airB');
+    [345, 372].forEach((y, i) => {
+      souffle(g, [[566, y], [680, y]], { v: 70, pas: 46, dec: i * 0.5, temp: () => 0.62 });
+      souffle(g, [[836, y], [915, y]], { v: 70, pas: 46, dec: i * 0.5, temp: () => 0.95 });
+    });
+    g = couche('airM');
+    souffle(g, [[836, 350], [862, 350], [862, 270], [676, 270], [676, 350], [688, 350]], { v: 70, pas: 46, temp: () => 0.92 });
+    g = couche('encl');
+    D.el('rect', { x: 566, y: 226, width: 340, height: 10, fill: C.creme, stroke: C.navy, 'stroke-width': 2 }, g);
+    D.el('rect', { x: 906, y: 226, width: 12, height: SOL - 226, fill: C.creme, stroke: C.navy, 'stroke-width': 2 }, g);
+
+    /* les étiquettes, par-dessus tout ; chacune a sa place libre. Celles des unités restent droites : elles suivent
+       l'unité qui penche (le centre du boîtier descend), sans tourner avec elle */
+    const gIt = D.el('g', {}, d), gEt = D.el('g', {}, d);
+    anime.push(() => {
+      gIt.setAttribute('transform', 'translate(' + (0.3 * tI.v).toFixed(2) + ' ' + (6.7 * tI.v).toFixed(2) + ')');
+      gEt.setAttribute('transform', 'translate(' + (2.4 * tE.v).toFixed(2) + ' ' + (17.4 * tE.v).toFixed(2) + ')');
+    });
+    const L = (x, y, s, c, coul, o, parent) => ecrire(x, y, s, c, coul, Object.assign({ 'font-weight': 700 }, o || {}), parent);
+    ecrire(24, 44, 'DEDANS — la pièce', null, null, { 'font-size': 22, 'font-weight': 700 });
+    ecrire(916, 44, 'DEHORS', null, null, { 'font-size': 22, 'font-weight': 700, 'text-anchor': 'end' });
+    L(480, 54, 'mur porteur', 'murB', C.navy, M);
+    L(480, 54, 'cloison légère', 'murM', C.navy, M);
+    L(357, 152, 'unité', 'ui', C.orange, M, gIt);
+    L(357, 179, 'intérieure', 'ui', C.orange, M, gIt);
+    ['platine de niveau,', 'air libre autour', '(dégagements', 'de la notice)'].forEach((s, i) => L(24, 100 + 27 * i, s, 'ui0', C.orange));
+    L(24, 330, 'le jet passe', 'jetB', C.froid); L(24, 357, 'au-dessus du lit', 'jetB', C.froid);
+    L(262, 470, 'le jet tombe', 'jetM', C.rouge); L(262, 497, 'sur le lit', 'jetM', C.rouge);
+    L(536, 150, 'carotte en pente :', 'eauB', C.orange); L(536, 177, 'l’eau sort', 'eauB', C.orange);
+    L(536, 150, 'à contre-pente :', 'eauM', C.rouge); L(536, 177, 'l’eau reste dans', 'eauM', C.rouge); L(536, 204, 'le mur', 'eauM', C.rouge);
+    L(725, 389, 'unité', 'ue', C.orange, M, gEt);
+    L(760, 416, 'extérieure', 'ue', C.orange, M, gEt);
+    L(700, 490, 'support de niveau,', 'supB', C.orange); L(700, 517, 'plots antivibratiles', 'supB', C.orange);
+    L(700, 490, 'pas de niveau :', 'supM', C.rouge); L(700, 517, 'vibrations, bruit', 'supM', C.rouge);
+    L(620, 312, 'aspiration', 'airB', C.ambre, M); L(770, 312, 'soufflage libre', 'airB', C.chaud, M);
+    L(735, 150, 'unité enfermée :', 'airM', C.rouge); L(735, 177, 'l’air chaud', 'airM', C.rouge); L(735, 204, 'revient', 'airM', C.rouge);
+    ecrire(896, 568, 'niveau de la neige', 'neige', C.orange, Object.assign({ fill: C.gris }, F));
+
+    /* le pas à pas : l'élément qui agit s'allume (orange, ou rouge mal posé) ; le reste en retrait */
     const peindre = () => {
-      const A = k => etape === k;
-      const vif = mal ? C.rouge : C.feu;                    /* trait de la pièce active */
-      const vifT = mal ? C.rouge : C.orange;                /* texte de la pièce active */
-      const tr = (k, base) => A(k) ? vif : base;
-      const ep = (k, n) => A(k) ? n + 3 : n;
-      const tx = (k, base) => A(k) ? vifT : (mal ? C.gris : base);
-      const T = (x, y, s, k, a = 'start', c = C.navy) =>
-        `<text x="${x}" y="${y}" font-size="14" font-weight="700" text-anchor="${a}" fill="${tx(k, c)}">${s}</text>`;
-      const goutte = (x, y) => `<path d="M${x} ${y} c-3.5 5 -3.5 8 0 8 c3.5 0 3.5 -3 0 -8 z" fill="${C.eau}" stroke="none"/>`;
-      const ar = (x1, y1, x2, y2, col, m, w = 4) =>
-        `<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${col}" stroke-width="${w}" fill="none" marker-end="url(#${m})"/>`;
-
-      const yi = mal ? 190 : 176, yo = mal ? 176 : 190;     /* la carotte : bout intérieur, bout extérieur */
-      const rot = mal ? 7 : 0;                              /* le support qui penche */
-
-      /* le mur : plein et hachuré, ou cloison creuse */
-      const hach = []; for (let y = 70; y < 440; y += 22) hach.push(`<line x1="390" y1="${y + 30}" x2="450" y2="${y}"/>`);
-      const mur = mal
-        ? `<rect x="390" y="62" width="9" height="368" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
-<rect x="441" y="62" width="9" height="368" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
-<line x1="420" y1="62" x2="420" y2="430" stroke="${C.gris}" stroke-width="2" stroke-dasharray="6 6"/>`
-        : `<clipPath id="m41-clip"><rect x="390" y="62" width="60" height="368"/></clipPath>
-<rect x="390" y="62" width="60" height="368" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
-<g clip-path="url(#m41-clip)" stroke="${C.trait}" stroke-width="2">${hach.join('')}</g>`;
-
-      /* les jets d'air de l'unité intérieure : au-dessus du lit, ou droit dessus */
-      const jets = mal
-        ? ar(336, 148, 160, 370, C.gris, 'm41-gris') + ar(346, 150, 190, 374, C.gris, 'm41-gris') + ar(356, 152, 220, 378, C.gris, 'm41-gris')
-        : ar(336, 146, 190, 160, tr(0, C.navy), A(0) ? 'm41-vif' : 'm41-air', ep(0, 3)) + ar(346, 148, 200, 184, tr(0, C.navy), A(0) ? 'm41-vif' : 'm41-air', ep(0, 3)) + ar(356, 150, 212, 208, tr(0, C.navy), A(0) ? 'm41-vif' : 'm41-air', ep(0, 3));
-
-      const bulle = (x, y, bx, k) => `<rect x="${x}" y="${y}" width="56" height="11" rx="5.5" fill="${C.papier}" stroke="${tr(k, C.navy)}" stroke-width="2"/>
-<circle cx="${bx}" cy="${y + 5.5}" r="3" fill="${tr(k, C.navy)}" stroke="none"/>`;
-
-      d.innerHTML = `
-<defs>
-  <marker id="m41-air" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M0 0 L14 7 L0 14 z" fill="${C.navy}"/></marker>
-  <marker id="m41-vif" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M0 0 L14 7 L0 14 z" fill="${vif}"/></marker>
-  <marker id="m41-gris" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M0 0 L14 7 L0 14 z" fill="${C.gris}"/></marker>
-  <marker id="m41-hp" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M0 0 L14 7 L0 14 z" fill="${C.chaud}"/></marker>
-  <marker id="m41-eau" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M0 0 L14 7 L0 14 z" fill="${C.eau}"/></marker>
-</defs>
-<rect x="10" y="10" width="800" height="460" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-
-<!-- dedans / dehors, sol, plafond -->
-<text x="28" y="36" font-size="14" font-weight="700" fill="${C.navy}">DEDANS — la pièce</text>
-<text x="796" y="36" font-size="14" font-weight="700" text-anchor="end" fill="${C.navy}">DEHORS</text>
-<line x1="20" y1="62" x2="390" y2="62" stroke="${C.gris}" stroke-width="3"/>
-<line x1="20" y1="430" x2="390" y2="430" stroke="${C.gris}" stroke-width="3"/>
-<line x1="450" y1="430" x2="800" y2="430" stroke="${C.gris}" stroke-width="3"/>
-<rect x="470" y="402" width="330" height="28" fill="${C.air}" opacity=".35" stroke="none"/>
-<text x="736" y="422" font-size="13" font-weight="700" text-anchor="end" fill="${A(3) && !mal ? C.orange : C.gris}">niveau de la neige</text>
-
-<!-- le mur -->
-${mur}
-${mal ? T(420, 54, 'cloison légère', 0, 'middle') : T(420, 54, 'mur porteur', 9, 'middle')}
-
-<!-- le lit -->
-<line x1="52" y1="416" x2="52" y2="430" stroke="${C.navy}" stroke-width="3"/>
-<line x1="238" y1="416" x2="238" y2="430" stroke="${C.navy}" stroke-width="3"/>
-<rect x="40" y="392" width="210" height="24" rx="6" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
-<rect x="48" y="382" width="46" height="12" rx="6" fill="${C.papier}" stroke="${C.navy}" stroke-width="2"/>
-
-<!-- pas 1 : l'unité intérieure, sa platine, son air libre, son jet -->
-<rect x="286" y="68" width="102" height="84" rx="10" fill="none" stroke="${tr(0, C.gris)}" stroke-width="${ep(0, 2)}" stroke-dasharray="7 5"/>
-<rect x="384" y="84" width="6" height="58" fill="${tr(0, C.navy)}" stroke="none"/>
-<line x1="378" y1="98" x2="${mal ? 399 : 412}" y2="98" stroke="${tr(0, C.navy)}" stroke-width="3"/>
-<line x1="378" y1="128" x2="${mal ? 399 : 412}" y2="128" stroke="${tr(0, C.navy)}" stroke-width="3"/>
-<g transform="${mal ? 'rotate(-5 384 140)' : ''}">
-  <path d="M384 86 H312 a12 12 0 0 0 -12 12 V128 a12 12 0 0 0 12 12 H384 Z" fill="${C.creme}" stroke="${tr(0, C.navy)}" stroke-width="${ep(0, 3)}"/>
-  <rect x="312" y="130" width="52" height="5" rx="2" fill="${tr(0, C.navy)}" stroke="none"/>
-  ${bulle(318, 72, mal ? 340 : 346, 0)}
-</g>
-<text x="${mal ? 340 : 342}" y="${mal ? 112 : 108}" font-size="13" font-weight="700" text-anchor="middle" fill="${C.navy}">unité</text>
-<text x="${mal ? 340 : 342}" y="${mal ? 127 : 123}" font-size="13" font-weight="700" text-anchor="middle" fill="${C.navy}">intérieure</text>
-${jets}
-${T(278, 90, 'platine de niveau,', 0, 'end')}
-${T(278, 106, 'air libre autour', 0, 'end')}
-${T(278, 122, '(dégagements de la notice)', 0, 'end')}
-${mal ? T(30, 300, 'le jet tombe sur le lit', 0) : T(30, 232, 'le jet passe au-dessus du lit', 0)}
-
-<!-- pas 2 : la carotte, et l'eau qui sort ou qui reste -->
-<path d="M372 140 V${yi} H390" fill="none" stroke="${C.gris}" stroke-width="5" stroke-linejoin="round"/>
-<path d="M390 ${yi} L450 ${yo}" fill="none" stroke="${tr(1, C.navy)}" stroke-width="${ep(1, 18)}"/>
-<path d="M390 ${yi} L450 ${yo}" fill="none" stroke="${C.papier}" stroke-width="${ep(1, 18) - 7}"/>
-<path d="M390 ${yi} L450 ${yo}" fill="none" stroke="${C.gris}" stroke-width="4"/>
-<path d="M450 ${yo} H474 V310 H560" fill="none" stroke="${C.gris}" stroke-width="5" stroke-linejoin="round"/>
-${mal
-  ? `<ellipse cx="405" cy="206" rx="12" ry="16" fill="none" stroke="${C.eau}" stroke-width="2" stroke-dasharray="4 4"/>
-${goutte(400, 198)}${goutte(410, 206)}${goutte(402, 214)}`
-  : `${goutte(458, 206)}${goutte(461, 222)}`}
-${A(1) ? (mal ? ar(444, 152, 400, 164, C.eau, 'm41-eau', 4) : ar(398, 150, 442, 164, C.eau, 'm41-eau', 4)) : ''}
-${mal ? T(462, 120, 'à contre-pente : l’eau reste dans le mur', 1) : T(462, 120, 'carotte en pente : l’eau sort', 1)}
-<line x1="468" y1="128" x2="453" y2="${yo - 12}" stroke="${tr(1, C.gris)}" stroke-width="2"/>
-
-<!-- pas 3 : le support de l'unité extérieure, de niveau -->
-<g transform="rotate(${rot} 450 332)">
-  <rect x="438" y="327" width="12" height="10" fill="${tr(2, C.navy)}" stroke="none"/>
-  <rect x="438" y="391" width="12" height="10" fill="${tr(2, C.navy)}" stroke="none"/>
-  <path d="M450 332 H680" fill="none" stroke="${tr(2, C.navy)}" stroke-width="${ep(2, 6)}"/>
-  <path d="M450 396 L540 332" fill="none" stroke="${tr(2, C.navy)}" stroke-width="${ep(2, 5)}"/>
-  <rect x="568" y="322" width="22" height="10" fill="${tr(2, C.navy)}" stroke="none"/>
-  <rect x="640" y="322" width="22" height="10" fill="${tr(2, C.navy)}" stroke="none"/>
-
-  <!-- pas 4 : l'unité extérieure -->
-  <rect x="560" y="222" width="110" height="100" rx="8" fill="${C.creme}" stroke="${tr(3, C.navy)}" stroke-width="${ep(3, 3)}"/>
-  <path d="M566 240 h14 M566 258 h14 M566 276 h14 M566 294 h14" stroke="${C.gris}" stroke-width="2" fill="none"/>
-  <path d="M650 236 h14 M650 250 h14 M650 264 h14 M650 278 h14 M650 292 h14 M650 306 h14" stroke="${C.gris}" stroke-width="2" fill="none"/>
-  ${bulle(588, 209, mal ? 598 : 616, 3)}
-</g>
-<text x="${mal ? 621 : 615}" y="${mal ? 286 : 266}" font-size="13" font-weight="700" text-anchor="middle" fill="${C.navy}">unité</text>
-<text x="${mal ? 621 : 615}" y="${mal ? 302 : 282}" font-size="13" font-weight="700" text-anchor="middle" fill="${C.navy}">extérieure</text>
-${mal ? T(566, 384, 'pas de niveau :', 2) + T(566, 400, 'vibrations, bruit', 2)
-      : T(566, 384, 'support de niveau,', 2) + T(566, 400, 'plots antivibratiles', 2)}
-
-${mal
-  ? `<rect x="482" y="180" width="270" height="8" fill="${C.creme}" stroke="${tr(3, C.navy)}" stroke-width="2"/>
-<rect x="744" y="180" width="12" height="250" fill="${C.creme}" stroke="${tr(3, C.navy)}" stroke-width="2"/>
-${ar(676, 244, 722, 244, C.chaud, 'm41-hp', 4)}${ar(676, 262, 722, 262, C.chaud, 'm41-hp', 4)}${ar(676, 280, 722, 280, C.chaud, 'm41-hp', 4)}
-<path d="M733 236 V204 H520 V256 H552" fill="none" stroke="${C.chaud}" stroke-width="${ep(3, 4)}" stroke-linejoin="round" marker-end="url(#m41-hp)"/>
-${T(486, 170, 'unité enfermée : l’air chaud revient', 3)}`
-  : `${ar(494, 240, 548, 240, tr(3, C.navy), A(3) ? 'm41-vif' : 'm41-air', ep(3, 4))}${ar(494, 258, 548, 258, tr(3, C.navy), A(3) ? 'm41-vif' : 'm41-air', ep(3, 4))}${ar(494, 276, 548, 276, tr(3, C.navy), A(3) ? 'm41-vif' : 'm41-air', ep(3, 4))}
-${ar(678, 240, 736, 240, C.chaud, 'm41-hp', ep(3, 4))}${ar(678, 258, 736, 258, C.chaud, 'm41-hp', ep(3, 4))}${ar(678, 276, 736, 276, C.chaud, 'm41-hp', ep(3, 4))}
-${T(518, 296, 'aspiration', 3, 'middle')}
-${T(678, 296, 'soufflage libre', 3)}`}
-`;
+      const k = etape, v = mal ? 'M' : 'B', on = ['mur' + v];
+      if (k === 0) on.push('ui', 'ui0', 'jet' + v);
+      if (k === 1) on.push('carotte', 'eau' + v);
+      if (k === 2) on.push('support', 'sup' + v);
+      if (k === 3) on.push('ue', 'air' + v, mal ? 'encl' : 'neige');
+      V.allumer(new Set(on), new Set(['ui0', 'ui', 'carotte', 'support', 'ue', 'neige'].concat(mal ? ['murM', 'jetM', 'eauM', 'airM', 'encl', 'supM'] : ['murB', 'jetB', 'eauB', 'airB', 'supB'])));
+      viser('pente', mal ? 1 : 0); viser('tI', mal ? 1 : 0); viser('tE', mal ? 1 : 0);
+      V.vitesse('w', mal ? -0.6 : 1);
     };
+    V.demarrer();
 
     const dire = {
       bien: [

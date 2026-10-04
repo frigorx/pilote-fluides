@@ -1,6 +1,12 @@
 /* CartoClim 4.4 — scènes des condensats. Temps 2 : le chemin de l'eau, en six pas
    (formation, pente bonne, contre-pente, siphon, pompe, flotteur). Coupe schématique :
    la pièce à gauche avec l'unité intérieure et son bac, le mur au milieu, dehors à droite.
+   Pilote « Animer les réseaux » (04/10/2026) : ce chemin de l'eau est animé et passe aussi devant les photos au
+   temps 1 (scene-devant.js). Tout se calcule à partir du temps t (requestAnimationFrame — ni SMIL ni animation
+   CSS) : l'air de la pièce (chevrons, couleur = température) traverse la batterie, des gouttes tombent dans le
+   bac (nappe qui ondule), l'eau coule dans le tuyau (filet au fond, tuyau plein, siphon, pompe). Les quatre
+   montages du tuyau ne sont dans le dessin que pendant leur pas. Dessin : VOYAGE_DESSIN (jouerezo/moteur/
+   voyage-dessin.js). Étiquettes en taille 21 dans 1 000 : 19,6 px à l'écran à 1 280 px.
    Temps 5 : une situation, sa réponse.
    Aucun texte sur un tracé : chaque étiquette a sa place libre, vérifiée par
    outils/controler-station-navigateur.mjs. */
@@ -8,171 +14,276 @@ const ScenesStation = (() => {
   'use strict';
   const { svg, C, pasAPas } = SceneKit;
 
-  /* une goutte : pointe en (x, y), hauteur ≈ 25·s */
-  const goutte = (x, y, s, fill) =>
-    `<path d="M${x} ${y} C${x - 3 * s} ${y + 8 * s} ${x - 8 * s} ${y + 12 * s} ${x - 8 * s} ${y + 17 * s} A${8 * s} ${8 * s} 0 0 0 ${x + 8 * s} ${y + 17 * s} C${x + 8 * s} ${y + 12 * s} ${x + 3 * s} ${y + 8 * s} ${x} ${y} Z" fill="${fill}" stroke="none"/>`;
-
-  /* un point à la distance d le long d'une ligne brisée, avec son angle (en degrés) */
-  function along(pts, d) {
-    let reste = d;
-    for (let i = 0; i < pts.length - 1; i++) {
-      const [x1, y1] = pts[i], [x2, y2] = pts[i + 1];
-      const L = Math.hypot(x2 - x1, y2 - y1);
-      if (reste <= L) {
-        const t = reste / L;
-        return { x: x1 + (x2 - x1) * t, y: y1 + (y2 - y1) * t, a: Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI };
-      }
-      reste -= L;
+  /* ---------- la circulation : un trajet (ligne brisée) et ce qui avance dessus ---------- */
+  function trajet(pts) {
+    const seg = []; let L = 0;
+    for (let i = 1; i < pts.length; i++) {
+      const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], l = Math.hypot(x1 - x0, y1 - y0);
+      seg.push({ x0, y0, x1, y1, l, s: L }); L += l;
     }
-    const [x, y] = pts[pts.length - 1];
-    return { x, y, a: 0 };
+    const a = s => {
+      const g = seg.find(k => s <= k.s + k.l) || seg[seg.length - 1], f = g.l ? (s - g.s) / g.l : 0;
+      return [g.x0 + (g.x1 - g.x0) * f, g.y0 + (g.y1 - g.y0) * f, Math.atan2(g.y1 - g.y0, g.x1 - g.x0) * 180 / Math.PI];
+    };
+    return { pts, L, a, d: 'M ' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L ') };
   }
-  /* des chevrons posés sur un tuyau : le sens de l'écoulement */
-  const chevrons = (pts, distances, couleur) => distances.map(d => {
-    const p = along(pts, d);
-    return `<path transform="translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${p.a.toFixed(1)})" d="M-5 -4.5 L2 0 L-5 4.5" fill="none" stroke="${couleur}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`;
-  }).join('');
-  const chemin = pts => 'M' + pts.map(p => p.join(' ')).join(' L');
+  /* n repères régulièrement espacés qui avancent à v unités par seconde ; poser(repère, x, y, angle, f) */
+  function filer(parent, tr, n, v, creer, poser) {
+    const D = window.VOYAGE_DESSIN, rep = Array.from({ length: n }, (_, i) => creer(parent, i));
+    return t => rep.forEach((e, i) => {
+      const f = D.frac(i / n + t * v / tr.L), [x, y, ang] = tr.a(f * tr.L);
+      poser(e, x, y, ang, f);
+    });
+  }
+  /* un arc de cercle en points (angles en radians, y vers le bas) */
+  const arc = (cx, cy, r, a0, a1, n = 12) =>
+    Array.from({ length: n + 1 }, (_, i) => { const a = a0 + (a1 - a0) * i / n; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; });
+  /* la ligne brisée décalée de e vers sa droite (vers le bas pour un tuyau qui va vers la droite) :
+     le filet d'eau qui coule au fond d'un tuyau pas plein */
+  function decaler(pts, e) {
+    const normale = (a, b) => { const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1; return [-dy / l, dx / l]; };
+    return pts.map((p, i) => {
+      const n1 = i > 0 ? normale(pts[i - 1], p) : null, n2 = i < pts.length - 1 ? normale(p, pts[i + 1]) : null;
+      const m = n1 && n2 ? [n1[0] + n2[0], n1[1] + n2[1]] : n1 || n2, l = Math.hypot(m[0], m[1]) || 1;
+      const u = [m[0] / l, m[1] / l], c = n1 && n2 ? Math.max(0.5, u[0] * n1[0] + u[1] * n1[1]) : 1;
+      return [p[0] + u[0] * e / c, p[1] + u[1] * e / c];
+    });
+  }
 
   function cheminDeLeau() {
-    const d = svg('0 0 820 440',
+    const D = window.VOYAGE_DESSIN;
+    const d = svg('0 0 1000 620',
       'Coupe schématique d’une unité intérieure murale et de l’évacuation de ses condensats : la batterie froide, le bac, puis selon l’étape un tuyau en pente jusqu’à dehors, un tuyau qui remonte et déborde, un siphon, une pompe de relevage et son flotteur.');
-    let etape = 0;
-    const eau = C.eau, froid = C.froid;
-    /* un tuyau : paroi grise, intérieur d'eau ou vide */
-    const tuyau = (dd, plein) =>
-      `<path d="${dd}" fill="none" stroke="${C.gris}" stroke-width="15" stroke-linejoin="round"/>` +
-      `<path d="${dd}" fill="none" stroke="${plein ? eau : C.papier}" stroke-width="10" stroke-linejoin="round"/>`;
-    const filet = (dd, couleur) => `<path d="${dd}" fill="none" stroke="${couleur}" stroke-width="10" stroke-linejoin="round"/>`;
-    const niveauRef = (x1, x2) => `<line x1="${x1}" y1="160" x2="${x2}" y2="160" stroke="${C.gris}" stroke-width="2" stroke-dasharray="6 6"/>`;
+    const FIGE = !!(window.inerwebAnimations && window.inerwebAnimations.actives === false);
+    const RETRAIT = 0.4;                                   /* ce qui n'agit pas à cette étape */
+    const EAU = '#4f9fc0';
+    const couche = c => D.el('g', { 'data-c': c }, d);     /* une partie du dessin, que le pas à pas allume */
+    const anime = [];                                      /* ce que chaque image fait avancer */
+    const etat = { froid: 1, niv: 0.29 }, cible = { froid: 1, niv: 0.29 };   /* ce qui s'installe doucement d'un pas à l'autre */
 
-    const peindre = () => {
-      const niveauBac = [5, 12, 17, 12, 8, 17][etape];       /* hauteur d'eau dans le bac, en px */
-      const parts = [];
-      const p = s => parts.push(s);
+    D.defs(d);
+    D.el('rect', { x: 6, y: 6, width: 988, height: 608, rx: 16, fill: C.papier, stroke: C.trait }, d);
+    /* filigrane R9 : logo officiel + « by inerweb.fr », 3 exemplaires dont un au centre, derrière tout ;
+       cartouche « CartoClim » (le nom du produit) à la place de « Studio » (les vidéos) */
+    D.filigrane(d, [[235, 178], [500, 330], [765, 482]], 250).querySelectorAll('text')
+      .forEach(t => { if (t.textContent === 'Studio') t.textContent = 'CartoClim'; });
 
-      /* ---------- le décor : la pièce, le mur, dehors ---------- */
-      p(`<rect x="10" y="10" width="800" height="420" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-<text x="30" y="38" font-size="15" font-weight="700" fill="${C.navy}">DANS LA PIÈCE</text>
-<text x="790" y="38" text-anchor="end" font-size="15" font-weight="700" fill="${C.navy}">DEHORS</text>
-<line x1="640" y1="58" x2="640" y2="410" stroke="${C.gris}" stroke-width="10" stroke-dasharray="26 10"/>
-<text x="640" y="50" text-anchor="middle" font-size="14" fill="${C.gris}">le mur</text>
-<line x1="652" y1="380" x2="800" y2="380" stroke="${C.navy}" stroke-width="3"/>`);
+    /* dans la pièce / dehors : le mur, et le sol dehors */
+    D.el('line', { x1: 790, y1: 74, x2: 790, y2: 592, stroke: C.gris, 'stroke-width': 10, 'stroke-dasharray': '26 12' }, d);
+    D.el('line', { x1: 802, y1: 580, x2: 976, y2: 580, stroke: C.navy, 'stroke-width': 3 }, d);
+    D.el('rect', { x: 215, y: 76, width: 370, height: 194, rx: 14, fill: C.creme, stroke: C.navy, 'stroke-width': 3 }, d);
 
-      /* ---------- l'unité intérieure : batterie, gouttes, bac ---------- */
-      const coilCol = etape === 5 ? C.gris : froid;
-      const coilW = etape === 0 ? 5 : 3;
-      p(`<rect x="150" y="50" width="290" height="125" rx="14" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
-<text x="162" y="73" font-size="14" font-weight="700" fill="${C.navy}">unité intérieure</text>
-<text x="160" y="103" font-size="13" font-weight="700" fill="${etape === 0 ? froid : C.navy}">batterie</text>
-<text x="160" y="119" font-size="13" font-weight="700" fill="${etape === 0 ? froid : C.navy}">froide</text>
-<g stroke="${C.trait}" stroke-width="2">${[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => `<line x1="${238 + i * 16}" y1="86" x2="${238 + i * 16}" y2="128"/>`).join('')}</g>
-<g stroke="${coilCol}" stroke-width="${coilW}" fill="none"><path d="M230 98 H374 M230 116 H374"/></g>
-<text x="162" y="165" font-size="15" font-weight="700" fill="${C.navy}">bac</text>
-<path d="M220 150 V167 H412 V150" fill="none" stroke="${etape === 2 || etape === 5 ? C.rouge : (etape === 1 || etape === 0 ? eau : C.navy)}" stroke-width="4" stroke-linejoin="round"/>
-<rect x="222" y="${167 - niveauBac}" width="188" height="${niveauBac - 2}" fill="${eau}" opacity=".55" stroke="none"/>`);
-      if (etape === 5) p(`<text x="322" y="80" font-size="15" font-weight="700" fill="${C.rouge}">froid coupé</text>`);
+    /* la batterie froide : des ailettes, deux rangs de tube */
+    let g = couche('batterie');
+    for (let i = 0; i < 9; i++) D.el('line', { x1: 330 + i * 20, y1: 124, x2: 330 + i * 20, y2: 208, stroke: C.trait, 'stroke-width': 2 }, g);
+    const rangs = [154, 186].map(y => D.el('line', { x1: 322, y1: y, x2: 498, y2: y, stroke: C.froid, 'stroke-width': 5, 'stroke-linecap': 'round' }, g));
 
-      /* l'air de la pièce, la formation des gouttes */
-      if (etape === 0) {
-        [98, 112, 126].forEach(y => p(`<path d="M30 ${y} h92" stroke="${C.navy}" stroke-width="3" fill="none" marker-end="url(#fl-air)"/>`));
-        p(`<text x="26" y="152" font-size="15" fill="${C.navy}">air de la pièce</text>`);
-        [252, 300, 348].forEach(x => p(goutte(x, 131, .55, eau)));
-      }
+    /* l'air : des chevrons qui avancent ; leur couleur suit la température, qui baisse dans la batterie
+       tant que le froid marche */
+    const sortie = () => D.lerp(0.6, 0.08, etat.froid);
+    const air = y => {
+      const k = 0.5, h = D.el('g', { transform: 'scale(' + k + ')' }, g), tr = trajet([[14, y], [632, y]]);
+      const temp = x => x < 326 ? 0.6 : x > 494 ? sortie() : D.lerp(0.6, sortie(), (x - 326) / 168);
+      anime.push(filer(h, tr, 13, 75, p => D.chevron(p),
+        (ch, x, yy, ang, f) => ch(x / k, yy / k, ang - 90, D.couleur(temp(x)), D.fenetre(f, 0, 1, 0.06))));
+    };
+    g = couche('air');
+    [138, 170, 202].forEach(air);
 
-      /* ---------- selon l'étape : le tuyau, le siphon, la pompe ---------- */
-      if (etape === 0 || etape === 1) {
-        const pts = [[412, 160], [460, 160], [700, 250]];
-        p(tuyau(chemin(pts), etape === 1));
-        if (etape === 1) {
-          p(niveauRef(460, 700));
-          p(chevrons(pts, [20, 70, 130, 190, 240], C.papier));
-          p(`<text x="468" y="240" font-size="15" font-weight="700" fill="${eau}">pente continue</text>`);
-          [268, 302, 336].forEach(y => p(goutte(700, y, .7, eau)));
-          p(`<text x="716" y="304" font-size="14" font-weight="700" fill="${eau}">l’eau sort</text>
-<text x="716" y="321" font-size="14" font-weight="700" fill="${eau}">toute seule</text>`);
-        }
-      }
+    /* l'eau naît sur la batterie : des gouttes tombent dans le bac, tant que le froid marche */
+    const gouttes = (parent, nb, graine, k) => D.bulles(D.el('g', { transform: 'scale(' + k + ')' }, parent), nb, graine, true);
+    const KG = 0.8;
+    g = couche('gouttes');
+    const surBatterie = gouttes(g, 8, 32, KG);
+    anime.push(t => surBatterie(t, q => [(332 + q * 156) / KG, 208 / KG, (262 - 30 * etat.niv - 3) / KG, etat.froid, EAU]));
 
-      if (etape === 2) {
-        const pts = [[412, 160], [460, 160], [540, 205], [620, 140], [700, 170]];
-        p(tuyau(chemin(pts), false));
-        p(filet('M412 160 H460 L540 205 L608 150', eau));
-        p(niveauRef(460, 700));
-        p(`<text x="500" y="246" font-size="15" font-weight="700" fill="${C.rouge}">point bas :</text>
-<text x="500" y="264" font-size="15" font-weight="700" fill="${C.rouge}">l’eau reste là</text>
-<text x="528" y="122" font-size="14" font-weight="700" fill="${C.rouge}">ça remonte</text>`);
-        [316, 350].forEach((x, i) => p(goutte(x, 190 + i * 26, .7, C.rouge)));
-        p(`<text x="170" y="228" font-size="15" font-weight="700" fill="${C.rouge}">le bac déborde</text>`);
-      }
+    /* le bac : une nappe qui ondule ; son niveau dépend du pas (écrasée en hauteur : un bac mince) */
+    g = couche('bac');
+    const eauBac = D.liquide(D.el('g', { transform: 'translate(0 262) scale(1 0.5) translate(0 -262)' }, g),
+      { x0: 264, x1: 536, yh: 202, yb: 262, niveau: () => etat.niv, couleur: () => EAU, pas: 12 });
+    anime.push(t => eauBac.maj(t));
+    const contourBac = D.el('path', { d: 'M262 232 V262 H538 V232', fill: 'none', stroke: C.eau, 'stroke-width': 4, 'stroke-linejoin': 'round' }, g);
 
-      if (etape === 3) {
-        const pts = [[412, 160], [460, 160], [540, 195]];
-        p(tuyau('M412 160 H460 L540 195 V262 A23 23 0 0 0 586 262 V226 H610 V385', false));
-        p(filet(chemin(pts), eau));
-        p(filet('M540 226 V262 A23 23 0 0 0 586 262 V226', eau));
-        p(chevrons(pts, [24, 60, 100], C.papier));
-        p(`<path d="M610 368 q-5 -8 0 -16 t0 -16 t0 -16 t0 -16 t0 -16" fill="none" stroke="${C.ambre}" stroke-width="2.5" stroke-linecap="round"/>`);
-        p(`<text x="522" y="268" text-anchor="end" font-size="15" font-weight="700" fill="${eau}">bouchon d’eau</text>
-<text x="563" y="322" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">siphon</text>
-<text x="594" y="356" text-anchor="end" font-size="15" font-weight="700" fill="${C.ambre}">odeurs</text>
-<text x="594" y="404" text-anchor="end" font-size="14" fill="${C.gris}">évacuation d’eaux usées</text>`);
-      }
+    /* ---------- les tuyaux, et ce qui coule dedans ---------- */
+    const tuyau = (parent, pts, ext, int) => {
+      const t = { d: trajet(pts).d, fill: 'none', 'stroke-linejoin': 'round' };
+      D.el('path', Object.assign({ stroke: C.gris, 'stroke-width': ext }, t), parent);
+      D.el('path', Object.assign({ stroke: C.papier, 'stroke-width': int }, t), parent);
+    };
+    /* tuyau plein : l'eau le remplit, des reflets filent dans le sens de l'écoulement (v = 0 : l'eau ne bouge pas) */
+    const plein = (parent, pts, int, v) => {
+      const t = { d: trajet(pts).d, fill: 'none', 'stroke-linejoin': 'round', 'stroke-linecap': 'round' };
+      D.el('path', Object.assign({ stroke: EAU, 'stroke-width': int, opacity: 0.92 }, t), parent);
+      const reflet = D.el('path', Object.assign({ stroke: C.papier, 'stroke-width': Math.max(1.6, int * 0.28), 'stroke-dasharray': '12 30', opacity: 0.85 }, t), parent);
+      if (v) anime.push(t2 => reflet.setAttribute('stroke-dashoffset', (-(t2 * v) % 42).toFixed(1)));
+    };
+    /* tuyau pas plein : un filet d'eau au fond */
+    const filet = (parent, pts, int, v) => plein(parent, decaler(pts, int * 0.28), int * 0.44, v);
+    const etiq = (parent, x, y, s, coul, o) => D.texte(parent, x, y, s, Object.assign({ 'font-size': 21, 'font-weight': 700, fill: coul }, o || {}));
+    const F = { 'text-anchor': 'end' }, M = { 'text-anchor': 'middle' };
+    const niveau = (parent, x0, x1, y) => D.el('path', { d: 'M' + x0 + ' ' + y + ' H' + x1, fill: 'none', stroke: C.gris, 'stroke-width': 2, 'stroke-dasharray': '6 6' }, parent);
+    /* des gouttes qui tombent d'un point jusqu'au sol (ou plus bas) */
+    const tombe = (parent, x, y0, y1, nb, graine, vis) => {
+      const f = gouttes(parent, nb, graine, 1);
+      anime.push(t => f(t, q => [x + (q - 0.5) * 6, y0, y1, vis, EAU]));
+    };
 
-      if (etape === 4 || etape === 5) {
-        /* la pompe : le tuyau du bac entre à gauche, le fin tuyau repart vers le haut */
-        const haut = etape === 5;
-        const montee = [[568, 138], [568, 70], [620, 70], [700, 98]];
-        p(tuyau('M412 160 H460', true));
-        p(tuyau(chemin(montee), etape === 4));
-        if (etape === 4) {
-          p(chevrons(montee, [20, 45, 85, 120, 160], C.papier));
-          [112, 146, 180].forEach(y => p(goutte(700, y, .7, eau)));
-          p(`<text x="716" y="150" font-size="14" font-weight="700" fill="${eau}">l’eau sort</text>`);
-          p(niveauRef(592, 700));
-          p(`<text x="592" y="180" font-size="14" fill="${C.gris}">niveau</text>
-<text x="592" y="196" font-size="14" fill="${C.gris}">du bac</text>`);
-        }
-        /* le boîtier de la pompe, son eau, son flotteur */
-        const niv = haut ? 148 : 172;                       /* surface de l'eau dans la pompe */
-        p(`<rect x="460" y="138" width="120" height="54" rx="9" fill="${C.creme}" stroke="${haut ? C.rouge : C.vert}" stroke-width="4"/>
-<rect x="462" y="${niv}" width="116" height="${190 - niv}" fill="${eau}" opacity=".55" stroke="none"/>
-<circle cx="520" cy="${niv - 4}" r="8" fill="${haut ? C.ambre : C.papier}" stroke="${C.navy}" stroke-width="3"/>
-<text x="520" y="214" text-anchor="middle" font-size="15" font-weight="700" fill="${haut ? C.rouge : C.vert}">pompe de relevage</text>
-<text x="520" y="231" text-anchor="middle" font-size="14" fill="${C.navy}">et son flotteur</text>`);
-        /* le contact de sécurité, sur le fil qui va à l'unité */
-        const ouvert = haut;
-        p(`<path d="M480 138 V128 M480 114 V104 H440" fill="none" stroke="${ouvert ? C.rouge : C.gris}" stroke-width="3"/>
-<circle cx="480" cy="128" r="3.5" fill="${C.navy}" stroke="none"/><circle cx="480" cy="114" r="3.5" fill="${C.navy}" stroke="none"/>
-<path d="${ouvert ? 'M480 128 L489 116' : 'M480 128 V114'}" fill="none" stroke="${ouvert ? C.rouge : C.gris}" stroke-width="3" stroke-linecap="round"/>
-<text x="500" y="110" font-size="14" font-weight="700" fill="${ouvert ? C.rouge : C.navy}">contact</text>
-<text x="500" y="126" font-size="14" font-weight="700" fill="${ouvert ? C.rouge : C.navy}">${ouvert ? 'ouvert' : 'fermé'}</text>`);
-      }
+    /* les quatre montages du tuyau : chacun n'est dans le dessin que pendant son pas (ils ne se superposent pas) */
+    /* 0 · avant que l'eau n'arrive : le tuyau en pente, vide */
+    const v0 = D.el('g', {});
+    tuyau(v0, [[538, 246], [612, 246], [930, 394]], 20, 14);
 
-      d.innerHTML = `<defs>
-  <marker id="fl-air" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="${C.navy}"/></marker>
-</defs>` + parts.join('\n');
+    /* 1 · en pente continue : un filet au fond, qui descend tout seul jusqu'à dehors */
+    const pente = [[538, 246], [612, 246], [930, 394]];
+    const v1 = D.el('g', {});
+    tuyau(v1, pente, 20, 14); filet(v1, pente, 14, 38);
+    niveau(v1, 612, 930, 246);
+    tombe(v1, 930, 398, 572, 8, 21, 1);
+    etiq(v1, 612, 372, 'pente continue', C.eau);
+    etiq(v1, 905, 470, 'l’eau sort', C.eau, F);
+    etiq(v1, 905, 497, 'toute seule', C.eau, F);
+
+    /* 2 · un point bas : le tuyau se remplit, l'eau reste là, remonte dans le bac, qui déborde */
+    const creux = [[538, 246], [612, 246], [692, 322], [800, 216], [930, 264]];
+    const v2 = D.el('g', {});
+    tuyau(v2, creux, 20, 14); plein(v2, [[538, 246], [612, 246], [692, 322], [769, 246]], 14, 0);
+    niveau(v2, 612, 930, 246);
+    tombe(v2, 380, 276, 372, 4, 52, 1);
+    etiq(v2, 690, 372, 'point bas :', C.rouge, M);
+    etiq(v2, 690, 399, 'l’eau reste là', C.rouge, M);
+    etiq(v2, 815, 196, 'ça remonte', C.rouge);
+    etiq(v2, 340, 372, 'le bac déborde', C.rouge, F);
+
+    /* 3 · le siphon : un coude en U garde un bouchon d'eau ; les odeurs de l'évacuation s'arrêtent dessous */
+    const v3 = D.el('g', {});
+    const entree3 = [[538, 246], [612, 246], [660, 276], [660, 318]];
+    const bouchon = [[660, 318], ...arc(692, 352, 32, Math.PI, 0), [724, 318]];
+    const sortie3 = [[724, 318], [760, 318], [760, 596]];
+    tuyau(v3, [[538, 246], [612, 246], [660, 276], ...arc(692, 352, 32, Math.PI, 0), [724, 318], [760, 318], [760, 596]], 20, 14);
+    filet(v3, entree3, 14, 38); plein(v3, bouchon, 14, 8); filet(v3, sortie3, 14, 45);
+    const odeurs = D.el('path', { d: 'M765 560' + ' q-4 -7 0 -14' + ' t0 -14'.repeat(14), fill: 'none', stroke: C.ambre, 'stroke-width': 2.5,
+      'stroke-linecap': 'round', 'stroke-dasharray': '34 22' }, v3);
+    anime.push(t => odeurs.setAttribute('stroke-dashoffset', (-((t * 26) % 56)).toFixed(1)));
+    etiq(v3, 640, 372, 'bouchon d’eau', C.eau, F);
+    etiq(v3, 692, 430, 'siphon', C.navy, M);
+    etiq(v3, 742, 480, 'odeurs', C.ambre, F);
+    etiq(v3, 742, 540, 'évacuation d’eaux usées', C.gris, Object.assign({ 'font-weight': 400 }, F));
+
+    /* 4 et 5 · la pompe de relevage : l'eau tombe dans la pompe, qui la pousse vers le haut ; son flotteur monte
+       avec l'eau et, tout en haut, ouvre le contact de sécurité */
+    const pompe = haut => {
+      const v = D.el('g', {}), coul = haut ? C.rouge : C.vert;
+      const entree = [[538, 246], [612, 246], [612, 316]], riser = [[700, 370], [742, 370], [742, 176], [860, 176], [930, 206]];
+      tuyau(v, entree, 20, 14); plein(v, entree, 14, haut ? 0 : 30);
+      tuyau(v, riser, 14, 8);
+      if (!haut) { plein(v, riser, 8, 44); tombe(v, 930, 210, 572, 8, 61, 1); niveau(v, 760, 930, 246); }
+      /* le contact de sécurité, sur le fil qui va à l'unité */
+      D.el('path', { d: 'M480 270 V292 M480 316 V352 H560', fill: 'none', stroke: haut ? C.rouge : C.gris, 'stroke-width': 3 }, v);
+      D.el('circle', { cx: 480, cy: 294, r: 4, fill: C.navy, stroke: 'none' }, v);
+      D.el('circle', { cx: 480, cy: 314, r: 4, fill: C.navy, stroke: 'none' }, v);
+      D.el('path', { d: haut ? 'M480 314 L495 297' : 'M480 314 V294', fill: 'none', stroke: haut ? C.rouge : C.gris, 'stroke-width': 3, 'stroke-linecap': 'round' }, v);
+      /* le boîtier, son eau, son flotteur */
+      D.el('rect', { x: 560, y: 318, width: 140, height: 68, rx: 9, fill: C.creme, stroke: coul, 'stroke-width': 4 }, v);
+      const eau = D.liquide(D.el('g', { transform: 'translate(0 384) scale(1 0.6) translate(0 -384)' }, v),
+        { x0: 562, x1: 698, yh: 277, yb: 384, niveau: () => haut ? 0.85 : 0.4, couleur: () => EAU, pas: 12 });
+      const flotteur = D.el('circle', { cx: 630, r: 10, fill: haut ? C.ambre : C.papier, stroke: C.navy, 'stroke-width': 3 }, v);
+      anime.push(t => { eau.maj(t); flotteur.setAttribute('cy', (384 + (eau.surface(630, t) - 384) * 0.6 - 8).toFixed(1)); });
+      etiq(v, 630, 416, 'pompe de relevage', coul, M);
+      etiq(v, 630, 443, 'et son flotteur', C.navy, Object.assign({ 'font-weight': 400 }, M));
+      etiq(v, 462, 298, 'contact', haut ? C.rouge : C.navy, F);
+      etiq(v, 462, 325, haut ? 'ouvert' : 'fermé', haut ? C.rouge : C.navy, F);
+      if (!haut) {
+        etiq(v, 912, 345, 'l’eau sort', C.eau, F);
+        etiq(v, 812, 276, 'niveau', C.gris, { 'font-weight': 400 });
+        etiq(v, 812, 303, 'du bac', C.gris, { 'font-weight': 400 });
+      } else etiq(v, 655, 118, 'froid coupé', C.rouge);
+      return v;
+    };
+    const v4 = pompe(false), v5 = pompe(true);
+
+    const variantes = [v0, v1, v2, v3, v4, v5];            /* variantes[k] : le montage du pas k */
+    const repere = D.el('g', {}, d);                       /* c'est ici qu'on pose le montage du pas, sous les étiquettes */
+
+    /* les étiquettes communes, par-dessus tout ; chacune a sa place libre */
+    const etiquettes = [];
+    const ecrire = (x, y, s, c, coul, o, cache) => {
+      const base = Object.assign({ 'font-size': 21, 'font-weight': 700, fill: C.navy }, o || {});
+      const t = D.texte(d, x, y, s, base);
+      etiquettes.push({ t, c, coul, fond: base.fill, cache: cache || [] });
+    };
+    ecrire(36, 46, 'DANS LA PIÈCE');
+    ecrire(964, 46, 'DEHORS', null, null, F);
+    ecrire(790, 62, 'le mur', null, null, Object.assign({ fill: C.gris, 'font-weight': 400 }, M));
+    ecrire(233, 106, 'unité intérieure');
+    ecrire(567, 106, 'batterie froide', 'batterieEt', C.froid, F);
+    ecrire(30, 118, 'air de la pièce', 'air', C.ambre);
+    ecrire(655, 118, 'air frais', 'air', C.froid, null, [5]);
+    ecrire(300, 304, 'bac', 'bac', C.eau, M);
+
+    /* une image : tout avance selon t ; ce qui change d'un pas à l'autre s'installe doucement */
+    let avant = null;
+    const image = t => {
+      const dt = avant === null ? 0 : D.borne(t - avant, 0, 0.1), k = 1 - Math.exp(-dt * 3.5);
+      avant = t;
+      etat.froid += (cible.froid - etat.froid) * k; etat.niv += (cible.niv - etat.niv) * k;
+      rangs.forEach(r => r.setAttribute('stroke', etat.froid > 0.5 ? C.froid : C.gris));
+      anime.forEach(f => f(t));
+    };
+    image(1.6);
+    if (!FIGE) {
+      let vu = false;
+      const boucle = now => {
+        if (d.isConnected) { vu = true; image(now / 1000); }
+        else if (vu) return;                               /* on a quitté le temps : la boucle s'arrête */
+        requestAnimationFrame(boucle);
+      };
+      requestAnimationFrame(boucle);
+    }
+
+    /* le pas à pas : la partie qui agit s'allume, le reste tourne en retrait */
+    const ALLUME = [
+      ['air', 'batterie', 'batterieEt', 'gouttes', 'bac'],
+      ['bac'],
+      ['bac'],
+      ['bac'],
+      ['bac'],
+      ['bac', 'batterie', 'air']
+    ];
+    const ETATS = [{ froid: 1, niv: 0.29 }, { froid: 1, niv: 0.7 }, { froid: 1, niv: 1 }, { froid: 1, niv: 0.7 }, { froid: 1, niv: 0.47 }, { froid: 0, niv: 1 }];
+    const CONTOUR_BAC = [C.eau, C.eau, C.rouge, C.navy, C.navy, C.rouge];
+    let premier = true;
+    const allumer = k => {
+      const on = new Set(ALLUME[k]);
+      d.querySelectorAll('[data-c]').forEach(e => e.setAttribute('opacity', on.has(e.getAttribute('data-c')) ? 1 : RETRAIT));
+      etiquettes.forEach(e => {
+        e.t.setAttribute('fill', on.has(e.c) ? e.coul : e.fond);
+        if (e.cache.includes(k)) e.t.setAttribute('display', 'none'); else e.t.removeAttribute('display');
+      });
+      variantes.forEach((v, i) => { if (!v) return; if (i === k) { if (!v.parentNode) d.insertBefore(v, repere); } else if (v.parentNode) v.remove(); });
+      contourBac.setAttribute('stroke', CONTOUR_BAC[k]);
+      Object.assign(cible, ETATS[k]);
+      if (premier || FIGE) { Object.assign(etat, cible); premier = false; if (FIGE) image(1.6); }
     };
 
     const etapes = [
       { titre: 'L’eau se dépose sur la batterie',
         dire: 'L’air de la pièce touche la batterie froide. Refroidi, il ne peut plus garder toute son humidité : elle se dépose en gouttes, qui tombent dans le bac.',
-        peindre: () => { etape = 0; peindre(); } },
+        peindre: () => allumer(0) },
       { titre: 'Le tuyau, en pente, l’emmène dehors',
         dire: 'Le bac se vide par un tuyau posé en pente continue : l’eau descend toute seule jusqu’à dehors, sans pompe. D’après la fiche de montage du split, la pente est de 3 cm par mètre au moins.',
-        peindre: () => { etape = 1; peindre(); } },
+        peindre: () => allumer(1) },
       { titre: 'Un point bas : le bac déborde',
         dire: 'Si le tuyau a un creux, ou s’il remonte avant la sortie, l’eau n’en sort plus. Elle remplit le tuyau, remonte dans le bac, et le bac déborde. Un seul point bas suffit.',
-        peindre: () => { etape = 2; peindre(); } },
+        peindre: () => allumer(2) },
       { titre: 'Le siphon : un bouchon d’eau',
         dire: 'Quand le tuyau finit sur une évacuation d’eaux usées, un siphon garde un peu d’eau en permanence : l’eau du bac passe, les odeurs de l’évacuation ne remontent pas.',
-        peindre: () => { etape = 3; peindre(); } },
+        peindre: () => allumer(3) },
       { titre: 'La pompe relève l’eau',
         dire: 'Quand la sortie est plus haute que le bac, la pente est impossible. Une pompe de relevage reprend l’eau et la pousse vers le haut ; son flotteur la fait démarrer quand l’eau monte.',
-        peindre: () => { etape = 4; peindre(); } },
+        peindre: () => allumer(4) },
       { titre: 'Le flotteur coupe le froid',
         dire: 'Si la pompe s’arrête ou si le tuyau se bouche, l’eau monte, et le flotteur avec elle. Le contact de sécurité s’ouvre : il coupe le froid avant que le bac ne déborde.',
-        peindre: () => { etape = 5; peindre(); } }
+        peindre: () => allumer(5) }
     ];
     return pasAPas(d, etapes, 'Mode froid. En mode chaud, c’est l’unité extérieure qui fait de l’eau, au dégivrage : la station 2.7 le montre.');
   }
