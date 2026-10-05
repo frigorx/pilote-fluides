@@ -21,8 +21,9 @@ En clair :
 - **vous devez** citer inerWeb — F. Henninot ;
 - **vous ne pouvez pas** en faire un usage commercial : vendre une formation construite sur ce
   contenu exige un accord écrit préalable ;
-- **vous ne pouvez pas** le modifier, le remonter ni en tirer une œuvre dérivée diffusée sous
-  un autre nom. Une adaptation à votre contexte reste possible : elle se demande.
+- **vous ne pouvez pas** diffuser une version adaptée sans autorisation, même avec attribution.
+  La clause ND porte sur le partage des adaptations ; les modifications techniques nécessaires
+  à un changement de format restent permises par la licence.
 
 **Changement du 18/08/2026.** Ce contenu était auparavant sous CC BY-NC-**SA** 4.0, qui
 autorisait la modification. Le passage en **ND** ne vaut que pour l'avenir : une licence
@@ -36,6 +37,13 @@ animations sont la part la plus reprise d'un travail pédagogique, et la plus co
 produire. Elles restent en **tous droits réservés** : leur extraction du support pour un
 réemploi séparé — dans un autre cours, un autre site, un support commercial — n'est pas
 couverte par la licence de la section 1 et demande un accord écrit.
+
+La diffusion non commerciale d'un support pédagogique public **complet, sans adaptation et
+avec ses crédits**, autorisée par la section 1, inclut ses illustrations originales intégrées.
+Cette autorisation ne permet pas leur extraction pour un réemploi séparé. Les éléments tiers
+restent soumis à leurs propres licences ou permissions. Les documents réservés aux enseignants,
+délivrés avec un code personnel, gardent leurs conditions particulières de mise à disposition ;
+celles-ci ne retirent pas les droits déjà accordés sur les contenus publics sous licence Creative Commons.
 
 ## 3. Les symboles issus de QElectroTech — CC BY 3.0
 

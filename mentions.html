@@ -17,26 +17,28 @@
   h1 { font-family:'Trebuchet MS',Calibri,Arial,sans-serif; color:#1b3a63; font-size:30px; }
   h2 { font-family:'Trebuchet MS',Calibri,Arial,sans-serif; color:#1b3a63; font-size:21px; margin-top:34px; }
   .carte { background:#fffdf8; border:1px solid #d6dee7; border-radius:14px; padding:16px 20px; margin:14px 0; }
-  .avalider { background:#fdf6e3; border:1.5px dashed #c9a227; border-radius:8px; padding:2px 8px; }
+  a { overflow-wrap:anywhere; }
   a { color:#1b3a63; } a:hover { color:#c9451a; }
   a:focus-visible { outline:3px solid #ff6b35; outline-offset:2px; }
 </style>
+<link rel="stylesheet" href="moteur/impression.css" media="print">
 <script defer src="moteur/retour-accueil.js?v=ff0ca829c0"></script>
 </head>
 <body>
 <main id="contenu">
   <h1>Mentions légales et confidentialité</h1>
-  <p><em>Dernière mise à jour : 20 septembre 2026.</em></p>
+  <p><em>Dernière mise à jour : 5 octobre 2026.</em></p>
 
   <h2>Éditeur du site</h2>
   <div class="carte">
     <p>inerWeb Édu — projet pédagogique personnel, <strong>édité à titre non professionnel</strong>.<br>
        Directeur de la publication : F. Henninot.<br>
        Contact : <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a></p>
-    <p style="font-size:15px;color:#4a5866;margin-bottom:0">L'éditeur d'un site non professionnel
-       peut ne pas publier son adresse personnelle, à condition d'avoir communiqué son identité
-       à son hébergeur et de publier les coordonnées de celui-ci — c'est le cas ici.
-       Toute demande peut être adressée à l'hébergeur, qui la transmet.</p>
+    <p>Les éléments d'identification personnelle de l'éditeur ont été communiqués à GitHub.
+       Son adresse personnelle n'est pas publiée, conformément à l'article 1-1, II de la
+       <a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/">loi pour la confiance dans l'économie numérique</a>.
+       Une demande de droit de réponse peut être adressée à l'éditeur par courriel ou à
+       l'hébergeur, qui la transmet dans les conditions prévues par cette loi.</p>
   </div>
 
   <h2>Hébergement</h2>
@@ -44,7 +46,9 @@
     <p>GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco,
        CA 94107, États-Unis — <a href="https://pages.github.com" rel="noopener" target="_blank">pages.github.com</a>.<br>
        Nom de domaine <strong>inerweb.fr</strong> enregistré chez OVH SAS, 2 rue Kellermann,
-       59100 Roubaix, France. Service de distribution et de protection : Cloudflare.</p>
+       59100 Roubaix, France.</p>
+    <p>Distribution et protection du site : Cloudflare, Inc., 101 Townsend Street,
+       San Francisco, CA 94107, États-Unis — <a href="https://www.cloudflare.com/">cloudflare.com</a>.</p>
   </div>
 
   <h2>Licences — qui a le droit de faire quoi</h2>
@@ -53,96 +57,147 @@
        textes) sont sous licence
        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a> :
        partage libre avec attribution, <b>pas d'usage commercial</b>,
-       <b>pas de modification</b>.</p>
-    <p><b>Les illustrations, schémas et animations</b> sont sous
-       <b>tous droits réservés</b> : leur réutilisation hors de ce site demande
-       un accord écrit.</p>
+       <b>pas de diffusion d'une version adaptée sans autorisation</b>.</p>
+    <p>Les supports pédagogiques publics peuvent être utilisés, imprimés et partagés
+       <b>complets et sans adaptation</b>, avec leurs crédits, pour un usage non commercial.
+       Les illustrations originales intégrées peuvent accompagner ce partage du support complet.</p>
+    <p><b>Les illustrations, schémas et animations originaux</b> restent sous
+       <b>tous droits réservés pour un réemploi séparé</b> : les extraire pour les intégrer
+       à un autre support demande un accord écrit. Les médias et logiciels tiers gardent
+       leurs licences propres, indiquées dans les fichiers ou les crédits.</p>
     <p><b>Le moteur et les scripts</b> (code technique) sont sous licence
-       <b>MIT</b> : réutilisables librement, mention de copyright conservée.</p>
+       <b>MIT</b>, sauf exceptions indiquées dans <a href="LICENCE.md">LICENCE.md</a> :
+       réutilisables avec conservation de la notice de copyright et de licence.</p>
     <p><b>Les symboles électrotechniques dérivés de QElectroTech</b> restent sous
        <a href="https://creativecommons.org/licenses/by/3.0/deed.fr" rel="noopener" target="_blank">CC BY 3.0</a>,
        avec leur attribution d'origine embarquée dans chaque fichier.</p>
     <p>Le détail fait foi dans <a href="LICENCE.md">LICENCE.md</a>.
+       Les documents réservés aux enseignants et délivrés avec un code personnel
+       restent soumis aux conditions particulières acceptées lors de la demande d'accès.
        Demandes d'usage commercial ou de centre de formation :
        <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</p>
   </div>
 
   <h2>Confidentialité</h2>
   <div class="carte">
-    <p><b>Aucun compte, aucune publicité, aucun suivi nominatif, aucune collecte
-       cachée.</b> Le site ne charge aucun script tiers, aucune police distante,
-       aucun traceur.</p>
-    <p>Le navigateur enregistre <b>sur votre appareil seulement</b> (localStorage
-       et sessionStorage) : vos préférences de lecture (taille du texte), votre
-       trajet sur le plan (stations visitées) et vos scores d'entraînement.
-       Rien ne quitte le navigateur ; effacer les données du site les supprime.</p>
-    <p>La consultation hors-ligne (service worker) garde une copie des pages
-       visitées sur l'appareil, pour l'atelier sans réseau.</p>
-    <p>L'hébergeur (GitHub Pages) tient ses propres journaux techniques
-       (adresses IP) pour la sécurité de sa plateforme — voir sa
-       <a href="https://docs.github.com/site-policy/privacy-policies" rel="noopener" target="_blank">politique de confidentialité</a>.</p>
+    <p><b>Les ressources publiques se consultent sans compte et sans publicité.</b>
+       La consultation implique néanmoins des échanges techniques avec les services
+       qui hébergent et distribuent les pages.</p>
+    <p><b>Sur votre appareil.</b> Selon les outils utilisés, le navigateur mémorise les
+       préférences de lecture, de voix et de son, les stations visitées, les réponses,
+       les scores et les bilans. L'activation d'un accès enseignant mémorise aussi
+       le nom du titulaire, les informations de validité et les éléments de son code d'accès.
+       Ces informations permettent de retrouver ses réglages et son travail sans les ressaisir.</p>
+    <p>Le stockage de session disparaît à la fin de la session ; le stockage persistant
+       (<code>localStorage</code>) reste jusqu'à son effacement par l'utilisateur ou le navigateur.
+       L'expiration d'un accès ne supprime pas à elle seule toutes les données mémorisées.
+       Le mode hors ligne conserve également des fichiers du site dans le cache du navigateur.</p>
+    <p>Pour les supprimer, utilisez les commandes de remise à zéro de l'outil ou effacez les
+       données du site dans votre navigateur. Cette opération peut supprimer votre progression
+       et imposer de saisir à nouveau votre code d'accès. Les fichiers déjà téléchargés
+       ou transmis volontairement à un enseignant doivent être gérés séparément.</p>
+    <p><b>Connexions et sécurité.</b> GitHub Pages et Cloudflare traitent notamment des
+       adresses IP et des informations sur les requêtes, les appareils et les pages demandées,
+       pour fournir le site et prévenir les abus. L'éditeur peut consulter les journaux de
+       sécurité et les statistiques de trafic proposés par Cloudflare. Ces statistiques
+       techniques ne mesurent pas le nombre de personnes ayant réellement lu une ressource.</p>
+    <p>Cloudflare peut ajouter des fonctions de sécurité et un script de protection des adresses
+       courriel. Certains outils chargent une ressource externe, notamment une bibliothèque
+       depuis cdnjs ou un module hébergé sur <code>frigorx.github.io</code> : leur chargement
+       communique des données de connexion au fournisseur concerné. Les liens vers d'autres
+       sites conduisent à des services soumis à leurs propres règles de confidentialité.</p>
+    <p>Les traitements techniques nécessaires à la mise à disposition et à la sécurité du site
+       reposent, pour l'éditeur, sur son intérêt légitime à assurer un service fonctionnel et sûr.
+       Les journaux gérés par les prestataires suivent les durées ou critères de conservation
+       décrits dans leurs politiques :
+       <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a>
+       et <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>.</p>
   </div>
 
   <h2>Les demandes d'accès enseignant</h2>
   <div class="carte">
-    <p><b>Ce site n'enregistre toujours rien.</b> Le formulaire de demande d'accès
-       prépare un courriel que vous relisez et envoyez depuis votre propre messagerie :
-       aucune donnée ne transite par ce site, aucun formulaire n'est reçu ici.</p>
-    <p><b>Ce qui est conservé, et où.</b> Les demandes reçues par courriel sont reportées
-       dans un fichier tenu <b>sur un ordinateur personnel, hors ligne</b> : nom, adresse
-       de courriel, établissement, ce que la personne a accepté, et les dates. Ce fichier
-       n'est ni publié, ni synchronisé sur ce site.</p>
-    <p><b>À quoi ça sert.</b> À délivrer et renouveler les accès. Et, pour qui l'a coché,
-       à envoyer quelques courriels par an sur inerWeb — jamais plus.</p>
-    <p><b>Ce qui n'est jamais fait.</b> Ces informations ne sont ni vendues, ni cédées, ni
-       communiquées à un tiers, ni utilisées pour autre chose. Aucune statistique publiée
-       ne comporte de nom : uniquement des totaux (nombre d'enseignants, d'établissements),
-       et seulement pour les personnes qui l'ont accepté.</p>
-    <p><b>Vos droits.</b> Vous pouvez demander à consulter, corriger ou effacer vos
-       informations, ou vous désinscrire des envois, en écrivant à
-       <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a> — c'est fait sans
-       délai et sans justification à fournir. Les informations sont effacées quand l'accès
-       n'est plus renouvelé.</p>
+    <p>Le formulaire <b>prépare un courriel dans votre messagerie</b>. Il ne transmet pas
+       les champs saisis à un serveur de collecte du site. Vous relisez le message et
+       décidez de l'envoyer à <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</p>
+    <p><b>Données concernées.</b> Nom et prénom, adresse de courriel, établissement et matière
+       si vous les indiquez, ressources demandées, accords exprimés, dates de demande et de
+       délivrance, numéro et échéance de l'accès. Le nom, le courriel, le choix des ressources
+       et l'acceptation des conditions sont nécessaires au traitement de la demande.
+       L'établissement et la matière sont facultatifs. Ne joignez pas de données d'élèves.</p>
+    <p><b>Gestion de l'accès.</b> Ces données servent à traiter votre demande, délivrer et
+       renouveler votre accès, personnaliser les documents et répondre à vos messages.
+       Ce traitement est nécessaire à l'exécution du service demandé et aux démarches
+       préalables à sa fourniture (article 6, paragraphe 1, b du RGPD).</p>
+    <p><b>Choix facultatifs.</b> Deux accords séparés, non cochés par défaut, permettent
+       de contribuer aux statistiques agrégées de diffusion et de recevoir quelques nouvelles
+       d'inerWeb par an. Ces traitements reposent sur votre consentement. Refuser ou retirer
+       l'un de ces accords ne vous prive pas de l'accès enseignant. Les statistiques destinées
+       à être publiées ne comportent pas de noms ni de groupes permettant une réidentification.</p>
+    <p><b>Où et par qui.</b> L'éditeur reçoit les demandes et conserve les échanges dans sa
+       messagerie Gmail. Les outils de délivrance des codes peuvent aussi produire des fichiers
+       locaux de suivi des accès sur son ordinateur. Les courriels et leurs pièces jointes sont traités par les
+       prestataires de messagerie, dont Google pour Gmail. Les codes personnels ne sont pas publiés.
+       Les coordonnées ne sont ni vendues ni cédées à des partenaires commerciaux.</p>
+    <p><b>Conservation.</b> Les demandes abouties et les éléments de suivi sont conservés
+       pendant la validité de l'accès, puis supprimés au plus tard un an après l'expiration
+       du dernier accès non renouvelé. Une demande sans suite est supprimée au plus tard
+       un an après le dernier échange. Cette règle concerne les courriels, les fichiers de suivi,
+       les fichiers de codes et leurs éventuelles copies de sauvegarde conservés par l'éditeur.
+       Les envois facultatifs cessent dès
+       le retrait du consentement et, au plus tard, à la suppression du dossier.</p>
   </div>
 
-  <h2>Le résumé réglementaire, en clair</h2>
+  <h2>Prestataires et transferts hors de l'Union européenne</h2>
   <div class="carte">
-    <p>Ce qui précède est écrit en langage courant, pour être lu. Voici les mêmes faits
-       dans les termes du règlement européen sur les données personnelles (RGPD) :</p>
-    <p><b>Responsable de traitement :</b> F. Henninot, éditeur du site — contact
-       <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.<br>
-       <b>Traitements concernés :</b> uniquement les demandes d'accès enseignant. La consultation
-       du site, elle, ne donne lieu à aucun traitement — ni compte, ni traceur, ni mesure d'audience.<br>
-       <b>Finalités :</b> délivrer et renouveler les accès ; envoyer quelques informations par an
-       aux personnes qui l'ont expressément accepté.<br>
-       <b>Base légale :</b> le consentement, donné case par case au moment de la demande,
-       et retirable à tout moment.<br>
-       <b>Données traitées :</b> nom, adresse de courriel, établissement, consentements et dates.
-       Aucune donnée sensible, aucune donnée d'élève.<br>
-       <b>Destinataires :</b> personne. Les données ne sont ni vendues, ni cédées, ni transmises.<br>
-       <b>Durée de conservation :</b> le temps de l'accès, puis effacement au plus tard un an
-       après son dernier renouvellement.<br>
-       <b>Lieu :</b> un fichier hors ligne sur un ordinateur personnel, jamais publié sur ce site.<br>
-       <b>Vos droits :</b> accès, rectification, effacement, opposition, retrait du consentement,
-       portabilité — par simple courriel, sans justification.<br>
-       <b>Réclamation :</b> en cas de désaccord, vous pouvez saisir la CNIL —
-       <a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>.</p>
+    <p>GitHub, Cloudflare et Google utilisent des infrastructures internationales.
+       Des données de connexion ou de messagerie peuvent être traitées hors de l'Union
+       européenne, notamment aux États-Unis.</p>
+    <p>Ces prestataires déclarent recourir, selon les transferts concernés, au cadre de
+       protection des données UE–États-Unis (Data Privacy Framework) et/ou aux clauses
+       contractuelles types de la Commission européenne. Leurs politiques précisent
+       les garanties, les durées ou critères de conservation et les moyens d'obtenir
+       davantage d'informations :
+       <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a>,
+       <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>,
+       <a href="https://policies.google.com/privacy?hl=fr">Google / Gmail</a> et
+       <a href="https://policies.google.com/privacy/frameworks?hl=fr">cadres de transfert Google</a>.</p>
+  </div>
+
+  <h2>Vos droits et votre contact</h2>
+  <div class="carte">
+    <p><b>Responsable des traitements mis en œuvre par l'éditeur :</b> F. Henninot.
+       Pour toute demande : <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</p>
+    <p>Vous disposez des droits d'accès, de rectification, d'effacement et de limitation
+       du traitement. Selon la base légale et les conditions prévues par le RGPD,
+       vous pouvez aussi exercer votre droit d'opposition et votre droit à la portabilité.</p>
+    <p>Vous pouvez retirer votre consentement aux nouvelles ou aux statistiques à tout moment,
+       sans justification et sans remettre en cause les traitements déjà effectués légalement.
+       Pour arrêter les nouvelles, répondez simplement « stop » à un message ou écrivez à l'adresse ci-dessus.</p>
+    <p>Une réponse vous est apportée en principe dans un délai d'un mois. Si la complexité
+       de la demande justifie une prolongation prévue par le RGPD, vous en êtes informé
+       dans ce délai. En cas de doute raisonnable sur votre identité, seules les informations
+       nécessaires à sa vérification pourront vous être demandées.</p>
+    <p>Vous pouvez adresser une réclamation à la
+       <a href="https://www.cnil.fr/fr/adresser-une-plainte">Commission nationale de l'informatique et des libertés (CNIL)</a>.</p>
   </div>
 
   <h2>Public du site</h2>
   <div class="carte">
     <p>Ce site s'adresse à des élèves et apprentis en formation, dont des mineurs, ainsi qu'à
-       leurs enseignants et formateurs. <b>Il ne demande jamais son identité à un élève :</b>
-       les parcours fonctionnent avec un code de quatre caractères, anonyme, et la correspondance
-       entre ce code et un nom reste sur le papier de l'enseignant. Aucun compte, aucune inscription,
-       aucune adresse de courriel ne sont demandés à un élève.</p>
+       leurs enseignants et formateurs. Les parcours utilisant un code élève de quatre caractères
+       fonctionnent sans compte nominatif ni adresse de courriel de l'élève.</p>
+    <p>Ce code est un <b>pseudonyme</b> : l'enseignant conserve séparément la correspondance
+       avec l'identité de l'élève. Cette correspondance n'est pas demandée par le site.
+       Les fonctions d'export ou de remise d'un bilan permettent à l'élève de transmettre
+       volontairement son travail à son enseignant. Celui-ci organise la conservation
+       de ces bilans et l'information des élèves dans le cadre de son établissement.</p>
   </div>
 
-  <p style="font-size:15px;color:#4a5866"><em>Ces mentions sont rédigées de bonne foi par l'auteur
-     du site, qui n'est pas juriste. Toute erreur signalée à
-     <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a> sera corrigée sans délai.</em></p>
+  <p>Pour signaler une erreur dans cette page ou demander une précision :
+     <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</p>
 
   <p><a href="/">← Retour à l'accueil</a></p>
 </main>
+<script src="moteur/lisibilite.js?v=0f55b28ccd"></script>
 </body>
 </html>
