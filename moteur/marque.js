@@ -13,23 +13,22 @@
    TROIS RÉGLAGES, lus sur la balise <script> elle-même, sinon sur <html>,
    sinon les valeurs par défaut. Ils se posent ainsi :
      <script src="../../moteur/marque.js"
-             data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
+             data-cartouche="Édu" data-licence="conditions"></script>
      · data-cartouche — le mot du cartouche orange : Pilote (défaut),
                         Fluide, Édu. Le logo ne se redessine pas, il se
                         décline : SEUL ce mot change (charte § 3.4).
-     · data-licence   — cc-by-nc-nd (défaut), tous-droits, interne.
+     · data-licence   — conditions (défaut), cc-by-nc-nd, tous-droits, interne.
      · data-prototype — présent = la page s'annonce document de travail.
-   Rien à poser : la page garde le comportement d'avant le 18/08/2026.
+   Sans choix explicite : conditions générales, sans nouvel octroi automatique CC.
 
    POURQUOI LA LICENCE EST ICI, et pas dans un pied de page écrit à la
    main (décision F. Henninot 18/08/2026) : une page de cours circule
    seule — imprimée, enregistrée, transférée. Détachée de sa galerie,
    elle perd tout contexte. La mention de droits doit donc voyager DANS
    la page, au même endroit que la marque, et sortir à l'imprimante.
-   Régime retenu : CC BY-NC-ND 4.0. NC réserve le marché des centres de
-   formation, ND interdit qu'on reprenne les schémas sous un autre nom.
-   L'auteur, lui, n'est jamais lié par la licence qu'il donne : la vente
-   d'une licence commerciale reste entièrement ouverte.
+   Décision du 05/10/2026 : droits réservés sur les nouveaux apports,
+   licences antérieures et tierces conservées. Les mentions CC explicites
+   restent applicables. Un pied de page ne révoque aucun droit acquis.
 
    TROIS MODES, et la raison de chacun — c'est mesuré, pas prudentiel :
      · `hote`     — la page marque un conteneur avec `data-marque-hote`
@@ -83,7 +82,7 @@
     }
     return {
       cartouche: lire("cartouche") || "Pilote",
-      licence: lire("licence") || "cc-by-nc-nd",
+      licence: lire("licence") || "conditions",
       prototype: present("prototype"),
     };
   }
@@ -93,10 +92,16 @@
      partout ; la forme LONGUE ne sort qu'en fin de document et à
      l'impression — c'est la version qui a valeur de mention légale. */
   var LICENCES = {
+    conditions: {
+      court: "Conditions d’utilisation",
+      long:
+        "Nouvelles créations : droits réservés, usages limités selon inerweb.fr/mentions.html · " +
+        "Licences antérieures et tierces conservées · Contact : " + CONTACT,
+    },
     "cc-by-nc-nd": {
       court: "CC BY-NC-ND 4.0",
       long:
-        "CC BY-NC-ND 4.0 — citer inerWeb, pas d’usage commercial, pas de modification · " +
+        "CC BY-NC-ND 4.0 — citer inerWeb, pas d’usage commercial, pas de diffusion d’adaptations · " +
         "Illustrations, schémas et animations : tous droits réservés · " +
         "Usage en centre de formation : " + CONTACT,
     },
@@ -104,7 +109,7 @@
       court: "Tous droits réservés",
       long:
         "Tous droits réservés — reproduction, adaptation et diffusion soumises à " +
-        "autorisation écrite · Contact : " + CONTACT,
+        "autorisation écrite, sauf usages autorisés, licences antérieures ou tierces et exceptions légales · Contact : " + CONTACT,
     },
     interne: {
       court: "Document interne — ne pas diffuser",
@@ -115,7 +120,7 @@
   };
 
   var R = reglages();
-  var LIC = LICENCES[R.licence] || LICENCES["cc-by-nc-nd"];
+  var LIC = LICENCES[R.licence] || LICENCES.conditions;
 
   /* ------------------------------------------------------------------
      Logo compact, cotes de la charte § 3.4 (viewBox 400×50 ramené à

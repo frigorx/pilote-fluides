@@ -1,115 +1,69 @@
-# Licence et propriété intellectuelle
+# Propriété intellectuelle et conditions d’utilisation — inerWeb
 
-**© 2026 inerWeb — F. Henninot.** Dépôt public ne signifie pas libre de droits :
-ce fichier dit précisément ce que chacun peut faire.
+**© 2026 F. Henninot — inerWeb. Droits réservés, sous réserve des licences antérieures, des droits des tiers et des exceptions prévues par la loi.**
 
-Contact pour toute demande — usage commercial, centre de formation, adaptation :
-**inerweb.fh@gmail.com**
+Politique du **5 octobre 2026**, applicable à compter de sa publication.
+Contact pour une autorisation, une adaptation ou une offre commerciale : **inerweb.fh@gmail.com**.
 
-## 1. Le contenu pédagogique — CC BY-NC-ND 4.0
+## 1. Gratuité et propriété
 
-Les fiches de cours, questions d'entraînement (indices et remédiations compris), planches SVG,
-exercices, séquences de projection et documents de relecture — c'est-à-dire l'essentiel de
-`packs/fluides/` — sont placés sous licence
-**Creative Commons Attribution - Pas d'utilisation commerciale - Pas de modification
-4.0 International** (CC BY-NC-ND 4.0) :
-https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr
+La consultation gratuite d’une ressource n’emporte ni cession de propriété intellectuelle, ni mise dans le domaine public, ni autorisation générale de reproduction ou de redistribution. Les droits sur les créations originales de F. Henninot restent à leur titulaire. La protection porte sur les éléments protégeables, et non sur les idées, les faits, les principes techniques ou les textes officiels en tant que tels.
 
-En clair :
-- **vous pouvez** utiliser, imprimer et diffuser ce contenu pour votre enseignement,
-  gratuitement, y compris devant votre classe ;
-- **vous devez** citer inerWeb — F. Henninot ;
-- **vous ne pouvez pas** en faire un usage commercial : vendre une formation construite sur ce
-  contenu exige un accord écrit préalable ;
-- **vous ne pouvez pas** diffuser une version adaptée sans autorisation, même avec attribution.
-  La clause ND porte sur le partage des adaptations ; les modifications techniques nécessaires
-  à un changement de format restent permises par la licence.
+Le titulaire conserve la faculté de proposer ses créations sous des conditions différentes : accès gratuit, abonnement, licence payante, vente de supports ou prestation associée. Aucune gratuité permanente des futurs services ou des futures versions n’est promise. Une évolution de l’offre respecte les droits déjà accordés et les engagements contractuels en cours. Aucun tarif ne s’applique rétroactivement à un usage déjà autorisé.
 
-**Changement du 18/08/2026.** Ce contenu était auparavant sous CC BY-NC-**SA** 4.0, qui
-autorisait la modification. Le passage en **ND** ne vaut que pour l'avenir : une licence
-Creative Commons est irrévocable pour les copies déjà diffusées. Ce qui a été récupéré avant
-cette date sous CC BY-NC-SA reste régi par CC BY-NC-SA.
+## 2. Périmètre : nouvelles créations et versions antérieures
 
-## 2. Les illustrations, schémas et animations — tous droits réservés
+Pour les **nouveaux éléments originaux publiés après l’entrée en vigueur de cette politique**, les droits sont réservés par défaut. Les autorisations limitées de la section 3 s’appliquent, sauf licence particulière explicitement accordée par le titulaire. Cela concerne notamment les nouveaux textes, exercices, banques de questions, illustrations, schémas, animations, vidéos, narrations, documents et développements logiciels originaux.
 
-Les illustrations originales, schémas techniques, planches SVG dessinées pour ce dépôt et
-animations sont la part la plus reprise d'un travail pédagogique, et la plus coûteuse à
-produire. Elles restent en **tous droits réservés** : leur extraction du support pour un
-réemploi séparé — dans un autre cours, un autre site, un support commercial — n'est pas
-couverte par la licence de la section 1 et demande un accord écrit.
+**Cette politique ne retire aucun droit déjà valablement accordé.** Les éléments déjà publiés sous Creative Commons, MIT ou une autre licence restent utilisables et redistribuables dans les conditions de cette licence, y compris lorsqu’ils sont obtenus ultérieurement par une redistribution autorisée. Changer la date, le titre, le format ou le pied de page d’une ressource ne supprime pas ces droits.
 
-La diffusion non commerciale d'un support pédagogique public **complet, sans adaptation et
-avec ses crédits**, autorisée par la section 1, inclut ses illustrations originales intégrées.
-Cette autorisation ne permet pas leur extraction pour un réemploi séparé. Les éléments tiers
-restent soumis à leurs propres licences ou permissions. Les documents réservés aux enseignants,
-délivrés avec un code personnel, gardent leurs conditions particulières de mise à disposition ;
-celles-ci ne retirent pas les droits déjà accordés sur les contenus publics sous licence Creative Commons.
+Repère vérifiable : le dépôt à la révision [`8cf2a24b4980e4f6a1f71e21240b4282a4514f30`](https://github.com/frigorx/pilote-fluides/tree/8cf2a24b4980e4f6a1f71e21240b4282a4514f30) précède le présent changement. La [licence précédente](docs/licences/LICENCE-avant-2026-10-05.md) est conservée pour identifier les autorisations alors accordées ; les notices locales et l’historique de chaque fichier complètent ce repère.
 
-## 3. Les symboles issus de QElectroTech — CC BY 3.0
+Une nouvelle version qui reprend des éléments antérieurs ne les rend pas exclusifs. Seuls ses apports originaux nouveaux peuvent relever du nouveau régime, dans la mesure où les licences des éléments repris le permettent. Une mention particulière CC, MIT, GPL ou autre reste applicable à son périmètre ; les restrictions générales ci-dessous ne l’annulent pas.
 
-Le dossier `symboles/` redistribue la collection d'éléments de **QElectroTech**
-(`github.com/qelectrotech/qelectrotech-elements`) convertie en SVG. Sa licence propre, **CC BY
-3.0**, s'applique et prime sur la section 1 : voir `symboles/LICENCE.md`.
+## 3. Autorisations gratuites limitées pour les éléments réservés
 
-**Des symboles de cette même origine sont aussi embarqués dans les modules** de
-`packs/fluides/res/` — schémas de circuit, planches d'organes. Un contrôle de similarité
-structurelle mené le 18/08/2026 sur les 116 symboles embarqués en a identifié **18** dérivés
-de la collection : ils portent chacun, dans leur bloc `<metadata>`, le crédit QElectroTech et
-l'identifiant de l'élément d'origine. Les autres sont des dessins originaux inerWeb.
+Pour les ressources proposées en accès gratuit, sont autorisés :
 
-Ce que CC BY 3.0 autorise couvre tous les usages de ce dépôt : utiliser, modifier,
-redistribuer, **y compris commercialement**, à la seule condition de citer. L'usage dans un
-schéma électrique est même libre sans condition. Ce qui revient en propre à F. Henninot : la
-sélection métier, la mise à la charte, les repères de bornes et le catalogue — pas les dessins.
+- la consultation et l’exécution depuis le site officiel, ainsi que le mode hors ligne expressément prévu par l’outil ;
+- la projection en classe et l’utilisation pédagogique directe avec les élèves ou apprentis, sans revente de la ressource ni intégration à une offre de formation commercialisée ;
+- le téléchargement et l’impression lorsque la ressource est expressément proposée à cet effet, pour l’usage personnel du bénéficiaire ou des élèves directement encadrés, avec conservation des crédits et mentions de droits.
 
-## 4. Le moteur et les scripts de construction
+Ces autorisations sont non exclusives. Elles ne permettent pas de concéder la ressource à un tiers, de distribuer une bibliothèque de copies, de créer un miroir du site ou de partager un code d’accès personnel. Le partage d’un **lien vers la ressource officielle** reste autorisé. Les documents réservés aux enseignants suivent aussi leurs conditions particulières de mise à disposition.
 
-Le moteur générique (`moteur/`, issu de `frigorx/r408`) et les scripts de construction
-(`build/`) sont sous **licence MIT** : réutilisation libre, y compris commerciale, à condition
-de conserver la mention de copyright.
+## 4. Réutilisations soumises à accord écrit
 
-Exception explicite : `build/voix/generer-audios-piper.py`, qui utilise Piper, porte
-`SPDX-License-Identifier: GPL-3.0-or-later`. Cette exception concerne l'outil de fabrication,
-pas le lecteur web ni les autres scripts du dépôt.
+Pour les éléments réservés, hors autorisations de la section 3, licences particulières ou exceptions légales, un accord écrit préalable est nécessaire pour :
 
-## 5. Le référentiel officiel — hors licence
+- reproduire, extraire, modifier, traduire ou adapter un contenu ;
+- republier, redistribuer, héberger ou intégrer tout ou partie d’une ressource à un autre site, logiciel, document, plateforme ou collection ;
+- vendre, louer, sous-licencier ou intégrer les ressources à une offre commerciale ;
+- extraire ou réutiliser une banque de questions, des schémas, des illustrations, des animations ou des narrations comme ressources autonomes.
 
-`packs/fluides/referentiel-2025.json` transcrit l'annexe II.B de l'arrêté du 21 novembre 2025
-(Journal officiel de la République française). Un texte officiel n'est la propriété de
-personne : ce fichier est librement réutilisable, et aucune des licences ci-dessus ne
-prétend le couvrir.
+Le seul fait de citer inerWeb ne remplace pas l’autorisation nécessaire. L’usage des noms et logos pour identifier la source n’autorise pas à présenter une offre comme officielle, approuvée par inerWeb ou créée par son auteur. Ces conditions ne limitent pas les exceptions impératives prévues par la loi, notamment celles applicables aux logiciels et à la citation.
 
-## 6. Les narrations vocales
+## 5. Licences antérieures et composants tiers
 
-Les MP3 de `packs/fluides/res/voix/audio/` sont la mise en voix du contenu pédagogique : la
-licence CC BY-NC-ND 4.0 de la section 1 s'y applique donc. Le lot est mixte :
+Les principales exceptions déjà identifiées sont les suivantes :
 
-- une partie est fabriquée avec le modèle Piper `fr_FR-siwis-medium`, entraîné sur le corpus
-  SIWIS sous licence CC BY 4.0, entièrement local ;
-- les stations du tronc et de l'huile sont fabriquées avec `edge-tts` (voix Microsoft Neural).
-  Cet outil envoie le texte des narrations à Microsoft **au moment de la fabrication en
-  atelier** ; aucun appel réseau n'a lieu en séance, chez le stagiaire ou au chargement d'une
-  page. `moteur/voix-index.js` indique, entrée par entrée, quelle voix a servi.
+- **Contenus pédagogiques et narrations antérieurs sous CC BY-NC-ND 4.0** : la licence accordée demeure applicable. Certaines versions plus anciennes ont été diffusées sous CC BY-NC-SA 4.0 ; leurs autorisations subsistent également.
+- **Moteur et scripts antérieurs sous MIT** : les autorisations MIT restent applicables au code concerné, y compris pour une réutilisation commerciale avec conservation des notices requises. Elles ne couvrent pas automatiquement un nouvel apport original distinct qui n’a pas été placé sous MIT.
+- **Symboles QElectroTech** : leur licence propre et les conditions d’origine prévalent ; voir [symboles/LICENCE.md](symboles/LICENCE.md). inerWeb ne revendique pas la propriété exclusive des dessins de cette collection.
+- **Illustrations de Sous tension** déjà sous CC BY 4.0 : cette autorisation, y compris commerciale, reste applicable ; voir [leur notice](sous-tension/assets/illustrations/LICENCE.md).
+- **HoCourant et autres modules à licence particulière** : consulter leur notice locale ; par exemple [HoCourant](hocourant/LICENCE.md). Une politique générale ne remplace pas silencieusement ces autorisations particulières.
+- **Bibliothèques, polices, outils et médias tiers** : leurs licences respectives (MIT, GPL, OFL, Creative Commons ou autres) et leurs crédits restent applicables. Notamment, l’outil `build/voix/generer-audios-piper.py` conserve son indication GPL-3.0-or-later.
+- **Textes officiels et éléments non appropriables** : aucune exclusivité n’est revendiquée sur les textes officiels, faits et principes techniques eux-mêmes.
 
-L'attribution et les sources sont conservées dans `packs/fluides/res/voix/README.md`.
-Aucun modèle ni logiciel de fabrication n'est embarqué dans le site publié.
+Cette liste ne remplace pas les crédits et notices présents dans chaque module ou fichier.
 
-## 7. Usage en centre de formation — licence commerciale
+## 6. Narrations et médias générés
 
-La clause « pas d'utilisation commerciale » de la section 1 couvre l'enseignement gratuit.
-Un organisme qui facture une prestation de formation, même en n'utilisant qu'une partie de ce
-contenu, en fait un usage commercial : il lui faut une licence négociée. Écrire à
-**inerweb.fh@gmail.com**.
+Les droits sur le texte, les droits éventuels sur l’enregistrement, la licence du logiciel, la licence du modèle et les conditions du service de génération sont distincts. Une licence sur le logiciel de synthèse ne suffit pas à déterminer les droits sur tous les fichiers audio produits. La gratuité de l’outil ne prouve pas une autorisation commerciale.
 
-Cette réserve n'entrave en rien l'auteur : titulaire des droits, il reste libre de concéder ce
-même contenu sous d'autres conditions, y compris commerciales, à qui il l'entend.
+Les narrations existantes incluent notamment Piper / SIWIS et des productions réalisées avec `edge-tts`. Leur provenance documentée figure dans [packs/fluides/res/voix/README.md](packs/fluides/res/voix/README.md). La présente politique ne vaut pas garantie de commercialisation de chaque média tiers ou généré, ni transfert de droits que l’éditeur ne détient pas.
 
-## 8. Antériorité
+## 7. Demander une licence commerciale
 
-L'historique git public de ce dépôt (`github.com/frigorx/pilote-fluides`) établit
-l'antériorité de chaque contenu, commit par commit, horodatés et signés par la plateforme.
+Écrire à **inerweb.fh@gmail.com** en indiquant les ressources, le public, les usages, la durée et les adaptations souhaités. L’autorisation écrite précise les éléments couverts, les droits accordés et, le cas échéant, le prix. Une autorisation limitée à un usage n’emporte pas transfert de propriété ni autorisation sur l’ensemble du catalogue.
 
----
-
-*Toute demande d'usage commercial ou question sur cette licence : **inerweb.fh@gmail.com**,
-ou ouvrir une issue sur le dépôt.*
+La présente page n’est ni une offre de vente ni une licence commerciale déjà accordée.

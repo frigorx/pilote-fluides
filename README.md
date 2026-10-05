@@ -1,5 +1,13 @@
 # Pilote — Habilitation fluides frigorigènes (démonstrateur)
 
+> **Droits — décision du 5 octobre 2026.** Pour les nouveaux apports originaux : droits
+> réservés par défaut et usages gratuits limités, selon [LICENCE.md](LICENCE.md).
+> Les licences antérieures et tierces restent applicables. Ne pas attribuer automatiquement
+> une licence CC ou MIT aux prochaines créations ; utiliser `data-licence="conditions"`
+> dans les nouvelles pages, sauf décision explicite du titulaire. Les notices historiques
+> conservées dans les anciens modules ne constituent pas un choix pour un nouveau projet.
+
+
 > 👉 **Nouvelle session ? Lire [`REPRISE.md`](REPRISE.md) en premier** — état, décisions, pièges, prochaines étapes.
 
 Le contenu de la formation **habilitation fluides frigorigènes** (catégories **A1 · A2 · D · E**)

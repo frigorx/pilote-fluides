@@ -417,10 +417,10 @@ let h = `<!doctype html>
   <p><b>Deux usages.</b> <b>Se servir</b> : chercher une ressource et la projeter telle quelle en cours.
   <b>Réemployer</b> : récupérer son code pour l'intégrer dans un autre programme — chaque fiche donne ses
   fichiers, sa famille et son état de maturité.</p>
-  <p class="licence-ligne">Rien n'est libre de droits : contenus sous <b>CC BY-NC-ND 4.0</b> — diffusion
-  autorisée en citant inerWeb, sans usage commercial et sans modification. Code et illustrations sous
-  licence du dépôt — <a href="LICENCE.md">lire la licence</a>. Usage en centre de formation ou demande
-  d'adaptation : <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</p>
+  <p class="licence-ligne">Nouvelles créations : <b>droits réservés</b>, usages limités selon
+  les <a href="LICENCE.md">conditions d'utilisation</a>. Les licences antérieures et tierces restent
+  applicables. L'accès aux fichiers ne donne pas une autorisation générale de réemploi.
+  Adaptation ou offre commerciale : <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a>.</p>
 </div>
 
 <div class="barre">
@@ -593,7 +593,7 @@ h += `</div>
 })();
 </script>
 <script src="moteur/lisibilite.js?v=${VERSION}"></script>
-<script src="moteur/marque.js?v=${VERSION}" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=${VERSION}" data-cartouche="Pilote" data-licence="conditions"></script>
 </body></html>`;
 
 writeFileSync(resolve(RACINE, "galerie.html"), h, "utf8");

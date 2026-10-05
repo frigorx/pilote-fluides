@@ -532,7 +532,7 @@ ici pour être décidées, non pour disparaître.</p>`;
 })();
 </script>
 <script src="moteur/lisibilite.js?v=${calculerVersion()}"></script>
-<script src="moteur/marque.js?v=${calculerVersion()}" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=${calculerVersion()}" data-cartouche="Pilote" data-licence="conditions"></script>
 </body></html>`;
 
   writeFileSync(resolve(RACINE, "matrice.html"), h, "utf8");
