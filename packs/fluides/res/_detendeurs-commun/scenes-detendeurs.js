@@ -123,7 +123,11 @@
     const L = [0];
     for (let i = 1; i < pts.length; i++) L[i] = L[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
     const len = L[L.length - 1];
-    return { len: len, pts: pts, at: function (s) {
+    return { len: len, pts: pts, tronc: function (s0, s1) {          // le morceau [s0, s1] du chemin, sommets compris (un coude n'est jamais coupé)
+      const o = [this.at(s0).slice(0, 2)];
+      for (let i = 1; i < pts.length - 1; i++) if (L[i] > s0 && L[i] < s1) o.push(pts[i].slice(0, 2));
+      o.push(this.at(s1).slice(0, 2)); return o;
+    }, at: function (s) {
       s = bn(s, 0, len); let i = 1;
       while (i < L.length - 1 && s > L[i]) i++;
       const f = (s - L[i - 1]) / ((L[i] - L[i - 1]) || 1);
@@ -239,7 +243,7 @@
      chambre BP au-dessus (sous la membrane), sortie BP à gauche puis vers le bas, évaporateur en bas. */
   const NY0 = 224;                                  // haut de l'aiguille fermée
   const SORTIE = [[150, 232], [150, 170], [36, 170], [36, 406], [66, 406]];
-  const evapo = { x0: 8, x1: 300, yh: 388, yb: 424 };
+  const evapo = { x0: 18, x1: 300, yh: 388, yb: 424 };
 
   function coupe(type, svg) {
     svg.setAttribute("viewBox", "0 0 300 470");
@@ -251,47 +255,60 @@
       bulbe: [226, 338, 66, 50], membrane: [84, 4, 132, 148], ressort: [112, 282, 76, 56], aiguille: [96, 220, 108, 70],
       moteur: [100, 6, 100, 100], regulateur: [206, 0, 94, 94], sondes: [206, 336, 90, 50], tube: [90, 40, 176, 270]
     };
-    // ----- 1. ce qui passe derrière les conduites : lignes de mesure (capillaire du bulbe ou câbles) -----
-    const ligneG = el("g", {}, g);
+    // ----- 1. les lignes de mesure (tube capillaire du bulbe, câbles) : tracées EN DERNIER, par-dessus les conduites -----
     let ligneBulbe = null;
-    if (type === "thermostatique") {
-      ligneBulbe = el("path", { d: "M 257 352 V 328 H 292 V 60 H 205", fill: "none", stroke: "#b06a3b", "stroke-width": 4, "stroke-linecap": "round", "stroke-linejoin": "round" }, ligneG);
-    } else if (elec) {
-      el("path", { d: "M 276 362 V 346 H 296 V 86", fill: "none", stroke: "#33475b", "stroke-width": 3, "stroke-dasharray": "2 6", "stroke-linecap": "round" }, ligneG);
-      el("path", { d: "M 234 350 V 330 H 288 V 86", fill: "none", stroke: "#33475b", "stroke-width": 3, "stroke-dasharray": "2 6", "stroke-linecap": "round" }, ligneG);
-    }
+    const tracerLignes = () => {
+      const lg = el("g", {}, g);
+      if (type === "thermostatique") {
+        ligneBulbe = el("path", { d: "M 257 352 V 328 H 292 V 60 H 210", fill: "none", stroke: "#b06a3b", "stroke-width": 4, "stroke-linecap": "round", "stroke-linejoin": "round" }, lg);
+      } else if (elec) {
+        el("path", { d: "M 276 362 V 346 H 296 V 86", fill: "none", stroke: "#33475b", "stroke-width": 3, "stroke-dasharray": "2 6", "stroke-linecap": "round" }, lg);
+        el("path", { d: "M 234 350 V 330 H 288 V 86", fill: "none", stroke: "#33475b", "stroke-width": 3, "stroke-dasharray": "2 6", "stroke-linecap": "round" }, lg);
+      }
+    };
 
-    // ----- 2. l'évaporateur (le bout du tube, en bas) et la conduite BP verticale -----
-    el("rect", { x: 8, y: capi ? 272 : 142, width: 56, height: 434 - (capi ? 272 : 142), fill: "url(#vm-cuivre-h)" }, g);   // paroi verticale
-    const bandeE = bande(g, { x0: evapo.x0, x1: evapo.x1, yh: evapo.yh, yb: evapo.yb, graine: 11 });
-    const chaleurs = [0, 1, 2, 3, 4].map(k => ({ x: 40 + k * 58, f: k * 0.19, maj: D.chaleur(el("g", {}, g)) }));   // la chaleur de la chambre, sous le tube : plus il y en a, plus il y a de flèches
-    el("rect", { x: 18, y: capi ? 282 : 152, width: 36, height: evapo.yh - (capi ? 282 : 152) + 1, fill: "#f4f8fc" }, g);   // intérieur de la conduite verticale
+    // ----- 2. les conduites : TOUS les murs d'abord, TOUS les vides ensuite. Un tube = une paroi extérieure continue +
+    //          un intérieur continu ; un coude est une courbe (jonction arrondie) ; là où un tube entre dans le corps,
+    //          son vide traverse la paroi du corps : jamais un trait de paroi dans le passage du fluide. -----
+    const FOND = "#f4f8fc", murs = [], vides = [];
+    const tuyau = (pts, o) => { o = o || {}; murs.push([pts, o]); vides.push([o.int || pts, o]); };
+    const reseau = () => {
+      const trait = (pp, st, w, extra) => el("path", Object.assign({ d: "M " + pp.map(q => q.join(" ")).join(" L "), fill: "none", "stroke-linejoin": "round", stroke: st, "stroke-width": w }, extra), g);
+      murs.forEach(m => {
+        if (typeof m === "function") return m();
+        const w = m[1].w || 56, c = { "stroke-linecap": m[1].cap || "butt" };
+        trait(m[0], "#6e3818", w + 3, c); trait(m[0], "#bd7a44", w, c);
+        if (w > 30) trait(m[0], "#e7a978", w - 9, Object.assign({ opacity: 0.5 }, c));
+      });
+      vides.forEach(m => typeof m === "function" ? m() : trait(m[0], FOND, m[1].wi || 36, { "stroke-linecap": m[1].cap || "butt" }));
+    };
 
     // ----- 3. la partie qui change selon le type -----
     let majType = () => {};
-    const hpPipe = () => {                          // la conduite HP qui arrive par la droite, dessinée PAR-DESSUS les lignes de mesure
-      const y = capi ? 44 : 252;
-      D.tube(g, capi ? 250 : 220, y, capi ? 50 : 80, 56, "cuivre", false, "#f4f8fc");
-      return [capi ? 250 : 205, y + 10, 300, y + 46];
-    };
     const flux = [];
     if (capi) {
-      hpPipe();
-      // le tube capillaire : très fin, très long, enroulé ; le fluide y change peu à peu
-      const pts = [[250, 72], [100, 72], [100, 128], [240, 128], [240, 184], [100, 184], [100, 240], [240, 240], [240, 296], [100, 296], [36, 296], [36, 380]];
+      // la conduite HP se rétrécit (réducteur) en tube capillaire : très fin, très long, enroulé ; le fluide y change peu à peu
+      const pts = [[238, 72], [100, 72], [100, 128], [240, 128], [240, 184], [100, 184], [100, 240], [240, 240], [240, 296], [100, 296], [40, 296]];
+      const ptsMur = pts.slice(0, -1).concat([[64, 296]]);                       // le mur du capillaire s'arrête à la paroi de la conduite BP…
+      const ptsVide = pts.slice(0, -1).concat([[36, 296]]);                      // …son vide la traverse et rejoint l'intérieur
+      murs.push(() => el("polygon", { points: "304,44 262,44 238,63.5 238,80.5 262,100 304,100", fill: "url(#vm-cuivre)", stroke: "#6e3818", "stroke-width": 1.5, "stroke-linejoin": "round" }, g));
+      vides.push(() => el("polygon", { points: "304,54 262,54 238,67.5 238,76.5 262,90 304,90", fill: FOND }, g));
+      tuyau(ptsMur, { w: 17, wi: 9, int: ptsVide });
+      tuyau([[36, 296], [36, 406], [304, 406]]);                                  // la conduite BP : coude arrondi, évaporateur (bout droit ouvert, comme les autres coupes)
+      const demi = r => "M " + (36 - r) + " 296 A " + r + " " + r + " 0 0 1 " + (36 + r) + " 296 Z";   // le haut de la conduite : un bouchon arrondi (demi-disque), mur continu
+      murs.push(() => [[29.5, "#6e3818", 1], [28, "#bd7a44", 1], [23.5, "#e7a978", 0.5]].forEach(c => el("path", { d: demi(c[0]), fill: c[1], opacity: c[2] }, g)));
+      vides.push(() => el("path", { d: demi(18), fill: FOND }, g));
+      reseau();
+      el("polygon", { points: "304,54 262,54 238,67.5 238,76.5 262,90 304,90", fill: tubeHP, opacity: 0.88 }, g);
       const ch = chemin(pts), N = 26, seg = [];
-      const d = "M " + pts.map(p => p.join(" ")).join(" L ");
-      el("path", { d: d, fill: "none", stroke: "#a9672f", "stroke-width": 17, "stroke-linecap": "round", "stroke-linejoin": "round" }, g);
-      el("path", { d: d, fill: "none", stroke: "#f4f8fc", "stroke-width": 9, "stroke-linecap": "round", "stroke-linejoin": "round" }, g);
       for (let k = 0; k < N; k++) {
-        const a = k / N, b = (k + 1) / N + 0.012, p = [];
-        for (let j = 0; j <= 4; j++) { const q = ch.at(lerp(a, b, j / 4) * ch.len); p.push(q[0].toFixed(1) + " " + q[1].toFixed(1)); }
-        seg.push(el("path", { d: "M " + p.join(" L "), fill: "none", "stroke-width": 9, "stroke-linecap": "butt", stroke: D.couleur(lerp(0.62, 0.06, lisse((a - 0.55) / 0.4)), false) }, g));
+        const a = k / N, b = (k + 1) / N + 0.012, p = ch.tronc(a * ch.len, b * ch.len).map(q => q[0].toFixed(1) + " " + q[1].toFixed(1));
+        seg.push(el("path", { d: "M " + p.join(" L "), fill: "none", "stroke-width": 9, "stroke-linecap": "round", "stroke-linejoin": "round", stroke: D.couleur(lerp(0.62, 0.06, lisse((a - 0.55) / 0.4)), false) }, g));
       }
       const refl = [], bulles = [];
       for (let i = 0; i < 16; i++) refl.push({ ph: i / 16, e: el("line", { stroke: "#fff", "stroke-width": 3, "stroke-linecap": "round", opacity: 0.6 }, g) });
       for (let i = 0; i < 12; i++) bulles.push({ ph: i / 12, e: el("circle", { fill: "#fff", "fill-opacity": 0.55, stroke: "#fff", "stroke-width": 1.5 }, g) });
-      const mel = melange(g, chemin([[36, 304], [36, 406], [66, 406]]), 10, 21);
+      const mel = melange(g, chemin([[36, 296], [36, 406], [66, 406]]), 10, 21);
       majType = function (t, ouv) {
         const vit = 0.05 + 0.04 * ouv;
         refl.forEach(c => { const q = frac(c.ph + t * vit), a = ch.at(q * ch.len * 0.62), b = ch.at(q * ch.len * 0.62 + 7); c.e.setAttribute("x1", a[0].toFixed(1)); c.e.setAttribute("y1", a[1].toFixed(1)); c.e.setAttribute("x2", b[0].toFixed(1)); c.e.setAttribute("y2", b[1].toFixed(1)); });
@@ -301,17 +318,16 @@
     } else {
       // ----- corps commun : laiton, chambres, siège -----
       el("rect", { x: 80, y: elec ? 96 : 100, width: 140, height: 336 - (elec ? 96 : 100), rx: 12, fill: "url(#vm-laiton-h)", stroke: "#7c5c18", "stroke-width": 2.5 }, g);
-      // conduite BP (arme horizontale à gauche, sortie de la chambre BP)
-      el("rect", { x: 8, y: 142, width: 88, height: 56, fill: "url(#vm-cuivre)" }, g);
-      el("rect", { x: 18, y: 152, width: 92, height: 36, fill: "#f4f8fc" }, g);
-      el("rect", { x: 95, y: 112, width: 110, height: 114, fill: "#f4f8fc" }, g);            // chambre BP
+      // la conduite BP : sort de la chambre BP vers la gauche, tourne en une courbe et descend jusqu'à l'évaporateur (un seul tube)
+      tuyau([[96, 170], [36, 170], [36, 406], [304, 406]], { int: [[130, 170], [36, 170], [36, 406], [304, 406]] });
+      // la conduite HP : arrive par la droite ; son vide traverse la paroi du corps et se raccorde à la chambre HP
+      tuyau([[304, 280], [218, 280]], { int: [[304, 280], [190, 280]] });
+      reseau();
+      el("rect", { x: 95, y: 112, width: 110, height: 114, fill: FOND }, g);            // chambre BP
       const brume = el("rect", { x: 95, y: 112, width: 110, height: 114, fill: D.couleur(0.1, false), opacity: 0 }, g);
       el("rect", { x: 95, y: 226, width: 43, height: 12, fill: "#8a6a1f" }, g); el("rect", { x: 162, y: 226, width: 43, height: 12, fill: "#8a6a1f" }, g);   // le siège
-      el("rect", { x: 95, y: 238, width: 110, height: 84, fill: "#f4f8fc" }, g);            // chambre HP
-      el("rect", { x: 95, y: 238, width: 110, height: 84, fill: tubeHP, opacity: 0.85 }, g);
-      hpPipe();
-      el("rect", { x: 204, y: 262, width: 18, height: 36, fill: "#f4f8fc" }, g); el("rect", { x: 204, y: 262, width: 18, height: 36, fill: tubeHP, opacity: 0.85 }, g);
-      el("rect", { x: 220, y: 262, width: 80, height: 36, fill: tubeHP, opacity: 0.85 }, g);
+      el("rect", { x: 95, y: 238, width: 110, height: 84, fill: FOND }, g);             // chambre HP
+      el("path", { d: "M 95 238 H 205 V 262 H 304 V 298 H 205 V 322 H 95 Z", fill: tubeHP, opacity: 0.85 }, g);   // le liquide HP : chambre + conduite, d'un seul tenant
       flux.push(D.courant(g, 100, 200, 242, 318, 5, 31), D.courant(g, 205, 298, 266, 294, 6, 33));
       // l'aiguille, la tige, le ressort, la membrane ou le moteur
       const tige = el("rect", { x: 148, width: 4, fill: "#3f4a55" }, g);
@@ -393,6 +409,10 @@
       if (type === "thermostatique") el("rect", { x: 138, y: 336, width: 24, height: 14, rx: 3, fill: "url(#vm-acier)", stroke: "#4e5a66", "stroke-width": 2 }, g);   // la vis de réglage du ressort
     }
 
+    // l'évaporateur : le liquide, les bulles, la vapeur dans le tube dont les murs sont déjà posés ; la chaleur de la chambre dessous
+    const bandeE = bande(g, { x0: evapo.x0, x1: evapo.x1, yh: evapo.yh, yb: evapo.yb, graine: 11, sansTube: true });
+    const chaleurs = [0, 1, 2, 3, 4].map(k => ({ x: 40 + k * 58, f: k * 0.19, maj: D.chaleur(el("g", {}, g)) }));   // plus la charge est forte, plus il y a de flèches
+
     // ----- 4. le bulbe (thermostatique) -----
     let bulbe = null;
     if (type === "thermostatique") {
@@ -402,7 +422,8 @@
     }
 
     // ----- 5. l'évaporateur, pastilles, anneau -----
-    pastille(g, 254, capi ? 26 : 230, "HP", "#c9451a", 22, "middle"); pastille(g, 36, capi ? 258 : 124, "BP", "#1b3a63", 24, "middle");
+    tracerLignes();
+    pastille(g, 254, capi ? 26 : 230, "HP", "#c9451a", 22, "middle"); pastille(g, 36, capi ? 250 : 124, "BP", "#1b3a63", 24, "middle");
     const voirZone = anneau(el("g", {}, g));          // l'anneau est posé en dernier : il passe par-dessus tout
 
     let derniers = { xf: 1, bp: 0.5, sortie: 0.1, ouverture: 0.5, surchauffe: 0 };
@@ -441,8 +462,8 @@
     const hpIn = evap ? [170, 310] : [190, 290], bpIn = evap ? [170, 310] : [130, 350];
     const tiede = D.couleur(0.62, false);
     // la conduite HP : tube plein de liquide tiède
-    D.tube(g, 0, hpIn[0] - 10, xp, hpIn[1] - hpIn[0] + 20, "cuivre", false, "#f4f8fc");
-    el("rect", { x: 0, y: hpIn[0], width: xp, height: hpIn[1] - hpIn[0], fill: tiede, opacity: 0.88 }, g);
+    D.tube(g, 0, hpIn[0] - 10, xp + 18, hpIn[1] - hpIn[0] + 20, "cuivre", false, "#f4f8fc");   // jusqu'au bord de la plaque : le fluide traverse le passage sans trait
+    el("rect", { x: 0, y: hpIn[0], width: xp + 18, height: hpIn[1] - hpIn[0], fill: tiede, opacity: 0.88 }, g);
     const flux = D.courant(g, 0, xp - 24, hpIn[0], hpIn[1], 7, 5);
     // le côté BP : un groupe qui apparaît quand le liquide passe
     const bpg = el("g", {}, g);
