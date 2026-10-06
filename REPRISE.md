@@ -8,25 +8,32 @@
 > `film-ozone/` et `film-effet-de-serre/` levaient à chaque ouverture `SyntaxError: Failed to execute 'appendChild'
 > on 'Node': Unexpected token '-'` (`support.js:1446`). **Cause** : le navigateur exécute les `<script>` du `<helmet>`
 > en lisant la page, puis le runtime Claude Design les **réinjecte** dans `<head>` après `encodeCamelAttrs`, qui prend
-> `essaisDepart =` pour un attribut et l'écrit `sc-camel-essais-depart =`. Né le 13/09 (`ffb5eaab`, l'arrêt de l'image
-> au chargement) ; react-dom n'y était pour rien. **Correction** : le script de la bande son sort du `<helmet>` et se pose
-> après `</main>`, inchangé. **Ne pas se contenter de renommer les variables** : mesuré, les scripts du `<helmet>`
-> tournent DEUX fois (`TWEAK_DEFAULTS`, `OM_SCENES`, `OM_PLAYBACK` : 2 affectations) ; le plantage était ce qui
-> empêchait une seconde voix superposée. Vérifié dans Chromium : 0 erreur, 1 seule `Audio`, film joué en entier, l'image
-> suit la voix. Les 52 autres pages à `<helmet>` (films et planches Régulés, KVR/NRD, sécurité du Studio) : 0 erreur.
-> **Piège** : dans un `<helmet>`, jamais d'espace suivi de `motCamel =` ; un script de page n'a rien à y faire.
-> **Toutes les commandes du lecteur pilotent la voix** (2e temps, même jour). Avant : le ▶ du lecteur, l'espace, les
-> flèches, Origine, « 0 », le retour au début et le curseur faisaient avancer l'image sur l'horloge du moteur, voix muette
-> (l'ancien relais du ▶ n'a jamais marché : React a déjà redessiné l'icône quand le clic remonte, `closest()` part d'un
-> `<path>` détaché ; on lit `e.composedPath()`). Le clavier est pris en phase de capture, avant le composant. Bouton
-> « Export video » masqué : il parle à l'éditeur Claude Design, absent du site. Banc de 21 contrôles vert sur les deux films.
-> **Piège de banc** : `python -m http.server` ne sert pas les plages (`Range`) : le MP3 ne peut pas sauter à `VOIX_DEBUT`,
-> la voix lit le préambule et tout saut retombe à 0. Le site répond 206 : tester les films avec un serveur qui gère Range.
+> `essaisDepart =` pour un attribut et l'écrit `sc-camel-essais-depart =`. Né le 13/09 (`ffb5eaab`) ; react-dom n'y
+> était pour rien. **Correction** : le script de la bande son sort du `<helmet>` et se pose après `</main>`.
+> **Ne pas se contenter de renommer les variables** : mesuré, les scripts du `<helmet>` tournent DEUX fois ; le
+> plantage était ce qui empêchait une seconde voix superposée. Les 52 autres pages à `<helmet>` : 0 erreur.
+> **Le reste, trouvé en vérifiant, corrigé dans les deux films** :
+> (1) **toutes les commandes du lecteur pilotent la voix**. Le ▶ du lecteur, l'espace, les flèches, Origine, « 0 », le
+> retour au début et le curseur faisaient avancer l'image sur l'horloge du moteur, voix muette. L'ancien relais du ▶
+> n'a jamais marché : quand le clic remonte, React a déjà redessiné l'icône, `closest()` part d'un `<path>` détaché ;
+> on lit `e.composedPath()`. Clavier pris en phase de capture, avant le composant. Banc de 21 contrôles vert.
+> (2) **L'image partait parfois seule au chargement** (1 sur 30 mesuré sur `main`) : la pause était envoyée avant que
+> le lecteur écoute. On attend `data-om-sync-seek`, posé avec son écouteur : 0 sur 60.
+> (3) **Le logo des films disait encore « Édu »** : `ozone.jsx`/`serre.jsx` étaient passés à « .fr », pas les `.js`
+> que la page charge. `node build/films.mjs` relancé. **Piège** : un `.jsx` de film touché sans `films.mjs` ne change
+> rien à l'écran.
+> (4) **La barre « inerweb.fr › Studio » (PR n° 6) était sous le film**, invisible et sans clic : le film est en
+> `position:absolute` sur toute la fenêtre. Posée en pastille fixe en haut à gauche, dans la bande sombre. Les 42 autres
+> pages rattachées au Studio n'ont pas ce défaut.
+> (5) Bouton « Export video » masqué : il ne parle qu'à l'éditeur Claude Design, absent du site.
+> **Pièges** : dans un `<helmet>`, jamais d'espace suivi de `motCamel =`, et aucun script de page.
+> `python -m http.server` ne sert pas les plages (`Range`) : le MP3 ne peut pas sauter à `VOIX_DEBUT`, la voix lit le
+> préambule et tout saut retombe à 0 ; le site répond 206. Tester les films avec un serveur qui gère Range.
 > **À décider (Franck)** : notre barre « Écouter le film » recouvre 85 % du curseur du lecteur sur ordinateur, 100 % sur
 > téléphone (antérieur). Proposition : une seule barre, la nôtre, avec retour au début et curseur de position.
-> `version.mjs` n'est pas concerné : les films n'entrent pas dans l'empreinte et les pages HTML sont servies réseau
-> d'abord. Lancé depuis un clone neuf, il réécrit 22 clés : la clé dépend de fichiers absents de git (`relecture.html`
-> et d'autres), donc ces clés n'ont pas été commitées.
+> `version.mjs` n'est pas concerné : ni les films ni ce fichier n'entrent dans l'empreinte, et les pages HTML sont
+> servies réseau d'abord. Lancé depuis un clone neuf, il réécrit 22 clés parce que la clé dépend de fichiers absents
+> de git (`relecture.html` et d'autres) : ces clés-là ne se commitent pas.
 
 > ## 06/10 — LE SITE S'APPELLE INERWEB.FR, CHAQUE PAGE MÈNE À SON RÉSEAU, LA CHAÎNE YOUTUBE (branche `claude/jolly-feynman-0jexaa`)
 >
@@ -52,8 +59,7 @@
 > `node build/retour-accueil.mjs` (il pose aussi le réseau) ; (3) l'image `icones/og-inerweb-1200x630.png` et les
 > affiches peintes peuvent encore montrer « Édu » dans leurs pixels. Constaté sans y toucher : `film-ozone/support.js`
 > lève une erreur JS au chargement (déjà là avant ; levée le même jour, entrée « films climat » ci-dessus), et
-> `build/animations.mjs --verifier` relève 358 clés périmées
-> (déjà là avant).
+> `build/animations.mjs --verifier` relève 358 clés périmées (déjà là avant).
 
 > ## 04/10 — « ANIMER LES RÉSEAUX » : LES RÉSEAUX STATIQUES S'ANIMENT (`cb9a6709` → `5a14b449`)
 >

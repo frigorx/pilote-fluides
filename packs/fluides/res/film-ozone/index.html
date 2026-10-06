@@ -61,6 +61,16 @@ main { height: 100%; }
    sa place devant un élève. !important : le composant pose son display en
    style en ligne, qu'une règle ordinaire ne bat pas. */
 button[title="Export video"] { display: none !important; }
+/* La barre « inerweb.fr › Studio » (moteur/retour-accueil.js) se pose en tête
+   de page, mais le film est en position:absolute sur toute la fenêtre : il la
+   recouvrait, invisible et sans clic. On la sort du flux et on la pose en haut
+   à gauche, à la taille de son contenu : elle tombe dans la bande sombre qui
+   borde l'image au lieu de couper son titre, et reste là quand on fait défiler.
+   « body > » l'emporte sur la règle que le script injecte APRÈS cette feuille. */
+body > #inerweb-retour-accueil-barre {
+  position: fixed; top: 0; left: 0; z-index: 98;
+  border-right: 1px solid #c9d3df; border-bottom-right-radius: 10px;
+}
 </style>
   <script src="../../../../moteur/plan-donnees.js"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
@@ -287,11 +297,17 @@ a:hover { color: #ff6b35; }
   /* Le composant démarre lui-même en lecture. On l'arrête dès que le cadre
      existe, avant tout clic : sans ce geste, l'image bougerait seule au
      chargement pendant que la voix, elle, attend « Écouter le film ».
+     On attend aussi que le cadre ÉCOUTE : il pose data-om-sync-seek dans le
+     même geste que son écouteur. Un ordre parti avant se perdait et l'image
+     partait seule (mesuré le 06/10 : 1 chargement sur 12).
      Borné à 6 s, comme les autres sondages de ce fichier. */
   var essaisDepart = 0;
   var horlogeDepart = setInterval(function () {
-    if (trouveScene()) { pousse(0, false); clearInterval(horlogeDepart); }
-    else if (++essaisDepart > 120) clearInterval(horlogeDepart);
+    var pret = trouveScene() && scene.hasAttribute("data-om-sync-seek");
+    if (pret || ++essaisDepart > 120) {
+      if (scene) pousse(0, false);
+      clearInterval(horlogeDepart);
+    }
   }, 50);
 })();
 </script>
