@@ -76,6 +76,9 @@
   };
   const PIECE = { capillaire: "tube", automatique: "membrane", thermostatique: "bulbe", electronique: "regulateur" };
   G.EXPLIC = EXPLIC;
+  // « Voir la gare → » : la gare de chaque détendeur, même onglet, chemin relatif (jamais posé sur un dessin)
+  const LIENS = { capillaire: "../detente-capillaire/index.html", automatique: "../detendeur-automatique/index.html", thermostatique: "../detendeur-interactif/index.html", electronique: "../detendeur-electronique/index.html" };
+  const lien = (href, nom) => '<a class="ds-lien" href="' + href + '" aria-label="Voir la gare : ' + nom + '">Voir la gare →</a>';
   G.cartes = function (hote, auChoix) {
     const dessin = document.createElement("div"); dessin.className = "ds-dessin";
     const grille = document.createElement("div"); grille.className = "ds-cartes";
@@ -92,7 +95,7 @@
     });
     function choisir(type) {
       cs.forEach(c => c.b.setAttribute("aria-pressed", String(c.type === type)));
-      explic.innerHTML = "<strong>" + DS.NOMS[type].nom + ".</strong> " + EXPLIC[type];
+      explic.innerHTML = "<strong>" + DS.NOMS[type].nom + ".</strong> " + EXPLIC[type] + " " + lien(LIENS[type], DS.NOMS[type].nom);
       if (auChoix) auChoix(type);
     }
     choisir("capillaire");
@@ -142,9 +145,9 @@
     hote.append(onglets, rang);
     // sur téléphone, un seul dessin à la fois (grand) : deux onglets ; sur grand écran, les deux côte à côte
     const montrer = i => { [...rang.children].forEach((c, k) => c.classList.toggle("actif", k === i)); [...onglets.children].forEach((b, k) => b.setAttribute("aria-pressed", String(k === i))); };
-    const mk = (titre, symb, phrase, aria) => {
+    const mk = (titre, symb, phrase, aria, href) => {
       const c = document.createElement("div"); c.className = "ds-var";
-      c.innerHTML = '<div class="ds-cel-tete"><img src="' + symb + '" alt=""><b>' + titre + '</b></div><div class="ds-coupe"></div><p class="ds-phrase">' + phrase + "</p>";
+      c.innerHTML = '<div class="ds-cel-tete"><img src="' + symb + '" alt=""><b>' + titre + '</b></div><div class="ds-coupe"></div><p class="ds-phrase">' + phrase + "<br>" + lien(href, titre) + "</p>";
       rang.appendChild(c);
       const b = document.createElement("button"); b.type = "button"; b.textContent = titre; b.addEventListener("click", () => montrer([...rang.children].indexOf(c)));
       onglets.appendChild(b);
@@ -153,7 +156,7 @@
     };
     // ---- A : égalisation externe — la pression baisse le long de l'évaporateur ; le tube va la chercher à la sortie ----
     const svgA = mk("Égalisation externe", DS.symbole("thermostatique_ext"), "Un petit tube amène la pression de la <strong>sortie</strong> de l’évaporateur, là où elle est la plus basse. Gare 2.",
-      "Dessin : la pression baisse le long de l’évaporateur. Le détendeur à égalisation interne lit celle de l’entrée, l’externe lit celle de la sortie.");
+      "Dessin : la pression baisse le long de l’évaporateur. Le détendeur à égalisation interne lit celle de l’entrée, l’externe lit celle de la sortie.", "../detendeur-egalisation-externe/index.html");
     svgA.setAttribute("viewBox", "0 0 440 300");
     const gA = el("g", {}, svgA);
     const evap = DS.bande(gA, { x0: 20, x1: 430, yh: 212, yb: 256, graine: 9, nbMols: 26, nbBulles: 14, prof: [0.8, 0.2] });
@@ -173,7 +176,7 @@
     });
     // ---- B : MOP — la charge du bulbe est limitée : la pression du bulbe plafonne ----
     const svgB = mk("Détendeur MOP", DS.symbole("thermostatique"), "La charge du bulbe est limitée : au-delà d’une température, sa pression <strong>ne monte plus</strong>. Gare 3.",
-      "Graphique : la pression du bulbe monte avec sa température. Avec une charge limitée, elle atteint un plafond et n’augmente plus.");
+      "Graphique : la pression du bulbe monte avec sa température. Avec une charge limitée, elle atteint un plafond et n’augmente plus.", "../detendeur-mop/index.html");
     svgB.setAttribute("viewBox", "0 0 440 300");
     const gB = el("g", {}, svgB);
     const X0 = 64, X1 = 424, Y0 = 236, Y1 = 28, YC = 104;

@@ -97,7 +97,7 @@ body.course-running{height:100dvh;overflow:hidden}
 .ds-verdict.oui{color:var(--ok);background:var(--ok-bg)}.ds-verdict.non{color:var(--bad);background:var(--bad-bg)}
 .ds-carte{border:2px solid var(--line);background:transparent;border-radius:14px;padding:6px;text-align:center;cursor:pointer;color:var(--ink)}
 .ds-carte[aria-pressed="true"]{border-color:var(--blue);background:rgba(237,245,253,.75)}
-.ds-regle{font-size:var(--corps);line-height:1.2}.ds-regle strong{color:var(--orange-dark)}
+.ds-regle{font-size:var(--corps);line-height:1.2}.ds-regle strong{color:var(--orange-dark)}.ds-lien{color:var(--orange-dark);font-weight:800;text-decoration:underline;text-underline-offset:3px}.ds-lien:hover{color:var(--navy)}.ds-lien:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:3px}
 .ds-explic{margin:0;padding:6px 12px;border-left:5px solid var(--blue);border-radius:0 10px 10px 0;background:#eef5fc;font-size:19px;line-height:1.28;min-height:2.56em}
 /* écran 6 : deux variantes */
 .ds-variantes{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-height:0}

@@ -340,7 +340,7 @@
     const carte = document.createElement("div"); carte.className = "cp-carte";
     carte.innerHTML = '<div class="ds-cel-tete"><img src="' + symbole + '" alt="Symbole du tube capillaire"><b>Le tube capillaire</b></div>' +
       '<div class="ds-dessin"></div><p class="ds-explic" aria-live="off"></p>' +
-      '<p class="ds-regle">il règle : <strong>rien</strong> — sa longueur et son diamètre font tout<br>on le trouve sur : <strong>les réfrigérateurs ménagers et les petits meubles</strong></p>';
+      '<p class="ds-regle">il règle : <strong>rien</strong> — sa longueur et son diamètre font tout<br>on le trouve sur : <strong>les réfrigérateurs ménagers et les petits meubles</strong><br>En climatisation : <a class="ds-lien" href="../../../../cartoclim/stations/2-5-detendre/index.html">la station CartoClim 2.5 « Détendre »</a></p>';
     hote.appendChild(carte);
     const dessin = carte.querySelector(".ds-dessin"), explic = carte.querySelector(".ds-explic");
     DS.fond(dessin);
