@@ -1,0 +1,37 @@
+{
+  "cours": "detente-capillaire",
+  "titre": "La détente par tube capillaire",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 7,
+  "codes": {
+    "9.01": [
+      "identite",
+      "detente",
+      "aspiration",
+      "arret",
+      "bouche",
+      "charge",
+      "verifier"
+    ]
+  },
+  "appui": {
+    "1.02": [
+      "detente",
+      "arret"
+    ],
+    "1.04": [
+      "identite",
+      "arret"
+    ],
+    "5.05": [
+      "charge"
+    ],
+    "5.06": [
+      "charge"
+    ],
+    "9.10": [
+      "aspiration",
+      "charge"
+    ]
+  }
+}
