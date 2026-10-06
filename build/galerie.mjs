@@ -320,7 +320,7 @@ let h = `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Bibliothèque d'animations et de supports — habilitation fluides frigorigènes</title>
-<meta name="description" content="Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.">
+<meta name="description" content="Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.">
 <style>
   :root { --bleu:#1b3a63; --orange:#ff6b35; --texte:#33475b; --mut:#8494a4; --bord:#d7e0e8;
           --fond:#f7f1e7; --carte:#fffdf8; --vert:#1e7e54; --ambre:#8a5200; }
@@ -408,10 +408,10 @@ let h = `<!doctype html>
 
 <!-- La galerie est le « Catalogue » du site : sans ce lien, c'était un
      cul-de-sac — aucun moyen de revenir au plan (constat du 19/08). -->
-<p style="margin:14px 0 -8px"><a href="index.html" style="color:var(--bleu);text-decoration:none;font-weight:bold">❄️ inerWeb Édu · ← revenir au plan</a></p>
+<p style="margin:14px 0 -8px"><a href="index.html" style="color:var(--bleu);text-decoration:none;font-weight:bold">❄️ inerweb.fr · ← revenir au plan</a></p>
 
 <h1>Bibliothèque d'animations et de supports</h1>
-<p class="meta">Habilitation fluides frigorigènes · © 2026 inerweb.fr — inerWeb Édu</p>
+<p class="meta">Habilitation fluides frigorigènes · © 2026 inerweb.fr</p>
 
 <div class="intro">
   <p><b>Deux usages.</b> <b>Se servir</b> : chercher une ressource et la projeter telle quelle en cours.
@@ -518,7 +518,7 @@ h += `</div>
   <code>&lt;meta name="famille"&gt;</code> et <code>&lt;meta name="etat"&gt;</code> dans sa propre page.</p>
   <p>Les planches vivent dans <code>packs/fluides/res/svg/</code> — un fichier <code>.svg</code> par planche.
   ${SYMBOLES ? `Bibliothèque de symboles : ${esc(String(SYMBOLES.total || SYMBOLES.compte || ""))} symboles.` : ""}</p>
-  <p>© 2026 Franck Henninot — inerWeb Édu · <a href="LICENCE.md">Licence et propriété intellectuelle</a></p>
+  <p>© 2026 Franck Henninot — inerweb.fr · <a href="LICENCE.md">Licence et propriété intellectuelle</a></p>
 </footer>
 
 <script>

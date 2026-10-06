@@ -286,7 +286,7 @@
     ui.progressLabel.textContent = k === "lesson" ? courant().lessons[screen].short : k === "quiz" ? "Questions" : "Bilan";
     ui.courseName.textContent = `${chap + 1} · ${courant().titre}`;
     ui.back.disabled = chap === 0 && screen === 0;
-    document.title = `${courant().court} — CO₂ / R744 — inerWeb Édu`;
+    document.title = `${courant().court} — CO₂ / R744 — inerweb.fr`;
     if (lectureSuivie) speak();
   }
 

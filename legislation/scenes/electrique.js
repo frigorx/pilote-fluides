@@ -505,9 +505,9 @@
     "savoir qui coupe selon le régime de neutre, n'ouvrir l'armoire qu'habilité, puis consigner avant d'intervenir.");
   D.el("rect", { x: 0, y: 0, width: 1000, height: 440, fill: C.papier }, dessin);
   /* filigrane R9 : logo officiel + « by inerweb.fr », 3 exemplaires dont un au centre, derrière tout ;
-     cartouche « Édu » (celui de l'en-tête des stations) à la place de « Studio » (vidéos) */
+     cartouche « .fr » (celui de l'en-tête des stations) à la place de « Studio » (vidéos) */
   D.filigrane(dessin, [[205, 120], [500, 236], [800, 352]], 300).querySelectorAll("text")
-    .forEach(t => { if (t.textContent === "Studio") t.textContent = "Édu"; });
+    .forEach(t => { if (t.textContent === "Studio") t.textContent = ".fr"; });
   D.el("path", { d: "M24 410 H286", stroke: C.navy, "stroke-width": 3, opacity: 0.3 }, dessin);
   const charge = bonhomme(dessin, { dossier: true });
   const bulle = D.el("g", {}, dessin);

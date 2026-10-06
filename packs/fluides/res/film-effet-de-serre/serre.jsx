@@ -456,7 +456,7 @@
 
         <div style={{ position: 'absolute', left: 46, top: 40, display: 'flex', alignItems: 'center', gap: 12, opacity: t.logo ? 1 : 0 }}>
           <div style={{ font: "bold 34px 'Trebuchet MS', sans-serif", color: C.blue }}>❄ inerWeb</div>
-          <div style={{ background: C.orange, color: '#fff', font: "bold 24px 'Trebuchet MS', sans-serif", padding: '4px 12px', borderRadius: 8 }}>Édu</div>
+          <div style={{ background: C.orange, color: '#fff', font: "bold 24px 'Trebuchet MS', sans-serif", padding: '4px 12px', borderRadius: 8 }}>.fr</div>
         </div>
         <div style={{ position: 'absolute', right: 46, top: 48, font: "bold 30px 'Trebuchet MS', sans-serif", color: C.blue, opacity: t.logo ? 0.75 : 0 }}>
           Effet de serre &amp; PRP
@@ -508,7 +508,7 @@
         <TweaksPanel>
           <TweakSection label="Affichage" />
           <TweakToggle label="Sous-titres" value={t.sousTitres} onChange={(v) => setTweak('sousTitres', v)} />
-          <TweakToggle label="Bandeau inerWeb Édu" value={t.logo} onChange={(v) => setTweak('logo', v)} />
+          <TweakToggle label="Bandeau inerweb.fr" value={t.logo} onChange={(v) => setTweak('logo', v)} />
           <TweakSection label="Outils" />
           <TweakToggle label="Motion editor" value={t.motionEditor} onChange={(v) => setTweak('motionEditor', v)} />
         </TweaksPanel>

@@ -43,7 +43,7 @@
   const NS = "http://www.w3.org/2000/svg", POLICE = "Calibri, 'Segoe UI', Arial, sans-serif";
   const C = { navy: "#1b3a63", ink: "#22303f", bp: "#1f6fa8", hp: "#b3261e", r134a: "#1d5f99", orange: "#c9451a", vif: "#ff6b35", gris: "#637285", lcd: "#e8f1e5" };
   const ecrire = (p, x, y, s, at) => D.texte(p, x, y, s, Object.assign({ "font-size": 22, "font-family": POLICE, "font-weight": 700, fill: C.navy }, at || {}));
-  const marquer = g => g.querySelectorAll("text").forEach(t => { if (t.textContent === "Studio") t.textContent = "Édu"; }); // cartouche du produit (charte R9)
+  const marquer = g => g.querySelectorAll("text").forEach(t => { if (t.textContent === "Studio") t.textContent = ".fr"; }); // cartouche du produit (charte R9)
   const PATM = 1.013;
 
   /* ---------- les chiffres du module (copies de app.js, à garder identiques) ---------- */

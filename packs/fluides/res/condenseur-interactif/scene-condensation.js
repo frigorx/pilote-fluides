@@ -72,7 +72,7 @@
 
   const POLICE = { "font-family": "Calibri, Arial, sans-serif" };
   const etiquette = (p, x, y, s, at) => D.texte(p, x, y, s, Object.assign({ "font-size": 25, fill: "#10233c", "font-weight": 600 }, POLICE, at || {}));
-  const marquer = g => g.querySelectorAll("text").forEach(t => { if (t.textContent === "Studio") t.textContent = "Édu"; }); // cartouche du produit (charte R9)
+  const marquer = g => g.querySelectorAll("text").forEach(t => { if (t.textContent === "Studio") t.textContent = ".fr"; }); // cartouche du produit (charte R9)
 
   /* ce que le fluide est, selon l'endroit x du tube */
   const tempDe = x => x > X_Z2 ? D.lerp(0.92, T_COND, D.borne((X_ENT - x) / LONG[0], 0, 1))  // désurchauffe : la vapeur se refroidit jusqu'à sa température de condensation

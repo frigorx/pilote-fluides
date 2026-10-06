@@ -1,5 +1,5 @@
 /* =====================================================================
-   CÂBLAGE VIRTUEL — moteur du jeu (inerWeb Édu).
+   CÂBLAGE VIRTUEL — moteur du jeu (inerweb.fr).
    ---------------------------------------------------------------------
    CONTRAT : jouer.html charge exercices/index.js puis ce script.
      ?ex=<id>            l'exercice (exercices/<id>.js, chargé ici)

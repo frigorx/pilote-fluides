@@ -30,7 +30,7 @@
 
   app.innerHTML = [
     '<header class="hub-head">',
-    '  <a class="brand" href="../../../../index.html#ligne=regules"><img class="brand-logo" src="../_regules-commun/logo-inerweb-edu.svg" alt="inerWeb Édu"></a>',
+    '  <a class="brand" href="../../../../index.html#ligne=regules"><img class="brand-logo" src="../_regules-commun/logo-inerweb-edu.svg" alt="inerweb.fr"></a>',
     '  <div class="hub-title"><p>' + escapeHtml(catalog.subtitle) + '</p><h1>' + escapeHtml(catalog.title) + '</h1></div>',
     '  <div class="hub-end"></div>',
     '</header>',

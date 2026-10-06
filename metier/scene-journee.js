@@ -355,9 +355,9 @@
   D.el("rect", { x: 0, y: 0, width: 940, height: 440, fill: C.papier }, dessin);
   D.defs(dessin);   // dégradés métal et petite molécule de VOYAGE_DESSIN (tube cuivre, tige du manomètre, vapeur)
   /* filigrane R9 : logo officiel + « by inerweb.fr », 3 exemplaires dont un au centre, derrière tout ;
-     cartouche « Édu » (celui de l'en-tête de la page) à la place de « Studio » (vidéos) */
+     cartouche « .fr » (celui de l'en-tête de la page) à la place de « Studio » (vidéos) */
   D.filigrane(dessin, [[195, 120], [470, 236], [760, 352]], 290).querySelectorAll("text")
-    .forEach(t => { if (t.textContent === "Studio") t.textContent = "Édu"; });
+    .forEach(t => { if (t.textContent === "Studio") t.textContent = ".fr"; });
   D.el("path", { d: "M24 410 H286", stroke: C.navy, "stroke-width": 3, opacity: 0.3 }, dessin);
   const caisse = D.el("g", {}, dessin);                                                                  // sa caisse à outils
   D.el("path", { d: "M218 377 V367 H248 V377", fill: "none", stroke: C.navy, "stroke-width": 4, "stroke-linejoin": "round" }, caisse);

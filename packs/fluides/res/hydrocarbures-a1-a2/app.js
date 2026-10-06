@@ -1008,7 +1008,7 @@ function changeRate(direction) {
 }
 
 function buildPrintBook() {
-  $("#print-book").innerHTML = `<section class="print-cover"><p>inerWeb Édu · Pilote Fluides · Habilitation A1/A2</p><h1>Mission 290 — travailler en sécurité avec un hydrocarbure</h1><p class="print-purpose">Version papier du module interactif. Le cas de calcul à 153 g est strictement limité à l’exemple documenté d’un appareil commercial autonome ; la norme et la notice de l’équipement réel restent prioritaires.</p></section>${screens.map((item, index) => {
+  $("#print-book").innerHTML = `<section class="print-cover"><p>inerweb.fr · Pilote Fluides · Habilitation A1/A2</p><h1>Mission 290 — travailler en sécurité avec un hydrocarbure</h1><p class="print-purpose">Version papier du module interactif. Le cas de calcul à 153 g est strictement limité à l’exemple documenté d’un appareil commercial autonome ; la norme et la notice de l’équipement réel restent prioritaires.</p></section>${screens.map((item, index) => {
     const quiz = item.quiz ? `<h3>Question</h3><ul>${item.quiz.answers.map(answer => `<li>${esc(answer)}</li>`).join("")}</ul><div class="print-correction"><strong>Correction :</strong> ${esc(item.quiz.answers[item.quiz.correct])}. ${esc(item.quiz.explanation)}</div>` : "";
     return `<article class="print-screen"><p class="print-meta">Écran ${index + 1} · ${esc(item.id)} · ${esc(item.niveau)}</p><h2>${esc(item.title)}</h2><p>${esc(item.text)}</p><p><strong>À faire :</strong> ${esc(item.prompt || "Lire et retenir le point clé.")}</p><p>${esc(item.print)}</p>${quiz}<p class="print-codes">${item.codes.length ? `référentiel · ${item.codes.join(" · ")}` : "contexte · hors preuve de couverture"}</p></article>`;
   }).join("")}`;

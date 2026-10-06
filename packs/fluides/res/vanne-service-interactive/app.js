@@ -760,7 +760,7 @@
     return `
       <article class="livret">
         <header class="livret-tete">
-          <p class="livret-marque">inerWeb Édu · Pilote Fluides · habilitation fluides frigorigènes</p>
+          <p class="livret-marque">inerweb.fr · Pilote Fluides · habilitation fluides frigorigènes</p>
           <h1>La vanne de service — trois positions, deux prises</h1>
           <figure class="livret-photo">
             <img src="vanne-3d.webp?v=20260803-1" width="1024" height="783" alt="Vue en perspective d’une vanne de service à deux prises.">

@@ -75,6 +75,7 @@ const manquantes = [];
 for (const r of RESEAUX) {
   for (const h of [r.adresse, r.vignette, r.entree.href, ...r.raccourcis.map((x) => x.href), ...(r.pdf ? [r.pdf.href] : [])]) if (!existe(h)) manquantes.push(`${r.id} → ${h}`);
 }
+for (const r of RESEAUX) if (r.externe && !/^https:\/\//.test(r.externe.href || "")) manquantes.push(`${r.id} → lien externe sans https:// (${r.externe.href})`);
 if (manquantes.length) { console.error("accueil.mjs : adresses introuvables sur le disque :\n  " + manquantes.join("\n  ")); process.exit(1); }
 
 /* ---- 4. Les trois blocs ---- */
@@ -93,7 +94,8 @@ const vignettes = RESEAUX.map((r) => {
   const c = comptes.find((x) => x.id === r.id);
   const etat = r.etat ? ` <span class="v-etat">${ech(r.etat)}</span>` : "";
   const raccourcis = r.raccourcis.map((x) => `<a href="${ech(x.href)}">${ech(x.titre)}</a>`)
-    .concat(r.pdf ? [`<a href="${ech(r.pdf.href)}" download>${ech(r.pdf.titre)}</a>`] : []).join("\n        ");
+    .concat(r.pdf ? [`<a href="${ech(r.pdf.href)}" download>${ech(r.pdf.titre)}</a>`] : [])
+    .concat(r.externe ? [`<a class="v-externe" href="${ech(r.externe.href)}" target="_blank" rel="noopener">${ech(r.externe.titre)}</a>`] : []).join("\n        ");
   const nombres = ech(r.chiffres || `${c.stations} stations · ${c.lignes} lignes`);
   return `      <article class="vignette" style="--c:${r.couleur}">
         <a class="v-carte" href="${ech(r.adresse)}" aria-label="Entrer dans ${ech(r.nom)}"><img src="${ech(r.vignette)}" alt="" loading="lazy" width="400" height="190"></a>
@@ -150,13 +152,13 @@ const jsonld = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebSite", "@id": "https://inerweb.fr/#site", "name": "inerWeb Édu", "alternateName": "inerWeb",
+      "@type": "WebSite", "@id": "https://inerweb.fr/#site", "name": "inerweb.fr", "alternateName": "inerWeb",
       "url": "https://inerweb.fr/", "inLanguage": "fr",
       "description": `${total.reseaux} réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation — ${total.stations} stations, une voix qui explique, sans compte.`,
       "publisher": { "@id": "https://inerweb.fr/#org" },
       "potentialAction": { "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "https://inerweb.fr/plan.html?q={search_term_string}" }, "query-input": "required name=search_term_string" },
     },
-    { "@type": "Organization", "@id": "https://inerweb.fr/#org", "name": "inerWeb", "url": "https://inerweb.fr/", "logo": "https://inerweb.fr/icones/og-inerweb-1200x630.png", "email": "inerweb.fh@gmail.com" },
+    { "@type": "Organization", "@id": "https://inerweb.fr/#org", "name": "inerWeb", "url": "https://inerweb.fr/", "logo": "https://inerweb.fr/icones/og-inerweb-1200x630.png", "email": "inerweb.fh@gmail.com", ...(ctx.window.INERWEB_YOUTUBE ? { "sameAs": [ctx.window.INERWEB_YOUTUBE] } : {}) },
     {
       "@type": "ItemList", "name": "Les réseaux de cours inerWeb", "numberOfItems": total.reseaux,
       "itemListElement": RESEAUX.map((r, i) => ({ "@type": "ListItem", "position": i + 1, "name": r.nom, "url": "https://inerweb.fr/" + r.adresse, "description": r.sousTitre })),
