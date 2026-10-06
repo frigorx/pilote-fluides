@@ -1,0 +1,32 @@
+{
+  "cours": "detendeur-mop",
+  "titre": "Le détendeur MOP",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 5,
+  "codes": {
+    "9.01": [
+      "identite",
+      "bulbe",
+      "chambre-chaude",
+      "monter",
+      "verifier"
+    ],
+    "9.02": [
+      "monter"
+    ]
+  },
+  "appui": {
+    "1.02": [
+      "identite",
+      "bulbe"
+    ],
+    "1.04": [
+      "identite",
+      "chambre-chaude"
+    ],
+    "9.10": [
+      "chambre-chaude",
+      "monter"
+    ]
+  }
+}

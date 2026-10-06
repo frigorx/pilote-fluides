@@ -1,0 +1,226 @@
+/* =====================================================================
+   styles.css — gare 3 « Le détendeur MOP » (moule de la ligne)
+   ---------------------------------------------------------------------
+   Copié de la gare 2 (jetons, barre, rail, carte, boutons) ; les autres gares ne sont pas touchées. Règles tenues : corps de texte ≥ 18,7 px
+   (14 pt) dans la zone de l'écran, tableaux compris ; aucune animation CSS (tout est calculé par les
+   scènes) ; pas de thème sombre ; pas de défilement de la page.
+   ===================================================================== */
+:root {
+  --navy:#1b3a63; --ink:#10233c; --orange:#ff6b35; --orange-dark:#c9451a;
+  --blue:#3d7fca; --blue-soft:#84b7ec; --cream:#f7f1e7; --paper:#fffdf8;
+  --muted:#4f6174; --line:rgba(27,58,99,.16); --ok:#1e7e54; --ok-bg:#e3f5ec;
+  --bad:#c0392b; --bad-bg:#fbe7e4; --shadow:0 18px 48px rgba(27,58,99,.14);
+  --corps:18.7px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--cream);color:var(--ink)}
+[hidden]{display:none!important}
+body{font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;font-size:16px;line-height:1.4;overflow-x:hidden}
+button,a,input{font:inherit} button{touch-action:manipulation}
+button:focus-visible,a:focus-visible,[role="button"]:focus-visible{outline:3px solid rgba(255,107,53,.55);outline-offset:3px}
+.skip-link{position:fixed;z-index:99;left:12px;top:-80px;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px}.skip-link:focus{top:12px}
+
+/* ---- barre du haut ---- */
+.appbar{height:50px;padding:6px clamp(10px,2.4vw,28px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(255,253,248,.96)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--navy);text-decoration:none}.brand small{display:block;font-size:15px;color:var(--muted)}
+.brand svg{width:150px;height:34px}
+.appbar-actions,.lesson-tools,.home-actions{display:flex;align-items:center;gap:8px}
+.mode-badge,.small-button,.tool-button,.speed-control{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;font-weight:700}
+.mode-badge{padding:6px 12px;font-size:15px}.small-button,.tool-button{padding:7px 12px;cursor:pointer;font-size:16px}.exit-button{border-color:rgba(201,69,26,.35);color:var(--orange-dark)}
+
+/* ---- sommaire ---- */
+.home{width:min(1180px,calc(100% - 32px));min-height:calc(100dvh - 78px);margin:auto;padding:clamp(12px,3vh,36px) 0 16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1.05fr);grid-template-rows:auto auto auto;gap:clamp(14px,3vw,40px);align-content:center}
+.home-copy{align-self:center}
+.eyebrow{margin:0 0 6px;color:var(--orange-dark);font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+h1,h2,h3{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy);margin:0;line-height:1.05}
+h1{font-size:clamp(40px,5.2vw,72px);letter-spacing:-.015em}h1 span{color:var(--orange-dark)}
+.home-intro{max-width:600px;font-size:clamp(19px,1.7vw,22px);line-height:1.5;margin:16px 0}
+.primary-button,.nav-button{border:0;border-radius:999px;background:var(--navy);color:#fff;padding:11px 20px;font-weight:800;cursor:pointer}.primary-button{font-size:19px}.home-actions>span{color:var(--muted);font-size:16px}
+.home-actions{flex-wrap:wrap}
+.home-visual{position:relative;margin:0;background:#fdfbf5;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden;align-self:center;aspect-ratio:960/420}
+.home-visual svg.ds-svg{position:relative;display:block;width:100%;height:100%}
+.dossier-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.dossier-button{display:flex;align-items:center;gap:8px;min-height:64px;text-align:left;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--navy);padding:8px;cursor:pointer}
+.dossier-button b{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff}.dossier-button span{font-weight:800;font-size:16px;line-height:1.15}
+.home-note{grid-column:1/-1;margin:0;padding:10px 14px;border:1px dashed var(--orange-dark);border-radius:12px;background:var(--paper);font-size:var(--corps);line-height:1.3}
+
+/* ---- le cours : rail à gauche, carte à droite ---- */
+body.course-running{height:100dvh;overflow:hidden}
+.course-shell{height:calc(100dvh - 78px);padding:8px 8px 4px;display:grid;grid-template-columns:clamp(132px,14vw,188px) minmax(0,1fr);gap:8px}
+.course-rail,.lesson-card{min-height:0;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}
+.course-rail{border-radius:18px;padding:10px 8px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.rail-heading{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}.rail-heading strong{color:var(--navy);font-size:16px}
+.stepper{display:grid;gap:4px;margin:0 0 auto}
+.step-button{display:grid;grid-template-columns:28px 1fr;gap:6px;align-items:center;border:0;background:transparent;color:var(--muted);text-align:left;padding:5px 4px;border-radius:10px;cursor:pointer;font-size:16px;line-height:1.15}
+.step-button b{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:15px}
+.step-button.active{background:#eef5fc;color:var(--navy);font-weight:800}.step-button.active b{background:var(--blue);border-color:var(--blue);color:#fff}.step-button.done b{border:3px double var(--ok);color:var(--ok)}
+.progress-track{height:7px;border-radius:999px;background:#e6edf4;overflow:hidden}.progress-track span{display:block;height:100%;background:var(--orange);width:0}
+
+.lesson-card{min-width:0;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto}
+.lesson-header{padding:8px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}
+.lesson-heading{min-width:0}.lesson-heading .eyebrow{margin:0}.lesson-heading h2{font-size:clamp(24px,2.7vw,38px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lesson-heading h2:focus,.lesson-heading h2:focus-visible{outline:none}
+.lesson-tools{flex:0 0 auto}
+.speed-control{display:flex;align-items:center;overflow:hidden;font-size:15px}.speed-control button{border:0;background:transparent;color:var(--navy);padding:7px 10px;cursor:pointer}.speed-control span{min-width:46px;text-align:center}
+.voice-button{background:var(--navy);color:#fff;display:flex;gap:6px}
+.lesson-content{min-height:0;padding:8px 14px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:8px}
+.lesson-copy{min-height:0}
+.lesson-copy>p:first-child{margin:0;font-size:clamp(19px,1.5vw,21px);line-height:1.35;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+.lesson-copy.texte-ouvert>p:first-child{display:block;-webkit-line-clamp:unset;line-clamp:none}
+.texte-entier{margin-top:2px;padding:0;border:0;background:none;color:var(--orange-dark);font-weight:800;font-size:var(--corps);text-decoration:underline;cursor:pointer}
+.activity-zone{min-height:0;overflow:auto;border:1px solid var(--line);border-radius:16px;background:#fdfbf5;padding:6px;display:grid;grid-template-rows:minmax(0,1fr)}
+.activity-zone>*{min-width:0}
+.lesson-footer{padding:7px 14px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;background:var(--paper)}
+.nav-button{padding:9px 16px;font-size:17px}.nav-button.secondary{background:var(--paper);color:var(--navy);border:1px solid var(--line)}.nav-button:disabled{opacity:.4;cursor:not-allowed}
+.reference-box{text-align:center;color:var(--muted);font-size:15px;line-height:1.25}.reference-box strong{color:var(--navy)}
+.status-message{min-height:0;margin:0;padding:0 14px;text-align:center;color:var(--ok);font-weight:800;font-size:15px}.status-message:empty{display:none}
+
+/* ---- le dessin : une figure = un dessin qui vit + sa barre de pas à pas ---- */
+.ds-figure{height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:6px}
+.ds-dessin{position:relative;min-height:0;display:grid;place-items:center;border:1px solid var(--line);border-radius:14px;background:#fdfbf5;overflow:hidden;padding:4px}
+.ds-fond{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.ds-svg{position:relative;display:block;width:100%;height:100%;min-height:0}
+.ds-barre{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-right:62px}
+.ds-barre button{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;padding:4px 12px;font-weight:800;font-size:var(--corps);cursor:pointer;line-height:1.25}
+.ds-barre .ds-etape{min-width:44px;font-size:19px;padding:3px 10px}.ds-barre button[aria-current="step"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.ds-barre .ds-ralenti[aria-pressed="true"]{background:#fff4e0;border-color:var(--orange-dark)}
+.ds-legende{flex:1 1 360px;align-self:center;margin:0 0 0 6px;font-size:19px;line-height:1.28;min-height:2.56em}.ds-legende strong{color:var(--navy)}
+/* écran 4 : quatre coupes côte à côte ; écran 3 : quatre cartes */
+.ds-rang,.ds-cartes{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;min-height:0}
+.ds-cartes{height:100%}
+.ds-cel,.ds-carte{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:2px;min-height:0;min-width:0}
+.ds-cel-tete{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--navy);font-size:19px;line-height:1.1}
+.ds-cel-tete img{height:42px;width:56px;object-fit:contain;flex:0 0 auto}
+.ds-coupe{position:relative;min-height:0;display:grid}
+.ds-coupe .ds-fond{display:none}
+.ds-verdict{margin:0;padding:3px 8px;border-radius:999px;text-align:center;font-weight:800;font-size:var(--corps);line-height:1.2;opacity:0}
+@media (max-width:1250px){.ds-verdict{min-height:2.55em;display:flex;align-items:center;justify-content:center}}
+.ds-verdict.oui{color:var(--ok);background:var(--ok-bg)}.ds-verdict.non{color:var(--bad);background:var(--bad-bg)}
+.ds-carte{border:2px solid var(--line);background:transparent;border-radius:14px;padding:6px;text-align:center;cursor:pointer;color:var(--ink)}
+.ds-carte[aria-pressed="true"]{border-color:var(--blue);background:rgba(237,245,253,.75)}
+.ds-regle{font-size:var(--corps);line-height:1.2}.ds-regle strong{color:var(--orange-dark)}
+.ds-explic{margin:0;padding:6px 12px;border-left:5px solid var(--blue);border-radius:0 10px 10px 0;background:#eef5fc;font-size:19px;line-height:1.28;min-height:2.56em}
+/* écran 6 : deux variantes */
+.ds-variantes{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-height:0}
+.ds-var{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:4px;min-height:0;min-width:0}
+.ds-var .ds-coupe{position:relative;border:1px solid var(--line);border-radius:12px;background:#fffdf8;overflow:hidden}
+.ds-var .ds-coupe .ds-fond{display:block}
+.ds-onglets{display:none}
+.ds-phrase{margin:0;font-size:19px;line-height:1.28;text-align:center}.ds-phrase strong{color:var(--orange-dark)}
+/* écran 5 : l'exercice */
+.assoc{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;min-height:0;height:100%}
+.chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.chip{display:flex;align-items:center;gap:8px;border:2px solid var(--line);border-radius:12px;background:var(--paper);padding:5px 10px;font-weight:800;font-size:var(--corps);color:var(--navy);cursor:grab;text-align:left;line-height:1.1}
+.chip img{height:52px;width:68px;object-fit:contain;flex:0 0 auto}
+.chip[aria-pressed="true"]{border-color:var(--blue);background:#edf5fd;box-shadow:0 0 0 3px rgba(61,127,202,.25)}
+.machines{display:grid;gap:6px;grid-auto-rows:minmax(0,1fr);min-height:0}
+.machine{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:10px;align-items:center;border:2px dashed var(--line);border-radius:12px;background:var(--paper);padding:5px 12px;cursor:pointer;min-height:0}
+.machine-nom{font-weight:800;color:var(--navy);font-size:19px;line-height:1.15}.machine-nom small{display:block;font-weight:400;color:var(--muted);font-size:var(--corps);line-height:1.15}
+.machine-slot{display:flex;align-items:center;gap:8px;justify-content:center;border:2px dashed var(--line);border-radius:10px;min-height:44px;padding:2px 8px;color:var(--muted);font-size:var(--corps);text-align:center;line-height:1.1}
+.machine-slot img{height:34px;width:46px;object-fit:contain}
+.machine.ok{border:3px double var(--ok);background:var(--ok-bg)}.machine.ok .machine-slot{border:0;color:var(--ink);font-weight:800}
+.machine.faux{border:3px dashed var(--bad);background:var(--bad-bg)}
+.feedback{padding:7px 12px;border-left:5px solid var(--blue);border-radius:0 10px 10px 0;background:#eef5fc;font-size:var(--corps);line-height:1.3;min-height:3.1em}
+.feedback.good{border-left-style:double;border-left-color:var(--ok);background:var(--ok-bg)}.feedback.bad{border-left-style:dashed;border-left-color:var(--bad);background:var(--bad-bg)}
+/* écran 7 : le quiz */
+.quiz{display:grid;gap:8px;align-content:center;width:100%;max-width:920px;margin:auto;padding:4px 8px}
+.quiz-n{margin:0;color:var(--muted);font-weight:800;font-size:var(--corps)}
+.quiz-q{margin:0;font:700 clamp(21px,2vw,27px)/1.2 "Trebuchet MS",Calibri,sans-serif;color:var(--navy)}
+.quiz-img{height:76px;width:auto;max-width:200px;object-fit:contain;justify-self:start;border:1px solid var(--line);border-radius:10px;padding:4px;background:#fff}
+.choices{display:grid;gap:7px}
+.choice{border:2px solid var(--line);background:var(--paper);color:var(--ink);border-radius:12px;padding:8px 14px;text-align:left;cursor:pointer;font-size:19px;line-height:1.25}
+.choice strong{color:var(--navy);margin-right:6px}
+.choice.good{border:4px double var(--ok);background:var(--ok-bg)}.choice.bad{border:3px dashed var(--bad);background:var(--bad-bg)}.choice:disabled{cursor:default;color:var(--ink)}
+.quiz .primary-button{justify-self:start;padding:9px 20px;font-size:19px}
+.quiz.fin{text-align:center;justify-items:center}.score-number{margin:0;font:900 clamp(56px,9vw,96px) "Trebuchet MS",Calibri,sans-serif;color:var(--navy)}.score-texte{margin:0;font-size:22px}
+.print-book{display:none}
+dialog{width:min(680px,92vw);border:2px solid var(--navy);border-radius:18px;padding:18px 22px;background:var(--paper);color:var(--ink);font-size:var(--corps);line-height:1.35}
+dialog::backdrop{background:rgba(16,35,60,.45)}
+dialog h2{font-size:28px;margin-bottom:8px}dialog ul{margin:0 0 14px;padding-left:20px;display:grid;gap:8px}dialog a{color:var(--orange-dark);font-weight:800}dialog code{font-size:17px}
+dialog .primary-button{padding:9px 22px;font-size:19px}
+
+/* ---- sommaire : tablette et téléphone ---- */
+@media (max-width:1100px){.dossier-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){
+  .home{grid-template-columns:1fr}.home-visual{display:block}
+  .ds-cartes,.ds-rang{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .ds-cartes,.ds-rang{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+  .ds-figure:has(.ds-onglets){grid-template-rows:auto minmax(0,1fr)}
+  .ds-onglets{display:flex;gap:6px}.ds-onglets button{flex:1;border:2px solid var(--line);border-radius:12px;background:var(--paper);color:var(--navy);font-weight:800;font-size:var(--corps);padding:5px 6px;cursor:pointer}.ds-onglets button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+  .ds-variantes{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr)}.ds-var:not(.actif){display:none}.ds-var .ds-cel-tete{display:none}
+  .ds-coupe .ds-pastille{display:none}
+  .chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ds-cel-tete img{height:30px;width:40px}.ds-cel-tete{font-size:var(--corps)}
+}
+@media (max-width:650px){
+  .appbar{height:52px}.brand svg{width:124px;height:28px}.brand small{display:none}.mode-badge{display:none}.small-button{padding:6px 9px;font-size:15px}
+  .home{min-height:calc(100dvh - 76px);width:calc(100% - 20px);padding:8px 0;gap:8px;display:grid;grid-template-columns:1fr;align-content:start}
+  h1{font-size:38px}.home-intro{font-size:var(--corps);margin:8px 0}.eyebrow{font-size:13px}.home-actions{gap:6px}
+  .home-visual{margin:0}.dossier-grid{display:none}.home-note{font-size:16px}
+  body.course-running{height:100dvh}
+  .course-shell{height:calc(100dvh - 76px);padding:4px;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:4px}
+  .course-rail{flex-direction:row;align-items:center;padding:4px 8px;border-radius:12px;gap:8px}
+  .rail-heading{order:2;gap:4px}.rail-heading span{display:none}.stepper{display:flex;gap:2px;margin:0;flex:1;justify-content:space-between}.step-button{grid-template-columns:auto;padding:2px}.step-button span{display:none}.progress-track{display:none}
+  .lesson-card{border-radius:14px}.lesson-header{padding:5px 8px;flex-wrap:wrap;gap:4px}.lesson-heading{flex:1 1 100%}.lesson-heading .eyebrow{display:none}.lesson-heading h2{font-size:23px}.lesson-tools{flex:1 1 100%;justify-content:space-between}
+  .speed-control,#copy-link,.tool-label{display:none}.tool-button{padding:6px 10px}
+  .lesson-content{padding:5px 6px;gap:5px}.lesson-copy>p:first-child{font-size:var(--corps);line-height:1.3}
+  .activity-zone{padding:3px;border-radius:12px}
+  .lesson-footer{padding:5px 6px;gap:4px}.nav-button{padding:8px 11px;font-size:16px}.reference-box{font-size:13px}
+  .ds-barre{gap:4px;padding-right:52px}.ds-barre .lib{display:none}.ds-barre button{padding:3px 8px}.ds-barre .ds-etape{min-width:36px;padding:3px 6px}.ds-legende{flex:1 1 100%;margin:0;font-size:var(--corps);min-height:0}
+  .ds-explic,.ds-phrase{font-size:var(--corps)}.ds-explic{padding-right:52px}
+  .ds-verdict{font-size:var(--corps)}.ds-cel-tete{font-size:var(--corps);gap:4px}.ds-regle{font-size:var(--corps)}
+  .machine{grid-template-columns:minmax(0,1fr) 38%;gap:6px;padding:4px 8px;min-height:0}.machine-nom{font-size:var(--corps)}.machine-nom small{font-size:var(--corps)}.machine-slot{font-size:var(--corps);min-height:40px}
+  .quiz{gap:6px;padding:2px}.quiz-q{font-size:20px}.choice{padding:6px 10px;font-size:var(--corps)}.quiz-img{height:56px}.quiz .primary-button{font-size:17px}
+  .chip{font-size:var(--corps);padding:4px 6px}.chip img{height:34px;width:44px}
+}
+@media (max-height:700px) and (min-width:651px){
+  .lesson-header{padding:4px 12px}.lesson-heading h2{font-size:26px}.lesson-content{padding:6px 12px;gap:6px}
+}
+/* ---- loupe « Aa » (moteur/lisibilite.js) : la page défile, les dessins gardent une hauteur ---- */
+html.lisibilite-agrandie body.course-running{height:auto;min-height:100dvh;overflow-x:hidden;overflow-y:auto}
+html.lisibilite-agrandie .appbar{position:sticky;top:0;z-index:30}
+html.lisibilite-agrandie .course-shell{height:auto;min-height:calc(100dvh - 78px);align-items:start}
+html.lisibilite-agrandie .course-rail{position:sticky;top:64px;max-height:calc(100dvh - 76px)}
+html.lisibilite-agrandie .lesson-card{overflow:visible;min-height:calc(100dvh - 76px)}
+html.lisibilite-agrandie .lesson-content,html.lisibilite-agrandie .activity-zone{overflow:visible}
+html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-dessin{height:min(62vh,520px)}
+
+/* ---- gare 3 : la coupe qui s'adapte, la carte d'identité, le côte à côte, l'exercice « où monter la tête ? » ---- */
+/* la coupe occupe tout son cadre (sa forme ne dépend donc pas de son dessin : elle choisit sa largeur d'après le cadre) */
+.ds-svg.mp-svg{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px)}
+.home-visual svg.mp-svg{position:absolute;inset:0;width:100%;height:100%}
+.ds-dessin:has(.mp-duo){grid-template-rows:minmax(0,1fr);place-items:stretch}
+.mp-carte{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;gap:4px;height:100%;min-height:0}
+.mp-carte .ds-dessin{min-height:0}
+.mp-carte .ds-explic{min-height:2.56em}
+.mp-duo{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;min-height:0}
+.mp-cel{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:2px;min-height:0;min-width:0}
+.mp-coupe{position:relative;min-height:0;grid-row:2}.mp-cel>.ds-cel-tete{grid-row:1}.mp-cel>.ds-verdict{grid-row:3}
+.mp-exo{display:grid;grid-template-rows:minmax(110px,1fr) auto auto;gap:6px;min-height:0;height:100%}
+.mp-exo .ds-dessin{min-height:0}
+.mp-choix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mp-place{display:flex;align-items:center;gap:8px;border:2px solid var(--line);border-radius:12px;background:var(--paper);padding:5px 10px;font-weight:800;font-size:var(--corps);line-height:1.15;color:var(--navy);cursor:pointer;text-align:left}
+.mp-place b{display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:50%;background:var(--navy);color:#fff}
+.mp-exo .feedback{padding-right:62px}
+.mp-place[aria-pressed="true"]{border-color:var(--blue);background:#edf5fd;box-shadow:0 0 0 3px rgba(61,127,202,.25)}
+@media (max-width:900px){.mp-choix{grid-template-columns:minmax(0,1fr);gap:4px}}
+@media (max-width:760px){
+  .ds-figure:has(.mp-duo){grid-template-rows:minmax(0,1fr) auto}
+  .ds-dessin:has(.mp-duo){grid-template-rows:auto minmax(0,1fr)}
+  .mp-duo{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr)}.mp-cel:not(.actif){display:none}.mp-cel .ds-cel-tete{display:none}
+  .mp-carte .ds-cel-tete b{font-size:var(--corps)}
+}
+@media (max-width:650px){
+  .mp-carte .ds-regle{padding-right:56px}
+  .quiz .feedback{padding-right:60px}
+  .mp-place{padding:4px 6px;gap:6px}.mp-place b{flex-basis:28px;height:28px}
+  .mp-exo{grid-template-rows:minmax(96px,1fr) auto auto;gap:4px}
+}
+/* tablette : deux coupes côte à côte seraient trop petites (jauges, pastilles) : on passe aux deux onglets dès 900 px */
+@media (min-width:761px) and (max-width:900px){
+  .ds-figure:has(.mp-duo){grid-template-rows:minmax(0,1fr) auto}
+  .ds-dessin:has(.mp-duo){grid-template-rows:auto minmax(0,1fr)}
+  .ds-onglets{display:flex;gap:6px}.ds-onglets button{flex:1;border:2px solid var(--line);border-radius:12px;background:var(--paper);color:var(--navy);font-weight:800;font-size:var(--corps);padding:5px 6px;cursor:pointer}.ds-onglets button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+  .mp-duo{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr)}.mp-cel:not(.actif){display:none}.mp-cel .ds-cel-tete{display:none}
+}
