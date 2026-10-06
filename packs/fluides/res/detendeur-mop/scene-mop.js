@@ -35,6 +35,9 @@
   const el = D.el, lerp = D.lerp, bn = D.borne, frac = D.frac;
   const H = 360, KM = 0.7, CLAIR = "#f4f8fc", CUIVRE = "#a9672f", NAVY = "#1b3a63";
   const ROUGE = "#c9451a", BLEU = "#3d7fca";
+  /* CONVENTION DE LA LIGNE : la charge du bulbe et sa pression sont VIOLETTES (jamais orangées : l'orangé est le liquide HP) ;
+     sous la membrane, la pression d'évaporation est BLEUE (elle ferme) et le ressort GRIS ACIER (il ferme). */
+  const VIOLET = "#8e44ad", V_BASE = "#bb8fce", V_PALE = "#efe3f5", V_FIL = "#6c3483", ACIER = "#7b8a99";
   const NY0 = 238;                                  // haut de l'aiguille fermée
   let uid = 0;                                      // identifiants uniques (clipPath)
 
@@ -73,6 +76,13 @@
       });
     };
   }
+  /* une petite molécule violette : la vapeur de la charge du bulbe. Renvoie un réglage (x, y, opacité). */
+  function molV(parent) {
+    const gg = el("g", {}, parent);
+    el("circle", { r: 11, fill: V_BASE, stroke: VIOLET, "stroke-width": 1.8 }, gg);
+    el("circle", { cx: -3.6, cy: -4, r: 3.2, fill: "#fff", opacity: 0.6 }, gg);
+    return (x, y, op) => { gg.setAttribute("transform", "translate(" + x.toFixed(1) + " " + y.toFixed(1) + ")"); gg.setAttribute("opacity", op.toFixed(2)); };
+  }
   function anneau(g) {
     const r = el("rect", { rx: 12, fill: "none", stroke: "#ff6b35", "stroke-width": 5, opacity: 0 }, g);
     return function (zone, t) {
@@ -98,16 +108,16 @@
     const e = 6, xi = x0 + e, yi = y0 + e, wi = w - 2 * e, hi = h - 2 * e, ri = Math.min(10, hi / 2);
     el("rect", { x: x0, y: y0, width: w, height: h, rx: ri + e, fill: "url(#vm-acier)", stroke: "#5d6b7a", "stroke-width": 2 }, g);
     const chaud = el("rect", { x: x0, y: y0, width: w, height: h, rx: ri + e, fill: "#ff6b35", opacity: 0 }, g);
-    el("rect", { x: xi, y: yi, width: wi, height: hi, rx: ri, fill: CLAIR }, g);
+    el("rect", { x: xi, y: yi, width: wi, height: hi, rx: ri, fill: V_PALE }, g);          // la charge remplit tout le bulbe : intérieur violet pâle
     const cid = "mp-bulbe-" + (++uid), cp = el("clipPath", { id: cid }, g);
     el("rect", { x: xi, y: yi, width: wi, height: hi, rx: ri }, cp);
     const gc = el("g", { "clip-path": "url(#" + cid + ")" }, g);
     let niv = 0.3;
-    const nap = D.liquide(gc, { x0: xi, x1: xi + wi, yh: yi, yb: yi + hi, niveau: () => niv, couleur: () => D.couleur(0.08, false), pas: 8, opacite: 0.88 });
+    const nap = D.liquide(gc, { x0: xi, x1: xi + wi, yh: yi, yb: yi + hi, niveau: () => niv, couleur: () => VIOLET, pas: 8, opacite: 0.88 });
     const r = D.alea(graine || 3), gb = el("g", {}, gc), Bu = [];
     for (let i = 0; i < 9; i++) Bu.push({ p: r(), per: 1.2 + r() * 1.0, ph: r() * 3, rr: 1.8 + r() * 2.2, c: el("circle", { fill: "rgba(255,255,255,.3)", stroke: "#fff", "stroke-width": 1.6 }, gb) });
     const KB = 0.5, gm = el("g", { transform: "scale(" + KB + ")" }, gc), V = [];
-    for (let i = 0; i < 10; i++) V.push({ u: r(), v: r(), ph: r() * 6.28, maj: D.mol(gm) });
+    for (let i = 0; i < 10; i++) V.push({ u: r(), v: r(), ph: r() * 6.28, maj: molV(gm) });
     function maj(s, t) {
       niv = bn(s.niv, 0, 1);
       nap.maj(t);
@@ -117,11 +127,11 @@
         b.c.setAttribute("cx", xs.toFixed(1)); b.c.setAttribute("cy", lerp(yi + hi - 3, nap.surface(xs, t) + 2, f).toFixed(1));
         b.c.setAttribute("r", lerp(1.2, b.rr, f).toFixed(1)); b.c.setAttribute("opacity", (nbBulles * D.fenetre(f, 0, 1, 0.12)).toFixed(2));
       });
-      const n = Math.round(2 + 8 * bn(s.pres / 0.9, 0, 1)), col = D.couleur(0.2 + 0.5 * bn(s.T, 0, 1), true);
+      const n = Math.round(2 + 8 * bn(s.pres / 0.9, 0, 1));
       V.forEach((m, i) => {                          // la vapeur : de petites molécules séparées, plus nombreuses quand la pression monte
         const x = xi + 9 + m.u * (wi - 18) + 3 * Math.sin(t * 1.7 + m.ph), ymin = yi + 6, ymax = nap.surface(x, t) - 6;
         const y = ymin + m.v * Math.max(0, ymax - ymin) + 2 * Math.sin(t * 2.3 + m.ph);
-        m.maj(x / KB, y / KB, 0.2 + 0.5 * bn(s.T, 0, 1), true, i < n && ymax - ymin > 8 ? 0.9 : 0);
+        m.maj(x / KB, y / KB, i < n && ymax - ymin > 8 ? 0.9 : 0);
       });
       chaud.setAttribute("opacity", (0.7 * bn((s.T - 0.18) / 0.5, 0, 1)).toFixed(2));
     }
@@ -130,7 +140,8 @@
 
   /* un tube mince : paroi de cuivre (dessinée tout de suite) ; l'intérieur clair se dessine plus tard, par-dessus */
   function paroi(g, d, ep) { el("path", { d: d, fill: "none", stroke: CUIVRE, "stroke-width": ep, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g); }
-  function vide(g, d, ep) { return el("path", { d: d, fill: "none", stroke: CLAIR, "stroke-width": ep, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g); }
+  function vide(g, d, ep, col) { return el("path", { d: d, fill: "none", stroke: col || CLAIR, "stroke-width": ep, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g); }
+  const pastille = (g, x, y, t, fond, taille, ancre) => { const p = D.pastille(g, x, y, t, fond, taille, ancre); p.setAttribute("class", "ds-pastille"); return p; };
   const flecheH = (x, y0, h) => "M " + (x - 4) + " " + y0 + " V " + (y0 + h - 12) + " H " + (x - 11) + " L " + x + " " + (y0 + h) + " L " + (x + 11) + " " + (y0 + h - 12) + " H " + (x + 4) + " V " + y0 + " Z";
   const flecheB = (x, y0, h) => "M " + (x - 4) + " " + y0 + " V " + (y0 - h + 12) + " H " + (x - 11) + " L " + x + " " + (y0 - h) + " L " + (x + 11) + " " + (y0 - h + 12) + " H " + (x + 4) + " V " + y0 + " Z";
 
@@ -149,7 +160,7 @@
     const capD = y0 => "M " + xc + " " + y0 + " V 48 Q " + xc + " 34 " + (xc - 14) + " 34 H 124 Q 110 34 110 48";
 
     // ----- 1. le capillaire du bulbe (sa paroi, derrière tout) ; l'ambiance autour de la tête (exercice) -----
-    paroi(g, capD(yb0), 7);
+    paroi(g, capD(yb0), 8);
     const teinte = opt.thermos ? el("rect", { x: 28, y: 44, width: 164, height: 112, rx: 16, fill: "#9fc8f0", opacity: 0 }, g) : null;
 
     // ----- 2. l'évaporateur, les raccords des jauges, la vapeur dense à l'aspiration, la chaleur de la chambre -----
@@ -182,16 +193,18 @@
     el("rect", { x: 90, y: 312, width: 40, height: 6, fill: "url(#vm-acier)" }, g);
     el("rect", { x: 94, y: 330, width: 32, height: 12, rx: 3, fill: "url(#vm-acier)", stroke: "#4e5a66", "stroke-width": 2 }, g);   // la vis de réglage du ressort
     el("path", { d: "M 40 150 V 100 Q 40 56 110 56 Q 180 56 180 100 V 150 Z", fill: "url(#vm-acier)", stroke: "#5d6b7a", "stroke-width": 2.5 }, g);   // la tête
-    const chambre = el("path", { fill: "#fff" }, g);                                  // la chambre de la tête : la charge, au-dessus de la membrane
+    const chambre = el("path", { fill: V_PALE }, g);                                  // la chambre de la tête : la charge (violette), au-dessus de la membrane
+    const chFonce = el("path", { fill: VIOLET, opacity: 0.1 }, g);                    // elle se fonce quand la pression du bulbe monte
     const cidT = "mp-tete-" + (++uid), cpT = el("clipPath", { id: cidT }, g), cpP = el("path", {}, cpT);
     const gT = el("g", { "clip-path": "url(#" + cidT + ")" }, g);
     let ysT = 170;                                                                    // la surface du liquide qui migre vers la tête
-    const poolT = D.liquide(gT, { x0: 58, x1: 162, yh: 70, yb: 172, niveau: () => bn((172 - ysT) / 102, 0, 1), couleur: () => D.couleur(0.08, false), pas: 8, opacite: 0.88 });
+    const poolT = D.liquide(gT, { x0: 58, x1: 162, yh: 70, yb: 172, niveau: () => bn((172 - ysT) / 102, 0, 1), couleur: () => VIOLET, pas: 8, opacite: 0.88 });
     const mT = el("g", { transform: "scale(0.5)" }, g), rT = D.alea(41), VT = [];
-    for (let i = 0; i < 9; i++) VT.push({ u: rT(), v: rT(), ph: rT() * 6.28, maj: D.mol(mT) });
+    for (let i = 0; i < 9; i++) VT.push({ u: rT(), v: rT(), ph: rT() * 6.28, maj: molV(mT) });
     const membrane = el("path", { fill: "none", stroke: "#24384f", "stroke-width": 5, "stroke-linecap": "round" }, g);
-    const bas = [84, 136].map(() => el("path", { fill: "#fff", stroke: ROUGE, "stroke-width": 2.5, "stroke-linejoin": "round" }, g));      // la pression du bulbe, qui pousse vers le bas
-    const haut = [84, 136].map(() => el("path", { fill: BLEU, stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, g));      // la BP + le ressort, qui poussent vers le haut
+    const bas = [84, 136].map(() => el("path", { fill: VIOLET, stroke: "#fff", "stroke-width": 2, "stroke-linejoin": "round" }, g));      // la pression du bulbe (violet), qui pousse la membrane vers le bas : elle ouvre
+    const haut = [84, 136].map(() => el("path", { fill: BLEU, stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, g));      // la pression d'évaporation (bleu), qui pousse vers le haut : elle ferme
+    el("path", { d: flecheB(147, 314, 24), fill: ACIER, stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, g);               // le ressort (gris acier), qui pousse l'aiguille vers le haut : il ferme
     el("rect", { x: 100, y: 48, width: 20, height: 14, rx: 3, fill: "url(#vm-acier)", stroke: "#4e5a66", "stroke-width": 2 }, g);        // l'écrou du capillaire
 
     // ----- 4. le bulbe, ouvert en coupe, posé sur le tube de sortie -----
@@ -200,8 +213,9 @@
 
     // ----- 5. le capillaire : son vide traverse l'écrou, la tête, la paroi du bulbe (d'un seul tenant) ; le liquide qui migre -----
     const dVide = capD(yb0 + 9) + " V 82";
-    vide(g, dVide, 3);
-    const fil = el("path", { d: dVide, fill: "none", stroke: D.couleur(0.08, false), "stroke-width": 3, "stroke-linecap": "butt", "stroke-linejoin": "round", "stroke-dasharray": "0 9999" }, g);
+    vide(g, dVide, 4, V_BASE);                                                        // le capillaire est un tube plein de violet, du bulbe à la chambre
+    const impulsions = el("path", { d: dVide, fill: "none", stroke: "#f8f0fb", "stroke-width": 4, "stroke-linecap": "butt", "stroke-linejoin": "round", "stroke-dasharray": "6 30", opacity: 0 }, g);   // les impulsions plus claires : la pression monte
+    const fil = el("path", { d: dVide, fill: "none", stroke: V_FIL, "stroke-width": 4, "stroke-linecap": "butt", "stroke-linejoin": "round", "stroke-dasharray": "0 9999" }, g);
     let longueurFil = 400; try { longueurFil = fil.getTotalLength(); } catch (_) {}
 
     // ----- 6. jauges, thermomètres, pastilles, chevrons d'air, anneau -----
@@ -211,16 +225,16 @@
       const a = lerp(-115, 115, P_PLAF) * Math.PI / 180, c = Math.sin(a), s = Math.cos(a);
       el("line", { x1: xmBP + 36 * c, y1: 130 - 36 * s, x2: xmBP + 46 * c, y2: 130 - 46 * s, stroke: ROUGE, "stroke-width": 6, "stroke-linecap": "round" }, g);   // le plafond
       vide(g, "M " + xmBP + " 158 V 208", 4);          // le vide du raccord traverse la paroi du tube et le bord de la jauge
-      if (etiquettes) D.pastille(g, xmBP, 66, "BP", NAVY, 22, "middle");
+      if (etiquettes) pastille(g, xmBP, 66, "BP", NAVY, 22, "middle");
     }
     if (opt.moteur) {
       mMot = DS.manometre(g, xmM, 130, 34);
       el("path", { d: "M " + (xmM + 34) + " 130 H " + (W + 10), fill: "none", stroke: "#637285", "stroke-width": 3, "stroke-dasharray": "2 7", "stroke-linecap": "round" }, g);
-      if (etiquettes) D.pastille(g, xmM, 66, "moteur", NAVY, 22, "middle");
+      if (etiquettes) pastille(g, xmM, 66, "moteur", NAVY, 22, "middle");
     }
     if (opt.thermos) {
       thT = DS.thermometre(g, xTh, 176, 96); thB = DS.thermometre(g, xTb, 186, 106);
-      if (etiquettes) { D.pastille(g, xTh, 66, "tête", NAVY, 22, "middle"); D.pastille(g, xTb, 66, "bulbe", NAVY, 22, "middle"); }
+      if (etiquettes) { pastille(g, xTh, 66, "tête", NAVY, 22, "middle"); pastille(g, xTb, 66, "bulbe", NAVY, 22, "middle"); }
     }
     const chev = opt.thermos ? [0, 1, 2, 3, 4, 5].map(() => D.chevron(el("g", {}, g))) : [];
     const voirZones = anneaux(el("g", {}, g), {
@@ -236,7 +250,7 @@
     });
 
     // ----- l'état : lissage de la migration de la charge (exercice) -----
-    let tPrec = 0, amorce = false, mig = 0, air = 0, tp = 0.3;
+    let tPrec = 0, amorce = false, mig = 0, air = 0, tp = 0.3, pPrec = null, pulse = 0;
     function maj(e, t, info) {
       e = e || {};
       const dt = bn(t - tPrec, 0, 0.1); tPrec = t;
@@ -246,6 +260,9 @@
       const lis = opt.exo && amorce ? Math.min(1, dt * 1.5) : 1; amorce = true;
       mig += (migC - mig) * lis; air += (airC - air) * lis; tp += (tete - tp) * lis;
       const pB0 = pBulbe(T, mop), pB = tp < T ? lerp(pB0, Math.min(pB0, sat(tp)), mig) : pB0;
+      if (dt > 1e-4 && pPrec !== null) pulse += (bn(((pB - pPrec) / dt - 0.02) / 0.03, 0, 1) - pulse) * Math.min(1, dt * 8);   // des impulsions tant que la pression du bulbe MONTE ; plus rien au plafond
+      pPrec = pB;
+      impulsions.setAttribute("stroke-dashoffset", (-t * 70).toFixed(1)); impulsions.setAttribute("opacity", pulse.toFixed(2));
       const ouv = bn(0.5 + 3 * (pB - bp - RESSORT), 0.03, 1);
       const sortie = 0.10 + 0.55 * T, xf = xfBon * bn(0.3 + 0.9 * ouv, 0.12, 1.2);
       const gap = 18 * ouv, dm = 0.8 * gap, ny = NY0 + gap;
@@ -262,11 +279,12 @@
       tige.setAttribute("y", (150 + dm).toFixed(1)); tige.setAttribute("height", (ny + 2 - 150 - dm).toFixed(1));
       const cd = "M 58 150 V 100 Q 58 70 110 70 Q 162 70 162 100 V 150 Q 110 " + (150 + 2 * dm).toFixed(1) + " 58 150 Z";
       chambre.setAttribute("d", cd); cpP.setAttribute("d", cd);
+      chFonce.setAttribute("d", cd); chFonce.setAttribute("opacity", (0.06 + 0.40 * pB).toFixed(2));
       membrane.setAttribute("d", "M 58 150 Q 110 " + (150 + 2 * dm).toFixed(1) + " 162 150");
       ysT = 150 + dm - 26 * mig;                                                            // le liquide de la charge, arrivé dans la tête
       const nT = Math.round(2 + 7 * bn(pB / 0.9, 0, 1) * (1 - 0.6 * mig));
-      VT.forEach((m, i) => { const x = 66 + m.u * 88 + 2 * Math.sin(t * 1.9 + m.ph), y = 80 + m.v * 50 + 2 * Math.sin(t * 2.4 + m.ph); m.maj(x * 2, y * 2, 0.2 + 0.5 * T, true, i < nT ? 0.9 : 0); });
-      const hb = 6 + 46 * pB, hh = 6 + 46 * (bp + RESSORT);
+      VT.forEach((m, i) => { const x = 66 + m.u * 88 + 2 * Math.sin(t * 1.9 + m.ph), y = 80 + m.v * 50 + 2 * Math.sin(t * 2.4 + m.ph); m.maj(x * 2, y * 2, i < nT ? 0.9 : 0); });
+      const hb = 6 + 46 * pB, hh = 6 + 46 * bp;
       bas.forEach((p, k) => p.setAttribute("d", flecheH([84, 136][k], 82, hb)));
       haut.forEach((p, k) => p.setAttribute("d", flecheB([84, 136][k], 212, hh)));
       brume.setAttribute("opacity", (0.35 * (0.2 + ouv)).toFixed(2)); brume2.setAttribute("opacity", (0.35 * (0.2 + ouv)).toFixed(2));
@@ -302,16 +320,17 @@
     const xc = x0b + 34, gx = Math.round(W * 0.22), gy = 156, gr = 62, tx = Math.round(W * 0.92);
     const capD = y0 => "M " + xc + " " + y0 + " V 40 Q " + xc + " 24 " + (xc - 16) + " 24 H -10";
 
-    paroi(g, capD(yb0), 7);                                              // le capillaire, qui part vers la membrane
+    paroi(g, capD(yb0), 9);                                              // le capillaire, qui part vers la membrane
     paroi(g, "M " + xc + " " + gy + " H " + (gx + gr - 6), 9);             // le raccord du manomètre, pris sur le capillaire
     const tube = DS.bande(g, { x0: -30, x1: W + 30, yh: YHt, yb: YBt, graine: 5, nbMols: Math.max(10, Math.round(W / 40)), nbBulles: 10, vapSurNappe: 0.4 });
     const bulb = bulbe(g, x0b, yb0, wb, hb, 7);
     [x0b + 84, x0b + wb - 44].forEach(x => el("rect", { x: x - 7, y: yb0 - 6, width: 14, height: 96, rx: 4, fill: "#5d6b7a" }, g));   // les colliers
     const mano = DS.manometre(g, gx, gy, gr);
-    vide(g, capD(yb0 + 9), 3);                                           // le vide du capillaire traverse la paroi du bulbe
-    vide(g, "M " + xc + " " + gy + " H " + (gx + gr - 12), 4);           // le vide du raccord traverse le bord du manomètre
+    vide(g, capD(yb0 + 9), 5, V_BASE);                                   // le capillaire est plein de violet et son vide traverse la paroi du bulbe
+    const impulsions = el("path", { d: capD(yb0 + 9), fill: "none", stroke: "#f8f0fb", "stroke-width": 5, "stroke-linecap": "butt", "stroke-linejoin": "round", "stroke-dasharray": "7 36", opacity: 0 }, g);
+    vide(g, "M " + xc + " " + gy + " H " + (gx + gr - 12), 4, V_BASE);   // le raccord du manomètre, sur le même violet : son vide traverse le bord du manomètre
     const th = DS.thermometre(g, tx, 266, 170);
-    D.pastille(g, gx, gy - gr - 22, "pression", NAVY, 22, "middle");
+    D.pastille(g, gx, gy - gr - 22, "pression", VIOLET, 22, "middle");
     D.pastille(g, W - 8, 84, "température", NAVY, 22, "end");
     const voirZones = anneaux(el("g", {}, g), {
       bulbe: [x0b - 10, yb0 - 12, wb + 20, hb + 24],
@@ -319,9 +338,14 @@
       manometre: [gx - gr - 8, gy - gr - 8, 2 * gr + 16, 2 * gr + 16],
       thermometre: [tx - 26, 94, 64, 192]
     });
+    let tPrec = 0, pPrec = null, pulse = 0;
     function maj(e, t, info) {
       e = e || {};
+      const dt = bn(t - tPrec, 0, 0.1); tPrec = t;
       const T = e.T === undefined ? 0.12 : e.T, pB = pBulbe(T, 1);
+      if (dt > 1e-4 && pPrec !== null) pulse += (bn(((pB - pPrec) / dt - 0.02) / 0.03, 0, 1) - pulse) * Math.min(1, dt * 8);   // impulsions tant que la pression MONTE ; rien au plafond
+      pPrec = pB;
+      impulsions.setAttribute("stroke-dashoffset", (-t * 80).toFixed(1)); impulsions.setAttribute("opacity", pulse.toFixed(2));
       tube.maj({ xf: 0.001, flash: 0, froid: 1, sortie: 0.12 + 0.62 * T }, t);
       bulb.maj({ niv: niveauCharge(T, 1), T: T, boil: bn(0.25 + 0.75 * (T - 0.1) / 0.45, 0, 1) * (T < T_MOP ? 1 : 0), pres: pB }, t);
       mano.maj(pB); th.maj(bn(T, 0, 1));
@@ -332,7 +356,7 @@
 
   /* ---------- monter : un <svg> qui se redessine selon la largeur disponible (W = 560 à 1000, hauteur fixe) ---------- */
   function monter(hote, opt) {
-    const svg = DS.svg(hote, "ds-svg mp-svg", opt.aria);
+    const svg = DS.svg(hote, "ds-svg mp-svg " + (opt.vue === "bulbe" ? "mp-gros" : "mp-complete"), opt.aria);
     let W = 0, inst = null, e = {}, t = 0, info = null;
     const bati = () => {
       const r = svg.getBoundingClientRect();
@@ -347,7 +371,10 @@
   }
   G.monter = monter;
 
-  const ARIA_COUPE = "Coupe d’un détendeur thermostatique MOP devant son évaporateur : la tête à membrane, le bulbe ouvert en coupe avec sa petite charge de fluide, le capillaire qui les relie, et une jauge de basse pression avec un trait rouge qui marque le plafond.";
+  /* la légende des trois forces, en HTML sous le dessin (convention de la ligne) */
+  G.legendeHtml = '<p class="mp-legende"><span class="mp-leg"><i style="--c:' + VIOLET + '"></i>pression du bulbe : ouvre</span><span class="mp-leg"><i style="--c:' + BLEU + '"></i>pression d’évaporation : ferme</span><span class="mp-leg"><i style="--c:' + ACIER + '"></i>ressort : ferme</span></p>';
+
+  const ARIA_COUPE = "Coupe d’un détendeur thermostatique MOP devant son évaporateur : la tête à membrane, le bulbe ouvert en coupe avec sa petite charge de fluide violette, le capillaire violet qui les relie, des flèches violettes qui poussent la membrane et des flèches bleues et grises qui la repoussent, et une jauge de basse pression avec un trait rouge qui marque le plafond.";
   const ARIA_BULBE = "Gros plan du bulbe, ouvert en coupe, posé sur le tube de sortie de l’évaporateur : un peu de liquide au fond, de la vapeur au-dessus, un manomètre sur le capillaire et un thermomètre sur le tube.";
 
   /* ---------- le sommaire : le détendeur MOP, qui tourne seul ---------- */
@@ -361,13 +388,13 @@
   /* ---------- écran 1 : la carte d'identité, avec sa visite guidée (bulbe, membrane, plafond de BP) ---------- */
   const VISITE = [
     ["bulbe", "Le bulbe, ouvert en coupe : une petite charge, un peu de liquide au fond, de la vapeur au-dessus."],
-    ["membrane", "La pression du bulbe pousse la membrane, et la membrane ouvre le détendeur."],
+    ["tete", "La pression du bulbe (violet) monte par le capillaire et pousse la membrane : elle ouvre."],
     ["bp", "La basse pression ne dépasse pas le trait rouge : le détendeur la plafonne."]
   ];
   G.identite = function (hote, symbole) {
     const carte = document.createElement("div"); carte.className = "mp-carte";
     carte.innerHTML = '<div class="ds-cel-tete"><img src="' + symbole + '" alt="Symbole du détendeur thermostatique"><b>Détendeur thermostatique MOP</b></div>' +
-      '<div class="ds-dessin"></div><p class="ds-explic" aria-live="off"></p><p class="ds-regle">il règle : <strong>la surchauffe, et il plafonne la BP</strong></p>';
+      '<div class="ds-dessin"></div>' + G.legendeHtml + '<p class="ds-explic" aria-live="off"></p><p class="ds-regle">il règle : <strong>la surchauffe, et il plafonne la BP</strong></p>';
     hote.appendChild(carte);
     const dessin = carte.querySelector(".ds-dessin"), explic = carte.querySelector(".ds-explic");
     DS.fond(dessin);
@@ -409,7 +436,8 @@
       construire: function (dessin) {
         const onglets = document.createElement("div"); onglets.className = "ds-onglets";
         const rang = document.createElement("div"); rang.className = "mp-duo";
-        dessin.append(onglets, rang);
+        const leg = document.createElement("div"); leg.innerHTML = G.legendeHtml;
+        dessin.append(onglets, rang, leg.firstChild);
         const defs = [
           { cle: "sans", titre: "Sans MOP", mop: 0, bp: "bp1", verdict: ["non", "✗ le moteur force"], aria: "Coupe d’un détendeur thermostatique à charge ordinaire : le bulbe garde du liquide, la pression du bulbe continue de monter, la basse pression monte haut." },
           { cle: "avec", titre: "Avec MOP", mop: 1, bp: "bp2", verdict: ["oui", "✓ le moteur est protégé"], aria: "Coupe d’un détendeur thermostatique MOP : le bulbe se vide de son liquide, la pression du bulbe plafonne, la basse pression s’arrête au plafond." }

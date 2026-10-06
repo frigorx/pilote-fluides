@@ -43,4 +43,6 @@ Copié dans `assets/symboles/` depuis `detendeurs-famille/assets/symboles/` (bib
   coupe (charge limitée), la coupe complète (tête, aiguille, évaporateur, jauges, thermomètres) et le gros plan du
   bulbe. Fluide continu : un tube = une paroi + un intérieur d’un seul tenant ; le vide du capillaire traverse
   l’écrou, la tête et la paroi du bulbe ; les raccords des jauges traversent la paroi du tube et le bord de la jauge.
+- Convention de couleurs de la ligne (retour de F. Henninot, 06/10) : violet pour la charge du bulbe et sa pression, bleu pour la pression
+  d'évaporation, gris acier pour le ressort ; légende HTML sous les coupes.
 - Aucune photo, aucune image générative, aucune ressource distante.

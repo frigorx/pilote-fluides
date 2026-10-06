@@ -19,6 +19,18 @@ Rien n’est commité ni en ligne : feu vert de F. Henninot d’abord.
 - Référentiel : `couverture.json` — enseigné `9.01` (tous les écrans), `9.02` (écran 4, monter la tête dans la bonne
   position) ; appui `1.02`, `1.04`, `9.10`. `9.03` n’est pas enseigné (aucun écran n’apprend à régler).
 
+## Convention de la ligne (retour de Franck, 06/10 : « on ne voit pas d'où vient la pression du haut »)
+
+- Charge du bulbe et sa pression = violet `#8e44ad` : nappe et vapeur du bulbe, capillaire (vrai tube, paroi + intérieur continu, plein de
+  violet du bulbe jusqu'à la chambre AU-DESSUS de la membrane, violette elle aussi et qui se fonce quand la pression monte),
+  flèches violettes qui poussent la membrane (elles ouvrent), manomètre « pression du bulbe » branché sur le même violet.
+- Quand le bulbe chauffe : impulsions plus claires qui filent dans le capillaire vers la tête ; au plafond MOP elles s'arrêtent
+  et les flèches violettes cessent de grandir (la pression est lue en continu : impulsions tant qu'elle monte).
+- Sous la membrane : flèches bleues = pression d'évaporation (ferme) ; flèche gris acier près du ressort = ressort (ferme).
+- Légende HTML sous les coupes (écrans 1, 3, 4) : violet « pression du bulbe : ouvre », bleu « pression d'évaporation : ferme »,
+  gris « ressort : ferme ». Sur téléphone, les pastilles des coupes complètes sont masquées (convention des coupes de la ligne).
+- La lueur orangée de la paroi du bulbe qui chauffe est gardée : elle montre la TEMPÉRATURE du bulbe, pas la charge.
+
 ## Contrôle
 
 Serveur local : `http://localhost:8794/packs/fluides/res/detendeur-mop/index.html` (lancé par le chat superviseur).

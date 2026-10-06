@@ -190,14 +190,14 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
 /* la coupe occupe tout son cadre (sa forme ne dépend donc pas de son dessin : elle choisit sa largeur d'après le cadre) */
 .ds-svg.mp-svg{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px)}
 .home-visual svg.mp-svg{position:absolute;inset:0;width:100%;height:100%}
-.ds-dessin:has(.mp-duo){grid-template-rows:minmax(0,1fr);place-items:stretch}
-.mp-carte{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;gap:4px;height:100%;min-height:0}
+.ds-dessin:has(.mp-duo){grid-template-rows:minmax(0,1fr) auto;place-items:stretch}
+.mp-carte{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto auto;gap:4px;height:100%;min-height:0}
 .mp-carte .ds-dessin{min-height:0}
 .mp-carte .ds-explic{min-height:2.56em}
 .mp-duo{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;min-height:0}
 .mp-cel{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:2px;min-height:0;min-width:0}
 .mp-coupe{position:relative;min-height:0;grid-row:2}.mp-cel>.ds-cel-tete{grid-row:1}.mp-cel>.ds-verdict{grid-row:3}
-.mp-exo{display:grid;grid-template-rows:minmax(110px,1fr) auto auto;gap:6px;min-height:0;height:100%}
+.mp-exo{display:grid;grid-template-rows:minmax(110px,1fr) auto auto auto;gap:6px;min-height:0;height:100%}
 .mp-exo .ds-dessin{min-height:0}
 .mp-choix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .mp-place{display:flex;align-items:center;gap:8px;border:2px solid var(--line);border-radius:12px;background:var(--paper);padding:5px 10px;font-weight:800;font-size:var(--corps);line-height:1.15;color:var(--navy);cursor:pointer;text-align:left}
@@ -207,7 +207,7 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
 @media (max-width:900px){.mp-choix{grid-template-columns:minmax(0,1fr);gap:4px}}
 @media (max-width:760px){
   .ds-figure:has(.mp-duo){grid-template-rows:minmax(0,1fr) auto}
-  .ds-dessin:has(.mp-duo){grid-template-rows:auto minmax(0,1fr)}
+  .ds-dessin:has(.mp-duo){grid-template-rows:auto minmax(0,1fr) auto}
   .mp-duo{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr)}.mp-cel:not(.actif){display:none}.mp-cel .ds-cel-tete{display:none}
   .mp-carte .ds-cel-tete b{font-size:var(--corps)}
 }
@@ -215,12 +215,19 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
   .mp-carte .ds-regle{padding-right:56px}
   .quiz .feedback{padding-right:60px}
   .mp-place{padding:4px 6px;gap:6px}.mp-place b{flex-basis:28px;height:28px}
-  .mp-exo{grid-template-rows:minmax(96px,1fr) auto auto;gap:4px}
+  .mp-exo{grid-template-rows:minmax(96px,1fr) auto auto auto;gap:4px}
 }
 /* tablette : deux coupes côte à côte seraient trop petites (jauges, pastilles) : on passe aux deux onglets dès 900 px */
 @media (min-width:761px) and (max-width:900px){
   .ds-figure:has(.mp-duo){grid-template-rows:minmax(0,1fr) auto}
-  .ds-dessin:has(.mp-duo){grid-template-rows:auto minmax(0,1fr)}
+  .ds-dessin:has(.mp-duo){grid-template-rows:auto minmax(0,1fr) auto}
   .ds-onglets{display:flex;gap:6px}.ds-onglets button{flex:1;border:2px solid var(--line);border-radius:12px;background:var(--paper);color:var(--navy);font-weight:800;font-size:var(--corps);padding:5px 6px;cursor:pointer}.ds-onglets button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
   .mp-duo{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr)}.mp-cel:not(.actif){display:none}.mp-cel .ds-cel-tete{display:none}
 }
+
+/* la légende des trois forces sous la coupe : violet ouvre, bleu et gris ferment (convention de la ligne) */
+.mp-legende{margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:0 18px;font-size:var(--corps);line-height:1.3;color:var(--ink)}
+.mp-leg{white-space:nowrap}.mp-leg i{display:inline-block;width:16px;height:16px;border-radius:4px;background:var(--c);margin-right:6px;vertical-align:-2px}
+.ds-dessin:has(.mp-duo) .mp-legende{align-self:end}
+@media (max-width:650px){.mp-legende{gap:0 12px;line-height:1.2}.mp-carte{gap:2px}}
+@media (max-width:650px){.mp-complete .ds-pastille{display:none}.mp-cel .ds-verdict{min-height:0}}
