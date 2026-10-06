@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "genereLe": "2026-10-04T16:16:45.351Z",
-  "total": 5824,
+  "genereLe": "2026-10-06T19:43:55.862Z",
+  "total": 6033,
   "narrations": [
     {
       "cle": "00060401-70",
@@ -509,6 +509,14 @@
       ]
     },
     {
+      "cle": "02329008-95",
+      "texte": "Il tient la BP, pas le liquide : charge en hausse, il ferme et l'évaporateur manque de liquide.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "02499bce-703",
       "texte": "Ce qu'on rencontre. Le piston semi-hermétique domine le transcritique. Toutes les technologies de compresseur ne tiennent pas les pressions du dioxyde de carbone, et toutes ne couvrent pas les mêmes puissances. Piston semi-hermétique : la technologie dominante en transcritique, pour sa tenue en pression et sa gamme de puissance. Scroll : plutôt les petites puissances et les applications subcritiques. Vis : les fortes puissances, surtout en cascade et en subcritique. À vérifier avant de l'affirmer : La disponibilité réelle dépend de la gamme du constructeur. Le catalogue fait foi, pas une règle générale. Ce que montre le schéma. Les technologies de compresseur employées au R 744 et leur domaine.",
       "type": "capture",
@@ -614,6 +622,14 @@
       ]
     },
     {
+      "cle": "02daa90c-25",
+      "texte": "La pression du condenseur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "03024351-32",
       "texte": "Choisir la valeur la plus chaude",
       "type": "choix",
@@ -627,6 +643,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/equilibrage/content.js"
+      ]
+    },
+    {
+      "cle": "0311854c-54",
+      "texte": "Elle ne monte presque plus : tout le liquide est parti",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -659,6 +683,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/bitube/content.js"
+      ]
+    },
+    {
+      "cle": "03421fc7-146",
+      "texte": "Il ferme alors que l'évaporateur a besoin de plus de liquide : c'est son défaut. On le réserve aux charges constantes, comme les machines à glace.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -771,6 +803,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/certif-garanties/index.html"
+      ]
+    },
+    {
+      "cle": "038f50f8-51",
+      "texte": "Température de saturation moins température mesurée",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -1564,6 +1604,14 @@
       ]
     },
     {
+      "cle": "0842b3af-28",
+      "texte": "MOP : que veut dire ce mot ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "0847972b-456",
       "texte": "Attention, le nom KP un désigne une famille, pas un appareil précis. Un modèle à réarmement automatique et réglable ne se règle pas comme un modèle à réarmement manuel à différentiel fixe. C'est la référence exacte qui fixe l'échelle de réglage, l'étendue du différentiel et le mode de réarmement. Avant tout réglage, lisez donc la référence complète sur l'appareil, pas seulement la famille — c'est le même principe que pour les régulateurs électroniques.",
       "type": "narration",
@@ -1588,6 +1636,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/diagnostic-circuit-huile/module.js"
+      ]
+    },
+    {
+      "cle": "084e21ae-90",
+      "texte": "Il règle la surchauffe, comme le thermostatique, mais elle est calculée par un régulateur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -1830,6 +1886,14 @@
       ]
     },
     {
+      "cle": "091f472e-694",
+      "texte": "Le détendeur a deux missions. Première mission : faire chuter la pression. C'est ce qui permet au liquide de bouillir à basse température, donc de devenir froid. Deuxième mission : doser le liquide qui entre dans l'évaporateur. Si le passage est trop petit, le liquide finit de s'évaporer trop tôt. Le bout du tube ne sert à rien, et la vapeur sort très chaude : c'est une forte surchauffe. Si le passage est trop grand, le liquide n'a pas le temps de bouillir, et il repart vers le compresseur : c'est dangereux. Le bon dosage, c'est quand tout le liquide s'évapore juste avant la sortie. Reste une question : qui décide du bon passage ? C'est justement ce qui distingue les quatre détendeurs.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "092f5237-38",
       "texte": "Quelle est la mission du clapet taré ?",
       "type": "feedback",
@@ -1862,6 +1926,14 @@
       ]
     },
     {
+      "cle": "09457881-25",
+      "texte": "Il se bloque grand ouvert",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "09683e25-26",
       "texte": "Une sonde de contact seule",
       "type": "choix",
@@ -1883,6 +1955,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/pressostat-differentiel-huile-pedagogique/module.js"
+      ]
+    },
+    {
+      "cle": "097990e1-646",
+      "texte": "Voici le piège. Ce détendeur tient la basse pression. C'est son travail, et c'est son défaut. La charge monte : plus de chaleur, la basse pression monte un peu. La pression gagne sur le ressort, le détendeur ferme, et la basse pression revient à la consigne. Elle y reste. Mais la nappe est courte. Il manque du liquide, juste quand l'évaporateur en demande plus. La charge baisse. La basse pression descend un peu. Le ressort gagne, le détendeur ouvre, et la basse pression revient à la consigne. Mais il y a moins de chaleur : la nappe file jusqu'à la sortie. Danger : retour de liquide. On le réserve aux machines dont la charge ne change pas.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -1996,6 +2076,14 @@
       "type": "capture",
       "sources": [
         "packs/fluides/res/co2-r744/booster/bypass"
+      ]
+    },
+    {
+      "cle": "0a485610-49",
+      "texte": "Parce que le capillaire règle la charge tout seul",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -2248,6 +2336,14 @@
       ]
     },
     {
+      "cle": "0b9ae033-88",
+      "texte": "Sans courant, la vanne à impulsions se ferme toute seule : elle fait aussi électrovanne.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "0b9f37e1-105",
       "texte": "Vissé ou brasé : regarde l'embout. Le filtre travaille de la même façon. Seule sa liaison au tube change.",
       "type": "composition",
@@ -2357,11 +2453,27 @@
       ]
     },
     {
+      "cle": "0c19b143-14",
+      "texte": "ferme la vanne",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/scene-electronique.js"
+      ]
+    },
+    {
       "cle": "0c1fc02b-5133",
       "texte": "Explosif avant d'être perceptible — la LIE. 🎧 Écouter la capsule : Explosif avant d'être perceptible — la LIE ▸ Le chapitre expliqué à voix haute, écran par écran, avec ses animations — 7 écrans, 7 minutes. Version imprimable et mode projection compris. Ce qui arrive. Un gaz inflammable ne s'enflamme pas à n'importe quelle concentration dans l'air. Il lui faut un dosage : assez de gaz pour brûler, et assez d'air pour entretenir la combustion. En dessous d'une certaine concentration, le mélange est trop pauvre en gaz : une étincelle ne déclenche rien. Au-dessus d'une autre, il est trop riche : il n'y a plus assez d'oxygène. Entre les deux , le mélange s'enflamme, et il le fait d'un coup, dans tout le volume. Ces deux bornes portent un nom. La LIE , limite inférieure d'explosivité, est la concentration en dessous de laquelle le mélange ne s'enflamme pas. La LSE , limite supérieure d'explosivité, est celle au-dessus de laquelle il ne s'enflamme plus non plus. L'intervalle entre les deux s'appelle le domaine d'explosivité . Chaque gaz a le sien : les valeurs sont propres au fluide et figurent sur sa fiche de données de sécurité . Elles ne se retiennent pas de tête et ne se déduisent d'aucune règle générale. Ce danger a une particularité : aucun signal ne l'annonce. Une atmosphère peut atteindre son domaine d'explosivité sans odeur, sans bruit, sans rien de visible. Le gaz domestique que l'on sent dans une cuisine contient un odorisant ajouté volontairement pour être détecté par le nez. Le R-290 utilisé en froid est un propane de haute pureté : cet odorisant n'y est pas . Le nez ne vous avertira pas. Et le seuil de perception d'une odeur, quand elle existe, n'a aucun rapport avec la LIE : sentir quelque chose ne dit pas si l'on est loin ou près du danger. L'appareil qui répond à cette question s'appelle un explosimètre . Il ne mesure pas une quantité de gaz dans l'absolu : il affiche un pourcentage de la LIE du gaz recherché. Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. Cette mesure de marge restante rend l'appareil utilisable en pratique : l'alarme se déclenche bien avant que le mélange ne devienne explosif. Le seuil de réglage se fixe selon la procédure de l'entreprise et la documentation de l'appareil. Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont trois appareils différents, qui répondent à trois questions différentes. Comment ça arrive vraiment. Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Il n'y a rien à voir ni à sentir. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer. ATEX : le mot vient de « AT mosphère EX plosive ». Lorsqu'un local peut contenir une atmosphère explosive, il fait l'objet d'un zonage : on délimite les zones où ce risque existe, et on n'y admet que du matériel conçu pour ne pas enflammer l'atmosphère — ni par une étincelle , ni par une surface trop chaude , car une surface chaude suffit à allumer un mélange sans la moindre flamme. Cela vaut aussi pour ce que le technicien apporte avec lui : outil électroportatif, lampe, téléphone. Le zonage et le choix du matériel relèvent d'une étude propre à l'installation ; le technicien, lui, doit savoir reconnaître qu'il entre dans une telle zone et respecter ce qui y est affiché. Pour un fluide inflammable, A2L compris, l'outillage est adapté : aucune source d'inflammation, poste ventilé, pompe à vide et station de récupération prévues pour ces fluides. Ce qu'il faut retenir. Un gaz inflammable ne brûle qu'entre deux bornes : LIE (limite inférieure) et LSE (limite supérieure). Entre les deux, une étincelle suffit. Les valeurs sont propres à chaque fluide et se lisent sur sa FDS. Un explosimètre affiche un pourcentage de la LIE : une marge restante, pas une quantité. Il se règle pour un gaz donné , et ne remplace ni un détecteur de fuite, ni un détecteur d'oxygène. Le R-290 du froid n'est pas odorisé : le nez n'avertit de rien. ATEX : dans une zone à atmosphère explosive, seul le matériel prévu pour ces zones peut entrer — y compris celui qu'on apporte. Il est contraint sur l'étincelle et sur sa température de surface. Le geste interdit. Entrer dans un local où une fuite de fluide inflammable est possible et y actionner un interrupteur, brancher une lampe ou utiliser un outil électroportatif , sans avoir contrôlé l'atmosphère à l'explosimètre. Se fier à son odorat en est la variante la plus courante : le R-290 utilisé en froid ne contient pas l'odorisant du gaz domestique, et aucune odeur ne renseigne sur la distance à la LIE. Conséquence : inflammation de tout le volume, sans aucun signe avant-coureur.",
       "type": "fiche",
       "sources": [
         "packs/fluides/cartes.js#cl2"
+      ]
+    },
+    {
+      "cle": "0c2af698-80",
+      "texte": "Un distributeur de liquide est monté sur l'évaporateur. Quel détendeur faut-il ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -2413,6 +2525,14 @@
       ]
     },
     {
+      "cle": "0c6c44fb-14",
+      "texte": "ouvre la vanne",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/scene-electronique.js"
+      ]
+    },
+    {
       "cle": "0c7831f4-17",
       "texte": "100 cm³ par cycle",
       "type": "interface",
@@ -2434,6 +2554,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "0c8a42ac-123",
+      "texte": "Le petit trait en plus, au-dessus du cercle, montre la prise d'égalisation : un tube la relie à la sortie de l'évaporateur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -2588,6 +2716,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/pose-manifold-2-voies-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "0d861edb-480",
+      "texte": "À vous de jouer. La notice demande une basse pression : c'est le repère vert sur le manomètre. Lisez d'abord le manomètre. Puis tournez la vis d'un quart de tour. Visser comprime le ressort : la basse pression monte. Dévisser la fait baisser. Attention : l'aiguille met du temps à bouger. Après chaque quart de tour, attendez qu'elle se stabilise, et lisez de nouveau. Si vous tournez trop vite, vous dépassez le repère. Mesurer, tourner un peu, attendre : c'est la bonne méthode.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -3092,6 +3228,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/co2-r744/cours.js"
+      ]
+    },
+    {
+      "cle": "1057be25-49",
+      "texte": "Que sent le bulbe d'un détendeur thermostatique ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -3779,6 +3923,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/chaleur-circuit-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "14082047-41",
+      "texte": "La température de sortie de l'évaporateur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -5157,11 +5309,27 @@
       ]
     },
     {
+      "cle": "1a7bc62e-28",
+      "texte": "La température de la chambre",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "1a7cac34-41",
       "texte": "Faits, conditions, comparaison et limites",
       "type": "choix",
       "sources": [
         "hydrometro/stations/releves/content.js"
+      ]
+    },
+    {
+      "cle": "1aa1cab4-29",
+      "texte": "Il ouvre : il suit la chaleur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -5383,6 +5551,14 @@
       ]
     },
     {
+      "cle": "1b898a0d-26",
+      "texte": "Rien : il règle aussi bien",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "1b8e0475-55",
       "texte": "Relisez les points fragiles ou recommencez le contrôle.",
       "type": "feedback",
@@ -5488,6 +5664,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/programme.js"
+      ]
+    },
+    {
+      "cle": "1c32f3be-28",
+      "texte": "Il reste fermé : la BP monte",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -5889,6 +6073,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/cours-classes-securite/index.html"
+      ]
+    },
+    {
+      "cle": "1e4f9b31-18",
+      "texte": "On change le bulbe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -7214,6 +7406,14 @@
       ]
     },
     {
+      "cle": "241d55cb-84",
+      "texte": "On ne l'invente pas : on la lit sur l'élément, et on suit la notice du constructeur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "24265eeb-20",
       "texte": "AB fermé sans mesure",
       "type": "choix",
@@ -7612,6 +7812,14 @@
       ]
     },
     {
+      "cle": "25eb61cb-29",
+      "texte": "Sur la sortie, après le bulbe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "260c8357-156",
       "texte": "À reprendre. Il reprend la vapeur à environ 38 bar au lieu de la laisser se détendre jusqu'à 28 bar : on supprime le travail de recompression correspondant.",
       "type": "capture",
@@ -7769,6 +7977,14 @@
       "type": "composition",
       "sources": [
         "packs/fluides/res/glissement-temperature/app.js"
+      ]
+    },
+    {
+      "cle": "26b159df-566",
+      "texte": "Et si on arrête le compresseur ? Pendant la marche, la haute pression est d'un côté du tube, la basse pression de l'autre. Le compresseur s'arrête. Le tube capillaire reste ouvert : il n'a aucune pièce qui bouge, donc rien ne se ferme. Le fluide passe à travers le tube. La haute pression baisse, la basse pression monte, et les deux manomètres se rejoignent. Il faut un peu de temps. Au redémarrage, le moteur ne pousse pas contre la haute pression : il démarre sans effort. C'est pour ça que les petits moteurs des réfrigérateurs ont un faible couple de démarrage.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -8329,6 +8545,14 @@
       ]
     },
     {
+      "cle": "2a29880d-55",
+      "texte": "À la sortie de l'évaporateur, que mesurent les sondes ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "2a3034e2-303",
       "texte": "Une étiquette défavorable, à gauche, est reliée par une flèche à une pompe à chaleur stylisée représentant des travaux, puis à une étiquette plus favorable, à droite, plus haute sur l'échelle. Aucune lettre précise n'est inscrite : seule la position sur l'échelle, du bas vers le haut, porte le message.",
       "type": "data-narration",
@@ -8374,6 +8598,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/_regules-commun/catalog.js"
+      ]
+    },
+    {
+      "cle": "2a92342c-18",
+      "texte": "Le tube capillaire",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -8537,11 +8769,27 @@
       ]
     },
     {
+      "cle": "2b9d1f23-108",
+      "texte": "Le détendeur chute la pression pour que le liquide bouille froid, et dose le liquide envoyé à l'évaporateur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "2b9da891-29",
       "texte": "Ordonnez le réglage contrôlé.",
       "type": "feedback",
       "sources": [
         "hydrometro/stations/circulateur/content.js"
+      ]
+    },
+    {
+      "cle": "2ba1c39a-82",
+      "texte": "Sortie plus chaude, bulbe plus chaud : le détendeur ouvre. Il règle la surchauffe.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -9103,6 +9351,14 @@
       ]
     },
     {
+      "cle": "2e43f79d-21",
+      "texte": "La vanne à impulsions",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "2e4a0f62-36",
       "texte": "Mesurer une différence de pression ?",
       "type": "feedback",
@@ -9300,6 +9556,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/compresseur-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "2f7b38c6-41",
+      "texte": "La surchauffe, calculée par un régulateur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -9950,6 +10214,14 @@
       "type": "narration",
       "sources": [
         "hydrometro/app.js"
+      ]
+    },
+    {
+      "cle": "3352aad6-28",
+      "texte": "Mise en pression obligatoire",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -10704,6 +10976,14 @@
       ]
     },
     {
+      "cle": "376b0916-78",
+      "texte": "Une surchauffe trop haute veut dire un évaporateur trop peu rempli : on ouvre.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "3776e59f-54",
       "texte": "Arrêter la pompe → ouvrir les deux vannes → débrancher",
       "type": "choix",
@@ -10781,6 +11061,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/lignes/M/parcours.js"
+      ]
+    },
+    {
+      "cle": "37f52758-17",
+      "texte": "Elle tombe à zéro",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -11571,6 +11859,14 @@
       ]
     },
     {
+      "cle": "3c0e42cf-44",
+      "texte": "On veut changer la surchauffe. Que fait-on ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "3c1f98ba-135",
       "texte": "Troisième question. Jusqu'où va la responsabilité d'un producteur de déchet ? Souvenez-vous de la chaîne sans rupture de l'écran trois.",
       "type": "data-narration",
@@ -11584,6 +11880,30 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/tome-3-technologie-organes/app.js"
+      ]
+    },
+    {
+      "cle": "3c3aa062-14",
+      "texte": "L'électronique",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
+      "cle": "3c45f9e3-26",
+      "texte": "Sur la conduite de liquide",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
+      "cle": "3c475a07-528",
+      "texte": "À vous de jouer. Le régulateur applique la consigne de surchauffe que vous lui donnez. Appuyez sur plus ou sur moins. Attention : le système met quelques secondes à se stabiliser, il faut le laisser faire. Regardez la nappe de liquide dans l'évaporateur. Consigne trop basse : le liquide va jusqu'à la sortie, et du liquide peut repartir vers le compresseur. Consigne trop haute : la nappe est courte, l'évaporateur est mal rempli. Cherchez la bonne consigne. Les chiffres sont des exemples : la vraie valeur est dans la notice.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -11741,6 +12061,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/lignes/D/parcours.js"
+      ]
+    },
+    {
+      "cle": "3ccc4485-563",
+      "texte": "Voici le détendeur automatique. On l'appelle aussi pressostatique, ou à pression constante. Regardez la membrane, au milieu. Au-dessus, un ressort pousse vers le bas : il veut ouvrir. La vis règle sa force. En dessous, la pression de l'évaporateur pousse vers le haut : elle veut fermer. L'aiguille suit la membrane. Elle ouvre ou ferme le passage du liquide. Ce détendeur règle la pression d'évaporation, c'est-à-dire la basse pression. Il ne règle pas la surchauffe. On le trouve surtout sur les machines à glace en écailles, où la charge ne change presque pas.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -12308,6 +12636,14 @@
       "type": "capture",
       "sources": [
         "packs/fluides/res/co2-r744/booster/b-q2-juste"
+      ]
+    },
+    {
+      "cle": "401cd3f8-142",
+      "texte": "On prend la pression à la sortie de l'évaporateur, après le bulbe, dans le sens du fluide. La notice du constructeur donne la position exacte.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -13002,6 +13338,14 @@
       ]
     },
     {
+      "cle": "433a41f3-15",
+      "texte": "Il ne bouge pas",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "433aaadd-592",
       "texte": "Deux ondes en haut. À gauche, les vibrations sont espacées : elles sont lentes, la fréquence est faible, le son est grave. À droite, elles sont serrées : elles sont rapides, la fréquence est élevée, le son est aigu. La fréquence se compte en hertz, c'est-à-dire en vibrations par seconde. En bas, la règle des fréquences. De vingt à vingt mille hertz, c'est la zone que l'oreille humaine entend ; en dessous, ce sont les infrasons, au-dessus, les ultrasons. Le crochet orange marque la parole, de cent à six mille hertz. Retenez ceci : le hertz dit la hauteur du son, le décibel dit sa force.",
       "type": "data-narration",
@@ -13643,6 +13987,14 @@
       ]
     },
     {
+      "cle": "462b975f-56",
+      "texte": "Il ne peut plus ouvrir davantage : la BP reste plafonnée",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "46323733-42",
       "texte": "Quelle décision est justifiée par le cas ?",
       "type": "feedback",
@@ -13740,6 +14092,14 @@
       ]
     },
     {
+      "cle": "46ee557c-81",
+      "texte": "Parce que le capillaire ne corrige rien : trop ou pas assez se voit tout de suite",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "46f3d00c-25",
       "texte": "Le bypass supprime l'aval",
       "type": "choix",
@@ -13761,6 +14121,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/co2-r744/cours.js"
+      ]
+    },
+    {
+      "cle": "4720aa08-65",
+      "texte": "La basse pression rejoint le plafond. Que fait le détendeur MOP ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -13809,6 +14177,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/desp-la-directive/index.html"
+      ]
+    },
+    {
+      "cle": "478a7c2e-127",
+      "texte": "Un distributeur de liquide crée une forte perte de charge : on monte un détendeur à égalisation externe, et on branche le tube.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -13893,11 +14269,27 @@
       ]
     },
     {
+      "cle": "47c16da4-38",
+      "texte": "Tourner la vis de deux tours d'un coup",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "47c93a55-571",
       "texte": "Le salarié est en haut, et trois flèches descendent vers trois cartes. Le comité social et économique, avec ses représentants du personnel, porte l'expression collective des salariés et peut alerter l'employeur d'un danger grave et imminent. L'inspection du travail veille à l'application du droit du travail, constate les infractions, et entre dans tout établissement concerné. Le service de prévention et de santé au travail cherche à éviter toute altération de la santé du fait du travail, avec un suivi individuel dès l'embauche. Trois recours, trois rôles distincts.",
       "type": "data-narration",
       "sources": [
         "legislation/stations/travail-droits-devoirs/index.html"
+      ]
+    },
+    {
+      "cle": "47cb6abd-62",
+      "texte": "Elle est marquée sur l'élément thermostatique (voir la notice)",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -13930,6 +14322,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/dechets-valoriser/index.html"
+      ]
+    },
+    {
+      "cle": "48017da6-310",
+      "texte": "À vous de jouer. Quatre machines, quatre détendeurs. Touchez un détendeur, puis la machine qui lui convient. Ou bien faites glisser le détendeur sur la machine. Pensez à la charge : est-elle petite et stable, constante, variable, ou sur une grande plage ? Si vous vous trompez, l'explication vous dit pourquoi.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -14097,6 +14497,12 @@
         "packs/fluides/res/chaine-intervention-interactive/app.js",
         "packs/fluides/res/compresseur-interactif/app.js",
         "packs/fluides/res/condenseur-interactif/app.js",
+        "packs/fluides/res/detendeur-automatique/app.js",
+        "packs/fluides/res/detendeur-egalisation-externe/app.js",
+        "packs/fluides/res/detendeur-electronique/app.js",
+        "packs/fluides/res/detendeur-mop/app.js",
+        "packs/fluides/res/detendeurs-famille/app.js",
+        "packs/fluides/res/detente-capillaire/app.js",
         "packs/fluides/res/etancheite-interactive/app.js",
         "packs/fluides/res/evaporateur-interactif/app.js",
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js",
@@ -14110,6 +14516,14 @@
       "type": "narration",
       "sources": [
         "hydrometro/stations/bitube/content.js"
+      ]
+    },
+    {
+      "cle": "48fd1620-35",
+      "texte": "Le détendeur se ferme tout de suite",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -14242,6 +14656,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/app.js"
+      ]
+    },
+    {
+      "cle": "49c67f06-566",
+      "texte": "Gardons le même évaporateur, avec la même perte de charge. Le détendeur à égalisation interne lit la pression de l'entrée, trop haute. Il ferme, et l'évaporateur manque de liquide. Pour le détendeur à égalisation externe, on branche le tube. Le tube prend la pression à la sortie, après le bulbe, et l'amène sous la membrane. Le détendeur lit la vraie pression de la sortie. Il ouvre juste ce qu'il faut, et la nappe va presque jusqu'à la sortie. Attention : le tube compense la perte de charge, il ne la supprime pas. La pression baisse toujours dans l'évaporateur.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -14394,6 +14816,14 @@
       "type": "choix",
       "sources": [
         "hydrometro/stations/releves/content.js"
+      ]
+    },
+    {
+      "cle": "4a7c5b61-23",
+      "texte": "Rien : le tube se ferme",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -14653,6 +15083,14 @@
       ]
     },
     {
+      "cle": "4c5f416e-92",
+      "texte": "Le capillaire se reconnaît à son trait enroulé : c'est un simple tube, sans pièce qui bouge.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "4c6b97e3-17",
       "texte": "Séparation souple",
       "type": "choix",
@@ -14773,6 +15211,14 @@
       ]
     },
     {
+      "cle": "4cd5b4b7-545",
+      "texte": "Voici le tube capillaire. C'est un simple tube de cuivre, très fin et très long. En vrai, on l'enroule pour qu'il tienne dans la machine. Il n'a aucune pièce qui bouge, et aucun réglage. Suivez la visite. D'abord, le filtre déshydrateur : il retient l'humidité et la saleté. Ensuite, le tube capillaire lui-même, bien plus fin que le tube de l'évaporateur. Enfin, l'évaporateur, où le fluide va bouillir. Ce qu'il règle ? Rien. Sa longueur et son diamètre font tout. On le trouve sur les réfrigérateurs ménagers et sur les petits meubles froids.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "4cd63d1a-499",
       "texte": "Évaporateurs à air et à eau. Fonctionnement interne. L'évaporateur vu de face : l'air du local traverse la batterie, le bac reçoit les condensats — et le givre se surveille. Évaporation puis surchauffe Le mélange BP absorbe de la chaleur. Le liquide s'évapore à température presque stable. Après la dernière goutte, la vapeur absorbe de la chaleur sensible. L'air ou l'eau ressort à une température plus basse. Cette planche vient du cours : c'est la même image que le stagiaire retrouvera en fiche.",
       "type": "capture",
@@ -14803,6 +15249,14 @@
       "sources": [
         "hydrometro/stations/_commun/3d/electro3d.js",
         "aerorezo/stations/_commun/3d/electro3d.js"
+      ]
+    },
+    {
+      "cle": "4d321502-338",
+      "texte": "Pour finir, six questions sur le tube capillaire. Il n'y a qu'une bonne réponse à chaque fois. Choisissez, puis lisez l'explication : elle compte autant que la réponse. Si vous hésitez, revenez sur les écrans : la détente le long du tube, le tube collé à l'aspiration, l'arrêt du compresseur, le bouchon, et la charge. Prenez votre temps.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -15596,6 +16050,14 @@
       ]
     },
     {
+      "cle": "516978c2-35",
+      "texte": "Celle de la sortie de l'évaporateur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "51857750-165",
       "texte": "Bonne réponse. Le groupe de maintien s'est arrêté avec le courant : la soupape a pu lâcher du fluide dans le local. On sécurise l'atmosphère avant toute autre chose.",
       "type": "capture",
@@ -15992,6 +16454,14 @@
       ]
     },
     {
+      "cle": "53ac9509-19",
+      "texte": "Celle du condenseur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "53b26409-64",
       "texte": "Que montrent les points mobiles pendant le pump-down de dépose ?",
       "type": "feedback",
@@ -16037,6 +16507,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/module-compresseur/index.html"
+      ]
+    },
+    {
+      "cle": "53e03874-48",
+      "texte": "Il ouvre trop : du liquide repart au compresseur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -16221,6 +16699,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/separateur-huile-pedagogique/module.js"
+      ]
+    },
+    {
+      "cle": "54d7c065-52",
+      "texte": "Sur quelle machine met-on un détendeur automatique ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -16688,6 +17174,15 @@
       ]
     },
     {
+      "cle": "57429cce-25",
+      "texte": "La pression d'évaporation",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js",
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "5742d2b7-51",
       "texte": "Ouvrir les vannes → raccorder vite → chercher BP/HP",
       "type": "choix",
@@ -17132,6 +17627,14 @@
       ]
     },
     {
+      "cle": "59af1c80-29",
+      "texte": "Il ferme : la BP monte un peu",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "59b4b005-55",
       "texte": "Où branches-tu temporairement le flexible du manifold ?",
       "type": "feedback",
@@ -17331,6 +17834,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/pose-manifold-2-voies-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "5a9b060a-524",
+      "texte": "Le détendeur est le petit passage qui sépare la haute pression de la basse pression. Regardez. Le liquide arrive tiède, sous haute pression, et le tube est plein. Il rencontre un passage très étroit. En traversant, la pression chute d'un coup. Alors une partie du liquide se met à bouillir : les bulles naissent au fond. Pour bouillir, cette partie prend de la chaleur au reste du liquide. À la sortie, tout le mélange est froid : un peu de liquide, un peu de vapeur. C'est ce mélange froid qui va entrer dans l'évaporateur.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -17670,6 +18181,14 @@
       ]
     },
     {
+      "cle": "5ca732db-120",
+      "texte": "Le tube compense la perte de charge, il ne la supprime pas : il permet seulement au détendeur de lire la bonne pression.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "5cae462d-66",
       "texte": "À 40 % de charge, la vitesse calculée tombe à 3,8 m/s. Que faire ?",
       "type": "feedback",
@@ -17814,11 +18333,27 @@
       ]
     },
     {
+      "cle": "5d685fbd-29",
+      "texte": "Sur l'entrée de l'évaporateur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "5d723a78-45",
       "texte": "Le point se déplace vers un débit plus faible",
       "type": "choix",
       "sources": [
         "hydrometro/lignes/P/parcours.js"
+      ]
+    },
+    {
+      "cle": "5d7ac41a-505",
+      "texte": "Le détendeur thermostatique a deux variantes que vous allez étudier dans les prochaines gares. La première est l'égalisation externe. Dans un évaporateur, la pression baisse entre l'entrée et la sortie. Un petit tube amène sous la membrane la pression de la sortie, là où elle est la plus basse. La seconde est le MOP. La charge du bulbe est limitée : au-delà d'une certaine température, la pression du bulbe ne monte plus. Le détendeur ne peut plus ouvrir davantage, et la basse pression reste plafonnée.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -17835,6 +18370,14 @@
       "type": "narration",
       "sources": [
         "hydrometro/stations/diagnostic/content.js"
+      ]
+    },
+    {
+      "cle": "5dad23cb-694",
+      "texte": "Voici le détendeur thermostatique à égalisation externe. Il ressemble au thermostatique que vous connaissez, mais il a un petit tube en plus. Ce tube part de la sortie de l'évaporateur, après le bulbe, et il arrive sous la membrane. Suivez la visite. Le bulbe sent la température à la sortie : sa charge violette pousse la membrane, par le capillaire, pour ouvrir. Le tube amène la pression de la sortie sous la membrane : elle pousse en bleu, pour fermer, comme le ressort. La membrane compare, et commande l'aiguille. Ce détendeur règle la surchauffe, avec la vraie pression de la sortie. Sur un schéma, son symbole a un petit trait en plus au-dessus du cercle : c'est la prise d'égalisation.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -17915,6 +18458,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/retour-huile-naturel/module.js"
+      ]
+    },
+    {
+      "cle": "5e4828bd-36",
+      "texte": "Les pressions HP et BP se rejoignent",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -18314,6 +18865,14 @@
       ]
     },
     {
+      "cle": "5ff4f4c1-59",
+      "texte": "Le frottement du liquide dans un tube très fin et très long",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "5ff8584e-83",
       "texte": "C'est là que l'appareil de purge se raccorde, installation à l'arrêt et stabilisée.",
       "type": "choix",
@@ -18434,6 +18993,14 @@
       ]
     },
     {
+      "cle": "6085a0cf-564",
+      "texte": "Regardez la balance de la membrane. En haut, le ressort pousse vers le bas : il veut ouvrir. En bas, la pression de l'évaporateur pousse vers le haut : elle veut fermer. Au départ, la basse pression est sous la consigne. Le ressort gagne. La membrane descend, le clapet ouvre, du liquide passe et bout. La basse pression remonte. Elle dépasse un peu la consigne : la pression gagne, et le clapet se referme à moitié. Les deux forces s'équilibrent. La basse pression reste à la consigne. La consigne, c'est la valeur que réclame le ressort. La vis règle ce ressort.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "6089d656-55",
       "texte": "Le refroidissement adiabatique, c'est quoi exactement ?",
       "type": "feedback",
@@ -18479,6 +19046,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/nomenclature-interactive/nomenclature.js"
+      ]
+    },
+    {
+      "cle": "60db71f4-21",
+      "texte": "Elle monte sans arrêt",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -18575,6 +19150,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/electrovanne-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "6155ec8e-22",
+      "texte": "La BP reste très basse",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -18858,6 +19441,14 @@
       ]
     },
     {
+      "cle": "62d62959-64",
+      "texte": "Qu'est-ce qui fait baisser la pression dans un tube capillaire ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "62e3afd6-65",
       "texte": "Dans un éjecteur, qu'est-ce qui aspire la vapeur basse pression ?",
       "type": "feedback",
@@ -18924,6 +19515,14 @@
       "type": "choix",
       "sources": [
         "hydrometro/stations/releves/content.js"
+      ]
+    },
+    {
+      "cle": "63271d9f-8",
+      "texte": "Il ouvre",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -19631,6 +20230,14 @@
       ]
     },
     {
+      "cle": "669d58ac-36",
+      "texte": "La pression et la température du gaz",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "669d5a2a-539",
       "texte": "Chassez les pertes avec méthode, c'est-à-dire par élimination et non par remplacement. Une branche manque de débit : localisez la zone résistante en mesurant la pression en plusieurs points successifs, du départ vers l'émetteur. La chute anormale se produit quelque part entre deux de ces points, et c'est là qu'il faut chercher. Remplacer un filtre parce qu'un filtre est toujours suspect, c'est parfois efficace et jamais démontré. Si le problème réel était ailleurs, vous aurez changé une pièce pour rien, et le défaut sera toujours là.",
       "type": "narration",
@@ -19715,11 +20322,27 @@
       ]
     },
     {
+      "cle": "67105097-36",
+      "texte": "Thermostatique à égalisation externe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "67199b3b-79",
       "texte": "La restriction redresse la courbe réseau et déplace le point de fonctionnement.",
       "type": "feedback",
       "sources": [
         "hydrometro/stations/pertes/content.js"
+      ]
+    },
+    {
+      "cle": "67320802-59",
+      "texte": "La chambre se réchauffe. Que fait le détendeur capillaire ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -20247,6 +20870,12 @@
         "packs/fluides/res/chaine-intervention-interactive/app.js",
         "packs/fluides/res/compresseur-interactif/app.js",
         "packs/fluides/res/condenseur-interactif/app.js",
+        "packs/fluides/res/detendeur-automatique/app.js",
+        "packs/fluides/res/detendeur-egalisation-externe/app.js",
+        "packs/fluides/res/detendeur-electronique/app.js",
+        "packs/fluides/res/detendeur-mop/app.js",
+        "packs/fluides/res/detendeurs-famille/app.js",
+        "packs/fluides/res/detente-capillaire/app.js",
         "packs/fluides/res/etancheite-interactive/app.js",
         "packs/fluides/res/evaporateur-interactif/app.js",
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js",
@@ -20276,6 +20905,14 @@
       "type": "choix",
       "sources": [
         "hydrometro/stations/tampon/content.js"
+      ]
+    },
+    {
+      "cle": "6a1da288-121",
+      "texte": "Le liquide plus froid donne plus de froid utile dans l'évaporateur ; la vapeur un peu plus chaude protège le compresseur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -20745,6 +21382,14 @@
       ]
     },
     {
+      "cle": "6c5483ec-73",
+      "texte": "La basse pression est très basse, l'évaporateur est vide et ne givre plus",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "6c6234d9-37",
       "texte": "Dans quelle conduite se trouve-t-il ?",
       "type": "feedback",
@@ -20894,6 +21539,22 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/bilan-thermique-performance-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "6d0ec9be-419",
+      "texte": "À vous de jouer. Où faut-il monter la tête du détendeur ? La tête, c'est la partie du haut, avec la membrane. Choisissez A, B ou C. Regardez les deux thermomètres : un sur la tête, un sur le bulbe. Et regardez ce que fait la charge. Si la tête est plus froide que le bulbe, le liquide de la charge va dans la tête. L'explication vous dit si c'est la bonne place. Et pour la valeur MOP, on lit la notice du constructeur.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
+      "cle": "6d0f376e-24",
+      "texte": "Plus froide que le bulbe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -21419,6 +22080,14 @@
       ]
     },
     {
+      "cle": "6fdf5011-85",
+      "texte": "Un détendeur MOP plafonne la basse pression : elle ne monte pas au-delà d'une valeur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "7003c25d-63",
       "texte": "Isoler côté circuit → arrêter la pompe → observer le vacuomètre",
       "type": "choix",
@@ -21512,6 +22181,14 @@
       "type": "composition",
       "sources": [
         "packs/fluides/res/chaine-intervention-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "7076390c-572",
+      "texte": "Sur beaucoup de machines, le capillaire est brasé contre le tube d'aspiration. Regardez : le liquide du capillaire va vers l'évaporateur, et la vapeur froide revient en sens inverse. Les deux tubes se touchent : ils échangent de la chaleur. Le liquide se refroidit : le thermomètre du liquide baisse. La vapeur se réchauffe : le thermomètre de la vapeur monte. Un liquide plus froid, c'est plus de froid utile dans l'évaporateur. Une vapeur un peu plus chaude, c'est aussi plus de sécurité pour le compresseur. Ce contact fait partie de la machine : on le laisse en place.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -21771,6 +22448,22 @@
       ]
     },
     {
+      "cle": "71a9553f-75",
+      "texte": "La BP monte haut : le compresseur aspire une vapeur dense, son moteur force",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
+      "cle": "71aac1f2-97",
+      "texte": "Sans MOP, rien ne limite la BP : elle monte haut, la vapeur est dense et le moteur est surchargé.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "71ae402c-571",
       "texte": "Tout ce que l'eau traverse lui résiste : la longueur des tubes, chaque coude, chaque vanne, chaque filtre. Ces résistances s'additionnent le long du chemin, et c'est leur total qui fixe l'effort à fournir pour faire circuler l'eau. Ce qu'il faut comprendre pour le chantier : rétrécir un passage augmente fortement la résistance de cette branche, et le débit y chute. Un filtre encrassé produit exactement le même effet qu'une vanne à moitié fermée. Avant d'accuser une pompe, vérifiez donc ce qui se trouve sur son chemin. C'est souvent là que se cache le vrai problème.",
       "type": "narration",
@@ -21970,6 +22663,14 @@
       ]
     },
     {
+      "cle": "72ecfc15-116",
+      "texte": "Il croit la surchauffe plus faible qu'elle n'est et reste trop fermé : la nappe est courte et la vapeur sort chaude.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "72ee87b4-535",
       "texte": "Une mesure sans rapport n'existe pas. Regardez la feuille : huit lignes, chacune avec sa case cochée. On y trouve l'objet et le demandeur, le lieu, la date, l'heure et la durée, la météo, le matériel avec la date de sa dernière vérification, l'étalonnage avant et après avec l'écart, la position du microphone en plan ou en photo, le fonctionnement de la machine pendant la mesure, et enfin les trois résultats : ambiant, résiduel et émergence. Le tout doit permettre à quelqu'un d'autre de refaire la mesure dans les mêmes conditions.",
       "type": "data-narration",
@@ -22019,6 +22720,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/parcours-adaptatif.js"
+      ]
+    },
+    {
+      "cle": "735a6938-8",
+      "texte": "Un bulbe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -22270,6 +22979,14 @@
       ]
     },
     {
+      "cle": "7529cae4-90",
+      "texte": "Évaporateur à forte perte de charge, détendeur à égalisation interne : que se passe-t-il ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "752c9ae3-54",
       "texte": "Complétez les quatre rubriques. Rien n'est enregistré.",
       "type": "feedback",
@@ -22292,6 +23009,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/travail-se-former/index.html"
+      ]
+    },
+    {
+      "cle": "75470601-13",
+      "texte": "se stabilise…",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -22727,6 +23452,14 @@
       ]
     },
     {
+      "cle": "77b77c8d-36",
+      "texte": "Que règle un détendeur automatique ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "77bb0fbb-132",
       "texte": "À environ deux bars absolus pour cet exemple au R cent-trente-quatre a, la température de saturation est proche de moins dix degrés.",
       "type": "fragment",
@@ -22953,15 +23686,6 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/acoustique-le-bruit-en-db/index.html"
-      ]
-    },
-    {
-      "cle": "789885ab-91",
-      "texte": "Pas de son ? Désactive le mode silencieux (interrupteur sur la tranche) et monte le volume.",
-      "type": "interface",
-      "sources": [
-        "packs/fluides/res/film-effet-de-serre/index.html",
-        "packs/fluides/res/film-ozone/index.html"
       ]
     },
     {
@@ -23255,6 +23979,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/pressostat-huile-securite/module.js"
+      ]
+    },
+    {
+      "cle": "7a0f9888-26",
+      "texte": "Un ressort et une membrane",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -23742,6 +24474,14 @@
       ]
     },
     {
+      "cle": "7d4c1b72-72",
+      "texte": "À l'arrêt, la BP monte : il reste fermé. Il n'égalise pas les pressions.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "7d6dd9ae-17",
       "texte": "Le voyant liquide",
       "type": "choix",
@@ -24189,6 +24929,22 @@
       ]
     },
     {
+      "cle": "802125ed-32",
+      "texte": "L'évaporateur déborde de liquide",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
+      "cle": "8026b6be-13",
+      "texte": "Le capillaire",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "802b7c18-502",
       "texte": "Trois facteurs font varier ces parts, et ils n'agissent pas au même endroit. La durée de vie de la machine agit sur les deux plateaux à la fois : plus elle dure, plus elle fuit au total, mais plus elle consomme aussi. Le taux de fuite annuel réel n'agit que sur la part directe — c'est le levier de l'installateur et du mainteneur. Et le réseau électrique du pays où elle tourne n'agit que sur la part indirecte : la même machine a un bilan différent selon que l'électricité y est peu ou très carbonée.",
       "type": "data-narration",
@@ -24402,6 +25158,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/regulateurs-kv-pedagogiques/app.js"
+      ]
+    },
+    {
+      "cle": "8155eb2b-17",
+      "texte": "Le thermostatique",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -24622,6 +25386,14 @@
       ]
     },
     {
+      "cle": "82c56813-66",
+      "texte": "On change la consigne sur le régulateur, puis on laisse stabiliser",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "82cc3abe-18",
       "texte": "PRESSION EN BAISSE",
       "type": "interface",
@@ -24747,6 +25519,14 @@
       ]
     },
     {
+      "cle": "8378cd3c-51",
+      "texte": "Température mesurée moins température de saturation",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "8390666b-57",
       "texte": "Pour un zéotrope, quelle référence sert à la surchauffe ?",
       "type": "feedback",
@@ -24800,6 +25580,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/condenseur-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "83b8616d-101",
+      "texte": "Le bulbe ne pousse plus davantage : la basse pression reste plafonnée. C'est le but du détendeur MOP.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -24891,6 +25679,14 @@
       ]
     },
     {
+      "cle": "8441e7d2-54",
+      "texte": "Que fait le tube d'égalisation de la perte de charge ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "845e09d8-474",
       "texte": "Ne confondez jamais l'entrée et le départ liquide. L'entrée reçoit le fluide qui arrive du condenseur. La sortie alimente la ligne liquide vers le filtre et la détente. Les deux raccords peuvent se ressembler beaucoup sur certains modèles, et une inversion met la vapeur dans la ligne liquide. Le réflexe : vérifier le marquage sur l'appareil et la documentation du modèle avant tout raccordement. C'est un contrôle de trente secondes qui évite une remise en cause complète.",
       "type": "narration",
@@ -24954,6 +25750,12 @@
       "sources": [
         "packs/fluides/res/compresseur-interactif/app.js",
         "packs/fluides/res/condenseur-interactif/app.js",
+        "packs/fluides/res/detendeur-automatique/app.js",
+        "packs/fluides/res/detendeur-egalisation-externe/app.js",
+        "packs/fluides/res/detendeur-electronique/app.js",
+        "packs/fluides/res/detendeur-mop/app.js",
+        "packs/fluides/res/detendeurs-famille/app.js",
+        "packs/fluides/res/detente-capillaire/app.js",
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js",
         "packs/fluides/res/pupitre-reglage-interactif/app.js",
         "packs/fluides/res/regulateur-electronique-interactif/app.js"
@@ -25462,6 +26264,14 @@
       ]
     },
     {
+      "cle": "871f2da6-26",
+      "texte": "Mesurer la BP au manomètre",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "87262f9a-69",
       "texte": "Pas encore. Suivez la flèche colorée depuis le dernier organe validé.",
       "type": "interface",
@@ -25582,6 +26392,14 @@
       ]
     },
     {
+      "cle": "88197a35-93",
+      "texte": "Ressort : il ouvre. Pression de l'évaporateur : elle ferme. La vis règle la force du ressort.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "8830d2c1-86",
       "texte": "La surchauffe totale inclut tout le réchauffement jusqu'à l'aspiration du compresseur.",
       "type": "feedback",
@@ -25699,6 +26517,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/_regules-commun/catalog.js"
+      ]
+    },
+    {
+      "cle": "89599ade-17",
+      "texte": "Il ferme la vanne",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -25963,6 +26789,15 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/etancheite-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "8ae766f7-150",
+      "texte": "Pour finir, six questions. Il n'y a qu'une bonne réponse à chaque fois. Après chaque réponse, lisez l'explication : elle compte autant que la réponse.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js",
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -26686,6 +27521,14 @@
       ]
     },
     {
+      "cle": "8f204f2e-38",
+      "texte": "Seulement la température de la chambre",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "8f31e183-132",
       "texte": "Quatrième et dernière question. Pourquoi un frigoriste tient-il un registre de ses déchets ? Souvenez-vous du carnet de l'écran six.",
       "type": "data-narration",
@@ -26699,6 +27542,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/lignes/E/parcours.js"
+      ]
+    },
+    {
+      "cle": "8f3a9fc4-13",
+      "texte": "La surchauffe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -26731,6 +27582,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/bilan-thermique-performance-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "8f8ae667-82",
+      "texte": "Le bulbe d'un détendeur MOP devient très chaud. Que devient la pression du bulbe ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -26827,6 +27686,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/co2-r744/cours.js"
+      ]
+    },
+    {
+      "cle": "90281659-45",
+      "texte": "Quelles sont les deux missions du détendeur ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -26979,6 +27846,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/diagnostic/content.js"
+      ]
+    },
+    {
+      "cle": "90dac961-28",
+      "texte": "La pression de l'évaporateur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -27385,6 +28260,14 @@
       ]
     },
     {
+      "cle": "935e4031-77",
+      "texte": "Pour échanger de la chaleur : le liquide se refroidit, la vapeur se réchauffe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "937329a2-534",
       "texte": "Un régulateur possède une entrée, une sortie, et parfois une ligne pilote ou une prise de pression qui lui indique la grandeur à surveiller. Une soupape, elle, a son entrée reliée au volume qu'elle protège, et sa sortie dirigée vers un rejet prévu par la conception. L'état du fluide dépend de la zone du circuit où l'organe est installé — comme pour les clapets et les vannes de service, c'est le contexte qui décide. Ce qui ne varie jamais, c'est que le rejet d'une soupape a une destination prévue, et qu'elle n'est pas négociable.",
       "type": "narration",
@@ -27478,6 +28361,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/pressostat-bp-kp1/index.html"
+      ]
+    },
+    {
+      "cle": "94006b21-30",
+      "texte": "La haute pression monte encore",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -27866,6 +28757,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/retour-huile-verifier/module.js"
+      ]
+    },
+    {
+      "cle": "96de649b-13",
+      "texte": "Il l'augmente",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -28552,6 +29451,14 @@
       ]
     },
     {
+      "cle": "9a37111a-298",
+      "texte": "Pour finir, six questions sur le détendeur MOP. Il n'y a qu'une bonne réponse à chaque fois. Choisissez, puis lisez l'explication : elle compte autant que la réponse. Si vous hésitez, revenez sur les écrans : le bulbe à charge limitée, la chambre chaude, et la place de la tête. Prenez votre temps.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "9a420abb-380",
       "texte": "Compresseurs. Mémoriser. À DIRE SANS REGARDER Compresseurs Aspiration vapeur BP → compression → refoulement vapeur HP → circulation. MINI-QUESTION DE MÉMORISATION Quelle description est complète ? Il transforme directement le liquide HP en vapeur BP. Il aspire une vapeur BP, la comprime, la refoule en vapeur HP et crée le débit massique. Il stocke le liquide avant le détendeur.",
       "type": "capture",
@@ -28673,6 +29580,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/circuit-organe-par-organe/app.js"
+      ]
+    },
+    {
+      "cle": "9ab1d83f-18",
+      "texte": "Une vis de réglage",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -28972,11 +29887,27 @@
       ]
     },
     {
+      "cle": "9c5ed80a-805",
+      "texte": "Voici l'écran important. La chambre froide se réchauffe : on vient d'y entrer des produits chauds. L'évaporateur reçoit plus de chaleur, le liquide s'évapore plus vite, la sortie devient plus chaude. Il faudrait donner plus de liquide. Regardez ce que fait chacun. Le capillaire ne sent rien : son passage ne change pas, donc il manque de liquide. L'automatique sent la pression monter, et il ferme : il fait exactement l'inverse de ce qu'il faudrait. Le thermostatique sent la sortie plus chaude avec son bulbe : le liquide violet du bulbe se dilate, sa pression monte, file dans le fin tube jusqu'à la tête, pousse la membrane vers le bas, et le détendeur ouvre. L'électronique lit ses capteurs, calcule, et ouvre au plus juste. Retenez-le : seuls le thermostatique et l'électronique suivent la chaleur.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "9c5ffeac-83",
       "texte": "Analysez la distribution et justifiez son adéquation à un cahier des charges donné.",
       "type": "feedback",
       "sources": [
         "hydrometro/programme.js"
+      ]
+    },
+    {
+      "cle": "9c76a967-69",
+      "texte": "La charge de la machine augmente. Que fait le détendeur automatique ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -28993,6 +29924,14 @@
       "type": "voiceStep",
       "sources": [
         "packs/fluides/res/chaleur-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "9c99361a-42",
+      "texte": "La pression d'évaporation, avec un ressort",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -29169,6 +30108,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/hydrocarbures-a1-a2/app.js"
+      ]
+    },
+    {
+      "cle": "9d6b084a-94",
+      "texte": "C'est pour ça que le moteur redémarre sans effort : il ne pousse pas contre la haute pression.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -29388,6 +30335,14 @@
       ]
     },
     {
+      "cle": "9ee15dbd-54",
+      "texte": "Il ouvre la vanne : plus de liquide dans l'évaporateur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "9ee9617f-34",
       "texte": "Ouvrez les six preuves du rapport.",
       "type": "feedback",
@@ -29519,6 +30474,14 @@
       "type": "choix",
       "sources": [
         "hydrometro/stations/production/content.js"
+      ]
+    },
+    {
+      "cle": "9fb2115c-39",
+      "texte": "Un thermostatique à égalisation externe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -29984,6 +30947,14 @@
       ]
     },
     {
+      "cle": "a1ee8657-24",
+      "texte": "N'importe quelle machine",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "a219d278-667",
       "texte": "En transcritique, la haute pression devient un arbitrage. L'augmenter fait travailler davantage le compresseur — c'est un coût. Mais cela refroidit mieux le fluide et augmente l'effet frigorifique — c'est un gain. Trop bas, le fluide entre chaud dans la détente et l'effet frigorifique s'effondre. Trop haut, le compresseur consomme pour rien. Entre les deux existe une pression qui donne le meilleur coefficient de performance. Voilà ce qui rend le dioxyde de carbone particulier : sur une machine à fluide de synthèse, la haute pression est une conséquence de la condensation. Ici, c'est une consigne — quelqu'un doit la choisir, et c'est le régulateur qui le fait.",
       "type": "narration",
@@ -30088,6 +31059,14 @@
       ]
     },
     {
+      "cle": "a2b0ca0b-55",
+      "texte": "Avant de tourner la vis de réglage, que faut-il faire ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "a2b25e04-65",
       "texte": "L'huile peut être retenue, perdue, non séparée ou non distribuée.",
       "type": "feedback",
@@ -30165,6 +31144,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/echangeur/content.js"
+      ]
+    },
+    {
+      "cle": "a309be6c-36",
+      "texte": "On la règle avec la vis du détendeur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -30370,6 +31357,14 @@
       ]
     },
     {
+      "cle": "a42007e7-47",
+      "texte": "Parce qu'une bouteille liquide garde le surplus",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "a42182a5-454",
       "texte": "Quatre cartes numérotées. Première : je remplace un vieux CFC, il faut le repérer au chlore et viser un remplaçant sans chlore ni brome. Deuxième : ma machine tourne au HFC à PRP élevé, conforme pour l'ozone mais sous surveillance pour le climat. Troisième : je choisis un fluide à faible PRP, CO2, propane ou ammoniac, un choix qui anticipe la suite. Quatrième : je vois HCFC sur une étiquette, un fluide encore visé par Montréal, en retrait progressif.",
       "type": "data-narration",
@@ -30384,6 +31379,14 @@
       "sources": [
         "hydrometro/stations/circulateur/content.js",
         "hydrometro/stations/pertes/content.js"
+      ]
+    },
+    {
+      "cle": "a434713d-545",
+      "texte": "Voici le détendeur électronique. Il règle la surchauffe, comme le détendeur thermostatique. Mais ici, ce n'est pas un ressort qui décide. C'est un régulateur. Il y a trois acteurs. D'abord, deux sondes, à la sortie de l'évaporateur : elles mesurent la pression et la température du gaz. Ensuite, le régulateur : il calcule la surchauffe. Enfin, la vanne : un moteur pousse ou relève le pointeau, pas à pas. Suivez la visite : les sondes, le régulateur, la vanne. On le choisit quand la charge change beaucoup, ou avec un compresseur à variateur.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -30552,6 +31555,15 @@
       "type": "narration",
       "sources": [
         "hydrometro/app.js"
+      ]
+    },
+    {
+      "cle": "a5a2972e-43",
+      "texte": "Quel détendeur ce symbole représente-t-il ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js",
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -30809,6 +31821,14 @@
       "type": "fragment",
       "sources": [
         "packs/fluides/res/pression-temperature-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "a6c9f61a-39",
+      "texte": "Un thermostatique à égalisation interne",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -31079,6 +32099,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/module-compresseur/index.html"
+      ]
+    },
+    {
+      "cle": "a84846ae-569",
+      "texte": "Que se passe-t-il si le capillaire se bouche ? Le tube est si fin qu'un rien le bouche. De l'humidité dans le circuit peut geler à la sortie du tube : un bouchon de glace. Ou bien de la saleté. Du givre se forme sur le tube. Le compresseur continue d'aspirer, mais l'évaporateur ne reçoit plus de fluide. La basse pression devient très basse. Le liquide de l'évaporateur disparaît, et le givre aussi : plus de froid. Pour l'éviter, on place un filtre déshydrateur juste avant le capillaire. Et on ne raccourcit jamais un capillaire, on ne le pince pas : on le remplace.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -31625,11 +32653,27 @@
       ]
     },
     {
+      "cle": "aaf07244-19",
+      "texte": "Pour le tenir droit",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "aaf7ec60-74",
       "texte": "Évaporation : nous partons du liquide. Le fluide va recevoir de l'énergie.",
       "type": "voiceStep",
       "sources": [
         "packs/fluides/res/pression-temperature-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "aafc19f1-34",
+      "texte": "Comprimer la vapeur et la renvoyer",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -32176,6 +33220,14 @@
       ]
     },
     {
+      "cle": "ad9de959-102",
+      "texte": "La charge du bulbe est limitée : une fois tout le liquide vaporisé, la pression ne monte presque plus.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "ada03628-574",
       "texte": "Quels équipements relèvent de la directive équipements sous pression ? Dans nos installations, les principaux sont la bouteille de fluide frigorigène, le réservoir tampon ou la bouteille anti-coup de liquide, et le séparateur d'huile. Le point d'entrée est simple à retenir : un équipement relève de la directive au-delà d'un certain seuil de pression maximale admissible, ce qu'on note PS. En dessous de ce seuil, il en sort. Ce n'est donc ni la taille apparente ni l'usage qui déterminent l'application du texte, mais la pression que l'équipement est conçu pour supporter.",
       "type": "data-narration",
@@ -32650,6 +33702,14 @@
       ]
     },
     {
+      "cle": "afdea2be-121",
+      "texte": "La pression baisse mètre après mètre. Quand elle est assez basse, les premières bulles naissent, avant la sortie du tube.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "affc06b5-679",
       "texte": "À l'aspiration moyenne température. Trois débits se rejoignent avant le compresseur. Le point d'aspiration réel du compresseur moyenne température n'est pas la sortie des évaporateurs : c'est un mélange, et il est plus chaud. La vapeur des évaporateurs moyenne température, au point F. Le refoulement des compresseurs basse température, au point I. La vapeur de détente venant de la bouteille, au point D. Ce que ça explique : C'est ce mélange qui donne les températures de refoulement élevées qu'on relève sur les machines R 744. Une aspiration plus chaude ressort plus chaude. Ce que montre le schéma. Les trois débits qui se mélangent avant le compresseur moyenne température.",
       "type": "capture",
@@ -32679,6 +33739,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/electrovanne-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "b0200175-50",
+      "texte": "Comment le régulateur calcule-t-il la surchauffe ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -32861,6 +33929,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/reglage-equilibrage/content.js"
+      ]
+    },
+    {
+      "cle": "b1250439-68",
+      "texte": "Le compresseur s'arrête. Que se passe-t-il à travers le capillaire ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -33140,6 +34216,14 @@
       ]
     },
     {
+      "cle": "b314469b-38",
+      "texte": "Refroidir l'air et chauffer le liquide",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "b32e8eb1-35",
       "texte": "P1, P2, Δp, durée et régime relevés",
       "type": "choix",
@@ -33209,6 +34293,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/pupitre-reglage-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "b366ec23-557",
+      "texte": "Voici le détendeur MOP. C'est un détendeur thermostatique, avec un bulbe un peu particulier. Regardez le bulbe, ouvert en coupe : il ne contient qu'une petite charge, en violet. Un peu de liquide au fond, de la vapeur au-dessus. Suivez la visite. La pression du bulbe monte par le capillaire, jusqu'au-dessus de la membrane. Elle pousse vers le bas : elle ouvre le détendeur. Dessous, la pression d'évaporation, en bleu, et le ressort, en gris, poussent vers le haut : ils ferment. La basse pression ne dépasse pas le trait rouge : le détendeur la plafonne.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -33289,6 +34381,14 @@
       "type": "composition",
       "sources": [
         "packs/fluides/res/etancheite-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "b3c7ba0a-45",
+      "texte": "Un capillaire est bouché. Que constate-t-on ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -33697,6 +34797,14 @@
       "type": "choix",
       "sources": [
         "hydrometro/stations/mission/content.js"
+      ]
+    },
+    {
+      "cle": "b5bbb85a-27",
+      "texte": "La vanne à moteur pas à pas",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -34258,6 +35366,14 @@
       ]
     },
     {
+      "cle": "b873dcfe-102",
+      "texte": "Sans tube, la membrane lit la pression du corps du détendeur, donc celle de l'entrée de l'évaporateur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "b876748d-25",
       "texte": "prévue par type de fluide",
       "type": "feedback",
@@ -34686,6 +35802,14 @@
       ]
     },
     {
+      "cle": "bacc55b3-42",
+      "texte": "La surchauffe à la sortie de l'évaporateur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "bada8575-207",
       "texte": "Troisième question. Une installation électrique de logement neuf est conçue selon la norme N F C quinze cent. Que peut-on en déduire juridiquement ? Reprenez les deux voies de l'écran cinq avant de répondre.",
       "type": "data-narration",
@@ -34902,6 +36026,14 @@
       ]
     },
     {
+      "cle": "bbe7ac99-62",
+      "texte": "Où doit se trouver la tête du détendeur par rapport au bulbe ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "bbf0455b-530",
       "texte": "À vous d'essayer, avec les deux curseurs. Posez d'abord la vitesse moyenne et la section proposées, et gardez le débit annoncé en mémoire. Puis faites semblant de n'avoir mesuré qu'au centre de la gaine : la vitesse y dépasse la moyenne d'environ un quart. Montez le curseur d'autant, sans toucher à la section. L'écart de débit qui apparaît est précisément l'erreur que commet celui qui plante son anémomètre au milieu et rentre chez lui. Sur une réception d'installation, cette erreur fait passer un réseau qui ne le mérite pas.",
       "type": "narration",
@@ -34997,6 +36129,14 @@
       "sources": [
         "packs/fluides/res/pressostat-bp-kp1/index.html",
         "packs/fluides/res/pressostat-hp-kp5/index.html"
+      ]
+    },
+    {
+      "cle": "bc56f318-548",
+      "texte": "À vous de charger la machine. Un capillaire ne corrige rien : on dit que la charge est critique. Elle doit être exacte, et on la pèse sur une balance. Ajoutez du fluide avec le curseur, ou avec les boutons. Regardez la nappe de liquide dans l'évaporateur. Pas assez de fluide : la nappe est courte, l'évaporateur manque de liquide. Trop de fluide : le liquide va jusqu'à la sortie, et peut revenir au compresseur. Le bon poids est celui de la plaque signalétique. Ici, c'est un exemple : cent vingt grammes. Sur une vraie machine, on lit la plaque.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -35185,6 +36325,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/chaleur-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "bd3f7fa9-36",
+      "texte": "Thermostatique à égalisation interne",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -35526,6 +36674,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/pose-manifold-2-voies-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "befdf60d-111",
+      "texte": "Le capillaire ne règle rien. Quand la charge change, il ne s'adapte pas : il donne trop ou trop peu de liquide.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -35975,6 +37131,14 @@
       ]
     },
     {
+      "cle": "c1c5513e-47",
+      "texte": "On la calcule avec la température de la chambre",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "c1cc288b-330",
       "texte": "Entre 1990 et 1997, L'ère des HFC et Kyoto. Pour remplacer les CFC et HCFC nocifs pour l'ozone, l'industrie adopte massivement les hydrofluorocarbures, les HFC. Si la couche d'ozone est sauvée, on découvre rapidement qu'ils possèdent un pouvoir de réchauffement global des milliers de fois supérieur à celui du dioxyde de carbone.",
       "type": "frise",
@@ -36045,6 +37209,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/elements-circuit-huile-regler/module.js"
+      ]
+    },
+    {
+      "cle": "c21534c5-84",
+      "texte": "On mesure, on tourne d'un quart de tour, on laisse stabiliser, on mesure de nouveau.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -36213,6 +37385,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/nomenclature-interactive/nomenclature.js"
+      ]
+    },
+    {
+      "cle": "c36c905a-19",
+      "texte": "Il s'ouvre en grand",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -36488,6 +37668,14 @@
       ]
     },
     {
+      "cle": "c4ce4ef1-69",
+      "texte": "Chambre chaude au démarrage, détendeur sans MOP : que se passe-t-il ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "c4d3fcbc-56",
       "texte": "Un défaut d'alimentation amont produit le même symptôme.",
       "type": "feedback",
@@ -36664,6 +37852,14 @@
       ]
     },
     {
+      "cle": "c5e8e2b2-120",
+      "texte": "Charge constante : il convient. Charge variable : l'évaporateur manque de liquide, ou du liquide revient au compresseur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "c5e9d3ad-12",
       "texte": "LIQUÉFACTION",
       "type": "interface",
@@ -36721,6 +37917,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/pressostat-bp-kp1/index.html"
+      ]
+    },
+    {
+      "cle": "c61b536f-8",
+      "texte": "Il ferme",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -37334,6 +38538,14 @@
       ]
     },
     {
+      "cle": "c90ba003-25",
+      "texte": "Le courant du compresseur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "c90bfbbc-62",
       "texte": "Pourquoi faut-il regarder les raccordements du ballon tampon ?",
       "type": "feedback",
@@ -37440,6 +38652,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/retour-huile-verifier/module.js"
+      ]
+    },
+    {
+      "cle": "c9956455-688",
+      "texte": "Le bulbe, à la sortie, est rempli de violet. Quand il chauffe, sa pression pousse la membrane par le capillaire : cela ouvre. Le bleu, sous la membrane, et le ressort, eux, ferment. Prenons un évaporateur long, avec beaucoup de petits circuits. Le fluide s'y évapore en avançant, et la pression baisse en route. On appelle ça la perte de charge. Regardez les deux manomètres : à l'entrée, la pression est plus haute qu'à la sortie. Un détendeur sans tube lit la pression de l'entrée, sous sa membrane. Il croit donc que la surchauffe est plus faible qu'elle n'est. Alors il reste trop fermé. L'évaporateur manque de liquide : la nappe est courte, et la vapeur sort chaude. Voilà le piège.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -37959,6 +39179,14 @@
       ]
     },
     {
+      "cle": "cc117ece-529",
+      "texte": "Il existe quatre familles de détendeurs. Le capillaire est un tube très fin et très long. Rien ne bouge : il ne règle rien. L'automatique oppose un ressort à la pression de l'évaporateur : il règle la pression. On le trouve surtout sur les machines à glace. Le thermostatique a un bulbe collé sur la sortie de l'évaporateur : il règle la surchauffe. L'électronique a des capteurs et un régulateur : il règle aussi la surchauffe, mais calculée. Touchez chaque carte pour la lire. Sur un schéma, chacun a son symbole : retenez-les.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "cc3aadd3-32",
       "texte": "Aucun échange sensible mesurable",
       "type": "interface",
@@ -38223,6 +39451,14 @@
       ]
     },
     {
+      "cle": "cd84c86e-119",
+      "texte": "Avec la pression, le régulateur retrouve la température de saturation. Avec la sonde, il connaît la température du gaz.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "cd8eda88-49",
       "texte": "Contrôler mécaniquement la position de la vanne B",
       "type": "choix",
@@ -38377,6 +39613,14 @@
       ]
     },
     {
+      "cle": "cec2fe3e-26",
+      "texte": "Rien : sa section est fixe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "cec4607a-145",
       "texte": "Troisième question. Qu'est-ce qui fait varier la part indirecte du TEWI, à machine identique ? Revoyez les trois cartes de l'écran six si besoin.",
       "type": "data-narration",
@@ -38497,6 +39741,14 @@
       ]
     },
     {
+      "cle": "cf935f8e-94",
+      "texte": "Un ressort contre la pression d'évaporation : il tient la BP à la consigne, pas la surchauffe.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "cfa2dd8c-67",
       "texte": "Pourquoi de l'eau tiède peut-elle bouillir sous une cloche à vide ?",
       "type": "feedback",
@@ -38604,6 +39856,14 @@
       ]
     },
     {
+      "cle": "d00f4048-35",
+      "texte": "Pression haute moins pression basse",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "d011c677-74",
       "texte": "Le différentiel maîtrisé permet l'écoulement vers le régulateur de niveau.",
       "type": "feedback",
@@ -38681,6 +39941,14 @@
       "type": "narration",
       "sources": [
         "hydrometro/stations/circulateur/content.js"
+      ]
+    },
+    {
+      "cle": "d081abd0-37",
+      "texte": "La pression à l'entrée du compresseur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -39332,6 +40600,22 @@
       ]
     },
     {
+      "cle": "d3a6882b-81",
+      "texte": "La chambre se réchauffe et la pression monte. Que fait le détendeur automatique ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
+      "cle": "d3b645de-14",
+      "texte": "ne change rien",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/scene-electronique.js"
+      ]
+    },
+    {
       "cle": "d3ba2331-143",
       "texte": "Pendant le palier, vapeur et liquide coexistent. Le fluide rejette sa chaleur latente tandis que sa température reste stable dans notre modèle.",
       "type": "voiceStep",
@@ -39492,6 +40776,14 @@
       ]
     },
     {
+      "cle": "d44db753-392",
+      "texte": "Pour finir, six questions sur le détendeur électronique. Il n'y a qu'une bonne réponse à chaque fois. Choisissez, puis lisez l'explication : elle compte autant que la réponse. Si vous hésitez, revenez sur les écrans : la boucle de réglage, les deux sortes de vannes, et le réglage de la consigne. Souvenez-vous : les sondes mesurent, le régulateur calcule, la vanne obéit. Prenez votre temps.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "d450ba4f-23",
       "texte": "Cacher tous les organes",
       "type": "choix",
@@ -39637,11 +40929,27 @@
       ]
     },
     {
+      "cle": "d523f2e4-386",
+      "texte": "Pour finir, six questions sur le détendeur automatique. Il n'y a qu'une bonne réponse à chaque fois. Choisissez, puis lisez l'explication : elle compte autant que la réponse. Si vous hésitez, revenez sur les écrans : la balance du ressort et de la pression, la charge qui change, et le réglage de la vis. Prenez votre temps, et relisez bien chaque réponse avant de passer à la suivante.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "d530c587-44",
       "texte": "Qu'est-ce qui règle le débit du capillaire ?",
       "type": "feedback",
       "sources": [
         "packs/fluides/res/tome-3-technologie-organes/app.js"
+      ]
+    },
+    {
+      "cle": "d536ac92-37",
+      "texte": "Que règle un détendeur électronique ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -39745,6 +41053,22 @@
       ]
     },
     {
+      "cle": "d5e83bef-60",
+      "texte": "La valeur de la consigne vient de la notice du constructeur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
+      "cle": "d5f20d63-34",
+      "texte": "Celle de l'entrée de l'évaporateur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "d5feff98-36",
       "texte": "Ouvrez les trois points du parcours.",
       "type": "feedback",
@@ -39798,6 +41122,14 @@
       "type": "interface",
       "sources": [
         "packs/fluides/res/parcours-manometres/module-2-surchauffe-sous-refroidissement/app.js"
+      ]
+    },
+    {
+      "cle": "d64aa32e-532",
+      "texte": "Il existe deux sortes de vannes électroniques. À gauche, la vanne pas à pas. Un moteur tourne par petits crans, et le pointeau avance ou recule. L'ouverture change peu à peu. À droite, la vanne à impulsions. Une bobine ouvre et ferme le clapet, par cycles de quelques secondes. C'est la durée d'ouverture qui dose le liquide : ouverte longtemps, il en passe plus. Et si on arrête la machine ? La vanne pas à pas est refermée par le régulateur. La vanne à impulsions se ferme toute seule, sans courant : elle fait aussi électrovanne.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -40083,6 +41415,14 @@
       ]
     },
     {
+      "cle": "d785a54c-552",
+      "texte": "Regardez la boucle de réglage. Au départ, tout va bien. Puis la sortie de l'évaporateur chauffe : il y a plus de chaleur à prendre. Le liquide s'arrête plus tôt, et le gaz sort plus chaud. Les sondes le mesurent. Le régulateur calcule la surchauffe : la température mesurée, moins la température de saturation, lue grâce à la pression. Elle est trop haute. Alors le régulateur ouvre la vanne, cran par cran. Plus de liquide arrive dans l'évaporateur. La nappe s'allonge, et la surchauffe redescend vers la consigne. Puis la boucle continue, sans arrêt.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "d78c87b6-220",
       "texte": "Première question. Un technicien a travaillé quarante et une heures cette semaine, réparties sur cinq jours. Combien d'heures supplémentaires cela représente-t-il ? Reprenez la semaine de l'écran trois avant de répondre.",
       "type": "data-narration",
@@ -40128,6 +41468,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/app.js"
+      ]
+    },
+    {
+      "cle": "d7af01e5-394",
+      "texte": "À vous de jouer. Où faut-il brancher le tube d'égalisation ? Touchez un des points A, B, C ou D sur le dessin, ou un bouton en dessous. Regardez ce que fait le détendeur. L'explication vous dit si c'est la bonne place, et pourquoi. N'oubliez pas : la notice du constructeur donne la position exacte. Et un détendeur à égalisation externe ne marche pas avec la prise bouchée, ni laissée ouverte.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -40499,6 +41847,14 @@
       ]
     },
     {
+      "cle": "d978133d-62",
+      "texte": "En égalisation interne, quelle pression la membrane lit-elle ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "d98c8c8b-550",
       "texte": "L'élimination est le dernier recours, et c'est un aller sans retour : destruction ou stockage final, rien ne revient dans le circuit de la matière. Elle est réservée à ce qui ne peut suivre aucun des niveaux précédents — ni prévention, ni réemploi, ni recyclage, ni valorisation énergétique. Retenez cette logique : chaque fois qu'un déchet descend d'une marche, de la matière ou de l'énergie sont définitivement perdues. Trier correctement sur un chantier, c'est éviter à des matériaux parfaitement valorisables de finir sur la marche la plus basse.",
       "type": "data-narration",
@@ -40626,6 +41982,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/vanne-service-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "da53b3c3-13",
+      "texte": "L'automatique",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -40763,6 +42127,14 @@
       "type": "capture",
       "sources": [
         "packs/fluides/res/co2-r744/point-critique/gas-cooler"
+      ]
+    },
+    {
+      "cle": "db1eb0ea-15",
+      "texte": "◐ Voir en coupe",
+      "type": "interface",
+      "sources": [
+        "packs/fluides/res/detendeur-interactif/3d/detendeur-3d.js"
       ]
     },
     {
@@ -41260,6 +42632,14 @@
       ]
     },
     {
+      "cle": "ddacf496-49",
+      "texte": "Une chambre froide dont la charge change beaucoup",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "ddadda5f-631",
       "texte": "Commençons par le calcul. Le débit est à deux mille cinq cents, l'écart à neuf degrés : notez la puissance affichée. Doublez maintenant le débit sans toucher à l'écart, et la puissance double. Revenez au débit de départ, doublez l'écart, elle double encore. Ce sont deux réglages différents pour un même résultat, et c'est le projet qui tranche, jamais le calcul seul. Revenez ensuite au tuyau du dessin. Sur une installation réelle, ce siphon se trouve presque toujours dans une zone en dépression. S'il n'est pas amorcé, l'air est aspiré par l'évacuation au lieu que l'eau descende. Le bac se remplit, puis déborde dans la gaine.",
       "type": "narration",
@@ -41292,6 +42672,14 @@
         "packs/fluides/res/diagramme-enthalpique/cours-toutes-courbes.html",
         "packs/fluides/res/diagramme-enthalpique/index.html",
         "packs/fluides/res/diagramme-enthalpique/modules-autonomes/09-isentrope.html"
+      ]
+    },
+    {
+      "cle": "ddca2998-57",
+      "texte": "Ce symbole est celui du tube capillaire. Que règle-t-il ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -41555,6 +42943,14 @@
       ]
     },
     {
+      "cle": "df1d9e3d-24",
+      "texte": "Plus chaude que le bulbe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "df2ab8d5-987",
       "texte": "L'humidité relative n'est pas une quantité d'eau, et c'est là tout le piège. C'est une comparaison. Elle compare la vapeur réellement présente à la vapeur maximale que cet air pourrait porter, à sa température du moment. Cinquante pour cent d'humidité relative veut donc dire : l'air porte la moitié de ce qu'il pourrait porter. Pas un demi-litre d'eau, pas la moitié du volume. La moitié d'une capacité. Or cette capacité dépend beaucoup de la température : plus l'air est chaud, plus il peut porter de vapeur. Première conséquence : chauffer un air sans rien lui ajouter fait baisser son humidité relative. C'est pour cela que l'air d'un logement chauffé paraît sec en hiver. L'air extérieur, même à quatre-vingts pour cent dehors, se retrouve à vingt ou trente pour cent une fois réchauffé à l'intérieur. Deuxième conséquence, l'inverse : refroidir un air sans lui retirer d'eau fait monter son humidité relative. Et si on refroidit assez, on atteint cent pour cent : l'eau se dépose.",
       "type": "narration",
@@ -41576,6 +42972,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/retour-huile-verifier/module.js"
+      ]
+    },
+    {
+      "cle": "df33e954-68",
+      "texte": "Pourquoi pèse-t-on exactement la charge d'une machine à capillaire ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -41738,6 +43142,12 @@
         "packs/fluides/res/chaine-intervention-interactive/app.js",
         "packs/fluides/res/compresseur-interactif/app.js",
         "packs/fluides/res/condenseur-interactif/app.js",
+        "packs/fluides/res/detendeur-automatique/app.js",
+        "packs/fluides/res/detendeur-egalisation-externe/app.js",
+        "packs/fluides/res/detendeur-electronique/app.js",
+        "packs/fluides/res/detendeur-mop/app.js",
+        "packs/fluides/res/detendeurs-famille/app.js",
+        "packs/fluides/res/detente-capillaire/app.js",
         "packs/fluides/res/etancheite-interactive/app.js",
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js",
         "packs/fluides/res/pupitre-reglage-interactif/app.js",
@@ -42006,6 +43416,14 @@
       ]
     },
     {
+      "cle": "e161acc2-110",
+      "texte": "Pas assez : la nappe est courte et l'évaporateur refroidit mal. Trop : le liquide peut revenir au compresseur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "e16558b3-72",
       "texte": "Recevoir une partie de la dilatation et limiter la variation de pression",
       "type": "choix",
@@ -42150,6 +43568,14 @@
       ]
     },
     {
+      "cle": "e22e5c1f-54",
+      "texte": "La surchauffe est trop haute. Que fait le régulateur ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "e22f28e9-45",
       "texte": "Deux sondes posées. Lancez le premier relevé.",
       "type": "interface",
@@ -42235,6 +43661,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/desp-en-service/index.html"
+      ]
+    },
+    {
+      "cle": "e2a58836-32",
+      "texte": "Rien : son passage ne change pas",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -42448,6 +43882,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/intervention-hydrocarbures-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "e40965ef-52",
+      "texte": "Régler sans manomètre, d'après la position de la vis",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -42748,6 +44190,14 @@
       ]
     },
     {
+      "cle": "e61b1176-111",
+      "texte": "Le détendeur électronique est commandé par un régulateur : il suit la grande plage de puissance d'un variateur.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "e62c8f50-24",
       "texte": "L'ouverture du détendeur",
       "type": "choix",
@@ -42834,6 +44284,14 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/desp-soupapes-securites/index.html"
+      ]
+    },
+    {
+      "cle": "e677b405-42",
+      "texte": "Les deux pressions se rejoignent en marche",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -43153,6 +44611,14 @@
       ]
     },
     {
+      "cle": "e7d03e57-68",
+      "texte": "La température de saturation se lit à partir de la pression mesurée.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "e7e3c577-619",
       "texte": "Voici une confusion fréquente, et elle conduit à dérégler une machine qui fonctionnait bien. Le détendeur haute pression fixe la haute pression : il contrôle la pression en amont, c'est son rôle. Les détendeurs des évaporateurs, eux, règlent la surchauffe de leur meuble. Ce sont deux organes différents, avec deux consignes différentes, et ils ne se remplacent pas. L'erreur à ne jamais commettre sur une machine transcritique : faire baisser la haute pression par réflexe, comme sur une installation à fluide de synthèse. Trop bas, l'effet frigorifique s'effondre — vous obtiendrez l'inverse de ce que vous cherchiez.",
       "type": "narration",
@@ -43389,6 +44855,14 @@
       ]
     },
     {
+      "cle": "e9669fd3-24",
+      "texte": "Il arrête le compresseur",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "e9792acb-48",
       "texte": "Les deux agissent exactement au même seuil réglé",
       "type": "choix",
@@ -43500,6 +44974,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/diagnostic-circuit-huile/module.js"
+      ]
+    },
+    {
+      "cle": "e9eccce6-44",
+      "texte": "Rien : sa longueur et son diamètre font tout",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -43627,6 +45109,14 @@
       ]
     },
     {
+      "cle": "ea7809bc-10",
+      "texte": "Le ressort",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "ea78a01e-28",
       "texte": "Branches bitube en parallèle",
       "type": "choix",
@@ -43721,6 +45211,14 @@
       "type": "feedback",
       "sources": [
         "packs/fluides/res/pose-manifold-2-voies-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "eaf617a4-24",
+      "texte": "Il égalise les pressions",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -43964,6 +45462,14 @@
       ]
     },
     {
+      "cle": "ec6670fb-27",
+      "texte": "Moteur à pression ordinaire",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "ec6e4281-34",
       "texte": "Repère du voyant et sens du regard",
       "type": "choix",
@@ -44075,6 +45581,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/voyant-liquide-pedagogique/app.js"
+      ]
+    },
+    {
+      "cle": "ed2b15e3-100",
+      "texte": "Le capillaire est un simple tube : sa longueur et son diamètre ont été choisis une fois pour toutes.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -44270,6 +45784,14 @@
       ]
     },
     {
+      "cle": "ee32370a-28",
+      "texte": "On tourne la vis de la vanne",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
+      ]
+    },
+    {
       "cle": "ee50dd6b-48",
       "texte": "Il double le compresseur de tête en cas de panne",
       "type": "choix",
@@ -44283,6 +45805,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/hydrocarbures-a1-a2/app.js"
+      ]
+    },
+    {
+      "cle": "ee741665-10",
+      "texte": "Capillaire",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -44620,6 +46150,14 @@
       "type": "narration",
       "sources": [
         "packs/fluides/res/hydrocarbures-a1-a2/app.js"
+      ]
+    },
+    {
+      "cle": "efb6e463-55",
+      "texte": "Quelle vanne dose le liquide par sa durée d'ouverture ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-electronique/app.js"
       ]
     },
     {
@@ -45384,6 +46922,14 @@
       ]
     },
     {
+      "cle": "f3bdd49a-45",
+      "texte": "Où trouve-t-on la valeur MOP d'un détendeur ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "f3cdfc91-71",
       "texte": "Le débit, les températures et leur écart portent leurs unités adaptées.",
       "type": "feedback",
@@ -45414,6 +46960,14 @@
       "sources": [
         "hydrometro/stations/_commun/3d/electro3d.js",
         "aerorezo/stations/_commun/3d/electro3d.js"
+      ]
+    },
+    {
+      "cle": "f3eb787a-61",
+      "texte": "Une machine à variateur de vitesse : quel détendeur choisir ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
       ]
     },
     {
@@ -45457,6 +47011,14 @@
       ]
     },
     {
+      "cle": "f463c442-14",
+      "texte": "Il la supprime",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "f464329c-412",
       "texte": "Deux questions, sans note. Retenez surtout ceci, parce que c'est ce qui sépare un professionnel d'un amateur. Deux grandeurs se cachent derrière le mot humidité. La quantité réelle de vapeur ne change que si on ajoute ou si on retire de l'eau. L'humidité relative, elle, change dès que la température bouge, même sans qu'une goutte n'entre ni ne sorte. Et un relevé d'humidité sans sa température ne sert à rien.",
       "type": "narration",
@@ -45478,6 +47040,14 @@
       "type": "feedback",
       "sources": [
         "hydrometro/stations/energie/station.js"
+      ]
+    },
+    {
+      "cle": "f482c41c-60",
+      "texte": "Le compresseur s'arrête. Que fait le détendeur automatique ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
       ]
     },
     {
@@ -45618,6 +47188,14 @@
       "type": "capture",
       "sources": [
         "packs/fluides/res/co2-r744/transcritique/mesures"
+      ]
+    },
+    {
+      "cle": "f532d849-550",
+      "texte": "Une chambre chaude démarre. Le tube de sortie est chaud, le bulbe aussi. Les deux détendeurs ouvrent en grand, et beaucoup de liquide bout. La basse pression monte. Avec le détendeur MOP, la pression du bulbe, en violet, est plafonnée. Quand la basse pression la rejoint, le détendeur ne peut plus ouvrir davantage : la basse pression s'arrête. Sans MOP, le détendeur reste grand ouvert, et la basse pression monte encore. Le compresseur aspire alors une vapeur dense. Son moteur force : regardez la jauge. Avec le MOP, le moteur n'est pas surchargé.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -45781,6 +47359,14 @@
       ]
     },
     {
+      "cle": "f5e9c2ce-219",
+      "texte": "Le bouchon est de la glace (humidité) ou de la saleté ; on voit souvent du givre sur le tube. Le filtre déshydrateur, juste avant, sert à l'éviter. On ne raccourcit pas et on ne pince pas un capillaire : on le remplace.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
+      ]
+    },
+    {
       "cle": "f6030cf9-34",
       "texte": "AUCUNE MARGE · réglage à justifier",
       "type": "interface",
@@ -45790,11 +47376,27 @@
       ]
     },
     {
+      "cle": "f608d09f-67",
+      "texte": "Dans un détendeur automatique, qui pousse la membrane pour ouvrir ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
       "cle": "f62af853-9",
       "texte": "1,8 L/min",
       "type": "choix",
       "sources": [
         "hydrometro/lignes/P/parcours.js"
+      ]
+    },
+    {
+      "cle": "f6384efe-43",
+      "texte": "Où prend-on le tube d'égalisation externe ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -45815,6 +47417,12 @@
         "packs/fluides/res/compresseur-interactif/app.js",
         "packs/fluides/res/condenseur-interactif/app.js",
         "packs/fluides/res/cours-classes-securite/index.html",
+        "packs/fluides/res/detendeur-automatique/app.js",
+        "packs/fluides/res/detendeur-egalisation-externe/app.js",
+        "packs/fluides/res/detendeur-electronique/app.js",
+        "packs/fluides/res/detendeur-mop/app.js",
+        "packs/fluides/res/detendeurs-famille/app.js",
+        "packs/fluides/res/detente-capillaire/app.js",
         "packs/fluides/res/etancheite-interactive/app.js",
         "packs/fluides/res/evaporateur-interactif/app.js",
         "packs/fluides/res/hydrocarbures-a1-a2/app.js",
@@ -45905,6 +47513,14 @@
       ]
     },
     {
+      "cle": "f6c2efe5-115",
+      "texte": "La tête doit rester plus chaude que le bulbe : sinon la charge migre vers la tête et le détendeur perd le contrôle.",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "f6d1683f-43",
       "texte": "La surchauffe au refoulement du compresseur",
       "type": "choix",
@@ -45974,6 +47590,22 @@
       "type": "data-narration",
       "sources": [
         "legislation/stations/thermique-cee/index.html"
+      ]
+    },
+    {
+      "cle": "f7751b2b-69",
+      "texte": "Une machine à glace en écailles, dont la charge ne change presque pas",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-automatique/app.js"
+      ]
+    },
+    {
+      "cle": "f77e22fe-26",
+      "texte": "Pour réchauffer le liquide",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -46121,6 +47753,15 @@
       ]
     },
     {
+      "cle": "f812772d-11",
+      "texte": "Peu importe",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js",
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "f81d2226-19",
       "texte": "Le gaz HP se détend",
       "type": "interface",
@@ -46182,6 +47823,14 @@
       "type": "fiche",
       "sources": [
         "packs/fluides/cartes.js#rev-g8"
+      ]
+    },
+    {
+      "cle": "f87ad3cf-598",
+      "texte": "Regardez comment la pression baisse le long du tube. Le liquide entre chaud, sous haute pression : le premier manomètre est haut. Le tube est très fin et très long. Le liquide frotte contre la paroi, et à chaque mètre il perd un peu de pression. On appelle ça la perte de charge. Les manomètres descendent l'un après l'autre. Quand la pression est assez basse, le liquide commence à bouillir : les premières bulles naissent avant la sortie. Elles grossissent, et le fluide se refroidit. À la sortie, c'est un mélange de liquide et de vapeur, froid, sous basse pression. Il entre dans l'évaporateur.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
@@ -46272,6 +47921,14 @@
       "type": "fragment",
       "sources": [
         "packs/fluides/res/chaleur-circuit-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "f9229159-53",
+      "texte": "Il reste trop fermé : l'évaporateur manque de liquide",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
       ]
     },
     {
@@ -46931,6 +48588,14 @@
       ]
     },
     {
+      "cle": "fcc5238f-572",
+      "texte": "Regardez le bulbe de près. Il ne contient qu'une petite charge de fluide, en violet. Sa pression passe par le capillaire. Quand le bulbe chauffe, le liquide bout, et la pression monte : l'aiguille du manomètre avance. Plus le bulbe est chaud, moins il reste de liquide. Puis le dernier liquide est parti. Toute la charge est en vapeur. Le thermomètre monte encore, mais l'aiguille ne bouge presque plus. La pression du bulbe est plafonnée. Avec une charge ordinaire, il resterait du liquide, et la pression continuerait de monter. Voilà ce qui rend le bulbe MOP différent.",
+      "type": "narration",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "fcc8cc6b-834",
       "texte": "Deuxième risque. Le dioxyde de carbone est plus lourd que l'air et s'accumule en point bas. C'est le risque qui tue. Une fuite dans un local technique enterré, une cave ou une fosse remplit le volume par le bas, là où se trouve l'intervenant. Détection dioxyde de carbone et ventilation du local technique selon norme N F E N 378. Ne jamais intervenir seul dans un local machine confiné. Vérifier avant d'entrer que la détection est en service et que l'alarme n'est pas déjà déclenchée. Un masque à cartouche ne protège de rien ici : Il ne filtre pas le dioxyde de carbone et ne fabrique pas d'oxygène. Face à une atmosphère appauvrie en oxygène, seuls l'évacuation et la ventilation protègent. Ce que montre le schéma. Le gaz ne monte pas : il remplit le local par le bas. Respirable à hauteur de visage, mortel en bas de l'escalier.",
       "type": "capture",
@@ -46971,6 +48636,14 @@
       ]
     },
     {
+      "cle": "fceb8dbd-44",
+      "texte": "Faire chuter la pression et doser le liquide",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeurs-famille/app.js"
+      ]
+    },
+    {
       "cle": "fcf32db6-546",
       "texte": "Le réservoir est un appareil sous pression, et cela commande la façon d'intervenir. Ses voyants, ses vannes et ses raccords sont autant de points de fuite potentiels, à contrôler lors des vérifications d'étanchéité. Et une règle qui ne souffre aucune exception : on ne démonte jamais un voyant sur un réservoir sous pression. Cela paraît évident écrit ainsi, mais la tentation existe devant un voyant encrassé qu'on n'arrive plus à lire. Toute intervention passe par une mise en sécurité préalable, selon la procédure applicable à l'installation.",
       "type": "narration",
@@ -46992,6 +48665,14 @@
       "type": "choix",
       "sources": [
         "packs/fluides/res/regulateur-electronique-interactif/app.js"
+      ]
+    },
+    {
+      "cle": "fd260c13-20",
+      "texte": "Il ouvre encore plus",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
       ]
     },
     {
@@ -47139,6 +48820,14 @@
       ]
     },
     {
+      "cle": "fdfa155c-35",
+      "texte": "Pression maximale de fonctionnement",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-mop/app.js"
+      ]
+    },
+    {
       "cle": "fdffbfaf-252",
       "texte": "Deuxième contrôle. Lors de l'inspection du conduit de dégivrage à l'air chaud, quel trio faut-il contrôler ? Revenez à l'écran neuf si vous hésitez : trois éléments y étaient nommés ensemble, et ils forment le chemin complet de l'air chaud et de l'eau.",
       "type": "narration",
@@ -47203,6 +48892,14 @@
       ]
     },
     {
+      "cle": "fe3eba9a-50",
+      "texte": "Il la compense : la membrane lit la bonne pression",
+      "type": "choix",
+      "sources": [
+        "packs/fluides/res/detendeur-egalisation-externe/app.js"
+      ]
+    },
+    {
       "cle": "fe403f4b-107",
       "texte": "Toutes les branches dépendent de la même pompe : on règle avec méthode et on revérifie l'ensemble à la fin.",
       "type": "feedback",
@@ -47248,6 +48945,14 @@
       "type": "voiceStep",
       "sources": [
         "packs/fluides/res/chaleur-interactive/app.js"
+      ]
+    },
+    {
+      "cle": "fecc5c92-63",
+      "texte": "Pourquoi braser le capillaire contre la conduite d'aspiration ?",
+      "type": "feedback",
+      "sources": [
+        "packs/fluides/res/detente-capillaire/app.js"
       ]
     },
     {
