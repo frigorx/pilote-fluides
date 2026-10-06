@@ -3,7 +3,7 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
-> ## 06/10 — FILMS CLIMAT : L'ERREUR « UNEXPECTED TOKEN '-' » LEVÉE (branche `claude/lucid-lamport-bye5mo`, pas sur `main`)
+> ## 06/10 — FILMS CLIMAT : L'ERREUR « UNEXPECTED TOKEN '-' » LEVÉE, LA VOIX SEULE HORLOGE (feu vert : autonomie totale)
 >
 > `film-ozone/` et `film-effet-de-serre/` levaient à chaque ouverture `SyntaxError: Failed to execute 'appendChild'
 > on 'Node': Unexpected token '-'` (`support.js:1446`). **Cause** : le navigateur exécute les `<script>` du `<helmet>`
@@ -15,8 +15,15 @@
 > empêchait une seconde voix superposée. Vérifié dans Chromium : 0 erreur, 1 seule `Audio`, film joué en entier, l'image
 > suit la voix. Les 52 autres pages à `<helmet>` (films et planches Régulés, KVR/NRD, sécurité du Studio) : 0 erreur.
 > **Piège** : dans un `<helmet>`, jamais d'espace suivi de `motCamel =` ; un script de page n'a rien à y faire.
-> **Reste, antérieur** : le ▶ du lecteur du film démarre l'image SANS la voix. Le relais (`closest('button[title^="Play/pause"]')`)
-> arrive après que React a remplacé l'icône : la cible est un `<path>` détaché. Piste : `e.composedPath()`. Non corrigé.
+> **Toutes les commandes du lecteur pilotent la voix** (2e temps, même jour). Avant : le ▶ du lecteur, l'espace, les
+> flèches, Origine, « 0 », le retour au début et le curseur faisaient avancer l'image sur l'horloge du moteur, voix muette
+> (l'ancien relais du ▶ n'a jamais marché : React a déjà redessiné l'icône quand le clic remonte, `closest()` part d'un
+> `<path>` détaché ; on lit `e.composedPath()`). Le clavier est pris en phase de capture, avant le composant. Bouton
+> « Export video » masqué : il parle à l'éditeur Claude Design, absent du site. Banc de 21 contrôles vert sur les deux films.
+> **Piège de banc** : `python -m http.server` ne sert pas les plages (`Range`) : le MP3 ne peut pas sauter à `VOIX_DEBUT`,
+> la voix lit le préambule et tout saut retombe à 0. Le site répond 206 : tester les films avec un serveur qui gère Range.
+> **À décider (Franck)** : notre barre « Écouter le film » recouvre 85 % du curseur du lecteur sur ordinateur, 100 % sur
+> téléphone (antérieur). Proposition : une seule barre, la nôtre, avec retour au début et curseur de position.
 > `version.mjs` n'est pas concerné : les films n'entrent pas dans l'empreinte et les pages HTML sont servies réseau
 > d'abord. Lancé depuis un clone neuf, il réécrit 22 clés : la clé dépend de fichiers absents de git (`relecture.html`
 > et d'autres), donc ces clés n'ont pas été commitées.

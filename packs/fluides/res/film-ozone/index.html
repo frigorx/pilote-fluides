@@ -56,6 +56,11 @@ main { height: 100%; }
 .transcription ol { margin: 0; padding: 0 16px 14px 34px; max-height: 62vh; overflow: auto; }
 .transcription li { margin: 6px 0; }
 @media print { .transcription { position: static; max-width: none; } }
+/* « Export video » appartient à l'éditeur Claude Design : hors de lui, son
+   message ne trouve aucun destinataire. Un bouton qui ne fait rien n'a pas
+   sa place devant un élève. !important : le composant pose son display en
+   style en ligne, qu'une règle ordinaire ne bat pas. */
+button[title="Export video"] { display: none !important; }
 </style>
   <script src="../../../../moteur/plan-donnees.js"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
@@ -195,16 +200,78 @@ a:hover { color: #ff6b35; }
       metBouton("▶ Reprendre");
     }
   });
-  /* Le ▶ propre à la barre de transport du moteur (celle du composant, pas la
-     nôtre) doit lui aussi lancer la voix : on relaie son clic vers le bouton
-     « Écouter le film » existant, qui sait déjà tout faire. Pas de boucle à
-     craindre dans l'autre sens : pousse() ne clique jamais ce bouton, il ne
-     fait que pousser le temps à la scène. */
+  /* LA VOIX RESTE LA SEULE HORLOGE, quelle que soit la commande (06/10/2026).
+     Le composant a sa propre barre (▶/⏸, retour au début, curseur) et son
+     propre clavier (espace, flèches, Origine, 0). Livrées à elles-mêmes, ces
+     commandes font avancer l'image sur l'horloge du moteur, voix muette.
+     On les ramène toutes sur la voix :
+     · ▶/⏸ et retour au début : relayés APRÈS le composant. Le bouton visé se
+       lit dans e.composedPath(), pas par closest() : quand le clic arrive
+       ici, React a déjà redessiné l'icône et la cible n'est plus dans la
+       page. C'est ce qui rendait l'ancien relais du ▶ inopérant ;
+     · le curseur : la voix est placée au point visé, l'image la suit ;
+     · le clavier : pris AVANT le composant (phase de capture), mêmes
+       touches, même exception (les champs de saisie : le curseur « Débit »).
+     Pas de boucle : pousse() ne clique jamais rien, il pousse le temps. */
+  function placer(t) {
+    if (!scene && !trouveScene()) return;
+    t = Math.max(0, Math.min(t, duree_film));
+    audio.currentTime = VOIX_DEBUT + (t / duree_film) * (VOIX_FIN - VOIX_DEBUT);
+    pousse(t, !audio.paused);
+    if (audio.paused && t > 0 && t < duree_film) metBouton("▶ Reprendre");
+  }
+  function commandeVisee(e, titre) {
+    var chemin = e.composedPath ? e.composedPath() : [];
+    for (var i = 0; i < chemin.length; i++) {
+      var n = chemin[i];
+      if (n.tagName === "BUTTON" && (n.getAttribute("title") || "").indexOf(titre) === 0) return true;
+    }
+    return false;
+  }
   document.addEventListener("click", function (e) {
-    var natif = e.target && e.target.closest && e.target.closest('button[title^="Play/pause"]');
-    if (!natif) return;
-    document.getElementById("voix-bouton").click();
+    if (commandeVisee(e, "Play/pause")) {
+      /* Le composant vient de lancer (ou d'arrêter) SA lecture : on la coupe
+         sur l'instant de la voix, puis la voix décide. */
+      if (scene) pousse(avancement(), false);
+      document.getElementById("voix-bouton").click();
+    } else if (commandeVisee(e, "Return to start")) {
+      placer(0);
+    }
   });
+  var piste = null;
+  function suitPiste(e) {
+    var r = piste.getBoundingClientRect();
+    if (r.width > 0) placer((e.clientX - r.left) / r.width * duree_film);
+  }
+  document.addEventListener("mousedown", function (e) {
+    var chemin = e.composedPath ? e.composedPath() : [];
+    for (var i = 0; i < chemin.length; i++) {
+      var n = chemin[i];
+      if (n.matches && n.matches('[data-omelette-chrome] > div[style*="cursor: pointer"]')) {
+        piste = n; suitPiste(e); return;
+      }
+    }
+  });
+  window.addEventListener("mousemove", function (e) { if (piste) suitPiste(e); });
+  window.addEventListener("mouseup", function () { piste = null; });
+  window.addEventListener("keydown", function (e) {
+    var tag = e.target && e.target.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
+    if (e.code === "Space") {
+      e.stopPropagation();
+      /* Bouton, résumé, lien : l'élément fait son propre travail ; si c'est
+         le ▶ du composant, son clic passe par le relais ci-dessus. */
+      if (tag === "BUTTON" || tag === "SUMMARY" || tag === "A") return;
+      e.preventDefault();
+      document.getElementById("voix-bouton").click();
+    } else if (e.code === "ArrowLeft" || e.code === "ArrowRight") {
+      e.stopPropagation();
+      placer(avancement() + (e.code === "ArrowLeft" ? -1 : 1) * (e.shiftKey ? 1 : 0.1));
+    } else if (e.key === "0" || e.code === "Home") {
+      e.stopPropagation();
+      placer(0);
+    }
+  }, true);
   document.addEventListener("input", function (e) {
     if (!e.target || e.target.id !== "voix-debit") return;
     var v = parseFloat(e.target.value);
