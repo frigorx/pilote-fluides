@@ -3,6 +3,25 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 06/10 (suite) — VIGNETTES « CE QU'ON VA VOIR + LE RÉSEAU », LE CINÉMA DU STUDIO, YOUTUBE PAR FILM
+>
+> Demandes de F. Henninot. **(1) Vignettes de l'accueil** : « est-ce que ça cause vraiment ? Non » — une image de ce
+> qu'on va voir ET le plan du réseau, « comme ça on n'est pas surpris ». Champ `illustration` de `moteur/reseaux.js` :
+> présent, `build/accueil.mjs` coupe la vignette en deux (illustration | plan étiqueté « le réseau »). Images dans
+> `icones/reseaux/illustrations/` : thermo-techno (chambre froide), Législation (immeuble des règles), ÉlectroRézo
+> (armoire) photographiés dans la **maquette 3D du quartier** ; HydroMétro (l'installation 3D de la station Boucle) ;
+> AéroRézo (la CTA en coupe, station architecture-cta, temps Comprendre) ; HoCourant et R408 (leurs propres
+> illustrations). CuivRézo et CartoClim gardent leur image, leur plan est photographié (`icones/reseaux/cuivrezo.webp`,
+> `cartoclim.webp`). JouéRézo et SimuRézo inchangés (« ça cause bien »). **(2) Studio** : le cinéma du quartier en 3D,
+> plein cadre (`plein: true`), pastille « ▶ Les films aussi sur YouTube » (`pastille`). **(3) YouTube par film** :
+> `moteur/youtube-films.js` = UNE ligne par film publié (page du film → identifiant YouTube). Puis
+> `node build/retour-accueil.mjs` : la page du film reçoit `data-youtube` (« ▶ Voir sur YouTube » dans sa barre) et la
+> clé du fichier est renouvelée sur le Studio, dont la carte du film reçoit « ▶ YouTube ». En ligne au 06/10 : tomes 1, 2,
+> 3 du Voyage ; la chaîne a DEUX mises en ligne du tome 1 (`akt37GPk2zs`, la plus récente, est reliée ; `EtOIekNToXo`).
+> **Refaire une photo du quartier** : une page temporaire qui monte `quartier/entree.js` en 1800×1000 (`capture: true`,
+> `rotationAuto: false`), une copie de `entree.js` sans la teinte de sélection ni l'assombrissement, `api.selectionner(zone)`
+> puis capture du canvas — fichiers temporaires à NE PAS committer (Chromium headless : `--use-angle=swiftshader`).
+
 > ## 06/10 — LE SITE S'APPELLE INERWEB.FR, CHAQUE PAGE MÈNE À SON RÉSEAU, LA CHAÎNE YOUTUBE (branche `claude/jolly-feynman-0jexaa`)
 >
 > Demandes de F. Henninot. **(1) L'entrée du site est inerweb.fr** : gommer l'effet « Éducation nationale » d'un accueil
