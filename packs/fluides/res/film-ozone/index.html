@@ -56,11 +56,59 @@ main { height: 100%; }
 .transcription ol { margin: 0; padding: 0 16px 14px 34px; max-height: 62vh; overflow: auto; }
 .transcription li { margin: 6px 0; }
 @media print { .transcription { position: static; max-width: none; } }
-/* « Export video » appartient à l'éditeur Claude Design : hors de lui, son
-   message ne trouve aucun destinataire. Un bouton qui ne fait rien n'a pas
-   sa place devant un élève. !important : le composant pose son display en
-   style en ligne, qu'une règle ordinaire ne bat pas. */
-button[title="Export video"] { display: none !important; }
+/* UNE SEULE BARRE, LA NÔTRE (décision de F. Henninot, 06/10/2026).
+   Le composant Claude Design dessine sa propre barre (lecture, retour, curseur,
+   export vers l'éditeur) : elle reste en place, car le film se met à l'échelle
+   en déduisant sa hauteur, mais elle devient invisible. La nôtre se loge dans
+   cette bande du bas, sans couvrir l'image, et toutes ses commandes passent
+   par la voix, qui reste l'horloge du film. */
+[data-omelette-chrome] { visibility: hidden !important; }
+#voix-barre {
+  position: fixed; left: 50%; bottom: 2px; transform: translateX(-50%); z-index: 99;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 12px;
+  width: max-content; max-width: calc(100vw - 16px); box-sizing: border-box;
+  background: #FFFDF8; border: 2px solid #1B3A63; border-radius: 20px; padding: 2px 14px;
+  box-shadow: 0 4px 14px rgba(27,58,99,.25);
+  font: 600 15px Calibri, 'Segoe UI', sans-serif; color: #1B3A63;
+}
+#voix-barre button { font: inherit; font-weight: 700; line-height: 1.2; cursor: pointer; border-radius: 999px; }
+#voix-debut {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 28px; padding: 0; background: #FFFDF8; color: #1B3A63; border: 2px solid #1B3A63;
+}
+#voix-bouton { background: #1B3A63; color: #FFFDF8; border: 2px solid #FF6B35; padding: 3px 16px; min-width: 9.8em; }
+/* min-width : le plus long libellé courant (« ▶ Écouter le film »). Sans elle, la barre
+   change de largeur à chaque lecture/pause et le curseur se décale sous la souris. */
+#voix-barre button:focus-visible, #voix-barre input:focus-visible { outline: 3px solid #FF6B35; outline-offset: 2px; }
+.voix-groupe { display: flex; align-items: center; gap: 8px; }
+#voix-position { width: 180px; accent-color: #FF6B35; }
+#voix-debit { width: 90px; accent-color: #FF6B35; }
+#voix-temps, #voix-valeur { font-variant-numeric: tabular-nums; white-space: nowrap; }
+#voix-valeur { min-width: 40px; }
+/* Téléphone : le curseur de position prend toute la première ligne. */
+@media (max-width: 640px) {
+  #voix-barre { width: calc(100vw - 16px); font-size: 14px; padding: 4px 10px; gap: 4px 8px; }
+  .voix-groupe-position { order: -1; flex: 1 1 100%; }
+  #voix-position { flex: 1; width: auto; min-width: 0; }
+  #voix-debit { width: 64px; }
+}
+/* Petit téléphone : deux lignes jusqu'à 360 px de large, pas trois. */
+@media (max-width: 400px) {
+  #voix-barre { font-size: 13px; padding: 4px 8px; gap: 4px 6px; }
+  .voix-groupe { gap: 6px; }
+  #voix-debit { width: 52px; }
+  #voix-valeur { min-width: 34px; }
+}
+@media print { #voix-barre { display: none; } }
+/* Le filigrane inerWeb (moteur/marque.js) se range dans le pied du film
+   (data-marque-hote) : fixé en bas à gauche, il passait sous la barre de
+   lecture jusqu'à 1280 px de large. On le retrouve en faisant défiler, avec
+   la « station suivante ». « body » l'emporte sur la feuille du script. */
+.pied-du-film { position: relative; height: 40px; }
+/* Réserve sous le dernier élément de la page, à la hauteur de la barre de
+   lecture (posée par le script) : la « station suivante » reste cliquable. */
+body::after { content: ""; display: block; height: var(--voix-reserve, 0px); }
+body .pied-du-film > #marque-inerweb { left: 12px; top: 8px; pointer-events: auto; }
 /* La barre « inerweb.fr › Studio » (moteur/retour-accueil.js) se pose en tête
    de page, mais le film est en position:absolute sur toute la fenêtre : il la
    recouvrait, invisible et sans clic. On la sort du flux et on la pose en haut
@@ -97,6 +145,7 @@ a:hover { color: #ff6b35; }
 <x-import component-from-global-scope="OzonePiece" from="./animations-v3.js ./tweaks-panel.js ./ozone.js" hint-size="100%,100%"></x-import>
 </x-dc>
 </main>
+<footer class="pied-du-film" data-marque-hote></footer>
 <!-- La bande son vit HORS du <helmet>, exprès (06/10/2026).
      Le navigateur exécute les <script> du <helmet> en lisant la page ; le
      runtime Claude Design (support.js) les réinjecte ensuite dans <head>,
@@ -109,7 +158,7 @@ a:hover { color: #ff6b35; }
 <script>
 /* Bande son : la voix (fichier local) est l'horloge du film.
    Asservissement par l'événement de pilotage du cadre (data-om-seek-to-time-frame) ;
-   le curseur ne règle que la vitesse du son, l'image suit — jamais de dérive. */
+   le curseur « Débit » ne règle que la vitesse du son, l'image suit — jamais de dérive. */
 (function () {
   /* FENÊTRE UTILE DE LA BANDE SON — 23/08/2026, retour de F. Henninot.
      Même défaut que sur le film « effet de serre » : le fichier fabriqué
@@ -134,8 +183,10 @@ a:hover { color: #ff6b35; }
     return !!scene && duree_film > 0;
   }
   function pousse(t, enLecture) {
+    t = Math.max(0, Math.min(t, duree_film));
     scene.dispatchEvent(new CustomEvent("data-om-seek-to-time-frame",
-      { detail: { time: Math.max(0, Math.min(t, duree_film)), playing: enLecture } }));
+      { detail: { time: t, playing: enLecture } }));
+    afficheTemps(t);
   }
   /* L'avancement se compte sur la fenêtre utile, pas sur le fichier entier :
      sans cela, l'image partirait avec le préambule et finirait en avance. */
@@ -156,19 +207,52 @@ a:hover { color: #ff6b35; }
     raf = requestAnimationFrame(synchronise);
   }
 
+  /* LA barre du film (styles dans le <style> de la page, sous #voix-barre). */
   var barre = document.createElement("div");
-  barre.setAttribute("style",
-    "position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:99;" +
-    "display:flex;align-items:center;gap:14px;background:#FFFDF8;border:2px solid #1B3A63;" +
-    "border-radius:999px;padding:8px 18px;box-shadow:0 4px 14px rgba(27,58,99,.25);" +
-    "font:600 15px Calibri,'Segoe UI',sans-serif;color:#1B3A63");
+  barre.id = "voix-barre";
+  barre.setAttribute("role", "group");
+  barre.setAttribute("aria-label", "Lecture du film");
   barre.innerHTML =
-    '<button id="voix-bouton" style="font:inherit;font-weight:700;background:#1B3A63;color:#FFFDF8;' +
-    'border:2px solid #FF6B35;border-radius:999px;padding:6px 16px;cursor:pointer">▶ Écouter le film</button>' +
-    '<label style="display:flex;align-items:center;gap:8px">Débit' +
-    '<input id="voix-debit" type="range" min="0.9" max="1.3" step="0.05" value="1" style="width:130px;accent-color:#FF6B35">' +
-    '<span id="voix-valeur" style="min-width:44px;font-variant-numeric:tabular-nums">1,00×</span></label>';
-  document.addEventListener("DOMContentLoaded", function () { document.body.appendChild(barre); });
+    '<button id="voix-debut" type="button" title="Revenir au début" aria-label="Revenir au début">' +
+    '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">' +
+    '<path d="M3 2v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+    '<path d="M12 2L5 7l7 5z" fill="currentColor"/></svg></button>' +
+    '<button id="voix-bouton" type="button">▶ Écouter le film</button>' +
+    '<span class="voix-groupe voix-groupe-position">' +
+    '<input id="voix-position" type="range" min="0" max="1" step="0.1" value="0" aria-label="Position dans le film">' +
+    '<span id="voix-temps">0:00</span></span>' +
+    '<label class="voix-groupe">Débit' +
+    '<input id="voix-debit" type="range" min="0.9" max="1.3" step="0.05" value="1">' +
+    '<span id="voix-valeur">1,00×</span></label>';
+  /* Le bas de page (pied du film, « station suivante ») doit rester
+     atteignable sous la barre fixe : on lui réserve la hauteur de la barre,
+     qui change avec la largeur (une ligne sur ordinateur, deux au téléphone).
+     La réserve est body::after (voir la feuille) : un padding de <body> ne
+     servirait à rien, son contenu déborde de sa hauteur fixée à l'écran. */
+  function reserveBas() {
+    document.documentElement.style.setProperty("--voix-reserve", (barre.offsetHeight + 6) + "px");
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.appendChild(barre);
+    reserveBas();
+    if (window.ResizeObserver) new ResizeObserver(reserveBas).observe(barre);
+  });
+
+  /* Le curseur de position et le compteur suivent l'image : tout ce qui la
+     déplace passe par pousse(). Pendant qu'on tient le curseur, on ne lui
+     reprend pas la main. */
+  var curseurTenu = false, secondeAffichee = -1;
+  function mmss(s) { s = Math.floor(s); return Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2); }
+  function afficheTemps(t) {
+    var curseur = document.getElementById("voix-position");
+    if (!curseur || !duree_film) return;
+    if (+curseur.max !== duree_film) { curseur.max = duree_film; secondeAffichee = -1; }
+    if (!curseurTenu) curseur.value = t;
+    if (Math.floor(t) === secondeAffichee) return;
+    secondeAffichee = Math.floor(t);
+    document.getElementById("voix-temps").textContent = mmss(t) + " / " + mmss(duree_film);
+    curseur.setAttribute("aria-valuetext", mmss(t) + " sur " + mmss(duree_film));
+  }
 
   function metBouton(texte) { document.getElementById("voix-bouton").textContent = texte; }
 
@@ -185,7 +269,7 @@ a:hover { color: #ff6b35; }
     if (!ios) return;
     var aide = document.createElement("div");
     aide.setAttribute("style",
-      "position:fixed;left:50%;transform:translateX(-50%);bottom:64px;z-index:99;" +
+      "position:fixed;left:50%;transform:translateX(-50%);bottom:" + (barre.offsetHeight + 12) + "px;z-index:99;" +
       "background:#FFFDF8;border:1.5px solid #1B3A63;border-radius:10px;padding:6px 14px;" +
       "max-width:88vw;text-align:center;font:14px Calibri,'Segoe UI',sans-serif;" +
       "color:#1B3A63;box-shadow:0 4px 14px rgba(27,58,99,.18)");
@@ -211,79 +295,53 @@ a:hover { color: #ff6b35; }
     }
   });
   /* LA VOIX RESTE LA SEULE HORLOGE, quelle que soit la commande (06/10/2026).
-     Le composant a sa propre barre (▶/⏸, retour au début, curseur) et son
-     propre clavier (espace, flèches, Origine, 0). Livrées à elles-mêmes, ces
-     commandes font avancer l'image sur l'horloge du moteur, voix muette.
-     On les ramène toutes sur la voix :
-     · ▶/⏸ et retour au début : relayés APRÈS le composant. Le bouton visé se
-       lit dans e.composedPath(), pas par closest() : quand le clic arrive
-       ici, React a déjà redessiné l'icône et la cible n'est plus dans la
-       page. C'est ce qui rendait l'ancien relais du ▶ inopérant ;
-     · le curseur : la voix est placée au point visé, l'image la suit ;
-     · le clavier : pris AVANT le composant (phase de capture), mêmes
-       touches, même exception (les champs de saisie : le curseur « Débit »).
-     Pas de boucle : pousse() ne clique jamais rien, il pousse le temps. */
+     Retour au début, curseur de position et clavier placent la voix ; pousse()
+     amène l'image au même instant. Pas de boucle : pousse() ne clique jamais
+     rien, il pousse le temps. */
   function placer(t) {
     if (!scene && !trouveScene()) return;
     t = Math.max(0, Math.min(t, duree_film));
     audio.currentTime = VOIX_DEBUT + (t / duree_film) * (VOIX_FIN - VOIX_DEBUT);
     pousse(t, !audio.paused);
-    if (audio.paused && t > 0 && t < duree_film) metBouton("▶ Reprendre");
-  }
-  function commandeVisee(e, titre) {
-    var chemin = e.composedPath ? e.composedPath() : [];
-    for (var i = 0; i < chemin.length; i++) {
-      var n = chemin[i];
-      if (n.tagName === "BUTTON" && (n.getAttribute("title") || "").indexOf(titre) === 0) return true;
-    }
-    return false;
+    if (audio.paused) metBouton(t <= 0 ? "▶ Écouter le film" : t < duree_film ? "▶ Reprendre" : "▶ Revoir le film");
   }
   document.addEventListener("click", function (e) {
-    if (commandeVisee(e, "Play/pause")) {
-      /* Le composant vient de lancer (ou d'arrêter) SA lecture : on la coupe
-         sur l'instant de la voix, puis la voix décide. */
-      if (scene) pousse(avancement(), false);
-      document.getElementById("voix-bouton").click();
-    } else if (commandeVisee(e, "Return to start")) {
-      placer(0);
-    }
+    if (e.target && e.target.closest && e.target.closest("#voix-debut")) placer(0);
   });
-  var piste = null;
-  function suitPiste(e) {
-    var r = piste.getBoundingClientRect();
-    if (r.width > 0) placer((e.clientX - r.left) / r.width * duree_film);
-  }
-  document.addEventListener("mousedown", function (e) {
-    var chemin = e.composedPath ? e.composedPath() : [];
-    for (var i = 0; i < chemin.length; i++) {
-      var n = chemin[i];
-      if (n.matches && n.matches('[data-omelette-chrome] > div[style*="cursor: pointer"]')) {
-        piste = n; suitPiste(e); return;
-      }
-    }
+  document.addEventListener("pointerdown", function (e) {
+    if (e.target && e.target.id === "voix-position") curseurTenu = true;
   });
-  window.addEventListener("mousemove", function (e) { if (piste) suitPiste(e); });
-  window.addEventListener("mouseup", function () { piste = null; });
+  window.addEventListener("pointerup", function () { curseurTenu = false; });
+  window.addEventListener("pointercancel", function () { curseurTenu = false; });
+  /* Le composant garde son propre clavier (espace, flèches, Origine, 0), qui
+     ferait avancer l'image sans la voix : on le prend AVANT lui (phase de
+     capture). ← → : une seconde, cinq avec Maj. Les champs de saisie gardent
+     leurs touches (le curseur « Débit »), sauf le curseur de position, qui
+     suit les mêmes pas que le reste de la page. */
   window.addEventListener("keydown", function (e) {
-    var tag = e.target && e.target.tagName;
-    if (tag === "INPUT" || tag === "TEXTAREA") return;
+    var cible = e.target, tag = cible && cible.tagName;
+    var surPosition = !!cible && cible.id === "voix-position";
+    if ((tag === "INPUT" && !surPosition) || tag === "TEXTAREA") return;
+    var recul = e.code === "ArrowLeft" || (surPosition && e.code === "ArrowDown");
+    var avance = e.code === "ArrowRight" || (surPosition && e.code === "ArrowUp");
     if (e.code === "Space") {
       e.stopPropagation();
-      /* Bouton, résumé, lien : l'élément fait son propre travail ; si c'est
-         le ▶ du composant, son clic passe par le relais ci-dessus. */
+      /* Bouton, résumé, lien : l'élément fait son propre travail. */
       if (tag === "BUTTON" || tag === "SUMMARY" || tag === "A") return;
       e.preventDefault();
       document.getElementById("voix-bouton").click();
-    } else if (e.code === "ArrowLeft" || e.code === "ArrowRight") {
-      e.stopPropagation();
-      placer(avancement() + (e.code === "ArrowLeft" ? -1 : 1) * (e.shiftKey ? 1 : 0.1));
+    } else if (recul || avance) {
+      e.stopPropagation(); e.preventDefault();
+      placer(avancement() + (recul ? -1 : 1) * (e.shiftKey ? 5 : 1));
     } else if (e.key === "0" || e.code === "Home") {
-      e.stopPropagation();
+      e.stopPropagation(); e.preventDefault();
       placer(0);
     }
   }, true);
   document.addEventListener("input", function (e) {
-    if (!e.target || e.target.id !== "voix-debit") return;
+    if (!e.target) return;
+    if (e.target.id === "voix-position") { placer(parseFloat(e.target.value)); return; }
+    if (e.target.id !== "voix-debit") return;
     var v = parseFloat(e.target.value);
     audio.playbackRate = v;
     document.getElementById("voix-valeur").textContent = v.toFixed(2).replace(".", ",") + "×";
