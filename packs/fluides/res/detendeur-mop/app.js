@@ -82,7 +82,7 @@ const QUIZ = [
     why: ["Non : si la tête est plus froide, le liquide de la charge s’y condense.", "Oui : la charge reste dans le bulbe, c’est lui qui commande.", "Non : l’emplacement compte. Une tête trop froide fait perdre le contrôle au détendeur."],
     explain: "La tête doit rester plus chaude que le bulbe : sinon la charge migre vers la tête et le détendeur perd le contrôle." },
   { q: "Où trouve-t-on la valeur MOP d’un détendeur ?", choices: ["On la règle avec la vis du détendeur", "Elle est marquée sur l’élément thermostatique (voir la notice)", "On la calcule avec la température de la chambre"], good: 1,
-    why: ["Non : la vis règle la surchauffe. La valeur MOP est fixée par la charge du bulbe.", "Oui : elle est marquée sur l’élément thermostatique et donnée par la notice du constructeur.", "Non : on ne la calcule pas et on ne l’invente pas : on la lit sur l’élément ou dans la notice."],
+    why: ["Non : la vis règle la surchauffe. La valeur MOP vient de la charge du bulbe ; la vis ne la déplace qu’un peu.", "Oui : elle est marquée sur l’élément thermostatique et donnée par la notice du constructeur.", "Non : on ne la calcule pas et on ne l’invente pas : on la lit sur l’élément ou dans la notice."],
     explain: "On ne l’invente pas : on la lit sur l’élément, et on suit la notice du constructeur." }
 ];
 function quizMarkup() {
