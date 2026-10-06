@@ -159,6 +159,14 @@ for (const vue of VUES) {
       if (n === 2 && vue.width > 760 && !txt.includes("consigne")) ko(`${vue.nom} écran 2 : pastille « consigne » absente`);
     }
 
+    // écrans 1 à 4 : la légende HTML des forces (gris = ressort, bleu = pression d'évaporation), sous le dessin, jamais sur un tracé
+    if (n <= 4) {
+      const lg = await page.locator(".au-legende").first().textContent();
+      if (!lg.includes("ressort (réglé par la vis) : ouvre") || !lg.includes("pression d’évaporation : ferme")) ko(`${vue.nom} écran ${n} : légende des forces absente (« ${lg.trim().slice(0, 70)} »)`);
+      const sous = await page.evaluate(() => { const l = document.querySelector(".au-legende"), s = document.querySelector(".ds-dessin svg.ds-svg"); if (!l || !s) return false; return l.getBoundingClientRect().top >= s.getBoundingClientRect().bottom - 1; });
+      if (!sous) ko(`${vue.nom} écran ${n} : la légende des forces chevauche le dessin`);
+    }
+
     await pasDefilement(`écran ${n} (${titre})`);
 
     // texte du cours ≥ 14 pt ; étiquettes des dessins ≥ 13 px

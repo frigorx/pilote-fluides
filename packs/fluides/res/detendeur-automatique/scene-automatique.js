@@ -10,9 +10,13 @@
    LA COUPE, c'est celle de la ligne : DS.coupe("automatique") (scenes-detendeurs.js, lu sans modification). On la pilote
    par { charge, ouverture } ; la BP de l'aiguille vient de coupe.lire().bp.
    BRIQUES AJOUTÉES (absentes de DETENDEURS_SCENES) :
-     · « flèches de force » : le ressort pousse la membrane vers le bas (gris), la pression de l'évaporateur vers le haut
-       (bleu), écart ×3 autour de la consigne pour que la balance se voie (les deux flèches natives de la coupe, trop
-       peu sensibles, sont masquées et redessinées) ;
+     · « tête » : la vis, le ressort entre deux plateaux, les flèches de force, dans cet ordre, pour que l'ORIGINE de
+       chaque force se voie. Convention de couleurs de la ligne : GRIS ACIER = le ressort (il OUVRE, il vient de la vis),
+       BLEU = la pression d'évaporation (elle FERME, elle vient de la sortie BP, dont l'intérieur communique avec la chambre
+       sous la membrane). L'écart des flèches est ×4 autour de la consigne pour que la balance se voie (les deux flèches
+       natives de la coupe, trop peu sensibles, sont masquées et redessinées) ;
+     · « légende » : sous les dessins, en HTML, jamais sur un tracé : gris « ressort (réglé par la vis) : ouvre », bleu
+       « pression d’évaporation : ferme » (G.LEGENDE) ;
      · « jauge » : DS.manometre + un repère ▼ « consigne » (le milieu du cadran) ; l'aiguille est une BP qualitative
        recentrée sur la consigne ; pour l'exercice, un arc vert « BP demandée (exemple) » ;
      · « trace » : la BP au fil du temps (courbe qui défile, consigne en pointillé ou bande verte) ;
@@ -38,6 +42,7 @@
   const H = 470, HR = 250;                          // hauteurs des deux compositions : la coupe, le gros plan de la tête
   const CLAIR = "#f4f8fc", NAVY = "#1b3a63", BLEU = "#3d7fca", GRAPHITE = "#33475b", CUIVRE = "#c57a45";
   const VERT = "#1e7e54", AMBRE = "#b06a00", ROUGE = "#c0392b";
+  const GRIS = "#5d6b7a";                            // gris acier : le ressort (comme son dessin)
   const CONS = 0.6;                                 // la consigne, en BP qualitative de la coupe
   const aiguilleP = bp => bn(0.5 + 2.5 * (bp - CONS), 0, 1);   // l'aiguille : la consigne au milieu du cadran
   // l'exercice : la BP de départ, ce que change un quart de tour, la zone demandée, la lenteur de l'aiguille
@@ -52,7 +57,38 @@
   }
   const flecheBas = (x, y0, h) => "M " + (x - 4) + " " + (y0 - h) + " V " + (y0 - 12) + " H " + (x - 11) + " L " + x + " " + y0 + " L " + (x + 11) + " " + (y0 - 12) + " H " + (x + 4) + " V " + (y0 - h) + " Z";
   const flecheHaut = (x, y0, h) => "M " + (x - 4) + " " + y0 + " V " + (y0 - h + 12) + " H " + (x - 11) + " L " + x + " " + (y0 - h) + " L " + (x + 11) + " " + (y0 - h + 12) + " H " + (x + 4) + " V " + y0 + " Z";
-  const ressortD = (top, bot) => { let d = "M 150 " + top.toFixed(1); for (let k = 1; k <= 9; k++) d += " L " + (k % 2 ? 133 : 167) + " " + (top + (bot - top) * k / 9).toFixed(1); return d + " L 150 " + bot.toFixed(1); };
+  const ressortD = (top, bot) => { const n = bn(Math.round((bot - top) / 6), 4, 9); let d = "M 150 " + top.toFixed(1); for (let k = 1; k <= n; k++) d += " L " + (k % 2 ? 133 : 167) + " " + (top + (bot - top) * k / n).toFixed(1); return d + " L 150 " + bot.toFixed(1); };
+  const hFleche = v => bn(8 + 44 * v, 8, 54);       // la longueur d'une flèche de force (v : force qualitative)
+  const yArc = (x, dm) => 112 + 4 * dm * ((x - 95) / 110) * (1 - (x - 95) / 110);   // la membrane au droit d'une flèche (arc de la coupe)
+  const LEGENDE = '<p class="au-legende"><span class="gris"><b aria-hidden="true">↓</b> ressort (réglé par la vis) : <strong>ouvre</strong></span><span class="bleu"><b aria-hidden="true">↑</b> pression d’évaporation : <strong>ferme</strong></span></p>';
+  const legende = () => { const d = document.createElement("div"); d.innerHTML = LEGENDE; return d.firstChild; };
+  G.LEGENDE = LEGENDE;
+
+  /* ---------- la tête : vis → ressort → flèche (le ressort pousse vers le bas, il OUVRE) ; flèche de la BP vers le haut
+     (elle FERME). Coordonnées de la coupe. maj(dm, yt, vR, vP, rot) : dm = creux de la membrane, yt = plateau du haut
+     (poussé par la vis), vR et vP = forces qualitatives du ressort et de la pression, rot = filets de la vis. ---------- */
+  function tete(parent) {
+    const g = el("g", {}, parent);
+    const chambre = el("path", { fill: CLAIR }, g);                                    // recouvre le ressort natif de la coupe
+    const vis = el("rect", { x: 146, y: 12, width: 8, fill: "#3f4a55" }, g);           // la tige de la vis, sous sa tête
+    const filets = [0, 1, 2, 3, 4, 5].map(() => el("line", { x1: 144, x2: 156, stroke: "#aab6c3", "stroke-width": 2.5, "stroke-linecap": "round" }, g));
+    const haut = el("rect", { x: 122, width: 56, height: 8, rx: 3, fill: "url(#vm-acier-h)", stroke: "#4e5a66", "stroke-width": 2 }, g);
+    const ressort = el("path", { fill: "none", stroke: GRIS, "stroke-width": 3.5, "stroke-linejoin": "round" }, g);
+    const bas = el("rect", { x: 104, width: 92, height: 8, rx: 3, fill: "url(#vm-acier-h)", stroke: "#4e5a66", "stroke-width": 2 }, g);
+    const fR = [118, 182].map(() => el("path", { fill: GRIS, stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, g));
+    const membrane = el("path", { fill: "none", stroke: "#24384f", "stroke-width": 5, "stroke-linecap": "round" }, g);
+    const fP = [118, 182].map(() => el("path", { fill: BLEU, stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, g));
+    return { maj: function (dm, yt, vR, vP, rot) {
+      const d = "M 95 112 V 70 Q 95 18 150 18 Q 205 18 205 70 V 112 Q 150 " + (112 + 2 * dm).toFixed(1);
+      chambre.setAttribute("d", d + " 95 112 Z"); membrane.setAttribute("d", "M 95 112 Q 150 " + (112 + 2 * dm).toFixed(1) + " 205 112");
+      const ya = yArc(118, dm), hR = hFleche(vR), hP = hFleche(vP), pb = ya - 3 - hR - 8, y1 = Math.min(yt, pb - 20);   // le plateau du bas pose les flèches du ressort sur la membrane
+      vis.setAttribute("height", (y1 - 12).toFixed(1)); haut.setAttribute("y", y1.toFixed(1)); bas.setAttribute("y", pb.toFixed(1));
+      filets.forEach((f, k) => { const y = 16 + ((k * 8 + rot * 0.08) % 48 + 48) % 48; f.setAttribute("y1", y.toFixed(1)); f.setAttribute("y2", (y - 2).toFixed(1)); f.setAttribute("opacity", y < y1 - 4 ? 1 : 0); });
+      ressort.setAttribute("d", ressortD(y1 + 8, pb));
+      fR.forEach((f, k) => f.setAttribute("d", flecheBas([118, 182][k], ya - 3, hR)));          // le ressort pousse vers le bas : il ouvre
+      fP.forEach((f, k) => f.setAttribute("d", flecheHaut([118, 182][k], ya + 3 + hP, hP)));      // la pression pousse vers le haut : elle ferme
+    } };
+  }
   function anneau(g) {
     const r = el("rect", { rx: 12, fill: "none", stroke: "#ff6b35", "stroke-width": 5, opacity: 0 }, g);
     return function (zone, t) {
@@ -145,18 +181,16 @@
     // les deux flèches natives (la BP sous la membrane) sont masquées : on les redessine avec un écart ×3 autour de la consigne
     const natives = [...cs.querySelectorAll('path[fill="' + D.couleur(0.05, false) + '"]')];
     if (natives.length === 2) natives.forEach(p => p.setAttribute("display", "none"));
-    const ov = el("g", {}, cs);
-    const fRessort = [118, 182].map(() => el("path", { fill: GRAPHITE, stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, ov));
-    const fPression = [118, 182].map(() => el("path", { fill: D.couleur(0.05, false), stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, ov));
+    const T = tete(el("g", {}, cs));
     // le panneau
     const px0 = 340, pw = W - px0 - 14, large = pw >= 440, mods = opt.panneau, cel = decouper(mods.length, px0, 0, pw, H, large), inst = {};
     mods.forEach((m, i) => {
       if (m === "jauge") inst.jauge = jauge(g, cel[i], { solo: mods.length === 1, marqueur: true, etiq: etiq, large: large, ps: ps });
       if (m === "trace") inst.trace = trace(g, cel[i], { duree: 16, consigne: 0.5, etiq: etiq, large: large, ps: ps });
-      if (m === "bilan") inst.bilan = bilan(g, cel[i], etiq, ps);
+      if (m === "bilan") inst.bilan = bilan(g, cel[i], etiq, Math.min(ps, 24));
     });
     const ZONES = {
-      ressort: [110, 12, 100, 94], vis: [128, 2, 64, 26], membrane: [100, 98, 120, 50], pression: [106, 150, 108, 76],
+      ressort: [110, 12, 100, 94], vis: [128, 2, 64, 26], membrane: [100, 98, 120, 50], pression: [106, 126, 108, 78],
       manometre: inst.jauge && inst.jauge.zone, trace: inst.trace && inst.trace.zone, bilan: inst.bilan && inst.bilan.zone
     };
     const voir = anneaux(el("g", {}, g), ZONES);
@@ -169,9 +203,7 @@
       if (inst.jauge) inst.jauge.maj(p);
       if (inst.trace) inst.trace.maj(p, t);
       if (inst.bilan) inst.bilan.maj(DS.besoin(c), L.ouverture);
-      const hR = 14 + 62 * CONS, hP = bn(14 + 62 * (CONS + 3 * (bp - CONS)), 14, 82), yM = 112 + 25 * L.ouverture;
-      fRessort.forEach((f, k) => f.setAttribute("d", flecheBas([118, 182][k], yM - 4, hR)));       // le ressort pousse vers le bas
-      fPression.forEach((f, k) => f.setAttribute("d", flecheHaut([118, 182][k], 214, hP)));        // la pression pousse vers le haut
+      T.maj(25 * L.ouverture, 30, CONS, CONS + 4 * (bp - CONS), 0);
       voir(noms.filter(n => ZONES[n]), t);
     }
     return { maj: maj };
@@ -195,18 +227,11 @@
     el("rect", { x: 95, y: 226, width: 43, height: 12, fill: "#8a6a1f" }, z); el("rect", { x: 162, y: 226, width: 43, height: 12, fill: "#8a6a1f" }, z);   // le siège
     el("rect", { x: 138, y: 226, width: 24, height: 14, fill: CLAIR }, z);
     el("path", { d: "M 87 112 V 70 Q 87 8 150 8 Q 213 8 213 70 V 112 Z", fill: "url(#vm-acier)", stroke: "#5d6b7a", "stroke-width": 2.5 }, z);     // la tête
-    const chambre = el("path", { fill: CLAIR }, z);
     const mols = el("g", { transform: "scale(0.6)" }, z), rr = D.alea(37), M = [];
     for (let i = 0; i < 10; i++) M.push({ u: rr(), v: rr(), ph: rr() * 6.28, maj: D.mol(mols) });
     const tige = el("rect", { x: 148, width: 4, fill: "#3f4a55" }, z);
-    const shank = el("rect", { x: 146, y: 12, width: 8, fill: "#3f4a55" }, z);
-    const filets = [0, 1, 2, 3, 4, 5].map(() => el("line", { x1: 144, x2: 156, stroke: "#aab6c3", "stroke-width": 2.5, "stroke-linecap": "round" }, z));
-    const plateau = el("rect", { x: 122, width: 56, height: 8, rx: 3, fill: "url(#vm-acier-h)", stroke: "#4e5a66", "stroke-width": 2 }, z);
-    const ressort = el("path", { fill: "none", stroke: "#5d6b7a", "stroke-width": 3.5, "stroke-linejoin": "round" }, z);
-    const membrane = el("path", { fill: "none", stroke: "#24384f", "stroke-width": 5, "stroke-linecap": "round" }, z);
+    const TE = tete(z);
     el("rect", { x: 134, y: 0, width: 32, height: 12, rx: 3, fill: "url(#vm-acier)", stroke: "#4e5a66", "stroke-width": 2 }, z);   // la tête de la vis
-    const fR = [110, 190].map(() => el("path", { fill: GRAPHITE, stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, z));
-    const fP = [118, 182].map(() => el("path", { fill: D.couleur(0.05, false), stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, z));
     // ----- la vis vue de dessus : elle tourne par quarts de tour -----
     const kx = 215, ky = 120, kr = 30;
     const vis = el("g", { transform: "translate(" + kx + " " + ky + ")" }, g);
@@ -228,15 +253,10 @@
       if (Math.abs(pT - e.p) > 0.006) { e.calme = 0; e.stable = false; }
       else { e.calme += dt; if (!e.stable && e.calme > 0.7) { e.stable = true; if (e.clics > 0 && e.surStable) e.surStable(); } }
       rot += (90 * e.n - rot) * (1 - Math.exp(-dt / 0.18)); nl = rot / 90;
-      const p = e.p, dm = bn(10 + 80 * (pT - p), 2, 25), ym = 112 + dm, yt = bn(40 + 4.5 * nl, 24, 84);
-      chambre.setAttribute("d", "M 95 112 V 70 Q 95 18 150 18 Q 205 18 205 70 V 112 Q 150 " + (112 + 2 * dm).toFixed(1) + " 95 112 Z");
-      membrane.setAttribute("d", "M 95 112 Q 150 " + (112 + 2 * dm).toFixed(1) + " 205 112");
+      const p = e.p, dm = bn(10 + 80 * (pT - p), 2, 25), ym = 112 + dm, yt = bn(30 + 2.4 * nl, 24, 90);
       tige.setAttribute("y", ym.toFixed(1)); tige.setAttribute("height", (240 - ym).toFixed(1));
-      plateau.setAttribute("y", yt.toFixed(1)); shank.setAttribute("height", (yt - 12).toFixed(1));
-      filets.forEach((f, k) => { const y = 16 + ((k * 8 + rot * 0.08) % 48 + 48) % 48; f.setAttribute("y1", y.toFixed(1)); f.setAttribute("y2", (y - 2).toFixed(1)); f.setAttribute("opacity", y < yt - 4 ? 1 : 0); });
-      ressort.setAttribute("d", ressortD(yt + 8, ym - 2));
-      fR.forEach((f, k) => f.setAttribute("d", flecheBas([110, 190][k], ym - 4, 12 + 70 * pT)));    // le ressort : plus il est comprimé, plus il pousse
-      fP.forEach((f, k) => f.setAttribute("d", flecheHaut([118, 182][k], 214, 12 + 70 * p)));      // la BP : elle monte, elle rattrape le ressort
+      // plus on visse, plus le plateau descend, plus le ressort est comprimé et plus il pousse ; la BP monte pour le rattraper
+      TE.maj(dm, yt, 0.6 + 1.2 * (pT - 0.5), 0.6 + 1.2 * (p - 0.5), rot);
       const n = Math.round(2 + 8 * p);
       M.forEach((m, i) => { const x = 104 + m.u * 92 + 4 * Math.sin(t * 1.7 + m.ph), y = 124 + m.v * 90 + 4 * Math.sin(t * 2.1 + m.ph); m.maj(x / 0.6, y / 0.6, 0.12, true, i < n ? 0.9 : 0); });
       fente.setAttribute("transform", "rotate(" + rot.toFixed(1) + ")");
@@ -255,7 +275,7 @@
       const w = Math.round(bn(Hh * ratio, reglage ? 460 : 580, reglage ? 880 : 1000) / 20) * 20;
       if (w === W) return;
       // les pastilles gardent à peu près la même taille À L'ÉCRAN (≈ 17 px), quelle que soit l'échelle du dessin
-      const echelle = r.width > 40 && r.height > 40 ? Math.min(r.width / w, r.height / Hh) : 0.7, ps = bn(Math.round(17 / echelle), 14, 24);
+      const echelle = r.width > 40 && r.height > 40 ? Math.min(r.width / w, r.height / Hh) : 0.7, ps = bn(Math.round(17 / echelle), 14, 30);
       W = w; svg.textContent = ""; inst = reglage ? construireReglage(svg, W, opt.exo, ps) : construire(svg, W, Object.assign({ ps: ps }, opt)); inst.maj(e, t, info);
     };
     if (window.ResizeObserver) new ResizeObserver(bati).observe(svg);
@@ -264,6 +284,8 @@
   }
   G.monter = monter;
 
+  /* un cadre pour la scène + la légende des forces dessous (HTML, jamais sur un tracé) */
+  function cadre(dessin) { const c = document.createElement("div"); c.className = "au-cadre"; dessin.append(c, legende()); return c; }
   const ARIA_COUPE = "Coupe d’un détendeur automatique devant son évaporateur : un ressort pousse la membrane vers le bas pour ouvrir, la pression de l’évaporateur la pousse vers le haut pour fermer. À droite, un manomètre de basse pression avec le repère de la consigne.";
 
   /* ---------- le sommaire : la charge varie doucement, le détendeur suit sa pression et se trompe ---------- */
@@ -280,10 +302,11 @@
     ["aiguille", "L’aiguille suit la membrane : elle ouvre ou ferme le passage du liquide."],
     ["manometre", "Il garde la BP au repère ▼ : c’est la pression d’évaporation qu’il règle."]
   ];
+  G.legende = legende;
   G.identite = function (hote, symbole) {
     const carte = document.createElement("div"); carte.className = "au-carte";
     carte.innerHTML = '<div class="au-tete"><img src="' + symbole + '" alt="Symbole du détendeur automatique : vanne à pression constante"><b>Détendeur automatique</b></div>' +
-      '<div class="au-droite"><div class="ds-dessin"></div><p class="ds-explic" aria-live="off"></p></div>' +
+      '<div class="au-droite"><div class="ds-dessin"></div>' + LEGENDE + '<p class="ds-explic" aria-live="off"></p></div>' +
       '<div class="au-lignes"><p class="ds-regle">il règle : <strong>la pression d’évaporation</strong></p><p class="au-trouve">on le trouve surtout sur les <strong>machines à glace en écailles</strong></p></div>';
     hote.appendChild(carte);
     const dessin = carte.querySelector(".ds-dessin"), explic = carte.querySelector(".ds-explic");
@@ -307,7 +330,7 @@
         { nom: "Le clapet ouvre", dire: "L’aiguille descend : le liquide passe et bout. La BP remonte, un peu au-dessus de la consigne.", cible: { ouverture: 0.62 }, agit: "aiguille", duree: 3.4 },
         { nom: "Il referme : équilibre", dire: "La pression gagne un peu : le clapet se referme à moitié. Ressort et pression s’équilibrent, la BP reste à la consigne.", cible: { ouverture: 0.5 }, agit: ["membrane", "manometre"], duree: 3.6 }
       ],
-      construire: function (dessin) { return monter(dessin, { panneau: ["jauge", "trace"], aria: ARIA_COUPE }).maj; }
+      construire: function (dessin) { const c = cadre(dessin); return monter(c, { panneau: ["jauge", "trace"], aria: ARIA_COUPE }).maj; }
     });
   };
 
@@ -323,7 +346,7 @@
         { nom: "La charge baisse", dire: "Moins de chaleur : la BP descend un peu sous la consigne.", cible: { charge: 0.15, ecart: -0.08 }, agit: ["evaporateur", "manometre"], duree: 3.2 },
         { nom: "Il ouvre : du liquide file", dire: "Le ressort gagne : il ouvre, la BP revient à la consigne. Mais la nappe file à la sortie : retour de liquide possible.", cible: { ouverture: 0.72, ecart: 0 }, agit: ["aiguille", "evaporateur"], duree: 3.4 }
       ],
-      construire: function (dessin) { return monter(dessin, { panneau: ["jauge", "bilan"], aria: ARIA_COUPE }).maj; }
+      construire: function (dessin) { const c = cadre(dessin); return monter(c, { panneau: ["jauge", "bilan"], aria: ARIA_COUPE }).maj; }
     });
   };
 

@@ -194,13 +194,21 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
 .au-carte{display:grid;grid-template-columns:minmax(210px,.62fr) minmax(0,1.7fr);grid-template-rows:auto minmax(0,1fr);grid-template-areas:"tete droite" "lignes droite";gap:6px 10px;height:100%;min-height:0}
 .au-tete{grid-area:tete;align-self:end;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--navy);font-size:22px;line-height:1.1;text-align:center}
 .au-tete img{height:92px;width:auto;max-width:100%;object-fit:contain}
-.au-droite{grid-area:droite;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:4px;min-height:0}
+.au-droite{grid-area:droite;display:grid;grid-template-rows:minmax(0,1fr) auto auto;gap:4px;min-height:0}
 .au-droite .ds-dessin{min-height:0}
 .au-lignes{grid-area:lignes;align-self:start;display:grid;gap:8px;text-align:center}
 .au-lignes p{margin:0}
 .au-trouve{font-size:var(--corps);line-height:1.25}.au-trouve strong{color:var(--navy)}
+/* la légende des forces, sous les dessins (jamais sur un tracé) : gris acier = le ressort, bleu = la pression d'évaporation */
+.ds-dessin:has(.au-cadre){display:grid;grid-template-rows:minmax(0,1fr) auto;place-items:stretch}
+.au-cadre{position:relative;min-height:0}
+.au-legende{position:relative;margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:2px 22px;font-size:var(--corps);line-height:1.25;color:var(--ink)}
+.au-legende span{display:inline-flex;align-items:baseline;gap:6px}
+.au-legende b{font-size:22px;line-height:1;font-weight:900}
+.au-legende .gris b{color:#5d6b7a}.au-legende .bleu b{color:#3d7fca}
+.au-legende strong{color:var(--navy)}
 /* écran 4 : l'exercice */
-.au-exo{display:grid;grid-template-rows:minmax(110px,1fr) auto auto;gap:6px;min-height:0;height:100%}
+.au-exo{display:grid;grid-template-rows:minmax(110px,1fr) auto auto auto;gap:6px;min-height:0;height:100%}
 .au-exo .ds-dessin{min-height:0}
 .au-boutons{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:8px}
 .au-bouton{border:2px solid var(--line);border-radius:12px;background:var(--paper);padding:6px 12px;font-weight:800;font-size:var(--corps);line-height:1.15;color:var(--navy);cursor:pointer;text-align:center}
@@ -217,7 +225,7 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
 @media (max-width:650px){
   .au-lignes{padding-right:56px;text-align:left}
   .quiz .feedback{padding-right:60px}
-  .au-exo{grid-template-rows:minmax(96px,1fr) auto auto;gap:4px}
+  .au-exo{grid-template-rows:minmax(96px,1fr) auto auto auto;gap:4px}
   .au-boutons{gap:5px}.au-bouton{padding:5px 6px}
   .au-long{display:none}.au-court{display:inline}
   .ds-barre .ds-etape{min-width:30px;padding:2px 4px;font-size:var(--corps)}.ds-barre button{padding:3px 6px}

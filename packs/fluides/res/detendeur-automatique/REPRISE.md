@@ -18,8 +18,12 @@ Rien n’est commité ni en ligne : feu vert de F. Henninot d’abord.
   course de la vis limitée) · 5 vérifier (6 questions, une explication par réponse).
 - Brique ajoutée : `scene-automatique.js` (`window.AUTOMATIQUE_SCENES`) ; la scène se redessine selon la largeur
   disponible ; les pastilles gardent à peu près la même taille à l’écran ; sur téléphone le panneau passe sous la jauge.
+- Convention de couleurs des forces (ligne LES DÉTENDEURS) : gris acier = le ressort (il OUVRE, il vient de la vis), bleu
+  = la pression d'évaporation (elle FERME, elle vient de la sortie BP, dont l'intérieur communique avec la chambre sous
+  la membrane). Les coupes montrent la vis, le ressort entre deux plateaux, puis les flèches, dans cet ordre ; légende
+  HTML sous chaque dessin (écrans 1 à 4) : « ressort (réglé par la vis) : ouvre », « pression d’évaporation : ferme ».
 - Le dessin masque les deux flèches natives de BP de `DS.coupe("automatique")` (sélecteur sur leur couleur, vérifié par
-  la QA : 2 flèches) et les redessine avec un écart ×3 autour de la consigne, pour que la balance se voie. Si
+  la QA : 2 flèches) et les redessine avec un écart ×4 autour de la consigne, pour que la balance se voie. Si
   `scenes-detendeurs.js` change la couleur de ces flèches, la QA le dit (« flèches natives masquées »).
 - Voix : `narration` de chaque écran, voix du navigateur tant que les MP3 ne sont pas générés (clés nouvelles).
 - Référentiel : `couverture.json` — enseigné `9.01` (écrans 1, 2, 3, 5), `9.03` (écran 4 et la question 6 du quiz) ;

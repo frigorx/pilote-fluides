@@ -50,7 +50,7 @@ const MSG = {
   limite: "La vis est au bout de sa course. Tournez dans l’autre sens."
 };
 function exoMarkup() {
-  return `<div class="au-exo"><div class="ds-dessin" id="au-exo-dessin"></div><div class="au-boutons" role="group" aria-label="Tourner la vis de réglage"><button type="button" class="au-bouton" data-sens="-1"><span class="au-long">↺ Dévisser ¼ de tour</span><span class="au-court">Dévisser ¼</span></button><button type="button" class="au-bouton" data-sens="1"><span class="au-long">Visser ¼ de tour ↻</span><span class="au-court">Visser ¼</span></button><button type="button" class="au-bouton au-reco" id="au-reco"><span class="au-long">Recommencer</span><span class="au-court">Refaire</span></button></div><div class="feedback" id="feedback" role="status"></div></div>`;
+  return `<div class="au-exo"><div class="ds-dessin" id="au-exo-dessin"></div>${GS.LEGENDE || ""}<div class="au-boutons" role="group" aria-label="Tourner la vis de réglage"><button type="button" class="au-bouton" data-sens="-1"><span class="au-long">↺ Dévisser ¼ de tour</span><span class="au-court">Dévisser ¼</span></button><button type="button" class="au-bouton" data-sens="1"><span class="au-long">Visser ¼ de tour ↻</span><span class="au-court">Visser ¼</span></button><button type="button" class="au-bouton au-reco" id="au-reco"><span class="au-long">Recommencer</span><span class="au-court">Refaire</span></button></div><div class="feedback" id="feedback" role="status"></div></div>`;
 }
 function retourExo(cls, html) { const f = $("#feedback"); if (!f) return; f.className = "feedback" + (cls ? " " + cls : ""); f.innerHTML = html; }
 function bilanExo() {                              // appelé par la scène quand l'aiguille s'est stabilisée après un quart de tour
