@@ -3,6 +3,22 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 06/10 (suite) — FILMS CLIMAT : UNE SEULE BARRE DE LECTURE (décision de F. Henninot : « fais une seule barre »)
+>
+> `film-ozone/` et `film-effet-de-serre/` : la barre du composant Claude Design est **invisible** (`visibility:hidden`,
+> pas `display:none` : le film se met à l'échelle en déduisant sa hauteur) ; la nôtre se loge dans sa bande, sous l'image,
+> et porte tout : ⏮ retour au début, ▶ Écouter / ⏸ Pause, curseur de position + « 0:12 / 0:45 », Débit. Clavier :
+> espace, ← → ±1 s (±5 s avec Maj, au lieu des 0,1 s du composant, pensés pour l'éditeur), Origine/0. Les relais vers
+> l'ancienne barre sont retirés. Mesures : banc de 24 contrôles vert ; 8 formats de 360 à 1920 px, la barre ne couvre ni
+> l'image ni la marque, le « Aa » ou la pastille de retour ; une ligne sur ordinateur, deux sur téléphone.
+> **Pièges** : (1) le bouton ▶ a une largeur minimale (le plus long libellé) — sans elle la barre change de largeur à
+> chaque lecture/pause et le curseur glisse sous la souris ; (2) le filigrane `marque.js` passe dans un pied de page
+> (`<footer data-marque-hote>`, sous le film) : fixé en bas à gauche, il passait sous la barre jusqu'à 1280 px ;
+> (3) la réserve de bas de page est `body::after` (hauteur = celle de la barre) : `<body>` a une hauteur fixée à
+> l'écran, un `padding-bottom` tomberait au milieu du contenu.
+> **Constaté sans y toucher** : `moteur/suivant.js` renonce à la « station suivante » s'il voit une barre collée au bas
+> de l'écran quand il s'exécute ; sur un film, c'est une course avec le rendu (l'effet de serre n'en a pas, déjà sur `main`).
+
 > ## 06/10 (suite) — VIGNETTES « CE QU'ON VA VOIR + LE RÉSEAU », LE CINÉMA DU STUDIO, YOUTUBE PAR FILM
 >
 > Demandes de F. Henninot. **(1) Vignettes de l'accueil** : « est-ce que ça cause vraiment ? Non » — une image de ce
@@ -49,8 +65,7 @@
 > **Pièges** : dans un `<helmet>`, jamais d'espace suivi de `motCamel =`, et aucun script de page.
 > `python -m http.server` ne sert pas les plages (`Range`) : le MP3 ne peut pas sauter à `VOIX_DEBUT`, la voix lit le
 > préambule et tout saut retombe à 0 ; le site répond 206. Tester les films avec un serveur qui gère Range.
-> **À décider (Franck)** : notre barre « Écouter le film » recouvre 85 % du curseur du lecteur sur ordinateur, 100 % sur
-> téléphone (antérieur). Proposition : une seule barre, la nôtre, avec retour au début et curseur de position.
+> ~~À décider~~ **Décidé et fait le même jour** (entrée ci-dessus) : une seule barre, la nôtre.
 > `version.mjs` n'est pas concerné : ni les films ni ce fichier n'entrent dans l'empreinte, et les pages HTML sont
 > servies réseau d'abord. Lancé depuis un clone neuf, il réécrit 22 clés parce que la clé dépend de fichiers absents
 > de git (`relecture.html` et d'autres) : ces clés-là ne se commitent pas.
