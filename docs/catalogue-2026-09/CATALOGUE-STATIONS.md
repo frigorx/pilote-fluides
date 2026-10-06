@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**400 stations** réparties en 14 réseaux.
+**402 stations** réparties en 15 réseaux.
 
 ## Plan thermo-techno — 104 stations
 
@@ -382,6 +382,13 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [La brasure forte sous azote](https://inerweb.fr/cuivrezo/stations/3-2/) | Ligne 3 — Braser | — | — | Un joint brasé plein, propre à l’intérieur |
 | [Le chapeau de gendarme](https://inerweb.fr/cuivrezo/stations/4-1/) | Ligne 4 — Les pièces complexes | — | — | Un contournement symétrique, branches alignées |
 | [La baïonnette](https://inerweb.fr/cuivrezo/stations/4-2/) | Ligne 4 — Les pièces complexes | — | — | Deux branches parallèles, décalées à la cote |
+
+## ManiRézo — 2 stations
+
+| Station | Ligne | Niveaux | Codes | Sujet |
+|---|---|---|---|---|
+| [ManiRézo · la gestuelle professionnelle](https://inerweb.fr/manirezo/) | — | — | — | ManiRézo : la gestuelle professionnelle du frigoriste. Manifold, azote, récupération du fluide, réglage des pressostats, du détendeur et des régulateurs KV, VAT, mesure d’intensité, relais thermique. |
+| [Le réglage des pressostats · ManiRézo](https://inerweb.fr/manirezo/simulateur/pressostat.html) | — | — | — | Calculer le réglage d’un pressostat BP ou HP, de sécurité ou de régulation, le prérégler sur la face, puis le prouver au banc d’azote, au manomètre, trois cycles justes de suite. |
 
 ## FormaRézo — 1 stations
 

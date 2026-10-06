@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 400,
+  "total": 402,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -4434,6 +4434,30 @@
       "missionProf": null,
       "url": "https://inerweb.fr/cuivrezo/stations/4-2/",
       "chemin": "cuivrezo/stations/4-2/"
+    },
+    {
+      "reseau": "ManiRézo",
+      "id": "manirezo",
+      "titre": "ManiRézo · la gestuelle professionnelle",
+      "ligne": null,
+      "resume": "ManiRézo : la gestuelle professionnelle du frigoriste. Manifold, azote, récupération du fluide, réglage des pressostats, du détendeur et des régulateurs KV, VAT, mesure d’intensité, relais thermique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/manirezo/",
+      "chemin": "manirezo/"
+    },
+    {
+      "reseau": "ManiRézo",
+      "id": "pressostat",
+      "titre": "Le réglage des pressostats · ManiRézo",
+      "ligne": null,
+      "resume": "Calculer le réglage d’un pressostat BP ou HP, de sécurité ou de régulation, le prérégler sur la face, puis le prouver au banc d’azote, au manomètre, trois cycles justes de suite.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/manirezo/simulateur/pressostat.html",
+      "chemin": "manirezo/simulateur/pressostat.html"
     },
     {
       "reseau": "FormaRézo",
