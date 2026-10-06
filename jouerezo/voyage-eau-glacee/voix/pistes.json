@@ -1,0 +1,250 @@
+{
+ "intro-0": {
+  "f": "ddf63b96f687.mp3",
+  "d": 4.344
+ },
+ "intro-1": {
+  "f": "53f2c4024dbf.mp3",
+  "d": 5.448
+ },
+ "intro-2": {
+  "f": "24842cce3234.mp3",
+  "d": 4.488
+ },
+ "intro-3": {
+  "f": "e666e6016a76.mp3",
+  "d": 5.592
+ },
+ "intro-4": {
+  "f": "d17db07479c1.mp3",
+  "d": 7.824
+ },
+ "intro-5": {
+  "f": "7eccbd1f43a3.mp3",
+  "d": 7.68
+ },
+ "intro-6": {
+  "f": "8443f6c0848b.mp3",
+  "d": 6.144
+ },
+ "intro-7": {
+  "f": "6fc0a74a9214.mp3",
+  "d": 2.136
+ },
+ "frontiere-0": {
+  "f": "7a15bc4be235.mp3",
+  "d": 3.768
+ },
+ "frontiere-1": {
+  "f": "0c8a8d6e760e.mp3",
+  "d": 5.208
+ },
+ "frontiere-2": {
+  "f": "d1edd2244e13.mp3",
+  "d": 4.848
+ },
+ "frontiere-3": {
+  "f": "8bee88e6da4c.mp3",
+  "d": 4.704
+ },
+ "frontiere-4": {
+  "f": "12c4cb5b21df.mp3",
+  "d": 4.2
+ },
+ "frontiere-5": {
+  "f": "7bbf3e83b7a8.mp3",
+  "d": 5.664
+ },
+ "rencontre-0": {
+  "f": "dc98ec7a080b.mp3",
+  "d": 5.016
+ },
+ "rencontre-1": {
+  "f": "371055097ec4.mp3",
+  "d": 5.808
+ },
+ "rencontre-2": {
+  "f": "1981b07e913b.mp3",
+  "d": 6.096
+ },
+ "rencontre-3": {
+  "f": "28e1743cae0c.mp3",
+  "d": 7.68
+ },
+ "rencontre-4": {
+  "f": "4c4727aee2e3.mp3",
+  "d": 5.136
+ },
+ "rencontre-5": {
+  "f": "087e3d6a4888.mp3",
+  "d": 6.12
+ },
+ "voyageEau-0": {
+  "f": "9d6882c99376.mp3",
+  "d": 5.616
+ },
+ "voyageEau-1": {
+  "f": "1ac32949cbe8.mp3",
+  "d": 3.984
+ },
+ "voyageEau-2": {
+  "f": "386d6e8936c7.mp3",
+  "d": 7.632
+ },
+ "voyageEau-3": {
+  "f": "dd25c2d5be03.mp3",
+  "d": 3.552
+ },
+ "voyageEau-4": {
+  "f": "4e1788eea1ff.mp3",
+  "d": 4.056
+ },
+ "voyageEau-5": {
+  "f": "4b1c661aca94.mp3",
+  "d": 5.568
+ },
+ "pourquoiEau-0": {
+  "f": "fe92bfc90b56.mp3",
+  "d": 3.096
+ },
+ "pourquoiEau-1": {
+  "f": "add5ba151bea.mp3",
+  "d": 6.144
+ },
+ "pourquoiEau-2": {
+  "f": "db2e8e379449.mp3",
+  "d": 5.064
+ },
+ "pourquoiEau-3": {
+  "f": "614ef35290a4.mp3",
+  "d": 5.328
+ },
+ "pourquoiEau-4": {
+  "f": "9f5fb4a2db39.mp3",
+  "d": 7.704
+ },
+ "tourGroupe-0": {
+  "f": "035dc19cd17c.mp3",
+  "d": 4.464
+ },
+ "tourGroupe-1": {
+  "f": "10e78e651174.mp3",
+  "d": 3.672
+ },
+ "tourGroupe-2": {
+  "f": "6513a300c5bb.mp3",
+  "d": 5.304
+ },
+ "tourGroupe-3": {
+  "f": "730efeaca169.mp3",
+  "d": 6.12
+ },
+ "tourGroupe-4": {
+  "f": "a1bce890b352.mp3",
+  "d": 8.136
+ },
+ "tourGroupe-5": {
+  "f": "b686ffa05432.mp3",
+  "d": 3.624
+ },
+ "sentinelle-0": {
+  "f": "c273277e665c.mp3",
+  "d": 5.328
+ },
+ "sentinelle-1": {
+  "f": "6edd56fe7298.mp3",
+  "d": 6.12
+ },
+ "sentinelle-2": {
+  "f": "75ce1cb9b6d6.mp3",
+  "d": 4.152
+ },
+ "sentinelle-3": {
+  "f": "d19c4824184d.mp3",
+  "d": 6.744
+ },
+ "sentinelle-4": {
+  "f": "04ada9997045.mp3",
+  "d": 8.544
+ },
+ "sentinelle-5": {
+  "f": "9bc5ca7917ee.mp3",
+  "d": 4.992
+ },
+ "sentinelle-6": {
+  "f": "706c380956c1.mp3",
+  "d": 6.0
+ },
+ "gel-0": {
+  "f": "8e00caa13f0f.mp3",
+  "d": 3.144
+ },
+ "gel-1": {
+  "f": "9721640765e2.mp3",
+  "d": 4.128
+ },
+ "gel-2": {
+  "f": "d186566dd2d7.mp3",
+  "d": 4.704
+ },
+ "gel-3": {
+  "f": "976dceab64b3.mp3",
+  "d": 5.904
+ },
+ "gel-4": {
+  "f": "58c48ac68b19.mp3",
+  "d": 7.44
+ },
+ "gel-5": {
+  "f": "091047518d75.mp3",
+  "d": 7.392
+ },
+ "gel-6": {
+  "f": "e6c1165d3fc9.mp3",
+  "d": 5.712
+ },
+ "armes-0": {
+  "f": "4454e164cc2b.mp3",
+  "d": 3.24
+ },
+ "armes-1": {
+  "f": "4ee1ee181435.mp3",
+  "d": 5.592
+ },
+ "armes-2": {
+  "f": "dc76c6387199.mp3",
+  "d": 6.744
+ },
+ "armes-3": {
+  "f": "37b217a09ebf.mp3",
+  "d": 6.36
+ },
+ "armes-4": {
+  "f": "868f9c6d990e.mp3",
+  "d": 7.44
+ },
+ "resume-0": {
+  "f": "26cb2f85a557.mp3",
+  "d": 2.808
+ },
+ "resume-1": {
+  "f": "03dcdf7644b4.mp3",
+  "d": 6.36
+ },
+ "resume-2": {
+  "f": "5572bb67f461.mp3",
+  "d": 5.856
+ },
+ "resume-3": {
+  "f": "81208eacf156.mp3",
+  "d": 4.08
+ },
+ "resume-4": {
+  "f": "411e2c25d04b.mp3",
+  "d": 4.584
+ },
+ "resume-5": {
+  "f": "fa479d4c2119.mp3",
+  "d": 3.48
+ }
+}

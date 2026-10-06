@@ -44,6 +44,7 @@ const INDEXEES = [
   { fichier: "voyage/regulation.html", url: "https://inerweb.fr/voyage/regulation.html" },
   { fichier: "voyage/bietage.html", url: "https://inerweb.fr/voyage/bietage.html" },
   { fichier: "voyage/glissement.html", url: "https://inerweb.fr/voyage/glissement.html" },
+  { fichier: "voyage/eau-glacee.html", url: "https://inerweb.fr/voyage/eau-glacee.html" },
   {
     fichier: "packs/fluides/res/chaleur-interactive/index.html",
     url: "https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html",

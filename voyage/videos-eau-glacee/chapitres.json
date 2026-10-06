@@ -1,0 +1,92 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "à la frontière de l'eau",
+  "duree": 53,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "frontiere",
+  "num": "1",
+  "titre": "La frontière",
+  "sous": "l'évaporateur à plaques",
+  "duree": 33,
+  "video": "chapitre-01-la-frontiere.mp4",
+  "affiche": "chapitre-01-la-frontiere.jpg"
+ },
+ {
+  "id": "rencontre",
+  "num": "2",
+  "titre": "La rencontre",
+  "sous": "de part et d'autre de la plaque",
+  "duree": 41,
+  "video": "chapitre-02-la-rencontre.mp4",
+  "affiche": "chapitre-02-la-rencontre.jpg"
+ },
+ {
+  "id": "voyageEau",
+  "num": "3",
+  "titre": "Le voyage de l'eau",
+  "sous": "jusqu'aux bureaux",
+  "duree": 35,
+  "video": "chapitre-03-le-voyage-de-l-eau.mp4",
+  "affiche": "chapitre-03-le-voyage-de-l-eau.jpg"
+ },
+ {
+  "id": "pourquoiEau",
+  "num": "4",
+  "titre": "Pourquoi l'eau ?",
+  "sous": "le fluide reste chez lui",
+  "duree": 32,
+  "video": "chapitre-04-pourquoi-l-eau.mp4",
+  "affiche": "chapitre-04-pourquoi-l-eau.jpg"
+ },
+ {
+  "id": "tourGroupe",
+  "num": "5",
+  "titre": "Le reste de mon voyage",
+  "sous": "compresseur et condenseur",
+  "duree": 36,
+  "video": "chapitre-05-le-reste-de-mon-voyage.mp4",
+  "affiche": "chapitre-05-le-reste-de-mon-voyage.jpg"
+ },
+ {
+  "id": "sentinelle",
+  "num": "6",
+  "titre": "La sentinelle",
+  "sous": "le contrôleur de débit",
+  "duree": 47,
+  "video": "chapitre-06-la-sentinelle.mp4",
+  "affiche": "chapitre-06-la-sentinelle.jpg"
+ },
+ {
+  "id": "gel",
+  "num": "7",
+  "titre": "Si la frontière cède",
+  "sous": "le gel",
+  "duree": 44,
+  "video": "chapitre-07-si-la-frontiere-cede.mp4",
+  "affiche": "chapitre-07-si-la-frontiere-cede.jpg"
+ },
+ {
+  "id": "armes",
+  "num": "8",
+  "titre": "Les armes du frigoriste",
+  "sous": "tenir l'eau à distance",
+  "duree": 34,
+  "video": "chapitre-08-les-armes-du-frigoriste.mp4",
+  "affiche": "chapitre-08-les-armes-du-frigoriste.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "La frontière",
+  "sous": "l'essentiel à retenir",
+  "duree": 41,
+  "video": "chapitre-09-la-frontiere.mp4",
+  "affiche": "chapitre-09-la-frontiere.jpg"
+ }
+]
