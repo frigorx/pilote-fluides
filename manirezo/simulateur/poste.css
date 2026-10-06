@@ -1,0 +1,113 @@
+/* Le jeu du chalumeau — coque. Charte CuivRézo : fond crème, jamais de thème sombre,
+   texte ≥ 20 px, cibles ≥ 64 px (tablette sur l'établi, doigts gantés). */
+:root{
+  --navy:#1b3a63;--ink:#10233c;--muted:#56657a;--cream:#f7f1e7;--paper:#fffdf8;
+  --copper:#b8692e;--orange:#ff6b35;--orange-deep:#c9451a;
+  --ok:#1e7e54;--ok-bg:#e3f5ec;--bad:#b3261e;--bad-bg:#fbe7e4;--wait:#8a5300;--wait-bg:#fff4e0;
+  --line:rgba(27,58,99,.18);--o2:#1f5fae;--o2-bg:#e6effa;--ac:#b3261e;--ac-bg:#fbe9e6;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream);color:var(--ink);font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;font-size:20px;line-height:1.35}
+a{color:var(--navy);font-weight:700}
+.haut{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 16px;background:var(--paper);border-bottom:2px solid var(--line)}
+.haut .reseau{font-family:"Trebuchet MS",Calibri,sans-serif;font-weight:800;color:var(--copper);text-decoration:none}
+.haut h1{margin:0;font-size:1.1em;color:var(--navy);font-family:"Trebuchet MS",Calibri,sans-serif}
+.haut .droite{margin-left:auto;display:flex;gap:8px}
+.haut .droite button{min-height:48px;font-size:.8em}
+.etapes{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px 4px;margin:0;list-style:none;max-width:1500px;margin:0 auto}
+.etapes li{padding:6px 14px;border-radius:999px;border:2px solid var(--line);background:var(--paper);color:var(--muted);font-size:.8em;font-weight:700}
+.etapes li.faite{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.etapes li.active{background:var(--navy);border-color:var(--navy);color:#fff}
+main{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(340px,1fr);gap:16px;padding:12px 16px 24px;max-width:1500px;margin:0 auto}
+.col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.carte{background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:12px 14px}
+.carte h2{margin:0 0 8px;font-size:.95em;color:var(--navy);font-family:"Trebuchet MS",Calibri,sans-serif}
+.aide{margin:8px 0 0;color:var(--muted);font-size:.8em}
+svg{display:block;width:100%;height:auto}
+/* téléphone : la consigne, la vue de près et les commandes d'abord ; le poste ensuite */
+@media (max-width:920px){
+  main{display:flex;flex-direction:column}
+  .col{display:contents}
+  #carte-consigne{order:1}#carte-zoom{order:2}#carte-actions{order:3}#message{order:4}#carte-poste{order:5}#carte-bas{order:6}
+}
+.consigne{background:var(--navy);color:#fff;border-radius:18px;padding:14px 16px}
+.consigne .petit{display:block;font-size:.8em;opacity:.9}
+.consigne strong{display:block;font-size:1.35em;font-family:"Trebuchet MS",Calibri,sans-serif;margin-top:2px;line-height:1.2}
+.zoom-texte{font-size:.95em}
+.zoom-texte p{margin:4px 0}
+.liste{margin:0;padding-left:24px}
+.liste li{margin:6px 0}
+button{font:inherit;font-weight:700;min-height:64px;min-width:64px;border-radius:14px;border:2px solid var(--navy);background:var(--paper);color:var(--navy);cursor:pointer;padding:6px 16px;touch-action:manipulation;-webkit-user-select:none;user-select:none;line-height:1.2}
+button:active{transform:translateY(1px)}
+button:focus-visible{outline:4px solid var(--orange);outline-offset:2px}
+button:disabled{cursor:default}
+.btn-feu{background:var(--orange);border-color:var(--orange-deep);color:#fff}
+.btn-plein{background:var(--navy);color:#fff}
+.piege{border-style:dashed;color:var(--muted);border-color:var(--muted);font-weight:600}
+.juste{background:var(--ok-bg)!important;border-color:var(--ok)!important;color:var(--ok)!important}
+.faux{background:var(--bad-bg)!important;border-color:var(--bad)!important;color:var(--bad)!important}
+.choix{display:flex;flex-direction:column;gap:10px}
+.choix.deux{display:grid;grid-template-columns:1fr 1fr}
+.choix.cinq{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+.choix.buses{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+.choix button{text-align:left}
+.choix.deux button,.choix.cinq button,.choix.buses button{text-align:center}
+.choix b{display:block}
+.question{margin:0 0 10px;font-weight:700}
+.intro{margin:0 0 12px}
+.etat-liste{margin:0 0 6px;font-weight:700;color:var(--navy)}
+.ligne-suite{display:flex;justify-content:flex-end;margin-top:12px}
+.ligne-suite button{width:100%}
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.carte-epi{font-weight:600;font-size:.9em;text-align:left}
+.carte-epi.prise{background:var(--navy);color:#fff}
+.robinet{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:10px 12px;border-radius:16px;border:3px solid transparent;margin-top:10px;background:#eef3f9}
+.robinet:first-child{margin-top:0}
+.robinet.o2{background:var(--o2-bg)} .robinet.ac{background:var(--ac-bg)}
+.robinet.repere{border-color:var(--navy)}
+.robinet .nom{font-weight:800}
+.robinet.o2 .nom{color:var(--o2)} .robinet.ac .nom{color:var(--ac)}
+.robinet .pos{display:block;font-size:.85em;color:var(--muted)}
+.tourner{line-height:1.05;font-size:.85em}
+.tourner b{display:block;font-size:1.5em}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.message{border-radius:14px;padding:12px 14px;min-height:72px;border-left:8px solid var(--navy);background:#eef3f9}
+.message.ok{border-color:var(--ok);background:var(--ok-bg)}
+.message.bad{border-color:var(--bad);background:var(--bad-bg)}
+.message.wait{border-color:var(--wait);background:var(--wait-bg)}
+.message p{margin:0}
+.message p+p{margin-top:6px}
+.bilan ul{margin:6px 0;padding-left:22px}
+.bilan li.grave{color:var(--bad);font-weight:700}
+.code{font-family:Consolas,monospace;font-size:1.15em;background:var(--cream);padding:2px 10px;border-radius:8px}
+.bas{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;font-weight:700;color:var(--navy)}
+.referentiel{max-width:1500px;margin:0 auto;padding:0 16px 28px;color:var(--muted);font-size:.8em}
+.referentiel summary{cursor:pointer;font-weight:700;color:var(--navy);min-height:48px;display:flex;align-items:center}
+.referentiel ul{margin:4px 0 8px;padding-left:22px}
+/* scène */
+.touche{cursor:pointer}
+.halo{filter:drop-shadow(0 0 8px #ff6b35)}
+.jauge{cursor:zoom-in}
+.vac{animation:vac .55s ease-in-out infinite;transform-box:fill-box;transform-origin:left center}
+.vac.vite{animation-duration:.16s}
+.vac.lent{animation-duration:.9s}
+@keyframes vac{0%,100%{transform:scale(1,1)}50%{transform:scale(.985,1.07)}}
+.danse{animation:danse .3s ease-in-out infinite;transform-box:fill-box}
+@keyframes danse{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.fumee{animation:fumee 1.8s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes fumee{0%{transform:translate(0,0) scale(.6);opacity:.75}100%{transform:translate(30px,-90px) scale(2.2);opacity:0}}
+.fuite{animation:fuite .5s ease-in-out infinite alternate}
+@keyframes fuite{from{opacity:.25}to{opacity:.8}}
+.clac{animation:clac .7s ease-out forwards;transform-box:fill-box;transform-origin:center}
+@keyframes clac{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.pfff{animation:pfff .7s ease-out forwards;transform-box:fill-box;transform-origin:left center}
+@keyframes pfff{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.6) translateX(20px);opacity:0}}
+.bulle,.bulles circle{animation:bulle 1.4s ease-in infinite;transform-box:fill-box;transform-origin:center}
+@keyframes bulle{0%{transform:translateY(0) scale(.6);opacity:0}20%{opacity:1}100%{transform:translateY(-60px) scale(1.2);opacity:0}}
+/* loupe des manomètres */
+.loupe{position:fixed;inset:0;z-index:20;background:rgba(16,35,60,.55);display:none;align-items:center;justify-content:center;padding:16px}
+.loupe.ouverte{display:flex}
+.loupe .boite{background:var(--paper);border-radius:22px;padding:16px;max-width:520px;width:100%;text-align:center}
+.loupe svg{max-width:420px;margin:0 auto}
+.loupe p{margin:10px 0 12px}
+@media (prefers-reduced-motion:reduce){.vac,.danse,.fumee,.fuite,.bulle,.bulles circle{animation:none}}
