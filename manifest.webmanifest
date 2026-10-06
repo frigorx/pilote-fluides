@@ -1,6 +1,6 @@
 {
-  "name": "inerWeb Édu — le froid station par station",
-  "short_name": "inerWeb Édu",
+  "name": "inerweb.fr — le froid station par station",
+  "short_name": "inerweb.fr",
   "description": "Le plan de formation du froid en carte de métro : cours interactifs, examens blancs, outils. Gratuit, sans compte.",
   "lang": "fr",
   "start_url": "/",

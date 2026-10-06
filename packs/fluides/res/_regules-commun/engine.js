@@ -43,7 +43,7 @@
       '<main class="app" id="app">',
       '  <header class="topbar">',
       '    <a class="brand" href="../regules-interactif/index.html" aria-label="Revenir à la carte Les régules">',
-      '      <img class="brand-logo" src="../_regules-commun/logo-inerweb-edu.svg" alt="inerWeb Édu">',
+      '      <img class="brand-logo" src="../_regules-commun/logo-inerweb-edu.svg" alt="inerweb.fr">',
       '    </a>',
       '    <div class="module-heading"><p>' + escapeHtml(module.family) + ' · Station ' + module.number + '</p><h1>' + escapeHtml(module.title) + '</h1></div>',
     /* La voix est FABRIQUÉE (MP3 posés par voix/fabriquer-regules.mjs) : le

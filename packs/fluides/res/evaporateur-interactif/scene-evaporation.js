@@ -70,7 +70,7 @@
   const ZONES = [0, 1, 2].map(k => [Math.max(3, FINS[k] * L), Math.min(L - 3, FINS[k + 1] * L)]); // la partie du tube allumée à chaque étape
   const POLICE = { "font-family": "Calibri, Arial, sans-serif" };
   const etiquette = (p, x, y, s, at) => D.texte(p, x, y, s, Object.assign({ "font-size": 25, fill: "#10233c", "font-weight": 600 }, POLICE, at || {}));
-  const marquer = g => g.querySelectorAll("text").forEach(t => { if (t.textContent === "Studio") t.textContent = "Édu"; }); // cartouche du produit (charte R9)
+  const marquer = g => g.querySelectorAll("text").forEach(t => { if (t.textContent === "Studio") t.textContent = ".fr"; }); // cartouche du produit (charte R9)
 
   const avance = p => p < PV ? D.lisse(p / PV) : 1; // part du liquide déjà passée en vapeur (0 → 1) : le point du diagramme, la nappe
   const niveau = p => NMAX * (1 - avance(p)); // hauteur de la nappe, de 0 à 1 de l'intérieur du tube : elle baisse jusqu'à la dernière goutte

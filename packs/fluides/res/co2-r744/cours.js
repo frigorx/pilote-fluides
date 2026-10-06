@@ -19,7 +19,7 @@
    ===================================================================== */
 
 window.__INERWEB_COURSE__ = {
-  product: "inerWeb Édu — CO₂ / R744",
+  product: "inerweb.fr — CO₂ / R744",
   version: "1.0.0-brouillon",
   status: "Relecture métier à faire",
   soustitre: "BAC PRO MFER · TP BE CVC · formation continue",

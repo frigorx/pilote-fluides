@@ -153,13 +153,13 @@ fiches.sort((a, b) => (a.produite === b.produite ? a.titre.localeCompare(b.titre
 const enAttente = fiches.filter((f) => !f.produite);
 
 /* --- La page ---------------------------------------------------------- */
-const LOGO = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="140" height="32" role="img" aria-label="inerWeb Édu">
+const LOGO = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="140" height="32" role="img" aria-label="inerweb.fr">
 <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
 <text fill="#1b3a63" font-family="Trebuchet MS, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
 <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
 <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
 <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
-<text fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">Édu</text></svg>`;
+<text fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text></svg>`;
 
 const sommaire = fiches.map((f) =>
   `<li><a href="#${esc(f.slug)}">${esc(f.titre)}</a>` +

@@ -152,7 +152,7 @@ const jsonld = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebSite", "@id": "https://inerweb.fr/#site", "name": "inerWeb Édu", "alternateName": "inerWeb",
+      "@type": "WebSite", "@id": "https://inerweb.fr/#site", "name": "inerweb.fr", "alternateName": "inerWeb",
       "url": "https://inerweb.fr/", "inLanguage": "fr",
       "description": `${total.reseaux} réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation — ${total.stations} stations, une voix qui explique, sans compte.`,
       "publisher": { "@id": "https://inerweb.fr/#org" },

@@ -306,7 +306,7 @@ function ecrireMarkdown() {
 }
 
 /* ---------------------------------------------------------------------
-   5. SORTIE HTML — la même matrice, mais cherchable. Charte inerWeb Édu,
+   5. SORTIE HTML — la même matrice, mais cherchable. Charte inerweb.fr,
    jamais de thème sombre. Les filtres sont en JS nu : la page doit
    s'ouvrir depuis une clé USB, sans serveur ni réseau.
    --------------------------------------------------------------------- */

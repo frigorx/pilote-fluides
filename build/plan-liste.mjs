@@ -91,10 +91,10 @@ const jsonld = {
   "@graph": [
     {
       "@type": "WebSite",
-      name: "inerWeb Édu",
+      name: "inerweb.fr",
       url: SITE,
       description:
-        "Le plan de formation inerWeb Édu : cours interactifs du froid et de la climatisation sur une carte de métro — théorie, organes, gestes, fluides frigorigènes, examens blancs. Gratuit, sans compte.",
+        "Le plan de formation inerweb.fr : cours interactifs du froid et de la climatisation sur une carte de métro — théorie, organes, gestes, fluides frigorigènes, examens blancs. Gratuit, sans compte.",
       inLanguage: "fr",
     },
     {

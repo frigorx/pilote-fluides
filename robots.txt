@@ -1,5 +1,5 @@
 # =====================================================================
-#  inerWeb Édu — qui a le droit de lire ce site, et quoi
+#  inerweb.fr — qui a le droit de lire ce site, et quoi
 #  ---------------------------------------------------------------------
 #  Révisé le 20/09/2026. Deux règles, et elles tiennent en deux phrases :
 #

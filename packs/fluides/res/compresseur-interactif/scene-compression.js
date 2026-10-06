@@ -58,7 +58,7 @@
   const serrage = th => D.borne(Math.log((Y_PMB - PLAQUE) / Math.max(1, yPiston(th) - PLAQUE)) / Math.log((Y_PMB - PLAQUE) / (Y_OUV - PLAQUE)), 0, 1);
   const POLICE = { "font-family": "Calibri, Arial, sans-serif" };
   const etiquette = (p, x, y, s, at) => D.texte(p, x, y, s, Object.assign({ "font-size": 25, fill: "#10233c", "font-weight": 600 }, POLICE, at || {}));
-  const marquer = g => g.querySelectorAll("text").forEach(t => { if (t.textContent === "Studio") t.textContent = "Édu"; }); // cartouche du produit (charte R9)
+  const marquer = g => g.querySelectorAll("text").forEach(t => { if (t.textContent === "Studio") t.textContent = ".fr"; }); // cartouche du produit (charte R9)
 
   /* u : le temps en étapes (3 par tour : aspiration, compression, refoulement) → angle du vilebrequin */
   function angle(u) {
