@@ -1,0 +1,33 @@
+{
+  "cours": "detendeur-electronique",
+  "titre": "Le détendeur électronique",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 5,
+  "codes": {
+    "9.01": [
+      "identite",
+      "boucle",
+      "vannes",
+      "regler",
+      "verifier"
+    ],
+    "9.03": [
+      "regler"
+    ]
+  },
+  "appui": {
+    "1.02": [
+      "identite",
+      "boucle",
+      "regler"
+    ],
+    "1.04": [
+      "identite",
+      "vannes"
+    ],
+    "9.10": [
+      "boucle",
+      "regler"
+    ]
+  }
+}
