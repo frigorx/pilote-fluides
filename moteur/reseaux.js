@@ -21,8 +21,15 @@
    `chiffres` (texte libre à la place de « N stations · N lignes », ex.
    « 11 modules · 4 paliers »), `pdf` ({ titre, href } : document à
    télécharger, ajouté après les raccourcis), `points` (nombre de ronds sur
-   la carte des réseaux quand le réseau n'a pas de lignes, ex. les jeux).
+   la carte des réseaux quand le réseau n'a pas de lignes, ex. les jeux),
+   `externe` ({ titre, href } : lien HORS du site, ouvert dans un nouvel
+   onglet, jamais vérifié sur le disque — ex. la chaîne YouTube).
    ===================================================================== */
+/* La chaîne YouTube « inerWeb FR » (06/10/2026, F. Henninot : « un lien direct
+   depuis inerWeb Studio et depuis l'accueil »). Adresse PERMANENTE de la chaîne
+   (/channel/UC…) et non le nom court (@fh4681, attribué par YouTube) : elle
+   survit à un changement de nom court. Une seule source : l'accueil la lit ici. */
+window.INERWEB_YOUTUBE = "https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA";
 /* RESEAUX DEBUT */
 window.INERWEB_RESEAUX = [
   {
@@ -270,6 +277,7 @@ window.INERWEB_RESEAUX = [
     points: 4,
     vignette: "voyage/videos/chapitre-00-mon-voyage.jpg",
     entree: { titre: "Voyage dans tous ses états", href: "voyage/index.html" },
+    externe: { titre: "▶ La chaîne YouTube inerWeb FR", href: window.INERWEB_YOUTUBE },
     raccourcis: [
       { titre: "Les éditions du Voyage", href: "studio/index.html#t-editions" },
       { titre: "La régulation en films", href: "studio/index.html#t-regules" },
