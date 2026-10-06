@@ -104,3 +104,10 @@ contraste (le régulateur calcule la surchauffe) ; écran 13 → gare 5 « Capil
 à 768 px de haut, Retour / Continuer sortaient de l'écran. Corrigé dans le module, sans toucher à `moteur/` : à l'écran,
 `body` est une colonne flex et `.app-shell` prend la hauteur qui reste (`styles.css`, bloc `@media screen`) ; le papier garde
 sa règle. `.app-shell` est dans la vérification « hors écran » du contrôle.
+
+**Continuité du fluide (retour de Franck, 06/10)** : en coupe, aucun disque ni couvercle ne ferme un tube. Les tubes (entrée, raccord de
+sortie, serpentin, bulbe, capillaire, embout de la tête) sont faits de parois ouvertes ; la section de coupe est une bande fine le long
+de la paroi, sans bague aux jonctions. Le serpentin et le raccord de sortie partagent la même section (alésage 5,6, extérieur 6,5,
+`tubePlan`) ; les anneaux sont serrés dans les coudes (un tous les 5°) pour qu'aucune arête ne se lise comme une cloison. Le volume
+du fluide (orangé, puis bleu, puis bleu pâle de la vapeur) va de l'entrée à la sortie de l'évaporateur sans rupture ; la charge du
+bulbe traverse le capillaire jusqu'au-dessus de la membrane. Contrôle visuel : `3d/banc.html?ecran=boucle`, vue agrandie sur chaque raccord.

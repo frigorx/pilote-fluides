@@ -1,0 +1,32 @@
+{
+  "cours": "detendeur-egalisation-externe",
+  "titre": "L’égalisation externe",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 5,
+  "codes": {
+    "9.01": [
+      "identite",
+      "piege",
+      "et-si-externe",
+      "brancher",
+      "verifier"
+    ],
+    "9.02": [
+      "brancher"
+    ]
+  },
+  "appui": {
+    "1.02": [
+      "piege",
+      "et-si-externe"
+    ],
+    "1.04": [
+      "identite",
+      "piege"
+    ],
+    "9.10": [
+      "et-si-externe",
+      "brancher"
+    ]
+  }
+}

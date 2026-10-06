@@ -69,7 +69,7 @@
     const cuivreCoupe = std(0xefb086, 0.55, 0.2, { side: T.DoubleSide });
     const laitonFerme = M.laiton.clone();
     const cuivre = coupable(M.cuivre.clone());
-    const cuivreTube = coupable(std(0xffffff, 0.3, 1, { color: 0xd8875a, vertexColors: true }));
+    const cuivreTube = coupable(M.cuivre.clone()); cuivreTube.vertexColors = true;   /* même cuivre que les raccords : aucun changement de teinte à la jonction */
     const cuivreBulbe = coupable(std(0xd8875a, 0.28, 1, { emissive: 0x000000 }));
     const inox = coupable(K.metal(0xd3d8dc, 0.26).clone());
     const inoxSombre = coupable(M.acierSombre.clone());
@@ -84,7 +84,7 @@
     const matMelange = fl(0x2f9be8, 0.7, { emissive: 0x1a6fb0, emissiveIntensity: 0.5 });
     const matVapeur = fl(0x74bff0, 0.78, { emissive: 0x2a7fb0, emissiveIntensity: 0.35 });
     const matCharge = coupable(fl(0xe2481c, 0.62, { emissive: 0x8a1a00, emissiveIntensity: 0.3 }));
-    const matRemplissage = coupable(fl(0xffffff, 1, { vertexColors: true }));
+    const matRemplissage = coupable(fl(0xffffff, 1, { vertexColors: true, roughness: 0.65, emissive: 0x1f7fc8, emissiveIntensity: 0.55 }));
     const matFilet = K.lumineux(0xffe4a8, 0.9);
     const matBulle = fl(0xf4fbff, 0.55, { roughness: 0.1, emissive: 0x7fc0e0, emissiveIntensity: 0.4 });
     const matMolecule = K.lumineux(0x9fd0e8, 0.85);
@@ -231,13 +231,67 @@
     racine.add(corpsCoupe);
 
     /* ------------------------------------------------------------------ les tubes à braser */
-    const tubeEntree = revol([[4.6, -26], [5.5, -26], [5.5, -62], [4.6, -62], [4.6, -26]], cuivre, cuivreCoupe, 32);
-    tubeEntree.add(revol([[5.5, -26], [7, -26], [7, -29.5], [5.5, -29.5], [5.5, -26]], cuivre, cuivreCoupe, 32));
+    /* Un tube = deux parois OUVERTES (extérieure, intérieure) : ni bague, ni couvercle, ni face qui ferme l'alésage. En coupe,
+       la section de la paroi est une bande fine le long du tube. Même rayon (alésage 5,6 · extérieur 6,5) du corps au bout
+       de l'évaporateur : les jonctions ne montrent aucune marche. */
+    const RAD = 14;
+    /* Les anneaux des tubes : un par sommet de la ligne brisée (un tous les 5° dans les coudes), au plus 8 mm d'écart sur les
+       tronçons droits. Serrés dans les coudes, ils évitent les éclats qu'un pas régulier de 2,3 mm y laissait ; `u` est l'abscisse
+       curviligne de l'anneau (0 → 1), qui sert à teinter le fluide. */
+    const echantillon = pts => {
+      const R = [[pts[0][0], pts[0][1]]], S = [0]; let s = 0;
+      for (let i = 1; i < pts.length; i++) {
+        const dx = pts[i][0] - pts[i - 1][0], dy = pts[i][1] - pts[i - 1][1], L = Math.hypot(dx, dy), k = Math.max(1, Math.ceil(L / 8));
+        if (L < 1e-6) continue;                                    /* deux points confondus (fin du tronçon droit = début du coude) : un seul anneau */
+        for (let m = 1; m <= k; m++) { s += L / k; R.push([pts[i - 1][0] + dx * m / k, pts[i - 1][1] + dy * m / k]); S.push(s); }
+      }
+      return { R, u: S.map(x => x / s) };
+    };
+    /* Tube dans le plan de coupe (z = 0) : les sommets sont décalés d'un demi-pas, le plan de coupe passe donc au milieu d'une
+       facette ; le rayon est majoré (1 / cos) pour que la coupe tombe exactement au rayon voulu : la bande de coupe ferme la
+       paroi sans éclat. Même rangement des sommets que TubeGeometry (anneau par anneau). */
+    const tubePlan = (anneaux, r) => {
+      const P = anneaux.R, n = P.length, pos = [], nor = [], uv = [], idx = [], rr = r / Math.cos(Math.PI / RAD);
+      for (let i = 0; i < n; i++) {
+        const a = P[Math.max(0, i - 1)], b = P[Math.min(n - 1, i + 1)];
+        let tx = b[0] - a[0], ty = b[1] - a[1]; const L = Math.hypot(tx, ty) || 1; tx /= L; ty /= L;
+        for (let j = 0; j <= RAD; j++) {
+          const th = (j + 0.5) / RAD * Math.PI * 2, c = Math.cos(th), sn = Math.sin(th), ex = -ty * c, ey = tx * c;
+          pos.push(P[i][0] + ex * rr, P[i][1] + ey * rr, sn * rr); nor.push(ex, ey, sn); uv.push(anneaux.u[i], j / RAD);
+        }
+      }
+      for (let i = 0; i < n - 1; i++) for (let j = 0; j < RAD; j++) { const a = i * (RAD + 1) + j, b = a + RAD + 1; idx.push(a, b, a + 1, b, b + 1, a + 1); }
+      const g = new T.BufferGeometry();
+      g.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); g.setAttribute('normal', new T.Float32BufferAttribute(nor, 3));
+      g.setAttribute('uv', new T.Float32BufferAttribute(uv, 2)); g.setIndex(idx);
+      return g;
+    };
+    const paroi = (rIn, rOut, y0, y1) => {
+      const g = new T.Group();
+      g.add(mesh(tour([[rOut, y0], [rOut, y1]], 32), cuivre), mesh(tour([[rIn, y1], [rIn, y0]], 32), cuivre));
+      return g;
+    };
+    const bandesTube = (pts, rIn, rOut) => {                 /* pts : [[x, y], …] dans le plan de coupe */
+      const n = pts.length, pos = [], nor = [], idx = [];
+      for (let i = 0; i < n; i++) {
+        const a = pts[Math.max(0, i - 1)], b = pts[Math.min(n - 1, i + 1)], tx = b[0] - a[0], ty = b[1] - a[1], L = Math.hypot(tx, ty) || 1;
+        const nx = -ty / L, ny = tx / L, x = pts[i][0], y = pts[i][1];
+        pos.push(x + nx * rIn, y + ny * rIn, 0, x + nx * rOut, y + ny * rOut, 0, x - nx * rIn, y - ny * rIn, 0, x - nx * rOut, y - ny * rOut, 0);
+        for (let k = 0; k < 4; k++) nor.push(0, 0, 1);
+      }
+      for (let i = 0; i < n - 1; i++) { const a = i * 4, b = a + 4; idx.push(a, a + 1, b + 1, a, b + 1, b, a + 2, a + 3, b + 3, a + 2, b + 3, b + 2); }
+      const g = new T.BufferGeometry();
+      g.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); g.setAttribute('normal', new T.Float32BufferAttribute(nor, 3)); g.setIndex(idx);
+      const m = mesh(g, cuivreCoupe); m.position.z = 0.05; m.userData.sansOmbre = true;
+      const grp = new T.Group(); grp.add(m); grp.visible = false; faces.push(grp);
+      return grp;
+    };
+    const tubeEntree = new T.Group();
+    tubeEntree.add(paroi(4.6, 5.5, -62, -26), bandesTube([[0, -62], [0, -26]], 4.6, 5.5));
     tubeEntree.position.set(-16, 0, 0);
     const tubeSortie = new T.Group();
-    tubeSortie.add(revol([[5.6, 0], [7, 0], [7, 16], [5.6, 16], [5.6, 0]], cuivre, cuivreCoupe, 32));
-    tubeSortie.add(revol([[7, 0], [8.4, 0], [8.4, 3.5], [7, 3.5], [7, 0]], cuivre, cuivreCoupe, 32));
-    tubeSortie.rotation.z = -Math.PI / 2; tubeSortie.position.set(24, 8, 0);
+    const anneauxSortie = echantillon([[24, 8], [40, 8]]);                      /* même section que le serpentin, qui lui fait suite */
+    tubeSortie.add(mesh(tubePlan(anneauxSortie, 6.5), cuivre), mesh(tubePlan(anneauxSortie, 5.6), cuivre), bandesTube(anneauxSortie.R, 5.6, 6.5));
     racine.add(tubeEntree, tubeSortie);
 
     /* ------------------------------------------------------------------ l'orifice (bague d'acier) */
@@ -248,16 +302,18 @@
 
     /* ------------------------------------------------------------------ la tête thermostatique */
     const grpTete = new T.Group();
+    /* le dôme est percé à l'axe (Ø 2,8) : le gaz du capillaire passe par l'embout creux jusque sous le dôme */
+    const aM1 = Math.acos(1.4 / 27), aM2 = Math.acos(1.4 / 25.4);
     const domeSup = revol(
-      arc(14, t => [27 * Math.cos(t * Math.PI / 2), 44 + 11 * Math.sin(t * Math.PI / 2)])
-        .concat(arc(14, t => [25.4 * Math.cos((1 - t) * Math.PI / 2), 44 + 9.4 * Math.sin((1 - t) * Math.PI / 2)]), [[27, 44]]),
+      arc(14, t => [27 * Math.cos(t * aM1), 44 + 11 * Math.sin(t * aM1)])
+        .concat(arc(14, t => [25.4 * Math.cos((1 - t) * aM2), 44 + 9.4 * Math.sin((1 - t) * aM2)]), [[27, 44]]),
       inox, metalCoupe, 44);
     const domeInf = revol(
       arc(10, t => [13.5 + 13.5 * (1 - t), 36 + 8 * (1 - t) * (1 - t)])
         .concat([[13.5, 34], [8, 34], [8, 37.8]], arc(10, t => [8 + 17.3 * t, 37.8 + 6 * t * t]), [[27, 44]]),
       inox, metalCoupe, 44);
     const jonc = revol([[24.6, 42.2], [29.2, 42.2], [29.2, 45.8], [24.6, 45.8], [24.6, 42.2]], inoxSombre, metalCoupe, 44);
-    const embout = revol([[0, 53.5], [2.6, 53.5], [2.6, 60], [1.6, 61.5], [0, 61.5], [0, 53.5]], inoxSombre, metalCoupe, 24);
+    const embout = revol([[1.4, 53], [2.6, 53], [2.6, 60], [1.8, 61.5], [1.4, 61.5], [1.4, 53]], inoxSombre, metalCoupe, 24);
     grpTete.add(domeSup, domeInf, jonc, embout);
 
     /* la membrane : un disque d'acier très fin qui se creuse ; le piston la tient en son centre */
@@ -310,7 +366,8 @@
     /* la charge du dessus de la membrane : même fluide que le bulbe */
     const chargeTete = mesh(tour(arc(12, t => [24.6 * Math.cos(t * Math.PI / 2), 44.3 + 8.8 * Math.sin(t * Math.PI / 2)]).concat([[0, 44.3]]), 40), matCharge);
     chargeTete.userData.voile = true; chargeTete.visible = false;
-    grpTete.add(chargeTete);
+    const chargeEmbout = mesh(K.cylindre(1.25, 9, 14), matCharge, 0, 57.2, 0); chargeEmbout.userData.voile = true; chargeEmbout.visible = false;
+    grpTete.add(chargeTete, chargeEmbout);
     const ancreTete = new T.Object3D(); ancreTete.position.set(0, 61.5, 0); grpTete.add(ancreTete);
     racine.add(grpTete);
 
@@ -335,27 +392,29 @@
 
     /* ------------------------------------------------------------------ l'évaporateur et son tube de sortie */
     const XR = 125, XL = 48, Y1 = 8, Y2 = -8, Y3 = -24, XFIN = 200;
-    const serpentin = [[24, Y1, 0], [XR, Y1, 0]];
-    for (let a = 90; a >= -90; a -= 10) serpentin.push([XR + 8 * Math.cos(a * Math.PI / 180), 8 * Math.sin(a * Math.PI / 180), 0]);
+    const serpentin = [[40, Y1, 0], [XR, Y1, 0]];
+    for (let a = 90; a >= -90; a -= 5) serpentin.push([XR + 8 * Math.cos(a * Math.PI / 180), 8 * Math.sin(a * Math.PI / 180), 0]);
     serpentin.push([XL, Y2, 0]);
-    for (let a = 90; a <= 270; a += 10) serpentin.push([XL + 8 * Math.cos(a * Math.PI / 180), -16 + 8 * Math.sin(a * Math.PI / 180), 0]);
+    for (let a = 90; a <= 270; a += 5) serpentin.push([XL + 8 * Math.cos(a * Math.PI / 180), -16 + 8 * Math.sin(a * Math.PI / 180), 0]);
     serpentin.push([XFIN, Y3, 0]);
     const cheminTube = K.chemin(serpentin);
-    const LS = cheminTube.getLength();
-    const NS = 160, RAD = 14;
-    const geoTube = new T.TubeGeometry(cheminTube, NS, 6.5, RAD, false);
-    const nSommets = geoTube.attributes.position.count;
-    geoTube.setAttribute('color', new T.Float32BufferAttribute(new Float32Array(nSommets * 3).fill(1), 3));
-    const tubeEvap = mesh(geoTube, cuivreTube);
+    const cheminRempl = K.chemin([[24, Y1, 0]].concat(serpentin));       /* le fluide part de la face du corps */
+    const LS = cheminRempl.getLength(), LT = cheminTube.getLength(), L0 = LS - LT;
+    const anneauxTube = echantillon(serpentin), anneauxFluide = echantillon([[24, Y1, 0]].concat(serpentin));
+    const geoTube = tubePlan(anneauxTube, 6.5);
+    const geoTubeI = tubePlan(anneauxTube, 5.6);
+    [geoTube, geoTubeI].forEach(g => g.setAttribute('color', new T.Float32BufferAttribute(new Float32Array(g.attributes.position.count * 3).fill(1), 3)));
+    const tubeEvap = new T.Group();
+    tubeEvap.add(mesh(geoTube, cuivreTube), mesh(geoTubeI, cuivreTube), bandesTube(anneauxTube.R, 5.6, 6.5));
     racine.add(tubeEvap);
     /* la chaleur du tube de sortie : une enveloppe rouge-orangé (ou bleutée quand il refroidit), seulement sur la dernière passe */
-    const geoChaleur = new T.TubeGeometry(cheminTube, NS, 6.95, RAD, false);
+    const geoChaleur = tubePlan(anneauxTube, 6.95);
     geoChaleur.setAttribute('color', new T.Float32BufferAttribute(new Float32Array(geoChaleur.attributes.position.count * 4), 4));
     const matChaleur = coupable(new T.MeshBasicMaterial({ vertexColors: true, transparent: true, depthWrite: false, toneMapped: false }));
     const chaleurTube = mesh(geoChaleur, matChaleur); chaleurTube.renderOrder = 4; chaleurTube.userData.sansOmbre = true;
     racine.add(chaleurTube);
     /* le remplissage : fluide dans le serpentin, couleur par anneau (mélange puis vapeur) */
-    const geoRempl = new T.TubeGeometry(cheminTube, NS, 5.3, RAD, false);
+    const geoRempl = tubePlan(anneauxFluide, 5.3);
     geoRempl.setAttribute('color', new T.Float32BufferAttribute(new Float32Array(geoRempl.attributes.position.count * 4), 4));
     const rempl = mesh(geoRempl, matRemplissage);
     rempl.renderOrder = 2; rempl.userData.sansOmbre = true;
@@ -363,13 +422,14 @@
     /* ------------------------------------------------------------------ le bulbe, son collier, le capillaire */
     const BX = 138, BY = -12.3, LB = 56;                 /* départ, hauteur de l'axe, longueur */
     const bulbe = new T.Group();
-    const coqueB = [[0, 0], [2, 0.35], [3.8, 1.3], [5, 3], [5.2, 4.4], [5.2, LB - 4.4], [5, LB - 3], [3.8, LB - 1.3], [2, LB - 0.35], [0, LB],
-      [0, LB - 0.8], [1.8, LB - 1.1], [3.4, LB - 2], [4.4, LB - 3.4], [4.4, 4.4], [3.4, 3.4], [1.8, 2.1], [0, 0.8], [0, 0]];
+    const coqueB = [[0, 0], [2, 0.35], [3.8, 1.3], [5, 3], [5.2, 4.4], [5.2, LB - 4.4], [5, LB - 3], [3.8, LB - 1.3], [2, LB - 0.35], [1, LB - 0.12],
+      [1, LB - 0.85], [1.8, LB - 1.1], [3.4, LB - 2], [4.4, LB - 3.4], [4.4, 4.4], [3.4, 3.4], [1.8, 2.1], [0, 0.8], [0, 0]];
     bulbe.add(revol(coqueB, cuivreBulbe, cuivreCoupe, 36));
-    bulbe.add(revol([[0, LB - 0.5], [1.7, LB - 0.5], [1.7, LB + 3.2], [0, LB + 3.2], [0, LB - 0.5]], cuivreBulbe, cuivreCoupe, 16));
+    bulbe.add(revol([[1, LB - 0.5], [1.7, LB - 0.5], [1.7, LB + 3.2], [1, LB + 3.2], [1, LB - 0.5]], cuivreBulbe, cuivreCoupe, 16));
     const chargeBulbe = mesh(tour([[0, 1.2], [2.5, 1.5], [4, 2.6], [4.3, 4], [4.3, LB - 4], [4, LB - 2.6], [2.5, LB - 1.5], [0, LB - 1.2]], 32), matCharge);
     chargeBulbe.userData.voile = true; chargeBulbe.visible = false;
-    bulbe.add(chargeBulbe);
+    const chargeEmboutB = mesh(K.cylindre(0.9, 4.9, 12), matCharge, 0, LB + 0.95, 0); chargeEmboutB.userData.voile = true; chargeEmboutB.visible = false;
+    bulbe.add(chargeBulbe, chargeEmboutB);
     bulbe.rotation.z = -Math.PI / 2; bulbe.position.set(BX, BY, 0);
     const grpBulbe = new T.Group(); grpBulbe.add(bulbe);
     /* deux colliers de serrage, boulonnés sur le dessus ; chacun entoure le tube ET le bulbe */
@@ -388,8 +448,9 @@
 
     /* le capillaire : un tube de cuivre qui relie l'embout de la tête au bulbe, toujours d'une seule pièce */
     const cuivreFil = M.cuivre.clone();
-    const capillaire = mesh(new T.BufferGeometry(), cuivreFil);
-    racine.add(capillaire);
+    const capillaire = mesh(new T.BufferGeometry(), cuivreFil); capillaire.renderOrder = 1;
+    const chargeCap = mesh(new T.BufferGeometry(), matCharge); chargeCap.userData.voile = true; chargeCap.userData.sansOmbre = true; chargeCap.visible = false; chargeCap.renderOrder = 2;
+    racine.add(capillaire, chargeCap);
     let courbeCap = null; const posA = new T.Vector3(), posB = new T.Vector3(), memA = new T.Vector3(1e9, 0, 0), memB = new T.Vector3(1e9, 0, 0);
     const majCapillaire = () => {
       ancreTete.getWorldPosition(posA); ancreBulbe.getWorldPosition(posB);
@@ -398,19 +459,23 @@
       courbeCap = new T.CubicBezierCurve3(posA.clone(), posA.clone().add(new T.Vector3(0, 38, -26)), posB.clone().add(new T.Vector3(46, 34, -26)), posB.clone());
       capillaire.geometry.dispose();
       capillaire.geometry = new T.TubeGeometry(courbeCap, 96, 1.25, 8, false);
+      chargeCap.geometry.dispose();
+      chargeCap.geometry = new T.TubeGeometry(courbeCap, 96, 0.62, 6, false);
       return true;
     };
 
     /* ------------------------------------------------------------------ les fluides (visibles en coupe) */
     const fluides = new T.Group(); fluides.visible = false; racine.add(fluides);
+    /* Les volumes se touchent sans se recouvrir et sans interstice (0,02 mm) : aucune ligne claire entre deux, aucune
+       bande plus dense là où deux se superposeraient ; leurs largeurs sont celles des tubes (alésage 4,6 et 5,6). */
     const boiteFluide = (r, mat) => {
-      const w = r[1] - r[0] - 0.3, h = r[3] - r[2] - 0.3, d = r[4] - 0.2;
+      const w = r[1] - r[0] - 0.04, h = r[3] - r[2] - 0.04, d = r[4] - 0.02;
       const o = mesh(new T.BoxGeometry(w, h, d), mat, (r[0] + r[1]) / 2, (r[2] + r[3]) / 2, 0.03 - d / 2);
       o.userData.sansOmbre = true; o.renderOrder = 1; return o;
     };
-    /* liquide haute pression : perçage d'entrée, passage, logement du clapet (au-dessus de la vis) */
-    [CREUX[0], CREUX[1], [-6.2, 6.2, -24, -4.5, 6.2]].forEach(r => fluides.add(boiteFluide(r, matHP)));
-    const remplEntree = mesh(K.cylindre(4.55, 36, 24), matHPc, -16, -44, 0); remplEntree.userData.sansOmbre = true; remplEntree.renderOrder = 1; fluides.add(remplEntree);
+    /* liquide haute pression, de l'entrée à l'orifice : tube, perçage, passage, logement du clapet */
+    [[-20.6, -11.4, -26, -16, 4.6], CREUX[1], [-6.2, 6.2, -24, -4.5, 6.2]].forEach(r => fluides.add(boiteFluide(r, matHP)));
+    const remplEntree = mesh(K.cylindre(4.58, 36, 24), matHPc, -16, -44, 0); remplEntree.userData.sansOmbre = true; remplEntree.renderOrder = 1; fluides.add(remplEntree);
     /* mélange basse pression : orifice, chambre de détente, perçage de sortie */
     [CREUX[3], CREUX[4], CREUX[5]].forEach(r => fluides.add(boiteFluide(r, matMelange)));
     fluides.add(rempl);
@@ -426,7 +491,7 @@
     const alea = Array.from({ length: 160 }, (_, i) => { const x = Math.sin(i * 12.9898) * 43758.5453; return x - Math.floor(x); });
     /* bulles qui naissent à l'orifice, grossissent en avançant, disparaissent au front de liquide ;
        petites molécules de vapeur ensuite */
-    const cheminBulles = K.chemin([[0, -3, 0], [0, 4, 0], [8, 8, 0]].concat(serpentin));
+    const cheminBulles = K.chemin([[0, -3, 0], [0, 4, 0], [8, 8, 0], [24, Y1, 0]].concat(serpentin));
     const LP = cheminBulles.getLength(), LB0 = LP - LS;
     const NB = 44, bulles = new T.InstancedMesh(new T.SphereGeometry(1, 8, 6), matBulle, NB);
     const NM = 46, molecules = new T.InstancedMesh(new T.SphereGeometry(0.62, 6, 4), matMolecule, NM);
@@ -470,7 +535,8 @@
       faces.forEach(f => { f.visible = coupe; });
       aCouper.forEach(m => { m.clippingPlanes = coupe ? [PLAN] : null; m.needsUpdate = true; });
       capFerme.visible = !coupe; capCoupe.visible = coupe;
-      chargeTete.visible = chargeBulbe.visible = prise.visible = coupe;
+      chargeTete.visible = chargeBulbe.visible = chargeEmbout.visible = chargeEmboutB.visible = chargeCap.visible = prise.visible = coupe;
+      cuivreFil.transparent = coupe; cuivreFil.opacity = coupe ? 0.4 : 1; cuivreFil.depthWrite = !coupe; cuivreFil.needsUpdate = true;
       fluides.visible = coupe && etat.fluide && !etat.eclate;
       forces.visible = coupe && etat.fleches && !etat.eclate;
     };
@@ -491,21 +557,28 @@
       const cle = [E.uf.toFixed(3), E.s.toFixed(3), E.debit.toFixed(2)].join('|');
       if (cle === memCouleurs) return false;
       memCouleurs = cle;
-      const col = geoRempl.attributes.color, pos = geoRempl.attributes.position, tcol = geoTube.attributes.color;
+      const col = geoRempl.attributes.color, tcol = geoTube.attributes.color, tcolI = geoTubeI.attributes.color;
       const tiede = clamp((E.s - 0.5) * 2, 0, 1), froid = clamp((0.5 - E.s) * 2, 0, 1);
-      const liq = [0.34, 0.68, 0.95], vap = [0.88, 0.95, 0.98];
-      for (let i = 0; i <= NS; i++) {
-        const u = i / NS, m = lisser(E.uf + 0.03, E.uf - 0.03, u);              /* 1 : mélange, 0 : vapeur */
-        const chaud = (1 - m) * lisser(E.uf, 1, u) * tiede, glace = (1 - m) * lisser(E.uf, 1, u) * froid;
-        const a = 0.12 + 0.62 * m * (0.3 + 0.7 * E.debit) + 0.04 * (1 - m);
+      const liq = [0.14, 0.56, 0.94], vap = [0.5, 0.78, 0.96];             /* mélange : bleu franc ; vapeur : bleu pâle, toujours visible */
+      const forme = u => { const m = lisser(E.uf + 0.07, E.uf - 0.07, u), z = (1 - m) * lisser(E.uf, 1, u); return { m, chaud: z * tiede, glace: z * froid }; };
+      for (let i = 0; i < anneauxFluide.R.length; i++) {
+        const { m, chaud, glace } = forme(anneauxFluide.u[i]);
+        const a = 0.55 * (1 - m) + m * (0.7 + 0.22 * clamp(E.debit * 1.3, 0, 1));
         for (let k = 0; k < RAD + 1; k++) {
           const j = i * (RAD + 1) + k;
           col.setXYZ(j, (liq[0] * m + vap[0] * (1 - m)) + 0.1 * chaud - 0.1 * glace, (liq[1] * m + vap[1] * (1 - m)) - 0.2 * chaud - 0.04 * glace, (liq[2] * m + vap[2] * (1 - m)) - 0.34 * chaud + 0.02 * glace);
           col.setW(j, a);
-          tcol.setXYZ(j, 1 - 0.45 * glace, 1 - 0.62 * chaud - 0.08 * glace, 1 - 0.8 * chaud);
         }
       }
-      col.needsUpdate = true; tcol.needsUpdate = true;
+      for (let i = 0; i < anneauxTube.R.length; i++) {                    /* la même teinte sur le tube : son abscisse est décalée de L0 */
+        const f = forme((L0 + anneauxTube.u[i] * LT) / LS);
+        for (let k = 0; k < RAD + 1; k++) {
+          const j = i * (RAD + 1) + k;
+          tcol.setXYZ(j, 1 - 0.45 * f.glace, 1 - 0.62 * f.chaud - 0.08 * f.glace, 1 - 0.8 * f.chaud);
+          tcolI.setXYZ(j, 1 - 0.45 * f.glace, 1 - 0.62 * f.chaud - 0.08 * f.glace, 1 - 0.8 * f.chaud);
+        }
+      }
+      col.needsUpdate = true; tcol.needsUpdate = true; tcolI.needsUpdate = true;
       return true;
     };
 
@@ -637,8 +710,8 @@
       if (cle === memChaleur) return; memChaleur = cle;
       const col = geoChaleur.attributes.color, a = 0.62 * Math.max(chaud, froid);
       const c = chaud >= froid ? [1, 0.36, 0.1] : [0.35, 0.68, 1];
-      for (let i = 0; i <= NS; i++) {
-        const al = a * lisser(0.58, 0.66, i / NS);
+      for (let i = 0; i < anneauxTube.R.length; i++) {
+        const al = a * lisser(0.56, 0.62, anneauxTube.u[i]);
         for (let k = 0; k < RAD + 1; k++) { const j = i * (RAD + 1) + k; col.setXYZW(j, c[0], c[1], c[2], al); }
       }
       col.needsUpdate = true;
@@ -669,8 +742,8 @@
         desc: 'Un tube de cuivre très fin. Il relie le bulbe à la tête et transmet la pression.' },
       { id: 'bulbe', nom: 'Le bulbe et son collier', objets: [grpBulbe],
         desc: 'Un petit tube fermé, rempli de fluide, serré sur le tube de sortie de l’évaporateur. Plus il chauffe, plus sa pression monte.' },
-      { id: 'charge', nom: 'La charge du bulbe', objets: [chargeBulbe, chargeTete],
-        desc: 'Le fluide enfermé dans le bulbe, le capillaire et le dessus de la membrane.' },
+      { id: 'charge', nom: 'La charge du bulbe', objets: [chargeBulbe, chargeTete, chargeEmbout, chargeEmboutB, chargeCap],
+        desc: 'Le fluide enfermé dans le bulbe, le capillaire et le dessus de la membrane : il passe d’un bout à l’autre, sans cloison.' },
       { id: 'evap', nom: 'La sortie de l’évaporateur', objets: [tubeEvap], ancre: [90, -16, 8],
         desc: 'Le tube où l’on serre le bulbe. Sa température dit si le fluide en sort trop chaud (surchauffe forte) ou non.' }
     ];
