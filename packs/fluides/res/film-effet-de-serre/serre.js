@@ -977,7 +977,7 @@
         padding: '4px 12px',
         borderRadius: 8
       }
-    }, "\xC9du")), /*#__PURE__*/React.createElement("div", {
+    }, ".fr")), /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'absolute',
         right: 46,
@@ -1097,7 +1097,7 @@
       value: t.sousTitres,
       onChange: v => setTweak('sousTitres', v)
     }), /*#__PURE__*/React.createElement(TweakToggle, {
-      label: "Bandeau inerWeb \xC9du",
+      label: "Bandeau inerweb.fr",
       value: t.logo,
       onChange: v => setTweak('logo', v)
     }), /*#__PURE__*/React.createElement(TweakSection, {
