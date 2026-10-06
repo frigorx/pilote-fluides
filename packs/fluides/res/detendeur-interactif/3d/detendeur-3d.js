@@ -83,12 +83,17 @@
     const matHPc = coupable(matHP.clone());
     const matMelange = fl(0x2f9be8, 0.7, { emissive: 0x1a6fb0, emissiveIntensity: 0.5 });
     const matVapeur = fl(0x74bff0, 0.78, { emissive: 0x2a7fb0, emissiveIntensity: 0.35 });
-    const matCharge = coupable(fl(0xe2481c, 0.62, { emissive: 0x8a1a00, emissiveIntensity: 0.3 }));
+    /* CONVENTION DE LA LIGNE « LES DÉTENDEURS » : la charge du bulbe et sa pression sont VIOLETTES (#8e44ad) ; l'orangé est réservé au
+       liquide HP. Le bulbe, le capillaire et la chambre au-dessus de la membrane sont remplis du même violet, d'un seul tenant. */
+    const flMat = (c, op, x) => std(c, 0.6, 0, Object.assign({ transparent: true, opacity: op, depthWrite: false }, x || {}));   /* mat : pas de reflet qui délave la couleur */
+    const matCharge = coupable(flMat(0x8e44ad, 0.85, { emissive: 0x4b1a66, emissiveIntensity: 0.3 }));
+    const matChargeTete = coupable(flMat(0x8e44ad, 0.55, { emissive: 0x3a1352, emissiveIntensity: 0.3 }));   /* se fonce quand la pression monte */
+    const matSous = coupable(flMat(0x3f9be0, 0.6, { emissive: 0x1f6fb0, emissiveIntensity: 0.4 }));          /* chambre sous la membrane : pression d'évaporation (bleu) */
     const matRemplissage = coupable(fl(0xffffff, 1, { vertexColors: true, roughness: 0.65, emissive: 0x1f7fc8, emissiveIntensity: 0.55 }));
     const matFilet = K.lumineux(0xffe4a8, 0.9);
     const matBulle = fl(0xf4fbff, 0.55, { roughness: 0.1, emissive: 0x7fc0e0, emissiveIntensity: 0.4 });
     const matMolecule = K.lumineux(0x9fd0e8, 0.85);
-    const matImpulsion = K.lumineux(0xe2552b);
+    const matImpulsion = K.lumineux(0xf3e2fc);                        /* impulsions de pression : violet clair */
 
     /* ------------------------------------------------------------------ pièces de révolution (axe Y)
        profil : [[r, y], …] (polygone fermé : on répète le premier point à la fin si besoin).
@@ -323,14 +328,14 @@
     for (let i = 24; i >= 0; i--) pointsMembrane.push(new T.Vector2(RM * i / 24, -0.45));
     const geoMembrane = new T.LatheGeometry(pointsMembrane, 44);
     const yMembrane0 = Float32Array.from(geoMembrane.attributes.position.array.filter((_, i) => i % 3 === 1));
-    const matMembrane = coupable(std(0xc9503a, 0.35, 0.55));
+    const matMembrane = coupable(std(0x5f6a75, 0.4, 0.8));            /* acier : l'orangé est réservé au liquide HP */
     const membrane = mesh(geoMembrane, matMembrane);
     const fMembrane = r => r <= RP ? 1 : 0.5 * (1 + Math.cos(Math.PI * clamp((r - RP) / (RM - RP), 0, 1)));
     const NR = 40, ruban = new T.BufferGeometry();
     ruban.setAttribute('position', new T.Float32BufferAttribute(new Float32Array((NR + 1) * 2 * 3), 3));
     ruban.setIndex(Array.from({ length: NR }, (_, i) => { const a = i * 2; return [a, a + 1, a + 2, a + 1, a + 3, a + 2]; }).flat());
     ruban.setAttribute('normal', new T.Float32BufferAttribute(new Float32Array((NR + 1) * 2 * 3).map((_, i) => i % 3 === 2 ? 1 : 0), 3));
-    const faceMembrane = mesh(ruban, std(0xd96a52, 0.5, 0.2, { side: T.DoubleSide }));
+    const faceMembrane = mesh(ruban, std(0x9aa6b2, 0.5, 0.3, { side: T.DoubleSide }));
     faceMembrane.position.z = 0.05; faceMembrane.visible = false; faceMembrane.userData.sansOmbre = true; faces.push(faceMembrane);
     const grpMembrane = new T.Group(); grpMembrane.add(membrane, faceMembrane);
     grpTete.add(grpMembrane);
@@ -355,6 +360,34 @@
         q.setXYZ(i * 2, x, y + 0.45, 0); q.setXYZ(i * 2 + 1, x, y - 0.45, 0);
       }
       q.needsUpdate = true;
+      majChambreSous(); majChambreHaut();
+    };
+
+    /* La chambre sous la membrane : la pression d'évaporation y arrive par la prise interne (bleu). Son plafond est la membrane :
+       il la suit quand elle se creuse ; son plancher est l'intérieur de la coque basse. */
+    const chambreSous = mesh(new T.BufferGeometry(), matSous); chambreSous.userData.sansOmbre = true; chambreSous.renderOrder = 1;
+    const majChambreSous = () => {
+      const dz = 0.35 - E.D, R1 = 24.2, bas = [[0, 34.1], [7.85, 34.1], [7.85, 37.95]], haut = [];
+      for (let k = 1; k <= 8; k++) { const t = k / 8; bas.push([7.85 + (R1 - 7.85) * t, 37.95 + 6 * Math.pow((7.85 + (R1 - 7.85) * t - 8) / 17.3, 2) + 0.1]); }
+      for (let k = 8; k >= 0; k--) { const r = R1 * k / 8; haut.push([r, 44 + dz * fMembrane(r) - 0.6]); }
+      chambreSous.geometry.dispose();
+      chambreSous.geometry = tour(bas.concat(haut, [[0, 34.1]]), 40);
+    };
+    /* La chambre au-dessus de la membrane (violet) : son plancher est la membrane, son plafond la coque haute ; elle est reliée au
+       capillaire par l'embout creux (Ø 2,8). Elle suit la membrane quand celle-ci se creuse. */
+    const majChambreHaut = () => {
+      const dz = 0.35 - E.D, R2 = 24.9, bas = [], haut = [];
+      for (let k = 0; k <= 8; k++) { const r = R2 * k / 8; bas.push([r, 44 + dz * fMembrane(r) + 0.6]); }
+      for (let k = 8; k >= 0; k--) { const r = Math.max(R2 * k / 8, 0); haut.push([r, 44 + 9.4 * Math.sqrt(Math.max(0, 1 - Math.pow(r / 25.4, 2))) - 0.25]); }
+      chargeTete.geometry.dispose();
+      chargeTete.geometry = tour(bas.concat(haut), 40);
+    };
+    /* la chambre au-dessus se FONCE quand la pression du bulbe monte : plus de gaz serré, une couleur plus dense */
+    const couleurClaire = new T.Color(0xa86fc6), couleurSombre = new T.Color(0x4b1572);
+    const majTeinteTete = () => {
+      const t = clamp((E.Pb - 0.35) / 0.4, 0, 1);
+      matChargeTete.color.copy(couleurClaire).lerp(couleurSombre, t);
+      matChargeTete.opacity = 0.42 + 0.5 * t;
     };
 
     /* l'équipage mobile : piston, tige ; le clapet s'y appuie (il est à part, il sort par le bas) */
@@ -364,9 +397,9 @@
     equipage.add(piston, tige);
     grpTete.add(equipage);
     /* la charge du dessus de la membrane : même fluide que le bulbe */
-    const chargeTete = mesh(tour(arc(12, t => [24.6 * Math.cos(t * Math.PI / 2), 44.3 + 8.8 * Math.sin(t * Math.PI / 2)]).concat([[0, 44.3]]), 40), matCharge);
-    chargeTete.userData.voile = true; chargeTete.visible = false;
-    const chargeEmbout = mesh(K.cylindre(1.25, 9, 14), matCharge, 0, 57.2, 0); chargeEmbout.userData.voile = true; chargeEmbout.visible = false;
+    const chargeTete = mesh(new T.BufferGeometry(), matChargeTete);
+    chargeTete.visible = false;
+    const chargeEmbout = mesh(K.cylindre(1.25, 9, 14), matCharge, 0, 57.2, 0); chargeEmbout.visible = false;
     grpTete.add(chargeTete, chargeEmbout);
     const ancreTete = new T.Object3D(); ancreTete.position.set(0, 61.5, 0); grpTete.add(ancreTete);
     racine.add(grpTete);
@@ -427,8 +460,8 @@
     bulbe.add(revol(coqueB, cuivreBulbe, cuivreCoupe, 36));
     bulbe.add(revol([[1, LB - 0.5], [1.7, LB - 0.5], [1.7, LB + 3.2], [1, LB + 3.2], [1, LB - 0.5]], cuivreBulbe, cuivreCoupe, 16));
     const chargeBulbe = mesh(tour([[0, 1.2], [2.5, 1.5], [4, 2.6], [4.3, 4], [4.3, LB - 4], [4, LB - 2.6], [2.5, LB - 1.5], [0, LB - 1.2]], 32), matCharge);
-    chargeBulbe.userData.voile = true; chargeBulbe.visible = false;
-    const chargeEmboutB = mesh(K.cylindre(0.9, 4.9, 12), matCharge, 0, LB + 0.95, 0); chargeEmboutB.userData.voile = true; chargeEmboutB.visible = false;
+    chargeBulbe.visible = false;
+    const chargeEmboutB = mesh(K.cylindre(0.9, 4.9, 12), matCharge, 0, LB + 0.95, 0); chargeEmboutB.visible = false;
     bulbe.add(chargeBulbe, chargeEmboutB);
     bulbe.rotation.z = -Math.PI / 2; bulbe.position.set(BX, BY, 0);
     const grpBulbe = new T.Group(); grpBulbe.add(bulbe);
@@ -449,7 +482,7 @@
     /* le capillaire : un tube de cuivre qui relie l'embout de la tête au bulbe, toujours d'une seule pièce */
     const cuivreFil = M.cuivre.clone();
     const capillaire = mesh(new T.BufferGeometry(), cuivreFil); capillaire.renderOrder = 1;
-    const chargeCap = mesh(new T.BufferGeometry(), matCharge); chargeCap.userData.voile = true; chargeCap.userData.sansOmbre = true; chargeCap.visible = false; chargeCap.renderOrder = 2;
+    const chargeCap = mesh(new T.BufferGeometry(), matCharge); chargeCap.userData.sansOmbre = true; chargeCap.visible = false; chargeCap.renderOrder = 2;
     racine.add(capillaire, chargeCap);
     let courbeCap = null; const posA = new T.Vector3(), posB = new T.Vector3(), memA = new T.Vector3(1e9, 0, 0), memB = new T.Vector3(1e9, 0, 0);
     const majCapillaire = () => {
@@ -460,7 +493,7 @@
       capillaire.geometry.dispose();
       capillaire.geometry = new T.TubeGeometry(courbeCap, 96, 1.25, 8, false);
       chargeCap.geometry.dispose();
-      chargeCap.geometry = new T.TubeGeometry(courbeCap, 96, 0.62, 6, false);
+      chargeCap.geometry = new T.TubeGeometry(courbeCap, 96, 1.0, 8, false);
       return true;
     };
 
@@ -482,7 +515,7 @@
     /* la prise de pression interne : toujours visible en coupe (c'est une pièce) */
     const prise = new T.Group();
     [CREUX[6], CREUX[7], CREUX[8]].forEach(r => { const b = boiteFluide(r, matVapeur); b.userData.voile = true; prise.add(b); });
-    prise.visible = false; racine.add(prise);
+    prise.add(chambreSous); prise.visible = false; racine.add(prise);
 
     /* filets de liquide (jamais des billes) : de petits traits clairs qui avancent dans le liquide HP */
     const cheminHP = K.chemin([[-16, -61, 0], [-16, -13, 0], [0, -13, 0], [0, -6, 0]]);
@@ -497,8 +530,8 @@
     const NM = 46, molecules = new T.InstancedMesh(new T.SphereGeometry(0.62, 6, 4), matMolecule, NM);
     [bulles, molecules].forEach(o => { o.frustumCulled = false; o.userData.sansOmbre = true; o.renderOrder = 3; fluides.add(o); });
 
-    /* impulsions de pression dans le capillaire (orange) */
-    const NI = 14, impulsions = new T.InstancedMesh(new T.SphereGeometry(1.55, 8, 6), matImpulsion, NI);
+    /* impulsions de pression dans le capillaire (violet clair) */
+    const NI = 12, impulsions = new T.InstancedMesh(new T.SphereGeometry(1.9, 8, 6), matImpulsion, NI);
     impulsions.frustumCulled = false; impulsions.userData.sansOmbre = true; impulsions.visible = false; racine.add(impulsions);
 
     /* ------------------------------------------------------------------ les trois forces sur la membrane */
@@ -514,7 +547,7 @@
       };
       return g;
     };
-    const flBulbe = fleche(0xe8601c), flEvap = fleche(0x3d7fca), flRessort = fleche(0x1b3a63);
+    const flBulbe = fleche(0x8e44ad), flEvap = fleche(0x3d7fca), flRessort = fleche(0x6b7885);   /* violet : bulbe (ouvre) · bleu : évaporation (ferme) · gris acier : ressort (ferme) */
     const forces = new T.Group(); forces.add(flBulbe, flEvap, flRessort); forces.visible = false; racine.add(forces);
     sansOmbre(forces); forces.traverse(n => { n.renderOrder = 5; });
 
@@ -536,7 +569,7 @@
       aCouper.forEach(m => { m.clippingPlanes = coupe ? [PLAN] : null; m.needsUpdate = true; });
       capFerme.visible = !coupe; capCoupe.visible = coupe;
       chargeTete.visible = chargeBulbe.visible = chargeEmbout.visible = chargeEmboutB.visible = chargeCap.visible = prise.visible = coupe;
-      cuivreFil.transparent = coupe; cuivreFil.opacity = coupe ? 0.4 : 1; cuivreFil.depthWrite = !coupe; cuivreFil.needsUpdate = true;
+      cuivreFil.transparent = coupe; cuivreFil.opacity = coupe ? 0.25 : 1; cuivreFil.depthWrite = !coupe; cuivreFil.needsUpdate = true;
       fluides.visible = coupe && etat.fluide && !etat.eclate;
       forces.visible = coupe && etat.fleches && !etat.eclate;
     };
@@ -590,9 +623,9 @@
       if (t === mesuresTxt) return; mesuresTxt = t;
       const v = t.split('|');
       ctx.mesures([
-        { libelle: 'Le bulbe pousse · ouvre', valeur: v[0] },
-        { libelle: 'L’évaporation pousse · ferme', valeur: v[1] },
-        { libelle: 'Le ressort pousse · ferme', valeur: v[2] }
+        { libelle: 'Pression du bulbe : ouvre', valeur: v[0] },
+        { libelle: 'Pression d’évaporation : ferme', valeur: v[1] },
+        { libelle: 'Ressort : ferme', valeur: v[2] }
       ]);
     };
 
@@ -649,7 +682,7 @@
     };
 
     const bougerImpulsions = (dt, dPb) => {
-      /* des grains orange du bulbe vers la tête quand la pression monte, de la tête vers le bulbe quand elle baisse */
+      /* des grains violet clair du bulbe vers la tête quand la pression monte, de la tête vers le bulbe quand elle baisse */
       const actif = Math.abs(dPb) > 0.012 && courbeCap;
       impulsions.visible = !!actif && !etat.eclate;
       if (!actif) return false;
@@ -733,17 +766,17 @@
       { id: 'vis', nom: 'La vis de réglage et son capuchon', objets: [vis, capFerme, capCoupe],
         desc: 'La vis comprime plus ou moins le ressort. Le capuchon la protège. On ne la tourne qu’après avoir mesuré et diagnostiqué.' },
       { id: 'membrane', nom: 'La membrane', objets: [grpMembrane, piston],
-        desc: 'Un disque d’acier très mince. Le gaz du bulbe la pousse vers le bas (ouvrir). L’évaporation et le ressort la poussent vers le haut (fermer).' },
+        desc: 'Un disque d’acier très mince. Le gaz violet du bulbe la pousse vers le bas (ouvrir). L’évaporation (bleu) et le ressort (gris) la poussent vers le haut (fermer).' },
       { id: 'tete', nom: 'La tête thermostatique', objets: [domeSup, domeInf, jonc, embout], ancre: [-22, 50, 0],
-        desc: 'Deux coques d’acier soudées autour de la membrane. Au-dessus : la pression du bulbe. En dessous : la pression d’évaporation.' },
+        desc: 'Deux coques d’acier soudées autour de la membrane. Au-dessus : la pression du bulbe (violet). En dessous : la pression d’évaporation (bleu).' },
       { id: 'prise', nom: 'La prise de pression interne', objets: [prise], ancre: [10, 24, 0],
-        desc: 'Un petit passage dans le corps. Il amène sous la membrane la pression qui règne juste après l’orifice.' },
+        desc: 'Un petit passage dans le corps. Il amène sous la membrane (en bleu) la pression qui règne juste après l’orifice.' },
       { id: 'capillaire', nom: 'Le capillaire', objets: [capillaire], ancre: [100, 66, -20],
-        desc: 'Un tube de cuivre très fin. Il relie le bulbe à la tête et transmet la pression.' },
+        desc: 'Un tube de cuivre très fin, rempli du même fluide violet que le bulbe. Il relie le bulbe à la tête et transmet la pression.' },
       { id: 'bulbe', nom: 'Le bulbe et son collier', objets: [grpBulbe],
-        desc: 'Un petit tube fermé, rempli de fluide, serré sur le tube de sortie de l’évaporateur. Plus il chauffe, plus sa pression monte.' },
+        desc: 'Un petit tube fermé, rempli de fluide violet, serré sur le tube de sortie de l’évaporateur. Plus il chauffe, plus la pression de ce fluide monte.' },
       { id: 'charge', nom: 'La charge du bulbe', objets: [chargeBulbe, chargeTete, chargeEmbout, chargeEmboutB, chargeCap],
-        desc: 'Le fluide enfermé dans le bulbe, le capillaire et le dessus de la membrane : il passe d’un bout à l’autre, sans cloison.' },
+        desc: 'Le fluide violet enfermé dans le bulbe, le capillaire et le dessus de la membrane : il passe d’un bout à l’autre, sans cloison. C’est lui qui pousse la membrane.' },
       { id: 'evap', nom: 'La sortie de l’évaporateur', objets: [tubeEvap], ancre: [90, -16, 8],
         desc: 'Le tube où l’on serre le bulbe. Sa température dit si le fluide en sort trop chaud (surchauffe forte) ou non.' }
     ];
@@ -752,18 +785,32 @@
     const VUE = {
       tout: { azimut: -14, elevation: 10, zoom: 1.4, cible: [86, 6, 0] },
       objet: { azimut: -30, elevation: 16, zoom: 1.45, cible: [86, 6, 0] },
-      valve: { azimut: -9, elevation: 7, zoom: 2.2, cible: [14, 8, 0] },
-      tete: { azimut: -9, elevation: 7, zoom: 2.2, cible: [14, 8, 0] },
+      valve: { azimut: -9, elevation: 7, zoom: 1.85, cible: [14, 6, 0] },
+      tete: { azimut: -9, elevation: 7, zoom: 1.85, cible: [14, 6, 0] },
       sortie: { azimut: -12, elevation: 12, zoom: 3, cible: [150, -10, 0] },
       evap: { azimut: -12, elevation: 10, zoom: 2.4, cible: [112, -8, 0] },
       chaine: { azimut: -12, elevation: 12, zoom: 1.85, cible: [92, 22, 0] },
       orifice: { azimut: -9, elevation: 7, zoom: 3.4, cible: [6, 4, 0] },
+      bulbe: { azimut: -12, elevation: 12, zoom: 4.2, cible: [166, -8, 0] },
+      teteHaut: { azimut: -9, elevation: 7, zoom: 3.4, cible: [16, 46, 0] },
       chemin: { azimut: -10, elevation: 8, zoom: 1.95, cible: [26, 0, 0] },
       eclate: { azimut: -28, elevation: 12, zoom: 1.02, cible: [64, -8, 0] }
     };
 
     /* ------------------------------------------------------------------ les programmes, étape par étape */
-    const liens = (pb, d, deb, uf) => { LIEN.pb = pb; LIEN.d = d; LIEN.deb = deb; LIEN.uf = uf; };
+    const liens = (pb, d, deb, uf, vpb) => { LIEN.pb = pb; LIEN.d = d; LIEN.deb = deb; LIEN.uf = uf; VITESSE.pb = vpb || 3.2; };
+    /* Un déroulé : [[seconde, fonction], …] dans le temps du modèle (donc étiré par le ralenti, et rejoué par `avancer` des tests).
+       Il sert à montrer l'ordre : le bulbe d'abord, puis la pression qui file dans le capillaire, puis la tête, puis seulement le clapet. */
+    let seq = null;
+    const deroule = liste => { seq = { t: 0, i: 0, liste }; };
+    const avancerSeq = dt => {
+      if (!seq) return false;
+      seq.t += dt;
+      while (seq && seq.i < seq.liste.length && seq.liste[seq.i][0] <= seq.t) { const f = seq.liste[seq.i][1]; seq.i++; f(); }
+      if (seq && seq.i >= seq.liste.length) seq = null;
+      return !!seq;
+    };
+    const camera = v => { if (ctx.element && ctx.element.orienter) ctx.element.orienter(v.azimut, v.elevation, v.zoom, v.cible || null); };
     const consigne = (ch, v) => { C.ch = ch; C.vis = v; C.forceD = null; };
 
     const ETAPES = {
@@ -780,21 +827,21 @@
       ],
       forces: [
         { titre: 'Équilibre', piece: 'membrane', voirDedans: true, eclate: false, vue: VUE.tete, duree: 9, actions: [['phase', 'f1']],
-          texte: 'F bulbe = F évaporation + F ressort. Le clapet garde sa position.' },
-        { titre: 'Le bulbe est plus chaud', piece: 'membrane', voirDedans: true, eclate: false, vue: VUE.tete, duree: 10, ralenti: true, actions: [['phase', 'f2']],
-          texte: 'La membrane et la tige descendent ; le clapet s’éloigne du siège et le passage augmente.' },
+          texte: 'F bulbe = F évaporation + F ressort : la flèche violette équilibre la bleue et la grise. Le clapet garde sa position.' },
+        { titre: 'Le bulbe est plus chaud', piece: null, voirDedans: true, eclate: false, vue: VUE.bulbe, duree: 14, actions: [['phase', 'f2']],
+          texte: 'Le bulbe chauffe : sa pression (violet) file dans le capillaire et la chambre se fonce. La flèche violette pousse la membrane : le clapet s’éloigne et le passage augmente.' },
         { titre: 'La vis comprime le ressort', piece: 'ressort', voirDedans: true, eclate: false, vue: VUE.valve, duree: 10, ralenti: true, actions: [['phase', 'f3']],
           texte: 'Le ressort ferme plus fort : le clapet remonte, le passage diminue. On ne tourne la vis qu’après mesure et diagnostic.' }
       ],
       boucle: [
         { titre: 'Régime stable', piece: 'clapet', voirDedans: true, eclate: false, vue: VUE.valve, duree: 7, actions: [['phase', 'b1']],
           texte: 'La membrane est en équilibre : le clapet laisse passer juste ce qu’il faut de liquide.' },
-        { titre: 'La sortie de l’évaporateur se réchauffe', piece: 'evap', voirDedans: true, eclate: false, vue: VUE.sortie, duree: 9, actions: [['phase', 'b2']],
-          texte: 'La charge thermique monte : le liquide s’évapore plus tôt et la surchauffe augmente.' },
-        { titre: 'Le bulbe chauffe : sa pression monte', piece: 'bulbe', voirDedans: true, eclate: false, vue: VUE.chaine, duree: 9, actions: [['phase', 'b3']],
-          texte: 'Le gaz du bulbe se dilate. Sa pression monte et file par le capillaire jusqu’à la membrane.' },
-        { titre: 'La membrane pousse : le clapet s’ouvre', piece: 'membrane', voirDedans: true, eclate: false, vue: VUE.valve, duree: 10, ralenti: true, actions: [['phase', 'b4']],
-          texte: 'Elle descend, la tige pousse le clapet loin de l’orifice : le passage s’agrandit, le débit augmente.' },
+        { titre: 'La sortie de l’évaporateur se réchauffe', piece: null, voirDedans: true, eclate: false, vue: VUE.bulbe, duree: 9, actions: [['phase', 'b2']],
+          texte: 'La charge monte : le liquide s’évapore plus tôt, la vapeur sort plus chaude. Le bulbe, serré sur ce tube, chauffe avec lui.' },
+        { titre: 'Le bulbe chauffe : sa pression monte', piece: null, voirDedans: true, eclate: false, vue: VUE.bulbe, duree: 11, actions: [['phase', 'b3']],
+          texte: 'Le fluide violet du bulbe se dilate : sa pression monte. Des impulsions plus claires filent dans le capillaire jusqu’à la tête, dont la chambre se fonce.' },
+        { titre: 'La membrane est poussée : le clapet s’ouvre', piece: 'membrane', voirDedans: true, eclate: false, vue: VUE.valve, duree: 10, ralenti: true, actions: [['phase', 'b4']],
+          texte: 'La flèche violette l’emporte sur la bleue et la grise : la membrane descend, la tige pousse le clapet loin de l’orifice, le passage s’agrandit.' },
         { titre: 'Plus de liquide entre dans l’évaporateur', piece: 'evap', voirDedans: true, eclate: false, vue: VUE.evap, duree: 10, actions: [['phase', 'b5']],
           texte: 'Le liquide va plus loin dans le serpentin : la vapeur sort moins chaude, la surchauffe redescend.' },
         { titre: 'La pression du bulbe baisse : le ressort referme', piece: 'ressort', voirDedans: true, eclate: false, vue: VUE.valve, duree: 11, ralenti: true, actions: [['phase', 'b6']],
@@ -805,16 +852,23 @@
     };
 
     const PHASES = {
-      stable: () => { liens(1, 1, 1, 1); consigne(0.5, 0.5); },
-      f1: () => { liens(1, 1, 1, 1); consigne(0.5, 0.5); },
-      f2: () => { liens(1, 1, 1, 1); consigne(0.8, 0.5); },
-      f3: () => { liens(1, 1, 1, 1); consigne(0.5, 0.9); },
-      b1: () => { liens(1, 1, 1, 1); consigne(0.5, 0.5); },
-      b2: () => { liens(0, 0, 0, 1); consigne(0.8, 0.5); },
-      b3: () => { liens(1, 0, 0, 1); consigne(0.8, 0.5); },
-      b4: () => { liens(1, 1, 1, 0); consigne(0.8, 0.5); },
-      b5: () => { liens(0, 0, 0, 1); consigne(0.8, 0.5); },
-      b6: () => { liens(1, 1, 1, 1); consigne(0.8, 0.5); }
+      stable: () => { seq = null; liens(1, 1, 1, 1); consigne(0.5, 0.5); },
+      f1: () => { seq = null; liens(1, 1, 1, 1); consigne(0.5, 0.5); },
+      /* le bulbe d'abord (la sortie chauffe), puis la pression qui file dans le capillaire, puis la tête, puis seulement la membrane et le clapet */
+      f2: () => {
+        liens(0, 0, 0, 1, 0.55); consigne(0.8, 0.5);
+        deroule([[2.4, () => { liens(1, 0, 0, 1, 0.55); camera(VUE.chaine); }], [4.6, () => camera(VUE.teteHaut)], [6.4, () => { liens(1, 1, 1, 0); camera(VUE.tete); }]]);   /* le bulbe reste chaud : on regarde la membrane et le clapet, la boucle se referme à l'écran 7 */
+      },
+      f3: () => { seq = null; liens(1, 1, 1, 1); consigne(0.5, 0.9); },
+      b1: () => { seq = null; liens(1, 1, 1, 1); consigne(0.5, 0.5); },
+      b2: () => { seq = null; liens(0, 0, 0, 1); consigne(0.8, 0.5); },
+      b3: () => {
+        liens(1, 0, 0, 1, 0.5); consigne(0.8, 0.5);
+        deroule([[2.6, () => camera(VUE.chaine)], [5, () => camera(VUE.teteHaut)]]);
+      },
+      b4: () => { seq = null; liens(1, 1, 1, 0); consigne(0.8, 0.5); },
+      b5: () => { seq = null; liens(0, 0, 0, 1); consigne(0.8, 0.5); },
+      b6: () => { seq = null; liens(1, 1, 1, 1); consigne(0.8, 0.5); }
     };
 
     const PHRASES = {
@@ -838,11 +892,13 @@
       if (id === 'fluide') { etat.fluide = !!v; majVisibilites(); return; }
       if (id === 'phase') { if (PHASES[v]) PHASES[v](); ctx.regler('sortie', ''); ctx.reveiller(); return; }
       if (id === 'ouverture') {
+        seq = null;
         const o = OUVERTURES[v]; if (!o) return;
         liens(1, 1, 1, 1); consigne(0.5, 0.5); C.forceD = o.D;
         ctx.dire(o.texte); ctx.reveiller(); return;
       }
       if (id === 'sortie') {
+        seq = null;
         liens(1, 1, 1, 1); consigne(v === 'chaud' ? 0.8 : 0.2, 0.5);
         ctx.dire(REPONSES[v] || '');
         ctx.reveiller(); return;
@@ -874,7 +930,7 @@
     { const bt = ctx.element && ctx.element.querySelector('.e3d-bt-fantome'); if (bt) bt.textContent = '◐ Voir en coupe'; }
 
     /* le modèle de départ : l'équilibre, tout posé */
-    poser(); majRemplissage(); majFleches(); majChaleur(); majVisibilites(); majMesures();
+    poser(); majTeinteTete(); majRemplissage(); majFleches(); majChaleur(); majVisibilites(); majMesures();
     majCapillaire();
     const commandes = PROG === 'boucle'
       ? [{ id: 'sortie', type: 'choix', options: [['chaud', 'La sortie chauffe'], ['froid', 'La sortie refroidit']], valeur: '' }]
@@ -908,7 +964,8 @@
       animer(dt) {
         const r = avancer(dt);
         let actif = r.bouge;
-        if (r.bouge) { poser(); majMembrane(); majChaleur(); majMesures(); if (etat.fleches) majFleches(); }
+        if (avancerSeq(dt)) actif = true;
+        if (r.bouge) { poser(); majMembrane(); majTeinteTete(); majChaleur(); majMesures(); if (etat.fleches) majFleches(); }
         if (majRemplissage()) actif = true;
         if (majCapillaire()) actif = true;
         if (bougerImpulsions(dt, r.dPb)) actif = true;
@@ -916,7 +973,7 @@
         tempsAnneau += dt; if (majAnneau(tempsAnneau)) actif = true;
         return actif;
       },
-      detruire() { }
+      detruire() { seq = null; }
     };
   }, { famille: 'detendeurs', titre: 'Le détendeur thermostatique', stations: [] });
 })();

@@ -39,8 +39,10 @@ const FORMATS = [
   { name: "360x640", width: 360, height: 640 }
 ];
 const PRINCIPAUX = ["1366x768", "390x844"];                 // formats où l'on joue toute la 3D et où l'on photographie
-const ECRANS_3D = [1, 2, 3, 5, 6];                           // index des écrans en 3D
+const ECRANS_3D = [1, 2, 3, 5, 6];
+const LIENS = [[0, "Toute la famille des détendeurs", "../detendeurs-famille/index.html"], [8, "L’égalisation externe", "../detendeur-egalisation-externe/index.html"], [10, "Le détendeur électronique", "../detendeur-electronique/index.html"]];                           // index des écrans en 3D
 const echecs = [];
+const photo_ = (format) => PRINCIPAUX.includes(format.name);
 const ko = (msg) => { echecs.push(msg); console.log("  ÉCHEC", msg); };
 
 const browser = await chromium.launch({ headless: true, executablePath: EXE, args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
@@ -74,6 +76,10 @@ async function pasDeDefilement(page, qui) {
     return { sw: r.scrollWidth, cw: r.clientWidth, sh: r.scrollHeight, ch: r.clientHeight, w: innerWidth, h: innerHeight, boites };
   });
   if (m.sw > m.cw + 1 || m.sh > m.ch + 1) ko(`${qui} : la page défile ${JSON.stringify({ sw: m.sw, cw: m.cw, sh: m.sh, ch: m.ch })}`);
+  if (m.w >= 700) {
+    const coupe = await page.evaluate(() => { const c = document.querySelector(".lesson-copy"), d = document.querySelector(".lesson-detail"); return Math.max(c.scrollHeight - c.clientHeight, d.scrollHeight - d.clientHeight); });
+    if (coupe > 1) ko(`${qui} : le texte du cours est coupé de ${coupe} px`);
+  }
   m.boites.forEach((b) => { if (b.l < -1 || b.t < -1 || b.r > m.w + 1 || b.b > m.h + 1) ko(`${qui} : ${b.s} hors écran ${JSON.stringify(b)}`); });
 }
 
@@ -104,7 +110,7 @@ const dot = (page, i) => page.locator(`.e3d-etapes-points button:nth-child(${i})
 async function tailleDuTexte(page, qui) {
   const petits = await page.evaluate(() => {
     const sortie = [];
-    document.querySelectorAll(".lesson-intro, .lesson-detail *, .takeaway, .e3d-phrase").forEach((e) => {
+    document.querySelectorAll(".lesson-intro, .lesson-detail *, .takeaway, .e3d-phrase, .lesson-link:not([hidden])").forEach((e) => {
       const r = e.getBoundingClientRect(); if (!r.width || !r.height) return;
       const st = getComputedStyle(e); if (st.display === "none" || st.visibility === "hidden") return;
       if (![...e.childNodes].some((c) => c.nodeType === 3 && c.textContent.trim())) return;
@@ -206,6 +212,8 @@ async function jouer3D(page, format, n) {
     if (format.name === "1366x768") await tailleDuTexte(page, qui);
     await page.waitForTimeout(400);
     garde((await phrase(page)).includes("F bulbe = F évaporation + F ressort"), "étape 1 : équilibre absent");
+    const leg6 = (await page.locator(".e3d-mesures .metric span").allTextContents()).join(" | ");
+    garde(/Pression du bulbe : ouvre/.test(leg6) && /Pression d’évaporation : ferme/.test(leg6) && /Ressort : ferme/.test(leg6), `légende des trois forces absente (${leg6})`);
     const D = [];
     await avancer(page, 8); D.push((await etatModele(page)).D);
     await dot(page, 2); await avancer(page, 9); D.push((await etatModele(page)).D);
@@ -223,6 +231,8 @@ async function jouer3D(page, format, n) {
     garde((await rendu(page)).remplissage > 0.04, "canevas vide");
     if (format.name === "1366x768") await tailleDuTexte(page, qui);
     const T_ = [];
+    const leg7 = (await page.locator(".e3d-mesures .metric span").allTextContents()).join(" | ");
+    garde(/Pression du bulbe : ouvre/.test(leg7) && /Pression d’évaporation : ferme/.test(leg7) && /Ressort : ferme/.test(leg7), `légende des trois forces absente (${leg7})`);
     await page.waitForTimeout(400);
     await avancer(page, 8); T_.push(await etatModele(page));
     const titres = ["Régime stable", "se réchauffe", "sa pression monte", "le clapet s’ouvre", "Plus de liquide", "le ressort referme"];
@@ -287,6 +297,7 @@ async function verifier2D(page, nom) {
 
   await page.locator('[data-step="5"]').click();
   if ((await page.locator(".force-chain").count()) !== 1) ko(`${q}: chaîne cinématique absente`);
+  if (!(await dit(".force-legend")).includes("pression du bulbe : ouvre")) ko(`${q}: légende des trois forces absente (écran 6)`);
   await page.locator('[data-force="bulb"]').click();
   if (!(await dit("#visual-readout")).includes("passage augmente")) ko(`${q}: action d’ouverture du bulbe absente`);
   await page.locator('[data-force="spring"]').click();
@@ -294,6 +305,7 @@ async function verifier2D(page, nom) {
 
   await page.locator('[data-step="6"]').click();
   if ((await page.locator(".approved-valve").count()) !== 1) ko(`${q}: boucle vectorielle absente`);
+  if (!(await dit(".force-legend")).includes("ressort : ferme")) ko(`${q}: légende des trois forces absente (écran 7)`);
   await page.locator('[data-regulation="cold"]').click();
   if (!(await dit("#visual-readout")).includes("débit diminue")) ko(`${q}: état froid absent`);
   await page.locator("#replay-regulation").click();
@@ -364,6 +376,25 @@ for (const format of FORMATS) {
     await pasDeDefilement(page, `${format.name} écran ${i + 1}`);
   }
   if (PRINCIPAUX.includes(format.name)) {
+    for (const [n, label, cible] of LIENS) {
+      await page.locator(`[data-step="${n}"]`).click();
+      const a = page.locator(".lesson-link");
+      if (await a.isHidden()) { ko(`${format.name} écran ${n + 1}: lien « ${label} » absent`); continue; }
+      const texte = ((await a.textContent()) || "").trim(), href = await a.getAttribute("href");
+      if (!texte.includes(label) || href !== cible) ko(`${format.name} écran ${n + 1}: lien inattendu ${texte} → ${href}`);
+      const rep_ = await page.request.get(new URL(href, page.url()).href);
+      if (rep_.status() !== 200) ko(`${format.name} écran ${n + 1}: ${href} répond ${rep_.status()}`);
+      if (format.name === "1366x768") await tailleDuTexte(page, `${format.name} écran ${n + 1}`);
+    }
+    for (const n of [1, 2, 3, 4, 5, 6, 7, 9]) {                                  // les autres écrans n'ont pas de lien
+      await page.locator(`[data-step="${n}"]`).click();
+      if (!(await page.locator(".lesson-link").isHidden())) ko(`${format.name} écran ${n + 1}: un lien est affiché sans être prévu`);
+    }
+    if (photo_(format)) {
+      await page.locator('[data-step="0"]').click(); await page.locator('[data-place="valve"]').click(); await page.waitForTimeout(400); await capture(page, `${format.name}-8-ecran1-circuit`);
+      await page.locator('[data-step="8"]').click(); await page.locator('[data-equal="external"]').click(); await page.waitForTimeout(400); await capture(page, `${format.name}-9-ecran9-prise-externe`);
+      await page.locator('[data-equal="internal"]').click(); await page.waitForTimeout(400); await capture(page, `${format.name}-9b-ecran9-prise-interne`);
+    }
     for (const n of ECRANS_3D) {
       try { await jouer3D(page, format, n); await pasDeDefilement(page, `${format.name} écran ${n + 1} (après jeu)`); }
       catch (e) { ko(`${format.name} écran ${n + 1}: exception ${String(e.message).split("\n")[0]}`); }
@@ -386,6 +417,7 @@ for (const format of FORMATS) {
     await pasDeDefilement(page, `file ${format.name} étape ${i + 1}`);
     if (await page.locator("electro-3d").count()) ko(`file ${format.name} étape ${i + 1}: la 3D ne doit pas s'ouvrir en file://`);
   }
+  for (const [n, label] of LIENS) { await page.locator(`[data-step="${n}"]`).click(); if (!((await page.locator(".lesson-link").textContent()) || "").includes(label)) ko(`file ${format.name} écran ${n + 1}: lien « ${label} » absent`); }
   await verifier2D(page, "file " + format.name);
   if (PRINCIPAUX.includes(format.name)) { await page.locator('[data-step="5"]').click(); await capture(page, `${format.name}-7-repli-2d`); }
   if (dehors.length) ko(`file ${format.name}: requêtes distantes ${dehors.join(", ")}`);

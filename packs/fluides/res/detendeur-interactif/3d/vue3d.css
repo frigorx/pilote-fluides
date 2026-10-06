@@ -51,19 +51,25 @@
 }
 .v3d .e3d-badge { font-size: .8em; padding: 0 .45em; margin-right: .4em; }
 
-/* les trois forces : pastilles de la couleur des flèches */
-.v3d .e3d-mesures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 0; }
-.v3d .e3d-mesures .metric { padding: 2px 8px; border: 1px solid var(--line); border-left: 6px solid var(--navy); border-radius: 8px; background: var(--paper); display: flex; flex-direction: column; line-height: 1.15; }
-.v3d .e3d-mesures .metric:nth-child(1) { border-left-color: #e8601c; }
-.v3d .e3d-mesures .metric:nth-child(2) { border-left-color: #3d7fca; }
-.v3d .e3d-mesures .metric:nth-child(3) { border-left-color: #1b3a63; }
-.v3d .e3d-mesures .metric span { font-size: 14.5px; color: var(--muted); }
-.v3d .e3d-mesures .metric strong { font-size: 17px; color: var(--navy); }
+/* La légende des trois forces : HTML, à côté de l'image (jamais dessus), aux couleurs des flèches de la scène :
+   violet = pression du bulbe (ouvre) · bleu = pression d'évaporation (ferme) · gris acier = ressort (ferme). */
+.v3d electro-3d[data-prog="forces"] .e3d-gauche,
+.v3d electro-3d[data-prog="boucle"] .e3d-gauche { display: grid; grid-template-columns: minmax(0, 1fr) 200px; grid-template-rows: minmax(0, 1fr) auto auto auto; gap: 6px 8px; }
+.v3d electro-3d[data-prog="forces"] .e3d-scene, .v3d electro-3d[data-prog="boucle"] .e3d-scene { grid-column: 1; grid-row: 1; }
+.v3d electro-3d[data-prog="forces"] .e3d-mesures, .v3d electro-3d[data-prog="boucle"] .e3d-mesures { grid-column: 2; grid-row: 1; align-self: center; display: flex; flex-direction: column; gap: 8px; }
+.v3d electro-3d[data-prog="forces"] .e3d-outils, .v3d electro-3d[data-prog="boucle"] .e3d-outils { grid-column: 1 / -1; grid-row: 2; }
+.v3d electro-3d[data-prog="forces"] .e3d-etapes, .v3d electro-3d[data-prog="boucle"] .e3d-etapes { grid-column: 1 / -1; grid-row: 3; }
+.v3d electro-3d[data-prog="forces"] .e3d-phrase, .v3d electro-3d[data-prog="boucle"] .e3d-phrase { grid-column: 1 / -1; grid-row: 4; }
+.v3d .e3d-mesures .metric { padding: 5px 8px 5px 10px; border: 1px solid var(--line); border-left: 8px solid var(--navy); border-radius: 8px; background: var(--paper); display: flex; flex-direction: column; line-height: 1.2; }
+.v3d .e3d-mesures .metric:nth-child(1) { border-left-color: #8e44ad; }      /* violet : pression du bulbe (ouvre) */
+.v3d .e3d-mesures .metric:nth-child(2) { border-left-color: #3d7fca; }      /* bleu : pression d'évaporation (ferme) */
+.v3d .e3d-mesures .metric:nth-child(3) { border-left-color: #6b7885; }      /* gris acier : ressort (ferme) */
+.v3d .e3d-mesures .metric span { font-size: 15.5px; color: var(--ink); font-weight: 700; }
+.v3d .e3d-mesures .metric strong { font-size: 14.5px; color: var(--muted); font-weight: 600; }
 
 /* les commandes du moteur : l'écran « boucle » les remonte dans la barre du module */
 .v3d electro-3d[data-prog="boucle"] .e3d-commandes,
-.v3d electro-3d[data-prog="debit"] .e3d-commandes,
-.v3d electro-3d[data-prog="boucle"] .e3d-mesures { display: none; }
+.v3d electro-3d[data-prog="debit"] .e3d-commandes { display: none; }
 
 /* la liste des pièces : à droite sur grand écran, pour reconnaître et nommer */
 .v3d .e3d-cote { display: none; }
@@ -103,10 +109,11 @@
   .v3d .e3d-etapes-points { margin-right: 0; }
   .v3d .e3d-etapes-points button { min-width: 30px; min-height: 30px; padding: 0; }
   .v3d .e3d-phrase { font-size: 15px; padding: 3px 8px; min-height: 2.6em; }
-  .v3d .e3d-mesures { gap: 3px; }
-  .v3d .e3d-mesures .metric { padding: 1px 5px; border-left-width: 5px; }
-  .v3d .e3d-mesures .metric span { font-size: 11.5px; }
-  .v3d .e3d-mesures .metric strong { font-size: 14px; }
+  .v3d electro-3d[data-prog="forces"] .e3d-gauche, .v3d electro-3d[data-prog="boucle"] .e3d-gauche { display: flex; flex-direction: column; gap: 3px; }
+  .v3d electro-3d[data-prog="forces"] .e3d-mesures, .v3d electro-3d[data-prog="boucle"] .e3d-mesures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; align-self: stretch; }
+  .v3d .e3d-mesures .metric { padding: 1px 4px 1px 6px; border-left-width: 5px; }
+  .v3d .e3d-mesures .metric span { font-size: 11.5px; line-height: 1.1; }
+  .v3d .e3d-mesures .metric strong { display: none; }
   .v3d electro-3d[data-prog="pieces"] .e3d,
   .v3d electro-3d[data-prog="reconnaitre"] .e3d { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
   .v3d electro-3d[data-prog="pieces"] .e3d-cote,
@@ -122,7 +129,7 @@
    (jamais sous la taille d'origine) ; téléphone inchangé. Les encadrés se serrent un peu pour que
    rien ne soit coupé. */
 @media (min-width: 1000px) {
-  .lesson-intro, .lesson-detail, .takeaway { font-size: calc(clamp(14.6px, min(2.43vh, 1.37vw), 18.7px) * var(--font-scale, 1)); }
+  .lesson-intro, .lesson-detail, .takeaway, .lesson-link { font-size: calc(clamp(14.6px, min(2.43vh, 1.37vw), 18.7px) * var(--font-scale, 1)); }
   .lesson-intro { margin-bottom: 6px; line-height: 1.4; }
   .lesson-detail { line-height: 1.38; }
   .lesson-detail .fact, .lesson-detail .key-box, .lesson-detail .warning-box { margin: 5px 0; padding: 5px 10px; }

@@ -10,6 +10,8 @@
   --blue: #3d7fca;
   --blue-soft: #84b7ec;
   --green: #1e7e54;
+  --violet: #8e44ad;   /* convention de la ligne : charge du bulbe et sa pression */
+  --acier: #6b7885;    /* ressort */
   --red: #c0392b;
   --line: rgba(27, 58, 99, .18);
   --shadow: 0 12px 34px rgba(27, 58, 99, .12);
@@ -229,6 +231,24 @@ h2 { margin-bottom: 3px; font-size: 1.16em; }
   font-weight: 700;
 }
 
+/* le lien vers une autre gare de la ligne : sous le dessin, dans la carte (jamais sur le dessin) */
+.lesson-link {
+  display: block;
+  justify-self: center;
+  margin: 0;
+  padding: 4px 14px;
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--navy);
+  font-size: .95em;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.lesson-link[hidden] { display: none; }
+.lesson-link:hover { border-color: var(--orange-deep); }
+.lesson-link:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 .visual-card {
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr) auto;
@@ -265,6 +285,11 @@ h2 { margin-bottom: 3px; font-size: 1.16em; }
 .action-button.primary, .choice-button.active { background: var(--navy); color: #fff; }
 .choice-button.correct { border: 4px double var(--green); background: #e3f5ec; color: var(--ink); }
 .choice-button.wrong { border: 3px dashed var(--red); background: #fbe7e4; color: var(--ink); }
+.force-legend { display: flex; flex: 1 0 100%; flex-wrap: wrap; justify-content: center; gap: 4px 12px; }
+.force-key { padding: 1px 8px 1px 10px; border-left: 8px solid var(--navy); border-radius: 6px; background: var(--paper); font-weight: 700; font-size: 14.5px; line-height: 1.25; }
+.force-key.key-violet { border-left-color: var(--violet); }
+.force-key.key-blue { border-left-color: var(--blue); }
+.force-key.key-grey { border-left-color: var(--acier); }
 .visual-root {
   position: relative;
   display: grid;
@@ -377,6 +402,7 @@ h2 { margin-bottom: 3px; font-size: 1.16em; }
 
 /* Circuit frigorifique */
 .circuit-reference { padding: 4px 8px 45px; }
+.circuit-cross svg { padding: 2px 4px 44px; }          /* le texte du bas ne couvre plus l'évaporateur ni le tube du bulbe */
 .library-symbol image { overflow: visible; }
 .symbol-name {
   fill: var(--ink);
@@ -403,10 +429,11 @@ h2 { margin-bottom: 3px; font-size: 1.16em; }
   transform-origin: center;
 }
 .rotation-note { fill: var(--orange-deep); font-size: 11px; font-weight: 900; text-anchor: middle; }
-.bulb-line { fill: none; stroke: var(--navy); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
-.bulb-body { fill: #ead4a5; stroke: var(--navy); stroke-width: 4; }
+.bulb-line-outline { fill: none; stroke: var(--navy); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+.bulb-line { fill: none; stroke: var(--violet); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.bulb-body { fill: var(--violet); stroke: var(--navy); stroke-width: 4; }
 .bulb-strap-circuit { fill: none; stroke: var(--green); stroke-width: 4; }
-.bulb-label { fill: var(--orange-deep); font-size: 12px; font-weight: 900; text-anchor: middle; }
+.bulb-label { fill: var(--violet); font-size: 12px; font-weight: 900; text-anchor: middle; }
 .flow-key rect { fill: var(--paper); stroke: var(--navy); stroke-width: 2; }
 .flow-key text { fill: var(--ink); font-size: 12px; font-weight: 900; }
 .flow-key-hp, .flow-key-bp { fill: none; stroke-width: 6; stroke-linecap: round; }
@@ -461,14 +488,14 @@ h2 { margin-bottom: 3px; font-size: 1.16em; }
   stroke-dasharray: 18 13;
   animation: circuit-flow 1.2s linear infinite;
 }
-.sensing-bulb { fill: #ead4a5; stroke-width: 7; }
+.sensing-bulb { fill: var(--violet); stroke-width: 7; }
 .sensing-bulb.correct { stroke: var(--green); }
 .sensing-bulb.wrong { stroke: var(--red); stroke-dasharray: 12 7; }
 .bulb-strap { fill: none; stroke: var(--navy); stroke-width: 7; }
 .placement-title { fill: var(--navy); font-size: 20px; font-weight: 900; text-anchor: middle; }
 .placement-note { fill: var(--ink); font-size: 16px; font-weight: 800; text-anchor: middle; }
-.capillary-to-head { fill: none; stroke: #a7682e; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
-.mini-power-head ellipse, .mini-power-head rect { fill: #dce6ef; stroke: var(--navy); stroke-width: 4; }
+.capillary-to-head { fill: none; stroke: var(--violet); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.mini-power-head ellipse, .mini-power-head rect { fill: #dcc3ea; stroke: var(--navy); stroke-width: 4; }
 .mini-power-head path { fill: none; stroke: var(--navy); stroke-width: 4; }
 .mini-power-head text { fill: var(--navy); font-size: 12px; font-weight: 900; }
 
@@ -557,10 +584,11 @@ h2 { margin-bottom: 3px; font-size: 1.16em; }
 }
 .fc-panel-title { font-size: 16px; letter-spacing: .04em; }
 .fc-label { font-size: 15px; }
-.fc-bulb { fill: #f0c878; stroke: var(--navy); stroke-width: 5; }
-.fc-capillary { fill: none; stroke: #a7682e; stroke-width: 6; stroke-linecap: round; }
-.fc-head { fill: #d7e1e8; stroke: var(--navy); stroke-width: 6; }
-.fc-membrane { fill: none; stroke: var(--orange-deep); stroke-width: 8; }
+.fc-bulb { fill: var(--violet); stroke: var(--navy); stroke-width: 5; }
+.fc-capillary { fill: none; stroke: var(--violet); stroke-width: 6; stroke-linecap: round; }
+.fc-head { fill: #dcc3ea; stroke: var(--navy); stroke-width: 6; }
+.fc-under { fill: #c7def4; stroke: none; }
+.fc-membrane { fill: none; stroke: #4a5560; stroke-width: 8; }
 .fc-hub { fill: #758b9c; stroke: var(--navy); stroke-width: 3; }
 .fc-body, .fc-inlet, .fc-outlet { fill: url(#fcBrass); stroke: var(--navy); stroke-width: 6; stroke-linejoin: round; }
 .fc-channel { fill: none; stroke: #fff7dc; stroke-width: 42; stroke-linecap: round; stroke-linejoin: round; }
@@ -569,35 +597,38 @@ h2 { margin-bottom: 3px; font-size: 1.16em; }
 .fc-rod { fill: none; stroke: #526a7c; stroke-width: 11; stroke-linecap: round; }
 .fc-seat { fill: none; stroke: var(--ink); stroke-width: 8; stroke-linecap: round; }
 .fc-clapet { fill: #eef3f6; stroke: var(--navy); stroke-width: 4; }
-.fc-spring { fill: none; stroke: var(--navy); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.fc-spring { fill: none; stroke: var(--acier); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
 .fc-adjust-screw { fill: var(--paper); stroke: var(--navy); stroke-width: 4; }
 .fc-adjust-thread { fill: none; stroke: var(--navy); stroke-width: 2; }
 .fc-evap-channel { fill: none; stroke: var(--blue); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 10 7; }
-.fc-bulb-action { fill: none; stroke: var(--orange-deep); stroke-width: 6; stroke-linecap: round; }
+.fc-bulb-action { fill: none; stroke: var(--violet); stroke-width: 6; stroke-linecap: round; }
 .fc-callout path { fill: none; stroke: var(--navy); stroke-width: 2; stroke-dasharray: 5 4; }
 .fc-callout text { font-size: 13px; }
+.fc-panel-title.fc-label, .fc-label { fill: #fff; }
 .fc-pressure-note { fill: var(--blue); font-size: 11px; }
 .fc-opening-note { font-size: 11px; }
 
 .fc-balance-frame { fill: var(--paper); stroke: var(--navy); stroke-width: 3; }
 .fc-force { fill: none; stroke-linecap: round; }
-.fc-force-bulb { stroke: var(--orange-deep); stroke-width: 7; }
+.fc-force-bulb { stroke: var(--violet); stroke-width: 7; }
 .fc-force-evap { stroke: var(--blue); stroke-width: 7; stroke-dasharray: 12 7; }
-.fc-force-spring { stroke: var(--navy); stroke-width: 7; }
+.fc-force-spring { stroke: var(--acier); stroke-width: 7; }
 .fc-force.is-dominant, .fc-spring.is-dominant, .fc-bulb-action.is-dominant {
   stroke-width: 11;
   filter: drop-shadow(0 0 3px rgba(255, 107, 53, .32));
 }
-.fc-balance-membrane { fill: none; stroke: var(--orange-deep); stroke-width: 7; }
+.fc-balance-membrane { fill: none; stroke: #4a5560; stroke-width: 7; }
 .fc-force-name { font-size: 14px; }
 .fc-force-sub { fill: var(--muted); font-size: 10px; }
-.fc-orange-text { fill: var(--orange-deep); }
+.fc-violet-text { fill: var(--violet); }
+.fc-blue-text { fill: var(--blue); }
+.fc-acier-text { fill: var(--acier); }
 .fc-membrane-word { font-size: 11px; }
 .fc-relation-box { fill: #f3f7fb; stroke: var(--navy); stroke-width: 2; }
 .fc-relation { font-size: 14px; }
 .fc-result { font-size: 13px; }
-.force-state-bulb .fc-result { fill: var(--orange-deep); }
-.force-state-spring .fc-result { fill: var(--navy); }
+.force-state-bulb .fc-result { fill: var(--violet); }
+.force-state-spring .fc-result { fill: var(--acier); }
 
 .fc-chain rect { fill: var(--paper); stroke: var(--navy); stroke-width: 3; }
 .fc-chain path { fill: none; stroke: var(--navy); stroke-width: 4; stroke-linecap: round; }
@@ -631,17 +662,27 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
 .av-pushrod { fill: none; stroke: #526a7c; stroke-width: 13; stroke-linecap: round; }
 .av-needle { fill: #eef3f6; stroke: var(--navy); stroke-width: 4; }
 .av-seat { fill: none; stroke: var(--ink); stroke-width: 8; stroke-linecap: round; }
-.av-head-shell { fill: #d7e1e8; stroke: var(--navy); stroke-width: 7; }
-.av-membrane { fill: none; stroke: var(--orange-deep); stroke-width: 9; }
+.av-head-shell { fill: #dcc3ea; stroke: var(--navy); stroke-width: 7; }
+.av-under { fill: #c7def4; stroke: none; }
+.av-view-outside .av-head-shell { fill: #d7e1e8; }       /* vue extérieure : la coque, pas ce qu'elle contient */
+.av-view-outside .av-under { display: none; }
+.av-membrane { fill: none; stroke: #4a5560; stroke-width: 9; }
 .av-hub { fill: #758b9c; stroke: var(--navy); stroke-width: 4; }
-.av-capillary { fill: none; stroke: #a7682e; stroke-width: 7; stroke-linecap: round; }
+.av-capillary { fill: none; stroke: var(--violet); stroke-width: 7; stroke-linecap: round; }
+.av-view-outside .av-capillary { stroke: #a7682e; }
+/* impulsions de pression : des traits plus clairs qui filent du bulbe vers la tête */
+.av-capillary-pulse { fill: none; stroke: #ecd8f7; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 3 21; }
+.av-pulse { animation: av-pulse-up 1.3s linear infinite; }
+@keyframes av-pulse-up { to { stroke-dashoffset: 48; } }
 .av-suction-pipe { fill: none; stroke: var(--navy); stroke-width: 34; stroke-linecap: round; }
 .av-pipe-flow { fill: none; stroke: #8fc7d8; stroke-width: 7; stroke-dasharray: 17 11; }
-.av-bulb { fill: url(#avBulbMetal); stroke: var(--navy); stroke-width: 6; }
-.av-bulb-charge { fill: none; stroke: var(--orange-deep); stroke-width: 10; stroke-linecap: round; }
+.av-bulb { fill: var(--violet); stroke: var(--navy); stroke-width: 6; }
+.av-view-outside .av-bulb { fill: url(#avBulbMetal); }
+.av-bulb-charge { fill: none; stroke: #d9bbe9; stroke-width: 10; stroke-linecap: round; }
+.av-view-outside .av-bulb-charge { stroke: var(--orange-deep); }
 .av-clamp { fill: none; stroke: var(--ink); stroke-width: 7; }
 .av-pipe-caption { fill: var(--navy); font-size: 14px; font-weight: 900; }
-.av-spring { fill: none; stroke: var(--navy); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.av-spring { fill: none; stroke: var(--acier); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
 .av-internal-channel { fill: none; stroke: #2688b7; stroke-width: 7; stroke-dasharray: 12 8; }
 .av-callouts path, .av-flow-labels .av-leader {
   fill: none;
@@ -666,12 +707,13 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
   stroke-width: 3;
 }
 .av-component-name text, .av-opening-badge text, .av-regulation-badge text { font-size: 16px; }
-.av-gas-card rect, .av-force-open rect { fill: #fff4ed; stroke: var(--orange-deep); stroke-width: 3; }
-.av-gas-card text, .av-force-open text { fill: var(--orange-deep); font-size: 16px; }
-.av-gas-card path, .av-down-force { fill: none; stroke: var(--orange-deep); stroke-width: 4; }
+.av-gas-card rect, .av-force-open rect { fill: #f4eaf9; stroke: var(--violet); stroke-width: 3; }
+.av-gas-card text, .av-force-open text { fill: var(--violet); font-size: 16px; }
+.av-gas-card path, .av-down-force { fill: none; stroke: var(--violet); stroke-width: 4; }
 .av-force-close rect { fill: #eef5f8; stroke: var(--navy); stroke-width: 3; }
 .av-force-close text { fill: var(--navy); font-size: 15px; }
-.av-up-force { fill: none; stroke: var(--navy); stroke-width: 4; }
+.av-up-force { fill: none; stroke: var(--blue); stroke-width: 4; }
+.av-up-spring { fill: none; stroke: var(--acier); stroke-width: 4; }
 .av-force-low .av-force-open { opacity: .45; }
 .av-force-high .av-force-open rect { stroke-width: 6; }
 .av-flow-dots circle { fill: var(--orange-deep); animation: av-flow-pulse 1.15s ease-in-out infinite alternate; }
@@ -692,8 +734,8 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
 /* Égalisation : tube externe continu, distinct du capillaire */
 .equalization-diagram svg { padding: 3px 5px 40px; }
 .eq-body { fill: #e5b45f; stroke: var(--navy); stroke-width: 7; stroke-linejoin: round; }
-.eq-head { fill: #d7e1e8; stroke: var(--navy); stroke-width: 7; }
-.eq-membrane { fill: none; stroke: var(--orange-deep); stroke-width: 7; }
+.eq-head { fill: #dcc3ea; stroke: var(--navy); stroke-width: 7; }
+.eq-membrane { fill: none; stroke: #4a5560; stroke-width: 7; }
 .eq-port { fill: none; stroke: var(--navy); stroke-width: 24; stroke-linecap: round; }
 .eq-valve text, .eq-evaporator text, .eq-bulb text, .eq-caption text, .eq-external text, .eq-internal text {
   fill: var(--navy);
@@ -703,13 +745,14 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
 .eq-evaporator path { fill: none; stroke: var(--blue-soft); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
 .eq-suction { fill: none; stroke: var(--navy); stroke-width: 34; stroke-linecap: round; }
 .eq-vapour { fill: none; stroke: #8fc7d8; stroke-width: 7; stroke-dasharray: 17 11; }
-.eq-bulb rect { fill: #e2ad55; stroke: var(--navy); stroke-width: 6; }
+.eq-bulb rect { fill: var(--violet); stroke: var(--navy); stroke-width: 6; }
 .eq-bulb path { fill: none; stroke: var(--ink); stroke-width: 7; }
-.eq-capillary { fill: none; stroke: #a7682e; stroke-width: 7; stroke-linecap: round; }
+.eq-capillary-outline { fill: none; stroke: var(--navy); stroke-width: 13; stroke-linecap: round; }
+.eq-capillary { fill: none; stroke: var(--violet); stroke-width: 7; stroke-linecap: round; }
 .eq-tap { fill: var(--paper); stroke: var(--navy); stroke-width: 5; }
 .equal-pressure { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.eq-external .equal-pressure { stroke: var(--navy); stroke-width: 10; }
-.eq-internal .equal-pressure { stroke: #2688b7; stroke-width: 7; stroke-dasharray: 12 8; }
+.eq-external .equal-pressure { stroke: var(--blue); stroke-width: 10; }
+.eq-internal .equal-pressure { stroke: var(--blue); stroke-width: 7; stroke-dasharray: 12 8; }
 .eq-external text, .eq-internal text { font-size: 14px; }
 .eq-caption rect { fill: var(--paper); stroke: var(--navy); stroke-width: 3; }
 .eq-caption.external rect { stroke-width: 5; }
@@ -717,7 +760,7 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
 .eq-caption text:last-of-type { fill: var(--muted); font-size: 14px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hp-flow, .bp-flow, .vapour-flow, .av-flow-dots circle { animation: none; }
+  .hp-flow, .bp-flow, .vapour-flow, .av-flow-dots circle, .av-pulse { animation: none; }
   .orifice-hole, .progress-track span { transition: none; }
 }
 
@@ -786,6 +829,7 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
   .nav-button { min-height: 38px; padding: 4px 6px; font-size: .78em; }
   .progress-copy { font-size: .66em; }
   .circuit-reference { padding: 1px 2px 30px; }
+  .circuit-cross svg { padding: 0 1px 30px; }
   .rotation-note, .flow-key { display: none; }
   .superheat-lab { grid-template-columns: 1.25fr .75fr; gap: 5px; padding: 4px 5px 34px; }
   .temperature-controls { gap: 4px; }

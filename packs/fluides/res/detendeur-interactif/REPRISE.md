@@ -111,3 +111,21 @@ de la paroi, sans bague aux jonctions. Le serpentin et le raccord de sortie part
 `tubePlan`) ; les anneaux sont serrés dans les coudes (un tous les 5°) pour qu'aucune arête ne se lise comme une cloison. Le volume
 du fluide (orangé, puis bleu, puis bleu pâle de la vapeur) va de l'entrée à la sortie de l'évaporateur sans rupture ; la charge du
 bulbe traverse le capillaire jusqu'au-dessus de la membrane. Contrôle visuel : `3d/banc.html?ecran=boucle`, vue agrandie sur chaque raccord.
+
+**Convention de couleurs de la ligne « LES DÉTENDEURS » (retour de Franck, 06/10 : « on doit bien voir la force venant du bulbe »)** :
+la charge du bulbe et sa pression sont en **violet `#8e44ad`** ; l'orangé est réservé au liquide HP. Le bulbe, le capillaire (intérieur
+continu) et la chambre au-dessus de la membrane sont remplis du même violet, d'un seul tenant ; sous la membrane, la chambre est bleue
+(pression d'évaporation, qui arrive par la prise interne). Trois forces sur la membrane : flèche **violette** (bulbe, ouvre), flèche
+**bleue** (évaporation, ferme), flèche **gris acier `#6b7885`** (ressort, ferme) ; la membrane, elle, est en acier.
+- 3D : quand la sortie chauffe (écran 7 étapes 2-4, écran 6 « bulbe plus chaud »), la caméra montre d'abord le bulbe, puis suit des
+  impulsions violet clair qui filent dans le capillaire jusqu'à la tête ; la chambre haute se fonce avec la pression ; la flèche violette
+  pousse la membrane ; puis seulement le clapet bouge. Le déroulé est dans le temps du modèle (`deroule`, étiré par le ralenti).
+- Légende HTML à côté de l'image (jamais dessus) : « Pression du bulbe : ouvre » (violet), « Pression d'évaporation : ferme » (bleu),
+  « Ressort : ferme » (gris), avec le niveau faible / moyenne / forte ; en 2D, même légende sous les boutons des écrans 6 et 7.
+- 2D : `valveSvg`, `forceChainSvg`, `bulbSvg` (variables CSS `--violet`, `--acier` dans `styles.css`) ; impulsions animées sur le capillaire
+  à l'écran 7 (classe `av-pulse`, figée au papier). Les écrans 1 et 9 suivent la même convention (voir plus bas).
+
+**Liens vers les autres gares** (posés le 06/10, même onglet, chemins relatifs ; `lessons[].link` dans `app.js`, lien affiché sous le dessin) :
+écran 1 → `../detendeurs-famille/index.html` · écran 9 → `../detendeur-egalisation-externe/index.html` · écran 11 (« régler », dont l'équilibre
+est mécanique) → `../detendeur-electronique/index.html`. Le contrôle vérifie qu'ils répondent en 200. Les écrans 1 et 9 suivent aussi la
+convention violet (bulbe, capillaire en tube rempli d'un seul tenant, prises de pression en bleu) ; `circuitSvg` ne passe plus sous la phrase du bas.

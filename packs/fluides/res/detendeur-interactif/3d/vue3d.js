@@ -14,7 +14,7 @@
 (function () {
   "use strict";
   const SRC = (document.currentScript && document.currentScript.src) || "";
-  const CLE = "?v=20261006-1";
+  const CLE = "?v=20261006-2";
   const adresse = (relatif) => new URL(relatif, SRC || location.href).href;
   const MOTEUR = adresse("../../../../../electrorezo/stations/_commun/3d/electro3d.js") + CLE;
   const MODELE = adresse("detendeur-3d.js") + CLE;

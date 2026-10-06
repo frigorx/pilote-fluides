@@ -10,6 +10,7 @@
     intro: document.getElementById("lesson-intro"),
     detail: document.getElementById("lesson-detail"),
     takeaway: document.getElementById("lesson-takeaway"),
+    link: document.getElementById("lesson-link"),
     visualTitle: document.getElementById("visual-title"),
     visualHint: document.getElementById("visual-hint"),
     controls: document.getElementById("visual-controls"),
@@ -88,6 +89,7 @@
         <div class="fact"><strong>Orientation :</strong> sur la branche verticale, le symbole est tourné d’un quart de tour : entrée HP en haut, sortie BP en bas.</div>
         <div class="fact"><strong>Commande :</strong> le bulbe est serré sur l’aspiration, en sortie d’évaporateur ; son capillaire rejoint réellement la tête thermostatique.</div>`,
       takeaway: "Corps à l’entrée, bulbe à la sortie, capillaire relié à la tête.",
+      link: { href: "../detendeurs-famille/index.html", label: "Toute la famille des détendeurs" },
       visualTitle: "Suivre condenseur → détendeur → évaporateur",
       visualHint: "Choisis l’emplacement, puis observe le sens des flèches.",
       caption: "Circuit explicatif construit avec les symboles internes Pilote Fluides.",
@@ -212,6 +214,7 @@
         <div class="key-box"><strong>TE 2 externe :</strong> un vrai tube dédié relie la prise située après le bulbe au détendeur.</div>
         <div class="warning-box"><strong>Attention :</strong> l’égalisation externe compense l’effet d’une perte de charge ; elle ne supprime pas cette perte.</div>`,
       takeaway: "Distributeur ou perte de charge notable : suivre la conception et la notice prévues.",
+      link: { href: "../detendeur-egalisation-externe/index.html", label: "Pour aller plus loin : la gare L’égalisation externe" },
       visualTitle: "Comparer les deux trajets de pression",
       visualHint: "Passe de T 2 à TE 2.",
       caption: "Exemple T 2 / TE 2 ; la conception réelle de l’installation reste prioritaire.",
@@ -241,6 +244,7 @@
       detail: `<div class="fact"><strong>Ordre :</strong> stabiliser → mesurer → diagnostiquer → ajuster si la notice et les mesures le justifient.</div>
         <div class="warning-box"><strong>Ne pas masquer :</strong> manque de liquide, filtre colmaté, mauvaise buse, bulbe mal fixé ou égalisation incorrecte.</div>`,
       takeaway: "Une petite correction exige une nouvelle stabilisation et une nouvelle mesure.",
+      link: { href: "../detendeur-electronique/index.html", label: "Le détendeur électronique" },
       visualTitle: "Suivre l’ordre avant toute correction",
       visualHint: "Parcours les quatre contrôles.",
       caption: "Aucune consigne universelle de sens, d’amplitude ou de nombre de tours.",
@@ -355,6 +359,7 @@
         <g class="library-symbol ${focus("valve")}" transform="rotate(-90 180 282)"><image href="assets/symboles/detendeur_thermo_int.svg" x="105" y="207" width="150" height="150"/></g>
         <text class="symbol-name" x="180" y="202">DÉTENDEUR</text>
         <text class="rotation-note" x="180" y="350"><tspan x="180">SYMBOLE TOURNÉ ¼</tspan><tspan x="180" dy="15">HP ↓ · BP</tspan></text>
+        <path class="bulb-line-outline" d="M136 282 C72 340 118 470 286 470 H520 C570 470 596 430 612 397"/>
         <path class="bulb-line" d="M136 282 C72 340 118 470 286 470 H520 C570 470 596 430 612 397"/>
         <rect class="bulb-body" x="590" y="378" width="92" height="28" rx="14" transform="rotate(5 636 392)"/>
         <path class="bulb-strap-circuit" d="M604 374 Q636 430 668 374"/>
@@ -400,12 +405,12 @@
         <path class="av-arrow-bp" d="M650 300 H807" marker-end="url(#avArrowBlue)"/><text x="730" y="284" text-anchor="middle">VERS L’ÉVAPORATEUR</text>
         <path class="av-leader" d="M400 354 298 317"/><text x="288" y="313" text-anchor="end">ORIFICE CALIBRÉ</text>
       </g>` : "";
-    const controlLabel = view === "control" ? `<g class="av-gas-card"><rect x="286" y="101" width="238" height="54" rx="12"/><text x="405" y="123" text-anchor="middle">LE GAZ DU BULBE POUSSE</text><path d="M357 129 V158 M405 129 V166 M453 129 V158" marker-end="url(#avArrowOrange)"/></g>` : "";
+    const controlLabel = view === "control" ? `<g class="av-gas-card"><rect x="286" y="101" width="238" height="54" rx="12"/><text x="405" y="123" text-anchor="middle">LE GAZ DU BULBE POUSSE</text><path d="M357 129 V158 M405 129 V166 M453 129 V158" marker-end="url(#avArrowViolet)"/></g>` : "";
     const openingBadge = view === "expansion" ? `<g class="av-opening-badge"><rect x="58" y="54" width="188" height="64" rx="14"/><text x="152" y="80" text-anchor="middle">PASSAGE RÉGLABLE</text><text x="152" y="105" text-anchor="middle">ouverture ${Math.round(opening)} %</text></g>` : "";
     const forceCards = options.forces ? `<g class="av-force-layer av-force-${forceState}">
         <g class="av-force-open"><rect x="50" y="48" width="218" height="70" rx="14"/><text x="159" y="76" text-anchor="middle">BULBE</text><text x="159" y="101" text-anchor="middle">POUSSE · OUVRE ↓</text></g>
         <g class="av-force-close"><rect x="565" y="50" width="326" height="92" rx="14"/><text x="728" y="78" text-anchor="middle">PRESSION INTERNE + RESSORT</text><text x="728" y="105" text-anchor="middle">S’OPPOSENT · REFERMENT ↑</text></g>
-        <path class="av-down-force" d="M405 117 V169" marker-end="url(#avArrowOrange)"/><path class="av-up-force" d="M510 237 V181" marker-end="url(#avArrowBlue)"/>
+        <path class="av-down-force" d="M405 117 V169" marker-end="url(#avArrowViolet)"/><path class="av-up-force" d="M510 237 V181" marker-end="url(#avArrowBlue)"/><path class="av-up-spring" d="M482 237 V181" marker-end="url(#avArrowGrey)"/>
       </g>` : "";
     const regulationBadge = view === "regulation" ? `<g class="av-regulation-badge"><rect x="48" y="48" width="236" height="70" rx="14"/><text x="166" y="76" text-anchor="middle">${opening >= 50 ? "LA SORTIE CHAUFFE" : "LA SORTIE REFROIDIT"}</text><text x="166" y="101" text-anchor="middle">${opening >= 50 ? "→ le clapet ouvre" : "→ le clapet referme"}</text></g>` : "";
     return `<div class="diagram thermal-valve approved-valve av-view-${view} av-force-${forceState}" role="img" aria-label="Détendeur thermostatique à prise de pression interne, ouverture qualitative ${Math.round(opening)} pour cent. Le liquide haute pression entre par le bas et le mélange basse pression sort vers l’évaporateur à droite. Le bulbe est fixé sur le tube de sortie et relié à la tête par un capillaire continu.">
@@ -415,13 +420,15 @@
           <linearGradient id="avBulbMetal" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f8d58a"/><stop offset="1" stop-color="#d79a3b"/></linearGradient>
           <pattern id="avMixture" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#dcebf3"/><circle cx="6" cy="7" r="2.7" fill="#2688b7"/><circle cx="15" cy="14" r="2" fill="#2688b7"/></pattern>
           <marker id="avArrowOrange" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#c9451a"/></marker>
+          <marker id="avArrowViolet" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#8e44ad"/></marker>
+          <marker id="avArrowGrey" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#6b7885"/></marker>
           <marker id="avArrowBlue" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#1b3a63"/></marker>
         </defs>
         <g class="av-body ${focus("body")}"><path class="av-body-shell" d="M220 220 L275 165 H495 L545 215 V245 H705 V355 H545 V385 L495 435 H280 L220 380Z"/><path class="av-inlet-neck" d="M333 435 V505 H430 V435"/><path class="av-outlet-neck" d="M705 260 H865 V340 H705"/><circle class="av-body-mark" cx="300" cy="285" r="25"/><path class="av-body-mark" d="M285 285 H315 M300 270 V300"/></g>
         ${showFlow ? `<g class="av-flow-system"><path class="av-inner-chamber" d="M382 505 V394 Q382 360 411 354 H500 Q536 354 558 315 H850"/><path class="av-hp-fluid" d="M382 505 V393"/><path class="av-bp-fluid" d="M425 354 H500 Q536 354 558 315 H850"/><g class="av-orifice ${focus("orifice")}"><path d="M350 337 H422 L434 353 422 369 H350Z"/><rect x="397" y="344" width="20" height="18" rx="4"/></g></g>` : ""}
         ${showValve ? `<g class="av-valve-system ${focus("orifice")}" transform="translate(0 ${travel})"><path class="av-pushrod" d="M405 164 V335"/><path class="av-needle" d="M388 335 L405 365 422 335Z"/></g><path class="av-seat" d="M372 366 Q405 350 438 366"/>` : ""}
-        ${showControl ? `<g class="av-control-system ${focus("element")}"><path class="av-head-shell" d="M250 165 Q258 97 405 83 Q552 97 560 165Z"/><path class="av-membrane" d="M270 148 Q405 ${membraneY} 540 148"/><rect class="av-hub" x="382" y="137" width="46" height="22" rx="8" transform="translate(0 ${Math.round(travel * .55)})"/></g>` : ""}
-        ${showTrain ? `<g class="av-train ${focus("bulb")}"><path class="av-capillary" d="M405 91 C405 40 520 35 610 68 C760 122 915 205 848 382"/><path class="av-suction-pipe" d="M575 425 H902"/><path class="av-pipe-flow mobile" d="M595 425 H885" marker-end="url(#avArrowBlue)"/><rect class="av-bulb" x="704" y="369" width="145" height="53" rx="26"/><path class="av-bulb-charge" d="M724 391 H829"/><path class="av-clamp" d="M730 363 V433 M822 363 V433"/><text class="av-pipe-caption" x="738" y="467" text-anchor="middle">SORTIE DE L’ÉVAPORATEUR</text></g>` : ""}
+        ${showControl ? `<g class="av-control-system ${focus("element")}"><path class="av-head-shell" d="M250 165 Q258 97 405 83 Q552 97 560 165Z"/><path class="av-under" d="M270 148 Q405 ${membraneY} 540 148 L553 165 H257Z"/><path class="av-membrane" d="M270 148 Q405 ${membraneY} 540 148"/><rect class="av-hub" x="382" y="137" width="46" height="22" rx="8" transform="translate(0 ${Math.round(travel * .55)})"/></g>` : ""}
+        ${showTrain ? `<g class="av-train ${focus("bulb")}"><path class="av-capillary" d="M405 91 C405 40 520 35 610 68 C760 122 915 205 848 382"/>${view === "regulation" && opening >= 50 ? `<path class="av-capillary-pulse av-pulse mobile" d="M405 91 C405 40 520 35 610 68 C760 122 915 205 848 382"/>` : ""}<path class="av-suction-pipe" d="M575 425 H902"/><path class="av-pipe-flow mobile" d="M595 425 H885" marker-end="url(#avArrowBlue)"/><rect class="av-bulb" x="704" y="369" width="145" height="53" rx="26"/><path class="av-bulb-charge" d="M724 391 H829"/><path class="av-clamp" d="M730 363 V433 M822 363 V433"/><text class="av-pipe-caption" x="738" y="467" text-anchor="middle">SORTIE DE L’ÉVAPORATEUR</text></g>` : ""}
         ${showSpring ? `<g class="av-spring-system ${focus("spring")}"><path class="av-spring" d="M445 178 l-26 11 52 13-52 13 52 13-52 13 52 13-26 10"/><path class="av-internal-channel" d="M560 297 H530 Q500 297 500 260 V176" marker-end="url(#avArrowBlue)"/></g>` : ""}
         ${view === "components" && componentText ? `<g class="av-component-name"><rect x="48" y="48" width="430" height="55" rx="13"/><text x="263" y="82" text-anchor="middle">${componentText}</text></g>` : ""}
         ${view === "expansion" || view === "regulation" ? `<g class="av-flow-dots mobile">${flowDots}</g>` : ""}
@@ -464,7 +471,8 @@
       <svg viewBox="0 0 960 520" aria-hidden="true">
         <defs>
           <linearGradient id="fcBrass" x1="0" x2="1"><stop offset="0" stop-color="#d59a3f"/><stop offset=".5" stop-color="#f2cb78"/><stop offset="1" stop-color="#c47c22"/></linearGradient>
-          <marker id="fcArrowOrange" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#c9451a"/></marker>
+          <marker id="fcArrowViolet" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#8e44ad"/></marker>
+          <marker id="fcArrowGrey" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#6b7885"/></marker>
           <marker id="fcArrowBlue" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#3d7fca"/></marker>
           <marker id="fcArrowNavy" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#1b3a63"/></marker>
         </defs>
@@ -476,9 +484,10 @@
           <path class="fc-capillary" d="M180 82 C232 82 239 42 305 55 C355 64 337 73 305 82"/>
 
           <path class="fc-head" d="M158 176 Q168 101 305 82 Q442 101 452 176Z"/>
+          <path class="fc-under" d="M183 ${membraneY} Q305 ${membraneY + 14} 427 ${membraneY} L441 176 H169Z"/>
           <path class="fc-membrane" d="M183 ${membraneY} Q305 ${membraneY + 14} 427 ${membraneY}"/>
           <rect class="fc-hub" x="284" y="${membraneY - 8}" width="42" height="20" rx="7"/>
-          <path class="fc-bulb-action ${bulbClass}" d="M305 98 V${membraneY - 15}" marker-end="url(#fcArrowOrange)"/>
+          <path class="fc-bulb-action ${bulbClass}" d="M305 98 V${membraneY - 15}" marker-end="url(#fcArrowViolet)"/>
 
           <path class="fc-body" d="M118 211 L168 176 H407 L457 215 V270 H548 V350 H457 V392 L407 430 H168 L118 390Z"/>
           <path class="fc-inlet" d="M255 430 V492 H351 V430"/>
@@ -507,16 +516,16 @@
           <rect class="fc-balance-frame" x="610" y="35" width="330" height="382" rx="18"/>
           <text class="fc-panel-title" x="775" y="68" text-anchor="middle">FORCES SUR LA MEMBRANE</text>
 
-          <text class="fc-force-name fc-orange-text" x="775" y="101" text-anchor="middle">F BULBE · OUVRE</text>
-          <path class="fc-force fc-force-bulb ${bulbClass}" d="M775 112 V205" marker-end="url(#fcArrowOrange)"/>
+          <text class="fc-force-name fc-violet-text" x="775" y="101" text-anchor="middle">F BULBE · OUVRE</text>
+          <path class="fc-force fc-force-bulb ${bulbClass}" d="M775 112 V205" marker-end="url(#fcArrowViolet)"/>
           <path class="fc-balance-membrane" d="M650 224 Q775 240 900 224"/>
           <text class="fc-membrane-word" x="775" y="218" text-anchor="middle">MEMBRANE</text>
 
           <path class="fc-force fc-force-evap" d="M691 313 V245" marker-end="url(#fcArrowBlue)"/>
-          <path class="fc-force fc-force-spring ${springClass}" d="M859 313 V245" marker-end="url(#fcArrowNavy)"/>
-          <text class="fc-force-name" x="691" y="338" text-anchor="middle">F ÉVAP.</text>
+          <path class="fc-force fc-force-spring ${springClass}" d="M859 313 V245" marker-end="url(#fcArrowGrey)"/>
+          <text class="fc-force-name fc-blue-text" x="691" y="338" text-anchor="middle">F ÉVAP.</text>
           <text class="fc-force-sub" x="691" y="357" text-anchor="middle">pression sous la membrane</text>
-          <text class="fc-force-name" x="859" y="338" text-anchor="middle">F RESSORT</text>
+          <text class="fc-force-name fc-acier-text" x="859" y="338" text-anchor="middle">F RESSORT</text>
           <text class="fc-force-sub" x="859" y="357" text-anchor="middle">réglée par la vis</text>
 
           <rect class="fc-relation-box" x="637" y="371" width="276" height="32" rx="10"/>
@@ -566,14 +575,14 @@
     const external = kind === "external";
     return `<div class="diagram equalization-diagram" role="img" aria-label="${external ? "TE 2 à égalisation externe : un tube dédié transmet la pression prise sur la conduite de sortie, après le bulbe, jusqu’au dessous de la membrane" : "T 2 à égalisation interne : un passage situé dans le corps transmet la pression après l’orifice jusqu’au dessous de la membrane"}">
       <svg viewBox="0 0 900 430" aria-hidden="true">
-        <defs><marker id="eqArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#1b3a63"/></marker></defs>
+        <defs><marker id="eqArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#3d7fca"/></marker></defs>
         <g class="eq-valve"><path class="eq-body" d="M82 190 126 146 H248 L286 184 V292 L248 326 H126 L82 288Z"/><path class="eq-head" d="M84 146 Q184 88 284 146Z"/><path class="eq-membrane" d="M102 139 Q184 157 266 139"/><path class="eq-port" d="M286 216 H342"/><text x="184" y="78" text-anchor="middle">DÉTENDEUR</text></g>
         <g class="eq-evaporator"><rect x="365" y="144" width="238" height="142" rx="12"/><path d="M382 178 H568 Q588 178 588 198 Q588 218 568 218 H398 Q378 218 378 240 Q378 260 398 260 H588"/><text x="484" y="126" text-anchor="middle">ÉVAPORATEUR</text></g>
         <path class="eq-suction" d="M603 230 H850"/><path class="eq-vapour mobile" d="M620 230 H835" marker-end="url(#eqArrow)"/>
         <g class="eq-bulb"><rect x="668" y="191" width="126" height="42" rx="21"/><path d="M692 184 V242 M770 184 V242"/><text x="731" y="177" text-anchor="middle">BULBE</text></g>
-        <path class="eq-capillary" d="M668 200 C590 62 292 44 184 112"/>
+        <path class="eq-capillary-outline" d="M668 200 C590 62 292 44 184 112"/><path class="eq-capillary" d="M668 200 C590 62 292 44 184 112"/>
         ${external ? `<g class="eq-external"><circle class="eq-tap" cx="824" cy="230" r="9"/><path class="equal-pressure external mobile" d="M824 239 V352 H322 V238" marker-end="url(#eqArrow)"/><text x="590" y="383" text-anchor="middle">TUBE EXTERNE · PRESSION PRISE APRÈS LE BULBE</text></g>` : `<g class="eq-internal"><circle class="eq-tap" cx="286" cy="230" r="9"/><path class="equal-pressure internal mobile" d="M286 230 H314 V172 H244" marker-end="url(#eqArrow)"/><text x="240" y="374" text-anchor="middle">PASSAGE INTERNE · PRESSION PRISE DANS LE CORPS</text></g>`}
-        <g class="eq-caption ${external ? "external" : "internal"}"><rect x="526" y="58" width="330" height="62" rx="13"/><text x="691" y="84" text-anchor="middle">${external ? "TE 2 · PRISE EXTERNE" : "T 2 · PRISE INTERNE"}</text><text x="691" y="107" text-anchor="middle">la pression agit sous la membrane</text></g>
+        <g class="eq-caption ${external ? "external" : "internal"}"><rect x="526" y="8" width="330" height="62" rx="13"/><text x="691" y="34" text-anchor="middle">${external ? "TE 2 · PRISE EXTERNE" : "T 2 · PRISE INTERNE"}</text><text x="691" y="57" text-anchor="middle">la pression agit sous la membrane</text></g>
       </svg>
     </div>`;
   }
@@ -701,13 +710,16 @@
     saturation.addEventListener("input", update);
   }
 
+  /* Légende commune de la ligne « LES DÉTENDEURS » : violet = pression du bulbe (ouvre) · bleu = pression d’évaporation (ferme) · gris acier = ressort (ferme). */
+  const forceLegend = () => `<span class="force-legend"><span class="force-key key-violet">pression du bulbe : ouvre</span><span class="force-key key-blue">pression d’évaporation : ferme</span><span class="force-key key-grey">ressort : ferme</span></span>`;
+
   function renderForces() {
     const states = {
       balanced: { text: "<strong>Équilibre :</strong> F bulbe = F évaporation + F ressort. Le clapet garde sa position." },
       bulb: { text: "<strong>Bulbe plus chaud :</strong> la membrane et la tige descendent ; le clapet s’éloigne du siège et le passage augmente." },
       spring: { text: "<strong>Ressort plus comprimé :</strong> la force de fermeture augmente ; le clapet remonte vers le siège et le passage diminue." }
     };
-    setControls(`<button type="button" class="choice-button" data-force="balanced">1 · Équilibre</button><button type="button" class="choice-button" data-force="bulb">2 · Bulbe plus chaud</button><button type="button" class="choice-button" data-force="spring">3 · Ressort plus comprimé</button>`);
+    setControls(`<button type="button" class="choice-button" data-force="balanced">1 · Équilibre</button><button type="button" class="choice-button" data-force="bulb">2 · Bulbe plus chaud</button><button type="button" class="choice-button" data-force="spring">3 · Ressort plus comprimé</button>${forceLegend()}`);
     const activate = (key) => {
       const item = states[key];
       markActive("[data-force]", ui.controls.querySelector(`[data-force="${key}"]`));
@@ -723,7 +735,7 @@
       hot: { opening: 82, text: "La sortie chauffe : la pression du bulbe augmente, le clapet ouvre et le débit augmente." },
       cold: { opening: 24, text: "La sortie refroidit : la pression du bulbe baisse, le ressort referme et le débit diminue." }
     };
-    setControls(`<button type="button" class="choice-button" data-regulation="hot">La sortie chauffe</button><button type="button" class="choice-button" data-regulation="cold">La sortie refroidit</button><button type="button" class="action-button" id="replay-regulation">↻ Rejouer</button>`);
+    setControls(`<button type="button" class="choice-button" data-regulation="hot">La sortie chauffe</button><button type="button" class="choice-button" data-regulation="cold">La sortie refroidit</button><button type="button" class="action-button" id="replay-regulation">↻ Rejouer</button>${forceLegend()}`);
     const activate = (key, message = true) => {
       const item = states[key];
       markActive("[data-regulation]", ui.controls.querySelector(`[data-regulation="${key}"]`));
@@ -925,6 +937,8 @@
     ui.intro.textContent = lesson.intro;
     ui.detail.innerHTML = lesson.detail;
     ui.takeaway.textContent = lesson.takeaway;
+    if (lesson.link) { ui.link.href = lesson.link.href; ui.link.textContent = `${lesson.link.label} →`; ui.link.hidden = false; }
+    else { ui.link.hidden = true; ui.link.removeAttribute("href"); ui.link.textContent = ""; }
     ui.visualTitle.textContent = lesson.visualTitle;
     ui.visualHint.textContent = lesson.visualHint;
     ui.caption.textContent = lesson.caption;
