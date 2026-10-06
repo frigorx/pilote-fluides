@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1b3a63">
+<meta name="robots" content="noindex">
+<title>Le jeu de l’azote · CuivRézo</title>
+<meta name="description" content="Pourquoi de l’azote dans un circuit frigorifique, puis le geste : monter le mano-détendeur, régler la pression sous la PS de la plaque, faire l’épreuve, vider et ranger le poste.">
+<link rel="stylesheet" href="chalumeau.css?v=8">
+<script defer src="../../moteur/retour-accueil.js?v=43cc8eadb1" data-reseau-href="cuivrezo/index.html" data-reseau-nom="🔥 CuivRézo"></script>
+</head>
+<body>
+<header class="haut">
+  <a class="reseau" href="../index.html">CuivRézo</a>
+  <h1>3.3 Le jeu de l’azote</h1>
+  <div class="droite"><button id="son" aria-pressed="true">Son : oui</button><button id="recommencer">Recommencer</button></div>
+</header>
+
+<ol class="etapes" id="etapes" aria-label="Les six temps du jeu">
+  <li data-t="1">1 Pourquoi l’azote</li>
+  <li data-t="2">2 Le mano-détendeur</li>
+  <li data-t="3">3 Régler sous la PS</li>
+  <li data-t="4">4 L’épreuve</li>
+  <li data-t="5">5 Vider et ranger</li>
+</ol>
+
+<main>
+  <div class="col">
+    <section class="carte" id="carte-poste">
+      <h2>Le poste</h2>
+      <svg id="scene" viewBox="0 0 1200 620" role="img" aria-label="Le poste d’azote : la bouteille et son mano-détendeur, le flexible, le manifold, le groupe de condensation et sa plaque"></svg>
+      <p class="aide">Touchez un manomètre pour le lire de près.</p>
+    </section>
+    <section class="carte" id="carte-zoom">
+      <h2>De près</h2>
+      <div id="zoom"></div>
+    </section>
+  </div>
+  <div class="col">
+    <section class="consigne" id="carte-consigne" aria-live="polite">
+      <span class="petit" id="c-petit"></span>
+      <strong id="c-titre"></strong>
+    </section>
+    <section class="carte" id="carte-actions"><div id="actions"></div></section>
+    <section class="message" id="message" aria-live="polite"><p>Choisissez votre niveau.</p></section>
+    <section class="carte bas" id="carte-bas"><span id="sc-fautes">Fautes : 0</span><span>Codes du référentiel en bas de page</span></section>
+  </div>
+</main>
+
+<details class="referentiel" id="referentiel">
+  <summary>Pour le professeur : codes du référentiel (CAP IFCA)</summary>
+  <div id="ref-codes"></div>
+  <p>Sources : habilitation fluides G3 et G10, HabFluide ch. 13 et 16, et les règles du professeur (voir <code>sources-metier/2-3-simulateur.md</code>). Au vrai poste, l’épreuve se fait toujours devant le professeur.</p>
+</details>
+
+<div class="loupe" id="loupe" role="dialog" aria-modal="true" aria-label="Manomètre vu de près">
+  <div class="boite">
+    <svg id="loupe-svg" viewBox="0 0 100 100"><use href="#poste"/></svg>
+    <p id="loupe-txt"></p>
+    <button class="btn-plein" id="loupe-fermer">Fermer</button>
+  </div>
+</div>
+
+<script src="../donnees/commun.js"></script>
+<script>
+  /* codes : l’épreuve d’étanchéité (T11, C3.9), le manifold (C4.7), la pression mesurée et réglée (S5.5), les appareils sous pression (S6.2) */
+  document.getElementById('ref-codes').innerHTML = [
+    ['Tâches', [REF.T6, REF.T11, REF.T12]], ['Compétences', [REF.C39, REF.C47]], ['Savoirs associés', [REF.S55, REF.S62]]
+  ].map(([t, l]) => `<p><b>${t}</b></p><ul>${l.map(x => `<li>${x}</li>`).join('')}</ul>`).join('');
+</script>
+<script src="regles-azote.js?v=3"></script>
+<script src="scene.js?v=8"></script>
+<script src="scene-azote.js?v=5"></script>
+<script src="son.js?v=8"></script>
+<script src="moteur.js?v=8"></script>
+<script src="azote.js?v=3"></script>
+<script src="../moteur/marque.js" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

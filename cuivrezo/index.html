@@ -8,8 +8,8 @@
 <meta name="robots" content="noindex">
 <title>CuivRézo · les gestes du cuivre</title>
 <meta name="description" content="CuivRézo : un assistant de geste pour l’atelier de façonnage du cuivre. L’élève apprend seul le geste attendu, le professeur le confirme.">
-<link rel="stylesheet" href="moteur/accueil.css?v=8a908e9b">
-<link rel="stylesheet" href="moteur/defis.css?v=8a908e9b">
+<link rel="stylesheet" href="moteur/accueil.css?v=6867a5d1">
+<link rel="stylesheet" href="moteur/defis.css?v=6867a5d1">
 <script defer src="../moteur/retour-accueil.js?v=43cc8eadb1" data-reseau-href="cuivrezo/index.html" data-reseau-nom="🔥 CuivRézo"></script>
 </head>
 <body>
@@ -38,21 +38,25 @@
             <li><a class="rz-station" href="stations/1-5/" data-id="1-5"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.5</b> Cintrer à la cintreuse (L, R, 0)</span></a></li>
             <li><a class="rz-station" href="stations/1-6/" data-id="1-6"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.6</b> Le dudgeon</span></a></li>
             <li><a class="rz-station" href="stations/1-7/" data-id="1-7"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>1.7</b> L’emboîture à la pince</span></a></li>
+
           </ol></div></div>
         <div class="rz-ligne"><span class="rz-terminus" title="Le chalumeau">2</span>
           <div class="rz-corps"><span class="rz-titre">Le chalumeau</span><ol class="rz-stations">
             <li><a class="rz-station" href="stations/2-1/" data-id="2-1"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>2.1</b> Le poste oxyacétylénique en sécurité</span></a></li>
             <li><a class="rz-station" href="stations/2-2/" data-id="2-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>2.2</b> Allumer, régler, éteindre la flamme</span></a></li>
+            <li><a class="rz-station" href="simulateur/"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>2.3</b> Le jeu du chalumeau</span></a></li>
           </ol></div></div>
         <div class="rz-ligne"><span class="rz-terminus" title="Braser">3</span>
           <div class="rz-corps"><span class="rz-titre">Braser</span><ol class="rz-stations">
             <li><a class="rz-station" href="stations/3-1/" data-id="3-1"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>3.1</b> La brasure tendre à l’étain</span></a></li>
             <li><a class="rz-station" href="stations/3-2/" data-id="3-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>3.2</b> La brasure forte sous azote</span></a></li>
+            <li><a class="rz-station" href="simulateur/azote.html"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>3.3</b> Le jeu de l’azote</span></a></li>
           </ol></div></div>
         <div class="rz-ligne"><span class="rz-terminus" title="Les pièces complexes">4</span>
           <div class="rz-corps"><span class="rz-titre">Les pièces complexes</span><ol class="rz-stations">
             <li><a class="rz-station" href="stations/4-1/" data-id="4-1"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>4.1</b> Le chapeau de gendarme</span></a></li>
             <li><a class="rz-station" href="stations/4-2/" data-id="4-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>4.2</b> La baïonnette</span></a></li>
+
           </ol></div></div>
         <div class="rz-ligne rz-avenir"><span class="rz-terminus">5</span><div class="rz-corps"><span class="rz-titre">Le réseau complet — à venir</span></div></div>
       </div>
@@ -186,7 +190,7 @@
   </section>
   <p class="prof"><a href="prof/">Espace professeur : mode d’emploi, matériel, grilles</a></p>
 </main>
-<script src="moteur/defis.js?v=8a908e9b"></script>
+<script src="moteur/defis.js?v=6867a5d1"></script>
 <script>
 /* l'état de chaque station, lu sur cet appareil seulement */
 document.querySelectorAll('.arrets a').forEach(a => {
@@ -198,8 +202,8 @@ document.querySelectorAll('.arrets a').forEach(a => {
 });
 CuivDefis.remplir();
 </script>
-<script src="moteur/3d/electro3d.js?v=8a908e9b"></script>
-<script src="moteur/3d/modeles/poste.js?v=8a908e9b"></script>
+<script src="moteur/3d/electro3d.js?v=6867a5d1"></script>
+<script src="moteur/3d/modeles/poste.js?v=6867a5d1"></script>
 <script>
 /* la porte (03/10) : le poste 3D, le plan du réseau qui s'allume, la fiche de la zone choisie */
 (() => {
@@ -252,6 +256,6 @@ CuivDefis.remplir();
   accueil();
 })();
 </script>
-<script src="moteur/marque.js?v=8a908e9b" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+<script src="moteur/marque.js?v=6867a5d1" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

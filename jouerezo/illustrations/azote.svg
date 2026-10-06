@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <!-- Le jeu de l'azote : la bouteille à ogive noire et son mano-détendeur à deux cadrans — charte inerWeb -->
+  <path d="M8 60 V24 Q8 14 17 13 Q26 14 26 24 V60 Z" fill="#c9d1da" stroke="#4d5763" stroke-width="2"/>
+  <path d="M8 28 V24 Q8 14 17 13 Q26 14 26 24 V28 Z" fill="#1f2328" stroke="#4d5763" stroke-width="2"/>
+  <rect x="14" y="7" width="6" height="7" fill="#d4ad55" stroke="#6b5420" stroke-width="1.2"/>
+  <rect x="20" y="8" width="20" height="8" rx="2" fill="#d4ad55" stroke="#6b5420" stroke-width="1.2"/>
+  <circle cx="34" cy="26" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><line x1="34" y1="26" x2="29" y2="21" stroke="#c9451a" stroke-width="2"/>
+  <circle cx="53" cy="26" r="9" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><line x1="53" y1="26" x2="58" y2="22" stroke="#c9451a" stroke-width="2"/>
+  <line x1="34" y1="16" x2="34" y2="17" stroke="#6b5420" stroke-width="3"/><line x1="40" y1="12" x2="50" y2="18" stroke="#6b5420" stroke-width="3"/>
+  <path d="M30 16 V52 Q30 58 40 58 H58" fill="none" stroke="#f2c230" stroke-width="4" stroke-linecap="round"/>
+</svg>

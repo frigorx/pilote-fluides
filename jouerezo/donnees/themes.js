@@ -49,6 +49,12 @@ window.JR_JEUX = {
   heros: { nom: "Le circuit dont vous êtes le héros", lettre: "H", emoji: "💧", /* moteur de l'aventure (data-jeu="heros"), scénario dans heros.js */
     phrase: "Vous êtes une molécule de fluide frigorigène. Faites le tour du circuit : à chaque organe, une énigme.",
     regle: "Huit organes, huit énigmes, trois cœurs. Une bonne réponse vous fait passer l'organe : parfois, vous changez d'état. Une mauvaise vous laisse sur place, avec un indice et la station à revoir." },
+  chalumeau: { nom: "Le jeu du chalumeau", lettre: "F", emoji: "🔥", lien: "../cuivrezo/simulateur/", /* page de CuivRézo (station 2.3), rangée aussi ici (Franck, 06/10) */
+    phrase: "Montez les détendeurs, mettez en pression, allumez, puis réglez une flamme carburante, neutre ou oxydante, et refermez le poste dans l'ordre.",
+    regle: "Six temps, du poste à monter jusqu'au poste refermé. Chaque erreur est expliquée sur le moment ; à la fin, un code pour le professeur." },
+  azote: { nom: "Le jeu de l'azote", lettre: "N", emoji: "🧪", lien: "../cuivrezo/simulateur/azote.html", /* page de CuivRézo (station 3.3), rangée aussi ici (Franck, 06/10) */
+    phrase: "Pourquoi de l'azote dans un circuit frigorifique ? Puis montez le mano-détendeur, réglez la pression sous la PS de la plaque, faites l'épreuve et rangez le poste.",
+    regle: "Cinq temps, de la bouteille au poste rangé. Chaque erreur est expliquée sur le moment ; à la fin, un code pour le professeur." },
   depanneur: { nom: "Le dépanneur", lettre: "R", emoji: "🔧", station: true, /* retiré de la liste des jeux (Franck, 03/10 : « je supprime des jeux le dépannage ») : devient une station à part */
     phrase: "Une chambre froide en panne. Branchez le manifold, pincez le thermomètre, regardez, touchez, puis nommez la panne.",
     regle: "Trois situations. Vous choisissez vos relevés comme sur le chantier ; les pressions se lisent sur le cadran, la surchauffe et le sous-refroidissement se calculent. Puis vous concluez. Moins de relevés inutiles, meilleur coefficient." }

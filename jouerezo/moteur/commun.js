@@ -186,12 +186,12 @@
     const zone = document.getElementById("liste-jeux");
     if (!zone) return;
     zone.innerHTML = Object.keys(window.JR_JEUX).filter(id => !window.JR_JEUX[id].station).map(function (id) {
-      const m = window.JR_JEUX[id];
+      const m = window.JR_JEUX[id], lien = m.lien || id + '.html';
       const themes = (window.JR_THEMES[id] || []).map(t =>
         '<li><a href="' + id + '.html?t=' + JR.esc(t.id) + '">' + JR.esc(t.emoji + " " + t.nom) + '</a></li>').join("");
       return '<section class="carte jeu" aria-labelledby="j-' + id + '">' +
         '<div class="entete"><img src="illustrations/' + id + '.svg" alt="" width="64" height="64">' +
-        '<div><h2 id="j-' + id + '"><a href="' + id + '.html">' + JR.esc(m.nom) + '</a></h2><p class="phrase">' + JR.esc(m.phrase) + '</p></div></div>' +
+        '<div><h2 id="j-' + id + '"><a href="' + lien + '">' + JR.esc(m.nom) + '</a></h2><p class="phrase">' + JR.esc(m.phrase) + '</p></div></div>' +
         '<ul class="themes">' + themes + '</ul></section>';
     }).join("");
   };

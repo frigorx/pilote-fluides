@@ -8,6 +8,11 @@
 var CUIVREZO = window.CUIVREZO = window.CUIVREZO || {};
 CUIVREZO.stations = [];
 CUIVREZO.lignes = { 1: 'Les gestes de base', 2: 'Le chalumeau', 3: 'Braser', 4: 'Les pièces complexes' };
+/* les jeux d'une ligne : des pages à part (pas le contrat des six temps), affichées sur le plan après ses stations */
+CUIVREZO.jeux = [
+  { ligne: 2, num: '2.3', titre: 'Le jeu du chalumeau', href: 'simulateur/' },
+  { ligne: 3, num: '3.3', titre: 'Le jeu de l’azote', href: 'simulateur/azote.html' }
+];
 CUIVREZO.lignesAVenir = [
   { n: 5, titre: 'Le réseau complet', contenu: 'piquage, dessautage, pièce d’examen : une ligne frigorifique façonnée de bout en bout' }
 ];
@@ -33,10 +38,13 @@ CUIVREZO.zonesPoste = [
 var REF = {
   T6: 'T6 Préparer, vérifier les matériels et les outillages',
   T10: 'T10 Repérer, raccorder, assembler les réseaux fluidiques, aérauliques et électriques',
+  T11: 'T11 Contrôler les circuits hors fonctionnement',
   T12: 'T12 Respecter les consignes de sécurité et protéger la zone de travail durant les travaux',
   C22: 'C2.2 Contrôler les éléments nécessaires à la réalisation',
   C31: 'C3.1 Organiser le poste de travail',
   C34: 'C3.4 Façonner, raccorder, assembler, isoler, les circuits (frigorifique, hydraulique, aéraulique)',
+  C39: 'C3.9 Vérifier l’étanchéité d’un circuit (frigorifique, hydraulique) avant mise en service',
+  C47: 'C4.7 Raccorder les équipements de charge, de mesure et de contrôle',
   S02: 'S0.2 Gestion de l’environnement du site d’intervention et des déchets',
   S21: 'S2.1 Outils, normes et représentation',
   S55: 'S5.5 Réseaux fluidiques et mécanique des fluides',
