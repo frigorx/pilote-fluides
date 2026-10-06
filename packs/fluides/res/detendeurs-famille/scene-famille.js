@@ -71,7 +71,7 @@
   const EXPLIC = {
     capillaire: "Un tube très fin et très long. Son passage ne change jamais : il ne règle rien.",
     automatique: "Un ressort s’oppose à la pression de l’évaporateur. Il règle la pression : elle monte, il ferme. On le trouve surtout sur les machines à glace.",
-    thermostatique: "Un bulbe sent la sortie de l’évaporateur. Il règle la surchauffe : sortie plus chaude, il ouvre.",
+    thermostatique: "Un bulbe sent la sortie de l’évaporateur : sa pression (violet) pousse la membrane. Il règle la surchauffe : sortie plus chaude, il ouvre.",
     electronique: "Des capteurs et un régulateur. Il règle la surchauffe, calculée : le régulateur commande la vanne."
   };
   const PIECE = { capillaire: "tube", automatique: "membrane", thermostatique: "bulbe", electronique: "regulateur" };
@@ -80,7 +80,7 @@
     const dessin = document.createElement("div"); dessin.className = "ds-dessin";
     const grille = document.createElement("div"); grille.className = "ds-cartes";
     const explic = document.createElement("p"); explic.className = "ds-explic";
-    DS.fond(dessin); dessin.appendChild(grille); hote.append(dessin, explic);
+    DS.fond(dessin); dessin.appendChild(grille); hote.append(dessin, DS.legendeForces(), explic);
     const cs = [];
     T.forEach(type => {
       const n = DS.NOMS[type], b = document.createElement("button");
@@ -96,7 +96,7 @@
       if (auChoix) auChoix(type);
     }
     choisir("capillaire");
-    DS.animer(hote, t => cs.forEach(c => c.coupe.maj({ charge: 0.5 }, t, { agit: PIECE[c.type] })));
+    DS.animer(hote, t => cs.forEach(c => c.coupe.maj({ charge: 0.5, pouls: 1 }, t, { agit: PIECE[c.type] })));
   };
 
   /* ---------- écran 4 : et si la chambre se réchauffe ? — l'écran clé ---------- */
@@ -105,20 +105,22 @@
     thermostatique: ["oui", "il suit la chaleur"], electronique: ["oui", "il suit, au plus juste"]
   };
   G.etsi = function (hote) {
-    const init = { charge: 0.5, verdict: 0 }, fin = {};
+    const init = { charge: 0.5, verdict: 0, signal: 0 }, fin = {};
     T.forEach(t => { init["o_" + t] = DS.ouverture(t, 0.5); fin["o_" + t] = DS.ouverture(t, 1); });
     return DS.jouer(hote, {
       init: init,
       etapes: [
         { nom: "Tout va bien", dire: "La chambre est à bonne température : les quatre laissent passer ce qu’il faut.", cible: {}, agit: null, duree: 1.4 },
         { nom: "La chambre se réchauffe", dire: "L’évaporateur reçoit plus de chaleur : le liquide s’évapore plus vite, la sortie devient plus chaude.", cible: { charge: 1 }, agit: "evaporateur", duree: 3 },
-        { nom: "Chacun le sent", dire: "Chacun le sent à sa façon : pression sous la membrane, bulbe, sondes. Le capillaire ne sent rien.", cible: {}, agit: { capillaire: "tube", automatique: "membrane", thermostatique: "bulbe", electronique: "sondes" }, duree: 2.2 },
+        { nom: "Chacun le sent", dire: "Bulbe qui chauffe, pression qui monte, sondes qui lisent. Le capillaire ne sent rien.", cible: {}, agit: { capillaire: "tube", automatique: "membrane", thermostatique: "bulbe", electronique: "sondes" }, duree: 2.4 },
+        { nom: "Le message du bulbe", dire: "Bulbe chaud : sa pression (violet) file dans le tube et pousse la membrane vers le bas.", cible: { signal: 1 }, agit: { thermostatique: "capillaire" }, duree: 4.6 },
         { nom: "Chacun réagit", dire: "Capillaire : rien. Automatique : il ferme. Thermostatique : il ouvre. Électronique : il ouvre, calculé.", cible: fin, agit: { capillaire: "tube", automatique: "aiguille", thermostatique: "aiguille", electronique: "moteur" }, duree: 3.2 },
         { nom: "Qui suit la chaleur ?", dire: "Seuls le thermostatique et l’électronique donnent plus de liquide quand il en faut plus.", cible: { verdict: 1 }, agit: "evaporateur", duree: 1.6 }
       ],
       construire: function (dessin) {
         const rang = document.createElement("div"); rang.className = "ds-rang";
         dessin.appendChild(rang);
+        dessin.after(DS.legendeForces());                   // sous le dessin, en HTML : jamais sur un tracé
         const cs = T.map(type => {
           const n = DS.NOMS[type], c = document.createElement("div");
           c.className = "ds-cel"; c.dataset.type = type;
@@ -127,7 +129,7 @@
           return { type: type, c: c, v: c.querySelector(".ds-verdict"), coupe: DS.coupe(type, DS.svg(c.querySelector(".ds-coupe"), "ds-svg", "Coupe du détendeur " + n.nom.toLowerCase() + ".")) };
         });
         return function (e, t, info) {
-          cs.forEach(c => { c.coupe.maj({ charge: e.charge, ouverture: e["o_" + c.type] }, t, info); c.v.style.opacity = bn(e.verdict, 0, 1).toFixed(2); });
+          cs.forEach(c => { c.coupe.maj({ charge: e.charge, ouverture: e["o_" + c.type], signal: e.signal }, t, info); c.v.style.opacity = bn(e.verdict, 0, 1).toFixed(2); });
         };
       }
     });

@@ -18,8 +18,9 @@
 <h1>Banc des coupes — DETENDEURS_SCENES.coupe(type, svg)</h1>
 <p>
   <label>Charge <input id="charge" type="range" min="0" max="1" step="0.01" value="0.5"> <b id="vc">0,50</b></label>
+  <label>Signal du bulbe (thermostatique) <input id="signal" type="range" min="0" max="1" step="0.01" value="1"></label>
   <label>Pièce allumée
-    <select id="agit"><option value="">aucune</option><option>evaporateur</option><option>bulbe</option><option>membrane</option><option>ressort</option><option>aiguille</option><option>moteur</option><option>regulateur</option><option>sondes</option><option>tube</option></select>
+    <select id="agit"><option value="">aucune</option><option>evaporateur</option><option>bulbe</option><option>membrane</option><option>ressort</option><option>aiguille</option><option>moteur</option><option>regulateur</option><option>sondes</option><option>tube</option><option>capillaire</option><option>capillaire</option></select>
   </label>
 </p>
 <div class="rang" id="rang"></div>
@@ -36,7 +37,7 @@
   function boucle(now) {
     const dt = avant ? Math.min(0.1, (now - avant) / 1000) : 0; avant = now; t += dt;
     const c = +document.getElementById("charge").value; document.getElementById("vc").textContent = c.toFixed(2).replace(".", ",");
-    cs.forEach(s => s.maj({ charge: c }, t, { agit: document.getElementById("agit").value }));
+    cs.forEach(s => s.maj({ charge: c, signal: +document.getElementById("signal").value }, t, { agit: document.getElementById("agit").value }));
     requestAnimationFrame(boucle);
   }
   requestAnimationFrame(boucle);

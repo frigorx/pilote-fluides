@@ -23,7 +23,7 @@ const OUT = process.env.CAPTURES || "";
 if (OUT) fs.mkdirSync(OUT, { recursive: true });
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const VUES = [{ nom: "1366x768", width: 1366, height: 768 }, { nom: "390x844", width: 390, height: 844 }];
-const PAS = { 1: 4, 2: 4, 4: 5 };                         // écrans à pas à pas : nombre d'étapes
+const PAS = { 1: 4, 2: 4, 4: 6 };                         // écrans à pas à pas : nombre d'étapes
 const echecs = [], notes = [];
 const ko = (msg) => { echecs.push(msg); console.log("  ÉCHEC", msg); };
 

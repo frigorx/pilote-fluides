@@ -76,7 +76,7 @@ body.course-running{height:100dvh;overflow:hidden}
 .status-message{min-height:0;margin:0;padding:0 14px;text-align:center;color:var(--ok);font-weight:800;font-size:15px}.status-message:empty{display:none}
 
 /* ---- le dessin : une figure = un dessin qui vit + sa barre de pas à pas ---- */
-.ds-figure{height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:6px}
+.ds-figure{height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr);grid-auto-rows:auto;gap:6px}
 .ds-dessin{position:relative;min-height:0;display:grid;place-items:center;border:1px solid var(--line);border-radius:14px;background:#fdfbf5;overflow:hidden;padding:4px}
 .ds-fond{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .ds-svg{position:relative;display:block;width:100%;height:100%;min-height:0}
@@ -90,7 +90,7 @@ body.course-running{height:100dvh;overflow:hidden}
 .ds-cartes{height:100%}
 .ds-cel,.ds-carte{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:2px;min-height:0;min-width:0}
 .ds-cel-tete{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--navy);font-size:19px;line-height:1.1}
-.ds-cel-tete img{height:42px;width:56px;object-fit:contain;flex:0 0 auto}
+.ds-cel-tete img{height:36px;width:50px;object-fit:contain;flex:0 0 auto}
 .ds-coupe{position:relative;min-height:0;display:grid}
 .ds-coupe .ds-fond{display:none}
 .ds-verdict{margin:0;padding:3px 8px;border-radius:999px;text-align:center;font-weight:800;font-size:var(--corps);line-height:1.2;opacity:0}
@@ -151,6 +151,7 @@ dialog .primary-button{padding:9px 22px;font-size:19px}
   .ds-onglets{display:flex;gap:6px}.ds-onglets button{flex:1;border:2px solid var(--line);border-radius:12px;background:var(--paper);color:var(--navy);font-weight:800;font-size:var(--corps);padding:5px 6px;cursor:pointer}.ds-onglets button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
   .ds-variantes{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr)}.ds-var:not(.actif){display:none}.ds-var .ds-cel-tete{display:none}
   .ds-coupe .ds-pastille{display:none}
+  .ds-forces{display:none!important}
   .chips{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ds-cel-tete img{height:30px;width:40px}.ds-cel-tete{font-size:var(--corps)}
 }
