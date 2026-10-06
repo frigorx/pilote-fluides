@@ -79,6 +79,19 @@ a:hover { color: #ff6b35; }
   "logo": true,
   "motionEditor": false
 }/*EDITMODE-END*/;</script>
+</helmet>
+<x-import component-from-global-scope="SerrePiece" from="./animations-v3.js ./tweaks-panel.js ./serre.js" hint-size="100%,100%"></x-import>
+</x-dc>
+</main>
+<!-- La bande son vit HORS du <helmet>, exprès (06/10/2026).
+     Le navigateur exécute les <script> du <helmet> en lisant la page ; le
+     runtime Claude Design (support.js) les réinjecte ensuite dans <head>,
+     après les avoir passés dans encodeCamelAttrs, qui prend « essaisDepart = »
+     pour un attribut et l'écrit « sc-camel-essais-depart = ». Résultat depuis
+     le 13/09 : « SyntaxError: Unexpected token '-' » à chaque ouverture. Sans
+     ce plantage, ce serait pire : le script tournerait deux fois, deux voix
+     superposées. Hors du <x-dc>, le runtime ne le voit pas : il ne s'exécute
+     qu'une fois, tel qu'écrit. Ne pas le remettre dans le <helmet>. -->
 <script>
 /* Bande son : la voix (fichier local) est l'horloge du film.
    Asservissement par l'événement de pilotage du cadre (data-om-seek-to-time-frame) ;
@@ -216,10 +229,6 @@ a:hover { color: #ff6b35; }
   }, 50);
 })();
 </script>
-</helmet>
-<x-import component-from-global-scope="SerrePiece" from="./animations-v3.js ./tweaks-panel.js ./serre.js" hint-size="100%,100%"></x-import>
-</x-dc>
-</main>
 <details class="transcription">
   <summary>Transcription du film (15 passages)</summary>
   <ol>

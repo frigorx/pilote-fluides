@@ -3,6 +3,24 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 06/10 — FILMS CLIMAT : L'ERREUR « UNEXPECTED TOKEN '-' » LEVÉE (branche `claude/lucid-lamport-bye5mo`, pas sur `main`)
+>
+> `film-ozone/` et `film-effet-de-serre/` levaient à chaque ouverture `SyntaxError: Failed to execute 'appendChild'
+> on 'Node': Unexpected token '-'` (`support.js:1446`). **Cause** : le navigateur exécute les `<script>` du `<helmet>`
+> en lisant la page, puis le runtime Claude Design les **réinjecte** dans `<head>` après `encodeCamelAttrs`, qui prend
+> `essaisDepart =` pour un attribut et l'écrit `sc-camel-essais-depart =`. Né le 13/09 (`ffb5eaab`, l'arrêt de l'image
+> au chargement) ; react-dom n'y était pour rien. **Correction** : le script de la bande son sort du `<helmet>` et se pose
+> après `</main>`, inchangé. **Ne pas se contenter de renommer les variables** : mesuré, les scripts du `<helmet>`
+> tournent DEUX fois (`TWEAK_DEFAULTS`, `OM_SCENES`, `OM_PLAYBACK` : 2 affectations) ; le plantage était ce qui
+> empêchait une seconde voix superposée. Vérifié dans Chromium : 0 erreur, 1 seule `Audio`, film joué en entier, l'image
+> suit la voix. Les 52 autres pages à `<helmet>` (films et planches Régulés, KVR/NRD, sécurité du Studio) : 0 erreur.
+> **Piège** : dans un `<helmet>`, jamais d'espace suivi de `motCamel =` ; un script de page n'a rien à y faire.
+> **Reste, antérieur** : le ▶ du lecteur du film démarre l'image SANS la voix. Le relais (`closest('button[title^="Play/pause"]')`)
+> arrive après que React a remplacé l'icône : la cible est un `<path>` détaché. Piste : `e.composedPath()`. Non corrigé.
+> `version.mjs` n'est pas concerné : les films n'entrent pas dans l'empreinte et les pages HTML sont servies réseau
+> d'abord. Lancé depuis un clone neuf, il réécrit 22 clés : la clé dépend de fichiers absents de git (`relecture.html`
+> et d'autres), donc ces clés n'ont pas été commitées.
+
 > ## 06/10 — LE SITE S'APPELLE INERWEB.FR, CHAQUE PAGE MÈNE À SON RÉSEAU, LA CHAÎNE YOUTUBE (branche `claude/jolly-feynman-0jexaa`)
 >
 > Demandes de F. Henninot. **(1) L'entrée du site est inerweb.fr** : gommer l'effet « Éducation nationale » d'un accueil
@@ -26,7 +44,8 @@
 > livraison remettra : c'est admis (division éducation), rien à corriger dans les ateliers ; (2) après toute livraison, relancer
 > `node build/retour-accueil.mjs` (il pose aussi le réseau) ; (3) l'image `icones/og-inerweb-1200x630.png` et les
 > affiches peintes peuvent encore montrer « Édu » dans leurs pixels. Constaté sans y toucher : `film-ozone/support.js`
-> lève une erreur JS au chargement (déjà là avant), et `build/animations.mjs --verifier` relève 358 clés périmées
+> lève une erreur JS au chargement (déjà là avant ; levée le même jour, entrée « films climat » ci-dessus), et
+> `build/animations.mjs --verifier` relève 358 clés périmées
 > (déjà là avant).
 
 > ## 04/10 — « ANIMER LES RÉSEAUX » : LES RÉSEAUX STATIQUES S'ANIMENT (`cb9a6709` → `5a14b449`)
@@ -1224,6 +1243,7 @@
 > Une CSP stricte sans `unsafe-eval` reste donc impossible SUR CES DEUX PAGES tant
 > qu'elles passent par `x-import`. L'erreur console « Unexpected token '-' », levée dans
 > react-dom, EXISTAIT AVANT : elle n'empêche pas les films de tourner, non résolue.
+> *(06/10 : celle qu'on voit depuis le 13/09 ne vient pas de react-dom ; cause et correction en tête de ce fichier.)*
 >
 > **`332e61c` — les films disent ce qu'ils racontent.** `h1`, `main`, et une
 > transcription dépliable (13 passages pour l'ozone, 15 pour l'effet de serre) extraite
