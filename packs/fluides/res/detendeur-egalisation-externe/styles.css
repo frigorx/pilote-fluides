@@ -191,13 +191,17 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
 .ds-svg.eg-svg{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px)}
 .home-visual svg.eg-svg{position:absolute;inset:0;width:100%;height:100%}
 .ds-dessin:has(.eg-duo){grid-template-rows:minmax(0,1fr);place-items:stretch}
-.eg-carte{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;gap:4px;height:100%;min-height:0}
+.ds-figure:has(.eg-legende){grid-template-rows:minmax(0,1fr) auto auto}
+.eg-legende{margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:2px 18px;font-size:var(--corps);line-height:1.25;color:var(--ink)}
+.eg-legende span{display:inline-flex;align-items:center;gap:7px}.eg-legende em{font-style:normal}.eg-legende i{flex:0 0 auto;width:20px;height:20px;border-radius:5px;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.eg-v{background:#8e44ad}.eg-b{background:#2f6fb6}.eg-g{background:#5d6b7a}
+.eg-carte{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto auto;gap:4px;height:100%;min-height:0}
 .eg-carte .ds-dessin{min-height:0}
 .eg-carte .ds-explic{min-height:2.56em}
 .eg-duo{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;min-height:0}
 .eg-cel{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:2px;min-height:0;min-width:0}
 .eg-coupe{position:relative;min-height:0;grid-row:2}.eg-cel>.ds-cel-tete{grid-row:1}.eg-cel>.ds-verdict{grid-row:3}
-.eg-exo{display:grid;grid-template-rows:minmax(110px,1fr) auto auto;gap:6px;min-height:0;height:100%}
+.eg-exo{display:grid;grid-template-rows:minmax(110px,1fr) auto auto auto;gap:6px;min-height:0;height:100%}
 .eg-exo .ds-dessin{min-height:0}
 .eg-choix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .eg-prise{display:flex;align-items:center;gap:8px;border:2px solid var(--line);border-radius:12px;background:var(--paper);padding:5px 10px;font-weight:800;font-size:var(--corps);line-height:1.15;color:var(--navy);cursor:pointer;text-align:left}
@@ -212,7 +216,10 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
   .eg-carte .ds-cel-tete b{font-size:var(--corps)}
 }
 @media (max-width:650px){
+  .eg-legende{gap:0 14px}.eg-legende em{display:none}.eg-legende span:nth-child(2){order:3}.eg-legende span:nth-child(3){order:2}
+  .eg-cel{position:relative;grid-template-rows:auto minmax(150px,1fr)}.eg-cel>.ds-verdict{position:absolute;right:4px;bottom:2px;z-index:2;background:rgba(255,253,248,.9)}
+  .eg-carte .ds-dessin{min-height:150px}
   .quiz .feedback{padding-right:60px}
   .eg-prise{padding:4px 6px;gap:6px}.eg-prise b{flex-basis:28px;height:28px}
-  .eg-exo{grid-template-rows:minmax(96px,1fr) auto auto;gap:4px}
+  .eg-exo{grid-template-rows:minmax(96px,1fr) auto auto auto;gap:4px}
 }

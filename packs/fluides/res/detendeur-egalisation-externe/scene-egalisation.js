@@ -17,6 +17,12 @@
    liquide (nappe, bulles qui naissent au fond, vapeur en petites molécules) ; FLUIDE CONTINU : un tube = une
    paroi + un intérieur d'un seul tenant, un coude = une courbe, la paroi est OUVERTE là où un tube entre dans
    le corps ou dans un autre tube ; filigrane inerWeb (R9) derrière chaque dessin ; rien n'est animé en CSS.
+   CONVENTION DE COULEURS DE LA LIGNE : charge du bulbe et sa pression = violet #8e44ad (jamais orangé : l'orangé est le
+   liquide HP) ; le capillaire est un tube (paroi + intérieur violet d'un seul tenant) du bulbe à la chambre AU-DESSUS de la
+   membrane ; quand le bulbe chauffe, des impulsions plus claires filent dans le capillaire et la chambre se fonce ; flèches
+   violettes = pression du bulbe, qui ouvre ; flèches bleues SOUS la membrane = pression qui ferme (interne : celle de
+   l'entrée, externe : celle de la sortie, amenée par le tube d'égalisation) ; flèches gris acier = ressort, qui ferme.
+   La légende HTML (G.legende) dit les trois.
    MODÈLE (qualitatif) : p entrée = P_OUT + DP × perte ; p sortie = P_OUT. Le détendeur à égalisation interne lit
    p entrée, l'externe lit p sortie (tube pris après le bulbe). Écart lu = (p lue − p sortie) ; plus il est grand,
    plus le détendeur reste fermé (ferme) et plus la nappe est courte (nappe).
@@ -28,7 +34,11 @@
   if (!DS || !D) { console.warn("scene-egalisation.js : DETENDEURS_SCENES absent."); return; }
   const el = D.el, lerp = D.lerp, bn = D.borne, lisse = D.lisse, frac = D.frac;
   const H = 360, KM = 0.7, CLAIR = "#f4f8fc", CUIVRE = "#a9672f", NAVY = "#1b3a63";
-  const VERT = "#1e7e54", AMBRE = "#b06a00", GRIS = "#8494a4";
+  const VERT = "#1e7e54", AMBRE = "#b06a00";
+  const VIOLET = "#8e44ad", BLEU = "#2f6fb6", ACIER = "#5d6b7a";    // convention de la ligne : bulbe = violet (ouvre), sous la membrane = bleu (ferme), ressort = gris acier (ferme)
+  const V_FROID = "#d6b9e6", V_PULSE = "#ecdcf5";
+  const hex = c => [1, 3, 5].map(i => parseInt(c.slice(i, i + 2), 16));
+  const mixe = (a, b, f) => { const A = hex(a), B = hex(b); return "rgb(" + A.map((v, i) => Math.round(v + (B[i] - v) * f)).join(",") + ")"; };
   const P_OUT = 0.10, DP = 0.20;                   // pression de sortie ; écart entrée − sortie à pleine perte de charge
   const NY0 = 238;                                 // haut de l'aiguille fermée
 
@@ -67,12 +77,6 @@
       r.setAttribute("opacity", (0.65 + 0.35 * Math.sin(t * 5)).toFixed(2));
     };
   }
-  /* un tube mince (capillaire, raccord de manomètre) : paroi de cuivre + intérieur clair, d'un seul tenant */
-  function fil(g, d, paroi, dedans) {
-    el("path", { d: d, fill: "none", stroke: CUIVRE, "stroke-width": paroi, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g);
-    return function () { return el("path", { d: d, fill: "none", stroke: CLAIR, "stroke-width": dedans, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g); };
-  }
-
   /* ---------- le modèle qualitatif ---------- */
   function modele(e, ext) {
     const perte = bn(e.perte === undefined ? 1 : e.perte, 0, 1);
@@ -99,9 +103,11 @@
     const YT = 194, YH = 204, YB = 240;               // dessus de la paroi du tube ; intérieur haut et bas
 
     // ----- 1. le capillaire du bulbe (derrière tout), puis la paroi du tube d'égalisation -----
-    const dCap = "M " + xbc + " 170 V 54 Q " + xbc + " 40 " + (xbc - 14) + " 40 H 124 Q 110 40 110 54";
-    fil(g, dCap, 7, 3)();
-    const dEq = xt => "M 62 150 H 28 Q 14 150 14 136 V 32 Q 14 18 28 18 H " + (xt - 14) + " Q " + xt + " 18 " + xt + " 32 V ";
+    const dCapHaut = " Q " + xbc + " 32 " + (xbc - 14) + " 32 H 124 Q 110 32 110 46 V 54";
+    const dCap = "M " + xbc + " 170 V 46" + dCapHaut;
+    const dCapDedans = "M " + xbc + " 184 V 46" + dCapHaut + " V 78";   // du bulbe jusque dans la chambre au-dessus de la membrane
+    el("path", { d: dCap, fill: "none", stroke: CUIVRE, "stroke-width": 9, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g);
+    const dEq = xt => "M 62 172 H 28 Q 14 172 14 158 V 26 Q 14 12 28 12 H " + (xt - 14) + " Q " + xt + " 12 " + xt + " 26 V ";
     const eqLueur = ext ? el("path", { fill: "none", stroke: "#ff6b35", "stroke-width": 20, "stroke-linecap": "round", "stroke-linejoin": "round", opacity: 0 }, g) : null;
     const eqParoi = ext ? el("path", { fill: "none", stroke: CUIVRE, "stroke-width": 12, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g) : null;
 
@@ -141,26 +147,31 @@
     const membrane = el("path", { fill: "none", stroke: "#24384f", "stroke-width": 5, "stroke-linecap": "round" }, g);
     const flecheH = (x, y0, h) => "M " + (x - 4) + " " + y0 + " V " + (y0 + h - 12) + " H " + (x - 11) + " L " + x + " " + (y0 + h) + " L " + (x + 11) + " " + (y0 + h - 12) + " H " + (x + 4) + " V " + y0 + " Z";
     const flecheB = (x, y0, h) => "M " + (x - 4) + " " + y0 + " V " + (y0 - h + 12) + " H " + (x - 11) + " L " + x + " " + (y0 - h) + " L " + (x + 11) + " " + (y0 - h + 12) + " H " + (x + 4) + " V " + y0 + " Z";
-    const bas = [84, 136].map(() => el("path", { fill: "#fff", stroke: "#c9451a", "stroke-width": 2.5, "stroke-linejoin": "round" }, g));      // la pression du bulbe, qui pousse vers le bas
-    const haut = [84, 136].map(() => el("path", { stroke: "#fff", "stroke-width": 1.5, "stroke-linejoin": "round" }, g));                  // la pression lue, qui pousse vers le haut
+    const bas = [84, 136].map(() => el("path", { fill: VIOLET, stroke: "#fff", "stroke-width": 2, "stroke-linejoin": "round" }, g));          // la pression du bulbe (violet), qui pousse la membrane vers le bas : elle ouvre
+    const haut = [84, 136].map(() => el("path", { fill: BLEU, stroke: "#fff", "stroke-width": 2, "stroke-linejoin": "round" }, g));          // la pression sous la membrane (bleu), qui la pousse vers le haut : elle ferme
+    const ress = [70, 150].map(() => el("path", { fill: ACIER, stroke: "#fff", "stroke-width": 2, "stroke-linejoin": "round" }, g));         // le ressort (gris acier), qui pousse aussi vers le haut : il ferme
     el("rect", { x: 100, y: 48, width: 20, height: 14, rx: 3, fill: "url(#vm-acier)", stroke: "#4e5a66", "stroke-width": 2 }, g);        // l'écrou du capillaire
 
     // ----- 4. le bulbe, collé sur le tube de sortie (le capillaire entre dans le bulbe) -----
     const bulbe = el("rect", { x: xb0, y: 170, width: xb1 - xb0, height: 26, rx: 11, fill: "url(#vm-acier)", stroke: "#5d6b7a", "stroke-width": 2 }, g);
-    const bulbeChaud = el("rect", { x: xb0, y: 170, width: xb1 - xb0, height: 26, rx: 11, fill: "#ff6b35", opacity: 0 }, g);
-    [xb0 + 12, xb1 - 12].forEach(x => el("rect", { x: x - 4, y: 164, width: 8, height: 38, rx: 3, fill: "#5d6b7a" }, g));
+    const charge = el("rect", { x: xb0 + 5, y: 175, width: xb1 - xb0 - 10, height: 16, rx: 7, fill: V_FROID }, g);          // la charge du bulbe, violette : plus il chauffe, plus elle se fonce
+    [xb0 + 12, xb1 - 12].forEach(x => el("rect", { x: x - 4, y: 164, width: 8, height: 38, rx: 3, fill: ACIER }, g));
+    // le capillaire du bulbe : un vrai tube, intérieur violet d'un seul tenant du bulbe à la chambre au-dessus de la membrane
+    const capDedans = el("path", { d: dCapDedans, fill: "none", stroke: V_FROID, "stroke-width": 5, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g);
+    const capImpulsions = el("path", { d: dCapDedans, fill: "none", stroke: V_PULSE, "stroke-width": 3, "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-dasharray": "7 40", opacity: 0 }, g);
 
     // ----- 5. le tube d'égalisation : intérieur d'un seul tenant, de la prise (dans le tube) jusque dans la chambre -----
     let eqDedans = null, eqPression = null, bouchon = null;
     if (ext) {
       eqDedans = el("path", { fill: "none", stroke: CLAIR, "stroke-width": 6, "stroke-linecap": "butt", "stroke-linejoin": "round" }, g);
       eqPression = el("path", { fill: "none", stroke: VERT, "stroke-width": 3, "stroke-linecap": "round", "stroke-dasharray": "3 11" }, g);
-      bouchon = el("rect", { x: 3, y: 142, width: 8, height: 16, rx: 2, fill: "#6b2a14", opacity: 0 }, g);
+      bouchon = el("rect", { x: 3, y: 164, width: 8, height: 16, rx: 2, fill: "#6b2a14", opacity: 0 }, g);
     }
 
     // ----- 6. instruments, pastilles, points à toucher, anneau -----
     const m1 = DS.manometre(g, xm1, 122, 34), m2 = DS.manometre(g, xm2, 122, 34);
-    if (etiquettes) { D.pastille(g, xm1, 74, "entrée", NAVY, 22, "middle"); D.pastille(g, xm2, 74, "sortie", NAVY, 22, "middle"); }
+    const tp = opt.taille || 22, yp = 41.5 + 0.95 * tp;                   // sur petit écran la pastille grandit pour rester lisible
+    if (etiquettes) { D.pastille(g, xm1, yp, "entrée", NAVY, tp, "middle"); D.pastille(g, xm2, yp, "sortie", NAVY, tp, "middle"); }
     const spots = {};
     if (exo && ext) {
       const lieu = { A: [xA, YT, "Brancher sur l’entrée de l’évaporateur"], B: [xB, YT, "Brancher avant le bulbe"], C: [xC, YT, "Brancher après le bulbe"], D: [24, 208, "Laisser la prise bouchée"] };
@@ -205,22 +216,24 @@
       ressort.setAttribute("d", d + " L 110 312");
       tige.setAttribute("y", (150 + dm).toFixed(1)); tige.setAttribute("height", (ny + 2 - 150 - dm).toFixed(1));
       const cd = "M 58 150 V 100 Q 58 70 110 70 Q 162 70 162 100 V 150 Q 110 " + (150 + 2 * dm).toFixed(1) + " 58 150 Z";
-      chambre.setAttribute("d", cd); fluide.setAttribute("d", cd); fluide.setAttribute("fill", D.couleur(m.tout, false));
+      chambre.setAttribute("d", cd); fluide.setAttribute("d", cd);
+      const chaud = bn((m.tout - 0.12) / 0.45, 0, 1), violet = mixe(V_FROID, VIOLET, chaud);   // la sortie chauffe : la charge se fonce
+      fluide.setAttribute("fill", violet); fluide.setAttribute("opacity", 0.92); charge.setAttribute("fill", violet); capDedans.setAttribute("stroke", violet);
+      capImpulsions.setAttribute("stroke-dashoffset", (-t * (30 + 40 * chaud)).toFixed(1)); capImpulsions.setAttribute("opacity", (0.25 + 0.7 * chaud).toFixed(2));   // des impulsions plus claires filent du bulbe vers la tête
       membrane.setAttribute("d", "M 58 150 Q 110 " + (150 + 2 * dm).toFixed(1) + " 162 150");
       const h = 8 + 90 * m.plue;
-      const coul = m.libre ? GRIS : (m.k > 0.5 ? VERT : AMBRE);
-      haut.forEach((p, k) => { p.setAttribute("d", flecheB([84, 136][k], 190, h)); p.setAttribute("fill", coul); p.setAttribute("opacity", m.libre ? 0.5 : 1); if (m.libre) p.setAttribute("stroke-dasharray", "5 4"); else p.removeAttribute("stroke-dasharray"); });
-      bas.forEach((p, k) => p.setAttribute("d", flecheH([84, 136][k], 82, h)));
+      const sp = 22 + 14 * m.ouv;                                                  // la force du ressort grandit un peu quand il se comprime
+      haut.forEach((p, k) => { p.setAttribute("d", flecheB([84, 136][k], 190, h)); p.setAttribute("opacity", m.libre ? 0.45 : 1); if (m.libre) p.setAttribute("stroke-dasharray", "5 4"); else p.removeAttribute("stroke-dasharray"); });
+      ress.forEach((p, k) => p.setAttribute("d", flecheB([70, 150][k], 308, sp)));
+      bas.forEach((p, k) => p.setAttribute("d", flecheH([84, 136][k], 82, h + 0.5 * sp)));   // la membrane est en équilibre : bulbe = dessous + ressort
       brume.setAttribute("opacity", (0.35 * (0.2 + m.ouv)).toFixed(2)); brume2.setAttribute("opacity", (0.35 * (0.2 + m.ouv)).toFixed(2));
       fluxP(t, 55 + 90 * m.ouv); fluxC(t, 55 + 90 * m.ouv);
       mel(t, 0.2 + 0.8 * m.ouv, 0.12 + 0.12 * m.ouv);
-      // le bulbe : plus la sortie est chaude, plus il est chaud
-      bulbeChaud.setAttribute("opacity", (0.7 * bn((m.tout - 0.18) / 0.5, 0, 1)).toFixed(2));
       // le tube d'égalisation
       if (ext) {
         const pris = m.tap === "A" || m.tap === "B" || m.tap === "C";
         const xt = m.tap === "A" ? xA : m.tap === "B" ? xB : xC;
-        const dt = pris ? dEq(xt) : "M 62 150 H 8";
+        const dt = pris ? dEq(xt) : "M 62 172 H 8";
         eqParoi.setAttribute("d", pris ? dt + YT : dt); eqLueur.setAttribute("d", pris ? dt + YT : dt);
         eqDedans.setAttribute("d", pris ? dt + "208" : dt);
         eqPression.setAttribute("d", pris ? dt + "200" : dt);
@@ -246,13 +259,14 @@
   /* ---------- monter : un <svg> qui se redessine selon la largeur disponible (W = 560 à 1000, hauteur fixe) ---------- */
   function monter(hote, opt) {
     const svg = DS.svg(hote, "ds-svg eg-svg", opt.aria);
-    let W = 0, inst = null, e = {}, t = 0, info = null;
+    let W = 0, TP = 0, inst = null, e = {}, t = 0, info = null;
     const bati = () => {
-      const r = svg.getBoundingClientRect();
-      const ratio = r.width > 40 && r.height > 40 ? r.width / r.height : 2.4;
+      const r = svg.getBoundingClientRect(), mesure = r.width > 40 && r.height > 40;
+      const ratio = mesure ? r.width / r.height : 2.4;
       const w = Math.round(bn(H * ratio, 560, 1000) / 20) * 20;
-      if (w === W) return;
-      W = w; svg.textContent = ""; inst = construire(svg, W, opt); inst.maj(e, t, info);
+      const tp = mesure ? Math.round(bn(14 / Math.min(r.width / w, r.height / H), 22, 30)) : 22;
+      if (w === W && tp === TP) return;
+      W = w; TP = tp; opt.taille = tp; svg.textContent = ""; inst = construire(svg, W, opt); inst.maj(e, t, info);
     };
     if (window.ResizeObserver) new ResizeObserver(bati).observe(svg);
     bati();
@@ -260,8 +274,12 @@
   }
   G.monter = monter;
 
-  const ARIA_INT = "Coupe d’un détendeur thermostatique à égalisation interne devant un évaporateur long : la pression baisse entre l’entrée et la sortie, la membrane lit celle de l’entrée.";
-  const ARIA_EXT = "Coupe d’un détendeur thermostatique à égalisation externe devant un évaporateur long : un tube prend la pression de la sortie, après le bulbe, et l’amène sous la membrane.";
+  const ARIA_INT = "Coupe d’un détendeur thermostatique à égalisation interne devant un évaporateur long : la pression baisse entre l’entrée et la sortie, la membrane lit celle de l’entrée. Le bulbe, rempli de violet, pousse la membrane par son capillaire.";
+  const ARIA_EXT = "Coupe d’un détendeur thermostatique à égalisation externe devant un évaporateur long : un tube prend la pression de la sortie, après le bulbe, et l’amène sous la membrane. Le bulbe, rempli de violet, pousse la membrane par son capillaire.";
+
+  /* ---------- la légende des trois forces sur la membrane (HTML, sous le dessin) ---------- */
+  G.legendeHtml = '<p class="eg-legende"><span><i class="eg-v"></i><em>pression du </em>bulbe : <b>ouvre</b></span><span><i class="eg-b"></i><em>pression </em>sous la membrane : <b>ferme</b></span><span><i class="eg-g"></i>ressort : <b>ferme</b></span></p>';
+  G.legende = function () { const d = document.createElement("div"); d.innerHTML = G.legendeHtml; return d.firstChild; };
 
   /* ---------- le sommaire : le détendeur à égalisation externe, qui tourne seul ---------- */
   G.accueil = function (hote) {
@@ -273,14 +291,14 @@
 
   /* ---------- écran 1 : la carte d'identité, avec sa visite guidée (bulbe, tube, membrane) ---------- */
   const VISITE = [
-    ["bulbe", "Le bulbe sent la température à la sortie de l’évaporateur."],
-    ["tube", "Le tube d’égalisation amène sous la membrane la pression de la sortie."],
-    ["membrane", "La membrane compare les deux et commande l’aiguille."]
+    ["bulbe", "Le bulbe sent la sortie : sa charge violette pousse la membrane par le capillaire."],
+    ["tube", "Le tube amène sous la membrane la pression de la sortie : elle pousse en bleu."],
+    ["membrane", "La membrane compare : le violet ouvre, le bleu et le ressort ferment."]
   ];
   G.identite = function (hote, symbole) {
     const carte = document.createElement("div"); carte.className = "eg-carte";
     carte.innerHTML = '<div class="ds-cel-tete"><img src="' + symbole + '" alt="Symbole du détendeur thermostatique à égalisation externe"><b>Détendeur à égalisation externe</b></div>' +
-      '<div class="ds-dessin"></div><p class="ds-explic" aria-live="off"></p><p class="ds-regle">il règle : <strong>la surchauffe, avec la vraie pression de la sortie</strong></p>';
+      '<div class="ds-dessin"></div>' + G.legendeHtml + '<p class="ds-explic" aria-live="off"></p><p class="ds-regle">il règle : <strong>la surchauffe, avec la vraie pression de la sortie</strong></p>';
     hote.appendChild(carte);
     const dessin = carte.querySelector(".ds-dessin"), explic = carte.querySelector(".ds-explic");
     DS.fond(dessin);
@@ -299,12 +317,13 @@
     return DS.jouer(hote, {
       init: { perte: 0, ferme: 0, nappe: 0 },
       etapes: [
+        { nom: "Le bulbe pousse", dire: "À la sortie, le bulbe sent la température. Sa charge violette pousse la membrane par le capillaire : cela ouvre.", cible: {}, agit: "bulbe", duree: 3 },
         { nom: "La pression baisse en route", dire: "Le liquide s’évapore en avançant : la pression baisse. À la sortie, elle est plus basse qu’à l’entrée.", cible: { perte: 1 }, agit: "evaporateur", duree: 3.2 },
         { nom: "La membrane lit l’entrée", dire: "Sans tube, la membrane lit la pression de l’entrée : une pression trop haute pour la sortie.", cible: {}, agit: "chambre", duree: 2.6 },
         { nom: "Il reste trop fermé", dire: "Le détendeur croit la surchauffe plus faible qu’elle n’est : il reste trop fermé.", cible: { ferme: 1 }, agit: "aiguille", duree: 3 },
         { nom: "L’évaporateur manque de liquide", dire: "La nappe de liquide est courte : le bout de l’évaporateur est vide, la vapeur sort chaude.", cible: { nappe: 1 }, agit: "evaporateur", duree: 3.4 }
       ],
-      construire: function (dessin) { return monter(dessin, { externe: false, aria: ARIA_INT }).maj; }
+      construire: function (dessin) { dessin.insertAdjacentElement("afterend", G.legende()); return monter(dessin, { externe: false, aria: ARIA_INT }).maj; }
     });
   };
 
@@ -322,6 +341,7 @@
         const onglets = document.createElement("div"); onglets.className = "ds-onglets";
         const rang = document.createElement("div"); rang.className = "eg-duo";
         dessin.append(onglets, rang);
+        dessin.insertAdjacentElement("afterend", G.legende());
         const defs = [
           { cle: "interne", titre: "Égalisation interne", img: symboles.interne, ext: false, verdict: ["non", "✗ il manque du liquide"], aria: ARIA_INT },
           { cle: "externe", titre: "Égalisation externe", img: symboles.externe, ext: true, verdict: ["oui", "✓ juste ce qu’il faut"], aria: ARIA_EXT }

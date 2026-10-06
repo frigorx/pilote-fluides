@@ -52,7 +52,7 @@ const exo = { perte: 1, ferme: 1, nappe: 1, tap: null, ok: false };   // lu à c
 
 function exoMarkup() {
   const boutons = Object.keys(PRISES).map(k => `<button type="button" class="eg-prise" data-tap="${k}" aria-pressed="${exo.tap === k}"><b>${k}</b><span>${esc(PRISES[k].nom)}</span></button>`).join("");
-  return `<div class="eg-exo"><div class="ds-dessin" id="eg-exo-dessin"></div><div class="eg-choix" role="group" aria-label="Où brancher le tube d’égalisation ?">${boutons}</div><div class="feedback" id="feedback" role="status">Touchez le point où brancher le tube : A, B, C ou D.</div></div>`;
+  return `<div class="eg-exo"><div class="ds-dessin" id="eg-exo-dessin"></div>${GS.legendeHtml}<div class="eg-choix" role="group" aria-label="Où brancher le tube d’égalisation ?">${boutons}</div><div class="feedback" id="feedback" role="status">Touchez le point où brancher le tube : A, B, C ou D.</div></div>`;
 }
 function choisirPrise(tap) {
   if (!PRISES[tap]) return;
@@ -110,11 +110,11 @@ function wireQuiz() {
 /* ---------- les 5 écrans ---------- */
 const screens = [
   screen({ id: "identite", court: "Carte d’identité", title: "L’égalisation externe", kicker: "Reconnaître · 1", codes: ["9.01"],
-    narration: "Voici le détendeur thermostatique à égalisation externe. Il ressemble au thermostatique que vous connaissez, mais il a un petit tube en plus. Ce tube part de la sortie de l'évaporateur, après le bulbe, et il arrive sous la membrane. Suivez la visite. Le bulbe sent la température à la sortie. Le tube amène la pression de la sortie. La membrane compare les deux et commande l'aiguille. Ce détendeur règle la surchauffe, avec la vraie pression de la sortie. Sur un schéma, son symbole a un petit trait en plus au-dessus du cercle : c'est la prise d'égalisation.",
-    text: "Un tube prend la pression de la sortie de l’évaporateur, après le bulbe, et l’amène sous la membrane.",
+    narration: "Voici le détendeur thermostatique à égalisation externe. Il ressemble au thermostatique que vous connaissez, mais il a un petit tube en plus. Ce tube part de la sortie de l'évaporateur, après le bulbe, et il arrive sous la membrane. Suivez la visite. Le bulbe sent la température à la sortie : sa charge violette pousse la membrane, par le capillaire, pour ouvrir. Le tube amène la pression de la sortie sous la membrane : elle pousse en bleu, pour fermer, comme le ressort. La membrane compare, et commande l'aiguille. Ce détendeur règle la surchauffe, avec la vraie pression de la sortie. Sur un schéma, son symbole a un petit trait en plus au-dessus du cercle : c'est la prise d'égalisation.",
+    text: "Le bulbe violet pousse la membrane pour ouvrir ; le tube amène sous elle la pression de la sortie.",
     render: figure, wire: () => GS.identite($("#ds-figure"), sym("thermostatique_ext")) }),
   screen({ id: "piege", court: "Le piège", title: "Le piège de la perte de charge", kicker: "Comprendre · 2", codes: ["9.01"],
-    narration: "Prenons un évaporateur long, avec beaucoup de petits circuits. Le fluide s'y évapore en avançant, et la pression baisse en route. On appelle ça la perte de charge. Regardez les deux manomètres : à l'entrée, la pression est plus haute qu'à la sortie. Un détendeur sans tube lit la pression de l'entrée, sous sa membrane. Il croit donc que la surchauffe est plus faible qu'elle n'est. Alors il reste trop fermé. L'évaporateur manque de liquide : la nappe est courte, et la vapeur sort chaude. Voilà le piège.",
+    narration: "Le bulbe, à la sortie, est rempli de violet. Quand il chauffe, sa pression pousse la membrane par le capillaire : cela ouvre. Le bleu, sous la membrane, et le ressort, eux, ferment. Prenons un évaporateur long, avec beaucoup de petits circuits. Le fluide s'y évapore en avançant, et la pression baisse en route. On appelle ça la perte de charge. Regardez les deux manomètres : à l'entrée, la pression est plus haute qu'à la sortie. Un détendeur sans tube lit la pression de l'entrée, sous sa membrane. Il croit donc que la surchauffe est plus faible qu'elle n'est. Alors il reste trop fermé. L'évaporateur manque de liquide : la nappe est courte, et la vapeur sort chaude. Voilà le piège.",
     text: "L’évaporateur est long : la pression baisse en route. Le détendeur sans tube lit celle de l’entrée.",
     render: figure, wire: () => GS.piege($("#ds-figure")) }),
   screen({ id: "et-si-externe", court: "Avec le tube", title: "Et si on branche le tube ?", kicker: "Comprendre · 3", codes: ["9.01"],

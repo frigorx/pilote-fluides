@@ -12,6 +12,7 @@ Gare fabriquée sur le moule de la gare 0 (`../_detendeurs-commun/MOULE.md`, `..
   (6 questions, une explication par réponse).
 - Brique ajoutée : `scene-egalisation.js` (`window.EGALISATION_SCENES`) ; la coupe se redessine selon la largeur
   disponible (560 à 1000 unités, hauteur fixe 360) ; sur téléphone l’écran 3 passe en deux onglets.
+- Couleurs de la ligne (retour de F. Henninot) : bulbe et capillaire violets `#8e44ad` (impulsions claires quand le bulbe chauffe, chambre au-dessus de la membrane qui se fonce), flèches violettes = bulbe (ouvre), bleues sous la membrane = pression qui ferme (interne : entrée, externe : sortie), gris acier = ressort (ferme) ; légende HTML `EGALISATION_SCENES.legende()` sous chaque coupe (raccourcie sur téléphone : les mots « pression du » / « pression » sont masqués). Écran 2 : 5 étapes (la première montre le bulbe qui pousse).
 - Voix : `narration` de chaque écran, voix du navigateur tant que les MP3 ne sont pas générés (clés nouvelles).
 - Référentiel : `couverture.json` — enseigné `9.01` (tous les écrans), `9.03` (écran 4, brancher le tube) ; appui `1.02`,
   `1.04`, `9.10`.

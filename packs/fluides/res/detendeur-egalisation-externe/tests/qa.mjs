@@ -26,7 +26,7 @@ if (OUT) fs.mkdirSync(OUT, { recursive: true });
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const VUES = [{ nom: "1366x768", width: 1366, height: 768 }, { nom: "390x844", width: 390, height: 844 }];
 const NB = 5;                                              // nombre d'écrans
-const PAS = { 2: 4, 3: 4 };                                // écrans à pas à pas : nombre d'étapes
+const PAS = { 2: 5, 3: 4 };                                // écrans à pas à pas : nombre d'étapes
 const ANIMES = [1, 4];                                     // écrans animés sans boutons de pas à pas
 const BONNES = [1, 0, 1, 0, 1, 1];                         // bonnes réponses du quiz
 const echecs = [], notes = [];
@@ -137,6 +137,15 @@ for (const vue of VUES) {
       if (v1 === v2) ko(`${vue.nom} écran 1 : la visite guidée ne change pas de légende`);
       if (!/égalisation externe/i.test(await page.locator(".eg-carte .ds-cel-tete").textContent())) ko(`${vue.nom} écran 1 : titre de la carte`);
       if (!(await page.locator(".ds-regle").textContent()).includes("la surchauffe")) ko(`${vue.nom} écran 1 : « il règle » absent`);
+    }
+    // la légende des trois forces (violet ouvre, bleu et ressort ferment) sous chaque coupe
+    if ([1, 2, 3, 4].includes(n)) {
+      const lg = await page.locator(".eg-legende").first().textContent();
+      if (!/pression du bulbe : ouvre/.test(lg) || !/pression sous la membrane : ferme/.test(lg) || !/ressort : ferme/.test(lg)) ko(`${vue.nom} écran ${n} : légende des forces absente (« ${lg} »)`);
+      const couleurs = await page.evaluate(() => [...document.querySelectorAll(".eg-legende i")].map(i => getComputedStyle(i).backgroundColor).join("|"));
+      if (couleurs !== "rgb(142, 68, 173)|rgb(47, 111, 182)|rgb(93, 107, 122)") ko(`${vue.nom} écran ${n} : couleurs de la légende ${couleurs}`);
+      const svgTxt = await page.evaluate(() => document.querySelector(".ds-dessin svg.eg-svg").innerHTML);
+      if (!svgTxt.includes("#8e44ad")) ko(`${vue.nom} écran ${n} : le violet #8e44ad est absent du dessin`);
     }
     // l'écran 3 : deux verdicts, un par détendeur
     if (n === 3 && vue.width > 760 && (await page.locator(".eg-cel").count()) !== 2) ko(`${vue.nom} écran 3 : deux détendeurs attendus`);
