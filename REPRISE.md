@@ -5,10 +5,13 @@
 
 > ## 06/10 — LE SITE S'APPELLE INERWEB.FR, CHAQUE PAGE MÈNE À SON RÉSEAU, LA CHAÎNE YOUTUBE (branche `claude/jolly-feynman-0jexaa`)
 >
-> Demandes de F. Henninot. **(1) Plus de « Édu »** : le mot « éducation » portait à confusion. La marque inerWeb reste,
-> le site s'appelle **inerweb.fr** ; le cartouche orange du logo porte **« .fr »** (`data-cartouche=".fr"`, texte SVG),
-> « inerWeb Édu » → « inerweb.fr » partout (titres, aria-label, manifeste, JSON-LD). « Éduscol » intact ; les noms de
-> fichiers (`charte-edu.css`, `logo-inerweb-edu.svg`) et les clés de stockage (`edu_volet_replie`) ne changent pas.
+> Demandes de F. Henninot. **(1) L'entrée du site est inerweb.fr** : gommer l'effet « Éducation nationale » d'un accueil
+> sous « inerWeb Édu ». La marque inerWeb reste ; le cartouche orange porte **« .fr »** (`data-cartouche=".fr"`, texte
+> SVG) et « inerWeb Édu » → « inerweb.fr » a été appliqué à tout le dépôt (titres, aria-label, manifeste, JSON-LD).
+> **Précision du même jour** : « Édu » ne disparaît pas, c'est la **division éducation** d'inerWeb ; ce qui est fait
+> reste (« on ne fait pas un pas en avant, deux pas en arrière ») — ne pas défaire, ne pas non plus chasser « Édu »
+> ailleurs : un contenu propre à l'éducation peut le porter. « Éduscol » intact ; noms de fichiers (`charte-edu.css`,
+> `logo-inerweb-edu.svg`) et clés de stockage (`edu_volet_replie`) inchangés.
 > **(2) Retour accueil + réseau sur toute page** : `moteur/retour-accueil.js` pose « [logo] › [réseau] » quand la page
 > n'a pas déjà ses deux liens ; `build/retour-accueil.mjs` écrit le réseau sur la balise (`data-reseau-href`,
 > `data-reseau-nom`) — un film (studio/, voyage/, `_regules-commun/films/`, `film-…/`) → Studio, sinon le catalogue
@@ -18,9 +21,9 @@
 > titres, onze le 4/10). **(4) YouTube** « inerWeb FR » : `window.INERWEB_YOUTUBE` dans `moteur/reseaux.js` (adresse
 > permanente `/channel/UC…`, le nom court `@fh4681` peut changer), champ `externe` de la vignette Studio, menu et volet
 > de l'accueil, bouton sur `studio/index.html` — `git grep UCeeJMhgiuPSWekxoH-EexQA` pour tout changer d'un coup.
-> **🔴 Pièges** : (1) les dossiers GÉNÉRÉS (hydrometro, cartoclim, electrorezo, cuivrezo, hocourant, r408, formarezo,
-> cablage-virtuel, legislation…) ont été renommés ICI ; leurs ateliers portent encore « Édu » : **la prochaine
-> livraison le réintroduit** tant que l'atelier n'est pas corrigé à son tour ; (2) après toute livraison, relancer
+> **Pièges** : (1) les dossiers GÉNÉRÉS (hydrometro, cartoclim, electrorezo, cuivrezo, hocourant, r408, formarezo,
+> cablage-virtuel, legislation…) ont été renommés ICI ; leurs ateliers portent encore « Édu », que leur prochaine
+> livraison remettra : c'est admis (division éducation), rien à corriger dans les ateliers ; (2) après toute livraison, relancer
 > `node build/retour-accueil.mjs` (il pose aussi le réseau) ; (3) l'image `icones/og-inerweb-1200x630.png` et les
 > affiches peintes peuvent encore montrer « Édu » dans leurs pixels. Constaté sans y toucher : `film-ozone/support.js`
 > lève une erreur JS au chargement (déjà là avant), et `build/animations.mjs --verifier` relève 358 clés périmées
