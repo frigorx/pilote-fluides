@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banc des coupes de détendeurs</title>
+<style>
+  body{margin:0;background:#f7f1e7;color:#10233c;font:18px/1.4 Calibri,"Segoe UI",Arial,sans-serif;padding:10px}
+  h1{font:700 22px "Trebuchet MS",Calibri,sans-serif;color:#1b3a63;margin:0 0 6px}
+  .rang{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  .cel{background:#fdfbf5;border:1px solid rgba(27,58,99,.16);border-radius:14px;padding:6px;text-align:center}
+  .cel svg{display:block;width:100%;height:auto}
+  label{display:inline-flex;gap:8px;align-items:center;margin-right:16px}
+  select{font:inherit}
+</style>
+</head>
+<body>
+<h1>Banc des coupes — DETENDEURS_SCENES.coupe(type, svg)</h1>
+<p>
+  <label>Charge <input id="charge" type="range" min="0" max="1" step="0.01" value="0.5"> <b id="vc">0,50</b></label>
+  <label>Pièce allumée
+    <select id="agit"><option value="">aucune</option><option>evaporateur</option><option>bulbe</option><option>membrane</option><option>ressort</option><option>aiguille</option><option>moteur</option><option>regulateur</option><option>sondes</option><option>tube</option></select>
+  </label>
+</p>
+<div class="rang" id="rang"></div>
+<script src="../../../../jouerezo/moteur/voyage-dessin.js"></script>
+<script src="scenes-detendeurs.js"></script>
+<script>
+  const DS = window.DETENDEURS_SCENES, hote = document.getElementById("rang"), cs = [];
+  DS.TYPES.forEach(type => {
+    const c = document.createElement("div"); c.className = "cel"; c.innerHTML = "<b>" + DS.NOMS[type].nom + "</b> — il règle : " + DS.NOMS[type].regle;
+    hote.appendChild(c);
+    cs.push(DS.coupe(type, DS.svg(c, "ds-svg", "coupe " + type)));
+  });
+  let t = 0, avant = 0;
+  function boucle(now) {
+    const dt = avant ? Math.min(0.1, (now - avant) / 1000) : 0; avant = now; t += dt;
+    const c = +document.getElementById("charge").value; document.getElementById("vc").textContent = c.toFixed(2).replace(".", ",");
+    cs.forEach(s => s.maj({ charge: c }, t, { agit: document.getElementById("agit").value }));
+    requestAnimationFrame(boucle);
+  }
+  requestAnimationFrame(boucle);
+</script>
+</body>
+</html>

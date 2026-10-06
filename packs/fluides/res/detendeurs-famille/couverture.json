@@ -1,0 +1,33 @@
+{
+  "cours": "detendeurs-famille",
+  "titre": "La famille des détendeurs",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 7,
+  "codes": {
+    "1.04": [
+      "pourquoi-detendre",
+      "deux-missions",
+      "verifier"
+    ],
+    "9.01": [
+      "qui-regle-quoi",
+      "et-si-ca-chauffe",
+      "quel-detendeur",
+      "variantes",
+      "verifier"
+    ]
+  },
+  "appui": {
+    "1.02": [
+      "deux-missions",
+      "et-si-ca-chauffe"
+    ],
+    "9.03": [
+      "qui-regle-quoi",
+      "et-si-ca-chauffe"
+    ],
+    "9.10": [
+      "quel-detendeur"
+    ]
+  }
+}
