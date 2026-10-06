@@ -541,7 +541,20 @@
               border-radius:var(--r); box-shadow:var(--ombre); overflow:hidden;
               display:flex; flex-direction:column; }
   .v-carte { display:block; background:#fff; padding:10px 12px; border-bottom:1px solid var(--ligne); }
+  .v-carte { position:relative; }
   .v-carte img { display:block; width:100%; height:190px; object-fit:contain; }
+  /* 06/10/2026 — deux volets : ce qu'on va voir (illustration) et le plan du réseau, étiqueté. */
+  .v-carte.v-duo { display:grid; grid-template-columns:1.3fr 1fr; padding:0; height:210px; }
+  .v-duo .v-illu { display:block; overflow:hidden; background:#f3efe7; }
+  .v-duo .v-illu img { height:100%; object-fit:cover; }
+  .v-duo .v-plan { position:relative; display:block; background:#fff; padding:10px 8px 30px; border-left:1px solid var(--ligne); }
+  .v-duo .v-plan img { height:100%; object-fit:contain; }
+  .v-etiq { position:absolute; left:6px; right:6px; bottom:6px; text-align:center; font-size:14px; font-weight:bold;
+            color:var(--c); line-height:1.2; }
+  .v-carte.v-plein { padding:0; }
+  .v-plein img { height:210px; object-fit:cover; }
+  .v-pastille { position:absolute; right:10px; bottom:10px; padding:5px 12px; border-radius:999px; background:#c00; color:#fff;
+                font-size:14px; font-weight:bold; box-shadow:0 2px 8px rgba(0,0,0,.25); }
   .v-corps { padding:14px 18px 18px; display:flex; flex-direction:column; gap:6px; }
   .v-nom { margin:0; font-family:var(--titre); font-size:19px; line-height:1.25; }
   .v-nom a { color:var(--c); text-decoration:none; }
@@ -600,7 +613,7 @@
     .tuile h3 { font-size:16px; }
   }
 </style>
-<script defer src="moteur/retour-accueil.js?v=09a7569dfe"></script>
+<script defer src="moteur/retour-accueil.js?v=43cc8eadb1"></script>
 </head>
 <body>
 <a class="evite" href="#contenu">Aller au contenu</a>
@@ -967,7 +980,7 @@
     <div class="grille-reseaux">
       <!-- RESEAUX DEBUT (générés par build/accueil.mjs — ne pas éditer à la main) -->
       <article class="vignette" style="--c:#0c4a6e">
-        <a class="v-carte" href="plan.html" aria-label="Entrer dans Le réseau thermo-techno"><img src="icones/reseaux/thermo-techno.svg" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="plan.html" aria-label="Entrer dans Le réseau thermo-techno"><span class="v-illu"><img src="icones/reseaux/illustrations/thermo-techno.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/thermo-techno.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="plan.html">❄️ Le réseau thermo-techno</a></h3>
           <p class="v-chiffres">128 stations · 15 lignes <span class="v-niv">CAP → BTS · habilitation fluides</span></p>
@@ -980,7 +993,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#1e40af">
-        <a class="v-carte" href="legislation/index.html" aria-label="Entrer dans Réseau Législation"><img src="icones/reseaux/legislation.svg" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="legislation/index.html" aria-label="Entrer dans Réseau Législation"><span class="v-illu"><img src="icones/reseaux/illustrations/legislation.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/legislation.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="legislation/index.html">📜 Réseau Législation</a></h3>
           <p class="v-chiffres">57 stations · 11 lignes <span class="v-niv">BTS</span> <span class="v-etat">en relecture</span></p>
@@ -992,7 +1005,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#3d7fca">
-        <a class="v-carte" href="hydrometro/index.html" aria-label="Entrer dans HydroMétro"><img src="icones/reseaux/hydrometro.svg" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="hydrometro/index.html" aria-label="Entrer dans HydroMétro"><span class="v-illu"><img src="icones/reseaux/illustrations/hydrometro.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/hydrometro.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="hydrometro/index.html">💧 HydroMétro</a></h3>
           <p class="v-chiffres">23 stations · 4 lignes <span class="v-niv">CAP · Bac pro · BTS</span></p>
@@ -1004,7 +1017,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#1b6e5a">
-        <a class="v-carte" href="aerorezo/index.html" aria-label="Entrer dans AéroRézo"><img src="icones/reseaux/aerorezo.svg" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="aerorezo/index.html" aria-label="Entrer dans AéroRézo"><span class="v-illu"><img src="icones/reseaux/illustrations/aerorezo.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/aerorezo.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="aerorezo/index.html">🌬️ AéroRézo</a></h3>
           <p class="v-chiffres">36 stations · 6 lignes <span class="v-niv">CAP · Bac pro · BTS</span></p>
@@ -1015,7 +1028,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#7c3aed">
-        <a class="v-carte" href="electrorezo/index.html" aria-label="Entrer dans ÉlectroRézo"><img src="icones/reseaux/electrorezo.svg" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="electrorezo/index.html" aria-label="Entrer dans ÉlectroRézo"><span class="v-illu"><img src="icones/reseaux/illustrations/electrorezo.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/electrorezo.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="electrorezo/index.html">⚡ ÉlectroRézo</a></h3>
           <p class="v-chiffres">60 stations · 8 lignes <span class="v-niv">CAP · Bac pro</span> <span class="v-etat">en relecture</span></p>
@@ -1027,7 +1040,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#b06a00">
-        <a class="v-carte" href="hocourant/index.html" aria-label="Entrer dans HoCourant"><img src="icones/reseaux/hocourant.svg" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="hocourant/index.html" aria-label="Entrer dans HoCourant"><span class="v-illu"><img src="icones/reseaux/illustrations/hocourant.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/hocourant.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="hocourant/index.html">🔋 HoCourant</a></h3>
           <p class="v-chiffres">13 stations · 5 lignes <span class="v-niv">tous niveaux</span></p>
@@ -1039,7 +1052,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#1b3a63">
-        <a class="v-carte" href="r408/index.html" aria-label="Entrer dans inerWeb R408"><img src="icones/reseaux/r408.svg" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="r408/index.html" aria-label="Entrer dans inerWeb R408"><span class="v-illu"><img src="icones/reseaux/illustrations/r408.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/r408.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="r408/index.html">🪜 inerWeb R408 — Travail en hauteur</a></h3>
           <p class="v-chiffres">11 modules · 4 paliers <span class="v-niv">CAP</span> <span class="v-etat">en relecture</span></p>
@@ -1051,7 +1064,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#b45309">
-        <a class="v-carte" href="cuivrezo/index.html" aria-label="Entrer dans CuivRézo"><img src="cuivrezo/images/1-4-cintrette.webp" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="cuivrezo/index.html" aria-label="Entrer dans CuivRézo"><span class="v-illu"><img src="cuivrezo/images/1-4-cintrette.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/cuivrezo.webp" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="cuivrezo/index.html">🔥 CuivRézo — Les gestes du cuivre</a></h3>
           <p class="v-chiffres">14 stations · 4 lignes <span class="v-niv">CAP</span> <span class="v-etat">en relecture</span></p>
@@ -1063,7 +1076,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#0e7490">
-        <a class="v-carte" href="cartoclim/index.html" aria-label="Entrer dans CartoClim"><img src="cartoclim/stations/3-2-split/assets/biblio/898384a2af.png" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-duo" href="cartoclim/index.html" aria-label="Entrer dans CartoClim"><span class="v-illu"><img src="cartoclim/stations/3-2-split/assets/biblio/898384a2af.png" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/cartoclim.webp" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="cartoclim/index.html">🌡️ CartoClim — La climatisation, station par station</a></h3>
           <p class="v-chiffres">21 stations · 5 lignes <span class="v-niv">CAP · Bac pro · BTS</span></p>
@@ -1097,7 +1110,7 @@
         </div>
       </article>
       <article class="vignette" style="--c:#be185d">
-        <a class="v-carte" href="studio/index.html" aria-label="Entrer dans inerWeb Studio"><img src="voyage/videos/chapitre-00-mon-voyage.jpg" alt="" loading="lazy" width="400" height="190"></a>
+        <a class="v-carte v-plein" href="studio/index.html" aria-label="Entrer dans inerWeb Studio"><img src="icones/reseaux/illustrations/studio-cinema.webp" alt="" loading="lazy" width="400" height="190"><span class="v-pastille">▶ Les films aussi sur YouTube</span></a>
         <div class="v-corps">
           <h3 class="v-nom"><a href="studio/index.html">🎬 inerWeb Studio — Les films</a></h3>
           <p class="v-chiffres">33 films <span class="v-niv">tous niveaux</span></p>
@@ -1745,11 +1758,11 @@
 
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=2b6119c5b5"></script>
-<script src="chiffres.gen.js?v=2b6119c5b5"></script>
+<script src="moteur/lisibilite.js?v=d19583017f"></script>
+<script src="chiffres.gen.js?v=d19583017f"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=2b6119c5b5" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=d19583017f" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
