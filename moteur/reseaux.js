@@ -23,7 +23,16 @@
    télécharger, ajouté après les raccourcis), `points` (nombre de ronds sur
    la carte des réseaux quand le réseau n'a pas de lignes, ex. les jeux),
    `externe` ({ titre, href } : lien HORS du site, ouvert dans un nouvel
-   onglet, jamais vérifié sur le disque — ex. la chaîne YouTube).
+   onglet, jamais vérifié sur le disque — ex. la chaîne YouTube),
+   `illustration` (06/10/2026, F. Henninot : « une image représentant ce
+   que ça va être ET une image du réseau, comme ça on n'est pas surpris ») :
+   présente, la vignette se coupe en deux — l'illustration à gauche, le
+   plan du réseau (`vignette`) à droite, étiqueté « le réseau ». Absente,
+   la vignette reste une seule image (JouéRézo, SimuRézo : « ça cause
+   bien »). `plein` : l'image remplit la vignette sans marge (une photo) ;
+   `pastille` : un court texte posé sur l'image (le Studio : YouTube).
+   Les illustrations 3D viennent de la maquette du quartier
+   (icones/reseaux/illustrations/, voir REPRISE.md du 06/10).
    ===================================================================== */
 /* La chaîne YouTube « inerWeb FR » (06/10/2026, F. Henninot : « un lien direct
    depuis inerWeb Studio et depuis l'accueil »). Adresse PERMANENTE de la chaîne
@@ -45,6 +54,7 @@ window.INERWEB_RESEAUX = [
     catalogue: ["Plan thermo-techno", "Plan — capsules"],
     lignes: 15, /* le catalogue ne porte pas la ligne des stations du plan : compte de build/plan-liste.mjs (« 15 lignes ») */
     vignette: "icones/reseaux/thermo-techno.svg",
+    illustration: "icones/reseaux/illustrations/thermo-techno.webp",
     entree: { titre: "Du glaçon au circuit", href: "packs/fluides/res/chaleur-interactive/index.html" },
     raccourcis: [
       { titre: "Les organes", href: "plan.html#ligne=organes" },
@@ -67,6 +77,7 @@ window.INERWEB_RESEAUX = [
     stations: 57, /* le catalogue n'en relève encore que 29 : 57 dossiers dans legislation/stations */
     lignes: 11, /* deux lignes mères, onze sous-lignes (legislation/index.html) ; le catalogue ne porte pas la ligne */
     vignette: "icones/reseaux/legislation.svg",
+    illustration: "icones/reseaux/illustrations/legislation.webp",
     entree: { titre: "F-Gaz 3, le règlement 2024/573", href: "legislation/stations/fgaz-3/" },
     raccourcis: [
       { titre: "La DESP", href: "legislation/stations/desp-la-directive/" },
@@ -86,6 +97,7 @@ window.INERWEB_RESEAUX = [
     etat: "",
     catalogue: ["HydroMétro"],
     vignette: "icones/reseaux/hydrometro.svg",
+    illustration: "icones/reseaux/illustrations/hydrometro.webp",
     entree: { titre: "Boucle", href: "hydrometro/stations/boucle/" },
     raccourcis: [
       { titre: "Débit", href: "hydrometro/stations/debit/" },
@@ -105,6 +117,7 @@ window.INERWEB_RESEAUX = [
     etat: "",
     catalogue: ["AéroRézo"],
     vignette: "icones/reseaux/aerorezo.svg",
+    illustration: "icones/reseaux/illustrations/aerorezo.webp",
     entree: { titre: "L’air se déplace", href: "aerorezo/stations/air-circule/" },
     raccourcis: [
       { titre: "Apport latent", href: "aerorezo/stations/apport-latent/" },
@@ -123,6 +136,7 @@ window.INERWEB_RESEAUX = [
     etat: "en relecture",
     catalogue: ["ÉlectroRézo"],
     vignette: "icones/reseaux/electrorezo.svg",
+    illustration: "icones/reseaux/illustrations/electrorezo.webp",
     entree: { titre: "Le courant et l’intensité", href: "electrorezo/stations/1-1-courant-intensite/" },
     raccourcis: [
       { titre: "La loi d’Ohm", href: "electrorezo/stations/1-3-resistance-loi-ohm/" },
@@ -142,6 +156,7 @@ window.INERWEB_RESEAUX = [
     etat: "",
     catalogue: ["HoCourant"],
     vignette: "icones/reseaux/hocourant.svg",
+    illustration: "icones/reseaux/illustrations/hocourant.webp",
     entree: { titre: "Le danger électrique", href: "hocourant/?module=M1" },
     raccourcis: [
       { titre: "Les domaines de tension", href: "hocourant/?module=M4" },
@@ -165,6 +180,7 @@ window.INERWEB_RESEAUX = [
     lignes: 4,
     chiffres: "11 modules · 4 paliers",
     vignette: "icones/reseaux/r408.svg",
+    illustration: "icones/reseaux/illustrations/r408.webp",
     entree: { titre: "Le risque de chute", href: "r408/?module=M1" },
     raccourcis: [
       { titre: "Utiliser en sécurité", href: "r408/?module=M7" },
@@ -186,7 +202,8 @@ window.INERWEB_RESEAUX = [
     catalogue: [],
     stations: 14, /* pas encore au catalogue des stations : compte relevé dans l'atelier cuivrezo */
     lignes: 4,
-    vignette: "cuivrezo/images/1-4-cintrette.webp",
+    vignette: "icones/reseaux/cuivrezo.webp",
+    illustration: "cuivrezo/images/1-4-cintrette.webp",
     entree: { titre: "Mon poste de travail", href: "cuivrezo/stations/1-0/" },
     raccourcis: [
       { titre: "Cintrer à la cintrette", href: "cuivrezo/stations/1-4/" },
@@ -208,7 +225,8 @@ window.INERWEB_RESEAUX = [
     catalogue: [],
     stations: 21, /* 39 gares dont 18 correspondances vers les autres réseaux */
     lignes: 5,
-    vignette: "cartoclim/stations/3-2-split/assets/biblio/898384a2af.png",
+    vignette: "icones/reseaux/cartoclim.webp",
+    illustration: "cartoclim/stations/3-2-split/assets/biblio/898384a2af.png",
     entree: { titre: "Climatiser, c’est quoi ?", href: "cartoclim/stations/1-1-climatiser/" },
     raccourcis: [
       { titre: "Le split : deux unités, un circuit", href: "cartoclim/stations/3-2-split/" },
@@ -275,7 +293,9 @@ window.INERWEB_RESEAUX = [
     catalogue: [],
     chiffres: "33 films",
     points: 4,
-    vignette: "voyage/videos/chapitre-00-mon-voyage.jpg",
+    vignette: "icones/reseaux/illustrations/studio-cinema.webp" /* le cinéma de la maquette du quartier (06/10) */,
+    plein: true,
+    pastille: "▶ Les films aussi sur YouTube",
     entree: { titre: "Voyage dans tous ses états", href: "voyage/index.html" },
     externe: { titre: "▶ La chaîne YouTube inerWeb FR", href: window.INERWEB_YOUTUBE },
     raccourcis: [

@@ -11,6 +11,8 @@
        [logo inerWeb .fr] › [🎬 inerWeb Studio]
      Le logo devient le texte « 🏠 inerweb.fr » quand la page porte déjà son propre logo
      (pas deux logos l'un sur l'autre). Une page sans réseau n'a que le retour à l'accueil.
+   · un FILM publié sur YouTube (data-youtube, posé par le build depuis moteur/youtube-films.js)
+     a toujours sa barre, avec « ▶ Voir sur YouTube » au bout.
    Masqué à l'impression et dans les cadres intégrés. */
 (function () {
   "use strict";
@@ -66,7 +68,9 @@
         break;
       }
     }
-    if (logoAccueil && (!reseau || lienReseau)) return;
+    var youtube = s && s.getAttribute("data-youtube");
+    if (youtube && !/^[A-Za-z0-9_-]{11}$/.test(youtube)) youtube = null;
+    if (logoAccueil && (!reseau || lienReseau) && !youtube) return;
 
     var st = document.createElement("style");
     st.textContent =
@@ -76,6 +80,7 @@
       "#inerweb-retour-accueil-barre a:hover{text-decoration:underline}" +
       "#inerweb-retour-accueil-barre a:focus-visible{outline:3px solid #e8914a;outline-offset:2px}" +
       "#inerweb-retour-accueil-barre .sep{color:#5a6b7d;font-weight:normal}" +
+      "#inerweb-retour-accueil-barre a#inerweb-retour-youtube{color:#a30000}" +
       "@media print{#inerweb-retour-accueil-barre{display:none}}";
     document.head.appendChild(st);
 
@@ -102,6 +107,21 @@
       r.title = "Retour au réseau : " + reseau.nom.replace(/^\W+\s*/, "");
       b.appendChild(sep);
       b.appendChild(r);
+    }
+    if (youtube) {
+      var sepY = document.createElement("span");
+      sepY.className = "sep";
+      sepY.setAttribute("aria-hidden", "true");
+      sepY.textContent = "·";
+      var y = document.createElement("a");
+      y.id = "inerweb-retour-youtube";
+      y.href = "https://www.youtube.com/watch?v=" + youtube;
+      y.target = "_blank";
+      y.rel = "noopener";
+      y.textContent = "▶ Voir sur YouTube";
+      y.title = "Ce film sur la chaîne YouTube inerWeb FR (nouvel onglet)";
+      b.appendChild(sepY);
+      b.appendChild(y);
     }
     document.body.insertBefore(b, document.body.firstChild);
 

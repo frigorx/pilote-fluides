@@ -13,7 +13,9 @@
         (champ `catalogue`, ou le nom du réseau) ;
      3. le dossier de l'adresse du réseau (hydrometro/, legislation/…) ; packs/fluides/res/
         appartient au réseau thermo-techno (ses stations y vivent).
-   Sinon, pas de réseau : la page n'a que le retour à l'accueil. */
+   Sinon, pas de réseau : la page n'a que le retour à l'accueil.
+   UN FILM PUBLIÉ SUR YOUTUBE (moteur/youtube-films.js) : sa page reçoit data-youtube,
+   la barre y ajoute « ▶ Voir sur YouTube » ; la clé du fichier est renouvelée sur le Studio. */
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -56,6 +58,15 @@ function reseauDe(rel) {
   for (const [d, r] of DOSSIERS) if (c.startsWith(d) && (!meilleur || d.length > meilleur[0].length)) meilleur = [d, r];
   return meilleur ? meilleur[1] : null;
 }
+/* ---- Les films publiés sur YouTube (moteur/youtube-films.js) : la page du film reçoit data-youtube ---- */
+const ctxYt = { window: {} };
+vm.createContext(ctxYt);
+vm.runInContext(readFileSync(join(RACINE, "moteur", "youtube-films.js"), "utf8"), ctxYt);
+const FILMS_YT = ctxYt.window.INERWEB_YOUTUBE_FILMS || {};
+for (const [page, id] of Object.entries(FILMS_YT)) {
+  if (!/^[A-Za-z0-9_-]{11}$/.test(id)) throw new Error(`youtube-films.js : identifiant YouTube invalide pour ${page} (${id})`);
+  try { readFileSync(join(RACINE, page)); } catch { throw new Error(`youtube-films.js : page de film introuvable : ${page}`); }
+}
 const attr = (v) => String(v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
 function pagesHtml(d, sortie = []) {
@@ -94,7 +105,8 @@ for (const page of pagesHtml(RACINE)) {
   if (INVENTAIRE || RESEAUX_SEULS) continue;
   if (!/<head[\s>]/i.test(html)) { sansHead++; continue; }
   const prefixe = relative(dirname(page), RACINE).split(sep).join("/");
-  const donnees = reseau ? ` data-reseau-href="${attr(reseau.adresse)}" data-reseau-nom="${attr(reseau.emoji + " " + reseau.nom)}"` : "";
+  const donnees = (reseau ? ` data-reseau-href="${attr(reseau.adresse)}" data-reseau-nom="${attr(reseau.emoji + " " + reseau.nom)}"` : "") +
+    (FILMS_YT[rel] ? ` data-youtube="${attr(FILMS_YT[rel])}"` : "");
   const balise = `<script defer src="${prefixe ? prefixe + "/" : ""}moteur/retour-accueil.js?v=${cle}"${donnees}></script>`;
   let neuf;
   if (existante.test(html)) {
@@ -109,6 +121,16 @@ for (const page of pagesHtml(RACINE)) {
     posees++;
   }
   if (!VERIFIER) writeFileSync(page, neuf);
+}
+/* Le Studio charge moteur/youtube-films.js : sa clé ?v= suit le contenu du fichier. */
+{
+  const studio = join(RACINE, "studio", "index.html");
+  const cleYt = createHash("sha1").update(readFileSync(join(RACINE, "moteur", "youtube-films.js"))).digest("hex").slice(0, 10);
+  const html = readFileSync(studio, "utf8");
+  const re = /(src="\.\.\/moteur\/youtube-films\.js)(?:\?v=[0-9a-f]+)?"/;
+  if (!re.test(html)) throw new Error("studio/index.html : la balise de moteur/youtube-films.js manque");
+  const neuf = html.replace(re, `$1?v=${cleYt}"`);
+  if (neuf !== html) { if (VERIFIER) maj++; else if (!INVENTAIRE && !RESEAUX_SEULS) writeFileSync(studio, neuf); }
 }
 if (RESEAUX_SEULS) {
   for (const [id, n] of Object.entries(parReseau)) console.log(`  ${id} : ${n} page(s)`);

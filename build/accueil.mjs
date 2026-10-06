@@ -73,7 +73,7 @@ function existe(href) {
 }
 const manquantes = [];
 for (const r of RESEAUX) {
-  for (const h of [r.adresse, r.vignette, r.entree.href, ...r.raccourcis.map((x) => x.href), ...(r.pdf ? [r.pdf.href] : [])]) if (!existe(h)) manquantes.push(`${r.id} → ${h}`);
+  for (const h of [r.adresse, r.vignette, ...(r.illustration ? [r.illustration] : []), r.entree.href, ...r.raccourcis.map((x) => x.href), ...(r.pdf ? [r.pdf.href] : [])]) if (!existe(h)) manquantes.push(`${r.id} → ${h}`);
 }
 for (const r of RESEAUX) if (r.externe && !/^https:\/\//.test(r.externe.href || "")) manquantes.push(`${r.id} → lien externe sans https:// (${r.externe.href})`);
 if (manquantes.length) { console.error("accueil.mjs : adresses introuvables sur le disque :\n  " + manquantes.join("\n  ")); process.exit(1); }
@@ -90,6 +90,17 @@ const chiffres = [
   { v: arrondi(total.audio), l: "narrations audio", prefixe: "+ de " },
 ].map((c) => `      <div class="chiffre"><b>${c.prefixe || ""}${fr(c.v)}</b><span>${c.l}</span></div>`).join("\n");
 
+/* L'image de la vignette (06/10/2026) : avec `illustration`, deux volets — ce
+   qu'on va voir, puis le plan du réseau, étiqueté — sinon une seule image ;
+   `plein` la fait remplir le cadre (une photo), `pastille` pose un mot dessus. */
+function carte(r) {
+  const pastille = r.pastille ? `<span class="v-pastille">${ech(r.pastille)}</span>` : "";
+  const ouvrir = `<a class="v-carte${r.illustration ? " v-duo" : ""}${r.plein ? " v-plein" : ""}" href="${ech(r.adresse)}" aria-label="Entrer dans ${ech(r.nom)}">`;
+  if (!r.illustration) return `${ouvrir}<img src="${ech(r.vignette)}" alt="" loading="lazy" width="400" height="190">${pastille}</a>`;
+  return `${ouvrir}<span class="v-illu"><img src="${ech(r.illustration)}" alt="" loading="lazy" width="240" height="210"></span>` +
+    `<span class="v-plan"><img src="${ech(r.vignette)}" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span>${pastille}</a>`;
+}
+
 const vignettes = RESEAUX.map((r) => {
   const c = comptes.find((x) => x.id === r.id);
   const etat = r.etat ? ` <span class="v-etat">${ech(r.etat)}</span>` : "";
@@ -98,7 +109,7 @@ const vignettes = RESEAUX.map((r) => {
     .concat(r.externe ? [`<a class="v-externe" href="${ech(r.externe.href)}" target="_blank" rel="noopener">${ech(r.externe.titre)}</a>`] : []).join("\n        ");
   const nombres = ech(r.chiffres || `${c.stations} stations · ${c.lignes} lignes`);
   return `      <article class="vignette" style="--c:${r.couleur}">
-        <a class="v-carte" href="${ech(r.adresse)}" aria-label="Entrer dans ${ech(r.nom)}"><img src="${ech(r.vignette)}" alt="" loading="lazy" width="400" height="190"></a>
+        ${carte(r)}
         <div class="v-corps">
           <h3 class="v-nom"><a href="${ech(r.adresse)}">${r.emoji} ${ech(r.nom)}${r.accroche ? " — " + ech(r.accroche) : ""}</a></h3>
           <p class="v-chiffres">${nombres} <span class="v-niv">${ech(r.niveaux)}</span>${etat}</p>
