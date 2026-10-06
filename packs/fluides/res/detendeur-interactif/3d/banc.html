@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banc 3D · détendeur thermostatique</title>
+<style>
+  :root { --navy:#1b3a63; --ink:#10233c; --muted:#637285; --orange:#ff6b35; --orange-deep:#c9451a; --paper:#fffdf8; --cream:#f7f1e7; --line:rgba(27,58,99,.18); }
+  body { margin: 0; padding: 12px; background: var(--cream); color: var(--ink); font: 16px/1.4 Calibri, "Segoe UI", Arial, sans-serif; }
+  button { font: inherit; min-height: 34px; border: 2px solid var(--navy); border-radius: 10px; background: var(--paper); color: var(--navy); padding: 2px 10px; cursor: pointer; }
+  nav a { margin-right: 10px; }
+  #hote { max-width: 1100px; }
+</style>
+<link rel="stylesheet" href="vue3d.css">
+</head>
+<body>
+<nav>
+  Banc : <a href="?ecran=reconnaitre">reconnaître</a> <a href="?ecran=pieces">pièces</a> <a href="?ecran=forces">forces</a> <a href="?ecran=boucle">boucle</a>
+</nav>
+<div id="hote" class="visual-root v3d"></div>
+<script src="../../../../../electrorezo/stations/_commun/3d/electro3d.js"></script>
+<script src="detendeur-3d.js"></script>
+<script>
+  const q = new URLSearchParams(location.search), ecran = q.get('ecran') || 'pieces';
+  const e = document.createElement('electro-3d');
+  e.setAttribute('modele', 'detendeurThermo');
+  e.setAttribute('mode', ecran === 'reconnaitre' ? 'decouvrir' : 'comprendre');
+  e.setAttribute('options', JSON.stringify({ ecran }));
+  e.dataset.prog = ecran;
+  document.getElementById('hote').appendChild(e);
+  window.__e = e;
+  e.addEventListener('e3d-pret', () => { window.__pret = true; });
+  e.addEventListener('e3d-repli', ev => { window.__repli = ev.detail.raison; });
+</script>
+</body>
+</html>

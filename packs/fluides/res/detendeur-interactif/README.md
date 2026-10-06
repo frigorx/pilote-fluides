@@ -11,7 +11,9 @@ sur l’écran 9 afin de ne pas surcharger les premières explications.
 
 ## Ouvrir
 
-Double-cliquer sur index.html. Aucun serveur, CDN, compte ou accès internet n’est requis.
+Double-cliquer sur index.html : le parcours est complet, avec les dessins SVG, sans serveur, compte ni accès internet.
+Publié sur le site (ou ouvert depuis un serveur web, avec WebGL et le réseau), les écrans 2, 3, 4, 6 et 7 s’ouvrent en 3D
+(`3d/`) ; sans cela, le dessin SVG s’affiche à leur place.
 
 ## Parcours
 
@@ -41,7 +43,7 @@ Double-cliquer sur index.html. Aucun serveur, CDN, compte ou accès internet n�
 - six questions finales, réussite à partir de 5/6 ;
 - fonctionnement complet sans voix et sans stockage ;
 - impression A4 paysage sobre ;
-- aucune dépendance distante.
+- aucune dépendance distante pour le parcours ; la vue 3D facultative charge Three.js depuis un CDN.
 
 ## Dessins et droits
 
@@ -62,6 +64,7 @@ exclus de la livraison. Voir SOURCES-IMAGES.md et SOURCES-TECHNIQUES.md.
 - impression.css : sortie papier ;
 - STORYBOARD.md : intention des quatorze écrans ;
 - REPRISE.md : contrat de maintenance ;
+- 3d/ : la vue 3D (modèle, colle, styles, banc d’essai) — voir REPRISE.md ;
 - tests/qa.mjs : contrôle automatique.
 
 ## Vérification

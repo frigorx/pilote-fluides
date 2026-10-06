@@ -8,7 +8,8 @@
   <meta name="description" content="Parcours interactif pour comprendre le détendeur thermostatique, la surchauffe et le réglage de l’alimentation de l’évaporateur.">
   <link rel="icon" href="data:,">
   <title>Comprendre le détendeur thermostatique · inerweb.fr</title>
-  <link rel="stylesheet" href="styles.css?v=20260807-2">
+  <link rel="stylesheet" href="styles.css?v=20261006-2">
+  <link rel="stylesheet" href="3d/vue3d.css?v=20261006-1">
   <link rel="stylesheet" href="impression.css?v=20260807-2" media="print">
   <script src="../../../../moteur/plan-donnees.js"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
@@ -92,6 +93,7 @@
         <li><strong>Planche interne réemployée :</strong> <code>croix-frigoriste.svg</code>, copiée localement depuis le pack Pilote Fluides fourni par l’auteur.</li>
         <li><strong>Prototype retenu :</strong> dessin vectoriel progressif validé le 5 août 2026 ; le bulbe est fixé sur un tube droit et son capillaire rejoint la tête sans interruption.</li>
         <li><strong>Symboles internes :</strong> compresseur, échangeur à air et détendeurs à égalisation interne ou externe.</li>
+        <li><strong>Vue 3D :</strong> modèle original construit pour ce parcours avec le moteur 3D du site (Three.js, licence MIT, chargé depuis un CDN) ; forme pédagogique représentative, sans géométrie constructeur ni photographie. Sans réseau ou sans WebGL, le dessin SVG ci-dessus s’affiche à la place.</li>
         <li><strong>Fonction :</strong> un détendeur thermostatique règle l’injection de liquide dans un évaporateur sec à partir de la surchauffe mesurée en sortie.</li>
         <li><strong>Équilibre :</strong> la pression du bulbe tend à ouvrir ; la pression d’évaporation et le ressort tendent à fermer.</li>
         <li><strong>Références fournies :</strong> fiche Danfoss T 2 / TE 2 <code>AI556829249127en-000101</code>, mars 2026, et guide d’installation <code>AN234186441562en-000502</code>, septembre 2025.</li>
@@ -119,7 +121,8 @@
   <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
   <script src="../../../../moteur/voix.js?v=20260902-1"></script>
   <script src="../../../../moteur/reglage-voix.js?v=20260902-1"></script>
-  <script src="app.js?v=20260807-2"></script>
+  <script src="3d/vue3d.js?v=20261006-1"></script>
+  <script src="app.js?v=20261006-1"></script>
   <script src="lisibilite.js?v=20260805-2"></script>
 <script src="marque.js?v=20260818-3" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script src="referentiel.js"></script>

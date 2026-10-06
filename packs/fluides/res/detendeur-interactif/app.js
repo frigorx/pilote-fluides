@@ -23,7 +23,9 @@
     voiceRate: document.getElementById("voice-rate"),
     sourceButton: document.getElementById("source-button"),
     sourcesDialog: document.getElementById("sources-dialog"),
-    status: document.getElementById("app-status")
+    status: document.getElementById("app-status"),
+    lesson: document.querySelector(".lesson"),
+    card: document.querySelector(".visual-card")
   };
 
   let current = 0;
@@ -104,7 +106,8 @@
       visualTitle: "Reconnaître, puis regarder à l’intérieur",
       visualHint: "Affiche une seule lecture à la fois.",
       caption: "Dessin vectoriel original : forme pédagogique représentative, sans géométrie constructeur.",
-      render: renderRole
+      v3d: { hint: "Tourne l’objet, éclate-le, ouvre-le en coupe.", caption: "Modèle 3D original : forme pédagogique représentative, sans géométrie constructeur." },
+      render: renderRole3D
     },
     {
       narration: "Nommons les pièces dans l'ordre où elles agissent, parce que c'est une chaîne. Le bulbe sent la température. La membrane reçoit la pression que le bulbe lui envoie et se déforme. La tige transmet ce déplacement. Le clapet, au bout, modifie la surface de passage. Bulbe, membrane, tige, clapet : retenez cet ordre, il vous servira pour tout diagnostic. Chaque maillon peut être en cause, et l'on remonte toujours la chaîne du symptôme vers la cause.",
@@ -120,7 +123,8 @@
       visualTitle: "Une pièce, une fonction",
       visualHint: "Choisis un nom : lui seul est mis en évidence.",
       caption: "Coupe manuelle générique : architecture fonctionnelle, sans cote constructeur.",
-      render: renderComponents
+      v3d: { hint: "Survole ou touche une pièce : elle s’allume avec son nom.", caption: "Coupe 3D générique : architecture fonctionnelle, sans cote constructeur." },
+      render: renderComponents3D
     },
     {
       narration: "Voyons la détente elle-même. Le liquide haute pression franchit un orifice minuscule, et c'est ce passage étroit qui provoque la chute de pression. Deux pièces travaillent ensemble ici, et on les confond souvent : l'orifice — la buse — crée la détente, tandis que le clapet règle la surface de passage disponible. La buse fixe la capacité maximale, le clapet module en dessous. C'est pourquoi un détendeur trop grand ou trop petit ne se rattrape pas à la vis : la capacité vient de la buse.",
@@ -135,7 +139,7 @@
       visualTitle: "Faire bouger le clapet",
       visualHint: "Compare faible, moyenne et forte ouverture.",
       caption: "Écoulement qualitatif : les bulles indiquent la vaporisation partielle, pas un titre massique chiffré.",
-      render: renderExpansion
+      render: renderExpansion3D
     },
     {
       narration: "La surchauffe est une comparaison entre deux températures, et il faut bien comprendre lesquelles. La première est celle du tube d'aspiration, donnée par le bulbe. La seconde est la température de saturation, celle à laquelle le fluide s'évapore à la pression du moment — vous la trouvez en lisant la pression puis en consultant la table du fluide. La différence entre les deux, c'est la surchauffe. Elle vous dit de combien la vapeur s'est réchauffée après la dernière goutte évaporée. Deux mesures cohérentes, et vous tenez le signal que le détendeur cherche à stabiliser.",
@@ -164,7 +168,7 @@
       visualTitle: "Suivre les forces et la chaîne cinématique",
       visualHint: "Compare trois états simples.",
       caption: "Sur la même membrane, les pressions deviennent des forces opposées.",
-      render: renderForces
+      render: renderForces3D
     },
     {
       narration: "Regardons la boucle en mouvement, car c'est là que tout s'éclaire. La charge augmente, l'évaporateur travaille plus, la vapeur en sortie devient plus chaude : la surchauffe monte. Le bulbe se réchauffe, sa pression monte, la membrane pousse, le clapet s'ouvre davantage, le débit augmente, l'évaporateur est mieux alimenté — et la surchauffe redescend. Retenez la séquence : surchauffe qui monte, ouverture qui augmente, débit qui augmente, surchauffe qui redescend. Le système se corrige seul, en continu.",
@@ -180,7 +184,8 @@
       visualTitle: "Tester chaud puis froid",
       visualHint: "Choisis la température de sortie ou rejoue la séquence.",
       caption: "Animation SVG originale : l’état écrit reste lisible sans mouvement.",
-      render: renderRegulationLoop
+      v3d: { hint: "Suis la boucle pas à pas, ou choisis la température de sortie.", caption: "Animation 3D originale : le texte de chaque étape reste lisible sans mouvement." },
+      render: renderRegulationLoop3D
     },
     {
       narration: "Le bulbe n'est pas un accessoire décoratif : son contact avec le tube d'aspiration commande directement l'ouverture. Un bulbe mal serré, posé sur une peinture épaisse, ou fixé sous le tube au lieu du dessus, mesure autre chose que ce qu'il devrait. Et s'il n'est pas isolé quand la notice le demande, il sent l'air du local. Retenez la formule : le bulbe mesure le tube, pas l'air autour. Un défaut de pose du bulbe donne exactement les symptômes d'un détendeur défectueux — et fait remplacer beaucoup d'organes en bon état.",
@@ -573,6 +578,38 @@
     </div>`;
   }
 
+  /* La vue 3D remplace le dessin quand elle peut s’ouvrir (pas en file://, WebGL présent, moteur et Three.js joignables) ;
+     sinon, ou si elle échoue en route, le dessin SVG d’avant s’affiche : le module reste complet sans la 3D. */
+  function render3D(ecran, rendu2D, impression) {
+    const vue = window.DETENDEUR_3D;
+    if (!vue || !vue.possible()) { rendu2D(); return; }
+    const lesson = lessons[current];
+    ui.lesson.classList.add("lesson-3d");
+    ui.card.classList.add("visual-3d");
+    ui.root.classList.add("v3d");
+    if (lesson.v3d) { ui.visualHint.textContent = lesson.v3d.hint; ui.caption.textContent = lesson.v3d.caption; }
+    vue.monter(ui.root, ecran, {
+      controles: ui.controls,
+      classeBouton: "choice-button",
+      impression: impression ? impression() : "",
+      repli: () => {
+        ui.lesson.classList.remove("lesson-3d");
+        ui.card.classList.remove("visual-3d");
+        ui.root.classList.remove("v3d");
+        ui.visualHint.textContent = lesson.visualHint;
+        ui.caption.textContent = lesson.caption;
+        setControls("");
+        ui.root.innerHTML = "";
+        rendu2D();
+      }
+    });
+  }
+  function renderExpansion3D() { render3D("debit", renderExpansion, () => valveSvg({ view: "expansion", opening: 52 })); }
+  function renderRole3D() { render3D("reconnaitre", renderRole, () => equipmentSvg("outside")); }
+  function renderComponents3D() { render3D("pieces", renderComponents, () => valveSvg({ selected: "element", opening: 50 })); }
+  function renderForces3D() { render3D("forces", renderForces, () => forceChainSvg("balanced")); }
+  function renderRegulationLoop3D() { render3D("boucle", renderRegulationLoop, () => valveSvg({ view: "regulation", opening: 82, forceState: "high" })); }
+
   function renderPlacement() {
     setControls(`<button type="button" class="choice-button" data-place="valve">Entrée évaporateur</button><button type="button" class="choice-button" data-place="compressor">Compresseur</button><button type="button" class="choice-button" data-place="condenser">Condenseur</button>`);
     ui.root.innerHTML = `<img class="technical-illustration circuit-reference" src="assets/symboles/croix-frigoriste.svg" alt="Croix du frigoriste : détendeur à gauche, tourné sur la branche verticale entre le condenseur et l’évaporateur"><div class="readout" id="visual-readout">Où place-t-on le détendeur dans la Croix du frigoriste ?</div>`;
@@ -876,6 +913,10 @@
     clearActiveTimers();
     stopSpeech();
     ui.status.textContent = "";
+    if (window.DETENDEUR_3D) window.DETENDEUR_3D.annuler(ui.root);
+    ui.lesson.classList.remove("lesson-3d");
+    ui.card.classList.remove("visual-3d");
+    ui.root.classList.remove("v3d");
     current = Math.max(0, Math.min(lessons.length - 1, index));
     furthest = Math.max(furthest, current);
     const lesson = lessons[current];
@@ -1052,6 +1093,7 @@
     if (ui.sourcesDialog.open) return;
     const target = event.target;
     if (target && /INPUT|SELECT|TEXTAREA|BUTTON/.test(target.tagName)) return;
+    if (event.defaultPrevented || (target && target.closest && target.closest("electro-3d"))) return;
     if (event.key === "ArrowRight") nextLesson();
     if (event.key === "ArrowLeft") previousLesson();
     if (event.key === " " && speaking) {

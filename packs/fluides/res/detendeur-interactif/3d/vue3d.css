@@ -1,0 +1,144 @@
+/* Détendeur thermostatique — la vue 3D (moteur d'ÉlectroRézo) habillée aux couleurs du module.
+   Tout est rangé sous .visual-root.v3d : rien ne touche aux autres écrans. Le moteur n'est pas modifié ;
+   on ne fait que ranger ses blocs pour tenir dans la carte (écran entier, sans défilement). */
+
+/* ------------------------------------------------------------------ la carte et la colonne de texte */
+.lesson.lesson-3d { grid-template-columns: minmax(280px, 31%) minmax(0, 69%); }
+.visual-card.visual-3d { gap: 4px; padding: 8px 10px 8px; }
+.visual-card.visual-3d .visual-heading { min-height: 0; align-items: center; }
+.visual-card.visual-3d .visual-heading p { display: none; }
+.visual-card.visual-3d .visual-controls { min-height: 0; }
+/* la mention « modèle original, sans géométrie constructeur » est dans la fenêtre Sources : la place revient à l'image */
+.visual-card.visual-3d .visual-caption { display: none; }
+
+.visual-root.v3d { display: block; padding: 0; background: var(--paper); }
+.v3d-attente { margin: 0; padding: 40px 12px; text-align: center; color: var(--muted); font-weight: 700; }
+.v3d electro-3d { display: block; height: 100%; font-size: 16px; }
+.v3d .e3d { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 6px; align-items: stretch; height: 100%; padding: 6px 8px 8px; box-sizing: border-box; }
+.v3d .e3d-gauche { display: flex; flex-direction: column; gap: 6px; min-height: 0; }
+.v3d .e3d-gauche > * { margin: 0; flex: 0 0 auto; }
+.v3d .e3d-scene { flex: 1 1 0; min-height: 130px; aspect-ratio: auto; max-height: none; border-radius: 10px; }
+.v3d-filigrane { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
+.v3d-impression { display: none; }
+
+/* ------------------------------------------------------------------ les boutons (comme les autres écrans du module) */
+.v3d electro-3d button {
+  min-height: 34px; padding: 3px 11px; border: 1px solid var(--navy); border-radius: 999px;
+  background: var(--paper); color: var(--navy); font-family: inherit; font-weight: 700; font-size: 15px; line-height: 1.1; cursor: pointer;
+}
+.v3d electro-3d button:hover:not(:disabled) { border-color: var(--orange-deep); }
+.v3d electro-3d button:disabled { opacity: .45; cursor: default; }
+.v3d electro-3d button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+.v3d electro-3d button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.v3d .e3d-outils { gap: 5px; }
+.v3d .e3d-outils button { font-size: 15px; }
+.v3d .e3d-aide, .v3d .e3d-outils > button:last-of-type { display: none; }
+.v3d .e3d-zoom button { min-width: 36px; }
+@media (pointer: fine) { .v3d .e3d-zoom { display: none; } }
+
+/* le pas à pas : une seule ligne, sans titre */
+.v3d .e3d-etapes { flex-wrap: nowrap; gap: 6px; padding: 4px 8px; border-width: 2px; }
+.v3d .e3d-etapes-titre { display: none; }
+.v3d .e3d-etapes-points { gap: 4px; flex-wrap: nowrap; }
+.v3d .e3d-etapes-points button { min-width: 34px; min-height: 34px; padding: 0; border-radius: 50%; }
+.v3d .e3d-etapes-points button[aria-current="step"] { background: var(--orange-deep); border-color: var(--orange-deep); color: #fff; }
+.v3d .e3d-etapes > button { min-height: 36px; white-space: nowrap; }
+
+/* la phrase : le texte de l'étape, à la taille du cours (≥ 14 pt) */
+.v3d .e3d-phrase {
+  margin: 0; padding: 4px 10px; min-height: 2.6em; border-left: 4px solid var(--orange-deep); border-radius: 0 10px 10px 0;
+  background: var(--paper); font-size: calc(18.7px * var(--font-scale, 1)); line-height: 1.25; color: var(--ink);
+}
+.v3d .e3d-badge { font-size: .8em; padding: 0 .45em; margin-right: .4em; }
+
+/* les trois forces : pastilles de la couleur des flèches */
+.v3d .e3d-mesures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 0; }
+.v3d .e3d-mesures .metric { padding: 2px 8px; border: 1px solid var(--line); border-left: 6px solid var(--navy); border-radius: 8px; background: var(--paper); display: flex; flex-direction: column; line-height: 1.15; }
+.v3d .e3d-mesures .metric:nth-child(1) { border-left-color: #e8601c; }
+.v3d .e3d-mesures .metric:nth-child(2) { border-left-color: #3d7fca; }
+.v3d .e3d-mesures .metric:nth-child(3) { border-left-color: #1b3a63; }
+.v3d .e3d-mesures .metric span { font-size: 14.5px; color: var(--muted); }
+.v3d .e3d-mesures .metric strong { font-size: 17px; color: var(--navy); }
+
+/* les commandes du moteur : l'écran « boucle » les remonte dans la barre du module */
+.v3d electro-3d[data-prog="boucle"] .e3d-commandes,
+.v3d electro-3d[data-prog="debit"] .e3d-commandes,
+.v3d electro-3d[data-prog="boucle"] .e3d-mesures { display: none; }
+
+/* la liste des pièces : à droite sur grand écran, pour reconnaître et nommer */
+.v3d .e3d-cote { display: none; }
+.v3d electro-3d[data-prog="pieces"] .e3d,
+.v3d electro-3d[data-prog="reconnaitre"] .e3d { grid-template-columns: minmax(0, 1fr) 236px; }
+.v3d electro-3d[data-prog="pieces"] .e3d-cote,
+.v3d electro-3d[data-prog="reconnaitre"] .e3d-cote { display: block; max-height: 100%; min-height: 0; padding: 8px 6px; overflow: auto; border-radius: 10px; }
+.v3d .e3d-legende-titre { font-size: 1em; margin: 0 0 4px 4px; }
+.v3d .e3d-piece { min-height: 34px; padding: 2px 6px; border-radius: 10px; font-family: inherit; font-weight: 700; font-size: 15.5px; line-height: 1.15; }
+.v3d .e3d-piece:hover:not(:disabled), .v3d .e3d-piece.allumee { border-color: var(--orange-deep); background: #fff3ea; }
+.v3d .e3d-desc { display: none; }
+.v3d .e3d-legende { gap: 1px; }
+.v3d .e3d-num { flex: 0 0 24px; height: 24px; font-size: 13px; }
+.v3d electro-3d[data-prog="forces"] .e3d-bt-reperes,
+.v3d electro-3d[data-prog="debit"] .e3d-bt-reperes,
+.v3d electro-3d[data-prog="boucle"] .e3d-bt-reperes,
+.v3d electro-3d[data-prog="reconnaitre"] .e3d-bt-reperes { display: none; }
+
+/* ------------------------------------------------------------------ téléphone */
+@media (max-width: 900px) {
+  .lesson.lesson-3d { grid-template-columns: minmax(240px, 40%) minmax(0, 60%); }
+  .v3d electro-3d[data-prog="pieces"] .e3d,
+  .v3d electro-3d[data-prog="reconnaitre"] .e3d { grid-template-columns: minmax(0, 1fr) 190px; }
+}
+@media (max-width: 700px) {
+  .lesson.lesson-3d { grid-template: minmax(0, 30%) minmax(0, 70%) / 1fr; }
+  .lesson.lesson-3d .lesson-copy { overflow: auto; }
+  .visual-card.visual-3d { padding: 6px; }
+  .visual-card.visual-3d .visual-heading h2 { font-size: .95em; }
+  .v3d .e3d { padding: 3px 4px 4px; gap: 3px; }
+  .v3d .e3d-gauche { gap: 3px; }
+  .v3d .e3d-outils button, .v3d .e3d-etapes button, .v3d .e3d-commandes button { min-height: 32px; padding: 2px 8px; font-size: 13px; }
+  .v3d .e3d-outils button { padding: 2px 6px; font-size: 12px; }
+  .v3d .e3d-outils { gap: 3px; }
+  .v3d .e3d-outils .e3d-bt-reperes, .v3d .e3d-outils .e3d-zoom { display: none; }
+  .v3d .e3d-etapes { flex-wrap: wrap; padding: 2px 4px; gap: 3px; }
+  .v3d .e3d-etapes-points { margin-right: 0; }
+  .v3d .e3d-etapes-points button { min-width: 30px; min-height: 30px; padding: 0; }
+  .v3d .e3d-phrase { font-size: 15px; padding: 3px 8px; min-height: 2.6em; }
+  .v3d .e3d-mesures { gap: 3px; }
+  .v3d .e3d-mesures .metric { padding: 1px 5px; border-left-width: 5px; }
+  .v3d .e3d-mesures .metric span { font-size: 11.5px; }
+  .v3d .e3d-mesures .metric strong { font-size: 14px; }
+  .v3d electro-3d[data-prog="pieces"] .e3d,
+  .v3d electro-3d[data-prog="reconnaitre"] .e3d { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
+  .v3d electro-3d[data-prog="pieces"] .e3d-cote,
+  .v3d electro-3d[data-prog="reconnaitre"] .e3d-cote { max-height: 92px; padding: 3px; }
+  .v3d .e3d-legende-titre { display: none; }
+  .v3d .e3d-legende { grid-template-columns: 1fr 1fr; }
+  .v3d .e3d-piece { min-height: 28px; font-size: 12.5px; padding: 1px 3px; gap: 4px; }
+  .v3d .e3d-num { flex: 0 0 20px; height: 20px; font-size: 11px; }
+}
+
+/* ------------------------------------------------------------------ lisibilité du texte du cours
+   Corps de texte à 14 pt (18,7 px) sur un écran de 1366 × 768, plus petit quand l'écran se resserre
+   (jamais sous la taille d'origine) ; téléphone inchangé. Les encadrés se serrent un peu pour que
+   rien ne soit coupé. */
+@media (min-width: 1000px) {
+  .lesson-intro, .lesson-detail, .takeaway { font-size: calc(clamp(14.6px, min(2.43vh, 1.37vw), 18.7px) * var(--font-scale, 1)); }
+  .lesson-intro { margin-bottom: 6px; line-height: 1.4; }
+  .lesson-detail { line-height: 1.38; }
+  .lesson-detail .fact, .lesson-detail .key-box, .lesson-detail .warning-box { margin: 5px 0; padding: 5px 10px; }
+  .lesson-detail ul, .lesson-detail ol { margin: 3px 0; }
+  .takeaway { padding: 6px 10px; line-height: 1.3; }
+}
+@media (min-width: 1000px) and (max-height: 740px) {
+  .lesson-copy { padding: 9px 14px; }
+  .lesson-copy h1 { margin-bottom: 4px; font-size: clamp(1.3em, 1.75vw, 1.75em); }
+  .lesson-detail .fact, .lesson-detail .key-box, .lesson-detail .warning-box { margin: 3px 0; padding: 3px 9px; }
+}
+
+/* ------------------------------------------------------------------ papier : le dessin 2D, jamais le canevas */
+@media print {
+  .v3d electro-3d { display: none !important; }
+  .v3d-attente { display: none !important; }
+  .v3d-impression { display: block !important; height: 100%; }
+  .visual-root.v3d .v3d-impression .diagram { height: 100%; }
+}

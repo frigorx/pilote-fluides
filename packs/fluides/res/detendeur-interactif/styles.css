@@ -721,6 +721,13 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
   .orifice-hole, .progress-track span { transition: none; }
 }
 
+/* La barre « retour au réseau » (moteur/retour-accueil.js) s'insère dans le flux, au-dessus de la coque : la coque prend
+   la hauteur qui reste, au lieu de 100dvh (sinon Retour / Continuer sortent de l'écran). Écran seulement : le papier garde sa règle. */
+@media screen {
+  body { display: flex; flex-direction: column; height: 100dvh; }
+  .app-shell { flex: 1 1 0; min-height: 0; height: auto; }
+}
+
 @media (max-width: 900px) {
   .app-shell { grid-template-rows: 66px minmax(0, 1fr) 60px; }
   .topbar { grid-template-columns: 1fr auto; padding: 7px 10px; }
