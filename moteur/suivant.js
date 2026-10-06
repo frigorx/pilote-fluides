@@ -48,7 +48,7 @@
   for (var i = 0; i < D.LIGNES.length; i++) {
     lignes.push({ slug: D.LIGNES[i].slug, nom: D.LIGNES[i].nom, stations: stationsUniques(D.LIGNES[i].stations) });
   }
-  ["HUILE", "HUILE_CIRCUIT", "CO2", "CENTRALES", "REGULES"].forEach(function (cle) {
+  ["HUILE", "HUILE_CIRCUIT", "CO2", "CENTRALES", "REGULES", "DETENDEURS"].forEach(function (cle) {
     lignes.push({ slug: D[cle].slug, nom: D[cle].nom, stations: stationsUniques(D[cle].stations) });
   });
 

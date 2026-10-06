@@ -315,6 +315,25 @@
     ]
   };
 
+  /* --- La ligne des DÉTENDEURS (06/10/2026, demande de F. Henninot : « un
+         mini réseau greffé sur tout ce qui touche le détendeur »). Bande
+         autonome sous la régulation ; la gare 1 est LE détendeur des Organes
+         et des Réglages, refait en 3D : même cours, posé en correspondance. --- */
+  var DETENDEURS = {
+    slug: "detendeurs", nom: "🎚 LES DÉTENDEURS", sous: "détendre, doser : toute la famille",
+    couleur: "#be185d",
+    jalon: "🏁 Les détendeurs compris",
+    stations: [
+      cours("detendeurs-famille",            "La famille",           "qui règle quoi"),
+      Object.assign(cours("detendeur-interactif", "Le thermostatique", "correspondance ↔ Organes · en 3D"), { corr: true }),
+      cours("detendeur-egalisation-externe", "L’égalisation externe", "la vraie pression de sortie"),
+      cours("detendeur-mop",                 "Le détendeur MOP",     "la BP plafonnée"),
+      cours("detendeur-automatique",         "L’automatique",        "la pression constante"),
+      cours("detente-capillaire",            "Le capillaire",        "rien ne se règle"),
+      cours("detendeur-electronique",        "L’électronique",       "la surchauffe calculée")
+    ]
+  };
+
   var CEINTURE = {
     slug: "evaluer", nom: "✅ S’ÉVALUER", sous: "QCM · examens blancs A1 · A2 · D · E",
     couleur: "#b06a00", jalon: "🏁 Prêt pour l’attestation",
@@ -398,7 +417,7 @@
   window.PLAN_DONNEES = {
     SUPPORTS: SUPPORTS, TRONC: TRONC, LIGNES: LIGNES, HUILE: HUILE,
     HUILE_CIRCUIT: HUILE_CIRCUIT, CO2: CO2, CENTRALES: CENTRALES, REGULES: REGULES,
-    CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH,
+    DETENDEURS: DETENDEURS, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH,
     CORRESPONDANCES: CORRESPONDANCES
   };
 })();
