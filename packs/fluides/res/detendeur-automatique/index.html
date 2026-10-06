@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Gare 4 de la ligne Les détendeurs : le détendeur automatique. Une membrane entre un ressort et la pression de l’évaporateur : il tient la basse pression constante. Utile sur les machines à charge constante, il se trompe quand la charge change.">
+  <title>Le détendeur automatique | Pilote Fluides</title>
+  <link rel="stylesheet" href="styles.css?v=20261006-4">
+  <link rel="stylesheet" href="impression.css?v=20261006-4" media="print">
+</head>
+<body data-cours="detendeur-automatique">
+  <a class="skip-link" href="#lesson-title">Aller au contenu de l’écran</a>
+
+  <header class="appbar">
+    <a class="brand" href="index.html" aria-label="Revenir au sommaire du cours">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="175" height="40" role="img" aria-label="inerweb.fr" style="flex:0 0 auto;display:block"><text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/><rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text></svg>
+      <span><small>Les détendeurs · gare 4</small></span>
+    </a>
+    <div class="appbar-actions">
+      <span class="mode-badge" id="mode-badge">Cours complet</span>
+      <button class="small-button" id="sources-button" type="button" aria-haspopup="dialog">Sources</button>
+      <button class="small-button" id="home-button" type="button" hidden>Sommaire</button>
+      <button class="small-button exit-button" id="exit-button" type="button" hidden>Quitter</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="home" id="home" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="eyebrow">LES DÉTENDEURS · GARE 4 · ANNEXE I, 9.01 ET 9.03</p>
+        <h1 id="home-title">Le détendeur<br><span>automatique</span></h1>
+        <p class="home-intro">Un ressort contre la pression de l’évaporateur : il tient la basse pression constante. Parfait quand la charge ne change pas. Sinon, il se trompe.</p>
+        <div class="home-actions">
+          <button class="primary-button" id="start-button" type="button">Commencer <span aria-hidden="true">→</span></button>
+          <span>5 écrans · 6 questions · environ 8 minutes</span>
+        </div>
+      </div>
+
+      <figure class="home-visual scene-accueil" id="scene-accueil" aria-label="Un détendeur automatique devant son évaporateur : la charge varie, la basse pression reste au repère, le détendeur ferme ou ouvre, et la barre montre ce qu’il laisse passer contre ce qu’il faut"></figure>
+
+      <nav class="dossier-grid" id="dossier-grid" aria-label="Ouvrir directement un écran"></nav>
+      <p class="home-note"><strong>Garde-fou :</strong> les réactions sont qualitatives. Le repère vert de l’exercice est un exemple : la vraie valeur de basse pression est donnée par la notice de la machine. On ne tourne la vis qu’après avoir mesuré la BP au manomètre.</p>
+    </section>
+
+    <section class="course-shell" id="course-shell" hidden aria-label="Cours interactif : le détendeur automatique">
+      <aside class="course-rail">
+        <div class="rail-heading"><span id="rail-mode">ÉCRANS</span><strong id="rail-progress">1 / 5</strong></div>
+        <nav class="stepper" id="stepper" aria-label="Progression"></nav>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+      </aside>
+
+      <article class="lesson-card" aria-labelledby="lesson-title">
+        <header class="lesson-header">
+          <div class="lesson-heading"><p class="eyebrow" id="lesson-kicker"></p><h2 id="lesson-title" tabindex="-1"></h2></div>
+          <div class="lesson-tools" aria-label="Outils de l’écran">
+            <button class="tool-button" id="copy-link" type="button" aria-label="Copier le lien de cet écran"><span aria-hidden="true">🔗</span><span class="tool-label">Copier</span></button>
+            <div class="speed-control" aria-label="Vitesse de la voix">
+              <button id="slower" type="button" aria-label="Ralentir la voix">−</button><span id="speed-value">0,95×</span><button id="faster" type="button" aria-label="Accélérer la voix">+</button>
+            </div>
+            <button class="tool-button voice-button" id="listen" type="button"><span aria-hidden="true">▶</span><span>Écouter</span></button>
+            <button class="tool-button" id="stop-voice" type="button" aria-label="Arrêter la voix" disabled><span aria-hidden="true">■</span><span class="tool-label">Arrêter</span></button>
+          </div>
+        </header>
+
+        <div class="lesson-content">
+          <div class="lesson-copy"><p id="lesson-text"></p><button class="texte-entier" id="texte-entier" type="button" aria-expanded="false" aria-controls="lesson-text" hidden>Lire tout le texte</button></div>
+          <section class="activity-zone" id="activity-zone" aria-label="Activité de l’écran"></section>
+        </div>
+
+        <footer class="lesson-footer">
+          <button class="nav-button secondary" id="prev-button" type="button">← Précédent</button>
+          <div class="reference-box" id="reference-box"></div>
+          <button class="nav-button" id="next-button" type="button">Suivant →</button>
+        </footer>
+        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      </article>
+    </section>
+
+    <section class="print-book" id="print-book" aria-label="Version imprimable du cours"></section>
+  </main>
+
+  <dialog id="sources-dialog" aria-labelledby="sources-titre">
+    <h2 id="sources-titre">Sources</h2>
+    <ul>
+      <li><strong>Référentiel :</strong> règlement d’exécution (UE) 2024/2215, annexe I (codes 9.01 et 9.03).</li>
+      <li><strong>Symbole :</strong> « vanne à pression constante », <strong>QElectroTech, licence <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a></strong>, fichier <code>valv-pres-cte.svg</code> (copié sous le nom <code>vanne_pression_constante.svg</code>).</li>
+      <li><strong>Valeur de consigne :</strong> donnée par la notice du constructeur ; le repère vert de l’exercice est un exemple.</li>
+      <li><strong>Dessins animés :</strong> inerWeb, calculés dans la page. Aucune photo.</li>
+    </ul>
+    <button class="primary-button" id="sources-close" type="button">Fermer</button>
+  </dialog>
+
+  <script src="../../../../moteur/voix-index.js?v=20260806-1"></script>
+  <script src="../../../../moteur/prononciation.js?v=20260806-2"></script>
+  <script src="../../../../moteur/voix.js?v=20260806-2"></script>
+  <script src="../../../../moteur/reglage-voix.js?v=20260901-1"></script>
+  <script src="../../../../moteur/prof-vocal.js?v=20260806-1"></script>
+  <script src="../../../../jouerezo/moteur/voyage-dessin.js?v=20261004-1"></script>
+  <script src="../_detendeurs-commun/scenes-detendeurs.js?v=20261006-1"></script>
+  <script src="scene-automatique.js?v=20261006-4"></script>
+  <script src="app.js?v=20261006-4"></script>
+  <script src="../../../../moteur/lisibilite.js?v=20260802-1"></script>
+<script src="../../../../moteur/marque.js?v=20260818-3" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="referentiel.js"></script>
+</body>
+</html>

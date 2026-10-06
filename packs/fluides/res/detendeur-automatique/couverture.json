@@ -1,0 +1,31 @@
+{
+  "cours": "detendeur-automatique",
+  "titre": "Le détendeur automatique",
+  "reference": "règlement d’exécution (UE) 2024/2215, annexe I",
+  "ecrans": 5,
+  "codes": {
+    "9.01": [
+      "identite",
+      "balance",
+      "charge",
+      "verifier"
+    ],
+    "9.03": [
+      "regler",
+      "verifier"
+    ]
+  },
+  "appui": {
+    "1.02": [
+      "charge"
+    ],
+    "1.04": [
+      "identite",
+      "balance"
+    ],
+    "9.10": [
+      "charge",
+      "regler"
+    ]
+  }
+}
