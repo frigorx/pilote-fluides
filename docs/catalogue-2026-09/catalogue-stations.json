@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 398,
+  "total": 400,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -139,7 +139,7 @@
       "id": "co2-r744",
       "titre": "La ligne CO₂ / R744 — le fluide en huit escales, les centrales en cinq",
       "ligne": null,
-      "resume": "Module inerWeb Édu hors ligne : la ligne CO₂ / R744 en douze escales — point critique, cycle transcritique, haute pression optimale, centrale booster, éjecteur, sécurité.",
+      "resume": "Module inerweb.fr hors ligne : la ligne CO₂ / R744 en douze escales — point critique, cycle transcritique, haute pression optimale, centrale booster, éjecteur, sécurité.",
       "niveaux": null,
       "competences": [
         "1.00",
@@ -169,7 +169,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "commande-directe-thermostat",
-      "titre": "La commande directe · Les régules · inerWeb Édu",
+      "titre": "La commande directe · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -236,7 +236,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "degivrage-electrique",
-      "titre": "Le dégivrage électrique · Les régules · inerWeb Édu",
+      "titre": "Le dégivrage électrique · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -248,7 +248,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "degivrage-gaz-chauds",
-      "titre": "Le dégivrage par gaz chauds · Les régules · inerWeb Édu",
+      "titre": "Le dégivrage par gaz chauds · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -260,7 +260,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "degivrage-inversion-cycle",
-      "titre": "Le dégivrage par inversion de cycle · Les régules · inerWeb Édu",
+      "titre": "Le dégivrage par inversion de cycle · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -272,7 +272,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "degivrage-naturel",
-      "titre": "Le dégivrage naturel · Les régules · inerWeb Édu",
+      "titre": "Le dégivrage naturel · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -598,7 +598,7 @@
       "id": "parcours-manometres",
       "titre": "Parcours manomètres — lire l'instrument, comprendre le circuit",
       "ligne": null,
-      "resume": "Deux modules inerWeb Édu pour lire les manomètres frigorifiques puis calculer surchauffes et sous-refroidissements.",
+      "resume": "Deux modules inerweb.fr pour lire les manomètres frigorifiques puis calculer surchauffes et sous-refroidissements.",
       "niveaux": null,
       "competences": [
         "1.02",
@@ -666,7 +666,7 @@
       "id": "pressostat-bp-kp1",
       "titre": "Le pressostat BP de sécurité — comprendre, régler, prouver",
       "ligne": null,
-      "resume": "Module inerWeb Édu hors ligne : comprendre et régler un pressostat basse pression de sécurité.",
+      "resume": "Module inerweb.fr hors ligne : comprendre et régler un pressostat basse pression de sécurité.",
       "niveaux": null,
       "competences": [
         "1.01",
@@ -719,7 +719,7 @@
       "id": "pressostat-hp-kp5",
       "titre": "Le pressostat HP de sécurité — comprendre, régler, prouver",
       "ligne": null,
-      "resume": "Module inerWeb Édu hors ligne : comprendre et régler un pressostat haute pression de sécurité.",
+      "resume": "Module inerweb.fr hors ligne : comprendre et régler un pressostat haute pression de sécurité.",
       "niveaux": null,
       "competences": [
         "1.01",
@@ -750,7 +750,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "protection-minimum-serie",
-      "titre": "La protection minimum · Les régules · inerWeb Édu",
+      "titre": "La protection minimum · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -762,7 +762,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "pump-down-ameliore",
-      "titre": "Le pump-down amélioré · Les régules · inerWeb Édu",
+      "titre": "Le pump-down amélioré · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -774,7 +774,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "pump-down-automatique",
-      "titre": "Le pump-down automatique · Les régules · inerWeb Édu",
+      "titre": "Le pump-down automatique · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -786,7 +786,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "pump-down-unique",
-      "titre": "Le pump-down unique · Les régules · inerWeb Édu",
+      "titre": "Le pump-down unique · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -893,7 +893,7 @@
       "id": "regulateurs-kv-pedagogiques",
       "titre": "La famille des régulateurs KV — KVP, KVL, KVR",
       "ligne": null,
-      "resume": "Parcours inerWeb Édu pour comparer, comprendre et régler les régulateurs de pression KVP, KVL et KVR.",
+      "resume": "Parcours inerweb.fr pour comparer, comprendre et régler les régulateurs de pression KVP, KVL et KVR.",
       "niveaux": null,
       "competences": [
         "1.05",
@@ -908,7 +908,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "regules-interactif",
-      "titre": "Les régules · inerWeb Édu",
+      "titre": "Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Ce parcours local interactif a besoin de JavaScript pour afficher ses stations.",
       "niveaux": null,
@@ -956,7 +956,7 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "sans-degivrage-commande",
-      "titre": "Sans dégivrage commandé · Les régules · inerWeb Édu",
+      "titre": "Sans dégivrage commandé · Les régules · inerweb.fr",
       "ligne": null,
       "resume": "Cette station locale interactive a besoin de JavaScript pour fonctionner.",
       "niveaux": null,
@@ -1036,7 +1036,7 @@
       "id": "tome-3-technologie-organes",
       "titre": "Tome 3 — la technologie des organes",
       "ligne": null,
-      "resume": "Tome 3 interactif inerWeb Édu : reconnaître, situer et comprendre les organes d’un circuit frigorifique.",
+      "resume": "Tome 3 interactif inerweb.fr : reconnaître, situer et comprendre les organes d’un circuit frigorifique.",
       "niveaux": null,
       "competences": [
         "1.04",
@@ -4677,6 +4677,18 @@
     },
     {
       "reseau": "inerWeb Studio",
+      "id": "voyage/eau-glacee",
+      "titre": "L'ennemi juré, la frontière : le groupe d'eau glacée — raconté par une molécule",
+      "ligne": null,
+      "resume": "Suivez une molécule de fluide frigorigène dans un groupe d’eau glacée, sur le toit d’un immeuble de bureaux : l’évaporateur à plaques où l’eau, l’ennemi juré du frigoriste, et le fluide échangent leur chaleur sans jamais se toucher, la boucle d’eau et les ventilo-convecteurs, la sentinelle qui surveille le débit, le gel quand la frontière cède, les armes du frigoriste — avec son cycle sur le diagramme enthalpique, en même temps.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/eau-glacee.html",
+      "chemin": "voyage/eau-glacee.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
       "id": "voyage/glissement",
       "titre": "Voyage dans tous ses états, le glissement de température raconté par une molécule",
       "ligne": null,
@@ -4746,6 +4758,18 @@
       "missionProf": null,
       "url": "https://inerweb.fr/voyage/module-co2.html",
       "chemin": "voyage/module-co2.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-eau-glacee",
+      "titre": "L'ennemi juré, la frontière : le groupe d'eau glacée — module de formation",
+      "ligne": null,
+      "resume": "Le groupe d'eau glacée raconté par une molécule : l'eau, ennemi juré du frigoriste, de l'autre côté de la plaque — évaporateur à plaques, boucle d'eau et ventilo-convecteurs, contrôleur de débit, gel de l'évaporateur, tirage au vide et filtre déshydrateur — avec son cycle sur le diagramme enthalpique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-eau-glacee.html",
+      "chemin": "voyage/module-eau-glacee.html"
     },
     {
       "reseau": "inerWeb Studio",
@@ -4980,7 +5004,7 @@
       "id": "galerie",
       "titre": "Bibliothèque d'animations et de supports — habilitation fluides frigorigènes",
       "ligne": null,
-      "resume": "Le catalogue inerWeb Édu : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.",
+      "resume": "Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -5028,7 +5052,7 @@
       "id": "plan",
       "titre": "Le plan du réseau thermo-techno",
       "ligne": null,
-      "resume": "Le plan de formation inerWeb Édu : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
+      "resume": "Le plan de formation inerweb.fr : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
