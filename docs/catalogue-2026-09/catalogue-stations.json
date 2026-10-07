@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 402,
+  "total": 408,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -283,6 +283,60 @@
     },
     {
       "reseau": "Plan thermo-techno",
+      "id": "detendeur-automatique",
+      "titre": "Le détendeur automatique",
+      "ligne": null,
+      "resume": "Gare 4 de la ligne Les détendeurs : le détendeur automatique. Une membrane entre un ressort et la pression de l’évaporateur : il tient la basse pression constante. Utile sur les machines à charge constante, il se trompe quand la charge change.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.04",
+        "9.01",
+        "9.03",
+        "9.10"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/detendeur-automatique/",
+      "chemin": "packs/fluides/res/detendeur-automatique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "detendeur-egalisation-externe",
+      "titre": "L’égalisation externe",
+      "ligne": null,
+      "resume": "Gare 2 de la ligne Les détendeurs : l’égalisation externe. Dans un évaporateur à forte perte de charge, la pression baisse en route ; le tube d’égalisation amène sous la membrane la vraie pression de la sortie.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.04",
+        "9.01",
+        "9.02",
+        "9.10"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/detendeur-egalisation-externe/",
+      "chemin": "packs/fluides/res/detendeur-egalisation-externe/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "detendeur-electronique",
+      "titre": "Le détendeur électronique",
+      "ligne": null,
+      "resume": "Gare 6 de la ligne Les détendeurs : le détendeur électronique. Deux sondes mesurent à la sortie de l’évaporateur, un régulateur calcule la surchauffe et ouvre ou ferme la vanne (moteur pas à pas ou bobine par impulsions).",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.04",
+        "9.01",
+        "9.03",
+        "9.10"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/detendeur-electronique/",
+      "chemin": "packs/fluides/res/detendeur-electronique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
       "id": "detendeur-interactif",
       "titre": "Le détendeur thermostatique en détail",
       "ligne": null,
@@ -298,6 +352,61 @@
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/detendeur-interactif/",
       "chemin": "packs/fluides/res/detendeur-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "detendeur-mop",
+      "titre": "Le détendeur MOP",
+      "ligne": null,
+      "resume": "Gare 3 de la ligne Les détendeurs : le détendeur MOP. Le bulbe a une charge limitée : sa pression ne monte plus au-delà d’un plafond, la basse pression reste plafonnée et le moteur du compresseur ne force pas au démarrage d’une chambre chaude.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.04",
+        "9.01",
+        "9.02",
+        "9.10"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/detendeur-mop/",
+      "chemin": "packs/fluides/res/detendeur-mop/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "detendeurs-famille",
+      "titre": "La famille des détendeurs",
+      "ligne": null,
+      "resume": "Gare 0 de la ligne Les détendeurs : pourquoi détendre, les deux missions, et la famille capillaire, automatique, thermostatique, électronique. Qui règle quoi, et quel détendeur pour quelle machine.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.04",
+        "9.01",
+        "9.03",
+        "9.10"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/detendeurs-famille/",
+      "chemin": "packs/fluides/res/detendeurs-famille/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "detente-capillaire",
+      "titre": "La détente par tube capillaire",
+      "ligne": null,
+      "resume": "Gare 5 de la ligne Les détendeurs : la détente par tube capillaire. Un tube de cuivre très fin et très long : sa perte de charge fait la détente. Aucune pièce mobile, aucun réglage ; les pressions s’égalisent à l’arrêt ; la charge se pèse exactement.",
+      "niveaux": null,
+      "competences": [
+        "1.02",
+        "1.04",
+        "5.05",
+        "5.06",
+        "9.01",
+        "9.10"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/detente-capillaire/",
+      "chemin": "packs/fluides/res/detente-capillaire/"
     },
     {
       "reseau": "Plan thermo-techno",

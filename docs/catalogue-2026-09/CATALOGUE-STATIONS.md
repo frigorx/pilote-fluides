@@ -2,9 +2,9 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**402 stations** réparties en 15 réseaux.
+**408 stations** réparties en 15 réseaux.
 
-## Plan thermo-techno — 104 stations
+## Plan thermo-techno — 110 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -25,7 +25,13 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le dégivrage par gaz chauds · Les régules · inerweb.fr](https://inerweb.fr/packs/fluides/res/degivrage-gaz-chauds/) | — | — | — | Cette station locale interactive a besoin de JavaScript pour fonctionner. |
 | [Le dégivrage par inversion de cycle · Les régules · inerweb.fr](https://inerweb.fr/packs/fluides/res/degivrage-inversion-cycle/) | — | — | — | Cette station locale interactive a besoin de JavaScript pour fonctionner. |
 | [Le dégivrage naturel · Les régules · inerweb.fr](https://inerweb.fr/packs/fluides/res/degivrage-naturel/) | — | — | — | Cette station locale interactive a besoin de JavaScript pour fonctionner. |
+| [Le détendeur automatique](https://inerweb.fr/packs/fluides/res/detendeur-automatique/) | — | — | 1.02 1.04 9.01 9.03 9.10 | Gare 4 de la ligne Les détendeurs : le détendeur automatique. Une membrane entre un ressort et la pression de l’évaporateur : il tient la basse pression constante. Utile sur les machines à charge constante, il se trompe quand la charge change. |
+| [L’égalisation externe](https://inerweb.fr/packs/fluides/res/detendeur-egalisation-externe/) | — | — | 1.02 1.04 9.01 9.02 9.10 | Gare 2 de la ligne Les détendeurs : l’égalisation externe. Dans un évaporateur à forte perte de charge, la pression baisse en route ; le tube d’égalisation amène sous la membrane la vraie pression de la sortie. |
+| [Le détendeur électronique](https://inerweb.fr/packs/fluides/res/detendeur-electronique/) | — | — | 1.02 1.04 9.01 9.03 9.10 | Gare 6 de la ligne Les détendeurs : le détendeur électronique. Deux sondes mesurent à la sortie de l’évaporateur, un régulateur calcule la surchauffe et ouvre ou ferme la vanne (moteur pas à pas ou bobine par impulsions). |
 | [Le détendeur thermostatique en détail](https://inerweb.fr/packs/fluides/res/detendeur-interactif/) | — | — | 1.04 9.03 9.09 9.10 10.01 | Parcours interactif pour comprendre le détendeur thermostatique, la surchauffe et le réglage de l’alimentation de l’évaporateur. |
+| [Le détendeur MOP](https://inerweb.fr/packs/fluides/res/detendeur-mop/) | — | — | 1.02 1.04 9.01 9.02 9.10 | Gare 3 de la ligne Les détendeurs : le détendeur MOP. Le bulbe a une charge limitée : sa pression ne monte plus au-delà d’un plafond, la basse pression reste plafonnée et le moteur du compresseur ne force pas au démarrage d’une chambre chaude. |
+| [La famille des détendeurs](https://inerweb.fr/packs/fluides/res/detendeurs-famille/) | — | — | 1.02 1.04 9.01 9.03 9.10 | Gare 0 de la ligne Les détendeurs : pourquoi détendre, les deux missions, et la famille capillaire, automatique, thermostatique, électronique. Qui règle quoi, et quel détendeur pour quelle machine. |
+| [La détente par tube capillaire](https://inerweb.fr/packs/fluides/res/detente-capillaire/) | — | — | 1.02 1.04 5.05 5.06 9.01 9.10 | Gare 5 de la ligne Les détendeurs : la détente par tube capillaire. Un tube de cuivre très fin et très long : sa perte de charge fait la détente. Aucune pièce mobile, aucun réglage ; les pressions s’égalisent à l’arrêt ; la charge se pèse exactement. |
 | [Diagnostic : lire l’architecture et le retour](https://inerweb.fr/packs/fluides/res/diagnostic-circuit-huile/) | — | — | — | — |
 | [Diagnostic : pression, distribution et conclusion](https://inerweb.fr/packs/fluides/res/diagnostic-circuit-huile-conclure/) | — | — | — | — |
 | [Diagramme enthalpique frigorifique interactif](https://inerweb.fr/packs/fluides/res/diagramme-enthalpique/) | — | — | — | Apprenez à lire un diagramme enthalpique frigorifique log p-h, courbe par courbe, avec parcours interactifs, quiz et exercices gratuits. |
