@@ -45,6 +45,10 @@ const INDEXEES = [
   { fichier: "voyage/bietage.html", url: "https://inerweb.fr/voyage/bietage.html" },
   { fichier: "voyage/glissement.html", url: "https://inerweb.fr/voyage/glissement.html" },
   { fichier: "voyage/eau-glacee.html", url: "https://inerweb.fr/voyage/eau-glacee.html" },
+  // Le tour de main (07/10/2026) : le plan des gestes et le jeu de poste des pressostats.
+  // Les fiches élève n'y sont pas : elles attendent la relecture de F. Henninot (hors ligne).
+  { fichier: "tour-de-main/index.html", url: "https://inerweb.fr/tour-de-main/" },
+  { fichier: "tour-de-main/simulateur/pressostat.html", url: "https://inerweb.fr/tour-de-main/simulateur/pressostat.html" },
   {
     fichier: "packs/fluides/res/chaleur-interactive/index.html",
     url: "https://inerweb.fr/packs/fluides/res/chaleur-interactive/index.html",

@@ -211,6 +211,35 @@ window.INERWEB_RESEAUX = [
       { titre: "📄 Les fiches de poste", href: "cuivrezo/papier/fiches-de-poste.html" } /* le PDF est exclu du dépôt (.gitignore) : 404 en ligne, 03/10 */
     ]
   },
+  /* Le tour de main (ex-ManiRézo, F. Henninot 07/10/2026 : « une porte à part entière », pour qu'un
+     élève trouve le réglage des pressostats sans lien direct). Jamais « ManiRézo » ni « Rézo ».
+     Le plan renvoie surtout à des stations qui vivent ailleurs (déjà comptées par leur réseau) :
+     seul le jeu de poste compte comme station ici. Images : capture du banc du jeu de poste et
+     capture du plan (07/10). */
+  {
+    id: "tour-de-main",
+    nom: "Le tour de main",
+    accroche: "La gestuelle professionnelle",
+    court: "Le tour de main",
+    emoji: "🔧",
+    adresse: "tour-de-main/index.html",
+    couleur: "#1f6fa8" /* l'accent de la page du tour de main (tour-de-main/moteur/accueil.css) */,
+    sousTitre: "Les gestes qui demandent un réglage précis, avec leurs règles : on calcule, on règle, puis on prouve à l’instrument. En premier, le jeu de poste du réglage des pressostats (sept réglages, de la sécurité à la chambre froide) ; puis le manifold, l’azote, la récupération du fluide, le détendeur, les KV, la VAT et le relais thermique.",
+    niveaux: "CAP · Bac pro",
+    etat: "en relecture" /* la page porte encore le bandeau « Prototype — document de travail » (marque.js data-prototype) */,
+    catalogue: [],
+    stations: 1,
+    lignes: 4,
+    chiffres: "1 jeu de poste · 23 stations · 4 lignes",
+    vignette: "icones/reseaux/tour-de-main.webp",
+    illustration: "icones/reseaux/illustrations/tour-de-main.webp",
+    entree: { titre: "Le réglage des pressostats", href: "tour-de-main/simulateur/pressostat.html" },
+    raccourcis: [
+      { titre: "Le plan des gestes", href: "tour-de-main/index.html" },
+      { titre: "Récupérer le fluide", href: "packs/fluides/res/recuperation-fluide-interactive/" },
+      { titre: "Le détendeur thermostatique", href: "packs/fluides/res/detendeur-interactif/" }
+    ]
+  },
   {
     id: "cartoclim",
     nom: "CartoClim",
