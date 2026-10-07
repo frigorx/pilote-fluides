@@ -100,9 +100,10 @@ Moteur.lancer(api => {
       S.th = k.tmax - 0.5; S.t0 = S.th - k.dt; S.comp = true; S.contact = true; S.marche = false; S.histo = []; S.p = pRos(S.t0);
     } else {
       const regul = cas === 'BPR', table = regul ? R.CAS_BPR : R.CAS_BP;
+      // S.t : température d'évaporation (sécurité) ou consigne de la chambre (pump-down) ; la ligne lue pour l'enclenchement
       S.fluide = un(Object.keys(table)); S.t = un(table[S.fluide]);
-      if (regul) S.tch = S.t + R.DT_CHAMBRE;
-      const out = regul ? r1(R.COUPURE_BP + R.ECART_REGUL) : R.COUPURE_BP, h = r1(ligne(S.t)[1]);
+      if (regul) S.ecart = un(R.ECARTS_REGUL);
+      const out = regul ? r1(R.COUPURE_BP + S.ecart) : R.COUPURE_BP, h = r1(ligne(S.t)[1]);
       S.cible = { in: h, out, diff: r1(h - out) }; S.cibleFace = { ech: h, diff: S.cible.diff };
       S.face = { ech: 4, diff: 2 };
       // jamais plus bas que −0,2 : la coupure (cible + écart) doit rester mesurable à l'azote, au-dessus de 0
@@ -356,8 +357,8 @@ Moteur.lancer(api => {
         <p class="aide">Extraits de la table du fluide, pressions effectives.${R449() ? ' R-449A : côté BP, on lit la rosée.' : ''} Le manomètre porte aussi l’échelle en °C.</p>`);
     }
     const regul = S.cas === 'BPR';
-    return texte(`<p><b>Installation</b>${regul ? ' en pump-down' : ''} : ${S.fluide}, évaporation à <b>${S.t} °C</b>${regul ? `, chambre à <b>${S.tch} °C</b>` : ''}.</p>
-      <p><b>La règle</b> : ${regul ? `coupure (CUT OUT) au-dessus de la BP de sécurité (${bar(R.COUPURE_BP)} bar), ici de ${bar(R.ECART_REGUL)} bar ; enclenchement (CUT IN) à la pression de saturation de l’évaporation, toujours sous celle de la chambre.`
+    return texte(`<p><b>Installation</b>${regul ? ' en pump-down' : ''} : ${S.fluide}, ${regul ? `chambre réglée à <b>${S.t} °C</b> (consigne du thermostat), BP de sécurité à ${bar(R.COUPURE_BP)} bar` : `évaporation à <b>${S.t} °C</b>`}.</p>
+      <p><b>La règle</b> : ${regul ? `coupure (CUT OUT) au-dessus de la BP de sécurité, de 0,2 à 0,5 bar : ici <b>${bar(S.ecart)} bar</b> plus haut ; enclenchement (CUT IN) à la pression de saturation de la <b>consigne</b> de la chambre.`
         : `coupure (CUT OUT) à ${bar(R.COUPURE_BP)} bar ; enclenchement (CUT IN) à la pression de saturation de l’évaporation.`}</p>
       ${tableau(R.TABLES[S.fluide], R449() ? '<th>P rosée (BP)</th><th>P bulle</th>' : '<th>P (bar)</th>')}
       <p class="aide">Pressions effectives en bar : celles que lit le manomètre.${R449() ? ' R-449A : côté BP, on lit la rosée.' : ''}</p>`);
@@ -373,7 +374,7 @@ Moteur.lancer(api => {
       { t: `${bar(c.in)} bar`, ok: true, pourquoi: `La ligne ${S.t} °C${R449() ? ', colonne rosée' : ''} : ${bar(l[1])} bar, soit ${bar(c.in)} bar.` },
       { t: `${bar(r1(voisin[1]))} bar`, ok: false, faute: 'Mauvaise ligne lue dans la table', pourquoi: `C’est la ligne ${voisin[0]} °C. Cherchez la ligne ${S.t} °C.` },
       { t: `${bar(autre)} bar`, ok: false, faute: R449() ? 'Bulle lue au lieu de la rosée côté BP' : 'Mauvaise ligne lue dans la table',
-        pourquoi: R449() ? 'C’est la colonne bulle. Côté BP, pour le R-449A, on lit la rosée.' : 'Ce n’est pas la ligne de la température d’évaporation.' }
+        pourquoi: R449() ? 'C’est la colonne bulle. Côté BP, pour le R-449A, on lit la rosée.' : `Ce n’est pas la ligne ${S.cas === 'BPR' ? 'de la consigne de la chambre' : 'de la température d’évaporation'}.` }
     ], cle);
   }
   function qDiffBP(cle) {
@@ -428,19 +429,18 @@ Moteur.lancer(api => {
       ];
     }
     if (S.cas === 'BPR') {
-      const pch = ligne(S.tch)[1];
       return [
         { q: 'Enclenchement (CUT IN) : quelle pression ?', l: qEnclenchementBP('c0') },
         { q: 'Coupure (CUT OUT) : quelle pression ?', l: melangeFixe([
           { t: `${bar(R.COUPURE_BP)} bar`, ok: false, faute: 'Coupure de régulation au niveau de la sécurité', pourquoi: 'C’est la coupure de la BP de sécurité. Si la régulation coupait au même endroit, la sécurité arrêterait le compresseur à chaque cycle.' },
-          { t: `${bar(c.out)} bar`, ok: true, pourquoi: `${bar(R.COUPURE_BP)} + ${bar(R.ECART_REGUL)} = ${bar(c.out)} bar : la régulation coupe avant que la sécurité n’ait à le faire.` },
-          { t: `${bar(R.ECART_REGUL)} bar`, ok: false, faute: 'Écart pris pour la coupure', pourquoi: `${bar(R.ECART_REGUL)} bar, c’est l’écart. La coupure, c’est ${bar(R.COUPURE_BP)} + ${bar(R.ECART_REGUL)}.` }
+          { t: `${bar(c.out)} bar`, ok: true, pourquoi: `${bar(R.COUPURE_BP)} + ${bar(S.ecart)} = ${bar(c.out)} bar : la régulation coupe avant que la sécurité n’ait à le faire.` },
+          { t: `${bar(S.ecart)} bar`, ok: false, faute: 'Écart pris pour la coupure', pourquoi: `${bar(S.ecart)} bar, c’est l’écart. La coupure, c’est ${bar(R.COUPURE_BP)} + ${bar(S.ecart)}.` }
         ], 'c1') },
         { q: 'Différentiel (DIFF) : combien ?', l: qDiffBP('c2') },
-        { q: `La chambre est à ${S.tch} °C : à saturation, ${bar(pch)} bar. Pourquoi l’enclenchement (${bar(c.in)} bar) doit-il rester en dessous ?`, l: melangeFixe([
-          { t: 'Électrovanne rouverte, la pression remonte vers celle de la chambre : elle doit dépasser l’enclenchement pour relancer le compresseur', ok: true, pourquoi: `Au repos, l’évaporateur se met à la température de la chambre. Si l’enclenchement dépassait ${bar(pch)} bar, la pression ne l’atteindrait jamais : le compresseur ne repartirait pas.` },
-          { t: 'Pour protéger le compresseur', ok: false, faute: 'Rôle de la BP de régulation mal compris', pourquoi: 'Protéger, c’est la BP de sécurité. Ici, c’est pour que le compresseur puisse repartir.' },
-          { t: 'Pour que le compresseur ne s’arrête jamais', ok: false, faute: 'Rôle de l’enclenchement mal compris', pourquoi: 'L’enclenchement règle la relance, pas l’arrêt. S’il était trop haut, le compresseur ne repartirait plus.' }
+        { q: `Pourquoi l’enclenchement (${bar(c.in)} bar) à la saturation de la consigne, ${S.t} °C ?`, l: melangeFixe([
+          { t: 'Le thermostat rouvre l’électrovanne quand la chambre dépasse sa consigne : la pression passe au-dessus et relance le compresseur', ok: true, pourquoi: 'C’est le thermostat qui commande la chambre. Tant qu’elle est à sa consigne, une petite fuite de l’électrovanne n’atteint pas l’enclenchement : pas de relance pour rien.' },
+          { t: 'Pour protéger le compresseur', ok: false, faute: 'Rôle de la BP de régulation mal compris', pourquoi: 'Protéger, c’est la BP de sécurité. Ici, on règle quand le compresseur repart.' },
+          { t: 'Pour que le compresseur reparte avant que la chambre se réchauffe', ok: false, faute: 'Relance avant la demande du thermostat', pourquoi: 'Plus bas, une fuite de l’électrovanne relancerait le compresseur sans demande du thermostat : des courts-cycles, une régulation par la pression à la place du thermostat.' }
         ], 'c3') },
         { q: `La coupure à ${bar(c.out)} bar, au ${S.fluide} : quelle température d’évaporation ?`, l: qConversion(c.out, 'ros', 'c4') }
       ];

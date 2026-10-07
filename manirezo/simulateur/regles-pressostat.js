@@ -31,12 +31,13 @@ window.REGLES_PRESSOSTAT = {
   /* KP5 automatique 060-117166 : 8 à 32 bar, DIFF 1,8 à 6 bar (SOURCES-METIER de la station pressostat-hp-kp5) */
   KP5A: { min: 8, max: 32, dmin: 1.8, dmax: 6 },
 
-  /* BP de régulation (pump-down) — « PROCEDURE REGLAGE PRESSOSTAT BP REGULATION » de F. Henninot : enclenchement
-     selon la température d'évaporation et TOUJOURS sous la pression de saturation de la chambre ; coupure AU-DESSUS
-     de celle de la BP de sécurité (décision de Franck, 06/10 : l'écart est donné par le cas ; son cours MFER : coupure
-     0,2 à 0,8 bar). Écart retenu : 0,5 bar ; chambre à T évap + 10 K. Cas gardés : DIFF ≥ 0,7 bar (KP1). */
-  ECART_REGUL: 0.5, DT_CHAMBRE: 10,
-  CAS_BPR: { 'R-134a': [-5, 0], 'R-449A': [-20, -15, -10, -5], 'R-290': [-20, -15, -10, -5] },
+  /* BP de régulation (pump-down à deux pressostats) — Franck, 06/10 (nuit) : enclenchement = pression de saturation à la
+     température de CONSIGNE de la chambre (le compresseur repart quand le thermostat rouvre l'électrovanne, pas sur une
+     fuite) ; coupure AU-DESSUS de celle de la BP de sécurité, de 0,2 à 0,5 bar, l'écart donné par le cas. Recoupé :
+     Bitzer, pump-down B55 ≠ sécurité B11, enclenchement sous la saturation à l'arrêt ; aucun constructeur ne chiffre
+     l'écart. Consignes de la table gardées si DIFF tient dans le KP1 (0,7 à 4 bar) pour tous les écarts. */
+  ECARTS_REGUL: [0.2, 0.3, 0.4, 0.5],
+  CAS_BPR: { 'R-134a': [0, 5], 'R-449A': [-20, 0], 'R-290': [-20, 0] },
   /* HP de régulation (ventilateur) — « PROCEDURE REGLAGE PRESSOSTAT HP REGULATION » : mise en route du ventilateur
      aux environs de la pression de saturation de la condensation visée, différentiel 3 bar (R134a, 40 °C : 9 / 6 bar).
      Pressions effectives [T °C, rosée, bulle] ; R-449A : côté HP, on lit la bulle (décision de Franck, 06/10). */
