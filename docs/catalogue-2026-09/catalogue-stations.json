@@ -4545,28 +4545,28 @@
       "chemin": "cuivrezo/stations/4-2/"
     },
     {
-      "reseau": "ManiRézo",
-      "id": "manirezo",
-      "titre": "ManiRézo · la gestuelle professionnelle",
+      "reseau": "Le tour de main",
+      "id": "tour-de-main",
+      "titre": "Le tour de main · la gestuelle professionnelle",
       "ligne": null,
-      "resume": "ManiRézo : la gestuelle professionnelle du frigoriste. Manifold, azote, récupération du fluide, réglage des pressostats, du détendeur et des régulateurs KV, VAT, mesure d’intensité, relais thermique.",
+      "resume": "Le tour de main : la gestuelle professionnelle du frigoriste. Manifold, azote, récupération du fluide, réglage des pressostats, du détendeur et des régulateurs KV, VAT, mesure d’intensité, relais thermique.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
-      "url": "https://inerweb.fr/manirezo/",
-      "chemin": "manirezo/"
+      "url": "https://inerweb.fr/tour-de-main/",
+      "chemin": "tour-de-main/"
     },
     {
-      "reseau": "ManiRézo",
+      "reseau": "Le tour de main",
       "id": "pressostat",
-      "titre": "Le réglage des pressostats · ManiRézo",
+      "titre": "Le réglage des pressostats · Le tour de main",
       "ligne": null,
       "resume": "Calculer le réglage d’un pressostat BP ou HP, de sécurité ou de régulation, le prérégler sur la face, puis le prouver au banc d’azote, au manomètre, trois cycles justes de suite.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
-      "url": "https://inerweb.fr/manirezo/simulateur/pressostat.html",
-      "chemin": "manirezo/simulateur/pressostat.html"
+      "url": "https://inerweb.fr/tour-de-main/simulateur/pressostat.html",
+      "chemin": "tour-de-main/simulateur/pressostat.html"
     },
     {
       "reseau": "FormaRézo",
@@ -5214,7 +5214,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/index.html"
+      "chemin": "C:\\git\\_wt-tour-de-main\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -5226,7 +5226,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "C:\\git\\_wt-tour-de-main\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -5238,7 +5238,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "C:\\git\\_wt-tour-de-main\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -5250,7 +5250,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "C:\\git\\_wt-tour-de-main\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -5262,7 +5262,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "C:\\git\\_wt-tour-de-main\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -5274,7 +5274,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/td-triphase.html"
+      "chemin": "C:\\git\\_wt-tour-de-main\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

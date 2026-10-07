@@ -528,7 +528,7 @@ Moteur.lancer(api => {
   const choixCas = actuel => `<div class="choix">${Object.keys(CAS).map(k => btn(`<b>${k === actuel ? 'Rejouer : ' : ''}${CAS[k].titre}</b>${CAS[k].sous}`, 'niveau', CAS[k].niveau, k === actuel ? '' : 'btn-plein')).join('')}</div>`;
 
   const ETAPES = [
-    { id: 'accueil', temps: 0, petit: 'ManiRézo · les jeux de poste', titre: 'Le réglage des pressostats',
+    { id: 'accueil', temps: 0, petit: 'Le tour de main · les jeux de poste', titre: 'Le réglage des pressostats',
       zoom: () => ScenePressostat.vueFace(S),
       ui: () => `<p class="intro">Vous calculez le réglage, vous le préréglez sur le pressostat, puis vous le prouvez au banc d’azote, au manomètre, trois fois de suite. Chaque erreur est expliquée sur le moment.</p>${choixCas()}` },
 

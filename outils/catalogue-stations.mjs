@@ -341,17 +341,17 @@ for (const nom of dossiers('cartoclim/stations')) {
   }
 }
 
-/* --- ManiRézo : l'accueil et ses jeux de poste (06/10/2026) -------------
+/* --- Le tour de main (ex-ManiRézo, renommé le 07/10/2026) : l'accueil et ses jeux de poste
    Les autres stations du plan sont des portes vers d'autres réseaux, déjà
-   relevées chez eux ; seules les pages propres à ManiRézo entrent ici. */
+   relevées chez eux ; seules les pages propres au Tour de main entrent ici. */
 for (const p of [
-  { id: 'manirezo', fichier: 'index.html', chemin: 'manirezo/' },
-  { id: 'pressostat', fichier: 'simulateur/pressostat.html', chemin: 'manirezo/simulateur/pressostat.html' },
+  { id: 'tour-de-main', fichier: 'index.html', chemin: 'tour-de-main/' },
+  { id: 'pressostat', fichier: 'simulateur/pressostat.html', chemin: 'tour-de-main/simulateur/pressostat.html' },
 ]) {
-  const html = lire(path.join(ROOT, 'manirezo', p.fichier));
+  const html = lire(path.join(ROOT, 'tour-de-main', p.fichier));
   if (!html) continue;
   ajouter({
-    reseau: 'ManiRézo',
+    reseau: 'Le tour de main',
     id: p.id,
     titre: titreHtml(html),
     resume: descriptionHtml(html) || phrase(premierParagraphe(html)),

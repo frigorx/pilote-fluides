@@ -389,12 +389,12 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le chapeau de gendarme](https://inerweb.fr/cuivrezo/stations/4-1/) | Ligne 4 — Les pièces complexes | — | — | Un contournement symétrique, branches alignées |
 | [La baïonnette](https://inerweb.fr/cuivrezo/stations/4-2/) | Ligne 4 — Les pièces complexes | — | — | Deux branches parallèles, décalées à la cote |
 
-## ManiRézo — 2 stations
+## Le tour de main — 2 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
-| [ManiRézo · la gestuelle professionnelle](https://inerweb.fr/manirezo/) | — | — | — | ManiRézo : la gestuelle professionnelle du frigoriste. Manifold, azote, récupération du fluide, réglage des pressostats, du détendeur et des régulateurs KV, VAT, mesure d’intensité, relais thermique. |
-| [Le réglage des pressostats · ManiRézo](https://inerweb.fr/manirezo/simulateur/pressostat.html) | — | — | — | Calculer le réglage d’un pressostat BP ou HP, de sécurité ou de régulation, le prérégler sur la face, puis le prouver au banc d’azote, au manomètre, trois cycles justes de suite. |
+| [Le tour de main · la gestuelle professionnelle](https://inerweb.fr/tour-de-main/) | — | — | — | Le tour de main : la gestuelle professionnelle du frigoriste. Manifold, azote, récupération du fluide, réglage des pressostats, du détendeur et des régulateurs KV, VAT, mesure d’intensité, relais thermique. |
+| [Le réglage des pressostats · Le tour de main](https://inerweb.fr/tour-de-main/simulateur/pressostat.html) | — | — | — | Calculer le réglage d’un pressostat BP ou HP, de sécurité ou de régulation, le prérégler sur la face, puis le prouver au banc d’azote, au manomètre, trois cycles justes de suite. |
 
 ## FormaRézo — 1 stations
 
