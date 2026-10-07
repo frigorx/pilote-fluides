@@ -3,6 +3,28 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 07/10 — LA LIGNE « 🎚 LES DÉTENDEURS » (7 gares, feu vert de Franck : « tu as le droit de mettre à jour le site »)
+>
+> Sur le plan thermo-techno, bande à 2470 sous la régulation (`moteur/plan-donnees.js` → `DETENDEURS`, `plan.html`,
+> `suivant.js`, `plan-liste.mjs`) : 0 `detendeurs-famille/` (qui règle quoi) · 1 `detendeur-interactif/` refait en **3D**
+> (moteur d'ÉlectroRézo DÉJÀ sur le site, chargé par chemin relatif, modèle `3d/detendeur-3d.js` ; SVG d'avant en repli) ·
+> 2 `detendeur-egalisation-externe/` · 3 `detendeur-mop/` · 4 `detendeur-automatique/` · 5 `detente-capillaire/` ·
+> 6 `detendeur-electronique/`. Briques 2D communes et gabarit d'une gare : `packs/fluides/res/_detendeurs-commun/`
+> (`scenes-detendeurs.js`, **`MOULE.md` fait foi**). Chaque gare a son `tests/qa.mjs` (Playwright de `C:\git\hydrometro`).
+> 214 voix edge-tts (accord de Franck). Plan, captures, décisions : `CLAUDE-ESPACE-TRAVAIL\LIGNE-DETENDEURS\`.
+> **Décisions de Franck** : convention des forces — **violet `#8e44ad` = pression du bulbe** (bulbe → capillaire en vrai
+> tube → chambre au-dessus de la membrane → flèche), bleu = pression d'évaporation, gris acier = ressort, légende en HTML ;
+> tubes continus (aucun trait de paroi dans le passage du fluide) ; exemple du détendeur automatique = machines à glace
+> en écailles (pas la fontaine) ; bulbe « sur le dessus du tube » gardé.
+> **Pièges** : (1) la barre de `retour-accueil.js` entre dans le flux : une page à coque `100dvh` déborde — parade en fin
+> de `styles.css` de chaque gare (body en colonne) ; (2) `retour-accueil.mjs` dans un worktree réécrit ~775 pages
+> (clé recalculée) : ne garder que les pages neuves, clé ramenée à `43cc8eadb1` ; (3) les modules gardent
+> `voix-index.js?v=` figé : vérifier en ligne que l'index servi est le neuf ; (4) une pastille SVG grossie peut
+> tomber sur un tracé dans une autre gare : rejouer les SEPT `qa.mjs` après toute retouche du commun.
+> **Restes** : 3D serrée vers 800 px de large (légende à côté de l'image) ; banc 3D publié sans interrupteur
+> d'animations (page de test) ; PARKING de la ligne (flotteur, orifice calibré, bidirectionnel, charges du bulbe,
+> injection, distributeur, pompage) dans `LIGNE-DETENDEURS\task_plan.md`.
+
 > ## 06/10 (suite) — FILMS CLIMAT : UNE SEULE BARRE DE LECTURE (décision de F. Henninot : « fais une seule barre »)
 >
 > `film-ozone/` et `film-effet-de-serre/` : la barre du composant Claude Design est **invisible** (`visibility:hidden`,
