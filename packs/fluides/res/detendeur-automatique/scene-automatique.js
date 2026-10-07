@@ -275,7 +275,7 @@
       const w = Math.round(bn(Hh * ratio, reglage ? 460 : 580, reglage ? 880 : 1000) / 20) * 20;
       if (w === W) return;
       // les pastilles gardent à peu près la même taille À L'ÉCRAN (≈ 17 px), quelle que soit l'échelle du dessin
-      const echelle = r.width > 40 && r.height > 40 ? Math.min(r.width / w, r.height / Hh) : 0.7, ps = bn(Math.round(17 / echelle), 14, 30);
+      const echelle = r.width > 40 && r.height > 40 ? Math.min(r.width / w, r.height / Hh) : 0.7, ps = bn(Math.round(17 / echelle), 14, 34);
       W = w; svg.textContent = ""; inst = reglage ? construireReglage(svg, W, opt.exo, ps) : construire(svg, W, Object.assign({ ps: ps }, opt)); inst.maj(e, t, info);
     };
     if (window.ResizeObserver) new ResizeObserver(bati).observe(svg);

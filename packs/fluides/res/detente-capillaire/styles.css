@@ -220,3 +220,13 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
   .cp-plaque{grid-column:auto}
 }
 .cp-reglage input[type=range]:focus-visible{outline:3px solid rgba(255,107,53,.55);outline-offset:3px;border-radius:8px}
+
+/* La barre « retour au réseau » (moteur/retour-accueil.js) s'insère dans le flux, au-dessus de l'en-tête : la page
+   prend la hauteur qui reste au lieu de 100dvh, sinon elle déborde de la hauteur de la barre. Écran seulement. */
+@media screen {
+  body { display: flex; flex-direction: column; min-height: 100dvh; }
+  body > main#app { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+  body > main#app > .home { flex: 1 1 auto; min-height: 0; }
+  body.course-running { height: 100dvh; }
+  body.course-running .course-shell { flex: 1 1 0; min-height: 0; height: auto; }
+}

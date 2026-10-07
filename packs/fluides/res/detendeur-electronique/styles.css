@@ -242,3 +242,15 @@ html.lisibilite-agrandie .ds-figure{height:auto}html.lisibilite-agrandie .ds-des
   .ds-onglets{display:flex;gap:6px}.ds-onglets button{flex:1;border:2px solid var(--line);border-radius:12px;background:var(--paper);color:var(--navy);font-weight:800;font-size:var(--corps);padding:5px 6px;cursor:pointer}.ds-onglets button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
   .el-duo{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr)}.el-cel:not(.actif){display:none}.el-cel .ds-cel-tete{display:none}
 }
+
+/* La barre « retour au réseau » (moteur/retour-accueil.js) s'insère dans le flux, au-dessus de l'en-tête : la page
+   prend la hauteur qui reste au lieu de 100dvh, sinon elle déborde de la hauteur de la barre. Écran seulement. */
+@media screen {
+  body { display: flex; flex-direction: column; min-height: 100dvh; }
+  body > main#app { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+  body > main#app > .home { flex: 1 1 auto; min-height: 0; }
+  body.course-running { height: 100dvh; }
+  body.course-running .course-shell { flex: 1 1 0; min-height: 0; height: auto; }
+}
+/* Carte d'identité : la coupe y est limitée en hauteur ; les pastilles HP / BP grandissent de 4 % pour rester ≥ 13 px. */
+.ds-dessin.el-id .ds-pastille { transform-box: fill-box; transform-origin: center; transform: scale(1.04); }

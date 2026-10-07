@@ -247,7 +247,7 @@
       }
       zones.evaporateur = [X0 - 6, 186, Wl - X0 + 6, 110];
     }
-    if (etiquettes) { D.pastille(g, -DX + 28, 243, "HP", ROUGE, 24, "middle"); D.pastille(g, X0 + 40, 172, "BP", NAVY, 24, "middle"); }
+    if (etiquettes) { D.pastille(g, -DX + 28, 243, "HP", ROUGE, 26, "middle"); D.pastille(g, X0 + 40, 172, "BP", NAVY, 24, "middle"); }
     const voirZones = anneaux(el("g", {}, g), zones);
 
     // ----- l'état : retard du système (la nappe suit la surchauffe), rotor, claquement du clapet -----
@@ -370,7 +370,7 @@
         '<li class="el-fleche" aria-hidden="true">↓</li>' +
         '<li class="el-acteur" data-agit="moteur"><span class="el-ic">' + ic("electronique") + '</span><span class="el-nom"><b>La vanne</b><small>s’ouvre ou se ferme sur ordre</small></span></li>' +
       '</ol></div>' +
-      '<p class="ds-explic" aria-live="off"></p><p class="ds-regle">il règle : <strong>la surchauffe, calculée</strong><br><a class="ds-lien" href="../regulateur-electronique-interactif/index.html">Le régulateur électronique (sondes, bornier, paramètres)</a> · En climatisation : <a class="ds-lien" href="../../../../cartoclim/stations/2-5-detendre/index.html">CartoClim 2.5 « Détendre »</a></p>';
+      '<p class="ds-explic" aria-live="off"></p><p class="ds-regle">il règle : <strong>la surchauffe, calculée</strong><br>Voir aussi : <a class="ds-lien" href="../regulateur-electronique-interactif/index.html">le régulateur</a> · <a class="ds-lien" href="../../../../cartoclim/stations/2-5-detendre/index.html">CartoClim 2.5</a></p>';
     hote.appendChild(carte);
     const dessin = carte.querySelector(".ds-dessin"), host = carte.querySelector(".el-coupe"), explic = carte.querySelector(".ds-explic");
     const acteurs = [...carte.querySelectorAll(".el-acteur")];
