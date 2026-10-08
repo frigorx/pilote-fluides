@@ -45,6 +45,9 @@ const FICHIERS_VERSIONNES = [
   // 27/08/2026 (AE-5) — l'encodeur QR. Un navigateur qui en servirait une
   // vieille version dessinerait des codes que personne ne peut scanner.
   "moteur/qr.js",
+  // 08/10/2026 — la liste des réseaux, lue par decouvrir.html : un réseau
+  // ajouté doit y apparaître sans attendre que le cache du navigateur expire.
+  "moteur/reseaux.js",
   // 26/08/2026 — le moteur d'accès enseignant. C'est LUI qui décide si un
   // coffre s'ouvre : une version périmée servie par un navigateur serait le
   // pire des caches. Il est donc versionné comme les autres.
@@ -94,6 +97,9 @@ const PAGES = [
   // F. Henninot : « aujourd'hui on a des codes mais on ne sait pas à quoi
   // ils servent ». Elle est le point d'entrée de l'espace enseignant.
   "comprendre-les-codes.html",
+  // 08/10/2026 — le parcours découverte des enseignants (F. Henninot : « un
+  // tutoriel complet de prise en main d'inerWeb »). Il lit moteur/reseaux.js.
+  "decouvrir.html",
 ];
 // 23/08/2026 — legislation/index.html n'entre PAS dans PAGES : le réseau
 // Législation est un SATELLITE (décision F. Henninot : « presque un autre

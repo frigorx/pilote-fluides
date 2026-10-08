@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://inerweb.fr/decouvrir.html">
+<title>Découvrir inerWeb — le parcours enseignant</title>
+<meta name="description" content="Prendre en main inerWeb en une quinzaine d’étapes : ce que c’est, ce que ça apporte à vos cours, comment s’en servir demain avec vos élèves. Pour les enseignants, les formateurs et toute personne qui enseigne le froid, la climatisation et les énergies.">
+<meta property="og:title" content="Découvrir inerWeb — le parcours enseignant">
+<meta property="og:description" content="Ce qu’est inerWeb, ce qu’il apporte à vos cours, et comment vous en servir demain avec vos élèves.">
+<meta property="og:image" content="https://inerweb.fr/quartier/apercu.jpg">
+<style>
+  /* Charte de formateurs.html : texte #10233c, carte #fffdf8, orange #ff6b35. */
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --orange-clair:#ffe2d6;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --vert:#166534; --vert-clair:#dcfce7;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:150px; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; text-decoration:none; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:16px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px; border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+  .nav a.ici { border-bottom-color:var(--orange); }
+  .page { max-width:980px; margin:0 auto; padding:0 20px 40px; }
+  h1 { margin:28px 0 6px; font-family:var(--titre); font-size:31px; line-height:1.25; color:var(--bleu); }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0 0 18px; color:var(--mut); max-width:44em; }
+  .chapo strong { color:var(--txt); }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:23px; line-height:1.3; margin:0; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:18px; margin:0 0 6px; }
+  .bloc { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r); box-shadow:var(--ombre); }
+
+  /* L'état du projet : dit à chaque fois, en haut et en bas (F. Henninot, 08/10/2026). */
+  .etat { border-left:5px solid var(--orange); background:var(--orange-clair); border-radius:10px;
+          padding:14px 18px; margin:0 0 22px; }
+  .etat strong.t { display:block; font-family:var(--titre); color:var(--bleu); margin-bottom:2px; }
+  .etat p { margin:0; }
+
+  /* En bref */
+  .bref { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:0 0 26px; }
+  .bref .bloc { padding:14px 16px; }
+  .bref .em { font-size:28px; line-height:1; }
+  .bref b { display:block; font-family:var(--titre); color:var(--bleu); margin:6px 0 2px; }
+  .bref span { font-size:15.5px; color:var(--mut); }
+
+  /* Qui êtes-vous ? — des boutons, pas de menu déroulant */
+  .profil { padding:18px 20px; margin:0 0 18px; }
+  .profil p { margin:0 0 10px; font-family:var(--titre); font-weight:bold; color:var(--bleu); }
+  .choix { display:flex; flex-wrap:wrap; gap:10px; }
+  .choix button, .filtres button { font:inherit; font-size:16px; cursor:pointer; border-radius:999px;
+          padding:10px 18px; border:2px solid var(--bleu-clair); background:#fff; color:var(--bleu);
+          font-family:var(--titre); font-weight:bold; }
+  .choix button[aria-pressed="true"], .filtres button[aria-pressed="true"] { background:var(--bleu); color:#fff; border-color:var(--bleu); }
+  .conseil { margin:12px 0 0; font-size:15.5px; color:var(--mut); }
+
+  /* La barre d'avancement, toujours visible */
+  .avance { position:sticky; top:0; z-index:40; background:var(--fond); padding:10px 0 8px;
+            border-bottom:1px solid var(--ligne); margin:0 0 22px; }
+  .avance .haut { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .avance .compte { font-family:var(--titre); font-weight:bold; color:var(--bleu); white-space:nowrap; }
+  .jauge { flex:1; min-width:140px; height:12px; background:#e6ebf1; border-radius:999px; overflow:hidden; }
+  .jauge i { display:block; height:100%; width:0; background:var(--vert); transition:width .3s; }
+  .reste { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; font-size:14.5px; }
+  .reste a { text-decoration:none; background:#fff; border:1px solid var(--ligne); border-radius:999px;
+             padding:3px 10px; color:var(--bleu); }
+  .reste a.vu { background:var(--vert-clair); border-color:#9bd5ad; color:var(--vert); }
+  .reste a.reco { border-color:var(--orange); }
+
+  /* Les étapes */
+  .etape { padding:22px 24px; margin:0 0 20px; }
+  .etape.vu { border-color:#9bd5ad; }
+  .etape .tete { display:flex; align-items:center; gap:14px; margin-bottom:12px; flex-wrap:wrap; }
+  .num { flex:none; width:44px; height:44px; border-radius:50%; background:var(--bleu); color:#fff;
+         display:flex; align-items:center; justify-content:center; font-family:var(--titre);
+         font-weight:bold; font-size:19px; }
+  .etape.vu .num { background:var(--vert); }
+  .badge { font-size:14px; font-family:var(--titre); font-weight:bold; color:#a3360f;
+           background:var(--orange-clair); border-radius:999px; padding:3px 10px; display:none; }
+  .etape.reco .badge { display:inline-block; }
+  .corps { display:grid; grid-template-columns:260px 1fr; gap:22px; align-items:start; }
+  .corps .image { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:10px;
+                  border:1px solid var(--ligne); background:#fff; }
+  .corps .image.contient { object-fit:contain; padding:8px; }
+  .rubrique { margin:0 0 10px; }
+  .rubrique b { font-family:var(--titre); color:var(--bleu); }
+  .rubrique ul { margin:4px 0 0; padding-left:20px; }
+  .rubrique li { margin:3px 0; }
+  .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; align-items:center; }
+  .bouton { display:inline-block; padding:10px 20px; background:var(--bleu); color:#fff; font-weight:bold;
+            font-size:15.5px; text-decoration:none; border-radius:999px; font-family:var(--titre); }
+  .bouton:hover { background:var(--bleu-clair); color:#fff; }
+  .bouton.creux { background:#fff; color:var(--bleu); border:1.5px solid var(--bleu-clair); }
+  .bouton.creux:hover { background:#e7eff7; color:var(--bleu); }
+  .vu-btn { font:inherit; font-size:15.5px; cursor:pointer; border-radius:999px; padding:9px 18px;
+            border:2px dashed #9bd5ad; background:#fff; color:var(--vert); font-family:var(--titre); font-weight:bold; }
+  .vu-btn[aria-pressed="true"] { background:var(--vert); color:#fff; border-style:solid; border-color:var(--vert); }
+  .note { font-size:15.5px; color:var(--mut); margin:10px 0 0; }
+
+  /* Les réseaux (lus dans moteur/reseaux.js) */
+  .filtres { display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 14px; }
+  .filtres button { font-size:15px; padding:7px 14px; }
+  .grille { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:14px; }
+  .reseau { border:1px solid var(--ligne); border-radius:12px; background:#fff; overflow:hidden;
+            display:flex; flex-direction:column; border-top:5px solid var(--c, var(--bleu)); }
+  .reseau img { width:100%; aspect-ratio:16/9; object-fit:cover; background:#f3f5f8; }
+  .reseau .dedans { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .reseau h3 { margin:0; font-size:17px; }
+  .reseau .niv { font-size:14px; color:var(--mut); }
+  .reseau .st { font-size:15px; margin:0; }
+  .reseau .demain { font-size:15px; margin:0; background:#f4f8fc; border-radius:8px; padding:8px 10px; }
+  .reseau .demain b { color:var(--bleu); font-family:var(--titre); }
+  .reseau .liens { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:6px; }
+  .reseau .liens a { font-size:15px; font-weight:bold; }
+  .relecture { font-size:14px; font-weight:bold; color:#8a4b00; background:#fff3d6; border-radius:999px; padding:1px 8px; }
+
+  /* Les programmes et utilitaires */
+  .outils { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:14px; margin-top:6px; }
+  .outil { border:1px solid var(--ligne); border-radius:12px; background:#fff; padding:14px 16px; }
+  .outil .em { font-size:26px; line-height:1; }
+  .outil h3 { margin:6px 0 4px; font-size:17px; }
+  .outil p { margin:0 0 8px; font-size:15.5px; }
+  .outil a { font-weight:bold; font-size:15.5px; }
+
+  .fin { padding:22px 24px; margin:26px 0 0; text-align:center; }
+  .fin h2 { margin-bottom:8px; }
+
+  @media (max-width:760px) {
+    h1 { font-size:26px; }
+    .corps { grid-template-columns:1fr; }
+    .corps .image { aspect-ratio:16/9; }
+    .etape { padding:18px 16px; }
+    html { scroll-padding-top:70px; }
+    .reste { display:none; } /* sur téléphone : le compteur suffit, la liste est en bas de page */
+  }
+  @media print {
+    .avance, .choix, .vu-btn, .filtres { display:none; }
+    .etape { break-inside:avoid; box-shadow:none; }
+  }
+</style>
+<script defer src="moteur/retour-accueil.js?v=3c25e82f03"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="index.html" aria-label="inerweb.fr — accueil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerweb.fr">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="plan.html">Le plan</a>
+      <a href="galerie.html">Catalogue</a>
+      <a href="index.html#outils">Outils</a>
+      <a href="metier.html">Le métier</a>
+      <a class="ici" href="formateurs.html">Formateurs</a>
+      <a href="livres/">Livres</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+  <h1>Découvrir inerWeb : <em>le parcours enseignant</em></h1>
+  <p class="chapo">En une vingtaine de minutes, comprenez <strong>ce qu’est inerWeb</strong>, <strong>ce qu’il peut apporter à vos cours</strong> et <strong>comment vous en servir demain</strong> avec vos élèves. Ce parcours est fait pour les enseignants, les formateurs et toute personne qui enseigne le froid, la climatisation et les énergies. Chaque étape ouvre la ressource dans un nouvel onglet : ce parcours reste ouvert, et il retient ce que vous avez déjà vu.</p>
+
+  <div class="etat" role="note">
+    <strong class="t">Un écosystème en construction</strong>
+    <p>inerWeb <strong>évolue encore</strong> chaque semaine. Les livres sont pour l’instant proposés <strong>en extraits</strong> : ils seront édités et publiés dès qu’ils auront été relus, corrigés et reliés. Le système est publié et <strong>en phase de test</strong> : vos retours sont attendus avec impatience (<a href="mailto:inerweb.fh@gmail.com?subject=Retour%20sur%20inerWeb">inerweb.fh@gmail.com</a>).</p>
+  </div>
+
+  <div class="bref">
+    <div class="bloc"><div class="em">🔓</div><b>Gratuit, sans compte</b><span>Les élèves ouvrent un cours sans inscription ni installation, sur ordinateur, tablette ou téléphone.</span></div>
+    <div class="bloc"><div class="em">🚇</div><b>Des cours en stations</b><span>Chaque notion est une station interactive, rangée sur des lignes comme un plan de métro.</span></div>
+    <div class="bloc"><div class="em">🎓</div><b>Du CAP au BTS</b><span>Froid, climatisation, eau, air, électricité, réglementation, habilitations.</span></div>
+    <div class="bloc"><div class="em">👁️</div><b>Pensé pour tous les élèves</b><span>Fonds clairs, phrases courtes, texte agrandissable (bouton « Aa »), lecture à voix haute.</span></div>
+  </div>
+
+  <div class="bloc profil">
+    <p>Vous êtes…</p>
+    <div class="choix" role="group" aria-label="Votre profil">
+      <button type="button" data-profil="prof" aria-pressed="false">Enseignant en lycée professionnel</button>
+      <button type="button" data-profil="formateur" aria-pressed="false">Formateur (centre, entreprise, CFA)</button>
+      <button type="button" data-profil="autre" aria-pressed="false">Autre usage pédagogique</button>
+    </div>
+    <p class="conseil" id="conseil">Choisissez votre profil : les étapes conseillées pour vous seront signalées. Toutes restent ouvertes.</p>
+  </div>
+
+  <div class="avance" aria-label="Votre avancement">
+    <div class="haut">
+      <span class="compte" id="compte">0 étape vue sur 15</span>
+      <span class="jauge" aria-hidden="true"><i id="jauge"></i></span>
+    </div>
+    <div class="reste" id="reste"></div>
+  </div>
+
+  <!-- ===================== LES ÉTAPES ===================== -->
+
+  <section class="bloc etape" id="principe" data-titre="Le principe" data-pour="prof formateur autre">
+    <div class="tete"><span class="num">1</span><h2>Le principe : des cours rangés comme des lignes de métro</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="icones/reseaux/illustrations/thermo-techno.webp" alt="Illustration du réseau thermo-techno : un circuit frigorifique et ses organes." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> Un <strong>réseau</strong> est un domaine (le froid, l’eau, l’air, l’électricité…). Il porte des <strong>lignes</strong> (les organes, les gestes, la régulation…), et chaque ligne des <strong>stations</strong> : un cours interactif court, qui se lit, s’écoute et se manipule.</div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> Un support prêt à projeter, que l’élève peut ensuite rouvrir seul, chez lui ou à l’atelier.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Projetez « Du glaçon au circuit » pour ouvrir une séquence sur le circuit frigorifique.</li>
+            <li>Les élèves suivent la même station sur leur téléphone, à leur rythme, avec la voix.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="packs/fluides/res/chaleur-interactive/index.html" target="_blank" rel="noopener">Ouvrir une station ▸</a>
+          <a class="bouton creux" href="plan.html" target="_blank" rel="noopener">Voir le plan du réseau ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="quartier" data-titre="La vue 3D" data-pour="prof autre">
+    <div class="tete"><span class="num">2</span><h2>Entrer par la vue 3D : le quartier technique</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="quartier/apercu.jpg" alt="Le quartier technique en 3D : un immeuble, un commerce avec sa chambre froide, une maison avec sa pompe à chaleur, la camionnette du technicien." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> Un quartier en 3D où l’on <strong>touche un appareil</strong> (la chambre froide du commerce, la pompe à chaleur de la maison, les machines sur le toit) pour arriver au cours qui l’explique.</div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> Une entrée concrète par le terrain : l’élève voit <strong>où</strong> le métier s’exerce avant d’apprendre <strong>comment</strong>.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>En début d’année ou en 2de, faites une balade au tableau : « qui travaille sur cet appareil ? ».</li>
+            <li>Complétez avec la page <a href="metier.html" target="_blank" rel="noopener">Le métier</a> : cinq familles de métiers du froid, en images.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="quartier/index.html" target="_blank" rel="noopener">Entrer dans le quartier ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="trouver" data-titre="Trouver une ressource" data-pour="prof formateur">
+    <div class="tete"><span class="num">3</span><h2>Trouver une ressource en trente secondes</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image contient" src="icones/reseaux/thermo-techno.svg" alt="Le plan du réseau thermo-techno, dessiné comme un plan de métro." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Trois portes, selon ce que vous cherchez.</b>
+          <ul>
+            <li><strong>La recherche de l’accueil</strong> : tapez un mot du métier (« surchauffe », « manifold », « huile »).</li>
+            <li><strong>Le plan</strong> : toutes les lignes et leurs stations, pour bâtir une progression.</li>
+            <li><strong>Le catalogue</strong> : toutes les ressources, avec les badges « hors ligne » (marche sans réseau) et « imprimable » (document élève intégré).</li>
+          </ul>
+        </div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> Vous partez de votre séquence, pas de l’outil : vous cherchez la notion du jour et vous tombez sur la station.</div>
+        <div class="actions">
+          <a class="bouton" href="index.html#recherche-accueil" target="_blank" rel="noopener">Chercher ▸</a>
+          <a class="bouton creux" href="plan.html" target="_blank" rel="noopener">Le plan ▸</a>
+          <a class="bouton creux" href="galerie.html" target="_blank" rel="noopener">Le catalogue ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="reseaux" data-titre="Les réseaux de cours" data-pour="prof autre">
+    <div class="tete"><span class="num">4</span><h2>Les réseaux de cours, un par domaine</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <p style="margin:0 0 4px">Chaque carte dit à quoi sert le réseau et ce que vous pouvez en faire <strong>demain en classe</strong>. Filtrez par niveau :</p>
+    <div class="filtres" role="group" aria-label="Filtrer les réseaux par niveau">
+      <button type="button" data-niveau="" aria-pressed="true">Tous</button>
+      <button type="button" data-niveau="CAP" aria-pressed="false">CAP</button>
+      <button type="button" data-niveau="Bac pro" aria-pressed="false">Bac pro</button>
+      <button type="button" data-niveau="BTS" aria-pressed="false">BTS</button>
+    </div>
+    <div class="grille" id="grille-reseaux"><p class="note">Chargement des réseaux…</p></div>
+    <p class="note">Les réseaux marqués « en relecture » sont en ligne et utilisables ; leur auteur les relit encore.</p>
+    <div class="actions"><button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button></div>
+  </section>
+
+  <section class="bloc etape" id="depannage" data-titre="Le dépannage" data-pour="prof formateur">
+    <div class="tete"><span class="num">5</span><h2>Le dépannage : SimuRézo</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="icones/reseaux/simurezo.jpg" alt="SimuRézo : une chambre froide en panne, ses valeurs relevées et son cycle sur le diagramme." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> Un simulateur de <strong>dépannage d’une chambre froide</strong> : l’élève relève les valeurs sur l’installation, voit le cycle se tracer sur le diagramme, puis conclut. Trois niveaux, de la Croix du frigoriste à l’atelier, en R-134a, R-449A ou R-290.</div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> Des pannes à volonté, sans immobiliser une installation ni manipuler de fluide. En fin de partie, l’élève vous rend un <strong>code de restitution</strong> qui dit où il en est.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Projetez une panne : la classe relève les valeurs et conclut ensemble.</li>
+            <li>Puis chacun refait une autre situation seul, au niveau qui lui convient.</li>
+            <li>Sans réseau à l’atelier ? Le simulateur se télécharge en un seul fichier.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="simurezo/index.html" target="_blank" rel="noopener">Commencer une partie ▸</a>
+          <a class="bouton creux" href="simurezo/simurezo.html" target="_blank" rel="noopener">Version sans réseau ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="cablage" data-titre="Le câblage" data-pour="prof formateur">
+    <div class="tete"><span class="num">6</span><h2>Le câblage électrique : le Câblage virtuel</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="icones/outils/cablage-vignette.jpg" alt="Le Câblage virtuel : une platine électrique à câbler à l’écran." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> Une platine à <strong>câbler à l’écran</strong>, fil par fil, puis à mettre sous tension : circuits de commande et de puissance, une trentaine d’exercices, un mode tablette.</div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> L’élève se trompe sans danger et recommence autant qu’il veut, avant de câbler en vrai. Chaque exercice a sa <strong>fiche élève imprimable</strong>.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Distribuez le tutoriel de prise en main, puis lancez le premier exercice en mode aide.</li>
+            <li>L’espace professeur propose trois usages : 30 minutes, un TP de 4 heures, une année.</li>
+          </ul>
+        </div>
+        <div class="rubrique"><b>Supports prêts.</b>
+          <ul>
+            <li><a href="cablage-virtuel/documents/Tutoriel-Prise-en-main-ELEVE.pdf" target="_blank" rel="noopener">Tutoriel de prise en main (élève, PDF)</a></li>
+            <li><a href="cablage-virtuel/documents/TP-Commande-ELEVE.pdf" target="_blank" rel="noopener">TP commande</a> · <a href="cablage-virtuel/documents/TP-2-Puissance-ELEVE.pdf" target="_blank" rel="noopener">TP puissance</a> · <a href="cablage-virtuel/documents/Mise-sous-tension-ELEVE.pdf" target="_blank" rel="noopener">Mise sous tension</a></li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="cablage-virtuel/professeur.html" target="_blank" rel="noopener">Espace professeur ▸</a>
+          <a class="bouton creux" href="cablage-virtuel/index.html" target="_blank" rel="noopener">Les exercices ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="regulation" data-titre="La régulation" data-pour="formateur">
+    <div class="tete"><span class="num">7</span><h2>La régulation : cours, films et réglages</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="studio/affiches/serie-regulation.webp" alt="Affiche de la série de films sur la régulation." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> Trois façons d’aborder la régulation : la <strong>ligne « régulation »</strong> du plan (régulateurs, commande par thermostat, pump-down, dégivrage), les <strong>films</strong> du Voyage consacrés à la régulation, et le <strong>jeu de poste</strong> du réglage des pressostats.</div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> L’élève voit le fonctionnement en mouvement, puis s’entraîne à régler avant de toucher une vraie installation.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Projetez la station sur la régulation, puis le film du même sujet.</li>
+            <li>Faites régler les pressostats sur le jeu de poste : on calcule, on règle, puis on vérifie à l’instrument.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="plan.html#ligne=regules" target="_blank" rel="noopener">La ligne régulation ▸</a>
+          <a class="bouton creux" href="voyage/regulation.html" target="_blank" rel="noopener">Le film ▸</a>
+          <a class="bouton creux" href="tour-de-main/simulateur/pressostat.html" target="_blank" rel="noopener">Régler les pressostats ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="gestes" data-titre="Les gestes d’atelier" data-pour="prof">
+    <div class="tete"><span class="num">8</span><h2>Les gestes d’atelier : CuivRézo et Le tour de main</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="cuivrezo/images/1-4-cintrette.webp" alt="CuivRézo : cintrer un tube de cuivre à la cintrette." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> <strong>CuivRézo</strong> accompagne les gestes du cuivre au poste (couper, cintrer, évaser, braser). <strong>Le tour de main</strong> réunit les gestes qui demandent un réglage précis (pressostats, récupération de fluide, détendeur).</div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> Une tablette au poste remplace la démonstration répétée dix fois : l’élève revoit le geste quand il en a besoin.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Une tablette par poste, ouverte sur la station du jour, et la fiche de poste imprimée.</li>
+          </ul>
+        </div>
+        <div class="rubrique"><b>Supports prêts.</b>
+          <ul>
+            <li><a href="cuivrezo/prof/index.html" target="_blank" rel="noopener">Espace professeur CuivRézo</a> (mode d’emploi)</li>
+            <li><a href="cuivrezo/papier/fiches-de-poste.html" target="_blank" rel="noopener">Fiches de poste</a> · <a href="cuivrezo/papier/passeport-eleve.html" target="_blank" rel="noopener">Passeport élève</a> · <a href="cuivrezo/papier/dossier-professeur.html" target="_blank" rel="noopener">Dossier professeur</a></li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="cuivrezo/index.html" target="_blank" rel="noopener">CuivRézo ▸</a>
+          <a class="bouton creux" href="tour-de-main/index.html" target="_blank" rel="noopener">Le tour de main ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="films" data-titre="Les films" data-pour="formateur autre">
+    <div class="tete"><span class="num">9</span><h2>Les films : inerWeb Studio et la chaîne YouTube</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="icones/reseaux/illustrations/studio-cinema.webp" alt="inerWeb Studio : une salle de cinéma qui réunit les films du site." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> Tous les films du site dans une seule salle : <strong>le Voyage dans tous ses états</strong> (le parcours du fluide, aussi à l’ammoniac et au CO₂), les films sur les machines et la régulation, la série sécurité « Ça aurait pu mal finir », l’effet de serre et l’ozone. Les films sont aussi sur la <strong>chaîne YouTube inerWeb FR</strong>.</div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> Une accroche de quelques minutes pour ouvrir une séance, ou un film à revoir à la maison. Certains films ont leur livret PDF.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Ouvrez une séance sécurité par un épisode de « Ça aurait pu mal finir », puis faites dire ce qui aurait dû être fait.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="studio/index.html" target="_blank" rel="noopener">Entrer dans le Studio ▸</a>
+          <a class="bouton creux" href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" target="_blank" rel="noopener">▶ La chaîne YouTube ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="reviser" data-titre="Réviser" data-pour="prof">
+    <div class="tete"><span class="num">10</span><h2>Réviser : les jeux et les QCM</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="jouerezo/illustrations/accueil.webp" alt="JouéRézo : les jeux de révision du froid." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> <strong>JouéRézo</strong> : dix jeux pour retenir le froid classique (Memory, le bon ordre, vrai ou faux chronométré, l’intrus, compléter le schéma, Qui suis-je ?…). <strong>inerWeb QCM</strong> : des questionnaires pour réviser seul, dont un test « Où j’en suis ».</div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> Une fin de cours active de dix minutes ; un point de départ en début d’année. En fin de jeu, l’élève vous rend un <strong>code de partie</strong>.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Dix minutes de Memory ou de QCM éclair pour fixer la notion du jour.</li>
+            <li>En septembre : le test de positionnement pour savoir d’où part chaque élève.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="jouerezo/index.html" target="_blank" rel="noopener">Les jeux ▸</a>
+          <a class="bouton creux" href="qcm/index.html" target="_blank" rel="noopener">Les QCM ▸</a>
+          <a class="bouton creux" href="qcm/positionnement.html" target="_blank" rel="noopener">Où j’en suis ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="utilitaires" data-titre="Programmes et utilitaires" data-pour="formateur">
+    <div class="tete"><span class="num">11</span><h2>Les programmes et les utilitaires</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <p style="margin:0">Des outils à côté des cours : pour calculer, mesurer, tracer, s’entraîner sur un thème précis.</p>
+    <div class="outils">
+      <div class="outil"><div class="em">🧮</div><h3>RézoTools — les calculettes</h3><p>COP, pincement, incondensables, débit d’air, diagnostic, identification d’un fluide… sur des tables de fluides vérifiées. <em>Demain :</em> le calcul du COP pendant un TP de mesure.</p><a href="rezotools/index.html" target="_blank" rel="noopener">Ouvrir RézoTools ▸</a></div>
+      <div class="outil"><div class="em">📡</div><h3>inerWeb AquiBlue</h3><p>Relever des mesures par Bluetooth et les voir sur le diagramme. Une démonstration en ligne, un logiciel à télécharger. <em>Demain :</em> la démo au tableau.</p><a href="aquiblue/index.html" target="_blank" rel="noopener">Découvrir AquiBlue ▸</a></div>
+      <div class="outil"><div class="em">📋</div><h3>inerWeb Fluide</h3><p>La traçabilité des fluides frigorigènes (fiches d’intervention, bordereaux). En bêta-test : centres de formation et professionnels bienvenus.</p><a href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener">La présentation (PDF) ▸</a></div>
+      <div class="outil"><div class="em">⚡</div><h3>Sous tension</h3><p>Des TD d’électricité prêts à l’emploi : fondamentaux, tableau électrique, cas particuliers, triphasé, et une évaluation.</p><a href="sous-tension/index.html" target="_blank" rel="noopener">Les TD ▸</a></div>
+      <div class="outil"><div class="em">⚠️</div><h3>L’affiche des cinq risques</h3><p>Une affiche au format A2 à imprimer pour l’atelier : les cinq risques du métier, en un coup d’œil.</p><a href="affiches/cinq-risques-A2.svg" target="_blank" rel="noopener">Voir l’affiche ▸</a></div>
+      <div class="outil"><div class="em">🔗</div><h3>Les liens courts</h3><p>Des adresses faciles à dicter ou à écrire au tableau : <strong>inerweb.fr/s/diagramme</strong> (le diagramme enthalpique du R134a en autonomie), <strong>inerweb.fr/s/r134a</strong> (je fais bouillir du R134a).</p><a href="s/diagramme/" target="_blank" rel="noopener">Essayer ▸</a></div>
+    </div>
+    <div class="actions"><button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button></div>
+  </section>
+
+  <section class="bloc etape" id="habilitations" data-titre="Les habilitations" data-pour="formateur">
+    <div class="tete"><span class="num">12</span><h2>Préparer une habilitation</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image contient" src="habfluide/couverture-habfluide.jpg" alt="Couverture du livre HabFluide, la préparation à l’habilitation fluides frigorigènes." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> Trois préparations, palier par palier :
+          <ul>
+            <li><strong>Fluides frigorigènes</strong> (attestation d’aptitude) : l’application de formation, un test d’entrée « Par où commencer ? », et le livre HabFluide (extrait).</li>
+            <li><strong>Électrique</strong> (B0 à BR) avec HoCourant, et son livret élève A5.</li>
+            <li><strong>Échafaudages de pied</strong> (R408), et son livret élève A5.</li>
+          </ul>
+        </div>
+        <div class="rubrique"><b>Ce que ça vous apporte.</b> L’élève avance seul entre les séances ; à la fin d’un palier il vous rend un code qui dit ce qu’il a réussi.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Une classe qui arrive en habilitation fluides : passez le test d’entrée, chacun sait par où commencer.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="formation.html" target="_blank" rel="noopener">Habilitation fluides ▸</a>
+          <a class="bouton creux" href="f/positionnement/index.html" target="_blank" rel="noopener">Test d’entrée ▸</a>
+          <a class="bouton creux" href="hocourant/index.html" target="_blank" rel="noopener">HoCourant ▸</a>
+          <a class="bouton creux" href="r408/index.html" target="_blank" rel="noopener">R408 ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+        <p class="note">Formateur d’un centre d’habilitation fluides ? Le <a href="portail.html" target="_blank" rel="noopener">portail du dispositif</a> réunit le planning, la projection et le dossier.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="livres" data-titre="Les livres" data-pour="autre">
+    <div class="tete"><span class="num">13</span><h2>Les livres inerWeb</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image contient" src="livres/couvertures/cap-tome-1.webp" alt="Couverture du tome 1 du livre inerWeb pour le CAP." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Ce que c’est.</b> Des manuels pour le <strong>CAP</strong> (deux tomes et un livre du professeur) et le <strong>Bac pro MFER</strong>, prolongés par les stations du site.</div>
+        <div class="rubrique"><b>Où en est-on ?</b> Les livres sont pour l’instant proposés <strong>en extraits</strong>. Ils seront édités et publiés dès qu’ils auront été relus, corrigés et reliés.</div>
+        <div class="rubrique"><b>Demain en classe.</b>
+          <ul>
+            <li>Distribuez un extrait à vos élèves pour juger le manuel sur pièce, et dites ce que vous en pensez.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="livres/index.html" target="_blank" rel="noopener">Voir les livres et les extraits ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="seance" data-titre="Votre première séance" data-pour="prof formateur">
+    <div class="tete"><span class="num">14</span><h2>Votre première séance, dès aujourd’hui</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image" src="photos/hero-techniciens-frigoristes-840.jpg" alt="Des techniciens frigoristes au travail." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Sans aucun code — tout de suite.</b> Tous les cours sont libres.
+          <ul>
+            <li>Projetez la station au tableau, ou donnez son adresse (ENT, messagerie, tableau).</li>
+            <li>Les liens courts se dictent : <strong>inerweb.fr/s/diagramme</strong>.</li>
+            <li>Les élèves n’ont rien à installer et aucun compte à créer.</li>
+          </ul>
+        </div>
+        <div class="rubrique"><b>Avec un code enseignant — pour suivre votre classe.</b>
+          <ul>
+            <li>Vous fabriquez un <strong>lien de séance et son QR</strong> à projeter ; chaque élève tape un code de 4 caractères donné sur un carton.</li>
+            <li>En fin de séance, vous collez les codes de restitution des élèves et obtenez le tableau de la classe. Ces résultats servent à suivre, pas à noter.</li>
+            <li>Le code enseignant est <strong>gratuit</strong>, personnel, valable un an. Il ouvre aussi les documents professeur de certains produits.</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <a class="bouton" href="comprendre-les-codes.html" target="_blank" rel="noopener">Comprendre les codes (5 min) ▸</a>
+          <a class="bouton creux" href="demander-un-acces.html" target="_blank" rel="noopener">Demander mon code ▸</a>
+          <a class="bouton creux" href="seances.html" target="_blank" rel="noopener">Préparer une séance ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc etape" id="avis" data-titre="Votre avis" data-pour="prof formateur autre">
+    <div class="tete"><span class="num">15</span><h2>Votre avis fait avancer inerWeb</h2><span class="badge">★ Conseillé pour vous</span></div>
+    <div class="corps">
+      <img class="image contient" src="favicon.svg" alt="Le logo d’inerWeb." loading="lazy">
+      <div>
+        <div class="rubrique"><b>Une idée, une coquille, un besoin ?</b> inerWeb est le projet personnel d’un enseignant frigoriste. Il est en test : chaque retour de collègue compte, même trois lignes. Dites ce qui vous a servi, ce qui vous a manqué, ce qui vous a bloqué.</div>
+        <div class="rubrique"><b>Réutiliser un contenu ?</b> L’accès est gratuit, mais rien n’est libre de droits : lisez les <a href="LICENCE.md" target="_blank" rel="noopener">conditions de réutilisation</a>.</div>
+        <div class="actions">
+          <a class="bouton" href="mailto:inerweb.fh@gmail.com?subject=Mon%20avis%20sur%20inerWeb">Écrire à inerweb.fh@gmail.com ▸</a>
+          <button type="button" class="vu-btn" aria-pressed="false">✓ C’est vu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bloc fin">
+    <h2 id="fin-titre">Ce qui vous reste à voir</h2>
+    <p id="fin-texte" class="note" style="margin-top:0">Cochez « C’est vu » au fil des étapes : votre avancement est gardé dans ce navigateur.</p>
+    <div class="etat" role="note" style="text-align:left; margin:16px 0 0">
+      <strong class="t">Rappel : un écosystème en construction</strong>
+      <p>inerWeb évolue encore. Les livres sont en extraits en attendant leur édition. Le système est en test : vos retours sont attendus avec impatience.</p>
+    </div>
+    <div class="actions" style="justify-content:center">
+      <a class="bouton creux" href="formateurs.html">Espace formateurs ▸</a>
+      <button type="button" class="vu-btn" id="recommencer" aria-pressed="false" style="border-style:solid">↺ Recommencer le parcours</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="moteur/reseaux.js?v=6ce241385c"></script>
+<script>
+(function () {
+  "use strict";
+  /* Ce que l'enseignant peut faire DEMAIN avec chaque réseau, et ses supports prêts.
+     La présentation (nom, phrase, niveaux, image, entrée) vient de moteur/reseaux.js :
+     un nouveau réseau y apparaît ici tout seul, avec une phrase par défaut. */
+  var DEMAIN = {
+    "thermo-techno": { t: "Projetez la ligne « Les organes », ou lancez le TD 04 « Je fais bouillir du R134a » en autonomie (inerweb.fr/s/diagramme) avec sa grille imprimée.",
+      liens: [["s/diagramme/", "TD 04 en autonomie"], ["formarezo/stations/1-1-carte-r134a/documents/TD04-ma-grille.pdf", "Grille élève (PDF)"]] },
+    "legislation": { t: "Imprimez le carnet de missions et faites jouer une mission de chargé d’affaires à partir de la station F-Gaz 3.",
+      liens: [["legislation/carnet/guide-pedagogique.html", "Guide pédagogique"], ["legislation/carnet/livret-professeur.html", "Livret professeur"]] },
+    "hydrometro": { t: "Projetez la station « Boucle », puis faites suivre « Débit » en autonomie ; chaque station s’imprime." },
+    "aerorezo": { t: "Ouvrez « L’air se déplace » au tableau pour poser le vocabulaire avant une mesure de débit d’air." },
+    "electrorezo": { t: "La loi d’Ohm en projection, puis les élèves refont les calculs sur la station." },
+    "hocourant": { t: "Module 1 « Le danger électrique » en projection ; ensuite chacun avance seul, palier par palier, avec le livret A5." },
+    "r408": { t: "Module 1 « Le risque de chute » avant la formation échafaudage, avec le livret A5." },
+    "cuivrezo": { t: "Une tablette par poste, ouverte sur la station du jour, et les fiches de poste imprimées.",
+      liens: [["cuivrezo/prof/index.html", "Espace professeur"]] },
+    "tour-de-main": { t: "Le jeu de poste des pressostats avant le réglage réel : on calcule, on règle, puis on vérifie à l’instrument." },
+    "cartoclim": { t: "« Climatiser, c’est quoi ? » pour ouvrir une séquence clim, puis le split station par station." },
+    "jouerezo": { t: "Dix minutes de Memory ou de QCM éclair en fin de cours ; l’élève vous rend son code de partie." },
+    "simurezo": { t: "Projetez une panne en R-134a : la classe relève les valeurs et conclut ensemble." },
+    "studio": { t: "Un épisode de « Ça aurait pu mal finir » pour ouvrir une séance sécurité." }
+  };
+  var DEFAUT = "Projetez la station d’entrée pour présenter le thème, puis laissez les élèves la parcourir à leur rythme.";
+
+  function el(nom, classe, texte) {
+    var e = document.createElement(nom);
+    if (classe) e.className = classe;
+    if (texte != null) e.textContent = texte;
+    return e;
+  }
+  function lien(href, texte) {
+    var a = el("a", null, texte);
+    a.href = href; a.target = "_blank"; a.rel = "noopener";
+    return a;
+  }
+
+  /* ---------- Les réseaux ---------- */
+  var grille = document.getElementById("grille-reseaux");
+  var reseaux = window.INERWEB_RESEAUX || [];
+  grille.innerHTML = "";
+  if (!reseaux.length) grille.appendChild(el("p", "note", "La liste des réseaux n’a pas pu être chargée : voyez le plan."));
+  reseaux.forEach(function (r) {
+    var c = el("article", "reseau");
+    c.style.setProperty("--c", r.couleur || "#1b3a63");
+    c.setAttribute("data-niveaux", r.niveaux || "");
+    var img = el("img");
+    img.src = r.illustration || r.vignette; img.alt = ""; img.loading = "lazy";
+    c.appendChild(img);
+    var d = el("div", "dedans");
+    var h = el("h3", null, (r.emoji ? r.emoji + " " : "") + r.nom);
+    d.appendChild(h);
+    var niv = el("div", "niv", r.niveaux || "");
+    if (r.etat) { niv.appendChild(document.createTextNode(" ")); niv.appendChild(el("span", "relecture", r.etat)); }
+    d.appendChild(niv);
+    d.appendChild(el("p", "st", r.sousTitre || ""));
+    var info = DEMAIN[r.id] || {};
+    var dm = el("p", "demain");
+    dm.appendChild(el("b", null, "Demain en classe : "));
+    dm.appendChild(document.createTextNode(info.t || DEFAUT));
+    d.appendChild(dm);
+    var ls = el("div", "liens");
+    if (r.entree) ls.appendChild(lien(r.entree.href, "Commencer ▸"));
+    ls.appendChild(lien(r.adresse, "Le réseau ▸"));
+    (info.liens || []).forEach(function (l) { ls.appendChild(lien(l[0], l[1] + " ▸")); });
+    if (r.pdf) ls.appendChild(lien(r.pdf.href, r.pdf.titre));
+    if (r.externe && r.externe.href) ls.appendChild(lien(r.externe.href, r.externe.titre));
+    d.appendChild(ls);
+    c.appendChild(d);
+    grille.appendChild(c);
+  });
+
+  /* Filtre par niveau : « CAP → BTS » et « tous niveaux » couvrent tout. */
+  var filtres = document.querySelectorAll(".filtres button");
+  Array.prototype.forEach.call(filtres, function (b) {
+    b.addEventListener("click", function () {
+      var n = b.getAttribute("data-niveau");
+      Array.prototype.forEach.call(filtres, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      Array.prototype.forEach.call(grille.children, function (c) {
+        var niv = c.getAttribute("data-niveaux") || "";
+        var ok = !n || niv.indexOf(n) >= 0 || /tous/i.test(niv) || /→/.test(niv);
+        c.style.display = ok ? "" : "none";
+      });
+    });
+  });
+
+  /* ---------- L'avancement (gardé dans ce navigateur, si possible) ---------- */
+  var CLE = "inerweb-decouvrir-v1";
+  var etat = { vu: {}, profil: "" };
+  try { var lu = JSON.parse(localStorage.getItem(CLE) || "null"); if (lu && lu.vu) etat = lu; } catch (e) {}
+  function garder() { try { localStorage.setItem(CLE, JSON.stringify(etat)); } catch (e) {} }
+
+  var etapes = Array.prototype.slice.call(document.querySelectorAll(".etape"));
+  var compte = document.getElementById("compte"), jauge = document.getElementById("jauge");
+  var reste = document.getElementById("reste");
+
+  function peindre() {
+    var n = 0;
+    reste.innerHTML = "";
+    etapes.forEach(function (s, i) {
+      var vu = !!etat.vu[s.id];
+      var reco = !!etat.profil && (s.getAttribute("data-pour") || "").split(" ").indexOf(etat.profil) >= 0;
+      if (vu) n++;
+      s.classList.toggle("vu", vu);
+      s.classList.toggle("reco", reco);
+      var b = s.querySelector(".vu-btn");
+      b.setAttribute("aria-pressed", vu ? "true" : "false");
+      b.textContent = vu ? "✓ Vu" : "✓ C’est vu";
+      var a = el("a", (vu ? "vu" : "") + (reco ? " reco" : ""), (i + 1) + ". " + s.getAttribute("data-titre") + (vu ? " ✓" : ""));
+      a.href = "#" + s.id;
+      reste.appendChild(a);
+    });
+    compte.textContent = n + (n > 1 ? " étapes vues" : " étape vue") + " sur " + etapes.length;
+    jauge.style.width = Math.round(n * 100 / etapes.length) + "%";
+
+    var manque = etapes.filter(function (s) { return !etat.vu[s.id]; });
+    var titre = document.getElementById("fin-titre"), texte = document.getElementById("fin-texte");
+    if (!manque.length) {
+      titre.textContent = "Parcours terminé : vous connaissez tout inerWeb";
+      texte.textContent = "Il ne vous reste plus qu’à l’essayer avec vos élèves, et à nous dire ce que vous en pensez.";
+    } else {
+      titre.textContent = "Ce qui vous reste à voir";
+      texte.textContent = manque.map(function (s) { return s.getAttribute("data-titre"); }).join(" · ");
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll(".choix button"), function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-profil") === etat.profil ? "true" : "false");
+    });
+    document.getElementById("conseil").textContent = etat.profil
+      ? "Conseillé pour vous : " + etapes.filter(function (s) { return s.classList.contains("reco"); })
+          .map(function (s) { var t = s.getAttribute("data-titre"); return t.charAt(0).toLowerCase() + t.slice(1); }).join(", ") + "."
+      : "Choisissez votre profil : les étapes conseillées pour vous seront signalées. Toutes restent ouvertes.";
+  }
+
+  etapes.forEach(function (s) {
+    s.querySelector(".vu-btn").addEventListener("click", function () {
+      etat.vu[s.id] = !etat.vu[s.id];
+      garder(); peindre();
+    });
+    /* Ouvrir une ressource de l'étape compte comme l'avoir vue. */
+    Array.prototype.forEach.call(s.querySelectorAll("a.bouton"), function (a) {
+      a.addEventListener("click", function () { etat.vu[s.id] = true; garder(); setTimeout(peindre, 0); });
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".choix button"), function (b) {
+    b.addEventListener("click", function () {
+      var p = b.getAttribute("data-profil");
+      etat.profil = etat.profil === p ? "" : p;
+      garder(); peindre();
+    });
+  });
+  document.getElementById("recommencer").addEventListener("click", function () {
+    etat = { vu: {}, profil: etat.profil }; garder(); peindre();
+    window.scrollTo(0, 0);
+  });
+
+  peindre();
+})();
+</script>
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
+<script src="moteur/lisibilite.js?v=6ce241385c"></script>
+<!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
+<script src="moteur/marque.js?v=6ce241385c" data-cartouche=".fr" data-licence="conditions"></script>
+</body>
+</html>
