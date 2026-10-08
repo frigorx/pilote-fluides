@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**408 stations** réparties en 15 réseaux.
+**412 stations** réparties en 16 réseaux.
 
 ## Plan thermo-techno — 110 stations
 
@@ -396,6 +396,15 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le tour de main · la gestuelle professionnelle](https://inerweb.fr/tour-de-main/) | — | — | — | Le tour de main : la gestuelle professionnelle du frigoriste. Manifold, azote, récupération du fluide, réglage des pressostats, du détendeur et des régulateurs KV, VAT, mesure d’intensité, relais thermique. |
 | [Le réglage des pressostats · Le tour de main](https://inerweb.fr/tour-de-main/simulateur/pressostat.html) | — | — | — | Calculer le réglage d’un pressostat BP ou HP, de sécurité ou de régulation, le prérégler sur la face, puis le prouver au banc d’azote, au manomètre, trois cycles justes de suite. |
 
+## inerWeb QCM — 4 stations
+
+| Station | Ligne | Niveaux | Codes | Sujet |
+|---|---|---|---|---|
+| [inerWeb QCM · réviser en autonomie](https://inerweb.fr/qcm/) | — | CAP BAC | — | inerWeb QCM : réviser seul le froid et la climatisation, sur téléphone ou ordinateur. Trois activités : où j'en suis (196 questions, six niveaux), lire un manomètre, compléter le schéma frigorifique. Pas de compte, pas de nom, rien n'est envoyé. |
+| [Où j'en suis — positionnement froid et climatisation · inerWeb QCM](https://inerweb.fr/qcm/positionnement.html) | — | CAP BAC | — | Où j'en suis en froid, climatisation et habilitations : 196 questions sur six niveaux, de l'atelier jusqu'au niveau expert, puis ma carte des compétences (2de TNE, CAP IFCA, Bac Pro MFER). Révision libre : rien n'est envoyé. |
+| [Lire un manomètre — pression, fluide, température · inerWeb QCM](https://inerweb.fr/qcm/manometres.html) | — | — | A1T2 A5T2 C2 S3 S4 CAP-C4.5 | Lire un manomètre comme sur un vrai manifold : l'aiguille, l'échelle du fluide, la température de changement d'état. Dix questions, puis « Et sur la machine ? » avec mes vrais relevés. Révision libre : rien n'est envoyé. |
+| [Jeu — compléter le schéma frigorifique · inerWeb QCM](https://inerweb.fr/qcm/schema-frigo.html) | — | — | C2 S3 CAP-C2.1 | Compléter le schéma frigorifique avec les symboles normalisés : les quatre organes, puis la ligne liquide. Révision libre : rien n'est envoyé. |
+
 ## FormaRézo — 1 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
@@ -468,7 +477,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Espace formateurs](https://inerweb.fr/formateurs.html) | — | — | — | Utiliser inerWeb en classe et demander une réutilisation. Droits réservés sur les nouvelles créations ; licences antérieures et tierces conservées. |
 | [Habilitation fluides frigorigènes (démonstrateur)](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
 | [Bibliothèque d'animations et de supports — habilitation fluides frigorigènes](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
-| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Douze réseaux gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro : des cours interactifs, des jeux, un simulateur de panne et des films. Une voix qui explique, du CAP au BTS, sans compte. |
+| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Treize réseaux gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro : des cours interactifs, des jeux, un simulateur de panne et des films. Une voix qui explique, du CAP au BTS, sans compte. |
 | [Le métier de frigoriste](https://inerweb.fr/metier.html) | — | — | — | Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études. |
 | [Le lien à garder — Habilitation fluides frigorigènes](https://inerweb.fr/partage.html) | — | — | — | Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien. |
 | [Le plan du réseau thermo-techno](https://inerweb.fr/plan.html) | — | — | — | Le plan de formation inerweb.fr : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte. |

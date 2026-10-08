@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 408,
+  "total": 412,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -4569,6 +4569,71 @@
       "chemin": "tour-de-main/simulateur/pressostat.html"
     },
     {
+      "reseau": "inerWeb QCM",
+      "id": "qcm",
+      "titre": "inerWeb QCM · réviser en autonomie",
+      "ligne": null,
+      "resume": "inerWeb QCM : réviser seul le froid et la climatisation, sur téléphone ou ordinateur. Trois activités : où j'en suis (196 questions, six niveaux), lire un manomètre, compléter le schéma frigorifique. Pas de compte, pas de nom, rien n'est envoyé.",
+      "niveaux": {
+        "cap": "CAP IFCA",
+        "bac": "2de TNE, Bac Pro MFER"
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/qcm/",
+      "chemin": "qcm/"
+    },
+    {
+      "reseau": "inerWeb QCM",
+      "id": "qcm-positionnement",
+      "titre": "Où j'en suis — positionnement froid et climatisation · inerWeb QCM",
+      "ligne": null,
+      "resume": "Où j'en suis en froid, climatisation et habilitations : 196 questions sur six niveaux, de l'atelier jusqu'au niveau expert, puis ma carte des compétences (2de TNE, CAP IFCA, Bac Pro MFER). Révision libre : rien n'est envoyé.",
+      "niveaux": {
+        "cap": "CAP IFCA C1.1 à C4.7",
+        "bac": "2de TNE (CC), Bac Pro MFER C1 à C13"
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/qcm/positionnement.html",
+      "chemin": "qcm/positionnement.html"
+    },
+    {
+      "reseau": "inerWeb QCM",
+      "id": "qcm-manometres",
+      "titre": "Lire un manomètre — pression, fluide, température · inerWeb QCM",
+      "ligne": null,
+      "resume": "Lire un manomètre comme sur un vrai manifold : l'aiguille, l'échelle du fluide, la température de changement d'état. Dix questions, puis « Et sur la machine ? » avec mes vrais relevés. Révision libre : rien n'est envoyé.",
+      "niveaux": null,
+      "competences": [
+        "A1T2",
+        "A5T2",
+        "C2",
+        "S3",
+        "S4",
+        "CAP-C4.5"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/qcm/manometres.html",
+      "chemin": "qcm/manometres.html"
+    },
+    {
+      "reseau": "inerWeb QCM",
+      "id": "qcm-schema-frigo",
+      "titre": "Jeu — compléter le schéma frigorifique · inerWeb QCM",
+      "ligne": null,
+      "resume": "Compléter le schéma frigorifique avec les symboles normalisés : les quatre organes, puis la ligne liquide. Révision libre : rien n'est envoyé.",
+      "niveaux": null,
+      "competences": [
+        "C2",
+        "S3",
+        "CAP-C2.1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/qcm/schema-frigo.html",
+      "chemin": "qcm/schema-frigo.html"
+    },
+    {
       "reseau": "FormaRézo",
       "id": "1-1-carte-r134a",
       "titre": "TD 04 — La carte d’identité du R134a",
@@ -5149,7 +5214,7 @@
       "id": "index",
       "titre": "le froid et la climatisation, station par station",
       "ligne": null,
-      "resume": "Douze réseaux gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro : des cours interactifs, des jeux, un simulateur de panne et des films. Une voix qui explique, du CAP au BTS, sans compte.",
+      "resume": "Treize réseaux gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro : des cours interactifs, des jeux, un simulateur de panne et des films. Une voix qui explique, du CAP au BTS, sans compte.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
