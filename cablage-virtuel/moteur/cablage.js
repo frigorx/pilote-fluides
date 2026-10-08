@@ -131,7 +131,20 @@ function sens(ref) {
 }
 function libSens(ref) { const s = sens(ref); return lib(ref) + (s ? ' (' + s + ')' : ''); }
 function cle(a, b) { return [a, b].sort().join('|'); }
+// 08/10 (T-01) : la consigne du Guidé « le conducteur qui clignote sur la carte » est redite quand l'affichage change (moteur/ecran.js) :
+// carte cachée, elle ajoute « (bouton « ‹ Carte ») ». Toute autre consigne l'efface.
+let consigneGuide = null;
+function direGuide() {
+  const g = consigneGuide; if (!g) return;
+  const cachee = VUE !== 'carte' && !$('#carte').offsetWidth;
+  if (g.cachee === cachee) return;   // rien n'a changé : on ne redit pas (la ligne « Vos fils sont revenus » resterait effacée)
+  g.cachee = cachee;
+  dire('Fil ' + g.n + '/' + g.total + ' : posez le conducteur qui clignote sur la carte' + (cachee ? ' (bouton « ‹ Carte »)' : '') + ', en ' + g.couleur + '.', null,
+       'Lisez les numéros de ses deux bornes sur le schéma, puis trouvez-les sur la platine. Le courant ressort par la borne paire et entre dans l’appareil suivant par l’impaire.');
+  consigneGuide = g;
+}
 function dire(texte, etat, detail) {
+  consigneGuide = null;
   const c = $('#consigne'); if (!c) return;
   c.className = 'consigne' + (etat ? ' ' + etat : '');
   $('#consigne-texte').innerHTML = '';
@@ -375,6 +388,9 @@ function debutTrace(e) {
   // ne posait aucun fil. Un appui sur la platine l'efface.
   try { const sel = window.getSelection(); if (sel && !sel.isCollapsed) sel.removeAllRanges(); } catch (err) { /* rien */ }
   if (controle) return;
+  // 08/10 (contre-vérification tablette N-01, N-02) : sous tension, on ne câble pas — tension-ecran.js ne bloquait que la cible exacte
+  // (une borne, un fil) : un toucher À CÔTÉ de deux bornes posait un fil pendant l'essai, la bande d'un fil le sélectionnait
+  if (document.body.classList.contains('sous-tension')) return;
   if (enAttente) {   // fil par fil : la platine attend que le fil soit posé pour de vrai (le vide se déplace toujours)
     if (!borneProche(point(e)) && !(e.target.closest && e.target.closest('.fil'))) return;
     e.stopImmediatePropagation();   // ni fil, ni déplacement depuis une borne
@@ -383,15 +399,22 @@ function debutTrace(e) {
     return;
   }
   fermerChoix();   // un nouveau geste sur la platine referme la bulle « Quelle borne ? »
-  const filEl = e.target.closest && e.target.closest('.fil');
-  if (filEl) { choisir(fils.find(f => f.el === filEl || f.contour === filEl)); return; }
   const pt = point(e), b = borneProche(pt);
+  // 08/10 (contre-vérification tablette T-05, T-13) : au doigt, un fil se prend sur une bande de 24 px (.fil-prise) ; une borne à
+  // moins de 16 px d'écran l'emporte sur cette bande. Le fil n'est choisi qu'au lever d'un toucher : un glisser déplace la vue.
+  const filEl = e.target.closest && e.target.closest('.fil, .fil-prise');
+  if (filEl && !(filEl.classList.contains('fil-prise') && b && distEcran(b, e) < 16)) {
+    surFil = { f: fils.find(f => f.el === filEl || f.contour === filEl || f.prise === filEl), x: e.clientX, y: e.clientY };
+    return;
+  }
   choisir(null);
   // 08/10 (audit tablette, constat 1) : glisser le vide déplace la vue SANS oublier la borne touchée ; seul un appui bref sur le vide
   // l'oublie (finTrace). Zoomé au doigt, les deux bornes d'un fil sont rarement à l'écran ensemble.
   if (!b) { vide = { x: e.clientX, y: e.clientY }; return; }
-  const cands = candidatsDoigt(e);   // au doigt, deux bornes presque à égale distance : l'élève choisit, rien n'est pris
-  if (cands.length > 1) { aimanter(null); proposerChoix(cands, e, (ref) => toucherBorne(ref, e)); return; }
+  // au doigt, deux bornes presque à égale distance : l'élève choisit, rien n'est pris. 08/10 (T-02) : la bulle attend le lever du
+  // doigt — un pincement ou un glisser qui part de là n'est pas un choix de borne (la vue se déplace, rien ne s'ouvre)
+  const cands = candidatsDoigt(e);
+  if (cands.length > 1) { aimanter(null); attente = { cands, clientX: e.clientX, clientY: e.clientY }; return; }
   svgPlatine.setPointerCapture(e.pointerId);
   trace = { de: b, cx: e.clientX, cy: e.clientY, bouge: false };
   aimanter(b); b.el.classList.add('armee');   // on voit tout de suite la borne prise
@@ -432,12 +455,16 @@ function viser(texte, e) {
   }
 }
 let vide = null;   // l'appui sur le vide en cours : un appui bref oublie la borne touchée, un glisser déplace la vue
-function annulerTrace() { trace = null; vide = null; filTemp.setAttribute('d', ''); aimanter(null); armer(armee); viser(armee ? libSens(armee) + ' : touchez l’autre borne.' : null); }
+let attente = null, surFil = null;   // 08/10 : un appui entre deux bornes, un appui sur un fil — jugés au lever du doigt
+function annulerTrace() { trace = null; vide = null; attente = null; surFil = null; fermerChoix(); filTemp.setAttribute('d', ''); aimanter(null); armer(armee); viser(armee ? libSens(armee) + ' : touchez l’autre borne.' : null); }
 function finTrace(e) {
+  const bref = (o) => Math.hypot(e.clientX - o.x, e.clientY - o.y) <= SEUIL_GLISSER;
   if (vide) {
-    if (Math.hypot(e.clientX - vide.x, e.clientY - vide.y) <= SEUIL_GLISSER) { armer(null); viser(null); }
+    if (bref(vide)) { armer(null); viser(null); }
     vide = null;
   }
+  if (surFil) { const s = surFil; surFil = null; if (bref(s)) choisir(s.f); return; }
+  if (attente) { const a = attente; attente = null; if (bref({ x: a.clientX, y: a.clientY })) choisirOuAgrandir(a); return; }
   if (!trace) return;
   const b = borneProche(point(e)), de = trace.de;
   filTemp.setAttribute('d', ''); aimanter(null); viser(null);
@@ -453,9 +480,20 @@ function finTrace(e) {
 }
 /* Toucher une borne : la première s'allume, la seconde pose le fil ; la même une seconde fois annule. */
 function toucherBorne(ref, e) {
-  if (armee && armee !== ref) { creerFil(armee, ref); armer(null); return; }
+  if (armee && armee !== ref) { creerFil(armee, ref); armer(null); rendreLoupe(); return; }
   armer(armee === ref ? null : ref);
   if (armee) viser(libSens(armee) + ' : touchez l’autre borne (ou celle-ci pour annuler).', e);
+  rendreLoupe();
+}
+/* 08/10 (contre-vérification tablette, 2e passage) : l'agrandissement au toucher (T-03) laissait la vue à × 4 — 104 déplacements de vue
+   pour les 50 fils de cablage-2. C'est une LOUPE : la borne touchée, la vue revient où elle était (si l'élève ne l'a pas déplacée). */
+let loupe = null;
+function rendreLoupe() {
+  const l = loupe; loupe = null;
+  const z = $('#platine')._zoom;
+  if (!l || !z || svgPlatine.getAttribute('viewBox') !== l.apres) return;   // déplacée ou pincée entre-temps : l'élève garde sa vue
+  const [x, y, w, h] = l.avant.split(/[\s,]+/).map(Number);
+  z.cadrer({ x, y, w, h, vue: true }, 0, w / h);
 }
 /* Au doigt (30/09, constat E4) : un doigt couvre plusieurs millimètres. Quand deux bornes sont presque à égale distance du point
    touché (la seconde à moins de 1,3 fois la distance de la première, dans le rayon de prise), une bulle propose les deux, en gros
@@ -472,6 +510,28 @@ function candidatsDoigt(e) {
   const seuil = 1.3 * Math.max(l.length ? l[0].d : 0, DOIGT);
   const c = l.filter(x => x.d < seuil).slice(0, 4).map(x => x.b);
   return c.length > 1 ? c : [];
+}
+function distEcran(b, e) {   // distance à l'écran (px) d'une borne au point touché
+  const m = ctmPlatine(); if (!m) return Infinity;
+  return Math.hypot(m.a * b.x + m.c * b.y + m.e - e.clientX, m.b * b.x + m.d * b.y + m.f - e.clientY);
+}
+/* 08/10 (contre-vérification tablette T-03 ; promesse T4 de l'audit) : en Aidé et Avancé, une grosse platine part en vue d'ensemble, ses
+   bornes voisines à 8 px l'une de l'autre ; la bulle « Quelle borne ? » revenait à un toucher sur deux. Quand les deux bornes
+   candidates sont à moins de 22 px l'une de l'autre à l'écran, le toucher AGRANDIT la vue autour du doigt (le point touché reste
+   sous le doigt, la borne déjà touchée reste choisie) ; plus grandes, la bulle comme avant. Rien n'est choisi pour l'élève. */
+function choisirOuAgrandir(a) {
+  const [p, q] = a.cands, ecart = Math.hypot(...(() => { const m = ctmPlatine(); return [m.a * (p.x - q.x) + m.c * (p.y - q.y), m.b * (p.x - q.x) + m.d * (p.y - q.y)]; })());
+  const z = $('#platine')._zoom;
+  // en Guidé la vue est déjà cadrée sur les deux bornes du fil (suivreFil) : agrandir sortirait l'autre du champ ; la bulle, comme avant
+  if (z && ecart < 22 && MODE !== 'guide') {
+    const s = svgPlatine.createSVGPoint(); s.x = a.clientX; s.y = a.clientY;
+    const avant = loupe ? loupe.avant : svgPlatine.getAttribute('viewBox');
+    z.zoomer(Math.min(4, 32 / Math.max(ecart, 1)), s.matrixTransform(svgPlatine.getScreenCTM().inverse()));
+    loupe = { avant, apres: svgPlatine.getAttribute('viewBox') };
+    viser((armee ? libSens(armee) + ' : ' : '') + 'agrandi, touchez la borne voulue.', a);
+    return;
+  }
+  proposerChoix(a.cands, a, (ref) => toucherBorne(ref, a));
 }
 function proposerChoix(cands, e, faire) {
   fermerChoix();
@@ -773,6 +833,8 @@ function dessinerFil(f) {
   const p = document.createElementNS(NS, 'path'); p.setAttribute('class', 'fil ' + f.couleur + (f === choisi ? ' choisi' : '') + (f.faux ? ' faux' : '') + (f === enAttente ? ' recent' : '')); p.setAttribute('d', d);
   p.setAttribute('stroke', COULEURS[f.couleur]);
   p.setAttribute('role', 'button'); p.setAttribute('aria-label', 'fil ' + lib(f.de) + ' vers ' + lib(f.a));
+  // 08/10 (contre-vérification tablette T-05) : au doigt, une bande invisible de 24 px sous le fil pour le prendre (±3 px avant)
+  if (TACTILE) { const h = document.createElementNS(NS, 'path'); h.setAttribute('class', 'fil-prise'); h.setAttribute('d', d); gFils.appendChild(h); f.prise = h; }
   gFils.appendChild(contour); gFils.appendChild(p);
   f.el = p; f.contour = contour;
 }
@@ -792,6 +854,8 @@ function supprimer() {
   // 30/09 (constats E1, X5) : en Guidé, l'étape repart du premier conducteur non relié : le fil supprimé se repose
   if (MODE === 'guide') { etapeIdx = 0; prochaineEtape(); }
   if (FIL_PAR_FIL && retire.pose) dire('Fil retiré de l’écran : retirez-le aussi de votre platine.', 'ko', lib(retire.de) + ' → ' + lib(retire.a) + '.');
+  // 08/10 (contre-vérification tablette T-14) : hors Guidé, la consigne disait encore « sélectionné » après la suppression
+  else if (MODE !== 'guide') dire('Fil ' + lib(retire.de) + ' → ' + lib(retire.a) + ' retiré.', null, MODE === 'aide' ? 'Continuez, ou demandez de l’aide.' : 'Continuez, puis contrôlez.');
 }
 function rafraichir() {
   const occupees = new Set(); fils.forEach(f => { occupees.add(f.de); occupees.add(f.a); });
@@ -835,7 +899,16 @@ function montrerConducteur(de, a) {
    bandes d'alimentation sont souvent en dehors du champ ») : si l'une des deux bornes du fil est hors de la vue, ou trop
    petite pour être lue, la platine se recadre sur une LARGE bande qui les contient toutes les deux, à une échelle lisible.
    La bande est assez large pour ne rien désigner : l'élève lit toujours les numéros lui-même (règle n° 1). */
-function suivreFil(de, a) {
+/* 08/10 (vérifié au doigt, cablage-2 : les 6 ponts du Guidé avaient leurs bornes de bornier hors champ) : pour un pont, la bande cadre
+   aussi les bornes du bornier où arrivent déjà les fils des deux appareils — l'élève suit ces fils, il ne les cherche plus hors champ. */
+function bornierDe(ref) {
+  const l = [];
+  fils.forEach(f => { const x = f.de === ref ? f.a : f.a === ref ? f.de : null;
+    if (x && rangDe(rep(x)) === 5) Object.keys(bornes).filter(k => rep(k) === rep(x)).forEach(k => l.push(k)); });
+  return l;
+}
+function suivreEtape(et) { suivreFil(et.de, et.a, et.pont ? bornierDe(et.de).concat(bornierDe(et.a)) : []); }
+function suivreFil(de, a, autres) {
   const p = $('#platine'), z = p && p._zoom, svg = svgPlatine, b1 = bornes[de], b2 = bornes[a];
   if (TUTO || !z || !z.cadrer || !svg || !b1 || !b2) return;   // le tutoriel : une petite platine, ses bulles visent la vue entière
   const corps = p.querySelector('.corps'), cw = corps && corps.clientWidth, ch = corps && corps.clientHeight;
@@ -845,10 +918,11 @@ function suivreFil(de, a) {
   const LISIBLE = TACTILE ? 1.5 : 0.7;
   const k = Math.min(cw / vw, ch / vh), m = 2 * RAYON_BORNE;
   // 02/10 : platine tournée d'un quart, on raisonne dans le repère de la vue (celui du viewBox)
-  const V = (r) => z.versVue ? z.versVue(r) : r, P = (b) => V({ x: b.x, y: b.y, w: 0, h: 0 }), q1 = P(b1), q2 = P(b2);
+  const V = (r) => z.versVue ? z.versVue(r) : r, P = (b) => V({ x: b.x, y: b.y, w: 0, h: 0 });
+  const qs = [b1, b2].concat((autres || []).map(r => bornes[r]).filter(Boolean)).map(P);
   const vue = b => b.x >= vx + m && b.x <= vx + vw - m && b.y >= vy + m && b.y <= vy + vh - m;
-  if (vue(q1) && vue(q2) && k >= LISIBLE - 0.05) return;
-  const x1 = Math.min(q1.x, q2.x) - 60, x2 = Math.max(q1.x, q2.x) + 60, y1 = Math.min(q1.y, q2.y) - 60, y2 = Math.max(q1.y, q2.y) + 60;
+  if (qs.every(vue) && k >= LISIBLE - 0.05) return;
+  const x1 = Math.min(...qs.map(q => q.x)) - 60, x2 = Math.max(...qs.map(q => q.x)) + 60, y1 = Math.min(...qs.map(q => q.y)) - 60, y2 = Math.max(...qs.map(q => q.y)) + 60;
   let w = Math.max(x2 - x1, cw / LISIBLE), h = Math.max(y2 - y1, ch / LISIBLE);
   if (w / h < cw / ch) w = h * cw / ch; else h = w * ch / cw;
   // la bande reste sur la platine : on la glisse à l'intérieur de l'étendue des bornes plutôt que de montrer du vide
@@ -865,8 +939,16 @@ function compterAide(n) {
 }
 
 // ------------------------------------------------------------ les modes
+/* 08/10 (reste du 30/09) : la couleur proposée en premier est celle de Colorier (L1 marron, L2 noir, L3 gris) ;
+   les autres couleurs de phase restent admises au contrôle. */
+const PHASE_TEINTE = { L1: 'marron', L2: 'noir', L3: 'gris' };
 function etapes() {
-  return EX.etapes.map(e => ({ de: e.de, a: e.a, pont: !!e.pont, couleurs: (reseauDe(e.de) || { couleurs: [e.couleur] }).couleurs }));
+  return EX.etapes.map(e => {
+    const r = reseauDe(e.de), t = r && PHASE_TEINTE[r.potentiel];
+    let couleurs = (r || { couleurs: [e.couleur] }).couleurs;
+    if (t && couleurs.includes(t)) couleurs = [t].concat(couleurs.filter(c => c !== t));
+    return { de: e.de, a: e.a, pont: !!e.pont, couleurs };
+  });
 }
 function etapeCourante() {
   const uf = partition(), liste = etapes();
@@ -884,7 +966,7 @@ function prochaineEtape(sansControle) {
   }
   if (!et) { surbrillance([]); montrerConducteur(null); dire('Tout est câblé. Contrôle en cours…', 'ok'); setTimeout(controler, 600); return; }
   choisirCouleur(et.couleurs[0]);
-  suivreFil(et.de, et.a);
+  suivreEtape(et);
   const fixes = new Set(liaisonsFixes().map(([a, b]) => cle(a, b))), aPoser = EX.etapes.filter(e => !fixes.has(cle(e.de, e.a)));
   const n = EX.etapes.slice(0, etapeIdx).filter(e => !fixes.has(cle(e.de, e.a))).length + 1, total = aPoser.length;
   if (et.pont) {   // le bornier à trouver (27/09) : deux bornes d'appareils à relier PAR le bornier, sans donner ses numéros
@@ -896,8 +978,7 @@ function prochaineEtape(sansControle) {
   }
   if (montrerConducteur(et.de, et.a)) {
     surbrillance([]);
-    dire('Fil ' + n + '/' + total + ' : posez le conducteur qui clignote sur la carte, en ' + et.couleurs[0] + '.', null,
-         'Lisez les numéros de ses deux bornes sur le schéma, puis trouvez-les sur la platine. Le courant ressort par la borne paire et entre dans l’appareil suivant par l’impaire.');
+    consigneGuide = { n, total, couleur: et.couleurs[0] }; direGuide();   // 08/10 (T-01) : carte cachée, la consigne dit où la voir
   } else {   // conducteur introuvable sur la carte : l'ancien guidage, bornes nommées
     surbrillance([et.de, et.a], [rep(et.de), rep(et.a)]);
     dire('Fil ' + n + '/' + total + ' : de ' + libSens(et.de) + ' à ' + libSens(et.a) + ', en ' + et.couleurs[0] + '.', null, 'Touchez une borne, puis l’autre.');
@@ -1029,7 +1110,16 @@ function tracer(r, secondes) {
     if (P.get('tuto') !== null) entree.tuto = true;   // l'accueil range le tutoriel au Départ, pas à l'Allumage simple (même exercice)
     liste.push(entree);
     localStorage.setItem(cle, JSON.stringify(liste.slice(-200)));
-  } catch (e) { /* stockage indisponible : le jeu continue */ }
+  } catch (e) {   // stockage indisponible : le jeu continue
+    // 08/10 (reste du 30/09, constat X8) : le niveau suit les fils dans window.name, sinon Réaliser dit « pas encore contrôlé »
+    if (ACTIVITE !== 'cabler') return;
+    try {
+      const t = CLE_FILS + '=', n = window.name || '';
+      if (!n.startsWith(t)) return;
+      const m = JSON.parse(n.slice(t.length)); m.controle = { date: new Date().toISOString(), niveau: r.niveau };
+      window.name = t + JSON.stringify(m);
+    } catch (err) { /* rien */ }
+  }
 }
 
 // ------------------------------------------------------------ la barre d'outils
@@ -1246,6 +1336,9 @@ function itemsReperer() {
   });
   items.sort((p, q) => p.cle.reduce((d, v, k) => d || v - q.cle[k], 0));
 }
+// 08/10 (N-04) : la palette et le clavier sont en bas, ou à droite en largeur (cablage.css, colonne de Colorier / Repérer)
+function ouOutils() { const o = $('.outils'); return o && getComputedStyle(o).flexDirection === 'column' ? 'à droite' : 'en bas'; }
+window.CABLAGE_OU_OUTILS = ouOutils;
 function regle(it) {
   if (ACTIVITE === 'colorier') return 'Remontez le fil jusqu’à l’arrivée : dans chaque appareil, la borne 2 continue la 1, la 4 continue la 3, la 6 continue la 5.';
   const ids = it.candidats;
@@ -1283,10 +1376,10 @@ function peindre(it) {
 function toucher(it) {
   if (controle) return;
   if (MODE === 'guide') {
-    if (it !== courant) dire('Suivez l’ordre : ' + (ACTIVITE === 'colorier' ? 'le conducteur' : 'la borne') + ' qui clignote.', null, ACTIVITE === 'colorier' ? 'Touchez sa couleur dans la palette.' : 'Touchez son numéro en bas.');
+    if (it !== courant) dire('Suivez l’ordre : ' + (ACTIVITE === 'colorier' ? 'le conducteur' : 'la borne') + ' qui clignote.', null, ACTIVITE === 'colorier' ? 'Touchez sa couleur dans la palette.' : 'Touchez son numéro ' + ouOutils() + '.');
     return;
   }
-  if (ACTIVITE === 'reperer') { marquerCourant(it); dire('Quel numéro pour cette borne de ' + it.rep + ' ?', null, 'Touchez-le en bas.'); return; }
+  if (ACTIVITE === 'reperer') { marquerCourant(it); dire('Quel numéro pour cette borne de ' + it.rep + ' ?', null, 'Touchez-le ' + ouOutils() + '.'); return; }
   if (!pinceau) { dire('Choisissez d’abord une couleur dans la palette.', 'ko'); return; }
   repondre(it, it.reponse === pinceau ? null : pinceau);   // toucher de nouveau efface
 }
@@ -1533,7 +1626,10 @@ function brancherZoom(panneau, z) {
       // 08/10 (Franck : « une rotation du schéma pour l'adapter comme on veut » ; quart de tour automatique retenu) : au doigt, la
       // platine se couche toute seule quand le dessin et l'écran n'ont pas le même sens ; un appui sur ⟲ l'emporte, gardé pour ce
       // sens de l'écran. La carte (le schéma à lire) ne tourne qu'à la demande.
-      const auto = TACTILE && panneau.id === 'platine', large = () => innerWidth > innerHeight;
+      // 08/10 (contre-vérification tablette T-12) : le sens du PANNEAU, pas celui de la fenêtre (Réaliser en portrait : un panneau en
+      // largeur sous la colonne ; le Guidé côte à côte : un panneau presque carré, la platine reste droite)
+      const corps = panneau.querySelector('.corps');
+      const auto = TACTILE && panneau.id === 'platine', large = () => corps && corps.clientWidth && corps.clientHeight ? corps.clientWidth > corps.clientHeight : innerWidth > innerHeight;
       const cle = () => auto ? panneau.id + (large() ? ':largeur' : ':hauteur') : panneau.id;
       const voulu = () => {
         const t = tours()[cle()]; if (t !== undefined || !auto) return !!t;
@@ -1548,6 +1644,8 @@ function brancherZoom(panneau, z) {
       };
       if (voulu()) z.tourner(1);
       peindre();
+      // l'affichage a changé (moteur/ecran.js) : le panneau a peut-être changé de sens
+      if (auto) panneau._reorienter = () => { if (!!z.quart() !== voulu()) { z.tourner(voulu() ? 1 : 0); peindre(); } };
       if (auto) matchMedia('(orientation: landscape)').addEventListener('change', () => requestAnimationFrame(() => {   // la tablette a tourné
         if (!!z.quart() !== voulu()) { z.tourner(voulu() ? 1 : 0); peindre(); } else z.ajuster();
         if (window.CABLAGE_SUIVRE) window.CABLAGE_SUIVRE();
@@ -1639,7 +1737,8 @@ window.CABLAGE_ETAT = () => ({ exercice: ID, activite: ACTIVITE, mode: MODE, fil
                                carte: items.map(i => ({ quoi: i.rep || lib(i.de) + ' > ' + lib(i.a), attendu: i.attendu, reponse: i.reponse })) });
 
 // l'écran adaptatif (moteur/ecran.js) rappelle le suivi du fil après avoir recadré la platine
-window.CABLAGE_SUIVRE = () => { if (MODE !== 'guide' || ACTIVITE !== 'cabler') return; const et = etapeCourante(); if (et) suivreFil(et.de, et.a); };
+window.CABLAGE_REDIRE = () => direGuide();   // 08/10 : moteur/ecran.js, après un changement d'affichage
+window.CABLAGE_SUIVRE = () => { if (MODE !== 'guide' || ACTIVITE !== 'cabler') return; const et = etapeCourante(); if (et) suivreEtape(et); };
 
 // La mise sous tension (moteur/tension-ecran.js) lit l'exercice et les fils, parle dans la consigne et compte ses aides.
 function signatureFils() { return fils.map(f => cle(f.de, f.a)).sort().join(' '); }
@@ -1711,7 +1810,7 @@ charger(ID, (ex) => {
   construirePlatine();
   brancherZoom($('#platine'), installerZoom(svgPlatine, {
     zone: zonePlatine,
-    peutDeplacer: (e) => !trace && !(e.target.closest && e.target.closest('.fil')),
+    peutDeplacer: () => !trace,   // 08/10 (T-13) : un glisser qui part d'un fil déplace la vue ; un toucher le choisit (finTrace)
     annuler: annulerTrace
   }));
   construireOutils();

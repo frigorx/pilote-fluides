@@ -17,27 +17,36 @@
   const meme = (a, b) => a.activite === b.activite && a.mode === b.mode && a.reelle === b.reelle;
   const juste = (etat) => etat && etat.carte.some(i => i.reponse && i.reponse === i.attendu);
   const panneauModes = () => { const m = document.querySelector('#panneau-modes'); return !!m && !m.hidden; };
+  // 08/10 (contre-vérification tablette T-01) : au doigt, la carte peut être cachée (platine seule) : on vise « ‹ Carte », on le dit
+  const carteCachee = () => { const c = document.querySelector('#carte'); return !!c && !c.offsetWidth; };
+  const viseCarte = () => (carteCachee() ? ['#platine button.basculer'] : ['#carte polyline.etape']);
+  const surCarte = () => (carteCachee() ? ' (touchez <b>« ‹ Carte »</b> pour la voir, puis <b>« Platine › »</b>)' : '');
+  // T-09 : la platine couchée (quart de tour automatique au doigt) met la gauche en bas
+  const ouOutils = () => (window.CABLAGE_OU_OUTILS ? window.CABLAGE_OU_OUTILS() : 'en bas');   // N-04 : la palette à droite en largeur
+  const couchee = () => !!document.querySelector('#platine button[data-zoom="tourner"][aria-pressed="true"]');
 
   // Les étapes : ecran attendu, cibles (sélecteurs, ou fonction de l'état), textes, et « fait » (le geste est accompli).
   // « saut » : l'étape se termine par un rechargement de la page (l'écran suivant est celui de l'étape d'après).
   const ETAPES = [
     { ecran: E('cabler', 'guide'), titre: 'Bienvenue dans le câblage virtuel',
-      texte: () => 'À gauche, <b>la carte</b> : le schéma à lire. À droite, <b>la platine</b> : les appareils et leurs bornes. En ' + NB + ' étapes, vous allez colorier, repérer, poser des fils, demander de l’aide et contrôler.',
+      texte: () => { const b = document.body.classList;   // 08/10 (T-01) : dit ce qui est vraiment à l'écran
+        const ou = b.contains('un-panneau') ? ['<b>La carte</b>', ' (bouton « ‹ Carte »)', '<b>La platine</b>'] : b.contains('dispo-lignes') ? ['En haut, <b>la carte</b>', '', 'En bas, <b>la platine</b>'] : ['À gauche, <b>la carte</b>', '', 'À droite, <b>la platine</b>'];
+        return ou[0] + ' : le schéma à lire' + ou[1] + '. ' + ou[2] + ' : les appareils et leurs bornes. En ' + NB + ' étapes, vous allez colorier, repérer, poser des fils, demander de l’aide et contrôler.'; },
       bouton: 'Commencer', sansNumero: true },
     { ecran: E('colorier', 'guide'), cibles: ['#couleurs', '#carte .hit.courant'], titre: 'Colorier un fil',
-      texte: 'Le fil qui clignote sur la carte porte <b>L</b>, <b>N</b> ou <b>PE</b> : remontez-le jusqu’à l’arrivée, puis touchez sa couleur en bas.',
+      texte: () => 'Le fil qui clignote sur la carte porte <b>L</b>, <b>N</b> ou <b>PE</b> : remontez-le jusqu’à l’arrivée, puis touchez sa couleur ' + ouOutils() + '.',
       attend: 'J’attends un premier fil colorié.', fait: (etat) => juste(etat) },
     { ecran: E('colorier', 'guide'), cibles: (etat) => etat && etat.controle ? ['#btn-suite'] : ['#couleurs'], titre: 'Continuez seul',
       texte: 'Coloriez les autres fils. Quand tout est colorié, le contrôle se fait tout seul : lisez le niveau, puis appuyez sur <b>« Passer au repérage »</b>.',
       attend: 'J’attends le passage au repérage.', saut: true },
     { ecran: E('reperer', 'guide'), cibles: ['#couleurs', '#carte .cible.courant'], titre: 'Repérer une borne',
-      texte: 'Les numéros sont cachés. La borne qui clignote : quel numéro ? La règle : <b>en haut les impaires</b> 1, 3, 5 de gauche à droite ; <b>en bas les paires</b> 2, 4, 6. Touchez le numéro en bas.',
+      texte: () => 'Les numéros sont cachés. La borne qui clignote : quel numéro ? La règle : <b>en haut les impaires</b> 1, 3, 5 de gauche à droite ; <b>en bas les paires</b> 2, 4, 6. Touchez le numéro ' + ouOutils() + '.',
       attend: 'J’attends une première borne juste.', fait: (etat) => juste(etat) },
     { ecran: E('reperer', 'guide'), cibles: (etat) => etat && etat.controle ? ['#btn-suite'] : ['#couleurs'], titre: 'Continuez seul',
       texte: 'Numérotez les autres bornes. Quand tout est repéré, le contrôle se fait tout seul : lisez le niveau, puis appuyez sur <b>« Passer au câblage »</b>.',
       attend: 'J’attends le passage au câblage.', saut: true },
-    { ecran: E('cabler', 'guide'), cibles: ['#carte polyline.etape'], titre: 'Poser le premier fil',
-      texte: 'Le fil qui clignote sur la carte : lisez ses <b>deux numéros</b>, trouvez-les sur la platine. Touchez la première borne : elle s’allume. Touchez la seconde : le fil se pose. Pas besoin de viser juste : la borne la plus proche s’allume.',
+    { ecran: E('cabler', 'guide'), cibles: viseCarte, titre: 'Poser le premier fil', protege: ['#platine .borne[data-ref^="Q1:"]', '#platine .borne[data-ref^="Réseau:"]'],
+      texte: () => 'Le fil qui clignote sur la carte' + surCarte() + ' : lisez ses <b>deux numéros</b>, trouvez-les sur la platine. Touchez la première borne : elle s’allume. Touchez la seconde : le fil se pose. Pas besoin de viser juste : la borne la plus proche s’allume.',
       attend: 'J’attends le fil.', fait: (etat) => etat && etat.fils.length >= 1 },
     { ecran: E('cabler', 'guide'), cibles: ['#btn-aide'], titre: 'Demander de l’aide',
       texte: 'Pour le fil suivant, appuyez sur <b>Aide</b>. Une fois : les deux appareils s’éclairent. Deux fois : les numéros s’écrivent. Trois fois : les bornes clignotent. <b>Chaque aide est comptée.</b>',
@@ -48,8 +57,8 @@
       attend: 'J’attends la suppression, puis le fil reposé.',
       fait: (etat, ctx) => { if (!etat) return false; ctx.max = Math.max(ctx.max || 0, etat.fils.length);
                              if (etat.fils.length < ctx.max) ctx.supprime = true; return !!ctx.supprime && etat.fils.length >= ctx.max; } },
-    { ecran: E('cabler', 'guide'), cibles: ['#carte polyline.etape'], titre: 'À vous',
-      texte: 'Posez les fils qui restent. Le fil à poser clignote toujours sur la carte ; l’aide reste là si besoin. Quand tout est posé, le contrôle se lance tout seul.',
+    { ecran: E('cabler', 'guide'), cibles: viseCarte, titre: 'À vous',
+      texte: () => 'Posez les fils qui restent. Le fil à poser clignote toujours sur la carte' + surCarte() + ' ; l’aide reste là si besoin. Quand tout est posé, le contrôle se lance tout seul.',
       attend: 'J’attends le contrôle.', fait: (etat) => etat && etat.controle },
     { ecran: E('cabler', 'guide'), cibles: ['#resultat'], titre: 'Lire le résultat',
       texte: () => 'Le niveau va de <b>0 à 4</b>. Le logiciel compte aussi les <b>aides</b> et les <b>fils refusés</b> : ils comptent pour la note. Fermez avec <b>« ' + boutonFermer() + ' »</b>.',
@@ -58,10 +67,14 @@
       texte: 'Appuyez sur <b>« Vue réelle »</b> : la platine montre les vrais appareils.', attend: 'J’attends l’appui.', saut: true },
     // la pastille du mode (29/09) : on la vise, puis, panneau ouvert, le bouton « Avancé »
     { ecran: E('cabler', 'guide', true), cibles: () => (panneauModes() ? ['#modes [data-mode="reel"]'] : ['#modes']), titre: 'Le vrai disjoncteur, et les trois modes',
-      texte: 'Q1 est maintenant le vrai appareil. Ses numéros sont les mêmes : <b>1 et 2 pour le neutre, à gauche</b> ; 3 et 4 pour la phase. En haut, la pastille dit le mode : <b>Guidé</b> montre le fil à poser, <b>Aidé</b> vous laisse l’ordre, <b>Avancé</b> ne montre rien et contrôle à la fin. Touchez la pastille <b>« Guidé »</b>, puis <b>« Avancé »</b>.',
+      protege: ['#platine .borne[data-ref^="Q1:"]'],
+      texte: () => 'Q1 est maintenant le vrai appareil. Ses numéros sont les mêmes : <b>1 et 2 pour le neutre, à gauche</b>' + (couchee() ? ' (en bas ici : la platine est couchée)' : '') + ' ; 3 et 4 pour la phase. En haut, la pastille dit le mode : <b>Guidé</b> montre le fil à poser, <b>Aidé</b> vous laisse l’ordre, <b>Avancé</b> ne montre rien et contrôle à la fin. Touchez la pastille <b>« Guidé »</b>, puis <b>« Avancé »</b>.',
       attend: 'J’attends l’appui sur Avancé.', saut: true },
-    { ecran: E('cabler', 'reel', true), cibles: ['#btn-controler'], titre: 'Sans aide',
-      texte: 'Câblez les <b>6 fils</b> sans aide, puis appuyez sur <b>Contrôler</b>.', attend: 'J’attends le contrôle.',
+    { ecran: E('cabler', 'reel', true), cibles: ['#btn-controler'], titre: 'Sans aide', protege: ['#materiels', '#btn-vue-reelle'],
+      // 08/10 (reste du 30/09) : « Mural » et « 22 mm » apparaissaient sans qu'aucune bulle les explique
+      texte: 'Câblez les <b>6 fils</b> sans aide, puis appuyez sur <b>Contrôler</b>. Au-dessus de la platine, <b>Mural</b> et <b>22 mm</b> ' +
+             'changent le matériel dessiné : celui de votre atelier, au choix du professeur.',
+      attend: 'J’attends le contrôle.',
       fait: (etat) => etat && etat.controle },
     { ecran: E('cabler', 'reel', true), titre: 'Tutoriel terminé',
       texte: 'Bravo. Notez sur votre feuille : <b>le niveau</b>, les <b>aides</b> et les <b>fils refusés</b> de chaque étape. Vous savez maintenant colorier, repérer, câbler, demander de l’aide, contrôler et passer en vue réelle.',
@@ -86,8 +99,8 @@
     { ecran: E('cabler', 'guide', true), cibles: ['#platine .borne[data-ref="Réseau:L1"]'], titre: 'Deux côtés, un seul repère', cadre: ZONE,
       texte: 'XA3 s’est allumée. Touchez maintenant <b>L1</b>, à l’arrivée : le fil se pose, côté terrain.',
       attend: 'J’attends le fil de L1.', fait: (etat) => pose(etat, 'Réseau:L1', 'XA3:1') },
-    { ecran: E('cabler', 'guide', true), cibles: ['#carte polyline.etape'], titre: 'Les phases, puis le neutre', cadre: ZONE,
-      texte: 'Posez les deux autres phases, puis le neutre : sa borne est <b>bleue</b>. Le fil à poser clignote sur la carte.',
+    { ecran: E('cabler', 'guide', true), cibles: viseCarte, titre: 'Les phases, puis le neutre', cadre: ZONE,
+      texte: () => 'Posez les deux autres phases, puis le neutre : sa borne est <b>bleue</b>. Le fil à poser clignote sur la carte' + surCarte() + '.',
       attend: 'J’attends les deux phases et le neutre.', fait: (etat) => pose(etat, 'Réseau:N', 'XA2:1') },
     { ecran: E('cabler', 'guide', true), cibles: ['#platine .borne[data-ref^="XA1:"]', '#platine .borne[data-ref^="XB1:"]'], titre: 'La terre', cadre: ZONE,
       texte: 'Verte et jaune, fixée au rail : <b>la terre</b>. Un repère n’est pas obligatoire : la couleur suffit. Posez le conducteur de terre de l’arrivée.',
@@ -148,7 +161,7 @@
       if (e.activite !== page.activite) { P.set('activite', e.activite); location.search = '?' + P.toString().replace(/(^|&)tuto=(&|$)/, '$1tuto$2'); }
     };
   }
-  function poser(rs) {
+  function poser(rs, et) {
     halos.forEach(h => h.remove()); halos = [];
     const H = window.innerHeight, L = window.innerWidth;
     rs.forEach(r => { const h = document.createElement('div'); h.className = 'tuto-halo';
@@ -159,7 +172,14 @@
     // vise ; elle se pose du côté libre, la plus proche de sa cible. Les zones gênantes (consigne, palette, boutons) coûtent,
     // sans être interdites. Plusieurs largeurs sont essayées avant de céder.
     const r = rs.length ? { x: Math.min(...rs.map(q => q.x)), y: Math.min(...rs.map(q => q.y)), x1: Math.max(...rs.map(q => q.x1)), y1: Math.max(...rs.map(q => q.y1)) } : null;
-    const dures = zonesProtegees().concat(rs.map(q => ({ x: q.x - 8, y: q.y - 8, x1: q.x1 + 8, y1: q.y1 + 8 })));
+    // 08/10 (contre-vérification tablette T-08, N-03) : au doigt la platine occupe presque tout l'écran, aucune place n'est libre ;
+    // l'ordre des priorités : la CIBLE d'abord (quatre fois), puis ce dont la bulle parle (`protege` : bornes de Q1, « Mural / 22 mm »,
+    // deux fois), puis le schéma et la platine
+    const dures = zonesProtegees();
+    rs.forEach(q => { const z = { x: q.x - 8, y: q.y - 8, x1: q.x1 + 8, y1: q.y1 + 8 }; dures.push(z, z, z, z); });
+    ((et && et.protege) || []).map(rect).filter(Boolean).forEach(q => { const z = { x: q.x - 8, y: q.y - 8, x1: q.x1 + 8, y1: q.y1 + 8 }; dures.push(z, z); });
+    // 08/10 (reste du 30/09) : la fiche du résultat ouverte ne se cache jamais (la bulle finale tombait sur son tableau)
+    const res = rect('#resultat'); if (res) dures.push({ x: res.x - 8, y: res.y - 8, x1: res.x1 + 8, y1: res.y1 + 8 });
     const douces = ['#consigne', '#nomenclature', '#carte .entete', '#platine .entete', '#couleurs', '.outils .actions', '#activites', '#pupitre'].map(s => rect(s)).filter(Boolean);
     const inter = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x, b.x)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y, b.y));
     let mieux = null;
@@ -226,8 +246,10 @@
     const red = redirection();
     if (!red && et.fait && et.fait(etat, ctx)) { avancer(); return battre(); }
     if (!red) cadrer(et);
-    if (courant !== i || bulle.dataset.red !== String(!!red)) { ecrire(et, red && red.texte); courant = i; bulle.dataset.red = String(!!red); }
-    poser(red ? [rect(red.sel)].filter(Boolean) : cibles(et, etat));
+    // 08/10 (T-01, T-09) : un texte qui dépend de l'écran (disposition, platine couchée) se réécrit quand l'écran change
+    const t = !red && typeof et.texte === 'function' ? et.texte() : '';
+    if (courant !== i || bulle.dataset.red !== String(!!red) || bulle.dataset.t !== t) { ecrire(et, red && red.texte); courant = i; bulle.dataset.red = String(!!red); bulle.dataset.t = t; }
+    poser(red ? [rect(red.sel)].filter(Boolean) : cibles(et, etat), red ? null : et);
   }
   battre();
   setInterval(battre, 300);

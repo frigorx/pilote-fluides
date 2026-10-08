@@ -42,6 +42,10 @@ function demarrer() {
   let pref = { dispo: tactile ? 'platine' : window.innerWidth >= 900 && window.innerWidth >= window.innerHeight ? 'colonnes' : 'lignes', taille: 'moyenne', reperes: !tactile, propose: false };
   try { Object.assign(pref, JSON.parse(localStorage.getItem(CLE) || '{}')); } catch (err) { /* stockage indisponible */ }
   const garder = () => { try { localStorage.setItem(CLE, JSON.stringify(pref)); } catch (err) { /* stockage indisponible */ } };
+  // 08/10 (reste du 30/09) : en Guidé, le conducteur à poser clignote sur la carte ; « Schéma sur papier » (Aidé et Avancé) y
+  // devient la platine seule, la carte d'un appui sur « ‹ Carte ». Le choix reste gardé pour les autres modes.
+  const GUIDE = API.mode === 'guide';
+  const dispo = () => GUIDE && pref.dispo === 'papier' ? 'platine' : pref.dispo;
 
   // ---- le bouton du bandeau
   const barre = $('.barre');
@@ -67,7 +71,8 @@ function demarrer() {
     '<button id="aff-plein-ecran">⛶ Plein écran</button><button id="aff-autre-ecran">Carte sur un autre écran</button>' +
     '<button id="aff-reperes">Repères</button></div>' +
     // 02/10 (Franck : « un réglage de sensibilité de souris ; selon les ordinateurs et les pads, zoomer / dézoomer peut être compliqué »)
-    '<h3>Zoom à la molette ou au pavé tactile</h3><div class="choix ligne" id="choix-zoom">' +
+    // 08/10 (T-15) : au doigt, ce réglage ne sert pas (on pince) : le titre devient « Tourner », le curseur se cache (cablage.css)
+    '<h3 id="titre-zoom">' + (tactile ? 'Tourner' : 'Zoom à la molette ou au pavé tactile') + '</h3><div class="choix ligne" id="choix-zoom">' +
     '<label style="display:flex;align-items:center;gap:8px;font:600 14px system-ui,sans-serif">Lent <input type="range" id="aff-zoom" min="0.2" max="3" step="0.1" style="width:170px"> Rapide <span id="aff-zoom-v"></span></label>' +
     '<small style="color:var(--mut,#5b6b7d);font-size:13.5px">Le bouton ⟲ de la carte et de la platine les tourne d’un quart de tour.</small></div>' +
     // 30/09 (voix V3) : la voix du professeur se règle ici, pas par un bouton de plus ; la vitesse, obligatoire (doctrine § 5)
@@ -94,15 +99,17 @@ function demarrer() {
   $('#aff-zoom').oninput = (e) => { if (Z()) { Z().regler(+e.target.value); peindre(); } };
 
   function peindre() {
-    voile.querySelectorAll('#choix-dispo button').forEach(b => b.classList.toggle('actif', b.dataset.dispo === pref.dispo));
+    voile.querySelectorAll('#choix-dispo button').forEach(b => b.classList.toggle('actif', b.dataset.dispo === dispo()));
+    const bp = voile.querySelector('#choix-dispo button[data-dispo="papier"]');
+    if (bp && GUIDE) { bp.disabled = true; bp.title = 'En Guidé, le conducteur à poser clignote sur la carte : choisissez « Schéma sur papier » en Aidé ou en Avancé.'; }
     voile.querySelectorAll('#choix-taille button').forEach(b => b.classList.toggle('actif', b.dataset.taille === pref.taille));
-    const deux = !carteSeule && (pref.dispo === 'colonnes' || pref.dispo === 'lignes');
+    const deux = !carteSeule && (dispo() === 'colonnes' || dispo() === 'lignes');
     $('#titre-taille').hidden = !deux; $('#choix-taille').hidden = !deux;
     $('#titre-dispo').hidden = carteSeule; $('#titre-aussi').textContent = carteSeule ? 'L’écran' : 'Aussi'; $('#choix-dispo').hidden = carteSeule; $('#aff-autre-ecran').hidden = carteSeule;
     const zs = Z() && Z().sens();
     $('#choix-zoom').hidden = !zs;
     if (zs) { $('#aff-zoom').value = zs; $('#aff-zoom-v').textContent = zs.toFixed(1).replace('.', ',') + '×'; }
-    if (pref.dispo === 'lignes') $('#titre-taille').textContent = 'Hauteur de la carte'; else $('#titre-taille').textContent = 'Place de la carte';
+    if (dispo() === 'lignes') $('#titre-taille').textContent = 'Hauteur de la carte'; else $('#titre-taille').textContent = 'Place de la carte';
     const pe = $('#aff-plein-ecran'); pe.classList.toggle('actif', !!document.fullscreenElement); pe.textContent = document.fullscreenElement ? '⛶ Quitter le plein écran' : '⛶ Plein écran';
     const r = $('#aff-reperes'); r.classList.toggle('actif', pref.reperes); r.textContent = pref.reperes ? 'Repères : montrés' : 'Repères : repliés';
     const v = window.CABLAGE_VOIX && window.CABLAGE_VOIX.reglage();
@@ -127,21 +134,42 @@ function demarrer() {
     const corps = p.querySelector('.corps'), ratio = corps.clientHeight ? corps.clientWidth / corps.clientHeight : null;
     z.cadrer(zone, 30, ratio);
   }
+  // 08/10 (contre-vérification tablette T-04) : « ‹ Carte » puis « Platine › » rendait la vue d'ensemble — le zoom pincé était perdu à
+  // chaque fil lu sur la carte. La vue d'un panneau est gardée quand il se cache, et rendue s'il revient à la même taille.
+  const vues = {};
+  function garderVues() {
+    ['#carte', '#platine'].forEach(s => {
+      const p = $(s), svg = p && p.querySelector('.corps svg'), c = p && p.querySelector('.corps');
+      if (svg && c && c.clientWidth && c.clientHeight) vues[s] = { vb: svg.getAttribute('viewBox'), w: c.clientWidth, h: c.clientHeight, q: p._zoom && p._zoom.quart ? p._zoom.quart() : 0 };
+    });
+  }
+  function rendreVue(s) {
+    const p = $(s), v = vues[s], c = p && p.querySelector('.corps'), z = p && p._zoom;
+    if (!v || !z || !z.cadrer || !c || Math.abs(c.clientWidth - v.w) > 2 || Math.abs(c.clientHeight - v.h) > 2 || (z.quart ? z.quart() : 0) !== v.q) return false;
+    const [x, y, w, h] = v.vb.split(/[\s,]+/).map(Number);
+    z.cadrer({ x, y, w, h, vue: true }, 0, w / h);
+    return true;
+  }
   function appliquer() {
     const b = document.body.classList;
     if (carteSeule) { b.toggle('reperes-replies', !pref.reperes); return; }   // la carte seule : sa mise en page est celle de l'étape
+    garderVues();
     ['dispo-colonnes', 'dispo-lignes', 'vue-platine', 'vue-carte-seule', 'vue-papier', 'un-panneau', 'taille-petite', 'taille-moyenne', 'taille-grande', 'reperes-replies'].forEach(c => b.remove(c));
-    if (pref.dispo === 'platine') b.add('vue-platine', 'un-panneau');
-    else if (pref.dispo === 'papier') b.add('vue-platine', 'vue-papier', 'un-panneau');
-    else if (pref.dispo === 'carte') b.add('vue-carte-seule', 'un-panneau');
-    else b.add('dispo-' + pref.dispo, 'taille-' + pref.taille);
+    const d = dispo();
+    if (d === 'platine') b.add('vue-platine', 'un-panneau');
+    else if (d === 'papier') b.add('vue-platine', 'vue-papier', 'un-panneau');
+    else if (d === 'carte') b.add('vue-carte-seule', 'un-panneau');
+    else b.add('dispo-' + d, 'taille-' + pref.taille);
     if (!pref.reperes) b.add('reperes-replies');
     requestAnimationFrame(() => {   // les panneaux ont changé de taille : on les recadre
-      const seule = pref.dispo === 'platine' || pref.dispo === 'papier';
-      const ids = pref.dispo === 'carte' ? ['#carte'] : seule ? ['#platine'] : ['#carte', '#platine'];
-      ids.forEach(s => { const x = $(s + ' button[data-zoom="ajuster"]'); if (x) x.click(); });
-      if (seule) cadrerPlatine();
+      const seule = d === 'platine' || d === 'papier';
+      const ids = d === 'carte' ? ['#carte'] : seule ? ['#platine'] : ['#carte', '#platine'];
+      const pl = $('#platine'); if (pl && pl._reorienter) pl._reorienter();   // 08/10 (T-12) : le quart de tour suit le sens du panneau
+      const rendus = ids.filter(rendreVue);
+      ids.filter(s => !rendus.includes(s)).forEach(s => { const x = $(s + ' button[data-zoom="ajuster"]'); if (x) x.click(); });
+      if (seule && !rendus.includes('#platine')) cadrerPlatine();
       if (window.CABLAGE_SUIVRE) window.CABLAGE_SUIVRE();   // en Guidé, les deux bornes du fil en cours restent dans la vue
+      if (window.CABLAGE_REDIRE) window.CABLAGE_REDIRE();   // 08/10 (T-01) : la consigne du Guidé dit si la carte est cachée
       window.dispatchEvent(new Event('resize'));
     });
   }

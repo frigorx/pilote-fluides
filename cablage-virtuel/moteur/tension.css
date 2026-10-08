@@ -1,6 +1,7 @@
 /* La mise sous tension (moteur/tension-ecran.js) */
 #btn-tension{background:#e0a100;border-color:#e0a100;color:#fff}
-body.sous-tension .outils > :not(.pupitre){display:none}
+/* 08/10 : !important — en tablette, la palette en colonne (cablage.css, sélecteur plus fort) restait affichée pendant l'essai */
+body.sous-tension .outils > :not(.pupitre){display:none!important}
 body.sous-tension .nomenclature{display:none}
 body.sous-tension .consigne:not(.ko){background:#fff4d6;border-left:6px solid #e0a100}
 body.sous-tension .consigne.ko{background:var(--ko-bg);border-left:6px solid var(--ko)}
@@ -8,13 +9,30 @@ body.sous-tension .consigne.ko{background:var(--ko-bg);border-left:6px solid var
 .pupitre .groupe{display:flex;flex-direction:column;gap:6px}
 .pupitre .groupe > b{font-size:13px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 .pupitre .groupe > div{display:flex;flex-wrap:wrap;gap:8px}
-.pupitre button{min-height:48px;padding:6px 14px;border-radius:12px;border:2px solid var(--ligne);background:#fff;font:600 16px system-ui,sans-serif;color:var(--txt);touch-action:none;user-select:none}
+.pupitre button{min-height:48px;padding:6px 14px;border-radius:12px;border:2px solid var(--ligne);background:#fff;font:600 16px system-ui,sans-serif;color:var(--txt);touch-action:manipulation;user-select:none}
+/* 08/10 (contre-vérification tablette T-10) : seul un poussoir, maintenu au doigt, bloque le défilement ; sur les autres boutons, le doigt
+   qui glisse fait défiler la colonne du pupitre */
+.pupitre button[data-g="b"]{touch-action:none}
 .pupitre button.on{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
 .pupitre button.appui{background:var(--orange-clair);border-color:var(--orange)}
 .pupitre button.ko{background:var(--ko-bg);border-color:var(--ko);color:var(--ko)}
 .pupitre .droite{margin-left:auto;display:flex;gap:8px}
 .pupitre .consigner{background:var(--bleu);color:#fff;border-color:var(--bleu)}
 #btn-fil-cause{border-color:var(--orange)}
+.pupitre .defiler{border-style:dashed;color:var(--mut)}
+/* 08/10 (reste du 30/09, n° 8 commande ; mode tablette) : en colonne, le pupitre dépasse la hauteur de l'écran. L'aide et
+   « Consigner » restent collés en bas de la colonne (fond blanc, ombre quand des boutons passent dessous) ; « ▼ Autres boutons
+   plus bas » (moteur/tension-ecran.js) le dit et fait défiler. En tablette, la colonne s'élargit pendant l'essai (232 px,
+   comme « Schéma sur papier ») : les verbes du pupitre tiennent sur une ou deux lignes. */
+@media (orientation:landscape){
+body.vue-papier .pupitre .droite,
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .pupitre .droite{position:sticky;bottom:-40px;z-index:1;flex-direction:column;
+  margin:0 -10px -40px;padding:8px 10px 40px;background:#fff}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .pupitre .droite{margin:0 -8px -40px;padding:8px 8px 40px}
+body.vue-papier .pupitre .droite.ombre,
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .pupitre .droite.ombre{box-shadow:0 -10px 12px -8px rgba(29,42,56,.28)}
+body.jeu.tactile.sous-tension:not(.sur-carte):not(.activite-realiser):not(.vue-papier){grid-template-columns:minmax(0,1fr) 232px}
+}
 #platine .pastille rect{fill:#fff;stroke:var(--ligne);stroke-width:1.5}
 #platine .pastille text{font-weight:700;font-family:system-ui,sans-serif;fill:var(--mut)}
 #platine .pastille.ok rect{fill:var(--ok);stroke:var(--ok)} #platine .pastille.ok text{fill:#fff}

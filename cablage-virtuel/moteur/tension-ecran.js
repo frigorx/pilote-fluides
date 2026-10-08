@@ -124,6 +124,11 @@ document.addEventListener('cablage-pret', () => {
     groupe('Contacteurs (poussoir de test)', contacteurs, x => { x.dataset.g = 'f'; x.onclick = () => geste(x.dataset.rep, 'forcer'); });
     groupe('Essai des sécurités', par('thermique'), x => { x.dataset.g = 't'; x.onclick = () => geste(x.dataset.rep, e.appareils[x.dataset.rep].declenche ? 'rearmer' : 'declencher'); });
     const droite = document.createElement('div'); droite.className = 'droite';
+    // 08/10 (reste du 30/09, n° 8 commande ; et le mode tablette) : en colonne, le pupitre dépasse la hauteur de l'écran ;
+    // « Consigner » reste collé en bas (tension.css) et ce bouton dit qu'il y a d'autres boutons, et les fait venir
+    const d = document.createElement('button'); d.className = 'defiler'; d.hidden = true; d.textContent = '▼ Autres boutons plus bas';
+    d.onclick = () => { const o = $('.outils'); if (o) o.scrollBy({ top: d.dataset.sens === 'haut' ? -o.scrollTop : o.clientHeight * 0.7, behavior: 'smooth' }); };
+    droite.append(d);
     if (!REEL) {
       const a = document.createElement('button'); a.id = 'btn-fil-cause'; a.hidden = true; a.textContent = 'Aide : le fil en cause';
       a.onclick = () => { if (!aideMontree) API.compterAide(); aideMontree = true; rendre(true); };   // un appui de plus n'apporte rien : pas compté (constat P9)
@@ -131,7 +136,18 @@ document.addEventListener('cablage-pret', () => {
     }
     const c = document.createElement('button'); c.className = 'consigner'; c.textContent = 'Consigner et revenir au câblage'; c.onclick = consigner;
     droite.append(c); p.append(droite);
-    $('.outils').append(p);
+    const o = $('.outils'); o.append(p);
+    if (!o.dataset.defile) { o.dataset.defile = '1'; o.addEventListener('scroll', majDefile, { passive: true }); window.addEventListener('resize', majDefile); }
+    requestAnimationFrame(majDefile);
+  }
+  function majDefile() {
+    const o = $('.outils'), d = $('#pupitre .defiler'); if (!o || !d) return;
+    const colle = getComputedStyle(d.parentNode).position === 'sticky';   // en colonne seulement (tension.css)
+    const bas = o.scrollHeight - o.clientHeight - o.scrollTop > 8, haut = o.scrollTop > 8;   // 08/10 (T-10) : et pour remonter
+    d.hidden = !(colle && (bas || haut));
+    const sens = bas ? 'bas' : 'haut';
+    if (d.dataset.sens !== sens) { d.dataset.sens = sens; d.textContent = bas ? '▼ Autres boutons plus bas' : '▲ Boutons du haut'; }
+    d.parentNode.classList.toggle('ombre', colle && bas);
   }
   function majPupitre() {
     document.querySelectorAll('#pupitre button[data-rep]').forEach(x => {
@@ -162,6 +178,7 @@ document.addEventListener('cablage-pret', () => {
     if (!REEL) carte();
     pastilles();
     majPupitre();
+    majDefile();
     consigne();
     for (const [r, v] of Object.entries(e.appareils)) if (v.marche === 'tourne' || v.marche === 'oui') bilanEssai.marche.add(r);
   }

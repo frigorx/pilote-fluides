@@ -115,3 +115,10 @@ details.reglages:not([open]){padding-bottom:4px}
 /* 30/09 (contre-vérification) : sur téléphone, le plan défile dans son cadre ; on le dit. */
 .glisser{display:none}
 @media (max-width:900px){.glisser{display:block;margin:10px 0 0;font-weight:700;color:var(--marine)}}
+
+/* 08/10 (contre-vérification tablette T-15) : au doigt, les cibles de 40 px passent à 44 (le conseil courant pour un doigt) */
+@media (any-pointer: coarse){
+.barre a.retour{min-width:44px;min-height:44px}
+.barre .pro,.retour-reseau,.quais button,.chemin a,.discret,.liens a,.segs button,details.reglages summary{min-height:44px}
+body #marque-inerweb .marque-mentions{display:inline-block;padding-top:13px;padding-bottom:13px;margin-top:-13px;margin-bottom:-13px}
+}

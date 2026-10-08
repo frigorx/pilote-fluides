@@ -278,7 +278,7 @@ body.un-panneau .panneau .entete .basculer{display:inline-flex;align-items:cente
 body.un-panneau .consigne{min-height:44px;padding:4px 10px}
 body.un-panneau .consigne .texte{font-size:16px}
 body.un-panneau .consigne .texte small{display:none}
-body.un-panneau .outils{padding-top:6px;padding-bottom:6px}
+body.un-panneau .outils{padding-top:6px;padding-bottom:34px}   /* 08/10 (T-11) : 6 px laissaient le cartouche du site (fixe, en bas à gauche) sur la rangée de boutons */
 body.reperes-replies .nomenclature{display:none}
 /* le menu */
 .menu-affichage h3{font-size:15px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin:16px 0 8px}
@@ -432,3 +432,35 @@ body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .outils .a
 body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .outils .actions button{width:100%;white-space:normal;padding:0 6px}
 body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .pupitre{flex-direction:column;align-items:stretch}
 }
+
+/* ---- 08/10 (reste du 30/09 : « Colorier et Repérer à 1366 × 768 : la carte est minuscule », 141 × 339 px au n° 1, 289 px de haut
+   au n° 8 commande) : en largeur, la palette (ou le clavier de Repérer) et les boutons passent en colonne à droite, comme à l'étape
+   Câbler en tablette ; la nomenclature tient sur une ligne (elle défile de côté). La carte prend toute la hauteur qui reste. ---- */
+@media (orientation:landscape) and (min-width:900px){
+body.jeu.sur-carte{display:grid;grid-template-columns:minmax(0,1fr) 200px;grid-template-rows:auto auto auto minmax(0,1fr)}
+body.sur-carte :is(.barre,.consigne,.nomenclature){grid-column:1 / -1}
+body.sur-carte .nomenclature{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}
+body.sur-carte .scene{grid-column:1;grid-row:4;padding:10px 0 34px 10px}
+body.sur-carte .outils{grid-column:2;grid-row:4;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:10px;padding:10px 10px 40px;
+  min-height:0;border-top:0;border-left:1px solid var(--ligne);overflow-y:auto}
+body.sur-carte .outils .couleurs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;flex:none;min-height:0}
+body.sur-carte .outils .couleur,body.sur-carte .outils .touche{width:100%;min-width:0}
+body.sur-carte .outils .couleur-nom{min-width:0;white-space:normal}
+body.sur-carte .outils .spacer{display:none}
+body.sur-carte .outils .actions{flex-direction:column}
+body.sur-carte .outils .actions button{width:100%;white-space:normal}
+}
+/* 08/10 (contre-vérification tablette T-05) : au doigt, la bande invisible pour prendre un fil : 24 px d'écran, quel que soit le zoom */
+#platine .fil-prise{fill:none;stroke:transparent;stroke-width:calc(var(--k,1px) * 24);stroke-linecap:round;stroke-linejoin:round;pointer-events:stroke}
+/* 08/10 (contre-vérification tablette T-06) : au doigt, Colorier et Repérer — la bande d'un conducteur fait 14 px d'écran (9 unités
+   au moins, 18 au plus : deux conducteurs parallèles sont à 20 unités), la cible d'une borne 11 px de rayon (9,5 unités au plus) */
+body.tactile #carte svg .hit{stroke-width:clamp(9px, calc(var(--k,1px) * 14), 18px)}
+body.tactile #carte svg .cible{r:clamp(8px, calc(var(--k,1px) * 11), 9.5px)}
+/* 08/10 (contre-vérification tablette T-15) : au doigt, les cibles de 40 px passent à 44 ; la case « Posé » de Réaliser grandit avec */
+body.tactile .barre a.retour{min-width:44px;min-height:44px}
+body.tactile #realiser td.case label{min-width:44px;min-height:44px}
+body.tactile #realiser input[type=checkbox]{width:28px;height:28px}
+body.tactile .nomenclature a,body.tactile #marque-inerweb .marque-mentions{padding-top:13px;padding-bottom:13px;margin-top:-13px;margin-bottom:-13px}
+body.tactile #choix-zoom label{display:none!important}   /* 08/10 (T-15, N-05) : le réglage de la molette ne sert pas au doigt (le label porte un style en ligne) */
+body.tactile .barre .etape{min-width:44px}   /* 08/10 (T-15) : en portrait, les étapes non courantes faisaient 40 px de large */
+body.tactile .menu-affichage input[type=range]{height:32px}

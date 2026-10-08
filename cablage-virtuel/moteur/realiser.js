@@ -95,6 +95,8 @@ function demarrer() {
     const liste = JSON.parse(localStorage.getItem('cablage-virtuel:resultats') || '[]');
     controle = (Array.isArray(liste) ? liste : []).filter(e => e && e.exercice === EX.id && e.activite === 'cabler' && (!memo.date || e.date >= memo.date)).pop() || null;
   } catch (err) { controle = null; }
+  // 08/10 : stockage bloqué, le niveau a suivi les fils dans window.name (moteur/cablage.js, tracer)
+  if (!controle && memo.controle && typeof memo.controle.niveau === 'number' && (!memo.date || memo.controle.date >= memo.date)) controle = memo.controle;
   const etat = el('p', { class: 'etat-controle' + (controle && controle.niveau === 4 ? ' ok' : ' ko') });
   etat.textContent = controle ? 'Contrôlé à l’écran : niveau ' + controle.niveau + ' sur 4.' + (controle.niveau === 4 ? '' : ' Corrigez à l’écran (étape 3) avant de câbler.')
                               : 'Pas encore contrôlé à l’écran : contrôlez à l’étape 3 avant de câbler.';
