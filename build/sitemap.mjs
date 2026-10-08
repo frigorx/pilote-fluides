@@ -35,6 +35,8 @@ const INDEXEES = [
   { fichier: "qcm/positionnement.html", url: "https://inerweb.fr/qcm/positionnement.html" },
   { fichier: "qcm/manometres.html", url: "https://inerweb.fr/qcm/manometres.html" },
   { fichier: "qcm/schema-frigo.html", url: "https://inerweb.fr/qcm/schema-frigo.html" },
+  // Les livres inerWeb (08/10/2026) : la vitrine des deux manuels (couvertures, extraits).
+  { fichier: "livres/index.html", url: "https://inerweb.fr/livres/" },
   // inerWeb Studio (03/10/2026) : la salle des films et la station de chaque film.
   // Les modules interactifs (voyage/module*.html) restent noindex : ils sont la version
   // interactive du même contenu, la station du film est la page d'atterrissage.
