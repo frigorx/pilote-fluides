@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="scene" viewBox="0 0 2400 710" data-position="back" data-circuit="bp" data-mode="flow" class="vr-valve-svg vv-svg" role="img" aria-labelledby="scene-title scene-desc">
+<title id="scene-title">La vanne de service : le groupe, la vanne vue de l'extérieur, la coupe et le manomètre</title>
+<desc id="scene-desc">Trois repères A, B, C sur le groupe de condensation. Vue extérieure de la vanne avec son capuchon de tige et le bouchon de sa prise. Coupe de la vanne de service : tuyauterie T, compresseur C, prise de service P près du carré, prise P1 du pressostat à l'opposé. Le manomètre est relié à la prise P par un flexible.</desc>
+<defs>
+    <pattern id="vs-hatch" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="22" height="22" fill="#edf1f3" />
+      <line x1="0" y1="0" x2="0" y2="22" stroke="#9aaab4" stroke-width="8" />
+    </pattern>
+    <marker id="vs-arrow-bp" viewBox="0 0 50 50" refX="44" refY="25" markerWidth="50" markerHeight="50" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M3 4 L47 25 L3 46 Z" fill="#3d7fca" />
+    </marker>
+    <marker id="vs-arrow-hp" viewBox="0 0 50 50" refX="44" refY="25" markerWidth="50" markerHeight="50" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M3 4 L47 25 L3 46 Z" fill="#c0392b" />
+    </marker>
+  </defs>
+<style>
+    .vv-svg{font-family:Calibri,'Segoe UI',Arial,sans-serif;overflow:visible}
+    .vv-bg{fill:#fffdf8}
+    .vv-body{fill:#dfe7ea;stroke:#10233c;stroke-width:9}
+    .vv-cavity{fill:#fffdf8;stroke:#10233c;stroke-width:6}
+    .vv-fluid-state{display:none}
+    [data-position='front'] .vv-fluid-front,[data-position='mid'] .vv-fluid-mid,[data-position='back'] .vv-fluid-back{display:block}
+    .vv-fluid{fill:#84b7ec}
+    [data-circuit='hp'] .vv-fluid{fill:#efaaa3}
+    .vv-isolated{fill:url(#vs-hatch)}
+    .vv-seat{fill:#4f5f68}
+    .vv-moving{transition:transform 1.35s cubic-bezier(.2,.75,.25,1)}
+    [data-position='front'] .vv-moving{transform:translateX(0)}
+    [data-position='mid'] .vv-moving{transform:translateX(135px)}
+    [data-position='back'] .vv-moving{transform:translateX(270px)}
+    .vv-pointer,.vv-square{fill:#ff6b35;stroke:#10233c;stroke-width:8;stroke-linejoin:round}
+    .vv-stem{stroke:#ff6b35;stroke-width:30;stroke-linecap:square}
+    .vv-rotor{transform-origin:1565px 545px;transition:transform 1.35s cubic-bezier(.2,.75,.25,1)}
+    [data-position='front'] .vv-rotor{transform:rotate(0deg)}
+    [data-position='mid'] .vv-rotor{transform:rotate(-180deg)}
+    [data-position='back'] .vv-rotor{transform:rotate(-360deg)}
+    .vv-square-cross{fill:none;stroke:#fffdf8;stroke-width:9;stroke-linecap:round}
+    .vv-gland-outer{fill:#b7c2c8;stroke:#10233c;stroke-width:8}
+    .vv-gland-inner{fill:#f2b544;stroke:#10233c;stroke-width:5}
+    .vv-label-box{fill:#1b3a63;stroke:#1b3a63;stroke-width:4}
+    .vv-label-box-service{fill:#fffdf8;stroke:#1e7e54;stroke-width:6;stroke-dasharray:18 7 4 7}
+    .vv-label-box-p1{fill:#fffdf8;stroke:#c0392b;stroke-width:6;stroke-dasharray:14 9}
+    .vv-code{font-size:43px;font-weight:900;fill:#fffdf8;text-anchor:middle}
+    .vv-code-dark{font-size:36px;font-weight:900;fill:#1b3a63;text-anchor:middle}
+    .vv-label{font-size:25px;font-weight:850;fill:#10233c;text-anchor:middle}
+    .vv-small{font-size:24px;font-weight:850;fill:#10233c}
+    .vv-flow-main{opacity:0;transition:opacity .25s ease}
+    [data-position='back'] .vv-flow-main,[data-position='mid'] .vv-flow-main{opacity:1}
+    .vv-bp,.vv-hp{display:none}
+    [data-circuit='bp'] .vv-bp{display:block}
+    [data-circuit='hp'] .vv-hp{display:block}
+    .vv-flow-line{fill:none;stroke:#3d7fca;stroke-width:24;stroke-linecap:round;stroke-linejoin:round}
+    .vv-hp-line{stroke:#c0392b;stroke-dasharray:46 24}
+    .vr-flow-pulse{fill:#fffdf8;stroke:#3d7fca;stroke-width:5}
+    [data-circuit='hp'] .vr-flow-pulse{stroke:#c0392b}
+    .vr-flow-pulse-late{opacity:.62}
+    .vv-stop{display:none}
+    [data-position='front'] .vv-stop-t,[data-position='back'] .vv-stop-p{display:block}
+    .vv-stop path{stroke:#637285;stroke-width:13;stroke-linecap:round}
+    .vv-stop text{font-size:26px;font-weight:900;fill:#637285}
+    .vv-key{cursor:pointer}
+    .vv-key:focus{outline:none}
+    .vv-key-shadow{fill:#121923;stroke:#10233c;stroke-width:8}
+    .vv-key-plate{fill:#e8ecef;stroke:#10233c;stroke-width:8}
+    .vv-key-teeth{fill:#111923;stroke:#10233c;stroke-width:12;stroke-dasharray:5 3}
+    .vv-key-ring{fill:#202b38;stroke:#05080d;stroke-width:5}
+    .vv-key-hub{fill:#d9dee3;stroke:#10233c;stroke-width:6}
+    .vv-key-hole,.vv-key-hole-small{fill:#ff6b35;stroke:#10233c;stroke-width:7}
+    .vv-key-rivet{fill:#aeb8c0;stroke:#10233c;stroke-width:5}
+    .vv-key-paddle{fill:#202b38;stroke:#10233c;stroke-width:4}
+    .vv-key-size{font-size:20px;font-weight:900;fill:#5e6872;text-anchor:middle}
+    .vv-key-focus{fill:none;stroke:transparent;stroke-width:10}
+    .vv-key:focus .vv-key-focus{stroke:#ff6b35;stroke-dasharray:14 8}
+    .vv-safety-layer{display:none}
+    [data-mode='safety'] .vv-flow-main{display:none}
+    [data-mode='safety'] .vv-safety-layer{display:block}
+    .vv-safe-box{fill:#fffdf8;stroke:#1e7e54;stroke-width:6;stroke-dasharray:18 7 4 7}
+    .vv-danger-box{fill:#fffdf8;stroke:#c0392b;stroke-width:7;stroke-dasharray:16 10}
+    .vv-safe-title{font-size:30px;font-weight:900;fill:#1e7e54;text-anchor:middle}
+    .vv-danger-title{font-size:30px;font-weight:900;fill:#c0392b;text-anchor:middle}
+    .vv-safety-text{font-size:24px;font-weight:800;fill:#10233c;text-anchor:middle}
+    @media print{.vr-flow-pulse{display:none}.vv-bg,.vv-cavity,.vv-label-box-service,.vv-label-box-p1,.vv-safe-box,.vv-danger-box{fill:#fff!important}}
+  </style>
+<rect width="2400" height="710" fill="#fffdf8"/>
+
+<g id="equipment-installation" transform="translate(30 30) scale(2.2)">
+                  <rect class="equipment-frame" x="0" y="0" width="300" height="305" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="150" y="26" text-anchor="middle" class="svg-title">GROUPE DE CONDENSATION</text>
+                  <image href="assets/symboles/groupe-condensation-complet.svg" x="8" y="35" width="284" height="159" preserveAspectRatio="xMidYMid meet"/>
+
+                  <g class="service-marker" transform="translate(109 77)"><circle r="13"/><text y="5">A</text></g>
+                  <g class="service-marker" transform="translate(256 74)"><circle r="13"/><text y="5">B</text></g>
+                  <g class="service-marker" transform="translate(256 143)"><circle r="13"/><text y="5">C</text></g>
+
+                  <g class="service-legend" transform="translate(12 202)">
+                    <text x="0" y="0"><tspan class="legend-letter">A</tspan><tspan dx="5">REFOULEMENT</tspan></text>
+                    <text x="145" y="0"><tspan class="legend-letter">B</tspan><tspan dx="5">DÉPART LIQUIDE</tspan></text>
+                    <text x="0" y="23"><tspan class="legend-letter">C</tspan><tspan dx="5">ASPIRATION</tspan></text>
+                  </g>
+
+                  <path d="M275 165 V258 H167" class="installation-line"/>
+                  <image href="assets/symboles/detendeur-thermostatique.svg" x="119" y="239" width="50" height="42" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/symboles/evaporateur-cubique.svg" x="169" y="232" width="113" height="61" preserveAspectRatio="xMidYMid meet"/>
+                  <path d="M282 263 H289 V188" class="installation-line"/>
+                  <text x="72" y="285" text-anchor="middle" class="svg-small">CIRCUIT SIMPLIFIÉ</text>
+                </g>
+
+<g id="exterieur" transform="translate(716 20)">
+  <rect class="equipment-frame" x="0" y="0" width="580" height="250" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+  <text x="290" y="36" text-anchor="middle" class="etiq-t">LA VANNE VUE DE L'EXTÉRIEUR</text>
+  <image href="assets/symboles/vanne_depart_rotalock.svg" x="175" y="50" width="270" height="189" preserveAspectRatio="xMidYMid meet"/>
+  <text class="etiq-s" x="16" y="132">CAPUCHON</text><text class="etiq-s" x="16" y="158">DE TIGE</text>
+  <text class="etiq-s" x="410" y="92">BOUCHON</text><text class="etiq-s" x="410" y="118">DE PRISE</text>
+</g>
+
+<g id="coupe" transform="translate(620 30) scale(0.74)">
+
+
+  <g aria-label="Corps de vanne en coupe">
+    <rect class="vv-body" x="140" y="455" width="710" height="180" rx="88" />
+    <rect class="vv-body" x="850" y="630" width="140" height="250" rx="30" />
+    <rect class="vv-body" x="995" y="210" width="130" height="250" rx="28" />
+    <rect class="vv-body" x="1285" y="210" width="130" height="250" rx="28" />
+    <rect class="vv-body" x="250" y="350" width="1290" height="400" rx="115" />
+    <rect class="vv-cavity" x="160" y="480" width="1330" height="130" rx="65" />
+  </g>
+
+  <g class="vv-fluid-state vv-fluid-front" aria-label="Position fermée sur l’avant">
+    <rect class="vv-isolated" x="163" y="483" width="637" height="124" rx="61" />
+    <path class="vv-fluid" d="M800 483 H1426 A61 61 0 0 1 1487 544 V546 A61 61 0 0 1 1426 607 H800 Z" />
+    <rect class="vv-fluid" x="887" y="545" width="66" height="312" />
+    <rect class="vv-fluid" x="1027" y="240" width="66" height="305" />
+    <rect class="vv-fluid" x="1317" y="240" width="66" height="305" />
+  </g>
+  <g class="vv-fluid-state vv-fluid-mid" aria-label="Position intermédiaire">
+    <rect class="vv-fluid" x="163" y="483" width="1324" height="124" rx="61" />
+    <rect class="vv-fluid" x="887" y="545" width="66" height="312" />
+    <rect class="vv-fluid" x="1027" y="240" width="66" height="305" />
+    <rect class="vv-fluid" x="1317" y="240" width="66" height="305" />
+  </g>
+  <g class="vv-fluid-state vv-fluid-back" aria-label="Position fermée sur l’arrière">
+    <path class="vv-fluid" d="M224 483 H1220 V607 H224 A61 61 0 0 1 163 546 V544 A61 61 0 0 1 224 483 Z" />
+    <path class="vv-isolated" d="M1220 483 H1426 A61 61 0 0 1 1487 544 V546 A61 61 0 0 1 1426 607 H1220 Z" />
+    <rect class="vv-fluid" x="887" y="545" width="66" height="312" />
+    <rect class="vv-fluid" x="1027" y="240" width="66" height="305" />
+    <rect class="vv-isolated" x="1317" y="240" width="66" height="305" />
+  </g>
+
+  <g aria-label="Sièges avant et arrière">
+    <path class="vv-seat" d="M800 476 L838 510 H800 Z" />
+    <path class="vv-seat" d="M800 614 L838 580 H800 Z" />
+    <path class="vv-seat" d="M1220 476 L1182 510 H1220 Z" />
+    <path class="vv-seat" d="M1220 614 L1182 580 H1220 Z" />
+  </g>
+
+  
+      <g class="vv-moving" aria-label="Pointeau, tige et carré : ensemble rigide mobile de longueur constante">
+        <path class="vv-pointer" d="M800 545 L845 500 H905 L950 545 L905 590 H845 Z" />
+        <line class="vv-stem" x1="938" y1="545" x2="1510" y2="545" />
+        <g class="vv-rotor">
+          <rect class="vv-square" x="1510" y="480" width="110" height="130" rx="16" />
+          <path class="vv-square-cross" d="M1532 506 L1598 584 M1598 506 L1532 584" />
+          
+      <g class="vv-key" aria-hidden="true">
+        <g transform="rotate(34 1565 545)">
+          <path class="vv-key-shadow" d="M1182 504 C1145 504 1118 522 1118 552 C1118 582 1145 602 1182 602 L1508 602 C1534 622 1583 620 1611 584 C1629 562 1629 536 1611 513 C1583 478 1534 477 1508 497 Z" />
+          <path class="vv-key-plate" d="M1182 494 C1145 494 1118 514 1118 544 C1118 574 1145 594 1182 594 L1510 594 C1536 614 1581 611 1607 578 C1623 558 1623 532 1607 512 C1581 479 1536 476 1510 496 Z" />
+
+          <circle class="vv-key-teeth" cx="1182" cy="544" r="52" />
+          <circle class="vv-key-ring" cx="1182" cy="544" r="43" />
+          <circle class="vv-key-hub" cx="1182" cy="544" r="30" />
+          <rect class="vv-key-hole-small" x="1164" y="526" width="36" height="36" rx="4" />
+
+          <circle class="vv-key-teeth" cx="1565" cy="545" r="65" />
+          <circle class="vv-key-ring" cx="1565" cy="545" r="55" />
+          <circle class="vv-key-hub" cx="1565" cy="545" r="40" />
+          <rect class="vv-key-hole" x="1538" y="518" width="54" height="54" rx="5" />
+
+          <circle class="vv-key-rivet" cx="1286" cy="544" r="10" />
+          <circle class="vv-key-rivet" cx="1410" cy="544" r="10" />
+          <path class="vv-key-paddle" d="M1490 502 L1518 490 L1528 514 L1499 525 Z" />
+          <path class="vv-key-paddle" d="M1236 578 L1210 590 L1200 568 L1228 555 Z" />
+          <text class="vv-key-size" x="1348" y="535">1/4</text>
+          <text class="vv-key-size" x="1348" y="565">3/8</text>
+        </g>
+        <circle class="vv-key-focus" cx="1565" cy="545" r="82" />
+      </g>
+        </g>
+      </g>
+
+  <g class="vv-flow-main vv-bp" aria-label="BP : le fluide va de T vers C">
+    <path class="vv-flow-line" d="M300 545 H760 C860 545 920 600 920 675 V800" marker-end="url(#vs-arrow-bp)" />
+    
+      <circle class="mobile vr-flow-pulse" r="8" visibility="hidden" aria-hidden="true">
+        <set attributeName="visibility" to="visible" begin="0s" />
+        <animateMotion dur="2.8s" repeatCount="indefinite" path="M300 545 H760 C860 545 920 600 920 675 V800" />
+      </circle>
+      <circle class="mobile vr-flow-pulse vr-flow-pulse-late" r="8" visibility="hidden" aria-hidden="true">
+        <set attributeName="visibility" to="visible" begin="0s" />
+        <animateMotion begin="-1.3s" dur="2.8s" repeatCount="indefinite" path="M300 545 H760 C860 545 920 600 920 675 V800" />
+      </circle>
+  </g>
+  <g class="vv-flow-main vv-hp" aria-label="HP : le fluide va de C vers T">
+    <path class="vv-flow-line vv-hp-line" d="M920 800 V675 C920 600 860 545 760 545 H300" marker-end="url(#vs-arrow-hp)" />
+    
+      <circle class="mobile vr-flow-pulse" r="8" visibility="hidden" aria-hidden="true">
+        <set attributeName="visibility" to="visible" begin="0s" />
+        <animateMotion dur="2.8s" repeatCount="indefinite" path="M920 800 V675 C920 600 860 545 760 545 H300" />
+      </circle>
+      <circle class="mobile vr-flow-pulse vr-flow-pulse-late" r="8" visibility="hidden" aria-hidden="true">
+        <set attributeName="visibility" to="visible" begin="0s" />
+        <animateMotion begin="-1.3s" dur="2.8s" repeatCount="indefinite" path="M920 800 V675 C920 600 860 545 760 545 H300" />
+      </circle>
+  </g>
+
+  <g aria-label="Presse-étoupe fixe">
+    <rect class="vv-gland-outer" x="1435" y="455" width="90" height="180" rx="23" />
+    <rect class="vv-gland-inner" x="1456" y="468" width="48" height="154" rx="13" />
+    <text class="vv-small" x="1480" y="820" text-anchor="middle">PRESSE-ÉTOUPE FIXE</text>
+    <path d="M1480 790 V640" stroke="#10233c" stroke-width="5" />
+  </g>
+
+  <g aria-label="Repères des raccords">
+    <rect class="vv-label-box" x="147" y="475" width="110" height="78" rx="20" />
+    <text class="vv-code" x="202" y="529">T</text>
+    <rect class="vv-label-box" x="865" y="812" width="110" height="78" rx="20" />
+    <text class="vv-code" x="920" y="866">C</text>
+    <rect class="vv-label-box-p1" x="965" y="110" width="190" height="100" rx="20" />
+    <text class="vv-code-dark" x="1060" y="151">P1</text>
+    <text class="vv-label" x="1060" y="184">PRESSOSTAT</text>
+    <rect class="vv-label-box-service" x="1220" y="110" width="260" height="100" rx="20" />
+    <text class="vv-code-dark" x="1350" y="151">P</text>
+    <text class="vv-label" x="1350" y="184">VOIE DE SERVICE</text>
+  </g>
+
+  <g class="vv-stop vv-stop-t" aria-label="T isolée">
+    <path d="M765 510 L835 580 M835 510 L765 580" />
+    <text x="585" y="465">T ISOLÉE</text>
+  </g>
+  <g class="vv-stop vv-stop-p" aria-label="P isolée">
+    <path d="M1285 500 L1350 565 M1350 500 L1285 565" />
+    <text x="1290" y="650">P ISOLÉE</text>
+  </g>
+
+  
+<g id="zone-positions"><rect class="zone cadre-appareil" x="770" y="200" width="1155" height="520" rx="18"/></g>
+<g id="prise-p1"><rect class="zone cadre-appareil" x="960" y="100" width="200" height="365" rx="18"/></g>
+<g id="prise-p"><rect class="zone cadre-appareil" x="1215" y="100" width="270" height="365" rx="18"/></g>
+<g id="presse-etoupe"><rect class="zone cadre-appareil" x="1425" y="455" width="105" height="190" rx="18"/><rect class="zone cadre-appareil" x="1350" y="770" width="260" height="75" rx="18"/></g>
+<g id="carre"><rect class="zone cadre-appareil" x="1535" y="462" width="390" height="166" rx="18"/></g>
+</g>
+
+<path id="flexible-p" class="hose blue-hose" d="M2245 220 H1760 V148 H1722" style="stroke-width:16"/>
+
+<g id="manometre">
+  <rect class="equipment-frame" x="2062" y="110" width="328" height="220" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+  <text class="etiq-s" x="2080" y="175">MANOMÈTRE</text><text class="etiq-s" x="2080" y="203">sur la prise P</text>
+  <g transform="translate(2315 220) scale(1.18)"><circle r="59" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="51" fill="#fff" stroke="#3d7fca" stroke-width="7"/><g class="gauge-ticks"><path d="M-37 28l7-5 M-47 6l9-1 M-43-18l9 4 M-27-39l6 8 M0-50v10 M27-39l-6 8 M43-18l-9 4 M47 6l-9-1 M37 28l-7-5"/></g><path d="M-35 22 A43 43 0 0 1 35 22" fill="none" stroke="#637285" stroke-width="2"/><g id="aiguille"><line x1="0" y1="14" x2="0" y2="-40" stroke="#10233c" stroke-width="5" stroke-linecap="round"/></g><circle r="7" fill="#10233c"/><text y="35" text-anchor="middle" class="svg-small">BP</text></g>
+</g>
+
+<g id="legende-positions">
+  <rect class="equipment-frame" x="2062" y="346" width="328" height="354" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+  <text x="2080" y="382" class="etiq-t" style="font-size:24px">CE QUE LIT LE MANOMÈTRE</text>
+  <g class="leg" data-pos="back"><text class="nom" x="2080" y="424">Siège arrière</text><text x="2080" y="452">prise fermée :</text><text x="2080" y="478">l'aiguille reste à 0</text></g>
+  <g class="leg" data-pos="mid"><text class="nom" x="2080" y="520">Position intermédiaire</text><text x="2080" y="548">la prise voit la ligne :</text><text x="2080" y="574">pression de la ligne</text></g>
+  <g class="leg" data-pos="front"><text class="nom" x="2080" y="616">Siège avant</text><text x="2080" y="644">ligne fermée : la prise</text><text x="2080" y="670">voit le compresseur</text></g>
+</g>
+</svg>

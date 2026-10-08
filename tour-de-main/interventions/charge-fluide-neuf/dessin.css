@@ -1,0 +1,91 @@
+/* Dessin du poste de récupération : styles repris tels quels de packs/fluides/res/recuperation-fluide-interactive/styles.css. */
+:root {
+  --navy: #10233c;
+  --navy-700: #1b3a63;
+  --blue: #3d7fca;
+  --blue-soft: #84b7ec;
+  --orange: #ff6b35;
+  --orange-dark: #c9451a;
+  --cream: #f7f1e7;
+  --paper: #fffdf8;
+  --muted: #637285;
+  --line: rgba(27, 58, 99, .16);
+  --ok: #1e7e54;
+  --ok-bg: #e3f5ec;
+  --bad: #c0392b;
+  --bad-bg: #fbe7e4;
+  --wait: #b06a00;
+  --wait-bg: #fff4e0;
+  --yellow: #f6bd34;
+  --shadow: 0 18px 46px rgba(27, 58, 99, .14);
+}
+.svg-control-hit, .svg-port-hit { pointer-events: all; cursor: pointer; }
+.svg-control-hit .hit-area { fill: transparent; stroke: transparent; stroke-width: 5; }
+.svg-control-hit:hover .hit-area, .svg-control-hit:focus-visible .hit-area,
+.svg-control-hit.expected .hit-area { fill: rgba(255, 253, 248, .12); stroke: var(--orange-dark); stroke-dasharray: 8 5; }
+.svg-control-hit:focus-visible, .svg-port-hit:focus-visible { outline: none; }
+.svg-port-hit .port-face { fill: var(--paper); stroke: var(--navy-700); stroke-width: 4; }
+.svg-port-hit text, .service-letter { fill: var(--navy-700); font: 900 14px Calibri, "Segoe UI", sans-serif; text-anchor: middle; pointer-events: none; }
+.svg-port-hit.connected .port-face { fill: var(--ok-bg); stroke: var(--ok); stroke-width: 6; stroke-dasharray: 4 3; }
+.svg-port-hit:hover .port-face, .svg-port-hit:focus-visible .port-face, .svg-port-hit.expected .port-face { stroke: var(--orange-dark); stroke-width: 6; }
+.svg-hit-help { display: none; fill: #fff; stroke: var(--orange-dark); stroke-width: 8; paint-order: stroke fill; font: 900 13px Calibri, "Segoe UI", sans-serif; pointer-events: none; }
+.expected .svg-hit-help { display: block; }
+.service-face { fill: var(--paper); stroke-width: 5; }
+.service-face.hp { stroke: var(--bad); }
+.service-face.bp { stroke: var(--blue); }
+.service-handle, .mini-handle { stroke: var(--navy-700); stroke-width: 5; stroke-linecap: round; transform-box: fill-box; transform-origin: center; transition: transform .22s; }
+.mini-valve { opacity: 0; pointer-events: none; transition: opacity .18s; }
+.mini-valve.connected { opacity: 1; pointer-events: all; }
+.mini-body { fill: var(--paper); stroke: var(--navy-700); stroke-width: 4; }
+.mini-valve text { fill: var(--navy-700); font: 900 10px Calibri, "Segoe UI", sans-serif; text-anchor: middle; pointer-events: none; }
+.svg-title { fill: var(--navy-700); font: 900 20px "Trebuchet MS", Calibri, Arial, sans-serif; }
+.svg-title.light { fill: #fff; }
+.svg-label { fill: var(--navy-700); font: 900 17px Calibri, "Segoe UI", sans-serif; }
+.svg-small { fill: var(--navy); font: 850 15.5px Calibri, "Segoe UI", sans-serif; }
+.svg-tiny { fill: var(--navy); font: 900 12px Calibri, "Segoe UI", sans-serif; }
+.svg-micro { fill: var(--navy); font: 900 10px Calibri, "Segoe UI", sans-serif; letter-spacing: .1px; }
+.svg-value { font: 900 20px Consolas, monospace; }
+.organ { fill: #fffdf8; stroke: #1b3a63; stroke-width: 3; }
+.circuit-line { fill: none; stroke: #637285; stroke-width: 7; stroke-linecap: round; }
+.installation-line { fill: none; stroke: #637285; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.service-marker circle { fill: #fffdf8; stroke: #1b3a63; stroke-width: 3; }
+.service-marker text { fill: #1b3a63; font: 900 14px Calibri, "Segoe UI", sans-serif; text-anchor: middle; }
+.service-legend { fill: #1b3a63; font: 900 11.5px Calibri, "Segoe UI", sans-serif; }
+.service-legend .legend-letter { fill: #fff; stroke: #1b3a63; stroke-width: 5px; paint-order: stroke fill; }
+.port-symbol { fill: #fff; stroke-width: 7; }
+.bp-port { stroke: #3d7fca; }
+.hp-port { stroke: #c0392b; }
+.socket { fill: #fff; stroke: #1b3a63; stroke-width: 4; }
+.knob { stroke: #1b3a63; stroke-width: 4; }
+.knob.blue, .control-knob.blue { background: var(--blue); fill: var(--blue); }
+.knob.red, .control-knob.red { background: var(--bad); fill: var(--bad); }
+.knob.black, .control-knob.black { background: var(--navy); fill: var(--navy); }
+.knob.yellow, .control-knob.yellow { background: var(--yellow); fill: var(--yellow); }
+.knob-line { stroke: #fff; stroke-width: 5; stroke-linecap: round; transform-box: fill-box; transform-origin: center; transition: transform .22s; }
+.needle { transform-box: fill-box; transform-origin: 50% 80%; transition: transform .6s; }
+.gauge-ticks { fill: none; stroke: #637285; stroke-width: 3; stroke-linecap: round; }
+.equipment-frame { transition: stroke .18s, stroke-width .18s; }
+.focus-equipment .equipment-frame { stroke: var(--orange-dark); stroke-width: 8; stroke-dasharray: 16 8; }
+
+.hose { display: none; fill: none; stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 2px 1px rgba(27, 58, 99, .2)); }
+.hose.connected { display: block; }
+.blue-hose { stroke: #3d7fca; }
+.red-hose { stroke: #c0392b; }
+.black-hose { stroke: #10233c; }
+.yellow-hose { stroke: #e5a91b; }
+.orange-hose { stroke: #c9451a; }
+.flow-dot { display: none; fill: #fff; stroke: var(--navy-700); stroke-width: 3; }
+.flow-dot.active { display: block; }
+
+
+/* ---- Gare « Charger en fluide neuf » : ce qui change par rapport au poste de récupération ---- */
+/* la station de récupération ne sert pas ici ; la pompe et le vacuomètre n'apparaissent qu'à l'étape qui met le flexible jaune hors air (donnees.js) */
+#equipment-station, [data-port="station-in"] { display: none; }
+/* les zones de commande ne volent pas le toucher : seuls les appareils (groupes à id) se touchent */
+.svg-control-hit, .svg-port-hit { pointer-events: none; }
+/* quart de tour des vannes du manifold (poignée verticale = fermée, tournée = ouverte) */
+.knob-line.ouverte { transform: rotate(90deg); }
+/* l'aiguille tourne autour du centre du cadran */
+.needle { transform-box: view-box; transform-origin: 0 0; }
+/* la lettre A, B ou C se lit au-dessus de la vanne, pas sous la poignée */
+.service-letter { transform: translateY(-27px); stroke: #fff; stroke-width: 4px; paint-order: stroke fill; }

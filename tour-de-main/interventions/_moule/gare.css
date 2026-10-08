@@ -1,0 +1,132 @@
+/* Le tour de main — feuille commune des gares « Les interventions de base » (maquette validée le 08/10/2026).
+   Corps 18 px à l'écran, 14 pt à l'impression ; fond clair seulement (pas de thème sombre). */
+:root{--bleu:#1b3a63;--encre:#10233c;--orange:#c9451a;--vert:#1e7e54;--vert-f:#e3f5ec;--rouge:#c0392b;--rouge-f:#fdf1ef;
+  --ambre:#8a5300;--ambre-f:#fff4e0;--gris:#5b6878;--filet:#d6dde7;--doux:#f3f6fa;--creme:#fffdf8}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#fff;color:var(--encre);font:18px/1.45 "Segoe UI",Calibri,Arial,sans-serif}
+button{font:inherit;cursor:pointer}
+/* ---------- haut de page, toujours visible ---------- */
+.haut{position:sticky;top:0;z-index:20;background:#fff;border-bottom:3px solid var(--bleu);padding:8px 14px 6px}
+.ligne1{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.retour{color:var(--bleu);text-decoration:none;font-weight:700;font-size:16px;white-space:nowrap}
+.titre{font-family:"Trebuchet MS",sans-serif;color:var(--bleu);font-weight:700;font-size:20px;line-height:1.2;flex:1 1 220px}
+.titre small{display:block;color:var(--gris);font-weight:400;font-size:15px}
+.onglets{display:flex;gap:6px;margin:8px 0 6px}
+.onglets button{flex:1;border:2px solid var(--bleu);background:#fff;color:var(--bleu);border-radius:10px;padding:8px 4px;
+  font-weight:700;font-size:17px;line-height:1.15}
+.onglets button[aria-pressed=true]{background:var(--bleu);color:#fff}
+.onglets small{display:block;font-weight:400;font-size:14px}
+.avance{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--gris)}
+.barre{flex:1;height:12px;background:var(--doux);border:1px solid var(--filet);border-radius:7px;overflow:hidden}
+.barre i{display:block;height:100%;background:var(--vert);width:0;transition:width .3s}
+@media (max-width:600px){.titre small,.onglets small{display:none}.onglets{margin:6px 0 4px}
+  .onglets button{padding:7px 2px;font-size:16px}.retour{font-size:15px}.titre{font-size:18px}}
+/* ---------- corps : filigrane inerWeb dans le contenu (charte R9 : ~10 % à l'écran, un exemplaire au centre) ---------- */
+main{max-width:1180px;margin:0 auto;padding:12px 14px 40px;position:relative}
+.filigrane{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.1;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='470' height='170'><g transform='rotate(-12 235 85)' font-family='Trebuchet MS,sans-serif' fill='%231b3a63'><text x='20' y='80' font-size='52' font-weight='700'>iner</text><text x='115' y='80' font-size='52' font-family='Segoe Script,cursive' font-weight='400'>Web</text><line x1='20' x2='220' y1='86' y2='86' stroke='%23e8914a' stroke-width='4'/><rect x='226' y='42' rx='7' width='214' height='36' fill='%23e8914a'/><text x='333' y='67' text-anchor='middle' font-size='21' fill='%23fff' font-family='Segoe UI,Arial'>Le tour de main</text><text x='20' y='124' font-size='28' font-weight='700'>by inerweb.fr</text></g></svg>") center 30% / 470px 170px repeat-y}
+main>*{position:relative;z-index:1}
+/* ---------- ma machine ---------- */
+.machine{border:2px solid var(--filet);border-radius:12px;background:var(--doux);padding:10px 12px;margin:0 0 12px}
+.machine h2{margin:0 0 6px;font-size:18px;color:var(--bleu);font-family:"Trebuchet MS",sans-serif}
+.parcours{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 10px}
+.parcours button{border:2px solid var(--filet);background:#fff;border-radius:10px;padding:8px 10px;text-align:left;color:var(--encre)}
+.parcours button b{display:block;color:var(--bleu);font-size:18px}
+.parcours button span{font-size:15px;color:var(--gris)}
+.parcours button.choisi{border-color:var(--orange);background:#fff7f3;box-shadow:0 0 0 3px #f6c9b5}
+.parcours-seul{margin:0 0 8px;font-size:16px}
+.niveaux{display:flex;gap:8px;margin:0 0 8px}
+.niveaux button{flex:1;border:2px solid var(--bleu);background:#fff;color:var(--bleu);border-radius:9px;padding:6px 8px;font-weight:700}
+.niveaux button.choisi{background:var(--bleu);color:#fff}
+.exigence{background:#fff;border-left:5px solid var(--bleu);padding:6px 10px;margin:6px 0}
+.machine .champs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
+.machine label{font-size:15px;color:var(--gris);display:block}
+.machine input{width:100%;font:inherit;padding:6px 8px;border:2px solid var(--filet);border-radius:8px;background:#fff}
+.machine .resume{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:16px;align-items:baseline}
+.machine .resume b{color:var(--bleu)}
+.rigueur{margin:6px 0 0;font-size:16px;color:var(--encre)}
+.rigueur b{color:var(--rouge)}
+.lien-petit{background:none;border:0;color:var(--orange);text-decoration:underline;padding:0;font-size:15px}
+/* ---------- au poste : liste (PC) + carte ---------- */
+.poste{display:grid;gap:14px}
+@media (min-width:900px){.poste{grid-template-columns:300px 1fr}}
+.liste{display:none}
+@media (min-width:900px){.liste{display:block}}
+.liste ol{list-style:none;margin:0;padding:0}
+.liste li button{width:100%;text-align:left;display:flex;gap:8px;align-items:center;border:1px solid var(--filet);
+  background:#fff;border-radius:9px;padding:6px 8px;margin:0 0 5px;font-size:16px;color:var(--encre)}
+.liste li button .n{flex:0 0 28px;height:28px;border-radius:7px;background:var(--bleu);color:#fff;display:flex;
+  align-items:center;justify-content:center;font-weight:700}
+.liste li.ok button{background:#f2f8f4}
+.liste li.ok .n{background:var(--vert)}
+.liste li.ici button{border:3px solid var(--orange)}
+.liste .stop{color:var(--rouge);font-size:14px;font-weight:700;margin-left:auto}
+.pastilles{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
+@media (min-width:900px){.pastilles{display:none}}
+.pastilles button{width:36px;height:36px;border-radius:8px;border:2px solid var(--filet);background:#fff;font-weight:700;
+  color:var(--bleu);padding:0}
+.pastilles button.ok{background:var(--vert);border-color:var(--vert);color:#fff}
+.pastilles button.ici{border-color:var(--orange);box-shadow:0 0 0 2px #f6c9b5}
+.carte{border:2px solid var(--filet);border-radius:14px;background:var(--creme);padding:12px 14px}
+.carte.faite{border-color:#bcdcc8;background:#f6fbf8}
+.entete{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+.num{background:var(--bleu);color:#fff;border-radius:10px;padding:4px 10px;font-weight:700;white-space:nowrap}
+.carte.faite .num{background:var(--vert)}
+.verbe{font-family:"Trebuchet MS",sans-serif;font-size:25px;color:var(--bleu);margin:0;line-height:1.15}
+figure.dessin{margin:8px 0;background:#fff;border:1px solid var(--filet);border-radius:10px;position:relative}
+figure.dessin svg{display:block;width:100%;height:auto;max-height:46vh}
+.trois{display:grid;gap:6px;margin:6px 0}
+@media (min-width:700px){.trois{grid-template-columns:1fr 1.4fr 1fr}}
+.trois div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:6px 10px}
+.trois b{display:block;color:var(--bleu);font-size:15px;text-transform:uppercase;letter-spacing:.03em}
+.danger{border-left:6px solid var(--rouge);background:var(--rouge-f);padding:6px 12px;border-radius:0 8px 8px 0;margin:8px 0}
+.danger b{color:var(--rouge)}
+.controle{border:2px dashed var(--bleu);border-radius:10px;padding:8px 12px;margin:8px 0;background:#fff}
+.controle h3{margin:0 0 4px;font-size:17px;color:var(--bleu)}
+.controle .saisie{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.controle input[type=text]{font:inherit;width:110px;padding:6px 8px;border:2px solid var(--filet);border-radius:8px}
+.controle .unite{color:var(--gris)}
+.btn{border:2px solid var(--bleu);background:var(--bleu);color:#fff;border-radius:9px;padding:7px 14px;font-weight:700}
+.btn.clair{background:#fff;color:var(--bleu)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.verdict{margin:6px 0 0;padding:6px 10px;border-radius:8px;font-weight:600}
+.verdict.vert,.badge.vert{background:var(--vert-f);color:var(--vert)}
+.verdict.ambre,.badge.ambre{background:var(--ambre-f);color:var(--ambre)}
+.verdict.rouge,.badge.rouge{background:var(--rouge-f);color:var(--rouge)}
+.badge{display:inline-block;padding:0 6px;border-radius:6px;font-size:15px;font-weight:700}
+.coches label{display:flex;gap:8px;align-items:center;margin:3px 0}
+.coches input,.arret input{width:24px;height:24px;flex:0 0 24px;accent-color:var(--vert)}
+.arret{display:flex;gap:10px;align-items:center;border:3px solid var(--rouge);border-radius:10px;padding:8px 12px;margin:8px 0;
+  background:#fff;font-weight:700;color:var(--rouge);cursor:pointer}
+.arret small{display:block;font-weight:400;color:var(--encre);font-size:15px}
+.bas{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.bas .fait{margin-left:auto;font-size:19px;background:var(--vert);border-color:var(--vert);padding:10px 18px}
+.reste{margin-top:10px;font-size:16px;color:var(--gris)}
+.reste b{color:var(--encre)}
+/* ---------- je m'entraîne ---------- */
+.consigne{font-size:21px;font-weight:700;color:var(--bleu);margin:4px 0}
+.toucher{color:var(--orange)}
+.entr figure svg{max-height:58vh}
+.touchable{cursor:pointer}
+.touchable:hover .equipment-frame,.touchable:hover .cadre-appareil{stroke:var(--orange)!important;stroke-width:6!important}
+.bon .equipment-frame,.bon .cadre-appareil{stroke:var(--vert)!important;stroke-width:8!important}
+.score{font-size:15px;color:var(--gris)}
+.sans-dessin{padding:20px;color:var(--rouge)}
+/* ---------- la trace ---------- */
+.trace table{width:100%;border-collapse:collapse;background:#fff;font-size:16px}
+.trace th,.trace td{border:1px solid var(--filet);padding:5px 7px;text-align:left;vertical-align:top}
+.trace th{background:var(--doux);color:var(--bleu)}
+.trace h3{color:var(--bleu);font-family:"Trebuchet MS",sans-serif}
+.trace .nom{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.trace .nom input{font:inherit;padding:5px 8px;border:2px solid var(--filet);border-radius:8px;flex:1 1 200px}
+.grille td.n,.grille th.n{text-align:center;width:38px;font-weight:700;color:var(--gris)}
+.codes{font-size:15px;background:var(--doux);border-radius:9px;padding:8px 12px;margin:10px 0}
+.codes b{color:var(--bleu)}
+.tableau-defile{overflow-x:auto}
+/* ---------- impression : la trace, 14 pt partout ---------- */
+@media print{
+  .haut,.onglets,.bas,.lien-petit,.pastilles,.liste,.machine{display:none!important}
+  body{font-size:14pt}.trace *{font-size:14pt!important}.trace .verbe{font-size:18pt!important}
+  .filigrane{opacity:.07}.carte{border:0;padding:0}
+}

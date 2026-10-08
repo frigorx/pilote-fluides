@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="scene" viewBox="0 0 1040 620" role="img" aria-labelledby="scene-title scene-desc">
+            <title id="scene-title">Schéma interactif du poste : contrôler l'étanchéité sous azote</title>
+            <desc id="scene-desc">Le groupe de condensation présente ses vannes de service. Le manifold est relié aux vannes de service par le flexible bleu (BP) et le flexible rouge (HP). Son flexible jaune de service va au mano-détendeur monté sur une bouteille d'azote, debout et arrimée. Le mano-détendeur a deux cadrans : bouteille et sortie.</desc>
+            <defs>
+              <g id="hit-help"><text class="svg-hit-help" x="0" y="-30" text-anchor="middle">ICI</text></g>
+              <linearGradient id="cylinderFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".32" stop-color="#dcecf7"/><stop offset=".57" stop-color="#f7fbfd"/><stop offset=".59" stop-color="#84b7ec"/><stop offset="1" stop-color="#3d7fca"/></linearGradient>
+              <linearGradient id="machineFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8fbfd"/><stop offset="1" stop-color="#d7e2e9"/></linearGradient>
+              <linearGradient id="metalFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset=".5" stop-color="#dfe8ee"/><stop offset="1" stop-color="#fffdf8"/></linearGradient>
+              <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1b3a63" flood-opacity=".13"/></filter>
+              <linearGradient id="g-acier" x1="0" x2="1"><stop offset="0" stop-color="#8f99a4"/><stop offset=".45" stop-color="#e4e8ec"/><stop offset="1" stop-color="#7f8994"/></linearGradient>
+              <linearGradient id="g-laiton" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3dc95"/><stop offset=".5" stop-color="#d4ad55"/><stop offset="1" stop-color="#a47a28"/></linearGradient>
+              <symbol id="scene-background" viewBox="0 0 1040 620">
+                <rect x="12" y="12" width="1016" height="596" rx="28" fill="#fffdf8" stroke="#1b3a63" stroke-opacity=".16" stroke-width="3"/>
+                <g id="equipment-installation" transform="translate(40 62)">
+                  <rect class="equipment-frame" x="0" y="0" width="300" height="305" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="150" y="26" text-anchor="middle" class="svg-title">GROUPE DE CONDENSATION</text>
+                  <image href="assets/symboles/groupe-condensation-complet.svg" x="8" y="35" width="284" height="159" preserveAspectRatio="xMidYMid meet"/>
+
+                  <g class="service-marker" transform="translate(109 77)"><circle r="13"/><text y="5">A</text></g>
+                  <g class="service-marker" transform="translate(256 74)"><circle r="13"/><text y="5">B</text></g>
+                  <g class="service-marker" transform="translate(256 143)"><circle r="13"/><text y="5">C</text></g>
+
+                  <g class="service-legend" transform="translate(12 202)">
+                    <text x="0" y="0"><tspan class="legend-letter">A</tspan><tspan dx="5">REFOULEMENT</tspan></text>
+                    <text x="145" y="0"><tspan class="legend-letter">B</tspan><tspan dx="5">DÉPART LIQUIDE</tspan></text>
+                    <text x="0" y="23"><tspan class="legend-letter">C</tspan><tspan dx="5">ASPIRATION</tspan></text>
+                  </g>
+
+                  <path d="M275 165 V258 H167" class="installation-line"/>
+                  <image href="assets/symboles/detendeur-thermostatique.svg" x="119" y="239" width="50" height="42" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/symboles/evaporateur-cubique.svg" x="169" y="232" width="113" height="61" preserveAspectRatio="xMidYMid meet"/>
+                  <path d="M282 263 H289 V188" class="installation-line"/>
+                  <text x="72" y="285" text-anchor="middle" class="svg-small">CIRCUIT SIMPLIFIÉ</text>
+                </g>
+
+                <g id="equipment-manifold" transform="translate(382 42)" filter="url(#softShadow)">
+                  <path class="equipment-frame" d="M38 16 Q38 2 54 2 H286 Q302 2 302 16 V244 Q302 260 286 260 H54 Q38 260 38 244z" fill="url(#metalFill)" stroke="#1b3a63" stroke-width="4"/>
+                  <path d="M80 15 Q80 -8 105 -8 H235 Q260 -8 260 15" fill="none" stroke="#10233c" stroke-width="12" stroke-linecap="round"/>
+                  <text x="170" y="27" text-anchor="middle" class="svg-title">MANIFOLD 4 VOIES</text>
+                  <g transform="translate(102 91)" class="gauge gauge-bp"><circle r="59" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="51" fill="#fff" stroke="#3d7fca" stroke-width="7"/><g class="gauge-ticks"><path d="M-37 28l7-5 M-47 6l9-1 M-43-18l9 4 M-27-39l6 8 M0-50v10 M27-39l-6 8 M43-18l-9 4 M47 6l-9-1 M37 28l-7-5"/></g><path d="M-35 22 A43 43 0 0 1 35 22" fill="none" stroke="#637285" stroke-width="2"/><line class="needle" id="needle-bp" x1="0" y1="12" x2="-17" y2="-34" stroke="#10233c" stroke-width="5" stroke-linecap="round"/><circle r="7" fill="#10233c"/><text y="35" text-anchor="middle" class="svg-small">BP</text></g>
+                  <g transform="translate(238 91)" class="gauge gauge-hp"><circle r="59" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="51" fill="#fff" stroke="#c0392b" stroke-width="7"/><g class="gauge-ticks"><path d="M-37 28l7-5 M-47 6l9-1 M-43-18l9 4 M-27-39l6 8 M0-50v10 M27-39l-6 8 M43-18l-9 4 M47 6l-9-1 M37 28l-7-5"/></g><path d="M-35 22 A43 43 0 0 1 35 22" fill="none" stroke="#637285" stroke-width="2"/><line class="needle" id="needle-hp" x1="0" y1="12" x2="17" y2="-34" stroke="#10233c" stroke-width="5" stroke-linecap="round"/><circle r="7" fill="#10233c"/><text y="35" text-anchor="middle" class="svg-small">HP</text></g>
+                  <path d="M57 151 Q57 138 70 138 H270 Q283 138 283 151 V218 H57z" fill="#d5dee4" stroke="#10233c" stroke-width="4"/>
+                  <g id="svg-manifold-bp" transform="translate(80 177)"><circle r="21" class="knob blue"/><line y1="-15" y2="15" class="knob-line"/></g>
+                  <g id="svg-manifold-vac" transform="translate(140 177)"><circle r="21" class="knob black"/><line y1="-15" y2="15" class="knob-line"/></g>
+                  <g id="svg-manifold-service" transform="translate(200 177)"><circle r="21" class="knob yellow"/><line y1="-15" y2="15" class="knob-line"/></g>
+                  <g id="svg-manifold-hp" transform="translate(260 177)"><circle r="21" class="knob red"/><line y1="-15" y2="15" class="knob-line"/></g>
+                  <text x="80" y="212" text-anchor="middle" class="svg-small">BP</text><text x="140" y="212" text-anchor="middle" class="svg-small">VIDE</text><text x="200" y="212" text-anchor="middle" class="svg-small">SERVICE</text><text x="260" y="212" text-anchor="middle" class="svg-small">HP</text>
+                  <g fill="#aab7c1" stroke="#10233c" stroke-width="3"><rect x="70" y="218" width="20" height="23" rx="4"/><rect x="130" y="218" width="20" height="23" rx="4"/><rect x="190" y="218" width="20" height="23" rx="4"/><rect x="250" y="218" width="20" height="23" rx="4"/></g>
+                  <circle cx="80" cy="248" r="9" class="socket"/><circle cx="140" cy="248" r="9" class="socket"/><g id="bouchon-vide"><circle cx="140" cy="249" r="13" fill="#10233c" stroke="#10233c" stroke-width="3"/><circle cx="140" cy="249" r="5" fill="#fffdf8" stroke="#10233c" stroke-width="2"/></g><circle cx="200" cy="248" r="9" class="socket"/><circle cx="260" cy="248" r="9" class="socket"/>
+                </g>
+
+                <g id="equipment-azote" transform="translate(705 24)">
+                  <rect x="0" y="0" width="296" height="572" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <g id="equipment-bouteille" filter="url(#softShadow)">
+                    <rect class="cadre-appareil" x="128" y="76" width="162" height="480" rx="20" fill="rgba(255,255,255,.01)" stroke="none"/>
+                    <rect x="264" y="236" width="12" height="312" rx="5" fill="#56657a"/>
+                    <path d="M140 530 V232 Q140 172 195 168 Q250 172 250 232 V530 Z" fill="url(#g-acier)" stroke="#4d5763" stroke-width="3"/>
+                    <path d="M140 262 V232 Q140 172 195 168 Q250 172 250 232 V262 Z" fill="#1f2328" stroke="#4d5763" stroke-width="3"/>
+                    <rect x="154" y="330" width="82" height="150" rx="10" fill="#fffdf8" stroke="#4d5763" stroke-width="2"/>
+                    <text transform="translate(205 405) rotate(-90)" text-anchor="middle" class="svg-etiquette">AZOTE</text>
+                    <line x1="134" y1="290" x2="264" y2="290" stroke="#4d5763" stroke-width="7" stroke-dasharray="11 6"/>
+                    <rect x="181" y="140" width="28" height="30" fill="#8a96a3" stroke="#4d5763" stroke-width="2"/>
+                    <rect x="174" y="112" width="42" height="30" rx="5" fill="url(#g-laiton)" stroke="#6b5420" stroke-width="2"/>
+                    <rect x="191" y="96" width="8" height="18" fill="#4d5763"/>
+                    <ellipse id="svg-roue-robinet" cx="195" cy="94" rx="30" ry="8" fill="#2c333b"/>
+                    <rect x="156" y="120" width="18" height="14" fill="url(#g-laiton)" stroke="#6b5420" stroke-width="1.5"/>
+                  </g>
+                  <g id="equipment-detendeur" filter="url(#softShadow)">
+                    <rect class="cadre-appareil" x="4" y="6" width="170" height="204" rx="20" fill="rgba(255,255,255,.01)" stroke="none"/>
+                    <g id="svg-vis"><rect x="50" y="124" width="20" height="12" fill="#8a96a3"/><rect x="35" y="110" width="15" height="40" rx="5" fill="#2c333b"/></g>
+                    <line x1="125" y1="96" x2="125" y2="112" stroke="#6b5420" stroke-width="6"/><line x1="48" y1="96" x2="80" y2="116" stroke="#6b5420" stroke-width="6"/>
+                    <rect x="70" y="110" width="88" height="40" rx="10" fill="url(#g-laiton)" stroke="#6b5420" stroke-width="2"/>
+                    <rect x="154" y="116" width="20" height="22" rx="3" fill="url(#g-laiton)" stroke="#6b5420" stroke-width="1.5"/>
+                    <rect x="95" y="150" width="20" height="30" rx="4" fill="url(#g-laiton)" stroke="#6b5420" stroke-width="1.5"/>
+                    <circle cx="105" cy="186" r="9" class="socket"/>
+                    <g transform="translate(125 62) scale(.62)" class="gauge"><circle r="59" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="51" fill="#fff" stroke="#10233c" stroke-width="7"/><g class="gauge-ticks"><path d="M-37 28l7-5 M-47 6l9-1 M-43-18l9 4 M-27-39l6 8 M0-50v10 M27-39l-6 8 M43-18l-9 4 M47 6l-9-1 M37 28l-7-5"/></g><path d="M-35 22 A43 43 0 0 1 35 22" fill="none" stroke="#637285" stroke-width="2"/><line class="needle" id="needle-det-bouteille" x1="0" y1="12" x2="-17" y2="-34" stroke="#10233c" stroke-width="5" stroke-linecap="round"/><circle r="7" fill="#10233c"/></g>
+                    <g transform="translate(46 62) scale(.62)" class="gauge"><circle r="59" fill="#d8e2e9" stroke="#10233c" stroke-width="4"/><circle r="51" fill="#fff" stroke="#3d7fca" stroke-width="7"/><g class="gauge-ticks"><path d="M-37 28l7-5 M-47 6l9-1 M-43-18l9 4 M-27-39l6 8 M0-50v10 M27-39l-6 8 M43-18l-9 4 M47 6l-9-1 M37 28l-7-5"/></g><path d="M-35 22 A43 43 0 0 1 35 22" fill="none" stroke="#637285" stroke-width="2"/><line class="needle" id="needle-det-sortie" x1="0" y1="12" x2="-17" y2="-34" stroke="#10233c" stroke-width="5" stroke-linecap="round"/><circle r="7" fill="#10233c"/></g>
+                    <text x="125" y="14" text-anchor="middle" class="svg-small">BOUTEILLE</text>
+                    <text x="46" y="14" text-anchor="middle" class="svg-small">SORTIE</text>
+                    <text x="48" y="226" text-anchor="middle" class="svg-small">MANO-</text><text x="48" y="244" text-anchor="middle" class="svg-small">DÉTENDEUR</text>
+                  </g>
+                  <text x="148" y="556" text-anchor="middle" class="svg-title">BOUTEILLE D'AZOTE</text>
+                </g>
+              </symbol>
+            </defs>
+
+            <use href="#scene-background" x="0" y="0" width="1040" height="620"></use>
+            <rect id="zone-flexibles" x="108" y="96" width="582" height="290" fill="none" stroke="none" pointer-events="none"/>
+            <g class="hoses" aria-hidden="true">
+              <path id="hose-path-blue" class="hose blue-hose" d="M470 302 C420 320 365 270 296 205"/>
+              <path id="hose-path-red" class="hose red-hose" d="M644 302 C650 362 520 374 440 348 C375 327 340 300 337 250 C333 190 350 150 296 136"/>
+              <path id="hose-path-yellow" class="hose yellow-hose" d="M582 302 C582 470 810 470 810 300 V216"/>
+            </g>
+
+            <g class="direct-controls" aria-label="Commandes à actionner directement sur les appareils">
+              <g id="vannes-service"><rect class="cadre-appareil" x="108" y="96" width="232" height="150" rx="22" fill="rgba(255,255,255,.01)" stroke="none"/>
+              <g class="svg-control-hit machine-target service-control" data-machine-target data-port="install-discharge" data-control="service-discharge" transform="translate(149 139)" role="button" tabindex="0" aria-label="A · vanne de service refoulement">
+                <circle class="hit-area" r="29"/><circle class="service-face hp" r="18"/><text class="service-letter" y="5">A</text><line id="svg-service-discharge" class="service-handle" x1="-12" x2="12"/><use href="#hit-help"/>
+              </g>
+              <g class="svg-control-hit machine-target service-control" data-machine-target data-port="install-hp" data-control="service-hp" transform="translate(296 136)" role="button" tabindex="0" aria-label="B · vanne de service départ liquide">
+                <circle class="hit-area" r="29"/><circle class="service-face hp" r="18"/><text class="service-letter" y="5">B</text><line id="svg-service-hp" class="service-handle" x1="-12" x2="12"/><use href="#hit-help"/>
+              </g>
+              <g class="svg-control-hit machine-target service-control" data-machine-target data-port="install-bp" data-control="service-bp" transform="translate(296 205)" role="button" tabindex="0" aria-label="C · vanne de service aspiration">
+                <circle class="hit-area" r="29"/><circle class="service-face bp" r="18"/><text class="service-letter" y="5">C</text><line id="svg-service-bp" class="service-handle" x1="-12" x2="12"/><use href="#hit-help"/>
+              </g>
+              </g>
+            </g>
+          </svg>

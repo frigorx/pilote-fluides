@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b3a63">
+<title>La chaîne entière · Le tour de main</title>
+<meta name="description" content="Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../_moule/gare.css?v=f4029ee">
+<!-- Gare 8 (Franck, 08/10/2026 : « une feuille de route ») : aucune étape propre ; elle enchaîne les gares et lit,
+     sur cet appareil, ce que l'élève y a déjà fait (mémoire locale de chaque gare, `tour-de-main:<gare>`). -->
+<style>
+.route{list-style:none;margin:0;padding:0;counter-reset:g}
+.route li{display:grid;grid-template-columns:52px 1fr;gap:12px;border:2px solid var(--filet);border-radius:12px;background:var(--creme);
+  padding:10px 12px;margin:0 0 10px}
+.route li.ok{background:#f2f8f4;border-color:#bcdcc8}
+.route li.ici{border:3px solid var(--orange)}
+.route .n{width:48px;height:48px;border-radius:10px;background:var(--bleu);color:#fff;display:flex;align-items:center;justify-content:center;
+  font:700 22px "Trebuchet MS",sans-serif}
+.route li.ok .n{background:var(--vert)}
+.route h2{margin:0;font:700 21px "Trebuchet MS",sans-serif;color:var(--bleu)}
+.route p{margin:2px 0 6px}
+.route .liens{display:flex;flex-wrap:wrap;gap:8px}
+.route a.btn{text-decoration:none;display:inline-block}
+.etat{font-size:16px;color:var(--gris)}
+.etat b{color:var(--encre)}
+.intro{margin:0 0 12px}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="tour-de-main/index.html" data-reseau-nom="🔧 Le tour de main"></script>
+</head>
+<body>
+<header class="haut">
+  <div class="ligne1"><a class="retour" href="../../index.html">← Le tour de main</a>
+    <div class="titre">La chaîne entière<small>Les interventions de base · gare 8 · une installation neuve, de bout en bout</small></div></div>
+  <div class="avance"><div class="barre"><i id="barre"></i></div><span id="avance-txt"></span></div>
+</header>
+<main><div class="filigrane" aria-hidden="true"></div>
+  <p class="intro">Une installation neuve, montée et brasée, prête à être mise en service. Je fais les gares <b>dans l'ordre</b> :
+    chacune s'ouvre sur sa guidance au poste, avec ses points d'arrêt et sa trace. Je reviens ici entre deux gares.</p>
+  <p class="danger"><b>Danger · </b>Je ne passe à la gare suivante que si la précédente est finie : on ne tire pas au vide un circuit
+    qui fuit, on ne charge pas un circuit dont le vide ne tient pas.</p>
+  <ol class="route" id="route"></ol>
+  <p class="codes"><b>Référentiel.</b> Chaque gare porte ses codes (tâches, compétences, savoirs) pour le CAP IFCA et la 1re Bac Pro MFER,
+    et l'attendu commun : le niveau de l'attestation d'aptitude fluides.</p>
+</main>
+<script>
+"use strict";
+const GARES = [
+  { id: "pose-manometres", n: 2, titre: "Poser les manomètres", quoi: "Le manifold sur les vannes de service, flexibles hors air." },
+  { id: "etancheite-azote", n: 4, titre: "Contrôler l'étanchéité sous azote", quoi: "Montée en pression par paliers, recherche de fuite, tenue." },
+  { id: "tirage-au-vide", n: 5, titre: "Tirer au vide et tester la remontée", quoi: "Jusqu'à la cible du poste, puis le test : le vide tient-il ?" },
+  { id: "charge-fluide-neuf", n: 6, titre: "Charger en fluide neuf, à la balance", quoi: "La masse de la plaque, pesée ; relevés de marche ; dépose machine en marche ; traçabilité." }
+];
+/* Ce que l'élève a fait dans une gare : sa mémoire locale, rapportée au nombre d'étapes de son parcours. */
+async function avancement(g) {
+  let S = null;
+  try { S = JSON.parse(localStorage.getItem("tour-de-main:" + g.id)); } catch (e) { /* page sans mémoire */ }
+  try {
+    const w = {}; new Function("window", await (await fetch("../" + g.id + "/donnees.js")).text())(w);
+    const G = w.GARE, parcours = (S && S.machine && S.machine.parcours) || (G.parcours || ["charge"])[0];
+    const L = G.etapes.filter(e => !(parcours === "azote" && e.azote === false));
+    const faites = S ? L.filter(e => S.etapes && S.etapes[e.id] && S.etapes[e.id].fait).length : 0;
+    return { faites, total: L.length, existe: true };
+  } catch (e) { return { faites: 0, total: 0, existe: false }; }
+}
+(async () => {
+  const A = await Promise.all(GARES.map(avancement));
+  const ici = A.findIndex(a => a.existe && a.faites < a.total);
+  document.getElementById("route").innerHTML = GARES.map((g, k) => {
+    const a = A[k], fini = a.existe && a.total && a.faites === a.total;
+    return `<li class="${fini ? "ok" : ""} ${k === ici ? "ici" : ""}"><span class="n">${k + 1}</span><div>
+      <h2>${g.titre}</h2><p>${g.quoi}</p>
+      <p class="etat">${a.existe ? (fini ? "<b>Fini ✓</b>" : `<b>${a.faites} / ${a.total}</b> étapes faites`) + ` · gare ${g.n}` : "Gare en préparation."}</p>
+      ${a.existe ? `<div class="liens"><a class="btn" href="../${g.id}/index.html#vue=poste">Au poste →</a>
+        <a class="btn clair" href="../${g.id}/index.html#vue=entr">Je m'entraîne</a>
+        <a class="btn clair" href="../${g.id}/index.html#vue=trace">Ma trace</a></div>` : ""}</div></li>`;
+  }).join("");
+  const finies = A.filter(a => a.existe && a.total && a.faites === a.total).length;
+  document.getElementById("barre").style.width = (100 * finies / GARES.length) + "%";
+  document.getElementById("avance-txt").textContent = finies + " / " + GARES.length + " gares finies";
+})();
+</script>
+<script src="../../moteur/agrandir.js?v=f4029ee" defer></script>
+<script src="../../moteur/marque.js" data-cartouche="Le tour de main" data-licence="cc-by-nc-nd" defer></script>
+</body>
+</html>
