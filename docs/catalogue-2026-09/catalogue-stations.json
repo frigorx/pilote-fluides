@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 412,
+  "total": 422,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -4569,6 +4569,114 @@
       "chemin": "tour-de-main/simulateur/pressostat.html"
     },
     {
+      "reseau": "Le tour de main",
+      "id": "guidance-recuperation",
+      "titre": "Récupérer le fluide · Le tour de main",
+      "ligne": null,
+      "resume": "Guidance au poste : récupérer le fluide d'une machine, liquide puis vapeur, avec la station et la bouteille pesée. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/recuperation/",
+      "chemin": "tour-de-main/interventions/recuperation/"
+    },
+    {
+      "reseau": "Le tour de main",
+      "id": "guidance-vannes-service",
+      "titre": "Manœuvrer une vanne de service · Le tour de main",
+      "ligne": null,
+      "resume": "Guidance au poste : manœuvrer une vanne de service, de l'ôter du capuchon au contrôle du presse-étoupe, avec les trois positions et la lecture du manomètre. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/vannes-service/",
+      "chemin": "tour-de-main/interventions/vannes-service/"
+    },
+    {
+      "reseau": "Le tour de main",
+      "id": "guidance-pose-manometres",
+      "titre": "Poser les manomètres · Le tour de main",
+      "ligne": null,
+      "resume": "Guidance au poste : poser les manomètres sur une machine, vannes de service au siège arrière, flexibles hors air, lecture de la BP et de la HP et conversion en température de saturation. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/pose-manometres/",
+      "chemin": "tour-de-main/interventions/pose-manometres/"
+    },
+    {
+      "reseau": "Le tour de main",
+      "id": "guidance-depose-manometres",
+      "titre": "Déposer les manomètres · Le tour de main",
+      "ligne": null,
+      "resume": "Guidance au poste : déposer le manifold sans perdre de fluide et sans laisser de fuite. Je m’entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/depose-manometres/",
+      "chemin": "tour-de-main/interventions/depose-manometres/"
+    },
+    {
+      "reseau": "Le tour de main",
+      "id": "guidance-etancheite-azote",
+      "titre": "Contrôler l'étanchéité sous azote · Le tour de main",
+      "ligne": null,
+      "resume": "Guidance au poste : contrôler l'étanchéité d'un circuit sous azote, avec le mano-détendeur, la montée en pression par paliers, la recherche de fuite et la tenue dans le temps. Je m'entraîne sur le dessin, je le fais sur le vrai poste, je garde la trace de mes relevés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/etancheite-azote/",
+      "chemin": "tour-de-main/interventions/etancheite-azote/"
+    },
+    {
+      "reseau": "Le tour de main",
+      "id": "guidance-tirage-au-vide",
+      "titre": "Tirer au vide et tester la remontée · Le tour de main",
+      "ligne": null,
+      "resume": "Guidance au poste : tirer un circuit au vide avec la pompe et le vacuomètre, tester la remontée, lire la courbe et décider. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/tirage-au-vide/",
+      "chemin": "tour-de-main/interventions/tirage-au-vide/"
+    },
+    {
+      "reseau": "Le tour de main",
+      "id": "guidance-charge-fluide-neuf",
+      "titre": "Charger en fluide neuf, à la balance · Le tour de main",
+      "ligne": null,
+      "resume": "Guidance au poste : charger une machine en fluide neuf à la balance, en phase liquide, après le tirage au vide. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/charge-fluide-neuf/",
+      "chemin": "tour-de-main/interventions/charge-fluide-neuf/"
+    },
+    {
+      "reseau": "Le tour de main",
+      "id": "guidance-complement-charge",
+      "titre": "Faire un complément de charge · Le tour de main",
+      "ligne": null,
+      "resume": "Guidance au poste : faire un complément de charge sur une machine en marche, avec le manifold, la balance et la recherche de fuite. Je m’entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/complement-charge/",
+      "chemin": "tour-de-main/interventions/complement-charge/"
+    },
+    {
+      "reseau": "Le tour de main",
+      "id": "guidance-chaine-entiere",
+      "titre": "La chaîne entière · Le tour de main",
+      "ligne": null,
+      "resume": "Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/tour-de-main/interventions/chaine-entiere/",
+      "chemin": "tour-de-main/interventions/chaine-entiere/"
+    },
+    {
       "reseau": "inerWeb QCM",
       "id": "qcm",
       "titre": "inerWeb QCM · réviser en autonomie",
@@ -5175,6 +5283,18 @@
     },
     {
       "reseau": "Pages du site",
+      "id": "decouvrir",
+      "titre": "Découvrir inerWeb — le parcours enseignant",
+      "ligne": null,
+      "resume": "Prendre en main inerWeb en une quinzaine d’étapes : ce que c’est, ce que ça apporte à vos cours, comment s’en servir demain avec vos élèves. Pour les enseignants, les formateurs et toute personne qui enseigne le froid, la climatisation et les énergies.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/decouvrir.html",
+      "chemin": "decouvrir.html"
+    },
+    {
+      "reseau": "Pages du site",
       "id": "formateurs",
       "titre": "Espace formateurs",
       "ligne": null,
@@ -5279,7 +5399,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/index.html"
+      "chemin": "C:\\git\\_wt-guidance\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -5291,7 +5411,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "C:\\git\\_wt-guidance\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -5303,7 +5423,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "C:\\git\\_wt-guidance\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -5315,7 +5435,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "C:\\git\\_wt-guidance\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -5327,7 +5447,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "C:\\git\\_wt-guidance\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -5339,7 +5459,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "C:\\git\\pilote-fluides\\sous-tension/td-triphase.html"
+      "chemin": "C:\\git\\_wt-guidance\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

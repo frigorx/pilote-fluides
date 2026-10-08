@@ -347,6 +347,16 @@ for (const nom of dossiers('cartoclim/stations')) {
 for (const p of [
   { id: 'tour-de-main', fichier: 'index.html', chemin: 'tour-de-main/' },
   { id: 'pressostat', fichier: 'simulateur/pressostat.html', chemin: 'tour-de-main/simulateur/pressostat.html' },
+  /* ligne 0 « Les interventions de base, au poste » (08/10/2026) : la guidance au poste, une gare par geste */
+  { id: 'guidance-recuperation', fichier: 'interventions/recuperation/index.html', chemin: 'tour-de-main/interventions/recuperation/' },
+  { id: 'guidance-vannes-service', fichier: 'interventions/vannes-service/index.html', chemin: 'tour-de-main/interventions/vannes-service/' },
+  { id: 'guidance-pose-manometres', fichier: 'interventions/pose-manometres/index.html', chemin: 'tour-de-main/interventions/pose-manometres/' },
+  { id: 'guidance-depose-manometres', fichier: 'interventions/depose-manometres/index.html', chemin: 'tour-de-main/interventions/depose-manometres/' },
+  { id: 'guidance-etancheite-azote', fichier: 'interventions/etancheite-azote/index.html', chemin: 'tour-de-main/interventions/etancheite-azote/' },
+  { id: 'guidance-tirage-au-vide', fichier: 'interventions/tirage-au-vide/index.html', chemin: 'tour-de-main/interventions/tirage-au-vide/' },
+  { id: 'guidance-charge-fluide-neuf', fichier: 'interventions/charge-fluide-neuf/index.html', chemin: 'tour-de-main/interventions/charge-fluide-neuf/' },
+  { id: 'guidance-complement-charge', fichier: 'interventions/complement-charge/index.html', chemin: 'tour-de-main/interventions/complement-charge/' },
+  { id: 'guidance-chaine-entiere', fichier: 'interventions/chaine-entiere/index.html', chemin: 'tour-de-main/interventions/chaine-entiere/' },
 ]) {
   const html = lire(path.join(ROOT, 'tour-de-main', p.fichier));
   if (!html) continue;

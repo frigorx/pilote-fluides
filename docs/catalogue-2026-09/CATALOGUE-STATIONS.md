@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**412 stations** réparties en 16 réseaux.
+**422 stations** réparties en 16 réseaux.
 
 ## Plan thermo-techno — 110 stations
 
@@ -389,12 +389,21 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le chapeau de gendarme](https://inerweb.fr/cuivrezo/stations/4-1/) | Ligne 4 — Les pièces complexes | — | — | Un contournement symétrique, branches alignées |
 | [La baïonnette](https://inerweb.fr/cuivrezo/stations/4-2/) | Ligne 4 — Les pièces complexes | — | — | Deux branches parallèles, décalées à la cote |
 
-## Le tour de main — 2 stations
+## Le tour de main — 11 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
 | [Le tour de main · la gestuelle professionnelle](https://inerweb.fr/tour-de-main/) | — | — | — | Le tour de main : la gestuelle professionnelle du frigoriste. Manifold, azote, récupération du fluide, réglage des pressostats, du détendeur et des régulateurs KV, VAT, mesure d’intensité, relais thermique. |
 | [Le réglage des pressostats · Le tour de main](https://inerweb.fr/tour-de-main/simulateur/pressostat.html) | — | — | — | Calculer le réglage d’un pressostat BP ou HP, de sécurité ou de régulation, le prérégler sur la face, puis le prouver au banc d’azote, au manomètre, trois cycles justes de suite. |
+| [Récupérer le fluide · Le tour de main](https://inerweb.fr/tour-de-main/interventions/recuperation/) | — | — | — | Guidance au poste : récupérer le fluide d'une machine, liquide puis vapeur, avec la station et la bouteille pesée. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [Manœuvrer une vanne de service · Le tour de main](https://inerweb.fr/tour-de-main/interventions/vannes-service/) | — | — | — | Guidance au poste : manœuvrer une vanne de service, de l'ôter du capuchon au contrôle du presse-étoupe, avec les trois positions et la lecture du manomètre. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [Poser les manomètres · Le tour de main](https://inerweb.fr/tour-de-main/interventions/pose-manometres/) | — | — | — | Guidance au poste : poser les manomètres sur une machine, vannes de service au siège arrière, flexibles hors air, lecture de la BP et de la HP et conversion en température de saturation. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [Déposer les manomètres · Le tour de main](https://inerweb.fr/tour-de-main/interventions/depose-manometres/) | — | — | — | Guidance au poste : déposer le manifold sans perdre de fluide et sans laisser de fuite. Je m’entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [Contrôler l'étanchéité sous azote · Le tour de main](https://inerweb.fr/tour-de-main/interventions/etancheite-azote/) | — | — | — | Guidance au poste : contrôler l'étanchéité d'un circuit sous azote, avec le mano-détendeur, la montée en pression par paliers, la recherche de fuite et la tenue dans le temps. Je m'entraîne sur le dessin, je le fais sur le vrai poste, je garde la trace de mes relevés. |
+| [Tirer au vide et tester la remontée · Le tour de main](https://inerweb.fr/tour-de-main/interventions/tirage-au-vide/) | — | — | — | Guidance au poste : tirer un circuit au vide avec la pompe et le vacuomètre, tester la remontée, lire la courbe et décider. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [Charger en fluide neuf, à la balance · Le tour de main](https://inerweb.fr/tour-de-main/interventions/charge-fluide-neuf/) | — | — | — | Guidance au poste : charger une machine en fluide neuf à la balance, en phase liquide, après le tirage au vide. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [Faire un complément de charge · Le tour de main](https://inerweb.fr/tour-de-main/interventions/complement-charge/) | — | — | — | Guidance au poste : faire un complément de charge sur une machine en marche, avec le manifold, la balance et la recherche de fuite. Je m’entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [La chaîne entière · Le tour de main](https://inerweb.fr/tour-de-main/interventions/chaine-entiere/) | — | — | — | Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste. |
 
 ## inerWeb QCM — 4 stations
 
@@ -468,12 +477,13 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Voyage dans tous ses états, le compresseur à vis — raconté par une molécule](https://inerweb.fr/voyage/vis.html) | — | — | — | Suivez une molécule de fluide frigorigène dans un compresseur à vis : les rotors mâle et femelle, l’alvéole qui se ferme sans clapet puis rétrécit, l’huile injectée, le Vi, le tiroir, le séparateur d’huile, l’économiseur — avec son cycle sur le diagramme enthalpique, en même temps. |
 | [les films d'inerweb.fr](https://inerweb.fr/studio/) | — | — | — | Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours. |
 
-## Pages du site — 10 stations
+## Pages du site — 11 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
 | [Charte graphique inerWeb](https://inerweb.fr/charte.html) | — | — | — | La charte graphique du pack fluides, montrée : palette, typographie, composants, règles absolues, volet impression et écarts constatés. |
 | [Comprendre les codes inerWeb — guide de l'enseignant](https://inerweb.fr/comprendre-les-codes.html) | — | — | — | À quoi sert chaque code inerWeb, qui le détient, comment ouvrir une séance et récupérer les résultats des élèves. |
+| [Découvrir inerWeb — le parcours enseignant](https://inerweb.fr/decouvrir.html) | — | — | — | Prendre en main inerWeb en une quinzaine d’étapes : ce que c’est, ce que ça apporte à vos cours, comment s’en servir demain avec vos élèves. Pour les enseignants, les formateurs et toute personne qui enseigne le froid, la climatisation et les énergies. |
 | [Espace formateurs](https://inerweb.fr/formateurs.html) | — | — | — | Utiliser inerWeb en classe et demander une réutilisation. Droits réservés sur les nouvelles créations ; licences antérieures et tierces conservées. |
 | [Habilitation fluides frigorigènes (démonstrateur)](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
 | [Bibliothèque d'animations et de supports — habilitation fluides frigorigènes](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
