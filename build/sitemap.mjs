@@ -30,6 +30,11 @@ const INDEXEES = [
   { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
   { fichier: "quartier/index.html", url: "https://inerweb.fr/quartier/" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
+  // inerWeb QCM (07/10/2026) : l'accueil de la station et ses trois activités de révision.
+  { fichier: "qcm/index.html", url: "https://inerweb.fr/qcm/" },
+  { fichier: "qcm/positionnement.html", url: "https://inerweb.fr/qcm/positionnement.html" },
+  { fichier: "qcm/manometres.html", url: "https://inerweb.fr/qcm/manometres.html" },
+  { fichier: "qcm/schema-frigo.html", url: "https://inerweb.fr/qcm/schema-frigo.html" },
   // inerWeb Studio (03/10/2026) : la salle des films et la station de chaque film.
   // Les modules interactifs (voyage/module*.html) restent noindex : ils sont la version
   // interactive du même contenu, la station du film est la page d'atterrissage.

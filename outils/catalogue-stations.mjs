@@ -359,6 +359,28 @@ for (const p of [
   });
 }
 
+/* --- inerWeb QCM (08/10/2026) : réviser seul, rien n'est envoyé ----------
+   Pages fabriquées par test-accueil-mfer/en-ligne/livrer.mjs ; les codes sont
+   ceux que chaque page affiche (pied de page ou carte de l'accueil). */
+for (const p of [
+  { id: 'qcm', fichier: 'index.html', chemin: 'qcm/', niveaux: { cap: 'CAP IFCA', bac: '2de TNE, Bac Pro MFER' } },
+  { id: 'qcm-positionnement', fichier: 'positionnement.html', chemin: 'qcm/positionnement.html', niveaux: { cap: 'CAP IFCA C1.1 à C4.7', bac: '2de TNE (CC), Bac Pro MFER C1 à C13' } },
+  { id: 'qcm-manometres', fichier: 'manometres.html', chemin: 'qcm/manometres.html', competences: ['A1T2', 'A5T2', 'C2', 'S3', 'S4', 'CAP-C4.5'] },
+  { id: 'qcm-schema-frigo', fichier: 'schema-frigo.html', chemin: 'qcm/schema-frigo.html', competences: ['C2', 'S3', 'CAP-C2.1'] },
+]) {
+  const html = lire(path.join(ROOT, 'qcm', p.fichier));
+  if (!html) continue;
+  ajouter({
+    reseau: 'inerWeb QCM',
+    id: p.id,
+    titre: titreHtml(html),
+    resume: descriptionHtml(html),
+    niveaux: p.niveaux,
+    competences: p.competences,
+    chemin: p.chemin,
+  });
+}
+
 /* --- FormaRézo : une page par station (02/10/2026) ---------------------- */
 for (const nom of dossiers('formarezo/stations')) {
   const html = lire(path.join(ROOT, 'formarezo/stations', nom, 'index.html'));
