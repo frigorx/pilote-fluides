@@ -1,4 +1,4 @@
-/* Câblage virtuel — feuille du moteur. Jetons de la charte inerweb.fr (charte-edu.css). */
+/* Câblage virtuel — feuille du moteur. Jetons de la charte inerWeb Édu (charte-edu.css). */
 :root{
   --bleu:#1B3A63; --bleu-clair:#2f5689; --orange:#FF6B35; --orange-clair:#ffe2d6;
   --txt:#1d2a38; --mut:#5a6b7d; --fond:#eef2f6; --carte:#ffffff; --ligne:#d6dee7;
@@ -408,3 +408,27 @@ body.vue-papier .outils .actions button{width:100%}
 body.vue-papier .pupitre{flex-direction:column;align-items:stretch}
 }
 @media (max-width:1400px){#carte .entete > span:not(.spacer){display:none}}   /* 30/09 : à 1280, l'en-tête du n° 2 (plan de raccordement) tenait sur deux lignes */
+
+/* ---- 08/10 : le mode tablette (body.tactile, moteur/cablage.js ; docs/AUDIT-2026-10-08-TABLETTE.md) ----
+   cibles de 48 px, la nomenclature sur une ligne, la borne touchée qui bat ; en largeur, à l'étape Câbler, les outils passent en
+   colonne à droite (comme « Schéma sur papier ») : la platine prend la hauteur de l'écran */
+body.tactile .barre .etape,body.tactile .barre .pastille-mode,body.tactile .barre .btn-barre,body.tactile .barre .affichage,
+body.tactile .panneau .entete button{min-height:48px}
+body.tactile .panneau .entete button.zoom{min-width:48px}
+body.tactile .panneau .entete{padding:4px 10px}
+body.tactile .nomenclature{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}
+body.tactile #platine .borne.armee{animation:pulse 1s infinite}
+@media (prefers-reduced-motion:reduce){body.tactile #platine .borne.armee{animation:none}}
+@media (orientation:landscape){
+body.jeu.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier){display:grid;grid-template-columns:minmax(0,1fr) 132px;grid-template-rows:auto auto auto minmax(0,1fr)}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) :is(.barre,.consigne,.nomenclature){grid-column:1 / -1}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .scene{grid-column:1;grid-row:4;padding:6px 0 34px 6px}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .outils{grid-column:2;grid-row:4;flex-direction:column;flex-wrap:nowrap;
+  align-items:stretch;gap:8px;padding:8px 8px 40px;min-height:0;border-top:0;border-left:1px solid var(--ligne);overflow-y:auto}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .outils .couleurs{display:grid;grid-template-columns:repeat(2,1fr)}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .outils .couleur{width:100%}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .outils .couleur-nom{min-width:0;white-space:normal;text-align:center}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .outils .actions{flex-direction:column}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .outils .actions button{width:100%;white-space:normal;padding:0 6px}
+body.tactile:not(.sur-carte):not(.activite-realiser):not(.vue-papier) .pupitre{flex-direction:column;align-items:stretch}
+}

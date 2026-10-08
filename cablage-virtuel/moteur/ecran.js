@@ -37,7 +37,9 @@ function demarrer() {
 
   // ---- les préférences, gardées sur l'appareil
   // sans choix : côte à côte sur un écran large, l'un sous l'autre sur un écran étroit ou en portrait (comme avant)
-  let pref = { dispo: window.innerWidth >= 900 && window.innerWidth >= window.innerHeight ? 'colonnes' : 'lignes', taille: 'moyenne', reperes: true, propose: false };
+  // 08/10 (audit tablette) : au doigt, la platine seule — la carte d'un appui sur « ‹ Carte » — et les repères repliés (Affichage)
+  const tactile = document.body.classList.contains('tactile');
+  let pref = { dispo: tactile ? 'platine' : window.innerWidth >= 900 && window.innerWidth >= window.innerHeight ? 'colonnes' : 'lignes', taille: 'moyenne', reperes: !tactile, propose: false };
   try { Object.assign(pref, JSON.parse(localStorage.getItem(CLE) || '{}')); } catch (err) { /* stockage indisponible */ }
   const garder = () => { try { localStorage.setItem(CLE, JSON.stringify(pref)); } catch (err) { /* stockage indisponible */ } };
 

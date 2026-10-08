@@ -267,22 +267,22 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     "y": 386.0
    },
    {
-    "ref": "S1:11",
+    "ref": "S2:11",
     "x": 620.0,
     "y": 423.0
    },
    {
-    "ref": "S1:12",
+    "ref": "S2:12",
     "x": 620.0,
     "y": 457.0
    },
    {
-    "ref": "S2:13",
+    "ref": "S1:13",
     "x": 620.0,
     "y": 583.0
    },
    {
-    "ref": "S2:14",
+    "ref": "S1:14",
     "x": 620.0,
     "y": 617.0
    },
@@ -444,12 +444,12 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
     "y": 785.0
    },
    {
-    "repere": "S1",
+    "repere": "S2",
     "x": 618.0,
     "y": 407.0
    },
    {
-    "repere": "S2",
+    "repere": "S1",
     "x": 618.0,
     "y": 567.0
    },
@@ -1049,7 +1049,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
    "ligne": 1
   },
   {
-   "repere": "S1",
+   "repere": "S2",
    "type": "poussoir_nf",
    "nom": "Bouton arrêt",
    "rang": 2,
@@ -1082,7 +1082,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
    "ligne": 3
   },
   {
-   "repere": "S2",
+   "repere": "S1",
    "type": "poussoir",
    "nom": "Bouton marche avant",
    "rang": 2,
@@ -1771,8 +1771,8 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
    "bornes": [
     "KM1:13",
     "KM2:13",
-    "S1:12",
-    "S2:13",
+    "S1:13",
+    "S2:12",
     "S3:13",
     "XC2:1",
     "XC2:2"
@@ -1805,7 +1805,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
    "bornes": [
     "KM1:14",
     "KM2:21",
-    "S2:14",
+    "S1:14",
     "XC3:1",
     "XC3:2"
    ],
@@ -1951,7 +1951,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
    "nom": "Q2:4",
    "bornes": [
     "Q2:4",
-    "S1:11",
+    "S2:11",
     "XC1:1",
     "XC1:2"
    ],
@@ -2142,16 +2142,16 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
   },
   {
    "de": "XC1:2",
-   "a": "S1:11",
+   "a": "S2:11",
    "couleur": "marron"
   },
   {
-   "de": "S1:12",
-   "a": "S2:13",
+   "de": "S2:12",
+   "a": "S1:13",
    "couleur": "marron"
   },
   {
-   "de": "S1:12",
+   "de": "S2:12",
    "a": "S3:13",
    "couleur": "marron"
   },
@@ -2161,7 +2161,7 @@ window.CABLAGE_EXERCICES["cablage-4-commande"] = {
    "couleur": "marron"
   },
   {
-   "de": "S2:14",
+   "de": "S1:14",
    "a": "XC3:1",
    "couleur": "marron"
   },

@@ -1,7 +1,7 @@
 # Câblage n° 1 — la commande : marche-arrêt à auto-maintien (bobine, 13-14, 95-96, boutons) — documents génériques (Câblage virtuel, inerweb.fr)
 
 Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-1-commande · palier : Commande 1 · 34 fils.
-Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 30/09/2026. Générique : à adapter au diplôme.
+Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 05/10/2026. Générique : à adapter au diplôme.
 
 ## Ce que fait l'élève
 Il suit cinq étapes : 1 Colorier, 2 Repérer, 3 Câbler, 4 Essayer (son câblage sous tension : il note ce qu'il observe), 5 Réaliser (la platine, avec le professeur).

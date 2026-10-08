@@ -1,7 +1,7 @@
 # Câblage n° 3 — la commande : deux départs, deux marche-arrêt à auto-maintien — documents génériques (Câblage virtuel, inerweb.fr)
 
 Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-3-commande · palier : Commande 1 · 57 fils.
-Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 30/09/2026. Générique : à adapter au diplôme.
+Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 05/10/2026. Générique : à adapter au diplôme.
 
 ## Ce que fait l'élève
 Il suit cinq étapes : 1 Colorier, 2 Repérer, 3 Câbler, 4 Essayer (son câblage sous tension : il note ce qu'il observe), 5 Réaliser (la platine, avec le professeur).

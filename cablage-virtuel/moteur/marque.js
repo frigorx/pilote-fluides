@@ -13,9 +13,9 @@
    TROIS RÉGLAGES, lus sur la balise <script> elle-même, sinon sur <html>,
    sinon les valeurs par défaut. Ils se posent ainsi :
      <script src="../../moteur/marque.js"
-             data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+             data-cartouche="Édu" data-licence="cc-by-nc-nd"></script>
      · data-cartouche — le mot du cartouche orange : Pilote (défaut),
-                        Fluide, .fr. Le logo ne se redessine pas, il se
+                        Fluide, Édu. Le logo ne se redessine pas, il se
                         décline : SEUL ce mot change (charte § 3.4).
      · data-licence   — cc-by-nc-nd (défaut), tous-droits, interne.
      · data-prototype — présent = la page s'annonce document de travail.

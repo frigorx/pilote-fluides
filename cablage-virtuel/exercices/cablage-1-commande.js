@@ -277,22 +277,22 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
     "y": 476.0
    },
    {
-    "ref": "S1:11",
+    "ref": "S2:11",
     "x": 560.0,
     "y": 523.0
    },
    {
-    "ref": "S1:12",
+    "ref": "S2:12",
     "x": 560.0,
     "y": 557.0
    },
    {
-    "ref": "S2:13",
+    "ref": "S1:13",
     "x": 560.0,
     "y": 603.0
    },
    {
-    "ref": "S2:14",
+    "ref": "S1:14",
     "x": 560.0,
     "y": 637.0
    },
@@ -379,12 +379,12 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
     "y": 366.0
    },
    {
-    "repere": "S1",
+    "repere": "S2",
     "x": 558.0,
     "y": 507.0
    },
    {
-    "repere": "S2",
+    "repere": "S1",
     "x": 558.0,
     "y": 587.0
    },
@@ -875,7 +875,7 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
    "ligne": 1
   },
   {
-   "repere": "S1",
+   "repere": "S2",
    "type": "poussoir_nf",
    "nom": "Bouton arrêt",
    "rang": 2,
@@ -908,7 +908,7 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
    "ligne": 3
   },
   {
-   "repere": "S2",
+   "repere": "S1",
    "type": "poussoir",
    "nom": "Bouton marche",
    "rang": 2,
@@ -1540,8 +1540,8 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
    "nom": "KM1:13",
    "bornes": [
     "KM1:13",
-    "S1:12",
-    "S2:13",
+    "S1:13",
+    "S2:12",
     "XC2:1",
     "XC2:2"
    ],
@@ -1558,7 +1558,7 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
    "bornes": [
     "KM1:14",
     "KM1:A1",
-    "S2:14",
+    "S1:14",
     "XC3:1",
     "XC3:2"
    ],
@@ -1639,7 +1639,7 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
    "nom": "F1:96",
    "bornes": [
     "F1:96",
-    "S1:11",
+    "S2:11",
     "XC1:1",
     "XC1:2"
    ],
@@ -1884,21 +1884,21 @@ window.CABLAGE_EXERCICES["cablage-1-commande"] = {
   },
   {
    "de": "XC1:2",
-   "a": "S1:11",
+   "a": "S2:11",
    "couleur": "marron"
   },
   {
-   "de": "S1:12",
-   "a": "S2:13",
+   "de": "S2:12",
+   "a": "S1:13",
    "couleur": "marron"
   },
   {
-   "de": "S1:12",
+   "de": "S2:12",
    "a": "XC2:1",
    "couleur": "marron"
   },
   {
-   "de": "S2:14",
+   "de": "S1:14",
    "a": "XC3:1",
    "couleur": "marron"
   },

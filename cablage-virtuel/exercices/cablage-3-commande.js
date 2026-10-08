@@ -397,22 +397,22 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
     "y": 476.0
    },
    {
-    "ref": "S1:11",
+    "ref": "S2:11",
     "x": 700.0,
     "y": 523.0
    },
    {
-    "ref": "S1:12",
+    "ref": "S2:12",
     "x": 700.0,
     "y": 557.0
    },
    {
-    "ref": "S2:13",
+    "ref": "S1:13",
     "x": 700.0,
     "y": 603.0
    },
    {
-    "ref": "S2:14",
+    "ref": "S1:14",
     "x": 700.0,
     "y": 637.0
    },
@@ -467,22 +467,22 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
     "y": 476.0
    },
    {
-    "ref": "S3:11",
+    "ref": "S4:11",
     "x": 900.0,
     "y": 523.0
    },
    {
-    "ref": "S3:12",
+    "ref": "S4:12",
     "x": 900.0,
     "y": 557.0
    },
    {
-    "ref": "S4:13",
+    "ref": "S3:13",
     "x": 900.0,
     "y": 603.0
    },
    {
-    "ref": "S4:14",
+    "ref": "S3:14",
     "x": 900.0,
     "y": 637.0
    },
@@ -584,22 +584,22 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
     "y": 745.0
    },
    {
-    "repere": "S1",
+    "repere": "S2",
     "x": 698.0,
     "y": 507.0
    },
    {
-    "repere": "S3",
+    "repere": "S4",
     "x": 898.0,
     "y": 507.0
    },
    {
-    "repere": "S2",
+    "repere": "S1",
     "x": 698.0,
     "y": 587.0
    },
    {
-    "repere": "S4",
+    "repere": "S3",
     "x": 898.0,
     "y": 587.0
    },
@@ -1289,7 +1289,7 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "ligne": 1
   },
   {
-   "repere": "S1",
+   "repere": "S2",
    "type": "poussoir_nf",
    "nom": "Bouton arrêt du départ 1",
    "rang": 2,
@@ -1322,7 +1322,7 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "ligne": 3
   },
   {
-   "repere": "S3",
+   "repere": "S4",
    "type": "poussoir_nf",
    "nom": "Bouton arrêt du départ 2",
    "rang": 2,
@@ -1355,7 +1355,7 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "ligne": 3
   },
   {
-   "repere": "S2",
+   "repere": "S1",
    "type": "poussoir",
    "nom": "Bouton marche du départ 1",
    "rang": 2,
@@ -1388,7 +1388,7 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "ligne": 3
   },
   {
-   "repere": "S4",
+   "repere": "S3",
    "type": "poussoir",
    "nom": "Bouton marche du départ 2",
    "rang": 2,
@@ -2334,8 +2334,8 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "nom": "Q4:4",
    "bornes": [
     "Q4:4",
-    "S1:11",
-    "S3:11",
+    "S2:11",
+    "S4:11",
     "XC1:1",
     "XC1:2",
     "XC4:1",
@@ -2353,8 +2353,8 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "nom": "KM1:13",
    "bornes": [
     "KM1:13",
-    "S1:12",
-    "S2:13",
+    "S1:13",
+    "S2:12",
     "XC2:1",
     "XC2:2"
    ],
@@ -2371,7 +2371,7 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "bornes": [
     "KM1:14",
     "KM1:A1",
-    "S2:14",
+    "S1:14",
     "XC3:1",
     "XC3:2"
    ],
@@ -2387,8 +2387,8 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "nom": "KM2:13",
    "bornes": [
     "KM2:13",
-    "S3:12",
-    "S4:13",
+    "S3:13",
+    "S4:12",
     "XC5:1",
     "XC5:2"
    ],
@@ -2405,7 +2405,7 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
    "bornes": [
     "KM2:14",
     "KM2:A1",
-    "S4:14",
+    "S3:14",
     "XC6:1",
     "XC6:2"
    ],
@@ -2851,41 +2851,41 @@ window.CABLAGE_EXERCICES["cablage-3-commande"] = {
   },
   {
    "de": "XC1:2",
-   "a": "S1:11",
+   "a": "S2:11",
    "couleur": "marron"
   },
   {
    "de": "XC4:2",
-   "a": "S3:11",
+   "a": "S4:11",
    "couleur": "marron"
   },
   {
-   "de": "S1:12",
-   "a": "S2:13",
+   "de": "S2:12",
+   "a": "S1:13",
    "couleur": "marron"
   },
   {
-   "de": "S1:12",
+   "de": "S2:12",
    "a": "XC2:1",
    "couleur": "marron"
   },
   {
-   "de": "S3:12",
-   "a": "S4:13",
+   "de": "S4:12",
+   "a": "S3:13",
    "couleur": "marron"
   },
   {
-   "de": "S3:12",
+   "de": "S4:12",
    "a": "XC5:1",
    "couleur": "marron"
   },
   {
-   "de": "S2:14",
+   "de": "S1:14",
    "a": "XC3:1",
    "couleur": "marron"
   },
   {
-   "de": "S4:14",
+   "de": "S3:14",
    "a": "XC6:1",
    "couleur": "marron"
   },

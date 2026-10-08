@@ -1,5 +1,5 @@
 /* =====================================================================
-   CÂBLAGE VIRTUEL — moteur du jeu (inerweb.fr).
+   CÂBLAGE VIRTUEL — moteur du jeu (inerWeb Édu).
    ---------------------------------------------------------------------
    CONTRAT : jouer.html charge exercices/index.js puis ce script.
      ?ex=<id>            l'exercice (exercices/<id>.js, chargé ici)
@@ -39,6 +39,10 @@ const ACTIVITE = ['colorier', 'reperer', 'cabler', 'realiser'].includes(P.get('a
 const REELLE_ADRESSE = P.get('platine') === 'reelle';
 const REELLE = REELLE_ADRESSE || ACTIVITE === 'realiser';   // Réaliser montre la platine en vrais appareils, quand l'exercice en a
 const TUTO = P.get('tuto') !== null;
+// 08/10 (Franck : « travailler facilement sur une tablette tactile 10 pouces ») : le mode tablette, dès qu'un écran tactile est là
+// (`&tactile` le force, pour un essai sur ordinateur) — écran de travail plein, bornes lisibles au doigt (docs/AUDIT-2026-10-08-TABLETTE.md)
+const TACTILE = P.has('tactile') || matchMedia('(any-pointer: coarse)').matches;
+if (TACTILE) document.body.classList.add('tactile');
 // À l'atelier (29/09) : écran seulement · en deux temps (tout l'écran, puis l'étape 5 Réaliser) · fil par fil (un fil à l'écran,
 // le même sur la platine). L'ADRESSE seule, sinon l'écran (30/09, constat P6 : un réglage gardé sur l'appareil s'appliquait
 // ensuite aux anciens QR sans &atelier ; un ancien QR retrouve l'écran seul). Le tutoriel : l'écran.
@@ -383,7 +387,9 @@ function debutTrace(e) {
   if (filEl) { choisir(fils.find(f => f.el === filEl || f.contour === filEl)); return; }
   const pt = point(e), b = borneProche(pt);
   choisir(null);
-  if (!b) { armer(null); return; }
+  // 08/10 (audit tablette, constat 1) : glisser le vide déplace la vue SANS oublier la borne touchée ; seul un appui bref sur le vide
+  // l'oublie (finTrace). Zoomé au doigt, les deux bornes d'un fil sont rarement à l'écran ensemble.
+  if (!b) { vide = { x: e.clientX, y: e.clientY }; return; }
   const cands = candidatsDoigt(e);   // au doigt, deux bornes presque à égale distance : l'élève choisit, rien n'est pris
   if (cands.length > 1) { aimanter(null); proposerChoix(cands, e, (ref) => toucherBorne(ref, e)); return; }
   svgPlatine.setPointerCapture(e.pointerId);
@@ -425,8 +431,13 @@ function viser(texte, e) {
     v.style.top = enHaut ? 'auto' : ''; v.style.bottom = enHaut ? '10px' : '';
   }
 }
-function annulerTrace() { trace = null; filTemp.setAttribute('d', ''); aimanter(null); armer(armee); viser(armee ? libSens(armee) + ' : touchez l’autre borne.' : null); }
+let vide = null;   // l'appui sur le vide en cours : un appui bref oublie la borne touchée, un glisser déplace la vue
+function annulerTrace() { trace = null; vide = null; filTemp.setAttribute('d', ''); aimanter(null); armer(armee); viser(armee ? libSens(armee) + ' : touchez l’autre borne.' : null); }
 function finTrace(e) {
+  if (vide) {
+    if (Math.hypot(e.clientX - vide.x, e.clientY - vide.y) <= SEUIL_GLISSER) { armer(null); viser(null); }
+    vide = null;
+  }
   if (!trace) return;
   const b = borneProche(point(e)), de = trace.de;
   filTemp.setAttribute('d', ''); aimanter(null); viser(null);
@@ -830,7 +841,8 @@ function suivreFil(de, a) {
   const corps = p.querySelector('.corps'), cw = corps && corps.clientWidth, ch = corps && corps.clientHeight;
   if (!cw || !ch) return;
   const [vx, vy, vw, vh] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
-  const LISIBLE = 0.7;   // une borne de 9 d'unité de rayon fait alors 13 px de diamètre à l'écran
+  // une borne de 9 d'unité de rayon fait alors 13 px de diamètre à l'écran ; 08/10 : au doigt, 27 px (une borne ≈ 2 mm sur 10 pouces à 0,7)
+  const LISIBLE = TACTILE ? 1.5 : 0.7;
   const k = Math.min(cw / vw, ch / vh), m = 2 * RAYON_BORNE;
   // 02/10 : platine tournée d'un quart, on raisonne dans le repère de la vue (celui du viewBox)
   const V = (r) => z.versVue ? z.versVue(r) : r, P = (b) => V({ x: b.x, y: b.y, w: 0, h: 0 }), q1 = P(b1), q2 = P(b2);
@@ -1470,8 +1482,9 @@ function installerZoom(svg, options) {
   svg.addEventListener('pointerdown', (e) => {
     doigts.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (doigts.size === 2) {
-      const [a, b] = [...doigts.values()];
-      pince = { d: Math.hypot(a.x - b.x, a.y - b.y), w: etat.w }; pan = null;
+      // 08/10 (audit tablette, constat 4) : le point du dessin pris entre les deux doigts y reste — zoom ET déplacement à deux doigts
+      const [a, b] = [...doigts.values()], m = { clientX: (a.x + b.x) / 2, clientY: (a.y + b.y) / 2 };
+      pince = { d: Math.hypot(a.x - b.x, a.y - b.y), w: etat.w, h: etat.h, p: pt(m) }; pan = null;
       if (options.annuler) options.annuler();
       return;
     }
@@ -1484,8 +1497,10 @@ function installerZoom(svg, options) {
     if (pince && doigts.size === 2) {
       const [a, b] = [...doigts.values()], d = Math.hypot(a.x - b.x, a.y - b.y);
       if (d > 0) {
-        const w = borner(pince.w * pince.d / d), cx = etat.x + etat.w / 2, cy = etat.y + etat.h / 2;
-        etat.w = w; etat.h = w * base[3] / base[2]; etat.x = cx - w / 2; etat.y = cy - etat.h / 2; appliquer();
+        // la proportion courante (celle du cadrage) est gardée : celle du dessin faisait sauter la vue au premier pincement
+        const w = borner(pince.w * pince.d / d), h = w * pince.h / pince.w, r = svg.getBoundingClientRect();
+        const s = Math.min(r.width / w, r.height / h), mx = (a.x + b.x) / 2 - r.left - (r.width - w * s) / 2, my = (a.y + b.y) / 2 - r.top - (r.height - h * s) / 2;
+        etat.w = w; etat.h = h; etat.x = pince.p.x - mx / s; etat.y = pince.p.y - my / s; appliquer();
       }
       return;
     }
@@ -1515,14 +1530,28 @@ function brancherZoom(panneau, z) {
   panneau._zoom = z;   // l'écran adaptatif (moteur/ecran.js) cadre la platine seule
   panneau.querySelectorAll('button.zoom').forEach(b => {
     if (b.dataset.zoom === 'tourner') {
+      // 08/10 (Franck : « une rotation du schéma pour l'adapter comme on veut » ; quart de tour automatique retenu) : au doigt, la
+      // platine se couche toute seule quand le dessin et l'écran n'ont pas le même sens ; un appui sur ⟲ l'emporte, gardé pour ce
+      // sens de l'écran. La carte (le schéma à lire) ne tourne qu'à la demande.
+      const auto = TACTILE && panneau.id === 'platine', large = () => innerWidth > innerHeight;
+      const cle = () => auto ? panneau.id + (large() ? ':largeur' : ':hauteur') : panneau.id;
+      const voulu = () => {
+        const t = tours()[cle()]; if (t !== undefined || !auto) return !!t;
+        const zp = zonePlatine(), r = zp && zp.h ? zp.w / zp.h : 1;
+        return large() ? r < 1 / 1.15 : r > 1.15;
+      };
       const peindre = () => b.setAttribute('aria-pressed', String(!!z.quart()));
       b.onclick = () => {
         z.tourner(!z.quart()); peindre();
-        const t = tours(); t[panneau.id] = z.quart(); try { localStorage.setItem(CLE_TOUR, JSON.stringify(t)); } catch (err) { /* stockage indisponible */ }
+        const t = tours(); t[cle()] = z.quart(); try { localStorage.setItem(CLE_TOUR, JSON.stringify(t)); } catch (err) { /* stockage indisponible */ }
         if (panneau.id === 'platine' && window.CABLAGE_SUIVRE) window.CABLAGE_SUIVRE();   // en Guidé, le fil en cours reste en vue
       };
-      if (tours()[panneau.id]) z.tourner(1);
+      if (voulu()) z.tourner(1);
       peindre();
+      if (auto) matchMedia('(orientation: landscape)').addEventListener('change', () => requestAnimationFrame(() => {   // la tablette a tourné
+        if (!!z.quart() !== voulu()) { z.tourner(voulu() ? 1 : 0); peindre(); } else z.ajuster();
+        if (window.CABLAGE_SUIVRE) window.CABLAGE_SUIVRE();
+      }));
       return;
     }
     b.onclick = () => (b.dataset.zoom === 'plus' ? z.zoomer(1.4) : b.dataset.zoom === 'moins' ? z.zoomer(1 / 1.4) : z.ajuster());

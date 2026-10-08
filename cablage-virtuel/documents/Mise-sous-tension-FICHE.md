@@ -2,11 +2,11 @@
 
 Exercice : **Câblage n° 1 — la commande** (marche-arrêt à auto-maintien), https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-1-commande
 Public : CAP IFCA 2e année, 1re Bac Pro MFER. Durée : 1 h sur l'écran, puis la platine (module atelier 4 h).
-Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 30/09/2026.
+Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 05/10/2026.
 
 ## Ce que fait l'élève
-Son câblage posé et contrôlé, il le met sous tension dans le logiciel : il enclenche Q1 puis Q2, maintient S2 (marche),
-relâche (auto-maintien par le 13-14 de KM1), appuie sur S1 (arrêt), déclenche F1 (95-96). Mal câblé, la protection la plus
+Son câblage posé et contrôlé, il le met sous tension dans le logiciel : il enclenche Q1 puis Q2, maintient S1 (marche),
+relâche (auto-maintien par le 13-14 de KM1), appuie sur S2 (arrêt), déclenche F1 (95-96). Mal câblé, la protection la plus
 proche disjoncte et le logiciel peut montrer le fil en cause (aide comptée). Il remplit la table de vérité S1 S2 F1 → KM1 M1,
 son compte rendu, puis refait l'essai sur la vraie platine avec le professeur. À l'essai, la voix (bouton « Écouter
 le professeur ») explique chaque événement : protection, contacteur qui colle, auto-maintien, thermique, court-circuit.
