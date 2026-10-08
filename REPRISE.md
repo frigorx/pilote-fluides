@@ -3,6 +3,20 @@
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
+> ## 08/10 (soir) — REMISE À NIVEAU DES ILLUSTRATIONS, thermo-techno (feu vert de Franck : « tu publies les 3 »)
+>
+> Plan et mesures : `CLAUDE-ESPACE-TRAVAIL/REMISE-A-NIVEAU-ILLUSTRATIONS-2026-10-08/` (`PLAN.md` § 6 bis et § 7, `CATALOGUE-BRIQUES.md`,
+> `LOT4-THERMO-FAIBLES.md`, planches avant/après). En ligne à 20 h 30 (`0f1a4ac4`, `1b38afe2`, `5d0ea881`) :
+> · **Ligne CO₂** (`co2-r744/moteur.js`, table `FILMS`) : chaque escale s’ouvre sur son chapitre du film Voyage (CO₂ ou booster),
+>   `<video preload="none">`, mêmes clés que la page du film ; la lecture suivie ne saute pas le film.
+> · **Capsules** : 🔴 `.accueil{display:grid}` écrasait `hidden` → l’accueil restait au-dessus de l’écran (règle `[hidden]` ajoutée) ;
+>   scène pleine largeur au-dessus du texte ; motif `zone` : technicien dessiné. Mesuré 16 → 42 % de l’écran.
+> · **`moteur/agrandir.js`** (pilote, 3 stations : récupération, KVR-NRD, pressostat différentiel d’huile) : sur téléphone,
+>   « ⤢ Agrandir » ouvre une copie vivante du schéma en plein écran, en paysage. À étendre après essai sur un vrai téléphone.
+> · ⛔ **Régules : ne pas y toucher** (Franck, 08/10).
+> · ⚠️ `build/animations.mjs` pose l’interrupteur aussi dans les dossiers NON SUIVIS d’autres chats : vérifier et retirer.
+> · Suite : les gestes de base deviennent des **guidances au poste** dans Le tour de main (`CLAUDE-ESPACE-TRAVAIL/GUIDANCE-AU-POSTE/BRIEF.md`).
+
 > ## 07/10 — LA LIGNE « 🎚 LES DÉTENDEURS » (7 gares, feu vert de Franck : « tu as le droit de mettre à jour le site »)
 >
 > Sur le plan thermo-techno, bande à 2470 sous la régulation (`moteur/plan-donnees.js` → `DETENDEURS`, `plan.html`,
