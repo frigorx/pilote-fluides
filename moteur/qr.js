@@ -88,7 +88,11 @@
 
   /** Les `n` mots de correction d'un bloc de données. */
   function correction(donnees, n) {
-    var g = generateur(n), reste = new Array(donnees.length + n).fill(0);
+    /* generateur() range les coefficients du degré 0 au degré n ; la division
+       ci-dessous les lit du degré n (le 1 de tête) au degré 0. Sans ce
+       retournement (oubli corrigé le 08/10/2026), les mots de correction
+       étaient faux et aucun lecteur ne lisait les QR. */
+    var g = generateur(n).reverse(), reste = new Array(donnees.length + n).fill(0);
     for (var i = 0; i < donnees.length; i++) reste[i] = donnees[i];
     for (var k = 0; k < donnees.length; k++) {
       var facteur = reste[k];
@@ -242,12 +246,15 @@
       t.m[i][6] = v; t.reserve[i][6] = 1;
     }
 
-    /* Motifs d'alignement — jamais par-dessus les grands carrés */
-    var centres = ALIGNEMENT[version - 1];
+    /* Motifs d'alignement — jamais par-dessus les grands carrés. On saute les
+       trois coins, et eux seuls : un motif posé sur la ligne de cadence (dès la
+       version 7) doit être dessiné. Le test « case déjà réservée » les sautait
+       aussi (corrigé le 08/10/2026 : QR de séance illisibles). */
+    var centres = ALIGNEMENT[version - 1], dernier = centres.length - 1;
     for (var a = 0; a < centres.length; a++) {
       for (var b = 0; b < centres.length; b++) {
         var cy = centres[a], cx = centres[b];
-        if (t.reserve[cy][cx]) continue;
+        if ((a === 0 && b === 0) || (a === 0 && b === dernier) || (a === dernier && b === 0)) continue;
         for (var dy = -2; dy <= 2; dy++) {
           for (var dx = -2; dx <= 2; dx++) {
             var bord2 = Math.max(Math.abs(dy), Math.abs(dx));
@@ -292,15 +299,18 @@
     var mot = motFormat(niveau, masque);
     for (var p = 0; p < 15; p++) {
       var bit = (mot >> p) & 1;
-      /* Copie 1 — autour du carré haut-gauche */
-      if (p < 6) t.m[8][p] = bit;
-      else if (p === 6) t.m[8][7] = bit;
+      /* t.m[ligne][colonne]. Jusqu'au 08/10/2026 ces deux copies étaient écrites
+         transposées (ligne et colonne inversées) : aucun lecteur ne lisait les QR.
+         Copie 1 — autour du carré haut-gauche : la colonne 8 de haut en bas
+         (bits 0 à 8), puis la ligne 8 de droite à gauche (bits 9 à 14). */
+      if (p < 6) t.m[p][8] = bit;
+      else if (p === 6) t.m[7][8] = bit;
       else if (p === 7) t.m[8][8] = bit;
-      else if (p === 8) t.m[7][8] = bit;
-      else t.m[14 - p][8] = bit;
-      /* Copie 2 — répartie sur les deux autres coins */
-      if (p < 8) t.m[t.taille - 1 - p][8] = bit;
-      else t.m[8][t.taille - 15 + p] = bit;
+      else if (p === 8) t.m[8][7] = bit;
+      else t.m[8][14 - p] = bit;
+      /* Copie 2 — la ligne 8 à droite (bits 0 à 7), la colonne 8 en bas (bits 8 à 14) */
+      if (p < 8) t.m[8][t.taille - 1 - p] = bit;
+      else t.m[t.taille - 15 + p][8] = bit;
     }
   }
 

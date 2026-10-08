@@ -135,18 +135,26 @@ function masquer(masque, y, x) {
   }
 }
 
-/* Le masque retenu se relit dans le mot de format déjà écrit sur la trame. */
+/* Le masque retenu se relit dans le mot de format déjà écrit sur la trame.
+   Positions de la norme (t.m[ligne][colonne]) : colonne 8 de haut en bas pour
+   les bits 0 à 8, ligne 8 de droite à gauche pour les bits 9 à 14 ; et la
+   seconde copie doit dire la même chose. Jusqu'au 08/10/2026 ce filet lisait
+   les positions TRANSPOSÉES, exactement comme l'encodeur les écrivait : les
+   deux se donnaient raison, et aucun téléphone ne lisait les QR. */
 function masqueDe(trame, niveau) {
-  let mot = 0;
+  const n = trame.taille;
+  let mot = 0, copie = 0;
   for (let p = 14; p >= 0; p--) {
     let bit;
-    if (p < 6) bit = trame.m[8][p];
-    else if (p === 6) bit = trame.m[8][7];
+    if (p < 6) bit = trame.m[p][8];
+    else if (p === 6) bit = trame.m[7][8];
     else if (p === 7) bit = trame.m[8][8];
-    else if (p === 8) bit = trame.m[7][8];
-    else bit = trame.m[14 - p][8];
+    else if (p === 8) bit = trame.m[8][7];
+    else bit = trame.m[8][14 - p];
     mot |= bit << p;
+    copie |= (p < 8 ? trame.m[8][n - 1 - p] : trame.m[n - 15 + p][8]) << p;
   }
+  if (copie !== mot) return -1;
   for (let m = 0; m < 8; m++) if (motFormat(niveau, m) === mot) return m;
   return -1;
 }
@@ -189,6 +197,21 @@ function relire(trame, version, niveau, masque) {
   }
   const donnees = [].concat(...blocs);
 
+  /* La correction d'erreur se vérifie : chaque bloc (données puis correction)
+     est un multiple du générateur, donc s'annule en α^0 … α^(ec−1). Ce contrôle
+     manquait : des mots de correction faux passaient sans bruit (08/10/2026). */
+  const ecs = blocs.map(() => []);
+  for (let e = 0; e < t[0]; e++) for (let b = 0; b < blocs.length; b++) ecs[b].push(mots[pos++]);
+  let correctionJuste = true;
+  for (let b = 0; b < blocs.length; b++) {
+    const mot = blocs[b].concat(ecs[b]);
+    for (let i = 0; i < t[0]; i++) {
+      let s = 0;
+      for (const c of mot) s = gfMul(s, GF_EXP[i]) ^ c;
+      if (s !== 0) correctionJuste = false;
+    }
+  }
+
   /* Décodage du flux : mode octet, longueur, contenu */
   let curseur = 0;
   const lire = (n) => {
@@ -203,7 +226,28 @@ function relire(trame, version, niveau, masque) {
   const longueur = lire(version < 10 ? 8 : 16);
   const octets = [];
   for (let i = 0; i < longueur; i++) octets.push(lire(8));
-  return { mode, octets: Uint8Array.from(octets) };
+  return { mode, octets: Uint8Array.from(octets), correctionJuste };
+}
+
+const GF_EXP = new Uint8Array(512), GF_LOG = new Uint8Array(256);
+for (let i = 0, x = 1; i < 255; i++) { GF_EXP[i] = x; GF_LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11d; }
+for (let j = 255; j < 512; j++) GF_EXP[j] = GF_EXP[j - 255];
+const gfMul = (a, b) => (a === 0 || b === 0) ? 0 : GF_EXP[GF_LOG[a] + GF_LOG[b]];
+
+/* Les motifs d'alignement : centre noir, anneau blanc, partout sauf les trois
+   coins des grands carrés — y compris ceux posés sur la ligne de cadence dès
+   la version 7, que l'encodeur sautait (08/10/2026). */
+const ALIGNEMENT = [[], [6,18], [6,22], [6,26], [6,30], [6,34], [6,22,38], [6,24,42], [6,26,46], [6,28,50],
+  [6,30,54], [6,32,58], [6,34,62], [6,26,46,66], [6,26,48,70], [6,26,50,74], [6,30,54,78],
+  [6,30,56,82], [6,30,58,86], [6,34,62,90]];
+function alignementsPoses(trame, version) {
+  const c = ALIGNEMENT[version - 1], d = c.length - 1;
+  for (let a = 0; a < c.length; a++) for (let b = 0; b < c.length; b++) {
+    if ((a === 0 && b === 0) || (a === 0 && b === d) || (a === d && b === 0)) continue;
+    const y = c[a], x = c[b];
+    if (trame.m[y][x] !== 1 || trame.m[y - 1][x] !== 0 || trame.m[y][x + 1] !== 0 || trame.m[y + 2][x + 2] !== 1) return false;
+  }
+  return true;
 }
 
 function allerRetour(intitule, texte, niveau) {
@@ -216,6 +260,8 @@ function allerRetour(intitule, texte, niveau) {
     && relu.octets.every((v, i) => v === attendu[i]);
   verifier(intitule, identique,
     identique ? "" : `V${r.version}-${r.niveau}, relu ${relu.octets.length} octets sur ${attendu.length}`);
+  verifier("  … sa correction d'erreur est juste (Reed-Solomon)", relu.correctionJuste, `V${r.version}-${r.niveau}`);
+  verifier("  … ses motifs d'alignement sont tous posés", alignementsPoses(r.trame, r.version), `V${r.version}`);
 }
 
 allerRetour("un texte court se relit", "https://inerweb.fr", "M");
