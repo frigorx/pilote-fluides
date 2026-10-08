@@ -39,6 +39,42 @@
 
   const CHAPITRES = COURSE.chapitres;
 
+  /* --- LE FILM EN TÊTE D'ESCALE (08/10/2026, remise à niveau, lot I1). --
+     Les escales s'ouvraient sur des cadres en pointillés. Le film « Voyage
+     dans tous ses états » (éditions CO₂ et booster) existe déjà, découpé en
+     chapitres de 35 à 55 s : chaque escale s'ouvre sur le sien. Rien n'est
+     redessiné ; on lit les MP4 de voyage/, à la même clé que leur page.
+     preload="none" : rien n'est téléchargé tant qu'on n'appuie pas sur ▶. */
+  const FILMS = {
+    "pourquoi":          ["co2", "chapitre-00-mon-voyage", "Mon voyage"],
+    "identite":          ["co2", "chapitre-12-tous-mes-etats", "Tous mes états"],
+    "point-critique":    ["co2", "chapitre-03-le-point-critique", "Le point critique"],
+    "point-triple":      ["co2", "chapitre-11-la-neige-carbonique", "La neige carbonique"],
+    "subcritique":       ["co2", "chapitre-01-l-evaporateur", "L'évaporateur"],
+    "transcritique":     ["co2", "chapitre-04-le-refroidisseur-de-gaz", "Le refroidisseur de gaz"],
+    "hp-optimale":       ["co2", "chapitre-05-le-detendeur-haute-pression", "Le détendeur haute pression"],
+    "securite":          ["co2", "chapitre-10-la-fuite", "La fuite"],
+    "booster":           ["booster", "chapitre-03-pourquoi-booster", "Pourquoi « booster » ?"],
+    "booster-diagramme": ["booster", "chapitre-12-le-tour-en-deux-etages", "Le tour en deux étages"],
+    "familles":          ["co2", "chapitre-07-la-vanne-de-gaz-de-detente", "La vanne de gaz de détente"],
+    "compresseurs":      ["co2", "chapitre-02-le-compresseur", "Le compresseur"],
+    "ejecteur":          ["co2", "chapitre-05-le-detendeur-haute-pression", "Le détendeur haute pression"]
+  };
+  CHAPITRES.forEach((c) => {
+    const f = FILMS[c.id];
+    if (!f) return;
+    c.lessons.unshift({
+      short: "Le film",
+      large: true, /* le film sur toute la largeur, le texte dessous : pas de colonne vide */
+      kicker: "Le film · Voyage dans tous ses états",
+      title: "Chapitre « " + f[2] + " »",
+      lead: "La molécule de CO₂ raconte elle-même ce passage de son voyage. Regarde le chapitre en entier, avec le son, avant de passer à l'écran suivant.",
+      narration: "Regarde d'abord ce chapitre du film, avec le son. Puis passe à l'écran suivant.",
+      caption: "Film « Voyage dans tous ses états », édition " + (f[0] === "co2" ? "CO₂" : "booster") + " : chapitre « " + f[2] + " ».",
+      film: { src: "../../../../voyage/videos-" + f[0] + "/" + f[1], cle: "20261003-" + f[0] }
+    });
+  });
+
   /* --- Où l'on est : un chapitre, un écran dans ce chapitre. --------- */
   let chap = 0;
   let screen = 0;
@@ -163,6 +199,15 @@
     /* Un écran « large » empile dessin et texte au lieu de les mettre côte à
        côte : c'est ce qui rend lisibles les deux vues du booster ensemble. */
     ui.grid.classList.toggle("large", !!item.large);
+    if (item.film) {
+      const f = item.film;
+      ui.stage.innerHTML = `<video class="film-escale" controls playsinline preload="none" poster="${f.src}.jpg?v=${f.cle}" src="${f.src}.mp4?v=${f.cle}" style="display:block;width:100%;height:100%;min-height:0;object-fit:contain;background:#10233c;border-radius:12px"></video>`;
+      ui.stage.removeAttribute("role");
+      ui.stage.removeAttribute("aria-label");
+      /* Le film a sa propre voix : la synthèse se tait dès qu'il part. */
+      ui.stage.querySelector("video").addEventListener("play", () => { lectureSuivie = false; stopSpeech(); });
+      return;
+    }
     ui.stage.innerHTML = VISUALS.render(item.visual);
     ui.stage.setAttribute("role", "img");
     ui.stage.setAttribute("aria-label", item.caption || "Schéma pédagogique");
@@ -471,6 +516,7 @@
       if (!lectureSuivie) return;
       const k = kind();
       if (k === "final") return;
+      if (k === "lesson" && courant().lessons[screen].film) return; /* on laisse regarder le film */
       if (k === "quiz" && reponses[screen - courant().lessons.length] === null) return;
       window.setTimeout(() => { if (lectureSuivie) move(1); }, 900);
     };
