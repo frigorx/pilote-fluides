@@ -612,6 +612,11 @@
     .tuile .emoji { font-size:26px; }
     .tuile h3 { font-size:16px; }
   }
+  /* La porte des enseignants (08/10/2026) : en tête de page ; au-dessus de 700 px elle passe
+     sous la poignée « Actualités » fixée à gauche (top 96 px). */
+  .porte-prof { margin:14px 0 18px; }
+  .porte-prof + .hall { margin-top:0; }
+  @media (min-width:701px) { .porte-prof { margin-top:84px; } }
 </style>
 <script defer src="moteur/retour-accueil.js?v=3c25e82f03"></script>
 </head>
@@ -728,6 +733,17 @@
 <button type="button" class="volet-poignee" id="volet-poignee" aria-label="Ouvrir le panneau d’actualités">📰 Actualités &amp; espaces ▸</button>
 
 <div class="page" role="main" id="contenu" tabindex="-1">
+
+  <!-- La porte des enseignants (F. Henninot, 08/10/2026 : « au début, bien visible »). Les collègues
+       ne trouvent pas l'entrée de l'écosystème ; ce bandeau mène à formateurs.html en attendant la
+       nouvelle porte (CLAUDE-ESPACE-TRAVAIL/PORTE-PROF-ET-TUTOS-2026-10-08/PLAN.md). -->
+  <a href="formateurs.html" class="porte-prof"
+     style="display:block; padding:14px 18px; border-radius:14px;
+            background:#ff6b35; color:#fff; text-decoration:none; font-size:17px; line-height:1.45;
+            font-family:'Trebuchet MS',Calibri,Arial,sans-serif; box-shadow:0 2px 10px rgba(27,58,99,.15);">
+    <strong>Vous êtes formateur ou enseignant&nbsp;?</strong>
+    Cliquez ici pour comprendre le fonctionnement de l’écosystème inerWeb, encore en développement&nbsp;→
+  </a>
 
   <!-- ===================================================================
        LE HALL (F. Henninot, 17/09/2026 : « l'effet waouh — oui bien sûr,
