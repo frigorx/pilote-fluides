@@ -226,7 +226,7 @@ window.INERWEB_RESEAUX = [
     couleur: "#1f6fa8" /* l'accent de la page du tour de main (tour-de-main/moteur/accueil.css) */,
     sousTitre: "Les gestes qui demandent un réglage précis, avec leurs règles : on calcule, on règle, puis on prouve à l’instrument. En premier, le jeu de poste du réglage des pressostats (sept réglages, de la sécurité à la chambre froide) ; puis le manifold, l’azote, la récupération du fluide, le détendeur, les KV, la VAT et le relais thermique.",
     niveaux: "CAP · Bac pro",
-    etat: "en relecture" /* la page porte encore le bandeau « Prototype — document de travail » (marque.js data-prototype) */,
+    etat: "" /* bandeau « Prototype » levé le 08/10 (F. Henninot : « publie », sur conseil) */,
     catalogue: [],
     stations: 1,
     lignes: 4,
