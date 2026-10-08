@@ -115,6 +115,36 @@ const ANIM = (() => {
     </style>` +
     `<rect width="${L}" height="${H}" fill="${C.fond}" rx="10"/>` + contenu + `</svg>`;
 
+  /* Le technicien dessiné (08/10/2026) : le bonhomme « plein » de HoCourant,
+     recopié tel quel de chaine-intervention-interactive/scene-geste.js, figé
+     (pas de geste) et rendu en chaîne. Il remplace la silhouette en pilule :
+     un personnage se dessine, il n'est jamais un bâton. Repère d'origine :
+     tête en haut (y 0), pieds à y 72 ; posé ici par ses PIEDS en (x, yPieds). */
+  function technicien(x, yPieds, k) {
+    const N = C.bleu, P = "#f6d7bd", E = "#10233c";
+    return `<g transform="translate(${x} ${yPieds - 72 * k}) scale(${k})">
+      <ellipse cx="0" cy="73" rx="13" ry="2.5" fill="${N}" opacity=".15"/>
+      <path d="M-2 25 L-10 46" stroke="${N}" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="-10" cy="47" r="3.6" fill="${P}" stroke="${N}" stroke-width="1.8"/>
+      <path d="M-2 48 L-9 71" stroke="${N}" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-10 72 H-3" stroke="#0f2440" stroke-width="5" stroke-linecap="round"/>
+      <path d="M2 48 L9 71" stroke="${N}" stroke-width="7" stroke-linecap="round"/>
+      <path d="M8 72 H15" stroke="#0f2440" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-8 24 Q-8 19 -3 19 H3 Q8 19 8 24 V49 H-8 Z" fill="#84b7ec" stroke="${N}" stroke-width="2"/>
+      <path d="M-8 38 H8" stroke="#fffdf8" stroke-width="3"/>
+      <path d="M0 20 V49" stroke="${N}" stroke-width="1.2"/>
+      <rect x="-2.5" y="16" width="5" height="5" fill="${P}"/>
+      <circle cx="0" cy="10" r="9" fill="${P}" stroke="${N}" stroke-width="2.2"/>
+      <path d="M-9 9.5 Q-9.5 0.5 0 0.8 Q9 0.5 9 7 Q4 4 -1 4.8 Q-6 5.5 -9 9.5Z" fill="${N}"/>
+      <path d="M-9.6 8 Q-9.6 -1.2 0 -1 Q9 -0.8 9.4 6 L16 7.2 Q16.5 9 14 9 H-9.6 Z" fill="${N}"/>
+      <circle cx="-4.5" cy="11" r="1.7" fill="${P}" stroke="${N}" stroke-width="1"/>
+      <ellipse cx="2.5" cy="10" rx="1.2" ry="1.2" fill="${E}"/><ellipse cx="6.3" cy="10" rx="1.2" ry="1.2" fill="${E}"/>
+      <path d="M2.8 14 Q4.8 15.6 6.8 14" stroke="${E}" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M2 24 L12 48" stroke="${N}" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="12.5" cy="49" r="3.8" fill="${P}" stroke="${N}" stroke-width="1.8"/>
+    </g>`;
+  }
+
   const titre = (texte) =>
     texte ? `<text x="${L / 2}" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="${C.bleu}">${t(texte)}</text>` : "";
 
@@ -330,10 +360,7 @@ const ANIM = (() => {
       ${texteBloc(s.capteur, x + 46, y + haut + 26, 26, { taille: 14, poids: 700, couleur: C.vert })}`;
     }
     if (s.personnage) {
-      out += `<g class="apparait" style="animation-delay:.8s">
-        <circle cx="${x + larg - 88}" cy="${sol - 96}" r="15" fill="${C.bleu}"/>
-        <rect x="${x + larg - 101}" y="${sol - 78}" width="26" height="78" rx="9" fill="${C.bleu}"/>
-      </g>
+      out += `<g class="apparait" style="animation-delay:.8s">${technicien(x + larg - 88, sol, 1.45)}</g>
       ${texteBloc(s.personnage, x + larg - 88, y + haut + 26, 22, { taille: 14, poids: 700, couleur: C.bleu })}`;
     }
     /* Colonne de droite : les points à retenir, hors du dessin. */

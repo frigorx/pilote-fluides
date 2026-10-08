@@ -59,6 +59,9 @@ img,svg{max-width:100%}
   padding:5px 13px;font-size:13px;color:var(--bleu);box-shadow:var(--ombre);
 }
 .accueil-codes li b{color:var(--orange)}
+/* 08/10 : `.accueil{display:grid}` écrasait l'attribut hidden — l'accueil
+   restait affiché après « Commencer » et l'écran démarrait à 680 px du haut. */
+[hidden]{display:none !important}
 .accueil-visuel{margin:0;background:#fff;border:1px solid var(--ligne);border-radius:var(--r);
   box-shadow:var(--ombre);padding:14px;display:flex;align-items:center;justify-content:center}
 .accueil-visuel svg,.accueil-visuel img{width:100%;height:auto;display:block;border-radius:8px}
@@ -107,9 +110,12 @@ img,svg{max-width:100%}
 .vitesse{display:flex;align-items:center;gap:4px;background:#fff;border:1px solid var(--ligne);border-radius:999px;padding:3px 8px;font-size:13px;color:var(--mut)}
 .vitesse button{background:none;border:0;font:inherit;font-size:16px;font-weight:700;color:var(--bleu);cursor:pointer;padding:0 5px;line-height:1}
 
-.ecran-corps{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px;padding:20px 22px}
+/* 08/10/2026 (remise à niveau, lot I3) : la scène passe AU-DESSUS du texte,
+   sur toute la largeur, au lieu d'une demi-colonne où ses libellés tombaient
+   à 9 px. Hauteur bornée pour que le texte commence dans l'écran. */
+.ecran-corps{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;padding:20px 22px}
 .visuel{margin:0;align-self:start;background:#fbfcfe;border:1px solid var(--ligne);border-radius:10px;padding:10px}
-.visuel svg,.visuel img{width:100%;height:auto;display:block}
+.visuel svg,.visuel img{width:100%;height:auto;max-height:min(64vh,620px);display:block;margin:0 auto}
 .visuel figcaption{font-size:13px;color:var(--mut);font-style:italic;margin-top:8px}
 .propos p{margin:0 0 12px}
 .propos ul{margin:0 0 12px;padding-left:22px}
@@ -185,6 +191,12 @@ body.projection .outils .etiquette{display:none}
   .rail-points button{white-space:nowrap;border-left:0;border-bottom:3px solid transparent;border-radius:6px 6px 0 0}
   .rail-points li.actif button{border-left-color:transparent;border-bottom-color:var(--orange)}
   .ecran-corps{grid-template-columns:minmax(0,1fr)}
+}
+/* Téléphone (08/10) : la scène prend toute la largeur, sans marges empilées. */
+@media (max-width:620px){
+  .parcours{padding:0 6px 70px}
+  .ecran-corps{padding:12px 6px}
+  .visuel{padding:2px;border-radius:8px}
 }
 
 /* Mouvement réduit : on calme l'animation, on ne l'efface JAMAIS —
