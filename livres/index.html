@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Les livres inerWeb — manuels du froid et de la climatisation</title>
+<meta name="description" content="Deux manuels de formation pour le lycée professionnel, CAP IFCA et Bac Pro MFER : une leçon par notion, des QR codes vers les cours animés, les films et les simulateurs d'inerweb.fr. Extraits gratuits, spécimen pour les enseignants.">
+<link rel="canonical" href="https://inerweb.fr/livres/">
+<meta property="og:title" content="Les livres inerWeb — CAP IFCA et Bac Pro MFER">
+<meta property="og:description" content="Une leçon par notion, des QR codes vers les cours animés, les films et les simulateurs. Extraits gratuits.">
+<meta property="og:image" content="https://inerweb.fr/livres/couvertures/cap-tome-1.webp">
+<meta property="og:url" content="https://inerweb.fr/livres/">
+<!-- ===================================================================
+     LES LIVRES inerWeb — la vitrine (stratégie de protection du 08/10/2026,
+     CLAUDE-ESPACE-TRAVAIL/PROTECTION-INERWEB-2026-10-02/STRATEGIE-LIVRES.md). Marque inerWeb.
+     Page écrite à la main. AUCUN livre complet ici : seulement les couvertures et un extrait par
+     tome (sommaire + une leçon), fabriqués par C:/git/livre-cap/livre/specimen.py (mode extrait).
+     Le livre complet part en spécimen nominatif ou en exemplaire d'établissement, jamais en ligne.
+     Couvertures : 1re page des volumes reliés, 560 px, WebP.
+     =================================================================== -->
+<style>
+  :root { --bleu:#1b3a63; --orange:#e8914a; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:72rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  .haut { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; font-size:16px; }
+  .haut a { font-weight:bold; text-decoration:none; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.45rem; line-height:1.2; margin:0; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0 0 4px; }
+  .sous-titre { margin:2px 0 0; color:var(--orange-texte); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; max-width:52rem; font-size:18px; }
+  .beta { display:inline-block; background:var(--orange); color:#fff; font-weight:bold; font-size:15px; padding:1px 10px; border-radius:6px; }
+  .livre { display:grid; gap:16px; background:var(--carte); border:1px solid var(--ligne); border-top:6px solid var(--bleu); border-radius:14px; padding:16px; }
+  .meta { margin:0; color:var(--mut); font-size:16px; }
+  .couvertures { list-style:none; margin:0; padding:0; display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); }
+  @media (min-width:700px) { .couvertures { grid-template-columns:repeat(auto-fill,minmax(170px,190px)); } }
+  .couvertures figure { margin:0; }
+  .couvertures img { display:block; width:100%; height:auto; border-radius:6px; box-shadow:0 4px 12px rgba(16,35,60,.25); }
+  .couvertures figcaption { margin-top:6px; font-size:15.5px; line-height:1.35; }
+  .couvertures figcaption b { color:var(--bleu); }
+  .liens { display:flex; flex-wrap:wrap; gap:8px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font:inherit; font-size:16px; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .btn small { font-weight:normal; font-size:15px; }
+  .liens .btn { display:block; border-radius:14px; padding:9px 16px; line-height:1.35; }
+  .trois { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); }
+  .bloc { background:var(--carte); border:1px solid var(--ligne); border-left:6px solid var(--orange); border-radius:10px; padding:12px 14px; }
+  .bloc p { margin:0 0 8px; }
+  .droits { margin:0; color:var(--mut); font-size:15.5px; max-width:60rem; }
+</style>
+<script defer src="../moteur/retour-accueil.js?v=3c25e82f03"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller aux livres</a>
+<div class="page">
+  <nav class="haut" aria-label="Retour">
+    <a href="../">← inerweb.fr</a>
+    <a href="../plan.html">Plan des réseaux</a>
+    <a href="../studio/">inerWeb Studio</a>
+  </nav>
+
+  <header>
+    <h1>📚 Les livres inerWeb</h1>
+    <p class="sous-titre">manuels de formation du froid et de la climatisation</p>
+  </header>
+  <p class="chapo">Deux manuels pour le lycée professionnel, écrits sur la progression d'une classe réelle. Une leçon par notion : le cours, un exemple, des exercices, un TP et ses schémas. À chaque page, des QR codes ouvrent le cours animé, les films et les simulateurs d'inerweb.fr. <span class="beta">Édition 2026 · bêta</span></p>
+
+  <main id="contenu" style="display:grid;gap:26px">
+    <section class="livre" aria-labelledby="h-cap">
+      <div>
+        <h2 id="h-cap">Livre CAP IFCA</h2>
+        <p class="meta">Installateur en froid et conditionnement d'air · 52 leçons sur les deux années · référentiel du CAP (arrêté du 2 juin 2015) : chaque leçon donne ses codes de tâches, de savoirs et de compétences.</p>
+      </div>
+      <ul class="couvertures">
+        <li><figure><img src="couvertures/cap-tome-1.webp" alt="Couverture du tome 1 du livre CAP IFCA" width="560" height="793"><figcaption><b>Tome 1 — 1re année</b><br>leçons 1 à 25 · 206 pages</figcaption></figure></li>
+        <li><figure><img src="couvertures/cap-tome-2.webp" alt="Couverture du tome 2 du livre CAP IFCA" width="560" height="793" loading="lazy"><figcaption><b>Tome 2 — 2e année</b><br>leçons 26 à 52 · 222 pages</figcaption></figure></li>
+        <li><figure><img src="couvertures/cap-professeur.webp" alt="Couverture de l'exemplaire professeur du livre CAP IFCA" width="560" height="793" loading="lazy"><figcaption><b>Exemplaire professeur</b><br>corrigés, conduite de séance · 112 pages</figcaption></figure></li>
+      </ul>
+      <p class="liens">
+        <a class="btn" href="extraits/Livre-CAP-tome-1-ELEVE-extrait-lecon-15-surchauffe-et-sous-refroidissem.pdf">Extrait du tome 1 : leçon 15, Surchauffe et sous-refroidissement <small>(PDF, 12 p., 6,5 Mo)</small></a>
+        <a class="btn" href="extraits/Livre-CAP-tome-2-ELEVE-extrait-lecon-30-le-pump-down.pdf">Extrait du tome 2 : leçon 30, Le pump-down <small>(PDF, 12 p., 9,1 Mo)</small></a>
+      </p>
+    </section>
+
+    <section class="livre" aria-labelledby="h-mfer">
+      <div>
+        <h2 id="h-mfer">Livre Bac Pro MFER</h2>
+        <p class="meta">Métiers du froid et des énergies renouvelables · 31 leçons pour la 1re · nouveau référentiel (arrêté du 28 juillet 2026, 1re session 2028) · le tome de Terminale est en préparation.</p>
+      </div>
+      <ul class="couvertures">
+        <li><figure><img src="couvertures/mfer-tome-1.webp" alt="Couverture du tome 1 du livre Bac Pro MFER" width="560" height="793" loading="lazy"><figcaption><b>Tome 1 — la 1re</b><br>leçons 1 à 31 · 254 pages</figcaption></figure></li>
+        <li><figure><img src="couvertures/mfer-professeur.webp" alt="Couverture de l'exemplaire professeur du livre Bac Pro MFER" width="560" height="793" loading="lazy"><figcaption><b>Exemplaire professeur</b><br>corrigés, conduite de séance · 70 pages</figcaption></figure></li>
+      </ul>
+      <p class="liens">
+        <a class="btn" href="extraits/Livre-MFER-tome-1-ELEVE-extrait-lecon-5-le-diagramme-enthalpique.pdf">Extrait du tome 1 : leçon 5, Le diagramme enthalpique <small>(PDF, 12 p., 6,3 Mo)</small></a>
+      </p>
+    </section>
+
+    <section aria-labelledby="h-obtenir" style="display:grid;gap:12px">
+      <h2 id="h-obtenir">Se procurer les livres</h2>
+      <div class="trois">
+        <div class="bloc">
+          <h3>Vous enseignez</h3>
+          <p>Pendant la phase bêta, le livre complet vous est confié gratuitement, en <b>spécimen à votre nom</b>. Vos retours de classe aideront à l'améliorer.</p>
+          <a class="btn sec" href="mailto:inerweb.fh@gmail.com?subject=Demande%20de%20sp%C3%A9cimen%20%E2%80%94%20livres%20inerWeb&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20recevoir%20un%20sp%C3%A9cimen.%0A-%20Nom%20%3A%0A-%20%C3%89tablissement%20%3A%0A-%20Formation(s)%20enseign%C3%A9e(s)%20%3A%0A-%20Livre(s)%20%3A%20CAP%20IFCA%20%2F%20Bac%20Pro%20MFER%0A">Demander un spécimen</a>
+        </div>
+        <div class="bloc">
+          <h3>Établissement, CFA, centre de formation</h3>
+          <p>Un exemplaire pour toute une équipe, avec l'exemplaire professeur et les leçons à projeter. Les conditions se fixent ensemble.</p>
+          <a class="btn sec" href="mailto:inerweb.fh@gmail.com?subject=Livres%20inerWeb%20%E2%80%94%20exemplaire%20d%27%C3%A9tablissement">Écrire à l'auteur</a>
+        </div>
+        <div class="bloc">
+          <h3>Vous êtes élève</h3>
+          <p>Votre professeur vous donne accès au livre. Les cours animés, les films et les simulateurs restent libres sur inerweb.fr.</p>
+          <a class="btn sec" href="../">Aller sur inerweb.fr</a>
+        </div>
+      </div>
+    </section>
+
+    <p class="droits"><b>Droits réservés.</b> Les extraits se lisent et se partagent tels quels, sans modification ni usage commercial. Le livre complet ne se diffuse pas : chaque exemplaire porte le nom de son destinataire. Le contenu technique vient de l'expérience et du métier de l'auteur, Franck Henninot ; la mise en page, les dessins et le code ont été fabriqués avec l'aide de l'intelligence artificielle : l'auteur a conçu, dirigé et vérifié.</p>
+  </main>
+</div>
+<script src="../moteur/marque.js?v=18ccecd19b" data-cartouche="Livres" data-licence="conditions"></script>
+</body>
+</html>
