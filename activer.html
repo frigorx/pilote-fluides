@@ -50,6 +50,10 @@
   .detail { color:var(--mut); font-size:.92rem; }
   .vide { color:var(--mut); font-style:italic; margin:0; }
   .note { font-size:.93rem; color:var(--mut); border-left:3px solid var(--orange-clair); padding-left:14px; }
+  a.suite { display:inline-block; margin-top:12px; padding:12px 26px; border-radius:999px;
+            background:var(--orange); color:#fff; font-family:var(--titre); font-weight:bold;
+            text-decoration:none; }
+  a.suite:hover { background:var(--bleu); }
 </style>
 <script defer src="moteur/retour-accueil.js?v=3c25e82f03"></script>
 </head>
@@ -107,6 +111,8 @@
     ordinateur, il faudra recoller le code. Sur un poste partagé, retirez votre accès en
     partant.
   </p>
+  <p class="note">Code enseignant, lien de séance, code élève : <a href="comprendre-les-codes.html">comprendre
+    les codes en 5 minutes</a>.</p>
 
   <script src="moteur/lisibilite.js?v=a7bf8455b2"></script>
   <script src="moteur/acces.js?v=a7bf8455b2"></script>
@@ -126,6 +132,32 @@
       var t = document.createElement("strong"); t.textContent = titre;
       verdict.appendChild(t);
       if (detail) { verdict.appendChild(document.createTextNode(detail)); }
+    }
+
+    /* Après une réussite, la page dit où aller : sans ce bouton, l'élève qui a
+       scanné le QR restait devant « … est ouvert » sans rien à ouvrir. */
+    var ENTREE = {
+      habilitation: "formation.html", aquiblue: "aquiblue/", legislation: "legislation/",
+      hydrometro: "hydrometro/", hocourant: "hocourant/", cablage: "cablage-virtuel/"
+    };
+    function suite(v, texte, href) {
+      if (!href) return;
+      var a = document.createElement("a");
+      a.className = "suite"; a.href = href; a.textContent = texte + " →";
+      v.appendChild(document.createElement("br"));
+      v.appendChild(a);
+    }
+    function versLeProduit(v, produit) {
+      suite(v, "Commencer : " + produit.nom, ENTREE[produit.id]);
+    }
+    /* Retour vers la page qui a envoyé ici (?retour=/…), sinon vers la fabrique de séances. */
+    function versLaSuiteEnseignant() {
+      var r = new URLSearchParams(location.search).get("retour") || "";
+      if (r.charAt(0) === "/" && r.charAt(1) !== "/" && r.indexOf("\\") < 0) {
+        suite(verdict, "Revenir où j'étais", r);
+      } else {
+        suite(verdict, "Préparer une séance avec ma classe", "seances.html");
+      }
     }
 
     function peindre() {
@@ -162,6 +194,7 @@
           peindre();
           dire(true, r.produit.nom + " est ouvert.",
             "Accès de " + r.nom + ", valable jusqu'au " + r.expireLe + ".");
+          versLaSuiteEnseignant();
           return;
         }
         /* Un code de séance collé ici plutôt que scanné : on l'accepte,
@@ -172,7 +205,7 @@
             peindre();
             dire(true, s.produit.nom + " est ouvert pour la séance.",
               "Séance « " + s.libelle + " » ouverte par " + s.nom + ", jusqu'au " + s.finLe + ".");
-            peindreEleve();
+            if (!peindreEleve()) versLeProduit(verdict, s.produit);
           } else {
             dire(false, "Ce code n'a pas été accepté.", r.message);
           }
@@ -214,6 +247,8 @@
         if (!r.ok) { direEleve(false, "Ce code n'a pas été reconnu.", r.message); return; }
         direEleve(true, "C'est noté : vous êtes l'élève " + (r.numero < 10 ? "0" : "") + r.numero + ".",
           "Vos résultats porteront ce numéro. Votre nom n'est écrit nulle part.");
+        var ouvert = (A.liste() || []).filter(function (a) { return a.produit.id === id; })[0];
+        if (ouvert) versLeProduit(document.getElementById("verdictEleve"), ouvert.produit);
         peindreEleve();
         peindre();
       });
@@ -232,7 +267,7 @@
         if (s.ok) {
           dire(true, s.produit.nom + " est ouvert pour la séance.",
             "Séance « " + s.libelle + " » ouverte par " + s.nom + ", jusqu'au " + s.finLe + ".");
-          peindreEleve();
+          if (!peindreEleve()) versLeProduit(verdict, s.produit);
         } else {
           dire(false, "Ce lien n'a pas été accepté.", s.message);
         }
