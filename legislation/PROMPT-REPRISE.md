@@ -1,5 +1,16 @@
 # PROMPT-REPRISE — le réseau Législation
 
+## 09/10/2026 — « Trier : les 8 flux » (commit local, non poussé)
+
+Des sept textes signalés le 04/10, cinq étaient déjà corrigés en ligne le 04/10 au soir (pyramide, RT2012 → Tic, PRP
+d'un mélange, euroclasse E, « BTS » sourcé R121-1) ; l'émergence chez un particulier est nuancée dans « PAC & voisinage » ;
+« se former 4/8 ans » n'existe plus dans la station (montants CPF à relire chaque rentrée, FOND). Restait le vrai faux :
+**D. 543-281 = huit flux depuis le 01/01/2025 (textiles)**, lu sur Légifrance. Corrigé (Franck : « 1 ») : station
+`dechets-sept-flux` (titre, écrans 1-2, FOND, dessin des bennes), RESEAU du plan, zones 3D, carnet-data, scène animée
+`scenes/dechets.js`, renvoi de Déchets dangereux, catalogue. Adresse conservée. **Restes** : MP3 de la narration de
+l'écran 2 (edge-tts, feu vert non donné → voix du navigateur) ; carnet papier (carte 44 « Trier : 7 flux ») à refaire
+à la prochaine édition ; « Mesurer » (phrase sur le particulier) et la publication : non décidés.
+
 ## 01/10/2026 — corrections pédagogiques et préparation locale à la publication
 
 Lire d'abord [le contrôle de publication](CONTROLE-PUBLICATION-2026-10-01.md) pour le dernier état du chantier. Travail local dans `C:\git\pilote-fluides-chantier`, non poussé et non publié ; aucune indexation RAG avant BAT. Les indications historiques de 122 pages et de validation par tampon ci-dessous sont remplacées par : carnet élève 124 pages, tampon de réussite au quiz seulement, production professionnelle évaluée séparément. Guide, mission finale et aide décroissante ajoutés ; corrections ciblées dans huit stations ; sept PDF et dépendance 3D locale préparés pour inclusion Git. Les contrôles de liens et de QR passent ; la réserve de remplissage du livret professeur et la relecture métier restent explicites dans le rapport.

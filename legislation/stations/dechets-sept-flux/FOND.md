@@ -1,11 +1,12 @@
-# Station « Trier : les 7 flux » — FOND
+# Station « Trier : les 8 flux » — FOND
 
 > Réseau Législation · sous-ligne Déchets · niveau BTS.
 > Mini-station : 8 écrans + 4 questions. Gabarit : aptitude-capacite.
 > Couleur d'accent : **#57534e**.
-> La composition exacte des « 7 flux » et sa date d'entrée en vigueur ne sont
-> pas assez sûres pour être imprimées comme chiffres officiels : le
-> mécanisme est enseigné, la liste précise renvoie au texte en vigueur.
+> **Sourcé le 09/10/2026 (Légifrance)** : art. D. 543-281 du code de l'environnement, version en vigueur
+> depuis le 01/01/2025 (décret n° 2021-950 du 16 juillet 2021) — huit flux : papier, métal, plastique,
+> verre, **textiles** (ajoutés au 01/01/2025), bois, fraction minérale, plâtre. Le titre était « 7 flux »
+> jusqu'au 09/10/2026 ; l'adresse `dechets-sept-flux` est conservée (QR imprimés).
 
 ## Objectif
 
@@ -143,5 +144,6 @@ plus pratique.*
 
 ## À sourcer
 
-- Composition exacte des « 7 flux » (liste des matières couvertes) et texte
-  qui les instaure : à vérifier avant toute citation d'article ou de date.
+- ~~Composition exacte des « 7 flux »~~ : sourcée le 09/10/2026 (art. D. 543-281, huit flux, voir l'en-tête).
+- Seuil d'application : plus de 1 100 litres de déchets par semaine quand on passe par le service de la
+  collectivité (art. D. 543-280) — non enseigné dans la station, à citer si l'on parle d'exemption.

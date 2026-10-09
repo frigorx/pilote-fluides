@@ -70,7 +70,7 @@ Sur un chantier de froid, les déchets qui exigent un suivi tracé sont
 d'abord : les **fluides frigorigènes récupérés non réutilisables**, les
 **huiles usagées**, et certains **filtres déshydrateurs** contaminés. Le
 cuivre, les cartons, le bois trié n'entrent pas dans ce suivi : ils suivent
-la filière classique de tri (voir la station Trier : les 7 flux).
+la filière classique de tri (voir la station Trier : les 8 flux).
 *Visuel : un établi de frigoriste où les déchets dangereux (fluide, huile,
 filtre contaminé) sont encadrés en rouge et reliés au bordereau, tandis que
 les autres (cuivre, carton) restent hors de cet encadré.*

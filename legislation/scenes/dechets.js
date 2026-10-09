@@ -235,7 +235,7 @@
     };
   }
 
-  /* ---------- étape 2 · Trier : les 7 flux : la matière d'abord, la benne ensuite ---------- */
+  /* ---------- étape 2 · Trier : les 8 flux : la matière d'abord, la benne ensuite ---------- */
   function tri(g) {
     const r = D.el("g", {}, g);
     const XO = 410, XB = 766, XN = 802;   // l'objet, la benne, son nom
@@ -463,7 +463,7 @@
     { station: "dechets-responsabilites", titre: "Jusqu'au traitement", bulle: ["Qui répond", "du déchet ?"], bras: -72, cycle: 12, dessiner: remise,
       dire: "Responsabilités — Le producteur reste responsable jusqu'à l'élimination ou la valorisation finale, même s'il remet le déchet à un tiers. Repreneur autorisé : le bordereau revient, le dossier est soldé. Sinon, la responsabilité reste." },
     { station: "dechets-sept-flux", titre: "La benne juste", bulle: ["Quelle benne", "pour ce déchet ?"], bras: -70, cycle: 12, dessiner: tri,
-      dire: "Trier : les 7 flux — On trie à la source, matière par matière : sept familles de bennes, plus le tout-venant pour ce qui ne se trie pas. D'abord la matière, ensuite la benne." },
+      dire: "Trier : les 8 flux — On trie à la source, matière par matière : huit familles de bennes, plus le tout-venant pour ce qui ne se trie pas. D'abord la matière, ensuite la benne." },
     { station: "dechets-dangereux", titre: "Le bordereau suit", bulle: ["Par où est passé", "ce déchet ?"], bras: -84, cycle: 11.4, dessiner: bordereau,
       dire: "Déchets dangereux — Un fluide récupéré non réutilisable est un déchet dangereux. Le bordereau de suivi (BSD), aujourd'hui numérique, le suit du producteur au transporteur puis au traiteur, chacun y apposant sa marque." },
     { station: "dechets-rep-batiment", titre: "Payé en amont", bulle: ["Qui paie la", "reprise ?"], bras: -68, cycle: 12, dessiner: reprise,
