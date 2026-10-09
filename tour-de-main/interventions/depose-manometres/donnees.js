@@ -6,7 +6,7 @@
    · « Comment on fait » feuille 5 « Débrancher sans perdre de fluide » (1re MFER) et le TP 1 partie B ;
    · packs/fluides/res/pose-manifold-interactive (écran « Déposer ») et chaine-intervention-interactive (« Déconnecter »).
    Un seul parcours, écrit pour du vrai fluide (Franck, 08/10 : « la manipulation est strictement la même », azote ou fluide).
-   Machine en marche, by-pass du manifold ouvert : le compresseur aspire le flexible HP jusqu'à juste avant 0 bar, jamais en dessous
+   Machine en marche, by-pass du manifold ouvert : le compresseur aspire le flexible HP jusqu'à la BP de marche (juste avant 0 bar si elle est basse), jamais sous 0 (Franck, 08/10)
    (Franck, 08/10), dit dans l'étape « J'attends que le compresseur aspire le flexible HP ». Seules les phrases « Sous azote : »
    disent ce que le support sans compresseur change.
    Le dessin est celui de la gare « Récupérer le fluide » : station, pompe, vacuomètre et bouteille masqués.
@@ -28,7 +28,7 @@ window.GARE = {
   },
   grille: [
     ["Je me protège, je fais l'état des lieux et je lis les pressions", { cap: "T8 · C4.5", mfer: "A1T3 · C4" }],
-    ["Je ferme dans l'ordre et le compresseur aspire le flexible HP, jusqu'à juste avant 0 bar", { cap: "C4.2 · C4.7", mfer: "A2T5 · C6" }],
+    ["Je ferme dans l'ordre et le compresseur aspire le flexible HP, jusqu'à la BP de marche, jamais sous 0", { cap: "C4.2 · C4.7", mfer: "A2T5 · C6" }],
     ["Je desserre lentement, raccord tenu, rien à l'air, et les aiguilles reviennent à 0", { cap: "C4.7 · T13", mfer: "A2T3 · C6" }],
     ["Je remets tout comme je l'ai trouvé : bouchons, capuchons, étanchéité, rangement", { cap: "C4.3 · C4.7", mfer: "A2T3 · C6" }]
   ],
@@ -43,7 +43,7 @@ window.GARE = {
   bilan(c) {
     const f = (k, i) => { const x = c.nb(c.releve(k, i)); return isNaN(x) ? "…" : c.fr(x, 1); };
     return `Avant : BP <b>${f("lecture", 0)}</b>, HP <b>${f("lecture", 1)}</b> bar · ` +
-      `après le by-pass : BP <b>${f("egaliser", 0)}</b>, HP <b>${f("egaliser", 1)}</b> bar (les deux aiguilles se rejoignent, juste avant 0 bar sur une machine en marche)`;
+      `après le by-pass : BP <b>${f("egaliser", 0)}</b>, HP <b>${f("egaliser", 1)}</b> bar (les deux aiguilles se rejoignent à la BP de marche, jamais sous 0)`;
   },
 
   dessin: {
@@ -143,8 +143,8 @@ window.GARE = {
     { id: "egaliser", verbe: "J'attends que le compresseur aspire le flexible HP", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-manifold",
       tuyaux: ["blue", "red", "yellow"], etat: ["arriere", "lecture", true, true], aig: "egal",
       regarde: "Les aiguilles HP et BP du manifold.",
-      fais: "Le compresseur aspire le flexible HP jusqu'à juste avant 0 bar, jamais en dessous. Je lis les deux aiguilles ensemble et je ferme avant 0. Sous azote : pas de compresseur, les deux aiguilles s'égalisent.",
-      voir: "HP et BP égales, juste au-dessus de 0 bar.",
+      fais: "Le compresseur aspire le flexible HP : les aiguilles descendent jusqu'à la BP de marche (juste avant 0 bar si elle est basse), jamais sous 0. Je lis les deux ensemble, puis je ferme. Sous azote : pas de compresseur, les deux aiguilles s'égalisent.",
+      voir: "HP et BP égales, à la BP de marche (ou juste au-dessus de 0 bar).",
       danger: "Si une aiguille passe sous 0 : je ferme le by-pass tout de suite et j'appelle le professeur.",
       controle: { titre: "BP et HP lues ensemble", champs: [{ label: "BP", unite: "bar" }, { label: "HP", unite: "bar" }],
         juger(v, c) {
@@ -154,7 +154,7 @@ window.GARE = {
           if (!c.proche(bp, hp, t, L)) return ["ambre", "HP et BP diffèrent de " + c.fr(Math.abs(hp - bp), 1) + " bar : le flexible HP n'a pas fini d'être aspiré. J'attends."];
           if (!isNaN(bp0) && bp > bp0 * (1 + t) + L) return ["ambre", "Les aiguilles sont à " + c.fr(bp, 1) + " bar, plus haut que la BP du départ (" + c.fr(bp0, 1) + ") : une vanne de service fuit-elle ?"];
           return bp <= 0.5 ? ["vert", "HP et BP égales à " + c.fr(bp, 1) + " bar : juste avant 0, le flexible HP est aspiré. Je ferme."]
-            : ["vert", "HP et BP égales à " + c.fr(bp, 1) + " bar, comme au départ : sans compresseur (azote), c'est normal. Sur une machine en marche, j'attendrais juste avant 0 bar."];
+            : ["vert", "HP et BP égales à " + c.fr(bp, 1) + " bar : le flexible HP a rejoint la BP de marche (sous azote : la pression du départ). Je ferme."];
         } } },
 
     { id: "fermer", verbe: "Je ferme les vannes HP et BP du manifold", cadre: ["equipment-manifold", "etat-manifold", "bouchon-jaune"], cible: "vanne-man-bp",

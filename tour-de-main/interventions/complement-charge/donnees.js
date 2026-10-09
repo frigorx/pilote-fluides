@@ -343,7 +343,7 @@
       { id: "depose", verbe: "Je ramène la HP au siège arrière et j'aspire", cadre: ["equipment-installation", "equipment-manifold"], cible: "vannes-service",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["arriere", "mid"], manifold: ["bp", "hp"], aiguilles: "bas",
         regarde: "Les aiguilles BP et HP du manifold.",
-        fais: "SERVICE fermée. Vanne B (HP) au siège arrière. J'ouvre HP puis BP du manifold, lentement : le compresseur aspire le flexible HP. Je ferme les deux dès que les aiguilles sont juste avant 0 bar.",
+        fais: "SERVICE fermée. Vanne B (HP) au siège arrière. J'ouvre HP puis BP du manifold, lentement : le compresseur aspire le flexible HP. Je ferme les deux quand les aiguilles ont rejoint la BP de marche (juste avant 0 bar si elle est basse).",
         voir: "Les deux aiguilles se rejoignent et descendent, sans passer sous 0.",
         danger: "Jamais en dessous de 0 bar : de l'air entrerait dans le circuit.",
         controle: { titre: "BP et HP lues avant de fermer", champs: [{ label: "BP", unite: "bar" }, { label: "HP", unite: "bar" }],

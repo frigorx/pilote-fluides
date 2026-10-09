@@ -325,11 +325,11 @@
       { id: "depose", verbe: "Je dépose et je remets tout comme trouvé", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-installation",
         tuyaux: [], balance: "pesee-fin",
         regarde: "Les flexibles, les vannes de service, les capuchons.",
-        fais: "Comme en gare 3, machine en marche : le compresseur aspire le jaune (bouteille fermée), puis le HP, jusqu'à juste avant 0 bar, jamais en dessous. Puis vannes au siège arrière, capuchons remis.",
+        fais: "Comme en gare 3, machine en marche : le compresseur aspire le jaune (bouteille fermée), puis le HP, jusqu'à la BP de marche (juste avant 0 bar si elle est basse), jamais sous 0. Puis vannes au siège arrière, capuchons remis.",
         voir: "Flexibles vides, vannes au siège arrière, capuchons et bouchons en place, rien d'abîmé.",
         danger: "Sous 0 bar, de l'air peut rentrer dans le circuit : je ferme juste avant.",
         controle: { titre: "Je coche ce que j'ai fait", type: "coches",
-          items: ["jaune aspiré (bouteille fermée), puis flexible HP aspiré, jusqu'à juste avant 0 bar", "vannes de service au siège arrière", "capuchons de tige et bouchons de prise remis, serrés", "bouteille fermée, bouchonnée, debout au rack, étiquetée", "poste comme je l'ai trouvé : rien d'abîmé, rien qui manque"],
+          items: ["jaune aspiré (bouteille fermée), puis flexible HP aspiré jusqu'à la BP de marche, jamais sous 0", "vannes de service au siège arrière", "capuchons de tige et bouchons de prise remis, serrés", "bouteille fermée, bouchonnée, debout au rack, étiquetée", "poste comme je l'ai trouvé : rien d'abîmé, rien qui manque"],
           ok: "Tout est remis comme je l'ai trouvé. Je note le résultat dans « Ma trace ».",
           manque: "Il manque une coche : je ne quitte pas le poste avant." } }
     ],

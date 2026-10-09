@@ -10,6 +10,7 @@
    ===================================================================== */
 (function () {
   const ATM = 1.01325;        /* le manomètre indique une pression relative : P absolue = P relative + 1,013 bar */
+  const BAISSE_LUE = 0.05;   /* bar : arrondi d'une lecture au 0,1 bar ; au-delà, toute baisse est une fuite (Franck, 08/10) */
   const LECTURE = 0.3;        /* bar : erreur de lecture d'une aiguille, en plus de la tolérance de 5 % */
 
   window.GARE = {
@@ -48,7 +49,7 @@
         p2 = c.nb(c.releve("final", 0)), t2 = c.nb(c.releve("final", 1));
       const f = (p, t) => isNaN(p) ? "…" : "<b>" + c.fr(p, 1) + " bar</b>" + (isNaN(t) ? "" : " à " + c.fr(t, 0) + " °C");
       const verdict = [p1, t1, p2, t2].some(isNaN) ? "…" :
-        c.proche(p2, (p1 + ATM) * (t2 + 273.15) / (t1 + 273.15) - ATM, 0, LECTURE) ? "<b>étanche</b>" : "<b>fuite</b>";
+        p2 >= (p1 + ATM) * (t2 + 273.15) / (t1 + 273.15) - ATM - BAISSE_LUE ? "<b>étanche</b>" : "<b>fuite</b>";
       return `Pression d'épreuve <b>${isNaN(ep) ? "…" : c.fr(ep, 1) + " bar"}</b> (donnée par le professeur) · PS de la plaque <b>${c.m.ps ? c.m.ps + " bar" : "…"}</b> · ` +
         `départ ${f(p1, t1)} → fin ${f(p2, t2)} (tenue : ${c.m.duree || "…"}) : ${verdict}`;
     },
@@ -222,10 +223,10 @@
             /* même gaz, même volume : P absolue / T absolue reste constant. Sans fuite, la pression suit la température. */
             const att = (p1 + ATM) * (t2 + 273.15) / (t1 + 273.15) - ATM, dT = t2 - t1;
             const temp = Math.abs(dT) >= 1 ? " L'air a changé de " + c.fr(dT, 0) + " °C : sans fuite, j'attendais " + c.fr(att, 1) + " bar." : "";
-            /* même manomètre au départ et à la fin : son erreur s'annule ; seule compte la lecture de l'aiguille (pas les 5 %,
-               qui laisseraient passer une chute de plus d'1 bar à 20 bar) */
-            if (c.proche(p2, att, 0, LECTURE))
-              return ["vert", "Départ " + c.fr(p1, 1) + " bar, fin " + c.fr(p2, 1) + " bar : égales à la lecture de l'aiguille près." + temp + " Pas de fuite sur cette durée."];
+            /* Franck, 08/10 : AUCUNE baisse admise une fois la température corrigée (même manomètre au départ et à la fin) ;
+               seul l'arrondi d'une lecture au 0,1 bar près est toléré. */
+            if (p2 >= att - BAISSE_LUE && p2 <= att + LECTURE)
+              return ["vert", "Départ " + c.fr(p1, 1) + " bar, fin " + c.fr(p2, 1) + " bar : aucune baisse une fois la température prise en compte." + temp + " Pas de fuite sur cette durée."];
             if (p2 < att) return ["rouge", "Fuite : je cherche. Départ " + c.fr(p1, 1) + " bar, fin " + c.fr(p2, 1) + " bar." + temp + " La température n'explique pas toute la baisse."];
             return ["ambre", "La pression a plus monté que la température ne l'explique (j'attendais " + c.fr(att, 1) + " bar) : je relis l'aiguille et les deux températures."];
           } },
@@ -267,7 +268,7 @@
     /* valeurs du contrôle automatique (_moule/qa.mjs) : toutes doivent donner un verdict vert */
     test: {
       machine: { epreuve: "10", ps: "24", echelle: "30", duree: "30 min" },
-      azote: { bouteille: ["180", "0"], monter: ["10", "10", "10"], initial: ["10", "20"], final: ["9,9", "19"], vidange: ["0", "0"] }
+      azote: { bouteille: ["180", "0"], monter: ["10", "10", "10"], initial: ["10", "20"], final: ["10", "19"], vidange: ["0", "0"] }
     }
   };
 })();
