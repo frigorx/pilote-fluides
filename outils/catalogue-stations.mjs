@@ -201,7 +201,7 @@ for (const nom of dossiers(PLAN_REL, PLAN_EXCLU)) {
       reseau: 'Plan thermo-techno',
       id: 'diagramme-6-gestes',
       titre: 'Le diagramme en 6 gestes',
-      resume: 'Six capsules sous-titrées (voix à lancer à la main) pour la leçon 5 du livre : lire les axes, les zones de la cloche, h sous un point, poser un point, tracer le cycle d’un relevé, lire SR et SC.',
+      resume: 'Version 2 : six gestes pour la leçon 5 du livre, chacun parti du diagramme entier, avec trois aides par geste (voix à lancer à la main) : axes · cloche et cinq familles · palier · poser un point · cycle simplifié · carte du fabricant.',
       niveaux: { bac: '1re Bac Pro MFER' },
       competences: ['A1T2', 'C2', 'S4.1.3'],
       chemin: `${PLAN_REL}/diagramme-enthalpique/gestes/`,
