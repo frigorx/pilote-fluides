@@ -191,6 +191,24 @@ for (const nom of dossiers(PLAN_REL, PLAN_EXCLU)) {
   });
 }
 
+/* --- Le diagramme en 6 gestes (10/10/2026) : les 6 capsules de la leçon 5 du livre Bac Pro MFER
+   Page unique ?g=1 à ?g=6 (QR du livre : inerweb.fr/m/5/g/<n>/). Elle vit dans le dossier du
+   diagramme sans être un module : le relevé par dossier de res/ ne la voit pas. */
+{
+  const html = lire(path.join(ROOT, PLAN_REL, 'diagramme-enthalpique/gestes/index.html'));
+  if (html) {
+    ajouter({
+      reseau: 'Plan thermo-techno',
+      id: 'diagramme-6-gestes',
+      titre: 'Le diagramme en 6 gestes',
+      resume: 'Six capsules sous-titrées (voix à lancer à la main) pour la leçon 5 du livre : lire les axes, les zones de la cloche, h sous un point, poser un point, tracer le cycle d’un relevé, lire SR et SC.',
+      niveaux: { bac: '1re Bac Pro MFER' },
+      competences: ['A1T2', 'C2', 'S4.1.3'],
+      chemin: `${PLAN_REL}/diagramme-enthalpique/gestes/`,
+    });
+  }
+}
+
 /* --- Plan thermo-techno : les capsules ------------------------------ */
 const CAPS_REL = 'packs/fluides/res/capsules/donnees';
 const capsDir = path.join(ROOT, CAPS_REL);

@@ -2,9 +2,9 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**422 stations** réparties en 16 réseaux.
+**423 stations** réparties en 16 réseaux.
 
-## Plan thermo-techno — 110 stations
+## Plan thermo-techno — 111 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -86,6 +86,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [TraxOil : comment il travaille](https://inerweb.fr/packs/fluides/res/traxoil-pedagogique/) | — | — | — | — |
 | [La vanne de service — trois positions, deux prises](https://inerweb.fr/packs/fluides/res/vanne-service-interactive/) | — | — | 4.01 4.05 5.01 6.01 6.06 | Cours interactif sur la vanne de service à deux prises : les trois positions en coupe animée, la voie de service P et la prise permanente P1, le sens BP et HP, le geste de raccordement du manifold et deux mini-jeux corrigés. |
 | [Comprendre le voyant liquide](https://inerweb.fr/packs/fluides/res/voyant-liquide-pedagogique/) | — | — | 1.05 7.05 9.09 12.07 | Parcours interactif pour comprendre le voyant liquide frigorifique, avec ou sans indicateur d’humidité. |
+| [Le diagramme en 6 gestes](https://inerweb.fr/packs/fluides/res/diagramme-enthalpique/gestes/) | — | BAC | A1T2 C2 S4.1.3 | Six capsules sous-titrées (voix à lancer à la main) pour la leçon 5 du livre : lire les axes, les zones de la cloche, h sous un point, poser un point, tracer le cycle d’un relevé, lire SR et SC. |
 | [Le NRD](https://inerweb.fr/packs/fluides/res/regulateur-kvr-nrd/index.html?etape=nrd) | LIGNES | — | — | repressuriser le réservoir |
 | [Pressostats en autonomie](https://frigorx.github.io/inerweb-pressostats/) | LIGNES | — | — | s’entraîner seul, KP1 et KP5 |
 | [La Frise des Fluides](https://inerweb.fr/packs/fluides/res/frise-vivante/frise-vivante.html) | LIGNES | — | — | l’histoire racontée |
