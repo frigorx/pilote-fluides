@@ -820,7 +820,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-5-PROFESSEUR.pdf",
-   "taille": 353042
+   "taille": 387105
   },
   {
    "id": "d092",
@@ -829,7 +829,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-5-PROFESSEUR.docx",
-   "taille": 193802
+   "taille": 228186
   },
   {
    "id": "d093",
@@ -838,7 +838,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-5-GRILLE-PROFESSEUR.pdf",
-   "taille": 160982
+   "taille": 160667
   },
   {
    "id": "d094",
@@ -847,7 +847,7 @@
    "titre": "Grille d’évaluation",
    "format": "docx",
    "fichier": "cablage-5-GRILLE-PROFESSEUR.docx",
-   "taille": 31648
+   "taille": 31644
   },
   {
    "id": "d095",
@@ -856,7 +856,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-5-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 307642
+   "taille": 306719
   },
   {
    "id": "d096",
@@ -865,7 +865,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-5-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 34450
+   "taille": 34457
   },
   {
    "id": "d097",
@@ -874,7 +874,7 @@
    "titre": "Fiche professeur",
    "format": "pdf",
    "fichier": "cablage-5-commande-PROFESSEUR.pdf",
-   "taille": 425868
+   "taille": 441005
   },
   {
    "id": "d098",
@@ -883,7 +883,7 @@
    "titre": "Fiche professeur",
    "format": "docx",
    "fichier": "cablage-5-commande-PROFESSEUR.docx",
-   "taille": 267682
+   "taille": 286215
   },
   {
    "id": "d099",
@@ -892,7 +892,7 @@
    "titre": "Grille d’évaluation",
    "format": "pdf",
    "fichier": "cablage-5-commande-GRILLE-PROFESSEUR.pdf",
-   "taille": 160730
+   "taille": 160723
   },
   {
    "id": "d100",
@@ -910,7 +910,7 @@
    "titre": "Plan de séance",
    "format": "pdf",
    "fichier": "cablage-5-commande-PLAN-SEANCE-PROFESSEUR.pdf",
-   "taille": 309671
+   "taille": 309916
   },
   {
    "id": "d102",
@@ -919,7 +919,7 @@
    "titre": "Plan de séance",
    "format": "docx",
    "fichier": "cablage-5-commande-PLAN-SEANCE-PROFESSEUR.docx",
-   "taille": 34521
+   "taille": 34522
   },
   {
    "id": "d103",

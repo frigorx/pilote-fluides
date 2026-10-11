@@ -1,13 +1,14 @@
 # Câblage n° 5 : démarrage étoile-triangle d'un moteur triphasé — documents génériques (Câblage virtuel, inerweb.fr)
 
-Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-5 · palier : Niveau 3 · 32 fils.
-Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 30/09/2026. Générique : à adapter au diplôme.
+Exercice : https://inerweb.fr/cablage-virtuel/jouer.html?ex=cablage-5 · palier : Niveau 3 · 37 fils.
+Marque : inerWeb Édu, F. Henninot, CC BY-NC-ND 4.0. Créé le 11/10/2026. Générique : à adapter au diplôme.
 
 ## Ce que fait l'élève
 Il suit cinq étapes : 1 Colorier, 2 Repérer, 3 Câbler, 4 Essayer (son câblage sous tension : il note ce qu'il observe), 5 Réaliser (la platine, avec le professeur).
 
 ## Notions
 - **Protéger, sectionner** : entrée en haut (impairs), sortie en bas (pairs) ; l’amont avant l’aval.
+- **La protection la plus proche** : un défaut fait déclencher la protection juste en amont, pas celle de tête.
 - **Le contacteur** : la bobine A1-A2 ferme les pôles 1-2, 3-4, 5-6 : la commande pilote la puissance.
 - **L’étoile-triangle** : démarrer en étoile (moins de courant), puis passer en triangle.
 - **Le bornier** : tout ce qui quitte la platine passe par une borne repérée.
