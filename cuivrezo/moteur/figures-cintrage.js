@@ -1,6 +1,8 @@
 /* CuivRézo — figures du cintrage : la cintreuse à levier et le coude.
    CONTRAT : enregistre « cintreuse » (reperes · lever · engager · hors-crochet · rabattre · placer-L ·
-   placer-R · placer-0 · cintrer · angle) et « coude » (rc · equerre · ovale · pli · vrille) dans CuivFigures.
+   placer-R · placer-0 · placer-45 · cintrer · angle) et « coude » (rc · equerre · ovale · pli · vrille) dans CuivFigures.
+   « placer-45 » (station 4-1) : le même outil que « placer-0 » ; le trait M du tube est en face du repère 45 de la forme
+   graduée (repère en orange, chiffres de la forme agrandis à 21 pour la lecture à l'écran).
    SCHÉMA DE PRINCIPE, pas à l'échelle. Géométrie du croquis de Franck (01/10/2026) : le bras fixe pend
    sous la forme et son CROCHET FIXE tient le tube ; le bras tournant porte le guide, prolongé par sa
    poignée. Mise en place : bras en l'air (le guide quitte la forme), tube engagé sous le crochet, bras
@@ -16,6 +18,7 @@
   const NAVY = '#1b3a63', ACIER = '#9aa6b2', CUIVRE = '#c77a3a', REFLET = '#e8a46c';
   const XC = -114;                                   /* abscisse du bras fixe et de son crochet */
   const REPERES = { '0': 0, R: 27, L: 58 };          /* position des repères sur le guide */
+  const X45 = Math.cos(Math.PI / 4) * (RF - 10);     /* à l'aplomb du milieu du trait « 45 » de la forme graduée */
   const style = `<style>
     @keyframes cz-bras{0%,12%{transform:rotate(0)}72%,100%{transform:rotate(90deg)}}
     @keyframes cz-arc{0%,12%{stroke-dashoffset:${ARC}}72%,100%{stroke-dashoffset:0}}
@@ -50,11 +53,13 @@
   function outil(etat) {
     const anime = etat === 'cintrer', fini = etat === 'angle', tourne = anime || fini;
     const trait = { 'placer-L': 'L', 'placer-R': 'R', 'placer-0': '0' }[etat] || '';
+    const sur45 = etat === 'placer-45';                /* le trait M du tube en face du repère 45 de la forme (station 4-1) */
     const yTube = etat === 'hors-crochet' ? -RT - 26 : -RT;
     const graduations = [[-90, '0'], [-45, '45'], [0, '90'], [90, '180']].map(([a, t]) => {
       const r = a * Math.PI / 180, x1 = Math.cos(r) * (RF - 4), y1 = Math.sin(r) * (RF - 4), x2 = Math.cos(r) * (RF - 16), y2 = Math.sin(r) * (RF - 16);
-      return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#10233c" stroke-width="3"/>
-        <text x="${Math.cos(r) * (RF - 33)}" y="${Math.sin(r) * (RF - 33) + 6}" text-anchor="middle" style="font:800 17px Calibri,Arial;fill:#10233c">${t}</text>`;
+      const c = sur45 && t === '45' ? '#c9451a' : '#10233c';
+      return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${c}" stroke-width="${c === '#10233c' ? 3 : 5}"/>
+        <text x="${Math.cos(r) * (RF - 33)}" y="${Math.sin(r) * (RF - 33) + 6}" text-anchor="middle" style="font:800 ${sur45 ? 21 : 17}px Calibri,Arial;fill:${c}">${t}</text>`;
     }).join('');
     const brasPose = tourne
       ? `<g class="${anime ? 'cz-bras' : ''}" ${fini ? 'transform="rotate(90)"' : ''}>${bras('')}${tube(`M0 -${RT} H200`)}</g>`
@@ -75,6 +80,8 @@
         <path d="M${XC - 14} -${RT - 10} V-${RT + 16} H${XC + 14} V-${RT - 10}" fill="none" stroke="${ACIER}" stroke-width="5" stroke-linejoin="round"/>
         ${brasPose}
         ${trait ? `<line x1="${REPERES[trait]}" y1="-${RT + 10}" x2="${REPERES[trait]}" y2="-${RT - 10}" stroke="#10233c" stroke-width="4"/>` : ''}
+        ${sur45 ? `<line x1="${X45}" y1="-${RT + 10}" x2="${X45}" y2="-${RT - 10}" stroke="#10233c" stroke-width="4"/>
+        <line x1="${X45}" y1="-${RT - 12}" x2="${X45}" y2="${-(RF - 10) * Math.sin(Math.PI / 4)}" stroke="#c9451a" stroke-width="2" stroke-dasharray="5 4"/>` : ''}
         <circle r="14" fill="#cfd8e2" stroke="${NAVY}" stroke-width="3"/>
       </g>`;
   }
@@ -82,6 +89,13 @@
   CuivFigures.ajouter('cintreuse', (etat, { cadre, etiquette, verdict }) => {
     const [cx, cy] = C;
     const crochet = (tx, ty) => etiquette(cx + XC, cy - RT - 16, tx, ty, 'Crochet fixe');
+    if (etat === 'placer-45') return cadre(`${outil(etat)}
+      ${etiquette(cx + X45, cy - RT, cx + X45 + 62, cy - RT + 60, 'M')}
+      <text x="560" y="330" class="cz-txt">M en face du 45</text>
+      <text x="560" y="362" class="cz-pt">de la forme graduée :</text>
+      <text x="560" y="390" class="cz-pt">le milieu du coude</text>
+      <text x="560" y="418" class="cz-pt">tombera sur M</text>
+      <text x="560" y="470" class="cz-pt">schéma de principe</text>`, 'Trait M en face du 45');
     if (etat === 'placer-L' || etat === 'placer-R' || etat === 'placer-0') {
       const r = etat.slice(-1), xt = cx + REPERES[r], bout = r === 'R' ? cx + 200 : cx - 240;
       const quoi = r === 'L' ? 'cote depuis l’extrémité GAUCHE' : r === 'R' ? 'cote depuis l’extrémité DROITE' : 'cote moins Rc, depuis la GAUCHE';

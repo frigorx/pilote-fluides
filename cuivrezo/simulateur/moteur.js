@@ -3,7 +3,8 @@
    CONTRAT : Moteur.lancer(api => jeu). Le jeu rend
      { neuf(niveau) → état S, etapes, scene() → SVG du poste, code (préfixe du code professeur), revoir(faute) → id de
        station à revoir, sansFaute (phrase du bilan), jauges (positions et textes de la loupe),
-       physique?() → true si à redessiner, tic?() → idem, son?(), repere?(cible) → id de la ligne de commande }.
+       physique?() → true si à redessiner, tic?() → idem, son?(), repere?(cible) → id de la ligne de commande,
+       invite? (message de l'accueil ; sinon « Choisissez votre niveau. ») }.
    L'état S appartient au jeu (neuf le crée) ; le moteur y range i (étape), q (question en cours), fautes, deja, halo.
    Une étape = { id, temps, niveau2?, petit, titre, zoom() → { vb, svg } | { html }, ui(), act(a, v), cible(c),
    entrer(), tic() } ; petit et titre peuvent être des fonctions. */
@@ -142,7 +143,7 @@ window.Moteur = (() => {
     $('loupe').addEventListener('click', e => { if (e.target === $('loupe')) fermerLoupe(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') fermerLoupe(); });
     $('son').addEventListener('click', () => { const oui = Son.basculer(); $('son').textContent = 'Son : ' + (oui ? 'oui' : 'non'); $('son').setAttribute('aria-pressed', oui); dessiner(); });
-    $('recommencer').addEventListener('click', () => { nouveau(1); dire('<p>Choisissez votre niveau.</p>'); afficher(true); });
+    $('recommencer').addEventListener('click', () => { nouveau(1); dire(`<p>${J.invite || 'Choisissez votre niveau.'}</p>`); afficher(true); });
     /* le temps qui passe : pressions, étapes qui attendent un état */
     setInterval(() => {
       let redessiner = J.physique ? J.physique() : false;

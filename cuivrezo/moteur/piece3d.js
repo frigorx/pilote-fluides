@@ -237,7 +237,7 @@
     }
     const sA = 110, sC = 110 + X, sB = 110 + 2 * X;
     lab.push({ id: 'A', text: 'A', g: 1, p: [ch.at(sA).x, y, ch.at(sA).z], dir: [-0.5, 1] },
-      { id: 'axe', text: 'Axe', g: 1, p: [ch.at(sC).x, y, ch.at(sC).z], dir: [0, -1] },
+      { id: 'axe', text: 'M', g: 1, p: [ch.at(sC).x, y, ch.at(sC).z], dir: [0, -1] },
       { id: 'B', text: 'B', g: 1, p: [ch.at(sB).x, y, ch.at(sB).z], dir: [0.5, 1] });
     lab.push({ id: 'obst', text: 'Obstacle', g: 0, p: [uC, P.obst > 0 ? 44 : 0, 0], dir: [-1, 0.4] });
     return {

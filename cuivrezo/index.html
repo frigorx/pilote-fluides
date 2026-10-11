@@ -8,8 +8,8 @@
 <meta name="robots" content="noindex">
 <title>CuivRézo · les gestes du cuivre</title>
 <meta name="description" content="CuivRézo : un assistant de geste pour l’atelier de façonnage du cuivre. L’élève apprend seul le geste attendu, le professeur le confirme.">
-<link rel="stylesheet" href="moteur/accueil.css?v=6867a5d1">
-<link rel="stylesheet" href="moteur/defis.css?v=6867a5d1">
+<link rel="stylesheet" href="moteur/accueil.css?v=fa6438b4">
+<link rel="stylesheet" href="moteur/defis.css?v=fa6438b4">
 <script defer src="../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="cuivrezo/index.html" data-reseau-nom="🔥 CuivRézo"></script>
 </head>
 <body>
@@ -173,7 +173,7 @@
       <li><a href="stations/4-1/" data-id="4-1">
         <img class="vignette" src="images/4-1-chapeau.webp" alt="" loading="lazy">
         <span class="num">4.1</span>
-        <span class="t"><strong>Le chapeau de gendarme</strong><span class="p">Un contournement symétrique, branches alignées</span><span class="tp-mini">✦ Tampon gagné</span></span>
+        <span class="t"><strong>Le chapeau de gendarme</strong><span class="p">Passer par-dessus un tube, d’un seul morceau</span><span class="tp-mini">✦ Tampon gagné</span></span>
         <span class="etat" aria-hidden="true"></span></a></li>
       <li><a href="stations/4-2/" data-id="4-2">
         <img class="vignette" src="images/4-2-baionnette.webp" alt="" loading="lazy">
@@ -190,7 +190,7 @@
   </section>
   <p class="prof"><a href="prof/">Espace professeur : mode d’emploi, matériel, grilles</a></p>
 </main>
-<script src="moteur/defis.js?v=6867a5d1"></script>
+<script src="moteur/defis.js?v=fa6438b4"></script>
 <script>
 /* l'état de chaque station, lu sur cet appareil seulement */
 document.querySelectorAll('.arrets a').forEach(a => {
@@ -202,12 +202,12 @@ document.querySelectorAll('.arrets a').forEach(a => {
 });
 CuivDefis.remplir();
 </script>
-<script src="moteur/3d/electro3d.js?v=6867a5d1"></script>
-<script src="moteur/3d/modeles/poste.js?v=6867a5d1"></script>
+<script src="moteur/3d/electro3d.js?v=fa6438b4"></script>
+<script src="moteur/3d/modeles/poste.js?v=fa6438b4"></script>
 <script>
 /* la porte (03/10) : le poste 3D, le plan du réseau qui s'allume, la fiche de la zone choisie */
 (() => {
-  const Z = [{"id":"poste","nom":"Mon poste de travail","phrase":"L’établi dégagé, les lunettes et les gants à portée, le bac pour les chutes : tout commence là.","stations":[{"id":"1-0","titre":"Mon poste de travail","obtenir":"Un poste prêt, un élève protégé","img":"images/1-0-poste.webp"}]},{"id":"tubes","nom":"Les tubes, en couronne et en barre","phrase":"En couronne, le tube est recuit ; en barre, il est écroui. On le reconnaît avant de le couper.","stations":[{"id":"1-1","titre":"Reconnaître le tube","obtenir":"Le bon tube, nommé juste","img":"images/1-1-livraison.webp"}]},{"id":"tracer","nom":"Le mètre, l’équerre et le feutre","phrase":"Mesurer juste, tracer fin, sur tout le tour du tube.","stations":[{"id":"1-2","titre":"Mesurer et tracer","obtenir":"Un trait fin, à la bonne cote, sur tout le tour","img":"images/1-2-tracer.webp"}]},{"id":"couper","nom":"Le coupe-tube et l’ébavureur","phrase":"Une coupe d’équerre, puis plus aucune bavure.","stations":[{"id":"1-3","titre":"Couper et ébavurer","obtenir":"Un tube coupé d’équerre, sans bavure","img":"images/1-3-couper.webp"}]},{"id":"cintrette","nom":"La cintrette","phrase":"Le tube s’enroule sur la roue : un coude à la main.","stations":[{"id":"1-4","titre":"Cintrer à la cintrette","obtenir":"Un coude à 90°, 300 mm à l’axe","img":"images/1-4-cintrette.webp"}]},{"id":"cintreuse","nom":"La cintreuse","phrase":"Un coude à la cote, en visant le bon repère : L, R ou 0.","stations":[{"id":"1-5","titre":"Cintrer à la cintreuse (L, R, 0)","obtenir":"Un coude à 90°, à la cote, du premier coup","img":"images/1-5-cintreuse.webp"}]},{"id":"dudgeon","nom":"La dudgeonnière","phrase":"Un évasement à 45°, l’écrou en place, pour un raccord vissé.","stations":[{"id":"1-6","titre":"Le dudgeon","obtenir":"Un dudgeon régulier, l’écrou en place","img":"images/1-6-dudgeon.webp"}]},{"id":"pince","nom":"La pince à emboîture","phrase":"Élargir un bout pour que l’autre tube y entre juste.","stations":[{"id":"1-7","titre":"L’emboîture à la pince","obtenir":"Un bout élargi où l’autre tube entre juste","img":"images/1-7-pince.webp"}]},{"id":"oxy","nom":"Le poste oxyacétylénique","phrase":"Deux bouteilles, deux détendeurs, deux tuyaux, un chalumeau : la sécurité d’abord, la flamme ensuite.","stations":[{"id":"2-1","titre":"Le poste oxyacétylénique en sécurité","obtenir":"Un poste prêt à allumer, vérifié, sans fuite","img":"images/2-1-poste.webp"},{"id":"2-2","titre":"Allumer, régler, éteindre la flamme","obtenir":"Une flamme neutre, allumée et éteinte dans l’ordre","img":"images/2-2-allumer.webp"}]},{"id":"tendre","nom":"Le chalumeau propane et l’étain","phrase":"Derrière le pare-flamme, l’étain coule dans l’emboîture chauffée.","stations":[{"id":"3-1","titre":"La brasure tendre à l’étain","obtenir":"Un anneau d’étain régulier, étanche","img":"images/3-1-tendre.webp"}]},{"id":"azote","nom":"L’azote, pour braser fort","phrase":"L’azote balaie l’intérieur du tube pendant la brasure forte : il reste propre.","stations":[{"id":"3-2","titre":"La brasure forte sous azote","obtenir":"Un joint brasé plein, propre à l’intérieur","img":"images/3-2-forte.webp"}]},{"id":"pieces","nom":"Les pièces façonnées","phrase":"Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.","stations":[{"id":"4-1","titre":"Le chapeau de gendarme","obtenir":"Un contournement symétrique, branches alignées","img":"images/4-1-chapeau.webp"},{"id":"4-2","titre":"La baïonnette","obtenir":"Deux branches parallèles, décalées à la cote","img":"images/4-2-baionnette.webp"}]}];
+  const Z = [{"id":"poste","nom":"Mon poste de travail","phrase":"L’établi dégagé, les lunettes et les gants à portée, le bac pour les chutes : tout commence là.","stations":[{"id":"1-0","titre":"Mon poste de travail","obtenir":"Un poste prêt, un élève protégé","img":"images/1-0-poste.webp"}]},{"id":"tubes","nom":"Les tubes, en couronne et en barre","phrase":"En couronne, le tube est recuit ; en barre, il est écroui. On le reconnaît avant de le couper.","stations":[{"id":"1-1","titre":"Reconnaître le tube","obtenir":"Le bon tube, nommé juste","img":"images/1-1-livraison.webp"}]},{"id":"tracer","nom":"Le mètre, l’équerre et le feutre","phrase":"Mesurer juste, tracer fin, sur tout le tour du tube.","stations":[{"id":"1-2","titre":"Mesurer et tracer","obtenir":"Un trait fin, à la bonne cote, sur tout le tour","img":"images/1-2-tracer.webp"}]},{"id":"couper","nom":"Le coupe-tube et l’ébavureur","phrase":"Une coupe d’équerre, puis plus aucune bavure.","stations":[{"id":"1-3","titre":"Couper et ébavurer","obtenir":"Un tube coupé d’équerre, sans bavure","img":"images/1-3-couper.webp"}]},{"id":"cintrette","nom":"La cintrette","phrase":"Le tube s’enroule sur la roue : un coude à la main.","stations":[{"id":"1-4","titre":"Cintrer à la cintrette","obtenir":"Un coude à 90°, 300 mm à l’axe","img":"images/1-4-cintrette.webp"}]},{"id":"cintreuse","nom":"La cintreuse","phrase":"Un coude à la cote, en visant le bon repère : L, R ou 0.","stations":[{"id":"1-5","titre":"Cintrer à la cintreuse (L, R, 0)","obtenir":"Un coude à 90°, à la cote, du premier coup","img":"images/1-5-cintreuse.webp"}]},{"id":"dudgeon","nom":"La dudgeonnière","phrase":"Un évasement à 45°, l’écrou en place, pour un raccord vissé.","stations":[{"id":"1-6","titre":"Le dudgeon","obtenir":"Un dudgeon régulier, l’écrou en place","img":"images/1-6-dudgeon.webp"}]},{"id":"pince","nom":"La pince à emboîture","phrase":"Élargir un bout pour que l’autre tube y entre juste.","stations":[{"id":"1-7","titre":"L’emboîture à la pince","obtenir":"Un bout élargi où l’autre tube entre juste","img":"images/1-7-pince.webp"}]},{"id":"oxy","nom":"Le poste oxyacétylénique","phrase":"Deux bouteilles, deux détendeurs, deux tuyaux, un chalumeau : la sécurité d’abord, la flamme ensuite.","stations":[{"id":"2-1","titre":"Le poste oxyacétylénique en sécurité","obtenir":"Un poste prêt à allumer, vérifié, sans fuite","img":"images/2-1-poste.webp"},{"id":"2-2","titre":"Allumer, régler, éteindre la flamme","obtenir":"Une flamme neutre, allumée et éteinte dans l’ordre","img":"images/2-2-allumer.webp"}]},{"id":"tendre","nom":"Le chalumeau propane et l’étain","phrase":"Derrière le pare-flamme, l’étain coule dans l’emboîture chauffée.","stations":[{"id":"3-1","titre":"La brasure tendre à l’étain","obtenir":"Un anneau d’étain régulier, étanche","img":"images/3-1-tendre.webp"}]},{"id":"azote","nom":"L’azote, pour braser fort","phrase":"L’azote balaie l’intérieur du tube pendant la brasure forte : il reste propre.","stations":[{"id":"3-2","titre":"La brasure forte sous azote","obtenir":"Un joint brasé plein, propre à l’intérieur","img":"images/3-2-forte.webp"}]},{"id":"pieces","nom":"Les pièces façonnées","phrase":"Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.","stations":[{"id":"4-1","titre":"Le chapeau de gendarme","obtenir":"Passer par-dessus un tube, d’un seul morceau","img":"images/4-1-chapeau.webp"},{"id":"4-2","titre":"La baïonnette","obtenir":"Deux branches parallèles, décalées à la cote","img":"images/4-2-baionnette.webp"}]}];
   const e = document.getElementById('poste'), fiche = document.getElementById('fiche'), plan = document.querySelector('.rz-plan');
   const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const zoneDe = id => Z.find(z => z.stations.some(s => s.id === id));
@@ -256,6 +256,6 @@ CuivDefis.remplir();
   accueil();
 })();
 </script>
-<script src="moteur/marque.js?v=6867a5d1" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+<script src="moteur/marque.js?v=fa6438b4" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

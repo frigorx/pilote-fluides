@@ -36,7 +36,7 @@ const CuivDefis = (() => {
     dudgeon:    { bon: ['controle'], mauvais: ['fissure', 'oblique'] },
     emboiture:  { bon: ['profil'], mauvais: ['fissure', 'ovale'] },
     brasure:    { bon: ['reussie'], mauvais: ['seche', 'surchauffe', 'calamine'] },
-    chapeau:    { bon: ['controle'], mauvais: ['desaxe'] },
+    chapeau:    { bon: ['controle'], mauvais: ['desaxe', 'decale'] },
     baionnette: { bon: ['parallele'], mauvais: ['tordue'] },
     flamme:     { bon: ['neutre'], mauvais: ['carburante', 'oxydante'] }
   };

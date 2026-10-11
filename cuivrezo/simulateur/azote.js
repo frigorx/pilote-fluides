@@ -220,7 +220,7 @@ Moteur.lancer(api => {
   ];
 
   return {
-    neuf, etapes: ETAPES, code: 'AZOTE', jauges: SceneAzote.JAUGES,
+    neuf, etapes: ETAPES, code: 'AZOTE', jauges: SceneAzote.JAUGES, invite: 'Appuyez sur « Commencer ».',
     sansFaute: 'Le détendeur a été réglé sous la PS, l’épreuve faite, le poste vidé et rangé.',
     revoir: f => f.temps === 1 ? '3-2' : null,
     scene: () => SceneAzote.poste(S),
