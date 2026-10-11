@@ -48,7 +48,7 @@
   <circle cx="103" cy="150" r="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
   <circle cx="233" cy="150" r="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
   <circle cx="363" cy="150" r="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
-  <text x="103" y="128">U1</text><text x="233" y="128">V1</text><text x="363" y="128">W1</text>
+  <text x="80" y="156" text-anchor="end">U1</text><text x="210" y="156" text-anchor="end">V1</text><text x="340" y="156" text-anchor="end">W1</text>
   <circle cx="103" cy="300" r="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
   <circle cx="233" cy="300" r="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
   <circle cx="363" cy="300" r="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="5"/>
@@ -70,7 +70,7 @@
   <text x="645" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#1b3a63">L1</text>
   <text x="530" y="352" text-anchor="middle" font-size="15" font-weight="700" fill="#1b3a63">L2</text>
   <text x="760" y="352" text-anchor="middle" font-size="15" font-weight="700" fill="#1b3a63">L3</text>
-  <text x="645" y="284" text-anchor="middle" font-size="14" fill="#637285">point commun</text>
+  <text x="630" y="240" text-anchor="end" font-size="14" fill="#637285">point commun</text>
 </g>
 
 <g id="schemaTriangle" opacity="0">

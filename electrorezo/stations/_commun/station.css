@@ -106,6 +106,8 @@ select.large{width:100%;min-height:42px;border:2px solid var(--navy);border-radi
 .corresp a,.corresp span.lien{display:inline-flex;align-items:center;gap:.3rem;text-decoration:none;
   font-size:.84em;font-weight:700;border:2px solid var(--line);border-radius:999px;
   padding:.12rem .6rem;color:var(--navy);background:var(--cream)}
+.corresp a.lien{text-decoration:underline;text-underline-offset:3px}
+.corresp a.lien:hover{border-color:var(--navy)}
 .pastille{width:18px;height:18px;border-radius:50%;display:inline-grid;place-items:center;
           color:#fff;font-size:.7em;font-weight:800}
 

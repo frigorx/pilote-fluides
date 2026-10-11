@@ -381,7 +381,8 @@ const Station = (() => {
 
     const corr = $('#corresp');
     (contenu.correspondances || []).forEach(c => {
-      const s = el('span', 'lien');
+      const s = el(c.href ? 'a' : 'span', 'lien');
+      if (c.href) s.href = c.href;
       const p = el('span', 'pastille', String(c.ligne)); p.style.background = c.couleur;
       s.appendChild(p); s.appendChild(document.createTextNode(' ' + c.texte));
       corr.appendChild(s);

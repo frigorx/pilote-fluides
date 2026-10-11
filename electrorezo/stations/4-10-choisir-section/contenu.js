@@ -117,5 +117,6 @@ ModeleGrandeur.construire({
     { ligne: 4, couleur: '#c0392b', texte: "4.9 Le câble : section et désignation" },
     { ligne: 4, couleur: '#c0392b', texte: "4.3 Disjoncteur magnéto-thermique" },
     { ligne: 1, couleur: '#2e6f9e', texte: "1.3 La résistance et la loi d’Ohm" },
-    { ligne: 4, couleur: '#c0392b', texte: "Parcours Sous tension, TD3 : plus long, plus fort, plus gros" } ]
+    { ligne: 4, couleur: '#c0392b', texte: "Parcours Sous tension, TD3 : plus long, plus fort, plus gros",
+      href: 'https://inerweb.fr/sous-tension/index.html' } ]
 });

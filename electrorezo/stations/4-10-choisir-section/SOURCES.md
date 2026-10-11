@@ -14,7 +14,8 @@
 - **Résistivité** ρ = 0,0225 Ω·mm²/m (cuivre en service, guide UTE C 15-105).
   Recoupement avec le tableau du cours MFER : 4 mm², 32 A, 100 m, 400 V donnent 7,4 %
   dans le cours et 7,8 % ici. La station est un peu plus sévère, d'environ 5 %.
-  **À trancher par F. Henninot** : garder la valeur du guide, ou s'aligner sur le cours.
+  **Tranché le 02/10/2026 (carte blanche de F. Henninot, `chantier-3d/A-TRANCHER.md` § 2)** :
+  la valeur du guide est gardée.
 - **Sections du logement** (1,5 / 2,5 / 6 mm², 16 / 20 / 32 A) : tableau « section par usage »
   du document de cours `04_section_d_un_cable.docx` (BAC_MFER).
 
