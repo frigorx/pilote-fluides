@@ -158,11 +158,11 @@
         <rect x="${xO - 16}" y="${cO + r - 2}" width="32" height="${yP - cO - r + 2}" fill="url(#cz-ac)" stroke="#4d5763" stroke-width="2.5"/>
         <path d="M${xO - r - 6} ${cO} A${r + 6} ${r + 6} 0 0 0 ${xO + r + 6} ${cO}" fill="none" stroke="#4d5763" stroke-width="9"/>
         ${multicouche(xO, cO, r)}
-        ${temoin(xR, yR - 10, yC1 - 8)}${temoin(xO, cO, yC1 - 8)}${cote(xR, xO, yC1)}
-        <text x="${(xR + xO) / 2}" y="${yC1 - 14}" text-anchor="middle" class="cz-pt">du bout du cône à l’axe de l’obstacle</text>
-        ${tube(`M${xR + 50} ${yTb} H770`)}${collet(xR, yTb, 22)}
+        ${temoin(xR - 18, yR - 18, yC1 - 8)}${temoin(xO, cO, yC1 - 8)}${cote(xR - 18, xO, yC1)}
+        <text x="${(xR + xO) / 2}" y="${yC1 - 14}" text-anchor="middle" class="cz-pt">de la base du cône à l’axe de l’obstacle</text>
+        ${tube(`M${xR + 32} ${yTb} H770`)}${collet(xR - 18, yTb, 22)}
         ${marque(xO, yTb, 'X', { dessus: false })}
-        ${temoin(xR, yTb - 24, yC2 - 8)}${temoin(xO, yTb - 24, yC2 - 8)}${cote(xR, xO, yC2)}
+        ${temoin(xR - 18, yTb - 24, yC2 - 8)}${temoin(xO, yTb - 24, yC2 - 8)}${cote(xR - 18, xO, yC2)}
         <text x="${(xR + xO) / 2}" y="${yC2 - 14}" text-anchor="middle" class="cz-pt">la même cote, depuis le bout évasé</text>
         ${etiquette(xR - 54, yR, 60, yR - 96, 'raccord', 'cz-txt', 'start')}
         <text x="400" y="44" text-anchor="middle" class="cz-txt">X : la cote du raccord à l’axe de l’obstacle</text>`, 'Mesurer et tracer X');
