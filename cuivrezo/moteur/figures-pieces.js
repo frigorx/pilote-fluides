@@ -67,7 +67,9 @@
     const rampe = hp * Math.SQRT2 - RC * T22 - RC;
     const dev = 2 * (RC * Math.PI / 4) + RC * Math.PI / 2 + 2 * rampe;
     const emprise = 2 * (hp + RC * T22);
-    return { H, XM: Math.round((dev - emprise) / 2), MA: Math.round(RC * Math.PI / 4 + rampe + RC * Math.PI / 8) };
+    const xm = (dev - emprise) / 2, ma = RC * Math.PI / 4 + rampe + RC * Math.PI / 8;
+    /* méthode « trait au 0 » (11/10 soir) : le DÉBUT de chaque coude, côté collet, mesuré depuis X (négatif = côté collet) */
+    return { H, XM: Math.round(xm), MA: Math.round(ma), S: Math.round(xm - RC * Math.PI / 4), A: Math.round(xm - ma - RC * Math.PI / 8), B: Math.round(xm + ma - RC * Math.PI / 8) };
   };
   const tableauChapeau = () => {
     let avant = -1;
@@ -122,52 +124,62 @@
     }
     if (etat === 'tableau') {
       const lignes = tableauChapeau(), ex = exemple();
-      const x0 = 50, w = 175, y0 = 58, hE = 48, hL = 44, cx = i => x0 + w * i + w / 2, bas = y0 + hE + lignes.length * hL;
+      const x0 = 50, L = [130, 90, 240, 240], xs = L.map((_, i) => x0 + L.slice(0, i).reduce((a, b) => a + b, 0)), W = 700;
+      const y0 = 58, hE = 48, hL = 44, cx = i => xs[i] + L[i] / 2, bas = y0 + hE + lignes.length * hL;
+      const cotes = l => { const c = [], a = []; c.push('A ' + -l.A); if (l.S < 0) c.push('S ' + -l.S); else if (l.S === 0) c.push('S sur X'); else a.push('S ' + l.S); a.push('B ' + l.B); return [c.join(' · '), a.join(' · ')]; };
       const police = (p, c) => `font:${p} 28px Calibri,'Segoe UI',Arial,sans-serif;fill:${c}`;
-      let g = `<rect x="${x0}" y="${y0}" width="${4 * w}" height="${hE}" fill="#1b3a63"/>`;
-      ['d (mm)', 'H', 'X → M', 'MA'].forEach((c, i) => { g += `<text x="${cx(i)}" y="${y0 + 33}" text-anchor="middle" style="${police(800, '#ffffff')}">${c}</text>`; });
+      let g = `<rect x="${x0}" y="${y0}" width="${W}" height="${hE}" fill="#1b3a63"/>`;
+      ['d (mm)', 'H', 'côté collet', 'autre côté'].forEach((c, i) => { g += `<text x="${cx(i)}" y="${y0 + 33}" text-anchor="middle" style="${police(800, '#ffffff')}">${c}</text>`; });
       lignes.forEach((l, r) => {
         const ty = y0 + hE + r * hL, sel = l.H === ex.H;
-        g += `<rect x="${x0}" y="${ty}" width="${4 * w}" height="${hL}" fill="${sel ? '#ffd9a0' : r % 2 ? '#f6efe2' : '#fffdf8'}"/>`;
-        [`${l.dMin} à ${l.dMax}`, l.H, l.XM, l.MA].forEach((v, i) => { g += `<text x="${cx(i)}" y="${ty + 31}" text-anchor="middle" style="${police(sel ? 800 : 700, '#10233c')}">${v}</text>`; });
-        if (r) g += `<line x1="${x0}" y1="${ty}" x2="${x0 + 4 * w}" y2="${ty}" stroke="#d9cfbd" stroke-width="1.5"/>`;
-        if (sel) g += `<rect x="${x0}" y="${ty}" width="${4 * w}" height="${hL}" fill="none" stroke="#c9451a" stroke-width="4"/>`;
+        g += `<rect x="${x0}" y="${ty}" width="${W}" height="${hL}" fill="${sel ? '#ffd9a0' : r % 2 ? '#f6efe2' : '#fffdf8'}"/>`;
+        [`${l.dMin} à ${l.dMax}`, l.H, ...cotes(l)].forEach((v, i) => { g += `<text x="${cx(i)}" y="${ty + 31}" text-anchor="middle" style="${police(sel ? 800 : 700, '#10233c')}">${v}</text>`; });
+        if (r) g += `<line x1="${x0}" y1="${ty}" x2="${x0 + W}" y2="${ty}" stroke="#d9cfbd" stroke-width="1.5"/>`;
+        if (sel) g += `<rect x="${x0}" y="${ty}" width="${W}" height="${hL}" fill="none" stroke="#c9451a" stroke-width="4"/>`;
       });
-      for (let i = 1; i < 4; i++) g += `<line x1="${x0 + w * i}" y1="${y0 + hE}" x2="${x0 + w * i}" y2="${bas}" stroke="#d9cfbd" stroke-width="1.5"/>`;
-      g += `<rect x="${x0}" y="${y0}" width="${4 * w}" height="${bas - y0}" fill="none" stroke="#1b3a63" stroke-width="2.5"/>`;
+      for (let i = 1; i < 4; i++) g += `<line x1="${xs[i]}" y1="${y0 + hE}" x2="${xs[i]}" y2="${bas}" stroke="#d9cfbd" stroke-width="1.5"/>`;
+      g += `<rect x="${x0}" y="${y0}" width="${W}" height="${bas - y0}" fill="none" stroke="#1b3a63" stroke-width="2.5"/>`;
       return cadre(`<text x="400" y="38" text-anchor="middle" style="font:800 24px Calibri,'Segoe UI',Arial,sans-serif;fill:#10233c">Tube 1/4″ · cintreuse 1/4″ (rayon 9/16″ = ${RC.toFixed(1).replace('.', ',')} mm)</text>
         ${g}
         <text x="400" y="${bas + 32}" text-anchor="middle" class="cz-pt">Ligne surlignée : la planche de l’atelier, d = ${OBS - TUB}</text>
-        <text x="400" y="${bas + 60}" text-anchor="middle" class="cz-pt">H, X → M et MA sont en mm. MA vaut aussi de M à B.</text>`, 'Le tableau du chapeau');
+        <text x="400" y="${bas + 60}" text-anchor="middle" class="cz-pt">En mm. Les traits se mesurent depuis X : chacun est le début d’un coude.</text>`, 'Le tableau du chapeau');
     }
     if (etat === 'repere-x') {
       /* vue de côté : l'obstacle sur la planche, le tube droit posé dessus, le collet vissé à gauche */
-      const yP = 424, r = 64, xO = 380, cO = yP - r, e = 44, yT = cO - r - e / 2, xc = 110;
+      /* méthode du 11/10 soir : X se MESURE (plus de tube posé ni d'œil au-dessus). En bas la planche : le raccord où
+         le collet se visse, l'obstacle, la cote du bout du cône à l'axe ; en haut le tube : la même cote depuis le bout évasé */
+      const yP = 436, r = 48, xO = 560, cO = yP - r - 10, yR = 350, xR = 150, yTb = 146, yC1 = 288, yC2 = 104;
+      const cote = (x1, x2, yc) => `<line x1="${x1}" y1="${yc}" x2="${x2}" y2="${yc}" class="cz-cote"/>`;
+      const temoin = (x, y1, y2) => `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="#1b3a63" stroke-width="1.5" stroke-dasharray="7 5"/>`;
       return cadre(`${planche(yP)}
-        <rect x="${xc + 46}" y="${yT}" width="28" height="${yP - yT}" fill="url(#cz-ac)" stroke="#4d5763" stroke-width="2.5"/>
+        <rect x="${xR - 90}" y="${yR - 30}" width="72" height="60" rx="6" fill="#d7b24a" stroke="#7a5c00" stroke-width="2.5"/>
+        <path d="M${xR - 18} ${yR - 16} L${xR} ${yR - 7} V${yR + 7} L${xR - 18} ${yR + 16} Z" fill="#d7b24a" stroke="#7a5c00" stroke-width="2.5"/>
+        <rect x="${xR - 70}" y="${yR + 30}" width="32" height="${yP - yR - 30}" fill="url(#cz-ac)" stroke="#4d5763" stroke-width="2"/>
+        <rect x="${xO - 16}" y="${cO + r - 2}" width="32" height="${yP - cO - r + 2}" fill="url(#cz-ac)" stroke="#4d5763" stroke-width="2.5"/>
+        <path d="M${xO - r - 6} ${cO} A${r + 6} ${r + 6} 0 0 0 ${xO + r + 6} ${cO}" fill="none" stroke="#4d5763" stroke-width="9"/>
         ${multicouche(xO, cO, r)}
-        ${tube(`M${xc + 50} ${yT} H770`, null, e)}${collet(xc, yT, e)}
-        <line x1="${xO}" y1="${cO}" x2="${xO}" y2="${yT - e / 2 - 18}" stroke="#1b3a63" stroke-width="2" stroke-dasharray="8 6"/>
-        <line x1="${xO}" y1="${yT - e / 2 - 12}" x2="${xO}" y2="${yT + e / 2}" stroke="#10233c" stroke-width="5"/>
-        <text x="${xO}" y="${yT - e / 2 - 28}" text-anchor="middle" class="cz-txt" style="font-size:30px">X</text>
-        ${etiquette(xO, cO, xO + 116, cO, 'milieu de l’obstacle')}
-        ${etiquette(xc + 46, yT - 36, xc + 24, 180, 'collet', 'cz-txt', 'start')}
-        <text x="400" y="44" text-anchor="middle" class="cz-txt">X : à l’aplomb du milieu de l’obstacle</text>
-        <text x="400" y="76" text-anchor="middle" class="cz-pt">trait fin au feutre, sur tout le tour du tube</text>`, 'Tracer X au-dessus de l’obstacle');
+        ${temoin(xR, yR - 10, yC1 - 8)}${temoin(xO, cO, yC1 - 8)}${cote(xR, xO, yC1)}
+        <text x="${(xR + xO) / 2}" y="${yC1 - 14}" text-anchor="middle" class="cz-pt">du bout du cône à l’axe de l’obstacle</text>
+        ${tube(`M${xR + 50} ${yTb} H770`)}${collet(xR, yTb, 22)}
+        ${marque(xO, yTb, 'X', { dessus: false })}
+        ${temoin(xR, yTb - 24, yC2 - 8)}${temoin(xO, yTb - 24, yC2 - 8)}${cote(xR, xO, yC2)}
+        <text x="${(xR + xO) / 2}" y="${yC2 - 14}" text-anchor="middle" class="cz-pt">la même cote, depuis le bout évasé</text>
+        ${etiquette(xR - 54, yR, 60, yR - 96, 'raccord', 'cz-txt', 'start')}
+        <text x="400" y="44" text-anchor="middle" class="cz-txt">X : la cote du raccord à l’axe de l’obstacle</text>`, 'Mesurer et tracer X');
     }
     if (etat === 'traits') {
       /* pas à l'échelle : la lisibilité d'abord. Le collet est à gauche ; A du côté du collet, M du côté opposé à X */
-      const ex = exemple(), yT = 250, xc = 36, xA = 200, xM = 470, xB = 740, xX = xM - 150, l1 = yT + 64, l2 = yT + 124;
+      const ex = exemple(), yT = 250, xc = 36, xA = 170, xS = 400, xX = 470, xB = 720, l1 = yT + 64, l2 = yT + 124;
       const temoin = (x, bas) => `<line x1="${x}" y1="${yT + 23}" x2="${x}" y2="${bas}" stroke="#1b3a63" stroke-width="1.4" stroke-dasharray="6 5"/>`;
       const cote = (x1, x2, yc, texte) => `<line x1="${x1}" y1="${yc}" x2="${x2}" y2="${yc}" class="cz-cote"/>
         <text x="${(x1 + x2) / 2}" y="${yc + 30}" text-anchor="middle" class="cz-txt">${texte}</text>`;
       return cadre(`${tube(`M${xc + 50} ${yT} H776`)}${collet(xc, yT, 22)}
-        ${marque(xA, yT, 'A', { dessus: true })}${marque(xX, yT, 'X', { dessus: true, gris: true })}${marque(xM, yT, 'M', { dessus: true })}${marque(xB, yT, 'B', { dessus: true })}
-        ${temoin(xX, l1)}${temoin(xA, l2)}${temoin(xM, l2)}${temoin(xB, l2)}
-        ${cote(xX, xM, l1, `X → M = ${ex.XM}`)}${cote(xA, xM, l2, `MA = ${ex.MA}`)}${cote(xM, xB, l2, `MA = ${ex.MA}`)}
+        ${marque(xA, yT, 'A', { dessus: true })}${marque(xS, yT, 'S', { dessus: true })}${marque(xX, yT, 'X', { dessus: true, gris: true })}${marque(xB, yT, 'B', { dessus: true })}
+        ${temoin(xX, l2)}${temoin(xS, l1)}${temoin(xA, l2)}${temoin(xB, l2)}
+        ${cote(xS, xX, l1, `${-ex.S}`)}${cote(xA, xX, l2, `${-ex.A}`)}${cote(xX, xB, l2, `${ex.B}`)}
         ${etiquette(xc + 46, yT - 25, xc + 24, 150, 'collet', 'cz-txt', 'start')}
-        <text x="400" y="44" text-anchor="middle" class="cz-txt">Du collet vers la droite : A, X, M, B</text>
-        <text x="400" y="76" text-anchor="middle" class="cz-pt">M est plus loin du collet que X ; A et B à égale distance de M</text>`, 'Tracer M, puis A et B');
+        <text x="400" y="44" text-anchor="middle" class="cz-txt">Zéro sur X : A et S côté collet, B de l’autre côté</text>
+        <text x="400" y="76" text-anchor="middle" class="cz-pt">en mm ; chaque trait est le début d’un coude</text>`, 'Tracer A, S et B depuis X');
     }
     if (etat === 'central') {
       /* seul le coude central est fait : deux bras droits de part et d'autre */
@@ -192,7 +204,7 @@
         ${etiquette(xs, y - HAUT - 11, xs - 70, 190, 'Le sommet')}
         ${etiquette(400, y - 22, 570, 420, 'L’obstacle', 'cz-txt', 'start')}
         ${etiquette(x0 - 40, y - 25, x0 - 70, 280, 'collet', 'cz-txt', 'start')}
-        ${verdict(false, 'M tracé sur X : le sommet arrive trop tôt', 400, 470)}`, 'Chapeau décalé');
+        ${verdict(false, 'Un trait mal reporté : le sommet n’est plus au-dessus', 400, 470)}`, 'Chapeau décalé');
     }
     if (etat === 'controle') return cadre(`${obstacle}${tube(d)}
       <rect x="40" y="${y + 14}" width="720" height="14" rx="3" fill="url(#cz-ac)" stroke="#4d5763" stroke-width="2"/>

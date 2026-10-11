@@ -235,9 +235,10 @@
       q.arc(Vc, rho, a1, a0, 1.5, ORANGE);
       lab.push({ id: 'ang', text: Math.round(P.central) + '°', g: 1, p: uv2w([Vc[0] + rho * Math.cos((a0 + a1) / 2), Vc[1] + rho * Math.sin((a0 + a1) / 2)], Y), dir: [0, -1] });
     }
-    const sA = 110, sC = 110 + X, sB = 110 + 2 * X;
+    /* méthode du 11/10 soir : les traits au DÉBUT de chaque coude, côté collet (S pour le sommet) */
+    const sA = 110 - P.rc * th / 4, sC = 110 + X - P.rc * th / 2, sB = 110 + 2 * X - P.rc * th / 4;
     lab.push({ id: 'A', text: 'A', g: 1, p: [ch.at(sA).x, y, ch.at(sA).z], dir: [-0.5, 1] },
-      { id: 'axe', text: 'M', g: 1, p: [ch.at(sC).x, y, ch.at(sC).z], dir: [0, -1] },
+      { id: 'axe', text: 'S', g: 1, p: [ch.at(sC).x, y, ch.at(sC).z], dir: [0, -1] },
       { id: 'B', text: 'B', g: 1, p: [ch.at(sB).x, y, ch.at(sB).z], dir: [0.5, 1] });
     lab.push({ id: 'obst', text: 'Obstacle', g: 0, p: [uC, P.obst > 0 ? 44 : 0, 0], dir: [-1, 0.4] });
     return {

@@ -52,7 +52,7 @@
 
   function outil(etat) {
     const anime = etat === 'cintrer', fini = etat === 'angle', tourne = anime || fini;
-    const trait = { 'placer-L': 'L', 'placer-R': 'R', 'placer-0': '0' }[etat] || '';
+    const trait = { 'placer-L': 'L', 'placer-R': 'R', 'placer-0': '0', 'placer-0-s': '0', 'placer-0-a': '0', 'placer-0-b': '0' }[etat] || '';
     const sur45 = etat === 'placer-45';                /* le trait M du tube en face du repère 45 de la forme (station 4-1) */
     const yTube = etat === 'hors-crochet' ? -RT - 26 : -RT;
     const graduations = [[-90, '0'], [-45, '45'], [0, '90'], [90, '180']].map(([a, t]) => {
@@ -89,6 +89,17 @@
   CuivFigures.ajouter('cintreuse', (etat, { cadre, etiquette, verdict }) => {
     const [cx, cy] = C;
     const crochet = (tx, ty) => etiquette(cx + XC, cy - RT - 16, tx, ty, 'Crochet fixe');
+    /* station 4-1, méthode du 11/10 soir : le DÉBUT du coude (S, A ou B) pile en face du 0 du guide */
+    const auZero = { 'placer-0-s': ['S pile en face', 'du 0 du guide :', 'le coude du sommet', 'part de S'],
+      'placer-0-a': ['A pile en face', 'du 0 du guide,', 'tube retourné,', 'côté collet au crochet'],
+      'placer-0-b': ['B pile en face', 'du 0 du guide,', 'tube dans le même', 'sens que pour A'] }[etat];
+    if (auZero) return cadre(`${outil(etat)}
+      ${etiquette(cx - 2, cy - RT - 6, cx - 58, cy - RT - 62, auZero[0][0])}
+      <text x="560" y="300" class="cz-txt">${auZero[0]}</text>
+      <text x="560" y="332" class="cz-pt">${auZero[1]}</text>
+      <text x="560" y="360" class="cz-pt">${auZero[2]}</text>
+      <text x="560" y="388" class="cz-pt">${auZero[3]}</text>
+      <text x="560" y="470" class="cz-pt">schéma de principe</text>`, 'Trait ' + auZero[0][0] + ' sur le 0');
     if (etat === 'placer-45') return cadre(`${outil(etat)}
       ${etiquette(cx + X45, cy - RT, cx + X45 + 62, cy - RT + 60, 'M')}
       <text x="560" y="330" class="cz-txt">M en face du 45</text>
