@@ -117,6 +117,8 @@ const Station = (() => {
       pan.append(el('div', 'compteur', 'Ce que vous devez obtenir'), el('h2', '', o.titre), el('p', '', o.texte));
       /* le film de la station (dessin animé, voix, sous-titres), s'il existe : il s'ouvre dans un nouvel onglet */
       if (st.film) { const a = el('a', 'bouton-film', '🎬 ' + st.film.titre); a.href = S.racine + st.film.src; a.target = '_blank'; a.rel = 'noopener'; pan.append(a); }
+      /* le TP de la station à télécharger (ZIP : PDF + Word), s'il existe */
+      if (st.telechargement) { const a = el('a', 'bouton-film', '📥 ' + st.telechargement.titre); a.href = S.racine + st.telechargement.src; a.download = ''; pan.append(a); }
       if (o.criteres) { const ul = el('ul', 'liste'); o.criteres.forEach(c => ul.append(el('li', '', c))); pan.append(ul); }
       if (st.duree) pan.append(el('p', 'compteur', 'Durée visée : ' + st.duree));
       const c = codes(); if (c) pan.append(c);

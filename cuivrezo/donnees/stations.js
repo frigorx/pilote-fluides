@@ -1457,6 +1457,7 @@ CUIVREZO.stations.push({
   id: '4-1', ligne: 4, titre: 'Le chapeau de gendarme', duree: '45 min', vignette: 'images/4-1-chapeau.webp',
   sources: ['sources-metier/4-pieces-complexes.md'],
   film: { src: 'clips/4-1/film-chapeau-de-gendarme.mp4', titre: 'Le film, de A à Z (6 min)' },
+  telechargement: { src: 'papier/TP-chapeau-de-gendarme-inerWeb.zip', titre: 'Le TP complet : élève, ressource, professeur (PDF + Word, 5 Mo)' },
   referentiel: { taches: [REF.T10], competences: [REF.C34], savoirs: [REF.S55, REF.S62] },
   obtenir: {
     titre: 'Passer par-dessus un tube, d’un seul morceau',
