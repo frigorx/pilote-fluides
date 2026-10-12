@@ -30,6 +30,7 @@ const INDEXEES = [
   { fichier: "metier.html", url: "https://inerweb.fr/metier.html" },
   { fichier: "quartier/index.html", url: "https://inerweb.fr/quartier/" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
+  { fichier: "decouvrir.html", url: "https://inerweb.fr/decouvrir.html" },
   // inerWeb QCM (07/10/2026) : l'accueil de la station et ses trois activités de révision.
   { fichier: "qcm/index.html", url: "https://inerweb.fr/qcm/" },
   { fichier: "qcm/positionnement.html", url: "https://inerweb.fr/qcm/positionnement.html" },
@@ -121,6 +122,16 @@ for (const p of INDEXEES) {
   const ogUrl = html.match(/<meta\b[^>]*\bproperty=["']og:url["'][^>]*\bcontent=["']([^"']+)["']/i)?.[1];
   if (ogUrl !== p.url) {
     console.error("✗ sitemap : " + p.fichier + " doit déclarer le og:url exact " + p.url);
+    process.exit(1);
+  }
+  const ogTitre = html.match(/<meta\b[^>]*\bproperty=["']og:title["'][^>]*\bcontent=["']([^"']+)["']/i)?.[1]?.trim();
+  if (!ogTitre) {
+    console.error("✗ sitemap : " + p.fichier + " doit porter un og:title non vide");
+    process.exit(1);
+  }
+  const ogDescription = html.match(/<meta\b[^>]*\bproperty=["']og:description["'][^>]*\bcontent=["']([^"']+)["']/i)?.[1]?.trim();
+  if (!ogDescription) {
+    console.error("✗ sitemap : " + p.fichier + " doit porter un og:description non vide");
     process.exit(1);
   }
   lignes.push("  <url><loc>" + p.url + "</loc></url>");
