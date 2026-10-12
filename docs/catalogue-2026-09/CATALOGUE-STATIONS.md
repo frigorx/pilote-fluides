@@ -387,7 +387,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Allumer, régler, éteindre la flamme](https://inerweb.fr/cuivrezo/stations/2-2/) | Ligne 2 — Le chalumeau | — | — | Une flamme neutre, allumée et éteinte dans l’ordre |
 | [La brasure tendre à l’étain](https://inerweb.fr/cuivrezo/stations/3-1/) | Ligne 3 — Braser | — | — | Un anneau d’étain régulier, étanche |
 | [La brasure forte sous azote](https://inerweb.fr/cuivrezo/stations/3-2/) | Ligne 3 — Braser | — | — | Un joint brasé plein, propre à l’intérieur |
-| [Le chapeau de gendarme](https://inerweb.fr/cuivrezo/stations/4-1/) | Ligne 4 — Les pièces complexes | — | — | Un contournement symétrique, branches alignées |
+| [Le chapeau de gendarme](https://inerweb.fr/cuivrezo/stations/4-1/) | Ligne 4 — Les pièces complexes | — | — | Le film, de A à Z (6 min) |
 | [La baïonnette](https://inerweb.fr/cuivrezo/stations/4-2/) | Ligne 4 — Les pièces complexes | — | — | Deux branches parallèles, décalées à la cote |
 
 ## Le tour de main — 11 stations
