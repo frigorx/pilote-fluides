@@ -55,6 +55,30 @@ window.CABLAGE_INDEX = [
   "famille": "froid"
  },
  {
+  "id": "cablage-14",
+  "titre": "Câblage n° 14 : du bornier d'alimentation au moteur — sectionneur à précoupure, contacteur, relais thermique",
+  "niveau": "Découverte",
+  "famille": "puissance"
+ },
+ {
+  "id": "cablage-14-commande",
+  "titre": "Câblage n° 14 — la commande : précoupure, 95-96, marche-arrêt à auto-maintien, voyant défaut 97-98",
+  "niveau": "Commande 1",
+  "famille": "commande"
+ },
+ {
+  "id": "cablage-14-voyant",
+  "titre": "Câblage n° 14 — le voyant marche : le bloc additionnel du contacteur (53-54) et l'ordre des contacts",
+  "niveau": "Commande 2",
+  "famille": "commande"
+ },
+ {
+  "id": "cablage-14-relais",
+  "titre": "Câblage n° 14 — variante : le relais auxiliaire KA1 pour le voyant marche",
+  "niveau": "Commande 2",
+  "famille": "commande"
+ },
+ {
   "id": "cablage-2",
   "titre": "Câblage n° 2 : le pump-down sur bornier — thermostat, électrovanne, pressostats, compresseur, ventilateurs",
   "niveau": "Niveau 1",

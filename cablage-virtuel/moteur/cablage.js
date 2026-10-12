@@ -119,7 +119,10 @@ function horsPlatine(r) {   // sous la vraie platine (réseau, moteurs, appareil
    donc même contrôle. Un appareil embroché (le relais thermique sous son contacteur) : liaisons fixes. */
 function vueReelle() { return REELLE && !!(EX && EX.reel); }
 function vue(a) { return (vueReelle() && EX.reel.appareils[a.repere]) || a; }
-function liaisonsFixes() { return vueReelle() ? EX.reel.liaisons_fixes : []; }
+// 12/10 (Franck : « on ne branche pas la platine sur le réseau, sous peine de tuer un élève ; la platine, on la mettra dans
+// l'armoire de sécurité après ») : `liaisons_terrain`, les fils du côté terrain (réseau, moteur, pupitre) que le professeur
+// raccorde dans l'armoire de sécurité — comptés comme faits, jamais demandés à l'élève, dans les deux vues.
+function liaisonsFixes() { return (vueReelle() ? EX.reel.liaisons_fixes : []).concat((EX && EX.liaisons_terrain) || []); }
 // La logique des bornes que le jeu enseigne : le courant ENTRE par la borne impaire (1, 3, 5)
 // et RESSORT par la borne paire (2, 4, 6), puis repart vers l'appareil suivant.
 function sens(ref) {
@@ -1782,6 +1785,19 @@ if (Math.min(screen.width, screen.height) < 500) {
 construireBarre();
 if (FIL_PAR_FIL) document.body.classList.add('fil-par-fil');   // la place de la bulle est gardée sous la platine
 if (!ID) { dire('Aucun exercice demandé.', 'ko', 'Revenez au réseau.'); return; }
+/* 12/10 (Franck : la vidéo « Câbler une armoire, du bornier au moteur ») : le mode film, `&film`. Un robot (outils/filmer.mjs)
+   pilote le jeu par moteur/film.js ; ce crochet ne lui ouvre que des gestes qui existent déjà. Sans `&film`, rien ne change. */
+function ouvrirFilm() {
+  window.CABLAGE_FILM = {
+    ex: () => EX,
+    bornes: () => Object.keys(bornes),
+    borne: (ref) => bornes[ref] && { x: bornes[ref].x, y: bornes[ref].y },
+    poser(de, a, c) { if (c) choisirCouleur(c); const n = fils.length; creerFil(de, a); return fils.length > n ? fils[fils.length - 1] : null; },
+    vider() { fils = []; redessinerFils(); rafraichir(); },
+    eclairer: surbrillance, conducteur: montrerConducteur
+  };
+  const s = document.createElement('script'); s.src = 'moteur/film.js?v=dev'; document.head.appendChild(s);
+}
 charger(ID, (ex) => {
   if (!ex) { dire('Exercice « ' + ID + ' » introuvable.', 'ko', 'Lancez outils/qet-vers-exercice.py.'); return; }
   EX = ex;
@@ -1824,5 +1840,6 @@ charger(ID, (ex) => {
   }
   document.dispatchEvent(new Event('cablage-pret'));
   majAttente();
+  if (P.has('film')) ouvrirFilm();
 });
 })();

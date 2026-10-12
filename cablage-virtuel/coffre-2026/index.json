@@ -1658,6 +1658,78 @@
    "format": "docx",
    "fichier": "TP-Commande-GRILLE-PROFESSEUR.docx",
    "taille": 10789
+  },
+  {
+   "id": "d185",
+   "groupe": "cablage-14",
+   "exercice": "Câblage n° 14 : du bornier d'alimentation au moteur — sectionneur à précoupure, contacteur, relais thermique",
+   "titre": "Feuille de la vidéo : corrigé et fiche professeur",
+   "format": "pdf",
+   "fichier": "Cablage-armoire-PROFESSEUR.pdf",
+   "taille": 220348
+  },
+  {
+   "id": "d186",
+   "groupe": "cablage-14",
+   "exercice": "Câblage n° 14 : du bornier d'alimentation au moteur — sectionneur à précoupure, contacteur, relais thermique",
+   "titre": "Feuille de la vidéo : corrigé et fiche professeur",
+   "format": "docx",
+   "fichier": "Cablage-armoire-PROFESSEUR.docx",
+   "taille": 71817
+  },
+  {
+   "id": "d187",
+   "groupe": "cablage-14-commande",
+   "exercice": "Câblage n° 14 — la commande : précoupure, 95-96, marche-arrêt à auto-maintien, voyant défaut 97-98",
+   "titre": "Feuille de la vidéo : corrigé et fiche professeur",
+   "format": "pdf",
+   "fichier": "Cablage-armoire-PROFESSEUR.pdf",
+   "taille": 220348
+  },
+  {
+   "id": "d188",
+   "groupe": "cablage-14-commande",
+   "exercice": "Câblage n° 14 — la commande : précoupure, 95-96, marche-arrêt à auto-maintien, voyant défaut 97-98",
+   "titre": "Feuille de la vidéo : corrigé et fiche professeur",
+   "format": "docx",
+   "fichier": "Cablage-armoire-PROFESSEUR.docx",
+   "taille": 71817
+  },
+  {
+   "id": "d189",
+   "groupe": "cablage-14-voyant",
+   "exercice": "Câblage n° 14 — le voyant marche : le bloc additionnel du contacteur (53-54) et l'ordre des contacts",
+   "titre": "Feuille de la vidéo : corrigé et fiche professeur",
+   "format": "pdf",
+   "fichier": "Cablage-armoire-PROFESSEUR.pdf",
+   "taille": 220348
+  },
+  {
+   "id": "d190",
+   "groupe": "cablage-14-voyant",
+   "exercice": "Câblage n° 14 — le voyant marche : le bloc additionnel du contacteur (53-54) et l'ordre des contacts",
+   "titre": "Feuille de la vidéo : corrigé et fiche professeur",
+   "format": "docx",
+   "fichier": "Cablage-armoire-PROFESSEUR.docx",
+   "taille": 71817
+  },
+  {
+   "id": "d191",
+   "groupe": "cablage-14-relais",
+   "exercice": "Câblage n° 14 — variante : le relais auxiliaire KA1 pour le voyant marche",
+   "titre": "Feuille de la vidéo : corrigé et fiche professeur",
+   "format": "pdf",
+   "fichier": "Cablage-armoire-PROFESSEUR.pdf",
+   "taille": 220348
+  },
+  {
+   "id": "d192",
+   "groupe": "cablage-14-relais",
+   "exercice": "Câblage n° 14 — variante : le relais auxiliaire KA1 pour le voyant marche",
+   "titre": "Feuille de la vidéo : corrigé et fiche professeur",
+   "format": "docx",
+   "fichier": "Cablage-armoire-PROFESSEUR.docx",
+   "taille": 71817
   }
  ]
 }

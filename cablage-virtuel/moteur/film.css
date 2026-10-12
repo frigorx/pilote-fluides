@@ -1,0 +1,28 @@
+/* Le mode film (12/10/2026, moteur/film.js) : un plateau 16/9 — carte à gauche, platine à droite, bandeau en bas. */
+body.film .barre, body.film .consigne, body.film .nomenclature, body.film .outils, body.film .panneau .entete,
+body.film .bulle-vide, body.film .bulle-pose, body.film #visee, body.film #marque-inerweb, body.film #btn-affichage,
+body.film .bulle-affichage, body.film #petit-ecran { display: none !important; }
+body.film { background: #fff; }
+body.film .scene { position: fixed; left: 0; right: 0; top: 0; bottom: 120px; padding: 12px; gap: 12px;
+  grid-template-columns: 42% 1fr; grid-template-rows: 1fr; }
+body.film .panneau { box-shadow: none; }
+#film-bandeau { position: fixed; left: 0; right: 0; bottom: 0; height: 120px; display: flex; align-items: center; justify-content: center;
+  padding: 0 48px; background: #1B3A63; color: #fff; font: 700 40px 'Trebuchet MS', Calibri, Arial, sans-serif; text-align: center; }
+#film-bandeau.vide { color: transparent; }
+#film-filigrane { position: fixed; inset: 0; width: 100vw; height: 100vh; opacity: .1; pointer-events: none; z-index: 40; }
+#film-carton { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 24px; background: #1B3A63; color: #fff; font-family: 'Trebuchet MS', Calibri, Arial, sans-serif; text-align: center; }
+#film-carton[hidden] { display: none; }
+#film-carton h1 { margin: 0; font-size: 80px; }
+#film-carton p { margin: 0; font-size: 44px; color: #e8914a; }
+#carte svg .film-masque { font: bold 13px Calibri, Arial, sans-serif; fill: #fff; stroke: #e8914a; stroke-width: 7px; paint-order: stroke; }
+#carte svg .cb-nom.film-revele { fill: #e8914a; }
+#film-top { position: fixed; inset: 0; z-index: 99; background: #ff00ff; }
+#film-top[hidden] { display: none; }
+#film-question { position: fixed; left: 50%; top: 24px; transform: translateX(-50%); z-index: 55; max-width: 1500px; display: flex;
+  align-items: center; gap: 28px; padding: 22px 36px; background: #fff; border: 5px solid #e8914a; border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.18); font: 700 40px 'Trebuchet MS', Calibri, Arial, sans-serif; color: #1B3A63; }
+#film-question[hidden] { display: none; }
+#film-question p { margin: 0; }
+#film-question b { display: grid; place-items: center; flex: none; width: 76px; height: 76px; border-radius: 50%; background: #e8914a;
+  color: #fff; font-size: 44px; }

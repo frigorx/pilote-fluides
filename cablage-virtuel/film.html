@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Câbler une armoire, du bornier au moteur — le film</title>
+<!-- 12/10/2026 (Franck : « une version full explicative pour la station et YouTube, une version plus scolaire ») : les deux
+     films d'un seul bloc, découpés en chapitres. Vidéos : videos/ (720p, fabriquées par Documents/inerweb-video/
+     cablage-auto-maintien, outils/monter.py). Les chapitres viennent de renders/<version>-chapitres.txt. -->
+<style>
+  :root{--bleu:#1b3a63; --orange:#e8914a; --creme:#f7f1e7; --ligne:#d8dee6; --mut:#5d6b7c; --violet:#7a4fb3}
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--creme); color:#22303f; font:17px/1.45 Calibri, 'Segoe UI', Arial, sans-serif}
+  header{background:var(--bleu); color:#fff; padding:12px 18px; display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+  header a{color:#fff; text-decoration:none; font-size:22px}
+  header h1{margin:0; font:700 21px 'Trebuchet MS', sans-serif}
+  main{max-width:1200px; margin:0 auto; padding:16px}
+  .alerte{background:#fff; border:2px solid #c62828; border-left-width:8px; border-radius:8px; padding:8px 14px; margin:0 0 14px}
+  .onglets{display:flex; gap:8px; margin-bottom:10px}
+  .onglets button{font:inherit; font-weight:700; padding:9px 16px; border-radius:999px; border:2px solid var(--bleu); background:#fff; color:var(--bleu); cursor:pointer; min-height:44px}
+  .onglets button[aria-pressed="true"]{background:var(--bleu); color:#fff}
+  .onglets small{display:block; font-weight:400; font-size:13px}
+  .scene{display:grid; grid-template-columns:1fr 300px; gap:16px; align-items:start}
+  video{width:100%; background:#000; border-radius:10px; display:block}
+  ol.chap{list-style:none; margin:0; padding:0; background:#fff; border:1px solid var(--ligne); border-radius:10px; overflow:hidden}
+  ol.chap button{display:flex; gap:10px; width:100%; text-align:left; font:inherit; padding:9px 12px; border:0; border-bottom:1px solid var(--ligne); background:#fff; cursor:pointer; min-height:44px}
+  ol.chap button:hover{background:#f5f8fc}
+  ol.chap button[aria-current="true"]{background:var(--bleu); color:#fff}
+  ol.chap time{font-variant-numeric:tabular-nums; color:var(--mut); min-width:44px}
+  ol.chap button[aria-current="true"] time{color:#fff}
+  .liens{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0; padding:0; list-style:none}
+  .liens a{display:inline-block; background:#fff; border:2px solid var(--violet); color:var(--violet); font-weight:700; text-decoration:none; padding:8px 14px; border-radius:8px}
+  p.texte{color:var(--mut); margin:.6em 0 0}
+  @media (max-width:860px){.scene{grid-template-columns:1fr}}
+</style>
+<script defer src="../moteur/retour-accueil.js?v=3c25e82f03"></script>
+</head>
+<body>
+<header><a href="index.html" title="Le réseau des stations">‹</a><h1>Câbler une armoire, du bornier au moteur</h1></header>
+<main>
+  <p class="alerte"><b>Sécurité.</b> L’élève câble la platine hors tension, côté armoire seulement. Le réseau, le moteur et le pupitre (côté terrain) se raccordent dans l’armoire de sécurité, par le professeur.</p>
+  <div class="onglets" role="group" aria-label="La version du film">
+    <button type="button" data-v="formation" aria-pressed="true">Formation<small>tout expliqué, pas à pas</small></button>
+    <button type="button" data-v="revision" aria-pressed="false">Révision<small>12 questions, puis la réponse</small></button>
+  </div>
+  <div class="scene">
+    <div><video id="video" controls preload="metadata" playsinline></video>
+      <p class="texte" id="texte"></p></div>
+    <ol class="chap" id="chap" aria-label="Les chapitres"></ol>
+  </div>
+  <ul class="liens">
+    <li><a href="documents/video-armoire/Cablage-armoire-ELEVE.pdf" download>La feuille de la vidéo (PDF)</a></li>
+    <li><a href="documents/video-armoire/Cablage-armoire-TP.zip" download>📦 Le TP complet (ZIP)</a></li>
+    <li><a href="index.html#n14">Câbler le n° 14 dans le Câblage virtuel</a></li>
+    <li><a href="documents-professeur.html#cablage-14">Documents professeur (code enseignant)</a></li>
+  </ul>
+</main>
+<script>
+// les chapitres de chaque version (secondes depuis le début) : recopiés de renders/<version>-chapitres.txt
+const FILMS = {
+  formation: { src: "videos/armoire-formation.mp4", texte: "Tout est expliqué et câblé, les trois phases comprises : pour apprendre, à la station ou chez soi.",
+    chapitres: [/*FORMATION*/ [0, "Lire les repères"], [100, "Du bornier d'alimentation au sectionneur"], [184, "Du sectionneur au contacteur"], [244, "Du contacteur au bornier de puissance"], [326, "Alimenter la commande"], [399, "Marche, arrêt, auto-maintien"], [498, "Le voyant défaut"], [550, "Le voyant marche : le bloc additionnel"], [641, "Variante : le relais auxiliaire KA1"]] },
+  revision: { src: "videos/armoire-revision.mp4", texte: "Chaque question est écrite et dite, un compte à rebours laisse le temps de répondre, puis la réponse s’affiche.",
+    chapitres: [/*REVISION*/ [0, "Lire les repères"], [115, "Du bornier d'alimentation au sectionneur"], [209, "Du sectionneur au contacteur"], [286, "Du contacteur au bornier de puissance"], [389, "Alimenter la commande"], [485, "Marche, arrêt, auto-maintien"], [600, "Le voyant défaut"], [679, "Le voyant marche : le bloc additionnel"], [792, "Variante : le relais auxiliaire KA1"]] }
+};
+const $ = (s) => document.querySelector(s), video = $("#video");
+let version = "formation";
+const hms = (s) => Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0");
+function choisir(v, chapitre) {
+  version = v; const F = FILMS[v];
+  document.querySelectorAll(".onglets button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
+  if (!video.src.endsWith(F.src)) video.src = F.src;
+  $("#texte").textContent = F.texte;
+  $("#chap").innerHTML = F.chapitres.map(([t, titre], i) =>
+    '<li><button type="button" data-t="' + t + '" data-i="' + i + '"><time>' + hms(t) + '</time><span>' + i + ' · ' + titre + '</span></button></li>').join("");
+  document.querySelectorAll("#chap button").forEach((b) => b.addEventListener("click", () => { video.currentTime = +b.dataset.t; video.play(); }));
+  if (chapitre != null && F.chapitres[chapitre]) {
+    const aller = () => { video.currentTime = F.chapitres[chapitre][0]; };
+    if (video.readyState >= 1) aller(); else video.addEventListener("loadedmetadata", aller, { once: true });
+  }
+}
+video.addEventListener("timeupdate", () => {
+  const ch = FILMS[version].chapitres; let k = 0;
+  ch.forEach(([t], i) => { if (video.currentTime >= t - 0.2) k = i; });
+  document.querySelectorAll("#chap button").forEach((b) => b.setAttribute("aria-current", String(+b.dataset.i === k)));
+});
+document.querySelectorAll(".onglets button").forEach((b) => b.addEventListener("click", () => choisir(b.dataset.v)));
+const m = /^#ch(\d)$/.exec(location.hash);
+choisir("formation", m ? +m[1] : null);
+</script>
+<script src="moteur/marque.js?v=20261012-1053" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+</body>
+</html>

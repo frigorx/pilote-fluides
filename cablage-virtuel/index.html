@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Câblage virtuel — le réseau</title>
-<link rel="stylesheet" href="moteur/cablage.css?v=20261011-1606">
-<link rel="stylesheet" href="moteur/accueil.css?v=20261011-1606">
+<link rel="stylesheet" href="moteur/cablage.css?v=20261012-1053">
+<link rel="stylesheet" href="moteur/accueil.css?v=20261012-1053">
 <script defer src="../moteur/retour-accueil.js?v=3c25e82f03"></script>
 </head>
 <body class="reseau">
@@ -25,13 +25,13 @@
     <div class="tete">
       <div>
         <h1>Lire un schéma, câbler à l'écran, puis pour de vrai.</h1>
-        <p>Cinq lignes, de la maison au niveau avancé, en électrotechnique et en froid. Chaque station est un schéma à câbler.</p>
+        <p>Six lignes, de la maison au niveau avancé, en électrotechnique et en froid, et une armoire câblée pas à pas, en vidéo. Chaque station est un schéma à câbler.</p>
       </div>
       <a class="cta" id="cta" href="#"></a>
     </div>
     <p class="bandeau-ligne" id="bandeau-ligne" hidden></p>
     <p class="glisser" aria-hidden="true">Faites glisser le plan vers la gauche : les stations sont à droite →</p>
-    <div class="plan" id="plan"><svg id="carte" viewBox="0 0 1150 560" role="group" aria-label="Le réseau des stations de câblage"></svg></div>
+    <div class="plan" id="plan"><svg id="carte" viewBox="0 0 1150 660" role="group" aria-label="Le réseau des stations de câblage"></svg></div>
     <div class="legende" id="legende">
       <span><svg width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/></svg>à faire</span>
       <span><svg width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="#1b3a63"/><text x="11" y="15" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Calibri,Arial,sans-serif">3</text></svg>faite : le chiffre est le niveau obtenu au câblage (0 à 4)</span>
@@ -75,10 +75,10 @@
     </div>
   </section>
 </main>
-<script>window.CABLAGE_VERSION = '20261011-1606';</script>
-<script src="exercices/index.js?v=20261011-1606"></script>
-<script src="moteur/reseau.js?v=20261011-1606"></script>
-<script src="moteur/documents.js?v=20261011-1606"></script>
+<script>window.CABLAGE_VERSION = '20261012-1053';</script>
+<script src="exercices/index.js?v=20261012-1053"></script>
+<script src="moteur/reseau.js?v=20261012-1053"></script>
+<script src="moteur/documents.js?v=20261012-1053"></script>
 <script>
 (function(){
 'use strict';
@@ -262,7 +262,7 @@ const compte = {};
 function compter(id) {   // le nombre de fils : les étapes de l'exercice, chargé à la demande (comme charger() de moteur/cablage.js)
   return new Promise(ok => {
     if (id in compte) return ok(compte[id]);
-    const fini = ex => { compte[id] = ex && Array.isArray(ex.etapes) ? ex.etapes.length : null; if (window.CABLAGE_EXERCICES) delete window.CABLAGE_EXERCICES[id]; ok(compte[id]); };
+    const fini = ex => { compte[id] = ex && Array.isArray(ex.etapes) ? ex.etapes.length - (ex.liaisons_terrain || []).length : null;   /* 12/10 : le côté terrain se raccorde dans l’armoire de sécurité, l’élève ne le pose pas */ if (window.CABLAGE_EXERCICES) delete window.CABLAGE_EXERCICES[id]; ok(compte[id]); };
     if (window.CABLAGE_EXERCICES && window.CABLAGE_EXERCICES[id]) return fini(window.CABLAGE_EXERCICES[id]);
     const s = document.createElement('script');
     s.src = 'exercices/' + encodeURIComponent(id) + '.js' + (window.CABLAGE_VERSION ? '?v=' + window.CABLAGE_VERSION : '');
@@ -284,7 +284,7 @@ function remplirStation() {
   $('#st-niv').textContent = s.niveau; $('#st-niv').hidden = depart;   // le Départ : « Départ · Départ » disait deux fois la même chose
   $('#st-titre').textContent = s.titre; $('#st-sous').textContent = s.sous;
   $('#st-apprend').textContent = s.apprend;
-  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20261011-1606';
+  const img = $('#st-img'); img.src = 'apercus/' + encodeURIComponent(ex) + '.svg?v=20261012-1053';
   img.alt = 'Le schéma : ' + R.titre(ex, s.titre);
   // les fils à poser
   const faits = $('#st-faits'), mien = ++jeton;
@@ -355,6 +355,11 @@ function remplirStation() {
     $('#st-liens').innerHTML = '<li><a href="documents-professeur.html#' + encodeURIComponent(ex) + '">Documents professeur (code enseignant)</a></li>' +
       '<li><a href="https://inerweb.fr/electrorezo/" target="_blank" rel="noopener">Revoir les appareils sur ÉlectroRézo</a></li>';
   }
+  // 12/10 (Franck : la vidéo « Câbler une armoire ») : une station peut porter son film, la feuille de la vidéo et le TP complet
+  if (s.film || s.feuille || s.zip) $('#st-liens').insertAdjacentHTML('afterbegin',
+    (s.film ? '<li><a href="' + s.film + '">🎬 Le film : câbler une armoire, pas à pas</a></li>' : '') +
+    (s.feuille ? '<li><a href="' + s.feuille + '" download>La feuille de la vidéo (PDF)</a></li>' : '') +
+    (s.zip ? '<li><a href="' + s.zip + '" download>📦 Le TP complet (ZIP)</a></li>' : ''));
 }
 $$('#st-quais button').forEach(b => b.addEventListener('click', () => { quai = b.dataset.q; remplirStation(); }));
 $$('.segs button').forEach(b => b.addEventListener('click', () => {
@@ -419,6 +424,6 @@ window.addEventListener('pageshow', e => { if (e.persisted) route(); });   // re
 route();
 })();
 </script>
-<script src="moteur/marque.js?v=20261011-1606" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
+<script src="moteur/marque.js?v=20261012-1053" data-cartouche="Édu" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>
