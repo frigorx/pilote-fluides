@@ -65,7 +65,12 @@
       ? `<g class="${anime ? 'cz-bras' : ''}" ${fini ? 'transform="rotate(90)"' : ''}>${bras('')}${tube(`M0 -${RT} H200`)}</g>`
       : etat === 'rabattre' ? `<g class="cz-rabat">${bras('')}</g>`
       : `<g ${['lever', 'engager', 'hors-crochet'].includes(etat) ? 'transform="rotate(-25) translate(0 -22)"' : ''}>${bras(trait)}</g>`;
-    const tubeDroit = etat === 'lever' ? '' : tube(`M-240 ${yTube} H${tourne ? 0 : 200}`);
+    /* A et B (station 4-1, 12/10) : le sommet déjà cintré est du côté du crochet, sa branche loin de la forme ;
+       le bout libre part avec le bras (pour A, on a retourné la cintreuse) */
+    const sommetAuCrochet = etat === 'placer-0-a' || etat === 'placer-0-b';
+    const tubeDroit = etat === 'lever' ? '' : sommetAuCrochet
+      ? tube(`M200 ${yTube} H-145 A60 60 0 0 1 -205 ${yTube - 60} V${yTube - 130}`)
+      : tube(`M-240 ${yTube} H${tourne ? 0 : 200}`);
     return `${style}
       <g transform="translate(${C[0]},${C[1]})">
         <path d="M${XC} 0 H0 M${XC} -${RT} V228" stroke="${NAVY}" stroke-width="30" stroke-linecap="round"/>
@@ -89,16 +94,18 @@
   CuivFigures.ajouter('cintreuse', (etat, { cadre, etiquette, verdict }) => {
     const [cx, cy] = C;
     const crochet = (tx, ty) => etiquette(cx + XC, cy - RT - 16, tx, ty, 'Crochet fixe');
-    /* station 4-1, méthode du 11/10 soir : le DÉBUT du coude (S, A ou B) pile en face du 0 du guide */
+    /* station 4-1, méthode « trait au 0 » : le trait (S, A ou B) pile en face du 0 du guide ; A et B, le sommet au crochet */
     const auZero = { 'placer-0-s': ['S pile en face', 'du 0 du guide :', 'le coude du sommet', 'part de S'],
-      'placer-0-a': ['A pile en face', 'du 0 du guide,', 'tube retourné,', 'côté collet au crochet'],
-      'placer-0-b': ['B pile en face', 'du 0 du guide,', 'tube dans le même', 'sens que pour A'] }[etat];
+      'placer-0-a': ['A pile en face', 'du 0 du guide,', 'cintreuse retournée :', 'le sommet au crochet'],
+      'placer-0-b': ['B pile en face', 'du 0 du guide,', 'tube retourné :', 'le sommet au crochet'] }[etat];
     if (auZero) return cadre(`${outil(etat)}
       ${etiquette(cx - 2, cy - RT - 6, cx - 58, cy - RT - 62, auZero[0][0])}
       <text x="560" y="300" class="cz-txt">${auZero[0]}</text>
       <text x="560" y="332" class="cz-pt">${auZero[1]}</text>
       <text x="560" y="360" class="cz-pt">${auZero[2]}</text>
       <text x="560" y="388" class="cz-pt">${auZero[3]}</text>
+      ${etat === 'placer-0-s' ? '' : `<text x="118" y="60" class="cz-pt">le sommet, déjà cintré</text>
+      <text x="470" y="222" class="cz-pt">${etat === 'placer-0-a' ? 'vers le collet →' : 'bout libre →'}</text>`}
       <text x="560" y="470" class="cz-pt">schéma de principe</text>`, 'Trait ' + auZero[0][0] + ' sur le 0');
     if (etat === 'placer-45') return cadre(`${outil(etat)}
       ${etiquette(cx + X45, cy - RT, cx + X45 + 62, cy - RT + 60, 'M')}

@@ -68,8 +68,9 @@
     const dev = 2 * (RC * Math.PI / 4) + RC * Math.PI / 2 + 2 * rampe;
     const emprise = 2 * (hp + RC * T22);
     const xm = (dev - emprise) / 2, ma = RC * Math.PI / 4 + rampe + RC * Math.PI / 8;
-    /* méthode « trait au 0 » (11/10 soir) : le DÉBUT de chaque coude, côté collet, mesuré depuis X (négatif = côté collet) */
-    return { H, XM: Math.round(xm), MA: Math.round(ma), S: Math.round(xm - RC * Math.PI / 4), A: Math.round(xm - ma - RC * Math.PI / 8), B: Math.round(xm + ma - RC * Math.PI / 8) };
+    /* méthode « trait au 0 » (11/10 soir), mesuré depuis X (négatif = côté collet) : S = DÉBUT du sommet, côté collet ;
+       A et B = BORD du coude CÔTÉ SOMMET (12/10 : A se cintre cintreuse retournée, le sommet au crochet) */
+    return { H, XM: Math.round(xm), MA: Math.round(ma), S: Math.round(xm - RC * Math.PI / 4), A: Math.round(xm - ma + RC * Math.PI / 8), B: Math.round(xm + ma - RC * Math.PI / 8) };
   };
   const tableauChapeau = () => {
     let avant = -1;
@@ -142,7 +143,7 @@
       return cadre(`<text x="400" y="38" text-anchor="middle" style="font:800 24px Calibri,'Segoe UI',Arial,sans-serif;fill:#10233c">Tube 1/4″ · cintreuse 1/4″ (rayon 9/16″ = ${RC.toFixed(1).replace('.', ',')} mm)</text>
         ${g}
         <text x="400" y="${bas + 32}" text-anchor="middle" class="cz-pt">Ligne surlignée : la planche de l’atelier, d = ${OBS - TUB}</text>
-        <text x="400" y="${bas + 60}" text-anchor="middle" class="cz-pt">En mm. Les traits se mesurent depuis X : chacun est le début d’un coude.</text>`, 'Le tableau du chapeau');
+        <text x="400" y="${bas + 60}" text-anchor="middle" class="cz-pt">En mm. Les traits se mesurent depuis X et se posent sur le 0.</text>`, 'Le tableau du chapeau');
     }
     if (etat === 'repere-x') {
       /* vue de côté : l'obstacle sur la planche, le tube droit posé dessus, le collet vissé à gauche */
@@ -169,7 +170,7 @@
     }
     if (etat === 'traits') {
       /* pas à l'échelle : la lisibilité d'abord. Le collet est à gauche ; A du côté du collet, M du côté opposé à X */
-      const ex = exemple(), yT = 250, xc = 36, xA = 170, xS = 400, xX = 470, xB = 720, l1 = yT + 64, l2 = yT + 124;
+      const ex = exemple(), yT = 250, xc = 36, xA = 290, xS = 400, xX = 470, xB = 720, l1 = yT + 64, l2 = yT + 124;
       const temoin = (x, bas) => `<line x1="${x}" y1="${yT + 23}" x2="${x}" y2="${bas}" stroke="#1b3a63" stroke-width="1.4" stroke-dasharray="6 5"/>`;
       const cote = (x1, x2, yc, texte) => `<line x1="${x1}" y1="${yc}" x2="${x2}" y2="${yc}" class="cz-cote"/>
         <text x="${(x1 + x2) / 2}" y="${yc + 30}" text-anchor="middle" class="cz-txt">${texte}</text>`;
@@ -179,7 +180,7 @@
         ${cote(xS, xX, l1, `${-ex.S}`)}${cote(xA, xX, l2, `${-ex.A}`)}${cote(xX, xB, l2, `${ex.B}`)}
         ${etiquette(xc + 46, yT - 25, xc + 24, 150, 'collet', 'cz-txt', 'start')}
         <text x="400" y="44" text-anchor="middle" class="cz-txt">Zéro sur X : A et S côté collet, B de l’autre côté</text>
-        <text x="400" y="76" text-anchor="middle" class="cz-pt">en mm ; chaque trait est le début d’un coude</text>`, 'Tracer A, S et B depuis X');
+        <text x="400" y="76" text-anchor="middle" class="cz-pt">en mm ; chaque trait se posera sur le 0 de la cintreuse</text>`, 'Tracer A, S et B depuis X');
     }
     if (etat === 'central') {
       /* seul le coude central est fait : deux bras droits de part et d'autre */

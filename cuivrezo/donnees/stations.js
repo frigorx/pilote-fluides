@@ -1450,6 +1450,9 @@ CUIVREZO.stations.push({
    · X se MESURE : du bout du cône du raccord à l'axe de l'obstacle, reporté sur le tube depuis le bout évasé ;
    · on trace le DÉBUT de chaque coude (S sommet, A et B côtés), côté collet, depuis X (un seul zéro) ; chaque trait
      se pose PILE sur le 0 du guide, trait contre trait ; le tableau donne H et les trois traits par côté.
+   12/10 (F. Henninot : « gros problème de faisabilité ») : sommet d'abord, collet au crochet, le 90° tombait sous le
+     bras pour A. On RETOURNE LA CINTREUSE pour A (sommet au crochet, collet côté bras) ; le coude se formant du 0 vers
+     le bras, A devient le bord du coude CÔTÉ SOMMET (planche : 26 au lieu de 37). B : tube retourné, collet au crochet.
    Ancienne méthode (avant le soir du 11/10) : coude central d'abord, M au milieu (repère à la moitié de l'angle), puis deux coudes de
    moitié en sens inverse. Remplace la décision du 30/09 « distance axe–A donnée par le plan, pas de formule »
    pour CE tube et CET outil seulement (DECISIONS-2026-09-30.md, ajout du 11/10). Tolérance des fiches : ± 2 mm. */
@@ -1485,21 +1488,21 @@ CUIVREZO.stations.push({
       pourquoi: 'Le dessous du tube doit passer 10 mm au-dessus de l’obstacle : le chapeau monte donc de d, plus 10 mm de jeu, plus le diamètre du tube (6 mm). Le tableau a déjà fait ce calcul.',
       figure: { svg: 'chapeau', etat: 'mesure' }, clip: 'clips/4-1/01-mesurer.mp4',
       narration: 'Tout commence par une mesure. Posez votre tube dans son collier, à côté de l’obstacle. Avec le réglet, mesurez depuis la planche jusqu’au dessus de l’obstacle, puis jusqu’au dessus de votre tube. Faites la différence : c’est le dépassement, que l’on appelle d. Sur la planche de l’atelier, le multicouche monte à trente millimètres, le tube à vingt-trois : d vaut sept millimètres.' },
-    { titre: 'Lire la ligne du tableau', texte: 'Cherchez la ligne où tombe d. Elle donne H, la hauteur du chapeau, puis la place de trois traits mesurés depuis X. Pour d = 7, ligne « 4 à 8 » : H = 25 ; côté collet, A à 37 et S à 2 ; de l’autre côté, B à 44.',
+    { titre: 'Lire la ligne du tableau', texte: 'Cherchez la ligne où tombe d. Elle donne H, la hauteur du chapeau, puis la place de trois traits mesurés depuis X. Pour d = 7, ligne « 4 à 8 » : H = 25 ; côté collet, A à 26 et S à 2 ; de l’autre côté, B à 44.',
       pointCle: 'Une ligne : la hauteur H, puis trois traits depuis X.',
       pourquoi: 'Le tableau vaut pour le tube 1/4″ et sa cintreuse (rayon 9/16″). Avec un autre tube ou un autre outil, les nombres changent : demandez le tableau qui va avec.',
       figure: { svg: 'chapeau', etat: 'tableau' }, clip: 'clips/4-1/02-tableau.mp4',
-      narration: 'Le tableau fait le calcul à votre place. Cherchez la ligne où tombe votre dépassement : pour sept millimètres, c’est la ligne quatre à huit. Elle donne d’abord la hauteur du chapeau, H : vingt-cinq. Puis la place de trois traits, mesurés depuis X. Du côté du collet : A à trente-sept millimètres, et S à deux millimètres. De l’autre côté : B à quarante-quatre millimètres. Attention : ce tableau ne vaut que pour le tube un quart de pouce et sa cintreuse.' },
+      narration: 'Le tableau fait le calcul à votre place. Cherchez la ligne où tombe votre dépassement : pour sept millimètres, c’est la ligne quatre à huit. Elle donne d’abord la hauteur du chapeau, H : vingt-cinq. Puis la place de trois traits, mesurés depuis X. Du côté du collet : A à vingt-six millimètres, et S à deux millimètres. De l’autre côté : B à quarante-quatre millimètres. Attention : ce tableau ne vaut que pour le tube un quart de pouce et sa cintreuse.' },
     { titre: 'Mesurer et tracer X', texte: 'Premier collet fait. Sur la planche, mesurez de la base du cône du raccord, là où s’arrêtera le bord du collet, jusqu’à l’axe de l’obstacle. Reportez cette cote sur le tube, depuis son bout évasé : trait X, fin, tout le tour (feutre posé, tube tourné d’un tour).',
       pointCle: 'X : l’axe de l’obstacle, reporté depuis le collet.',
       pourquoi: 'Une cote se reporte au millimètre. Un tube posé sur l’obstacle et visé à l’œil peut décaler X de plusieurs millimètres.',
       figure: { svg: 'chapeau', etat: 'repere-x' }, clip: 'clips/4-1/03-x.mp4',
       narration: 'Votre premier collet est fait. Sur la planche, mesurez depuis la base du cône du raccord, là où s’arrêtera le bord du collet, jusqu’à l’axe de l’obstacle. Reportez cette cote sur le tube, depuis son bout évasé : c’est le trait X. Un trait fin au feutre, tout le tour : feutre posé, faites tourner le tube d’un tour, comme à la station un point deux.' },
-    { titre: 'Tracer A, S et B depuis X', texte: 'Tube à plat, zéro du mètre sur X. Du côté du collet : A à 37, puis S à 2. De l’autre côté : B à 44. Chaque trait fait le tour du tube.',
-      pointCle: 'Un seul zéro, sur X ; chaque trait marque le début d’un coude.',
-      pourquoi: 'Chaque trait se posera sur le 0 de la cintreuse : le coude part de là. Tout mesurer depuis X évite d’ajouter les erreurs d’un trait à l’autre.',
+    { titre: 'Tracer A, S et B depuis X', texte: 'Tube à plat, zéro du mètre sur X. Du côté du collet : A à 26, puis S à 2. De l’autre côté : B à 44. Chaque trait fait le tour du tube.',
+      pointCle: 'Un seul zéro, sur X ; chaque trait se posera sur le 0 de la cintreuse.',
+      pourquoi: 'S marque le début du sommet ; A et B, le bord de leur coude du côté du sommet. Tout mesurer depuis X évite d’ajouter les erreurs d’un trait à l’autre.',
       figure: { svg: 'chapeau', etat: 'traits' }, clip: 'clips/4-1/04-m-a-b.mp4',
-      narration: 'Posez le tube à plat et mettez le zéro du mètre sur X. Du côté du collet, tracez A à trente-sept millimètres, puis S à deux millimètres. De l’autre côté, tracez B à quarante-quatre millimètres. Chaque trait marque le début d’un coude : c’est lui qui se posera sur le zéro de la cintreuse. Tout se mesure depuis X, pour ne pas ajouter les erreurs d’un trait à l’autre.' },
+      narration: 'Posez le tube à plat et mettez le zéro du mètre sur X. Du côté du collet, tracez A à vingt-six millimètres, puis S à deux millimètres. De l’autre côté, tracez B à quarante-quatre millimètres. S marque le début du sommet ; A et B, le bord de leur coude du côté du sommet. Chacun se posera sur le zéro de la cintreuse. Tout se mesure depuis X, pour ne pas ajouter les erreurs d’un trait à l’autre.' },
     { titre: 'Placer S sur le 0', texte: 'Bras levé, engagez le tube sous le crochet, le côté collet au crochet. Rabattez le bras. Faites glisser le tube jusqu’à ce que S soit pile en face du 0 du guide.',
       pointCle: 'S pile en face du 0 : le coude part de S.',
       pourquoi: 'Le 0 du guide marque le point où le coude commence. Trait contre trait, il n’y a rien à estimer.',
@@ -1510,16 +1513,16 @@ CUIVREZO.stations.push({
       pourquoi: 'Le coude part de S : son milieu tombe au-dessus de l’axe de l’obstacle, là où le tableau l’a placé.',
       figure: { composant: 'cuivre-3d', attributs: { piece: 'chapeau', hauteur: '25', obstacle: '16', diametre: '6.35', rc: '14.3', angle: '54' } }, clip: 'clips/4-1/06-sommet.mp4',
       narration: 'Tirez le bras lentement, d’un mouvement continu, sans à-coup. Le zéro du bras lit les degrés sur la forme : quand il arrive en face de quatre-vingt-dix, arrêtez. Le coude du sommet est fait.' },
-    { titre: 'Cintrer A à 45°, tube retourné', texte: 'Sortez le tube et retournez-le d’un demi-tour. Côté collet au crochet, A pile en face du 0 du guide. Cintrez : arrêt quand le 0 du bras arrive en face de 45. Posez la pièce à plat pour vérifier.',
-      pointCle: 'Tube retourné, A sur le 0 : ce coude tourne dans l’autre sens.',
-      pourquoi: 'Chaque coude de côté fait la moitié du sommet, en sens inverse : il ramène la branche à l’horizontale.',
+    { titre: 'Cintrer A à 45°, cintreuse retournée', texte: 'Sortez le tube. Retournez la cintreuse : le sommet au crochet, le collet du côté du bras ; le tube ne tourne pas sur lui-même. A pile en face du 0 du guide. Cintrez : arrêt quand le 0 du bras arrive en face de 45. Posez la pièce à plat pour vérifier.',
+      pointCle: 'Cintreuse retournée, sommet au crochet, A sur le 0.',
+      pourquoi: 'Collet au crochet, le coude du sommet viendrait sous le bras et bloquerait la cintreuse. Retournée, elle garde le sommet au crochet ; le coude part de A vers le collet et ramène la branche à l’horizontale.',
       figure: { svg: 'cintreuse', etat: 'placer-0-a' }, clip: 'clips/4-1/07-coude-a.mp4',
-      narration: 'Premier coude de côté. Sortez le tube et retournez-le d’un demi-tour sur lui-même : ce coude tourne dans l’autre sens que le sommet. Le côté du collet au crochet, placez le trait A pile en face du zéro du guide. Cintrez, et arrêtez quand le zéro du bras arrive en face de quarante-cinq. Posez la pièce à plat pour vérifier avant de continuer.' },
-    { titre: 'Cintrer B pareil', texte: 'Même geste sur B : tube dans le même sens que pour A, B pile en face du 0, arrêt au 45.',
-      pointCle: 'B est le jumeau de A.',
-      pourquoi: 'Deux coudes identiques, partis chacun de leur trait : c’est ce qui remet les deux branches sur la même ligne.',
+      narration: 'Premier coude de côté. Sortez le tube, et cette fois, retournez la cintreuse : le sommet va au crochet, le collet part du côté du bras. Le tube, lui, ne tourne pas sur lui-même. Si vous mettiez le collet au crochet, le coude du sommet viendrait sous le bras et bloquerait tout. Placez le trait A pile en face du zéro du guide. Cintrez, et arrêtez quand le zéro du bras arrive en face de quarante-cinq. Posez la pièce à plat pour vérifier avant de continuer.' },
+    { titre: 'Cintrer B à 45°, tube retourné', texte: 'Remettez la cintreuse à l’endroit et retournez le tube d’un demi-tour sur lui-même. Côté collet au crochet : le sommet est de ce côté. B pile en face du 0, arrêt au 45.',
+      pointCle: 'B est le jumeau de A : le sommet au crochet.',
+      pourquoi: 'Deux coudes identiques, posés chacun sur le 0 depuis le côté du sommet : c’est ce qui remet les deux branches sur la même ligne.',
       figure: { svg: 'cintreuse', etat: 'placer-0-b' }, clip: 'clips/4-1/08-coude-b.mp4',
-      narration: 'Même geste sur B : le tube dans le même sens que pour A, le trait B pile en face du zéro, arrêt au quarante-cinq. Si les deux coudes de côté sont identiques, les deux branches se retrouvent sur la même ligne.' },
+      narration: 'Dernier coude. Remettez la cintreuse à l’endroit et retournez le tube d’un demi-tour sur lui-même. Le côté du collet au crochet : le sommet est de ce côté. Le trait B pile en face du zéro, arrêt au quarante-cinq. Si les deux coudes de côté sont identiques, les deux branches se retrouvent sur la même ligne.' },
     { titre: 'Présenter : le sommet centré', texte: 'Revissez le tube sur son collet, posé sur sa ligne. Regardez de face : le sommet tombe juste au-dessus du milieu de l’obstacle, à 2 mm près. Le réglet glissé sous le sommet : 10 mm au moins.',
       pointCle: 'Sommet au-dessus du milieu de l’obstacle : le chapeau est centré.',
       pourquoi: 'C’est la preuve que X était bien reporté et les traits au bon endroit.',
