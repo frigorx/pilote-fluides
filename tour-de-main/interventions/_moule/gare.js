@@ -78,20 +78,40 @@
       .map(([x, y]) => { const p = svg.createSVGPoint(); p.x = x; p.y = y; return p.matrixTransform(m); });
     return (boites[id] = { x0: Math.min(...pts.map(p => p.x)), y0: Math.min(...pts.map(p => p.y)), x1: Math.max(...pts.map(p => p.x)), y1: Math.max(...pts.map(p => p.y)) });
   }
+  /* Audit animation (15/10/2026) : d'une étape à l'autre, le cadrage GLISSE vers l'appareil du geste au lieu
+     de sauter (l'élève suit où l'on va) ; mouvement coupé (interrupteur « Animations ») : recadrage direct. */
+  let dernierCadre = null;
+  const calme = () => !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  function viser(svg, vb) {
+    const fin = String(vb).trim().split(/[\s,]+/).map(Number), debut = dernierCadre;
+    dernierCadre = fin;
+    if (!debut || calme() || debut.join(" ") === fin.join(" ")) { svg.setAttribute("viewBox", fin.join(" ")); return; }
+    const t0 = performance.now(), D = 750;
+    const pas = t => {
+      const k = Math.min(1, (t - t0) / D), q = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      svg.setAttribute("viewBox", debut.map((a, i) => a + (fin[i] - a) * q).join(" "));
+      if (k < 1 && svg.isConnected) requestAnimationFrame(pas);
+    };
+    pas(t0);
+  }
   function recadrer(svg, ids) {
-    if (!ids || !ids.length) { svg.setAttribute("viewBox", G.dessin.vue); return; }
+    if (!ids || !ids.length) { viser(svg, G.dessin.vue); return; }
     const bs = ids.map(id => boite(svg, id)).filter(Boolean); if (!bs.length) return;
     const x0 = Math.min(...bs.map(b => b.x0)) - 20, y0 = Math.min(...bs.map(b => b.y0)) - 20;
     const x1 = Math.max(...bs.map(b => b.x1)) + 20, y1 = Math.max(...bs.map(b => b.y1)) + 20;
-    svg.setAttribute("viewBox", [x0, y0, x1 - x0, y1 - y0].join(" "));
+    viser(svg, [x0, y0, x1 - x0, y1 - y0].join(" "));
   }
   function poserDessin(fig, e, entier) {
     fig.insertAdjacentHTML("beforeend", DESSIN);
     const svg = fig.querySelector("svg");
     if (!svg) return document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.removeAttribute("id");
+    if (dernierCadre) svg.setAttribute("viewBox", dernierCadre.join(" "));   // repart du cadrage précédent (pas d'éclair)
     svg.setAttribute("aria-label", "Le poste : " + (entier ? "vue d'ensemble" : e.verbe));
     if (G.dessin.appliquer) G.dessin.appliquer(svg, e, ctx());
+    /* « Au poste » : l'appareil du geste est signalé (halo, gare.css). Pas dans « Je m'entraîne » : l'élève le cherche. */
+    const cible = !entier && e.cible && svg.querySelector("#" + CSS.escape(e.cible));
+    if (cible) cible.classList.add("cible-poste");
     requestAnimationFrame(() => recadrer(svg, entier ? null : e.cadre));
     return svg;
   }
