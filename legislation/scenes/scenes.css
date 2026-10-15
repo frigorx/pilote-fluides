@@ -27,3 +27,17 @@ figure.scene[data-scene-branche] .choix button.primary { flex:0 1 auto; backgrou
 figure.scene[data-scene-branche] .choix button:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
 figure.scene[data-scene-branche] .legende { margin:10px 16px 0; font-size:19px; line-height:1.5; color:var(--txt); }
 figure.scene[data-scene-branche] .legende:last-child { margin-bottom:14px; color:var(--mut); }
+
+/* Audit animation (15/10/2026) — sur un écran d'ordinateur, le dessin animé d'un écran de cours passe à droite
+   du texte, visible d'emblée avec la narration qui le décrit : dans une colonne unique de 1 000 px, il tombait
+   sous le pli (0 à 20 % de l'écran). Il reste collé en haut pendant qu'on lit. Les écrans de question gardent
+   leur colonne ; téléphone et impression ne changent pas. */
+@media screen and (min-width: 1100px) {
+  .page:has(.slide.active:not(.question)) { max-width: 1340px; }
+  .slide.active:not(.question):has(> figure:not(.vignette)) {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); column-gap: 32px; align-items: start;
+  }
+  .slide.active:not(.question):has(> figure:not(.vignette)) > * { grid-column: 1; }
+  .slide.active:not(.question) > figure:not(.vignette) { grid-column: 2; grid-row: 1 / span 40; position: sticky; top: 16px; margin: 0; }
+  .slide.active:not(.question) > figure:not(.vignette) img { max-height: calc(100vh - 200px); object-fit: contain; }
+}
