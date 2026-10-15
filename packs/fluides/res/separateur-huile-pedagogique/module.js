@@ -52,7 +52,7 @@ window.OIL_MODULE = {
       lead: "Sur une installation simple, le retour peut rejoindre le carter du compresseur concerné.",
       details: ["Sur une centrale, un séparateur commun alimente plutôt un réservoir qui distribue l’huile aux différents régulateurs.", "Les clapets, filtres, vannes et régulateurs dépendent alors de l’architecture basse ou haute pression."],
       box: { type: "warning", text: "Ne jamais raccorder un retour comme s’il s’agissait d’une simple conduite : pression et débit doivent être maîtrisés." },
-      visual: { kind: "active", title: "Choisir la destination de l’huile", label: "Séparateur alimentant un réservoir puis des régulateurs de niveau" }
+      visual: { kind: "active", scene: "chaine", programme: "destination", caption: "Animation inerWeb : la chaîne de l’huile d’une centrale. Touchez une étape pour la revoir.", title: "Choisir la destination de l’huile", label: "Séparateur alimentant un réservoir puis des régulateurs de niveau" }
     },
     {
       id: "selection",
@@ -79,7 +79,7 @@ window.OIL_MODULE = {
       lead: "Le défaut peut se situer avant, dans ou après l’organe.",
       details: ["Vérifier d’abord le retour naturel, puis l’accumulation dans le séparateur, l’ouverture du retour, le réservoir et la distribution.", "Rechercher également fuite d’huile, mauvaise charge initiale, filtre colmaté ou régulateur non alimenté."],
       box: { type: "key", text: "Suivre la matière de l’amont vers l’aval avant de remplacer une pièce." },
-      visual: { kind: "diagnostic", title: "Ne pas sauter de maillon", label: "Chaîne de diagnostic du voyant jusqu’au régulateur en passant par séparateur et réservoir" }
+      visual: { kind: "diagnostic", scene: "chaine", programme: "maillons", caption: "Animation inerWeb : la chaîne de l’huile d’une centrale. Touchez une étape pour la revoir.", title: "Ne pas sauter de maillon", label: "Chaîne de diagnostic du voyant jusqu’au régulateur en passant par séparateur et réservoir" }
     }
   ],
   quiz: [

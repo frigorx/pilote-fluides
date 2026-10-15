@@ -390,6 +390,201 @@
     }
     return { maj: maj };
   }
+  /* ---------- la chaîne de l'huile d'une centrale (deux compresseurs) ----------
+     séparateur → réservoir (et son clapet vers l'aspiration) → filtre et vanne → régulateurs → carters ;
+     en bas, l'aspiration ramène l'huile du circuit (retour naturel). En mode « simple » (un compresseur),
+     le séparateur renvoie directement au carter.
+     etat : { flux (huile qui quitte le séparateur), sep, res (niveaux), distri (huile qui part du réservoir),
+              pot1, pot2, car1, car2 (niveaux), dose1, dose2 (un régulateur admet l'huile), naturel, simple 0..1 }
+     info.agit : refoulement, separateur, retour, reservoir, clapet, filtre, vanne, regulateurs, carters,
+                 naturel, distribution, recouper */
+  const SEP = { x: 40, y: 30, l: 80, h: 160 }, RES = { x: 30, y: 225, l: 100, h: 190 }, LIGNE = 285;
+  const POTS = [{ x: 340, y: 360, l: 40, h: 70 }, { x: 490, y: 360, l: 40, h: 70 }];
+  const CARS = [{ x: 392, y: 370, l: 78, h: 60 }, { x: 542, y: 370, l: 78, h: 60 }];
+  function chaine(svg, o) {
+    o = o || {};
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    const uid = Math.random().toString(36).slice(2, 8);
+    const racine = el("g", {}, svg), g = el("g", {}, racine);
+    const GAZ_HP = D.couleur(0.78, true), GAZ_BP = D.couleur(0.2, true);
+    const cuve = (p, r, parent) => { el("rect", { x: p.x, y: p.y, width: p.l, height: p.h, rx: r, fill: "url(#vm-acier-h)" }, parent);
+      el("rect", { x: p.x + 8, y: p.y + 8, width: p.l - 16, height: p.h - 16, rx: Math.max(4, r - 8), fill: "#fbf7f0" }, parent); };
+    const nappeDans = (p, r, parent, niveau) => {
+      const cid = "hs-c-" + uid + "-" + Math.random().toString(36).slice(2, 6);
+      el("rect", { x: p.x + 8, y: p.y + 8, width: p.l - 16, height: p.h - 16, rx: Math.max(4, r - 8) }, el("clipPath", { id: cid }, parent));
+      return D.liquide(el("g", { "clip-path": "url(#" + cid + ")" }, parent), { x0: p.x + 8, x1: p.x + p.l - 8, yh: p.y + 14, yb: p.y + p.h - 8, niveau: niveau, couleur: () => HUILE, opacite: 0.86, pas: 6 });
+    };
+    const ouvrir = (x, y, l, h, coul, parent) => el("rect", { x: x, y: y, width: l, height: h, fill: coul }, parent);   // ouvre une jonction de tubes
+    const E = { sep: 0.4, res: 0.5, pot1: 0.5, pot2: 0.5 };
+    // l'aspiration en bas (retour naturel), avec ses piquages vers les carters
+    const aspi = el("g", {}, g);
+    D.tube(aspi, 215, 440, W - 215, 30, "cuivre", false, "#dce9f7");
+    // la centrale : réservoir, clapet, ligne d'huile, filtre, vanne, descentes, régulateurs, deuxième compresseur
+    const centrale = el("g", {}, g);
+    cuve(RES, 26, centrale);
+    const nRes = nappeDans(RES, 26, centrale, () => E.res);
+    D.tube(centrale, 62, SEP.y + SEP.h - 8, 36, RES.y - SEP.y - SEP.h + 18, "cuivre", true, HUILE);         // séparateur → réservoir
+    D.tube(centrale, RES.x + RES.l - 10, 232, 90, 30, "cuivre", false, "#fbf7f0");                        // réservoir → clapet
+    el("rect", { x: 160, y: 228, width: 46, height: 38, rx: 8, fill: "url(#vm-laiton)", stroke: "#6f5214", "stroke-width": 1.5 }, centrale);
+    el("polyline", { points: "170,247 174,238 178,256 182,238 186,256 190,238 194,256 198,247", fill: "none", stroke: "#5d6b7a", "stroke-width": 2.5 }, centrale);
+    D.tube(centrale, 200, 232, 50, 30, "cuivre", false, "#dce9f7");                                         // clapet → aspiration
+    POTS.forEach(p => D.tube(centrale, p.x + 5, LIGNE + 20, 30, p.y - LIGNE - 10, "cuivre", true, HUILE));   // descentes
+    D.tube(centrale, RES.x + RES.l - 10, LIGNE, 540 - (RES.x + RES.l - 10), 30, "cuivre", false, HUILE);    // ligne d'huile
+    POTS.forEach(p => ouvrir(p.x + 15, LIGNE + 18, 10, 14, HUILE, centrale));
+    // le filtre (cartouche) et la vanne (volant)
+    el("rect", { x: 210, y: LIGNE - 22, width: 36, height: 74, rx: 10, fill: "url(#vm-acier-h)", stroke: "#4e5a66", "stroke-width": 1.5 }, centrale);
+    for (let k = 0; k < 5; k++) el("line", { x1: 216, x2: 240, y1: LIGNE - 12 + 13 * k, y2: LIGNE - 12 + 13 * k, stroke: "#4e5a66", "stroke-width": 1.5, opacity: 0.6 }, centrale);
+    ouvrir(210, LIGNE + 10, 36, 10, HUILE, centrale);
+    el("rect", { x: 282, y: LIGNE - 4, width: 24, height: 38, rx: 5, fill: "url(#vm-laiton)", stroke: "#6f5214", "stroke-width": 1.2 }, centrale);
+    ouvrir(282, LIGNE + 10, 24, 10, HUILE, centrale);
+    el("line", { x1: 294, x2: 294, y1: LIGNE - 4, y2: LIGNE - 18, stroke: "#4e5a66", "stroke-width": 4 }, centrale);
+    el("circle", { cx: 294, cy: LIGNE - 22, r: 11, fill: "none", stroke: "#c0392b", "stroke-width": 4 }, centrale);
+    el("line", { x1: 283, x2: 305, y1: LIGNE - 22, y2: LIGNE - 22, stroke: "#c0392b", "stroke-width": 3 }, centrale);
+    // les régulateurs (pots à flotteur), reliés à leur carter
+    const flotteurs = POTS.map((p, k) => {
+      cuve(p, 10, centrale);
+      const nap = nappeDans(p, 10, centrale, () => E["pot" + (k + 1)]);
+      ouvrir(p.x + 15, p.y - 2, 10, 14, HUILE, centrale);
+      D.tube(centrale, p.x + p.l - 8, 396, CARS[k].x - p.x - p.l + 16, 26, "cuivre", false, HUILE);
+      return { nap: nap, b: el("circle", { r: 7, fill: "url(#vm-acier)", stroke: D.BLEU, "stroke-width": 1.5 }, centrale), p: p };
+    });
+    // le retour direct (installation simple) : du séparateur au carter du compresseur 1
+    const direct = el("g", { opacity: 0 }, g);
+    el("path", { d: "M80 " + (SEP.y + SEP.h - 6) + " V409 H" + (CARS[0].x + 8), fill: "none", stroke: "#7a3f1c", "stroke-width": 30, "stroke-linejoin": "round" }, direct);
+    el("path", { d: "M80 " + (SEP.y + SEP.h - 6) + " V409 H" + (CARS[0].x + 8), fill: "none", stroke: "#c57a45", "stroke-width": 24, "stroke-linejoin": "round" }, direct);
+    el("path", { d: "M80 " + (SEP.y + SEP.h - 6) + " V409 H" + (CARS[0].x + 8), fill: "none", stroke: HUILE, "stroke-width": 10, "stroke-linejoin": "round" }, direct);
+    // le séparateur, son arrivée (refoulement) et sa sortie gaz
+    cuve(SEP, 22, g);
+    const nSep = nappeDans(SEP, 22, g, () => E.sep);
+    D.tube(g, 62, 0, 36, SEP.y + 10, "cuivre", true, "#fdf1e4");
+    ouvrir(72, SEP.y + SEP.h - 12, 16, 16, HUILE, g);                                                     // la sortie d'huile, par le bas
+    D.tube(g, SEP.x + SEP.l - 10, 52, W - SEP.x - SEP.l + 10, 36, "cuivre", false, "#fdf1e4");
+    // les compresseurs : carter avec voyant (niveau), culasse au-dessus ; le 2 n'existe que dans la centrale
+    const voyants = CARS.map((c, k) => {
+      const parent = k ? centrale : g;
+      el("rect", { x: c.x + 12, y: c.y - 40, width: c.l - 24, height: 44, rx: 8, fill: "url(#vm-acier-h)", stroke: "#4e5a66", "stroke-width": 1.2 }, parent);
+      el("rect", { x: c.x, y: c.y, width: c.l, height: c.h, rx: 12, fill: "url(#vm-acier-h)", stroke: "#4e5a66", "stroke-width": 1.2 }, parent);
+      ouvrir(c.x + c.l / 2 - 5, c.y + c.h - 2, 10, 16, "#dce9f7", parent);
+      const cx = c.x + c.l / 2, cy = c.y + c.h / 2 + 2, cid = "hs-v-" + uid + k;
+      el("circle", { cx: cx, cy: cy, r: 14 }, el("clipPath", { id: cid }, parent));
+      el("circle", { cx: cx, cy: cy, r: 14, fill: "#fff" }, parent);
+      const huile = el("rect", { x: cx - 14, width: 28, fill: HUILE, "clip-path": "url(#" + cid + ")" }, parent);
+      el("circle", { cx: cx, cy: cy, r: 14, fill: "none", stroke: D.BLEU, "stroke-width": 3 }, parent);
+      el("line", { x1: cx - 14, x2: cx + 14, y1: cy, y2: cy, stroke: D.BLEU, "stroke-width": 1, "stroke-dasharray": "2 2" }, parent);
+      return { huile: huile, cy: cy };
+    });
+    // ce qui bouge
+    const alea = D.alea(41), mol = (coul, r, parent) => el("circle", { r: r || 4.5, fill: coul, stroke: D.BLEU, "stroke-width": 1.1, "stroke-opacity": 0.45, opacity: 0 }, parent || g);
+    const goutte = parent => el("circle", { r: 3.8, fill: HUILE, stroke: HUILE_FONCE, "stroke-width": 1, opacity: 0 }, parent || g);
+    const refoul = Array.from({ length: 8 }, (_, k) => ({ ph: k / 8, m: mol(GAZ_HP), d: goutte(), dy: alea() * 10 - 5 }));
+    const tombe = Array.from({ length: 4 }, (_, k) => ({ ph: k / 4, d: goutte(), dx: alea() * 30 - 15 }));
+    const filet = (parent) => el("line", { stroke: "#fff", "stroke-width": 3, "stroke-linecap": "round", opacity: 0 }, parent || g);
+    const fRetour = [0, 1].map(() => filet(centrale)), fDirect = [0, 1, 2].map(() => filet(direct));
+    const fLigne = Array.from({ length: 5 }, () => filet(centrale)), fDesc = POTS.map(() => [0, 1].map(() => filet(centrale)));
+    const nat = Array.from({ length: 7 }, (_, k) => ({ ph: k / 7, m: mol(GAZ_BP), d: goutte(), dy: alea() * 6 - 3 }));
+    // les mots
+    const pg = el("g", {}, racine);
+    pastille(pg, 104, 26, "vers le condenseur", D.BLEU, "start");
+    pastille(pg, W - 4, 122, "refoulement · HP", D.ORANGE, "end");
+    const motAsp = pastille(pg, 254, 214, "aspiration · BP", BP, "start");
+    pastille(pg, 4, 462, "retour naturel", BP, "start");
+    const zone = anneaux(el("g", {}, racine), 6);
+
+    function maj(e, t, info) {
+      const v = (k, d) => (e[k] === undefined ? d : bn(e[k], 0, 1));
+      E.sep = v("sep", 0.4); E.res = v("res", 0.5); E.pot1 = v("pot1", 0.5); E.pot2 = v("pot2", 0.5);
+      const simple = v("simple", 0), flux = v("flux", 1), distri = v("distri", 1), naturel = v("naturel", 1);
+      const dose = [v("dose1", 0), v("dose2", 0)], car = [v("car1", 0.55), v("car2", 0.55)];
+      centrale.setAttribute("opacity", (1 - simple).toFixed(2)); motAsp.setAttribute("opacity", (1 - simple).toFixed(2));
+      direct.setAttribute("opacity", simple.toFixed(2));
+      nSep.maj(t); nRes.maj(t);
+      flotteurs.forEach((f, k) => { f.nap.maj(t); const x = f.p.x + f.p.l / 2; f.b.setAttribute("cx", x); f.b.setAttribute("cy", (f.nap.surface(x, t) - 2).toFixed(1)); });
+      voyants.forEach((vy, k) => { const y = vy.cy + 14 - 28 * car[k]; vy.huile.setAttribute("y", y.toFixed(1)); vy.huile.setAttribute("height", (vy.cy + 14 - y + 1).toFixed(1)); });
+      // le refoulement entre dans le séparateur (gaz + gouttes), les gouttes y tombent
+      refoul.forEach(r => {
+        const q = frac(r.ph + t / 3), x = lerp(W + 6, SEP.x + SEP.l - 14, q);
+        r.m.setAttribute("cx", x.toFixed(1)); r.m.setAttribute("cy", 70); r.m.setAttribute("opacity", 0.9);
+        r.d.setAttribute("cx", (x + 9).toFixed(1)); r.d.setAttribute("cy", (70 + r.dy).toFixed(1)); r.d.setAttribute("opacity", 0.95);
+      });
+      tombe.forEach(d => {
+        const q = frac(d.ph + t / 2), x = SEP.x + SEP.l / 2 + d.dx * 0.6;
+        d.d.setAttribute("cx", x.toFixed(1)); d.d.setAttribute("cy", lerp(80, nSep.surface(x, t), q * q).toFixed(1)); d.d.setAttribute("opacity", (q < 0.92 ? 1 : 0).toFixed(2));
+      });
+      // les filets d'huile
+      const desc = (f, x, y0, y1, k, n, vit, op) => { const y = y0 + frac(k / n + t * vit) * (y1 - y0 - 10); f.setAttribute("x1", x); f.setAttribute("x2", x); f.setAttribute("y1", y.toFixed(1)); f.setAttribute("y2", (y + 8).toFixed(1)); f.setAttribute("opacity", op.toFixed(2)); };
+      fRetour.forEach((f, k) => desc(f, 80, SEP.y + SEP.h, RES.y + 6, k, 2, 0.7, flux > 0.05 ? 0.8 : 0));
+      fDirect.forEach((f, k) => desc(f, 80, SEP.y + SEP.h, 400, k, 3, 0.5, flux > 0.05 ? 0.8 : 0));
+      fLigne.forEach((f, k) => { const x = RES.x + RES.l + frac(k / 5 + t * 0.25) * (540 - RES.x - RES.l - 24); f.setAttribute("x1", x.toFixed(1)); f.setAttribute("x2", (x + 18).toFixed(1)); f.setAttribute("y1", LIGNE + 15); f.setAttribute("y2", LIGNE + 15); f.setAttribute("opacity", (distri > 0.05 ? 0.8 : 0).toFixed(2)); });
+      fDesc.forEach((fs, i) => fs.forEach((f, k) => desc(f, POTS[i].x + 20, LIGNE + 30, POTS[i].y + 10, k, 2, 0.9, dose[i] > 0.05 ? 0.85 : 0)));
+      // le retour naturel : le gaz d'aspiration ramène des gouttes vers les carters
+      nat.forEach(n => {
+        const q = frac(n.ph + t / 4), x = lerp(W + 6, 225, q);
+        n.m.setAttribute("cx", x.toFixed(1)); n.m.setAttribute("cy", 455); n.m.setAttribute("opacity", (0.9 * naturel).toFixed(2));
+        n.d.setAttribute("cx", (x + 8).toFixed(1)); n.d.setAttribute("cy", (455 + n.dy).toFixed(1)); n.d.setAttribute("opacity", (0.95 * naturel).toFixed(2));
+      });
+      const z = info && info.agit, anneauDe = p => [p.x - 6, p.y - 6, p.l + 12, p.h + 12];
+      const Z = {
+        refoulement: [[SEP.x + SEP.l - 6, 44, W - SEP.x - SEP.l + 4, 52]], separateur: [anneauDe(SEP)], retour: [[56, SEP.y + SEP.h - 4, 48, RES.y - SEP.y - SEP.h + 12]],
+        reservoir: [anneauDe(RES)], clapet: [[154, 222, 58, 50]], filtre: [[204, LIGNE - 28, 48, 86]], vanne: [[276, LIGNE - 40, 36, 82]],
+        regulateurs: POTS.map(anneauDe), carters: CARS.map(c => [c.x - 6, c.y - 46, c.l + 12, c.h + 52]), naturel: [[209, 434, W - 211, 42]],
+        distribution: [[204, LIGNE - 40, 108, 100], anneauDe(POTS[0]), anneauDe(POTS[1])],
+        recouper: [anneauDe(RES), [204, LIGNE - 40, 108, 100], anneauDe(POTS[0]), anneauDe(POTS[1]), [CARS[0].x - 6, CARS[0].y - 46, CARS[0].l + 12, CARS[0].h + 52], [CARS[1].x - 6, CARS[1].y - 46, CARS[1].l + 12, CARS[1].h + 52]],
+        carter1: [[CARS[0].x - 6, CARS[0].y - 46, CARS[0].l + 12, CARS[0].h + 52], anneauDe(POTS[0])]
+      };
+      zone(z && Z[z] ? Z[z] : null, t);
+    }
+    return { maj: maj };
+  }
+  const CHAINE = {
+    chaine: [
+      { nom: "Le séparateur récupère", dire: "Le séparateur récupère l’huile partie avec le gaz de refoulement.", agit: "separateur", cible: { flux: 1, sep: 0.55 }, duree: 3.2 },
+      { nom: "Le réservoir rend disponible", dire: "Elle rejoint une réserve commune, placée entre le séparateur et les régulateurs.", agit: "reservoir", cible: { res: 0.6 }, duree: 3.2 },
+      { nom: "Les régulateurs se servent", dire: "Chaque régulateur prend ce dont son carter a besoin : la réserve absorbe les écarts.", agit: "regulateurs", cible: { distri: 1, dose1: 1, dose2: 1, res: 0.5 }, duree: 3.6 }
+    ],
+    doser: [
+      { nom: "Le réservoir fournit", dire: "Le réservoir et son clapet rendent l’huile disponible jusqu’aux régulateurs.", agit: "reservoir", cible: { distri: 1 }, duree: 3.2 },
+      { nom: "Un carter baisse", dire: "Le niveau du carter 1 baisse : le flotteur de son régulateur descend avec lui.", agit: "carter1", cible: { car1: 0.2, pot1: 0.2 }, duree: 3.4 },
+      { nom: "Le régulateur dose", dire: "Le régulateur admet l’huile jusqu’au bon niveau, puis se referme. Le carter 2 n’a rien demandé.", agit: "carter1", cible: { dose1: 1, car1: 0.55, pot1: 0.5 }, duree: 3.8 }
+    ],
+    destination: [
+      { nom: "Installation simple", dire: "Un seul compresseur : l’huile du séparateur retourne directement à son carter.", agit: "retour", cible: { simple: 1 }, duree: 3.4 },
+      { nom: "Une centrale", dire: "Plusieurs compresseurs : le séparateur commun remplit un réservoir, qui distribue aux régulateurs.", agit: "reservoir", cible: { simple: 0, distri: 1 }, duree: 3.8 }
+    ],
+    reserve: [
+      { nom: "Réservoir bas", dire: "Réservoir durablement bas : peu d’huile arrive (séparation, fuite, huile retenue dans le circuit).", agit: "separateur", cible: { res: 0.08, flux: 0.2, sep: 0.15 }, duree: 3.6 },
+      { nom: "Réservoir trop haut", dire: "Réservoir trop haut : retour massif, surremplissage, ou carters qui n’acceptent plus l’huile.", agit: "reservoir", cible: { res: 0.95, flux: 1, sep: 0.5, distri: 0 }, duree: 3.6 },
+      { nom: "Recouper", dire: "Avant d’agir : niveaux des carters, pression du réservoir, vannes, filtre et régulateurs.", agit: "recouper", cible: { res: 0.6, distri: 1 }, duree: 3.8 }
+    ],
+    amont: [
+      { nom: "La réserve", dire: "D’abord : une huile correcte arrive-t-elle ? Le réservoir en contient-il ?", agit: "reservoir", cible: {}, duree: 3 },
+      { nom: "L’écart de pression", dire: "Le clapet tient-il le bon écart entre le réservoir et l’aspiration ?", agit: "clapet", cible: {}, duree: 3 },
+      { nom: "Vannes et filtre", dire: "Les vannes sont-elles ouvertes, le filtre propre, les raccords étanches ?", agit: "distribution", cible: {}, duree: 3.2 },
+      { nom: "Le régulateur", dire: "Seulement ensuite : le mouvement et le niveau du régulateur, puis le carter.", agit: "regulateurs", cible: {}, duree: 3.2 }
+    ],
+    "amont-traxoil": [
+      { nom: "Réserve et pression", dire: "D’abord la réserve et la pression en amont : l’huile peut-elle arriver ?", agit: "reservoir", cible: {}, duree: 3 },
+      { nom: "Vannes et filtre", dire: "Puis les vannes, le filtre et les raccords, jusqu’à l’entrée du régulateur.", agit: "distribution", cible: {}, duree: 3.2 },
+      { nom: "Le régulateur électronique", dire: "Ensuite le TraxOil : alimentation, électrovanne, adaptateur, historique.", agit: "regulateurs", cible: {}, duree: 3.2 },
+      { nom: "Puis l’aval", dire: "Enfin le séparateur, le retour naturel, les fuites et les régimes.", agit: "naturel", cible: {}, duree: 3.2 }
+    ],
+    maillons: [
+      { nom: "Le retour naturel", dire: "D’abord le retour naturel : l’huile revient-elle aux compresseurs par l’aspiration ?", agit: "naturel", cible: {}, duree: 3.2 },
+      { nom: "Le séparateur", dire: "Puis le séparateur : l’huile s’y accumule-t-elle ?", agit: "separateur", cible: {}, duree: 2.8 },
+      { nom: "Le retour s’ouvre", dire: "Le retour s’ouvre-t-il vers le réservoir ?", agit: "retour", cible: {}, duree: 2.8 },
+      { nom: "Le réservoir", dire: "Le réservoir reçoit-il l’huile, garde-t-il un niveau ?", agit: "reservoir", cible: {}, duree: 2.8 },
+      { nom: "La distribution", dire: "Enfin la distribution : vannes, filtre, régulateurs, carters.", agit: "distribution", cible: {}, duree: 3.2 }
+    ]
+  };
+  const CHAINE_INIT = { chaine: { flux: 1, sep: 0.35, res: 0.4, distri: 0 }, doser: { distri: 0 }, destination: { simple: 1 },
+    reserve: { res: 0.5 }, amont: {}, "amont-traxoil": {}, maillons: {} };
+  function jouerChaine(hote, visual) {
+    const p = visual && CHAINE[visual.programme] ? visual.programme : "chaine";
+    return jouer(hote, {
+      aria: "Animation de la chaîne de l’huile d’une centrale : le séparateur, le réservoir et son clapet, le filtre et la vanne, les régulateurs, les carters de deux compresseurs, et le retour naturel par l’aspiration.",
+      init: Object.assign({ flux: 1, sep: 0.4, res: 0.5, distri: 1, pot1: 0.5, pot2: 0.5, car1: 0.55, car2: 0.55, dose1: 0, dose2: 0, naturel: 1, simple: 0 }, CHAINE_INIT[p]), etapes: CHAINE[p]
+    }, {}, chaine);
+  }
+
   /* les pas à pas du clapet : un par sens d'écran (visual.programme) */
   const CLAPET = {
     cycle: [
@@ -473,6 +668,7 @@
       loupe: { x: AXE, y: 368, cx: 535, cy: 280, r: 88, k: 2.6, mot: "le pointeau" } }),
     "separateur-pannes": hote => jouer(hote, PANNES, { retour: ["carter · BP", BP],
       loupe: { x: AXE, y: 372, cx: 535, cy: 280, r: 88, k: 2.6, mot: "le pointeau" } }),
-    "clapet": jouerClapet
+    "clapet": jouerClapet,
+    "chaine": (hote, visual) => jouerChaine(hote, visual)
   };
 })();
