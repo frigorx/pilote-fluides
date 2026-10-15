@@ -20,6 +20,7 @@
    de la bibliothèque (fourni par engine.js), jamais redessiné.
 
    SCÈNES : "separateur-chemins" (les trois raccordements, 3 étapes),
+            "separateur-pannes" (diagnostic : bon retour, flotteur bloqué, pointeau qui fuit),
             "separateur-flotteur" (flotteur, levier, pointeau, 5 étapes).
    ===================================================================== */
 (function () {
@@ -100,6 +101,8 @@
     D.tube(g, 0, TY, ENTREE_FIN, TH, "cuivre", false, "#fdf1e4");
     D.tube(g, SORTIE_DEBUT, TY, W - SORTIE_DEBUT, TH, "cuivre", false, "#fdf1e4");
     D.tube(g, RET.x, FOND - 4, RET.l, H - FOND + 8, "cuivre", true, HUILE);
+    // quand le pointeau fuit et que la cuve s'est vidée, c'est du gaz chaud qui remplit le retour
+    const retGaz = el("rect", { x: RET.x + 10, y: FOND - 4, width: RET.l - 20, height: H - FOND + 8, fill: D.couleur(0.85, true), opacity: 0 }, g);
     // la chicane
     el("rect", { x: CHIC.x, y: CHIC.y, width: CHIC.l, height: CHIC.h, rx: 3, fill: "url(#vm-acier-h)", stroke: "#4e5a66", "stroke-width": 1 }, g);
     // le mécanisme, sous la nappe (elle est translucide : on le voit à travers l'huile)
@@ -125,8 +128,11 @@
     const tige = el("line", { x1: AXE, x2: AXE, stroke: "#5a3d05", "stroke-width": 4 }, pt);
     const cone = el("path", Object.assign({ fill: "url(#vm-laiton)" }, TRAIT), pt);
     const goupille = el("circle", { r: 3.5, fill: D.BLEU }, pt);
-    // l'huile qui file dans le tube de retour
+    const grain = el("circle", { cx: AXE + 3.5, cy: SIEGE_Y + 2.5, r: 2.6, fill: "#3a2a10", opacity: 0 }, pt);   // l'impureté qui tient le pointeau ouvert
+    // l'huile qui file dans le tube de retour ; ou le gaz chaud, si le pointeau fuit
     const filets = [0, 1, 2].map(() => el("line", { stroke: "#fff", "stroke-width": 3.5, "stroke-linecap": "round", opacity: 0 }, g));
+    const fuiteMols = [0, 1, 2, 3].map(() => el("circle", { r: 4.5, fill: D.couleur(0.85, true), stroke: D.BLEU, "stroke-width": 1.2, "stroke-opacity": 0.5, opacity: 0 }, g));
+    const chauds = [D.chaleur(g), D.chaleur(g)];
     // les gouttes d'huile (entraînées, puis qui tombent) et le gaz (petites molécules)
     const alea = D.alea(17);
     const gouttes = Array.from({ length: 9 }, (_, k) => ({ ph: k / 9, dx: -26 + alea() * 48,
@@ -168,10 +174,14 @@
       niv = bn(e.niveau === undefined ? 0.4 : e.niveau, 0, 1);
       nappe.maj(t);
       // le flotteur suit la surface ; le levier tourne autour de son axe ; l'étrier soulève le pointeau
+      // pannes : bloque (le flotteur reste en butée basse), fuite (une impureté laisse le pointeau entrouvert)
+      const bloque = bn(e.bloque || 0, 0, 1), fuite = bn(e.fuite || 0, 0, 1);
       const xs = PIV.x - BRAS;
-      const a = bn(Math.asin(bn((PIV.y - nappe.surface(xs, t) - 5) / BRAS, -1, 1)) / RAD, A_MIN, A_MAX) * RAD;
+      const libre = bn(Math.asin(bn((PIV.y - nappe.surface(xs, t) - 5) / BRAS, -1, 1)) / RAD, A_MIN, A_MAX);
+      const a = lerp(libre, A_MIN, bloque) * RAD;
       const F = [PIV.x - BRAS * Math.cos(a), PIV.y - BRAS * Math.sin(a)], Q = [PIV.x - BRAS_P * Math.cos(a), PIV.y - BRAS_P * Math.sin(a)];
-      const leve = Math.max(0, BRAS_P * (Math.sin(a) - Math.sin(A_OUVRE * RAD))), ouv = bn(leve / LEVE_MAX, 0, 1);
+      const leve = Math.max(0, BRAS_P * (Math.sin(a) - Math.sin(A_OUVRE * RAD)), 4.5 * fuite), ouv = bn(leve / LEVE_MAX, 0, 1);
+      grain.setAttribute("opacity", fuite.toFixed(2));
       bras.setAttribute("x1", F[0].toFixed(1)); bras.setAttribute("y1", F[1].toFixed(1));
       bras.setAttribute("x2", PIV.x); bras.setAttribute("y2", PIV.y);
       flot.setAttribute("transform", "translate(" + F[0].toFixed(1) + " " + F[1].toFixed(1) + ")");
@@ -180,12 +190,20 @@
       etrier.setAttribute("y", (yb - 3).toFixed(1));
       tige.setAttribute("y1", (yb + 22).toFixed(1)); tige.setAttribute("y2", (pointe - 9).toFixed(1));
       cone.setAttribute("d", "M" + (AXE - 6) + " " + (pointe - 9).toFixed(1) + " L" + (AXE + 6) + " " + (pointe - 9).toFixed(1) + " L" + AXE + " " + pointe.toFixed(1) + " Z");
-      // l'huile file dans le retour tant que le pointeau est ouvert
+      // l'huile file dans le retour tant que le pointeau est ouvert ; cuve vide et pointeau qui fuit : le gaz chaud passe
+      const gz = fuite * bn((0.2 - niv) / 0.12, 0, 1);
+      retGaz.setAttribute("opacity", gz.toFixed(2));
       filets.forEach((f, k) => {
         const y = FOND + 2 + frac(k / 3 + t * 0.8) * (H - FOND - 4);
         f.setAttribute("x1", AXE); f.setAttribute("x2", AXE); f.setAttribute("y1", y.toFixed(1)); f.setAttribute("y2", Math.min(H, y + 9).toFixed(1));
-        f.setAttribute("opacity", (ouv > 0.02 ? 0.75 : 0).toFixed(2));
+        f.setAttribute("opacity", ((ouv > 0.02 ? 0.75 : 0) * (1 - gz)).toFixed(2));
       });
+      fuiteMols.forEach((m, k) => {
+        m.setAttribute("cx", (AXE + 2 * Math.sin(t * 4 + k)).toFixed(1));
+        m.setAttribute("cy", (FOND - 2 + frac(k / 4 + t * 1.3) * (H - FOND + 4)).toFixed(1));
+        m.setAttribute("opacity", (gz * 0.95).toFixed(2));
+      });
+      chauds.forEach((c, k) => c(RET.x - 40 - 3 * Math.abs(Math.sin(t * 3 + k)), 420 + 30 * k, 90, gz));
       // les gouttes : entraînées par le gaz jusqu'au bas de la chicane, puis elles tombent dans la nappe
       const flux = bn(e.flux || 0, 0, 1), chute = bn(e.chute || 0, 0, 1), gaz = bn(e.gaz || 0, 0, 1);
       gouttes.forEach(gt => {
@@ -239,6 +257,16 @@
       { nom: "Le pointeau se ferme", dire: "Le flotteur redescend, le pointeau se referme : le gaz chaud ne passe pas.", agit: "pointeau", cible: { niveau: 0.42, pousse: 0 }, duree: 3.4 }
     ]
   };
+  /* le diagnostic (station 16) : le bon retour, puis les deux pannes du séparateur à flotteur */
+  const PANNES = {
+    aria: "Coupe animée du séparateur à flotteur : un retour normal, puis un flotteur bloqué qui laisse l’huile s’entasser, puis un pointeau qui fuit et laisse le gaz chaud filer vers le carter.",
+    init: { flux: 1, chute: 1, gaz: 1, niveau: 0.45, pousse: 0, bloque: 0, fuite: 0 },
+    etapes: [
+      { nom: "Le bon retour", dire: "Le niveau monte, le pointeau s’ouvre, l’huile repart : le retour coule par moments.", agit: "pointeau", cible: { niveau: 0.78 }, duree: 3.4 },
+      { nom: "Flotteur bloqué", dire: "Le flotteur reste en bas : le pointeau ne s’ouvre plus. L’huile s’entasse et ne revient pas au carter.", agit: "flotteur", cible: { bloque: 1, niveau: 0.97 }, duree: 3.4 },
+      { nom: "Pointeau qui fuit", dire: "Une impureté empêche le pointeau de fermer : l’huile part, puis le gaz chaud file vers le carter. Le retour reste chaud.", agit: "huile", cible: { bloque: 0, fuite: 1, niveau: 0.05 }, duree: 4 }
+    ]
+  };
   function jouer(hote, def, o) {
     hote.classList.add("huile-scene");
     return DS.jouer(hote, { init: def.init, etapes: def.etapes, construire: dessin => coupe(DS.svg(dessin, "ds-svg", def.aria), o).maj });
@@ -246,6 +274,8 @@
   window.HUILE_SCENES = {
     "separateur-chemins": (hote, visual, outils) => jouer(hote, CHEMINS, { retour: ["retour d’huile", HUILE_FONCE], symbole: outils && outils.symboleSeparateur }),
     "separateur-flotteur": hote => jouer(hote, FLOTTEUR, { retour: ["carter · BP", BP],
-      loupe: { x: AXE, y: 368, cx: 535, cy: 280, r: 88, k: 2.6, mot: "le pointeau" } })
+      loupe: { x: AXE, y: 368, cx: 535, cy: 280, r: 88, k: 2.6, mot: "le pointeau" } }),
+    "separateur-pannes": hote => jouer(hote, PANNES, { retour: ["carter · BP", BP],
+      loupe: { x: AXE, y: 372, cx: 535, cy: 280, r: 88, k: 2.6, mot: "le pointeau" } })
   };
 })();
