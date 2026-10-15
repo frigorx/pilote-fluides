@@ -312,3 +312,10 @@ h2 { margin: 3px 0 6px; font-size: clamp(18px, 1.8vw, 25px); line-height: 1.12; 
   body { display: flex; flex-direction: column; height: 100dvh; }
   .app-shell { flex: 1 1 auto; min-height: 0; height: auto; }
 }
+
+/* Audit animation (15/10/2026) : sur ordinateur, la scène (3D ou schéma) prend la place ; elle tenait ~16 % de l'écran. */
+@media (min-width: 1100px) {
+  .station-main .lesson-card { width: min(1340px, 100%); grid-template-columns: minmax(300px, .55fr) minmax(560px, 1.45fr); }
+  .scene .e3d { grid-template-columns: minmax(0, 1fr) minmax(190px, 220px); }
+  .scene .e3d-scene { aspect-ratio: auto; height: min(calc(100dvh - 380px), 430px); }   /* la première rangée de commandes reste visible */
+}
