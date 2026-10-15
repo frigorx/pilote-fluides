@@ -523,22 +523,34 @@
         if (y < 66) break;
         reseau += `L${80 + x} ${y.toFixed(0)}`;
       }
+      /* Le point de fonctionnement est CALCULÉ : l'intersection de la courbe du ventilateur (Bézier
+         ci-dessous) et de la courbe du réseau. Il glissait auparavant le long de la courbe du
+         ventilateur (animation 36 % → 78 %) et n'était presque jamais au croisement (test du 15/10/2026). */
+      const yReseau = x => 250 - k * (x - 80) * (x - 80) / 380;
+      const bez = (t, a, b, c, d) => { const u = 1 - t; return u * u * u * a + 3 * u * u * t * b + 3 * u * t * t * c + t * t * t * d; };
+      let cx = 0, cy = 0, avant = null;
+      for (let i = 0; i <= 500; i++) {
+        const t = i / 500, x = bez(t, 80, 200, 330, 470), y = bez(t, 96, 92, 150, 244), g = y - yReseau(x);
+        if (avant && avant.g < 0 && g >= 0) { const f = avant.g / (avant.g - g); cx = avant.x + f * (x - avant.x); cy = avant.y + f * (y - avant.y); break; }
+        avant = { x, y, g };
+      }
+      /* l'étiquette du réseau, à gauche de sa courbe, vers le haut ; celle du ventilateur, sous sa partie plate */
+      const xReseau80 = 80 + Math.sqrt(170 * 380 / k);
       const svg =
         /* le repère */
         `<path class="pi-axe" d="M80 60v190h430"/>` +
         mot(66, 56, "Pression", "end") + mot(520, 268, "Débit", "end") +
         /* courbe du ventilateur : elle descend */
         `<path class="pi-courbe pi-ventilateur" d="M80 96C200 92 330 150 470 244"/>` +
-        fort(300, 92, "Courbe du ventilateur", "start") +
+        fort(96, 154, "Courbe du ventilateur", "start") +
         /* courbe du réseau : elle monte au carré */
         `<path class="pi-courbe pi-reseau" d="${reseau}"/>` +
-        fort(96, 268, "Courbe du réseau", "start") +
-        /* le point de croisement */
-        /* Le point suit la courbe du ventilateur elle-même : c est son intersection avec le
-           réseau. Le déplacer d un vecteur l en aurait détaché — mesuré à 55 px d écart. */
-        `<circle class="pi-croisement pi-glisse" r="9" style="offset-path:path(&quot;M80 96C200 92 330 150 470 244&quot;)"/>` +
-        fort(340, 150, "Point de fonctionnement", "start") +
-        mot(340, 172, "c'est là que le réseau tourne, et nulle part ailleurs", "start");
+        fort(xReseau80 - 10, 84, "Courbe du réseau", "end") +
+        /* le point de croisement, et son nom dans le coin qui s'ouvre à sa droite, entre les deux courbes */
+        `<circle class="pi-croisement" r="9" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}"/>` +
+        fort(cx + 26, cy - 8, "Point de fonctionnement", "start") +
+        mot(cx + 46, cy + 10, "c'est là que le réseau tourne,", "start") +
+        mot(cx + 90, cy + 28, "et nulle part ailleurs", "start");
       return {
         svg,
         texte: `La courbe du ventilateur descend quand le débit monte ; celle du réseau monte au carré. Le point où elles se croisent est le seul point où l'installation peut fonctionner. Fermer un registre redresse la courbe du réseau et déplace ce point.`

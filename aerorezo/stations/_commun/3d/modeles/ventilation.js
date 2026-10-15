@@ -388,7 +388,7 @@
 
     /* ================================================================ L'ÉTAT */
     const PHASES = ['transmission', 'ouie', 'aubes', 'volute', 'marche'];
-    const E_ = { marche: false, vit: 70, res: 55, phase: 'marche', coupe: false, demonte: false, protecteur: true };
+    const E_ = { marche: true, vit: 70, res: 55, phase: 'marche', coupe: false, demonte: false, protecteur: true };
     const nb = (v, d) => v.toLocaleString('fr-FR', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
     const air = (cle, mot) => '<b class="air air-' + cle + '">' + mot + '</b>';
     /* le point de fonctionnement : à vitesse n, pression du ventilateur = A·n² − B·Q² ; pression du réseau = R·Q² ;
@@ -464,7 +464,7 @@
     ];
 
     const commandes = [
-      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'arret' },
+      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'marche' },
       { id: 'vitesse', type: 'curseur', libelle: 'Commande ventilateur', min: 20, max: 100, pas: 1, unite: '%', valeur: 70 },
       { id: 'resistance', type: 'curseur', libelle: 'Résistance réseau', min: 20, max: 100, pas: 1, unite: '%', valeur: 55 }
     ];

@@ -476,7 +476,7 @@
     /* ================================================================ L'ÉTAT */
     const SAISONS = { hiver: { ext: 5, rep: 22, souf: 20 }, ete: { ext: 32, rep: 24, souf: 16 } };
     const PHASES = ['neuf', 'melange', 'filtre', 'batteries', 'humid', 'marche'];
-    const E = { marche: false, saison: 'hiver', airNeuf: 35, filtre: 'propre', phase: 'marche', coupe: false, demonte: false };
+    const E = { marche: true, saison: 'hiver', airNeuf: 35, filtre: 'propre', phase: 'marche', coupe: false, demonte: false };
     const nb = (v, d) => v.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
     const debitTotal = () => E.filtre === 'encrasse' ? 1700 : 2000;
     const calc = () => {
@@ -572,7 +572,7 @@
     ];
 
     const commandes = [
-      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'arret' },
+      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'marche' },
       { id: 'saison', type: 'choix', options: [['hiver', 'Hiver'], ['ete', 'Été']], valeur: 'hiver' },
       { id: 'airNeuf', type: 'curseur', libelle: 'Part d’air neuf', min: 20, max: 100, pas: 5, valeur: 35, unite: '%' },
       { id: 'filtre', type: 'choix', options: [['propre', 'Filtre propre'], ['encrasse', 'Filtre encrassé']], valeur: 'propre' }

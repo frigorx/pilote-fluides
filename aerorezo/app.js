@@ -228,15 +228,19 @@
 
   function renderDiscovery(s){
     const labels=s.activity.kind==="heat"&&s.activity.mode==="wall"?["Paroi (U × surface)","Écart de température","Puissance qui traverse"]:conceptLabels[s.activity.kind]||conceptLabels.choice;
-    const dessin=sceneDe(s);
+    const dessin=sceneDe(s),en3D=!!VUES_3D[s.id]&&location.protocol!=="file:";
     /* La scène montre le phénomène ; la chaîne de repères le nomme. Les deux, pas l'un
-       à la place de l'autre : l'élève doit pouvoir mettre un mot sur ce qu'il voit. */
-    $("activity").innerHTML=`<section class="concept-panel decouverte">${dessin||""}<p class="eyebrow">Le phénomène en trois repères</p>${sequenceMarkup(labels)}<p class="concept-caption">Observe la scène, puis nomme chaque repère avant de passer à l’explication.</p></section>`;
+       à la place de l'autre : l'élève doit pouvoir mettre un mot sur ce qu'il voit.
+       Station équipée d'une 3D : c'est elle la scène (le dessin reste à un clic, « En schéma »),
+       et le dessin revient seul si la 3D ne peut pas se charger. */
+    $("activity").innerHTML=`<section class="concept-panel decouverte">${en3D?"":dessin||""}<p class="eyebrow">Le phénomène en trois repères</p>${sequenceMarkup(labels)}<p class="concept-caption">Observe la scène, puis nomme chaque repère avant de passer à l’explication.</p></section>`;
+    if(en3D){const panneau=$("activity").querySelector(".decouverte");poserVue3D(s,{garderSchema:true,siEchec:()=>{if(panneau.isConnected&&dessin)panneau.insertAdjacentHTML("afterbegin",dessin);}});}
   }
-  /* La vue 3D de l’appareil (chantier du 02/10/2026, moteur repris d’HydroMétro) : au temps
+  /* La vue 3D de l’appareil (chantier du 02/10/2026, moteur repris d’HydroMétro) : dès Découvrir
+     (décision de F. Henninot, 15/10/2026 : le petit schéma générique faisait « sommaire ») et au temps
      Comprendre, l’objet réel qu’on tourne, qu’on coupe et qu’on fait fonctionner pas à pas.
      Le dessin de la station reste à un clic (« En schéma ») et c’est lui qui sort à l’impression.
-     Découvrir et Manipuler gardent leur dessin : leurs textes le décrivent. Les stations absentes
+     Manipuler garde son dessin : ses curseurs le pilotent. Les stations absentes
      de cette table s’expliquent mieux en 2D (humidité relative, besoin d’air, apports internes, méthode
      de diagnostic, évaluations) : elles n’ont pas de 3D.
      En file://, le navigateur refuse le module Three.js : rien n’est posé, la station reste telle quelle. */
@@ -272,14 +276,15 @@
   const SRC_APP=(document.currentScript&&document.currentScript.src)||"";
   const CLE_3D=SRC_APP.replace(/^[^?]*/,"");
   const DOSSIER_3D=SRC_APP.replace(/app\.js(\?.*)?$/,"")+"stations/_commun/3d/";
-  function poserVue3D(s){
+  function poserVue3D(s,o){
+    o=o||{};
     const vue=VUES_3D[s.id];
     if(!vue||location.protocol==="file:")return;
     const hote=document.createElement("div");hote.className="vue3d-hote";
     $("activity").prepend(hote);
-    const go=()=>window.AeroVue3D.brancher(hote,{modele:vue.modele,titre:vue.titre,piece:vue.piece,options:vue.options,schema:sceneDe(s)||""});
+    const go=()=>window.AeroVue3D.brancher(hote,{modele:vue.modele,titre:vue.titre,piece:vue.piece,options:vue.options,schema:sceneDe(s)||"",garderSchema:o.garderSchema,siEchec:o.siEchec});
     if(window.AeroVue3D)return go();
-    const balise=document.createElement("script");balise.src=DOSSIER_3D+"station3d.js"+CLE_3D;balise.onload=go;balise.onerror=()=>hote.remove();document.head.appendChild(balise);
+    const balise=document.createElement("script");balise.src=DOSSIER_3D+"station3d.js"+CLE_3D;balise.onload=go;balise.onerror=()=>{hote.remove();if(o.siEchec)o.siEchec();};document.head.appendChild(balise);
   }
   function renderMethodScene(s){
     const relation=s.formula||"Observation → comparaison → décision";

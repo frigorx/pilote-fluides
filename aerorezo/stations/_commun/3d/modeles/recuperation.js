@@ -348,7 +348,7 @@
 
     /* ================================================================ L'ÉTAT */
     const PHASES = ['neuf', 'extrait', 'echange', 'chaleur', 'sortie', 'marche'];
-    const E = { marche: false, saison: 'hiver', out: DEPART.out, ext: DEPART.ext, sup: DEPART.sup, phase: 'marche', coupe: false, axe: 'z', demonte: false };
+    const E = { marche: true, saison: 'hiver', out: DEPART.out, ext: DEPART.ext, sup: DEPART.sup, phase: 'marche', coupe: false, axe: 'z', demonte: false };
     const nb = (v, d) => v.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
     const air = (cle, mot) => '<b class="air air-' + cle + '">' + mot + '</b>';
     const calc = () => {
@@ -421,6 +421,7 @@
       lignes.forEach(l => { const m = l.f.objet.material; m.clippingPlanes = plan; m.needsUpdate = true; });
       voirMoteurs(); voirFaces(); visibles();
     };
+    visibles(); majTexte();   /* les quatre températures et la phrase dès l'ouverture, pas seulement au premier clic */
 
     /* ---------------------------------------------------------------- pièces */
     const pieces = [
@@ -434,7 +435,7 @@
     ];
 
     const commandes = [
-      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'arret' },
+      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'marche' },
       { id: 'saison', type: 'choix', options: [['hiver', 'Hiver'], ['ete', 'Été (by-pass)']], valeur: 'hiver' },
       { id: 'outdoor', type: 'curseur', libelle: 'Air extérieur', min: -10, max: 20, pas: 1, unite: '°C', valeur: DEPART.out },
       { id: 'extract', type: 'curseur', libelle: 'Air extrait', min: 15, max: 30, pas: 1, unite: '°C', valeur: DEPART.ext },

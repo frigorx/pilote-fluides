@@ -476,8 +476,8 @@
       add(XBOX - 120, 112, ZBOX, aC, 0.3);
       return pts;
     };
-    const flots = [-0.55, 0, 0.55].map((f, i) => ({ f, c: faireCourant(AIR_SOUFFLE, 14, 40, i * 1.7) }));
-    const flotPiq = faireCourant(AIR_SOUFFLE, 14, 40, 0.9);
+    const flots = [-0.7, -0.35, 0, 0.35, 0.7].map((f, i) => ({ f, c: faireCourant(AIR_SOUFFLE, 12, 70, i * 1.03) }));   /* cinq filets serrés : l'air remplit le conduit */
+    const flotPiq = faireCourant(AIR_SOUFFLE, 12, 60, 0.9);
     const tousFlots = [...flots.map(x => x.c), flotPiq];
     tousFlots.forEach(c => racine.add(c.objet));
     const majFlux = () => { flots.forEach(x => x.c.chemin(cheminPrincipal(x.f))); flotPiq.chemin(cheminPiquage()); };
@@ -581,7 +581,7 @@
     return {
       racine, pieces, commandes, etapes, eclate,
       eclateVue: { azimut: 20, elevation: 26, zoom: 0.8 },
-      vue: { azimut: 22, elevation: 11, zoom: 1.2, cadre: [gRect, gIso, gRaccord, gRond, gRed, gCoude, gPiq, gBouches], marge: 0.7 },
+      vue: { azimut: 24, elevation: 9, zoom: 1.45, cadre: [gRect, gRaccord, gRond], marge: 0.55 },   /* le cœur du tronçon (rectangulaire, raccord, rond) remplit l'image */
       libellesFantome: ['◐ Voir en coupe', '◑ Refermer'],
       basculerFantome: basculerCoupe,
       fantomeAuDepart: ctx.mode === 'comprendre',
@@ -893,7 +893,7 @@
       add(XTE - rb * 0.5, Y2 + o + 50, Z, aB, Qb); add(XTE, Y2 + r * 0.75, Z, aB, Qb); add(XTE, Y2 + r + 150, Z, aB, Qb); add(XTE, Y2 + r + 300, Z, aB, Qb);
       return pts;
     };
-    const flots = [-0.55, 0, 0.55].map((f, i) => ({ f, c: faireCourant(AIR_SOUFFLE, 14, 40, i * 1.9) }));
+    const flots = [-0.7, -0.35, 0, 0.35, 0.7].map((f, i) => ({ f, c: faireCourant(AIR_SOUFFLE, 12, 60, i * 1.13) }));
     const flotBranche = faireCourant(AIR_SOUFFLE, 14, 20, 0.7);
     const flotFan = faireCourant(AIR_SOUFFLE, 14, 8, 0.2);
     const tousFlots = [...flots.map(x => x.c), flotBranche, flotFan];

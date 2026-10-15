@@ -243,7 +243,7 @@
     const frac = rh => { const t = K.clamp((rh - RH_LO) / (RH_HI - RH_LO), 0, 1); return t * t * (3 - 2 * t); };
     const debitDe = rh => QMIN + (QMAX - QMIN) * frac(rh);
     const angleDe = rh => Math.asin(debitDe(rh) / QMAX * Math.sin(TH_MAX));
-    const E = { marche: false, rh: K.clamp(num(opt.rh, 40), 30, 80), coupe: false, demonte: false };
+    const E = { marche: true, rh: K.clamp(num(opt.rh, 40), 30, 80), coupe: false, demonte: false };
     let theta = angleDe(E.rh);
     tracer(theta);
     const lignes = courbes.map(cv => {
@@ -340,7 +340,7 @@
     ];
 
     const commandes = [
-      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'arret', titre: 'Le caisson d’extraction' },
+      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'marche', titre: 'Le caisson d’extraction' },
       { id: 'humidite', type: 'curseur', libelle: 'Humidité de l’air', min: 30, max: 80, pas: 1, unite: '%', valeur: E.rh }
     ];
 

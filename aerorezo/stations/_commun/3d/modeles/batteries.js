@@ -372,8 +372,8 @@
     const airIn = LIGNES.map(y => flot([[-260, y], [296, y], [350, y]], AIR.repris));
     const airOut = LIGNES.map(y => flot([[350, y], [404, y], [960, y]], AIR.souffle));
     const VAP = 0x7fd0e8;
-    const vapIn = LIGNES_V.map(y => flot([[-260, y], [296, y], [350, y]], VAP, { pas: 70, rayon: 5 }, 24));
-    const vapOut = LIGNES_V.map(y => flot([[350, y], [404, y], [960, y]], VAP, { pas: 70, rayon: 5 }, 24));
+    const vapIn = LIGNES_V.map(y => flot([[-260, y], [296, y], [350, y]], VAP, { pas: 70, rayon: 7 }, 24));
+    const vapOut = LIGNES_V.map(y => flot([[350, y], [404, y], [960, y]], VAP, { pas: 70, rayon: 7 }, 24));
     const tousAir = [...airIn, ...airOut], tousVap = [...vapIn, ...vapOut];
     /* des départs décalés : sans cela, les grains forment une grille */
     [airIn, airOut, vapIn, vapOut].forEach((l, j) => l.forEach((f, i) => f.regler({ s: (i * 19 + j * 7) % 52 })));

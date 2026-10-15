@@ -25,8 +25,9 @@
 
   const brancher = async (hote, o) => {
     /* en file://, le navigateur refuse le module Three.js : inutile de rien charger */
-    if (location.protocol === 'file:') { hote.remove(); return; }
-    try { await assurerMoteur(); } catch (e) { hote.remove(); return; }
+    const echec = () => { hote.remove(); if (o.siEchec) o.siEchec(); };
+    if (location.protocol === 'file:') { echec(); return; }
+    try { await assurerMoteur(); } catch (e) { echec(); return; }
     /* l'élève a déjà changé de temps ou de station pendant le chargement */
     if (!hote.isConnected) return;
     const bloc = window.Electro3D.bloc({
@@ -34,7 +35,8 @@
       schema: o.schema ? () => { const d = document.createElement('div'); d.innerHTML = o.schema; return d; } : null,
       defaut: o.defaut || null, choisir: o.piece || null
     });
-    bloc.addEventListener('e3d-repli', () => bloc.remove());
+    /* au temps Découvrir, le bloc est la seule image : en repli, il garde sa scène dessinée */
+    if (!o.garderSchema) bloc.addEventListener('e3d-repli', () => bloc.remove());
     hote.replaceWith(bloc);
   };
 

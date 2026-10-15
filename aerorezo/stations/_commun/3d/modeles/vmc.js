@@ -196,14 +196,46 @@
     box(-300, XD + 300, -200, 0, -3700, 3700, dalle, maison);
     box(-1800, XD + 1800, -230, -200, -5300, 4800, C(K.plastique(0xa9bb8c, 0.95)), maison);   /* le terrain : on voit qu'on est dehors */
 
-    /* ---- un mobilier très sommaire : on reconnaît la pièce, c'est tout */
+    /* ---- le mobilier : chaque pièce se reconnaît au premier regard (lit fait, canapé, cuisine équipée,
+       baignoire, WC à cuvette), sans détail inutile. Les emprises au sol sont celles d'avant. */
     const mobVie = new T.Group(), mobServ = new T.Group(); maison.add(mobVie, mobServ);
-    box(150, 1550, YF, YF + 280, -3350, -1350, mobBois, mobVie); box(150, 1550, YF + 280, YF + 420, -3350, -1450, drap, mobVie);     /* lit, chambre 1 */
-    box(7900, 9250, YF, YF + 280, -3350, -1350, mobBois, mobVie); box(7900, 9250, YF + 280, YF + 420, -3350, -1450, drap, mobVie);    /* lit, chambre 2 */
-    box(2950, 3750, YF, YF + 420, -2800, -1000, tissu, mobVie); box(2950, 3100, YF + 420, YF + 850, -2800, -1000, tissu, mobVie);       /* canapé, séjour */
-    box(100, 700, YF, 900, 1000, 3300, plan_, mobServ); box(160, 700, 900, 912, 1250, 1850, noirPlaque, mobServ);                          /* plan de travail et plaque, cuisine */
-    box(4600, 5330, YF, 560, 1500, 3300, blancSan, mobServ); box(3550, 4100, YF, 850, 2950, 3350, blancSan, mobServ);                     /* baignoire et vasque, salle d'eau */
-    box(5800, 6200, YF, 780, 3200, 3400, blancSan, mobServ); box(5820, 6180, YF, 420, 2740, 3200, blancSan, mobServ);                     /* WC */
+    const couette = C(K.plastique(0x5b84b1, 0.9)), oreiller = C(K.plastique(0xf7f6f2, 0.9)), coussin = C(K.plastique(0xd9a35b, 0.9));
+    const inox = C(M.aluminium, 0xc7ccd1), eauBain = C(K.plastique(0xbfe0ef, 0.2)), miroir = C(K.plastique(0xcfe3ee, 0.1)), meubleCui = C(K.plastique(0x8fa7b8, 0.6));
+    const lit = (x0, x1) => {
+      box(x0, x1, YF, YF + 300, -3350, -1350, mobBois, mobVie);                                        /* le cadre */
+      box(x0, x1, YF, YF + 900, -3400, -3330, mobBois, mobVie);                                        /* la tête de lit, contre le mur */
+      box(x0 + 30, x1 - 30, YF + 300, YF + 470, -3320, -1380, drap, mobVie);                           /* le matelas */
+      box(x0 + 10, x1 - 10, YF + 470, YF + 530, -2550, -1360, couette, mobVie);                        /* la couette, rabattue */
+      const l = (x1 - x0 - 120) / 2;
+      [x0 + 40, x0 + 80 + l].forEach(a => box(a, a + l, YF + 470, YF + 600, -3280, -2900, oreiller, mobVie));   /* deux oreillers */
+    };
+    lit(150, 1550); lit(7900, 9250);                                                                     /* chambre 1, chambre 2 */
+    box(3100, 3750, YF + 120, YF + 420, -2800, -1000, tissu, mobVie);                                   /* canapé : l'assise */
+    box(2950, 3150, YF + 120, YF + 850, -2800, -1000, tissu, mobVie);                                   /* le dossier */
+    [-2800, -1150].forEach(z => box(2950, 3750, YF + 120, YF + 620, z, z + 150, tissu, mobVie));          /* les accoudoirs */
+    [-2600, -2050, -1500].forEach(z => box(3160, 3700, YF + 420, YF + 520, z + 20, z + 500, coussin, mobVie));  /* les coussins */
+    box(2950, 3750, YF, YF + 120, -2780, -1020, mobBois, mobVie);                                       /* le socle */
+    box(4100, 4800, YF + 380, YF + 420, -2300, -1500, bois, mobVie);                                    /* la table basse */
+    [[4130, -2270], [4730, -2270], [4130, -1570], [4730, -1570]].forEach(([x, z]) => box(x, x + 40, YF, YF + 380, z, z + 40, bois, mobVie));
+    /* la cuisine : meubles bas, plan de travail, plaque, évier, réfrigérateur, table */
+    box(100, 700, YF, 850, 1000, 3300, meubleCui, mobServ); box(90, 720, 850, 900, 1000, 3300, plan_, mobServ);
+    box(160, 660, 900, 912, 1250, 1850, noirPlaque, mobServ);                                           /* la plaque de cuisson */
+    box(200, 600, 880, 905, 2300, 2900, inox, mobServ); box(240, 560, 862, 902, 2340, 2860, C(K.plastique(0x6d757d, 0.3)), mobServ);   /* l'évier */
+    mobServ.add(cyl('y', 18, 900, 1200, 140, 2600, inox, 10));                                          /* le robinet */
+    box(2700, 3300, YF, 1800, 2700, 3350, blancSan, mobServ); box(2690, 2700, 1000, 1500, 2780, 2810, inox, mobServ);   /* le réfrigérateur */
+    box(1500, 2300, YF + 720, YF + 760, 1800, 2600, bois, mobServ);                                      /* la table */
+    [[1520, 1820], [2240, 1820], [1520, 2560], [2240, 2560]].forEach(([x, z]) => box(x, x + 40, YF, YF + 720, z, z + 40, bois, mobServ));
+    /* la salle d'eau : une baignoire (on voit l'eau dedans), une vasque sur son meuble, un miroir */
+    box(4600, 5330, YF, 560, 1500, 3300, blancSan, mobServ);
+    box(4680, 5250, 450, 562, 1580, 3220, eauBain, mobServ);                                           /* le fond rempli */
+    mobServ.add(cyl('y', 14, 560, 650, 4965, 3270, inox, 10));                                         /* le mitigeur */
+    box(3550, 4100, YF, 800, 2950, 3350, meubleCui, mobServ); box(3540, 4110, 800, 860, 2930, 3360, blancSan, mobServ);
+    mobServ.add(cyl('y', 170, 800, 862, 3825, 3150, C(K.plastique(0x9aa5ad, 0.2)), 24));                 /* la vasque */
+    box(3600, 4050, 1150, 1850, 3380, 3395, miroir, mobServ);                                           /* le miroir */
+    /* les WC : réservoir contre le mur, cuvette ovale, abattant */
+    box(5820, 6180, YF + 380, 800, 3240, 3400, blancSan, mobServ);                                       /* le réservoir */
+    const cuvette = cyl('y', 190, YF, YF + 400, 6000, 2980, blancSan, 28); cuvette.scale.z = 1.35; mobServ.add(cuvette);
+    const abattant = cyl('y', 195, YF + 400, YF + 430, 6000, 2970, C(K.plastique(0xf2f0eb, 0.4)), 28); abattant.scale.z = 1.35; mobServ.add(abattant);
 
     /* ================================================================ LE PLAFOND, LES COMBLES, LE TOIT */
     const plafond = new T.Group(); racine.add(plafond);
@@ -441,37 +473,37 @@
        → descente au ras du sol devant la porte → sous la porte → couloir → sous la porte de la pièce de
        service → montée à la bouche du plafond. Vert (air neuf) jusqu'à la bouche, jaune après (gaines). */
     const neuf = (xe, xd) => [[xe, 2122, -4300], [xe, 2122, -3640], [xe, 2122, -3420], [xe, 1700, -3260], [xe, 1250, -3080], [xe + (xd - xe) * 0.5, 1250, -2300], [xd, 1250, -1500], [xd, 850, -1050], [xd, 300, -820]];
-    const parNeuf = { rayon: 100, pas: 150, vitesse: 380 };
+    const parNeuf = { rayon: 45, pas: 55, vitesse: 380 };
     flot(neuf(1000, DOORS_VIE[0]), AIR.neuf, parNeuf, 3, (c) => c.Q / 4);
     flot(neuf(4100, DOORS_VIE[1]), AIR.neuf, parNeuf, 3, (c) => c.Q / 4);
     flot(neuf(5300, DOORS_VIE[1]), AIR.neuf, parNeuf, 3, (c) => c.Q / 4);
     flot(neuf(7950, DOORS_VIE[2]), AIR.neuf, parNeuf, 3, (c) => c.Q / 4);
     const trav = (xd, xs) => [[xd, 80, -700], [xd, 80, -560], [xd, 80, -470], [xd, 80, -340], [xd + (xs - xd) * 0.3, 100, -100], [xd + (xs - xd) * 0.7, 100, 350], [xs, 80, 540], [xs, 80, 640], [xs, 80, 760]];
-    const parTrav = { rayon: 60, pas: 100, vitesse: 320 };
+    const parTrav = { rayon: 32, pas: 22, vitesse: 320 };
     [[0, 0], [1, 0], [1, 1], [2, 1], [2, 2]].forEach(([i, j]) => flot(trav(DOORS_VIE[i], DOORS_SERV[j]), AIR.neuf, parTrav, 4, (c, A) => A[i][j]));
-    const parExt = { rayon: 80, pas: 120, vitesse: 330 };
+    const parExt = { rayon: 42, pas: 50, vitesse: 330 };
     flot([[2800, 95, 800], [2800, 100, 900], [2650, 700, 1100], [2400, 1200, 1400], [1950, 1250, 1800], [1750, 1800, 1990], [B_CUI[0], 2390, B_CUI[1]]], AIR.neuf, parExt, 5, c => c.qc);
     flot([[4100, 95, 800], [4100, 100, 900], [4150, 700, 1100], [4250, 1200, 1500], [4380, 1300, 1900], [4400, 1850, 2090], [B_SE[0], 2390, B_SE[1]]], AIR.neuf, parExt, 5, c => c.qs);
     flot([[6000, 95, 800], [6000, 100, 900], [6000, 800, 1200], [6000, 1250, 1600], [6000, 1500, 1900], [6000, 2000, 2090], [B_WC[0], 2390, B_WC[1]]], AIR.neuf, parExt, 5, c => c.qw);
     /* dans les gaines : l'air est extrait (jaune) ; les débits s'additionnent aux jonctions */
-    const parG = r => ({ rayon: r, pas: Math.round(r * 2.3), vitesse: 650 });
+    const parG = r => ({ rayon: r * 0.8, pas: Math.round(r * 1.4), vitesse: 650 });
     flot(TR.cui, AIR.repris, parG(52), 6, c => c.qc);
     flot(TR.se, AIR.repris, parG(38), 6, c => c.qs);
     flot(TR.wc, AIR.repris, parG(38), 6, c => c.qw);
     flot(TR.br, AIR.repris, parG(44), 6, c => c.qb);
     flot(TR.tr, AIR.repris, parG(56), 6, c => c.Q);
     /* dans le caisson : l'air entre au centre de la roue et sort par le haut */
-    flot([[CX, YA, 1000], [CX, YA, 830], [CX, YA, 640], [CX, YA, 575], [CX + 65, YA + 15, 550], [CX + 100, YA + 70, 545], [CX + 55, YA + 118, 545], [CX, YA + 140, 545], [CX, 2960, 545]], AIR.repris, { rayon: 46, pas: 110, vitesse: 700 }, 1, c => c.Q);
+    flot([[CX, YA, 1000], [CX, YA, 830], [CX, YA, 640], [CX, YA, 575], [CX + 65, YA + 15, 550], [CX + 100, YA + 70, 545], [CX + 55, YA + 118, 545], [CX, YA + 140, 545], [CX, 2960, 545]], AIR.repris, { rayon: 32, pas: 60, vitesse: 700 }, 1, c => c.Q);
     /* le rejet : en haut du tube, sous le chapeau, puis dehors */
-    const parRej = { rayon: 60, pas: 130, vitesse: 700 };
+    const parRej = { rayon: 45, pas: 70, vitesse: 700 };
     flot([[CX, 2960, CZ], [CX, 3500, CZ], [CX, 4200, CZ], [CX, hautTube + 10, CZ]], AIR.rejete, parRej, 7, c => c.Q);
     flot([[CX, hautTube + 10, CZ], [CX + 60, hautTube + 70, CZ], [CX + 260, hautTube + 90, CZ], [CX + 700, hautTube + 20, CZ], [CX + 1100, hautTube - 120, CZ]], AIR.rejete, parRej, 7, c => c.Q / 2);
     flot([[CX, hautTube + 10, CZ], [CX - 60, hautTube + 70, CZ], [CX - 260, hautTube + 90, CZ], [CX - 700, hautTube + 20, CZ], [CX - 1100, hautTube - 120, CZ]], AIR.rejete, parRej, 7, c => c.Q / 2);
 
     /* ================================================================ L'ÉTAT */
     const PHASES = ['ventil', 'depression', 'entree', 'portes', 'bouches', 'gaines', 'rejet', 'marche'];
-    const E = { marche: false, cuisine: 'base', portes: 'detalonnees', phase: 'marche', coupe: false, demonte: false };
-    const QMAX = 180;                    /* le tronc à la pointe : la densité de grains de référence */
+    const E = { marche: true, cuisine: 'base', portes: 'detalonnees', phase: 'marche', coupe: false, demonte: false };
+    const QMAX = 120;                    /* la densité de grains de référence : un courant serré dès le débit de base */
     const nb = v => Math.round(v).toLocaleString('fr-FR', { maximumFractionDigits: 0 });
     /* Valeurs d'ILLUSTRATION (aucun débit réglementaire n'est figé par les stations) */
     const calc = () => {
@@ -564,7 +596,7 @@
     ];
 
     const commandes = [
-      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'arret' },
+      { id: 'marche', type: 'choix', options: [['arret', 'Arrêt'], ['marche', 'En marche']], valeur: 'marche' },
       { id: 'cuisine', type: 'choix', options: [['base', 'Cuisine : débit de base'], ['pointe', 'Cuisine : débit de pointe']], valeur: 'base' },
       { id: 'portes', type: 'choix', options: [['detalonnees', 'Portes détalonnées'], ['bloquees', 'Portes sans passage d’air']], valeur: 'detalonnees' }
     ];
@@ -581,7 +613,7 @@
         vue: { azimut: 16, elevation: 50, zoom: 3.2, cible: [1100, 1500, -3000] },
         texte: air('neuf', 'L’air du dehors') + ' est resté à la pression normale : il pousse et entre tout seul par les entrées d’air, en haut des fenêtres du séjour et des chambres.' },
       { titre: 'L’air passe sous les portes', piece: 'portes', voirDedans: true, eclate: false, actions: [...base, ['phase', 'portes']],
-        vue: { azimut: 18, elevation: 30, zoom: 2.6, cible: [4100, 400, 700] },
+        vue: { azimut: 10, elevation: 16, zoom: 3.4, cible: [4100, 250, 650] },   /* au ras du sol : le jour sous la porte */
         texte: 'Un espace est laissé sous chaque porte. ' + air('neuf', 'L’air') + ' traverse le logement par là, des pièces de vie vers le couloir, puis vers les pièces de service.' },
       { titre: 'L’air est extrait dans les pièces de service', piece: 'bouches', voirDedans: true, eclate: false, actions: [...base, ['phase', 'bouches']],
         vue: { azimut: 12, elevation: 32, zoom: 2.8, cible: [4300, 1400, 1700] },
@@ -608,7 +640,7 @@
       racine, pieces, commandes, etapes, eclate,
       eclateVue: { azimut: 22, elevation: 22, zoom: 0.62, cible: [4700, 2500, 0] },
       vue: ctx.mode === 'comprendre'
-        ? { azimut: 14, elevation: 40, zoom: 1, cadre: [maison, toit], marge: 0.7 }
+        ? { azimut: 14, elevation: 40, zoom: 1, cadre: [gSolVie, gSolServ, gSolCirc, caisson], marge: 0.68 }   /* le logement, pas le terrain autour */
         : { azimut: 28, elevation: 20, zoom: 1, cadre: [maison, toit], marge: 0.7 },
       libellesFantome: ['◐ Voir en coupe', '◑ Refermer'],
       basculerFantome: basculerCoupe,
