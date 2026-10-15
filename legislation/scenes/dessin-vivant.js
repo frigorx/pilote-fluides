@@ -53,6 +53,14 @@
     ["aria-labelledby", "aria-describedby"].forEach(function (n) {
       var v = svg.getAttribute(n); if (v) svg.setAttribute(n, v.split(/\s+/).map(function (t) { return ids[t] || t; }).join(" "));
     });
+    /* une feuille <style> d'un SVG intégré vaut pour toute la page : on la confine au dessin
+       (chaque sélecteur est préfixé par l'id du dessin ; ces SVG fixes n'ont ni @keyframes ni @media) */
+    svg.id = p + "dessin";
+    Array.prototype.forEach.call(svg.querySelectorAll("style"), function (st) {
+      st.textContent = st.textContent.replace(/(^|\})(\s*)([^{}@]+)\{/g, function (m, avant, blanc, sel) {
+        return avant + blanc + sel.split(",").map(function (s) { return "#" + svg.id + " " + s.trim(); }).join(", ") + " {";
+      });
+    });
   }
 
   /* les groupes : un commentaire de premier niveau ouvre un nouveau groupe */
