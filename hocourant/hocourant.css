@@ -261,6 +261,14 @@ button { font: inherit; }
 /* le film en deux actes : ce qui bouge est piloté par la classe acte-1 / acte-2 sur la figure,
    ses règles vivent dans donnees/films/Mx.js (préfixées .film-Mx) */
 .film .acte { font-weight: bold; color: var(--bleu); }
+/* Sur un écran d'ordinateur (audit animation du 15/10/2026) : la page s'élargit et le film prend la place
+   qu'il mérite, environ un quart de l'écran au lieu de 15 %, sans pousser « Jouer le film » sous le pli :
+   sa largeur suit la hauteur disponible (16:9). */
+@media (min-width: 1100px) {
+  .page:has(.station) { max-width: 1340px; }
+  .station { grid-template-columns: minmax(300px, .78fr) minmax(560px, 1.5fr); gap: 22px; }
+  .scenes:not(.deux):not(.quatre) .scene svg { width: min(100%, calc((100vh - 380px) * 16 / 9)); min-width: 520px; display: block; margin: 0 auto; }
+}
 @media (max-width: 760px) {
   .station { grid-template-columns: 1fr; }
   .panneau { order: -1; }           /* la scène passe AU-DESSUS du texte sur téléphone */

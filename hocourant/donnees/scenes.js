@@ -154,14 +154,25 @@ scene("bt-quotidien", "La basse tension du quotidien",
 /* ---------- M5 · le corps ---------- */
 scene("trajet-courant", "Le trajet du courant dans le corps",
   "Le courant entre par la main et ressort par les pieds, en traversant le tronc.",
-  '<circle cx="160" cy="34" r="16" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>' +
-  '<path d="M160 50 V112" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
-  '<path d="M160 62 L112 78 M160 62 L216 56" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
-  '<path d="M160 112 L136 158 M160 112 L184 158" stroke="#1b3a63" stroke-width="4" stroke-linecap="round"/>' +
-  '<path d="M216 56 C196 70, 172 84, 162 108 C156 128, 148 142, 138 156" stroke="#ff6b35" stroke-width="3.5" fill="none" stroke-dasharray="7 6" stroke-linecap="round">' +
-  '<animate class="mobile" attributeName="stroke-dashoffset" values="26;0" dur="1.1s" repeatCount="indefinite"/></path>' +
-  '<circle cx="160" cy="86" r="9" fill="none" stroke="#c0392b" stroke-width="3"/>' +
-  '<path d="M262 40 h44 M262 40 v96 M262 136 h44" stroke="#1b3a63" stroke-width="2.5" fill="none" opacity=".5"/>');
+  /* silhouette « pleine » (décision du 30/09/2026, plus de bonhomme en bâtons) : la main droite touche
+     une partie sous tension, le courant traverse le tronc, passe près du cœur et sort par le pied */
+  T.sol(166) +
+  '<rect x="214" y="44" width="70" height="16" rx="4" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.2"/>' +
+  '<path d="M222 52 h54" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>' +
+  '<path d="M152 116 L140 158 M168 116 L180 158" stroke="#1b3a63" stroke-width="11" stroke-linecap="round" fill="none"/>' +
+  '<path d="M140 160 h-10 M180 160 h10" stroke="#1b3a63" stroke-width="7" stroke-linecap="round"/>' +
+  '<path d="M146 60 L118 86 M174 60 L208 54" stroke="#1b3a63" stroke-width="9" stroke-linecap="round" fill="none"/>' +
+  '<circle cx="116" cy="88" r="5.5" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2"/><circle cx="212" cy="53" r="5.5" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2"/>' +
+  '<path d="M142 58 Q142 50 150 50 H170 Q178 50 178 58 V114 Q160 120 142 114 Z" fill="#84b7ec" stroke="#1b3a63" stroke-width="2.4"/>' +
+  '<path d="M142 96 H178" stroke="#fffdf8" stroke-width="4"/>' +
+  '<circle cx="160" cy="32" r="15" fill="#f6d7bd" stroke="#1b3a63" stroke-width="2.4"/>' +
+  '<path d="M145 31 Q144 16 160 16.5 Q176 16 175 31 Q170 23 160 23.5 Q150 23 145 31Z" fill="#1b3a63"/>' +
+  '<circle cx="155" cy="33" r="1.8" fill="#10233c"/><circle cx="165" cy="33" r="1.8" fill="#10233c"/>' +
+  '<path d="M155 39 Q160 36.5 165 39" stroke="#10233c" stroke-width="1.6" fill="none" stroke-linecap="round"/>' +
+  '<g transform="translate(164 79)"><path d="M0 -3 c-3-4-9-2-8 3 c1 4 8 8 8 8 s7-4 8-8 c1-5-5-7-8-3z" fill="#c0392b">' +
+  '<animateTransform class="mobile" attributeName="transform" type="scale" values="1;1.15;1" dur=".9s" repeatCount="indefinite"/></path></g>' +
+  '<path d="M212 53 C196 62, 176 70, 165 82 C156 96, 152 126, 141 160" stroke="#ff6b35" stroke-width="3.5" fill="none" stroke-dasharray="7 6" stroke-linecap="round">' +
+  '<animate class="mobile" attributeName="stroke-dashoffset" values="26;0" dur="1.1s" repeatCount="indefinite"/></path>');
 
 scene("differentiel", "Le disjoncteur différentiel",
   "Un disjoncteur différentiel dans un tableau, manette en position ouverte.",
