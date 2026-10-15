@@ -41,3 +41,18 @@ figure.scene[data-scene-branche] .legende:last-child { margin-bottom:14px; color
   .slide.active:not(.question) > figure:not(.vignette) { grid-column: 2; grid-row: 1 / span 40; position: sticky; top: 16px; margin: 0; }
   .slide.active:not(.question) > figure:not(.vignette) img { max-height: calc(100vh - 200px); object-fit: contain; }
 }
+
+/* Dessin vivant (scenes/dessin-vivant.js, 15/10/2026) : le SVG intégré garde l'allure de l'image d'origine ;
+   il se construit groupe par groupe, ses pointillés fléchés avancent, son accent orange respire. */
+figure svg.dv-svg { display:block; width:100%; height:auto; border:1px solid var(--ligne); border-radius:10px; background:#fff; }
+@media screen and (min-width: 1100px) {
+  .slide.active:not(.question) > figure:not(.vignette) svg.dv-svg { max-height: calc(100vh - 200px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  svg.dv-svg.dv-construit .dv-pas { animation: dv-entre .6s ease-out both; animation-delay: calc(var(--dv-i) * .5s); }
+  @keyframes dv-entre { from { opacity: 0; transform: translateY(10px); } }
+  svg.dv-svg .dv-flux { animation: dv-flux 1.1s linear infinite; }
+  @keyframes dv-flux { to { stroke-dashoffset: var(--dv-tour); } }
+  svg.dv-svg .dv-accent { animation: dv-respire 2.6s ease-in-out infinite; }
+  @keyframes dv-respire { 50% { opacity: .6; } }
+}
