@@ -288,7 +288,10 @@
   }
   function renderMethodScene(s){
     const relation=s.formula||"Observation → comparaison → décision";
-    $("activity").innerHTML=`<section class="concept-panel method-panel"><p class="eyebrow">La méthode professionnelle</p>${sequenceMarkup(["Données utiles",relation,"Contrôle de cohérence"],"method-sequence")}<p class="concept-caption">${escapeText(s.method)}</p></section>`;poserVue3D(s);
+    /* audit animation (15/10/2026) : sans 3D, Comprendre n'avait que trois cases de texte à côté de 400 mots ;
+       la scène animée de la station (celle de Découvrir) s'y pose au-dessus de la méthode — doublon pédagogique assumé */
+    const dessin=VUES_3D[s.id]?"":(sceneDe(s)||"");
+    $("activity").innerHTML=`<section class="concept-panel method-panel">${dessin}<p class="eyebrow">La méthode professionnelle</p>${sequenceMarkup(["Données utiles",relation,"Contrôle de cohérence"],"method-sequence")}<p class="concept-caption">${escapeText(s.method)}</p></section>`;poserVue3D(s);
   }
   function renderLocalCheck(s){
     if(!state.localCheck||state.localCheck.stationId!==s.id)state.localCheck={stationId:s.id,index:0,completed:false,answered:false};
