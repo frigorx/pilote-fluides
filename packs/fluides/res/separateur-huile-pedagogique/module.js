@@ -25,7 +25,7 @@ window.OIL_MODULE = {
       lead: "Le séparateur se place sur le refoulement, après le compresseur et avant le condenseur.",
       details: ["L’entrée reçoit le mélange gaz-huile. La sortie principale conduit le gaz vers le condenseur.", "La sortie basse collecte l’huile pour un retour direct ou pour l’alimentation d’un réservoir."],
       box: { type: "exam", text: "À l’oral : montrer les trois chemins — entrée du mélange, sortie gaz, sortie huile." },
-      visual: { kind: "separator", title: "Lire les trois raccordements", label: "Symbole validé du séparateur avec mélange entrant, gaz sortant et retour d’huile", caption: "Symbole exact de la bibliothèque technique inerWeb." }
+      visual: { kind: "separator", scene: "separateur-chemins", title: "Lire les trois raccordements", label: "Symbole validé du séparateur avec mélange entrant, gaz sortant et retour d’huile", caption: "Coupe animée inerWeb ; symbole exact de la bibliothèque technique. Touchez une étape pour la revoir." }
     },
     {
       id: "technologies",
@@ -43,7 +43,7 @@ window.OIL_MODULE = {
       lead: "Sur un séparateur à flotteur, l’huile s’accumule dans la partie basse.",
       details: ["Quand le niveau monte, le flotteur déplace le levier et ouvre le pointeau de retour.", "Quand le niveau redescend, le pointeau se referme afin d’éviter un passage continu du gaz de refoulement."],
       box: { type: "key", text: "Le retour est généralement intermittent : observer une séquence, pas un instant isolé." },
-      visual: { kind: "floatReturn", title: "Suivre flotteur, levier et pointeau", label: "Coupe pédagogique d’un séparateur à flotteur commandant un pointeau de retour" }
+      visual: { kind: "floatReturn", scene: "separateur-flotteur", title: "Suivre flotteur, levier et pointeau", label: "Coupe pédagogique d’un séparateur à flotteur commandant un pointeau de retour", caption: "Coupe animée inerWeb. Touchez une étape pour la revoir ; 🐢 pour ralentir." }
     },
     {
       id: "retours",

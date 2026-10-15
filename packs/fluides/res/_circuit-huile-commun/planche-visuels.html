@@ -145,7 +145,11 @@
         b.click();
         var panneau = doc.querySelector(".visual-panel");
         if (!panneau) return;
-        var svg = panneau.querySelector(".visual-stage svg");
+        /* Une scène animée (scenes-huile.js) : on prend sa coupe, pas le filigrane posé devant,
+           avec les dégradés de métal qu'elle emprunte à la page. */
+        var scene = panneau.querySelector(".visual-stage .ds-svg");
+        var svg = scene || panneau.querySelector(".visual-stage svg");
+        var metal = scene && doc.getElementById("vm-mol") ? doc.getElementById("vm-mol").closest("svg") : null;
         var donnees = doc.defaultView.OIL_MODULE;
         var lecon = donnees && donnees.lessons ? donnees.lessons[i] : null;
         out.push({
@@ -153,8 +157,8 @@
           kicker: texte(doc, ".copy-panel .kicker"),
           titre: texte(panneau, "h2"),
           legende: texte(panneau, ".visual-caption"),
-          kind: lecon && lecon.visual ? lecon.visual.kind : "?",
-          svg: svg ? svg.outerHTML : null
+          kind: lecon && lecon.visual ? (scene && lecon.visual.scene ? "scène " + lecon.visual.scene : lecon.visual.kind) : "?",
+          svg: svg ? (metal ? metal.outerHTML : "") + svg.outerHTML : null
         });
       });
       return out;

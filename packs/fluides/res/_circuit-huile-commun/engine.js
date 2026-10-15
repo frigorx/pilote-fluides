@@ -1194,6 +1194,15 @@
     return (map[visual.kind] || visualQuiz)(visual);
   }
 
+  /* Une scène animée (scenes-huile.js) remplace le schéma quand l'écran en nomme une et que la station
+     charge ce fichier ; sinon le schéma de `kind` reste affiché. */
+  function montrerScene(stage, visual) {
+    var scenes = window.HUILE_SCENES;
+    if (!stage || !visual || !visual.scene || !scenes || !scenes[visual.scene]) return;
+    stage.innerHTML = "";
+    scenes[visual.scene](stage, visual, { symboleSeparateur: libraryOilSeparator });
+  }
+
   function takeawayBox(lesson) {
     var box = lesson.box || { type: "key", text: lesson.takeaway || "" };
     var cls = box.type === "warning" ? "warning-box" : box.type === "exam" ? "exam-box" : "key-box";
@@ -1233,6 +1242,7 @@
       (lesson.recall ? '<span class="recall-badge">↶ Rappel spiralé</span>' : "") +
       '<h1>' + esc(lesson.title) + '</h1><p class="lead">' + inline(lesson.lead) + '</p><div class="details">' + details + "</div>" + takeawayBox(lesson) + "</section>" +
       '<section class="visual-panel"><h2>' + esc(lesson.visual.title) + '</h2><div class="visual-stage">' + renderVisual(lesson.visual) + '</div><p class="visual-caption">' + esc(lesson.visual.caption || "Schéma original inerWeb. Le texte de gauche porte la même information.") + "</p></section>";
+    montrerScene(ui.lessonCard.querySelector(".visual-stage"), lesson.visual);
     ui.previous.disabled = state.lesson === 0;
     ui.next.disabled = false;
     ui.next.textContent = state.lesson === moduleData.lessons.length - 1 ? "Passer aux questions →" : "Continuer →";
