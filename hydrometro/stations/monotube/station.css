@@ -299,3 +299,11 @@ h2 { margin: 3px 0 6px; font-size: clamp(18px, 1.8vw, 25px); line-height: 1.12; 
   .scene svg { height: 95mm; }
   p { color: #000; }
 }
+
+/* La barre « retour au réseau » (moteur/retour-accueil.js du site) s'insère dans le flux, au-dessus de la coque :
+   la coque prend la hauteur qui reste au lieu de 100dvh, sinon le pied sort de l'écran de la hauteur de la barre
+   (34 px, relevé le 04/10). Écran seulement. */
+@media screen {
+  body { display: flex; flex-direction: column; height: 100dvh; }
+  .app-shell { flex: 1 1 auto; min-height: 0; height: auto; }
+}

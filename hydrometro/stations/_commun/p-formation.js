@@ -120,7 +120,12 @@
 
   window.HydroStation.init = (stationConfig) => {
     const originalShell = originalInit(stationConfig);
-    const id = window.location.pathname.split("/").filter(Boolean).slice(-2, -1)[0];
+    /* l'identifiant de la station est le dernier dossier de l'adresse : ".../stations/debit/" comme
+       ".../stations/debit/index.html" (08/10/2026 : avec la forme courte, slice(-2,-1) rendait "stations"
+       et les cinq stations de la ligne P plantaient — "Cannot read properties of undefined (reading 'titles')") */
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    if (/\.html?$/i.test(segments[segments.length - 1] || "")) segments.pop();
+    const id = segments[segments.length - 1];
     const lessons = lessonsFor(id);
     const style = document.createElement("link");
     style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261004-2038"; document.head.append(style);
