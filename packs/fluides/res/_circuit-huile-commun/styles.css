@@ -72,7 +72,13 @@ a:focus-visible {
   grid-template-rows: 56px minmax(0, 1fr) 62px;
   width: 100%;
   height: 100dvh;
+  /* la barre « inerweb.fr › réseau » (moteur/retour-accueil.js) se pose au-dessus : l'appli prend la hauteur
+     qui reste, sinon la barre du bas sort de l'écran (« Continuer » coupé de 34 px à 1366 × 768) */
+  flex: 1 1 auto;
+  min-height: 0;
 }
+
+body { display: flex; flex-direction: column; }
 
 .topbar {
   display: grid;
@@ -632,6 +638,7 @@ a:focus-visible {
 @media print {
   html,
   body { height: auto; overflow: visible; background: #fff; color: #000; }
+  body { display: block; }
   .app-shell { display: block; height: auto; }
   .topbar,
   .station-list,
