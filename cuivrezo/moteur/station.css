@@ -153,3 +153,13 @@ details.pourquoi summary{min-height:48px;display:flex;align-items:center;font-we
   .echelle{grid-template-columns:repeat(5,minmax(0,1fr))}
   .echelle button{font-size:.6em}
 }
+
+/* Figure vivante (station.js, audit animation 15/10/2026) : la figure se construit dans l'ordre de son tracé,
+   le repère rouge d'un défaut respire. Interrupteur « Animations » coupé : figure entière, immobile. */
+@media (prefers-reduced-motion:no-preference){
+  .figure svg .cz-pas{animation:cz-entre .55s ease-out both;animation-delay:calc(var(--cz-i) * .45s)}
+  .figure svg.cz-deja .cz-pas{animation:none}
+  @keyframes cz-entre{from{opacity:0;transform:translateY(8px)}}
+  .figure svg .cz-defaut{animation:cz-respire 2.4s ease-in-out infinite}
+  @keyframes cz-respire{50%{opacity:.65}}
+}

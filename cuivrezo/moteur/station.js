@@ -44,6 +44,35 @@ const Station = (() => {
   }
 
   /* ------------------------------------------------ figures */
+  /* Figure vivante (audit animation, 15/10/2026) : à l'ouverture d'un écran, la figure dessinée se CONSTRUIT
+     dans l'ordre de son tracé (2 à 6 temps) ; le repère rouge d'un défaut (piège) RESPIRE : l'œil va au défaut.
+     On anime des groupes ajoutés autour des tracés, jamais un groupe placé par son attribut transform.
+     Même écran redessiné (une case cochée) : pas de nouvelle entrée en scène. Styles : station.css. */
+  let dernierVivant = '';
+  const ANIME = /\bcz-(bras|clign|n2|ouvreb|ouvreh|pousse|rabat|tombe2?|tombe3|tourne(-lent)?|va|vac|vis)\b/;
+  function vivante(svg, cle) {
+    if (!svg) return;
+    if (cle === dernierVivant) svg.classList.add('cz-deja');
+    dernierVivant = cle;
+    const garder = /^(title|desc|style|defs|metadata)$/i;
+    let hote = svg, tous = [...svg.children].filter(n => !garder.test(n.tagName));
+    while (tous.length === 1 && tous[0].tagName.toLowerCase() === 'g') { hote = tous[0]; tous = [...hote.children].filter(n => !garder.test(n.tagName)); }
+    if (tous.length >= 3) {
+      const k = Math.min(6, Math.max(2, Math.round(tous.length / 3))), lots = [];
+      tous.forEach((n, i) => { const j = Math.floor(i * k / tous.length); (lots[j] = lots[j] || []).push(n); });
+      lots.forEach((lot, i) => {
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        g.setAttribute('class', 'cz-pas'); g.style.setProperty('--cz-i', String(i));
+        hote.insertBefore(g, lot[0]); lot.forEach(n => g.append(n));
+      });
+    }
+    svg.querySelectorAll('[stroke], [fill], [class]').forEach(e => {
+      const c = e.getAttribute('class') || '';
+      if (ANIME.test(c) || e.closest('defs')) return;
+      if (/\bcz-ko\b/.test(c) || /#b3261e/i.test((e.getAttribute('stroke') || '') + (e.getAttribute('fill') || ''))) e.classList.add('cz-defaut');
+    });
+  }
+
   function figure(spec, clip) {
     const boite = el('div', 'figure');
     const poserRepli = () => {
@@ -67,6 +96,7 @@ const Station = (() => {
         const tpl = document.createElement('template');
         tpl.innerHTML = CuivFigures.dessiner(spec.svg, spec.etat || '').trim();
         boite.append(tpl.content);
+        vivante(boite.querySelector('svg'), S.t + '|' + S.p + '|' + spec.svg + '/' + (spec.etat || ''));
       } else if (spec.img) {
         const im = el('img'); im.src = S.racine + spec.img; im.alt = spec.alt || ''; im.loading = 'lazy';
         boite.append(im);
