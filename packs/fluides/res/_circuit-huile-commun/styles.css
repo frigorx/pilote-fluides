@@ -679,3 +679,13 @@ body { display: flex; flex-direction: column; }
   .huile-scene .ds-legende { font-size: calc(14px * var(--font-scale)); min-height: 0; }
 }
 @media print { .huile-scene .ds-barre button { display: none; } }
+
+/* Audit animation (15/10/2026, campagne) : sur ordinateur, la colonne du dessin s'élargit (les scènes animées
+   tombaient à 23 % de l'écran) ; et l'huile circule dans TOUTES les conduites d'huile pointillées, plus seulement
+   dans celles marquées « flowing » (18 schémas sur 30 restaient immobiles). */
+@media (min-width: 1100px) {
+  .lesson-card { grid-template-columns: minmax(280px, .82fr) minmax(400px, 1.25fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .visual-stage .oil-line { animation: flow 2.8s linear infinite; }
+}
