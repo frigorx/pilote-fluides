@@ -36,7 +36,7 @@ window.OIL_MODULE = {
         "Une autre conduite relie la partie pression du réservoir à l’aspiration par le clapet taré : elle établit le différentiel utile sans être le trajet normal de l’huile liquide."
       ],
       box: { type: "warning", text: "Le schéma exact dépend du système : retour direct, basse pression ou haute pression. Toujours lire la notice." },
-      visual: { kind: "active", title: "Distinguer les deux branches", label: "Compresseur, séparateur et réservoir, puis conduite d’huile vers le régulateur et branche de pression par clapet différentiel vers l’aspiration", caption: "Compresseur et séparateur repris de la bibliothèque technique validée ; enveloppes fonctionnelles pour les autres organes." }
+      visual: { kind: "active", scene: "clapet", programme: "branches", caption: "Coupe animée inerWeb : le réservoir et son clapet taré. Touchez une étape pour la revoir.", title: "Distinguer les deux branches", label: "Compresseur, séparateur et réservoir, puis conduite d’huile vers le régulateur et branche de pression par clapet différentiel vers l’aspiration", caption: "Compresseur et séparateur repris de la bibliothèque technique validée ; enveloppes fonctionnelles pour les autres organes." }
     },
     {
       id: "separateur",

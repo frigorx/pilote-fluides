@@ -21,7 +21,7 @@ window.OIL_MODULE = {
         "Ce petit écart de pression permet à l’huile de circuler vers le régulateur sans l’alimenter brutalement."
       ],
       box: { type: "warning", text: "La valeur de tarage n’est pas universelle : elle doit convenir au montage, aux variations d’aspiration et aux organes installés." },
-      visual: { kind: "differential", title: "Maîtriser ΔP", label: "Réservoir légèrement au-dessus de la pression du carter grâce à un clapet relié à l’aspiration" }
+      visual: { kind: "differential", scene: "clapet", programme: "cycle", caption: "Coupe animée inerWeb : le réservoir et son clapet taré. Touchez une étape pour la revoir.", title: "Maîtriser ΔP", label: "Réservoir légèrement au-dessus de la pression du carter grâce à un clapet relié à l’aspiration" }
     },
     {
       id: "mecanique",
