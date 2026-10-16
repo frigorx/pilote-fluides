@@ -13,7 +13,10 @@
 > 🔴 Pièges : une regex dans `node -e` perd ses antislashs (boucle infinie, 57 stations figées) ; monter la clé `?v=` de
 > tout fichier touché (oublis rattrapés : HydroMétro station.css, p-formation.js/css, Législation scenes.css) ; les 5
 > stations p-formation d’HydroMétro plantaient ouvertes par leur dossier (réparé).
-> Reste : `module-compresseur` (6 écrans sans visuel, décision de Franck) ; planches à l’œil réseau par réseau.
+> `module-compresseur` n’est PAS un doublon de `compresseur-interactif` (lui = la théorie, l’autre = les gestes ; erreur de mon
+> rapport, corrigée) : décision de Franck, on le GARDE. Son vrai défaut était un bug de mise en page (corps en rangée flex :
+> barre de retour et cartouche de marque devenaient des colonnes, cours à 468 px sur 1366, coupé au téléphone), corrigé le
+> 16/10 (`38f7f353`) : dessins 1,5 à 2 fois plus grands. Reste : planches à l’œil réseau par réseau.
 
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
