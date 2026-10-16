@@ -1,5 +1,20 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ## 16/10/2026 — CAMPAGNE « AUDIT ANIMATION », tous les réseaux (carte blanche de Franck du 15/10, 20 h 45)
+>
+> En ligne le 16/10 à 11 h (`8a1e400c..c1fe45ed`, 14 commits, branche `campagne-animations`, worktree `C:/git/_wt-huile`).
+> Plan, mesures, outil et rapport : `CLAUDE-ESPACE-TRAVAIL/CAMPAGNE-ANIMATIONS-2026-10-15/` (`RAPPORT-FINAL.md` d’abord).
+> Mesure avant → après, même outil (`outils/audit-animation.mjs`) : les 11 réseaux ≥ 70 % des écrans de cours avec un
+> visuel ≥ 25 % qui bouge (Législation 14 → 84, AéroRézo 39 → 93, CartoClim 69 → 95, HydroMétro 34 → 74…).
+> Briques, toutes faites dans les ATELIERS puis reportées : `legislation/scenes/dessin-vivant.js` (dessins qui se
+> construisent, impulsion sur les flèches, deux colonnes conditionnelles) ; Tour de main (manirezo) cadrage qui glisse +
+> halo ; CuivRézo figure vivante ; HydroMétro scène agrandie + repère qui respire ; AéroRézo 3D entière ; ÉlectroRézo
+> réglettes en démonstration + symboles et lettres qui se tracent (aussi CartoClim) ; HoCourant film agrandi.
+> 🔴 Pièges : une regex dans `node -e` perd ses antislashs (boucle infinie, 57 stations figées) ; monter la clé `?v=` de
+> tout fichier touché (oublis rattrapés : HydroMétro station.css, p-formation.js/css, Législation scenes.css) ; les 5
+> stations p-formation d’HydroMétro plantaient ouvertes par leur dossier (réparé).
+> Reste : `module-compresseur` (6 écrans sans visuel, décision de Franck) ; planches à l’œil réseau par réseau.
+
 > **À LIRE EN PREMIER** dans toute nouvelle session. Tout ce qu'il faut pour reprendre
 > le projet est ici : état, architecture, décisions déjà tranchées, pièges, prochaines étapes.
 
