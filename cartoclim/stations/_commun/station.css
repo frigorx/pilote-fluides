@@ -196,7 +196,19 @@ dialog h2{margin-top:0;color:var(--navy)}
 .symboles img{width:100%;max-width:300px;height:auto;min-height:200px;object-fit:contain}
 .symboles figcaption{font-size:.84em;color:var(--muted);margin-top:.4rem;text-align:center}
 @media (max-width:560px){.symboles img{min-height:150px}}
-
+/* Le symbole se trace (station.js, audit animation 15/10/2026) : même fichier de la bibliothèque, intégré à la page ;
+   il prend la taille de l'image qu'il remplace, un peu plus quand il est seul. */
+.symboles svg.sy-vivant{width:100%;max-width:300px;height:auto;min-height:200px;display:block}
+.symboles figure:only-child svg.sy-vivant{max-width:380px;max-height:min(46vh,400px)}
+@media (max-width:560px){.symboles svg.sy-vivant{min-height:150px}}
+@media (prefers-reduced-motion:no-preference){
+  .symboles svg.sy-vivant .sy-trait{stroke-dasharray:var(--sy-l);animation:sy-trace 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
+  .symboles svg.sy-vivant .sy-plein{animation:sy-plein 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
+  .symboles svg.sy-vivant .sy-apparait{animation:sy-apparait 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
+  @keyframes sy-apparait{0%,4%{opacity:0}10%,88%{opacity:1}95%,100%{opacity:0}}
+  @keyframes sy-trace{0%{stroke-dashoffset:var(--sy-l);opacity:1}9%,88%{stroke-dashoffset:0;opacity:1}95%{stroke-dashoffset:0;opacity:0}100%{stroke-dashoffset:var(--sy-l);opacity:0}}
+  @keyframes sy-plein{0%,5%{fill-opacity:0}10%,88%{fill-opacity:1}95%,100%{fill-opacity:0}}
+}
 /* ------------------------------------------------------- le jeu des symboles
    Station 8.11. Le symbole y est posé seul, en grand : c'est lui la question,
    il n'y a rien d'autre à regarder. Plus grand qu'ailleurs, donc — ici on ne

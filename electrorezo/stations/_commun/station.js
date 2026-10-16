@@ -137,6 +137,89 @@ const Station = (() => {
     try { return RESEAU[sens](S.contenu.id); } catch (e) { return null; }
   }
 
+  /* Démonstration à l'ouverture d'un temps (audit animation, 15/10/2026) : une grandeur se comprend par ce qu'elle
+     fait quand elle VARIE. La réglette du schéma (ou sa barre d'états) bouge seule pendant deux cycles, puis revient
+     à sa valeur : l'écran montre la relation, l'élève la vérifie ensuite. Il reprend la main dès qu'il touche le
+     cadre. Interrupteur « Animations » coupé : rien ne bouge. */
+  function demontrer(hote) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cartes = [...hote.querySelectorAll('.card')].filter(c => c.querySelector('svg'));
+    let carte = null, reglette = null, etats = null;
+    for (const c of cartes) {
+      reglette = c.querySelector('input[type=range]');
+      if (reglette) { carte = c; break; }
+      const b = [...c.querySelectorAll('.choix button[aria-pressed]')];
+      if (b.length >= 2) { carte = c; etats = b; break; }
+    }
+    if (!carte) return;
+    let minuteur = null, fini = false;
+    const arreter = () => { if (fini) return; fini = true; clearInterval(minuteur); carte.removeEventListener('pointerdown', main, true); carte.removeEventListener('keydown', main, true); };
+    const main = e => { if (e.isTrusted) arreter(); };
+    carte.addEventListener('pointerdown', main, true); carte.addEventListener('keydown', main, true);
+    S.nettoyages.push(arreter);
+    if (reglette) {
+      const min = +reglette.min || 0, max = reglette.max === '' ? 100 : +reglette.max, pas = +reglette.step || 1, v0 = +reglette.value;
+      const poser = v => { const x = Math.round(v / pas) * pas; if (+reglette.value !== x) { reglette.value = x; reglette.dispatchEvent(new Event('input', { bubbles: true })); reglette.dispatchEvent(new Event('change', { bubbles: true })); } };
+      const t0 = performance.now(), cycle = 7000;
+      minuteur = setInterval(() => {
+        if (!reglette.isConnected) return arreter();
+        const k = (performance.now() - t0) / cycle;
+        if (k >= 2) { poser(v0); return arreter(); }
+        /* part de la valeur posée, monte au maximum, descend au minimum, revient */
+        const a = Math.sin(k * 2 * Math.PI);
+        poser(a >= 0 ? v0 + (max - v0) * a : v0 + (v0 - min) * a);
+      }, 120);
+    } else {
+      const depart = Math.max(0, etats.findIndex(b => b.getAttribute('aria-pressed') === 'true'));
+      let n = 0;
+      minuteur = setInterval(() => {
+        if (!carte.isConnected) return arreter();
+        n++;
+        etats[(depart + n) % etats.length].click();
+        if (n >= etats.length * 2) arreter();
+      }, 2800);
+    }
+  }
+
+  /* Le symbole se trace (audit animation, 15/10/2026) : sur « Représenter », chaque symbole de la bibliothèque
+     (jamais redessiné : le même fichier, intégré à la page) se trace trait par trait dans l'ordre du fichier, comme
+     au tableau, reste affiché, puis se retrace toutes les 12 s. Un fichier qui porte un <style>, un script ou une
+     animation reste une image. Interrupteur « Animations » coupé : symbole fixe. Styles : station.css. */
+  let nSymbole = 0;
+  function tracerSymboles(hote) {
+    if (!window.fetch || !window.DOMParser) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    hote.querySelectorAll('.symboles img[src$=".svg"]').forEach(img => {
+      fetch(img.src).then(r => r.ok ? r.text() : Promise.reject(r.status)).then(txt => {
+        if (!img.isConnected || /<script|<style|@keyframes|<animate/i.test(txt)) return;
+        const doc = new DOMParser().parseFromString(txt, 'image/svg+xml'), src = doc.documentElement;
+        if (!src || src.tagName.toLowerCase() !== 'svg' || doc.querySelector('parsererror')) return;
+        const svg = document.importNode(src, true), p = 'sy' + (++nSymbole) + '-', ids = {};
+        svg.querySelectorAll('[id]').forEach(e => { ids[e.id] = p + e.id; e.id = p + e.id; });
+        svg.querySelectorAll('*').forEach(e => [...e.attributes].forEach(a => {
+          if (a.value.indexOf('url(#') >= 0) e.setAttribute(a.name, a.value.replace(/url\(#([^)]+)\)/g, (m, id) => ids[id] ? 'url(#' + ids[id] + ')' : m));
+          else if (/^(xlink:)?href$/.test(a.name) && a.value[0] === '#' && ids[a.value.slice(1)]) e.setAttribute(a.name, '#' + ids[a.value.slice(1)]);
+        }));
+        svg.removeAttribute('width'); svg.removeAttribute('height');
+        svg.setAttribute('class', ((svg.getAttribute('class') || '') + ' sy-vivant').trim());
+        svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', img.alt || '');
+        img.replaceWith(svg);
+        let k = 0;
+        svg.querySelectorAll('path, line, polyline, polygon, circle, ellipse, rect').forEach(e => {
+          if (e.closest('defs, clipPath, mask, marker, symbol')) return;
+          const cs = getComputedStyle(e);
+          /* un tireté (liaison mécanique…) porte un sens : il apparaît en fondu, il ne se trace pas (son tiret resterait plein) */
+          if (cs.stroke && cs.stroke !== 'none' && cs.strokeDasharray && cs.strokeDasharray !== 'none') { e.classList.add('sy-apparait'); e.style.setProperty('--sy-i', k++); }
+          else if (cs.stroke && cs.stroke !== 'none' && e.getTotalLength) {
+            let L = 0; try { L = e.getTotalLength(); } catch (x) { L = 0; }
+            if (L > 0) { e.classList.add('sy-trait'); e.style.setProperty('--sy-l', Math.ceil(L) + 'px'); e.style.setProperty('--sy-i', k++); }
+          }
+          if (cs.fill && cs.fill !== 'none' && !/rgba\(0, 0, 0, 0\)/.test(cs.fill)) { e.classList.add('sy-plein'); e.style.setProperty('--sy-i', k++); }
+        });
+      }).catch(() => { /* l'image reste */ });
+    });
+  }
+
   function allerAu(i) {
     if (i < 0 || i >= S.contenu.temps.length) return;
     couperVoix();
@@ -149,6 +232,8 @@ const Station = (() => {
     const hote = $('#scene');
     hote.innerHTML = '';
     S.contenu.temps[i].monter(hote, { niveau: S.niveau, allerAu, majTemps: filTemps });
+    demontrer(hote);
+    tracerSymboles(hote);
     $('#titreTemps') && ($('#titreTemps').textContent = S.contenu.temps[i].titre);
     const sansVoix = !(S.contenu.temps[i].narration || '').trim();
     $('#btVoix').disabled = sansVoix;

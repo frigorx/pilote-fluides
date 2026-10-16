@@ -186,3 +186,13 @@
   .pi-goutte{opacity:1}
   .pi-releve{fill:var(--orange)}
 }
+
+/* Audit animation (15/10/2026) : sur ordinateur, la scène 3D prend la place et tient entière dans son cadre (elle était
+   coupée en bas, ~22 % de l'écran). Rail plus étroit, colonne de texte resserrée, hauteur de la 3D réglée sur la fenêtre. */
+@media (min-width:1100px){
+  .station-view{grid-template-columns:150px minmax(0,1fr)}
+  .lesson-grid,.lesson-grid[data-phase="1"]{grid-template-columns:minmax(270px,.62fr) minmax(560px,1.38fr);padding:8px 0}
+  .phase-progress{padding:6px 0}
+  .lesson-grid .activity:has(electro-3d){padding:10px}
+  .lesson-grid electro-3d .e3d-scene{aspect-ratio:auto;height:clamp(300px,calc(100dvh - 410px),620px)}
+}

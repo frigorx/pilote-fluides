@@ -104,3 +104,9 @@ body.p-course-active .topbar { grid-template-columns: auto minmax(0, 1fr) auto a
   .p-course-card { display: block; }
   .p-course-copy, .p-course-scene { background: #fff; color: #000; box-shadow: none; break-inside: avoid; margin-bottom: 8mm; }
 }
+
+/* Audit animation (15/10/2026) : le repère de l'étape respire — l'œil va là où le texte parle. Mouvement coupé : lueur fixe. */
+@media (prefers-reduced-motion: no-preference) {
+  #pScene:not(.p-demo-running) .p-demo-part.p-demo-current { animation: p-repere 2.4s ease-in-out infinite; }
+  @keyframes p-repere { 50% { filter: drop-shadow(0 0 14px rgba(201,69,26,.95)); } }
+}
