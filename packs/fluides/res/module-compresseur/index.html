@@ -1497,6 +1497,17 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
         .tag-ok{ background:#eefcf3; border:1px solid #bfe9c9; color:#145c2a; }
         .tag-ko{ background:#fff2f2; border:1px solid #f3c3c3; color:#7a1f1f; }
 
+        /* inerweb.fr, 16/10/2026 (campagne « audit animation ») : le corps est une rangée flex ; la barre de retour
+           (retour-accueil.js) et le cartouche de marque (marque.js), ajoutés par le site, s'y glissaient comme deux
+           colonnes et réduisaient le cours à 468 px sur 1366 (et le coupaient au téléphone). Chacun passe sur sa
+           ligne ; le cours reprend sa largeur, plafonnée pour garder des lignes lisibles. Propre à la copie du site. */
+        body { flex-wrap: wrap; }
+        body > #inerweb-retour-accueil-barre, body > .marque-document { flex: 0 0 100%; }
+        .main-content { min-width: 0; }
+        .section { max-width: 980px; }
+        @media (min-width: 901px) {
+            body > #inerweb-retour-accueil-barre, body > .marque-document { margin-left: 280px; flex-basis: calc(100% - 280px); }
+        }
     </style>
 <!-- (c) F. Henninot — inerWeb FRIGOLO — Tous droits réservés -->
   <script src="../../../../moteur/plan-donnees.js"></script>

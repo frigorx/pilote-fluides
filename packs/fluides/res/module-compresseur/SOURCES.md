@@ -14,3 +14,12 @@ volume balayé — le retrouver et le ré-exploiter »).
   (volumétrique) · température (la compression chauffe).
 - Le bloc `prefers-reduced-motion` d'origine raccourcit toutes les animations à 0,01 ms :
   les contenus restent visibles à l'état final et les curseurs (JS) restent manipulables.
+
+## 16/10/2026 — mise en page propre à la copie du site (pas de changement de fond)
+
+Le corps de la page est une rangée flex : la barre de retour (`moteur/retour-accueil.js`) et le cartouche de marque
+(`marque.js`), ajoutés par le site, s'y glissaient comme deux colonnes et réduisaient le cours à 468 px sur 1366
+(dessins à 260-300 px ; au téléphone, le cours était coupé à droite). Un bloc en fin de `<style>` les met chacun sur
+sa ligne : le cours reprend sa largeur (980 px au plus), les dessins leur taille prévue (550 px). FRIGOLO n'a ni la
+barre ni le cartouche : la correction ne s'y reporte pas. Ce module n'est PAS un doublon de `compresseur-interactif` :
+il porte la théorie (types, piston, volume balayé, débit, rendement volumétrique, échauffement), l'autre les gestes.
