@@ -186,9 +186,26 @@ const Station = (() => {
      au tableau, reste affiché, puis se retrace toutes les 12 s. Un fichier qui porte un <style>, un script ou une
      animation reste une image. Interrupteur « Animations » coupé : symbole fixe. Styles : station.css. */
   let nSymbole = 0;
+  /* chaque trait d'un dessin reçoit son rang et sa longueur ; les styles .sy-vivant font le reste */
+  function tracer(racine) {
+    let k = 0;
+    racine.querySelectorAll('path, line, polyline, polygon, circle, ellipse, rect').forEach(e => {
+      if (e.closest('defs, clipPath, mask, marker, symbol')) return;
+      const cs = getComputedStyle(e);
+      /* un tireté (liaison mécanique…) porte un sens : il apparaît en fondu, il ne se trace pas (son tiret resterait plein) */
+      if (cs.stroke && cs.stroke !== 'none' && cs.strokeDasharray && cs.strokeDasharray !== 'none') { e.classList.add('sy-apparait'); e.style.setProperty('--sy-i', k++); }
+      else if (cs.stroke && cs.stroke !== 'none' && e.getTotalLength) {
+        let L = 0; try { L = e.getTotalLength(); } catch (x) { L = 0; }
+        if (L > 0) { e.classList.add('sy-trait'); e.style.setProperty('--sy-l', Math.ceil(L) + 'px'); e.style.setProperty('--sy-i', k++); }
+      }
+      if (cs.fill && cs.fill !== 'none' && !/rgba\(0, 0, 0, 0\)/.test(cs.fill)) { e.classList.add('sy-plein'); e.style.setProperty('--sy-i', k++); }
+    });
+  }
   function tracerSymboles(hote) {
-    if (!window.fetch || !window.DOMParser) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    /* un dessin déjà dans la page qui demande à se tracer (la lettre de la ligne 8 : Signes.lettreSeule) */
+    hote.querySelectorAll('.a-tracer').forEach(g => { g.classList.add('sy-vivant'); tracer(g); });
+    if (!window.fetch || !window.DOMParser) return;
     hote.querySelectorAll('.symboles img[src$=".svg"]').forEach(img => {
       fetch(img.src).then(r => r.ok ? r.text() : Promise.reject(r.status)).then(txt => {
         if (!img.isConnected || /<script|<style|@keyframes|<animate/i.test(txt)) return;
@@ -204,18 +221,7 @@ const Station = (() => {
         svg.setAttribute('class', ((svg.getAttribute('class') || '') + ' sy-vivant').trim());
         svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', img.alt || '');
         img.replaceWith(svg);
-        let k = 0;
-        svg.querySelectorAll('path, line, polyline, polygon, circle, ellipse, rect').forEach(e => {
-          if (e.closest('defs, clipPath, mask, marker, symbol')) return;
-          const cs = getComputedStyle(e);
-          /* un tireté (liaison mécanique…) porte un sens : il apparaît en fondu, il ne se trace pas (son tiret resterait plein) */
-          if (cs.stroke && cs.stroke !== 'none' && cs.strokeDasharray && cs.strokeDasharray !== 'none') { e.classList.add('sy-apparait'); e.style.setProperty('--sy-i', k++); }
-          else if (cs.stroke && cs.stroke !== 'none' && e.getTotalLength) {
-            let L = 0; try { L = e.getTotalLength(); } catch (x) { L = 0; }
-            if (L > 0) { e.classList.add('sy-trait'); e.style.setProperty('--sy-l', Math.ceil(L) + 'px'); e.style.setProperty('--sy-i', k++); }
-          }
-          if (cs.fill && cs.fill !== 'none' && !/rgba\(0, 0, 0, 0\)/.test(cs.fill)) { e.classList.add('sy-plein'); e.style.setProperty('--sy-i', k++); }
-        });
+        tracer(svg);
       }).catch(() => { /* l'image reste */ });
     });
   }

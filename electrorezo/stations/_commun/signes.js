@@ -252,7 +252,7 @@ const Signes = (() => {
     d.innerHTML = `
 <rect x="12" y="10" width="636" height="280" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <rect x="34" y="30" width="200" height="240" rx="12" fill="${C.creme}" stroke="${C.trait}"/>
-<g transform="${cadrer(L.boite)}">${L.dessin(0, 0, arg)}</g>
+<g class="a-tracer" transform="${cadrer(L.boite)}">${L.dessin(0, 0, arg)}</g>
 <text x="446" y="118" text-anchor="middle" font-size="21" font-weight="700" fill="${C.navy}">${L.nom}</text>
 <text x="446" y="152" text-anchor="middle" font-size="16" fill="${C.gris}">${L.dit}</text>
 <text x="446" y="214" text-anchor="middle" font-size="12" fill="${C.gris}">tracé relevé sur le symbole normalisé</text>

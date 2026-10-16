@@ -204,9 +204,9 @@ dialog h2{margin-top:0;color:var(--navy)}
 .symboles figure:only-child svg.sy-vivant{max-width:380px;max-height:min(46vh,400px)}
 @media (max-width:560px){.symboles svg.sy-vivant{min-height:150px}}
 @media (prefers-reduced-motion:no-preference){
-  .symboles svg.sy-vivant .sy-trait{stroke-dasharray:var(--sy-l);animation:sy-trace 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
-  .symboles svg.sy-vivant .sy-plein{animation:sy-plein 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
-  .symboles svg.sy-vivant .sy-apparait{animation:sy-apparait 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
+  .sy-vivant .sy-trait{stroke-dasharray:var(--sy-l);animation:sy-trace 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
+  .sy-vivant .sy-plein{animation:sy-plein 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
+  .sy-vivant .sy-apparait{animation:sy-apparait 12s linear infinite both;animation-delay:calc(var(--sy-i) * .16s)}
   @keyframes sy-apparait{0%,4%{opacity:0}10%,88%{opacity:1}95%,100%{opacity:0}}
   @keyframes sy-trace{0%{stroke-dashoffset:var(--sy-l);opacity:1}9%,88%{stroke-dashoffset:0;opacity:1}95%{stroke-dashoffset:0;opacity:0}100%{stroke-dashoffset:var(--sy-l);opacity:0}}
   @keyframes sy-plein{0%,5%{fill-opacity:0}10%,88%{fill-opacity:1}95%,100%{fill-opacity:0}}
