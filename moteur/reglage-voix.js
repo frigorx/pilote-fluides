@@ -122,6 +122,9 @@
        lisible partout sans retoucher chacune. */
     monter: function (conteneur) {
       if (!conteneur || conteneur.querySelector("[data-voix-reglage]")) return null;
+      /* un réglage posé d'office à côté d'« Écouter » (voir plus bas) rejoint la place que la page lui donne */
+      var poseDOffice = document.querySelector("[data-voix-reglage][data-voix-auto]");
+      if (poseDOffice) { poseDOffice.removeAttribute("data-voix-auto"); conteneur.appendChild(poseDOffice); return poseDOffice; }
       habiller();
       var bloc = document.createElement("div");
       bloc.className = "reglage-voix";
@@ -149,9 +152,13 @@
   var ANCIEN_BOUTON = /^\s*[⏩⏪»«+−-]?\s*(accélérer|ralentir)\s+la\s+voix\s*$/i;
   var ANCIEN_NOM = /^(voice-?rate|voicerate|speech-?rate|speechrate|voice-?speed|vitesse-?voix|vitesse-?lecture)$/i;
   var ANCIEN_LIBELLE = /vitesse (de (la )?)?(voix|lecture|narration)|débit de la voix/i;
+  /* les boutons − / + d'un bloc de vitesse de la voix (#slower / #faster rangés dans un bloc « speed », « voice »…) */
+  function boutonsDeVitesse(e) {
+    return /^(slower|faster)$/.test(e.id || "") && !!e.parentElement && /speed|vitesse|rate|voice|voix/i.test(e.parentElement.className || "");
+  }
   function ancienReglage(e) {
     if (e.closest("[data-voix-reglage]") || e.closest("#pilote-prof-vocal")) return false;
-    if (e.tagName === "BUTTON") return ANCIEN_BOUTON.test(e.textContent || "") || ANCIEN_BOUTON.test(e.getAttribute("aria-label") || "");
+    if (e.tagName === "BUTTON") return ANCIEN_BOUTON.test(e.textContent || "") || ANCIEN_BOUTON.test(e.getAttribute("aria-label") || "") || boutonsDeVitesse(e);
     if (ANCIEN_NOM.test(e.id || "") || ANCIEN_NOM.test(e.name || "")) return true;
     var etiquette = (e.labels && e.labels[0]) || e.closest("label");
     return !!etiquette && (ANCIEN_LIBELLE.test(etiquette.textContent || "") || ANCIEN_LIBELLE.test(etiquette.getAttribute("title") || ""));
@@ -163,23 +170,44 @@
     if (!anciens.length) return;
     if (!document.querySelector("[data-voix-reglage]")) {
       var premier = anciens[0], enveloppe = premier.closest("label");
-      var repere = enveloppe || premier, hote = repere.parentNode;
+      var repere = boutonsDeVitesse(premier) ? premier.parentElement : enveloppe || premier, hote = repere.parentNode;
       var bloc = hote && window.PILOTE_VOIX_REGLAGE.monter(hote);
       if (bloc) hote.insertBefore(bloc, repere);
     }
     anciens.forEach(function (e) {
       var enveloppe = e.closest("label");
+      if (boutonsDeVitesse(e)) { cacher(e.parentElement); return; }
       cacher(enveloppe && !enveloppe.querySelector("[data-voix-reglage]") ? enveloppe : e);
       if (e.labels) Array.prototype.forEach.call(e.labels, cacher);
     });
   }
+  /* Une page qui parle (bouton « Écouter ») sans aucun réglage : le réglage commun se pose juste après ce bouton.
+     Une page qui le monte elle-même plus tard le récupère (monter() ci-dessus) : jamais deux réglages. */
+  var ECOUTER = "#listen, #listen-button, #speak, #play-button, #stationVoice, #formationListen, #pListen, #listenButton, #btVoix, #btn-ecouter, #st-ecouter, #voice-button, #speakButton, [data-prof-ecouter]";
+  function poserDOffice() {
+    if (document.querySelector("[data-voix-reglage]")) return;
+    var visible = function (b) { var r = b.getBoundingClientRect(); return r.width > 0 && r.height > 0 && !b.closest("#pilote-prof-vocal"); };
+    var bouton = Array.prototype.find.call(document.querySelectorAll(ECOUTER), visible)
+      /* à défaut d'identifiant connu (pages React…), un bouton qui s'appelle « Écouter » */
+      || Array.prototype.find.call(document.querySelectorAll("button"), function (b) {
+        return /^\s*(▶|🔊|🔈|🔉|🎧)?\s*écouter\b/i.test(b.textContent || "") && visible(b);
+      });
+    if (!bouton || !bouton.parentNode) return;
+    var bloc = window.PILOTE_VOIX_REGLAGE.monter(bouton.parentNode);
+    if (!bloc) return;
+    bloc.setAttribute("data-voix-auto", "");
+    bouton.insertAdjacentElement("afterend", bloc);
+  }
+  var pret = false;
   function surveiller() {
     remplacerAnciens();
+    var lancer = function () { window.setTimeout(function () { pret = true; remplacerAnciens(); poserDOffice(); }, 900); };
+    if (document.readyState === "complete") lancer(); else window.addEventListener("load", lancer);
     if (!window.MutationObserver || !document.body) return;
     var attente = null;
     new window.MutationObserver(function () {
       if (attente) return;
-      attente = window.setTimeout(function () { attente = null; remplacerAnciens(); }, 120);
+      attente = window.setTimeout(function () { attente = null; remplacerAnciens(); if (pret) poserDOffice(); }, 120);
     }).observe(document.body, { childList: true, subtree: true });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", surveiller);

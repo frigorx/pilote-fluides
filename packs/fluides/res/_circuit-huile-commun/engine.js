@@ -1464,7 +1464,8 @@
   function jouerFichier(src) {
     var run = ++state.speechRun;
     lecteur = new Audio(src);
-    lecteur.playbackRate = Number(ui.rate.value || 0.95);
+    /* 17/10/2026 (chantier prof vocal) : la vitesse commune du site d'abord ; l'ancienne liste en dépannage */
+    lecteur.playbackRate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : Number(ui.rate.value || 0.95);
     lecteur.addEventListener("playing", function () {
       if (run !== state.speechRun) return;
       state.speaking = true; state.paused = false;
@@ -1557,6 +1558,8 @@
     if (lecteur) { lecteur.pause(); lecteur = null; }
     if (ui.voice) ui.voice.textContent = "▶ Écouter";
   }
+  /* 17/10/2026 (chantier prof vocal) : changer la vitesse commune arrête la lecture (fichier ou navigateur) et rend « Écouter » */
+  document.addEventListener("pilotevoix:vitesse", function () { stopSpeech(); });
 
   function announce(message) {
     ui.live.textContent = "";

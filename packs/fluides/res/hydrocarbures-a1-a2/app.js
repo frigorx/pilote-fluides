@@ -996,6 +996,7 @@ function toggleSpeech() {
 function stopSpeech(disableAutoplay = true) {
   speechRun += 1; if (speechSupported()) speechSynthesis.cancel(); speaking = false; paused = false; if (disableAutoplay) autoplay = false; updateVoiceButtons();
 }
+document.addEventListener("pilotevoix:vitesse", () => stopSpeech());   /* 17/10/2026 (chantier prof vocal) : changer la vitesse commune arrête la lecture et rend « Écouter » */
 
 function updateVoiceButtons() {
   const listen = $("#listen"), stop = $("#stop-voice"); if (!listen || !stop) return;

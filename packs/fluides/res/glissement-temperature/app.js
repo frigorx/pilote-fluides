@@ -798,6 +798,7 @@
     if (disableNarration) narratedMode = false;
     updateVoiceControls();
   }
+document.addEventListener("pilotevoix:vitesse", () => stopSpeech());   /* 17/10/2026 (chantier prof vocal) : changer la vitesse commune arrête la lecture et rend « Écouter » */
 
   function toggleListening() {
     if (!("speechSynthesis" in window)) {

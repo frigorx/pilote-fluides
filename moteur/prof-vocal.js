@@ -302,16 +302,20 @@
   /* Une question à l'écran : un énoncé et au moins deux choix (boutons de réponse, cases). */
   function questionParts() {
     var scope = currentScope();
-    var choices = Array.prototype.filter.call(scope.querySelectorAll(".choices button,.quiz-options button,#gameOptions button,[data-answer],.answer-button,.vy-choix button,[role=radio],input[type=radio],input[type=checkbox]"), function (node) {
+    /* button[data-choice] et #action-prompt : les choix des modules à dossiers (compresseur, condenseur, chaîne
+       d'intervention…), que le professeur ne voyait pas et passait (17/10/2026) */
+    var choices = Array.prototype.filter.call(scope.querySelectorAll(".choices button,.quiz-options button,#gameOptions button,[data-answer],.answer-button,.vy-choix button,button[data-choice],[role=radio],input[type=radio],input[type=checkbox]"), function (node) {
       return visible(node) && !node.disabled && !isIgnoredControl(node);
     });
     /* .quiz-q : l'énoncé des quiz « Vérifier » des modules à onglets (détendeurs…), que le professeur passait (17/10/2026) */
-    var question = firstVisible([".quiz-question", ".quiz-q", ".question strong", "[data-question]", ".game-question", "#fluidHint", ".question h2", ".question h3", "legend"], scope);
+    var question = firstVisible([".quiz-question", ".quiz-q", ".question strong", "[data-question]", ".game-question", "#fluidHint", ".question h2", ".question h3", "legend"], scope)
+      || (choices.length >= 2 ? firstVisible(["#action-prompt"]) : null);
     if (!question && choices.length >= 2) question = firstVisible(["h2", "h3", "h4"], scope);
     if (!question || choices.length < 2) return [];
     var libelles = choices.map(function (node) {
       if (node.tagName === "INPUT") return node.labels && node.labels[0] ? node.labels[0].textContent.trim() : "";
-      return node.textContent.trim();
+      /* un choix sur deux lignes (titre + précision) se dit en deux phrases, pas collé */
+      return String(node.innerText || node.textContent).replace(/\s*\n\s*/g, ". ").trim();
     }).filter(Boolean);
     return [PHRASES.question, question.textContent.trim()].concat(libelles);
   }

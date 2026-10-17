@@ -509,6 +509,7 @@
     if ("speechSynthesis" in window) { speechSynthesis.resume(); speechSynthesis.cancel(); }
     speaking = false; paused = false; updateListenButton();
   }
+document.addEventListener("pilotevoix:vitesse", () => stopSpeech());   /* 17/10/2026 (chantier prof vocal) : changer la vitesse commune arrête la lecture et rend « Écouter » */
   function applyVoiceCue(cue) {
     if (!cue.control) return;
     const control = $(cue.control);

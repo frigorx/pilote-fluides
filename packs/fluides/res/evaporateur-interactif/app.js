@@ -1216,6 +1216,7 @@ function stopSpeech(disableAutoplay = true) {
   if (disableAutoplay) autoplay = false;
   updateVoiceButtons();
 }
+document.addEventListener("pilotevoix:vitesse", () => stopSpeech());   /* 17/10/2026 (chantier prof vocal) : changer la vitesse commune arrête la lecture et rend « Écouter » */
 
 function updateVoiceButtons() {
   const listen = $("#listen");

@@ -825,6 +825,7 @@
     paused = false;
     updateVoiceButton();
   }
+document.addEventListener("pilotevoix:vitesse", () => stopSpeech());   /* 17/10/2026 (chantier prof vocal) : changer la vitesse commune arrête la lecture et rend « Écouter » */
 
   function toggleSpeech() {
     if (!("speechSynthesis" in window)) return;
