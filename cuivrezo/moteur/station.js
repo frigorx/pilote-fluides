@@ -23,7 +23,13 @@ const Station = (() => {
   const ECHELLE = ['Non évalué', 'Non acquis', 'En cours', 'Acquis', 'Parfaitement maîtrisé'];
   const S = { st: null, t: 0, p: 0, racine: '', revue: /[?&]revue\b/.test(location.search), auto: false, memo: {} };
   /* pour le prof vocal du site : le défi et « Je contrôle » attendent l'élève ; la page du professeur clôt le parcours */
-  window.PILOTE_PROF_ACTIVITE = () => ['defi', 'controles', 'prof'].includes(TEMPS[S.t] && TEMPS[S.t].cle);
+  window.PILOTE_PROF_ACTIVITE = () => {
+    const cle = TEMPS[S.t] && TEMPS[S.t].cle;
+    if (['defi', 'controles', 'prof'].includes(cle)) return true;
+    /* un geste qui porte un outil à manipuler (identifier, convertir : l'élève tape sa mesure) l'attend aussi (17/10/2026) */
+    const g = cle === 'gestes' && S.st && S.st.gestes[S.p];
+    return !!(g && g.figure && g.figure.outil);
+  };
   const $ = s => document.querySelector(s);
   const el = (tag, cls, txt) => { const n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; };
 
