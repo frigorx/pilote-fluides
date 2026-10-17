@@ -92,7 +92,7 @@ const CAPSULE = (() => {
     const v = voixFrancaise();
     if (v) u.voice = v;
     u.lang = "fr-FR";
-    u.rate = VITESSES[iVitesse];
+    u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : VITESSES[iVitesse];   /* le réglage commun du site d'abord */
     u.pitch = 1;
     u.onend = () => {
       if (mien !== tour) return;
@@ -290,7 +290,12 @@ const CAPSULE = (() => {
 
   function brancher() {
     $("#btn-commencer").addEventListener("click", () => commencer(false));
-    $("#btn-suivi").addEventListener("click", () => commencer(true));
+    /* « Commencer en suivi » ouvre le professeur vocal du site quand il est là (17/10/2026) : une porte de plus vers la
+       même fonction, qui enchaîne les écrans et s'arrête aux questions comme partout ailleurs */
+    $("#btn-suivi").addEventListener("click", () => {
+      if (window.PiloteProfVocal) { commencer(false); window.PiloteProfVocal.activer(); }
+      else commencer(true);
+    });
     $("#btn-precedent").addEventListener("click", () => aller(index - 1));
     $("#btn-suivant").addEventListener("click", () => {
       if (index === ecrans.length - 1) terminer(); else aller(index + 1);
@@ -310,6 +315,13 @@ const CAPSULE = (() => {
     $("#btn-vite").addEventListener("click", () => { iVitesse = Math.min(VITESSES.length - 1, iVitesse + 1); majVitesse(); if (parle) lireEcranCourant(); });
     $("#btn-projection").addEventListener("click", () => basculeProjection());
     $("#btn-imprimer").addEventListener("click", () => { taire(); window.print(); });
+    /* un seul réglage de vitesse sur le site, le commun (décision de F. Henninot, 16/10/2026) : il remplace les quatre
+       vitesses de la capsule, et le changer coupe la voix */
+    if (window.PILOTE_VOIX_REGLAGE) {
+      const propre = $(".vitesse"); if (propre) propre.style.display = "none";
+      window.PILOTE_VOIX_REGLAGE.monter($("#btn-ecouter").parentNode);
+      document.addEventListener("pilotevoix:vitesse", taire);
+    }
 
     document.addEventListener("keydown", (ev) => {
       if (/^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName)) return;
