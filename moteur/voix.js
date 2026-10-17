@@ -78,7 +78,9 @@
           cle: text ? textKey(text) : null,
           mode: mode || lastMode,
           debit: utterance && utterance.rate,
-          interne: !!(utterance && utterance.__piloteProfVocal)
+          /* une réplique du prof vocal, ou un morceau d'une narration qu'un moteur annonce lui-même en entier
+             (HoCourant : un film en deux actes) : le prof vocal ne doit pas y voir la fin d'un écran */
+          interne: !!(utterance && (utterance.__piloteProfVocal || utterance.__piloteNarrationPartielle))
         }, extra || {})
       }));
     } catch (_) { /* les anciens navigateurs gardent la lecture sans orchestration */ }
