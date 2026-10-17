@@ -87,19 +87,27 @@
       const h = th.scenes[i], n = phraseA(t);
       $(".vy-sous").textContent = n >= 0 && t < h.E[n] + 1.2 ? ecrit(R.scenes[i].phrases[n]) : "";
     }
+    /* La vitesse commune du site (moteur/reglage-voix.js, posé par livrer-voyage.mjs) : l'horloge du récit et la voix
+       avancent ensemble, ils restent donc calés ; sans le réglage (atelier), vitesse 1. */
+    const vitesse = () => (window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 1);
     function son(depuis) {
       audio.pause();
       if (!voix || k < 0) return;
       const h = th.scenes[i], dans = t - h.T[k];
-      if (dans < 0 || t > h.E[k]) return;
+      /* phraseA() change de phrase 0,15 s avant son heure (le sous-titre arrive un peu avant la voix) : refuser
+         alors une phrase « pas encore commencée » laissait le récit muet, sous-titres seuls (défaut D4, 17/10/2026) */
+      if (dans < -0.3 || t > h.E[k]) return;
       audio.src = VOIX + res.pistes[R.scenes[i].id + "-" + k].f;
-      audio.currentTime = depuis ? dans : 0;
+      audio.playbackRate = vitesse();
+      audio.preservesPitch = true;
+      audio.currentTime = depuis ? Math.max(0, dans) : 0;
       audio.play().catch(() => {});
     }
+    document.addEventListener("pilotevoix:vitesse", () => { audio.playbackRate = vitesse(); });
     function boucle(now) {
       if (fini) return; // le panneau de fin a remplacé la scène
       if (joue) {
-        t += Math.min(0.1, (now - avant) / 1000);
+        t += Math.min(0.1, (now - avant) / 1000) * vitesse();
         const n = phraseA(t);
         if (n !== k) { k = n; son(false); }
         if (t >= th.scenes[i].D) { t = th.scenes[i].D; fin(); }
@@ -175,6 +183,7 @@
       if (voix && joue) son(true); else audio.pause();
     });
     main.querySelectorAll(".vy-chap").forEach(b => b.addEventListener("click", () => aller(Number(b.dataset.i))));
+    if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.monter($(".vy-commandes"));   /* un seul réglage de vitesse, le commun */
     etat();
     requestAnimationFrame(n => { avant = n; boucle(n); });
   }
