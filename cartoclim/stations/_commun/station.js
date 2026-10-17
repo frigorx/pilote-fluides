@@ -49,10 +49,22 @@ const Station = (() => {
   /* le texte de la voix, dans la bulle du site (moteur/sous-titres.js, injecté à la livraison) */
   const bulle = (methode, ...args) => { if (window.PiloteSousTitres) window.PiloteSousTitres[methode](...args); };
 
+  /* Le professeur vocal du site (moteur/prof-vocal.js) suit la voix par les mêmes événements que
+     moteur/voix.js : ce moteur les émet pour SES MP3 (la synthèse passe par voix.js, qui les émet). */
+  const annoncer = (nom, texte) => {
+    try { document.dispatchEvent(new CustomEvent('pilotevoix:' + nom, { detail: { texte: texte || '', mode: 'audio-station' } })); } catch (e) {}
+  };
+  /* pour le professeur vocal : « Manipuler » et « Vérifier » attendent l'élève */
+  window.PILOTE_PROF_ACTIVITE = () => {
+    const t = S.contenu && S.contenu.temps[S.temps];
+    return !!t && (t.id === 'manipuler' || t.id === 'verifier');
+  };
+  const vitesseVoix = () => window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : S.vitesse;
+
   function couperVoix() {
     S.tour++;
     bulle('cacher');
-    if (lecteur) { lecteur.pause(); lecteur = null; }
+    if (lecteur) { lecteur.pause(); lecteur = null; annoncer('annulation'); }
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     const b = $('#btVoix'); if (b) { b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); }
   }
@@ -81,13 +93,25 @@ const Station = (() => {
     else direAuNavigateur(texte, tour, b);
   }
 
+  /* La clé ?v= suit le texte dit : une narration réécrite (donc revoicée) change d'adresse, et ni le CDN
+     ni le service worker du site ne ressert l'ancienne voix (07/10). */
+  function cleVoix(texte) {
+    let h = 0;
+    for (let i = 0; i < texte.length; i++) h = (h * 31 + texte.charCodeAt(i)) | 0;
+    return (h >>> 0).toString(36);
+  }
+
   function jouerLeMp3(t, tour, b) {
-    const a = new Audio('voix/' + S.genre + '/' + t.id + '.mp3');
-    a.playbackRate = S.vitesse;
+    const a = new Audio('voix/' + S.genre + '/' + t.id + '.mp3?v=' + cleVoix(t.narration || ''));
+    a.playbackRate = vitesseVoix();
+    let annonce = false;
     a.addEventListener('playing', () => {
-      if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', t.narration, { audio: a }); } });
+      if (tour === S.tour) {
+        b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', t.narration, { audio: a });
+        if (!annonce) { annonce = true; annoncer('debut', t.narration); }
+      } });
     a.addEventListener('ended', () => {
-      if (tour === S.tour) { lecteur = null; b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); } });
+      if (tour === S.tour) { lecteur = null; b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); annoncer('fin', t.narration); } });
     a.addEventListener('error', () => {
       /* pas de fichier ici : on ne réessaiera plus de la séance — repli sur
          la voix du poste, et on dit quand même. */
@@ -109,8 +133,8 @@ const Station = (() => {
        ne se charge pas, et il livrait jusqu'ici le texte brut à la synthèse. */
     const dit = window.PILOTE_PRONONCIATION ? window.PILOTE_PRONONCIATION.oraliser(texte) : texte;
     const u = new SpeechSynthesisUtterance(dit);
-    u.lang = 'fr-FR'; u.rate = S.vitesse; u.pitch = 1; u.voice = v;
-    u.onstart = () => { if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', texte, { debit: S.vitesse }); } };
+    u.lang = 'fr-FR'; u.rate = vitesseVoix(); u.pitch = 1; u.voice = v;
+    u.onstart = () => { if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', texte, { debit: u.rate }); } };
     u.onend = u.onerror = () => { if (tour === S.tour) { b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); } };
     speechSynthesis.speak(u);
   }
@@ -345,6 +369,14 @@ const Station = (() => {
 
     $('#btVoix').addEventListener('click', direNarration);
     const rg = $('#vitesse'), out = $('#vitesseOut');
+    /* Sur le site, le réglage commun (moteur/reglage-voix.js, injecté à la livraison) remplace le
+       curseur : un seul réglage, le même partout (décision de F. Henninot, 16/10/2026). Le
+       changer coupe la lecture (§ 5 de la charte voix). À l'atelier, le curseur garde la main. */
+    if (window.PILOTE_VOIX_REGLAGE) {
+      [rg, out, document.querySelector('label[for="vitesse"]')].forEach(x => { if (x) x.hidden = true; });
+      window.PILOTE_VOIX_REGLAGE.monter($('#btVoix').parentNode);
+      document.addEventListener('pilotevoix:vitesse', couperVoix);
+    }
     /* Même clé de session que moteur/reglage-voix.js : le réglage vaut pour
        toute la visite, pas station par station. */
     try {
