@@ -22,6 +22,8 @@ const Station = (() => {
   ];
   const ECHELLE = ['Non évalué', 'Non acquis', 'En cours', 'Acquis', 'Parfaitement maîtrisé'];
   const S = { st: null, t: 0, p: 0, racine: '', revue: /[?&]revue\b/.test(location.search), auto: false, memo: {} };
+  /* pour le prof vocal du site : le défi et « Je contrôle » attendent l'élève ; la page du professeur clôt le parcours */
+  window.PILOTE_PROF_ACTIVITE = () => ['defi', 'controles', 'prof'].includes(TEMPS[S.t] && TEMPS[S.t].cle);
   const $ = s => document.querySelector(s);
   const el = (tag, cls, txt) => { const n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; };
 
@@ -357,6 +359,15 @@ const Station = (() => {
     auto.addEventListener('click', () => { S.auto = !S.auto; auto.setAttribute('aria-pressed', S.auto ? 'true' : 'false');
       try { sessionStorage.setItem('cuivrezo-auto', S.auto ? '1' : '0'); } catch (e) {} if (S.auto) CuivVoix.dire(S.narration); else CuivVoix.couper(); });
     voix.append(ecoute, lab, auto);
+    /* Sur le site (moteur/reglage-voix.js et prof-vocal.js injectés à la livraison) : deux portes, le même partout
+       (décision de F. Henninot, 16/10/2026). « Écouter » lit l'écran ; le « ▶ Prof vocal » du site enchaîne. Le
+       curseur cède la place au réglage commun, et « Voix à chaque écran » (une troisième porte) se retire. */
+    if (window.PILOTE_VOIX_REGLAGE) {
+      lab.style.display = "none"; auto.style.display = "none"; S.auto = false;   /* .voix label a un display propre : hidden ne suffit pas */
+      window.PILOTE_VOIX_REGLAGE.monter(voix);
+    }
+    ecoute.setAttribute('data-prof-ecouter', '');
+    main.setAttribute('data-prof-zone', '');
     const suiv = el('button', 'suivant'); suiv.id = 'suivant'; suiv.type = 'button';
     suiv.addEventListener('click', () => aller(1));
     bas.append(prec, voix, suiv);

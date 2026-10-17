@@ -64,9 +64,21 @@ const CuivVoix = (() => {
   /* le texte de la voix, dans la bulle discrète (moteur/sous-titres.js, copie de celle du site) */
   const bulle = (methode, ...args) => { if (window.PiloteSousTitres) window.PiloteSousTitres[methode](...args); };
 
+  /* Le professeur vocal du site (moteur/prof-vocal.js) suit la voix par les événements de moteur/voix.js :
+     on les émet pour NOS MP3 (la synthèse passe par voix.js du site, qui les émet lui-même). 17/10/2026. */
+  const annoncer = (nom, texte) => {
+    try { document.dispatchEvent(new CustomEvent('pilotevoix:' + nom, { detail: { texte: texte || '', mode: 'audio-cuivrezo' } })); } catch (e) {}
+  };
+  /* le réglage de vitesse commun du site écrit la même clé de session ; changer la vitesse coupe la voix */
+  document.addEventListener('pilotevoix:vitesse', (e) => {
+    const v = e.detail && +e.detail.vitesse;
+    if (v >= 0.6 && v <= 1.4) vitesse = v;
+    couper();
+  });
+
   function couper() {
     tour++;
-    if (lecteur) { lecteur.pause(); lecteur = null; }
+    if (lecteur) { lecteur.pause(); lecteur = null; annoncer('annulation'); }
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     bulle('cacher');
     etat('arret');
@@ -91,8 +103,9 @@ const CuivVoix = (() => {
     if (mp3 && !mp3Absent) {
       const a = new Audio(mp3);
       a.playbackRate = vitesse;
-      a.addEventListener('playing', () => { if (t === tour) { etat('parle'); bulle('montrer', texte, { audio: a }); } });
-      a.addEventListener('ended', () => { if (t === tour) { lecteur = null; etat('arret'); bulle('cacher'); } });
+      let annonce = false;
+      a.addEventListener('playing', () => { if (t === tour) { etat('parle'); bulle('montrer', texte, { audio: a }); if (!annonce) { annonce = true; annoncer('debut', texte); } } });
+      a.addEventListener('ended', () => { if (t === tour) { lecteur = null; etat('arret'); bulle('cacher'); annoncer('fin', texte); } });
       a.addEventListener('error', () => {
         if (t !== tour) return;
         lecteur = null; mp3Absent = true;   /* pas de fichier ici : repli pour toute la séance */
