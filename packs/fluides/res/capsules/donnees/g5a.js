@@ -33,7 +33,7 @@ CAPSULE.declarer({
       note: "Le point de départ",
       visuel: { svg: "ordre-vannes.svg", alt: "Le montage de récupération, et l'ordre à la déconnexion : fermer côté circuit puis côté appareil, laisser la pression se stabiliser, desserrer lentement par petites touches, récupérer le fluide resté dans le flexible, déconnecter seulement quand la pression est retombée." },
       texte: "<p>Chaque connexion et chaque déconnexion est un <b>point de fuite</b> : le geste est lent, contrôlé, flexibles purgés.</p><p>Avant de récupérer, on <b>arrête et on isole</b> le système — y compris électriquement : la consignation est systématique.</p>",
-      dire: "Avant même de brancher le premier flexible, un principe : chaque connexion et chaque déconnexion est un point de fuite possible. Le geste est donc lent, contrôlé, et les flexibles sont purgés avant d'être ouverts sur l'air. Avant de récupérer, on arrête et on isole le système — y compris électriquement, la consignation est systématique, elle ne se discute pas.",
+      dire: "La récupération commence avant même de brancher le premier flexible. Chaque fois qu'on raccorde ou qu'on débranche un flexible, on ouvre une occasion de fuite. D'où des gestes posés, sans précipitation, et des flexibles purgés avant d'être ouverts. Ensuite, la machine est mise à l'arrêt et isolée, et pas seulement côté fluide : on coupe aussi le courant, avec une consignation complète, à chaque fois, sans exception.",
       reference: "Code 5.01 · avant de connecter",
     },
 
@@ -53,7 +53,7 @@ CAPSULE.declarer({
         pied: "Ce qui commande l'ordre, c'est la pression qui redescend — jamais une durée fixée d'avance.",
       },
       texte: "<p>Le geste de déconnexion suit toujours le même ordre : on <b>ferme</b> côté circuit puis côté appareil, on laisse la <b>pression se stabiliser</b>, on <b>desserre lentement</b>, par petites touches — un raccord encore sous pression peut gicler — et on ne déconnecte que lorsque la pression est retombée.</p>",
-      dire: "Le geste de déconnexion suit toujours le même ordre, et cet ordre ne s'improvise pas. On ferme d'abord côté circuit, puis côté appareil. On laisse ensuite la pression se stabiliser, sans forcer. Vient ensuite le geste le plus délicat : desserrer lentement, par petites touches, jamais d'un coup — un raccord encore sous pression peut gicler, et c'est là que ça blesse. On ne déconnecte que lorsque la pression est vraiment retombée. Ce qui commande cet ordre, c'est la pression elle-même qui redescend — jamais une durée décidée à l'avance.",
+      dire: "Débrancher un flexible se fait en quatre temps, et l'ordre ne change jamais. On commence par fermer les vannes, celle du circuit d'abord, celle de l'appareil ensuite. On attend que la pression se calme. On desserre alors très progressivement, petit à petit, parce qu'un raccord qui garde de la pression peut projeter du fluide. Et on ne retire le flexible qu'une fois la pression tombée. Ce n'est pas la montre qui donne le rythme : c'est la pression elle-même.",
       retenir: ["Fermer, stabiliser, desserrer, déconnecter : toujours dans cet ordre.", "C'est la pression qui commande le rythme, jamais une durée fixée d'avance."],
       reference: "Code 5.01 · le bon ordre",
     },
@@ -146,7 +146,7 @@ CAPSULE.declarer({
         pied: "Un cylindre, un fluide, une étiquette.",
       },
       texte: "<p>Deux fluides différents dans le même cylindre, et le contenu devient <b>impossible à recycler ou à régénérer</b> : il part en destruction, aux frais de l'entreprise.</p>",
-      dire: "Un dernier geste à ne jamais faire, pour finir. Deux fluides différents versés dans le même cylindre, et le contenu devient impossible à recycler ou à régénérer. Il part en destruction, aux frais de l'entreprise. La règle tient en une phrase : un cylindre, un fluide, une étiquette.",
+      dire: "Une fois deux fluides mélangés dans le même cylindre, plus personne ne sait les séparer. Le contenu ne peut plus être recyclé ni régénéré pour servir à nouveau : il doit être détruit, et c'est l'entreprise qui paie la destruction. Une seconde d'inattention coûte donc tout le lot. D'où la règle qui accompagne chaque récupération : un cylindre ne reçoit qu'un seul fluide, et son étiquette le dit clairement. Avant de brancher le flexible, on lit l'étiquette.",
       reference: "Code 5.02 · 5.03 · ne jamais mélanger",
       controle: {
         enonce: "Vous allez récupérer un fluide dans un cylindre qui contient déjà un reste d'un autre fluide, non identifié. Que faites-vous ?",

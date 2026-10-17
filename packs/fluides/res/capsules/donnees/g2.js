@@ -41,7 +41,7 @@ CAPSULE.declarer({
         pied: "Deux textes, deux problèmes : ne pas les confondre.",
       },
       texte: "<p>Deux accords internationaux, deux problèmes différents. Le <b>protocole de Montréal</b> (1987) visait la <b>couche d'ozone</b> : il a fait disparaître les CFC puis les HCFC.</p><p>La <b>convention climat</b> (Kyoto, Paris) vise le <b>réchauffement</b> : c'est elle qui s'attaque aux HFC, dont l'action sur l'ozone est nulle mais l'effet de serre considérable.</p>",
-      dire: "Deux accords internationaux, et ils ne visent pas le même problème. Le protocole de Montréal, en 1987, visait la couche d'ozone : il a fait disparaître les C F C, puis les H C F C. La convention climat, avec Kyoto puis Paris, vise le réchauffement. C'est elle qui s'attaque aux H F C, dont l'action sur l'ozone est nulle, mais dont l'effet de serre est considérable.",
+      dire: "On mélange souvent ces deux accords, alors qu'ils ne combattent pas le même mal. Le premier, signé à Montréal en 1987, s'occupait de la couche d'ozone : c'est lui qui a mis fin aux C F C, puis aux H C F C. Le second, la convention sur le climat, celle de Kyoto puis de Paris, lutte contre le réchauffement. C'est donc elle qui vise les H F C. Ces fluides n'abîment pas l'ozone du tout, mais ils retiennent énormément la chaleur dans l'atmosphère. Retenez le partage : Montréal pour l'ozone, Kyoto et Paris pour le climat.",
       reference: "Code 2.01 · deux accords, deux cibles",
     },
 
@@ -127,7 +127,7 @@ CAPSULE.declarer({
         pied: "Vérifier les deux valeurs, jamais en déduire une de l'autre.",
       },
       texte: "<p>Un HFC a un <b>ODP nul</b> et pourtant un <b>PRP fort</b>. Dire « il ne touche pas l'ozone, donc il est propre » est faux.</p><p>Et un PRP bas ne veut pas dire zéro impact : la question des <b>PFAS</b> se pose désormais sur certains fluides à bas PRP.</p>",
-      dire: "Attention à un raccourci trompeur. Un H F C a un O D P nul, et pourtant un P R P fort. Dire qu'il ne touche pas l'ozone, donc qu'il est propre, est faux : ce sont deux mesures séparées. Et l'inverse trompe aussi. Un P R P bas ne veut pas dire zéro impact : la question des P F A S se pose désormais sur certains fluides à bas P R P.",
+      dire: "Méfiez-vous de deux raccourcis. Le premier : un H F C n'abîme pas l'ozone, son O D P vaut zéro, alors on le croit propre. C'est faux, car son P R P, lui, est élevé : ozone et climat se mesurent séparément. Le second raccourci marche dans l'autre sens : un fluide à P R P faible n'est pas pour autant sans conséquence. Pour certains d'entre eux, on s'interroge désormais sur les P F A S. Retenez qu'aucun chiffre isolé ne suffit à déclarer un fluide inoffensif.",
       retenir: [
         "Un ODP nul ne veut pas dire un PRP bas : ce sont deux mesures séparées.",
         "Un PRP bas ne veut pas dire zéro impact : la question des PFAS se pose aussi.",

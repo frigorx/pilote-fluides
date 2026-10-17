@@ -42,7 +42,7 @@ CAPSULE.declarer({
         pied: "Votre collègue propose de faire vite. Vous, que répondez-vous ?",
       },
       texte: "<p>Une vitrine réfrigérée au <b>R-290</b> a besoin d'un nouveau compresseur, dans l'arrière-boutique d'une boulangerie : un local <b>petit</b>, <b>sans ventilation</b>, un four à quelques mètres.</p><p>Votre collègue propose de « faire vite » : récupérer, ouvrir, braser, recharger — comme sur un circuit classique. Vous, que répondez-vous, avant même de sortir un outil ?</p>",
-      dire: "Une vitrine réfrigérée au R deux cent quatre-vingt-dix, c'est du propane, a besoin d'un nouveau compresseur. Le chantier se trouve dans l'arrière-boutique d'une boulangerie : un local petit, sans ventilation, avec un four à quelques mètres. Votre collègue propose de faire vite : récupérer, ouvrir, braser le nouveau compresseur, recharger, comme sur un circuit classique, vu la petite charge. Vous, avant même de sortir un outil, que répondez-vous ? Prenez trente secondes avant de passer à l'écran suivant.",
+      dire: "Nouvelle enquête, dans une boulangerie. Dans la réserve, derrière le magasin, une vitrine réfrigérée doit recevoir un compresseur neuf. Elle fonctionne au R 290, c'est-à-dire au propane. Regardez bien le décor : la pièce est étroite, l'air ne s'y renouvelle pas, et le four est tout proche. Votre collègue veut aller au plus simple, comme sur n'importe quel circuit : récupérer le fluide, ouvrir, braser, recharger, puisque la charge est petite. Vous, que répondez-vous, avant même de sortir un outil ? Prenez trente secondes avant de passer à l'écran suivant.",
       reference: "Fiche x5 · G12 · A1 · A2",
     },
 
@@ -102,7 +102,7 @@ CAPSULE.declarer({
         pied: "Un détecteur HFC classique n'est pas conçu pour les hydrocarbures.",
       },
       texte: "<p>On ventile, on éloigne ou neutralise toute source d'ignition — le four compris. On récupère. On inerte à l'azote. Et <b>seulement alors</b>, on chauffe pour braser.</p>",
-      dire: "Voici la séquence, dans l'ordre. On ventile le local. On écarte ou on neutralise toute source d'ignition, le four compris. On récupère le fluide du circuit. On inerte à l'azote. Et seulement maintenant, on chauffe pour braser, jamais avant. Un détecteur HFC classique n'est pas conçu pour les hydrocarbures : il faut l'appareil adapté.",
+      dire: "Voici ce qu'il fallait répondre à votre collègue : il y a un ordre, et on ne le bouscule pas. Première étape, faire entrer de l'air neuf dans la réserve. Deuxième, supprimer tout ce qui pourrait enflammer le gaz, et cela inclut le four de la boulangerie. Troisième, récupérer le propane contenu dans le circuit. Quatrième, inerter le circuit avec de l'azote. C'est à ce moment-là seulement que le chalumeau peut s'allumer pour la brasure. Un dernier détail compte : le détecteur prévu pour les H F C ne convient pas aux hydrocarbures, il faut l'appareil adapté.",
       reference: "Codes 12.05 · 12.06 · la réponse",
       controle: {
         enonce: "Que répondez-vous, analyse de risques en main ?",
@@ -134,7 +134,7 @@ CAPSULE.declarer({
       },
       piege: "<p>« La charge est petite » n'est pas un argument : le R-290 est classé <b>A3</b>, et c'est justement pour cela que sa charge admise reste petite. Un local exigu, sans ventilation, avec une flamme à proximité : c'est le scénario d'accident type.</p>",
       texte: "<p>Avant de chauffer, on inerte à l'<b>azote</b> — jamais à l'air ni à l'oxygène.</p><p>Et si la source d'ignition ne peut pas être écartée ? La réponse ne change pas : on ne fait pas l'intervention.</p>",
-      dire: "Un dernier réflexe, pour la route. Avant de chauffer, on inerte toujours à l'azote, jamais à l'air ni à l'oxygène. Et une question à se poser avant d'arriver sur le chantier suivant : et si le client refuse qu'on coupe le four ? La réponse ne change pas. On ne fait pas l'intervention. Un local qui ne peut pas être mis en sécurité n'est pas un chantier, c'est un risque qu'on refuse de prendre.",
+      dire: "Dernier réflexe de cette enquête. Avant toute chauffe, le circuit est rempli d'azote ; ni l'air ni l'oxygène ne conviennent. Et posez-vous une question dès maintenant : que faire si le client ne veut pas éteindre son four ? La réponse est la même : on renonce à l'intervention. Un local qu'on ne peut pas rendre sûr n'est pas un chantier. Quant à l'argument de la petite charge, il ne tient pas : le R 290 est classé A 3, et c'est précisément pour cette raison que la quantité autorisée reste limitée.",
       retenir: ["Avant de chauffer, on inerte à l'<b>azote</b> — jamais à l'air ni à l'oxygène.", "Si la source d'ignition ne peut pas être écartée, on ne fait pas l'intervention."],
       reference: "Codes 12.04 · 12.06 · le réflexe",
     },

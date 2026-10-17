@@ -41,7 +41,7 @@ CAPSULE.declarer({
         pied: "Le registre parle avant même que vous sortiez le détecteur.",
       },
       texte: "<p>Vous faites un contrôle périodique d'étanchéité chez un client. Avant de sortir le détecteur, vous ouvrez le <b>registre</b> de la machine.</p><p>Il vous apprend qu'une fuite a été réparée il y a trois mois, sur un raccord flare de la ligne liquide. Qu'est-ce que ça change pour la suite de votre contrôle ?</p>",
-      dire: "Vous êtes chez un client, pour un contrôle périodique d'étanchéité. Avant même de sortir le détecteur, vous ouvrez le registre de la machine. Il vous apprend qu'une fuite a été réparée il y a trois mois, sur un raccord flare de la ligne liquide. Cette seule information, avant d'avoir mesuré quoi que ce soit, devrait déjà changer votre façon de faire le contrôle. Qu'est-ce que ça change, à votre avis ? Prenez trente secondes avant de passer à l'écran suivant.",
+      dire: "Cette enquête commence avant toute mesure, par la lecture d'un document. Vous arrivez chez un client pour le contrôle d'étanchéité régulier de sa machine. Votre premier geste n'est pas de prendre le détecteur, mais d'ouvrir le registre. Vous y découvrez une réparation de fuite, vieille de trois mois : elle se trouvait sur un raccord flare, côté ligne liquide. Gardez bien cette information en tête. Qu'est-ce que ça change pour la suite de votre contrôle ? Prenez trente secondes avant de passer à l'écran suivant.",
       reference: "Fiche x4 · G4 · parcours E",
     },
 
@@ -61,7 +61,7 @@ CAPSULE.declarer({
         pied: "Deux alertes. Chacune appelle un réflexe précis.",
       },
       texte: "<p>Le contrôle visuel ne montre <b>rien</b> sur le raccord réparé.</p><p>Votre détecteur électronique <b>sonne</b> en passant près du condenseur — ventilateur en marche.</p><p>Et sur la machine, la plaque indique un fluide différent de celui noté au registre l'an dernier.</p>",
-      dire: "Passons en revue ce que vous relevez. Le contrôle visuel ne montre rien sur le raccord déjà réparé, il a l'air propre. Votre détecteur électronique, lui, sonne en passant près du condenseur, ventilateur en marche. Et en regardant la plaque signalétique de la machine, vous remarquez qu'elle indique un fluide différent de celui noté au registre l'année dernière. Quatre observations, et deux d'entre elles demandent une vraie réaction.",
+      dire: "Faisons le point sur ce que vous avez constaté. Le registre vous a appris qu'une fuite avait été réparée voici trois mois. À l'œil, l'endroit réparé paraît sain. Votre détecteur électronique, en revanche, se déclenche quand vous approchez du condenseur, alors que son ventilateur tourne. Enfin, la plaque fixée sur la machine annonce un fluide qui n'est pas celui inscrit au registre l'année passée. Quatre constats, donc, dont deux appellent une réaction de votre part : à vous de les repérer avant de passer à la suite.",
       reference: "Codes 4.02 · 4.08 · les observations",
     },
 
@@ -81,7 +81,7 @@ CAPSULE.declarer({
         pied: "Le registre avait déjà désigné un suspect : le point réparé.",
       },
       texte: "<p>Consigner tout de suite « fuite au condenseur » ? Trop vite : le ventilateur brasse l'air, le nuage de fluide a pu venir d'ailleurs.</p><p>Resserrer tous les raccords « par précaution » ? Ça paraît sérieux, mais c'est une intervention non justifiée : sur ce contrôle, on ne touche pas au circuit.</p><p>Ignorer l'alerte, en se disant que l'air brassé fausse toujours le détecteur ? Non plus : l'alerte peut être vraie.</p>",
-      dire: "Trois réactions viennent à l'esprit, regardons-les une par une. Consigner tout de suite « fuite au condenseur » ? Si c'était vraiment le condenseur, vous retrouveriez le signal au même endroit une fois l'air calmé. Mais pour l'instant, rien ne le prouve : le ventilateur brasse l'air, le nuage a pu venir d'ailleurs. Resserrer tous les raccords du condenseur, par précaution ? Ça paraît professionnel, mais c'est une intervention non justifiée, et sur ce genre de contrôle, on ne touche pas au circuit sans raison. Ignorer l'alerte, en se disant que l'air brassé fausse toujours le détecteur ? Non plus, l'alerte peut très bien être vraie. Il reste une seule chose à faire : confirmer, dans de bonnes conditions.",
+      dire: "Face à cette alerte, trois réactions viennent spontanément, et aucune des trois ne résiste à la réflexion. Conclure tout de suite à une fuite au condenseur, et l'écrire ? C'est trop tôt : avec le ventilateur en marche, l'air est brassé, et le fluide détecté a très bien pu arriver d'un autre endroit. Resserrer par sécurité tous les raccords ? Cela donne l'air consciencieux, mais rien ne justifie cette intervention, et ce contrôle se fait sans toucher au circuit. Faire comme si de rien n'était, en accusant l'air brassé de tromper le détecteur ? Pas davantage : l'alerte est peut-être réelle. Reste une seule voie, que montre l'écran suivant.",
       reference: "Code 4.08 · utiliser le détecteur",
     },
 
@@ -92,7 +92,7 @@ CAPSULE.declarer({
       visuel: { svg: "balayage-detecteur.svg", alt: "La technique de balayage au détecteur électronique : la sonde longe le raccord lentement, au contact, et une alerte se confirme toujours par un second passage." },
       legende: "Ventilateur arrêté, passage lent, et on recontrôle aussi le raccord déjà réparé.",
       texte: "<p>Vous arrêtez le ventilateur, et vous refaites un passage lent au détecteur, au contact du raccord.</p><p>Vous recontrôlez aussi le point déjà réparé, même s'il semblait propre au premier passage visuel : un point réparé se vérifie toujours en priorité.</p>",
-      dire: "La bonne réponse : vous arrêtez le ventilateur, pour que l'air ne brasse plus rien. Vous refaites un passage lent au détecteur, au contact du raccord, près du condenseur. Et vous recontrôlez aussi le point déjà réparé, même s'il semblait propre au premier passage visuel : un point réparé se vérifie toujours en priorité, ce n'est jamais un hasard s'il figure au registre.",
+      dire: "Face à un résultat douteux, on ne conclut pas, on confirme. Le ventilateur s'arrête d'abord, parce que l'air qu'il brasse disperse le fluide et trompe le détecteur. On repasse ensuite lentement, au contact du raccord suspect. Et on revient sur le point déjà réparé, même s'il semblait propre à l'œil : une réparation ancienne est toujours la première suspecte, et sa présence au registre n'est pas un hasard. Cette rigueur évite de déclarer un circuit sain alors qu'il fuit encore.",
       reference: "Codes 4.02 · 4.08 · la réponse",
       controle: {
         enonce: "Le détecteur a sonné près du condenseur, ventilateur en marche. Quelle est la suite correcte ?",
@@ -115,7 +115,7 @@ CAPSULE.declarer({
       legende: "Se tromper de fluide, c'est se tromper de table : la plaque et le registre doivent raconter la même histoire.",
       piege: "<p>La plaque indique un fluide différent de celui noté au registre l'an dernier. Presque personne ne relève ce détail — pourtant il <b>change la table de saturation</b> à utiliser pour toute la suite du contrôle.</p>",
       texte: "<p>Un point réparé se recontrôle toujours en priorité, même s'il semble propre au visuel.</p><p>Et une incohérence entre la plaque et le registre ne se laisse jamais passer : elle se <b>signale</b>.</p>",
-      dire: "Deux réflexes à garder pour la suite de votre carrière. D'abord : un point réparé se recontrôle toujours en priorité, même s'il semble parfaitement propre au visuel. Ensuite, et c'est le détail que presque personne ne relève : la plaque de la machine indique un fluide différent de celui noté au registre l'an dernier. Ce n'est pas un détail sans conséquence, ça change la table de saturation à utiliser pour toute la suite du contrôle. Une incohérence comme celle-là, on ne la laisse jamais passer : on la signale.",
+      dire: "Cette enquête se termine sur deux réflexes à emporter. Le premier, vous l'avez déjà vu : un endroit qui a été réparé passe en tête de liste au contrôle suivant, même si, à l'œil, il paraît impeccable. Le second est plus discret. Sur la machine, la plaque annonce un fluide, mais le registre de l'an passé en mentionne un autre. Ce décalage n'a rien d'anodin : selon le fluide, on ne lit pas la même table de saturation, et tout le reste du contrôle en dépend. Une telle contradiction ne s'ignore pas : on la signale. Plaque et registre doivent toujours s'accorder.",
       retenir: ["Un point réparé se recontrôle <b>en priorité</b>.", "Une incohérence plaque / registre se <b>signale</b> : elle change la table de saturation à utiliser."],
       reference: "Codes 4.02 · 4.08 · le réflexe",
     },

@@ -60,7 +60,7 @@ CAPSULE.declarer({
         pied: "1985 : le trou dans la couche d'ozone est découvert au-dessus de l'Antarctique.",
       },
       texte: "<p>Cinquante ans plus tard, la facture arrive. En <b>1985</b>, on découvre le <b>trou dans la couche d'ozone</b> au-dessus de l'Antarctique.</p><p>En cause : le <b>chlore</b> des CFC, qui casse l'ozone chargé de filtrer les <b>UV-B</b>.</p>",
-      dire: "Cinquante ans plus tard, la facture arrive. En 1985, on découvre un trou dans la couche d'ozone, au-dessus de l'Antarctique. La cause : le chlore contenu dans les C F C casse l'ozone, ce gaz qui nous protège en filtrant les ultraviolets B du soleil.",
+      dire: "Cinquante ans ont passé, et l'addition arrive. En 1985, au-dessus de l'Antarctique, on découvre une zone où l'ozone manque : un trou. Le coupable, c'est le chlore contenu dans les C F C : il détruit l'ozone, ce gaz qui nous protège en filtrant les rayons ultraviolets B du soleil. Cette découverte va tout changer, comme le montre la suite.",
       reference: "Code 2.01 · 1985, le trou d'ozone",
     },
 
@@ -80,7 +80,7 @@ CAPSULE.declarer({
         pied: "Un texte international, suivi, qui a marché.",
       },
       texte: "<p>En <b>1987</b>, le <b>protocole de Montréal</b> organise la sortie des CFC, puis celle des HCFC.</p><p>La couche d'ozone se répare : c'est <b>le plus grand succès environnemental mondial</b>.</p>",
-      dire: "Alors le monde réagit. En 1987, le protocole de Montréal organise la sortie des C F C, puis celle des H C F C qui les ont remplacés en partie. Résultat : la couche d'ozone se répare. C'est considéré comme le plus grand succès environnemental mondial.",
+      dire: "Face à cette découverte, les pays du monde entier réagissent. En 1987, ils signent à Montréal un protocole qui programme l'abandon des C F C, puis des H C F C qui avaient pris une partie de leur place. Et ça marche : peu à peu, l'ozone se reconstitue. On considère aujourd'hui cet accord comme la plus grande réussite mondiale en matière d'environnement. La suite montre comment l'histoire se poursuit, cette fois du côté du climat.",
       retenir: ["Le <b>protocole de Montréal</b> (1987) a fait disparaître les CFC puis les HCFC : la couche d'ozone se répare."],
       reference: "Code 2.01 · le protocole de Montréal",
     },
@@ -171,7 +171,7 @@ CAPSULE.declarer({
         pied: "On a réutilisé le traité qui fonctionne, pour un problème différent.",
       },
       texte: "<p>En <b>2016</b>, l'<b>amendement de Kigali</b> fait entrer les HFC dans le protocole de Montréal — alors que ce traité visait l'ozone, pas le climat.</p><p>En Europe, le règlement <b>F-Gas</b> traduit tout cela en quotas, interdictions et obligations : celles de votre métier.</p>",
-      dire: "Dernier rebondissement de cette histoire, et c'est le plus important à retenir. En 2016, l'amendement de Kigali fait entrer les H F C dans le protocole de Montréal. Or Montréal visait l'ozone, pas le climat, et les H F C ont un O D P nul. Pourquoi ce choix ? Parce que Montréal est le traité qui a fait ses preuves : plutôt que d'en inventer un nouveau, le monde a réutilisé celui qui fonctionne, pour un problème différent. En Europe, le règlement F-Gas traduit tout cela en quotas, interdictions et obligations. Ce sont celles de votre métier.",
+      dire: "Dernier épisode, et c'est celui qui compte le plus. En 2016, à Kigali, on modifie le protocole de Montréal pour y faire entrer les H F C. C'est surprenant, puisque ce texte servait à protéger l'ozone, et que les H F C n'abîment pas l'ozone. Mais plutôt que d'écrire un traité neuf, les pays ont repris celui qui avait déjà fait ses preuves, pour traiter cette fois le climat. En Europe, c'est le règlement F-Gas qui transforme tout cela en quotas, en interdictions et en obligations, celles que vous appliquez dans votre métier. Gardez bien séparés les deux indicateurs : l'O D P pour l'ozone, le P R P pour le réchauffement.",
       piege: "<p>L'<b>ODP</b> mesure l'attaque de l'ozone (chlore et brome) ; le <b>PRP</b> mesure l'effet de serre. Un HFC a un ODP <b>nul</b> et un PRP <b>énorme</b> : ne jamais confondre les deux bulletins.</p>",
       reference: "Code 2.01 · l'amendement de Kigali",
       controle: {

@@ -54,7 +54,7 @@ CAPSULE.declarer({
         pied: "Ce geste ne se discute pas et ne se découvre pas : il s'impose.",
       },
       texte: "<p>Toute mise en pression se fait à l'<b>azote</b>, et à l'azote seulement.</p><p><b>Jamais d'oxygène</b> : au contact de l'huile du circuit, le mélange est explosif. <b>Jamais d'air comprimé</b> : il apporte de l'humidité et contient de l'oxygène.</p>",
-      dire: "Un seul geste, ici, ne se discute pas. Toute mise en pression se fait à l'azote, et à l'azote seulement. Jamais d'oxygène : au contact de l'huile qui reste dans le circuit, le mélange devient explosif. Jamais d'air comprimé non plus : il apporte de l'humidité, et il contient lui-même de l'oxygène. Ce n'est pas une question de prudence en plus, c'est une règle qui ne se discute pas.",
+      dire: "Pour gonfler un circuit avant de l'éprouver, un seul gaz est permis : l'azote. Et l'oxygène, alors ? Le circuit contient toujours de l'huile, et oxygène et huile ensemble peuvent exploser. Et l'air du compresseur de l'atelier ? Refusé lui aussi, pour deux raisons : il fait entrer de l'eau dans le circuit, et il renferme lui aussi de l'oxygène. Il n'y a donc aucune exception à chercher : bouteille d'azote, et rien d'autre. Reste à savoir comment lire le résultat de l'épreuve : c'est l'écran suivant.",
       retenir: ["Toute mise en pression se fait à l'<b>azote</b>, seul.", "Jamais d'oxygène — mélange explosif au contact de l'huile. Jamais d'air comprimé — humidité et oxygène."],
       reference: "Code 3.01 · 3.02 · le gaz d'épreuve",
       controle: {
@@ -85,7 +85,7 @@ CAPSULE.declarer({
         pied: "Une chute de pression, même minime, signale une fuite quelque part dans le circuit.",
       },
       texte: "<p>On relève la pression d'azote au <b>manomètre</b> au début de l'essai, puis on attend la durée prévue. Si la pression reste <b>stable</b> pendant toute cette durée, le circuit est déclaré étanche.</p><p>À l'inverse, une <b>chute de pression</b> signale une fuite quelque part dans le circuit, même si elle est minime.</p>",
-      dire: "Comment conclut-on l'épreuve d'étanchéité ? On relève d'abord la pression d'azote au manomètre — c'est l'appareil qui mesure la pression — au tout début de l'essai. Puis on attend la durée prévue par le constructeur. Si la pression reste stable pendant toute cette durée, le circuit est déclaré étanche. Si au contraire elle chute, même très légèrement, c'est le signal d'une fuite quelque part dans le circuit.",
+      dire: "Tout se joue sur une comparaison entre deux lectures. Au départ de l'épreuve, vous notez ce qu'affiche le manomètre, l'appareil qui mesure la pression d'azote. Ensuite, vous laissez passer le temps prévu par le constructeur. Si l'aiguille n'a pas bougé du début à la fin, le circuit est étanche. Si elle a baissé, même très peu, c'est qu'une fuite existe, à un endroit ou à un autre du circuit. Deux issues, donc : stable, ou en baisse. L'écran suivant montre pourtant un piège dans cette lecture.",
       reference: "Code 3.02 · lire l'épreuve d'étanchéité",
     },
 
@@ -104,7 +104,7 @@ CAPSULE.declarer({
         pied: "Face à une petite variation, on corrige avant de conclure trop vite à une fuite.",
       },
       texte: "<p>Un piège classique : la <b>température de l'atelier</b> fait elle aussi varier la pression, sans qu'il y ait de fuite.</p><p>Dans un circuit fermé, la pression de l'azote <b>augmente</b> un peu quand l'air ambiant se réchauffe, et <b>diminue</b> un peu quand il refroidit. On regarde donc la <b>tendance</b> sur toute la durée de l'épreuve, pas un seul chiffre isolé.</p>",
-      dire: "Voici le piège classique de cette épreuve. La température de l'atelier fait elle aussi varier la pression, sans qu'il y ait la moindre fuite. Dans un circuit fermé, la pression de l'azote augmente un peu quand l'air ambiant se réchauffe, et diminue un peu quand il refroidit. Alors, face à une petite variation, le réflexe n'est pas de conclure aussitôt à une fuite. On regarde la tendance sur toute la durée de l'épreuve, on corrige mentalement l'effet de la température, et on ne se fie jamais à un seul chiffre isolé.",
+      dire: "Pendant une épreuve à l'azote, l'aiguille du manomètre peut bouger sans qu'il y ait la moindre fuite. La raison est simple : l'azote enfermé réagit à la température de l'atelier. Il pousse un peu plus quand l'air se réchauffe, un peu moins quand il se refroidit. Conclure à une fuite sur une petite baisse au petit matin, c'est se tromper. La bonne lecture consiste à suivre l'évolution sur toute la durée de l'épreuve, en gardant la température en tête, et non à juger sur une seule valeur. C'est un piège qu'on retrouve souvent à l'examen.",
       retenir: ["On regarde la <b>tendance</b> sur toute la durée de l'épreuve, jamais un chiffre isolé.", "La température ambiante fait un peu varier la pression, même sans fuite."],
       reference: "Code 3.02 · le piège de la température",
       controle: {

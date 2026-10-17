@@ -42,7 +42,7 @@ CAPSULE.declarer({
         pied: "Sans ce contrôle, l'étincelle d'un interrupteur suffit.",
       },
       texte: "<p>Une petite fuite sur une unité au R-290, dans un local fermé et peu ventilé. Rien ne se voit, rien ne se sent : le gaz s'accumule près du sol.</p><p>Un technicien entre, actionne l'interrupteur, branche une lampe ou pose un outil électroportatif. <b>L'étincelle du contact suffit.</b> Il n'y avait aucun signe avant-coureur.</p>",
-      dire: "Commençons par une scène réelle. Une petite fuite sur une unité au R-290, dans un local technique fermé et peu ventilé. Rien ne se voit, rien ne se sent. Le gaz, plus lourd que l'air, s'accumule lentement près du sol. Un technicien entre, actionne l'interrupteur d'éclairage, branche une lampe baladeuse, ou pose un outil électroportatif sur le sol. L'étincelle du contact suffit. Il n'y avait aucun signe avant-coureur, et l'inflammation ne laisse pas le temps de reculer.",
+      dire: "Cette scène est d'autant plus dangereuse qu'elle est silencieuse. Une petite fuite de R 290, un local fermé et mal ventilé : le gaz ne se voit pas, ne se sent pas, et se rassemble près du sol. Le technicien entre et fait un geste parfaitement ordinaire : allumer la lumière, brancher une lampe, poser une visseuse. L'étincelle de ce contact suffit à enflammer le mélange. Aucun signe ne l'a prévenu. Retenez la leçon de cette capsule : avec un gaz inflammable, l'absence d'indice ne prouve jamais l'absence de danger.",
       reference: "Code 12.04 · analyser le risque avant de commencer",
     },
 
@@ -94,7 +94,7 @@ CAPSULE.declarer({
       visuel: { svg: "lie-domaine.svg", alt: "L'axe des concentrations : trop pauvre, puis le domaine d'explosivité entre LIE et LSE, puis trop riche. L'explosimètre affiche un pourcentage de la LIE, c'est-à-dire la marge restante." },
       legende: "L'explosimètre n'affiche pas une quantité de gaz : il affiche la marge qui reste avant le domaine d'explosivité.",
       texte: "<p>L'appareil qui répond à cette question s'appelle un <b>explosimètre</b>. Il affiche <b>un pourcentage de la LIE</b> du gaz recherché : une mesure de <b>marge restante</b>.</p><p>Une valeur de 10 % LIE signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable.</p>",
-      dire: "L'appareil qui répond à cette question s'appelle un explosimètre. Il ne mesure pas une quantité de gaz dans l'absolu : il affiche un pourcentage de la L I E du gaz recherché. Une valeur de dix pour cent L I E signifie que l'atmosphère contient un dixième de la concentration à partir de laquelle elle deviendrait inflammable. C'est une mesure de marge restante, et c'est ce qui la rend utilisable : l'alarme se déclenche bien avant que le mélange ne devienne explosif.",
+      dire: "Pour savoir si l'air d'un local peut s'enflammer, on utilise un explosimètre. Son écran ne vous donne pas la quantité de gaz présente : il vous dit où vous en êtes par rapport au seuil dangereux, la L I E du gaz qu'on cherche. Prenons dix pour cent de L I E : l'air contient alors le dixième de ce qu'il faudrait pour que le mélange devienne inflammable. Autrement dit, l'appareil mesure la marge qui vous reste. C'est ce qui le rend si utile : son alarme se déclenche bien avant que le mélange ne devienne explosif.",
       reference: "Code 12.02 · lire l'appareil",
       controle: {
         enonce: "Un explosimètre affiche « 10 % LIE » dans un local où une fuite de R-290 est suspectée. Qu'est-ce que cela signifie ?",
@@ -124,7 +124,7 @@ CAPSULE.declarer({
         pied: "Un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux.",
       },
       texte: "<p>Un explosimètre <b>se règle pour un gaz donné</b>. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène : ce sont <b>trois appareils différents</b>, qui répondent à trois questions différentes.</p>",
-      dire: "Un point à ne jamais confondre. Un explosimètre se règle pour un gaz donné : un appareil réglé pour un gaz et utilisé pour un autre affiche un chiffre faux. Et il ne remplace ni un détecteur de fuite de fluide frigorigène, ni un détecteur d'oxygène. Ce sont trois appareils différents, qui répondent à trois questions différentes : est-ce que ça peut exploser, est-ce que le fluide fuit, est-ce que je peux respirer.",
+      dire: "Sur un chantier, trois appareils de mesure se côtoient, et chacun répond à sa propre question. L'explosimètre vous dit si l'air risque de s'enflammer, et il ne le fait que pour un gaz précis, celui pour lequel on l'a réglé : utilisé pour un autre, il affiche une valeur fausse. Votre détecteur de fuite, lui, cherche le fluide frigorigène qui s'échappe. Le détecteur d'oxygène, enfin, vous indique si vous pouvez respirer. Aucun des trois ne remplace les deux autres. Gardez ces trois questions en tête, et ne prenez jamais un appareil pour un autre.",
       reference: "Code 12.02 · le bon appareil pour la bonne question",
       controle: {
         enonce: "Un explosimètre réglé pour un gaz est utilisé dans un local où c'est un autre gaz qui a fui. Que se passe-t-il ?",
@@ -166,7 +166,7 @@ CAPSULE.declarer({
         pied: "Le nez ne sert à rien ici : c'est l'appareil qui décide.",
       },
       texte: "<p>Face à un local où une fuite de gaz inflammable est possible : on contrôle à l'explosimètre <b>avant</b> tout geste. On n'actionne rien avant d'avoir la réponse de l'appareil.</p>",
-      dire: "Retenons le geste qui protège. Devant un local où une fuite de gaz inflammable est possible, on contrôle l'atmosphère à l'explosimètre avant tout geste : avant d'actionner un interrupteur, avant de brancher une lampe, avant de poser un outil. Le nez ne sert à rien ici, c'est l'appareil qui décide.",
+      dire: "Toute la capsule se résume en un geste. Quand vous soupçonnez qu'un gaz inflammable a pu s'échapper dans un local, c'est l'explosimètre qui passe en premier, avant vous et avant vos mains. Tant qu'il n'a pas donné sa mesure, on ne touche à rien : pas de lumière, pas de prise, pas de visseuse. Et votre odorat ne vous dira rien : le propane des installations frigorifiques n'a pas l'odeur ajoutée au gaz domestique. L'appareil décide, jamais le nez.",
       piege: "<p>Entrer dans un local où une fuite de fluide inflammable est possible et y <b>actionner un interrupteur, brancher une lampe ou utiliser un outil électroportatif</b>, sans avoir contrôlé l'atmosphère à l'explosimètre.</p><p>Se fier à son odorat en est la variante la plus courante : le R-290 utilisé en froid ne contient pas l'odorisant du gaz domestique, et aucune odeur ne renseigne sur la distance à la LIE.</p>",
       reference: "Code 12.04 · le geste interdit",
     },

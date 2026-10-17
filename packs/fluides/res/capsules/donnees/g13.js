@@ -36,7 +36,7 @@ CAPSULE.declarer({
         pied: "Ce module informe, il ne vous qualifie pas.",
       },
       texte: "<p>Ce module <b>informe</b>, il ne qualifie pas. Une attestation A1 ou A2 ne donne <b>aucun droit d'intervention</b> sur une installation au CO₂ (catégorie B) ou à l'ammoniac (catégorie C).</p><p>Ce qu'on attend ici : <b>reconnaître</b> et <b>ne pas toucher</b>.</p>",
-      dire: "Commençons par l'idée qui commande tout le reste. Ce module informe, il ne qualifie pas. Une attestation A 1 ou A 2 ne donne aucun droit d'intervention sur une installation au CO2, qui relève de la catégorie B, ou à l'ammoniac, qui relève de la catégorie C. Ce qu'on attend de vous ici, ce n'est pas de savoir intervenir : c'est de reconnaître ces installations, et de ne pas y toucher.",
+      dire: "Avant tout, une mise au point. Cette capsule vous apprend à identifier deux fluides, elle ne vous autorise pas à travailler dessus. Avec une attestation de catégorie A 1 ou A 2, vous n'avez aucun droit d'intervenir sur le dioxyde de carbone, qui relève de la catégorie B, ni sur l'ammoniac, qui relève de la catégorie C. On attend donc trois réflexes de votre part : savoir repérer ces installations, ne pas y toucher, et, en cas de fuite, donner l'alerte puis laisser agir les personnes qualifiées.",
       reference: "Code 13.04 · l'idée à retenir avant tout le reste",
     },
 
@@ -86,7 +86,7 @@ CAPSULE.declarer({
         pied: "Trois dangers qu'un simple « A1 » ne dit pas.",
       },
       texte: "<p>Le <b>CO₂</b> est classé <b>A1</b> : toxicité faible, non inflammable, <b>PRP = 1</b>. Cette classe n'annonce aucun de ses vrais dangers : la <b>pression</b>, l'<b>atmosphère irrespirable</b> en local fermé, et la <b>neige carbonique</b> à la détente.</p><p>En transcritique, le condenseur laisse la place à un <b>refroidisseur de gaz</b>. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.</p>",
-      dire: "Le CO2, le R-744, est classé A 1 : toxicité faible, non inflammable, un P R P de 1. Cette classe n'annonce aucun de ses vrais dangers : la pression, très élevée, l'atmosphère irrespirable en local fermé — il est plus lourd que l'air, s'accumule en point bas, et agit sur la respiration — et le risque de neige carbonique à la détente. En transcritique, le condenseur laisse la place à un refroidisseur de gaz. Les cylindres, à double vanne, ne se raccordent pas au matériel courant.",
+      dire: "Sur le papier, le dioxyde de carbone, le R 744, a tout pour rassurer : classé A 1, peu toxique, il ne brûle pas, et son P R P vaut 1. Mais cette étiquette se tait sur ce qui le rend dangereux. D'abord, il travaille sous des pressions très élevées. Ensuite, plus lourd que l'air, il s'accumule en point bas et rend l'air d'un local fermé impossible à respirer. Enfin, en se détendant, il peut former de la neige carbonique. Côté matériel, en transcritique, un refroidisseur de gaz prend la place du condenseur, et ses cylindres, équipés de deux vannes, ne se branchent pas sur votre matériel habituel. Votre rôle, ici, est de le reconnaître, pas d'intervenir.",
       reference: "Code 13.01 · ce que la classe ne dit pas",
     },
 
@@ -105,7 +105,7 @@ CAPSULE.declarer({
         pied: "Ce domaine de pression propre au CO₂ se lit sur son diagramme log p/h.",
       },
       texte: "<p>La <b>glace carbonique</b> — ou neige carbonique — se forme quand le CO₂ passe directement de l'état gazeux à l'état solide, à la détente à l'air libre.</p><p>Double danger : une <b>brûlure par le froid</b> au contact de la peau, et un <b>bouchon solide</b> qui obstrue une vanne ou une tuyauterie.</p>",
-      dire: "La glace carbonique, un double danger. Elle se forme quand le CO2 passe directement de l'état gazeux à l'état solide, à la détente à l'air libre : c'est le domaine de pression propre au CO2, visible sur son diagramme log p sur h, qui explique ce comportement que les fluides courants n'ont pas. On garde en tête le double danger à chaque détente de CO2 à l'air libre : la brûlure par le froid au contact de la peau, et le bouchon solide qui peut obstruer une vanne ou une tuyauterie. Le diagramme log p sur h et les tables de saturation du CO2 se lisent comme ceux de tout autre fluide, mêmes repères de bulle et de rosée, mais dans un domaine de pression qui lui est propre.",
+      dire: "Quand le dioxyde de carbone se détend brutalement à l'air libre, il peut sauter l'étape liquide et se transformer directement en solide : c'est la neige, ou glace, carbonique. Les fluides que vous connaissez ne se comportent pas ainsi ; c'est la plage de pression particulière du C O 2 qui l'explique. Ce solide présente deux dangers en même temps. Sur la peau, il gèle et brûle par le froid. Dans le circuit, il forme un bloc qui peut boucher une vanne ou un tube. Ces deux risques sont à garder en tête à chaque détente de C O 2.",
       retenir: ["Glace carbonique : <b>brûlure par le froid ET bouchon solide</b>, les deux à la fois.", "C'est le <b>domaine de pression propre au CO₂</b> qui explique ce comportement — les fluides courants ne l'ont pas."],
       reference: "Code 1.09 · le comportement propre au CO₂",
     },
@@ -125,7 +125,7 @@ CAPSULE.declarer({
         pied: "On ne se fie jamais à son nez pour décider.",
       },
       texte: "<p>L'<b>ammoniac</b> est le fluide du froid industriel — agroalimentaire, entrepôts — <b>jamais du résidentiel</b>. Son odeur piquante se perçoit très tôt, mais elle <b>ne remplace aucune mesure</b>, et elle <b>s'émousse à forte concentration</b>.</p><p>En cas de fuite : <b>alerter, évacuer, ne jamais intervenir seul</b>.</p>",
-      dire: "L'ammoniac, le R-717, classé B 2 L : toxique et faiblement inflammable. C'est le fluide du froid industriel — agroalimentaire, entrepôts — jamais du résidentiel. Son odeur piquante se perçoit très tôt : c'est plutôt rassurant. Mais elle ne remplace aucune mesure, et elle s'émousse à forte concentration : on ne se fie jamais à son nez pour décider. En cas de fuite, la conduite est toujours la même : on alerte, on évacue, on n'intervient jamais seul.",
+      dire: "Avec l'ammoniac, le R 717, classé B 2 L, donc toxique et faiblement inflammable, on change de monde : c'est le froid des usines agroalimentaires et des grands entrepôts, jamais celui des logements. Son odeur, très piquante, vous alerte dès les premières traces. C'est un avantage, mais un avantage limité : quand la concentration devient forte, le nez s'habitue et ne sent presque plus rien. Une odeur ne vaut donc jamais une mesure. Et si une fuite se déclare, la conduite ne varie pas : on donne l'alerte, on fait sortir tout le monde, et on n'intervient jamais seul.",
       reference: "Code 14.01 · la conduite à tenir",
       controle: {
         enonce: "Vous percevez une forte odeur d'ammoniac près d'une installation industrielle. Que faites-vous ?",

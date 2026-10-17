@@ -40,7 +40,7 @@ CAPSULE.declarer({
         pied: "Avant de sortir vos instruments : qu'est-ce qui peut expliquer ça ?",
       },
       texte: "<p>Chambre froide positive. Le compresseur tourne, rien d'anormal à l'oreille. Mais la température de la chambre ne redescend plus.</p><p>Avant de sortir la pince et le manifold : qu'est-ce qui peut expliquer qu'un compresseur qui tourne ne fasse plus de froid ?</p>",
-      dire: "Vous intervenez sur une chambre froide positive. Le compresseur tourne, on l'entend, rien d'anormal de ce côté-là. Mais la température de la chambre ne redescend plus. Avant même de sortir la pince et le manifold, demandez-vous : qu'est-ce qui peut expliquer qu'un compresseur qui tourne ne fasse plus de froid ? Prenez trente secondes avant de passer à l'écran suivant.",
+      dire: "Votre enquête commence ici, devant une chambre froide positive. On entend tourner le compresseur, et rien ne sonne faux de ce côté. Pourtant, la chambre ne refroidit plus : sa température reste où elle est. Avant de brancher le moindre instrument, prenez le temps de réfléchir à la question posée : qu'est-ce qui peut expliquer qu'un compresseur qui tourne ne fasse plus de froid ? Prenez trente secondes avant de passer à l'écran suivant.",
       reference: "Fiche x2 · G8 · G9 · exercice",
     },
 
@@ -91,7 +91,7 @@ CAPSULE.declarer({
       visuel: { svg: "diagramme-logph.svg", alt: "Le diagramme log pression-enthalpie : trois zones séparées par la courbe de bulle et la courbe de rosée, et le cycle qui s'y trace en quatre transformations. La surchauffe se lit sur le trait du bas, le sous-refroidissement sur le trait du haut." },
       legende: "L'outil pour rejouer la panne : on y place les relevés, et le cycle se trace tout seul.",
       texte: "<p>Les trois indices ensemble désignent un <b>manque de charge</b> : le circuit n'a plus assez de fluide.</p><p>Ce n'est qu'un diagnostic par méthode indirecte — il reste maintenant à <b>localiser la fuite</b> par méthode directe, puis à la consigner.</p>",
-      dire: "Mettez les trois indices bout à bout : la basse pression qui s'effondre, la surchauffe qui grimpe, le sous-refroidissement qui disparaît avec des bulles au voyant. Les trois ensemble désignent la même cause : un manque de charge, le circuit n'a plus assez de fluide. C'est un diagnostic par méthode indirecte : il vous dit qu'il manque du fluide, pas où il est parti. Il reste maintenant à localiser la fuite par méthode directe, puis à consigner ce que vous avez fait.",
+      dire: "Rassemblez maintenant vos trois relevés. Une basse pression effondrée, une surchauffe qui monte, et un sous-refroidissement qui a disparu, avec des bulles au voyant : tout converge vers la même cause. Le circuit manque de fluide. Attention cependant à ce que cette conclusion vous apprend : elle vient de mesures indirectes, elle dit qu'il manque du fluide, pas par où il s'en va. La suite consiste donc à chercher la fuite elle-même, avec une méthode directe, puis à noter ce que vous avez constaté. Le diagramme affiché sert d'outil : en y reportant vos mesures, on voit le cycle de cette machine se tracer.",
       reference: "Codes 4.04 · 8.08 · le diagnostic",
       controle: {
         enonce: "Quelle hypothèse explique l'ensemble des relevés ?",
@@ -114,7 +114,7 @@ CAPSULE.declarer({
       legende: "La méthode indirecte dit qu'il manque du fluide. La méthode directe dit où il est parti — en général l'un de ces points.",
       texte: "<p>Trouver que le circuit manque de charge n'est pas la fin du travail.</p><p>C'est un diagnostic par méthode indirecte : il reste à <b>localiser la fuite</b> par méthode directe, sur les points qui fuient le plus souvent, puis à <b>consigner</b> ce qui a été trouvé et réparé.</p>",
       piege: "<p>L'erreur : s'arrêter au diagnostic et déclarer « il manque de charge » sans chercher la fuite. Une recharge sans fuite trouvée, c'est une fuite qui reviendra.</p>",
-      dire: "Dernier réflexe, et c'est celui qui coûte cher si on l'oublie. Trouver que le circuit manque de charge n'est pas la fin du travail. C'est un diagnostic par méthode indirecte : il vous dit qu'il manque du fluide, pas à quel endroit. Il reste à localiser la fuite par méthode directe, en commençant par les points qui fuient le plus souvent. Puis à consigner ce que vous avez trouvé et réparé. L'erreur classique, c'est de s'arrêter au diagnostic et de recharger sans avoir trouvé la fuite. Une recharge sans fuite trouvée, c'est une fuite qui reviendra.",
+      dire: "Conclure que le circuit manque de fluide, c'est seulement la moitié du travail. Les mesures indirectes vous ont donné une cause probable, mais elles ne disent pas où le fluide s'échappe. Il faut maintenant chercher la fuite directement, en commençant par les endroits qui fuient le plus souvent, puis noter ce que vous avez trouvé et réparé. Le raccourci tentant, recharger et repartir, ne règle rien : le fluide ajouté repartira par le même chemin, et vous reviendrez.",
       retenir: ["Un diagnostic indirect donne une <b>cause probable</b>, pas un <b>endroit</b>.", "Étape suivante : localiser la fuite par méthode directe, puis consigner."],
       reference: "Codes 4.04 · 8.08 · le réflexe",
     },

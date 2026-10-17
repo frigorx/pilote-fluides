@@ -51,7 +51,7 @@ CAPSULE.declarer({
         pied: "Sans ce débit continu, l'oxygène reste dans le tube et la calamine se forme.",
       },
       texte: "<p>D'où le <b>balayage à l'azote</b> pendant toute la chauffe : un débit léger et continu chasse l'oxygène du tube.</p><p>Pour le cuivre sur cuivre, l'alliage d'apport est généralement du type <b>cuivre-phosphore</b>.</p>",
-      dire: "D'où le balayage à l'azote, pendant toute la durée de la chauffe. Le principe est simple : un débit léger et continu d'azote traverse le tube, et il chasse l'oxygène qui s'y trouve. L'azote entre par la bouteille, traverse le tube pendant que vous chauffez, et ressort librement à l'autre bout. Tant que ce débit continue, pas d'oxygène, pas de calamine. Pour un assemblage cuivre sur cuivre, l'alliage d'apport utilisé est généralement du type cuivre-phosphore.",
+      dire: "La solution s'appelle le balayage. Suivez le trajet sur le schéma : l'azote quitte sa bouteille, avec un réglage faible mais qui ne s'interrompt jamais. Il circule dans le tube pendant que vous chauffez, et il en pousse l'oxygène dehors. Il ressort sans obstacle par l'autre extrémité. Tant que ce petit courant d'azote passe, l'oxygène ne revient pas, et la calamine ne peut pas se former à l'intérieur. Pour assembler du cuivre avec du cuivre, on utilise en général une baguette de brasure au cuivre-phosphore.",
       retenir: ["<b>Balayage</b> : un débit léger et continu d'azote, pendant toute la chauffe, pour chasser l'oxygène."],
       reference: "Code 10.01 · le balayage",
       controle: {
@@ -103,7 +103,7 @@ CAPSULE.declarer({
         pied: "Un circuit qui contient encore du fluide ne se brase pas.",
       },
       texte: "<p>On ne brase <b>jamais</b> un circuit contenant du fluide : récupération, puis inertage à l'azote.</p><p><b>EPI systématiques</b> au poste : lunettes, gants.</p><p>Les tubes se cintrent <b>à froid</b>, à la cintreuse, se coupent au coupe-tube et s'<b>ébavurent</b> — une bavure part avec le fluide et finit dans le compresseur.</p>",
-      dire: "Avant d'allumer le chalumeau, quelques points se vérifient. D'abord, et c'est non négociable : on ne brase jamais un circuit qui contient encore du fluide. Il faut d'abord le récupérer, puis inerter le circuit à l'azote. Ensuite, les équipements de protection sont systématiques au poste : lunettes, gants. Et côté tuyauterie, les tubes se cintrent à froid, à la cintreuse, ils se coupent au coupe-tube, et ils s'ébavurent. Ce dernier geste n'est pas cosmétique : une bavure oubliée part avec le fluide dans le circuit, et elle finit sa course dans le compresseur.",
+      dire: "Plusieurs vérifications passent avant la flamme. D'abord, et sans aucune exception, un circuit qui renferme encore du fluide ne se chauffe pas : on récupère ce fluide, puis on remplit le circuit d'azote. Ensuite, lunettes et gants se portent au poste, à chaque fois. Côté cuivre, le tube se plie à froid, avec la cintreuse, et il se tranche au coupe-tube. Enfin, chaque coupe s'ébavure, parce qu'un copeau oublié voyage dans le circuit jusqu'au compresseur, où il fait des dégâts.",
       reference: "Code 10.01 · avant la flamme",
       controle: {
         enonce: "Un circuit contient encore du fluide et vous devez réparer une fuite par brasage. Que faites-vous avant d'allumer le chalumeau ?",

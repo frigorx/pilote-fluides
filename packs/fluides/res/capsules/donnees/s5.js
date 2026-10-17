@@ -38,7 +38,7 @@ CAPSULE.declarer({
         ],
       },
       texte: "<p>Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier — la barrette où arrivent les fils.</p><p>Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi.</p>",
-      dire: "Voici la situation la plus fréquente. Un technicien pressé ouvre une armoire électrique pour un dépannage rapide. Le disjoncteur qui semble commander cette armoire est coupé, alors il touche directement un bornier, la barrette où arrivent les fils. Mais personne n'a vérifié que ce disjoncteur coupait bien cette armoire précise : un autre circuit, resté sous tension, y arrive aussi. Ce risque ne figure dans aucun code du référentiel d'examen fluides. Il n'en est pas moins réel : il tue des professionnels chaque année, sur les installations de froid et de climatisation comme sur toute autre installation électrique.",
+      dire: "Cette situation est d'une banalité inquiétante. Un technicien pressé voit un disjoncteur coupé et en conclut que l'armoire est hors tension. Il pose la main sur le bornier. Mais personne n'a vérifié que ce disjoncteur alimentait bien cette armoire-là, ni qu'aucun autre circuit n'y arrivait : un second départ, resté sous tension, la traverse. Ce risque ne fait pas partie des codes de l'examen fluides, et pourtant il tue chaque année des professionnels, dans le froid comme ailleurs. La réponse, c'est la vérification d'absence de tension, jamais la déduction.",
       reference: "La situation · hors référentiel d'examen fluides",
     },
 
@@ -57,7 +57,7 @@ CAPSULE.declarer({
         pied: "C'est le même phénomène ; seule la gravité change.",
       },
       texte: "<p>Le passage du courant électrique dans le corps humain porte un nom : l'<b>électrisation</b>. Ses effets vont de la simple secousse à des blessures graves — brûlures internes, troubles du cœur.</p><p>Quand une électrisation entraîne la mort, on parle d'<b>électrocution</b>. C'est le même phénomène ; seule la gravité change.</p>",
-      dire: "Deux mots à ne pas confondre. Le passage du courant électrique dans le corps humain porte un nom : l'électrisation. Ses effets vont de la simple secousse à des blessures graves : brûlures internes, troubles du cœur. Quand une électrisation entraîne la mort, on parle d'électrocution. Retenez bien : c'est le même phénomène, seule la gravité change.",
+      dire: "Ces deux mots désignent le même événement : un courant qui traverse le corps. On parle d'électrisation dans tous les cas, de la petite secousse jusqu'à la blessure grave, avec des brûlures à l'intérieur du corps ou un cœur qui se dérègle. Le mot électrocution est réservé au cas où la victime en meurt. Cette précision n'est pas un détail de vocabulaire : elle rappelle qu'il n'existe pas de petit choc sans conséquence possible. La secousse banale et l'accident mortel relèvent du même phénomène, seules les conséquences diffèrent. Gardez ce mot juste en tête pour la suite.",
       retenir: ["Électrisation : le courant traverse le corps. Électrocution : une électrisation qui tue — c'est le même phénomène."],
       reference: "Le vocabulaire · hors référentiel d'examen fluides",
     },
@@ -77,7 +77,7 @@ CAPSULE.declarer({
         pied: "On peut se blesser gravement sans avoir touché aucun fil.",
       },
       texte: "<p>Un autre danger ne demande aucun contact : l'<b>arc électrique</b>. C'est une décharge qui jaillit dans l'air entre deux points sous tension, ou entre un point sous tension et une masse, sans qu'il soit nécessaire de toucher quoi que ce soit.</p><p>Un arc électrique brûle par la chaleur et la lumière qu'il dégage, et peut projeter des matières en fusion.</p>",
-      dire: "Un autre danger, souvent oublié : l'arc électrique. Il ne demande aucun contact. C'est une décharge qui jaillit dans l'air entre deux points sous tension, ou entre un point sous tension et une masse, sans qu'il soit nécessaire de toucher quoi que ce soit. Un arc électrique brûle par la chaleur et la lumière qu'il dégage, et il peut projeter des matières en fusion. On peut donc se blesser gravement sans avoir touché aucun fil.",
+      dire: "L'arc électrique se moque des précautions de contact. C'est une étincelle géante qui saute à travers l'air, d'une pièce sous tension vers une autre, ou vers une masse, sans que vous ayez touché quoi que ce soit. Elle dégage une chaleur et une lumière intenses, qui brûlent, et elle peut projeter du métal fondu. Autrement dit, s'approcher trop près d'un élément sous tension avec un outil suffit pour se blesser gravement. C'est pourquoi la protection électrique ne se résume jamais à ne pas toucher.",
       reference: "L'arc électrique · hors référentiel d'examen fluides",
       controle: {
         enonce: "Pour être blessé par un arc électrique, faut-il nécessairement toucher un fil ou une pièce sous tension ?",
@@ -107,7 +107,7 @@ CAPSULE.declarer({
         pied: "Un condensateur touché juste après la coupure, alors qu'il est encore chargé, est une situation réelle et fréquente.",
       },
       texte: "<p>Un dernier piège : couper l'alimentation ne vide pas forcément tous les composants de leur énergie. Un <b>condensateur</b> est un composant qui stocke de l'énergie électrique ; on en trouve par exemple dans les circuits de démarrage de certains moteurs.</p><p>Il peut rester chargé après la coupure du courant, et reste dangereux tant qu'il n'a pas été déchargé selon la méthode indiquée par la documentation du constructeur.</p>",
-      dire: "Un dernier piège, avant de passer à ce qui protège. Couper l'alimentation ne vide pas forcément tous les composants de leur énergie. Un condensateur est un composant qui stocke de l'énergie électrique ; on en trouve par exemple dans les circuits de démarrage de certains moteurs. Il peut rester chargé après la coupure du courant. Il reste alors dangereux tant qu'il n'a pas été déchargé selon la méthode indiquée par la documentation du constructeur de l'équipement.",
+      dire: "Couper le courant donne un sentiment de sécurité qui n'est pas toujours justifié. Certains composants gardent de l'énergie en réserve, un peu comme une petite batterie : c'est le rôle du condensateur, qu'on trouve par exemple dans le démarrage de certains moteurs. Une fois l'alimentation coupée, il peut rester chargé, et cette énergie peut passer par vous. Il ne devient sûr qu'après avoir été déchargé avec la méthode que donne le constructeur, jamais avec une méthode improvisée. Sur une intervention, c'est un réflexe qui complète la consignation.",
       reference: "Le condensateur · hors référentiel d'examen fluides",
     },
 
@@ -149,7 +149,7 @@ CAPSULE.declarer({
         pied: "Si le VAT fonctionnait au premier essai mais plus au second, tout ce qu'il a mesuré entre les deux n'est pas fiable.",
       },
       texte: "<p>Le VAT lui-même doit être digne de confiance. On le contrôle sur une source que l'on sait sous tension <b>avant</b> de l'utiliser sur le circuit à vérifier, puis on refait le même contrôle sur cette source connue <b>après</b>.</p><p>Si l'appareil fonctionnait au premier essai mais plus au second, tout ce qu'il a mesuré entre les deux doit être considéré comme non fiable.</p>",
-      dire: "Un point que l'on oublie souvent : le vérificateur d'absence de tension doit lui-même être digne de confiance. On le contrôle sur une source que l'on sait sous tension, avant de l'utiliser sur le circuit à vérifier. Puis on refait exactement le même contrôle, sur cette même source connue, après. Si l'appareil fonctionnait au premier essai mais plus au second, il faut considérer que tout ce qu'il a mesuré entre les deux n'est pas fiable, et reprendre la vérification.",
+      dire: "Un vérificateur d'absence de tension peut tomber en panne sans prévenir, et sa panne ressemble alors exactement à une absence de tension. C'est pourquoi on ne lui fait confiance qu'encadré par deux contrôles. Avant, on le teste sur une source que l'on sait sous tension : il doit réagir. Après la vérification, on refait le même test sur la même source. S'il ne réagit plus, on ne sait pas depuis quand il a cessé de fonctionner, et toutes les mesures prises entre les deux deviennent suspectes : on recommence avec un appareil fiable.",
       reference: "Le VAT · hors référentiel d'examen fluides",
     },
 
@@ -168,7 +168,7 @@ CAPSULE.declarer({
         ],
       },
       texte: "<p>On ne travaille <b>jamais</b> sur une installation électrique sans avoir réalisé les cinq étapes de la consignation, même pour « juste vérifier » ou « deux secondes ». On ne fait <b>jamais</b> confiance à un simple arrêt visuel de la machine.</p><p>Seule une vérification d'absence de tension avec un VAT contrôlé fait foi.</p>",
-      dire: "Pour finir, trois dangers à retenir : l'électrisation, qui peut tuer sous le nom d'électrocution ; l'arc électrique, qui brûle sans aucun contact ; et le condensateur, qui peut rester chargé après la coupure du courant. Face à ces trois dangers, un seul geste qui protège vraiment : on ne travaille jamais sur une installation électrique sans avoir réalisé les cinq étapes de la consignation, même pour « juste vérifier » ou « deux secondes ». On ne fait jamais confiance à un simple arrêt visuel de la machine : seule une vérification d'absence de tension, avec un VAT contrôlé, fait foi.",
+      dire: "Trois dangers vous ont été présentés : le courant qui traverse le corps, l'arc qui brûle à distance, et le condensateur qui garde sa charge. Ils ont un point commun : on ne les voit pas venir. Une seule réponse les couvre tous les trois, la consignation complète, en cinq étapes, même pour une vérification qui ne devait durer que deux secondes. Une machine qui s'est arrêtée n'est pas une machine hors tension : seul un vérificateur d'absence de tension, lui-même contrôlé, vous autorise à toucher. Faire l'impasse, c'est s'exposer à l'électrisation, à l'électrocution ou à la brûlure.",
       piege: "<p>On ne travaille <b>jamais</b> sur une installation électrique sans avoir réalisé les cinq étapes de la consignation, même pour « juste vérifier » ou « deux secondes ». On ne fait <b>jamais</b> confiance à un simple arrêt visuel de la machine : seule une vérification d'absence de tension avec un VAT contrôlé fait foi.</p><p>Conséquence : électrisation, électrocution, brûlure par arc électrique — ce risque tue chaque année.</p>",
       reference: "Le geste interdit · hors référentiel d'examen fluides",
     },

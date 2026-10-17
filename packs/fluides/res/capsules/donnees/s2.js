@@ -38,7 +38,7 @@ CAPSULE.declarer({
         pied: "Vous déconnectez un flexible de manifold en pensant le tronçon vide : c'est là que ça arrive.",
       },
       texte: "<p>Le cas type : vous déconnectez un flexible de <b>manifold</b> (l'appareil à manomètres) en pensant le tronçon vide. La vanne n'a pas été vérifiée, le manomètre pas relu.</p><p>Le liquide restant jaillit au desserrage — dans l'axe du raccord.</p>",
-      dire: "Voici le cas le plus fréquent. Vous déconnectez un flexible de manifold, l'appareil à manomètres, en pensant que le tronçon est vide. La vanne n'a pas été vérifiée, le manomètre pas relu. Et le liquide qui restait à l'intérieur jaillit au moment où vous desserrez, dans l'axe du raccord, droit devant vous.",
+      dire: "Voici la situation la plus fréquente. Vous débranchez un flexible du manifold, l'appareil qui porte les manomètres, en croyant qu'il n'y a plus rien dans cette portion du circuit. Seulement, personne n'a contrôlé la vanne, et personne n'a regardé à nouveau le manomètre. Au moment où le raccord se desserre, le liquide qui restait s'échappe d'un coup, en jet, et ce jet part dans le prolongement du raccord, droit devant vous.",
       reference: "Code 12.02 · la situation",
     },
 
@@ -57,7 +57,7 @@ CAPSULE.declarer({
         pied: "C'est le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
       },
       texte: "<p>Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur autour de lui, y compris sur la peau qu'il touche.</p><p>Ce contact provoque une <b>brûlure froide</b>, aussi appelée <b>gelure</b> : les tissus gèlent presque instantanément.</p>",
-      dire: "Comprenons pourquoi ça brûle. Un fluide frigorigène liquide est sous pression. Dès qu'il retrouve la pression de l'air ambiant, il s'évapore d'un coup. Cette évaporation absorbe une grande quantité de chaleur tout autour de lui, y compris sur la peau qu'il touche. Ce contact provoque une brûlure froide, aussi appelée gelure : les tissus gèlent presque instantanément. C'est exactement le même résultat qu'une brûlure classique, mais par le froid plutôt que par la chaleur.",
+      dire: "Pourquoi un liquide qui sort d'un circuit peut-il brûler la peau ? Parce qu'en quittant la pression du circuit, il se met à bouillir instantanément, et pour bouillir, il lui faut de la chaleur. Il la prend tout autour de lui, y compris dans votre main. En une fraction de seconde, la peau perd tellement de chaleur que ses tissus gèlent : c'est la brûlure froide, ou gelure. Le résultat ressemble à une brûlure par le feu, mais la cause est inverse. Voilà pourquoi gants et lunettes ne sont jamais facultatifs sur un circuit.",
       reference: "Code 12.02 · le mécanisme",
     },
 
@@ -76,7 +76,7 @@ CAPSULE.declarer({
         pied: "Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide.",
       },
       texte: "<p>Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui.</p><p>Un contact avec de l'<b>ammoniac</b> liquide ajoute une <b>brûlure chimique</b> à la brûlure froide : ce fluide n'appartient pas à la même famille que les fluides fluorés, et ne se comporte pas comme eux.</p>",
-      dire: "Un mot sur les yeux, et sur un fluide à part. Les yeux sont particulièrement exposés : un jet de liquide est souvent invisible et rapide, et l'œil n'a pas de réflexe de protection efficace contre lui. Et si le fluide est de l'ammoniac liquide, un second danger s'ajoute : une brûlure chimique, en plus de la brûlure froide. L'ammoniac n'appartient pas à la même famille que les fluides fluorés, et il ne se comporte pas comme eux.",
+      dire: "Vos yeux sont la partie la plus fragile face à un jet de fluide. Le jet part trop vite et il est souvent invisible : rien, dans le réflexe de l'œil, ne suffit à l'arrêter, seules les lunettes le peuvent. L'ammoniac pose un problème de plus. Il ne fait pas partie de la famille des fluides fluorés et ne réagit pas comme eux : en plus de geler les tissus, il les attaque chimiquement. Sur une installation à l'ammoniac, les deux brûlures s'additionnent, et la protection des yeux devient encore plus impérative.",
       retenir: ["Un contact avec l'ammoniac liquide ajoute une brûlure chimique à la brûlure froide : ce fluide ne se comporte pas comme les fluides fluorés."],
       reference: "Code 12.02 · l'exposition des yeux",
       controle: {
@@ -99,7 +99,7 @@ CAPSULE.declarer({
       visuel: { svg: "secu-projection.svg", alt: "Le liquide jaillit dans l'axe du raccord : on se place hors de cet axe, on vérifie au manomètre que la pression est nulle, et on porte gants et lunettes." },
       legende: "Hors de l'axe du raccord, manomètre vérifié, gants et lunettes déjà en place.",
       texte: "<p>Mettez vos <b>EPI</b> (équipements de protection individuelle) — ici, gants et lunettes — avant toute manipulation d'un circuit sous pression. <b>Vérifiez au manomètre</b> que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord.</p><p><b>Desserrez progressivement</b>, jamais d'un coup, et restez hors de la trajectoire d'un éventuel jet.</p>",
-      dire: "Voici les réflexes qui protègent. D'abord, les équipements de protection individuelle — gants et lunettes — avant toute manipulation d'un circuit sous pression. Ensuite, vérifiez au manomètre que la pression est nulle, et que la vanne est fermée, avant de débrancher un flexible ou de desserrer un raccord. Desserrez progressivement, jamais d'un coup, et placez-vous hors de la trajectoire d'un éventuel jet, comme sur ce schéma.",
+      dire: "Desserrer un raccord n'est un geste anodin que si l'on a vérifié trois choses avant. D'abord, la protection : gants et lunettes sont déjà en place, et non posés à côté. Ensuite, la preuve qu'il n'y a plus de pression : la vanne fermée et le manomètre à zéro, regardés ensemble, parce qu'un seul des deux ne suffit pas. Enfin, la position : on desserre doucement, jamais d'un coup, en restant hors de l'axe du raccord, là où un jet ne peut pas vous atteindre. Ce protocole prend quelques secondes ; un accident coûte bien plus.",
       retenir: ["Avant de desserrer : vanne fermée et manomètre à zéro, toujours vérifiés ensemble."],
       reference: "Code 12.02 · les réflexes",
       controle: {

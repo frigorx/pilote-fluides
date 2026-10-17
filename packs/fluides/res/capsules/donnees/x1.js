@@ -90,7 +90,7 @@ CAPSULE.declarer({
         legende: "Même charge, 12 kg chacune : le PRP fait toute la différence.",
       },
       texte: "<p>La machine A pèse environ <b>6 fois plus lourd</b> sur le climat que la machine B, pour la même quantité de fluide.</p>",
-      dire: "Regardez l'écart. La machine A pèse environ six fois plus lourd sur le climat que la machine B, alors qu'elles contiennent exactement le même poids de fluide. C'est le P R P qui fait toute la différence, pas le poids.",
+      dire: "Comparez les deux colonnes. Chaque machine contient douze kilos de fluide, la même quantité. Pourtant, celle au R 404 A atteint quarante-sept virgule un tonnes équivalent C O 2, quand celle au R 32 s'arrête à huit virgule un. L'écart est d'environ six fois. Ce n'est donc pas le poids de fluide qui fait la différence, c'est son P R P.",
       reference: "G2 · le résultat",
       controle: {
         enonce: "À charge égale (12 kg), quel est le rapport d'impact climatique entre la machine A (R-404A) et la machine B (R-32) ?",

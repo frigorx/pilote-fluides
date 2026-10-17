@@ -41,7 +41,7 @@ CAPSULE.declarer({
         pied: "La charge se contrôle à la balance, jamais au manomètre.",
       },
       texte: "<p>Pour charger, on détermine d'abord l'<b>état du fluide</b> et la <b>quantité prévue</b>, sur la plaque signalétique ou la documentation constructeur.</p><p>La charge se contrôle à la <b>balance</b>, jamais « au manomètre » : le manomètre dit comment la machine se comporte, la balance dit combien on a mis.</p>",
-      dire: "Avant de charger quoi que ce soit, deux choses à déterminer : l'état du fluide, et la quantité prévue. Ces informations se trouvent sur la plaque signalétique de la machine, ou dans la documentation du constructeur. Ensuite, un point à ne jamais confondre : la charge se contrôle à la balance, jamais au manomètre. Le manomètre dit comment la machine se comporte une fois en marche. La balance, elle seule, dit combien de fluide a réellement été mis.",
+      dire: "Avant toute charge, deux renseignements sont à réunir : sous quelle forme le fluide doit entrer, et en quelle quantité. Vous les trouverez sur la plaque de la machine ou dans la notice du constructeur. Ensuite, ne mélangez pas les rôles des deux appareils. Le manomètre vous renseigne sur le fonctionnement de la machine. Seule la balance vous indique le poids de fluide réellement introduit. C'est donc elle, et elle seule, qui contrôle une charge.",
       reference: "Code 5.05 · 5.06 · avant de charger",
       controle: {
         enonce: "Avec quoi contrôle-t-on la quantité de fluide chargée dans une installation ?",
@@ -106,7 +106,7 @@ CAPSULE.declarer({
         pied: "Transport selon la réglementation applicable et la fiche de données de sécurité.",
       },
       texte: "<p>Une huile retirée d'un circuit est <b>contaminée</b> : elle contient du fluide dissous. Elle ne se jette pas, elle part en <b>déchet dangereux</b> vers une filière agréée, avec son <b>bordereau</b>.</p><p>Pour les <b>hydrocarbures</b>, fluide et huile sont en plus <b>inflammables</b> : récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle.</p>",
-      dire: "Une huile qu'on retire d'un circuit n'est jamais un déchet ordinaire : elle est contaminée, elle contient du fluide dissous. Elle ne se jette pas. Elle part en déchet dangereux, vers une filière agréée, avec son bordereau, le document qui la suit jusqu'à son traitement. Cas particulier des hydrocarbures : là, le fluide et l'huile sont en plus inflammables. Il faut des récipients adaptés et fermés, à l'écart de toute source de chaleur ou d'étincelle, et un transport qui respecte la réglementation applicable et la fiche de données de sécurité.",
+      dire: "L'huile que vous sortez d'un circuit n'est plus une huile propre : du fluide frigorigène s'y est dissous. Elle compte donc parmi les déchets dangereux. Pas question de la jeter : elle rejoint une filière agréée, accompagnée de son bordereau, le document qui la suit jusqu'à son traitement. Sur une machine aux hydrocarbures, s'ajoute un risque de feu, car l'huile comme le fluide peuvent s'enflammer. On la garde alors dans un récipient adapté, bien fermé, loin de toute chaleur et de toute étincelle.",
       reference: "Code 5.09 · l'huile contaminée et les hydrocarbures",
     },
 
@@ -177,7 +177,7 @@ CAPSULE.declarer({
         pied: "Un fluide régénéré s'achète : on ne le régénère jamais soi-même à l'atelier.",
       },
       texte: "<p>On pourrait croire qu'un fluide récupéré doit toujours passer par le recyclage ou la régénération avant de resservir. C'est <b>faux</b> : réutiliser le fluide récupéré sur <b>sa machine d'origine</b>, chez le <b>même détenteur</b>, est légal et ne demande aucun retraitement.</p>",
-      dire: "Voici une idée fausse, très répandue, et qu'il faut corriger. On pourrait croire qu'un fluide récupéré doit toujours passer par le recyclage ou la régénération avant de resservir. C'est faux. Réutiliser le fluide récupéré sur sa machine d'origine, chez le même détenteur — c'est-à-dire celui qui possède ou utilise cette machine — est parfaitement légal, et ne demande aucun retraitement. Le recyclage, lui, n'est qu'un nettoyage de base : filtration et séchage. La régénération est un retraitement complet, réalisé en filière spécialisée, qui redonne au fluide les caractéristiques du neuf. Et un fluide régénéré, retenez bien ce point : ça s'achète. On ne le régénère jamais soi-même à l'atelier.",
+      dire: "Une idée fausse circule souvent : tout fluide récupéré devrait être nettoyé ou retraité avant de pouvoir resservir. Ce n'est pas le cas. Si le fluide retourne dans la machine d'où il vient, chez la même personne qui la possède ou l'utilise, la loi l'autorise tel quel, sans aucun traitement. Les deux autres mots gardent leur sens : le recyclage est un simple nettoyage, par filtration et séchage ; la régénération, elle, est un retraitement complet, confié à une filière spécialisée.",
       reference: "Code 5.02 · 5.05 · réemploi, recyclage, régénération",
       controle: {
         enonce: "Un fluide est récupéré sur une installation, puis rechargé tel quel, sans traitement, sur cette même installation, chez le même détenteur. Est-ce autorisé ?",

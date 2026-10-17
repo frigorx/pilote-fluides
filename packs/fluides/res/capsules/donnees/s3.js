@@ -30,7 +30,7 @@ CAPSULE.declarer({
       visuel: { svg: "secu-flamme.svg", alt: "À gauche le geste interdit : chauffer un tronçon non récupéré, les gaz toxiques remontent vers le visage penché. À droite le geste juste : récupérer, balayer à l'azote, ventiler." },
       legende: "À gauche, le geste interdit. À droite, le geste juste.",
       texte: "<p>Le cas type : un tronçon où il reste « une petite quantité, ça ne changera rien ». La flamme touche ce fluide résiduel, il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage.</p>",
-      dire: "Voici comment ça arrive le plus souvent. Un tronçon de circuit où il reste, pense-t-on, une petite quantité de fluide : « ça ne changera rien ». La flamme du chalumeau touche ce fluide résiduel. Il se décompose, et les fumées se dégagent juste sous le visage penché sur le brasage, à bout portant.",
+      dire: "La phrase affichée en titre a l'air de bon sens, et c'est pourtant celle qui précède l'accident. Un bout de circuit n'a pas été complètement vidé ; il reste un fond de fluide, qu'on juge négligeable. Le chalumeau s'allume, la chaleur atteint ce reste de fluide, et il se transforme en gaz toxiques. Où partent ces fumées ? Droit vers le visage du technicien, penché au-dessus de sa brasure. Sur l'image, comparez les deux scènes : à gauche, ce qu'il ne faut jamais faire ; à droite, la bonne façon de procéder.",
       reference: "Code 11.03 · la situation",
     },
 
@@ -49,7 +49,7 @@ CAPSULE.declarer({
         pied: "Ces gaz sont absents du fluide d'origine : ils naissent au contact de la flamme.",
       },
       texte: "<p>Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se <b>décompose</b>.</p><p>Sa molécule se casse et forme d'autres substances, absentes du fluide d'origine — des gaz toxiques et corrosifs.</p>",
-      dire: "Comprenons ce qui se passe vraiment. Un fluide frigorigène fluoré est stable à température normale. Il ne l'est plus face à une flamme. Chauffé au contact d'une flamme ou d'une surface très chaude, il ne brûle pas comme un carburant : il se décompose. Sa molécule se casse et forme d'autres substances, complètement absentes du fluide d'origine : des gaz toxiques et corrosifs.",
+      dire: "Retenez cette idée surprenante : le fluide ne prend pas feu, et c'est justement ce qui le rend traître. Tant qu'il reste à température normale, sa molécule tient bon, comme une brique bien scellée. Approchez une flamme ou une surface brûlante, et cette brique se brise. Les morceaux se réarrangent en d'autres gaz, qui n'existaient pas dans la bouteille : ils sont toxiques, et ils rongent ce qu'ils touchent. Personne ne voit de flamme, alors personne ne se méfie. C'est pour cela que la flamme reste interdite près d'un fluide, même quand rien ne semble pouvoir brûler.",
       reference: "Code 11.03 · le mécanisme",
     },
 
@@ -68,7 +68,7 @@ CAPSULE.declarer({
         pied: "La classe du fluide utilisé se lit sur sa FDS.",
       },
       texte: "<p>Certains fluides ajoutent un second risque. Selon la norme NF EN 378, les fluides classés <b>A2L</b> (légèrement inflammables, comme le R-32 ou le R-1234yf) ou <b>A3</b> (très inflammables, comme le R-290 ou le R-600a) peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle.</p><p>La classe du fluide utilisé se lit sur sa <b>FDS</b> (fiche de données de sécurité).</p>",
-      dire: "Pour certains fluides, un second risque s'ajoute à la décomposition. Selon la norme N F EN 378, les fluides classés A 2 L, légèrement inflammables — c'est le cas du R 32 ou du R 1234 y f — ou classés A 3, très inflammables — c'est le cas du R 290 ou du R 600 a —, peuvent eux-mêmes s'enflammer au contact d'une flamme ou d'une étincelle. La classe du fluide que vous utilisez se lit sur sa fiche de données de sécurité.",
+      dire: "Avec certains fluides, la flamme crée un danger de plus que la décomposition : le fluide lui-même peut prendre feu. La norme N F EN 378 range ces fluides en deux classes. En A 2 L, on trouve ceux qui brûlent un peu, par exemple le R 32, ou encore le R 1234 y f. En A 3, ceux qui brûlent facilement, par exemple le R 290, ou encore le R 600 a. Une flamme ou une simple étincelle suffit à les allumer. Pour savoir dans quelle classe se trouve le fluide que vous manipulez, ouvrez sa fiche de données de sécurité.",
       retenir: ["Certains fluides, classés A 2 L ou A 3, peuvent en plus s'enflammer eux-mêmes : leur classe se lit sur la FDS."],
       reference: "Code 11.03 · les fluides inflammables",
       controle: {
@@ -99,7 +99,7 @@ CAPSULE.declarer({
         ],
       },
       texte: "<p><b>Récupérez</b> entièrement le fluide du tronçon à chauffer avant toute opération de brasage : jamais de brasage sur un circuit encore chargé. Ne recherchez <b>jamais une fuite avec une flamme</b> : utilisez un détecteur électronique.</p><p>Faites circuler de l'azote à l'intérieur du tube pendant le brasage, avec un mano-détendeur : c'est le <b>balayage</b>. <b>Ventilez</b> la zone de travail, et ne restez pas penché directement au-dessus de la flamme.</p>",
-      dire: "Voici les gestes qui protègent, avant et pendant le brasage. D'abord, récupérez entièrement le fluide du tronçon à chauffer : jamais de brasage sur un circuit encore chargé. Ensuite, ne recherchez jamais une fuite avec une flamme : utilisez un détecteur électronique, c'est aujourd'hui la seule méthode admise. Pendant le brasage, faites circuler de l'azote à l'intérieur du tube, avec un mano-détendeur : c'est ce qu'on appelle le balayage. Et ventilez la zone de travail : ne restez pas penché directement au-dessus de la flamme.",
+      dire: "Pour braser en sécurité, tout se joue avant d'allumer le chalumeau. Le tronçon à chauffer doit être vidé de son fluide, entièrement : une flamme sur un circuit encore chargé fabrique les gaz toxiques que l'on vient d'étudier. Une fuite ne se cherche jamais à la flamme, mais avec un détecteur électronique. Pendant le brasage, un léger courant d'azote traverse le tube, réglé par un mano-détendeur : c'est le balayage. Enfin, la zone est ventilée, et vous gardez le visage hors de l'axe de la flamme. Ces gestes protègent vos poumons.",
       retenir: ["On ne recherche jamais une fuite avec une flamme : un détecteur électronique, toujours."],
       reference: "Code 11.03 · les gestes qui protègent",
       controle: {
@@ -122,7 +122,7 @@ CAPSULE.declarer({
       visuel: { svg: "secu-decomposition-ari.svg", alt: "Animation : sans protection, on reste dans les fumées et on tousse. La bonne réponse : s'éloigner, alerter, et ne laisser approcher qu'une personne formée portant un appareil respiratoire isolant (ARI) complet." },
       legende: "Sans protection, on tousse dans les fumées. La bonne réponse : s'éloigner et alerter.",
       texte: "<p>Et si des fumées de décomposition sont déjà présentes — une fuite qui a rencontré une source chaude avant votre arrivée, par exemple ? La réponse n'est plus la procédure de brasage, c'est l'<b>éloignement</b>.</p><p>Un masque à cartouche ou un simple masque filtrant ne protège <b>ni</b> des gaz de décomposition <b>ni</b> d'un manque d'oxygène : seul un <b>appareil respiratoire isolant</b> (ARI), réservé à des personnes formées, le permet.</p>",
-      dire: "Un scénario différent, à connaître aussi. Si des fumées de décomposition sont déjà présentes — une fuite qui a rencontré une source chaude avant votre arrivée, par exemple — la réponse n'est plus la procédure de brasage, c'est l'éloignement. Un masque à cartouche, ou un simple masque filtrant, ne protège ni des gaz de décomposition ni d'un manque d'oxygène. Seul un appareil respiratoire isolant, un A R I, avec sa propre réserve d'air, le permet. Et son usage est réservé à des personnes formées. Retenez la règle : l'A R I protège l'intervenant formé, il ne remplace jamais l'éloignement de la source ni l'évacuation de la zone.",
+      dire: "Changeons de situation : vous arrivez, et les fumées de décomposition sont déjà là, parce qu'une fuite a rencontré une source chaude avant vous. Il ne s'agit plus de bien braser, il s'agit de s'éloigner. Un masque à cartouche ou un masque filtrant ne sert à rien ici : il ne retient pas ces gaz et ne compense pas un manque d'oxygène. Seul un appareil respiratoire isolant protège vraiment, et il est réservé aux personnes formées à son usage. Pour vous, la bonne réponse tient en deux gestes : s'éloigner, puis alerter.",
       reference: "Code 11.03 · si les fumées sont déjà présentes",
     },
 
