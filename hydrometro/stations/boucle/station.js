@@ -707,13 +707,16 @@
       els.stopVoice.disabled = true;
       els.voiceStatus.textContent = "Lecture terminée.";
     };
+    /* coupée de l'extérieur (réglage de vitesse, prof vocal, page masquée) : le bouton revient à « Écouter » (17/10/2026) */
     utterance.onerror = (event) => {
-      if (run !== speechRun || event.error === "canceled" || event.error === "interrupted") return;
+      if (run !== speechRun) return;
+      const coupee = event.error === "canceled" || event.error === "interrupted";
       speaking = false;
       paused = false;
       els.listen.innerHTML = "▶ <span>Écouter</span>";
+      els.listen.setAttribute("aria-label", "Écouter l’étape");
       els.stopVoice.disabled = true;
-      els.voiceStatus.textContent = "Voix indisponible. Tout le contenu reste écrit.";
+      els.voiceStatus.textContent = coupee ? "Lecture arrêtée." : "Voix indisponible. Tout le contenu reste écrit.";
     };
     window.speechSynthesis.speak(utterance);
   }

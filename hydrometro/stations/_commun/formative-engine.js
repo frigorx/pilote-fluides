@@ -44,7 +44,7 @@
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
-  style.href = "../_commun/formative-shared.css?v=20261004-2038";
+  style.href = "../_commun/formative-shared.css?v=20261017-0755";
   document.head.append(style);
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -387,7 +387,11 @@
     else { utterance.lang = "fr-FR"; utterance.rate = reglageVoixLocal.vitesse(); utterance.pitch = 1; }
     utterance.onstart = () => { if (run !== speechRun) return; speaking = true; listen.innerHTML = "Ⅱ <span>Pause</span>"; stop.disabled = false; status.textContent = "Lecture de l’étape en cours."; };
     utterance.onend = () => { if (run !== speechRun) return; stopSpeech("Lecture terminée."); };
-    utterance.onerror = (event) => { if (run !== speechRun || ["canceled", "interrupted"].includes(event.error)) return; stopSpeech("Voix indisponible. Tout le contenu reste écrit."); };
+    /* coupée de l'extérieur (réglage de vitesse, prof vocal, page masquée) : le bouton revient à « Écouter » (17/10/2026) */
+    utterance.onerror = (event) => {
+      if (run !== speechRun) return;
+      stopSpeech(["canceled", "interrupted"].includes(event.error) ? "Lecture arrêtée." : "Voix indisponible. Tout le contenu reste écrit.");
+    };
     window.speechSynthesis.speak(utterance);
   }
 

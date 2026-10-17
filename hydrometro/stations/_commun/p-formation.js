@@ -128,7 +128,7 @@
     const id = segments[segments.length - 1];
     const lessons = lessonsFor(id);
     const style = document.createElement("link");
-    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261015-campagne"; document.head.append(style);
+    style.rel = "stylesheet"; style.href = "../_commun/p-formation.css?v=20261017-0755"; document.head.append(style);
     document.body.classList.add("p-course-active");
 
     const $ = (selector, root = document) => root.querySelector(selector);
@@ -229,6 +229,8 @@
     let speechRun = 0;
     let speaking = false;
     let paused = false;
+    /* pour le prof vocal du site (moteur/prof-vocal.js) : l'essai guidé est une activité, il s'y arrête */
+    window.PILOTE_PROF_ACTIVITE = () => current === lessons.length && !practiceReady;
 
     function activeLine() {
       const asked = new URLSearchParams(window.location.search).get("line")?.toUpperCase();
@@ -274,7 +276,12 @@
       else { utterance.lang = "fr-FR"; utterance.rate = reglageVoixLocal.vitesse(); utterance.pitch = 1; }
       utterance.onstart = () => { if (run !== speechRun) return; speaking = true; $("#pListen").innerHTML = "Ⅱ <span>Pause</span>"; $("#pStop").disabled = false; $("#pVoiceStatus").textContent = "Lecture de l’étape en cours."; };
       utterance.onend = () => { if (run === speechRun) stopSpeech("Lecture terminée."); };
-      utterance.onerror = (event) => { if (run === speechRun && !["canceled", "interrupted"].includes(event.error)) stopSpeech("Voix indisponible. Tout reste écrit."); };
+      /* Coupée de l'extérieur (réglage de vitesse, prof vocal, page masquée) : le bouton revient à « Écouter ».
+         Avant le 17/10/2026, il restait sur « Ⅱ Pause » et le clic suivant mettait en pause un silence. */
+      utterance.onerror = (event) => {
+        if (run !== speechRun) return;
+        stopSpeech(["canceled", "interrupted"].includes(event.error) ? "Lecture arrêtée." : "Voix indisponible. Tout reste écrit.");
+      };
       window.speechSynthesis.speak(utterance);
     }
 
