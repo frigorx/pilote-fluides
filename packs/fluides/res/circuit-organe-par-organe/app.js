@@ -118,7 +118,8 @@ const stages = [
     kicker: "ÉTAPE 3 · ORGANE ACTIF",
     title: "Le compresseur met le cycle en mouvement",
     intro: "Il aspire le fluide frigorigène à l’état vapeur en BP, le comprime, le refoule en HP et assure sa circulation.",
-    narration: `${professionalDefinitions.compresseur.text} C’est le seul organe actif du cycle. Les autres organes sont passifs. Le compresseur est lubrifié par de l’huile. Une partie de cette huile peut être entraînée et circuler avec le fluide frigorigène ; elle doit revenir au compresseur pour maintenir la lubrification.`,
+    /* 17/10/2026 (chantier prof vocal) : l'explication d'abord, pour l'oreille ; la définition à apprendre reste dite mot pour mot */
+    narration: `Le compresseur est le seul organe actif du cycle : tous les autres sont passifs, et c’est lui qui fait circuler le fluide dans tout le circuit. Il travaille lubrifié par de l’huile ; une partie de cette huile part avec le fluide, et elle doit lui revenir pour qu’il reste graissé. Voici maintenant la définition à retenir mot pour mot. ${professionalDefinitions.compresseur.text}`,
     render: renderCompressor
   },
   {
@@ -168,7 +169,7 @@ const stages = [
     kicker: "ÉTAPE 9 · ÉCHANGE AVEC L’AIR",
     title: "À l’évaporateur, l’air ressort plus froid",
     intro: "L’air cède sa chaleur au fluide frigorigène lorsqu’il traverse la batterie.",
-    narration: `${professionalDefinitions.evaporateur.text} Les ventilateurs forcent l’air à travers la batterie. L’air entre plus chaud, cède de la chaleur au fluide frigorigène et ressort plus froid. C’est cet échange qui refroidit le local ou le produit.`,
+    narration: `Ici, les ventilateurs poussent l’air à travers la batterie. L’air arrive plus chaud, laisse une partie de sa chaleur au fluide frigorigène, et repart plus froid : c’est cet échange qui refroidit le local ou le produit. Voici la définition à retenir mot pour mot. ${professionalDefinitions.evaporateur.text}`,
     render: renderEvaporatorAir
   },
   {

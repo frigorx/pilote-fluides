@@ -91,7 +91,7 @@
     {
       short: "Observer",
       kicker: "Écran 1 · Reconnaître",
-      title: "Reconnaître le vrai composant",
+      title: "Reconnaître le vrai composant", narration: "On commence par le composant lui-même, tel que vous le croiserez sur une installation : un petit cylindre fixé directement sur la tuyauterie. Il est fermé, avec un côté entrée, un côté sortie, et une flèche gravée sur le corps. Avant de le monter, deux informations se lisent sur ce corps : la flèche, qui donne le sens de passage, et la référence. Reconnaître le vrai composant d'abord, lire son sens ensuite : c'est l'ordre de tout ce parcours.",
       intro: "C’est ce petit cylindre posé directement sur la tuyauterie frigorifique.",
       detail: `<div class="fact"><strong>À voir :</strong> un corps fermé, une entrée, une sortie et une flèche.</div>
         <div class="warning-box"><strong>Avant le montage :</strong> je lis la flèche et la référence inscrites sur le corps.</div>`,
@@ -104,7 +104,7 @@
     {
       short: "Raccorder",
       kicker: "Écran 2 · Raccordements",
-      title: "Vissé ou brasé : regarde l’embout",
+      title: "Vissé ou brasé : regarde l’embout", narration: "Deux filtres peuvent faire exactement le même travail et se raccorder différemment. Tout se voit au bout du composant. S'il porte un filetage et un écrou, c'est un raccord flare : l'écrou vient serrer le tube évasé, et l'assemblage peut se démonter. S'il présente un embout de cuivre lisse, le tube vient s'y emboîter et la brasure ferme la liaison ; on dit souvent qu'il est « à souder ». Comparez les deux extrémités sur l'image.",
       intro: "Le filtre travaille de la même façon. Seule sa liaison au tube change.",
       detail: `<div class="fact"><strong>Flare, donc vissé :</strong> un écrou serre l’extrémité évasée du tube. La liaison est démontable.</div>
         <div class="fact"><strong>À braser, souvent dit « à souder » :</strong> le tube entre dans l’embout cuivre. La brasure ferme la liaison.</div>`,
@@ -117,7 +117,7 @@
     {
       short: "Placer",
       kicker: "Écran 3 · Ligne liquide",
-      title: "Le retrouver, puis le placer",
+      title: "Le retrouver, puis le placer", narration: "Il s'agit maintenant de situer ce filtre dans la machine. Sur la ligne liquide, le fluide passe d'abord par le réservoir, puis par le filtre-déshydrateur, ensuite par le voyant, et arrive enfin au détendeur. Le but est de le reconnaître sur la photo d'une installation, puis de le replacer sur le schéma. Sur un vrai chantier, le schéma et la notice de l'installation passent toujours en premier.",
       intro: "Observe le filtre réel sur une installation, puis replace-le sur la ligne liquide.",
       detail: `<div class="fact"><strong>Dans ce parcours :</strong> réservoir liquide → filtre-déshydrateur → voyant → détendeur.</div>
         <p>Sur le chantier, le schéma et la notice de l’installation restent prioritaires.</p>`,
@@ -130,7 +130,7 @@
     {
       short: "2 missions",
       kicker: "Écran 4 · Fonction",
-      title: "Deux fonctions, deux barrières",
+      title: "Deux fonctions, deux barrières", narration: "Ce composant protège le circuit de deux ennemis différents. Le premier, ce sont les solides : calamine, copeaux, boues, toutes sortes de particules, arrêtées par le noyau poreux et les médias filtrants. Le second, c'est l'eau qui reste dans le circuit après le tirage au vide, ou qui y entre pendant une intervention : un tamis moléculaire la capte. Pour vous en souvenir : le tamis pour l'eau, le média pour les particules. Et une précision importante : ce filtre ne dispense jamais d'un tirage au vide bien fait.",
       intro: "Le filtre-déshydrateur protège le circuit contre les solides et contre l’eau résiduelle.",
       detail: `<div class="fact"><strong>FILTRER :</strong> le noyau poreux et les médias filtrants retiennent calamine, copeaux, boues et autres particules.</div>
         <div class="fact"><strong>DÉSHYDRATER :</strong> le tamis moléculaire adsorbe l’humidité restée après le tirage au vide ou entrée lors d’une intervention.</div>
@@ -144,7 +144,7 @@
     {
       short: "Ouvrir",
       kicker: "Écran 5 · Coupe",
-      title: "Chaque pièce a une fonction",
+      title: "Chaque pièce a une fonction", narration: "Regardons l'intérieur, pièce par pièce. Tout est serré pour forcer le fluide à passer là où il doit passer. Le corps en acier forme une enveloppe soudée, étanche. Un ressort tient l'ensemble en pression. Le noyau capte l'eau, et parfois aussi des acides, selon sa formule. Le feutre ou le tamis arrête les particules. Enfin, une plaque soutient le tout et répartit le passage du fluide. Sur l'image, chaque étiquette montre la pièce qu'elle désigne.",
       intro: "Les éléments sont maintenus serrés pour obliger le fluide à traverser les zones prévues.",
       detail: `<ul><li><strong>Corps acier :</strong> enveloppe hermétique soudée.</li>
         <li><strong>Ressort :</strong> maintient l’empilage en pression.</li>
@@ -160,7 +160,7 @@
     {
       short: "Technologies",
       kicker: "Écran 6 · Construction",
-      title: "Noyau solide ou billes libres",
+      title: "Noyau solide ou billes libres", narration: "On entend parfois parler de « pierres » dans un filtre ; le mot ne convient pas à tous les modèles. Il existe deux familles. Dans la première, le produit qui sèche le fluide forme un bloc poreux, tenu dans le corps : c'est le noyau solide. Dans la seconde, surtout dans certains petits corps en cuivre, ce sont des grains libres, retenus par un tamis ou un mat filtrant. Devant un modèle, vous devez savoir dire de quelle famille il relève.",
       intro: "Le mot « pierres » ne décrit pas correctement tous les modèles.",
       detail: `<div class="fact"><strong>Noyau solide :</strong> le matériau dessiccant forme un bloc poreux maintenu dans le corps.</div>
         <div class="fact"><strong>Billes libres :</strong> certains petits corps en cuivre renferment des grains avec un tamis ou un mat filtrant.</div>`,
@@ -173,7 +173,7 @@
     {
       short: "Filtrer",
       kicker: "Écran 7 · Particules",
-      title: "Les solides restent prisonniers",
+      title: "Les solides restent prisonniers", narration: "Suivez une particule. Le fluide continue sa route à travers le filtre, mais la calamine et les débris s'arrêtent dans le média filtrant. Ce tri protège surtout les passages étroits placés plus loin sur le circuit. Côté diagnostic, une nuance : un filtre très encrassé peut freiner le fluide et créer une perte de charge, mais on ne conclut pas sur une simple observation.",
       intro: "Le fluide poursuit son trajet. Les particules sont retenues dans le média filtrant.",
       detail: `<p>Cette retenue protège notamment les passages étroits situés en aval.</p>
         <div class="warning-box"><strong>Diagnostic :</strong> un filtre très encrassé peut créer une perte de charge, mais une observation seule ne suffit pas.</div>`,
@@ -186,7 +186,7 @@
     {
       short: "Adsorber",
       kicker: "Écran 8 · Humidité",
-      title: "L’eau se fixe au dessiccant",
+      title: "L’eau se fixe au dessiccant", narration: "Pour l'eau, le mécanisme est différent. Le tamis moléculaire ne se contente pas de bloquer les gouttes comme une passoire : les molécules d'eau viennent se fixer sur des sites de sa structure poreuse, et le noyau les garde pendant que le fluide poursuit sa route. Le mot juste, c'est adsorption, avec un D. Retenez la nuance : l'humidité est adsorbée, pas simplement filtrée.",
       intro: "Le tamis moléculaire retient l’eau dans sa structure poreuse.",
       detail: `<div class="key-box"><strong>Mot juste : adsorption.</strong> Les molécules se fixent sur les sites du matériau.</div>
         <p>Ce mécanisme est différent d’un simple tamis mécanique.</p>`,
@@ -199,7 +199,7 @@
     {
       short: "Acides",
       kicker: "Écran 9 · Formulation",
-      title: "La capacité antiacide varie",
+      title: "La capacité antiacide varie", narration: "Tous les noyaux ne sont pas fabriqués de la même manière, ni pour la même priorité. Un tamis moléculaire vise d'abord l'humidité. Un mélange qui contient de l'alumine activée renforce la capacité à neutraliser les acides, selon la gamme. Les barres affichées comparent ces priorités sans aucun chiffre. Sur le terrain, c'est la composition et l'usage annoncés par le fabricant qui font foi.",
       intro: "Tous les noyaux n’utilisent pas la même formulation ni la même priorité.",
       detail: `<div class="fact"><strong>Tamis moléculaire :</strong> priorité à la capture de l’humidité.</div>
         <div class="fact"><strong>Mélange avec alumine activée :</strong> capacité antiacide renforcée selon la gamme.</div>`,
@@ -212,7 +212,7 @@
     {
       short: "Saturation",
       kicker: "Écran 10 · Limite",
-      title: "Le média n’est pas infini",
+      title: "Le média n’est pas infini", narration: "Plus le filtre retient de contaminants, moins il lui reste de place pour en retenir d'autres : sa capacité s'use. D'où un geste au montage : les bouchons restent en place jusqu'au dernier moment, pour que l'air ambiant ne commence pas à le charger avant l'heure. Un modèle hermétique saturé ou pollué ne se régénère pas sur le chantier : il se remplace, en suivant la procédure. La jauge illustre ce principe, ce n'est pas une mesure.",
       intro: "À mesure qu’il retient des contaminants, sa capacité disponible diminue.",
       detail: `<div class="warning-box"><strong>Montage :</strong> garder les bouchons jusqu’au dernier moment limite l’exposition à l’air ambiant.</div>
         <p>Un modèle hermétique saturé ou pollué se remplace selon la procédure.</p>`,
@@ -225,7 +225,7 @@
     {
       short: "Cartouches",
       kicker: "Écran 11 · Maintenance",
-      title: "Le porte-cartouche s’ouvre dans l’axe",
+      title: "Le porte-cartouche s’ouvre dans l’axe", narration: "Certains filtres s'ouvrent : on les appelle des porte-cartouches. Après avoir déposé le couvercle boulonné et son joint, on découvre les noyaux empilés autour d'une tige, avec les joints en feutre, les plaques, le tamis et le ressort, tous alignés dans le sens du fluide. Dans ce cas, l'enveloppe reste sur la ligne : on change seulement les noyaux et les joints prévus.",
       intro: "Les noyaux sont empilés dans l’enveloppe autour d’une tige de maintien.",
       detail: `<div class="fact"><strong>Ouverture :</strong> on dépose le couvercle boulonné et son joint.</div>
         <div class="fact"><strong>À l’intérieur :</strong> noyaux, joints feutre, plaques, tamis et ressort restent alignés dans le sens du fluide.</div>`,
@@ -238,7 +238,7 @@
     {
       short: "Le cigare",
       kicker: "Écran 12 · Petit circuit",
-      title: "Le petit modèle en cuivre",
+      title: "Le petit modèle en cuivre", narration: "Voici le plus petit de la famille, qu'on surnomme le cigare : un petit corps en cuivre avec deux tubes fins, utilisé sur les circuits à tube capillaire. Il fait le même métier que les gros filtres, mais il n'en a pas la capacité. Même famille d'organe, donc, mais pas le même usage ni la même taille.",
       intro: "Le « cigare » est un petit filtre-déshydrateur utilisé avec un tube capillaire.",
       detail: `<div class="fact"><strong>Aspect :</strong> un petit corps cuivre avec deux tubes fins.</div>
         <div class="warning-box"><strong>Attention :</strong> il ne possède pas la capacité d’un gros filtre de ligne.</div>`,
@@ -251,7 +251,7 @@
     {
       short: "Bi-flow",
       kicker: "Écran 13 · Réversibilité",
-      title: "Une double flèche, deux sens permis",
+      title: "Une double flèche, deux sens permis", narration: "Sur un circuit réversible, comme une pompe à chaleur, le fluide change de sens dans la ligne liquide. Le filtre bi-flow est prévu pour cela : sur son corps, deux flèches opposées autorisent le passage dans les deux sens. À l'intérieur, un tamis de chaque côté et des clapets font toujours traverser le noyau de l'extérieur vers le centre. Quel que soit le sens, les particules restent donc piégées.",
       intro: "Le bi-flow est prévu pour la ligne liquide d’un circuit réversible, par exemple une pompe à chaleur.",
       detail: `<div class="fact"><strong>Sur le corps :</strong> deux flèches opposées indiquent que le passage est autorisé dans les deux sens.</div>
         <div class="fact"><strong>À l’intérieur :</strong> tamis des deux côtés et clapets dirigent toujours le fluide de l’extérieur du noyau vers son centre.</div>`,
@@ -264,7 +264,7 @@
     {
       short: "Burn-out",
       kicker: "Écran 14 · Dépollution",
-      title: "Le burn-out rend l’huile acide",
+      title: "Le burn-out rend l’huile acide", narration: "Ce dernier cas est le plus agressif. Après un défaut électrique ou une surchauffe, les isolants brûlent ; l'huile noircit et se charge d'acides, de carbone et de boues. Ces acides s'attaqueraient aux métaux et aux isolants du compresseur neuf. On place donc un filtre spécial, dit burn-out, sur l'aspiration, juste avant le compresseur, et on surveille sa perte de charge. On contrôle aussi l'acidité de l'huile, et les filtres se remplacent selon la procédure de dépollution.",
       intro: "La chaleur, l’humidité et la décomposition de l’huile et du fluide créent une pollution agressive.",
       detail: `<div class="fact"><strong>Origine :</strong> défaut électrique ou surchauffe → isolants brûlés → huile noircie, acides, carbone et boues.</div>
         <div class="warning-box"><strong>Risque :</strong> les acides attaquent les métaux et les isolants du nouveau compresseur.</div>
@@ -278,7 +278,7 @@
     {
       short: "S’entraîner",
       kicker: "Écran 15 · Vérifier",
-      title: "Choisir sans confondre",
+      title: "Choisir sans confondre", narration: "Pour finir, six situations vous attendent. L'objectif proposé est d'en réussir cinq sur six, et chaque réponse est expliquée avant de passer à la suivante. C'est un entraînement : vous pouvez recommencer autant de fois que vous le voulez. Pour chaque situation, pensez à trois indices : la fonction du composant, la ligne où il se trouve, et son sens.",
       intro: "Six situations permettent de vérifier les idées essentielles du parcours.",
       detail: `<div class="fact"><strong>Objectif proposé :</strong> 5 bonnes réponses sur 6.</div>
         <p>Chaque réponse est expliquée avant de passer à la suivante. Ce défi est un entraînement, pas un examen officiel.</p>`,
@@ -788,7 +788,8 @@
     stopSpeech();
     const run = speechRun;
     const lesson = lessons[current];
-    const text = `${lesson.title}. ${lesson.intro} ${stripHtml(lesson.detail)} À retenir : ${lesson.takeaway}`;
+    /* la voix explique (17/10/2026, chantier prof vocal) : le texte écrit pour l'oreille, sinon l'écran en dépannage */
+    const text = lesson.narration || `${lesson.title}. ${lesson.intro} ${stripHtml(lesson.detail)} À retenir : ${lesson.takeaway}`;
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "fr-FR";
     utterance.pitch = 1;

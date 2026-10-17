@@ -140,4 +140,48 @@
       return bloc;
     }
   };
+
+  /* Le réglage commun partout (Franck, 17/10/2026). Un module qui garde son ancien réglage propre (liste « Vitesse de la
+     voix », « voice-rate », « Vitesse de lecture », boutons « Accélérer la voix »…) le voit remplacé par celui-ci, à la
+     même place : l'ancien ne changeait plus le débit (défaut D6), et voix.js impose désormais cette vitesse à toute
+     lecture. Ne visent que des réglages DE LA VOIX, nommés comme tels : un curseur « vitesse » de l'air ou d'une
+     animation, un bouton « Accélérer » d'une simulation ou « Station 3 : Vitesse » restent. */
+  var ANCIEN_BOUTON = /^\s*[⏩⏪»«+−-]?\s*(accélérer|ralentir)\s+la\s+voix\s*$/i;
+  var ANCIEN_NOM = /^(voice-?rate|voicerate|speech-?rate|speechrate|voice-?speed|vitesse-?voix|vitesse-?lecture)$/i;
+  var ANCIEN_LIBELLE = /vitesse (de (la )?)?(voix|lecture|narration)|débit de la voix/i;
+  function ancienReglage(e) {
+    if (e.closest("[data-voix-reglage]") || e.closest("#pilote-prof-vocal")) return false;
+    if (e.tagName === "BUTTON") return ANCIEN_BOUTON.test(e.textContent || "") || ANCIEN_BOUTON.test(e.getAttribute("aria-label") || "");
+    if (ANCIEN_NOM.test(e.id || "") || ANCIEN_NOM.test(e.name || "")) return true;
+    var etiquette = (e.labels && e.labels[0]) || e.closest("label");
+    return !!etiquette && (ANCIEN_LIBELLE.test(etiquette.textContent || "") || ANCIEN_LIBELLE.test(etiquette.getAttribute("title") || ""));
+  }
+  function cacher(e) { e.hidden = true; e.style.display = "none"; e.setAttribute("aria-hidden", "true"); }
+  function remplacerAnciens() {
+    var anciens = Array.prototype.filter.call(document.querySelectorAll("select, input[type=range], button"), ancienReglage)
+      .filter(function (e) { return e.style.display !== "none"; });
+    if (!anciens.length) return;
+    if (!document.querySelector("[data-voix-reglage]")) {
+      var premier = anciens[0], enveloppe = premier.closest("label");
+      var repere = enveloppe || premier, hote = repere.parentNode;
+      var bloc = hote && window.PILOTE_VOIX_REGLAGE.monter(hote);
+      if (bloc) hote.insertBefore(bloc, repere);
+    }
+    anciens.forEach(function (e) {
+      var enveloppe = e.closest("label");
+      cacher(enveloppe && !enveloppe.querySelector("[data-voix-reglage]") ? enveloppe : e);
+      if (e.labels) Array.prototype.forEach.call(e.labels, cacher);
+    });
+  }
+  function surveiller() {
+    remplacerAnciens();
+    if (!window.MutationObserver || !document.body) return;
+    var attente = null;
+    new window.MutationObserver(function () {
+      if (attente) return;
+      attente = window.setTimeout(function () { attente = null; remplacerAnciens(); }, 120);
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", surveiller);
+  else surveiller();
 })();

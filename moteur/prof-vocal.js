@@ -52,12 +52,14 @@
        stopVoiceButton/nextLesson/prevLesson). ÉlectroRézo et CartoClim : btVoix/suivant/precedent/
        scene. Capsules : btn-ecouter/btn-stop/btn-suivant/btn-precedent/btn-commencer.
        HoCourant : st-ecouter. Un moteur peut aussi se déclarer par data-prof-*. */
-    listen: ["#listen", "#listen-button", "#speak", "#play-button", "#stationVoice", "#formationListen", "#pListen", "#listenButton", "#btVoix", "#btn-ecouter", "#st-ecouter", "[data-prof-ecouter]"],
+    /* 17/10/2026 : #voice-button (modules « pédagogiques » du plan : filtre, bouteille, régulateurs…), #speakButton
+       (CO2, pressostats) et leur #stopButton, reçus avec le prof vocal du site. */
+    listen: ["#listen", "#listen-button", "#speak", "#play-button", "#stationVoice", "#formationListen", "#pListen", "#listenButton", "#btVoix", "#btn-ecouter", "#st-ecouter", "#voice-button", "#speakButton", "[data-prof-ecouter]"],
     next: ["#next", "#next-button", "#nextButton", "#nextBtn", "#pNext", "#nextLesson", "#suivant", "#btn-suivant", "[data-prof-suivant]"],
     previous: ["#prev", "#previous", "#prev-button", "#previous-button", "#previousButton", "#prevBtn", "#pPrev", "#prevLesson", "#precedent", "#btn-precedent", "[data-prof-precedent]"],
     start: ["#start", "#start-course", "#start-button", "#startButton", "#btn-commencer", "[data-prof-commencer]"],
     exit: ["#exit-course", "#exit-button", "#home-button", "#rail-home", "#exit-dossier", "#exitStation", "#backNetwork"],
-    stop: ["#stop-voice", "#formationStop", "#pStop", "#stopVoiceButton", "#btn-stop", "[data-prof-arreter]"],
+    stop: ["#stop-voice", "#formationStop", "#pStop", "#stopVoiceButton", "#btn-stop", "#stopButton", "[data-prof-arreter]"],
     scope: [".slide.active", "#activity-zone", "#zone", "#lesson-zone", "#interactive-zone", "#screen-content", "#activity", "#actionPanel", "#activityView", "#quizView", "#scene", "[data-prof-zone]"],
     quizNext: ["#quiz-next", ".quiz-next", "#nextGame", ".next-game", "#nextQuiz", "#nextLocal"]
   };
@@ -303,7 +305,8 @@
     var choices = Array.prototype.filter.call(scope.querySelectorAll(".choices button,.quiz-options button,#gameOptions button,[data-answer],.answer-button,.vy-choix button,[role=radio],input[type=radio],input[type=checkbox]"), function (node) {
       return visible(node) && !node.disabled && !isIgnoredControl(node);
     });
-    var question = firstVisible([".quiz-question", ".question strong", "[data-question]", ".game-question", "#fluidHint", ".question h2", ".question h3", "legend"], scope);
+    /* .quiz-q : l'énoncé des quiz « Vérifier » des modules à onglets (détendeurs…), que le professeur passait (17/10/2026) */
+    var question = firstVisible([".quiz-question", ".quiz-q", ".question strong", "[data-question]", ".game-question", "#fluidHint", ".question h2", ".question h3", "legend"], scope);
     if (!question && choices.length >= 2) question = firstVisible(["h2", "h3", "h4"], scope);
     if (!question || choices.length < 2) return [];
     var libelles = choices.map(function (node) {

@@ -443,8 +443,9 @@
 
 <script src="../../../../moteur/voix-index.js?v=20260806-1"></script>
   <script src="../../../../moteur/prononciation.js?v=20260806-2"></script>
-  <script src="../../../../moteur/voix.js?v=20260806-2"></script>
-  <script src="../../../../moteur/prof-vocal.js?v=20260806-1"></script>
+  <script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
+  <script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
 <script>
 (() => {
   "use strict";
@@ -460,9 +461,11 @@
   function loadVoices(){voices=synth?.getVoices()||[]}
   loadVoices();if(synth)synth.onvoiceschanged=loadVoices;
   function bestVoice(){return voices.find(v=>/^fr[-_]FR/i.test(v.lang)&&/Natural|Neural|Online|Google|Microsoft/i.test(v.name))||voices.find(v=>/^fr/i.test(v.lang))||voices[0]}
-  function speak(){if(!synth)return subtitle.textContent="La synthèse vocale n’est pas disponible dans ce navigateur.";synth.cancel();const text=slides[current].dataset.narration;const u=new SpeechSynthesisUtterance(text);u.lang="fr-FR";u.rate=Number(rate.value);u.pitch=1.02;u.voice=bestVoice();u.onstart=()=>subtitle.textContent=text;u.onend=()=>{subtitle.textContent="Lecture terminée.";paused=false};u.onerror=()=>subtitle.textContent="La lecture vocale a été interrompue.";synth.speak(u)}
+  function speak(){if(!synth)return subtitle.textContent="La synthèse vocale n’est pas disponible dans ce navigateur.";synth.cancel();const text=slides[current].dataset.narration;const u=new SpeechSynthesisUtterance(text);u.lang="fr-FR";u.rate=Number(rate.value);u.pitch=1.02;u.voice=bestVoice();u.onstart=()=>{enLecture=true;subtitle.textContent=text};u.onend=()=>{enLecture=false;subtitle.textContent="Lecture terminée.";paused=false};u.onerror=()=>{enLecture=false;subtitle.textContent="La lecture vocale a été interrompue."};synth.speak(u)}
+  /* 17/10/2026 (chantier prof vocal) : pendant un MP3 de moteur/voix.js, synth.speaking reste faux — « Pause » ne faisait rien */
+  let enLecture=false;
   document.getElementById("speak").onclick=speak;
-  document.getElementById("pause").onclick=()=>{if(!synth)return;if(synth.speaking&&!paused){synth.pause();paused=true;document.getElementById("pause").textContent="▶ Reprendre"}else if(paused){synth.resume();paused=false;document.getElementById("pause").textContent="⏸ Pause"}};
+  document.getElementById("pause").onclick=()=>{if(!synth)return;if((enLecture||synth.speaking)&&!paused){synth.pause();paused=true;document.getElementById("pause").textContent="▶ Reprendre"}else if(paused){synth.resume();paused=false;document.getElementById("pause").textContent="⏸ Pause"}};
   document.getElementById("dysBtn").onclick=()=>document.body.classList.toggle("dys");
   document.querySelectorAll(".question").forEach(q=>q.querySelectorAll("[data-answer]").forEach(btn=>btn.onclick=()=>{const good=btn.dataset.answer==="good",f=q.querySelector(".feedback");f.className="feedback "+(good?"ok":"no");f.textContent=good?"✓ Exact. Vous appliquez le bon raisonnement.":"✗ Pas encore. Relisez l’information juste au-dessus puis réessayez."}));
   const details={

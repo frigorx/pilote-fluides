@@ -132,7 +132,7 @@
     {
       short: "Utilité",
       kicker: "Écran 1 · Pourquoi ces vannes ?",
-      title: "À quoi servent KVP, KVL et KVR ?",
+      title: "À quoi servent KVP, KVL et KVR ?", narration: "Trois régulateurs de pression, trois besoins différents. Le K V P est placé après l'évaporateur : il empêche la pression d'évaporation de tomber trop bas, ce qui permet de tenir le régime de l'évaporateur. Le K V L est placé juste avant le compresseur : il limite la pression d'aspiration pour éviter la surcharge du moteur. Le K V R est placé après le condenseur : il garde la haute pression suffisante et stable, notamment par temps froid, ce qui alimente correctement le détendeur. Ensuite, on voit comment les reconnaître.",
       intro: "Chaque vanne maintient ou limite une pression. Elle répond à un besoin précis de l’installation.",
       detail: `<div class="fact"><strong>KVP :</strong> maintient une pression d’évaporation suffisamment élevée dans l’évaporateur.</div>
         <div class="fact"><strong>KVL :</strong> limite la pression d’aspiration admise par le compresseur pour éviter sa surcharge.</div>
@@ -147,7 +147,7 @@
     {
       short: "Reconnaître",
       kicker: "Écran 2 · Objet réel",
-      title: "La vanne doit ressembler à une vanne",
+      title: "La vanne doit ressembler à une vanne", narration: "Voici un vrai corps de vanne, affiché en trois dimensions : un K V L vingt-huit, pris comme exemple de référence. Il tourne tout seul ; vous pouvez aussi le faire glisser, zoomer, ou afficher des repères : le capuchon de réglage, le corps, le raccord du fluide. La tête de réglage est protégée par ce capuchon, et le corps métallique contient le siège et le passage du fluide. Un piège : les trois familles de vannes se ressemblent. Seuls le marquage, la référence et la flèche confirment de quelle vanne il s'agit, et dans quel sens elle est traversée. Reste à situer ces vannes dans le circuit.",
       intro: "La vue extérieure vient du fichier STEP fourni. Elle sert à reconnaître un corps réel avant de passer à la coupe fonctionnelle.",
       detail: `<ul><li><strong>Corps métallique :</strong> il contient le siège et le passage du fluide.</li><li><strong>Tête de réglage :</strong> protégée par un capuchon.</li><li><strong>Raccords :</strong> le sens réel se confirme avec la flèche du corps.</li></ul>
         <div class="warning-box"><strong>Attention :</strong> les trois familles sont proches. Toujours lire le marquage et la référence.</div>`,
@@ -160,7 +160,7 @@
     {
       short: "Placer",
       kicker: "Écran 3 · Circuit",
-      title: "Le circuit donne la première réponse",
+      title: "Le circuit donne la première réponse", narration: "Le circuit complet est dessiné selon la croix du frigoriste : détente à gauche, compression à droite. On commence par suivre la ligne liquide, de la bouteille jusqu'au détendeur. Puis trois boutons allument l'emplacement de la vanne choisie. Le K V R est du côté de la condensation, à la sortie du condenseur, avant le réservoir. Les deux autres sont sur l'aspiration, mais ne surveillent pas la même pression : le K V P, à la sortie de l'évaporateur dont il maintient la pression, et le K V L, juste avant le compresseur qu'il protège. Ensuite, on ouvre la vanne pour voir comment elle réagit.",
       intro: "Suis d’abord la ligne liquide complète. KVR travaille côté condensation ; KVP et KVL sont tous deux sur l’aspiration, mais ils ne regardent pas la même pression.",
       detail: `<div class="fact"><strong>KVR :</strong> sortie condenseur, avant le réservoir.</div>
         <div class="fact"><strong>KVP :</strong> sortie de l’évaporateur dont on maintient la pression.</div>
@@ -175,7 +175,7 @@
     {
       short: "Animer",
       kicker: "Écran 4 · Chaîne cinématique",
-      title: "La pression devient un mouvement",
+      title: "La pression devient un mouvement", narration: "Ici, la vanne est ouverte en coupe pour montrer son fonctionnement. Elle compare la pression régulée à ce que le ressort impose, et le ressort tient sa consigne de la vis. Si la pression bouge, le soufflet se déplace et entraîne la tige ; au bout, le clapet laisse passer plus ou moins de fluide. Ce nouveau débit remet la pression vers son équilibre. Vous choisissez une vanne, puis vous faites varier la pression, avec le curseur ou avec les trois boutons, pour voir l'ouverture changer. Sur le dessin, le fluide arrive par le bas, passe le clapet, puis part sur le côté.",
       intro: "La vanne compare une pression à la force du ressort. Le soufflet déplace la tige, puis le clapet modifie le passage.",
       detail: `<ol><li>La pression régulée agit sur le mécanisme.</li><li>Le ressort porte la consigne donnée par la vis.</li><li>Le soufflet et la tige transmettent le déplacement.</li><li>Le clapet change la surface de passage.</li><li>Le débit modifié ramène la pression vers l’équilibre.</li></ol>`,
       takeaway: "Pression → soufflet → tige → clapet → débit.",
@@ -187,7 +187,7 @@
     {
       short: "Régler",
       kicker: "Écran 5 · Méthode terrain",
-      title: "Régler avec un manomètre, jamais à l’aveugle",
+      title: "Régler avec un manomètre, jamais à l’aveugle", narration: "Ce réglage ne se fait pas au jugé. La vis agit sur le ressort : en serrant, on le comprime davantage et la pression demandée augmente ; en desserrant, elle diminue. Mais aucune valeur n'est universelle, puisque la consigne et l'effet d'un tour dépendent du modèle et de l'installation. Le curseur de l'écran n'indique donc qu'une tendance. Vous déplacez la vis, vous regardez l'aiguille du manomètre suivre, puis vous cochez les cinq contrôles de la méthode, dont l'ordre est obligatoire : on identifie d'abord, on vérifie en dernier. Ensuite, on verra à quoi servent ces vannes sur le terrain.",
       intro: "La vis modifie la compression du ressort. Une rotation horaire demande une pression plus élevée ; une rotation antihoraire la diminue.",
       detail: `<div class="key-box"><strong>Ordre obligatoire :</strong> identifier → mesurer → stabiliser → corriger → vérifier.</div>
         <div class="warning-box"><strong>Pas de valeur universelle :</strong> la consigne et la variation par tour dépendent du modèle et de l’installation.</div>`,
@@ -200,7 +200,7 @@
     {
       short: "Appliquer",
       kicker: "Écran 6 · Cas d’usage",
-      title: "Retrouver ces fonctions sur le terrain",
+      title: "Retrouver ces fonctions sur le terrain", narration: "Après l'utilité, voici la place de ces vannes dans la vie d'une installation. Trois situations professionnelles sont présentées : le besoin, l'action de la vanne, le résultat attendu. Le K V P sert quand plusieurs évaporateurs travaillent à des températures différentes. Le K V L intervient au redémarrage, après un dégivrage ou un long arrêt. Le K V R est utile sur un condenseur à air par temps froid, souvent avec une N R D et le réservoir. Elles ne sont pas obligatoires sur chaque circuit : le technicien part du problème à résoudre. Reste à savoir quand mettre l'une d'elles en cause.",
       intro: "Tu connais maintenant leur utilité. Voici les situations techniques qui justifient leur présence sur une installation.",
       detail: `<div class="neutral-box"><strong>Fréquence d’usage :</strong> on les rencontre souvent en froid commercial et sur des installations particulières, mais ils ne sont pas obligatoires sur chaque circuit.</div>
         <p>Le technicien part du problème à résoudre, pas du stock de vannes disponible.</p>`,
@@ -213,7 +213,7 @@
     {
       short: "Diagnostiquer",
       kicker: "Écran 7 · Décision",
-      title: "Un symptôme ne suffit pas pour tourner la vis",
+      title: "Un symptôme ne suffit pas pour tourner la vis", narration: "Un symptôme donne envie de tourner la vis, et pourtant la vanne n'est peut-être pas en cause : elle peut être mal réglée, mal choisie, ou innocente. C'est la mesure qui tranche. Quatre situations sont proposées, du produit trop froid jusqu'au compresseur qui doit couper. Chacune ouvre une suite de contrôles plutôt qu'une solution toute faite : la référence et le sens du fluide, la mesure du bon côté, la notice, les autres causes possibles. Dans le dernier cas, un régulateur K V déplace un clapet, alors qu'un pressostat déplace un contact électrique. Il ne reste plus que le défi.",
       intro: "Le régulateur peut être mal réglé, mal sélectionné ou simplement innocent. La mesure doit confirmer son rôle.",
       detail: `<ul><li>Vérifier la référence et le sens du fluide.</li><li>Mesurer du côté réellement régulé.</li><li>Comparer au besoin de l’installation et à la notice.</li><li>Écarter les autres causes avant de corriger.</li></ul>`,
       takeaway: "Diagnostiquer d’abord ; régler seulement si la mesure le justifie.",
@@ -225,7 +225,7 @@
     {
       short: "Vérifier",
       kicker: "Écran 8 · Défi",
-      title: "Choisir la bonne vanne et le bon geste",
+      title: "Choisir la bonne vanne et le bon geste", narration: "C'est le moment du défi : six questions mélangées, avec trois réponses possibles chacune. Elles reprennent tout le parcours : l'emplacement des vannes, leur fonction, la façon dont elles réagissent à la pression, et le réglage. L'objectif n'est pas de retenir trois lettres, mais de pouvoir expliquer chaque décision, en la reliant à la pression observée dans le circuit. Après chaque réponse, une explication s'affiche, puis vous passez à la question suivante. Le résultat final n'est pas enregistré, et vous pouvez recommencer. À vous de jouer.",
       intro: "Le défi mélange emplacement, fonction, cinématique et réglage.",
       detail: `<div class="key-box"><strong>Objectif :</strong> expliquer la décision, pas seulement mémoriser trois lettres.</div>
         <p>Une réponse correcte doit pouvoir être reliée à la pression observée dans le circuit.</p>`,
@@ -938,6 +938,9 @@
   }
 
   function screenSpeechSegments() {
+    /* la voix explique (17/10/2026, chantier prof vocal) : le texte écrit pour l'oreille, sinon l'écran en dépannage */
+    const ecrit = lessons[current] && lessons[current].narration;
+    if (ecrit) return [naturaliseSpeech(ecrit)].filter(Boolean);
     const detailBlocks = Array.from(ui.detail.children).map((element) => element.innerText);
     const visibleApplication = current >= 5 ? ui.root.innerText : "";
     return [ui.title.textContent, ui.intro.textContent, ...detailBlocks, ui.takeaway.textContent, visibleApplication]
@@ -963,6 +966,7 @@
     ui.voice.innerHTML = "▶ <span>Écouter</span>";
     ui.voice.setAttribute("aria-label", "Écouter l’écran");
   }
+  document.addEventListener("pilotevoix:vitesse", () => stopVoice());   /* 17/10/2026 (chantier prof vocal) : changer la vitesse commune arrête la lecture et rend « Écouter » */
 
   function toggleVoice() {
     if (!("speechSynthesis" in window)) {

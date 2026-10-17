@@ -69,7 +69,8 @@
       kicker: "Le film · Voyage dans tous ses états",
       title: "Chapitre « " + f[2] + " »",
       lead: "La molécule de CO₂ raconte elle-même ce passage de son voyage. Regarde le chapitre en entier, avec le son, avant de passer à l'écran suivant.",
-      narration: "Regarde d'abord ce chapitre du film, avec le son. Puis passe à l'écran suivant.",
+      /* 17/10/2026 (chantier prof vocal) : la voix vouvoie et ne relit pas la consigne affichée */
+      narration: "Cet écran commence par un extrait du film : c'est la molécule elle-même qui vous raconte ce passage de son voyage. Lancez la vidéo et suivez-la jusqu'au bout, son compris, avant de continuer.",
       caption: "Film « Voyage dans tous ses états », édition " + (f[0] === "co2" ? "CO₂" : "booster") + " : chapitre « " + f[2] + " ».",
       film: { src: "../../../../voyage/videos-" + f[0] + "/" + f[1], cle: "20261003-" + f[0] }
     });

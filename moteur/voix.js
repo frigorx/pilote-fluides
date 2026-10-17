@@ -192,6 +192,10 @@
 
   function speak(utterance) {
     if (!utterance) return;
+    /* Le réglage commun partout (Franck, 17/10/2026) : quand la page charge reglage-voix.js, sa vitesse s'impose à toute
+       lecture, MP3 ou voix du navigateur. L'ancien réglage propre d'un module n'agissait plus (défaut D6) : reglage-voix.js
+       le remplace à sa place par le réglage commun. */
+    if (window.PILOTE_VOIX_REGLAGE && typeof window.PILOTE_VOIX_REGLAGE.vitesse === "function") utterance.rate = window.PILOTE_VOIX_REGLAGE.vitesse();
     var entry = entries[textKey(utterance.text)];
     if (!entry) {
       fallbackToNative(utterance);

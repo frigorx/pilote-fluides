@@ -544,6 +544,7 @@
     else button.innerHTML='<span aria-hidden="true">▶</span><b> Écouter</b>';
   }
   function stopSpeech() { speechRun+=1;if("speechSynthesis" in window)speechSynthesis.cancel();setListenState("idle"); }
+document.addEventListener("pilotevoix:vitesse", () => stopSpeech());   /* 17/10/2026 (chantier prof vocal) : changer la vitesse commune arrête la lecture et rend « Écouter » */
   function speakCurrent() {
     if(!voiceEnabled)return;
     if(!("speechSynthesis" in window)){ $("#speech-warning").hidden=false; return; }
