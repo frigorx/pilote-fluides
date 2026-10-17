@@ -1,11 +1,23 @@
 /* =====================================================================
-   prof-vocal.js — déroulé pédagogique vocal de Pilote Fluides
+   prof-vocal.js — le professeur vocal de inerweb.fr : deux portes
    ---------------------------------------------------------------------
-   Le premier clic sur « Commencer », « Écouter » ou sur le bouton de ce
-   contrôleur autorise l'enchaînement pour la séance courante seulement.
-   Les écrans explicatifs avancent seuls. Les activités et les questions
-   restent des points d'arrêt : aucune réponse n'est choisie à la place de
-   l'apprenant et chaque consigne parlée est également affichée.
+   Décision de F. Henninot (16/10/2026), la même sur tout le site :
+   · « Écouter » (le bouton de la page) lit l'écran affiché, et s'arrête là.
+   · « ▶ Prof vocal » (ce contrôleur) enchaîne : il fait lire l'écran, passe
+     au suivant, et ainsi de suite jusqu'à la prochaine question ou activité,
+     où il s'arrête et attend l'élève. « Commencer » ne fait jamais parler.
+   Une question se lit telle qu'elle est posée (par la narration de l'écran,
+   sinon par ce contrôleur) ; aucune réponse n'est choisie à la place de
+   l'élève. Une ACTIVITÉ, c'est de quoi écrire ou glisser, un écran marqué
+   data-prof-activite, ou ce que répond window.PILOTE_PROF_ACTIVITE() du
+   réseau — jamais un simple bouton de vue 3D, de niveau ou de démonstration
+   (défaut D1 du 16/10 : tout écran à bouton arrêtait le mode au 1er écran).
+   Changer la vitesse (reglage-voix.js, événement pilotevoix:vitesse) coupe
+   la lecture ET le mode. Les répliques gardent leurs textes : elles ont
+   leur MP3 (voix Rémy) dans voix-index.js.
+   Contrat des moteurs qui jouent leurs propres MP3 (ÉlectroRézo, CartoClim,
+   CuivRézo, HoCourant…) : émettre pilotevoix:debut / fin / annulation
+   (detail.texte), comme voix.js le fait pour la synthèse.
    ===================================================================== */
 (function () {
   "use strict";
@@ -34,32 +46,35 @@
     : path.indexOf("nomenclature-interactive") >= 0 ? 1450
       : 620;
   var selectors = {
-    /* AéroRézo (stations/_commun/moteur.js) : stationVoice/previousButton/nextButton/
-       exitStation/backNetwork/startButton. HydroMétro a trois gabarits de stations :
-       formative-engine.js (formationListen/formationStop/nextBtn/prevBtn/actionPanel),
-       p-formation.js (pListen/pStop/pNext/pPrev/activityView), et la station boucle,
-       seule sur son propre moteur (listenButton/stopVoiceButton/nextLesson/prevLesson). */
-    listen: ["#listen", "#listen-button", "#speak", "#play-button", "#stationVoice", "#formationListen", "#pListen", "#listenButton"],
-    next: ["#next", "#next-button", "#nextButton", "#nextBtn", "#pNext", "#nextLesson"],
-    previous: ["#prev", "#previous", "#prev-button", "#previous-button", "#previousButton", "#prevBtn", "#pPrev", "#prevLesson"],
-    start: ["#start", "#start-course", "#start-button", "#startButton"],
+    /* AéroRézo : stationVoice/previousButton/nextButton/exitStation/backNetwork/startButton.
+       HydroMétro : formative-engine.js (formationListen/formationStop/nextBtn/prevBtn/actionPanel),
+       p-formation.js (pListen/pStop/pNext/pPrev/activityView), station boucle (listenButton/
+       stopVoiceButton/nextLesson/prevLesson). ÉlectroRézo et CartoClim : btVoix/suivant/precedent/
+       scene. Capsules : btn-ecouter/btn-stop/btn-suivant/btn-precedent/btn-commencer.
+       HoCourant : st-ecouter. Un moteur peut aussi se déclarer par data-prof-*. */
+    listen: ["#listen", "#listen-button", "#speak", "#play-button", "#stationVoice", "#formationListen", "#pListen", "#listenButton", "#btVoix", "#btn-ecouter", "#st-ecouter", "[data-prof-ecouter]"],
+    next: ["#next", "#next-button", "#nextButton", "#nextBtn", "#pNext", "#nextLesson", "#suivant", "#btn-suivant", "[data-prof-suivant]"],
+    previous: ["#prev", "#previous", "#prev-button", "#previous-button", "#previousButton", "#prevBtn", "#pPrev", "#prevLesson", "#precedent", "#btn-precedent", "[data-prof-precedent]"],
+    start: ["#start", "#start-course", "#start-button", "#startButton", "#btn-commencer", "[data-prof-commencer]"],
     exit: ["#exit-course", "#exit-button", "#home-button", "#rail-home", "#exit-dossier", "#exitStation", "#backNetwork"],
-    stop: ["#stop-voice", "#formationStop", "#pStop", "#stopVoiceButton"],
-    scope: [".slide.active", "#activity-zone", "#zone", "#lesson-zone", "#interactive-zone", "#screen-content", "#activity", "#actionPanel", "#activityView", "#quizView"],
+    stop: ["#stop-voice", "#formationStop", "#pStop", "#stopVoiceButton", "#btn-stop", "[data-prof-arreter]"],
+    scope: [".slide.active", "#activity-zone", "#zone", "#lesson-zone", "#interactive-zone", "#screen-content", "#activity", "#actionPanel", "#activityView", "#quizView", "#scene", "[data-prof-zone]"],
     quizNext: ["#quiz-next", ".quiz-next", "#nextGame", ".next-game", "#nextQuiz", "#nextLocal"]
   };
 
   function visible(element) {
     if (!element || element.hidden || element.getAttribute("aria-hidden") === "true") return false;
     var style = window.getComputedStyle ? window.getComputedStyle(element) : null;
-    return !style || (style.display !== "none" && style.visibility !== "hidden");
+    if (style && (style.display === "none" || style.visibility === "hidden")) return false;
+    var box = element.getBoundingClientRect ? element.getBoundingClientRect() : null;
+    return !box || box.width > 0 || box.height > 0;
   }
 
   function firstVisible(list, root) {
     var host = root || document;
     for (var index = 0; index < list.length; index += 1) {
-      var found = host.querySelector(list[index]);
-      if (visible(found)) return found;
+      var found = Array.prototype.find.call(host.querySelectorAll(list[index]), visible);
+      if (found) return found;
     }
     return null;
   }
@@ -68,17 +83,29 @@
     return list.some(function (selector) { return !!document.querySelector(selector); });
   }
 
-  if (!hasSelector(selectors.next) || !hasSelector(selectors.listen)) return;
+  /* Une page qui dessine ses commandes après coup (HoCourant ouvre un module, AéroRézo
+     redessine) : on attend qu'elles existent avant de poser le contrôleur. */
+  if (hasSelector(selectors.next) && hasSelector(selectors.listen)) demarrer();
+  else {
+    var guet = new MutationObserver(function () {
+      if (hasSelector(selectors.next) && hasSelector(selectors.listen)) { guet.disconnect(); demarrer(); }
+    });
+    guet.observe(document.documentElement, { childList: true, subtree: true });
+  }
 
+  function demarrer() {
   var enabled = false;
   var speakingInternal = false;
+  var narrationActive = false;
   var pendingTimer = 0;
   var narrationTimer = 0;
+  var departTimer = 0;
   var lastNarration = "";
   var lastFeedback = "";
   var lastFeedbackKind = "neutral";
   var missingLocal = new Set();
   var userPaused = false;
+  var sequenceCourante = 0;
 
   var style = document.createElement("style");
   style.textContent = "#pilote-prof-vocal{position:fixed;right:12px;bottom:12px;z-index:2147483000;width:min(430px,calc(100vw - 24px));pointer-events:none;font-family:Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;color:#10233c}#pilote-prof-toggle{pointer-events:auto;float:right;border:2px solid #1b3a63;border-radius:999px;background:#fffdf8;color:#1b3a63;padding:9px 14px;font:700 14px/1.2 Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;box-shadow:0 2px 10px rgba(27,58,99,.16);cursor:pointer}#pilote-prof-toggle[aria-pressed=true]{background:#1b3a63;color:#fff}#pilote-prof-toggle:focus-visible,.pilote-prof-action:focus-visible{outline:3px solid rgba(255,107,53,.45);outline-offset:3px}.pilote-prof-card{pointer-events:auto;clear:both;margin-top:52px;padding:14px 16px;border:2px solid #1b3a63;border-radius:16px;background:#fffdf8;box-shadow:0 12px 34px rgba(27,58,99,.18)}.pilote-prof-card[data-kind=error]{border-style:dashed;border-color:#c0392b}.pilote-prof-card[data-kind=success]{border-style:double;border-width:5px;border-color:#1e7e54}.pilote-prof-title{margin:0 0 5px;color:#1b3a63;font:700 18px/1.2 \"Trebuchet MS\",Calibri,Arial,sans-serif}.pilote-prof-transcript{margin:0;line-height:1.45;text-align:left}.pilote-prof-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pilote-prof-action{min-height:40px;border:2px solid #1b3a63;border-radius:999px;background:#fffdf8;color:#1b3a63;padding:7px 12px;font:700 13px/1.2 Calibri,\"Segoe UI\",system-ui,Arial,sans-serif;cursor:pointer}.pilote-prof-action.primary{background:#1b3a63;color:#fff}.pilote-prof-action.replay{border-color:#c9451a;color:#c9451a}#pilote-prof-vocal.pilote-prof-gauche{left:12px;right:auto}#pilote-prof-toggle.pilote-prof-encastre{float:none;margin:0;min-height:34px;padding:.2rem .6rem;font-size:13px;line-height:1.2;box-shadow:none;white-space:nowrap}@media(max-width:650px){#pilote-prof-vocal{left:4px;right:4px;bottom:4px;width:auto}#pilote-prof-vocal>#pilote-prof-toggle{display:none}#pilote-prof-toggle{padding:7px 10px;font-size:12px}.pilote-prof-card{margin-top:44px;padding:10px 12px}.pilote-prof-title{font-size:16px}.pilote-prof-transcript{font-size:13px}.pilote-prof-action{min-height:36px;font-size:12px}}@media print{#pilote-prof-vocal{display:none!important}}";
@@ -86,22 +113,21 @@
 
   var root = document.createElement("section");
   root.id = "pilote-prof-vocal";
-  root.setAttribute("aria-label", "Mode professeur vocal");
-  root.innerHTML = '<button id="pilote-prof-toggle" type="button" aria-pressed="false">Mode prof vocal · arrêté</button><div class="pilote-prof-card" role="status" aria-live="polite" hidden><h2 class="pilote-prof-title">Professeur vocal</h2><p class="pilote-prof-transcript"></p><div class="pilote-prof-actions"></div></div>';
+  root.setAttribute("aria-label", "Professeur vocal");
+  root.innerHTML = '<button id="pilote-prof-toggle" type="button" aria-pressed="false">▶ Prof vocal</button><div class="pilote-prof-card" role="status" aria-live="polite" hidden><h2 class="pilote-prof-title">Professeur vocal</h2><p class="pilote-prof-transcript"></p><div class="pilote-prof-actions"></div></div>';
   document.body.appendChild(root);
 
   var toggle = root.querySelector("#pilote-prof-toggle");
   var card = root.querySelector(".pilote-prof-card");
   var transcript = root.querySelector(".pilote-prof-transcript");
   var actions = root.querySelector(".pilote-prof-actions");
+  var etatAffiche = "";
 
-  /* Le bouton du mode prof se range parmi les commandes de voix de la page quand elle en a
-     (HydroMétro : après « Arrêter » ; AéroRézo : après « Écouter »), pour ne jamais recouvrir
-     un bouton de la page. Sans commande de voix (Législation, packs), il reste flottant en bas
-     à droite. Constat du 13/09/2026 : flottant, il masquait « Continuer » des trois gabarits
-     HydroMétro et « Comprendre → » d'AéroRézo, à 1366 px comme à 375 px. Les pages qui
-     redessinent leurs commandes (AéroRézo) le perdent : l'observateur le remet en place ;
-     tant que la commande n'est pas rendue (Législation avant « Commencer »), il flotte. */
+  /* Le bouton se range parmi les commandes de voix de la page quand elle en a (après
+     « Arrêter », sinon après « Écouter »), pour ne jamais recouvrir un bouton de la page.
+     Constat du 13/09/2026 : flottant, il masquait « Continuer » d'HydroMétro et
+     « Comprendre → » d'AéroRézo. Les pages qui redessinent leurs commandes le perdent :
+     l'observateur le remet en place ; tant que la commande n'est pas rendue, il flotte. */
   var encastre = false;
   var encastrerTimer = 0;
   function encastrer() {
@@ -119,7 +145,7 @@
       root.classList.remove("pilote-prof-gauche");
       encastre = false;
     }
-    setToggle(enabled ? "actif" : "arrêté");
+    setToggle(etatAffiche);
   }
   function encastrerBientot() {
     if (encastre && document.body.contains(toggle)) return;
@@ -131,18 +157,24 @@
   window.addEventListener("load", encastrer);
   new MutationObserver(encastrerBientot).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "class", "style"] });
 
+  /* Arrêté : « ▶ Prof vocal ». En marche : « ■ Prof vocal · lecture / question / activité… » —
+     le carré dit qu'un clic l'arrête. */
   function setToggle(label) {
-    if (encastre) toggle.innerHTML = "Prof <span>vocal · " + label + "</span>";
-    else toggle.textContent = "Mode prof vocal · " + label;
+    etatAffiche = label || "";
+    var texte = enabled ? "■ Prof vocal" + (etatAffiche ? " · " + etatAffiche : "") : "▶ Prof vocal";
+    toggle.textContent = texte;
     toggle.setAttribute("aria-pressed", String(enabled));
-    toggle.setAttribute("aria-label", "Mode professeur vocal · " + label);
+    toggle.setAttribute("aria-label", enabled ? "Arrêter le professeur vocal" + (etatAffiche ? " (" + etatAffiche + ")" : "") : "Lancer le professeur vocal : il explique les écrans l'un après l'autre et s'arrête aux questions");
+    toggle.title = enabled ? "Arrêter le professeur vocal" : "Le professeur explique les écrans l'un après l'autre, et s'arrête aux questions";
   }
 
   function clearTimers() {
     window.clearTimeout(pendingTimer);
     window.clearTimeout(narrationTimer);
+    window.clearTimeout(departTimer);
     pendingTimer = 0;
     narrationTimer = 0;
+    departTimer = 0;
   }
 
   function setCard(title, text, kind, buttons) {
@@ -166,14 +198,16 @@
     actions.innerHTML = "";
   }
 
-  function activate(startNarration) {
+  function rester() { userPaused = true; setToggle("en attente"); hideCard(); }
+
+  function activate(announce) {
     enabled = true;
     userPaused = false;
     setToggle("actif");
-    if (startNarration) {
+    if (announce) {
       setCard("Professeur vocal", PHRASES.active, "neutral", []);
-      speakSequence([PHRASES.active], function () { hideCard(); scheduleNarration(180); });
-    }
+      speakSequence([PHRASES.active], function () { hideCard(); lireEcranCourant(); });
+    } else lireEcranCourant();
   }
 
   function deactivate(withVoice) {
@@ -182,7 +216,7 @@
     userPaused = false;
     speakingInternal = false;
     window.speechSynthesis.cancel();
-    setToggle("arrêté");
+    setToggle("");
     if (withVoice) {
       setCard("Mode en pause", PHRASES.pause, "neutral", []);
       speakSequence([PHRASES.pause], function () { window.setTimeout(hideCard, 900); }, true);
@@ -191,7 +225,11 @@
 
   function voiceActive() {
     var state = window.PiloteVoix.etat();
-    return !!(state && state.actif) || !!window.speechSynthesis.speaking;
+    return narrationActive || !!(state && state.actif) || !!window.speechSynthesis.speaking;
+  }
+
+  function vitesse() {
+    return window.PILOTE_VOIX_REGLAGE && typeof window.PILOTE_VOIX_REGLAGE.vitesse === "function" ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
   }
 
   function speakSequence(parts, onComplete, allowWhenDisabled) {
@@ -200,10 +238,12 @@
       if (typeof onComplete === "function") onComplete();
       return;
     }
+    var sequence = ++sequenceCourante;   // une réplique coupée par la suivante ne doit pas libérer celle-ci
     speakingInternal = true;
     window.speechSynthesis.cancel();
     var index = 0;
     function nextPart() {
+      if (sequence !== sequenceCourante) return;
       if (index >= queue.length) {
         speakingInternal = false;
         if (typeof onComplete === "function") onComplete();
@@ -213,12 +253,15 @@
       if (!window.PiloteVoix.parleAvecAudioLocal(text)) missingLocal.add(window.PiloteVoix.cle(text));
       var utterance = new window.SpeechSynthesisUtterance(text);
       utterance.lang = "fr-FR";
-      utterance.rate = 0.95;
+      utterance.rate = vitesse();
       utterance.pitch = 1;
       utterance.__piloteProfVocal = true;
       utterance.onend = nextPart;
       utterance.onerror = function (event) {
-        if (event && (event.error === "canceled" || event.error === "interrupted")) return;
+        if (event && (event.error === "canceled" || event.error === "interrupted")) {
+          if (sequence === sequenceCourante) speakingInternal = false;   // coupée par l'élève (Écouter, Arrêter)
+          return;
+        }
         nextPart();
       };
       window.speechSynthesis.speak(utterance);
@@ -230,50 +273,117 @@
     return firstVisible(selectors.scope) || document.body;
   }
 
+  /* La signature d'un écran : titres, diapo active, onglet ou étape courants, compteurs.
+     Pas les boutons, dont le libellé change pendant la lecture (« Ⅱ Pause »). */
   function stageSignature() {
-    /* #stepStatus : AéroRézo (« Comprendre · 2/4 · station 1/1 ») — sans lui, la signature ne
-       bougeait pas au changement de temps et le mode déclarait « Parcours terminé » dès le
-       deuxième écran (constaté le 12/09, lot F). */
-    var candidates = ["#lesson-title", "#title", "#screen-title", "#scene-title", ".slide.active h2", "#stepCount", "#step-count", "#screen-count", "#stepStatus"];
-    return candidates.map(function (selector) {
-      var node = document.querySelector(selector);
-      return visible(node) ? node.textContent.trim() : "";
-    }).join("|") + "|" + window.location.search;
+    function textes(selector) {
+      return Array.prototype.filter.call(document.querySelectorAll(selector), visible)
+        .filter(function (node) { return !node.closest("#pilote-prof-vocal"); })
+        .map(function (node) { return node.textContent.replace(/\s+/g, " ").trim().slice(0, 80); }).join("/");
+    }
+    var actif = document.querySelector(".slide.active");
+    return [window.location.pathname + window.location.search, textes("h1, h2, h3"), actif ? actif.id || actif.className : "",
+      textes('[aria-current="step"], [aria-current="page"], [aria-current="true"], [aria-selected="true"]'),
+      textes("#lesson-title, #title, #screen-title, #scene-title, #stepCount, #step-count, #screen-count, #stepStatus")].join("|");
   }
 
   function isIgnoredControl(element) {
     if (!element || element.closest("#pilote-prof-vocal") || element.closest("#pilote-prof-toggle")) return true;
-    var ignored = selectors.listen.concat(selectors.next, selectors.previous, selectors.start, selectors.exit, selectors.stop, selectors.quizNext, ["[data-step]", ".step-button", "#voice-toggle", "#refs-toggle", "#source-toggle", "#sound-toggle", "#copy-link", "#slower", "#faster", "#pause"]);
+    var ignored = selectors.listen.concat(selectors.next, selectors.previous, selectors.start, selectors.exit, selectors.stop, selectors.quizNext, ["[data-step]", ".step-button", "#voice-toggle", "#refs-toggle", "#source-toggle", "#sound-toggle", "#copy-link", "#slower", "#faster", "#pause", "[data-voix-reglage]"]);
     return ignored.some(function (selector) { return element.matches(selector) || !!element.closest(selector); });
   }
 
-  function interactiveControls() {
+  function normaliser(texte) {
+    return String(texte || "").toLowerCase().replace(/[^a-z0-9à-ÿœæ]+/gi, " ").trim();
+  }
+
+  /* Une question à l'écran : un énoncé et au moins deux choix (boutons de réponse, cases). */
+  function questionParts() {
     var scope = currentScope();
-    return Array.from(scope.querySelectorAll("button,input:not([type=hidden]),select,textarea,[role=button]")).filter(function (element) {
-      return visible(element) && !element.disabled && !isIgnoredControl(element);
+    var choices = Array.prototype.filter.call(scope.querySelectorAll(".choices button,.quiz-options button,#gameOptions button,[data-answer],.answer-button,.vy-choix button,[role=radio],input[type=radio],input[type=checkbox]"), function (node) {
+      return visible(node) && !node.disabled && !isIgnoredControl(node);
+    });
+    var question = firstVisible([".quiz-question", ".question strong", "[data-question]", ".game-question", "#fluidHint", ".question h2", ".question h3", "legend"], scope);
+    if (!question && choices.length >= 2) question = firstVisible(["h2", "h3", "h4"], scope);
+    if (!question || choices.length < 2) return [];
+    var libelles = choices.map(function (node) {
+      if (node.tagName === "INPUT") return node.labels && node.labels[0] ? node.labels[0].textContent.trim() : "";
+      return node.textContent.trim();
+    }).filter(Boolean);
+    return [PHRASES.question, question.textContent.trim()].concat(libelles);
+  }
+
+  /* Une activité : le réseau le dit, l'écran se déclare tel, ou il donne de quoi écrire / glisser.
+     Un bouton seul ne fait pas une activité (vue 3D, niveau, démonstration, curseur d'exploration). */
+  function activiteReelle() {
+    if (typeof window.PILOTE_PROF_ACTIVITE === "function") {
+      try {
+        var avis = window.PILOTE_PROF_ACTIVITE();
+        if (avis === true || avis === false) return avis;
+      } catch (_) { /* le réseau se trompe : on regarde l'écran */ }
+    }
+    var scope = currentScope();
+    if (scope.closest("[data-prof-activite]")) return true;
+    if (Array.prototype.some.call(scope.querySelectorAll("[data-prof-activite]"), visible)) return true;
+    return Array.prototype.some.call(scope.querySelectorAll("input[type=text],input[type=number],input[type=search],input:not([type]),textarea,[draggable=true],[contenteditable=true]"), function (node) {
+      return visible(node) && !node.disabled && !isIgnoredControl(node);
     });
   }
 
-  function questionParts() {
-    var scope = currentScope();
-    var question = firstVisible([".quiz-question", ".question strong", "[data-question]", ".game-question", "#fluidHint"], scope);
-    if (!question) return [];
-    var parts = [PHRASES.question, question.textContent.trim()];
-    var choices = Array.from(scope.querySelectorAll(".choices button,.quiz-options button,#gameOptions button,[data-answer],.answer-button")).filter(visible).map(function (button) {
-      return button.textContent.trim();
-    }).filter(Boolean);
-    return parts.concat(choices);
+  /* Le bouton « suivant » de la page ; à défaut, l'onglet qui suit l'onglet courant. */
+  function suivantDisponible() {
+    var next = firstVisible(selectors.next);
+    if (next) return next.disabled || next.getAttribute("aria-disabled") === "true" ? null : next;
+    var courant = Array.prototype.find.call(document.querySelectorAll('[role=tab][aria-selected="true"], [aria-current="step"]'), visible);
+    var suite = courant && courant.nextElementSibling;
+    while (suite && (!visible(suite) || suite.disabled)) suite = suite.nextElementSibling;
+    return suite && suite.matches("button, [role=tab], a") ? suite : null;
+  }
+
+  /* « Continuer » présent mais grisé : l'écran attend que l'élève fasse quelque chose
+     (barres d'étapes verrouillées d'HydroMétro) — sauf au dernier écran (« 12 / 12 »). */
+  function suivantVerrouille() {
+    var next = firstVisible(selectors.next);
+    if (!next || !(next.disabled || next.getAttribute("aria-disabled") === "true")) return false;
+    var compteurs = Array.prototype.filter.call(document.querySelectorAll("#stepCount, #step-count, #screen-count, [id*=index], [class*=compteur], [class*=progression], .numero"), visible);
+    return !compteurs.some(function (node) {
+      var m = /(\d+)\s*(?:\/|sur)\s*(\d+)/.exec(node.textContent || "");
+      return m && m[1] === m[2];
+    });
+  }
+
+  /* Le professeur reste dans la station : « Station suivante », un lien vers une autre page = fin du parcours. */
+  function quitteLaStation(element) {
+    if (element.tagName === "A" && element.getAttribute("href") && element.getAttribute("href").charAt(0) !== "#") {
+      try { if (new URL(element.href, window.location.href).pathname !== window.location.pathname) return true; } catch (_) { /* adresse illisible : on regarde le libellé */ }
+    }
+    return /station suivante|ligne suivante|retour à la carte|évaluation finale|quitter/i.test(element.textContent || "");
+  }
+
+  function estOnglet(button) {
+    return button.getAttribute("role") === "tab" || button.hasAttribute("aria-selected") || !!button.closest("[role=tablist]");
   }
 
   function showQuestion(parts) {
-    var text = parts.join(" ");
+    var text = parts.slice(1).join(" ");
+    setToggle("question");
     setCard("Question à vous", text, "neutral", []);
-    speakSequence(parts, function () {
-      setCard("Question à vous", text, "neutral", [
-        { label: "Réécouter la question", className: "replay", action: function () { showQuestion(parts); } },
-        { label: "Répondre à l'écran", className: "primary", action: hideCard }
-      ]);
-    });
+    speakSequence(parts, function () { carteQuestion(parts); });
+  }
+
+  function carteQuestion(parts) {
+    setToggle("question");
+    setCard("Question à vous", parts[1] + " — répondez à l'écran.", "neutral", [
+      { label: "Réécouter la question", className: "replay", action: function () { showQuestion(parts); } },
+      { label: "Répondre à l'écran", className: "primary", action: hideCard }
+    ]);
+  }
+
+  /* La narration de l'écran vient de lire la question : on ne la répète pas, on attend. */
+  function questionAVous(parts) {
+    var debut = normaliser(parts[1]).slice(0, 40);
+    if (debut && normaliser(lastNarration).indexOf(debut) >= 0) carteQuestion(parts);
+    else showQuestion(parts);
   }
 
   function showActivityCheckpoint() {
@@ -283,7 +393,7 @@
       setCard("À vous de jouer", PHRASES.activite, "neutral", [
         { label: "J'ai terminé", className: "primary", action: askUnderstood },
         { label: "Réécouter la consigne", className: "replay", action: replayCurrent },
-        { label: "Rester sur l'écran", action: function () { userPaused = true; setToggle("en attente"); hideCard(); } }
+        { label: "Rester sur l'écran", action: rester }
       ]);
     });
   }
@@ -294,7 +404,7 @@
       setCard("Validation", PHRASES["compris-etape"], "neutral", [
         { label: "Oui, continuer", className: "primary", action: advance },
         { label: "Non, réécouter", className: "replay", action: replayCurrent },
-        { label: "Rester ici", action: function () { userPaused = true; setToggle("en attente"); hideCard(); } }
+        { label: "Rester ici", action: rester }
       ]);
     });
   }
@@ -306,6 +416,12 @@
     scheduleNarration(80, true);
   }
 
+  function terminer() {
+    setToggle("terminé");
+    setCard("Parcours terminé", PHRASES.termine, "success", []);
+    speakSequence([PHRASES.termine], function () { enabled = false; setToggle(""); window.setTimeout(hideCard, 1800); });
+  }
+
   function feedbackChunks(text) {
     var clean = String(text || "").replace(/^[✓✗]\s*/, "").replace(/\s+/g, " ").trim();
     if (!clean) return [];
@@ -315,8 +431,8 @@
 
   function classifyFeedback(node, text) {
     var classes = node ? node.className || "" : "";
-    if (/\b(bad|no|wrong|error)\b/i.test(classes) || /^(✗|pas encore|incorrect|erreur)/i.test(text)) return "error";
-    if (/\b(good|ok|correct|success)\b/i.test(classes) || /^(✓|exact|bonne réponse|correct)/i.test(text)) return "success";
+    if (/\b(bad|no|wrong|error|revoir)\b/i.test(classes) || /^(✗|pas encore|incorrect|erreur)/i.test(text)) return "error";
+    if (/\b(good|ok|correct|success|juste)\b/i.test(classes) || /^(✓|exact|bonne réponse|correct)/i.test(text)) return "success";
     return "neutral";
   }
 
@@ -326,20 +442,20 @@
       return [
         { label: "J'ai compris, question suivante", className: "primary", action: function () { hideCard(); quizNext.click(); window.setTimeout(speakVisibleQuestion, 220); } },
         { label: "Réécouter la correction", className: "replay", action: function () { speakFeedback(lastFeedback, lastFeedbackKind); } },
-        { label: "Rester sur la correction", action: function () { userPaused = true; setToggle("en attente"); hideCard(); } }
+        { label: "Rester sur la correction", action: rester }
       ];
     }
     if (kind === "error") {
       return [
-        { label: "J'ai compris, réessayer", className: "primary", action: function () { hideCard(); setToggle("activité"); } },
+        { label: "J'ai compris, réessayer", className: "primary", action: function () { hideCard(); setToggle("question"); } },
         { label: "Réécouter la correction", className: "replay", action: function () { speakFeedback(lastFeedback, lastFeedbackKind); } },
-        { label: "Revoir l'écran", action: function () { userPaused = true; setToggle("en attente"); hideCard(); } }
+        { label: "Revoir l'écran", action: rester }
       ];
     }
     return [
       { label: "J'ai compris, continuer", className: "primary", action: advance },
       { label: "Réécouter le retour", className: "replay", action: function () { speakFeedback(lastFeedback, lastFeedbackKind); } },
-      { label: "Rester sur l'écran", action: function () { userPaused = true; setToggle("en attente"); hideCard(); } }
+      { label: "Rester sur l'écran", action: rester }
     ];
   }
 
@@ -359,14 +475,14 @@
   }
 
   function feedbackNodes(rootNode) {
-    return Array.from((rootNode || currentScope()).querySelectorAll(".feedback,#quiz-feedback,#gameFeedback,[data-feedback],[role=status],.status-message,.result-message")).filter(function (node) {
+    return Array.prototype.filter.call((rootNode || currentScope()).querySelectorAll(".feedback,#quiz-feedback,#gameFeedback,[data-feedback],[role=status],.status-message,.result-message,.vy-retour"), function (node) {
       return visible(node) && !node.closest("#pilote-prof-vocal");
     });
   }
 
   function inspectFeedback(before, clicked) {
     if (!enabled) return;
-    var localRoot = clicked && clicked.closest(".question,.quiz-card,.game-card,.panel,#activity-zone,#zone,#lesson-zone,#interactive-zone,#screen-content");
+    var localRoot = clicked && clicked.closest(".question,.quiz-card,.game-card,.panel,#activity-zone,#zone,#lesson-zone,#interactive-zone,#screen-content,#scene,.vy-question");
     var nodes = feedbackNodes(localRoot || currentScope());
     var changed = nodes.map(function (node) { return { node: node, text: node.textContent.replace(/\s+/g, " ").trim() }; })
       .filter(function (entry) { return entry.text.length >= 8 && before.indexOf(entry.text) < 0; });
@@ -382,19 +498,15 @@
     else scheduleNarration(280);
   }
 
+  /* Après la narration d'un écran : la question attend l'élève, l'activité aussi ; sinon on passe. */
   function decideAfterNarration(signature) {
     if (!enabled || userPaused || speakingInternal) return;
     if (signature !== stageSignature()) return;
+    if (voiceActive()) return;          // une narration en plusieurs parties continue : on attendra sa fin
     var parts = questionParts();
-    if (parts.length) {
-      showQuestion(parts);
-      return;
-    }
-    var next = firstVisible(selectors.next);
-    if (!next || next.disabled || interactiveControls().length) {
-      showActivityCheckpoint();
-      return;
-    }
+    if (parts.length) { questionAVous(parts); return; }
+    if (activiteReelle() || suivantVerrouille()) { showActivityCheckpoint(); return; }
+    if (!suivantDisponible()) { terminer(); return; }
     advance();
   }
 
@@ -402,22 +514,41 @@
     if (!enabled) return;
     hideCard();
     userPaused = false;
-    var next = firstVisible(selectors.next);
-    if (!next || next.disabled) {
-      showActivityCheckpoint();
+    var next = suivantDisponible();
+    if (!next) {
+      if (activiteReelle() || suivantVerrouille()) showActivityCheckpoint();
+      else terminer();
       return;
     }
+    if (quitteLaStation(next)) { terminer(); return; }
     var before = stageSignature();
+    setToggle("écran suivant");
     next.click();
-    window.setTimeout(function () {
-      if (before === stageSignature()) {
-        setToggle("terminé");
-        setCard("Parcours terminé", PHRASES.termine, "success", []);
-        speakSequence([PHRASES.termine], function () { enabled = false; setToggle("arrêté"); });
-        return;
-      }
-      scheduleNarration(480);
-    }, 120);
+    var essais = 0;
+    (function guetter() {
+      window.setTimeout(function () {
+        if (!enabled) return;
+        if (before !== stageSignature()) { scheduleNarration(480); return; }
+        if (++essais < 10) { guetter(); return; }
+        terminer();
+      }, 150);
+    })();
+  }
+
+  function entreeVisible() {
+    return firstVisible(selectors.start) || Array.prototype.find.call(document.querySelectorAll("button, a[href^='#'], [role=button]"), function (node) {
+      return visible(node) && !node.disabled && !node.closest("#pilote-prof-vocal") && /^[▶►]?\s*(commencer|démarrer|c'est parti|entrer|je commence)/i.test((node.textContent || "").trim());
+    });
+  }
+
+  /* Lancé depuis l'accueil d'une station, le professeur y entre d'abord. */
+  function lireEcranCourant() {
+    if (!enabled) return;
+    var listen = firstVisible(selectors.listen);
+    if (listen && !listen.disabled) { scheduleNarration(180, true); return; }
+    var entree = entreeVisible();
+    if (entree) { entree.click(); scheduleNarration(560, true); return; }
+    decideAfterNarration(stageSignature());
   }
 
   function scheduleNarration(delay, force) {
@@ -426,12 +557,18 @@
       if (!enabled || userPaused || speakingInternal) return;
       if (!force && voiceActive()) return;
       var button = firstVisible(selectors.listen);
-      if (!button || button.disabled) {
-        setToggle("terminé");
+      if (!button || button.disabled || /pas de voix/i.test(button.textContent || "")) {
+        decideAfterNarration(stageSignature());   // écran sans narration : on décide tout de suite
         return;
       }
       setToggle("lecture");
+      var signature = stageSignature();
       button.click();
+      /* garde-fou : un bouton qui ne fait rien parler ne doit pas bloquer le professeur */
+      window.clearTimeout(departTimer);
+      departTimer = window.setTimeout(function () {
+        if (enabled && !voiceActive() && !speakingInternal && signature === stageSignature()) decideAfterNarration(signature);
+      }, 2600);
     }, delay || 0);
   }
 
@@ -441,40 +578,57 @@
 
   document.addEventListener("pilotevoix:debut", function (event) {
     if (event.detail && event.detail.interne) return;
+    narrationActive = true;
+    window.clearTimeout(departTimer);
+    lastNarration = event.detail && event.detail.texte || "";
     if (enabled) {
       window.clearTimeout(pendingTimer);
-      lastNarration = event.detail && event.detail.texte || "";
       setToggle("lecture");
       hideCard();
     }
   });
 
+  ["pilotevoix:annulation", "pilotevoix:erreur"].forEach(function (nom) {
+    document.addEventListener(nom, function (event) {
+      if (event.detail && event.detail.interne) return;
+      narrationActive = false;
+    });
+  });
+
   document.addEventListener("pilotevoix:fin", function (event) {
-    if (!enabled || speakingInternal || (event.detail && event.detail.interne)) return;
+    if (event.detail && event.detail.interne) return;
+    narrationActive = false;
+    if (!enabled || speakingInternal) return;
     var signature = stageSignature();
     window.clearTimeout(pendingTimer);
     pendingTimer = window.setTimeout(function () { decideAfterNarration(signature); }, nativeDelay);
   });
 
+  /* § 5 de la charte voix : changer la vitesse arrête la lecture — et le professeur avec elle */
+  document.addEventListener("pilotevoix:vitesse", function () {
+    narrationActive = false;
+    if (enabled) deactivate(false);
+  });
+
   document.addEventListener("click", function (event) {
-    var button = event.target.closest && event.target.closest("button");
+    var button = event.target.closest && event.target.closest("button, [role=tab]");
     if (!button || button.closest("#pilote-prof-vocal") || button.id === "pilote-prof-toggle") return;
 
     if (matchesAny(button, selectors.exit) || matchesAny(button, selectors.stop)) {
+      narrationActive = false;
       deactivate(false);
       return;
     }
+    /* « Commencer » et « Écouter » n'allument jamais le professeur : deux portes, chacune son rôle */
     if (matchesAny(button, selectors.start)) {
-      if (!enabled) activate(false);
-      window.setTimeout(function () { scheduleNarration(420); }, 0);
+      if (enabled) scheduleNarration(560, true);
       return;
     }
     if (matchesAny(button, selectors.listen)) {
-      if (!enabled) activate(false);
-      userPaused = false;
+      if (enabled) { userPaused = false; hideCard(); }
       return;
     }
-    if (matchesAny(button, selectors.next) || matchesAny(button, selectors.previous)) {
+    if (matchesAny(button, selectors.next) || matchesAny(button, selectors.previous) || estOnglet(button)) {
       if (enabled) {
         hideCard();
         userPaused = false;
@@ -504,7 +658,7 @@
   window.addEventListener("beforeunload", function () { deactivate(false); });
 
   window.PiloteProfVocal = {
-    version: "1.1.0",
+    version: "2.0.0",
     activer: function () { activate(true); },
     arreter: function () { deactivate(false); },
     relire: replayCurrent,
@@ -518,4 +672,5 @@
       };
     }
   };
+  }
 })();
