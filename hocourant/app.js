@@ -293,8 +293,21 @@
             '<button class="btn btn-secondaire" data-aller="parcours">Retour au parcours</button></div>') + pied,
       mo.nom
     );
-    if (st) { sta = { id, st, i: 0, vues: new Set(), session: 0, enCours: false, minuterie: null }; stationEtape(0); }
+    if (st) { sta = { id, st, i: 0, vues: new Set(), session: 0, enCours: false, minuterie: null }; stationEtape(0); stationReglageCommun(); }
   }
+
+  /* Sur le site (moteur/reglage-voix.js injecté à la livraison) : un seul réglage de vitesse, le commun (décision de
+     F. Henninot, 16/10/2026) ; il écrit la même clé de session, et le changer coupe la voix. Pour le prof vocal :
+     une question de film en attente de réponse est une activité. */
+  function stationReglageCommun() {
+    if (!window.PILOTE_VOIX_REGLAGE) return;
+    const propre = document.querySelector(".station .voix .reglage");
+    if (propre) propre.style.display = "none";
+    const voix = document.querySelector(".station .voix");
+    if (voix && !voix.querySelector("[data-voix-reglage]")) window.PILOTE_VOIX_REGLAGE.monter(voix);
+  }
+  document.addEventListener("pilotevoix:vitesse", () => { if (sta && sta.enCours) stationArreter(); });
+  window.PILOTE_PROF_ACTIVITE = () => !!(sta && sta.inter && !sta.inter.resolu && $st("question") && $st("question").children.length);
 
   /* ---------- la station : la même fiche, en étapes, avec scène, film et voix ---------- */
   /* Le texte de gauche reste celui de cours.js ; la station (donnees/stations/Mx.js)
@@ -324,7 +337,7 @@
 
   function stationHtml(id) {
     return '<ol class="etapes" id="st-etapes" aria-label="Étapes de la fiche"></ol>' +
-      '<section class="station" aria-live="polite"><div class="texte" id="st-texte"></div>' +
+      '<section class="station" aria-live="polite" data-prof-zone><div class="texte" id="st-texte"></div>' +
       '<div class="panneau"><div class="scenes" id="st-scenes"></div>' +
       '<div class="q-interactif" id="st-question" aria-live="polite"></div>' +
       '<div class="voix"><button class="btn btn-primaire" id="st-ecouter" type="button" data-ecouter="1">▶ Écouter le professeur</button>' +
@@ -389,9 +402,9 @@
       '<li><button type="button" data-etape="' + n + '"' + (n === k ? ' aria-current="step"' : "") +
       (sta.vues.has(n) && n !== k ? ' class="vue"' : "") + '><span class="num">' + (n + 1) + "</span>" + seq(t.court) + "</button></li>").join("");
     $st("nav").innerHTML =
-      '<button class="btn btn-secondaire" type="button" data-etape-pas="-1"' + (k === 0 ? " disabled" : "") + ">← Précédent</button>" +
+      '<button class="btn btn-secondaire" type="button" data-etape-pas="-1" data-prof-precedent' + (k === 0 ? " disabled" : "") + ">← Précédent</button>" +
       (dernier ? '<button class="btn btn-primaire" data-decouvrir="' + sta.id + '">Passer aux questions →</button>'
-               : '<button class="btn btn-primaire" type="button" data-etape-pas="1">Suivant →</button>');
+               : '<button class="btn btn-primaire" type="button" data-etape-pas="1" data-prof-suivant>Suivant →</button>');
   }
 
   /* ---- la voix : au clic seulement ; changer d'étape, de vitesse ou de vue l'arrête ----
@@ -412,8 +425,15 @@
     const v = window.speechSynthesis.getVoices().filter((x) => /^fr/i.test(x.lang));
     return v.find((x) => /natural|neural|online/i.test(x.name)) || v[0] || null;
   }
+  /* Le professeur vocal du site (moteur/prof-vocal.js, injecté à la livraison) suit la voix par les événements de
+     moteur/voix.js. Une étape se raconte en un seul bloc, même filmée en deux actes : on annonce le début au clic
+     et la fin quand tout est dit ; les actes, eux, partent marqués « partiels » (17/10/2026). */
+  const annoncer = (nom, texte) => {
+    try { document.dispatchEvent(new CustomEvent("pilotevoix:" + nom, { detail: { texte: texte || "", mode: "audio-hocourant" } })); } catch (e) { /* vieux navigateur : sans prof vocal */ }
+  };
   function stationArreter() {
     if (!sta) return;
+    if (sta.enCours) annoncer("annulation");
     sta.session++;
     if (sta.minuterie) { clearTimeout(sta.minuterie); sta.minuterie = null; }
     pisteArreter();
@@ -452,6 +472,7 @@
     }
     const u = new SpeechSynthesisUtterance(texte);
     u.lang = "fr-FR"; u.rate = vitesse;
+    u.__piloteNarrationPartielle = true;   /* voix.js du site : le début et la fin de l'étape sont annoncés ici */
     const v = voixFr(); if (v) u.voice = v;
     u.onstart = () => bulle("montrer", texte, { debit: u.rate });
     u.onend = () => { bulle("cacher"); if (sta && s === sta.session) suite(); };
@@ -482,11 +503,11 @@
     if (gel && reduireAnimations()) figerActe1(true);
     else if (gel) programmerArretInteractif();
     stationDire(a.narration, a.duree, () => {
-      if (gel) { if (sta.enCours && reduireAnimations()) { sta.enCours = false; $st("ecouter").textContent = etiquetteEcoute(m); } return; }
+      if (gel) { if (sta.enCours && reduireAnimations()) { sta.enCours = false; $st("ecouter").textContent = etiquetteEcoute(m); annoncer("fin", a.narration); } return; }
       if (n < m.actes.length) return stationActe(n + 1);
       const s = sta.session;
       sta.minuterie = setTimeout(() => {
-        if (sta && s === sta.session) { sta.enCours = false; $st("ecouter").textContent = "↺ Rejouer le film"; $st("etat").textContent = "Fin du film."; }
+        if (sta && s === sta.session) { sta.enCours = false; $st("ecouter").textContent = "↺ Rejouer le film"; $st("etat").textContent = "Fin du film."; annoncer("fin", a.narration); }
       }, 300);
     });
   }
@@ -495,10 +516,11 @@
     if (sta.enCours) { stationArreter(); return; }
     const m = sta.st.etapes[sta.i];
     sta.session++; sta.enCours = true;
+    annoncer("debut", m.film ? m.actes.map((x) => x.narration).join(" ") : m.narration);
     $st("ecouter").textContent = "■ Arrêter";
     if (m.film) return stationActe(1);
     $st("etat").textContent = "Le professeur explique la scène…";
-    stationDire(m.narration, 40, () => { sta.enCours = false; $st("ecouter").textContent = etiquetteEcoute(m); $st("etat").textContent = ""; });
+    stationDire(m.narration, 40, () => { sta.enCours = false; $st("ecouter").textContent = etiquetteEcoute(m); $st("etat").textContent = ""; annoncer("fin", m.narration); });
   }
   function stationVitesse(sens) {
     const k = PAS_VOIX.indexOf(lireVitesse()) + sens;
@@ -537,6 +559,7 @@
       pisteArreter();
       bulle("cacher");
       if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      if (sta.enCours) annoncer("fin");   /* le film s'arrête sur sa question : le prof vocal attend la réponse */
       sta.enCours = false;
       if ($st("ecouter")) $st("ecouter").textContent = etiquetteEcoute(sta.st.etapes[sta.i]);
     }
