@@ -993,6 +993,66 @@
    "pourquoi": "ORDRE 163 — bloc L, contenu nouveau. Indicateur carbone de la RE2020 ; les 7 contextes sont tous l'indicateur, aucun mot français « ic » n'existe."
   },
   {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Cep\\s*,\\s*nr(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1C E P N R",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. Cep,nr avant Cep : la part non renouvelable de l'énergie primaire (RE2020)."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Cep(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1C E P",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. consommation d'énergie primaire (RT2012, RE2020) ; « cep » de vigne s'écrit en minuscules."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Bbio(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1B bio",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. besoin bioclimatique (RT2012, RE2020)."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Ic(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1I C",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. indicateur carbone écrit « Ic énergie », « Ic construction » ; complète la règle IC en majuscules."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])Tic(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1T I C",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. température intérieure conventionnelle (RT2012) ; « tic » s'écrit en minuscules."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])DH(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1D H",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. degrés-heures d'inconfort (RE2020)."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])R([ET])\\s?(\\d{4})(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1R $2 $3",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. RT2012, RE2020 : les lettres épelées, l'année dite."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])TEWI(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1T E double V I",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. impact total équivalent de réchauffement, épelé comme O D P ; « W » écrit « double V », sinon la règle des unités le lit « watts »."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])CLP(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1C L P",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. règlement européen d'étiquetage des produits chimiques."
+  },
+  {
+   "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])DN(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
+   "remplacement": "$1D N",
+   "occurrences": 0,
+   "pourquoi": "Chantier prof vocal, 17/10/2026 : sigle des narrations réécrites (Législation, RE2020, DESP, écoconception), lues par la voix du navigateur en attendant les MP3. Majuscules exactes : aucun mot français atteint. diamètre nominal (DESP)."
+  },
+  {
    "motif": "(^|[^A-Za-z0-9_À-ÖØ-öø-ÿ²³])annexe\\s+II(?![A-Za-z0-9_À-ÖØ-öø-ÿ²³])",
    "remplacement": "$1annexe deux",
    "occurrences": 1,
