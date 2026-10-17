@@ -43,12 +43,5 @@ froid ni chaud.
 Et une règle d'atelier : on ne brase jamais une vanne quatre voies sans la protéger de la chaleur. Le
 tiroir ne la supporte pas.`,
 
-  representer: `Le symbole de la vanne quatre voies montre un corps allongé, avec le refoulement d'un côté et trois
-raccords de l'autre. Sur un schéma d'installation, vous le trouvez près du compresseur, entre le
-compresseur et les deux échangeurs.
-Quatre traits en partent : le refoulement, l'aspiration, et les deux échangeurs. Suivez-les un par un.
-Le refoulement ne va jamais vers le même échangeur dans les deux modes. Gardez en tête qu'un schéma
-ne montre qu'une seule position : l'autre se déduit en croisant les deux échangeurs.
-Quant à la bobine, vous la cherchez sur le schéma électrique : c'est une sortie de la carte. Et le
-repère courant tient en trois caractères : V, quatre, V.`
+  representer: `Sur le schéma, la vanne quatre voies se repère à sa position, tout près du compresseur, et aux quatre liaisons qui en partent. Pour la comprendre, suivez le refoulement : selon le mode, il ne part pas vers le même échangeur, et c'est tout le principe de l'inversion. Attention à un piège de lecture : un schéma ne montre la vanne que dans une seule position, celle qu'indique la légende. L'autre mode, il faut le reconstruire en croisant les échangeurs. La partie électrique se lit ailleurs, sur le schéma électrique : la bobine y apparaît comme une sortie de la carte, souvent repérée V, quatre, V. Ce réflexe vous servira à chaque dépannage en mode chaud.`
 };

@@ -47,12 +47,5 @@ condensateur reste chargé un moment après la coupure.
 Et si un Inverter tombe en panne, ne pensez pas d'abord au compresseur : c'est souvent la carte, ou
 un capteur.`,
 
-  representer: `Quatre symboles. L'unité extérieure, où vit la carte. Le compresseur. Et les deux étages de la
-carte : le redresseur, qui passe de l'alternatif au continu, et l'onduleur, qui fait le chemin inverse.
-Il n'existe pas de symbole propre à la carte Inverter d'un climatiseur. Sur un schéma électrique, on
-la lit comme un convertisseur de fréquence : un redresseur, puis un onduleur, entre l'alimentation et
-le moteur du compresseur. Ce schéma est détaillé aux stations sept point trois et sept point quatre
-d'ÉlectroRézo.
-Sur un schéma de climatisation, la carte est souvent un simple bloc. Cherchez ce qui arrive dessus : les
-sondes. Ce sont elles qui lui disent ce que demande la pièce.`
+  representer: `Ces symboles montrent ce qu'on ne voit pas en ouvrant la machine : le chemin du courant dans la carte. Le climatiseur n'a pas de symbole propre pour sa carte Inverter ; on la lit comme un convertisseur de fréquence. Le courant du réseau est d'abord redressé en continu, puis l'onduleur le reconstruit en alternatif, à la fréquence voulue, pour faire tourner le compresseur plus ou moins vite. Sur un schéma de climatisation, tout cela tient souvent dans un simple rectangle. Le plus utile, pour vous, est de regarder ce qui y arrive : les sondes, qui renseignent la carte sur ce que demande la pièce. ÉlectroRézo détaille ce montage à la station sept point quatre.`
 };

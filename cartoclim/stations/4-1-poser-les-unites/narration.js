@@ -44,12 +44,5 @@ enfermée dans un recoin : l'été, la pression monte. Un support pas de niveau 
 jusque dans la pièce. Et le pire : avoir posé avant d'avoir vérifié la longueur et le dénivelé.
 Là, c'est une unité qu'il faut déplacer.`,
 
-  representer: `Trois symboles. L'unité intérieure murale, l'unité extérieure, et le support de l'unité
-extérieure, dessiné vu de côté : la plaque contre le mur, et le bras qui porte.
-Sur un plan de façade, cherchez trois choses : l'emplacement de l'unité extérieure, son support, et
-les dégagements indiqués autour. Ces cotes viennent de la notice. Si le plan n'en porte aucune,
-c'est à vous de les chercher avant de percer.
-Regardez aussi le trait qui relie les deux unités. Il traverse le mur à la carotte. Sa longueur et
-son dénivelé doivent rester dans ce que l'appareil accepte : c'est le sujet de la station suivante.
-Et dans la pièce, le plan ne dit pas où tombe le jet. Cela, c'est au poseur d'y penser.`
+  representer: `Ce plan de façade sert à préparer la pose, avant le premier coup de perceuse. L'unité extérieure y figure avec son support, et autour d'elle, des espaces à laisser libres pour que l'air circule et que l'on puisse intervenir plus tard. Ces dégagements viennent de la notice ; un plan qui n'en indique aucun vous oblige à les chercher, jamais à les deviner. Le trait entre les deux unités représente les liaisons qui traversent le mur, et leur longueur comme leur dénivelé ont des limites, vues à la station suivante. Un dernier point que le plan oublie souvent : l'endroit où tombe l'air soufflé dans la pièce. Loin du lit ou du bureau, sinon le client finit par couper la climatisation.`
 };

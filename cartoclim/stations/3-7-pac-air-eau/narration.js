@@ -52,11 +52,5 @@ et elle gèle dans les tuyaux, qui éclatent. D'où l'antigel dans le circuit, e
 volume tampon, qu'on oublie : sans lui, la machine démarre et s'arrête toutes les quelques minutes, et
 le compresseur n'aime pas ça.`,
 
-  representer: `Deux symboles. L'unité extérieure, avec son hélice, celle que vous connaissez du split. Et
-l'unité intérieure air/eau, un boîtier haut avec ses raccords en bas : c'est le module hydraulique.
-Sur un plan, l'unité extérieure est sur la façade ou au sol, et le module dans le local technique,
-près du ballon tampon. Regardez ce qui traverse le mur. Deux liaisons frigorifiques, cotées en
-longueur : c'est un bibloc. Deux tuyaux d'eau, isolés : c'est un monobloc.
-Cherchez aussi pour quel émetteur l'eau est prévue : plancher, radiateurs adaptés, anciens radiateurs.
-C'est ce choix qui décide si la machine sera à l'aise ou non.`
+  representer: `Sur ce plan, deux appareils et un mur entre eux. L'unité extérieure se trouve dehors, sur la façade, au sol ou en toiture ; le module hydraulique est à l'intérieur, dans le local technique, près du ballon tampon. Ce qui traverse le mur vous dit tout de suite de quelle machine il s'agit : des liaisons frigorifiques signalent un bibloc, des tuyaux d'eau isolés un monobloc. Côté eau, le schéma hydraulique fixe l'ordre des organes, du circulateur jusqu'à la vanne qui partage entre chauffage et eau chaude sanitaire. Enfin, regardez à quels émetteurs l'eau est destinée : plancher ou radiateurs, c'est ce choix qui fixe la température de fonctionnement de toute l'installation.`
 };

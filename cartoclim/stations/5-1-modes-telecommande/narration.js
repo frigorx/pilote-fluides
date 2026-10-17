@@ -48,10 +48,5 @@ Un dernier piège. Une consigne très basse ne fait pas refroidir plus vite : ta
 machine donne déjà sa puissance, elle travaille seulement plus longtemps. Et si la télécommande ne répond
 plus, pensez aux piles, puis à l'émetteur, avant d'accuser la machine.`,
 
-  representer: `Deux symboles. Le premier, la télécommande : un boîtier allongé avec son écran, ses touches et
-son émetteur. Le second, l'unité intérieure murale, celle qui reçoit les ordres.
-Sur un schéma d'installation, la télécommande est dessinée près de l'unité qu'elle commande, sans aucun
-fil : elle parle en infrarouge, il n'y a rien à câbler. Ce qu'il faut y lire, c'est quelle unité elle
-commande, surtout sur un multisplit. Et cherchez dans la notice si la télécommande a sa propre sonde :
-cela décide de l'endroit où la température est mesurée.`
+  representer: `Sur un plan, la télécommande est l'élément le plus discret : aucun fil, aucun tube, rien à coter. Elle est simplement dessinée à côté de l'unité qu'elle pilote, puisqu'elle lui parle par infrarouge. La seule vraie question qu'elle pose, c'est de savoir quelle unité elle commande. Sur un multisplit, une erreur d'attribution, et l'occupant règle la mauvaise pièce. Un autre détail compte pour le confort : certaines télécommandes mesurent elles-mêmes la température. La mesure se fait alors là où se trouve la télécommande, et non près de l'unité. La notice vous le dira, et cela peut expliquer bien des plaintes de clients.`
 };

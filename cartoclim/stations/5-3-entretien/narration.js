@@ -12,21 +12,7 @@ moins, elle consomme plus, et un jour elle givre, elle coule, ou elle se coupe.
 Deux personnes s'en occupent. L'utilisateur lave ses filtres. Le technicien fait tout le reste. C'est
 cette visite que nous allons suivre, point par point.`,
 
-  comprendre: `Suivons l'air de la pièce, et arrêtons-nous six fois.
-Il entre, et rencontre d'abord le filtre. Si la poussière le bouche, l'air passe mal. La batterie reçoit
-moins de chaleur, et elle givre. Devant un givre, c'est le premier endroit où regarder.
-Derrière, la batterie intérieure. Ce que le filtre laisse passer se colle entre ses ailettes, et
-l'échange se fait de plus en plus mal. On la nettoie sans écraser les ailettes : elles sont fines.
-Sous la batterie, le bac et son tuyau. L'eau de l'air y tombe, et elle doit sortir. Si quelque chose les
-bouche, le bac déborde, et c'est le plafond du client qui coule. Le technicien verse de l'eau dans le
-bac, et regarde si elle ressort au bout du tuyau.
-Puis la turbine. Poussiéreuse, elle brasse moins d'air, elle fait du bruit, elle vibre.
-Dehors, la batterie extérieure. Feuilles, poussière, pollen : l'air ne passe plus. La haute pression
-monte, la machine consomme plus, et finit par se mettre en sécurité. On la nettoie à l'eau à basse
-pression, ou au peigne à ailettes. Jamais au jet puissant, droit sur les ailettes.
-Enfin, ce qui tient la machine : l'isolant des deux tubes, les fixations, les câbles bien serrés, et de
-l'air libre autour de l'unité extérieure.
-Appuyez sur Dérouler : chaque point a son signe quand on l'oublie.`,
+  comprendre: `Le dessin suit l'air de la pièce, et chaque arrêt correspond à un point d'entretien. Retenez surtout ce qui se passe quand on l'oublie, car c'est ce que vous verrez en dépannage. Un filtre encrassé freine l'air, et la batterie finit par givrer. Une batterie intérieure sale échange mal. Un bac ou un tuyau bouchés font couler l'eau chez le client. Une turbine poussiéreuse brasse moins et devient bruyante. Dehors, une batterie colmatée fait monter la haute pression, jusqu'à la mise en sécurité. Et des fixations ou des liaisons mal tenues finissent par vibrer, voire par fuir. Le pas à pas montre chaque point dans l'ordre. Quant au rythme des visites, il vient de la notice et de la réglementation, jamais de l'habitude.`,
 
   manipuler: `À vous. Un split posé depuis un an : cochez ce qu'il peut être.
 Entretenu en partie par l'utilisateur : oui. Lui seul lave les filtres, et c'est la part qui compte
@@ -41,12 +27,5 @@ Le rythme des visites, ce n'est pas à vous de le deviner : la notice et la rég
 Dernier piège : nettoyer sans abîmer. Les ailettes sont en aluminium, très fines. Pas de jet puissant
 droit dessus, pas de produit agressif.`,
 
-  representer: `Deux symboles, pour les deux unités.
-Sur une fiche d'entretien, chacune a sa liste de points à regarder. Pour l'unité intérieure : les
-filtres, la batterie, le bac et la turbine. Pour l'unité extérieure : la batterie, l'hélice, les
-fixations. Retenez deux lettres : U I, et U E.
-À côté de chaque point, on écrit ce qu'on a vu et ce qu'on a fait. Une fiche vaut surtout par ses
-mesures, avec leurs conditions. D'une visite à la suivante, un écart qui grandit prévient avant la panne.
-La périodicité, elle, n'est pas sur le dessin : elle vient de la notice et de la réglementation. Et le
-contrôle d'étanchéité, quand il est imposé, a sa propre fiche : c'est la station quatre point six.`
+  representer: `Une fiche d'entretien reprend les deux unités, chacune avec sa liste de points, et c'est sur elle que le technicien prouve son passage. À côté de chaque point, on note ce qu'on a constaté et ce qu'on a fait. Mais la vraie valeur de la fiche, ce sont les mesures, prises avec leurs conditions, notamment la température extérieure du moment. Comparées d'une visite à l'autre, elles révèlent un encrassement bien avant qu'il ne provoque une panne : c'est tout l'intérêt de les noter avec rigueur. La fréquence des visites ne se lit pas sur le dessin, elle dépend de la notice, du contrat et des textes. Et le contrôle d'étanchéité, lorsqu'il est obligatoire, a sa propre fiche, à la station quatre point six.`
 };

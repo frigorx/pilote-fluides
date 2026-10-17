@@ -43,14 +43,5 @@ Le piège : poser l'appareil dans une pièce chauffée ou trop petite, ou lui do
 écrasée. Il manque de chaleur à prendre, et la résistance prend le relais sans bruit. Le client, lui, le verra
 sur sa facture.`,
 
-  representer: `Il n'existe pas de symbole du chauffe-eau thermodynamique. On le lit en deux morceaux : un ballon, et
-une pompe à chaleur.
-Sur le premier symbole, le zigzag en bas du ballon, c'est la résistance, l'appoint. Sur le second, le tube
-replié qui traverse le ballon, c'est un échangeur : l'endroit où la chaleur de la pompe à chaleur passe dans
-l'eau. Dans l'appareil réel, ce tube est enroulé contre la paroi, à l'extérieur de la cuve, mais le principe
-est le même.
-Sur un schéma d'installation, suivez l'eau : l'arrivée d'eau froide, avec son groupe de sécurité et son
-écoulement, le ballon, puis la sortie d'eau chaude, souvent avec un mitigeur thermostatique. Cherchez aussi le
-tuyau des condensats, et la gaine d'air s'il y en a une. S'ils manquent sur le plan, ils manqueront sur le
-chantier.`
+  representer: `Ce chauffe-eau n'a pas de symbole à lui, et c'est une bonne leçon de lecture : sur un schéma, un appareil complexe se décompose souvent en éléments simples. Ici, un ballon d'eau chaude, et une pompe à chaleur qui le chauffe. Le petit zigzag au pied du premier ballon, c'est la résistance de secours ; le tube replié du second, c'est le passage de la chaleur vers l'eau. Pour lire l'installation, partez de l'eau froide et suivez-la jusqu'au robinet, en vérifiant au passage la sécurité de l'arrivée. Puis cherchez ce qu'on oublie le plus souvent : l'évacuation des condensats, la gaine d'air éventuelle, l'alimentation électrique et sa protection. Absents du plan, ils manqueront le jour de la pose.`
 };

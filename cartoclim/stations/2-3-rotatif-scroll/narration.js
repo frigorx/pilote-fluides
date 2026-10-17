@@ -45,12 +45,5 @@ Deux pièges pour finir. Le coup de liquide se prévient en surveillant la surch
 point quatre. Et un compresseur chaud au toucher n'est pas forcément en défaut : il refoule un gaz chaud,
 c'est normal. On ne conclut pas avec la main : on mesure, et on compare à la fiche du constructeur.`,
 
-  representer: `Deux symboles, pour les deux compresseurs. Le cercle traversé de deux traits obliques, c'est le
-compresseur, le même pour toutes les technologies. C'est le petit dessin à l'intérieur qui dit laquelle : un
-petit rond pour le rotatif, une spirale pour le scroll.
-Sur un schéma frigorifique, cherchez-le entre les deux échangeurs. Le gaz arrive de l'évaporateur à
-l'aspiration, et repart chaud vers le condenseur au refoulement.
-Sur le compresseur lui-même, regardez la plaque. Elle donne ses caractéristiques, et c'est à elle que l'on se
-réfère, jamais à un chiffre appris par cœur. La prochaine fois que vous verrez une coque noire dans une unité
-extérieure, vous saurez ce qui tourne dedans.`
+  representer: `Un détail suffit à distinguer les deux compresseurs sur un schéma. Le cercle barré de deux traits signifie simplement compresseur, quelle que soit sa technologie ; c'est le motif dessiné à l'intérieur qui précise de quel type il s'agit, un petit rond pour le rotatif, une spirale pour le scroll. Sa place, elle, ne change jamais : entre l'évaporateur, d'où il aspire le gaz, et le condenseur, vers lequel il le refoule chaud. Sur une machine réelle, les caractéristiques ne se récitent pas de mémoire : la plaque fixée sur la coque fait foi. La prochaine coque noire que vous verrez dans une unité extérieure, vous saurez ce qui tourne dedans.`
 };

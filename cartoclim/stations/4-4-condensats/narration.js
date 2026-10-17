@@ -43,10 +43,5 @@ Et pour finir, vous versez de l'eau dans le bac, et vous regardez sortir.
 Le piège de ce chantier, c'est la pose à peu près droite. Un seul point bas, et le client rappelle au
 premier été.`,
 
-  representer: `Deux symboles. La pompe de relevage des condensats, d'abord, avec le tuyau qui entre et celui qui
-repart. Puis l'unité intérieure murale, que vous connaissez.
-Sur un plan, cherchez où le tuyau de condensats se termine. Dehors, ou sur une évacuation d'eaux usées ? Si c'est
-une évacuation, le siphon est-il prévu ? Et si la pompe est dessinée, cherchez son alimentation et la liaison de son
-contact de sécurité : une pompe sans sécurité, c'est une inondation qui attend.
-Un plan qui ne dit pas où va l'eau laisse la question au chantier, et c'est là qu'elle se règle le plus mal.`
+  representer: `Sur ce plan, suivez l'eau. Le tuyau des condensats part de l'unité intérieure, et la seule question qui compte est de savoir où il aboutit : dehors, ou dans une évacuation d'eaux usées, et dans ce cas avec un siphon pour arrêter les odeurs. Si une pompe de relevage est dessinée, elle a besoin de deux choses en plus : une alimentation, et la liaison de son contact de sécurité, qui arrête la climatisation si l'eau monte. Sans cette liaison, une pompe en panne inonde le plafond sans prévenir. Un plan muet sur le trajet de l'eau renvoie la décision au chantier ; mieux vaut poser la question avant de poser l'unité.`
 };

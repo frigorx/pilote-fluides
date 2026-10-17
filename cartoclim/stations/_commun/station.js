@@ -89,8 +89,19 @@ const Station = (() => {
     if (!texte) return;
     couperVoix();
     const tour = ++S.tour;
-    if (S.mp3) jouerLeMp3(t, tour, b);
+    if (S.mp3 && mp3AJour(t)) jouerLeMp3(t, tour, b);
     else direAuNavigateur(texte, tour, b);
+  }
+
+  /* Le MP3 est rangé par temps, pas par texte : une narration réécrite resterait couverte par l'ancien
+     fichier. voix/empreintes.json (fabriqué avec les MP3) dit de quel texte chaque MP3 a été tiré ; un texte
+     qui a changé passe à la voix du navigateur jusqu'à la prochaine fabrication (17/10/2026). Sans le
+     fichier, rien ne change. */
+  let EMPREINTES = null;
+  fetch('voix/empreintes.json').then(r => (r.ok ? r.json() : null)).then(j => { EMPREINTES = j; }).catch(() => {});
+  function mp3AJour(t) {
+    if (!EMPREINTES || !EMPREINTES[t.id]) return !EMPREINTES;
+    return EMPREINTES[t.id] === cleVoix(t.narration || '');
   }
 
   /* La clé ?v= suit le texte dit : une narration réécrite (donc revoicée) change d'adresse, et ni le CDN

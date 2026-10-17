@@ -47,12 +47,5 @@ et pas de froid dans la pièce. Un détendeur électronique : au démarrage, le 
 Mais si la carte commande et que rien ne bouge, regardez la bobine : débranchée, elle bloque l'aiguille.
 Avant de changer quoi que ce soit, regardez le câble.`,
 
-  representer: `Deux symboles, pour deux détendeurs.
-Le capillaire se dessine comme un simple trait, avec un petit rond : un tube, rien d'autre. Le détendeur
-électronique se dessine comme un détendeur, surmonté d'un rond. Ce rond figure la commande : il dit que
-la carte pilote.
-Sur un schéma, cherchez le détendeur sur la ligne du liquide. Dans la croix du frigoriste, il est à
-gauche, entre le condenseur, en haut, et l'évaporateur, en bas. Sur un split, il est dans l'unité
-extérieure, et le mélange froid part vers l'unité intérieure par le petit tube.
-Pour mesurer la surchauffe, rendez-vous à la station cinq point quatre.`
+  representer: `Ces deux petits dessins se ressemblent, mais ils ne racontent pas la même histoire. Le capillaire est un simple tube, fixe, qui ne s'adapte à rien. Le détendeur électronique porte un rond en plus : c'est la marque d'une commande, une carte qui décide à chaque instant de son ouverture. Sur un schéma, vous les trouverez toujours au même endroit, sur la ligne liquide, juste avant l'évaporateur ; dans la croix du frigoriste, c'est la branche de gauche. Sur un split, ils logent dans l'unité extérieure, et c'est par le petit tube que le mélange froid rejoint l'intérieur. Aucun réglage ne se lit sur le symbole : la notice reste votre seule référence.`
 };
