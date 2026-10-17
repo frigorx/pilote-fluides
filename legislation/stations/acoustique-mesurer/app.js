@@ -95,7 +95,7 @@
     var u = new window.SpeechSynthesisUtterance(texteNarre(slides[courant]));
     u.lang = "fr-FR";
     if (voixFr) u.voice = voixFr;
-    u.rate = 0.95;
+    u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
     u.onend = function () { majBoutonsVoix(false); };
     u.onerror = function () { majBoutonsVoix(false); };
     majBoutonsVoix(true);
@@ -129,8 +129,8 @@
   function demarrer() {
     if (accueil) accueil.hidden = true;
     if (cours) cours.hidden = false;
-    // Le premier clic vaut geste humain : la voix a le droit de parler.
-    afficher(0, true);
+    // « Commencer » ne fait pas parler (décision du 16/10/2026) : « Écouter » lit l'écran, « Prof vocal » enchaîne.
+    afficher(0, false);
   }
 
   /* ---------- le quiz ---------- */
@@ -165,6 +165,8 @@
   if (btnNext)   btnNext.addEventListener("click", function () { afficher(courant + 1, false); });
   if (btnPrev)   btnPrev.addEventListener("click", function () { afficher(courant - 1, false); });
   if (btnListen) btnListen.addEventListener("click", ecouter);
+  // la vitesse commune du site, à côté d'« Écouter » (la changer coupe la lecture)
+  if (btnListen && window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.monter(btnListen.parentNode);
   if (btnStop)   btnStop.addEventListener("click", arreter);
   if (btnStart)  btnStart.addEventListener("click", demarrer);
 
