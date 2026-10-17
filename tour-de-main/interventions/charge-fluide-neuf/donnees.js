@@ -131,7 +131,7 @@
     },
 
     etapes: [
-      { id: "securite", verbe: "Je me protège et je lis l'étiquette", cadre: ["equipment-bottle"], cible: "equipment-bottle",
+      { id: "securite", verbe: "Je me protège et je lis l'étiquette", narration: "Cette gare vous conduit à charger une machine en fluide neuf, et c'est la balance qui dit combien on en met. Elle vient après le test de remontée. On commence par se protéger. Puis on lit l'étiquette de la bouteille pour connaître le fluide et sa classe de sécurité, la fiche de données de sécurité restant près de soi. Deux risques sont à retenir. Sous forme liquide, le fluide brûle par le froid. Et pour les classes A deux L et A trois, qui sont inflammables, aucune flamme, aucune étincelle. Tant que ce n'est pas fait, on ne manipule pas la bouteille.", cadre: ["equipment-bottle"], cible: "equipment-bottle",
         regarde: "La bouteille neuve, son étiquette, ses pictogrammes.",
         fais: "Lunettes et gants. Je lis sur l'étiquette le fluide et sa classe de sécurité. La fiche de données de sécurité (FDS) est à portée de main.",
         voir: "EPI sur moi ; le fluide et la classe de sécurité lus à voix haute.",
@@ -142,7 +142,7 @@
           manque: "Il manque une coche : je ne touche pas à la bouteille avant." } },
 
       /* Franck, 08/10 : avant toute intervention, état des lieux — rien de perdu, rien d'abîmé, vannes en service au siège arrière. */
-      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", cadre: ["equipment-installation"], cible: "equipment-installation",
+      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", narration: "Avant de charger, on relève l'état de la machine, pour savoir tout remettre comme on l'a trouvé. Chaque vanne de service est passée en revue. Le capuchon de tige et le bouchon de prise doivent être là, serrés, en bon état, et les vannes au siège arrière. Si une pièce manque ou paraît abîmée, on le dit au professeur avant de commencer. Une fois cet état de départ établi, on vérifie que le circuit est prêt à recevoir le fluide.", cadre: ["equipment-installation"], cible: "equipment-installation",
         regarde: "Les vannes de service, leurs capuchons et leurs bouchons.",
         fais: "Je vérifie chaque vanne de service : capuchon de tige et bouchon de prise présents, serrés, en bon état.",
         voir: "Tout est là et serré ; les vannes sont au siège arrière, comme en service.",
@@ -151,7 +151,7 @@
           ok: "État des lieux fait : je saurai tout remettre comme je l'ai trouvé.",
           manque: "Il manque quelque chose : je le signale au professeur avant de commencer." } },
 
-      { id: "circuit-pret", verbe: "Je vérifie que le circuit est prêt", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
+      { id: "circuit-pret", verbe: "Je vérifie que le circuit est prêt", narration: "Avant d'amener le fluide, il faut une certitude : la machine est-elle vraiment prête à le recevoir ? Elle l'est si le vide a tenu au test fait à la gare cinq, dont on relit le relevé, et si les quatre vannes du manifold sont fermées. Tout repose sur ce vide : un circuit qui ne l'a pas gardé fuit encore, et le fluide neuf s'en irait dans l'air. Dans ce cas, on ne charge rien : on retourne au tirage au vide et on prévient le professeur.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
         tuyaux: ["blue", "red"],
         regarde: "Le groupe, le manifold posé, mon relevé de la gare 5.",
         fais: "Le circuit est sous vide et a passé le test de remontée. Les 4 vannes du manifold sont fermées. Sans vide tenu, je ne charge pas.",
@@ -161,7 +161,7 @@
           oui: "Circuit prêt : je peux préparer la charge.",
           non: "STOP : sans vide tenu, on ne charge pas. Retour à la gare 5 (tirage au vide), j'appelle le professeur." } },
 
-      { id: "plaque", verbe: "Je lis la plaque et l'étiquette", cadre: ["equipment-installation", "equipment-bottle"], cible: "equipment-installation",
+      { id: "plaque", verbe: "Je lis la plaque et l'étiquette", narration: "Deux inscriptions doivent concorder : celle de la machine et celle de la bouteille. La plaque de la machine donne le fluide et la charge, c'est-à-dire la quantité à introduire, et on les écrit. Ensuite, on lit à voix haute le fluide inscrit sur la bouteille, puis on le recopie pour comparer. L'enjeu est lourd : un mauvais fluide dans une machine oblige à la vider entièrement et à tout recommencer. Si les deux noms ne sont pas les mêmes, on ne branche pas, et on appelle le professeur.", cadre: ["equipment-installation", "equipment-bottle"], cible: "equipment-installation",
         tuyaux: ["blue", "red"],
         regarde: "La plaque de la machine, l'étiquette de la bouteille.",
         fais: "Je lis sur la plaque le fluide et la charge, et je les écris dans « Ma machine ». Puis je lis à voix haute le fluide écrit sur la bouteille.",
@@ -175,7 +175,7 @@
             return ["vert", "Même fluide que la machine (" + c.m.fluide + ")." + (isNaN(ch) ? " J'écris aussi la charge de la plaque dans « Ma machine »." : " Charge à introduire : " + c.kg(ch) + ".")];
           } } },
 
-      { id: "etat-fluide", verbe: "Je choisis l'état du fluide", cadre: ["equipment-bottle"], cible: "equipment-bottle",
+      { id: "etat-fluide", verbe: "Je choisis l'état du fluide", narration: "Ici, on décide sous quelle forme le fluide va quitter la bouteille : liquide ou vapeur. Si le fluide de la machine fait partie de la série des R quatre cents, c'est un mélange, et il ne se charge qu'en liquide. Pris en phase vapeur, un mélange voit sa composition changer, et la machine ne fonctionnerait plus comme prévu. La position de la bouteille se décide ensuite avec l'étiquette : debout quand elle a un tube plongeur, retournée dans le cas contraire. Le professeur confirmera cette position avant qu'on ouvre la bouteille.", cadre: ["equipment-bottle"], cible: "equipment-bottle",
         regarde: "L'étiquette : tube plongeur ou non, robinet LIQUIDE.",
         fais: "Liquide ou vapeur ? Un mélange de la série R-4xx se charge TOUJOURS en liquide. Bouteille debout si elle a un tube plongeur, retournée sinon : l'étiquette le dit.",
         voir: "Le fluide, son état et la position de la bouteille, décidés avec l'étiquette.",
@@ -191,7 +191,7 @@
               " La position doit être celle de l'étiquette : le professeur le confirme au point d'arrêt."];
           } } },
 
-      { id: "depart", verbe: "Je place la bouteille et je la pèse", cadre: ["equipment-bottle"], cible: "equipment-bottle", balance: "depart",
+      { id: "depart", verbe: "Je place la bouteille et je la pèse", narration: "Cette première pesée sert de référence à toute la charge : on la fait avant de brancher quoi que ce soit. La balance est à plat, allumée, réglée en kilogrammes. On y pose la bouteille dans la position qu'on vient de choisir, bien calée, sans rien d'autre sur la balance. Si la balance penche ou bouge, toutes les pesées suivantes seront fausses, car la quantité chargée se déduira de celle-ci. On attend que l'affichage ne varie plus : cette valeur est la masse de départ. Avec une balance tarée, elle vaut zéro.", cadre: ["equipment-bottle"], cible: "equipment-bottle", balance: "depart",
         regarde: "La balance : à plat, allumée, en kg.",
         fais: "Bouteille sur la balance, dans la position choisie, bien calée, rien d'autre dessus. J'attends un chiffre stable : c'est la masse de départ. Si je tare, c'est 0.",
         voir: "Un chiffre qui ne bouge plus, noté avant tout branchement.",
@@ -206,14 +206,14 @@
             return ["vert", "Masse de départ notée : " + c.kg(x) + "." + (isNaN(ch) ? "" : " À la plaque, la balance affichera environ " + c.kg(x - ch) + ".")];
           } } },
 
-      { id: "raccorder", verbe: "Je raccorde le flexible jaune", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-manifold",
+      { id: "raccorder", verbe: "Je raccorde le flexible jaune", narration: "La bouteille est pesée et le circuit est prêt : il reste à les relier. Les flexibles bleu et rouge sont déjà en place, sur la basse et la haute pression. On ajoute le jaune, qui va de la voie de service du manifold jusqu'au robinet liquide de la bouteille. Ce robinet reste fermé pendant tout le raccordement, sinon le liquide jaillirait. Le serrage se fait à la main, avec un joint propre. À la fin, trois flexibles sont serrés, la bouteille est fermée et les quatre vannes du manifold aussi. Il restera à s'occuper de l'air que contient le jaune.", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "yellow"], balance: "depart",
         regarde: "Le manifold, le robinet LIQUIDE de la bouteille.",
         fais: "Bleu et rouge sont déjà sur la BP et la HP. Jaune : de la voie SERVICE du manifold au robinet LIQUIDE de la bouteille, fermé. Serrage à la main, joint propre.",
         voir: "Trois flexibles serrés, bouteille fermée, 4 vannes du manifold fermées.",
         danger: "Robinet de la bouteille FERMÉ pendant le raccordement : le liquide jaillirait." },
 
-      { id: "vide-flexible", verbe: "Je tire au vide le flexible jaune", cadre: ["equipment-manifold", "equipment-pump", "equipment-vacuum", "equipment-bottle"], cible: "equipment-pump",
+      { id: "vide-flexible", verbe: "Je tire au vide le flexible jaune", narration: "Le flexible jaune vient d'être raccordé et contient de l'air. Il faut l'en débarrasser, sinon le circuit recevrait autre chose que du fluide neuf. On remet donc la pompe sur la voie du vide, la bouteille et les vannes de service restant fermées. On ouvre la voie du vide et la voie de service, et la pompe tire. Quand le vacuomètre rejoint la cible du poste, on ferme d'abord, on coupe la pompe ensuite : dans l'autre ordre, l'air reviendrait dans le flexible. Si le vide ne tient pas, un raccord fuit : on le resserre et on recommence.", cadre: ["equipment-manifold", "equipment-pump", "equipment-vacuum", "equipment-bottle"], cible: "equipment-pump",
         tuyaux: ["blue", "red", "yellow", "black"], pompe: true, pompeIso: true, manifold: ["vac", "service"], balance: "depart",
         regarde: "Le vacuomètre.",
         fais: "Je rebranche la pompe sur la voie VIDE. Bouteille et vannes de service fermées : j'ouvre VIDE et SERVICE, pompe en route. Cible du poste atteinte : je ferme, puis j'arrête la pompe.",
@@ -223,7 +223,7 @@
           oui: "Flexible sans air : rien d'autre que du fluide neuf n'entrera dans le circuit.",
           non: "Le vide ne tient pas : un raccord fuit. Je resserre et je recommence ; sinon j'appelle le professeur." } },
 
-      { id: "charge-hp", verbe: "J'ouvre la bouteille et je charge par la HP", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-manifold",
+      { id: "charge-hp", verbe: "J'ouvre la bouteille et je charge par la HP", narration: "Voici le moment où le fluide entre : machine à l'arrêt, en liquide, par le côté haute pression. Le professeur commence par vérifier votre montage, le fluide et son état, avant qu'on ouvre la bouteille. On ouvre alors son robinet liquide, puis la voie de service et la voie haute pression du manifold, la vanne de service haute pression étant décollée. La balance dit combien on met : on la suit donc pendant toute la charge. Sa valeur baisse, puis se fixe à l'équilibre. On ne dépasse jamais ce que dit la plaque : dès qu'on y est, on ferme.", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "yellow"], manifold: ["service", "hp"], vannes: ["hp"], bouteille: true, aiguilles: "egal", balance: "charge-hp",
         regarde: "La balance, pendant toute la charge.",
         fais: "Machine à l'ARRÊT. J'ouvre le robinet LIQUIDE, puis SERVICE et HP au manifold (vanne de service HP décollée). Le liquide entre. Je lis la balance PENDANT, jusqu'à l'équilibre.",
@@ -242,7 +242,7 @@
           } },
         arret: "Le professeur a vérifié le montage, le fluide et l'état choisi, avant l'ouverture de la bouteille." },
 
-      { id: "fin-marche", verbe: "Je termine la charge en marche, par la BP", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-manifold",
+      { id: "fin-marche", verbe: "Je termine la charge en marche, par la BP", narration: "Si la plaque n'est pas atteinte, la fin de la charge se fait machine en marche, par la basse pression. D'abord, on ferme la voie haute pression du manifold, et le professeur vérifie ce point : c'est lui qui vous autorise à démarrer la machine. Ensuite, la vanne de service basse pression est décollée, et on entrouvre la voie basse pression, pour de petites quantités à la fois. Le risque est le liquide franc dans le compresseur, qui le casse : le fluide doit arriver en mince filet, jamais en bloc. On surveille donc la balance, la basse pression, et les bruits du compresseur.", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "yellow"], manifold: ["service", "bp"], vannes: ["hp", "bp"], bouteille: true, aiguilles: "marche", balance: "fin-marche",
         regarde: "La balance et l'aiguille BP.",
         fais: "Charge pas finie ? Je ferme la vanne HP du manifold. Le professeur est là : je démarre la machine. Vanne de service BP décollée, j'ouvre un peu la vanne BP : petite quantité à la fois.",
@@ -264,7 +264,7 @@
           } },
         arret: "Le professeur a vérifié la HP fermée et m'autorise à démarrer la machine, avant la fin de charge en marche." },
 
-      { id: "pesee-fin", verbe: "Je ferme la bouteille et je repèse", cadre: ["equipment-bottle"], cible: "equipment-bottle",
+      { id: "pesee-fin", verbe: "Je ferme la bouteille et je repèse", narration: "La charge est faite. On ferme le robinet de la bouteille, puis la voie de service et la basse pression du manifold. On attend que la balance se calme, et on note la masse. La quantité réellement chargée, c'est ce que la bouteille a perdu entre la pesée de départ et celle-ci. On la compare à la charge de la plaque. C'est cette pesée, et non une estimation, qui servira dans les documents. Le professeur vérifie la pesée finale et votre calcul, avant que vous passiez au fonctionnement de la machine.", cadre: ["equipment-bottle"], cible: "equipment-bottle",
         tuyaux: ["yellow"], manifold: [], bouteille: false, balance: "pesee-fin",
         regarde: "La balance, robinet de la bouteille fermé.",
         fais: "Je ferme le robinet de la bouteille, puis SERVICE et BP au manifold. La balance se stabilise, je note la masse. Masse chargée = masse de départ − masse de fin.",
@@ -285,7 +285,7 @@
           } },
         arret: "Le professeur a vérifié la pesée finale et mon calcul." },
 
-      { id: "fonct", verbe: "Je vérifie le fonctionnement", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-manifold",
+      { id: "fonct", verbe: "Je vérifie le fonctionnement", narration: "Après la pesée, on regarde comment la machine fonctionne. Elle tourne, le régime est stable. On lit les deux pressions, basse et haute. Puis on pose la pince sur la ligne d'aspiration, et ensuite sur la ligne liquide, à la sortie du condenseur, pour relever deux températures. Avec la table du fluide, ces relevés donnent deux écarts, la surchauffe et le sous-refroidissement, qu'on compare aux fourchettes du poste fixées par le professeur. Le danger à connaître : une surchauffe nulle veut dire que du liquide revient au compresseur. Dans ce cas, on arrête et on appelle le professeur.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "yellow"], manifold: [], vannes: ["hp", "bp"], aiguilles: "marche", balance: "pesee-fin",
         regarde: "BP, HP, et les deux températures à la pince.",
         fais: "Machine en marche, régime stable. Je lis BP et HP. Pince sur la ligne d'aspiration, puis sur la ligne liquide (sortie condenseur). Avec la table du fluide, je calcule les deux écarts.",
@@ -313,7 +313,7 @@
             return ["vert", "Cohérent : HP > BP, surchauffe " + c.fr(sh, 1) + " K (attendue " + pSH[0] + " à " + pSH[1] + "), sous-refroidissement " + c.fr(sr, 1) + " K (attendu " + pSR[0] + " à " + pSR[1] + "). " + calc];
           } } },
 
-      { id: "trace", verbe: "J'étiquette et je trace", cadre: ["equipment-installation"], cible: "equipment-installation", balance: "pesee-fin",
+      { id: "trace", verbe: "J'étiquette et je trace", narration: "Charger, c'est aussi garder la mémoire de ce qu'on a fait. Trois endroits doivent être à jour : l'étiquette de l'installation, la fiche d'intervention et le registre. Sur chacun, la masse notée est celle de votre pesée, jamais une estimation, et c'est la même partout. Le registre garde aussi la date, la quantité ajoutée et le nom de l'intervenant. Un geste qui n'est pas consigné, c'est comme s'il n'avait pas existé. Tant que ces écritures ne sont pas faites, on ne quitte pas le poste.", cadre: ["equipment-installation"], cible: "equipment-installation", balance: "pesee-fin",
         regarde: "L'installation, la fiche d'intervention, le registre.",
         fais: "Étiquette de l'installation à jour : fluide, charge, date. Fiche d'intervention (CERFA) et registre : la masse chargée vient de MA pesée, jamais d'une estimation.",
         voir: "Étiquette, fiche et registre remplis avec la même masse.",
@@ -322,7 +322,7 @@
           ok: "Charge tracée : un geste non consigné n'existe pas.",
           manque: "Il manque une coche : la charge n'est pas tracée, je ne quitte pas le poste." } },
 
-      { id: "depose", verbe: "Je dépose et je remets tout comme trouvé", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-installation",
+      { id: "depose", verbe: "Je dépose et je remets tout comme trouvé", narration: "On termine comme à la gare trois : la machine tourne encore, et c'est son compresseur qui vide les flexibles. Il aspire d'abord le flexible jaune, bouteille fermée, puis le flexible de la haute pression, jusqu'à la basse pression de marche, juste avant zéro bar si elle est basse. Jamais en dessous de zéro bar : de l'air pourrait entrer dans le circuit. Ensuite les vannes de service retournent au siège arrière, les capuchons et les bouchons sont remis. La bouteille est fermée, bouchonnée, remise debout au rack et étiquetée. Le poste redevient comme vous l'avez trouvé.", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-installation",
         tuyaux: [], balance: "pesee-fin",
         regarde: "Les flexibles, les vannes de service, les capuchons.",
         fais: "Comme en gare 3, machine en marche : le compresseur aspire le jaune (bouteille fermée), puis le HP, jusqu'à la BP de marche (juste avant 0 bar si elle est basse), jamais sous 0. Puis vannes au siège arrière, capuchons remis.",

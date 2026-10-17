@@ -111,7 +111,7 @@
     },
 
     etapes: [
-      { id: "securite", verbe: "Je sécurise le poste", cadre: ["equipment-installation"], cible: "equipment-installation",
+      { id: "securite", verbe: "Je sécurise le poste", narration: "Cette gare s'appelle « Poser les manomètres » : on branche un manifold sur la machine pour lire la basse et la haute pression. On commence par se protéger, car le fluide liquide peut brûler par le froid : lunettes et gants avant le moindre flexible. La machine est arrêtée et consignée. Le fluide de la plaque est noté, car il servira à la fin pour convertir les pressions en températures. Le professeur vient vérifier vos protections, la consignation et le fluide noté avant de continuer. Sous azote, c'est lui qui donne le fluide.", cadre: ["equipment-installation"], cible: "equipment-installation",
         aiguilles: "zero",
         regarde: "La machine, sa plaque, mes protections.",
         fais: "Lunettes et gants. Machine arrêtée, consignée. Je lis le fluide de la plaque et je l'écris dans « Ma machine ». Sous azote : le professeur donne le fluide de l'exercice.",
@@ -120,7 +120,7 @@
         arret: "Le professeur a vérifié : EPI portés, machine consignée, fluide noté." },
 
       /* Franck, 08/10 : avant toute intervention, état des lieux — rien de perdu, rien d'abîmé, vannes en service au siège arrière. */
-      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", cadre: ["vannes-service"], cible: "vannes-service",
+      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", narration: "Avant d'installer quoi que ce soit, on constate l'état dans lequel on trouve la machine. On passe chaque vanne de service en revue : sa position, ce qui coiffe la tige, ce qui ferme la prise, serrage et état compris. Ce constat sert à tout remettre comme vous l'avez trouvé. Si une pièce manque ou paraît abîmée, vous le signalez au professeur avant de commencer. Rien n'est encore branché à ce stade ; l'étape suivante porte sur le manifold lui-même.", cadre: ["vannes-service"], cible: "vannes-service",
         aiguilles: "zero", vannes: "arriere",
         regarde: "Les vannes de service, leurs capuchons et leurs bouchons.",
         fais: "Je vérifie chaque vanne de service : capuchon de tige et bouchon de prise présents, serrés, en bon état.",
@@ -130,7 +130,7 @@
           ok: "État des lieux fait : je saurai tout remettre comme je l'ai trouvé.",
           manque: "Il manque quelque chose : je le signale au professeur avant de commencer." } },
 
-      { id: "materiel", verbe: "Je contrôle le manifold", cadre: ["equipment-manifold"], cible: "equipment-manifold",
+      { id: "materiel", verbe: "Je contrôle le manifold", narration: "Le manifold se contrôle avant d'être branché, quand rien n'y est encore relié. On lit son étiquette, on examine les joints, on referme les vannes et on bouche le flexible jaune. Sur un manifold à deux voies, il n'y a que deux vannes, et la pompe se branchera sur le jaune. Tant qu'une vérification manque, on ne branche pas. Ensuite, on prépare les vannes de service de la machine, en commençant par la basse pression.", cadre: ["equipment-manifold"], cible: "equipment-manifold",
         aiguilles: "zero",
         regarde: "L'étiquette, les joints, les aiguilles, les vannes, le flexible jaune.",
         fais: "Je lis l'étiquette du manifold et je regarde chaque joint. Je ferme les vannes du manifold. Je bouche le flexible jaune. Sur un 2 voies : 2 vannes, et la pompe ira sur le jaune.",
@@ -139,7 +139,7 @@
           items: ["un joint propre dans chaque flexible", "aiguilles sur 0, rien n'est branché", "vannes du manifold toutes fermées", "flexible jaune bouché au bout"],
           ok: "Manifold contrôlé.", manque: "Il manque une coche : je ne branche pas avant." } },
 
-      { id: "prep-bp", verbe: "Je prépare la vanne BP et je branche le bleu", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
+      { id: "prep-bp", verbe: "Je prépare la vanne BP et je branche le bleu", narration: "On prépare le côté basse pression de la machine avant d'y brancher le flexible bleu. Le capuchon est retiré ; le presse-étoupe est desserré le temps de ramener le carré en butée arrière, puis resserré ; le bouchon de la prise est retiré et le bleu se visse à la main. Résultat : la vanne reste en position arrière, et la prise est fermée. Une précaution : la prise du pressostat conserve sa pression même quand la vanne est fermée, donc on n'y intervient jamais. La haute pression ne vient qu'après.", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
         tuyaux: ["blue"], aiguilles: "zero", vannes: "arriere",
         regarde: "La vanne de service BP : capuchon, presse-étoupe, carré, prise.",
         fais: "J'ôte le capuchon. Je desserre le presse-étoupe, je mets le carré à la butée arrière, je resserre. J'ôte le bouchon de la prise et je serre le bleu à la main.",
@@ -149,7 +149,7 @@
           items: ["capuchon ôté", "presse-étoupe desserré, puis resserré", "carré à la butée arrière : prise de service fermée", "bouchon de la prise de service ôté", "flexible bleu serré à la main"],
           ok: "Vanne BP prête, bleu branché.", manque: "Il manque une coche : je ne passe pas à la HP avant." } },
 
-      { id: "prep-hp", verbe: "Je prépare la vanne HP et je branche le rouge", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
+      { id: "prep-hp", verbe: "Je prépare la vanne HP et je branche le rouge", narration: "Même geste côté haute pression, avec le flexible rouge. Cette vanne correspond soit au départ liquide, soit au refoulement : le repère du poste dit laquelle. Les couleurs ne se confondent pas : avec un bleu et un rouge inversés, la haute pression arriverait sur le manomètre basse pression, qui ne la supporte pas. Le professeur n'est appelé que lorsque tout est en ordre : il contrôle le branchement avant qu'on ouvre quoi que ce soit sur les vannes de service. La pompe, elle, n'est pas encore branchée.", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
         tuyaux: ["blue", "red"], aiguilles: "zero", vannes: "arriere",
         regarde: "La vanne de service HP : capuchon, presse-étoupe, carré, prise.",
         fais: "Même geste que sur la BP, avec le rouge. La HP est le départ liquide ou le refoulement : je suis le repère du poste.",
@@ -160,7 +160,7 @@
           ok: "Vanne HP prête, rouge branché.", manque: "Il manque une coche : j'appelle le professeur seulement quand tout est coché." },
         arret: "Le professeur a vérifié le branchement avant que j'ouvre les vannes de service." },
 
-      { id: "branche-pompe", verbe: "Je branche la pompe sur la voie VIDE", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-pump",
+      { id: "branche-pompe", verbe: "Je branche la pompe sur la voie VIDE", narration: "La pompe à vide va servir à retirer l'air des flexibles avant toute ouverture sur la machine. Elle se relie à la voie vide du manifold par un flexible noir, court et de gros diamètre ; sur un manifold à deux voies, c'est le jaune qui la reçoit. Le raccord se serre à la main. À ce stade, la pompe est arrêtée, son huile est propre, et la machine reste isolée puisque les vannes demeurent en position arrière. Le professeur contrôle l'ensemble du montage avant la mise en route de la pompe.", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-pump",
         tuyaux: ["blue", "red", "black"], aiguilles: "zero", vannes: "arriere",
         regarde: "Le flexible noir, entre le manifold et la pompe.",
         fais: "Flexible de vide court, de gros diamètre : voie VIDE du manifold → pompe, serré à la main. Sur un 2 voies : la pompe va sur le jaune. Pompe arrêtée, huile propre.",
@@ -170,7 +170,7 @@
           ok: "Montage prêt : la pompe peut tirer au vide les flexibles.", manque: "Il manque une coche : je ne mets pas la pompe en route avant." },
         arret: "Le professeur a vérifié le montage complet, avant la mise en route de la pompe." },
 
-      { id: "vide", verbe: "Je tire au vide les flexibles", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-pump",
+      { id: "vide", verbe: "Je tire au vide les flexibles", narration: "Pompe en route, l'air est aspiré hors des flexibles : les voies vide, basse pression et haute pression du manifold sont ouvertes, mais la voie service reste fermée, si bien que la machine n'est pas concernée. Les deux aiguilles se mettent à descendre. Aucun chiffre universel ne dit quand arrêter : la cible est celle du poste, donnée par le professeur. Une précaution : on ne se penche pas au-dessus du bouchon de refoulement, car la pompe peut projeter de l'huile. Enfin, vous relevez les deux aiguilles.", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-pump",
         tuyaux: ["blue", "red", "black"], aiguilles: "vide", vannes: "arriere", manifold: ["bp", "vac", "hp"], pompeIso: true,
         regarde: "Les aiguilles du manifold, et la pompe.",
         fais: "Pompe en route, son isolement ouvert. J'ouvre VIDE, BP et HP du manifold ; SERVICE reste fermée. J'attends la cible du poste, donnée par le professeur.",
@@ -185,7 +185,7 @@
               : ["ambre", "BP et HP ne sont pas au même niveau : une vanne du manifold est-elle restée fermée ?"];
           } } },
 
-      { id: "isoler", verbe: "Je ferme le manifold, puis j'arrête la pompe", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-manifold",
+      { id: "isoler", verbe: "Je ferme le manifold, puis j'arrête la pompe", narration: "Dans cette étape, l'ordre fait tout. On ferme d'abord les trois voies ouvertes du manifold, ensuite l'isolement de la pompe, et c'est seulement à ce moment qu'on coupe la pompe. Si elle s'arrêtait la première, l'air et l'huile remonteraient vers les flexibles. Le vide est alors enfermé, et le contrôle consiste à voir si les aiguilles restent en bas : c'est ainsi qu'on sait s'il tient, donc si les raccords sont étanches. Dans le cas contraire, un raccord fuit : on le resserre à la main et on tire de nouveau au vide ; au besoin, le professeur intervient.", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "black"], aiguilles: "vide", vannes: "arriere", manifold: [], pompeIso: false,
         regarde: "Les vannes du manifold, l'isolement de la pompe, son interrupteur.",
         fais: "Je ferme VIDE, BP et HP du manifold, puis l'isolement de la pompe. La pompe tourne encore : je l'arrête en dernier.",
@@ -195,14 +195,14 @@
           oui: "Le vide tient : flexibles sans air, raccords étanches. Je peux décoller les vannes de service.",
           non: "Le vide ne tient pas : un raccord fuit. Je resserre à la main et je retire au vide ; sinon j'appelle le professeur." } },
 
-      { id: "decoller", verbe: "Je décolle les vannes de service", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
+      { id: "decoller", verbe: "Je décolle les vannes de service", narration: "C'est maintenant que la machine rejoint le manifold, sans que le manifold lui-même s'ouvre : ses vannes restent fermées. Sur chaque vanne du groupe, on décolle la tige de son siège arrière en la tournant d'un quart de tour. Les flexibles ayant été vidés de leur air, ce qui y arrive vient forcément de la machine, et les aiguilles montent aussitôt jusqu'à sa pression. Le professeur se place à côté de vous pour vérifier avant de continuer : aucune vanne de service ne se manœuvre sans lui. Ensuite, la chasse aux fuites.", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
         tuyaux: ["blue", "red"], aiguilles: "lecture", vannes: "mid",
         regarde: "Les aiguilles BP et HP du manifold.",
         fais: "Vannes du manifold fermées. Sur chaque vanne de service : un quart de tour. Les flexibles sont hors air : seul le fluide de la machine y entre.",
         voir: "Les aiguilles remontent d'un coup, à la pression de la machine.",
         arret: "Le professeur est à côté de moi : je ne manœuvre jamais une vanne de service seul." },
 
-      { id: "fuite", verbe: "Je cherche les fuites aux raccords", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
+      { id: "fuite", verbe: "Je cherche les fuites aux raccords", narration: "Le fluide de la machine est maintenant dans les flexibles : on vérifie donc que rien ne s'échappe aux raccords, du côté des vannes. On passe un détecteur ou la solution moussante sur chaque raccord, et on tend l'oreille, car une fuite peut aussi s'entendre. Sous azote, seule la solution moussante convient, l'azote échappant au détecteur. Si une fuite se révèle, la vanne repart en position arrière et le professeur est prévenu. C'est seulement après ce contrôle qu'on lit les pressions.", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
         tuyaux: ["blue", "red"], aiguilles: "lecture", vannes: "mid",
         regarde: "Les raccords des deux flexibles, côté vannes de service.",
         fais: "Je passe le détecteur ou la solution moussante sur chaque raccord, et j'écoute. Sous azote : solution moussante, le détecteur ne sent pas l'azote.",
@@ -211,7 +211,7 @@
           oui: "Raccords étanches : je peux lire.",
           non: "STOP : une fuite. Je remets la vanne de service au siège arrière et j'appelle le professeur." } },
 
-      { id: "lire", verbe: "Je lis BP et HP", cadre: ["equipment-manifold"], cible: "equipment-manifold",
+      { id: "lire", verbe: "Je lis BP et HP", narration: "On lit maintenant les pressions, une fois les aiguilles stabilisées. Inutile d'ouvrir les vannes du manifold pour cela : les manomètres indiquent la pression quand même. Vous relevez la basse et la haute pression, en bar, et ces deux nombres serviront à l'étape suivante. Les comparer renseigne aussi sur l'état de la machine, à l'arrêt ou en marche. Ces relevés, bien faits, sont la matière de la conversion qui termine la gare : on va traduire chaque pression en température.", cadre: ["equipment-manifold"], cible: "equipment-manifold",
         tuyaux: ["blue", "red"], aiguilles: "lecture", vannes: "mid",
         regarde: "Les deux manomètres, vannes du manifold fermées.",
         fais: "J'attends que les aiguilles se stabilisent, puis je lis la BP et la HP, en bar.",
@@ -228,7 +228,7 @@
               : ["vert", "HP plus haute que la BP de " + c.fr(hp - bp, 1) + " bar : normal, la machine est en marche."];
           } } },
 
-      { id: "convertir", verbe: "Je convertis en température de saturation", cadre: ["equipment-manifold"], cible: "equipment-manifold",
+      { id: "convertir", verbe: "Je convertis en température de saturation", narration: "Dernière étape de la gare : transformer chaque pression en température de saturation. On utilise pour cela la réglette ou la table qui correspond au fluide de la plaque, celui qu'on a noté au tout début. Pour un mélange, on choisit la colonne vapeur pour la basse pression, et la colonne liquide pour la haute pression. On part de la pression telle que le manomètre l'affiche, et on lit la température qui lui fait face. Un écart avec la réglette trahit une mauvaise colonne ou un mauvais fluide. Sous azote, c'est le professeur qui fournit le fluide de l'exercice.", cadre: ["equipment-manifold"], cible: "equipment-manifold",
         tuyaux: ["blue", "red"], aiguilles: "lecture", vannes: "mid",
         regarde: "La réglette (ou la table) du fluide de la plaque.",
         fais: "Je prends la colonne du fluide (mélange : vapeur pour la BP, liquide pour la HP), ma pression telle qu'elle s'affiche, et je lis la température en face. Sous azote : le professeur donne le fluide de l'exercice.",

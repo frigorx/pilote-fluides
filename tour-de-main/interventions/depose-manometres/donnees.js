@@ -80,7 +80,7 @@ window.GARE = {
   },
 
   etapes: [
-    { id: "securite", verbe: "Je me protège et je regarde le poste", cadre: ["equipment-installation", "equipment-manifold", "etat-machine", "etat-manifold"], cible: "equipment-installation",
+    { id: "securite", verbe: "Je me protège et je regarde le poste", narration: "Cette gare s'appelle « Déposer les manomètres » : on retire le manifold sans rien laisser sous pression. Ici, le poste est déjà monté et la machine tourne : elle reste donc en marche. On commence par se protéger : le fluide liquide peut brûler par le froid, et les flexibles se tiennent loin des visages. Ensuite on s'assure que le poste est en ordre, et tant qu'un point manque, on ne manœuvre aucune vanne.", cadre: ["equipment-installation", "equipment-manifold", "etat-machine", "etat-manifold"], cible: "equipment-installation",
       tuyaux: ["blue", "red", "yellow"], etat: ["lecture", "lecture", false, false], aig: "lecture",
       regarde: "Le manifold branché, la machine en marche.",
       fais: "Lunettes et gants. Je regarde : bleu sur la BP, rouge sur la HP, jaune bouché, 4 vannes du manifold fermées. La machine tourne : je ne la coupe pas.",
@@ -91,7 +91,7 @@ window.GARE = {
 
     /* Franck, 08/10 : avant toute intervention, état des lieux — ce que je devrai retrouver à la fin. Ici le manifold est déjà posé :
        les vannes sont en position lecture (quart de tour) et les capuchons et bouchons sont ôtés, rangés. */
-    { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", cadre: ["equipment-installation", "etat-machine"], cible: "equipment-installation",
+    { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", narration: "Ici, le manifold est déjà posé, donc la machine n'est pas dans son état d'origine : les vannes de service sont en position lecture, et les capuchons et bouchons ont été ôtés et rangés. L'état des lieux consiste à bien constater tout cela, et à noter ce qu'il faudra retrouver à la fin de la dépose, joints propres compris. Si quelque chose manque, on prévient le professeur avant de commencer. La lecture des pressions vient juste après.", cadre: ["equipment-installation", "etat-machine"], cible: "equipment-installation",
       tuyaux: ["blue", "red", "yellow"], etat: ["lecture", "lecture", false, false], aig: "lecture",
       regarde: "Les vannes de service, leurs prises, leurs capuchons et leurs bouchons.",
       fais: "Je regarde chaque vanne de service : position lecture (le manifold est branché), capuchons et bouchons rangés propres, joints présents. Je note ce que je devrai retrouver à la fin.",
@@ -101,7 +101,7 @@ window.GARE = {
         ok: "État des lieux fait : je saurai tout remettre comme je l'ai trouvé.",
         manque: "Il manque quelque chose : je le signale au professeur avant de commencer." } },
 
-    { id: "lecture", verbe: "Je lis les deux aiguilles", cadre: ["equipment-manifold", "bouchon-jaune"], cible: "equipment-manifold",
+    { id: "lecture", verbe: "Je lis les deux aiguilles", narration: "Vannes du manifold fermées, machine en marche : on lit les deux aiguilles, la basse pression en bleu et la haute pression en rouge, en bar. Ces deux valeurs ne sont pas qu'un constat : on les garde, car elles serviront plus loin, par comparaison avec ce qu'on lira après. Sous azote, le support est à l'arrêt. Ensuite, on commence à isoler le manifold de la machine, par la haute pression.", cadre: ["equipment-manifold", "bouchon-jaune"], cible: "equipment-manifold",
       tuyaux: ["blue", "red", "yellow"], etat: ["lecture", "lecture", false, false], aig: "lecture",
       regarde: "Les aiguilles BP (bleue) et HP (rouge) du manifold.",
       fais: "Vannes du manifold fermées, machine en marche. Je lis la BP et la HP, en bar. Je les note : elles me serviront plus loin. Sous azote : support à l'arrêt, les deux aiguilles sont presque égales.",
@@ -114,7 +114,7 @@ window.GARE = {
             : ["vert", "HP plus haute que la BP de " + c.fr(hp - bp, 1) + " bar : normal, la machine est en marche."];
         } } },
 
-    { id: "hp-siege", verbe: "Je ramène la vanne HP au siège arrière", cadre: ["equipment-installation", "equipment-manifold", "etat-machine"], cible: "vanne-b",
+    { id: "hp-siege", verbe: "Je ramène la vanne HP au siège arrière", narration: "On commence à isoler le manifold de la machine, par la haute pression. La vanne de service B retourne au siège arrière : on desserre un peu le presse-étoupe, on remonte le carré en position haute, on resserre. La prise est alors fermée, et la haute pression reste piégée dans le flexible. On relit ensuite la haute pression pour la comparer à celle d'avant. Une vanne de service ne se manœuvre jamais sans le professeur à côté : il vérifie la vanne et le presse-étoupe avant la suite.", cadre: ["equipment-installation", "equipment-manifold", "etat-machine"], cible: "vanne-b",
       tuyaux: ["blue", "red", "yellow"], etat: ["arriere", "lecture", false, false], aig: "hp",
       regarde: "La vanne de service B, côté HP (départ liquide).",
       fais: "Je desserre le presse-étoupe, je ramène le carré au siège arrière (position haute), puis je resserre le presse-étoupe.",
@@ -132,7 +132,7 @@ window.GARE = {
         } },
       arret: "Le professeur a vérifié : vanne HP au siège arrière, presse-étoupe resserré." },
 
-    { id: "bypass", verbe: "J'ouvre le by-pass du manifold", cadre: ["equipment-manifold", "etat-manifold", "bouchon-jaune"], cible: "vanne-man-hp",
+    { id: "bypass", verbe: "J'ouvre le by-pass du manifold", narration: "Le by-pass, c'est le passage qu'on ouvre entre les deux côtés du manifold : la haute pression piégée dans son flexible se retrouve reliée à l'aspiration, et le compresseur, toujours en marche, commence à l'aspirer. Pour cela, on entrouvre la vanne haute pression du manifold, puis la basse pression, doucement, jamais brutalement : le flexible basse pression subirait d'un seul coup la pression entière. Les voies service et vide demeurent fermées. Avant d'ouvrir, le professeur contrôle la vanne de service haute pression et ces deux voies.", cadre: ["equipment-manifold", "etat-manifold", "bouchon-jaune"], cible: "vanne-man-hp",
       tuyaux: ["blue", "red", "yellow"], etat: ["arriere", "lecture", true, true], aig: "hp",
       regarde: "Les vannes HP et BP du manifold. SERVICE et VIDE restent fermées.",
       fais: "Machine en marche. J'ouvre un peu la vanne HP du manifold, puis la vanne BP, lentement. SERVICE et VIDE restent fermées.",
@@ -140,7 +140,7 @@ window.GARE = {
       danger: "Jamais d'un coup : le flexible BP recevrait toute la pression d'un bloc.",
       arret: "Le professeur a vérifié : vanne HP au siège arrière, SERVICE et VIDE fermées, avant le by-pass." },
 
-    { id: "egaliser", verbe: "J'attends que le compresseur aspire le flexible HP", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-manifold",
+    { id: "egaliser", verbe: "J'attends que le compresseur aspire le flexible HP", narration: "Maintenant, le compresseur travaille pour vous : il aspire le flexible haute pression, et les aiguilles descendent vers la basse pression de marche, sans jamais passer sous zéro. Si l'une d'elles passe sous zéro, on ferme le by-pass tout de suite et on appelle le professeur. On lit les deux aiguilles en même temps pour savoir si le flexible a fini d'être aspiré : c'est cette lecture qui décide du moment où l'on ferme. Sous azote, il n'y a pas de compresseur et les aiguilles s'égalisent d'elles-mêmes.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-manifold",
       tuyaux: ["blue", "red", "yellow"], etat: ["arriere", "lecture", true, true], aig: "egal",
       regarde: "Les aiguilles HP et BP du manifold.",
       fais: "Le compresseur aspire le flexible HP : les aiguilles descendent jusqu'à la BP de marche (juste avant 0 bar si elle est basse), jamais sous 0. Je lis les deux ensemble, puis je ferme. Sous azote : pas de compresseur, les deux aiguilles s'égalisent.",
@@ -157,13 +157,13 @@ window.GARE = {
             : ["vert", "HP et BP égales à " + c.fr(bp, 1) + " bar : le flexible HP a rejoint la BP de marche (sous azote : la pression du départ). Je ferme."];
         } } },
 
-    { id: "fermer", verbe: "Je ferme les vannes HP et BP du manifold", cadre: ["equipment-manifold", "etat-manifold", "bouchon-jaune"], cible: "vanne-man-bp",
+    { id: "fermer", verbe: "Je ferme les vannes HP et BP du manifold", narration: "Le flexible haute pression est aspiré, on referme donc le passage : la vanne haute pression du manifold d'abord, puis la basse pression. Les quatre vannes du manifold sont alors toutes fermées, et plus rien ne fait bouger les aiguilles. Cette fermeture marque un tournant dans la dépose : avant, on vide le flexible haute pression ; après, on isole le côté basse pression de la machine, avec la vanne de service C.", cadre: ["equipment-manifold", "etat-manifold", "bouchon-jaune"], cible: "vanne-man-bp",
       tuyaux: ["blue", "red", "yellow"], etat: ["arriere", "lecture", false, false], aig: "egal",
       regarde: "Les vannes HP et BP du manifold.",
       fais: "Je ferme la vanne HP du manifold, puis la vanne BP.",
       voir: "Les 4 vannes du manifold sont fermées ; les aiguilles ne bougent plus." },
 
-    { id: "bp-siege", verbe: "Je ramène la vanne BP au siège arrière", cadre: ["equipment-installation", "equipment-manifold", "etat-machine"], cible: "vanne-c",
+    { id: "bp-siege", verbe: "Je ramène la vanne BP au siège arrière", narration: "On fait côté basse pression ce qu'on a fait côté haute pression : la vanne de service C, celle de l'aspiration, retourne au siège arrière, avec le même soin autour du presse-étoupe. Les deux prises de service sont alors fermées, et le manifold se trouve isolé de la machine. Vous observez les aiguilles pour juger si l'isolement est réel. Au moindre doute, une aiguille qui bouge, on ne débranche pas et on appelle le professeur, qui est à côté de vous pour toute vanne de service.", cadre: ["equipment-installation", "equipment-manifold", "etat-machine"], cible: "vanne-c",
       tuyaux: ["blue", "red", "yellow"], etat: ["arriere", "arriere", false, false], aig: "egal",
       regarde: "La vanne de service C, côté BP (aspiration).",
       fais: "Je desserre le presse-étoupe, je ramène le carré au siège arrière (position haute), puis je resserre le presse-étoupe.",
@@ -173,7 +173,7 @@ window.GARE = {
         oui: "Aiguilles stables : le manifold est bien isolé. Je peux débrancher.",
         non: "STOP : une aiguille bouge. Une vanne de service n'est pas au siège arrière, ou un raccord fuit. Je ne débranche pas, j'appelle le professeur." } },
 
-    { id: "debrancher", verbe: "Je desserre lentement les raccords", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
+    { id: "debrancher", verbe: "Je desserre lentement les raccords", narration: "C'est ici que le manifold quitte la machine. Avant de desserrer, le professeur vient vérifier que les aiguilles sont stables et que les vannes de service sont au siège arrière. Le raccord est tourné vers le sol, loin des visages, et on desserre lentement, en le tenant, d'abord le bleu, puis le rouge. S'il sort un jet ou un souffle, on resserre aussitôt. Sous azote, le geste reste le même que pour du fluide. Cette lenteur évite que quoi que ce soit parte à l'air.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
       tuyaux: ["yellow"], etat: ["arriere", "arriere", false, false], aig: "egal",
       regarde: "Les raccords des flexibles bleu et rouge sur la machine.",
       fais: "Raccord tourné vers le sol, loin des visages. Je desserre lentement le bleu (BP), puis le rouge (HP), raccord tenu. Sous azote : je desserre quand même lentement, raccord tenu, comme si c'était du fluide.",
@@ -184,7 +184,7 @@ window.GARE = {
         non: "STOP : un jet ou un souffle. Je resserre le raccord et j'appelle le professeur." },
       arret: "Le professeur a vérifié : aiguilles stables, vannes de service au siège arrière, avant de desserrer." },
 
-    { id: "zero", verbe: "Je vérifie que les aiguilles sont à 0", cadre: ["equipment-manifold", "bouchon-jaune"], cible: "equipment-manifold",
+    { id: "zero", verbe: "Je vérifie que les aiguilles sont à 0", narration: "Les flexibles sont libres : le manifold n'est plus relié à rien. Ses deux manomètres vous disent donc s'il reste quelque chose sous pression, et c'est la preuve que la dépose n'a rien laissé derrière elle. Le contrôle répond à une seule question : reste-t-il de la pression dans un flexible ? Si oui, on ne range rien et on appelle le professeur. Sinon, le manifold pourra être rangé, mais seulement après la remise des bouchons.", cadre: ["equipment-manifold", "bouchon-jaune"], cible: "equipment-manifold",
       tuyaux: ["yellow"], etat: ["arriere", "arriere", false, false], aig: "zero",
       regarde: "Les deux aiguilles du manifold, flexibles libres.",
       fais: "Je regarde la BP et la HP : le manifold n'est plus relié à rien.",
@@ -193,7 +193,7 @@ window.GARE = {
         oui: "Manifold sans pression : je peux le ranger, après les bouchons.",
         non: "STOP : il reste de la pression dans un flexible. Je ne range pas, j'appelle le professeur." } },
 
-    { id: "bouchons", verbe: "Je remets bouchons et capuchons", cadre: ["equipment-installation", "etat-machine"], cible: "equipment-installation",
+    { id: "bouchons", verbe: "Je remets bouchons et capuchons", narration: "On revient à la machine pour la rendre comme on l'a trouvée. Chaque prise de service reçoit son bouchon, et chaque carré de manœuvre son capuchon, côté haute pression comme côté basse pression. Ce sont les bouchons qui assurent l'étanchéité finale : un oubli, et c'est une fuite lente. On les remet donc un par un, sans en sauter aucun. Quand la protection est remise partout, on peut contrôler l'étanchéité.", cadre: ["equipment-installation", "etat-machine"], cible: "equipment-installation",
       tuyaux: ["yellow"], etat: ["arriere", "arriere", false, false], aig: "zero",
       regarde: "Les prises de service et les carrés des vannes B et C.",
       fais: "Je visse le bouchon sur chaque prise de service. Je remets le capuchon sur chaque carré de manœuvre.",
@@ -201,7 +201,7 @@ window.GARE = {
       controle: { titre: "Je coche ce que j'ai remis", type: "coches", items: ["bouchon de la prise HP", "bouchon de la prise BP", "capuchon de la vanne HP", "capuchon de la vanne BP"],
         ok: "Quatre protections remises.", manque: "Il manque une coche : un bouchon oublié, c'est une fuite lente." } },
 
-    { id: "etancheite", verbe: "Je contrôle l'étanchéité", cadre: ["equipment-installation", "etat-machine"], cible: "equipment-installation",
+    { id: "etancheite", verbe: "Je contrôle l'étanchéité", narration: "Avant de rendre la machine, on s'assure qu'elle ne fuit pas là où l'on est intervenu : sur les presse-étoupes et sur les bouchons des vannes B et C. Chacun est contrôlé avec un détecteur, ou avec la solution moussante. Sous azote, la solution moussante est la seule qui convienne, l'azote échappant au détecteur. S'il y a une fuite, on resserre, on contrôle le bouchon et on recommence ; si elle persiste, le professeur est prévenu. Une fois ce contrôle terminé, il ne reste qu'à ranger.", cadre: ["equipment-installation", "etat-machine"], cible: "equipment-installation",
       tuyaux: ["yellow"], etat: ["arriere", "arriere", false, false], aig: "zero",
       regarde: "Les presse-étoupes et les bouchons des vannes B et C.",
       fais: "Presse-étoupes serrés. Je passe le détecteur ou la solution moussante sur chaque presse-étoupe et chaque bouchon. Sous azote : solution moussante, le détecteur ne sent pas l'azote.",
@@ -210,7 +210,7 @@ window.GARE = {
         oui: "Étanche : la machine est rendue comme je l'ai trouvée.",
         non: "STOP : fuite. Je resserre, je vérifie le bouchon, je recommence ; sinon j'appelle le professeur." } },
 
-    { id: "ranger", verbe: "Je range et je remets tout comme je l'ai trouvé", cadre: ["equipment-manifold", "bouchon-jaune"], cible: "equipment-manifold",
+    { id: "ranger", verbe: "Je range et je remets tout comme je l'ai trouvé", narration: "Dernière étape de la gare : le rangement. Le manifold est rangé bouché, jaune compris, avec ses vannes fermées, et les flexibles sont enroulés sans pli serré. Puis vient la comparaison avec l'état des lieux du début : c'est elle qui permet d'affirmer que la machine est rendue comme on l'a trouvée. Rien n'est rangé définitivement tant que tout n'est pas vérifié, y compris l'absence de fuite.", cadre: ["equipment-manifold", "bouchon-jaune"], cible: "equipment-manifold",
       tuyaux: ["yellow"], etat: ["arriere", "arriere", false, false], aig: "zero",
       regarde: "Le manifold, ses flexibles, le jaune bouché, puis l'état des lieux du départ.",
       fais: "Jaune bouché, 4 vannes fermées, aiguilles à 0. J'enroule les flexibles sans pli serré, je range le manifold. Je compare la machine avec l'état des lieux.",

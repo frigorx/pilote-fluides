@@ -136,3 +136,5 @@ figure.dessin svg{display:block;width:100%;height:auto;max-height:46vh}
   body{font-size:14pt}.trace *{font-size:14pt!important}.trace .verbe{font-size:18pt!important}
   .filigrane{opacity:.07}.carte{border:0;padding:0}
 }
+/* la voix (17/10/2026) : « Écouter » à droite du verbe ; le réglage de vitesse du site dans l'en-tête */
+.entete .ecouter{margin-left:auto;flex:0 0 auto;font-size:16px}

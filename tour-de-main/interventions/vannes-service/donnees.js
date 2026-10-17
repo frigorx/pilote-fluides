@@ -77,7 +77,7 @@ window.GARE = {
   },
 
   etapes: [
-    { id: "reperer", verbe: "Je repère la vanne de service", cadre: ["equipment-installation"], cible: "equipment-installation",
+    { id: "reperer", verbe: "Je repère la vanne de service", narration: "Cette gare s'appelle « Manœuvrer une vanne de service » : on apprend à mettre la vanne au siège arrière, puis à la décoller d'un quart de tour pour lire la pression de la ligne. Première étape, repérer. Sur le groupe, trois vannes de service portent chacune un rôle, et l'une d'elles est la vôtre. Il faut aussi retrouver son carré de manœuvre, sous le capuchon, et distinguer deux prises : la prise de service P, qu'on utilisera, et la prise du pressostat, P un. Tant que ce n'est pas clair, on n'intervient sur rien.", cadre: ["equipment-installation"], cible: "equipment-installation",
       regarde: "Le groupe : trois vannes de service, A, B et C.",
       fais: "Je trouve la vanne à manœuvrer. A : refoulement. B : départ liquide. C : aspiration. Je l'écris dans « Ma machine ».",
       voir: "Une vanne avec un capuchon sur la tige et une prise de service.",
@@ -85,7 +85,7 @@ window.GARE = {
         items: ["la vanne à manœuvrer et son repère (A, B ou C)", "son carré de manœuvre, sous le capuchon", "sa prise de service P et la prise P1 du pressostat"],
         ok: "Vanne repérée.", manque: "Il manque une coche : je ne touche à rien avant." } },
 
-    { id: "securiser", verbe: "Je me protège et je sécurise", cadre: ["equipment-installation"], cible: "equipment-installation",
+    { id: "securiser", verbe: "Je me protège et je sécurise", narration: "La vanne est repérée, on peut maintenant se protéger. Le fluide liquide peut brûler par le froid, et des flexibles seront bientôt branchés : d'où les lunettes et les gants d'abord, puis l'arrêt de la machine et sa consignation avec un cadenas et une étiquette. Le professeur vient vérifier vos protections et la consignation avant de continuer. Ensuite viendra l'état des lieux, pour garder en mémoire la machine telle qu'elle est.", cadre: ["equipment-installation"], cible: "equipment-installation",
       regarde: "La machine, son interrupteur, sa plaque.",
       fais: "Lunettes et gants. J'arrête la machine et je la consigne : cadenas et étiquette.",
       voir: "Machine arrêtée, cadenas posé, EPI sur moi.",
@@ -93,7 +93,7 @@ window.GARE = {
       arret: "Le professeur a vérifié : EPI portés, machine consignée." },
 
     /* Franck, 08/10 : avant toute intervention, état des lieux — rien de perdu, rien d'abîmé, vannes en service au siège arrière. */
-    { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", cadre: ["equipment-installation"], cible: "equipment-installation",
+    { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", narration: "L'état des lieux fixe la machine telle que vous la trouvez, avant tout changement. On passe en revue chaque vanne de service : ce qui coiffe la tige, ce qui ferme la prise, leur serrage, leur état, et la position de la vanne. Ce constat a un usage précis : à la fin de la gare, vous comparerez la machine avec lui pour tout remettre comme au départ. S'il manque quelque chose, on le signale au professeur avant de commencer. La première manœuvre sera de retirer le capuchon.", cadre: ["equipment-installation"], cible: "equipment-installation",
       regarde: "Les vannes de service, leurs capuchons et leurs bouchons.",
       fais: "Je vérifie chaque vanne de service : capuchon de tige et bouchon de prise présents, serrés, en bon état.",
       voir: "Tout est là et serré ; les vannes sont au siège arrière, comme en service.",
@@ -102,12 +102,12 @@ window.GARE = {
         ok: "État des lieux fait : je saurai tout remettre comme je l'ai trouvé.",
         manque: "Il manque quelque chose : je le signale au professeur avant de commencer." } },
 
-    { id: "capuchon", verbe: "J'ôte le capuchon de la tige", cadre: ["exterieur"], cible: "exterieur",
+    { id: "capuchon", verbe: "J'ôte le capuchon de la tige", narration: "Le capuchon recouvre le carré de la tige, c'est-à-dire l'endroit où viendra la clé. Il se dévisse à la main et se pose propre sur le poste : il reviendra à la fin de la gare. Une fois la tige à nu, on ne tourne pas encore le carré. Avant de s'en servir, on commence par desserrer l'écrou qui entoure la tige, le presse-étoupe, et c'est l'étape suivante.", cadre: ["exterieur"], cible: "exterieur",
       regarde: "Le capuchon sur la tige, côté carré.",
       fais: "Je dévisse le capuchon à la main et je le pose propre sur le poste. Je ne touche pas encore au carré.",
       voir: "Le carré de la tige est à nu." },
 
-    { id: "presse-etoupe", verbe: "Je desserre le presse-étoupe", cadre: ["presse-etoupe", "carre"], cible: "presse-etoupe",
+    { id: "presse-etoupe", verbe: "Je desserre le presse-étoupe", narration: "Le presse-étoupe est l'écrou qui entoure la tige, sous le carré. Tant qu'il est assez serré, il rend la tige étanche ; on le desserre donc juste de quoi libérer la tige, avec la clé plate. Le maximum est le quart de tour, ou la valeur donnée par le professeur. Trop desserré, il laisse fuir. Le contrôle porte sur deux points : la tige est-elle libre, et rien ne fuit-il ? Si la tige résiste, on n'insiste pas sur le carré et on fait venir le professeur. Ensuite, la vanne ira au siège arrière.", cadre: ["presse-etoupe", "carre"], cible: "presse-etoupe",
       regarde: "L'écrou autour de la tige, sous le carré.",
       fais: "Avec la clé plate, je desserre un peu : un quart de tour au plus, ou la valeur du professeur.",
       voir: "La tige tourne sans forcer. Rien ne fuit.",
@@ -116,7 +116,7 @@ window.GARE = {
         oui: "Tige libre, presse-étoupe encore étanche : je continue.",
         non: "STOP : je ne force pas sur le carré. J'appelle le professeur." } },
 
-    { id: "siege-arriere", verbe: "Je mets la vanne au siège arrière", cadre: ["zone-positions", "manometre", "legende-positions"], cible: "carre", position: "back",
+    { id: "siege-arriere", verbe: "Je mets la vanne au siège arrière", narration: "Le siège arrière est la position de service de la vanne. Une clé à cliquet, posée sur le carré, sert à tourner en sens antihoraire jusqu'en butée, sans forcer. La tige se bloque alors, et c'est la prise P qui se trouve isolée, tandis que la ligne reste ouverte. À l'autre bout de la course, le siège avant coupe la ligne : pendant les travaux pratiques, on ne s'en sert jamais. Le professeur vient ensuite vérifier la vanne, la prise P et le bouchon de la prise du pressostat avant d'aller plus loin.", cadre: ["zone-positions", "manometre", "legende-positions"], cible: "carre", position: "back",
       regarde: "Le carré, avec la clé à cliquet dessus.",
       fais: "Je tourne dans le sens inverse des aiguilles d'une montre, jusqu'à la butée. Je ne force pas.",
       voir: "La tige ne tourne plus. La prise P est fermée ; la ligne, elle, reste ouverte.",
@@ -126,7 +126,7 @@ window.GARE = {
         ok: "Siège arrière : la prise P est isolée.", manque: "Il manque une coche : je n'ouvre pas la prise avant." },
       arret: "Le professeur a vérifié : vanne au siège arrière, prise P isolée, bouchon de P1 en place." },
 
-    { id: "bouchon", verbe: "J'ôte le bouchon de la prise P", cadre: ["prise-p", "prise-p1"], cible: "exterieur", position: "back",
+    { id: "bouchon", verbe: "J'ôte le bouchon de la prise P", narration: "Deux prises sont à ne pas confondre : P, la prise de service, près du carré, et P un, celle du pressostat, à l'opposé. Seule P s'ouvre. Son bouchon se dévisse, puis se range avec le capuchon, joint propre, ce qui laisse voir l'obus au fond de la prise. P un garde sa pression même lorsque la vanne est fermée : son bouchon reste donc toujours vissé. Vous contrôlez qu'il est bien là. S'il ne l'est pas, plus un geste : on fait venir le professeur. Ensuite, le flexible.", cadre: ["prise-p", "prise-p1"], cible: "exterieur", position: "back",
       regarde: "La prise P, près du carré. P1 est à l'opposé.",
       fais: "Je dévisse le bouchon de P, je le pose avec le capuchon, joint propre. Au fond de la prise : l'obus Schrader.",
       voir: "La prise P est libre. P1 garde son bouchon.",
@@ -135,7 +135,7 @@ window.GARE = {
         oui: "P1 intacte : je continue.",
         non: "STOP : P1 reste sous pression. Je ne bouge plus et j'appelle le professeur." } },
 
-    { id: "flexible", verbe: "Je branche le flexible sur la prise P", cadre: ["prise-p", "manometre"], cible: "prise-p", position: "back", flexible: true,
+    { id: "flexible", verbe: "Je branche le flexible sur la prise P", narration: "On branche maintenant le flexible sur la prise P, à condition qu'il soit déjà débarrassé de son air : il a été vidé à la gare deux, la vanne du manifold étant fermée. Sinon, l'air entrerait dans le circuit. L'écrou se serre à la main, bien droit, sans coincer le joint, et le poussoir enfonce l'obus. Pendant ce temps, l'aiguille reste immobile. Le professeur vient vérifier ce branchement avant l'ouverture de la vanne. Ensuite, une première lecture, prise fermée.", cadre: ["prise-p", "manometre"], cible: "prise-p", position: "back", flexible: true,
       regarde: "L'écrou du flexible et la prise P.",
       fais: "Mon flexible est déjà hors air : tiré au vide à la gare 2, vanne du manifold fermée. Je visse l'écrou à la main sur P, joint propre dedans. Le poussoir enfonce l'obus Schrader.",
       voir: "Flexible vissé droit, sans pincer le joint. L'aiguille ne bouge pas.",
@@ -145,7 +145,7 @@ window.GARE = {
         ok: "Branchement prêt à être vérifié.", manque: "Il manque une coche : je ne continue pas avant. Flexible plein d'air : je le tire au vide d'abord, comme à la gare 2." },
       arret: "Le professeur a vérifié mon branchement, avant d'ouvrir la vanne." },
 
-    { id: "lire-zero", verbe: "Je lis l'aiguille, prise fermée", cadre: ["manometre", "legende-positions"], cible: "manometre", position: "back", flexible: true,
+    { id: "lire-zero", verbe: "Je lis l'aiguille, prise fermée", narration: "Avant de décoller la vanne, on prend une première lecture. La vanne n'a pas bougé : elle est toujours au siège arrière, la prise P est fermée, et le manomètre n'est donc pas encore relié à la ligne. Vous relevez ce que l'aiguille indique, en bar, et vous le notez, car il sera comparé à la lecture faite après le quart de tour. Si la lecture ne correspond pas à la position de la vanne, on ne continue pas et on appelle le professeur.", cadre: ["manometre", "legende-positions"], cible: "manometre", position: "back", flexible: true,
       regarde: "L'aiguille du manomètre. La vanne n'a pas bougé.",
       fais: "Je lis l'aiguille et je l'écris. La prise P est fermée : le manomètre ne voit pas encore la ligne.",
       voir: "L'aiguille reste à 0.",
@@ -157,7 +157,7 @@ window.GARE = {
           return ["rouge", "STOP : " + c.fr(x, 1) + " bar alors que la prise doit être fermée. La vanne n'est pas au siège arrière, ou l'obus fuit. Je ne continue pas, j'appelle le professeur."];
         } } },
 
-    { id: "quart", verbe: "Je décolle la vanne d'un quart de tour", cadre: ["zone-positions", "manometre", "legende-positions"], cible: "carre", position: "mid", flexible: true, aiguille: "ligne",
+    { id: "quart", verbe: "Je décolle la vanne d'un quart de tour", narration: "C'est le geste central de la gare. Un quart de tour en sens horaire, pas davantage : la vanne quitte son siège arrière et se retrouve en position intermédiaire, entre les deux sièges. La prise de service voit alors la ligne, ce qui lance la montée de l'aiguille. Le flexible ayant été vidé de son air, ce qui y entre vient forcément de la machine. À la moindre fuite, à la prise comme au raccord, on ramène tout de suite la vanne en arrière et on prévient le professeur. Vous notez combien de tours vous avez réellement faits.", cadre: ["zone-positions", "manometre", "legende-positions"], cible: "carre", position: "mid", flexible: true, aiguille: "ligne",
       regarde: "Le carré, la clé, et l'aiguille du manomètre.",
       fais: "Un quart de tour dans le sens des aiguilles d'une montre, pas plus. Le flexible est hors air : seul le fluide de la machine y entre.",
       voir: "La vanne est entre ses deux sièges. L'aiguille se met à monter.",
@@ -171,7 +171,7 @@ window.GARE = {
           return ["vert", "Un quart de tour environ : la vanne est entre ses deux sièges, la prise voit la ligne."];
         } } },
 
-    { id: "lire", verbe: "Je lis la pression de la ligne", cadre: ["manometre", "legende-positions"], cible: "manometre", position: "mid", flexible: true, aiguille: "ligne",
+    { id: "lire", verbe: "Je lis la pression de la ligne", narration: "Votre manomètre est maintenant relié à la ligne par la prise P, et la machine a le sien : deux manomètres, une seule pression. On laisse l'aiguille se stabiliser avant de lire, puis on compare les deux. Cette comparaison a un but : si les deux lectures ne s'accordent pas, soit un manomètre est faux, soit la vanne n'est pas où on le croit. Le professeur vient vérifier votre lecture avant que vous refermiez la vanne. Ensuite, retour au siège arrière.", cadre: ["manometre", "legende-positions"], cible: "manometre", position: "mid", flexible: true, aiguille: "ligne",
       regarde: "Mon manomètre, puis celui de la machine.",
       fais: "J'attends que l'aiguille se stabilise. Je lis, j'écris. Je compare avec le manomètre de la machine.",
       voir: "L'aiguille s'arrête sur la pression de la machine, la même que sur l'autre manomètre.",
@@ -188,7 +188,7 @@ window.GARE = {
         } },
       arret: "Le professeur a vérifié ma lecture, avant que je referme la vanne." },
 
-    { id: "retour", verbe: "Je ferme la prise et je vide le flexible", cadre: ["zone-positions", "manometre", "legende-positions"], cible: "carre", position: "back", flexible: true,
+    { id: "retour", verbe: "Je ferme la prise et je vide le flexible", narration: "On referme la prise en tournant en sens contraire, jusqu'en butée. Mais le flexible garde la pression de la ligne : tant que son contenu n'est pas vidé, il reste en place. Ce contenu repart vers la machine ou vers la station, jamais à l'air. Sous azote, comme il n'y a pas de station, on desserre doucement, en tenant le raccord, comme avec du fluide. Le contrôle porte sur l'aiguille et sur l'absence de tout rejet. Tant qu'il reste de la pression, on ne débranche rien et le professeur est prévenu.", cadre: ["zone-positions", "manometre", "legende-positions"], cible: "carre", position: "back", flexible: true,
       regarde: "Le carré et l'aiguille du manomètre.",
       fais: "Sens inverse des aiguilles, jusqu'à la butée arrière. Je vide le flexible vers la machine ou à la station : jamais à l'air. Sous azote : pas de station, je desserre lentement, raccord tenu, comme du fluide.",
       voir: "La prise P est fermée. L'aiguille retombe à 0 sans que rien ne soit rejeté à l'air.",
@@ -197,7 +197,7 @@ window.GARE = {
         oui: "Flexible sans pression : je peux le débrancher.",
         non: "STOP : je ne débranche jamais un flexible sous pression. J'appelle le professeur." } },
 
-    { id: "debrancher", verbe: "Je débranche et je rebouche P", cadre: ["prise-p", "prise-p1"], cible: "prise-p", position: "back",
+    { id: "debrancher", verbe: "Je débranche et je rebouche P", narration: "Le flexible est vide, on peut le retirer : on le dévisse lentement, en tenant le raccord, pour que rien ne parte à l'air. Puis le bouchon de la prise P retrouve sa place, avec son joint propre, serré selon la notice. La prise P un n'a jamais été manipulée, et son bouchon n'a donc pas bougé. Ce que vous venez de faire se vérifie point par point. Quand les deux prises sont de nouveau bouchonnées, il ne reste qu'à tout remettre comme au départ.", cadre: ["prise-p", "prise-p1"], cible: "prise-p", position: "back",
       regarde: "L'écrou du flexible et la prise P.",
       fais: "Je dévisse le flexible lentement, raccord tenu. Je remets le bouchon sur P, joint propre, serré selon la notice.",
       voir: "Flexible ôté. P et P1 ont chacune leur bouchon.",
@@ -205,7 +205,7 @@ window.GARE = {
         items: ["flexible ôté, aiguille à 0", "bouchon de P remis, joint propre", "bouchon de P1 jamais touché"],
         ok: "Prises rebouchées.", manque: "Il manque une coche : je ne range pas avant." } },
 
-    { id: "fin", verbe: "Je remets tout comme je l'ai trouvé", cadre: ["presse-etoupe", "carre"], cible: "presse-etoupe", position: "back",
+    { id: "fin", verbe: "Je remets tout comme je l'ai trouvé", narration: "Dernière étape : tout revient comme au départ. On resserre le presse-étoupe, desserré au début, puis on contrôle l'étanchéité autour de la tige : un signal ou une bulle révèle une fuite. Dans ce cas, on resserre légèrement et on recontrôle ; si la fuite persiste, le professeur est prévenu. Le contrôle se fait avec un détecteur, ou avec la solution moussante, mais seule la solution moussante convient sous azote, car l'azote échappe au détecteur. Le capuchon revient enfin, et on compare le poste avec l'état des lieux du début.", cadre: ["presse-etoupe", "carre"], cible: "presse-etoupe", position: "back",
       regarde: "L'écrou autour de la tige, puis les capuchons et les bouchons.",
       fais: "Avec la clé plate, je resserre le presse-étoupe. Je contrôle au détecteur ou à la solution moussante. Sous azote : solution moussante, le détecteur ne sent pas l'azote. Je remets le capuchon, puis je compare avec l'état des lieux.",
       voir: "Aucune fuite autour de la tige. Capuchon remis, vanne au siège arrière, comme au départ.",

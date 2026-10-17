@@ -106,7 +106,7 @@
     },
 
     etapes: [
-      { id: "securite", verbe: "Je sécurise le poste", cadre: ["equipment-installation"], cible: "equipment-installation",
+      { id: "securite", verbe: "Je sécurise le poste", narration: "Cette gare vous apprend à tirer un circuit au vide, puis à tester sa remontée, ce qui montre s'il garde son vide. Elle suit l'épreuve d'azote et précède la charge. On commence par le poste. Les lunettes et les gants sont portés. La machine est arrêtée et consignée, et la pompe est branchée sur une prise contrôlée, avec son câble hors du passage. Un risque est à garder en tête : la pompe chauffe et peut projeter de l'huile, donc on ne la déplace pas quand elle tourne.", cadre: ["equipment-installation"], cible: "equipment-installation",
         tuyaux: ["blue", "red"],
         regarde: "La machine, sa prise, la pompe et son câble.",
         fais: "Lunettes et gants. Machine arrêtée et consignée. Pompe sur une prise contrôlée, câble hors passage.",
@@ -114,7 +114,7 @@
         danger: "La pompe chauffe et peut projeter de l'huile : je ne la déplace pas en marche." },
 
       /* Franck, 08/10 : avant toute intervention, état des lieux — rien de perdu, rien d'abîmé, vannes en service au siège arrière. */
-      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", cadre: ["equipment-installation"], cible: "equipment-installation",
+      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", narration: "Avant de relier la pompe, on regarde dans quel état se trouve la machine. À la fin, tout devra être remis comme on l'a trouvé, alors on le constate maintenant. Sur chaque vanne de service, le capuchon de tige et le bouchon de prise doivent être présents, serrés et en bon état. Les vannes sont au siège arrière. Si une pièce manque ou paraît abîmée, on prévient le professeur avant de commencer, pas après. Ce tour fait, on contrôle la pompe elle-même.", cadre: ["equipment-installation"], cible: "equipment-installation",
         tuyaux: ["blue", "red"],
         regarde: "Les vannes de service, leurs capuchons et leurs bouchons.",
         fais: "Je vérifie chaque vanne de service : capuchon de tige et bouchon de prise présents, serrés, en bon état.",
@@ -124,7 +124,7 @@
           ok: "État des lieux fait : je saurai tout remettre comme je l'ai trouvé.",
           manque: "Il manque quelque chose : je le signale au professeur avant de commencer." } },
 
-      { id: "pompe", verbe: "Je contrôle la pompe à vide", cadre: ["equipment-pump"], cible: "equipment-pump",
+      { id: "pompe", verbe: "Je contrôle la pompe à vide", narration: "Avec une huile basse ou laiteuse, ou un lest mal placé, la pompe ne tirera pas bien : on la contrôle donc avant de brancher. Elle est arrêtée, posée bien à plat. Par le hublot, on regarde l'huile : son niveau doit se trouver entre les deux repères, et elle doit être claire. On regarde aussi la soupape de lest d'air, qui se place selon la notice, ainsi que le câble et la prise. Si un défaut apparaît, on appelle le professeur. Si tout est en ordre, on passe au manifold.", cadre: ["equipment-pump"], cible: "equipment-pump",
         tuyaux: ["blue", "red"],
         regarde: "Le hublot d'huile et la soupape de lest d'air.",
         fais: "Pompe arrêtée, à plat. Niveau d'huile entre les repères du hublot, huile claire. Lest d'air selon la notice.",
@@ -134,7 +134,7 @@
           ok: "Pompe prête : elle pourra tirer au vide.",
           manque: "Huile basse ou laiteuse, ou lest mal placé : la pompe ne tirera pas bien. J'appelle le professeur." } },
 
-      { id: "manifold", verbe: "Je vérifie le manifold hors air", cadre: ["equipment-manifold"], cible: "equipment-manifold",
+      { id: "manifold", verbe: "Je vérifie le manifold hors air", narration: "À cette étape, le manifold est déjà en place sur les vannes de service, ses flexibles ayant été mis hors air, comme à la gare deux. Il reste à le rendre prêt pour la pompe. On ferme les quatre vannes, et on contrôle qu'un joint propre est monté dans chaque flexible. Puis on regarde les aiguilles : elles indiquent s'il subsiste de l'azote sous pression après l'épreuve. Si l'une d'elles ne revient pas sur zéro, la pression n'est pas tombée, et on fait venir le professeur. Sinon, on peut brancher la pompe.", cadre: ["equipment-manifold"], cible: "equipment-manifold",
         tuyaux: ["blue", "red"], aiguilles: "zero",
         regarde: "Les 4 vannes, les aiguilles, les joints.",
         fais: "Le manifold est posé sur les vannes de service, flexibles hors air (gare 2). Je ferme les 4 vannes du manifold.",
@@ -144,13 +144,13 @@
           ok: "Manifold prêt à recevoir la pompe.",
           manque: "Il manque une coche, ou une aiguille ne revient pas à 0 : il reste de la pression. J'appelle le professeur." } },
 
-      { id: "branche-pompe", verbe: "Je branche la pompe sur la voie VIDE", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-pump",
+      { id: "branche-pompe", verbe: "Je branche la pompe sur la voie VIDE", narration: "La pompe se relie maintenant au manifold par le flexible de vide, le noir. Il est court et de gros diamètre, et il va de la voie du vide, sur le manifold, jusqu'à la pompe. Les raccords se serrent à la main. Sur un manifold à deux voies, la pompe se branche sur le jaune. Rien ne tourne encore, on prépare seulement le chemin. Juste après, on placera l'instrument qui mesurera le vide, car les aiguilles du manifold ne le remplacent pas.", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-pump",
         tuyaux: ["blue", "red", "black"], aiguilles: "zero",
         regarde: "Le flexible noir, entre le manifold et la pompe.",
         fais: "Flexible de vide court et de gros diamètre : voie VIDE du manifold → pompe, serré à la main. Sur un 2 voies : la pompe va sur le jaune.",
         voir: "La pompe est reliée à la voie VIDE (au jaune sur un 2 voies), raccord serré." },
 
-      { id: "vacuometre", verbe: "Je place le vacuomètre", cadre: ["equipment-installation", "equipment-vacuum", "zone-vide"], cible: "equipment-vacuum",
+      { id: "vacuometre", verbe: "Je place le vacuomètre", narration: "Pour savoir où en est le vide, il faut un instrument de mesure : le vacuomètre. On le place le plus près possible du circuit, et surtout pas contre la pompe. Sa vanne d'isolement doit rester ouverte. On l'allume, puis on vérifie qu'il affiche dans la même unité que celle de la cible du poste. Retenez l'essentiel : la valeur du vide se lit sur cet instrument, jamais sur les aiguilles du manifold. Avec tout cela en place, la pompe peut tirer et le vacuomètre peut mesurer. Tant qu'un point manque, on ne lance rien.", cadre: ["equipment-installation", "equipment-vacuum", "zone-vide"], cible: "equipment-vacuum",
         tuyaux: ["blue", "red", "black", "vac"], aiguilles: "zero", vac: "rien",
         regarde: "Le vacuomètre, son flexible, sa vanne d'isolement.",
         fais: "Je le raccorde au plus près du circuit (sur le dessin : la vanne A), pas collé à la pompe. Sa vanne d'isolement est ouverte. Je l'allume.",
@@ -160,7 +160,7 @@
           ok: "Montage prêt : la pompe tire, le vacuomètre mesure.",
           manque: "Il manque une coche : je ne démarre rien avant." } },
 
-      { id: "vannes-service", verbe: "Je décolle les vannes de service", cadre: ["equipment-installation"], cible: "vannes-service",
+      { id: "vannes-service", verbe: "Je décolle les vannes de service", narration: "Le montage est prêt, mais le circuit de la machine n'est pas encore relié au manifold. Il le devient quand on décolle les vannes de service, A, B et C, de leur siège arrière : chacune est amenée en position intermédiaire, doucement, sans forcer. À ce moment, le circuit se trouve relié à la fois au manifold et au vacuomètre. Rien n'est encore ouvert côté manifold, et la pompe ne tourne pas. Le professeur vient vérifier le montage et ces vannes, avant que vous ouvriez les voies et mettiez la pompe en route.", cadre: ["equipment-installation"], cible: "vannes-service",
         tuyaux: ["blue", "red", "black", "vac"], vannes: "mid", aiguilles: "zero", vac: "rien",
         regarde: "Les vannes de service A, B et C du groupe.",
         fais: "Je décolle chaque vanne de service du siège arrière : position intermédiaire, sans forcer.",
@@ -168,20 +168,20 @@
         arret: "Le professeur a vérifié le montage et les vannes, avant l'ouverture des voies et la mise en route de la pompe." },
 
       /* TP 10 de Franck : la pompe démarre isolement fermé (elle part sans charge), puis on ouvre les voies. */
-      { id: "marche", verbe: "Je mets la pompe en route", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-pump",
+      { id: "marche", verbe: "Je mets la pompe en route", narration: "On démarre maintenant la pompe, mais d'une façon précise : son isolement est fermé, et les vannes du manifold le sont aussi. La pompe part ainsi sans charge. On écoute si elle tourne rond, sans heurt. Aucune voie n'est ouverte, donc les aiguilles du manifold restent immobiles. Attention au bouchon de refoulement : ne vous penchez pas dessus, car de l'huile peut être projetée. Quand la pompe tourne bien, on ouvre les voies.", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-pump",
         tuyaux: ["blue", "red", "black", "vac"], vannes: "mid", manifold: [], pompeIso: false, aiguilles: "zero", vac: "rien",
         regarde: "L'isolement de la pompe, son interrupteur.",
         fais: "Isolement de la pompe fermé, vannes du manifold fermées. Interrupteur sur marche : la pompe démarre à vide.",
         voir: "La pompe tourne sans à-coup ; les aiguilles du manifold ne bougent pas encore.",
         danger: "Je ne me penche pas sur le bouchon de refoulement : la pompe peut projeter de l'huile." },
 
-      { id: "voies", verbe: "J'ouvre les voies", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-manifold",
+      { id: "voies", verbe: "J'ouvre les voies", narration: "La pompe tourne, il est temps de la laisser tirer sur le circuit. On ouvre d'abord son isolement, puis les voies du manifold : le vide, la basse pression et la haute pression. La voie de service reste fermée. Quand le chemin est ouvert, les aiguilles du manifold se mettent à descendre vers le vide. C'est ensuite le vacuomètre qui prend la suite, et c'est sur lui que vous suivrez la descente à l'étape d'après.", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "black", "vac"], vannes: "mid", manifold: ["bp", "hp", "vac"], pompeIso: true, aiguilles: "vide", vac: "rien",
         regarde: "L'isolement de la pompe, les vannes VIDE, BP et HP du manifold.",
         fais: "Pompe en route, j'ouvre l'isolement de la pompe, puis VIDE, BP et HP sur le manifold. SERVICE reste fermée.",
         voir: "Les aiguilles du manifold descendent vers le vide ; puis le vacuomètre prend le relais." },
 
-      { id: "descente", verbe: "Je tire au vide jusqu'à la cible", cadre: ["equipment-installation", "equipment-vacuum", "zone-vide"], cible: "equipment-vacuum",
+      { id: "descente", verbe: "Je tire au vide jusqu'à la cible", narration: "Maintenant, on laisse la pompe travailler et on suit le chiffre de l'afficheur du vacuomètre. Les aiguilles du manifold ne comptent plus : elles ne remplacent pas le vacuomètre. On continue jusqu'à ce que l'afficheur atteigne la cible du poste, donnée par le professeur. Vous relevez le nombre tel qu'il s'affiche, dans l'unité du poste. Si le chiffre cesse de descendre avant la cible, c'est qu'un raccord laisse entrer de l'air. Une fois la cible atteinte, on pourra isoler le circuit.", cadre: ["equipment-installation", "equipment-vacuum", "zone-vide"], cible: "equipment-vacuum",
         tuyaux: ["blue", "red", "black", "vac"], vannes: "mid", manifold: ["bp", "hp", "vac"], pompeIso: true, aiguilles: "vide", vac: "descente",
         regarde: "L'afficheur du vacuomètre, pas le manifold.",
         fais: "Je laisse tourner. Je lis le vacuomètre, jamais les aiguilles du manifold. Je continue jusqu'à la cible du poste.",
@@ -197,7 +197,7 @@
             return ["ambre", "Pas encore : " + n(c, x) + u(c) + ", la cible est " + n(c, cible) + u(c) + ". Je laisse tourner. Si ça ne descend plus : un raccord laisse entrer de l'air."];
           } } },
 
-      { id: "isoler", verbe: "J'isole le circuit, puis j'arrête la pompe", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-manifold",
+      { id: "isoler", verbe: "J'isole le circuit, puis j'arrête la pompe", narration: "Voici le geste qui protège le travail déjà fait. Le vide a atteint la cible du poste : on ferme alors la voie du vide au manifold, puis l'isolement de la pompe, avant même d'arrêter celle-ci. Pendant ce temps, elle continue à tourner. Ensuite seulement, on la coupe. Si on la coupait circuit ouvert, de l'huile et de l'air pourraient revenir vers le circuit, et il faudrait refaire tout le tirage. Dans le bon ordre, le vide reste prisonnier du circuit.", cadre: ["equipment-manifold", "equipment-pump"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "black", "vac"], vannes: "mid", manifold: ["bp", "hp"], pompeIso: false, aiguilles: "vide", vac: "descente",
         regarde: "La vanne VIDE du manifold, l'isolement de la pompe, l'interrupteur.",
         fais: "Cible atteinte : je ferme la vanne VIDE et l'isolement de la pompe. La pompe tourne encore. Ensuite seulement, je l'arrête.",
@@ -207,7 +207,7 @@
           oui: "Circuit isolé, puis pompe arrêtée : le vide est gardé, la pompe ne peut plus rien renvoyer dans le circuit.",
           non: "STOP : pompe arrêtée circuit ouvert, l'huile et l'air ont pu remonter. J'appelle le professeur : on recommence le tirage au vide." } },
 
-      { id: "remontee", verbe: "Je fais le test de remontée", cadre: ["equipment-installation", "equipment-vacuum", "zone-vide"], cible: "equipment-vacuum",
+      { id: "remontee", verbe: "Je fais le test de remontée", narration: "Un tirage au vide n'est jamais une vérification de l'étanchéité : c'est ce test qui renseigne. Le circuit est isolé et plus rien ne tire dessus. On lance le chronomètre et on ne manœuvre aucune vanne pendant toute la durée fixée par le professeur. On lit le vacuomètre trois fois : au départ, à la moitié du temps et à la fin, en notant chaque valeur dans l'unité du poste. Ces trois valeurs donnent une courbe, que l'on lira à l'étape suivante. Le professeur vient vérifier vos trois relevés, avant que vous jugiez le test.", cadre: ["equipment-installation", "equipment-vacuum", "zone-vide"], cible: "equipment-vacuum",
         tuyaux: ["blue", "red", "black", "vac"], vannes: "mid", manifold: ["bp", "hp"], pompeIso: false, aiguilles: "vide", vac: "remontee",
         regarde: "Le vacuomètre et le chrono.",
         fais: "Je lance le chrono, sans toucher aucune vanne. Je lis le vacuomètre au départ, à la moitié et à la fin de la durée du professeur.",
@@ -224,7 +224,7 @@
           } },
         arret: "Le professeur a vérifié mes trois relevés, avant que je juge le test." },
 
-      { id: "lecture", verbe: "Je lis la courbe et je décide", cadre: ["courbes"], cible: "equipment-vacuum",
+      { id: "lecture", verbe: "Je lis la courbe et je décide", narration: "Vous avez maintenant trois valeurs, qui donnent une courbe. Trois formes de courbe sont possibles. Le vide peut rester stable : le circuit est sec et étanche, et la charge peut suivre. Il peut remonter puis s'arrêter : c'est de l'humidité, on retire au vide puis on refait le test. Il peut enfin remonter sans jamais s'arrêter : c'est une fuite, on retourne à la gare quatre et on ne charge pas. Reste à reconnaître laquelle ressemble à vos relevés, écrits tels que vous les avez lus, même si le résultat est mauvais. La décision se prend avec le professeur.", cadre: ["courbes"], cible: "equipment-vacuum",
         tuyaux: ["blue", "red", "black", "vac"], vannes: "mid", manifold: ["bp", "hp"], pompeIso: false, aiguilles: "vide", vac: "remontee",
         regarde: "Mes trois valeurs et les trois courbes.",
         fais: "Je compare mes valeurs aux trois formes. Je touche la forme qui ressemble à mes relevés. Puis je décide, avec le professeur.",
@@ -243,7 +243,7 @@
             }[f]];
           } } },
 
-      { id: "depose", verbe: "Je range la pompe et je remets tout comme trouvé", cadre: ["equipment-installation", "equipment-pump", "equipment-vacuum", "zone-vide"], cible: "equipment-pump",
+      { id: "depose", verbe: "Je range la pompe et je remets tout comme trouvé", narration: "Le test est jugé et la décision est prise : le professeur la vérifie avant que vous démontiez quoi que ce soit. Ensuite, on range. La pompe et le vacuomètre sont débranchés, leurs raccords bouchés, puis la pompe est rangée après un dernier contrôle de son huile, niveau et couleur. Du côté de la machine, les vannes de service retournent au siège arrière, et les capuchons de tige et les bouchons de prise reprennent leur place, serrés. Le circuit est laissé comme le professeur le demande. Pour finir, on garde une trace du résultat.", cadre: ["equipment-installation", "equipment-pump", "equipment-vacuum", "zone-vide"], cible: "equipment-pump",
         tuyaux: ["blue", "red"], vannes: "arriere", aiguilles: "vide", vac: "rien",
         regarde: "La pompe, le vacuomètre, les vannes de service.",
         fais: "Pompe et vacuomètre débranchés, raccords bouchés, pompe rangée. Vannes de service au siège arrière, capuchons et bouchons remis.",

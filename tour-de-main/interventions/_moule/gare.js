@@ -131,6 +131,45 @@
   <main><div class="filigrane" aria-hidden="true"></div><div id="vue"></div></main>`);
   const vue = document.getElementById("vue");
 
+  /* ---------- la voix (chantier prof vocal, 17/10/2026) ----------
+     Chaque étape a son texte pour l'oreille (`narration`, ou `azote.narration`) : la voix explique le geste, elle ne
+     relit pas la carte. Au clic seulement ; changer d'étape ou d'onglet la coupe, changer de vitesse aussi. Sur
+     inerweb.fr, la page charge moteur/voix.js (MP3 s'il existe, sinon voix du navigateur), le réglage de vitesse commun
+     et le prof vocal du site : il lit l'étape puis attend l'élève, car chaque étape est un geste à faire.
+     Sans voix française, on ne parle pas. */
+  let parle = false;
+  const voixFr = () => {
+    const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter(v => v.lang.toLowerCase().startsWith("fr"));
+    return fr.find(v => /natural|neural|online/i.test(v.name)) || fr.find(v => /google/i.test(v.name)) || fr.find(v => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+  };
+  if ("speechSynthesis" in window) speechSynthesis.getVoices();   /* Chrome charge ses voix à la première demande */
+  function majEcoute() {
+    const b = vue.querySelector("[data-act=ecouter]"); if (!b) return;
+    b.textContent = parle ? "■ Arrêter" : "▶ Écouter"; b.setAttribute("aria-pressed", String(parle));
+  }
+  function taire() { if (!("speechSynthesis" in window)) return; parle = false; speechSynthesis.cancel(); majEcoute(); }
+  function ecouter(e) {
+    if (parle) { taire(); return; }
+    const v = voixFr(); if (!e || !e.narration || !v) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(e.narration);
+    u.lang = "fr-FR"; u.voice = v; u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+    u.onstart = () => { parle = true; majEcoute(); };
+    u.onend = u.onerror = () => { parle = false; majEcoute(); };
+    speechSynthesis.speak(u);
+  }
+  document.addEventListener("pilotevoix:vitesse", taire);
+  if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.monter(document.querySelector(".haut .ligne1"));
+  const boutonEcouter = e => e.narration ? `<button class="btn clair ecouter" data-act="ecouter" data-prof-ecouter aria-pressed="false">▶ Écouter</button>` : "";
+  /* le prof vocal du site : sur la carte d'une étape, il y a toujours un geste à faire (toucher l'appareil sur le dessin,
+     ou le geste sur la vraie machine) ; il lit l'étape, puis attend. « Ma trace » n'a rien à dire. */
+  window.PILOTE_PROF_ACTIVITE = () => {
+    const v = (location.hash.match(/vue=(\w+)/) || [])[1] || "poste";
+    if (v === "entr") { const e = etapes()[S.entr.ici]; return !(e && S.entr.reussi === e.id); }
+    return v === "poste";
+  };
+  let derniereCarte = "";
+
   function majAvance() {
     const L = etapes(), n = L.filter(e => S.etapes[e.id] && S.etapes[e.id].fait).length;
     document.getElementById("barre").style.width = (100 * n / L.length) + "%";
@@ -185,15 +224,15 @@
     vue.innerHTML = blocMachine() + `<div class="poste">
       <nav class="liste" aria-label="Les étapes"><ol>${L.map((x, k) => `<li class="${fait(x) ? "ok" : ""} ${k === i ? "ici" : ""}"><button data-aller="${k}"><span class="n">${k + 1}</span>${sansJe(x.verbe)}${x.arret ? '<span class="stop">ARRÊT</span>' : ""}</button></li>`).join("")}</ol></nav>
       <div><div class="pastilles">${L.map((x, k) => `<button class="${fait(x) ? "ok" : ""} ${k === i ? "ici" : ""}" data-aller="${k}" aria-label="Étape ${k + 1}">${k + 1}</button>`).join("")}</div>
-      <article class="carte ${st.fait ? "faite" : ""}">
-        <div class="entete"><span class="num">Étape ${i + 1} / ${L.length}</span><h2 class="verbe">${e.verbe}</h2></div>
+      <article class="carte ${st.fait ? "faite" : ""}" data-prof-zone>
+        <div class="entete"><span class="num">Étape ${i + 1} / ${L.length}</span><h2 class="verbe">${e.verbe}</h2>${boutonEcouter(e)}</div>
         <figure class="dessin"></figure>
         <div class="trois"><div><b>Je regarde</b>${e.regarde}</div><div><b>Je fais</b>${e.fais}</div><div><b>Je dois voir</b>${e.voir}</div></div>
         ${e.danger ? `<p class="danger"><b>Danger · </b>${e.danger}</p>` : ""}
         ${blocControle(e, st)}
         ${e.arret ? `<label class="arret"><input type="checkbox" data-act="prof" ${st.prof ? "checked" : ""}><span>Point d'arrêt : j'appelle le professeur<small>${e.arret}</small></span></label>` : ""}
-        <div class="bas"><button class="btn clair" data-aller="${Math.max(0, i - 1)}" ${i === 0 ? "disabled" : ""}>← Étape d'avant</button>
-          <button class="btn fait" data-act="fait" ${bloque ? "disabled" : ""}>${st.fait ? "Fait ✓ — suivante →" : "C'est fait ✓"}</button></div>
+        <div class="bas"><button class="btn clair" data-aller="${Math.max(0, i - 1)}" data-prof-precedent ${i === 0 ? "disabled" : ""}>← Étape d'avant</button>
+          <button class="btn fait" data-act="fait" data-prof-suivant ${bloque ? "disabled" : ""}>${st.fait ? "Fait ✓ — suivante →" : "C'est fait ✓"}</button></div>
         <p class="reste">${reste.length ? `Ce qui me reste : <b>${reste.length} étape${reste.length > 1 ? "s" : ""}</b> — ${reste.slice(0, 3).map(([x, k]) => (k + 1) + ". " + sansJe(x.verbe)).join(" · ")}${reste.length > 3 ? " …" : ""}` : "<b>Tout est fait.</b> Je passe à « Ma trace »."}</p>
       </article></div></div>`;
     poserDessin(vue.querySelector("figure.dessin"), e, false);
@@ -203,16 +242,16 @@
   function vueEntr() {
     const L = etapes(); S.entr.ici = Math.min(S.entr.ici, L.length - 1);
     const i = S.entr.ici, e = L[i], ok = S.entr.reussi === e.id;
-    vue.innerHTML = `<div class="entr"><article class="carte">
-      <div class="entete"><span class="num">Étape ${i + 1} / ${L.length}</span><h2 class="verbe">${e.verbe}</h2></div>
+    vue.innerHTML = `<div class="entr"><article class="carte" data-prof-zone>
+      <div class="entete"><span class="num">Étape ${i + 1} / ${L.length}</span><h2 class="verbe">${e.verbe}</h2>${boutonEcouter(e)}</div>
       <p class="consigne">${ok ? "✓ " + e.voir : `Où se fait ce geste ? <span class="toucher">Touchez l'appareil sur le dessin.</span>`}</p>
       <figure class="dessin"></figure>
       <div class="trois"><div><b>Je regarde</b>${e.regarde}</div><div><b>Je fais</b>${e.fais}</div><div><b>Je dois voir</b>${ok ? e.voir : "…"}</div></div>
       ${e.danger && ok ? `<p class="danger"><b>Danger · </b>${e.danger}</p>` : ""}
       <p id="retour" class="verdict" hidden></p>
       <div class="bas"><span class="score">Erreurs de toucher : ${S.entr.erreurs}</span>
-        <button class="btn clair" data-entr="${Math.max(0, i - 1)}" ${i === 0 ? "disabled" : ""} aria-label="Étape d'avant">←</button>
-        <button class="btn fait" data-entr="${i + 1}" ${ok ? "" : "disabled"}>${i === L.length - 1 ? "Fin : je passe au poste" : "Étape suivante →"}</button></div>
+        <button class="btn clair" data-entr="${Math.max(0, i - 1)}" data-prof-precedent ${i === 0 ? "disabled" : ""} aria-label="Étape d'avant">←</button>
+        <button class="btn fait" data-entr="${i + 1}" data-prof-suivant ${ok ? "" : "disabled"}>${i === L.length - 1 ? "Fin : je passe au poste" : "Étape suivante →"}</button></div>
     </article></div>`;
     const svg = poserDessin(vue.querySelector("figure.dessin"), e, true);
     if (ok) { const g = svg.querySelector("#" + e.cible); if (g) g.classList.add("bon"); }
@@ -261,6 +300,9 @@
 
   function rendre() {
     const v = (location.hash.match(/vue=(\w+)/) || [])[1] || "poste";
+    /* une autre carte (étape, onglet, parcours) : la voix de la carte quittée se tait ; un contrôle coché sur la même carte, non */
+    const carte = v + ":" + S.machine.parcours + ":" + (v === "entr" ? S.entr.ici : v === "poste" ? S.ici : "");
+    if (carte !== derniereCarte) { derniereCarte = carte; taire(); }
     document.querySelectorAll(".onglets button").forEach(b => b.setAttribute("aria-pressed", b.dataset.vue === v));
     ({ entr: vueEntr, poste: vuePoste, trace: vueTrace }[v] || vuePoste)();
     majAvance();
@@ -271,6 +313,7 @@
   vue.addEventListener("click", ev => {
     const b = ev.target.closest("[data-aller],[data-act],[data-oui],[data-entr],[data-parcours],[data-niveau],[data-choix]"); if (!b) return;
     const L = etapes(), e = L[S.ici], st = e ? etat(e.id) : {};
+    if (b.dataset.act === "ecouter") { ecouter(/vue=entr/.test(location.hash) ? L[S.entr.ici] : e); return; }
     if (b.dataset.aller !== undefined) S.ici = +b.dataset.aller;
     else if (b.dataset.parcours) { S.machine.parcours = b.dataset.parcours; S.ici = 0; S.entr.ici = 0; }
     else if (b.dataset.niveau) S.machine.niveau = b.dataset.niveau;

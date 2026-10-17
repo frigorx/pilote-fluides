@@ -150,7 +150,7 @@
     },
 
     etapes: [
-      { id: "securite", verbe: "Je sécurise le poste et je lis la plaque", cadre: ["equipment-installation"], cible: "equipment-installation",
+      { id: "securite", verbe: "Je sécurise le poste et je lis la plaque", narration: "Cette gare traite le complément de charge : une machine en marche qui manque de fluide, et à laquelle on ajoute du fluide, pesé. Comme la machine tourne, la prudence passe d'abord. On repère l'arrêt d'urgence, on met lunettes et gants, et on tient mains et outils à l'écart des ventilateurs. On se méfie aussi du refoulement, brûlant, et du fluide, qui brûle par le froid. On lit ensuite la plaque, qui donne le fluide et la charge. On note aussi les fourchettes du poste que le professeur vous donne : elles serviront à conclure plus loin.", cadre: ["equipment-installation"], cible: "equipment-installation",
         regarde: "La machine en marche, sa plaque, son arrêt d'urgence.",
         fais: "Lunettes et gants. Je repère l'arrêt d'urgence. Je lis la plaque : fluide et charge. J'écris aussi dans « Ma machine » les fourchettes du poste, données par le professeur.",
         voir: "Machine en marche, EPI sur moi, plaque lue et notée.",
@@ -160,7 +160,7 @@
           ok: "Poste sécurisé, plaque lue.", manque: "Il manque une coche : je ne touche à rien avant." } },
 
       /* Franck, 08/10 : avant toute intervention, état des lieux — rien de perdu, rien d'abîmé, vannes en service au siège arrière. */
-      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", cadre: ["equipment-installation"], cible: "vannes-service",
+      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", narration: "La machine tourne, mais ici on ne manœuvre rien : on observe. Pour chaque vanne de service, on vérifie que le capuchon de tige et le bouchon de prise sont en place, serrés, sans dommage. Les vannes sont en position de service, au siège arrière. Ce relevé a un but : savoir, à la fin, tout remettre exactement comme on l'a trouvé. Si quelque chose manque ou paraît abîmé, on en parle au professeur avant de commencer. Ensuite vient la pose du manifold.", cadre: ["equipment-installation"], cible: "vannes-service",
         regarde: "Les vannes de service, leurs capuchons et leurs bouchons.",
         fais: "Je regarde chaque vanne de service, sans la manœuvrer : capuchon de tige et bouchon de prise présents, serrés, en bon état.",
         voir: "Tout est là et serré ; les vannes sont au siège arrière, comme en service.",
@@ -169,7 +169,7 @@
           ok: "État des lieux fait : je saurai tout remettre comme je l'ai trouvé.",
           manque: "Il manque quelque chose : je le signale au professeur avant de commencer." } },
 
-      { id: "poser", verbe: "Je pose le manifold et je le mets hors air", cadre: ["equipment-installation", "equipment-manifold", "equipment-pump", "equipment-vacuum", "equipment-bottle"], cible: "equipment-pump",
+      { id: "poser", verbe: "Je pose le manifold et je le mets hors air", narration: "On pose ici le manifold sur la machine en marche, puis on chasse l'air de ses flexibles. Vannes de service au siège arrière, le bleu rejoint la vanne C, côté basse pression, et le rouge la vanne B, côté haute pression. Le noir va à la pompe, le jaune à la bouteille, dont le robinet reste fermé. Vient le tirage au vide jusqu'à la cible du poste, puis tout est refermé avant l'arrêt de la pompe. Le but : que seul le fluide passe dans la machine. Un vide qui ne tient pas trahit un raccord qui fuit : on resserre et on recommence.", cadre: ["equipment-installation", "equipment-manifold", "equipment-pump", "equipment-vacuum", "equipment-bottle"], cible: "equipment-pump",
         tuyaux: ["blue", "red", "black", "yellow"], manifold: ["bp", "vac", "service", "hp"], aiguilles: "vide", balance: "depart",
         regarde: "Le manifold, les 4 flexibles, le vacuomètre.",
         fais: "Vannes de service au siège arrière. Bleu sur C, rouge sur B, noir sur la pompe, jaune sur la bouteille fermée. Je tire au vide : VIDE, BP, HP et SERVICE ouvertes, puis je ferme.",
@@ -180,7 +180,7 @@
           ok: "Manifold posé, flexibles sans air : rien d'autre que du fluide ne passera.",
           manque: "Il manque une coche : si le vide ne tient pas, un raccord fuit. Je resserre et je recommence." } },
 
-      { id: "ouvrir", verbe: "Je décolle les vannes de service et je lis", cadre: ["equipment-installation", "equipment-manifold"], cible: "vannes-service",
+      { id: "ouvrir", verbe: "Je décolle les vannes de service et je lis", narration: "Le manifold est posé et sans air : on passe à la lecture de la machine. Ses vannes restent fermées. Sur les vannes de service B et C, on donne un quart de tour pour les décoller. Quand les aiguilles sont stables, on lit la basse et la haute pression. Puis on cherche leur température sur la réglette : pour un mélange, colonne vapeur pour la basse pression, colonne liquide pour la haute. Ces deux températures serviront au calcul suivant. Le professeur vérifie votre montage et votre vide, et reste à côté de vous : une vanne de service ne se manœuvre jamais sans lui.", cadre: ["equipment-installation", "equipment-manifold"], cible: "vannes-service",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["mid", "mid"], aiguilles: "avant",
         regarde: "Les aiguilles BP et HP du manifold.",
         fais: "Vannes du manifold fermées. Sur B et C : un quart de tour. J'attends des aiguilles stables, je lis BP et HP, puis leur température sur la réglette. Mélange : vapeur pour la BP, liquide pour la HP.",
@@ -204,7 +204,7 @@
           } },
         arret: "Le professeur a vérifié mon montage et mon vide, et il est à côté de moi pour les vannes de service." },
 
-      { id: "ecarts", verbe: "Je mesure les températures et je calcule", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
+      { id: "ecarts", verbe: "Je mesure les températures et je calcule", narration: "On mesure maintenant deux températures sur la machine, à confronter à celles de la réglette. La sonde se pose sur un tube nu, en bon contact, d'abord à l'aspiration, puis sur le tube liquide. Surtout pas sur le tube de refoulement, qui est brûlant. La surchauffe est l'écart entre la température du tube d'aspiration et la température de saturation lue pour la basse pression. Le sous-refroidissement est l'écart entre la température de saturation lue pour la haute pression et celle du tube liquide. Ces écarts s'expriment en kelvins, et on les compare aux fourchettes du poste.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["mid", "mid"], aiguilles: "avant",
         regarde: "Le tube d'aspiration et le tube liquide, la sonde posée.",
         fais: "Sonde sur le tube nu, bien en contact : à l'aspiration, puis sur le tube liquide. Surchauffe = T aspiration − T sat BP. Sous-refroidissement = T sat HP − T liquide.",
@@ -227,7 +227,7 @@
               " K (poste : " + ecrit(pSR[0]) + " à " + ecrit(pSR[1]) + ") : " + mot(etat(sr, pSR, c)) + "."];
           } } },
 
-      { id: "conclusion", verbe: "Je conclus, avec mes preuves", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
+      { id: "conclusion", verbe: "Je conclus, avec mes preuves", narration: "Conclure, c'est s'appuyer sur des preuves, pas sur une impression. On en a trois : le voyant liquide, la surchauffe et le sous-refroidissement. On compare les deux écarts aux fourchettes du poste, puis on retient la conclusion qu'on peut défendre. Un manque de fluide se reconnaît à une surchauffe trop haute et un sous-refroidissement trop bas à la fois, avec des bulles au voyant. Il faut que les deux écarts le disent ensemble. Si les écarts ne racontent pas une simple histoire de charge, il vaut mieux s'arrêter et appeler le professeur.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["mid", "mid"], aiguilles: "avant",
         regarde: "Le voyant liquide, la surchauffe, le sous-refroidissement.",
         fais: "Je regarde le voyant liquide. Je compare mes deux écarts aux fourchettes du poste. Je choisis la conclusion que je peux défendre.",
@@ -245,7 +245,7 @@
             return ["rouge", "STOP : mes relevés (" + preuve + ") ne disent pas cela. Je ne complète pas sur une mauvaise conclusion : il faut surchauffe haute ET sous-refroidissement bas. J'appelle le professeur."];
           } } },
 
-      { id: "fuite", verbe: "Je cherche la fuite au détecteur", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
+      { id: "fuite", verbe: "Je cherche la fuite au détecteur", narration: "Ajouter du fluide à une machine qui fuit, c'est le voir repartir dans l'air. Voilà pourquoi la recherche de fuite passe avant l'ouverture de la bouteille. On commence par relire le registre, pour connaître les fuites passées. Puis, détecteur électronique en marche et testé, on le promène avec lenteur devant chaque raccord, chaque vanne de service, chaque soudure et le détendeur. Si l'alarme sonne, on n'ajoute rien : il faut réparer, puis recontrôler. Sans alarme, on inscrit sur la fiche le détecteur employé, et on peut préparer la bouteille.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["mid", "mid"], aiguilles: "avant",
         regarde: "Raccords, vannes de service, soudures, détendeur, registre.",
         fais: "Je lis le registre : les anciennes fuites. Détecteur électronique allumé et vérifié. Je passe lentement sur chaque raccord, chaque vanne de service, chaque soudure, le détendeur.",
@@ -255,7 +255,7 @@
           oui: "Pas de fuite : je peux compléter. Je note sur la fiche le détecteur utilisé.",
           non: "STOP : je ne complète pas. Une fuite trouvée se répare d'abord, puis on la recontrôle. J'appelle le professeur." } },
 
-      { id: "bouteille", verbe: "Je vérifie la bouteille et je la pèse", cadre: ["equipment-bottle"], cible: "equipment-bottle",
+      { id: "bouteille", verbe: "Je vérifie la bouteille et je la pèse", narration: "On passe à la bouteille de fluide neuf, une fois la recherche de fuite faite. D'abord, le fluide : on lit à haute voix ce que dit l'étiquette, et cela doit correspondre à la plaque. Si ce n'est pas le cas, on ne branche pas la bouteille : mélanger deux fluides dans une machine empêche tout recyclage. Ensuite, la pesée : bouteille debout sur la balance, robinets fermés, et on attend que l'affichage se fixe. Ce chiffre, la masse de départ, est noté avant d'ouvrir. Le professeur vérifie la fuite cherchée, le fluide et cette masse avant l'ouverture.", cadre: ["equipment-bottle"], cible: "equipment-bottle",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["mid", "mid"], aiguilles: "avant", balance: "depart",
         regarde: "L'étiquette de la bouteille de fluide neuf, la balance.",
         fais: "Je lis à voix haute le fluide de l'étiquette. Bouteille debout sur la balance, robinets fermés. J'attends un chiffre stable : c'est la masse de départ.",
@@ -274,7 +274,7 @@
           } },
         arret: "Le professeur a vérifié : fuite cherchée, fluide de la bouteille = plaque, masse de départ notée, avant que j'ouvre la bouteille." },
 
-      { id: "complement", verbe: "J'ajoute le fluide par petites quantités", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-manifold",
+      { id: "complement", verbe: "J'ajoute le fluide par petites quantités", narration: "Le fluide entre vraiment ici, mais par très petites doses. La machine tourne. On ouvre le robinet côté liquide de la bouteille, puisque la série des R quatre cents se charge toujours ainsi, puis la voie de service. Vient enfin la vanne basse pression, juste entrouverte. Cette retenue est voulue : le liquide doit avoir le temps de se vaporiser avant le compresseur, qu'il casserait. Après un petit ajout, on referme et on lit la balance. Ce passage par la basse pression n'est pas une règle générale : l'état du fluide et le moment de s'arrêter dépendent du poste et de la notice.", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["mid", "mid"], manifold: ["service", "bp"], aiguilles: "avant", balance: "cours",
         regarde: "La balance, l'aiguille BP, le voyant liquide.",
         fais: "Machine en marche. J'ouvre le robinet LIQUIDE de la bouteille (série R-4xx : toujours liquide), SERVICE, puis la vanne BP juste entrouverte. Petit ajout, puis je ferme.",
@@ -291,7 +291,7 @@
             return ["vert", "Déjà " + c.kg(m1 - x) + " ajoutés. Je ferme et j'attends que ça se stabilise avant d'en remettre."];
           } } },
 
-      { id: "stabiliser", verbe: "J'attends que ça se stabilise et je relève", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-manifold",
+      { id: "stabiliser", verbe: "J'attends que ça se stabilise et je relève", narration: "On ferme la vanne basse pression et le robinet de la bouteille, puis on attend que les pressions se stabilisent : pas question d'en remettre avant. Une fois la machine calme, on relève la basse et la haute pression, la surchauffe et le sous-refroidissement, et on regarde le voyant. Tant que les écarts ne sont pas redevenus normaux, on retourne à l'étape précédente pour ajouter encore un petit peu. Mais si le sous-refroidissement devient trop haut, on a trop ajouté : on s'arrête et on appelle le professeur.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["mid", "mid"], aiguilles: "apres",
         regarde: "BP, HP, voyant liquide, une fois les pressions stables.",
         fais: "Je ferme la vanne BP et le robinet de la bouteille. J'attends des pressions stables. Je relève BP, HP, surchauffe, sous-refroidissement. Pas encore normaux : j'ajoute encore un peu (étape 9).",
@@ -315,7 +315,7 @@
             return ["ambre", "Pas encore normal : surchauffe " + mot(a) + ", sous-refroidissement " + mot(b) + ". J'attends, puis j'ajoute encore un petit peu (étape 9)."];
           } } },
 
-      { id: "pesee-fin", verbe: "Je ferme la bouteille et je la repèse", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-bottle",
+      { id: "pesee-fin", verbe: "Je ferme la bouteille et je la repèse", narration: "Le dernier ajout est fait, et le robinet de la bouteille est fermé. On ouvre un instant la voie de service et la basse pression, pour que le fluide resté dans le flexible jaune entre dans la machine, puis on ferme. Alors seulement on lit la masse finale. La quantité ajoutée, c'est ce que la bouteille a perdu depuis la pesée de départ. On note aussi la charge déjà connue de la machine, d'après le registre, ou zéro si elle est inconnue. Le total ne doit jamais dépasser la plaque : au-delà, la haute pression monte trop et le compresseur est en danger.", cadre: ["equipment-installation", "equipment-manifold", "equipment-bottle"], cible: "equipment-bottle",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["mid", "mid"], aiguilles: "apres", balance: "fin",
         regarde: "La balance, le robinet de la bouteille.",
         fais: "Robinet de la bouteille fermé. J'ouvre un instant SERVICE et BP : le fluide du flexible jaune entre dans la machine. Je ferme. Je lis la masse finale.",
@@ -340,7 +340,7 @@
             return ["vert", "Masse ajoutée : " + c.kg(d) + " (" + c.kg(m1) + " − " + c.kg(x) + "). Je ne connais pas la charge d'avant : la règle reste « jamais au-delà de la plaque » (" + c.kg(ch) + "). Sous-refroidissement et HP me le disent. Je reporte " + c.kg(d) + " sur la fiche."];
           } } },
 
-      { id: "depose", verbe: "Je ramène la HP au siège arrière et j'aspire", cadre: ["equipment-installation", "equipment-manifold"], cible: "vannes-service",
+      { id: "depose", verbe: "Je ramène la HP au siège arrière et j'aspire", narration: "Le complément est terminé : il s'agit de défaire le montage proprement. La voie de service est fermée, et la vanne B, côté haute pression, est ramenée à son siège arrière. Le professeur vérifie ces points, ainsi que la bouteille fermée, avant que vous ouvriez la haute puis la basse pression du manifold. Ensuite, on les ouvre lentement : le compresseur vide le flexible haute pression. Les aiguilles se rejoignent et baissent ensemble. On referme dès qu'elles ont atteint la basse pression de marche, sans jamais passer sous zéro bar, sinon de l'air entrerait dans le circuit.", cadre: ["equipment-installation", "equipment-manifold"], cible: "vannes-service",
         tuyaux: ["blue", "red", "black", "yellow"], vannes: ["arriere", "mid"], manifold: ["bp", "hp"], aiguilles: "bas",
         regarde: "Les aiguilles BP et HP du manifold.",
         fais: "SERVICE fermée. Vanne B (HP) au siège arrière. J'ouvre HP puis BP du manifold, lentement : le compresseur aspire le flexible HP. Je ferme les deux quand les aiguilles ont rejoint la BP de marche (juste avant 0 bar si elle est basse).",
@@ -357,7 +357,7 @@
           } },
         arret: "Le professeur a vérifié : bouteille fermée, vanne B au siège arrière, avant que j'ouvre le by-pass du manifold." },
 
-      { id: "debrancher", verbe: "Je débranche et je remets tout comme trouvé", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
+      { id: "debrancher", verbe: "Je débranche et je remets tout comme trouvé", narration: "On défait maintenant le montage. D'abord la vanne C, côté basse pression, retourne à son siège arrière. On desserre ensuite le flexible bleu, puis le rouge, en retenant le raccord et sans se mettre en face : un flexible conserve un peu de pression. Les prises retrouvent leurs bouchons et les tiges leurs capuchons, et le détecteur passe sur les raccords et sur les bouchons, pour s'assurer qu'aucune alarme ne se déclenche. Enfin on revient à l'état des lieux du début : le poste doit être rangé, sans dommage, avec toutes ses pièces.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
         tuyaux: ["blue", "red"], vannes: ["arriere", "arriere"], aiguilles: "zero",
         regarde: "Vanne C, raccords, bouchons, puis l'état des lieux du départ.",
         fais: "Vanne C (BP) au siège arrière. Je desserre le bleu puis le rouge, lentement, raccord tenu. Bouchons et capuchons remis. Détecteur sur raccords et bouchons. Je compare avec l'état des lieux.",
@@ -368,7 +368,7 @@
           ok: "Tout est comme je l'ai trouvé : le poste est rangé.",
           manque: "Il manque une coche : je ne range pas avant d'avoir tout vérifié." } },
 
-      { id: "tracer", verbe: "Je trace l'intervention", cadre: ["equipment-bottle"], cible: "equipment-bottle",
+      { id: "tracer", verbe: "Je trace l'intervention", narration: "Pour finir, l'intervention doit laisser une trace écrite. Ce qu'on inscrit comme quantité, c'est la masse ajoutée, celle que la bouteille a perdue sur la balance, jamais une évaluation à vue. Elle figure sur la fiche d'intervention et dans le registre de l'équipement, avec la date, le fluide, la recherche de fuite effectuée et le détecteur employé. La fiche porte aussi votre nom. La bouteille est remise debout, ses robinets sont fermés et son étiquette reste lisible. Le professeur vérifie la pesée, cette masse et la fiche.", cadre: ["equipment-bottle"], cible: "equipment-bottle",
         balance: "fin",
         regarde: "La fiche d'intervention, le registre, la balance.",
         fais: "Je reporte la masse ajoutée (départ − fin), pas une estimation. Fiche d'intervention (CERFA) et registre : fluide, quantité ajoutée, fuite cherchée. Bouteille rangée debout.",

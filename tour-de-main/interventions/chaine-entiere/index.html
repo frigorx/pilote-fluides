@@ -8,7 +8,7 @@
 <title>La chaîne entière · Le tour de main</title>
 <meta name="description" content="Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste.">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="../_moule/gare.css?v=20261015-campagne">
+<link rel="stylesheet" href="../_moule/gare.css?v=4d41e01">
 <!-- Gare 8 (Franck, 08/10/2026 : « une feuille de route ») : aucune étape propre ; elle enchaîne les gares et lit,
      sur cet appareil, ce que l'élève y a déjà fait (mémoire locale de chaque gare, `tour-de-main:<gare>`). -->
 <style>
@@ -36,7 +36,8 @@
     <div class="titre">La chaîne entière<small>Les interventions de base · gare 8 · une installation neuve, de bout en bout</small></div></div>
   <div class="avance"><div class="barre"><i id="barre"></i></div><span id="avance-txt"></span></div>
 </header>
-<main><div class="filigrane" aria-hidden="true"></div>
+<main data-prof-zone><div class="filigrane" aria-hidden="true"></div>
+  <p class="voix-route"><button class="btn clair" id="ecouter-route" data-prof-ecouter aria-pressed="false">▶ Écouter</button></p>
   <p class="intro">Une installation neuve, montée et brasée, prête à être mise en service. Je fais les gares <b>dans l'ordre</b> :
     chacune s'ouvre sur sa guidance au poste, avec ses points d'arrêt et sa trace. Je reviens ici entre deux gares.</p>
   <p class="danger"><b>Danger · </b>Je ne passe à la gare suivante que si la précédente est finie : on ne tire pas au vide un circuit
@@ -45,6 +46,12 @@
   <p class="codes"><b>Référentiel.</b> Chaque gare porte ses codes (tâches, compétences, savoirs) pour le CAP IFCA et la 1re Bac Pro MFER,
     et l'attendu commun : le niveau de l'attestation d'aptitude fluides.</p>
 </main>
+<!-- la voix du site (inerweb.fr) : vitesse commune, MP3 ou voix du navigateur, prof vocal — chantier prof vocal 17/10/2026 -->
+<script src="../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+<script src="../../../moteur/voix-index.js?v=20260927-1"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js?v=20261017-voix"></script>
 <script>
 "use strict";
 const GARES = [
@@ -81,8 +88,33 @@ async function avancement(g) {
   document.getElementById("barre").style.width = (100 * finies / GARES.length) + "%";
   document.getElementById("avance-txt").textContent = finies + " / " + GARES.length + " gares finies";
 })();
+/* La voix (chantier prof vocal, 17/10/2026) : la feuille de route expliquée pour l'oreille, au clic seulement ;
+   la vitesse commune du site la règle et la coupe. Le prof vocal la lit, puis laisse l'élève choisir sa gare. */
+const NARRATION = "Cette page est votre feuille de route pour mettre en service une installation neuve, déjà montée et brasée. Quatre gares se suivent : poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide puis tester la remontée, et enfin charger en fluide neuf à la balance. L'ordre n'est pas un détail : un circuit qui fuit ne se tire pas au vide, et un circuit dont le vide ne tient pas ne se charge pas. Chaque gare s'ouvre sur sa guidance au poste. Entre deux gares, vous revenez ici : la page affiche ce que vous avez déjà terminé.";
+let parle = false;
+const bouton = document.getElementById("ecouter-route");
+const voixFr = () => {
+  const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter(v => v.lang.toLowerCase().startsWith("fr"));
+  return fr.find(v => /natural|neural|online/i.test(v.name)) || fr.find(v => /google/i.test(v.name)) || fr.find(v => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+};
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+const maj = () => { bouton.textContent = parle ? "■ Arrêter" : "▶ Écouter"; bouton.setAttribute("aria-pressed", String(parle)); };
+const taire = () => { if (!("speechSynthesis" in window)) return; parle = false; speechSynthesis.cancel(); maj(); };
+bouton.addEventListener("click", () => {
+  if (parle) { taire(); return; }
+  const v = voixFr(); if (!v) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(NARRATION);
+  u.lang = "fr-FR"; u.voice = v; u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+  u.onstart = () => { parle = true; maj(); };
+  u.onend = u.onerror = () => { parle = false; maj(); };
+  speechSynthesis.speak(u);
+});
+document.addEventListener("pilotevoix:vitesse", taire);
+if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.monter(document.querySelector(".haut .ligne1"));
+window.PILOTE_PROF_ACTIVITE = () => true;
 </script>
-<script src="../../moteur/agrandir.js?v=f4029ee" defer></script>
+<script src="../../moteur/agrandir.js?v=4d41e01" defer></script>
 <script src="../../moteur/marque.js" data-cartouche="Le tour de main" data-licence="cc-by-nc-nd" defer></script>
 </body>
 </html>

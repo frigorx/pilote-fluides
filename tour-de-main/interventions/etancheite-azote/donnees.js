@@ -86,7 +86,7 @@
     },
 
     etapes: [
-      { id: "securite", verbe: "Je sécurise le poste", cadre: ["equipment-bouteille", "equipment-detendeur"], cible: "equipment-bouteille",
+      { id: "securite", verbe: "Je sécurise le poste", narration: "Cette gare vous apprend à contrôler l'étanchéité d'une installation neuve ou ouverte, vide de fluide. On la met sous azote, puis on cherche si elle tient ou si elle fuit. Tout commence par la sécurité du poste. Mettez vos équipements de protection, et vérifiez que la bouteille est arrimée, debout, par sa chaîne. L'étiquette doit annoncer de l'azote sec, rien d'autre : ni oxygène, ni air comprimé. Ce gaz ne se sent pas, donc la zone doit être aérée. Le circuit, lui, doit être consigné. Avant d'aller plus loin, le professeur vient vérifier vos équipements et la bouteille.", cadre: ["equipment-bouteille", "equipment-detendeur"], cible: "equipment-bouteille",
         aiguilles: "zero", vannes: "arriere",
         regarde: "La bouteille d'azote, son étiquette, la zone de travail.",
         fais: "Lunettes et gants. La bouteille d'azote est debout, retenue par sa chaîne. Je lis l'étiquette : AZOTE. La zone est aérée, le circuit consigné.",
@@ -98,7 +98,7 @@
         arret: "Le professeur a vérifié : EPI portés, bouteille d'azote debout et arrimée." },
 
       /* Franck, 08/10 : avant toute intervention, état des lieux — rien de perdu, rien d'abîmé, vannes en service au siège arrière. */
-      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", cadre: ["equipment-installation"], cible: "equipment-installation",
+      { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", narration: "Avant de brancher quoi que ce soit, on relève l'état de départ de la machine. La raison : à la fin, tout devra être remis comme on l'a trouvé. On passe donc devant chaque vanne de service. Pour chacune, on contrôle que le capuchon de la tige et le bouchon de la prise sont là, serrés et en bon état. Les vannes sont au siège arrière, dans leur position de service. Si quelque chose manque ou semble abîmé, on le signale au professeur avant de commencer. Ce tour fait, on pourra poser le manifold.", cadre: ["equipment-installation"], cible: "equipment-installation",
         aiguilles: "zero", vannes: "arriere",
         regarde: "Les vannes de service, leurs capuchons et leurs bouchons.",
         fais: "Je vérifie chaque vanne de service : capuchon de tige et bouchon de prise présents, serrés, en bon état.",
@@ -108,7 +108,7 @@
           ok: "État des lieux fait : je saurai tout remettre comme je l'ai trouvé.",
           manque: "Il manque quelque chose : je le signale au professeur avant de commencer." } },
 
-      { id: "manifold", verbe: "Je pose le manifold", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "equipment-manifold",
+      { id: "manifold", verbe: "Je pose le manifold", narration: "On installe maintenant le manifold, avec ses quatre vannes et ses deux manomètres. Avant de brancher, on s'assure que ces vannes sont toutes fermées. Le flexible bleu se fixe côté basse pression, le rouge côté haute pression, serrés sans outil. Les vannes de service du groupe, elles, ne bougent pas : elles restent à leur siège arrière. Une chose mérite votre attention dès maintenant : le manomètre basse pression a une fin d'échelle, et la pression d'épreuve doit rester en dessous.", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "equipment-manifold",
         tuyaux: ["blue", "red"], aiguilles: "zero", vannes: "arriere",
         regarde: "Le manifold, ses 4 vannes, ses flexibles bleu et rouge.",
         fais: "Vannes du manifold fermées. Bleu sur la vanne de service BP, rouge sur la HP, serrés à la main. Les vannes de service restent au siège arrière.",
@@ -118,7 +118,7 @@
           items: ["4 vannes du manifold fermées", "aiguilles sur 0", "bleu sur la BP, rouge sur la HP, serrés à la main", "échelle du manomètre BP plus grande que la pression d'épreuve"],
           ok: "Manifold posé.", manque: "Il manque une coche : je ne continue pas avant." } },
 
-      { id: "detendeur", verbe: "Je monte le mano-détendeur", cadre: ["equipment-detendeur", "equipment-bouteille"], cible: "equipment-detendeur",
+      { id: "detendeur", verbe: "Je monte le mano-détendeur", narration: "On monte le mano-détendeur sur la bouteille, dont le robinet reste fermé. Le raccord doit être net : pas d'huile, pas de graisse. Puis on desserre complètement la vis de réglage. C'est le geste qui compte ici : si elle restait serrée au moment d'ouvrir, la bouteille enverrait toute sa pression d'un seul coup dans le circuit. Quand tout est en ordre, plus aucune pression ne peut partir vers le circuit, et les deux cadrans sont à zéro. Le professeur vient vérifier la vis et le robinet avant que la bouteille soit ouverte.", cadre: ["equipment-detendeur", "equipment-bouteille"], cible: "equipment-detendeur",
         tuyaux: ["blue", "red"], aiguilles: "zero", vannes: "arriere", vis: "desserree",
         regarde: "Le raccord de la bouteille, la vis de réglage, les deux cadrans.",
         fais: "Raccord propre, sans huile ni graisse. Je monte le mano-détendeur, robinet de la bouteille fermé. Je desserre la vis de réglage à fond (sens inverse des aiguilles d'une montre).",
@@ -129,7 +129,7 @@
           ok: "Détendeur prêt : aucune pression ne peut partir en sortie.", manque: "Il manque une coche : la bouteille reste fermée." },
         arret: "Le professeur a vérifié : vis desserrée, robinet fermé, avant l'ouverture de la bouteille." },
 
-      { id: "bouteille", verbe: "J'ouvre la bouteille et je lis le cadran", cadre: ["equipment-detendeur", "equipment-bouteille"], cible: "equipment-bouteille",
+      { id: "bouteille", verbe: "J'ouvre la bouteille et je lis le cadran", narration: "C'est ici que la bouteille est ouverte pour la première fois, et on le fait avec lenteur. On regarde ensuite les deux cadrans du mano-détendeur, et on note les deux valeurs, en bar. Chacune a son utilité. Le cadran de la bouteille dit si elle contient assez de gaz pour atteindre la pression d'épreuve. Celui de la sortie permet de contrôler que la vis était bien desserrée. Si ce dernier bouge, on referme aussitôt la bouteille, et on prévient le professeur. Si tout reste calme, on peut brancher le flexible.", cadre: ["equipment-detendeur", "equipment-bouteille"], cible: "equipment-bouteille",
         tuyaux: ["blue", "red"], aiguilles: "bouteille", vannes: "arriere", vis: "desserree", robinet: true,
         regarde: "Les deux cadrans du mano-détendeur.",
         fais: "J'ouvre lentement le robinet de la bouteille. Je lis le cadran BOUTEILLE. Le cadran SORTIE reste à 0.",
@@ -145,7 +145,7 @@
             return ["vert", "Bouteille à " + c.fr(hb, 0) + " bar, sortie à 0 : la vis était bien desserrée. La bouteille a de quoi monter jusqu'à la pression d'épreuve."];
           } } },
 
-      { id: "flexible", verbe: "Je branche le flexible et je le purge", cadre: ["equipment-manifold", "equipment-detendeur", "zone-flexibles"], cible: "equipment-manifold",
+      { id: "flexible", verbe: "Je branche le flexible et je le purge", narration: "Le flexible jaune relie la voie centrale du manifold au mano-détendeur : c'est lui qui amènera l'azote jusqu'au circuit. Mais il contient de l'air, qu'il faut d'abord chasser. Pour cela, on visse juste un peu la vis de réglage, et l'azote pousse l'air dehors, à distance du visage. Un souffle bref, puis le calme : la purge est faite. On serre alors les raccords et on desserre de nouveau la vis. On garde le raccord en main, car un flexible qui lâche fouette. Ensuite viendront les vannes.", cadre: ["equipment-manifold", "equipment-detendeur", "zone-flexibles"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "yellow"], aiguilles: "bouteille", vannes: "arriere", vis: "desserree", robinet: true,
         regarde: "Le flexible jaune, de la voie centrale du manifold au détendeur.",
         fais: "Jaune sur la voie centrale (SERVICE) du manifold et sur le détendeur. Je visse la vis juste un peu : l'azote chasse l'air, loin des visages. Je serre, puis je desserre la vis.",
@@ -155,7 +155,7 @@
           items: ["jaune sur la voie centrale du manifold", "air chassé par un court souffle d'azote", "raccords serrés, vis de nouveau desserrée"],
           ok: "Flexible branché et purgé.", manque: "Il manque une coche : je ne passe pas aux vannes avant." } },
 
-      { id: "vannes", verbe: "J'ouvre le chemin de l'azote", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
+      { id: "vannes", verbe: "J'ouvre le chemin de l'azote", narration: "Jusqu'ici, le circuit de la machine n'a rien reçu. Cette étape ouvre le chemin de l'azote jusqu'à lui. On décolle d'abord les vannes de service de leur siège arrière, en position intermédiaire, et si besoin on alimente l'électrovanne pour l'ouvrir. Au manifold, on ouvre ensuite trois voies : basse pression, service et haute pression, la voie du vide restant fermée. Les aiguilles ne montent pas encore, car la vis est desserrée. Une vanne de service ne se manœuvre jamais sans le professeur : il vérifie tout avant la montée en pression.", cadre: ["vannes-service", "equipment-manifold", "zone-flexibles"], cible: "vannes-service",
         tuyaux: ["blue", "red", "yellow"], aiguilles: "bouteille", vannes: "mid", manifold: ["bp", "service", "hp"], vis: "desserree", robinet: true,
         regarde: "Les vannes de service du groupe, puis les vannes du manifold.",
         fais: "Je décolle les vannes de service du siège arrière : position intermédiaire. Si besoin, j'alimente l'électrovanne pour l'ouvrir. J'ouvre BP, SERVICE et HP au manifold ; VIDE reste fermée.",
@@ -163,7 +163,7 @@
         danger: "Vis desserrée AVANT d'ouvrir. Le professeur est à côté : je ne manœuvre jamais seul une vanne de service.",
         arret: "Le professeur a vérifié : vannes de service, électrovanne et manifold, avant la montée en pression." },
 
-      { id: "monter", verbe: "Je monte en pression, par paliers", cadre: ["equipment-detendeur", "equipment-manifold"], cible: "equipment-detendeur",
+      { id: "monter", verbe: "Je monte en pression, par paliers", narration: "C'est le cœur de l'épreuve. On ne monte pas d'un seul coup : on visse un peu la vis de réglage, on attend, on lit, puis on recommence, étape par étape. À chaque fois, on tend l'oreille : si l'on entend un sifflement, on arrête. Deux limites ne se franchissent jamais : la pression d'épreuve donnée par le professeur, et la pression admissible inscrite sur la plaque de la machine. Au dernier palier, vous notez trois lectures. Elles se comparent entre elles et aux deux limites, et peuvent révéler une vanne restée fermée.", cadre: ["equipment-detendeur", "equipment-manifold"], cible: "equipment-detendeur",
         tuyaux: ["blue", "red", "yellow"], aiguilles: "monte", vannes: "mid", manifold: ["bp", "service", "hp"], vis: "serree", robinet: true,
         regarde: "Le cadran SORTIE et les deux manomètres du manifold.",
         fais: "Je visse la vis un peu, j'attends, je lis. Je recommence, palier après palier, jusqu'à la pression d'épreuve du professeur. À chaque palier j'écoute : un sifflement, j'arrête.",
@@ -185,7 +185,7 @@
             return ["vert", "Sortie, BP et HP à " + c.fr(hp, 1) + " bar : les trois indiquent la même pression, à la pression d'épreuve (" + c.fr(ep, 1) + " bar), sous la PS."];
           } } },
 
-      { id: "initial", verbe: "Je ferme et je relève la pression de départ", cadre: ["equipment-manifold", "equipment-detendeur", "equipment-bouteille"], cible: "equipment-manifold",
+      { id: "initial", verbe: "Je ferme et je relève la pression de départ", narration: "La montée est terminée : il s'agit maintenant d'isoler le circuit, pour voir s'il garde sa pression. On ferme d'abord le robinet de la bouteille, puis les trois vannes du manifold qui étaient ouvertes. On attend que les aiguilles se stabilisent, puis on relève la pression et la température de l'air. Cette température est notée parce qu'elle servira à la fin, quand on comparera. Surveillez le cadran de sortie pendant ce temps. S'il redescend alors que la bouteille est fermée, le raccord du flexible fuit : il faut régler ce défaut avant de continuer.", cadre: ["equipment-manifold", "equipment-detendeur", "equipment-bouteille"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "yellow"], aiguilles: "isole", vannes: "mid", manifold: [], vis: "serree", robinet: false,
         regarde: "Le cadran SORTIE, puis les deux manomètres du manifold.",
         fais: "Je ferme le robinet de la bouteille, puis les vannes BP, SERVICE et HP du manifold. J'attends que les aiguilles se calment. Je lis la pression et la température de l'air.",
@@ -200,7 +200,7 @@
             return ["ambre", "Seulement " + c.fr(p, 1) + " bar pour " + c.fr(ep, 1) + " bar d'épreuve : montée pas finie, ou fuite déjà ? Je regarde le cadran SORTIE."];
           } } },
 
-      { id: "fuite", verbe: "Je cherche la fuite à la solution moussante", cadre: ["equipment-installation"], cible: "equipment-installation",
+      { id: "fuite", verbe: "Je cherche la fuite à la solution moussante", narration: "Le circuit est sous pression et isolé : c'est le moment de repérer un endroit qui laisse échapper du gaz. On passe la solution moussante sur tous les points de jonction : raccords, brasures, presse-étoupe. Puis on patiente un peu et on observe. Ce qu'on recherche, c'est une bulle qui grossit, car c'est elle qui trahit une fuite. Si une bulle apparaît, on marque l'endroit sans y toucher tant que le circuit est sous pression, et on appelle le professeur. Sans bulle, on laisse le circuit tenir : c'est l'étape suivante.", cadre: ["equipment-installation"], cible: "equipment-installation",
         tuyaux: ["blue", "red", "yellow"], aiguilles: "isole", vannes: "mid", manifold: [], vis: "serree", robinet: false,
         regarde: "Chaque raccord, chaque brasure, chaque presse-étoupe.",
         fais: "Je passe la solution moussante sur chaque raccord, chaque brasure, chaque presse-étoupe. J'attends. Je cherche une bulle qui grossit.",
@@ -209,7 +209,7 @@
           oui: "Aucune bulle : pas de fuite visible. Je laisse tenir.",
           non: "STOP : une bulle, c'est une fuite. Je marque le raccord, je n'y touche pas sous pression, j'appelle le professeur." } },
 
-      { id: "final", verbe: "Je laisse tenir, puis je relève", cadre: ["equipment-manifold"], cible: "equipment-manifold",
+      { id: "final", verbe: "Je laisse tenir, puis je relève", narration: "Maintenant, c'est le temps qui travaille. On laisse tenir pendant la durée donnée par le professeur, sans intervenir. Au bout de ce temps, on relève de nouveau la pression, ainsi que la température de l'air. Les deux températures comptent, car sans fuite la pression suit la température du gaz : une petite baisse peut venir du froid et non d'une fuite. C'est à partir de ces deux relevés, départ et fin, qu'on rend son verdict : celui que disent les relevés, même s'il est mauvais. Le professeur vient vérifier vos relevés et votre verdict avant la vidange.", cadre: ["equipment-manifold"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "yellow"], aiguilles: "final", vannes: "mid", manifold: [], vis: "serree", robinet: false,
         regarde: "Les deux manomètres du manifold.",
         fais: "Je laisse tenir la durée donnée par le professeur, sans toucher à rien. Puis je relève la pression finale et la température de l'air.",
@@ -232,7 +232,7 @@
           } },
         arret: "Le professeur a vérifié mes deux relevés et mon verdict, avant la vidange." },
 
-      { id: "vidange", verbe: "Je vide l'azote à l'air, lentement", cadre: ["equipment-manifold", "equipment-detendeur"], cible: "equipment-manifold",
+      { id: "vidange", verbe: "Je vide l'azote à l'air, lentement", narration: "Le contrôle est terminé : il faut ramener le circuit à la pression de l'air, et cela se fait lentement. La bouteille reste fermée. On desserre très peu le raccord du flexible jaune, en le maintenant, à distance de tout visage : l'azote s'échappe alors en un souffle lent. Pendant ce temps, on suit les deux manomètres du manifold qui descendent. Tant qu'il reste de la pression, on attend, sans forcer. Vous notez ensuite les deux valeurs : elles disent si l'on peut débrancher sans risque.", cadre: ["equipment-manifold", "equipment-detendeur"], cible: "equipment-manifold",
         tuyaux: ["blue", "red", "yellow"], aiguilles: "vide", vannes: "mid", manifold: ["bp", "service", "hp"], vis: "serree", robinet: false,
         regarde: "Les aiguilles BP et HP du manifold.",
         fais: "Robinet de la bouteille fermé. Je desserre à peine le raccord du flexible jaune, loin des visages : l'azote sort à l'air. J'écoute un souffle lent.",
@@ -246,7 +246,7 @@
             return ["ambre", "Encore " + c.fr(Math.max(bp, hp), 1) + " bar : j'attends, l'azote sort lentement, je ne force pas."];
           } } },
 
-      { id: "fin-detendeur", verbe: "Je termine avec le mano-détendeur", cadre: ["equipment-detendeur", "equipment-bouteille"], cible: "equipment-detendeur",
+      { id: "fin-detendeur", verbe: "Je termine avec le mano-détendeur", narration: "Le circuit est vide, mais le mano-détendeur peut garder du gaz en lui. Bouteille fermée, on serre un peu la vis pour le vider, et on regarde les deux cadrans retomber. Puis on la desserre complètement. Le but est d'amener l'appareil au repos : son ressort ne fait plus d'effort et rien n'y est plus sous pression. Si un cadran refuse de redescendre, de l'azote est encore enfermé dedans : on reprend doucement, ou on fait venir le professeur. Il ne reste plus qu'à remettre la machine comme on l'a trouvée.", cadre: ["equipment-detendeur", "equipment-bouteille"], cible: "equipment-detendeur",
         tuyaux: ["blue", "red", "yellow"], aiguilles: "vide", vannes: "mid", manifold: ["bp", "service", "hp"], vis: "desserree", robinet: false,
         regarde: "Les deux cadrans du mano-détendeur, le robinet, la vis.",
         fais: "Robinet de la bouteille fermé. Je visse un peu la vis pour vider le détendeur : les deux cadrans tombent à 0. Puis je desserre la vis à fond.",
@@ -255,7 +255,7 @@
           oui: "Mano-détendeur au repos : le ressort ne travaille plus et rien n'est sous pression.",
           non: "Pas encore : un cadran qui n'est pas à 0, c'est de l'azote encore enfermé. Je reprends, doucement, ou j'appelle le professeur." } },
 
-      { id: "remise", verbe: "Je remets tout comme je l'ai trouvé", cadre: ["equipment-installation"], cible: "vannes-service",
+      { id: "remise", verbe: "Je remets tout comme je l'ai trouvé", narration: "Dernière étape de cette gare : rendre la machine telle qu'on l'a reçue. C'est à cela que servait l'état des lieux du début. Les vannes de service retournent au siège arrière, les flexibles sont débranchés, puis chaque capuchon de tige et chaque bouchon de prise est remis en place, bien serré. Le manifold et le poste sont rangés. La bouteille d'azote reste debout, arrimée, robinet fermé. Rien ne doit être abîmé, rien ne doit manquer. Tant que ces points ne sont pas tous réunis, on ne quitte pas le poste.", cadre: ["equipment-installation"], cible: "vannes-service",
         aiguilles: "zero", vannes: "arriere",
         regarde: "Les vannes de service, les capuchons, les bouchons, le poste.",
         fais: "Vannes de service au siège arrière. Je débranche les flexibles. Je remets capuchons de tige et bouchons de prise, serrés. Je range le manifold et le poste.",

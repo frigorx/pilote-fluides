@@ -61,18 +61,18 @@ window.GARE = {
   },
 
   etapes: [
-    { id: "securite", verbe: "Je sécurise le poste", cadre: ["equipment-installation"], cible: "equipment-installation",
+    { id: "securite", verbe: "Je sécurise le poste", narration: "Cette gare s'appelle « Récupérer le fluide » : on vide une machine de son fluide, le liquide d'abord, puis la vapeur, sans rien rejeter dans l'air. Tout commence par votre protection. Le fluide liquide peut provoquer des brûlures par le froid : c'est pour cela que les lunettes et les gants passent avant le premier flexible. La machine est ensuite arrêtée, puis consignée. Le professeur vient vérifier vos protections et la consignation avant de continuer. Après cela, on fait l'état des lieux.", cadre: ["equipment-installation"], cible: "equipment-installation",
       regarde: "La machine, son interrupteur, sa plaque.",
       fais: "Lunettes et gants. J'arrête la machine et je la consigne : cadenas et étiquette.",
       voir: "Machine arrêtée, cadenas posé, EPI sur moi.",
       danger: "Le fluide liquide brûle par le froid : lunettes et gants avant de toucher un flexible.",
       arret: "Le professeur a vérifié : EPI portés, machine consignée.",
-      azote: { fais: "Lunettes et gants. Le support est à l'arrêt, débranché.", voir: "Support à l'arrêt, EPI sur moi.",
+      azote: { narration: "Cette gare s'appelle « Récupérer le fluide » : on y vide une machine de son fluide, et cette version se déroule sur le support sous azote. Ici, c'est le support qui doit être à l'arrêt et débranché. Le danger, c'est la pression de l'azote : un flexible qui lâche fouette, d'où le raccord toujours tenu, loin des visages. Les lunettes et les gants restent portés. Le professeur vient vérifier vos protections et l'arrêt du support avant de continuer.", fais: "Lunettes et gants. Le support est à l'arrêt, débranché.", voir: "Support à l'arrêt, EPI sur moi.",
         danger: "L'azote est sous pression : un flexible qui lâche fouette. Je tiens le raccord, loin des visages.",
         arret: "Le professeur a vérifié : EPI portés, support à l'arrêt." } },
 
     /* Franck, 08/10 : avant toute intervention, état des lieux — rien de perdu, rien d'abîmé, vannes en service au siège arrière. */
-    { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", cadre: ["equipment-installation"], cible: "equipment-installation",
+    { id: "etat-des-lieux", verbe: "Je fais l'état des lieux", narration: "Avant toute intervention, on constate l'état dans lequel on trouve la machine. Sur chaque vanne de service, on observe la pièce qui coiffe la tige et celle qui ferme la prise : sont-elles présentes, bien serrées, en bon état ? On relève aussi la position des vannes. Ce constat est votre point de repère : il permettra de tout remettre comme vous l'avez trouvé. Si quelque chose manque, le professeur en est informé avant de commencer. Ensuite, on s'occupe de la bouteille.", cadre: ["equipment-installation"], cible: "equipment-installation",
       regarde: "Les vannes de service, leurs capuchons et leurs bouchons.",
       fais: "Je vérifie chaque vanne de service : capuchon de tige et bouchon de prise présents, serrés, en bon état.",
       voir: "Tout est là et serré ; les vannes sont au siège arrière, comme en service.",
@@ -81,7 +81,7 @@ window.GARE = {
         ok: "État des lieux fait : je saurai tout remettre comme je l'ai trouvé.",
         manque: "Il manque quelque chose : je le signale au professeur avant de commencer." } },
 
-    { id: "bouteille", verbe: "Je vérifie la bouteille", cadre: ["equipment-bottle"], cible: "equipment-bottle",
+    { id: "bouteille", verbe: "Je vérifie la bouteille", narration: "Avant de brancher quoi que ce soit, on s'assure du fluide que porte la bouteille. Vous lisez l'étiquette à voix haute, puis on rapproche ce fluide de celui de la plaque de la machine. Cette lecture compte : deux fluides mélangés dans une même bouteille ne pourront plus être recyclés, et tout part en destruction. Si les deux fluides ne sont pas identiques, on ne branche pas et le professeur est prévenu. Ensuite, la bouteille passe sur la balance.", cadre: ["equipment-bottle"], cible: "equipment-bottle",
       regarde: "L'étiquette de la bouteille de récupération.",
       fais: "Je lis à voix haute le fluide écrit sur l'étiquette.",
       voir: "Le même fluide que sur la plaque de la machine.",
@@ -93,7 +93,7 @@ window.GARE = {
             : ["rouge", "STOP : la bouteille porte " + v[0] + ", la machine " + c.m.fluide + ". Je ne branche pas, j'appelle le professeur."];
         } } },
 
-    { id: "pesee-depart", verbe: "Je pèse la bouteille vide", cadre: ["equipment-bottle"], cible: "equipment-bottle",
+    { id: "pesee-depart", verbe: "Je pèse la bouteille vide", narration: "Voici la première des deux pesées. La bouteille est seule sur la balance, bien droite, au centre, et on laisse l'affichage se calmer : seul un chiffre qui ne bouge plus est une vraie masse de départ. Cette valeur est notée parce que tout le reste en dépend. À la fin, la différence avec la seconde pesée dira combien de fluide est entré dans la bouteille, et sans masse de départ cette quantité n'existe pas. Elle sert aussi à savoir jusqu'où la balance pourra monter. Ensuite, on contrôle le matériel.", cadre: ["equipment-bottle"], cible: "equipment-bottle",
       regarde: "L'afficheur de la balance.",
       fais: "Bouteille seule, debout, au centre de la balance. J'attends un chiffre stable.",
       voir: "Un chiffre qui ne bouge plus : la masse de départ.",
@@ -105,21 +105,21 @@ window.GARE = {
           return ["vert", "Masse de départ notée : " + c.kg(x) + "." + (lim ? " La balance ne devra jamais dépasser " + c.kg(x + lim) + "." : "")];
         } } },
 
-    { id: "materiel", verbe: "Je contrôle le matériel", cadre: ["equipment-manifold", "equipment-station"], cible: "equipment-manifold",
+    { id: "materiel", verbe: "Je contrôle le matériel", narration: "Avant de raccorder, on contrôle l'outillage lui-même : le manifold, ses flexibles, la station. Ce contrôle porte sur le matériel seul, avant tout branchement sur la machine. On examine chaque joint, on s'assure qu'aucun flexible n'est abîmé, que le manifold est fermé et que la station est éteinte. Une seule vérification manquante suffit à bloquer la suite : tant qu'elle manque, on ne raccorde pas. Quand le matériel est en ordre, le raccordement peut commencer.", cadre: ["equipment-manifold", "equipment-station"], cible: "equipment-manifold",
       regarde: "Le manifold, les flexibles, la station.",
       fais: "Je ferme les 4 vannes du manifold. Je regarde chaque joint. Station éteinte.",
       voir: "Vannes fermées, aiguilles à 0, joints présents, aucun flexible abîmé.",
       controle: { titre: "Je coche ce que j'ai vu", type: "coches", items: ["4 vannes du manifold fermées", "aiguilles à 0", "un joint propre dans chaque flexible", "station éteinte"],
         ok: "Matériel contrôlé.", manque: "Il manque une coche : je ne raccorde pas avant." } },
 
-    { id: "raccorder", verbe: "Je raccorde", cadre: ["equipment-installation", "equipment-manifold", "equipment-station", "equipment-bottle"], cible: "equipment-manifold",
+    { id: "raccorder", verbe: "Je raccorde", narration: "C'est ici que le circuit de récupération prend forme. Quatre flexibles relient la machine, le manifold, la station et la bouteille : le fluide quittera la machine, traversera la station, puis entrera dans la bouteille par son robinet vapeur, le robinet liquide restant fermé. Chaque couleur a sa place et tout se serre à la main. Les vannes de service restent au siège arrière, donc les prises sont fermées. Le professeur vient vérifier le montage avant toute ouverture. Ensuite, on tire les flexibles au vide.", cadre: ["equipment-installation", "equipment-manifold", "equipment-station", "equipment-bottle"], cible: "equipment-manifold",
       tuyaux: ["blue", "red", "yellow", "orange"],
       regarde: "Les vannes de service du groupe, la station, la bouteille.",
       fais: "Bleu : BP → aspiration. Rouge : HP → départ liquide. Jaune : SERVICE → entrée de la station. Orange : sortie de la station → robinet VAPEUR de la bouteille. Serrage à la main.",
       voir: "4 flexibles serrés ; vannes de service toujours au siège arrière : prises de service fermées.",
       arret: "Le professeur a vérifié mon montage, avant toute ouverture." },
 
-    { id: "vide-flexibles", verbe: "Je tire au vide les flexibles", cadre: ["equipment-manifold", "equipment-pump", "equipment-vacuum"], cible: "equipment-pump",
+    { id: "vide-flexibles", verbe: "Je tire au vide les flexibles", narration: "Avant de laisser passer le moindre fluide, on retire l'air des flexibles : c'est le tirage au vide. Ainsi, rien d'autre que du fluide n'entrera dans la bouteille. Le vacuomètre indique où l'on en est, et la cible n'est pas une valeur universelle : c'est celle du poste. L'ordre de fin est important : on ferme d'abord, on arrête la pompe ensuite, sinon l'air revient dans les flexibles. Le contrôle porte sur la tenue du vide : s'il ne tient pas, c'est qu'un raccord fuit. Après, on ouvre les prises de service.", cadre: ["equipment-manifold", "equipment-pump", "equipment-vacuum"], cible: "equipment-pump",
       tuyaux: ["blue", "red", "yellow", "orange", "black"],
       regarde: "Le vacuomètre.",
       fais: "Pompe sur la voie VIDE. J'ouvre VIDE et SERVICE, pompe en route. Cible atteinte : je ferme, puis j'arrête la pompe.",
@@ -129,7 +129,7 @@ window.GARE = {
         oui: "Flexibles sans air : rien d'autre que du fluide n'ira dans la bouteille.",
         non: "Le vide ne tient pas : un raccord fuit. Je resserre et je recommence ; sinon j'appelle le professeur." } },
 
-    { id: "prises", verbe: "J'ouvre les prises de service", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
+    { id: "prises", verbe: "J'ouvre les prises de service", narration: "Jusqu'ici, les prises de service étaient fermées, et le manifold ne voyait pas la machine. En décollant les vannes de leur siège arrière, on les place en position intermédiaire, et les aiguilles montent : elles montrent la pression de la machine. On lit la basse et la haute pression, côte à côte, et on les note. Lire les deux permet aussi de repérer des flexibles inversés. Ensuite viendra la récupération du liquide.", cadre: ["equipment-installation", "equipment-manifold"], cible: "equipment-installation",
       tuyaux: ["blue", "red", "yellow", "orange"],
       regarde: "Les aiguilles BP et HP du manifold.",
       fais: "Je décolle les vannes de service du siège arrière : position intermédiaire.",
@@ -143,7 +143,7 @@ window.GARE = {
             : ["ambre", "Écart de " + c.fr(hp - bp, 1) + " bar : la machine vient de s'arrêter ? J'attends que les pressions s'équilibrent."];
         } } },
 
-    { id: "liquide", verbe: "Je récupère le liquide par la HP", cadre: ["equipment-manifold", "equipment-station", "equipment-bottle"], cible: "equipment-station",
+    { id: "liquide", verbe: "Je récupère le liquide par la HP", narration: "Voici le cœur de la récupération : le liquide passe de la machine à la bouteille, par la haute pression. On ouvre dans le rang, en partant de la bouteille et en remontant vers la machine, puis on met la station sur liquide et on la lance. La balance s'alourdit vite pendant que l'aiguille de haute pression redescend. Surveillez la balance en permanence : la bouteille porte une masse maximale, qu'on ne dépasse jamais. Les masses relevées indiquent ce qui est déjà récupéré et la place qui reste.", cadre: ["equipment-manifold", "equipment-station", "equipment-bottle"], cible: "equipment-station",
       tuyaux: ["blue", "red", "yellow", "orange"], balance: "cours",
       regarde: "La balance et l'aiguille HP.",
       fais: "J'ouvre dans le rang : robinet VAPEUR de la bouteille, sortie rouge de la station, vanne SERVICE, vanne HP. Station sur LIQUIDE, POWER, START.",
@@ -158,12 +158,12 @@ window.GARE = {
           if (x <= m1) return ["ambre", "La masse ne monte pas : le chemin est-il ouvert dans le rang ? La station tourne-t-elle ?"];
           return ["vert", "Déjà " + c.kg(x - m1) + " récupérés." + (lim ? " Il reste " + c.kg(m1 + lim - x) + " de place dans la bouteille." : "")];
         } },
-      azote: { verbe: "Je prépare le chemin du liquide", fais: "J'ouvre dans le rang : robinet VAPEUR de la bouteille, sortie rouge de la station, vanne SERVICE, vanne HP. La station reste ARRÊTÉE.",
+      azote: { narration: "Sous azote, on s'exerce à la même ouverture que sur un vrai fluide, mais sans transfert. Les passages s'ouvrent dans l'ordre, de la bouteille jusqu'à la haute pression, et la station demeure à l'arrêt : sinon, elle enverrait dans la bouteille un gaz qui ne se liquéfie pas. Le chemin est donc ouvert d'un bout à l'autre, pendant que la balance ne bouge pas. Le professeur vient vérifier l'ordre d'ouverture avant de continuer. Ensuite, on passe du côté de la vapeur.", verbe: "Je prépare le chemin du liquide", fais: "J'ouvre dans le rang : robinet VAPEUR de la bouteille, sortie rouge de la station, vanne SERVICE, vanne HP. La station reste ARRÊTÉE.",
         voir: "Le chemin est ouvert de la HP jusqu'à la bouteille ; la masse ne bouge pas.",
         danger: "La station ne tourne jamais à l'azote : elle enverrait un gaz qui ne se condense pas dans la bouteille.",
         arret: "Le professeur a vérifié le rang d'ouverture.", balance: "depart", controle: null } },
 
-    { id: "vapeur", verbe: "Je finis la vapeur par la BP", cadre: ["equipment-manifold", "equipment-station"], cible: "equipment-manifold",
+    { id: "vapeur", verbe: "Je finis la vapeur par la BP", narration: "Quand la balance ne s'alourdit presque plus, le liquide est récupéré : il reste la vapeur. On change alors de côté : du côté haute pression, la vanne du manifold se ferme ; du côté basse pression, elle s'ouvre, et l'entrée bleue de la station passe sur vapeur. C'est maintenant l'aiguille de basse pression qu'on suit. Elle baisse jusqu'au seuil où la notice de la station demande de s'arrêter, et non jusqu'à un chiffre universel. À la toute fin, vous relevez la basse pression pour la comparer à ce seuil. Ensuite, on vide la station.", cadre: ["equipment-manifold", "equipment-station"], cible: "equipment-manifold",
       tuyaux: ["blue", "red", "yellow", "orange"], balance: "cours",
       regarde: "L'aiguille BP.",
       fais: "La masse ne monte presque plus : je ferme la vanne HP, j'ouvre la vanne BP, entrée bleue sur VAPEUR.",
@@ -174,10 +174,10 @@ window.GARE = {
           return x <= 0 ? ["vert", "BP à " + c.fr(x, 1) + " bar : il ne reste presque plus de fluide. Je compare à la valeur d'arrêt de la notice."]
             : ["ambre", "Encore " + c.fr(x, 1) + " bar : il reste du fluide. Je continue en vapeur."];
         } },
-      azote: { verbe: "Je bascule côté vapeur", fais: "Je ferme la vanne HP, j'ouvre la vanne BP, entrée bleue sur VAPEUR. La station reste arrêtée.",
+      azote: { narration: "Même changement de côté que sur du vrai fluide : on ferme la vanne haute pression, on ouvre la vanne basse pression, et l'entrée bleue passe sur vapeur. Le passage emprunte désormais le côté basse pression. La station reste à l'arrêt, donc rien n'est transféré et la masse sur la balance ne change pas. Il n'y a aucune lecture à noter dans cette étape. Ensuite, on referme tout et on repèse.", verbe: "Je bascule côté vapeur", fais: "Je ferme la vanne HP, j'ouvre la vanne BP, entrée bleue sur VAPEUR. La station reste arrêtée.",
         voir: "Le chemin passe maintenant par la BP.", balance: "depart", controle: null } },
 
-    { id: "purge", verbe: "Je vide la station", cadre: ["equipment-station"], cible: "equipment-station",
+    { id: "purge", verbe: "Je vide la station", narration: "Une fois la vapeur récupérée, il reste encore du fluide dans la station elle-même, et cette étape l'envoie dans la bouteille. L'ordre est strict : l'entrée bleue est fermée, la station est arrêtée et son alimentation coupée ; seulement alors on tourne le sélecteur noir sur purge, puis on relance. Ce sélecteur ne se tourne jamais quand la station est en marche. Quand la station est vide, on referme tout et on repèse la bouteille.", cadre: ["equipment-station"], cible: "equipment-station",
       tuyaux: ["blue", "red", "yellow", "orange"], balance: "cours",
       regarde: "Le sélecteur noir de la station.",
       fais: "Entrée bleue fermée, station arrêtée, POWER coupé. Sélecteur noir sur PURGE, je relance.",
@@ -185,7 +185,7 @@ window.GARE = {
       danger: "Je ne tourne jamais le sélecteur noir station en marche.",
       azote: false },
 
-    { id: "pesee-fin", verbe: "Je ferme et je repèse", cadre: ["equipment-bottle"], cible: "equipment-bottle",
+    { id: "pesee-fin", verbe: "Je ferme et je repèse", narration: "Avant de repeser, on referme tout : les vannes de service retournent au siège arrière, le manifold est fermé, et le robinet de la bouteille aussi. La bouteille est alors pesée une seconde fois. C'est la comparaison avec la première pesée qui donne la quantité récupérée, et ce résultat est ensuite rapproché de la charge écrite sur la plaque de la machine. Le professeur vient vérifier la pesée et votre calcul avant de continuer. Il ne restera qu'à déposer et à ranger.", cadre: ["equipment-bottle"], cible: "equipment-bottle",
       tuyaux: ["orange"], balance: "fin",
       regarde: "La balance.",
       fais: "Vannes de service au siège arrière, manifold fermé, robinet de la bouteille fermé. Je repèse.",
@@ -205,14 +205,14 @@ window.GARE = {
           return ["vert", "Récupéré " + c.kg(d) + " pour " + c.kg(ch) + " sur la plaque : cohérent à 5 % près. Je reporte " + c.kg(d) + " sur la fiche."];
         } },
       arret: "Le professeur a vérifié la pesée et mon calcul.",
-      azote: { voir: "La masse n'a pas bougé : la station n'a pas tourné." } },
+      azote: { narration: "Les gestes sont ceux d'un vrai fluide : on referme les vannes de service au siège arrière, le manifold, puis le robinet de la bouteille, et on repèse. Tout repose sur la comparaison avec la pesée de départ, comme avec un vrai fluide ; il faut seulement garder à l'esprit que la station n'a pas tourné. Le professeur vient vérifier la pesée et votre calcul avant de continuer. Il restera ensuite à déposer, à ranger et à remplir la fiche.", voir: "La masse n'a pas bougé : la station n'a pas tourné." } },
 
-    { id: "deposer", verbe: "Je dépose, je range, je trace", cadre: ["equipment-installation", "equipment-bottle"], cible: "equipment-bottle",
+    { id: "deposer", verbe: "Je dépose, je range, je trace", narration: "Dernière étape de la gare : on défait le montage et on laisse le poste en ordre. On dépose lentement. Un reste de fluide dans un flexible se récupère, il ne part jamais dans l'air. Les prises de la machine sont rebouchées, la bouteille retourne au rack, debout, et la masse récupérée est reportée sur la fiche d'intervention : c'est la trace de ce qui a été fait. Cela rejoint la règle de toute la gare : aucun rejet de fluide, même sans regard.", cadre: ["equipment-installation", "equipment-bottle"], cible: "equipment-bottle",
       regarde: "Les raccords, la bouteille, la fiche d'intervention.",
       fais: "Je dépose lentement, je bouchonne les prises. Bouteille debout, au rack. Je reporte la masse sur la fiche.",
       voir: "Machine bouchonnée, poste rangé, masse reportée.",
       danger: "Un reste de fluide dans un flexible se récupère : jamais dans l'air.",
-      azote: { fais: "Je dépose lentement, loin des visages, je bouchonne les prises. Bouteille au rack. Je remplis la fiche comme pour un vrai fluide.",
+      azote: { narration: "Dernière étape de la gare, sous azote. Dans le flexible, il reste de l'azote sous pression : on desserre lentement, en tenant le raccord, sans jamais se mettre en face d'une personne, et loin des visages. Les prises sont rebouchées, la bouteille retourne au rack, et la fiche se remplit exactement comme avec un vrai fluide : elle garde la trace de l'intervention. Une fois la fiche écrite, le poste est rangé et la gare est terminée.", fais: "Je dépose lentement, loin des visages, je bouchonne les prises. Bouteille au rack. Je remplis la fiche comme pour un vrai fluide.",
         danger: "Le flexible garde de l'azote sous pression : je desserre lentement, raccord tenu, jamais face à quelqu'un." } }
   ],
 
