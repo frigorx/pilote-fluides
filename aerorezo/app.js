@@ -14,6 +14,8 @@
   }
   const state={level:"bac",route:"A",phase:0,current:null,visited:new Set(),phaseSeen:new Map(),speechRun:0,quiz:null,localCheck:null,vitesse:lireVitesse()};
   const phaseKeys=["decouvrir","comprendre","manipuler","verifier"];
+  /* pour le prof vocal du site (moteur/prof-vocal.js) : « Manipuler » est une activité, il s'y arrête */
+  window.PILOTE_PROF_ACTIVITE=()=>!!state.current&&phaseKeys[state.phase]==="manipuler";
   const byLine=line=>stations.filter(s=>s.line===line);
   const routeStations=line=>network.routes[line].map(id=>stations.find(s=>s.id===id));
   const stationRoutes=id=>Object.keys(network.routes).filter(line=>network.routes[line].includes(id));
@@ -84,7 +86,7 @@
   }
 
   function stopVoice(){
-    state.speechRun++;
+    state.speechRun++;state.parle=false;state.enPause=false;
     if("speechSynthesis" in window) window.speechSynthesis.cancel();
     [$("voiceButton"),$("stationVoice")].forEach(button=>{button.textContent="▶ Écouter";button.setAttribute("aria-pressed","false");});
   }
@@ -121,8 +123,10 @@
 
   function speakCurrent(button){
     if(!("speechSynthesis" in window)){button.textContent="Voix indisponible";return;}
-    if(window.speechSynthesis.speaking&&!window.speechSynthesis.paused){window.speechSynthesis.pause();button.textContent="▶ Reprendre";return;}
-    if(window.speechSynthesis.paused){window.speechSynthesis.resume();button.textContent="Ⅱ Pause";return;}
+    /* « Pause » et « Reprendre » suivent la lecture de CE module, synthèse ou MP3 : speechSynthesis.speaking reste
+       faux pendant un MP3 de moteur/voix.js, et le bouton relançait alors la narration au début (défaut D3, 17/10/2026). */
+    if(state.parle&&!state.enPause){window.speechSynthesis.pause();state.enPause=true;button.textContent="▶ Reprendre";return;}
+    if(state.parle&&state.enPause){window.speechSynthesis.resume();state.enPause=false;button.textContent="Ⅱ Pause";return;}
     stopVoice();
     /* Le texte part BRUT : c'est lui qui fixe la clé du MP3 dans moteur/voix.js (FNV-1a
        du texte normalisé). L'oraliser ici changerait la clé et ferait manquer des MP3
@@ -133,8 +137,8 @@
     const run=state.speechRun;
     const utterance=new SpeechSynthesisUtterance(brut);
     utterance.lang="fr-FR";utterance.rate=state.vitesse;if(window.PILOTE_VOIX_REGLAGE)utterance.rate=window.PILOTE_VOIX_REGLAGE.vitesse();utterance.pitch=1;utterance.voice=voix;
-    utterance.onstart=()=>{if(run===state.speechRun){button.textContent="Ⅱ Pause";button.setAttribute("aria-pressed","true");}};
-    utterance.onend=utterance.onerror=()=>{if(run===state.speechRun){button.textContent="▶ Écouter";button.setAttribute("aria-pressed","false");}};
+    utterance.onstart=()=>{if(run===state.speechRun){state.parle=true;state.enPause=false;button.textContent="Ⅱ Pause";button.setAttribute("aria-pressed","true");}};
+    utterance.onend=utterance.onerror=()=>{if(run===state.speechRun){state.parle=false;state.enPause=false;button.textContent="▶ Écouter";button.setAttribute("aria-pressed","false");}};
     window.speechSynthesis.speak(utterance);
   }
 
