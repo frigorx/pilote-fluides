@@ -308,7 +308,7 @@
       return visible(node) && !node.disabled && !isIgnoredControl(node);
     });
     /* .quiz-q : l'énoncé des quiz « Vérifier » des modules à onglets (détendeurs…), que le professeur passait (17/10/2026) */
-    var question = firstVisible([".quiz-question", ".quiz-q", ".question strong", "[data-question]", ".game-question", "#fluidHint", ".question h2", ".question h3", "legend"], scope)
+    var question = firstVisible([".quiz-question", ".quiz-q", ".question strong", "[data-question]", ".game-question", "#fluidHint", ".question h2", ".question h3", ".question > p", "legend"], scope)
       || (choices.length >= 2 ? firstVisible(["#action-prompt"]) : null);
     if (!question && choices.length >= 2) question = firstVisible(["h2", "h3", "h4"], scope);
     if (!question || choices.length < 2) return [];

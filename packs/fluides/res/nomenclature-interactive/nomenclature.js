@@ -296,6 +296,8 @@
   ];
 
   let current = 0;
+  /* 17/10/2026 (chantier prof vocal) : l'atelier « accrochez les boules » attend l'élève ; ailleurs, le prof vocal regarde l'écran */
+  window.PILOTE_PROF_ACTIVITE = () => (lessons[current] && lessons[current].pauseForActivity ? true : undefined);
   let soundEnabled = true;
   let autoplay = false;
   let speaking = false;
@@ -690,7 +692,9 @@
     if (!("speechSynthesis" in window)) { $("#speech-warning").hidden = false; return; }
     if (speaking && !paused) { speechSynthesis.pause(); paused = true; updateListenButton(); return; }
     if (paused) { speechSynthesis.resume(); paused = false; updateListenButton(); return; }
-    autoplay = true;
+    /* 17/10/2026 (chantier prof vocal) : quand le prof vocal du site conduit, c'est lui qui enchaîne et s'arrête aux
+       questions ; la lecture continue du module ne se lance pas en plus */
+    autoplay = !(window.PiloteProfVocal && window.PiloteProfVocal.etat && window.PiloteProfVocal.etat().actif);
     render();
     speakCurrent();
   }
