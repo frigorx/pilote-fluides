@@ -156,6 +156,14 @@
   function boutonsDeVitesse(e) {
     return /^(slower|faster)$/.test(e.id || "") && !!e.parentElement && /speed|vitesse|rate|voice|voix/i.test(e.parentElement.className || "");
   }
+  /* le bloc qui ne contient que l'ancien réglage (« .vitesse », « .speed »…, sans bouton Écouter) : on le masque entier */
+  function blocDeVitesse(e) {
+    var p = e.parentElement;
+    if (!p || p === document.body) return null;
+    var nomme = /speed|vitesse|rate/i.test((p.className || "") + " " + (p.getAttribute("aria-label") || ""));
+    var sansEcoute = !Array.prototype.some.call(p.querySelectorAll("button"), function (b) { return /écouter|arrêter|stop|pause/i.test(b.textContent || ""); });
+    return nomme && sansEcoute ? p : null;
+  }
   function ancienReglage(e) {
     if (e.closest("[data-voix-reglage]") || e.closest("#pilote-prof-vocal")) return false;
     if (e.tagName === "BUTTON") return ANCIEN_BOUTON.test(e.textContent || "") || ANCIEN_BOUTON.test(e.getAttribute("aria-label") || "") || boutonsDeVitesse(e);
@@ -170,13 +178,15 @@
     if (!anciens.length) return;
     if (!document.querySelector("[data-voix-reglage]")) {
       var premier = anciens[0], enveloppe = premier.closest("label");
-      var repere = boutonsDeVitesse(premier) ? premier.parentElement : enveloppe || premier, hote = repere.parentNode;
+      var repere = blocDeVitesse(premier) || enveloppe || premier, hote = repere.parentNode;
       var bloc = hote && window.PILOTE_VOIX_REGLAGE.monter(hote);
-      if (bloc) hote.insertBefore(bloc, repere);
+      /* posé à côté de l'ancien bloc, jamais dedans (la page peut masquer ce bloc) ; marqué « d'office » pour qu'un
+         monter() de la page le récupère à la place qu'elle choisit */
+      if (bloc) { hote.insertBefore(bloc, repere); bloc.setAttribute("data-voix-auto", ""); }
     }
     anciens.forEach(function (e) {
-      var enveloppe = e.closest("label");
-      if (boutonsDeVitesse(e)) { cacher(e.parentElement); return; }
+      var enveloppe = e.closest("label"), blocAncien = blocDeVitesse(e);
+      if (blocAncien) { cacher(blocAncien); return; }
       cacher(enveloppe && !enveloppe.querySelector("[data-voix-reglage]") ? enveloppe : e);
       if (e.labels) Array.prototype.forEach.call(e.labels, cacher);
     });

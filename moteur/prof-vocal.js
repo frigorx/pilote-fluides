@@ -304,7 +304,7 @@
     var scope = currentScope();
     /* button[data-choice] et #action-prompt : les choix des modules à dossiers (compresseur, condenseur, chaîne
        d'intervention…), que le professeur ne voyait pas et passait (17/10/2026) */
-    var choices = Array.prototype.filter.call(scope.querySelectorAll(".choices button,.quiz-options button,#gameOptions button,[data-answer],.answer-button,.vy-choix button,button[data-choice],[role=radio],input[type=radio],input[type=checkbox]"), function (node) {
+    var choices = Array.prototype.filter.call(scope.querySelectorAll(".choices button,.quiz-options button,#gameOptions button,[data-answer],.answer-button,.vy-choix button,button[data-choice],button[data-quiz-choice],[role=radio],input[type=radio],input[type=checkbox]"), function (node) {
       return visible(node) && !node.disabled && !isIgnoredControl(node);
     });
     /* .quiz-q : l'énoncé des quiz « Vérifier » des modules à onglets (détendeurs…), que le professeur passait (17/10/2026) */
