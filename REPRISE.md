@@ -1,5 +1,15 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ## 18/10/2026 (soir) — « MON PARCOURS PAR DIPLÔME » (`mon-parcours/`)
+>
+> En ligne après le feu vert de Franck (`88c82b40`, `b40b80f4`). On choisit son niveau puis son diplôme (CAP IFCA, Bac MFER 2028,
+> TP Monteur dépanneur frigoriste) ; les stations sont rangées par partie du référentiel, et chaque tuile porte ses tâches et
+> ses compétences. La lecture « Tableau croisé » montre ce qui est fait et à faire. Points d'entrée sur l'accueil : un bouton
+> sous le titre et une tuile pleine largeur sous « Vous venez pour quoi ? ». Page en `noindex` le temps de l'essai.
+> **La source n'est pas ici** : `CLAUDE-ESPACE-TRAVAIL/RESEAU-PAR-DIPLOME-2026-10-18/` (`REPRISE.md`, rattachement, écran).
+> On relivre par `ecran/outils/vers-le-site.mjs`, et chaque relivraison prend une clé de données `?v=` neuve.
+> Défaut repéré, non corrigé : la tuile « Je suis professionnel » de l'accueil dépasse à droite de 54 px à 1 280 px.
+
 > ## 18/10/2026 — CHANTIER « PROF VOCAL », tous les réseaux (grille V1-V8 validée par Franck le 16/10)
 >
 > En ligne le 18/10 après écoute et feu vert de Franck (`0d9b23e5..7faddcd6`, branche `chantier-voix`, worktree
