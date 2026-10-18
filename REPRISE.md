@@ -1,5 +1,20 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ## 18/10/2026 — CHANTIER « PROF VOCAL », tous les réseaux (grille V1-V8 validée par Franck le 16/10)
+>
+> En ligne le 18/10 après écoute et feu vert de Franck (`0d9b23e5..7faddcd6`, branche `chantier-voix`, worktree
+> `C:/git/_wt-voix`). Dossier : `CLAUDE-ESPACE-TRAVAIL/CHANTIER-PROF-VOCAL-2026-10-16/` (`REPRISE.md`, `RAPPORT-ETAPE.md`).
+> Passent V1-V6 et V8 : Législation, HydroMétro, AéroRézo, ÉlectroRézo, CartoClim, CuivRézo, HoCourant, Studio, capsules,
+> Le tour de main (qui n'avait aucune voix) ; thermo-techno : prof vocal 24 → 66 modules, vitesse commune partout,
+> 32 écrans qui relisaient l'écran → 1. Narrations pour l'oreille : capsules 100, Tour de main 113, thermo 120, etc.
+> Moteur commun : `moteur/voix.js` impose la vitesse commune à toute lecture ; `moteur/reglage-voix.js` remplace à leur
+> place les anciens réglages DE LA VOIX et se pose de lui-même à côté d'« Écouter » ; `moteur/prof-vocal.js` (deux portes,
+> questions et activités reconnues, crochets `data-prof-*`, `window.PILOTE_PROF_ACTIVITE`).
+> 🔴 Pièges : un module qui ignore l'erreur « interrupted » garde son bouton sur « Pause » après un changement de vitesse
+> (écouter `pilotevoix:vitesse`) ; un chargeur qui fabrique sa propre clé `?v=` (capsule.js) échappe aux outils de clés.
+> Restent : 11 modules thermo-techno sans voix (session dédiée, branche `chantier-voix-muets`) ; lot de MP3 (V7) quand
+> edge-tts revient.
+
 > ## 16/10/2026 — CAMPAGNE « AUDIT ANIMATION », tous les réseaux (carte blanche de Franck du 15/10, 20 h 45)
 >
 > En ligne le 16/10 à 11 h (`8a1e400c..c1fe45ed`, 14 commits, branche `campagne-animations`, worktree `C:/git/_wt-huile`).
