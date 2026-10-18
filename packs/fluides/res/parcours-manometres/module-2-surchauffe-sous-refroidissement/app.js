@@ -4,7 +4,7 @@
   const $ = (root, selector) => root.querySelector(selector);
   const parseFrench = value => Number(String(value).trim().replace(",", "."));
   const format = (value, digits = 1) => Number(value).toFixed(digits).replace(".", ",");
-  let moduleScore = null;
+  let moduleScore = null; const niveauSur4 = (bonnes, total) => { const r = total ? bonnes / total : 0; return r >= .9 ? { n: 4, nom: "Parfaitement maîtrisé" } : r >= .75 ? { n: 3, nom: "Acquis" } : r >= .5 ? { n: 2, nom: "En cours" } : { n: 1, nom: "Non acquis" }; };
 
   const CASE = {
     fluid: "R134a",
@@ -314,7 +314,7 @@
     {
       short: "Défi",
       kicker: "Étape 10 · Évaluation notée",
-      title: "Dix questions donnent une note sur 20.", narration: "Cette évaluation vérifie ce que le module vient de construire. D’abord où l’on mesure, puis quelle formule on applique, quelle référence on prend selon la vapeur ou le liquide, et enfin un calcul mené jusqu’au bout. Dix questions s’enchaînent. Dans les réponses proposées, les mêmes éléments reviennent en combinaisons différentes : le point de mesure, la saturation de référence, le sens de la soustraction. Il faut donc lire chaque proposition en entier, sans se fier à sa ressemblance avec les autres. Voici, par exemple, la première question : Quelle formule donne la surchauffe à la sortie de l’évaporateur ?",
+      title: "Dix questions situent votre niveau, de 1 à 4.", narration: "Cette évaluation vérifie ce que le module vient de construire. D’abord où l’on mesure, puis quelle formule on applique, quelle référence on prend selon la vapeur ou le liquide, et enfin un calcul mené jusqu’au bout. Dix questions s’enchaînent. Dans les réponses proposées, les mêmes éléments reviennent en combinaisons différentes : le point de mesure, la saturation de référence, le sens de la soustraction. Il faut donc lire chaque proposition en entier, sans se fier à sa ressemblance avec les autres. Voici, par exemple, la première question : Quelle formule donne la surchauffe à la sortie de l’évaporateur ?",
       text: "Chaque question vaut deux points. Elles vérifient les quatre emplacements, les quatre formules, les références rosée/bulle et un calcul complet.",
       locked: true,
       markup() { return `<div class="panel" id="quiz-panel" style="height:100%"></div>`; },
@@ -325,10 +325,10 @@
         const panel = $(scene, "#quiz-panel");
         const renderQuestion = () => {
           if (index >= quizQuestions.length) {
-            moduleScore = score * 2;
-            const acquired = moduleScore >= 14;
-            panel.innerHTML = `<div class="score-card ${acquired ? "success" : "retry"}"><p class="eyebrow">ÉVALUATION TERMINÉE</p><strong>${moduleScore}/20</strong><h3>${acquired ? "Méthode confirmée" : "Méthode à consolider"}</h3><p>${acquired ? "Vous savez choisir les points, les températures et le sens des quatre soustractions." : "Reprenez les écrans de calcul puis relancez l’évaluation."}</p><button class="check-button" id="quiz-restart" type="button">Recommencer</button></div>`;
-            api.unlock(`<strong>Évaluation terminée</strong> · note ${moduleScore} sur 20`);
+            moduleScore = niveauSur4(score, quizQuestions.length);
+            const acquired = moduleScore.n >= 3;
+            panel.innerHTML = `<div class="score-card ${acquired ? "success" : "retry"}"><p class="eyebrow">ÉVALUATION TERMINÉE</p><strong>Niveau ${moduleScore.n} · ${moduleScore.nom}</strong><h3>${acquired ? "Méthode confirmée" : "Méthode à consolider"}</h3><p>${acquired ? "Vous savez choisir les points, les températures et le sens des quatre soustractions." : "Reprenez les écrans de calcul puis relancez l’évaluation."}</p><button class="check-button" id="quiz-restart" type="button">Recommencer</button></div>`;
+            api.unlock(`<strong>Évaluation terminée</strong> · niveau ${moduleScore.n} · ${moduleScore.nom}`);
             $(panel, "#quiz-restart").addEventListener("click", () => { index = 0; score = 0; moduleScore = null; api.lock(); renderQuestion(); });
             return;
           }
@@ -358,8 +358,8 @@
       title: "Gardez les quatre formules et les quatre emplacements.", narration: "Ce bilan tient en une idée : la saturation donne la référence, et c’est l’endroit de la mesure, sur la vapeur ou sur le liquide, qui fixe la température réelle à utiliser. Côté vapeur, on retire la saturation BP de la température réelle. Côté liquide, on retire la température réelle de la saturation HP. Dans chaque famille, deux écarts : l’un s’arrête à la sortie de l’organe, l’autre va jusqu’à l’organe suivant. Avec un zéotrope, la saturation BP se lit à la rosée et la saturation HP à la bulle. L’évaluation reste disponible à votre rythme.",
       text: "La saturation est la référence ; la température réelle dépend du point jusqu’auquel on suit la vapeur ou le liquide.",
       markup() {
-        const note = moduleScore === null ? "Non évalué" : `${moduleScore}/20`;
-        return `<div class="final-report"><div class="final-score ${moduleScore !== null && moduleScore >= 14 ? "success" : ""}"><p class="eyebrow">VOTRE NOTE</p><strong>${note}</strong><p>${moduleScore === null ? "Passez l’évaluation quand vous le souhaitez." : "L’évaluation peut être recommencée pour confirmer les acquis."}</p></div><div class="formula-summary"><article><b>Surchauffe évaporateur</b><span>E1 · sortie évaporateur</span><code>T E1 − T sat. BP</code></article><article><b>Surchauffe totale</b><span>C1 · aspiration compresseur</span><code>T C1 − T sat. BP</code></article><article><b>Sous-refroidissement condenseur</b><span>C2 · sortie condenseur</span><code>T sat. HP − T C2</code></article><article><b>Sous-refroidissement total</b><span>D1 · entrée détendeur</span><code>T sat. HP − T D1</code></article></div><div class="key-box"><strong>Fluide à glissement</strong><br>Sur un mélange zéotrope, la saturation BP se lit au point de rosée et la saturation HP au point de bulle. Sur un corps pur, une seule courbe suffit.</div>${document.documentElement.dataset.brique ? "" : `<a class="primary-action" href="../index.html">Revenir au portail</a>`}</div>`;
+        const note = moduleScore === null ? "Non évalué" : `Niveau ${moduleScore.n} · ${moduleScore.nom}`;
+        return `<div class="final-report"><div class="final-score ${moduleScore !== null && moduleScore.n >= 3 ? "success" : ""}"><p class="eyebrow">VOTRE NIVEAU</p><strong>${note}</strong><p>${moduleScore === null ? "Passez l’évaluation quand vous le souhaitez." : "L’évaluation peut être recommencée pour confirmer les acquis."}</p></div><div class="formula-summary"><article><b>Surchauffe évaporateur</b><span>E1 · sortie évaporateur</span><code>T E1 − T sat. BP</code></article><article><b>Surchauffe totale</b><span>C1 · aspiration compresseur</span><code>T C1 − T sat. BP</code></article><article><b>Sous-refroidissement condenseur</b><span>C2 · sortie condenseur</span><code>T sat. HP − T C2</code></article><article><b>Sous-refroidissement total</b><span>D1 · entrée détendeur</span><code>T sat. HP − T D1</code></article></div><div class="key-box"><strong>Fluide à glissement</strong><br>Sur un mélange zéotrope, la saturation BP se lit au point de rosée et la saturation HP au point de bulle. Sur un corps pur, une seule courbe suffit.</div>${document.documentElement.dataset.brique ? "" : `<a class="primary-action" href="../index.html">Revenir au portail</a>`}</div>`;
       }
     }
   ];

@@ -376,7 +376,10 @@ body.help-open .phase-map, body.help-open .score-strip, body.help-open .source-n
 }
 
 @media (max-width: 390px) {
-  #voice-button { display: none !important; }
+  /* téléphone : la barre passe sur plusieurs lignes plutôt que de cacher « Écouter » (le prof vocal se range à côté) */
+  .appbar { height: auto; flex-wrap: wrap; row-gap: 4px; }
+  .appbar-actions { flex-wrap: wrap; justify-content: flex-start; width: 100%; }
+  .appbar .brand svg { width: auto !important; height: 28px !important; }
 }
 
 @media (max-width: 390px), (max-height: 680px) {

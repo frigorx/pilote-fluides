@@ -167,25 +167,25 @@
   const LOCATE_QUESTIONS = [
     {
       target: "square",
-      prompt: "Clique sur l’élément que la clé doit faire tourner.",
+      prompt: "Cliquez sur l’élément que la clé doit faire tourner.",
       answer: "Le carré de manœuvre",
       explanation: "Le carré, la tige et le pointeau forment un seul ensemble mobile."
     },
     {
       target: "gland",
-      prompt: "Clique sur la pièce fixe qui assure l’étanchéité autour de la tige.",
+      prompt: "Cliquez sur la pièce fixe qui assure l’étanchéité autour de la tige.",
       answer: "Le presse-étoupe",
       explanation: "Le presse-étoupe reste fixe pendant que la tige tourne et se déplace."
     },
     {
       target: "p",
-      prompt: "Clique sur le raccord prévu pour le flexible du manifold.",
+      prompt: "Cliquez sur le raccord prévu pour le flexible du manifold.",
       answer: "P, la voie de service",
       explanation: "P est la prise la plus proche du carré de manœuvre."
     },
     {
       target: "p1",
-      prompt: "Clique sur la prise permanente du pressostat.",
+      prompt: "Cliquez sur la prise permanente du pressostat.",
       answer: "P1, à l’opposé du carré",
       explanation: "P1 reste reliée à C. Son bouchon ne se défait jamais sur une installation chargée."
     }
@@ -193,7 +193,7 @@
 
   const SITUATION_QUESTIONS = [
     {
-      prompt: "Où branches-tu temporairement le flexible du manifold ?",
+      prompt: "Où branchez-vous temporairement le flexible du manifold ?",
       choices: [["p", "Sur P, près du carré"], ["p1", "Sur P1, à l’opposé"]],
       answer: "p",
       explanation: "Le flexible du manifold se branche sur P, la voie de service."
@@ -217,7 +217,7 @@
       explanation: "Fermée sur l’avant, le pointeau obture le passage entre T et C."
     },
     {
-      prompt: "Installation chargée : peux-tu défaire le bouchon P1 sans risque ?",
+      prompt: "Installation chargée : pouvez-vous défaire le bouchon P1 sans risque ?",
       choices: [["yes", "Oui"], ["no", "Non"]],
       answer: "no",
       explanation: "Non. P1 peut rester sous pression dans toutes les positions. Ne jamais défaire ce bouchon sur une installation chargée."
@@ -238,7 +238,7 @@
       title: "Tourner la clé et suivre les passages", narration: "Voici la coupe d’une vanne de service, manœuvrée avec une clé à cliquet. Quand on tourne la clé, la tige ne s’allonge pas : elle se déplace d’un bloc avec le pointeau, pendant que le presse-étoupe reste fixe. Trois positions sont à connaître : avant, intermédiaire et arrière. À chacune, ce qui communique et ce qui est isolé change. En position arrière, le fluide peut passer entre la tuyauterie, repérée T, et le compresseur, repéré C. La prise P est alors isolée, tandis que P1 reste reliée à C. Vous comparerez ensuite le côté BP et le côté HP.",
       intro: "Le dessin reprend exactement la coupe validée. La clé, le carré, la tige et le pointeau se déplacent ensemble.",
       visualTitle: "Les trois positions de la vanne",
-      hint: "Choisis une position ou clique sur la clé à cliquet.",
+      hint: "Choisissez une position ou cliquez sur la clé à cliquet.",
       render: renderPositions
     },
     {
@@ -246,20 +246,20 @@
       title: "Même vanne, sens de circulation opposé", narration: "Même vanne, même dessin. Ce qui change, c’est le côté du circuit sur lequel elle est montée, et donc le sens du fluide. Côté BP, c’est l’aspiration : le fluide vient de la tuyauterie, traverse la vanne et entre dans le compresseur, ce que montre le trait bleu plein. Côté HP, c’est l’inverse : le compresseur refoule, et le fluide repart dans la tuyauterie, en rouge tireté. Pour s’en souvenir : la BP va vers le compresseur, la HP en vient. Vous inverserez ensuite les flèches, puis passerez au bon raccord.",
       intro: "La géométrie ne change pas. Seuls le côté du circuit et le sens du fluide changent.",
       visualTitle: "Comparer BP et HP",
-      hint: "Passe de BP à HP pour inverser les flèches.",
+      hint: "Passez de BP à HP pour inverser les flèches.",
       render: renderFlow
     },
     {
       kicker: "Écran 3 · Geste et sécurité",
       title: "Choisir le bon raccord avant d’intervenir", narration: "Le carré de manœuvre sert de repère : il situe les deux prises. La plus proche, P, est la voie de service, celle du flexible du manifold. La plus éloignée, P1, porte le pressostat, et l’on ne défait jamais son bouchon sur une installation chargée. Le presse-étoupe rend étanche le passage de la tige, mais reste un point de fuite possible. Comme les raccords, il se contrôle. Les bouchons, eux, doivent rester en place et serrés quand l’installation fonctionne. Visser ferme le passage entre T et C. Dévisser le rouvre et isole P. Le dernier écran vous fait pratiquer.",
-      intro: "Repère d’abord le carré de manœuvre : il donne immédiatement la position de P et de P1.",
+      intro: "Repérez d’abord le carré de manœuvre : il donne immédiatement la position de P et de P1.",
       visualTitle: "Clé, raccords et presse-étoupe",
-      hint: "Utilise les deux sens de rotation.",
+      hint: "Utilisez les deux sens de rotation.",
       render: renderSafety
     },
     {
       kicker: "Écran 4 · Mini-jeux",
-      title: "À toi de manœuvrer et de décider", narration: "Cet écran ne présente rien de nouveau : il vous entraîne. Deux jeux courts se suivent. Le premier consiste à repérer des éléments sur le dessin de la vanne, et en cas d’erreur la correction affichée explique la bonne réponse. Le second vous place devant une situation de terrain, où il faut choisir le geste adapté. L’intérêt est de transformer ces repères en réflexes, pour ne plus hésiter au moment d’intervenir. Le premier jeu démarre ainsi. Cliquez sur l’élément que la clé doit faire tourner.",
+      title: "À vous de manœuvrer et de décider", narration: "Cet écran ne présente rien de nouveau : il vous entraîne. Deux jeux courts se suivent. Le premier consiste à repérer des éléments sur le dessin de la vanne, et en cas d’erreur la correction affichée explique la bonne réponse. Le second vous place devant une situation de terrain, où il faut choisir le geste adapté. L’intérêt est de transformer ces repères en réflexes, pour ne plus hésiter au moment d’intervenir. Le premier jeu démarre ainsi. Cliquez sur l’élément que la clé doit faire tourner.",
       intro: "Deux entraînements courts : repérer les éléments, puis choisir le geste adapté à une situation terrain.",
       visualTitle: "Jeu 1 · Repérage sur la vanne",
       hint: "Une question à la fois. La correction est immédiate.",
@@ -415,12 +415,12 @@
       const totalQuestions = LOCATE_QUESTIONS.length + SITUATION_QUESTIONS.length;
       return `
         <div class="quiz-scoreline"><strong>${gameName}</strong><span>${game.score}/${questions.length}</span></div>
-        <div class="key-box quiz-feedback"><strong>✓ Jeu terminé.</strong> Tu peux le recommencer ou passer à l’autre jeu.</div>
+        <div class="key-box quiz-feedback"><strong>✓ Jeu terminé.</strong> Vous pouvez le recommencer ou passer à l’autre jeu.</div>
         ${bothDone ? `<div class="neutral-box quiz-total"><strong>Bilan des deux jeux : ${total}/${totalQuestions}</strong><span>Ce résultat est un entraînement, pas un examen officiel.</span></div>` : ""}`;
     }
 
     const question = questions[game.index];
-    let feedback = `<div class="neutral-box quiz-feedback"><strong>À toi :</strong> choisis une seule réponse.</div>`;
+    let feedback = `<div class="neutral-box quiz-feedback"><strong>À vous :</strong> choisissez une seule réponse.</div>`;
     if (game.answered) {
       const feedbackClass = game.correct ? "key-box" : "danger-box";
       const feedbackWord = game.correct ? "✓ CORRECT" : "✕ À REVOIR";
@@ -441,9 +441,9 @@
     elements.detail.innerHTML = gameDetailMarkup();
     elements.controls.innerHTML = `${gameTabsMarkup()}${gameActionMarkup()}`;
     elements.visualTitle.textContent = state.games.active === "locate" ? "Jeu 1 · Repérage sur la vanne" : "Jeu 2 · Décisions terrain";
-    elements.visualHint.textContent = game.done ? "Jeu terminé : consulte ton résultat." : "Réponds, lis la correction, puis continue.";
+    elements.visualHint.textContent = game.done ? "Jeu terminé : consultez votre résultat." : "Répondez, lisez la correction, puis continuez.";
     elements.caption.textContent = state.games.active === "locate"
-      ? "Clique directement sur la coupe de la vanne."
+      ? "Cliquez directement sur la coupe de la vanne."
       : "Une seule décision par situation.";
     wireGameNavigation();
   }
@@ -558,7 +558,7 @@
         <span class="game-summary-check" aria-hidden="true">✓</span>
         <strong>${state.games.active === "locate" ? "Repérage terminé" : "Situations terminées"}</strong>
         <span class="game-summary-score">${game.score}/${questions.length}</span>
-        <small>${bothDone ? `Bilan général : ${total}/${totalQuestions}` : "Passe à l’autre jeu quand tu es prêt."}</small>
+        <small>${bothDone ? `Bilan général : ${total}/${totalQuestions}` : "Passez à l’autre jeu quand vous êtes prêt."}</small>
       </div>`;
   }
 

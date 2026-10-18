@@ -2167,8 +2167,8 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 <h3>🎯 C'est quoi le volume balayé ?</h3>
                 
                 <div class="analogy-box">
-                    <h4>💡 Imagine une seringue...</h4>
-                    <p>Quand tu pousses le piston d'une seringue, tu expulses un volume de liquide. 
+                    <h4>💡 Imaginez une seringue...</h4>
+                    <p>Quand vous poussez le piston d'une seringue, vous expulsez un volume de liquide. 
                     <strong>Le volume balayé, c'est exactement ça :</strong> c'est le volume que le piston "balaie" quand il fait un aller complet dans le cylindre.</p>
                 </div>
                 
@@ -2489,7 +2489,7 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 
                 <div class="analogy-box">
                     <h4>💡 C'est comme les moteurs de voiture !</h4>
-                    <p>Tu as déjà entendu parler de moteurs <strong>"4 cylindres"</strong> ou <strong>"6 cylindres"</strong> ? C'est exactement le même principe pour les compresseurs ! Plus on a de cylindres, plus on peut déplacer de volume à chaque tour.</p>
+                    <p>Vous avez déjà entendu parler de moteurs <strong>"4 cylindres"</strong> ou <strong>"6 cylindres"</strong> ? C'est exactement le même principe pour les compresseurs ! Plus on a de cylindres, plus on peut déplacer de volume à chaque tour.</p>
                 </div>
                 
                 <div class="info-box info-box--info">
@@ -2508,7 +2508,7 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 
                 <!-- Animation multi-cylindres interactive -->
                 <div class="animation-container" style="background:#f0f4f8;">
-                    <h4 style="margin-bottom:15px; color:#1b3a63;">👆 Clique pour choisir le nombre de cylindres :</h4>
+                    <h4 style="margin-bottom:15px; color:#1b3a63;">👆 Cliquez pour choisir le nombre de cylindres :</h4>
                     
                     <div class="cylinder-selector">
                         <button class="cyl-btn active" data-cyl="1">1 cylindre</button>
@@ -3119,10 +3119,10 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
 
             <div class="content-card results-card" id="results-card">
                 <h3>📄 Bilan & export</h3>
-                <p class="muted">Cette page calcule votre <strong>note sur 20</strong> à partir de l'ensemble des mini-exercices. Vous pouvez sauvegarder localement et télécharger une feuille de résultats (à joindre à un mail si besoin).</p>
+                <p class="muted">Cette page situe votre <strong>niveau, de 1 à 4</strong>, à partir de l'ensemble des mini-exercices. Vous pouvez sauvegarder localement et télécharger une feuille de résultats (à joindre à un mail si besoin).</p>
 
                 <div style="display:flex; gap:.8rem; flex-wrap:wrap; align-items:center; margin-top:.6rem;">
-                    <span class="score-badge" id="final-score-badge">Note : — /20</span>
+                    <span class="score-badge" id="final-score-badge">Niveau : —</span>
                     <span class="muted" id="final-score-details"></span>
                 </div>
 
@@ -4798,7 +4798,7 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
         (function(){
             const STORAGE_KEY = 'inerweb_compresseur_exos_v11';
 
-            // Banque de questions : 3 par section (note finale normalisée sur 20)
+            // Banque de questions : 3 par section (niveau final de 1 à 4)
             const QUESTION_BANK = [
                 // INTRO
                 {id:'intro_q1', section:'intro', points:1, type:'mcq', prompt:'Dans un cycle à compression, quel organe augmente la pression du gaz ?', options:[
@@ -5076,10 +5076,10 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 const got = QUESTION_BANK.reduce((s,q)=>s+evaluate(q).points,0);
                 return {got, max};
             }
-            function computeNote20(){
+            function computeNiveau(){
                 const {got, max} = scoreTotal();
-                if(max === 0) return {note:0, got, max};
-                const note = Math.round((got / max) * 20 * 10) / 10; // au dixième
+                if(max === 0) return {note:'0 · Non évalué', got, max};
+                const r = got / max; const note = r >= .9 ? '4 · Parfaitement maîtrisé' : r >= .75 ? '3 · Acquis' : r >= .5 ? '2 · En cours' : '1 · Non acquis'; // échelle 0-4 de HAL, jamais de note sur 20
                 return {note, got, max};
             }
 
@@ -5089,13 +5089,13 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 if(!badge || !details) return;
                 const repondu = state && state.answers && Object.keys(state.answers).length > 0;
                 if (!repondu) {
-                    badge.textContent = 'Note : — /20';
+                    badge.textContent = 'Niveau : —';
                     details.textContent = '';
                     return;
                 }
-                const {note, got, max} = computeNote20();
-                badge.textContent = `Note : ${isFinite(note) ? String(note).replace('.', ',') : '—'} /20`;
-                details.textContent = `Score brut : ${got}/${max} (normalisé sur 20).`;
+                const {note, got, max} = computeNiveau();
+                badge.textContent = `Niveau ${note}`;
+                details.textContent = `${got} bonnes réponses sur ${max}.`;
             }
 
             function attachHandlers(){
@@ -5144,10 +5144,10 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                         // On sauvegarde (déjà fait au fil de l'eau) + on ajoute un snapshot
                         try{
                             const snapKey = STORAGE_KEY + '_snapshot';
-                            const snap = computeNote20();
+                            const snap = computeNiveau();
                             localStorage.setItem(snapKey, JSON.stringify({
                                 savedAt: new Date().toISOString(),
-                                note20: snap.note,
+                                niveau: snap.note,
                                 raw: {got: snap.got, max: snap.max},
                                 answers: state.answers
                             }));
@@ -5195,7 +5195,7 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 const wrap = document.getElementById('results-table-wrap');
                 if(!wrap) return;
 
-                const {note, got, max} = computeNote20();
+                const {note, got, max} = computeNiveau();
                 const rows = QUESTION_BANK.map(q => {
                     const ev = evaluate(q);
                     const userTxt = getAnswerText(q, state.answers[q.id]);
@@ -5227,7 +5227,7 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                         <tfoot>
                             <tr>
                                 <th colspan="5">Total</th>
-                                <th>${got}/${max} → ${note}/20</th>
+                                <th>${got}/${max} → niveau ${note}</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -5239,7 +5239,7 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 // Construit un HTML imprimable / partageable (et utilisable pour impression PDF)
                 const now = new Date();
                 const stamp = now.toLocaleString('fr-FR');
-                const {note, got, max} = computeNote20();
+                const {note, got, max} = computeNiveau();
 
                 const rows = QUESTION_BANK.map(q => {
                     const ev = evaluate(q);
@@ -5275,7 +5275,7 @@ th{background:#f5f5f5;}
 <body>
 <h1>Feuille de résultats — Module Compresseur</h1>
 <p class="small">Généré le ${escapeHtml(stamp)} — Réponses stockées localement (sans identification).</p>
-<p><span class="badge">Note : ${note}/20</span> <span class="small">Score brut : ${got}/${max}</span></p>
+<p><span class="badge">Niveau ${note}</span> <span class="small">${got} bonnes réponses sur ${max}</span></p>
 <table>
 <thead><tr><th>Partie</th><th>Question</th><th>Votre réponse</th><th>Correction</th><th>Juste ?</th><th>Pts</th></tr></thead>
 <tbody>${rows}</tbody>
