@@ -90,7 +90,7 @@
     "encore validés : ne pas s'en servir comme référence pour une opération réelle.</div>";
 
   const pied =
-    '<footer class="pied"><p><a class="lien-site" href="https://inerweb.fr/">← Revenir à inerweb.fr</a></p><p><strong>Ce que mesure cette application :</strong> une préparation — ' +
+    '<footer class="pied"><p><a class="lien-site" href="https://inerweb.fr/">← Revenir à inerweb.fr</a> · <a href="apercu/">Formateurs : aperçu de l\'espace enseignant (module M9)</a></p><p><strong>Ce que mesure cette application :</strong> une préparation — ' +
     "l'aptitude théorique à suivre la formation R408. Elle ne délivre jamais rien : l'attestation " +
     "appartient à l'organisme qui forme et évalue, l'autorisation d'utiliser, de vérifier ou de monter " +
     "appartient à l'employeur (Code du travail, art. R4323-69 et s.).</p>" +

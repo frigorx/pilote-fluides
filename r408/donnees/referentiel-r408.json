@@ -62,7 +62,9 @@
         { "code": "5.2", "libelle": "Comprendre et exploiter une notice du fabricant" },
         { "code": "5.3", "libelle": "Appréhender le cadre réglementaire des vérifications des échafaudages et les responsabilités qui en découlent" },
         { "code": "5.4", "libelle": "Réaliser l'examen d'adéquation" },
-        { "code": "5.5", "libelle": "Effectuer l'examen de montage et d'installation de l'échafaudage de pied" }
+        { "code": "5.5", "libelle": "Effectuer l'examen de montage et d'installation de l'échafaudage de pied" },
+        { "code": "5.6", "libelle": "Effectuer l'examen de l'état de conservation (approfondi le cas échéant) de l'échafaudage et/ou assurer la maintenance de l'échafaudage", "_source": "INRS V07 § 6.5, lu le 18/10/2026 (SOURCES-REGLEMENTAIRES F.2)" },
+        { "code": "5.7", "libelle": "Rédiger le compte rendu de vérification ou le procès-verbal de réception", "_source": "INRS V07 § 6.5, lu le 18/10/2026 (SOURCES-REGLEMENTAIRES F.2) — intitulé reformulé d'après l'extraction, à relire sur le PDF" }
       ]
     }
   ],
