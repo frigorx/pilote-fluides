@@ -375,9 +375,12 @@ body.help-open .phase-map, body.help-open .score-strip, body.help-open .source-n
   .primary-button, .secondary-button { min-height: 34px; padding: 5px 9px; font-size: 10px; }
 }
 
+@media (max-width: 390px) {
+  #voice-button { display: none !important; }
+}
+
 @media (max-width: 390px), (max-height: 680px) {
   .appbar-actions { gap: 3px; }
-  #voice-button { display: none !important; }
   .game { grid-template-rows: 190px minmax(0, 1fr); }
   body.guided-mode .game { grid-template-rows: 310px minmax(0, 1fr); }
   body.help-open .game { grid-template-rows: 265px minmax(0, 1fr); }
