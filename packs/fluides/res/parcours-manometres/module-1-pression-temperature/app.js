@@ -114,11 +114,12 @@
 
   const organChoices = ["compressor", "condenser", "expansion", "evaporator"];
 
-  function organDefinitionLesson({ short, kicker, title, text, correct, explanation }) {
+  function organDefinitionLesson({ short, kicker, title, narration, text, correct, explanation }) {
     return {
       short,
       kicker,
       title,
+      narration,
       text,
       locked: true,
       markup: circuitPanel,
@@ -139,7 +140,7 @@
     {
       short: "La Croix",
       kicker: "Étape 1 · Le terrain de jeu",
-      title: "Toute la suite part de cette Croix du Frigoriste.",
+      title: "Toute la suite part de cette Croix du Frigoriste.", narration: "Voici la figure sur laquelle repose tout le module : la Croix du Frigoriste. Elle montre un seul circuit, avec quatre organes disposés en croix, et un fluide qui tourne en boucle et change d’état en chemin. Retenez surtout ceci : ce circuit contient deux niveaux de pression, l’un haut, l’autre bas, et ce sont le compresseur et le détendeur qui les séparent. Les cadrans, plus tard, serviront à lire ces deux niveaux. Pour qu’ils aient un sens, il faut d’abord savoir où se trouve chaque organe. C’est le but des étapes qui viennent.",
       text: "Détendeur à gauche, compresseur à droite, condenseur en haut, évaporateur en bas. Les cadrans viendront lire les deux niveaux de pression de ce même circuit.",
       markup: circuitPanel,
       mount(scene) {
@@ -150,7 +151,7 @@
     {
       short: "Repérer",
       kicker: "Étape 2 · Positionner les organes",
-      title: "Montrez les quatre organes dans l’ordre demandé.",
+      title: "Montrez les quatre organes dans l’ordre demandé.", narration: "Cette étape vérifie que vous reconnaissez chaque organe à son symbole, car les noms sont masqués. Ce qui est contrôlé, c’est le symbole sur lequel vous touchez : il doit correspondre à l’organe demandé. Les quatre organes sont à trouver l’un après l’autre, et un compteur de progression suit l’avancement. Cette reconnaissance est la condition de tout le reste, puisque c’est la place d’un organe sur la boucle qui dit si la pression est haute ou basse autour de lui. La suite reprend ces organes, un à un, par leur rôle.",
       text: "Cliquez successivement sur le détendeur, le compresseur, le condenseur puis l’évaporateur. Le symbole réellement touché doit correspondre au nom.",
       locked: true,
       markup: circuitPanel,
@@ -178,7 +179,7 @@
     organDefinitionLesson({
       short: "Compresseur",
       kicker: "Étape 3 · Rappeler la fonction",
-      title: "Qui aspire la vapeur BP et la refoule en HP ?",
+      title: "Qui aspire la vapeur BP et la refoule en HP ?", narration: "Une série de quatre rappels commence ici. Pour chacun, un rôle est décrit et vous retrouvez l’organe qui le tient, sans nom écrit sur le symbole. Mieux vaut raisonner que deviner : la boucle vue au début donne l’ordre de passage du fluide, et sa pression ne change de niveau qu’à deux endroits. Ces rôles servent de base à la lecture des cadrans, puisque ceux-ci montrent justement les deux niveaux de pression du circuit. Voici la question : Qui aspire la vapeur BP et la refoule en HP ?",
       text: "Cet organe met le fluide en mouvement et élève sa pression. Il ne fabrique pas le froid.",
       correct: "compressor",
       explanation: "Le compresseur aspire la vapeur basse pression et la refoule à une pression plus élevée. Il se situe à droite de la Croix."
@@ -186,7 +187,7 @@
     organDefinitionLesson({
       short: "Condenseur",
       kicker: "Étape 4 · Rappeler la fonction",
-      title: "Qui rejette la chaleur et transforme la vapeur en liquide ?",
+      title: "Qui rejette la chaleur et transforme la vapeur en liquide ?", narration: "Deuxième rappel, et le vocabulaire change : on parle maintenant de chaleur et d’état du fluide. Le texte indique dans quel état le fluide arrive à cet organe : chaud, et sous haute pression. Cela aide à le situer sur la boucle, sans aucun nom. Retenez aussi que la chaleur va dans deux sens opposés dans ce circuit : le fluide en cède d’un côté, il en reçoit de l’autre. Ce partage sera mis à l’épreuve plus loin. Voici la question : Qui rejette la chaleur et transforme la vapeur en liquide ?",
       text: "Le fluide arrive chaud et sous haute pression. Il cède de la chaleur au milieu extérieur.",
       correct: "condenser",
       explanation: "Le condenseur rejette la chaleur. Le fluide y passe progressivement de vapeur à liquide, côté HP, en haut de la Croix."
@@ -194,7 +195,7 @@
     organDefinitionLesson({
       short: "Détendeur",
       kicker: "Étape 5 · Rappeler la fonction",
-      title: "Qui fait chuter la pression et dose le débit ?",
+      title: "Qui fait chuter la pression et dose le débit ?", narration: "Troisième rappel, avec un rôle qui touche aux deux niveaux de pression à la fois. L’organe cherché marque la frontière entre la haute et la basse pression, et le texte le place avant l’évaporateur. Pour raisonner, on peut suivre le fluide dans son sens de circulation et se demander ce que devient sa pression en franchissant cette frontière. Cela aide aussi à comprendre pourquoi les deux cadrans n’indiquent pas la même chose sur un même circuit : ils lisent les deux côtés de cette frontière. Voici la question : Qui fait chuter la pression et dose le débit ?",
       text: "Cet organe sépare la haute pression de la basse pression avant l’évaporateur.",
       correct: "expansion",
       explanation: "Le détendeur provoque la chute de pression et règle l’alimentation de l’évaporateur. Il se situe à gauche de la Croix."
@@ -202,7 +203,7 @@
     organDefinitionLesson({
       short: "Évaporateur",
       kicker: "Étape 6 · Rappeler la fonction",
-      title: "Qui capte la chaleur et vaporise le fluide ?",
+      title: "Qui capte la chaleur et vaporise le fluide ?", narration: "Dernier rappel de la série, côté basse pression. Le texte précise que le fluide y reçoit de la chaleur, celle du milieu que l’on cherche à refroidir. C’est la contrepartie du deuxième rappel, où le fluide cédait sa chaleur au milieu extérieur : un côté donne, l’autre prend. Une fois les quatre rôles retrouvés, vous aurez en tête le trajet complet du fluide et ses deux niveaux de pression, ce qui prépare l’arrivée des manomètres. Voici la question : Qui capte la chaleur et vaporise le fluide ?",
       text: "Côté basse pression, le fluide reçoit la chaleur du milieu à refroidir.",
       correct: "evaporator",
       explanation: "L’évaporateur capte la chaleur. Le fluide y devient vapeur avant de retourner au compresseur, en bas de la Croix."
@@ -210,7 +211,7 @@
     {
       short: "BP / HP",
       kicker: "Étape 7 · Deux niveaux de pression",
-      title: "Le détendeur et le compresseur séparent BP et HP.",
+      title: "Le détendeur et le compresseur séparent BP et HP.", narration: "Le circuit n’a pas une seule pression mais deux, et ce sont le compresseur et le détendeur qui les séparent : le premier fait monter la pression, le second la fait chuter. Chaque côté ainsi délimité abrite l’un des deux organes où le fluide échange de la chaleur avec son milieu. Pour trancher, il faut donc relier deux informations : le sens de l’échange de chaleur, et le niveau de pression auquel il a lieu. Cette liaison vous servira à interpréter les cadrans. Voici la question : Où le fluide rejette-t-il sa chaleur ?",
       text: "Le compresseur fait monter la pression. Le détendeur la fait chuter. Identifiez maintenant le côté où le fluide rejette sa chaleur.",
       locked: true,
       markup: circuitPanel,
@@ -225,7 +226,7 @@
     {
       short: "Un cadran",
       kicker: "Étape 8 · Une aiguille, deux lectures",
-      title: "La pression place l’aiguille ; le fluide donne la saturation.",
+      title: "La pression place l’aiguille ; le fluide donne la saturation.", narration: "Un manomètre de service est un cadran unique qui donne deux lectures. C’est la pression du circuit qui place l’aiguille. Autour d’elle, deux graduations : l’échelle extérieure donne la pression relative, et l’échelle intérieure la traduit en température de saturation. Cette traduction n’est valable que pour un fluide précis, ici le R-134a, car c’est le fluide qui relie une pression à une température. Quand vous déplacerez l’aiguille, vous verrez la température suivre la pression. Ensuite, vous ferez cette lecture vous-même, sans les chiffres affichés.",
       text: "Déplacez l’aiguille. L’échelle extérieure indique la pression relative. L’échelle intérieure traduit cette pression en température de saturation pour le R-134a.",
       markup: gaugePanel,
       mount(scene, api) { readingActivity(scene, api, { ...scenario("bp", "R134a", -10, -1, 4, .5), pressure: 1 }, { discovery: true }); }
@@ -233,7 +234,7 @@
     {
       short: "Lire BP",
       kicker: "Étape 9 · Lecture basse pression",
-      title: "Lisez le manomètre BP sans affichage numérique.",
+      title: "Lisez le manomètre BP sans affichage numérique.", narration: "Cette fois, aucun chiffre n’est affiché : vous lisez l’aiguille elle-même, sur le cadran basse pression. L’ordre de lecture compte. On relève d’abord la pression sur l’échelle extérieure, puis la température de saturation sur l’échelle intérieure, parce que la seconde découle de la première pour le fluide du cadran. Comme la lecture est analogique, une réponse proche est acceptée : la marge est de deux pour cent de l’étendue du cadran. Ce geste, aiguille d’abord et échelles ensuite, reviendra dans la série de six cadrans.",
       text: "Plus d’affichage numérique : repérez la graduation atteinte par l’aiguille, puis lisez les deux échelles. Une tolérance de 2 % de l’étendue tient compte de la lecture analogique.",
       locked: true,
       markup: gaugePanel,
@@ -242,7 +243,7 @@
     {
       short: "Lire HP",
       kicker: "Étape 10 · Lecture haute pression",
-      title: "Passez au manomètre HP.",
+      title: "Passez au manomètre HP.", narration: "Le manomètre haute pression se lit comme le précédent : l’aiguille d’abord, puis les deux échelles. Seule la plage change, puisque ce cadran couvre des pressions plus élevées. La tolérance reste de deux pour cent de l’étendue, ce qui donne une marge plus large en bar que sur le cadran basse pression. Gardez aussi une information en réserve : pour un zéotrope, ce sera le point de bulle qui servira de référence côté haute pression, quand viendront les calculs de sous-refroidissement. Rien à calculer pour l’instant, il s’agit de bien lire.",
       text: "La méthode reste identique, mais la plage change. Côté HP, la référence d’un zéotrope sera le point de bulle pour les futurs calculs de sous-refroidissement.",
       locked: true,
       markup: gaugePanel,
@@ -251,7 +252,7 @@
     {
       short: "Changer fluide",
       kicker: "Étape 11 · Observer avant de conclure",
-      title: "À 4 bar, que change réellement le choix du fluide ?",
+      title: "À 4 bar, que change réellement le choix du fluide ?", narration: "Cet exercice est une petite expérience où un seul paramètre change. La pression de départ est de quatre bar relatifs, et ce que vous modifiez, c’est le fluide. Avant tout changement, gardez en mémoire la température obtenue avec le R-134a : elle sert de point de comparaison. Ensuite, pour chaque nouveau fluide, on pose les mêmes deux questions, l’une sur la pression, l’autre sur la saturation. Cette discipline évite de conclure sur une impression plutôt que sur une observation. Voici la question : À 4 bar, que change réellement le choix du fluide ?",
       text: "Notez la température du R-134a, puis changez de fluide. Répondez à deux questions : la pression a-t-elle changé ? La saturation a-t-elle changé ?",
       markup: gaugePanel,
       mount(scene, api) {
@@ -293,7 +294,7 @@
     {
       short: "Relatif / absolu",
       kicker: "Étape 12 · Nommer la référence",
-      title: "Le cadran de service affiche généralement une pression relative.",
+      title: "Le cadran de service affiche généralement une pression relative.", narration: "Le cadran de service affiche généralement une pression relative, c’est-à-dire sans compter celle de l’atmosphère. Or le moteur de calcul qui relie pression et température demande la pression absolue. Il faut donc convertir avant d’aller chercher la moindre température : on ajoute à la pression relative lue sur le cadran la pression atmosphérique, à l’altitude de référence du module. C’est une simple addition, mais l’oublier fausse la température de saturation qu’on en déduit. Ici, les deux pressions sont déjà données, et le résultat s’arrondit au centième.",
       text: "Pour interroger le moteur P/T, la pression absolue est nécessaire. À l’altitude de référence du module, ajoutez 1,013 bar à la pression relative.",
       locked: true,
       markup: gaugePanel,
@@ -316,7 +317,7 @@
     {
       short: "Série",
       kicker: "Étape 13 · Répéter pour confirmer",
-      title: "Six cadrans, six lectures complètes.",
+      title: "Six cadrans, six lectures complètes.", narration: "Une lecture réussie ne fait pas encore un réflexe. Cette série de six cadrans sert à le fabriquer, en variant les situations : basse pression, haute pression, plusieurs fluides. Pour chaque cadran, la première chose à regarder est donc l’indication de côté et de fluide, puisque la même position d’aiguille ne donne pas la même température d’un fluide à l’autre. Une marge d’erreur de lecture est acceptée, car la lecture est analogique. Le score se construit au fil des six lectures, avec la même méthode à chaque fois.",
       text: "Pour chaque cadran, indiquez la pression relative et la température de saturation. La série mélange BP, HP et plusieurs fluides.",
       locked: true,
       markup: gaugePanel,
@@ -362,7 +363,7 @@
     {
       short: "Identifier",
       kicker: "Étape 14 · Appliquer la réciprocité",
-      title: "À température donnée, chaque fluide possède sa pression d’équilibre.",
+      title: "À température donnée, chaque fluide possède sa pression d’équilibre.", narration: "Jusqu’ici, la pression vous donnait la température. Ici, on renverse le raisonnement : la température est connue, vingt degrés, et c’est la pression qui doit vous renseigner. À une température donnée, chaque fluide a sa propre pression d’équilibre, donc la pression mesurée peut désigner un fluide plutôt qu’un autre. Cela suppose deux conditions : le circuit est arrêté et stabilisé, et le liquide et la vapeur sont présents ensemble. Même alors, le résultat oriente seulement le diagnostic, car l’étiquetage et l’historique restent nécessaires. Voici la question : Quel fluide correspond au cadran ?",
       text: "Le circuit est arrêté, stabilisé à 20 °C et contient liquide et vapeur. Cette fois, la température est fixe : comparez la pression mesurée aux trois fluides proposés.",
       locked: true,
       markup: gaugePanel,
@@ -379,7 +380,7 @@
     {
       short: "Incondensables",
       kicker: "Étape 15 · Mission avancée",
-      title: "Une pression stabilisée trop haute fait suspecter des incondensables.",
+      title: "Une pression stabilisée trop haute fait suspecter des incondensables.", narration: "Voici le dernier exercice de diagnostic du module. Le circuit au R-134a est à l’arrêt, stabilisé à vingt-cinq degrés, et le cadran affiche une pression supérieure à la valeur théorique pour cette température. Une telle situation fait suspecter des incondensables. Ce qui est travaillé ici, c’est la façon de formuler ce que l’on sait, ni plus, ni moins. Quatre conclusions sont proposées, et il s’agit de peser chacune au regard de ce que la comparaison entre mesure et théorie permet réellement d’établir.",
       text: "Le circuit au R-134a est arrêté et stabilisé à 25 °C. Le cadran indique une pression supérieure à la pression de saturation théorique. Choisissez la conclusion la plus rigoureuse.",
       locked: true,
       markup: gaugePanel,
@@ -396,7 +397,7 @@
     {
       short: "Bilan",
       kicker: "Bilan · Fondation acquise",
-      title: "La pression devient une température seulement si le fluide est connu.",
+      title: "La pression devient une température seulement si le fluide est connu.", narration: "Le premier module se résume en une idée : une pression ne devient une température que si le fluide est connu. Vous savez désormais situer la haute et la basse pression sur le circuit, lire les deux échelles d’un cadran, passer de la pression relative à la pression absolue, et mener deux diagnostics à partir de la pression et de la température. La suite ajoute un élément nouveau, les températures réelles du circuit. Surchauffe et sous-refroidissement s’y calculent comme des écarts de température, pas comme de nouvelles pressions.",
       text: "Vous savez situer BP et HP, lire les deux échelles, distinguer relatif et absolu et encadrer deux diagnostics P/T. Le module 2 ajoute les températures réelles du circuit.",
       markup() { return `<div class="score-card success"><p class="eyebrow">MODULE 1 TERMINÉ</p><strong>BP ↔ HP</strong><h3>Prochaine étape : comparer saturation et température réelle</h3><p>La surchauffe et le sous-refroidissement sont des différences de température, pas de nouvelles pressions.</p><a class="primary-action" href="../module-2-surchauffe-sous-refroidissement/index.html">Continuer vers le module 2 →</a></div>`; }
     }

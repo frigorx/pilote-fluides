@@ -179,6 +179,7 @@ let helpRevealed = false;
 let activeEquipmentPanel = "hoses";
 let speechRun = 0;
 let speaking = false;
+let phaseLue = null;
 let statusTimer = 0;
 let state = createState();
 
@@ -208,6 +209,7 @@ function nextValue(name) {
 
 function start(selectedMode) {
   stopVoice();
+  phaseLue = null;
   mode = selectedMode;
   lastMode = selectedMode;
   current = 0;
@@ -234,6 +236,11 @@ function start(selectedMode) {
 function render() {
   const action = currentAction();
   const phase = currentPhase();
+  if (phaseLue && phaseLue !== phase.id) {
+    stopVoice();
+    if (window.PiloteProfVocal && window.PiloteProfVocal.etat().actif) window.PiloteProfVocal.relire();
+  }
+  phaseLue = phase.id;
   const guide = guidanceFor(action);
   const phaseIndex = phases.findIndex(item => item.id === phase.id);
   $("#phase-label").textContent = phase.label;
@@ -898,7 +905,7 @@ function speakCurrent() {
   const phase = currentPhase();
   const utterance = new SpeechSynthesisUtterance(phase.narration || "");
   utterance.lang = "fr-FR";
-  utterance.rate = .95;
+  utterance.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : .95;
   const voices = speechSynthesis.getVoices();
   utterance.voice = voices.find(voice => voice.lang === "fr-FR" && /natural|neural|microsoft|google/i.test(voice.name)) || voices.find(voice => voice.lang === "fr-FR") || voices.find(voice => voice.lang.startsWith("fr")) || null;
   utterance.onstart = () => { if (run !== speechRun) return; speaking = true; $("#voice-button").textContent = "■ Arrêter"; $("#voice-button").setAttribute("aria-pressed", "true"); };
@@ -971,6 +978,10 @@ $$('[data-equipment-tab]').forEach(button => button.addEventListener("click", ()
 $("#check-action").addEventListener("click", attemptCheck);
 $("#hint-button").addEventListener("click", revealHint);
 $("#voice-button").addEventListener("click", speakCurrent);
+/* chantier prof vocal (18/10/2026) : changer la vitesse commune coupe la lecture ; pendant le TP, chaque phase est une
+   suite de gestes à faire : le prof vocal du site lit la phase, puis attend l'élève */
+document.addEventListener("pilotevoix:vitesse", stopVoice);
+window.PILOTE_PROF_ACTIVITE = () => !$("#game").hidden;
 $("#reset-button").addEventListener("click", () => start(mode));
 $("#exit-button").addEventListener("click", goHome);
 $("#retry-button").addEventListener("click", () => start(lastMode));

@@ -18,15 +18,8 @@
       </div>
       <div class="course-name" id="courseName">Diagramme enthalpique</div>
       <div class="tools" aria-label="Réglages de lecture">
-        <button type="button" class="tool-button" id="readButton" aria-label="Écouter le texte affiché" aria-pressed="false">▶ Écouter</button>
+        <button type="button" class="tool-button" id="readButton" aria-label="Écouter l’explication de l’écran" aria-pressed="false" data-prof-ecouter>▶ Écouter</button>
         <button type="button" class="tool-button" id="stopButton" aria-label="Arrêter la voix" disabled>■ Stop</button>
-        <label class="speed-label" for="speedSelect">Vitesse</label>
-        <select id="speedSelect" class="speed-select" aria-label="Vitesse de la voix">
-          <option value="0.85">0,85×</option>
-          <option value="0.95" selected>0,95×</option>
-          <option value="1.1">1,10×</option>
-          <option value="1.25">1,25×</option>
-        </select>
         <button type="button" class="tool-button compact" id="readingButton" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
         <button type="button" class="tool-button compact" id="fullscreenButton" aria-label="Afficher en plein écran">⛶</button>
       </div>
@@ -57,7 +50,7 @@
     </main>
 
     <footer class="navigation" aria-label="Navigation dans le parcours">
-      <button type="button" class="nav-button secondary" id="backButton">← Retour</button>
+      <button type="button" class="nav-button secondary" id="backButton" data-prof-precedent>← Retour</button>
       <div class="module-state" id="moduleState" aria-live="polite"></div>
       <button type="button" class="nav-button primary" id="nextButton">Continuer →</button>
     </footer>
@@ -69,6 +62,13 @@
     window.__INERWEB_CONFIG__ = __COURSE_CONFIG__;
   </script>
   <script>__COURSE_JS__</script>
+  <!-- la voix du site (chantier prof vocal, 18/10/2026) : vitesse commune, MP3 quand ils existent, prof vocal qui enchaîne
+       les écrans et s'arrête aux questions ; une copie hors du site garde la voix du navigateur à 0,95× -->
+  <script src="../../../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../../../moteur/prononciation.js?v=20260902-1"></script>
+  <script src="../../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../../moteur/voix.js?v=20261017-voix"></script>
+  <script src="../../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
 <script src="__MARQUE_JS__" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

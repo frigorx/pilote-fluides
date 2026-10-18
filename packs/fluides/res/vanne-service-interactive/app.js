@@ -38,6 +38,34 @@
     games: createFreshGamesState()
   };
 
+  /* ---------- la voix (chantier prof vocal, 18/10/2026) ----------
+     Chaque écran a son texte pour l'oreille (`narration`) : la voix explique ce qu'on voit, elle ne relit pas l'écran.
+     Au clic seulement ; changer d'écran la coupe, changer la vitesse commune aussi. moteur/voix.js lit le MP3 s'il
+     existe, sinon la voix du navigateur. Le prof vocal du site enchaîne les écrans et attend l'élève aux mini-jeux. */
+  const ecoute = document.getElementById("listen");
+  let parle = false, lecture = 0;
+  const voixFr = () => {
+    const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter(v => v.lang.toLowerCase().startsWith("fr"));
+    return fr.find(v => /natural|neural|online/i.test(v.name)) || fr.find(v => /google/i.test(v.name)) || fr.find(v => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+  };
+  function majEcoute() { ecoute.textContent = parle ? "■ Arrêter" : "▶ Écouter"; ecoute.setAttribute("aria-pressed", String(parle)); }
+  function taire() { lecture++; parle = false; if ("speechSynthesis" in window) speechSynthesis.cancel(); majEcoute(); }
+  function ecouter() {
+    if (parle) { taire(); return; }
+    const lesson = LESSONS[state.current];
+    if (state.surAccueil || !lesson || !lesson.narration || !("speechSynthesis" in window)) return;
+    taire();
+    const run = lecture, u = new SpeechSynthesisUtterance(lesson.narration), v = voixFr();
+    u.lang = "fr-FR"; if (v) u.voice = v;
+    u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+    u.onstart = () => { if (run !== lecture) return; parle = true; majEcoute(); };
+    u.onend = u.onerror = () => { if (run !== lecture) return; parle = false; majEcoute(); };
+    speechSynthesis.speak(u);
+  }
+  ecoute.addEventListener("click", ecouter);
+  document.addEventListener("pilotevoix:vitesse", taire);
+  window.PILOTE_PROF_ACTIVITE = () => !state.surAccueil && state.current === 3;
+
   const POSITION_ORDER = ["front", "mid", "back"];
 
   /* Adressage profond — convention du pack : une fiche de cours doit pouvoir
@@ -72,6 +100,8 @@
 
   function afficherAccueil(moveFocus) {
     stopSequence();
+    taire();
+    ecoute.hidden = true;
     state.surAccueil = true;
     document.body.classList.add("screen-home");
     document.body.classList.remove("screen-safety", "screen-games");
@@ -82,6 +112,7 @@
 
   function quitterAccueil() {
     state.surAccueil = false;
+    ecoute.hidden = false;
     document.body.classList.remove("screen-home");
     if (elements.homeButton) elements.homeButton.hidden = false;
   }
@@ -204,7 +235,7 @@
   const LESSONS = [
     {
       kicker: "Écran 1 · Les trois positions",
-      title: "Tourner la clé et suivre les passages",
+      title: "Tourner la clé et suivre les passages", narration: "Voici la coupe d’une vanne de service, manœuvrée avec une clé à cliquet. Quand on tourne la clé, la tige ne s’allonge pas : elle se déplace d’un bloc avec le pointeau, pendant que le presse-étoupe reste fixe. Trois positions sont à connaître : avant, intermédiaire et arrière. À chacune, ce qui communique et ce qui est isolé change. En position arrière, le fluide peut passer entre la tuyauterie, repérée T, et le compresseur, repéré C. La prise P est alors isolée, tandis que P1 reste reliée à C. Vous comparerez ensuite le côté BP et le côté HP.",
       intro: "Le dessin reprend exactement la coupe validée. La clé, le carré, la tige et le pointeau se déplacent ensemble.",
       visualTitle: "Les trois positions de la vanne",
       hint: "Choisis une position ou clique sur la clé à cliquet.",
@@ -212,7 +243,7 @@
     },
     {
       kicker: "Écran 2 · BP et HP",
-      title: "Même vanne, sens de circulation opposé",
+      title: "Même vanne, sens de circulation opposé", narration: "Même vanne, même dessin. Ce qui change, c’est le côté du circuit sur lequel elle est montée, et donc le sens du fluide. Côté BP, c’est l’aspiration : le fluide vient de la tuyauterie, traverse la vanne et entre dans le compresseur, ce que montre le trait bleu plein. Côté HP, c’est l’inverse : le compresseur refoule, et le fluide repart dans la tuyauterie, en rouge tireté. Pour s’en souvenir : la BP va vers le compresseur, la HP en vient. Vous inverserez ensuite les flèches, puis passerez au bon raccord.",
       intro: "La géométrie ne change pas. Seuls le côté du circuit et le sens du fluide changent.",
       visualTitle: "Comparer BP et HP",
       hint: "Passe de BP à HP pour inverser les flèches.",
@@ -220,7 +251,7 @@
     },
     {
       kicker: "Écran 3 · Geste et sécurité",
-      title: "Choisir le bon raccord avant d’intervenir",
+      title: "Choisir le bon raccord avant d’intervenir", narration: "Le carré de manœuvre sert de repère : il situe les deux prises. La plus proche, P, est la voie de service, celle du flexible du manifold. La plus éloignée, P1, porte le pressostat, et l’on ne défait jamais son bouchon sur une installation chargée. Le presse-étoupe rend étanche le passage de la tige, mais reste un point de fuite possible. Comme les raccords, il se contrôle. Les bouchons, eux, doivent rester en place et serrés quand l’installation fonctionne. Visser ferme le passage entre T et C. Dévisser le rouvre et isole P. Le dernier écran vous fait pratiquer.",
       intro: "Repère d’abord le carré de manœuvre : il donne immédiatement la position de P et de P1.",
       visualTitle: "Clé, raccords et presse-étoupe",
       hint: "Utilise les deux sens de rotation.",
@@ -228,7 +259,7 @@
     },
     {
       kicker: "Écran 4 · Mini-jeux",
-      title: "À toi de manœuvrer et de décider",
+      title: "À toi de manœuvrer et de décider", narration: "Cet écran ne présente rien de nouveau : il vous entraîne. Deux jeux courts se suivent. Le premier consiste à repérer des éléments sur le dessin de la vanne, et en cas d’erreur la correction affichée explique la bonne réponse. Le second vous place devant une situation de terrain, où il faut choisir le geste adapté. L’intérêt est de transformer ces repères en réflexes, pour ne plus hésiter au moment d’intervenir. Le premier jeu démarre ainsi. Cliquez sur l’élément que la clé doit faire tourner.",
       intro: "Deux entraînements courts : repérer les éléments, puis choisir le geste adapté à une situation terrain.",
       visualTitle: "Jeu 1 · Repérage sur la vanne",
       hint: "Une question à la fois. La correction est immédiate.",
@@ -822,6 +853,7 @@
 
   function renderStep(index, moveFocus) {
     stopSequence();
+    taire();
     quitterAccueil();
     state.current = Math.max(0, Math.min(LESSONS.length - 1, index));
     state.furthest = Math.max(state.furthest, state.current);
@@ -893,7 +925,7 @@
   });
 
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) stopSequence();
+    if (document.hidden) { stopSequence(); taire(); }
   });
 
   const copyButton = document.getElementById("copy-link");

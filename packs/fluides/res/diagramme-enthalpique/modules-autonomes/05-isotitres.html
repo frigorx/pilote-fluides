@@ -471,15 +471,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       </div>
       <div class="course-name" id="courseName">Diagramme enthalpique</div>
       <div class="tools" aria-label="Réglages de lecture">
-        <button type="button" class="tool-button" id="readButton" aria-label="Écouter le texte affiché" aria-pressed="false">▶ Écouter</button>
+        <button type="button" class="tool-button" id="readButton" aria-label="Écouter l’explication de l’écran" aria-pressed="false" data-prof-ecouter>▶ Écouter</button>
         <button type="button" class="tool-button" id="stopButton" aria-label="Arrêter la voix" disabled>■ Stop</button>
-        <label class="speed-label" for="speedSelect">Vitesse</label>
-        <select id="speedSelect" class="speed-select" aria-label="Vitesse de la voix">
-          <option value="0.85">0,85×</option>
-          <option value="0.95" selected>0,95×</option>
-          <option value="1.1">1,10×</option>
-          <option value="1.25">1,25×</option>
-        </select>
         <button type="button" class="tool-button compact" id="readingButton" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
         <button type="button" class="tool-button compact" id="fullscreenButton" aria-label="Afficher en plein écran">⛶</button>
       </div>
@@ -510,7 +503,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     </main>
 
     <footer class="navigation" aria-label="Navigation dans le parcours">
-      <button type="button" class="nav-button secondary" id="backButton">← Retour</button>
+      <button type="button" class="nav-button secondary" id="backButton" data-prof-precedent>← Retour</button>
       <div class="module-state" id="moduleState" aria-live="polite"></div>
       <button type="button" class="nav-button primary" id="nextButton">Continuer →</button>
     </footer>
@@ -518,7 +511,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"isotitres","order":5,"title":"Les isotitres","short":"Isotitres x","level":"essentiel","symbol":"x = constante","goal":"Reconnaître les lignes de titre vapeur dans la zone diphasique.","discover":{"title":"Quelle part est déjà vapeur ?","body":"Dans la cloche, le titre x est la fraction massique de vapeur. Une isotitre relie des points de même titre. Ces lignes restent à l’intérieur de la zone liquide-vapeur.","remember":"x = 0 : liquide saturé. x = 1 : vapeur saturée. Entre les deux : mélange."},"function":{"title":"Lire la qualité du mélange","body":"Une isotitre n’est ni une température ni une pression. Elle indique la proportion massique de vapeur présente dans le mélange.","terrain":"Lien métier : savoir les reconnaître évite de confondre une ligne de titre avec une frontière ou une autre famille de courbes."},"quiz":[{"question":"Que représente le titre x ?","choices":["La fraction massique de vapeur","La pression absolue","Le volume du local"],"answer":0,"feedback":"Le titre x indique la part massique du fluide présente sous forme de vapeur."},{"question":"Où se trouvent les isotitres ?","choices":["Uniquement dans la cloche","Uniquement à gauche","Sur l’axe des pressions"],"answer":0,"feedback":"Le titre n’a de sens que dans la zone où liquide et vapeur coexistent."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"isotitres","order":5,"title":"Les isotitres","short":"Isotitres x","level":"essentiel","symbol":"x = constante","goal":"Reconnaître les lignes de titre vapeur dans la zone diphasique.","discover":{"title":"Quelle part est déjà vapeur ?","body":"Dans la cloche, le titre x est la fraction massique de vapeur. Une isotitre relie des points de même titre. Ces lignes restent à l’intérieur de la zone liquide-vapeur.","remember":"x = 0 : liquide saturé. x = 1 : vapeur saturée. Entre les deux : mélange.","narration":"Dans la cloche, le fluide est un mélange, dont une part de la masse est déjà de la vapeur. Cette part s'appelle le titre vapeur. Sur le schéma, chaque ligne pointillée rassemble des points de même titre : c'est une isotitre, et elle reste à l'intérieur de la cloche. Un titre de zéro correspond au liquide saturé, un titre de un à la vapeur saturée. Tout ce qui se trouve entre les deux est un mélange. Vous verrez ensuite comment lire la qualité du mélange."},"function":{"title":"Lire la qualité du mélange","body":"Une isotitre n’est ni une température ni une pression. Elle indique la proportion massique de vapeur présente dans le mélange.","terrain":"Lien métier : savoir les reconnaître évite de confondre une ligne de titre avec une frontière ou une autre famille de courbes.","narration":"Une isotitre ne vous renseigne ni sur la température, ni sur la pression. Ce qu'elle exprime, c'est la qualité du mélange : la part de vapeur qu'il contient, comptée en masse. Sur le chantier, savoir la reconnaître évite deux confusions : la prendre pour une frontière, ou pour une courbe d'une autre famille. Chaque ligne de titre répond donc à une seule question, celle de la proportion de vapeur. Les questions du module viennent ensuite."},"quiz":[{"question":"Que représente le titre x ?","choices":["La fraction massique de vapeur","La pression absolue","Le volume du local"],"answer":0,"feedback":"Le titre x indique la part massique du fluide présente sous forme de vapeur."},{"question":"Où se trouvent les isotitres ?","choices":["Uniquement dans la cloche","Uniquement à gauche","Sur l’axe des pressions"],"answer":0,"feedback":"Le titre n’a de sens que dans la zone où liquide et vapeur coexistent."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — Les isotitres","fixedIds":["isotitres"]};
   </script>
   <script>(() => {
@@ -579,7 +572,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     moduleState: document.getElementById("moduleState"),
     readButton: document.getElementById("readButton"),
     stopButton: document.getElementById("stopButton"),
-    speedSelect: document.getElementById("speedSelect"),
     readingButton: document.getElementById("readingButton"),
     fullscreenButton: document.getElementById("fullscreenButton")
   };
@@ -782,7 +774,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
         <div class="remember"><strong>À retenir :</strong> ${escapeHtml(module.discover.remember)}</div>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = "Comprendre →";
-      state.currentSpeechText = buildNarration(module.discover.title, module.discover.body, module.discover.remember);
+      /* la voix dit la narration de l'écran, écrite pour l'oreille (chantier prof vocal, 18/10/2026) */
+      state.currentSpeechText = module.discover.narration || buildNarration(module.discover.title, module.discover.body, module.discover.remember);
       return;
     }
 
@@ -794,7 +787,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
         <div class="remember"><strong>Repère :</strong> ${escapeHtml(module.symbol)}</div>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = "Je vérifie →";
-      state.currentSpeechText = buildNarration(module.function.title, module.function.body, module.function.terrain);
+      state.currentSpeechText = module.function.narration || buildNarration(module.function.title, module.function.body, module.function.terrain);
       return;
     }
 
@@ -997,7 +990,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     const run = state.speechRun;
     const utterance = new SpeechSynthesisUtterance(state.currentSpeechText);
     utterance.lang = "fr-FR";
-    utterance.rate = Number(dom.speedSelect.value || 0.95);
+    utterance.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;   // la vitesse commune du site
     utterance.pitch = 1;
     const voice = bestVoice();
     if (voice) utterance.voice = voice;
@@ -1052,9 +1045,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   dom.nextButton.addEventListener("click", goNext);
   dom.readButton.addEventListener("click", toggleSpeech);
   dom.stopButton.addEventListener("click", stopSpeech);
-  dom.speedSelect.addEventListener("change", () => {
-    if (state.speaking || state.paused) speakCurrent();
-  });
+  /* la vitesse commune (moteur/reglage-voix.js) : la changer arrête la lecture ; la suivante la prend */
+  document.addEventListener("pilotevoix:vitesse", stopSpeech);
   dom.readingButton.addEventListener("click", () => {
     const active = dom.app.classList.toggle("reading-easy");
     dom.readingButton.setAttribute("aria-pressed", String(active));
@@ -1097,6 +1089,13 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   renderStage();
 })();
 </script>
+  <!-- la voix du site (chantier prof vocal, 18/10/2026) : vitesse commune, MP3 quand ils existent, prof vocal qui enchaîne
+       les écrans et s'arrête aux questions ; une copie hors du site garde la voix du navigateur à 0,95× -->
+  <script src="../../../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../../../moteur/prononciation.js?v=20260902-1"></script>
+  <script src="../../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../../moteur/voix.js?v=20261017-voix"></script>
+  <script src="../../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
 <script src="../../../../../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

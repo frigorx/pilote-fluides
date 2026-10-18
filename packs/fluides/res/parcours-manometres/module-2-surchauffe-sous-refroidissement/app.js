@@ -157,7 +157,7 @@
     {
       short: "Référence",
       kicker: "Étape 1 · Quatre grandeurs à distinguer",
-      title: "Ici, on choisit un point, une température et une formule.",
+      title: "Ici, on choisit un point, une température et une formule.", narration: "Ce module change de question. Le lien entre pression et température est acquis : la saturation lue sur le cadran devient une simple donnée de départ. Votre travail porte maintenant sur deux choix, la température réelle à retenir et le sens de la soustraction. Du côté de la vapeur, on retire la saturation BP de la température réelle. Du côté du liquide, c’est l’inverse : on retire la température réelle de la saturation HP. Quatre points de mesure, repérés E1, C1, C2 et D1, sont sur le circuit, et toute la difficulté est de savoir lequel utiliser.",
       text: "Le rapport pression–température est acquis dans le module 1. Dans ce module, la saturation lue au cadran devient une donnée : votre travail est de choisir la bonne température réelle et le bon sens de soustraction.",
       markup: circuitPanel,
       mount(scene) {
@@ -168,7 +168,7 @@
     {
       short: "Points",
       kicker: "Étape 2 · Choisir le bon emplacement",
-      title: "Repérez les quatre points de mesure sur le circuit.",
+      title: "Repérez les quatre points de mesure sur le circuit.", narration: "Avant de calculer, il faut savoir où l’on mesure. Une température relevée au mauvais endroit donne un écart faux, même avec une soustraction parfaite. Cette étape sert donc à associer chacun des quatre codes à sa place sur le circuit, certains points concernant la vapeur et les autres le liquide. Ce qui est contrôlé, c’est le cercle sur lequel vous touchez : il doit porter le code demandé. La famille indiquée à l’écran rappelle de quel type d’écart il s’agit. Ces repères vous serviront dans tous les calculs qui suivent.",
       text: "Touchez successivement la sortie évaporateur, l’aspiration compresseur, la sortie condenseur puis l’entrée détendeur.",
       locked: true,
       markup: circuitPanel,
@@ -197,7 +197,7 @@
     {
       short: "Surchauffe",
       kicker: "Étape 3 · Décider puis calculer",
-      title: "Calculez la surchauffe évaporateur.",
+      title: "Calculez la surchauffe évaporateur.", narration: "Trois décisions s’enchaînent pour calculer cette surchauffe, et leur ordre a de l’importance. D’abord l’endroit où l’on pose la sonde, car de lui dépend la température réelle. Ensuite la valeur correspondante. Enfin le sens de la soustraction, qui dépend de l’état du fluide que l’on contrôle, vapeur ou liquide. La saturation de référence se lit ici sur le cadran basse pression, du côté de la rosée. Reste à décider où poser la sonde pour cette surchauffe évaporateur. Voici la question : Quelle température réelle faut-il prendre ?",
       text: "Avant de calculer, choisissez l’emplacement de la sonde, la température réelle correspondante et le sens de la soustraction.",
       locked: true,
       markup: gaugePanel,
@@ -206,7 +206,7 @@
     {
       short: "Surchauffe totale",
       kicker: "Étape 4 · Décider puis calculer",
-      title: "Calculez maintenant la surchauffe totale.",
+      title: "Calculez maintenant la surchauffe totale.", narration: "Même référence, autre étendue. La saturation BP ne change pas : elle reste le point de comparaison de la vapeur. Ce qui varie, c’est la portion du trajet de la vapeur que l’on prend en compte, donc l’endroit où la sonde se pose. Le mot total invite à se demander jusqu’où il faut suivre la vapeur. Une fois ce point fixé, le sens de la soustraction reste celui de la surchauffe précédente. Voici la question : Quelle température réelle faut-il prendre ?",
       text: "La référence BP ne change pas. À vous de déterminer jusqu’où suivre la vapeur et quelle température réelle employer.",
       locked: true,
       markup: gaugePanel,
@@ -215,7 +215,7 @@
     {
       short: "Sous-refroidissement",
       kicker: "Étape 5 · Décider puis calculer",
-      title: "Calculez le sous-refroidissement condenseur.",
+      title: "Calculez le sous-refroidissement condenseur.", narration: "On change de côté : après la vapeur, voici le liquide, du côté haute pression. La référence devient la saturation HP, lue au point de bulle. Surtout, le sens de la soustraction s’inverse par rapport à la surchauffe. Cette inversion mérite un temps d’arrêt avant tout calcul, car elle suffit à fausser le résultat. Il reste ensuite à décider où poser la sonde pour ce sous-refroidissement du condenseur. Voici la question : Quelle température réelle faut-il prendre ?",
       text: "Côté liquide, le sens de la soustraction s’inverse. Choisissez le point qui limite le condenseur avant de calculer.",
       locked: true,
       markup: gaugePanel,
@@ -224,7 +224,7 @@
     {
       short: "Sous-refroidissement total",
       kicker: "Étape 6 · Décider puis calculer",
-      title: "Calculez le sous-refroidissement total.",
+      title: "Calculez le sous-refroidissement total.", narration: "Même démarche qu’avec la surchauffe totale, mais côté liquide. La saturation HP reste votre référence, inchangée. Ce qui varie, c’est la longueur de ligne liquide que l’on prend en compte, donc l’endroit où l’on pose la sonde. Le sens de la soustraction reste celui du sous-refroidissement précédent. Comparer ce calcul à celui du condenseur permet de voir qu’un même cadran peut conduire à deux écarts différents selon le point choisi. Voici la question : Quelle température réelle faut-il prendre ?",
       text: "Conservez la saturation HP. À vous de déterminer jusqu’où suivre la ligne liquide et quelle température réelle employer.",
       locked: true,
       markup: gaugePanel,
@@ -233,7 +233,7 @@
     {
       short: "Rosée / bulle",
       kicker: "Étape 7 · Mélange zéotrope",
-      title: "Avec le R-407C, BP et HP n’emploient pas la même courbe.",
+      title: "Avec le R-407C, BP et HP n’emploient pas la même courbe.", narration: "Avec le R-407C, un même fluide ne suit pas la même courbe des deux côtés du circuit. Sur le cadran BP, la saturation se lit à la rosée. Sur le cadran HP, elle se lit à la bulle. Autrement dit, avec un tel fluide, choisir la bonne référence fait partie du calcul : chaque écart doit être associé à la courbe qui lui convient. Six associations sont proposées. Comparez-les à ce que montrent les deux cadrans avant de retenir la paire correcte.",
       text: "La vapeur surchauffée se compare à la rosée. Le liquide sous-refroidi se compare à la bulle. Choisissez la paire correcte.",
       locked: true,
       markup() { return `<div class="mission-layout"><div>${dualGaugeMarkup("R407C")}</div><aside class="mission-side panel" id="activity-panel"></aside></div>`; },
@@ -249,7 +249,7 @@
     {
       short: "Relever",
       kicker: "Étape 8 · Mission complète, partie 1",
-      title: "Relevez les quatre températures réelles sur le circuit.",
+      title: "Relevez les quatre températures réelles sur le circuit.", narration: "Cette mission complète se joue en deux temps, et le premier consiste seulement à mesurer. Il n’y a aucun calcul ici : on relève, point par point, la température réelle du circuit, et chaque valeur s’inscrit dans le carnet de mesures. Ces relevés ne sont pas un but en soi. L’écran suivant en a besoin pour calculer les quatre écarts, en même temps que vous lirez les deux manomètres. Quatre points sont à parcourir, donc quatre valeurs à garder. C’est la matière première de tout ce qui suit.",
       text: "Touchez chaque point de mesure. Notez les valeurs : elles seront nécessaires à l’écran suivant avec les deux manomètres.",
       locked: true,
       markup: circuitPanel,
@@ -275,7 +275,7 @@
     {
       short: "Calculer",
       kicker: "Étape 9 · Mission complète, partie 2",
-      title: "Lisez les deux cadrans et calculez les quatre écarts.",
+      title: "Lisez les deux cadrans et calculez les quatre écarts.", narration: "Voici l’aboutissement du module : tout ce qui précède se rassemble ici. Chaque cadran fournit une saturation, mais cette lecture sert deux fois : la saturation BP pour les deux surchauffes, la saturation HP pour les deux sous-refroidissements. Les températures réelles, elles, sont déjà dans le carnet. Reste la vraie décision : pour chaque écart, quelle valeur on retire de quelle autre. La calculatrice exécute l’opération, elle ne choisit pas à votre place. Les résultats sont attendus en kelvins.",
       text: "Les températures réelles sont déjà relevées. La calculatrice est disponible, mais vous devez choisir chaque soustraction.",
       locked: true,
       markup() { return `<div class="mission-layout"><div>${dualGaugeMarkup()}</div><aside class="mission-side"><div class="panel"><h3>Résultats en kelvins</h3><div class="measure-list" id="mission-inputs"></div><button class="check-button" id="mission-check" type="button">Vérifier les quatre calculs</button><p class="feedback" id="mission-feedback">Lisez d’abord les deux saturations sur les cadrans, puis soustrayez.</p></div><button class="calc-toggle" id="calc-toggle" type="button" aria-expanded="false">Afficher la calculatrice</button><div id="calculator-slot" hidden></div></aside></div>`; },
@@ -314,7 +314,7 @@
     {
       short: "Défi",
       kicker: "Étape 10 · Évaluation notée",
-      title: "Dix questions donnent une note sur 20.",
+      title: "Dix questions donnent une note sur 20.", narration: "Cette évaluation vérifie ce que le module vient de construire. D’abord où l’on mesure, puis quelle formule on applique, quelle référence on prend selon la vapeur ou le liquide, et enfin un calcul mené jusqu’au bout. Dix questions s’enchaînent. Dans les réponses proposées, les mêmes éléments reviennent en combinaisons différentes : le point de mesure, la saturation de référence, le sens de la soustraction. Il faut donc lire chaque proposition en entier, sans se fier à sa ressemblance avec les autres. Voici, par exemple, la première question : Quelle formule donne la surchauffe à la sortie de l’évaporateur ?",
       text: "Chaque question vaut deux points. Elles vérifient les quatre emplacements, les quatre formules, les références rosée/bulle et un calcul complet.",
       locked: true,
       markup() { return `<div class="panel" id="quiz-panel" style="height:100%"></div>`; },
@@ -355,7 +355,7 @@
     {
       short: "Bilan",
       kicker: "Bilan · Note et formules",
-      title: "Gardez les quatre formules et les quatre emplacements.",
+      title: "Gardez les quatre formules et les quatre emplacements.", narration: "Ce bilan tient en une idée : la saturation donne la référence, et c’est l’endroit de la mesure, sur la vapeur ou sur le liquide, qui fixe la température réelle à utiliser. Côté vapeur, on retire la saturation BP de la température réelle. Côté liquide, on retire la température réelle de la saturation HP. Dans chaque famille, deux écarts : l’un s’arrête à la sortie de l’organe, l’autre va jusqu’à l’organe suivant. Avec un zéotrope, la saturation BP se lit à la rosée et la saturation HP à la bulle. L’évaluation reste disponible à votre rythme.",
       text: "La saturation est la référence ; la température réelle dépend du point jusqu’auquel on suit la vapeur ou le liquide.",
       markup() {
         const note = moduleScore === null ? "Non évalué" : `${moduleScore}/20`;

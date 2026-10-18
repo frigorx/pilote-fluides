@@ -14,7 +14,6 @@
     const progress = $("#progress");
     const listen = $("#listen");
     const stop = $("#voice-stop");
-    const speed = $("#voice-speed");
     let current = 0;
     const visited = new Set([0]);
     let unlocked = true;
@@ -22,11 +21,6 @@
     let speaking = false;
     let paused = false;
 
-    const storedRate = (() => {
-      try { return Number(localStorage.getItem("inerweb-manometres-voice-rate")); }
-      catch (_) { return NaN; }
-    })();
-    if ([.8, .95, 1.1, 1.25].includes(storedRate)) speed.value = String(storedRate);
 
     function voiceAvailable() {
       return "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
@@ -85,10 +79,12 @@
       }
       stopVoice();
       const lesson = lessons[current];
-      const utterance = new SpeechSynthesisUtterance([lesson.title, lesson.text, lesson.narration || ""].join(". "));
+      /* chantier prof vocal (18/10/2026) : la voix dit la narration de l'écran, écrite pour l'oreille ; elle ne relit plus
+         le titre et le texte affichés (repli seulement pour une étape qui n'aurait pas encore la sienne) */
+      const utterance = new SpeechSynthesisUtterance(lesson.narration || [lesson.title, lesson.text].join(". "));
       const token = speechToken;
       utterance.lang = "fr-FR";
-      utterance.rate = Number(speed.value) || .95;
+      utterance.rate = root.PILOTE_VOIX_REGLAGE ? root.PILOTE_VOIX_REGLAGE.vitesse() : .95;   // la vitesse commune du site
       utterance.pitch = 1;
       const voice = selectVoice();
       if (voice) utterance.voice = voice;
@@ -182,10 +178,10 @@
     });
     listen.addEventListener("click", speak);
     stop.addEventListener("click", stopVoice);
-    speed.addEventListener("change", () => {
-      try { localStorage.setItem("inerweb-manometres-voice-rate", speed.value); } catch (_) {}
-      if (speaking || paused) { stopVoice(); speak(); }
-    });
+    /* la vitesse commune (moteur/reglage-voix.js) : la changer arrête la lecture ; la suivante la prend */
+    document.addEventListener("pilotevoix:vitesse", stopVoice);
+    /* pour le prof vocal du site : une étape verrouillée attend le geste de l'élève */
+    root.PILOTE_PROF_ACTIVITE = () => !unlocked;
     document.addEventListener("keydown", event => {
       const tag = event.target.tagName;
       if (["INPUT", "SELECT", "TEXTAREA", "BUTTON", "A"].includes(tag)) return;

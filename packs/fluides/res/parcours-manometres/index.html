@@ -14,7 +14,10 @@
 <body class="portal-page">
   <header class="portal-header">
     <img src="shared/logo-inerweb-edu.svg" alt="inerweb.fr" width="216" height="50">
-    <span class="prototype-badge">Brouillon de travail</span>
+    <div class="header-actions">
+      <button class="voice-button" id="listen" type="button" aria-pressed="false" data-prof-ecouter><span aria-hidden="true">▶</span><span class="voice-label">Écouter</span></button>
+      <span class="prototype-badge">Brouillon de travail</span>
+    </div>
   </header>
 
   <main class="portal-main">
@@ -75,6 +78,43 @@
   <div class="brand-host" data-marque-hote></div>
   <script src="shared/marque.js?v=20260818c" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
   <script src="shared/lisibilite.js?v=20260818c"></script>
+  <script src="../../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
+  <script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
+  <script>
+    /* La voix de l'accueil (chantier prof vocal, 18/10/2026) : une narration écrite pour l'oreille présente le parcours,
+       au clic seulement, à la vitesse commune du site ; changer la vitesse arrête la lecture. */
+    (function () {
+      const NARRATION = "Ce parcours mène de la lecture d’un instrument jusqu’au calcul du métier, en deux modules qui partagent les mêmes cadrans. Le premier pose les bases : situer la basse et la haute pression, lire l’aiguille, comprendre l’effet du fluide sur la lecture. Le second s’en sert pour calculer quatre écarts, en comparant la saturation et la température réelle. Si les manomètres vous sont peu familiers, le premier est le bon point de départ. Si vous lisez déjà un cadran sans hésiter, le second vous attend. Plus bas, des briques reprennent ces contenus une par une, pour une séance précise.";
+      const ecoute = document.getElementById("listen");
+      let parle = false, lecture = 0;
+      const voixFr = () => {
+        const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter(v => v.lang.toLowerCase().startsWith("fr"));
+        return fr.find(v => /natural|neural|online/i.test(v.name)) || fr.find(v => /google/i.test(v.name)) || fr.find(v => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+      };
+      function majEcoute() {
+        ecoute.querySelector("[aria-hidden]").textContent = parle ? "■" : "▶";
+        ecoute.querySelector(".voice-label").textContent = parle ? "Arrêter" : "Écouter";
+        ecoute.setAttribute("aria-pressed", String(parle));
+        ecoute.classList.toggle("active", parle);
+      }
+      function taire() { lecture++; parle = false; if ("speechSynthesis" in window) speechSynthesis.cancel(); majEcoute(); }
+      ecoute.addEventListener("click", function () {
+        if (parle) { taire(); return; }
+        if (!("speechSynthesis" in window)) return;
+        taire();
+        const run = lecture, u = new SpeechSynthesisUtterance(NARRATION), v = voixFr();
+        u.lang = "fr-FR"; if (v) u.voice = v;
+        u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+        u.onstart = () => { if (run !== lecture) return; parle = true; majEcoute(); };
+        u.onend = u.onerror = () => { if (run !== lecture) return; parle = false; majEcoute(); };
+        speechSynthesis.speak(u);
+      });
+      document.addEventListener("pilotevoix:vitesse", taire);
+      document.addEventListener("visibilitychange", () => { if (document.hidden) taire(); });
+    })();
+  </script>
 <script src="../../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
 </body>
 </html>

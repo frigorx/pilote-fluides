@@ -10,6 +10,14 @@
   <script src="../../../../moteur/plan-donnees.js"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
 <script defer src="../../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
+  <style>
+    /* la voix, partie par partie (chantier prof vocal, 18/10/2026) */
+    .voix-parties { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .voix-parties button { padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--ink); font: inherit; font-weight: 650; cursor: pointer; }
+    .voix-parties button:disabled { opacity: .45; cursor: default; }
+    .voix-parties span { color: var(--muted); font-weight: 650; }
+    main > section { scroll-margin-top: 96px; }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -23,6 +31,11 @@
       <a href="#atelier">Atelier</a>
       <a href="#quiz">Quiz</a>
     </nav>
+    <div class="voix-parties" aria-label="La voix du professeur, partie par partie">
+      <button type="button" id="listen" data-prof-ecouter aria-pressed="false">▶ Écouter</button>
+      <span id="step-count">Partie 1 sur 5</span>
+      <button type="button" id="partie-suivante" data-prof-suivant>Partie suivante ↓</button>
+    </div>
   </header>
 
   <main>
@@ -152,7 +165,7 @@
   <script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
   <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
   <script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=20261018-muets"></script>
 <!-- Lisibilité : bouton « Aa » commun au pack (taille + police DYS) -->
 <script src="../../../../moteur/lisibilite.js"></script>
 <script src="../../../../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>

@@ -5,12 +5,12 @@
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
   const phases = [
-    { id: "prepare", label: "Préparer" },
-    { id: "service", label: "Vannes de service" },
-    { id: "connect", label: "Raccorder" },
-    { id: "vacuum", label: "Vide des lignes" },
-    { id: "measure", label: "Mettre en lecture" },
-    { id: "remove", label: "Déposer" }
+    { id: "prepare", narration: "Cette phase se joue avant tout raccordement : elle vérifie que l'outil est fiable, car tout le reste s'appuie sur lui. On commence par le poste lui-même, avec une zone dégagée et vos EPI portés. Viennent ensuite les deux cadrans, dont le zéro se contrôle séparément à l'air libre, puisqu'un mauvais zéro fausse toutes les lectures. On termine par les trois flexibles, suivis sur toute leur longueur. Un flexible abîmé risque de fuir, et sur la ligne de vide, cette fuite interdirait d'obtenir puis de tenir le vide. Les vannes de service viennent après.", label: "Préparer" },
+    { id: "service", narration: "Ici, on met les deux vannes de service en état d'accueillir le manifold, en gardant le circuit isolé. Le principe : confirmer que chaque tige est au siège arrière. La prise P est alors coupée de l'installation, et la pompe ne travaillera que sur le manifold et les flexibles. Sur chaque vanne, le presse-étoupe encadre la manœuvre : libéré avant pour ne pas forcer la tige, resserré après pour qu'elle ne reste pas libre. Le bouchon de la prise P vient en dernier. P1, à l'opposé, on n'y touche pas. Les flexibles suivent.", label: "Vannes de service" },
+    { id: "connect", narration: "On construit maintenant le trajet entre le manifold, les vannes de service et la pompe. Les couleurs guident : bleu côté basse pression, rouge côté haute pression, et le flexible noir mène de la voie de vide à la pompe. La voie jaune de service ne sert pas ici. Chaque raccord se visse à la main, sans jamais forcer. Les mini-vannes ne s'ouvrent qu'à la fin, une à une, et le circuit reste à l'écart, car les deux vannes de service sont toujours au siège arrière. Le vide vient ensuite.", label: "Raccorder" },
+    { id: "vacuum", narration: "Ce manifold possède une quatrième voie, dédiée au vide : c'est elle qui relie la pompe, et la voie de service reste tranquille. Cette phase vide le manifold et les flexibles, vannes de service au siège arrière : aucun fluide du circuit ne peut atteindre la pompe. On ouvre d'abord tout le trajet, puis on démarre. En fin de séquence, on enferme le vide côté circuit, on ferme la voie de vide, et l'arrêt de la pompe ne vient qu'après : c'est ce qui limite le risque de retour d'huile. Un dernier contrôle vérifie que le vide tient.", label: "Vide des lignes" },
+    { id: "measure", narration: "Les lignes sont sous vide, place à la lecture. Chaque vanne de service passe du siège arrière à la position intermédiaire, une à la fois, avec son presse-étoupe libéré puis resserré. Les robinets BP et HP du manifold restent fermés : les manomètres lisent malgré tout, et en ouvrir un reviendrait seulement à créer une voie vers le collecteur, sans rien lire de plus. Avant de relever les valeurs, on vérifie l'étanchéité, car sur un montage qui fuit, une mesure perd toute fiabilité. La dépose vient ensuite.", label: "Mettre en lecture" },
+    { id: "remove", narration: "On défait ici le montage, et chaque vanne retrouve son état d'origine. Une règle commande tout l'ordre : on ne desserre rien tant qu'il reste de la pression dans le raccord. On isole donc d'abord le circuit, vanne par vanne, puis on ferme les mini-vannes, qui limitent la perte sans supprimer le fluide piégé. Celui-ci se traite selon la méthode du poste, validée par le formateur, sans rejet dans l'atmosphère. Ensuite seulement, on débranche, on remet les bouchons, et on termine par un contrôle d'étanchéité avant de ranger.", label: "Déposer" }
   ];
 
   const A = (phase, control, expect, title, look, doText, check, why, delay = 650) => ({
@@ -115,6 +115,35 @@
   const helpButton = $("#help-button");
   const resetButton = $("#reset-button");
   const exitButton = $("#exit-button");
+  const voiceButton = $("#voice-button");
+
+  /* ---------- la voix (chantier prof vocal, 18/10/2026) ----------
+     Chaque phase a son texte pour l'oreille (`narration`) : la voix explique la phase, elle ne relit pas les gestes
+     affichés. Au clic seulement ; changer de phase la coupe, changer la vitesse commune aussi. moteur/voix.js lit le MP3
+     s'il existe, sinon la voix du navigateur ; le prof vocal du site lit la phase, puis attend les gestes de l'élève. */
+  let parle = false, lecture = 0, phaseLue = null;
+  const voixFr = () => {
+    const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter(v => v.lang.toLowerCase().startsWith("fr"));
+    return fr.find(v => /natural|neural|online/i.test(v.name)) || fr.find(v => /google/i.test(v.name)) || fr.find(v => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+  };
+  function majEcoute() { voiceButton.textContent = parle ? "■ Arrêter" : "▶ Écouter"; voiceButton.setAttribute("aria-pressed", String(parle)); }
+  function taire() { lecture++; parle = false; if ("speechSynthesis" in window) speechSynthesis.cancel(); majEcoute(); }
+  function ecouter() {
+    if (parle) { taire(); return; }
+    const phase = phases[currentPhaseIndex()];
+    if (!phase || !phase.narration || !("speechSynthesis" in window)) return;
+    taire();
+    const run = lecture, u = new SpeechSynthesisUtterance(phase.narration), v = voixFr();
+    u.lang = "fr-FR"; if (v) u.voice = v;
+    u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+    u.onstart = () => { if (run !== lecture) return; parle = true; majEcoute(); };
+    u.onend = u.onerror = () => { if (run !== lecture) return; parle = false; majEcoute(); };
+    speechSynthesis.speak(u);
+  }
+  voiceButton.addEventListener("click", ecouter);
+  document.addEventListener("pilotevoix:vitesse", taire);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) taire(); });
+  window.PILOTE_PROF_ACTIVITE = () => !trainer.hidden;
 
   function phaseActions(phaseId) { return actions.filter(action => action.phase === phaseId); }
   function currentAction() { return actions[state.index]; }
@@ -127,6 +156,9 @@
   }
 
   function start(mode) {
+    taire();
+    phaseLue = null;
+    voiceButton.hidden = false;
     state = initialState();
     state.mode = mode;
     home.hidden = true;
@@ -143,6 +175,8 @@
   }
 
   function exitCourse() {
+    taire();
+    voiceButton.hidden = true;
     document.body.classList.remove("course-running");
     trainer.hidden = true;
     summary.hidden = true;
@@ -154,6 +188,8 @@
   }
 
   function showSummary() {
+    taire();
+    voiceButton.hidden = true;
     document.body.classList.remove("course-running");
     trainer.hidden = true;
     summary.hidden = false;
@@ -315,6 +351,12 @@
   }
 
   function render() {
+    const phase = currentAction()?.phase || null;
+    if (phaseLue && phase !== phaseLue) {
+      taire();
+      if (window.PiloteProfVocal && window.PiloteProfVocal.etat().actif && phase) window.PiloteProfVocal.relire();
+    }
+    phaseLue = phase;
     renderGuidance();
     updateScene();
     renderExpected();

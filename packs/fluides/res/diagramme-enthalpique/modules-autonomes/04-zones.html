@@ -471,15 +471,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       </div>
       <div class="course-name" id="courseName">Diagramme enthalpique</div>
       <div class="tools" aria-label="Réglages de lecture">
-        <button type="button" class="tool-button" id="readButton" aria-label="Écouter le texte affiché" aria-pressed="false">▶ Écouter</button>
+        <button type="button" class="tool-button" id="readButton" aria-label="Écouter l’explication de l’écran" aria-pressed="false" data-prof-ecouter>▶ Écouter</button>
         <button type="button" class="tool-button" id="stopButton" aria-label="Arrêter la voix" disabled>■ Stop</button>
-        <label class="speed-label" for="speedSelect">Vitesse</label>
-        <select id="speedSelect" class="speed-select" aria-label="Vitesse de la voix">
-          <option value="0.85">0,85×</option>
-          <option value="0.95" selected>0,95×</option>
-          <option value="1.1">1,10×</option>
-          <option value="1.25">1,25×</option>
-        </select>
         <button type="button" class="tool-button compact" id="readingButton" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
         <button type="button" class="tool-button compact" id="fullscreenButton" aria-label="Afficher en plein écran">⛶</button>
       </div>
@@ -510,7 +503,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     </main>
 
     <footer class="navigation" aria-label="Navigation dans le parcours">
-      <button type="button" class="nav-button secondary" id="backButton">← Retour</button>
+      <button type="button" class="nav-button secondary" id="backButton" data-prof-precedent>← Retour</button>
       <div class="module-state" id="moduleState" aria-live="polite"></div>
       <button type="button" class="nav-button primary" id="nextButton">Continuer →</button>
     </footer>
@@ -518,7 +511,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"zones","order":4,"title":"Les trois zones","short":"Zones du fluide","level":"essentiel","symbol":"liquide · mélange · vapeur","goal":"Identifier l’état du fluide à partir de la position d’un point.","discover":{"title":"Où se trouve le point ?","body":"À gauche de la cloche, le fluide est liquide sous-refroidi. Dans la cloche, liquide et vapeur coexistent. À droite, le fluide est vapeur surchauffée.","remember":"Gauche : liquide. Dedans : liquide + vapeur. Droite : vapeur."},"function":{"title":"La zone donne déjà une information","body":"Avant de lire une température ou une enthalpie, repérez la zone. La position du point indique immédiatement l’état physique probable du fluide.","terrain":"Lien métier : à l’aspiration d’un compresseur, on recherche une vapeur ; avant le détendeur, on recherche un liquide."},"quiz":[{"question":"Que trouve-t-on à l’intérieur de la cloche ?","choices":["Du liquide uniquement","Un mélange liquide-vapeur","De la vapeur uniquement"],"answer":1,"feedback":"Dans la cloche, les phases liquide et vapeur coexistent."},{"question":"Dans quelle zone doit se trouver le fluide aspiré par le compresseur ?","choices":["Dans la vapeur, à droite de la cloche","Dans le liquide, à gauche","Toujours au point critique"],"answer":0,"feedback":"Le compresseur doit aspirer de la vapeur ; un retour de liquide est dangereux pour lui."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"zones","order":4,"title":"Les trois zones","short":"Zones du fluide","level":"essentiel","symbol":"liquide · mélange · vapeur","goal":"Identifier l’état du fluide à partir de la position d’un point.","discover":{"title":"Où se trouve le point ?","body":"À gauche de la cloche, le fluide est liquide sous-refroidi. Dans la cloche, liquide et vapeur coexistent. À droite, le fluide est vapeur surchauffée.","remember":"Gauche : liquide. Dedans : liquide + vapeur. Droite : vapeur.","narration":"Un point posé sur le diagramme prend son sens par sa place par rapport à la cloche. Sur le schéma, tout point situé à gauche de la cloche représente du liquide, qu'on dit sous-refroidi. À l'intérieur de la cloche, on a les deux phases à la fois. À droite, c'est de la vapeur, dite surchauffée. Il suffit donc de regarder où tombe un point pour savoir dans quel état est le fluide. À l'écran suivant, vous verrez pourquoi cette information passe avant toute lecture."},"function":{"title":"La zone donne déjà une information","body":"Avant de lire une température ou une enthalpie, repérez la zone. La position du point indique immédiatement l’état physique probable du fluide.","terrain":"Lien métier : à l’aspiration d’un compresseur, on recherche une vapeur ; avant le détendeur, on recherche un liquide.","narration":"Repérer la zone passe avant tout le reste : la position du point indique tout de suite l'état probable du fluide. On sait donc à quoi s'attendre avant de relever la moindre température ou enthalpie. Deux exemples sur une installation. Au niveau de l'aspiration du compresseur, on s'attend à de la vapeur. En amont du détendeur, on s'attend à du liquide. C'est le premier réflexe à avoir devant un point du diagramme. Les questions du module suivent."},"quiz":[{"question":"Que trouve-t-on à l’intérieur de la cloche ?","choices":["Du liquide uniquement","Un mélange liquide-vapeur","De la vapeur uniquement"],"answer":1,"feedback":"Dans la cloche, les phases liquide et vapeur coexistent."},{"question":"Dans quelle zone doit se trouver le fluide aspiré par le compresseur ?","choices":["Dans la vapeur, à droite de la cloche","Dans le liquide, à gauche","Toujours au point critique"],"answer":0,"feedback":"Le compresseur doit aspirer de la vapeur ; un retour de liquide est dangereux pour lui."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — Les trois zones","fixedIds":["zones"]};
   </script>
   <script>(() => {
@@ -579,7 +572,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     moduleState: document.getElementById("moduleState"),
     readButton: document.getElementById("readButton"),
     stopButton: document.getElementById("stopButton"),
-    speedSelect: document.getElementById("speedSelect"),
     readingButton: document.getElementById("readingButton"),
     fullscreenButton: document.getElementById("fullscreenButton")
   };
@@ -782,7 +774,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
         <div class="remember"><strong>À retenir :</strong> ${escapeHtml(module.discover.remember)}</div>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = "Comprendre →";
-      state.currentSpeechText = buildNarration(module.discover.title, module.discover.body, module.discover.remember);
+      /* la voix dit la narration de l'écran, écrite pour l'oreille (chantier prof vocal, 18/10/2026) */
+      state.currentSpeechText = module.discover.narration || buildNarration(module.discover.title, module.discover.body, module.discover.remember);
       return;
     }
 
@@ -794,7 +787,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
         <div class="remember"><strong>Repère :</strong> ${escapeHtml(module.symbol)}</div>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = "Je vérifie →";
-      state.currentSpeechText = buildNarration(module.function.title, module.function.body, module.function.terrain);
+      state.currentSpeechText = module.function.narration || buildNarration(module.function.title, module.function.body, module.function.terrain);
       return;
     }
 
@@ -997,7 +990,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     const run = state.speechRun;
     const utterance = new SpeechSynthesisUtterance(state.currentSpeechText);
     utterance.lang = "fr-FR";
-    utterance.rate = Number(dom.speedSelect.value || 0.95);
+    utterance.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;   // la vitesse commune du site
     utterance.pitch = 1;
     const voice = bestVoice();
     if (voice) utterance.voice = voice;
@@ -1052,9 +1045,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   dom.nextButton.addEventListener("click", goNext);
   dom.readButton.addEventListener("click", toggleSpeech);
   dom.stopButton.addEventListener("click", stopSpeech);
-  dom.speedSelect.addEventListener("change", () => {
-    if (state.speaking || state.paused) speakCurrent();
-  });
+  /* la vitesse commune (moteur/reglage-voix.js) : la changer arrête la lecture ; la suivante la prend */
+  document.addEventListener("pilotevoix:vitesse", stopSpeech);
   dom.readingButton.addEventListener("click", () => {
     const active = dom.app.classList.toggle("reading-easy");
     dom.readingButton.setAttribute("aria-pressed", String(active));
@@ -1097,6 +1089,13 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   renderStage();
 })();
 </script>
+  <!-- la voix du site (chantier prof vocal, 18/10/2026) : vitesse commune, MP3 quand ils existent, prof vocal qui enchaîne
+       les écrans et s'arrête aux questions ; une copie hors du site garde la voix du navigateur à 0,95× -->
+  <script src="../../../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../../../moteur/prononciation.js?v=20260902-1"></script>
+  <script src="../../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../../moteur/voix.js?v=20261017-voix"></script>
+  <script src="../../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
 <script src="../../../../../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

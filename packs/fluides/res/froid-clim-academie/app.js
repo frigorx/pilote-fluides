@@ -297,6 +297,72 @@ document.querySelector("#nextCase").addEventListener("click", () => {
   renderCase();
 });
 
+/* ---------- la voix (chantier prof vocal, 18/10/2026) ----------
+   La page défile en cinq parties ; chacune a son texte pour l'oreille (NARRATIONS) : la voix explique la partie, elle
+   ne relit pas l'écran. « Écouter » lit la partie courante (celle qu'on voit, ou celle où « Partie suivante » mène) ;
+   changer de partie coupe la voix, changer la vitesse commune aussi. Le prof vocal du site passe d'une partie à la
+   suivante et s'arrête à l'atelier panne, la première question. */
+(() => {
+  const NARRATIONS = {
+      "hero": "Cette base de site est pensée pour animer un cours de froid et de climatisation, avec une idée simple : faire manipuler d’abord, faire retenir ensuite. Chaque notion se traduit par une action à faire, un réglage à modifier ou un défi à relever, plutôt que par un texte à lire. En haut, un cycle frigorifique s’anime, avec une légende qui distingue la haute pression, la basse pression et la détente. Plus bas, la page enchaîne le parcours de huit modules, un simulateur, un atelier panne et un quiz.",
+      "modules": "Huit modules forment un parcours progressif. Le premier pose le cycle frigorifique. Viennent ensuite les pressions et les températures, puis la surchauffe et le sous-refroidissement, des réglages qui protègent le compresseur. Le cadre à respecter suit, avec les fluides, la réglementation et l’étanchéité, puis l’électricité appliquée. La mise en service rassemble les gestes professionnels, du tirage au vide à la charge. Le diagnostic avancé termine le parcours en comparant symptômes, mesures et hypothèses. Chaque module est prêt à devenir un cours.",
+      "simulateur": "Ce simulateur fonctionne avec quatre réglages : les températures d’évaporation et de condensation, la surchauffe et le sous-refroidissement. Les deux pressions ne se règlent pas : elles sont estimées à partir des deux températures. Un indicateur de risque pédagogique dit en plus si l’ensemble reste cohérent. Modifiez un curseur et regardez comment les pressions et le message réagissent. Le but est de relier ces valeurs aux symptômes que l’on rencontre sur le terrain, ce qui prépare l’atelier panne qui suit.",
+      "atelier": "Voici un jeu de diagnostic. Chaque cas affiche plusieurs symptômes, et il s’agit d’en déduire la cause probable parmi trois propositions. La bonne méthode consiste à ne pas s’arrêter au premier signe : on confronte chaque cause à l’ensemble des symptômes, et toute cause qui en contredit un est écartée. C’est le raisonnement attendu d’un professionnel : comparer symptômes, mesures et hypothèses. Après chaque choix, la page indique si la cause retenue est la bonne. Le bouton Autre panne propose un nouveau cas. À vous de trouver la cause probable.",
+      "quiz": "Ce quiz flash termine la séance. C’est une évaluation automatique : le score, en haut, suit vos réponses, et après chaque choix la page indique si la réponse est juste. Le bouton Recommencer permet de repartir de zéro. Pour répondre, passez en revue les organes du cycle et rappelez-vous ce que chacun fait subir au fluide. Trois réponses sont proposées. Voici la première question. Quel organe augmente la pression et la température du fluide ?"
+  };
+  const PARTIES = [["hero", ".hero", "le cycle"], ["modules", "#modules", "les modules"], ["simulateur", "#simulateur", "le simulateur"],
+    ["atelier", "#atelier", "l'atelier panne"], ["quiz", "#quiz", "le quiz"]].map(([id, sel, nom]) => ({ id, nom, el: document.querySelector(sel) })).filter((p) => p.el);
+  const ecoute = document.querySelector("#listen"), compteur = document.querySelector("#step-count"), suivante = document.querySelector("#partie-suivante");
+  let courante = 0, parle = false, lecture = 0, guidee = 0;
+  const voixFr = () => {
+    const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter((v) => v.lang.toLowerCase().startsWith("fr"));
+    return fr.find((v) => /natural|neural|online/i.test(v.name)) || fr.find((v) => /google/i.test(v.name)) || fr.find((v) => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+  };
+  const majEcoute = () => { ecoute.textContent = parle ? "■ Arrêter" : "▶ Écouter"; ecoute.setAttribute("aria-pressed", String(parle)); };
+  function taire() { lecture++; parle = false; if ("speechSynthesis" in window) speechSynthesis.cancel(); majEcoute(); }
+  function marquer(i) {
+    courante = i;
+    PARTIES.forEach((p, k) => p.el.toggleAttribute("data-prof-zone", k === i));   // la zone que le prof vocal observe
+    compteur.textContent = `Partie ${i + 1} sur ${PARTIES.length} · ${PARTIES[i].nom}`;
+    suivante.disabled = i === PARTIES.length - 1;
+  }
+  function aller(i) { taire(); guidee = Date.now(); marquer(i); PARTIES[i].el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  function ecouter() {
+    if (parle) { taire(); return; }
+    const texte = NARRATIONS[PARTIES[courante].id];
+    if (!texte || !("speechSynthesis" in window)) return;
+    taire();
+    const run = lecture, u = new SpeechSynthesisUtterance(texte), v = voixFr();
+    u.lang = "fr-FR"; if (v) u.voice = v;
+    u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+    u.onstart = () => { if (run !== lecture) return; parle = true; majEcoute(); };
+    u.onend = u.onerror = () => { if (run !== lecture) return; parle = false; majEcoute(); };
+    speechSynthesis.speak(u);
+  }
+  ecoute.addEventListener("click", ecouter);
+  suivante.addEventListener("click", () => aller(Math.min(courante + 1, PARTIES.length - 1)));
+  document.querySelectorAll('.topbar nav a[href^="#"]').forEach((a) => a.addEventListener("click", () => {
+    const i = PARTIES.findIndex((p) => "#" + p.el.id === a.getAttribute("href"));
+    if (i >= 0) { taire(); guidee = Date.now(); marquer(i); }
+  }));
+  /* l'élève qui fait défiler la page : la partie qu'il voit devient la partie courante, sans couper une voix en cours ;
+     le prof vocal en marche mène lui-même, le défilement ne le dérange pas */
+  if ("IntersectionObserver" in window) {
+    const vues = new Map();
+    const io = new IntersectionObserver((entrees) => {
+      entrees.forEach((e) => vues.set(e.target, e.isIntersecting ? e.intersectionRect.height : 0));   // la hauteur vue, en pixels
+      if (parle || Date.now() - guidee < 1500 || (window.PiloteProfVocal && window.PiloteProfVocal.etat().actif)) return;
+      let meilleure = courante, vu = 0;
+      PARTIES.forEach((p, k) => { const h = vues.get(p.el) || 0; if (h > vu) { vu = h; meilleure = k; } });
+      if (vu > 0 && meilleure !== courante) marquer(meilleure);
+    }, { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], rootMargin: "-90px 0px 0px 0px" });
+    PARTIES.forEach((p) => io.observe(p.el));
+  }
+  document.addEventListener("pilotevoix:vitesse", taire);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) taire(); });
+  marquer(0);
+})();
+
 document.querySelector("#resetQuiz").addEventListener("click", () => {
   score = 0;
   answered = 0;

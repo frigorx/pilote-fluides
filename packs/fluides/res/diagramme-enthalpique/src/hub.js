@@ -60,4 +60,29 @@
     updateLinks();
   });
   updateLinks();
+
+  /* La voix de l'accueil (chantier prof vocal, 18/10/2026) : une narration écrite pour l'oreille explique la page, au
+     clic seulement, à la vitesse commune du site ; changer la vitesse arrête la lecture. */
+  const NARRATION = "Cette page vous permet de construire votre parcours sur le diagramme enthalpique, avec uniquement ce qui sert à votre programme. Chaque module porte une étiquette : huit sont essentiels pour l'habilitation, deux relèvent de l'approfondissement. Vous composez votre sélection, module par module ou d'un coup, puis vous partez en apprentissage ou en révision express. Chaque courbe peut aussi s'ouvrir seule. Les schémas restent qualitatifs : on y reconnaît des courbes, on n'y relève aucune valeur. Quant à la méthode, elle suit trois temps : découvrir, comprendre, vérifier.";
+  const ecoute = document.getElementById("listen");
+  let parle = false, lecture = 0;
+  const voixFr = () => {
+    const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter((v) => v.lang.toLowerCase().startsWith("fr"));
+    return fr.find((v) => /natural|neural|online/i.test(v.name)) || fr.find((v) => /google/i.test(v.name)) || fr.find((v) => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+  };
+  const majEcoute = () => { ecoute.textContent = parle ? "■ Arrêter" : "▶ Écouter"; ecoute.setAttribute("aria-pressed", String(parle)); };
+  function taire() { lecture += 1; parle = false; if ("speechSynthesis" in window) speechSynthesis.cancel(); majEcoute(); }
+  ecoute.addEventListener("click", () => {
+    if (parle) { taire(); return; }
+    if (!("speechSynthesis" in window)) return;
+    taire();
+    const run = lecture, u = new SpeechSynthesisUtterance(NARRATION), v = voixFr();
+    u.lang = "fr-FR"; if (v) u.voice = v;
+    u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+    u.onstart = () => { if (run !== lecture) return; parle = true; majEcoute(); };
+    u.onend = u.onerror = () => { if (run !== lecture) return; parle = false; majEcoute(); };
+    speechSynthesis.speak(u);
+  });
+  document.addEventListener("pilotevoix:vitesse", taire);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) taire(); });
 })();

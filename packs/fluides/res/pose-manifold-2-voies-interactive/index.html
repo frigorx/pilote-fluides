@@ -25,6 +25,7 @@
     <div class="app-actions">
       <span class="draft-badge">BROUILLON MÉTIER</span>
       <span class="mode-badge" id="mode-badge">Accueil</span>
+      <button type="button" class="small-button" id="voice-button" hidden aria-pressed="false">▶ Écouter</button>
       <button type="button" class="small-button" id="home-button" hidden>Accueil</button>
       <button type="button" class="small-button exit-button" id="exit-button" hidden>Quitter</button>
     </div>
@@ -42,7 +43,7 @@
           <span aria-hidden="true">→</span>
         </a>
         <div class="mode-grid" aria-label="Choisir un parcours">
-          <button type="button" class="mode-card featured" data-start="course">
+          <button type="button" class="mode-card featured" data-start="course" data-prof-commencer>
             <span class="mode-number">1</span><strong>Parcours complet</strong>
             <small>Comprendre → manipuler → s’évaluer.</small>
           </button>
@@ -138,7 +139,7 @@
   <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
   <script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
   <script src="visuals.js?v=20260813-13"></script>
-  <script src="app.js?v=20260813-9"></script>
+  <script src="app.js?v=20261018-muets"></script>
   <script src="../../../../moteur/lisibilite.js?v=20260810-1"></script>
   <script src="../../../../moteur/marque.js?v=20260818-3" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
 <script src="../../../../moteur/agrandir.js?v=20261015-campagne" defer></script>

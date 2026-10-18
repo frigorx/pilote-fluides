@@ -1512,6 +1512,10 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
 <!-- (c) F. Henninot — inerWeb FRIGOLO — Tous droits réservés -->
   <script src="../../../../moteur/plan-donnees.js"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
+  <style>
+    /* la voix (chantier prof vocal, 18/10/2026) : Écouter reste à portée pendant la lecture d'une longue section */
+    .voix-barre { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .45rem 0; margin-bottom: .6rem; background: var(--bg, #f7f1e7); }
+  </style>
 <script defer src="../../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
 </head>
 <body>
@@ -1584,10 +1588,13 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
     
     <!-- ========== CONTENU PRINCIPAL ========== -->
     <main class="main-content">
+        <div class="voix-barre" aria-label="La voix du professeur">
+            <button type="button" class="btn btn-secondary" id="listen" data-prof-ecouter aria-pressed="false">▶ Écouter</button>
+        </div>
         
         <!-- ===== SECTION 0 : INTRODUCTION ===== -->
         <section id="intro" class="section active">
-            <div class="section-header">
+            <div class="section-header" data-prof-zone>
                 <h2>🔧 Le Compresseur Frigorifique</h2>
                 <p>Le cœur du circuit frigorifique</p>
                 <p class="section-hook">Fil rouge : le compresseur ne « fabrique » pas le froid — il met le fluide en mouvement en augmentant pression et température.</p>
@@ -1710,13 +1717,13 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
 
             
             <div class="nav-buttons">
-                <button class="btn btn-accent" data-goto="types">Suivant : Types de compresseurs →</button>
+                <button class="btn btn-accent" data-goto="types" data-prof-suivant>Suivant : Types de compresseurs →</button>
             </div>
         </section>
         
         <!-- ===== SECTION 1 : TYPES DE COMPRESSEURS ===== -->
         <section id="types" class="section">
-            <div class="section-header">
+            <div class="section-header" data-prof-zone>
                 <h2>🔧 Types de Compresseurs</h2>
                 <p>Les différentes technologies de compression</p>
                 <p class="section-hook">Ici, vous comparez les grandes familles de compresseurs et ce que leur mécanique change (débit, bruit, fiabilité, usage).</p>
@@ -1970,14 +1977,14 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
 
             
             <div class="nav-buttons">
-                <button class="btn btn-secondary" data-goto="intro">← Précédent</button>
-                <button class="btn btn-accent" data-goto="fonctionnement">Suivant : Fonctionnement →</button>
+                <button class="btn btn-secondary" data-prof-precedent data-goto="intro">← Précédent</button>
+                <button class="btn btn-accent" data-goto="fonctionnement" data-prof-suivant>Suivant : Fonctionnement →</button>
             </div>
         </section>
         
         <!-- ===== SECTION 2 : FONCTIONNEMENT ===== -->
         <section id="fonctionnement" class="section">
-            <div class="section-header">
+            <div class="section-header" data-prof-zone>
                 <h2>⚙️ Fonctionnement du Compresseur à Piston</h2>
                 <p>Comprendre le cycle aspiration / compression / refoulement</p>
                 <p class="section-hook">On suit un cycle complet sur un piston : aspiration → compression → refoulement, et on repère où se perd du débit.</p>
@@ -2134,14 +2141,14 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
 
             
             <div class="nav-buttons">
-                <button class="btn btn-secondary" data-goto="types">← Précédent</button>
-                <button class="btn btn-accent" data-goto="volume">Suivant : Volume balayé →</button>
+                <button class="btn btn-secondary" data-prof-precedent data-goto="types">← Précédent</button>
+                <button class="btn btn-accent" data-goto="volume" data-prof-suivant>Suivant : Volume balayé →</button>
             </div>
         </section>
         
         <!-- ===== SECTION 3 : VOLUME BALAYÉ ===== -->
         <section id="volume" class="section">
-            <div class="section-header">
+            <div class="section-header" data-prof-zone>
                 <h2>📐 Le Volume Balayé</h2>
                 <p>Comprendre la "cylindrée" d'un compresseur</p>
                 <p class="section-hook">On met des chiffres : volume balayé et débit théorique, la base pour dimensionner et comparer des compresseurs.</p>
@@ -2619,14 +2626,14 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
 
             
             <div class="nav-buttons">
-                <button class="btn btn-secondary" data-goto="fonctionnement">← Précédent</button>
-                <button class="btn btn-accent" data-goto="rendement">Suivant : Rendement volumétrique →</button>
+                <button class="btn btn-secondary" data-prof-precedent data-goto="fonctionnement">← Précédent</button>
+                <button class="btn btn-accent" data-goto="rendement" data-prof-suivant>Suivant : Rendement volumétrique →</button>
             </div>
         </section>
         
         <!-- ===== SECTION 4 : RENDEMENT VOLUMÉTRIQUE ===== -->
         <section id="rendement" class="section">
-            <div class="section-header">
+            <div class="section-header" data-prof-zone>
                 <h2>📉 Le Rendement Volumétrique</h2>
                 <p>Pourquoi le débit réel est inférieur au débit théorique</p>
                 <p class="section-hook">On passe du théorique au réel : pourquoi le débit mesuré est inférieur (ηv), et ce qui le fait chuter.</p>
@@ -3002,14 +3009,14 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
 
             
             <div class="nav-buttons">
-                <button class="btn btn-secondary" data-goto="volume">← Précédent</button>
-                <button class="btn btn-accent" data-goto="temperature">Suivant : Température refoulement →</button>
+                <button class="btn btn-secondary" data-prof-precedent data-goto="volume">← Précédent</button>
+                <button class="btn btn-accent" data-goto="temperature" data-prof-suivant>Suivant : Température refoulement →</button>
             </div>
         </section>
         
         <!-- ===== SECTION 5 : TEMPÉRATURE DE REFOULEMENT ===== -->
         <section id="temperature" class="section">
-            <div class="section-header">
+            <div class="section-header" data-prof-zone>
                 <h2>🔥 Compression = Ça chauffe !</h2>
                 <p>Un aperçu pour aller plus loin...</p>
                 <p class="section-hook">Idée-clé : compresser = chauffer. On plante la graine ici, on approfondira après surchauffe / sous-refroidissement.</p>
@@ -3105,7 +3112,7 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 </div>
             </div>
             <div class="nav-buttons">
-                <button class="btn btn-secondary" data-goto="rendement">← Précédent</button>
+                <button class="btn btn-secondary" data-prof-precedent data-goto="rendement">← Précédent</button>
                 <button class="btn btn-accent" data-goto="intro">🏠 Retour à l'introduction</button>
             </div>
         
@@ -3140,6 +3147,54 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
     </div>
     
     <!-- ========== SCRIPTS ========== -->
+    <script src="../../../../moteur/voix-index.js?v=20260902-1"></script>
+    <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
+    <script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+    <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
+    <script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
+    <script>
+    /* ---------- la voix (chantier prof vocal, 18/10/2026) ----------
+       Chaque section a son texte pour l'oreille (NARRATIONS) : la voix explique la section, elle ne relit pas l'écran.
+       Au clic seulement ; changer de section la coupe, changer la vitesse commune aussi. moteur/voix.js lit le MP3 s'il
+       existe, sinon la voix du navigateur. Le prof vocal du site enchaîne les sections et attend l'élève aux
+       mini-exercices qui ferment chacune d'elles. */
+    (function () {
+        const NARRATIONS = {
+            "intro": "Cette première section place le compresseur dans le circuit. Sur le dessin en croix, il fait le lien entre le côté BP et le côté HP : il prend la vapeur basse pression et l’envoie sous haute pression. C’est le cœur du circuit, car il fait circuler le fluide en élevant sa pression et sa température. Le refroidissement, lui, se joue ailleurs : c’est l’évaporateur qui capte la chaleur du milieu à refroidir. Trois mini-exercices terminent la section. Vous passerez ensuite aux différentes familles de compresseurs.",
+            "types": "Il existe quatre grandes familles de compresseurs, que l’on reconnaît à la pièce mobile qui comprime le gaz. Le piston va et vient dans son cylindre. Les autres utilisent deux spirales emboîtées, des rotors en hélice, ou un rotor à palettes. Le tableau précise la plage de puissance et les usages de chacune, du réfrigérateur domestique jusqu’à l’industrie. Ensuite, le piston sert de modèle : on y voit chaque phase se dérouler, et ce qu’on en apprend vaut pour toutes les familles. Les trois mini-exercices vérifient ces notions. Le fonctionnement détaillé du piston vient après.",
+            "fonctionnement": "Sur l’animation, le piston fait deux mouvements à tour de rôle, ce qui donne un cycle en deux temps. En descendant, il agrandit la place disponible : la pression baisse dans le cylindre, le clapet BP s’ouvre, et le gaz entre. En remontant, il réduit cette place : le gaz est comprimé, sa pression monte, puis le clapet HP s’ouvre pour l’évacuer. Avancez pas à pas pour voir chaque temps. On verra ensuite où le débit se perd. Les trois mini-exercices portent sur l’ordre des temps et le rôle des clapets. Le volume balayé vient après.",
+            "volume": "On passe ici de l’image au chiffre. Le volume balayé, c’est l’espace que le piston traverse dans son cylindre, du haut jusqu’en bas, comme la seringue que vous poussez à l’écran. C’est un maximum théorique : le volume mort empêche d’aspirer la totalité. Pour le calculer, on multiplie la surface du piston par sa course. Avec plusieurs cylindres, les volumes s’additionnent, et plus la rotation est rapide, plus le débit augmente. Le calculateur permet d’essayer ces réglages, en surveillant les unités. Deux calculs et une question terminent la section. Le rendement volumétrique vient ensuite.",
+            "rendement": "Le volume balayé n’est jamais entièrement utile. Quand le piston est en haut, il reste un petit espace sous la culasse, le volume mort, rempli de gaz à haute pression. Ce gaz doit se détendre avant que le gaz BP puisse entrer : cet espace est donc perdu pour l’aspiration. Plus la HP est élevée par rapport à la BP, ou plus ce volume mort est grand, plus le rendement volumétrique baisse. Le simulateur le montre, mais il reste théorique : sur une machine réelle, d’autres pertes s’ajoutent. Les mini-exercices terminent la section. L’échauffement du gaz vient ensuite.",
+            "temperature": "Cette dernière section n’est qu’un aperçu, mais elle porte une idée essentielle. Sur le dessin, le gaz entre froid dans le compresseur et en ressort chaud : le travail du piston est transformé en chaleur. Or une température excessive abîme l’huile et use les pièces. Pour apprendre à la maîtriser, il faudra d’abord voir la surchauffe et le sous-refroidissement. Cette notion sera donc reprise plus tard, simulateur à l’appui. Trois mini-exercices terminent la section. Le bilan, en bas de page, rassemble vos résultats et permet de les sauvegarder."
+        };
+        const ecoute = document.getElementById("listen");
+        let parle = false, lecture = 0;
+        const voixFr = () => {
+            const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter(v => v.lang.toLowerCase().startsWith("fr"));
+            return fr.find(v => /natural|neural|online/i.test(v.name)) || fr.find(v => /google/i.test(v.name)) || fr.find(v => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+        };
+        function majEcoute() { ecoute.textContent = parle ? "■ Arrêter" : "▶ Écouter"; ecoute.setAttribute("aria-pressed", String(parle)); }
+        function taire() { lecture++; parle = false; if ("speechSynthesis" in window) speechSynthesis.cancel(); majEcoute(); }
+        function ecouter() {
+            if (parle) { taire(); return; }
+            const section = document.querySelector(".section.active");
+            const texte = section && NARRATIONS[section.id];
+            if (!texte || !("speechSynthesis" in window)) return;
+            taire();
+            const run = lecture, u = new SpeechSynthesisUtterance(texte), v = voixFr();
+            u.lang = "fr-FR"; if (v) u.voice = v;
+            u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+            u.onstart = () => { if (run !== lecture) return; parle = true; majEcoute(); };
+            u.onend = u.onerror = () => { if (run !== lecture) return; parle = false; majEcoute(); };
+            speechSynthesis.speak(u);
+        }
+        ecoute.addEventListener("click", ecouter);
+        document.addEventListener("pilotevoix:vitesse", taire);
+        document.addEventListener("visibilitychange", () => { if (document.hidden) taire(); });
+        window.taireVoix = taire;
+        window.PILOTE_PROF_ACTIVITE = () => !!document.querySelector(".section.active .exercises-card");
+    })();
+    </script>
     <script>
         // ===== CONFIGURATION =====
         let animationsEnabled = true;
@@ -3182,6 +3237,9 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
                 alert('🚧 Cette section est en cours de développement.\nElle sera disponible prochainement !');
                 return;
             }
+            
+            // changer de section coupe la voix (chantier prof vocal, 18/10/2026)
+            window.taireVoix();
             
             // Stop animations de l'ancienne section
             stopAllAnimations();

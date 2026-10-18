@@ -471,15 +471,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       </div>
       <div class="course-name" id="courseName">Diagramme enthalpique</div>
       <div class="tools" aria-label="Réglages de lecture">
-        <button type="button" class="tool-button" id="readButton" aria-label="Écouter le texte affiché" aria-pressed="false">▶ Écouter</button>
+        <button type="button" class="tool-button" id="readButton" aria-label="Écouter l’explication de l’écran" aria-pressed="false" data-prof-ecouter>▶ Écouter</button>
         <button type="button" class="tool-button" id="stopButton" aria-label="Arrêter la voix" disabled>■ Stop</button>
-        <label class="speed-label" for="speedSelect">Vitesse</label>
-        <select id="speedSelect" class="speed-select" aria-label="Vitesse de la voix">
-          <option value="0.85">0,85×</option>
-          <option value="0.95" selected>0,95×</option>
-          <option value="1.1">1,10×</option>
-          <option value="1.25">1,25×</option>
-        </select>
         <button type="button" class="tool-button compact" id="readingButton" aria-label="Activer la lecture facilitée" aria-pressed="false">Aa</button>
         <button type="button" class="tool-button compact" id="fullscreenButton" aria-label="Afficher en plein écran">⛶</button>
       </div>
@@ -510,7 +503,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     </main>
 
     <footer class="navigation" aria-label="Navigation dans le parcours">
-      <button type="button" class="nav-button secondary" id="backButton">← Retour</button>
+      <button type="button" class="nav-button secondary" id="backButton" data-prof-precedent>← Retour</button>
       <div class="module-state" id="moduleState" aria-live="polite"></div>
       <button type="button" class="nav-button primary" id="nextButton">Continuer →</button>
     </footer>
@@ -518,7 +511,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"bulle-rosee","order":3,"title":"Bulle et rosée","short":"Bulle / rosée","level":"essentiel","symbol":"bulle ◁ cloche ▷ rosée","goal":"Distinguer les deux frontières de la cloche.","discover":{"title":"Deux côtés, deux noms","body":"La branche gauche est la courbe de bulle : en partant du liquide, la première bulle de vapeur apparaît. La branche droite est la courbe de rosée : en partant de la vapeur, la première goutte de liquide apparaît.","remember":"Bulle : côté liquide. Rosée : côté vapeur."},"function":{"title":"Le bon côté pour le bon calcul","body":"La température de rosée sert notamment de référence pour la surchauffe. La température de bulle sert notamment de référence pour le sous-refroidissement. Pour un mélange zéotropique, elles peuvent être différentes : c’est le glissement de température.","terrain":"Lien métier : choisir la bonne référence de saturation évite de fausser une surchauffe ou un sous-refroidissement."},"quiz":[{"question":"En partant d’un liquide que l’on chauffe, quelle frontière rencontre-t-on ?","choices":["La courbe de bulle","La courbe de rosée","Une isentrope"],"answer":0,"feedback":"La première bulle de vapeur apparaît sur la courbe de bulle."},{"question":"Quelle référence utilise-t-on généralement pour raisonner sur la surchauffe ?","choices":["La température de rosée","La température de bulle","Le point critique"],"answer":0,"feedback":"La surchauffe se raisonne côté vapeur, à partir de la température de rosée."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"bulle-rosee","order":3,"title":"Bulle et rosée","short":"Bulle / rosée","level":"essentiel","symbol":"bulle ◁ cloche ▷ rosée","goal":"Distinguer les deux frontières de la cloche.","discover":{"title":"Deux côtés, deux noms","body":"La branche gauche est la courbe de bulle : en partant du liquide, la première bulle de vapeur apparaît. La branche droite est la courbe de rosée : en partant de la vapeur, la première goutte de liquide apparaît.","remember":"Bulle : côté liquide. Rosée : côté vapeur.","narration":"La cloche a deux flancs, et leurs noms disent ce qui s'y passe. À gauche, le trait plein du schéma s'appelle la courbe de bulle. Si l'on part du liquide, c'est là qu'apparaît la toute première bulle de vapeur. À droite, le trait tireté s'appelle la courbe de rosée. Si l'on part de la vapeur, c'est là que se forme la toute première goutte de liquide. Bulle du côté liquide, rosée du côté vapeur. La suite montre pourquoi cette distinction compte."},"function":{"title":"Le bon côté pour le bon calcul","body":"La température de rosée sert notamment de référence pour la surchauffe. La température de bulle sert notamment de référence pour le sous-refroidissement. Pour un mélange zéotropique, elles peuvent être différentes : c’est le glissement de température.","terrain":"Lien métier : choisir la bonne référence de saturation évite de fausser une surchauffe ou un sous-refroidissement.","narration":"Distinguer ces deux côtés change le résultat d'un calcul. Pour une surchauffe, on s'appuie notamment sur la température de rosée, celle du côté vapeur. Pour un sous-refroidissement, on s'appuie notamment sur la température de bulle, celle du côté liquide. Avec un mélange zéotropique, ces deux températures peuvent différer : on parle alors de glissement de température. Prendre la mauvaise référence fausserait donc la surchauffe ou le sous-refroidissement. Des questions du module prennent maintenant le relais."},"quiz":[{"question":"En partant d’un liquide que l’on chauffe, quelle frontière rencontre-t-on ?","choices":["La courbe de bulle","La courbe de rosée","Une isentrope"],"answer":0,"feedback":"La première bulle de vapeur apparaît sur la courbe de bulle."},{"question":"Quelle référence utilise-t-on généralement pour raisonner sur la surchauffe ?","choices":["La température de rosée","La température de bulle","Le point critique"],"answer":0,"feedback":"La surchauffe se raisonne côté vapeur, à partir de la température de rosée."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — Bulle et rosée","fixedIds":["bulle-rosee"]};
   </script>
   <script>(() => {
@@ -579,7 +572,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     moduleState: document.getElementById("moduleState"),
     readButton: document.getElementById("readButton"),
     stopButton: document.getElementById("stopButton"),
-    speedSelect: document.getElementById("speedSelect"),
     readingButton: document.getElementById("readingButton"),
     fullscreenButton: document.getElementById("fullscreenButton")
   };
@@ -782,7 +774,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
         <div class="remember"><strong>À retenir :</strong> ${escapeHtml(module.discover.remember)}</div>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = "Comprendre →";
-      state.currentSpeechText = buildNarration(module.discover.title, module.discover.body, module.discover.remember);
+      /* la voix dit la narration de l'écran, écrite pour l'oreille (chantier prof vocal, 18/10/2026) */
+      state.currentSpeechText = module.discover.narration || buildNarration(module.discover.title, module.discover.body, module.discover.remember);
       return;
     }
 
@@ -794,7 +787,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
         <div class="remember"><strong>Repère :</strong> ${escapeHtml(module.symbol)}</div>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = "Je vérifie →";
-      state.currentSpeechText = buildNarration(module.function.title, module.function.body, module.function.terrain);
+      state.currentSpeechText = module.function.narration || buildNarration(module.function.title, module.function.body, module.function.terrain);
       return;
     }
 
@@ -997,7 +990,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     const run = state.speechRun;
     const utterance = new SpeechSynthesisUtterance(state.currentSpeechText);
     utterance.lang = "fr-FR";
-    utterance.rate = Number(dom.speedSelect.value || 0.95);
+    utterance.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;   // la vitesse commune du site
     utterance.pitch = 1;
     const voice = bestVoice();
     if (voice) utterance.voice = voice;
@@ -1052,9 +1045,8 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   dom.nextButton.addEventListener("click", goNext);
   dom.readButton.addEventListener("click", toggleSpeech);
   dom.stopButton.addEventListener("click", stopSpeech);
-  dom.speedSelect.addEventListener("change", () => {
-    if (state.speaking || state.paused) speakCurrent();
-  });
+  /* la vitesse commune (moteur/reglage-voix.js) : la changer arrête la lecture ; la suivante la prend */
+  document.addEventListener("pilotevoix:vitesse", stopSpeech);
   dom.readingButton.addEventListener("click", () => {
     const active = dom.app.classList.toggle("reading-easy");
     dom.readingButton.setAttribute("aria-pressed", String(active));
@@ -1097,6 +1089,13 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   renderStage();
 })();
 </script>
+  <!-- la voix du site (chantier prof vocal, 18/10/2026) : vitesse commune, MP3 quand ils existent, prof vocal qui enchaîne
+       les écrans et s'arrête aux questions ; une copie hors du site garde la voix du navigateur à 0,95× -->
+  <script src="../../../../../moteur/voix-index.js?v=20260902-1"></script>
+  <script src="../../../../../moteur/prononciation.js?v=20260902-1"></script>
+  <script src="../../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../../moteur/voix.js?v=20261017-voix"></script>
+  <script src="../../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
 <script src="../../../../../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
 </body>
 </html>

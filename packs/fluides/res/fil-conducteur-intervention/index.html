@@ -115,58 +115,38 @@
     <div class="barre">
       <p><strong>Brouillon de slide</strong> · animation et voix · <span id="duree">38 s</span> · son coupé au chargement</p>
       <div class="actions" aria-label="Commandes de l'animation et de la voix">
-        <button class="principal" id="lancer" type="button">▶ Animation + voix</button>
+        <button class="principal" id="lancer" type="button" data-prof-ecouter>▶ Écouter</button>
         <button id="rejouer" type="button">↻ Sans voix</button>
-        <button id="arreter" type="button" disabled>■ Couper la voix</button>
-        <span class="vitesse">
-          <label for="vitesse">Vitesse</label>
-          <select id="vitesse">
-            <option value="0.7">0,7 × — très posé</option>
-            <option value="0.85" selected>0,85 × — posé</option>
-            <option value="1">1 × — normal</option>
-            <option value="1.2">1,2 × — rapide</option>
-          </select>
-        </span>
+        <button id="arreter" type="button" data-prof-arreter disabled>■ Couper la voix</button>
       </div>
     </div>
     <div class="scene">
-      <object id="animation" data="animation-fil-conducteur-fluides.svg?vitesse=0.85" type="image/svg+xml">
+      <object id="animation" data="animation-fil-conducteur-fluides.svg?vitesse=0.95" type="image/svg+xml">
         Le fil conducteur d'une intervention fluide : comprendre, être autorisé, préparer, intervenir, contrôler et tracer.
       </object>
     </div>
     <p class="transcription" id="transcription">
       <strong>Texte de la voix —</strong>
-      Comprendre : protéger le climat, la santé et la sécurité.
-      Être autorisé : aptitude pour la personne, capacité pour l'entreprise.
-      Préparer : identifier le fluide, la charge, les risques et les équipements de protection.
-      Intervenir : récupérer, travailler à l'azote, tirer au vide, puis charger.
-      Contrôler : étanchéité, mesures et remise en service.
-      Tracer : peser, renseigner les documents et traiter le fluide récupéré. Zéro rejet volontaire.
+      <span class="texte-voix">Tout commence par comprendre ce qui est en jeu : le climat, la santé, la sécurité. Puis il faut être autorisé, grâce à l’aptitude et à la capacité. Avant tout geste, on prépare : le fluide, la charge, les risques et les EPI. Vient ensuite l’intervention, de la récupération jusqu’à la charge. On contrôle alors le résultat : l’étanchéité et les mesures. Enfin on trace tout, pour pouvoir prouver ce qui a été fait. Trois principes relient ces six temps : zéro rejet volontaire, sécurité, preuve de l’intervention.</span>
     </p>
-    <audio id="narration" preload="none" src="narration-fil-conducteur.mp3"></audio>
   </main>
   <script>
+    /* Chantier prof vocal (18/10/2026) : la voix explique la planche au lieu de relire ses étiquettes. Son texte est la
+       transcription affichée sous la slide (une seule source). moteur/voix.js le lit (le MP3 du lot à venir, sinon la
+       voix du navigateur) à la vitesse commune du site, qui règle aussi le défilement de l'animation : une seule
+       vitesse pour les deux, comme avant. Au clic seulement ; « Couper la voix », changer la vitesse ou quitter
+       l'onglet arrêtent la lecture. */
     const DUREE_NORMALE = 32.2;
 
     const animation = document.getElementById("animation");
-    const narration = document.getElementById("narration");
     const lancer = document.getElementById("lancer");
     const arreter = document.getElementById("arreter");
-    const choixVitesse = document.getElementById("vitesse");
     const duree = document.getElementById("duree");
+    const NARRATION = document.querySelector("#transcription .texte-voix").textContent.replace(/s+/g, " ").trim();
+    let lecture = 0;
 
-    /* Une seule vitesse pilote la voix ET le défilement : les découpler
-       désynchroniserait le point orange des mots prononcés. */
     function vitesse() {
-      const v = parseFloat(choixVitesse.value);
-      return Number.isFinite(v) && v > 0 ? v : 1;
-    }
-
-    function appliquerVitesseVoix() {
-      narration.playbackRate = vitesse();
-      narration.preservesPitch = true;      // la voix reste dans son timbre
-      narration.mozPreservesPitch = true;
-      narration.webkitPreservesPitch = true;
+      return window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
     }
 
     function afficherDuree() {
@@ -181,62 +161,50 @@
 
     function remettreCommandesAuRepos() {
       arreter.disabled = true;
-      lancer.textContent = "↻ Rejouer avec la voix";
+      lancer.textContent = "▶ Écouter";
     }
 
     function stopper() {
-      narration.pause();
-      narration.currentTime = 0;
+      lecture += 1;
+      if ("speechSynthesis" in window) speechSynthesis.cancel();
       remettreCommandesAuRepos();
     }
 
-    async function jouer() {
-      narration.pause();
-      narration.currentTime = 0;
-      appliquerVitesseVoix();
+    function voixFr() {
+      const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter(v => v.lang.toLowerCase().startsWith("fr"));
+      return fr.find(v => /natural|neural|online/i.test(v.name)) || fr.find(v => /google/i.test(v.name)) || fr.find(v => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+    }
+
+    function jouer() {
+      stopper();
       relancerAnimation();
+      if (!("speechSynthesis" in window) || !NARRATION) return;
+      const run = lecture, u = new SpeechSynthesisUtterance(NARRATION), v = voixFr();
+      u.lang = "fr-FR";
+      if (v) u.voice = v;
+      u.rate = vitesse();
+      u.onend = u.onerror = () => { if (run === lecture) remettreCommandesAuRepos(); };
+      speechSynthesis.speak(u);
       arreter.disabled = false;
       lancer.textContent = "↻ Recommencer avec la voix";
-      try {
-        await narration.play();
-        appliquerVitesseVoix();            // certains navigateurs remettent 1 au play
-      } catch {
-        arreter.disabled = true;
-        lancer.textContent = "▶ Animation + voix";
-      }
     }
 
     lancer.addEventListener("click", jouer);
 
     document.getElementById("rejouer").addEventListener("click", () => {
-      narration.pause();
-      narration.currentTime = 0;
+      stopper();
       relancerAnimation();
-      remettreCommandesAuRepos();
-    });
-
-    /* Changer la vitesse en cours de lecture reprendrait au milieu avec un
-       décalage : on repart proprement du début. */
-    choixVitesse.addEventListener("change", () => {
-      afficherDuree();
-      const enLecture = !narration.paused && !narration.ended;
-      if (enLecture) {
-        jouer();
-      } else {
-        appliquerVitesseVoix();
-        relancerAnimation();
-      }
     });
 
     arreter.addEventListener("click", stopper);
-    narration.addEventListener("ended", remettreCommandesAuRepos);
+    /* changer la vitesse commune arrête la lecture ; la suivante, et l'animation, partent à la nouvelle vitesse */
+    document.addEventListener("pilotevoix:vitesse", () => { stopper(); afficherDuree(); });
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) stopper();
     });
-    window.addEventListener("beforeunload", () => narration.pause());
 
     afficherDuree();
-    appliquerVitesseVoix();
+    window.addEventListener("load", afficherDuree);   // la vitesse gardée pendant la session (moteur chargé plus bas)
   </script>
 <script src="../../../../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
   <script src="../../../../moteur/voix-index.js?v=20260902-1"></script>

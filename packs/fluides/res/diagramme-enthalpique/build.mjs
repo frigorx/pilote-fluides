@@ -77,8 +77,12 @@ for (const module of MODULES) {
   ]);
 }
 
+/* Les gabarits de src/ sont rangés un dossier plus bas que les pages de la racine : les scripts du site qu'on y a posés
+   (animations, retour à l'accueil) remontent de cinq dossiers, juste pour les modules autonomes ; à la racine, quatre
+   (18/10/2026, sans quoi une reconstruction cassait ces deux scripts sur l'accueil et les trois cours). */
 for (const [relativePath, content] of generated) {
-  await writeFile(path.join(root, relativePath), content, "utf8");
+  const aLaRacine = !relativePath.startsWith("modules-autonomes");
+  await writeFile(path.join(root, relativePath), aLaRacine ? content.replaceAll('"../../../../../moteur/', '"../../../../moteur/') : content, "utf8");
 }
 
 const manifest = {

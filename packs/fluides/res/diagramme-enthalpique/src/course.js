@@ -56,7 +56,6 @@
     moduleState: document.getElementById("moduleState"),
     readButton: document.getElementById("readButton"),
     stopButton: document.getElementById("stopButton"),
-    speedSelect: document.getElementById("speedSelect"),
     readingButton: document.getElementById("readingButton"),
     fullscreenButton: document.getElementById("fullscreenButton")
   };
@@ -259,7 +258,8 @@
         <div class="remember"><strong>À retenir :</strong> ${escapeHtml(module.discover.remember)}</div>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = "Comprendre →";
-      state.currentSpeechText = buildNarration(module.discover.title, module.discover.body, module.discover.remember);
+      /* la voix dit la narration de l'écran, écrite pour l'oreille (chantier prof vocal, 18/10/2026) */
+      state.currentSpeechText = module.discover.narration || buildNarration(module.discover.title, module.discover.body, module.discover.remember);
       return;
     }
 
@@ -271,7 +271,7 @@
         <div class="remember"><strong>Repère :</strong> ${escapeHtml(module.symbol)}</div>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = "Je vérifie →";
-      state.currentSpeechText = buildNarration(module.function.title, module.function.body, module.function.terrain);
+      state.currentSpeechText = module.function.narration || buildNarration(module.function.title, module.function.body, module.function.terrain);
       return;
     }
 
@@ -474,7 +474,7 @@
     const run = state.speechRun;
     const utterance = new SpeechSynthesisUtterance(state.currentSpeechText);
     utterance.lang = "fr-FR";
-    utterance.rate = Number(dom.speedSelect.value || 0.95);
+    utterance.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;   // la vitesse commune du site
     utterance.pitch = 1;
     const voice = bestVoice();
     if (voice) utterance.voice = voice;
@@ -529,9 +529,8 @@
   dom.nextButton.addEventListener("click", goNext);
   dom.readButton.addEventListener("click", toggleSpeech);
   dom.stopButton.addEventListener("click", stopSpeech);
-  dom.speedSelect.addEventListener("change", () => {
-    if (state.speaking || state.paused) speakCurrent();
-  });
+  /* la vitesse commune (moteur/reglage-voix.js) : la changer arrête la lecture ; la suivante la prend */
+  document.addEventListener("pilotevoix:vitesse", stopSpeech);
   dom.readingButton.addEventListener("click", () => {
     const active = dom.app.classList.toggle("reading-easy");
     dom.readingButton.setAttribute("aria-pressed", String(active));

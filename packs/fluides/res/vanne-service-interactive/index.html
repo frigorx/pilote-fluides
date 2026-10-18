@@ -26,6 +26,7 @@
         <span>coupe, circulation et raccordements</span>
       </div>
       <div class="reading-tools" aria-label="Sommaire, partage et impression">
+        <button type="button" id="listen" class="share-button" data-prof-ecouter aria-pressed="false" hidden>▶ Écouter</button>
         <button type="button" id="home-button" class="share-button" title="Revenir au sommaire">☰ Sommaire</button>
         <button type="button" id="copy-link" class="share-button" title="Copier le lien de cet écran">🔗 Copier le lien</button>
         <button type="button" id="print-book-button" class="share-button" title="Imprimer le livret des quatre écrans">🖨 Livret</button>
@@ -53,7 +54,7 @@
         </figure>
       </div>
       <nav class="home-grid" aria-label="Les quatre écrans du cours">
-        <button type="button" class="home-tile" data-step="0">
+        <button type="button" class="home-tile" data-step="0" data-prof-commencer>
           <span class="home-tile-num">1</span>
           <strong>Les trois positions</strong>
           <small>Fermée sur l’arrière, intermédiaire, fermée sur l’avant : ce que chaque position ouvre et ce qu’elle isole.</small>
@@ -119,7 +120,7 @@
   <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
   <script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
   <script src="valve-diagram.js?v=20260802-6"></script>
-  <script src="app.js?v=20260802-6"></script>
+  <script src="app.js?v=20261018-muets"></script>
   <script src="../../../../moteur/lisibilite.js?v=20260802-6"></script>
 <script src="../../../../moteur/marque.js?v=20260818-3" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
 <script src="referentiel.js"></script>

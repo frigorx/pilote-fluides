@@ -7,18 +7,18 @@
 
   const PHASES = [
     { id: "understand", label: "Comprendre" },
-    { id: "prepare", label: "Préparer" },
-    { id: "rotalock", label: "Rotolock" },
-    { id: "connect", label: "Raccorder" },
-    { id: "vacuum", label: "Vide lignes" },
-    { id: "read", label: "Lire" },
-    { id: "remove", label: "Déposer" },
+    { id: "prepare", narration: "Avant le premier raccord, cette phase décide si l'on peut travailler, et dans quelles conditions. Elle part du danger : du liquide encore sous pression peut être projeté et brûler par le froid. L'ordre en découle : d'abord se protéger, ensuite savoir de quel fluide il s'agit et si le matériel lui convient, puis sécuriser la zone. Plusieurs de ces étapes vous demandent de choisir vous-même. Viennent enfin les instruments : le zéro de chaque cadran et l'état des trois flexibles. La phase suivante prépare les vannes Rotolock.", label: "Préparer" },
+    { id: "rotalock", narration: "Cette phase prépare les deux vannes Rotolock à recevoir le manifold, sans jamais ouvrir le circuit. Tout commence par un repérage : P, près du carré, est la prise du flexible temporaire, alors que P1 reste au pressostat. Côté BP comme côté HP, le même principe s'applique. Le presse-étoupe est libéré avant chaque manœuvre et resserré aussitôt après, et le bouchon P ne s'enlève qu'une fois P isolée par le siège arrière. Se tromper de prise exposerait à une pression que rien n'isole. Les flexibles viennent ensuite.", label: "Rotolock" },
+    { id: "connect", narration: "On relie ici le manifold aux deux vannes Rotolock et à la pompe, le circuit restant protégé par le siège arrière. Une étape s'intercale avant toute ouverture : la vérification du chemin complet. La couleur donne une indication, mais ce qui prouve qu'un flexible est du bon côté, c'est l'identification du circuit. On parcourt donc chaque flexible d'un bout à l'autre, pour s'assurer qu'aucun n'aboutit sur P1 et qu'aucune ligne n'est inversée. Les trois mini-vannes s'ouvrent ensuite, l'une après l'autre. Les lignes sont alors prêtes pour le vide.", label: "Raccorder" },
+    { id: "vacuum", narration: "Cette phase met sous vide le manifold et les trois flexibles. Les Rotolock restent en butée arrière : l'installation n'est jamais reliée à la pompe. Tout le trajet est ouvert avant le démarrage, puis le vide est emprisonné dans les lignes avant que la pompe s'arrête. Pour cela, on referme d'abord les deux robinets, on isole la pompe, et c'est le dernier geste qui l'arrête. Ce module ne fixe aucune durée ni aucune valeur valable partout : le critère vient du plateau. Si le vide remonte, on cherche une fuite ou de l'humidité. La lecture vient ensuite.", label: "Vide lignes" },
+    { id: "read", narration: "C'est la phase où la pression de l'installation arrive enfin aux cadrans. Pour cela, chaque Rotolock quitte le siège arrière et passe en position intermédiaire, ce qui met la prise P en relation avec l'installation. Les deux côtés se traitent séparément, presse-étoupe libéré avant la manœuvre, resserré après. Quant aux robinets du manifold, ils restent en place : lire, ce n'est pas mettre un côté en communication avec le flexible jaune. Une fois les valeurs relevées, on contrôle l'étanchéité, car un montage qui fuit ne prouve rien. Il restera à déposer.", label: "Lire" },
+    { id: "remove", narration: "Déposer, c'est défaire le montage en émettant le moins possible de fluide, puis prouver que le poste est redevenu étanche. L'idée directrice : le fluide des flexibles retourne dans l'installation, aspiré par le compresseur. D'où l'ordre : la HP s'isole en premier, on coupe l'alimentation liquide, puis le fluide emprunte la BP, qui ne s'isole qu'à la fin de la récupération. On débranche seulement à pression stable, lentement, hors de l'axe : c'est la pression observée qui autorise, jamais le temps écoulé. Bouchons, recherche de fuite et contrôle final terminent la phase.", label: "Déposer" },
     { id: "assess", label: "Évaluer" }
   ];
 
   const LESSONS = [
     {
-      title: "Deux robinets, trois flexibles équipés",
+      title: "Deux robinets, trois flexibles équipés", narration: "Voici le manifold à deux voies. Il porte deux cadrans : le bleu pour la basse pression, le rouge pour la haute. Sous chacun, un robinet. Trois flexibles en partent, dont le jaune, au centre, réservé au service. Ce ne sont pas ces robinets qui donnent la lecture : ils servent à relier le côté bleu ou le côté rouge au flexible jaune. Quant aux mini-vannes, en bout de flexible, elles isolent ce que le flexible contient, ce qui limite le fluide perdu au débranchement. Vous allez voir maintenant pourquoi un circuit arrêté reste dangereux.",
       intro: "Un manifold 2 voies possède deux robinets de commande. Il utilise trois flexibles, chacun terminé par une mini-vanne quart de tour.",
       blocks: [
         ["Notion", "Bleu : côté basse pression. Rouge : côté haute pression. Jaune : voie centrale de service."],
@@ -28,7 +28,7 @@
       visual: "anatomy"
     },
     {
-      title: "Sous pression, le fluide peut brûler par le froid",
+      title: "Sous pression, le fluide peut brûler par le froid", narration: "Une installation à l'arrêt n'est pas hors de danger : le dessin le montre en trois temps. Le fluide enfermé appuie sur la paroi, les bouchons et les raccords. Quand on dévisse un raccord, le fluide trouve une sortie, et le jet part droit, dans le prolongement du raccord. Ce qui sort passe brusquement de liquide à vapeur et prélève de la chaleur sur la peau : c'est la brûlure par le froid, jusqu'à la gelure. D'où le réflexe : lunettes pour les yeux, gants contre le froid, avant de toucher à un circuit sous pression. Reste à identifier le fluide.",
       intro: "Même installation arrêtée, le fluide peut pousser sur les parois, les bouchons et les raccords. Desserrer un raccord crée une sortie dans son axe.",
       blocks: [
         ["Pression", "C’est l’action du fluide sur les parois du circuit. Arrêté ne veut pas dire sans pression."],
@@ -38,7 +38,7 @@
       visual: "safety-risk"
     },
     {
-      title: "Identifier le fluide avant de choisir le matériel",
+      title: "Identifier le fluide avant de choisir le matériel", narration: "Avant de brancher quoi que ce soit, on décide si ce matériel convient à cette installation, en trois étapes. D'abord on identifie le fluide : plaque de l'installation, dossier du poste, fiche de données de sécurité, et jamais la couleur d'un flexible. Ensuite on compare : la pression de référence du circuit ne doit dépasser aucune limite du fabricant, pour le manifold, les flexibles et les raccords. Enfin on décide : limite manquante ou illisible, fluide inconnu, on ne raccorde pas et on s'adresse au formateur. Les prises de la vanne viennent ensuite.",
       intro: "La couleur des flexibles ne prouve ni le fluide présent ni la compatibilité du manifold. Il faut lire, comparer et savoir refuser.",
       blocks: [
         ["1 · Identifier", "Lire la plaque de l’installation et la documentation du poste ; consulter la FDS du fluide utilisé."],
@@ -49,7 +49,7 @@
       visual: "compatibility"
     },
     {
-      title: "P reçoit le manifold ; P1 reste au pressostat",
+      title: "P reçoit le manifold ; P1 reste au pressostat", narration: "Les deux prises d'une vanne Rotolock ne se confondent jamais. P est la prise voisine du carré de manœuvre : le flexible du manifold, bleu ou rouge, s'y raccorde, et seulement le temps de l'intervention. P1 est branchée côté circuit et porte le pressostat. Quelle que soit la position de la vanne, la pression peut y rester : on ne défait donc jamais son bouchon quand l'installation est chargée. Pour les distinguer, on lit le repérage et on suit le circuit : la forme ne suffit pas. L'écran suivant traite du presse-étoupe.",
       intro: "Sur chaque vanne Rotolock à deux prises, le carré de manœuvre et le circuit interne permettent de repérer P sans la confondre avec P1.",
       blocks: [
         ["P · après le siège arrière", "C’est la voie de service temporaire, près du carré. Le flexible bleu ou rouge se raccorde ici."],
@@ -59,7 +59,7 @@
       visual: "connections"
     },
     {
-      title: "Chaque manœuvre encadre le presse-étoupe",
+      title: "Chaque manœuvre encadre le presse-étoupe", narration: "Autour de la tige, un écrou, le presse-étoupe, empêche le fluide de fuir. Serré, il bloque aussi la tige : on ne manœuvre pas la vanne sans le relâcher un peu. D'où trois gestes. On relâche seulement de ce que la fiche du poste autorise. On déplace la tige sans brutaliser la butée. Puis on resserre aussitôt, car un presse-étoupe laissé libre peut devenir un point de fuite. Cette règle vaut pour la BP comme pour la HP, à la pose, à la lecture et à la dépose. L'écran suivant montre le siège arrière.",
       intro: "Le presse-étoupe assure l’étanchéité autour de la tige. Il se libère légèrement avant la manœuvre et se resserre dès que la position est atteinte.",
       blocks: [
         ["1 · Desserrer légèrement", "Utiliser l’outil prévu et seulement le débattement indiqué par la fiche du poste. Aucun nombre de tours universel n’est inventé."],
@@ -70,7 +70,7 @@
       visual: "gland-sequence"
     },
     {
-      title: "Siège arrière : raccorder sans ouvrir le circuit",
+      title: "Siège arrière : raccorder sans ouvrir le circuit", narration: "Le dessin montre l'intérieur de la vanne Rotolock côté BP, comme si on l'avait coupée en deux. On y repère la tuyauterie, le compresseur, le pressostat sur P1 et la prise P du manifold. Quand la tige est ramenée à fond vers l'arrière, sans forcer, le pointeau obture le chemin qui mène à P. L'installation continue donc de fonctionner normalement, alors que la prise P ne communique plus avec elle. On peut brancher les flexibles, puis vider les lignes. P1, elle, reste reliée au circuit, et son danger demeure. Vient ensuite la position de lecture.",
       intro: "La tige est dévissée jusqu’à la butée arrière, sans forcer.",
       blocks: [
         ["Passage", "T communique avec C : l’installation fonctionne normalement."],
@@ -81,7 +81,7 @@
       position: "back"
     },
     {
-      title: "Position intermédiaire : mettre en lecture",
+      title: "Position intermédiaire : mettre en lecture", narration: "Voici la position de lecture. Le pointeau ne touche plus aucun siège, il se tient entre les deux. Tout communique alors : la tuyauterie, le compresseur et les deux prises P et P1. La pression de l'installation peut monter par P, traverser le flexible et atteindre le cadran. On n'arrive à cette position qu'après le vide des flexibles. Les deux robinets du manifold, eux, restent fermés : lire ne demande pas de les ouvrir. L'écran suivant présente la troisième position de la tige, le siège avant.",
       intro: "Le pointeau ne touche aucun siège. T, C, P et P1 communiquent.",
       blocks: [
         ["Action", "Après le vide des flexibles, amener chaque Rotolock en position intermédiaire."],
@@ -92,7 +92,7 @@
       position: "mid"
     },
     {
-      title: "Siège avant : comprendre, sans l’inventer dans la pose",
+      title: "Siège avant : comprendre, sans l’inventer dans la pose", narration: "Dernière position de la tige : le siège avant. On la comprend, mais on ne s'en sert pas pour la pose. Tige vissée vers l'avant, le pointeau coupe la tuyauterie du compresseur, alors que les prises P et P1 continuent à communiquer avec le compresseur. L'intérêt est d'isoler la tuyauterie. Cette position ne remplace pourtant ni le siège arrière, réservé au raccordement, ni la position intermédiaire, réservée à la lecture. Enfin, isoler une zone ne la met pas hors pression : du fluide peut y rester. Suit la mise au vide des lignes.",
       intro: "La tige est vissée vers l’avant. T est isolée de C ; P et P1 restent reliées à C.",
       blocks: [
         ["Fonction", "Cette position permet d’isoler la tuyauterie T du compresseur C."],
@@ -103,7 +103,7 @@
       position: "front"
     },
     {
-      title: "Vider le manifold et les flexibles avant la lecture",
+      title: "Vider le manifold et les flexibles avant la lecture", narration: "Avant de lire quoi que ce soit, on vide les lignes : le manifold et ses trois flexibles. Les deux Rotolock restent au siège arrière, donc la pompe n'agit que sur ces lignes, jamais sur l'installation. L'ordre est celui d'un chemin qu'on prépare : tout est ouvert jusqu'à la pompe, et seulement après, elle démarre. À la fin, on referme les deux robinets du manifold et on isole la pompe avant de l'arrêter, ce qui évite un retour d'huile. Reste à contrôler que le vide tient, avec les instruments du plateau.",
       intro: "Les Rotolock restent au siège arrière : la pompe agit sur les lignes, pas sur l’installation.",
       blocks: [
         ["Chemin", "Mini-vannes des trois flexibles ouvertes, jaune vers pompe, robinets BP et HP ouverts, puis pompe en marche."],
@@ -113,7 +113,7 @@
       visual: "vacuum"
     },
     {
-      title: "Déposer : ramener le fluide des flexibles dans l’installation",
+      title: "Déposer : ramener le fluide des flexibles dans l’installation", narration: "À la dépose, les flexibles contiennent encore du fluide. On ne les purge pas : le compresseur ramène ce fluide dans l'installation. On commence par isoler la HP au siège arrière, pour que le flexible rouge ne reçoive plus rien du circuit. On coupe aussi l'arrivée de liquide, selon le poste : électrovanne ou vanne de départ liquide. Puis on ouvre les robinets HP et BP du manifold, ce qui crée un trajet vers l'aspiration. Le fluide rejoint ensuite le côté liquide, et la pression BP chute jusqu'à l'arrêt du compresseur par le pressostat. Il reste à tout refermer.",
       intro: "On ne purge pas les flexibles. Le compresseur aspire leur fluide par la BP et le ramène vers le condenseur puis la bouteille liquide.",
       blocks: [
         ["1 · Isoler la HP", "Mettre la Rotolock HP au siège arrière et resserrer son presse-étoupe : le flexible rouge ne reçoit plus de fluide du circuit."],
@@ -124,7 +124,7 @@
       visual: "recovery"
     },
     {
-      title: "Refermer, remettre en service et rechercher les fuites",
+      title: "Refermer, remettre en service et rechercher les fuites", narration: "Une fois les flexibles retirés, le travail n'est pas fini. Il faut remettre le poste en ordre : tout refermer, remettre les quatre bouchons, ceux des deux prises P et ceux des deux carrés de manœuvre, puis rétablir l'alimentation liquide. Vient alors la recherche de fuite, obligatoire. La raison : tout point démonté ou manœuvré peut fuir. On balaie donc lentement les bouchons P et les presse-étoupes avec le moyen du plateau, et une alerte se confirme par un second passage. C'est le dernier des onze écrans : le principe est complet, il reste à le pratiquer.",
       intro: "La dépose n’est terminée qu’après le resserrage des presse-étoupes, la remise des bouchons et le contrôle des points manipulés.",
       blocks: [
         ["Refermer", "Robinets du manifold fermés, BP au siège arrière, presse-étoupes BP et HP resserrés, mini-vannes fermées."],
@@ -334,6 +334,52 @@
   const nextButton = $("#next-button");
   const cutawayButton = $("#cutaway-button");
   const cutawayDialog = $("#cutaway-dialog");
+  const voiceButton = $("#voice-button");
+
+  /* ---------- la voix (chantier prof vocal, 18/10/2026) ----------
+     Chaque écran « Comprendre » et chaque phase de la manipulation ont leur texte pour l'oreille (`narration`) : la voix
+     explique, elle ne relit pas le panneau. Au clic seulement ; changer d'écran ou de phase la coupe, changer la vitesse
+     commune aussi. moteur/voix.js lit le MP3 s'il existe, sinon la voix du navigateur. Le prof vocal du site enchaîne
+     les écrans « Comprendre », lit chaque phase et attend les gestes de l'élève. */
+  let parle = false, lecture = 0, ecranLu = "";
+  const voixFr = () => {
+    const fr = ("speechSynthesis" in window ? speechSynthesis.getVoices() : []).filter((v) => v.lang.toLowerCase().startsWith("fr"));
+    return fr.find((v) => /natural|neural|online/i.test(v.name)) || fr.find((v) => /google/i.test(v.name)) || fr.find((v) => v.lang.toLowerCase() === "fr-fr") || fr[0] || null;
+  };
+  function narrationCourante() {
+    if (state.screen === "lessons") return LESSONS[state.lessonIndex]?.narration || "";
+    if (state.screen === "practice") return PHASES[actionPhaseIndex()]?.narration || "";
+    return "";
+  }
+  function majEcoute() { voiceButton.textContent = parle ? "■ Arrêter" : "▶ Écouter"; voiceButton.setAttribute("aria-pressed", String(parle)); }
+  function taire() { lecture += 1; parle = false; if ("speechSynthesis" in window) speechSynthesis.cancel(); majEcoute(); }
+  function ecouter() {
+    if (parle) { taire(); return; }
+    const texte = narrationCourante();
+    if (!texte || !("speechSynthesis" in window)) return;
+    taire();
+    const run = lecture, u = new SpeechSynthesisUtterance(texte), v = voixFr();
+    u.lang = "fr-FR"; if (v) u.voice = v;
+    u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+    u.onstart = () => { if (run !== lecture) return; parle = true; majEcoute(); };
+    u.onend = u.onerror = () => { if (run !== lecture) return; parle = false; majEcoute(); };
+    speechSynthesis.speak(u);
+  }
+  /* à chaque rendu : un autre écran, ou une autre phase, coupe la voix ; le prof vocal en marche lit la phase qui commence */
+  function suivreEcran() {
+    const cle = state.screen === "lessons" ? "l" + state.lessonIndex : state.screen === "practice" ? "p:" + (currentAction()?.phase || "") : state.screen;
+    if (cle !== ecranLu) {
+      const autrePhase = ecranLu.startsWith("p:") && cle.startsWith("p:");
+      taire();
+      ecranLu = cle;
+      if (autrePhase && window.PiloteProfVocal && window.PiloteProfVocal.etat().actif) window.PiloteProfVocal.relire();
+    }
+    voiceButton.hidden = !narrationCourante();
+  }
+  voiceButton.addEventListener("click", ecouter);
+  document.addEventListener("pilotevoix:vitesse", taire);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) taire(); });
+  window.PILOTE_PROF_ACTIVITE = () => ["practice", "order", "quiz"].includes(state.screen);
 
   function currentAction() { return ACTIONS[state.actionIndex]; }
   function actionPhaseIndex() { return PHASES.findIndex((phase) => phase.id === currentAction()?.phase); }
@@ -347,6 +393,9 @@
     $("#exit-button").hidden = screen === "home";
     $("#mode-badge").textContent = ({ lessons: "Comprendre", practice: "Manipuler", assessment: "Évaluer", quiz: "QCM", order: "Ordre", workshop: "Guide atelier", result: "Bilan" })[screen] || "Accueil";
     if (screen === "home") {
+      taire();
+      ecranLu = "home";
+      voiceButton.hidden = true;
       state.courseChain = false;
       $("#app-main").focus({ preventScroll: true });
       return;
@@ -388,6 +437,7 @@
   }
 
   function render() {
+    suivreEcran();
     cutawayButton.hidden = true;
     if (state.screen === "lessons") renderLesson();
     else if (state.screen === "practice") renderPractice();

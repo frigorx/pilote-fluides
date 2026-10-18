@@ -17,6 +17,8 @@ La planche résume le parcours attendu d'un stagiaire :
 
 Durée de l'animation et de la piste vocale : environ **32 secondes**. L'état initial est volontairement visible en retrait ; l'animation active chaque étape. L'état final reste une planche fixe lisible et imprimable.
 
+**18/10/2026 (chantier prof vocal)** : la voix lit désormais une narration écrite pour l'oreille (la transcription affichée sous la slide), par la voix du navigateur en attendant le lot de MP3, à la vitesse commune du site qui règle aussi l'animation ; la piste Piper ci-dessous, qui relisait les étiquettes, n'est plus jouée.
+
 La voix ne démarre jamais au chargement. Le bouton **Animation + voix** relance le SVG et la piste locale au même instant. La lecture peut être arrêtée ; le changement d'onglet arrête également la voix. Le texte prononcé est affiché intégralement sous la slide et l'animation reste utilisable sans audio.
 
 ## Fichiers
