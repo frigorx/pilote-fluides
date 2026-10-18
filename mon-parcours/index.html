@@ -65,6 +65,30 @@
   .carte:hover { border-color: var(--blue); border-left-color: var(--vert); }
   .carte.appui { border-left: 5px dashed var(--blue-soft); }
   .carte[hidden] { display: none; }
+  .carte .tc { display: block; font-size: 15px; margin-top: 4px; color: var(--ink); }
+  .carte .tc b { color: var(--navy); font-weight: bold; }
+  abbr[title] { text-decoration: underline dotted #9aa7b6; cursor: help; }
+  .vue.mode { margin-top: 14px; padding-top: 12px; border-top: 1px solid #d9dfe7; }
+  .bilan { margin: 16px 0 0; font-size: 17px; position: relative; z-index: 1; }
+  .legende { font-size: 15px; color: var(--muted); position: relative; z-index: 1; }
+  .defile { overflow-x: auto; margin-top: 10px; position: relative; z-index: 1; background: rgba(255,253,248,.92);
+    border: 1px solid #c9d3df; border-radius: 14px; box-shadow: var(--ombre); }
+  table.croise { border-collapse: collapse; font-size: 15px; min-width: 100%; }
+  .croise th, .croise td { border-bottom: 1px solid #e3e8ef; padding: 6px 8px; text-align: left; vertical-align: top; }
+  .croise thead th { position: sticky; top: 0; background: #eef3f9; color: var(--navy); white-space: nowrap; }
+  .croise tbody th { font-weight: normal; min-width: 220px; position: sticky; left: 0; background: var(--paper); }
+  .croise .coin { left: 0; z-index: 2; }
+  .code-l { font-weight: bold; color: var(--orange-deep); white-space: nowrap; }
+  .cel { display: inline-block; min-width: 34px; text-align: center; border-radius: 8px; padding: 2px 6px; font: inherit; font-weight: bold; }
+  button.cel { cursor: pointer; }
+  .cel.ok { background: var(--vert-f); color: var(--vert); border: 1px solid var(--vert); }
+  .cel.trou { background: var(--ambre-f); color: var(--ambre); border: 2px dashed var(--ambre); }
+  .cel.hors { color: #b8c2ce; font-weight: normal; }
+  td.cel.hors { display: table-cell; }
+  .mot-trou { color: var(--ambre); font-size: 14px; }
+  .tri { font: inherit; font-weight: bold; color: var(--navy); background: none; border: 0; cursor: pointer; padding: 0; text-decoration: underline dotted; }
+  .detail { position: relative; z-index: 1; margin-top: 20px; scroll-margin-top: 12px; }
+  .detail h3 { font-size: 19px; }
   .carte .t { display: block; font-weight: bold; color: var(--navy); }
   .carte .p { display: block; font-size: 15.5px; margin-top: 2px; }
   .carte .m { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 14.5px; color: var(--muted); }
@@ -104,7 +128,7 @@
   <section id="resultat" aria-live="polite" hidden></section>
 </main>
 
-<script src="donnees-parcours.js?v=20261018a"></script>
+<script src="donnees-parcours.js?v=20261018b"></script>
 <script>
 (function () {
   "use strict";
@@ -113,7 +137,7 @@
     3: { titre: "Niveau 3", detail: "CAP, titre professionnel" },
     4: { titre: "Niveau 4", detail: "Bac pro, brevet professionnel" }
   };
-  var etat = { niveau: null, diplome: null, vue: "coeur", partie: null };
+  var etat = { niveau: null, diplome: null, vue: "coeur", partie: null, mode: "stations", tab: null, tri: null };
 
   function el(tag, attrs, enfants) {
     var e = document.createElement(tag);
@@ -177,8 +201,136 @@
     return el("a", { class: "carte" + (force === "appui" ? " appui" : ""), href: s.u, target: "_blank", rel: "noopener" }, [
       el("span", { class: "t", texte: s.t }),
       c.pourquoi[i] ? el("span", { class: "p", texte: c.pourquoi[i] }) : null,
+      ligneTC(d, i),
       meta
     ]);
+  }
+
+  /* Tâches et compétences de la station pour ce diplôme ; le libellé officiel s'affiche au survol. */
+  function libelle(liste, code) { var x = liste.filter(function (k) { return k.code === code; })[0]; return x ? x.libelle : ""; }
+  function codesAvecTitres(liste, codes) {
+    return codes.map(function (c) { return '<abbr title="' + libelle(liste, c).replace(/"/g, "&quot;") + '">' + c + "</abbr>"; }).join(", ");
+  }
+  function ligneTC(d, i) {
+    var x = d.tc[i]; if (!x) return null;
+    var h = "";
+    if (x[1].length) h += "<b>Tâches</b> " + codesAvecTitres(d.taches, x[1]) + " · ";
+    h += "<b>Compétences</b> " + codesAvecTitres(d.competences, x[0]);
+    return el("span", { class: "tc", html: h });
+  }
+
+  /* ---------- Le tableau croisé : ce qui est fait, ce qui manque ---------- */
+  function ensemble(d, idx, code) {
+    var n = []; for (var i in d.tc) if (d.tc[i][idx].indexOf(code) >= 0) n.push(+i); return n;
+  }
+  function feuillesSavoirs(d) {
+    var tous = [];
+    d.groupes.forEach(function (g) { g.codes.forEach(function (c) { if (/^S/.test(c.code)) tous.push(c); }); });
+    return tous.filter(function (c) { return !tous.some(function (x) { return x.code.indexOf(c.code + ".") === 0; }); });
+  }
+  function dessinerTableau(r, d) {
+    var aTaches = d.taches.length > 0, savoirs = feuillesSavoirs(d);
+    var vues = (aTaches ? [["tc", "Tâches × compétences"]] : []).concat([["comp", "Par compétence"]])
+      .concat(savoirs.length ? [["sav", "Par savoir"]] : []);
+    if (!vues.some(function (v) { return v[0] === etat.tab; })) etat.tab = vues[0][0];
+
+    // Les chiffres d'ensemble
+    var compOk = d.competences.filter(function (c) { return ensemble(d, 0, c.code).length; }).length;
+    var tachOk = d.taches.filter(function (t) { return ensemble(d, 1, t.code).length; }).length;
+    var savOk = savoirs.filter(function (c) { return c.coeur.length; }).length;
+    var cases = 0, casesOk = 0;
+    d.taches.forEach(function (t) { d.competences.forEach(function (c) {
+      if ((d.tachesDe[c.code] || []).indexOf(t.code) < 0) return;
+      cases++; if (croise(d, t.code, c.code).length) casesOk++;
+    }); });
+    var bilan = "<strong>" + compOk + " compétences sur " + d.competences.length + "</strong> ont au moins une station";
+    if (aTaches) bilan += " · <strong>" + tachOk + " tâches sur " + d.taches.length + "</strong> · <strong>" + casesOk + " cases sur " + cases + "</strong> du référentiel (tâche × compétence) couvertes";
+    if (savoirs.length) bilan += " · <strong>" + savOk + " savoirs sur " + savoirs.length + "</strong> enseignés";
+    r.appendChild(el("p", { class: "bilan", html: bilan + "." }));
+
+    var bar = el("div", { class: "vue", role: "group", "aria-label": "Lecture du tableau" });
+    vues.forEach(function (v) {
+      var b = el("button", { type: "button", "aria-pressed": etat.tab === v[0] ? "true" : "false", texte: v[1] });
+      b.addEventListener("click", function () { etat.tab = v[0]; etat.tri = null; etat.cas = null; majAdresse(); dessinerResultat(); });
+      bar.appendChild(b);
+    });
+    r.appendChild(bar);
+    r.appendChild(el("p", { class: "legende", html: "<span class=\"cel ok\">3</span> stations dans la case · " +
+      "<span class=\"cel trou\">0</span> <b>trou</b> : le référentiel relie ces deux codes, aucune station encore · " +
+      "<span class=\"cel hors\">·</span> case que le référentiel ne relie pas" }));
+
+    var boite = el("div", { class: "defile" }), tab = el("table", { class: "croise" });
+    boite.appendChild(tab); r.appendChild(boite);
+    var detail = el("div", { class: "detail", id: "detail-case" }); r.appendChild(detail);
+
+    if (etat.tab === "tc") {
+      var tete = "<thead><tr><th class=\"coin\">Tâche \\ compétence</th>" + d.competences.map(function (c) {
+        return '<th scope="col"><abbr title="' + c.libelle.replace(/"/g, "&quot;") + '">' + c.code + "</abbr></th>"; }).join("") + "</tr></thead>";
+      var corps = d.taches.map(function (t) {
+        return '<tr><th scope="row"><span class="code-l">' + t.code + "</span> " + t.libelle + "</th>" + d.competences.map(function (c) {
+          var off = (d.tachesDe[c.code] || []).indexOf(t.code) >= 0, n = croise(d, t.code, c.code).length;
+          // Hors matrice officielle : une station à 2 compétences y serait comptée par ricochet ; on ne l'affiche pas.
+          if (!off) return '<td class="cel hors">·</td>';
+          return '<td><button type="button" class="cel ' + (n ? "ok" : "trou") + '" data-t="' + t.code + '" data-c="' + c.code + '" title="' +
+            t.code + " × " + c.code + " : " + n + " station" + (n > 1 ? "s" : "") + (off ? "" : " (hors matrice officielle)") + '">' + n + "</button></td>";
+        }).join("") + "</tr>";
+      }).join("");
+      tab.innerHTML = tete + "<tbody>" + corps + "</tbody>";
+      tab.addEventListener("click", function (e) {
+        var b = e.target.closest("button.cel"); if (!b) return;
+        montrer(d, detail, b.dataset.t + " × " + b.dataset.c, croise(d, b.dataset.t, b.dataset.c));
+      });
+    } else {
+      var lignes = etat.tab === "comp"
+        ? d.competences.map(function (c) {
+            var st = ensemble(d, 0, c.code), tt = {};
+            st.forEach(function (i) { d.tc[i][1].forEach(function (t) { tt[t] = 1; }); });
+            return { code: c.code, libelle: c.libelle, n: st.length, autre: Object.keys(tt).sort().join(", ") || "—", st: st };
+          })
+        : savoirs.map(function (c) { return { code: c.code, libelle: c.libelle, n: c.coeur.length, autre: c.appui.length, st: c.coeur }; });
+      var t2 = etat.tab === "comp" ? (aTaches ? "Tâches où elle s'exerce" : "—") : "En appui";
+      var tri = etat.tri || { col: "code", sens: 1 };
+      lignes.sort(function (a, b) {
+        var x = a[tri.col], y = b[tri.col];
+        if (tri.col === "code") return tri.sens * String(x).localeCompare(String(y), "fr", { numeric: true });
+        return tri.sens * ((+x || 0) - (+y || 0));
+      });
+      function th(col, nom) {
+        var fl = tri.col === col ? (tri.sens > 0 ? " ▲" : " ▼") : "";
+        return '<th scope="col"><button type="button" class="tri" data-col="' + col + '">' + nom + fl + "</button></th>";
+      }
+      tab.innerHTML = "<thead><tr>" + th("code", "Code") + "<th scope=\"col\">Libellé officiel</th>" + th("n", "Stations qui enseignent") +
+        (etat.tab === "sav" ? th("autre", t2) : "<th scope=\"col\">" + t2 + "</th>") + "</tr></thead><tbody>" +
+        lignes.map(function (l) {
+          return "<tr><th scope=\"row\" class=\"code-l\">" + l.code + "</th><td>" + l.libelle + "</td><td>" +
+            (l.n ? '<button type="button" class="cel ok" data-code="' + l.code + '">' + l.n + "</button>"
+                 : '<span class="cel trou">0</span> <b class="mot-trou">trou</b>') + "</td><td>" + l.autre + "</td></tr>";
+        }).join("") + "</tbody>";
+      tab.addEventListener("click", function (e) {
+        var s = e.target.closest("button.tri");
+        if (s) { var c = s.dataset.col; etat.tri = { col: c, sens: tri.col === c ? -tri.sens : (c === "code" ? 1 : -1) }; dessinerResultat(); return; }
+        var b = e.target.closest("button.cel"); if (!b) return;
+        var l = lignes.filter(function (x) { return x.code === b.dataset.code; })[0];
+        montrer(d, detail, l.code + " " + l.libelle, l.st);
+      });
+    }
+  }
+  function croise(d, t, c) {
+    var n = []; for (var i in d.tc) if (d.tc[i][0].indexOf(c) >= 0 && d.tc[i][1].indexOf(t) >= 0) n.push(+i); return n;
+  }
+  function montrer(d, detail, titre, liste) {
+    detail.innerHTML = "";
+    detail.appendChild(el("h3", { texte: titre + " : " + liste.length + " station" + (liste.length > 1 ? "s" : "") }));
+    var g = el("div", { class: "cartes" });
+    liste.forEach(function (i) {
+      var s = S[i];
+      g.appendChild(el("a", { class: "carte", href: s.u, target: "_blank", rel: "noopener" }, [
+        el("span", { class: "t", texte: s.t }), ligneTC(d, i),
+        el("span", { class: "m" }, [el("span", { texte: s.r }), s.b ? el("span", { class: "badge brouillon", texte: "brouillon, à relire" }) : null])
+      ]));
+    });
+    detail.appendChild(g);
+    detail.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function dessinerResultat() {
@@ -193,13 +345,27 @@
       b.addEventListener("click", function () { etat.vue = v[0]; majAdresse(); dessinerResultat(); });
       vue.appendChild(b);
     });
+    // Deux lectures : les stations (l'élève) ou le tableau croisé (le professeur : fait / à faire).
+    var mode = el("div", { class: "vue mode", role: "group", "aria-label": "Lecture" });
+    [["stations", "📍 Mes stations"], ["tableau", "▦ Tableau croisé : fait et à faire"]].forEach(function (v) {
+      var b = el("button", { type: "button", "aria-pressed": etat.mode === v[0] ? "true" : "false", texte: v[1] });
+      b.addEventListener("click", function () { etat.mode = v[0]; majAdresse(); dessinerResultat(); });
+      mode.appendChild(b);
+    });
     r.appendChild(el("div", { class: "bandeau" }, [
       el("h2", { texte: d.nom }),
       el("div", { class: "rncp", texte: d.rncp + " · niveau " + d.niveau }),
       el("p", { class: "chiffres", html: "<strong>" + stationsDe(d, "coeur") + " stations</strong> enseignent un point de votre référentiel ; <strong>" +
         stationsDe(d, "tout") + "</strong> vous servent en tout." }),
-      vue
+      mode,
+      etat.mode === "tableau" ? null : vue
     ]));
+    if (etat.mode === "tableau") {
+      dessinerTableau(r, d);
+      r.appendChild(el("p", { class: "note", texte: "Tableau du " + P.date + " : il compte ce qu'inerWeb propose aujourd'hui. Une case « trou » est un point du référentiel qu'aucune station n'enseigne encore ; une partie se travaille en classe (communication, documents, anglais)." }));
+      poserFiligrane(r);
+      return;
+    }
 
     // Une partie du référentiel à la fois : la page reste une carte, pas un pavé.
     function compte(g) {
@@ -292,7 +458,8 @@
     if (etat.niveau) p.push("niveau=" + etat.niveau);
     if (etat.diplome) p.push("diplome=" + etat.diplome);
     if (etat.diplome && etat.vue !== "coeur") p.push("vue=" + etat.vue);
-    if (etat.diplome && etat.partie) p.push("partie=" + etat.partie);
+    if (etat.diplome && etat.partie && etat.mode !== "tableau") p.push("partie=" + etat.partie);
+    if (etat.diplome && etat.mode === "tableau") p.push("mode=tableau" + (etat.tab ? "&tableau=" + etat.tab : ""));
     history.replaceState(null, "", p.length ? "#" + p.join("&") : location.pathname);
   }
   function lireAdresse() {
@@ -300,6 +467,8 @@
       var x = kv.split("="); if (x[0] === "niveau") etat.niveau = +x[1];
       if (x[0] === "diplome") etat.diplome = x[1]; if (x[0] === "vue" && x[1] === "tout") etat.vue = "tout";
       if (x[0] === "partie") etat.partie = decodeURIComponent(x[1]);
+      if (x[0] === "mode" && x[1] === "tableau") etat.mode = "tableau";
+      if (x[0] === "tableau") etat.tab = x[1];
     });
     var d = P.diplomes.filter(function (x) { return x.id === etat.diplome; })[0];
     if (d) etat.niveau = d.niveau; else etat.diplome = null;
