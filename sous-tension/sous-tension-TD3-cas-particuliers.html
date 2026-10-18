@@ -183,17 +183,17 @@
   <div class="screen active" id="screen-accueil">
     <div class="card">
       <h2>Avant de commencer</h2>
-      <p>Dans les TD1 et TD2, tu as vu les câbles et les fils qu'on croise <strong>tous les jours</strong>. Ce TD3 couvre des cas plus particuliers, mais que tu rencontreras vraiment sur le terrain :</p>
+      <p>Dans les TD1 et TD2, vous avez vu les câbles et les fils qu'on croise <strong>tous les jours</strong>. Ce TD3 couvre des cas plus particuliers, mais que vous rencontrerez vraiment sur le terrain :</p>
       <ul>
         <li>Un câble <strong>armé</strong> et un câble <strong>blindé</strong>, ce n'est pas la même chose,</li>
         <li>Pourquoi certains câbles sont en <strong>aluminium</strong>,</li>
         <li>Pourquoi certains circuits ont besoin d'un câble <strong>anti-incendie</strong>,</li>
         <li>Comment raisonner sur la <strong>grosseur</strong> d'un câble.</li>
       </ul>
-      <div class="point-note"><strong>À savoir :</strong> il existe des milliers de câbles dans le métier — ce TD ne les couvre pas tous, mais te donne la logique pour comprendre les autres le jour où tu les croiseras.</div>
+      <div class="point-note"><strong>À savoir :</strong> il existe des milliers de câbles dans le métier — ce TD ne les couvre pas tous, mais vous donne la logique pour comprendre les autres le jour où vous les croiserez.</div>
     </div>
     <div class="card">
-      <h3>Choisis ton niveau</h3>
+      <h3>Choisissez votre niveau</h3>
       <div class="niveau-choice">
         <button class="niveau-btn" onclick="choisirNiveau('decouverte')"><div class="emoji">🔍</div><h3>Découverte</h3><p>CAP · 2nde TNE.</p></button>
         <button class="niveau-btn" onclick="choisirNiveau('approfondi')"><div class="emoji">📐</div><h3>Approfondi</h3><p>Bac Pro.</p></button>
@@ -275,7 +275,7 @@
     </figure>
 
     <div class="card">
-      <h3>Vérifie</h3>
+      <h3>Vérifiez</h3>
       <div class="scenario" id="a1">
         <p class="desc">Un câble qui doit être enterré directement, sans fourreau, dans un sol caillouteux.</p>
         <div class="choices">
@@ -328,7 +328,7 @@
 
     <div class="card">
       <h3>Comparateur</h3>
-      <p>Choisis une section en cuivre, découvre la section équivalente en aluminium.</p>
+      <p>Choisissez une section en cuivre, découvrez la section équivalente en aluminium.</p>
       <select id="selectCu" onchange="majComparateur()">
         <option value="1.5">1,5 mm²</option>
         <option value="2.5">2,5 mm²</option>
@@ -348,7 +348,7 @@
     </div>
 
     <div class="card">
-      <h3>Vérifie</h3>
+      <h3>Vérifiez</h3>
       <div class="scenario" id="al1">
         <p class="desc">Pour transporter le même courant qu'un câble cuivre, un câble aluminium doit avoir une section…</p>
         <div class="choices">
@@ -360,8 +360,8 @@
     </div>
 
     <div class="card">
-      <h3>✏️ Entraîne-toi — un câble qui combine deux notions</h3>
-      <p>Voici un câble que tu n'as jamais vu écrit en entier : <strong>U1000 ARVFV</strong>. Tu as pourtant déjà toutes les clés. Décompose-le lettre par lettre en t'appuyant sur ce TD (le « A » de l'aluminium) et sur ce que tu viens de voir sur l'armure (le « F » du feuillard).</p>
+      <h3>✏️ Entraînez-vous — un câble qui combine deux notions</h3>
+      <p>Voici un câble que vous n'avez jamais vu écrit en entier : <strong>U1000 ARVFV</strong>. Vous avez pourtant déjà toutes les clés. Décomposez-le lettre par lettre en vous appuyant sur ce TD (le « A » de l'aluminium) et sur ce que vous venez de voir sur l'armure (le « F » du feuillard).</p>
       <div class="scenario" id="tr-arvfv">
         <p class="desc">Le « A » puis le « F » de <strong>U1000 <span style="color:var(--orange)">A</span>RV<span style="color:var(--orange)">F</span>V</strong> signifient…</p>
         <div class="choices">
@@ -406,7 +406,7 @@
     </div>
 
     <div class="card">
-      <h3>Vérifie</h3>
+      <h3>Vérifiez</h3>
       <div class="scenario" id="i1">
         <p class="desc">Le circuit d'un désenfumage, qui doit continuer à fonctionner PENDANT l'incendie, a besoin surtout de…</p>
         <div class="choices">
@@ -451,7 +451,7 @@
     </figure>
 
     <div class="card">
-      <h3>Teste le raisonnement</h3>
+      <h3>Testez le raisonnement</h3>
       <div class="slider-row">
         <label>Longueur du câble : <output id="outLong">15</output> m</label>
         <input type="range" id="sliderLong" min="5" max="50" value="15" oninput="majGauge()">
@@ -482,8 +482,8 @@
   <!-- ============ JEU DE MÉMOIRE ============ -->
   <div class="screen" id="screen-memoire">
     <div class="card">
-      <h2>5. Jeu de mémoire — retrouve les paires</h2>
-      <p>Clique deux cartes. Si elles correspondent, la paire reste affichée.</p>
+      <h2>5. Jeu de mémoire — retrouvez les paires</h2>
+      <p>Cliquez deux cartes. Si elles correspondent, la paire reste affichée.</p>
       <div class="memory-grid" id="memoryGrid"></div>
       <div class="memory-status" id="memoryStatus">0 / 8 paires trouvées</div>
       <div style="text-align:center;margin-top:14px;"><button class="btn secondary" onclick="initMemory()">🔄 Recommencer le jeu</button></div>
@@ -505,7 +505,7 @@
         <li>Je sais distinguer <strong>réaction au feu</strong> et <strong>résistance au feu</strong>.</li>
         <li>Je sais expliquer pourquoi une plus grande longueur ou intensité demande une section plus grosse.</li>
       </ul>
-      <div class="point-note"><strong>Bilan des 3 TD :</strong> tu as maintenant vu 8 câbles et fils différents (H07RN-F, U1000 R2V, H05VV-F, H07V-U, H07V-K, H05V-K, U1000 RVFV, U1000 AR2V), plus les câbles blindés et sécurité incendie. Ce n'est pas tout l'univers du câble électrique — mais tu as la logique pour comprendre les autres.</div>
+      <div class="point-note"><strong>Bilan des 3 TD :</strong> vous avez maintenant vu 8 câbles et fils différents (H07RN-F, U1000 R2V, H05VV-F, H07V-U, H07V-K, H05V-K, U1000 RVFV, U1000 AR2V), plus les câbles blindés et sécurité incendie. Ce n'est pas tout l'univers du câble électrique — mais vous avez la logique pour comprendre les autres.</div>
     </div>
 
     <div class="card">
@@ -624,7 +624,7 @@ function repondreTrain(btn, correct, groupId){
   } else {
     btn.classList.add('wrong');
     fb.classList.add('shown','ko');
-    fb.textContent = '❌ Le blindage (écran cuivre) ne s\'écrit pas comme l\'armure. Repense au « F » = feuillard.';
+    fb.textContent = '❌ Le blindage (écran cuivre) ne s\'écrit pas comme l\'armure. Repensez au « F » = feuillard.';
   }
 }
 

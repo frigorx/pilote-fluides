@@ -80,10 +80,10 @@ main { height: 100%; }
 .etapes button:focus-visible { outline: 3px solid #FF6B35; outline-offset: 2px; }
 /* L'étape en cours ne se signale pas par la seule couleur (charte) : elle
    porte aussi le trait épais et la puce. */
-.etapes button[aria-current="true"] {
+.etapes button[aria-current="step"] {
   background: #1B3A63; color: #FFFDF8; border-color: #FF6B35; font-weight: 700;
 }
-.etapes button[aria-current="true"]::before { content: "▸ "; }
+.etapes button[aria-current="step"]::before { content: "▸ "; }
 /* Les deux commandes de lecture ne sont pas des étapes : bordure orange, la
    couleur d'action de la charte, et un peu d'air avant la liste des étapes. */
 .etapes .cmd { border-color: #FF6B35; font-weight: 700; }
@@ -352,11 +352,18 @@ main { height: 100%; }
     monEcoute = document.createElement("button");
     monEcoute.type = "button";
     monEcoute.className = "cmd";
+    monEcoute.setAttribute("data-prof-ecouter", "");   /* le prof vocal du site lit l'étape par ce bouton */
     monEcoute.addEventListener("click", ecoute);
 
     barre.insertBefore(monEcoute, barre.firstChild);
     barre.insertBefore(monDebut, barre.firstChild);
     barre.insertBefore(monPlay, barre.firstChild);
+    /* repère jamais affiché : il déclare au prof vocal que la page avance d'étape en étape
+       (il passe alors à l'étape marquée aria-current="step" qui suit) */
+    var repere = document.createElement("span");
+    repere.hidden = true;
+    repere.setAttribute("data-prof-suivant", "");
+    barre.appendChild(repere);
     majPlay();
     majEcoute();
     new MutationObserver(majPlay).observe(natifPlay, { childList: true, subtree: true });
@@ -370,6 +377,7 @@ main { height: 100%; }
     b.textContent = e.libelle;
     b.title = e.desc;
     b.addEventListener("click", function () {
+      if (parle()) { speechSynthesis.cancel(); majEcoute(); }   /* changer d'étape coupe la voix */
       vaA(e.debut);
       marque(i);
       /* L'adresse suit le clic : l'élève qui tombe sur le NRD peut garder le
@@ -383,7 +391,7 @@ main { height: 100%; }
   function marque(i) {
     courant = i;
     boutons.forEach(function (b, j) {
-      if (j === i) b.setAttribute("aria-current", "true");
+      if (j === i) b.setAttribute("aria-current", "step");   /* « step » : le prof vocal y trouve l'étape suivante */
       else b.removeAttribute("aria-current");
     });
     /* L'explication écrite suit l'étape : on lit toujours au même endroit ce
@@ -420,7 +428,7 @@ main { height: 100%; }
 
   var essais = 0;
   var horloge = setInterval(function () {
-    if (vaA(cible)) { clearInterval(horloge); if (i >= 0) marque(i); return; }
+    if (vaA(cible)) { clearInterval(horloge); marque(i >= 0 ? i : 0); return; }
     if (++essais > 120) {
       clearInterval(horloge);
       /* Six secondes sans signal. Porte de sortie : un runtime qui

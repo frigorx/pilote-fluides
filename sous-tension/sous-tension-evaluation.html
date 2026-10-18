@@ -126,17 +126,17 @@
 
 <div class="app">
   <h1 class="main-title">🎯 Évaluation — les câbles électriques</h1>
-  <p class="subtitle">Note sur 20 et positionnement par rapport au référentiel.</p>
+  <p class="subtitle">Positionnement par rapport au référentiel.</p>
 
   <!-- ====== ÉCRAN 1 : CHOIX FILIÈRE + IDENTITÉ ====== -->
   <div class="screen active" id="screen-setup">
     <div class="card">
-      <h2>1. Choisis ta filière</h2>
-      <p style="font-size:14.5px;">Les questions sont les mêmes pour tous : ce qui change, c'est la <strong>compétence du référentiel</strong> sur laquelle tu seras positionné.</p>
+      <h2>1. Choisissez votre filière</h2>
+      <p style="font-size:14.5px;">Les questions sont les mêmes pour tous : ce qui change, c'est la <strong>compétence du référentiel</strong> sur laquelle vous serez positionné.</p>
       <div class="filiere-grid" id="filiereGrid"></div>
     </div>
     <div class="card" id="identCard" style="display:none;">
-      <h3>2. Ton identité (pour le compte-rendu prof)</h3>
+      <h3>2. Votre identité (pour le compte-rendu prof)</h3>
       <div class="ident-row">
         <label for="nomEleve">Nom et prénom</label>
         <input type="text" id="nomEleve" placeholder="Ex. Dupont Léa" autocomplete="off">
@@ -168,7 +168,7 @@
   <!-- ====== ÉCRAN 3 : RÉSULTATS ====== -->
   <div class="screen" id="screen-result">
     <div class="score-hero">
-      <div><span class="note" id="finalNote">0</span><span class="sur"> / 20</span></div>
+      <div><span class="note" id="finalNote">—</span><span class="sur" id="finalNiveau"></span></div>
       <div class="mention" id="finalMention"></div>
     </div>
 
@@ -312,7 +312,7 @@ function choisirFiliere(key, btn){
 }
 
 function demarrer(){
-  if(!currentFiliere){ alert("Choisis d'abord une filière."); return; }
+  if(!currentFiliere){ alert("Choisissez d'abord une filière."); return; }
   qIndex = 0;
   answers = new Array(questions.length).fill(null);
   showScreen('screen-quiz');
@@ -342,7 +342,7 @@ function choisirRep(i){
 }
 function prevQ(){ if(qIndex>0){ qIndex--; renderQ(); } }
 function nextQ(){
-  if(answers[qIndex]===null){ alert("Choisis une réponse avant de continuer."); return; }
+  if(answers[qIndex]===null){ alert("Choisissez une réponse avant de continuer."); return; }
   if(qIndex < questions.length-1){ qIndex++; renderQ(); }
   else { terminer(); }
 }
@@ -359,9 +359,9 @@ function terminer(){
   if(pct >= 85) mention = "Excellent — maîtrise solide";
   else if(pct >= 65) mention = "Bien — compétence en bonne voie";
   else if(pct >= 45) mention = "Des bases, à consolider";
-  else mention = "Notion à revoir, ne lâche pas";
+  else mention = "Notion à revoir, ne lâchez pas";
 
-  document.getElementById('finalNote').textContent = note20.toString().replace('.', ',');
+  const niv = pct>=90?[4,'Parfaitement maîtrisé']:pct>=65?[3,'Acquis']:pct>=40?[2,'En cours']:[1,'Non acquis']; document.getElementById('finalNote').textContent = 'Niveau ' + niv[0]; document.getElementById('finalNiveau').textContent = ' · ' + niv[1];
   document.getElementById('finalMention').textContent = mention;
 
   afficherPositionnement(pct);
@@ -429,7 +429,7 @@ function afficherReview(){
     let html = '<div class="rq">'+(ok?'✓':'✗')+' Q'+(i+1)+' — '+q.q+'</div>';
     if(!ok){
       const donnee = (answers[i]!==null) ? q.opts[answers[i]] : '(sans réponse)';
-      html += '<div class="ra">Ta réponse : '+donnee+'<br>Bonne réponse : <strong>'+q.opts[q.correct]+'</strong></div>';
+      html += '<div class="ra">Votre réponse : '+donnee+'<br>Bonne réponse : <strong>'+q.opts[q.correct]+'</strong></div>';
     }
     div.innerHTML = html;
     zone.appendChild(div);
@@ -449,7 +449,7 @@ function construireLigneProf(note20, pct){
   const noteTxt = note20.toString().replace('.', ',');
   let ligne = nom;
   if(classe) ligne += ' ('+classe+')';
-  ligne += ' — ' + f.nom + ' — Évaluation câbles électriques — Note : ' + noteTxt + '/20 — ' + f.comp + ' : ' + posit;
+  ligne += ' — ' + f.nom + ' — Évaluation câbles électriques — ' + f.comp + ' : ' + posit;
   document.getElementById('profLine').textContent = ligne;
 }
 

@@ -45,13 +45,13 @@
 
     function dessiner() {
       bloc.innerHTML =
-        '<p class="jeu-consigne">' + escapeHtml(jeu.consigne || "Touche les étapes dans le bon ordre.") + '</p>' +
-        '<div class="jeu-reponse" aria-label="Ta séquence">' +
+        '<p class="jeu-consigne">' + escapeHtml(jeu.consigne || "Touchez les étapes dans le bon ordre.") + '</p>' +
+        '<div class="jeu-reponse" aria-label="Votre séquence">' +
         (reponse.length
           ? reponse.map(function (e, i) {
               return '<button type="button" class="jeu-etape posee" data-retire="' + i + '"><span>' + (i + 1) + '</span>' + escapeHtml(e) + '</button>';
             }).join("")
-          : '<p class="jeu-vide">La séquence se construit ici — touche une étape pour la retirer.</p>') +
+          : '<p class="jeu-vide">La séquence se construit ici — touchez une étape pour la retirer.</p>') +
         '</div>' +
         '<div class="jeu-reserve" aria-label="Étapes disponibles">' +
         reserve.map(function (e, i) {
@@ -87,7 +87,7 @@
         }).join("") +
         '</div>' +
         '<div class="jeu-retour" aria-live="polite"><strong>' + justes + " / " + etapes.length + '</strong> — ' +
-        (justes === etapes.length ? "la séquence est en place. C’est exactement l’ordre du schéma." : "relis les étapes en rouge, puis rejoue.") + '</div>' +
+        (justes === etapes.length ? "la séquence est en place. C’est exactement l’ordre du schéma." : "relisez les étapes en rouge, puis rejouez.") + '</div>' +
         '<button type="button" class="nav-button secondary jeu-rejouer">Rejouer</button>';
       bloc.querySelector(".jeu-rejouer").addEventListener("click", function () {
         reserve = melanger(etapes); reponse = []; dessiner();
@@ -129,7 +129,7 @@
         organes.map(function (code, i) {
           return '<button type="button" class="jeu-organe' + (enMain === i ? " enmain" : "") + '" data-organe="' + i + '"><b>' + escapeHtml(code) + '</b><small>' + escapeHtml(role(code)) + '</small></button>';
         }).join("") + '</div>' +
-        '<div class="jeu-retour" aria-live="polite">' + (verdict || (enMain !== null ? "Choisis maintenant la case de « " + escapeHtml(organes[enMain]) + " »." : "Touche un organe, puis sa case dans la colonne.")) + '</div>' +
+        '<div class="jeu-retour" aria-live="polite">' + (verdict || (enMain !== null ? "Choisissez maintenant la case de « " + escapeHtml(organes[enMain]) + " »." : "Touchez un organe, puis sa case dans la colonne.")) + '</div>' +
         (verdict ? '<button type="button" class="nav-button secondary jeu-rejouer">Rejouer</button>' : "");
 
       bloc.innerHTML = html;
@@ -221,7 +221,7 @@
           if (choix === ouvert) {
             dessiner("Exact : entre le rouge et l’orange, c’est lui. " + escapeHtml(jeu.explication || ""), true);
           } else {
-            dessiner("Pas lui : regarde où le rouge s’arrête et où l’orange commence.", false);
+            dessiner("Pas lui : regardez où le rouge s’arrête et où l’orange commence.", false);
           }
         });
       });

@@ -85,7 +85,7 @@
         <div class="key-box"><strong>Voyant avec indicateur :</strong> il ajoute une petite pastille d’humidité, placée au centre dans ce schéma, à lire avec la légende.</div>`,
       takeaway: "Je regarde la fenêtre, puis je vérifie si une pastille d’humidité est présente.",
       visualTitle: "Deux corps proches, deux lectures différentes",
-      visualHint: "Compare les deux versions.",
+      visualHint: "Comparez les deux versions.",
       caption: "Schémas génériques originaux inerWeb — aucune marque ni dimension constructeur.",
       render: renderRecognise
     },
@@ -99,7 +99,7 @@
         <div class="warning-box"><strong>Orientation :</strong> l’horizontale vaut pour ce montage. La fiche SG/SGP montre aussi un tronçon vertical : suivre la notice.</div>`,
       takeaway: "Sur ce montage : filtre horizontal → voyant horizontal → organe de détente.",
       visualTitle: "Voir l’ordre et le positionnement",
-      visualHint: "Choisis l’emplacement du voyant.",
+      visualHint: "Choisissez l’emplacement du voyant.",
       caption: "Illustration SVG originale ; montage horizontal de référence, pas règle universelle.",
       render: renderPlacement
     },
@@ -113,7 +113,7 @@
         <div class="key-box"><strong>Pastille :</strong> l’humidité se situe-t-elle dans la zone annoncée par le fabricant ?</div>`,
       takeaway: "Avec indicateur : j’observe le fluide et l’humidité. Sans indicateur : j’observe seulement le fluide.",
       visualTitle: "Séparer les deux informations",
-      visualHint: "Sélectionne une version.",
+      visualHint: "Sélectionnez une version.",
       caption: "La pastille n’est pas un débitmètre et la fenêtre n’est pas un hygromètre.",
       render: renderCompare
     },
@@ -129,7 +129,7 @@
         <li><strong>Pastille éventuelle :</strong> élément sensible à l’humidité.</li></ul>`,
       takeaway: "La pastille est un élément ajouté ; elle n’existe pas sur le voyant simple.",
       visualTitle: "Coupe pédagogique",
-      visualHint: "Clique un élément pour lire sa fonction.",
+      visualHint: "Cliquez un élément pour lire sa fonction.",
       caption: "Coupe de principe originale ; ne pas démonter un organe sous pression.",
       render: renderConstruction
     },
@@ -143,7 +143,7 @@
         <div class="warning-box"><strong>Limite :</strong> à l’arrêt ou dans une fenêtre vide, l’aspect clair peut être trompeur.</div>`,
       takeaway: "J’observe pendant un régime identifié, pas sur une image isolée.",
       visualTitle: "Comparer trois états visibles",
-      visualHint: "Fais circuler, buller ou arrêter le fluide.",
+      visualHint: "Faites circuler, buller ou arrêter le fluide.",
       caption: "Animation qualitative : elle ne représente ni une vitesse ni une concentration mesurée.",
       render: renderFlowStates
     },
@@ -157,7 +157,7 @@
         <div class="warning-box"><strong>Ce que je ne peux pas dire seul :</strong> la masse exacte de fluide, le réglage du détendeur ou l’état de tout le circuit.</div>`,
       takeaway: "Je formule une observation locale, puis je la relie aux mesures.",
       visualTitle: "Observation et conclusion",
-      visualHint: "Choisis la phrase rigoureuse.",
+      visualHint: "Choisissez la phrase rigoureuse.",
       caption: "Le voyant oriente le diagnostic ; il ne valide pas seul la charge.",
       render: renderClearReading
     },
@@ -171,7 +171,7 @@
         <div class="warning-box"><strong>Le piège :</strong> ajouter du fluide uniquement parce que des bulles sont visibles.</div>`,
       takeaway: "Bulles = chercher la cause ; bulles ≠ manque de charge certain.",
       visualTitle: "Voir les causes possibles",
-      visualHint: "Explore les quatre familles.",
+      visualHint: "Explorez les quatre familles.",
       caption: "Le schéma « filtre colmaté » montre un indice à confirmer, jamais une preuve isolée.",
       render: renderBubbles
     },
@@ -185,7 +185,7 @@
         <div class="warning-box"><strong>Limite :</strong> elle ne mesure pas une valeur universelle et ne remplace pas la légende du modèle.</div>`,
       takeaway: "Je vérifie le fluide, la température et la légende avant de nommer l’état.",
       visualTitle: "Faire varier l’état de la pastille",
-      visualHint: "Observe les mots avec les couleurs.",
+      visualHint: "Observez les mots avec les couleurs.",
       caption: "Schéma original : la petite pastille reste distincte de la fenêtre où circule le fluide.",
       render: renderMoisturePrinciple
     },
@@ -199,7 +199,7 @@
         <p><strong>Exemple SG/SGP :</strong> un jaune au démarrage peut être transitoire. S’il persiste, Danfoss demande d’éliminer l’humidité et de remplacer le déshydrateur au plus vite ; le retour au vert confirme l’effet.</p>`,
       takeaway: "Je lis la légende, puis j’attends l’équilibre avant de conclure.",
       visualTitle: "Relier couleur, mot et action",
-      visualHint: "Sélectionne un état.",
+      visualHint: "Sélectionnez un état.",
       caption: "Les seuils en ppm varient avec le produit, le fluide et la température : la notice réelle fait foi.",
       render: renderMoistureReading
     },
@@ -213,7 +213,7 @@
         <div class="warning-box"><strong>Impossible avec ce seul organe :</strong> classer le circuit comme sec ou humide.</div>`,
       takeaway: "L’absence de pastille est une absence d’information, pas un état « sec ».",
       visualTitle: "Écarter les fausses conclusions",
-      visualHint: "Choisis ce que le voyant simple permet d’affirmer.",
+      visualHint: "Choisissez ce que le voyant simple permet d’affirmer.",
       caption: "Le diagnostic d’humidité nécessite un moyen adapté et la procédure prévue.",
       render: renderWithoutIndicator
     },
@@ -227,7 +227,7 @@
         <div class="warning-box"><strong>Méthode :</strong> ne jamais modifier la charge avant d’avoir identifié le fluide, le régime et les causes possibles.</div>`,
       takeaway: "Un diagnostic solide combine observation, mesures et documentation.",
       visualTitle: "Construire le diagnostic",
-      visualHint: "Choisis une situation et lis les contrôles utiles.",
+      visualHint: "Choisissez une situation et lisez les contrôles utiles.",
       caption: "Aucune valeur universelle n’est fournie : les données du système réel sont nécessaires.",
       render: renderDiagnosis
     },
@@ -241,7 +241,7 @@
         <div class="warning-box"><strong>Exemple SGP/SG :</strong> azote sec, protection humide, brasure avec au moins 5 % d’argent et flamme loin du corps.</div>`,
       takeaway: "La notice du modèle fixe la bonne méthode de montage.",
       visualTitle: "Trois contrôles avant remise en service",
-      visualHint: "Parcours la préparation, le brasage et le contrôle.",
+      visualHint: "Parcourez la préparation, le brasage et le contrôle.",
       caption: "Aucune température ni procédure universelle n’est inventée dans ce module.",
       render: renderInstallation
     },
@@ -255,7 +255,7 @@
         <p>Après ouverture : suivre la procédure. <strong>Pastille SG/SGP cassée :</strong> éviter contact/poussière ; papier = déchet dangereux.</p>`,
       takeaway: "J’observe sans démonter ; toute intervention suit une procédure professionnelle validée.",
       visualTitle: "Du constat à l’action sûre",
-      visualHint: "Sélectionne une étape de décision.",
+      visualHint: "Sélectionnez une étape de décision.",
       caption: "Le module n’autorise aucune intervention et ne remplace pas l’habilitation requise.",
       render: renderSafety
     },
@@ -270,7 +270,7 @@
       takeaway: "Je distingue observation du fluide, indication d’humidité et diagnostic complet.",
       visualTitle: "Défi final",
       visualHint: "Une seule réponse par situation.",
-      caption: "Quiz formatif : recommence autant de fois que nécessaire.",
+      caption: "Quiz formatif : recommencez autant de fois que nécessaire.",
       render: renderQuiz
     }
   ];
@@ -390,7 +390,7 @@
 
   function renderRecognise() {
     setControls(`<button type="button" class="action-button primary" id="compare-variants">Nommer les différences</button>`);
-    ui.root.innerHTML = `${compareMarkup()}<div class="readout" id="visual-readout">Cherche la pastille colorée : elle distingue la version avec indicateur.</div>`;
+    ui.root.innerHTML = `${compareMarkup()}<div class="readout" id="visual-readout">Cherchez la pastille colorée : elle distingue la version avec indicateur.</div>`;
     document.getElementById("compare-variants").addEventListener("click", () => {
       ui.root.querySelector(".simple-card")?.classList.add("identified-simple");
       ui.root.querySelector(".indicator-card")?.classList.add("identified-indicator");
@@ -474,7 +474,7 @@
       const visual = key === "restriction"
         ? `<img class="technical-illustration restriction-reference" src="assets/illustrations/diagnostic-filtre-colmate.svg" alt="Comparaison entre un filtre traversé normalement et une restriction possible avec bulles dans le voyant placé en aval">`
         : `${sightGlassSvg({ indicator: false, flow: "bubbles" })}<div class="cause-card"><strong>${item.title}</strong><p>${item.text}</p></div>`;
-      ui.root.innerHTML = `${visual}<div class="readout" id="visual-readout">${key === "restriction" ? "<strong>Filtre à contrôler :</strong> confirmer avec température, pression et sous-refroidissement." : "Une cause possible parmi plusieurs : mesure avant d’agir."}</div>`;
+      ui.root.innerHTML = `${visual}<div class="readout" id="visual-readout">${key === "restriction" ? "<strong>Filtre à contrôler :</strong> confirmer avec température, pression et sous-refroidissement." : "Une cause possible parmi plusieurs : mesurez avant d’agir."}</div>`;
       announce(`${item.title}. ${item.text}`);
     };
     ui.controls.querySelectorAll("[data-cause]").forEach((button) => button.addEventListener("click", () => activate(button.dataset.cause)));
@@ -512,7 +512,7 @@
 
   function renderWithoutIndicator() {
     setControls(`<button type="button" class="choice-button" data-simple="flow">Il y a des bulles</button><button type="button" class="choice-button" data-simple="dry">Le circuit est sec</button><button type="button" class="choice-button" data-simple="ppm">L’humidité est mesurée</button>`);
-    ui.root.innerHTML = `${sightGlassSvg({ indicator: false, flow: "bubbles" })}<div class="readout" id="visual-readout">Que peux-tu affirmer avec ce voyant simple ?</div>`;
+    ui.root.innerHTML = `${sightGlassSvg({ indicator: false, flow: "bubbles" })}<div class="readout" id="visual-readout">Que pouvez-vous affirmer avec ce voyant simple ?</div>`;
     ui.controls.querySelectorAll("[data-simple]").forEach((button) => button.addEventListener("click", () => {
       ui.controls.querySelectorAll("[data-simple]").forEach((item) => item.classList.remove("correct", "wrong"));
       const correct = button.dataset.simple === "flow";
@@ -580,14 +580,14 @@
     if (quiz.complete) {
       setControls(`<button type="button" class="action-button primary" id="restart-quiz">Refaire le défi</button>`);
       const success = quiz.score >= 5;
-      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/6</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Tu distingues les deux voyants et tu sais limiter tes conclusions." : "Relis les corrections puis recommence."}</p></div>`;
+      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/6</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Vous distinguez les deux voyants et vous savez limiter vos conclusions." : "Relisez les corrections puis recommencez."}</p></div>`;
       document.getElementById("restart-quiz").addEventListener("click", resetQuiz);
       updateNavigation();
       return;
     }
     const question = quizQuestions[quiz.index];
     setControls(quiz.answered ? `<button type="button" class="action-button primary" id="next-question">${quiz.index === quizQuestions.length - 1 ? "Voir le bilan" : "Question suivante"}</button>` : "");
-    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div><div class="quiz-feedback" id="quiz-feedback">Choisis une réponse.</div></div>`;
+    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div><div class="quiz-feedback" id="quiz-feedback">Choisissez une réponse.</div></div>`;
     ui.root.querySelectorAll("[data-answer]").forEach((button) => button.addEventListener("click", () => answerQuiz(Number(button.dataset.answer))));
     if (quiz.answered) restoreAnsweredQuiz(question);
   }

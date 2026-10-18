@@ -91,7 +91,7 @@
         <div class="key-box"><strong>Ensemble complet :</strong> corps + tube du noyau + bobine adaptée + raccordement électrique.</div>`,
       takeaway: "Je distingue la partie frigorifique de l’actionneur électrique.",
       visualTitle: "Du corps nu à l’ensemble commandé",
-      visualHint: "Ajoute ou retire la bobine.",
+      visualHint: "Ajoutez ou retirez la bobine.",
       caption: "Vue extérieure générique en SVG original ; aucune géométrie de constructeur n’est reproduite.",
       render: renderRecognise
     },
@@ -105,7 +105,7 @@
         <div class="warning-box"><strong>Frontière :</strong> ce placement est un exemple. La fonction, le fluide et la documentation du modèle déterminent l’implantation réelle.</div>`,
       takeaway: "Couper l’arrivée de liquide n’est pas un but : c’est ce qui protège le compresseur à l’arrêt.",
       visualTitle: "Repérer l’organe commandé",
-      visualHint: "Sélectionne l’électrovanne.",
+      visualHint: "Sélectionnez l’électrovanne.",
       caption: "Schéma de ligne liquide de référence ; il ne remplace pas le schéma de l’installation.",
       render: renderPlacement
     },
@@ -119,7 +119,7 @@
         <div class="warning-box"><strong>Ce qu’elle ne fait pas :</strong> l’électrovanne n’est ni un détendeur ni un organe de réglage continu.</div>`,
       takeaway: "La bobine reçoit un ordre tout ou rien ; la vanne ouvre ou ferme un passage.",
       visualTitle: "Suivre la chaîne de commande",
-      visualHint: "Bascule l’ordre électrique.",
+      visualHint: "Basculez l’ordre électrique.",
       caption: "Animation de principe : aucune tension ni logique d’automate n’est imposée.",
       render: renderCommand
     },
@@ -135,7 +135,7 @@
         <li><strong>Obturateur et siège :</strong> ferment le passage dans le corps.</li></ul>`,
       takeaway: "Le noyau mobile transforme l’effet magnétique en mouvement mécanique.",
       visualTitle: "Coupe pédagogique d’une électrovanne directe NF",
-      visualHint: "Clique une pièce pour lire sa fonction.",
+      visualHint: "Cliquez une pièce pour lire sa fonction.",
       caption: "Hachures = matière coupée ; blanc = cavité et passage. Coupe de principe, sans cote constructeur.",
       render: renderConstruction
     },
@@ -149,7 +149,7 @@
         <div class="warning-box"><strong>Vocabulaire :</strong> « normalement fermée » décrit l’état hors tension, pas un ordre permanent.</div>`,
       takeaway: "Électrovanne NF + bobine hors tension = passage fermé.",
       visualTitle: "Observer l’état fermé",
-      visualHint: "Compare le courant, la position et le débit.",
+      visualHint: "Comparez le courant, la position et le débit.",
       caption: "Coupe de principe : la matière reste hachurée et le passage intérieur reste blanc.",
       render: renderClosed
     },
@@ -163,7 +163,7 @@
         <div class="warning-box"><strong>À vérifier :</strong> les pressions admissibles et les conditions d’ouverture dépendent du modèle sélectionné.</div>`,
       takeaway: "Bobine alimentée → noyau attiré → siège dégagé → passage ouvert.",
       visualTitle: "Faire agir le champ magnétique",
-      visualHint: "Alimente puis coupe la bobine.",
+      visualHint: "Alimentez puis coupez la bobine.",
       caption: "Le mouvement est amplifié pour être lisible ; les hachures distinguent la matière de la cavité.",
       render: renderOpen
     },
@@ -177,7 +177,7 @@
         <div class="warning-box"><strong>Commande assistée :</strong> un petit orifice d’équilibrage amène la pression amont au-dessus de la membrane. Le pilote libère ensuite cette pression pour permettre l’ouverture.</div>`,
       takeaway: "Sur la ligne liquide étudiée, la pression amont est la HP. Sur une autre ligne, je garde le mot « amont ».",
       visualTitle: "Deux mécanismes, un même ordre électrique",
-      visualHint: "Compare directe, assistée fermée et assistée ouverte.",
+      visualHint: "Comparez directe, assistée fermée et assistée ouverte.",
       caption: "Coupes fonctionnelles génériques : matière hachurée, passages blancs et flux coloré.",
       render: renderPrinciples
     },
@@ -191,7 +191,7 @@
         <div class="key-box"><strong>NO :</strong> normalement ouverte, donc ouverte hors tension.</div>`,
       takeaway: "Je lis toujours NF ou NO avant de déduire l’effet de l’alimentation.",
       visualTitle: "Comparer les deux fonctions",
-      visualHint: "Affiche NF puis NO.",
+      visualHint: "Affichez NF puis NO.",
       caption: "Les états sont écrits en toutes lettres : la couleur ne porte pas seule l’information.",
       render: renderNormalModes
     },
@@ -205,7 +205,7 @@
         <div class="warning-box"><strong>Le piège :</strong> retourner la vanne parce que les raccords semblent symétriques.</div>`,
       takeaway: "Je monte la vanne dans le sens de la flèche et dans l’orientation autorisée.",
       visualTitle: "Lire le sens avant de braser",
-      visualHint: "Choisis le montage cohérent.",
+      visualHint: "Choisissez le montage cohérent.",
       caption: "L’enveloppe angulaire exacte dépend du modèle ; la notice réelle reste prioritaire.",
       render: renderOrientation
     },
@@ -219,7 +219,7 @@
         <div class="warning-box"><strong>À éviter :</strong> choisir « à l’œil » ou alimenter pour essayer.</div>`,
       takeaway: "Je compare le schéma, la plaque de la bobine et la compatibilité de la vanne.",
       visualTitle: "Contrôler les informations utiles",
-      visualHint: "Active les trois contrôles nécessaires.",
+      visualHint: "Activez les trois contrôles nécessaires.",
       caption: "Aucune valeur universelle de bobine n’est fournie ; le marquage du matériel fait foi.",
       render: renderCoilChoice
     },
@@ -233,7 +233,7 @@
         <div class="warning-box"><strong>Démontage :</strong> certains corps permettent ou imposent la dépose de la pièce supérieure. La notice décide ; la taille seule ne suffit pas.</div>`,
       takeaway: "Je garde la flamme au raccord, je protège le corps et je suis la procédure du modèle.",
       visualTitle: "Trois phases d’un montage brasé",
-      visualHint: "Parcours la préparation, la protection et le contrôle.",
+      visualHint: "Parcourez la préparation, la protection et le contrôle.",
       caption: "Séquence générale : la procédure et les limites du modèle restent prioritaires.",
       render: renderInstallation
     },
@@ -247,7 +247,7 @@
         <p><strong>Avant contact :</strong> appliquer la consignation électrique prévue et tenir compte de l’échauffement.</p>`,
       takeaway: "Je coupe, je consigne, puis seulement je retire la bobine.",
       visualTitle: "Comparer la situation sûre et dangereuse",
-      visualHint: "Retire la bobine puis mets la situation en sécurité.",
+      visualHint: "Retirez la bobine puis mettez la situation en sécurité.",
       caption: "Le module ne remplace pas une procédure de consignation électrique.",
       render: renderCoilSafety
     },
@@ -261,7 +261,7 @@
         <div class="warning-box"><strong>Avant mécanique :</strong> couper et consigner l’électricité, isoler, récupérer le fluide et obtenir zéro pression selon la procédure.</div>`,
       takeaway: "Je diagnostique sans contourner la sécurité ni ouvrir sous pression.",
       visualTitle: "Suivre un chemin de contrôle",
-      visualHint: "Choisis le symptôme observé.",
+      visualHint: "Choisissez le symptôme observé.",
       caption: "Aucune mesure sous tension ni opération frigorifique n’est prescrite par ce module.",
       render: renderDiagnosis
     },
@@ -276,7 +276,7 @@
       takeaway: "Je distingue l’ordre électrique, l’état fluidique et les limites de l’intervention.",
       visualTitle: "Défi final",
       visualHint: "Une seule réponse par situation.",
-      caption: "Quiz formatif : recommence autant de fois que nécessaire.",
+      caption: "Quiz formatif : recommencez autant de fois que nécessaire.",
       render: renderQuiz
     }
   ];
@@ -579,7 +579,7 @@
 
   function renderPlacement() {
     setControls(`<button type="button" class="action-button primary" id="locate-solenoid">Montrer l’électrovanne</button>`);
-    ui.root.innerHTML = `${liquidLineSvg()}<div class="readout" id="visual-readout">Cherche l’organe placé juste avant le détendeur sur cette ligne liquide.</div>`;
+    ui.root.innerHTML = `${liquidLineSvg()}<div class="readout" id="visual-readout">Cherchez l’organe placé juste avant le détendeur sur cette ligne liquide.</div>`;
     document.getElementById("locate-solenoid").addEventListener("click", () => {
       ui.root.querySelector(".solenoid-location")?.classList.add("confirmed");
       setReadout("Électrovanne repérée : elle autorise ou bloque ici l’arrivée vers le détendeur.");
@@ -739,14 +739,14 @@
     if (quiz.complete) {
       setControls(`<button type="button" class="action-button primary" id="restart-quiz">Refaire le défi</button>`);
       const success = quiz.score >= 6;
-      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/7</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Tu relies correctement la commande, le mouvement et la sécurité de l’électrovanne." : "Relis les corrections puis recommence."}</p></div>`;
+      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/7</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Vous reliez correctement la commande, le mouvement et la sécurité de l’électrovanne." : "Relisez les corrections puis recommencez."}</p></div>`;
       document.getElementById("restart-quiz").addEventListener("click", resetQuiz);
       updateNavigation();
       return;
     }
     const question = quizQuestions[quiz.index];
     setControls(quiz.answered ? `<button type="button" class="action-button primary" id="next-question">${quiz.index === quizQuestions.length - 1 ? "Voir le bilan" : "Question suivante"}</button>` : "");
-    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div><div class="quiz-feedback" id="quiz-feedback">Choisis une réponse.</div></div>`;
+    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div><div class="quiz-feedback" id="quiz-feedback">Choisissez une réponse.</div></div>`;
     ui.root.querySelectorAll("[data-answer]").forEach((button) => button.addEventListener("click", () => answerQuiz(Number(button.dataset.answer))));
     if (quiz.answered) restoreAnsweredQuiz(question);
     wireQuizAdvance();

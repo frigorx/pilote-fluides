@@ -363,7 +363,7 @@ const CAPSULE = (() => {
       return;
     }
     const s = document.createElement("script");
-    s.src = "donnees/" + id + ".js?v=20261018-voix";   /* clé montée avec les narrations réécrites (chantier prof vocal) */
+    s.src = "donnees/" + id + ".js?v=20261018-g1d";   /* clé montée avec les narrations réécrites (chantier prof vocal) */
     s.onerror = () => {
       $("#accueil-titre").textContent = "Capsule introuvable";
       $("#accueil-intro").textContent = `Le fichier donnees/${id}.js n'a pas été trouvé.`;

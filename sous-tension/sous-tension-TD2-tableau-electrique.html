@@ -165,7 +165,7 @@
   <div class="screen active" id="screen-accueil">
     <div class="card">
       <h2>Avant de commencer</h2>
-      <p>Dans le TD1, tu as appris à lire des <strong>câbles</strong> (plusieurs fils réunis sous une gaine). Ici, on entre dans un tableau électrique : on y trouve surtout des <strong>fils uniques</strong>, choisis et posés un par un.</p>
+      <p>Dans le TD1, vous avez appris à lire des <strong>câbles</strong> (plusieurs fils réunis sous une gaine). Ici, on entre dans un tableau électrique : on y trouve surtout des <strong>fils uniques</strong>, choisis et posés un par un.</p>
       <ul>
         <li>Pourquoi on n'utilise pas de câble tout fait à l'intérieur d'un tableau,</li>
         <li>La différence entre un fil <strong>rigide</strong> et un fil <strong>souple</strong>,</li>
@@ -174,7 +174,7 @@
       <div class="point-note"><strong>À savoir :</strong> ce TD répond à une question précise que se posent beaucoup de débutants : « le tableau ne bouge pas, pourquoi utiliser du fil souple dedans ? » La réponse arrive au module 3.</div>
     </div>
     <div class="card">
-      <h3>Choisis ton niveau</h3>
+      <h3>Choisissez votre niveau</h3>
       <div class="niveau-choice">
         <button class="niveau-btn" onclick="choisirNiveau('decouverte')"><div class="emoji">🔍</div><h3>Découverte</h3><p>CAP · 2nde TNE.</p></button>
         <button class="niveau-btn" onclick="choisirNiveau('approfondi')"><div class="emoji">📐</div><h3>Approfondi</h3><p>Bac Pro.</p></button>
@@ -210,7 +210,7 @@
       <figcaption>Dans un tableau, on utilise souvent des fils isolés pour garder un câblage lisible, propre et modifiable.</figcaption>
     </figure>
     <div class="card">
-      <h3>Vérifie</h3>
+      <h3>Vérifiez</h3>
       <div class="scenario" id="v1">
         <p class="desc">Pour câbler l'intérieur d'un tableau électrique, avec des connexions qui partent dans toutes les directions, on utilise plutôt…</p>
         <div class="choices">
@@ -226,7 +226,7 @@
   <div class="screen" id="screen-decoder">
     <div class="card">
       <h2>2. Trois fils à connaître</h2>
-      <p>Tu connais déjà le sens de <strong>U</strong> (rigide, âme pleine) et de <strong>K</strong> (souple, multibrins) depuis le TD1. On les retrouve ici, appliqués aux fils de tableau.</p>
+      <p>Vous connaissez déjà le sens de <strong>U</strong> (rigide, âme pleine) et de <strong>K</strong> (souple, multibrins) depuis le TD1. On les retrouve ici, appliqués aux fils de tableau.</p>
     </div>
 
     <div class="card">
@@ -281,8 +281,8 @@
     </div>
 
     <div class="card">
-      <h3>✏️ Entraîne-toi — un quatrième fil jamais vu</h3>
-      <p>Il existe un fil <strong>H07V-R</strong> que tu n'as pas encore rencontré. À toi de deviner ce qu'il est, en t'appuyant sur ce que tu sais déjà. Rappel du TD1 : <strong>U</strong> = âme pleine (rigide), <strong>K</strong> = multibrins (souple)… et <strong>R</strong> ?</p>
+      <h3>✏️ Entraînez-vous — un quatrième fil jamais vu</h3>
+      <p>Il existe un fil <strong>H07V-R</strong> que vous n'avez pas encore rencontré. À vous de deviner ce qu'il est, en vous appuyant sur ce que vous savez déjà. Rappel du TD1 : <strong>U</strong> = âme pleine (rigide), <strong>K</strong> = multibrins (souple)… et <strong>R</strong> ?</p>
       <div class="svg-wrap">
         <svg viewBox="0 0 380 120" width="100%" style="max-width:320px;">
           <path d="M20,70 L300,70" stroke="#2f6fb0" stroke-width="16" stroke-linecap="round"/>
@@ -320,7 +320,7 @@
       <p>Exemple concret : la liaison compteur → tableau (une seule ligne droite dans une gaine) est en <strong>H07V-U</strong>. Une fois <em>dans</em> le tableau, pour relier un <span class="gloss" data-term="disjoncteur">disjoncteur</span> à un <span class="gloss" data-term="contacteur">contacteur</span> juste à côté avec un coude serré, on passe en <strong>H07V-K</strong>.</p>
     </div>
     <div class="card">
-      <h3>Vérifie</h3>
+      <h3>Vérifiez</h3>
       <div class="scenario" id="c1">
         <p class="desc">Une liaison longue et parfaitement droite, dans une gaine ICTA murale.</p>
         <div class="choices">
@@ -343,7 +343,7 @@
   <!-- ============ SITUATIONS ============ -->
   <div class="screen" id="screen-situations">
     <div class="card">
-      <h2>4. Mets tes réflexes à l'épreuve</h2>
+      <h2>4. Mettez vos réflexes à l'épreuve</h2>
       <p>Cette fois, 3 choix possibles à chaque fois : H07V-U, H07V-K ou H05V-K.</p>
     </div>
     <div class="card">
@@ -380,8 +380,8 @@
   <!-- ============ JEU DE MÉMOIRE ============ -->
   <div class="screen" id="screen-memoire">
     <div class="card">
-      <h2>5. Jeu de mémoire — retrouve les paires</h2>
-      <p>Clique deux cartes. Si elles correspondent, la paire reste affichée.</p>
+      <h2>5. Jeu de mémoire — retrouvez les paires</h2>
+      <p>Cliquez deux cartes. Si elles correspondent, la paire reste affichée.</p>
       <div class="memory-grid" id="memoryGrid"></div>
       <div class="memory-status" id="memoryStatus">0 / 8 paires trouvées</div>
       <div style="text-align:center;margin-top:14px;"><button class="btn secondary" onclick="initMemory()">🔄 Recommencer le jeu</button></div>
@@ -500,7 +500,7 @@ function repondreTrain(btn, correct, groupId){
   } else {
     btn.classList.add('wrong');
     fb.classList.add('shown','ko');
-    fb.textContent = '❌ Souviens-toi : U = plein, K = beaucoup de brins fins. Réessaie.';
+    fb.textContent = '❌ Souvenez-vous : U = plein, K = beaucoup de brins fins. Réessayez.';
   }
 }
 

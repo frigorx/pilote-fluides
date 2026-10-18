@@ -91,7 +91,7 @@
       takeaway: "Corps à l’entrée, bulbe à la sortie, capillaire relié à la tête.",
       link: { href: "../detendeurs-famille/index.html", label: "Toute la famille des détendeurs" },
       visualTitle: "Suivre condenseur → détendeur → évaporateur",
-      visualHint: "Choisis l’emplacement, puis observe le sens des flèches.",
+      visualHint: "Choisissez l’emplacement, puis observez le sens des flèches.",
       caption: "Circuit explicatif construit avec les symboles internes Pilote Fluides.",
       render: renderPlacement
     },
@@ -106,9 +106,9 @@
         <li><strong>Train thermostatique :</strong> bulbe, charge, capillaire et tête à membrane.</li></ul>`,
       takeaway: "Je reconnais le corps, ses deux raccords et le bulbe relié à la tête.",
       visualTitle: "Reconnaître, puis regarder à l’intérieur",
-      visualHint: "Affiche une seule lecture à la fois.",
+      visualHint: "Affichez une seule lecture à la fois.",
       caption: "Dessin vectoriel original : forme pédagogique représentative, sans géométrie constructeur.",
-      v3d: { hint: "Tourne l’objet, éclate-le, ouvre-le en coupe.", caption: "Modèle 3D original : forme pédagogique représentative, sans géométrie constructeur." },
+      v3d: { hint: "Tournez l’objet, éclatez-le, ouvrez-le en coupe.", caption: "Modèle 3D original : forme pédagogique représentative, sans géométrie constructeur." },
       render: renderRole3D
     },
     {
@@ -123,9 +123,9 @@
         <li><strong>Le ressort :</strong> s’oppose à l’ouverture.</li></ul>`,
       takeaway: "Bulbe → membrane → tige → clapet.",
       visualTitle: "Une pièce, une fonction",
-      visualHint: "Choisis un nom : lui seul est mis en évidence.",
+      visualHint: "Choisissez un nom : lui seul est mis en évidence.",
       caption: "Coupe manuelle générique : architecture fonctionnelle, sans cote constructeur.",
-      v3d: { hint: "Survole ou touche une pièce : elle s’allume avec son nom.", caption: "Coupe 3D générique : architecture fonctionnelle, sans cote constructeur." },
+      v3d: { hint: "Survolez ou touchez une pièce : elle s’allume avec son nom.", caption: "Coupe 3D générique : architecture fonctionnelle, sans cote constructeur." },
       render: renderComponents3D
     },
     {
@@ -139,7 +139,7 @@
         <div class="fact"><strong>Conservation :</strong> au régime permanent, le débit massique entrant est égal au débit massique sortant.</div>`,
       takeaway: "L’orifice crée la chute de pression ; le clapet règle la surface de passage.",
       visualTitle: "Faire bouger le clapet",
-      visualHint: "Compare faible, moyenne et forte ouverture.",
+      visualHint: "Comparez faible, moyenne et forte ouverture.",
       caption: "Écoulement qualitatif : les bulles indiquent la vaporisation partielle, pas un titre massique chiffré.",
       render: renderExpansion3D
     },
@@ -153,7 +153,7 @@
         <ol><li>Mesurer la température au bulbe.</li><li>Lire la pression au même point de référence.</li><li>Convertir cette pression en température de saturation pour le fluide.</li><li>Faire la différence en kelvins.</li></ol>`,
       takeaway: "Deux mesures cohérentes donnent le signal que le détendeur cherche à stabiliser.",
       visualTitle: "Calculer un écart de température",
-      visualHint: "Déplace les deux curseurs.",
+      visualHint: "Déplacez les deux curseurs.",
       caption: "Laboratoire de calcul pédagogique, sans table pression-température intégrée.",
       render: renderSuperheat
     },
@@ -168,7 +168,7 @@
         <div class="key-box"><strong>Vis de réglage :</strong> elle comprime plus ou moins le ressort et modifie sa force.</div>`,
       takeaway: "Bulbe → membrane → tige → clapet : la force dominante fixe le passage.",
       visualTitle: "Suivre les forces et la chaîne cinématique",
-      visualHint: "Compare trois états simples.",
+      visualHint: "Comparez trois états simples.",
       caption: "Sur la même membrane, les pressions deviennent des forces opposées.",
       render: renderForces3D
     },
@@ -184,9 +184,9 @@
         <li><strong>La surchauffe redescend :</strong> le détendeur revient vers un nouvel équilibre.</li></ol>`,
       takeaway: "Surchauffe ↑ → ouverture ↑ → débit ↑ → surchauffe ↓.",
       visualTitle: "Tester chaud puis froid",
-      visualHint: "Choisis la température de sortie ou rejoue la séquence.",
+      visualHint: "Choisissez la température de sortie ou rejouez la séquence.",
       caption: "Animation SVG originale : l’état écrit reste lisible sans mouvement.",
-      v3d: { hint: "Suis la boucle pas à pas, ou choisis la température de sortie.", caption: "Animation 3D originale : le texte de chaque étape reste lisible sans mouvement." },
+      v3d: { hint: "Suivez la boucle pas à pas, ou choisissez la température de sortie.", caption: "Animation 3D originale : le texte de chaque étape reste lisible sans mouvement." },
       render: renderRegulationLoop3D
     },
     {
@@ -200,7 +200,7 @@
         <div class="warning-box"><strong>À éviter :</strong> contact lâche, dessous du tube, zone perturbée ou source de chaleur extérieure.</div>`,
       takeaway: "Le bulbe mesure le tube, pas l’air autour.",
       visualTitle: "Choisir une implantation fiable",
-      visualHint: "Teste les trois positions.",
+      visualHint: "Testez les trois positions.",
       caption: "Principe générique ; la notice du modèle fixe la position horaire exacte.",
       render: renderBulb
     },
@@ -216,7 +216,7 @@
       takeaway: "Distributeur ou perte de charge notable : suivre la conception et la notice prévues.",
       link: { href: "../detendeur-egalisation-externe/index.html", label: "Pour aller plus loin : la gare L’égalisation externe" },
       visualTitle: "Comparer les deux trajets de pression",
-      visualHint: "Passe de T 2 à TE 2.",
+      visualHint: "Passez de T 2 à TE 2.",
       caption: "Exemple T 2 / TE 2 ; la conception réelle de l’installation reste prioritaire.",
       render: renderEqualization
     },
@@ -231,7 +231,7 @@
         <div class="warning-box"><strong>Le piège :</strong> essayer de corriger une buse trop petite ou trop grande avec la vis de surchauffe.</div>`,
       takeaway: "Dimensionner d’abord ; régler ensuite seulement si le diagnostic le justifie.",
       visualTitle: "Comparer trois surfaces de passage",
-      visualHint: "Choisis une buse et lis la conséquence.",
+      visualHint: "Choisissez une buse et lisez la conséquence.",
       caption: "Les numéros et puissances réels se sélectionnent dans la documentation constructeur.",
       render: renderOrifice
     },
@@ -246,7 +246,7 @@
       takeaway: "Une petite correction exige une nouvelle stabilisation et une nouvelle mesure.",
       link: { href: "../detendeur-electronique/index.html", label: "Le détendeur électronique" },
       visualTitle: "Suivre l’ordre avant toute correction",
-      visualHint: "Parcours les quatre contrôles.",
+      visualHint: "Parcourez les quatre contrôles.",
       caption: "Aucune consigne universelle de sens, d’amplitude ou de nombre de tours.",
       render: renderAdjustment
     },
@@ -260,7 +260,7 @@
         <div class="warning-box"><strong>Brasage illustré :</strong> protection humide, chaleur loin de l’élément et brasure à 15 % d’argent pour cet exemple.</div>`,
       takeaway: "La fiche du modèle fixe raccords, couples, température et contrôle d’étanchéité.",
       visualTitle: "Préparer sans contaminer ni surchauffer",
-      visualHint: "Parcours les trois phases.",
+      visualHint: "Parcourez les trois phases.",
       caption: "Exemple constructeur limité au T 2 / TE 2 ; aucune image Danfoss n’est reproduite.",
       render: renderInstallation
     },
@@ -274,7 +274,7 @@
         <div class="warning-box"><strong>Surchauffe trop faible :</strong> risque de liquide vers le compresseur ; contrôler bulbe, buse, charge thermique et stabilité.</div>`,
       takeaway: "Je recoupe surchauffe, pressions, températures et état du circuit avant d’agir.",
       visualTitle: "Construire un diagnostic prudent",
-      visualHint: "Explore trois familles de symptômes.",
+      visualHint: "Explorez trois familles de symptômes.",
       caption: "Le module n’autorise aucun réglage sans mesures et procédure validée.",
       render: renderDiagnosis
     },
@@ -862,14 +862,14 @@
     if (quiz.complete) {
       setControls(`<button type="button" class="action-button primary" id="restart-quiz">Refaire le défi</button>`);
       const success = quiz.score >= 5;
-      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/6</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Tu sais expliquer le détendeur sans passer trop vite au réglage." : "Relis les corrections puis recommence."}</p></div>`;
+      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/6</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Vous savez expliquer le détendeur sans passer trop vite au réglage." : "Relisez les corrections puis recommencez."}</p></div>`;
       document.getElementById("restart-quiz").addEventListener("click", resetQuiz);
       updateNavigation();
       return;
     }
     const question = quizQuestions[quiz.index];
     setControls(quiz.answered ? `<button type="button" class="action-button primary" id="next-question">${quiz.index === quizQuestions.length - 1 ? "Voir le bilan" : "Question suivante"}</button>` : "");
-    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div><div class="quiz-feedback" id="quiz-feedback">Choisis une réponse.</div></div>`;
+    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div><div class="quiz-feedback" id="quiz-feedback">Choisissez une réponse.</div></div>`;
     ui.root.querySelectorAll("[data-answer]").forEach((button) => button.addEventListener("click", () => answerQuiz(Number(button.dataset.answer))));
     if (quiz.answered) restoreAnsweredQuiz(question);
   }

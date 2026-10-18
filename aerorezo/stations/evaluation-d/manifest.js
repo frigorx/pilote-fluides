@@ -11,12 +11,12 @@
 
   /* Les trois profondeurs. Le niveau ne masque jamais une règle de sécurité
      ni une information indispensable. */
-  cap: "Réinvestis les gestes et les correspondances du parcours.",
-  bac: "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
-  bts: "Justifie les calculs et les décisions dans une installation complète.",
+  cap: "Réinvestissez les gestes et les correspondances du parcours.",
+  bac: "Résolvez les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+  bts: "Justifiez les calculs et les décisions dans une installation complète.",
 
-  method: "Douze situations croisées. La note apparaît seulement à la fin.",
-  formula: "12 réponses · note finale /20",
+  method: "Douze situations croisées. Le niveau apparaît seulement à la fin.",
+  formula: "12 réponses · niveau final de 1 à 4",
 
   activity: {"kind":"evaluation","line":"D"},
 

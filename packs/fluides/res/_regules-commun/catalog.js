@@ -204,11 +204,11 @@
            l'écran « tirage », jamais recopiées. */
         jeux: [
           { type: "sequence", court: "La séquence", ecran: "tirage",
-            titre: "Remets le tirage au vide dans l’ordre",
-            consigne: "La consigne vient d’être atteinte. Touche les étapes dans l’ordre où elles se produisent." },
+            titre: "Remettez le tirage au vide dans l’ordre",
+            consigne: "La consigne vient d’être atteinte. Touchez les étapes dans l’ordre où elles se produisent." },
           { type: "cablage", court: "Le câblage",
-            titre: "Câble les deux commandes séparées",
-            consigne: "Place chaque organe dans sa colonne, du rail de phase vers le neutre.",
+            titre: "Câblez les deux commandes séparées",
+            consigne: "Placez chaque organe dans sa colonne, du rail de phase vers le neutre.",
             bravo: "Le thermostat pilote Y1, la pression pilote KM1 : c’est le pump-down.",
             colonnes: [
               { nom: "Ligne liquide", ordre: ["B1", "Y1"] },
@@ -222,8 +222,8 @@
               { code: "KM1", role: "contacteur" }
             ] },
           { type: "panne", court: "La panne",
-            titre: "Trouve le contact ouvert",
-            consigne: "Le compresseur ne démarre pas. Lis les couleurs de la colonne.",
+            titre: "Trouvez le contact ouvert",
+            consigne: "Le compresseur ne démarre pas. Lisez les couleurs de la colonne.",
             explication: "La BP de régulation est ouverte : la pression d’aspiration n’a pas atteint le seuil d’enclenchement.",
             scenario: {
               bobine: "KM1",

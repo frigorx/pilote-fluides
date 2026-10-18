@@ -872,11 +872,11 @@
     };
 
     const PHRASES = {
-      reconnaitre: 'Voici le détendeur tel qu’on le trouve à l’atelier. Tourne-le avec la souris ou le doigt, puis appuie sur « Commencer ».',
-      pieces: 'Survole ou touche une pièce : son nom s’allume dans la liste et dans l’image. Un clic donne son rôle.',
-      debit: 'Compare faible, moyenne et forte ouverture : regarde le clapet, le liquide et les petites bulles.',
-      forces: 'Les trois flèches sont les forces sur la membrane. Appuie sur « Commencer ».',
-      boucle: 'Suis la boucle pas à pas, ou teste directement : la sortie chauffe, la sortie refroidit.'
+      reconnaitre: 'Voici le détendeur tel qu’on le trouve à l’atelier. Tournez-le avec la souris ou le doigt, puis appuyez sur « Commencer ».',
+      pieces: 'Survolez ou touchez une pièce : son nom s’allume dans la liste et dans l’image. Un clic donne son rôle.',
+      debit: 'Comparez faible, moyenne et forte ouverture : regardez le clapet, le liquide et les petites bulles.',
+      forces: 'Les trois flèches sont les forces sur la membrane. Appuyez sur « Commencer ».',
+      boucle: 'Suivez la boucle pas à pas, ou testez directement : la sortie chauffe, la sortie refroidit.'
     };
     const OUVERTURES = {
       small: { D: 0.55, texte: '<strong>Faible ouverture :</strong> petit passage : le débit massique est limité.' },

@@ -85,7 +85,7 @@
         <div class="warning-box"><strong>Vocabulaire :</strong> on dit aussi « réservoir de liquide ».</div>`,
       takeaway: "Je reconnais un réservoir, pas un filtre ni un séparateur d’aspiration.",
       visualTitle: "La forme générale",
-      visualHint: "Révèle les quatre repères.",
+      visualHint: "Révélez les quatre repères.",
       caption: "Schéma générique original inerWeb — aucune marque ni dimension constructeur.",
       render: renderRecognise
     },
@@ -99,7 +99,7 @@
         <p><strong>Raccordement illustré :</strong> arrivée sur une borne haute, départ sur une borne basse. Les piquages réels varient selon le modèle vertical ou horizontal.</p>`,
       takeaway: "Je raccorde les conduites sur les bornes du symbole ; je ne traverse jamais les organes.",
       visualTitle: "Retrouver sa place",
-      visualHint: "Choisis le bon emplacement.",
+      visualHint: "Choisissez le bon emplacement.",
       caption: "Symboles validés inerWeb ; la notice et le schéma réel restent prioritaires.",
       render: renderPlacement
     },
@@ -113,7 +113,7 @@
         <p>Elle peut aussi recevoir la charge lors d’un pump-down si l’installation est conçue pour cela.</p>`,
       takeaway: "Le niveau peut varier ; la sortie doit pourtant rester alimentée en liquide.",
       visualTitle: "Faire varier le niveau",
-      visualHint: "Compare trois situations pédagogiques.",
+      visualHint: "Comparez trois situations pédagogiques.",
       caption: "Les niveaux sont illustratifs : ils ne donnent aucune consigne de remplissage.",
       render: renderStorage
     },
@@ -129,7 +129,7 @@
         <li><strong>Vanne de départ :</strong> isole la ligne liquide.</li></ul>`,
       takeaway: "Le tube plongeur et la vanne de départ travaillent ensemble.",
       visualTitle: "Cliquer un élément",
-      visualHint: "Relie le nom à sa fonction.",
+      visualHint: "Reliez le nom à sa fonction.",
       caption: "Coupe de principe originale ; la géométrie réelle dépend du fabricant.",
       render: renderInside
     },
@@ -143,7 +143,7 @@
         <div class="warning-box"><strong>Attention :</strong> une bouteille presque vide peut tout de même laisser passer de la vapeur.</div>`,
       takeaway: "Le tube plongeur prélève en bas et remonte le liquide vers la sortie.",
       visualTitle: "Suivre le trajet réel",
-      visualHint: "Lance le déplacement du liquide.",
+      visualHint: "Lancez le déplacement du liquide.",
       caption: "Le mouvement bleu représente le trajet, pas une vitesse mesurée.",
       render: renderDipTube
     },
@@ -157,7 +157,7 @@
         <div class="fact"><strong>Départ liquide :</strong> liaison associée au prélèvement en partie basse.</div>`,
       takeaway: "Je vérifie le marquage et la documentation avant tout raccordement.",
       visualTitle: "Comparer les deux côtés",
-      visualHint: "Sélectionne entrée ou départ.",
+      visualHint: "Sélectionnez entrée ou départ.",
       caption: "La position physique des piquages varie selon les modèles verticaux ou horizontaux.",
       render: renderConnections
     },
@@ -171,7 +171,7 @@
         <div class="warning-box"><strong>Le piège :</strong> ne pas l’utiliser comme une vanne de réglage laissée étranglée.</div>`,
       takeaway: "Ouverte pour le passage, fermée pour l’isolement : jamais réglée au hasard.",
       visualTitle: "Trois représentations de position",
-      visualHint: "Observe la circulation et la prise de service.",
+      visualHint: "Observez la circulation et la prise de service.",
       caption: "Principe générique : la communication exacte dépend de la vanne réelle.",
       render: renderValvePositions
     },
@@ -185,7 +185,7 @@
         <div class="warning-box"><strong>P1 · à l’opposé :</strong> raccord permanent du pressostat, pouvant rester sous pression. Ne jamais le desserrer sur une installation chargée.</div>`,
       takeaway: "Pour le manifold, j’identifie P près du carré ; je ne confonds jamais avec P1.",
       visualTitle: "Distinguer les deux bouchons",
-      visualHint: "Sélectionne P, P1 ou le carré.",
+      visualHint: "Sélectionnez P, P1 ou le carré.",
       caption: "Repérage du type de vanne validé ; vérifier la notice du modèle réel.",
       render: renderServicePort
     },
@@ -199,7 +199,7 @@
         <div class="warning-box"><strong>Ce n’est pas une procédure chantier :</strong> capacité du réservoir, pressions et automatismes doivent être vérifiés.</div>`,
       takeaway: "Le niveau monte dans la bouteille pendant que la basse pression se vide.",
       visualTitle: "Suivre le fluide pendant le pump-down",
-      visualHint: "Avance étape par étape.",
+      visualHint: "Avancez étape par étape.",
       caption: "Vert animé = circulation ; rouge tireté = fermé. Animation conceptuelle sans valeur de pression.",
       render: renderPumpDown
     },
@@ -213,7 +213,7 @@
         <p>Le curseur d’ouverture représente une demande thermique, pas un réglage chantier du détendeur.</p>`,
       takeaway: "La bouteille compense les variations d’inventaire liquide du circuit.",
       visualTitle: "Faire varier le régime",
-      visualHint: "Agis sur l’extérieur et sur la demande de l’évaporateur.",
+      visualHint: "Agissez sur l’extérieur et sur la demande de l’évaporateur.",
       caption: "Modèle qualitatif : aucune masse de fluide ni valeur de réglage n’est calculée.",
       render: renderVariations
     },
@@ -227,7 +227,7 @@
         <p>Le volume géométrique inscrit sur un récipient n’est pas automatiquement la charge de service autorisée.</p>`,
       takeaway: "Je dimensionne avec les données constructeur, jamais avec un pourcentage mémorisé au hasard.",
       visualTitle: "Comprendre le volume libre",
-      visualHint: "Déplace la simulation sans en faire une consigne.",
+      visualHint: "Déplacez la simulation sans en faire une consigne.",
       caption: "Simulation qualitative uniquement ; aucune limite réglementaire n’est fixée ici.",
       render: renderSizing
     },
@@ -241,7 +241,7 @@
         <div class="warning-box"><strong>Pourquoi :</strong> retourner un récipient modifie la position du liquide et du tube de prélèvement.</div>`,
       takeaway: "L’orientation fait partie de la conception du récipient.",
       visualTitle: "Comparer deux architectures",
-      visualHint: "Bascule entre modèle vertical et horizontal.",
+      visualHint: "Basculez entre modèle vertical et horizontal.",
       caption: "Deux architectures de principe, pas un même récipient que l’on retournerait.",
       render: renderMounting
     },
@@ -256,7 +256,7 @@
         <p><strong>DESP 2014/68/UE :</strong> elle encadre la conception et la conformité des équipements dont la PS dépasse 0,5 bar.</p>`,
       takeaway: "Je lis PS, TS et V sur la plaque, puis je distingue les protections.",
       visualTitle: "Lire la plaque, comparer les protections",
-      visualHint: "Commence par la plaque, puis sélectionne un dispositif.",
+      visualHint: "Commencez par la plaque, puis sélectionnez un dispositif.",
       caption: "Démonstration qualitative : aucune pression de tarage n’est donnée.",
       render: renderSafety
     },
@@ -271,7 +271,7 @@
       takeaway: "Je peux expliquer la bouteille, sa vanne et ses données de sécurité.",
       visualTitle: "Défi final",
       visualHint: "Une seule réponse par situation.",
-      caption: "Quiz formatif : recommence autant de fois que nécessaire.",
+      caption: "Quiz formatif : recommencez autant de fois que nécessaire.",
       render: renderQuiz
     }
   ];
@@ -370,7 +370,7 @@
 
   function renderRecognise() {
     setControls(`<button type="button" class="action-button primary" id="reveal-parts">Révéler les repères</button>`);
-    ui.root.innerHTML = receiverSvg({ labels: false, level: 54 }) + `<div class="readout" id="visual-readout">Observe d’abord la forme sans les légendes.</div>`;
+    ui.root.innerHTML = receiverSvg({ labels: false, level: 54 }) + `<div class="readout" id="visual-readout">Observez d’abord la forme sans les légendes.</div>`;
     document.getElementById("reveal-parts").addEventListener("click", () => {
       ui.root.innerHTML = receiverSvg({ labels: true, level: 54 }) + `<div class="readout" id="visual-readout"><strong>Repères :</strong> enveloppe, liquide, tube plongeur et vanne de départ.</div>`;
       announce("Repères révélés : enveloppe, liquide, tube plongeur et vanne de départ.");
@@ -442,7 +442,7 @@
       valve: "<strong>Vanne de départ :</strong> elle ouvre ou isole la liaison avec la ligne liquide."
     };
     setControls(Object.keys(info).map((key) => `<button class="choice-button" data-part="${key}">${({shell:"Enveloppe",liquid:"Liquide",tube:"Tube plongeur",valve:"Vanne"})[key]}</button>`).join(""));
-    ui.root.innerHTML = receiverSvg({ labels: true, level: 58, service: true }) + `<div class="readout" id="visual-readout">Choisis un élément pour expliquer son rôle.</div>`;
+    ui.root.innerHTML = receiverSvg({ labels: true, level: 58, service: true }) + `<div class="readout" id="visual-readout">Choisissez un élément pour expliquer son rôle.</div>`;
     ui.controls.querySelectorAll("[data-part]").forEach((button) => button.addEventListener("click", () => {
       markActive("[data-part]", button);
       setReadout(info[button.dataset.part]);
@@ -463,7 +463,7 @@
 
   function renderConnections() {
     setControls(`<button class="choice-button" data-side="inlet">Entrée</button><button class="choice-button" data-side="outlet">Départ liquide</button>`);
-    ui.root.innerHTML = receiverSvg({ labels: true, level: 56 }) + `<div class="readout" id="visual-readout">Sélectionne un côté.</div>`;
+    ui.root.innerHTML = receiverSvg({ labels: true, level: 56 }) + `<div class="readout" id="visual-readout">Sélectionnez un côté.</div>`;
     ui.controls.querySelectorAll("[data-side]").forEach((button) => button.addEventListener("click", () => {
       markActive("[data-side]", button);
       setReadout(button.dataset.side === "inlet" ? "<strong>Entrée :</strong> elle reçoit le fluide venant du condenseur." : "<strong>Départ liquide :</strong> il est relié au prélèvement bas et à la vanne d’isolement.");
@@ -741,14 +741,14 @@
     if (quiz.complete) {
       setControls(`<button type="button" class="action-button primary" id="restart-quiz">Refaire le défi</button>`);
       const success = quiz.score >= 5;
-      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/6</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Tu peux expliquer la bouteille, sa vanne et les principales données de plaque." : "Relis les corrections puis recommence."}</p></div>`;
+      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/6</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Vous pouvez expliquer la bouteille, sa vanne et les principales données de plaque." : "Relisez les corrections puis recommencez."}</p></div>`;
       document.getElementById("restart-quiz").addEventListener("click", resetQuiz);
       updateNavigation();
       return;
     }
     const question = quizQuestions[quiz.index];
     setControls(quiz.answered ? `<button type="button" class="action-button primary" id="next-question">${quiz.index === quizQuestions.length - 1 ? "Voir le bilan" : "Question suivante"}</button>` : "");
-    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div><div class="quiz-feedback" id="quiz-feedback">Choisis une réponse.</div></div>`;
+    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div><div class="quiz-feedback" id="quiz-feedback">Choisissez une réponse.</div></div>`;
     ui.root.querySelectorAll("[data-answer]").forEach((button) => button.addEventListener("click", () => answerQuiz(Number(button.dataset.answer))));
     if (quiz.answered) restoreAnsweredQuiz(question);
   }

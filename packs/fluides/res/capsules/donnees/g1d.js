@@ -28,17 +28,18 @@ CAPSULE.declarer({
       note: "Le plan de la visite",
       visuel: {
         motif: "sequence",
-        titre: "Quatre familles d'organes, dans l'ordre de la visite",
+        titre: "Cinq familles d'organes, dans l'ordre de la visite",
         etapes: [
+          { titre: "Ce qui isole", texte: "les valves" },
           { titre: "Ce qu'on voit", texte: "voyant, pastille" },
           { titre: "Ce qui pilote", texte: "thermostat, pressostats, dégivrage" },
           { titre: "Ce qui protège", texte: "protecteurs, séparateurs" },
           { titre: "Ce qui stocke", texte: "réservoir" },
         ],
-        pied: "Neuf organes, quatre familles : pour ne pas se perdre.",
+        pied: "Les valves, puis neuf organes : cinq familles pour ne pas se perdre.",
       },
-      texte: "<p>Une fuite ne se voit pas toujours de face. Mais plusieurs organes du circuit la <b>trahissent</b> : ils changent d'aspect, se mettent en sécurité, ou limitent les dégâts.</p><p>Pour ne pas se perdre, on les range en <b>quatre familles</b> : ce qu'on voit, ce qui pilote, ce qui protège, ce qui stocke.</p>",
-      dire: "Un technicien expérimenté ne cherche pas une fuite qu'avec un détecteur : il observe le circuit, parce que plusieurs organes changent de comportement quand quelque chose ne va pas. Certains changent d'aspect, d'autres se mettent en sécurité, d'autres encore limitent les dégâts. Pour s'y retrouver, cette capsule les range en quatre familles faciles à retenir : ce qu'on voit, ce qui pilote, ce qui protège et ce qui stocke. Avec ces repères, vous saurez où porter votre regard en arrivant devant une installation. D'abord, un rappel : où se placent ces organes sur la croix du frigoriste.",
+      texte: "<p>Une fuite ne se voit pas toujours de face. Mais plusieurs organes du circuit la <b>trahissent</b> : ils changent d'aspect, se mettent en sécurité, ou limitent les dégâts.</p><p>Pour ne pas se perdre, on les range en <b>cinq familles</b> : ce qui isole (les valves), ce qu'on voit, ce qui pilote, ce qui protège, ce qui stocke.</p>",
+      dire: "Un technicien expérimenté ne cherche pas une fuite qu'avec un détecteur : il observe le circuit, parce que plusieurs organes changent de comportement quand quelque chose ne va pas. Certains changent d'aspect, d'autres se mettent en sécurité, d'autres encore limitent les dégâts. Pour s'y retrouver, cette capsule les range en cinq familles faciles à retenir : ce qui isole, avec les valves, puis ce qu'on voit, ce qui pilote, ce qui protège et ce qui stocke. Avec ces repères, vous saurez où porter votre regard en arrivant devant une installation. D'abord, un rappel : où se placent ces organes sur la croix du frigoriste.",
       reference: "Code 1.05 · le plan de la visite",
     },
 

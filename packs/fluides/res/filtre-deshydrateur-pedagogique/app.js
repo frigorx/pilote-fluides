@@ -97,20 +97,20 @@
         <div class="warning-box"><strong>Avant le montage :</strong> je lis la flèche et la référence inscrites sur le corps.</div>`,
       takeaway: "Je reconnais d’abord le composant réel. Ensuite, je lis son sens.",
       visualTitle: "À quoi ressemble-t-il vraiment ?",
-      visualHint: "Révèle la zone où se trouve la flèche sur un vrai modèle.",
+      visualHint: "Révélez la zone où se trouve la flèche sur un vrai modèle.",
       caption: "Vue réaliste inerWeb pour la reconnaissance — aucune référence commerciale précise.",
       render: renderObserve
     },
     {
       short: "Raccorder",
       kicker: "Écran 2 · Raccordements",
-      title: "Vissé ou brasé : regarde l’embout", narration: "Deux filtres peuvent faire exactement le même travail et se raccorder différemment. Tout se voit au bout du composant. S'il porte un filetage et un écrou, c'est un raccord flare : l'écrou vient serrer le tube évasé, et l'assemblage peut se démonter. S'il présente un embout de cuivre lisse, le tube vient s'y emboîter et la brasure ferme la liaison ; on dit souvent qu'il est « à souder ». Comparez les deux extrémités sur l'image.",
+      title: "Vissé ou brasé : regardez l’embout", narration: "Deux filtres peuvent faire exactement le même travail et se raccorder différemment. Tout se voit au bout du composant. S'il porte un filetage et un écrou, c'est un raccord flare : l'écrou vient serrer le tube évasé, et l'assemblage peut se démonter. S'il présente un embout de cuivre lisse, le tube vient s'y emboîter et la brasure ferme la liaison ; on dit souvent qu'il est « à souder ». Comparez les deux extrémités sur l'image.",
       intro: "Le filtre travaille de la même façon. Seule sa liaison au tube change.",
       detail: `<div class="fact"><strong>Flare, donc vissé :</strong> un écrou serre l’extrémité évasée du tube. La liaison est démontable.</div>
         <div class="fact"><strong>À braser, souvent dit « à souder » :</strong> le tube entre dans l’embout cuivre. La brasure ferme la liaison.</div>`,
       takeaway: "Filetage et écrou = flare. Embout cuivre lisse = à braser.",
       visualTitle: "La différence se voit à l’extrémité",
-      visualHint: "Affiche chaque raccord en grand.",
+      visualHint: "Affichez chaque raccord en grand.",
       caption: "Flare : LaurensvanLieshout · Wikimedia Commons · CC BY-SA 3.0 · recadrage inerWeb.",
       render: renderConnections
     },
@@ -118,12 +118,12 @@
       short: "Placer",
       kicker: "Écran 3 · Ligne liquide",
       title: "Le retrouver, puis le placer", narration: "Il s'agit maintenant de situer ce filtre dans la machine. Sur la ligne liquide, le fluide passe d'abord par le réservoir, puis par le filtre-déshydrateur, ensuite par le voyant, et arrive enfin au détendeur. Le but est de le reconnaître sur la photo d'une installation, puis de le replacer sur le schéma. Sur un vrai chantier, le schéma et la notice de l'installation passent toujours en premier.",
-      intro: "Observe le filtre réel sur une installation, puis replace-le sur la ligne liquide.",
+      intro: "Observez le filtre réel sur une installation, puis replacez-le sur la ligne liquide.",
       detail: `<div class="fact"><strong>Dans ce parcours :</strong> réservoir liquide → filtre-déshydrateur → voyant → détendeur.</div>
         <p>Sur le chantier, le schéma et la notice de l’installation restent prioritaires.</p>`,
       takeaway: "Je sais reconnaître le filtre dans la machine et sur le schéma.",
       visualTitle: "Du matériel réel au schéma",
-      visualHint: "Commence par la photo, puis fais le placement.",
+      visualHint: "Commencez par la photo, puis faites le placement.",
       caption: "Photo : AnyNameWillExpire · Wikimedia Commons · CC BY-SA 4.0.",
       render: renderPlacement
     },
@@ -137,7 +137,7 @@
         <div class="warning-box"><strong>À retenir :</strong> le filtre ne remplace jamais un bon tirage au vide.</div>`,
       takeaway: "Tamis moléculaire = eau. Média filtrant = particules.",
       visualTitle: "Voir chaque fonction",
-      visualHint: "Avance de la pollution vers la prévention.",
+      visualHint: "Avancez de la pollution vers la prévention.",
       caption: "Billes 4A : GOKLuLe · Wikimedia Commons · CC BY-SA 3.0 ; autres vues inerWeb.",
       render: renderMissions
     },
@@ -151,9 +151,9 @@
         <li><strong>Noyau :</strong> adsorbe l’eau et, selon sa formule, des acides.</li>
         <li><strong>Feutre ou tamis :</strong> retient les particules.</li>
         <li><strong>Plaque :</strong> soutient et répartit le passage du fluide.</li></ul>`,
-      takeaway: "Clique une étiquette : la flèche montre la pièce et le texte explique son rôle.",
+      takeaway: "Cliquez une étiquette : la flèche montre la pièce et le texte explique son rôle.",
       visualTitle: "Repérer les cinq éléments",
-      visualHint: "Clique directement sur les étiquettes de la coupe.",
+      visualHint: "Cliquez directement sur les étiquettes de la coupe.",
       caption: "Rendu 3D manuel inerWeb — construction générique, pas un plan constructeur.",
       render: renderInside
     },
@@ -166,7 +166,7 @@
         <div class="fact"><strong>Billes libres :</strong> certains petits corps en cuivre renferment des grains avec un tamis ou un mat filtrant.</div>`,
       takeaway: "Je nomme la technologie du modèle observé.",
       visualTitle: "Deux familles internes",
-      visualHint: "Compare un noyau moulé avec de vraies billes dessiccantes.",
+      visualHint: "Comparez un noyau moulé avec de vraies billes dessiccantes.",
       caption: "Billes 4A : GOKLuLe · Wikimedia Commons · CC BY-SA 3.0 ; noyau 3D inerWeb.",
       render: renderTechnologies
     },
@@ -179,7 +179,7 @@
         <div class="warning-box"><strong>Diagnostic :</strong> un filtre très encrassé peut créer une perte de charge, mais une observation seule ne suffit pas.</div>`,
       takeaway: "Le média laisse passer le fluide et retient les solides.",
       visualTitle: "Suivre les particules",
-      visualHint: "Observe le média réel de principe, puis lance le flux.",
+      visualHint: "Observez le média réel de principe, puis lancez le flux.",
       caption: "Rendu 3D original : calamine et particules arrêtées avant la sortie.",
       render: renderFiltration
     },
@@ -192,7 +192,7 @@
         <p>Ce mécanisme est différent d’un simple tamis mécanique.</p>`,
       takeaway: "L’humidité est adsorbée ; elle n’est pas seulement filtrée.",
       visualTitle: "Fixer les molécules d’eau",
-      visualHint: "Lance l’adsorption.",
+      visualHint: "Lancez l’adsorption.",
       caption: "H₂O rejoint les sites disponibles du noyau dessiccant.",
       render: renderAdsorption
     },
@@ -205,7 +205,7 @@
         <div class="fact"><strong>Mélange avec alumine activée :</strong> capacité antiacide renforcée selon la gamme.</div>`,
       takeaway: "Je vérifie la composition et l’application annoncées par le fabricant.",
       visualTitle: "Comparer deux priorités",
-      visualHint: "Choisis une composition de principe.",
+      visualHint: "Choisissez une composition de principe.",
       caption: "Les barres sont qualitatives : aucune capacité chiffrée n’est inventée.",
       render: renderAcidCapacity
     },
@@ -218,7 +218,7 @@
         <p>Un modèle hermétique saturé ou pollué se remplace selon la procédure.</p>`,
       takeaway: "Un filtre-déshydrateur hermétique n’est pas régénéré sur le chantier.",
       visualTitle: "Une capacité qui se charge",
-      visualHint: "Déplace la simulation pédagogique.",
+      visualHint: "Déplacez la simulation pédagogique.",
       caption: "La jauge illustre un principe ; elle n’est pas une mesure terrain.",
       render: renderSaturation
     },
@@ -231,7 +231,7 @@
         <div class="fact"><strong>À l’intérieur :</strong> noyaux, joints feutre, plaques, tamis et ressort restent alignés dans le sens du fluide.</div>`,
       takeaway: "On remplace les noyaux et les joints prévus ; l’enveloppe reste en place.",
       visualTitle: "Un véritable porte-cartouche",
-      visualHint: "Observe l’empilage axial ou compare les symboles.",
+      visualHint: "Observez l’empilage axial ou comparez les symboles.",
       caption: "Coupe 3D originale de principe, vérifiée sur des notices de montage DCR et Catch-All.",
       render: renderCartridge
     },
@@ -244,7 +244,7 @@
         <div class="warning-box"><strong>Attention :</strong> il ne possède pas la capacité d’un gros filtre de ligne.</div>`,
       takeaway: "Même famille d’organe, application et dimensionnement différents.",
       visualTitle: "Reconnaître le « cigare »",
-      visualHint: "Compare sa forme avec le filtre hermétique courant.",
+      visualHint: "Comparez sa forme avec le filtre hermétique courant.",
       caption: "Rendu 3D original inerWeb — proportions pédagogiques.",
       render: renderCigar
     },
@@ -257,7 +257,7 @@
         <div class="fact"><strong>À l’intérieur :</strong> tamis des deux côtés et clapets dirigent toujours le fluide de l’extérieur du noyau vers son centre.</div>`,
       takeaway: "Le sens s’inverse, mais les particules restent retenues.",
       visualTitle: "Le même filtre, dans les deux sens",
-      visualHint: "Inverse le flux et regarde les deux médias filtrants.",
+      visualHint: "Inversez le flux et regardez les deux médias filtrants.",
       caption: "Coupe 3D de principe fondée sur la construction bi-flow documentée par Danfoss.",
       render: renderBiFlow
     },
@@ -271,7 +271,7 @@
         <p>Le filtre burn-out d’aspiration se place juste avant le compresseur et sa perte de charge doit être suivie.</p>`,
       takeaway: "On contrôle l’acidité de l’huile et on remplace les filtres selon la procédure de dépollution.",
       visualTitle: "De l’acide à la protection",
-      visualHint: "Comprends l’origine, puis regarde le filtre spécialisé.",
+      visualHint: "Comprenez l’origine, puis regardez le filtre spécialisé.",
       caption: "Chimie volontairement légère ; aucune valeur de pression ou de durée n’est inventée.",
       render: renderBurnout
     },
@@ -285,7 +285,7 @@
       takeaway: "J’identifie l’organe par sa fonction, sa ligne et son sens.",
       visualTitle: "Défi final",
       visualHint: "Une situation illustrée à la fois.",
-      caption: "Tu peux recommencer le défi autant de fois que nécessaire.",
+      caption: "Vous pouvez recommencer le défi autant de fois que nécessaire.",
       render: renderQuiz
     }
   ];
@@ -395,7 +395,7 @@
             announce("Correct. Le filtre est placé avant le voyant dans ce parcours.");
           } else {
             button.textContent = "✗ Pas ici dans ce parcours";
-            announce("À revoir. Place le filtre avant le voyant.");
+            announce("À revoir. Placez le filtre avant le voyant.");
           }
         });
       });
@@ -407,7 +407,7 @@
         const view = button.dataset.placementView;
         ui.controls.querySelectorAll("[data-placement-view]").forEach((item) => item.classList.toggle("active", item === button));
         if (view === "photo") showPhoto(); else showLine();
-        announce(view === "photo" ? "Filtre réel repéré sur l’installation." : "Place maintenant le filtre sur la ligne liquide.");
+        announce(view === "photo" ? "Filtre réel repéré sur l’installation." : "Placez maintenant le filtre sur la ligne liquide.");
       });
     });
   }
@@ -447,7 +447,7 @@
       plate: "Plaque perforée : elle soutient le noyau et le média, répartit le flux et laisse le fluide traverser."
     };
     setControls(`<span class="fact">Les étiquettes sont cliquables directement sur la coupe.</span>`);
-    ui.root.innerHTML = `<div class="cutaway-stage"><div class="cutaway-media"><img src="assets/images/coupe-filtre-3d.webp" alt="Rendu 3D en coupe avec cinq étiquettes pointant l’enveloppe, le ressort, le noyau, le média filtrant et la plaque perforée."><svg class="cutaway-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="part-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs><polyline data-line="shell" points="29,13 39,13 43,27"></polyline><polyline data-line="spring" points="17,82 25,66 34,50"></polyline><polyline data-line="core" points="48,84 53,66 58,50"></polyline><polyline data-line="mat" points="77,14 75,32 72,50"></polyline><polyline data-line="plate" points="88,82 83,66 76,50"></polyline></svg><button type="button" class="part-label shell" data-component="shell">Corps acier</button><button type="button" class="part-label spring" data-component="spring">Ressort</button><button type="button" class="part-label core" data-component="core">Noyau</button><button type="button" class="part-label mat" data-component="mat">Média filtrant</button><button type="button" class="part-label plate" data-component="plate">Plaque</button><span class="asset-kind">COUPE DE PRINCIPE</span></div><div class="component-readout" id="component-readout"><strong>Corps acier :</strong> enveloppe soudée et hermétique. Clique une autre étiquette pour suivre la construction.</div></div>`;
+    ui.root.innerHTML = `<div class="cutaway-stage"><div class="cutaway-media"><img src="assets/images/coupe-filtre-3d.webp" alt="Rendu 3D en coupe avec cinq étiquettes pointant l’enveloppe, le ressort, le noyau, le média filtrant et la plaque perforée."><svg class="cutaway-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="part-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs><polyline data-line="shell" points="29,13 39,13 43,27"></polyline><polyline data-line="spring" points="17,82 25,66 34,50"></polyline><polyline data-line="core" points="48,84 53,66 58,50"></polyline><polyline data-line="mat" points="77,14 75,32 72,50"></polyline><polyline data-line="plate" points="88,82 83,66 76,50"></polyline></svg><button type="button" class="part-label shell" data-component="shell">Corps acier</button><button type="button" class="part-label spring" data-component="spring">Ressort</button><button type="button" class="part-label core" data-component="core">Noyau</button><button type="button" class="part-label mat" data-component="mat">Média filtrant</button><button type="button" class="part-label plate" data-component="plate">Plaque</button><span class="asset-kind">COUPE DE PRINCIPE</span></div><div class="component-readout" id="component-readout"><strong>Corps acier :</strong> enveloppe soudée et hermétique. Cliquez une autre étiquette pour suivre la construction.</div></div>`;
     ui.root.querySelectorAll("[data-component]").forEach((button) => {
       button.addEventListener("click", () => {
         const component = button.dataset.component;
@@ -628,7 +628,7 @@
     if (quiz.complete) {
       setControls(`<button type="button" class="action-button primary" id="restart-quiz">Refaire le défi</button>`);
       const success = quiz.score >= 5;
-      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/6</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Tu distingues les principales familles et fonctions." : "Relis les écrans signalés par les corrections, puis recommence."}</p></div>`;
+      ui.root.innerHTML = `<div class="quiz-result"><span class="quiz-score">${quiz.score}/6</span><strong>${success ? "Objectif atteint" : "Encore un passage utile"}</strong><p>${success ? "Vous distinguez les principales familles et fonctions." : "Relisez les écrans signalés par les corrections, puis recommencez."}</p></div>`;
       document.getElementById("restart-quiz").addEventListener("click", resetQuiz);
       updateNavigation();
       return;
@@ -636,7 +636,7 @@
 
     const question = quizQuestions[quiz.index];
     setControls(quiz.answered ? `<button type="button" class="action-button primary" id="next-question">${quiz.index === quizQuestions.length - 1 ? "Voir le bilan" : "Question suivante"}</button>` : "");
-    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><div class="quiz-question-grid"><figure class="quiz-illustration" aria-hidden="true">${quizIllustration(question.visual)}</figure><div class="quiz-question-body"><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div></div></div><div class="quiz-feedback" id="quiz-feedback">Choisis une réponse.</div></div>`;
+    ui.root.innerHTML = `<div class="quiz-shell"><div class="quiz-meta"><span>Question ${quiz.index + 1} sur ${quizQuestions.length}</span><span>Score : ${quiz.score}</span></div><div class="quiz-question-grid"><figure class="quiz-illustration" aria-hidden="true">${quizIllustration(question.visual)}</figure><div class="quiz-question-body"><h3 class="quiz-prompt">${question.prompt}</h3><div class="quiz-answers">${question.answers.map((answer, index) => `<button type="button" class="quiz-choice" data-answer="${index}">${answer}</button>`).join("")}</div></div></div><div class="quiz-feedback" id="quiz-feedback">Choisissez une réponse.</div></div>`;
     ui.root.querySelectorAll("[data-answer]").forEach((button) => button.addEventListener("click", () => answerQuiz(Number(button.dataset.answer))));
     if (quiz.answered) restoreAnsweredQuiz(question);
   }

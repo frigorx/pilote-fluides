@@ -195,9 +195,9 @@
     if(s.lecture)$("stationLecture").textContent=s.lecture;
     if(s.limites)$("stationLimites").textContent=s.limites;
     if(state.phase===0){$("stationText").textContent=s.decouverte||s[state.level];renderDiscovery(s);}
-    if(state.phase===1){$("stationText").textContent=s.explication||"Construis le raisonnement avant de toucher aux réglages.";$("stationMethod").textContent=s.method;$("stationFormula").textContent=s.formula;renderMethodScene(s);}
-    if(state.phase===2){$("stationText").textContent=s.consigne||`Manipule les paramètres de ${s.title.toLowerCase()}, observe le résultat et explique ce qui change.`;$("stationMethod").textContent=s.method;$("stationFormula").textContent=s.formula;renderActivity(s.activity);}
-    if(state.phase===3){$("stationText").textContent="Vérifie ton raisonnement avec deux questions corrigées. Cette étape ne donne aucune note.";renderLocalCheck(s);}
+    if(state.phase===1){$("stationText").textContent=s.explication||"Construisez le raisonnement avant de toucher aux réglages.";$("stationMethod").textContent=s.method;$("stationFormula").textContent=s.formula;renderMethodScene(s);}
+    if(state.phase===2){$("stationText").textContent=s.consigne||`Manipulez les paramètres de ${s.title.toLowerCase()}, observez le résultat et expliquez ce qui change.`;$("stationMethod").textContent=s.method;$("stationFormula").textContent=s.formula;renderActivity(s.activity);}
+    if(state.phase===3){$("stationText").textContent="Vérifiez votre raisonnement avec deux questions corrigées. Cette étape ne donne aucune note.";renderLocalCheck(s);}
     $("previousButton").disabled=state.phase===0&&index===0;
     $("previousButton").textContent=state.phase>0?`← ${phaseNames[state.phase-1]}`:"← Station précédente";
     $("previousButton").onclick=()=>state.phase>0?setPhase(state.phase-1):openStation(list[index-1].id,state.route,3);
@@ -237,7 +237,7 @@
        à la place de l'autre : l'élève doit pouvoir mettre un mot sur ce qu'il voit.
        Station équipée d'une 3D : c'est elle la scène (le dessin reste à un clic, « En schéma »),
        et le dessin revient seul si la 3D ne peut pas se charger. */
-    $("activity").innerHTML=`<section class="concept-panel decouverte">${en3D?"":dessin||""}<p class="eyebrow">Le phénomène en trois repères</p>${sequenceMarkup(labels)}<p class="concept-caption">Observe la scène, puis nomme chaque repère avant de passer à l’explication.</p></section>`;
+    $("activity").innerHTML=`<section class="concept-panel decouverte">${en3D?"":dessin||""}<p class="eyebrow">Le phénomène en trois repères</p>${sequenceMarkup(labels)}<p class="concept-caption">Observez la scène, puis nommez chaque repère avant de passer à l’explication.</p></section>`;
     if(en3D){const panneau=$("activity").querySelector(".decouverte");poserVue3D(s,{garderSchema:true,siEchec:()=>{if(panneau.isConnected&&dessin)panneau.insertAdjacentHTML("afterbegin",dessin);}});}
   }
   /* La vue 3D de l’appareil (chantier du 02/10/2026, moteur repris d’HydroMétro) : dès Découvrir
@@ -301,7 +301,7 @@
     if(!state.localCheck||state.localCheck.stationId!==s.id)state.localCheck={stationId:s.id,index:0,completed:false,answered:false};
     const checkState=state.localCheck,root=$("activity");
     if(checkState.completed){
-      root.innerHTML=`<div class="local-complete result"><p class="eyebrow">Vérification terminée</p><h3>Tu peux poursuivre.</h3><p>Les deux réponses ont été corrigées. Aucune note n’est attribuée ici : l’évaluation sur 20 reste à la fin de la ligne.</p><button id="retryLocal" type="button">Revoir les deux questions</button></div>`;
+      root.innerHTML=`<div class="local-complete result"><p class="eyebrow">Vérification terminée</p><h3>Vous pouvez poursuivre.</h3><p>Les deux réponses ont été corrigées. Aucune note n’est attribuée ici : l’évaluation reste à la fin de la ligne.</p><button id="retryLocal" type="button">Revoir les deux questions</button></div>`;
       $("retryLocal").onclick=()=>{state.localCheck={stationId:s.id,index:0,completed:false,answered:false};renderStation();};
       return;
     }
@@ -314,7 +314,7 @@
     root.querySelectorAll(".choices button").forEach(btn=>btn.addEventListener("click",()=>{
       if(checkState.answered)return;checkState.answered=true;const good=btn.textContent===item[1];
       root.querySelectorAll(".choices button").forEach(choice=>{choice.disabled=true;if(choice.textContent===item[1])choice.classList.add("correct");});
-      if(!good)btn.classList.add("wrong");root.querySelector(".feedback").textContent=good?"Correct. Relie cette réponse à la manipulation.":`À reprendre. La réponse attendue est : ${item[1]}.`;
+      if(!good)btn.classList.add("wrong");root.querySelector(".feedback").textContent=good?"Correct. Reliez cette réponse à la manipulation.":`À reprendre. La réponse attendue est : ${item[1]}.`;
       $("nextLocal").hidden=false;
     }));
     $("nextLocal").onclick=()=>{if(checkState.index===1){checkState.completed=true;}else{checkState.index++;checkState.answered=false;}renderStation();};
@@ -329,7 +329,7 @@
     if(a.kind==="flow"){root.innerHTML=dessin;return;}
     if(a.kind==="flowcalc"){
       root.innerHTML=dessin+controls([{id:"diameter",label:"Diamètre",value:a.diameter,min:80,max:630,step:5,unit:"mm"},{id:"velocity",label:"Vitesse",value:a.velocity,min:.5,max:12,step:.1,unit:"m/s"}],"");
-      wire(["diameter","velocity"],()=>{const d=+$('diameter').value/1000,v=+$('velocity').value,q=v*Math.PI*d*d/4*3600;$("calcResult").textContent=`Débit calculé : ${q.toFixed(0)} m³/h. Vérifie ensuite si la vitesse convient au projet.`;});return;
+      wire(["diameter","velocity"],()=>{const d=+$('diameter').value/1000,v=+$('velocity').value,q=v*Math.PI*d*d/4*3600;$("calcResult").textContent=`Débit calculé : ${q.toFixed(0)} m³/h. Vérifiez ensuite si la vitesse convient au projet.`;});return;
     }
     if(a.kind==="pressure"){
       root.innerHTML=dessin+controls([{id:"pstatic",label:"Pression statique",value:a.static,min:-100,max:500,unit:"Pa"},{id:"pdynamic",label:"Pression dynamique",value:a.dynamic,min:0,max:250,unit:"Pa"}],"");
@@ -367,7 +367,7 @@
     }
     if(a.kind==="fan"){
       root.innerHTML=dessin+controls([{id:"speed",label:"Commande ventilateur",value:a.speed,min:20,max:100,unit:"%"},{id:"resistance",label:"Résistance réseau",value:a.resistance,min:20,max:100,unit:"%"}],"");
-      wire(["speed","resistance"],()=>{const balance=+$('speed').value-+$('resistance').value;$("calcResult").textContent=balance>8?"Pression disponible forte : contrôle le débit et le bruit.":balance<-8?"Réseau trop résistant pour cette commande : débit probablement insuffisant.":"Zone d’équilibre : confirme avec des mesures réelles.";});return;
+      wire(["speed","resistance"],()=>{const balance=+$('speed').value-+$('resistance').value;$("calcResult").textContent=balance>8?"Pression disponible forte : contrôlez le débit et le bruit.":balance<-8?"Réseau trop résistant pour cette commande : débit probablement insuffisant.":"Zone d’équilibre : confirmez avec des mesures réelles.";});return;
     }
     if(a.kind==="diagnosis"){
       renderChoice(root,dessin,"Débit faible sur une bouche. Quel contrôle vient en premier ?","Mesurer le débit et la pression avant de conclure",["Remplacer immédiatement le ventilateur","Mesurer le débit et la pression avant de conclure","Fermer toutes les autres bouches"]);return;
@@ -377,7 +377,7 @@
   }
   function renderChoice(root,dessin,prompt,answer,choices){
     root.innerHTML=`${dessin||""}<div><h3>${escapeText(prompt)}</h3><div class="choices">${choices.map(c=>`<button type="button">${escapeText(c)}</button>`).join("")}</div><p class="feedback" aria-live="polite"></p></div>`;
-    root.querySelectorAll(".choices button").forEach(btn=>btn.addEventListener("click",()=>{const good=btn.textContent===answer;root.querySelectorAll("button").forEach(b=>{b.disabled=true;if(b.textContent===answer)b.classList.add("correct");});if(!good)btn.classList.add("wrong");root.querySelector(".feedback").textContent=good?"Correct. Explique maintenant pourquoi.":`À reprendre. La réponse attendue est : ${answer}.`; }));
+    root.querySelectorAll(".choices button").forEach(btn=>btn.addEventListener("click",()=>{const good=btn.textContent===answer;root.querySelectorAll("button").forEach(b=>{b.disabled=true;if(b.textContent===answer)b.classList.add("correct");});if(!good)btn.classList.add("wrong");root.querySelector(".feedback").textContent=good?"Correct. Expliquez maintenant pourquoi.":`À reprendre. La réponse attendue est : ${answer}.`; }));
   }
   function seededShuffle(array,seed){const copy=[...array];let n=seed;for(let i=copy.length-1;i>0;i--){n=(n*9301+49297)%233280;const j=Math.floor(n/233280*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;}
   function renderEvaluation(line){
@@ -391,7 +391,7 @@
       state.quiz={items:seededShuffle(retenues,line.charCodeAt(0)),index:0,score:0,answered:false};
     }
     const q=state.quiz,root=$("activity");
-    if(q.index>=q.items.length){const note=Math.round(q.score/q.items.length*20);root.innerHTML=`<div class="result"><h3>Bilan de la ligne ${line}</h3><p>Score brut : ${q.score}/${q.items.length}</p><p>Note formative : <strong>${note}/20</strong></p><p>${note>=14?"Acquis : poursuis vers une situation complète.":note>=10?"Fragile : reprends les stations signalées.":"À renforcer : reviens aux méthodes avant un nouvel essai."}</p><button id="restartQuiz" type="button">Refaire l’évaluation</button></div>`;$("restartQuiz").onclick=()=>{state.quiz=null;renderEvaluation(line);};return;}
+    if(q.index>=q.items.length){const r=q.score/q.items.length,niv=r>=.9?[4,"Parfaitement maîtrisé"]:r>=.7?[3,"Acquis"]:r>=.5?[2,"En cours"]:[1,"Non acquis"];root.innerHTML=`<div class="result"><h3>Bilan de la ligne ${line}</h3><p>Score brut : ${q.score}/${q.items.length}</p><p>Niveau : <strong>${niv[0]} · ${niv[1]}</strong></p><p>${niv[0]>=3?"Acquis : poursuivez vers une situation complète.":niv[0]>=2?"En cours : reprenez les stations signalées.":"Non acquis : revenez aux méthodes avant un nouvel essai."}</p><button id="restartQuiz" type="button">Refaire l’évaluation</button></div>`;$("restartQuiz").onclick=()=>{state.quiz=null;renderEvaluation(line);};return;}
     const item=q.items[q.index],choices=item.choices;
     root.innerHTML=`<div><p class="eyebrow">Question ${q.index+1} sur ${q.items.length}</p><h3>${escapeText(item.question)}</h3><div class="choices">${choices.map(c=>`<button type="button">${escapeText(c)}</button>`).join("")}</div><p class="feedback"></p><button id="nextQuiz" class="primary" type="button" hidden>Question suivante</button></div>`;
     root.querySelectorAll(".choices button").forEach(btn=>btn.addEventListener("click",()=>{if(q.answered)return;q.answered=true;const good=btn.textContent===item.answer;if(good)q.score++;root.querySelectorAll(".choices button").forEach(b=>{b.disabled=true;if(b.textContent===item.answer)b.classList.add("correct");});if(!good)btn.classList.add("wrong");root.querySelector(".feedback").textContent=good?"Correct.":`À reprendre : ${item.answer}.`;$("nextQuiz").hidden=false;}));
