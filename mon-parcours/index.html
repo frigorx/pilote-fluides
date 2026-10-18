@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mon parcours inerWeb</title>
+<style>
+  :root {
+    --navy: #1b3a63; --ink: #10233c; --muted: #637285; --cream: #f7f1e7; --paper: #fffdf8;
+    --blue: #3d7fca; --blue-soft: #84b7ec; --orange-deep: #c9451a; --logo: #e8914a;
+    --vert: #1e7e54; --vert-f: #e3f5ec; --ambre: #b06a00; --ambre-f: #fff4e0;
+    --ombre: 0 2px 10px rgba(27,58,99,.10);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--cream); color: var(--ink);
+    font: 17px/1.55 Calibri, "Segoe UI", system-ui, Arial, sans-serif; }
+  h1, h2, h3, h4 { font-family: "Trebuchet MS", Calibri, Arial, sans-serif; color: var(--navy); margin: 0; }
+  main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px; position: relative; }
+  .tete h1 { font-size: 32px; letter-spacing: -.015em; }
+  .tete p { margin: 6px 0 0; font-size: 19px; max-width: 760px; }
+  .etape { margin-top: 28px; }
+  .etape h2 { font-size: 21px; display: flex; gap: 10px; align-items: center; }
+  .num { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 999px;
+    background: var(--navy); color: #fff; font-size: 16px; flex: none; }
+  .choix { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .choix button { font: inherit; text-align: left; cursor: pointer; background: var(--paper);
+    border: 2px solid #d9dfe7; border-radius: 14px; padding: 14px 18px; box-shadow: var(--ombre);
+    color: var(--ink); min-width: 230px; flex: 1 1 230px; max-width: 340px; }
+  .choix button strong { display: block; font-family: "Trebuchet MS", Calibri, sans-serif; color: var(--navy); font-size: 19px; }
+  .choix button span { color: var(--muted); font-size: 16px; }
+  .choix button:hover { border-color: var(--blue-soft); }
+  .choix button[aria-pressed="true"] { border-color: var(--blue); background: #eef5fd; outline: 3px solid var(--blue-soft); }
+  .choix button:focus-visible, .vue button:focus-visible, a:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+  #resultat { margin-top: 32px; position: relative; }
+  .bandeau { background: var(--paper); border: 2px solid var(--navy); border-radius: 14px; padding: 16px 20px;
+    box-shadow: var(--ombre); position: relative; z-index: 1; }
+  .bandeau h2 { font-size: 24px; }
+  .bandeau .rncp { color: var(--muted); font-size: 16px; }
+  .bandeau .chiffres { margin: 8px 0 0; font-size: 18px; }
+  .vue { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .vue button { font: inherit; font-size: 16px; cursor: pointer; border-radius: 999px; padding: 6px 16px;
+    border: 2px solid var(--navy); background: var(--paper); color: var(--navy); }
+  .vue button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+  .sommaire { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; list-style: none; position: relative; z-index: 1; }
+  .sommaire button { font: inherit; font-size: 16px; cursor: pointer; padding: 5px 13px; border-radius: 999px;
+    background: var(--paper); border: 1px solid #c9d3df; color: var(--navy); }
+  .sommaire button .n { color: var(--muted); }
+  .sommaire button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .sommaire button[aria-pressed="true"] .n { color: #dbe6f3; }
+  .plus, .suivante { font: inherit; cursor: pointer; margin-top: 10px; border-radius: 999px; padding: 6px 16px;
+    border: 2px solid var(--blue); background: var(--paper); color: #2a5d96; }
+  .suivante { display: block; margin-top: 28px; background: var(--navy); border-color: var(--navy); color: #fff; text-align: left; }
+  .groupe { margin-top: 30px; position: relative; z-index: 1; scroll-margin-top: 12px; }
+  .groupe > h3 { font-size: 22px; border-bottom: 2px solid var(--navy); padding-bottom: 4px; }
+  .groupe > h3 .c { color: var(--muted); font-weight: normal; margin-right: 6px; }
+  .code { margin-top: 18px; }
+  .code h4 { font-size: 18px; }
+  .code h4 .c { display: inline-block; min-width: 54px; margin-right: 10px; color: var(--orange-deep); }
+  .code.parent h4 { font-size: 19px; border-bottom: 1px solid #c9d3df; padding-bottom: 2px; }
+  .vide { margin: 6px 0 0; color: var(--muted); font-style: italic; }
+  .cartes { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 10px; margin-top: 8px; }
+  .carte { display: block; text-decoration: none; color: var(--ink); background: rgba(255,253,248,.9);
+    border: 1px solid #c9d3df; border-left: 5px solid var(--vert); border-radius: 14px; padding: 10px 14px; box-shadow: var(--ombre); }
+  .carte:hover { border-color: var(--blue); border-left-color: var(--vert); }
+  .carte.appui { border-left: 5px dashed var(--blue-soft); }
+  .carte[hidden] { display: none; }
+  .carte .t { display: block; font-weight: bold; color: var(--navy); }
+  .carte .p { display: block; font-size: 15.5px; margin-top: 2px; }
+  .carte .m { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 14.5px; color: var(--muted); }
+  .badge { border-radius: 999px; padding: 0 9px; font-size: 14px; }
+  .badge.enseigne { background: var(--vert-f); color: var(--vert); }
+  .badge.appui { background: #eef5fd; color: #2a5d96; }
+  .badge.brouillon { background: var(--ambre-f); color: var(--ambre); border: 1px dashed var(--ambre); }
+  .note { margin-top: 36px; font-size: 15.5px; color: var(--muted); position: relative; z-index: 1; }
+  /* R9 : le filigrane vit DANS le contenu du parcours, derrière les cartes. */
+  .filigrane { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .filigrane svg { position: absolute; width: min(520px, 80%); opacity: .10; transform: translateX(-50%) rotate(-10deg); left: 50%; }
+  @media (max-width: 600px) {
+    .tete h1 { font-size: 26px; }
+    .choix button { max-width: none; }
+    .cartes { grid-template-columns: 1fr; }
+  }
+  @media print { .choix, .vue, .sommaire { display: none; } .etape { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<main>
+  <header class="tete">
+    <h1>Mon parcours inerWeb</h1>
+    <p>Choisissez votre niveau, puis votre diplôme. Vous voyez les stations inerWeb qui vous servent, rangées dans l'ordre de votre référentiel.</p>
+  </header>
+
+  <section class="etape" aria-labelledby="t-niveau">
+    <h2 id="t-niveau"><span class="num">1</span> Mon niveau</h2>
+    <div class="choix" id="niveaux"></div>
+  </section>
+
+  <section class="etape" aria-labelledby="t-diplome" id="etape-diplome" hidden>
+    <h2 id="t-diplome"><span class="num">2</span> Mon diplôme</h2>
+    <div class="choix" id="diplomes"></div>
+  </section>
+
+  <section id="resultat" aria-live="polite" hidden></section>
+</main>
+
+<script src="donnees-parcours.js?v=20261018a"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.PARCOURS, S = P.stations;
+  var NIVEAUX = {
+    3: { titre: "Niveau 3", detail: "CAP, titre professionnel" },
+    4: { titre: "Niveau 4", detail: "Bac pro, brevet professionnel" }
+  };
+  var etat = { niveau: null, diplome: null, vue: "coeur", partie: null };
+
+  function el(tag, attrs, enfants) {
+    var e = document.createElement(tag);
+    for (var k in attrs || {}) {
+      if (k === "texte") e.textContent = attrs[k];
+      else if (k === "html") e.innerHTML = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    }
+    (enfants || []).forEach(function (c) { if (c) e.appendChild(c); });
+    return e;
+  }
+  function bouton(titre, detail, presse, action) {
+    var b = el("button", { type: "button", "aria-pressed": presse ? "true" : "false" },
+      [el("strong", { texte: titre }), el("span", { texte: detail })]);
+    b.addEventListener("click", action);
+    return b;
+  }
+  function stationsDe(d, vue) {
+    var vues = {};
+    d.groupes.forEach(function (g) { g.codes.forEach(function (c) {
+      c.coeur.forEach(function (i) { vues[i] = 1; });
+      if (vue === "tout") c.appui.forEach(function (i) { vues[i] = 1; });
+    }); });
+    return Object.keys(vues).length;
+  }
+
+  /* Le logo figé (charte § 3.4, version compacte) + « by inerweb.fr », pour le filigrane R9. */
+  function logoSvg() {
+    return '<svg viewBox="0 0 400 78" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<text x="4" y="40" font-size="28">❄️</text>' +
+      '<text x="44" y="38" font-family="Trebuchet MS, sans-serif" font-weight="bold" font-size="26" fill="#1b3a63">iner</text>' +
+      '<text x="94" y="38" font-family="Segoe Script, Brush Script MT, cursive" font-size="26" fill="#1b3a63">Web</text>' +
+      '<line x1="44" y1="42" x2="160" y2="42" stroke="#e8914a" stroke-width="2"/>' +
+      '<rect x="166" y="14" width="92" height="24" rx="5" fill="#e8914a"/>' +
+      '<text x="212" y="31" text-anchor="middle" font-family="Segoe UI, sans-serif" font-weight="bold" font-size="14" fill="#fff">Parcours</text>' +
+      '<text x="44" y="66" font-family="Segoe UI, sans-serif" font-size="16" fill="#1b3a63">by inerweb.fr</text></svg>';
+  }
+
+  function dessinerChoix() {
+    var n = document.getElementById("niveaux"); n.innerHTML = "";
+    Object.keys(NIVEAUX).forEach(function (k) {
+      var nb = P.diplomes.filter(function (d) { return String(d.niveau) === k; }).length;
+      n.appendChild(bouton(NIVEAUX[k].titre, NIVEAUX[k].detail + " · " + nb + (nb > 1 ? " diplômes" : " diplôme"),
+        String(etat.niveau) === k, function () { etat.niveau = +k; etat.diplome = null; etat.partie = null; majAdresse(); rendre(); }));
+    });
+    var bloc = document.getElementById("etape-diplome"), dz = document.getElementById("diplomes");
+    bloc.hidden = !etat.niveau; dz.innerHTML = "";
+    P.diplomes.filter(function (d) { return d.niveau === etat.niveau; }).forEach(function (d) {
+      dz.appendChild(bouton(d.court, d.rncp + " · " + stationsDe(d, "coeur") + " stations qui l'enseignent",
+        etat.diplome === d.id, function () { etat.diplome = d.id; etat.partie = null; majAdresse(); rendre(); document.getElementById("resultat").scrollIntoView({ behavior: "smooth" }); }));
+    });
+  }
+
+  function carte(i, d, c, force) {
+    var s = S[i];
+    var meta = el("span", { class: "m" }, [
+      el("span", { class: "badge " + (force === "coeur" ? "enseigne" : "appui"), texte: force === "coeur" ? "enseigne" : "en appui" }),
+      el("span", { texte: s.r }),
+      s.b ? el("span", { class: "badge brouillon", texte: "brouillon, à relire" }) : null
+    ]);
+    return el("a", { class: "carte" + (force === "appui" ? " appui" : ""), href: s.u, target: "_blank", rel: "noopener" }, [
+      el("span", { class: "t", texte: s.t }),
+      c.pourquoi[i] ? el("span", { class: "p", texte: c.pourquoi[i] }) : null,
+      meta
+    ]);
+  }
+
+  function dessinerResultat() {
+    var r = document.getElementById("resultat"); r.innerHTML = "";
+    var d = P.diplomes.filter(function (x) { return x.id === etat.diplome; })[0];
+    r.hidden = !d; if (!d) return;
+    var tout = etat.vue === "tout";
+
+    var vue = el("div", { class: "vue", role: "group", "aria-label": "Ce que j'affiche" });
+    [["coeur", "Ce qui m'enseigne"], ["tout", "Tout ce qui me sert"]].forEach(function (v) {
+      var b = el("button", { type: "button", "aria-pressed": etat.vue === v[0] ? "true" : "false", texte: v[1] });
+      b.addEventListener("click", function () { etat.vue = v[0]; majAdresse(); dessinerResultat(); });
+      vue.appendChild(b);
+    });
+    r.appendChild(el("div", { class: "bandeau" }, [
+      el("h2", { texte: d.nom }),
+      el("div", { class: "rncp", texte: d.rncp + " · niveau " + d.niveau }),
+      el("p", { class: "chiffres", html: "<strong>" + stationsDe(d, "coeur") + " stations</strong> enseignent un point de votre référentiel ; <strong>" +
+        stationsDe(d, "tout") + "</strong> vous servent en tout." }),
+      vue
+    ]));
+
+    // Une partie du référentiel à la fois : la page reste une carte, pas un pavé.
+    function compte(g) {
+      var n = {}; g.codes.forEach(function (c) { c.coeur.concat(tout ? c.appui : []).forEach(function (i) { n[i] = 1; }); });
+      return Object.keys(n).length;
+    }
+    var partie = d.groupes.filter(function (g) { return g.code === etat.partie; })[0]
+      || d.groupes.filter(function (g) { return compte(g); })[0] || d.groupes[0];
+    var som = el("div", { class: "sommaire", role: "group", "aria-label": "Les parties de mon référentiel" });
+    d.groupes.forEach(function (g) {
+      var b = el("button", { type: "button", "aria-pressed": g === partie ? "true" : "false", title: g.libelle,
+        html: g.code + " <span class=\"n\">(" + compte(g) + ")</span>" });
+      b.addEventListener("click", function () { etat.partie = g.code; majAdresse(); dessinerResultat(); });
+      som.appendChild(b);
+    });
+    r.appendChild(som);
+
+    [partie].forEach(function (g) {
+      var sec = el("section", { class: "groupe", id: "g-" + g.code }, [
+        el("h3", { html: "<span class=\"c\">" + g.code + "</span>" }),
+      ]);
+      sec.firstChild.appendChild(document.createTextNode(g.libelle));
+      g.codes.forEach(function (c) {
+        var bloc = el("div", { class: "code" }, [el("h4", { html: "<span class=\"c\">" + c.code + "</span>" })]);
+        bloc.firstChild.appendChild(document.createTextNode(c.libelle));
+        var liste = c.coeur.map(function (i) { return [i, "coeur"]; })
+          .concat(tout ? c.appui.map(function (i) { return [i, "appui"]; }) : []);
+        // Un code parent (S4.1) sans lien direct n'est qu'un intertitre : ses sous-codes portent les stations.
+        var parent = g.codes.some(function (x) { return x.code.indexOf(c.code + ".") === 0; });
+        if (parent) bloc.className += " parent";
+        if (!liste.length && parent) {
+          // rien : l'intertitre suffit
+        } else if (!liste.length) {
+          bloc.appendChild(el("p", { class: "vide", texte: c.appui.length && !tout
+            ? "Aucune station ne l'enseigne ; " + (c.appui.length > 1 ? c.appui.length + " s'en servent" : "1 s'en sert") +
+              " (voir « Tout ce qui me sert »)."
+            : "Pas encore de station inerWeb : ce point se travaille en classe." }));
+        } else {
+          var grille = el("div", { class: "cartes" }), MAX = 8;
+          liste.forEach(function (x, k) {
+            var ca = carte(x[0], d, c, x[1]); if (k >= MAX) ca.hidden = true; grille.appendChild(ca);
+          });
+          bloc.appendChild(grille);
+          if (liste.length > MAX) {
+            var plus = el("button", { type: "button", class: "plus", texte: "Voir les " + (liste.length - MAX) + " autres stations" });
+            plus.addEventListener("click", function () {
+              [].forEach.call(grille.children, function (x) { x.hidden = false; }); plus.remove(); poserFiligrane(r);
+            });
+            bloc.appendChild(plus);
+          }
+        }
+        sec.appendChild(bloc);
+      });
+      var i = d.groupes.indexOf(g), suiv = d.groupes[i + 1];
+      if (suiv) {
+        var b = el("button", { type: "button", class: "suivante", texte: "Partie suivante : " + suiv.code + " " + suiv.libelle + " →" });
+        b.addEventListener("click", function () {
+          etat.partie = suiv.code; majAdresse(); dessinerResultat();
+          document.getElementById("resultat").scrollIntoView({ behavior: "smooth" });
+        });
+        sec.appendChild(b);
+      }
+      r.appendChild(sec);
+    });
+
+    r.appendChild(el("p", { class: "note", texte: "Version d’essai du " + P.date + " : chaque lien a été proposé puis relu ; il sera validé au fil des retours. Une station « brouillon » est en ligne mais pas encore relue." }));
+
+    poserFiligrane(r);
+  }
+
+  // Filigrane : un exemplaire tous les 1 400 px environ, dont un vers le centre.
+  function poserFiligrane(r) {
+    var f = r.querySelector(".filigrane");
+    if (!f) { f = el("div", { class: "filigrane", "aria-hidden": "true" }); r.insertBefore(f, r.firstChild); }
+    requestAnimationFrame(function () {
+      f.innerHTML = "";
+      var h = r.offsetHeight, n = Math.max(2, Math.min(8, Math.round(h / 1400) + 1));
+      for (var k = 0; k < n; k++) {
+        var w = el("div", { html: logoSvg() }).firstChild;
+        w.style.top = Math.round((k + .5) * h / n - 60) + "px";
+        f.appendChild(w);
+      }
+      // marque.js choisit sa place (fixe ou fin de page) au redimensionnement : la hauteur vient de changer.
+      window.dispatchEvent(new Event("resize"));
+    });
+  }
+
+  function majAdresse() {
+    var p = [];
+    if (etat.niveau) p.push("niveau=" + etat.niveau);
+    if (etat.diplome) p.push("diplome=" + etat.diplome);
+    if (etat.diplome && etat.vue !== "coeur") p.push("vue=" + etat.vue);
+    if (etat.diplome && etat.partie) p.push("partie=" + etat.partie);
+    history.replaceState(null, "", p.length ? "#" + p.join("&") : location.pathname);
+  }
+  function lireAdresse() {
+    location.hash.slice(1).split("&").forEach(function (kv) {
+      var x = kv.split("="); if (x[0] === "niveau") etat.niveau = +x[1];
+      if (x[0] === "diplome") etat.diplome = x[1]; if (x[0] === "vue" && x[1] === "tout") etat.vue = "tout";
+      if (x[0] === "partie") etat.partie = decodeURIComponent(x[1]);
+    });
+    var d = P.diplomes.filter(function (x) { return x.id === etat.diplome; })[0];
+    if (d) etat.niveau = d.niveau; else etat.diplome = null;
+    if (!NIVEAUX[etat.niveau]) etat.niveau = null;
+  }
+  function rendre() { dessinerChoix(); dessinerResultat(); }
+
+  lireAdresse(); rendre();
+})();
+</script>
+<script src="../moteur/marque.js" data-cartouche="Parcours" data-licence="cc-by-nc-nd"></script>
+<script src="../moteur/lisibilite.js"></script>
+<script defer src="../moteur/retour-accueil.js?v=3c25e82f03"></script>
+</body>
+</html>

@@ -480,6 +480,14 @@
   .vous-venez .tuiles { grid-template-columns:repeat(2,1fr); }
   @media (min-width:1000px) { .vous-venez .tuiles { grid-template-columns:repeat(4,1fr); } }
   @media (max-width:720px) { .vous-venez .tuiles { grid-template-columns:1fr; } .vous-venez .tuile p { display:block; } }
+  /* Porte « Je prépare un diplôme » (18/10/2026) : toute la largeur, sous les quatre tuiles. */
+  .vous-venez .tuile-diplome { grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px;
+    border:2px solid var(--bleu); }
+  .vous-venez .tuile-diplome .emoji { margin:0; }
+  .vous-venez .tuile-diplome .txt { flex:1 1 320px; }
+  .vous-venez .tuile-diplome h3, .vous-venez .tuile-diplome p { margin:0; }
+  .vous-venez .tuile-diplome .neuf { display:inline-block; margin-left:8px; font-size:13px; padding:1px 8px; border-radius:999px;
+    background:#fff4e0; color:#b06a00; border:1px dashed #b06a00; vertical-align:middle; }
 
   /* ---- LE HALL (17/09/2026) : phrase, recherche, carte animée, chiffres, vignettes ---- */
   .hall { display:grid; grid-template-columns:1.05fr .95fr; gap:36px; align-items:center; margin:28px 0 0; }
@@ -766,6 +774,7 @@
       <div class="boutons">
         <a class="bouton creux" href="#reseaux">Entrer dans un réseau ▾</a>
         <a class="bouton creux" href="plan.html">Voir le grand plan</a>
+        <a class="bouton" href="mon-parcours/">🧭 Mon parcours par diplôme</a>
       </div>
     </div>
     <div class="hall-droite">
@@ -993,6 +1002,14 @@
           <li><a href="f/mise-en-service/">Mise en service</a></li>
           <li><a href="rezotools/">Outils</a></li>
         </ul>
+      </div>
+      <div class="tuile tuile-diplome">
+        <div class="emoji">🧭</div>
+        <div class="txt">
+          <h3>Je prépare un diplôme <span class="neuf">nouveau, en essai</span></h3>
+          <p>CAP, bac pro, titre professionnel : je choisis mon niveau et mon diplôme, je vois les stations qui me servent, rangées comme mon référentiel.</p>
+        </div>
+        <div><a class="bouton" href="mon-parcours/">Choisir mon diplôme</a></div>
       </div>
     </div>
   </section>
@@ -1262,8 +1279,14 @@
        ses trois dernières actualités ICI : rien à recopier ailleurs.
        =================================================================== -->
   <details class="nouveautes" id="nouveautes">
-    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 12 octobre 2026</span></summary>
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 18 octobre 2026</span></summary>
     <div class="nv-corps">
+
+      <h3>18 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvel outil</span><a href="mon-parcours/">🧭 Mon parcours par diplôme</a>
+          <span class="d">— on choisit son niveau puis son diplôme, et le site range les stations qui servent ce diplôme dans l’ordre de son référentiel, partie par partie : ce qui enseigne chaque point, et sur demande ce qui s’en sert. Trois diplômes pour l’essai : CAP IFCA, Bac Pro MFER (référentiel 2028) et titre professionnel Monteur dépanneur frigoriste. 412 stations rattachées ; d’autres diplômes suivront.</span></li>
+      </ul>
 
       <h3>12 octobre 2026</h3>
       <ul>
