@@ -1,0 +1,67 @@
+{
+  "slug": "incendie-permis-de-feu",
+  "branche": "Incendie",
+  "titre": "Mission : Un permis de feu pour braser le filtre",
+  "client": "Le gérant d'un restaurant dont la chambre froide perd de la puissance : le filtre déshydrateur de la tuyauterie de cuivre doit être remplacé.",
+  "situation": "Clim'Études Sud remplace le filtre déshydrateur de la chambre froide d'un restaurant. Le technicien doit braser un raccord de cuivre dans le local technique, derrière la cuisine, mardi de 8 h à 11 h. La cuisine reste en service. À 3 m du raccord, une pile de cartons ; au plafond, un détecteur de fumée ; Marc, cuisinier formé à l'extincteur, peut surveiller. Le circuit est déjà vidé de son fluide. Aucun produit inflammable n'est stocké dans le local, il n'y a aucune zone ATEX, et le technicien a son téléphone portable chargé. Votre responsable vous demande de préparer le permis de feu avant la visite.",
+  "piece_a_produire": "Sur une feuille A4, recopiez les sept blocs de l'écran 4 (Qui, Où et quand, Quoi, Risques du lieu, Mesures, Surveillance, Alerte) et remplissez-les à la main d'après la situation ci-dessus ; vous pouvez vous aider du simulateur (écran 7). Sous chaque mesure avant brasage (bloc Mesures), écrivez en une phrase pourquoi elle est nécessaire : les raisons sont aux écrans 2 (les quatre chemins du feu) et 5 (les mesures). Faites signer la feuille par les trois signataires : le gérant, le chef d'équipe, le technicien qui brase.",
+  "questions": [
+    {
+      "q": "Qu'est-ce qu'un travail par point chaud, et pourquoi le brasage en est-il un ?",
+      "ecran": 2,
+      "reponse": "Un travail qui produit des étincelles ou des surfaces chaudes (brasage, soudage, meulage, découpage). Le brasage chauffe le métal à la flamme : il apporte la source d'énergie du triangle du feu. Quatre chemins pour le feu : étincelles, conduction, gaz chauds, contact (INRS ED 6030)."
+    },
+    {
+      "q": "Qui établit le permis de feu et qui le valide côté entreprise utilisatrice et côté entreprise intervenante ?",
+      "ecran": 3,
+      "reponse": "Il est établi par l'employeur ou son représentant. Il est validé par les acteurs de l'entreprise utilisatrice (employeur ou représentant, superviseur des travaux, chargé de sécurité) et par le responsable d'intervention de l'entreprise intervenante ; le technicien qui brase signe aussi (modèle du CDG 45) : trois signatures dans un petit restaurant."
+    },
+    {
+      "q": "Citez trois mesures « avant », une mesure « pendant » et la durée de surveillance « après ».",
+      "ecran": 5,
+      "reponse": "Avant : éloigner les combustibles à 10 m au moins ou les couvrir de bâches ignifugées ; extincteurs à portée (un à eau de 9 litres, un adapté au local) ; éviter le déclenchement de la détection sur la zone ; informer les voisins. Pendant : un surveillant formé, qui ne fait que surveiller. Après : surveiller 2 heures au moins."
+    },
+    {
+      "q": "À mi-chantier, un autre technicien prend le chalumeau. Que faire du permis ?",
+      "ecran": 4,
+      "reponse": "Le revoir : un permis doit être réévalué dès qu'un élément change (lieu, environnement, procédé, nature des travaux, intervenants). Le modèle du CDG 45 cite le changement de la personne qui brase, du lieu et de la méthode."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Ce permis de feu contient cinq erreurs. Trouvez-les et corrigez-les : « Lieu : toute la cuisine. Surveillant pendant les travaux : le technicien qui brase lui-même. Surveillance après les travaux : 30 minutes. Signatures : le gérant seul. Bouteilles de gaz : contre le mur, à côté du raccord. »",
+    "items": [
+      "Lieu : toute la cuisine",
+      "Surveillant : le technicien qui brase lui-même",
+      "Surveillance après travaux : 30 minutes",
+      "Signatures : le gérant seul",
+      "Bouteilles de gaz : contre le mur, à côté du raccord"
+    ],
+    "corrige": "1. Le lieu doit être précis : le local technique. 2. Le technicien qui brase ne peut pas surveiller : un surveillant formé, dont c'est la seule tâche. 3. La surveillance dure 2 heures au moins après la fin des travaux. 4. Il faut au moins le responsable d'intervention de l'entreprise intervenante en plus de l'employeur (et le technicien qui brase, sur le modèle du CDG 45 : trois signatures dans un petit restaurant). 5. Les bouteilles se placent le plus loin possible de la zone de soudure."
+  },
+  "badge": "Pas de permis, pas de chalumeau",
+  "duree_min": 30,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "10.01"
+    ],
+    "justification": "Hors REAC TECVC : culture professionnelle du technicien et du chargé d'affaires (préparer un travail à risque avant de l'exécuter). Attestation d'aptitude 2025 : 10.01, soudage, brasage fort et brasage tendre des joints étanches (le geste que le permis encadre).",
+    "cap_ifca": [
+      {
+        "code": "S1.2",
+        "libelle": "Pièces et autorisations administratives"
+      },
+      {
+        "code": "C2.3",
+        "libelle": "Préparer les conditions d'intervention sur site"
+      }
+    ],
+    "bac_mfer_2028": [
+      {
+        "code": "S1.4",
+        "libelle": "les procédures administratives"
+      }
+    ]
+  }
+}

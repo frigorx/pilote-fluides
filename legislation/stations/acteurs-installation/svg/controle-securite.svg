@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-ac3" aria-describedby="d-ac3" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-ac3">Le bureau de contrôle et le coordonnateur SPS</title>
+  <desc id="d-ac3">En haut, le maître d'ouvrage, qui choisit le bureau de contrôle et désigne le coordonnateur SPS : deux flèches partent vers les cartes du dessous. À gauche, le bureau de contrôle, qui donne un avis technique sur la solidité et la sécurité des personnes ; sous lui, un cadre tireté rouge rappelle qu'il ne conçoit pas et ne construit pas. À droite, le coordonnateur SPS, qui organise la sécurité commune. Sous lui, la carte de votre entreprise : une flèche descend avec le plan général de coordination (PGC), une flèche remonte avec le PPSPS, le plan particulier de sécurité de l'entreprise.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomc{ font-weight:bold; font-size:18px; fill:#0f766e; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <defs><marker id="fl-ac3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/></marker></defs>
+  <rect width="800" height="500" fill="#fffdf8"/>
+<!-- 1 : le maître d'ouvrage choisit et désigne -->
+<rect x="235" y="18" width="330" height="80" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="275" cy="58" r="28" fill="#fff" stroke="#5a6b7d" stroke-width="2"/><g transform="translate(275 58) scale(0.85)"><rect x="-15" y="-10" width="30" height="28" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M-20,-10 L0,-24 L20,-10 z" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><rect x="-5" y="4" width="10" height="14" fill="#fff" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></g>
+    <text class="nom" x="315" y="52.5" text-anchor="start"><tspan x="315" dy="0">Maître d'ouvrage</tspan></text>
+    <text class="txt" x="315" y="73.5" text-anchor="start"><tspan x="315" dy="0">choisit et désigne</tspan></text><path d="M330,100 L215,146" fill="none" stroke="#1b3a63" stroke-width="3" marker-end="url(#fl-ac3)"/><path d="M470,100 L585,146" fill="none" stroke="#1b3a63" stroke-width="3" marker-end="url(#fl-ac3)"/><text class="mut" x="238" y="126" text-anchor="end"><tspan x="238" dy="0">choisit</tspan></text><text class="mut" x="566" y="126" text-anchor="start"><tspan x="566" dy="0">désigne</tspan></text>
+<!-- 2 : le bureau de contrôle -->
+<rect x="30" y="150" width="355" height="130" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="70" cy="215" r="28" fill="#fff" stroke="#5a6b7d" stroke-width="2"/><g transform="translate(70 215) scale(0.85)"><circle cx="-4" cy="-4" r="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M5,5 L17,17" stroke="#1b3a63" stroke-width="5" stroke-linecap="round"/></g>
+    <text class="nom" x="110" y="188.5" text-anchor="start"><tspan x="110" dy="0">Bureau de contrôle</tspan></text>
+    <text class="txt" x="110" y="209.5" text-anchor="start"><tspan x="110" dy="0">donne un avis technique,</tspan><tspan x="110" dy="21">surtout sur la solidité et</tspan><tspan x="110" dy="21">la sécurité des personnes</tspan></text>
+<!-- 3 : le coordonnateur SPS -->
+<rect x="415" y="150" width="355" height="130" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <circle cx="455" cy="215" r="28" fill="#fff" stroke="#5a6b7d" stroke-width="2"/><g transform="translate(455 215) scale(0.85)"><circle cx="0" cy="-8" r="7" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M-10,-11 a10,10 0 0 1 20,0 z" fill="#e8914a" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><rect x="-13" y="-12" width="26" height="3" rx="1.5" fill="#e8914a" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M-15,19 v-3 a15,12 0 0 1 30,0 v3 z" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></g>
+    <text class="nom" x="495" y="188.5" text-anchor="start"><tspan x="495" dy="0">Coordonnateur SPS</tspan></text>
+    <text class="txt" x="495" y="209.5" text-anchor="start"><tspan x="495" dy="0">organise la sécurité</tspan><tspan x="495" dy="21">commune quand plusieurs</tspan><tspan x="495" dy="21">entreprises travaillent</tspan></text>
+<!-- 4 : la limite du bureau de contrôle -->
+<rect x="30" y="330" width="355" height="130" rx="12" fill="#fdf1ee" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="8 6"/><g transform="translate(70 395) scale(0.9)"><circle cx="0" cy="0" r="16" fill="#fbe7e4" stroke="#c0392b" stroke-width="2.5"/><path d="M-7,-7 l14,14 M7,-7 l-14,14" fill="none" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/></g><text class="txt" x="105" y="380" text-anchor="start"><tspan x="105" dy="0">Il ne conçoit pas,</tspan><tspan x="105" dy="22">il ne construit pas :</tspan><tspan x="105" dy="22">il ne peut pas être</tspan><tspan x="105" dy="22">juge et partie.</tspan></text>
+<!-- 5 : les plans qui circulent -->
+<rect x="415" y="330" width="355" height="130" rx="12" fill="#fdf1e6" stroke="#e8914a" stroke-width="3"/>
+    <circle cx="455" cy="395" r="28" fill="#fff" stroke="#5a6b7d" stroke-width="2"/><g transform="translate(455 395) scale(0.85)"><path d="M-13,-19 h17 l10,10 v28 h-27 z" fill="#eef3f9" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M4,-19 v10 h10" fill="none" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M-7,0 h14 M-7,7 h14 M-7,14 h8" stroke="#1b3a63" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></g>
+    <text class="nom" x="495" y="379" text-anchor="start"><tspan x="495" dy="0">Votre entreprise</tspan></text>
+    <text class="txt" x="495" y="400" text-anchor="start"><tspan x="495" dy="0">applique le PGC, remet</tspan><tspan x="495" dy="21">son PPSPS au coordonnateur</tspan></text><path d="M520,282 V326" fill="none" stroke="#1b3a63" stroke-width="3" marker-end="url(#fl-ac3)"/><path d="M664,326 V284" fill="none" stroke="#e8914a" stroke-width="3" marker-end="url(#fl-ac3)"/><text class="nom" x="508" y="310" text-anchor="end"><tspan x="508" dy="0">PGC</tspan></text><text class="nomo" x="676" y="310" text-anchor="start"><tspan x="676" dy="0">PPSPS</tspan></text>
+</svg>

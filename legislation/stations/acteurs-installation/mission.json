@@ -1,0 +1,84 @@
+{
+  "slug": "acteurs-installation",
+  "branche": "Fluidique & thermique",
+  "titre": "Mission : Qui fait quoi autour de la chambre froide ?",
+  "client": "Le gérant d'un restaurant qui fait installer une chambre froide par Clim'Études Sud et ne sait pas qui est responsable de quoi.",
+  "situation": "Un restaurant fait installer une chambre froide. Trois entreprises interviennent : un maçon, un électricien et Clim'Études Sud. Un architecte dirige les travaux et un coordonnateur SPS est désigné. Voici les personnes : le gérant du restaurant, Karim, est le client et le futur détenteur de la chambre froide ; votre chef d'équipe chez Clim'Études Sud est Sophie ; le coordonnateur SPS, désigné par le gérant, est Paul. Le gérant demande : « Qui est responsable de quoi, et à qui parlez-vous, vous ? » Votre responsable vous demande de préparer, avant le premier jour, la liste des acteurs du chantier et de la future vie de la machine.",
+  "piece_a_produire": "Un tableau d'une page à trois colonnes — « Son rôle », « Sa responsabilité », « Vous lui devez » (les mêmes étiquettes que les cartes des écrans 2 à 6) — avec onze lignes, une par acteur ; client et utilisateur comptent pour une seule ligne. Dans la dernière colonne, écrivez le verbe qui convient : informer, faire signer ou transmettre (pour le fabricant : transmettre les défauts constatés ; pour la ligne du technicien : les trois verbes). Sous le tableau, écrivez les trois noms donnés dans la situation : le détenteur (Karim), votre chef d'équipe (Sophie), le coordonnateur SPS (Paul).",
+  "questions": [
+    {
+      "q": "Quelle est la différence entre le maître d'ouvrage et le maître d'œuvre ?",
+      "ecran": 2,
+      "reponse": "Le maître d'ouvrage est celui pour qui on installe : il commande, paie et accepte les travaux. Le maître d'œuvre conçoit le projet, dirige et contrôle les travaux. Comme au cinéma : le producteur paie, le réalisateur dirige."
+    },
+    {
+      "q": "Que font le bureau de contrôle et le coordonnateur SPS, et que remet votre entreprise au coordonnateur ?",
+      "ecran": 3,
+      "reponse": "Le bureau de contrôle, choisi par le maître d'ouvrage, donne un avis technique (solidité, sécurité des personnes). Le coordonnateur SPS organise la sécurité commune quand plusieurs entreprises interviennent et écrit le plan général de coordination. Votre entreprise lui remet son propre plan, le PPSPS."
+    },
+    {
+      "q": "Qu'est-ce qu'un détenteur, et pourquoi ne faut-il pas le confondre avec l'opérateur ?",
+      "ecran": 5,
+      "reponse": "Le détenteur est celui qui exerce un pouvoir réel sur le fonctionnement technique de la machine, propriétaire ou non (R. 543-76). L'opérateur est l'entreprise qui intervient dessus à titre professionnel. Le détenteur signe la fiche d'intervention et garde l'original ; l'opérateur la remplit."
+    },
+    {
+      "q": "Vous trouvez une fuite sur la chambre froide : à qui le dites-vous, et où la notez-vous ?",
+      "ecran": 7,
+      "reponse": "Vous prévenez le détenteur (informer), vous notez la fuite sur la fiche d'intervention, vous la lui faites signer si elle l'exige et vous lui remettez l'original (faire signer, transmettre). Le détenteur doit faire réparer la fuite (R. 543-79)."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Reliez chaque acteur à ce qu'il fait : maître d'ouvrage · maître d'œuvre · bureau de contrôle · coordonnateur SPS · détenteur · installation de traitement.",
+    "items": [
+      "Maître d'ouvrage",
+      "Maître d'œuvre",
+      "Bureau de contrôle",
+      "Coordonnateur SPS",
+      "Détenteur",
+      "Installation de traitement",
+      "conçoit et dirige les travaux",
+      "donne un avis technique",
+      "répond de la machine",
+      "commande, paie et accepte",
+      "organise la sécurité commune",
+      "régénère ou détruit le fluide"
+    ],
+    "corrige": "Maître d'ouvrage : commande, paie et accepte. Maître d'œuvre : conçoit et dirige les travaux. Bureau de contrôle : donne un avis technique. Coordonnateur SPS : organise la sécurité commune. Détenteur : répond de la machine. Installation de traitement : régénère ou détruit le fluide."
+  },
+  "badge": "Les onze acteurs",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "1.00"
+    ],
+    "justification": "Hors REAC TECVC : culture professionnelle du technicien et du chargé d'affaires (savoir qui fait quoi et à qui rendre compte). Attestation d'aptitude 2025 : code 1.00, la législation applicable (gaz à effet de serre fluorés).",
+    "cap_ifca": [
+      {
+        "code": "S1.1",
+        "libelle": "Les intervenants"
+      },
+      {
+        "code": "C1.2",
+        "libelle": "Communiquer avec les différents acteurs"
+      },
+      {
+        "code": "T4",
+        "libelle": "Communiquer avec les différents intervenants"
+      }
+    ],
+    "bac_mfer_2028": [
+      {
+        "code": "S1.2",
+        "libelle": "les intervenants"
+      }
+    ],
+    "tne": [
+      {
+        "code": "CC12",
+        "libelle": "Ordonner les données nécessaires en tenant compte des interactions avec les autres intervenants"
+      }
+    ]
+  }
+}

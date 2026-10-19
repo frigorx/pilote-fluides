@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le permis de feu — inerWeb Législation</title>
+<meta name="description" content="Station du réseau Législation pour le CAP IFCA et le Bac Pro MFER, écran par écran et commentée à voix haute : pourquoi un permis de feu, qui le délivre et le signe, ce qu'il contient, les mesures avant, pendant et après un brasage — avec un simulateur pour remplir un permis de feu en chambre froide.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/incendie-permis-de-feu/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Incendie.
+     Public : CAP IFCA et Bac Pro MFER (le réseau est né au niveau BTS : texte
+     écrit plus simple, phrases courtes, mots techniques définis là où ils servent).
+     L'écran 7 porte un SIMULATEUR de remplissage d'un permis de feu (formulaire
+     contrôlé par simulateur.js ; mêmes données que le FOND, tableau « Le simulateur »).
+     Source du modèle : INRS ED 6030 (2018) et CDG 45, « Modèle de permis de feu »,
+     novembre 2020 (licence ouverte, mention de la source).
+     FOND et sources : FOND.md (à valider par F. Henninot avant mise en ligne).
+     Fabriquée le 19/10/2026 sur le gabarit « aptitude-capacite » (même structure,
+     mêmes identifiants du professeur vocal : #listen #next #prev #start
+     #stop-voice, .slide.active). Statut : Prototype, en attente de la relecture
+     de F. Henninot (data-prototype posé). Voix : pas encore de MP3, la voix du
+     navigateur sert de filet.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../scenes/scenes.css?v=20261015-campagne4">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerweb.fr">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Incendie · CAP IFCA et Bac Pro MFER</p>
+  <h1>Le permis de feu</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene" data-scene-branche="incendie" data-station="incendie-permis-de-feu"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez pourquoi on remplit un <strong>permis de feu</strong> avant de braser, qui le délivre, qui le signe, ce qu'il contient (zone, durée, risques, mesures avant, pendant et après, surveillance après les travaux) — et vous avez <strong>rempli vous-même un permis</strong> pour un brasage en chambre froide.</p>
+    <p class="referentiel" style="margin-top:.8em"><strong>Origine du réseau :</strong> TP TECVC, REAC TP-00133 — hors REAC (culture professionnelle du technicien et du chargé d'affaires). <strong>Attestation d'aptitude 2025 :</strong> code 10.01 (soudage, brasage fort et brasage tendre des joints étanches).</p>
+    <div class="codes-formation">
+      <p><strong>Les codes de votre formation</strong></p>
+      <ul>
+        <li><strong>CAP IFCA</strong> : savoir <strong>S1.2</strong> « Pièces et autorisations administratives » · compétence <strong>C2.3</strong> « Préparer les conditions d'intervention sur site »</li>
+        <li><strong>Bac Pro MFER (2028)</strong> : savoir <strong>S1.4</strong> « les procédures administratives »</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Pour qu'un feu parte, il faut trois choses ensemble. Sur le dessin, le triangle se trace côté par côté : le combustible, ce qui brûle ; le comburant, l'oxygène de l'air ; et la source d'énergie, une flamme ou une étincelle. Quand vous brasez, c'est vous qui apportez la troisième. À droite : l'INRS écrit que plus de trente pour cent des incendies en entreprise viennent de travaux par points chauds. Il n'y a pas de petits travaux. Retirez un seul côté du triangle, et le feu ne part pas. Le permis de feu sert à cela.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Pourquoi un permis de feu ?</h2>
+    <p>Pour qu'un feu parte, il faut trois choses en même temps : un <strong>combustible</strong> (ce qui brûle), un <strong>comburant</strong> (l'oxygène de l'air) et une <strong>source d'énergie</strong> (une flamme, une étincelle). On l'appelle le <strong>triangle du feu</strong>.</p>
+    <p>Quand vous brasez, vous apportez la troisième. C'est un <strong>travail par point chaud</strong> : un travail qui produit des étincelles ou des surfaces chaudes.</p>
+    <p>L'<strong>INRS</strong> (l'institut national de recherche et de sécurité, qui conseille les entreprises sur la prévention) écrit que <strong>plus de 30 %</strong> des incendies en entreprise viennent de travaux par points chauds, et qu'il n'y a pas de « petits travaux ».</p>
+    <div class="encadre encadre--cle">
+      <span class="mot">À retenir</span>
+      <p>Le <strong>permis de feu</strong> est le papier qui prépare ce travail <strong>avant</strong>, le contrôle <strong>pendant</strong> et le surveille <strong>après</strong>.</p>
+    </div>
+    <figure>
+      <img src="svg/triangle-du-feu.svg" alt="Un triangle dont les trois côtés se tracent l'un après l'autre : combustible, comburant (l'oxygène de l'air) et source d'énergie (flamme ou étincelle, avec un chalumeau), puis une flamme au centre. À droite : 30 % des incendies en entreprise viennent de travaux par points chauds (INRS) ; retirez un seul côté, le feu ne part pas ; il n'y a pas de petits travaux. Bande rouge : le permis de feu prépare le travail, le contrôle, puis le surveille.">
+      <figcaption>Trois côtés réunis : le feu part. Un seul retiré : il ne part pas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Quels travaux, et comment le feu se propage ? Un travail par point chaud, c'est tout travail qui produit des étincelles ou des surfaces chaudes : brasage, soudage, meulage, découpage. Regardez la scène : le chalumeau chauffe un tube de cuivre qui traverse un mur. Quatre chemins s'ouvrent pour le feu, numérotés sur le dessin. Un : les étincelles, des gouttes de métal à mille ou deux mille degrés, projetées à plusieurs mètres. Deux : la conduction, la chaleur qui suit le tube jusque dans la pièce d'à côté. Trois : les gaz chauds, qui montent. Quatre : le contact avec ce qui est trop près de la flamme.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Quels travaux, et par où le feu passe-t-il ?</h2>
+    <p>Sont concernés : le <strong>brasage</strong> et le <strong>soudage</strong>, mais aussi le <strong>découpage</strong>, le <strong>meulage</strong>, le <strong>tronçonnage</strong>, le chalumeau, le laser. Les machines portatives tournantes (disqueuse, tronçonneuse) causent autant d'incendies que les chalumeaux (INRS).</p>
+    <p>Une exception : sur un <strong>poste de travail permanent</strong> (un poste de soudure fixe), le permis n'est pas nécessaire. Le risque est déjà dans l'évaluation des risques du poste (INRS).</p>
+    <p>Le feu a <strong>quatre chemins</strong> :</p>
+    <ol>
+      <li><strong>Les étincelles et les gouttes de métal</strong> : entre 1 000 et 2 000 °C, elles sont projetées à plusieurs mètres et se logent dans les fentes, les trous, le faux-plafond.</li>
+      <li><strong>La conduction</strong> : la chaleur voyage le long d'un tube, d'une gaine, d'une paroi, et enflamme ce qui touche de l'autre côté, parfois dans la pièce voisine.</li>
+      <li><strong>Les gaz chauds</strong> : ils montent et gagnent les niveaux du dessus.</li>
+      <li><strong>Le contact ou le rayonnement</strong> : ce qui est près de la flamme et mal protégé s'enflamme.</li>
+    </ol>
+    <figure>
+      <img src="svg/quatre-chemins.svg" alt="Une scène : un chalumeau chauffe un tube de cuivre qui traverse un mur entre le local de travail et une pièce voisine. Quatre repères : un, les étincelles (gouttes de métal à 1 000 à 2 000 degrés, projetées à plusieurs mètres) vers des cartons au sol ; deux, la conduction, la chaleur qui suit le tube jusque dans la pièce voisine ; trois, les gaz chauds qui montent ; quatre, le contact avec ce qui est près de la flamme.">
+      <figcaption>Quatre chemins : étincelles, conduction, gaz chauds, contact.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Qui délivre le permis, et qui le signe ? À gauche, l'entreprise utilisatrice : celle chez qui on travaille, ici le restaurant. À droite, l'entreprise intervenante : celle qui fait les travaux, la vôtre. Le permis est établi par l'employeur ou son représentant. Regardez les cinq coches : les trois personnes de l'entreprise utilisatrice, le responsable d'intervention, et le technicien qui brase. Dans un petit restaurant, le gérant tient les trois premiers rôles : cela fait trois signatures. En bas, le surveillant de sécurité, formé à la première intervention : il surveille, il ne brase pas.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Qui délivre le permis, qui le signe ?</h2>
+    <p>Le permis est <strong>établi par l'employeur ou son représentant</strong> (INRS, ED 6030). Deux mots à connaître : l'<strong>entreprise utilisatrice</strong> (EU) est celle chez qui on travaille ; l'<strong>entreprise intervenante</strong> (EI) est celle qui fait les travaux : la vôtre.</p>
+    <div class="papiers">
+      <div class="papier"><h3>Côté entreprise utilisatrice</h3><p class="sert"><strong>L'employeur ou son représentant</strong> établit le permis. <strong>Le superviseur des travaux</strong> assure le bon déroulement technique. <strong>Le chargé de sécurité</strong> met en place les mesures de sécurité.</p></div>
+      <div class="papier"><h3>Côté entreprise intervenante</h3><p class="sert"><strong>Le responsable d'intervention</strong> assure le bon déroulement technique et la sécurité de l'intervention. <strong>Le technicien qui brase</strong> réalise le travail : il doit connaître les risques et les mesures avant de commencer.</p></div>
+      <div class="papier"><h3>Le surveillant de sécurité</h3><p class="sert">Une personne <strong>formée à la première intervention</strong> contre l'incendie, avec ses moyens. Elle surveille et ne fait pas le travail. Elle peut venir de l'une ou l'autre entreprise.</p></div>
+    </div>
+    <p>Le permis est <strong>validé</strong> par les acteurs de l'entreprise utilisatrice et par le responsable d'intervention. Le technicien qui brase le <strong>signe aussi</strong> (modèle du CDG 45, le centre de gestion du Loiret). Chaque signataire garde une copie. Dans une petite entreprise, une même personne tient plusieurs rôles : au restaurant, le gérant tient les trois rôles de l'entreprise utilisatrice. Cela fait <strong>trois signatures</strong> : le gérant, le chef d'équipe, le technicien qui brase.</p>
+    <div class="encadre encadre--piege">
+      <span class="mot">Un seul sens pour « opérateur »</span>
+      <p>L'INRS appelle « opérateur » la personne qui brase. Dans le Code de l'environnement, et dans les stations « Qui intervient sur une installation frigorifique ? », « Traçabilité » et « Les papiers du chantier », l'<strong>opérateur</strong> est <strong>l'entreprise attestée</strong> qui intervient. Ici, pour ne pas confondre, on dit <strong>« le technicien qui brase »</strong>.</p>
+    </div>
+    <figure>
+      <img src="svg/acteurs-du-permis.svg" alt="À gauche, l'entreprise utilisatrice (celle qui accueille les travaux), avec trois personnes cochées : l'employeur ou son représentant, qui établit le permis ; le superviseur des travaux ; le chargé de sécurité. À droite, l'entreprise intervenante (celle qui fait les travaux), avec deux personnes cochées : le responsable d'intervention, qui valide, et le technicien qui brase, qui connaît les mesures et signe aussi. En bas, le surveillant de sécurité, formé à la première intervention contre l'incendie.">
+      <figcaption>Cinq coches : trois signatures dans un petit restaurant.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Que contient un permis de feu ? La feuille se lit de haut en bas, en sept blocs. Qui signe. Où et quand : le lieu exact, la date, l'heure de début et de fin, car un permis a une durée limitée. Quoi : les travaux et le matériel. Les risques du lieu : ce qui brûle à côté, les produits inflammables, l'activité du voisinage, c'est-à-dire les personnes qui travaillent à côté. Les mesures. La surveillance. Et l'alerte : un téléphone, et le numéro des pompiers, le dix-huit, ou le cent douze. Si le lieu, la personne qui brase, la méthode ou les travaux changent, on revoit le permis.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Ce que contient un permis de feu</h2>
+    <ol>
+      <li><strong>Qui</strong> : les intervenants, leurs coordonnées, leurs signatures.</li>
+      <li><strong>Où et quand</strong> : le lieu exact, les dates et heures, la <strong>durée de validité</strong>.</li>
+      <li><strong>Quoi</strong> : la nature des travaux, le type de travaux par points chauds, le matériel, le mode opératoire.</li>
+      <li><strong>Risques du lieu</strong> : matériaux combustibles à proximité, produits inflammables, activité du voisinage (des personnes qui travaillent à côté : par exemple une cuisine en service), zone <strong>ATEX</strong> (atmosphère explosive).</li>
+      <li><strong>Mesures</strong> : avant, pendant, après (écran suivant).</li>
+      <li><strong>Surveillance</strong> : pendant les travaux, et après (qui, de quelle heure à quelle heure).</li>
+      <li><strong>Alerte</strong> : moyens d'alerte (un téléphone chargé sur place), extincteurs à proximité, numéros à appeler : le <strong>18</strong> pour les sapeurs-pompiers, le <strong>112</strong> (numéro d'urgence européen).</li>
+    </ol>
+    <div class="encadre encadre--piege">
+      <span class="mot">Un permis ne dure pas</span>
+      <p>Sa durée est <strong>limitée</strong> et écrite dessus. Il doit être revu dès qu'un élément change : lieu, environnement, méthode, nature des travaux, intervenants (INRS) — par exemple un autre technicien qui reprend le chalumeau. Sur plusieurs jours, on vérifie sa validité chaque jour. Avec des équipes qui se relaient, on le valide à chaque changement de poste.</p>
+    </div>
+    <figure>
+      <img src="svg/feuille-du-permis.svg" alt="Une feuille « permis de feu » avec sept lignes numérotées : qui (les intervenants et leurs signatures) ; où et quand (le lieu exact, les dates, les heures, la durée) ; quoi (les travaux, le matériel, le mode opératoire) ; risques du lieu (ce qui brûle à côté, produits inflammables, ATEX) ; mesures (avant, pendant, après) ; surveillance (pendant et après) ; alerte (moyens d'alerte, extincteurs, numéros d'urgence).">
+      <figcaption>Sept blocs, de haut en bas : ce sont ceux du simulateur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Les mesures se rangent en trois temps. Avant : on éloigne ou on protège ce qui brûle, on place des extincteurs à portée, on éloigne les bouteilles de gaz, on évite que le détecteur d'incendie se déclenche, et on prévoit l'alerte : un téléphone, le dix-huit. Pendant : un surveillant, formé à l'incendie, regarde pendant que vous brasez, et vous portez vos protections. Après : on inspecte le lieu, on remet la détection en service, et on surveille deux heures au moins. Regardez la barre qui grandit : un feu peut couver, puis se déclarer longtemps après.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Les mesures : avant, pendant, après</h2>
+    <div class="papiers">
+      <div class="papier">
+        <h3>Avant</h3>
+        <ul>
+          <li>Éloigner les matières combustibles (chiffons, cartons, plastique, bois) à <strong>10 m au moins</strong> du lieu de travail. Ce qu'on ne peut pas déplacer : le couvrir de <strong>bâches ignifugées</strong> (des bâches qui ne brûlent pas) (INRS). <em>Pourquoi : les étincelles vont jusqu'à plusieurs mètres.</em></li>
+          <li>Mettre à portée de main des moyens d'extinction et d'alarme : au minimum <strong>un extincteur à eau de 9 litres</strong> et <strong>un extincteur adapté aux risques du local</strong> (INRS). <em>Pourquoi : éteindre un début de feu tout de suite.</em></li>
+          <li>Placer les <strong>bouteilles de gaz</strong> le plus loin possible de la zone de brasage (INRS). <em>Pourquoi : une bouteille qui chauffe peut exploser (fiche chalumeau du centre de gestion de la Manche, le « CDG 50 »).</em></li>
+          <li>Si le local a une détection ou une extinction automatique : éviter son déclenchement inutile en la limitant à la zone concernée, par exemple en isolant la <strong>boucle de détection</strong> de cette zone (la ligne de détecteurs reliée à la centrale d'alarme) (CDG 45). Si on la met hors service, prévoir des mesures au moins équivalentes, avec l'accord de l'assureur (INRS). <em>Pourquoi : les fumées du brasage la déclencheraient pour rien.</em></li>
+          <li>Prévoir l'<strong>alerte</strong> : un téléphone chargé sur place et le numéro des sapeurs-pompiers, le <strong>18</strong> (ou le <strong>112</strong>, numéro d'urgence européen). <em>Pourquoi : plus les secours sont prévenus tôt, mieux le feu est maîtrisé.</em></li>
+          <li>Informer les personnes de la zone des mesures prises, et baliser. <em>Pourquoi : pour que personne n'entre dans la zone ni n'y ajoute de matière qui brûle (INRS).</em></li>
+        </ul>
+      </div>
+      <div class="papier">
+        <h3>Pendant</h3>
+        <ul>
+          <li>Un <strong>surveillant de sécurité</strong>, formé à la première intervention contre l'incendie et doté de ses moyens. Le technicien qui brase ne peut pas surveiller : il est absorbé par son travail, et ses protections limitent sa vue (INRS).</li>
+          <li>Porter les équipements de protection individuelle (lunettes, gants, tablier).</li>
+          <li>Surveiller les projections incandescentes et leurs points de chute.</li>
+          <li>Poser les objets chauds sur des supports qui résistent à la chaleur.</li>
+        </ul>
+      </div>
+      <div class="papier">
+        <h3>Après</h3>
+        <ul>
+          <li>Inspecter le lieu, les locaux voisins et les abords.</li>
+          <li>S'assurer que la détection ou l'extinction automatique fonctionne de nouveau.</li>
+          <li>Surveiller <strong>2 heures au moins</strong> après l'arrêt des travaux. Si c'est impossible, arrêter les travaux 2 heures au moins avant la fermeture de l'entreprise (INRS, CDG 45).</li>
+          <li>Archiver le permis : l'INRS conseille 5 ans.</li>
+        </ul>
+      </div>
+    </div>
+    <figure>
+      <img src="svg/avant-pendant-apres.svg" alt="Trois colonnes. Avant : éloigner les combustibles de 10 mètres au moins ou les couvrir, extincteurs à portée de main, bouteilles de gaz loin de la zone de brasage, détection d'incendie évitée sur la zone, alerte prévue avec un téléphone et le 18. Pendant : un surveillant formé qui ne fait que surveiller, protections portées, projections surveillées, objets chauds sur des supports qui résistent. Après : inspecter le lieu et les locaux voisins, remettre la détection en service, surveiller 2 heures au moins, archiver 5 ans. En bas, une barre qui grandit : surveillance de 2 heures au moins.">
+      <figcaption>Après les travaux, on ne part pas : on surveille 2 heures au moins.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Voici la situation du simulateur. Un restaurant fait remplacer un filtre déshydrateur sur sa chambre froide. Vous brasez un raccord de cuivre, dans le local technique, derrière la cuisine. Regardez le plan : à trois mètres du raccord, une pile de cartons. Au plafond, un détecteur de fumée. Plus loin, la porte de la cuisine, qui reste en service. Marc, cuisinier formé à l'extincteur, peut surveiller. Le circuit est déjà vidé de son fluide. À l'écran suivant, vous remplissez le permis pour cette situation. Relisez bien ces éléments : chaque case en dépend.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le cas du jour : un brasage en chambre froide</h2>
+    <p>Un restaurant fait remplacer le <strong>filtre déshydrateur</strong> (la pièce qui retient l'eau dans le circuit) de sa chambre froide. Vous allez <strong>braser</strong> un raccord sur la tuyauterie de cuivre. Le <strong>brasage fort</strong> assemble deux tubes avec un métal d'apport chauffé au chalumeau.</p>
+    <ul>
+      <li>Avant de braser, le circuit est <strong>vidé de son fluide</strong> (récupération : station « Traçabilité »).</li>
+      <li>Le tube est <strong>balayé à l'azote</strong> pendant la chauffe, pour garder le cuivre propre à l'intérieur. L'azote ne brûle pas, mais il chasse l'oxygène : dans un local fermé, il peut priver l'air d'oxygène (INRS : « attention au risque d'anoxie »).</li>
+      <li>Les <strong>bouteilles de gaz</strong> se posent le plus loin possible de la zone de soudure (INRS).</li>
+    </ul>
+    <p>Le geste lui-même se travaille dans CuivRézo : <a href="https://inerweb.fr/cuivrezo/stations/2-1/">le poste oxyacétylénique en sécurité</a> et <a href="https://inerweb.fr/cuivrezo/stations/3-2/">la brasure forte sous azote</a>.</p>
+    <p>À l'écran suivant, vous remplissez le permis pour ce cas. Relevez dès maintenant : le lieu, l'heure, les personnes, ce qui brûle à côté.</p>
+    <figure>
+      <img src="svg/local-technique.svg" alt="Une coupe du local technique : à gauche la chambre froide ; un tube de cuivre en sort vers la droite et se termine par un raccord à braser, entouré d'orange, avec un chalumeau ; à trois mètres, une double flèche mène à une pile de cartons ; au plafond, un détecteur de fumée ; à droite, la porte de la cuisine qui reste en service ; entre les deux, Marc, le surveillant.">
+      <figcaption>Chaque case du simulateur dépend de ce plan.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-prof-activite data-narration="À vous de jouer. Remplissez le permis de feu pour la situation de l'écran précédent. Il y a sept blocs, numérotés comme sur le dessin : qui signe, où et quand, quels travaux, quels risques, quelles mesures avant, qui surveille, comment alerter. Quand vous avez fini, appuyez sur Vérifier mon permis. Chaque erreur est expliquée par un mot, et vous pouvez corriger et vérifier de nouveau. Rien n'est noté : c'est un entraînement. Ce permis d'essai ne remplace pas un vrai permis, qui se signe sur le site.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Simulateur : remplissez le permis</h2>
+    <div class="situation">
+      <h3>La situation (un cas inventé)</h3>
+      <ul>
+        <li><strong>Où :</strong> le local technique de la chambre froide d'un restaurant, derrière la cuisine. La cuisine reste en service.</li>
+        <li><strong>Quand :</strong> mardi, de 8 h à 11 h.</li>
+        <li><strong>Qui :</strong> le gérant du restaurant (l'employeur) ; Clim'Études Sud, avec un chef d'équipe (responsable d'intervention) et vous (le technicien qui brase) ; Marc, cuisinier formé à l'extincteur, peut surveiller.</li>
+        <li><strong>Travaux :</strong> brasage fort d'un raccord sur la tuyauterie de cuivre, pour changer un filtre déshydrateur. Le circuit est déjà vidé de son fluide.</li>
+        <li><strong>Autour :</strong> une pile de cartons à 3 m ; un détecteur de fumée au plafond ; dans la cuisine voisine, le personnel travaille. Aucun produit inflammable n'est stocké dans le local et il n'y a aucune zone ATEX.</li>
+        <li><strong>Alerte :</strong> vous avez votre téléphone portable, chargé.</li>
+      </ul>
+    </div>
+    <form class="permis" id="permis" novalidate>
+        <fieldset class="bloc" data-bloc="qui">
+          <legend>1 · Qui signe le permis ?</legend>
+          <p class="aide">Cochez toutes les personnes qui doivent signer.</p>
+          <label class="case"><input type="checkbox" name="qui" value="gerant"><span>Le gérant du restaurant (l'employeur, côté entreprise utilisatrice)</span></label>
+          <label class="case"><input type="checkbox" name="qui" value="chef"><span>Le chef d'équipe de Clim'Études Sud (responsable d'intervention)</span></label>
+          <label class="case"><input type="checkbox" name="qui" value="operateur"><span>Vous, le technicien qui brase : vous connaissez les mesures et vous vous engagez à les respecter</span></label>
+          <label class="case"><input type="checkbox" name="qui" value="client"><span>Un client du restaurant</span></label>
+          <label class="case"><input type="checkbox" name="qui" value="pompier"><span>Le pompier de la caserne la plus proche</span></label>
+          <div class="retour" hidden aria-live="polite"></div>
+        </fieldset>
+        <fieldset class="bloc" data-bloc="ouquand">
+          <legend>2 · Où et quand ?</legend>
+          <div class="champ"><label for="p-ouquand-lieu">Lieu d'exécution</label>
+            <select id="p-ouquand-lieu" data-champ="ouquand.lieu"><option value="">— choisir —</option><option value="local">Le local technique de la chambre froide, derrière la cuisine</option><option value="cuisine">Toute la cuisine</option><option value="toit">Le toit du restaurant</option><option value="atelier">L'atelier de Clim'Études Sud</option></select>
+          </div>
+          <div class="champ"><label for="p-ouquand-debut">Les travaux commencent à</label>
+            <select id="p-ouquand-debut" data-champ="ouquand.debut"><option value="">— choisir —</option><option value="07:00">7 h 00</option><option value="08:00">8 h 00</option><option value="09:00">9 h 00</option><option value="10:00">10 h 00</option></select>
+          </div>
+          <div class="champ"><label for="p-ouquand-fin">Les travaux finissent à</label>
+            <select id="p-ouquand-fin" data-champ="ouquand.fin"><option value="">— choisir —</option><option value="10:00">10 h 00</option><option value="11:00">11 h 00</option><option value="12:00">12 h 00</option><option value="13:00">13 h 00</option></select>
+          </div>
+          <div class="retour" hidden aria-live="polite"></div>
+        </fieldset>
+        <fieldset class="bloc" data-bloc="quoi">
+          <legend>3 · Quels travaux par points chauds ?</legend>
+          <p class="aide">Cochez uniquement ce qui est prévu.</p>
+          <label class="case"><input type="checkbox" name="quoi" value="chalumeau"><span>Chalumeau (brasage fort)</span></label>
+          <label class="case"><input type="checkbox" name="quoi" value="meulage"><span>Meulage ou tronçonnage</span></label>
+          <label class="case"><input type="checkbox" name="quoi" value="arc"><span>Soudage à l'arc électrique</span></label>
+          <label class="case"><input type="checkbox" name="quoi" value="decoupage"><span>Découpage</span></label>
+          <div class="retour" hidden aria-live="polite"></div>
+        </fieldset>
+        <fieldset class="bloc" data-bloc="risques">
+          <legend>4 · Quels risques sur place ?</legend>
+          <p class="aide">Cochez les risques du lieu, pas ceux des autres chantiers.</p>
+          <label class="case"><input type="checkbox" name="risques" value="combustibles"><span>Stockage et proximité de matériaux combustibles</span></label>
+          <label class="case"><input type="checkbox" name="risques" value="voisinage"><span>Activité du voisinage immédiat</span></label>
+          <label class="case"><input type="checkbox" name="risques" value="inflammables"><span>Stockage de produits inflammables</span></label>
+          <label class="case"><input type="checkbox" name="risques" value="atex"><span>Zone ATEX à proximité (atmosphère explosive)</span></label>
+          <div class="retour" hidden aria-live="polite"></div>
+        </fieldset>
+        <fieldset class="bloc" data-bloc="mesures">
+          <legend>5 · Quelles mesures avant de braser ?</legend>
+          <p class="aide">Cochez les mesures justes. Il y en a plusieurs, et des pièges.</p>
+          <label class="case"><input type="checkbox" name="mesures" value="cartons"><span>Éloigner les cartons à plus de 10 m, ou les couvrir de bâches ignifugées s’ils ne peuvent pas être déplacés</span></label>
+          <label class="case"><input type="checkbox" name="mesures" value="extincteurs"><span>Placer à portée de main un extincteur à eau de 9 litres et un extincteur adapté au local</span></label>
+          <label class="case"><input type="checkbox" name="mesures" value="detection"><span>Éviter le déclenchement du détecteur de fumée sur la zone de travail, et vérifier à la fin qu’il fonctionne de nouveau</span></label>
+          <label class="case"><input type="checkbox" name="mesures" value="bouteilles"><span>Placer les bouteilles de gaz le plus loin possible de la zone de brasage</span></label>
+          <label class="case"><input type="checkbox" name="mesures" value="bouteilles_pres"><span>Poser les bouteilles contre le mur, à côté du raccord, pour avoir des flexibles courts</span></label>
+          <label class="case"><input type="checkbox" name="mesures" value="cartons_laisser"><span>Laisser les cartons où ils sont : ils sont à plus d’un mètre</span></label>
+          <label class="case"><input type="checkbox" name="mesures" value="extincteur_camion"><span>Laisser l’extincteur dans le camion pour qu’il ne gêne pas</span></label>
+          <div class="retour" hidden aria-live="polite"></div>
+        </fieldset>
+        <fieldset class="bloc" data-bloc="surveillance">
+          <legend>6 · Qui surveille, et jusqu’à quand ?</legend>
+          <div class="champ"><label for="p-surveillance-qui">Surveillant pendant les travaux</label>
+            <select id="p-surveillance-qui" data-champ="surveillance.qui"><option value="">— choisir —</option><option value="marc">Marc, le cuisinier formé à l'extincteur, qui ne fait que surveiller</option><option value="operateur">Vous-même, en même temps que vous brasez</option><option value="personne">Personne : le local est petit</option><option value="client">Un client du restaurant, volontaire</option></select>
+          </div>
+          <div class="champ"><label for="p-surveillance-apres">Surveillance après la fin des travaux, jusqu’à</label>
+            <select id="p-surveillance-apres" data-champ="surveillance.apres"><option value="">— choisir —</option><option value="11:00">11 h 00 (dès la fin des travaux)</option><option value="11:30">11 h 30</option><option value="12:00">12 h 00</option><option value="13:00">13 h 00</option></select>
+          </div>
+          <div class="retour" hidden aria-live="polite"></div>
+        </fieldset>
+        <fieldset class="bloc" data-bloc="alerte">
+          <legend>7 · Comment alerter ?</legend>
+          <div class="champ"><label for="p-alerte-numero">Numéro des sapeurs-pompiers à écrire sur le permis</label>
+            <input type="text" id="p-alerte-numero" data-champ="alerte.numero" inputmode="numeric" autocomplete="off" maxlength="6" placeholder="— numéro —">
+          </div>
+          <div class="champ"><label for="p-alerte-moyen">Moyen d'alerte</label>
+            <select id="p-alerte-moyen" data-champ="alerte.moyen"><option value="">— choisir —</option><option value="tel">Un téléphone chargé sur place, et le numéro écrit sur le permis</option><option value="rien">Aucun : l’extincteur suffit</option><option value="client">Le téléphone d’un client, s’il y en a un</option></select>
+          </div>
+          <div class="retour" hidden aria-live="polite"></div>
+        </fieldset>
+      <div class="actions">
+        <button type="button" class="bouton" id="permis-verifier">Vérifier mon permis</button>
+        <button type="button" class="outil" id="permis-reprendre">Recommencer</button>
+      </div>
+      <p class="bilan-permis" id="permis-bilan" tabindex="-1" hidden aria-live="polite"></p>
+    </form>
+    <p class="source-permis">Les blocs s'inspirent du permis de feu de l'INRS (brochure ED 6030, 2018) et du modèle du Centre de gestion du Loiret (CDG 45), mis à jour en novembre 2020 et réutilisable avec mention de la source. Ce permis d'entraînement ne remplace pas un vrai permis, qui se signe sur le site.</p>
+    <figure>
+      <img src="svg/permis-a-remplir.svg" alt="Sept lignes numérotées, chacune avec une case à cocher : qui signe ; où et quand ; quels travaux ; quels risques sur place ; quelles mesures avant ; qui surveille, et jusqu'à quand ; comment alerter. Le dessin ne donne aucune réponse : elles sont à trouver dans le formulaire.">
+      <figcaption>Sept blocs à remplir, de haut en bas.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan suit la vie du permis, de gauche à droite. On le remplit. On le signe, avec les bonnes personnes. On l'affiche près du lieu de travail. On brase. On surveille deux heures au moins après la fin. On l'archive : l'INRS conseille cinq ans. Si quelque chose change, on recommence par le début. La règle d'or est dans la bande du bas : pas de permis signé, pas de chalumeau. Et souvenez-vous que le permis n'est pas un papier de plus : c'est ce qui vous fait réfléchir avant d'allumer.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : la vie d’un permis de feu</h2>
+    <ul>
+      <li>Le permis de feu est <strong>obligatoire pour tous travaux par points chauds</strong> (INRS), sauf sur un poste de travail permanent.</li>
+      <li>Il est établi par l'<strong>employeur</strong> de l'entreprise utilisatrice, validé par le <strong>responsable d'intervention</strong> et signé aussi par le <strong>technicien qui brase</strong> : trois signatures dans un petit restaurant.</li>
+      <li>Il contient <strong>sept blocs</strong> : qui, où et quand, quoi, risques, mesures, surveillance, alerte.</li>
+      <li>On <strong>surveille 2 heures au moins</strong> après la fin des travaux.</li>
+      <li>On le <strong>revoit</strong> dès que le lieu, le technicien qui brase, la méthode ou les travaux changent.</li>
+    </ul>
+    <p class="formule">Pas de permis signé, pas de chalumeau.</p>
+    <figure>
+      <img src="svg/bilan-permis.svg" alt="Six cartes en deux rangées : un, remplir le permis, bloc par bloc ; deux, le signer avec les bonnes personnes ; trois, l'afficher près du lieu de travail ; quatre, braser avec le surveillant ; cinq, surveiller deux heures au moins ; six, archiver, cinq ans conseillés. Bande rouge : pas de permis signé, pas de chalumeau ; si le lieu, la personne qui brase, la méthode ou les travaux changent, on revoit le permis.">
+      <figcaption>Six temps, une règle d’or.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Lequel de ces travaux est un travail par point chaud ? Souvenez-vous de la définition de l'écran un : un travail qui produit des étincelles ou des surfaces chaudes. Pensez à la scène de l'écran deux, avec le chalumeau et le tube de cuivre. Lisez les quatre propositions, puis choisissez-en une. Une seule apporte une source de chaleur importante.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Lequel de ces travaux est un « travail par point chaud » ?</h2>
+    <figure class="vignette">
+      <img src="svg/quatre-chemins.svg" alt="Vignette de rappel : le chalumeau chauffe un tube de cuivre, avec les quatre chemins du feu.">
+      <figcaption>Rappel de l'écran 2 — le chalumeau et les quatre chemins du feu.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Relever les pressions avec le manifold</button>
+      <button type="button" data-answer="b">Coller l'isolant sur un tube</button>
+      <button type="button" data-answer="bonne">Braser un raccord sur une ligne de cuivre</button>
+      <button type="button" data-answer="d">Serrer un raccord avec deux clés</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le brasage chauffe le métal à la flamme : c'est un travail par point chaud, il demande un permis de feu. Relever des pressions, coller ou serrer ne produisent ni étincelles ni surfaces très chaudes."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Côté entreprise intervenante, celle qui fait les travaux, qui valide le permis de feu avec les acteurs de l'entreprise utilisatrice ? Regardez les coches de l'écran trois : trois côté entreprise utilisatrice, une côté entreprise intervenante, plus celle du technicien qui brase. Lisez les quatre propositions, puis choisissez-en une. Une seule personne a ce rôle de validation.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Côté entreprise intervenante, qui valide le permis de feu avec les acteurs de l'entreprise utilisatrice ?</h2>
+    <figure class="vignette">
+      <img src="svg/acteurs-du-permis.svg" alt="Vignette de rappel : les deux entreprises, utilisatrice à gauche et intervenante à droite, et les cinq coches sur la feuille du permis.">
+      <figcaption>Rappel de l'écran 3 — cinq coches, dont celle du responsable d’intervention.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le technicien qui brase, seul</button>
+      <button type="button" data-answer="bonne">Le responsable d'intervention</button>
+      <button type="button" data-answer="c">Le fabricant du chalumeau</button>
+      <button type="button" data-answer="d">Le pompier de la caserne la plus proche</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le permis est validé par les acteurs de l'entreprise utilisatrice et par le responsable d'intervention de l'entreprise intervenante (INRS). Le technicien qui brase signe aussi, mais il ne valide pas seul."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Les travaux sont finis, le chalumeau est éteint. Pendant combien de temps faut-il surveiller le lieu, au moins ? Regardez la barre qui grandit, en bas du dessin de l'écran cinq. Lisez les quatre propositions, puis choisissez-en une. Un feu peut couver longtemps : la bonne durée est plus longue que ce que l'on croit d'abord.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Les travaux sont finis. Pendant combien de temps faut-il surveiller le lieu, au moins ?</h2>
+    <figure class="vignette">
+      <img src="svg/avant-pendant-apres.svg" alt="Vignette de rappel : les trois colonnes avant, pendant, après, et la barre de surveillance après les travaux.">
+      <figcaption>Rappel de l'écran 5 — la barre de la surveillance après travaux.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Une heure</button>
+      <button type="button" data-answer="b">Une demi-heure</button>
+      <button type="button" data-answer="c">Dix minutes</button>
+      <button type="button" data-answer="bonne">Deux heures</button>
+    </div>
+    <p class="feedback" hidden data-explication="Après la fin des travaux, la surveillance dure 2 heures au moins (INRS, CDG 45). Si ce n'est pas possible, on arrête les travaux 2 heures au moins avant la fermeture de l'entreprise."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. À mi-chantier, un autre technicien prend le chalumeau à votre place. Que devient le permis de feu ? Souvenez-vous de la règle des écrans quatre et huit : un permis a une durée limitée, et il se revoit dès qu'un élément change. Lisez les quatre propositions, puis choisissez-en une. Une seule est prudente.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">À mi-chantier, un autre technicien prend le chalumeau à votre place. Que devient le permis de feu ?</h2>
+    <figure class="vignette">
+      <img src="svg/feuille-du-permis.svg" alt="Vignette de rappel : la feuille du permis de feu, avec ses sept blocs.">
+      <figcaption>Rappel des écrans 4 et 8 — un permis se revoit dès qu’un élément change (lieu, méthode, travaux, intervenants).</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Il faut le revoir : les intervenants ont changé</button>
+      <button type="button" data-answer="b">Il reste valable jusqu’à la fin de la journée, sans rien changer</button>
+      <button type="button" data-answer="c">Il suffit de prévenir le gérant du restaurant à voix haute</button>
+      <button type="button" data-answer="d">Il reste valable cinq ans, comme un diplôme</button>
+    </div>
+    <p class="feedback" hidden data-explication="Un permis doit être revu dès qu'un élément change : lieu, environnement, procédé, nature des travaux, intervenants (INRS). Un autre technicien qui prend le chalumeau est un changement d'intervenant : on revoit le permis avant de continuer. Le modèle du CDG 45 cite le changement de la personne qui brase, du lieu et de la méthode."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../risques-papiers-chantier/"><strong>Les papiers du chantier</strong></a> (sous-ligne Risques) — où le permis de feu s’insère parmi les autres papiers.</li>
+    <li><a href="../acteurs-installation/"><strong>Qui intervient sur une installation frigorifique ?</strong></a> (sous-ligne Fluidique) — l’entreprise utilisatrice, l’entreprise intervenante.</li>
+    <li><a href="../risques-duerp/"><strong>Le DUERP</strong></a> (sous-ligne Risques) — le document de l’employeur, et le plan de prévention.</li>
+    <li><a href="../tracabilite-fluides/"><strong>Traçabilité</strong></a> (sous-ligne Fluidique) — vider le circuit de son fluide avant de braser.</li>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (sous-ligne Fluidique) — qui a le droit de manipuler le fluide.</li>
+    <li><a href="../incendie-ssi/"><strong>Le SSI</strong></a> (même sous-ligne) — la détection incendie qu’on évite de déclencher.</li>
+    <li><a href="https://inerweb.fr/cuivrezo/stations/3-2/"><strong>CuivRézo : la brasure forte sous azote</strong></a> — le geste de brasage.</li>
+    <li><a href="https://inerweb.fr/jouerezo/"><strong>JouéRézo</strong></a> — s’entraîner sur la sécurité du brasage.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+<script src="app.js?v=20261017-voix"></script>
+<!-- La scène animée de la branche : SceneKit et VOYAGE_DESSIN, lus, jamais modifiés. -->
+<script src="../../../cartoclim/stations/_commun/scene-kit.js"></script>
+<script src="../../../jouerezo/moteur/voyage-dessin.js"></script>
+<script src="../../scenes/incendie.js"></script>
+<script src="simulateur.js"></script>
+  <script src="../../../moteur/voix-index.js?v=20261018-tom"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js?v=20261017-voix"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+<script src="../../scenes/dessin-vivant.js?v=20261015-campagne4" defer></script>
+<script src="../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+</body>
+</html>

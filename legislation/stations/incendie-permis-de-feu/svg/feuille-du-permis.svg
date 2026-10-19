@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-pf4" aria-describedby="d-pf4" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-pf4">Les sept blocs d’un permis de feu</title>
+  <desc id="d-pf4">Une feuille intitulée permis de feu, avec sept lignes numérotées : un, qui, les intervenants et leurs signatures ; deux, où et quand, le lieu exact, les dates, les heures, la durée ; trois, quoi, les travaux, le matériel, le mode opératoire ; quatre, risques du lieu, ce qui brûle à côté, produits inflammables, zone à atmosphère explosive ; cinq, mesures, avant, pendant, après, qui fait quoi ; six, surveillance, pendant et après les travaux ; sept, alerte, moyens d'alerte, extincteurs, le 18 ou le 112.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomc{ font-weight:bold; font-size:18px; fill:#b91c1c; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <defs><marker id="fl-pf4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/></marker></defs>
+  <rect width="800" height="500" fill="#fffdf8"/>
+<!-- 1 : la feuille et son titre -->
+<rect x="40" y="10" width="720" height="480" rx="10" fill="#fff" stroke="#10233c" stroke-width="3"/><rect x="40" y="10" width="720" height="46" rx="10" fill="#b91c1c"/><rect x="40" y="34" width="720" height="22" fill="#b91c1c"/><text class="wht" x="400" y="42" text-anchor="middle"><tspan x="400" dy="0">PERMIS DE FEU</tspan></text>
+<!-- 2 : Qui -->
+<rect x="60" y="66" width="680" height="50" rx="8" fill="#fff" stroke="#d6dee7" stroke-width="2"/><circle cx="92" cy="91" r="18" fill="#1b3a63"/><text class="wht" x="92" y="98" text-anchor="middle"><tspan x="92" dy="0">1</tspan></text><text class="nom" style="font-size:17px" x="125" y="97" text-anchor="start"><tspan x="125" dy="0">Qui</tspan></text><text class="txt" x="300" y="97" text-anchor="start"><tspan x="300" dy="0">les intervenants et leurs signatures</tspan></text>
+<!-- 3 : Où et quand -->
+<rect x="60" y="126" width="680" height="50" rx="8" fill="#f7f4ee" stroke="#d6dee7" stroke-width="2"/><circle cx="92" cy="151" r="18" fill="#1b3a63"/><text class="wht" x="92" y="158" text-anchor="middle"><tspan x="92" dy="0">2</tspan></text><text class="nom" style="font-size:17px" x="125" y="157" text-anchor="start"><tspan x="125" dy="0">Où et quand</tspan></text><text class="txt" x="300" y="157" text-anchor="start"><tspan x="300" dy="0">le lieu exact, les dates, les heures, la durée</tspan></text>
+<!-- 4 : Quoi -->
+<rect x="60" y="186" width="680" height="50" rx="8" fill="#fff" stroke="#d6dee7" stroke-width="2"/><circle cx="92" cy="211" r="18" fill="#1b3a63"/><text class="wht" x="92" y="218" text-anchor="middle"><tspan x="92" dy="0">3</tspan></text><text class="nom" style="font-size:17px" x="125" y="217" text-anchor="start"><tspan x="125" dy="0">Quoi</tspan></text><text class="txt" x="300" y="217" text-anchor="start"><tspan x="300" dy="0">les travaux, le matériel, le mode opératoire</tspan></text>
+<!-- 5 : Risques du lieu -->
+<rect x="60" y="246" width="680" height="50" rx="8" fill="#f7f4ee" stroke="#d6dee7" stroke-width="2"/><circle cx="92" cy="271" r="18" fill="#1b3a63"/><text class="wht" x="92" y="278" text-anchor="middle"><tspan x="92" dy="0">4</tspan></text><text class="nom" style="font-size:17px" x="125" y="277" text-anchor="start"><tspan x="125" dy="0">Risques du lieu</tspan></text><text class="txt" x="300" y="277" text-anchor="start"><tspan x="300" dy="0">ce qui brûle à côté, produits inflammables, ATEX</tspan></text>
+<!-- 6 : Mesures -->
+<rect x="60" y="306" width="680" height="50" rx="8" fill="#fff" stroke="#d6dee7" stroke-width="2"/><circle cx="92" cy="331" r="18" fill="#1b3a63"/><text class="wht" x="92" y="338" text-anchor="middle"><tspan x="92" dy="0">5</tspan></text><text class="nom" style="font-size:17px" x="125" y="337" text-anchor="start"><tspan x="125" dy="0">Mesures</tspan></text><text class="txt" x="300" y="337" text-anchor="start"><tspan x="300" dy="0">avant, pendant, après : qui fait quoi</tspan></text>
+<!-- 7 : Surveillance -->
+<rect x="60" y="366" width="680" height="50" rx="8" fill="#f7f4ee" stroke="#d6dee7" stroke-width="2"/><circle cx="92" cy="391" r="18" fill="#1b3a63"/><text class="wht" x="92" y="398" text-anchor="middle"><tspan x="92" dy="0">6</tspan></text><text class="nom" style="font-size:17px" x="125" y="397" text-anchor="start"><tspan x="125" dy="0">Surveillance</tspan></text><text class="txt" x="300" y="397" text-anchor="start"><tspan x="300" dy="0">pendant et après les travaux</tspan></text>
+<!-- 8 : Alerte -->
+<rect x="60" y="426" width="680" height="50" rx="8" fill="#fff" stroke="#d6dee7" stroke-width="2"/><circle cx="92" cy="451" r="18" fill="#1b3a63"/><text class="wht" x="92" y="458" text-anchor="middle"><tspan x="92" dy="0">7</tspan></text><text class="nom" style="font-size:17px" x="125" y="457" text-anchor="start"><tspan x="125" dy="0">Alerte</tspan></text><text class="txt" x="300" y="457" text-anchor="start"><tspan x="300" dy="0">moyens d'alerte, extincteurs, 18 ou 112</tspan></text>
+
+</svg>

@@ -249,6 +249,16 @@
      }
     },
     {
+     "nom": "Le permis de feu",
+     "sous": "remplir le permis",
+     "slug": "incendie-permis-de-feu",
+     "mission": {
+      "titre": "Mission : Un permis de feu pour braser le filtre",
+      "badge": "Pas de permis, pas de chalumeau",
+      "duree_min": 30
+     }
+    },
+    {
      "nom": "Sprinkler & RIA",
      "sous": "eau incendie, lot CVC",
      "slug": "incendie-sprinkler-ria",
@@ -355,6 +365,16 @@
      "mission": {
       "titre": "Mission : Deux techniciens, deux papiers, une seule visite",
       "badge": "Les deux papiers",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Les intervenants",
+     "sous": "qui répond de quoi",
+     "slug": "acteurs-installation",
+     "mission": {
+      "titre": "Mission : Qui fait quoi autour de la chambre froide ?",
+      "badge": "Les onze acteurs",
       "duree_min": 25
      }
     },
@@ -565,6 +585,16 @@
      "mission": {
       "titre": "Mission : Qui connaît la toiture ? Réclamer le document du site",
       "badge": "Le document du site",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "Les papiers",
+     "sous": "avant, pendant, après",
+     "slug": "risques-papiers-chantier",
+     "mission": {
+      "titre": "Mission : Tous les papiers avant de braser",
+      "badge": "Les bons papiers",
       "duree_min": 25
      }
     },

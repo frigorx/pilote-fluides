@@ -1,0 +1,81 @@
+{
+  "slug": "risques-papiers-chantier",
+  "branche": "Risques professionnels",
+  "titre": "Mission : Tous les papiers avant de braser",
+  "client": "Le responsable d'un supermarché qui fait remplacer le groupe froid de sa chambre froide par Clim'Études Sud, magasin ouvert pendant les travaux.",
+  "situation": "Clim'Études Sud remplace le groupe froid de la chambre froide d'un supermarché. Les faits : le magasin reste ouvert au public ; les travaux de Clim'Études Sud représentent 500 heures sur 3 mois ; un architecte dirige les travaux ; Clim'Études Sud est la seule entreprise de bâtiment sur ce chantier et aucun coordonnateur SPS n'est désigné ; le groupe froid neuf arrive par camion et est déchargé sur le parking ; le règlement du magasin exige une autorisation de travail écrite pour toute intervention sur ses équipements ; le groupe est alimenté par le tableau électrique du magasin, dont le courant doit être coupé et condamné pendant l'échange ; le technicien brase des tubes de cuivre, récupère le fluide de l'ancien groupe (qui ne sera pas réutilisé : le distributeur le reprend) et met le nouveau groupe en service ; le marché prévoit la remise d'un DOE au magasin. Votre responsable vous demande de préparer, avant le premier jour, la liste des papiers du chantier dans l'ordre.",
+  "piece_a_produire": "Une check-list d'une page, dans l'ordre avant, pendant, après, avec les quinze papiers de l'écran 8. Pour chaque papier : cochez-le s'il s'applique à ce chantier, ou barrez-le ; écrivez en une phrase le fait de la situation qui vous fait décider (les règles sont aux écrans 2 à 7) ; notez qui le remplit, qui le signe, où il va.",
+  "piece_corrige": "Tous les papiers s'appliquent, sauf le PPSPS (aucun coordonnateur SPS n'est désigné). Plan de prévention : 500 heures, donc 400 heures ou plus sur 12 mois, dans un magasin ouvert (R. 4512-7). Protocole de sécurité : déchargement du groupe neuf par camion (R. 4515-4). Ordre de service : un architecte dirige les travaux. Devis, bon d'intervention, procès-verbal de réception : tout chantier. Permis de feu : brasage. Autorisation de travail : exigée par le magasin. Consignation : tableau électrique à couper. Fiche d'intervention et registre : manipulation de fluide. BSFF : ancien fluide non réutilisé. Fiche de mise en service : mise en service du nouveau groupe. DOE : prévu au marché.",
+  "questions": [
+    {
+      "q": "Votre entreprise travaille 400 heures sur 12 mois dans un magasin ouvert : quel écrit faut-il avant de commencer, et qui l'établit ?",
+      "ecran": 3,
+      "reponse": "Le plan de prévention (art. R. 4512-7 : 400 heures ou plus sur 12 mois, ou travaux dangereux listés). Les chefs de l'entreprise utilisatrice et de l'entreprise extérieure font ensemble l'analyse des risques après une inspection commune des lieux (R. 4512-6). Votre chef d'entreprise vous informe des dangers avant de commencer."
+    },
+    {
+      "q": "Vous allez braser un tube de cuivre : quel papier avant le chalumeau, et qui le signe ?",
+      "ecran": 4,
+      "reponse": "Le permis de feu (travail par point chaud). Il est établi par l'employeur (ou son représentant) de l'entreprise utilisatrice. Il est signé par l'employeur, par le responsable d'intervention de l'entreprise intervenante et par le technicien qui brase : trois signatures dans un petit restaurant (INRS ED 6030 ; modèle du CDG 45)."
+    },
+    {
+      "q": "Quand remplit-on la fiche d'intervention Cerfa 15497, qui la signe, et où vont les exemplaires ?",
+      "ecran": 5,
+      "reponse": "Pour chaque opération qui manipule du fluide frigorigène (R. 543-82). L'opérateur (l'entreprise attestée) l'établit ; au-delà d'un seuil de charge (5 tonnes équivalent CO₂ de HFC ou de PFC, ou 3 kg de HCFC), l'opérateur et le détenteur la signent. Le détenteur garde l'original, chacun garde un exemplaire au moins cinq ans."
+    },
+    {
+      "q": "Quel papier donne la date de départ des garanties, et que contient-il ?",
+      "ecran": 6,
+      "reponse": "Le procès-verbal de réception : le client y déclare accepter l'ouvrage, avec ou sans réserves (ce qui reste à reprendre) ; il est prononcé contradictoirement (art. 1792-6 du Code civil). Sa date est le point de départ des garanties."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Classez ces huit papiers en trois colonnes, AVANT, PENDANT, APRÈS : devis signé · permis de feu · fiche d'intervention · procès-verbal de réception · plan de prévention · bon d'intervention · DOE · BSFF. Pour deux d'entre eux, écrivez qui les signe.",
+    "items": [
+      "devis signé",
+      "permis de feu",
+      "fiche d'intervention",
+      "procès-verbal de réception",
+      "plan de prévention",
+      "bon d'intervention",
+      "DOE",
+      "BSFF"
+    ],
+    "corrige": "AVANT : devis signé, plan de prévention, permis de feu. PENDANT : bon d'intervention, fiche d'intervention. APRÈS : procès-verbal de réception, DOE, BSFF. Exemples de signatures : le devis est signé par le client ; la fiche d'intervention est signée par l'opérateur et, au-delà du seuil, par le détenteur."
+  },
+  "badge": "Les bons papiers",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "1.00",
+      "4.09",
+      "5.07"
+    ],
+    "justification": "Hors REAC TECVC : culture professionnelle du technicien et du chargé d'affaires (savoir quels papiers préparent et clôturent un chantier). Attestation d'aptitude 2025 : 1.00 (législation applicable), 4.09 et 5.07 (consigner les données dans le registre de l'équipement).",
+    "cap_ifca": [
+      {
+        "code": "S1.2",
+        "libelle": "Pièces et autorisations administratives"
+      },
+      {
+        "code": "C2.3",
+        "libelle": "Préparer les conditions d'intervention sur site"
+      }
+    ],
+    "bac_mfer_2028": [
+      {
+        "code": "S1.4",
+        "libelle": "les procédures administratives"
+      },
+      {
+        "code": "S1.3",
+        "libelle": "les étapes d'une intervention"
+      },
+      {
+        "code": "A1T1",
+        "libelle": "Prendre connaissance des dossiers relatifs aux opérations à réaliser"
+      }
+    ]
+  }
+}

@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Les papiers du chantier : pièces et autorisations — inerWeb Législation</title>
+<meta name="description" content="Station du réseau Législation pour le CAP IFCA et le Bac Pro MFER, écran par écran et commentée à voix haute : les papiers d'un chantier avant, pendant et après — devis, plan de prévention, permis de feu, fiche d'intervention, procès-verbal de réception, BSFF — avec qui les remplit, qui les signe et où ils vont.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/risques-papiers-chantier/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Risques professionnels.
+     Public : CAP IFCA et Bac Pro MFER (le réseau est né au niveau BTS : texte
+     écrit plus simple, phrases courtes, mots techniques définis là où ils servent).
+     Les tableaux visuels des écrans 2 à 7 sont fabriqués depuis une même source
+     (qui remplit, qui signe, où ça va) : l'image, son texte alternatif et le
+     tableau de l'écran 8 ne peuvent donc pas se contredire.
+     FOND et sources : FOND.md (à valider par F. Henninot avant mise en ligne).
+     Fabriquée le 19/10/2026 sur le gabarit « aptitude-capacite » (même structure,
+     mêmes identifiants du professeur vocal : #listen #next #prev #start
+     #stop-voice, .slide.active). Statut : Prototype, en attente de la relecture
+     de F. Henninot (data-prototype posé). Voix : pas encore de MP3, la voix du
+     navigateur sert de filet.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../scenes/scenes.css?v=20261015-campagne4">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerweb.fr">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Risques professionnels · CAP IFCA et Bac Pro MFER</p>
+  <h1>Les papiers du chantier : pièces et autorisations</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 10 minutes</p>
+  <figure class="scene" data-scene-branche="risques" data-station="risques-papiers-chantier"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez classer les papiers d'un chantier en trois temps — <strong>avant, pendant, après</strong> — et dire pour chacun <strong>qui le remplit, qui le signe, où il va</strong>. Vous savez aussi pourquoi on ne touche pas au premier outil tant que les papiers de l'avant ne sont pas signés.</p>
+    <p class="referentiel" style="margin-top:.8em"><strong>Origine du réseau :</strong> TP TECVC, REAC TP-00133 — hors REAC (culture professionnelle du technicien et du chargé d'affaires). <strong>Attestation d'aptitude 2025 :</strong> codes 1.00 (législation applicable), 4.09 et 5.07 (consigner dans le registre de l'équipement).</p>
+    <div class="codes-formation">
+      <p><strong>Les codes de votre formation</strong></p>
+      <ul>
+        <li><strong>CAP IFCA</strong> : savoir <strong>S1.2</strong> « Pièces et autorisations administratives » · compétence <strong>C2.3</strong> « Préparer les conditions d'intervention sur site »</li>
+        <li><strong>Bac Pro MFER (2028)</strong> : savoirs <strong>S1.4</strong> « les procédures administratives » et <strong>S1.3</strong> « les étapes d'une intervention » · tâche <strong>A1T1</strong> « Prendre connaissance des dossiers relatifs aux opérations à réaliser »</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Un chantier produit des papiers à trois moments. Sur le dessin, trois colonnes apparaissent. Avant le chantier, huit papiers : le contrat, la sécurité du site, les autorisations. Pendant l'intervention, deux papiers : le bon et la fiche d'intervention. Après, cinq papiers : la réception, la mise en service, le bordereau du fluide, le dossier des ouvrages et le registre. Pour chacun, posez trois questions : qui le remplit, qui le signe, et où va-t-il. La règle d'or : avant le premier outil, les papiers de l'avant sont signés.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Trois temps, un dossier</h2>
+    <p>Un chantier ne se fait pas qu'avec des outils. Il se fait aussi avec des <strong>papiers</strong>. Une <strong>pièce</strong>, c'est un papier ou un document du dossier du chantier. Une <strong>autorisation</strong>, c'est un papier qui vous donne le droit de commencer un travail.</p>
+    <ul>
+      <li><strong>Avant</strong> : le contrat, la sécurité du site, les autorisations.</li>
+      <li><strong>Pendant</strong> : la preuve de la visite et la trace du fluide.</li>
+      <li><strong>Après</strong> : la réception, la mise en service, les dossiers à garder.</li>
+    </ul>
+    <p>Pour chaque papier, posez trois questions : <strong>Qui le remplit ? Qui le signe ? Où va-t-il ?</strong></p>
+    <p class="formule">La règle d'or : avant le premier outil, les papiers de l'avant sont signés.</p>
+    <figure>
+      <img src="svg/trois-temps.svg" alt="Trois colonnes alignées. Avant, huit papiers : devis signé, ordre de service, plan de prévention, PPSPS, protocole de sécurité, permis de feu, autorisation de travail, consignation. Pendant, deux papiers : bon d'intervention et fiche d'intervention Cerfa 15497. Après, cinq papiers : procès-verbal de réception, fiche de mise en service, BSFF, DOE, registre de l'équipement. Une bande en bas rappelle les trois questions : qui le remplit, qui le signe, où va-t-il.">
+      <figcaption>Avant, pendant, après : un papier par moment important.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Premier moment, avant le chantier : le contrat. Le tableau se remplit de gauche à droite, ligne par ligne. Première ligne, le devis. L'entreprise le remplit : c'est son offre de prix. Le client le signe : c'est son accord. Chacun garde un exemplaire, et il reste au dossier du chantier. Deuxième ligne, l'ordre de service. Il est écrit et signé par le maître d'œuvre, celui qui dirige les travaux, et il va à l'entreprise. C'est lui qui vous autorise à commencer. Sans ordre de service, demandez à votre responsable avant d'ouvrir la camionnette.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Avant (1) : le contrat — devis signé, ordre de service</h2>
+    <div class="papiers">
+      <div class="papier">
+        <h3>Le devis signé</h3>
+        <p class="sert">Le devis est l'offre de prix de votre entreprise. Quand le client le signe, c'est son <strong>accord</strong> sur les travaux et sur le prix. Une attestation d'assurance est jointe au devis (article L. 243-2 du Code des assurances ; station « Les garanties »).</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>l'entreprise</dd><dt>Qui le signe</dt><dd>le client</dd><dt>Où il va</dt><dd>chez le client et au dossier du chantier</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>L'ordre de service</h3>
+        <p class="sert">C'est l'écrit qui dit à l'entreprise de <strong>commencer</strong>, ou de changer quelque chose. Il vient de celui qui dirige les travaux : le maître d'œuvre (voir « Qui intervient sur une installation frigorifique ? »).</p>
+        <p class="point">Pas d'ordre de service reçu : demandez-le à votre responsable avant de commencer.</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>le maître d'œuvre</dd><dt>Qui le signe</dt><dd>le maître d'œuvre</dd><dt>Où il va</dt><dd>à l'entreprise, au dossier du chantier</dd></dl>
+      </div>
+    </div>
+    <figure>
+      <img src="svg/devis-ordre.svg" alt="Tableau à quatre colonnes : le papier, qui le remplit, qui le signe, où il va. Devis signé : rempli par l'entreprise, signé par le client, va chez le client et au dossier du chantier. Ordre de service : rempli par le maître d'œuvre, signé par le maître d'œuvre, va à l'entreprise, au dossier du chantier. Une bande rappelle : avant le premier outil, le client a dit oui, et on vous a dit de commencer.">
+      <figcaption>Lisez de gauche à droite : le papier, qui le remplit, qui le signe, où il va.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Deuxième temps : la sécurité du site. Trois papiers : selon le lieu et le chantier, un ou plusieurs vous concernent. Si votre entreprise travaille dans les locaux d'une autre, comme un restaurant ouvert, les deux chefs d'entreprise font ensemble le plan de prévention. Sur un chantier de bâtiment avec un coordonnateur sécurité, chaque entreprise écrit son PPSPS et le remet au coordonnateur. Pour une livraison de matériel, un protocole de sécurité remplace le plan de prévention. Dans tous les cas, votre chef d'entreprise doit vous informer des dangers avant que vous commenciez.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Avant (2) : la sécurité du site</h2>
+    <div class="papiers">
+      <div class="papier">
+        <h3>Le plan de prévention</h3>
+        <p class="sert">Quand votre entreprise travaille <strong>dans les locaux d'une autre</strong>, les deux chefs d'entreprise font ensemble une analyse des risques, après avoir visité les lieux (art. R. 4512-6). Le plan est écrit si les travaux durent <strong>400 heures ou plus sur 12 mois</strong>, ou s'ils figurent sur la liste des travaux dangereux (art. R. 4512-7). Il fixe les phases dangereuses, les consignes et les secours (art. R. 4512-8).</p>
+        <p class="point">Avant de commencer, votre chef d'entreprise vous informe des dangers, des zones dangereuses et des accès (art. R. 4512-15).</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>les deux chefs d'entreprise</dd><dt>Qui le signe</dt><dd>les deux chefs d'entreprise</dd><dt>Où il va</dt><dd>chacun garde un exemplaire</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>Le PPSPS</h3>
+        <p class="sert">Sur un <strong>chantier de bâtiment</strong> où un coordonnateur SPS est désigné, l'entreprise qui y est soumise écrit son <strong>plan particulier de sécurité et de protection de la santé</strong>. Il ne parle que de son activité : ses risques et ses mesures. Il est remis au coordonnateur.</p>
+        <p class="point">Le coordonnateur, lui, écrit le plan général de coordination (PGC) : voir « Qui intervient sur une installation frigorifique ? ».</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>votre entreprise</dd><dt>Qui le signe</dt><dd>son chef d'entreprise</dd><dt>Où il va</dt><dd>au coordonnateur SPS</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>Le protocole de sécurité</h3>
+        <p class="sert">Pour un <strong>chargement ou un déchargement</strong> (une livraison de matériel, par exemple), un écrit appelé protocole de sécurité remplace le plan de prévention (art. R. 4515-4). Il rassemble les informations utiles pour évaluer les risques de l'opération (art. R. 4515-5).</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>les deux entreprises</dd><dt>Qui le signe</dt><dd>les deux entreprises</dd><dt>Où il va</dt><dd>chacune garde un exemplaire</dd></dl>
+      </div>
+    </div>
+    <p>Le document de l'employeur sur ses propres risques est un autre papier : le DUERP (station « Le DUERP »).</p>
+    <figure>
+      <img src="svg/securite-du-site.svg" alt="Tableau à quatre colonnes : le papier, qui le remplit, qui le signe, où il va. Plan de prévention : rempli par les deux chefs d'entreprise, signé par les deux chefs d'entreprise, va chacun garde un exemplaire. PPSPS : rempli par votre entreprise, signé par son chef d'entreprise, va au coordonnateur SPS. Protocole de sécurité : rempli par les deux entreprises, signé par les deux entreprises, va chacune garde un exemplaire. Une bande rappelle : selon le lieu et le chantier, un ou plusieurs de ces papiers vous concernent ; vous êtes informé des dangers avant de commencer.">
+      <figcaption>Selon le lieu et le chantier, un ou plusieurs de ces papiers vous concernent.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Troisième temps : les autorisations. Elles ressemblent à trois barrières qui s'ouvrent l'une après l'autre. Le permis de feu, d'abord : il est obligatoire avant tout travail par point chaud, comme le brasage. L'employeur ou son représentant l'établit. Il est signé par l'employeur, par le responsable d'intervention de l'entreprise qui fait les travaux et par le technicien qui brase. Ensuite l'autorisation de travail, remplie par le chargé de travaux. Enfin la consignation : le chargé de consignation atteste que l'installation est mise en sécurité. Quand les papiers demandés sont signés, la bande verte s'allume : vous pouvez commencer. Pas avant.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Avant (3) : les autorisations</h2>
+    <div class="papiers">
+      <div class="papier">
+        <h3>Le permis de feu</h3>
+        <p class="sert">Obligatoire avant tout <strong>travail par point chaud</strong> : brasage, soudage, meulage (INRS, brochure ED 6030). Il est établi par l'employeur ou son représentant. Il est signé par l'employeur, par le <strong>responsable d'intervention</strong> de l'entreprise qui fait les travaux et par le <strong>technicien qui brase</strong> : trois signatures dans un petit restaurant (INRS ; modèle du CDG 45). Voir la station « Le permis de feu ».</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>l'employeur ou son représentant</dd><dt>Qui le signe</dt><dd>l'employeur, le responsable d'intervention, le technicien</dd><dt>Où il va</dt><dd>un exemplaire à chaque signataire</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>L'autorisation de travail</h3>
+        <p class="sert">L'ordre écrit qui autorise l'opération. Un modèle d'autorisation demande la nature des travaux, l'entreprise, les dates, l'état de l'équipement (consigné ou non) et les équipements de protection à utiliser.</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>le chargé de travaux</dd><dt>Qui le signe</dt><dd>le chargé de travaux et l'exécutant</dd><dt>Où il va</dt><dd>un exemplaire à chacun</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>La consignation</h3>
+        <p class="sert"><strong>Consigner</strong>, c'est mettre l'installation en sécurité avant d'y travailler : on la sépare de ses sources d'énergie, on la condamne, on vérifie qu'elle est hors tension. Le chargé de consignation remet une <strong>attestation de consignation</strong> au chargé de travaux. À la fin, l'avis de fin de travail revient au chargé de consignation (station « Consigner »).</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>le chargé de consignation</dd><dt>Qui le signe</dt><dd>le chargé de consignation</dd><dt>Où il va</dt><dd>au chargé de travaux</dd></dl>
+      </div>
+    </div>
+    <figure>
+      <img src="svg/autorisations.svg" alt="Tableau à quatre colonnes : le papier, qui le remplit, qui le signe, où il va. Permis de feu : rempli par l'employeur ou son représentant, signé par l'employeur, le responsable d'intervention, le technicien, va un exemplaire à chaque signataire. Autorisation de travail : rempli par le chargé de travaux, signé par le chargé de travaux et l'exécutant, va un exemplaire à chacun. Attestation de consignation : rempli par le chargé de consignation, signé par le chargé de consignation, va au chargé de travaux. Une bande verte cochée : les papiers demandés sont signés, feu vert, vous pouvez commencer.">
+      <figcaption>Une barrière par papier : la bande verte arrive en dernier.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Pendant l'intervention, deux papiers. Première ligne, le bon d'intervention. Le technicien le remplit : la date, le lieu, les travaux faits. Le client le signe à la fin de la visite. C'est la preuve que vous êtes venu et ce que vous avez fait. Deuxième ligne, la fiche d'intervention, le Cerfa quinze mille quatre cent quatre-vingt-dix-sept. Elle est obligatoire dès que vous manipulez du fluide frigorigène. L'opérateur, c'est-à-dire votre entreprise attestée, la remplit et la signe. Au-delà d'un seuil de charge, le détenteur la signe aussi et garde l'original. Une copie reste dans votre entreprise.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Pendant : le bon et la fiche d’intervention</h2>
+    <div class="papiers">
+      <div class="papier">
+        <h3>Le bon d'intervention</h3>
+        <p class="sert">La feuille de la visite : la date, le lieu, les travaux faits, le temps passé. En fin de visite, le client la signe : c'est la <strong>preuve</strong> que vous êtes venu et de ce que vous avez fait.</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>le technicien</dd><dt>Qui le signe</dt><dd>le client, en fin de visite</dd><dt>Où il va</dt><dd>copie au client, original à l'entreprise</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>La fiche d'intervention (Cerfa 15497)</h3>
+        <p class="sert">Pour <strong>chaque opération</strong> qui manipule du fluide frigorigène, l'<strong>opérateur</strong> (le mot du Code de l'environnement pour l'entreprise attestée qui intervient, dont vous faites partie) établit une fiche (art. R. 543-82). Au-delà d'un <strong>seuil de charge</strong> (chiffré sous la carte), l'opérateur et le détenteur la signent ; le détenteur garde l'original ; chacun garde un exemplaire au moins cinq ans.</p>
+        <p class="point"><strong>Seuil de charge</strong> : 5 tonnes équivalent CO₂ de HFC (hydrofluorocarbures) ou de PFC (perfluorocarbures), ou 3 kg de HCFC (hydrochlorofluorocarbures).<br><strong>Tonne équivalent CO₂</strong> : la masse de fluide multipliée par son potentiel de réchauffement planétaire (PRP), qui mesure son effet de serre. Voir la station « PRP &amp; ODP ».<br>Détails : station « Traçabilité ».</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>l'opérateur (l'entreprise attestée)</dd><dt>Qui le signe</dt><dd>l'opérateur, et le détenteur au-delà du seuil de charge</dd><dt>Où il va</dt><dd>l'original au détenteur, une copie à l'opérateur</dd></dl>
+      </div>
+    </div>
+    <figure>
+      <img src="svg/bon-et-fiche.svg" alt="Tableau à quatre colonnes : le papier, qui le remplit, qui le signe, où il va. Bon d'intervention : rempli par le technicien, signé par le client, en fin de visite, va copie au client, original à l'entreprise. Fiche d'intervention Cerfa 15497 : rempli par l'opérateur (l'entreprise attestée), signé par l'opérateur, et le détenteur au-delà du seuil de charge, va l'original au détenteur, une copie à l'opérateur. Une bande rappelle : le bon prouve la visite, la fiche prouve où est passé le fluide.">
+      <figcaption>Le bon prouve la visite. La fiche prouve où est passé le fluide.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Après le chantier, d'abord la réception. Le procès-verbal de réception est signé par le client et par l'entreprise, ensemble. Le client y déclare qu'il accepte l'ouvrage, avec ou sans réserves. Une réserve, c'est ce qui reste à reprendre, écrit sur le procès-verbal. Chacun garde un exemplaire. Retenez la date : c'est le point de départ des garanties. Deuxième ligne, la fiche de mise en service. Le technicien y écrit les valeurs relevées quand la machine tourne : pressions, températures, intensités. Le client la signe aussi, et elle rejoint le dossier de l'installation.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Après (1) : la réception et la mise en service</h2>
+    <div class="papiers">
+      <div class="papier">
+        <h3>Le procès-verbal de réception</h3>
+        <p class="sert">La <strong>réception</strong> est l'acte par lequel le client déclare accepter l'ouvrage, avec ou sans <strong>réserves</strong> (ce qui reste à reprendre) (art. 1792-6 du Code civil). Elle est faite en présence des deux parties. Sa date est le point de départ des garanties (station « Les garanties »).</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>le client et l'entreprise</dd><dt>Qui le signe</dt><dd>le client et l'entreprise</dd><dt>Où il va</dt><dd>un exemplaire pour chacun</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>La fiche de mise en service</h3>
+        <p class="sert">À la mise en service, vous relevez les valeurs de fonctionnement (pressions, températures, intensités) et vos réglages, et vous les écrivez. Elle prouve que l'installation a été contrôlée <strong>en marche</strong>.</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>le technicien</dd><dt>Qui le signe</dt><dd>le technicien et le client</dd><dt>Où il va</dt><dd>au dossier de l'installation</dd></dl>
+      </div>
+    </div>
+    <figure>
+      <img src="svg/reception-mise-en-service.svg" alt="Tableau à quatre colonnes : le papier, qui le remplit, qui le signe, où il va. Procès-verbal de réception : rempli par le client et l'entreprise, signé par le client et l'entreprise, va un exemplaire pour chacun. Fiche de mise en service : rempli par le technicien, signé par le technicien et le client, va au dossier de l'installation. Une bande rappelle : la date du procès-verbal est le point de départ des garanties.">
+      <figcaption>La date du procès-verbal part les garanties.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Après le chantier, trois dossiers restent. Le premier suit le fluide : si le fluide récupéré ne sera pas réutilisé, il devient un déchet et part avec un bordereau, le BSFF, rempli dans Trackdéchets. L'émetteur, le transporteur et l'installation de destination le signent. Le deuxième suit l'ouvrage : le DOE, le dossier des ouvrages exécutés, est remis au maître d'ouvrage après la réception. Le troisième suit la machine : le registre de l'équipement, tenu par l'exploitant, garde les contrôles et les fluides ajoutés ou récupérés. Vous y inscrivez vos données.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">Après (2) : le BSFF, le DOE et le registre</h2>
+    <div class="papiers">
+      <div class="papier">
+        <h3>Le BSFF</h3>
+        <p class="sert">Un fluide récupéré qui ne sera pas réutilisé devient un <strong>déchet</strong>. Il part avec un <strong>bordereau de suivi</strong> (BSFF), rempli dans Trackdéchets. L'émetteur, le transporteur et l'installation de destination le signent par voie électronique (arrêté du 26 juillet 2022). Détails : station « Traçabilité ».</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>l'émetteur du fluide récupéré</dd><dt>Qui le signe</dt><dd>l'émetteur, le transporteur, la destination</dd><dt>Où il va</dt><dd>dans Trackdéchets</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>Le DOE</h3>
+        <p class="sert">Le <strong>dossier des ouvrages exécutés</strong> est remis par l'entreprise au maître d'ouvrage après la réception. Il garde l'histoire technique de l'installation : on s'en sert pour la faire fonctionner, l'entretenir, la modifier.</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>l'entreprise</dd><dt>Qui le signe</dt><dd>selon le marché</dd><dt>Où il va</dt><dd>au maître d'ouvrage</dd></dl>
+      </div>
+      <div class="papier">
+        <h3>Le registre de l'équipement</h3>
+        <p class="sert">La <strong>mémoire de la machine</strong> : fluide chargé, contrôles d'étanchéité, fuites, fluide ajouté ou récupéré. Il est tenu par l'exploitant (règlement F-Gaz III). Vos codes d'attestation : <strong>4.09</strong> et <strong>5.07</strong>.</p>
+        <dl class="rsv"><dt>Qui le remplit</dt><dd>l'exploitant, avec vos données</dd><dt>Qui le signe</dt><dd>pas de signature type</dd><dt>Où il va</dt><dd>avec la machine, tenu à jour</dd></dl>
+      </div>
+    </div>
+    <figure>
+      <img src="svg/bsff-doe-registre.svg" alt="Tableau à quatre colonnes : le papier, qui le remplit, qui le signe, où il va. BSFF (bordereau) : rempli par l'émetteur du fluide récupéré, signé par l'émetteur, le transporteur, la destination, va dans Trackdéchets. DOE (dossier des ouvrages exécutés) : rempli par l'entreprise, signé par selon le marché, va au maître d'ouvrage. Registre de l'équipement : rempli par l'exploitant, avec vos données, signé par pas de signature type, va avec la machine, tenu à jour. Une bande rappelle : trois dossiers, le déchet, l'ouvrage, la machine.">
+      <figcaption>Trois dossiers : le déchet, l’ouvrage, la machine.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan est une check-list de six lignes, à garder avec vous. Trois lignes pour l'avant : le devis est signé et j'ai l'ordre de commencer, j'ai lu le plan de prévention ou le PPSPS, et si je brase, le permis de feu est signé. Une quatrième : si l'installation doit être consignée, c'est fait. Une ligne pour le pendant : je remplis la fiche d'intervention. Une ligne pour la fiche d'intervention : j'en remets l'original au détenteur et je garde ma copie. La liste sous le dessin résume les quinze papiers et répond aux trois questions.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : ma check-list</h2>
+    <p class="formule">Le réflexe : trois questions pour chaque papier — Qui le remplit ? Qui le signe ? Où va-t-il ?</p>
+    <h3 class="recap-temps">Avant</h3>
+    <ul class="recap">
+      <li><strong>Devis signé</strong><br>remplit : l'entreprise · signe : le client · va : chez le client et au dossier du chantier</li>
+      <li><strong>Ordre de service</strong><br>remplit : le maître d'œuvre · signe : le maître d'œuvre · va : à l'entreprise, au dossier du chantier</li>
+      <li><strong>Plan de prévention</strong><br>remplit : les deux chefs d'entreprise · signe : les deux chefs d'entreprise · va : chacun garde un exemplaire</li>
+      <li><strong>PPSPS</strong><br>remplit : votre entreprise · signe : son chef d'entreprise · va : au coordonnateur SPS</li>
+      <li><strong>Protocole de sécurité</strong><br>remplit : les deux entreprises · signe : les deux entreprises · va : chacune garde un exemplaire</li>
+      <li><strong>Permis de feu</strong><br>remplit : l'employeur ou son représentant · signe : l'employeur, le responsable d'intervention, le technicien · va : un exemplaire à chaque signataire</li>
+      <li><strong>Autorisation de travail</strong><br>remplit : le chargé de travaux · signe : le chargé de travaux et l'exécutant · va : un exemplaire à chacun</li>
+      <li><strong>Attestation de consignation</strong><br>remplit : le chargé de consignation · signe : le chargé de consignation · va : au chargé de travaux</li>
+    </ul>
+    <h3 class="recap-temps">Pendant</h3>
+    <ul class="recap">
+      <li><strong>Bon d'intervention</strong><br>remplit : le technicien · signe : le client, en fin de visite · va : copie au client, original à l'entreprise</li>
+      <li><strong>Fiche d'intervention Cerfa 15497</strong><br>remplit : l'opérateur (l'entreprise attestée) · signe : l'opérateur, et le détenteur au-delà du seuil de charge · va : l'original au détenteur, une copie à l'opérateur</li>
+    </ul>
+    <h3 class="recap-temps">Après</h3>
+    <ul class="recap">
+      <li><strong>Procès-verbal de réception</strong><br>remplit : le client et l'entreprise · signe : le client et l'entreprise · va : un exemplaire pour chacun</li>
+      <li><strong>Fiche de mise en service</strong><br>remplit : le technicien · signe : le technicien et le client · va : au dossier de l'installation</li>
+      <li><strong>BSFF (bordereau)</strong><br>remplit : l'émetteur du fluide récupéré · signe : l'émetteur, le transporteur, la destination · va : dans Trackdéchets</li>
+      <li><strong>DOE (dossier des ouvrages exécutés)</strong><br>remplit : l'entreprise · signe : selon le marché · va : au maître d'ouvrage</li>
+      <li><strong>Registre de l'équipement</strong><br>remplit : l'exploitant, avec vos données · signe : pas de signature type · va : avec la machine, tenu à jour</li>
+    </ul>
+    <figure>
+      <img src="svg/bilan-papiers.svg" alt="Six lignes cochées, chacune avec une pastille AVANT, PENDANT ou APRÈS : le devis est signé et j'ai l'ordre de commencer ; j'ai lu le plan de prévention ou le PPSPS ; si je brase, le permis de feu est signé ; si l'installation doit être consignée, c'est fait ; je remplis la fiche d'intervention quand je manipule du fluide ; pour la fiche d'intervention, j'en remets l'original au détenteur et je garde ma copie.">
+      <figcaption>Six gestes pour ne jamais commencer sans papiers.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= LES QUATRE QUESTIONS ================= -->
+
+  <section class="slide question" id="q1" data-narration="Première question. Votre entreprise doit travailler quatre cents heures sur douze mois dans un restaurant qui reste ouvert pendant les travaux. Quel écrit faut-il avant de commencer ? Reprenez le tableau de l'écran trois : selon le lieu et le chantier, un papier de sécurité s'impose. Lisez les quatre propositions, puis choisissez-en une.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Votre entreprise travaille 400 heures sur 12 mois dans un restaurant qui reste ouvert. Quel écrit faut-il avant de commencer ?</h2>
+    <figure class="vignette">
+      <img src="svg/securite-du-site.svg" alt="Vignette de rappel : le tableau des trois papiers de sécurité du site, plan de prévention, PPSPS et protocole de sécurité.">
+      <figcaption>Rappel de l'écran 3 — selon le lieu et le chantier, un papier de sécurité s’impose.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le BSFF</button>
+      <button type="button" data-answer="bonne">Le plan de prévention</button>
+      <button type="button" data-answer="c">Le procès-verbal de réception</button>
+      <button type="button" data-answer="d">Le bon d'intervention</button>
+    </div>
+    <p class="feedback" hidden data-explication="Quand des entreprises extérieures travaillent 400 heures ou plus sur 12 mois, le plan de prévention doit être écrit avant le début des travaux (art. R. 4512-7). Il l'est aussi pour certains travaux dangereux, quelle que soit la durée."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Vous allez braser un tube de cuivre chez un client. Quel papier faut-il avant de sortir le chalumeau ? Pensez aux trois barrières de l'écran quatre : une seule concerne un travail par point chaud. Lisez les quatre propositions, puis choisissez-en une. Une seule est un papier de l'avant, signé avant le premier geste.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Vous allez braser un tube de cuivre chez un client. Quel papier faut-il avant de sortir le chalumeau ?</h2>
+    <figure class="vignette">
+      <img src="svg/autorisations.svg" alt="Vignette de rappel : le tableau des trois autorisations, permis de feu, autorisation de travail et attestation de consignation, avec la bande verte feu vert.">
+      <figcaption>Rappel de l'écran 4 — trois barrières, une bande verte.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">Le permis de feu</button>
+      <button type="button" data-answer="b">La fiche d'intervention Cerfa 15497</button>
+      <button type="button" data-answer="c">L'attestation de consignation</button>
+      <button type="button" data-answer="d">Le bon d'intervention</button>
+    </div>
+    <p class="feedback" hidden data-explication="Le brasage est un travail par point chaud : le permis de feu est obligatoire et signé avant de commencer (INRS). La fiche d'intervention se remplit pendant ou après, pour le fluide ; l'attestation de consignation concerne la mise en sécurité de l'installation."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Quand faut-il remplir une fiche d'intervention, le Cerfa quinze mille quatre cent quatre-vingt-dix-sept ? Réfléchissez à ce qu'elle prouve. Souvenez-vous de la deuxième ligne du tableau de l'écran cinq : le bon prouve la visite, la fiche prouve où est passé le fluide. Lisez les quatre propositions, puis choisissez-en une.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Quand faut-il remplir une fiche d'intervention Cerfa 15497 ?</h2>
+    <figure class="vignette">
+      <img src="svg/bon-et-fiche.svg" alt="Vignette de rappel : le tableau du bon d'intervention et de la fiche d'intervention Cerfa 15497.">
+      <figcaption>Rappel de l'écran 5 — le bon prouve la visite, la fiche prouve le fluide.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Seulement à la mise en service de la machine</button>
+      <button type="button" data-answer="b">Seulement quand une fuite est constatée</button>
+      <button type="button" data-answer="bonne">Pour chaque opération qui manipule du fluide frigorigène</button>
+      <button type="button" data-answer="d">Seulement chez un particulier, pas chez un professionnel</button>
+    </div>
+    <p class="feedback" hidden data-explication="L'opérateur établit une fiche pour chaque opération qui manipule du fluide frigorigène (art. R. 543-82) : pas seulement à la mise en service, pas seulement en cas de fuite, chez un particulier comme chez un professionnel."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Quel papier donne la date de départ des garanties ? Reprenez la bande du bas de l'écran six : une date y est mise en avant. Lisez les quatre propositions, puis choisissez-en une. Pensez à ce que le client déclare en le signant, avec ou sans réserves.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Quel papier donne la date de départ des garanties ?</h2>
+    <figure class="vignette">
+      <img src="svg/reception-mise-en-service.svg" alt="Vignette de rappel : le tableau du procès-verbal de réception et de la fiche de mise en service, avec la bande sur le point de départ des garanties.">
+      <figcaption>Rappel de l'écran 6 — la date du procès-verbal part les garanties.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Le devis signé</button>
+      <button type="button" data-answer="b">L'ordre de service</button>
+      <button type="button" data-answer="c">La fiche de mise en service</button>
+      <button type="button" data-answer="bonne">Le procès-verbal de réception</button>
+    </div>
+    <p class="feedback" hidden data-explication="La réception est l'acte par lequel le client accepte l'ouvrage, avec ou sans réserves. La date du procès-verbal est le point de départ des garanties (art. 1792-6 du Code civil et station « Les garanties »)."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../acteurs-installation/"><strong>Qui intervient sur une installation frigorifique ?</strong></a> (sous-ligne Fluidique) — les acteurs qui remplissent et signent ces papiers.</li>
+    <li><a href="../risques-duerp/"><strong>Le DUERP</strong></a> (même sous-ligne) — le document de l’employeur, et le plan de prévention.</li>
+    <li><a href="../incendie-permis-de-feu/"><strong>Le permis de feu</strong></a> (sous-ligne Incendie) — le papier de l’écran 4, rempli pas à pas.</li>
+    <li><a href="../tracabilite-fluides/"><strong>Traçabilité</strong></a> (sous-ligne Fluidique) — la fiche d’intervention, le registre et le BSFF.</li>
+    <li><a href="../elec-consigner/"><strong>Consigner</strong></a> (sous-ligne Électrique) — la consignation et ses papiers.</li>
+    <li><a href="../certif-garanties/"><strong>Les garanties</strong></a> (sous-ligne Certifications) — la réception, point de départ des garanties.</li>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (sous-ligne Fluidique) — qui a le droit d’intervenir.</li>
+    <li><a href="https://inerweb.fr/jouerezo/"><strong>JouéRézo</strong></a> — s’entraîner à ranger les papiers avant, pendant, après.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+<script src="app.js?v=20261017-voix"></script>
+<!-- La scène animée de la branche : SceneKit et VOYAGE_DESSIN, lus, jamais modifiés. -->
+<script src="../../../cartoclim/stations/_commun/scene-kit.js"></script>
+<script src="../../../jouerezo/moteur/voyage-dessin.js"></script>
+<script src="../../scenes/risques.js"></script>
+
+  <script src="../../../moteur/voix-index.js?v=20261018-tom"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js?v=20261017-voix"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+<script src="../../scenes/dessin-vivant.js?v=20261015-campagne4" defer></script>
+<script src="../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+</body>
+</html>

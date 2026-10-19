@@ -176,7 +176,7 @@
 <div class="page" role="main" id="contenu" tabindex="-1">
 
   <div class="accroche">
-    <div class="pastille">NIVEAU BTS · TP TECVC · 57 STATIONS · PROTOTYPE EN RELECTURE</div>
+    <div class="pastille">NIVEAU BTS · TP TECVC · 60 STATIONS · PROTOTYPE EN RELECTURE</div>
     <h1>Le réseau <em>Législation</em>.</h1>
     <p class="chapo">Une <strong>autre matière</strong> que la thermo-techno : le cadre du métier —
     réglementations, sécurité, environnement. Un réseau à part entière, et un réseau
@@ -206,7 +206,7 @@
        bandeau, hors du plan : il dit l'état réel et donne l'accès direct.
        À tenir à jour quand une station ouvre — c'est deux nombres et un lien. -->
   <div class="ouvert">
-    <p class="o-etat"><b>57 stations ouvertes</b> sur 57</p>
+    <p class="o-etat"><b>60 stations ouvertes</b> sur 60</p>
     <p class="o-liste"><b>Les onze sous-lignes sont complètes</b> — de la sécurité au droit du
     travail, en passant par l'électricité, les fluides, la DESP, la thermique, l'acoustique,
     l'incendie, les certifications, les déchets et l'impact environnemental.</p>
@@ -225,7 +225,7 @@
   <section class="bloc plan" id="carte" aria-label="Plan du réseau Législation">
     <div class="titre-bloc">
       <h2>🚇 Le plan du réseau</h2>
-      <span>2 lignes mères · 11 sous-lignes · 57 stations ouvertes</span>
+      <span>2 lignes mères · 11 sous-lignes · 60 stations ouvertes</span>
     </div>
     <div class="legende-plan">
       <span class="puce-l"><span class="tete-l"></span> tête de sous-ligne</span>
@@ -320,6 +320,7 @@
             { nom: "Le désenfumage",    sous: "le rôle du CVC", href: "stations/incendie-desenfumage/" },
             { nom: "Clapets coupe-feu", sous: "traversées, DAS", href: "stations/incendie-clapets-coupe-feu/" },
             { nom: "Le SSI",            sous: "détection, asservis.", href: "stations/incendie-ssi/" },
+            { nom: "Le permis de feu",  sous: "remplir le permis", href: "stations/incendie-permis-de-feu/" },
             { nom: "Sprinkler & RIA",   sous: "eau incendie, lot CVC", href: "stations/incendie-sprinkler-ria/", corr: true }
           ] },
         { id: "regl-electrique", ico: "⚡", nom: "Électrique", sous: "NF C 15-100, habilitation", couleur: "#a16207", corr: true,
@@ -335,6 +336,7 @@
           stations: [
             { nom: "F-Gaz 3",             sous: "2024 : quotas, interdictions", href: "stations/fgaz-3/" },
             { nom: "Aptitude & capacité", sous: "personne & entreprise", href: "stations/aptitude-capacite/" },
+            { nom: "Les intervenants",    sous: "qui répond de quoi", href: "stations/acteurs-installation/" },
             { nom: "NF EN 378",           sous: "classes, charges maxi", href: "stations/en-378/", corr: true },
             { nom: "Traçabilité",         sous: "BSD, Trackdéchets", href: "stations/tracabilite-fluides/", corr: true }
           ] },
@@ -369,6 +371,7 @@
         { id: "secu-risques", ico: "⛑️", nom: "Risques professionnels", sous: "DUERP, EPI, gestes", couleur: "#c2410c",
           stations: [
             { nom: "Le DUERP",        sous: "évaluer les risques", href: "stations/risques-duerp/" },
+            { nom: "Les papiers",     sous: "avant, pendant, après", href: "stations/risques-papiers-chantier/" },
             { nom: "Les 9 principes", sous: "prévenir dans l'ordre", href: "stations/risques-neuf-principes/" },
             { nom: "Les EPI",         sous: "choisir & vérifier", href: "stations/risques-epi/", corr: true },
             { nom: "En hauteur",      sous: "échafaudages, R408", href: "stations/risques-hauteur/", corr: true },
@@ -533,7 +536,7 @@
   var H = rangees(RESEAU[1]).slice(-1)[0].fin + 70;
 
   var d = [];
-  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, onze sous-lignes, 57 stations ouvertes">');
+  d.push('<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Plan du réseau Législation inerWeb — deux lignes mères, onze sous-lignes, 60 stations ouvertes">');
 
   /* Départ commun en tête : un court tronc vertical dessert les deux
      lignes mères (la verte dessous, la bleue par-dessus sur le segment

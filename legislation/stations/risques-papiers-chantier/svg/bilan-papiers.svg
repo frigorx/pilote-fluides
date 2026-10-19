@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"
+     aria-labelledby="t-pc8" aria-describedby="d-pc8" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-pc8">Ma check-list avant, pendant, après</title>
+  <desc id="d-pc8">Six lignes cochées. Avant : le devis est signé et j'ai l'ordre de commencer ; j'ai lu le plan de prévention ou le PPSPS ; si je brase, le permis de feu est signé ; si l'installation doit être consignée, c'est fait. Pendant : je remplis la fiche d'intervention quand je manipule du fluide. Après : pour la fiche d'intervention, j'en remets l'original au détenteur et je garde ma copie. Chaque ligne porte une pastille AVANT, PENDANT ou APRÈS.</desc>
+  <style>
+    .ttl { font-weight:bold; font-size:22px; fill:#10233c; }
+    .nom { font-weight:bold; font-size:18px; fill:#1b3a63; }
+    .nomo{ font-weight:bold; font-size:18px; fill:#9a4d0c; }
+    .nomc{ font-weight:bold; font-size:18px; fill:#c2410c; }
+    .txt { font-size:16px; fill:#10233c; }
+    .mut { font-size:16px; fill:#5a6b7d; }
+    .wht { font-weight:bold; font-size:18px; fill:#ffffff; }
+  </style>
+  <defs><marker id="fl-pc8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/></marker></defs>
+  <rect width="800" height="500" fill="#fffdf8"/>
+<!-- 1 : titre -->
+<text class="ttl" x="400" y="28" text-anchor="middle"><tspan x="400" dy="0">Ma check-list avant, pendant, après</tspan></text>
+<!-- 2 : Le devis est signé, on m’a dit de commencer. -->
+<rect x="20" y="46" width="760" height="62" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/><rect x="40" y="61" width="32" height="32" rx="6" fill="#fff" stroke="#10233c" stroke-width="3"/><path d="M46,77 l8,9 l14,-17" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text class="txt" x="92" y="84" text-anchor="start"><tspan x="92" dy="0">Le devis est signé, on m’a dit de commencer.</tspan></text><rect x="664" y="60" width="104" height="34" rx="17" fill="#1b3a63"/><text class="wht" style="font-size:16px" x="716" y="83" text-anchor="middle"><tspan x="716" dy="0">AVANT</tspan></text>
+<!-- 3 : J'ai lu le plan de prévention ou le PPSPS. -->
+<rect x="20" y="118" width="760" height="62" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/><rect x="40" y="133" width="32" height="32" rx="6" fill="#fff" stroke="#10233c" stroke-width="3"/><path d="M46,149 l8,9 l14,-17" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text class="txt" x="92" y="156" text-anchor="start"><tspan x="92" dy="0">J'ai lu le plan de prévention ou le PPSPS.</tspan></text><rect x="664" y="132" width="104" height="34" rx="17" fill="#1b3a63"/><text class="wht" style="font-size:16px" x="716" y="155" text-anchor="middle"><tspan x="716" dy="0">AVANT</tspan></text>
+<!-- 4 : Si je brase : le permis de feu est signé. -->
+<rect x="20" y="190" width="760" height="62" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/><rect x="40" y="205" width="32" height="32" rx="6" fill="#fff" stroke="#10233c" stroke-width="3"/><path d="M46,221 l8,9 l14,-17" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text class="txt" x="92" y="228" text-anchor="start"><tspan x="92" dy="0">Si je brase : le permis de feu est signé.</tspan></text><rect x="664" y="204" width="104" height="34" rx="17" fill="#1b3a63"/><text class="wht" style="font-size:16px" x="716" y="227" text-anchor="middle"><tspan x="716" dy="0">AVANT</tspan></text>
+<!-- 5 : Si l'installation doit être consignée : c'est fait. -->
+<rect x="20" y="262" width="760" height="62" rx="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/><rect x="40" y="277" width="32" height="32" rx="6" fill="#fff" stroke="#10233c" stroke-width="3"/><path d="M46,293 l8,9 l14,-17" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text class="txt" x="92" y="300" text-anchor="start"><tspan x="92" dy="0">Si l'installation doit être consignée : c'est fait.</tspan></text><rect x="664" y="276" width="104" height="34" rx="17" fill="#1b3a63"/><text class="wht" style="font-size:16px" x="716" y="299" text-anchor="middle"><tspan x="716" dy="0">AVANT</tspan></text>
+<!-- 6 : Je remplis la fiche d'intervention (fluide). -->
+<rect x="20" y="334" width="760" height="62" rx="12" fill="#fff" stroke="#e8914a" stroke-width="3"/><rect x="40" y="349" width="32" height="32" rx="6" fill="#fff" stroke="#10233c" stroke-width="3"/><path d="M46,365 l8,9 l14,-17" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text class="txt" x="92" y="372" text-anchor="start"><tspan x="92" dy="0">Je remplis la fiche d'intervention (fluide).</tspan></text><rect x="664" y="348" width="104" height="34" rx="17" fill="#e8914a"/><text class="wht" style="font-size:16px" x="716" y="371" text-anchor="middle"><tspan x="716" dy="0">PENDANT</tspan></text>
+<!-- 7 : Fiche d'intervention : original au détenteur, copie pour moi. -->
+<rect x="20" y="406" width="760" height="62" rx="12" fill="#fff" stroke="#1e7e54" stroke-width="3"/><rect x="40" y="421" width="32" height="32" rx="6" fill="#fff" stroke="#10233c" stroke-width="3"/><path d="M46,437 l8,9 l14,-17" fill="none" stroke="#1e7e54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text class="txt" x="92" y="444" text-anchor="start"><tspan x="92" dy="0">Fiche d'intervention : original au détenteur, copie pour moi.</tspan></text><rect x="664" y="420" width="104" height="34" rx="17" fill="#1e7e54"/><text class="wht" style="font-size:16px" x="716" y="443" text-anchor="middle"><tspan x="716" dy="0">APRÈS</tspan></text>
+
+</svg>
