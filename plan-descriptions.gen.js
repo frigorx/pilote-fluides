@@ -13,6 +13,7 @@ window.PLAN_DESC = {
  "compresseur-interactif": "Cours interactif A1/A2 sur le compresseur : installer avec ses sécurités, régler en prouvant à l’instrument, vérifier l’huile et son retour.",
  "condenseur-interactif": "Cours interactif A1/A2 sur le condenseur : encrassement, haute pression, ventilation, installation, régulation, inspection et rapport.",
  "cours-classes-securite": "Cours interactif : lire une classe NF EN 378 (A1, A2L, A3, B2L…), le triangle du feu, le domaine d'explosivité et un cas réel d'accident.",
+ "detecteurs-fuite-interactif": "Cours interactif sur les détecteurs de fuite : méthodes directes et indirectes, trois technologies de détecteur, sensibilité, contrôle annuel, bons gestes, produit moussant et traceurs. CAP IFCA C4.3.",
  "detendeur-automatique": "Gare 4 de la ligne Les détendeurs : le détendeur automatique. Une membrane entre un ressort et la pression de l’évaporateur : il tient la basse pression constante. Utile sur les machines à charge constante, il se trompe quand la charge change.",
  "detendeur-egalisation-externe": "Gare 2 de la ligne Les détendeurs : l’égalisation externe. Dans un évaporateur à forte perte de charge, la pression baisse en route ; le tube d’égalisation amène sous la membrane la vraie pression de la sortie.",
  "detendeur-electronique": "Gare 6 de la ligne Les détendeurs : le détendeur électronique. Deux sondes mesurent à la sortie de l’évaporateur, un régulateur calcule la surchauffe et ouvre ou ferme la vanne (moteur pas à pas ou bobine par impulsions).",

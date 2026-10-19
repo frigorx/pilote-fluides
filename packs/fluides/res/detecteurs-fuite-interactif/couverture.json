@@ -1,0 +1,18 @@
+{
+  "cours": "detecteurs-fuite-interactif",
+  "titre": "Les détecteurs de fuite — technologies, réglage, contrôle annuel, produit moussant",
+  "reference": "arrêté du 21 novembre 2025 (attestation d’aptitude) ; CAP IFCA C4.3 ; arrêté du 29 février 2016, article 2",
+  "ecrans": 17,
+  "codes": {
+    "4.06": ["trois-outils", "traceurs", "cas-seul", "bilan"],
+    "4.07": ["deux-familles", "trois-outils", "six-gestes", "ordre-alerte", "moussant", "cas-seul", "bilan"],
+    "4.08": ["trois-outils", "trois-technologies", "quelle-technologie", "sensibilite", "fuite-de-reference", "lire-constat", "constat-a-jour", "six-gestes", "ordre-alerte", "sonde-dans-le-nuage", "interdits", "cas-seul", "bilan"]
+  },
+  "appui": {
+    "4.04": ["deux-familles", "releves", "cas-seul"],
+    "4.05": ["releves"]
+  },
+  "cap_ifca": {
+    "C4.3": ["deux-familles", "releves", "trois-outils", "trois-technologies", "quelle-technologie", "sensibilite", "fuite-de-reference", "lire-constat", "constat-a-jour", "six-gestes", "ordre-alerte", "sonde-dans-le-nuage", "interdits", "moussant", "traceurs", "cas-seul", "bilan"]
+  }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20.0 -22.0 38.0 38.0" width="38" height="38">
+<!-- Détecteur gaz — converti de detector-gas.elmt par outils\elmt-vers-svg.py -->
+<rect x="-20.0" y="-22.0" width="38.0" height="38.0" fill="#ffffff"/>
+<rect x="-10" y="-10" width="21" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-7.50" cy="7.50" rx="0.50" ry="0.50" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-3.50" cy="7.50" rx="0.50" ry="0.50" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.50" cy="7.50" rx="0.50" ry="0.50" stroke="red" stroke-width="1" fill="none"/>
+<line x1="7" y1="-6" x2="11" y2="-6" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="-4" x2="10" y2="-4" stroke="black" stroke-width="1" fill="none"/>
+<line x1="2" y1="-2" x2="10" y2="-2" stroke="black" stroke-width="1" fill="none"/>
+</svg>

@@ -63,6 +63,7 @@
     "chaine-intervention-interactive": true,
     "cours-classes-securite": true,
     "etancheite-interactive": true,
+    "detecteurs-fuite-interactif": true,
     "intervention-hydrocarbures-interactive": true
   };
 
@@ -167,6 +168,7 @@
         cours("film-ozone",                           "Couche d’ozone & ODP",    "film narré"),
         cours("film-effet-de-serre",                  "Effet de serre & PRP",    "film narré · 53 s"),
         cours("etancheite-interactive",               "L’étanchéité",            "de l’indice à la preuve"),
+        cours("detecteurs-fuite-interactif",          "Les détecteurs de fuite", "technologies, contrôle, usage"),
         cours("hydrocarbures-a1-a2",                  "Mission 290",             "hydrocarbures en sécurité"),
         cours("intervention-hydrocarbures-interactive","Intervenir sur R-290",   "le chantier hydrocarbure")
       ] }

@@ -1,0 +1,44 @@
+LES DÉTECTEURS DE FUITE — TECHNOLOGIES, RÉGLAGE, CONTRÔLE ANNUEL, PRODUIT MOUSSANT
+
+Cours interactif du plan thermo-techno, ligne « Fluides & environnement », juste après « L’étanchéité ».
+17 écrans, 6 dossiers, 12 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il prend le détecteur de fuite comme sujet unique : choisir entre soupçonner (méthode indirecte : relevés) et
+  localiser (méthode directe : détecteur, produit moussant, traceur UV), connaître les trois technologies de
+  détecteur (diode chauffée, infrarouge, ultrasons), savoir ce qu’est la sensibilité (5 g par an) et le contrôle
+  annuel (12 mois, constat de vérification), s’en servir sans le mettre en défaut (fuite de référence, balayage,
+  confirmation, saturation) et connaître les interdits (ouvrir une bouteille pour tester). Il complète « L’étanchéité »
+  (registre, relevés, traçabilité) sans le refaire, et renvoie au poste : gare « Chercher une fuite au détecteur » et
+  station « Contrôler l’étanchéité sous azote » du Tour de main.
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  CAP IFCA : C4.3 « Contrôler l’étanchéité d’un circuit frigorifique chargé en fluide » (activité Mise en service,
+  tâche T13).
+  Attestation d’aptitude (arrêté du 21/11/2025) : 4.06, 4.07, 4.08 ; en appui 4.04 et 4.05 (enseignés par L’étanchéité).
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (classer, lire des
+  relevés, retrouver une technologie, tester sur la fuite de référence, lire un constat, balayer, confirmer au
+  moussant). Le dernier exercice (« Un cas complet, seul ») n’a plus de guide : l’élève écrit son plan puis le
+  compare à la réponse type. Valeurs d’exemple (dates des constats) calculées, pas tapées.
+
+POINT RÉGLEMENTAIRE (19/10/2026)
+  Les deux chiffres du cours (5 g par an, 12 mois) viennent de l’arrêté du 29 février 2016, article 2. La page n’évoque
+  plus le règlement (CE) 1516/2007 (mention retirée le 19/10, commit 17c405fb) ; SOURCES.md garde ce qui a été lu
+  (règlement d’exécution (UE) 2026/1444). Le compte rendu liste ce que F. Henninot doit confirmer.
+
+DESSIN VIVANT
+  scene-geste.js (copie de celui de L’étanchéité) : la main du technicien, le raccord flare, la sonde, le moussant.
+  Il n’apparaît que sur les 5 écrans qu’il illustre (film en boucle à l’écran 1 ; « Mesurer », « Balayer »,
+  « Confirmer », « Test à la bulle » ailleurs) et se masque sur les 12 autres. Sur téléphone (≤ 650 px) il est masqué :
+  son texte, réduit à l’échelle, y serait illisible. La page défile (aucune colonne qui défile à l’intérieur) ; le cours
+  annonce « PC ou tablette » au téléphone et reste complet.
+
+ADRESSAGE
+  index.html?dossier=appareil&ecran=2
+  index.html?extrait=sensibilite,fuite-de-reference
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : python -m http.server 8796 à la racine du site, puis node tests/qa.mjs (Chrome du poste, 1280 et 375 px).
