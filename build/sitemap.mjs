@@ -31,6 +31,7 @@ const INDEXEES = [
   { fichier: "quartier/index.html", url: "https://inerweb.fr/quartier/" },
   { fichier: "formateurs.html", url: "https://inerweb.fr/formateurs.html" },
   { fichier: "decouvrir.html", url: "https://inerweb.fr/decouvrir.html" },
+  { fichier: "mentions.html", url: "https://inerweb.fr/mentions.html" },
   // inerWeb QCM (07/10/2026) : l'accueil de la station et ses trois activités de révision.
   { fichier: "qcm/index.html", url: "https://inerweb.fr/qcm/" },
   { fichier: "qcm/positionnement.html", url: "https://inerweb.fr/qcm/positionnement.html" },
