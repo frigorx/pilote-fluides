@@ -181,6 +181,15 @@
   /* Les outils : les bandeaux AquiBlue / HoCourant / Fluide dans un bloc blanc, sous le plan. */
   .outils .corps { padding:0 24px 22px; }
   .outils .corps .bandeau-aquiblue { margin-top:14px; }
+  /* 20/10 : sur grand écran, les bandeaux d'outils vont par deux (la section faisait 1 300 px de haut). */
+  @media (min-width:1000px) {
+    .outils .corps { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; padding-top:14px; }
+    .outils .corps .bandeau-aquiblue { margin-top:0; align-content:start;
+      grid-template-areas:"logo logo" "texte texte" "btns couv"; } /* la couverture descend à côté des boutons */
+    .outils .corps .ba-texte { font-size:14.5px; }
+    .outils .corps .ba-couv img { width:88px; }
+    .outils .corps .ba-couv.ba-vign img { width:150px; }
+  }
   .bandeau-fluide { border:2px solid var(--bleu-clair); }
   @media (max-width:760px) {
     .o-colonnes { grid-template-columns:1fr; gap:16px; }
@@ -481,8 +490,9 @@
   @media (min-width:1000px) { .vous-venez .tuiles { grid-template-columns:repeat(4,1fr); } }
   @media (max-width:720px) { .vous-venez .tuiles { grid-template-columns:1fr; } .vous-venez .tuile p { display:block; } }
   /* Porte « Je prépare un diplôme » (18/10/2026) : toute la largeur, sous les quatre tuiles. */
-  .vous-venez .tuile-diplome { grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px;
-    border:2px solid var(--bleu); }
+  /* 20/10 : .tuile impose flex-direction:column ; sans « row » ici, la tuile faisait 460 px de haut, vide au milieu. */
+  .vous-venez .tuile-diplome { grid-column:1 / -1; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; gap:10px 18px;
+    padding:14px 22px; border:2px solid var(--bleu); }
   .vous-venez .tuile-diplome .emoji { margin:0; }
   .vous-venez .tuile-diplome .txt { flex:1 1 320px; }
   .vous-venez .tuile-diplome h3, .vous-venez .tuile-diplome p { margin:0; }
@@ -544,15 +554,18 @@
   .hall-reseaux { margin-top:36px; }
   .hall-reseaux h2 { margin:0 0 6px; font-family:var(--titre); font-size:26px; color:var(--bleu); }
   .hall-reseaux .sous { margin:0 0 18px; color:var(--mut); max-width:48em; text-wrap:pretty; }
-  .grille-reseaux { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  /* 20/10/2026 (F. Henninot : « trop de choses d'entrée de jeu ») : les treize vignettes passent en
+     grille compacte — quatre par rangée, image basse, résumé sur deux lignes, une seule entrée
+     (la première, ▶) plus la chaîne YouTube. Le HTML des vignettes reste celui de build/accueil.mjs. */
+  .grille-reseaux { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
   .vignette { background:var(--carte); border:1px solid var(--ligne); border-top:6px solid var(--c);
               border-radius:var(--r); box-shadow:var(--ombre); overflow:hidden;
               display:flex; flex-direction:column; }
   .v-carte { display:block; background:#fff; padding:10px 12px; border-bottom:1px solid var(--ligne); }
   .v-carte { position:relative; }
-  .v-carte img { display:block; width:100%; height:190px; object-fit:contain; }
+  .v-carte img { display:block; width:100%; height:130px; object-fit:contain; }
   /* 06/10/2026 — deux volets : ce qu'on va voir (illustration) et le plan du réseau, étiqueté. */
-  .v-carte.v-duo { display:grid; grid-template-columns:1.3fr 1fr; padding:0; height:210px; }
+  .v-carte.v-duo { display:grid; grid-template-columns:1.3fr 1fr; padding:0; height:130px; }
   .v-duo .v-illu { display:block; overflow:hidden; background:#f3efe7; }
   .v-duo .v-illu img { height:100%; object-fit:cover; }
   .v-duo .v-plan { position:relative; display:block; background:#fff; padding:10px 8px 30px; border-left:1px solid var(--ligne); }
@@ -560,11 +573,11 @@
   .v-etiq { position:absolute; left:6px; right:6px; bottom:6px; text-align:center; font-size:14px; font-weight:bold;
             color:var(--c); line-height:1.2; }
   .v-carte.v-plein { padding:0; }
-  .v-plein img { height:210px; object-fit:cover; }
+  .v-plein img { height:130px; object-fit:cover; }
   .v-pastille { position:absolute; right:10px; bottom:10px; padding:5px 12px; border-radius:999px; background:#c00; color:#fff;
                 font-size:14px; font-weight:bold; box-shadow:0 2px 8px rgba(0,0,0,.25); }
-  .v-corps { padding:14px 18px 18px; display:flex; flex-direction:column; gap:6px; }
-  .v-nom { margin:0; font-family:var(--titre); font-size:19px; line-height:1.25; }
+  .v-corps { padding:12px 14px 14px; display:flex; flex-direction:column; gap:5px; }
+  .v-nom { margin:0; font-family:var(--titre); font-size:17px; line-height:1.25; }
   .v-nom a { color:var(--c); text-decoration:none; }
   .v-nom a:hover, .v-carte:hover img { text-decoration:underline; opacity:.92; }
   .v-chiffres { margin:0; font-size:13.5px; color:var(--mut); }
@@ -572,8 +585,10 @@
            background:#eef3f9; color:var(--bleu); font-weight:bold; font-size:12px; }
   .v-etat { display:inline-block; margin-left:6px; padding:1px 9px; border-radius:999px;
             background:#fff4e0; color:#b06a00; font-size:12px; font-weight:bold; }
-  .v-det { margin:0; font-size:15px; color:var(--txt); text-wrap:pretty; }
-  .v-entrees { margin:6px 0 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .v-det { margin:0; font-size:14px; color:var(--txt); text-wrap:pretty;
+           display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .v-entrees { margin:auto 0 0; padding-top:4px; display:flex; flex-wrap:wrap; gap:8px; }
+  .v-entrees a:not(.v-entree):not(.v-externe) { display:none; } /* le détail des lignes vit sur la page du réseau */
   .v-entrees a { font-size:13.5px; text-decoration:none; color:var(--bleu);
                  border:1.5px solid var(--ligne); border-radius:999px; padding:4px 11px; }
   .v-entrees a:hover { border-color:var(--bleu-clair); background:#eef3f9; }
@@ -583,8 +598,9 @@
   .portes.formation .porte { --accent:#1e7e54; }
   @media (max-width:1000px) {
     .hall { grid-template-columns:1fr; gap:22px; margin-top:56px; } /* sous la poignée « Infos », fixée à gauche */
-    .grille-reseaux { grid-template-columns:repeat(2,1fr); }
+    .grille-reseaux { grid-template-columns:repeat(3,1fr); }
   }
+  @media (max-width:800px) { .grille-reseaux { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:640px) {
     .grille-reseaux { grid-template-columns:1fr; }
     .chiffres { grid-template-columns:repeat(2,1fr); }
@@ -746,8 +762,8 @@
        ne trouvent pas l’entrée de l’écosystème ; ce bandeau mène au parcours découverte (decouvrir.html,
        08/10/2026 ; CLAUDE-ESPACE-TRAVAIL/PORTE-PROF-ET-TUTOS-2026-10-08/PLAN.md). -->
   <a href="decouvrir.html" class="porte-prof"
-     style="display:block; padding:14px 18px; border-radius:14px;
-            background:#ff6b35; color:#fff; text-decoration:none; font-size:17px; line-height:1.45;
+     style="display:block; padding:9px 16px; border-radius:14px;
+            background:#ff6b35; color:#fff; text-decoration:none; font-size:15.5px; line-height:1.4;
             font-family:'Trebuchet MS',Calibri,Arial,sans-serif; box-shadow:0 2px 10px rgba(27,58,99,.15);">
     <strong>Vous êtes formateur ou enseignant&nbsp;?</strong>
     Cliquez ici pour comprendre le fonctionnement de l’écosystème inerWeb, encore en développement&nbsp;→
@@ -1180,66 +1196,7 @@
     </div>
   </section>
 
-  <!-- PAR OÙ COMMENCER — trois portes (F. Henninot, 05/09/2026). La deuxième
-       ouvre la station Positionnement du plan : plusieurs portes vers la
-       même chose. La troisième mène au champ de recherche du hall. -->
-  <h2 class="portes-titre">Par où commencer ?</h2>
-  <div class="portes">
-    <!-- Quatrième porte, en tête : le quartier technique en 3D (F. Henninot, 02/10/2026) —
-         on entre par l’appareil qu’on reconnaît. Atelier : maquette-entree-technique/. -->
-    <a class="porte" href="quartier/">
-      <span class="p-ico" aria-hidden="true">🏙️</span>
-      <span class="p-titre">J’entre par le quartier</span>
-      <span class="p-det">Un commerce, une maison, la camionnette du technicien, en 3D : touchez un appareil, il vous mène à ses cours.</span>
-    </a>
-    <a class="porte" href="metier.html">
-      <span class="p-ico" aria-hidden="true">🚉</span>
-      <span class="p-titre">Je découvre</span>
-      <span class="p-det">Départ, aucun prérequis : c’est quoi, frigoriste ? Puis le premier cours, du glaçon au circuit.</span>
-    </a>
-    <a class="porte forte" href="formation.html?carte=ex-pos">
-      <span class="p-ico" aria-hidden="true">🎯</span>
-      <span class="p-titre">Je me situe</span>
-      <span class="p-det">Le positionnement d’entrée — 22 questions qui ne comptent pas. Où j’en suis, avant tout.</span>
-    </a>
-    <a class="porte" href="#q-accueil">
-      <span class="p-ico" aria-hidden="true">🔎</span>
-      <span class="p-titre">Je cherche un cours</span>
-      <span class="p-det">Un mot — surchauffe, manifold, huile — dans le champ de recherche, en haut de cette page.</span>
-    </a>
-  </div>
-
-  <!-- CÂBLER SUR L'ÉCRAN — le simulateur de câblage (F. Henninot, 24/09/2026 : « une extension
-       du logiciel, le service au public, à mettre dans la page de inerweb.fr »). Atelier
-       C:/git/cablage-virtuel, copie servie cablage-virtuel/ par son outils/livrer.py. -->
-  <h2 class="portes-titre">Câbler sur l’écran</h2>
-  <div class="portes">
-    <a class="porte forte avec-vignette" href="cablage-virtuel/">
-      <span class="p-ico" aria-hidden="true">🔌</span>
-      <span class="p-titre">Le simulateur de câblage</span>
-      <span class="p-det">Lire le schéma, poser les fils sur les bornes — au doigt sur la tablette ou à la souris. Quinze exercices, la puissance puis la commande, de l’allumage simple à la chambre froide négative. En relecture.</span>
-      <img class="p-vign" src="icones/outils/cablage-vignette.jpg" alt="Une platine câblée dans le simulateur : disjoncteurs, contacteurs, relais thermique et fils de couleur" loading="lazy" width="560" height="481">
-    </a>
-  </div>
-
   <h2 class="portes-titre">La formation à l’habilitation fluides</h2>
-  <div class="portes formation">
-    <a class="porte" href="formation.html">
-      <span class="p-ico" aria-hidden="true">📋</span>
-      <span class="p-titre">L’application de formation</span>
-      <span class="p-det">Attestation A1 · A2 · D · E — la semaine complète : <span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions, examens blancs.</span>
-    </a>
-    <a class="porte" href="formation.html?carte=ex-pos">
-      <span class="p-ico" aria-hidden="true">🎯</span>
-      <span class="p-titre">Le positionnement</span>
-      <span class="p-det">Où j’en suis, avant tout — le même test que la porte « Je me situe ».</span>
-    </a>
-    <a class="porte" href="formateurs.html">
-      <span class="p-ico" aria-hidden="true">🎓</span>
-      <span class="p-titre">Formateurs et enseignants</span>
-      <span class="p-det">Projeter en cours, ouvrir une séance à une classe, demander un accès aux documents.</span>
-    </a>
-  </div>
   <!-- BANDEAU du livre HabFluide (27/09) : l'extrait offert s'arrête au test d'entrée (vingt questions,
        QR f/positionnement) et à « Par où commencer, selon ma catégorie » — F. Henninot : « ça donne le
        niveau, c'est gratuit, et ça fait voir la manière de travailler ». Le livre complet est envisagé
@@ -1260,6 +1217,9 @@
     <div class="ba-boutons">
       <a class="bouton" href="habfluide/inerWeb.fr-HabFluide-extrait.pdf" target="_blank" rel="noopener">Lire l’extrait (PDF, 20 pages)</a>
       <a class="bouton creux" href="f/positionnement/">Faire le test d’entrée</a>
+      <!-- 20/10 : l'application entrait par trois portes sous ce titre (application, positionnement,
+           formateurs) ; les deux dernières existent déjà dans « Vous venez pour quoi ? ». Reste ce bouton. -->
+      <a class="bouton creux" href="formation.html">L’application de formation (<span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions)</a>
     </div>
     <a class="ba-couv" href="habfluide/inerWeb.fr-HabFluide-extrait.pdf" target="_blank" rel="noopener" title="Lire l’extrait du livre HabFluide (PDF)">
       <img src="habfluide/couverture-habfluide.jpg" alt="Couverture du livre HabFluide" loading="lazy" width="672" height="960"></a>
@@ -1601,6 +1561,30 @@
           <img src="icones/outils/aquiblue-vignette.svg" alt="Le circuit frigorifique, ses sondes Bluetooth et le cycle tracé en direct sur le diagramme enthalpique" loading="lazy" width="360" height="210"></a>
       </aside>
 
+      <!-- CÂBLER SUR L'ÉCRAN — le simulateur de câblage (F. Henninot, 24/09/2026 : « une extension
+           du logiciel, le service au public, à mettre dans la page de inerweb.fr »). Atelier
+           C:/git/cablage-virtuel, copie servie cablage-virtuel/ par son outils/livrer.py.
+           20/10 : était une porte seule sous son propre titre ; rangé ici avec les autres outils. -->
+      <aside class="bandeau-aquiblue" aria-label="inerWeb Câblage">
+        <svg class="ba-logo" viewBox="0 0 260 50" role="img" aria-label="inerWeb Câblage">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="92" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="201" y="27" text-anchor="middle">Câblage</text>
+        </svg>
+        <p class="ba-texte"><strong>Le simulateur de câblage — câbler sur l’écran.</strong>
+          Lire le schéma, poser les fils sur les bornes — au doigt sur la tablette ou à la souris. Quinze
+          exercices, la puissance puis la commande, de l’allumage simple à la chambre froide négative.
+          <em>En relecture.</em></p>
+        <div class="ba-boutons">
+          <a class="bouton" href="cablage-virtuel/">Câbler</a>
+        </div>
+        <a class="ba-couv ba-vign" href="cablage-virtuel/" title="Ouvrir le simulateur de câblage">
+          <img src="icones/outils/cablage-vignette.jpg" alt="Une platine câblée dans le simulateur : disjoncteurs, contacteurs, relais thermique et fils de couleur" loading="lazy" width="560" height="481"></a>
+      </aside>
+
       <!-- BANNIÈRE inerWeb HoCourant — prototype ouvert à l'essai (25/08).
            Le nom se lit « au courant » et fait écho au symbole H0. Il remplace
            « HabElec », écarté le 25/08 : habelec.fr est un centre de formation
@@ -1702,38 +1686,6 @@
       </aside>
     </div>
   </section>
-
-  <!-- Le réseau EN LISTE : la même donnée que le plan, rendue en HTML
-       sémantique au build — lisible par lecteur d'écran, utilisable sans
-       JavaScript, indexable, et entrée simple sur téléphone. -->
-  <div class="tuiles">
-    <a class="tuile" href="formation.html">
-      <div class="emoji">📋</div>
-      <h3>La formation habilitation</h3>
-      <p>A1 · A2 · D · E — la semaine complète dans l’application : <span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions.</p>
-      <div class="suite">Entrer dans l’application ▸</div>
-    </a>
-    <a class="tuile" href="galerie.html">
-      <div class="emoji">🧭</div>
-      <h3>Tout le catalogue</h3>
-      <!-- Le nombre de planches vient de chiffres.gen.js (build/chiffres.mjs) :
-           les compteurs ne se saisissent jamais à la main. -->
-      <p>38 ressources, filtrables par thème et par type. <span data-ch="planches">46</span> planches animées.</p>
-      <div class="suite">Explorer ▸</div>
-    </a>
-    <a class="tuile" href="metier.html">
-      <div class="emoji">🧑‍🔧</div>
-      <h3>Le métier</h3>
-      <p>C’est quoi, frigoriste ? Les formations, du CAP au bureau d’études.</p>
-      <div class="suite">Découvrir ▸</div>
-    </a>
-    <a class="tuile" href="formateurs.html">
-      <div class="emoji">🎓</div>
-      <h3>Formateurs</h3>
-      <p>Projeter en cours, réemployer le code, demander une adaptation.</p>
-      <div class="suite">Espace formateurs ▸</div>
-    </a>
-  </div>
 
   <!-- Le mot de l'auteur — TOUT EN BAS de la page, dernier bloc avant le pied
        (F. Henninot, 03/10/2026 : « par respect, tout en bas » ; il était en tête
