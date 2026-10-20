@@ -197,6 +197,21 @@
     .o-col { padding-top:0; }
   }
 
+  /* Les livres (20/10) : un rayon de couvertures, chacune ouvre son ouvrage. */
+  .livres { margin-top:28px; }
+  .rayon { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; padding:16px 24px 6px; }
+  .livre { display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center;
+           text-decoration:none; color:var(--txt); font-size:13.5px; line-height:1.35; }
+  .livre img { display:block; width:100%; max-width:150px; height:auto; border-radius:6px;
+               box-shadow:0 6px 16px rgba(27,58,99,.25); transition:transform .15s; }
+  .livre:hover img { transform:translateY(-4px); }
+  .livre b { margin-top:4px; font-family:var(--titre); font-size:16px; color:var(--bleu); }
+  .livre span { color:var(--mut); }
+  .livres-suite { margin:0; padding:10px 24px 18px; font-size:14.5px; color:var(--mut); }
+  .livres-suite a { color:var(--bleu); font-weight:bold; }
+  @media (max-width:800px) { .rayon { grid-template-columns:repeat(3,1fr); gap:12px; padding:14px 16px 4px; } }
+  @media (max-width:480px) { .rayon { grid-template-columns:repeat(2,1fr); } }
+
   /* ---- Blocs blancs ---- */
   .bloc { background:var(--carte); border:1px solid var(--ligne);
           border-radius:var(--r); box-shadow:var(--ombre); }
@@ -1196,34 +1211,41 @@
     </div>
   </section>
 
-  <h2 class="portes-titre">La formation à l’habilitation fluides</h2>
-  <!-- BANDEAU du livre HabFluide (27/09) : l'extrait offert s'arrête au test d'entrée (vingt questions,
-       QR f/positionnement) et à « Par où commencer, selon ma catégorie » — F. Henninot : « ça donne le
-       niveau, c'est gratuit, et ça fait voir la manière de travailler ». Le livre complet est envisagé
-       en PDF payant : bouton d'achat à poser quand la plateforme de vente sera choisie. -->
-  <aside class="bandeau-aquiblue" aria-label="Le livre inerweb.fr HabFluide">
-    <svg class="ba-logo" viewBox="0 0 280 50" role="img" aria-label="inerWeb HabFluide">
-      <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
-      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
-      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
-      <line stroke="#e8914a" stroke-width="2" x1="44" x2="166" y1="35" y2="35"/>
-      <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="118" height="24"/>
-      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="214" y="27" text-anchor="middle">HabFluide</text>
-    </svg>
-    <p class="ba-texte"><strong>Le livre HabFluide — la théorie de l’attestation d’aptitude, A1 · A2 · D · E.</strong>
-      444 pages, dix-neuf chapitres dans l’ordre du métier, plus de 200 QR codes vers les cours animés
-      d’inerweb.fr. L’extrait offert va jusqu’au test d’entrée : vingt questions corrigées sur votre
-      téléphone, qui vous disent quels chapitres reprendre. Le livre complet paraîtra en PDF.</p>
-    <div class="ba-boutons">
-      <a class="bouton" href="habfluide/inerWeb.fr-HabFluide-extrait.pdf" target="_blank" rel="noopener">Lire l’extrait (PDF, 20 pages)</a>
-      <a class="bouton creux" href="f/positionnement/">Faire le test d’entrée</a>
-      <!-- 20/10 : l'application entrait par trois portes sous ce titre (application, positionnement,
-           formateurs) ; les deux dernières existent déjà dans « Vous venez pour quoi ? ». Reste ce bouton. -->
-      <a class="bouton creux" href="formation.html">L’application de formation (<span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions)</a>
+  <!-- ===================================================================
+       LES LIVRES inerWeb (F. Henninot, 20/10/2026 : « un seul et unique pavé où il y a les trois
+       livres… et les livres de cours CAP et bac pro »). Remplace le bandeau HabFluide (27/09) et
+       les couvertures qui vivaient dans les bandeaux-outils HoCourant et R408 : chaque couverture
+       ouvre son ouvrage. Les livres de cours mènent à livres/ (spécimen, extraits).
+       =================================================================== -->
+  <section class="bloc livres" id="livres" aria-labelledby="titre-livres">
+    <div class="titre-bloc">
+      <h2 id="titre-livres">Les livres inerWeb</h2>
+      <span>Trois livres offerts en PDF, et les livres de cours — chaque leçon mène à son cours animé par QR code.</span>
     </div>
-    <a class="ba-couv" href="habfluide/inerWeb.fr-HabFluide-extrait.pdf" target="_blank" rel="noopener" title="Lire l’extrait du livre HabFluide (PDF)">
-      <img src="habfluide/couverture-habfluide.jpg" alt="Couverture du livre HabFluide" loading="lazy" width="672" height="960"></a>
-  </aside>
+    <div class="rayon">
+      <a class="livre" href="habfluide/inerWeb.fr-HabFluide-extrait.pdf" target="_blank" rel="noopener">
+        <img src="habfluide/couverture-habfluide.jpg" alt="" loading="lazy" width="672" height="960">
+        <b>HabFluide</b><span>L’attestation d’aptitude A1 · A2 · D · E — extrait offert, 20 pages</span>
+      </a>
+      <a class="livre" href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download>
+        <img src="hocourant/livret/couverture-hocourant.jpg?v=v3-1" alt="" loading="lazy" width="672" height="954">
+        <b>HoCourant</b><span>L’habilitation électrique, de B0 à BR — 124 pages</span>
+      </a>
+      <a class="livre" href="r408/livret/inerWeb.fr-R408-Livret-eleve-A5.pdf?v=v1" download>
+        <img src="r408/livret/couverture-r408-web.jpg" alt="" loading="lazy" width="672" height="955">
+        <b>R408</b><span>Les échafaudages de pied — livret, en relecture</span>
+      </a>
+      <a class="livre" href="livres/#h-cap">
+        <img src="livres/couvertures/cap-tome-1.webp" alt="" loading="lazy" width="560" height="793">
+        <b>Livre CAP IFCA</b><span>Deux tomes, 52 leçons — spécimen et extraits</span>
+      </a>
+      <a class="livre" href="livres/#h-mfer">
+        <img src="livres/couvertures/mfer-tome-1.webp" alt="" loading="lazy" width="560" height="793">
+        <b>Livre Bac Pro MFER</b><span>Tome 1, la 1re, 31 leçons — spécimen et extrait</span>
+      </a>
+    </div>
+    <p class="livres-suite">Avec HabFluide : <a href="f/positionnement/">le test d’entrée</a> (vingt questions corrigées) et <a href="formation.html">l’application de formation</a> (<span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions).</p>
+  </section>
 
   <!-- ===================================================================
        NOUVEAUTÉS (demande de F. Henninot, 19/08/2026)
@@ -1608,11 +1630,9 @@
           elle prépare à la formation, sans la remplacer.</em></p>
         <div class="ba-boutons">
           <a class="bouton" href="hocourant/">Entrer dans HoCourant</a>
-          <a class="bouton creux" href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download>Le livre — PDF disponible (124 pages)</a>
+          <a class="bouton creux" href="#livres">Le livre</a>
         </div>
-        <!-- La couverture du livre, cliquable : Franck (27/09) veut VOIR le livre sur la porte d'HoCourant. -->
-        <a class="ba-couv" href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download title="Télécharger le livre HoCourant (PDF)">
-          <img src="hocourant/livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livre HoCourant" loading="lazy" width="672" height="954"></a>
+        <!-- 20/10 : la couverture (27/09) et le PDF vivent dans le pavé « Les livres inerWeb ». -->
       </aside>
 
       <!-- BANNIÈRE inerWeb QCM (07/10/2026, feu vert F. Henninot) : la version ouverte du
@@ -1659,7 +1679,7 @@
           relecture métier — ne pas s'en servir comme référence pour une opération réelle.</em></p>
         <div class="ba-boutons">
           <a class="bouton" href="r408/">Essayer le prototype</a>
-          <a class="bouton creux" href="r408/livret/inerWeb.fr-R408-Livret-eleve-A5.pdf?v=v1" download>Le livret — PDF disponible</a>
+          <a class="bouton creux" href="#livres">Le livret</a>
         </div>
       </aside>
 
