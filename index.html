@@ -198,7 +198,7 @@
   }
 
   /* Les livres (20/10) : un rayon de couvertures, chacune ouvre son ouvrage. */
-  .livres { margin-top:28px; }
+  .livres { grid-column:span 3; display:flex; flex-direction:column; } /* dans la grille des réseaux, à côté de Studio */
   .rayon { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; padding:16px 24px 6px; }
   .livre { display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center;
            text-decoration:none; color:var(--txt); font-size:13.5px; line-height:1.35; }
@@ -207,10 +207,12 @@
   .livre:hover img { transform:translateY(-4px); }
   .livre b { margin-top:4px; font-family:var(--titre); font-size:16px; color:var(--bleu); }
   .livre span { color:var(--mut); }
-  .livres-suite { margin:0; padding:10px 24px 18px; font-size:14.5px; color:var(--mut); }
+  .livres-suite { margin:auto 0 0; padding:10px 24px 18px; font-size:14.5px; color:var(--mut); }
   .livres-suite a { color:var(--bleu); font-weight:bold; }
-  @media (max-width:800px) { .rayon { grid-template-columns:repeat(3,1fr); gap:12px; padding:14px 16px 4px; } }
-  @media (max-width:480px) { .rayon { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:1000px) { .livres { grid-column:span 2; } }  /* grille à 3 : 4 rangées + Studio seul */
+  @media (max-width:800px) { .livres { grid-column:span 1; } .rayon { grid-template-columns:repeat(3,1fr); gap:12px; padding:14px 16px 4px; } }
+  @media (max-width:640px) { .livres { flex:0 0 92%; scroll-snap-align:center; } /* dernière voiture de la rame */
+                             .grille-reseaux { align-items:flex-start; } } /* sans quoi chaque vignette prend la hauteur du pavé */
 
   /* ---- Blocs blancs ---- */
   .bloc { background:var(--carte); border:1px solid var(--ligne);
@@ -1208,14 +1210,14 @@
         </div>
       </article>
 <!-- RESEAUX FIN -->
-    </div>
-  </section>
-
   <!-- ===================================================================
        LES LIVRES inerWeb (F. Henninot, 20/10/2026 : « un seul et unique pavé où il y a les trois
        livres… et les livres de cours CAP et bac pro »). Remplace le bandeau HabFluide (27/09) et
        les couvertures qui vivaient dans les bandeaux-outils HoCourant et R408 : chaque couverture
        ouvre son ouvrage. Les livres de cours mènent à livres/ (spécimen, extraits).
+       20/10 (soir, F. Henninot : « optimiser l’espace à côté de la tuile des vidéos ») : le pavé vit DANS la
+       grille des réseaux, après la sentinelle RESEAUX FIN (build/accueil.mjs ne réécrit qu’entre les
+       sentinelles) : 13 réseaux = 3 rangées de 4 + Studio seul, le pavé prend les 3 cases restantes.
        =================================================================== -->
   <section class="bloc livres" id="livres" aria-labelledby="titre-livres">
     <div class="titre-bloc">
@@ -1245,6 +1247,8 @@
       </a>
     </div>
     <p class="livres-suite">Avec HabFluide : <a href="f/positionnement/">le test d’entrée</a> (vingt questions corrigées) et <a href="formation.html">l’application de formation</a> (<span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions).</p>
+  </section>
+    </div>
   </section>
 
   <!-- ===================================================================
