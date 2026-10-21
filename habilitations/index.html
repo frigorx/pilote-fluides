@@ -139,6 +139,11 @@
   .barre button{font:inherit;font-size:16px;font-weight:bold;cursor:pointer;border-radius:10px;
     padding:9px 16px;min-height:44px;border:2px solid var(--marine);background:var(--carte);color:var(--marine)}
   .barre button.suite{background:var(--marine);color:#fff}
+  /* Le retour au site, visible en permanence (F. Henninot, 22/10 : « je ne peux pas revenir à inerWeb ») :
+     le logo de la fine barre du haut ne se lisait pas comme un bouton. */
+  .barre .retour-site{font-size:16px;font-weight:bold;text-decoration:none;border-radius:10px;padding:9px 14px;min-height:44px;
+    display:inline-flex;align-items:center;border:2px dashed var(--orange);color:var(--marine);background:var(--carte);white-space:nowrap}
+  .barre .retour-site:hover{background:#fff1e8}
   .barre button:disabled{opacity:.4;cursor:default}
   .barre .pos{font-family:Consolas,monospace;font-weight:bold;color:var(--marine)}
   .barre .spacer{flex:1}
@@ -165,7 +170,7 @@
   @media (max-width:640px){
     body{font-size:17px}.diapo{padding:52px 14px 104px}h1{font-size:24px}.couv h1{font-size:32px}
     .trio,.methode{grid-template-columns:1fr}.couvertures img{height:120px}
-    .barre{gap:6px;padding:8px}.barre button{padding:8px 10px;font-size:15px}.barre .titre,#btn-ecran,.barre .hote-marque{display:none}
+    .barre{gap:6px;padding:8px}.barre button,.barre .retour-site{padding:8px 10px;font-size:15px}.barre .titre,#btn-ecran,.barre .hote-marque,.barre .pos{display:none}
     table{font-size:15px}
   }
   @media print{
@@ -483,6 +488,7 @@
 <div class="filigrane" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50"><text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/></svg></div>
 
 <div class="barre">
+  <a class="retour-site" href="../" title="Revenir à l'accueil d'inerweb.fr">← inerweb.fr</a>
   <button id="prec" type="button">◀ Précédent</button>
   <button id="suiv" class="suite" type="button">Suivant ▶</button>
   <span class="pos" id="pos">1 / 11</span>
