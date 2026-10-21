@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Former, habiliter, prouver — trois habilitations, une méthode | inerWeb</title>
+<meta name="description" content="Un dispositif complet pour former et évaluer aux habilitations fluides frigorigènes, électrique et travail en hauteur : livres augmentés, plateforme animée et sonorisée, logiciel de centre d'examen. Démonstration.">
+<link rel="canonical" href="https://inerweb.fr/habilitations/">
+<meta property="og:title" content="Former, habiliter, prouver — trois habilitations, une méthode">
+<meta property="og:description" content="Fluides frigorigènes, électrique, travail en hauteur : livres augmentés, plateforme animée et sonorisée, logiciel de centre d’examen. Démonstration.">
+<meta property="og:image" content="https://inerweb.fr/habfluide/couverture-habfluide.jpg">
+<meta property="og:url" content="https://inerweb.fr/habilitations/">
+<!-- DÉMONSTRATION PUBLIQUE (F. Henninot, 21/10/2026) : « le mode démonstration pour l'intégrer dans
+     inerweb.fr ». Tirée de la présentation du 22/10, SANS rien d'interne à un établissement :
+     ni budget, ni tarif, ni financement, ni demande à une direction, ni notes d'orateur.
+     Le logiciel du centre ne tourne que sur un poste : il se visite ici en captures (base de
+     démonstration, données fictives). Servie depuis le poste de démonstration (localhost), la page
+     montre en plus les boutons du logiciel en direct (voir LOCAL plus bas).
+     Clavier : ← → pour avancer, S le sommaire, F le plein écran. -->
+<style>
+  :root{--marine:#1b3a63;--orange:#ff6b35;--creme:#f7f1e7;--carte:#fffdf8;--gris:#637285;--vert:#1e7e54;--ambre:#b06a00;--trait:rgba(27,58,99,.16)}
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--creme);color:#10233c;
+    font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;font-size:19px;line-height:1.55}
+
+  /* ---- Une diapositive = un écran ---- */
+  /* 34 px : la barre « retour à l'accueil » que le site pose en tête (build/retour-accueil.mjs). */
+  .diapo{display:none;min-height:calc(100dvh - 34px);padding:22px 34px 92px;max-width:1220px;margin:0 auto;flex-direction:column;position:relative;z-index:1}
+  .diapo.active{display:flex}
+  h1{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--marine);margin:0 0 4px;font-size:32px;line-height:1.2}
+  h2{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--marine);margin:0 0 10px;font-size:22px}
+  .sur{color:var(--gris);font-size:17px;margin:0 0 16px}
+  ul{margin:6px 0 0;padding-left:24px}li{margin:7px 0}
+  b{color:var(--marine)}
+  a{color:#2a6bb3}
+  .annexe-tag{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ambre);
+    border:2px dotted var(--ambre);border-radius:999px;padding:1px 10px;margin-bottom:6px;align-self:flex-start}
+  @media (max-height:780px){.diapo{padding:14px 30px 84px}h1{font-size:27px}li{margin:5px 0}.sur{margin-bottom:10px}}
+
+  .cartes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:8px 0}
+  .c{background:var(--carte);border:1px solid var(--trait);border-left:5px solid var(--orange);
+    border-radius:14px;padding:12px 16px;box-shadow:0 2px 10px rgba(27,58,99,.10)}
+  .c.ok{border-left:5px double var(--vert)}
+  .c .n{font-size:30px;font-weight:bold;color:var(--marine);font-family:"Trebuchet MS",Calibri,sans-serif;line-height:1.1}
+  .c .l{font-size:15px;color:var(--gris)}
+
+  .trio{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 10px}
+  .hab{background:var(--carte);border:1px solid var(--trait);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px;box-shadow:0 2px 10px rgba(27,58,99,.10)}
+  .hab img{width:100%;height:150px;object-fit:contain;background:#efe6d6;border-radius:8px}
+  .hab .t{font-family:"Trebuchet MS",Calibri,sans-serif;font-weight:bold;color:var(--marine);font-size:18px;line-height:1.2}
+  .hab .s{font-size:13px;color:var(--gris);text-transform:uppercase;letter-spacing:.05em}
+  .hab ul{padding-left:18px;margin:0;font-size:15.5px}.hab li{margin:3px 0}
+  .hab .logiciel{height:150px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#efe6d6;
+    font-family:"Trebuchet MS",Calibri,sans-serif;color:var(--marine);font-weight:bold;font-size:20px;text-align:center;padding:10px}
+  .initiale{display:flex;gap:14px;align-items:center;background:var(--carte);border:1px solid var(--trait);border-radius:14px;padding:10px 14px;font-size:16px}
+  .initiale img{height:74px;border-radius:4px;box-shadow:0 1px 6px rgba(27,58,99,.2)}
+
+  .methode{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:10px 0 14px;align-items:stretch}
+  .etape{background:var(--carte);border:2px solid var(--marine);border-radius:14px;padding:12px 12px 14px;position:relative}
+  .etape .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+    background:var(--marine);color:#fff;font-weight:bold;font-size:18px;margin-bottom:6px}
+  .etape .t{font-family:"Trebuchet MS",Calibri,sans-serif;font-weight:bold;color:var(--marine);font-size:18px;line-height:1.2;margin-bottom:4px}
+  .etape .d{font-size:15px;color:#2b3b52;line-height:1.4}
+  .etape .ou{display:block;margin-top:8px;font-size:13px;color:var(--gris);border-top:1px dashed var(--trait);padding-top:6px}
+  .etape:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:44%;font-weight:bold;color:var(--orange);font-size:20px;background:var(--creme);line-height:1}
+
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:16.5px;background:var(--carte)}
+  th,td{border:1px solid var(--trait);padding:6px 11px;text-align:left;vertical-align:top}
+  th{background:var(--marine);color:#fff;font-family:"Trebuchet MS",Calibri,sans-serif}
+  td.n{text-align:right;font-family:Consolas,monospace;font-weight:bold;white-space:nowrap}
+  tr.fort td{background:#f3ead9}
+
+  .demo{background:var(--carte);border:2px dashed var(--orange);border-radius:14px;padding:12px 16px;margin-top:auto}
+  .demo p{margin:0 0 6px;font-weight:bold;color:var(--marine)}
+  .demo a{display:inline-block;background:var(--marine);color:#fff;text-decoration:none;font-weight:bold;
+    border-radius:999px;padding:10px 18px;margin:4px 8px 4px 0;min-height:44px;font-size:17px}
+  .demo a.second{background:var(--carte);color:var(--marine);border:2px solid var(--marine)}
+  .demo a:hover{background:#3d7fca;color:#fff}
+  .demo .note{font-weight:normal;color:var(--gris);font-size:15px;margin:6px 0 0}
+  .demo.local{display:none;border-style:dotted;border-color:var(--ambre);margin-top:8px;padding:8px 14px}
+  .demo.local a{padding:6px 14px;min-height:36px;font-size:15px}
+  .demo.local .note{display:inline;margin-left:6px}
+  body.poste-local .demo.local{display:block}
+
+  .identite{margin-top:14px;padding-top:12px;border-top:1px solid var(--trait);font-size:16px;color:var(--gris)}
+  .identite .role{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:#8a97a8;margin-bottom:2px}
+  .dit{background:var(--carte);border-left:5px solid var(--marine);border-radius:0 10px 10px 0;padding:10px 16px;margin:8px 0;font-size:16.5px}
+  .dit .q{color:var(--gris);font-style:italic;margin:0 0 4px}
+  .dit .r{margin:0}
+  .colonnes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+  .couv{justify-content:center}
+  .couv h1{font-size:46px;margin-bottom:6px}
+  .couv .accroche{font-size:22px;color:var(--marine);margin:0 0 18px}
+  .couvertures{display:flex;gap:16px;align-items:flex-end;margin:10px 0 18px;flex-wrap:wrap}
+  .couvertures img{height:190px;border-radius:6px;box-shadow:0 4px 16px rgba(27,58,99,.25)}
+  .couvertures figure{margin:0;text-align:center;font-size:14px;color:var(--gris)}
+  @media (max-height:780px){.couvertures img{height:150px}.couv h1{font-size:38px}}
+
+  /* ---- Captures réelles, agrandies au clic ---- */
+  .vues{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0}
+  .vue{margin:0;background:var(--carte);border:1px solid var(--trait);border-radius:10px;padding:6px;cursor:zoom-in;box-shadow:0 2px 8px rgba(27,58,99,.10)}
+  .vue img{width:100%;height:150px;object-fit:cover;object-position:top;border-radius:6px;display:block}
+  .vue figcaption{font-size:14px;color:var(--gris);padding:5px 4px 1px;line-height:1.3}
+  .duo{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:start}
+  .duo .vues{grid-template-columns:1fr 1fr;margin:0}
+  .duo .vue img{height:250px}
+  @media (max-height:780px){.vue img{height:110px}.duo .vue img{height:185px}}
+  .bande{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:4px 0 8px}
+  .bande figure{margin:0;background:var(--carte);border:1px solid var(--trait);border-radius:12px;padding:8px;text-align:center}
+  .bande img{width:100%;height:120px;object-fit:contain}
+  .bande figcaption{font-size:15px;color:var(--marine);font-weight:bold}
+  @media (max-height:780px){.bande img{height:95px}}
+
+  /* ---- Visite guidée du logiciel : une étape à la fois ---- */
+  .visite{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start;margin-top:6px}
+  .visite .ecran{margin:0;background:var(--carte);border:1px solid var(--trait);border-radius:12px;padding:8px;cursor:zoom-in;box-shadow:0 2px 10px rgba(27,58,99,.12)}
+  .visite .ecran img{width:100%;height:330px;object-fit:cover;object-position:top;border-radius:8px;display:block}
+  .visite ol{list-style:none;margin:0;padding:0;counter-reset:etape}
+  .visite li{margin:0 0 6px}
+  .visite li button{font:inherit;font-size:16px;text-align:left;width:100%;cursor:pointer;background:var(--carte);color:#10233c;
+    border:1px solid var(--trait);border-radius:10px;padding:8px 12px;display:flex;gap:10px;align-items:flex-start}
+  .visite li button .k{flex:0 0 26px;height:26px;border-radius:50%;background:#e7e0d2;color:var(--marine);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .visite li button[aria-current="true"]{border:3px double var(--marine);background:#fff}
+  .visite li button[aria-current="true"] .k{background:var(--marine);color:#fff}
+  .visite .legende{font-size:16px;color:#2b3b52;margin:8px 2px 0}
+  @media (max-height:780px){.visite li button{padding:5px 10px;font-size:15px}.visite .ecran img{height:255px}}
+
+  #loupe{display:none;position:fixed;inset:0;z-index:30;background:rgba(16,35,60,.88);align-items:center;justify-content:center;
+    flex-direction:column;gap:10px;cursor:zoom-out;padding:20px}
+  #loupe.ouvert{display:flex}
+  #loupe img{max-width:96vw;max-height:84vh;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.4);background:#fff}
+  #loupe p{color:#fff;margin:0;font-size:17px}
+
+  /* ---- Barre de pilotage ---- */
+  .barre{position:fixed;left:0;right:0;bottom:0;background:var(--carte);border-top:3px solid var(--marine);
+    display:flex;align-items:center;gap:10px;padding:9px 16px;z-index:10}
+  .barre button{font:inherit;font-size:16px;font-weight:bold;cursor:pointer;border-radius:10px;
+    padding:9px 16px;min-height:44px;border:2px solid var(--marine);background:var(--carte);color:var(--marine)}
+  .barre button.suite{background:var(--marine);color:#fff}
+  .barre button:disabled{opacity:.4;cursor:default}
+  .barre .pos{font-family:Consolas,monospace;font-weight:bold;color:var(--marine)}
+  .barre .spacer{flex:1}
+  .barre .titre{color:var(--gris);font-size:15px}
+  /* Le filigrane du site (moteur/marque.js) se loge ici au lieu de recouvrir les boutons. */
+  .barre .hote-marque{display:flex;align-items:center;margin-left:8px;font-size:12px;color:var(--gris)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+
+  #sommaire{display:none;position:fixed;inset:0;background:rgba(247,241,231,.97);z-index:20;padding:30px 40px;overflow:auto}
+  #sommaire.ouvert{display:block}
+  #sommaire ol{columns:2;font-size:18px}
+  #sommaire button{font:inherit;background:none;border:0;color:var(--marine);cursor:pointer;text-align:left;padding:4px 0;font-weight:bold}
+  #sommaire button:hover{text-decoration:underline}
+
+  /* Filigrane inerWeb (charte R9/R10) : pâle, au centre ; le coin est posé par moteur/marque.js. */
+  .filigrane{position:fixed;pointer-events:none;user-select:none;z-index:0;opacity:.07;left:50%;top:46%;transform:translate(-50%,-50%) rotate(-12deg);width:520px}
+  .filigrane svg{width:100%;height:auto;display:block}
+
+  /* Téléphone et petite tablette : les écrans défilent, les grilles passent en colonne. */
+  @media (max-width:980px){
+    .trio{grid-template-columns:repeat(2,1fr)}.methode{grid-template-columns:1fr 1fr}.etape::after{display:none}
+    .colonnes,.duo,.visite{grid-template-columns:1fr}.bande{grid-template-columns:1fr 1fr 1fr}
+  }
+  @media (max-width:640px){
+    body{font-size:17px}.diapo{padding:52px 14px 104px}h1{font-size:24px}.couv h1{font-size:32px}
+    .trio,.methode{grid-template-columns:1fr}.couvertures img{height:120px}
+    .barre{gap:6px;padding:8px}.barre button{padding:8px 10px;font-size:15px}.barre .titre,#btn-ecran,.barre .hote-marque{display:none}
+    table{font-size:15px}
+  }
+  @media print{
+    .diapo{display:flex!important;min-height:0;page-break-after:always;padding:0 0 18px}
+    .barre,#sommaire,#loupe{display:none!important}body{background:#fff}
+  }
+</style>
+<script defer src="../moteur/retour-accueil.js?v=3c25e82f03"></script>
+</head>
+<body>
+
+<!-- 1 · Couverture -->
+<section class="diapo couv active" data-titre="Former, habiliter, prouver">
+  <h1>Former, habiliter, prouver</h1>
+  <p class="accroche">Trois habilitations réglementaires, une seule méthode, un dispositif complet.</p>
+  <div class="couvertures">
+    <figure><img src="../habfluide/couverture-habfluide.jpg" alt="Couverture du manuel HabFluide"><figcaption>Fluides frigorigènes</figcaption></figure>
+    <figure><img src="../hocourant/livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livret HoCourant"><figcaption>Habilitation électrique</figcaption></figure>
+    <figure><img src="../r408/livret/couverture-r408-web.jpg" alt="Couverture du livret R408"><figcaption>Travail en hauteur</figcaption></figure>
+    <figure><img src="../livres/couvertures/cap-tome-1.webp" alt="Couverture du livre CAP IFCA"><figcaption>Livre CAP IFCA</figcaption></figure>
+    <figure><img src="../livres/couvertures/mfer-tome-1.webp" alt="Couverture du livre Bac Pro MFER"><figcaption>Livre Bac Pro MFER</figcaption></figure>
+  </div>
+  <p class="sur">Des livres augmentés, une plateforme d'apprentissage animée et sonorisée, un logiciel de centre
+  d'examen. Tout ce qui est présenté ici existe et fonctionne : chaque écran mène à la vraie ressource.</p>
+  <div class="identite"><span class="role">Conçu et développé par</span><b>inerWeb — F. Henninot</b>,
+    enseignant en froid et climatisation</div>
+</section>
+
+<!-- 2 · Le besoin -->
+<section class="diapo" data-titre="Le besoin">
+  <h1>Trois attestations sans lesquelles on ne travaille pas</h1>
+  <p class="sur">Des apprentis et des élèves qui en ont besoin à la sortie de leur formation, des salariés que les
+  textes obligent à y revenir.</p>
+  <table>
+    <thead><tr><th style="width:22%">Habilitation</th><th>Ce que dit le texte</th><th style="width:30%">Qui en a besoin</th></tr></thead>
+    <tbody>
+      <tr><td><b>Fluides frigorigènes</b><br>catégories A1 · A2 · D · E</td>
+        <td>Nouveau régime au <b>1<sup>er</sup> janvier 2027</b>. Tous les anciens titulaires doivent se remettre
+        à niveau <b>avant le 12 mars 2029</b>. L'attestation est désormais valable <b>7 ans</b>.
+        <br><span style="color:var(--gris);font-size:14px">Arrêtés du 21 novembre 2025 · règlement (UE) 2024/573</span></td>
+        <td>Frigoristes et climaticiens, CAP, Bac Pro, titres professionnels, reconversions</td></tr>
+      <tr><td><b>Électrique</b><br>B0 → B1V · BR</td>
+        <td>L'employeur délivre l'habilitation après une formation conforme à la <b>NF C 18-510</b>,
+        à renouveler périodiquement.</td>
+        <td>Tout intervenant sur une installation ou à son voisinage</td></tr>
+      <tr><td><b>Travail en hauteur</b><br>échafaudages, R408</td>
+        <td>Attestation de compétences selon la <b>recommandation R408</b>, puis autorisation de l'employeur.
+        Exigée à l'<b>inscription au CAP Étancheur</b>.</td>
+        <td>Toute personne qui monte, vérifie ou utilise un échafaudage de pied</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>Une demande <b>récurrente</b> : chaque promotion, chaque salarié, chaque renouvellement.</li>
+    <li>Un même public, un même plateau, un même enseignement de la sécurité : un seul dispositif suffit.</li>
+  </ul>
+</section>
+
+<!-- 3 · La méthode -->
+<section class="diapo" data-titre="La méthode">
+  <h1>Une seule méthode pour les trois</h1>
+  <p class="sur">Le stagiaire suit toujours le même chemin. Seul le référentiel change.</p>
+  <div class="methode">
+    <div class="etape"><span class="num">1</span><div class="t">Apprendre</div>
+      <div class="d">Des écrans animés, une voix qui explique, des modèles en 3D. Sur l'ordinateur ou le téléphone.</div>
+      <span class="ou">inerweb.fr</span></div>
+    <div class="etape"><span class="num">2</span><div class="t">Lire et répondre</div>
+      <div class="d">Le livre pose la question. Un code QR ouvre l'animation qui explique, à la bonne page.</div>
+      <span class="ou">le livre augmenté</span></div>
+    <div class="etape"><span class="num">3</span><div class="t">S'entraîner</div>
+      <div class="d">Des questions mesurées, une correction qui renvoie à la leçon, un bilan par compétence.</div>
+      <span class="ou">séries et examens blancs</span></div>
+    <div class="etape"><span class="num">4</span><div class="t">Être évalué</div>
+      <div class="d">Épreuve théorique sur tablette, grille pratique sur la tablette de l'évaluateur.</div>
+      <span class="ou">le logiciel du centre</span></div>
+    <div class="etape"><span class="num">5</span><div class="t">Attester, prouver</div>
+      <div class="d">Attestation, registre scellé, procédures : ce qu'un auditeur vient vérifier.</div>
+      <span class="ou">le logiciel du centre</span></div>
+  </div>
+  <div class="bande">
+    <figure><img src="../icones/reseaux/illustrations/thermo-techno.webp" alt=""><figcaption>Fluides frigorigènes</figcaption></figure>
+    <figure><img src="../icones/reseaux/illustrations/hocourant.webp" alt=""><figcaption>Habilitation électrique</figcaption></figure>
+    <figure><img src="../icones/reseaux/illustrations/r408.webp" alt=""><figcaption>Travail en hauteur</figcaption></figure>
+  </div>
+  <div class="dit">
+    <p class="q">Un exemple : le tirage au vide</p>
+    <p class="r">Le livre l'explique, une animation le montre, des questions l'entraînent, et la grille de
+    l'évaluateur le note (codes 3.03 et 3.04 de l'arrêté). <b>Ce qu'on apprend, ce qu'on lit et ce sur quoi on
+    est évalué sont la même chose.</b> Une habilitation nouvelle, c'est un référentiel ajouté, pas un logiciel réécrit.</p>
+  </div>
+</section>
+
+<!-- 4 · Ce qui existe -->
+<section class="diapo" data-titre="Ce qui existe déjà">
+  <h1>Ce n'est pas un projet : le dispositif tourne</h1>
+  <p class="sur">Chiffres relevés en octobre 2026.</p>
+  <div class="trio">
+    <div class="hab"><img src="../habfluide/couverture-habfluide.jpg" alt=""><span class="s">Fluides frigorigènes</span>
+      <div class="t">HabFluide</div>
+      <ul><li>Manuel de <b>444 pages</b>, <b>219 codes QR</b></li><li><b>269</b> questions, <b>44</b> fiches de cours</li>
+        <li><b>24</b> capsules narrées, <b>80</b> cours interactifs</li><li>Référentiel A1 couvert : <b>94 / 94</b></li></ul></div>
+    <div class="hab"><img src="../hocourant/livret/couverture-hocourant.jpg?v=v3-1" alt=""><span class="s">Habilitation électrique</span>
+      <div class="t">HoCourant</div>
+      <ul><li>Livret de <b>124 pages</b>, <b>29 codes QR</b></li><li><b>13</b> stations de cours</li>
+        <li><b>29</b> films interactifs</li><li>Niveaux B0 → B1V · BR</li></ul></div>
+    <div class="hab"><img src="../r408/livret/couverture-r408-web.jpg" alt=""><span class="s">Travail en hauteur</span>
+      <div class="t">R408</div>
+      <ul><li>Livret de <b>122 pages</b></li><li><b>11</b> modules + 3 pour les adultes</li>
+        <li><b>253</b> questions</li><li><b>88 / 88</b> points du document INRS</li></ul></div>
+    <div class="hab"><div class="logiciel">Logiciel du centre d'examen</div><span class="s">Évaluer et attester</span>
+      <div class="t">inerWeb Habilitation</div>
+      <ul><li><b>40</b> versions successives</li><li><b>533</b> contrôles automatiques</li>
+        <li>Poste maître, tablettes, évaluateur</li><li>Mode démonstration intégré</li></ul></div>
+  </div>
+  <div class="initiale">
+    <img src="../livres/couvertures/cap-tome-1.webp" alt=""><img src="../livres/couvertures/mfer-tome-1.webp" alt="">
+    <div><b>Et la même méthode en formation initiale</b> : livre <b>CAP IFCA</b> en deux tomes (208 + 224 pages,
+      exemplaire professeur de 114 pages), livre <b>Bac Pro MFER</b> (1<sup>re</sup> : 256 pages, professeur 72 pages).
+      Le tout adossé à <b>inerweb.fr</b> : 13 réseaux de formation, près de 7 000 narrations.</div>
+  </div>
+</section>
+
+<!-- 5 · Le livre augmenté -->
+<section class="diapo" data-titre="Le livre augmenté">
+  <h1>Le papier pose la question, l'écran explique</h1>
+  <p class="sur">Le stagiaire scanne le code QR de la page. L'animation s'ouvre sur l'écran exact, une voix
+  explique, il revient au papier pour répondre.</p>
+  <div class="duo">
+    <ul>
+      <li><b>Une voix qui explique</b> : pour celui qui lit difficilement, et pour celui qui ne parle pas encore
+        bien français. Vitesse réglable, jamais déclenchée d'office.</li>
+      <li><b>Le texte reste affiché</b> pendant que la voix parle, et la police s'adapte aux lecteurs
+        dyslexiques (bouton « Aa »).</li>
+      <li><b>Hors ligne</b> si besoin : tout peut tourner sur le poste du centre, sans abonnement.</li>
+      <li><b>Le formateur projette</b> la même animation en salle : aucune photocopie supplémentaire.</li>
+    </ul>
+    <div class="vues">
+      <figure class="vue"><img src="img/livre-habfluide-p134.jpg" alt="Une page du manuel HabFluide et ses codes QR en marge"><figcaption>La page du manuel : trois codes QR en marge (fiche, planche, animation)</figcaption></figure>
+      <figure class="vue"><img src="img/demo-capsule.jpg" alt="La capsule narrée ouverte par un code QR"><figcaption>Ce qu'ouvre le code : la capsule narrée, codes du référentiel en tête</figcaption></figure>
+    </div>
+  </div>
+  <div class="demo">
+    <p>Essayer</p>
+    <a href="../habfluide/inerWeb.fr-HabFluide-extrait.pdf" target="_blank" rel="noopener">Feuilleter un extrait du manuel</a>
+    <a href="../packs/fluides/res/capsules/index.html?c=g5a" target="_blank" rel="noopener">Ce qu'ouvre un code QR</a>
+    <a class="second" href="../formation.html" target="_blank" rel="noopener">L'application de formation</a>
+    <a class="second" href="../livres/" target="_blank" rel="noopener">Les livres CAP et Bac Pro</a>
+    <p class="note">Chaque bouton ouvre un nouvel onglet ; la démonstration reste ici.</p>
+  </div>
+</section>
+
+<!-- 6 · Électrique et hauteur -->
+<section class="diapo" data-titre="Électrique et hauteur">
+  <h1>La même méthode, deux autres habilitations</h1>
+  <div class="colonnes">
+    <div>
+      <h2>HoCourant — habilitation électrique</h2>
+      <ul>
+        <li><b>29 films interactifs</b> : le film s'arrête au moment de l'accident, pose la question, corrige,
+          puis montre le bon geste.</li>
+        <li>Un livret de 124 pages relié à l'application par 29 codes QR.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>R408 — travail en hauteur</h2>
+      <ul>
+        <li>11 modules, 253 questions, chaque point du document INRS enseigné <b>et</b> évalué.</li>
+        <li>Un espace formateur : fiches de séance, déroulés de 2 à 4 jours, tests.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="vues" style="grid-template-columns:1fr 1fr">
+    <figure class="vue"><img src="img/demo-hocourant.jpg" alt="Une station HoCourant avec son film en deux actes"><figcaption>HoCourant : la station et son film en deux actes, la voix et le réglage de vitesse</figcaption></figure>
+    <figure class="vue"><img src="img/demo-r408.jpg" alt="Un module R408"><figcaption>R408 : un module de la vérification journalière, illustré</figcaption></figure>
+  </div>
+  <div class="demo">
+    <p>Essayer</p>
+    <a href="../hocourant/" target="_blank" rel="noopener">HoCourant — un film interactif</a>
+    <a href="../r408/" target="_blank" rel="noopener">R408 — l'application</a>
+    <a class="second" href="../r408/apercu/" target="_blank" rel="noopener">R408 — l'aperçu formateur</a>
+    <a class="second" href="../r408/livret/inerWeb.fr-R408-Livret-eleve-A5.pdf?v=v1" target="_blank" rel="noopener">Le livret R408</a>
+  </div>
+</section>
+
+<!-- 7 · Le logiciel du centre : visite guidée -->
+<section class="diapo" data-titre="Le logiciel du centre">
+  <h1>Le logiciel du centre d'examen, en visite guidée</h1>
+  <p class="sur">Inscrire, faire passer, corriger, attester, archiver : un seul outil, installé sur le poste du
+  centre. Captures d'un centre de démonstration, données entièrement fictives.</p>
+  <div class="visite">
+    <figure class="ecran" id="visite-ecran"><img src="img/visite-1-accueil.jpg" alt=""><figcaption class="legende" id="visite-legende"></figcaption></figure>
+    <ol id="visite-etapes">
+      <li><button type="button" data-img="img/visite-1-accueil.jpg" data-txt="L'accueil s'ouvre sur ce qu'on vient y faire : quatre portes, et l'alerte de sauvegarde en tête, parce qu'une base d'examen perdue ne se rattrape pas."><span class="k">1</span>L'accueil et ses quatre portes</button></li>
+      <li><button type="button" data-img="img/visite-3-session.jpg" data-txt="Une session close : chaque candidat a sa décision, calculée sur les seuils de l'épreuve, sans compensation entre théorie et pratique."><span class="k">2</span>Une session et ses décisions</button></li>
+      <li><button type="button" data-img="img/visite-4-console.jpg" data-txt="La console de l'examen : chaque candidat reçoit un code, le groupe complémentaire est tiré au sort et horodaté, le chronomètre part pour tous."><span class="k">3</span>La console de l'épreuve</button></li>
+      <li><button type="button" data-img="img/visite-5-tablette.jpg" data-txt="La tablette du candidat : une question à la fois, chronomètre, lecture à voix haute, plein écran surveillé. Elle ne voit jamais le sujet entier."><span class="k">4</span>La tablette du candidat</button></li>
+      <li><button type="button" data-img="img/visite-6-evaluateur.jpg" data-txt="La tablette de l'évaluateur : la grille pratique, une tâche par écran, avec les gestes éliminatoires et un récapitulatif avant de sceller."><span class="k">5</span>La grille de l'évaluateur</button></li>
+      <li><button type="button" data-img="img/visite-7-attestation.jpg" data-txt="L'attestation délivrée, prête à imprimer. Chaque acte du centre est inscrit dans un registre scellé : c'est ce qu'un auditeur vient vérifier."><span class="k">6</span>L'attestation et le registre</button></li>
+    </ol>
+  </div>
+  <div class="demo local" id="demo-locale">
+    <p>En direct sur ce poste</p>
+    <a data-port="8123" data-chemin="/demonstration" target="_blank">Le centre fictif et sa visite</a>
+    <a data-port="8123" data-chemin="/epreuve" target="_blank">Lancer un examen blanc</a>
+    <a class="second" data-port="8124" data-chemin="/tablette" target="_blank">La tablette du candidat</a>
+    <a class="second" data-port="8125" data-chemin="/evaluateur" target="_blank">La grille de l'évaluateur</a>
+    <p class="note">En mode démonstration, les connexions sont pré-remplies.</p>
+  </div>
+</section>
+
+<!-- 8 · Comment c'est fabriqué -->
+<section class="diapo" data-titre="Comment c'est fabriqué">
+  <h1>Comment c'est fabriqué</h1>
+  <p class="sur">Une méthode d'atelier : une source, des contrôles, une relecture humaine.</p>
+  <div class="colonnes">
+    <ul>
+      <li><b>Le référentiel officiel est une donnée</b> : chaque contenu porte ses codes, et la couverture se
+        <b>mesure</b> à chaque fabrication. Elle ne se déclare pas.</li>
+      <li><b>Une seule source</b> donne le livre, le site, la projection et les questions : corriger une fois
+        corrige partout.</li>
+      <li><b>Des questions contrôlées</b> : un programme vérifie qu'on ne trouve pas la réponse sans lire.</li>
+    </ul>
+    <ul>
+      <li><b>Les voix sont fabriquées sur le poste</b>, sans service en ligne. Si un texte change, l'ancienne
+        voix cède la place : jamais une explication fausse.</li>
+      <li><b>Des outils d'intelligence artificielle</b> pour écrire, coder, dessiner et enregistrer, <b>sous la
+        direction d'un enseignant du métier</b> : chaque contenu est vérifié et mesuré, la relecture métier reste humaine.</li>
+      <li><b>Hors ligne et sans abonnement</b> : le centre ne dépend d'aucun fournisseur.</li>
+    </ul>
+  </div>
+  <div class="cartes">
+    <div class="c ok"><div class="n">94 / 94</div><div class="l">exigences A1 couvertes et tenues</div></div>
+    <div class="c ok"><div class="n">88 / 88</div><div class="l">points R408 enseignés et évalués</div></div>
+    <div class="c ok"><div class="n">533</div><div class="l">contrôles automatiques du logiciel</div></div>
+    <div class="c"><div class="n">En cours</div><div class="l">relecture métier par des professionnels</div></div>
+  </div>
+</section>
+
+<!-- 9 · Pourquoi maintenant -->
+<section class="diapo" data-titre="Pourquoi maintenant">
+  <h1>Pourquoi maintenant : la fenêtre des fluides</h1>
+  <div class="cartes">
+    <div class="c"><div class="n">31/12/2026</div><div class="l">l'ancien dispositif de 2008 est abrogé</div></div>
+    <div class="c"><div class="n">12/03/2029</div><div class="l">date limite de mise à niveau de tous les anciens titulaires</div></div>
+    <div class="c"><div class="n">7 ans</div><div class="l">nouvelle validité : chaque titulaire revient</div></div>
+  </div>
+  <table>
+    <thead><tr><th>Ce qu'un centre peut proposer</th><th>Durée</th><th>Ce qu'il faut obtenir</th></tr></thead>
+    <tbody>
+      <tr><td><b>Formation et examen complets A1</b></td><td>5 jours, épreuve de 4 h 15</td><td>Agrément d'organisme évaluateur</td></tr>
+      <tr><td><b>Mise à niveau des anciens titulaires</b></td><td>3 h 30</td><td>Certification d'organisme formateur</td></tr>
+      <tr><td><b>Extension CO₂ (catégorie B)</b></td><td>épreuve de 3 h 45</td><td>Extension de périmètre, plateau haute pression</td></tr>
+      <tr><td><b>Maintien de compétence</b></td><td>5 h, tous les 7 ans</td><td>Qualiopi</td></tr>
+      <tr class="fort"><td><b>Électrique et travail en hauteur</b></td><td>de 1 à 3 jours</td><td>Formateurs compétents, Qualiopi : pas d'agrément d'État</td></tr>
+    </tbody>
+  </table>
+  <p class="sur" style="margin-top:6px">Sources : arrêtés du 21 novembre 2025 ; NF C 18-510 ; recommandation R408 et document INRS.</p>
+</section>
+
+<!-- 10 · Ce que je propose -->
+<section class="diapo" data-titre="Ce que je propose">
+  <h1>Pour un centre de formation, un lycée, un organisme évaluateur</h1>
+  <p class="sur">Le dispositif se met à disposition en tout ou partie, selon ce que vous avez déjà.</p>
+  <div class="cartes">
+    <div class="c"><div class="n" style="font-size:22px">Le logiciel du centre</div><div class="l">Installé sur votre poste, vos données restent chez vous. Mode démonstration pour former vos équipes.</div></div>
+    <div class="c"><div class="n" style="font-size:22px">Les livres augmentés</div><div class="l">HabFluide, HoCourant, R408, et les livres de cours CAP et Bac Pro, avec leurs exemplaires formateur.</div></div>
+    <div class="c"><div class="n" style="font-size:22px">La plateforme</div><div class="l">Les cours animés et sonorisés d'inerweb.fr, l'entraînement, la projection en salle.</div></div>
+    <div class="c"><div class="n" style="font-size:22px">L'accompagnement</div><div class="l">Procédures, dossier d'épreuve, mise en route du plateau : ce qui a déjà été écrit pour un centre.</div></div>
+  </div>
+  <div class="dit">
+    <p class="q">Pour en parler</p>
+    <p class="r">Une démonstration complète dure quinze minutes, en présentiel ou en visio, sur un vrai poste :
+    <a href="mailto:inerweb.fh@gmail.com?subject=Dispositif%20habilitations%20%E2%80%94%20demande%20de%20d%C3%A9monstration"><b>inerweb.fh@gmail.com</b></a></p>
+  </div>
+  <div class="couvertures" style="margin:8px 0 0;justify-content:center">
+    <figure><img src="../habfluide/couverture-habfluide.jpg" alt="" style="height:130px"></figure>
+    <figure><img src="../hocourant/livret/couverture-hocourant.jpg?v=v3-1" alt="" style="height:130px"></figure>
+    <figure><img src="../r408/livret/couverture-r408-web.jpg" alt="" style="height:130px"></figure>
+    <figure><img src="../livres/couvertures/cap-tome-1.webp" alt="" style="height:130px"></figure>
+    <figure><img src="../livres/couvertures/mfer-tome-1.webp" alt="" style="height:130px"></figure>
+  </div>
+  <div class="identite"><span class="role">Conçu et développé par</span><b>inerWeb — F. Henninot</b>,
+    enseignant en froid et climatisation</div>
+</section>
+
+<!-- A · Couverture du référentiel -->
+<section class="diapo" data-titre="Annexe — couverture du référentiel">
+  <span class="annexe-tag">Annexe</span>
+  <h1>« Couvrez-vous tout le programme ? »</h1>
+  <p class="sur">Oui, et c'est mesuré exigence par exigence. Source : arrêté du 21 novembre 2025, annexe II.B (136 codes).</p>
+  <table>
+    <thead><tr><th>Catégorie fluides</th><th>Exigences</th><th>Couvertes</th><th>Couverture</th></tr></thead>
+    <tbody>
+      <tr><td><b>A1</b></td><td class="n">94</td><td class="n">94</td><td class="n">100 %</td></tr>
+      <tr><td><b>A2</b></td><td class="n">93</td><td class="n">93</td><td class="n">100 %</td></tr>
+      <tr><td><b>D</b></td><td class="n">21</td><td class="n">21</td><td class="n">100 %</td></tr>
+      <tr><td><b>E</b></td><td class="n">17</td><td class="n">17</td><td class="n">100 %</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>Chaque exigence est reliée à <b>la fiche qui l'enseigne</b> et aux <b>questions qui la vérifient</b>.</li>
+    <li>R408 : les 88 points du document INRS sont chacun enseignés et évalués, vérifiés par programme.</li>
+  </ul>
+  <div class="demo">
+    <p>Vérifier</p>
+    <a href="../matrice.html" target="_blank" rel="noopener">La matrice de traçabilité</a>
+  </div>
+</section>
+
+<div id="loupe" role="dialog" aria-label="Capture agrandie"><img alt=""><p></p></div>
+<div id="sommaire" role="dialog" aria-label="Sommaire">
+  <h2>Sommaire — cliquez pour aller à un écran (Échap pour fermer)</h2>
+  <ol id="liste-sommaire"></ol>
+</div>
+
+<div class="filigrane" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50"><text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/></svg></div>
+
+<div class="barre">
+  <button id="prec" type="button">◀ Précédent</button>
+  <button id="suiv" class="suite" type="button">Suivant ▶</button>
+  <span class="pos" id="pos">1 / 11</span>
+  <span class="hote-marque" data-marque-hote></span>
+  <span class="spacer"></span>
+  <span class="titre" id="titre"></span>
+  <button id="btn-sommaire" type="button" title="Touche S">Sommaire</button>
+  <button id="btn-ecran" type="button" title="Touche F">Plein écran</button>
+</div>
+
+<script>
+(function(){
+  var diapos = [].slice.call(document.querySelectorAll(".diapo"));
+  var i = 0;
+  function montrer(n){
+    i = Math.max(0, Math.min(diapos.length - 1, n));
+    diapos.forEach(function(d, k){ d.classList.toggle("active", k === i); });
+    document.getElementById("pos").textContent = (i + 1) + " / " + diapos.length;
+    document.getElementById("titre").textContent = diapos[i].dataset.titre || "";
+    document.getElementById("prec").disabled = (i === 0);
+    document.getElementById("suiv").disabled = (i === diapos.length - 1);
+    try { history.replaceState(null, "", "#" + (i + 1)); } catch (e) {}
+    window.scrollTo(0, 0);
+  }
+
+  var loupe = document.getElementById("loupe");
+  function agrandir(src, texte){
+    loupe.querySelector("img").src = src;
+    loupe.querySelector("p").textContent = texte + " — cliquer pour fermer";
+    loupe.classList.add("ouvert");
+  }
+  [].forEach.call(document.querySelectorAll(".vue"), function(f){
+    f.onclick = function(){ agrandir(f.querySelector("img").src, f.querySelector("figcaption").textContent); };
+  });
+  loupe.onclick = function(){ loupe.classList.remove("ouvert"); };
+
+  /* Visite guidée du logiciel : une étape à la fois, l'image suit. */
+  var ecran = document.getElementById("visite-ecran"), legende = document.getElementById("visite-legende");
+  var etapes = [].slice.call(document.querySelectorAll("#visite-etapes button"));
+  function etape(b){
+    etapes.forEach(function(x){ x.setAttribute("aria-current", String(x === b)); });
+    ecran.querySelector("img").src = b.dataset.img;
+    ecran.querySelector("img").alt = b.textContent.replace(/^\d+/, "").trim();
+    legende.textContent = b.dataset.txt;
+  }
+  etapes.forEach(function(b){ b.onclick = function(){ etape(b); }; });
+  if (etapes.length) etape(etapes[0]);
+  ecran.onclick = function(){ agrandir(ecran.querySelector("img").src, legende.textContent); };
+
+  /* LOCAL : servie depuis le poste de démonstration, la page montre en plus le logiciel en direct. */
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    document.body.classList.add("poste-local");
+    [].forEach.call(document.querySelectorAll("#demo-locale a"), function(a){
+      a.href = "http://localhost:" + a.dataset.port + a.dataset.chemin;
+    });
+  }
+
+  var sommaire = document.getElementById("sommaire"), liste = document.getElementById("liste-sommaire");
+  diapos.forEach(function(d, k){
+    var li = document.createElement("li"), b = document.createElement("button");
+    b.type = "button"; b.textContent = d.dataset.titre || ("Écran " + (k + 1));
+    b.onclick = function(){ sommaire.classList.remove("ouvert"); montrer(k); };
+    li.appendChild(b); liste.appendChild(li);
+  });
+  function basculerSommaire(){ sommaire.classList.toggle("ouvert"); }
+  function pleinEcran(){
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(function(){});
+  }
+
+  document.getElementById("prec").onclick = function(){ montrer(i - 1); };
+  document.getElementById("suiv").onclick = function(){ montrer(i + 1); };
+  document.getElementById("btn-sommaire").onclick = basculerSommaire;
+  document.getElementById("btn-ecran").onclick = pleinEcran;
+  document.addEventListener("keydown", function(e){
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+    if (e.key === "Escape") { sommaire.classList.remove("ouvert"); loupe.classList.remove("ouvert"); return; }
+    if (e.key === "ArrowRight" || e.key === "PageDown") montrer(i + 1);
+    if (e.key === "ArrowLeft"  || e.key === "PageUp") montrer(i - 1);
+    if (e.key === "Home") montrer(0);
+    if (e.key === "End")  montrer(diapos.length - 1);
+    if (e.key === "s" || e.key === "S") basculerSommaire();
+    if (e.key === "f" || e.key === "F") pleinEcran();
+  });
+  var depart = parseInt((location.hash || "").slice(1), 10);
+  montrer(isFinite(depart) ? depart - 1 : 0);
+})();
+</script>
+<script src="../moteur/marque.js?v=e7de8f24e4" data-cartouche="Habilitations" data-licence="tous-droits"></script>
+</body>
+</html>
