@@ -561,8 +561,8 @@
     // (contrôle en amont : un SVG à <text> est refusé à la pose).
     if (q.illustration) h += "<figure class='q-illu'>" + img(q.illustration) + "</figure>";
     h += "<div class='choix'>";
-    q.choix.forEach(function (txt, i) {
-      var cls = "";
+    ordreDesChoix(q).forEach(function (i) {
+      var txt = q.choix[i], cls = "";
       if (rep && m.feedback) { if (i === q.bonne) cls = "bon"; else if (i === rep.choix) cls = "mauvais"; }
       h += "<button class='" + cls + "' " + (rep ? "disabled" : "") + " data-" + ns + "='" + i + "'>" + esc(txt) + "</button>";
     });
@@ -1133,6 +1133,25 @@
   /* --- utilitaires --- */
   function conditionVraie(cond) { if (!cond) return true; var m = /^critere:([\w.]+)=(\w+)$/.exec(cond); if (!m) return true; return (S.criteres[m[1]] || "") === m[2]; }
   function melange(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } }
+  /* L'ordre d'affichage des choix (21/10/2026). La banque range la bonne réponse en B
+     dans 166 questions sur 269 : « toujours B » approchait les seuils. Mélange STABLE,
+     graine = identifiant de la question : même ordre à chaque passage, chez l'élève comme
+     au formateur (projection.html porte le même calcul), et une voix enregistrée reste
+     juste. Les réponses gardent leur index d'origine (data-rep, data-exr, traces) : seul
+     l'affichage change. Un choix qui renvoie à la place des autres (« les deux premières
+     méthodes », « ci-dessus ») garde l'ordre de la source. */
+  function ordreDesChoix(q) {
+    var renvoi = /\bles (deux|trois) (premi[eè]res|derni[eè]res)\b|ci-dessus|ci-dessous|(r[eé]ponses|propositions) pr[eé]c[eé]dentes|toutes les (r[eé]ponses|propositions)|aucune des (r[eé]ponses|propositions)/i;
+    var ordre = q.choix.map(function (_, i) { return i; });
+    if (q.choix.some(function (t) { return renvoi.test(t); })) return ordre;
+    var h = 0x811c9dc5, s = String(q.id || q.enonce || "");
+    for (var k = 0; k < s.length; k++) { h ^= s.charCodeAt(k); h = Math.imul(h, 0x01000193); }
+    for (var i = ordre.length - 1; i > 0; i--) {
+      h ^= h << 13; h ^= h >>> 17; h ^= h << 5; // xorshift : la suite ne dépend que de la graine
+      var j = (h >>> 0) % (i + 1), t = ordre[i]; ordre[i] = ordre[j]; ordre[j] = t;
+    }
+    return ordre;
+  }
   function nowSec() { return Math.floor(Date.now() / 1000); }
   function fmt(s) { var m = Math.floor(s / 60), r = s % 60; return m + ":" + (r < 10 ? "0" : "") + r; }
   /* Le curseur se lit AU CHARGEMENT, pas seulement au tirage : le formateur

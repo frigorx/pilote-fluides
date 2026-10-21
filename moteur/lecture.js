@@ -49,17 +49,36 @@
   function espaceLesBlocs(html) {
     return String(html).replace(/<\/(p|li|div|h[1-6]|blockquote|td|tr)>/gi, "</$1> ");
   }
+  /* 21/10/2026 — le texte lu doit être, au caractère près, celui dont le MP3 a été
+     fabriqué : `normaliser()` de build/voix/collecter-narrations.mjs (entités décodées
+     avec la même liste, PUIS chaque balise remplacée par une espace). `textContent`
+     collait les balises en ligne (« <b>A1</b>. » donnait « A1. » au lieu de « A1 . ») :
+     aucune des 60 fiches ne retrouvait son MP3, toutes parlaient en voix du navigateur. */
+  var ENTITES = { amp: "&", apos: "'", gt: ">", lt: "<", nbsp: " ", quot: '"', eacute: "é", egrave: "è",
+    ecirc: "ê", agrave: "à", ccedil: "ç", ugrave: "ù", ocirc: "ô", icirc: "î", deg: "°" };
+  function decoder(texte) {
+    return texte.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, function (tout, code) {
+      if (code.charAt(0) === "#") {
+        var n = code.charAt(1).toLowerCase() === "x" ? parseInt(code.slice(2), 16) : parseInt(code.slice(1), 10);
+        return isFinite(n) ? String.fromCodePoint(n) : tout;
+      }
+      var e = ENTITES[code.toLowerCase()];
+      return e === undefined ? tout : e;
+    });
+  }
   function texteDe(carte) {
-    var brut = espaceLesBlocs(
-      (carte.titre || "") + ". " +
+    var brut = (carte.titre || "") + ". " +
       (carte.corps || "") + " " +
       (carte.blocs || []).map(function (b) {
         return (b.t ? b.t + ". " : "") + (b.html || "");
-      }).join(" ")
-    );
-    var d = document.createElement("div");
-    d.innerHTML = brut;
-    return d.textContent.replace(/\s+/g, " ").trim();
+      }).join(" ");
+    return espaceLesBlocs(decoder(brut))
+      .replace(/<[^>]*>/g, " ")
+      .replace(/[  ]/g, " ")
+      .replace(/[‘’]/g, "'")
+      .replace(/[“”]/g, '"')
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   function arreter() {
