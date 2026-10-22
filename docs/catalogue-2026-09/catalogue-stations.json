@@ -1,7 +1,19 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 423,
+  "total": 450,
   "stations": [
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "analyse-fonctionnelle-interactif",
+      "titre": "Qui fait quoi — analyse fonctionnelle d’une installation frigorifique",
+      "ligne": null,
+      "resume": "Cours interactif : l’analyse fonctionnelle et structurelle d’une installation frigorifique : le besoin, la fonction et l’organe, les deux structures (circuit et câblage), capteurs et actionneurs, lire un dossier d’analyse fonctionnelle, étudier une séquence de fonctionnement.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/analyse-fonctionnelle-interactif/",
+      "chemin": "packs/fluides/res/analyse-fonctionnelle-interactif/"
+    },
     {
       "reseau": "Plan thermo-techno",
       "id": "bilan-thermique-performance-interactif",
@@ -42,6 +54,30 @@
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/bouteille-liquide-pedagogique/",
       "chemin": "packs/fluides/res/bouteille-liquide-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "centrale-positive-interactif",
+      "titre": "Assembler une centrale positive — compresseurs en parallèle, collecteurs, bouteille",
+      "ligne": null,
+      "resume": "Cours interactif : lire une centrale frigorifique positive de supermarché, comprendre les compresseurs en parallèle, les collecteurs d’aspiration et de refoulement, le séparateur d’huile, le condenseur et la bouteille, puis monter dans l’ordre.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/centrale-positive-interactif/",
+      "chemin": "packs/fluides/res/centrale-positive-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "chaine-energie-information-interactif",
+      "titre": "La chaîne d’énergie et d’information d’une installation",
+      "ligne": null,
+      "resume": "Cours interactif : les deux chaînes d’une installation frigorifique, la chaîne d’énergie (alimenter, distribuer, convertir, agir) et la chaîne d’information (acquérir, traiter, communiquer), l’endroit où elles se croisent (la bobine du contacteur), et comment les suivre quand ça ne marche pas.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/chaine-energie-information-interactif/",
+      "chemin": "packs/fluides/res/chaine-energie-information-interactif/"
     },
     {
       "reseau": "Plan thermo-techno",
@@ -91,6 +127,42 @@
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/chaleur-interactive/",
       "chemin": "packs/fluides/res/chaleur-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "chambre-froide-enceinte-interactif",
+      "titre": "La chambre froide, enceinte isotherme : panneaux, porte, soupape d’équilibrage, résistance de porte, implantation",
+      "ligne": null,
+      "resume": "Cours interactif sur la chambre froide : les quatre composants d’un panneau, l’épaisseur d’isolant selon l’écart de température, la porte, la soupape d’équilibrage, la résistance de porte, l’implantation.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/chambre-froide-enceinte-interactif/",
+      "chemin": "packs/fluides/res/chambre-froide-enceinte-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "chambre-froide-securites-interactif",
+      "titre": "Dégivrage, évacuation des condensats, sécurités de la chambre (personne enfermée)",
+      "ligne": null,
+      "resume": "Cours interactif : le givre et ses conséquences, le cycle de dégivrage, la commande par horloge, le réglage durée et nombre, l’évacuation de l’eau, l’ouverture de secours et la sécurité de la personne.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/chambre-froide-securites-interactif/",
+      "chemin": "packs/fluides/res/chambre-froide-securites-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "chambre-negative-reglages-interactif",
+      "titre": "Relevés et réglages d’une chambre négative : thermostat, pressostats, dégivrage",
+      "ligne": null,
+      "resume": "Cours interactif : les organes de réglage d’une chambre négative en pump-down, lire un relevé (surchauffe, sous-refroidissement), thermostat, pressostats BP et HP, réglage du dégivrage.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/chambre-negative-reglages-interactif/",
+      "chemin": "packs/fluides/res/chambre-negative-reglages-interactif/"
     },
     {
       "reseau": "Plan thermo-techno",
@@ -220,6 +292,18 @@
     },
     {
       "reseau": "Plan thermo-techno",
+      "id": "conservation-denrees-interactif",
+      "titre": "Conserver les denrées par le froid : températures, chaîne du froid",
+      "ligne": null,
+      "resume": "Cours interactif sur la conservation des denrées par le froid : ce qui abîme un aliment, températures maximales de l’arrêté du 21 décembre 2009, quatre catégories de chambre selon l’humidité, chaîne du froid.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/conservation-denrees-interactif/",
+      "chemin": "packs/fluides/res/conservation-denrees-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
       "id": "cours-classes-securite",
       "titre": "Les classes de sécurité — deux lettres, deux dangers",
       "ligne": null,
@@ -232,6 +316,18 @@
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/cours-classes-securite/",
       "chemin": "packs/fluides/res/cours-classes-securite/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "cout-du-froid-interactif",
+      "titre": "Ce que coûte le froid : énergie, fuites, entretien",
+      "ligne": null,
+      "resume": "Cours interactif : estimer le coût d’un compresseur, les quatre leviers d’énergie, les gestes qui économisent, le coût d’une fuite (fluide, performance, CO₂ équivalent), l’entretien qui rapporte, chiffrer pour le client.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/cout-du-froid-interactif/",
+      "chemin": "packs/fluides/res/cout-du-froid-interactif/"
     },
     {
       "reseau": "Plan thermo-techno",
@@ -280,6 +376,24 @@
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/degivrage-naturel/",
       "chemin": "packs/fluides/res/degivrage-naturel/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "detecteurs-fuite-interactif",
+      "titre": "Les détecteurs de fuite — technologies, réglage, contrôle annuel, produit moussant",
+      "ligne": null,
+      "resume": "Cours interactif sur les détecteurs de fuite : méthodes directes et indirectes, trois technologies de détecteur, sensibilité, contrôle annuel, bons gestes, produit moussant et traceurs.",
+      "niveaux": null,
+      "competences": [
+        "4.04",
+        "4.05",
+        "4.06",
+        "4.07",
+        "4.08"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/detecteurs-fuite-interactif/",
+      "chemin": "packs/fluides/res/detecteurs-fuite-interactif/"
     },
     {
       "reseau": "Plan thermo-techno",
@@ -658,6 +772,18 @@
     },
     {
       "reseau": "Plan thermo-techno",
+      "id": "maintenance-centrale-interactif",
+      "titre": "Maintenance systématique d’une centrale — relevés, contrôles, fiche de visite",
+      "ligne": null,
+      "resume": "Cours interactif : la visite de maintenance systématique d’une centrale de froid commercial : le programme, les relevés qui se comparent, les contrôles d’huile, de propreté et d’électricité, la fiche de visite, que faire d’un défaut.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/maintenance-centrale-interactif/",
+      "chemin": "packs/fluides/res/maintenance-centrale-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
       "id": "mission-bouteilles",
       "titre": "Mission Bouteilles — prélever, remplir, peser",
       "ligne": null,
@@ -721,6 +847,18 @@
     },
     {
       "reseau": "Plan thermo-techno",
+      "id": "plan-maintenance-commercial-interactif",
+      "titre": "Plan de maintenance du froid commercial — périodicités, contrat",
+      "ligne": null,
+      "resume": "Cours interactif : construire un plan de maintenance du froid commercial : maintenance systématique, conditionnelle et corrective, périodicités imposées par le règlement (contrôle d’étanchéité tous les 12, 6 ou 3 mois, détection des fuites, registre) et périodicités du contrat, lire un contrat de maintenance.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/plan-maintenance-commercial-interactif/",
+      "chemin": "packs/fluides/res/plan-maintenance-commercial-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
       "id": "pose-manifold-2-voies-interactive",
       "titre": "Pose et dépose du manifold 2 voies sur vannes de service Rotolock",
       "ligne": null,
@@ -754,6 +892,30 @@
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/pose-manifold-interactive/",
       "chemin": "packs/fluides/res/pose-manifold-interactive/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "positif-negatif-interactif",
+      "titre": "Positif, négatif, congélation, surgélation : ce que le froid fait au produit",
+      "ligne": null,
+      "resume": "Cours interactif : froid positif et négatif, réfrigération, les trois temps de la congélation et son palier, surgélation, décongélation selon l’arrêté du 21 décembre 2009.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/positif-negatif-interactif/",
+      "chemin": "packs/fluides/res/positif-negatif-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "postes-magasin-interactif",
+      "titre": "Raccorder les postes d’un magasin — meubles, chambres, électrovannes",
+      "ligne": null,
+      "resume": "Cours interactif : raccorder un poste (meuble ou chambre froide) à une centrale positive : l’ordre sur la ligne liquide, le sens de l’électrovanne, qui l’ouvre et la ferme, le bulbe du détendeur, la conduite d’aspiration, les contrôles.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/postes-magasin-interactif/",
+      "chemin": "packs/fluides/res/postes-magasin-interactif/"
     },
     {
       "reseau": "Plan thermo-techno",
@@ -1028,6 +1190,18 @@
     },
     {
       "reseau": "Plan thermo-techno",
+      "id": "remise-au-client-interactif",
+      "titre": "Remettre l’installation au client : expliquer, consigner, conseiller",
+      "ligne": null,
+      "resume": "Cours interactif : remettre une installation au client en trois temps, parler au client et à un collègue, un oral de cinq temps, la fiche de remise et les réserves, écouter avant de conseiller, les conseils pour une chambre froide.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/remise-au-client-interactif/",
+      "chemin": "packs/fluides/res/remise-au-client-interactif/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
       "id": "reservoir-huile-pedagogique",
       "titre": "Le réservoir d’huile",
       "ligne": null,
@@ -1235,6 +1409,18 @@
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/diagramme-enthalpique/gestes/",
       "chemin": "packs/fluides/res/diagramme-enthalpique/gestes/"
+    },
+    {
+      "reseau": "Plan — capsules",
+      "id": "capsules/briefing-securite",
+      "titre": "Donner les consignes de sécurité à l'équipe avant d'intervenir",
+      "ligne": null,
+      "resume": "Avant de commencer, toute l'équipe doit savoir ce qu'on fait, ce qui est dangereux, qui fait quoi et que faire si ça tourne mal.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/capsules/?c=briefing-securite",
+      "chemin": "packs/fluides/res/capsules/?c=briefing-securite"
     },
     {
       "reseau": "Plan — capsules",
@@ -1596,17 +1782,39 @@
     },
     {
       "reseau": "Législation",
+      "id": "acteurs-installation",
+      "titre": "Qui intervient sur une installation frigorifique ?",
+      "ligne": null,
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : les onze acteurs d'une installation frigorifique, ce que chacun fait, de quoi il répond, et ce que le technicien lui doit — informer, faire signer, transmettre.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/acteurs-installation/",
+      "chemin": "legislation/stations/acteurs-installation/"
+    },
+    {
+      "reseau": "Législation",
       "id": "aptitude-capacite",
       "titre": "Aptitude & capacité",
       "ligne": null,
-      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'évaluation, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie.",
-      "niveaux": {
-        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'évaluation, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie."
-      },
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : aptitude pour la personne, capacité pour l'entreprise, la structure de l'évaluation, les sept catégories, et la nouveauté 2025 — l'attestation n'est plus acquise à vie.",
+      "niveaux": null,
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/legislation/stations/aptitude-capacite/",
       "chemin": "legislation/stations/aptitude-capacite/"
+    },
+    {
+      "reseau": "Législation",
+      "id": "certif-demarche-qualite",
+      "titre": "La démarche qualité d&#x27;une intervention",
+      "ligne": null,
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : la démarche qualité d&#x27;une intervention, faire bien du premier coup (préparer, autocontrôler), le prouver (traces, fiches, signatures), corriger (non-conformité, réclamation, action corrective).",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/certif-demarche-qualite/",
+      "chemin": "legislation/stations/certif-demarche-qualite/"
     },
     {
       "reseau": "Législation",
@@ -1918,6 +2126,18 @@
     },
     {
       "reseau": "Législation",
+      "id": "fiche-intervention-bsff",
+      "titre": "Remplir la fiche d&#x27;intervention et le bordereau des déchets",
+      "ligne": null,
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : quand on remplit la fiche d&#x27;intervention (cerfa 15497) et le bordereau de déchets de fluides (BSFF, Trackdéchets), les 14 cadres un par un sur un exemple résolu, une situation à remplir, et le logiciel inerWeb Fluide pour s&#x27;entraîner.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/fiche-intervention-bsff/",
+      "chemin": "legislation/stations/fiche-intervention-bsff/"
+    },
+    {
+      "reseau": "Législation",
       "id": "impact-acv-carbone",
       "titre": "ACV & carbone",
       "ligne": null,
@@ -2044,6 +2264,18 @@
     },
     {
       "reseau": "Législation",
+      "id": "incendie-permis-de-feu",
+      "titre": "Le permis de feu",
+      "ligne": null,
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : pourquoi un permis de feu, qui le délivre et le signe, ce qu'il contient, les mesures avant, pendant et après un brasage — avec un simulateur pour remplir un permis de feu en chambre froide.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/incendie-permis-de-feu/",
+      "chemin": "legislation/stations/incendie-permis-de-feu/"
+    },
+    {
+      "reseau": "Législation",
       "id": "incendie-sprinkler-ria",
       "titre": "Sprinkler & RIA",
       "ligne": null,
@@ -2156,6 +2388,18 @@
     },
     {
       "reseau": "Législation",
+      "id": "risques-papiers-chantier",
+      "titre": "Les papiers du chantier : pièces et autorisations",
+      "ligne": null,
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : les papiers d'un chantier avant, pendant et après — devis, plan de prévention, permis de feu, fiche d'intervention, procès-verbal de réception, BSFF — avec qui les remplit, qui les signe et où ils vont.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/risques-papiers-chantier/",
+      "chemin": "legislation/stations/risques-papiers-chantier/"
+    },
+    {
+      "reseau": "Législation",
       "id": "thermique-cee",
       "titre": "Les CEE",
       "ligne": null,
@@ -2243,10 +2487,8 @@
       "id": "tracabilite-fluides",
       "titre": "Traçabilité",
       "ligne": null,
-      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : suivre un fluide frigorigène du chargement à la filière de traitement — fiche d'intervention, registre, bordereau de suivi BSFF dans Trackdéchets, qui signe quoi, ce que vérifie un contrôle.",
-      "niveaux": {
-        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : suivre un fluide frigorigène du chargement à la filière de traitement — fiche d'intervention, registre, bordereau de suivi BSFF dans Trackdéchets, qui signe quoi, ce que vérifie un contrôle."
-      },
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : suivre un fluide frigorigène du chargement à la filière de traitement — fiche d'intervention, registre, bordereau de suivi BSFF dans Trackdéchets, qui signe quoi, ce que vérifie un contrôle.",
+      "niveaux": null,
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/legislation/stations/tracabilite-fluides/",
@@ -2268,6 +2510,18 @@
     },
     {
       "reseau": "Législation",
+      "id": "travail-entreprise-du-froid",
+      "titre": "L&#x27;entreprise du froid",
+      "ligne": null,
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : qui fait quoi dans une entreprise du froid, ce qu&#x27;il lui faut pour toucher à un fluide (attestation de capacité, techniciens attestés, outillage), ses obligations chaque année, les assurances, les qualifications (RGE, QualiPAC, Qualifroid) et qui répond de quoi.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/legislation/stations/travail-entreprise-du-froid/",
+      "chemin": "legislation/stations/travail-entreprise-du-froid/"
+    },
+    {
+      "reseau": "Législation",
       "id": "travail-le-contrat",
       "titre": "Le contrat",
       "ligne": null,
@@ -2285,10 +2539,8 @@
       "id": "travail-s-installer",
       "titre": "S'installer",
       "ligne": null,
-      "resume": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : s'installer à son compte dans le froid et la climatisation — la micro-entreprise, le droit d'exercer, les cotisations sur le chiffre d'affaires, l'attestation de capacité, l'assurance décennale, la mention RGE, et les pièges.",
-      "niveaux": {
-        "bts": "Station BTS du réseau Législation, écran par écran et commentée à voix haute : s'installer à son compte dans le froid et la climatisation — la micro-entreprise, le droit d'exercer, les cotisations sur le chiffre d'affaires, l'attestation de capacité, l'assurance décennale, la mention RGE, et les pièges."
-      },
+      "resume": "Station du réseau Législation, écran par écran et commentée à voix haute : s'installer à son compte dans le froid et la climatisation — la micro-entreprise, le droit d'exercer, les cotisations sur le chiffre d'affaires, l'attestation de capacité, l'assurance décennale, la mention RGE, et les pièges.",
+      "niveaux": null,
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/legislation/stations/travail-s-installer/",
@@ -2508,6 +2760,22 @@
     },
     {
       "reseau": "HydroMétro",
+      "id": "embouage",
+      "titre": "Embouage et désembouage : boues, filtre, pot à boues",
+      "ligne": "E",
+      "resume": "Reconnaître des boues et le filtre d’un circuit.",
+      "niveaux": {
+        "cap": "Reconnaître des boues et le filtre d’un circuit.",
+        "tp": "Expliquer d’où viennent les boues et choisir un remède avec sa limite.",
+        "bts": "Comparer les remèdes et justifier leur limite."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/embouage/",
+      "chemin": "hydrometro/stations/embouage/"
+    },
+    {
+      "reseau": "HydroMétro",
       "id": "energie",
       "titre": "Énergie",
       "ligne": "P",
@@ -2708,6 +2976,22 @@
       "missionProf": null,
       "url": "https://inerweb.fr/hydrometro/stations/puissance/",
       "chemin": "hydrometro/stations/puissance/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "qualite-eau",
+      "titre": "Adoucisseur, inhibiteur, qualité de l’eau d’un circuit",
+      "ligne": "E",
+      "resume": "Dire ce qu’est la dureté de l’eau et à quoi sert un adoucisseur.",
+      "niveaux": {
+        "cap": "Dire ce qu’est la dureté de l’eau et à quoi sert un adoucisseur.",
+        "tp": "Suivre le cycle d’un adoucisseur et régler une dureté résiduelle.",
+        "bts": "Justifier un traitement d’eau : adoucissement, dureté résiduelle, inhibiteur."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/qualite-eau/",
+      "chemin": "hydrometro/stations/qualite-eau/"
     },
     {
       "reseau": "HydroMétro",
@@ -3043,11 +3327,11 @@
       "id": "evaluation-a",
       "titre": "Évaluation · Air & hygrométrie",
       "ligne": "A",
-      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "resume": "Réinvestissez les gestes et les correspondances du parcours.",
       "niveaux": {
-        "cap": "Réinvestis les gestes et les correspondances du parcours.",
-        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
-        "bts": "Justifie les calculs et les décisions dans une installation complète."
+        "cap": "Réinvestissez les gestes et les correspondances du parcours.",
+        "bac": "Résolvez les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifiez les calculs et les décisions dans une installation complète."
       },
       "competences": null,
       "missionProf": null,
@@ -3059,11 +3343,11 @@
       "id": "evaluation-c",
       "titre": "Évaluation · Climatisation & apports",
       "ligne": "C",
-      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "resume": "Réinvestissez les gestes et les correspondances du parcours.",
       "niveaux": {
-        "cap": "Réinvestis les gestes et les correspondances du parcours.",
-        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
-        "bts": "Justifie les calculs et les décisions dans une installation complète."
+        "cap": "Réinvestissez les gestes et les correspondances du parcours.",
+        "bac": "Résolvez les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifiez les calculs et les décisions dans une installation complète."
       },
       "competences": null,
       "missionProf": null,
@@ -3075,11 +3359,11 @@
       "id": "evaluation-d",
       "titre": "Évaluation · Distribution",
       "ligne": "D",
-      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "resume": "Réinvestissez les gestes et les correspondances du parcours.",
       "niveaux": {
-        "cap": "Réinvestis les gestes et les correspondances du parcours.",
-        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
-        "bts": "Justifie les calculs et les décisions dans une installation complète."
+        "cap": "Réinvestissez les gestes et les correspondances du parcours.",
+        "bac": "Résolvez les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifiez les calculs et les décisions dans une installation complète."
       },
       "competences": null,
       "missionProf": null,
@@ -3091,11 +3375,11 @@
       "id": "evaluation-m",
       "titre": "Évaluation · Mesure & diagnostic",
       "ligne": "M",
-      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "resume": "Réinvestissez les gestes et les correspondances du parcours.",
       "niveaux": {
-        "cap": "Réinvestis les gestes et les correspondances du parcours.",
-        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
-        "bts": "Justifie les calculs et les décisions dans une installation complète."
+        "cap": "Réinvestissez les gestes et les correspondances du parcours.",
+        "bac": "Résolvez les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifiez les calculs et les décisions dans une installation complète."
       },
       "competences": null,
       "missionProf": null,
@@ -3107,11 +3391,11 @@
       "id": "evaluation-t",
       "titre": "Évaluation · CTA",
       "ligne": "T",
-      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "resume": "Réinvestissez les gestes et les correspondances du parcours.",
       "niveaux": {
-        "cap": "Réinvestis les gestes et les correspondances du parcours.",
-        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
-        "bts": "Justifie les calculs et les décisions dans une installation complète."
+        "cap": "Réinvestissez les gestes et les correspondances du parcours.",
+        "bac": "Résolvez les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifiez les calculs et les décisions dans une installation complète."
       },
       "competences": null,
       "missionProf": null,
@@ -3123,11 +3407,11 @@
       "id": "evaluation-v",
       "titre": "Évaluation · VMC",
       "ligne": "V",
-      "resume": "Réinvestis les gestes et les correspondances du parcours.",
+      "resume": "Réinvestissez les gestes et les correspondances du parcours.",
       "niveaux": {
-        "cap": "Réinvestis les gestes et les correspondances du parcours.",
-        "bac": "Résous les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
-        "bts": "Justifie les calculs et les décisions dans une installation complète."
+        "cap": "Réinvestissez les gestes et les correspondances du parcours.",
+        "bac": "Résolvez les situations de mesure et de réglage rencontrées sur plusieurs lignes.",
+        "bts": "Justifiez les calculs et les décisions dans une installation complète."
       },
       "competences": null,
       "missionProf": null,
@@ -4563,6 +4847,54 @@
       "chemin": "cuivrezo/stations/4-2/"
     },
     {
+      "reseau": "CuivRézo",
+      "id": "5-1",
+      "titre": "Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC",
+      "ligne": "Ligne 5 — Réseau acier et réseaux du plombier",
+      "resume": "Le bon tube, nommé juste, avec son usage",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/5-1/",
+      "chemin": "cuivrezo/stations/5-1/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "5-2",
+      "titre": "Assembler l’acier : filetage, sertissage, soudure",
+      "ligne": "Ligne 5 — Réseau acier et réseaux du plombier",
+      "resume": "Le bon procédé, et un filetage étanche",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/5-2/",
+      "chemin": "cuivrezo/stations/5-2/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "5-3",
+      "titre": "Raccorder le PVC par collage",
+      "ligne": "Ligne 5 — Réseau acier et réseaux du plombier",
+      "resume": "Un raccord PVC collé, plein et droit",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/5-3/",
+      "chemin": "cuivrezo/stations/5-3/"
+    },
+    {
+      "reseau": "CuivRézo",
+      "id": "5-4",
+      "titre": "Raccorder le PER et le multicouche",
+      "ligne": "Ligne 5 — Réseau acier et réseaux du plombier",
+      "resume": "Un raccord serti, un coude rond, un tube libre",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/cuivrezo/stations/5-4/",
+      "chemin": "cuivrezo/stations/5-4/"
+    },
+    {
       "reseau": "Le tour de main",
       "id": "tour-de-main",
       "titre": "Le tour de main · la gestuelle professionnelle",
@@ -4687,7 +5019,7 @@
       "id": "guidance-chaine-entiere",
       "titre": "La chaîne entière · Le tour de main",
       "ligne": null,
-      "resume": "Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste.",
+      "resume": "Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste. Puis la fiche de mise en service, remplie avec mes relevés.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -5352,7 +5684,7 @@
       "id": "index",
       "titre": "le froid et la climatisation, station par station",
       "ligne": null,
-      "resume": "Treize réseaux gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation, rangés comme des lignes de métro : des cours interactifs, des jeux, un simulateur de panne et des films. Une voix qui explique, du CAP au BTS, sans compte.",
+      "resume": "Treize réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -5424,7 +5756,7 @@
       "id": "sous-tension/sous-tension-TD1-fondamentaux",
       "titre": "TD1 — Les fondamentaux du câble électrique",
       "ligne": null,
-      "resume": "Un câble mal choisi peut chauffer, s'user trop vite ou tomber en panne . Dans ce premier TD, tu vas apprendre à :",
+      "resume": "Un câble mal choisi peut chauffer, s'user trop vite ou tomber en panne . Dans ce premier TD, vous allez apprendre à :",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -5460,7 +5792,7 @@
       "id": "sous-tension/sous-tension-evaluation",
       "titre": "Évaluation — Les câbles électriques",
       "ligne": null,
-      "resume": "Les questions sont les mêmes pour tous : ce qui change, c'est la compétence du référentiel sur laquelle tu seras positionné.",
+      "resume": "Les questions sont les mêmes pour tous : ce qui change, c'est la compétence du référentiel sur laquelle vous serez positionné.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
