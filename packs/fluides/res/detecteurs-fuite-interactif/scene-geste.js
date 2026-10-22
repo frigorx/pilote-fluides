@@ -187,7 +187,7 @@
     image(m, "symboles/manometro.svg", 303.4, 61.4, 53.2, 95.2, true);
     // le détecteur, balayé en partie basse
     const dg = D.el("g", {}, m);
-    const detImg = image(dg, "symboles/detector-gas.svg", -20, -22, 38, 38, true);
+    const detImg = image(dg, "symboles/detecteur-portatif.svg", -20, -22, 38, 38, true);
     const halo = D.el("circle", { cx: 0.5, cy: 7.5, r: 4.5, fill: C.alerte, opacity: 0 }, dg);
     // la pièce qui agit s'allume
     const anneau = D.el("rect", { rx: 9, fill: "none", stroke: C.orange, "stroke-width": 4, opacity: 0 }, m);
@@ -210,7 +210,7 @@
     const lignes = RUBRIQUES.map((nom, i) => [D.el("circle", { cx: 147, cy: 105 + i * 38, r: 8, fill: C.vert, opacity: 0 }, vues.registre), ecrire(vues.registre, 162, 112 + i * 38, nom, { fill: C.gris })]);
     const mobile = D.el("g", {}, gp); // le technicien suit le détecteur : il se déplace le long de la ligne
     vues.det = D.el("svg", { x: 125.6, y: 78.4, width: 120, height: 110, viewBox: "-11 -12 24 22" }, mobile); // le détecteur de près
-    image(vues.det, "symboles/detector-gas.svg", -20, -22, 38, 38, true);
+    image(vues.det, "symboles/detecteur-portatif.svg", -20, -22, 38, 38, true);
     const haloZ = D.el("circle", { cx: 183.1, cy: 175.9, r: 15, fill: C.alerte, opacity: 0 }, mobile);
     const tech = bonhomme(mobile, { casquette: true, dephasage: 0.3 });
     const versDroite = balayage(gp, 1), versGauche = balayage(gp, -1);
