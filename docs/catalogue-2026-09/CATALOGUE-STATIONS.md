@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**450 stations** réparties en 16 réseaux.
+**519 stations** réparties en 18 réseaux.
 
 ## Plan thermo-techno — 125 stations
 
@@ -262,7 +262,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Vanne trois voies — Trois voies, une fonction](https://inerweb.fr/hydrometro/stations/v3v/) | D | TP BTS | BTS C2 BTS C4 BTS C7 BTS C8 CAP C3.4 CAP C4.4 RNCP38748-BC01 RNCP38748-BC03 | Identifier A, B, AB et contrôler le sens de circulation. |
 | [Vase d’expansion](https://inerweb.fr/hydrometro/stations/vase/) | E | TP BTS | BTS C3-3 BTS C4-1 BTS C8-1 CAP C3.9 CAP C4.5 RNCP38748-BC01 diagnostic RNCP38748-BC01 maintenance | Contrôler le vase d’expansion et son raccordement. |
 
-## AéroRézo — 36 stations
+## AéroRézo — 37 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -275,6 +275,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Pourquoi ventiler ?](https://inerweb.fr/aerorezo/stations/besoin-air/) | V | CAP BAC BTS | — | Nomme ce qui salit l’air d’un logement occupé. |
 | [Choisir les conduits](https://inerweb.fr/aerorezo/stations/conduits/) | D | CAP BAC BTS | — | Reconnaissez une gaine circulaire, une gaine rectangulaire et un flexible sur une installation. |
 | [Débit, vitesse, section](https://inerweb.fr/aerorezo/stations/debit-vitesse/) | A | CAP BAC BTS | — | Suivez l’air dans la gaine et lisez le débit affiché. |
+| [Calculer les déperditions d’une pièce, paroi par paroi](https://inerweb.fr/aerorezo/stations/deperditions-piece/) | C | CAP BAC BTS | — | Repérez les parois d’une pièce et lisez une ligne de calcul déjà remplie. |
 | [Diagnostiquer sans deviner](https://inerweb.fr/aerorezo/stations/diagnostic/) | M | CAP BAC BTS | — | Croisez débit faible, bruit et état du filtre. |
 | [Étudier un réseau VMC](https://inerweb.fr/aerorezo/stations/dimensionner-vmc/) | V | CAP BAC BTS | — | Placez les bouches et suivez chaque branche jusqu’au caisson. |
 | [VMC double flux](https://inerweb.fr/aerorezo/stations/double-flux/) | V | CAP BAC BTS | — | Distinguez les quatre flux : air neuf, soufflé, extrait, rejeté. |
@@ -417,7 +418,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Raccorder le PVC par collage](https://inerweb.fr/cuivrezo/stations/5-3/) | Ligne 5 — Réseau acier et réseaux du plombier | — | — | Un raccord PVC collé, plein et droit |
 | [Raccorder le PER et le multicouche](https://inerweb.fr/cuivrezo/stations/5-4/) | Ligne 5 — Réseau acier et réseaux du plombier | — | — | Un raccord serti, un coude rond, un tube libre |
 
-## Le tour de main — 11 stations
+## Le tour de main — 20 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -432,6 +433,84 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Charger en fluide neuf, à la balance · Le tour de main](https://inerweb.fr/tour-de-main/interventions/charge-fluide-neuf/) | — | — | — | Guidance au poste : charger une machine en fluide neuf à la balance, en phase liquide, après le tirage au vide. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
 | [Faire un complément de charge · Le tour de main](https://inerweb.fr/tour-de-main/interventions/complement-charge/) | — | — | — | Guidance au poste : faire un complément de charge sur une machine en marche, avec le manifold, la balance et la recherche de fuite. Je m’entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
 | [La chaîne entière · Le tour de main](https://inerweb.fr/tour-de-main/interventions/chaine-entiere/) | — | — | — | Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste. Puis la fiche de mise en service, remplie avec mes relevés. |
+| [Autocontrôle avant mise en service : supportage, serrages, isolation, repérage · Le tour de main](https://inerweb.fr/tour-de-main/interventions/autocontrole-mise-en-service/) | — | — | — | Guidance avant la mise en service : contrôler soi-même son installation frigorifique, à l'arrêt et hors tension : état général, supportage, serrages, isolation, repérage et sens du fluide, essais faits, écarts corrigés. La partie électrique est dans ÉlectroRézo. Je m'entraîne sur le dessin, je le fais sur l'installation, je garde la trace de mes relevés. |
+| [Chercher une fuite au détecteur électronique · Le tour de main](https://inerweb.fr/tour-de-main/interventions/fuite-detecteur/) | — | — | — | Guidance au poste : chercher une fuite sur un circuit chargé avec un détecteur électronique. Je teste le détecteur sur la fuite étalon, je balaie lentement, je confirme l'alerte, je trace. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [Identifier les réseaux d'un site : électricité, eau, gaz, évacuations, fluide · Le tour de main](https://inerweb.fr/tour-de-main/interventions/identifier-reseaux-site/) | — | — | — | Guidance avant d'intervenir : repérer sur place les réseaux d'un site (électricité, eau, gaz, évacuations, fluide frigorigène), lire les étiquettes et les légendes, noter où se coupe chaque réseau, sans rien manœuvrer. Je m'entraîne sur le dessin, je le fais sur le site, je garde la trace de mes relevés. |
+| [Lire le bon d'intervention et le dossier technique · Le tour de main](https://inerweb.fr/tour-de-main/interventions/lire-bon-intervention/) | — | — | — | Guidance avant d'intervenir : lire le bon d'intervention, trouver le dossier technique, comparer le dossier et la plaque de la machine, lire les schémas et la notice, préparer sa liste avant de partir. Je m'entraîne sur le dessin, je le fais sur le vrai dossier, je garde la trace de mes relevés. |
+| [Mettre en service une chambre froide négative · Le tour de main](https://inerweb.fr/tour-de-main/interventions/mise-en-service-chambre-negative/) | — | — | — | Guidance au poste : mettre en service une chambre froide négative. État des lieux, contrôles avant mise sous tension, réglages du thermostat et des sécurités, mise en route avec le professeur, descente en température, relevés (pressions, températures, surchauffe, sous-refroidissement, intensité), premier dégivrage, fiche de mise en service. Je m'entraîne sur le dessin, je le fais sur la vraie installation, je garde la trace de mes relevés. |
+| [Préparer le site d'intervention : accès, protections, alimentation, zone de travail · Le tour de main](https://inerweb.fr/tour-de-main/interventions/preparer-site/) | — | — | — | Guidance avant d'intervenir : régler son accès au site, vérifier les papiers du chantier, repérer les dangers et les sécurités, choisir ses protections, préparer l'alimentation, l'accès en hauteur et la zone de travail. Je m'entraîne sur le dessin, je le fais sur le site, je garde la trace de mes relevés. |
+| [Réceptionner et contrôler une livraison · Le tour de main](https://inerweb.fr/tour-de-main/interventions/receptionner-livraison/) | — | — | — | Guidance avant d'intervenir : réceptionner une livraison de matériel, lire le bon de livraison, le comparer à la commande, contrôler les colis, les références, les quantités et les plaques, noter les écarts avant de signer. Je m'entraîne sur le dessin, je le fais avec une vraie livraison, je garde la trace de mes relevés. |
+| [Remplacer un composant électrique sous consignation · Le tour de main](https://inerweb.fr/tour-de-main/interventions/remplacer-composant-electrique/) | — | — | — | Guidance au poste : remplacer un contacteur (ou un pressostat) dans une armoire électrique, sous consignation. Je sépare, je condamne, j'identifie, je fais la VAT, je repère les fils avant de les retirer, je recâble, je déconsigne, je fais l'essai. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+| [Remplacer un composant du circuit frigorifique · Le tour de main](https://inerweb.fr/tour-de-main/interventions/remplacer-composant-frigo/) | — | — | — | Guidance au poste : remplacer un composant du circuit frigorifique, le filtre déshydrateur (le voyant en variante). Je récupère, je dépose, je monte le composant neuf dans le bon sens sous balayage d'azote, je referme, je recharge, je trace. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
+
+## inerWeb Plan — 14 stations
+
+| Station | Ligne | Niveaux | Codes | Sujet |
+|---|---|---|---|---|
+| [Gare 1 — Bases graphiques : tracer et présenter](https://inerweb.fr/plan/gares/g01-bases-graphiques/) | — | — | — | La première gare du réseau : avant de LIRE des plans, on apprend les gestes de celui qui les dessine. Environ 2 heures . À la fin, vous saurez : |
+| [Gare 2 — Les vues : le dé à 6 faces](https://inerweb.fr/plan/gares/g02-les-vues/) | — | — | — | Matériel : un dé à jouer (1 pour 2), une feuille, un crayon. L'exercice papier se télécharge au dernier écran. |
+| [Gare 3 — Le dossier technique : acteurs, documents, cartouche](https://inerweb.fr/plan/gares/g03-dossier-technique/) | — | — | — | Un plan n'arrive jamais seul : il fait partie d'un dossier , préparé par des gens précis, pour des usages précis. Environ 2 heures . À la fin, vous saurez : |
+| [Gare 4 — Les types de plans : de la situation au détail](https://inerweb.fr/plan/gares/g04-types-de-plans/) | — | — | — | Un dossier contient PLUSIEURS plans : chacun répond à une question différente. Environ 2 heures . À la fin, vous saurez : |
+| [Gare 5 — Conventions graphiques : traits, hachures, symboles](https://inerweb.fr/plan/gares/g05-conventions/) | — | — | — | Un plan est écrit dans une langue codée : des traits, des hachures, des symboles — les mêmes pour tous les métiers, partout en France. Environ 2 heures . À la fin, vous saurez : |
+| [Gare 6 — Les échelles : le kutch, du plan au réel](https://inerweb.fr/plan/gares/g06-les-echelles/) | — | — | — | Une maison de 12 m ne tient pas sur une feuille de 30 cm : on la dessine réduite , dans une proportion exacte — l'échelle. Environ 2 heures . À la fin, vous saurez : |
+| [Gare 7 — La cotation : chaînes de cotes](https://inerweb.fr/plan/gares/g07-la-cotation/) | — | — | — | Les dimensions d'un plan sont écrites dans les cotes . Environ 2 heures . À la fin, vous saurez : |
+| [Gare 8 — Le croquis coté : dessiner à main levée](https://inerweb.fr/plan/gares/g08-le-croquis-cote/) | — | — | — | Jusqu'ici vous LISIEZ. Cette gare, c'est l'inverse : vous PRODUISEZ. Le croquis coté est le brouillon intelligent du chantier : rapide, à main levée, mais assez précis pour qu'un autre travaille avec. Environ 2 heures . |
+| [Gare 9 — La maquette BIM : initiation BIM Vision](https://inerweb.fr/plan/gares/g09-la-maquette-bim/) | — | — | — | Le bâtiment existe aussi en version numérique : la maquette BIM . Cette gare se vit sur poste informatique (~2 h). À la fin, vous saurez : |
+| [Gare 10 — Le sujet guidé : un vrai sujet, pas à pas](https://inerweb.fr/plan/gares/g10-le-sujet-guide/) | — | — | — | Vous avez les neuf premières gares dans les jambes : documents, plans, conventions, échelles, cotes, croquis, maquette. Cette gare assemble tout sur du VRAI : un vrai sujet de CAP , lu ensemble, pas à pas. Environ 2 heures . |
+| [Gare 11 — Suivre une installation dans la maquette 3D](https://inerweb.fr/plan/gares/g11-suivre-une-installation/) | — | — | — | ⬅ La carte du réseau · tronc commun · après la gare 10 · pour le froid et la clim en cours de relecture |
+| [Gare 12 — Croquer et relever une installation frigorifique](https://inerweb.fr/plan/gares/g12-croquer-et-relever/) | — | — | — | ⬅ La carte du réseau · tronc commun · pour le froid et la clim en cours de relecture |
+| [Gare 13 — Le schéma isométrique d'un réseau](https://inerweb.fr/plan/gares/g13-schema-isometrique/) | — | — | — | ⬅ La carte du réseau · tronc commun · pour le froid et la clim en cours de relecture |
+| [Bureau d'études, gare 1 — Tracer le plan d'implantation d'une installation CVC](https://inerweb.fr/plan/gares/tecvc1-plan-implantation-cvc/) | — | — | — | ⬅ La carte du réseau · ligne bureau d'études CVC en cours de relecture |
+
+## JouéRézo — 45 stations
+
+| Station | Ligne | Niveaux | Codes | Sujet |
+|---|---|---|---|---|
+| [Symboles du froid](https://inerweb.fr/jouerezo/memory.html?t=symboles-froid) | memory | — | — | — |
+| [Symboles électriques](https://inerweb.fr/jouerezo/memory.html?t=symboles-elec) | memory | — | — | — |
+| [Fluides et classes](https://inerweb.fr/jouerezo/memory.html?t=fluides) | memory | — | — | — |
+| [Le vrai et le symbole : électricité](https://inerweb.fr/jouerezo/memory.html?t=vrai-symbole-elec) | memory | — | — | — |
+| [Le vrai et le symbole : froid](https://inerweb.fr/jouerezo/memory.html?t=vrai-symbole-froid) | memory | — | — | — |
+| [Les outils](https://inerweb.fr/jouerezo/memory.html?t=outils) | memory | — | — | — |
+| [Un risque, une protection](https://inerweb.fr/jouerezo/memory.html?t=risques) | memory | — | — | — |
+| [Les mots du métier](https://inerweb.fr/jouerezo/memory.html?t=mots-du-metier) | memory | — | S3.1 | — |
+| [English for the fridge](https://inerweb.fr/jouerezo/memory.html?t=english-for-the-fridge) | memory | — | S7 S8.3 | — |
+| [Les gestes du frigoriste](https://inerweb.fr/jouerezo/ordre.html?t=gestes) | ordre | — | — | — |
+| [Sécurité : avant de toucher](https://inerweb.fr/jouerezo/ordre.html?t=securite) | ordre | — | — | — |
+| [Fluides](https://inerweb.fr/jouerezo/intrus.html?t=fluides) | intrus | — | — | — |
+| [Sécurité](https://inerweb.fr/jouerezo/intrus.html?t=securite) | intrus | — | — | — |
+| [Les outils](https://inerweb.fr/jouerezo/intrus.html?t=outils) | intrus | — | — | — |
+| [Organes et appareils](https://inerweb.fr/jouerezo/intrus.html?t=organes) | intrus | — | — | — |
+| [Fluides et gestes](https://inerweb.fr/jouerezo/chrono.html?t=fluides) | chrono | — | — | — |
+| [Risque électrique (HoCourant)](https://inerweb.fr/jouerezo/chrono.html?t=electricite) | chrono | — | — | — |
+| [Travail en hauteur (R408)](https://inerweb.fr/jouerezo/chrono.html?t=hauteur) | chrono | — | — | — |
+| [Tout mélangé](https://inerweb.fr/jouerezo/chrono.html?t=tout) | chrono | — | — | — |
+| [Parler au client](https://inerweb.fr/jouerezo/chrono.html?t=parler-au-client) | chrono | — | T3 S8.1 | — |
+| [Fluides et gestes](https://inerweb.fr/jouerezo/qcm.html?t=fluides) | qcm | — | — | — |
+| [Risque électrique (HoCourant)](https://inerweb.fr/jouerezo/qcm.html?t=electricite) | qcm | — | — | — |
+| [Travail en hauteur (R408)](https://inerweb.fr/jouerezo/qcm.html?t=hauteur) | qcm | — | — | — |
+| [Tout mélangé](https://inerweb.fr/jouerezo/qcm.html?t=tout) | qcm | — | — | — |
+| [Parler au client](https://inerweb.fr/jouerezo/qcm.html?t=parler-au-client) | qcm | — | T3 S8.1 | — |
+| [Les zombies du R-22](https://inerweb.fr/jouerezo/aventure.html?t=zombies) | aventure | — | — | — |
+| [La chambre froide (R-134a)](https://inerweb.fr/jouerezo/heros.html?t=froid) | heros | — | — | — |
+| [Les organes du froid](https://inerweb.fr/jouerezo/quisuisje.html?t=froid) | quisuisje | — | — | — |
+| [Les outils](https://inerweb.fr/jouerezo/quisuisje.html?t=outils) | quisuisje | — | — | — |
+| [Les appareils électriques (ÉlectroRézo)](https://inerweb.fr/jouerezo/quisuisje.html?t=electricite) | quisuisje | — | — | — |
+| [Tout mélangé](https://inerweb.fr/jouerezo/quisuisje.html?t=tout) | quisuisje | — | — | — |
+| [Les organes du froid](https://inerweb.fr/jouerezo/pendu.html?t=froid) | pendu | — | — | — |
+| [Les outils](https://inerweb.fr/jouerezo/pendu.html?t=outils) | pendu | — | — | — |
+| [Les appareils électriques (ÉlectroRézo)](https://inerweb.fr/jouerezo/pendu.html?t=electricite) | pendu | — | — | — |
+| [Tout mélangé](https://inerweb.fr/jouerezo/pendu.html?t=tout) | pendu | — | — | — |
+| [Le bon mot](https://inerweb.fr/jouerezo/trous.html?t=le-bon-mot) | trous | — | S3.1 S8.2 | — |
+| [Read it in English](https://inerweb.fr/jouerezo/trous.html?t=read-it-in-english) | trous | — | S7 S8.3 | — |
+| [Combien de tonnes éq. CO₂ ?](https://inerweb.fr/jouerezo/trous.html?t=tonnes-eq-co2) | trous | — | S0.1 S2.3.1 | — |
+| [Qui fait quoi ?](https://inerweb.fr/jouerezo/ranger.html?t=qui-fait-quoi) | ranger | — | S1.1 C1.2 T4 S1.2 | — |
+| [Quels papiers pour ce chantier ?](https://inerweb.fr/jouerezo/ranger.html?t=quels-papiers) | ranger | — | S1.2 S1.4 | — |
+| [Le bon matériel : poser les manomètres](https://inerweb.fr/jouerezo/ranger.html?t=materiel-manometres) | ranger | — | C2.2 T6 CC23 | — |
+| [Le bon matériel : tirer au vide](https://inerweb.fr/jouerezo/ranger.html?t=materiel-vide) | ranger | — | C2.2 T6 CC23 | — |
+| [Le bon matériel : braser sous azote](https://inerweb.fr/jouerezo/ranger.html?t=materiel-brasure) | ranger | — | C2.2 T6 CC23 | — |
+| [Bon pour le service ?](https://inerweb.fr/jouerezo/ranger.html?t=bon-pour-le-service) | ranger | — | T6 C2.2 | — |
+| [Où va ce déchet ?](https://inerweb.fr/jouerezo/ranger.html?t=ou-va-ce-dechet) | ranger | — | C3.8 S0.2 | — |
 
 ## inerWeb QCM — 4 stations
 

@@ -391,6 +391,51 @@ for (const p of [
   });
 }
 
+/* --- Le tour de main : toutes les gares du dossier interventions/ (23/10/2026)
+   La liste ci-dessus est restée celle d'octobre ; une gare ajoutée depuis n'y figure pas.
+   On balaie donc le dossier et on ajoute ce qui n'est pas encore relevé. */
+for (const d of dossiers('tour-de-main/interventions')) {
+  const chemin = 'tour-de-main/interventions/' + d + '/';
+  if (stations.some((x) => x.chemin === chemin)) continue;
+  const html = lire(path.join(ROOT, chemin, 'index.html'));
+  if (!html) continue;
+  ajouter({ reseau: 'Le tour de main', id: d, titre: titreHtml(html),
+    resume: descriptionHtml(html) || phrase(premierParagraphe(html)), chemin });
+}
+
+/* --- inerWeb Plan (/plan/) : une entrée par gare (23/10/2026) --------- */
+for (const d of dossiers('plan/gares')) {
+  const chemin = 'plan/gares/' + d + '/';
+  const html = lire(path.join(ROOT, chemin, 'index.html'));
+  if (!html) continue;
+  ajouter({ reseau: 'inerWeb Plan', id: d, titre: titreHtml(html),
+    resume: descriptionHtml(html) || phrase(premierParagraphe(html)), chemin });
+}
+
+/* --- JouéRézo : un thème = une entrée (23/10/2026) --------------------
+   Les thèmes vivent dans jouerezo/donnees/*.js (JR_THEMES : moteur → liste). Chaque thème s'ouvre
+   par jouerezo/<moteur>.html?t=<id> ; ses codes de référentiel sont ceux qu'il déclare. */
+{
+  const ctx = { window: {}, console };
+  vm.createContext(ctx);
+  try {
+    for (const f of ['definitions', 'jeux-mots', 'jeux-chantier', 'jeux-co2', 'codes-referentiel', 'themes']) {
+      const src = lire(path.join(ROOT, 'jouerezo/donnees', f + '.js'));
+      if (src) vm.runInContext(src.replace(/const JR_THEMES/, 'var JR_THEMES'), ctx);
+    }
+  } catch (e) { console.warn('JouéRézo : thèmes non lus (' + e.message + ')'); }
+  const themes = ctx.window.JR_THEMES || {};
+  for (const moteur of Object.keys(themes)) {
+    if (!fs.existsSync(path.join(ROOT, 'jouerezo', moteur + '.html'))) continue;
+    for (const t of themes[moteur] || []) {
+      if (!t || !t.id) continue;
+      const codes = Object.values(t.codes || {}).flat();
+      ajouter({ reseau: 'JouéRézo', id: 'jeu-' + moteur + '-' + t.id, titre: nettoyer(t.nom || t.id),
+        ligne: moteur, competences: codes.length ? codes : null, chemin: 'jouerezo/' + moteur + '.html?t=' + t.id });
+    }
+  }
+}
+
 /* --- inerWeb QCM (08/10/2026) : réviser seul, rien n'est envoyé ----------
    Pages fabriquées par test-accueil-mfer/en-ligne/livrer.mjs ; les codes sont
    ceux que chaque page affiche (pied de page ou carte de l'accueil). */
