@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Remplir la fiche d&#x27;intervention et le bordereau des déchets — inerWeb Législation</title>
+<meta name="description" content="Station du réseau Législation, écran par écran et commentée à voix haute : quand on remplit la fiche d&#x27;intervention (cerfa 15497) et le bordereau de déchets de fluides (BSFF, Trackdéchets), les 14 cadres un par un sur un exemple résolu, une situation à remplir, et le logiciel inerWeb Fluide pour s&#x27;entraîner.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/fiche-intervention-bsff/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Fluidique & thermique.
+     Remplir la fiche d'intervention (cerfa 15497*04) et le bordereau des
+     déchets de fluides (BSFF, Trackdéchets) : un exemple résolu case par
+     case par case, puis une situation à remplir.
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Station produite le 19/10/2026 : les 12 narrations n'ont pas encore leur
+     MP3 dans l'index global moteur/voix-index.js ; la voix du navigateur sert
+     de filet, en attendant la fabrication.
+
+     Sources : voir FOND.md. Aucune valeur (seuil, durée, date) n'est écrite
+     ici sans avoir été lue dans un texte officiel ; le reste est listé sous
+     « À sourcer » dans FOND.md. Le logiciel cité (inerWeb Fluide) n'est pas
+     recréé ici : la station y renvoie par un lien.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../scenes/scenes.css?v=20261015-campagne4">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerweb.fr">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Fluidique &amp; thermique</p>
+  <h1>Remplir la fiche d'intervention et le bordereau des déchets</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 15 minutes · un exemple résolu, puis une situation à remplir</p>
+  <figure class="scene" data-scene-branche="fluidique" data-station="fiche-intervention-bsff"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez dire <strong>quand</strong> on remplit la fiche d'intervention (le cerfa 15497) et quand on fait un bordereau de déchets (le BSFF dans Trackdéchets). Vous remplissez, <strong>case par case</strong>, un exemple résolu, puis vous remplissez seul(e) une situation. Vous savez aussi où vous entraîner : le logiciel <strong>inerWeb Fluide</strong>, en démonstration, sur des données fictives.</p>
+    <div class="codes-formation">
+      <p><strong>Sert notamment pour</strong></p>
+      <ul>
+        <li><strong>TP TECVC, REAC TP-00133</strong> : hors REAC (culture professionnelle du technicien et du chargé d'affaires)</li>
+        <li><strong>Attestation d'aptitude 2025</strong> : codes 1.00, 4.09, 5.07 et 5.08</li>
+        <li><strong>CAP IFCA</strong> : compétences <strong>C1.1</strong> « Compléter, transmettre » et <strong>C1.3</strong> « Rendre compte » · tâches <strong>T1</strong> « Renseigner et transmettre des documents de suivi d'intervention » et <strong>T2</strong> « Compléter les documents de traçabilité des fluides frigorigènes »</li>
+        <li><strong>Bac Pro MFER (2028)</strong> : savoirs <strong>S1.4</strong> « les procédures administratives » et <strong>S8.2</strong> « les outils de la communication écrite et numérique » · tâche <strong>A3T4</strong> « Renseigner les documents techniques et réglementaires »</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez le parcours, de gauche à droite. D&#x27;abord, vous intervenez sur l&#x27;équipement. Ensuite, la fiche d&#x27;intervention, en bleu : elle se remplit à chaque fois, sans exception. Puis une question : du fluide devient-il un déchet, c&#x27;est-à-dire part-il en bouteille vers le traitement ? Si oui, en haut, en orange tireté : il faut un bordereau, le BSFF, c&#x27;est-à-dire le bordereau de suivi des déchets de fluides frigorigènes, dans Trackdéchets. Si non, en bas, en vert : pas de bordereau, car le fluide reste dans la machine. Une goutte suit chaque chemin tour à tour. Retenez : la fiche toujours, le bordereau seulement s&#x27;il y a un déchet.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">Deux papiers, deux moments</h2>
+    <p>Quand vous intervenez sur un équipement avec du fluide frigorigène, deux papiers peuvent vous attendre.</p>
+    <ul>
+      <li>La <strong>fiche d'intervention</strong> (le <strong>cerfa 15497</strong>) : vous la remplissez à <strong>chaque intervention</strong> qui manipule le fluide (article R. 543-82 du Code de l'environnement). Vous êtes l'<strong>opérateur</strong> : c'est vous qui l'établissez.</li>
+      <li>Le <strong>bordereau de suivi des déchets de fluides frigorigènes</strong> (le <strong>BSFF</strong>) : on le fait <strong>seulement si du fluide devient un déchet</strong>, c'est-à-dire s'il part en bouteille de récupération vers le traitement. Il se fait sur internet, dans <strong>Trackdéchets</strong>.</li>
+    </ul>
+    <p>Deux mots à retenir. L'<strong>opérateur</strong> est l'entreprise qui intervient. Le <strong>détenteur</strong> est la personne qui fait fonctionner l'équipement, souvent le client.</p>
+    <p>La fiche n'est pas dans Trackdéchets : elle reste sur papier ou en version électronique (article R. 543-83). Mais ses informations sont ensuite <strong>reportées</strong> dans le bordereau (écran 6).</p>
+    <figure>
+      <img src="svg/deux-moments.svg" alt="Un parcours de gauche à droite : vous intervenez sur l&#x27;équipement, puis la fiche d&#x27;intervention cerfa 15497 se remplit à chaque fois, en trait plein bleu. Puis une question : du fluide devient-il un déchet ? Si oui, en haut, en trait tireté orange : un bordereau BSFF dans Trackdéchets. Si non, en bas, en vert : pas de bordereau, le fluide reste dans la machine. Une légende rappelle les trois traits.">
+      <figcaption>La fiche, toujours. Le bordereau, seulement s'il y a un déchet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici les quatorze cadres du cerfa, regroupés en quatre blocs. Premier bloc, en trait plein : les cadres un à quatre. Ils disent qui, quoi et quand. On les remplit toujours. Deuxième bloc, en pointillé : les cadres cinq à dix, pour le contrôle d&#x27;étanchéité. Troisième bloc, en tireté : le cadre onze, le fluide chargé et récupéré. Ces deux blocs se remplissent dès que vous intervenez sur l&#x27;équipement. Quatrième bloc, tireté et pointillé : les cadres douze et treize, pour le déchet, seulement s&#x27;il y en a un. En bas : les observations, et surtout les signatures, toujours.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">La fiche : 14 cadres, 4 blocs</h2>
+    <p>Le cerfa 15497 compte <strong>14 cadres numérotés</strong>. Pour ne pas vous perdre, regroupez-les en <strong>quatre blocs</strong>.</p>
+    <ul>
+      <li><strong>Bloc 1, cadres 1 à 4</strong> : l'opérateur, le détenteur, l'équipement, la nature de l'intervention. <strong>Toujours remplis</strong>, avec la signature.</li>
+      <li><strong>Bloc 2, cadres 5 à 10</strong> : le contrôle d'étanchéité (détecteur de fuite, tableau de charge, fuites trouvées).</li>
+      <li><strong>Bloc 3, cadre 11</strong> : le fluide chargé et le fluide récupéré, en kilogrammes.</li>
+      <li><strong>Bloc 4, cadres 12 et 13</strong> : le déchet. <strong>Seulement s'il y a un déchet de fluide.</strong></li>
+    </ul>
+    <p>Le cadre 14 reçoit vos observations. Les blocs 2 et 3 se remplissent <strong>dès que vous avez travaillé sur l'équipement</strong> (notice officielle du cerfa 15497*04).</p>
+    <p>Chaque fiche se conserve <strong>5 ans au moins</strong>, chez vous et chez le client (article R. 543-82).</p>
+    <figure>
+      <img src="svg/quatre-blocs.svg" alt="Cinq bandes empilées. Bloc 1, en trait plein : les cadres 1 à 4, qui, quoi, quand, toujours. Bloc 2, en pointillé : les cadres 5 à 10, le contrôle d&#x27;étanchéité, dès que vous intervenez sur l&#x27;équipement. Bloc 3, en tireté : le cadre 11, le fluide manipulé, dès que vous intervenez sur l&#x27;équipement. Bloc 4, en tireté et pointillé : les cadres 12 et 13, le déchet, seulement s&#x27;il y a un déchet de fluide. En bas : le cadre 14, les observations, et les signatures, toujours.">
+      <figcaption>Quatorze cadres, quatre blocs : chaque bloc dit quand on le remplit.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Voici l&#x27;exemple : la climatisation d&#x27;un salon de coiffure, dont vous remplacez le compresseur. En haut, les cadres un et deux : votre entreprise et le client, avec leurs numéros SIRET, c&#x27;est-à-dire leurs numéros d&#x27;identification. Au milieu, le cadre trois : le fluide, le R 410 A, la charge lue sur la plaque, quatre kilos, et le calcul du tonnage : deux mille quatre-vingt-huit fois quatre, divisé par mille, égale huit virgule trente-cinq tonnes. En bas, le cadre quatre : deux cases cochées, la maintenance, et le contrôle d&#x27;étanchéité non périodique.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Exemple résolu (1/3) : les cadres 1 à 4</h2>
+    <p><strong>La situation de l'exemple (fictive).</strong> Le compresseur de la climatisation d'un salon de coiffure est grillé. Votre entreprise le remplace. Le fluide est du <strong>R-410A</strong>. La plaque de l'appareil indique <strong>4,0 kg</strong> de charge. Le fluide récupéré est pollué : on ne le remet pas dans la machine.</p>
+    <ul>
+      <li><strong>Cadre 1, l'opérateur</strong> : votre entreprise, son SIRET (numéro d'identification) et son numéro d'attestation de capacité.</li>
+      <li><strong>Cadre 2, le détenteur</strong> : le client, son adresse et son SIRET.</li>
+      <li><strong>Cadre 3, l'équipement</strong> : le fluide, la charge lue sur la plaque signalétique, et le <strong>tonnage équivalent CO2</strong>. Le PRP (potentiel de réchauffement planétaire) mesure l'effet de serre du fluide : celui du R-410A est 2 088. Donc 2 088 × 4,0 ÷ 1 000 = <strong>8,35 t éq. CO2</strong>.</li>
+      <li><strong>Cadre 4, la nature</strong> : cochez une ou plusieurs cases. Ici : « Maintenance » et « Contrôle d'étanchéité non périodique », parce que le circuit a été ouvert.</li>
+    </ul>
+    <p class="formule">tonnage = PRP × charge (kg) ÷ 1 000</p>
+    <figure>
+      <img src="svg/exemple-cadres-1-4.svg" alt="La fiche remplie pour la climatisation d&#x27;un salon de coiffure. Cadre 1, l&#x27;opérateur : l&#x27;entreprise, son SIRET, son numéro d&#x27;attestation de capacité. Cadre 2, le détenteur : le salon et son SIRET. Cadre 3 : climatisation au R-410A, charge de 4,0 kg, tonnage 2 088 fois 4,0 divisé par 1 000, égal 8,35 tonnes équivalent CO2. Cadre 4 : deux cases cochées, maintenance et contrôle d&#x27;étanchéité non périodique. Ce qui est écrit à la main est en orange.">
+      <figcaption>En orange, ce que vous écrivez ou cochez ; en bleu, ce qui est imprimé.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Le contrôle d&#x27;étanchéité, cadres cinq à dix. Cadre cinq : le détecteur de fuite manuel, avec son repère et la date de son dernier contrôle. Cadre six : le système permanent de détection de fuites. Ici, non. Cadre sept : le tonnage de huit virgule trente-cinq tombe dans la première case, de cinq à moins de cinquante tonnes. Cadre huit : sans système permanent, on coche douze mois. Le cadre neuf, grisé, reste vide : il sert aux équipements avec système permanent. Cadre dix : aucune fuite trouvée, on coche non.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Exemple résolu (2/3) : les cadres 5 à 10</h2>
+    <ul>
+      <li><strong>Cadre 5, détecteur manuel de fuite</strong> : son repère (numéro de série) et la date de son dernier contrôle.</li>
+      <li><strong>Cadre 6, système permanent de détection de fuites</strong> : OUI ou NON. Ici : NON.</li>
+      <li><strong>Cadre 7, quantité de fluide</strong> : le tableau est imprimé sur la fiche. Pour un HFC, on cherche son tonnage : 8,35 t est entre 5 t et 50 t, donc on coche la <strong>première case</strong>.</li>
+      <li><strong>Cadres 8 et 9, le contrôle périodique</strong> : sans système permanent, on coche le cadre 8 (ici 12 mois) ; avec un système permanent, le cadre 9. <strong>L'autre reste vide.</strong></li>
+      <li><strong>Cadre 10, fuites constatées</strong> : OUI ou NON. Ici : NON.</li>
+    </ul>
+    <div class="encadre encadre--piege"><span class="mot">Et si le contrôle trouve une fuite ?</span><p>Cochez OUI, écrivez où est la fuite, puis cochez « Réalisée » ou « À faire » pour la réparation. On ne recharge jamais un équipement qui fuit (article R. 543-89). Un contrôle est attesté par une <strong>marque de contrôle</strong> posée sur l'équipement ; si la réparation ne peut pas se faire tout de suite, on pose une <strong>marque de défaut d'étanchéité</strong> (article R. 543-79-1).</p></div>
+    <figure>
+      <img src="svg/exemple-cadres-5-10.svg" alt="Le contrôle d&#x27;étanchéité sur la même fiche. Cadre 5 : détecteur manuel DM-12, contrôlé le 4 mars 2026. Cadre 6, système permanent de détection : non. Cadre 7, ligne HFC et PFC : première case cochée, de 5 à moins de 50 tonnes. Cadre 8, sans système permanent : 12 mois cochés. Cadre 9, avec système permanent : grisé, il reste vide. Cadre 10, fuites constatées : non.">
+      <figcaption>Le tableau est imprimé : vous cochez la case qui correspond à votre tonnage.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Cadres onze à quatorze. En haut, le trajet du fluide : quatre kilos de fluide neuf, en bouteille, entrent dans la climatisation ; trois kilos huit de fluide pollué sortent, dans une bouteille de récupération, pesée sur la balance. Cadre onze, à gauche : chargé, quatre kilos, tous de fluide vierge. À droite : récupéré, trois kilos huit, tous destinés au traitement. Cadre douze : le code UN du déchet. Cadre treize : l&#x27;installation qui reçoit. Cadre quatorze : vos observations. En bas, les deux signatures : opérateur et détenteur, car huit virgule trente-cinq tonnes dépassent cinq tonnes.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Exemple résolu (3/3) : les cadres 11 à 14</h2>
+    <ul>
+      <li><strong>Cadre 11, chargé</strong> : le total (A + B + C). Ici <strong>4,0 kg de fluide vierge</strong> (A). B (fluide récupéré puis remis) et C (fluide régénéré) restent vides.</li>
+      <li><strong>Cadre 11, récupéré</strong> : le total (D + E), reporté <strong>depuis la pesée</strong> de la bouteille, jamais estimé. Ici <strong>3,8 kg</strong>, tous « destinés au traitement » (D). E (fluide gardé pour être remis) reste vide. On écrit aussi le numéro de la bouteille, et le numéro du bordereau quand Trackdéchets l'a donné.</li>
+      <li><strong>Cadre 12, code UN</strong> : c'est le numéro de transport du déchet. Le formulaire imprime deux lignes : fluides non inflammables (<strong>UN 1078</strong>, code déchet 14 06 01*) et fluides inflammables (UN 3161, code déchet 16 05 04*). Cochez celle qui correspond ; pour un autre fluide, lisez le code sur l'étiquette de la bouteille. <strong>Ici : UN 1078.</strong></li>
+      <li><strong>Cadre 13, installation de destination</strong> : nom, SIRET et adresse de l'installation qui reçoit le déchet.</li>
+      <li><strong>Cadre 14, observations</strong> : une phrase utile.</li>
+      <li><strong>Signatures</strong> : la date, l'opérateur, et le détenteur (8,35 t, c'est plus de 5 t). Le détenteur garde l'original.</li>
+    </ul>
+    <div class="encadre encadre--note"><span class="mot">À retenir</span><p>Si le fluide est remis dans la même machine, il n'y a pas de déchet : on laisse vides D et les cadres 12 et 13. Un fluide récupéré puis remis pendant la même opération se compte à la fois en B et en E.</p></div>
+    <figure>
+      <img src="svg/exemple-cadres-11-14.svg" alt="En haut, le trajet du fluide, avec les appareils dessinés : une bouteille de fluide neuf, 4,0 kg, entre dans la climatisation (unité intérieure et unité extérieure) ; 3,8 kg de fluide pollué sortent dans une bouteille de récupération. Au milieu, le cadre 11 : chargé 4,0 kg, dont 4,0 de fluide vierge ; récupéré 3,8 kg, dont 3,8 destinés au traitement. En dessous, les cadres 12, 13 et 14 : code UN, installation de destination, observations. En bas, les signatures de l&#x27;opérateur et du détenteur.">
+      <figcaption>Quatre kilos entrent, trois kilos huit sortent : chaque chiffre vient de la balance.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Voici le bordereau dans Trackdéchets, sur internet. Quatre onglets, de gauche à droite. Un : le déchet, avec le code, le code UN et la bouteille. Deux : l&#x27;émetteur et le détenteur. C&#x27;est ici que vous reportez de la fiche le numéro, la quantité retirée, le code postal et le SIRET du client. Trois : le transporteur. Quatre : la destination. Puis vous cliquez sur Créer, et les signatures se suivent : l&#x27;émetteur, le transporteur, puis l&#x27;installation qui reçoit et traite le fluide.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Le bordereau (BSFF) dans Trackdéchets, case par case</h2>
+    <p>Le bordereau se crée sur le site <strong>Trackdéchets</strong> (tous les acteurs doivent y avoir un compte). Vous reprenez les informations de la fiche : quatre onglets, puis « Créer ».</p>
+    <ol>
+      <li><strong>Déchet</strong> : émetteur « opérateur » (vous collectez chez votre client, avec une fiche d'intervention) ; code déchet <strong>14 06 01*</strong> ; code UN, le même qu'au cadre 12 (<strong>UN 1078</strong> ; Trackdéchets ne le devine pas) ; la bouteille et sa quantité (3,8 kg).</li>
+      <li><strong>Émetteur et détenteur</strong> : votre SIRET et vos coordonnées ; puis, pour chaque fiche, le <strong>numéro de la fiche</strong> (celui écrit en haut à gauche du cerfa, « Fiche N° »), la <strong>quantité retirée</strong> en kg, le <strong>code postal</strong> du lieu, le <strong>SIRET</strong> et les coordonnées du détenteur.</li>
+      <li><strong>Transporteur</strong> : son SIRET, le mode de transport, la plaque d'immatriculation. Si vous transportez vous-même, vous figurez aussi ici.</li>
+      <li><strong>Destination</strong> : l'entreprise qui reçoit (cherchée par son SIRET), un contact, le code de traitement choisi dans la liste.</li>
+    </ol>
+    <p>Puis les <strong>signatures électroniques</strong> se suivent : l'émetteur, le transporteur, l'installation de destination (réception, acceptation, traitement). Reportez ensuite le numéro du bordereau au cadre 11 de la fiche.</p>
+    <figure>
+      <img src="svg/bsff-case-par-case.svg" alt="Quatre onglets côte à côte. Un, le déchet : émetteur opérateur, code 14 06 01 étoile, code UN, contenant et quantité. Deux, émetteur et détenteur : votre SIRET, puis pour chaque fiche son numéro, la quantité retirée, le code postal et le SIRET du détenteur. Trois, le transporteur : SIRET, mode de transport, plaque. Quatre, la destination : l&#x27;entreprise qui reçoit, un contact, le code de traitement. En bas : Créer, puis trois signatures, émetteur, transporteur, destination.">
+      <figcaption>Les mêmes informations que la fiche, reportées dans quatre onglets.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="À vous. Un commerce, un meuble frigorifique au R 134 a, huit kilos de charge, un système permanent de détection de fuites. Vous faites le contrôle périodique avec votre détecteur manuel et vous trouvez une fuite au raccord de l&#x27;évaporateur. La pièce est commandée : vous ne réparez pas aujourd&#x27;hui, vous ne rechargez rien, vous ne récupérez rien. Sur une fiche vierge, remplissez ce qui doit l&#x27;être, laissez vide ce qui doit l&#x27;être, calculez le tonnage et dites qui signe.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">À vous : une situation à remplir</h2>
+    <p><strong>La situation.</strong> Dans un commerce, vous faites le <strong>contrôle d'étanchéité périodique</strong> d'un meuble frigorifique : fluide R-134a (PRP donné : 1 430), charge totale 8,0 kg, avec un système permanent de détection de fuites. Avec votre détecteur manuel DM-12 (dernier contrôle le 04/03/2026), vous trouvez une fuite au raccord de l'évaporateur. La pièce est commandée : vous ne réparez pas aujourd'hui. Vous ne rechargez rien et ne récupérez rien.</p>
+    <p><strong>Votre travail, sur papier.</strong> Prenez une <strong>fiche vierge</strong> : le formulaire cerfa 15497*04 se télécharge sur <a href="https://entreprendre.service-public.gouv.fr/vosdroits/R43122" target="_blank" rel="noopener">service-public.gouv.fr</a>. Puis :</p>
+    <ol>
+      <li>remplissez les cadres qui doivent l'être ;</li>
+      <li>dites quels cadres restent vides, et pourquoi ;</li>
+      <li>calculez le tonnage équivalent CO2 ;</li>
+      <li>dites qui signe la fiche.</li>
+    </ol>
+    <p>Pour vous aider, relisez les écrans 3 à 5. <strong>Le corrigé est à l'écran suivant : remplissez d'abord.</strong></p>
+    <figure>
+      <img src="svg/situation-a-remplir.svg" alt="Deux colonnes. À gauche, le client et la machine : un commerce, un meuble frigorifique au R-134a, charge totale 8,0 kg, PRP donné 1 430, avec un système permanent de détection de fuites. À droite, votre intervention : contrôle d&#x27;étanchéité périodique avec le détecteur manuel DM-12, fuite trouvée au raccord de l&#x27;évaporateur, réparation pas aujourd&#x27;hui, ni recharge ni récupération. En bas, ce qu&#x27;il faut faire sur la fiche vierge.">
+      <figcaption>Les données sont sur l'image ; la fiche se remplit sur papier.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Premier temps : le corrigé de la situation. Le tonnage est de onze virgule quarante-quatre tonnes, au-dessus de cinq tonnes : opérateur et détenteur signent. La fuite est cochée oui, réparation à faire, et les cadres onze à treize restent vides : pas de déchet, pas de bordereau. Deuxième temps : s&#x27;entraîner dans le logiciel inerWeb Fluide, en démonstration, avec des données fictives. Le bouton Nouveau mouvement lance un assistant en six étapes ; le bouton Visualiser CERFA montre la fiche remplie. Attention, l&#x27;encadré orange : le logiciel ne fait pas le bordereau. Le vrai se fait dans Trackdéchets.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Le corrigé, et le logiciel pour s'entraîner</h2>
+    <p><strong>Le corrigé de la situation.</strong></p>
+    <ul>
+      <li><strong>Cadres 1 et 2</strong> : votre entreprise et le commerce. <strong>Cadre 3</strong> : R-134a, 8,0 kg ; 1 430 × 8,0 ÷ 1 000 = <strong>11,44 t éq. CO2</strong>. <strong>Cadre 4</strong> : contrôle d'étanchéité périodique.</li>
+      <li><strong>Cadre 5</strong> : DM-12, 04/03/2026. <strong>Cadre 6</strong> : OUI. <strong>Cadre 7</strong> : première case (5 t à 50 t). <strong>Cadre 8</strong> : vide. <strong>Cadre 9</strong> : 24 mois.</li>
+      <li><strong>Cadre 10</strong> : OUI ; localisation : raccord de l'évaporateur ; réparation : « À faire ».</li>
+      <li><strong>Cadres 11, 12 et 13</strong> : vides (rien chargé, rien récupéré, pas de déchet : <strong>pas de bordereau</strong>). <strong>Cadre 14</strong> : fuite à réparer, pièce commandée, pas de recharge.</li>
+      <li><strong>Signatures</strong> : l'opérateur <strong>et</strong> le détenteur (11,44 t, c'est plus de 5 t).</li>
+    </ul>
+    <p><strong>Pour vous entraîner encore</strong> : <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener">inerWeb Fluide, démonstration en ligne</a>. Aucun compte : les données sont fictives, rien ne sort de votre navigateur, et le repère « DÉMO / FORMATION » reste affiché.</p>
+    <ol>
+      <li>Si une visite guidée s'ouvre, choisissez « L'essentiel » (5 minutes) : le tableau de bord, une fiche d'intervention faite avec l'assistant, son CERFA.</li>
+      <li>Bouton <strong>Nouveau mouvement</strong> : l'assistant en 6 étapes (Type, Machine, Bouteille, Pesées, Contrôle, Signature).</li>
+      <li>Menu <strong>Mouvements</strong>, bouton <strong>Visualiser CERFA</strong> : la fiche est remplie à votre place. Comparez avec la vôtre.</li>
+    </ol>
+    <div class="encadre encadre--piege"><span class="mot">Attention</span><p>Le logiciel ne fait pas le bordereau BSFF. Son menu « Déchets / remise en filière » tient un suivi interne qui ne le remplace pas : le vrai bordereau se fait dans Trackdéchets. Et une fiche sortie de la démonstration porte le filigrane « FORMATION » : elle ne vaut pas une vraie fiche.</p></div>
+    <figure>
+      <img src="svg/logiciel-entrainement.svg" alt="Un parcours en trois étapes : la démonstration d&#x27;inerWeb Fluide, avec des données fictives ; le bouton Nouveau mouvement, un assistant en six étapes (Type, Machine, Bouteille, Pesées, Contrôle, Signature) ; le bouton Visualiser CERFA, qui montre la fiche remplie. En bas, un encadré orange tireté : le logiciel ne fait pas le bordereau BSFF, son menu Déchets tient un suivi interne, le vrai bordereau se fait dans Trackdéchets.">
+      <figcaption>Le logiciel remplit la fiche ; le bordereau, lui, se fait dans Trackdéchets.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide question" id="q1" data-narration="Première question. Vous remplacez un compresseur grillé. Tout le fluide récupéré part au traitement. Quels papiers faut-il ? Reprenez le parcours de l&#x27;écran un si besoin.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Vous remplacez un compresseur grillé. Tout le fluide récupéré part au traitement. Quels papiers faut-il ?</h2>
+    <figure class="vignette">
+      <img src="svg/deux-moments.svg" alt="Vignette de rappel : le parcours de la fiche d&#x27;intervention, puis le bordereau BSFF seulement si du fluide devient un déchet.">
+      <figcaption>Rappel de l'écran 1 — la fiche toujours, le bordereau si déchet.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">La fiche d'intervention seulement</button>
+      <button type="button" data-answer="b">Le bordereau BSFF seulement</button>
+      <button type="button" data-answer="bonne">La fiche, puis le bordereau BSFF</button>
+      <button type="button" data-answer="d">Aucun : le client s'en occupe seul</button>
+    </div>
+    <p class="feedback" hidden data-explication="La fiche d&#x27;intervention se remplit à chaque intervention sur le fluide. Comme tout le fluide part en déchet, il faut aussi le bordereau BSFF dans Trackdéchets."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un équipement contient trois kilos six de R 134 a, avec un PRP donné de mille quatre cent trente. Quel est son tonnage équivalent CO2, et qui signe la fiche ? Refaites le calcul de l&#x27;écran trois.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un équipement contient 3,6 kg de R-134a (PRP donné : 1 430). Quel est son tonnage et qui signe la fiche ?</h2>
+    <figure class="vignette">
+      <img src="svg/exemple-cadres-1-4.svg" alt="Vignette de rappel : les cadres 1 à 4 remplis, avec le calcul du tonnage équivalent CO2.">
+      <figcaption>Rappel de l'écran 3 — tonnage = PRP × charge ÷ 1 000.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="bonne">5,15 t éq. CO2 : l'opérateur et le détenteur signent</button>
+      <button type="button" data-answer="b">5,15 t éq. CO2 : l'opérateur seul signe</button>
+      <button type="button" data-answer="c">51,5 t éq. CO2 : l'opérateur et le détenteur signent</button>
+      <button type="button" data-answer="d">0,51 t éq. CO2 : l'opérateur seul signe</button>
+    </div>
+    <p class="feedback" hidden data-explication="1 430 × 3,6 ÷ 1 000 = 5,148, soit 5,15 t éq. CO2. C&#x27;est plus de 5 t : le détenteur signe aussi, et garde l&#x27;original."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Le fluide récupéré est propre, et vous le remettez dans la même machine. Que faites-vous aux cadres douze et treize ? Pensez à l&#x27;encadré de l&#x27;écran cinq.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Le fluide récupéré est propre. Vous le remettez dans la même machine. Que faites-vous aux cadres 12 et 13 ?</h2>
+    <figure class="vignette">
+      <img src="svg/exemple-cadres-11-14.svg" alt="Vignette de rappel : les cadres 11 à 14, avec le cadre 11 chargé et récupéré et les cadres 12 et 13 du déchet.">
+      <figcaption>Rappel de l'écran 5 — les cadres 12 et 13 sont pour le déchet.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Je les remplis avec le code UN et l'adresse du client</button>
+      <button type="button" data-answer="b">Je note 0 kg dans chaque cadre</button>
+      <button type="button" data-answer="c">Je les remplis avec l'adresse de mon entreprise</button>
+      <button type="button" data-answer="bonne">Je les laisse vides : il n'y a pas de déchet</button>
+    </div>
+    <p class="feedback" hidden data-explication="Les cadres 12 et 13 ne se remplissent que si l&#x27;intervention produit un déchet de fluide. Ici le fluide est remis dans la machine : ni déchet, ni bordereau. La quantité remise s&#x27;écrit au cadre 11, en B et en E."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Dans Trackdéchets, que reportez-vous de la fiche d&#x27;intervention ? Regardez l&#x27;onglet deux de l&#x27;écran six.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Dans Trackdéchets, que reportez-vous de la fiche d'intervention ?</h2>
+    <figure class="vignette">
+      <img src="svg/bsff-case-par-case.svg" alt="Vignette de rappel : les quatre onglets du bordereau, dont l&#x27;onglet émetteur et détenteur où l&#x27;on reporte les informations de la fiche.">
+      <figcaption>Rappel de l'écran 6 — onglet « Émetteur et détenteur ».</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Toute la fiche, cadre par cadre, avec les signatures</button>
+      <button type="button" data-answer="bonne">Son numéro, la quantité, le code postal, le détenteur</button>
+      <button type="button" data-answer="c">Seulement le SIRET et l'adresse de votre entreprise</button>
+      <button type="button" data-answer="d">Le tonnage équivalent CO2 et le nom du technicien</button>
+    </div>
+    <p class="feedback" hidden data-explication="Pour chaque fiche, l&#x27;opérateur reporte le numéro de la fiche, la quantité de fluide retirée en kg, le code postal du lieu de collecte, et le SIRET et les coordonnées du détenteur."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. Tous les
+     liens sont réels : les quatre stations existent. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../tracabilite-fluides/"><strong>Traçabilité — suivre le fluide, du chargement à la filière</strong></a> (même sous-ligne) — le fil complet : fiche, registre, bordereau, et qui signe quoi.</li>
+    <li><a href="../aptitude-capacite/"><strong>Aptitude &amp; capacité</strong></a> (même sous-ligne) — le numéro d'attestation de capacité que l'on écrit au cadre 1.</li>
+    <li><a href="../fgaz-3/"><strong>F-Gaz 3 — le règlement (UE) 2024/573</strong></a> (même sous-ligne) — pourquoi les contrôles d'étanchéité dépendent du tonnage équivalent CO2.</li>
+    <li><a href="../dechets-dangereux/"><strong>Déchets dangereux — BSD et traçabilité</strong></a> (sous-ligne Déchets) — le bordereau de suivi, vu du côté de celui qui produit le déchet.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+<script src="app.js?v=20261017-voix"></script>
+<!-- La scène animée de la branche (04/10/2026) : SceneKit et VOYAGE_DESSIN, lus, jamais modifiés. -->
+<script src="../../../cartoclim/stations/_commun/scene-kit.js"></script>
+<script src="../../../jouerezo/moteur/voyage-dessin.js"></script>
+<script src="../../scenes/fluidique.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier reste
+     déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js enchaîne
+     les écrans tout seul et s'arrête sur les questions.
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20261018-tom"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js?v=20261017-voix"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+<script src="../../scenes/dessin-vivant.js?v=20261015-campagne4" defer></script>
+<script src="../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+</body>
+</html>

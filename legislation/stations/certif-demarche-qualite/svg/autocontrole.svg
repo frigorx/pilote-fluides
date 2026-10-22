@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-autocontrole" aria-describedby="d-autocontrole" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-autocontrole">L&#x27;autocontrôle : cinq vérifications avant de présenter son travail</title>
+  <desc id="d-autocontrole">Une liste de cinq lignes qui se cochent une à une : le circuit est étanche, avec un contrôle fait après l&#x27;ouverture du circuit ; tout le fluide retiré a été récupéré ; aucune recharge sur un équipement qui fuit ; les quantités viennent de la balance ; la fiche est remplie et signée.</desc>
+  
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="30" font-size="22" font-weight="bold" fill="#10233c" text-anchor="middle">Autocontrôle : avant de présenter mon travail</text>
+  <rect x="30" y="56" width="740" height="74" rx="12" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="48" y="79" width="28" height="28" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M53,94 L60,101 L71,84" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.08;0.13;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="94" y="101" font-size="18" fill="#10233c">Le circuit est étanche : contrôle fait après l&#x27;ouverture.</text>
+  <rect x="30" y="140" width="740" height="74" rx="12" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="48" y="163" width="28" height="28" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M53,178 L60,185 L71,168" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.22;0.27;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="94" y="185" font-size="18" fill="#10233c">Tout le fluide retiré a été récupéré.</text>
+  <rect x="30" y="224" width="740" height="74" rx="12" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="48" y="247" width="28" height="28" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M53,262 L60,269 L71,252" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.41;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="94" y="269" font-size="18" fill="#10233c">Aucune recharge sur un équipement qui fuit.</text>
+  <rect x="30" y="308" width="740" height="74" rx="12" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="48" y="331" width="28" height="28" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M53,346 L60,353 L71,336" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5;0.55;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="94" y="353" font-size="18" fill="#10233c">Les quantités viennent de la balance.</text>
+  <rect x="30" y="392" width="740" height="74" rx="12" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="48" y="415" width="28" height="28" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M53,430 L60,437 L71,420" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.64;0.69;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="94" y="437" font-size="18" fill="#10233c">Ma fiche est remplie et signée.</text>
+</svg>

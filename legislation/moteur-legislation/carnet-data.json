@@ -379,6 +379,16 @@
      }
     },
     {
+     "nom": "Fiche d'intervention & BSFF",
+     "sous": "remplir les cadres, case par case",
+     "slug": "fiche-intervention-bsff",
+     "mission": {
+      "titre": "Mission : La fiche et le bordereau d'un compresseur remplacé",
+      "badge": "Fiche signée",
+      "duree_min": 30
+     }
+    },
+    {
      "nom": "NF EN 378",
      "sous": "classes, charges maxi",
      "slug": "en-378",
@@ -507,6 +517,16 @@
       "badge": "Point de départ",
       "duree_min": 25
      }
+    },
+    {
+     "nom": "La démarche qualité",
+     "sous": "préparer, prouver, corriger",
+     "slug": "certif-demarche-qualite",
+     "mission": {
+      "titre": "Mission : Préparer, prouver, corriger",
+      "badge": "Boucle bouclée",
+      "duree_min": 25
+     }
     }
    ]
   },
@@ -565,6 +585,16 @@
      "mission": {
       "titre": "Mission : Un collègue veut partir à son compte",
       "badge": "Case cochée",
+      "duree_min": 25
+     }
+    },
+    {
+     "nom": "L'entreprise du froid",
+     "sous": "ce qu'il faut pour intervenir",
+     "slug": "travail-entreprise-du-froid",
+     "mission": {
+      "titre": "Mission : Ce que mon entreprise peut montrer au client",
+      "badge": "Entreprise en règle",
       "duree_min": 25
      }
     }

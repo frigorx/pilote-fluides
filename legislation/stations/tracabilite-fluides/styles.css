@@ -253,3 +253,9 @@ th { font-family:var(--titre); color:var(--bleu); border-bottom-width:2px; }
 .scene { margin:0 0 24px; border-radius:14px; overflow:hidden; border:1px solid #e3dccf; background:#f7f1e7; }
 .scene img { display:block; width:100%; height:auto; aspect-ratio:2 / 1; object-fit:cover; }
 @media print { .scene { display:none; } }
+
+/* ---------- bloc « Sert notamment pour » (codes des référentiels) ---------- */
+.codes-formation { margin-top:.8em; padding-top:.6em; border-top:1px dashed var(--ligne); }
+.codes-formation p { margin:0 0 .3em; }
+.codes-formation ul { margin:0; padding-left:1.2em; }
+.codes-formation li { margin-bottom:.35em; }

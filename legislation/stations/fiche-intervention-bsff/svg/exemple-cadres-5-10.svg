@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-exemple-5-10" aria-describedby="d-exemple-5-10" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-exemple-5-10">Exemple résolu : les cadres 5 à 10</title>
+  <desc id="d-exemple-5-10">Le contrôle d&#x27;étanchéité sur la même fiche. Cadre 5 : détecteur manuel DM-12, contrôlé le 4 mars 2026. Cadre 6, système permanent de détection : non. Cadre 7 : 8,35 tonnes équivalent CO2, on coche la première case, de 5 à moins de 50 tonnes. Cadre 8, équipement sans système permanent : on coche 12 mois. Cadre 9, avec système permanent : rien. Cadre 10, fuites constatées : non.</desc>
+  
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="28" font-size="20" font-weight="bold" fill="#10233c" text-anchor="middle">Cadres 5 à 10 : le contrôle d&#x27;étanchéité</text>
+  <rect x="30" y="42" width="740" height="48" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="72" font-size="16" font-weight="bold" fill="#1b3a63">[5] Détecteur manuel de fuite :</text>
+  <text x="290" y="72" font-size="16" fill="#9a4d0c">DM-12, contrôlé le 04/03/2026</text>
+  <rect x="30" y="98" width="740" height="48" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="128" font-size="16" font-weight="bold" fill="#1b3a63">[6] Système permanent de détection de fuites :</text>
+  <circle cx="470" cy="122" r="8" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="486" y="128" font-size="16" fill="#10233c">OUI</text>
+  <circle cx="560" cy="122" r="8" fill="#fff" stroke="#1b3a63" stroke-width="2"/><circle cx="560" cy="122" r="4.5" fill="#9a4d0c"/>
+  <text x="576" y="128" font-size="16" font-weight="bold" fill="#9a4d0c">NON</text>
+  <rect x="30" y="154" width="740" height="92" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="180" font-size="16" font-weight="bold" fill="#1b3a63">[7] Quantité de fluide dans l&#x27;équipement</text>
+  <text x="44" y="204" font-size="16" fill="#10233c">HFC / PFC :</text>
+  <rect x="190" y="191" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/><path d="M193,194 L203,204 M203,194 L193,204" stroke="#9a4d0c" stroke-width="3.2" stroke-linecap="round"/>
+  <text x="214" y="204" font-size="16" font-weight="bold" fill="#9a4d0c">5 t ≤ teqCO2 &lt; 50 t</text>
+  <rect x="385" y="191" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="409" y="204" font-size="16" fill="#10233c">50 t ≤ teqCO2 &lt; 500 t</text>
+  <rect x="600" y="191" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="624" y="204" font-size="16" fill="#10233c">teqCO2 ≥ 500 t</text>
+  <text x="200" y="232" font-size="16" font-style="italic" fill="#9a4d0c">8,35 t : on coche la première case</text>
+  <rect x="30" y="254" width="740" height="56" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="278" font-size="16" font-weight="bold" fill="#1b3a63">[8] Équipement sans système permanent :</text>
+  <rect x="200" y="288" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/><path d="M203,291 L213,301 M213,291 L203,301" stroke="#9a4d0c" stroke-width="3.2" stroke-linecap="round"/>
+  <text x="224" y="301" font-size="16" font-weight="bold" fill="#9a4d0c">12 mois</text>
+  <rect x="350" y="288" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="374" y="301" font-size="16" fill="#10233c">6 mois</text>
+  <rect x="500" y="288" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="524" y="301" font-size="16" fill="#10233c">3 mois</text>
+  <rect x="30" y="318" width="740" height="56" rx="10" fill="#f4f6f9" stroke="#5a6b7d" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="44" y="342" font-size="16" font-weight="bold" fill="#5a6b7d">[9] Équipement avec système permanent :</text>
+  <rect x="200" y="352" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="224" y="365" font-size="16" fill="#5a6b7d">24 mois</text>
+  <rect x="350" y="352" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="374" y="365" font-size="16" fill="#5a6b7d">12 mois</text>
+  <rect x="500" y="352" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="524" y="365" font-size="16" fill="#5a6b7d">6 mois</text>
+  <text x="660" y="365" font-size="16" font-style="italic" fill="#5a6b7d">reste vide</text>
+  <rect x="30" y="382" width="740" height="48" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="412" font-size="16" font-weight="bold" fill="#1b3a63">[10] Fuites constatées lors du contrôle :</text>
+  <circle cx="470" cy="406" r="8" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="486" y="412" font-size="16" fill="#10233c">OUI</text>
+  <circle cx="560" cy="406" r="8" fill="#fff" stroke="#1b3a63" stroke-width="2"/><circle cx="560" cy="406" r="4.5" fill="#9a4d0c"/>
+  <text x="576" y="412" font-size="16" font-weight="bold" fill="#9a4d0c">NON</text>
+  <text x="30" y="462" font-size="16" fill="#1b3a63">Bleu : ce qui est imprimé sur la fiche.</text>
+  <text x="30" y="484" font-size="16" font-weight="bold" fill="#9a4d0c">Orange : ce que vous écrivez ou cochez.</text>
+</svg>

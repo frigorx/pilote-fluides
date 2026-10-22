@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-bilan" aria-describedby="d-bilan" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-bilan">Bilan : préparer, prouver, corriger</title>
+  <desc id="d-bilan">Trois colonnes. Préparer : lire le dossier, repérer les risques, vérifier les outils. Prouver : la fiche signée, les pesées, la marque de contrôle, les photos. Corriger : réparer, chercher la cause, vérifier que ça ne revient pas. En bas, le réflexe : j&#x27;autocontrôle avant de partir, je garde mes traces.</desc>
+  
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="30" font-size="22" font-weight="bold" fill="#10233c" text-anchor="middle">Préparer, prouver, corriger</text>
+  <rect x="30" y="48" width="236" height="270" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/><text x="46" y="81.0" font-size="20" font-weight="bold" fill="#1b3a63">Préparer</text><text x="46" y="108.0" font-size="17" fill="#10233c">lire le dossier</text><text x="46" y="141.8" font-size="17" fill="#10233c">repérer les risques</text><text x="46" y="175.6" font-size="17" fill="#10233c">vérifier les outils</text>
+  <rect x="282" y="48" width="236" height="270" rx="12" fill="#e6f2ef" stroke="#0f766e" stroke-width="3" stroke-dasharray="2 7"/><text x="298" y="81.0" font-size="20" font-weight="bold" fill="#0f766e">Prouver</text><text x="298" y="108.0" font-size="17" fill="#10233c">fiche signée</text><text x="298" y="141.8" font-size="17" fill="#10233c">pesées et registre</text><text x="298" y="175.6" font-size="17" fill="#10233c">marque de contrôle</text><text x="298" y="209.4" font-size="17" fill="#10233c">photos, bon signé</text>
+  <rect x="534" y="48" width="236" height="270" rx="12" fill="#e8e6f6" stroke="#3730a3" stroke-width="3" stroke-dasharray="14 5 3 5"/><text x="550" y="81.0" font-size="20" font-weight="bold" fill="#3730a3">Corriger</text><text x="550" y="108.0" font-size="17" fill="#10233c">réparer vite</text><text x="550" y="141.8" font-size="17" fill="#10233c">chercher la cause</text><text x="550" y="175.6" font-size="17" fill="#10233c">vérifier que ça ne revient</text><text x="550" y="199.4" font-size="17" fill="#10233c">pas</text>
+  <rect x="30" y="340" width="740" height="128" rx="12" fill="#fff" stroke="#1e7e54" stroke-width="3"/>
+  <text x="46" y="376" font-size="18" font-weight="bold" fill="#1e7e54">Le réflexe</text>
+  <text x="46" y="408" font-size="18" font-weight="bold" fill="#10233c">J&#x27;autocontrôle avant de partir.</text>
+  <text x="46" y="438" font-size="18" font-weight="bold" fill="#10233c">Je garde mes traces.</text>
+</svg>

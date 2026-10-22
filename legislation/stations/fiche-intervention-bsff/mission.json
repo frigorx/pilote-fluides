@@ -1,0 +1,85 @@
+{
+  "slug": "fiche-intervention-bsff",
+  "branche": "Fluidique & thermique",
+  "titre": "Mission : La fiche et le bordereau d'un compresseur remplacé",
+  "client": "Le gérant d'un salon de coiffure dont la climatisation vient de recevoir un compresseur neuf, et qui demande : « Quels papiers me laissez-vous, et que devient le fluide de l'ancien compresseur ? »",
+  "situation": "Votre entreprise (Clim'Études Sud) a remplacé le compresseur grillé d'une climatisation au R-410A, charge 4,0 kg. Vous avez récupéré 3,8 kg de fluide pollué dans une bouteille, pesée sur la balance, et rechargé 4,0 kg de fluide neuf. Le salon de coiffure (le détenteur) a pour SIRET 987 654 321 00019 et pour code postal 00000 (exemple). Vous numérotez la fiche FI-0001. Le client ne sait pas ce qu'il doit signer ni garder. Votre responsable vous demande de préparer la fiche d'intervention et la liste de ce qu'il faut reporter dans Trackdéchets.",
+  "piece_a_produire": "La fiche d'intervention (cerfa 15497*04) remplie pour cette intervention, avec le tonnage équivalent CO2 calculé. À côté, une liste de cinq lignes de ce que vous reportez dans le bordereau BSFF : 1. le code déchet, 2. le code UN (lu sur la ligne cochée du cadre 12), 3. le numéro de la fiche, 4. la quantité retirée, 5. le code postal et le SIRET du détenteur.",
+  "questions": [
+    {
+      "q": "Vous remplacez un compresseur grillé et tout le fluide récupéré part au traitement. Quels papiers faut-il, et pourquoi ?",
+      "ecran": 1,
+      "reponse": "La fiche d'intervention (cerfa 15497), parce qu'on a manipulé le fluide, puis le bordereau BSFF dans Trackdéchets, parce que du fluide devient un déchet. La fiche se remplit toujours ; le bordereau seulement s'il y a un déchet."
+    },
+    {
+      "q": "Un équipement contient 3,6 kg de R-134a (PRP donné : 1 430). Quel est son tonnage équivalent CO2 et qui signe la fiche ?",
+      "ecran": 3,
+      "reponse": "1 430 × 3,6 ÷ 1 000 = 5,148, soit 5,15 t éq. CO2. C'est plus de 5 t : l'opérateur et le détenteur signent, et le détenteur garde l'original."
+    },
+    {
+      "q": "Le fluide récupéré est propre et remis dans la même machine. Que faites-vous aux cadres 12 et 13, et où écrivez-vous la quantité remise ?",
+      "ecran": 5,
+      "reponse": "Les cadres 12 et 13 restent vides : il n'y a pas de déchet. La quantité remise s'écrit au cadre 11, en B (fluide recyclé) et en E (fluide conservé pour réutilisation)."
+    },
+    {
+      "q": "Dans Trackdéchets, que reportez-vous de la fiche d'intervention ?",
+      "ecran": 6,
+      "reponse": "Pour chaque fiche : le numéro de la fiche, la quantité de fluide retirée en kg, le code postal du lieu de collecte, et le SIRET et les coordonnées du détenteur."
+    }
+  ],
+  "defi": {
+    "type": "trouver-l-erreur",
+    "consigne": "Chaque phrase contient une erreur. Trouvez-la et corrigez-la en une phrase.",
+    "items": [
+      "Le fluide est remis dans la même machine : je remplis les cadres 12 et 13 avec l'adresse du client.",
+      "Un équipement de 8,0 kg de R-134a (PRP 1 430) fait 1,14 t éq. CO2 : le détenteur ne signe pas.",
+      "J'ai trouvé une fuite : je coche OUI, puis je recharge l'équipement avant de partir.",
+      "Au cadre 11, j'écris la quantité récupérée à l'œil : environ 4 kg."
+    ],
+    "corrige": "1. Faux : sans déchet, les cadres 12 et 13 restent vides (écran 5). 2. Faux : 1 430 × 8,0 ÷ 1 000 = 11,44 t éq. CO2, plus de 5 t : le détenteur signe aussi (écrans 3 et 8). 3. Faux : on ne recharge jamais un équipement qui fuit, et la marque de défaut d'étanchéité est posée si la réparation ne se fait pas tout de suite (écran 4). 4. Faux : la quantité vient de la pesée de la bouteille, jamais d'une estimation (écran 5)."
+  },
+  "badge": "Fiche signée",
+  "duree_min": 30,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [
+      "1.00",
+      "4.09",
+      "5.07",
+      "5.08"
+    ],
+    "cap_ifca": [
+      {
+        "code": "C1.1",
+        "libelle": "Compléter, transmettre"
+      },
+      {
+        "code": "C1.3",
+        "libelle": "Rendre compte"
+      },
+      {
+        "code": "T1",
+        "libelle": "Renseigner et transmettre des documents de suivi d'intervention"
+      },
+      {
+        "code": "T2",
+        "libelle": "Compléter les documents de traçabilité des fluides frigorigènes"
+      }
+    ],
+    "bac_mfer_2028": [
+      {
+        "code": "S1.4",
+        "libelle": "les procédures administratives"
+      },
+      {
+        "code": "S8.2",
+        "libelle": "les outils de la communication écrite et numérique"
+      },
+      {
+        "code": "A3T4",
+        "libelle": "Renseigner les documents techniques et réglementaires"
+      }
+    ],
+    "justification": "Remplir et transmettre la fiche d'intervention et le bordereau, c'est compléter les documents de traçabilité (CAP C1.1, tâches T1 et T2), rendre compte (C1.3), connaître les procédures administratives (Bac S1.4), se servir des outils de communication écrite et numérique (S8.2) et renseigner les documents techniques et réglementaires (A3T4). Hors REAC TECVC : culture professionnelle."
+  }
+}

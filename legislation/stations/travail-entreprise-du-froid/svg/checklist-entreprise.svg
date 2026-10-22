@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-checklist" aria-describedby="d-checklist" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-checklist">La check-list de l&#x27;entreprise avant d&#x27;accepter un chantier</title>
+  <desc id="d-checklist">Une liste de sept lignes qui se cochent une à une : attestation de capacité de l&#x27;établissement à jour ; chaque technicien a son attestation d&#x27;aptitude ; outillage vérifié ; déclaration annuelle faite à l&#x27;organisme ; assurance décennale en cours ; mention RGE si le client attend une aide ; changement de personnel ou d&#x27;outillage signalé à l&#x27;organisme dans le mois.</desc>
+  
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="30" font-size="22" font-weight="bold" fill="#10233c" text-anchor="middle">Avant d&#x27;accepter un chantier : sept questions</text>
+  <rect x="30" y="50" width="740" height="52" rx="10" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="46" y="63" width="26" height="26" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M51,77 L58,84 L68,67" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.06;0.11;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="88" y="82" font-size="16" fill="#10233c">L&#x27;attestation de capacité de mon établissement est à jour.</text>
+  <rect x="30" y="110" width="740" height="52" rx="10" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="46" y="123" width="26" height="26" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M51,137 L58,144 L68,127" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.21;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="88" y="142" font-size="16" fill="#10233c">Chaque technicien a sa propre attestation d&#x27;aptitude.</text>
+  <rect x="30" y="170" width="740" height="52" rx="10" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="46" y="183" width="26" height="26" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M51,197 L58,204 L68,187" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.26;0.31;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="88" y="202" font-size="16" fill="#10233c">Mon outillage est vérifié (date de la dernière vérification).</text>
+  <rect x="30" y="230" width="740" height="52" rx="10" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="46" y="243" width="26" height="26" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M51,257 L58,264 L68,247" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.36;0.41;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="88" y="262" font-size="16" fill="#10233c">La déclaration annuelle est faite à l&#x27;organisme.</text>
+  <rect x="30" y="290" width="740" height="52" rx="10" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="46" y="303" width="26" height="26" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M51,317 L58,324 L68,307" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.46;0.51;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="88" y="322" font-size="16" fill="#10233c">Mon assurance décennale est en cours (attestation sur le devis).</text>
+  <rect x="30" y="350" width="740" height="52" rx="10" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="46" y="363" width="26" height="26" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M51,377 L58,384 L68,367" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.61;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="88" y="382" font-size="16" fill="#10233c">J&#x27;ai la mention RGE si le client attend une aide.</text>
+  <rect x="30" y="410" width="740" height="52" rx="10" fill="#fff" stroke="#b9c6d3" stroke-width="2"/>
+  <rect x="46" y="423" width="26" height="26" rx="4" fill="#fff" stroke="#1b3a63" stroke-width="2.5"/>
+  <g><path d="M51,437 L58,444 L68,427" fill="none" stroke="#1e7e54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.66;0.71;1" dur="12s" repeatCount="indefinite"/></g>
+  <text x="88" y="442" font-size="16" fill="#10233c">Un changement de personnel ou d&#x27;outillage ? J&#x27;ai prévenu l&#x27;organisme dans le mois.</text>
+</svg>

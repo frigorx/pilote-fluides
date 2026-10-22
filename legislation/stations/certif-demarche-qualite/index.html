@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>La démarche qualité d&#x27;une intervention — inerWeb Législation</title>
+<meta name="description" content="Station du réseau Législation, écran par écran et commentée à voix haute : la démarche qualité d&#x27;une intervention, faire bien du premier coup (préparer, autocontrôler), le prouver (traces, fiches, signatures), corriger (non-conformité, réclamation, action corrective).">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://inerweb.fr/legislation/stations/certif-demarche-qualite/">
+<!-- ===================================================================
+     STATION DU RÉSEAU LÉGISLATION — sous-ligne Certifications & normes.
+     La démarche qualité d'une intervention : faire bien du premier coup
+     (préparer, autocontrôler), le prouver (traces), corriger
+     (non-conformité, réclamation, action corrective).
+
+     Régime SATELLITE : identité propre, une seule passerelle (le plan du
+     réseau), moteur chargé en relatif depuis ../../../moteur/. Le dossier
+     legislation/ doit rester déplaçable d'un bloc, sans rien casser.
+
+     VOIX : voix.js + prof-vocal.js. Les identifiants #listen, #next,
+     #prev, #start, #stop-voice et la classe .slide.active sont le
+     CONTRAT du professeur vocal — ne pas les renommer.
+     Station produite le 19/10/2026 : les 12 narrations n'ont pas encore leur
+     MP3 dans l'index global moteur/voix-index.js ; la voix du navigateur sert
+     de filet, en attendant la fabrication.
+
+     Sources : voir FOND.md. Aucune valeur (durée, délai) n'est écrite ici
+     sans avoir été lue dans un texte officiel ; les normes payantes ne sont
+     citées que par leur titre.
+     =================================================================== -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../scenes/scenes.css?v=20261015-campagne4">
+<!-- missions:css --><link rel="stylesheet" href="../../moteur-legislation/missions.css"><!-- /missions:css -->
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="../../" aria-label="inerWeb Législation — accueil du réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerweb.fr">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
+      </svg>
+      <span class="reseau-nom">Législation</span>
+    </a>
+    <nav class="nav" aria-label="Retour">
+      <a href="../../">⇄ Le plan du réseau</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <p class="fil-sous-ligne">Certifications &amp; normes</p>
+  <h1>La démarche qualité d'une intervention</h1>
+  <p class="sous-titre">Mini-station commentée · 8 écrans et 4 questions · environ 12 minutes</p>
+  <figure class="scene" data-scene-branche="certifs" data-station="certif-demarche-qualite"></figure>
+
+  <div class="chapeau">
+    <span class="mot">Objectif</span>
+    <p>À la fin de la station, vous savez ce qu'est une <strong>démarche qualité</strong> sur une intervention : <strong>préparer</strong> et bien faire du premier coup, <strong>le prouver</strong> avec des traces, et <strong>corriger</strong> quand quelque chose ne va pas (non-conformité, réclamation, action corrective).</p>
+    <div class="codes-formation">
+      <p><strong>Sert notamment pour</strong></p>
+      <ul>
+        <li><strong>TP TECVC, REAC TP-00133</strong> : hors REAC (culture professionnelle du technicien et du chargé d'affaires)</li>
+        <li><strong>Bac Pro MFER (2028)</strong> : savoir <strong>S7.1</strong> « le processus qualité » (le référentiel cite l'amélioration continue, les autocontrôles et la traçabilité)</li>
+        <li>Pour l'écran « Préparer » : tâches <strong>T5</strong> à <strong>T8</strong> du <strong>CAP IFCA</strong> et <strong>A1T1</strong>, <strong>A1T3</strong>, <strong>A1T4</strong> du <strong>Bac Pro MFER (2028)</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="depart">
+    <button class="bouton" id="start" type="button">Commencer la station <span aria-hidden="true">→</span></button>
+    <p class="depart-note">Chaque écran peut être <strong>expliqué à voix haute</strong> : le bouton « Écouter » commente ce que vous voyez. Rien n'est dit qui ne soit aussi écrit.</p>
+  </div>
+</section>
+
+<!-- ================= COURS ================= -->
+<section id="cours" hidden aria-label="La station, écran par écran">
+
+  <div class="barre-outils">
+    <button class="outil outil--voix" id="listen" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> <span class="libelle">Écouter</span>
+    </button>
+    <button class="outil" id="stop-voice" type="button" disabled>
+      <span aria-hidden="true">■</span> <span class="libelle">Arrêter</span>
+    </button>
+    <div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+    <span class="compteur" id="progression-index">1 / 12</span>
+    <button class="outil" id="prev" type="button">← Précédent</button>
+    <button class="outil outil--suite" id="next" type="button">Suivant →</button>
+  </div>
+
+  <div class="slides">
+
+  <section class="slide" id="ecran-1" data-narration="Regardez la boucle, dans le sens des aiguilles d&#x27;une montre. Un : préparer, lire le dossier, repérer les risques, choisir le matériel. Deux : faire, et bien faire du premier coup. Trois : contrôler son propre travail avant de le présenter. Quatre : corriger, quand quelque chose ne va pas : d&#x27;abord réparer, puis chercher pourquoi. Puis on recommence : c&#x27;est l&#x27;amélioration continue. Au milieu : à chaque étape, on laisse une trace, c&#x27;est le moyen de prouver ce qu&#x27;on a fait. Une goutte parcourt la boucle.">
+    <p class="numero">Écran 1 sur 8</p>
+    <h2 tabindex="-1">La qualité, c'est quoi sur un chantier ?</h2>
+    <p>Une <strong>démarche qualité</strong>, c'est une façon de travailler pour <strong>bien faire du premier coup</strong>, <strong>le prouver</strong>, et <strong>corriger</strong> ce qui ne va pas. On parle aussi d'amélioration continue, d'autocontrôles et de traçabilité.</p>
+    <ul>
+      <li><strong>Préparer</strong> : lire le dossier, repérer les risques, choisir et vérifier le matériel.</li>
+      <li><strong>Faire et contrôler</strong> : travailler selon la méthode, puis contrôler soi-même son travail.</li>
+      <li><strong>Prouver</strong> : laisser des traces (fiche signée, pesées, photos).</li>
+      <li><strong>Corriger</strong> : quand quelque chose ne va pas, réparer, puis chercher la cause.</li>
+    </ul>
+    <p>Des normes existent pour les entreprises qui s'organisent ainsi, par exemple la norme ISO 9001 (« Systèmes de management de la qualité — Exigences »). Elle est payante : on ne la détaille pas ici.</p>
+    <figure>
+      <img src="svg/boucle-qualite.svg" alt="Une boucle à quatre étapes dans le sens des aiguilles d&#x27;une montre : en haut à gauche, préparer ; en haut à droite, faire ; en bas à droite, contrôler ; en bas à gauche, corriger. Au centre, un encadré : à chaque étape, on laisse une trace. Dans l&#x27;animation, une goutte parcourt la boucle.">
+      <figcaption>Préparer, faire, contrôler, corriger : puis on recommence.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-2" data-narration="Voici la liste de préparation, cinq lignes, à cocher avant de partir chez le client. J&#x27;ai lu l&#x27;ordre de travail et le dossier. J&#x27;ai repéré les risques. J&#x27;ai choisi le matériel et l&#x27;outillage. Mes outils sont vérifiés et en bon état. J&#x27;ai organisé mon poste avant de commencer. Une intervention préparée a moins d&#x27;imprévus, et moins d&#x27;erreurs à corriger.">
+    <p class="numero">Écran 2 sur 8</p>
+    <h2 tabindex="-1">Préparer : bien faire du premier coup</h2>
+    <p>La qualité commence <strong>avant d'arriver chez le client</strong>. Cinq questions à se poser :</p>
+    <ol>
+      <li>J'ai lu l'ordre de travail et le dossier.</li>
+      <li>J'ai repéré les risques.</li>
+      <li>J'ai choisi le matériel et l'outillage.</li>
+      <li>Mes outils sont vérifiés et en bon état.</li>
+      <li>J'ai organisé mon poste avant de commencer.</li>
+    </ol>
+    <p>Pour une entreprise qui manipule du fluide, l'<strong>outillage</strong> compte double : son dossier d'attestation de capacité garde la date de la dernière vérification de chaque outil (station « L'entreprise du froid »).</p>
+    <figure>
+      <img src="svg/liste-preparation.svg" alt="Cinq lignes à cocher avant de partir : j&#x27;ai lu l&#x27;ordre de travail et le dossier ; j&#x27;ai repéré les risques ; j&#x27;ai choisi le matériel et l&#x27;outillage ; mes outils sont vérifiés et en bon état ; j&#x27;ai organisé mon poste avant de commencer.">
+      <figcaption>Cinq questions à se poser avant de partir.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-3" data-narration="Un autocontrôle, c&#x27;est un contrôle que vous faites vous-même sur votre propre travail, avant de le présenter. Regardez la liste : cinq lignes qui se cochent une à une. Le circuit est étanche : on contrôle après avoir ouvert le circuit. Tout le fluide retiré a été récupéré. Aucune recharge sur un équipement qui fuit. Les quantités viennent de la balance. Et la fiche est remplie et signée. Chaque ligne évite une erreur que le client, ou un contrôleur, trouverait à votre place.">
+    <p class="numero">Écran 3 sur 8</p>
+    <h2 tabindex="-1">Autocontrôler : vérifier son propre travail</h2>
+    <p>Un <strong>autocontrôle</strong> est un contrôle que <strong>vous faites vous-même</strong> sur votre travail, <strong>avant</strong> de le présenter au client ou au professeur.</p>
+    <ul>
+      <li><strong>Le circuit est étanche.</strong> Après une ouverture du circuit en maintenance, on fait un contrôle d'étanchéité (« non périodique » sur la fiche d'intervention).</li>
+      <li><strong>Tout le fluide retiré est récupéré</strong> : on ne le laisse pas partir dans l'air (articles R. 543-87 et R. 543-88).</li>
+      <li><strong>On ne recharge pas un équipement qui fuit</strong> (article R. 543-89).</li>
+      <li><strong>Les quantités viennent de la balance</strong>, pas de l'œil.</li>
+      <li><strong>La fiche est remplie et signée</strong> (station « Remplir la fiche d'intervention et le bordereau des déchets »).</li>
+    </ul>
+    <figure>
+      <img src="svg/autocontrole.svg" alt="Une liste de cinq lignes qui se cochent une à une : le circuit est étanche, avec un contrôle fait après l&#x27;ouverture ; tout le fluide retiré a été récupéré ; aucune recharge sur un équipement qui fuit ; les quantités viennent de la balance ; la fiche est remplie et signée.">
+      <figcaption>Cinq vérifications, avant d'appeler le client ou le professeur.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-4" data-narration="Quatre traces, quatre cartes. La fiche d&#x27;intervention signée, que l&#x27;on garde au moins cinq ans. Les pesées et le registre de l&#x27;équipement. La marque de contrôle posée sur la machine. Et les photos avant et après, avec le bon d&#x27;intervention signé par le client. En bas, la règle du Code civil : celui qui dit avoir fait son travail doit pouvoir le justifier. Sans trace, c&#x27;est votre parole contre celle du client.">
+    <p class="numero">Écran 4 sur 8</p>
+    <h2 tabindex="-1">Prouver : laisser des traces</h2>
+    <p>Bien faire ne suffit pas : il faut <strong>pouvoir le montrer</strong>. Le Code civil dit que celui qui réclame l'exécution d'une obligation doit la prouver, et que celui qui se prétend libéré doit justifier le fait qui a éteint son obligation (article 1353). Pour une entreprise : <strong>si vous dites avoir fait le travail, ce sont vos traces qui le prouvent</strong>.</p>
+    <ul>
+      <li><strong>La fiche d'intervention signée</strong>, gardée 5 ans au moins par l'opérateur et par le détenteur (article R. 543-82).</li>
+      <li><strong>Le registre de l'équipement et les pesées</strong> : le fluide ajouté ou récupéré (station « Traçabilité »).</li>
+      <li><strong>La marque de contrôle</strong> posée sur l'équipement après un contrôle d'étanchéité (article R. 543-79-1).</li>
+      <li><strong>Les photos avant et après, et le bon d'intervention signé par le client</strong> : ce n'est pas imposé partout, mais c'est une bonne pratique d'entreprise.</li>
+    </ul>
+    <figure>
+      <img src="svg/quatre-traces.svg" alt="Quatre cartes. La fiche d&#x27;intervention signée, gardée cinq ans au moins. Le registre de l&#x27;équipement et les pesées. La marque de contrôle posée sur l&#x27;équipement après un contrôle d&#x27;étanchéité. Les photos avant et après, avec le bon d&#x27;intervention signé par le client. En bas : celui qui dit avoir fait son travail doit pouvoir le justifier.">
+      <figcaption>Quatre traces : sans elles, c'est votre parole contre celle du client.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-5" data-narration="Une non-conformité, c&#x27;est une exigence qui n&#x27;a pas été respectée. Regardez les trois lignes. À gauche, ce qui devait être : la loi demande que le détenteur signe la fiche au-delà d&#x27;un seuil ; l&#x27;entreprise demande que les quantités viennent de la balance ; le client voulait l&#x27;intervention terminée jeudi. À droite, ce qui s&#x27;est passé : pas de signature, quantité écrite à l&#x27;œil, intervention terminée lundi. Une exigence peut venir de la loi, de l&#x27;entreprise ou du client.">
+    <p class="numero">Écran 5 sur 8</p>
+    <h2 tabindex="-1">Quand ça ne va pas : la non-conformité</h2>
+    <p>Une <strong>non-conformité</strong>, c'est une <strong>exigence qui n'a pas été respectée</strong>. L'exigence peut venir de la <strong>loi</strong>, de l'<strong>entreprise</strong> (sa méthode) ou du <strong>client</strong>.</p>
+    <ul>
+      <li><strong>Loi</strong> : la fiche doit être signée par le détenteur au-delà d'un seuil de charge (article R. 543-82). Le détenteur n'a pas signé : c'est une non-conformité.</li>
+      <li><strong>Entreprise</strong> : « les quantités viennent de la balance ». Le technicien a écrit la quantité à l'œil : c'est une non-conformité.</li>
+      <li><strong>Client</strong> : intervention terminée jeudi. Elle est terminée lundi : c'est une non-conformité.</li>
+    </ul>
+    <p>Une non-conformité n'est pas une faute à cacher : c'est une <strong>information</strong>. La repérer vite, c'est pouvoir la corriger avant que le client ne la trouve.</p>
+    <figure>
+      <img src="svg/non-conformite.svg" alt="Trois lignes, chacune avec deux colonnes. À gauche, ce qui devait être : une exigence de la loi, de l&#x27;entreprise ou du client. À droite, ce qui s&#x27;est passé. Loi : la fiche signée par le détenteur au-delà d&#x27;un seuil ; le détenteur n&#x27;a pas signé. Entreprise : les quantités viennent de la balance ; la quantité a été écrite à l&#x27;œil. Client : intervention terminée jeudi ; terminée lundi.">
+      <figcaption>Une non-conformité, c'est l'écart entre ce qui devait être et ce qui s'est passé.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-6" data-narration="Prenons une fiche sans la signature du détenteur. À gauche, la non-conformité. En haut, la correction : on retourne faire signer la fiche, tout de suite. Elle supprime l&#x27;effet. Mais le problème reviendra si on ne cherche pas la cause. En dessous, l&#x27;action corrective, en trois temps. Un : chercher la cause : personne ne relit la fiche avant de partir. Deux : agir sur la cause : ajouter les signatures à la liste de fin d&#x27;intervention. Trois : vérifier, sur les fiches suivantes, que la signature est bien là.">
+    <p class="numero">Écran 6 sur 8</p>
+    <h2 tabindex="-1">Corriger : la correction, puis la cause</h2>
+    <p>Deux mots à ne pas mélanger (fiche pratique AFNOR sur les normes ISO 9001 et ISO 14001) :</p>
+    <ul>
+      <li>La <strong>correction</strong> supprime les effets de la non-conformité. Elle se fait <strong>vite</strong>.</li>
+      <li>L'<strong>action corrective</strong> cherche la <strong>cause</strong> et agit dessus pour que la non-conformité <strong>ne revienne pas</strong>. On vérifie ensuite qu'elle ne revient pas.</li>
+    </ul>
+    <p><strong>Exemple.</strong> La fiche n'a pas été signée par le détenteur. Correction : on retourne la faire signer. Action corrective : on cherche pourquoi (personne ne relit la fiche avant de partir), on ajoute « signatures » à la liste de fin d'intervention, et on vérifie sur les fiches suivantes.</p>
+    <figure>
+      <img src="svg/correction-et-cause.svg" alt="À gauche, la non-conformité : une fiche sans la signature du détenteur. En haut à droite, la correction, tout de suite : retourner la faire signer, ce qui supprime l&#x27;effet. En dessous, l&#x27;action corrective en trois temps numérotés : chercher la cause, agir sur la cause, vérifier que ça ne revient pas. En bas : la correction soigne le cas d&#x27;aujourd&#x27;hui, l&#x27;action corrective soigne la cause.">
+      <figcaption>La correction soigne le cas d'aujourd'hui ; l'action corrective soigne la cause.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-7" data-narration="Une réclamation, c&#x27;est le client qui signale un problème après l&#x27;intervention. Voici les cinq temps. Un : accuser réception et noter. Deux : comprendre, quoi, où, quand. Trois : corriger, réparer chez le client. Quatre : chercher la cause et agir. Cinq : répondre au client et vérifier. À droite, deux repères. Dans l&#x27;année qui suit la réception d&#x27;un chantier, la garantie de parfait achèvement : un défaut apparu après la réception se signale par écrit. Et un client particulier peut saisir gratuitement un médiateur.">
+    <p class="numero">Écran 7 sur 8</p>
+    <h2 tabindex="-1">La réclamation du client</h2>
+    <p>Une <strong>réclamation</strong>, c'est le client qui vous signale un problème après l'intervention. On la traite comme une non-conformité, en <strong>cinq temps</strong> : accuser réception et noter, comprendre, corriger, chercher la cause et agir, répondre et vérifier.</p>
+    <ul>
+      <li><strong>Après un chantier</strong> : pendant <strong>1 an</strong> après la réception, l'entrepreneur répare les désordres signalés par le client, dans les réserves du procès-verbal ou <strong>par écrit</strong> pour ceux qui apparaissent après la réception (Code civil, article 1792-6).</li>
+      <li><strong>Client particulier</strong> : il a le droit de recourir gratuitement à un médiateur de la consommation, et le professionnel doit lui en donner les coordonnées (Code de la consommation, articles L. 612-1 et L. 616-1).</li>
+    </ul>
+    <p>Pour aller plus loin : la station « Les garanties ».</p>
+    <figure>
+      <img src="svg/reclamation-client.svg" alt="À gauche, cinq temps numérotés : accuser réception et noter ; comprendre, quoi, où, quand ; corriger, réparer chez le client ; chercher la cause et agir ; répondre au client et vérifier. À droite, deux repères : le délai d&#x27;un an après la réception, avec une notification écrite pour un défaut apparu après la réception ; et le client particulier, qui peut saisir gratuitement un médiateur de la consommation.">
+      <figcaption>Une réclamation se traite comme une non-conformité, avec deux repères de la loi.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide" id="ecran-8" data-narration="Le bilan en trois colonnes. Préparer : lire le dossier, repérer les risques, vérifier les outils. Prouver : la fiche signée, les pesées et le registre, la marque de contrôle, les photos. Corriger : réparer vite, chercher la cause, vérifier que ça ne revient pas. En bas, le réflexe : j&#x27;autocontrôle avant de partir, je garde mes traces. Et si une réclamation arrive, ce n&#x27;est pas une attaque : c&#x27;est l&#x27;occasion de corriger la cause.">
+    <p class="numero">Écran 8 sur 8</p>
+    <h2 tabindex="-1">Bilan : préparer, prouver, corriger</h2>
+    <ul>
+      <li><strong>Préparer</strong> : lire le dossier, repérer les risques, vérifier les outils.</li>
+      <li><strong>Prouver</strong> : fiche signée, pesées et registre, marque de contrôle, photos et bon signé.</li>
+      <li><strong>Corriger</strong> : réparer vite (correction), chercher la cause (action corrective), vérifier que ça ne revient pas.</li>
+    </ul>
+    <p>Une réclamation n'est pas une attaque : c'est l'occasion de corriger la cause.</p>
+    <p class="formule">Le réflexe : j'autocontrôle avant de partir, je garde mes traces.</p>
+    <figure>
+      <img src="svg/bilan-qualite.svg" alt="Trois colonnes. Préparer : lire le dossier, repérer les risques, vérifier les outils. Prouver : fiche signée, pesées et registre, marque de contrôle, photos et bon signé. Corriger : réparer vite, chercher la cause, vérifier que ça ne revient pas. En bas, le réflexe : j&#x27;autocontrôle avant de partir, je garde mes traces.">
+      <figcaption>Trois mots à retenir : préparer, prouver, corriger.</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide question" id="q1" data-narration="Première question. Vous venez de changer un filtre déshydrateur : le circuit a été ouvert. Quel autocontrôle ne devez-vous pas oublier ? Reprenez la liste de l&#x27;écran trois.">
+    <p class="numero">Question 1 sur 4</p>
+    <h2 tabindex="-1">Vous venez de changer un filtre déshydrateur (le circuit a été ouvert). Quel autocontrôle ne devez-vous pas oublier ?</h2>
+    <figure class="vignette">
+      <img src="svg/autocontrole.svg" alt="Vignette de rappel : cinq vérifications d&#x27;autocontrôle, dont le contrôle d&#x27;étanchéité après ouverture du circuit.">
+      <figcaption>Rappel de l'écran 3 — les cinq vérifications.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Un essai du ventilateur, rien d'autre</button>
+      <button type="button" data-answer="bonne">Un contrôle d'étanchéité, avant de rendre la machine</button>
+      <button type="button" data-answer="c">Un nettoyage du condenseur, par précaution</button>
+      <button type="button" data-answer="d">Une recharge en plus, pour être tranquille</button>
+    </div>
+    <p class="feedback" hidden data-explication="Après une ouverture du circuit en maintenance, on fait un contrôle d&#x27;étanchéité, dit « non périodique » sur la fiche d&#x27;intervention. Et on ne recharge jamais un équipement qui fuit (article R. 543-89)."></p>
+  </section>
+
+  <section class="slide question" id="q2" data-narration="Deuxième question. Un client dit : vous n&#x27;avez pas récupéré le fluide. Que vous faut-il pour le prouver ? Regardez les quatre traces de l&#x27;écran quatre.">
+    <p class="numero">Question 2 sur 4</p>
+    <h2 tabindex="-1">Un client dit : « Vous n'avez pas récupéré le fluide ». Que vous faut-il pour le prouver ?</h2>
+    <figure class="vignette">
+      <img src="svg/quatre-traces.svg" alt="Vignette de rappel : quatre traces, la fiche signée, le registre et les pesées, la marque de contrôle, les photos et le bon signé.">
+      <figcaption>Rappel de l'écran 4 — quatre traces.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Votre parole : vous étiez sur place</button>
+      <button type="button" data-answer="b">Le témoignage d'un collègue absent ce jour-là</button>
+      <button type="button" data-answer="bonne">La fiche signée et les pesées de la bouteille</button>
+      <button type="button" data-answer="d">Rien : c'est au client de le prouver</button>
+    </div>
+    <p class="feedback" hidden data-explication="Celui qui dit avoir fait son travail doit pouvoir le justifier (Code civil, article 1353). La fiche signée et les pesées de la bouteille sont vos preuves."></p>
+  </section>
+
+  <section class="slide question" id="q3" data-narration="Troisième question. Une fiche n&#x27;a pas été signée par le détenteur. Quelle est l&#x27;action corrective, celle qui traite la cause ? Regardez l&#x27;écran six.">
+    <p class="numero">Question 3 sur 4</p>
+    <h2 tabindex="-1">Une fiche n'a pas été signée par le détenteur. Quelle est l'action corrective ?</h2>
+    <figure class="vignette">
+      <img src="svg/correction-et-cause.svg" alt="Vignette de rappel : la correction, tout de suite, puis l&#x27;action corrective en trois temps : chercher la cause, agir, vérifier.">
+      <figcaption>Rappel de l'écran 6 — correction, puis action corrective.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Retourner la faire signer chez le client</button>
+      <button type="button" data-answer="b">Refaire une fiche neuve et jeter l'ancienne</button>
+      <button type="button" data-answer="c">Prévenir le client qu'il n'a pas à signer</button>
+      <button type="button" data-answer="bonne">Ajouter « signatures » à la liste de fin d'intervention</button>
+    </div>
+    <p class="feedback" hidden data-explication="Retourner la faire signer, c&#x27;est la correction : elle supprime l&#x27;effet. L&#x27;action corrective traite la cause : on ajoute « signatures » à la liste de fin d&#x27;intervention, puis on vérifie que ça ne revient pas."></p>
+  </section>
+
+  <section class="slide question" id="q4" data-narration="Quatrième et dernière question. Un défaut apparaît cinq mois après la réception d&#x27;un chantier. Comment le client le signale-t-il pour la garantie de parfait achèvement ? Regardez l&#x27;écran sept.">
+    <p class="numero">Question 4 sur 4</p>
+    <h2 tabindex="-1">Un défaut apparaît 5 mois après la réception d'un chantier. Comment le client le signale-t-il pour la garantie de parfait achèvement ?</h2>
+    <figure class="vignette">
+      <img src="svg/reclamation-client.svg" alt="Vignette de rappel : une réclamation en cinq temps, et deux repères : le délai d&#x27;un an, et le médiateur pour le client particulier.">
+      <figcaption>Rappel de l'écran 7 — le délai d'un an.</figcaption>
+    </figure>
+    <div class="quiz-options">
+      <button type="button" data-answer="a">Par téléphone : cela suffit toujours</button>
+      <button type="button" data-answer="bonne">Par écrit, dans l'année qui suit la réception</button>
+      <button type="button" data-answer="c">Seulement dans les réserves du procès-verbal</button>
+      <button type="button" data-answer="d">Il ne peut plus le signaler après trois mois</button>
+    </div>
+    <p class="feedback" hidden data-explication="Pour un désordre révélé après la réception, le client le signale par notification écrite, pendant l&#x27;année de la garantie de parfait achèvement (Code civil, article 1792-6)."></p>
+  </section>
+
+  </div><!-- /.slides -->
+</section>
+
+<!-- LE MAILLAGE — hors du mode cours : il se lit dès l'accueil. -->
+<section class="maillage">
+  <h2>Les correspondances de la station</h2>
+  <ul>
+    <li><a href="../certif-garanties/"><strong>Les garanties</strong></a> (même sous-ligne) — parfait achèvement, bon fonctionnement, décennale : ce que le client peut exiger après la réception.</li>
+    <li><a href="../fiche-intervention-bsff/"><strong>Remplir la fiche d'intervention et le bordereau des déchets</strong></a> (sous-ligne Fluidique &amp; thermique) — la fiche signée, première trace d'une intervention sur le fluide.</li>
+    <li><a href="../tracabilite-fluides/"><strong>Traçabilité — suivre le fluide, du chargement à la filière</strong></a> (sous-ligne Fluidique &amp; thermique) — fiche, registre et bordereau : les traces qui prouvent où est passé le fluide.</li>
+    <li><a href="../travail-entreprise-du-froid/"><strong>L'entreprise du froid</strong></a> (sous-ligne Droit du travail) — ce que l'entreprise doit tenir et pouvoir montrer au client.</li>
+  </ul>
+</section>
+
+</div>
+
+<script src="../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+<script src="app.js?v=20261017-voix"></script>
+<!-- La scène animée de la branche (04/10/2026) : SceneKit et VOYAGE_DESSIN, lus, jamais modifiés. -->
+<script src="../../../cartoclim/stations/_commun/scene-kit.js"></script>
+<script src="../../../jouerezo/moteur/voyage-dessin.js"></script>
+<script src="../../scenes/certifs.js"></script>
+
+<!-- Le moteur du site, en relatif depuis ../../../moteur/ (le dossier
+     reste déplaçable d'un bloc). voix.js donne la narration, prof-vocal.js
+     enchaîne les écrans tout seul et s'arrête sur les questions.
+
+     Les narrations de cette station n'ont pas encore leur MP3 : la voix
+     du navigateur sert de filet. À fabriquer par la chaîne edge-tts
+     (build/voix/collecter-narrations.mjs, puis generer-audios-edge-tts.py).
+
+     data-prototype : la station attend sa relecture métier. -->
+  <script src="../../../moteur/voix-index.js?v=20261018-tom"></script>
+<script src="../../../moteur/prononciation.js"></script>
+<script src="../../../moteur/voix.js"></script>
+<script src="../../../moteur/prof-vocal.js?v=20261017-voix"></script>
+<script src="../../../moteur/lisibilite.js"></script>
+<script src="../../../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
+<!-- missions:js --><script src="../../moteur-legislation/missions.js" defer></script><!-- /missions:js -->
+<script src="../../scenes/dessin-vivant.js?v=20261015-campagne4" defer></script>
+<script src="../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+</body>
+</html>

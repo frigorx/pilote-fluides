@@ -15,6 +15,8 @@
 > vérifient sur le texte en vigueur.
 > Adossement : ⟦codes BTS à compléter quand le référentiel cible sera tranché⟧.
 
+> **Ajout du 19/10/2026** — codes affichés en plus : **Bac Pro MFER (session 2028) S1.1** « l'entreprise » et **S1.5** « les qualifications, garanties et responsabilités » (libellés de `BAC_MFER_2028.json`) ; lien vers la station `travail-entreprise-du-froid`.
+
 ## Ce qui fait l'intérêt de cette station
 
 Une nouveauté que presque personne sur le terrain n'a encore intégrée :

@@ -1,0 +1,62 @@
+{
+  "slug": "travail-entreprise-du-froid",
+  "branche": "Droit du travail",
+  "titre": "Mission : Ce que mon entreprise peut montrer au client",
+  "client": "Le gérant d'un restaurant qui veut changer de prestataire pour l'entretien de sa chambre froide et demande : « Qu'est-ce qui me prouve que votre entreprise a le droit de toucher au fluide, et qui paie si elle abîme quelque chose ? »",
+  "situation": "Clim'Études Sud répond à ce gérant. Il a entendu parler de « labels » et mélange l'attestation, la qualification et l'assurance. Votre responsable vous demande de préparer ce que l'entreprise peut lui montrer, papier par papier, et de dire à quoi sert chacun.",
+  "piece_a_produire": "Une fiche d'une page « Ce que mon entreprise peut montrer au client » : une ligne par papier (attestation de capacité, attestation d'aptitude des techniciens, assurance décennale, responsabilité civile, mention RGE si le client attend une aide), avec ce que le papier prouve et qui le délivre.",
+  "questions": [
+    {
+      "q": "Une entreprise veut recharger la climatisation d'un client. Qu'est-ce qui lui est obligatoire, et qui le délivre ?",
+      "ecran": 2,
+      "reponse": "Une attestation de capacité (article R. 543-99), délivrée par un organisme agréé, pour chaque établissement et pour 5 ans au plus. La mention RGE ne la remplace pas."
+    },
+    {
+      "q": "L'entreprise a l'attestation de capacité. Un technicien débutant, sans attestation d'aptitude, peut-il recharger seul ?",
+      "ecran": 3,
+      "reponse": "Non : les personnes qui font les opérations sous la responsabilité de l'entreprise doivent chacune avoir une attestation d'aptitude (article R. 543-106). L'aptitude est à la personne, la capacité à l'entreprise."
+    },
+    {
+      "q": "Un technicien attesté quitte l'entreprise. Que doit faire l'entreprise, et dans quel délai ?",
+      "ecran": 4,
+      "reponse": "Prévenir l'organisme qui a délivré l'attestation de capacité, dans le délai d'un mois (article R. 543-102)."
+    },
+    {
+      "q": "À quel moment l'entreprise doit-elle prouver qu'elle a l'assurance décennale, et comment ?",
+      "ecran": 5,
+      "reponse": "À l'ouverture de tout chantier (Code des assurances, L. 241-1), par une attestation d'assurance jointe aux devis et aux factures (L. 243-2)."
+    }
+  ],
+  "defi": {
+    "type": "relier",
+    "consigne": "Sur papier, en 5 minutes : reliez chaque papier à ce qu'il prouve et à qui le délivre, puis dites lequel est indispensable pour toucher au fluide.",
+    "items": [
+      "Attestation de capacité",
+      "Mention RGE",
+      "Assurance décennale",
+      "Attestation d'aptitude",
+      "Un organisme agréé",
+      "Un assureur",
+      "Un organisme de qualification ou de certification",
+      "Un organisme certifié (évaluation de la personne)"
+    ],
+    "corrige": "Attestation de capacité : le droit de l'entreprise de toucher au fluide, délivrée par un organisme agréé. Attestation d'aptitude : la compétence d'une personne, délivrée après évaluation par un organisme certifié. Assurance décennale : la couverture des dommages graves pendant 10 ans, délivrée par un assureur, à prouver à l'ouverture du chantier. Mention RGE : l'ouverture des aides du client pour ces travaux, délivrée par un organisme de qualification ou de certification. Les deux attestations (capacité de l'entreprise et aptitude de chaque technicien) sont indispensables pour toucher au fluide ; le RGE ne les remplace pas."
+  },
+  "badge": "Entreprise en règle",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "bac_mfer_2028": [
+      {
+        "code": "S1.1",
+        "libelle": "l'entreprise"
+      },
+      {
+        "code": "S1.5",
+        "libelle": "les qualifications, garanties et responsabilités"
+      }
+    ],
+    "justification": "Décrire l'entreprise et ses fonctions (Bac S1.1), puis ses qualifications, garanties et responsabilités, dont l'attestation de capacité, les assurances et la qualification des entreprises (S1.5). Hors REAC TECVC : culture professionnelle du technicien et du chargé d'affaires."
+  }
+}

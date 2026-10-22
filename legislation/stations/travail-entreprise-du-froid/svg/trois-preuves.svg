@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-trois-preuves" aria-describedby="d-trois-preuves" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-trois-preuves">Ce que l&#x27;entreprise doit prouver pour avoir l&#x27;attestation</title>
+  <desc id="d-trois-preuves">Trois cartes. Un : des techniciens attestés, la liste de ceux qui interviennent, chacun avec son attestation d&#x27;aptitude. Deux : un outillage vérifié, ses types, ses quantités, ses justificatifs et la date de sa dernière vérification. Trois : des quantités déclarées chaque année. En bas : l&#x27;organisme agréé peut venir vérifier à tout moment que les outils sont là et en bon état.</desc>
+  
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="30" font-size="22" font-weight="bold" fill="#10233c" text-anchor="middle">Trois choses à prouver</text>
+  <rect x="30" y="48" width="236" height="280" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <circle cx="66" cy="92" r="22" fill="#1b3a63"/>
+  <text x="66" y="100" font-size="22" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+  <text x="46" y="146" font-size="18" font-weight="bold" fill="#10233c">Des techniciens</text><text x="46" y="168.5" font-size="18" font-weight="bold" fill="#10233c">attestés</text>
+  <text x="46" y="199.0" font-size="16" fill="#10233c">La liste de ceux qui</text><text x="46" y="220.8" font-size="16" fill="#10233c">interviennent, chacun avec</text><text x="46" y="242.5" font-size="16" fill="#10233c">son attestation d&#x27;aptitude.</text>
+  <rect x="282" y="48" width="236" height="280" rx="12" fill="#e6f2ef" stroke="#0f766e" stroke-width="3" stroke-dasharray="2 7"/>
+  <circle cx="318" cy="92" r="22" fill="#0f766e"/>
+  <text x="318" y="100" font-size="22" font-weight="bold" fill="#fff" text-anchor="middle">2</text>
+  <text x="298" y="146" font-size="18" font-weight="bold" fill="#10233c">Un outillage vérifié</text>
+  <text x="298" y="176.5" font-size="16" fill="#10233c">Les outils (types, quantités),</text><text x="298" y="198.3" font-size="16" fill="#10233c">leurs justificatifs, la date de</text><text x="298" y="220.0" font-size="16" fill="#10233c">leur dernière vérification.</text>
+  <rect x="534" y="48" width="236" height="280" rx="12" fill="#fdf1e6" stroke="#9a4d0c" stroke-width="3" stroke-dasharray="10 7"/>
+  <circle cx="570" cy="92" r="22" fill="#9a4d0c"/>
+  <text x="570" y="100" font-size="22" font-weight="bold" fill="#fff" text-anchor="middle">3</text>
+  <text x="550" y="146" font-size="18" font-weight="bold" fill="#10233c">Des quantités</text><text x="550" y="168.5" font-size="18" font-weight="bold" fill="#10233c">déclarées</text>
+  <text x="550" y="199.0" font-size="16" fill="#10233c">Chaque année : le fluide</text><text x="550" y="220.8" font-size="16" fill="#10233c">acquis, chargé, récupéré,</text><text x="550" y="242.5" font-size="16" fill="#10233c">cédé, et les stocks au 1er</text><text x="550" y="264.3" font-size="16" fill="#10233c">janvier et au 31 décembre.</text>
+  <rect x="30" y="346" width="740" height="120" rx="12" fill="#fff" stroke="#5a6b7d" stroke-width="2"/>
+  <text x="46" y="376" font-size="18" font-weight="bold" fill="#10233c">L&#x27;organisme agréé peut vérifier à tout moment</text>
+  <text x="46" y="404" font-size="16" fill="#10233c">que les outils sont là et en bon état de fonctionnement.</text>
+  <text x="46" y="438" font-size="16" font-weight="bold" fill="#9d174d">Avoir l&#x27;attestation ne suffit pas : il faut continuer à remplir les trois conditions.</text>
+</svg>

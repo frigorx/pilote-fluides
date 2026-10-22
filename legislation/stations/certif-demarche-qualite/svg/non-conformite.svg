@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-non-conformite" aria-describedby="d-non-conformite" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-non-conformite">Une non-conformité : ce qui devait être, ce qui s&#x27;est passé</title>
+  <desc id="d-non-conformite">Trois lignes, chacune avec deux colonnes. À gauche, l&#x27;exigence, ce qui devait être : la loi, l&#x27;entreprise ou le client. À droite, ce qui s&#x27;est passé. Ligne de la loi : la fiche doit être signée par le détenteur au-delà d&#x27;un seuil de charge ; le détenteur n&#x27;a pas signé. Ligne de l&#x27;entreprise : les quantités viennent de la balance ; la quantité a été écrite à l&#x27;œil. Ligne du client : intervention terminée jeudi ; terminée lundi.</desc>
+  <defs><marker id="mnon-conformite5a6b7d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a6b7d"/></marker></defs>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="30" font-size="22" font-weight="bold" fill="#10233c" text-anchor="middle">Non-conformité : l&#x27;écart</text>
+  <rect x="30" y="46" width="350" height="36" rx="8" fill="#1b3a63"/>
+  <text x="205" y="71" font-size="17" font-weight="bold" fill="#fff" text-anchor="middle">Ce qui devait être</text>
+  <rect x="420" y="46" width="350" height="36" rx="8" fill="#c0392b"/>
+  <text x="595" y="71" font-size="17" font-weight="bold" fill="#fff" text-anchor="middle">Ce qui s&#x27;est passé</text>
+  <rect x="30" y="94" width="350" height="118" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="122" font-size="17" font-weight="bold" fill="#1b3a63">Exigence de la loi</text>
+  <text x="44" y="150" font-size="16" fill="#10233c">La fiche est signée par le détenteur, au-delà</text><text x="44" y="172.1" font-size="16" fill="#10233c">d&#x27;un seuil de charge.</text>
+  <path d="M384,153 H416" fill="none" stroke="#5a6b7d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#mnon-conformite5a6b7d)"/>
+  <rect x="420" y="94" width="350" height="118" rx="12" fill="#fbe9e7" stroke="#c0392b" stroke-width="3" stroke-dasharray="10 7"/>
+  <text x="434" y="122" font-size="17" font-weight="bold" fill="#c0392b">Écart</text>
+  <text x="434" y="150" font-size="16" fill="#10233c">Le détenteur n&#x27;a pas signé.</text>
+  <rect x="30" y="222" width="350" height="118" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="250" font-size="17" font-weight="bold" fill="#1b3a63">Exigence de l&#x27;entreprise</text>
+  <text x="44" y="278" font-size="16" fill="#10233c">Les quantités viennent de la balance.</text>
+  <path d="M384,281 H416" fill="none" stroke="#5a6b7d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#mnon-conformite5a6b7d)"/>
+  <rect x="420" y="222" width="350" height="118" rx="12" fill="#fbe9e7" stroke="#c0392b" stroke-width="3" stroke-dasharray="10 7"/>
+  <text x="434" y="250" font-size="17" font-weight="bold" fill="#c0392b">Écart</text>
+  <text x="434" y="278" font-size="16" fill="#10233c">La quantité a été écrite à l&#x27;œil.</text>
+  <rect x="30" y="350" width="350" height="118" rx="12" fill="#eef3f9" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="378" font-size="17" font-weight="bold" fill="#1b3a63">Exigence du client</text>
+  <text x="44" y="406" font-size="16" fill="#10233c">Intervention terminée jeudi.</text>
+  <path d="M384,409 H416" fill="none" stroke="#5a6b7d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#mnon-conformite5a6b7d)"/>
+  <rect x="420" y="350" width="350" height="118" rx="12" fill="#fbe9e7" stroke="#c0392b" stroke-width="3" stroke-dasharray="10 7"/>
+  <text x="434" y="378" font-size="17" font-weight="bold" fill="#c0392b">Écart</text>
+  <text x="434" y="406" font-size="16" fill="#10233c">Intervention terminée lundi.</text>
+</svg>

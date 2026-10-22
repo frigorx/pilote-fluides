@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-exemple-1-4" aria-describedby="d-exemple-1-4" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-exemple-1-4">Exemple résolu : les cadres 1 à 4</title>
+  <desc id="d-exemple-1-4">La fiche remplie pour la climatisation d&#x27;un salon de coiffure dont le compresseur est remplacé. Cadre 1, l&#x27;opérateur : l&#x27;entreprise, son SIRET, son numéro d&#x27;attestation de capacité. Cadre 2, le détenteur : le salon et son SIRET. Cadre 3, l&#x27;équipement : une climatisation au R-410A, charge de 4,0 kg, soit 2 088 fois 4,0 divisé par 1 000, égal 8,35 tonnes équivalent CO2. Cadre 4, la nature : maintenance, et contrôle d&#x27;étanchéité non périodique, deux cases cochées.</desc>
+  
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="28" font-size="20" font-weight="bold" fill="#10233c" text-anchor="middle">Cadres 1 à 4 : qui, quoi, quand</text>
+  <rect x="30" y="42" width="360" height="108" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="66" font-size="16" font-weight="bold" fill="#1b3a63">[1] OPÉRATEUR</text>
+  <text x="44" y="90" font-size="16" fill="#9a4d0c">Clim&#x27;Études Sud</text>
+  <text x="44" y="112" font-size="16" fill="#9a4d0c">SIRET : 123 456 789 00012</text>
+  <text x="44" y="134" font-size="16" fill="#9a4d0c">N° attestation de capacité : EXEMPLE-01</text>
+  <rect x="410" y="42" width="360" height="108" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="424" y="66" font-size="16" font-weight="bold" fill="#1b3a63">[2] DÉTENTEUR</text>
+  <text x="424" y="90" font-size="16" fill="#9a4d0c">Salon de coiffure (le client)</text>
+  <text x="424" y="112" font-size="16" fill="#9a4d0c">Adresse du client</text>
+  <text x="424" y="134" font-size="16" fill="#9a4d0c">SIRET : 987 654 321 00019</text>
+  <rect x="30" y="162" width="740" height="150" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="186" font-size="16" font-weight="bold" fill="#1b3a63">[3] ÉQUIPEMENT CONCERNÉ</text>
+  <text x="44" y="212" font-size="16" fill="#9a4d0c">Identification : climatisation split, repère CL-1</text>
+  <text x="44" y="236" font-size="16" fill="#9a4d0c">Dénomination du fluide : R-410A</text>
+  <text x="44" y="260" font-size="16" fill="#9a4d0c">Charge totale (plaque signalétique) : 4,0 kg</text>
+  <rect x="44" y="270" width="712" height="30" rx="8" fill="#fdf1e6" stroke="#e8914a" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="56" y="291" font-size="16" font-weight="bold" fill="#9a4d0c">Tonnage équivalent CO2 : 2 088 × 4,0 ÷ 1 000 = 8,35 t éq. CO2</text>
+  <rect x="30" y="324" width="740" height="152" rx="10" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+  <text x="44" y="348" font-size="16" font-weight="bold" fill="#1b3a63">[4] NATURE DE L&#x27;INTERVENTION (une ou plusieurs cases)</text>
+  <rect x="46" y="359" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="70" y="372" font-size="16" fill="#10233c">Assemblage de l&#x27;équipement</text>
+  <rect x="406" y="359" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="430" y="372" font-size="16" fill="#10233c">Contrôle d&#x27;étanchéité périodique</text>
+  <rect x="46" y="383" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="70" y="396" font-size="16" fill="#10233c">Mise en service de l&#x27;équipement</text>
+  <rect x="406" y="383" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/><path d="M409,386 L419,396 M419,386 L409,396" stroke="#9a4d0c" stroke-width="3.2" stroke-linecap="round"/>
+  <text x="430" y="396" font-size="16" font-weight="bold" fill="#9a4d0c">Contrôle d&#x27;étanchéité non périodique</text>
+  <rect x="46" y="407" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="70" y="420" font-size="16" fill="#10233c">Modification de l&#x27;équipement</text>
+  <rect x="406" y="407" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="430" y="420" font-size="16" fill="#10233c">Démantèlement</text>
+  <rect x="46" y="431" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/><path d="M49,434 L59,444 M59,434 L49,444" stroke="#9a4d0c" stroke-width="3.2" stroke-linecap="round"/>
+  <text x="70" y="444" font-size="16" font-weight="bold" fill="#9a4d0c">Maintenance de l&#x27;équipement</text>
+  <rect x="406" y="431" width="16" height="16" rx="2" fill="#fff" stroke="#1b3a63" stroke-width="2"/>
+  <text x="430" y="444" font-size="16" fill="#10233c">Autre (préciser)</text>
+</svg>

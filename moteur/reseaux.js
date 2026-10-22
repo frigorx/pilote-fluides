@@ -74,7 +74,7 @@ window.INERWEB_RESEAUX = [
     niveaux: "BTS",
     etat: "en relecture",
     catalogue: ["Législation"],
-    stations: 60, /* le catalogue n'en relève encore que 29 : 60 dossiers dans legislation/stations */
+    stations: 63, /* le catalogue n'en relève encore que 29 : 63 dossiers dans legislation/stations */
     lignes: 11, /* deux lignes mères, onze sous-lignes (legislation/index.html) ; le catalogue ne porte pas la ligne */
     vignette: "icones/reseaux/legislation.svg",
     illustration: "icones/reseaux/illustrations/legislation.webp",

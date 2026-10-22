@@ -30,6 +30,8 @@ moment un fluide récupéré devient un déchet tracé, et ce qu'un contrôle v�
   procédures de gestion, réutilisation, récupération, stockage et transport des
   réfrigérants).
 
+- **Ajout du 19/10/2026 (public CAP IFCA et Bac Pro MFER)** — codes affichés en plus : **CAP IFCA C1.1** « Compléter, transmettre » ; **Bac Pro MFER (session 2028) S1.4** « les procédures administratives » et **S1.2** « les intervenants » (libellés de `HAL-v3/donnees/referentiels/peda/CAP_IFCA.json` et `BAC_MFER_2028.json`). Encadré « L'essentiel en bref » (5 lignes) et liens vers `fiche-intervention-bsff` et `acteurs-installation` (station fabriquée en parallèle).
+
 ## Fonds de l'enseignant consultés (inspiration, rien recopié)
 
 RAG de HAL (`chercher-rag.js`) : planche « Deux papiers, deux rôles : CERFA 15497 et

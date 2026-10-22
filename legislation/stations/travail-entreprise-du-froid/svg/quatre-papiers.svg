@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-signes" aria-describedby="d-signes" font-family="'Segoe UI', Calibri, Arial, sans-serif">
+  <title id="t-signes">Attestation de capacité, RGE, QualiPAC, Qualifroid : quatre papiers différents</title>
+  <desc id="d-signes">Un tableau de quatre lignes. L&#x27;attestation de capacité montre que l&#x27;entreprise a le droit de toucher au fluide ; elle est délivrée par un organisme agréé. La mention RGE permet au client de toucher ses aides, pour ces travaux ; elle est délivrée par des organismes de qualification ou de certification. QualiPAC est une qualification RGE pour les pompes à chaleur, délivrée par Qualit&#x27;EnR. Qualifroid et Qualiclima sont des qualifications d&#x27;entreprise du froid et de la climatisation, délivrées par Qualiclimafroid. En bas : aucun de ces papiers ne remplace l&#x27;attestation de capacité.</desc>
+  
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text x="400" y="30" font-size="22" font-weight="bold" fill="#10233c" text-anchor="middle">Quatre papiers, quatre rôles</text>
+  <rect x="30" y="46" width="740" height="38" rx="8" fill="#9d174d"/>
+  <text x="42" y="72" font-size="17" font-weight="bold" fill="#fff">Le papier</text>
+  <text x="242" y="72" font-size="17" font-weight="bold" fill="#fff">Ce qu&#x27;il montre</text>
+  <text x="542" y="72" font-size="17" font-weight="bold" fill="#fff">Qui le délivre</text>
+  <rect x="30" y="88" width="740" height="66" rx="0" fill="#f8e6ee" stroke="#8a96a5" stroke-width="1.5"/>
+  <text x="42" y="118" font-size="17" font-weight="bold" fill="#9d174d">Attestation de</text><text x="42" y="141.1" font-size="17" font-weight="bold" fill="#9d174d">capacité</text>
+  <text x="242" y="118" font-size="16" fill="#10233c">Vous avez le droit de toucher au</text><text x="242" y="139.8" font-size="16" fill="#10233c">fluide.</text>
+  <text x="542" y="118" font-size="16" fill="#10233c">Un organisme agréé</text>
+  <rect x="30" y="154" width="740" height="110" rx="0" fill="#fff" stroke="#8a96a5" stroke-width="1.5"/>
+  <text x="42" y="184" font-size="17" font-weight="bold" fill="#1b3a63">RGE</text>
+  <text x="242" y="184" font-size="16" fill="#10233c">Votre client peut toucher ses aides,</text><text x="242" y="205.8" font-size="16" fill="#10233c">pour ces travaux.</text>
+  <text x="542" y="184" font-size="16" fill="#10233c">Des organismes de</text><text x="542" y="205.8" font-size="16" fill="#10233c">qualification ou de</text><text x="542" y="227.5" font-size="16" fill="#10233c">certification (Qualibat,</text><text x="542" y="249.3" font-size="16" fill="#10233c">Qualit&#x27;EnR, Qualifelec…)</text>
+  <rect x="30" y="264" width="740" height="66" rx="0" fill="#fff" stroke="#8a96a5" stroke-width="1.5"/>
+  <text x="42" y="294" font-size="17" font-weight="bold" fill="#1b3a63">QualiPAC</text>
+  <text x="242" y="294" font-size="16" fill="#10233c">Une qualification RGE pour les</text><text x="242" y="315.8" font-size="16" fill="#10233c">pompes à chaleur.</text>
+  <text x="542" y="294" font-size="16" fill="#10233c">Qualit&#x27;EnR</text>
+  <rect x="30" y="330" width="740" height="66" rx="0" fill="#fff" stroke="#8a96a5" stroke-width="1.5"/>
+  <text x="42" y="360" font-size="17" font-weight="bold" fill="#1b3a63">Qualifroid,</text><text x="42" y="383.1" font-size="17" font-weight="bold" fill="#1b3a63">Qualiclima</text>
+  <text x="242" y="360" font-size="16" fill="#10233c">Des qualifications d&#x27;entreprise du</text><text x="242" y="381.8" font-size="16" fill="#10233c">froid et de la climatisation.</text>
+  <text x="542" y="360" font-size="16" fill="#10233c">Qualiclimafroid</text>
+  <rect x="30" y="432" width="740" height="44" rx="10" fill="#fdf1e6" stroke="#e8914a" stroke-width="2.5" stroke-dasharray="10 7"/>
+  <text x="46" y="461" font-size="17" font-weight="bold" fill="#9a4d0c">Aucun de ces papiers ne remplace l&#x27;attestation de capacité.</text>
+</svg>

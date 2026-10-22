@@ -29,6 +29,8 @@ une sous-traitance déguisée et calculer un prix sur le coût complet ; (8) coc
 
 ## Référentiel
 
+**Ajout du 19/10/2026** : codes affichés en plus : **Bac Pro MFER (session 2028) S1.1** « l'entreprise » et **S1.5** « les qualifications, garanties et responsabilités » (libellés de `BAC_MFER_2028.json`) ; lien vers la station `travail-entreprise-du-froid`.
+
 **TP TECVC, REAC TP-00133 : hors REAC — culture professionnelle du technicien et du chargé
 d'affaires.** Aucune des compétences CP1 à CP10 ne porte sur la création d'entreprise. Pont avec
 l'attestation d'aptitude 2025 : code **1.00** (législation applicable), pour l'écran 4

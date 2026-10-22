@@ -1,0 +1,55 @@
+{
+  "slug": "certif-demarche-qualite",
+  "branche": "Certifications & normes",
+  "titre": "Mission : Préparer, prouver, corriger",
+  "client": "Le responsable d'un supermarché qui a reçu une fiche d'intervention sans la signature du détenteur et demande : « Qu'est-ce qui prouve ce que vous avez fait, et que faites-vous pour que ça ne se reproduise pas ? »",
+  "situation": "Un technicien de Clim'Études Sud a changé un filtre déshydrateur sur la chambre froide d'un supermarché. La fiche d'intervention est revenue sans la signature du détenteur. Le responsable du magasin s'en est aperçu et vous appelle. Votre responsable vous demande de préparer la réponse : ce qui prouve l'intervention, ce que vous corrigez tout de suite, et ce que vous changez dans la façon de travailler.",
+  "piece_a_produire": "Un tableau en trois colonnes « Préparer / Prouver / Corriger » pour cette intervention, avec au moins trois lignes par colonne, et deux phrases : l'une pour la correction (ce que vous faites aujourd'hui), l'autre pour l'action corrective (ce que vous changez pour que ça ne revienne pas).",
+  "questions": [
+    {
+      "q": "Vous venez de changer un filtre déshydrateur : le circuit a été ouvert. Quel autocontrôle ne devez-vous pas oublier ?",
+      "ecran": 3,
+      "reponse": "Un contrôle d'étanchéité (« non périodique » sur la fiche d'intervention), avant de rendre la machine. On ne recharge jamais un équipement qui fuit (article R. 543-89)."
+    },
+    {
+      "q": "Un client dit : « Vous n'avez pas récupéré le fluide ». Que vous faut-il pour le prouver ?",
+      "ecran": 4,
+      "reponse": "Des traces : la fiche signée et les pesées de la bouteille. Celui qui dit avoir fait son travail doit pouvoir le justifier (Code civil, article 1353)."
+    },
+    {
+      "q": "Une fiche n'a pas été signée par le détenteur. Donnez la correction, puis l'action corrective.",
+      "ecran": 6,
+      "reponse": "Correction : retourner la faire signer, tout de suite. Action corrective : chercher la cause (personne ne relit la fiche avant de partir), ajouter « signatures » à la liste de fin d'intervention, et vérifier sur les fiches suivantes."
+    },
+    {
+      "q": "Un défaut apparaît cinq mois après la réception d'un chantier. Comment le client le signale-t-il pour la garantie de parfait achèvement ?",
+      "ecran": 7,
+      "reponse": "Par notification écrite, pendant l'année qui suit la réception (Code civil, article 1792-6). Les désordres déjà visibles à la réception se signalent par les réserves du procès-verbal."
+    }
+  ],
+  "defi": {
+    "type": "classer",
+    "consigne": "Classez chaque phrase : préparer, autocontrôler, prouver, correction ou action corrective.",
+    "items": [
+      "Je relis l'ordre de travail avant de partir.",
+      "Je contrôle l'étanchéité après avoir ouvert le circuit.",
+      "Je garde la fiche signée et les pesées.",
+      "Je retourne faire signer la fiche chez le client.",
+      "J'ajoute « signatures » à ma liste de fin d'intervention."
+    ],
+    "corrige": "Préparer : relire l'ordre de travail. Autocontrôler : contrôler l'étanchéité après l'ouverture du circuit. Prouver : garder la fiche signée et les pesées. Correction : retourner faire signer la fiche (elle supprime l'effet, tout de suite). Action corrective : ajouter « signatures » à la liste de fin d'intervention (elle traite la cause)."
+  },
+  "badge": "Boucle bouclée",
+  "duree_min": 25,
+  "referentiel": {
+    "tecvc": [],
+    "attestation_2025": [],
+    "bac_mfer_2028": [
+      {
+        "code": "S7.1",
+        "libelle": "le processus qualité"
+      }
+    ],
+    "justification": "Le processus qualité (Bac S7.1) : le référentiel cite l'amélioration continue, les autocontrôles et la traçabilité. Les tâches de préparation rapprochées de l'écran « Préparer » sont celles du CAP IFCA (T5 à T8) et du Bac Pro (A1T1, A1T3, A1T4). Hors REAC TECVC : culture professionnelle du technicien et du chargé d'affaires."
+  }
+}
