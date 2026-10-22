@@ -19,7 +19,7 @@
       A:["air-circule","pressions","debit-vitesse","hygrometrie","mesure-humidite","apport-latent","rosee-psychro","evaluation-a"],
       V:["besoin-air","air-circule","simple-flux","hygroreglable","debit-vitesse","hygrometrie","double-flux","recuperation","dimensionner-vmc","evaluation-v"],
       D:["conduits","sections","debit-vitesse","mesure-debit","pertes-lineaires","pertes-singulieres","pressions-reseau","ventilateur-equilibrage","evaluation-d"],
-      C:["apport-sensible","transmission","internes-solaires","air-neuf-selection","debit-vitesse","hygrometrie","apport-latent","rosee-psychro","batteries","evaluation-c"],
+      C:["apport-sensible","transmission","deperditions-piece","internes-solaires","air-neuf-selection","debit-vitesse","hygrometrie","apport-latent","rosee-psychro","batteries","evaluation-c"],
       T:["architecture-cta","melange-filtration","double-flux","recuperation","pressions-reseau","batteries","rosee-psychro","humidifier-reguler","evaluation-t"],
       M:["instruments","pressions","debit-vitesse","mesure-debit","hygrometrie","mesure-humidite","pressions-reseau","rosee-psychro","diagnostic","evaluation-m"]
     },
@@ -27,7 +27,7 @@
       "besoin-air":[60,210],"simple-flux":[225,130],"hygroreglable":[330,130],"double-flux":[715,130],"recuperation":[820,130],"dimensionner-vmc":[940,130],"evaluation-v":[1105,130],
       "architecture-cta":[530,55],"melange-filtration":[620,55],"batteries":[960,200],"humidifier-reguler":[1010,380],"evaluation-t":[1105,380],
       "air-circule":[150,320],"pressions":[270,320],"debit-vitesse":[430,320],"hygrometrie":[640,320],"mesure-humidite":[740,400],"rosee-psychro":[905,320],"evaluation-a":[1105,320],
-      "apport-sensible":[60,580],"transmission":[165,580],"internes-solaires":[270,580],"air-neuf-selection":[375,580],"apport-latent":[845,210],"evaluation-c":[1105,200],
+      "apport-sensible":[60,580],"transmission":[165,580],"deperditions-piece":[270,580],"internes-solaires":[375,580],"air-neuf-selection":[480,580],"apport-latent":[845,210],"evaluation-c":[1105,200],
       "conduits":[60,470],"sections":[175,470],"pertes-lineaires":[600,470],"pertes-singulieres":[700,470],"pressions-reseau":[820,470],"ventilateur-equilibrage":[940,470],"evaluation-d":[1105,470],
       "instruments":[60,380],"mesure-debit":[500,470],"diagnostic":[1010,580],"evaluation-m":[1105,580]
     },
@@ -35,7 +35,7 @@
       "air-circule":"Air en mouvement","pressions":"Pressions","debit-vitesse":"Débit · vitesse","hygrometrie":"Hygrométrie","rosee-psychro":"Rosée · psychro",
       "besoin-air":"Besoin d’air","simple-flux":"VMC simple flux","hygroreglable":"VMC hygro","double-flux":"Double flux","dimensionner-vmc":"Étude VMC",
       "conduits":"Conduits","sections":"Sections","pertes-lineaires":"Pertes linéaires","pertes-singulieres":"Pertes singulières","ventilateur-equilibrage":"Ventilateur · réglage",
-      "apport-sensible":"Apport sensible","apport-latent":"Apport latent","transmission":"Transmission","internes-solaires":"Apports internes","air-neuf-selection":"Air neuf",
+      "apport-sensible":"Apport sensible","apport-latent":"Apport latent","transmission":"Transmission","deperditions-piece":"Déperditions","internes-solaires":"Apports internes","air-neuf-selection":"Air neuf",
       "architecture-cta":"Lire une CTA","melange-filtration":"Mélange · filtre","batteries":"Batteries","recuperation":"Récupération","humidifier-reguler":"Réguler",
       "instruments":"Instruments","mesure-debit":"Mesure débit","pressions-reseau":"Pression réseau","mesure-humidite":"Mesure HR","diagnostic":"Diagnostic",
       "evaluation-a":"Éval. A","evaluation-v":"Éval. V","evaluation-d":"Éval. D","evaluation-c":"Éval. C","evaluation-t":"Éval. T","evaluation-m":"Éval. M"

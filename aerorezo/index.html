@@ -6,6 +6,7 @@
   <meta name="description" content="AéroRézo, réseau pédagogique aéraulique inerWeb du CAP au BTS.">
   <title>AéroRézo — du CAP au BTS</title>
   <link rel="stylesheet" href="styles.css?v=20261015-campagne">
+  <link rel="stylesheet" href="stations/deperditions-piece/piece.css?v=20261022-n12">
   <link rel="stylesheet" href="print.css" media="print">
   <script src="../moteur/animations.js?v=20261017-1"></script>
   <script src="../moteur/voix-index.js?v=20261018-tom"></script>
@@ -52,7 +53,7 @@
   <main id="app">
     <section id="networkView" class="network-view" aria-labelledby="networkTitle">
       <div class="intro">
-        <div><p id="networkStats" class="eyebrow">Réseau aéraulique · 6 lignes · 36 stations</p><h1 id="networkTitle">L’air se voit quand on sait le mesurer.</h1></div>
+        <div><p id="networkStats" class="eyebrow">Réseau aéraulique · 6 lignes · 37 stations</p><h1 id="networkTitle">L’air se voit quand on sait le mesurer.</h1></div>
         <p>Choisissez votre niveau, puis une ligne. Le parcours va de la découverte au calcul et au diagnostic.</p>
       </div>
 
@@ -107,7 +108,7 @@
 
   <noscript>AéroRézo a besoin de JavaScript local pour afficher les stations. Aucun accès Internet n’est utilisé.</noscript>
   <!-- MANIFESTES:DEBUT -->
-  <!-- Les 36 stations, chacune dans son dossier. Le réseau les charge comme des
+  <!-- Les 37 stations, chacune dans son dossier. Le réseau les charge comme des
        briques : il ne recopie pas leur contenu. Liste tenue par outils/synchroniser-balises.mjs. -->
   <script src="stations/air-circule/manifest.js?v=20261017-voix"></script>
   <script src="stations/pressions/manifest.js?v=20261017-voix"></script>
@@ -127,6 +128,8 @@
   <script src="stations/apport-sensible/manifest.js?v=20261017-voix"></script>
   <script src="stations/apport-latent/manifest.js?v=20261017-voix"></script>
   <script src="stations/transmission/manifest.js?v=20261017-voix"></script>
+  <script src="stations/deperditions-piece/manifest.js?v=20261022-n12"></script>
+  <script src="stations/deperditions-piece/piece.js?v=20261022-n12"></script>
   <script src="stations/internes-solaires/manifest.js?v=20261017-voix"></script>
   <script src="stations/air-neuf-selection/manifest.js?v=20261017-voix"></script>
   <script src="stations/architecture-cta/manifest.js?v=20261017-voix"></script>
@@ -146,10 +149,10 @@
   <script src="stations/evaluation-t/manifest.js?v=20261018-reseaux"></script>
   <script src="stations/evaluation-m/manifest.js?v=20261018-reseaux"></script>
   <!-- MANIFESTES:FIN -->
-  <script src="programme.js"></script>
+  <script src="programme.js?v=20261022-n12"></script>
   <script src="carte.js"></script>
-  <script src="scenes.js"></script>
-  <script src="app.js?v=20261018-reseaux"></script>
+  <script src="scenes.js?v=20261022-n12"></script>
+  <script src="app.js?v=20261022-n12"></script>
   <script src="../moteur/prof-vocal.js?v=20261017-1"></script>
 </body>
 </html>

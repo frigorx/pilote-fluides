@@ -117,11 +117,12 @@
     return fluxAnime(d, clip, pas, true, classe, dureeFlux(pas, vitesse));
   }
 
-  function fluxV(x, y1, y2, nombre, classe, vitesse) {
+  function fluxV(x, y1, y2, nombre, classe, vitesse, demi) {
     const pas = (y2 - y1) / nombre;
-    const d = chevrons(y1, pas, nombre, false, x);
+    const h = demi || 7;
+    const d = chevrons(y1, pas, nombre, false, x, h);
     const haut = Math.min(y1, y2), bas = Math.max(y1, y2);
-    const clip = {x: x - 15, y: haut - 9, w: 30, h: bas - haut + 18};
+    const clip = {x: x - h - 8, y: haut - h - 2, w: 2 * h + 16, h: bas - haut + 2 * h + 4};
     return fluxAnime(d, clip, pas, false, classe, dureeFlux(pas, vitesse));
   }
 
@@ -589,6 +590,101 @@
       };
     },
 
+    /* 14 — Une pièce vue de dessus : par où part la chaleur (station « Calculer les déperditions
+       d'une pièce »). Chaque flèche a la taille de la puissance qu'elle porte, calculée par la même
+       fonction que le tableau de l'exemple (`v.calculer`) : le dessin et les chiffres ne peuvent pas
+       se contredire. Les deux murs voisins d'une pièce chauffée à la même température n'ont pas de
+       flèche : l'absence de flèche est une information. L'air entre froid (bleu) et sort chaud (orange). */
+    piece(variante, v) {
+      if (!v || !v.exemple || !v.calculer) return {svg: "", texte: ""};
+      const p = v.piece || v.exemple, r = v.calculer(p);
+      const virg = n => String(n).replace(".", ",").replace("-", "−");
+      const phi = {air: r.air.phi};
+      for (const l of r.lignes) phi[l.id] = l.phi;
+      const maxi = Math.max(...Object.values(phi));
+      /* la taille du chevron et l'épaisseur du trait suivent la puissance : le plus gros poste se voit */
+      const demi = x => Math.round(4 + 8 * Math.sqrt(x / maxi));
+      const classe = x => (x / maxi >= 0.5 ? "pi-chaleur pi-epais" : x / maxi >= 0.1 ? "pi-chaleur pi-moyen" : "pi-chaleur pi-fin");
+
+      /* 30 px par mètre ; l'angle haut-gauche de la pièce est en (260, 60) */
+      const M = 30, X0 = 260, Y0 = 60, X1 = X0 + p.longueur * M, Y1 = Y0 + p.largeur * M, YC = Y0 + 60, COULOIR = 42;
+      const fen = p.parois.find(w => w.id === "fen");
+      const FX1 = X1 - 8, FX0 = FX1 - fen.l * M, XMUR = Math.round((X0 + FX0) / 2), XFEN = Math.round((FX0 + FX1) / 2);
+      const XM = Math.round((X0 + X1) / 2);
+      const dehors = v.dehors, dedans = v.dedans;
+
+      const svg =
+        /* le dehors (froid) au-dessus, la pièce (chaude), le couloir non chauffé en dessous */
+        `<rect class="pi-froid" x="${X0 - 120}" y="6" width="${X1 - X0 + 240}" height="${Y0 - 6}"/>` +
+        `<rect class="pi-chaud" x="${X0}" y="${Y0}" width="${X1 - X0}" height="${Y1 - Y0}"/>` +
+        `<rect class="pi-froid" x="${X0}" y="${Y1}" width="${X1 - X0}" height="${COULOIR}"/>` +
+        /* murs : le mur extérieur et le mur côté couloir sont pleins, les deux murs voisins pointillés */
+        `<path class="pi-mur" d="M${X0} ${Y0}H${FX0}M${FX1} ${Y0}H${X1}M${X0} ${Y1}H${X1}"/>` +
+        `<path class="pi-liaison" d="M${X0} ${Y0}V${Y1}M${X1} ${Y0}V${Y1}"/>` +
+        `<path class="pi-liaison" d="M${X0} ${Y1}V${Y1 + COULOIR}H${X1}V${Y1}"/>` +
+        /* la fenêtre : un cadre et deux vitres */
+        `<rect class="pi-caisson" x="${FX0}" y="${Y0 - 5}" width="${FX1 - FX0}" height="10"/>` +
+        `<path class="pi-gaine" d="M${FX0 + 11} ${Y0 - 5}v10M${FX1 - 11} ${Y0 - 5}v10"/>` +
+        /* le dehors : titre à gauche, une flèche par paroi, son nom au-dessus */
+        fort(X0 - 10, 38, `Dehors · ${virg(dehors)} °C`, "end") +
+        fluxV(XMUR, Y0 - 8, 24, 2, classe(phi.mur), 1, demi(phi.mur)) + mot(XMUR, 19, "Mur") +
+        fluxV(XFEN, Y0 - 8, 24, 2, classe(phi.fen), 1, demi(phi.fen)) + mot(XFEN, 19, "Fenêtre") +
+        /* la pièce, et les deux murs voisins : une pièce chauffée de l'autre côté, donc aucune flèche */
+        fort(XM, Y0 + 20, p.nom) + mot(XM, Y0 + 37, `${virg(dedans)} °C`) +
+        fort(X0 - 24, Y0 + 20, "Pièce chauffée", "end") + mot(X0 - 24, Y0 + 37, `${virg(dedans)} °C`, "end") +
+        fort(X1 + 10, Y0 + 20, "Pièce chauffée", "start") + mot(X1 + 10, Y0 + 37, `${virg(dedans)} °C`, "start") +
+        /* le couloir : une flèche qui descend */
+        fluxV(XM, Y1 - 6, Y1 + COULOIR - 6, 2, classe(phi.clo), 1, demi(phi.clo)) +
+        fort(X0 - 10, Y1 + 14, "Couloir", "end") + mot(X0 - 10, Y1 + 30, "non chauffé", "end") + mot(X0 - 10, Y1 + 46, `${virg(p.couloir)} °C`, "end") +
+        /* l'air : un conduit qui traverse la pièce, froid à l'entrée, chaud à la sortie */
+        `<path class="pi-gaine" d="M${X0 - 32} ${YC - 15}H${X1 + 32}M${X0 - 32} ${YC + 15}H${X1 + 32}"/>` +
+        flux(X0 - 26, YC, XM - 6, 3, "pi-froidflux", 1, 12) +
+        flux(XM + 6, YC, X1 + 26, 3, classe(phi.air), 1, 12) +
+        mot(X0 - 38, YC - 3, "Air neuf", "end") + mot(X0 - 38, YC + 14, `${virg(dehors)} °C`, "end") +
+        mot(X1 + 38, YC - 3, "Air extrait", "start") + mot(X1 + 38, YC + 14, `${virg(dedans)} °C`, "start");
+
+      /* les cotes : la longueur sous le couloir, la largeur contre le mur de gauche, la hauteur sous plafond dans la pièce */
+      const virgm = n => String(n).replace(".", ",");
+      const YCOTE = Y1 + COULOIR + 24;
+      const cotes = cote(X0, YCOTE, X1, `${virgm(p.longueur)} m`) +
+        `<path class="pi-cote" d="M${X0 - 14} ${Y0}V${Y1}M${X0 - 19} ${Y0}h10M${X0 - 19} ${Y1}h10"/>` +
+        mot(X0 - 22, Y1 - 12, `${virgm(p.largeur)} m`, "end");
+
+      /* Le plan seul (la pièce à calculer) : les murs, la fenêtre, le couloir et les cotes — pas d'air ni de flèches. */
+      if (v.plan) {
+        const plan =
+          `<rect class="pi-froid" x="${X0 - 100}" y="6" width="${X1 - X0 + 200}" height="${Y0 - 6}"/>` +
+          `<rect class="pi-chaud" x="${X0}" y="${Y0}" width="${X1 - X0}" height="${Y1 - Y0}"/>` +
+          `<rect class="pi-froid" x="${X0}" y="${Y1}" width="${X1 - X0}" height="${COULOIR}"/>` +
+          `<path class="pi-mur" d="M${X0} ${Y0}H${FX0}M${FX1} ${Y0}H${X1}M${X0} ${Y1}H${X1}"/>` +
+          `<path class="pi-liaison" d="M${X0} ${Y0}V${Y1}M${X1} ${Y0}V${Y1}"/>` +
+          `<path class="pi-liaison" d="M${X0} ${Y1}V${Y1 + COULOIR}H${X1}V${Y1}"/>` +
+          `<rect class="pi-caisson" x="${FX0}" y="${Y0 - 5}" width="${FX1 - FX0}" height="10"/>` +
+          `<path class="pi-gaine" d="M${FX0 + 11} ${Y0 - 5}v10M${FX1 - 11} ${Y0 - 5}v10"/>` +
+          fort(XM, 24, `Dehors · ${virg(dehors)} °C`) +
+          mot(XFEN, 47, `fenêtre ${virgm(fen.l)} m × ${virgm(fen.h)} m`) +
+          fort(XM, Y0 + 30, p.nom) + mot(XM, Y0 + 48, `${virg(dedans)} °C`) + mot(XM, Y0 + 66, `hauteur ${virgm(p.hauteur)} m`) +
+          fort(XM, Y1 + 18, `Couloir · ${virg(p.couloir)} °C`) + mot(XM, Y1 + 35, "non chauffé") +
+          cotes;
+        return {
+          svg: plan,
+          vue: `${X0 - 110} 0 ${X1 - X0 + 220} ${YCOTE + 10}`,
+          texte: `Plan du ${p.nom.toLowerCase()} vu de dessus : ${virgm(p.longueur)} m sur ${virgm(p.largeur)} m, hauteur ${virgm(p.hauteur)} m. ` +
+            `Le mur du haut donne sur le dehors à ${virg(dehors)} °C et porte une fenêtre de ${virgm(fen.l)} m sur ${virgm(fen.h)} m. ` +
+            `Le mur du bas donne sur un couloir non chauffé à ${virg(p.couloir)} °C. Les deux murs des côtés donnent sur des pièces chauffées à ${virg(dedans)} °C.`
+        };
+      }
+
+      return {
+        svg: svg + cotes,
+        vue: "125 0 420 262",
+        texte: `Une pièce vue de dessus, en hiver : ${virg(dehors)} °C dehors, ${virg(dedans)} °C dedans. ` +
+          `La chaleur sort par le mur extérieur et par sa fenêtre, vers le dehors, et par le mur côté couloir, vers un couloir non chauffé. ` +
+          `Elle sort aussi avec l'air : l'air neuf entre froid dans la pièce et l'air extrait en sort chaud. ` +
+          `Chaque flèche a la taille de la puissance perdue. Les deux murs voisins donnent sur des pièces chauffées à la même température : aucune chaleur n'y passe.`
+      };
+    },
+
     /* 11 — Mélange et filtration : l'épaisseur du flux dit la proportion. */
     mix(variante, v) {
       const q1 = v && v.q1 ? v.q1 : 700, q2 = v && v.q2 ? v.q2 : 1300;
@@ -692,8 +788,8 @@
   function rendre(kind, stationId, valeurs) {
     const fabrique = SCENES[kind];
     if (!fabrique) return null;
-    const {svg, texte} = fabrique(VARIANTES[stationId], valeurs);
-    return `<svg class="scene" viewBox="${VUE}" role="img" aria-label="${ech(texte)}">${DEFS}${svg}</svg>`;
+    const {svg, texte, vue} = fabrique(VARIANTES[stationId], valeurs);
+    return `<svg class="scene" viewBox="${vue || VUE}" role="img" aria-label="${ech(texte)}">${DEFS}${svg}</svg>`;
   }
 
   function texteEquivalent(kind, stationId, valeurs) {

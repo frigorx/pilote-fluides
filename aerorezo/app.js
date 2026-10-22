@@ -64,7 +64,7 @@
       html+=`<g class="station-node ${correspondance?"interchange":""} ${major?"major-interchange":""} ${terminus?"terminus-node":""}" role="button" tabindex="0" data-id="${id}" data-owner="${station.line}" data-routes="${routes.join(" ")}" aria-label="${escapeText(station.title+"."+lecture)}">${forme}<text class="code" x="${x}" y="${y+5}" text-anchor="middle">${code}</text><text class="station-label" x="${pose.x}" y="${pose.y}" text-anchor="${pose.ancrage}">${escapeText(gare.label)}</text></g>`;
     });
 
-    $("networkStats").textContent=`6 lignes · 36 stations · 12 correspondances`;
+    $("networkStats").textContent=`6 lignes · 37 stations · 12 correspondances`;
     svg.setAttribute("viewBox",`0 0 ${carte.VUE.largeur} ${carte.VUE.hauteur}`);
     svg.innerHTML=`<title>Plan du réseau AéroRézo</title><desc>Six lignes — Air et hygrométrie, VMC, Distribution, Climatisation, Centrale de traitement d’air, Mesure et diagnostic — reliées par douze correspondances. Chaque tracé passe par toutes les gares de son parcours.</desc>${html}`;
     svg.querySelectorAll(".station-node").forEach(node=>{
@@ -156,7 +156,7 @@
   function renderStation(){
     const s=state.current,line=lines[s.line],list=routeStations(state.route),index=list.findIndex(x=>x.id===s.id),routes=stationRoutes(s.id);
     $("stationKicker").textContent=`Parcours ${state.route} · station propriétaire ${s.line} · ${levels[state.level]}`;
-    $("stationTitle").textContent=s.title;$("stationCompetence").textContent=line.competence;
+    $("stationView").dataset.id=s.id;$("stationTitle").textContent=s.title;$("stationCompetence").textContent=s.codes||line.competence;
     $("interchangeSwitch").innerHTML=routes.length>1?`<span>Correspondance :</span>${routes.map(code=>`<button type="button" data-route="${code}" class="${code===state.route?"active":""}" style="--line-color:${lines[code].color}" aria-pressed="${code===state.route}">${code}</button>`).join("")}`:"";
     $("interchangeSwitch").querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>openStation(s.id,btn.dataset.route,state.phase)));
     $("stationProgress").innerHTML=list.map((item,i)=>`<button type="button" class="progress-stop ${item.id===s.id?"current":""} ${state.visited.has(item.id)?"done":""}" data-id="${item.id}" data-index="${i+1}" style="--line-color:${lines[state.route].color}">${i+1}. ${escapeText(item.title)}</button>`).join("");
@@ -204,7 +204,7 @@
     const localDone=state.phase!==3||state.localCheck?.stationId===s.id&&state.localCheck.completed;
     $("nextButton").disabled=state.phase===3&&!localDone;
     $("nextButton").textContent=state.phase<3?`${phaseNames[state.phase+1]} →`:index<list.length-1?"Station suivante →":"Terminer";
-    $("nextButton").onclick=()=>state.phase<3?setPhase(state.phase+1):index<list.length-1?openStation(list[index+1].id,state.route,0):null;
+    $("nextButton").onclick=()=>state.phase<3?setPhase(state.phase+1):index<list.length-1?openStation(list[index+1].id,state.route,0):$("exitStation").click();
     $("stepStatus").textContent=`${phaseNames[state.phase]} · ${state.phase+1}/4 · station ${index+1}/${list.length}`;
   }
 
@@ -217,6 +217,7 @@
     loss:["Longueur et accidents","Résistance du réseau","Perte de pression"],
     fan:["Courbe ventilateur","Courbe du réseau","Point de fonctionnement"],
     heat:["Débit d’air","Écart de température","Puissance sensible"],
+    piece:["Les parois, une par une","L’air renouvelé","Le total de la pièce"],
     mix:["Air extérieur","Air repris","Air mélangé"],
     recovery:["Air extérieur","Échangeur","Air soufflé"],
     measure:["Points de mesure","Moyenne représentative","Débit calculé"],
@@ -294,8 +295,10 @@
     const relation=s.formula||"Observation → comparaison → décision";
     /* audit animation (15/10/2026) : sans 3D, Comprendre n'avait que trois cases de texte à côté de 400 mots ;
        la scène animée de la station (celle de Découvrir) s'y pose au-dessus de la méthode — doublon pédagogique assumé */
-    const dessin=VUES_3D[s.id]?"":(sceneDe(s)||"");
-    $("activity").innerHTML=`<section class="concept-panel method-panel">${dessin}<p class="eyebrow">La méthode professionnelle</p>${sequenceMarkup(["Données utiles",relation,"Contrôle de cohérence"],"method-sequence")}<p class="concept-caption">${escapeText(s.method)}</p></section>`;poserVue3D(s);
+    const dessin=VUES_3D[s.id]||s.activity.kind==="piece"?"":(sceneDe(s)||"");
+    $("activity").innerHTML=`<section class="concept-panel method-panel">${dessin}<p class="eyebrow">La méthode professionnelle</p>${sequenceMarkup(s.etapes||["Données utiles",relation,"Contrôle de cohérence"],"method-sequence")}<p class="concept-caption">${escapeText(s.method)}</p></section>`;poserVue3D(s);
+    /* une station qui porte un exemple résolu (kind « piece ») le pose sous les trois cases */
+    if(s.activity.kind==="piece"&&window.AEROREZO_PIECE)window.AEROREZO_PIECE.exemple($("activity").querySelector(".method-panel"),s.activity);
   }
   function renderLocalCheck(s){
     if(!state.localCheck||state.localCheck.stationId!==s.id)state.localCheck={stationId:s.id,index:0,completed:false,answered:false};
@@ -353,6 +356,8 @@
       root.innerHTML=dessin+controls([{id:"airflow",label:"Débit d’air",value:a.flow,min:100,max:5000,step:50,unit:"m³/h"},{id:"delta",label:"Écart de température",value:a.delta,min:1,max:25,step:.5,unit:"K"}],"");
       wire(["airflow","delta"],()=>{const p=1.2*1005*(+$('airflow').value/3600)*+$('delta').value;$("calcResult").textContent=`Puissance sensible indicative : ${(p/1000).toFixed(2)} kW (ρ = 1,2 kg/m³, cₚ = 1005 J/kg·K).`;});return;
     }
+    /* La pièce à calculer (station Déperditions) : lignes à remplir, guidage qui s'efface (stations/deperditions-piece/piece.js). */
+    if(a.kind==="piece"&&window.AEROREZO_PIECE){window.AEROREZO_PIECE.exercice(root,a);return;}
     if(a.kind==="recovery"){
       root.innerHTML=dessin+controls([{id:"outdoor",label:"Air extérieur",value:a.outdoor,min:-10,max:20,unit:"°C"},{id:"extract",label:"Air extrait",value:a.extract,min:15,max:30,unit:"°C"},{id:"supply",label:"Air soufflé",value:a.supply,min:0,max:28,unit:"°C"}],"");
       wire(["outdoor","extract","supply"],()=>{const den=+$('extract').value-+$('outdoor').value,eta=den?100*(+$('supply').value-+$('outdoor').value)/den:0;$("calcResult").textContent=`Efficacité de température calculée : ${eta.toFixed(0)} %. Les trois points de mesure doivent être cohérents.`;});return;

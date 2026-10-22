@@ -1,0 +1,132 @@
+/* Station « Calculer les déperditions d’une pièce, paroi par paroi » — habillage de l’exemple résolu et
+   de la pièce à calculer (piece.js), et un trait de la scène (scenes.js, scène `piece`).
+   Ce fichier est propre à la station : il vit dans son dossier et part avec elle à la livraison.
+   Mêmes couleurs, mêmes bordures, même corps de texte que le reste du réseau (styles.css). */
+
+/* La scène : l’air neuf qui entre est un flux froid, épais comme celui qui sort ; un trait moyen
+   pour les parois qui perdent un peu moins (les autres épaisseurs sont dans styles.css). */
+.pi-flux.pi-froidflux{stroke-width:5}
+.pi-chaleur.pi-moyen{stroke-width:3.5}
+
+/* ---------- Étape Comprendre : l’exemple résolu ---------- */
+.piece-exemple{display:grid;gap:9px;line-height:1.4;font-size:15px}
+.piece-exemple .eyebrow{margin:0}
+.piece-donnees{margin:0;color:var(--muted);font-size:14px}
+.piece-tableau{width:100%;border-collapse:collapse;font-size:15px;background:#fff}
+.piece-tableau caption{text-align:left;font-weight:800;color:var(--navy);padding:2px 0 6px}
+.piece-tableau th,.piece-tableau td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
+.piece-tableau thead th{background:var(--cream);color:var(--navy);font-size:14px}
+.piece-tableau tbody th{color:var(--navy)}
+.piece-tableau tfoot th,.piece-tableau tfoot td{background:#f3fbf7}
+.piece-tableau strong{color:var(--navy)}
+.piece-bloc{margin:0;padding:8px 10px;border-left:5px double var(--orange);background:#fff8ef;border-radius:8px}
+.piece-total{border-left-color:var(--ok);background:#f3fbf7}
+.piece-note{margin:0;color:var(--muted);font-size:14px}
+
+/* ---------- Étape Manipuler : la pièce à calculer ---------- */
+.piece-exo{display:grid;gap:8px}
+.piece-ligne-q{display:grid;gap:6px;border:2px solid var(--blue);border-radius:14px;padding:8px 12px;background:var(--paper)}
+.piece-ligne-q h3{margin:0;color:var(--navy);font:700 19px/1.2 "Trebuchet MS",Calibri,Arial,sans-serif}
+.piece-rang{display:inline-block;margin-right:6px;color:var(--orange-text);font:800 12px Calibri,"Segoe UI",sans-serif;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle}
+.piece-donnee{margin:0;font-weight:700;line-height:1.3}
+.piece-guide{margin:0;padding:6px 10px;border-left:5px double var(--ok);background:#f3fbf7;border-radius:8px;line-height:1.5}
+.piece-guide[hidden]{display:none}
+.piece-champs{display:flex;flex-wrap:wrap;gap:8px}
+.piece-champ{display:grid;gap:3px;flex:1 1 150px;font-weight:700;color:var(--navy)}
+.piece-champ small{font-weight:400;color:var(--muted);font-size:inherit}
+.piece-champ input{font:700 18px Consolas,monospace;padding:5px 10px;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.piece-champ input:focus-visible{outline:3px solid rgba(255,107,53,.5);outline-offset:2px}
+.piece-champ input.correct{border:4px double var(--ok);background:#e3f5ec}
+.piece-champ input.wrong{border:3px dashed var(--bad);background:#fbe7e4}
+.piece-retour{min-height:0;margin:0}
+.piece-retour:empty{display:none}
+.piece-retour.ok{color:var(--ok);font-weight:700}
+.piece-retour.ko{color:var(--ink)}
+.piece-actions{display:flex;flex-wrap:wrap;gap:8px}
+.piece-actions button{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;padding:9px 16px;font-weight:700}
+.piece-actions button[hidden]{display:none}
+.piece-resume{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.piece-resume li{display:flex;gap:10px;align-items:baseline;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.piece-resume li span{flex:1 1 auto}
+.piece-resume li em{color:var(--muted);font-style:normal;font-size:13px}
+.piece-resume li.juste{border-left:5px double var(--ok)}
+.piece-resume li.corrige{border-left:4px dashed var(--wait)}
+.piece-bilan{border:2px solid var(--ok);border-radius:14px;padding:10px 12px;background:#f3fbf7}
+.piece-bilan h3{margin:0 0 6px;color:var(--navy)}
+.piece-bilan p{margin:0 0 6px;line-height:1.45}
+.piece-bilan button{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;padding:9px 16px;font-weight:700}
+
+/* ---------- Téléphone : le tableau devient une pile de cartes, une paroi par carte ---------- */
+@media(max-width:760px){
+  .piece-exemple{font-size:13px}
+  .piece-donnees,.piece-note{font-size:12px}
+  .piece-tableau,.piece-tableau tbody,.piece-tableau tfoot,.piece-tableau tr,.piece-tableau th,.piece-tableau td{display:block;width:auto}
+  .piece-tableau thead{display:none}
+  .piece-tableau tbody tr,.piece-tableau tfoot tr{border:1px solid var(--line);border-radius:10px;margin-bottom:6px;overflow:hidden}
+  .piece-tableau th,.piece-tableau td{border:0;padding:3px 8px;font-size:13px}
+  .piece-tableau tbody th,.piece-tableau tfoot th{background:var(--cream);padding:4px 8px}
+  .piece-tableau td::before{content:attr(data-l) " : ";color:var(--muted);font-weight:700}
+  .piece-tableau tfoot td::before{content:none}
+  .piece-exo{gap:5px}
+  .piece-ligne-q{gap:4px;padding:6px 8px}
+  .piece-ligne-q h3{font-size:16px}
+  .piece-rang{font-size:11px}
+  .piece-guide{padding:4px 8px;font-size:12px;line-height:1.35}
+  .piece-donnee{font-size:12px}
+  .piece-champs{gap:5px}
+  .piece-champ{flex:1 1 90px;gap:1px;font-size:12px}
+  .piece-champ input{font-size:16px;padding:3px 6px}
+  .piece-retour{font-size:12px;line-height:1.3}
+  .piece-actions{gap:5px}
+  .piece-actions button{padding:6px 11px;font-size:12px}
+  .piece-resume li{padding:4px 8px;font-size:12px}
+  .piece-bilan{padding:7px 9px;font-size:13px}
+  .piece-resultat{margin:0 0 4px;padding:4px 8px;font-size:14px}
+}
+
+/* Le résultat reste en haut : il ne recouvre jamais le bas de la ligne en cours. */
+.piece-resultat{position:sticky;top:0;bottom:auto;margin:0 0 8px;box-shadow:0 6px 12px rgba(255,255,255,.9);z-index:2}
+#activity .piece-exo .scene{max-height:26vh;margin:0 auto}
+.piece-sources{border-top:1px solid var(--line);padding-top:6px;font-size:14px;line-height:1.4;color:var(--muted)}
+.piece-sources p{margin:0 0 2px}
+.piece-source-titre{font-weight:800;color:var(--navy)}
+.piece-sources ul{margin:0;padding-left:18px}
+.piece-sources b{color:var(--ink)}
+
+/* Lisibilité (retour de la preuve P1) : texte courant, codes, étapes et sous-titres à 14 px au moins, aux deux tailles. */
+#stationView[data-id="deperditions-piece"] .competence,
+#stationView[data-id="deperditions-piece"] .eyebrow,
+#stationView[data-id="deperditions-piece"] #stepStatus,
+#stationView[data-id="deperditions-piece"] .phase-progress button,
+#stationView[data-id="deperditions-piece"] .piece-rang{font-size:14px}
+@media(max-width:760px){
+  #stationView[data-id="deperditions-piece"] .lesson-copy,
+  #stationView[data-id="deperditions-piece"] .lesson-copy .lecture,
+  #stationView[data-id="deperditions-piece"] .lesson-copy .limites,
+  #stationView[data-id="deperditions-piece"] .competence,
+  #stationView[data-id="deperditions-piece"] .method-box,
+  #stationView[data-id="deperditions-piece"] .piece-exemple,
+  #stationView[data-id="deperditions-piece"] .piece-donnees,
+  #stationView[data-id="deperditions-piece"] .piece-note,
+  #stationView[data-id="deperditions-piece"] .piece-tableau th,
+  #stationView[data-id="deperditions-piece"] .piece-tableau td,
+  #stationView[data-id="deperditions-piece"] .piece-guide,
+  #stationView[data-id="deperditions-piece"] .piece-donnee,
+  #stationView[data-id="deperditions-piece"] .piece-champ,
+  #stationView[data-id="deperditions-piece"] .piece-retour,
+  #stationView[data-id="deperditions-piece"] .piece-actions button,
+  #stationView[data-id="deperditions-piece"] .piece-resume li,
+  #stationView[data-id="deperditions-piece"] .piece-bilan,
+  #stationView[data-id="deperditions-piece"] .concept-step,
+  #stationView[data-id="deperditions-piece"] .concept-caption,
+  #stationView[data-id="deperditions-piece"] .formula{font-size:14px}
+  #stationView[data-id="deperditions-piece"] .phase-progress button{padding:5px 1px}
+  #stationView[data-id="deperditions-piece"] .phase-progress button span{display:none}
+  #stationView[data-id="deperditions-piece"] .lesson-nav button,
+  #stationView[data-id="deperditions-piece"] .lesson-nav span,
+  #stationView[data-id="deperditions-piece"] .concept-step>span,
+  #stationView[data-id="deperditions-piece"] .progress-stop::after{font-size:14px}
+  #stationView[data-id="deperditions-piece"] .lesson-copy{max-height:24vh}
+  #activity .piece-exo .scene{max-height:17vh}
+}
+#stationView[data-id="deperditions-piece"] .progress-stop{font-size:14px}
