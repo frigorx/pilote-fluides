@@ -42,8 +42,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = 'C:/git/pilote-fluides';
+// Racine du site : par défaut le dossier parent de outils/ (le dépôt qui contient ce script) ;
+// PILOTE_RACINE=<chemin> la remplace.
+const ROOT = process.env.PILOTE_RACINE
+  || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..').split(path.sep).join('/');
 const SORTIE = path.join(ROOT, 'docs/catalogue-2026-09');
 const SITE = 'https://inerweb.fr/';
 
