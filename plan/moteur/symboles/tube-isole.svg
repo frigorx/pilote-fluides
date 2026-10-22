@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.0 -19.0 48.0 38.0" width="48" height="38">
+<!-- aislamiento-tub — converti de aislamiento-tub.elmt par outils\elmt-vers-svg.py -->
+<rect x="-24.0" y="-19.0" width="48.0" height="38.0" fill="#ffffff"/>
+<line x1="-9.3" y1="0.13" x2="7.2" y2="0.13" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-9.30" cy="3.01" rx="0.60" ry="0.76" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-9.45" cy="-4.03" rx="2.55" ry="4.17" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-9.60" cy="-4.17" rx="0.60" ry="1.17" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-9.3" y1="-8.2" x2="7.2" y2="-8.2" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-9.30" cy="3.10" rx="1.80" ry="2.71" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 7.50,0.13 A 2.70,4.17 0 0 0 7.50,-8.20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-9.3" y1="5.8" x2="7.2" y2="5.8" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-9.3" y1="0.39" x2="7.2" y2="0.39" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 7.35,5.80 A 1.95,2.71 0 0 0 7.35,0.39" stroke="black" stroke-width="1" fill="none"/>
+</svg>

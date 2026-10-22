@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.0 -11.0 48.0 38.0" width="48" height="38">
+<!-- condu-te — converti de condu-te.elmt par outils\elmt-vers-svg.py -->
+<rect x="-25.0" y="-11.0" width="48.0" height="38.0" fill="#ffffff"/>
+<ellipse cx="-9.20" cy="-0.14" rx="2.80" ry="5.12" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.90,4.98 A 2.80,5.12 0 0 0 5.90,-5.27" stroke="black" stroke-width="1" fill="none"/>
+<line x1="3.18" y1="11.82" x2="3.18" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="3.06" y1="5" x2="5.62" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-9.93" y1="-5.27" x2="4.9" y2="-5.27" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-4.88" y1="11.82" x2="-4.88" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-8.7" y1="5" x2="-5.64" y2="5" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 2.80,4.64 A 4.10,2.71 0 0 0 -5.40,4.64" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="-1.00" cy="12.50" rx="4.00" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+</svg>

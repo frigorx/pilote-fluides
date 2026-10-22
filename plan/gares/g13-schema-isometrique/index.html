@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Gare 13 — Le schéma isométrique d'un réseau</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La carte du réseau</a> · tronc commun · pour le froid et la clim <span class="statut">en cours de relecture</span></p>
+    <h1>Gare 13 — Le schéma isométrique d'un réseau</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>Un tube qui monte, tourne, redescend : sur un plan, on ne le voit jamais en entier. Le <strong>schéma isométrique</strong>
+  le montre en une seule vue, avec ses trois dimensions. Cette gare dure environ 2 heures. À la fin, vous saurez :</p>
+  <ul>
+    <li>reconnaître les <strong>trois axes</strong> de l'isométrie ;</li>
+    <li><strong>tracer</strong> à main levée un tube sur papier isométrique ;</li>
+    <li><strong>lire</strong> une isométrie : tronçons, coudes, longueur totale, hauteur ;</li>
+    <li><strong>coter</strong> chaque tronçon et reconnaître les <strong>symboles</strong> d'une ligne liquide ;</li>
+    <li>noter une <strong>pente</strong> et calculer de combien un tube descend.</li>
+  </ul>
+  <p class="cle">Prérequis : les gares 2 (les vues), 7 (la cotation) et 8 (le croquis coté).
+  Un <strong>tronçon</strong> est un morceau de tube entre deux changements de direction.</p>
+</section>
+
+<section>
+  <h2>À quoi sert une isométrie ?</h2>
+  <p>Sur un plan (vue de dessus), la hauteur disparaît. Sur une coupe, la largeur disparaît.
+  L'isométrie garde <strong>les trois dimensions sur une seule feuille</strong> : les lignes parallèles restent parallèles, il n'y a pas de point de fuite.</p>
+  <table class="doc empile">
+    <tr><th>Vous voulez…</th><th>L'isométrie vous donne…</th></tr>
+    <tr><td><strong>commander les tubes</strong></td><td data-l="L'isométrie vous donne">la longueur de chaque tronçon, donc le total</td></tr>
+    <tr><td><strong>vérifier un tracé</strong> avant de couper</td><td data-l="L'isométrie vous donne">le chemin du tube dans les trois directions</td></tr>
+    <tr><td><strong>expliquer au poseur</strong> où passe le tube</td><td data-l="L'isométrie vous donne">une image que l'on comprend sans plan ni coupe</td></tr>
+    <tr><td><strong>relever</strong> une installation existante</td><td data-l="L'isométrie vous donne">un croquis exploitable (gare 12)</td></tr>
+  </table>
+  <p class="cle">Une isométrie de tuyauterie est le plus souvent <strong>sans échelle</strong> : on ne mesure pas le dessin, on lit les cotes.</p>
+</section>
+
+<section>
+  <h2>Les trois axes</h2>
+<!--FIG:axes-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" width="720" height="330" style="max-width:100%;height:auto" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="Les trois axes d’une isométrie : un axe vertical, un axe qui monte vers la droite à 30°, un axe qui monte vers la gauche à 30°, avec un cube de référence.">
+<rect width="720" height="330" fill="#fff"/>
+<g stroke="#b9c2ce" stroke-width="1.2" fill="none"><path d="M360 240 L446.6 190"/><path d="M446.6 190 L360 140"/><path d="M360 140 L273.4 190"/><path d="M273.4 190 L360 240"/><path d="M360 140 L446.6 90"/><path d="M446.6 90 L360 40"/><path d="M360 40 L273.4 90"/><path d="M273.4 90 L360 140"/><path d="M360 240 L360 140"/><path d="M446.6 190 L446.6 90"/><path d="M360 140 L360 40"/><path d="M273.4 190 L273.4 90"/></g>
+<path d="M360 240 L360 22.5" stroke="#10233c" stroke-width="2.4" fill="none"/><path d="M360 22.5 L364.94 35.5 L355.06 35.5 Z" fill="#10233c"/>
+<path d="M360 240 L515.88 150" stroke="#3d7fca" stroke-width="2.4" fill="none"/><path d="M515.88 150 L507.1 160.78 L502.16 152.22 Z" fill="#3d7fca"/>
+<path d="M360 240 L204.12 150" stroke="#c9451a" stroke-width="2.4" fill="none"/><path d="M204.12 150 L217.84 152.22 L212.9 160.78 Z" fill="#c9451a"/>
+<text x="374" y="18" text-anchor="start" font-size="19.5" font-weight="bold" fill="#10233c">axe vertical</text>
+<text x="510" y="128" text-anchor="start" font-size="19.5" font-weight="bold" fill="#3d7fca">axe de droite</text>
+<text x="510" y="152" text-anchor="start" font-size="19.5"  fill="#3d7fca">(à 30°)</text>
+<text x="210" y="128" text-anchor="end" font-size="19.5" font-weight="bold" fill="#c9451a">axe de gauche</text>
+<text x="210" y="152" text-anchor="end" font-size="19.5"  fill="#c9451a">(à 30°)</text>
+</svg>
+<!--/FIG:axes-->
+  <p>Toute l'isométrie se construit sur trois directions. Trois règles :</p>
+  <ol>
+    <li>un tube <strong>horizontal ou vertical</strong> se trace toujours <strong>parallèle à un axe</strong> ;</li>
+    <li>sur un axe, les longueurs se tracent en <strong>vraie grandeur</strong> : 1 m fait la même longueur dessinée partout ;</li>
+    <li>on avance sur un axe <strong>dans un sens ou dans l'autre</strong> (vers le haut ou vers le bas).</li>
+  </ol>
+  <table class="doc empile">
+    <tr><th>Axe (sa lettre)</th><th>Sur la feuille</th><th>Pour le tube</th></tr>
+    <tr><td><strong>vertical</strong> (Z)</td><td data-l="Sur la feuille">un trait vertical</td><td data-l="Pour le tube">il monte ou il descend</td></tr>
+    <tr><td><strong>de droite</strong> (X)</td><td data-l="Sur la feuille">un trait à 30° qui monte vers la droite</td><td data-l="Pour le tube">le tube reste horizontal : vers la droite (le trait monte sur la feuille) ou vers la gauche (le trait descend)</td></tr>
+    <tr><td><strong>de gauche</strong> (Y)</td><td data-l="Sur la feuille">un trait à 30° qui monte vers la gauche</td><td data-l="Pour le tube">le tube reste horizontal : vers la gauche (le trait monte sur la feuille) ou vers la droite (le trait descend)</td></tr>
+  </table>
+  <p class="cle">Dans ce cours, tous les tubes sont horizontaux ou verticaux : <strong>seul l'axe vertical fait monter ou descendre le tube</strong>. Sur les deux autres axes, le trait monte ou descend sur la feuille, pas dans la réalité. Les lettres X, Y, Z servent à nommer les axes sur la grille de l'exercice. La pente d'un tube se note à part (écran 8).</p>
+</section>
+
+<section>
+  <h2>Tracer un tube, pas à pas</h2>
+  <p><strong>Exemple résolu.</strong> Le tube part du point A (la sortie du groupe) et arrive au point F. Les longueurs sont des valeurs d'école.</p>
+<!--FIG:exemple-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 330" width="640" height="330" style="max-width:100%;height:auto" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="Isométrie d’un tracé de tuyauterie à six points, de A à F.">
+<rect width="640" height="330" fill="#fff"/>
+<path d="M177.11 240 L281.03 180 L281.03 90 L410.93 165 L462.89 135 L462.89 195" fill="none" stroke="#10233c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="177.11" cy="240" r="4.5" fill="#10233c"/>
+<text x="159.11" y="260" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">A</text>
+<circle cx="281.03" cy="180" r="4.5" fill="#10233c"/>
+<text x="299.03" y="186" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">B</text>
+<circle cx="281.03" cy="90" r="4.5" fill="#10233c"/>
+<text x="265.03" y="86" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">C</text>
+<circle cx="410.93" cy="165" r="4.5" fill="#10233c"/>
+<text x="418.93" y="199" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">D</text>
+<circle cx="462.89" cy="135" r="4.5" fill="#10233c"/>
+<text x="440.89" y="137" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">E</text>
+<circle cx="462.89" cy="195" r="4.5" fill="#10233c"/>
+<text x="462.89" y="231" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">F</text>
+</svg>
+<!--/FIG:exemple-->
+<!--FIG:troncons-->
+<table class="doc empile">
+<tr><th>Tronçon</th><th>Axe</th><th>Sens</th><th>Longueur</th></tr>
+<tr><td>A → B</td><td data-l="Axe">de droite</td><td data-l="Sens">vers la droite (le trait monte)</td><td data-l="Longueur">2,00 m</td></tr>
+<tr><td>B → C</td><td data-l="Axe">vertical</td><td data-l="Sens">vers le haut</td><td data-l="Longueur">1,50 m</td></tr>
+<tr><td>C → D</td><td data-l="Axe">de gauche</td><td data-l="Sens">vers la droite (le trait descend)</td><td data-l="Longueur">2,50 m</td></tr>
+<tr><td>D → E</td><td data-l="Axe">de droite</td><td data-l="Sens">vers la droite (le trait monte)</td><td data-l="Longueur">1,00 m</td></tr>
+<tr><td>E → F</td><td data-l="Axe">vertical</td><td data-l="Sens">vers le bas</td><td data-l="Longueur">1,00 m</td></tr>
+</table>
+<!--/FIG:troncons-->
+  <ol>
+    <li><strong>Posez le point de départ A</strong> sur la feuille.</li>
+    <li>Pour chaque ligne du tableau : choisissez l'<strong>axe</strong>, le <strong>sens</strong>, puis avancez de la <strong>longueur</strong> indiquée.</li>
+    <li>À chaque changement de direction, marquez un <strong>point</strong> et une <strong>lettre</strong> : c'est un coude.</li>
+    <li><strong>Relisez</strong> : chaque trait est-il parallèle à un axe ?</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Lire une isométrie</h2>
+  <p>Devant une isométrie, vous posez quatre questions, dans cet ordre :</p>
+  <table class="doc empile">
+    <tr><th>Question</th><th>Comment répondre</th></tr>
+    <tr><td><strong>1. Par où passe le tube ?</strong></td><td data-l="Comment répondre">suivez-le de A à F, tronçon par tronçon, en notant l'axe et le sens</td></tr>
+    <tr><td><strong>2. Combien de coudes ?</strong></td><td data-l="Comment répondre">un coude par point intermédiaire : n tronçons font n − 1 coudes</td></tr>
+    <tr><td><strong>3. Quelle longueur ?</strong></td><td data-l="Comment répondre">additionnez les cotes de tous les tronçons</td></tr>
+    <tr><td><strong>4. Quelle hauteur gagnée ?</strong></td><td data-l="Comment répondre">les montées moins les descentes (seuls les tronçons verticaux comptent)</td></tr>
+  </table>
+  <p>Pour le tube de l'exemple (écran 4) :</p>
+<!--FIG:bilan-->
+<p class="calc">Axe de droite : 3,00 m · axe de gauche : 2,50 m · axe vertical : 2,50 m.
+Longueur totale du tube : <strong>8,00 m</strong> · coudes : <strong>4</strong> · hauteur gagnée entre A et F : <strong>0,50 m</strong>.</p>
+<!--/FIG:bilan-->
+  <p class="cle">Piège : la hauteur gagnée n'est pas la somme des tronçons verticaux. Ici, le tube monte de 1,50 m, puis descend de 1,00 m : il gagne 0,50 m.</p>
+</section>
+
+<section>
+  <h2>Les cotes</h2>
+<!--FIG:exemple-cotes-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" style="max-width:100%;height:auto" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="Isométrie d’un tracé de tuyauterie à six points, de A à F.">
+<rect width="720" height="400" fill="#fff"/>
+<path d="M202.82 282.5 L317.13 216.5 L317.13 117.5 L460.03 200 L517.18 167 L517.18 233" fill="none" stroke="#10233c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M202.82 282.5 L247.63 308.37 M317.13 216.5 L361.94 242.37" stroke="#10233c" stroke-width="0.9" fill="none"/><path d="M299.98 272.6 L242.83 305.6" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M242.83 305.6 L248.23 298.97 L251.27 304.23 Z" fill="#10233c"/><path d="M299.98 272.6 L357.14 239.6" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M357.14 239.6 L351.73 246.23 L348.69 240.97 Z" fill="#10233c"/><rect x="263.22" y="257" width="73.52" height="20.48" fill="#fff"/><text x="299.98" y="274.94" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#10233c">2,00 m</text>
+<path d="M317.13 216.5 L278.72 238.68 M317.13 117.5 L278.72 139.68" stroke="#10233c" stroke-width="0.9" fill="none"/><path d="M282.84 186.8 L282.84 236.3" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M282.84 236.3 L279.8 228.3 L285.88 228.3 Z" fill="#10233c"/><path d="M282.84 186.8 L282.84 137.3" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M282.84 137.3 L285.88 145.3 L279.8 145.3 Z" fill="#10233c"/><rect x="199.32" y="171.2" width="73.52" height="20.48" fill="#fff"/><text x="236.08" y="189.14" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#10233c">1,50 m</text>
+<path d="M317.13 117.5 L317.13 65.76 M460.03 200 L460.03 148.26" stroke="#10233c" stroke-width="0.9" fill="none"/><path d="M388.58 112.55 L317.13 71.3" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M317.13 71.3 L325.58 72.67 L322.54 77.93 Z" fill="#10233c"/><path d="M388.58 112.55 L460.03 153.8" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M460.03 153.8 L451.58 152.43 L454.62 147.17 Z" fill="#10233c"/><rect x="351.82" y="96.95" width="73.52" height="20.48" fill="#fff"/><text x="388.58" y="114.89" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#10233c">2,50 m</text>
+<path d="M460.03 200 L460.03 96.51 M517.18 167 L517.18 63.51" stroke="#10233c" stroke-width="0.9" fill="none"/><path d="M488.6 91.1 L460.03 107.6" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M460.03 107.6 L465.43 100.97 L468.47 106.23 Z" fill="#10233c"/><path d="M488.6 91.1 L517.18 74.6" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M517.18 74.6 L511.78 81.23 L508.74 75.97 Z" fill="#10233c"/><rect x="439.84" y="75.5" width="73.52" height="20.48" fill="#fff"/><text x="476.6" y="93.44" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#10233c">1,00 m</text>
+<path d="M517.18 167 L555.59 144.82 M517.18 233 L555.59 210.82" stroke="#10233c" stroke-width="0.9" fill="none"/><path d="M551.48 180.2 L551.48 147.2" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M551.48 147.2 L554.52 155.2 L548.44 155.2 Z" fill="#10233c"/><path d="M551.48 180.2 L551.48 213.2" stroke="#10233c" stroke-width="1.2" fill="none"/><path d="M551.48 213.2 L548.44 205.2 L554.52 205.2 Z" fill="#10233c"/><rect x="561.48" y="164.6" width="73.52" height="20.48" fill="#fff"/><text x="598.24" y="182.54" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#10233c">1,00 m</text>
+<circle cx="202.82" cy="282.5" r="4.5" fill="#10233c"/>
+<text x="184.82" y="302.5" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">A</text>
+<circle cx="317.13" cy="216.5" r="4.5" fill="#10233c"/>
+<text x="335.13" y="222.5" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">B</text>
+<circle cx="317.13" cy="117.5" r="4.5" fill="#10233c"/>
+<text x="301.13" y="113.5" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">C</text>
+<circle cx="460.03" cy="200" r="4.5" fill="#10233c"/>
+<text x="468.03" y="234" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">D</text>
+<circle cx="517.18" cy="167" r="4.5" fill="#10233c"/>
+<text x="495.18" y="169" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">E</text>
+<circle cx="517.18" cy="233" r="4.5" fill="#10233c"/>
+<text x="517.18" y="269" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">F</text>
+</svg>
+<!--/FIG:exemple-cotes-->
+  <ul>
+    <li>Une cote par <strong>tronçon</strong>, tirée <strong>parallèlement</strong> au tronçon (donc parallèle à un axe).</li>
+    <li>Deux <strong>lignes d'attache</strong> partent des extrémités du tronçon ; la <strong>ligne de cote</strong> les relie, avec une <strong>flèche</strong> à chaque bout.</li>
+    <li>La <strong>valeur</strong> s'écrit horizontalement, avec son unité, sans chevaucher le tube ni une autre cote.</li>
+  </ul>
+  <p class="cle">Comme en gare 7 : une cote écrite fait foi. On ne mesure pas le dessin pour la retrouver.</p>
+</section>
+
+<section>
+  <h2>Les symboles d'une ligne liquide</h2>
+  <p>Entre le groupe et l'évaporateur, la ligne liquide porte des appareils. Chacun a son symbole :</p>
+  <table class="doc empile">
+    <tr><th>Symbole</th><th>Appareil</th><th>À quoi il sert</th></tr>
+    <tr><td><img class="pict" src="../../moteur/symboles/robinet-arret.svg" alt="Robinet d'arrêt."></td><td data-l="Appareil"><strong>Robinet d'arrêt</strong></td><td data-l="À quoi il sert">isoler une partie de la ligne</td></tr>
+    <tr><td><img class="pict" src="../../moteur/symboles/filtre-deshydrateur.svg" alt="Filtre déshydrateur."></td><td data-l="Appareil"><strong>Filtre déshydrateur</strong></td><td data-l="À quoi il sert">retenir l'humidité et les impuretés</td></tr>
+    <tr><td><img class="pict" src="../../moteur/symboles/voyant-liquide.svg" alt="Voyant liquide."></td><td data-l="Appareil"><strong>Voyant liquide</strong></td><td data-l="À quoi il sert">regarder le fluide qui passe</td></tr>
+    <tr><td><img class="pict" src="../../moteur/symboles/electrovanne.svg" alt="Électrovanne."></td><td data-l="Appareil"><strong>Électrovanne</strong></td><td data-l="À quoi il sert">laisser passer ou couper le liquide, sur commande</td></tr>
+    <tr><td><img class="pict" src="../../moteur/symboles/detendeur.svg" alt="Détendeur."></td><td data-l="Appareil"><strong>Détendeur</strong></td><td data-l="À quoi il sert">faire baisser la pression du liquide à l'entrée de l'évaporateur</td></tr>
+  </table>
+  <p class="cle">Ordre habituel dans le sens du fluide, du groupe vers l'évaporateur : robinet d'arrêt, filtre déshydrateur, voyant, électrovanne, détendeur. Le schéma de l'installation fait foi.</p>
+  <p class="credit">Pictogrammes : collection QElectroTech (CC BY 3.0), adaptés par inerWeb — F. Henninot.</p>
+</section>
+
+<section>
+  <h2>La pente</h2>
+<!--FIG:pente-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 210" width="600" height="210" style="max-width:100%;height:auto" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="Un tronçon de tube en pente : une flèche rouge pointe vers le point bas et porte la valeur de la pente.">
+<rect width="600" height="210" fill="#fff"/>
+<path d="M70 70 L520 148" stroke="#10233c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M70 70 L520 70" stroke="#637285" stroke-width="1.5" stroke-dasharray="8 6" fill="none"/>
+<path d="M520 70 L520 148" stroke="#c0392b" stroke-width="2" fill="none"/>
+<path d="M300 96 L360 106.5" stroke="#c0392b" stroke-width="3" fill="none"/><path d="M360 106.5 L345.29 109.33 L347.13 98.85 Z" fill="#c0392b"/>
+<rect x="214" y="22" width="190" height="28" fill="#fff"/><text x="309" y="44" text-anchor="middle" font-size="19.5" font-weight="bold" fill="#c0392b">pente : 1 %</text>
+<rect x="402" y="94" width="100" height="26" fill="#fff"/><text x="452" y="114" text-anchor="middle" font-size="19.5"  fill="#c0392b">baisse</text>
+<text x="70" y="112" text-anchor="start" font-size="19.5"  fill="#637285">point haut</text>
+<text x="530" y="176" text-anchor="end" font-size="19.5"  fill="#637285">point bas</text>
+<circle cx="70" cy="70" r="5" fill="#10233c"/><circle cx="520" cy="148" r="5" fill="#10233c"/>
+</svg>
+<!--/FIG:pente-->
+  <ul>
+    <li>Une pente se note par une <strong>flèche</strong> qui pointe vers le <strong>point bas</strong>, avec sa <strong>valeur</strong>.</li>
+    <li>Une pente de <strong>1 %</strong> descend de <strong>1 cm par mètre</strong> de tube.</li>
+    <li>De combien le tube descend : <strong>longueur × pente</strong>. Pour 4 m à 1 % : 4 × 1 cm = <strong>4 cm</strong>. Pour 3 m à 2 % : 3 × 2 cm = <strong>6 cm</strong> (2 % = 2 cm par mètre).</li>
+  </ul>
+  <p class="cle">La valeur de la pente vient du dossier ou de la notice : on ne l'invente pas.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare 13</h2>
+  <p>Trois axes, un tube tracé tronçon par tronçon, des cotes lues, des symboles reconnus, une pente calculée : vous savez lire et tracer une isométrie.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>📄 Télécharger l'exercice (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant : corrigé dans <a href="corrige.pdf">corrige.pdf</a> (tracé de référence sur la grille, réponses). L'exercice se fait au crayon, sur papier A4 : lire une isométrie cotée, puis en tracer une sur la grille de points.</p>
+  <div class="froid">
+    <h3>❄️ Codes du référentiel (froid et climatisation)</h3>
+    <ul>
+      <li><strong>Bac Pro MFER</strong> (référentiel 2028) — S3.4.2 « Les dessins d’exécutions et de mise en œuvre »</li>
+      <li><strong>CAP IFCA</strong> — S2.3 « Croquis à main levée »</li>
+      <li><strong>TP TECVC</strong> (REAC TP-00133) — CP1 « Réaliser les plans d’implantation des équipements et des réseaux d’une installation de génie climatique »</li>
+    </ul>
+  </div>
+  <p class="credit">Pictogrammes : collection QElectroTech (CC BY 3.0), adaptés par inerWeb — F. Henninot.</p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Dans une isométrie, un tube horizontal se trace :",
+  "r": [
+   "dans la direction de votre choix",
+   "parallèle à l'un des trois axes",
+   "à 45° de la verticale, pour être lisible",
+   "toujours à l'horizontale de la feuille"
+  ],
+  "bon": 1,
+  "x": "Tous les tubes horizontaux ou verticaux sont parallèles à l'un des trois axes : vertical, de droite, de gauche."
+ },
+ {
+  "e": "L'axe de droite d'une isométrie monte vers la droite avec un angle de :",
+  "r": [
+   "45°",
+   "60°",
+   "90°",
+   "30°"
+  ],
+  "bon": 3,
+  "x": "Les deux axes obliques font 30° avec l'horizontale ; le troisième axe est vertical."
+ },
+ {
+  "e": "Le tube avance de 2,00 m vers le haut. Vous tracez :",
+  "r": [
+   "un trait vertical de 2,00 m, en vraie grandeur",
+   "un trait oblique plus court, à cause de la perspective",
+   "un trait vertical de 1 m, qui sera redressé à l'impression",
+   "un trait qui monte à 30° sur la feuille"
+  ],
+  "bon": 0,
+  "x": "Sur un axe, les longueurs se tracent en vraie grandeur : 2,00 m fait la même longueur dessinée sur les trois axes."
+ },
+ {
+  "e": "Un tube compte 5 tronçons. Combien a-t-il de coudes ?",
+  "r": [
+   "5",
+   "6",
+   "4",
+   "3"
+  ],
+  "bon": 2,
+  "x": "Un coude se trouve à chaque point intermédiaire : n tronçons font n − 1 coudes."
+ },
+ {
+  "e": "La longueur totale d'un tube sur une isométrie cotée est :",
+  "r": [
+   "la distance entre le point de départ et le point d'arrivée",
+   "la plus grande cote du dessin",
+   "la somme des cotes de tous les tronçons",
+   "la hauteur du tube multipliée par le nombre de coudes"
+  ],
+  "bon": 2,
+  "x": "Le tube suit son chemin : on additionne les cotes de tous les tronçons, comme pour une liaison frigorifique."
+ },
+ {
+  "e": "Un tube monte de 2,00 m puis descend de 1,50 m. Il a gagné en hauteur :",
+  "r": [
+   "3,50 m",
+   "2,00 m",
+   "1,50 m",
+   "0,50 m"
+  ],
+  "bon": 3,
+  "x": "Les montées moins les descentes : 2,00 − 1,50 = 0,50 m. Additionner les deux serait une erreur."
+ },
+ {
+  "e": "Sur la ligne liquide, juste avant l'entrée de l'évaporateur, on trouve :",
+  "r": [
+   "le filtre déshydrateur",
+   "le robinet d'arrêt",
+   "le voyant liquide",
+   "le détendeur"
+  ],
+  "bon": 3,
+  "x": "Le détendeur est à l'entrée de l'évaporateur : il fait baisser la pression du liquide."
+ },
+ {
+  "e": "Le filtre déshydrateur sert à :",
+  "r": [
+   "faire baisser la pression du liquide avant l'évaporateur",
+   "retenir l'humidité et les impuretés du fluide",
+   "couper la ligne quand le groupe s'arrête",
+   "montrer à l'œil si le tube est plein de liquide"
+  ],
+  "bon": 1,
+  "x": "Il retient l'humidité et les impuretés. Baisser la pression, c'est le détendeur ; couper, c'est l'électrovanne ; regarder, c'est le voyant."
+ },
+ {
+  "e": "Un tube de 6 m a une pente de 1 %. Entre son point haut et son point bas, la différence de hauteur est de :",
+  "r": [
+   "6 cm",
+   "6 mm",
+   "60 cm",
+   "1 m"
+  ],
+  "bon": 0,
+  "x": "1 % = 1 cm par mètre : 6 m × 1 cm = 6 cm."
+ },
+ {
+  "e": "Sur une isométrie, la cote d'un tronçon se trace :",
+  "r": [
+   "parallèlement au tronçon, avec lignes d'attache et flèches",
+   "au milieu du tube, sur le tube lui-même",
+   "en diagonale pour ne pas gêner les autres cotes",
+   "à l'horizontale de la feuille, quel que soit le tronçon"
+  ],
+  "bon": 0,
+  "x": "Comme en gare 7 : lignes d'attache, ligne de cote parallèle à ce que l'on mesure, flèches, valeur."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

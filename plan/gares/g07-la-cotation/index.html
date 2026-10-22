@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Gare 7 — La cotation : chaînes de cotes</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La carte du réseau</a> · tronc commun · 1re année</p>
+    <h1>Gare 7 — La cotation : chaînes de cotes</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>Les dimensions d'un plan sont écrites dans les <strong>cotes</strong>.
+  Environ <strong>2 heures</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li>lire l'<strong>anatomie</strong> d'une cote (lignes d'attache, ligne de cote, valeur) ;</li>
+    <li>suivre une <strong>chaîne de cotes</strong> et la vérifier ;</li>
+    <li>lire les cotes d'une <strong>baie</strong> (fenêtre, porte) ;</li>
+    <li>reconnaître une cote <strong>impérative</strong>.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>L'anatomie d'une cote</h2>
+  <div class="svgbox">
+    <svg viewBox="0 0 620 240" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un mur coté : deux lignes d'attache verticales, une ligne de cote horizontale terminée par des flèches, et la valeur 2400 écrite au-dessus, au milieu.">
+      <rect x="110" y="60" width="400" height="40" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+      <g stroke="#10233c" stroke-width="1.2">
+        <line x1="110" y1="105" x2="110" y2="165"/>
+        <line x1="510" y1="105" x2="510" y2="165"/>
+        <line x1="110" y1="150" x2="510" y2="150"/>
+      </g>
+      <polygon points="110,150 124,145 124,155" fill="#10233c"/>
+      <polygon points="510,150 496,145 496,155" fill="#10233c"/>
+      <text x="310" y="141" text-anchor="middle" fill="#10233c" font-size="18" font-weight="bold" font-family="Segoe UI, sans-serif">2400</text>
+      <g fill="#c9451a" font-size="12.5" font-family="Segoe UI, sans-serif">
+        <text x="88" y="185">lignes d'attache</text>
+        <text x="395" y="185">ligne de cote + flèches</text>
+        <text x="310" y="35" text-anchor="middle">la valeur, au milieu, au-dessus</text>
+      </g>
+      <line x1="118" y1="172" x2="111" y2="158" stroke="#c9451a" stroke-width="1.2"/>
+      <line x1="450" y1="172" x2="470" y2="155" stroke="#c9451a" stroke-width="1.2"/>
+      <line x1="310" y1="42" x2="310" y2="118" stroke="#c9451a" stroke-width="1" stroke-dasharray="4 4"/>
+    </svg>
+  </div>
+  <p class="cle">La valeur s'écrit <strong>sans unité</strong> : en dessin technique
+  du bâtiment, c'est du <strong>millimètre sauf mention contraire</strong>
+  (la mention, si elle existe, est dans le cartouche). 2400 = 2,40 m.</p>
+  <p><strong>Exemple résolu : une plaque de 1800 × 900 mm, cotée dans les règles.</strong> Pour une cote verticale, c'est pareil, tourné
+  d'un quart de tour : deux lignes d'attache horizontales, une ligne de cote verticale à flèches, et la valeur écrite à côté de la ligne de cote, au milieu.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 420 230" width="380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Une plaque rectangulaire de 1800 sur 900 millimètres avec sa cote horizontale 1800 dessous et sa cote verticale 900 à gauche.">
+      <rect x="90" y="40" width="240" height="120" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+      <g stroke="#10233c" stroke-width="1.2">
+        <line x1="90" y1="166" x2="90" y2="200"/><line x1="330" y1="166" x2="330" y2="200"/><line x1="90" y1="190" x2="330" y2="190"/>
+        <line x1="84" y1="40" x2="52" y2="40"/><line x1="84" y1="160" x2="52" y2="160"/><line x1="62" y1="40" x2="62" y2="160"/>
+      </g>
+      <polygon points="90,190 104,185 104,195" fill="#10233c"/><polygon points="330,190 316,185 316,195" fill="#10233c"/>
+      <polygon points="62,40 57,54 67,54" fill="#10233c"/><polygon points="62,160 57,146 67,146" fill="#10233c"/>
+      <g fill="#10233c" font-size="16" font-weight="bold" font-family="Segoe UI, sans-serif">
+        <text x="210" y="184" text-anchor="middle">1800</text>
+        <text x="50" y="106" text-anchor="end">900</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section>
+  <h2>La chaîne de cotes</h2>
+  <p>Les cotes se rangent en <strong>chaînes</strong> : les cotes
+  <strong>partielles</strong> près de l'objet, la cote <strong>totale</strong>
+  plus loin.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 640 260" width="640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un mur percé d'une baie avec sa chaîne de cotes : trois cotes partielles 900, 1200, 1500 sur une première ligne, et la cote totale 3600 sur une seconde ligne plus bas.">
+      <rect x="70" y="50" width="90" height="36" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+      <rect x="280" y="50" width="290" height="36" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+      <g stroke="#1b3a63" stroke-width="1.6">
+        <line x1="160" y1="61" x2="280" y2="61"/><line x1="160" y1="74" x2="280" y2="74"/>
+      </g>
+      <g stroke="#10233c" stroke-width="1.1">
+        <line x1="70" y1="92" x2="70" y2="215"/>
+        <line x1="160" y1="92" x2="160" y2="165"/>
+        <line x1="280" y1="92" x2="280" y2="165"/>
+        <line x1="570" y1="92" x2="570" y2="215"/>
+        <line x1="70" y1="150" x2="570" y2="150"/>
+        <line x1="70" y1="200" x2="570" y2="200"/>
+      </g>
+      <g fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif" text-anchor="middle">
+        <text x="115" y="142">900</text>
+        <text x="220" y="142">1200</text>
+        <text x="425" y="142">1500</text>
+        <text x="320" y="192">3600</text>
+      </g>
+      <g fill="#637285" font-size="12" font-family="Segoe UI, sans-serif">
+        <text x="590" y="154">cotes partielles</text>
+        <text x="590" y="204">cote totale</text>
+      </g>
+      <text x="220" y="45" text-anchor="middle" fill="#637285" font-size="12" font-family="Segoe UI, sans-serif">la baie (fenêtre)</text>
+    </svg>
+  </div>
+  <p class="cle"><strong>Le contrôle du pro :</strong> la somme des partielles doit
+  égaler la totale. 900 + 1200 + 1500 = 3600 ✔. Si ça ne tombe pas juste,
+  une cote est fausse ou il en manque une — on signale, on ne devine pas.</p>
+</section>
+
+<section>
+  <h2>Les cotes d'une baie</h2>
+  <p>Une <strong>baie</strong> (fenêtre, porte) se définit par :</p>
+  <ul>
+    <li>sa <strong>largeur × sa hauteur</strong> — souvent notées ensemble
+    (ex. : 1200 × 1150, en mm comme toutes les cotes ; la largeur d'abord, la hauteur ensuite) ;</li>
+    <li>sa <strong>hauteur d'allège</strong> : du sol fini au bas de la fenêtre ;</li>
+    <li>sa position : la cote qui la situe depuis un mur.</li>
+  </ul>
+  <div class="svgbox">
+    <svg viewBox="0 0 420 260" width="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Une fenêtre en élévation avec trois cotes : largeur 1200 en haut, hauteur 1150 à droite, et allège 900 entre le sol et le bas de la fenêtre.">
+      <line x1="30" y1="230" x2="390" y2="230" stroke="#10233c" stroke-width="4"/>
+      <rect x="130" y="60" width="160" height="110" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <line x1="210" y1="60" x2="210" y2="170" stroke="#1b3a63" stroke-width="1.5"/>
+      <g stroke="#10233c" stroke-width="1">
+        <line x1="130" y1="52" x2="130" y2="30"/><line x1="290" y1="52" x2="290" y2="30"/><line x1="130" y1="36" x2="290" y2="36"/>
+        <line x1="298" y1="60" x2="330" y2="60"/><line x1="298" y1="170" x2="330" y2="170"/><line x1="324" y1="60" x2="324" y2="170"/>
+        <line x1="122" y1="170" x2="90" y2="170"/><line x1="96" y1="170" x2="96" y2="230"/><line x1="30" y1="230" x2="90" y2="230"/>
+      </g>
+      <g fill="#10233c" font-size="14" font-weight="bold" font-family="Segoe UI, sans-serif">
+        <text x="210" y="28" text-anchor="middle">1200</text>
+        <text x="338" y="120">1150</text>
+        <text x="82" y="205" text-anchor="end">900</text>
+      </g>
+      <g fill="#637285" font-size="11.5" font-family="Segoe UI, sans-serif">
+        <text x="210" y="252" text-anchor="middle">sol fini</text>
+        <text x="60" y="188">allège</text>
+      </g>
+    </svg>
+  </div>
+  <p class="cle">Le dessin ci-dessus n'est pas à l'échelle : seules les cotes font foi.</p>
+  <p class="cle">L'allège intéresse tout le monde : le plaquiste y arrête son
+  doublage, le menuisier y pose sa fenêtre.</p>
+</section>
+
+<section>
+  <h2>Cotes impératives et ordre de lecture</h2>
+  <p>Une cote <strong>encadrée</strong> (dans un rectangle) est
+  <strong>impérative</strong> : elle ne se recalcule pas, elle ne s'ajuste pas —
+  elle s'exécute exactement.</p>
+  <p>Ordre de lecture des dimensions :</p>
+  <ul>
+    <li>1. la <strong>cote écrite</strong> — elle prime toujours (gare 6) ;</li>
+    <li>2. la <strong>chaîne</strong> — pour retrouver une dimension manquante par différence ;</li>
+    <li>3. la mesure à l'échelle — en dernier recours, et on le signale.</li>
+  </ul>
+  <p class="cle">Retrouver par différence : si la totale fait 3600 et deux partielles
+  900 et 1200, la troisième vaut 3600 − 900 − 1200 = 1500. C'est un CALCUL,
+  pas une mesure : il est fiable.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas. Les deux dernières questions
+  regardent vers votre métier.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare 7</h2>
+  <p>Vous savez lire une cote, vérifier une chaîne et retrouver une dimension
+  manquante par différence.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>📄 Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant : corrigé dans <a href="corrige.pdf">corrige.pdf</a>.
+  L'exercice fait coter un rectangle dans les règles, compléter deux chaînes et
+  lire les cotes d'une fenêtre (largeur, hauteur, allège).</p>
+  <p>Prochaine gare : <strong>le croquis coté</strong> — dessiner à main levée.</p>
+<div class="froid">
+  <h3>❄️ Sert aussi en froid et climatisation</h3>
+  <ul>
+    <li><strong>CAP IFCA</strong> — S2.2 « Lecture de plan »</li>
+    <li><strong>Bac Pro MFER</strong> (référentiel 2028) — S3.2.1 « Les outils, normes et leur représentation »</li>
+  </ul>
+</div>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Sur un plan de bâtiment, la valeur 2400 sans unité signifie :",
+  "r": [
+   "2400 cm, c'est-à-dire 24 mètres",
+   "2400 m",
+   "2400 mm, soit 2,40 m",
+   "2,4 km"
+  ],
+  "bon": 2,
+  "x": "Millimètre sauf mention contraire (à vérifier dans le cartouche)."
+ },
+ {
+  "e": "Les deux traits verticaux qui encadrent une cote s'appellent :",
+  "r": [
+   "les lignes d'attache",
+   "les flèches",
+   "les axes",
+   "les rappels d'échelle"
+  ],
+  "bon": 0,
+  "x": "Elles « attachent » la cote à l'objet ; la ligne horizontale est la ligne de cote."
+ },
+ {
+  "e": "Dans une chaîne, la cote TOTALE se place :",
+  "r": [
+   "au milieu des partielles",
+   "plus loin de l'objet que les partielles",
+   "dans le cartouche",
+   "au verso"
+  ],
+  "bon": 1,
+  "x": "Près de l'objet les partielles, plus loin la totale : l'œil remonte du détail à l'ensemble."
+ },
+ {
+  "e": "Chaîne : 800 + 1400 + x = totale 3400. x vaut :",
+  "r": [
+   "1000",
+   "1200",
+   "1400",
+   "2200"
+  ],
+  "bon": 1,
+  "x": "3400 − 800 − 1400 = 1200. Un calcul, pas une mesure : fiable."
+ },
+ {
+  "e": "La somme des partielles ne tombe pas sur la totale. Vous :",
+  "r": [
+   "ajustez la dernière partielle pour que ça tombe juste",
+   "prenez la totale et tant pis",
+   "signalez l'incohérence avant d'exécuter",
+   "choisissez la plus belle valeur"
+  ],
+  "bon": 2,
+  "x": "Une chaîne fausse = un plan à corriger : on ne devine jamais."
+ },
+ {
+  "e": "La hauteur d'allège d'une fenêtre, c'est :",
+  "r": [
+   "sa hauteur totale",
+   "la distance du sol fini au bas de la fenêtre",
+   "la largeur de l'appui de la fenêtre",
+   "l'épaisseur du vitrage"
+  ],
+  "bon": 1,
+  "x": "Du sol fini au bas de la baie : la cote où s'arrête le doublage."
+ },
+ {
+  "e": "Une cote encadrée d'un rectangle est :",
+  "r": [
+   "approximative",
+   "impérative",
+   "annulée",
+   "à recalculer depuis la chaîne de cotes"
+  ],
+  "bon": 1,
+  "x": "L'encadrement dit : celle-là, on ne discute pas."
+ },
+ {
+  "e": "Sur un plan coté en mm, une fenêtre notée « 1200 × 1150 » mesure :",
+  "r": [
+   "1200 mm de large sur 1150 mm de haut",
+   "1150 mm de large sur 1200 mm de haut",
+   "1200 cm de large sur 1150 cm de haut",
+   "1,2 mm de large sur 1,15 mm de haut"
+  ],
+  "bon": 0,
+  "x": "Largeur d'abord, hauteur ensuite. Sans mention contraire, les cotes sont en millimètres."
+ },
+ {
+  "spec": "Spécialité MPI",
+  "e": "La chaîne d'une cloison donne 900 + 1200 + 1500 = 3600, mais l'huisserie livrée exige 930. Vous :",
+  "r": [
+   "forcez l'huisserie dans les 900",
+   "recoupez la cloison voisine de 30",
+   "faites remonter l'écart avant de monter quoi que ce soit",
+   "commandez vous-même une autre huisserie aux bonnes cotes"
+  ],
+  "bon": 2,
+  "x": "Un écart cote/matériel se signale AVANT le montage — jamais de bricolage silencieux."
+ },
+ {
+  "spec": "Spécialité ETAM",
+  "e": "Sur un plan de toiture, la cote 400 entre l'acrotère et la naissance EP est encadrée. Cela veut dire :",
+  "r": [
+   "environ 40 cm, à ajuster librement au chantier",
+   "exactement 400 mm",
+   "400 cm",
+   "que la cote est périmée"
+  ],
+  "bon": 1,
+  "x": "Encadrée = impérative : la naissance se place exactement là (l'eau doit y arriver)."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

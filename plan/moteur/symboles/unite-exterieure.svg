@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-38.0 -48.0 68.0 78.0" width="68" height="78">
+<!-- ud-ext-split3 — converti de ud-ext-split3.elmt par outils\elmt-vers-svg.py -->
+<rect x="-38.0" y="-48.0" width="68.0" height="78.0" fill="#ffffff"/>
+<rect x="13.29" y="-24.83" width="1.19" height="1" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="13.29" y="-9.82" width="1.19" height="1" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-14.97" cy="-23.18" rx="6.03" ry="4.87" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="14.47" y="-25.81" width="2.38" height="2.92" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="14.47" y="-10.79" width="2.38" height="2.92" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-14.97" cy="1.17" rx="6.03" ry="4.87" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="13.29" y="-3.52" width="1.19" height="1" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-14.95" cy="-23.18" rx="8.22" ry="6.82" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="13.29" y="-18.53" width="1.19" height="1" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="14.47" y="-19.5" width="2.38" height="2.92" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="14.47" y="-4.49" width="2.38" height="2.92" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-14.95" cy="1.17" rx="8.22" ry="6.82" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="7.07" y="13.05" width="4.75" height="1.95" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-14.40" cy="-23.18" rx="13.15" ry="10.71" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-14.28" y1="-33.89" x2="-14.28" y2="-13.44" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="13.29" y="5.19" width="1.19" height="1" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-14.40" cy="1.16" rx="13.15" ry="10.71" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-27.55" y1="-23.18" x2="-1.25" y2="-23.18" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-31" y="-37.79" width="44" height="50.63" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-14.40" cy="-23.18" rx="10.96" ry="8.77" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="-14.40" cy="-23.18" rx="3.29" ry="2.92" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="14.47" y="4.22" width="2.38" height="2.92" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="1.13" y1="-35" x2="1.13" y2="11.88" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="3.78" y="-32.93" width="5.94" height="1.95" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-25" y="13.05" width="4.75" height="1.95" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="13.29" y="11.49" width="1.19" height="1" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="14.47" y="10.52" width="2.38" height="2.92" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-31" y1="-34.86" x2="11.82" y2="-34.86" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-14.28" y1="-9.55" x2="-14.28" y2="10.9" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-27.55" y1="1.16" x2="-1.25" y2="1.16" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="-14.40" cy="1.17" rx="10.96" ry="8.77" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="-14.40" cy="1.16" rx="3.29" ry="2.92" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="2.56,-27.38 5.61,-30.17 5.61,-27.38 8.65,-30.17" stroke="black" stroke-width="1" fill="none"/>
+</svg>

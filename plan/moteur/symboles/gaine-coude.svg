@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-33.0 -24.0 48.0 48.0" width="48" height="48">
+<!-- condu-codo — converti de condu-codo.elmt par outils\elmt-vers-svg.py -->
+<rect x="-33.0" y="-24.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="-15.82" cy="-10.30" rx="2.93" ry="5.85" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.92" cy="4.26" rx="6.07" ry="2.73" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 7.00,1.00 A 17.91,17.00 0 0 0 -10.91,-16.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="6.86" y1="1.8" x2="6.86" y2="3.88" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-15.61" y1="-4.48" x2="-11.43" y2="-4.48" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -5.15,0.76 A 6.80,5.20 0 0 0 -11.95,-4.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -11.95,-4.43 A 3.66,5.72 0 0 0 -11.95,-15.87" stroke="black" stroke-width="0.4" fill="none"/>
+<path d="M 7.40,1.28 A 6.28,2.60 0 0 0 -5.15,1.28" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-15.61" y1="-16.41" x2="-11.43" y2="-16.41" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5.15" y1="1.8" x2="-5.15" y2="3.88" stroke="black" stroke-width="1" fill="none"/>
+</svg>

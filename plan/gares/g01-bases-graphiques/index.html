@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Gare 1 — Bases graphiques : tracer et présenter</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La carte du réseau</a> · tronc commun · 1re année</p>
+    <h1>Gare 1 — Bases graphiques : tracer et présenter</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>La première gare du réseau : avant de LIRE des plans, on apprend les gestes
+  de celui qui les dessine. Environ <strong>2 heures</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li>tracer <strong>propre</strong> : traits nets, angles fermés, sans repasser ;</li>
+    <li>tracer des <strong>parallèles</strong> et des <strong>perpendiculaires</strong> à la règle et à l'équerre ;</li>
+    <li><strong>diviser</strong> un segment et trouver un centre sans calculer ;</li>
+    <li><strong>présenter</strong> une feuille : cadre, cartouche, écriture lisible.</li>
+  </ul>
+  <p class="cle">Matériel : crayon HB taillé, règle 30 cm, équerre, gomme, feuille A4.</p>
+</section>
+
+<section>
+  <h2>Le matériel, et comment on le tient</h2>
+  <table class="doc">
+    <tr><th>Outil</th><th>À quoi il sert</th><th>Le bon geste</th></tr>
+    <tr><td><strong>Crayon HB</strong></td><td>tous les tracés</td><td>taillé fin, tenu près de la mine, incliné dans le sens du tracé</td></tr>
+    <tr><td><strong>Règle 30 cm</strong></td><td>tracer droit, mesurer</td><td>bien à plat, doigts écartés au milieu, on tire le trait d'un seul geste</td></tr>
+    <tr><td><strong>Équerre</strong></td><td>angles droits</td><td>un côté appuyé contre la règle qui ne bouge pas</td></tr>
+    <tr><td><strong>Gomme</strong></td><td>corriger</td><td>blanche et propre — une feuille grise n'est plus lisible</td></tr>
+  </table>
+  <p class="cle">Un dessinateur ne repasse pas ses traits : un trait hésité,
+  on le gomme et on le retrace d'un seul geste.</p>
+</section>
+
+<section>
+  <h2>Un trait propre, ça se reconnaît</h2>
+  <div class="svgbox">
+    <svg viewBox="0 0 640 240" width="640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison : à gauche un rectangle aux traits nets et angles fermés, à droite un rectangle aux traits doublés, angles ouverts et bavures.">
+      <g>
+        <rect x="60" y="50" width="200" height="120" fill="none" stroke="#1b3a63" stroke-width="2.5"/>
+        <text x="160" y="200" text-anchor="middle" fill="#1e7e54" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">✔ net, fin, fermé</text>
+      </g>
+      <g stroke="#1b3a63" stroke-width="2" fill="none">
+        <path d="M 380 52 L 578 49"/>
+        <path d="M 382 56 L 576 54"/>
+        <path d="M 578 49 L 582 168"/>
+        <path d="M 384 62 L 380 175"/>
+        <path d="M 372 170 L 560 172"/>
+      </g>
+      <text x="480" y="200" text-anchor="middle" fill="#c0392b" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">✘ doublé, ouvert, baveux</text>
+    </svg>
+  </div>
+  <p>Les trois défauts à traquer :</p>
+  <ul>
+    <li><strong>le trait doublé</strong> — on a repassé au lieu de gommer ;</li>
+    <li><strong>l'angle ouvert</strong> — les traits ne se touchent pas (ou se croisent trop) ;</li>
+    <li><strong>la bavure</strong> — main posée sur un tracé frais, gomme sale.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Parallèles et perpendiculaires : le duo règle + équerre</h2>
+  <p><strong>Perpendiculaire :</strong> la règle reste appuyée, l'équerre glisse
+  contre elle, son côté droit donne l'angle droit.</p>
+  <p><strong>Parallèles :</strong> même position ; entre chaque trait, l'équerre
+  glisse le long de la règle qui ne bouge JAMAIS.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 620 230" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Une règle horizontale fixe, une équerre appuyée dessus qui glisse, et trois traits parallèles verticaux tracés contre l'équerre.">
+      <rect x="40" y="170" width="540" height="26" fill="#e8eef6" stroke="#1b3a63" stroke-width="2"/>
+      <text x="310" y="188" text-anchor="middle" fill="#637285" font-size="12" font-family="Segoe UI, sans-serif">la règle NE BOUGE PAS</text>
+      <polygon points="120,170 250,170 120,50" fill="#fffdf8" stroke="#3d7fca" stroke-width="2.5"/>
+      <g stroke="#1b3a63" stroke-width="2.5">
+        <line x1="120" y1="165" x2="120" y2="55"/>
+        <line x1="320" y1="165" x2="320" y2="55"/>
+        <line x1="440" y1="165" x2="440" y2="55"/>
+      </g>
+      <g fill="#c9451a" font-size="13" font-family="Segoe UI, sans-serif">
+        <text x="270" y="40">l'équerre glisse →</text>
+      </g>
+    </svg>
+    <figcaption>Trois verticales parfaitement parallèles, sans mesurer un seul angle.</figcaption>
+  </div>
+  <p class="cle">Sur le chantier, le même principe revient : une référence qui ne
+  bouge pas, et tout se construit contre elle.</p>
+</section>
+
+<section>
+  <h2>Diviser sans calculer</h2>
+  <p><strong>Trouver le milieu d'un segment :</strong> on mesure, on divise par 2 —
+  ou plus malin : on plie mentalement en croisant deux arcs au compas
+  (méthode vue en géométrie).</p>
+  <p><strong>Trouver le centre d'un rectangle :</strong> on trace les deux
+  <strong>diagonales</strong> — elles se croisent au centre exact. Aucun calcul.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 320 200" width="320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un rectangle avec ses deux diagonales tracées en trait fin : leur croisement marque le centre.">
+      <rect x="30" y="30" width="260" height="140" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <g stroke="#3d7fca" stroke-width="1.5" stroke-dasharray="6 4">
+        <line x1="30" y1="30" x2="290" y2="170"/>
+        <line x1="290" y1="30" x2="30" y2="170"/>
+      </g>
+      <circle cx="160" cy="100" r="5" fill="#c9451a"/>
+      <text x="172" y="96" fill="#c9451a" font-size="13" font-family="Segoe UI, sans-serif">le centre</text>
+    </svg>
+  </div>
+  <p class="cle">Ce geste sert tout le temps au plaquiste (centrer un plafond) comme
+  à l'étancheur (centrer une évacuation).</p>
+</section>
+
+<section>
+  <h2>Présenter sa feuille</h2>
+  <p>Une feuille de dessin se prépare AVANT de dessiner :</p>
+  <ul>
+    <li>un <strong>cadre</strong> à 10 mm du bord ;</li>
+    <li>un <strong>cartouche</strong> en bas à droite : NOM, date, titre du dessin, échelle ;</li>
+    <li>une <strong>écriture lisible</strong>, en majuscules d'imprimerie pour les titres ;</li>
+    <li>le dessin <strong>centré</strong> dans la feuille, pas tassé dans un coin.</li>
+  </ul>
+  <p class="cle">Un croquis sale ou raturé se relit mal : celui qui le lit au bureau peut se tromper sur une cote.
+  Écrire net dès le départ, ce n'est pas du luxe, c'est ce qui évite l'erreur.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 420 300" width="380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Une feuille A4 avec son cadre à 10 millimètres du bord et un cartouche en bas à droite portant nom, date, titre et échelle.">
+      <rect x="10" y="10" width="400" height="280" fill="#fffdf8" stroke="#637285" stroke-width="1.5"/>
+      <rect x="26" y="26" width="368" height="248" fill="none" stroke="#1b3a63" stroke-width="2"/>
+      <rect x="214" y="224" width="180" height="50" fill="none" stroke="#1b3a63" stroke-width="2"/>
+      <line x1="214" y1="249" x2="394" y2="249" stroke="#1b3a63" stroke-width="1.2"/>
+      <line x1="304" y1="224" x2="304" y2="274" stroke="#1b3a63" stroke-width="1.2"/>
+      <g fill="#637285" font-size="10.5" font-family="Segoe UI, sans-serif">
+        <text x="220" y="240">NOM Prénom</text>
+        <text x="310" y="240">Date</text>
+        <text x="220" y="265">Titre du dessin</text>
+        <text x="310" y="265">Échelle</text>
+      </g>
+      <text x="120" y="150" fill="#b9c2ce" font-size="13" font-family="Segoe UI, sans-serif">zone de dessin</text>
+    </svg>
+    <figcaption>Le cartouche, en bas à droite : on le retrouvera sur TOUS les vrais plans (gare 3).</figcaption>
+  </div>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas. Les deux dernières questions
+  regardent vers votre métier.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare 1</h2>
+  <p>Vous savez tracer propre, mener des parallèles, trouver un centre et présenter
+  une feuille avec son cartouche.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>📄 Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant : corrigé dans <a href="corrige.pdf">corrige.pdf</a>.
+  L'exercice fait tracer un cadre + cartouche, des parallèles à l'équerre et le
+  centre d'un rectangle par les diagonales.</p>
+  <p>Prochaine gare : <strong>les vues</strong> — le dé à 6 faces.</p>
+<div class="froid">
+  <h3>❄️ Sert aussi en froid et climatisation</h3>
+  <ul>
+    <li><strong>CAP IFCA</strong> — S2.1 « Outils, normes et représentation »</li>
+    <li><strong>Bac Pro MFER</strong> (référentiel 2028) — S3.2.1 « Les outils, normes et leur représentation »</li>
+    <li><strong>2nde TNE</strong> — CC33 « Représenter tout ou partie d’une installation, manuellement ou avec un outil numérique »</li>
+  </ul>
+</div>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Un trait hésité ou tremblé, on :",
+  "r": [
+   "le repasse plusieurs fois pour bien l'affirmer",
+   "le gomme et on le retrace d'un seul geste",
+   "le laisse tel quel",
+   "l'entoure au crayon rouge pour prévenir le correcteur"
+  ],
+  "bon": 1,
+  "x": "Repasser fait un trait doublé : on gomme, on retrace d'un geste."
+ },
+ {
+  "e": "Pour tracer plusieurs parallèles, qu'est-ce qui ne doit JAMAIS bouger ?",
+  "r": [
+   "l'équerre",
+   "le crayon",
+   "la règle",
+   "la feuille et la main en même temps"
+  ],
+  "bon": 2,
+  "x": "La règle est la référence fixe ; l'équerre glisse contre elle."
+ },
+ {
+  "e": "Le centre exact d'un rectangle se trouve :",
+  "r": [
+   "en traçant une seule diagonale",
+   "au croisement des deux diagonales",
+   "à l'œil, avec de l'habitude",
+   "avec un compas seulement"
+  ],
+  "bon": 1,
+  "x": "Les diagonales se croisent au centre : zéro calcul, zéro erreur."
+ },
+ {
+  "e": "Le cartouche d'une feuille de dessin se place :",
+  "r": [
+   "en haut à gauche",
+   "au dos de la feuille",
+   "au centre",
+   "en bas à droite"
+  ],
+  "bon": 3,
+  "x": "En bas à droite — comme sur tous les plans professionnels."
+ },
+ {
+  "e": "Que met-on dans le cartouche ?",
+  "r": [
+   "nom, date, titre, échelle",
+   "la liste du matériel de dessin utilisé",
+   "le prix du dessin",
+   "un résumé du cours"
+  ],
+  "bon": 0,
+  "x": "Les quatre informations qui identifient le dessin."
+ },
+ {
+  "e": "Un angle « ouvert », c'est :",
+  "r": [
+   "un angle de plus de 90°",
+   "deux traits qui ne se rejoignent pas",
+   "un angle sans cote",
+   "un angle tracé au compas plutôt qu'à l'équerre"
+  ],
+  "bon": 1,
+  "x": "Les traits doivent se toucher exactement au sommet, ni trop courts ni croisés."
+ },
+ {
+  "e": "Le crayon conseillé pour débuter le dessin technique :",
+  "r": [
+   "HB",
+   "4B, bien gras",
+   "un feutre fin",
+   "un stylo à bille"
+  ],
+  "bon": 0,
+  "x": "Le HB est assez sec pour rester net et se gommer proprement."
+ },
+ {
+  "e": "Avant de commencer un dessin, on trace :",
+  "r": [
+   "directement l'objet",
+   "le cadre et le cartouche",
+   "uniquement un brouillon",
+   "les cotes"
+  ],
+  "bon": 1,
+  "x": "La feuille se prépare d'abord : cadre à 10 mm, cartouche en bas à droite."
+ },
+ {
+  "spec": "Spécialité MPI",
+  "e": "Le plaquiste doit centrer une trappe dans un plafond rectangulaire. Le plus fiable :",
+  "r": [
+   "mesurer à l'œil depuis un coin",
+   "tracer les deux diagonales du plafond",
+   "commencer par visser la trappe puis vérifier",
+   "demander au peintre"
+  ],
+  "bon": 1,
+  "x": "Le croisement des diagonales donne le centre exact — même geste que sur la feuille."
+ },
+ {
+  "spec": "Spécialité ETAM",
+  "e": "L'étancheur note un relevé de toiture sur un croquis sale et raturé. Le risque :",
+  "r": [
+   "aucun, il se comprendra",
+   "le bureau se trompe en le relisant",
+   "le croquis sera refusé pour l'esthétique",
+   "il devra le recopier au propre le jour de l'évaluation"
+  ],
+  "bon": 1,
+  "x": "Un tracé propre n'est pas du luxe : un tiers doit pouvoir l'exploiter sans erreur."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

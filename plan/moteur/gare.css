@@ -1,0 +1,89 @@
+/* inerWeb Plan — habillage commun des gares (charte inerWeb, jamais de thème sombre) */
+:root{
+  --cream:#f7f1e7; --paper:#fffdf8; --ink:#10233c; --muted:#637285;
+  --navy:#1b3a63; --blue:#3d7fca; --ok:#1e7e54; --ok-f:#e3f5ec;
+  --ko:#c0392b; --ko-f:#fbe7e4; --logo-orange:#e8914a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+  font-family:"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;font-size:17px}
+.page{max-width:900px;margin:0 auto;padding:18px 14px 90px}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:8px}
+.fil{color:var(--muted);font-size:.85em;margin:0 0 4px}
+.fil a{color:var(--navy)}
+section{display:none;background:var(--paper);border:1px solid rgba(27,58,99,.16);
+  border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(27,58,99,.08)}
+section.on{display:block}
+h1{color:var(--navy);font-size:1.35em;margin:0}
+h2{color:var(--navy);font-size:1.25em;margin:0 0 12px}
+.cle{background:#eef4fb;border-left:4px solid var(--blue);border-radius:8px;padding:10px 16px;margin:14px 0}
+.svgbox{text-align:center;margin:14px 0}
+.svgbox svg{max-width:100%;height:auto}
+figcaption{color:var(--muted);font-size:.85em;text-align:center}
+table.doc{border-collapse:collapse;margin:10px auto;font-size:.92em}
+table.doc th{color:var(--navy);border-bottom:2px solid var(--navy);padding:6px 10px;text-align:left}
+table.doc td{border-bottom:1px solid rgba(27,58,99,.25);padding:6px 10px;vertical-align:top}
+.boutons-vues{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0}
+.boutons-vues button{font:inherit;font-size:.9em;padding:7px 14px;border-radius:9px;
+  border:2px solid var(--blue);background:var(--paper);color:var(--navy);cursor:pointer}
+.boutons-vues button.actif{background:var(--blue);color:#fff}
+nav.pied{position:fixed;left:0;right:0;bottom:0;background:var(--paper);
+  border-top:1px solid rgba(27,58,99,.2);padding:10px 14px;display:flex;
+  align-items:center;justify-content:space-between;gap:10px}
+nav.pied .prog{color:var(--muted);font-size:.85em}
+nav.pied button{font:inherit;padding:9px 20px;border-radius:10px;border:2px solid var(--navy);
+  background:var(--navy);color:#fff;cursor:pointer}
+nav.pied button[disabled]{opacity:.35;cursor:default}
+nav.pied button.sec{background:var(--paper);color:var(--navy)}
+.q{margin:16px 0;padding:14px 16px;border:1px solid rgba(27,58,99,.18);border-radius:10px}
+.q p.enonce{font-weight:bold;margin:0 0 8px}
+.q .rep{display:block;width:100%;text-align:left;font:inherit;margin:5px 0;padding:8px 12px;
+  border-radius:8px;border:1.5px solid rgba(27,58,99,.3);background:var(--paper);cursor:pointer;color:var(--ink)}
+.q .rep.ok{background:var(--ok-f);border-color:var(--ok);color:var(--ok);font-weight:bold}
+.q .rep.ko{background:var(--ko-f);border-color:var(--ko);color:var(--ko)}
+.q .explic{display:none;margin:8px 0 0;font-size:.9em;color:var(--muted)}
+.q.fini .explic{display:block}
+.spec{border-left:4px solid var(--logo-orange);padding-left:12px;margin-top:22px}
+.spec h3{color:#c9451a;font-size:1em;margin:0 0 4px}
+.score{font-size:1.2em;font-weight:bold;color:var(--navy);text-align:center;margin:16px 0}
+.tele{display:inline-block;background:var(--navy);color:#fff;padding:11px 22px;
+  border-radius:10px;text-decoration:none;font-weight:bold}
+ul{padding-left:22px}
+li{margin:5px 0}
+/* Codes des autres filières (froid, clim) — 19/10/2026 */
+.froid{background:#eaf5f4;border-left:4px solid #2b7a78;border-radius:8px;padding:10px 16px;margin:18px 0 8px}
+.froid h3{color:#1d5654;font-size:1em;margin:0 0 4px}
+.froid ul{margin:4px 0;padding-left:20px}
+.froid p{margin:4px 0;color:var(--muted);font-size:.9em}
+.statut{display:inline-block;background:#fff4e0;color:#8a5200;border:1px solid #e0b36a;border-radius:6px;padding:0 8px;font-size:.85em;margin-left:6px}
+img.pict{height:52px;width:auto;max-width:96px;background:#fff;border:1px solid rgba(27,58,99,.15);border-radius:6px;padding:3px;vertical-align:middle}
+.credit{color:var(--muted);font-size:.8em;margin:6px 0 0}
+table.legende{border-collapse:collapse;margin:10px auto}
+table.legende th{color:var(--navy);border-bottom:2px solid var(--navy);padding:6px 10px;text-align:left}
+table.legende td{border-bottom:1px solid rgba(27,58,99,.25);padding:6px 10px;vertical-align:middle}
+p.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px}
+table.train{border-collapse:collapse;margin:10px auto}
+table.train td{padding:4px 6px;text-align:center;vertical-align:middle;font-size:.85em}
+table.train td.fl{font-size:1.4em;color:var(--navy)}
+table.train img.pict{height:46px}
+@media (max-width:600px){
+  table.empile,table.empile tbody,table.empile tr,table.empile td{display:block;width:auto}
+  table.empile tr:first-child{display:none}
+  table.empile tr{border:1px solid rgba(27,58,99,.2);border-radius:8px;margin:8px 0;padding:6px 10px}
+  table.empile td{border:none;padding:3px 0;text-align:left}
+  table.empile td[data-l]::before{content:attr(data-l) " : ";font-weight:bold;color:var(--navy)}
+}
+@media (max-width:600px){
+  table.train,table.train tbody,table.train tr{display:flex;flex-wrap:wrap;justify-content:center}
+  table.train td{display:block}
+}
+/* marque.js : la barre de navigation reste au-dessus de la mention de droits, qui garde de la place en fin de page */
+nav.pied{z-index:50}
+#marque-inerweb.marque-document{margin-bottom:76px}
+.astuce-zoom{display:none;font-size:.85em;color:var(--muted);text-align:center;margin:4px 0}
+@media (max-width:700px){
+  .astuce-zoom{display:block}
+  svg.agrandissable{cursor:zoom-in}
+}
+#zoom-fig{position:fixed;inset:0;z-index:200;background:#fffdf8;overflow:auto;padding:52px 8px 24px}
+#zoom-fig button{position:fixed;top:8px;right:8px;z-index:201;padding:8px 14px;border:2px solid var(--navy);border-radius:8px;background:#fff;color:var(--navy);font:inherit;font-weight:bold}

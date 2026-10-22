@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Gare 11 — Suivre une installation dans la maquette 3D</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La carte du réseau</a> · tronc commun · après la gare 10 · pour le froid et la clim <span class="statut">en cours de relecture</span></p>
+    <h1>Gare 11 — Suivre une installation dans la maquette 3D</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>À la gare 9, vous avez appris à lire une maquette : tourner, cacher, cliquer, couper. Ici, vous cherchez
+  <strong>une installation de chauffage, de ventilation ou de froid</strong> dans la maquette.
+  Cette gare se vit <strong>sur poste informatique</strong> (environ 2 h), avec BIM Vision et la maquette fournie par l'enseignant.
+  À la fin, vous saurez :</p>
+  <ul>
+    <li><strong>repérer les équipements</strong> (unité, ventilo-convecteur, caisson, bouche) dans l'arbre des objets et dans la vue 3D ;</li>
+    <li><strong>suivre un réseau</strong> d'un bout à l'autre : tubes du fluide frigorigène, eau glacée, gaines d'air ;</li>
+    <li><strong>lire les propriétés</strong> d'un élément : son nom, son niveau, ses dimensions ;</li>
+    <li>faire une <strong>vue en coupe</strong> pour voir ce qui est caché dans un plafond ou un plancher.</li>
+  </ul>
+  <p class="cle">Prérequis : les gares 9 et 10 (naviguer, cacher, cliquer, couper ; lire un sujet). Cette gare est pensée pour le froid et la
+  climatisation. Si ce n'est pas votre cas, passez à la suite de la carte.</p>
+</section>
+
+<section>
+  <h2>Une installation, trois familles d'éléments</h2>
+  <p>Dans une maquette, tout est un élément avec sa fiche. Une installation de CVC (chauffage, ventilation, climatisation) en
+  contient de trois familles :</p>
+  <table class="doc empile">
+    <tr><th>Famille</th><th>Ce que c'est</th><th>Exemples</th></tr>
+    <tr><td><strong>Les équipements</strong></td><td data-l="Ce que c&#x27;est">les machines : elles produisent, traitent ou diffusent</td>
+      <td data-l="Exemples">
+        <img class="pict" src="../../moteur/symboles/unite-exterieure.svg" alt="Unité extérieure d'un climatiseur.">
+        <img class="pict" src="../../moteur/symboles/groupe-eau-glacee.svg" alt="Groupe d'eau glacée.">
+        <img class="pict" src="../../moteur/symboles/ventilo-convecteur-cassette.svg" alt="Ventilo-convecteur cassette.">
+        <img class="pict" src="../../moteur/symboles/cta-double-flux.svg" alt="Centrale de traitement d'air double flux.">
+      </td></tr>
+    <tr><td><strong>Les réseaux</strong></td><td data-l="Ce que c&#x27;est">les chemins qui relient les équipements : des <strong>tronçons</strong> de tube ou de gaine, bout à bout</td>
+      <td data-l="Exemples">
+        <img class="pict" src="../../moteur/symboles/tube-isole.svg" alt="Tube isolé.">
+        <img class="pict" src="../../moteur/symboles/gaine-droite.svg" alt="Tronçon droit de gaine.">
+        <img class="pict" src="../../moteur/symboles/gaine-coude.svg" alt="Coude de gaine.">
+        <img class="pict" src="../../moteur/symboles/gaine-te.svg" alt="Té de gaine.">
+      </td></tr>
+    <tr><td><strong>Les bouches</strong></td><td data-l="Ce que c&#x27;est">là où l'air entre dans la pièce ou en sort</td>
+      <td data-l="Exemples">
+        <img class="pict" src="../../moteur/symboles/diffuseur.svg" alt="Diffuseur d'air.">
+        <img class="pict" src="../../moteur/symboles/bouche-reprise.svg" alt="Bouche de reprise.">
+      </td></tr>
+  </table>
+  <p class="cle">Un <strong>tronçon</strong>, c'est un morceau de tube ou de gaine entre deux raccords. Un <strong>réseau</strong>, c'est
+  l'ensemble des tronçons qui relie des équipements.</p>
+  <p class="credit">Pictogrammes : collection QElectroTech (CC BY 3.0), adaptés par inerWeb — F. Henninot.</p>
+</section>
+
+<section>
+  <h2>Repérer un équipement</h2>
+  <p>Dans la maquette, l'arbre des objets (à gauche) range les éléments par étage et par famille. Pour trouver un équipement :</p>
+  <ol>
+    <li>ouvrez l'<strong>étage</strong> dans l'arbre, puis la famille qui ressemble à ce que vous cherchez (équipements, appareils, terminaux…) ;
+    les noms dépendent de la maquette ;</li>
+    <li>cliquez sur le <strong>nom</strong> : l'élément se colore dans la vue 3D ;</li>
+    <li>pour le voir <strong>seul</strong> : ruban <em>Objet</em>, puis <em>Masquer</em> dans « <em>Non sélectionnés</em> » ;</li>
+    <li>lisez son <strong>nom</strong> et son <strong>niveau</strong>, et notez-les.</li>
+  </ol>
+  <p class="cle"><strong>Exemple résolu</strong> (didacticiel BIM Vision, maquette « Garage indépendant »). On cherche les fondations :
+  arbre <em>Projet, Site, Bâtiment, Étage (Plan de soubassement), Murs</em> ; les fondations apparaissent en vert ; ruban <em>Objet</em>,
+  <em>Masquer</em> dans « <em>Non sélectionnés</em> » : il ne reste que les fondations. Leur nom dans l'arbre :
+  « Mur de base : fond 60 cm ».</p>
+  <p>Quand vous avez trouvé l'équipement, ajoutez-le à votre carnet (exercice, partie 4).</p>
+</section>
+
+<section>
+  <h2>Les trois réseaux, et comment les reconnaître</h2>
+  <table class="doc empile">
+    <tr><th>Réseau</th><th>Il transporte</th><th>Dans la maquette, vous reconnaissez…</th><th>Il va de… à…</th></tr>
+    <tr><td><strong>Fluide frigorigène</strong></td><td data-l="Il transporte">le fluide qui fait le froid</td><td data-l="Dans la maquette, vous reconnaissez…">deux tubes ronds côte à côte : le <strong>petit</strong> porte le liquide, le <strong>gros</strong> (souvent isolé) porte le gaz</td><td data-l="Il va de… à…">l'unité extérieure vers l'unité intérieure</td></tr>
+    <tr><td><strong>Eau glacée</strong></td><td data-l="Il transporte">de l'eau froide</td><td data-l="Dans la maquette, vous reconnaissez…">deux tubes de <strong>même diamètre</strong> : l'aller et le retour</td><td data-l="Il va de… à…">le groupe d'eau glacée vers les ventilo-convecteurs</td></tr>
+    <tr><td><strong>Air</strong></td><td data-l="Il transporte">de l'air</td><td data-l="Dans la maquette, vous reconnaissez…">de <strong>grosses gaines</strong>, rondes ou rectangulaires, avec des coudes et des tés</td><td data-l="Il va de… à…">la CTA vers les bouches (soufflage), et des grilles vers la CTA (reprise)</td></tr>
+  </table>
+  <p>Chaque réseau se lit comme un train : du <strong>départ</strong> à l'<strong>arrivée</strong>, wagon après wagon.</p>
+  <table class="train">
+    <tr>
+      <td><img class="pict" src="../../moteur/symboles/cta-double-flux.svg" alt="Centrale de traitement d'air."><br>CTA</td><td class="fl">→</td>
+      <td><img class="pict" src="../../moteur/symboles/gaine-droite.svg" alt="Gaine droite."><br>gaine</td><td class="fl">→</td>
+      <td><img class="pict" src="../../moteur/symboles/gaine-coude.svg" alt="Coude de gaine."><br>coude</td><td class="fl">→</td>
+      <td><img class="pict" src="../../moteur/symboles/gaine-te.svg" alt="Té de gaine."><br>té</td><td class="fl">→</td>
+      <td><img class="pict" src="../../moteur/symboles/diffuseur.svg" alt="Diffuseur d'air."><br>bouche</td>
+    </tr>
+  </table>
+  <p class="cle">Piège : un tube isolé paraît plus gros qu'il n'est. Le <strong>diamètre</strong> se lit dans les propriétés, pas à l'œil.</p>
+</section>
+
+<section>
+  <h2>Suivre un réseau, pas à pas</h2>
+  <ol>
+    <li><strong>Le départ.</strong> Choisissez un équipement (CTA, unité extérieure, groupe d'eau glacée) et cliquez dessus. Notez son nom.</li>
+    <li><strong>Activez la « Sélection multiple »</strong> (ruban <em>Dimensions</em>).</li>
+    <li><strong>Cliquez les tronçons un par un</strong>, du départ vers l'arrivée : chacun touche le précédent. À chaque clic, notez son nom.</li>
+    <li><strong>L'arrivée.</strong> Arrêtez-vous à l'équipement ou à la bouche qui termine le réseau.</li>
+    <li>Ruban <em>Objet</em>, <em>Masquer</em> dans « <em>Non sélectionnés</em> » : <strong>le réseau reste seul</strong>, vous le voyez de bout en bout.</li>
+    <li>Quand vous avez fini, <strong>Effacer la sélection</strong> et revenez à la maquette entière.</li>
+  </ol>
+  <p class="cle">Piège : deux tronçons qui se touchent <strong>à l'écran</strong> ne sont pas toujours raccordés. Tournez autour
+  (orbite) et regardez sous plusieurs angles avant de les compter.</p>
+</section>
+
+<section>
+  <h2>Lire les propriétés : quatre questions</h2>
+  <p>Un clic sur un élément ouvre ses <strong>propriétés</strong>. Vous y cherchez quatre choses :</p>
+  <table class="doc">
+    <tr><th>Question</th><th>Où la trouver</th></tr>
+    <tr><td><strong>Quoi ?</strong></td><td>le nom et le type de l'élément</td></tr>
+    <tr><td><strong>Où ?</strong></td><td>le niveau (l'étage) ; parfois la pièce</td></tr>
+    <tr><td><strong>Combien ?</strong></td><td>les dimensions : longueur, diamètre ou section</td></tr>
+    <tr><td><strong>De quoi ?</strong></td><td>le matériau, le système auquel il appartient</td></tr>
+  </table>
+  <p>La maquette ne porte pas toujours toutes les propriétés. Si une dimension manque, vous la <strong>mesurez</strong> avec le menu
+  <em>Dimensions</em> : <em>Arête</em> (longueur d'une arête), <em>Sommet</em> (distance entre deux sommets),
+  <em>Distance entre les surfaces</em>, <em>Surface</em>, <em>Volume</em>. Le résultat s'affiche dans la partie « Résultat ».</p>
+  <p class="cle">Dans votre carnet, vous notez toujours si la valeur est <strong>lue</strong> (L) dans les propriétés ou <strong>mesurée</strong> (M)
+  avec le menu Dimensions. Une valeur « à vue d'œil » ne s'écrit pas.</p>
+</section>
+
+<section>
+  <h2>Faire une vue en coupe</h2>
+  <p>Dans un bâtiment, les gaines et les tubes passent <strong>au-dessus du plafond</strong> et à travers les planchers : on ne les voit pas.
+  La coupe les montre.</p>
+  <table class="doc">
+    <tr><th>Vous voulez…</th><th>Coupe à choisir</th></tr>
+    <tr><td>voir les gaines <strong>à plat</strong>, comme sur un plan</td><td>coupe <strong>horizontale</strong> (axe Z), placée à la hauteur du faux-plafond</td></tr>
+    <tr><td>voir comment un tube <strong>traverse</strong> un mur ou un plancher</td><td>coupe <strong>verticale</strong> (axe X ou Y), avec « Remplir la tranche »</td></tr>
+  </table>
+  <ol>
+    <li>Ruban <em>Affichage</em>, puis <em>Coupe</em>.</li>
+    <li>Choisissez l'axe : <em>+ Z</em> ou <em>− Z</em> pour une coupe horizontale ; <em>± X</em> ou <em>± Y</em> pour une coupe verticale.</li>
+    <li>Cliquez sur <em>+</em> ou <em>−</em> pour déplacer le plan de coupe.</li>
+    <li>Pour une coupe verticale, cliquez <em>Remplir la tranche</em> : les éléments coupés prennent une couleur.</li>
+    <li>Recliquez <em>Coupe</em> pour revenir à la maquette.</li>
+  </ol>
+  <p class="cle"><strong>Exemple résolu</strong> (didacticiel, garage) : coupe horizontale : <em>Affichage</em>, <em>Coupe</em>, axe <em>+ Z</em> ;
+  on descend ou on remonte le plan avec <em>+</em> et <em>−</em>. La coupe se place où <strong>vous</strong> voulez, pas à 1 m du sol comme un plan de niveau.</p>
+</section>
+
+<section>
+  <h2>À quoi ça sert, de suivre un réseau ?</h2>
+  <ul>
+    <li><strong>Vérifier le passage.</strong> Une gaine peut traverser une cloison ou une poutre : la maquette le montre avant le chantier (gare 9).</li>
+    <li><strong>Compter.</strong> Longueurs de tube, nombre de coudes, nombre de bouches : les quantités se relèvent sur le réseau suivi.</li>
+    <li><strong>Préparer le chantier.</strong> Où percer, où poser les supports, où laisser un accès.</li>
+  </ul>
+  <p class="cle">La maquette et le plan se complètent : ce que vous suivez en 3D, vous le retrouvez sur le <strong>plan d'implantation</strong>
+  (ligne bureau d'études CVC, gare 1). Retrouvez toujours l'orientation : le nord du plan est le nord de la maquette.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare 11</h2>
+  <p>Équipements repérés, réseau suivi du départ à l'arrivée, propriétés lues, coupe faite : vous savez consulter une installation dans une maquette.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>📄 Télécharger la fiche de TP (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant : corrigé dans <a href="corrige.pdf">corrige.pdf</a>. Le TP se fait sur poste avec BIM Vision.
+  Il se fait sur la maquette de la gare 9 : un bâtiment, sans réseau CVC. L'élève applique la méthode (arbre, isoler, propriétés,
+  sélection multiple, coupe) à des murs, portes et fenêtres. Si vous disposez d'une maquette IFC qui porte une installation, substituez-la : mêmes gestes, sur des équipements et des tubes.</p>
+  <p>Prochaine gare : <strong>la gare 12</strong>, croquer et relever une installation frigorifique. Pour la ligne bureau d'études CVC :
+  la <strong>gare 1 de cette ligne</strong>, tracer le plan d'implantation.</p>
+  <div class="froid">
+    <h3>❄️ Codes du référentiel (froid et climatisation)</h3>
+    <ul>
+      <li><strong>Bac Pro MFER</strong> (référentiel 2028) — S3.2.2 « La modélisation en 3D »</li>
+      <li><strong>TP TECVC</strong> (REAC TP-00133) — CP2 « Modéliser les équipements et les réseaux d’une installation de génie climatique »</li>
+    </ul>
+    <p>Ici on consulte une maquette ; on ne la modélise pas encore (découverte).</p>
+  </div>
+  <p class="credit">Pictogrammes : collection QElectroTech (CC BY 3.0), adaptés par inerWeb — F. Henninot.</p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Dans la maquette, où cherchez-vous en premier une unité intérieure ?",
+  "r": [
+   "en tournant autour du bâtiment jusqu'à ce qu'elle apparaisse",
+   "dans l'arbre des objets, à l'étage où elle se trouve",
+   "dans une coupe horizontale faite à 1 m du sol",
+   "dans le cartouche du plan, en bas à droite"
+  ],
+  "bon": 1,
+  "x": "L'arbre range les éléments par étage et par famille. Un clic sur le nom allume l'élément dans la vue 3D."
+ },
+ {
+  "e": "Pour voir un équipement seul, sans le reste du bâtiment, vous :",
+  "r": [
+   "zoomez jusqu'à ce que le reste sorte de l'écran",
+   "faites une coupe à la hauteur de l'équipement",
+   "le sélectionnez puis masquez les autres",
+   "changez la couleur de l'interface du logiciel"
+  ],
+  "bon": 2,
+  "x": "Ruban Objet, Masquer dans « Non sélectionnés » : l'élément choisi reste seul à l'écran."
+ },
+ {
+  "e": "Deux tubes ronds partent de l'unité extérieure vers l'unité intérieure : l'un petit, l'autre plus gros. C'est :",
+  "r": [
+   "de l'eau glacée : l'aller est petit, le retour est gros",
+   "une gaine de ventilation : soufflage et reprise",
+   "un câble électrique glissé dans une gaine plastique",
+   "du fluide frigorigène : un tube liquide, un tube gaz"
+  ],
+  "bon": 3,
+  "x": "Un split relie ses deux unités par deux tubes de diamètres différents : le petit porte le liquide, le gros porte le gaz."
+ },
+ {
+  "e": "Une grosse gaine rectangulaire se termine par une grille au plafond. Elle transporte :",
+  "r": [
+   "de l'air jusqu'aux bouches",
+   "de l'eau glacée vers un ventilo-convecteur",
+   "du fluide frigorigène vers l'évaporateur",
+   "de l'eau de condensation vers le siphon"
+  ],
+  "bon": 0,
+  "x": "Les gaines sont les plus grosses canalisations : elles transportent de l'air, jusqu'aux bouches et aux grilles."
+ },
+ {
+  "e": "Pour suivre un réseau avec la sélection multiple, vous :",
+  "r": [
+   "cliquez seulement l'arrivée : le logiciel retrace le chemin",
+   "cliquez le départ : tout le réseau s'allume seul",
+   "cliquez les tronçons un par un, du départ à l'arrivée",
+   "faites une coupe verticale à travers tout le bâtiment"
+  ],
+  "bon": 2,
+  "x": "On suit le réseau soi-même, tronçon après tronçon : c'est ce qui permet de vérifier chaque raccord."
+ },
+ {
+  "e": "Deux tronçons se touchent à l'écran. Pour être sûr qu'ils sont raccordés, vous :",
+  "r": [
+   "faites confiance à la vue de dessus, qui est plus claire",
+   "faites un tour d'orbite et regardez sous plusieurs angles",
+   "zoomez une seule fois, mais de très près, de face",
+   "regardez s'ils ont la même couleur à l'écran"
+  ],
+  "bon": 1,
+  "x": "En 3D, deux éléments peuvent se superposer à l'écran sans se toucher : on vérifie sous plusieurs angles."
+ },
+ {
+  "e": "Le diamètre d'un tube n'est pas dans les propriétés. Vous :",
+  "r": [
+   "prenez celui du tube voisin, sans le dire à personne",
+   "laissez la case vide car la maquette ne le donne pas",
+   "choisissez le diamètre habituel du catalogue du fabricant",
+   "le mesurez avec Dimensions et notez « mesuré »"
+  ],
+  "bon": 3,
+  "x": "Une valeur lue dans les propriétés ou mesurée avec Dimensions : on note laquelle des deux. Jamais « à vue d'œil »."
+ },
+ {
+  "e": "Pour voir à plat les gaines d'un faux-plafond, vous faites une coupe :",
+  "r": [
+   "verticale (axe X), placée à l'entrée du bâtiment, à gauche",
+   "horizontale (axe Z), à la hauteur du faux-plafond",
+   "horizontale à 1 m du sol, comme pour un plan de niveau",
+   "aucune : les gaines ne se voient qu'en vue 3D"
+  ],
+  "bon": 1,
+  "x": "La coupe se place où vous voulez : à 1 m du sol vous verriez les cloisons, pas les gaines au-dessus du plafond."
+ },
+ {
+  "e": "Suivre un réseau dans la maquette avant le chantier permet surtout de :",
+  "r": [
+   "repérer où il traverse murs et planchers avant de percer",
+   "choisir la couleur de peinture des gaines et des tubes",
+   "se passer du plan d'implantation du bureau d'études",
+   "connaître le prix des équipements et de leur pose"
+  ],
+  "bon": 0,
+  "x": "On voit les passages et les conflits avant le chantier. La maquette complète le plan, elle ne le remplace pas."
+ },
+ {
+  "e": "Pour un réseau que vous ne connaissez pas, l'ordre de travail est :",
+  "r": [
+   "couper, lire les propriétés, puis chercher le départ",
+   "lire les propriétés, couper, puis repérer les équipements",
+   "repérer le départ, suivre, lire les propriétés, puis couper",
+   "suivre le réseau à partir de l'arrivée, sans rien repérer avant"
+  ],
+  "bon": 2,
+  "x": "On repère d'abord l'équipement de départ, puis on suit le réseau, on lit les propriétés, et on coupe où c'est utile."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

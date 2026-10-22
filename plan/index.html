@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- noindex tant que F. Henninot n'a pas donné le feu vert de diffusion — à retirer alors -->
+<meta name="robots" content="noindex">
+<title>inerWeb Plan — le réseau de la lecture de plans</title>
+<meta name="description" content="Réseau de progression sur 2 ans pour la lecture de plans du bâtiment et le BIM — métiers du plâtre et de l'isolation, de l'étanchéité ; trois gares et une ligne pour le froid et la climatisation (maquette 3D, croquis et relevé, isométrie, plan d'implantation CVC).">
+<style>
+:root{
+  --cream:#f7f1e7; --paper:#fffdf8; --ink:#10233c; --muted:#637285;
+  --navy:#1b3a63; --blue:#3d7fca; --orange-deep:#c9451a; --logo-orange:#e8914a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+  font-family:"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6}
+.page{max-width:1280px;margin:0 auto;padding:24px 16px 40px}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-bottom:6px}
+header svg{flex:0 0 auto}
+h1{color:var(--navy);font-size:1.65em;margin:0}
+.sous-titre{color:var(--muted);margin:2px 0 0;font-size:1em}
+.bandeau{background:#fff4e0;border-left:4px solid #b06a00;border-radius:8px;
+  padding:12px 18px;margin:18px 0;color:#5a3a00;font-size:.95em}
+.bandeau strong{color:#b06a00}
+.carte{background:var(--paper);border:1px solid rgba(27,58,99,.16);border-radius:14px;
+  padding:10px;margin:14px 0;box-shadow:0 2px 10px rgba(27,58,99,.08);overflow-x:auto}
+.carte svg{display:block;width:100%;height:auto;min-width:760px}
+.legende{display:flex;flex-wrap:wrap;gap:14px 28px;margin:14px 4px;font-size:.95em}
+.legende span{display:inline-flex;align-items:center;gap:8px}
+.gare-lien{cursor:pointer}
+.gare-lien circle{transition:fill .15s,stroke-width .15s}
+.gare-lien:hover circle,.gare-lien:focus circle{fill:#ffe9b8;stroke-width:4}
+.gare-lien:hover text,.gare-lien:focus text{text-decoration:underline}
+.gare-lien:focus{outline:3px solid #c9451a;outline-offset:2px}
+.gare-fermee circle{fill:#eef0f3;stroke:#8a96a5;stroke-dasharray:4 3}
+.gare-fermee text{fill:#7d8896}
+.gare-fermee .relecture{fill:#8a5200;font-weight:bold}
+.pastille{width:16px;height:16px;border-radius:50%;background:var(--paper);
+  border:2.5px solid var(--navy);display:inline-block;flex:0 0 auto}
+.trait{width:26px;height:5px;border-radius:3px;display:inline-block;flex:0 0 auto}
+.pastille-relecture{border-style:dashed;border-color:#8a96a5;background:#eef0f3}
+.quais{background:var(--paper);border:1px solid rgba(27,58,99,.16);border-radius:14px;
+  padding:18px 22px;margin:18px 0}
+.quais h2{color:var(--navy);font-size:1.15em;margin:0 0 10px}
+.quais ul{margin:0;padding-left:0;list-style:none}
+.quais li{margin:7px 0}
+.quais .duree{color:var(--muted);font-size:.92em;margin-top:10px}
+footer{color:var(--muted);font-size:.85em;text-align:center;margin-top:26px;
+  border-top:1px solid rgba(27,58,99,.14);padding-top:14px}
+footer a{color:var(--navy)}
+</style>
+<script defer src="../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <a href="../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="330" height="88" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p style="margin:0 0 4px;font-size:.85em"><a href="../index.html" style="color:#1b3a63">⬅ inerweb.fr, l’accueil du site</a></p>
+    <h1>Le réseau de la lecture de plans</h1>
+    <p class="sous-titre">Progression sur 2 ans · lecture de plans du bâtiment et BIM · plâtre et isolation, étanchéité · et, pour le froid et la climatisation, les gares 11 à 13 et la ligne bureau d'études CVC</p>
+  </div>
+</header>
+
+<div class="bandeau">
+  <strong>Réseau en relecture.</strong> Les <strong>14 gares ouvertes</strong> — les 13 du tronc commun et la gare de la ligne CVC — ont
+  chacune leur cours, leur test et leurs deux PDF (exercice élève, corrigé). Les <strong>12 gares des lignes MPI et ETAM</strong>
+  (2e année) sont visibles sur la carte mais <strong>en relecture</strong> : elles ne sont pas encore ouvertes.
+</div>
+
+<div class="carte">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1310" role="img" aria-label="Plan du réseau : un tronc commun vertical de 13 gares pour la première année, dont les gares 11, 12 et 13 pour le froid et la climatisation, puis deux lignes de spécialité de 6 gares chacune pour la deuxième année, ligne MPI plâtre et isolation, ligne ETAM étanchéité, chacune vers son terminus EP1, et une ligne CVC d'une gare pour le bureau d'études en chauffage, ventilation et climatisation.">
+
+  <!-- ================= TRONC COMMUN — 1re année (vertical) ================= -->
+  <!-- Badge départ -->
+  <rect x="125" y="50" width="90" height="28" rx="14" fill="#1b3a63"/>
+  <text x="170" y="69" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold" font-family="Segoe UI, sans-serif">DÉPART</text>
+  <text x="228" y="69" fill="#637285" font-size="12" font-family="Segoe UI, sans-serif">1re année · 10 cours, et les gares 11 à 13 pour le froid</text>
+
+  <!-- Tracé du tronc + bifurcation -->
+  <path d="M 170 848 Q 170 920 242 920 L 1170 920" fill="none" stroke="#3d7fca" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 170 848 Q 170 1080 242 1080 L 1170 1080" fill="none" stroke="#c9451a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 170 848 Q 170 1240 242 1240 L 470 1240" fill="none" stroke="#2b7a78" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 170 78 L 170 848" fill="none" stroke="#1b3a63" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Étapes du cheminement, à gauche du tronc -->
+  <g fill="#637285" font-size="11" font-family="Segoe UI, sans-serif" letter-spacing="2">
+    <text transform="rotate(-90 96 155)" x="96" y="155" text-anchor="middle">LES BASES</text>
+    <text transform="rotate(-90 96 330)" x="96" y="330" text-anchor="middle">LES DOCUMENTS</text>
+    <text transform="rotate(-90 96 480)" x="96" y="480" text-anchor="middle">DÉCODER</text>
+    <text transform="rotate(-90 96 693)" x="96" y="693" text-anchor="middle">PRODUIRE</text>
+  </g>
+  <g stroke="#b9c2ce" stroke-width="1.5">
+    <line x1="110" y1="110" x2="110" y2="192"/>
+    <line x1="110" y1="228" x2="110" y2="432"/>
+    <line x1="110" y1="448" x2="110" y2="512"/>
+    <line x1="110" y1="528" x2="110" y2="858"/>
+  </g>
+
+  <!-- Gares du tronc : pastille pointillée + numéro + nom + sous-titre -->
+  <g font-family="Segoe UI, sans-serif">
+    <!-- 1 -->
+    <a href="gares/g01-bases-graphiques/index.html" class="gare-lien">
+      <circle cx="170" cy="120" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="124" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">1</text>
+      <text x="194" y="115" fill="#1b3a63" font-size="15" font-weight="bold">Bases graphiques</text>
+      <text x="194" y="137" fill="#637285" font-size="12">tracer et présenter</text>
+    </a>
+    <!-- 2 -->
+    <a href="gares/g02-les-vues/index.html" class="gare-lien">
+      <circle cx="170" cy="180" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="184" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">2</text>
+      <text x="194" y="175" fill="#1b3a63" font-size="15" font-weight="bold">Les vues</text>
+      <text x="194" y="197" fill="#637285" font-size="12">le dé à 6 faces</text>
+    </a>
+    <!-- 3 -->
+    <a href="gares/g03-dossier-technique/index.html" class="gare-lien">
+      <circle cx="170" cy="240" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="244" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">3</text>
+      <text x="194" y="235" fill="#1b3a63" font-size="15" font-weight="bold">Le dossier technique</text>
+      <text x="194" y="257" fill="#637285" font-size="12">acteurs, documents, cartouche</text>
+    </a>
+    <!-- 4 -->
+    <a href="gares/g04-types-de-plans/index.html" class="gare-lien">
+      <circle cx="170" cy="300" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="304" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">4</text>
+      <text x="194" y="295" fill="#1b3a63" font-size="15" font-weight="bold">Les types de plans</text>
+      <text x="194" y="317" fill="#637285" font-size="12">de la situation au détail</text>
+    </a>
+    <!-- 5 -->
+    <a href="gares/g05-conventions/index.html" class="gare-lien">
+      <circle cx="170" cy="360" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="364" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">5</text>
+      <text x="194" y="355" fill="#1b3a63" font-size="15" font-weight="bold">Conventions graphiques</text>
+      <text x="194" y="377" fill="#637285" font-size="12">traits, hachures, symboles</text>
+    </a>
+    <!-- 6 -->
+    <a href="gares/g06-les-echelles/index.html" class="gare-lien">
+      <circle cx="170" cy="420" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="424" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">6</text>
+      <text x="194" y="415" fill="#1b3a63" font-size="15" font-weight="bold">Les échelles</text>
+      <text x="194" y="437" fill="#637285" font-size="12">le kutch, du plan au réel</text>
+    </a>
+    <!-- 7 -->
+    <a href="gares/g07-la-cotation/index.html" class="gare-lien">
+      <circle cx="170" cy="480" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="484" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">7</text>
+      <text x="194" y="475" fill="#1b3a63" font-size="15" font-weight="bold">La cotation</text>
+      <text x="194" y="497" fill="#637285" font-size="12">chaînes de cotes</text>
+    </a>
+    <!-- 8 -->
+    <a href="gares/g08-le-croquis-cote/index.html" class="gare-lien">
+      <circle cx="170" cy="540" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="544" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">8</text>
+      <text x="194" y="535" fill="#1b3a63" font-size="15" font-weight="bold">Le croquis coté</text>
+      <text x="194" y="557" fill="#637285" font-size="12">dessiner à main levée</text>
+    </a>
+    <!-- 9 -->
+    <a href="gares/g09-la-maquette-bim/index.html" class="gare-lien">
+      <circle cx="170" cy="600" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="604" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">9</text>
+      <text x="194" y="595" fill="#1b3a63" font-size="15" font-weight="bold">La maquette BIM</text>
+      <text x="194" y="617" fill="#637285" font-size="12">initiation BIM Vision</text>
+    </a>
+    <!-- 10 -->
+    <a href="gares/g10-le-sujet-guide/index.html" class="gare-lien">
+      <circle cx="170" cy="660" r="11" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="170" y="664" text-anchor="middle" fill="#1b3a63" font-size="10" font-weight="bold">10</text>
+      <text x="194" y="655" fill="#1b3a63" font-size="15" font-weight="bold">Le sujet guidé</text>
+      <text x="194" y="677" fill="#637285" font-size="12">un vrai sujet, pas à pas</text>
+    </a>
+    <!-- 11 (froid) -->
+    <a href="gares/g11-suivre-une-installation/index.html" class="gare-lien">
+      <circle cx="170" cy="720" r="11" fill="#fffdf8" stroke="#2b7a78" stroke-width="2.5"/>
+      <text x="170" y="724" text-anchor="middle" fill="#2b7a78" font-size="10" font-weight="bold">11</text>
+      <text x="194" y="715" fill="#1b3a63" font-size="15" font-weight="bold">Suivre une installation</text>
+      <text x="194" y="737" fill="#637285" font-size="12">dans la maquette 3D · pour le froid et la clim</text>
+    </a>
+    <!-- 12 (froid : croquer et relever) -->
+    <a href="gares/g12-croquer-et-relever/index.html" class="gare-lien">
+      <circle cx="170" cy="780" r="11" fill="#fffdf8" stroke="#2b7a78" stroke-width="2.5"/>
+      <text x="170" y="784" text-anchor="middle" fill="#2b7a78" font-size="10" font-weight="bold">12</text>
+      <text x="194" y="775" fill="#1b3a63" font-size="15" font-weight="bold">Croquer et relever</text>
+      <text x="194" y="797" fill="#637285" font-size="12">une installation frigorifique · pour le froid et la clim</text>
+    </a>
+    <!-- 13 (froid : isométrie) -->
+    <a href="gares/g13-schema-isometrique/index.html" class="gare-lien">
+      <circle cx="170" cy="840" r="11" fill="#fffdf8" stroke="#2b7a78" stroke-width="2.5"/>
+      <text x="170" y="844" text-anchor="middle" fill="#2b7a78" font-size="10" font-weight="bold">13</text>
+      <text x="194" y="835" fill="#1b3a63" font-size="15" font-weight="bold">Le schéma isométrique</text>
+      <text x="194" y="857" fill="#637285" font-size="12">lire et tracer un réseau · pour le froid et la clim</text>
+    </a>
+  </g>
+
+  <!-- Encart "comment lire la carte" -->
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="560" y="130" width="600" height="232" rx="12" fill="#fffdf8" stroke="rgba(27,58,99,.25)" stroke-width="1.5"/>
+    <text x="584" y="166" fill="#1b3a63" font-size="16" font-weight="bold">Comment lire la carte</text>
+    <text x="584" y="196" fill="#10233c" font-size="13.5">1re année : montez au DÉPART et descendez le tronc commun —</text>
+    <text x="584" y="216" fill="#10233c" font-size="13.5">10 cours, des bases graphiques à la maquette BIM et au sujet guidé.</text>
+    <text x="584" y="242" fill="#10233c" font-size="13.5">2e année : suivez votre ligne de métier — 6 cours, BIM du métier compris,</text>
+    <text x="584" y="262" fill="#10233c" font-size="13.5">jusqu'au terminus EP1 (sujets et CAP blanc).</text>
+    <text x="584" y="288" fill="#10233c" font-size="13.5">Froid et climatisation : les gares 11, 12 et 13 prolongent le tronc commun ;</text>
+    <text x="584" y="308" fill="#10233c" font-size="13.5">la ligne bureau d'études CVC trace un plan d'implantation.</text>
+    <text x="584" y="338" fill="#637285" font-size="13">16 cours par élève · environ 2 h par gare.</text>
+  </g>
+
+  <g transform="translate(0 180)">
+  <!-- ================= LIGNE MPI (plâtre / isolation) — 2e année ================= -->
+  <rect x="238" y="726" width="100" height="28" rx="8" fill="#3d7fca"/>
+  <text x="288" y="745" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold" font-family="Segoe UI, sans-serif">LIGNE MPI</text>
+  <text x="238" y="779" fill="#637285" font-size="11" font-family="Segoe UI, sans-serif">2e année · 6 cours</text>
+
+  <g font-family="Segoe UI, sans-serif">
+    <!-- MPI1 (texte au-dessus) -->
+    <g class="gare-fermee" role="img" aria-label="Le plan de distribution — en relecture, pas encore ouverte">
+      <circle cx="390" cy="740" r="11" fill="#fffdf8" stroke="#3d7fca" stroke-width="2.5"/>
+      <text x="390" y="744" text-anchor="middle" fill="#3d7fca" font-size="9" font-weight="bold">1</text>
+      <text x="390" y="698" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Le plan de distribution</text>
+      <text x="390" y="715" text-anchor="middle" fill="#637285" font-size="11.5">cloisons et doublages</text>
+    <text class="relecture" x="390" y="770" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- MPI2 (texte en dessous) -->
+    <g class="gare-fermee" role="img" aria-label="Calepinage et implantation — en relecture, pas encore ouverte">
+      <circle cx="540" cy="740" r="11" fill="#fffdf8" stroke="#3d7fca" stroke-width="2.5"/>
+      <text x="540" y="744" text-anchor="middle" fill="#3d7fca" font-size="9" font-weight="bold">2</text>
+      <text x="540" y="772" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Calepinage et implantation</text>
+      <text x="540" y="789" text-anchor="middle" fill="#637285" font-size="11.5">répartir et tracer</text>
+    <text class="relecture" x="540" y="720" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- MPI3 (au-dessus) -->
+    <g class="gare-fermee" role="img" aria-label="Les détails du second œuvre — en relecture, pas encore ouverte">
+      <circle cx="690" cy="740" r="11" fill="#fffdf8" stroke="#3d7fca" stroke-width="2.5"/>
+      <text x="690" y="744" text-anchor="middle" fill="#3d7fca" font-size="9" font-weight="bold">3</text>
+      <text x="690" y="698" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Les détails du second œuvre</text>
+      <text x="690" y="715" text-anchor="middle" fill="#637285" font-size="11.5">jonctions et points singuliers</text>
+    <text class="relecture" x="690" y="770" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- MPI4 (en dessous) -->
+    <g class="gare-fermee" role="img" aria-label="Le BIM du plaquiste — en relecture, pas encore ouverte">
+      <circle cx="840" cy="740" r="11" fill="#fffdf8" stroke="#3d7fca" stroke-width="2.5"/>
+      <text x="840" y="744" text-anchor="middle" fill="#3d7fca" font-size="9" font-weight="bold">4</text>
+      <text x="840" y="772" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Le BIM du plaquiste</text>
+      <text x="840" y="789" text-anchor="middle" fill="#637285" font-size="11.5">quantitatif sur maquette</text>
+    <text class="relecture" x="840" y="720" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- MPI5 (au-dessus) -->
+    <g class="gare-fermee" role="img" aria-label="Du plan au devis — en relecture, pas encore ouverte">
+      <circle cx="990" cy="740" r="11" fill="#fffdf8" stroke="#3d7fca" stroke-width="2.5"/>
+      <text x="990" y="744" text-anchor="middle" fill="#3d7fca" font-size="9" font-weight="bold">5</text>
+      <text x="990" y="698" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Du plan au devis</text>
+      <text x="990" y="715" text-anchor="middle" fill="#637285" font-size="11.5">surfaces et quantités</text>
+    <text class="relecture" x="990" y="770" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- MPI6 (en dessous) -->
+    <g class="gare-fermee" role="img" aria-label="Cap sur l'EP1 — en relecture, pas encore ouverte">
+      <circle cx="1120" cy="740" r="11" fill="#fffdf8" stroke="#3d7fca" stroke-width="2.5"/>
+      <text x="1120" y="744" text-anchor="middle" fill="#3d7fca" font-size="9" font-weight="bold">6</text>
+      <text x="1120" y="772" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Cap sur l'EP1</text>
+      <text x="1120" y="789" text-anchor="middle" fill="#637285" font-size="11.5">sujets et CAP blanc</text>
+    <text class="relecture" x="1120" y="720" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- Terminus MPI -->
+    <rect x="1178" y="726" width="52" height="28" rx="8" fill="#3d7fca"/>
+    <text x="1204" y="745" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">EP1</text>
+  </g>
+  </g>
+
+  <g transform="translate(0 180)">
+  <!-- ================= LIGNE ETAM (étanchéité) — 2e année ================= -->
+  <rect x="238" y="886" width="106" height="28" rx="8" fill="#c9451a"/>
+  <text x="291" y="905" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold" font-family="Segoe UI, sans-serif">LIGNE ETAM</text>
+  <text x="238" y="939" fill="#637285" font-size="11" font-family="Segoe UI, sans-serif">2e année · 6 cours</text>
+
+  <g font-family="Segoe UI, sans-serif">
+    <!-- ETAM1 (au-dessus) -->
+    <g class="gare-fermee" role="img" aria-label="Le plan de toiture-terrasse — en relecture, pas encore ouverte">
+      <circle cx="390" cy="900" r="11" fill="#fffdf8" stroke="#c9451a" stroke-width="2.5"/>
+      <text x="390" y="904" text-anchor="middle" fill="#c9451a" font-size="9" font-weight="bold">1</text>
+      <text x="390" y="858" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Le plan de toiture-terrasse</text>
+      <text x="390" y="875" text-anchor="middle" fill="#637285" font-size="11.5">pentes et altimétries</text>
+    <text class="relecture" x="390" y="930" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- ETAM2 (en dessous) -->
+    <g class="gare-fermee" role="img" aria-label="La coupe du complexe — en relecture, pas encore ouverte">
+      <circle cx="540" cy="900" r="11" fill="#fffdf8" stroke="#c9451a" stroke-width="2.5"/>
+      <text x="540" y="904" text-anchor="middle" fill="#c9451a" font-size="9" font-weight="bold">2</text>
+      <text x="540" y="932" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">La coupe du complexe</text>
+      <text x="540" y="949" text-anchor="middle" fill="#637285" font-size="11.5">les couches en pile</text>
+    <text class="relecture" x="540" y="880" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- ETAM3 (au-dessus) -->
+    <g class="gare-fermee" role="img" aria-label="Les points singuliers — en relecture, pas encore ouverte">
+      <circle cx="690" cy="900" r="11" fill="#fffdf8" stroke="#c9451a" stroke-width="2.5"/>
+      <text x="690" y="904" text-anchor="middle" fill="#c9451a" font-size="9" font-weight="bold">3</text>
+      <text x="690" y="858" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Les points singuliers</text>
+      <text x="690" y="875" text-anchor="middle" fill="#637285" font-size="11.5">là où ça fuit</text>
+    <text class="relecture" x="690" y="930" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- ETAM4 (en dessous) -->
+    <g class="gare-fermee" role="img" aria-label="Le BIM de l'étancheur — en relecture, pas encore ouverte">
+      <circle cx="840" cy="900" r="11" fill="#fffdf8" stroke="#c9451a" stroke-width="2.5"/>
+      <text x="840" y="904" text-anchor="middle" fill="#c9451a" font-size="9" font-weight="bold">4</text>
+      <text x="840" y="932" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Le BIM de l'étancheur</text>
+      <text x="840" y="949" text-anchor="middle" fill="#637285" font-size="11.5">la toiture en maquette</text>
+    <text class="relecture" x="840" y="880" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- ETAM5 (au-dessus) -->
+    <g class="gare-fermee" role="img" aria-label="Surfaces et quantités — en relecture, pas encore ouverte">
+      <circle cx="990" cy="900" r="11" fill="#fffdf8" stroke="#c9451a" stroke-width="2.5"/>
+      <text x="990" y="904" text-anchor="middle" fill="#c9451a" font-size="9" font-weight="bold">5</text>
+      <text x="990" y="858" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Surfaces et quantités</text>
+      <text x="990" y="875" text-anchor="middle" fill="#637285" font-size="11.5">émergences déduites</text>
+    <text class="relecture" x="990" y="930" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- ETAM6 (en dessous) -->
+    <g class="gare-fermee" role="img" aria-label="Cap sur l'EP1 — en relecture, pas encore ouverte">
+      <circle cx="1120" cy="900" r="11" fill="#fffdf8" stroke="#c9451a" stroke-width="2.5"/>
+      <text x="1120" y="904" text-anchor="middle" fill="#c9451a" font-size="9" font-weight="bold">6</text>
+      <text x="1120" y="932" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Cap sur l'EP1</text>
+      <text x="1120" y="949" text-anchor="middle" fill="#637285" font-size="11.5">sujets et CAP blanc</text>
+    <text class="relecture" x="1120" y="880" text-anchor="middle" font-size="11">en relecture</text></g>
+    <!-- Terminus ETAM -->
+    <rect x="1178" y="886" width="52" height="28" rx="8" fill="#c9451a"/>
+    <text x="1204" y="905" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">EP1</text>
+  </g>
+  </g>
+
+  <!-- ================= LIGNE CVC (bureau d'études) — une gare pour l'instant ================= -->
+  <rect x="238" y="1226" width="112" height="28" rx="8" fill="#2b7a78"/>
+  <text x="294" y="1245" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold" font-family="Segoe UI, sans-serif">LIGNE CVC</text>
+  <text x="238" y="1279" fill="#637285" font-size="11" font-family="Segoe UI, sans-serif">bureau d'études · 1 cours pour l'instant</text>
+  <g font-family="Segoe UI, sans-serif">
+    <!-- TECVC1 (texte au-dessus) -->
+    <a href="gares/tecvc1-plan-implantation-cvc/index.html" class="gare-lien">
+      <circle cx="390" cy="1240" r="11" fill="#fffdf8" stroke="#2b7a78" stroke-width="2.5"/>
+      <text x="390" y="1244" text-anchor="middle" fill="#2b7a78" font-size="9" font-weight="bold">1</text>
+      <text x="390" y="1198" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold">Le plan d'implantation CVC</text>
+      <text x="390" y="1215" text-anchor="middle" fill="#637285" font-size="11.5">équipements, réseaux, nomenclature</text>
+    </a>
+    <rect x="478" y="1226" width="52" height="28" rx="8" fill="#2b7a78"/>
+    <text x="504" y="1245" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">CP1</text>
+    <text x="560" y="1245" fill="#8a96a5" font-size="12">d'autres gares à venir</text>
+  </g>
+</svg>
+</div>
+
+<div class="legende">
+  <span><span class="pastille"></span> gare ouverte — cliquer pour entrer (cours, test, exercice, corrigé)</span>
+  <span><span class="pastille pastille-relecture"></span> gare en relecture — visible, pas encore ouverte</span>
+  <span><span class="trait" style="background:#1b3a63"></span> Tronc commun — 1re année, 10 gares partagées (et les gares 11 à 13 pour le froid)</span>
+  <span><span class="trait" style="background:#3d7fca"></span> Ligne MPI — Métiers du plâtre et de l'isolation, 2e année</span>
+  <span><span class="trait" style="background:#c9451a"></span> Ligne ETAM — Étancheur du bâtiment et des TP, 2e année</span>
+  <span><span class="trait" style="background:#2b7a78"></span> Ligne CVC — bureau d'études en chauffage, ventilation et climatisation</span>
+</div>
+
+<div class="quais">
+  <h2>À chaque gare, trois quais</h2>
+  <ul>
+    <li>📺 <strong>Le cours</strong> — animations, diaporamas, tutoriels et schémas animés.</li>
+    <li>📄 <strong>L'exercice papier</strong> — un PDF à télécharger et imprimer par l'enseignant (A4, noir et blanc).</li>
+    <li>✅ <strong>Le test</strong> — dans les gares communes, il se termine par deux blocs :
+      <em>spécialité MPI</em> et <em>spécialité ETAM</em>.</li>
+  </ul>
+  <p class="duree">Un cours dure environ 2 h. Parcours complet d'un élève : 16 gares sur 2 ans, soit environ 32 h —
+  la marge par rapport aux 24 modules de la progression sert à l'alternance et aux entraînements.
+  Le BIM est dans le parcours : initiation commune en 1re année (gare 9), BIM du métier en 2e année (gare 4 de chaque ligne).
+  D'autres lignes du BTP (maçonnerie, carrelage, couverture…) pourront se brancher plus tard sur le même tronc commun.</p>
+  <p class="duree">Froid et climatisation : les gares 1 à 10 servent aussi aux élèves de CAP IFCA, de Bac Pro MFER et de 2nde TNE — les codes de leur référentiel sont affichés à la fin de chaque cours. Les gares 11 (suivre une installation dans la maquette 3D), 12 (croquer et relever une installation frigorifique) et 13 (le schéma isométrique d'un réseau) et la ligne CVC leur sont destinées.</p>
+</div>
+
+<footer>
+  © 2026 inerWeb — F. Henninot ·
+  Licence <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr">CC BY-NC-ND 4.0</a> ·
+  Référentiels : CAP Métiers du plâtre et de l'isolation (arrêté du 15/04/2019) ·
+  CAP Étancheur du bâtiment et des travaux publics (arrêté du 29/08/2022) ·
+  CAP IFCA (arrêté du 2 juin 2015) · Bac Pro MFER (arrêté du 28 juillet 2026) · TP TECVC (REAC TP-00133)
+</footer>
+
+</div>
+<script src="moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

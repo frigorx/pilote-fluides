@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Gare 9 — La maquette BIM : initiation BIM Vision</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La carte du réseau</a> · tronc commun · 1re année</p>
+    <h1>Gare 9 — La maquette BIM : initiation BIM Vision</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>Le bâtiment existe aussi en version numérique : la <strong>maquette BIM</strong>.
+  Cette gare se vit <strong>sur poste informatique</strong> (~2 h). À la fin, vous saurez :</p>
+  <ul>
+    <li>dire ce qu'est une maquette numérique et un fichier <strong>IFC</strong> ;</li>
+    <li><strong>naviguer</strong> dans BIM Vision : tourner, zoomer, vous déplacer ;</li>
+    <li><strong>cacher et filtrer</strong> des éléments pour voir ce qui vous intéresse ;</li>
+    <li><strong>cliquer un élément</strong> pour lire sa fiche (matériau, dimensions) ;</li>
+    <li>faire le lien <strong>maquette 3D ↔ plan 2D</strong>.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>La maquette numérique : plus qu'un dessin</h2>
+  <p>Le BIM (« bâtiment et informations modélisées ») : le bâtiment entier est
+  construit dans l'ordinateur, en 3D. Chaque mur, chaque porte y existe
+  <strong>avec ses informations</strong> : matériau, dimensions, étage…</p>
+  <p class="cle">Différence clé avec un plan : le plan MONTRE, la maquette
+  <strong>RENSEIGNE</strong>. On clique une cloison → sa fiche s'affiche.</p>
+  <p>Sur les chantiers, la maquette sert à voir le bâtiment avant de le faire,
+  détecter les conflits entre corps de métier (une gaine qui traverse votre cloison),
+  et compter les quantités.</p>
+</section>
+
+<section>
+  <h2>IFC et BIM Vision : vos deux mots de passe</h2>
+  <ul>
+    <li><strong>IFC</strong> — le format d'échange des maquettes : quel que soit
+    le logiciel de l'architecte, il exporte un .ifc que tout le monde peut ouvrir.</li>
+    <li><strong>BIM Vision</strong> — un logiciel GRATUIT qui ouvre les IFC.
+    Il ne dessine pas : il permet de LIRE la maquette. C'est notre outil.</li>
+  </ul>
+  <p class="cle">Vous, en CAP, vous n'avez pas à dessiner de maquette : vous devez savoir
+  la <strong>consulter</strong> — exactement comme vous lisez un plan sans l'avoir dessiné.</p>
+</section>
+
+<section>
+  <h2>Naviguer : les 3 gestes</h2>
+  <table class="doc">
+    <tr><th>Geste</th><th>Souris</th><th>Ce que ça fait</th></tr>
+    <tr><td><strong>Tourner</strong> (orbite)</td><td>clic gauche maintenu</td><td>vous tournez AUTOUR du bâtiment — la gare 2 en vrai : toutes les vues d'un coup</td></tr>
+    <tr><td><strong>Zoomer</strong></td><td>molette</td><td>du quartier au joint de cloison — le zoom de la gare 4, en continu</td></tr>
+    <tr><td><strong>Se déplacer</strong> (pan)</td><td>molette maintenue (ou clic droit)</td><td>vous glissez la vue sans tourner</td></tr>
+  </table>
+  <p><strong>Ouvrir la maquette :</strong> dans BIM Vision, menu <strong>Fichier</strong>, puis « ouvrir le dossier d'IFC » :
+  choisissez le fichier .ifc fourni par l'enseignant. La liste « fichiers récemment ouverts » rappelle les derniers.</p>
+  <p class="cle">Perdu dans l'espace ? Tous les logiciels ont un bouton
+  « vue d'accueil » / « zoom tout » : il recadre la maquette entière (dans BIM Vision : « Zoom initial »). C'est votre
+  bouton panique.</p>
+</section>
+
+<section>
+  <h2>Cacher et filtrer : ne voir que l'utile</h2>
+  <p>La maquette contient TOUT : structure, cloisons, gaines, meubles… L'arbre
+  des objets (à gauche dans BIM Vision) permet de :</p>
+  <ul>
+    <li><strong>cacher un étage</strong> pour voir celui du dessous ;</li>
+    <li><strong>isoler une famille</strong> : afficher seulement les cloisons,
+    ou seulement la toiture ;</li>
+    <li>faire une <strong>coupe en direct</strong> : trancher la maquette où vous voulez —
+    le plan de niveau de la gare 4, mais que VOUS choisissez. Dans BIM Vision : onglet <strong>Affichage</strong>, bouton <strong>Coupe</strong>,
+    choisissez l'axe (X, Y ou Z), puis déplacez le plan de coupe ;</li>
+  </ul>
+  <p class="cle">C'est la super-force de la maquette : le plan de niveau est coupé
+  à 1 m une fois pour toutes ; la maquette se coupe où vous voulez, quand vous voulez.</p>
+</section>
+
+<section>
+  <h2>Cliquer = lire la fiche</h2>
+  <p>Un clic sur un élément le met en surbrillance et ouvre ses
+  <strong>propriétés</strong> : nom, type, matériau, épaisseur, surface, étage…</p>
+  <p class="cle">Réflexe d'évaluation ET de chantier : la question « quelle est
+  l'épaisseur de cette cloison ? » se répond en UN clic dans la maquette —
+  là où le plan 2D vous obligeait à chercher la cote ou le détail.</p>
+  <p>Mais attention, la règle de la gare 3 reste : la maquette a elle aussi
+  ses versions. On travaille sur la maquette à jour, pas sur celle du mois dernier.</p>
+</section>
+
+<section>
+  <h2>3D ↔ 2D : le pont</h2>
+  <p>L'évaluation (et le chantier) vous donneront LES DEUX : la maquette et les plans
+  PDF. Le va-et-vient est la compétence finale de cette gare :</p>
+  <ul>
+    <li>retrouver dans la maquette la pièce que montre la coupe PDF ;</li>
+    <li>vérifier sur la maquette un doute du plan (et inversement) ;</li>
+    <li>orienter la maquette comme le plan (le nord de la gare 4 !).</li>
+  </ul>
+  <p class="cle">Le TP se fait sur poste, avec la maquette fournie par l'enseignant
+  et le didacticiel BIM Vision. L'exercice papier de la gare prépare et accompagne
+  ce passage sur machine.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas. Les deux dernières questions
+  regardent vers votre métier.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare 9</h2>
+  <p>Naviguer, filtrer, cliquer-lire, faire le pont 3D ↔ 2D : la maquette est
+  devenue un document de plus dans votre dossier technique.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>📄 Télécharger la fiche de TP (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant : corrigé dans <a href="corrige.pdf">corrige.pdf</a>.
+  La fiche accompagne le TP sur poste : vocabulaire, gestes à valider, et
+  questions sur la maquette ouverte (BIM Vision + IFC pédagogique).</p>
+  <p>Prochaine gare : <strong>le sujet guidé</strong> — un vrai sujet, accompagné pas à pas.</p>
+<div class="froid">
+  <h3>❄️ Sert aussi en froid et climatisation</h3>
+  <ul>
+    <li><strong>Bac Pro MFER</strong> (référentiel 2028) — S3.2.2 « La modélisation en 3D »</li>
+    <li><strong>TP TECVC</strong> (REAC TP-00133) — CP2 « Modéliser les équipements et les réseaux d’une installation de génie climatique »</li>
+  </ul>
+  <p>Ici on consulte une maquette ; on ne la modélise pas encore (découverte).</p>
+  <p>Suite pour le froid et la climatisation, après la gare 10 : <a href="../g11-suivre-une-installation/index.html">gare 11, suivre une installation dans la maquette 3D</a>.</p>
+</div>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Une maquette BIM, c'est :",
+  "r": [
+   "une photo 3D du bâtiment",
+   "le bâtiment en 3D",
+   "un plan scanné",
+   "une vidéo du chantier filmée par un drone de surveillance"
+  ],
+  "bon": 1,
+  "x": "3D + informations : chaque élément porte sa fiche (matériau, dimensions…)."
+ },
+ {
+  "e": "Le format IFC sert à :",
+  "r": [
+   "compresser des photos",
+   "échanger les maquettes entre logiciels différents",
+   "imprimer en A0",
+   "protéger la maquette du bâtiment par un mot de passe"
+  ],
+  "bon": 1,
+  "x": "L'IFC est le format d'échange universel : l'architecte exporte, tout le monde ouvre."
+ },
+ {
+  "e": "BIM Vision permet de :",
+  "r": [
+   "dessiner une maquette",
+   "lire et consulter une maquette IFC, gratuitement",
+   "calculer la structure",
+   "envoyer des messages et des photos à toute l'équipe du chantier"
+  ],
+  "bon": 1,
+  "x": "C'est une visionneuse : consulter, pas concevoir. Et elle est gratuite."
+ },
+ {
+  "e": "Pour tourner autour du bâtiment (orbite), vous utilisez :",
+  "r": [
+   "le clic gauche maintenu",
+   "la touche Entrée",
+   "un double-clic",
+   "l'impression d'écran en haute définition"
+  ],
+  "bon": 0,
+  "x": "Clic gauche = orbite, molette = zoom, molette maintenue = déplacement."
+ },
+ {
+  "e": "Vous ne vous repérez plus dans la maquette : tout a disparu de l'écran. Vous :",
+  "r": [
+   "fermez le logiciel",
+   "cliquez « zoom tout / vue d'accueil »",
+   "secouez la souris",
+   "redémarrez le poste et rouvrez le fichier"
+  ],
+  "bon": 1,
+  "x": "Le bouton panique recadre la maquette entière : aucun naufrage définitif."
+ },
+ {
+  "e": "Pour ne voir QUE les cloisons de l'étage 1 :",
+  "r": [
+   "on zoome très fort sur la seule zone qui nous intéresse",
+   "on imprime le plan",
+   "on cache ou filtre le reste dans l'arbre des objets",
+   "c'est impossible"
+  ],
+  "bon": 2,
+  "x": "L'arbre des objets isole familles et étages : la maquette se fait sur mesure."
+ },
+ {
+  "e": "L'épaisseur d'une cloison, dans la maquette, se lit :",
+  "r": [
+   "en cliquant la cloison",
+   "en mesurant l'épaisseur à la règle sur l'écran",
+   "dans le cartouche",
+   "impossible sans le plan papier"
+  ],
+  "bon": 0,
+  "x": "Un clic = la fiche : nom, matériau, épaisseur, étage."
+ },
+ {
+  "e": "La coupe « en direct » dans la maquette :",
+  "r": [
+   "est fixée à 1 m comme le plan de niveau",
+   "se place où l'on veut, quand on veut",
+   "détruit la maquette",
+   "n'existe pas"
+  ],
+  "bon": 1,
+  "x": "C'est l'avantage sur le papier : la coupe se déplace librement."
+ },
+ {
+  "spec": "Spécialité MPI",
+  "e": "Avant de monter vos cloisons, la maquette vous permet de repérer :",
+  "r": [
+   "la couleur de la peinture finale des murs",
+   "les gaines qui traversent vos cloisons",
+   "le prix des plaques",
+   "la météo du chantier"
+  ],
+  "bon": 1,
+  "x": "La détection des conflits entre corps d'état : LA plus-value chantier du BIM."
+ },
+ {
+  "spec": "Spécialité ETAM",
+  "e": "Pour étudier la toiture-terrasse dans la maquette, le plus efficace :",
+  "r": [
+   "zoomer depuis la rue",
+   "isoler la toiture en cachant les étages",
+   "imprimer la maquette en grand format sur papier",
+   "chercher une photo"
+  ],
+  "bon": 1,
+  "x": "On isole la toiture : émergences et naissances EP apparaissent seules, en 3D."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

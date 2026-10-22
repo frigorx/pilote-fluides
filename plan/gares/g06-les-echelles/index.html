@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Gare 6 — Les échelles : le kutch, du plan au réel</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La carte du réseau</a> · tronc commun · 1re année</p>
+    <h1>Gare 6 — Les échelles : le kutch, du plan au réel</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>Une maison de 12 m ne tient pas sur une feuille de 30 cm : on la dessine
+  <strong>réduite</strong>, dans une proportion exacte — l'échelle.
+  Environ <strong>2 heures</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li>lire une échelle (<strong>1/50</strong>, 1/100…) et dire ce qu'elle signifie ;</li>
+    <li><strong>convertir</strong> dans les deux sens : plan → réel et réel → plan ;</li>
+    <li>utiliser le <strong>kutch</strong> ;</li>
+    <li>appliquer la règle d'or : <strong>la cote prime sur la mesure</strong>.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Lire une échelle</h2>
+  <p><strong>1/50</strong> se lit « un cinquantième » : <strong>1 cm sur le plan
+  = 50 cm dans la réalité</strong>. Le nombre du bas (le dénominateur) dit combien
+  de fois la réalité a été réduite.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 620 170" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="À gauche un petit mur dessiné de 2 centimètres au 1/50, à droite le même mur réel de 1 mètre : cinquante fois plus grand.">
+      <g font-family="Segoe UI, sans-serif">
+        <rect x="60" y="60" width="40" height="14" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/>
+        <text x="80" y="100" text-anchor="middle" fill="#637285" font-size="12.5">sur le plan : 2 cm</text>
+        <g stroke="#3d7fca" stroke-width="2.5" fill="#3d7fca">
+          <line x1="150" y1="67" x2="240" y2="67"/><polygon points="240,61 252,67 240,73"/>
+        </g>
+        <text x="196" y="52" text-anchor="middle" fill="#c9451a" font-size="14" font-weight="bold">× 50</text>
+        <rect x="280" y="40" width="300" height="55" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+        <text x="430" y="125" text-anchor="middle" fill="#637285" font-size="12.5">en vrai : 2 × 50 = 100 cm = 1 m</text>
+      </g>
+    </svg>
+  </div>
+  <p class="cle">Plus le dénominateur est GRAND, plus l'objet dessiné est PETIT :
+  au 1/100 la maison entière tient sur la feuille ; au 1/5 on ne voit qu'un détail,
+  mais énorme.</p>
+</section>
+
+<section>
+  <h2>Les deux calculs à connaître</h2>
+  <table class="doc">
+    <tr><th>Je veux…</th><th>Calcul</th><th>Exemple (au 1/50)</th></tr>
+    <tr><td>la dimension <strong>réelle</strong></td><td><strong>réel = mesure plan × dénominateur</strong></td><td>15 mm sur plan → 15 × 50 = 750 mm</td></tr>
+    <tr><td>la dimension <strong>sur le plan</strong></td><td><strong>plan = réel ÷ dénominateur</strong></td><td>une cloison de 3 m (3000 mm) → 3000 ÷ 50 = 60 mm</td></tr>
+  </table>
+  <p class="cle">Astuce de contrôle : le résultat RÉEL doit toujours être PLUS GRAND
+  que la mesure du plan. S'il est plus petit, vous avez divisé au lieu de multiplier.</p>
+</section>
+
+<section>
+  <h2>Entraînez-vous : le convertisseur</h2>
+  <p>Choisissez une échelle et une mesure sur plan, puis calculez DE TÊTE avant
+  d'appuyer sur « Vérifier ».</p>
+  <div class="cle" style="text-align:center">
+    <label>Échelle : <select id="cv-ech">
+      <option value="20">1/20</option>
+      <option value="50" selected>1/50</option>
+      <option value="100">1/100</option>
+      <option value="200">1/200</option>
+    </select></label>
+    &nbsp;&nbsp;
+    <label>Mesure sur plan : <select id="cv-mm">
+      <option>10</option><option selected>15</option><option>24</option>
+      <option>36</option><option>42</option><option>55</option>
+    </select> mm</label>
+    &nbsp;&nbsp;
+    <button id="cv-btn" style="font:inherit;padding:6px 16px;border-radius:8px;border:2px solid #1b3a63;background:#1b3a63;color:#fff;cursor:pointer">Vérifier</button>
+    <p id="cv-res" style="font-weight:bold;color:#1b3a63;min-height:1.5em;margin:10px 0 0"></p>
+  </div>
+</section>
+
+<section>
+  <h2>Quelle échelle pour quel plan ?</h2>
+  <table class="doc">
+    <tr><th>Échelle</th><th>Usage typique</th></tr>
+    <tr><td><strong>1/100</strong></td><td>plans d'ensemble, disposition générale</td></tr>
+    <tr><td><strong>1/50</strong></td><td>plans de niveau : LE format courant du chantier</td></tr>
+    <tr><td><strong>1/20</strong></td><td>plans de détail courants</td></tr>
+    <tr><td><strong>1/10 · 1/5</strong></td><td>détails de points singuliers, accessoires</td></tr>
+  </table>
+  <p class="cle">Vous retrouvez le zoom de la gare 4 : plus on zoome,
+  plus le dénominateur diminue.</p>
+</section>
+
+<section>
+  <h2>Le kutch : six échelles dans une règle</h2>
+  <p>Le kutch (règle triangulaire) porte <strong>six graduations</strong> :
+  1/20, 1/25, 1/50, 1/75, 1/100, 1/125. Sur la bonne face, il vous donne la
+  dimension <strong>réelle</strong> directement, sans calcul.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 620 150" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Une face de kutch graduée au 1/50 posée sur un segment : la lecture donne directement 2,50 mètres.">
+      <line x1="60" y1="100" x2="460" y2="100" stroke="#10233c" stroke-width="4"/>
+      <rect x="40" y="40" width="520" height="34" fill="#fdf6e3" stroke="#1b3a63" stroke-width="2"/>
+      <g stroke="#1b3a63" stroke-width="1.2" font-family="Segoe UI, sans-serif">
+        <line x1="60" y1="58" x2="60" y2="74"/><line x1="140" y1="58" x2="140" y2="74"/>
+        <line x1="220" y1="58" x2="220" y2="74"/><line x1="300" y1="58" x2="300" y2="74"/>
+        <line x1="380" y1="58" x2="380" y2="74"/><line x1="460" y1="58" x2="460" y2="74"/>
+      </g>
+      <g fill="#1b3a63" font-size="11.5" font-family="Segoe UI, sans-serif">
+        <text x="60" y="54" text-anchor="middle">0</text><text x="140" y="54" text-anchor="middle">1 m</text>
+        <text x="220" y="54" text-anchor="middle">2 m</text><text x="300" y="54" text-anchor="middle">3 m</text>
+        <text x="380" y="54" text-anchor="middle">4 m</text><text x="460" y="54" text-anchor="middle">5 m</text>
+        <text x="530" y="62" font-weight="bold">1/50</text>
+      </g>
+      <g stroke="#c9451a" stroke-width="2">
+        <line x1="60" y1="112" x2="60" y2="126"/><line x1="460" y1="112" x2="460" y2="126"/>
+      </g>
+      <text x="260" y="135" text-anchor="middle" fill="#c9451a" font-size="13" font-weight="bold" font-family="Segoe UI, sans-serif">lecture directe : 5,00 m</text>
+    </svg>
+    <figcaption>La face 1/50 lit les mètres réels directement sur le dessin.</figcaption>
+  </div>
+  <p class="cle">Vérifiez TOUJOURS que la face du kutch correspond à l'échelle
+  du cartouche — lire au 1/50 un plan au 1/100 double toutes les dimensions.</p>
+</section>
+
+<section>
+  <h2>La règle d'or : la cote prime</h2>
+  <p>Mesurer sur un plan est un <strong>dépannage</strong>, jamais une preuve :
+  le papier se déforme, les photocopies réduisent, les PDF s'impriment « ajustés
+  à la page ».</p>
+  <p class="cle"><strong>Si une cote est écrite, c'est ELLE qui fait foi</strong> —
+  même si votre mesure au kutch dit autre chose. On ne mesure que ce qui n'est pas
+  coté, et on le signale.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas. Calculatrice autorisée.
+  Les deux dernières questions regardent vers votre métier.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare 6</h2>
+  <p>Vous savez convertir dans les deux sens, choisir la face du kutch, et vous connaissez
+  la règle d'or : la cote prime.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>📄 Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant : corrigé dans <a href="corrige.pdf">corrige.pdf</a>.
+  L'exercice fait convertir dans les deux sens, mesurer des segments imprimés et
+  trancher deux cas « cote contre mesure ».</p>
+  <p>Prochaine gare : <strong>la cotation</strong> — chaînes de cotes.</p>
+<div class="froid">
+  <h3>❄️ Sert aussi en froid et climatisation</h3>
+  <ul>
+    <li><strong>CAP IFCA</strong> — S2.2 « Lecture de plan »</li>
+    <li><strong>Bac Pro MFER</strong> (référentiel 2028) — S3.2.1 « Les outils, normes et leur représentation »</li>
+  </ul>
+</div>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "« Échelle 1/50 » signifie :",
+  "r": [
+   "le plan est 50 fois plus grand que la réalité",
+   "1 cm sur le plan = 50 cm en réalité",
+   "le plan fait 50 cm de large",
+   "il y a 50 plans dans le dossier"
+  ],
+  "bon": 1,
+  "x": "La réalité est réduite 50 fois : 1 cm dessiné = 50 cm réels."
+ },
+ {
+  "e": "Au 1/50, un mur mesure 24 mm sur le plan. En réalité :",
+  "r": [
+   "480 mm, soit un demi-mètre environ",
+   "2400 mm (2,40 m)",
+   "1200 mm (1,20 m)",
+   "24 m"
+  ],
+  "bon": 2,
+  "x": "réel = plan × dénominateur : 24 × 50 = 1200 mm, soit 1,20 m."
+ },
+ {
+  "e": "Au 1/100, une terrasse de 8 m se dessine :",
+  "r": [
+   "8 cm",
+   "80 cm",
+   "8 mm",
+   "0,8 mm"
+  ],
+  "bon": 0,
+  "x": "plan = réel ÷ dénominateur : 800 cm ÷ 100 = 8 cm."
+ },
+ {
+  "e": "Votre calcul du réel donne un résultat PLUS PETIT que la mesure du plan. C'est :",
+  "r": [
+   "normal aux petites échelles",
+   "le signe que vous avez divisé au lieu de multiplier",
+   "possible si le plan est ancien et a été replié souvent",
+   "une erreur de l'architecte"
+  ],
+  "bon": 1,
+  "x": "Le réel est toujours plus grand que le dessin : sinon, calcul à refaire."
+ },
+ {
+  "e": "Le format courant d'un plan de niveau de chantier :",
+  "r": [
+   "1/5",
+   "1/1000",
+   "1/50",
+   "1/2"
+  ],
+  "bon": 2,
+  "x": "1/50 : assez précis pour les cloisons, assez large pour l'étage entier."
+ },
+ {
+  "e": "Le kutch sert à :",
+  "r": [
+   "tracer des angles droits",
+   "lire directement les dimensions réelles à l'échelle",
+   "découper le papier",
+   "vérifier l'indice de révision du plan dans le cartouche"
+  ],
+  "bon": 1,
+  "x": "Six graduations : la bonne face lit le réel sans calcul."
+ },
+ {
+  "e": "Avant de mesurer au kutch, vous vérifiez :",
+  "r": [
+   "la couleur du plan",
+   "la date de votre kutch",
+   "que la face du kutch = l'échelle du cartouche",
+   "que le plan est plastifié pour résister au chantier"
+  ],
+  "bon": 2,
+  "x": "Face 1/50 sur plan 1/100 : toutes vos lectures seraient fausses du double."
+ },
+ {
+  "e": "Une cote écrite dit 2600 mm ; votre mesure au kutch donne 2500 mm. Vous retenez :",
+  "r": [
+   "2500, la mesure est plus récente",
+   "la moyenne : 2550",
+   "2600 : la cote écrite fait foi",
+   "vous choisissez selon le matériau"
+  ],
+  "bon": 2,
+  "x": "La cote prime TOUJOURS : impression et papier déforment, pas les chiffres."
+ },
+ {
+  "spec": "Spécialité MPI",
+  "e": "Sur un plan au 1/50, une cloison à monter mesure 65 mm (non cotée). Sa longueur réelle approximative :",
+  "r": [
+   "6,50 m",
+   "3,25 m",
+   "1,30 m",
+   "65 cm"
+  ],
+  "bon": 1,
+  "x": "65 × 50 = 3250 mm = 3,25 m — et comme elle n'était pas cotée, vous signalez que c'est une mesure, pas une cote."
+ },
+ {
+  "spec": "Spécialité ETAM",
+  "e": "Un détail de relevé d'étanchéité illisible au 1/100 sera fourni plutôt :",
+  "r": [
+   "au 1/200",
+   "au 1/500",
+   "à la même échelle en plus grand papier",
+   "au 1/10"
+  ],
+  "bon": 3,
+  "x": "Les points singuliers se dessinent au 1/10 ou 1/5 : le zoom final."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script>
+"use strict";
+/* convertisseur de l'écran 4 */
+const ech = document.getElementById("cv-ech"), mm = document.getElementById("cv-mm"),
+      btn = document.getElementById("cv-btn"), res = document.getElementById("cv-res");
+btn.addEventListener("click", () => {
+  const d = parseInt(ech.value, 10), m = parseInt(mm.value, 10);
+  const reel = m * d;
+  const metres = (reel / 1000).toLocaleString("fr-FR", { maximumFractionDigits: 2 });
+  res.textContent = m + " mm × " + d + " = " + reel.toLocaleString("fr-FR") +
+    " mm, soit " + metres + " m en réalité.";
+});
+</script>
+<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

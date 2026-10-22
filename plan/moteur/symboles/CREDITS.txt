@@ -1,0 +1,7 @@
+Symboles issus de la collection QElectroTech (CC BY 3.0 -
+github.com/qelectrotech/qelectrotech-elements), adaptes par inerWeb - F. Henninot.
+Source locale : C:\git\bibliotheque-symboles-energie\svg\60_energy\21_refrigeration\Climatizacion\
+Les fichiers sont copies tels quels, seul le nom du fichier change ; seule exception : voyant-liquide.svg, dont la lettre v (texte de 4 pt a l'impression) est tracee en courbe.
+Gares 12 et 13 : meme collection, dossier Frio\equipo-frigorifico\ (compresores, evap-conden, valvulas).
+Noms corriges d'apres le nom de fichier d'origine (le catalogue automatique se trompe) :
+  secador-0 = filtre deshydrateur ; visor = voyant liquide ; valv-bola = robinet d'arret ; solenoide-1 = electrovanne.

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- noindex tant que le réseau n'est pas publié (feu vert F. Henninot) -->
+<meta name="robots" content="noindex">
+<title>Gare 2 — Les vues : le dé à 6 faces</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La carte du réseau</a> · tronc commun · 1re année</p>
+    <h1>Gare 2 — Les vues : le dé à 6 faces</h1>
+  </div>
+</header>
+
+<!-- ÉCRAN 1 -->
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>Un cours d'environ <strong>2 heures</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li><strong>nommer</strong> les 6 vues d'un objet (face, arrière, droite, gauche, dessus, dessous) ;</li>
+    <li><strong>dessiner</strong> la vue demandée d'un objet simple ;</li>
+    <li><strong>placer</strong> les vues les unes par rapport aux autres, comme sur un vrai plan.</li>
+  </ul>
+  <p class="cle">Matériel : un dé à jouer (1 pour 2), une feuille, un crayon.
+  L'exercice papier se télécharge au dernier écran.</p>
+</section>
+
+<!-- ÉCRAN 2 -->
+<section>
+  <h2>Le problème : un objet en volume, une feuille à plat</h2>
+  <p>Une maison, une cloison, un toit : tout objet a <strong>trois dimensions</strong>
+  (longueur, hauteur, profondeur). Une feuille de papier n'en a que <strong>deux</strong>.</p>
+  <p>Pour décrire un objet sans l'apporter, on dessine <strong>des vues</strong> :
+  ce que voit un observateur placé d'un côté précis de l'objet, mis à plat sur la feuille.</p>
+  <p class="cle"><strong>Une vue = un côté de l'objet, dessiné à plat.</strong>
+  Plusieurs vues ensemble décrivent tout l'objet.</p>
+</section>
+
+<!-- ÉCRAN 3 -->
+<section>
+  <h2>Le dé : l'objet d'entraînement parfait</h2>
+  <p>Un dé a <strong>6 faces</strong>, toutes différentes : impossible de les confondre.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 300 220" width="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un dé dessiné en perspective : face avant 1 point, dessus 2 points, côté droit 3 points.">
+      <polygon points="70,70 190,70 230,38 110,38" fill="#e8eef6" stroke="#1b3a63" stroke-width="2.5"/>
+      <polygon points="190,70 230,38 230,158 190,190" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+      <rect x="70" y="70" width="120" height="120" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <circle cx="130" cy="130" r="9" fill="#10233c"/>
+      <circle cx="122" cy="60" r="7" fill="#10233c"/>
+      <circle cx="178" cy="48" r="7" fill="#10233c"/>
+      <circle cx="203" cy="152" r="7" fill="#10233c"/>
+      <circle cx="210" cy="114" r="7" fill="#10233c"/>
+      <circle cx="217" cy="76" r="7" fill="#10233c"/>
+      <text x="130" y="212" text-anchor="middle" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">face : 1 · dessus : 2 · droite : 3</text>
+    </svg>
+  </div>
+  <p class="cle"><strong>La règle des 7 :</strong> sur un dé, deux faces opposées font
+  toujours un total de 7. <br>1 ↔ 6 &nbsp;·&nbsp; 2 ↔ 5 &nbsp;·&nbsp; 3 ↔ 4.
+  <br>Donc si vous voyez trois faces, vous connaissez les six !</p>
+</section>
+
+<!-- ÉCRAN 4 : interactif -->
+<section>
+  <h2>Tournez autour du dé</h2>
+  <p>Choisissez où se place l'œil : la vue correspondante se dessine.
+  <em>(notre dé : face 1, dessus 2, droite 3)</em></p>
+  <div class="svgbox">
+    <svg id="tour" viewBox="0 0 640 260" width="640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="À gauche le dé en perspective avec un œil qui se déplace, à droite la vue produite.">
+      <g transform="translate(90,50) scale(0.75)">
+        <polygon points="70,70 190,70 230,38 110,38" fill="#e8eef6" stroke="#1b3a63" stroke-width="2.5"/>
+        <polygon points="190,70 230,38 230,158 190,190" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+        <rect x="70" y="70" width="120" height="120" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+        <circle cx="130" cy="130" r="9" fill="#10233c"/>
+        <circle cx="122" cy="60" r="7" fill="#10233c"/><circle cx="178" cy="48" r="7" fill="#10233c"/>
+        <circle cx="203" cy="152" r="7" fill="#10233c"/><circle cx="210" cy="114" r="7" fill="#10233c"/><circle cx="217" cy="76" r="7" fill="#10233c"/>
+      </g>
+      <g id="oeil" transform="translate(200,235)">
+        <circle r="13" fill="#fffdf8" stroke="#c9451a" stroke-width="2.5"/>
+        <circle r="5" fill="#c9451a"/>
+      </g>
+      <g transform="translate(430,55)">
+        <rect x="0" y="0" width="150" height="150" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+        <g id="points-vue"></g>
+        <text id="nom-vue" x="75" y="185" text-anchor="middle" fill="#1b3a63" font-size="17" font-weight="bold" font-family="Segoe UI, sans-serif">vue de face</text>
+      </g>
+    </svg>
+  </div>
+  <div class="boutons-vues" id="btns-vues"></div>
+  <p class="cle">Remarque : la vue de <strong>gauche</strong> montre 4 points — on ne la voit
+  pas sur le dessin en perspective, mais la règle des 7 la donne (7 − 3 = 4).</p>
+</section>
+
+<!-- ÉCRAN 5 -->
+<section>
+  <h2>Comment naît une vue : la projection</h2>
+  <p>L'œil regarde la face <strong>bien en face</strong>, jamais de biais.
+  Tout ce qu'il voit s'aplatit sur un plan, comme une photo sans perspective.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 640 220" width="640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un œil projette la face avant du dé sur un plan : les rayons partent de l'objet vers le plan et dessinent la vue.">
+      <g transform="translate(50,110)">
+        <circle r="14" fill="#fffdf8" stroke="#c9451a" stroke-width="2.5"/><circle r="5.5" fill="#c9451a"/>
+      </g>
+      <rect x="220" y="50" width="26" height="120" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+      <g stroke="#3d7fca" stroke-width="2" stroke-dasharray="6 5">
+        <line x1="246" y1="50" x2="470" y2="50" class="rayon"/>
+        <line x1="246" y1="110" x2="470" y2="110" class="rayon"/>
+        <line x1="246" y1="170" x2="470" y2="170" class="rayon"/>
+      </g>
+      <rect x="470" y="40" width="10" height="140" fill="#1b3a63"/>
+      <g transform="translate(510,50)">
+        <rect width="120" height="120" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+        <circle cx="60" cy="60" r="8" fill="#10233c"/>
+        <text x="60" y="145" text-anchor="middle" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">la vue de face</text>
+      </g>
+      <style>
+        .rayon{stroke-dashoffset:44;animation:file 2.2s linear infinite}
+        @keyframes file{to{stroke-dashoffset:0}}
+      </style>
+    </svg>
+    <figcaption>Les rayons portent la forme de l'objet jusqu'au plan : la vue est née.</figcaption>
+  </div>
+  <p class="cle">Sur une vue, <strong>pas de perspective</strong> : les dimensions sont vraies,
+  on peut les mesurer. C'est pour cela que les plans du bâtiment sont faits de vues.</p>
+</section>
+
+<!-- ÉCRAN 6 -->
+<section>
+  <h2>La croix des vues : où placer chaque vue ?</h2>
+  <p>En France (méthode européenne), on fait <strong>basculer l'objet</strong> :
+  chaque vue se range du côté où l'objet a basculé.</p>
+  <div class="svgbox">
+    <svg id="croix" viewBox="0 0 660 470" width="660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="La croix des vues en disposition européenne : la vue de face au centre, la vue de dessus en dessous, la vue de dessous au-dessus, la vue de droite à gauche, la vue de gauche puis la vue arrière à droite.">
+    </svg>
+    <figcaption>Notre dé, entièrement décrit par ses 6 vues.</figcaption>
+  </div>
+  <p class="cle"><strong>Les deux pièges à retenir :</strong><br>
+  · la vue de <strong>dessus</strong> se dessine <strong>SOUS</strong> la vue de face ;<br>
+  · la vue de <strong>gauche</strong> se dessine <strong>À DROITE</strong> de la vue de face.</p>
+</section>
+
+<!-- ÉCRAN 7 -->
+<section>
+  <h2>Les vues se répondent : les alignements</h2>
+  <p>Les vues ne flottent pas : elles s'alignent. Ce qui est à la même hauteur sur
+  l'objet reste à la même hauteur d'une vue à l'autre.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 620 300" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deux vues côte à côte reliées par des lignes de rappel horizontales, et une vue en dessous reliée par des lignes verticales.">
+      <polygon points="80,40 200,40 200,160 140,160 140,100 80,100" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5" transform="translate(0,20)"/>
+      <text x="140" y="200" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold" font-family="Segoe UI, sans-serif">vue de face</text>
+      <rect x="320" y="60" width="70" height="120" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="355" y="200" text-anchor="middle" fill="#1b3a63" font-size="14" font-weight="bold" font-family="Segoe UI, sans-serif">vue de gauche</text>
+      <g stroke="#c9451a" stroke-width="1.5" stroke-dasharray="5 4">
+        <line x1="200" y1="60" x2="320" y2="60"/>
+        <line x1="200" y1="120" x2="320" y2="120"/>
+        <line x1="200" y1="180" x2="320" y2="180"/>
+      </g>
+      <text x="260" y="48" text-anchor="middle" fill="#c9451a" font-size="12.5" font-family="Segoe UI, sans-serif">même hauteur</text>
+      <rect x="80" y="230" width="120" height="50" fill="#fffdf8" stroke="#1b3a63" stroke-width="2.5"/>
+      <text x="255" y="262" fill="#1b3a63" font-size="14" font-weight="bold" font-family="Segoe UI, sans-serif">vue de dessus</text>
+      <g stroke="#3d7fca" stroke-width="1.5" stroke-dasharray="5 4">
+        <line x1="80" y1="180" x2="80" y2="230"/>
+        <line x1="200" y1="180" x2="200" y2="230"/>
+      </g>
+    </svg>
+    <figcaption>Lignes de rappel : mêmes hauteurs à l'horizontale, mêmes largeurs à la verticale.</figcaption>
+  </div>
+  <p><strong>Exemple résolu : un objet qui n'est pas un dé.</strong> Une marche : deux cubes de large, la colonne de gauche
+  fait deux cubes de haut, celle de droite un seul, sur un cube de profondeur. Un carreau de la grille = un cube.</p>
+  <div class="svgbox">
+    <svg viewBox="0 0 560 290" width="560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un objet en forme de marche, dessiné en perspective, puis ses trois vues : de face, un L renversé fait de trois carreaux ; de dessus, deux carreaux sous la vue de face ; de gauche, deux carreaux superposés à droite de la vue de face.">
+<polygon points="40,120 80,120 102,104 62,104" fill="#f0f0f0" stroke="#1b3a63" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="80,160 120,160 142,144 102,144" fill="#f0f0f0" stroke="#1b3a63" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="120,200 120,160 142,144 142,184" fill="#e0e0e0" stroke="#1b3a63" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="80,160 80,120 102,104 102,144" fill="#e0e0e0" stroke="#1b3a63" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="40,200 120,200 120,160 80,160 80,120 40,120" fill="#ffffff" stroke="#1b3a63" stroke-width="2" stroke-linejoin="round"/>
+<text x="95" y="236" text-anchor="middle" fill="#637285" font-size="16" font-family="Segoe UI, sans-serif">l'objet, en perspective</text>
+<rect x="270" y="70" width="40" height="40" fill="#cfe0f5" stroke="#1b3a63" stroke-width="1.5"/><rect x="310" y="70" width="40" height="40" fill="#fff" stroke="#1b3a63" stroke-width="1.5"/><rect x="270" y="110" width="40" height="40" fill="#cfe0f5" stroke="#1b3a63" stroke-width="1.5"/><rect x="310" y="110" width="40" height="40" fill="#cfe0f5" stroke="#1b3a63" stroke-width="1.5"/>
+<text x="270" y="58" fill="#1b3a63" font-size="16" font-weight="bold" font-family="Segoe UI, sans-serif">vue de face</text>
+<rect x="270" y="178" width="40" height="40" fill="#cfe0f5" stroke="#1b3a63" stroke-width="1.5"/><rect x="310" y="178" width="40" height="40" fill="#cfe0f5" stroke="#1b3a63" stroke-width="1.5"/>
+<text x="270" y="244" fill="#1b3a63" font-size="16" font-weight="bold" font-family="Segoe UI, sans-serif">vue de dessus</text>
+<rect x="386" y="70" width="40" height="40" fill="#cfe0f5" stroke="#1b3a63" stroke-width="1.5"/><rect x="386" y="110" width="40" height="40" fill="#cfe0f5" stroke="#1b3a63" stroke-width="1.5"/>
+<text x="386" y="58" fill="#1b3a63" font-size="16" font-weight="bold" font-family="Segoe UI, sans-serif">vue de gauche</text>
+<g stroke="#c9451a" stroke-width="1.4" stroke-dasharray="5 4"><line x1="270" y1="150" x2="270" y2="178"/><line x1="350" y1="150" x2="350" y2="178"/></g>
+</svg>
+    <figcaption>La vue de face montre la silhouette de devant (3 carreaux). La vue de dessus, rangée SOUS la face, montre le dessus des deux colonnes : 2 carreaux.
+    La vue de gauche, rangée À DROITE de la face, montre la colonne la plus haute : 2 carreaux de haut, 1 de large.</figcaption>
+  </div>
+  <p class="cle">Sur un plan de bâtiment, c'est pareil : la façade et la coupe se
+  correspondent trait pour trait. Vérifier un alignement, c'est déjà contrôler un plan.</p>
+</section>
+
+<!-- ÉCRAN 8 -->
+<section>
+  <h2>Du dé au bâtiment</h2>
+  <p>Sur une maison, les vues portent des noms de chantier :</p>
+  <ul>
+    <li>les vues de face et de côté s'appellent des <strong>façades</strong>
+    (et les côtés triangulaires, des <strong>pignons</strong>) ;</li>
+    <li>une vue ne donne que <strong>deux dimensions</strong> : la vue de face donne la longueur et la hauteur, la vue de dessus la longueur
+    et l'épaisseur ; l'épaisseur d'une cloison se lit donc sur une autre vue (ou sur une coupe) ;</li>
+    <li>la <strong>vue de dessus</strong> montre le toit — c'est elle qu'utilise
+    l'étancheur pour ses toitures-terrasses ;</li>
+    <li>et pour voir l'intérieur, on <em>coupera</em> l'objet — c'est le programme
+    des prochaines gares.</li>
+  </ul>
+  <p class="cle">Ce que vous savez faire sur un dé, vous savez le faire sur un bâtiment :
+  seuls les noms changent.</p>
+</section>
+
+<!-- ÉCRAN 9 : test -->
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas. Les deux dernières questions
+  regardent vers votre métier.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<!-- ÉCRAN 10 -->
+<section>
+  <h2>Terminus de la gare 2</h2>
+  <p>Vous savez maintenant nommer, dessiner et placer les vues d'un objet simple.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>📄 Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant : le corrigé est dans
+  <a href="corrige.pdf">corrige.pdf</a>. L'exercice reprend le dé,
+  la règle des 7, la croix des vues et un objet en L à dessiner.</p>
+  <p>Prochaine gare : <strong>le dossier technique</strong> — qui produit les plans,
+  et comment ils se rangent.</p>
+<div class="froid">
+  <h3>❄️ Sert aussi en froid et climatisation</h3>
+  <ul>
+    <li><strong>CAP IFCA</strong> — S2.2 « Lecture de plan »</li>
+    <li><strong>Bac Pro MFER</strong> (référentiel 2028) — S3.2.1 « Les outils, normes et leur représentation »</li>
+  </ul>
+</div>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Combien de vues différentes peut-on dessiner d'un objet ?",
+  "r": [
+   "6",
+   "4",
+   "2",
+   "autant qu'on veut de côtés en biais"
+  ],
+  "bon": 0,
+  "x": "Six : face, arrière, droite, gauche, dessus, dessous."
+ },
+ {
+  "e": "Sur un dé, quelle face est opposée au 3 ?",
+  "r": [
+   "le 5",
+   "le 4",
+   "le 6",
+   "le 1"
+  ],
+  "bon": 1,
+  "x": "Deux faces opposées font 7 : 7 − 3 = 4."
+ },
+ {
+  "e": "À la française, la vue de DESSUS se place :",
+  "r": [
+   "au-dessus de la vue de face",
+   "sous la vue de face",
+   "à droite de la vue de face",
+   "où on veut"
+  ],
+  "bon": 1,
+  "x": "C'est le piège n° 1 : l'objet bascule, la vue de dessus descend SOUS la face."
+ },
+ {
+  "e": "Notre dé montre : face 1, dessus 2, droite 3. L'observateur placé à DROITE voit :",
+  "r": [
+   "1 point",
+   "2 points",
+   "3 points",
+   "6 points"
+  ],
+  "bon": 2,
+  "x": "Il regarde la face droite : 3 points."
+ },
+ {
+  "e": "La vue de GAUCHE se dessine :",
+  "r": [
+   "à gauche de la vue de face",
+   "sous la vue de face",
+   "à droite de la vue de face",
+   "derrière la feuille"
+  ],
+  "bon": 2,
+  "x": "Piège n° 2 : à la française, la vue de gauche part à droite."
+ },
+ {
+  "e": "Deux vues alignées horizontalement ont la même :",
+  "r": [
+   "épaisseur de trait",
+   "hauteur",
+   "échelle de couleur",
+   "orientation du nord"
+  ],
+  "bon": 1,
+  "x": "Les lignes de rappel horizontales portent les mêmes hauteurs."
+ },
+ {
+  "e": "Sur une maison, la vue de face s'appelle :",
+  "r": [
+   "une coupe",
+   "un pignon",
+   "une toiture",
+   "une façade"
+  ],
+  "bon": 3,
+  "x": "Les vues verticales d'une maison sont ses façades ; le pignon est le côté triangulaire."
+ },
+ {
+  "e": "Une vue, c'est :",
+  "r": [
+   "une photo de l'objet avec sa perspective",
+   "un dessin à plat d'un côté de l'objet",
+   "un croquis rapide fait sans aucune dimension exacte",
+   "une maquette en carton"
+  ],
+  "bon": 1,
+  "x": "Pas de perspective : les dimensions sont vraies, donc mesurables."
+ },
+ {
+  "spec": "Spécialité MPI",
+  "e": "Le plaquiste reçoit le dessin d'une cloison « vue de face ». Il peut y lire :",
+  "r": [
+   "la longueur et la hauteur de la cloison",
+   "l'épaisseur de la cloison",
+   "le poids des plaques",
+   "la couleur de la peinture de finition prévue"
+  ],
+  "bon": 0,
+  "x": "Une vue de face donne 2 dimensions ; l'épaisseur se lira sur une autre vue (ou une coupe)."
+ },
+ {
+  "spec": "Spécialité ETAM",
+  "e": "Pour repérer les évacuations d'eau d'un toit-terrasse, la vue la plus utile est :",
+  "r": [
+   "la vue de face",
+   "la vue de dessous",
+   "la vue de dessus",
+   "la vue d'arrière"
+  ],
+  "bon": 2,
+  "x": "Le toit se lit d'en haut : c'est la vue de dessus (le futur « plan de toiture »)."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script>
+"use strict";
+/* écran 4 : tourner autour — notre dé : face 1, dessus 2, droite 3 */
+const VUES = [
+  { nom: "vue de face",    n: 1, oeil: [200, 235] },
+  { nom: "vue de droite",  n: 3, oeil: [330, 130] },
+  { nom: "vue de gauche",  n: 4, oeil: [55, 130] },
+  { nom: "vue de dessus",  n: 2, oeil: [200, 22] },
+  { nom: "vue de dessous", n: 5, oeil: [118, 242] },
+  { nom: "vue d'arrière",  n: 6, oeil: [318, 30] }
+];
+const btns = document.getElementById("btns-vues"),
+      ptsVue = document.getElementById("points-vue"),
+      nomVue = document.getElementById("nom-vue"),
+      oeil = document.getElementById("oeil");
+VUES.forEach((v, i) => {
+  const b = document.createElement("button");
+  b.textContent = v.nom;
+  b.addEventListener("click", () => {
+    [...btns.children].forEach(x => x.classList.remove("actif"));
+    b.classList.add("actif");
+    dessinePoints(ptsVue, v.n, 150);
+    nomVue.textContent = v.nom + " — " + v.n + (v.n > 1 ? " points" : " point");
+    oeil.setAttribute("transform", "translate(" + v.oeil[0] + "," + v.oeil[1] + ")");
+  });
+  btns.appendChild(b);
+  if (i === 0) b.click();
+});
+
+/* écran 6 : la croix des vues (disposition européenne) */
+const CASES = [
+  { nom: "vue de dessous", n: 5, x: 275, y: 20 },
+  { nom: "vue de droite",  n: 3, x: 120, y: 175 },
+  { nom: "vue de face",    n: 1, x: 275, y: 175, forte: true },
+  { nom: "vue de gauche",  n: 4, x: 430, y: 175 },
+  { nom: "vue d'arrière",  n: 6, x: 540, y: 20 },
+  { nom: "vue de dessus",  n: 2, x: 275, y: 330 }
+];
+const croix = document.getElementById("croix");
+for (const c of CASES) {
+  const g = document.createElementNS(SVGNS, "g");
+  g.setAttribute("transform", "translate(" + c.x + "," + c.y + ")");
+  const r = document.createElementNS(SVGNS, "rect");
+  r.setAttribute("width", 110); r.setAttribute("height", 110);
+  r.setAttribute("fill", "#fffdf8");
+  r.setAttribute("stroke", c.forte ? "#c9451a" : "#1b3a63");
+  r.setAttribute("stroke-width", c.forte ? 3.5 : 2.5);
+  g.appendChild(r);
+  const pts = document.createElementNS(SVGNS, "g");
+  g.appendChild(pts);
+  dessinePoints(pts, c.n, 110);
+  const t = document.createElementNS(SVGNS, "text");
+  t.setAttribute("x", 55); t.setAttribute("y", 132);
+  t.setAttribute("text-anchor", "middle");
+  t.setAttribute("fill", c.forte ? "#c9451a" : "#1b3a63");
+  t.setAttribute("font-size", 13.5);
+  t.setAttribute("font-weight", "bold");
+  t.setAttribute("font-family", "Segoe UI, sans-serif");
+  t.textContent = c.nom;
+  g.appendChild(t);
+  croix.appendChild(g);
+}
+</script>
+<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>
