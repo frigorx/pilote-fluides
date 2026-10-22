@@ -1,0 +1,22 @@
+{
+  "cours": "postes-magasin-interactif",
+  "titre": "Raccorder les postes d’un magasin — meubles, chambres, électrovannes",
+  "reference": "TP Monteur dépanneur frigoriste (RNCP37876) : CP7",
+  "ecrans": 11,
+  "codes": {},
+  "tp_mdf": {
+    "TP CP7": [
+      "poste-et-centrale",
+      "ordre-ligne-liquide",
+      "sens-electrovanne",
+      "poste-assez-froid",
+      "les-autres-postes",
+      "bulbe-du-detendeur",
+      "isoler-aspiration",
+      "points-avant-ouvrir",
+      "poste-surgeles",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}

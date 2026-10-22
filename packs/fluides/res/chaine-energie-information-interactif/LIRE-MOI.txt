@@ -1,0 +1,27 @@
+LA CHAÎNE D’ÉNERGIE ET D’INFORMATION D’UNE INSTALLATION
+
+Cours interactif du plan thermo-techno, ligne « Les organes », après « Qui fait quoi ».
+10 écrans, 6 dossiers, 8 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il met côte à côte les deux chaînes d’une installation : la chaîne d’énergie (alimenter, distribuer, convertir, agir) et la chaîne
+  d’information (acquérir, traiter, communiquer). L’élève y range les pièces de la chambre froide (repères B1, KM1, M1, HP, BP),
+  voit où l’information commande l’énergie (la bobine du contacteur KM1), puis apprend à chercher une panne dans la bonne chaîne.
+  Les mesures sous tension ne sont pas demandées : renvoi à l’habilitation.
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  Bac Pro MFER 2028 : savoirs S3.1 « l’analyse fonctionnelle et structurelle » et S6.1 « l’étude du fonctionnement de l’installation ».
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (tri, ordre, choix).
+  Le dernier exercice n’a plus de guide : l’élève écrit seul, puis compare à la réponse type. Les valeurs d’exemple
+  sont des exemples d’exercice, annoncées comme telles.
+
+ADRESSAGE
+  index.html?dossier=energie&ecran=1
+  index.html?extrait=deux-chaines,chaine-d-energie
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : node tests/qa.mjs après avoir servi le site (python -m http.server 8799 --bind 127.0.0.1 à la racine),
+  Chrome du poste, 1280 et 375 px.

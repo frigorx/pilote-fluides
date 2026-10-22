@@ -64,7 +64,10 @@
     "cours-classes-securite": true,
     "etancheite-interactive": true,
     "detecteurs-fuite-interactif": true,
-    "intervention-hydrocarbures-interactive": true
+    "intervention-hydrocarbures-interactive": true,
+    "centrale-positive-interactif": true,
+    "postes-magasin-interactif": true,
+    "maintenance-centrale-interactif": true
   };
 
   /* --- Le tronc : la théorie, de la première notion au diagramme --- */
@@ -103,7 +106,11 @@
         cours("compresseur-interactif",     "Le compresseur",        "installer, régler, vérifier"),
         cours("module-compresseur",         "Module compresseur",    "le bloc hermétique"),
         cours("condenseur-interactif",      "Le condenseur",         "haute pression, ventilation"),
-        cours("evaporateur-interactif",     "L’évaporateur",         "givre et dégivrage")
+        cours("evaporateur-interactif",     "L’évaporateur",         "givre et dégivrage"),
+        /* 19/10/2026 — analyse fonctionnelle (Bac MFER S3.1, S6.1) : une fois les organes connus,
+           on met en face de chaque fonction son organe, puis les deux chaînes de l’installation. */
+        cours("analyse-fonctionnelle-interactif",      "Qui fait quoi ?",       "analyse fonctionnelle"),
+        cours("chaine-energie-information-interactif", "Énergie et information", "deux chaînes, un contacteur")
       ] },
     { slug: "reglages", nom: "🎛 CE QUI SE RÈGLE", sous: "consigne, différentiel, preuve", couleur: "#0e7490", x: 360,
       jalon: "🏁 Réglages maîtrisés", depart_y: 1,
@@ -279,7 +286,7 @@
          traite le FLUIDE et ce qu'il impose ; celle-ci traite les MACHINES.
          Même fichier derrière : ce sont les mêmes escales, groupées autrement. */
   var CENTRALES = {
-    slug: "centrales", nom: "🏭 LES CENTRALES CO₂", sous: "les machines qui l’emploient",
+    slug: "centrales", nom: "🏭 LES CENTRALES", sous: "CO₂ et froid commercial",
     couleur: "#7c3aed",
     jalon: "🏁 Les centrales lues",
     stations: [
@@ -287,7 +294,14 @@
       escale("booster-diagramme",  "Sur le diagramme",    "le circuit et le tracé ensemble"),
       escale("familles",           "Les architectures",   "cascade, parallèle, éjecteurs"),
       escale("compresseurs",       "Compresseurs",        "piston, variateur, relevé"),
-      escale("ejecteur",           "L’éjecteur",          "récupérer l’énergie de détente")
+      escale("ejecteur",           "L’éjecteur",          "récupérer l’énergie de détente"),
+      /* 19/10/2026 — le froid commercial centralisé (TP Monteur dépanneur frigoriste CP7 et CP8) :
+         la centrale positive classique, de l’assemblage à la maintenance. Les centrales CO₂ ci-dessus
+         disent ce que le fluide impose ; ces quatre-ci, ce qu’on fait de la machine. */
+      cours("centrale-positive-interactif",           "Assembler la centrale", "compresseurs en parallèle"),
+      cours("postes-magasin-interactif",              "Raccorder les postes",  "meubles, électrovannes"),
+      cours("maintenance-centrale-interactif",        "Maintenir la centrale", "relevés, contrôles, fiche"),
+      cours("plan-maintenance-commercial-interactif", "Plan de maintenance",   "périodicités, contrat")
     ]
   };
 

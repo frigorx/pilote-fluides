@@ -1,0 +1,30 @@
+RACCORDER LES POSTES D’UN MAGASIN : MEUBLES, CHAMBRES, ÉLECTROVANNES
+
+Cours interactif du plan thermo-techno, ligne « Les centrales », après « Assembler une centrale positive ».
+11 écrans, 6 dossiers, 10 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il prend un poste (meuble ou chambre froide) et le raccorde à la centrale : ce qui lui appartient, l’ordre des pièces sur sa ligne
+  liquide, le sens de l’électrovanne, qui l’ouvre et la ferme, la place du bulbe du détendeur, la conduite d’aspiration, les contrôles
+  avant d’ouvrir. Il renvoie aux cours de chaque pièce plutôt que de les refaire.
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  TP Monteur dépanneur frigoriste (RNCP37876) : CP7 « Réaliser l’assemblage d’une installation de froid commercial complexe et centralisée ».
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (tri, ordre, choix).
+  Le dernier exercice n’a plus de guide : l’élève écrit seul, puis compare à la réponse type. Les valeurs d’exemple
+  sont des exemples d’exercice, annoncées comme telles.
+
+VUE DES PIÈCES
+  scene-station.js : à gauche de l’écran, les appareils dont il parle, tels qu’ils sont (images/ ; organes de synthèse déjà en ligne).
+  Sans scène sur l’écran, la colonne disparaît. Sur téléphone (≤ 650 px) elle est masquée : le cours annonce « PC ou tablette » et reste complet.
+
+ADRESSAGE
+  index.html?dossier=liquide&ecran=1
+  index.html?extrait=poste-et-centrale,ordre-ligne-liquide
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : node tests/qa.mjs après avoir servi le site (python -m http.server 8799 --bind 127.0.0.1 à la racine),
+  Chrome du poste, 1280 et 375 px.

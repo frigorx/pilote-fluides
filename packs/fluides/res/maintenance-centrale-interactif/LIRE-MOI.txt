@@ -1,0 +1,35 @@
+MAINTENANCE SYSTÉMATIQUE D’UNE CENTRALE : RELEVÉS, CONTRÔLES, FICHE
+
+Cours interactif du plan thermo-techno, ligne « Les centrales », après « Raccorder les postes d’un magasin ».
+12 écrans, 5 dossiers, 10 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il déroule une visite de maintenance systématique d’une centrale positive : le programme (dix des treize opérations du contrat type, en quatre groupes),
+  les relevés qui se comparent à ceux de la visite d’avant, un groupe de relevés qui parle, les contrôles de l’huile, de la propreté
+  et de l’électricité, la lecture et le remplissage d’une fiche de visite (OK, À surveiller, Défaut), et que faire d’un défaut
+  (le noter, prévenir le client, proposer un devis). Il se prolonge par « Plan de maintenance du froid commercial ».
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  TP MDF (RNCP37876) : CP8 « Réaliser la maintenance systématique d’une installation de froid commercial complexe et centralisée ».
+  Bac Pro MFER 2028 : tâche A3T1 « Réaliser une opération de maintenance préventive » (activité A3).
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (tri, ordre, choix).
+  Le dernier exercice n’a plus de guide : l’élève écrit seul, puis compare à la réponse type. Les valeurs d’exemple
+  sont des exemples d’exercice, annoncées comme telles.
+
+POINT RÉGLEMENTAIRE (19/10/2026)
+  Règlement (UE) 2024/573, article 7 : un seul renvoi (relire le registre). Les périodicités de contrôle d’étanchéité sont dans le cours suivant.
+
+VUE DES PIÈCES
+  scene-station.js : à gauche de l’écran, les appareils dont il parle, tels qu’ils sont (images/ ; organes de synthèse déjà en ligne).
+  Sans scène sur l’écran, la colonne disparaît. Sur téléphone (≤ 650 px) elle est masquée : le cours annonce « PC ou tablette » et reste complet.
+
+ADRESSAGE
+  index.html?dossier=relever&ecran=1
+  index.html?extrait=programme-de-visite,avant-de-commencer
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : node tests/qa.mjs après avoir servi le site (python -m http.server 8799 --bind 127.0.0.1 à la racine),
+  Chrome du poste, 1280 et 375 px.

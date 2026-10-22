@@ -1,0 +1,25 @@
+{
+  "cours": "centrale-positive-interactif",
+  "titre": "Assembler une centrale positive — compresseurs en parallèle, collecteurs, bouteille",
+  "reference": "TP Monteur dépanneur frigoriste (RNCP37876) : CP7",
+  "ecrans": 14,
+  "codes": {},
+  "tp_mdf": {
+    "TP CP7": [
+      "centrale-en-blocs",
+      "deux-pressions",
+      "pourquoi-plusieurs",
+      "chaque-compresseur",
+      "sens-du-clapet",
+      "collecteur-aspiration",
+      "collecteur-refoulement",
+      "separateur-huile",
+      "bouteille-ligne-liquide",
+      "ordre-de-montage",
+      "points-a-controler",
+      "epreuve-vide-charge",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}

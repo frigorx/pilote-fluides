@@ -1,0 +1,34 @@
+ASSEMBLER UNE CENTRALE POSITIVE : COMPRESSEURS EN PARALLÈLE, COLLECTEURS, BOUTEILLE
+
+Cours interactif du plan thermo-techno, ligne « Les centrales », après « L’éjecteur ».
+14 écrans, 6 dossiers, 12 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il apprend à lire une centrale positive de supermarché (aspiration et refoulement, six blocs), à distinguer ce qui appartient à
+  chaque compresseur (vannes, clapet, pressostats) de ce qui est commun (collecteurs, séparateur, condenseur, bouteille), à suivre le
+  gaz, puis à monter dans l’ordre et à contrôler avant la charge. Il renvoie au Voyage (film et module) et aux cours des organes
+  plutôt que de les refaire ; il se prolonge par « Raccorder les postes d’un magasin ».
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  TP Monteur dépanneur frigoriste (RNCP37876) : CP7 « Réaliser l’assemblage d’une installation de froid commercial complexe et centralisée ».
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (tri, ordre, choix).
+  Le dernier exercice n’a plus de guide : l’élève écrit seul, puis compare à la réponse type. Les valeurs d’exemple
+  sont des exemples d’exercice, annoncées comme telles.
+
+POINT RÉGLEMENTAIRE (19/10/2026)
+  Règlement (UE) 2024/573, article 4 § 1 : un seul renvoi (on n’essaie pas avec le fluide). Aucun autre chiffre réglementaire.
+
+VUE DES PIÈCES
+  scene-station.js : à gauche de l’écran, les appareils dont il parle, tels qu’ils sont (images/ ; organes de synthèse déjà en ligne).
+  Sans scène sur l’écran, la colonne disparaît. Sur téléphone (≤ 650 px) elle est masquée : le cours annonce « PC ou tablette » et reste complet.
+
+ADRESSAGE
+  index.html?dossier=compresseurs&ecran=1
+  index.html?extrait=centrale-en-blocs,deux-pressions
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : node tests/qa.mjs après avoir servi le site (python -m http.server 8799 --bind 127.0.0.1 à la racine),
+  Chrome du poste, 1280 et 375 px.

@@ -2,7 +2,7 @@
   "cours": "capsules",
   "titre": "Capsules narrées — un chapitre expliqué à voix haute, écran par écran",
   "reference": "arrêté du 21 novembre 2025 · règlement (UE) 2024/573",
-  "ecrans": 151,
+  "ecrans": 158,
   "codes": {
     "1.00": [
       "g0/pourquoi",
@@ -398,6 +398,15 @@
       "x2/detendeur-ou-charge",
       "x2/manque-de-charge",
       "x2/localiser-la-fuite"
+    ],
+    "CC93": [
+      "briefing-securite/pourquoi-dire",
+      "briefing-securite/cinq-temps",
+      "briefing-securite/trois-risques",
+      "briefing-securite/si-ca-tourne-mal",
+      "briefing-securite/dire-pas-lire",
+      "briefing-securite/verifier",
+      "briefing-securite/mot-pour-mot"
     ]
   },
   "_genere": "build/capsules.mjs — ne pas éditer à la main"

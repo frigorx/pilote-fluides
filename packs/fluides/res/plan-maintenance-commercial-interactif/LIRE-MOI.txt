@@ -1,0 +1,31 @@
+PLAN DE MAINTENANCE DU FROID COMMERCIAL : PÉRIODICITÉS, CONTRAT
+
+Cours interactif du plan thermo-techno, ligne « Les centrales », après « Maintenance systématique d’une centrale ».
+11 écrans, 5 dossiers, 8 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il apprend à distinguer maintenance systématique, conditionnelle et corrective ; à séparer ce que fixe le règlement européen
+  (contrôle d’étanchéité tous les 12, 6 ou 3 mois selon la charge en tonnes équivalent CO₂, système de détection des fuites,
+  registre conservé cinq ans) de ce que fixent le contrat et la notice ; à calculer la charge en tonnes équivalent CO₂ ; à lire un
+  contrat de maintenance (matériel, visites, hors contrat, durée) ; à construire un plan « quoi, quand, qui l’impose ».
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  TP MDF (RNCP37876) : CP8 « Réaliser la maintenance systématique d’une installation de froid commercial complexe et centralisée ».
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (tri, ordre, choix).
+  Le dernier exercice n’a plus de guide : l’élève écrit seul, puis compare à la réponse type. Les valeurs d’exemple
+  sont des exemples d’exercice, annoncées comme telles.
+
+POINT RÉGLEMENTAIRE (19/10/2026)
+  Règlement (UE) 2024/573, articles 5 (fréquences, certification), 6 (détection des fuites) et 7 (registre), lus le 19/10/2026 sur
+  publications.europa.eu. SOURCES.md donne les passages ; le compte rendu liste ce que F. Henninot doit confirmer (transposition française).
+
+ADRESSAGE
+  index.html?dossier=loi&ecran=1
+  index.html?extrait=trois-maintenances,qui-fixe-la-frequence
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : node tests/qa.mjs après avoir servi le site (python -m http.server 8799 --bind 127.0.0.1 à la racine),
+  Chrome du poste, 1280 et 375 px.

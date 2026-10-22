@@ -1,0 +1,28 @@
+{
+  "cours": "analyse-fonctionnelle-interactif",
+  "titre": "Qui fait quoi — analyse fonctionnelle d’une installation frigorifique",
+  "reference": "Bac Pro MFER 2028 : S3.1, S6.1",
+  "ecrans": 12,
+  "codes": {},
+  "bac_mfer_2028": {
+    "Bac S3.1": [
+      "a-quoi-ca-sert",
+      "fonction-ou-organe",
+      "fonction-du-circuit",
+      "fonction-ligne-liquide",
+      "deux-structures",
+      "capteur-ou-actionneur",
+      "lire-le-dossier",
+      "qui-fait-quoi-dossier",
+      "sequence-pump-down",
+      "cas-seul",
+      "bilan"
+    ],
+    "Bac S6.1": [
+      "sequence-pump-down",
+      "securite-hp",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}

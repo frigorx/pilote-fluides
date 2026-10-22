@@ -1,0 +1,22 @@
+{
+  "cours": "plan-maintenance-commercial-interactif",
+  "titre": "Plan de maintenance du froid commercial — périodicités, contrat",
+  "reference": "TP Monteur dépanneur frigoriste (RNCP37876) : CP8 ; règlement (UE) 2024/573, articles 5 à 7",
+  "ecrans": 11,
+  "codes": {},
+  "tp_mdf": {
+    "TP CP8": [
+      "trois-maintenances",
+      "qui-fixe-la-frequence",
+      "seuils-et-calcul",
+      "grosse-centrale",
+      "detection-et-frequence",
+      "le-registre",
+      "lire-un-contrat",
+      "compris-ou-hors-contrat",
+      "plan-exemple",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}
