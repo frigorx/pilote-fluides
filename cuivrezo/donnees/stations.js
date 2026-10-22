@@ -8,14 +8,14 @@
 
 var CUIVREZO = window.CUIVREZO = window.CUIVREZO || {};
 CUIVREZO.stations = [];
-CUIVREZO.lignes = { 1: 'Les gestes de base', 2: 'Le chalumeau', 3: 'Braser', 4: 'Les pièces complexes' };
+CUIVREZO.lignes = { 1: 'Les gestes de base', 2: 'Le chalumeau', 3: 'Braser', 4: 'Les pièces complexes', 5: 'Réseau acier et réseaux du plombier' };
 /* les jeux d'une ligne : des pages à part (pas le contrat des six temps), affichées sur le plan après ses stations */
 CUIVREZO.jeux = [
   { ligne: 2, num: '2.3', titre: 'Le jeu du chalumeau', href: 'simulateur/' },
   { ligne: 3, num: '3.3', titre: 'Le jeu de l’azote', href: 'simulateur/azote.html' }
 ];
 CUIVREZO.lignesAVenir = [
-  { n: 5, titre: 'Le réseau complet', contenu: 'piquage, dessautage, pièce d’examen : une ligne frigorifique façonnée de bout en bout' }
+  { n: 6, titre: 'Le réseau complet', contenu: 'piquage, dessautage, pièce d’examen : une ligne frigorifique façonnée de bout en bout' }
 ];
 
 /* le poste d'atelier en 3D, porte d'entrée de l'accueil (03/10) : chaque zone est une pièce du modèle
@@ -32,7 +32,8 @@ CUIVREZO.zonesPoste = [
   { id: 'oxy', nom: 'Le poste oxyacétylénique', stations: ['2-1', '2-2'], phrase: 'Deux bouteilles, deux détendeurs, deux tuyaux, un chalumeau : la sécurité d’abord, la flamme ensuite.' },
   { id: 'tendre', nom: 'Le chalumeau propane et l’étain', stations: ['3-1'], phrase: 'Derrière le pare-flamme, l’étain coule dans l’emboîture chauffée.' },
   { id: 'azote', nom: 'L’azote, pour braser fort', stations: ['3-2'], phrase: 'L’azote balaie l’intérieur du tube pendant la brasure forte : il reste propre.' },
-  { id: 'pieces', nom: 'Les pièces façonnées', stations: ['4-1', '4-2'], phrase: 'Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.' }
+  { id: 'pieces', nom: 'Les pièces façonnées', stations: ['4-1', '4-2'], phrase: 'Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.' },
+  { id: 'plomberie', nom: 'Les tubes du plombier', stations: ['5-1', '5-2', '5-3', '5-4'], phrase: 'Acier, PER, multicouche, PVC : on reconnaît le tube, puis on choisit comment l’assembler.' }
 ];
 
 /* libellés exacts, lus dans l'arrêté (voir sources-metier/referentiel-cap-ifca.md) */
@@ -44,6 +45,7 @@ var REF = {
   C22: 'C2.2 Contrôler les éléments nécessaires à la réalisation',
   C31: 'C3.1 Organiser le poste de travail',
   C34: 'C3.4 Façonner, raccorder, assembler, isoler, les circuits (frigorifique, hydraulique, aéraulique)',
+  C35: 'C3.5 Réaliser des opérations simples de soudage acier et raccorder PER',
   C39: 'C3.9 Vérifier l’étanchéité d’un circuit (frigorifique, hydraulique) avant mise en service',
   C47: 'C4.7 Raccorder les équipements de charge, de mesure et de contrôle',
   S02: 'S0.2 Gestion de l’environnement du site d’intervention et des déchets',
@@ -51,7 +53,13 @@ var REF = {
   S55: 'S5.5 Réseaux fluidiques et mécanique des fluides',
   S62: 'S6.2 Connaissance des principaux risques et des moyens de prévention',
   S63: 'S6.3 Identification des dangers et prévention des risques',
-  S64: 'S6.4 PRAP - SST'
+  S64: 'S6.4 PRAP - SST',
+  /* Bac Pro MFER 2028 (arrêté du 28 juillet 2026) : libellés lus dans C:/git/HAL-v3/donnees/referentiels/peda/BAC_MFER_2028.json.
+     Affichés par le moteur dans le bloc `referentiel.bac` d'une station (moteur/station.js, outils/page-prof.mjs). */
+  BA2T3: 'A2T3 Réaliser les réseaux fluidiques',
+  BC6: 'C6 Réaliser une installation en adoptant une attitude écoresponsable',
+  BS513: 'S5.1.3 Les assemblages de tubes PVC et polyéthylène',
+  BS514: 'S5.1.4 Les assemblages de tubes acier noir et inox'
 };
 
 /* l'échelle de F. Henninot, cinq niveaux, chacun avec son critère observable (mémoire « Échelle à CINQ niveaux ») ;
@@ -1654,6 +1662,533 @@ CUIVREZO.stations.push({
   prof: {
     verifie: ['Le parallélisme des branches', 'Le décalage, d’axe à axe', 'Les deux angles égaux', 'La planéité et l’aspect'],
     narration: 'Le professeur contrôle d’abord le parallélisme, puis le décalage, et regarde vos deux coudes. Une baïonnette juste, c’est un raccord qui arrive pile en face.'
+  }
+});
+
+/* Station 5-1 — Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC. Source : sources-metier/5-1-reconnaitre-les-tubes.md
+   Tableaux : fiche « Le tube acier noir et galvanisé » (acier, tarif 1), fiche « Le P.E.R » et catalogue WATTS (PER), TP PVC + multicouche (14 × 2, 32 × 3, 40 × 3),
+   fiche n°23 du Centre du Cuivre (interdits). `aValider` : ce qui ne vient pas des fiches de F. Henninot. */
+CUIVREZO.stations.push({
+  id: '5-1', ligne: 5, titre: 'Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC', duree: '25 min',
+  sources: ['sources-metier/5-1-reconnaitre-les-tubes.md'],
+  vignette: 'images/5-1-vignette.webp',
+  referentiel: { taches: [REF.T10, REF.T6], competences: [REF.C22, REF.C34], savoirs: [REF.S55],
+    bac: { taches: [REF.BA2T3], competences: [REF.BC6], savoirs: [REF.BS513, REF.BS514] } },
+  obtenir: {
+    titre: 'Le bon tube, nommé juste, avec son usage',
+    texte: 'Devant un tube de plomberie, vous dites sa matière et vous lisez son marquage. Vous mesurez son diamètre extérieur et vous dites à quoi il sert. Vous savez aussi où il n’a pas le droit d’aller.',
+    criteres: ['La matière nommée : acier noir, galvanisé, inox, PER, multicouche, PE ou PVC', 'Le marquage lu : la matière, puis « diamètre × épaisseur »', 'Le diamètre extérieur mesuré, puis retrouvé dans le tableau (pouces, DN, millimètres)', 'L’usage dit : chauffage, eau glacée, eau sanitaire, évacuation ou gaz, et ce que ce tube ne doit jamais faire'],
+    figure: { svg: 'tubesPlomb', etat: 'famille', legende: 'Sept tubes, sept matières : on les reconnaît à la couleur, à la forme et au marquage.' },
+    narration: 'En plomberie et en chauffage, on rencontre des tubes de matières très différentes : de l’acier, de l’inox, du plastique souple, du plastique rigide. Un tube pris pour un autre, c’est une installation qui rouille, qui fuit, ou qui n’a pas le droit d’exister. Cette station vous apprend à reconnaître un tube en quatre regards : la matière, le marquage, le diamètre, et l’usage. À la fin, devant un tube que vous n’avez jamais vu, vous dites son nom et à quoi il sert.'
+  },
+  materiel: {
+    titre: 'Je sors mon matériel',
+    figure: { svg: 'tubesPlomb', etat: 'coupes', legende: 'Vu en coupe, chaque tube a sa signature.' },
+    items: [
+      { nom: 'Des chutes de tubes', detail: 'acier noir, galvanisé, PER, multicouche, PVC ; inox et PE s’il y en a au plateau' },
+      { nom: 'Le pied à coulisse', detail: 'becs propres, zéro vérifié (station 1.1)' },
+      { nom: 'Un chiffon', detail: 'pour lire le marquage sous la poussière' },
+      { nom: 'Un aimant', detail: 'pour départager un galvanisé et un inox' },
+      { nom: 'Le catalogue du fabricant', detail: 'pour les valeurs de l’inox et du PE' },
+      { nom: 'Lunettes et gants', detail: 'les chutes d’acier ont des bords coupants' },
+      { nom: 'Les tableaux', detail: 'ils sont dans cette station, aux gestes 5, 6 et 7' }
+    ],
+    narration: 'Posez devant vous des chutes de tubes de matières différentes : de l’acier noir, du galvanisé, du PER, du multicouche, du PVC, et de l’inox ou du PE s’il y en a au plateau. Le pied à coulisse, vous le connaissez déjà : c’est celui de la station un point un. Prenez aussi un chiffon pour lire le marquage, un aimant pour départager un galvanisé et un inox, et mettez lunettes et gants, parce que les chutes d’acier ont des bords coupants. Les tableaux dont vous avez besoin sont dans la station.'
+  },
+  gestes: [
+    { titre: 'Regarder la matière et la forme', texte: 'Posez les chutes devant vous. Métal ou plastique ? Rigide ou souple ? Rangez-les en deux tas : les métaux, les plastiques.',
+      pointCle: 'Métal ou plastique, rigide ou souple : déjà la moitié du travail.',
+      pourquoi: 'La matière décide de tout : comment on coupe le tube, comment on l’assemble, et où l’on a le droit de le poser.',
+      aValider: 'Inox et PE : description générale (couleur, bande de couleur du PE), absente des fiches de Franck.',
+      figure: { svg: 'tubesPlomb', etat: 'famille' }, clip: null,
+      narration: 'Premier regard : la matière et la forme. Les tubes en acier sont rigides, gris sombre pour l’acier noir, gris clair brillant pour le galvanisé, qui est de l’acier recouvert de zinc. Ils sont livrés en barres de six mètres quarante. L’inox est brillant. Les plastiques, eux, sont souples en couronne, comme le PER, rouge pour l’eau chaude, bleu pour l’eau froide, ou rigides en barres, comme le PVC gris. Séparez vos chutes en deux tas : métal, plastique. Ce premier tri élimine déjà la moitié des erreurs.' },
+    { titre: 'Regarder le tube en coupe', texte: 'Regardez le bout du tube, de face. Plein métal gris : acier. Du zinc brillant autour : galvanisé. Une fine bande d’aluminium entre deux couches de plastique : multicouche. Un doute entre galvanisé et inox ? Approchez un aimant : il colle sur le galvanisé, rarement sur l’inox.',
+      pointCle: 'Une bande brillante entre deux couches de plastique : c’est du multicouche.',
+      pourquoi: 'Le PER et le multicouche se ressemblent de l’extérieur. Mais ils ne se travaillent pas pareil : on ne choisit pas le raccord au hasard.',
+      aValider: 'Structure du multicouche (aluminium entre deux couches de plastique) et test de l’aimant (colle sur l’acier, galvanisé compris ; la plupart des inox de plomberie ne sont pas magnétiques) : connaissance générale, à vérifier sur les chutes du plateau.',
+      figure: { svg: 'tubesPlomb', etat: 'coupes' }, clip: null,
+      narration: 'Deuxième regard : le bout du tube, vu de face. L’acier noir est plein métal, sans rien autour. Le galvanisé porte une fine couche de zinc, qui le protège de la rouille. Le PER est un plastique d’une seule matière. Le multicouche, lui, a trois couches : du plastique, une fine bande d’aluminium, du plastique. Cette bande brille quand on regarde le bout du tube. Le PER et le multicouche se ressemblent de l’extérieur, mais ils ne se raccordent pas de la même façon : le bout coupé vous dit lequel vous tenez. Un doute entre un galvanisé et un inox ? L’aimant colle sur le galvanisé, qui est de l’acier, et rarement sur l’inox.' },
+    { titre: 'Lire le marquage', texte: 'Tournez le tube jusqu’à voir l’inscription imprimée. Sur un plastique, elle revient tous les mètres. Lisez dans l’ordre : la matière, puis « diamètre × épaisseur » en millimètres.',
+      pointCle: '16 × 1,5 : un diamètre extérieur de 16 mm et une paroi de 1,5 mm.',
+      pourquoi: 'Le marquage est la carte d’identité du tube. S’il est effacé, on mesure (geste suivant).',
+      figure: { svg: 'tubesPlomb', etat: 'marquage' }, clip: null,
+      narration: 'Troisième regard : le marquage. Tournez le tube jusqu’à trouver l’inscription imprimée. Sur les plastiques, elle revient tous les mètres. On y lit la matière, par exemple PER, puis deux nombres : le diamètre extérieur et l’épaisseur de la paroi, en millimètres. Seize fois un virgule cinq, c’est un tube de seize millimètres de diamètre extérieur, avec une paroi d’un millimètre et demi. Le fabricant et les limites de température et de pression sont écrits aussi. La forme exacte varie d’une marque à l’autre, mais l’idée est la même.' },
+    { titre: 'Mesurer le diamètre extérieur', texte: 'Becs du pied à coulisse fermés : on lit 0. Puis posez le tube entre les grands becs, en travers de son axe, refermez sans serrer et lisez.',
+      pointCle: 'C’est toujours le diamètre EXTÉRIEUR qui nomme le tube.',
+      pourquoi: 'Le raccord se monte sur l’extérieur du tube. C’est le même geste qu’à la station 1.1.',
+      figure: { svg: 'tubesPlomb', etat: 'pied' }, clip: null,
+      narration: 'Quatrième regard : le diamètre. Si le marquage est effacé, ou pour vérifier qu’il dit vrai, on mesure. Becs fermés, on vérifie que le pied à coulisse lit zéro. Puis on pose le tube entre les grands becs, bien en travers, on referme jusqu’au contact sans serrer, et on lit. C’est le même geste que pour le cuivre, à la station un point un. Et c’est toujours l’extérieur qui nomme le tube, parce que le raccord se monte dessus.' },
+    { titre: 'Trouver le nom d’un tube acier', texte: 'Exemple : vous lisez 26,9 mm. Dans le tableau, cherchez la ligne « 26,9 × 2,3 » : elle donne 3/4″ en pouces et DN 20. Sur un vieux catalogue, la même ligne s’appelle « 20/27 ».',
+      pointCle: '26,9 mm = 3/4″ = DN 20.',
+      pourquoi: 'Le DN est un nom normalisé, pas une mesure. Le 3/4″ est le nom du filetage. Le diamètre réel reste 26,9 mm.',
+      aValider: 'DN : absent des fiches de Franck ; correspondance usuelle (DN 10 = 3/8″ … DN 50 = 2″) à confirmer. Épaisseurs : celles de la fiche de Franck « Le tube acier noir et galvanisé » (tarif 1, norme NF A 49-145, ancienne norme) ; la norme actuelle EN 10255 en donne d’autres : seules les valeurs de la fiche sont reprises.',
+      figure: { svg: 'tubesPlomb', etat: 'tarif:acier:26,9' }, clip: null,
+      narration: 'Cinquième regard : le nom. Pour l’acier, on cherche sa mesure dans le tableau. Exemple : vous avez lu vingt-six virgule neuf millimètres. La ligne vingt-six virgule neuf par deux virgule trois dit : trois quarts de pouce, et D N vingt. Sur un vieux catalogue, le même tube s’appelle vingt vingt-sept. Retenez la différence : le D N est un nom normalisé, pas une mesure, et les trois quarts de pouce sont le nom du filetage. Le diamètre réel, lui, reste vingt-six virgule neuf millimètres.' },
+    { titre: 'Trouver le nom d’un tube plastique', texte: 'Pour le PER, le multicouche et le PVC, le nom est le diamètre extérieur en millimètres. Exemple : un PER « 16 × 1,5 » s’appelle aussi « 13 × 16 ». L’inox et le PE se nomment de la même façon ; leurs valeurs sont dans le catalogue du fabricant.',
+      pointCle: '16 × 1,5 et 13 × 16 : le même tube, deux façons de le dire.',
+      pourquoi: '13 + 1,5 + 1,5 = 16 : le diamètre intérieur, c’est le diamètre extérieur moins deux épaisseurs de paroi.',
+      aValider: 'Inox et PE : règle de nommage (diamètre extérieur en mm) ; aucune dimension dans les fiches de Franck, donc aucune valeur écrite : catalogue du fabricant.',
+      figure: { svg: 'tubesPlomb', etat: 'tarif:plast:per16' }, clip: null,
+      narration: 'Pour les plastiques, c’est plus simple : le nom, c’est le diamètre extérieur en millimètres. Un PER seize se lit sur le marquage seize par un virgule cinq. Les anciens catalogues disaient treize par seize : diamètre intérieur, puis extérieur. C’est le même tube. Vérifiez : treize, plus un virgule cinq, plus un virgule cinq, font seize. Le multicouche se nomme de la même façon, par exemple quatorze par deux. Et le PVC d’évacuation se commande en trente-deux, quarante, cinquante ou cent. L’inox et le PE se nomment de la même façon, en millimètres : leurs valeurs sont dans le catalogue du fabricant.' },
+    { titre: 'Dire à quoi il sert', texte: 'Pour votre tube, lisez dans le tableau ce qu’il transporte : chauffage, eau glacée, eau sanitaire froide ou chaude, évacuation ou gaz. Lisez aussi la colonne « À savoir ».',
+      pointCle: 'L’acier noir ne va jamais sur l’eau potable.',
+      pourquoi: 'Sans zinc, l’acier noir rouille de l’intérieur : l’eau devient rousse et malsaine. C’est interdit pour l’eau sanitaire.',
+      aValider: 'Eau glacée, PE et chauffage par inox ou multicouche : usages courants, absents des fiches de Franck. Eau sanitaire « froide ou chaude » : galvanisé (fiche « Le tube acier noir et galvanisé »), inox (fiche n°23), PER (WATTS), multicouche (TP de Franck). À vérifier : pour l’eau chaude, les DTU limitent l’emploi du galvanisé (zinc). Interdits : fiche n°23.',
+      figure: { svg: 'tubesPlomb', etat: 'usages' }, clip: null,
+      narration: 'Sixième regard : l’usage. L’acier noir sert au chauffage, aux réseaux d’eau glacée et au gaz, mais jamais à l’eau potable : sans zinc, il rouille et l’eau devient rousse. Pour l’eau sanitaire, froide ou chaude, on prend du galvanisé, de l’inox, du PER ou du multicouche. Le galvanisé est interdit en chauffage central. Le PER ne se pose jamais en apparent, et ses colliers ne se serrent pas. Le PE sert à l’eau potable ou au gaz, enterré. Le PVC sert à l’évacuation des eaux usées, et il ne se cintre jamais. Le gaz est un travail à part : l’installation reçoit un certificat de conformité.' },
+    { titre: 'Nommer le tube en une phrase', texte: 'Dites à voix haute : matière, diamètre, usage. Exemple : « acier galvanisé 3/4″, DN 20, eau sanitaire ». Faites la même phrase pour deux autres chutes.',
+      pointCle: 'Matière · diamètre · usage : trois mots pour un tube.',
+      pourquoi: 'Au magasin ou au téléphone, c’est exactement ce qu’on vous demande.',
+      figure: { svg: 'tubesPlomb', etat: 'noms' }, clip: null,
+      narration: 'Pour finir, nommez le tube en une phrase : la matière, le diamètre, l’usage. Par exemple : acier galvanisé, trois quarts de pouce, D N vingt, eau sanitaire. Dites trois fois la phrase, pour trois chutes différentes. Au magasin ou au téléphone, c’est exactement ce qu’on vous demandera : de quel tube s’agit-il, et pour quoi faire. Une phrase juste évite de commander le mauvais tube.' }
+  ],
+  pieges: [
+    { titre: 'L’acier noir sur l’eau potable', voit: 'Une eau rousse au robinet, un goût de rouille.', cause: 'Un tube noir pris pour un galvanisé : sans zinc, il rouille de l’intérieur.',
+      eviter: 'Noir mat : chauffage ou gaz. Gris brillant, avec le zinc : galvanisé, eau sanitaire.', geste: 6, figure: { svg: 'tubesPlomb', etat: 'usages' },
+      narration: 'Premier piège : l’acier noir posé sur de l’eau potable. On le prend pour du galvanisé, alors qu’il n’a pas de zinc. Il rouille de l’intérieur, l’eau devient rousse, et c’est interdit. Le réflexe : noir mat, chauffage ou gaz. Gris brillant, galvanisé, eau sanitaire.' },
+    { titre: 'Souder un tube galvanisé', voit: 'Une fumée, des nausées, de la fièvre en fin de journée.', cause: 'Le zinc du galvanisé brûle à la flamme et fait des fumées dangereuses.',
+      eviter: 'On visse le galvanisé, ou on le soudo-braze avec aspiration : on ne le soude pas comme l’acier noir.', geste: 6, figure: { svg: 'soudure', etat: 'galva' },
+      narration: 'Deuxième piège : souder un tube galvanisé comme on soude l’acier noir. Le zinc brûle autour de neuf cents degrés et produit des fumées dangereuses : c’est la fièvre des soudeurs, qui arrive en fin de journée. Le galvanisé se visse, ou se soudo-braze avec un métal d’apport qui fond plus bas, et toujours avec aspiration.' },
+    { titre: 'Prendre le nom en pouces pour une mesure', voit: 'Un tube 3/4″ qui « mesure » 26,9 mm alors que le calcul donne 19 mm.', cause: 'On a converti 3/4 × 25,4 comme pour le cuivre. Sur l’acier, le nom en pouces est celui du filetage.',
+      eviter: 'Mesurez d’abord, puis lisez le tableau : 26,9 mm donne 3/4″.', geste: 4, figure: { svg: 'tubesPlomb', etat: 'noms' },
+      narration: 'Troisième piège : calculer le diamètre d’un tube acier avec la règle du cuivre. Trois quarts de pouce fois vingt-cinq virgule quatre donnent dix-neuf millimètres, mais un tube acier trois quarts mesure vingt-six virgule neuf. Sur l’acier, le nom en pouces est celui du filetage, pas celui de la mesure. On mesure d’abord, on lit le tableau ensuite.' },
+    { titre: 'Confondre PER et multicouche', voit: 'Un raccord qui ne tient pas, un joint abîmé.', cause: 'Deux tubes qui se ressemblent de l’extérieur mais pas en coupe : le multicouche a une bande d’aluminium.',
+      eviter: 'Regardez le bout coupé et le marquage avant de choisir le raccord.', geste: 1, figure: { svg: 'tubesPlomb', etat: 'coupes' },
+      narration: 'Quatrième piège : prendre un multicouche pour du PER, ou l’inverse. Dehors, ils se ressemblent. En coupe, la bande d’aluminium du multicouche se voit. Et le raccord, la façon de couper, le calibrage ne sont pas les mêmes. On regarde toujours le bout coupé et le marquage avant de choisir.' },
+    { titre: 'Se fier à la couleur seule', voit: 'Un tube bleu ou rouge pris pour du PER, alors que c’est autre chose.', cause: 'Le bleu et le rouge disent froid et chaud, pas la matière.',
+      eviter: 'Lisez le marquage : la matière est écrite dessus.', geste: 2, figure: { svg: 'tubesPlomb', etat: 'marquage' },
+      narration: 'Dernier piège : se fier à la couleur. Le bleu veut dire eau froide, le rouge eau chaude, mais ça ne dit pas la matière. Un tube bleu peut être du PER, du multicouche, du PE. La matière est écrite sur le tube : lisez le marquage.' }
+  ],
+  controles: [
+    { question: 'La matière est-elle nommée ?', comment: 'Acier noir, galvanisé, inox, PER, multicouche, PE ou PVC : une seule réponse, sûre. Galvanisé ou inox : l’aimant décide.', siNon: 'Reprenez la couleur, la forme, puis le bout du tube vu de face, et l’aimant.', geste: 1,
+      figure: { svg: 'tubesPlomb', etat: 'coupes' }, narration: 'Premier contrôle : la matière est nommée, sans hésiter.' },
+    { question: 'Le marquage est-il lu en entier ?', comment: 'La matière, puis « diamètre × épaisseur » en millimètres.', siNon: 'Cherchez l’inscription imprimée ; essuyez le tube pour la voir.', geste: 2,
+      figure: { svg: 'tubesPlomb', etat: 'marquage' }, narration: 'Deuxième contrôle : le marquage est lu en entier.' },
+    { question: 'Le diamètre est-il mesuré à l’extérieur, zéro vérifié ?', comment: 'Becs fermés : on lit 0. Becs en travers du tube, sans serrer.', siNon: 'Vérifiez le zéro, puis remesurez.', geste: 3,
+      figure: { svg: 'tubesPlomb', etat: 'pied' }, narration: 'Troisième contrôle : le diamètre est mesuré à l’extérieur, après avoir vérifié le zéro.' },
+    { question: 'Mon tube acier est-il retrouvé dans le tableau ?', comment: 'La mesure tombe près d’une ligne du tableau, pas entre deux : 26,9 mm donne 3/4″ et DN 20.', siNon: 'Remesurez. Si aucune ligne ne va, demandez conseil à votre professeur.', geste: 4,
+      figure: { svg: 'tubesPlomb', etat: 'tarif:acier' }, narration: 'Quatrième contrôle : votre tube acier est retrouvé dans le tableau.' },
+    { question: 'Mon tube plastique, inox ou PE est-il nommé en millimètres ?', comment: 'Le nom est le diamètre extérieur en millimètres : PER 16, multicouche 14, PVC 32. Inox et PE : la liste est dans le catalogue du fabricant.', siNon: 'Relisez le tableau des plastiques ; pour l’inox et le PE, cherchez la mesure dans le catalogue du fabricant.', geste: 5,
+      figure: { svg: 'tubesPlomb', etat: 'tarif:plast' }, narration: 'Cinquième contrôle : votre tube plastique, inox ou PE est nommé en millimètres.' },
+    { question: 'L’usage est-il dit, avec ce que le tube ne fait jamais ?', comment: 'Chauffage, eau glacée, eau sanitaire, évacuation ou gaz. Puis la colonne « À savoir ».', siNon: 'Relisez le tableau des usages.', geste: 6,
+      figure: { svg: 'tubesPlomb', etat: 'usages' }, narration: 'Sixième contrôle : l’usage est dit, avec l’interdit.' },
+    { question: 'Ma phrase est-elle complète ?', comment: 'Matière, diamètre, usage. Exemple : « PER 16, eau sanitaire ».', siNon: 'Refaites la phrase en trois temps : matière, diamètre, usage.', geste: 7,
+      figure: { svg: 'tubesPlomb', etat: 'noms' }, narration: 'Dernier contrôle : la phrase est complète, avec les trois informations.' }
+  ],
+  prof: {
+    verifie: ['La matière nommée juste pour trois tubes tirés au hasard', 'Le marquage lu et le diamètre mesuré au pied à coulisse (zéro vérifié)', 'Le nom retrouvé dans le tableau : pouces, DN ou millimètres', 'L’usage dit, avec ce que le tube n’a pas le droit de faire'],
+    narration: 'Le professeur vous tend trois tubes que vous n’avez pas encore vus. Pour chacun, vous dites la matière, vous lisez le marquage, vous mesurez le diamètre, et vous dites à quoi il sert et ce qu’il ne doit jamais faire. C’est la preuve que vous savez reconnaître un tube seul, avec n’importe quelle chute.'
+  }
+});
+
+/* Station 5-2 — Assembler l'acier : filetage, sertissage, soudure. Source : sources-metier/5-2-assembler-l-acier.md
+   Filetage : fiches « Filetage d'un tube », « Réalisation de filetages sur du tube acier », « Longueur de filetages » et « Le tube acier faconnage2 » de F. Henninot.
+   Soudage : fiches « Le soudage », « La soudure acier noir », « Le soudobrasage », INRS ED 742. Le TP de soudure est celui de F. Henninot : la station ne l'enseigne pas.
+   `aValider` : ce qui ne vient pas des fiches de F. Henninot. */
+CUIVREZO.stations.push({
+  id: '5-2', ligne: 5, titre: 'Assembler l’acier : filetage, sertissage, soudure', duree: '40 min',
+  sources: ['sources-metier/5-2-assembler-l-acier.md'],
+  vignette: 'images/5-2-vignette.webp',
+  referentiel: { taches: [REF.T10, REF.T12], competences: [REF.C34, REF.C35], savoirs: [REF.S55, REF.S62, REF.S63],
+    bac: { taches: [REF.BA2T3], competences: [REF.BC6], savoirs: [REF.BS514] } },
+  obtenir: {
+    titre: 'Le bon procédé, et un filetage étanche',
+    texte: 'Pour un joint d’acier, vous choisissez le procédé : vissé, serti ou soudé, et vous dites pourquoi. Vous savez aussi fileter un tube et rendre le joint vissé étanche. Le soudage lui-même se fait au TP de soudure, devant le professeur.',
+    criteres: ['Le procédé choisi pour chaque cas, avec la raison : matériau, diamètre, usage, lieu', 'Un tube fileté à fleur des peignes, à la longueur utile du tableau', 'Un joint vissé étanche : filasse dans le bon sens, pâte, serrage arrêté à deux filets', 'Les protections du soudage dites, et la règle du galvanisé : on ne le soude pas'],
+    figure: { svg: 'acier', etat: 'choisir', legende: 'Vissé, serti ou soudé : trois façons d’assembler l’acier.' },
+    narration: 'L’acier s’assemble de trois façons : on le visse, on le sertit, ou on le soude. Chaque façon a sa place. Le vissage se démonte. Le sertissage va vite et se fait sans flamme. La soudure est définitive. Dans cette station, vous apprenez à choisir, et à faire le plus courant à l’atelier : un filetage étanche. Pour le sertissage et le soudage, vous voyez le principe, la sécurité, et le moment où on les emploie. Souder vraiment se fait au TP de soudure, avec le professeur.'
+  },
+  materiel: {
+    titre: 'Je sors mon matériel',
+    figure: { svg: 'acier', etat: 'serrer', legende: 'Le tube serré dans l’étau serre-tube, le coupe-tube pour acier.' },
+    items: [
+      { nom: 'Un étau serre-tube', detail: 'mors propres et en bon état' },
+      { nom: 'Le coupe-tube pour acier et l’alésoir', detail: 'molette en bon état ; alésoir à cliquet pour l’intérieur' },
+      { nom: 'La filière à cliquet et ses têtes', detail: 'têtes rouges pour le filetage à droite ; le diamètre est gravé sur la tête' },
+      { nom: 'L’huile de coupe', detail: 'et une protection sur le sol : l’huile et les copeaux tombent' },
+      { nom: 'Filasse ou ruban d’étanchéité, et pâte à joint', detail: 'la filasse (chanvre) s’enroule dans le sens du vissage' },
+      { nom: 'Un manchon et une clé à tube', detail: 'pour visser et serrer' },
+      { nom: 'Une règle graduée ou un pied à coulisse', detail: 'pour mesurer la longueur filetée' },
+      { nom: 'Des chutes d’acier noir ou galvanisé', detail: 'par exemple 21,3 × 2,3 (1/2″) ou 26,9 × 2,3 (3/4″)' },
+      { nom: 'Lunettes et gants', detail: 'lunettes sur les yeux pendant tout le façonnage ; gants pour les arêtes vives' }
+    ],
+    narration: 'Préparez le poste de filetage. Un étau serre-tube dont les mors sont en bon état. Un coupe-tube pour acier et un alésoir pour l’intérieur. La filière à cliquet et ses têtes : la tête rouge pour le filetage à droite. De l’huile de coupe, et une protection sur le sol, parce que l’huile et les copeaux tombent. De la filasse ou un ruban d’étanchéité, et de la pâte à joint. Un manchon et une clé à tube. Une règle ou un pied à coulisse pour mesurer le filetage. Et des chutes d’acier. Lunettes sur les yeux, gants pour les arêtes vives.'
+  },
+  gestes: [
+    { titre: 'Les quatre questions du choix', texte: 'Quatre questions décident du procédé. Matériau : un galvanisé ne se soude pas. Diamètre : la filière à main va jusqu’à 2″. Usage : un joint à démonter se visse. Lieu : si la flamme est interdite, on ne soude pas. Lisez la colonne qui reste.',
+      pointCle: 'Matériau, diamètre, usage, lieu : une réponse à chaque question.',
+      pourquoi: 'Chaque réponse écarte un procédé ; celui qui reste est le bon. Un joint soudé ne se démonte pas ; un joint vissé, si.',
+      aValider: 'Les critères viennent des fiches : galvanisé non soudable (fiche acier), filière à têtes du 3/8″ au 2″ et machine à fileter, raccords à souder et brides au-delà (fiche « Réalisation de filetages »), flamme interdite ou risquée (fiche n°1 du Centre du Cuivre). Le seuil de 2″ est celui des filières de ces fiches : à confirmer avec la filière du plateau.',
+      figure: { svg: 'acier', etat: 'criteres' }, clip: null,
+      narration: 'Avant de couper le moindre tube, on choisit le procédé avec quatre questions. Le matériau d’abord : l’acier noir accepte tout, mais un galvanisé ne se soude pas, à cause de son zinc. Le diamètre ensuite : la filière à main fait les filetages jusqu’à deux pouces ; au-delà, on passe aux raccords à souder ou aux brides. L’usage : un joint qu’il faudra démonter pour l’entretien se visse ; un réseau de chauffage au joint définitif peut se souder. Le lieu enfin : là où la flamme est interdite, on ne soude pas, on visse ou on sertit. Chaque réponse écarte un procédé, et celui qui reste est le bon.' },
+    { titre: 'Un cas résolu', texte: 'Cas résolu : chauffage, acier noir 3/4″, joint à démonter pour l’entretien, en atelier. Matériau : acier noir, tout est possible. Diamètre : la filière passe. Usage : il faut démonter. Lieu : l’atelier. Réponse : vissé, avec une union.',
+      pointCle: 'Ici, un seul critère décide : le démontage.',
+      pourquoi: 'À vous, avant de lire la suite : galvanisé 1″, eau sanitaire, local public où la flamme est interdite. Réponse : vissé, ou serti. Pas soudé : un galvanisé ne se soude pas, et la flamme est interdite.',
+      figure: { svg: 'acier', etat: 'cas' }, clip: null,
+      narration: 'Voyons un cas, de bout en bout. Un réseau de chauffage, un tube d’acier noir de trois quarts de pouce, un joint qu’il faudra démonter pour l’entretien, dans l’atelier. Matériau : acier noir, tout est possible. Diamètre : trois quarts de pouce, la filière passe. Usage : il faut pouvoir démonter. Lieu : l’atelier, où la flamme serait permise, mais inutile. Réponse : on visse, avec une union. Ici, un seul critère décide : le démontage. À vous maintenant, avant d’ouvrir le pourquoi : un galvanisé d’un pouce, pour l’eau sanitaire, dans un local public où la flamme est interdite.' },
+    { titre: 'Reconnaître les raccords vissés', texte: 'Un raccord relie deux tubes. Mâle : filetage à l’extérieur. Femelle : taraudage à l’intérieur. Manchon : deux tubes en ligne. Coude : un angle. Té : un branchement. Union : trois pièces, pour démonter.',
+      pointCle: 'Mâle : dehors. Femelle : dedans. Un tube fileté est mâle.',
+      pourquoi: 'Un tube fileté se visse dans un raccord femelle. Il existe aussi des raccords à souder : coudes, fonds, brides.',
+      figure: { svg: 'acier', etat: 'raccords' }, clip: null,
+      narration: 'Un raccord relie deux tubes. Il est mâle quand son filetage est à l’extérieur, femelle quand son taraudage est à l’intérieur. Le manchon réunit deux tubes en ligne droite. Le coude fait un angle. Le té fait un branchement. L’union a trois pièces, et c’est elle qui permet de démonter. Le bouchon ferme un bout. Le mamelon relie deux raccords femelles. Un tube que l’on filète est mâle : il se visse dans un raccord femelle. Il existe aussi des raccords à souder, comme les coudes, les fonds et les brides.' },
+    { titre: 'Serrer le tube et le couper', texte: 'Serrez le tube dans l’étau serre-tube, sans abîmer les mors, en laissant dépasser peu de tube. Posez la molette du coupe-tube sur le trait, serrez légèrement, faites deux tours, resserrez légèrement, et recommencez jusqu’à la coupe.',
+      pointCle: 'Serrer légèrement à chaque fois, jamais d’un coup.',
+      pourquoi: 'Un tube qui dépasse trop se déforme pendant le filetage. Une molette trop serrée écrase le tube : c’est la même règle qu’à la station 1.3.',
+      figure: { svg: 'acier', etat: 'serrer' }, clip: null,
+      narration: 'On serre le tube dans l’étau serre-tube, sans abîmer les mors, et on le laisse dépasser le moins possible : s’il dépasse trop, il se déforme pendant le filetage. On trace la cote, on pose la molette du coupe-tube sur le trait, on serre légèrement, on fait deux tours, on resserre légèrement, et on recommence jusqu’à la coupe. C’est la même patience que pour le cuivre à la station un point trois : jamais d’un coup.' },
+    { titre: 'Ébavurer l’intérieur', texte: 'Engagez l’alésoir à cliquet dans le tube et tournez-le : les lèvres coupantes de l’intérieur du bout disparaissent.',
+      pointCle: 'On enlève la bavure, pas le métal.',
+      pourquoi: 'La bavure réduit le passage du fluide, et elle coupe les doigts.',
+      figure: { svg: 'acier', etat: 'alesage' }, clip: null,
+      narration: 'La molette laisse à l’intérieur du bout une lèvre de métal coupante. On engage l’alésoir à cliquet dans le tube et on le tourne : la lèvre disparaît. L’alésoir est un cône qui lisse l’intérieur. On enlève la bavure, pas le métal : quelques tours suffisent. Une bavure oubliée réduit le passage du fluide et coupe les doigts.' },
+    { titre: 'Choisir la tête de filière et lubrifier', texte: 'Prenez la tête du diamètre du tube. Rouge : filetage à droite, le plus courant. Jaune : filetage à gauche. Montez la tête dans la cage à cliquet, puis lubrifiez le tube à l’huile de coupe.',
+      pointCle: 'Rouge : à droite. Jaune : à gauche. Toujours de l’huile.',
+      pourquoi: 'Une tête de gauche donne un filetage qui ne se visse pas sur un raccord ordinaire. L’huile évite l’échauffement et l’adhérence des copeaux.',
+      figure: { svg: 'acier', etat: 'filiere' }, clip: null,
+      narration: 'La filière a des têtes interchangeables. On choisit celle qui porte le diamètre du tube. Sa couleur dit le sens du filetage : rouge pour un filetage à droite, qui est le plus courant, jaune pour un filetage à gauche. Si la couleur est effacée, une lettre est gravée : D ou R pour droite, G ou L pour gauche. On monte la tête dans la cage à cliquet, puis on lubrifie le tube à l’huile de coupe. Sans huile, l’acier chauffe et les copeaux collent aux filets.' },
+    { titre: 'Fileter, puis casser les copeaux', texte: 'Engagez la filière sur le tube, poussez fort pour amorcer le filetage, puis tournez le manche. Lubrifiez régulièrement. Dès que ça force, revenez d’un tour en arrière pour casser les copeaux, puis repartez.',
+      pointCle: 'Ça force ? Huile, un tour en arrière, on repart.',
+      pourquoi: 'Les copeaux qui s’accumulent gênent la tête et abîment les filets. Le tour en arrière les casse : ils tombent par les ouvertures de la tête.',
+      figure: { svg: 'acier', etat: 'copeaux' }, clip: null,
+      narration: 'On engage la filière sur le tube, on pousse fort au début pour que les peignes prennent, puis on tourne le manche, en s’aidant du cliquet. On lubrifie régulièrement. Quand le filetage devient difficile, on ne force pas : on change le sens du cliquet et on revient d’un tour en arrière. Les copeaux se cassent et tombent par les ouvertures de la tête. Puis on repart. Huile, un tour en arrière, on repart : c’est le rythme du filetage.' },
+    { titre: 'Finir à fleur des peignes', texte: 'Continuez jusqu’à ce que le bout du tube arrive à fleur des peignes. Inversez le sens du cliquet et dévissez la filière avec précaution. Mesurez la partie filetée à la règle ou au pied à coulisse : elle doit valoir la longueur utile du tableau (3/4″ : 15 mm).',
+      pointCle: 'Bout du tube à fleur des peignes : le filetage est fini.',
+      pourquoi: 'Dévisser trop vite abîme les peignes : on revient en arrière avec attention.',
+      figure: { svg: 'acier', etat: 'fin' }, clip: null,
+      narration: 'Le filetage est fini quand le bout du tube arrive à fleur des peignes. On inverse alors le sens du cliquet, et on dévisse la filière avec précaution : un geste brusque abîme les peignes. Puis on mesure la partie filetée, à la règle ou au pied à coulisse, et on la compare à la longueur utile du tableau. Pour un tube trois quarts de pouce, c’est quinze millimètres. Un filetage trop court ne se serre pas à fond. Un filetage abîmé se coupe et se refait.' },
+    { titre: 'Rendre le filetage étanche', texte: 'Essuyez le filetage. Enroulez la filasse (chanvre) ou le ruban d’étanchéité dans le sens du vissage. Pour un filetage à droite, regardez le bout du tube et tournez dans le sens des aiguilles d’une montre. Partez du bout du tube et laissez deux pas libres. Enduisez la filasse de pâte à joint.',
+      pointCle: 'Dans le sens du vissage, deux pas libres au bout.',
+      pourquoi: 'Enroulée dans l’autre sens, la filasse se déroule quand on visse, et le joint fuit.',
+      aValider: 'Sens des aiguilles d’une montre vu du bout du tube, pour un filetage à droite : règle de métier, la fiche dit seulement « dans le sens du vissage ». Ruban d’étanchéité : cité par la fiche « Le tube acier faconnage2 » (Téflon®) ; les temps et épaisseurs dépendent de la notice du produit.',
+      figure: { svg: 'acier', etat: 'etancheite' }, clip: null,
+      narration: 'Un filetage seul n’est pas étanche : il faut un joint. On enroule de la filasse, qui est du chanvre, dans le sens du vissage. Sens du vissage, c’est le sens dans lequel on va tourner le raccord : pour un filetage à droite, en regardant le bout du tube, le sens des aiguilles d’une montre. On commence par le bout du tube, on couvre le filetage, et on s’arrête à deux pas du bout. Au lieu de la filasse, on peut utiliser un ruban d’étanchéité. Puis on enduit la filasse de pâte à joint. Enroulée dans l’autre sens, la filasse se déroule quand on visse, et le joint fuit.' },
+    { titre: 'Visser et serrer', texte: 'Vissez le raccord à la main, puis serrez à la clé à tube, bien calée pour qu’elle ne glisse pas. Arrêtez-vous à deux filets du bout. Ne serrez jamais un raccord vide.',
+      pointCle: 'Arrêt à deux filets visibles.',
+      pourquoi: 'Serré sans tube dedans, le raccord s’ovalise et ne ferme plus.',
+      figure: { svg: 'acier', etat: 'serrage' }, clip: null,
+      narration: 'On visse le raccord à la main, puis on serre à la clé à tube, bien calée pour qu’elle ne glisse pas. On arrête le serrage à deux filets du bout : deux filets doivent rester visibles. Et on ne serre jamais un raccord vide, c’est-à-dire sans tube vissé dedans : il s’ovalise, et il ne fermera plus jamais bien.' },
+    { titre: 'Le sertissage de l’acier et de l’inox', texte: 'Un raccord à sertir a un joint dans une gorge. On coupe, on ébavure, on emmanche à fond, on marque au feutre. On choisit la mâchoire du même diamètre que le raccord, puis on presse jusqu’au bout du cycle. Pas de flamme, pas de filetage.',
+      pointCle: 'Même diamètre sur la mâchoire et sur le raccord. On presse jusqu’au bout du cycle.',
+      pourquoi: 'Le joint fait l’étanchéité ; la presse écrase le raccord sur le tube. La notice du fabricant dit quelles mâchoires et quels raccords vont avec le tube.',
+      aValider: 'Sertissage de l’acier et de l’inox : méthode reprise de la fiche n°1 du Centre du Cuivre (raccords à sertir, cuivre) ; les raccords, joints et mâchoires de l’acier et de l’inox dépendent du fabricant.',
+      figure: { svg: 'sertissage', etat: 'principe' }, clip: null,
+      narration: 'Le sertissage est un assemblage sans flamme et très rapide. Le raccord à sertir porte un joint en élastomère, logé dans une gorge. On coupe le tube, on l’ébavure, on l’emmanche à fond dans le raccord, et on marque l’emboîtement au feutre. On choisit la mâchoire de la presse : elle porte le même diamètre que le raccord. Puis on presse jusqu’au bout du cycle. C’est le joint qui fait l’étanchéité. On l’emploie là où la flamme est interdite. La notice du fabricant dit quels raccords et quelles mâchoires vont avec votre tube, en acier comme en inox.' },
+    { titre: 'Se protéger avant de souder', texte: 'Avant d’allumer la flamme ou d’amorcer l’arc, mettez : lunettes teintées (flamme) ou masque (arc), gants de cuir, tablier de cuir. Pas de vêtements synthétiques. Mettez l’aspiration en marche. Jamais sans le professeur.',
+      pointCle: 'On se protège d’abord. Les fumées, on les aspire.',
+      pourquoi: 'Les fumées de soudage contiennent des oxydes de métaux : irritation, fièvre des soudeurs. Celles du zinc sont les plus piégeuses.',
+      figure: { svg: 'soudure', etat: 'epi' }, clip: null,
+      narration: 'On se protège avant d’allumer. Lunettes à verres teintés pour la flamme, masque pour l’arc, gants de cuir, tablier de cuir, vêtements qui ne sont pas en nylon, parce que le nylon fond et brûle. Et on met l’aspiration en marche : les fumées de soudage contiennent des oxydes de métaux, qui irritent les poumons et donnent la fièvre des soudeurs. Les fumées du zinc sont les plus piégeuses, c’est pour cela qu’un tube galvanisé ne se soude pas comme l’acier noir. Et on ne soude jamais sans le professeur.' },
+    { titre: 'Le soudage à la flamme', texte: 'Une flamme oxyacétylénique fait fondre les bords du tube et une baguette de même métal : après refroidissement, un cordon relie les deux pièces. L’acier fond vers 1 500 °C. On l’emploie sur l’acier noir, au chauffage. Le galvanisé ne se soude pas : son zinc brûle et fait des fumées dangereuses. Le TP de soudure se fait à part, avec le professeur.',
+      pointCle: 'Soudure autogène : les bords et la baguette fondent ensemble, même métal.',
+      pourquoi: 'C’est un assemblage définitif et très solide. Le poste oxyacétylénique et son allumage sont dans les stations 2.1 et 2.2.',
+      figure: { svg: 'soudure', etat: 'principe' }, clip: null,
+      narration: 'Le soudage à la flamme, qu’on appelle autogène, utilise le chalumeau oxyacétylénique. La flamme fait fondre les bords des deux tubes, et on apporte une baguette du même métal. Tout fond ensemble, et, après refroidissement, un cordon de soudure relie les deux pièces en un seul bloc. L’acier fond vers mille cinq cents degrés. On l’emploie sur l’acier noir, par exemple pour un réseau de chauffage. Le galvanisé, lui, ne se soude pas : son zinc brûle et fait des fumées dangereuses. Ce n’est pas ici qu’on apprend à souder : le poste est dans les stations deux point un et deux point deux, et le TP de soudure se fait avec le professeur.' },
+    { titre: 'Le soudage à l’arc', texte: 'Ici, la chaleur vient d’un arc électrique entre une électrode et la pièce. L’électrode enrobée fond et apporte le métal ; son enrobage protège le bain et laisse un laitier à piquer. On l’emploie sur des pièces d’au moins 2 mm : supports, gros tubes.',
+      pointCle: 'Arc électrique : électrode enrobée, pince de masse, masque.',
+      pourquoi: 'L’arc dégage une lumière intense et des projections : on ne soude jamais sans protection.',
+      aValider: 'Soudage à l’arc : fiche « Le soudage » (LP Léon de Lepervanche) de la base de Franck ; pas de TP à l’arc propre à Franck dans le fonds retrouvé.',
+      figure: { svg: 'soudure', etat: 'arc' }, clip: null,
+      narration: 'Le soudage à l’arc n’utilise pas de gaz. La chaleur vient d’un arc électrique, qui jaillit entre une électrode et la pièce, avec une température de l’ordre de six mille degrés. L’électrode enrobée fond et apporte le métal. Son enrobage protège le bain et laisse une croûte, le laitier, qu’il faut piquer. La pince de masse relie la pièce au poste. On l’emploie sur les pièces d’au moins deux millimètres : supports, gros tubes. L’arc dégage une lumière intense et des projections : pas de soudage sans protection.' }
+  ],
+  pieges: [
+    { titre: 'Le raccord serré à vide', voit: 'Le manchon s’ovalise : il ne ferme plus, le filetage ne tient plus.', cause: 'Le raccord a été serré à la clé sans tube vissé dedans.',
+      eviter: 'Toujours visser le tube d’abord, puis serrer jusqu’à deux filets du bout.', geste: 9, figure: { svg: 'acier', etat: 'vide' },
+      narration: 'Premier piège : serrer un raccord à vide, c’est-à-dire sans tube vissé dedans. La clé l’écrase, il devient ovale, et il ne fermera plus bien. On visse toujours le tube d’abord, et on serre ensuite, jusqu’à deux filets du bout.' },
+    { titre: 'La filasse enroulée à l’envers', voit: 'La filasse se roule en boule quand on visse, et le joint fuit.', cause: 'La filasse est enroulée dans le sens contraire du vissage.',
+      eviter: 'Enroulez dans le sens du vissage, en partant du bout, et laissez deux pas libres.', geste: 8, figure: { svg: 'acier', etat: 'etancheite' },
+      narration: 'Deuxième piège : la filasse enroulée à l’envers. En vissant, le raccord la déroule et la fait rouler en boule : le joint fuit. On l’enroule dans le sens du vissage, en partant du bout du tube, en laissant deux pas libres.' },
+    { titre: 'Les copeaux qui bloquent la filière', voit: 'La filière force, le filet est déchiré, la tête est abîmée.', cause: 'On a continué sans huile et sans reculer d’un tour pour casser les copeaux.',
+      eviter: 'Huile de coupe, et un tour en arrière dès que ça force.', geste: 6, figure: { svg: 'acier', etat: 'copeaux' },
+      narration: 'Troisième piège : forcer. Sans huile, les copeaux s’accumulent, collent, déchirent le filet et usent les peignes. Dès que la filière force, on met de l’huile, on revient d’un tour en arrière, et on repart.' },
+    { titre: 'La mauvaise tête de filière', voit: 'Un filetage qui ne se visse pas sur le raccord, ou qui tourne à l’envers.', cause: 'Une tête jaune, pour la gauche, a été prise pour une rouge, ou le diamètre n’est pas celui du tube.',
+      eviter: 'Rouge : à droite. Jaune : à gauche. Le diamètre gravé sur la tête doit être celui du tube.', geste: 5, figure: { svg: 'acier', etat: 'filiere' },
+      narration: 'Quatrième piège : prendre la mauvaise tête. Une tête jaune fait un filetage à gauche, qui ne se visse pas sur un raccord ordinaire. Et une tête d’un autre diamètre donne un filetage inutilisable. Avant de monter la tête, on vérifie sa couleur et le diamètre gravé.' },
+    { titre: 'Souder un tube galvanisé', voit: 'Une fumée, des nausées, de la fièvre en fin de journée.', cause: 'Le zinc du galvanisé brûle à la flamme et fait des fumées dangereuses.',
+      eviter: 'On visse le galvanisé, ou on le soudo-braze avec aspiration : on ne le soude pas comme l’acier noir.', geste: 12, figure: { svg: 'soudure', etat: 'galva' },
+      narration: 'Cinquième piège : souder un tube galvanisé comme de l’acier noir. Le zinc se volatilise autour de neuf cents degrés. Ses fumées donnent des nausées et la fièvre des soudeurs. Le galvanisé se visse, ou se soudo-braze avec un métal d’apport qui fond vers sept cents à huit cents degrés, toujours avec aspiration.' },
+    { titre: 'Souder sans protection', voit: 'Des yeux qui piquent, un éblouissement, une brûlure.', cause: 'Les lunettes ou le masque, les gants ou le tablier ont été oubliés.',
+      eviter: 'Lunettes teintées ou masque, gants de cuir, tablier de cuir, aspiration : avant d’allumer.', geste: 11, figure: { svg: 'soudure', etat: 'epi' },
+      narration: 'Sixième piège : souder sans protection. La lumière de la flamme et de l’arc abîme les yeux, les projections brûlent la peau. Lunettes teintées ou masque, gants de cuir, tablier de cuir, aspiration : tout se met en place avant d’allumer.' },
+    { titre: 'Sertir un raccord mal emboîté', voit: 'Le repère au feutre est loin du raccord après le sertissage.', cause: 'Le tube n’est pas allé jusqu’en butée, et il n’y avait pas de repère pour le voir.',
+      eviter: 'Emmanchez à fond, marquez au feutre au bord du raccord, et vérifiez que le repère n’a pas bougé.', geste: 10, figure: { svg: 'sertissage', etat: 'repere' },
+      narration: 'Dernier piège : sertir un raccord dont le tube n’est pas à fond. Une fois serti, il est trop tard : le raccord ne se démonte plus. D’où le repère au feutre, posé au bord du raccord quand le tube est en butée. Après le sertissage, le repère doit être resté contre le raccord.' }
+  ],
+  controles: [
+    { question: 'Pour mon cas, ai-je répondu aux quatre questions avant de choisir ?', comment: 'Matériau, diamètre, usage, lieu : une réponse écrite pour chacune, puis le procédé. C’est le chemin du cas résolu (geste 2).', siNon: 'Reprenez les quatre questions du geste 1, dans l’ordre.', geste: 0,
+      figure: { svg: 'acier', etat: 'criteres' }, narration: 'Premier contrôle : les quatre questions, puis le procédé choisi, et la raison.' },
+    { question: 'Mon tube est-il coupé, puis ébavuré à l’intérieur ?', comment: 'Regardez le bout à contre-jour : plus de lèvre brillante. N’y passez jamais le doigt : la bavure coupe.', siNon: 'Reprenez l’alésoir, quelques tours.', geste: 4,
+      figure: { svg: 'acier', etat: 'alesage' }, narration: 'Deuxième contrôle : la coupe et l’ébavurage.' },
+    { question: 'La tête de la filière est-elle la bonne ?', comment: 'Rouge pour un filetage à droite ; le diamètre gravé est celui du tube.', siNon: 'Changez de tête avant de commencer.', geste: 5,
+      figure: { svg: 'acier', etat: 'filiere' }, narration: 'Troisième contrôle : la tête de filière.' },
+    { question: 'Le filetage est-il complet, à la longueur utile ?', comment: 'Mesurez la partie filetée à la règle ou au pied à coulisse, et comparez à la ligne de votre tube (3/4″ : 15 mm).', siNon: 'Trop court : reprenez jusqu’à fleur des peignes. Filets abîmés : recoupez et refaites.', geste: 7,
+      figure: { svg: 'acier', etat: 'fin' }, narration: 'Quatrième contrôle : le filetage est complet, à la longueur utile.' },
+    { question: 'Le joint vissé est-il étanche et bien serré ?', comment: 'Filasse dans le sens du vissage, pâte, serrage arrêté à deux filets visibles. À droite : sens des aiguilles d’une montre, vu du bout du tube.', siNon: 'Dévissez, refaites le joint, resserrez.', geste: 8,
+      figure: { svg: 'acier', etat: 'etancheite' }, narration: 'Cinquième contrôle : le joint vissé.' },
+    { question: 'Puis-je dire les protections du soudage ?', comment: 'Lunettes ou masque, gants de cuir, tablier de cuir, aspiration : citez-les sans regarder.', siNon: 'Relisez le geste « Se protéger avant de souder ».', geste: 11,
+      figure: { svg: 'soudure', etat: 'epi' }, narration: 'Sixième contrôle : les protections du soudage.' },
+    { question: 'Ai-je retenu la règle du galvanisé ?', comment: 'On ne le soude pas comme l’acier noir : son zinc brûle et fait des fumées dangereuses. On le visse, ou on le soudo-braze avec aspiration.', siNon: 'Relisez le geste « Le soudage à la flamme » et le piège « Souder un tube galvanisé ».', geste: 12,
+      figure: { svg: 'soudure', etat: 'galva' }, narration: 'Dernier contrôle : la règle du galvanisé.' }
+  ],
+  prof: {
+    verifie: ['Le procédé choisi, avec la raison, pour deux cas donnés', 'Le tube : coupé, ébavuré, fileté à fleur des peignes, longueur utile respectée', 'Le joint vissé : filasse (ou ruban) dans le bon sens, pâte, serrage à deux filets', 'Les protections et le danger des fumées dits avant tout soudage'],
+    narration: 'Le professeur regarde votre tube fileté et votre joint vissé. Il vous donne deux cas de chantier, et vous dites le procédé que vous choisissez et pourquoi. Il vous demande aussi les protections du soudage. Le soudage lui-même se fait au TP de soudure, avec lui.'
+  }
+});
+
+/* Station 5-3 — Raccorder le PVC par collage. Source : sources-metier/5-3-raccorder-le-pvc.md
+   Gestes : fiche « Canalisations PVC » (dossier Collègues-Partages de la base de F. Henninot), « TD Les tubes d'évacuation en PVC », « TP PVC + multicouche », extrait du DTU 60.11.
+   Temps de prise : « environ 30 secondes » de maintien et « quelques heures » avant l'emploi (fiche) ; les temps exacts sont ceux de la notice de la colle. `aValider` : le reste. */
+CUIVREZO.stations.push({
+  id: '5-3', ligne: 5, titre: 'Raccorder le PVC par collage', duree: '25 min',
+  sources: ['sources-metier/5-3-raccorder-le-pvc.md'],
+  vignette: 'images/5-3-vignette.webp',
+  referentiel: { taches: [REF.T10, REF.T12], competences: [REF.C34], savoirs: [REF.S55, REF.S62],
+    bac: { taches: [REF.BA2T3], competences: [REF.BC6], savoirs: [REF.BS513] } },
+  obtenir: {
+    titre: 'Un raccord PVC collé, plein et droit',
+    texte: 'Un tube PVC collé dans son raccord : coupé d’équerre, chanfreiné, repéré, collé sur les deux pièces, emboîté jusqu’au repère. Après la prise, le joint ne bouge plus.',
+    criteres: ['Le tube coupé d’équerre, ébavuré et chanfreiné', 'Le repère au feutre posé avant la colle', 'La colle sur les deux pièces, puis un emboîtement droit jusqu’au repère, tenu sans tourner', 'La colle en trop essuyée, et le temps de prise respecté'],
+    figure: { svg: 'pvc', etat: 'joint-ok', legende: 'Le tube est au fond du raccord, la colle forme un joint plein.' },
+    narration: 'Le PVC sert à évacuer les eaux usées : le lavabo, la baignoire, l’évier. Il ne se cintre jamais et il ne se visse pas : il se colle. Le collage est un assemblage définitif, qui tient aussi bien que le tube lui-même, à condition de bien le préparer. Une coupe de travers, une bavure, une colle mise d’un seul côté, et le joint fuit. Vous allez voir chaque geste, du tube coupé au joint qui sèche, puis contrôler votre travail avant de le montrer.'
+  },
+  materiel: {
+    titre: 'Je sors mon matériel',
+    figure: { svg: 'pvc', etat: 'couper', legende: 'La scie à denture fine dans sa boîte à coupes.' },
+    items: [
+      { nom: 'Une scie à denture fine et une boîte à coupes', detail: 'ou un guide de coupe pour la coupe d’équerre' },
+      { nom: 'De la toile abrasive', detail: 'pour ébavurer, chanfreiner et dépolir' },
+      { nom: 'Un feutre et une équerre', detail: 'le repère d’emboîtement ; le contrôle de la coupe' },
+      { nom: 'Le nettoyant et la colle PVC, avec leur pinceau', detail: 'ceux du même fabricant ; la notice donne les temps', aValider: 'Nettoyant : la fiche de Franck cite le trichloréthylène, solvant chloré aujourd’hui à éviter ; la station dit « nettoyant PVC du fabricant de la colle » (à confirmer).' },
+      { nom: 'Un chiffon propre', detail: 'pour dégraisser et pour essuyer la colle en trop' },
+      { nom: 'Des tubes et des raccords PVC', detail: 'par exemple Ø 32 (lavabo) et Ø 40 (collecteur), un coude et un manchon' },
+      { nom: 'Lunettes, gants, local aéré', detail: 'colle et nettoyant : loin de toute flamme, bouchons refermés', aValider: 'Précautions colle et nettoyant : usage courant (fiche de données de sécurité du produit), absentes de la fiche de Franck.' }
+    ],
+    narration: 'Préparez votre poste. Une scie à denture fine et une boîte à coupes, qui guide la scie. De la toile abrasive. Un feutre et une équerre. Le nettoyant et la colle PVC, du même fabricant, avec leur pinceau : la notice donne les temps. Un chiffon propre, des tubes et des raccords. Lunettes et gants. Colle et nettoyant sont inflammables : travaillez dans un local aéré, loin de toute flamme, et refermez les bouchons.'
+  },
+  gestes: [
+    { titre: 'Choisir le tube et le raccord', texte: 'Le PVC d’évacuation se vend en barres, en Ø 32, 40, 50 ou 100 selon l’appareil. Il ne se cintre jamais : pour changer de direction, il y a un raccord (coudes de 30 à 90°, tés, réductions).',
+      pointCle: 'Un tube PVC ne se cintre jamais : on change de direction avec un raccord.',
+      pourquoi: 'Un coude MF a un bout mâle et un bout femelle ; un coude FF a deux bouts femelles. Le diamètre du raccord est celui du tube.',
+      figure: { svg: 'pvc', etat: 'raccords' }, clip: null,
+      narration: 'On commence par choisir. Le PVC d’évacuation existe en plusieurs diamètres : trente-deux pour un lavabo, quarante pour un collecteur, cinquante, cent pour les plus gros. Il ne se cintre jamais : chaque changement de direction a son raccord. Les coudes existent de trente à quatre-vingt-dix degrés, en mâle-femelle ou en femelle-femelle. Il y a aussi des tés, des réductions, des manchons et des bouchons. Le raccord prend le diamètre du tube.' },
+    { titre: 'Couper d’équerre', texte: 'Coupez le tube avec une scie à denture fine, posé dans une boîte à coupes ou contre un guide. Contrôlez à l’équerre : la face est droite.',
+      pointCle: 'Scie à denture fine, boîte à coupes : une coupe nette et droite.',
+      pourquoi: 'Une coupe de travers laisse un jour au fond du raccord : le joint ne sera pas plein.',
+      figure: { svg: 'pvc', etat: 'couper' }, clip: null,
+      narration: 'On coupe avec une scie à denture fine, et le tube est posé dans une boîte à coupes, qui guide la lame. Sans guide, la scie part de travers. La face du tube doit être droite : on la contrôle à l’équerre, comme pour le cuivre. Une coupe de travers laisse un jour au fond du raccord, et le joint ne sera jamais plein.' },
+    { titre: 'Ébavurer et chanfreiner', texte: 'À la toile abrasive, enlevez les bavures, puis cassez l’arête extérieure du tube en biseau : c’est le chanfrein. Les raccordements doivent être lisses.',
+      pointCle: 'Plus de bavure, et une arête cassée en biseau.',
+      pourquoi: 'Une arête vive racle la colle à l’entrée du raccord : la colle reste dehors et le joint n’est plus plein.',
+      aValider: 'La raison du chanfrein (colle raclée) : explication courante de métier, la fiche dit seulement « ébavurer et chanfreiner ».',
+      figure: { svg: 'pvc', etat: 'chanfrein' }, clip: null,
+      narration: 'Le tube coupé garde des bavures et une arête vive. À la toile abrasive, on enlève les bavures, puis on casse l’arête extérieure en biseau : c’est le chanfrein. Pourquoi ? Une arête vive racle la colle quand le tube entre dans le raccord. La colle reste dehors, et le joint n’est plus plein. Après le chanfrein, le bout du tube est lisse et il entre sans accrocher.' },
+    { titre: 'Essayer à sec et repérer', texte: 'Emboîtez le tube dans le raccord sans colle, jusqu’au fond. Au feutre, marquez sur le tube la longueur d’emboîtement. Si plusieurs raccords s’enchaînent, repérez le sens de chacun par un trait sur le tube et sur le raccord.',
+      pointCle: 'Le repère se pose AVANT la colle.',
+      pourquoi: 'Après l’emboîtement, la colle prend vite : on ne corrige plus. Le repère montre si le tube est allé jusqu’au fond.',
+      aValider: 'L’essai à sec : bonne pratique courante ; la fiche demande de repérer la longueur d’emboîtement et le sens des raccords.',
+      figure: { svg: 'pvc', etat: 'repere' }, clip: null,
+      narration: 'Avant la colle, on essaie à sec. On emboîte le tube dans le raccord jusqu’au fond, et on marque au feutre, sur le tube, la longueur d’emboîtement. Si plusieurs raccords s’enchaînent sur un même tube, on repère aussi le sens de chacun, avec un trait sur le tube et sur le raccord. Une fois la colle posée, on n’a plus le temps de corriger : le repère dit si le tube est au fond.' },
+    { titre: 'Dépolir et nettoyer', texte: 'Frottez à la toile abrasive les deux surfaces à coller : le bout du tube et l’intérieur du raccord. Puis dégraissez-les avec un chiffon et le nettoyant PVC du fabricant de la colle.',
+      pointCle: 'Deux surfaces dépolies, puis dégraissées.',
+      pourquoi: 'Pour que la colle accroche : une surface lisse et grasse ne tient pas.',
+      aValider: 'La fiche cite le trichloréthylène pour dégraisser ; la station dit « nettoyant du fabricant de la colle » (voir le matériel).',
+      figure: { svg: 'pvc', etat: 'depolir' }, clip: null,
+      narration: 'Pour que la colle accroche, on dépolit les deux surfaces à coller, avec la toile abrasive : le bout du tube et l’intérieur du raccord. Puis on les dégraisse avec un chiffon et le nettoyant PVC du fabricant de la colle. On laisse le nettoyant s’évaporer, on ne touche plus les surfaces avec les doigts. Une surface lisse et grasse ne tient pas.' },
+    { titre: 'Encoller les deux pièces', texte: 'Au pinceau, étalez la colle sur le bout du tube (le mâle), puis à l’intérieur du raccord (la femelle). Une couche mince et régulière.',
+      pointCle: 'Colle sur les DEUX pièces, en couche mince.',
+      pourquoi: 'La colle fond un peu le PVC des deux côtés : les deux surfaces se soudent ensemble. Trop de colle coule à l’intérieur et fragilise.',
+      aValider: 'Couche mince : consigne courante des fabricants ; la fiche de Franck dit « sur la partie mâle et sur l’intérieur de la partie femelle ».',
+      figure: { svg: 'pvc', etat: 'encoller' }, clip: null,
+      narration: 'On encolle les deux pièces, au pinceau. D’abord le bout du tube, le mâle, jusqu’au repère. Puis l’intérieur du raccord, la femelle. Une couche mince et régulière, sur les deux. Si on colle un seul côté, le joint n’est pas plein. Si on en met trop, la colle coule à l’intérieur du tube et gêne le passage de l’eau.' },
+    { titre: 'Emboîter et tenir sans tourner', texte: 'Emboîtez le tube dans le raccord d’un seul mouvement droit, jusqu’au repère. Maintenez l’assemblage sans tourner pendant environ 30 secondes.',
+      pointCle: 'Un mouvement droit, jusqu’au repère. On tient 30 secondes, sans tourner.',
+      pourquoi: 'En tournant, on étale mal la colle et on laisse des vides dans le joint. Temps exact de maintien : selon la notice de la colle.',
+      figure: { svg: 'pvc', etat: 'emboiter' }, clip: null,
+      narration: 'On emboîte tout de suite, d’un seul mouvement droit, jusqu’au repère. Puis on maintient l’assemblage pendant environ trente secondes, sans le tourner : en tournant, on étale mal la colle et on laisse des vides. Le temps exact de maintien est écrit sur la notice de la colle. Le tube doit toucher le fond, et le repère doit être au bord du raccord.' },
+    { titre: 'Essuyer et laisser prendre', texte: 'Retirez la colle en excès avec un chiffon. Attendez quelques heures avant d’utiliser le raccord : ni eau, ni effort avant la prise.',
+      pointCle: 'On essuie, puis on attend : quelques heures, selon la notice.',
+      pourquoi: 'La colle durcit lentement. Un joint sollicité trop tôt glisse ou fuit.',
+      figure: { svg: 'pvc', etat: 'excedent' }, clip: null,
+      narration: 'Dernier geste : on retire la colle en excès avec un chiffon, tout autour du joint. Puis on attend. La colle durcit lentement, et il faut quelques heures avant d’utiliser le raccord. Le temps exact est écrit sur la notice de la colle. Un joint mis en eau trop tôt glisse ou fuit.' }
+  ],
+  pieges: [
+    { titre: 'La coupe de travers', voit: 'Un jour entre le tube et le fond du raccord, une fuite.', cause: 'La scie est partie de travers : pas de boîte à coupes, pas de contrôle à l’équerre.',
+      eviter: 'Boîte à coupes ou guide, puis contrôle à l’équerre avant de coller.', geste: 1, figure: { svg: 'pvc', etat: 'biais' },
+      narration: 'Premier piège : la coupe de travers. Le tube ne touche le fond du raccord que d’un côté, et il reste un jour. La scie est partie de travers parce qu’il n’y avait pas de guide. Boîte à coupes, et contrôle à l’équerre avant de coller.' },
+    { titre: 'L’arête vive', voit: 'La colle est raclée à l’entrée du raccord, le joint n’est pas plein.', cause: 'Pas de chanfrein : l’arête vive du tube racle la colle en entrant.',
+      eviter: 'Chanfreinez à la toile abrasive, puis essayez à sec.', geste: 2, figure: { svg: 'pvc', etat: 'chanfrein' },
+      narration: 'Deuxième piège : l’arête vive. Sans chanfrein, le bord du tube racle la colle à l’entrée du raccord, et le joint n’est plus plein, même si tout a l’air bien collé. On chanfreine toujours, à la toile abrasive.' },
+    { titre: 'Le repère oublié', voit: 'Le tube ne va pas jusqu’au fond, la pièce est trop courte, le joint est incomplet.', cause: 'Pas de repère au feutre : on ne voit pas si l’emboîtement est complet.',
+      eviter: 'Repérez avant la colle, emboîtez jusqu’au repère.', geste: 3, figure: { svg: 'pvc', etat: 'court' },
+      narration: 'Troisième piège : le repère oublié. Sans repère, on ne voit pas si le tube est au fond. Il s’arrête avant, la pièce est trop courte, le joint n’a pas sa longueur. Le repère se pose avant la colle, et on emboîte jusqu’à lui.' },
+    { titre: 'La colle sur une seule pièce', voit: 'Le tube sort du raccord à la moindre traction, une fuite au joint.', cause: 'La colle est mise sur le tube seulement, ou dans le raccord seulement.',
+      eviter: 'Colle sur les deux : le mâle et l’intérieur de la femelle.', geste: 5, figure: { svg: 'pvc', etat: 'sec' },
+      narration: 'Quatrième piège : la colle sur une seule pièce. Le joint n’est pas plein, il tient mal, il fuit. La colle se met sur le tube, et à l’intérieur du raccord, sur les deux.' },
+    { titre: 'L’assemblage tourné', voit: 'Des vides dans le joint, qui fuit plus tard.', cause: 'On a tourné le tube après l’avoir emboîté.',
+      eviter: 'Un seul mouvement droit, puis on tient 30 secondes sans tourner.', geste: 6, figure: { svg: 'pvc', etat: 'emboiter' },
+      narration: 'Cinquième piège : tourner le tube après l’emboîtement. La colle s’étale mal, et laisse des vides, par où le joint fuira plus tard. On emboîte d’un seul mouvement droit et on tient, sans tourner.' },
+    { titre: 'Trop de colle', voit: 'Un bourrelet de colle à l’entrée du raccord, des coulures à l’intérieur du tube.', cause: 'La couche de colle est trop épaisse.',
+      eviter: 'Une couche mince au pinceau, et on essuie l’excès.', geste: 5, figure: { svg: 'pvc', etat: 'bourrelet' },
+      narration: 'Sixième piège : trop de colle. Elle forme un bourrelet dehors et coule à l’intérieur du tube, où elle gêne le passage et fragilise la paroi. Une couche mince au pinceau suffit, et on essuie ce qui dépasse.' },
+    { titre: 'La mise en eau trop tôt', voit: 'Le joint glisse ou fuit à la première mise en eau.', cause: 'On n’a pas attendu la prise de la colle.',
+      eviter: 'Attendre quelques heures au moins ; le temps exact est sur la notice.', geste: 7, figure: { svg: 'pvc', etat: 'excedent' },
+      narration: 'Dernier piège : la mise en eau trop tôt. La colle n’a pas fini de durcir et le joint cède. On attend quelques heures, et on lit le temps exact sur la notice de la colle.' }
+  ],
+  controles: [
+    { question: 'La coupe est-elle d’équerre ?', comment: 'Posez l’équerre contre la face du tube : aucun jour ne passe.', siNon: 'Recoupez dans la boîte à coupes, un peu plus loin.', geste: 1,
+      figure: { svg: 'pvc', etat: 'couper' }, narration: 'Premier contrôle : la coupe est d’équerre.' },
+    { question: 'Le bout est-il ébavuré et chanfreiné ?', comment: 'À l’œil, à contre-jour : ni bavure, ni arête vive. Ne passez pas le doigt sur le bout coupé.', siNon: 'Reprenez la toile abrasive.', geste: 2,
+      figure: { svg: 'pvc', etat: 'chanfrein' }, narration: 'Deuxième contrôle : le bout est ébavuré et chanfreiné.' },
+    { question: 'Le repère est-il posé avant la colle ?', comment: 'Un trait au feutre sur le tube, à la longueur d’emboîtement.', siNon: 'Essayez à sec et marquez avant de coller.', geste: 3,
+      figure: { svg: 'pvc', etat: 'repere' }, narration: 'Troisième contrôle : le repère est posé avant la colle.' },
+    { question: 'La colle est-elle sur les deux pièces, en couche mince ?', comment: 'Le bout du tube et l’intérieur du raccord brillent, sans coulure. Sur le dessin du défi, la colle est la bande jaune.', siNon: 'Si la colle a pris, il faut recouper le tube et prendre un raccord neuf.', geste: 5,
+      figure: { svg: 'pvc', etat: 'encoller' }, narration: 'Quatrième contrôle : la colle est sur les deux pièces, en couche mince.' },
+    { question: 'Le tube est-il allé jusqu’au repère, sans tourner ?', comment: 'Le repère est au bord du raccord, et le tube n’a pas tourné.', siNon: 'Si la colle a pris, on ne rattrape pas : recoupez et refaites.', geste: 6,
+      figure: { svg: 'pvc', etat: 'emboiter' }, narration: 'Cinquième contrôle : le tube est au repère, sans avoir tourné.' },
+    { question: 'La colle en trop est-elle essuyée, la prise attendue ?', comment: 'Pas de bourrelet autour du joint ; le temps de la notice est écoulé avant toute mise en eau.', siNon: 'Essuyez maintenant, et attendez avant de mettre en eau.', geste: 7,
+      figure: { svg: 'pvc', etat: 'excedent' }, narration: 'Dernier contrôle : la colle en trop est essuyée, et le temps de prise attendu.' }
+  ],
+  prof: {
+    verifie: ['La coupe : d’équerre, ébavurée, chanfreinée', 'Le repère posé avant la colle, la colle sur les deux pièces', 'Le joint : tube au repère, emboîté sans tourner, excès essuyé', 'Le temps de prise dit avant toute mise en eau, les protections portées'],
+    narration: 'Votre raccord collé a passé vos contrôles. Le professeur regarde la coupe, le repère, la colle et le joint. Il peut aussi regarder votre geste : l’emboîtement d’un seul mouvement, sans tourner. Dites-lui combien de temps il faut attendre avant la mise en eau.'
+  }
+});
+
+/* Station 5-4 — Raccorder le PER et le multicouche. Source : sources-metier/5-4-raccorder-le-per-et-le-multicouche.md
+   Gestes : fiche « Le P.E.R » et catalogue WATTS (PER, raccords à glissement, support coudé), « TP tube PER multicouche » et « TP façonnage multicouche 2 » de F. Henninot,
+   fiche n°1 du Centre du Cuivre (sertissage). Aucun rayon de cintrage n'est donné : « celui de la notice du fabricant ». `aValider` : ce qui ne vient pas des fiches de F. Henninot. */
+CUIVREZO.stations.push({
+  id: '5-4', ligne: 5, titre: 'Raccorder le PER et le multicouche', duree: '35 min',
+  sources: ['sources-metier/5-4-raccorder-le-per-et-le-multicouche.md'],
+  vignette: 'images/5-4-vignette.webp',
+  referentiel: { taches: [REF.T10], competences: [REF.C34, REF.C35], savoirs: [REF.S55],
+    bac: { taches: [REF.BA2T3], competences: [REF.BC6], savoirs: [REF.BS513] } },
+  obtenir: {
+    titre: 'Un raccord serti, un coude rond, un tube libre',
+    texte: 'Un tube PER ou multicouche coupé net, calibré, raccordé avec la bonne mâchoire, cintré sans plier et fixé sans serrer. Le repère au feutre prouve que le tube est resté au fond.',
+    criteres: ['Le tube coupé au coupe-tube adapté, d’équerre ; le multicouche calibré et ébavuré', 'Le repère posé, le tube en butée, la mâchoire du même diamètre que le raccord', 'Le cycle de sertissage allé au bout, le repère resté contre le raccord', 'Un coude rond, au rayon de la notice, et des colliers qui laissent glisser le tube'],
+    figure: { svg: 'per', etat: 'ok', legende: 'Un coude large, un tube resté rond.' },
+    narration: 'Le PER et le multicouche sont les tubes de la plomberie moderne : souples, légers, rapides à poser, ils ne rouillent pas. Ils se raccordent sans flamme : on les sertit à la presse, ou on les raccorde par compression, par glissement, ou avec un raccord automatique. Le geste est simple, mais il ne pardonne pas la coupe de travers, le tube qui n’est pas au fond, ou le coude trop serré. Vous allez voir chaque geste, puis contrôler votre travail avant de le montrer.'
+  },
+  materiel: {
+    titre: 'Je sors mon matériel',
+    figure: { svg: 'per', etat: 'coupe', legende: 'Le coupe-tube prévu pour le plastique : ni couteau, ni scie à métaux.' },
+    items: [
+      { nom: 'Une chute de PER et une de multicouche', detail: 'par exemple un PER 16 × 1,5 et un multicouche 16' },
+      { nom: 'Le coupe-tube pour plastique', detail: 'ni couteau, ni lame de scie à métaux' },
+      { nom: 'Le calibreur-ébavureur', detail: 'pour le multicouche', aValider: 'Calibreur : outil du multicouche, absent des fiches de Franck (son TP ne le décrit pas).' },
+      { nom: 'Les raccords du tube', detail: 'à sertir, à compression, à glissement ou automatiques : prévus pour ce tube et ce diamètre' },
+      { nom: 'La sertisseuse électrique et ses mâchoires', detail: 'une mâchoire par diamètre ; batterie chargée' },
+      { nom: 'Un feutre et une équerre', detail: 'le repère d’emmanchement ; le contrôle de la coupe' },
+      { nom: 'Un ressort à cintrer, une cintreuse ou un support coudé', detail: 'choisis d’après le diamètre du tube' },
+      { nom: 'La notice du fabricant', detail: 'rayon mini de cintrage, mâchoires, raccords' },
+      { nom: 'Lunettes et gants', detail: 'lunettes sur les yeux pendant tout le façonnage' }
+    ],
+    narration: 'Sortez une chute de PER et une de multicouche. Le coupe-tube prévu pour le plastique : ni couteau, ni lame de scie à métaux. Le calibreur pour le multicouche. Les raccords prévus pour ce tube et ce diamètre. La sertisseuse électrique, avec une mâchoire pour chaque diamètre. Un feutre et une équerre. Un ressort à cintrer, une cintreuse ou un support coudé. Et la notice du fabricant : c’est elle qui donne le rayon mini de cintrage et les mâchoires. Lunettes sur les yeux.'
+  },
+  gestes: [
+    { titre: 'Reconnaître le PER et le multicouche', texte: 'Le PER est d’une seule matière : rouge pour l’eau chaude, bleu pour l’eau froide, en couronne. Le multicouche a trois couches : plastique, aluminium, plastique. Regardez le bout du tube, de face, et lisez le marquage.',
+      pointCle: 'PER : une seule matière. Multicouche : une bande d’aluminium.',
+      pourquoi: 'Le coupe-tube, le calibrage, le raccord et la mâchoire dépendent du tube : la notice du fabricant dit lesquels.',
+      aValider: 'Structure du multicouche : connaissance générale, à vérifier sur une chute du plateau.',
+      figure: { svg: 'tubesPlomb', etat: 'coupes:pm' }, clip: null,
+      narration: 'Commencez par reconnaître votre tube. Le PER est du polyéthylène réticulé : une seule matière, rouge pour l’eau chaude, bleu pour l’eau froide, vendu en couronne. Le multicouche a trois couches : du plastique, une fine bande d’aluminium, du plastique. Regardez le bout du tube, de face, et lisez le marquage. C’est important : le coupe-tube, le calibrage, le raccord et la mâchoire dépendent du tube, et la notice du fabricant dit lesquels.' },
+    { titre: 'Choisir le raccord', texte: 'Quatre familles. À sertir : une bague serrée à la presse. À glissement : une bague qui coulisse sur le tube évasé. À compression : écrou, bague et insert. Automatique : on enfonce le tube. Prenez un raccord prévu pour votre tube et son diamètre.',
+      pointCle: 'Un raccord prévu pour ce tube et ce diamètre : la notice dit lequel.',
+      pourquoi: 'Un raccord mal adapté fuit, ou se desserre avec la dilatation. Le raccord à compression est le plus simple : il n’a pas besoin de presse.',
+      aValider: 'Raccords automatiques : connaissance générale, absents des fiches de Franck. Compression « le plus simple à utiliser » : fiche « Le P.E.R » de Franck.',
+      figure: { svg: 'per', etat: 'raccords' }, clip: null,
+      narration: 'Il y a quatre familles de raccords. Le raccord à sertir : une bague, serrée à la presse. Le raccord à glissement : une bague qui coulisse sur le tube évasé. Le raccord à compression : un écrou, une bague et un insert, qui se montent avec une clé. Et le raccord automatique : on enfonce le tube et c’est fini. Le bon choix dépend du tube et de son diamètre. Prenez un raccord prévu pour votre tube : la notice du fabricant dit lequel.' },
+    { titre: 'Couper au coupe-tube adapté', texte: 'Coupez avec le coupe-tube prévu pour le plastique. Le bout doit être d’équerre. Pas de couteau, pas de lame de scie.',
+      pointCle: 'Coupe-tube adapté, coupe d’équerre. Jamais de couteau.',
+      pourquoi: 'Une coupe en biais ou déchirée ne porte pas sur la butée du raccord, et le joint fuit.',
+      figure: { svg: 'per', etat: 'coupe' }, clip: null,
+      narration: 'On coupe toujours avec un coupe-tube prévu pour le plastique, jamais au couteau ni à la scie à métaux. Le fabricant le dit : la coupe doit être propre et d’équerre. Une coupe de travers ou déchirée ne porte pas bien sur la butée du raccord, et le joint fuit. Posez le coupe-tube sur le trait, serrez, coupez en un geste net.' },
+    { titre: 'Calibrer et ébavurer', texte: 'Multicouche : passez le calibreur dans le bout. Il remet le tube rond et ébavure l’intérieur. PER : ébavurez proprement le bout coupé.',
+      pointCle: 'Un bout rond et lisse, sans lèvre.',
+      pourquoi: 'Le bout coupé est un peu écrasé, et une lèvre abîme le joint du raccord quand on emmanche.',
+      aValider: 'Calibrage du multicouche : connaissance générale (outil et geste), absent des fiches de Franck. L’ébavurage du PER est dans sa fiche : « sur un tube parfaitement ébavuré ».',
+      figure: { svg: 'per', etat: 'calibrer' }, clip: null,
+      narration: 'Un tube coupé n’est jamais tout à fait rond : le coupe-tube l’écrase un peu. Pour le multicouche, on passe le calibreur dans le bout. C’est un cône qui remet le tube rond et ébavure l’intérieur. Pour le PER, on ébavure proprement le bout coupé. Pourquoi ? Une lèvre ou un bout ovale abîme le joint du raccord quand on emmanche, et le joint fuit. Le bout doit être rond et lisse.' },
+    { titre: 'Repérer l’emmanchement', texte: 'Vérifiez que le joint est bien dans le raccord. Emmanchez le tube jusqu’en butée, en le tournant un peu. Marquez au feutre sur le tube le bord du raccord.',
+      pointCle: 'Tube en butée, repère au bord du raccord.',
+      pourquoi: 'Après le sertissage, le repère prouve que le tube n’a pas bougé.',
+      figure: { svg: 'sertissage', etat: 'repere' }, clip: null,
+      narration: 'Avant de sertir, on vérifie que le joint est bien en place dans le raccord. On emmanche le tube jusqu’en butée, en le tournant un peu. Puis on marque au feutre, sur le tube, le bord du raccord. Après le sertissage, ce repère doit être resté contre le raccord : il prouve que le tube n’a pas bougé.' },
+    { titre: 'Choisir la mâchoire et sertir', texte: 'Vérifiez que la mâchoire de la sertisseuse porte le même diamètre que le raccord. Posez-la autour de la bague et pressez la gâchette jusqu’au déclenchement du limiteur : le cycle va jusqu’au bout.',
+      pointCle: 'Mâchoire du même diamètre. Cycle complet.',
+      pourquoi: 'Le cycle, une fois commencé, doit aller jusqu’à son terme : c’est ce qui rend le sertissage sûr.',
+      aValider: 'Méthode de la fiche n°1 du Centre du Cuivre (cuivre) ; profil de mâchoire et limiteur : selon la notice du fabricant du multicouche. Le TP de Franck dit « sertisseuse électrique ».',
+      figure: { svg: 'sertissage', etat: 'sertir' }, clip: null,
+      narration: 'On choisit la mâchoire de la sertisseuse : elle porte le même diamètre que le raccord. Si la notice indique un profil, on prend le profil du fabricant. On pose la mâchoire autour de la bague, bien à plat, et on presse la gâchette. L’outil va seul jusqu’au bout du cycle : on ne lâche pas avant le déclenchement du limiteur. Un cycle arrêté en route ne serre pas assez.' },
+    { titre: 'Contrôler le sertissage', texte: 'Regardez le repère : il est resté contre le raccord. La bague porte la marque de la mâchoire. Ensuite seulement, l’essai d’étanchéité de l’installation.',
+      pointCle: 'Repère au bord du raccord : le tube était à fond.',
+      pourquoi: 'Un raccord serti ne se défait plus : on contrôle avant de fermer le mur ou la dalle.',
+      figure: { svg: 'sertissage', etat: 'controle' }, clip: null,
+      narration: 'Le contrôle est immédiat. Le repère au feutre est resté contre le raccord : le tube était à fond. La bague porte la marque de la mâchoire, régulière tout autour. Un raccord serti ne se défait plus : on contrôle donc avant de fermer la cloison ou la dalle, puis on fait l’essai d’étanchéité de l’installation.' },
+    { titre: 'Le raccord à compression', texte: 'Sur un tube parfaitement ébavuré, glissez l’écrou puis la bague. Vissez l’insert à l’intérieur du tube avec la clé de montage fournie, sauf avis contraire de la notice. Puis serrez l’écrou sur le raccord. Un raccord à compression se démonte : il reste accessible, jamais noyé dans un mur ou une dalle.',
+      pointCle: 'Écrou, bague, puis l’insert dans le tube.',
+      pourquoi: 'Le raccord à compression est le plus simple à utiliser : il n’a pas besoin de presse. C’est un assemblage mécanique : tube à tube, il est interdit en encastré (fiche n°24 du Centre du Cuivre).',
+      aValider: 'Insert « vissé » : c’est le mot de la fiche « Le P.E.R » de Franck (« vissez l’insert à l’intérieur du tuyau grâce à une clé de montage ») ; sur certains raccords l’insert est une douille enfoncée : la notice du raccord du plateau fait foi, à confirmer. Raccord mécanique jamais encastré : fiche n°24 du Centre du Cuivre (tubes cuivre, « assemblages mécaniques tubes à tubes interdits pour le chauffage et la distribution d’eau sanitaire » en encastré) ; règle reprise pour le PER, à confirmer (DTU 60.1 et 65.14).',
+      figure: { svg: 'per', etat: 'compression' }, clip: null,
+      narration: 'Le raccord à compression est le plus simple. Sur un tube parfaitement ébavuré, on glisse l’écrou, puis la bague, dans cet ordre. On visse l’insert à l’intérieur du tube, avec la clé de montage fournie avec les raccords. Puis on serre l’écrou sur le raccord, qui comprime la bague. Si on oublie l’ordre, l’écrou ne passe plus : on recommence. Un raccord à compression est un assemblage mécanique : il se démonte, et il doit rester accessible. On ne le noie jamais dans un mur ou dans une dalle.' },
+    { titre: 'Les raccords à glissement et automatiques', texte: 'À glissement : enfilez la bague, évasez le bout avec l’expandeur, emmanchez le raccord : la bague glisse sur le tube évasé. Automatique : enfoncez le tube, coupé et ébavuré, jusqu’en butée.',
+      pointCle: 'Il faut l’outil du fabricant, ou la notice : le tube va jusqu’en butée.',
+      pourquoi: 'Chaque marque a son outil : pince à emboîtures, pince de montage. L’automatique ne se règle pas : le tube doit être net et au fond.',
+      aValider: 'Raccords automatiques : connaissance générale, absents des fiches de Franck. Raccords à glissement : catalogue WATTS (pince à emboîtures, pince de montage).',
+      figure: { svg: 'per', etat: 'glissement' }, clip: null,
+      narration: 'Pour un raccord à glissement, on enfile d’abord la bague sur le tube. On évase le bout avec l’expandeur. On emmanche le raccord, et on fait glisser la bague sur le tube évasé avec la pince de montage. Pour un raccord automatique, c’est encore plus simple : on enfonce le tube, coupé et ébavuré, jusqu’en butée. Dans tous les cas, il faut l’outil du fabricant, ou sa notice. Et le tube doit être net, rond, et au fond.' },
+    { titre: 'Cintrer sans plier', texte: 'Entraînez-vous d’abord sur une chute. Pour un coude, tenez le tube rond avec un ressort, une cintreuse ou un support coudé. Ne cintrez jamais plus serré que le rayon mini de la notice du fabricant.',
+      pointCle: 'Jamais plus serré que le rayon mini de la notice.',
+      pourquoi: 'Plus serré, le tube plisse ou s’écrase, et l’eau passe mal. La cintreuse se choisit d’après le diamètre du tube.',
+      aValider: 'Aucun rayon de cintrage dans les fiches de Franck : « celui de la notice du fabricant ». Support coudé : catalogue WATTS ; cintrage à la main puis cintreuse : TP de Franck.',
+      figure: { svg: 'per', etat: 'cintrer' }, clip: null,
+      narration: 'Pour un coude, on cintre le tube au lieu de poser un raccord. On s’entraîne d’abord sur une chute. Trois aides existent. Le ressort tient le tube rond. La cintreuse se choisit d’après le diamètre du tube. Le support coudé donne la courbe. Une règle domine tout : on ne cintre jamais plus serré que le rayon mini donné par la notice du fabricant. Plus serré, le tube plisse ou s’écrase, et l’eau passe mal.' },
+    { titre: 'Fixer sans serrer', texte: 'Fixez le tube avec des colliers qui le laissent glisser. Sur chantier, le PER ne se pose pas en apparent : on le met en gaine, engravé ou encastré. Sur le panneau d’atelier, la pièce est un exercice.',
+      pointCle: 'Collier libre : le tube doit pouvoir glisser.',
+      pourquoi: 'Le PER se dilate beaucoup quand l’eau est chaude. Un collier serré l’empêche de glisser : il force, grince et se déforme.',
+      figure: { svg: 'per', etat: 'collier' }, clip: null,
+      narration: 'Dernier geste : la fixation. Le PER se dilate beaucoup quand l’eau est chaude : on ne doit donc pas le fixer avec des colliers serrés. Le collier tient le tube sans le bloquer, et le tube peut glisser. On le pose aussi à l’abri : en gaine, engravé dans le mur ou encastré, mais jamais en apparent sur chantier. Au plateau, la pièce posée sur un panneau est un exercice.' }
+  ],
+  pieges: [
+    { titre: 'Le couteau ou la scie', voit: 'Une coupe en biais, des éclats : le raccord fuit.', cause: 'Le tube a été coupé au couteau ou à la scie à métaux.',
+      eviter: 'Coupe-tube adapté au plastique, coupe d’équerre.', geste: 2, figure: { svg: 'per', etat: 'coupe' },
+      narration: 'Premier piège : couper au couteau ou à la scie à métaux. La coupe est en biais, déchirée, pleine d’éclats, et le raccord ne tient pas dessus. Le fabricant demande un coupe-tube adapté, et une coupe d’équerre.' },
+    { titre: 'Le multicouche non calibré', voit: 'Le joint du raccord est plissé ou coupé : une fuite à l’essai.', cause: 'Le bout n’a pas été calibré ni ébavuré avant l’emmanchement.',
+      eviter: 'Calibrer et ébavurer chaque bout coupé, puis vérifier le joint.', geste: 3, figure: { svg: 'per', etat: 'calibrer' },
+      narration: 'Deuxième piège : le multicouche qui n’a pas été calibré. Le bout est ovale, avec une lèvre, et il abîme le joint du raccord en entrant. On le voit seulement à l’essai, à la fuite. On calibre et on ébavure chaque bout coupé.' },
+    { titre: 'Le tube pas à fond', voit: 'Le repère au feutre est loin du raccord après le sertissage.', cause: 'Le tube n’est pas allé jusqu’en butée, et il n’y avait pas de repère pour le voir.',
+      eviter: 'Emmanchez à fond, marquez au bord du raccord, vérifiez que le repère n’a pas bougé.', geste: 4, figure: { svg: 'sertissage', etat: 'repere' },
+      narration: 'Troisième piège : le tube qui n’est pas à fond. Une fois serti, on ne rattrape plus. Le repère posé quand le tube est en butée prouve, après coup, que rien n’a bougé.' },
+    { titre: 'La mauvaise mâchoire', voit: 'La bague est mal serrée, marquée de travers.', cause: 'La mâchoire n’a pas le même diamètre que le raccord, ou pas le bon profil.',
+      eviter: 'Lisez le diamètre sur la mâchoire et sur le raccord : ils doivent être les mêmes.', geste: 5, figure: { svg: 'sertissage', etat: 'sertir' },
+      narration: 'Quatrième piège : la mauvaise mâchoire. Le diamètre est gravé sur la mâchoire et sur le raccord : ils doivent être les mêmes. Une mâchoire trop grande serre mal, une trop petite écrase. On vérifie avant de presser.' },
+    { titre: 'Le coude trop serré', voit: 'Un pli, un écrasement dans le coude : le passage de l’eau est réduit.', cause: 'Le rayon est plus petit que celui du fabricant, ou le cintrage s’est fait sans ressort ni outil.',
+      eviter: 'Respectez le rayon mini de la notice ; ressort, cintreuse ou support coudé.', geste: 9, figure: { svg: 'per', etat: 'pli' },
+      narration: 'Cinquième piège : le coude trop serré. Le tube plisse, s’écrase, et le passage de l’eau se réduit. Un tube plié ne se rattrape pas : on le coupe et on recommence. On respecte le rayon mini de la notice, avec un ressort, une cintreuse ou un support coudé.' },
+    { titre: 'Le collier serré', voit: 'Le tube grince, se déforme, fait du bruit quand l’eau chauffe.', cause: 'Le collier est serré : le tube ne peut plus glisser quand il se dilate.',
+      eviter: 'Collier libre : le tube doit pouvoir glisser dedans.', geste: 10, figure: { svg: 'per', etat: 'collier' },
+      narration: 'Dernier piège : le collier serré. Quand l’eau chaude arrive, le tube s’allonge. Si le collier le bloque, il force, grince et se déforme. Le collier tient le tube sans le serrer.' }
+  ],
+  controles: [
+    { question: 'La coupe est-elle nette et d’équerre ?', comment: 'Posez l’équerre contre le bout : aucun jour ne passe, pas d’éclat.', siNon: 'Recoupez au coupe-tube adapté, un peu plus loin.', geste: 2,
+      figure: { svg: 'per', etat: 'coupe' }, narration: 'Premier contrôle : la coupe est nette et d’équerre.' },
+    { question: 'Le bout est-il rond et lisse (multicouche calibré) ?', comment: 'À l’œil, à contre-jour : le bout est rond, sans lèvre. Ne passez pas le doigt sur le bout coupé.', siNon: 'Passez le calibreur, puis ébavurez.', geste: 3,
+      figure: { svg: 'per', etat: 'calibrer' }, narration: 'Deuxième contrôle : le bout est rond et lisse.' },
+    { question: 'Le repère est-il posé, le tube en butée ?', comment: 'Un trait au feutre au bord du raccord, tube emmanché à fond.', siNon: 'Dégagez, vérifiez le joint, emmanchez à fond et marquez.', geste: 4,
+      figure: { svg: 'sertissage', etat: 'repere' }, narration: 'Troisième contrôle : le repère est posé, le tube en butée.' },
+    { question: 'La mâchoire est-elle du même diamètre que le raccord ?', comment: 'Lisez le diamètre gravé sur la mâchoire et sur le raccord : les deux sont identiques.', siNon: 'Changez de mâchoire avant de presser.', geste: 5,
+      figure: { svg: 'sertissage', etat: 'sertir' }, narration: 'Quatrième contrôle : la mâchoire est du même diamètre que le raccord.' },
+    { question: 'Le cycle est-il allé au bout, le repère contre le raccord ?', comment: 'L’outil a fini son cycle, le repère n’a pas bougé, la bague est marquée.', siNon: 'Le raccord serti ne se défait pas : coupez, et refaites un raccord neuf.', geste: 6,
+      figure: { svg: 'sertissage', etat: 'controle' }, narration: 'Cinquième contrôle : le cycle est allé au bout, et le repère est resté contre le raccord.' },
+    { question: 'Le coude est-il rond, au rayon de la notice ?', comment: 'Pas de pli ni d’écrasement ; le rayon n’est pas plus serré que celui du fabricant.', siNon: 'Un tube plié ne se rattrape pas : coupez et recommencez, avec un ressort ou un support.', geste: 9,
+      figure: { svg: 'per', etat: 'ok' }, narration: 'Sixième contrôle : le coude est rond, au rayon de la notice.' },
+    { question: 'Le tube est-il libre dans ses colliers ?', comment: 'Poussez le tube du doigt : il glisse dans le collier.', siNon: 'Desserrez le collier : il tient le tube sans le bloquer.', geste: 10,
+      figure: { svg: 'per', etat: 'collier' }, narration: 'Dernier contrôle : le tube est libre dans ses colliers.' }
+  ],
+  prof: {
+    verifie: ['La coupe nette et d’équerre, le bout rond et lisse', 'Le repère posé, la mâchoire du bon diamètre, le cycle de sertissage complet', 'Le coude : rond, sans pli, au rayon de la notice dit à voix haute', 'La fixation : tube libre dans ses colliers'],
+    narration: 'Votre raccord serti et votre coude ont passé vos contrôles. Le professeur regarde la coupe, le repère contre le raccord, la marque de la mâchoire et le coude. Il peut aussi regarder le geste : le coupe-tube, le calibreur, la presse. Dites-lui où vous avez lu le rayon mini de cintrage.'
   }
 });
 

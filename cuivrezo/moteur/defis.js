@@ -38,7 +38,9 @@ const CuivDefis = (() => {
     brasure:    { bon: ['reussie'], mauvais: ['seche', 'surchauffe', 'calamine'] },
     chapeau:    { bon: ['controle'], mauvais: ['desaxe', 'decale'] },
     baionnette: { bon: ['parallele'], mauvais: ['tordue'] },
-    flamme:     { bon: ['neutre'], mauvais: ['carburante', 'oxydante'] }
+    flamme:     { bon: ['neutre'], mauvais: ['carburante', 'oxydante'] },
+    pvc:        { bon: ['joint-ok'], mauvais: ['biais', 'court', 'sec', 'bourrelet'] },
+    per:        { bon: ['ok'], mauvais: ['pli'] }
   };
 
   const piegesDiag = st => st.pieges.filter(p => p.cause && p.voit && p.eviter);

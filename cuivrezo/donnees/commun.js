@@ -7,14 +7,14 @@
 
 var CUIVREZO = window.CUIVREZO = window.CUIVREZO || {};
 CUIVREZO.stations = [];
-CUIVREZO.lignes = { 1: 'Les gestes de base', 2: 'Le chalumeau', 3: 'Braser', 4: 'Les pièces complexes' };
+CUIVREZO.lignes = { 1: 'Les gestes de base', 2: 'Le chalumeau', 3: 'Braser', 4: 'Les pièces complexes', 5: 'Réseau acier et réseaux du plombier' };
 /* les jeux d'une ligne : des pages à part (pas le contrat des six temps), affichées sur le plan après ses stations */
 CUIVREZO.jeux = [
   { ligne: 2, num: '2.3', titre: 'Le jeu du chalumeau', href: 'simulateur/' },
   { ligne: 3, num: '3.3', titre: 'Le jeu de l’azote', href: 'simulateur/azote.html' }
 ];
 CUIVREZO.lignesAVenir = [
-  { n: 5, titre: 'Le réseau complet', contenu: 'piquage, dessautage, pièce d’examen : une ligne frigorifique façonnée de bout en bout' }
+  { n: 6, titre: 'Le réseau complet', contenu: 'piquage, dessautage, pièce d’examen : une ligne frigorifique façonnée de bout en bout' }
 ];
 
 /* le poste d'atelier en 3D, porte d'entrée de l'accueil (03/10) : chaque zone est une pièce du modèle
@@ -31,7 +31,8 @@ CUIVREZO.zonesPoste = [
   { id: 'oxy', nom: 'Le poste oxyacétylénique', stations: ['2-1', '2-2'], phrase: 'Deux bouteilles, deux détendeurs, deux tuyaux, un chalumeau : la sécurité d’abord, la flamme ensuite.' },
   { id: 'tendre', nom: 'Le chalumeau propane et l’étain', stations: ['3-1'], phrase: 'Derrière le pare-flamme, l’étain coule dans l’emboîture chauffée.' },
   { id: 'azote', nom: 'L’azote, pour braser fort', stations: ['3-2'], phrase: 'L’azote balaie l’intérieur du tube pendant la brasure forte : il reste propre.' },
-  { id: 'pieces', nom: 'Les pièces façonnées', stations: ['4-1', '4-2'], phrase: 'Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.' }
+  { id: 'pieces', nom: 'Les pièces façonnées', stations: ['4-1', '4-2'], phrase: 'Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.' },
+  { id: 'plomberie', nom: 'Les tubes du plombier', stations: ['5-1', '5-2', '5-3', '5-4'], phrase: 'Acier, PER, multicouche, PVC : on reconnaît le tube, puis on choisit comment l’assembler.' }
 ];
 
 /* libellés exacts, lus dans l'arrêté (voir sources-metier/referentiel-cap-ifca.md) */
@@ -43,6 +44,7 @@ var REF = {
   C22: 'C2.2 Contrôler les éléments nécessaires à la réalisation',
   C31: 'C3.1 Organiser le poste de travail',
   C34: 'C3.4 Façonner, raccorder, assembler, isoler, les circuits (frigorifique, hydraulique, aéraulique)',
+  C35: 'C3.5 Réaliser des opérations simples de soudage acier et raccorder PER',
   C39: 'C3.9 Vérifier l’étanchéité d’un circuit (frigorifique, hydraulique) avant mise en service',
   C47: 'C4.7 Raccorder les équipements de charge, de mesure et de contrôle',
   S02: 'S0.2 Gestion de l’environnement du site d’intervention et des déchets',
@@ -50,7 +52,13 @@ var REF = {
   S55: 'S5.5 Réseaux fluidiques et mécanique des fluides',
   S62: 'S6.2 Connaissance des principaux risques et des moyens de prévention',
   S63: 'S6.3 Identification des dangers et prévention des risques',
-  S64: 'S6.4 PRAP - SST'
+  S64: 'S6.4 PRAP - SST',
+  /* Bac Pro MFER 2028 (arrêté du 28 juillet 2026) : libellés lus dans C:/git/HAL-v3/donnees/referentiels/peda/BAC_MFER_2028.json.
+     Affichés par le moteur dans le bloc `referentiel.bac` d'une station (moteur/station.js, outils/page-prof.mjs). */
+  BA2T3: 'A2T3 Réaliser les réseaux fluidiques',
+  BC6: 'C6 Réaliser une installation en adoptant une attitude écoresponsable',
+  BS513: 'S5.1.3 Les assemblages de tubes PVC et polyéthylène',
+  BS514: 'S5.1.4 Les assemblages de tubes acier noir et inox'
 };
 
 /* l'échelle de F. Henninot, cinq niveaux, chacun avec son critère observable (mémoire « Échelle à CINQ niveaux ») ;

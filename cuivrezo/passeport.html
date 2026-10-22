@@ -2,14 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<script src="../moteur/animations.js?v=c71a0f27da"></script>
+<script src="../moteur/animations.js?v=7bddbcaafd"></script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1b3a63">
 <meta name="robots" content="noindex">
 <title>Mon passeport du cuivre · CuivRézo</title>
 <meta name="description" content="Le passeport CuivRézo : un tampon pour chaque station réussie. Les tampons restent sur l’appareil.">
-<link rel="stylesheet" href="moteur/accueil.css?v=6eaf7772">
-<link rel="stylesheet" href="moteur/defis.css?v=6eaf7772">
+<link rel="stylesheet" href="moteur/accueil.css?v=c30a9fa0">
+<link rel="stylesheet" href="moteur/defis.css?v=c30a9fa0">
 <script defer src="../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="cuivrezo/index.html" data-reseau-nom="🔥 CuivRézo"></script>
 </head>
 <body>
@@ -99,6 +99,27 @@
       </div>
     </div>
   </section>
+  <section class="pp-ligne">
+    <h2><span class="pastille">5</span> Réseau acier et réseaux du plombier</h2>
+    <div class="pp-grille">
+      <div class="pp-case" data-slot="5-1" data-ligne="5" data-titre="Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC" data-grand>
+        <div class="emplacement">5.1</div>
+        <div class="titre">Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC</div>
+      </div>
+      <div class="pp-case" data-slot="5-2" data-ligne="5" data-titre="Assembler l’acier : filetage, sertissage, soudure" data-grand>
+        <div class="emplacement">5.2</div>
+        <div class="titre">Assembler l’acier : filetage, sertissage, soudure</div>
+      </div>
+      <div class="pp-case" data-slot="5-3" data-ligne="5" data-titre="Raccorder le PVC par collage" data-grand>
+        <div class="emplacement">5.3</div>
+        <div class="titre">Raccorder le PVC par collage</div>
+      </div>
+      <div class="pp-case" data-slot="5-4" data-ligne="5" data-titre="Raccorder le PER et le multicouche" data-grand>
+        <div class="emplacement">5.4</div>
+        <div class="titre">Raccorder le PER et le multicouche</div>
+      </div>
+    </div>
+  </section>
   </div>
   <div class="pp-actions pas-imprimer">
     <button class="gros" type="button" onclick="window.print()">Imprimer mon passeport</button>
@@ -107,11 +128,11 @@
   <p class="pp-note">Vos tampons sont gardés sur cet appareil seulement. Rien n’est envoyé. Écrivez votre nom au stylo avant d’imprimer.</p>
   <button class="pp-effacer pas-imprimer" type="button" id="effacer">Effacer mes tampons sur cet appareil</button>
 </div>
-<script src="moteur/defis.js?v=6eaf7772"></script>
+<script src="moteur/defis.js?v=c30a9fa0"></script>
 <script>
 CuivDefis.remplir();
 document.getElementById('effacer').addEventListener('click', () => { if (CuivDefis.toutEffacer()) location.reload(); });
 </script>
-<script src="moteur/marque.js?v=6eaf7772" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+<script src="moteur/marque.js?v=c30a9fa0" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

@@ -141,6 +141,8 @@ const Station = (() => {
     const d = el('div', 'codes');
     const ligne = (nom, l) => { if (!l || !l.length) return; const p = el('p'); p.append(el('b', '', nom + ' : ')); p.append(l.join(' · ')); d.append(p); };
     ligne('Tâches CAP IFCA', r.taches); ligne('Compétences', r.competences); ligne('Savoirs associés', r.savoirs);
+    /* Bac Pro MFER 2028, quand la station le porte (ligne 5) */
+    if (r.bac) { ligne('Tâche Bac Pro MFER 2028', r.bac.taches); ligne('Compétence Bac Pro MFER 2028', r.bac.competences); ligne('Savoirs Bac Pro MFER 2028', r.bac.savoirs); }
     return d;
   }
 

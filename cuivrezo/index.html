@@ -2,14 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<script src="../moteur/animations.js?v=c71a0f27da"></script>
+<script src="../moteur/animations.js?v=7bddbcaafd"></script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1b3a63">
 <meta name="robots" content="noindex">
 <title>CuivRézo · les gestes du cuivre</title>
 <meta name="description" content="CuivRézo : un assistant de geste pour l’atelier de façonnage du cuivre. L’élève apprend seul le geste attendu, le professeur le confirme.">
-<link rel="stylesheet" href="moteur/accueil.css?v=6eaf7772">
-<link rel="stylesheet" href="moteur/defis.css?v=6eaf7772">
+<link rel="stylesheet" href="moteur/accueil.css?v=c30a9fa0">
+<link rel="stylesheet" href="moteur/defis.css?v=c30a9fa0">
 <script defer src="../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="cuivrezo/index.html" data-reseau-nom="🔥 CuivRézo"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
   <div class="porte-3d"><electro-3d id="poste" modele="poste" mode="decouvrir"></electro-3d></div>
   <div class="porte-droite">
     <section class="plan" aria-labelledby="plan-titre">
-      <h2 id="plan-titre">Le plan du réseau <small>— 14 stations · touchez une station</small></h2>
+      <h2 id="plan-titre">Le plan du réseau <small>— 18 stations · touchez une station</small></h2>
       <div class="rz-plan">
         <div class="rz-ligne"><span class="rz-terminus" title="Les gestes de base">1</span>
           <div class="rz-corps"><span class="rz-titre">Les gestes de base</span><ol class="rz-stations">
@@ -58,7 +58,15 @@
             <li><a class="rz-station" href="stations/4-2/" data-id="4-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>4.2</b> La baïonnette</span></a></li>
 
           </ol></div></div>
-        <div class="rz-ligne rz-avenir"><span class="rz-terminus">5</span><div class="rz-corps"><span class="rz-titre">Le réseau complet — à venir</span></div></div>
+        <div class="rz-ligne"><span class="rz-terminus" title="Réseau acier et réseaux du plombier">5</span>
+          <div class="rz-corps"><span class="rz-titre">Réseau acier et réseaux du plombier</span><ol class="rz-stations">
+            <li><a class="rz-station" href="stations/5-1/" data-id="5-1"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>5.1</b> Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC</span></a></li>
+            <li><a class="rz-station" href="stations/5-2/" data-id="5-2"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>5.2</b> Assembler l’acier : filetage, sertissage, soudure</span></a></li>
+            <li><a class="rz-station" href="stations/5-3/" data-id="5-3"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>5.3</b> Raccorder le PVC par collage</span></a></li>
+            <li><a class="rz-station" href="stations/5-4/" data-id="5-4"><span class="rz-point" aria-hidden="true"></span><span class="rz-nom"><b>5.4</b> Raccorder le PER et le multicouche</span></a></li>
+
+          </ol></div></div>
+        <div class="rz-ligne rz-avenir"><span class="rz-terminus">6</span><div class="rz-corps"><span class="rz-titre">Le réseau complet — à venir</span></div></div>
       </div>
     </section>
     <aside class="fiche" id="fiche" aria-live="polite"></aside>
@@ -182,15 +190,46 @@
         <span class="etat" aria-hidden="true"></span></a></li>
     </ol>
   </section>
+  <section class="ligne">
+    <h2><span class="pastille">5</span> Réseau acier et réseaux du plombier <span class="ligne-tp" data-compte="5"></span></h2>
+    <div class="bande" role="group" aria-label="Tampons de la ligne 5">
+      <span class="slot" data-slot="5-1" data-ligne="5" title="Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC">5.1</span>
+      <span class="slot" data-slot="5-2" data-ligne="5" title="Assembler l’acier : filetage, sertissage, soudure">5.2</span>
+      <span class="slot" data-slot="5-3" data-ligne="5" title="Raccorder le PVC par collage">5.3</span>
+      <span class="slot" data-slot="5-4" data-ligne="5" title="Raccorder le PER et le multicouche">5.4</span>
+    </div>
+    <ol class="arrets">
+      <li><a href="stations/5-1/" data-id="5-1">
+        <img class="vignette" src="images/5-1-vignette.webp" alt="" loading="lazy">
+        <span class="num">5.1</span>
+        <span class="t"><strong>Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC</strong><span class="p">Le bon tube, nommé juste, avec son usage</span><span class="tp-mini">✦ Tampon gagné</span></span>
+        <span class="etat" aria-hidden="true"></span></a></li>
+      <li><a href="stations/5-2/" data-id="5-2">
+        <img class="vignette" src="images/5-2-vignette.webp" alt="" loading="lazy">
+        <span class="num">5.2</span>
+        <span class="t"><strong>Assembler l’acier : filetage, sertissage, soudure</strong><span class="p">Le bon procédé, et un filetage étanche</span><span class="tp-mini">✦ Tampon gagné</span></span>
+        <span class="etat" aria-hidden="true"></span></a></li>
+      <li><a href="stations/5-3/" data-id="5-3">
+        <img class="vignette" src="images/5-3-vignette.webp" alt="" loading="lazy">
+        <span class="num">5.3</span>
+        <span class="t"><strong>Raccorder le PVC par collage</strong><span class="p">Un raccord PVC collé, plein et droit</span><span class="tp-mini">✦ Tampon gagné</span></span>
+        <span class="etat" aria-hidden="true"></span></a></li>
+      <li><a href="stations/5-4/" data-id="5-4">
+        <img class="vignette" src="images/5-4-vignette.webp" alt="" loading="lazy">
+        <span class="num">5.4</span>
+        <span class="t"><strong>Raccorder le PER et le multicouche</strong><span class="p">Un raccord serti, un coude rond, un tube libre</span><span class="tp-mini">✦ Tampon gagné</span></span>
+        <span class="etat" aria-hidden="true"></span></a></li>
+    </ol>
+  </section>
   <section class="avenir">
     <h2>Les lignes qui suivront</h2>
     <ul>
-<li><span class="pastille grise">5</span> Le réseau complet <span class="p">piquage, dessautage, pièce d’examen : une ligne frigorifique façonnée de bout en bout</span></li>
+<li><span class="pastille grise">6</span> Le réseau complet <span class="p">piquage, dessautage, pièce d’examen : une ligne frigorifique façonnée de bout en bout</span></li>
     </ul>
   </section>
   <p class="prof"><a href="prof/">Espace professeur : mode d’emploi, matériel, grilles</a></p>
 </main>
-<script src="moteur/defis.js?v=6eaf7772"></script>
+<script src="moteur/defis.js?v=c30a9fa0"></script>
 <script>
 /* l'état de chaque station, lu sur cet appareil seulement */
 document.querySelectorAll('.arrets a').forEach(a => {
@@ -202,12 +241,12 @@ document.querySelectorAll('.arrets a').forEach(a => {
 });
 CuivDefis.remplir();
 </script>
-<script src="moteur/3d/electro3d.js?v=6eaf7772"></script>
-<script src="moteur/3d/modeles/poste.js?v=6eaf7772"></script>
+<script src="moteur/3d/electro3d.js?v=c30a9fa0"></script>
+<script src="moteur/3d/modeles/poste.js?v=c30a9fa0"></script>
 <script>
 /* la porte (03/10) : le poste 3D, le plan du réseau qui s'allume, la fiche de la zone choisie */
 (() => {
-  const Z = [{"id":"poste","nom":"Mon poste de travail","phrase":"L’établi dégagé, les lunettes et les gants à portée, le bac pour les chutes : tout commence là.","stations":[{"id":"1-0","titre":"Mon poste de travail","obtenir":"Un poste prêt, un élève protégé","img":"images/1-0-poste.webp"}]},{"id":"tubes","nom":"Les tubes, en couronne et en barre","phrase":"En couronne, le tube est recuit ; en barre, il est écroui. On le reconnaît avant de le couper.","stations":[{"id":"1-1","titre":"Reconnaître le tube","obtenir":"Le bon tube, nommé juste","img":"images/1-1-livraison.webp"}]},{"id":"tracer","nom":"Le mètre, l’équerre et le feutre","phrase":"Mesurer juste, tracer fin, sur tout le tour du tube.","stations":[{"id":"1-2","titre":"Mesurer et tracer","obtenir":"Un trait fin, à la bonne cote, sur tout le tour","img":"images/1-2-tracer.webp"}]},{"id":"couper","nom":"Le coupe-tube et l’ébavureur","phrase":"Une coupe d’équerre, puis plus aucune bavure.","stations":[{"id":"1-3","titre":"Couper et ébavurer","obtenir":"Un tube coupé d’équerre, sans bavure","img":"images/1-3-couper.webp"}]},{"id":"cintrette","nom":"La cintrette","phrase":"Le tube s’enroule sur la roue : un coude à la main.","stations":[{"id":"1-4","titre":"Cintrer à la cintrette","obtenir":"Un coude à 90°, 300 mm à l’axe","img":"images/1-4-cintrette.webp"}]},{"id":"cintreuse","nom":"La cintreuse","phrase":"Un coude à la cote, en visant le bon repère : L, R ou 0.","stations":[{"id":"1-5","titre":"Cintrer à la cintreuse (L, R, 0)","obtenir":"Un coude à 90°, à la cote, du premier coup","img":"images/1-5-cintreuse.webp"}]},{"id":"dudgeon","nom":"La dudgeonnière","phrase":"Un évasement à 45°, l’écrou en place, pour un raccord vissé.","stations":[{"id":"1-6","titre":"Le dudgeon","obtenir":"Un dudgeon régulier, l’écrou en place","img":"images/1-6-dudgeon.webp"}]},{"id":"pince","nom":"La pince à emboîture","phrase":"Élargir un bout pour que l’autre tube y entre juste.","stations":[{"id":"1-7","titre":"L’emboîture à la pince","obtenir":"Un bout élargi où l’autre tube entre juste","img":"images/1-7-pince.webp"}]},{"id":"oxy","nom":"Le poste oxyacétylénique","phrase":"Deux bouteilles, deux détendeurs, deux tuyaux, un chalumeau : la sécurité d’abord, la flamme ensuite.","stations":[{"id":"2-1","titre":"Le poste oxyacétylénique en sécurité","obtenir":"Un poste prêt à allumer, vérifié, sans fuite","img":"images/2-1-poste.webp"},{"id":"2-2","titre":"Allumer, régler, éteindre la flamme","obtenir":"Une flamme neutre, allumée et éteinte dans l’ordre","img":"images/2-2-allumer.webp"}]},{"id":"tendre","nom":"Le chalumeau propane et l’étain","phrase":"Derrière le pare-flamme, l’étain coule dans l’emboîture chauffée.","stations":[{"id":"3-1","titre":"La brasure tendre à l’étain","obtenir":"Un anneau d’étain régulier, étanche","img":"images/3-1-tendre.webp"}]},{"id":"azote","nom":"L’azote, pour braser fort","phrase":"L’azote balaie l’intérieur du tube pendant la brasure forte : il reste propre.","stations":[{"id":"3-2","titre":"La brasure forte sous azote","obtenir":"Un joint brasé plein, propre à l’intérieur","img":"images/3-2-forte.webp"}]},{"id":"pieces","nom":"Les pièces façonnées","phrase":"Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.","stations":[{"id":"4-1","titre":"Le chapeau de gendarme","obtenir":"Passer par-dessus un tube, d’un seul morceau","img":"images/4-1-chapeau.webp"},{"id":"4-2","titre":"La baïonnette","obtenir":"Deux branches parallèles, décalées à la cote","img":"images/4-2-baionnette.webp"}]}];
+  const Z = [{"id":"poste","nom":"Mon poste de travail","phrase":"L’établi dégagé, les lunettes et les gants à portée, le bac pour les chutes : tout commence là.","stations":[{"id":"1-0","titre":"Mon poste de travail","obtenir":"Un poste prêt, un élève protégé","img":"images/1-0-poste.webp"}]},{"id":"tubes","nom":"Les tubes, en couronne et en barre","phrase":"En couronne, le tube est recuit ; en barre, il est écroui. On le reconnaît avant de le couper.","stations":[{"id":"1-1","titre":"Reconnaître le tube","obtenir":"Le bon tube, nommé juste","img":"images/1-1-livraison.webp"}]},{"id":"tracer","nom":"Le mètre, l’équerre et le feutre","phrase":"Mesurer juste, tracer fin, sur tout le tour du tube.","stations":[{"id":"1-2","titre":"Mesurer et tracer","obtenir":"Un trait fin, à la bonne cote, sur tout le tour","img":"images/1-2-tracer.webp"}]},{"id":"couper","nom":"Le coupe-tube et l’ébavureur","phrase":"Une coupe d’équerre, puis plus aucune bavure.","stations":[{"id":"1-3","titre":"Couper et ébavurer","obtenir":"Un tube coupé d’équerre, sans bavure","img":"images/1-3-couper.webp"}]},{"id":"cintrette","nom":"La cintrette","phrase":"Le tube s’enroule sur la roue : un coude à la main.","stations":[{"id":"1-4","titre":"Cintrer à la cintrette","obtenir":"Un coude à 90°, 300 mm à l’axe","img":"images/1-4-cintrette.webp"}]},{"id":"cintreuse","nom":"La cintreuse","phrase":"Un coude à la cote, en visant le bon repère : L, R ou 0.","stations":[{"id":"1-5","titre":"Cintrer à la cintreuse (L, R, 0)","obtenir":"Un coude à 90°, à la cote, du premier coup","img":"images/1-5-cintreuse.webp"}]},{"id":"dudgeon","nom":"La dudgeonnière","phrase":"Un évasement à 45°, l’écrou en place, pour un raccord vissé.","stations":[{"id":"1-6","titre":"Le dudgeon","obtenir":"Un dudgeon régulier, l’écrou en place","img":"images/1-6-dudgeon.webp"}]},{"id":"pince","nom":"La pince à emboîture","phrase":"Élargir un bout pour que l’autre tube y entre juste.","stations":[{"id":"1-7","titre":"L’emboîture à la pince","obtenir":"Un bout élargi où l’autre tube entre juste","img":"images/1-7-pince.webp"}]},{"id":"oxy","nom":"Le poste oxyacétylénique","phrase":"Deux bouteilles, deux détendeurs, deux tuyaux, un chalumeau : la sécurité d’abord, la flamme ensuite.","stations":[{"id":"2-1","titre":"Le poste oxyacétylénique en sécurité","obtenir":"Un poste prêt à allumer, vérifié, sans fuite","img":"images/2-1-poste.webp"},{"id":"2-2","titre":"Allumer, régler, éteindre la flamme","obtenir":"Une flamme neutre, allumée et éteinte dans l’ordre","img":"images/2-2-allumer.webp"}]},{"id":"tendre","nom":"Le chalumeau propane et l’étain","phrase":"Derrière le pare-flamme, l’étain coule dans l’emboîture chauffée.","stations":[{"id":"3-1","titre":"La brasure tendre à l’étain","obtenir":"Un anneau d’étain régulier, étanche","img":"images/3-1-tendre.webp"}]},{"id":"azote","nom":"L’azote, pour braser fort","phrase":"L’azote balaie l’intérieur du tube pendant la brasure forte : il reste propre.","stations":[{"id":"3-2","titre":"La brasure forte sous azote","obtenir":"Un joint brasé plein, propre à l’intérieur","img":"images/3-2-forte.webp"}]},{"id":"pieces","nom":"Les pièces façonnées","phrase":"Plusieurs coudes sur un même tube : le chapeau de gendarme, la baïonnette.","stations":[{"id":"4-1","titre":"Le chapeau de gendarme","obtenir":"Passer par-dessus un tube, d’un seul morceau","img":"images/4-1-chapeau.webp"},{"id":"4-2","titre":"La baïonnette","obtenir":"Deux branches parallèles, décalées à la cote","img":"images/4-2-baionnette.webp"}]},{"id":"plomberie","nom":"Les tubes du plombier","phrase":"Acier, PER, multicouche, PVC : on reconnaît le tube, puis on choisit comment l’assembler.","stations":[{"id":"5-1","titre":"Reconnaître les tubes : acier noir, galvanisé, inox, PER, multicouche, PE, PVC","obtenir":"Le bon tube, nommé juste, avec son usage","img":"images/5-1-vignette.webp"},{"id":"5-2","titre":"Assembler l’acier : filetage, sertissage, soudure","obtenir":"Le bon procédé, et un filetage étanche","img":"images/5-2-vignette.webp"},{"id":"5-3","titre":"Raccorder le PVC par collage","obtenir":"Un raccord PVC collé, plein et droit","img":"images/5-3-vignette.webp"},{"id":"5-4","titre":"Raccorder le PER et le multicouche","obtenir":"Un raccord serti, un coude rond, un tube libre","img":"images/5-4-vignette.webp"}]}];
   const e = document.getElementById('poste'), fiche = document.getElementById('fiche'), plan = document.querySelector('.rz-plan');
   const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const zoneDe = id => Z.find(z => z.stations.some(s => s.id === id));
@@ -256,6 +295,6 @@ CuivDefis.remplir();
   accueil();
 })();
 </script>
-<script src="moteur/marque.js?v=6eaf7772" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
+<script src="moteur/marque.js?v=c30a9fa0" data-cartouche="CuivRézo" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

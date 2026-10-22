@@ -289,6 +289,25 @@
     ici(extincteur, 1290, 0, 640);
     racine.add(chariot, o2, c2h2, chalumeau, tO2, tC2H2, extincteur);
 
+    /* ---------------------------------------------------------------- 13. les tubes du plombier (ligne 5, 19/10/2026) :
+       un mur de tubes au-dessus du poste de brasage — les barres d'acier noir, de galvanisé et d'inox, le PVC et le multicouche sur leurs
+       consoles, deux couronnes de PER (rouge, bleu) accrochées au mur, et la sertisseuse posée sur sa console. Couleurs de la station 5.1. */
+    const XM = 780, YM = 1750;
+    const mNoirT = K.metal(0x3a3f46, 0.5), mGalvaT = K.metal(0xc3ccd4, 0.35), mInoxT = K.metal(0xe6ebef, 0.2), mPvcT = K.plastique(0xa9b0b8, 0.6);
+    const mPerRouge = K.plastique(0xd8452f, 0.5), mPerBleu = K.plastique(0x3b82d6, 0.5), mMultiT = K.plastique(0xece6d8, 0.5), mPresse = K.plastique(0xc9362a, 0.45);
+    const planchePlomb = P(860, 940, 16, mPanneau, XM, YM, 8);
+    const consolesPlomb = G(...[1500, 1750].map(y => G(P(820, 18, 150, M.zingue, XM, y, 85), P(18, 90, 140, M.zingue, XM - 380, y - 50, 85), P(18, 90, 140, M.zingue, XM + 380, y - 50, 85))),
+      G(P(420, 18, 150, M.zingue, XM + 190, 1330, 85), P(18, 90, 140, M.zingue, XM + 20, 1280, 85), P(18, 90, 140, M.zingue, XM + 380, 1280, 85)));
+    const barresPlomb = G(
+      ...[[mNoirT, 14], [mGalvaT, 12], [mInoxT, 11]].map(([m, r], i) => K.cylX(r, 760, m, XM, 1509 + r, 50 + i * 40)),
+      K.cylX(21, 700, mPvcT, XM - 30, 1759 + 21, 60), K.cylX(31, 70, mPvcT, XM + 340, 1759 + 21, 60), K.cylX(10, 760, mMultiT, XM, 1759 + 10, 125));
+    const couronneMur = (x, m) => G(...[0, 1, 2, 3].map(i => K.mesh(K.tore(130, 8, 10, 56), m, x, 1990, 40 + i * 17)));
+    const couronnesPlomb = G(couronneMur(XM - 200, mPerRouge), couronneMur(XM + 200, mPerBleu), K.cylZ(10, 30, M.zingue, XM - 200, 1866, 20), K.cylZ(10, 30, M.zingue, XM + 200, 1866, 20));
+    const sertisseuse = G(Pr(230, 90, 70, 12, mPresse, 0, 45, 0), Pr(64, 120, 56, 8, M.plastiqueNoir, -50, -30, 0),
+      P(70, 16, 60, M.acier, 150, 80, 0), P(70, 16, 60, M.acier, 150, 10, 0), K.cylY(8, 90, M.acierSombre, 176, 45, 0));
+    ici(sertisseuse, XM + 190, 1339, 85);
+    racine.add(planchePlomb, consolesPlomb, barresPlomb, couronnesPlomb, sertisseuse);
+
     /* ---------------------------------------------------------------- les zones (même id que donnees/commun.js) */
     const pieces = [
       { id: 'poste', nom: 'Mon poste de travail', objets: [etabli, etau, lunettes, gants, fiche, bac], ancre: [80, YE + 40, 640], desc: 'L’établi, l’étau, les lunettes, les gants, la fiche de sécurité, le bac à chutes.' },
@@ -302,7 +321,8 @@
       { id: 'oxy', nom: 'Le poste oxyacétylénique', objets: [chariot, o2, c2h2, chalumeau, tO2, tC2H2, extincteur], ancre: [XC, 1300, ZC + 80], desc: 'Ogive blanche : l’oxygène. Ogive marron : l’acétylène. Tuyau bleu, tuyau rouge.' },
       { id: 'tendre', nom: 'Le chalumeau propane et l’étain', objets: [tableBrasage, ecran, supportsV, tubeBrase, propane, etain], ancre: [XB - 100, YB + 100, ZB + 200], desc: 'Le pare-flamme, la cartouche de propane, le fil d’étain.' },
       { id: 'azote', nom: 'L’azote, pour braser fort', objets: [azote, tuyauAzote, baguettes], ancre: [XN, 1150, ZN + 100], desc: 'Ogive noire : l’azote. Les baguettes de cuivre-phosphore.' },
-      { id: 'pieces', nom: 'Les pièces façonnées', objets: [chapeau, obstacle, baionnette], ancre: [XP + 250, YE + 70, 200], desc: 'Le chapeau de gendarme, la baïonnette.' }
+      { id: 'pieces', nom: 'Les pièces façonnées', objets: [chapeau, obstacle, baionnette], ancre: [XP + 250, YE + 70, 200], desc: 'Le chapeau de gendarme, la baïonnette.' },
+      { id: 'plomberie', nom: 'Les tubes du plombier', objets: [planchePlomb, consolesPlomb, barresPlomb, couronnesPlomb, sertisseuse], ancre: [XM, YM, 140], desc: 'Acier, galvanisé, inox, PVC, multicouche, deux couronnes de PER, la sertisseuse.' }
     ];
 
     return {
@@ -310,7 +330,7 @@
       legendeTitre: 'Les zones',
       commandes: [],
       agir: () => {}, animer: () => false, fantome: [],
-      vue: { cadre: [rack, etabli, panneau, tableBrasage, chariot, azote], azimut: 0, elevation: 12, zoom: 1.9, cible: [-60, 1000, 300] },
+      vue: { cadre: [rack, etabli, panneau, tableBrasage, chariot, azote, planchePlomb], azimut: 0, elevation: 12, zoom: 1.9, cible: [-60, 1000, 300] },
       reperesCote: null,
       phrase: 'Un poste de façonnage du cuivre. Cliquez sur un outil : ses stations s’ouvrent.',
       etapes: []
