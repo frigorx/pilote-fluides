@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<script src="../moteur/animations.js?v=c71a0f27da"></script>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SimuRézo · simulateur de panne frigorifique · inerWeb</title>
@@ -12,6 +11,7 @@
      RÔLE : la structure de la page, dérivée de la maquette B « le parcours »
      (duel/B-parcours/) : bandeau collé en haut, puis des étapes pleine largeur.
      0 accueil · 1 l'appel du client · 2 sur place (scène, relevés, carnet) ·
+     2b la fiche à remplir et à imprimer (fiche.js) ·
      3 le cycle sur le diagramme · 4 la conclusion · 5 le retour · fin de partie.
      Le texte propre à chaque situation est écrit par src/moteur/jeu.js.
      BALISES : les trois commentaires « css » (fin du head), « donnees » et « scripts »
@@ -23,8 +23,9 @@
      cadrans (niveaux 2 et 3 : un cadran par manifold lu, DEP_CADRAN), calc-clair
      (niveau 1 : calc-sr, calc-sc), saisies (niveaux 2 et 3 : la surchauffe et le
      sous-refroidissement se saisissent), leg-calc, alertes, diagramme, phrase,
-     familles, pannes, valider, doute-*, retour-corps, suivante, fin-corps, aa).
-     DÉPEND : style.css, jeu.js, diagramme.js, cadran.js, les deux scènes.
+     familles, pannes, valider, doute-*, retour-corps, suivante, fin-corps, aa,
+     bloc-carnet, fiche-corps : tout le reste de la fiche est construit par fiche.js).
+     DÉPEND : style.css, jeu.js, diagramme.js, cadran.js, fiche.js, les deux scènes.
      =================================================================== -->
 <style>
 /* =====================================================================
@@ -408,6 +409,118 @@ button { font: inherit; }
 .b-bilan .c { font: bold 1rem Consolas, monospace; color: var(--bleu); text-align: right; }
 
 .b-pied { text-align: center; color: var(--mut); font-size: .875rem; padding: 4px 8px 0; }
+
+/* ---- 2b · la fiche à remplir (voir fiche.js) : une feuille à l'écran, une feuille A4 à l'impression ----
+   Les messages reprennent .b-msg (ok / nok à trois canaux). Texte jamais sous .95rem à l'écran. */
+.fi-intro { display: grid; gap: 10px; margin-bottom: 14px; max-width: 46rem; }
+.fi-exemple { padding: 10px 14px; border-radius: 10px; background: #eef3f9; border-left: 5px solid var(--bleu-vif); }
+.fi-etapes { margin: 0; padding-left: 1.3rem; display: grid; gap: 4px; }
+.fi-regle-intro { display: grid; gap: 6px; }
+.fi-regle-intro ul, .fi-regle ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 2px; }
+.fi-regle-corps { display: grid; gap: 6px; }
+.fi-manque { display: grid; gap: 6px; justify-items: start; padding: 10px 14px; border-radius: 10px; background: #fff6ec; border-left: 5px solid var(--orange); }
+.fi-manque ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 4px; }
+.fi-manque.complete { background: #eef7f1; border-left-color: var(--acquis); }
+.fi-lien { justify-self: start; }
+.fi-papier { display: grid; gap: 16px; padding: 14px; background: #fff; border: 2px solid var(--bleu); border-radius: 8px; box-shadow: var(--ombre); min-width: 0; }
+.fi-entete { display: grid; gap: 8px; padding-bottom: 10px; border-bottom: 3px solid var(--bleu); }
+.fi-titre { font-size: 1.35rem; }
+.fi-ident { margin: 0; display: grid; gap: 2px 20px; }
+.fi-ident div { display: flex; flex-wrap: wrap; gap: 0 8px; }
+.fi-ident dt { color: var(--mut); }
+.fi-ident dt::after { content: " :"; }
+.fi-ident dd { margin: 0; font-weight: bold; color: var(--bleu); }
+.fi-vide { padding: 12px 14px; border: 2px dashed #9fb0c3; border-radius: 10px; color: var(--mut); }
+.fi-groupe h4 { font: bold 1.05rem var(--titre); color: var(--bleu); margin: 0 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--ligne); }
+.fi-lignes { display: grid; gap: 10px; }
+.fi-ligne { display: grid; gap: 6px; min-width: 0; padding: 10px 12px; border-radius: 10px; background: #eef3f9; border-left: 5px solid var(--bleu-vif); }
+.fi-lib { font-weight: bold; color: var(--bleu); }
+.fi-saisie { display: flex; align-items: center; gap: 10px; }
+.fi-saisie input, .fi-champ input { min-width: 0; min-height: 48px; padding: 6px 12px; border: 2px solid var(--bleu); border-radius: 10px; background: #fff; color: var(--txt); }
+.fi-saisie input { flex: 0 1 12rem; font: bold 1.2rem Consolas, monospace; }
+.fi-champ input { width: 100%; font: inherit; }
+.fi-saisie input:focus-visible, .fi-champ input:focus-visible, .fi-notes textarea:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255,107,53,.5); }
+.fi-saisie input:disabled { background: #f1f3f5; color: var(--mut); border-color: #9fb0c3; }
+.fi-u { color: var(--mut); white-space: nowrap; }
+.fi-val { display: none; }
+.fi-filigrane { display: none; }
+.fi-plage { color: var(--mut); font-weight: bold; }
+.fi-formule { display: inline-block; margin: 2px 0; }
+.fi-controle { display: grid; gap: 8px; justify-items: start; }
+.fi-controle .btn { min-width: 220px; }
+.fi-concl { display: grid; gap: 10px; padding: 12px 14px; border-radius: 10px; background: #fff6ec; border-left: 5px solid var(--orange); }
+.fi-concl h4 { font: bold 1.05rem var(--titre); color: var(--bleu); margin: 0; }
+.fi-regle p { margin-bottom: 4px; }
+.fi-choix .b-choix-btn[aria-pressed="true"] { border: 3px solid var(--bleu); background: #eef3f9; color: var(--bleu); }
+.fi-choix .b-choix-btn[aria-pressed="true"] b::before { content: "● "; }
+.fi-choix .b-choix-btn[aria-pressed="true"] span { color: var(--txt); }
+.fi-choix .b-choix-btn:disabled { cursor: default; }
+.fi-choix .b-choix-btn:disabled[aria-pressed="false"] { opacity: .55; }
+.fi-raison { display: none; }
+.fi-notes, .fi-champ { display: grid; gap: 6px; min-width: 0; }
+.fi-notes textarea { width: 100%; min-height: 84px; padding: 8px 12px; border: 2px solid var(--bleu); border-radius: 10px; background: #fff; color: var(--txt); font: inherit; resize: vertical; }
+.fi-signature { display: grid; gap: 12px; }
+.fi-signer { display: grid; gap: 4px; align-content: start; min-height: 64px; padding: 8px 12px; border: 2px dashed #9fb0c3; border-radius: 10px; }
+.fi-valider { display: grid; gap: 10px; }
+.fi-valider .btn { justify-self: start; min-width: 220px; }
+.fi-ref { display: grid; gap: 8px; padding-top: 12px; border-top: 3px solid var(--bleu); }
+.fi-ref-cols { display: grid; gap: 10px; }
+.fi-ref-titre { font-weight: bold; color: var(--bleu); }
+.fi-ref ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 2px; }
+.fi-ref li b { color: var(--bleu); }
+.fi-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; }
+@media (min-width: 760px) {
+  .fi-lignes { grid-template-columns: 1fr 1fr; align-items: start; }
+  .fi-choix { grid-template-columns: repeat(3, 1fr); }
+  .fi-signature { grid-template-columns: 1fr 1fr 1fr; align-items: start; }
+  .fi-ref-cols { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+@media (min-width: 860px) { .fi-papier { padding: 22px; } }
+
+/* ---- l'impression : la fiche seule, une feuille A4, texte en 14 points au moins ----
+   Tout ce qui sert à l'écran (aide, messages, boutons, champs) disparaît ; les valeurs
+   passent par les copies .fi-val, mises en forme à la française. */
+@media print {
+  @page { size: A4 portrait; margin: 8mm; }
+  html, body { background: #fff !important; color: #000; }
+  body { overflow: visible; }
+  .b-band, .b-evite, .b-pied, .b-sr, #accueil, #appel, #sur-place, #cycle, #conclusion, #retour, #fin, #fiche .e-tete,
+  .fi-ecran, .fi-ou, .fi-lien, .fi-papier .b-msg, .fi-saisie input, .fi-champ input, .fi-notes textarea, .fi-choix .b-choix-btn span { display: none !important; }
+  .b-page { max-width: none; padding: 0; display: block; }
+  .b-jeu { display: block; }
+  #fiche { border: 0; box-shadow: none; padding: 0; background: transparent; }
+  .fi-papier, .fi-papier > :not(.fi-filigrane), .fi-papier > :not(.fi-filigrane) * { font-size: 14.2pt !important; line-height: 1.2 !important; color: #000 !important; }   /* 14,2 pt : Chrome arrondit à 13,99 pt le texte demandé à 14 pt ; le filigrane garde ses propres tailles */
+  .fi-papier .fi-titre { font-size: 18pt !important; }
+  .fi-papier { position: relative; display: block; padding: 4mm 5mm; border: .5mm solid #000; border-radius: 0; box-shadow: none; background: none; break-inside: avoid; font-family: Calibri, "Segoe UI", Arial, sans-serif; }
+  .fi-papier > * { position: relative; z-index: 1; margin-bottom: 1.5mm; }
+  .fi-papier > .fi-filigrane { display: block; position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; margin: 0; pointer-events: none; }
+  .fi-raison { display: block; font-weight: bold; }
+  .fi-raison:empty { display: none; }
+  .fi-entete { border-bottom: .5mm solid #000; padding-bottom: 2mm; gap: 2mm; }
+  .fi-ident { display: flex; flex-wrap: wrap; gap: 0 8mm; }
+  .fi-ident dd { font-weight: bold; }
+  .fi-groupe h4 { margin: 0 0 1mm; padding: 0; border-bottom: .3mm solid #000; }
+  .fi-lignes { display: block; }
+  .fi-ligne { display: grid; grid-template-columns: minmax(0, 1fr) 38mm 62mm; align-items: baseline; gap: 0 2mm; padding: .6mm 0; border: 0; border-bottom: .2mm dotted #000; border-radius: 0; background: none; }
+  .fi-lib { font-weight: normal; }
+  .fi-saisie { display: flex; gap: 2mm; align-items: baseline; }
+  .fi-val { display: inline !important; font-weight: bold; }
+  .fi-plage { font-weight: normal; }
+  .fi-concl { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6mm; padding: 0; border: 0; background: none; }
+  .fi-choix { display: flex; flex-wrap: wrap; gap: 0 8mm; margin: 0; }
+  .fi-raison { flex: 0 0 100%; }
+  .fi-choix .b-choix-btn { display: inline; width: auto; min-height: 0; padding: 0; border: 0 !important; background: none !important; box-shadow: none; opacity: 1 !important; }
+  .fi-concl .b-choix-btn b::before, .fi-concl .b-choix-btn[aria-pressed="true"] b::before { content: "\2610\00a0"; }
+  .fi-concl .b-choix-btn[aria-pressed="true"] b::before { content: "\2612\00a0"; }
+  .fi-notes { display: block; }
+  .fi-notes-val { display: block !important; min-height: 16mm; padding: 1.5mm; border: .3mm solid #000; white-space: pre-wrap; font-weight: normal; }
+  .fi-signature { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm; }
+  .fi-champ { display: flex; gap: 3mm; align-items: baseline; border-bottom: .2mm dotted #000; }
+  .fi-signer { grid-column: 2; grid-row: 1 / span 2; min-height: 22mm; padding: 1.5mm; border: .3mm solid #000; border-radius: 0; }
+  .fi-ref { display: block; padding-top: 2mm; border-top: .5mm solid #000; }
+  .fi-ref-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .fi-ref ul { padding-left: 4mm; }
+}
 
 /* =====================================================================
    scene.css — règles « svg.scene.coupe … » de la piste A, coupe vivante
@@ -795,7 +908,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
       </div>
     </div>
 
-    <div class="b-carnet">
+    <div class="b-carnet" id="bloc-carnet">
       <div class="b-carnet-tete">
         <h3>Carnet de relevés <span id="nb">0</span></h3>
         <a class="b-pastille" id="lien-cycle" href="#cycle">Le cycle s'est déplié ↓</a>
@@ -811,6 +924,12 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
       <p class="b-leg" id="leg-calc" style="margin-top:8px">La surchauffe demande la BP et l'aspiration ; le sous-refroidissement, la HP et la ligne liquide.</p>
     </div>
     <a class="btn b-suite" id="suite2" href="#cycle" aria-disabled="true">Faites 2 relevés pour déplier le cycle (0 / 2)</a>
+  </section>
+
+  <!-- ===== 2b · la fiche : on reporte ses relevés, on la contrôle, on l'imprime (DEP_FICHE construit tout le contenu) ===== -->
+  <section class="etape" id="fiche" data-n="2" aria-labelledby="t2b">
+    <div class="e-tete"><span class="e-num" aria-hidden="true">2b</span><h2 id="t2b">Reporter mes relevés sur la fiche</h2></div>
+    <div id="fiche-corps"></div>
   </section>
 
   <!-- ===== 3 · le diagramme log p-h ===== -->
@@ -2249,6 +2368,570 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
 </script>
 <script>
 /* =====================================================================
+   fiche.js — la fiche de mise en service / d'intervention de SimuRézo
+   ---------------------------------------------------------------------
+   RÔLE : l'élève REPORTE sur une fiche ce qu'il a relevé (étape « 2b »,
+   entre les relevés et le diagramme). La fiche ne se pré-remplit jamais :
+   une ligne n'apparaît que si le relevé qui la donne est au carnet, et
+   l'élève tape la valeur (ou la calcule : surchauffe, sous-refroidissement).
+   SAISIE : un champ texte par ligne ; on accepte la virgule ou le point, le tiret du
+   clavier ou le moins typographique du carnet (−), et une unité derrière le nombre.
+   CONTRÔLE : « Contrôler ma fiche » compare chaque ligne à la situation.
+   Tolérances du jeu : ±1 K (°C, K, % de In), ±0,1 bar. Une ligne juste se
+   verrouille ; une ligne fausse se rouvre une fois (on dit OÙ la reprendre
+   dans le carnet) ; à la deuxième erreur la valeur est donnée. Comme les
+   lectures de cadran du jeu (repondre()), mais SANS effet sur le
+   coefficient : la fiche est un document, pas un tour de jeu.
+   CONCLUSION : une ligne à choisir (installation conforme / à surveiller /
+   anomalie), jugée sur la fiche seule, avec les plages « normal » que le jeu
+   affiche déjà dans les repères de l'installation :
+     · au moins une valeur hors de sa plage            → anomalie ;
+     · rien hors plage mais une ligne de base manque   → à surveiller ;
+     · tout dans les plages et la fiche est complète   → installation conforme.
+   Lignes de base : pressions BP et HP, t évaporation, t condensation,
+   T aspiration, T ligne liquide, T refoulement, surchauffe, sous-refroidissement.
+   La règle, la définition de « complète » (les lignes de base) et un exemple résolu
+   s'écrivent avant la fiche (première fiche de la page) ; une liste « il reste à
+   reporter » dit à tout moment quelles lignes de base manquent et où les obtenir.
+   Même régime que les lignes : une seconde chance (le message dit ce qui est vrai
+   de la fiche : hors plage, ou ce qui manque), puis la conclusion est donnée.
+   MODE : la fiche porte un titre neutre (« Fiche de relevés ») tant que la
+   situation n'est pas conclue, pour ne pas dévoiler s'il y a une panne ; à la
+   conclusion (reveler()), elle devient « Fiche de mise en service » si la
+   situation est « Aucune panne », sinon « Fiche d'intervention » (avec le
+   motif de l'appel). Mêmes lignes, même contrôle.
+   IMPRESSION : bouton « Imprimer ma fiche » (après validation) ; la feuille
+   A4 n'imprime que la fiche, texte ≥ 14 pt, avec le filigrane inerWeb (voir
+   style.css, @media print).
+   RUBRIQUES calquées sur la fiche du fonds de Franck « fiche-mise_en_service_
+   equipement_frigorifique.pdf » (CAP IFCA, C4 Mettre en service) : équipement,
+   relevés thermiques (évaporation, condensation, compresseur aspiration et
+   refoulement, détendeur entrée, ambiance intérieure et extérieure), analyse
+   (surchauffe, sous-refroidissement), relevé électrique (intensité), date et
+   technicien. Absentes, faute de donnée dans le jeu : fluide et huile, plaques
+   signalétiques, tension, consignes thermostat et pressostats, relais thermiques.
+   CODES du référentiel en pied de fiche (libellés de HAL-v3 : CAP_IFCA.json,
+   BAC_MFER_2028.json) : CAP IFCA T15, C1.1, C1.3 ; Bac Pro MFER 2028 A3T4, S8.2.
+   API : window.DEP_FICHE = {
+     monter(zone, etat)  zone = le conteneur ; etat() rend { s, niveau, lus, calcules, lec }
+                         (la situation et ce qui est fait : lu à chaque appel, jamais copié)
+     maj()               à appeler après chaque relevé : fait apparaître les lignes dues
+     reveler()           à appeler à la conclusion de la situation : titre selon le mode
+     lireNombre(texte)   le nombre tapé (virgule, moins typographique, unité acceptés) ou NaN
+     evaluer(s, ids)     la conclusion attendue pour une fiche portant ces lignes (pur, testé sous Node)
+     LIGNES, BASE        les lignes (id, lib, unite…) et les ids des lignes de base
+     _etat()             lecture pour les tests }
+   Sous Node (tests) : posé sur globalThis et exporté par module.exports ;
+   seules monter / maj / reveler touchent à document.
+   DÉPEND : rien (les JSON de la situation arrivent par etat()).
+   ===================================================================== */
+(function (G) {
+  "use strict";
+  const MOINS = "−";
+  const TOL_K = 1, TOL_BAR = 0.1, EPS = 1e-9;
+  /* pannes.md § 1, plage « normal » de l'intensité : absente d'installations.json (même repère que jeu.js) */
+  const INTENSITE_NORMALE = [80, 110];
+  const BASE = ["bp", "tevap", "hp", "tcond", "tasp", "tliq", "tref", "sr", "sc"];
+
+  /* libellés officiels : C:/git/HAL-v3/donnees/referentiels/peda/CAP_IFCA.json (T15, C1.1, C1.3) et BAC_MFER_2028.json (A3T4, S8.2) ; aucun diplôme nommé : les codes vont sous « Sert notamment pour » */
+  const REFERENTIELS = [
+    { codes: [["T15", "Renseigner les documents de mise en service"], ["C1.1", "Compléter, transmettre"], ["C1.3", "Rendre compte"]] },
+    { codes: [["A3T4", "Renseigner les documents techniques et réglementaires"], ["S8.2", "les outils de la communication écrite et numérique"]] }
+  ];
+  const CONCLUSIONS = {
+    conforme: { lib: "Installation conforme", aide: "Toutes les valeurs sont dans leurs plages et la fiche est complète." },
+    surveiller: { lib: "À surveiller", aide: "Rien n'est hors plage, mais la fiche est incomplète : il manque une ligne de base." },
+    anomalie: { lib: "Anomalie", aide: "Au moins une valeur est hors de sa plage « normal »." }
+  };
+  const ORDRE_CONCLUSIONS = ["conforme", "surveiller", "anomalie"];
+  const GROUPES = [
+    { id: "bp", titre: "Côté basse pression (évaporateur)" },
+    { id: "hp", titre: "Côté haute pression (condenseur)" },
+    { id: "ref", titre: "Refoulement, courant et ambiance" }
+  ];
+
+  /* ---------- petits outils : nombres à la française ---------- */
+  function nb(v, d) {
+    const k = Math.pow(10, d), r = Math.round(Math.abs(v) * k) / k;
+    return (v < 0 && r !== 0 ? MOINS : "") + r.toFixed(d).replace(".", ",");
+  }
+  const arr1 = v => { const r = Math.round(Math.abs(v) * 10) / 10; return v < 0 && r !== 0 ? -r : r; };
+  const sgn = v => (v > 0 ? "+" : v < 0 ? MOINS : "") + Math.abs(v);
+  const entre = (a, d) => nb(a[0], d || 0) + " à " + nb(a[1], d || 0);
+  /* ce que l'élève tape : « -9 », « −9 » (le moins du carnet), « 0,9 », « 0.9 », « 0,9 bar », « 6 K », « 100 % de In » ; NaN sinon */
+  function lireNombre(t) {
+    const x = String(t).replace(/[\u2212\u2013\u2014\u2010\u2011\u2012]/g, "-").replace(/,/g, ".").replace(/[\s\u00a0\u202f]+/g, " ").trim().replace(/^([+-])\s+/, "$1");
+    const m = /^([+-]?(?:\d+(?:\.\d+)?|\.\d+))\s*(?:bar|°\s*c|°|k|%(?:\s*de\s*in)?)?$/i.exec(x);
+    return m ? parseFloat(m[1]) : NaN;
+  }
+
+  /* ---------- les lignes de la fiche ----------
+     id, g (groupe), lib, unite, dec (décimales), tol ; dispo(c) : le relevé qui la donne est fait ;
+     vrai(s) : la valeur de la situation ; plage(s) : la plage « normal » (ou rien) ;
+     ligne(c) : le nom de la ligne du carnet où la reprendre ; comment(c) : comment la lire ; calc : lignes calculées. */
+  const LIGNES = [
+    { id: "bp", g: "bp", lib: "Pression BP", unite: "bar", dec: 1, tol: TOL_BAR,
+      dispo: c => c.lus.has("bp"), vrai: s => arr1(s.bp),
+      ligne: () => "Manifold BP", comment: () => "la pression, en bar" },
+    { id: "tevap", g: "bp", lib: "Température d'évaporation", court: "T évaporation", unite: "°C", dec: 0, tol: TOL_K,
+      dispo: c => (c.niveau >= 2 ? !!(c.lec.bp && c.lec.bp.fini) : c.lus.has("bp")), vrai: s => s.tEvap, plage: s => s.inst.plages.tEvap,
+      ligne: c => (c.niveau >= 2 ? "t évap lue" : "Manifold BP"),
+      comment: c => (c.niveau >= 2 ? "la température que vous avez lue sur le cadran BP" : "la température écrite après « couronne : t évap »") },
+    { id: "tasp", g: "bp", lib: "Température d'aspiration", court: "T aspiration", unite: "°C", dec: 0, tol: TOL_K,
+      dispo: c => c.lus.has("tasp"), vrai: s => s.tAsp,
+      ligne: () => "Thermomètre aspiration", comment: () => "la température, en °C" },
+    { id: "sr", g: "bp", lib: "Surchauffe", unite: "K", dec: 0, tol: TOL_K,
+      dispo: c => c.calcules.has("sr"), vrai: s => s.tAsp - s.tEvap, plage: s => s.inst.plages.sr,
+      calc: { debut: "surchauffe =", formule: "T aspiration − T évaporation", fin: "Reprenez ces deux lignes de la fiche." } },
+    { id: "hp", g: "hp", lib: "Pression HP", unite: "bar", dec: 1, tol: TOL_BAR,
+      dispo: c => c.lus.has("hp"), vrai: s => arr1(s.hp),
+      ligne: () => "Manifold HP", comment: () => "la pression, en bar" },
+    { id: "tcond", g: "hp", lib: "Température de condensation", court: "T condensation", unite: "°C", dec: 0, tol: TOL_K,
+      dispo: c => (c.niveau >= 2 ? !!(c.lec.hp && c.lec.hp.fini) : c.lus.has("hp")), vrai: s => s.tCond, plage: s => s.inst.plages.tCond,
+      ligne: c => (c.niveau >= 2 ? "t cond lue" : "Manifold HP"),
+      comment: c => (c.niveau >= 2 ? "la température que vous avez lue sur le cadran HP" : "la température écrite après « couronne : t cond »") },
+    { id: "tliq", g: "hp", lib: "Température de la ligne liquide", court: "T ligne liquide", unite: "°C", dec: 0, tol: TOL_K,
+      dispo: c => c.lus.has("tliq"), vrai: s => s.tLiq,
+      ligne: () => "Thermomètre ligne liquide", comment: () => "la température, en °C" },
+    { id: "sc", g: "hp", lib: "Sous-refroidissement", unite: "K", dec: 0, tol: TOL_K,
+      dispo: c => c.calcules.has("sc"), vrai: s => s.tCond - s.tLiq, plage: s => s.inst.plages.sc,
+      calc: { debut: "sous-refroidissement =", formule: "T condensation − T ligne liquide", fin: "Reprenez ces deux lignes de la fiche." } },
+    { id: "tref", g: "ref", lib: "Température de refoulement", court: "T refoulement", unite: "°C", dec: 0, tol: TOL_K,
+      dispo: c => c.lus.has("tref"), vrai: s => s.tRef, plage: s => s.inst.plages.tRef,
+      ligne: () => "Thermomètre refoulement", comment: () => "la température, en °C" },
+    { id: "int", g: "ref", lib: "Intensité absorbée", court: "Intensité", unite: "% de In", dec: 0, tol: TOL_K,
+      dispo: c => c.lus.has("pince"), vrai: s => s.intensite, plage: () => INTENSITE_NORMALE,
+      ligne: () => "Pince ampèremétrique", comment: () => "le pourcentage de In" },
+    { id: "tch", g: "ref", lib: "Température de la chambre", unite: "°C", dec: 0, tol: TOL_K,
+      dispo: c => c.lus.has("chambre") || c.lus.has("aevap"), vrai: s => s.tChambre,
+      ligne: c => (c.lus.has("chambre") ? "Chambre, regardée" : "Thermomètre d'air de l'évaporateur"),
+      comment: c => (c.lus.has("chambre") ? "la température écrite après « air à »" : "la température d'« entrée »") },
+    { id: "text", g: "ref", lib: "Température de l'air extérieur", unite: "°C", dec: 0, tol: TOL_K,
+      dispo: c => c.lus.has("acond"), vrai: s => s.tAirExt,
+      ligne: () => "Thermomètre d'air du condenseur", comment: () => "la température d'« entrée »" }
+  ];
+  const LIGNE = {}; LIGNES.forEach(L => { LIGNE[L.id] = L; });
+  const nomCourt = L => L.court || L.lib;
+  const BASE_LIB = LIGNES.filter(L => BASE.indexOf(L.id) >= 0).map(L => L.lib);
+
+  /* « il reste à reporter » : pour chaque ligne de base absente, le relevé ou le calcul qui la donne (noms des boutons de la page) */
+  const AIDE_MANQUE = {
+    bp: () => "faites le relevé « Manifold BP ».",
+    tevap: c => (c.niveau < 2 ? "faites le relevé « Manifold BP »."
+      : c.lus.has("bp") ? "lisez le cadran BP, puis tapez la température dans le champ du cadran." : "faites le relevé « Manifold BP », puis lisez le cadran BP."),
+    tasp: () => "faites le relevé « Aspiration ».",
+    sr: c => (c.niveau < 2 ? "touchez « Calculer la surchauffe » sous le carnet (il faut la BP et l'aspiration)."
+      : "calculez-la dans le champ « Surchauffe (K) » sous le carnet (il faut la BP lue au cadran et l'aspiration)."),
+    hp: () => "faites le relevé « Manifold HP ».",
+    tcond: c => (c.niveau < 2 ? "faites le relevé « Manifold HP »."
+      : c.lus.has("hp") ? "lisez le cadran HP, puis tapez la température dans le champ du cadran." : "faites le relevé « Manifold HP », puis lisez le cadran HP."),
+    tliq: () => "faites le relevé « Ligne liquide ».",
+    sc: c => (c.niveau < 2 ? "touchez « Calculer le sous-refroidissement » sous le carnet (il faut la HP et la ligne liquide)."
+      : "calculez-le dans le champ « Sous-refroidissement (K) » sous le carnet (il faut la HP lue au cadran et la ligne liquide)."),
+    tref: () => "faites le relevé « Refoulement »."
+  };
+
+  /* le filigrane inerWeb de la feuille imprimée (règle du 03/10 : tout produit porte le logo officiel et « by inerweb.fr », pâle, incliné,
+     derrière le contenu, trois exemplaires dont un au centre) ; le dessin est celui de jouerezo/moteur/voyage-dessin.js (D.filigrane),
+     le cartouche porte le nom du produit. Invisible à l'écran. */
+  function filigrane() {
+    const NS = "http://www.w3.org/2000/svg", BLEU = "#1b3a63", ORANGE = "#e8914a";
+    const n = (tag, attrs, parent, texte) => { const e = document.createElementNS(NS, tag); Object.keys(attrs).forEach(k => e.setAttribute(k, attrs[k])); if (texte !== undefined) e.textContent = texte; if (parent) parent.appendChild(e); return e; };
+    const svg = n("svg", { "class": "fi-filigrane", viewBox: "0 0 720 1020", preserveAspectRatio: "xMidYMid slice", "aria-hidden": "true", focusable: "false" });
+    const g = n("g", { opacity: "0.08" }, svg);
+    [[300, 230], [430, 520], [330, 830]].forEach(p => {
+      const m = n("g", { transform: "translate(" + p[0] + " " + p[1] + ") rotate(-12) translate(-200 -66)" }, g);
+      n("text", { x: 0, y: 80, "font-size": 56, fill: BLEU }, m, "❄️");
+      n("text", { x: 76, y: 75, "font-size": 52, "font-weight": 700, fill: BLEU, "font-family": "Trebuchet MS, Trebuchet, sans-serif" }, m, "iner");
+      n("text", { x: 171, y: 75, "font-size": 52, fill: BLEU, "font-family": "Segoe Script, Brush Script MT, cursive" }, m, "Web");
+      n("line", { x1: 76, x2: 276, y1: 80, y2: 80, stroke: ORANGE, "stroke-width": 4 }, m);
+      n("rect", { x: 281, y: 8, rx: 7, width: 120, height: 38, fill: ORANGE }, m);
+      n("text", { x: 341, y: 34, "text-anchor": "middle", "font-size": 22, "font-weight": 700, fill: "#fff", "font-family": "Segoe UI, Helvetica, Arial, sans-serif" }, m, "SimuRézo");
+      n("text", { x: 76, y: 122, "font-size": 30, "font-weight": 700, fill: BLEU, "font-family": "Trebuchet MS, Trebuchet, sans-serif" }, m, "by inerweb.fr");
+    });
+    return svg;
+  }
+
+  /* ---------- la conclusion attendue (pure : testée sous Node) ----------
+     ids : les lignes présentes sur la fiche ; s : la situation. Les valeurs jugées sont celles de la situation
+     (la fiche est contrôlée avant : chaque ligne est juste ou donnée). */
+  function evaluer(s, ids) {
+    const present = new Set(ids), hors = [];
+    LIGNES.forEach(L => {
+      if (!present.has(L.id) || !L.plage) return;
+      const v = L.vrai(s), pl = L.plage(s);
+      if (v < pl[0] || v > pl[1]) hors.push({ id: L.id, nom: nomCourt(L), v: v, pl: pl, unite: L.unite });
+    });
+    const manque = BASE.filter(id => !present.has(id));
+    let id, raison, court;
+    if (hors.length) {
+      id = "anomalie";
+      court = "Hors plage : " + hors.map(h => h.nom).join(", ") + ".";
+      raison = "Hors plage : " + hors.map(h => h.nom + " " + nb(h.v, 0) + " " + h.unite + " (normal : " + entre(h.pl) + " " + h.unite + ")").join(" ; ") + ".";
+    } else if (manque.length) {
+      id = "surveiller";
+      court = "Aucune valeur hors plage ; il manque : " + manque.map(m => nomCourt(LIGNE[m])).join(", ") + ".";
+      raison = "Aucune valeur hors plage, mais il manque : " + manque.map(m => LIGNE[m].lib).join(", ") + ". Un contrôle reste à faire avant de dire « conforme ».";
+    } else {
+      id = "conforme";
+      court = "Toutes les valeurs sont dans leurs plages ; fiche complète.";
+      raison = "Toutes les valeurs sont dans leurs plages et la fiche est complète. Le voyant, l'évaporateur, le condenseur et le toucher des tubes n'y figurent pas.";
+    }
+    return { id: id, raison: raison, court: court, hors: hors, manque: manque };
+  }
+
+  /* ---------- le DOM et l'état (uniquement entre monter() et la situation suivante) ---------- */
+  let Z = null;      /* nœuds et lignes */
+  let ST = null;     /* état de la fiche */
+  let VALIDEES = 0;  /* fiches validées depuis le chargement de la page : à la suivante, le guidage s'efface */
+  const el = (tag, cls, texte) => { const e = document.createElement(tag); if (cls) e.className = cls; if (texte !== undefined) e.textContent = texte; return e; };
+  const plur = (n, un, plus) => n + " " + (n > 1 ? plus : un);
+
+  /* au téléphone la scène reste collée en haut : le carnet se range dessous (même calcul que « Lire le cadran » dans jeu.js) */
+  function lienCarnet() {
+    const lien = el("a", "b-pastille vue fi-lien", "Revoir mon carnet ↑"); lien.href = "#bloc-carnet";
+    lien.addEventListener("click", e => {
+      const cible = document.getElementById("bloc-carnet"), poste = document.getElementById("poste"), bande = document.getElementById("bandeau");
+      if (!cible || !bande) return;
+      e.preventDefault();
+      const colle = poste && getComputedStyle(poste).position === "sticky";
+      window.scrollTo({ top: cible.getBoundingClientRect().top + window.pageYOffset - (bande.offsetHeight + (colle ? poste.offsetHeight : 0) + 8), behavior: "smooth" });
+    });
+    return lien;
+  }
+
+  /* la règle de conclusion et la définition de « complète » : avant la fiche (première fiche) et au-dessus des trois boutons */
+  function blocRegle() {
+    const d = el("div", "fi-regle-corps");
+    d.append(el("p", "", "Comparez chaque valeur à sa plage « normal » (écrite sous la ligne quand elle en a une) :"));
+    const ul = el("ul");
+    ORDRE_CONCLUSIONS.forEach(id => ul.append(el("li", "", CONCLUSIONS[id].lib + " : " + CONCLUSIONS[id].aide.charAt(0).toLowerCase() + CONCLUSIONS[id].aide.slice(1))));
+    d.append(ul, el("p", "", "Une fiche est complète avec ses " + BASE.length + " lignes de base : " + BASE_LIB.join(", ")
+      + ". L'intensité, la chambre et l'air extérieur sont en plus : ils ne comptent pas pour « complète »."));
+    return d;
+  }
+
+  function aujourdhui() {
+    const d = new Date(), z = n => String(n).padStart(2, "0");
+    return z(d.getDate()) + "/" + z(d.getMonth() + 1) + "/" + d.getFullYear();
+  }
+
+  function message(R, texte, etat) {
+    const m = R.msg; m.textContent = "";
+    if (Array.isArray(texte)) m.append(texte[0] + " ", el("b", "fi-formule", texte[1]), " " + texte[2]); else m.textContent = texte;
+    m.className = "b-msg" + (etat ? " " + etat : "");
+  }
+
+  /* « (facultatif) » se lit à l'écran ; la feuille imprimée n'en a pas besoin */
+  function facultatif(label, base) { label.textContent = base; label.append(el("span", "fi-ecran", " (facultatif)")); }
+
+  function noeudLigne(L) {
+    const R = { L: L, n: 0, fini: false, donnee: false, premier: false, dispo: false };
+    const racine = el("div", "fi-ligne"); racine.dataset.ligne = L.id; racine.hidden = true;
+    const lab = el("label", "fi-lib", L.lib); lab.htmlFor = "fi-" + L.id;
+    const ou = el("p", "b-leg fi-ou"); ou.id = "fi-ou-" + L.id;
+    const sai = el("div", "fi-saisie");
+    const inp = el("input"); inp.type = "text"; inp.id = "fi-" + L.id; inp.autocomplete = "off"; inp.spellcheck = false; inp.setAttribute("autocapitalize", "off");
+    inp.setAttribute("aria-describedby", "fi-ou-" + L.id + " fi-msg-" + L.id);
+    const val = el("span", "fi-val"); val.setAttribute("aria-hidden", "true");
+    const u = el("span", "fi-u", L.unite);
+    const plage = el("span", "fi-plage"); plage.hidden = true;
+    const msg = el("p", "b-msg"); msg.id = "fi-msg-" + L.id; msg.setAttribute("aria-live", "polite");
+    inp.addEventListener("input", () => { const n = lireNombre(inp.value); val.textContent = isFinite(n) ? nb(n, L.dec) : inp.value; });
+    sai.append(inp, val, u);
+    racine.append(lab, ou, sai, plage, msg);
+    Object.assign(R, { racine: racine, ou: ou, inp: inp, val: val, plage: plage, msg: msg });
+    return R;
+  }
+
+  /* « où et comment » : une phrase pour la ligne, qui suit les relevés faits (la chambre peut venir de deux relevés) */
+  function majAide(R, c) {
+    const L = R.L, ou = R.ou, allege = Z.allege; ou.textContent = "";
+    if (L.calc) {
+      ou.append(allege ? "À calculer : " : "À calculer avec deux lignes de cette fiche : ", el("b", "fi-formule", L.calc.debut + " " + L.calc.formule), ".");
+    } else {
+      ou.append(allege ? "Carnet, ligne « " + L.ligne(c) + " »." : "Dans le carnet, ligne « " + L.ligne(c) + " » : " + L.comment(c) + ".");
+    }
+  }
+
+  function monter(zone, etat) {
+    const c = etat(), s = c.s, inst = s.inst;
+    zone.textContent = ""; delete zone.dataset.mode;
+    Z = { zone: zone, etat: etat, rows: {}, groupes: {}, allege: VALIDEES > 0 };
+    ST = { compte: false, choix: null, essais: 0, valide: false, conclusion: null, revele: false, bilan: { premier: 0, second: 0, donnees: 0 } };
+
+    /* ----- avant la fiche : le geste en une phrase, un exemple résolu, les trois temps ----- */
+    const intro = el("div", "fi-intro fi-ecran");
+    const ex = el("p", "fi-exemple");
+    ex.append(el("b", "", "Exemple (pas vos valeurs). "),
+      "Le carnet affiche « Thermomètre aspiration · −5 °C ». Dans « Température d'aspiration », vous tapez -5. "
+      + "Pour la surchauffe : T aspiration − T évaporation = −5 − (−11) = 6 K.");
+    const etapes = el("ol", "fi-etapes");
+    ["Une ligne apparaît quand son relevé est dans votre carnet. Tapez sa valeur.",
+      "Touchez « Contrôler ma fiche ». Une ligne juste se verrouille. Une ligne fausse se rouvre une fois. À la deuxième erreur, la valeur est donnée. Le coefficient ne bouge pas.",
+      "Toutes les lignes sont justes ? Choisissez la conclusion, validez, puis imprimez."]
+      .forEach(t => etapes.append(el("li", "", t)));
+    const lien = lienCarnet();
+    /* la règle de conclusion, avec la définition de « complète » et un exemple résolu d'une ligne : 14 > 10, donc hors plage */
+    const regleIntro = el("div", "fi-exemple fi-regle-intro");
+    regleIntro.append(el("p", "", "Pour conclure, à la fin de la fiche."), blocRegle(), el("p", "fi-ex-ligne", "Exemple : surchauffe 14 K, plage « normal » 5 à 10 K. 14 est hors de 5 à 10 : anomalie."));
+    /* première fiche : le geste, un exemple résolu, les trois temps ; ensuite le guidage s'efface (une phrase, des renvois plus courts) */
+    if (Z.allege) intro.append(el("p", "", "Même geste que pour la fiche précédente. Reportez, contrôlez, concluez, imprimez."), lien);
+    else intro.append(el("p", "", "Reportez sur la fiche ce que vous avez relevé. La fiche ne se remplit jamais toute seule."), ex, etapes, regleIntro, lien);
+
+    /* ----- la feuille ----- */
+    const form = el("form", "fi-papier"); form.id = "fi-form"; form.noValidate = true; form.setAttribute("aria-labelledby", "fi-titre");
+    form.append(filigrane());
+    const tete = el("header", "fi-entete");
+    Z.titre = el("h3", "fi-titre", "Fiche de relevés"); Z.titre.id = "fi-titre";
+    const ident = el("dl", "fi-ident");
+    const champ = (dt, dd, cache) => { const d = el("div"); d.append(el("dt", "", dt), el("dd", "", dd)); if (cache) d.hidden = true; ident.append(d); return d; };
+    champ("Installation", inst.nom); champ("Fluide", inst.fluideNom); champ("Consigne", sgn(inst.consigne) + " °C");
+    Z.motif = champ("Motif de l'appel", s.symptome, true);
+    tete.append(Z.titre, ident);
+    form.append(tete);
+
+    Z.vide = el("p", "fi-vide fi-ecran", "Aucun relevé fait pour l'instant : la fiche est vide. Faites vos relevés sur place, les lignes arrivent au fil du carnet.");
+    form.append(Z.vide);
+
+    GROUPES.forEach(G2 => {
+      const sec = el("section", "fi-groupe"); sec.dataset.groupe = G2.id; sec.hidden = true;
+      sec.append(el("h4", "", G2.titre));
+      const liste = el("div", "fi-lignes"); sec.append(liste);
+      Z.groupes[G2.id] = { sec: sec, liste: liste };
+      form.append(sec);
+    });
+    LIGNES.forEach(L => {
+      const R = noeudLigne(L); Z.rows[L.id] = R;
+      Z.groupes[L.g].liste.append(R.racine);
+    });
+
+    /* contrôle des lignes */
+    Z.controle = el("div", "fi-controle fi-ecran"); Z.controle.hidden = true;
+    Z.btnControle = el("button", "btn", "Contrôler ma fiche"); Z.btnControle.type = "submit"; Z.btnControle.id = "fi-controler";
+    Z.etatLignes = el("p", "b-msg fi-etat"); Z.etatLignes.id = "fi-etat"; Z.etatLignes.setAttribute("aria-live", "polite");
+    Z.controle.append(Z.btnControle, Z.etatLignes);
+    form.append(Z.controle);
+    Z.manque = el("div", "fi-manque fi-ecran"); Z.manque.id = "fi-manque"; Z.manque.hidden = true;
+    form.append(Z.manque);
+
+    /* la conclusion */
+    Z.concl = el("section", "fi-concl"); Z.concl.hidden = true;
+    Z.concl.append(el("h4", "", "Conclusion"));
+    const regle = el("div", "b-leg fi-regle fi-ecran");
+    regle.append(blocRegle());
+    const choix = el("div", "b-choix fi-choix"); choix.setAttribute("role", "group"); choix.setAttribute("aria-label", "Conclusion de la fiche");
+    ORDRE_CONCLUSIONS.forEach(id => {
+      const b = el("button", "b-choix-btn"); b.type = "button"; b.dataset.conclusion = id; b.setAttribute("aria-pressed", "false");
+      b.append(el("b", "", CONCLUSIONS[id].lib), el("span", "", CONCLUSIONS[id].aide));
+      b.addEventListener("click", () => choisir(id));
+      choix.append(b);
+    });
+    Z.raison = el("p", "fi-raison");
+    Z.concl.append(regle, choix, Z.raison);
+    form.append(Z.concl);
+
+    /* notes, technicien, date, signature */
+    const notes = el("div", "fi-notes");
+    Z.notesLib = el("label", "fi-lib"); Z.notesLib.htmlFor = "fi-notes"; facultatif(Z.notesLib, "Observations");
+    const ta = el("textarea"); ta.id = "fi-notes"; ta.rows = 3;
+    const taVal = el("div", "fi-val fi-notes-val"); taVal.setAttribute("aria-hidden", "true");
+    ta.addEventListener("input", () => { taVal.textContent = ta.value; });
+    notes.append(Z.notesLib, ta, taVal);
+    const sig = el("div", "fi-signature");
+    const texteMiroir = (id, lib, valeur, fac) => {
+      const d = el("div", "fi-champ"), l = el("label", "fi-lib"), i = el("input"), v = el("span", "fi-val");
+      if (fac) facultatif(l, lib); else l.textContent = lib;
+      l.htmlFor = id; i.type = "text"; i.id = id; i.autocomplete = "off"; i.value = valeur || ""; v.textContent = valeur || ""; v.setAttribute("aria-hidden", "true");
+      i.addEventListener("input", () => { v.textContent = i.value; });
+      d.append(l, i, v); return d;
+    };
+    const zoneSignature = el("div", "fi-signer");
+    zoneSignature.append(el("span", "fi-lib", "Signature"), el("span", "b-leg fi-ecran", "À la main, sur la feuille imprimée."));
+    sig.append(texteMiroir("fi-tech", "Technicien", "", true), texteMiroir("fi-date", "Date", aujourdhui()), zoneSignature);
+    form.append(notes, sig);
+
+    /* valider */
+    const valider = el("div", "fi-valider fi-ecran");
+    Z.btnValider = el("button", "btn", "Je valide ma fiche"); Z.btnValider.type = "button"; Z.btnValider.id = "fi-valider"; Z.btnValider.disabled = true;
+    Z.btnValider.addEventListener("click", validerFiche);
+    Z.verdict = el("div", "fi-verdict"); Z.verdict.id = "fi-verdict"; Z.verdict.setAttribute("role", "status"); Z.verdict.hidden = true;
+    valider.append(Z.btnValider, Z.verdict);
+    Z.valider = valider; valider.hidden = true;
+    form.append(valider);
+
+    /* le pied : les codes du référentiel */
+    const pied = el("footer", "fi-ref");
+    const colonnes = el("div", "fi-ref-cols");
+    REFERENTIELS.forEach(r => {
+      const col = el("div"), ul2 = el("ul");
+      r.codes.forEach(([code, lib]) => { const li = el("li"); li.append(el("b", "", code), " " + lib); ul2.append(li); });
+      col.append(ul2); colonnes.append(col);
+    });
+    pied.append(el("p", "fi-ref-titre", "Sert notamment pour"), colonnes);
+    form.append(pied);
+
+    form.addEventListener("submit", e => { e.preventDefault(); controler(); });
+    const actions = el("div", "fi-actions fi-ecran");
+    Z.btnImprimer = el("button", "btn sec", "Imprimer ma fiche"); Z.btnImprimer.type = "button"; Z.btnImprimer.id = "fi-imprimer"; Z.btnImprimer.disabled = true;
+    Z.btnImprimer.addEventListener("click", () => window.print());
+    actions.append(Z.btnImprimer, el("span", "b-leg", "Feuille A4, texte en 14 points au moins."));
+    zone.append(intro, form, actions);
+    maj();
+  }
+
+  /* ---------- ce qui change après chaque relevé ---------- */
+  function maj() {
+    if (!Z) return;
+    const c = Z.etat();
+    let nouvelle = false;
+    LIGNES.forEach(L => {
+      const R = Z.rows[L.id];
+      if (!R.dispo && L.dispo(c)) { R.dispo = true; R.racine.hidden = false; nouvelle = true; }
+      if (R.dispo && !R.fini) majAide(R, c);
+    });
+    if (nouvelle && ST.valide) invalider();
+    GROUPES.forEach(G2 => { Z.groupes[G2.id].sec.hidden = !LIGNES.some(L => L.g === G2.id && Z.rows[L.id].dispo); });
+    majEtat();
+  }
+
+  const presentes = () => LIGNES.filter(L => Z.rows[L.id].dispo);
+  function majEtat() {
+    const dispos = presentes(), restantes = dispos.filter(L => !Z.rows[L.id].fini);
+    Z.vide.hidden = dispos.length > 0;
+    Z.controle.hidden = dispos.length === 0;
+    Z.btnControle.hidden = restantes.length === 0;
+    if (restantes.length) Z.etatLignes.textContent = plur(restantes.length, "ligne à remplir ou à contrôler", "lignes à remplir ou à contrôler") + ".";
+    const prete = dispos.length > 0 && restantes.length === 0;
+    Z.concl.hidden = !prete;
+    Z.valider.hidden = !prete;
+    Z.btnValider.disabled = !ST.choix || ST.valide;
+    Z.btnImprimer.disabled = !ST.valide;
+    majManque(dispos);
+  }
+
+  /* la liste « il reste à reporter » : les lignes de base absentes, avec le relevé ou le calcul qui les donne ; ou « fiche complète » */
+  function majManque(dispos) {
+    const z = Z.manque, c = Z.etat();
+    z.textContent = "";
+    z.hidden = dispos.length === 0;
+    if (z.hidden) return;
+    const absentes = LIGNES.filter(L => BASE.indexOf(L.id) >= 0 && !Z.rows[L.id].dispo);
+    z.classList.toggle("complete", absentes.length === 0);
+    if (!absentes.length) { z.append(el("p", "", "Fiche complète : les " + BASE.length + " lignes de base sont sur la fiche.")); return; }
+    z.append(el("p", "", "Pour une fiche complète, il reste à reporter :"));
+    const ul = el("ul");
+    absentes.forEach(L => { const li = el("li"); li.append(el("b", "", L.lib), " : " + AIDE_MANQUE[L.id](c)); ul.append(li); });
+    z.append(ul, lienCarnet());
+  }
+
+  /* ---------- « Contrôler ma fiche » ---------- */
+  function controler() {
+    if (!Z) return;
+    const s = Z.etat().s;
+    let justes = 0, aReprendre = 0, donnees = 0, vides = 0;
+    LIGNES.forEach(L => {
+      const R = Z.rows[L.id];
+      if (!R.dispo || R.fini) return;
+      const saisi = lireNombre(R.inp.value);
+      if (!isFinite(saisi)) { vides++; message(R, "À remplir : tapez un nombre, par exemple -9.", ""); return; }
+      R.n += 1;
+      const vrai = L.vrai(s), juste = Math.abs(saisi - vrai) <= L.tol + EPS, unite = " " + L.unite;
+      if (!juste && R.n < 2) {
+        aReprendre++;
+        message(R, L.calc
+          ? ["Pas tout à fait. Rappel : " + L.calc.debut, L.calc.formule, L.calc.fin + " Il vous reste un essai."]
+          : "Pas tout à fait. Reprenez la valeur dans le carnet, ligne « " + L.ligne(Z.etat()) + " ». Il vous reste un essai.", "nok");
+        return;
+      }
+      R.fini = true; R.donnee = !juste; R.premier = juste && R.n === 1;
+      if (juste) { justes++; if (R.n === 1) ST.bilan.premier++; else ST.bilan.second++; } else { donnees++; ST.bilan.donnees++; }
+      R.inp.value = nb(vrai, L.dec); R.inp.disabled = true; R.val.textContent = nb(vrai, L.dec);
+      const tolere = juste && Math.abs(saisi - vrai) > EPS, tt = L.unite === "bar" ? "0,1 bar" : L.unite === "% de In" ? "1 point" : "1 K", bien = L.calc ? "Bien calculé" : "Bien reporté";
+      message(R, !juste ? "La valeur est donnée : " + nb(vrai, L.dec) + unite + "."
+        : tolere ? bien + ", à " + tt + " près : la valeur retenue est " + nb(vrai, L.dec) + unite + "." : bien + ".", juste ? "ok" : "nok");
+      if (L.plage) { const pl = L.plage(s); R.plage.textContent = "normal : " + entre(pl) + unite; R.plage.hidden = false; }
+    });
+    const bilan = [];
+    if (justes) bilan.push(plur(justes, "ligne juste", "lignes justes"));
+    if (donnees) bilan.push(plur(donnees, "valeur donnée", "valeurs données"));
+    if (aReprendre) bilan.push(plur(aReprendre, "ligne à reprendre", "lignes à reprendre"));
+    if (vides) bilan.push(plur(vides, "ligne à remplir", "lignes à remplir"));
+    majEtat();
+    if (bilan.length) Z.etatLignes.textContent = "Contrôle : " + bilan.join(", ") + ".";
+  }
+
+  /* ---------- la conclusion et la validation ---------- */
+  function choisir(id) {
+    if (!Z || ST.valide) return;
+    ST.choix = id;
+    Array.from(Z.concl.querySelectorAll("[data-conclusion]")).forEach(b => b.setAttribute("aria-pressed", String(b.dataset.conclusion === id)));
+    Z.btnValider.disabled = false;
+    Z.verdict.hidden = true;
+  }
+
+  function verdict(cls, signe, texte, detail) {
+    Z.verdict.textContent = ""; Z.verdict.className = "fi-verdict b-verdict " + cls;
+    const s = el("span", "signe", signe); s.setAttribute("aria-hidden", "true");
+    const p = el("div"); p.append(el("p", "", texte)); if (detail) p.append(el("p", "b-leg", detail));
+    Z.verdict.append(s, p); Z.verdict.hidden = false;
+  }
+
+  function validerFiche() {
+    if (!Z || !ST.choix || ST.valide) return;
+    const c = Z.etat(), att = evaluer(c.s, presentes().map(L => L.id));
+    const juste = ST.choix === att.id;
+    if (!juste && ST.essais < 1) {
+      ST.essais += 1;
+      verdict("nok", "✗", "Pas celle-ci. " + (att.id === "anomalie" ? "Au moins une valeur est hors de sa plage « normal » : regardez les lignes qui en ont une."
+        : att.id === "surveiller" ? "Rien n'est hors plage, mais il manque : " + att.manque.map(m => LIGNE[m].lib).join(", ") + "."
+        : "Toutes les valeurs sont dans leurs plages et la fiche est complète.") + " Il vous reste un essai.");
+      return;
+    }
+    ST.valide = true; ST.conclusion = att.id;
+    if (!ST.compte) { ST.compte = true; VALIDEES += 1; }
+    Array.from(Z.concl.querySelectorAll("[data-conclusion]")).forEach(b => { b.setAttribute("aria-pressed", String(b.dataset.conclusion === att.id)); b.disabled = true; });
+    Z.raison.textContent = att.court;
+    const b = ST.bilan, morceaux = [];
+    if (b.premier) morceaux.push(plur(b.premier, "ligne juste du premier coup", "lignes justes du premier coup"));
+    if (b.second) morceaux.push(plur(b.second, "ligne juste au second essai", "lignes justes au second essai"));
+    if (b.donnees) morceaux.push(plur(b.donnees, "valeur donnée", "valeurs données"));
+    const resume = "Votre fiche : " + morceaux.join(", ") + ". Vous pouvez l'imprimer.";
+    if (juste) verdict("ok", "✓", "Juste : " + CONCLUSIONS[att.id].lib.toLowerCase() + ". " + att.raison, resume);
+    else verdict("prudent", "~", "La conclusion est donnée : " + CONCLUSIONS[att.id].lib.toLowerCase() + ". " + att.raison, resume);
+    Z.btnValider.disabled = true; Z.btnImprimer.disabled = false;
+  }
+
+  /* une ligne nouvelle sur une fiche validée : la validation ne tient plus */
+  function invalider() {
+    ST.valide = false; ST.choix = null; ST.essais = 0; ST.conclusion = null;
+    Array.from(Z.concl.querySelectorAll("[data-conclusion]")).forEach(b => { b.disabled = false; b.setAttribute("aria-pressed", "false"); });
+    Z.raison.textContent = ""; Z.verdict.hidden = true; Z.btnImprimer.disabled = true;
+  }
+
+  /* ---------- à la conclusion de la situation : le mode de la fiche ---------- */
+  function reveler() {
+    if (!Z) return;
+    const s = Z.etat().s, miseEnService = s.panne.id === "normale";
+    ST.revele = true;
+    Z.titre.textContent = miseEnService ? "Fiche de mise en service" : "Fiche d'intervention";
+    Z.motif.hidden = miseEnService;
+    facultatif(Z.notesLib, miseEnService ? "Observations" : "Constats et suite à donner");
+    Z.zone.dataset.mode = miseEnService ? "mise-en-service" : "intervention";
+  }
+
+  const API = { monter: monter, maj: maj, reveler: reveler, evaluer: evaluer, lireNombre: lireNombre, LIGNES: LIGNES, BASE: BASE, REFERENTIELS: REFERENTIELS };
+  Object.defineProperty(API, "_etat", { value: () => !Z ? null : ({
+    titre: Z.titre.textContent, mode: Z.zone.dataset.mode || null, allege: Z.allege, valide: ST.valide, choix: ST.choix, conclusion: ST.conclusion, essais: ST.essais, bilan: Object.assign({}, ST.bilan),
+    lignes: LIGNES.map(L => ({ id: L.id, dispo: Z.rows[L.id].dispo, fini: Z.rows[L.id].fini, donnee: Z.rows[L.id].donnee, essais: Z.rows[L.id].n }))
+  }) });
+  G.DEP_FICHE = API;
+  if (typeof module !== "undefined" && module.exports) module.exports = API;
+})(typeof window !== "undefined" ? window : globalThis);
+
+</script>
+<script>
+/* =====================================================================
    jeu.js — le jeu de SimuRézo (ex-inerWeb Dép) : la partie, les relevés, la conclusion
    ---------------------------------------------------------------------
    RÔLE : conduire une partie de 8 situations de dépannage. À l'accueil on
@@ -2277,6 +2960,10 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
    est dans les deux ET si le contrôle nommé est dans panne.utiles, sinon −20.
    Au retour, « Ce qui aurait tranché » nomme les relevés utiles non faits.
    Coefficient de partie = moyenne.
+   LA FICHE (étape 2b, fiche.js) : l'élève y reporte ses relevés, un contrôle avec
+   seconde chance, une conclusion, puis imprime ; elle n'entre pas dans le coefficient.
+   jeu.js la monte à chaque situation, la met à jour après chaque relevé (apresReleve)
+   et lui dit quand la situation est conclue (le titre prend alors son mode).
    CODE DE RESTITUTION : DEP-<niveau>-<inst>-<justes>/8-<coef>-<ctrl>, avec
    <inst> = initiale + chiffres de l'installation (P134, N449, P290) et
    <ctrl> = 2 caractères d'un hachage simple des champs précédents.
@@ -2285,7 +2972,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
    principe SR/SC « sur demande » et le code de restitution de JouéRézo.
    API : window.DEP_JEU = { _situation (lecture : la situation en cours,
    pour les tests), _ctrl(texte), N } ; démarre seul sur DOMContentLoaded.
-   DÉPEND : DEP_TABLES, DEP_GEN, DEP_DIAG, DEP_CADRAN, JR_SCENE_COUPE, JR_SCENE_ATELIER ;
+   DÉPEND : DEP_TABLES, DEP_GEN, DEP_DIAG, DEP_CADRAN, DEP_FICHE, JR_SCENE_COUPE, JR_SCENE_ATELIER ;
    les JSON <script id="dep-installations | dep-pannes | dep-fluides">.
    ===================================================================== */
 (function () {
@@ -2303,7 +2990,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
   const RELEVE_DE = {}; Object.keys(UTILE).forEach(k => { RELEVE_DE[UTILE[k]] = k; });
   const releveDe = nom => RELEVE_DE[nom] || nom;                             /* le nom dans panne.utiles → le relevé de la barre */
   const METHODE = ["bp", "hp", "tasp", "tliq", "tref"];                      /* les cinq relevés de la méthode : pas « ce qui tranchait » */
-  const T = () => window.DEP_TABLES, GEN = () => window.DEP_GEN, DIAG = () => window.DEP_DIAG, CAD = () => window.DEP_CADRAN;
+  const T = () => window.DEP_TABLES, GEN = () => window.DEP_GEN, DIAG = () => window.DEP_DIAG, CAD = () => window.DEP_CADRAN, FICHE = () => window.DEP_FICHE;
   const lit = () => E.niveau >= 2;                                           /* niveaux 2 et 3 : le relevé se LIT sur l'instrument */
 
   /* ---------- petits outils : nombres à la française, éléments ---------- */
@@ -2414,6 +3101,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     monterScene(s);
     monterBarre();
     monterCarnet();
+    FICHE().monter($("#fiche-corps"), () => ({ s: E.s, niveau: E.niveau, lus: E.lus, calcules: E.calcules, lec: E.lec }));
     monterDiagramme(s);
     monterConclusion();
     verrouiller();
@@ -2694,6 +3382,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     majAction();
     majAlertes();
     majDiagramme();
+    FICHE().maj();
     $$(".cpt").forEach(e => { e.textContent = Math.min(n, 2) + " / 2"; });
     const suite = $("#suite2");
     if (n >= 2) {
@@ -2877,6 +3566,7 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
     coef = Math.max(0, Math.min(100, coef));
     E.resultats.push({ n: E.n, panne: p.nom, id: p.id, juste: juste, coef: coef, inutiles: inutiles.length, ratees: E.rate });
     majCoefBandeau();
+    FICHE().reveler();
 
     const gauche = el("div"), droite = el("div");
     const verdict = el("div", "b-verdict " + cls); verdict.append(el("span", "signe", signe), el("p", "", texte));
