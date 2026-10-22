@@ -8,7 +8,7 @@ industrielle : vous le trouverez, souvent en plusieurs exemplaires.
 Et je vais vous dire tout de suite ce qu'il fait, parce que c'est très simple et très fort à la
 fois.
 Il permet à un courant minuscule de commander un courant énorme.
-Vous envoyez quelques milliampères dans une bobine, et trois contacts capables de porter des
+Vous envoyez quelques watts dans une bobine, et trois contacts capables de porter des
 dizaines d'ampères se ferment d'un seul coup. Voilà pourquoi une machine de plusieurs kilowatts
 peut être commandée par un petit bouton, à l'autre bout de l'atelier, avec deux fils fins.`,
 
@@ -38,7 +38,8 @@ Réfléchissez bien à la troisième. Elle a l'air d'être un défaut, et c'est 
 sécurité.`,
 
   representer: `Sur un plan, le contacteur est coupé en deux, et il faut le savoir avant d'ouvrir un dossier.
-La bobine est dans le circuit de commande : un simple rectangle traversé par le conducteur. Les
+La bobine est dans le circuit de commande : un simple grand rectangle, avec un fil qui arrive en haut
+et un fil qui repart en bas. Les
 contacts de puissance sont dans le circuit de puissance, souvent une page plus loin.
 Ce qui les relie, c'est le repère. KM un écrit ici, KM un écrit là. Même repère, même appareil.
 Et maintenant, regardez de très près le contact de puissance, parce qu'il porte un détail que le

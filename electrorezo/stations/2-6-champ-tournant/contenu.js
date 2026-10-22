@@ -13,9 +13,9 @@ ModeleGrandeur.construire({
   ],
 
   photos: [
-    { src: 'assets/biblio/deux-contacteurs-pour-deux-sens.png',
-      alt: "Schéma d’un moteur triphasé commandé par deux contacteurs K1 et K2, dont les raccordements diffèrent par l’échange de deux phases.",
-      titre: "Deux sens, deux contacteurs.", sous: "Regardez bien : deux fils sont croisés entre les deux." },
+    { src: 'assets/biblio/bloc-inverseur-precable.jpeg',
+      alt: "Photo d’un bloc inverseur précâblé : deux contacteurs côte à côte, reliés par un verrouillage mécanique.",
+      titre: "Deux sens, deux contacteurs.", sous: "Le bloc inverseur : un contacteur par sens, et un verrouillage qui interdit de fermer les deux à la fois. Entre eux, deux phases sont échangées." },
     { src: 'assets/biblio/bornier-moteur-tri-et-terre.png',
       alt: "Schéma de raccordement des borniers d’un moteur triphasé, avec ses trois phases et sa terre.",
       titre: "L’ordre compte.", sous: "Ce sont les mêmes fils : seul leur ordre change le sens." }
@@ -50,9 +50,9 @@ ModeleGrandeur.construire({
   ecriture: {
     symbole: 'ns', unite: 'tr/min', nomUnite: 'la vitesse de synchronisme',
     multiples: [
-      ['3000 tr/min', 'deux pôles, à 50 Hz'],
-      ['1500 tr/min', 'quatre pôles — le cas le plus courant'],
-      ['1000 tr/min', 'six pôles']
+      ['3000 tr/min', 'une paire de pôles (2 pôles), à 50 Hz'],
+      ['1500 tr/min', 'deux paires de pôles (4 pôles) — le cas le plus courant'],
+      ['1000 tr/min', 'trois paires de pôles (6 pôles)']
     ]
   },
   surUnePlaque: [
@@ -80,7 +80,7 @@ ModeleGrandeur.construire({
         { texte: "En échangeant deux phases.", juste: true } ] },
 
     { question: "À 50 Hz, un moteur à quatre pôles a quelle vitesse de synchronisme ?",
-      confirmation: "1500 tr/min : 3000 divisé par deux paires de pôles.",
+      confirmation: "1500 tr/min : quatre pôles, c’est deux paires de pôles, et 3000 divisé par deux paires donne 1500.",
       reponses: [
         { texte: "1500 tr/min.", juste: true },
         { texte: "3000 tr/min.", pourquoi: "C’est la valeur pour deux pôles." },

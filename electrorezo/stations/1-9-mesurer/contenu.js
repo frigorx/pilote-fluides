@@ -20,13 +20,13 @@ ModeleGrandeur.construire({
       titre: "Les deux outils.", sous: "L’un demande qu’on ouvre le circuit, l’autre non." },
     { src: 'assets/biblio/multimetre-a-molette.gif',
       alt: "Photo d’un multimètre numérique avec son écran, sa molette de sélection et ses bornes de raccordement.",
-      titre: "La molette et les bornes.", sous: "Les deux doivent dire la même chose." },
+      titre: "La molette et les bornes.", sous: "Les deux doivent dire la même chose. Sur celui-ci : deux bornes pour les ampères (mA et 10 A), et aucune catégorie de mesure n’est marquée." },
     { src: 'assets/biblio/pince-en-lecture.jpeg',
       alt: "Photo d’une pince ampèremétrique dont l’écran affiche une valeur de courant.",
       titre: "Sans rien débrancher.", sous: "La machine continue de tourner pendant la mesure." }
   ],
 
-  lIdee: "Toutes les grandeurs de cette ligne se mesurent avec deux appareils. Le multimètre, qui fait presque tout mais qui demande qu’on ouvre le circuit pour les courants. Et la pince, qui ne mesure qu’un courant, mais sans rien toucher.",
+  lIdee: "Les trois mesures de base de cette ligne — la tension, le courant, la résistance — se font avec deux appareils. Le multimètre, qui fait presque tout mais qui demande qu’on ouvre le circuit pour les courants. Et la pince, qui mesure un courant sans rien toucher. La puissance et l’énergie (station 1.4) et l’isolement (station 1.8) ont leurs propres appareils.",
   ouOnLaRencontre: "Dans la caisse de tout électricien, et dans la vôtre. Savoir s’en servir n’est pas une option : c’est la différence entre diagnostiquer et deviner.",
 
   scene: () => SchemasGrandeurs.choisirLaMesure(),
@@ -35,7 +35,7 @@ ModeleGrandeur.construire({
     ["Deux réglages, pas un", "la <strong>molette</strong> dit ce qu’on mesure ; la <strong>borne</strong> où l’on met la pointe rouge doit dire la même chose. Les deux ensemble, ou rien ne marche."],
     ["La pointe noire ne bouge jamais", "elle reste dans <strong>COM</strong>. C’est la rouge qu’on déplace, et c’est donc elle qui se trompe."],
     ["Sur la mauvaise position, pas d’erreur affichée", "l’appareil affiche un nombre, calmement. C’est à vous de savoir s’il a un sens."],
-    ["La pince ne touche rien", "elle enserre le conducteur et lit le champ magnétique autour. Aucun contact électrique, aucune coupure, aucun risque de court-circuit."]
+    ["La pince ne touche rien", "elle enserre le conducteur et lit le champ magnétique autour. Aucun contact électrique avec le fil, aucune coupure. Attention aux conducteurs nus : la mâchoire ne doit pas toucher deux pièces nues à la fois. Elle a aussi sa catégorie de mesure (CAT), comme le multimètre."]
   ],
   aRetenir: [
     "<strong>Tension</strong> : molette sur V, pointes aux bornes, en parallèle.",
@@ -54,7 +54,7 @@ ModeleGrandeur.construire({
   dangerDeMesure: "Ne concluez jamais « c’est hors tension » sur une seule lecture à zéro. Un appareil éteint, un cordon coupé, une mauvaise position affichent tous zéro. On vérifie l’appareil sur une source vivante, on mesure, puis on revérifie l’appareil.",
 
   ecriture: {
-    symbole: 'V A Ω', unite: 'CAT', nomUnite: 'la catégorie de mesure',
+    sansUnite: true, titre: 'Les catégories de mesure', entetes: ['On lit', 'Cela veut dire'],
     multiples: [
       ['CAT II', 'les prises et les circuits terminaux'],
       ['CAT III', 'les tableaux de distribution, les armoires'],
@@ -75,7 +75,7 @@ ModeleGrandeur.construire({
         { texte: "Dans COM, toujours.", juste: true },
         { texte: "Dans la borne A pour les courants.", pourquoi: "C’est la pointe rouge qu’on déplace vers A." },
         { texte: "Dans la borne V pour les tensions.", pourquoi: "Là encore, c’est la rouge." },
-        { texte: "Cela dépend du sens du courant.", pourquoi: "En alternatif il n’y a pas de sens ; en continu, un signe moins s’affiche, sans danger." } ] },
+        { texte: "Cela dépend du sens du courant.", pourquoi: "En alternatif, le sens change cent fois par seconde ; en continu, un signe moins s’affiche, sans danger." } ] },
 
     { question: "Vous mesurez et l’appareil affiche zéro. Que pouvez-vous en conclure ?",
       confirmation: "Rien, tant que vous n’avez pas vérifié l’appareil lui-même.",

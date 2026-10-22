@@ -37,8 +37,8 @@ station : le glissement.
 À vide, le rotor tourne presque à la vitesse du champ. Chargez-le : il ralentit un peu, et
 l'intensité monte.
 Pourquoi ne rattrape-t-il jamais le champ ? Parce que s'il y arrivait, le champ ne varierait plus
-de son point de vue. Plus de variation, plus de courant induit, plus de couple. Il ralentirait
-aussitôt.
+de son point de vue. Plus de variation, plus de courant induit, plus de couple — le couple, c'est la force qui fait
+tourner l'arbre. Il ralentirait aussitôt.
 Le glissement n'est donc pas un défaut. C'est la condition du fonctionnement.
 Poussez le curseur au-delà de cent pour cent : l'intensité dépasse ce que la plaque annonce. Et
 c'est exactement ce que le relais thermique de la station quatre point sept surveille.`,

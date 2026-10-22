@@ -16,7 +16,8 @@ Le crédit est sous l'image et dans le dialogue « Crédits » de la station.
 ## Symboles normalisés
 
 `C:\git\bibliotheque-symboles-energie\svg\10_electric\10_allpole\`
-→ dossier `380_signaling_operating/21_selector_switches/` → 015_inter_2.svg, 012_switch_dpst.svg
+→ dossier `380_signaling_operating/21_selector_switches/` → 010_switch_1pos.svg (interrupteur unipolaire : une lame, pivot en bas, ouverte vers la gauche), 012_switch_dpst.svg.
+`015_inter_2.svg`, employé jusqu'au 19/10/2026, est un **inverseur** (une borne commune, deux bornes de sortie) : retiré (audit V1).
 
 Fond `#ffffff` remplacé par `#fffdf8` (charte : jamais de blanc pur). **Rien d'autre n'a été
 touché, aucun symbole n'a été redessiné.**

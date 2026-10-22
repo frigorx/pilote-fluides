@@ -56,18 +56,18 @@ ModeleAppareil.construire({
 
   cablage: [
     "Deux bornes, repérées <strong>A1</strong> et <strong>A2</strong>. Elles ne sont pas polarisées en alternatif ; en continu, vérifiez si le constructeur impose un sens.",
-    "Sur une bobine en <strong>continu</strong>, posez une <strong>diode de roue libre</strong> en parallèle, dans le sens qui bloque. Elle absorbe la surtension au moment de la coupure.",
+    "Sur une bobine en <strong>continu</strong>, posez une <strong>diode de roue libre</strong> en parallèle, dans le sens qui bloque. Elle absorbe la surtension au moment de la coupure : quand on coupe, la bobine veut continuer à faire passer le courant et renvoie un pic de tension ; la diode lui donne un chemin et l’absorbe.",
     "Sans cette diode, la surtension peut atteindre plusieurs centaines de volts et détruire le transistor ou le contact qui l’a commandée.",
-    "Une bobine qui <strong>ronfle</strong> annonce un entrefer encrassé, une bague de déphasage cassée, ou une tension trop faible. Ce n’est jamais normal."
+    "Un léger bourdonnement est normal en alternatif. Une bobine qui <strong>ronfle fort</strong>, qui vibre ou qui chauffe anormalement annonce un défaut : entrefer encrassé, bague de déphasage cassée, ou tension trop faible."
   ],
-  piege: "Une bobine chaude n’est pas forcément en défaut : elles chauffent toutes. Mais une bobine <strong>qui ronfle</strong> l’est toujours. Le bruit veut dire que l’attraction s’annule à chaque alternance — et l’appareil s’use très vite.",
+  piege: "Une bobine chaude n’est pas forcément en défaut : elles chauffent toutes. Un léger bourdonnement est normal en alternatif. Mais une bobine <strong>qui ronfle fort</strong>, qui vibre ou qui chauffe anormalement est en défaut : l’attraction s’annule à chaque alternance, et l’appareil s’use très vite.",
 
   symboles: [
-    { src: 'assets/bobine3.svg', alt: "Symbole normalisé d’une bobine : un rectangle traversé par le conducteur.", legende: "La bobine" },
+    { src: 'assets/bobine3.svg', alt: "Symbole normalisé d’une bobine : un grand rectangle, un fil qui arrive en haut, un fil qui repart en bas.", legende: "La bobine" },
     { src: 'assets/electrovanne.svg', alt: "Symbole normalisé d’une électrovanne : une bobine agissant sur un clapet.", legende: "L’électrovanne" }
   ],
   lecturePlan: [
-    "Le symbole de la bobine est le <strong>rectangle</strong> que vous connaissez depuis la station 8.8 : un cadre traversé par le conducteur.",
+    "Le symbole de la bobine est le <strong>rectangle</strong> que vous connaissez depuis la station 8.8 : un grand cadre, un fil qui arrive en haut, un fil qui repart en bas.",
     "Ce qui change d’un usage à l’autre, c’est le <strong>repère</strong> : KM pour un contacteur, KA pour un relais, YV pour une électrovanne.",
     "Un <strong>Y</strong> en tête de repère annonce toujours un actionneur : quelque chose va bouger physiquement.",
     "Et la <strong>tension de bobine</strong> n’est jamais dans le dessin. Elle est écrite à côté — c’est la règle que vous connaissez : le dessin donne la fonction, le texte donne la valeur."
@@ -93,13 +93,13 @@ ModeleAppareil.construire({
         { texte: "Pour limiter le courant d’appel.", pourquoi: "Ce serait le rôle d’une résistance." },
         { texte: "Pour absorber la surtension de coupure.", juste: true } ] },
 
-    { question: "Une bobine ronfle. Que faut-il en penser ?",
-      confirmation: "Ce n’est jamais normal : entrefer encrassé, bague cassée, ou tension trop faible.",
+    { question: "Une bobine de contacteur ronfle fort et vibre. Que faut-il en penser ?",
+      confirmation: "Un léger bourdonnement est normal en alternatif ; un ronflement fort qui vibre ne l’est pas : entrefer encrassé, bague cassée, ou tension trop faible.",
       reponses: [
         { texte: "C’est un défaut : entrefer, bague, ou tension.", juste: true },
         { texte: "C’est un signe de bon fonctionnement.", pourquoi: "Le bruit annonce une attraction qui s’annule à chaque alternance." },
         { texte: "C’est sans conséquence.", pourquoi: "L’appareil s’use très vite dans cet état." },
-        { texte: "C’est normal en alternatif.", pourquoi: "La bague de déphasage existe justement pour que ça ne ronfle pas." } ] },
+        { texte: "C’est normal en alternatif.", pourquoi: "Un léger bourdonnement l’est, pas un ronflement fort qui vibre : la bague de déphasage existe justement pour l’éviter." } ] },
 
     { question: "Une bobine 24 V alimentée en 230 V : que se passe-t-il ?",
       confirmation: "Elle grille en une seconde.",

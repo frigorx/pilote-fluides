@@ -6,14 +6,14 @@ const NARRATION = {
   decouvrir: `Voici la lettre la plus importante de tout l'alphabet. Si vous ne deviez en retenir qu'une
 seule de cette ligne, ce serait celle-là.
 Vous allez la voir partout, dans presque tous les symboles d'appareillage. Un petit trait
-incliné, posé sur un point.
+incliné, qui pivote par le bas.
 Ce qu'elle dit est simple : ici, le circuit peut s'ouvrir ou se fermer. Ici, quelque chose
 décide si le courant passe.`,
 
   comprendre: `Regardez comment elle est dessinée, et vous comprendrez pourquoi elle a cette forme-là.
-Le trait part d'un point, et il s'écarte. Ce point, c'est le pivot : la pièce mobile tourne
-autour de lui. Le trait, c'est la pièce mobile elle-même, dessinée dans la position où elle
-laisse un vide.
+Le trait part d'un pivot, en bas, et il s'écarte. La pièce mobile tourne autour de ce pivot. Le
+trait, c'est la pièce mobile elle-même, dessinée dans la position où elle laisse un vide. Sur le
+vrai symbole, le pivot n'est pas marqué : il n'y a pas de point.
 Autrement dit, ce n'est pas un code : c'est un petit croquis du mécanisme réel, vu de côté.
 Et maintenant, la règle qui compte, celle que je vous demande de ne jamais oublier.
 Sur un schéma, un contact est toujours représenté au repos. Au repos, ça veut dire : personne
@@ -33,8 +33,9 @@ dans le métier.`,
 Il est presque partout — mais pas tout à fait partout. Un fusible, par exemple, n'a pas de
 contact : rien ne s'ouvre ni ne se ferme, quelque chose fond. Ce n'est pas la même famille.`,
 
-  representer: `Sur un vrai plan, ce petit trait ne vient jamais seul. Il porte toujours des compagnons :
-la barre du sectionnement, le crochet du thermique, un demi-disque de temporisation.
+  representer: `Sur un vrai plan, ce petit trait vient très souvent accompagné. Il porte des compagnons :
+la barre du sectionnement, le crochet du thermique, un demi-cercle au bout d'un double trait pour
+la temporisation.
 Ce sont eux qui disent quel genre de contact vous avez sous les yeux.
 Le trait incliné, lui, dit seulement : ici, ça s'ouvre et ça se ferme. Tout le reste est écrit
 autour de lui — et c'est précisément ce qu'on va apprendre dans les stations suivantes.`

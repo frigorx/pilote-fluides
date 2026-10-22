@@ -31,7 +31,7 @@ l'écrit plus, mais on la rencontre encore, alors ne soyez pas surpris.`,
 Prenez votre temps, regardez bien. Il n'y a qu'un seul indice à chercher, et il est minuscule.`,
 
   representer: `Un dernier mot, et il est important pour la suite.
-Sur un vrai plan, ces deux signes ne portent aucune légende. Ils sont trop courants pour qu'on
+Sur un vrai plan, ces deux signes ne portent, en général, aucune légende. Ils sont trop courants pour qu'on
 les explique : personne n'écrit « ici, connexion ».
 C'est justement pour cette raison qu'il faut les connaître par cœur, eux — et eux seulement.
 Les autres lettres, vous apprendrez à les déduire.

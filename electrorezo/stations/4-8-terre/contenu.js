@@ -20,7 +20,7 @@ ModeleAppareil.construire({
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 
-  aQuoiCaSert: "Donner au courant de défaut un chemin de retour, pour que le différentiel puisse le voir. <strong>La terre ne protège pas : elle rend la protection possible.</strong>",
+  aQuoiCaSert: "Donner au courant de défaut un chemin de retour, pour que le dispositif de coupure puisse le voir. <strong>La terre seule ne suffit pas : elle limite la tension de la carcasse et rend la protection possible. Dans un logement (schéma TT : l’installation a sa propre prise de terre), le dispositif de coupure est le différentiel.</strong>",
   ouOnLeTrouve: "Un piquet ou une boucle à fond de fouille, un conducteur vert et jaune jusqu’au tableau, puis vers chaque masse métallique.",
 
   scene: () => SchemasProtection.boucleDefaut(),
@@ -54,15 +54,15 @@ ModeleAppareil.construire({
   },
 
   cablage: [
-    "<strong>Vert et jaune, et rien d’autre.</strong> Ces couleurs sont réservées au conducteur de protection dans le monde entier.",
+    "<strong>Vert et jaune, et rien d’autre.</strong> Ces couleurs sont réservées au conducteur de protection en France et en Europe (NF C 15-100).",
     "<strong>Le conducteur de protection ne se coupe jamais</strong> : aucun appareil de coupure ne s’intercale dessus.",
     "Section au moins égale à celle des conducteurs actifs, selon les règles de l’installation.",
     "Continuité <strong>à vérifier à l’ohmmètre</strong>, pas à l’œil : une vis desserrée ne se voit pas."
   ],
-  piege: "« La terre protège les gens. » Non. La terre ne coupe rien. C’est le différentiel qui coupe. Une installation avec une terre parfaite et sans différentiel laisse une carcasse sous tension indéfiniment.",
+  piege: "« La terre protège les gens. » Pas toute seule. La terre ne coupe rien : elle limite la tension de la carcasse et laisse passer le courant de défaut. Dans un logement, c’est le différentiel qui coupe. Sans dispositif de coupure, le défaut dure.",
 
   symboles: [
-    { src: 'assets/ground1.svg', alt: "Symbole normalisé de la prise de terre.", legende: "La prise de terre" },
+    { src: 'assets/terre.svg', alt: "Symbole normalisé de la prise de terre : un trait vertical posé sur trois traits horizontaux de longueur décroissante.", legende: "La prise de terre" },
     { src: 'assets/masse.svg', alt: "Symbole normalisé de la masse.", legende: "La masse" }
   ],
   lecturePlan: [
@@ -75,9 +75,9 @@ ModeleAppareil.construire({
     { question: "La terre protège-t-elle les personnes ?",
       confirmation: "Elle donne un chemin au courant de défaut. C’est le différentiel qui coupe.",
       reponses: [
-        { texte: "Oui, si elle est de bonne qualité.", pourquoi: "Une bonne terre aide, mais sans appareil de coupure rien ne s’arrête." },
+        { texte: "Oui, si elle est de bonne qualité.", pourquoi: "Une bonne terre aide, mais dans un logement, sans appareil de coupure rien ne s’arrête." },
         { texte: "Oui, elle évacue le courant.", pourquoi: "Elle l’évacue, mais évacuer ne coupe pas : la carcasse resterait sous tension." },
-        { texte: "Non, elle ne sert à rien en basse tension.", pourquoi: "Elle est au contraire indispensable : sans elle, le différentiel ne verrait souvent rien." },
+        { texte: "Non, elle ne sert à rien en basse tension.", pourquoi: "Elle est au contraire indispensable : sans elle, le différentiel ne couperait qu’après qu’une personne a touché la carcasse." },
         { texte: "Non, pas seule : elle permet au différentiel de couper.", juste: true } ] },
 
     { question: "Quelle couleur pour le conducteur de protection ?",
@@ -112,7 +112,7 @@ ModeleAppareil.construire({
     "La continuité se vérifie <strong>à l’ohmmètre</strong>."
   ],
 
-  objectifs: '<p><strong>Objectif.</strong> Comprendre que la terre rend la protection possible sans protéger elle-même, et que terre et différentiel forment un couple indissociable.</p>',
+  objectifs: '<p><strong>Objectif.</strong> Comprendre que la terre rend la protection possible sans protéger elle-même, et que dans un logement, terre et différentiel forment un couple indissociable.</p>',
 
   credits: [
     { quoi: 'Photographies', source: 'base de connaissances inerWeb',

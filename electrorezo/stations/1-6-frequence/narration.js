@@ -12,12 +12,14 @@ décide de la vitesse de tous les moteurs de l'atelier.`,
   comprendre: `Servez-vous du curseur, et regardez la courbe se resserrer ou s'étirer.
 Un aller-retour complet — le courant monte, redescend, repart dans l'autre sens, revient — on
 appelle ça une période. La fréquence compte combien il y en a par seconde.
-Poussez le curseur sur cinquante. C'est le réseau. Une seconde de courant contient cinquante
-motifs comme celui-là.
-Et regardez la deuxième case, celle de droite. Elle donne la vitesse à laquelle tournerait un
-moteur à deux pôles branché sur cette fréquence.
-Voilà le lien que je veux que vous emportiez. À cinquante hertz, un moteur à deux pôles tourne à
-trois mille tours par minute. À quatre pôles, quinze cents. À six pôles, mille.
+Poussez le curseur sur cinquante. C'est le réseau. Le dessin ne montre qu'un tout petit extrait,
+quatre motifs. En une seconde de courant, il y en a cinquante comme ceux-là.
+Et regardez la deuxième case, celle de droite. Elle donne la vitesse du champ d'un moteur à deux
+pôles branché sur cette fréquence. Les pôles, ce sont les aimants que forment les bobinages du
+moteur.
+Voilà le lien que je veux que vous emportiez. À cinquante hertz, le champ d'un moteur à deux
+pôles tourne à trois mille tours par minute. On appelle ça la vitesse de synchronisme. À quatre
+pôles, quinze cents. À six pôles, mille. Le rotor, lui, tourne un peu moins vite que ce champ.
 Deux choses décident donc de la vitesse : le nombre de pôles, qui est dans la construction du
 moteur et qu'on ne change pas ; et la fréquence.
 Maintenant, une remarque au passage qui vous servira plus tard. Cinquante allers-retours par

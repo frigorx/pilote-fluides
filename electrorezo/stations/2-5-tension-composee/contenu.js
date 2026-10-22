@@ -16,12 +16,12 @@ ModeleGrandeur.construire({
       alt: "Schéma des trois phases et du neutre, où les tensions simples sont figurées par des flèches partant du neutre.",
       titre: "Le point de départ.", sous: "La composée, elle, ne passe pas par le neutre." },
     { src: 'assets/biblio/bobinages-en-etoile.jpeg',
-      alt: "Schéma d’un transformateur triphasé couplé en étoile, avec ses trois bobinages et leurs tensions.",
+      alt: "Schéma d’un transformateur triphasé couplé en étoile, avec ses trois bobinages.",
       titre: "Les trois bobinages.", sous: "Entre deux extrémités, ce n’est pas deux fois une tension." }
   ],
 
   lIdee: "La tension composée, c’est celle qu’on mesure entre deux phases. En France, 400 volts. Et la question que tout le monde se pose : pourquoi 400, et pas 460, qui serait le double de 230 ?",
-  ouOnLaRencontre: "C’est la tension de la puissance industrielle. Tous les moteurs d’atelier, tous les schémas de puissance, tous les gros appareils sont dessus.",
+  ouOnLaRencontre: "C’est la tension de la puissance industrielle. La plupart des moteurs d’atelier, des schémas de puissance et des gros appareils sont dessus.",
 
   scene: () => SchemasReseaux.etoileEtTriangle(),
 
@@ -33,8 +33,8 @@ ModeleGrandeur.construire({
   ],
   aRetenir: [
     "<strong>U</strong> pour la composée, <strong>V</strong> pour la simple. Deux lettres, deux grandeurs.",
-    "<strong>U = V × √3</strong>, toujours.",
-    "Une machine triphasée sans neutre ne connaît que la composée : c’est la seule tension qui l’intéresse."
+    "<strong>U = V × √3</strong>, sur un réseau équilibré.",
+    "Aux bornes d’une machine triphasée sans neutre, on ne mesure que la composée."
   ],
 
   mesure: () => SchemasReseaux.verifierRacineDeTrois(),
@@ -42,7 +42,7 @@ ModeleGrandeur.construire({
     "Une pointe sur <strong>chaque phase</strong>. Trois mesures, trois valeurs qui doivent être proches.",
     "C’est la mesure la plus fréquente en atelier : c’est elle qui dit si le réseau de puissance est présent.",
     "Un écart marqué entre les trois annonce un <strong>conducteur coupé</strong> ou une connexion desserrée en amont.",
-    "Vérifiez le rapport : divisez une composée par la simple correspondante. Vous devez trouver <strong>1,73</strong>. Sinon, quelque chose ne va pas."
+    "Vérifiez le rapport : divisez une composée par la simple correspondante. <strong>Exemple résolu</strong> : 398 ÷ 230 = 1,73. Vous devez trouver environ <strong>1,7</strong> (entre 1,70 et 1,76) ; nettement autre chose, et quelque chose ne va pas."
   ],
   dangerDeMesure: "400 volts n’est pas « un peu plus » que 230. C’est un domaine où l’arc s’amorce plus facilement et ne s’éteint pas seul. Catégorie de mesure et cordons doivent être à la hauteur.",
 
@@ -56,8 +56,8 @@ ModeleGrandeur.construire({
   },
   surUnePlaque: [
     "Sur un <strong>plan</strong>, c’est la composée qui est écrite : <em>400 V</em>. La simple se déduit.",
-    "Sur une <strong>notice</strong>, l’écriture <em>400 / 230 V</em> donne la composée d’abord.",
-    "Sur une <strong>plaque de moteur</strong>, les deux tensions écrites ne sont ni l’une ni l’autre : elles disent ce que chaque <strong>bobinage</strong> doit recevoir. C’est un autre sujet, et c’est la station 6.4.",
+    "Sur une <strong>plaque</strong> ou une <strong>notice</strong>, on lit <em>230 / 400 V</em> : la simple d’abord, puis la composée. Quelques constructeurs écrivent <em>400 / 230</em> : lisez toujours l’intitulé.",
+    "Sur une <strong>plaque de moteur</strong>, les deux tensions écrites sont des tensions <strong>composées</strong> (entre phases) que le moteur accepte : 230 V en triangle, 400 V en étoile. Chaque <strong>bobinage</strong> reçoit toujours 230 V. C’est un autre sujet, et c’est la station 6.4.",
     "Le facteur <strong>√3</strong> revient partout en triphasé : dans les tensions, dans les courants, dans le calcul des puissances. Il n’y a qu’une seule raison, et c’est celle que vous venez de voir."
   ],
 
@@ -86,12 +86,12 @@ ModeleGrandeur.construire({
         { texte: "380 V.", pourquoi: "380 était la composée de l’ancien réseau 220 / 380, pas de celui à 127." },
         { texte: "220 V.", juste: true } ] },
 
-    { question: "Une machine triphasée sans neutre : quelle tension la concerne ?",
-      confirmation: "La composée seule : sans neutre, la simple n’existe pas pour elle.",
+    { question: "Entre deux bornes d’une machine triphasée sans neutre, quelle tension mesure-t-on ?",
+      confirmation: "La composée, 400 V : c’est la tension entre deux phases.",
       reponses: [
         { texte: "La composée, 400 V.", juste: true },
-        { texte: "La simple, 230 V.", pourquoi: "Sans neutre raccordé, elle n’y a pas accès." },
-        { texte: "Les deux, alternativement.", pourquoi: "Elle ne voit que ce qui arrive sur ses trois bornes." },
+        { texte: "La simple, 230 V.", pourquoi: "La simple se mesure entre une phase et le neutre, pas entre deux phases." },
+        { texte: "Les deux, alternativement.", pourquoi: "Entre deux bornes données, on lit une seule valeur : la composée." },
         { texte: "Aucune : elle fabrique la sienne.", pourquoi: "Un moteur ne fabrique pas de tension." } ] }
   ],
 
@@ -99,7 +99,7 @@ ModeleGrandeur.construire({
     "<strong>U</strong> : entre <strong>deux phases</strong>. 400 V.",
     "<strong>U = V × 1,73.</strong> Pas × 2.",
     "<strong>C’est de la géométrie</strong> : le côté du triangle contre le rayon de l’étoile.",
-    "<strong>Une machine sans neutre</strong> ne connaît que la composée."
+    "<strong>Aux bornes d’une machine sans neutre</strong>, on ne mesure que la composée."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Définir la tension composée, comprendre d’où vient le facteur √3, et vérifier la cohérence d’un réseau par le rapport entre les deux tensions.</p><p><strong>Limite.</strong> La construction vectorielle complète n’est esquissée que par le dessin : la démonstration relève des mathématiques.</p>',

@@ -13,7 +13,8 @@ jours.`,
 
   comprendre: `Regardez le dessin, il n'y a pas grand-chose à dire tellement c'est simple.
 Le courant part du réseau par la phase. Il traverse la charge. Il revient par le neutre. Et
-cinquante fois par seconde, il fait exactement l'inverse.
+il s'inverse cent fois par seconde : cinquante allers-retours complets, c'est la fréquence de
+cinquante hertz.
 Entre les deux fils : deux cent trente volts. C'est la seule tension qu'il y a à mesurer, parce
 qu'il n'y a que deux conducteurs actifs.
 Maintenant, une chose importante que beaucoup ne savent pas, et je vais la dire clairement.
@@ -22,16 +23,17 @@ Le neutre est relié à la terre au poste de distribution. Vous êtes vous-même
 terre. Donc entre vous et le neutre, il n'y a presque aucune différence de potentiel.
 La phase, elle, n'est reliée à rien de tel. Entre vous et la phase, il y a deux cent trente
 volts.
-Concrètement : toucher le neutre est généralement sans conséquence. Toucher la phase peut tuer.
-Deux fils qui se ressemblent, deux situations qui n'ont rien à voir.
-Et attention — je dis bien « généralement » pour le neutre. Si le neutre est coupé quelque part
-en amont, il peut se retrouver au potentiel de la phase à travers les charges branchées. Le
-neutre n'est pas un fil inoffensif : c'est un fil habituellement inoffensif. La nuance vaut une
-vie.
-Un dernier point, sur les limites du monophasé. Un branchement domestique tient entre six et
-douze kilowatts environ. Au-delà, il faut passer en triphasé.
-C'est même la raison principale pour laquelle on demande le triphasé : pas pour la tension, pour
-la puissance.`,
+Concrètement : en marche normale, le neutre est proche du potentiel de la terre, et la phase est
+à deux cent trente volts. Deux fils qui se ressemblent, deux situations qui n'ont rien à voir.
+Et attention : cela ne veut pas dire qu'on peut toucher le neutre. Si le neutre est coupé quelque
+part en amont, il peut se retrouver au potentiel de la phase à travers les charges branchées. Le
+neutre n'est pas un fil inoffensif. La règle, c'est qu'on ne touche aucun conducteur sans avoir
+vérifié l'absence de tension. Cette nuance vaut une vie.
+Un dernier point, sur les limites du monophasé. Un branchement monophasé ne peut fournir qu'une
+puissance limitée, que le distributeur fixe. Quand le besoin dépasse cette limite, on demande un
+branchement triphasé.
+C'est une des raisons principales pour lesquelles on demande le triphasé : pas pour la tension,
+pour la puissance.`,
 
   manipuler: `Passons à ce qui vous servira vraiment sur le terrain : comment savoir si vous êtes en
 monophasé ou en triphasé.

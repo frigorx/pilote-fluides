@@ -56,7 +56,7 @@ ModeleGrandeur.construire({
   },
   surUnePlaque: [
     "Attention à une confusion d’écriture : la lettre <strong>V</strong> désigne <strong>la grandeur</strong> tension simple, et aussi <strong>l’unité</strong> volt. Le contexte tranche.",
-    "Sur une <strong>plaque de moteur</strong>, la plus petite des deux tensions correspond au couplage <strong>triangle</strong>. Ce n’est pas la tension simple du réseau : c’est ce que chaque bobinage doit recevoir.",
+    "Sur une <strong>plaque de moteur</strong>, les deux tensions sont celles du réseau, <strong>entre phases</strong>, que le moteur accepte : 230 V en <strong>triangle</strong>, 400 V en <strong>étoile</strong>. Ce n’est pas la tension simple du réseau. Dans les deux cas, chaque bobinage reçoit 230 V.",
     "Dans un <strong>rapport de mesure</strong>, on note toujours <em>entre quels points</em>. « 231 V » ne veut rien dire ; « 231 V entre L1 et N » veut dire quelque chose.",
     "Sur un <strong>plan</strong>, la tension simple n’est presque jamais écrite : elle se déduit. C’est la composée qui est notée."
   ],

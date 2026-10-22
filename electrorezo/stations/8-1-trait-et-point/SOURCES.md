@@ -15,3 +15,10 @@ Elles ne remplacent pas le symbole officiel, qui est montre au temps 4.
 ## Narration
 
 Ecrite le 28/08/2026 pour cette station, pour l'oreille. **Non validee.** Aucun MP3 fabrique.
+
+## Correction du 19/10/2026 (audit V1)
+
+- `cross.svg` porte un point : c'est un croisement **avec** connexion (legende corrigee).
+- `splice.svg` (epissure oblique, sans point) remplace par `assets/liaison_t_point.svg`, copie de
+  `svg/10_electric/91_en_60617/en_60617_03/en_60617_03_02/en_60617_03_02_05.svg` (Liaison en T, avec point).
+- `jump.svg` : symbole ancien, legende le dit.

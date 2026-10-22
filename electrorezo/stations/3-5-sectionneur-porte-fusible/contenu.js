@@ -14,10 +14,10 @@ ModeleAppareil.construire({
   ],
 
   photos: [
-    { src: 'assets/biblio/porte-fusible-mural.jpeg',
-      alt: 'Photo d’un porte-fusible modulaire de 32 ampères sous 380 volts, avec son levier basculant noir portant le repère N.',
+    { src: 'assets/biblio/sectionneurs-porte-fusibles-tripolaires.jpeg',
+      alt: 'Photo de deux sectionneurs porte-fusibles tripolaires : un boîtier noir de 25 ampères, et un boîtier gris de 32 ampères à trois pôles côte à côte.',
       titre: 'L’appareil.',
-      sous: 'La cartouche est portée par le levier : elle sort du circuit quand on l’abaisse.' },
+      sous: 'Deux sectionneurs porte-fusibles tripolaires : trois pôles, un par phase. Les cartouches sont portées par la partie mobile : abaisser la poignée les sort du circuit.' },
     { src: 'assets/biblio/appareillages-normalises.jpeg',
       alt: 'Planche de symboles normalisés de l’appareillage d’installation, où figurent notamment le fusible sectionneur et le fusible interrupteur-sectionneur, à côté des fonctions sectionneur, interrupteur et disjoncteur.',
       titre: 'Toute la famille, en symboles.',
@@ -33,9 +33,9 @@ ModeleAppareil.construire({
 
   technologie: [
     ['Les cartouches sur la partie mobile', 'elles ne sont pas à côté du sectionneur : elles <strong>sont</strong> la partie mobile. Abaisser la poignée, c’est les retirer du circuit.'],
-    ['La conséquence heureuse', 'ouvert et cadenassé, l’appareil met les cartouches hors tension. On les change <strong>sans risque</strong>, avec la même poignée qui a servi à isoler.'],
+    ['La conséquence heureuse', 'ouvert et cadenassé, l’appareil met les cartouches hors tension. On peut les changer <strong>en sécurité</strong> avec la même poignée qui a servi à isoler, une fois l’appareil ouvert, cadenassé et l’absence de tension vérifiée. Les bornes d’arrivée, elles, restent sous tension.'],
     ['Le défaut hérité', 'il garde celui du sectionneur : <strong>pas de pouvoir de coupure</strong>. Les fusibles n’en donnent aucun à la poignée.'],
-    ['La famille voisine', 'l’<em>interrupteur-sectionneur à fusibles</em>, lui, coupe en charge. Ça se lit sur la plaque et sur le symbole. Dans le doute, on n’ouvre pas en charge.']
+    ['La famille voisine', 'l’<em>interrupteur-sectionneur à fusibles</em>, lui, coupe en charge. Ça se lit sur la plaque et sur le symbole : un petit rond à côté de la barre de sectionnement. Dans le doute, on n’ouvre pas en charge.']
   ],
 
   variantes: [
@@ -94,7 +94,7 @@ ModeleAppareil.construire({
       confirmation: 'Une seule poignée sert à isoler et à mettre les cartouches hors tension.',
       reponses: [
         { texte: 'Il permet de se passer de disjoncteur en aval.', pourquoi: 'Cela dépend de l’installation, et ce n’est pas l’intérêt de l’assemblage.' },
-        { texte: 'Il permet de changer les cartouches sans risque, une fois ouvert et condamné.', juste: true },
+        { texte: 'Il permet de changer les cartouches en sécurité, une fois ouvert, condamné et l’absence de tension vérifiée.', juste: true },
         { texte: 'Il coupe plus vite qu’un sectionneur seul.', pourquoi: 'La vitesse d’ouverture est celle du sectionneur : inchangée.' },
         { texte: 'Il double la protection contre les court-circuits.', pourquoi: 'La protection n’est pas doublée : il n’y a qu’un jeu de cartouches.' } ] },
 
@@ -114,7 +114,7 @@ ModeleAppareil.construire({
     actions: [
       { id: 'ouvrir', libelle: 'J’ouvre cet appareil' },
       { id: 'couper-avant', libelle: 'Je coupe ailleurs d’abord' },
-      { id: 'condamner', libelle: 'J’ouvre, je cadenasse, puis j’interviens' },
+      { id: 'condamner', libelle: 'J’ouvre, je cadenasse, je vérifie l’absence de tension, puis j’interviens' },
       { id: 'refus', libelle: 'Cet appareil ne convient pas ici' } ],
     cas: [
       { enonce: 'Fin de journée. Il faut éteindre une machine qui tourne.',
@@ -128,7 +128,7 @@ ModeleAppareil.construire({
       { enonce: 'Vous devez remplacer un contacteur dans l’armoire.',
         fiche: [['Appareil en tête', 'sectionneur porte-fusible'], ['État', 'installation à l’arrêt']],
         bonne: 'condamner',
-        explication: 'Ouvrir, poser le cadenas, garder la clé, accrocher le macaron. Alors seulement on intervient.' },
+        explication: 'Ouvrir, poser le cadenas, garder la clé, accrocher le macaron (l’étiquette de condamnation à votre nom), puis vérifier l’absence de tension. Alors seulement on intervient.' },
       { enonce: 'Un collègue vous dit : « retire juste les fusibles, ça suffira pour travailler ».',
         fiche: [['Appareil', 'porte-fusible seul'], ['État', 'sous tension']],
         bonne: 'refus',
@@ -144,8 +144,10 @@ ModeleAppareil.construire({
   objectifs: '<p><strong>Objectif.</strong> Comprendre l’assemblage sectionneur + fusibles, savoir qu’il isole et protège mais ne coupe pas en charge, et reconnaître la variante qui, elle, le peut.</p><p><strong>Fin de la ligne 3.</strong> Le test rassemble les cinq stations : couper n’est pas commander, et commander n’est pas isoler.</p>',
 
   credits: [
-    { quoi: 'Photo « consignation »', source: 'base de connaissances inerWeb',
-      detail: 'document de cours indexé — recherche « sectionneur porte-fusible tripolaire »' },
+    { quoi: 'Photo « sectionneurs porte-fusibles tripolaires »', source: 'base de connaissances inerWeb',
+      detail: 'document de cours indexé (« Appareillage industriel ») — recherche « sectionneur porte-fusible tripolaire »' },
+    { quoi: 'Planche « Symboles normalisés de l’appareillage d’installation »', source: 'base de connaissances inerWeb',
+      detail: 'documentation Promotelec, document de cours indexé' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
       detail: '200_fuses_protective_gears/10_fuses/' } ],
 

@@ -3,8 +3,8 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Un rectangle posé sur le trait du circuit. C'est l'un des plus anciens signes de toute
-l'électrotechnique, et l'un des plus simples.
+  decouvrir: `Un rectangle posé sur le trait du circuit. C'est l'un des signes les plus simples
+de toute l'électrotechnique.
 Il veut dire : ici, le courant traverse quelque chose. Pas un appareil qui s'ouvre, pas un
 contact — un élément, un composant, une pièce que le courant doit franchir.`,
 
@@ -28,9 +28,10 @@ plus.`,
 Il est parfois seul, parfois accompagné d'un contact. Et cet assemblage-là raconte une histoire
 précise, que vous savez déjà lire si vous avez suivi la ligne trois.`,
 
-  representer: `Sur un plan, un fusible n'est jamais dessiné seul : à côté de lui, on écrit son courant et
-sa lettre.
-Le rectangle dit qu'il y a une protection. Les caractères à côté disent laquelle.
+  representer: `Sur un plan, un fusible n'est presque jamais dessiné seul : à côté de lui, on écrit son repère,
+son calibre en ampères et sa classe.
+Le rectangle traversé par un trait dit qu'il y a une protection. Les caractères à côté disent
+laquelle : par exemple F1, 16 ampères, gG, la protection générale.
 Retenez cette règle, parce qu'elle vaut pour toute l'écriture du schéma et pas seulement ici :
 le dessin donne la fonction, le texte donne la valeur. Vous la retrouverez sur les disjoncteurs,
 sur les différentiels, sur les câbles.`

@@ -34,13 +34,14 @@ ModeleAppareil.construire({
   technologie: [
     ["Le tore", "un anneau de fer que traversent la phase et le neutre. Tant que tout ce qui part revient, il ne se passe rien."],
     ["La différence", "si une partie du courant s’échappe par la terre, il en manque au retour. Le tore mesure cette différence."],
-    ["La sensibilité", "<strong>30 milliampères</strong> pour la protection des personnes. C’est très peu — et c’est en dessous du seuil dangereux pour un corps."],
-    ["Le bouton de test", "il crée volontairement un petit défaut. <strong>Il se presse deux fois par an</strong> : un différentiel qui ne coupe plus ne prévient pas."]
+    ["La sensibilité", "<strong>30 milliampères</strong> pour la protection des personnes. C’est très peu : c’est le niveau où le corps commence à être en danger si cela dure."],
+    ["Les deux nombres écrits dessus", "<strong>30 mA</strong> : la sensibilité, la différence à partir de laquelle il coupe. <strong>40 A</strong> : le courant maximal qu’il peut laisser passer. Il ne se protège pas lui-même : un disjoncteur en amont (le disjoncteur d’abonné de la photo 2) le protège."],
+    ["Le bouton de test", "il crée volontairement un petit défaut. <strong>Il se presse régulièrement, au moins tous les six mois</strong> (la notice du constructeur donne la fréquence) : un différentiel qui ne coupe plus ne prévient pas."]
   ],
 
   variantes: [
     "<strong>Type AC</strong> — ne voit que les fuites alternatives pures. De moins en moins suffisant.",
-    "<strong>Type A</strong> — voit aussi les fuites à composante continue. Le minimum pour lave-linge, plaques, bornes de recharge.",
+    "<strong>Type A</strong> — voit aussi les fuites continues pulsées (pas le continu lisse). Le minimum pour lave-linge et plaques de cuisson. Pour une borne de recharge, le type A seul ne suffit pas : lisez la notice de la borne.",
     "<strong>Type F</strong> — pour les circuits à variateur ou à découpage.",
     "<strong>Type B</strong> — voit les fuites en continu pur. <strong>Obligatoire derrière certains variateurs de fréquence</strong> — station 7.4.",
     "<strong>Sensibilités</strong> : 30 mA pour les personnes, 300 mA ou plus pour l’incendie ou la sélectivité."
@@ -65,12 +66,12 @@ ModeleAppareil.construire({
   piege: "Croire qu’un différentiel remplace un disjoncteur. Il n’y a rien dedans contre la surintensité : un court-circuit derrière un interrupteur différentiel seul n’est arrêté par personne.",
 
   symboles: [
-    { src: 'assets/ddr2.svg', alt: "Symbole normalisé d’un interrupteur différentiel.", legende: "Interrupteur différentiel" },
-    { src: 'assets/ddr4.svg', alt: "Symbole normalisé d’un dispositif différentiel résiduel.", legende: "Autre représentation" }
+    { src: 'assets/int_diff2.svg', alt: "Symbole normalisé d’un interrupteur différentiel à deux pôles : deux lames reliées par un trait pointillé, et un ovale aplati qui entoure les deux conducteurs, le tore.", legende: "Interrupteur différentiel, deux pôles" },
+    { src: 'assets/int_diff3.svg', alt: "Symbole normalisé d’un interrupteur différentiel à trois pôles : trois lames reliées par un trait pointillé, et un ovale aplati qui entoure les trois conducteurs, le tore.", legende: "Interrupteur différentiel, trois pôles" }
   ],
   lecturePlan: [
-    "Le symbole montre le <strong>tore</strong> traversé par les conducteurs : un cercle, ou un rectangle avec une flèche.",
-    "<strong>Pas de crochet, pas de demi-cercle</strong> : et c’est bien pour ça qu’il ne protège contre aucune surintensité.",
+    "Le symbole montre le <strong>tore</strong> traversé par les conducteurs : un ovale aplati qui les entoure.",
+    "<strong>Pas de crochet, pas de demi-cercle, pas de croix</strong> : et c’est bien pour ça qu’il ne protège contre aucune surintensité. La croix × est la marque d’un disjoncteur (station 4.6).",
     "La <strong>sensibilité et le type</strong> sont écrits à côté : 30 mA, type A."
   ],
 
@@ -86,7 +87,7 @@ ModeleAppareil.construire({
     { question: "Que veut dire « 30 mA » sur un différentiel ?",
       confirmation: "La différence à partir de laquelle il coupe.",
       reponses: [
-        { texte: "Le courant maximal du circuit.", pourquoi: "Ce serait un calibre : le différentiel n’en a pas dans ce sens." },
+        { texte: "Le courant maximal du circuit.", pourquoi: "Le courant maximal s’écrit en ampères (40 A), pas en milliampères." },
         { texte: "La différence détectée à partir de laquelle il coupe.", juste: true },
         { texte: "La consommation de l’appareil.", pourquoi: "Sa propre consommation est négligeable et n’est jamais écrite ainsi." },
         { texte: "Le temps de coupure.", pourquoi: "Le temps s’exprime en millisecondes, pas en milliampères." } ] },
@@ -105,14 +106,14 @@ ModeleAppareil.construire({
         { texte: "À réarmer après un déclenchement.", pourquoi: "Le réarmement se fait par la manette." },
         { texte: "À couper le courant pour intervenir.", pourquoi: "Pour cela on utilise la manette, ou le sectionnement en amont." },
         { texte: "À régler la sensibilité.", pourquoi: "La sensibilité est fixe, déterminée à la fabrication." },
-        { texte: "À vérifier que l’appareil coupe encore — deux fois par an.", juste: true } ] }
+        { texte: "À vérifier que l’appareil coupe encore — régulièrement, au moins tous les six mois.", juste: true } ] }
   ],
 
   retenir: [
     "<strong>Il protège les personnes</strong>, pas les circuits.",
     "Il compare l’aller et le retour : <strong>30 mA de différence suffisent</strong>.",
     "<strong>Aucune protection contre les surintensités</strong> : disjoncteurs obligatoires derrière.",
-    "<strong>Le bouton de test se presse deux fois par an.</strong>"
+    "<strong>Le bouton de test se presse régulièrement, au moins tous les six mois.</strong>"
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre le principe du tore différentiel, ce que veut dire 30 mA, et pourquoi cet appareil ne remplace jamais un disjoncteur.</p>',

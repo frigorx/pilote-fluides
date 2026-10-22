@@ -12,18 +12,31 @@ ModeleSigne.construire({
     { id: '8.5', quoi: "le crochet" },
     { id: '8.6', quoi: "le demi-cercle" },
     { id: '8.3', quoi: "la barre" },
+    { id: '8.2', quoi: "le contact" },
+    { id: '8.7', quoi: "le pointillé" },
+    { id: '8.8', quoi: "la bobine" },
+    { id: '8.9', quoi: "la borne" },
   ],
 
-  ceQuelleDit: 'Vous connaissez l’alphabet : le trait, le point, le contact, la barre, le rectangle, le crochet, le demi-cercle, le pointillé, la bobine, le rond, les repères. Une dizaine de signes — et de quoi lire des centaines de symboles.',
+  ceQuelleDit: 'Vous connaissez l’alphabet : le trait, le point, le contact, la barre, le rectangle, le crochet, le demi-cercle, le pointillé, la bobine, le rond, les repères. Une dizaine de signes — de quoi lire beaucoup de symboles, et savoir quoi demander pour le reste.',
   ouOnLaVoit: 'Partout, et surtout dans les symboles que personne ne vous a jamais montrés. C’est là que la méthode se prouve.',
 
-  /* Le temps 2 : la méthode en trois gestes, dessinée. */
+  /* Le temps 2 : la méthode en trois gestes, dessinée. À l'étape 2, ce sont les vraies lettres
+     de signes.js (contact, barre, crochet, demi-cercle), tracées d'après les fichiers de la
+     bibliothèque, qui sont montrées : pas des traits de couleur. */
   scene: () => {
+    const L = Signes.LETTRES;
+    /* une lettre, centrée sur (X, Y) et réduite à k ; le trait garde son épaisseur d'écran */
+    const lettre = (nom, X, Y, k) => {
+      const b = L[nom].boite, cx = (b[0] + b[2]) / 2 * 3, cy = (b[1] + b[3]) / 2 * 3;
+      return `<g class="nss" transform="translate(${(X - cx * k).toFixed(1)} ${(Y - cy * k).toFixed(1)}) scale(${k})">${L[nom].dessin(0, 0)}</g>`;
+    };
     const d = Signes.svg('0 0 820 380',
-      'La méthode en trois gestes : trouver la colonne, nommer chaque signe, additionner.');
+      'La méthode en trois gestes : trouver la colonne, nommer chaque signe avec sa vraie lettre, additionner.');
     d.innerHTML = `
+<style>.nss *{vector-effect:non-scaling-stroke}</style>
 <rect x="12" y="10" width="796" height="360" rx="16" fill="#fffdf8" stroke="rgba(27,58,99,.18)"/>
-<text x="410" y="46" text-anchor="middle" font-size="17" font-weight="700" fill="#1b3a63">Trois gestes, et ça marche à tous les coups</text>
+<text x="410" y="46" text-anchor="middle" font-size="17" font-weight="700" fill="#1b3a63">Trois gestes, et ça marche presque toujours</text>
 
 <g>
   <rect x="34" y="70" width="240" height="280" rx="12" fill="#f7f1e7" stroke="rgba(27,58,99,.18)"/>
@@ -36,14 +49,14 @@ ModeleSigne.construire({
 <g>
   <rect x="290" y="70" width="240" height="280" rx="12" fill="#f7f1e7" stroke="rgba(27,58,99,.18)"/>
   <text x="410" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#1b3a63">2 · Chaque signe</text>
-  <line x1="410" y1="130" x2="410" y2="270" stroke="#c9451a" stroke-width="8"/>
-  <line x1="410" y1="150" x2="452" y2="150" stroke="#1b3a63" stroke-width="3"/>
-  <text x="530" y="155" text-anchor="end" font-size="13" fill="#1b3a63">ça s’ouvre</text>
-  <line x1="410" y1="196" x2="452" y2="196" stroke="#c0392b" stroke-width="3"/>
-  <text x="530" y="201" text-anchor="end" font-size="13" fill="#c0392b">la chaleur</text>
-  <line x1="410" y1="242" x2="452" y2="242" stroke="#3d7fca" stroke-width="3"/>
-  <text x="530" y="247" text-anchor="end" font-size="13" fill="#3d7fca">l’aimant</text>
-  <text x="410" y="320" text-anchor="middle" font-size="13" fill="#637285">un par un, sans se presser</text>
+  ${lettre('contact', 334, 150, .4)}
+  <text x="372" y="155" font-size="14" fill="#1b3a63">ça s’ouvre</text>
+  ${lettre('sectionnement', 334, 205, 1.4)}
+  <text x="372" y="210" font-size="14" fill="#1b3a63">ça se condamne</text>
+  ${lettre('thermique', 334, 260, 1.8)}
+  <text x="372" y="265" font-size="14" fill="#1b3a63">la chaleur</text>
+  ${lettre('magnetique', 334, 315, 2.2)}
+  <text x="372" y="320" font-size="14" fill="#1b3a63">l’aimant</text>
 </g>
 
 <g>
@@ -54,7 +67,7 @@ ModeleSigne.construire({
   <text x="666" y="202" text-anchor="middle" font-size="14" fill="#1b3a63">+ la chaleur</text>
   <text x="666" y="228" text-anchor="middle" font-size="14" fill="#1b3a63">+ l’aimant</text>
   <line x1="586" y1="248" x2="746" y2="248" stroke="#1e7e54" stroke-width="2"/>
-  <text x="666" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#1e7e54">un disjoncteur moteur</text>
+  <text x="666" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#1e7e54">un disjoncteur</text>
   <text x="666" y="320" text-anchor="middle" font-size="13" fill="#637285">lu, pas reconnu</text>
 </g>`;
     return d;
@@ -63,22 +76,23 @@ ModeleSigne.construire({
   pourquoiCetteForme: [
     '<strong>Premier geste : trouvez la colonne.</strong> Un symbole est presque toujours bâti autour d’un trait vertical, le passage du courant. Repérez-le, et vous savez par où ça entre et par où ça sort.',
     '<strong>Deuxième geste : nommez chaque signe</strong> accroché à cette colonne, un par un, sans vous presser.',
-    '<strong>Troisième geste : additionnez.</strong> Ça s’ouvre, ça se condamne, ça surveille la chaleur et l’aimant : c’est un disjoncteur moteur. Vous ne l’avez pas reconnu, vous l’avez lu.',
-    '<strong>Toute la différence est là.</strong> Celui qui a appris par cœur est perdu devant un symbole nouveau. Celui qui sait lire ne l’est jamais.'
+    '<strong>Troisième geste : additionnez.</strong> Ça s’ouvre, ça se condamne, ça surveille la chaleur et l’aimant : c’est un disjoncteur. La petite croix × posée sur la colonne le confirme : c’est son signe. Vous ne l’avez pas reconnu, vous l’avez lu.',
+    '<strong>Toute la différence est là.</strong> Celui qui a appris par cœur est perdu devant un symbole nouveau. Celui qui sait lire sait toujours quoi chercher.'
   ],
 
-  motsOuOnLaTrouve: ['magnetoThermique', 'disjoncteurMoteur', 'relaisThermique'],
-  motVedette: 'disjoncteurMoteur',
+  motsOuOnLaTrouve: ['relaisThermique', 'sectionneurFusible', 'contacteur'],
+  motVedette: 'sectionneurFusible',
 
   symbolesBiblio: [
     { src: 'assets/disjonct-m_1f.svg',
-      alt: 'Symbole normalisé d’un disjoncteur : contact incliné, crochet du thermique, demi-cercle du magnétique.',
-      legende: 'À déchiffrer : trois signes empilés' },
+      alt: 'Symbole normalisé d’un disjoncteur : contact incliné avec sa barre courte, crochet carré du thermique, demi-cercle du magnétique, et une croix × sur la colonne.',
+      legende: 'À déchiffrer : un contact, une barre, un crochet carré, un demi-cercle, et une croix' },
     { src: 'assets/dis_mag_term_2f-2.svg',
       alt: 'Symbole normalisé d’un disjoncteur magnéto-thermique à deux pôles, avec ses repères de bornes.',
-      legende: 'Le même appareil, écrit autrement' }
+      legende: 'Un disjoncteur à deux pôles, écrit autrement : avec « I> » et des numéros de bornes' }
   ],
   duDessinAuPlan: [
+    'Sur ces deux symboles, il y a des signes que l’alphabet ne contient pas : la <strong>croix ×</strong> posée sur la colonne, qui est le signe du <strong>disjoncteur</strong> (il coupe tout seul quand il détecte un défaut), le <strong>« I> »</strong> (courant supérieur à) et les numéros de bornes. Ce n’est pas un échec de la méthode : nommez ce que vous savez, et vous saurez quoi demander pour le reste.',
     'Un dernier conseil, et il vaut pour toute une carrière : <strong>quand vous tombez sur un symbole inconnu, ne cherchez pas à deviner l’appareil</strong>.',
     '<strong>Décomposez-le.</strong> Nommez les signes un par un. La réponse arrive presque toujours toute seule.',
     'Et quand elle n’arrive pas, vous savez au moins <strong>quelle question poser</strong> — ce qui vaut déjà mieux que de câbler au hasard.'
@@ -91,14 +105,14 @@ ModeleSigne.construire({
         { texte: 'La date du plan.', pourquoi: 'La date figure au cartouche et ne renseigne pas sur le symbole.' },
         { texte: 'La colonne verticale, le passage du courant.', juste: true },
         { texte: 'Le repère écrit à côté.', pourquoi: 'Le repère aide, mais il ne décrit pas l’appareil : KM1 ne vous dit pas combien de pôles il a.' },
-        { texte: 'La couleur du trait.', pourquoi: 'Un plan est noir et blanc : la couleur ne porte jamais l’information.' } ] },
+        { texte: 'La couleur du trait.', pourquoi: 'Sur un plan imprimé en noir et blanc, la couleur ne dit rien : ce n’est pas un indice sur lequel compter.' } ] },
 
-    { question: 'Un symbole porte : un contact, une barre courte, un crochet courbe, un demi-cercle. C’est…',
-      confirmation: 'Il s’ouvre, il se condamne, il voit la chaleur et l’aimant.',
+    { question: 'Un symbole porte : un contact, une barre courte, un crochet carré, un demi-cercle, et une petite croix sur la colonne. C’est…',
+      confirmation: 'Il s’ouvre, il se condamne, il voit la chaleur et l’aimant, et la croix dit : un disjoncteur.',
       reponses: [
         { texte: 'Un relais thermique.', pourquoi: 'Le relais thermique n’a ni barre de sectionnement, ni demi-cercle magnétique.' },
         { texte: 'Un sectionneur porte-fusible.', pourquoi: 'Celui-là porte un rectangle de fusible, et aucun déclencheur.' },
-        { texte: 'Un disjoncteur moteur.', juste: true },
+        { texte: 'Un disjoncteur.', juste: true },
         { texte: 'Un contacteur.', pourquoi: 'Un contacteur a une bobine et un pointillé, pas de déclencheurs.' } ] },
 
     { question: 'Vous ne reconnaissez aucun des signes d’un symbole. Que faites-vous ?',
@@ -120,46 +134,44 @@ ModeleSigne.construire({
 
   jeu: {
     titre: 'Le déchiffreur — le test de la ligne 8',
-    regle: 'Cinq symboles. Pour chacun, dites quel appareil c’est, en vingt-cinq secondes. Deux d’entre eux n’ont été montrés nulle part ailleurs dans ce réseau : c’est tout l’enjeu.',
+    regle: 'Cinq symboles, décrits signe par signe. Pour chacun, additionnez les signes et dites quel appareil c’est, en vingt-cinq secondes.',
     secondes: 25,
     actions: [
       { id: 'interrupteur', libelle: 'Un interrupteur' },
       { id: 'sectionneur', libelle: 'Un sectionneur' },
       { id: 'thermique', libelle: 'Un relais thermique' },
-      { id: 'magnetoThermique', libelle: 'Un disjoncteur magnéto-thermique' },
-      { id: 'disjoncteurMoteur', libelle: 'Un disjoncteur moteur' },
+      { id: 'disjoncteur', libelle: 'Un disjoncteur' },
       { id: 'contacteur', libelle: 'Un contacteur' } ],
     cas: [
-      { enonce: 'Un contact, et un trait horizontal posé dessus.',
-        fiche: [['Signes lus', 'contact + commande manuelle'], ['Déjà vu ?', 'oui, station 8.2']],
+      { enonce: 'Un contact, avec un petit cercle à chacune de ses deux extrémités, et rien d’autre.',
+        fiche: [['Signes lus', 'contact + deux bornes (petits cercles)'], ['Déjà vu ?', 'oui, stations 8.2 et 8.9 ; le symbole : station 3.1']],
         bonne: 'interrupteur',
-        explication: 'Ça s’ouvre, et une main l’actionne : un interrupteur.' },
+        explication: 'Ça s’ouvre, et rien d’autre n’est dessiné : ni barre, ni crochet, ni bobine. Parmi ces appareils, c’est l’interrupteur, tel qu’on le voit à la station 3.1.' },
       { enonce: 'Un contact, et une barre courte à son extrémité.',
         fiche: [['Signes lus', 'contact + aptitude au sectionnement'], ['Déjà vu ?', 'oui, station 8.3']],
         bonne: 'sectionneur',
         explication: 'Ça s’ouvre et ça se condamne : un sectionneur.' },
-      { enonce: 'Un contact, et un crochet courbe accroché sous lui.',
+      { enonce: 'Un contact, et un crochet carré accroché sous lui.',
         fiche: [['Signes lus', 'contact + déclencheur thermique'], ['Déjà vu ?', 'oui, station 8.5']],
         bonne: 'thermique',
         explication: 'Ça s’ouvre, et ça surveille la chaleur — mais pas l’aimant : un relais thermique.' },
-      { enonce: 'Un contact, un crochet courbe, et un demi-cercle. Pas de barre.',
-        fiche: [['Signes lus', 'contact + thermique + magnétique'], ['Déjà vu ?', '⚠ jamais montré tel quel']],
-        bonne: 'magnetoThermique',
-        explication: 'Chaleur et aimant, mais rien qui autorise à travailler derrière : un disjoncteur magnéto-thermique.' },
+      { enonce: 'Un contact, un crochet carré, un demi-cercle, et une petite croix sur la colonne.',
+        fiche: [['Signes lus', 'contact + thermique + magnétique + croix du disjoncteur'], ['Déjà vu ?', 'oui, stations 8.5 et 8.6 ; la croix : temps 4']],
+        bonne: 'disjoncteur',
+        explication: 'Chaleur et aimant, et la croix : un disjoncteur (ici, magnéto-thermique).' },
       { enonce: 'Une bobine, des contacts éloignés, et un pointillé entre les deux.',
-        fiche: [['Signes lus', 'bobine + contacts + liaison mécanique'], ['Déjà vu ?', '⚠ jamais montré tel quel']],
+        fiche: [['Signes lus', 'bobine + contacts + liaison mécanique'], ['Déjà vu ?', 'oui, stations 8.7 et 8.8']],
         bonne: 'contacteur',
         explication: 'Une bobine commande des contacts solidaires mais dessinés loin : un contacteur.' } ],
-    reussite: 'Cinq sur cinq — dont deux symboles qu’on ne vous avait jamais montrés. Vous ne reconnaissez plus : vous lisez.',
-    echec: 'On recommence. Reprenez la méthode : la colonne, puis chaque signe, puis l’addition.'
+    fin: 'Relisez le journal : pour chaque symbole, il dit quels signes il fallait additionner. Reprenez la méthode quand vous voulez : la colonne, puis chaque signe, puis l’addition.'
   },
 
-  objectifs: '<p><strong>Objectif.</strong> Déchiffrer un symbole inconnu par décomposition : trouver la colonne, nommer chaque signe, additionner.</p><p><strong>Fin de la ligne 8.</strong> Le test contient deux symboles qui n’apparaissent nulle part ailleurs dans le réseau : c’est le seul exercice qui vérifie qu’on sait lire, et non qu’on a retenu.</p>',
+  objectifs: '<p><strong>Objectif.</strong> Déchiffrer un symbole inconnu par décomposition : trouver la colonne, nommer chaque signe, additionner.</p><p><strong>Fin de la ligne 8.</strong> Le jeu applique la méthode : on lit les signes d’un symbole, on les additionne, on nomme l’appareil.</p>',
 
   credits: [
     { quoi: 'Symbole officiel à déchiffrer',
       source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/200_fuses_protective_gears/12_magneto_thermal_circuit_breakers/' },
+      detail: 'svg/10_electric/10_allpole/200_fuses_protective_gears/11_circuit_breakers/ (disjonct-m_1f.svg) · 12_magneto_thermal_circuit_breakers/ (dis_mag_term_2f-2.svg)' },
     { quoi: 'Dessins de décomposition des signes',
       source: 'tracés pour ÉlectroRézo dans stations/_commun/signes.js',
       detail: 'représentations pédagogiques inspirées de la norme, faites pour être décomposées' } ],

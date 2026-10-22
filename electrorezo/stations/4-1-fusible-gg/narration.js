@@ -5,7 +5,7 @@ const NARRATION = {
 
   decouvrir: `Une cartouche, un tube, du sable, un fil de métal. Le fusible est le plus ancien appareil
 de protection encore en service, et je vais vous dire quelque chose qui va peut-être vous
-surprendre : personne n'a trouvé mieux pour un usage simple.
+surprendre : pour un usage simple, il fait encore très bien l'affaire.
 Sur son corps, deux lettres sont écrites, et elles changent absolument tout. Aujourd'hui, on
 regarde le gé minuscule G majuscule.
 Le petit g veut dire que cette cartouche protège sur toute la plage. Du premier ampère de trop
@@ -15,9 +15,11 @@ jusqu'au court-circuit franc. C'est la cartouche à tout faire.`,
 elle met à fondre. Alors regardons la courbe ensemble.
 En bas, le courant qui traverse. À gauche, le temps qu'il faut pour que le fil fonde. Et la
 courbe descend : plus le courant est fort, plus la fusion est rapide.
-Prenez deux exemples concrets. Un peu au-dessus du calibre — disons vingt pour cent de trop —
-il faudra des minutes. Dix fois le calibre, il faudra quelques millièmes de seconde. Entre les
-deux, tout est écrit sur cette courbe.
+Prenez deux exemples concrets. Juste au-dessus du calibre, il ne fond pas : la courbe se redresse
+et monte vers le haut, ce qui veut dire qu'à ce niveau-là il tient longtemps. Il faut aller
+nettement plus haut, vers une fois et demie le calibre, pour qu'il fonde, et il faudra alors de
+longues minutes, voire une heure. Dix fois le calibre, il faudra quelques centièmes de seconde.
+Un court-circuit franc, encore moins. Entre les deux, tout est écrit sur cette courbe.
 Cette courbe, c'est la carte d'identité de la cartouche. Elle vous dit exactement dans quels
 cas vous êtes protégé, et dans quels cas vous ne l'êtes pas.
 Et maintenant, je veux vous arrêter sur la limite qu'il faut connaître par cœur, parce que
@@ -25,8 +27,8 @@ c'est une question de vie.
 Un fusible ne voit que le courant qui le traverse. Rien d'autre. Si une partie du courant
 s'échappe ailleurs — par une carcasse mal isolée, par une machine défectueuse, par un corps
 humain qui touche — il n'en sait absolument rien.
-Or, quelques dizaines de milliampères suffisent à tuer quelqu'un. Trois centièmes d'ampère. À
-côté d'un fusible de seize ampères, c'est une poussière. Il ne bougera pas.
+Or, quelques dizaines de milliampères peuvent être dangereux pour un corps, si cela dure. Trois
+centièmes d'ampère. À côté d'un fusible de seize ampères, c'est une poussière. Il ne bougera pas.
 Alors ne demandez jamais à un fusible de protéger une personne. Ce n'est pas son métier, ça n'a
 jamais été son métier, et il faudra un autre appareil pour ça.`,
 
@@ -38,7 +40,7 @@ devrait pas, vers la terre.
 Trois choses différentes, trois dangers différents. Cochez ceux que le gé majuscule G sait
 voir.`,
 
-  representer: `Sur un plan, le fusible est ce rectangle traversé par le trait du circuit. Vous l'avez vu
+  representer: `Sur un plan, le fusible est ce rectangle traversé par le trait du circuit. Vous le verrez
 à la station huit point quatre.
 Mais regardez bien ce que le dessin ne dit pas. Il ne dit pas quelle cartouche est dedans.
 À côté du symbole, deux informations sont écrites en petits caractères : le calibre en ampères,

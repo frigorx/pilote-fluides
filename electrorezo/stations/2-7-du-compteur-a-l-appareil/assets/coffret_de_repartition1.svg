@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15.5 -30.5 41 81" width="41" height="81">
+<!-- Coffret de répartition avec 4 canalisations — converti de coffret_de_repartition1.elmt par outils\elmt-vers-svg.py -->
+
+<rect x="0" y="-25" width="10" height="70" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="10" x2="0" y2="10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="40" x2="20" y2="40" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="20" x2="20" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="20" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-20" x2="20" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+</svg>

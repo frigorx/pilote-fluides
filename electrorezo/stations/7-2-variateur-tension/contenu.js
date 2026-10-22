@@ -19,7 +19,7 @@ ModeleAppareil.construire({
   creditPhoto: 'Coupe dessinée pour cette station. Détail dans « Crédits ».',
 
   aQuoiCaSert: "À régler ce qui chauffe et ce qui éclaire. Une résistance, une lampe, une plaque : on découpe l’onde, la valeur efficace baisse, et la puissance suit.",
-  ouOnLeTrouve: "Dans les variateurs de lumière, dans les régulations de résistances de chauffage, dans les démarreurs progressifs de moteurs — et là, pour une raison bien précise.",
+  ouOnLeTrouve: "Dans les variateurs de lumière, dans les régulations de résistances de chauffage, dans les démarreurs progressifs de moteurs — et là, pour adoucir le départ, pas pour régler la vitesse.",
 
   scene: () => SchemasMachines.ondeDecoupee(),
 
@@ -55,17 +55,18 @@ ModeleAppareil.construire({
     "Il se monte <strong>en série</strong> sur la phase, comme un interrupteur. Jamais en parallèle.",
     "Vérifiez la <strong>nature de la charge</strong> : résistive, inductive, ou à LED. Ce n’est pas la même électronique, et un gradateur mal choisi grille.",
     "Respectez la <strong>puissance minimale</strong> autant que la maximale : beaucoup de gradateurs ne fonctionnent pas correctement en dessous d’un certain niveau.",
-    "Laissez de la place autour du <strong>radiateur</strong>. Un gradateur encastré dans une boîte fermée déclasse fortement, parfois de moitié."
+    "Laissez de la place autour du <strong>radiateur</strong>. Un gradateur encastré dans une boîte fermée déclasse fortement : sa puissance admissible chute."
   ],
   piege: "Un gradateur <strong>ne convient pas à un moteur</strong>, sauf s’il est explicitement prévu pour. Sur un moteur asynchrone, il fait exactement ce que la station 7.1 a montré : le couple s’écroule, l’intensité monte, et le moteur chauffe.",
 
   symboles: [
     { src: 'assets/ac1_ac1.svg', alt: "Symbole normalisé d’un convertisseur alternatif vers alternatif.", legende: "Alternatif vers alternatif" },
-    { src: 'assets/regulator_ind_3f_2.svg', alt: "Symbole normalisé d’un régulateur triphasé.", legende: "Régulateur triphasé" }
+    { src: 'assets/regulator_ind_3f_2.svg', alt: "Symbole d’un régulateur de tension triphasé à bobinages : trois enroulements et une flèche de réglage. C’est une autre technique que le gradateur à thyristors.", legende: "Autre technique : régulateur de tension à bobinages (pas un gradateur)" }
   ],
   lecturePlan: [
     "Le symbole des convertisseurs est un <strong>rectangle barré en diagonale</strong>. De part et d’autre de la diagonale, deux signes disent ce qui entre et ce qui sort.",
     "Pour un gradateur : le signe de l’<strong>alternatif des deux côtés</strong>. Il entre de l’alternatif, il sort de l’alternatif.",
+    "Le second symbole, trois bobinages et une flèche de réglage, n’est <strong>pas</strong> un gradateur : c’est un régulateur de tension à bobinages, une autre technique qui ne découpe pas l’onde.",
     "Cette écriture est très commode : elle vous dit d’un coup d’œil ce que fait n’importe quel convertisseur, y compris ceux que vous ne connaissez pas.",
     "Comparez avec le variateur de fréquence de la station 7.4 : même famille de symbole, mais ce qui est écrit à l’intérieur n’est pas la même chose."
   ],
@@ -88,18 +89,18 @@ ModeleAppareil.construire({
         { texte: "En parallèle sur la charge.", pourquoi: "Il court-circuiterait la charge." },
         { texte: "Entre la phase et la terre.", pourquoi: "Ce serait créer un défaut d’isolement." },
         { texte: "En série sur la phase.", juste: true },
-        { texte: "Sur le neutre.", pourquoi: "On ne coupe pas le neutre en amont d’une charge." } ] },
+        { texte: "Sur le neutre.", pourquoi: "Un organe de commande se place sur la phase : sinon la charge reste sous tension." } ] },
 
-    { question: "Peut-on régler la vitesse d’un moteur asynchrone avec un gradateur ?",
-      confirmation: "Non : le couple s’écroule et la vitesse ne bouge presque pas.",
+    { question: "Peut-on régler la vitesse d’un moteur asynchrone ordinaire, sous couple constant, avec un gradateur ?",
+      confirmation: "Non : le couple s’écroule et la vitesse ne bouge presque pas. (Exception : un moteur de ventilateur prévu pour cette variation de tension.)",
       reponses: [
         { texte: "Oui, avec un condensateur en plus.", pourquoi: "Le condensateur n’intervient pas dans ce problème." },
-        { texte: "Oui, dans une plage limitée.", pourquoi: "La vitesse ne varie que de quelques dizaines de tours, avant que le moteur ne cale." },
+        { texte: "Oui, dans une plage limitée.", pourquoi: "Sur un moteur ordinaire sous couple constant, la vitesse ne varie presque pas avant que le moteur ne cale : on n’obtient aucun réglage utile." },
         { texte: "Oui, s’il est triphasé.", pourquoi: "Le nombre de phases ne change rien à ce comportement." },
         { texte: "Non.", juste: true } ] },
 
     { question: "Un gradateur est encastré dans une boîte fermée. Quelle conséquence ?",
-      confirmation: "Il déclasse : sa puissance admissible chute, parfois de moitié.",
+      confirmation: "Il déclasse : sa puissance admissible chute.",
       reponses: [
         { texte: "Il déclasse fortement.", juste: true },
         { texte: "Aucune, s’il est bien câblé.", pourquoi: "L’évacuation de la chaleur est une contrainte à part entière." },

@@ -4,9 +4,11 @@
 const NARRATION = {
 
   decouvrir: `Dernière station de la ligne, et c'est celle qui rend toutes les autres utiles.
-Vous avez appris huit grandeurs. Elles ne servent à rien si vous ne savez pas les relever.
-Et pour les relever, il y a deux outils dans la caisse. Le multimètre, qui fait presque tout. Et
-la pince, qui ne fait qu'une chose, mais sans rien toucher.
+Vous avez appris les grandeurs de base. Elles ne servent à rien si vous ne savez pas les relever.
+Pour les trois mesures de base, la tension, le courant et la résistance, il y a deux outils dans
+la caisse. Le multimètre, qui fait presque tout. Et la pince, qui mesure un courant
+sans rien toucher. La puissance, l'énergie et l'isolement ont leurs propres appareils : vous les
+avez vus aux stations un point quatre et un point huit.
 Savoir s'en servir, ce n'est pas une option. C'est la différence entre diagnostiquer et deviner.`,
 
   comprendre: `Prenons le multimètre, et servez-vous des boutons sous le dessin.
@@ -16,8 +18,9 @@ Le second, c'est la borne dans laquelle on met la pointe rouge. Il y en a une po
 et les résistances, et une autre pour les ampères.
 Et les deux doivent dire la même chose.
 Essayez maintenant les combinaisons. Molette sur tension, pointe dans la borne des volts : ça
-marche. Molette sur tension, pointe dans la borne des ampères : ça ne marche pas, et l'appareil
-ne vous dira pas toujours pourquoi.
+marche. Molette sur tension, pointe dans la borne des ampères : c'est la plus dangereuse des
+erreurs. Cette borne est un quasi court-circuit : sur une prise vivante, le fusible de l'appareil
+fond, et un arc est possible.
 Une habitude à prendre tout de suite : la pointe noire va dans la borne marquée COM, et elle n'en
 bouge jamais. Jamais.
 C'est la rouge qu'on déplace selon ce qu'on veut mesurer. Et c'est donc elle, toujours elle, qui
@@ -32,8 +35,9 @@ machine, ça veut dire : l'arrêter, la consigner, défaire un fil.
 Personne ne fait ça pour un simple contrôle.
 La pince, elle, s'ouvre, enserre le conducteur, et lit. Elle ne touche rien d'électrique. Elle
 lit le champ magnétique qui entoure le fil, et elle en déduit le courant.
-Aucun contact, aucune coupure, aucun risque de court-circuit. La machine continue de tourner
-pendant que vous mesurez.
+Aucun contact électrique avec le fil, aucune coupure. La machine continue de tourner pendant que
+vous mesurez. Un seul point de vigilance : dans une armoire, ne refermez pas la mâchoire sur deux
+pièces nues à la fois. Et la pince porte, comme le multimètre, sa catégorie de mesure.
 Deux règles avec elle, et elles sont simples. Un seul conducteur à la fois — sinon l'aller annule
 le retour. Et bien refermer la mâchoire, sinon la lecture est basse.
 Une dernière chose, très importante, et je vais être direct.

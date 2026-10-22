@@ -2,7 +2,7 @@
 
 ## Illustrations
 - `compteur-kwh.jpeg`
-- `compteur-kwh-2.jpeg`
+- `compteur-linky.jpg` (base de connaissances : image d'un document de cours BAC MFER « C03 - Installation domestique » ; photo d'un compteur Linky, origine et licence à vérifier avant toute publication)
 
 Trouvées par `node outils/chercher-images.mjs`, dans la base de connaissances inerWeb
 (`C:\git\usine-contenu\moteur-recherche\illustrations`). Les fichiers `.svg` de

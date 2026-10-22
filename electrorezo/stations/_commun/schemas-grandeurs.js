@@ -256,7 +256,7 @@ ${para
 
     const barre = document.createElement('div');
     barre.className = 'choix'; barre.style.marginTop = '.6rem';
-    [['parallele', 'Aux bornes, en parallèle', 'ok', 'Oui. Une tension est une différence entre deux points : on pose donc une pointe sur chacun, sans rien couper. C’est la mesure la plus simple, et la seule qu’on fait sous tension.'],
+    [['parallele', 'Aux bornes, en parallèle', 'ok', 'Oui. Une tension est une différence entre deux points : on pose donc une pointe sur chacun, sans rien couper. C’est la mesure la plus simple : deux pointes, sous tension, sans rien couper.'],
      ['serie', 'Dans le circuit, en série', 'bad', 'Non. Un voltmètre a une résistance énorme, de l’ordre du million d’ohms. Mis en série, c’est comme si vous aviez coupé le fil : la charge s’arrête, et vous ne mesurez rien d’utile.']]
       .forEach(([id, lib, cl, txt]) => {
         const b = document.createElement('button'); b.type = 'button'; b.textContent = lib;
@@ -286,8 +286,9 @@ ${para
     const peindre = () => {
       const I = U / R;
       const P = U * I;
-      /* la chaleur du fil : rendue par l'épaisseur ET par le mot, jamais par la seule couleur */
-      const chaud = P > 2000 ? 'brûlant' : P > 800 ? 'chaud' : P > 200 ? 'tiède' : 'froid';
+      /* la chaleur de la RÉSISTANCE (c'est là qu'elle se dégage : P = U × I) : rendue par le mot et la couleur,
+         pas par la seule couleur. L'épaisseur du trait, elle, suit le courant. */
+      const chaud = P > 2000 ? 'brûlante' : P > 800 ? 'chaude' : P > 200 ? 'tiède' : 'froide';
       const coul = P > 2000 ? C.rouge : P > 800 ? C.feu : P > 200 ? C.orange : C.bleu;
       d.innerHTML = `
 <rect x="8" y="8" width="684" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
@@ -308,7 +309,7 @@ ${para
 <text x="480" y="158" text-anchor="middle" font-size="14" fill="${C.navy}">${R} Ω</text>
 <line x1="480" y1="180" x2="480" y2="214" stroke="${coul}" stroke-width="4"/>
 
-<text x="300" y="56" text-anchor="middle" font-size="13" fill="${coul}">le fil est ${chaud}</text>
+<text x="300" y="56" text-anchor="middle" font-size="13" fill="${coul}">la résistance est ${chaud}</text>
 
 <rect x="546" y="86" width="132" height="112" rx="10" fill="${C.creme}" stroke="${C.trait}"/>
 <text x="612" y="112" text-anchor="middle" font-size="12" fill="${C.gris}">il passe</text>
@@ -409,7 +410,7 @@ ${instrument(180, 132, 'Ω', C.navy, 30)}
 
     const p = document.createElement('p');
     p.className = 'legende';
-    p.textContent = 'Essayez : un radiateur de 2000 W un quart d’heure, contre une veille de 100 W toute la nuit. '
+    p.textContent = 'Essayez : un radiateur de 2000 W un quart d’heure, contre un téléviseur de 100 W toute la nuit. '
       + 'Le gros appareil n’est pas toujours celui qui coûte le plus cher.';
     hote.appendChild(p);
     return hote;
@@ -422,9 +423,9 @@ ${instrument(180, 132, 'Ω', C.navy, 30)}
 <text x="350" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Deux appareils, deux métiers</text>
 
 <rect x="60" y="72" width="256" height="140" rx="10" fill="none" stroke="${C.navy}" stroke-width="3"/>
-<text x="188" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">La pince, le multimètre</text>
+<text x="188" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">Le wattmètre</text>
 ${instrument(188, 142, 'W', C.bleu, 26)}
-<text x="188" y="192" text-anchor="middle" font-size="12" fill="${C.gris}">ils disent ce qui passe MAINTENANT</text>
+<text x="188" y="192" text-anchor="middle" font-size="12" fill="${C.gris}">il dit ce qui passe MAINTENANT</text>
 
 <rect x="384" y="72" width="256" height="140" rx="10" fill="none" stroke="${C.navy}" stroke-width="3"/>
 <text x="512" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">Le compteur</text>
@@ -440,7 +441,7 @@ ${instrument(188, 142, 'W', C.bleu, 26)}
 
   /* ============================================================ 1.5 — continu et alternatif */
   function continuAlternatif() {
-    const d = svg('0 0 760 300', 'Deux allures de courant : le continu, constant, et l’alternatif, qui change de sens cinquante fois par seconde.');
+    const d = svg('0 0 760 300', 'Deux allures de courant : le continu, constant, et l’alternatif, qui fait cinquante allers-retours par seconde, soit cent changements de sens.');
     const trace = (alt) => {
       const pts = [];
       for (let i = 0; i <= 600; i += 4) {
@@ -473,7 +474,7 @@ ${alt
     peindre(false);
     return bloc(d, [
       { id: 'continu', libelle: 'Continu', legende: 'La valeur est constante et le sens ne change pas. Il y a un plus et un moins, et les inverser a des conséquences.', appliquer: () => peindre(false) },
-      { id: 'alternatif', libelle: 'Alternatif', legende: 'Le courant change de sens cinquante fois par seconde. Il n’y a ni plus ni moins : il y a une phase et un neutre, qui ne sont pas la même chose.', appliquer: () => peindre(true) }
+      { id: 'alternatif', libelle: 'Alternatif', legende: 'Le courant fait cinquante allers-retours par seconde : il change de sens cent fois. Il n’y a ni plus ni moins : il y a une phase et un neutre, qui ne sont pas la même chose.', appliquer: () => peindre(true) }
     ], 'continu', 'La valeur est constante et le sens ne change pas. Il y a un plus et un moins, et les inverser a des conséquences.');
   }
 
@@ -549,14 +550,14 @@ ${alt
 
 <line x1="100" y1="120" x2="660" y2="120" stroke="${C.navy}" stroke-width="2"/>
 <polyline points="${pts.join(' ')}" fill="none" stroke="${C.orange}" stroke-width="3.5"/>
-<text x="660" y="182" text-anchor="end" font-size="12" fill="${C.gris}">une seconde de signal</text>
+<text x="660" y="182" text-anchor="end" font-size="12" fill="${C.gris}">extrait de 0,08 s : ${nb(f / 12.5, f % 12.5 ? 1 : 0)} ${f / 12.5 < 2 ? 'motif' : 'motifs'} — en une seconde entière : ${nb(f, f % 1 ? 1 : 0)}</text>
 
 <rect x="100" y="216" width="240" height="60" rx="8" fill="${C.creme}" stroke="${C.trait}"/>
 <text x="220" y="238" text-anchor="middle" font-size="12" fill="${C.gris}">la fréquence</text>
 <text x="220" y="266" text-anchor="middle" font-size="22" font-weight="700" fill="${C.orange}">${nb(f, f % 1 ? 1 : 0)} Hz</text>
 
 <rect x="360" y="216" width="240" height="60" rx="8" fill="${C.creme}" stroke="${C.trait}"/>
-<text x="480" y="238" text-anchor="middle" font-size="12" fill="${C.gris}">un moteur à deux pôles tournerait à</text>
+<text x="480" y="238" text-anchor="middle" font-size="12" fill="${C.gris}">le champ d’un moteur à deux pôles tourne à</text>
 <text x="480" y="266" text-anchor="middle" font-size="22" font-weight="700" fill="${C.navy}">${tr} tr/min</text>
 
 ${Math.abs(f - 50) < 0.6
@@ -600,7 +601,8 @@ ${instrument(150, 130, 'Hz', C.navy, 34)}
   }
 
   /* ============================================================ 1.7 — la plaque
-     Valeurs relevées sur une plaque Leroy Somer réelle. */
+     Plaque d'exemple : tensions et intensités d'une plaque Leroy Somer LS 90 Lz réelle ; la vitesse et le cos φ
+     sont des valeurs courantes arrondies (1435 tr/min, 0,80), un peu différentes de celles de cette plaque. */
   function plaqueSignaletique() {
     const d = svg('0 0 760 340', 'Une plaque signalétique de moteur, ligne par ligne : tension et couplage, intensité, puissance, vitesse, facteur de puissance, indice de protection.');
     const lignes = [
@@ -660,8 +662,8 @@ ${lignes.map(([, x, c], i) => `
     const peindre = (cas) => {
       const commun = `
 <rect x="8" y="8" width="744" height="304" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-<line x1="90" y1="80" x2="640" y2="80" stroke="${C.navy}" stroke-width="3"/>
-<text x="76" y="85" text-anchor="end" font-size="13" font-weight="700" fill="${C.navy}">Ph</text>
+<line x1="90" y1="80" x2="640" y2="80" stroke="${C.rouge}" stroke-width="3"/>
+<text x="76" y="85" text-anchor="end" font-size="13" font-weight="700" fill="${C.rouge}">Ph</text>
 <line x1="90" y1="250" x2="640" y2="250" stroke="${C.feu}" stroke-width="3"/>
 <text x="76" y="255" text-anchor="end" font-size="13" font-weight="700" fill="${C.feu}">N</text>`;
 
@@ -694,20 +696,21 @@ ${lignes.map(([, x, c], i) => `
 <text x="300" y="174" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">charge</text>
 <line x1="300" y1="202" x2="300" y2="250" stroke="${C.orange}" stroke-width="5"/>
 <path d="M338 152 L440 152 L440 268" fill="none" stroke="${C.bleu}" stroke-width="5" stroke-dasharray="9 5"/>
-<line x1="414" y1="268" x2="466" y2="268" stroke="${C.navy}" stroke-width="5"/>
-<line x1="424" y1="278" x2="456" y2="278" stroke="${C.navy}" stroke-width="5"/>
-<line x1="433" y1="288" x2="447" y2="288" stroke="${C.navy}" stroke-width="5"/>
+<!-- la terre : géométrie de la bibliothèque (10_electric/10_allpole/110_network_supplies/terre.svg : traits de 14, 10 et 6), à l'échelle 5 -->
+<g transform="translate(440 268) scale(5)" stroke="${C.navy}" stroke-width="1" fill="none">
+  <line x1="-7" y1="0" x2="7" y2="0"/><line x1="-5" y1="2" x2="5" y2="2"/><line x1="-3" y1="4" x2="3" y2="4"/>
+</g>
 <text x="480" y="152" font-size="13" font-weight="700" fill="${C.bleu}">une partie du courant s’échappe</text>
 <text x="480" y="176" font-size="13" fill="${C.bleu}">par la carcasse, ou par un corps</text>
-<text x="365" y="308" text-anchor="middle" font-size="13" fill="${C.gris}">Ni fort ni lent : ailleurs. Quelques centièmes d’ampère suffisent à tuer. Seul le différentiel voit ça.</text>`;
+<text x="365" y="308" text-anchor="middle" font-size="13" fill="${C.gris}">Ni fort ni lent : ailleurs. Quelques centièmes d’ampère suffisent à tuer. Cette fuite, seul le différentiel la voit.</text>`;
       }
     };
     peindre('surcharge');
     return bloc(d, [
-      { id: 'surcharge', libelle: 'La surcharge', legende: 'Le courant emprunte le bon chemin, mais il est trop fort et il dure. Le conducteur chauffe, l’isolant vieillit. Rien ne se voit.', appliquer: () => peindre('surcharge') },
+      { id: 'surcharge', libelle: 'La surcharge', legende: 'Le courant emprunte le bon chemin, mais il est trop fort et il dure. Le conducteur chauffe, l’isolant vieillit. Rien ne se voit. Le bilame, deux métaux collés qui se courbent à la chaleur, finit par déclencher.', appliquer: () => peindre('surcharge') },
       { id: 'court', libelle: 'Le court-circuit', legende: 'Deux conducteurs se touchent : le courant n’a plus rien pour le freiner. Des milliers d’ampères, en quelques millièmes de seconde.', appliquer: () => peindre('court') },
       { id: 'isolement', libelle: 'Le défaut d’isolement', legende: 'Le courant quitte son chemin et part vers la terre — par une carcasse, ou par une personne. Quelques centièmes d’ampère suffisent à tuer.', appliquer: () => peindre('isolement') }
-    ], 'surcharge', 'Le courant emprunte le bon chemin, mais il est trop fort et il dure. Le conducteur chauffe, l’isolant vieillit. Rien ne se voit.');
+    ], 'surcharge', 'Le courant emprunte le bon chemin, mais il est trop fort et il dure. Le conducteur chauffe, l’isolant vieillit. Rien ne se voit. Le bilame, deux métaux collés qui se courbent à la chaleur, finit par déclencher.');
   }
 
   function quelInstrumentVoitQuoi() {
@@ -724,7 +727,7 @@ ${lignes.map(([, x, c], i) => `
     <td>une bobine, ou un fusible qui fond</td></tr>
 <tr><td><strong>Le défaut d’isolement</strong><br><span class="legende">le courant part à la terre</span></td>
     <td>un mégohmmètre, hors tension, installation consignée</td>
-    <td>un différentiel, et rien d’autre</td></tr>
+    <td>un différentiel : seul à voir les petites fuites vers la terre</td></tr>
 </tbody>`;
     t.appendChild(tab);
     const p = document.createElement('p');
@@ -744,10 +747,10 @@ ${lignes.map(([, x, c], i) => `
 
     const CAS = {
       'V~|VΩ':  ['ok',   'Correct. C’est la mesure la plus courante de l’atelier : tension alternative, pointes aux bornes, rien à couper.'],
-      'V~|A':   ['bad',  'Non. Le sélecteur dit « tension », mais la pointe est dans la borne des ampères. Beaucoup d’appareils affichent alors n’importe quoi, et certains protestent.'],
+      'V~|A':   ['bad',  'Non. Le sélecteur dit « tension », mais la pointe est dans la borne des ampères : sur une prise sous tension, cette borne est un quasi court-circuit. Le fusible de l’appareil fond, et un arc est possible.'],
       'A~|A':   ['ok',   'Correct pour un courant — mais il faut ouvrir le circuit et mettre l’appareil dans le trou. Sur un moteur, on préfère largement la pince : elle mesure sans rien débrancher.'],
       'A~|VΩ':  ['bad',  'Non. Le sélecteur dit « ampères » mais la pointe n’est pas dans la bonne borne : l’appareil ne verra rien passer.'],
-      'Ω|VΩ':   ['bad',  'La borne est bonne, mais la position ohms ne s’emploie que HORS TENSION, sur un élément débranché d’au moins un côté. Sur une prise vivante, la valeur est fausse et l’appareil peut être détruit.'],
+      'Ω|VΩ':   ['ok',   'Combinaison bonne pour une résistance — à condition que l’élément soit HORS TENSION et débranché d’au moins un côté. Sur une prise vivante, la valeur est fausse et l’appareil peut être détruit.'],
       'Ω|A':    ['bad',  'Ni la position ni la borne. La position ohms exige un circuit hors tension, et la borne des ampères est un quasi court-circuit.']
     };
 
@@ -762,7 +765,7 @@ ${lignes.map(([, x, c], i) => `
 <rect x="90" y="62" width="220" height="216" rx="14" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
 <rect x="112" y="80" width="176" height="46" rx="4" fill="${C.papier}" stroke="${C.navy}" stroke-width="2"/>
 <text x="200" y="113" text-anchor="middle" font-size="21" font-weight="700"
-      fill="${bon ? C.vert : C.gris}">${bon ? (pos === 'V~' ? '231 V' : '4,9 A') : '— — —'}</text>
+      fill="${bon ? C.vert : C.gris}">${bon ? (pos === 'V~' ? '231 V' : pos === 'Ω' ? '12,4 Ω' : '4,9 A') : '— — —'}</text>
 
 <circle cx="200" cy="182" r="38" fill="none" stroke="${C.navy}" stroke-width="3"/>
 <line x1="200" y1="182" x2="${200 + 30 * Math.cos({ 'V~': -Math.PI / 2, 'A~': Math.PI / 6, 'Ω': Math.PI * 5 / 6 }[pos])}"
@@ -788,7 +791,7 @@ ${lignes.map(([, x, c], i) => `
 <text x="630" y="170" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">COM, toujours</text>
 
 <text x="505" y="234" text-anchor="middle" font-size="16" font-weight="700"
-      fill="${bon ? C.vert : C.rouge}">${bon ? 'la combinaison est bonne' : 'la combinaison ne va pas'}</text>
+      fill="${bon ? C.vert : C.rouge}">${bon ? (pos === 'Ω' ? 'combinaison bonne, hors tension' : 'la combinaison est bonne') : 'la combinaison ne va pas'}</text>
 <text x="505" y="268" text-anchor="middle" font-size="12" fill="${C.gris}">La pointe noire ne bouge jamais de COM.</text>
 <text x="505" y="288" text-anchor="middle" font-size="12" fill="${C.gris}">C’est la rouge qu’on déplace, et c’est elle qui se trompe.</text>`;
     };

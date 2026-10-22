@@ -18,20 +18,20 @@ ModeleGrandeur.construire({
     { src: 'assets/biblio/trois-phases-et-le-neutre.jpeg',
       alt: "Schéma montrant les trois phases L1, L2, L3 et le neutre, avec trois flèches V1, V2, V3 mesurant chaque tension simple.",
       titre: "Quatre conducteurs.", sous: "Trois phases, un neutre — et six mesures possibles." },
-    { src: 'assets/biblio/du-transformateur-a-l-abonne.jpeg',
-      alt: "Schéma de la distribution : le transformateur haute tension abaisse vers un réseau triphasé, dont chaque abonné reçoit une part.",
-      titre: "D’où il vient.", sous: "Un transformateur de quartier, et une maison sur trois par phase." }
+    { src: 'assets/biblio/transformateur-en-etoile.jpeg',
+      alt: "Schéma du secondaire d’un transformateur triphasé : trois bobinages en étoile, 230 volts entre chaque phase et le point neutre, 400 volts entre deux phases.",
+      titre: "D’où il vient.", sous: "Le secondaire d’un transformateur de quartier : 230 V de chaque phase au neutre, 400 V entre deux phases." }
   ],
 
-  lIdee: "Le triphasé, ce sont trois tensions au lieu d’une. Même valeur, même fréquence, mais décalées d’un tiers de tour. Ce décalage n’est pas une complication : c’est ce qui permet à un moteur de démarrer tout seul, et à un câble de transporter trois fois plus de puissance.",
-  ouOnLaRencontre: "Dans tous les ateliers, toutes les armoires industrielles, toutes les machines de plus de quelques kilowatts. Et dans la rue : le réseau de distribution est triphasé de bout en bout.",
+  lIdee: "Le triphasé, ce sont trois tensions au lieu d’une. Même valeur, même fréquence, mais décalées d’un tiers de tour. Ce décalage n’est pas une complication : c’est ce qui permet à un moteur de démarrer tout seul, et à un câble de transporter bien plus de puissance.",
+  ouOnLaRencontre: "Dans tous les ateliers, toutes les armoires industrielles, toutes les machines de plus de quelques kilowatts. Et dans la rue : le réseau de distribution est triphasé ; un logement n’en reçoit souvent qu’une phase.",
 
   scene: () => SchemasReseaux.troisSinusoides(),
 
   ceQuiSePasse: [
-    ["Trois tensions identiques", "même valeur efficace, même fréquence. Ce qui les distingue, c’est uniquement le moment où chacune passe par son maximum."],
+    ["Trois tensions identiques", "même valeur efficace (station 1.5), même fréquence. Ce qui les distingue, c’est uniquement le moment où chacune passe par son maximum."],
     ["Décalées d’un tiers de tour", "120 degrés. Ce décalage vient de la construction de l’alternateur : trois bobinages disposés à 120 degrés l’un de l’autre."],
-    ["Leur somme est nulle", "à chaque instant, les trois s’annulent. C’est pour cela que, sur une installation équilibrée, le neutre ne ramène presque rien — et qu’il peut être plus fin que les phases."],
+    ["Leur somme est nulle", "à chaque instant, les trois s’annulent. C’est pour cela que, sur une installation équilibrée, le neutre ne ramène presque rien."],
     ["Pourquoi c’est mieux", "à câble égal, on transporte bien plus de puissance. Et surtout, un moteur triphasé démarre <strong>seul</strong> : le décalage crée un champ tournant, et le rotor n’a qu’à le suivre."]
   ],
   aRetenir: [
@@ -42,7 +42,7 @@ ModeleGrandeur.construire({
 
   mesure: () => SchemasReseaux.sixMesures(),
   instrument: [
-    "Sur une prise triphasée avec neutre, il y a <strong>six mesures</strong> possibles, et <strong>deux valeurs</strong> seulement.",
+    "Sur une prise triphasée avec neutre, entre les quatre conducteurs actifs (sans le PE), il y a <strong>six mesures</strong> possibles, et <strong>deux valeurs</strong> seulement.",
     "Les <strong>trois entre phases</strong> doivent donner 400 volts, à quelques volts près.",
     "Les <strong>trois vers le neutre</strong> doivent donner 230 volts, à quelques volts près.",
     "Une valeur qui sort du lot annonce un <strong>conducteur coupé</strong>, ou un neutre mal raccordé. C’est un diagnostic à part entière."
@@ -50,16 +50,16 @@ ModeleGrandeur.construire({
   dangerDeMesure: "Sur une même prise, il y a 230 et 400 volts selon les bornes choisies. Se tromper de paire, c’est envoyer 400 volts dans un appareil qui en attend 230.",
 
   ecriture: {
-    symbole: '3 ~', unite: 'V', nomUnite: 'deux tensions, 230 et 400 V',
+    sansUnite: true, titre: 'Les écritures du triphasé', entetes: ['On lit', 'Cela veut dire'],
     multiples: [
       ['3 ~', 'triphasé sans neutre — trois conducteurs'],
       ['3 N ~', 'triphasé avec neutre — quatre conducteurs'],
-      ['400 / 230 V', 'la façon d’écrire les deux tensions du réseau français']
+      ['230 / 400 V', 'la façon d’écrire les deux tensions du réseau français : vers le neutre, puis entre phases']
     ]
   },
   surUnePlaque: [
     "Sur une <strong>plaque de moteur</strong> : <em>3 ~</em> et deux tensions. C’est ce que vous verrez presque toujours en atelier.",
-    "Sur une <strong>notice</strong>, l’écriture <em>400 / 230 V</em> donne d’abord la composée, puis la simple. L’ordre est constant.",
+    "Sur une <strong>plaque</strong> ou une <strong>notice</strong>, l’écriture <em>230 / 400 V</em> donne d’abord la tension vers le neutre, puis la tension entre phases. Quelques constructeurs l’écrivent à l’envers, <em>400 / 230</em> : lisez toujours l’intitulé.",
     "Sur un <strong>plan de puissance</strong>, trois traits verticaux descendent en parallèle. C’est la signature du triphasé, et elle se voit d’un coup d’œil.",
     "Les repères sont <strong>L1, L2, L3</strong>. Sur du matériel ancien, vous trouverez encore <em>R, S, T</em> — c’est la même chose."
   ],
@@ -68,20 +68,20 @@ ModeleGrandeur.construire({
     { question: "De combien sont décalées les trois tensions ?",
       confirmation: "D’un tiers de tour, soit 120 degrés.",
       reponses: [
-        { texte: "De 90 degrés.", pourquoi: "Ce serait un quart de tour : il n’y aurait pas de place pour trois." },
+        { texte: "De 90 degrés.", pourquoi: "Avec 90 degrés d’écart, la somme des trois ne serait pas nulle." },
         { texte: "De 180 degrés.", pourquoi: "Ce serait l’opposition, et deux suffiraient." },
         { texte: "Cela dépend de la charge.", pourquoi: "Le décalage vient de l’alternateur : la charge n’y change rien." },
         { texte: "De 120 degrés.", juste: true } ] },
 
-    { question: "Pourquoi le neutre peut-il être plus fin que les phases ?",
-      confirmation: "Parce que sur une installation équilibrée, les trois courants s’annulent.",
+    { question: "Pourquoi le neutre ne ramène-t-il presque rien quand les trois phases alimentent des charges identiques ?",
+      confirmation: "Parce que les trois courants s’annulent.",
       reponses: [
-        { texte: "Parce que sur une installation équilibrée, les trois courants s’annulent.", juste: true },
+        { texte: "Parce que les trois courants s’annulent.", juste: true },
         { texte: "Parce qu’il est relié à la terre.", pourquoi: "Ce raccordement ne dit rien du courant qu’il ramène." },
-        { texte: "Parce qu’il est moins dangereux.", pourquoi: "Le danger n’intervient pas dans le choix d’une section." },
+        { texte: "Parce qu’il est moins dangereux.", pourquoi: "Le danger n’a aucun rapport avec le courant ramené." },
         { texte: "Parce qu’il ne transporte jamais rien.", pourquoi: "Il transporte le déséquilibre, qui n’est jamais tout à fait nul." } ] },
 
-    { question: "Sur une prise triphasée avec neutre, combien de valeurs différentes mesure-t-on ?",
+    { question: "Sur une prise triphasée avec neutre, entre les quatre conducteurs actifs (sans le PE), combien de valeurs différentes mesure-t-on ?",
       confirmation: "Deux : 400 entre phases, 230 vers le neutre.",
       reponses: [
         { texte: "Six, une par paire de bornes.", pourquoi: "Il y a bien six mesures, mais elles ne donnent que deux valeurs." },

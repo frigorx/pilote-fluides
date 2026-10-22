@@ -17,7 +17,7 @@ ModeleAppareil.construire({
       alt: "Deux phrases d’un document de cours, chacune suivie de son symbole : le déclencheur thermique, dessiné par un crochet rectangulaire, détecte les surcharges ; le déclencheur magnétique, dessiné par un demi-cercle, détecte les courts-circuits.",
       titre: "Deux déclencheurs, deux signes.", sous: "Le crochet et le demi-cercle : vous les reconnaîtrez sur tous les plans." },
     { src: 'assets/biblio/courbes-b-c-d.jpg',
-      alt: "Les trois courbes normalisées B, C et D selon la NF C 61-410. La bande de déclenchement magnétique va de 3 à 5 fois le calibre en courbe B, de 5 à 10 en courbe C, de 10 à 20 en courbe D.",
+      alt: "Les trois courbes normalisées B, C et D, selon la NF EN 60898-1 (le document cite son ancienne référence, NF C 61-410). La bande de déclenchement magnétique va de 3 à 5 fois le calibre en courbe B, de 5 à 10 en courbe C, de 10 à 20 en courbe D.",
       titre: "Ce que dit la lettre.", sous: "À partir de combien de fois le calibre la bobine claque. B, C, ou D." },
     { src: 'assets/biblio/disjoncteurs-courbe-c.png',
       alt: "Planche de deux disjoncteurs modulaires de courbe C, avec leurs caractéristiques et leur pouvoir de coupure.",
@@ -68,8 +68,8 @@ ModeleAppareil.construire({
 
   symboles: [
     { src: 'assets/disjonct-m_3f.svg',
-      alt: "Symbole normalisé d’un disjoncteur magnéto-thermique à trois pôles : sur chaque pôle, le contact incliné, le crochet du déclencheur thermique et le demi-cercle du déclencheur magnétique.",
-      legende: "Trois pôles — le crochet et le demi-cercle" },
+      alt: "Symbole normalisé d’un disjoncteur magnéto-thermique à trois pôles : sur chaque pôle, la croix du disjoncteur, le contact incliné, le crochet du déclencheur thermique et le demi-cercle du déclencheur magnétique.",
+      legende: "Trois pôles — la croix, le crochet et le demi-cercle" },
     { src: 'assets/disjonct-m_1fn.svg',
       alt: "Symbole normalisé d’un disjoncteur magnéto-thermique un pôle plus neutre.",
       legende: "Un pôle + neutre — celui des tableaux d’habitation" },
@@ -79,16 +79,17 @@ ModeleAppareil.construire({
   ],
   lecturePlan: [
     "Le symbole porte <strong>les deux signes</strong> : le crochet du thermique et le demi-cercle du magnétique. Voir stations 8.5 et 8.6.",
+    "Sur chaque pôle, la <strong>croix ×</strong> est la marque du disjoncteur.",
     "<strong>Deux écritures du même appareil.</strong> Certains plans remplacent le demi-cercle par un rectangle contenant <em>I&gt;</em> — « au-dessus de tel courant ». C’est le même déclencheur, dit autrement. Un plan peut aussi porter les repères de bornes : 1-3-5 en entrée, 2-4-6 en sortie.",
     "<strong>Leur présence est la fiche technique de l’appareil</strong> : ce qu’il voit, et ce qu’il ne voit pas.",
-    "Repère <strong>Q</strong> ou <strong>F</strong> selon les écoles ; calibre et courbe écrits à côté."
+    "Repère <strong>Q</strong> ; calibre et courbe écrits à côté."
   ],
 
   quiz: [
     { question: "Que veut dire « C16 » sur un disjoncteur ?",
       confirmation: "La lettre est la courbe, le nombre le calibre.",
       reponses: [
-        { texte: "Courant de court-circuit de seize kiloampères.", pourquoi: "Le pouvoir de coupure s’écrit à part, en kA, dans un rectangle." },
+        { texte: "Courant de court-circuit de seize kiloampères.", pourquoi: "Le pouvoir de coupure s’écrit à part, dans un rectangle (4500 = 4,5 kA)." },
         { texte: "Classe 16 de protection.", pourquoi: "Il n’existe pas de « classe » notée ainsi sur un disjoncteur." },
         { texte: "Courbe C, calibre seize ampères.", juste: true },
         { texte: "Seize circuits protégés.", pourquoi: "Un disjoncteur protège un circuit, pas seize." } ] },

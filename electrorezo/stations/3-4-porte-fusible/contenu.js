@@ -56,15 +56,15 @@ ModeleAppareil.construire({
 
   cablage: [
     'Le fusible se place <strong>sur la phase</strong>, en tête du circuit protégé.',
-    '<strong>Jamais sur le conducteur de protection.</strong> Jamais sur le neutre en régime TT domestique.',
+    '<strong>Jamais sur le conducteur de protection.</strong>',
     'On remplace <strong>à l’identique</strong> : même taille, même courant, même lettre.',
     'Contacts propres et bien serrés : un mauvais contact fait fondre une cartouche saine.'
   ],
   piege: 'Le geste dangereux : retirer une cartouche sous tension. Il faut <strong>d’abord</strong> ouvrir un appareil qui sait couper, ensuite seulement toucher au fusible. Et jamais de fil de fer, jamais de papier d’aluminium à la place d’une cartouche.',
 
   symboles: [
-    { src: 'assets/porte_fusible_bi.svg', alt: 'Symbole normalisé d’un porte-fusible à deux pôles.', legende: 'Porte-fusible, deux pôles' },
-    { src: 'assets/pojistka3p.svg', alt: 'Symbole normalisé de trois fusibles sur trois pôles.', legende: 'Trois pôles' }
+    { src: 'assets/pojistka1p.svg', alt: 'Symbole normalisé d’un fusible : un petit rectangle traversé par le trait du circuit.', legende: 'Fusible, un pôle' },
+    { src: 'assets/pojistka3p.svg', alt: 'Symbole normalisé de trois fusibles sur trois pôles : trois petits rectangles, un par trait du circuit.', legende: 'Fusible, trois pôles' }
   ],
   lecturePlan: [
     'Un <strong>petit rectangle traversé par le trait du circuit</strong> : un des symboles les plus anciens et les plus simples de la norme.',

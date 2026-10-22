@@ -3,7 +3,7 @@
 ModeleGrandeur.construire({
   id: '1.1', ligne: 1,
   vue3d: { modele: 'circuit', options: { experience: 'courant' } },   /* 3D */
-  vue3dMesure: { modele: 'pince' },   /* 3D */
+  vue3dMesure: { modele: 'pince', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 1 Les grandeurs · Station 1',
   titre: "Le courant et l’intensité",
   narration: NARRATION,
@@ -15,8 +15,8 @@ ModeleGrandeur.construire({
       alt: "Photo d’une pince ampèremétrique dont l’écran affiche une valeur de courant de 1000 ampères.",
       titre: "Un nombre sur un écran.", sous: "C’est la seule façon de voir un courant." },
     { src: 'assets/biblio/pince-ouverte-autour-du-fil.jpeg',
-      alt: "Schéma d’une pince ampèremétrique ouverte, enserrant le fil d’une bobine alimentée par une pile.",
-      titre: "Sans rien toucher.", sous: "La pince entoure le fil et lit ce qui passe dedans." },
+      alt: "Schéma d’une pince ampèremétrique ouverte, mâchoires écartées, à côté d’une bobine : si la bobine est excitée, l’ampèremètre dévie.",
+      titre: "Sans rien toucher.", sous: "Pince ouverte : on la referme autour d’un seul fil, sans rien couper. (La bobine du dessin : un fil enroulé.)" },
     { src: 'assets/biblio/effets-du-courant-sur-le-corps.jpeg',
       alt: "Courbe normalisée des zones temps-courant : effets du courant alternatif sur le corps humain, du seuil de perception à la fibrillation.",
       titre: "Pourquoi c’est lui qui compte.", sous: "Ce n’est pas la tension qui tue : c’est le courant, et le temps." }
@@ -58,7 +58,7 @@ ModeleGrandeur.construire({
   },
   surUnePlaque: [
     "Sur la <strong>plaque d’un moteur</strong>, l’intensité absorbée est écrite à côté de chaque tension : <em>230 V — 6,65 A</em> et <em>400 V — 3,84 A</em>.",
-    "Sur un <strong>disjoncteur</strong>, le nombre écrit à côté de la lettre est le calibre en ampères. C’est ce que le câble derrière peut supporter.",
+    "Sur un <strong>disjoncteur</strong>, le nombre écrit à côté de la lettre est le calibre en ampères. Le câble derrière doit pouvoir le supporter.",
     "Sur un <strong>câble</strong>, l’intensité admissible n’est pas écrite : elle se déduit de la section, du mode de pose et de l’isolant.",
     "Prenez l’habitude de lire l’ampère écrit avant de brancher quoi que ce soit. C’est le nombre qui décide de tout le reste."
   ],
@@ -78,7 +78,7 @@ ModeleGrandeur.construire({
         { texte: "En parallèle, aux bornes de la charge.", pourquoi: "C’est la place du voltmètre. Un ampèremètre ainsi branché court-circuite la source." },
         { texte: "En série, dans le circuit.", juste: true },
         { texte: "Entre la phase et la terre.", pourquoi: "Ce serait créer volontairement un défaut d’isolement." },
-        { texte: "N’importe où sur la boucle : le courant y est le même.", pourquoi: "Le courant est bien le même partout, mais l’appareil doit être <em>dans</em> la boucle, pas à côté." } ] },
+        { texte: "Posé à côté du circuit, relié à rien : le courant y est le même.", pourquoi: "Un ampèremètre compte ce qui le traverse. Posé à côté, il ne compte rien : il doit être dans la boucle." } ] },
 
     { question: "On double l’intensité dans un câble. Que devient l’échauffement ?",
       confirmation: "Il est multiplié par quatre : la chaleur suit le carré du courant.",
@@ -101,7 +101,7 @@ ModeleGrandeur.construire({
     "<strong>I</strong>, en <strong>ampères</strong>. C’est un débit : une quantité par seconde.",
     "<strong>En série</strong> pour l’ampèremètre. <strong>Autour du fil</strong> pour la pince.",
     "<strong>La chaleur suit le carré</strong> du courant.",
-    "<strong>C’est le courant qui tue</strong>, pas la tension. Trente milliampères suffisent."
+    "<strong>C’est le courant qui tue</strong>, pas la tension. Vers 30 mA, le danger dépend de la durée du contact."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre que l’intensité est un débit, savoir la mesurer en série et à la pince, et connaître les ordres de grandeur du métier.</p><p><strong>Limite.</strong> Le sens conventionnel du courant et le déplacement réel des électrons ne sont qu’évoqués : ils ne changent rien à la pratique.</p>',

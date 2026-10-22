@@ -3,7 +3,7 @@
    Non validés, aucun MP3 fabriqué. */
 const NARRATION = {
 
-  decouvrir: `Dernière station de la ligne, et c'est celle qui explique pourquoi le triphasé a gagné.
+  decouvrir: `Cette station explique pourquoi le triphasé a gagné.
 Trois bobines fixes, dans le stator d'un moteur. Trois courants décalés d'un tiers de tour.
 Et il apparaît quelque chose qui n'a rien d'évident : un champ magnétique qui tourne. Alors
 qu'aucune pièce ne bouge.
@@ -55,9 +55,10 @@ dépannage qui remet les fils dans le désordre est un dépannage raté — et l
 qu'au démarrage suivant, souvent quand vous n'êtes plus là.`,
 
   representer: `La vitesse du champ tournant s'appelle la vitesse de synchronisme, et on la note n s.
-Elle dépend de deux choses seulement : la fréquence, et le nombre de paires de pôles du moteur.
-À cinquante hertz : trois mille tours par minute pour deux pôles, quinze cents pour quatre, mille
-pour six.
+Elle dépend de deux choses seulement : la fréquence, et le nombre de pôles du moteur, qu'on
+compte par paires. Deux pôles font une paire, quatre pôles font deux paires.
+À cinquante hertz : trois mille tours par minute pour une paire, c'est-à-dire deux pôles ;
+quinze cents pour deux paires, quatre pôles ; mille pour trois paires, six pôles.
 Le cas le plus courant en atelier, c'est quatre pôles : quinze cents tours par minute.
 Maintenant, un point que je veux clarifier, parce qu'il déroute beaucoup de gens.
 Sur la plaque d'un moteur à quatre pôles, vous ne lirez pas quinze cents. Vous lirez plutôt mille

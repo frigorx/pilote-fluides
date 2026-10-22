@@ -3,7 +3,7 @@
 ## Photographies
 - `contact-auxiliaire-temporise.png`
 - `bloc-temporise-sur-contacteur.png`
-- `minuterie-deux-boutons.png`
+- (retirée le 19/10/2026 : `minuterie-deux-boutons.png`, illisible et sans exploitation)
 
 Trouvées par `node outils/chercher-images.mjs`, dans la base de connaissances inerWeb
 (`C:\git\usine-contenu\moteur-recherche\illustrations`).

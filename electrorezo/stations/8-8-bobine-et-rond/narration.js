@@ -4,7 +4,8 @@
 const NARRATION = {
 
   decouvrir: `Deux lettres pour le prix d'une, parce qu'elles se répondent.
-Un rectangle traversé par le conducteur : c'est une bobine, quelque chose qui commande. Un rond
+Un grand rectangle, un fil qui arrive en haut, un fil qui repart en bas : c'est une bobine, quelque
+chose qui commande. Un rond
 avec une lettre dedans : c'est une machine, quelque chose qui consomme et qui travaille.
 D'un côté ce qui décide, de l'autre ce qui fait. Toute une installation tient dans cette
 distinction.`,
@@ -18,15 +19,15 @@ Il ne dit rien de ce qu'il y a dedans. Un moteur est une machine compliquée —
 rotor, des bobinages, des roulements. Le schéma s'en moque complètement.
 Ce qui l'intéresse, c'est deux choses seulement : que ça consomme, et combien de fils
 l'alimentent. Alors on dessine un rond, on met une lettre, et on compte les traits qui arrivent.
-Trois traits, trois fils, machine triphasée.
+Trois traits, trois fils, machine triphasée. Et à l'intérieur du rond, le chiffre trois suivi
+d'une petite vague le confirme : trois phases, en courant alternatif.
 Prenez un instant pour apprécier cette économie. Le schéma ne décrit pas les objets : il décrit
 comment ils sont branchés. C'est un plan de circulation, pas un catalogue.
 La lettre dans le rond dit la famille. M pour un moteur, G pour un générateur. Ces lettres sont
 les mêmes dans toute l'Europe.`,
 
   manipuler: `Retrouvez la bobine dans ces symboles.
-Puis regardez où elle se trouve dans un dossier complet : jamais dans le circuit de puissance,
-toujours du côté de la commande. Le schéma range les choses par rôle, pas par ressemblance.`,
+Elle n'est pas dans tous : regardez bien lesquels en portent une.`,
 
   representer: `Sur un plan complet, vous verrez le rond du moteur tout en bas du circuit de puissance.
 C'est le terminus : tout converge vers lui.

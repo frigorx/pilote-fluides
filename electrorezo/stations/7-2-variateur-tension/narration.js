@@ -40,7 +40,7 @@ Un rectangle barré en diagonale. De part et d'autre de la diagonale, deux signe
 ce qui sort.
 Pour un gradateur : le signe de l'alternatif des deux côtés. Il entre de l'alternatif, il sort de
 l'alternatif.
-Vous verrez à la station suivante un symbole de la même famille, mais avec autre chose écrit
+Vous verrez à la station sept point quatre un symbole de la même famille, mais avec autre chose écrit
 dedans. Et vous saurez immédiatement ce que fait l'appareil, sans notice.
 C'est exactement l'esprit de la ligne huit : on ne mémorise pas, on lit.
 Trois conseils de câblage pour finir.
@@ -48,7 +48,7 @@ Un gradateur se monte en série sur la phase, comme un interrupteur. Jamais en p
 Vérifiez la nature de la charge avant de choisir. Résistive, inductive, à LED : ce n'est pas la
 même électronique, et un gradateur mal choisi grille.
 Et laissez de la place autour de son radiateur. Encastré dans une boîte fermée, un gradateur
-déclasse fortement — parfois de moitié.
+déclasse fortement : sa puissance admissible chute.
 Enfin, la mise en garde qui reprend toute la station précédente : un gradateur ne convient pas à
 un moteur, sauf s'il est explicitement prévu pour. Sur un moteur asynchrone, le couple s'écroule
 et l'intensité monte.`

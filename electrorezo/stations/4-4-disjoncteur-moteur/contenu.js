@@ -9,11 +9,13 @@ ModeleAppareil.construire({
 
   prerequis: [
     { id: '4.3', quoi: "le magnéto-thermique" },
+    { id: '4.2', quoi: "le fusible aM" },
     { id: '3.2', quoi: "le sectionnement" },
+    { id: '1.7', quoi: "la plaque du moteur" },
   ],
 
   photos: [
-    { src: 'assets/biblio/disjoncteurs-gv2.jpg', alt: "Schémas techniques de disjoncteurs moteurs magnéto-thermiques, avec leurs plages de réglage.",
+    { src: 'assets/biblio/disjoncteurs-gv2.jpg', alt: "Schémas techniques de disjoncteurs moteurs magnéto-thermiques, avec leurs symboles et leurs dimensions.",
       titre: "Les plages de réglage.", sous: "Chaque modèle couvre une plage : on choisit celle où tombe l’intensité du moteur." },
     { src: 'assets/biblio/schema-disjoncteur-moteur.jpeg', alt: "Schéma d’un disjoncteur moteur repéré Q1, avec la numérotation de ses bornes.",
       titre: "Sur le plan.", sous: "Repéré Q1, en tête du départ, juste avant le contacteur." }
@@ -21,7 +23,7 @@ ModeleAppareil.construire({
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 
   aQuoiCaSert: "Protéger un moteur contre la surcharge <em>et</em> le court-circuit, avec un seul appareil réglable — et qui se condamne.",
-  ouOnLeTrouve: "En tête d’un départ moteur, à la place du couple fusible aM + relais thermique. Un appareil au lieu de deux.",
+  ouOnLeTrouve: "En tête d’un départ moteur, à la place du couple fusible aM + relais thermique (le relais thermique est l’appareil qui surveille la surcharge du moteur — station 4.7). Un appareil au lieu de deux.",
 
   scene: () => SchemasProtection.deuxDeclencheurs(),
   tableau: (id) => SchemasProtection.tableauDefauts(id),
@@ -31,8 +33,8 @@ ModeleAppareil.construire({
 
   technologie: [
     ["Les deux déclencheurs", "comme le magnéto-thermique : bilame pour la surcharge, bobine pour le court-circuit."],
-    ["La molette de réglage", "c’est ce qui le distingue. On règle le thermique sur <strong>l’intensité lue sur la plaque du moteur</strong>, pas au jugé."],
-    ["Le magnétique fixe", "il est calé très haut, autour de treize fois le courant réglé, pour laisser passer la pointe de démarrage."],
+    ["La molette de réglage", "c’est ce qui le distingue. On règle le thermique sur <strong>l’intensité lue sur la plaque du moteur</strong>, pas au jugé. La plaque donne deux intensités : une par couplage (triangle ou étoile, les deux façons de brancher les bobinages du moteur — station 1.7)."],
+    ["Le magnétique fixe", "il ne se règle pas : il est fixe, calé très haut — la valeur est donnée par la notice du constructeur — pour laisser passer la pointe de démarrage."],
     ["L’aptitude au sectionnement", "beaucoup de modèles se cadenassent : ils remplacent aussi le sectionneur du départ."]
   ],
 
@@ -59,18 +61,18 @@ ModeleAppareil.construire({
     "Contacts auxiliaires vers l’automate si le déclenchement doit être signalé.",
     "Poignée accessible, trou de cadenas dégagé si l’appareil sert aussi de sectionnement."
   ],
-  piege: "Régler au jugé, ou régler au maximum « pour ne pas être embêté ». Le réglage n’est pas un confort : c’est ce qui fait que le moteur est protégé ou non. Et si le moteur est recouplé — étoile au lieu de triangle — l’intensité change : le réglage aussi.",
+  piege: "Régler au jugé, ou régler au maximum « pour ne pas être embêté ». Le réglage n’est pas un confort : c’est ce qui fait que le moteur est protégé ou non. Et si le moteur est recouplé parce que la tension du réseau a changé (étoile au lieu de triangle, l’autre façon de brancher ses bobinages), l’intensité change : le réglage aussi.",
 
   symboles: [
     { src: 'assets/disjonct-m_3f.svg',
-      alt: "Symbole normalisé d’un disjoncteur à trois pôles : contact incliné, crochet du thermique, demi-cercle du magnétique, et la barre courte du sectionnement.",
-      legende: "Les trois signes : crochet, demi-cercle, barre" },
+      alt: "Symbole normalisé d’un disjoncteur à trois pôles : contact incliné, croix, crochet du thermique, demi-cercle du magnétique, et la barre courte du sectionnement.",
+      legende: "Quatre signes : croix, crochet, demi-cercle, barre" },
     { src: 'assets/dis_mag_term_3f-2.svg',
-      alt: "Symbole normalisé d’un disjoncteur moteur à trois pôles, avec ses repères de bornes.",
-      legende: "Le même, avec les repères de bornes" }
+      alt: "Symbole normalisé d’un disjoncteur moteur à trois pôles : la croix, le crochet, des rectangles marqués « I> » à la place du demi-cercle, et les repères de bornes.",
+      legende: "Le même, écrit avec I> et les repères de bornes" }
   ],
   lecturePlan: [
-    "Le symbole porte <strong>le crochet, le demi-cercle et souvent la barre</strong> du sectionnement : trois signes, trois capacités.",
+    "Le symbole porte la <strong>croix ×</strong>, marque du disjoncteur, puis <strong>le crochet, le demi-cercle et souvent la barre</strong> du sectionnement : trois signes, trois capacités.",
     "Repère <strong>Q</strong>, en tête du départ.",
     "Le réglage n’apparaît pas sur le symbole : il est écrit à côté, ou dans le carnet."
   ],
@@ -84,13 +86,13 @@ ModeleAppareil.construire({
         { texte: "Au maximum, par sécurité.", pourquoi: "Au maximum, le moteur n’est plus protégé du tout : c’est l’erreur la plus fréquente." },
         { texte: "Sur l’intensité lue sur la plaque du moteur.", juste: true } ] },
 
-    { question: "Un moteur passe du triangle à l’étoile. Le réglage change-t-il ?",
+    { question: "Un même moteur, dont la plaque porte deux intensités, passe du triangle à l’étoile parce que la tension du réseau change. Le réglage change-t-il ?",
       confirmation: "L’intensité absorbée change avec le couplage : le réglage aussi.",
       reponses: [
         { texte: "Oui : l’intensité absorbée n’est plus la même.", juste: true },
-        { texte: "Non, c’est le même moteur.", pourquoi: "Le moteur est le même, mais il n’absorbe pas la même intensité selon le couplage." },
+        { texte: "Non, c’est le même moteur.", pourquoi: "Le moteur est le même, mais la plaque donne une intensité par couplage : il n’absorbe pas la même selon qu’il est en triangle ou en étoile." },
         { texte: "Non, le disjoncteur s’adapte tout seul.", pourquoi: "Aucun disjoncteur moteur ne détecte le couplage." },
-        { texte: "Seulement si la tension change.", pourquoi: "La tension du réseau peut être identique et l’intensité changer quand même." } ] },
+        { texte: "Seulement si on change de moteur.", pourquoi: "Le même moteur, couplé autrement, absorbe une autre intensité : la plaque en donne une par couplage." } ] },
 
     { question: "Le disjoncteur moteur remplace…",
       confirmation: "Le couple fusible aM + relais thermique, en un seul appareil réglable.",

@@ -29,7 +29,8 @@ D'où la loi qui donne son nom à toute la ligne : on garde le rapport tension s
 constant.
 Quatre cents volts à cinquante hertz. Deux cents volts à vingt-cinq hertz. Quatre-vingts volts à
 dix hertz. Le rapport vaut huit dans les trois cas.
-Tant qu'il est tenu, le couple reste entier, à n'importe quelle vitesse. C'est ce qui rend le
+Tant qu'il est tenu, le couple reste entier, sur toute la plage que montre la scène, jusqu'à dix
+hertz. Plus bas, tout près de l'arrêt, la loi seule ne suffit plus. C'est ce qui rend le
 variateur de fréquence si supérieur au gradateur.
 Une dernière remarque, parce qu'elle a des conséquences. Au-dessus de cinquante hertz, la tension
 ne peut plus suivre : on est déjà au maximum de ce que le réseau donne.
@@ -44,7 +45,7 @@ côté. À la sortie, ce n'est plus vraiment de l'alternatif.
 Deuxième étage : le bus continu. Un gros condensateur lisse ce qui reste. On a maintenant du
 continu, autour de cinq cent quarante volts.
 Troisième étage : l'onduleur. Il redécoupe ce continu très rapidement, de façon à fabriquer une
-alternative à la fréquence qu'on veut. N'importe laquelle, de zéro à quelques centaines de
+tension alternative à la fréquence qu'on veut. N'importe laquelle, de zéro à quelques centaines de
 hertz.
 Voilà pourquoi un variateur ne peut pas être un simple transformateur : entre l'entrée et la
 sortie, l'énergie passe par du continu.
@@ -66,6 +67,5 @@ Le ventilateur d'un moteur est calé sur son arbre. Il tourne donc à la vitesse
 hertz, il tourne cinq fois moins vite, et il ne ventile pratiquement plus.
 Un moteur qui tourne longtemps à basse vitesse chauffe, alors même qu'il travaille peu.
 La solution, quand c'est nécessaire, c'est une ventilation forcée indépendante : un petit
-ventilateur alimenté séparément, qui souffle quelle que soit la vitesse du moteur.
-C'est une erreur de conception fréquente, et elle coûte des moteurs.`
+ventilateur alimenté séparément, qui souffle quelle que soit la vitesse du moteur.`
 };

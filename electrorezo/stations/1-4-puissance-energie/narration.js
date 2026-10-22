@@ -18,8 +18,8 @@ Maintenant, faites l'expérience que je vous propose, parce qu'elle est plus con
 n'importe quelle formule.
 Mettez deux mille watts pendant un quart d'heure. C'est un radiateur, un gros appareil, allumé un
 petit moment. Regardez le résultat : un demi-kilowattheure.
-Maintenant, cent watts pendant huit heures. C'est une veille, quelque chose de dérisoire, mais
-qui reste allumé. Regardez : huit dixièmes de kilowattheure.
+Maintenant, cent watts pendant huit heures. C'est un téléviseur, un petit appareil, mais qui
+reste allumé. Regardez : huit dixièmes de kilowattheure.
 Le petit appareil a consommé plus que le gros. Nettement plus.
 Voilà la leçon de cette station. Une puissance ne se paie pas. Ce qui se paie, c'est une
 puissance multipliée par un temps.
@@ -34,7 +34,7 @@ zéro virgule huit.`,
 
   manipuler: `Pour la mesure, il faut deux appareils différents, parce que ce sont deux grandeurs
 différentes.
-Un wattmètre, ou un multimètre qui sait le faire, donne la puissance. Ce qui passe maintenant.
+Un wattmètre, ou une pince wattmétrique, donne la puissance. Ce qui passe maintenant.
 Coupez l'appareil, l'affichage tombe à zéro immédiatement.
 Un compteur, lui, donne l'énergie. Et regardez bien la différence : un compteur ne redescend
 jamais. Il additionne, depuis le jour où il a été posé.
@@ -54,7 +54,7 @@ Et maintenant, je veux vous prévenir d'un piège qui trompe beaucoup de gens su
 moteur.
 Quand une plaque annonce un virgule cinq kilowatts, ce n'est pas ce que le moteur consomme. C'est
 ce qu'il rend, mécaniquement, sur son arbre.
-Pour rendre un virgule cinq, il en absorbe environ un virgule huit. La différence part en
+Pour rendre un virgule cinq, il en absorbe environ deux. La différence part en
 chaleur, dans les frottements et dans les pertes du bobinage. C'est ce qu'on appelle le
 rendement.
 Alors si vous dimensionnez un câble ou une protection à partir du chiffre de la plaque, vous

@@ -18,7 +18,7 @@ Aujourd'hui c'est un circuit électronique qui charge un condensateur. Autrefois
 l'horlogerie, ou même un piston qui laissait fuir de l'air par un petit trou calibré. Le principe
 n'a pas changé : quelque chose met un certain temps, et ce temps est réglable.
 Maintenant, les deux façons de compter. C'est le cœur de la station, alors suivez bien le
-chronogramme.
+chronogramme : ce graphique où le temps s'écoule de gauche à droite.
 Première façon : temporisé au travail. Vous alimentez la bobine, et il ne se passe rien. Le
 contact attend. Au bout du délai réglé, il bascule. Et quand vous coupez, il revient tout de
 suite, sans attendre.

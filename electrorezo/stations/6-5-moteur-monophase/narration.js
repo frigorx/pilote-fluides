@@ -38,7 +38,7 @@ Elles donnent les mêmes réponses que pour le moteur triphasé : la différence
 pas dans ce qu'ils font, mais dans ce qu'il leur faut pour démarrer.`,
 
   representer: `Sur un plan, c'est le même rond marqué M, mais avec deux traits qui arrivent au lieu de trois,
-et le signe un vague.
+et le signe un, suivi d'une petite vague : une phase, en courant alternatif.
 Le condensateur se dessine par deux traits parallèles, courts et épais, qui ne se touchent pas.
 Ce vide entre les deux traits, c'est l'isolant du condensateur : deux plaques face à face, jamais
 en contact.
@@ -50,9 +50,11 @@ l'enroulement auxiliaire. Pas celles de l'alimentation.
 C'est exactement le contraire du triphasé, où on échange deux phases d'alimentation. Beaucoup
 de gens font l'erreur, tournent la phase et le neutre, et s'étonnent que rien ne change.
 La seconde, et c'est un vrai diagnostic. Un moteur monophasé qui ronfle sans démarrer, et qui
-part si on le lance à la main dans le sens où on l'a lancé : c'est le condensateur.
-Ce symptôme est tellement caractéristique qu'il vaut diagnostic. Avant de démonter quoi que ce
-soit, allez vérifier le condensateur.
+part si on le lance à la main dans le sens où on l'a lancé : l'enroulement auxiliaire ne travaille
+pas.
+Ce symptôme est très caractéristique. Avant de démonter quoi que ce soit, allez vérifier le
+condensateur, c'est la cause la plus fréquente. Puis, si ce n'est pas lui, le contact centrifuge
+ou le relais de démarrage, l'enroulement et les connexions.
 Et attention en le manipulant : un condensateur reste chargé après la coupure. On le décharge
 avant d'y toucher, avec une résistance — pas en le court-circuitant brutalement avec un
 tournevis.`

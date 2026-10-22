@@ -10,6 +10,7 @@ ModeleAppareil.construire({
   prerequis: [
     { id: '1.1', quoi: "le courant" },
     { id: '1.4', quoi: "la puissance" },
+    { id: '4.3', quoi: "le calibre d’un disjoncteur" },
   ],
 
   photos: [
@@ -40,12 +41,12 @@ ModeleAppareil.construire({
     "<strong>H07 V-U</strong> — fil rigide sous conduit, l’installation fixe.",
     "<strong>H07 RN-F</strong> — souple et résistant, pour les alimentations mobiles.",
     "<strong>U-1000 R2V</strong> — le câble d’installation par excellence, enterré ou apparent.",
-    "La désignation se lit lettre par lettre : tension, isolant, souplesse. Ce n’est pas un code commercial, c’est une description."
+    "La désignation se lit lettre par lettre. <strong>Exemple résolu</strong>, H07 V-U : <strong>H</strong> = câble harmonisé (norme européenne) ; <strong>07</strong> = tension 450/750 V ; <strong>V</strong> = isolant PVC ; <strong>U</strong> = âme rigide pleine, un seul brin (R : âme rigide câblée, plusieurs brins). Ce n’est pas un code commercial, c’est une description."
   ],
 
   aptitudes: {
     surcharge: false, courtCircuit: false, defautIsolement: false,
-    bonneReponse: "Aucun des trois, bien sûr : un câble ne détecte rien. Mais c’est <strong>lui qu’on protège</strong>. Le calibre d’un disjoncteur ou d’un fusible se choisit d’après sa section — jamais l’inverse. Toute la ligne 4 existe pour lui.",
+    bonneReponse: "Aucun des trois, bien sûr : un câble ne détecte rien. Mais c’est <strong>lui qu’on protège</strong>. Le calibre d’un disjoncteur ou d’un fusible ne doit jamais dépasser ce que le câble supporte. Le fusible et le disjoncteur de circuit protègent d’abord le câble.",
     erreurs: {
       surcharge: "Un câble ne détecte pas la surcharge : il la subit, il chauffe, et il vieillit.",
       courtCircuit: "Il ne détecte pas le court-circuit : il le conduit, et c’est bien le problème.",
@@ -54,7 +55,7 @@ ModeleAppareil.construire({
   },
 
   cablage: [
-    "<strong>Section choisie avant le calibre</strong> de la protection. Toujours dans cet ordre.",
+    "Le <strong>calibre de la protection ne dépasse jamais ce que le câble supporte</strong> : on ne l’augmente pas sans revoir la section.",
     "Mode de pose pris en compte : un câble sous isolant chauffe plus qu’un câble à l’air libre.",
     "<strong>Embouts sur le fil souple</strong>, serrage au couple, longueur de dénudage juste.",
     "Repérage aux deux extrémités : un câble non repéré coûte une heure de recherche."
@@ -62,13 +63,13 @@ ModeleAppareil.construire({
   piege: "Augmenter le calibre du disjoncteur parce qu’il déclenche, sans toucher au câble. Le disjoncteur ne protège pas la machine : il protège le câble. Un calibre trop grand, c’est un câble qui chauffe sans que rien ne l’arrête — et un incendie possible des mois plus tard.",
 
   symboles: [
-    { src: 'assets/cable_3wires.svg', alt: "Symbole normalisé d’un câble à trois conducteurs.", legende: "Un câble, trois conducteurs" },
-    { src: 'assets/cable.svg', alt: "Symbole normalisé d’un câble.", legende: "Un câble" }
+    { src: 'assets/section3.svg', alt: "Symbole normalisé d’un câble de trois conducteurs : un trait avec trois petits traits obliques, un par conducteur.", legende: "Trois conducteurs : trois petits traits obliques" },
+    { src: 'assets/section2conducteurs.svg', alt: "Symbole normalisé d’un câble de deux conducteurs : un trait avec deux petits traits obliques.", legende: "Deux conducteurs : deux petits traits obliques" }
   ],
   lecturePlan: [
     "Sur un schéma, le câble est souvent réduit à un simple trait — la lettre de la <strong>station 8.1</strong>.",
     "Sa vraie description est ailleurs : dans le <strong>carnet de câbles</strong>, avec sa section, sa désignation et sa longueur.",
-    "Quand plusieurs conducteurs suivent le même trajet, le plan peut les regrouper d’un trait oblique portant leur nombre."
+    "Quand plusieurs conducteurs suivent le même trajet, le plan peut les regrouper : un petit trait oblique par conducteur."
   ],
 
   quiz: [
@@ -83,18 +84,18 @@ ModeleAppareil.construire({
     { question: "Un câble trop chargé, que se passe-t-il ?",
       confirmation: "Il chauffe, l’isolant vieillit, puis lâche.",
       reponses: [
-        { texte: "Il fond immédiatement.", pourquoi: "Il ne fond pas : il chauffe lentement, et c’est justement ce qui rend le danger discret." },
+        { texte: "Il fond immédiatement.", pourquoi: "Pas immédiatement : il chauffe lentement, et c’est justement ce qui rend le danger discret." },
         { texte: "Il chauffe, et son isolant vieillit jusqu’à lâcher.", juste: true },
         { texte: "Rien tant que le disjoncteur ne déclenche pas.", pourquoi: "Justement : si le calibre est trop élevé, il ne déclenchera pas." },
         { texte: "La tension chute mais rien d’autre.", pourquoi: "La chute de tension existe, mais l’échauffement est le vrai danger." } ] },
 
-    { question: "Dans quel ordre choisit-on section et calibre ?",
-      confirmation: "La section d’abord, le calibre ensuite.",
+    { question: "Quelle règle relie le calibre de la protection et le câble ?",
+      confirmation: "Le calibre ne dépasse jamais ce que le câble supporte.",
       reponses: [
-        { texte: "Selon le prix du cuivre.", pourquoi: "Le coût peut orienter un projet, mais jamais la règle de protection." },
-        { texte: "Peu importe, les deux se valent.", pourquoi: "L’ordre est déterminant : la protection découle du conducteur." },
-        { texte: "La section d’abord, puis le calibre.", juste: true },
-        { texte: "Le calibre d’abord, puis la section adaptée.", pourquoi: "Ce serait choisir la protection avant de savoir ce qu’on protège." } ] },
+        { texte: "Le calibre se choisit selon le prix du cuivre.", pourquoi: "Le coût peut orienter un projet, mais jamais la règle de protection." },
+        { texte: "Le calibre peut dépasser ce que le câble supporte.", pourquoi: "Non : le câble chaufferait sans que rien ne l’arrête." },
+        { texte: "Le calibre ne dépasse jamais ce que le câble supporte.", juste: true },
+        { texte: "On peut augmenter le calibre sans revoir la section.", pourquoi: "Ce serait laisser le câble chauffer sans protection." } ] },
 
     { question: "Quelles couleurs sont réservées ?",
       confirmation: "Bleu clair pour le neutre, vert et jaune pour le conducteur de protection.",
@@ -102,12 +103,20 @@ ModeleAppareil.construire({
         { texte: "Marron et gris.", pourquoi: "Également des couleurs de phase." },
         { texte: "Rouge et noir.", pourquoi: "Ce sont des couleurs de phase, utilisables librement." },
         { texte: "Aucune, c’est libre.", pourquoi: "Deux sont strictement réservées, et les employer ailleurs est une faute grave." },
-        { texte: "Bleu clair, et vert-jaune.", juste: true } ] }
+        { texte: "Bleu clair, et vert-jaune.", juste: true } ] },
+
+    { question: "Dans la désignation H07 V-U, que veut dire la lettre V ?",
+      confirmation: "V : l’isolant est en PVC. (H : harmonisé ; 07 : 450/750 V ; U : âme rigide pleine.)",
+      reponses: [
+        { texte: "La tension du câble.", pourquoi: "La tension est donnée par le nombre 07, soit 450/750 V." },
+        { texte: "L’isolant : du PVC.", juste: true },
+        { texte: "La souplesse de l’âme.", pourquoi: "Ici l’âme est rigide : c’est la lettre U qui le dit." },
+        { texte: "Le nombre de conducteurs.", pourquoi: "Le nombre de conducteurs s’écrit ailleurs, avec la section : 3G2,5 par exemple." } ] }
   ],
 
   retenir: [
-    "<strong>C’est le câble qu’on protège.</strong> Toute la ligne 4 existe pour lui.",
-    "<strong>Section d’abord, calibre ensuite.</strong> Jamais l’inverse.",
+    "<strong>Le fusible et le disjoncteur de circuit protègent d’abord le câble.</strong>",
+    "<strong>Le calibre ne dépasse jamais ce que le câble supporte.</strong> On ne l’augmente pas sans revoir la section.",
     "Un câble trop chargé chauffe, et l’isolant lâche des mois plus tard.",
     "<strong>Bleu clair et vert-jaune sont réservés.</strong>"
   ],

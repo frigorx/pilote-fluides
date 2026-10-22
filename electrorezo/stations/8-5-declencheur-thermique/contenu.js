@@ -12,8 +12,8 @@ ModeleSigne.construire({
     { id: '4.3', quoi: "le déclencheur thermique" },
   ],
 
-  ceQuelleDit: "Un crochet courbe, accroché à un appareil de protection. Il dit : cet appareil surveille la chaleur, et il déclenche quand le courant dure trop longtemps au-dessus du normal.",
-  ouOnLaVoit: "Sur le relais thermique, sur le disjoncteur magnéto-thermique, sur le disjoncteur moteur. Jamais seul : toujours accroché à un contact.",
+  ceQuelleDit: "Un petit crochet carré, accroché à un appareil de protection. Il dit : cet appareil surveille la chaleur, et il déclenche quand le courant dure trop longtemps au-dessus du normal.",
+  ouOnLaVoit: "Sur le relais thermique, sur le disjoncteur magnéto-thermique, sur le disjoncteur moteur. Jamais seul : toujours sur le trait du courant d’un appareil de protection.",
 
   pourquoiCetteForme: [
     "<strong>Ce crochet, c’est un bilame vu de profil.</strong> Deux métaux différents collés en une seule lame.",
@@ -26,22 +26,23 @@ ModeleSigne.construire({
   motVedette: 'magnetoThermique',
 
   symbolesBiblio: [
-    { src: 'assets/relais_mono.svg', alt: "Symbole normalisé d’un relais thermique.", legende: "Un relais thermique" }
+    { src: 'assets/relais_mono.svg', alt: "Symbole normalisé d’un relais thermique : trois crochets carrés posés sur les trois conducteurs, dans un cadre en pointillé.", legende: "Un relais thermique, avec son cadre en pointillé (station 8.7)" },
+    { src: 'assets/organe_relais_thermique.svg', alt: "Symbole de l’organe de commande d’un relais thermique : un rectangle, avec à l’intérieur le même crochet carré.", legende: "Autre écriture : le même crochet, dans un rectangle" }
   ],
   duDessinAuPlan: [
-    "Sur les symboles officiels, le bilame se dessine <strong>parfois comme un crochet, parfois comme un rectangle avec une ligne brisée</strong> à l’intérieur. Les deux se rencontrent.",
+    "Sur les symboles officiels, le bilame se dessine <strong>parfois par le crochet seul, parfois par le même crochet à l’intérieur d’un rectangle</strong> (l’organe de commande du relais). Les deux se rencontrent.",
     "Ce qui ne change jamais : <strong>de la chaleur, du temps, et une protection contre les surcharges lentes</strong>.",
-    "Un appareil qui porte ce signe se règle : le courant de réglage est écrit à côté."
+    "Sur un relais thermique ou un disjoncteur moteur, il se règle : le courant de réglage est écrit à côté. Un disjoncteur magnéto-thermique de logement, lui, n’est pas réglable."
   ],
 
   quiz: [
-    { question: "D’où vient la forme courbe de ce signe ?",
-      confirmation: "C’est le portrait de la pièce : un bilame déformé par la chaleur.",
+    { question: "Que représente le crochet carré de ce signe ?",
+      confirmation: "C’est le portrait de la pièce : un bilame, qui se courbe quand la chaleur monte.",
       reponses: [
-        { texte: "De la courbe de déclenchement tracée sur une abaque.", pourquoi: "Les abaques existent, mais ce n’est pas ce que le signe représente." },
-        { texte: "D’un bilame qui se courbe en chauffant.", juste: true },
-        { texte: "D’un choix graphique arbitraire, à mémoriser.", pourquoi: "Presque aucun signe de cette norme n’est arbitraire : ils viennent des mécanismes." },
-        { texte: "De la forme du boîtier de l’appareil.", pourquoi: "Les boîtiers sont rectangulaires, et de toute façon la norme ne dessine pas les boîtiers." } ] },
+        { texte: "Une courbe de déclenchement tracée sur une abaque.", pourquoi: "Les abaques existent, mais ce n’est pas ce que le signe représente." },
+        { texte: "Un bilame (deux métaux collés) qui se courbe en chauffant.", juste: true },
+        { texte: "Un choix graphique arbitraire, à mémoriser.", pourquoi: "Presque aucun signe de cette norme n’est arbitraire : ils viennent des mécanismes." },
+        { texte: "La forme du boîtier de l’appareil.", pourquoi: "La norme ne dessine pas les boîtiers : le signe représente la pièce qui travaille à l’intérieur." } ] },
 
     { question: "Un relais thermique protège-t-il contre un court-circuit ?",
       confirmation: "Le bilame est trop lent : le court-circuit est fini avant qu’il bouge.",
@@ -69,18 +70,18 @@ ModeleSigne.construire({
   ],
 
   retenir: [
-    "<strong>Le crochet courbe = un bilame</strong>, vu de profil.",
+    "<strong>Le crochet carré = un bilame</strong>, vu de profil.",
     "Il surveille <strong>la chaleur et la durée</strong> : les surcharges lentes.",
     "<strong>Il ne voit pas le court-circuit</strong> — trop rapide pour lui.",
     "Le dessin n’est pas un code : c’est le portrait de la pièce."
   ],
 
-  objectifs: '<p><strong>Objectif.</strong> Comprendre que le crochet courbe représente un bilame, savoir ce qu’il protège et ce qu’il ne protège pas.</p>',
+  objectifs: '<p><strong>Objectif.</strong> Comprendre que le crochet carré représente un bilame, savoir ce qu’il protège et ce qu’il ne protège pas.</p>',
 
   credits: [
     { quoi: 'Symboles normalisés EN 60617',
       source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/200_fuses_protective_gears/30_thermal_relays/' },
+      detail: 'svg/10_electric/10_allpole/200_fuses_protective_gears/30_thermal_relays/ · svg/10_electric/91_en_60617/en_60617_07/en_60617_07_15/en_60617_07_15_21.svg' },
     { quoi: 'Dessins de décomposition des signes',
       source: 'tracés pour ÉlectroRézo dans stations/_commun/signes.js',
       detail: 'représentations pédagogiques inspirées de la norme, faites pour être décomposées' } ],

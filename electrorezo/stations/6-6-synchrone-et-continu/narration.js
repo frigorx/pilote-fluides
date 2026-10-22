@@ -43,16 +43,17 @@ Faites attention à la troisième : il est le seul de toute la ligne à y répon
 Deux indices les distinguent, et ils sont rapides à lire.
 Le premier : le nombre de traits qui arrivent. Deux pour un continu ou un monophasé, trois pour
 un triphasé.
-Le second : le petit signe écrit à côté. Le trait du continu, un vague pour le monophasé, trois
-vague pour le triphasé.
+Le second : le petit signe écrit dans le rond. Pour le continu, un trait plein au-dessus d'un trait
+en tirets. Pour le monophasé, le chiffre un suivi d'une vague, et pour le triphasé, le chiffre trois
+suivi d'une vague.
 Et pour le moteur à courant continu, il y a un détail supplémentaire : deux petits traits de
 chaque côté du rond, qui figurent les balais.
 Cherchez ces deux traits. Ils sont la signature d'un moteur à collecteur, et ils annoncent un
 entretien.
 Un dernier conseil, très pratique, pour lire une plaque.
-Si la vitesse annoncée est un nombre rond — quinze cents, trois mille, mille — vous avez
-affaire à un synchrone.
-Si c'est un nombre bizarre — mille quatre cent trente-cinq, deux mille neuf cents — c'est un
-asynchrone, et l'écart au nombre rond est son glissement.
-C'est un indice fiable, et il ne coûte rien à vérifier.`
+Si la vitesse annoncée est un nombre bizarre — mille quatre cent trente-cinq, deux mille neuf
+cents — c'est un asynchrone, à coup sûr, et l'écart au nombre rond est son glissement.
+Si c'est un nombre rond — quinze cents, trois mille, mille — ça ne prouve rien : cherchez aussi
+la mention synchrone sur la plaque.
+Ça ne coûte rien à vérifier.`
 };

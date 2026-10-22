@@ -15,14 +15,14 @@ ModeleGrandeur.construire({
   photos: [
     { src: 'assets/biblio/compteur-kwh.jpeg',
       alt: "Photo d’un compteur électrique à totalisateur, affichant l’énergie consommée en kilowattheures.",
-      titre: "Le totalisateur.", sous: "Il ne redescend jamais : il additionne." },
-    { src: 'assets/biblio/compteur-kwh-2.jpeg',
-      alt: "Photo d’un second compteur électrique monté sur son support, avec son affichage en kilowattheures.",
-      titre: "C’est lui qui facture.", sous: "Deux relevés, une soustraction : voilà la consommation." }
+      titre: "Le totalisateur.", sous: "Il ne redescend jamais : il additionne. Modèle ancien à rouleaux, avec des mots allemands : « Wechselstromzähler » veut dire compteur de courant alternatif." },
+    { src: 'assets/biblio/compteur-linky.jpg',
+      alt: "Photo d’un compteur Linky vert, le compteur électronique des logements en France : son écran donne l’énergie en kilowattheures.",
+      titre: "C’est lui qui facture.", sous: "Le compteur Linky d’aujourd’hui. Deux relevés, une soustraction : voilà la consommation." }
   ],
 
   lIdee: "La puissance, c’est ce qu’un appareil demande à un instant donné. L’énergie, c’est ce qu’il a fini par consommer. Ce sont deux choses différentes, et les confondre coûte cher — au sens propre.",
-  ouOnLaRencontre: "Les watts sont écrits sur tout : ampoules, radiateurs, moteurs, plaques de cuisson. Les kilowattheures, eux, ne sont écrits nulle part sur les appareils. Ils sont sur une seule chose : la facture.",
+  ouOnLaRencontre: "Les watts sont écrits sur tout : ampoules, radiateurs, moteurs, plaques de cuisson. Les kilowattheures, eux, ne sont pas écrits sur les appareils. Ils sont sur le compteur et sur la facture.",
 
   scene: () => SchemasGrandeurs.puissanceEtEnergie(),
 
@@ -41,7 +41,7 @@ ModeleGrandeur.construire({
 
   mesure: () => SchemasGrandeurs.compteurEnergie(),
   instrument: [
-    "Le <strong>wattmètre</strong>, ou un multimètre qui en fait office, donne la puissance <strong>à l’instant</strong>.",
+    "Le <strong>wattmètre</strong> (ou une pince wattmétrique) donne la puissance <strong>à l’instant</strong>.",
     "Le <strong>compteur</strong> donne l’énergie <strong>depuis sa pose</strong>. Il ne redescend jamais.",
     "Pour connaître une consommation : deux relevés, et une soustraction. Il n’y a pas d’autre méthode.",
     "Pour estimer sans compteur : multipliez la puissance par le nombre d’heures. L’ordre de grandeur suffit presque toujours."
@@ -58,7 +58,7 @@ ModeleGrandeur.construire({
   surUnePlaque: [
     "Sur une <strong>plaque de moteur</strong>, la puissance écrite — par exemple 1,5 kW — est la puissance <strong>mécanique rendue sur l’arbre</strong>. Ce n’est pas celle absorbée au réseau, qui est plus grande.",
     "Sur une <strong>ampoule</strong> ou un <strong>radiateur</strong>, la puissance écrite est bien celle qui est absorbée.",
-    "La différence tient au <strong>rendement</strong> : un moteur qui rend 1,5 kW en absorbe environ 1,8. La différence part en chaleur.",
+    "La différence tient au <strong>rendement</strong> : un moteur qui rend 1,5 kW en absorbe environ 2. La différence part en chaleur.",
     "Le <strong>cos φ</strong> écrit sur la plaque est le facteur de puissance. Il vaut typiquement 0,8 : il faut donc appeler bien plus que ce qui travaille."
   ],
 
@@ -71,10 +71,10 @@ ModeleGrandeur.construire({
         { texte: "Le kilowattheure vaut mille watts.", pourquoi: "Mille watts font un kilowatt : le kilowattheure ajoute une durée." },
         { texte: "Le watt est un débit, le kilowattheure est un total.", juste: true } ] },
 
-    { question: "Un radiateur de 2000 W allumé un quart d’heure, ou une veille de 100 W allumée dix heures : lequel consomme le plus ?",
-      confirmation: "500 Wh contre 1000 Wh : la veille consomme le double.",
+    { question: "Un radiateur de 2000 W allumé un quart d’heure, ou un téléviseur de 100 W allumé dix heures : lequel consomme le plus ?",
+      confirmation: "500 Wh contre 1000 Wh : le téléviseur consomme le double.",
       reponses: [
-        { texte: "La veille : deux fois plus.", juste: true },
+        { texte: "Le téléviseur : deux fois plus.", juste: true },
         { texte: "Les deux exactement pareil.", pourquoi: "500 wattheures contre 1000 : ce n’est pas la même chose." },
         { texte: "Impossible à dire sans connaître la tension.", pourquoi: "La puissance est déjà donnée : la tension n’est plus nécessaire." },
         { texte: "Le radiateur, il est bien plus puissant.", pourquoi: "La puissance ne suffit pas : il faut la multiplier par la durée." } ] },
@@ -91,7 +91,7 @@ ModeleGrandeur.construire({
       confirmation: "Deux relevés du compteur, et une soustraction.",
       reponses: [
         { texte: "En lisant le compteur une fois.", pourquoi: "Un relevé unique donne un total depuis la pose, pas une consommation sur une période." },
-        { texte: "En mesurant la puissance avec une pince.", pourquoi: "La pince donne l’instant, pas l’accumulation." },
+        { texte: "En mesurant la puissance avec un wattmètre.", pourquoi: "Le wattmètre donne l’instant, pas l’accumulation." },
         { texte: "En relevant le compteur deux fois et en soustrayant.", juste: true },
         { texte: "En additionnant les puissances de tous les appareils.", pourquoi: "Cela donnerait une puissance, et sans tenir compte des durées de marche." } ] }
   ],

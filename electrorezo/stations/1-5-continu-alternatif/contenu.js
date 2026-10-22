@@ -17,9 +17,9 @@ ModeleGrandeur.construire({
       alt: "À gauche une batterie et sa trace continue, plate, avec un plus et un moins. À droite une prise du réseau et sa trace alternative, qui monte et descend, avec une phase et un neutre.",
       titre: "Deux familles.", sous: "Deux objets, deux allures, deux façons de brancher." }
   ],
-  creditPhoto: 'Coupe dessinée pour cette station. Détail dans « Crédits ».',
+  creditPhoto: 'Illustration dessinée pour cette station. Détail dans « Crédits ».',
 
-  lIdee: "Il y a deux façons pour un courant de circuler. Soit il garde toujours le même sens — c’est le continu. Soit il change de sens sans arrêt, cinquante fois par seconde — c’est l’alternatif. Ce n’est pas une nuance : les deux ne se branchent pas de la même façon et ne se mesurent pas sur la même position.",
+  lIdee: "Il y a deux façons pour un courant de circuler. Soit il garde toujours le même sens — c’est le continu. Soit il change de sens sans arrêt : cinquante allers-retours par seconde, soit cent changements de sens — c’est l’alternatif. Ce n’est pas une nuance : les deux ne se branchent pas de la même façon et ne se mesurent pas sur la même position.",
   ouOnLaRencontre: "L’alternatif partout où il y a une prise. Le continu dans les batteries, les alimentations, les panneaux photovoltaïques, et sur toutes les cartes électroniques — y compris celles qui sont dans une machine alimentée en alternatif.",
 
   scene: () => SchemasGrandeurs.continuAlternatif(),
@@ -31,7 +31,7 @@ ModeleGrandeur.construire({
     ["Pourquoi le réseau est alternatif", "parce qu’un transformateur ne fonctionne qu’en alternatif. C’est ce qui permet de transporter l’énergie en très haute tension, puis de redescendre près des habitations."]
   ],
   aRetenir: [
-    "En continu, on écrit <strong>DC</strong> ou un trait plein ; en alternatif, <strong>AC</strong> ou une petite vague.",
+    "En continu, on écrit <strong>DC</strong> ou le signe ⎓ (un trait plein au-dessus d’un trait pointillé) ; en alternatif, <strong>AC</strong> ou une petite vague ~.",
     "Ces deux signes sont sur tous les appareils et sur tous les sélecteurs de multimètre.",
     "Un appareil peut contenir les deux : l’alimentation entre en alternatif, la carte travaille en continu."
   ],
@@ -103,8 +103,8 @@ ModeleGrandeur.construire({
 
   objectifs: '<p><strong>Objectif.</strong> Distinguer continu et alternatif, comprendre ce que « 230 V » désigne réellement, et choisir la bonne position de mesure.</p><p><strong>Limite.</strong> Le déphasage entre tension et courant, et le calcul en régime alternatif, sont hors du champ de cette station.</p>',
   credits: [
-    { quoi: 'Illustrations', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' } ],
+    { quoi: 'Illustration', source: 'dessinée pour cette station',
+      detail: 'deux-familles.svg : aucun document de cours n’est repris' } ],
 
   correspondances: [
     { ligne: 1, couleur: '#2e6f9e', texte: "1.6 La fréquence" },

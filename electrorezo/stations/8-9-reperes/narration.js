@@ -8,10 +8,10 @@ Sur un plan, chaque appareil porte un repère : une lettre, un chiffre. Q1, KM2,
 Ce ne sont pas des noms choisis au hasard par le dessinateur pour s'y retrouver. Ce sont des
 codes, et ils appartiennent à la même écriture que les symboles.`,
 
-  comprendre: `La lettre dit la famille de l'appareil. Q, c'est ce qui coupe la puissance : sectionneurs,
-disjoncteurs, interrupteurs de tête. KM, c'est un contacteur. F, c'est une protection : fusible,
+  comprendre: `La lettre dit la famille de l'appareil. Q, ce sont les sectionneurs, les
+disjoncteurs, les interrupteurs de tête. KM, c'est un contacteur. F, c'est une protection : fusible,
 relais thermique. S, c'est un organe de commande manuelle : bouton, sélecteur. H, c'est un
-voyant ou une signalisation.
+voyant ou une signalisation. M, c'est un moteur. Et X, c'est un bornier.
 Le chiffre, lui, ne fait que numéroter. Le premier, le deuxième. Il ne veut rien dire d'autre,
 et ne cherchez pas de logique cachée dedans.
 À quoi ça sert vraiment ? À deux choses, et la seconde est bien plus intéressante que la
@@ -19,7 +19,7 @@ première.
 La première, évidente : retrouver un appareil dans une armoire. Le repère est écrit sur le plan,
 et il est aussi collé sur l'appareil.
 La seconde, et c'est celle que je veux que vous reteniez : relier des morceaux dispersés.
-Souvenez-vous du pointillé de la station précédente. Si vous voyez la bobine KM1 dans le
+Souvenez-vous du pointillé de la station huit point sept. Si vous voyez la bobine KM1 dans le
 circuit de commande, et un contact marqué KM1 dans le circuit de puissance, vous savez que
 c'est le même appareil. Même si aucun trait ne les relie. Même s'ils sont sur deux pages
 différentes.
@@ -28,8 +28,9 @@ Un mot enfin sur les numéros aux bornes, parce que ceux-là non plus ne sont pa
 contact marqué treize et quatorze est un contact ouvert au repos. Marqué vingt et un et
 vingt-deux, il est fermé au repos. Les chiffres eux-mêmes portent l'information.`,
 
-  manipuler: `Voici des repères et des appareils. Associez chacun à ce qu'il désigne.
-La première lettre suffit : c'est elle qui dit la famille. Le chiffre, vous pouvez l'ignorer
+  manipuler: `Voici des repères en haut, et des appareils en dessous. Cliquez sur un repère, puis sur
+l'appareil qu'il désigne. Un exemple est déjà fait pour vous : F1, le fusible.
+La lettre dit la famille. Le chiffre, vous pouvez l'ignorer
 pour cet exercice.`,
 
   representer: `Sur un plan bien fait, le repère est toujours écrit du même côté du symbole, à la même

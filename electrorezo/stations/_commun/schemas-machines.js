@@ -141,6 +141,10 @@ ${ecart ? `<line x1="150" y1="${206 - ecart}" x2="390" y2="${206 - ecart}" strok
       const U2 = U1 * N2 / N1;
       const I1 = P / U1, I2 = U2 > 0 ? P / U2 : 0;
       const spires = n => Math.max(4, Math.min(14, Math.round(n / 90)));
+      /* la phrase du bas suit le réglage : la tension peut descendre, monter, ou ne pas bouger */
+      const phrase = U2 < U1 ? 'La tension descend, le courant monte. Le produit des deux ne bouge pas.'
+                   : U2 > U1 ? 'La tension monte, le courant descend. Le produit des deux ne bouge pas.'
+                   : 'La tension et le courant restent les mêmes. Le produit des deux ne bouge pas.';
       const bob = (x, n, coul) => Array.from({ length: spires(n) }, (_, i) =>
         `<path d="M${x} ${104 + i * 12} q22 6 0 12" fill="none" stroke="${coul}" stroke-width="3"/>`).join('');
       d.innerHTML = `
@@ -173,7 +177,7 @@ ${bob(410, N2, C.orange)}
 <text x="320" y="198" text-anchor="middle" font-size="12" fill="${C.gris}">la puissance</text>
 <text x="320" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="${C.vert}">${P} W</text>
 
-<text x="350" y="324" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">La tension descend, le courant monte. Le produit des deux ne bouge pas.</text>`;
+<text x="350" y="324" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">${phrase}</text>`;
     };
     /* le flux ALTERNATIF : les tirets bleus vont et viennent dans le fer, au rythme du réseau
        (ralenti) — c'est lui qui relie les deux bobinages, sans aucun fil entre eux */
@@ -354,7 +358,7 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
   /* ============================================================ 7.1 / 7.2 — varier la tension */
   function baisserLaTension() {
     const hote = document.createElement('div');
-    const d = svg('0 0 700 320', 'On baisse la tension d’un moteur asynchrone : la vitesse bouge à peine, mais le couple s’effondre.');
+    const d = svg('0 0 700 320', 'On baisse la tension d’un moteur asynchrone ordinaire sous couple constant : la vitesse bouge à peine, mais le couple s’effondre.');
     let U = 400;
 
     const peindre = () => {
@@ -393,7 +397,8 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
 <text x="560" y="196" text-anchor="middle" font-size="12" fill="${C.gris}">${cale ? 'il s’arrête' : 'elle baisse à peine'}</text>
 <text x="560" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="${C.navy}">et l’intensité monte : ${nb(I, 1)} A</text>
 
-<text x="350" y="290" text-anchor="middle" font-size="13" fill="${C.gris}">Baisser la tension d’un moteur asynchrone ne le ralentit presque pas. Ça l’affaiblit, et ça le fait chauffer.</text>`;
+<text x="350" y="272" text-anchor="middle" font-size="13" fill="${C.gris}">Sur un moteur asynchrone ordinaire sous couple constant, baisser la tension</text>
+<text x="350" y="292" text-anchor="middle" font-size="13" fill="${C.gris}">ne le ralentit presque pas. Ça l’affaiblit, et ça le fait chauffer.</text>`;
     };
     peindre();
     hote.appendChild(d);
@@ -401,7 +406,7 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
     const p = document.createElement('p');
     p.className = 'legende';
     p.textContent = 'Descendez à 280 volts : le couple est tombé à la moitié, et la vitesse n’a presque pas bougé. '
-      + 'C’est pour cela qu’on ne règle pas la vitesse d’un moteur asynchrone en jouant sur la tension.';
+      + 'C’est pour cela qu’on ne règle pas la vitesse d’un moteur asynchrone ordinaire, sous couple constant, en jouant sur la tension.';
     hote.appendChild(p);
     return hote;
   }
@@ -524,13 +529,14 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
     const p = document.createElement('p');
     p.className = 'legende';
     p.textContent = 'Descendez à 25 hertz avec la tension qui suit : 200 volts, rapport tenu, couple intact. '
-      + 'Refaites-le avec la tension bloquée à 400 : le rapport double, et le moteur sature.';
+      + 'Refaites-le avec la tension bloquée à 400 : le rapport double, et le moteur sature. '
+      + 'La scène s’arrête à 10 hertz : tout près de l’arrêt, la loi U/f seule ne suffit plus à tenir le couple.';
     hote.appendChild(p);
     return hote;
   }
 
   function troisEtagesDuVariateur() {
-    const d = svg('0 0 760 300', 'Un variateur de fréquence en trois étages : il redresse, il lisse, puis il refabrique une alternative à la fréquence voulue.');
+    const d = svg('0 0 760 300', 'Un variateur de fréquence en trois étages : il redresse, il lisse, puis il refabrique une tension alternative à la fréquence voulue.');
     d.innerHTML = `
 <rect x="8" y="8" width="744" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="380" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Il ne transforme pas : il défait, puis il refait</text>

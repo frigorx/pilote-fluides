@@ -19,8 +19,8 @@ ModeleAppareil.construire({
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 
-  aQuoiCaSert: "Protéger un moteur contre la <strong>surcharge</strong>, et rien d’autre. Il ne coupe pas la puissance lui-même : il ouvre un contact qui fait retomber le contacteur.",
-  ouOnLeTrouve: "Directement sous le contacteur du départ moteur, avec un fusible aM ou un disjoncteur en amont pour le court-circuit.",
+  aQuoiCaSert: "Protéger un moteur contre la <strong>surcharge</strong>, et rien d’autre. Il ne coupe pas la puissance lui-même : il ouvre un contact qui fait retomber le contacteur (le <strong>contacteur</strong> est l’interrupteur à bobine qui commande le moteur, vu à la station 5.2 ; « retomber » veut dire que ses contacts s’ouvrent quand sa bobine n’est plus alimentée).",
+  ouOnLeTrouve: "Directement sous le contacteur du départ moteur, avec un fusible aM ou un disjoncteur magnétique seul (sans thermique) en amont pour le court-circuit.",
 
   scene: () => SchemasProtection.bilameReglage(),
   tableau: (id) => SchemasProtection.tableauDefauts(id),
@@ -44,17 +44,17 @@ ModeleAppareil.construire({
 
   aptitudes: {
     surcharge: true, courtCircuit: false, defautIsolement: false,
-    bonneReponse: "La surcharge, et uniquement elle. Le bilame est bien trop lent pour un court-circuit — c’est pour ça qu’il ne travaille jamais sans fusible aM ou disjoncteur en amont.",
+    bonneReponse: "La surcharge, et uniquement elle. Le bilame est bien trop lent pour un court-circuit — c’est pour ça qu’il ne travaille jamais sans fusible aM ou disjoncteur magnétique seul (sans thermique) en amont.",
     erreurs: {
       surcharge: "Il voit la surcharge : c’est exactement son métier, et il le fait mieux que personne sur un moteur.",
-      courtCircuit: "⚠️ Il ne voit PAS le court-circuit. Le bilame n’a pas le temps de se courber : le défaut est fini avant. Il lui faut un fusible aM ou un disjoncteur en amont.",
+      courtCircuit: "⚠️ Il ne voit PAS le court-circuit. Le bilame n’a pas le temps de se courber : le défaut est fini avant. Il lui faut un fusible aM ou un disjoncteur magnétique seul (sans thermique) en amont.",
       defautIsolement: "Il ne voit pas le défaut d’isolement : il ne mesure aucune différence entre l’aller et le retour."
     }
   },
 
   cablage: [
     "<strong>Entre le contacteur et le moteur</strong>, sur les trois phases.",
-    "<strong>95-96 dans le circuit de commande</strong>, en série avec la bobine du contacteur.",
+    "<strong>95-96 dans le circuit de commande</strong> — le petit circuit qui alimente la bobine du contacteur — en série avec cette bobine.",
     "97-98 vers le voyant ou l’automate, pour signaler.",
     "Réglage sur <strong>l’intensité de la plaque</strong>, pour le couplage réellement posé."
   ],
@@ -93,7 +93,7 @@ ModeleAppareil.construire({
         { texte: "Parce qu’il ne voit pas le court-circuit.", juste: true },
         { texte: "Parce qu’il chauffe trop.", pourquoi: "Son échauffement est le principe même de son fonctionnement." },
         { texte: "Parce qu’il n’a pas de contact.", pourquoi: "Il en a : 95-96 et 97-98." },
-        { texte: "Parce qu’il n’a pas de pouvoir de coupure.", pourquoi: "C’est vrai, mais la raison de fond est qu’il ne détecte pas le court-circuit." } ] },
+        { texte: "Parce qu’il se règle sur la tension du réseau.", pourquoi: "Il se règle sur l’intensité de la plaque, pas sur la tension." } ] },
 
     { question: "Sur quoi se règle un relais thermique ?",
       confirmation: "Sur l’intensité de la plaque, pour le couplage posé.",
@@ -107,7 +107,7 @@ ModeleAppareil.construire({
   retenir: [
     "<strong>Il ne voit que la surcharge</strong>, et il la voit très bien.",
     "<strong>Il ne coupe rien</strong> : il ouvre 95-96, le contacteur retombe.",
-    "<strong>Jamais seul</strong> : fusible aM ou disjoncteur en amont.",
+    "<strong>Jamais seul</strong> : fusible aM ou disjoncteur magnétique seul (sans thermique) en amont.",
     "Réglé sur l’intensité de la plaque, pour le couplage posé."
   ],
 

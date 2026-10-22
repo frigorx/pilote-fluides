@@ -7,7 +7,8 @@ Trouvées par `node outils/chercher-images.mjs "sectionneur porte-fusible tripol
 
 | Fichier local | Origine | Comment elle a été trouvée |
 |---|---|---|
-| `assets/biblio/consignation-macaron.png` | base de connaissances inerWeb, document de cours | recherche « sectionneur porte-fusible tripolaire » |
+| `assets/biblio/sectionneurs-porte-fusibles-tripolaires.jpeg` | base de connaissances inerWeb, document de cours CAP « Appareillage industriel » (deux sectionneurs porte-fusibles Schneider LS1 et GK1 ; origine et licence à vérifier avant toute publication) | recherche « sectionneur porte-fusibles tripolaire » (22/10/2026). Remplace `porte-fusible-mural.jpeg` (un élément modulaire marqué N et 380 V, pas un sectionneur porte-fusible) |
+| `assets/biblio/appareillages-normalises.jpeg` | planche Promotelec « symboles normalisés de l'appareillage d'installation » (base de connaissances) | déjà affichée au temps 1 ; ajoutée ici car elle manquait aux sources |
 
 ⚠️ **Droits.** Ces images viennent des documents de cours des collègues. Décision de
 F. Henninot le 28/08 : **on garde, on cite discrètement, on remplacera en cas de souci.**

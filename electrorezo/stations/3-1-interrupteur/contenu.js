@@ -60,7 +60,7 @@ ModeleAppareil.construire({
   piege: 'Erreur classique : couper le neutre au lieu de la phase. Le circuit s’éteint, tout paraît normal… et l’installation reste sous tension.',
 
   symboles: [
-    { src: 'assets/015_inter_2.svg', alt: 'Symbole normalisé d’un interrupteur unipolaire.', legende: 'Interrupteur, un pôle' },
+    { src: 'assets/010_switch_1pos.svg', alt: 'Symbole normalisé d’un interrupteur unipolaire : un trait fixe en haut, une lame articulée en bas et ouverte vers la gauche.', legende: 'Interrupteur, un pôle' },
     { src: 'assets/012_switch_dpst.svg', alt: 'Symbole normalisé d’un interrupteur bipolaire.', legende: 'Interrupteur, deux pôles' }
   ],
   lecturePlan: [
@@ -99,7 +99,7 @@ ModeleAppareil.construire({
         { texte: 'Qu’il protège le circuit jusqu’à 10 ampères.', pourquoi: 'Un interrupteur ne protège rien. Protéger, c’est le métier de la ligne 4.' },
         { texte: 'Qu’il faut l’alimenter en 250 volts exactement.', pourquoi: 'C’est une tension maximale admise, pas une tension exigée.' },
         { texte: 'Qu’il accepte de couper jusqu’à 10 A, sous 250 V au plus.', juste: true },
-        { texte: 'Qu’il consomme 10 ampères.', pourquoi: 'Un interrupteur ne consomme rien : il laisse passer, ou il n’laisse pas passer.' } ] }
+        { texte: 'Qu’il consomme 10 ampères.', pourquoi: 'Un interrupteur ne consomme rien : il laisse passer, ou il ne laisse pas passer.' } ] }
   ],
 
   retenir: [

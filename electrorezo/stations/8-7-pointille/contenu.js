@@ -10,6 +10,7 @@ ModeleSigne.construire({
 
   prerequis: [
     { id: '5.2', quoi: "le contacteur" },
+    { id: '8.2', quoi: "le contact" },
   ],
 
   ceQuelleDit: "Une ligne interrompue qui ne conduit aucun courant. Elle dit : ces deux pièces sont solidaires mécaniquement, même si elles sont loin l’une de l’autre sur le plan.",
@@ -22,17 +23,18 @@ ModeleSigne.construire({
     "<strong>Quand vous voyez un pointillé, arrêtez-vous</strong> : il y a un morceau de cet appareil ailleurs. C’est la lettre qui apprend qu’un schéma se lit dans les deux sens."
   ],
 
-  motsOuOnLaTrouve: ['contacteur', 'fusible', 'sectionneur'],
+  motsOuOnLaTrouve: ['contacteur', 'fusible', 'moteur'],
   motVedette: 'contacteur',
 
   symbolesBiblio: [
-    { src: 'assets/bobine3.svg', alt: "Symbole normalisé d’une bobine de contacteur.", legende: "Une bobine" },
-    { src: 'assets/bobine_tempo_travail.svg', alt: "Symbole normalisé d’une bobine temporisée au travail.", legende: "Une bobine temporisée" }
+    { src: 'assets/bobine3.svg', alt: "Symbole normalisé d’une bobine de contacteur : un grand rectangle, un fil en haut, un fil en bas.", legende: "Une bobine : pas de pointillé, elle est seule sur ce dessin" },
+    { src: 'assets/act_electromagnetique_no.svg', alt: "Symbole normalisé d’un contact et, à gauche, de l’électro-aimant qui le commande, reliés par une ligne en pointillé.", legende: "Un contact, son électro-aimant et le pointillé qui les relie" },
+    { src: 'assets/interrupteur_sectionneur_biphase.svg', alt: "Symbole normalisé d’un interrupteur-sectionneur à deux pôles : deux contacts côte à côte, reliés par une ligne en pointillé.", legende: "Un interrupteur-sectionneur à deux pôles : le pointillé relie les deux pôles" }
   ],
   duDessinAuPlan: [
     "Sur les vrais plans, ce pointillé est <strong>souvent remplacé par un repère identique</strong> écrit à deux endroits : la bobine porte KM1, les contacts aussi.",
-    "<strong>Le lien n’est plus dessiné, il est écrit.</strong> Vous rencontrerez les deux façons.",
-    "C’est justement l’objet de la station 8.9, sur les repères."
+    "<strong>Le lien n’est plus dessiné, il est écrit.</strong> Vous rencontrerez les deux façons. C’est justement l’objet de la station 8.9, sur les repères.",
+    "Le pointillé relie aussi les pôles d’un même appareil dessinés côte à côte, comme les deux pôles de l’interrupteur-sectionneur ci-dessus."
   ],
 
   quiz: [
@@ -60,12 +62,12 @@ ModeleSigne.construire({
         { texte: "Je considère que le plan est incomplet.", pourquoi: "Le plan est complet : il vous dit précisément d’aller voir plus loin." },
         { texte: "J’ignore le pointillé, il n’est pas électrique.", pourquoi: "Il n’est pas électrique, mais il porte une information capitale." } ] },
 
-    { question: "Un fusible porte-t-il un pointillé ?",
-      confirmation: "Il est tout entier au même endroit.",
+    { question: "Une cartouche de fusible seule porte-t-elle un pointillé ?",
+      confirmation: "Elle est tout entière au même endroit, et rien n’y bouge.",
       reponses: [
         { texte: "Oui, vers son porte-fusible.", pourquoi: "Le porte-fusible et la cartouche se dessinent d’un seul symbole." },
         { texte: "Cela dépend du calibre.", pourquoi: "Le calibre ne change rien à la représentation." },
-        { texte: "Non : il est tout entier au même endroit.", juste: true },
+        { texte: "Non : elle est tout entière au même endroit.", juste: true },
         { texte: "Oui, vers le voyant de fusion.", pourquoi: "Quand un voyant existe, il se dessine à part, avec son propre repère." } ] }
   ],
 
@@ -81,7 +83,7 @@ ModeleSigne.construire({
   credits: [
     { quoi: 'Symboles normalisés EN 60617',
       source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/310_relays_contactors_contacts/01_coils/' },
+      detail: 'svg/10_electric/10_allpole/310_relays_contactors_contacts/01_coils/ · 03_contacts/ · 200_fuses_protective_gears/20_disconnecting_switches/interrupteur_sectionneur_biphase.svg' },
     { quoi: 'Dessins de décomposition des signes',
       source: 'tracés pour ÉlectroRézo dans stations/_commun/signes.js',
       detail: 'représentations pédagogiques inspirées de la norme, faites pour être décomposées' } ],

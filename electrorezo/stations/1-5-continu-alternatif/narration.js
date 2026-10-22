@@ -6,7 +6,7 @@ const NARRATION = {
   decouvrir: `Jusqu'ici, j'ai parlé du courant comme s'il coulait toujours dans le même sens. C'est vrai
 d'une moitié de l'électricité, et faux de l'autre.
 Il y a deux familles. Le continu, qui garde toujours le même sens. Et l'alternatif, qui change de
-sens cinquante fois par seconde.
+sens sans arrêt : cinquante allers-retours par seconde, donc cent changements de sens.
 Ce n'est pas une nuance de spécialiste. Les deux ne se branchent pas pareil, ne se mesurent pas
 pareil, et ne se remplacent pas l'une par l'autre.`,
 
@@ -34,7 +34,8 @@ Tout le réseau électrique européen tient à cette propriété-là.`,
 
   manipuler: `Passons à la mesure, et je vais vous montrer le piège le plus dangereux de toute cette ligne.
 Sur un multimètre, il y a une position pour l'alternatif et une position pour le continu. Deux
-petits signes : une vague, et un trait.
+petits signes : une petite vague pour l'alternatif, et pour le continu un trait plein au-dessus
+d'un trait pointillé.
 Regardez maintenant les deux écrans sur le dessin. Même prise, même appareil, même instant. Seul
 le sélecteur a changé.
 En position alternatif : deux cent trente et un volts. La vraie valeur.

@@ -2,7 +2,7 @@
 
 ## Les symboles
 
-Les 38 symboles de cette station ne sont pas de nouveaux fichiers : ce sont les
+Les symboles de cette station ne sont pas de nouveaux fichiers : ce sont les
 **mêmes exemplaires** que ceux affichés dans les stations d'origine, recopiés ici
 pour que la station reste autonome hors du réseau. Ils viennent tous de la
 bibliothèque inerWeb de symboles, convertie depuis **QElectroTech** (licence GPL) :
@@ -17,7 +17,7 @@ Seule la fenêtre a changé ; aucun trait n'a bougé.
 | Fichier | Ce qu'il représente | Vu d'abord en |
 |---|---|---|
 | `015_inter_2.svg` | Un interrupteur | 3.1 |
-| `sectionneur_general.svg` | Un sectionneur | 3.2 |
+| `sectionneur4.svg` | Un sectionneur (trois lames, trois barres courtes) | 3.2 |
 | `interrupteur_sectionneur_biphase.svg` | Un interrupteur-sectionneur | 3.3 |
 | `porte_fusible_bi.svg` | Un porte-fusible | 3.4 |
 | `sectionneur_fusible_bi.svg` | Un sectionneur porte-fusible | 3.5 |
@@ -38,12 +38,12 @@ Seule la fenêtre a changé ; aucun trait n'a bougé.
 | `electrovanne.svg` | Une électrovanne | 6.1 |
 | `transfo_mono.svg` · `transfo_tri.svg` | Transformateurs | 6.2 |
 | `moteur_tri.svg` | Un moteur triphasé | 6.3 |
-| `moteur_mono.svg` | Un moteur monophasé | 6.5 |
+| `moteur_mono1.svg` | Un moteur monophasé (M et 1 ~) | 6.5 |
 | `moteur_dc.svg` | Un moteur à courant continu | 6.6 |
-| `ac1_ac1.svg` | Un gradateur | 7.2 |
-| `static_freq_converter.svg` · `redresseur.svg` | Variateur de fréquence, redresseur | 7.4 |
-| `cross.svg` · `jump.svg` | Croisement, saut | 8.1 |
-| `borne_3.svg` | Un bornier | 8.9 |
+| `ac1_ac1.svg` | Un convertisseur alternatif vers alternatif (gradateur) | 7.2 |
+| `dc_ac1.svg` · `redresseur.svg` | Onduleur, redresseur | 7.4 |
+| `cross.svg` · `jump.svg` | Croisement avec connexion (point), saut (symbole ancien) | 8.1 |
+| `borne_3.svg` | Une borne (petit cercle ouvert) | 8.9 |
 
 ## Ce que la station n'invente pas
 
@@ -56,3 +56,11 @@ Les mauvaises réponses sont tirées **d'abord dans la même famille** que la bo
 Ce n'est pas pour durcir le jeu : c'est que personne ne confond un moteur avec un
 fusible. Ce qu'on confond, ce sont deux appareils voisins dont l'un autorise à
 travailler derrière et l'autre non. C'est cette confusion-là qui se travaille.
+
+## Correction du 19/10/2026 (audit V1)
+
+`contact_relais.svg` (contact du relais THERMIQUE, bilame compris, proposé à côté de « contact normalement ouvert ») est retiré du jeu ; `sectionneur_general.svg` (fusibles et pointillés) remplacé par `sectionneur4.svg` ; `static_freq_converter.svg` (schéma-bloc anglais) remplacé par `dc_ac1.svg` ; `moteur_mono.svg` par `moteur_mono1.svg` (signe 1 ~).
+
+## Correction du 22/10/2026 (re-audit)
+
+`015_inter_2.svg` (inverseur à trois bornes) remplacé par `010_switch_1pos.svg` (le fichier de la station 3.1) ; `ddr2.svg` (disjoncteur différentiel, avec croix) remplacé par `int_diff2.svg` (le fichier de la station 4.5) ; `ground1.svg` (nommé « Masse ») remplacé par `terre.svg` (le fichier de la station 4.8). Score, total et seuil du jeu retirés : le journal « raté, station N.M » reste.

@@ -62,14 +62,14 @@ ModeleAppareil.construire({
   piege: "Un transformateur <strong>ne fabrique pas de puissance</strong>. Ce qu’il rend, il l’a pris — moins ses pertes. Baisser la tension fait monter le courant dans le même rapport : ne dimensionnez jamais le câble du secondaire sur l’intensité du primaire.",
 
   symboles: [
-    { src: 'assets/transfo_mono.svg', alt: "Symbole normalisé d’un transformateur monophasé : deux cercles qui se recouvrent.", legende: "Monophasé" },
+    { src: 'assets/transfo_mono.svg', alt: "Symbole normalisé d’un transformateur monophasé : deux cercles qui se recouvrent, avec un petit trait à gauche qui touche leur espace commun : l’écran.", legende: "Monophasé, avec son écran (le petit trait à gauche)" },
     { src: 'assets/transfo_tri.svg', alt: "Symbole normalisé d’un transformateur triphasé.", legende: "Triphasé" },
     { src: 'assets/tranfo230_400_12_24.svg', alt: "Symbole d’un transformateur à plusieurs primaires et plusieurs secondaires, 230 ou 400 volts vers 12 ou 24 volts.", legende: "Plusieurs tensions" }
   ],
   lecturePlan: [
     "Le symbole est fait de <strong>deux cercles qui se recouvrent</strong>. Ils figurent les deux bobinages, couplés sans se toucher.",
-    "Regardez bien : les cercles ne sont pas reliés par un trait. Ce vide entre eux <strong>est</strong> l’information — il n’y a pas de liaison électrique.",
-    "Un <strong>trait entre les deux</strong> désigne un écran de séparation, sur les transformateurs qui en portent un.",
+    "Regardez bien : aucun trait ne passe d’un cercle à l’autre. Ce vide entre eux <strong>est</strong> l’information — il n’y a pas de liaison électrique.",
+    "Le premier symbole porte, à gauche, un <strong>petit trait qui touche l’espace commun des deux cercles</strong> : c’est un écran de séparation, sur les transformateurs qui en portent un. Il ne relie pas le primaire au secondaire.",
     "Les tensions sont écrites de part et d’autre : <em>230 V</em> d’un côté, <em>24 V</em> de l’autre. Et le sens compte : c’est celui du plan qui dit lequel est le primaire."
   ],
 

@@ -4,12 +4,12 @@
 const NARRATION = {
 
   decouvrir: `On change de famille, et il faut que vous vous en rendiez compte tout de suite.
-Les trois appareils précédents ouvraient et fermaient un circuit à votre demande. Celui-ci ne
-s'ouvrira jamais tout seul, et vous ne le manœuvrerez pas non plus. Il attend.
+Les trois appareils précédents ouvraient et fermaient un circuit à votre demande. Celui-ci, vous
+ne le manœuvrez pas : il attend, et c'est la cartouche, à l'intérieur, qui coupe toute seule.
 Le porte-fusible, comme son nom l'indique, ne fait que porter. Ce qui travaille, c'est la
 cartouche posée à l'intérieur : un petit tube rempli de sable, avec un fil de métal au milieu.
-Et ce fil, notez bien, est fait pour mourir. C'est le seul composant de toute votre installation
-dont la fonction est de se détruire.`,
+Et ce fil, notez bien, est fait pour mourir. C'est un des rares composants dont la fonction est
+de se détruire.`,
 
   comprendre: `Le principe est vieux comme l'électricité, et personne n'a trouvé mieux pour un usage
 simple. Regardons pourquoi.

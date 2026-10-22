@@ -6,8 +6,8 @@ const NARRATION = {
   decouvrir: `Arrêtons-nous un instant sur ce qui rend cette station particulière.
 Depuis le début de la ligne, tout est commandé par une bobine. Le contacteur obéit à une bobine.
 Le relais obéit à une bobine. Le temporisé aussi.
-Ici, pour la première et la dernière fois, c'est un être humain qui agit directement sur le
-contact. Avec son doigt.
+Ici, c'est l'un des rares endroits de la ligne où un être humain agit directement sur le contact,
+avec son doigt. Vous retrouverez l'autre grand cas à la station cinq point huit : l'arrêt d'urgence.
 C'est le point d'entrée de toute la commande. Sans lui, rien ne démarre jamais.`,
 
   comprendre: `Première chose à comprendre : un bouton n'est pas une pièce, c'est un empilement de trois.
@@ -37,7 +37,7 @@ circuit. Un poussoir a besoin d'un auto-maintien pour que la machine continue de
 sélecteur, non : il tient tout seul.`,
 
   manipuler: `Les trois questions, pour un bouton-poussoir — pas pour un sélecteur.
-Vous allez voir : c'est la seule station de la ligne où l'on répond non aux trois. Et pourtant,
+Vous allez voir : ici aussi, on répond non aux trois. Et pourtant,
 sans lui, rien ne démarre.`,
 
   representer: `Sur un plan, le poussoir se reconnaît à sa tête.

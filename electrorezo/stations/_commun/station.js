@@ -369,9 +369,10 @@ const Station = (() => {
     }
 
     function conclure() {
-      compteur.textContent = bons + ' bons gestes sur ' + jeu.cas.length;
+      /* jeu.fin : un seul message, sans décompte ni seuil (doctrine : aucun score affiché) */
+      compteur.textContent = jeu.fin ? 'Terminé' : bons + ' bons gestes sur ' + jeu.cas.length;
       fiche.innerHTML = '';
-      fiche.appendChild(el('p', null, bons === jeu.cas.length ? jeu.reussite : jeu.echec));
+      fiche.appendChild(el('p', null, jeu.fin || (bons === jeu.cas.length ? jeu.reussite : jeu.echec)));
       choix.innerHTML = '';
       const b = el('button', 'primary', 'Rejouer'); b.type = 'button';
       b.addEventListener('click', () => { i = 0; bons = 0; journal.innerHTML = ''; poser(); });

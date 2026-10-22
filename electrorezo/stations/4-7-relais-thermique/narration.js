@@ -17,9 +17,11 @@ travers. Je vais le dire lentement.
 Ce relais ne coupe pas le moteur.
 Ce que le mécanisme ouvre, c'est un tout petit contact, marqué quatre-vingt-quinze et
 quatre-vingt-seize. Ce contact-là n'est pas dans le circuit de puissance : il est dans le
-circuit de commande, en série avec la bobine du contacteur.
-Quand il s'ouvre, la bobine n'est plus alimentée. Le contacteur retombe. Et c'est le contacteur
-qui coupe la puissance.
+circuit de commande, le petit circuit qui alimente la bobine du contacteur. Le contacteur, c'est
+l'interrupteur à bobine qui commande le moteur ; vous le verrez à la station cinq point deux.
+Ce contact est en série avec la bobine.
+Quand il s'ouvre, la bobine n'est plus alimentée. Le contacteur retombe, c'est-à-dire que ses
+contacts s'ouvrent. Et c'est le contacteur qui coupe la puissance.
 Le relais, lui, n'a fait que donner l'ordre.
 Prenez la mesure de ce que ça implique sur le terrain. Si le contact quatre-vingt-quinze
 quatre-vingt-seize n'est pas raccordé — parce qu'on a oublié, parce qu'on a bricolé, parce que
@@ -27,7 +29,7 @@ quelqu'un l'a ponté pour dépanner — le relais chauffera, il déclenchera con
 le vide, et le moteur continuera de tourner jusqu'à ce qu'il brûle.
 Enfin, souvenez-vous de sa limite, que vous connaissez déjà. Le bilame est lent. Un
 court-circuit est fini avant qu'il ait bougé. C'est pour ça qu'en amont, il y a toujours un
-fusible aM ou un disjoncteur.`,
+fusible aM ou un disjoncteur magnétique seul, sans thermique.`,
 
   manipuler: `Trois défauts, un seul qu'il voit.
 Cochez, et rappelez-vous pourquoi il ne peut pas en voir davantage : c'est une question de

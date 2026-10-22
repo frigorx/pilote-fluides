@@ -26,7 +26,8 @@ Mais — et je veux vraiment que vous reteniez ce mais — tout se paie. Puisque
 surintensités passagères, il ignore aussi les surcharges qui durent. Un moteur qui force
 pendant une heure, qui chauffe, qui s'abîme lentement : l'aM ne bougera pas.
 D'où une règle qui n'a aucune exception. L'aM ne travaille jamais seul. À côté de lui, il y a
-toujours un relais thermique, qui s'occupe des surcharges. Deux appareils, deux métiers, et
+toujours un relais thermique — l'appareil qui surveille la surcharge du moteur, vous le verrez à
+la station quatre point sept — qui s'occupe des surcharges. Deux appareils, deux métiers, et
 ensemble ils couvrent tout.
 Ne cherchez pas à faire l'économie de l'un des deux. Ce n'est pas de la ceinture et des
 bretelles : ce sont deux protections qui ne voient pas la même chose.`,

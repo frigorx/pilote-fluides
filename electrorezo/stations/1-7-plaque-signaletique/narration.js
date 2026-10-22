@@ -25,7 +25,7 @@ Retenez celle qui correspond à votre couplage. C'est le nombre le plus utile de
 Troisième ligne : la puissance. Un virgule cinq kilowatt.
 Et voici le piège dont je vous ai parlé à la station quatre. Cette puissance-là, c'est ce que le
 moteur rend sur son arbre. Pas ce qu'il absorbe. Pour rendre un virgule cinq, il absorbe environ
-un virgule huit — la différence part en chaleur.
+deux kilowatts — la différence part en chaleur.
 Quatrième ligne : la vitesse. Mille quatre cent trente-cinq tours par minute.
 Vous vous attendiez peut-être à quinze cents, puisque c'est la valeur théorique à cinquante
 hertz. Eh bien non, et ce n'est pas une erreur. Un moteur asynchrone ne tourne jamais tout à fait

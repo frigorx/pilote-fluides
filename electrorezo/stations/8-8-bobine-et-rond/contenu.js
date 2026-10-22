@@ -13,13 +13,13 @@ ModeleSigne.construire({
     { id: '6.3', quoi: "le moteur" },
   ],
 
-  ceQuelleDit: "Un rectangle barré : une bobine, ce qui commande. Un rond avec une lettre : une machine, ce qui consomme et travaille. D’un côté ce qui décide, de l’autre ce qui fait.",
+  ceQuelleDit: "Un grand rectangle, un fil en haut, un fil en bas : une bobine, ce qui commande. Un rond avec une lettre : une machine, ce qui consomme et travaille. D’un côté ce qui décide, de l’autre ce qui fait.",
   ouOnLaVoit: "La bobine en bas du circuit de commande, le rond en bas du circuit de puissance. Les deux schémas ont la même architecture.",
 
   pourquoiCetteForme: [
-    "<strong>Le rectangle barré représente un bobinage</strong> : du fil enroulé. Ici, la bobine n’est pas une sécurité, c’est une commande : on l’alimente, elle attire, des contacts bougent.",
+    "<strong>Le grand rectangle représente un bobinage</strong> : du fil enroulé. Le fil arrive en haut, repart en bas, et s’arrête aux deux extrémités du rectangle. Ici, la bobine n’est pas une sécurité, c’est une commande : on l’alimente, elle attire, des contacts bougent.",
     "<strong>Le rond ne dit rien de ce qu’il y a dedans</strong>, et c’est volontaire. Un moteur est compliqué ; le schéma s’en moque. Ce qui l’intéresse : il consomme, et combien de fils l’alimentent.",
-    "<strong>On compte les traits qui arrivent</strong> : trois traits, trois fils, machine triphasée.",
+    "<strong>On compte les traits qui arrivent</strong> : trois traits, trois fils, machine triphasée. Et le signe <strong>3~</strong> écrit dans le rond le confirme : le 3 dit le nombre de phases, le petit tilde ~ dit courant alternatif.",
     "<strong>La lettre dans le rond dit la famille</strong> : M pour un moteur, G pour un générateur. Les mêmes dans toute l’Europe."
   ],
 
@@ -27,9 +27,10 @@ ModeleSigne.construire({
   motVedette: 'contacteur',
 
   symbolesBiblio: [
-    { src: 'assets/moteur_tri.svg', alt: "Symbole normalisé d’un moteur triphasé.", legende: "Un moteur triphasé" }
+    { src: 'assets/moteur_tri.svg', alt: "Symbole normalisé d’un moteur triphasé : un rond avec M et 3~ à l’intérieur, trois fils qui arrivent, repérés U1, V1, W1, et un symbole de terre relié à la carcasse.", legende: "Un moteur triphasé : M, 3~, U1 V1 W1 et la terre" }
   ],
   duDessinAuPlan: [
+    "Sur le vrai symbole, lisez : <strong>U1, V1, W1</strong> sont les trois bornes d’arrivée ; <strong>3~</strong> dit trois phases en courant alternatif ; le symbole de terre, à droite, dit que la carcasse du moteur est reliée à la terre.",
     "Le rond du moteur est <strong>le terminus du circuit de puissance</strong> : tout converge vers lui.",
     "La bobine est <strong>le terminus du circuit de commande</strong>.",
     "<strong>Les deux schémas se lisent de la même façon</strong> : on descend depuis la phase jusqu’à ce qui travaille."
@@ -45,11 +46,11 @@ ModeleSigne.construire({
         { texte: "Une mesure.", pourquoi: "Un appareil de mesure porte A, V ou W, jamais M." } ] },
 
     { question: "Comment sait-on qu’un moteur est triphasé sur un schéma ?",
-      confirmation: "On compte les traits qui arrivent : trois.",
+      confirmation: "Le 3~ écrit dans le rond, et les trois traits qui arrivent.",
       reponses: [
         { texte: "Le rond est dessiné plus gros.", pourquoi: "La taille d’un symbole ne code jamais d’information." },
-        { texte: "Aux trois traits d’alimentation qui arrivent.", juste: true },
-        { texte: "C’est écrit à l’intérieur du rond.", pourquoi: "À l’intérieur, il n’y a que la lettre de famille." },
+        { texte: "Au 3~ écrit dans le rond, et aux trois fils qui arrivent.", juste: true },
+        { texte: "À la couleur du rond.", pourquoi: "Un plan est en noir et blanc : la couleur ne code rien." },
         { texte: "Au repère, qui commence par M3.", pourquoi: "Le repère commence par M, sans indiquer le nombre de phases." } ] },
 
     { question: "Pourquoi le schéma ne dessine-t-il pas l’intérieur du moteur ?",
@@ -70,9 +71,9 @@ ModeleSigne.construire({
   ],
 
   retenir: [
-    "<strong>Rectangle barré = une bobine</strong>, ce qui commande.",
+    "<strong>Grand rectangle = une bobine</strong>, ce qui commande.",
     "<strong>Rond avec une lettre = une machine</strong>, ce qui travaille.",
-    "On compte <strong>les traits qui arrivent</strong> pour connaître le nombre de phases.",
+    "On compte <strong>les traits qui arrivent</strong>, et on lit le <strong>3~</strong> dans le rond, pour connaître le nombre de phases.",
     "Commande et puissance se lisent de la même façon : du haut vers ce qui travaille."
   ],
 

@@ -164,9 +164,18 @@ ${fixe(560)}${contact(560, 180, 240, 1, !actionne, C.navy)}
   function coupeContacteur() {
     const d = svg('0 0 760 460', 'Coupe d’un contacteur : bobine, circuit magnétique, armature mobile, ressort de rappel et contacts.');
 
+    /* Ce qui bouge : l'armature, le porte-contacts et les plots mobiles (en haut), tous ensemble.
+       Ce qui ne bouge pas : les plots fixes (en bas) et le circuit magnétique. L'armature descend de
+       38 quand la bobine l'attire : elle touche alors le circuit magnétique (l'entrefer disparaît)
+       et chaque plot mobile vient s'appuyer sur son plot fixe (l'écart de 38 disparaît aussi). */
     const peindre = (alimente) => {
-      const dy = alimente ? 26 : 0;          /* l'armature descend de 26 quand ça colle */
+      const dy = alimente ? 38 : 0;
       const spires = alimente ? C.orange : C.gris;
+      /* ressort : il se comprime entre le porte-contacts et le socle */
+      const hautRessort = 262 + dy, basRessort = 338;
+      const pasRessort = (basRessort - 10 - (hautRessort + 10)) / 5;
+      const zigzag = Array.from({length: 6}, (_, i) =>
+        `L${i % 2 ? 196 : 144} ${(hautRessort + 10 + i * pasRessort).toFixed(1)}`).join(' ');
       d.innerHTML = `
 <rect x="8" y="8" width="744" height="444" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="380" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${alimente ? 'Bobine alimentée — tout se ferme d’un coup' : 'Bobine au repos — le ressort tient tout ouvert'}</text>
@@ -175,20 +184,22 @@ ${fixe(560)}${contact(560, 180, 240, 1, !actionne, C.navy)}
 <rect x="120" y="70" width="520" height="34" rx="5" fill="none" stroke="${C.trait}" stroke-width="2"/>
 <text x="380" y="93" text-anchor="middle" font-size="12" fill="${C.gris}">boîtier d’arc — il découpe et refroidit l’étincelle</text>
 
-<!-- trois contacts de puissance -->
+<!-- trois contacts de puissance : plot mobile en haut (il descend), plot fixe en bas -->
 ${[210, 310, 410].map((x, i) => `
-<line x1="${x}" y1="110" x2="${x}" y2="140" stroke="${C.navy}" stroke-width="5"/>
-<line x1="${x}" y1="${196 + dy}" x2="${x}" y2="226" stroke="${C.navy}" stroke-width="5"/>
+<line x1="${x}" y1="110" x2="${x}" y2="${140 + dy}" stroke="${C.navy}" stroke-width="5"/>
 <rect x="${x - 16}" y="${140 + dy}" width="32" height="10" fill="${C.navy}"/>
-<rect x="${x - 16}" y="${186 + dy}" width="32" height="10" fill="${C.navy}"/>
+<path d="M${x + 16} ${145 + dy} H${x + 26} V${256 + dy}" fill="none" stroke="${C.navy}" stroke-width="3"/>
+<rect x="${x - 16}" y="188" width="32" height="10" fill="${C.navy}"/>
+<line x1="${x}" y1="198" x2="${x}" y2="226" stroke="${C.navy}" stroke-width="5"/>
 <text x="${x}" y="248" text-anchor="middle" font-size="11" fill="${C.gris}">${['1/2','3/4','5/6'][i]}</text>`).join('')}
 <text x="140" y="170" font-size="12" fill="${C.gris}">puissance</text>
 
 <!-- un contact auxiliaire, plus petit, sur le même axe -->
-<line x1="530" y1="110" x2="530" y2="146" stroke="${C.navy}" stroke-width="3"/>
-<line x1="530" y1="${190 + dy}" x2="530" y2="226" stroke="${C.navy}" stroke-width="3"/>
+<line x1="530" y1="110" x2="530" y2="${146 + dy}" stroke="${C.navy}" stroke-width="3"/>
 <rect x="${530 - 10}" y="${146 + dy}" width="20" height="7" fill="${C.bleu}"/>
-<rect x="${530 - 10}" y="${183 + dy}" width="20" height="7" fill="${C.bleu}"/>
+<path d="M${530 + 10} ${150 + dy} H${530 + 18} V${256 + dy}" fill="none" stroke="${C.navy}" stroke-width="2"/>
+<rect x="${530 - 10}" y="191" width="20" height="7" fill="${C.bleu}"/>
+<line x1="530" y1="198" x2="530" y2="226" stroke="${C.navy}" stroke-width="3"/>
 <text x="530" y="248" text-anchor="middle" font-size="11" fill="${C.gris}">13/14</text>
 <text x="576" y="170" font-size="12" fill="${C.gris}">auxiliaire</text>
 
@@ -203,8 +214,7 @@ ${[210, 310, 410].map((x, i) => `
 <text x="370" y="${302 + dy}" text-anchor="middle" font-size="12" fill="${C.navy}">armature mobile</text>
 
 <!-- ressort de rappel -->
-<path d="M170 ${262 + dy} ${Array.from({length: 6}, (_, i) =>
-  `L${i % 2 ? 196 : 144} ${272 + dy + i * 11}`).join(' ')} L170 ${338}"
+<path d="M170 ${hautRessort} ${zigzag} L170 ${basRessort}"
       fill="none" stroke="${C.orange}" stroke-width="4"/>
 <text x="86" y="${310}" font-size="12" fill="${C.orange}">ressort</text>
 <text x="86" y="${326}" font-size="12" fill="${C.orange}">de rappel</text>
@@ -224,9 +234,9 @@ ${alimente ? '' : `<line x1="250" y1="342" x2="490" y2="342" stroke="${C.rouge}"
     peindre(false);
 
     return bloc(d, [
-      { id: 'repos', libelle: 'Bobine au repos', legende: 'Rien n’est alimenté. Le ressort maintient l’armature écartée et tous les contacts ouverts.', appliquer: () => peindre(false) },
-      { id: 'colle', libelle: 'Bobine alimentée', legende: 'La bobine attire l’armature, qui écrase le ressort. Les quatre contacts se ferment ensemble : ils sont sur la même barre.', appliquer: () => peindre(true) }
-    ], 'repos', 'Rien n’est alimenté. Le ressort maintient l’armature écartée et tous les contacts ouverts.');
+      { id: 'repos', libelle: 'Bobine au repos', legende: 'Rien n’est alimenté. Le ressort maintient l’armature écartée et tous les contacts ouverts : chaque plot mobile est loin de son plot fixe.', appliquer: () => peindre(false) },
+      { id: 'colle', libelle: 'Bobine alimentée', legende: 'La bobine attire l’armature, qui écrase le ressort. Les contacts se ferment ensemble : chaque plot mobile vient toucher son plot fixe, tous sont sur la même barre.', appliquer: () => peindre(true) }
+    ], 'repos', 'Rien n’est alimenté. Le ressort maintient l’armature écartée et tous les contacts ouverts : chaque plot mobile est loin de son plot fixe.');
   }
 
   /* ============================================================ 5.3 — l'auto-maintien
@@ -239,7 +249,8 @@ ${alimente ? '' : `<line x1="250" y1="342" x2="490" y2="342" stroke="${C.rouge}"
     const peindre = (t) => {
       const colle = (t >= 1);                       /* la bobine est-elle alimentée ? */
       const s1 = (t === 1);                         /* le doigt appuie-t-il ? */
-      const actif = C.orange, mort = 'rgba(27,58,99,.22)';
+      /* convention de la maison : phase alimentée en ROUGE, retour neutre en ORANGE, le reste en gris */
+      const actif = C.rouge, retour = C.feu, mort = 'rgba(27,58,99,.22)';
       const fil = colle ? actif : mort;
       const titre = ['Au repos', 'On appuie sur S1', 'On relâche S1 — et ça tient'][t];
       const sous = ['Rien n’est alimenté. Le contact 13-14 est ouvert, S1 est ouvert.',
@@ -249,9 +260,13 @@ ${alimente ? '' : `<line x1="250" y1="342" x2="490" y2="342" stroke="${C.rouge}"
 <rect x="8" y="8" width="684" height="464" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="350" y="42" text-anchor="middle" font-size="18" font-weight="700" fill="${C.navy}">${titre}</text>
 
-<!-- phase en haut, neutre en bas : convention de la maison -->
-<line x1="100" y1="76" x2="600" y2="76" stroke="${C.navy}" stroke-width="4"/>
-<text x="86" y="80" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">Ph</text>
+<!-- phase en haut, neutre en bas : convention de la maison ; la protection en tête, toujours dessinée -->
+<line x1="100" y1="76" x2="124" y2="76" stroke="${actif}" stroke-width="4"/>
+<rect x="124" y="66" width="60" height="20" fill="${C.papier}" stroke="${C.navy}" stroke-width="3"/>
+<line x1="124" y1="76" x2="184" y2="76" stroke="${C.navy}" stroke-width="3"/>
+<line x1="184" y1="76" x2="600" y2="76" stroke="${actif}" stroke-width="4"/>
+<text x="154" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">F1</text>
+<text x="86" y="80" text-anchor="end" font-size="14" font-weight="700" fill="${actif}">Ph</text>
 
 <!-- la boucle : deux branches en parallèle -->
 <line x1="240" y1="76" x2="240" y2="120" stroke="${fil}" stroke-width="4"/>
@@ -290,7 +305,7 @@ ${contact(350, 282, 326, 1, true, fil)}
 <text x="350" y="392" text-anchor="middle" font-size="15" font-weight="700" fill="${colle ? actif : C.navy}">KM1</text>
 <text x="404" y="380" font-size="12" fill="${C.gris}">A1</text>
 <text x="404" y="404" font-size="12" fill="${C.gris}">A2</text>
-<line x1="350" y1="410" x2="350" y2="436" stroke="${fil}" stroke-width="4"/>
+<line x1="350" y1="410" x2="350" y2="436" stroke="${colle ? retour : mort}" stroke-width="4"/>
 
 <line x1="100" y1="436" x2="600" y2="436" stroke="${C.feu}" stroke-width="4"/>
 <text x="86" y="440" text-anchor="end" font-size="14" font-weight="700" fill="${C.feu}">N</text>
@@ -356,7 +371,7 @@ ${[500, 570, 640].map(x => `
     const retour  = travail ? t2 : t3;
     d.innerHTML = `
 <rect x="8" y="8" width="744" height="304" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-<text x="380" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${travail ? 'Temporisé au travail — il attend avant de fermer' : 'Temporisé au repos — il attend avant de rouvrir'}</text>
+<text x="380" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${travail ? 'Contact NO temporisé au travail — il attend avant de fermer' : 'Contact NO temporisé au repos — il attend avant de rouvrir'}</text>
 
 <text x="120" y="96" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">bobine</text>
 <polyline points="130,120 ${t0},120 ${t0},80 ${t2},80 ${t2},120 730,120"
@@ -450,66 +465,98 @@ ${[[210, 'NO', C.vert], [268, 'NF', C.rouge]].map(([x, t, c]) => `
   /* ============================================================ 5.8 — la chaîne de sécurité
      Pourquoi les sécurités sont en NF, et ce qui se passe quand un fil casse. */
   function chaineSecurite() {
-    const d = svg('0 0 760 400', 'La chaîne de sécurité : tous les contacts en série, tous normalement fermés.');
+    /* En colonne, comme un folio : phase en haut (avec sa protection F1), les trois contacts normalement
+       fermés en série, la bobine KM1, le neutre en bas. Phase alimentée en rouge, retour neutre en orange,
+       ce qui n'est plus alimenté en gris : on voit d'un coup d'œil où le rouge s'arrête. */
+    const d = svg('0 0 760 580', 'La chaîne de sécurité, dessinée en colonne : un bouton d’arrêt, un arrêt d’urgence et une fin de course, tous normalement fermés, en série entre la phase et la bobine.');
+    const X = 380, MORT = 'rgba(27,58,99,.22)';
+    const CT = [
+      { id: 'S2', nom: 'bouton d’arrêt', rep: 'NF · 11-12', yh: 132 },
+      { id: 'S0', nom: 'arrêt d’urgence', rep: 'NF · 11-12', yh: 246 },
+      { id: 'S3', nom: 'fin de course', rep: 'NF · 21-22', yh: 360 }
+    ];
+    const H = 40;                                   /* hauteur pivot de chaque contact : yb = yh + H */
 
     const peindre = (cas) => {
-      /* cas : 'ok' · 'au' (on frappe l'arrêt d'urgence) · 'fil' (un fil casse) */
-      const coupe = cas === 'au' ? 1 : cas === 'fil' ? 2 : -1;
-      const vivant = i => (coupe === -1 || i < coupe) ? C.orange : 'rgba(27,58,99,.22)';
+      /* cas : 'ok' · 'au' (on frappe l'arrêt d'urgence) · 'fil' (un fil casse sous le deuxième contact)
+         limite = dernier élément encore alimenté, dans l'ordre :
+         0 fil du haut · 1 S2 · 2 fil · 3 S0 · 4 fil (goulotte) · 5 S3 · 6 fil · 7 bobine · 8 retour */
+      const limite = cas === 'au' ? 3 : cas === 'fil' ? 4 : 8;
+      const vif = i => i <= limite;
+      const rouge = i => vif(i) ? C.rouge : MORT;
       const titre = { ok: 'Tout est en ordre — la bobine est alimentée',
                       au: 'Quelqu’un frappe l’arrêt d’urgence',
                       fil: 'Un fil se casse dans la goulotte' }[cas];
       const sous = { ok: 'Les trois contacts sont fermés. Le courant traverse toute la chaîne et atteint la bobine.',
-                     au: 'Le champignon s’enfonce et reste enfoncé. Le contact s’ouvre, la chaîne est coupée, la machine s’arrête.',
+                     au: 'Le champignon s’enfonce et reste enfoncé. Son contact s’ouvre, la chaîne est coupée, la machine s’arrête.',
                      fil: 'Personne n’a rien demandé. Mais la chaîne est coupée quand même, et la machine s’arrête. C’est exactement ce que l’on veut.' }[cas];
-      d.innerHTML = `
-<rect x="8" y="8" width="744" height="384" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
+      const ouvert = cas === 'au' ? 1 : -1;          /* indice du contact ouvert */
+
+      const bas = c => c.yh + H + 36;                /* bas d'un contact */
+      const tetes = [
+        /* S2 : tête de poussoir, carré ouvert vers le contact (poussoir.svg) */
+        c => `<polyline points="${X - 34},${c.yh + 14} ${X - 46},${c.yh + 14} ${X - 46},${c.yh + 34} ${X - 34},${c.yh + 34}" fill="none" stroke="${C.navy}" stroke-width="2.5"/>
+              <line x1="${X - 46}" y1="${c.yh + 24}" x2="${X - 6}" y2="${c.yh + 24}" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="6 4"/>`,
+        /* S0 : champignon (au.svg), enfoncé quand on le frappe */
+        c => { const dx = cas === 'au' ? 10 : 0;
+          return `<path d="M${X - 36 + dx} ${c.yh + 6} A 22 26 0 0 0 ${X - 36 + dx} ${c.yh + 50}" fill="${C.rouge}" stroke="${C.navy}" stroke-width="2"/>
+              <line x1="${X - 36 + dx}" y1="${c.yh + 6}" x2="${X - 36 + dx}" y2="${c.yh + 50}" stroke="${C.navy}" stroke-width="2"/>
+              <line x1="${X - 36 + dx}" y1="${c.yh + 28}" x2="${X - 6}" y2="${c.yh + 28}" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="6 4"/>`; },
+        /* S3 : galet (fin_de_course_came_no.svg) */
+        c => `<circle cx="${X - 46}" cy="${c.yh + 28}" r="11" fill="none" stroke="${C.navy}" stroke-width="2"/>
+              <line x1="${X - 35}" y1="${c.yh + 28}" x2="${X - 6}" y2="${c.yh + 28}" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="6 4"/>`
+      ];
+
+      let s = `
+<rect x="8" y="8" width="744" height="564" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="380" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${titre}</text>
 
-<line x1="60" y1="150" x2="140" y2="150" stroke="${vivant(0)}" stroke-width="5"/>
-<text x="60" y="134" font-size="14" font-weight="700" fill="${C.navy}">Ph</text>
+<!-- phase en haut avec sa protection en tête, neutre en bas -->
+<line x1="90" y1="86" x2="118" y2="86" stroke="${C.rouge}" stroke-width="5"/>
+<rect x="118" y="76" width="60" height="20" fill="${C.papier}" stroke="${C.navy}" stroke-width="3"/>
+<line x1="118" y1="86" x2="178" y2="86" stroke="${C.navy}" stroke-width="3"/>
+<line x1="178" y1="86" x2="${X}" y2="86" stroke="${C.rouge}" stroke-width="5"/>
+<text x="148" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">F1</text>
+<text x="76" y="91" text-anchor="end" font-size="14" font-weight="700" fill="${C.rouge}">Ph</text>
+<line x1="${X}" y1="86" x2="${X}" y2="${CT[0].yh + 3}" stroke="${rouge(0)}" stroke-width="5"/>`;
 
-<!-- 1 · arrêt d'urgence, champignon -->
-<path d="M156 130 A 22 26 0 0 0 156 174" fill="#c0392b" stroke="${C.navy}" stroke-width="2"/>
-<line x1="156" y1="130" x2="156" y2="174" stroke="${C.navy}" stroke-width="2"/>
-<line x1="156" y1="152" x2="186" y2="152" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="6 4"/>
-${contact(186, 128, 160, 1, coupe !== 1, coupe === 1 ? C.rouge : vivant(1), 5)}
-<line x1="186" y1="106" x2="186" y2="128" stroke="${vivant(0)}" stroke-width="5"/>
-<line x1="140" y1="150" x2="140" y2="106" stroke="${vivant(0)}" stroke-width="5"/>
-<line x1="140" y1="106" x2="186" y2="106" stroke="${vivant(0)}" stroke-width="5"/>
-<text x="186" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">S0 · arrêt d’urgence</text>
-<text x="186" y="240" text-anchor="middle" font-size="12" fill="${C.gris}">NF · 11-12</text>
+      CT.forEach((c, k) => {
+        const idx = 1 + 2 * k;                        /* 1, 3, 5 */
+        const ferme = ouvert !== k;
+        s += `
+${contact(X, c.yh, c.yh + H, 1, ferme, ouvert === k ? MORT : rouge(idx), 5)}
+${tetes[k](c)}
+<text x="${X + 66}" y="${c.yh + 26}" font-size="14" font-weight="700" fill="${C.navy}">${c.id} · ${c.nom}</text>
+<text x="${X + 66}" y="${c.yh + 46}" font-size="12" fill="${C.gris}">${c.rep}${ouvert === k ? ' · ouvert' : ''}</text>`;
+        /* le fil qui descend vers l'élément suivant */
+        const y0 = bas(c), y1 = (k < 2 ? CT[k + 1].yh + 3 : 452);
+        if (k === 1 && cas === 'fil') {
+          const ym = Math.round((y0 + y1) / 2);
+          s += `
+<line x1="${X}" y1="${y0}" x2="${X}" y2="${ym - 14}" stroke="${C.rouge}" stroke-width="5"/>
+<line x1="${X}" y1="${ym + 14}" x2="${X}" y2="${y1}" stroke="${MORT}" stroke-width="5"/>
+<line x1="${X - 12}" y1="${ym - 10}" x2="${X + 12}" y2="${ym - 2}" stroke="${C.navy}" stroke-width="3"/>
+<line x1="${X - 12}" y1="${ym + 2}" x2="${X + 12}" y2="${ym + 10}" stroke="${C.navy}" stroke-width="3"/>
+<text x="${X + 66}" y="${ym + 5}" font-size="14" font-weight="700" fill="${C.navy}">fil coupé</text>`;
+        } else {
+          s += `
+<line x1="${X}" y1="${y0}" x2="${X}" y2="${y1}" stroke="${rouge(idx + 1)}" stroke-width="5"/>`;
+        }
+      });
 
-<line x1="186" y1="196" x2="186" y2="266" stroke="${vivant(1)}" stroke-width="5"/>
-<line x1="186" y1="266" x2="386" y2="266" stroke="${vivant(1)}" stroke-width="5"/>
-<line x1="386" y1="266" x2="386" y2="106" stroke="${vivant(1)}" stroke-width="5"/>
+      s += `
+<!-- la bobine, au bout : là où le rouge devient orange -->
+<rect x="${X - 42}" y="452" width="84" height="48" rx="2" fill="none"
+      stroke="${vif(7) ? C.rouge : C.navy}" stroke-width="${vif(7) ? 5 : 4}"/>
+<text x="${X}" y="482" text-anchor="middle" font-size="15" font-weight="700" fill="${vif(7) ? C.rouge : C.navy}">KM1</text>
+<text x="${X + 52}" y="466" font-size="12" fill="${C.gris}">A1</text>
+<text x="${X + 52}" y="494" font-size="12" fill="${C.gris}">A2</text>
+<line x1="${X}" y1="500" x2="${X}" y2="526" stroke="${vif(8) ? C.feu : MORT}" stroke-width="5"/>
+<line x1="90" y1="526" x2="${X + 250}" y2="526" stroke="${C.feu}" stroke-width="5"/>
+<text x="76" y="531" text-anchor="end" font-size="14" font-weight="700" fill="${C.feu}">N</text>
 
-<!-- 2 · fin de course, avec galet -->
-<circle cx="350" cy="152" r="11" fill="none" stroke="${C.navy}" stroke-width="2"/>
-<line x1="361" y1="152" x2="386" y2="152" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="6 4"/>
-${contact(386, 128, 160, 1, true, coupe === 2 ? C.rouge : vivant(2), 5)}
-${coupe === 2
-  ? `<line x1="386" y1="186" x2="410" y2="178" stroke="${C.papier}" stroke-width="9"/>
-     <line x1="392" y1="172" x2="416" y2="164" stroke="${C.rouge}" stroke-width="3"/>
-     <line x1="380" y1="190" x2="404" y2="182" stroke="${C.rouge}" stroke-width="3"/>
-     <text x="424" y="182" font-size="13" font-weight="700" fill="${C.rouge}">fil coupé</text>` : ''}
-<text x="386" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">S3 · fin de course</text>
-<text x="386" y="240" text-anchor="middle" font-size="12" fill="${C.gris}">NF · 21-22</text>
-
-<line x1="386" y1="196" x2="386" y2="300" stroke="${vivant(2)}" stroke-width="5"/>
-<line x1="386" y1="300" x2="560" y2="300" stroke="${vivant(2)}" stroke-width="5"/>
-<line x1="560" y1="300" x2="560" y2="130" stroke="${vivant(2)}" stroke-width="5"/>
-
-<!-- la bobine, au bout -->
-<rect x="518" y="130" width="84" height="46" rx="2" fill="none"
-      stroke="${coupe === -1 ? C.orange : C.navy}" stroke-width="${coupe === -1 ? 5 : 4}"/>
-<text x="560" y="159" text-anchor="middle" font-size="15" font-weight="700"
-      fill="${coupe === -1 ? C.orange : C.navy}">KM1</text>
-<line x1="560" y1="176" x2="560" y2="340" stroke="${coupe === -1 ? C.orange : 'rgba(27,58,99,.22)'}" stroke-width="5"/>
-<line x1="60" y1="340" x2="700" y2="340" stroke="${C.feu}" stroke-width="4"/>
-<text x="60" y="332" font-size="14" font-weight="700" fill="${C.feu}">N</text>
-
-<text x="380" y="376" text-anchor="middle" font-size="13" fill="${C.gris}">${sous}</text>`;
+<text x="380" y="558" text-anchor="middle" font-size="13" fill="${C.gris}">${sous}</text>`;
+      d.innerHTML = s;
     };
     peindre('ok');
 
@@ -523,67 +570,130 @@ ${coupe === 2
   /* ============================================================ 5.9 — les deux schémas
      Le même appareil, dessiné à deux endroits. Ce que la ligne 8 avait annoncé. */
   function deuxSchemas() {
-    const d = svg('0 0 780 470', 'Le schéma de puissance et le schéma de commande d’un démarrage direct, côte à côte.');
+    /* Le départ moteur complet, comme dans un dossier : à gauche la puissance (Q1 sectionneur, F1 fusibles,
+       KM1 contacts, M1), à droite la commande (F2, un arrêt d'urgence S0, la marche S1 avec son auto-maintien
+       KM1 13-14, l'arrêt S2, la bobine KM1). Phase alimentée en rouge, retour neutre en orange, hors tension
+       en gris. Les trois conducteurs vont aux trois bornes du moteur. */
+    const d = svg('0 0 780 610', 'Le schéma de puissance et le schéma de commande d’un démarrage direct, côte à côte : Q1, F1, les contacts de KM1 et le moteur à gauche ; F2, S0, S1 avec 13-14, S2 et la bobine KM1 à droite.');
+    const MORT = 'rgba(27,58,99,.25)';
 
     const peindre = (marche) => {
-      const p = marche ? C.orange : 'rgba(27,58,99,.25)';
-      const c = marche ? C.orange : 'rgba(27,58,99,.25)';
-      d.innerHTML = `
-<rect x="8" y="8" width="764" height="454" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
+      const vive = marche ? C.rouge : MORT;           /* ce qui n'est alimenté qu'en marche */
+      const XS = [140, 196, 252];
+
+      /* ---------------- puissance ---------------- */
+      let s = `
+<rect x="8" y="8" width="764" height="594" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="390" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Un seul appareil, dessiné sur deux pages</text>
-<line x1="390" y1="62" x2="390" y2="404" stroke="${C.trait}" stroke-width="2" stroke-dasharray="6 6"/>
 
-<text x="196" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">Puissance</text>
-<text x="196" y="104" text-anchor="middle" font-size="12" fill="${C.gris}">trois fils, le courant du moteur</text>
-${[140, 196, 252].map((x, i) => `
-<line x1="${x}" y1="118" x2="${x}" y2="160" stroke="${C.navy}" stroke-width="4"/>
-${contact(x, 160, 200, -1, marche, p)}
-<path d="M ${x} 152 A 7 7 0 0 0 ${x} 166" fill="none" stroke="${C.navy}" stroke-width="2"/>
-<line x1="${x}" y1="236" x2="${x}" y2="300" stroke="${p}" stroke-width="4"/>
-<text x="${x}" y="${258}" text-anchor="middle" font-size="11" fill="${C.gris}">${['U','V','W'][i]}</text>`).join('')}
-<text x="104" y="200" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">KM1</text>
-<text x="104" y="218" text-anchor="end" font-size="11" fill="${C.gris}">1/2 3/4 5/6</text>
-<circle cx="196" cy="332" r="32" fill="none" stroke="${marche ? C.orange : C.navy}" stroke-width="4"/>
-<text x="196" y="330" text-anchor="middle" font-size="15" font-weight="700" fill="${marche ? C.orange : C.navy}">M</text>
-<text x="196" y="350" text-anchor="middle" font-size="13" fill="${marche ? C.orange : C.navy}">3 ~</text>
-<text x="196" y="392" text-anchor="middle" font-size="13" font-weight="700"
-      fill="${marche ? C.vert : C.gris}">${marche ? 'le moteur tourne' : 'le moteur est à l’arrêt'}</text>
+<text x="196" y="68" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">Puissance</text>
+<text x="196" y="86" text-anchor="middle" font-size="12" fill="${C.gris}">trois fils, le courant du moteur</text>`;
 
-<text x="584" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">Commande</text>
-<text x="584" y="104" text-anchor="middle" font-size="12" fill="${C.gris}">deux fils fins, quelques milliampères</text>
-<line x1="470" y1="122" x2="700" y2="122" stroke="${C.navy}" stroke-width="3"/>
-<text x="458" y="126" text-anchor="end" font-size="13" font-weight="700" fill="${C.navy}">Ph</text>
+      XS.forEach((x, i) => {
+        s += `
+<text x="${x}" y="108" text-anchor="middle" font-size="11" fill="${C.gris}">${['L1', 'L2', 'L3'][i]}</text>
+<line x1="${x}" y1="114" x2="${x}" y2="134" stroke="${C.rouge}" stroke-width="4"/>
+${contact(x, 134, 174, -1, true, C.rouge, 4)}
+<line x1="${x - 6}" y1="134" x2="${x + 6}" y2="134" stroke="${C.navy}" stroke-width="3"/>
+<line x1="${x}" y1="210" x2="${x}" y2="236" stroke="${C.rouge}" stroke-width="4"/>
+<rect x="${x - 7}" y="236" width="14" height="42" fill="${C.papier}" stroke="${C.navy}" stroke-width="2.5"/>
+<line x1="${x}" y1="236" x2="${x}" y2="278" stroke="${C.navy}" stroke-width="2"/>
+<line x1="${x}" y1="278" x2="${x}" y2="326" stroke="${C.rouge}" stroke-width="4"/>
+${contact(x, 326, 366, -1, marche, vive, 4)}
+<path d="M ${x} 318 A 7 7 0 0 0 ${x} 332" fill="none" stroke="${C.navy}" stroke-width="2"/>
+<line x1="${x}" y1="402" x2="${x}" y2="${i === 1 ? 452 : 430}" stroke="${vive}" stroke-width="4"/>`;
+      });
+      s += `
+<line x1="140" y1="154" x2="252" y2="154" stroke="${C.gris}" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="104" y="160" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">Q1</text>
+<text x="104" y="176" text-anchor="end" font-size="11" fill="${C.gris}">sectionneur</text>
+<text x="104" y="262" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">F1</text>
+<text x="104" y="278" text-anchor="end" font-size="11" fill="${C.gris}">protection</text>
+<line x1="140" y1="346" x2="252" y2="346" stroke="${marche ? C.bleu : C.gris}" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="104" y="350" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">KM1</text>
+<text x="104" y="366" text-anchor="end" font-size="11" fill="${C.gris}">1/2 3/4 5/6</text>
 
-<line x1="520" y1="122" x2="520" y2="150" stroke="${c}" stroke-width="3"/>
-<line x1="648" y1="122" x2="648" y2="150" stroke="${marche ? 'rgba(27,58,99,.25)' : 'rgba(27,58,99,.25)'}" stroke-width="3"/>
-${contact(520, 150, 182, -1, marche, c, 3)}
-${contact(648, 150, 182, -1, false, 'rgba(27,58,99,.25)', 3)}
-<polyline points="626,164 616,164 616,180 626,180" fill="none" stroke="${C.navy}" stroke-width="2"/>
-<text x="492" y="172" text-anchor="end" font-size="13" font-weight="700" fill="${C.navy}">KM1</text>
-<text x="492" y="188" text-anchor="end" font-size="11" fill="${C.gris}">13-14</text>
-<text x="672" y="172" font-size="13" font-weight="700" fill="${C.navy}">S1</text>
-<line x1="520" y1="214" x2="648" y2="214" stroke="${c}" stroke-width="3"/>
-<line x1="584" y1="214" x2="584" y2="250" stroke="${c}" stroke-width="3"/>
-${contact(584, 250, 282, 1, true, c, 3)}
-<polyline points="560,264 550,264 550,280 560,280" fill="none" stroke="${C.navy}" stroke-width="2"/>
-<text x="540" y="258" text-anchor="end" font-size="13" font-weight="700" fill="${C.navy}">S2</text>
-<rect x="552" y="310" width="64" height="36" rx="2" fill="none" stroke="${marche ? C.orange : C.navy}" stroke-width="${marche ? 4 : 3}"/>
-<text x="584" y="334" text-anchor="middle" font-size="14" font-weight="700" fill="${marche ? C.orange : C.navy}">KM1</text>
-<line x1="584" y1="346" x2="584" y2="376" stroke="${c}" stroke-width="3"/>
-<line x1="470" y1="376" x2="700" y2="376" stroke="${C.feu}" stroke-width="3"/>
-<text x="458" y="380" text-anchor="end" font-size="13" font-weight="700" fill="${C.feu}">N</text>
+<!-- les trois conducteurs atteignent les trois bornes du moteur -->
+<polyline points="140,430 179,457" fill="none" stroke="${vive}" stroke-width="4"/>
+<polyline points="252,430 213,457" fill="none" stroke="${vive}" stroke-width="4"/>
+<text x="124" y="424" text-anchor="end" font-size="11" fill="${C.gris}">U1</text>
+<text x="212" y="424" font-size="11" fill="${C.gris}">V1</text>
+<text x="268" y="424" font-size="11" fill="${C.gris}">W1</text>
+<circle cx="196" cy="486" r="34" fill="none" stroke="${marche ? C.rouge : C.navy}" stroke-width="4"/>
+<text x="196" y="484" text-anchor="middle" font-size="15" font-weight="700" fill="${marche ? C.rouge : C.navy}">M1</text>
+<text x="196" y="504" text-anchor="middle" font-size="13" fill="${marche ? C.rouge : C.navy}">3 ~</text>
+<text x="196" y="548" text-anchor="middle" font-size="13" font-weight="700"
+      fill="${marche ? C.vert : C.gris}">${marche ? 'le moteur tourne' : 'le moteur est à l’arrêt'}</text>`;
 
-<path d="M584 356 C 470 420, 300 420, 196 250" fill="none" stroke="${marche ? C.orange : C.trait}"
+      /* ---------------- commande ---------------- */
+      s += `
+<text x="584" y="68" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">Commande</text>
+<text x="584" y="86" text-anchor="middle" font-size="12" fill="${C.gris}">deux fils fins, quelques watts</text>
+
+<line x1="470" y1="112" x2="490" y2="112" stroke="${C.rouge}" stroke-width="4"/>
+<rect x="490" y="103" width="60" height="18" fill="${C.papier}" stroke="${C.navy}" stroke-width="2.5"/>
+<line x1="490" y1="112" x2="550" y2="112" stroke="${C.navy}" stroke-width="2"/>
+<line x1="550" y1="112" x2="700" y2="112" stroke="${C.rouge}" stroke-width="4"/>
+<text x="458" y="116" text-anchor="end" font-size="13" font-weight="700" fill="${C.rouge}">Ph</text>
+<text x="520" y="98" text-anchor="middle" font-size="12" font-weight="700" fill="${C.navy}">F2</text>
+
+<!-- S0 : un arrêt d'urgence, normalement fermé, tout en haut -->
+<line x1="584" y1="112" x2="584" y2="143" stroke="${C.rouge}" stroke-width="3"/>
+${contact(584, 140, 180, 1, true, C.rouge, 3)}
+<path d="M548 146 A 16 20 0 0 0 548 186" fill="${C.rouge}" stroke="${C.navy}" stroke-width="2"/>
+<line x1="548" y1="146" x2="548" y2="186" stroke="${C.navy}" stroke-width="2"/>
+<line x1="548" y1="166" x2="576" y2="166" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="618" y="164" font-size="13" font-weight="700" fill="${C.navy}">S0</text>
+<text x="618" y="180" font-size="11" fill="${C.gris}">arrêt d’urgence</text>
+<line x1="584" y1="216" x2="584" y2="248" stroke="${C.rouge}" stroke-width="3"/>
+
+<!-- la marche S1 et son auto-maintien KM1 13-14, en parallèle -->
+<line x1="520" y1="248" x2="648" y2="248" stroke="${C.rouge}" stroke-width="3"/>
+<line x1="520" y1="248" x2="520" y2="268" stroke="${vive}" stroke-width="3"/>
+<line x1="648" y1="248" x2="648" y2="268" stroke="${MORT}" stroke-width="3"/>
+${contact(520, 268, 308, -1, marche, vive, 3)}
+${contact(648, 268, 308, -1, false, MORT, 3)}
+<polyline points="626,284 616,284 616,300 626,300" fill="none" stroke="${C.navy}" stroke-width="2"/>
+<line x1="616" y1="292" x2="632" y2="292" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="504" y="294" text-anchor="end" font-size="13" font-weight="700" fill="${C.navy}">KM1</text>
+<text x="504" y="310" text-anchor="end" font-size="11" fill="${C.gris}">13-14</text>
+<text x="676" y="292" font-size="13" font-weight="700" fill="${C.navy}">S1</text>
+<text x="676" y="308" font-size="11" fill="${C.gris}">marche</text>
+<line x1="520" y1="344" x2="520" y2="364" stroke="${vive}" stroke-width="3"/>
+<line x1="648" y1="344" x2="648" y2="364" stroke="${MORT}" stroke-width="3"/>
+<line x1="520" y1="364" x2="648" y2="364" stroke="${vive}" stroke-width="3"/>
+
+<!-- l'arrêt S2, normalement fermé, en série -->
+<line x1="584" y1="364" x2="584" y2="387" stroke="${vive}" stroke-width="3"/>
+${contact(584, 384, 424, 1, true, vive, 3)}
+<polyline points="552,398 542,398 542,414 552,414" fill="none" stroke="${C.navy}" stroke-width="2"/>
+<line x1="542" y1="406" x2="568" y2="406" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="618" y="408" font-size="13" font-weight="700" fill="${C.navy}">S2</text>
+<text x="618" y="424" font-size="11" fill="${C.gris}">arrêt · NF</text>
+<line x1="584" y1="460" x2="584" y2="484" stroke="${vive}" stroke-width="3"/>
+
+<!-- la bobine, au bout : là où le rouge devient orange -->
+<rect x="552" y="484" width="64" height="36" rx="2" fill="none" stroke="${marche ? C.rouge : C.navy}" stroke-width="${marche ? 4 : 3}"/>
+<text x="584" y="507" text-anchor="middle" font-size="14" font-weight="700" fill="${marche ? C.rouge : C.navy}">KM1</text>
+<text x="626" y="498" font-size="11" fill="${C.gris}">A1</text>
+<text x="626" y="516" font-size="11" fill="${C.gris}">A2</text>
+<line x1="584" y1="520" x2="584" y2="548" stroke="${marche ? C.feu : MORT}" stroke-width="3"/>
+<line x1="470" y1="548" x2="700" y2="548" stroke="${C.feu}" stroke-width="3"/>
+<text x="458" y="552" text-anchor="end" font-size="13" font-weight="700" fill="${C.feu}">N</text>
+
+<!-- le lien mécanique : de la bobine jusqu'aux trois contacts de KM1, qu'il fait bouger ensemble -->
+<path d="M552 502 H 430 V 346 H 262" fill="none" stroke="${marche ? C.bleu : C.trait}"
       stroke-width="2.5" stroke-dasharray="7 5"/>
-<text x="390" y="432" text-anchor="middle" font-size="13" font-weight="700" fill="${marche ? C.orange : C.gris}">le même KM1 — la bobine à droite, ses contacts à gauche</text>
-<text x="390" y="454" text-anchor="middle" font-size="12" fill="${C.gris}">Le pointillé n’est pas un fil. C’est le lien mécanique, et sur un vrai plan c’est le repère qui le dit.</text>`;
+<text x="390" y="578" text-anchor="middle" font-size="13" font-weight="700" fill="${marche ? C.bleu : C.gris}">le même KM1 — la bobine à droite, ses contacts à gauche</text>
+<text x="390" y="596" text-anchor="middle" font-size="12" fill="${C.gris}">Le pointillé n’est pas un fil. C’est le lien mécanique, et sur un vrai plan c’est le repère qui le dit.</text>`;
+      d.innerHTML = s;
     };
     peindre(false);
 
     return bloc(d, [
-      { id: 'arret', libelle: 'À l’arrêt', legende: 'La bobine n’est pas alimentée. Les contacts de puissance sont ouverts, le moteur ne reçoit rien.', appliquer: () => peindre(false) },
-      { id: 'marche', libelle: 'En marche', legende: 'La bobine est alimentée par le circuit de commande. Elle ferme les trois contacts de puissance, et le moteur tourne. Deux fils fins commandent trois gros fils.', appliquer: () => peindre(true) }
-    ], 'arret', 'La bobine n’est pas alimentée. Les contacts de puissance sont ouverts, le moteur ne reçoit rien.');
+      { id: 'arret', libelle: 'À l’arrêt', legende: 'La bobine n’est pas alimentée. Les trois contacts de puissance sont ouverts : le courant va jusqu’à eux, pas plus. Le moteur ne reçoit rien.', appliquer: () => peindre(false) },
+      { id: 'marche', libelle: 'En marche', legende: 'La bobine est alimentée par le circuit de commande. Elle ferme les trois contacts de puissance, et le moteur tourne. Le contact 13-14 tient la bobine : S1 n’est plus pressé. Deux fils fins commandent trois gros fils.', appliquer: () => peindre(true) }
+    ], 'arret', 'La bobine n’est pas alimentée. Les trois contacts de puissance sont ouverts : le courant va jusqu’à eux, pas plus. Le moteur ne reçoit rien.');
   }
 
   /* ============================================================ le tableau de la ligne */

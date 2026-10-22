@@ -179,7 +179,7 @@
           texte: 'Le courant part de la prise et monte par la phase (marron) jusqu’à la machine. Entre la phase et la terre, il y a 230 V : c’est elle qui est dangereuse.',
           vue: { azimut: -18, elevation: 16, zoom: 1.4, cible: null } },
         { titre: 'Il traverse la machine et revient par le neutre', piece: 'neutre', actions: [['phase', 2]], voirDedans: true,
-          texte: 'Dans la machine, le courant passe dans l’enroulement du moteur, puis repart par le neutre (bleu) vers la prise. Il va et vient : il change de sens 50 fois par seconde.',
+          texte: 'Dans la machine, le courant passe dans l’enroulement du moteur, puis repart par le neutre (bleu) vers la prise. Il va et vient : il change de sens 100 fois par seconde.',
           vue: { azimut: -18, elevation: 16, zoom: 1.4, cible: null } },
         { titre: 'Le PE ne transporte rien', piece: 'pe', actions: [['phase', 2]], voirDedans: true,
           texte: 'Le fil vert et jaune est relié à la broche de terre et à la carcasse. En marche normale, aucun courant n’y passe : il attend.',
@@ -303,7 +303,7 @@
     };
     const PHRASES = {
       trois: '<strong>Les trois tensions.</strong> Même valeur, même fréquence, mais décalées d’un tiers de tour. Ce décalage vient de la construction de l’alternateur : trois bobinages à 120 degrés l’un de l’autre.',
-      somme: '<strong>Leur somme.</strong> À chaque instant, les trois s’annulent. Sur une installation équilibrée, le neutre ne ramène donc presque rien — c’est pour cela qu’il peut être plus fin que les phases.'
+      somme: '<strong>Leur somme.</strong> À chaque instant, les trois s’annulent. Sur une installation équilibrée, le neutre ne ramène donc presque rien.'
     };
     const agir = (id, v) => {
       if (id === 'vue') { niveau = v === 'somme' ? 4 : 3; majEtat(); ctx.dire(PHRASES[v === 'somme' ? 'somme' : 'trois']); }

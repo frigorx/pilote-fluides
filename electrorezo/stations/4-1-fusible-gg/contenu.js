@@ -13,9 +13,9 @@ ModeleAppareil.construire({
   ],
 
   photos: [
-    { src: 'assets/biblio/fusibles-et-outil.jpeg',
-      alt: "Cinq cartouches fusibles de formats différents posées côte à côte : une petite à culot, deux cylindriques, une grande cylindrique de 22 sur 58 et une à couteaux de 125 ampères. Le calibre et la lettre sont imprimés sur le corps de chacune.",
-      titre: "Tout est écrit sur le corps.", sous: "Le calibre en ampères, la tension, et la lettre. C’est là qu’on lit, jamais sur le dessin." },
+    { src: 'assets/biblio/cartouches-gg-lisibles.png',
+      alt: "Quatre cartouches fusibles cylindriques de tailles croissantes, avec une bague de couleur. Sur chacune sont imprimés le calibre en ampères (10 A, 16 A, 20 A, 32 A), la lettre gG et la tension.",
+      titre: "Tout est écrit sur le corps.", sous: "Ici quatre cartouches gG : le calibre en ampères, la lettre gG et la tension. C’est là qu’on lit, jamais sur le dessin." },
     { src: 'assets/biblio/courbes-de-fusion.jpg',
       alt: "Les courbes de fusion normalisées : à gauche les cartouches de type gG, à droite celles de type aM, en temps de fusion selon l’intensité.",
       titre: "Sa carte d’identité.", sous: "À gauche, le gG. Chaque courbe est un calibre : elle dit en combien de temps il fond." },
@@ -35,7 +35,7 @@ ModeleAppareil.construire({
   consigneAptitudes: 'Trois défauts très différents. Cochez ceux que cet appareil sait voir, puis validez.',
 
   technologie: [
-    ["Le fil calibré", "il fond quand le courant dépasse son calibre assez longtemps. C’est un objet à usage unique."],
+    ["Le fil calibré", "il fond quand le courant dépasse nettement son calibre assez longtemps. C’est un objet à usage unique."],
     ["Le sable", "il éteint l’arc au moment de la fusion. C’est lui qui permet à un si petit objet de couper des courants énormes."],
     ["La plage de protection", "le gG protège <strong>sur toute la plage</strong> : de la petite surcharge jusqu’au court-circuit franc."],
     ["Le pouvoir de coupure", "le courant de court-circuit maximal qu’il sait interrompre sans exploser. Écrit sur la cartouche."]
@@ -54,13 +54,13 @@ ModeleAppareil.construire({
     erreurs: {
       surcharge: "Il voit la surcharge : c’est ce que « g » veut dire, protection sur toute la plage.",
       courtCircuit: "Il voit le court-circuit, et c’est même là qu’il est le plus rapide.",
-      defautIsolement: "Il ne voit pas le défaut d’isolement. Un courant de fuite de quelques dizaines de milliampères est mortel pour un corps humain, et parfaitement invisible pour un fusible."
+      defautIsolement: "Il ne voit pas le défaut d’isolement. Quelques dizaines de milliampères peuvent être dangereux pour un corps humain si cela dure, et c’est parfaitement invisible pour un fusible."
     }
   },
 
   cablage: [
     "Sur <strong>la phase</strong>, en tête du circuit protégé.",
-    "<strong>Jamais sur le conducteur de protection</strong>, jamais sur le neutre en régime TT domestique.",
+    "<strong>Jamais sur le conducteur de protection.</strong>",
     "Remplacement <strong>à l’identique</strong> : même taille, même calibre, même lettre.",
     "Contacts propres et bien serrés : un mauvais contact fait fondre une cartouche saine."
   ],
@@ -71,9 +71,9 @@ ModeleAppareil.construire({
     { src: 'assets/pojistka3p.svg', alt: "Symbole normalisé de trois fusibles sur trois pôles.", legende: "Trois fusibles" }
   ],
   lecturePlan: [
-    "Le rectangle traversé d’un trait, c’est la lettre du fusible — voir la <strong>station 8.4</strong>.",
+    "Le rectangle traversé d’un trait, c’est le <strong>symbole</strong> du fusible — voir la <strong>station 8.4</strong>.",
     "À côté du symbole, le plan écrit <strong>le calibre et la lettre</strong> : 16 A gG.",
-    "Le repère commence par <strong>F</strong> : F1, F2. C’est la lettre des protections."
+    "Le repère commence par <strong>F</strong> : F1, F2. C’est le repère des protections."
   ],
 
   quiz: [
@@ -86,12 +86,12 @@ ModeleAppareil.construire({
         { texte: "Qu’il est réservé au triphasé.", pourquoi: "gG et aM existent en monophasé comme en triphasé." } ] },
 
     { question: "Un fusible gG protège-t-il une personne contre l’électrisation ?",
-      confirmation: "Un courant de fuite mortel est bien trop faible pour le faire fondre.",
+      confirmation: "Un courant de fuite dangereux est bien trop faible pour le faire fondre.",
       reponses: [
         { texte: "Oui, s’il est bien calibré.", pourquoi: "Aucun calibre de fusible ne descend au niveau des courants dangereux pour le corps." },
         { texte: "Non : il faut un différentiel.", juste: true },
         { texte: "Oui, si la terre est bonne.", pourquoi: "Une bonne terre aide, mais c’est le différentiel qui coupe." },
-        { texte: "Oui, en régime TT.", pourquoi: "Le régime de neutre change la protection des personnes, mais pas la sensibilité du fusible." } ] },
+        { texte: "Oui, avec une bonne installation.", pourquoi: "Une bonne installation ne change pas la sensibilité du fusible : seul un différentiel voit les courants de fuite." } ] },
 
     { question: "Une cartouche a fondu. Le bon geste ?",
       confirmation: "On cherche la cause, puis on remplace à l’identique.",
@@ -106,7 +106,7 @@ ModeleAppareil.construire({
       reponses: [
         { texte: "Indifféremment, cela revient au même.", pourquoi: "Cela ne revient pas au même du tout : le circuit resterait sous tension." },
         { texte: "Sur le conducteur de protection.", pourquoi: "Jamais : couper le PE supprimerait la protection des personnes." },
-        { texte: "Sur le neutre uniquement.", pourquoi: "En régime TT domestique, on ne protège pas le neutre par fusible." },
+        { texte: "Sur le neutre uniquement.", pourquoi: "Ce serait couper le mauvais fil : la phase resterait sous tension et le circuit paraîtrait mort." },
         { texte: "Sur la phase, en tête du circuit.", juste: true } ] }
   ],
 

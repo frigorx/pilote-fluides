@@ -58,17 +58,17 @@ ModeleAppareil.construire({
     "<strong>Phase et neutre du circuit passent tous deux</strong> dans l’appareil.",
     "Le neutre <strong>ne se mélange jamais</strong> avec celui d’un autre circuit en aval.",
     "Le conducteur de protection ne le traverse pas.",
-    "Bouton de test à presser <strong>deux fois par an</strong>, comme pour l’interrupteur différentiel."
+    "Bouton de test à presser <strong>régulièrement, au moins tous les six mois</strong>, comme pour l’interrupteur différentiel."
   ],
   piege: "Mélanger les neutres en aval de deux différentiels. L’appareil verra alors partir un courant qui revient par l’autre chemin, croira à une fuite, et déclenchera sans raison apparente. C’est une panne très difficile à trouver quand on n’y pense pas.",
 
   symboles: [
-    { src: 'assets/ddr3.svg', alt: "Symbole normalisé d’un disjoncteur différentiel.", legende: "Disjoncteur différentiel" },
-    { src: 'assets/ddr5.svg', alt: "Autre symbole normalisé de dispositif différentiel.", legende: "Autre représentation" }
+    { src: 'assets/disjoncteur_differentiel_magnetothermique.svg', alt: "Symbole normalisé d’un disjoncteur différentiel magnéto-thermique : une croix, un crochet carré, un petit demi-cercle et un ovale aplati, le tore, sur le même trait.", legende: "Disjoncteur différentiel, complet : croix, crochet, demi-cercle, tore" },
+    { src: 'assets/ddr3.svg', alt: "Symbole normalisé simplifié d’un disjoncteur différentiel à deux pôles : deux croix et un ovale aplati, le tore.", legende: "Version simplifiée : deux croix et le tore" }
   ],
   lecturePlan: [
-    "Le symbole cumule les signes : <strong>crochet, demi-cercle et tore</strong>. Trois surveillances, trois dessins.",
-    "C’est le symbole le plus chargé de la ligne — et il se lit signe par signe, comme les autres.",
+    "Le symbole complet cumule les signes : la <strong>croix ×</strong> du disjoncteur, le <strong>crochet</strong> du thermique, le <strong>demi-cercle</strong> du magnétique et le <strong>tore</strong> du différentiel. Trois surveillances, trois dessins.",
+    "C’est le symbole le plus chargé de la ligne — et il se lit signe par signe, comme les autres. Sur la version simplifiée, seuls la croix et le tore sont dessinés.",
     "À côté : <strong>calibre, courbe, sensibilité et type</strong>. Quatre informations."
   ],
 

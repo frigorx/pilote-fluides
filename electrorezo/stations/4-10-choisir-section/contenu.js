@@ -5,7 +5,7 @@
 ModeleGrandeur.construire({
   id: '4.10', ligne: 4,
   vue3d: { modele: 'cablesSections', options: { iz: [17.5, 24, 41, 76] }, defaut: 'schema' },   /* 3D */
-  kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 10 · fin de ligne',
+  kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 10',
   titre: "Choisir la section d’un câble",
   narration: NARRATION,
 
@@ -31,14 +31,14 @@ ModeleGrandeur.construire({
   scene: () => ScenesSection.curseurs(),
 
   ceQuiSePasse: [
-    ["D’abord le calibre", "le courant demandé par l’appareil fixe le calibre du disjoncteur, juste au-dessus. 14 ampères demandés : disjoncteur de 16."],
-    ["Puis la section qui supporte ce calibre", "on lit dans le tableau de la norme la première section qui admet au moins ce courant, pour ce mode de pose et cet isolant. Le câble doit tenir tout ce que le disjoncteur laisse passer."],
+    ["D’abord le calibre", "le courant demandé par l’appareil fixe le calibre du disjoncteur, juste au-dessus. Les calibres normalisés se suivent : 10, 16, 20, 25, 32… <strong>Exemple résolu</strong> : 9 ampères demandés, disjoncteur de 10."],
+    ["Puis la section qui supporte ce calibre", "on lit dans le tableau de la norme la première section qui admet au moins ce courant, pour ce mode de pose et cet isolant. Le câble doit tenir tout ce que le disjoncteur laisse passer. <strong>Exemple résolu de lecture</strong> sur le tableau du temps 1 : ligne 4 mm², lettre de sélection B (câble sous conduit), isolant PVC, circuit monophasé (deux conducteurs chargés, colonne PVC2) : on lit 32 A. « Conducteurs chargés » : ceux qui portent le courant, deux en monophasé, trois en triphasé. PVC et PR sont deux isolants : le PR supporte plus de chaleur, donc admet plus de courant."],
     ["Enfin la longueur", "on calcule la chute de tension. Si elle dépasse la limite, on prend la section au-dessus, et on recommence jusqu’à passer."],
     ["La plus grosse gagne", "les deux vérifications donnent chacune une section. On garde la plus grosse : elle satisfait les deux."]
   ],
   aRetenir: [
     "La section se note <strong>S</strong> et se mesure en <strong>millimètres carrés</strong>, mm².",
-    "<strong>Courant demandé ≤ calibre ≤ courant admissible du câble.</strong> Dans cet ordre, sans exception.",
+    "<strong>Courant demandé ≤ calibre ≤ courant admissible du câble</strong>, avec un disjoncteur. Dans cet ordre.",
     "Chute de tension : <strong>3 %</strong> pour l’éclairage, <strong>5 %</strong> pour le reste.",
     "Sur une grande longueur, c’est la chute de tension qui fait grossir le câble, pas l’échauffement."
   ],
@@ -89,7 +89,7 @@ ModeleGrandeur.construire({
       confirmation: "La plus grosse des deux : 6 mm², qui satisfait les deux règles.",
       reponses: [
         { texte: "2,5 mm², puisqu’il ne chauffe pas.", pourquoi: "Il ne chaufferait pas, mais la tension arriverait trop basse au bout." },
-        { texte: "4 mm², un compromis.", pourquoi: "Un compromis ne satisfait aucune des deux règles : la chute dépasserait encore." },
+        { texte: "4 mm², un compromis.", pourquoi: "Un compromis ne respecte pas la règle de la chute de tension : elle dépasserait encore la limite." },
         { texte: "6 mm².", juste: true },
         { texte: "10 mm², par sécurité.", pourquoi: "Ce n’est pas faux pour le câble, mais c’est plus cher sans raison : la règle demande 6." } ] },
 
@@ -106,10 +106,10 @@ ModeleGrandeur.construire({
   finalTitre: 'Le tableau : intensité × longueur → section',
 
   objectifs: '<p><strong>Objectif.</strong> Choisir la section d’un câble en cuivre à partir du courant demandé et de la longueur : calibre, courant admissible, chute de tension. Mesurer une section quand la gaine est illisible.</p>'
-    + '<p><strong>Limites.</strong> Chiffres de la NF C 15-100, tableau 52H, pour un seul circuit à 30 °C. Les facteurs de correction (température, câbles groupés) sont vus en Bac pro avec le cours « Choix des conducteurs » : ils ne sont pas appliqués ici. Chute de tension calculée pour un circuit résistif, réactance négligée. Fusibles : voir 4.1.</p>',
+    + '<p><strong>Limites.</strong> Chiffres de la NF C 15-100, tableau 52H, pour un seul circuit à 30 °C. Les facteurs de correction (température, câbles groupés) sont vus en Bac pro avec le cours « Choix des conducteurs » : ils ne sont pas appliqués ici. Chute de tension calculée pour un circuit résistif, réactance négligée. Cette station traite le choix du câble avec un disjoncteur ; le choix avec un fusible n’y est pas traité.</p>',
   credits: [
     { quoi: 'Illustration « Section et chute de tension »', source: 'parcours Sous tension, F. Henninot',
-      detail: 'assets/illustrations/12_section_chute_tension.svg' },
+      detail: 'assets/biblio/section-chute-tension.svg (original : parcours Sous tension, assets/illustrations/12_section_chute_tension.svg)' },
     { quoi: 'Tableau des courants admissibles', source: 'document de cours, d’après la NF C 15-100 (tableau 52H)',
       detail: 'base de connaissances inerWeb, même photo qu’en 4.9' } ],
 

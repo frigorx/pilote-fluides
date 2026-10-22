@@ -715,7 +715,7 @@
         I = ouvert ? 0 : 0.26; alt = true; debit = ouvert ? 0 : 0.5; vitesse = 48;
         lampes[0].regler(ouvert ? 0 : 1);
         phrase = ouvert ? '<strong>Interrupteur ouvert.</strong> La phase arrive jusqu’à l’interrupteur, mais la boucle est coupée : rien ne circule, la lampe est éteinte.'
-          : '<strong>Une phase, un neutre, une boucle.</strong> Le courant part du réseau par la phase (marron), traverse la lampe et revient par le neutre (bleu). Cinquante fois par seconde, il fait l’inverse : les grains vont et viennent <em>(ralenti environ 70 fois)</em>.';
+          : '<strong>Une phase, un neutre, une boucle.</strong> Le courant part du réseau par la phase (marron), traverse la lampe et revient par le neutre (bleu). Il s’inverse cent fois par seconde (cinquante allers-retours) : les grains vont et viennent <em>(ralenti environ 70 fois)</em>.';
         mes = [{ libelle: 'Entre phase et neutre', valeur: '230 V' }, { libelle: 'Courant dans la boucle', valeur: ouvert ? '0 A' : '0,26 A' }];
       }
       if (xp === 'alternatif' || xp === 'puissance' || xp === 'monophase') alt = xp === 'alternatif' ? s.type === 'alternatif' : true;
@@ -801,8 +801,8 @@
         { titre: 'Le radiateur demande 2000 W', texte: 'Ses résistances rougissent ; au compteur, le disque tourne vite.', actions: [['inter', 'ferme'], ['pP', 2000], ['pH', 0.25]], piece: 'radiateur', vue: V(-22, 26, 1.05) },
         { titre: 'Le disque montre la puissance', texte: 'Plus l’appareil demande, plus le disque tourne vite. La puissance, c’est ce qui passe MAINTENANT.', piece: 'disque', vue: V(-14, 14, 2.1, [-185, 95, -60]) },
         { titre: 'Les rouleaux additionnent', texte: 'Un quart d’heure à 2000 W : les rouleaux avancent d’un demi-kilowattheure. Ils ne reviennent jamais en arrière.', piece: 'totalisateur', vue: V(-8, 10, 2.6, [-185, 120, -60]) },
-        { titre: 'Une veille de 100 W', texte: 'Vingt fois moins de puissance : le disque tourne vingt fois moins vite, le radiateur ne chauffe presque plus.', actions: [['pP', 100]], piece: 'disque', vue: V(-14, 14, 2.1, [-185, 95, -60]) },
-        { titre: 'Mais toute la nuit', texte: 'Pendant 8 heures, les rouleaux avancent de 0,8 kWh : la petite veille a consommé plus que le gros radiateur.', actions: [['pH', 8]], piece: 'totalisateur', vue: V(-8, 10, 2.6, [-185, 120, -60]) }
+        { titre: 'Un téléviseur de 100 W', texte: 'Vingt fois moins de puissance : le disque tourne vingt fois moins vite, le radiateur ne chauffe presque plus.', actions: [['pP', 100]], piece: 'disque', vue: V(-14, 14, 2.1, [-185, 95, -60]) },
+        { titre: 'Mais toute la nuit', texte: 'Pendant 8 heures, les rouleaux avancent de 0,8 kWh : le petit téléviseur a consommé plus que le gros radiateur.', actions: [['pH', 8]], piece: 'totalisateur', vue: V(-8, 10, 2.6, [-185, 120, -60]) }
       ],
       alternatif: [
         { titre: 'Le continu', texte: 'L’alimentation a un + et un − : les grains avancent tous dans le même sens, sans jamais revenir. L’écran trace une ligne droite.', actions: [['inter', 'ferme'], ['type', 'continu']], piece: 'source', vue: V(-20, 30, 1.05) },
@@ -813,7 +813,7 @@
         { titre: 'Interrupteur ouvert', texte: 'La phase arrive jusqu’à l’interrupteur, mais la boucle est coupée : rien ne circule.', actions: [['inter', 'ouvert']], piece: 'inter', vue: V(-18, 34, 1.1) },
         { titre: 'Le courant part par la phase', texte: 'On ferme : le courant part du réseau par le fil marron et traverse la lampe.', actions: [['inter', 'ferme']], piece: 'aller', vue: V(-18, 34, 1.05) },
         { titre: '… et revient par le neutre', texte: 'Il revient au réseau par le fil bleu. Une seule boucle : phase, charge, neutre.', piece: 'retour', vue: V(-6, 50, 1) },
-        { titre: 'Cinquante fois par seconde, l’inverse', texte: 'Les grains vont et viennent : « aller » et « retour » sont des mots commodes, pas des sens fixes. Le mouvement est ralenti.', piece: 'lampe', ralenti: true, vue: V(-14, 28, 1.3) }
+        { titre: 'Cent fois par seconde, l’inverse', texte: 'Les grains vont et viennent : « aller » et « retour » sont des mots commodes, pas des sens fixes. Le mouvement est ralenti.', piece: 'lampe', ralenti: true, vue: V(-14, 28, 1.3) }
       ]
     }[xp];
 

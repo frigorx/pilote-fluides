@@ -23,10 +23,10 @@ aucune liaison électrique entre les deux — seulement un aimant.
 Adapter, enfin. La sortie d'un automate ne peut pas alimenter directement une grosse bobine de
 contacteur. On met un relais entre les deux.
 Et maintenant, une variante qui mérite votre attention, parce qu'elle fait exception à tout ce
-que je vous ai dit sur cette ligne. Le relais bistable, qu'on appelle aussi télérupteur.
+que je vous ai dit sur les relais. Le relais bistable, qu'on appelle aussi télérupteur.
 Une impulsion : il bascule et il y reste. L'impulsion suivante : il revient. C'est ce qu'il y a
 dans votre cage d'escalier — vous appuyez, ça s'allume et ça reste allumé.
-Retenez-le, parce que c'est le seul appareil de la ligne qui garde sa position sans qu'on
+Retenez-le, parce que c'est le seul relais qui garde sa position sans qu'on
 l'alimente.`,
 
   manipuler: `Les trois questions, pour un relais ordinaire — pas pour le bistable.

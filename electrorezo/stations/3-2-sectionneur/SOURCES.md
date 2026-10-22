@@ -17,7 +17,8 @@ Le crédit est sous l'image et dans le dialogue « Crédits » de la station.
 ## Symboles normalisés
 
 `C:\git\bibliotheque-symboles-energie\svg\10_electric\10_allpole\`
-→ dossier `200_fuses_protective_gears/20_disconnecting_switches/` → sectionneur_general.svg, sectionneur4.svg
+→ `10_allpole/200_fuses_protective_gears/20_disconnecting_switches/sectionneur4.svg` (trois pôles) et `11_singlepole/200_fuses_protective_gears/20_disconnecting_switches/sectionneur1.svg` (un pôle) : sans fusible, avec la petite barre de sectionnement.
+`sectionneur_general.svg` et `sectionneur_monophase.svg` (employés du 19/10 au 22/10/2026) portent un rectangle de fusible sur chaque lame : ce sont les symboles du sectionneur porte-fusible (station 3.5), retirés (re-audit, lot 2). `sectionneur4.svg`, légendé « tétrapolaire » avant le 19/10/2026, n'a que trois pôles : il est légendé « trois pôles » (comme en 8.3). Aucun sectionneur bipolaire sans fusible n'existe dans la bibliothèque.
 
 Fond `#ffffff` remplacé par `#fffdf8` (charte : jamais de blanc pur). **Rien d'autre n'a été
 touché, aucun symbole n'a été redessiné.**

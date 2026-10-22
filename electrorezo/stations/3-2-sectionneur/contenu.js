@@ -13,7 +13,7 @@ ModeleAppareil.construire({
 
   photos: [
     { src: 'assets/biblio/condamnation-cadenas.png',
-      alt: 'Photo d’une main tenant la poignée rouge d’un appareil de coupure sur un tableau électrique, fermée par un cadenas.',
+      alt: 'Photo de deux mains qui posent un dispositif de condamnation rouge, avec son cadenas, sur un appareil modulaire d’un tableau électrique.',
       titre: 'La condamnation.',
       sous: 'Un cadenas, une clé dans votre poche. C’est là qu’est toute la sécurité.' }
   ],
@@ -34,9 +34,9 @@ ModeleAppareil.construire({
 
   variantes: [
     '<strong>Unipolaire, bipolaire, tripolaire, tétrapolaire</strong> — selon le nombre de fils à séparer.',
-    '<strong>Avec ou sans coupure visible</strong> — la coupure visible se voit à l’œil, l’autre se prouve au vérificateur d’absence de tension.',
+    '<strong>Avec ou sans coupure visible</strong> — la coupure visible se voit à l’œil ; pour l’autre, on s’appuie sur l’indicateur de position, puis on vérifie l’absence de tension avec un vérificateur d’absence de tension (VAT).',
     '<strong>À fusibles</strong> — il devient alors un sectionneur porte-fusible, station 3.5.',
-    '<strong>De terre</strong> — il met à la terre ce qui est séparé. Réservé à la haute tension.',
+    '<strong>De terre</strong> — il met à la terre ce qui est séparé. Surtout employé en haute tension.',
     'Un sectionneur porte un <strong>courant assigné</strong> : ce qu’il supporte de laisser passer, pas ce qu’il sait couper.'
   ],
 
@@ -56,15 +56,15 @@ ModeleAppareil.construire({
     'Le <strong>conducteur de protection n’est jamais coupé</strong>. Jamais.',
     'La poignée doit rester accessible et son trou de cadenas dégagé.'
   ],
-  piege: 'L’erreur qui tue : ouvrir un sectionneur en charge. On coupe d’abord ailleurs — interrupteur, disjoncteur, contacteur — <strong>ensuite</strong> on ouvre le sectionneur.',
+  piege: 'L’erreur qui tue : ouvrir un sectionneur en charge. On coupe d’abord ailleurs — interrupteur, disjoncteur, contacteur (vus plus loin) — <strong>ensuite</strong> on ouvre le sectionneur.',
 
   symboles: [
-    { src: 'assets/sectionneur_general.svg', alt: 'Symbole normalisé d’un sectionneur.', legende: 'Sectionneur' },
-    { src: 'assets/sectionneur4.svg', alt: 'Symbole normalisé d’un sectionneur à quatre pôles.', legende: 'Sectionneur tétrapolaire' }
+    { src: 'assets/sectionneur4.svg', alt: 'Symbole normalisé d’un sectionneur à trois pôles : trois lames, chacune avec une petite barre au bout du contact fixe.', legende: 'Sectionneur, trois pôles' },
+    { src: 'assets/sectionneur1.svg', alt: 'Symbole normalisé d’un sectionneur à un pôle : une lame, avec une petite barre au bout du contact fixe.', legende: 'Sectionneur, un pôle' }
   ],
   lecturePlan: [
-    'Le détail qui distingue le sectionneur de l’interrupteur : une <strong>petite barre</strong> à l’extrémité du contact mobile. Elle signifie « aptitude au sectionnement ».',
-    'Cette barre dit que cet appareil-là, et pas un autre, peut être condamné et permet de travailler derrière. <strong>Cherchez-la sur vos plans.</strong>'
+    'Le détail qui distingue le sectionneur de l’interrupteur : une <strong>petite barre</strong> au bout du contact, côté fixe, là où la lame vient s’appuyer. Elle signifie « aptitude au sectionnement ».',
+    'Cette barre dit que l’appareil est capable d’isoler et de se condamner. Pour travailler derrière : ouvrir, condamner, vérifier l’absence de tension. <strong>Cherchez-la sur vos plans.</strong>'
   ],
 
   quiz: [
@@ -93,19 +93,19 @@ ModeleAppareil.construire({
         { texte: 'Une étiquette qui interdit la manœuvre.', pourquoi: 'L’étiquette informe, mais elle n’empêche rien. Il faut un dispositif matériel.' } ] },
 
     { question: 'Sur un plan, comment reconnaît-on un sectionneur d’un simple interrupteur ?',
-      confirmation: 'La petite barre à l’extrémité du contact mobile : l’aptitude au sectionnement.',
+      confirmation: 'La petite barre au bout du contact, côté fixe, là où la lame vient s’appuyer : l’aptitude au sectionnement.',
       reponses: [
         { texte: 'Il est toujours dessiné fermé.', pourquoi: 'Tous les appareils sont dessinés au repos, cela ne distingue rien.' },
         { texte: 'Il est dessiné plus gros.', pourquoi: 'La taille d’un symbole ne porte jamais d’information : elle dépend de l’échelle du plan.' },
         { texte: 'Il porte un repère qui commence par Q.', pourquoi: 'Le repère aide, mais il désigne aussi disjoncteurs et interrupteurs-sectionneurs : il ne suffit pas.' },
-        { texte: 'Une petite barre à l’extrémité du contact mobile.', juste: true } ] }
+        { texte: 'Une petite barre au bout du contact, côté fixe, là où la lame vient s’appuyer.', juste: true } ] }
   ],
 
   retenir: [
-    '<strong>Il n’commande pas.</strong> Ce n’est pas un appareil de tous les jours.',
+    '<strong>Il ne commande pas.</strong> Ce n’est pas un appareil de tous les jours.',
     '<strong>Il ne coupe pas en charge.</strong> On coupe ailleurs d’abord.',
-    '<strong>Il isole, et il se condamne.</strong> C’est le seul de la ligne à savoir vraiment le faire, avec l’interrupteur-sectionneur.',
-    'La petite barre sur le symbole vaut une phrase entière : on peut travailler derrière.'
+    '<strong>Il isole, et il se condamne.</strong> C’est un des seuls de la ligne à savoir vraiment le faire, avec l’interrupteur-sectionneur et le sectionneur porte-fusible.',
+    'La petite barre sur le symbole dit que l’appareil est capable d’isoler. Pour travailler derrière : ouvrir, condamner, vérifier l’absence de tension.'
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre que le sectionneur est un appareil de sécurité et non de commande : distance d’ouverture garantie, condamnation par cadenas, coupure visible — et surtout aucune aptitude à couper en charge.</p>',
@@ -114,7 +114,7 @@ ModeleAppareil.construire({
     { quoi: 'Photo « condamnation par cadenas »', source: 'base de connaissances inerWeb',
       detail: 'document de cours indexé, même recherche' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: '200_fuses_protective_gears/20_disconnecting_switches/' } ],
+      detail: '200_fuses_protective_gears/20_disconnecting_switches/ (sectionneur4.svg, sectionneur1.svg)' } ],
 
   correspondances: [
     { ligne: 3, couleur: '#5b4bd6', texte: '3.3 L’interrupteur-sectionneur' },

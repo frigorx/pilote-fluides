@@ -97,10 +97,10 @@ ModeleAppareil.construire({
         { texte: "Parce que ce serait plus long à câbler.", pourquoi: "La longueur de câble n’entre pas en compte dans ce choix." },
         { texte: "Parce que la norme l’exige sans autre raison.", pourquoi: "La raison est fonctionnelle : elle se démontre sur le schéma." } ] },
 
-    { question: "Peut-on brancher un petit ventilateur sur un contact auxiliaire ?",
+    { question: "Peut-on brancher le moteur d’un ventilateur de condenseur sur un contact auxiliaire ?",
       confirmation: "Pas de chambre de coupure, pastilles fines : elles se soudent.",
       reponses: [
-        { texte: "Oui, s’il consomme moins de 10 ampères.", pourquoi: "Ce n’est pas qu’une question d’ampères : c’est l’arc de coupure qui détruit les pastilles." },
+        { texte: "Oui, s’il consomme moins de 10 ampères.", pourquoi: "Les 10 A d’un contact auxiliaire sont ce qu’il supporte sans chauffer, pas ce qu’il sait couper. Le contact auxiliaire ne coupe que quelques ampères, dans la catégorie écrite sur le bloc ; un moteur dépasse ce pouvoir de coupure et soude les pastilles." },
         { texte: "Non : il n’est pas fait pour couper une charge de puissance.", juste: true },
         { texte: "Oui, si le contacteur est neuf.", pourquoi: "Neuf ou pas, le contact n’est pas conçu pour cela." },
         { texte: "Oui, c’est un contact comme un autre.", pourquoi: "Il n’a ni la masse de métal, ni le boîtier d’arc d’un contact de puissance." } ] },

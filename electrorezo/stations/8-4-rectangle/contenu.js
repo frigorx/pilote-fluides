@@ -30,9 +30,9 @@ ModeleSigne.construire({
     { src: 'assets/pojistka3p.svg', alt: "Symbole normalisé de trois fusibles sur trois pôles.", legende: "Trois fusibles" }
   ],
   duDessinAuPlan: [
-    "Un fusible n’est <strong>jamais dessiné seul</strong> : à côté, on écrit son courant et sa lettre.",
+    "Un fusible n’est <strong>presque jamais dessiné seul</strong> : à côté, on écrit son repère (F1), son calibre en ampères (16 A) et sa classe (gG, la protection générale, vue à la station 4.1). Exemple : <strong>F1 16 A gG</strong> se lit « le fusible F1, 16 ampères, protection générale ».",
     "<strong>Le dessin donne la fonction, le texte donne la valeur.</strong> Cette règle vaut pour toute l’écriture du schéma.",
-    "Le rectangle du fusible et le rectangle de la bobine ne se confondent pas : celui de la bobine est plus large et barré en travers."
+    "Le rectangle du fusible et le rectangle de la bobine ne se confondent pas : celui de la bobine est un grand rectangle, plus large que haut : le fil s’arrête à ses deux extrémités, il ne le traverse pas."
   ],
 
   quiz: [
@@ -40,9 +40,9 @@ ModeleSigne.construire({
       confirmation: "Le trait intérieur est le fil calibré.",
       reponses: [
         { texte: "Un fusible.", juste: true },
-        { texte: "Un bornier de raccordement.", pourquoi: "Un bornier se dessine par des cercles ou des carrés alignés, avec leurs numéros." },
+        { texte: "Un bornier de raccordement.", pourquoi: "Un bornier se dessine par de petits cercles alignés, avec leurs repères (X1, X2…)." },
         { texte: "Une résistance chauffante.", pourquoi: "Une résistance se dessine par un rectangle sans ce trait intérieur." },
-        { texte: "Une bobine de commande.", pourquoi: "La bobine est plus large et barrée en travers, pas dans la longueur." } ] },
+        { texte: "Une bobine de commande.", pourquoi: "La bobine est un rectangle plus large, sans trait à l’intérieur : le fil s’arrête à ses deux extrémités." } ] },
 
     { question: "Pourquoi la norme réutilise-t-elle la même forme pour plusieurs objets ?",
       confirmation: "Un alphabet court se retient ; un dictionnaire ne se retient pas.",
@@ -65,8 +65,8 @@ ModeleSigne.construire({
       reponses: [
         { texte: "Le numéro de repère de l’appareil.", pourquoi: "Le repère est une lettre suivie d’un chiffre — ici, ce serait F1 ou F2." },
         { texte: "La section du câble en aval.", pourquoi: "La section se lit dans le carnet de câbles, pas sur le symbole de la protection." },
-        { texte: "La tension du circuit protégé.", pourquoi: "La tension s’écrit ailleurs, dans le cartouche du folio ou sur l’arrivée." },
-        { texte: "Le calibre de la cartouche et sa famille.", juste: true } ] }
+        { texte: "La tension du circuit protégé.", pourquoi: "La tension s’écrit ailleurs, dans le bandeau d’identification du plan ou sur l’arrivée." },
+        { texte: "Le calibre du fusible (16 A) et sa classe (gG).", juste: true } ] }
   ],
 
   retenir: [
@@ -76,7 +76,7 @@ ModeleSigne.construire({
     "Le dessin donne la fonction, <strong>le texte à côté donne la valeur</strong>."
   ],
 
-  objectifs: '<p><strong>Objectif.</strong> Lire le rectangle et ses variantes, comprendre pourquoi la norme réutilise les mêmes formes, et savoir que le texte accompagne toujours le dessin.</p>',
+  objectifs: '<p><strong>Objectif.</strong> Lire le rectangle et ses variantes, comprendre pourquoi la norme réutilise les mêmes formes, et savoir que le texte accompagne presque toujours le dessin.</p>',
 
   credits: [
     { quoi: 'Symboles normalisés EN 60617',

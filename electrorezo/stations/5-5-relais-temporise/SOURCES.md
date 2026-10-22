@@ -2,8 +2,7 @@
 
 ## Photographies
 - `bloc-temporise-sur-contacteur.png`
-- `module-minuterie-rail-din.jpg`
-- `mecanisme-de-minuterie.png`
+- `bloc-temporise-la2-dt2.png`
 
 Trouvées par `node outils/chercher-images.mjs`, dans la base de connaissances inerWeb
 (`C:\git\usine-contenu\moteur-recherche\illustrations`).

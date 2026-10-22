@@ -25,18 +25,16 @@ Regardez bien la ligne rouge. Elle est plate, sur zéro, en permanence. À chaqu
 trois tensions s'annulent.
 Prenez la mesure de ce que ça implique. Si les trois phases alimentent des charges identiques, le
 courant qui revient par le neutre est nul lui aussi. Le neutre ne ramène rien.
-C'est pour ça qu'on a le droit de lui donner une section plus faible qu'aux phases.
 Attention quand même : ça ne vaut que si les charges sont équilibrées. Déséquilibrez-les — un
-gros appareil sur une seule phase — et le neutre se met à ramener du courant. Un neutre sous-
-dimensionné sur une installation déséquilibrée, ça chauffe.
+gros appareil sur une seule phase — et le neutre se met à ramener du courant, donc à chauffer.
 Dernier point, et c'est le plus beau. Ce décalage entre les trois crée quelque chose de
 remarquable dans un moteur : un champ magnétique qui tourne. Le rotor n'a plus qu'à le suivre.
 Aucune pièce mobile, aucun dispositif de démarrage : le moteur part tout seul.
 C'est la station six de cette ligne, et je vous la recommande.`,
 
   manipuler: `Pour la mesure, il y a une chose à savoir, et elle évite des erreurs coûteuses.
-Sur une prise triphasée avec neutre, il y a quatre bornes. Donc six paires possibles. Donc six
-mesures.
+Sur une prise triphasée avec neutre, il y a quatre bornes actives, sans compter la terre. Donc
+six paires possibles. Donc six mesures.
 Et ces six mesures ne donnent que deux valeurs.
 Les trois mesures entre deux phases donnent quatre cents volts. Les trois mesures entre une phase
 et le neutre donnent deux cent trente volts.
@@ -58,8 +56,9 @@ Trois vague : trois conducteurs, pas de neutre.
 Trois N vague : quatre conducteurs, neutre distribué.
 Les deux existent, et les deux sont normales. Une machine triphasée sans neutre, c'est le cas le
 plus fréquent en atelier : un moteur n'a besoin que des trois phases.
-Sur une notice, vous verrez souvent l'écriture quatre cents barre deux cent trente volts. L'ordre
-est constant : d'abord la tension entre phases, ensuite celle vers le neutre.
+Sur une plaque ou une notice, vous verrez souvent l'écriture deux cent trente barre quatre cents
+volts : d'abord la tension vers le neutre, ensuite celle entre phases. Quelques constructeurs
+l'écrivent à l'envers, quatre cents barre deux cent trente : lisez toujours l'intitulé.
 Les repères des trois phases sont L un, L deux, L trois.
 Mais je dois vous prévenir : sur du matériel ancien, vous trouverez R, S, T. C'est exactement la
 même chose. Les anciennes lettres n'ont pas disparu des ateliers, et vous les rencontrerez sur

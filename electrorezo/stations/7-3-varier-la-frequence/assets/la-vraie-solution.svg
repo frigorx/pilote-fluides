@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" width="520" height="320" role="img"
-     aria-label="Deux façons de ralentir un moteur comparées : en baissant la tension, la vitesse ne bouge pas et le couple s’effondre ; en baissant la fréquence avec la tension qui suit, la vitesse tombe de moitié et le couple reste entier.">
+     aria-label="Deux façons de ralentir un moteur comparées : en baissant la tension, la vitesse ne bouge presque pas et le couple tombe à la moitié ; en baissant la fréquence avec la tension qui suit, la vitesse tombe de moitié et le couple reste entier.">
 <rect width="520" height="320" fill="#fffdf8"/>
 <text x="260" y="30" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="15"
       font-weight="700" fill="#1b3a63">Deux façons de vouloir ralentir</text>
@@ -8,19 +8,20 @@
 <rect x="24" y="50" width="220" height="212" rx="10" fill="none" stroke="#c0392b" stroke-width="2.5"/>
 <text x="134" y="76" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13"
       font-weight="700" fill="#c0392b">On baisse la tension</text>
-<text x="134" y="96" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11.5" fill="#637285">400 V → 200 V, 50 Hz</text>
+<text x="134" y="96" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="11.5" fill="#637285">400 V → 280 V, 50 Hz</text>
 
 <text x="44" y="130" font-family="Bitter,Georgia,serif" font-size="12" fill="#1b3a63">vitesse</text>
-<rect x="112" y="118" width="112" height="16" rx="8" fill="#1b3a63"/>
+<rect x="112" y="118" width="106" height="16" rx="8" fill="#1b3a63"/>
+<rect x="218" y="118" width="6" height="16" rx="3" fill="none" stroke="#1b3a63" stroke-width="1.6" stroke-dasharray="3 2"/>
 <text x="44" y="166" font-family="Bitter,Georgia,serif" font-size="12" fill="#c0392b">couple</text>
-<rect x="112" y="154" width="28" height="16" rx="8" fill="#c0392b"/>
-<rect x="140" y="154" width="84" height="16" rx="8" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-dasharray="4 3"/>
+<rect x="112" y="154" width="56" height="16" rx="8" fill="#c0392b"/>
+<rect x="168" y="154" width="56" height="16" rx="8" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-dasharray="4 3"/>
 <text x="44" y="202" font-family="Bitter,Georgia,serif" font-size="12" fill="#1e7e54">intensité</text>
 <rect x="112" y="190" width="112" height="16" rx="8" fill="#1e7e54"/>
 <path d="M228 198 L240 198" stroke="#1e7e54" stroke-width="3"/>
 <path d="M234 192 L242 198 L234 204" fill="none" stroke="#1e7e54" stroke-width="3"/>
 
-<text x="134" y="234" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#637285">Elle ne ralentit pas.</text>
+<text x="134" y="234" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#637285">Elle ne ralentit presque pas.</text>
 <text x="134" y="252" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12"
       font-weight="700" fill="#c0392b">Elle affaiblit, et elle chauffe.</text>
 

@@ -9,23 +9,22 @@
    l'élève l'a rencontré. C'est ce dernier point qui fait la différence entre
    un jeu et un interrogatoire : quand on se trompe, on sait où retourner. */
 const SYMBOLES = [
-  { f: '015_inter_2.svg', nom: "Un interrupteur", famille: 'couper', vu: '3.1' },
-  { f: 'sectionneur_general.svg', nom: "Un sectionneur", famille: 'couper', vu: '3.2' },
+  { f: '010_switch_1pos.svg', nom: "Un interrupteur", famille: 'couper', vu: '3.1' },
+  { f: 'sectionneur4.svg', nom: "Un sectionneur", famille: 'couper', vu: '3.2' },
   { f: 'interrupteur_sectionneur_biphase.svg', nom: "Un interrupteur-sectionneur", famille: 'couper', vu: '3.3' },
   { f: 'porte_fusible_bi.svg', nom: "Un porte-fusible", famille: 'couper', vu: '3.4' },
   { f: 'sectionneur_fusible_bi.svg', nom: "Un sectionneur porte-fusible", famille: 'couper', vu: '3.5' },
   { f: 'pojistka1p.svg', nom: "Un fusible", famille: 'proteger', vu: '4.1' },
   { f: 'disjonct-m_1fn.svg', nom: "Un disjoncteur magnéto-thermique", famille: 'proteger', vu: '4.3' },
   { f: 'disjonct-m_3f.svg', nom: "Un disjoncteur moteur, trois pôles", famille: 'proteger', vu: '4.4' },
-  { f: 'ddr2.svg', nom: "Un interrupteur différentiel", famille: 'proteger', vu: '4.5' },
+  { f: 'int_diff2.svg', nom: "Un interrupteur différentiel", famille: 'proteger', vu: '4.5' },
   { f: 'ddr3.svg', nom: "Un disjoncteur différentiel", famille: 'proteger', vu: '4.6' },
   { f: 'relais_therm4.svg', nom: "Un relais thermique", famille: 'proteger', vu: '4.7' },
-  { f: 'ground1.svg', nom: "La terre", famille: 'proteger', vu: '4.8' },
+  { f: 'terre.svg', nom: "La terre", famille: 'proteger', vu: '4.8' },
   { f: 'masse.svg', nom: "La masse", famille: 'proteger', vu: '4.8' },
   { f: 'con_simple.svg', nom: "Un contact normalement ouvert", famille: 'commander', vu: '5.1' },
   { f: 'con_simple_nf.svg', nom: "Un contact normalement fermé", famille: 'commander', vu: '5.1' },
   { f: 'bobine3.svg', nom: "Une bobine", famille: 'commander', vu: '5.2' },
-  { f: 'contact_relais.svg', nom: "Un contact de relais", famille: 'commander', vu: '5.4' },
   { f: 'bobine_tempo_travail.svg', nom: "Une bobine temporisée au travail", famille: 'commander', vu: '5.5' },
   { f: 'con_simple_tmp_t.svg', nom: "Un contact temporisé au travail", famille: 'commander', vu: '5.6' },
   { f: 'con_simple_tmp_r.svg', nom: "Un contact temporisé au repos", famille: 'commander', vu: '5.6' },
@@ -39,18 +38,18 @@ const SYMBOLES = [
   { f: 'transfo_mono.svg', nom: "Un transformateur monophasé", famille: 'machines', vu: '6.2' },
   { f: 'transfo_tri.svg', nom: "Un transformateur triphasé", famille: 'machines', vu: '6.2' },
   { f: 'moteur_tri.svg', nom: "Un moteur triphasé", famille: 'machines', vu: '6.3' },
-  { f: 'moteur_mono.svg', nom: "Un moteur monophasé", famille: 'machines', vu: '6.5' },
+  { f: 'moteur_mono1.svg', nom: "Un moteur monophasé", famille: 'machines', vu: '6.5' },
   { f: 'moteur_dc.svg', nom: "Un moteur à courant continu", famille: 'machines', vu: '6.6' },
-  { f: 'ac1_ac1.svg', nom: "Un gradateur", famille: 'varier', vu: '7.2' },
-  { f: 'static_freq_converter.svg', nom: "Un variateur de fréquence", famille: 'varier', vu: '7.4' },
+  { f: 'ac1_ac1.svg', nom: "Un convertisseur alternatif vers alternatif (gradateur)", famille: 'varier', vu: '7.2' },
+  { f: 'dc_ac1.svg', nom: "Un onduleur", famille: 'varier', vu: '7.4' },
   { f: 'redresseur.svg', nom: "Un redresseur", famille: 'varier', vu: '7.4' },
-  { f: 'cross.svg', nom: "Deux fils qui se croisent", famille: 'lire', vu: '8.1' },
-  { f: 'jump.svg', nom: "Un fil qui saute par-dessus", famille: 'lire', vu: '8.1' },
-  { f: 'borne_3.svg', nom: "Un bornier", famille: 'lire', vu: '8.9' }
+  { f: 'cross.svg', nom: "Deux fils qui se croisent, avec un point : reliés", famille: 'lire', vu: '8.1' },
+  { f: 'jump.svg', nom: "Un fil qui saute par-dessus (symbole ancien)", famille: 'lire', vu: '8.1' },
+  { f: 'borne_3.svg', nom: "Une borne (petit cercle ouvert)", famille: 'lire', vu: '8.9' }
 ];
 
 const FAMILLES = {
-  couper:    { nom: 'Couper et isoler',   ligne: 3, dit: "Un contact qui s’ouvre. Ce qu’on ajoute autour dit s’il coupe seulement, ou s’il permet aussi d’aller travailler derrière." },
+  couper:    { nom: 'Couper et isoler',   ligne: 3, dit: "Un contact qui s’ouvre. Ce qu’on ajoute autour dit s’il coupe seulement, ou s’il est aussi capable d’isoler." },
   proteger:  { nom: 'Protéger',           ligne: 4, dit: "Un crochet, un demi-cercle, un rectangle, un tore. Chaque signe est un défaut surveillé — et son absence, un défaut qui passera." },
   commander: { nom: 'Commander',          ligne: 5, dit: "Une bobine décide, des contacts obéissent. Le pointillé dit qu’ils sont reliés, même quand ils sont dessinés à trois mètres l’un de l’autre." },
   machines:  { nom: 'Les machines',       ligne: 6, dit: "Un rond, et une lettre dedans. La lettre dit laquelle : M pour un moteur, G pour une génératrice." },
@@ -87,7 +86,7 @@ const img = (f, alt) => { const i = document.createElement('img'); i.src = 'asse
 
 Station.demarrer({
   id: '8.11', ligne: 8,
-  kicker: 'ÉlectroRézo · Ligne 8 Lire un schéma · Station 11',
+  kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 11',
   titre: "Le jeu des symboles",
   narration: NARRATION,
 
@@ -116,7 +115,7 @@ Station.demarrer({
 
         const d = carte('Ce que ça change');
         [["Sur un plan d’armoire, il n’y a pas de légende à côté de chaque dessin. Il y a un repère — <strong>Q1</strong>, <strong>KM2</strong>, <strong>F3</strong> — et un symbole. Le reste, c’est vous."],
-         ["Un technicien qui hésite entre un sectionneur et un interrupteur-sectionneur ne perd pas une minute : il perd le droit d’aller travailler derrière."],
+         ["Un technicien qui hésite entre un interrupteur et un interrupteur-sectionneur ne perd pas une minute : il se trompe sur ce que l’appareil sait faire : couper seulement, ou aussi isoler."],
          ["Cette station ne vous apprend rien de neuf. Elle vérifie que ce que vous avez vu est <strong>resté</strong>."]]
           .forEach(([x]) => { const p = el('p'); p.innerHTML = x; d.appendChild(p); });
         w.append(g, d);
@@ -173,7 +172,7 @@ Station.demarrer({
           });
           g.appendChild(gr);
         });
-        Station.credit(g, 'Symboles EN 60617 — bibliothèque inerWeb, convertie depuis QElectroTech. Rien n’a été redessiné : ce sont les mêmes fichiers que dans les stations d’origine.');
+        Station.credit(g, 'Symboles EN 60617 — bibliothèque inerWeb, convertie depuis QElectroTech. Rien n’a été redessiné : ce sont des symboles de la même bibliothèque, le plus souvent les mêmes fichiers que dans les stations d’origine.');
         hote.appendChild(g);
       } },
 
@@ -182,31 +181,43 @@ Station.demarrer({
       monter(hote) {
         Station.monterQuiz(hote, [
           { question: "Sur un plan, vous voyez un contact incliné surmonté d’une petite barre horizontale. Que pouvez-vous en conclure ?",
+            confirmation: "La barre dit que l’appareil est capable d’isoler. Pour travailler derrière : l’ouvrir, le condamner, vérifier l’absence de tension.",
             reponses: [
-              { texte: "L’appareil a l’aptitude au sectionnement : on peut travailler derrière.", juste: true },
               { texte: "L’appareil est protégé contre les surcharges.",
                 pourquoi: "Ce serait le crochet du bilame. La barre courte parle du sectionnement, pas de protection." },
+              { texte: "L’appareil est capable d’isoler l’installation (aptitude au sectionnement) : il peut être condamné.", juste: true },
               { texte: "L’appareil est commandé à distance.",
-                pourquoi: "Ce serait un pointillé vers une bobine. La barre ne dit rien de la commande." } ] },
-          { question: "Un symbole porte un crochet rectangulaire ET un demi-cercle. C’est…",
+                pourquoi: "Ce serait un pointillé vers une bobine. La barre ne dit rien de la commande." },
+              { texte: "L’appareil est un fusible.",
+                pourquoi: "Un fusible est un rectangle étroit traversé par le fil, sans contact incliné." } ] },
+          { question: "Un symbole porte un crochet carré ET un demi-cercle. C’est…",
+            confirmation: "Un appareil qui voit la surcharge lente et le court-circuit brutal.",
             reponses: [
-              { texte: "Un appareil qui voit la surcharge et le court-circuit.", juste: true },
               { texte: "Un appareil qui voit le défaut d’isolement.",
                 pourquoi: "Le défaut d’isolement se voit avec un tore différentiel, pas avec ces deux signes-là." },
               { texte: "Un relais thermique.",
-                pourquoi: "Le relais thermique porte le crochet seul : il ne voit pas le court-circuit." } ] },
-          { question: "Pourquoi les mauvaises réponses de ce jeu viennent-elles, autant que possible, de la même famille ?",
+                pourquoi: "Le relais thermique porte le crochet seul : il ne voit pas le court-circuit." },
+              { texte: "Un contacteur.",
+                pourquoi: "Un contacteur a une bobine et un pointillé, pas de déclencheur." },
+              { texte: "Un appareil qui voit la surcharge et le court-circuit.", juste: true } ] },
+          { question: "Un grand rectangle, un fil qui arrive en haut, un fil qui repart en bas. C’est…",
+            confirmation: "Une bobine : ce qui commande.",
             reponses: [
-              { texte: "Parce que se tromper entre deux appareils voisins est l’erreur qu’on fait vraiment sur un plan.", juste: true },
-              { texte: "Pour rendre le jeu plus difficile.",
-                pourquoi: "La difficulté n’est pas le but : la ressemblance des vrais symboles l’est." },
-              { texte: "Parce qu’il n’y a pas assez de symboles pour faire autrement.",
-                pourquoi: "Il y en a " + SYMBOLES.length + " : de quoi piocher n’importe où." } ] },
+              { texte: "Une bobine.", juste: true },
+              { texte: "Un fusible.",
+                pourquoi: "Un fusible est un rectangle étroit que le fil traverse." },
+              { texte: "Un moteur.",
+                pourquoi: "Un moteur est un rond avec une lettre M dedans." },
+              { texte: "Une borne.",
+                pourquoi: "Une borne est un petit cercle ouvert." } ] },
           { question: "Vous ne reconnaissez pas un symbole sur un plan d’installation. Que faites-vous ?",
+            confirmation: "Le dossier fait foi : on cherche le repère et la nomenclature.",
             reponses: [
-              { texte: "Je cherche son repère et je remonte à la nomenclature du dossier.", juste: true },
+              { texte: "Je le remplace par le symbole le plus proche que je connais.",
+                pourquoi: "Deux symboles voisins peuvent désigner des appareils très différents : un sectionneur et un interrupteur, par exemple." },
               { texte: "Je déduis sa fonction de sa place dans le schéma.",
                 pourquoi: "La place aide, mais elle ne prouve rien. Un sectionneur et un interrupteur-sectionneur occupent la même." },
+              { texte: "Je cherche son repère et je remonte à la nomenclature du dossier.", juste: true },
               { texte: "Je demande à un collègue et je note sa réponse.",
                 pourquoi: "Demander est bien. S’en contenter, non : c’est le dossier qui fait foi, pas la mémoire d’un tiers." } ] }
         ]);
@@ -246,8 +257,7 @@ function monterLeJeu(hote) {
 
   const entete = el('div', 'jeu-entete');
   const compteur = el('span', 'compteur', '');
-  const score = el('span', 'compteur', '');
-  entete.append(compteur, score);
+  entete.append(compteur);
 
   const fig = document.createElement('figure');
   fig.className = 'symbole-jeu';
@@ -261,11 +271,11 @@ function monterLeJeu(hote) {
   g.append(entete, fig, choix, verdict, journal);
   hote.appendChild(g);
 
-  let tirage = [], i = 0, bons = 0, repondu = false;
+  let tirage = [], i = 0, repondu = false;
 
   function commencer() {
     tirage = melanger(SYMBOLES).slice(0, TOURS);
-    i = 0; bons = 0; journal.innerHTML = '';
+    i = 0; journal.innerHTML = '';
     poser();
   }
 
@@ -274,7 +284,6 @@ function monterLeJeu(hote) {
     if (i >= tirage.length) return conclure();
     const s = tirage[i];
     compteur.textContent = 'Symbole ' + (i + 1) + ' sur ' + tirage.length;
-    score.textContent = bons + ' juste' + (bons > 1 ? 's' : '');
     image.src = 'assets/' + s.f;
     image.alt = 'Symbole normalisé à reconnaître, question ' + (i + 1) + '.';
     verdict.textContent = ''; verdict.className = 'verdict';
@@ -291,7 +300,6 @@ function monterLeJeu(hote) {
     if (repondu) return;
     repondu = true;
     const juste = choisi.nom === bon.nom;
-    if (juste) bons++;
     [...choix.children].forEach(b => {
       b.disabled = true;
       if (b.textContent === bon.nom) b.classList.add('bon');
@@ -316,16 +324,11 @@ function monterLeJeu(hote) {
 
   function conclure() {
     compteur.textContent = 'Terminé';
-    score.textContent = bons + ' sur ' + tirage.length;
     image.removeAttribute('src'); image.alt = '';
     fig.style.display = 'none';
     choix.innerHTML = '';
-    verdict.className = 'verdict ' + (bons >= tirage.length - 2 ? 'ok' : 'bad');
-    verdict.textContent = bons === tirage.length
-      ? 'Les douze. Vous pouvez ouvrir un plan.'
-      : bons >= tirage.length - 2
-        ? 'Solide. Les deux qui manquent sont dans le journal, avec leur station.'
-        : 'Les ratés sont listés ci-dessous avec leur station : c’est là qu’il faut retourner, pas ici.';
+    verdict.className = 'verdict wait';
+    verdict.textContent = 'Le journal ci-dessous dit, pour chaque symbole, la station où il est expliqué : c’est là qu’il faut retourner pour ceux qui ont résisté. Vous pouvez rejouer avec un autre tirage.';
     const rejouer = el('button', 'primary', '↻ Rejouer, autre tirage');
     rejouer.type = 'button';
     rejouer.addEventListener('click', () => { fig.style.display = ''; commencer(); });

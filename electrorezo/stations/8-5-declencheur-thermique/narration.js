@@ -4,8 +4,8 @@
 const NARRATION = {
 
   decouvrir: `Celui-là, je vais prendre le temps. Pas parce qu'il est compliqué — vous allez voir, c'est
-même l'un des plus simples — mais parce que c'est là que tout se met en place. C'est la station
-où les élèves comprennent enfin pourquoi les symboles ne sont pas des dessins tombés du ciel.
+même l'un des plus simples — mais parce que c'est là que tout se met en place. C'est ici que vous
+allez comprendre pourquoi les symboles ne sont pas des dessins tombés du ciel.
 Le signe dont je vais vous parler ressemble à un petit crochet carré, accroché contre le trait
 du courant. Vous le trouverez sur les appareils de protection, jamais tout seul.
 Ce qu'il annonce, c'est simple : cet appareil-là surveille la chaleur.`,
@@ -43,8 +43,8 @@ de ces appareils.`,
 
   representer: `Un dernier mot sur le dessin, et je vous laisse travailler.
 Sur les plans, ce déclencheur se dessine par un petit crochet rectangulaire, collé contre le
-trait du courant. Sur d'autres éditions de la norme, vous le verrez comme un rectangle avec une
-ligne brisée à l'intérieur. Les deux se rencontrent, et ils veulent dire la même chose.
+trait du courant. Sur d'autres écritures, vous le verrez à l'intérieur d'un rectangle : le même crochet,
+simplement encadré. Les deux se rencontrent, et ils veulent dire la même chose.
 Alors voilà ce que je vous demande de retenir. Le jour où vous repérez ce signe sur un plan,
 sans rien savoir de l'appareil, vous saurez déjà deux choses : il surveille la chaleur, et il
 est lent. Ce n'est pas rien pour un petit crochet.`

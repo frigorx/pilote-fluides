@@ -28,10 +28,10 @@ Ce bouton coloré sur la face avant n'est pas décoratif. Il crée un vrai petit
 vérifier que le mécanisme coupe encore.
 Pourquoi c'est capital ? Parce qu'un différentiel qui ne fonctionne plus ne vous le dira pas.
 Il n'y a pas de voyant, pas d'alarme. Il a l'air parfaitement normal, et il ne coupera pas le
-jour où quelqu'un touchera une carcasse. Il faut aller le lui demander. Deux fois par an.`,
+jour où quelqu'un touchera une carcasse. Il faut aller le lui demander. Régulièrement : au moins tous les six mois, et la notice du constructeur dit la fréquence exacte.`,
 
-  manipuler: `Trois défauts. Celui-ci n'en voit qu'un seul — mais il est le seul de toute la ligne à le
-voir.
+  manipuler: `Trois défauts. Celui-ci n'en voit qu'un seul, le défaut d'isolement. Avec le disjoncteur
+différentiel de la station suivante, ce sont les deux seuls de la ligne à le voir.
 Et faites attention au piège : son nom commence par le mot interrupteur. Réfléchissez à ce que
 ça veut dire avant de cocher.`,
 

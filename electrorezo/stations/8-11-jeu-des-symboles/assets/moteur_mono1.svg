@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.5 -25.5 51 56" width="51" height="56">
+<!-- Moteur monophasé — converti de moteur_mono1.elmt par outils\elmt-vers-svg.py -->
+<polyline points="20,-20 20,9 15,9" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-20,-20 -20,10 -15,10" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="10.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="none"/>
+<text x="-11" y="17" font-family="Arial,sans-serif" font-size="9" fill="#000000">1 ~</text>
+<text x="-4" y="7" font-family="Arial,sans-serif" font-size="8" fill="#000000">M</text>
+</svg>

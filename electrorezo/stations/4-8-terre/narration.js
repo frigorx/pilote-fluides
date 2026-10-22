@@ -5,9 +5,9 @@ const NARRATION = {
 
   decouvrir: `Un fil vert et jaune, et un piquet enfoncé dans le sol. C'est tout ce qu'on voit d'elle.
 Et c'est sans doute l'élément le plus mal compris de toute l'installation électrique.
-On dit couramment : la terre protège les gens. Je vais vous montrer que c'est faux. Non pas
-qu'elle soit inutile — elle est indispensable, et vous allez voir pourquoi. Mais elle ne fait
-pas ce qu'on croit qu'elle fait.`,
+On dit couramment : la terre protège les gens. Ce n'est pas faux, mais ce n'est pas toute
+l'histoire : toute seule, elle ne suffit pas. Elle est indispensable, et vous allez voir
+pourquoi. Mais elle ne fait pas tout ce qu'on croit qu'elle fait.`,
 
   comprendre: `Prenons une machine dont l'isolant a lâché. La carcasse métallique se retrouve sous
 tension. Elle est là, dans l'atelier, elle a l'air parfaitement normale, et rien ne l'indique.
@@ -20,12 +20,14 @@ immédiatement par le fil vert et jaune, descend au piquet, et revient à sa sou
 Il n'a pas attendu. Il est parti tout de suite.
 Et maintenant la question qui compte, celle que peu de gens se posent : est-ce que ça suffit ?
 Non. Ce courant circule, mais rien ne l'arrête. La carcasse peut être encore dangereuse.
-Ce qui l'arrête, c'est le différentiel. Il voit qu'il manque du courant au retour, et il coupe.
+Dans un logement, ce qui l'arrête, c'est le différentiel. Il voit qu'il manque du courant au
+retour, et il coupe.
 Voilà donc le vrai rôle de la terre, et je vous demande de le retenir dans ces termes : elle ne
 coupe rien, elle ne détecte rien. Elle offre au courant de défaut un chemin franc, pour que le
 différentiel puisse le voir.
-Les deux vont ensemble, toujours. Une terre parfaite sans différentiel ne sauve personne. Et un
-différentiel sans terre ne voit souvent rien venir.`,
+Dans un logement, les deux vont ensemble. Une terre seule ne suffit pas : il faut aussi un
+dispositif qui coupe. Et sans terre, le différentiel ne coupera qu'après qu'une personne a
+touché la carcasse : trop tard.`,
 
   manipuler: `Voici la station où la bonne réponse va vous surprendre, et c'est fait exprès.
 Reprenez les trois défauts, et demandez-vous non pas ce que la terre permet, mais ce qu'elle

@@ -1,7 +1,7 @@
 /* ÉlectroRézo — la liste ordonnée des stations du réseau.
    ÉCRIT PAR outils/construire-reseau.mjs — ne pas modifier à la main.
    Relancer l'outil après toute création ou tout renommage de station.
-   60 stations, 8 lignes. */
+   63 stations, 8 lignes. */
 
 const RESEAU = {
   lignes: {
@@ -30,6 +30,7 @@ const RESEAU = {
     { id: '2.4', ligne: 2, dossier: '2-4-tension-simple', titre: 'La tension simple', genre: 'homme' },
     { id: '2.5', ligne: 2, dossier: '2-5-tension-composee', titre: 'La tension composée', genre: 'homme' },
     { id: '2.6', ligne: 2, dossier: '2-6-champ-tournant', titre: 'Le champ tournant', genre: 'homme' },
+    { id: '2.7', ligne: 2, dossier: '2-7-du-compteur-a-l-appareil', titre: 'Les réseaux électriques d’un site : du compteur à l’appareil', genre: 'femme' },
     { id: '3.1', ligne: 3, dossier: '3-1-interrupteur', titre: 'L’interrupteur', genre: 'femme' },
     { id: '3.2', ligne: 3, dossier: '3-2-sectionneur', titre: 'Le sectionneur', genre: 'homme' },
     { id: '3.3', ligne: 3, dossier: '3-3-interrupteur-sectionneur', titre: 'L’interrupteur-sectionneur', genre: 'homme' },
@@ -45,6 +46,7 @@ const RESEAU = {
     { id: '4.8', ligne: 4, dossier: '4-8-terre', titre: 'La terre et la liaison équipotentielle', genre: 'homme' },
     { id: '4.9', ligne: 4, dossier: '4-9-cable-section', titre: 'Le câble : section et désignation', genre: 'femme' },
     { id: '4.10', ligne: 4, dossier: '4-10-choisir-section', titre: 'Choisir la section d’un câble', genre: 'homme' },
+    { id: '4.11', ligne: 4, dossier: '4-11-tableau-logement', titre: 'Le tableau d’un logement : protections, circuits, différentiels', genre: 'femme' },
     { id: '5.1', ligne: 5, dossier: '5-1-contact-no-nf', titre: 'Le contact : repos et travail', genre: 'femme' },
     { id: '5.2', ligne: 5, dossier: '5-2-contacteur', titre: 'Le contacteur', genre: 'femme' },
     { id: '5.3', ligne: 5, dossier: '5-3-contact-auxiliaire', titre: 'Le contact auxiliaire', genre: 'homme' },
@@ -60,6 +62,7 @@ const RESEAU = {
     { id: '6.4', ligne: 6, dossier: '6-4-couplage', titre: 'Le couplage de la plaque à bornes', genre: 'homme' },
     { id: '6.5', ligne: 6, dossier: '6-5-moteur-monophase', titre: 'Le moteur monophasé', genre: 'femme' },
     { id: '6.6', ligne: 6, dossier: '6-6-synchrone-et-continu', titre: 'Synchrone et courant continu', genre: 'homme' },
+    { id: '6.7', ligne: 6, dossier: '6-7-autocontrole-mise-sous-tension', titre: 'Autocontrôle électrique avant mise sous tension', genre: 'femme' },
     { id: '7.1', ligne: 7, dossier: '7-1-varier-la-tension', titre: 'Faire varier la tension', genre: 'femme' },
     { id: '7.2', ligne: 7, dossier: '7-2-variateur-tension', titre: 'Le variateur de tension', genre: 'femme' },
     { id: '7.3', ligne: 7, dossier: '7-3-varier-la-frequence', titre: 'Faire varier la fréquence', genre: 'homme' },

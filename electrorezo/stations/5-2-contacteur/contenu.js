@@ -24,7 +24,7 @@ ModeleAppareil.construire({
   ],
   creditPhoto: 'Planches techniques issues de documents de cours indexés. Détail dans « Crédits ».',
 
-  aQuoiCaSert: "À faire commander un gros courant par un tout petit. Vous alimentez une bobine avec quelques milliampères, et trois contacts capables de porter des dizaines d’ampères se ferment d’un coup.",
+  aQuoiCaSert: "À faire commander un gros courant par un tout petit. Vous alimentez une bobine avec quelques watts, et trois contacts capables de porter des dizaines d’ampères se ferment d’un coup.",
   ouOnLeTrouve: "Dans toute armoire où il y a un moteur, un compresseur, un ventilateur, une résistance de chauffage. Dès qu’une machine se commande à distance, il y a un contacteur.",
 
   scene: () => SchemasCommande.coupeContacteur(),
@@ -40,7 +40,7 @@ ModeleAppareil.construire({
   variantes: [
     "<strong>Le calibre</strong> — un LC1D09 tient neuf ampères en service moteur, un LC1D65 en tient soixante-cinq. Il se choisit sur la puissance du moteur.",
     "<strong>La tension de bobine</strong> — 24 V, 48 V, 230 V, 400 V, en continu ou en alternatif. Elle est écrite sur la bobine, et elle n’a rien à voir avec la tension de puissance.",
-    "<strong>La catégorie d’emploi</strong> — <strong>AC-3</strong> pour un moteur qui démarre et s’arrête normalement, <strong>AC-4</strong> pour un moteur qu’on inverse ou qu’on freine. À calibre égal, l’AC-4 est bien plus dur.",
+    "<strong>La catégorie d’emploi</strong> — <strong>AC-3</strong> pour un moteur qui démarre et s’arrête normalement, <strong>AC-4</strong> pour un moteur qu’on freine à contre-courant ou qu’on manœuvre par à-coups (démarrages et inversions rapides en marche). À calibre égal, l’AC-4 est bien plus dur. Un démarreur-inverseur ordinaire, qui attend l’arrêt complet avant de repartir dans l’autre sens, reste en AC-3.",
     "<strong>Le contacteur-inverseur</strong> — deux contacteurs verrouillés l’un avec l’autre, pour faire tourner un moteur dans les deux sens sans jamais les coller ensemble."
   ],
   reglage: "Un contacteur ne se règle pas. Il se choisit : calibre selon le moteur, tension de bobine selon le circuit de commande, catégorie d’emploi selon le service. Une seule vérification a du sens sur le terrain : que la tension écrite sur la bobine soit bien celle que vous allez lui envoyer.",
@@ -53,7 +53,7 @@ ModeleAppareil.construire({
     bonneReponse: 'Exact. Le contacteur est le seul appareil de cette ligne à porter la puissance ET à obéir à distance. En revanche il ne garde rien : coupez sa bobine, il retombe. C’est pour cela qu’on lui ajoute un auto-maintien, à la station suivante.',
     erreurs: {
       puissance: 'Ses contacts principaux sont épais et logés dans un boîtier d’arc : ils sont faits pour le courant d’un moteur.',
-      distance: 'C’est même sa raison d’être : une bobine, quelques milliampères, et trois gros contacts obéissent.',
+      distance: 'C’est même sa raison d’être : une bobine de quelques watts, et trois gros contacts obéissent.',
       maintien: 'Un contacteur ne garde rien. Le ressort de rappel le fait retomber dès que la bobine n’est plus alimentée. C’est un défaut voulu : après une coupure de courant, une machine ne doit pas repartir toute seule.'
     }
   },
@@ -67,7 +67,7 @@ ModeleAppareil.construire({
   piege: "Un contacteur n’est <strong>pas</strong> un appareil de sectionnement. Il n’a ni distance d’ouverture garantie, ni possibilité de cadenassage. Ouvrir un contacteur ne met personne en sécurité.",
 
   symboles: [
-    { src: 'assets/bobine3.svg', alt: "Symbole normalisé de la bobine d’un contacteur : un rectangle traversé par le conducteur.", legende: "La bobine" },
+    { src: 'assets/bobine3.svg', alt: "Symbole normalisé de la bobine d’un contacteur : un grand rectangle, un fil qui arrive en haut, un fil qui repart en bas.", legende: "La bobine" },
     { src: 'assets/com_puiss1.svg', alt: "Symbole normalisé d’un contact de puissance de contacteur, avec son demi-cercle.", legende: "Un contact de puissance" },
     { src: 'assets/con_simple.svg', alt: "Symbole normalisé d’un contact auxiliaire normalement ouvert.", legende: "Un contact auxiliaire" }
   ],
@@ -106,8 +106,8 @@ ModeleAppareil.construire({
         { texte: "Oui, si on coupe aussi la commande.", pourquoi: "Couper la commande ne garantit pas la distance d’ouverture, et rien n’empêche un redémarrage." },
         { texte: "Oui, à condition de mettre un macaron.", pourquoi: "Un macaron ne remplace pas un cadenas sur un appareil condamnable." } ] },
 
-    { question: "Un contacteur AC-3 de 9 A convient-il pour inverser un moteur toutes les dix secondes ?",
-      confirmation: "L’inversion relève de la catégorie AC-4, beaucoup plus exigeante.",
+    { question: "Un contacteur AC-3 de 9 A convient-il pour freiner un moteur à contre-courant toutes les dix secondes ?",
+      confirmation: "Le freinage à contre-courant relève de la catégorie AC-4, beaucoup plus exigeante.",
       reponses: [
         { texte: "Oui, 9 A c’est 9 A.", pourquoi: "La catégorie d’emploi dit dans quelles conditions ces 9 A sont tenus." },
         { texte: "Non : il faut regarder la catégorie d’emploi, pas seulement le calibre.", juste: true },

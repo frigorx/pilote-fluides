@@ -13,11 +13,11 @@ ModeleSigne.construire({
     { id: '8.1', quoi: "le trait et le point" },
   ],
 
-  ceQuelleDit: "Un trait incliné posé sur un point : ici, le circuit peut s’ouvrir ou se fermer. C’est la lettre la plus fréquente de tout le schéma, après le trait lui-même.",
+  ceQuelleDit: "Un trait incliné, qui pivote par le bas : ici, le circuit peut s’ouvrir ou se fermer. C’est la lettre la plus fréquente de tout le schéma, après le trait lui-même.",
   ouOnLaVoit: "Dans presque tous les symboles d’appareillage. Ce qui change d’un appareil à l’autre, ce sont les signes qu’on lui accroche.",
 
   pourquoiCetteForme: [
-    "<strong>Le point est le pivot.</strong> La pièce mobile tourne autour de lui — le dessin est un croquis du mécanisme, vu de côté.",
+    "<strong>Le trait part d’un pivot, en bas.</strong> La pièce mobile tourne autour de lui — le dessin est un croquis du mécanisme, vu de côté. Sur le vrai symbole, le pivot n’est pas marqué : il n’y a pas de point.",
     "<strong>Le trait est la pièce mobile</strong>, dessinée dans la position où elle laisse un vide.",
     "<strong>La règle qui compte : un contact est toujours dessiné au repos</strong> — personne n’appuie, aucune bobine n’est alimentée, la machine est à l’arrêt. Ce n’est pas forcément l’état où vous le trouverez.",
     "<strong>Normalement ouvert</strong> : au repos, il laisse un vide. <strong>Normalement fermé</strong> : au repos, il est déjà fermé, et le dessin porte un petit trait qui barre. Le second sert aux sécurités : un fil arraché ouvre le circuit et arrête la machine."
@@ -31,8 +31,9 @@ ModeleSigne.construire({
     { src: 'assets/act_electromagnetique_nf.svg', alt: "Symbole normalisé d’un contact à ouverture.", legende: "Contact à ouverture — NF" }
   ],
   duDessinAuPlan: [
-    "Sur un vrai plan, ce trait ne vient <strong>jamais seul</strong> : il porte la barre du sectionnement, le crochet du thermique, un demi-disque de temporisation.",
+    "Sur un vrai plan, ce trait vient <strong>très souvent accompagné</strong> : il porte la barre du sectionnement, le crochet du thermique, un demi-cercle au bout d’un double trait pour la temporisation.",
     "Le trait incliné dit seulement « ici, ça s’ouvre et ça se ferme ». <strong>Tout le reste est écrit autour de lui.</strong>",
+    "Sur les deux symboles ci-dessus, à gauche du trait, vous voyez un petit arc et un pointillé : c’est l’électro-aimant qui commande ce contact, et le lien mécanique entre les deux (stations 8.6 et 8.7).",
     "Les numéros aux bornes le confirment : 13-14 pour un contact ouvert au repos, 21-22 pour un contact fermé au repos."
   ],
 
@@ -57,16 +58,16 @@ ModeleSigne.construire({
       confirmation: "Le petit trait qui barre le contact fermé.",
       reponses: [
         { texte: "Un petit trait qui barre le contact fermé.", juste: true },
-        { texte: "La position du point pivot.", pourquoi: "Le pivot est au même endroit dans les deux cas." },
-        { texte: "La couleur du trait.", pourquoi: "Un plan est noir et blanc : la couleur ne porte jamais l’information." },
+        { texte: "La position du pivot.", pourquoi: "Le pivot est au même endroit dans les deux cas." },
+        { texte: "La couleur du trait.", pourquoi: "La couleur ne distingue pas un contact ouvert d’un contact fermé : c’est le petit trait qui le fait." },
         { texte: "L’épaisseur du trait.", pourquoi: "L’épaisseur varie avec l’échelle du tracé, elle ne code rien." } ] },
 
-    { question: "Un fusible porte-t-il un contact ?",
-      confirmation: "Rien ne s’ouvre ni ne se ferme dans un fusible : quelque chose fond.",
+    { question: "Une cartouche de fusible porte-t-elle un contact ?",
+      confirmation: "Rien ne s’ouvre ni ne se ferme dans une cartouche : quelque chose fond.",
       reponses: [
-        { texte: "Cela dépend du modèle.", pourquoi: "Aucun modèle de fusible n’a de contact : c’est la nature même de l’objet." },
-        { texte: "Non : il fond, il ne s’ouvre pas.", juste: true },
-        { texte: "Oui, sinon il ne pourrait pas couper.", pourquoi: "Il coupe en fondant, pas en ouvrant un contact." },
+        { texte: "Cela dépend du modèle.", pourquoi: "Une cartouche n’a rien de mobile : elle fond. (Un fusible à percuteur peut commander un contact, mais ce contact est un autre élément, ajouté à côté.)" },
+        { texte: "Non : elle fond, elle ne s’ouvre pas.", juste: true },
+        { texte: "Oui, sinon elle ne pourrait pas couper.", pourquoi: "Elle coupe en fondant, pas en ouvrant un contact." },
         { texte: "Oui, un contact caché à l’intérieur de la cartouche.", pourquoi: "Il n’y a rien de mobile dans une cartouche : un fil, du sable, deux embouts." } ] }
   ],
 
@@ -74,7 +75,7 @@ ModeleSigne.construire({
     "<strong>Le trait incliné = un contact.</strong> Ici, ça s’ouvre et ça se ferme.",
     "<strong>Toujours dessiné au repos</strong>, jamais dans l’état où vous le trouverez.",
     "Le petit trait qui barre = fermé au repos. C’est la lettre des sécurités.",
-    "Un fusible n’en a pas : il fond."
+    "Une cartouche de fusible n’en a pas : elle fond."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Reconnaître le contact sur n’importe quel symbole, savoir qu’il est toujours dessiné au repos, et distinguer le contact à fermeture du contact à ouverture.</p>',

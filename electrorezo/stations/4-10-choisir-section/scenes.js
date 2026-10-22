@@ -103,7 +103,7 @@ const ScenesSection = (() => {
     const hote = document.createElement('div');
     const d = svg('0 0 760 340', 'La section d’un câble se choisit sur deux critères : ne pas chauffer, et ne pas perdre trop de tension sur la longueur.');
     const o = { pose: 'B', isolant: 'PVC', tri: false, limite: 5 };
-    let ib = 16, L = 25;
+    let ib = 16, L = 10;
 
     const peindre = () => {
       const r = choisir(ib, L, o);
@@ -139,8 +139,9 @@ ${s ? `<circle cx="130" cy="150" r="${rayon}" fill="${C.cuivre}" stroke="${C.nav
 <text x="630" y="196" text-anchor="middle" font-size="12" fill="${C.gris}">protégé par un disjoncteur</text>
 <text x="630" y="214" text-anchor="middle" font-size="12" fill="${C.gris}">de ${r.In || '—'} A</text>
 
-<text x="380" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}" style="white-space:nowrap">${formule}</text>
-<text x="380" y="296" text-anchor="middle" font-size="12" fill="${C.gris}">${o.tri ? 'triphasé 400 V' : 'monophasé 230 V'} · cuivre · ${POSES.find(p => p.id === o.pose).court} · isolant ${o.isolant} · 30 °C · un seul circuit</text>
+<text x="380" y="260" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}" style="white-space:nowrap">${formule}</text>
+<text x="380" y="279" text-anchor="middle" font-size="12" fill="${C.gris}">ΔU : chute de tension en volts · 0,0225 : résistance du cuivre · ${o.tri ? '1,73 : trois phases' : '2 : aller et retour'}</text>
+<text x="380" y="298" text-anchor="middle" font-size="12" fill="${C.gris}">${o.tri ? 'triphasé 400 V' : 'monophasé 230 V'} · cuivre · ${POSES.find(p => p.id === o.pose).court} · isolant ${o.isolant} · 30 °C · un seul circuit</text>
 <text x="380" y="316" text-anchor="middle" font-size="12" fill="${C.gris}">Chiffres : NF C 15-100, tableau 52H. Pas de facteur de correction appliqué.</text>`;
     };
     peindre();

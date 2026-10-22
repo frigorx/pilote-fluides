@@ -70,8 +70,10 @@ const SchemasProtection = (() => {
 <text x="110" y="76" text-anchor="end" font-size="13" fill="${C.gris}">temps</text>
 <path id="cGG" d="M150 110 C 260 118 330 200 400 268 C 450 305 520 314 620 316"
       fill="none" stroke="${C.bleu}" stroke-width="6"/>
-<path id="cAM" d="M150 118 C 330 122 470 190 560 268 C 600 302 650 314 700 316"
+<path id="cAM" d="M470 190 C 510 215 540 245 560 268 C 600 302 650 314 700 316"
       fill="none" stroke="${C.orange}" stroke-width="6" stroke-dasharray="12 8"/>
+<circle cx="470" cy="190" r="6" fill="${C.orange}"/>
+<text x="484" y="182" font-size="13" font-weight="700" fill="${C.orange}">rien en dessous</text>
 <text x="158" y="98" font-size="15" font-weight="700" fill="${C.bleu}">gG — usage général</text>
 <text x="452" y="146" font-size="15" font-weight="700" fill="${C.orange}">aM — accompagnement moteur</text>
 <g id="pointeDem">
@@ -86,7 +88,7 @@ const SchemasProtection = (() => {
       d.querySelector('#pointeDem').setAttribute('opacity', quoi === 'deux' ? '1' : '.3');
     };
     return bloc(d, [
-      { id:'gg', libelle:'gG seul', legende:'Le gG protège tout : câbles, prises, éclairage. Il fond dès que le courant dépasse durablement son calibre.', appliquer:() => maj('gg') },
+      { id:'gg', libelle:'gG seul', legende:'Le gG protège tout : câbles, prises, éclairage. Il fond quand le courant dépasse nettement son calibre assez longtemps : des minutes à une heure vers une fois et demie, bien plus vite quand ça monte.', appliquer:() => maj('gg') },
       { id:'am', libelle:'aM seul', legende:'L’aM laisse passer la pointe du démarrage d’un moteur, qui peut valoir plusieurs fois le courant nominal pendant quelques secondes. En revanche il ne protège pas contre les petites surcharges.', appliquer:() => maj('am') },
       { id:'deux', libelle:'Les deux', legende:'Un moteur démarre en appelant beaucoup de courant. Le gG y verrait une surcharge et fondrait. L’aM attend. C’est toute la différence entre les deux lettres.', appliquer:() => maj('deux') }
     ], 'deux',
@@ -146,10 +148,10 @@ const SchemasProtection = (() => {
       }
     };
     return bloc(d, [
-      { id:'repos', libelle:'Au repos', legende:'Le courant traverse le bilame puis la bobine. Ni l’un ni l’autre ne réagit.', appliquer:() => maj('repos') },
+      { id:'repos', libelle:'Au repos', legende:'Le courant traverse le bilame et la bobine, l’un après l’autre (l’ordre dépend du modèle). Ni l’un ni l’autre ne réagit.', appliquer:() => maj('repos') },
       { id:'surcharge', libelle:'Surcharge', legende:'Trop de courant, mais pas énormément. Le bilame chauffe, se courbe, et finit par déclencher. Cela peut prendre des secondes ou des minutes : c’est voulu.', appliquer:() => maj('surcharge') },
       { id:'court', libelle:'Court-circuit', legende:'Le courant devient énorme d’un coup. La bobine attire le noyau, qui frappe le mécanisme. Quelques millièmes de seconde — le bilame n’a pas eu le temps de bouger.', appliquer:() => maj('court') }
-    ], 'repos', 'Le courant traverse le bilame puis la bobine. Ni l’un ni l’autre ne réagit.');
+    ], 'repos', 'Le courant traverse le bilame et la bobine, l’un après l’autre (l’ordre dépend du modèle). Ni l’un ni l’autre ne réagit.');
   }
 
   /* ---------------------------------------------- 4.5 / 4.6 : le tore différentiel */
@@ -206,7 +208,7 @@ const SchemasProtection = (() => {
       ['4.8', 'La terre', 0, 0, 0],
       ['4.9', 'Le câble et sa section', 0, 0, 0]
     ];
-    const d = svg('0 0 840 470', 'Tableau des neuf stations de la ligne 4 et des trois défauts.');
+    const d = svg('0 0 840 470', 'Tableau des appareils de la ligne 4 et des trois défauts.');
     const lignes = L.map(([id, nom, a, b, c], i) => {
       const y = 128 + i * 36, courant = id === idCourant;
       const m = (v, x) => `<text x="${x}" y="${y + 5}" text-anchor="middle" font-size="13.5"
@@ -290,15 +292,15 @@ ${lignes}
       'Le courant de défaut part de la carcasse, passe par le conducteur de protection et revient par la terre.');
     d.innerHTML = `
 <rect x="16" y="14" width="788" height="372" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-<text x="410" y="44" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">La terre ne protège pas : elle rend la protection possible</text>
+<text x="410" y="44" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">La terre seule ne suffit pas : elle rend la protection possible</text>
 
 <rect x="110" y="106" width="150" height="130" rx="10" fill="${C.creme}" stroke="${C.navy}" stroke-width="4"/>
 <text x="185" y="98" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">la machine</text>
 <circle cx="185" cy="171" r="30" fill="${C.papier}" stroke="${C.navy}" stroke-width="4"/>
 <text x="185" y="179" text-anchor="middle" font-size="18" font-weight="700" fill="${C.navy}">M</text>
 
-<line x1="50" y1="136" x2="110" y2="136" stroke="${C.orange}" stroke-width="6"/>
-<text x="52" y="124" font-size="13" font-weight="700" fill="${C.orange}">phase</text>
+<line x1="50" y1="136" x2="110" y2="136" stroke="${C.rouge}" stroke-width="6"/>
+<text x="52" y="124" font-size="13" font-weight="700" fill="${C.rouge}">phase</text>
 
 <g id="bDefaut" opacity="0">
   <line x1="185" y1="141" x2="258" y2="141" stroke="${C.rouge}" stroke-width="5" stroke-dasharray="8 5"/>
@@ -307,10 +309,12 @@ ${lignes}
 </g>
 
 <line x1="185" y1="236" x2="185" y2="296" stroke="${C.vert}" stroke-width="7"/>
+<line x1="185" y1="236" x2="185" y2="296" stroke="#e5c100" stroke-width="7" stroke-dasharray="9 9"/>
 <text x="126" y="274" font-size="13" font-weight="700" fill="${C.vert}">le PE</text>
-<line x1="130" y1="296" x2="240" y2="296" stroke="${C.vert}" stroke-width="6"/>
-<line x1="146" y1="310" x2="224" y2="310" stroke="${C.vert}" stroke-width="6"/>
-<line x1="162" y1="324" x2="208" y2="324" stroke="${C.vert}" stroke-width="6"/>
+<!-- la terre : géométrie de la bibliothèque (10_electric/10_allpole/110_network_supplies/terre.svg : traits de 14, 10 et 6), à l'échelle 7 -->
+<g transform="translate(185 296) scale(7)" stroke="${C.navy}" stroke-width="1" fill="none">
+  <line x1="-7" y1="0" x2="7" y2="0"/><line x1="-5" y1="2" x2="5" y2="2"/><line x1="-3" y1="4" x2="3" y2="4"/>
+</g>
 <text x="185" y="352" text-anchor="middle" font-size="13" fill="${C.gris}">la prise de terre</text>
 
 <g id="bCourant" opacity="0">
@@ -357,11 +361,11 @@ ${lignes}
 <rect x="16" y="14" width="788" height="372" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="410" y="46" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">La section décide du courant admissible</text>
 ${[[1.5, 16, 170], [2.5, 21, 410], [6, 36, 650]].map(([sec, amp, x], i) => `
-<circle cx="${x}" cy="164" r="${18 + i * 15}" fill="#d98a45" stroke="${C.navy}" stroke-width="4"/>
+<circle cx="${x}" cy="164" r="${(20 * Math.sqrt(sec / 1.5)).toFixed(1)}" fill="#d98a45" stroke="${C.navy}" stroke-width="4"/>
 <text x="${x}" y="252" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${String(sec).replace('.', ',')} mm²</text>
 <text x="${x}" y="280" text-anchor="middle" font-size="15" fill="${C.gris}">environ ${amp} A</text>`).join('')}
-<text x="410" y="322" text-anchor="middle" font-size="13" fill="${C.gris}">valeurs indicatives : l’intensité vraiment admissible dépend du mode de pose, de l’isolant et de la température</text>
-<text x="410" y="360" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">Le calibre de la protection se choisit APRÈS la section, jamais l’inverse.</text>`;
+<text x="410" y="322" text-anchor="middle" font-size="13" fill="${C.gris}">valeurs indicatives : câble sous conduit, isolant PVC, trois conducteurs chargés — voir 4.10 pour un circuit monophasé</text>
+<text x="410" y="360" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">Le calibre de la protection ne dépasse jamais ce que le câble supporte.</text>`;
     return bloc(d, [], null,
       'Un conducteur qui porte plus de courant qu’il ne peut chauffe. S’il chauffe, l’isolant vieillit, durcit, puis lâche. La protection en amont existe pour que cela n’arrive jamais.');
   }

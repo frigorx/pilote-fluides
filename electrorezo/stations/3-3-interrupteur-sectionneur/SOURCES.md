@@ -7,7 +7,7 @@ Trouvées par `node outils/chercher-images.mjs "interrupteur sectionneur charge"
 
 | Fichier local | Origine | Comment elle a été trouvée |
 |---|---|---|
-| `assets/biblio/inter-sectionneur-proximite.png` | base de connaissances inerWeb, document de cours | recherche « interrupteur sectionneur charge » |
+| `assets/biblio/interrupteur-sectionneur-rotatif.jpeg` | base de connaissances inerWeb, document de cours CAP « Appareillage industriel » (photo d'un interrupteur-sectionneur rotatif à poignée rouge sur fond jaune ; origine et licence à vérifier avant toute publication) | recherche « interrupteur sectionneur de proximité poignée rouge et jaune » (19/10/2026). Remplace `inter-sectionneur-proximite.png`, qui montrait une manette de commande 22 mm et non un interrupteur-sectionneur (audit V1) |
 | `assets/biblio/technicien-tableau.png` | base de connaissances inerWeb, document de cours | recherche « interrupteur sectionneur charge » |
 
 ⚠️ **Droits.** Ces images viennent des documents de cours des collègues. Décision de

@@ -59,10 +59,11 @@ C'est un peu maladroit, mais c'est la convention, et le contexte tranche toujour
 Un piège maintenant, sur les plaques de moteur, et il est sérieux.
 Sur une plaque, deux tensions sont écrites — deux cent trente et quatre cents. On pourrait croire
 que la petite est la tension simple du réseau.
-Ce n'est pas ça. Ces deux valeurs disent ce que chaque bobinage du moteur doit recevoir, selon le
-couplage. Deux cent trente en triangle, quatre cents en étoile.
+Ce n'est pas ça. Ces deux valeurs sont les tensions entre phases que le moteur accepte : deux
+cent trente en triangle, quatre cents en étoile. Dans les deux cas, chaque bobinage reçoit deux
+cent trente volts.
 C'est un autre sujet, et c'est la station six point quatre. Mais retenez dès maintenant qu'une
-tension sur une plaque de moteur ne se lit pas comme une tension de réseau.
+tension sur une plaque de moteur ne se lit pas comme la tension simple du réseau.
 Enfin, une habitude de rédaction que je vous demande de prendre pour tous vos rapports.
 Une tension se note toujours avec ses deux points. « Deux cent trente et un volts » ne veut rien
 dire. « Deux cent trente et un volts entre L un et N » veut dire quelque chose.

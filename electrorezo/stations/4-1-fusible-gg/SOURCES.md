@@ -20,3 +20,6 @@ les deux declencheurs, le tore differentiel. Representations pedagogiques.
 ## Narration
 
 Ecrite le 28/08/2026, pour l'oreille. **Non validee.** Aucun MP3 fabrique.
+
+## Photo « cartouches gG » (22/10/2026)
+`assets/biblio/cartouches-gg-lisibles.png` : base de connaissances inerWeb, document de cours CAP « C05 les fusibles ELEVE » (cartouches gG 10, 16, 20 et 32 A, marquages lisibles). Origine et licence à vérifier avant toute publication. Remplace `fusibles-et-outil.jpeg`, dont les marquages lisibles étaient « aM » (audit V1).

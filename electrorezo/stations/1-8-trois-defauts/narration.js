@@ -8,8 +8,8 @@ ligne quatre, celle des protections.
 Une installation peut mal se comporter de trois façons. Trois, et pas une de plus.
 Trop de courant qui dure. Trop de courant d'un coup. Ou du courant qui part là où il ne devrait
 pas.
-Trois défauts, trois dangers, trois protections différentes. Et surtout : aucune protection ne
-les couvre toutes.`,
+Trois défauts, trois dangers, trois protections différentes. Et un seul appareil qui les réunit
+tous les trois : le disjoncteur différentiel. Vous le verrez à la station quatre point six.`,
 
   comprendre: `Regardons-les l'un après l'autre, avec les trois boutons sous le dessin.
 Le premier, la surcharge. Le courant emprunte le bon chemin, celui qui était prévu. Mais il est
@@ -27,9 +27,10 @@ Le courant quitte son chemin. Il part vers la terre — par une carcasse métall
 par une personne qui touche.
 Il n'est ni particulièrement fort, ni particulièrement long. Il est ailleurs. Et c'est
 précisément ce qui le rend invisible à tout ce qui compte le courant qui passe.
-Voilà pourquoi il faut trois protections différentes. Un bilame pour la surcharge, qui est lent.
-Une bobine ou un fusible pour le court-circuit, qui est instantané. Et un différentiel pour le
-défaut d'isolement, qui ne compte pas mais qui compare.`,
+Voilà pourquoi il faut trois protections différentes. Un bilame pour la surcharge — deux métaux
+collés qui se courbent à la chaleur — qui est lent. Une bobine ou un fusible pour le
+court-circuit, qui est instantané. Et un différentiel pour le défaut d'isolement, qui ne compte
+pas mais qui compare.`,
 
   manipuler: `Pour la mesure, chaque défaut a son instrument — et l'un des trois ne se mesure pas du tout.
 La surcharge se constate à la pince, en service. On mesure, on compare à la plaque, et on voit
@@ -41,7 +42,7 @@ Le défaut d'isolement se mesure au mégohmmètre. Cet appareil-là envoie une h
 Et parce qu'il envoie une haute tension, il y a deux règles absolues. Jamais sur une installation
 en service. Et jamais sur du matériel électronique, qu'il détruirait.
 Un mot enfin sur le bouton test d'un différentiel. Il ne mesure rien du tout. Il vérifie
-seulement que l'appareil coupe encore. C'est utile, c'est même indispensable deux fois par an —
+seulement que l'appareil coupe encore. C'est utile, c'est même indispensable, régulièrement, au moins tous les six mois —
 mais ça ne remplace pas une mesure d'isolement.`,
 
   representer: `Il n'y a pas de nouvelle unité ici : les trois défauts se comptent en ampères. Ce qui change,
@@ -49,8 +50,9 @@ c'est le lieu et la durée.
 La surcharge : vingt pour cent de trop, pendant des minutes.
 Le court-circuit : mille fois trop, pendant des millièmes de seconde.
 Le défaut d'isolement : trente milliampères — trois centièmes d'ampère — mais vers la terre.
-Trois centièmes d'ampère. À côté d'un fusible de seize ampères, c'est une poussière. Et pourtant
-c'est le seuil à partir duquel le courant devient mortel pour un cœur humain.
+Trois centièmes d'ampère. À côté d'un fusible de seize ampères, c'est une poussière. Et pourtant,
+vers trente milliampères, la respiration peut se bloquer si le contact dure ; et un peu plus haut,
+le cœur peut se mettre à fibriller. C'est de là que vient le seuil des différentiels.
 Regardez la courbe de la première image : elle montre exactement ça. En abscisse, le courant qui
 traverse le corps. En ordonnée, la durée. Et des zones, qui vont de « on ne sent rien » à
 « fibrillation ».
@@ -58,7 +60,7 @@ Ce n'est pas de la théorie. C'est le document normalisé sur lequel s'appuie to
 dimensionnement des protections.
 Un dernier mot pour faire le lien avec la suite. Sur un plan, chaque protection annonce ce
 qu'elle sait voir, par les signes qu'elle porte. Le crochet du thermique. Le demi-cercle du
-magnétique. Le tore du différentiel.
+magnétique. Le tore du différentiel, cet anneau qui entoure les deux fils.
 Vous savez déjà les lire si vous avez fait la ligne huit. Sinon, elle vous attend — et elle vous
 donnera de quoi lire n'importe quel schéma sans dictionnaire.`
 };

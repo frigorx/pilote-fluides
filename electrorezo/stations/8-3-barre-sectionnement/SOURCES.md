@@ -15,3 +15,10 @@ Elles ne remplacent pas le symbole officiel, qui est montre au temps 4.
 ## Narration
 
 Ecrite le 28/08/2026 pour cette station, pour l'oreille. **Non validee.** Aucun MP3 fabrique.
+
+## Correction du 19/10/2026 (audit V1)
+
+`sectionneur_general.svg` (sectionneur porte-fusibles triphasé : fusibles et liaisons pointillées non enseignés
+avant 8.4 et 8.7) remplacé par `assets/sectionneur4.svg`, copie de
+`svg/10_electric/10_allpole/200_fuses_protective_gears/20_disconnecting_switches/sectionneur4.svg`
+(trois lames, trois barres courtes, rien d'autre).

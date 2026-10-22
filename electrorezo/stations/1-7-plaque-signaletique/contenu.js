@@ -16,13 +16,10 @@ ModeleGrandeur.construire({
   photos: [
     { src: 'assets/biblio/plaque-leroy-somer.png',
       alt: "Photographie d’une plaque signalétique métallique d’un moteur asynchrone Leroy Somer, avec ses tensions, intensités, puissance, vitesse et facteur de puissance.",
-      titre: "La vraie plaque.", sous: "Rivetée sur le flanc du moteur, pour toute sa vie." },
-    { src: 'assets/biblio/plaque-leroy-somer-2.jpeg',
-      alt: "Seconde photographie d’une plaque signalétique de moteur asynchrone Leroy Somer.",
-      titre: "Toujours le même ordre.", sous: "Tensions, intensités, puissance, vitesse." },
+      titre: "La vraie plaque.", sous: "Rivetée sur le flanc du moteur, pour toute sa vie. Mêmes tensions et mêmes intensités que le dessin ; la vitesse (1440) et le cos φ (0,78) sont un peu différents." },
     { src: 'assets/biblio/plaque-commentee.png',
       alt: "Plaque signalétique de moteur asynchrone présentée avec le détail de chacune de ses informations techniques.",
-      titre: "Ligne par ligne.", sous: "Chaque nombre a un sens précis, et un seul." }
+      titre: "Ligne par ligne.", sous: "Un autre moteur, d’autres valeurs que le dessin : seul l’ordre des lignes est le même. Chaque nombre a un sens précis, et un seul." }
   ],
 
   lIdee: "Une plaque signalétique est la carte d’identité d’une machine. Tout ce qu’il faut pour la brancher, la protéger et la dépanner tient sur ce rectangle de métal — à condition de savoir le lire.",
@@ -32,7 +29,7 @@ ModeleGrandeur.construire({
 
   ceQuiSePasse: [
     ["Deux tensions, deux intensités", "elles vont par paires et dans le même ordre. <em>230 V — 6,65 A</em> d’un côté, <em>400 V — 3,84 A</em> de l’autre. Ce ne sont pas deux options libres : chacune correspond à un <strong>couplage</strong> de la plaque à bornes."],
-    ["La puissance est celle qui est RENDUE", "1,5 kW, c’est ce que le moteur fournit sur son arbre. Il en absorbe davantage — environ 1,8 kW. La différence part en chaleur."],
+    ["La puissance est celle qui est RENDUE", "1,5 kW, c’est ce que le moteur fournit sur son arbre. Il en absorbe davantage — environ 2 kW. La différence part en chaleur."],
     ["La vitesse est celle en charge", "1435 tr/min, et non 1500. L’écart s’appelle le <strong>glissement</strong> : un moteur asynchrone ne tourne jamais tout à fait à la vitesse de synchronisme."],
     ["Le cos φ", "0,80 par exemple. Il dit quelle part de ce qui est appelé travaille vraiment. C’est lui qui explique qu’un moteur appelle plus que sa puissance utile."]
   ],
@@ -52,11 +49,14 @@ ModeleGrandeur.construire({
   dangerDeMesure: "Une plaque illisible ou absente n’autorise aucune supposition. Sans elle, on ne connaît ni le couplage à faire, ni le réglage du thermique. On cherche la documentation, ou on ne branche pas.",
 
   ecriture: {
-    symbole: 'Un', unite: 'nominal', nomUnite: 'les valeurs de fonctionnement normal',
+    sansUnite: true, titre: 'Les lignes d’une plaque', entetes: ['On lit', 'Cela dit'],
     multiples: [
-      ['U, I, P', 'tension, intensité, puissance — les trois qui décident du câblage'],
-      ['n, cos φ', 'vitesse et facteur de puissance — pour comprendre le comportement'],
-      ['IP, IK', 'protection contre l’eau et la poussière, résistance aux chocs']
+      ['V', 'les deux tensions, une par couplage'],
+      ['A', 'les deux intensités, dans le même ordre que les tensions'],
+      ['kW', 'la puissance rendue sur l’arbre, pas celle absorbée'],
+      ['tr/min', 'la vitesse du rotor en charge'],
+      ['cos φ', 'le facteur de puissance'],
+      ['IP', 'la protection de l’enveloppe : premier chiffre les solides, second l’eau']
     ]
   },
   surUnePlaque: [
@@ -76,12 +76,12 @@ ModeleGrandeur.construire({
         { texte: "230 V au démarrage, 400 V en marche.", pourquoi: "La tension d’alimentation ne change pas entre démarrage et marche." } ] },
 
     { question: "La plaque indique 1,5 kW. Qu’est-ce que le moteur absorbe au réseau ?",
-      confirmation: "Davantage — environ 1,8 kW. La plaque annonce ce qui est rendu.",
+      confirmation: "Davantage — environ 2 kW. La plaque annonce ce qui est rendu.",
       reponses: [
         { texte: "Exactement 1,5 kW.", pourquoi: "Ce serait un rendement de 100 %, ce qui n’existe pas." },
         { texte: "Moins, car le moteur récupère de l’énergie.", pourquoi: "Un moteur ne récupère rien : il perd." },
         { texte: "1,5 kW seulement en charge, rien à vide.", pourquoi: "À vide, il absorbe encore de quoi se maintenir en rotation." },
-        { texte: "Davantage : environ 1,8 kW.", juste: true } ] },
+        { texte: "Davantage : environ 2 kW.", juste: true } ] },
 
     { question: "Sur quoi règle-t-on un relais thermique ?",
       confirmation: "Sur l’intensité de la plaque, correspondant au couplage retenu.",

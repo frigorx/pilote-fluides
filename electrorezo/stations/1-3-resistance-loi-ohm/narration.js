@@ -17,9 +17,11 @@ Maintenant baissez la tension et montez la résistance. Le courant redescend. Lo
 freine davantage.
 Voilà toute la loi d'Ohm. La tension pousse, la résistance freine, et le courant est le résultat
 des deux.
-Regardez aussi le fil pendant que vous manœuvrez : il change d'épaisseur et il est annoncé froid,
-tiède, chaud ou brûlant. Ce n'est pas décoratif. C'est le rappel de ce que vous avez appris à la
-station précédente : c'est le courant qui fait chauffer, et il chauffe avec son carré.
+Regardez aussi pendant que vous manœuvrez : le trait change d'épaisseur quand le courant change,
+et la résistance est annoncée froide, tiède, chaude ou brûlante, avec les watts qu'elle dégage. Ce
+n'est pas décoratif. C'est le rappel de ce que vous avez appris à la station précédente : un
+courant qui passe dans une résistance la chauffe, et, à résistance donnée, il la chauffe avec son
+carré.
 Maintenant, qu'est-ce qui fait la résistance d'un fil ? Trois choses, et vous les rencontrerez
 sur le terrain.
 Sa longueur, d'abord. Plus il est long, plus il résiste. C'est pour ça qu'une longue ligne perd
@@ -36,7 +38,8 @@ L'ampèremètre et le voltmètre écoutent. Ils regardent ce qui se passe, sans 
 L'ohmmètre, lui, parle. Il envoie son propre petit courant dans l'élément, et il regarde ce qui
 revient. C'est comme ça qu'il calcule.
 Alors imaginez ce qui se passe si l'élément est encore sous tension. Le réseau envoie deux cent
-trente volts, l'ohmmètre envoie quelques millivolts. Son petit signal est complètement écrasé.
+trente volts, l'ohmmètre n'envoie qu'une toute petite tension. Son petit signal est complètement
+écrasé.
 La valeur affichée ne veut rien dire, et l'appareil peut être détruit.
 D'où la règle, sans exception : on coupe, on consigne, on débranche au moins un côté de
 l'élément. Et alors seulement on mesure.

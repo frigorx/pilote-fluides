@@ -14,8 +14,8 @@ ModeleGrandeur.construire({
 
   photos: [
     { src: 'assets/biblio/mesure-de-tension-sur-un-circuit.png',
-      alt: "Schéma d’un multimètre relié par ses deux pointes de touche à un circuit, affichant une tension.",
-      titre: "Toujours deux pointes.", sous: "Une tension se mesure entre deux points, jamais en un seul." },
+      alt: "Schéma d’un multimètre dont la molette est sur le test de diode, avec ses deux pointes posées aux deux bouts d’un composant : l’écran affiche 0,672 volt.",
+      titre: "Toujours deux pointes.", sous: "Une pointe sur chaque bout du composant. Ici la molette est sur le test de diode ; pour une tension, vous la mettrez sur V~ ou V⎓." },
     { src: 'assets/biblio/multimetre-et-ses-sondes.png',
       alt: "Photo d’un multimètre numérique avec ses sondes rouge et noire, son sélecteur rotatif et son écran affichant 0,00.",
       titre: "Rouge et noire.", sous: "La noire ne bouge jamais de la borne commune." }
@@ -29,13 +29,13 @@ ModeleGrandeur.construire({
   ceQuiSePasse: [
     ["Une différence, toujours", "chaque point d’un circuit a un potentiel. La tension entre deux points, c’est l’écart entre leurs potentiels. Si les deux sont au même niveau, l’écart est nul — quelle que soit la valeur des deux."],
     ["C’est elle qui pousse", "sans différence de potentiel, pas de circulation. Elle est la cause, l’intensité est la conséquence."],
-    ["L’oiseau sur le fil", "il a ses deux pattes sur le même conducteur, donc au même potentiel. La tension entre ses pattes est nulle, et il ne lui arrive rien — alors qu’il est posé sur du très haute tension."],
-    ["Elle se mesure sans rien couper", "on pose deux pointes, on lit. C’est la seule mesure courante qui se fait sur une installation en service, et c’est aussi celle qui expose le plus."]
+    ["L’oiseau sur le fil", "il a ses deux pattes sur le même conducteur, donc au même potentiel. La tension entre ses pattes est nulle, et il ne lui arrive rien — alors qu’il est posé sur de la très haute tension."],
+    ["Elle se mesure sans rien couper", "on pose deux pointes, on lit. C’est la mesure où l’on pose des pointes sur des conducteurs sous tension : c’est celle qui expose le plus."]
   ],
   aRetenir: [
     "La tension se note <strong>U</strong> et se mesure en <strong>volts</strong>.",
     "Elle n’est jamais une propriété d’un point : c’est un écart entre deux.",
-    "Dire « il y a 230 volts sur ce fil » est un raccourci. Il faut entendre : 230 volts entre ce fil et le neutre."
+    "Dire « il y a 230 volts sur ce fil » est un raccourci. Il faut entendre : 230 volts entre ce fil (la <strong>phase</strong>, le fil sous tension) et le <strong>neutre</strong> (le fil de retour)."
   ],
 
   mesure: () => SchemasGrandeurs.brancherVoltmetre(),
@@ -45,7 +45,7 @@ ModeleGrandeur.construire({
     "La pointe <strong>noire</strong> va toujours dans la borne <strong>COM</strong>. C’est la rouge qu’on déplace, et c’est elle qui se trompe.",
     "Sur le réseau, sélecteur en <strong>alternatif</strong>. Sur une batterie ou une carte, en <strong>continu</strong>."
   ],
-  dangerDeMesure: "C’est la seule mesure qui se fait couramment sous tension. Gants isolants, pointes en bon état, une main derrière le dos, et jamais seul sur une installation inconnue.",
+  dangerDeMesure: "Ici, on pose des pointes sur des conducteurs sous tension. Gants isolants, pointes en bon état, une main derrière le dos, et jamais seul sur une installation inconnue.",
 
   ecriture: {
     symbole: 'U', unite: 'V', nomUnite: 'le volt',
@@ -92,7 +92,7 @@ ModeleGrandeur.construire({
       reponses: [
         { texte: "230 volts entre la phase et le neutre.", juste: true },
         { texte: "230 volts entre la phase et la terre uniquement.", pourquoi: "Le neutre est la référence habituelle ; la valeur mesurée vers la terre est proche, mais ce n’est pas la définition." },
-        { texte: "La valeur maximale atteinte par la tension.", pourquoi: "Le maximum monte à environ 325 volts : 230 est la valeur efficace." },
+        { texte: "La valeur maximale atteinte par la tension.", pourquoi: "Le maximum monte à environ 325 volts : 230 est la valeur « efficace », que la station 1.5 explique." },
         { texte: "230 volts dans chacun des deux fils.", pourquoi: "Un fil ne « contient » pas de tension : elle existe entre deux fils." } ] }
   ],
 
@@ -100,7 +100,7 @@ ModeleGrandeur.construire({
     "<strong>U</strong>, en <strong>volts</strong>. C’est une <strong>différence</strong>, jamais une valeur en un point.",
     "<strong>En parallèle</strong>, aux bornes, sans rien couper.",
     "<strong>La noire dans COM</strong>, toujours.",
-    "<strong>C’est la mesure qui expose le plus</strong> : elle se fait sous tension."
+    "<strong>C’est la mesure qui expose le plus</strong> : on pose les pointes sous tension."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre que la tension est une différence de potentiel, savoir la mesurer en parallèle, et lire les tensions écrites sur le matériel.</p><p><strong>Limite.</strong> Les tensions simple et composée du triphasé sont traitées à la ligne 2.</p>',

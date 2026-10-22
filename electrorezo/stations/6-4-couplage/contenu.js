@@ -131,9 +131,9 @@
     };
 
     bande.appendChild(vignette('assets/biblio/moteur-boite-a-bornes.jpeg',
-      'Photo d’un moteur électrique dont la boîte à bornes est ouverte : six bornes et trois barrettes, désignées par deux flèches rouges.',
+      'Photo d’un moteur électrique dont la boîte à bornes est ouverte : six bornes ; deux barrettes de couplage, désignées par deux flèches rouges, relient les trois bornes du bas : le moteur est couplé en étoile.',
       'La boîte à bornes.',
-      'Sur le flanc du moteur, sous un couvercle. Les flèches montrent les trois barrettes.'));
+      'Sur le flanc du moteur, sous un couvercle. Les flèches montrent les barrettes de couplage (ici deux : le moteur est couplé en étoile).'));
     bande.appendChild(el('div', 'fleche', '➜'));
     bande.appendChild(vignette('assets/biblio/plaque-signaletique.jpeg',
       'Plaque signalétique d’un moteur asynchrone Leroy Somer : 1,5 kW, triangle 230 V 6,65 A, étoile 400 V 3,84 A, 1440 tours par minute, 50 Hz.',

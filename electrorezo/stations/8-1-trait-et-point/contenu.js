@@ -43,7 +43,7 @@ ModeleSigne.construire({
   },
 
   pourquoiCetteForme: [
-    '<strong>Le trait n’a pas de forme à justifier</strong> : c’est le fil lui-même, vu de loin. C’est la seule lettre de l’alphabet qui ressemble exactement à ce qu’elle désigne.',
+    '<strong>Le trait n’a pas de forme à justifier</strong> : c’est le fil lui-même, vu de loin. C’est la lettre la plus fidèle à ce qu’elle désigne.',
     '<strong>Le point, lui, a été inventé</strong> — parce qu’il fallait bien distinguer deux fils qui se rencontrent de deux fils qui se croisent. Un plan est plat : sans ce point, l’information serait perdue.',
     'Sur des plans anciens ou étrangers, l’enjambement se dessine parfois par une <strong>petite demi-lune</strong> qui saute par-dessus l’autre trait. On ne l’écrit plus, mais on la rencontre encore.',
     '<strong>Ce que ça coûte de confondre</strong> : au mieux une machine qui ne démarre pas, au pire deux phases reliées — un court-circuit franc.'
@@ -54,13 +54,14 @@ ModeleSigne.construire({
   motVedette: 'moteur',
 
   symbolesBiblio: [
-    { src: 'assets/splice.svg', alt: 'Symbole normalisé d’une connexion entre conducteurs.', legende: 'Une connexion' },
-    { src: 'assets/cross.svg', alt: 'Symbole normalisé d’un croisement sans connexion.', legende: 'Un croisement sans connexion' },
-    { src: 'assets/jump.svg', alt: 'Symbole normalisé d’un enjambement de conducteurs.', legende: 'Un enjambement' }
+    { src: 'assets/liaison_t_point.svg', alt: 'Symbole normalisé d’une connexion en T : un fil qui en rejoint un autre, avec un point à la jonction.', legende: 'Une connexion en T : le point dit que les fils sont reliés' },
+    { src: 'assets/cross.svg', alt: 'Symbole normalisé d’un croisement avec connexion : deux traits qui se croisent, avec un point au croisement.', legende: 'Un croisement avec connexion : le point est là' },
+    { src: 'assets/jump.svg', alt: 'Symbole ancien d’un enjambement : un fil dessine une petite bosse pour passer par-dessus l’autre fil, qui n’est pas dessiné ici.', legende: 'Un enjambement : symbole ancien, encore présent sur des plans anciens ou étrangers' }
   ],
   duDessinAuPlan: [
-    'Sur un vrai plan, <strong>aucune légende n’accompagne ces signes</strong>. Ils sont trop courants pour qu’on les explique : personne n’écrit « ici, connexion ».',
+    'Sur un vrai plan, <strong>en général, aucune légende n’accompagne ces signes</strong>. Ils sont trop courants pour qu’on les explique : personne n’écrit « ici, connexion ».',
     'C’est pour cela qu’il faut les connaître par cœur, <strong>eux et seulement eux</strong> : les autres lettres, vous les déduirez.',
+    'Un croisement <strong>sans</strong> connexion n’a pas de fichier à lui dans la bibliothèque : ce sont simplement deux traits qui se coupent, sans point (voir le temps 2).',
     'Attention aux plans redessinés ou photocopiés : un point mal imprimé disparaît. Dans le doute, on suit le fil, on ne devine pas.'
   ],
 
@@ -78,7 +79,7 @@ ModeleSigne.construire({
       reponses: [
         { texte: 'Une cote de longueur.', pourquoi: 'Un schéma électrique n’est pas un plan coté : les longueurs s’écrivent dans le carnet de câbles.' },
         { texte: 'Un conducteur — un fil.', juste: true },
-        { texte: 'Une limite de zone.', pourquoi: 'Les limites de zone se dessinent en trait fin interrompu, jamais en trait plein comme un conducteur.' },
+        { texte: 'Une limite de zone.', pourquoi: 'Une limite de zone ne se dessine pas comme un conducteur, en trait plein.' },
         { texte: 'Une liaison mécanique.', pourquoi: 'La liaison mécanique se dessine en pointillé — c’est la station 8.7.' } ] },
 
     { question: 'Pourquoi le point a-t-il été inventé ?',
@@ -101,7 +102,7 @@ ModeleSigne.construire({
   retenir: [
     '<strong>Le trait = un conducteur.</strong> La lettre la plus fréquente.',
     '<strong>Le point = une connexion.</strong> Sans lui, les fils se croisent sans se toucher.',
-    'Ces deux-là ne sont jamais légendés sur un plan : c’est à vous de les lire.',
+    'Ces deux-là ne sont presque jamais légendés sur un plan : c’est à vous de les lire.',
     'Un point douteux se vérifie, il ne se devine pas.'
   ],
 
@@ -110,7 +111,7 @@ ModeleSigne.construire({
   credits: [
     { quoi: 'Symboles de connexion, croisement et enjambement',
       source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/114_connections/' } ],
+      detail: 'svg/10_electric/10_allpole/114_connections/ (cross.svg, jump.svg) · svg/10_electric/91_en_60617/en_60617_03/en_60617_03_02/en_60617_03_02_05.svg (liaison en T avec point)' } ],
 
   correspondances: [
     { ligne: 8, couleur: '#7c3aed', texte: '8.2 Le contact' },

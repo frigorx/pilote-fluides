@@ -28,11 +28,12 @@ Et vous chercherez longtemps, parce que tout a l'air normal.`,
 
   manipuler: `Trois défauts, et pour la première et unique fois de cette ligne, un appareil qui les voit
 tous les trois.
-Vérifiez-le — et regardez ensuite le tableau de la ligne : vous verrez qu'il est seul dans sa
-colonne.`,
+Vérifiez-le — et regardez ensuite le tableau de la ligne : vous verrez qu'il est le seul à avoir
+les trois cases cochées sur sa ligne.`,
 
-  representer: `Son symbole est le plus chargé de toute la ligne quatre : le crochet, le demi-cercle et le
-tore, tous les trois dans le même cadre.
+  representer: `Son symbole complet est le plus chargé de toute la ligne quatre : la croix du disjoncteur, le
+crochet, le demi-cercle et le tore, tous dans le même cadre. Sur certains plans, vous le verrez
+simplifié : seulement les croix et le tore.
 Et c'est exactement là que le travail de la ligne huit vous paie. Vous ne mémorisez pas ce
 symbole. Vous le lisez. Vous le décomposez, vous nommez chaque signe, et vous en déduisez ce
 que l'appareil sait faire.

@@ -14,8 +14,9 @@ Si vous retenez ça, vous comprendrez la moitié des accidents électriques.`,
   comprendre: `Regardez le dessin. Deux points, A et B, chacun à un niveau.
 Ce niveau, on l'appelle le potentiel. Et la tension entre A et B, c'est simplement l'écart entre
 leurs deux niveaux.
-Maintenant, faites monter B. L'écart grandit, la tension grandit. Faites-le redescendre au niveau
-de A : l'écart disparaît, la tension est nulle.
+Maintenant, cliquez sur « Écart plus grand » : les deux points s'éloignent, l'écart grandit, la
+tension grandit. Cliquez sur « Même niveau » : les deux points se retrouvent à la même hauteur,
+l'écart disparaît, la tension est nulle.
 Et voici le point qui va tout éclairer. Quand les deux points sont au même niveau, la tension est
 nulle même si ce niveau est très élevé. Deux points à cinquante mille volts chacun, entre eux :
 zéro.
@@ -31,17 +32,18 @@ Alors retenez l'ordre des choses : la tension est la cause, le courant est la co
   manipuler: `La mesure, maintenant — et elle est simple, parce qu'on ne coupe rien.
 Un voltmètre mesure une différence. Il lui faut donc deux points. On pose une pointe sur chacun,
 et on lit.
-On dit qu'on branche en parallèle, ou aux bornes. Regardez le dessin de gauche : le circuit reste
-entier, la charge continue de fonctionner, l'appareil se contente de regarder.
+On dit qu'on branche en parallèle, ou aux bornes. Cliquez sur « Aux bornes, en parallèle » : le
+circuit reste entier, la charge continue de fonctionner, l'appareil se contente de regarder.
 Pourquoi ça ne perturbe rien ? Parce qu'un voltmètre a une résistance énorme, de l'ordre du
 million d'ohms. Il ne prend presque aucun courant.
-Et c'est justement pour cette raison qu'il ne faut jamais le mettre en série. Regardez le dessin
-de droite : mis dans le circuit, c'est comme si vous aviez coupé le fil. La machine s'arrête.
+Et c'est justement pour cette raison qu'il ne faut jamais le mettre en série. Cliquez maintenant
+sur « Dans le circuit, en série » : mis dans le circuit, c'est comme si vous aviez coupé le fil.
+La machine s'arrête.
 Une habitude à prendre tout de suite : la pointe noire va dans la borne marquée COM, et elle n'en
 bouge jamais. C'est la rouge qu'on déplace selon ce qu'on mesure. Et c'est donc elle qui se
 trompe.
-Enfin, je dois vous dire une chose sérieuse. La mesure de tension est la seule qu'on fait
-couramment sur une installation en service. C'est donc celle qui vous expose le plus.
+Enfin, je dois vous dire une chose sérieuse. Avec la mesure de tension, vous posez des pointes
+sur des conducteurs sous tension. C'est donc celle qui vous expose le plus.
 Gants isolants, pointes en bon état, une main derrière le dos, et jamais seul sur une
 installation que vous ne connaissez pas.`,
 

@@ -13,14 +13,14 @@ ModeleAppareil.construire({
   ],
 
   photos: [
-    { src: 'assets/biblio/inter-sectionneur-proximite.png',
-      alt: 'Photo d’un interrupteur rotatif noir à bande blanche, fixé sur un boîtier métallique.',
+    { src: 'assets/biblio/interrupteur-sectionneur-rotatif.jpeg',
+      alt: 'Photo d’un interrupteur-sectionneur rotatif à quatre pôles, à poignée rouge sur fond jaune.',
       titre: 'La poignée de proximité.',
-      sous: 'Sur le flanc du coffret, à portée de main de celui qui travaille.' },
+      sous: 'Un appareil à poignée rotative, à poser à portée de main de celui qui travaille. Ici rouge sur fond jaune.' },
     { src: 'assets/biblio/technicien-tableau.png',
-      alt: 'Photo d’un technicien en casque et gilet de protection intervenant sur un tableau électrique.',
+      alt: 'Photo d’un technicien en casque, écran facial et gants isolants, qui intervient avec un outil dans une armoire électrique.',
       titre: 'Pourquoi il existe.',
-      sous: 'Arrêter, condamner, intervenir — d’un seul geste et sur un seul appareil.' }
+      sous: 'Celui qui intervient dans une armoire doit d’abord arrêter, condamner, puis vérifier l’absence de tension. Avec cet appareil, les deux premiers gestes se font sur place.' }
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 
@@ -38,11 +38,11 @@ ModeleAppareil.construire({
   ],
 
   variantes: [
-    '<strong>Rotatif à poignée</strong> — le modèle des machines, poignée noire ou rouge sur le coffret.',
+    '<strong>Rotatif à poignée</strong> — le modèle des machines, poignée noire, ou rouge sur fond jaune quand il sert aussi de coupure d’urgence, sur le coffret.',
     '<strong>Modulaire</strong> — en tête de rangée dans un tableau.',
     '<strong>À coupure visible</strong> — une fenêtre montre les contacts séparés.',
-    '<strong>À fusibles incorporés</strong> — il devient alors un appareil de la station 3.5.',
-    'Poignée <strong>rouge sur fond jaune</strong> : c’est la couleur réservée à l’<strong>arrêt d’urgence</strong>. Ne l’employez pas pour un simple interrupteur de machine.'
+    '<strong>À fusibles incorporés</strong> — c’est l’interrupteur-sectionneur à fusibles : il coupe toujours en charge (à ne pas confondre avec le sectionneur porte-fusible de la station 3.5).',
+    'Poignée <strong>rouge sur fond jaune</strong> : couleur réservée à l’<strong>arrêt d’urgence</strong> — soit un coup de poing, soit un interrupteur-sectionneur qui sert aussi de coupure d’urgence. Ne l’employez jamais pour un simple interrupteur de machine.'
   ],
 
   aptitudes: {
@@ -58,18 +58,18 @@ ModeleAppareil.construire({
   cablage: [
     'Amont côté réseau, aval côté machine — le sens compte pour l’intervention.',
     'Tous les conducteurs actifs sont coupés ; <strong>le conducteur de protection ne l’est jamais</strong>.',
-    'Souvent équipé de <strong>contacts auxiliaires</strong> qui préviennent l’automate que l’appareil est ouvert.',
+    'Souvent équipé de <strong>contacts auxiliaires</strong> qui préviennent l’automate (la commande de la machine) que l’appareil est ouvert.',
     'La poignée doit rester accessible, et son trou de cadenas dégagé.'
   ],
-  piege: 'Ne confondez pas avec l’arrêt d’urgence : le coup de poing rouge sur fond jaune est un autre appareil, avec un autre rôle — station 5.8.',
+  piege: 'Ne confondez pas avec le coup de poing d’arrêt d’urgence, qui est un autre appareil, avec un autre rôle — station 5.8. Une poignée rouge sur fond jaune peut, elle, être un interrupteur-sectionneur qui sert aussi de coupure d’urgence.',
 
   symboles: [
     { src: 'assets/inter_sectionneur_tri.svg', alt: 'Symbole normalisé d’un interrupteur-sectionneur à trois pôles.', legende: 'Interrupteur-sectionneur, trois pôles' },
     { src: 'assets/interrupteur_sectionneur_biphase.svg', alt: 'Symbole normalisé d’un interrupteur-sectionneur à deux pôles.', legende: 'Deux pôles' }
   ],
   lecturePlan: [
-    'Il se lit comme la <strong>somme des deux</strong> : le contact incliné de l’interrupteur, plus la petite barre du sectionnement à son extrémité.',
-    'Ces deux signes ensemble sont la seule signature qui autorise à la fois la manœuvre en charge et la condamnation.'
+    'Il se lit comme la <strong>somme des deux</strong> : le contact incliné de l’interrupteur, plus la petite barre du sectionnement au bout du contact fixe, plus un <strong>petit rond</strong> qui veut dire « coupe en charge ».',
+    'La barre seule, c’est un sectionneur (station 3.2). La barre <em>et</em> le petit rond ensemble sont la seule signature qui autorise à la fois la manœuvre en charge et la condamnation.'
   ],
 
   quiz: [
@@ -77,7 +77,7 @@ ModeleAppareil.construire({
       confirmation: 'La distance d’ouverture garantie et le trou de cadenas.',
       reponses: [
         { texte: 'Il supporte un courant plus élevé.', pourquoi: 'Cela dépend du modèle, pas de la famille. Un gros interrupteur reste un interrupteur.' },
-        { texte: 'Il peut être condamné et permet de travailler derrière.', juste: true },
+        { texte: 'Il peut isoler et se laisser condamner.', juste: true },
         { texte: 'Il coupe plus vite.', pourquoi: 'Les deux ont un ressort d’ouverture brusque : la vitesse n’est pas ce qui les sépare.' },
         { texte: 'Il est toujours tripolaire.', pourquoi: 'Il existe en deux, trois ou quatre pôles, comme l’interrupteur.' } ] },
 
@@ -98,19 +98,19 @@ ModeleAppareil.construire({
         { texte: 'Pour que l’intervenant arrête et condamne lui-même, à portée de main.', juste: true } ] },
 
     { question: 'Une poignée rouge sur fond jaune, sur une machine, c’est…',
-      confirmation: 'Ces couleurs sont réservées à l’arrêt d’urgence.',
+      confirmation: 'Ces couleurs sont réservées à l’arrêt d’urgence : un coup de poing, ou un interrupteur-sectionneur qui sert aussi de coupure d’urgence.',
       reponses: [
-        { texte: 'Un arrêt d’urgence, qui a un autre rôle.', juste: true },
+        { texte: 'Réservée à l’arrêt d’urgence : un coup de poing, ou un interrupteur-sectionneur qui sert aussi de coupure d’urgence.', juste: true },
         { texte: 'Un appareil hors service.', pourquoi: 'Rien dans la couleur ne signale une mise hors service.' },
-        { texte: 'Un interrupteur-sectionneur comme un autre.', pourquoi: 'Non : ces couleurs sont réservées, les employer ailleurs induit en erreur.' },
+        { texte: 'Un interrupteur-sectionneur comme un autre.', pourquoi: 'Non : ces couleurs signalent la coupure d’urgence. On ne les met jamais sur un simple interrupteur de machine : cela induit en erreur.' },
         { texte: 'Un appareil réservé à la haute tension.', pourquoi: 'La haute tension a d’autres signalements, et n’est pas concernée ici.' } ] }
   ],
 
   retenir: [
     '<strong>Le seul des cinq à savoir les trois choses</strong> : commander, couper en charge, isoler.',
     'C’est pour cela qu’il est sur le flanc des machines, à portée de main.',
-    'Sur le symbole : le contact incliné <em>et</em> la barre de sectionnement.',
-    'Rouge sur jaune ≠ interrupteur : c’est l’arrêt d’urgence.'
+    'Sur le symbole : le contact incliné, la barre de sectionnement <em>et</em> le petit rond de la coupure en charge.',
+    'Rouge sur jaune : réservé à l’arrêt d’urgence (coup de poing, ou interrupteur-sectionneur qui sert aussi de coupure d’urgence). Jamais sur un simple interrupteur.'
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre que cet appareil cumule les deux fonctions — coupure en charge et sectionnement — et savoir pourquoi c’est lui qu’on pose à côté d’une machine.</p>',

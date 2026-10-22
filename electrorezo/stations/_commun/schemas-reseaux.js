@@ -67,7 +67,7 @@ ${defaut
      <text x="200" y="248" font-size="13" font-weight="700" fill="${C.jaune}">il évacue le courant de défaut, tout de suite</text>
      <text x="380" y="316" text-anchor="middle" font-size="13" fill="${C.gris}">L’isolant a lâché : la phase touche la carcasse. Le courant part par le vert-jaune, et le différentiel le voit.</text>`
   : `<text x="200" y="248" font-size="12" fill="${C.gris}">il ne transporte rien — et c’est bon signe</text>
-     <text x="380" y="316" text-anchor="middle" font-size="13" fill="${C.gris}">Un PE parcouru par du courant en marche normale annonce un défaut. Ce n’est jamais normal.</text>`}`;
+     <text x="380" y="316" text-anchor="middle" font-size="13" fill="${C.gris}">Un courant net dans le PE, en marche normale, annonce un défaut.</text>`}`;
     };
     peindre('normal');
     return bloc(d, [
@@ -77,23 +77,23 @@ ${defaut
   }
 
   function troisMesures() {
-    const d = svg('0 0 700 300', 'Trois mesures suffisent à identifier trois conducteurs inconnus : entre eux deux à deux, les valeurs ne trompent pas.');
+    const d = svg('0 0 700 300', 'Trois mesures de tension repèrent la phase parmi trois conducteurs inconnus. Elles ne distinguent pas le neutre de la terre.');
     d.innerHTML = `
 <rect x="8" y="8" width="684" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-<text x="350" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Trois fils inconnus : trois mesures, et on sait</text>
+<text x="350" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Trois fils inconnus : trois mesures repèrent la phase</text>
 
-${[['entre les deux premiers', '230 V', 'phase et neutre', C.vert],
-   ['entre le premier et le troisième', '230 V', 'phase et terre', C.vert],
-   ['entre le deuxième et le troisième', '0 V', 'neutre et terre', C.bleu]]
+${[['entre le fil 1 et le fil 2', '230 V', 'l’un des deux est la phase', C.vert],
+   ['entre le fil 1 et le fil 3', '230 V', 'l’un des deux est la phase', C.vert],
+   ['entre le fil 2 et le fil 3', '0 V', 'neutre et PE : lequel ?', C.bleu]]
   .map(([quoi, val, quoi2, coul], i) => `
 <rect x="40" y="${68 + i * 66}" width="620" height="54" rx="8" fill="${C.creme}" stroke="${C.trait}"/>
 <text x="60" y="${100 + i * 66}" font-size="13" fill="${C.gris}">${quoi}</text>
 <text x="430" y="${100 + i * 66}" text-anchor="end" font-size="19" font-weight="700" fill="${coul}">${val}</text>
 <text x="450" y="${100 + i * 66}" font-size="13" font-weight="700" fill="${C.navy}">→ ${quoi2}</text>`).join('')}
 
-<text x="350" y="286" text-anchor="middle" font-size="13" fill="${C.gris}">Le neutre et la terre sont presque au même potentiel : c’est le zéro qui les distingue de la phase.</text>`;
+<text x="350" y="286" text-anchor="middle" font-size="13" fill="${C.gris}">Le fil 1 est la phase. Les fils 2 et 3 sont le neutre et le PE : on ne sait pas encore lequel est lequel.</text>`;
     return bloc(d, [], null,
-      'Cette méthode identifie les conducteurs, elle ne remplace pas le repérage. Un fil sans repère doit être repéré avant qu’on referme le coffret.');
+      'Trois mesures de tension repèrent la phase, pas la différence entre le neutre et le PE : il faut pour cela le repérage, les couleurs, la continuité vers la borne de terre ou une mesure de courant en charge. Un fil sans repère doit être repéré avant qu’on referme le coffret.');
   }
 
   /* ============================================================ 2.2 — le monophasé */
@@ -126,7 +126,7 @@ ${[['entre les deux premiers', '230 V', 'phase et neutre', C.vert],
 
 <text x="350" y="272" text-anchor="middle" font-size="13" fill="${C.gris}">Le courant part et revient cinquante fois par seconde. « Aller » et « retour » sont des mots commodes, pas des sens fixes.</text>`;
     return bloc(d, [], null,
-      'Phase et neutre ne sont pas deux fils identiques : le neutre est relié à la terre au poste de distribution, la phase non. C’est ce qui rend la phase dangereuse et le neutre presque inoffensif.');
+      'Phase et neutre ne sont pas deux fils identiques : le neutre est relié à la terre au poste de distribution, la phase non. Ainsi, en marche normale, le neutre est proche du potentiel de la terre et la phase est à 230 V. Mais on ne touche aucun des deux sans avoir vérifié l’absence de tension.');
   }
 
   function monoOuTri() {
@@ -184,7 +184,7 @@ ${avecSomme ? `<line x1="100" y1="170" x2="700" y2="170" stroke="${C.rouge}" str
 ${avecSomme ? `<text x="702" y="188" font-size="13" font-weight="700" fill="${C.rouge}">somme</text>` : ''}
 
 <text x="380" y="266" text-anchor="middle" font-size="13" fill="${C.gris}">${avecSomme
-  ? 'C’est pour cela qu’un neutre peut être plus fin que les phases : sur une installation équilibrée, il ne ramène presque rien.'
+  ? 'Sur une installation équilibrée, le neutre ne ramène presque rien.'
   : 'Le décalage est d’un tiers de période, soit 120 degrés. Il n’est pas réglable : il vient de la construction de l’alternateur.'}</text>
 <text x="380" y="292" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">${avecSomme
   ? 'Déséquilibrez les charges, et le neutre se met à ramener du courant.'
@@ -193,7 +193,7 @@ ${avecSomme ? `<text x="702" y="188" font-size="13" font-weight="700" fill="${C.
     peindre(false);
     return bloc(d, [
       { id: 'trois', libelle: 'Les trois tensions', legende: 'Même valeur, même fréquence, mais décalées d’un tiers de tour. Ce décalage vient de la construction de l’alternateur : trois bobinages à 120 degrés l’un de l’autre.', appliquer: () => peindre(false) },
-      { id: 'somme', libelle: 'Leur somme', legende: 'À chaque instant, les trois s’annulent. Sur une installation équilibrée, le neutre ne ramène donc presque rien — et c’est pour cela qu’il peut être plus fin que les phases.', appliquer: () => peindre(true) }
+      { id: 'somme', libelle: 'Leur somme', legende: 'À chaque instant, les trois s’annulent. Sur une installation équilibrée, le neutre ne ramène donc presque rien.', appliquer: () => peindre(true) }
     ], 'trois', 'Même valeur, même fréquence, mais décalées d’un tiers de tour. Ce décalage vient de la construction de l’alternateur : trois bobinages à 120 degrés l’un de l’autre.');
   }
 
@@ -315,7 +315,7 @@ ${composee
     reglette(hote, 'v3', 'La tension simple', 100, 400, 1, V, v => v + ' V', v => { V = v; peindre(); });
     const p = document.createElement('p');
     p.className = 'legende';
-    p.textContent = 'Posez 230 : vous obtenez 400. Posez 127 : vous obtenez 220 — c’est l’ancien réseau français, '
+    p.textContent = 'Posez 230 : vous obtenez 398, soit environ 400. Posez 127 : vous obtenez 220 — c’est l’ancien réseau français, '
       + 'et vous rencontrerez encore des plaques de moteur qui le mentionnent.';
     hote.appendChild(p);
     return hote;

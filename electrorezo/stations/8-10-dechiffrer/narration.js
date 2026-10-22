@@ -7,10 +7,10 @@ const NARRATION = {
 Le trait, le point, le contact, la barre du sectionnement, le rectangle, le crochet du
 thermique, le demi-cercle du magnétique, le pointillé, la bobine, le rond, les repères.
 Une dizaine de signes. Ça paraît peu.
-Et pourtant, avec ces dix-là, vous pouvez lire des centaines de symboles — y compris ceux que
-personne ne vous a jamais montrés. C'est exactement ce qu'on va vérifier maintenant.`,
+Et pourtant, avec ces dix-là, vous pouvez lire beaucoup de symboles — y compris ceux que
+personne ne vous a jamais montrés — et savoir quoi demander pour les autres. C'est exactement ce qu'on va vérifier maintenant.`,
 
-  comprendre: `La méthode tient en trois gestes, et elle marche à tous les coups. Je vous la donne
+  comprendre: `La méthode tient en trois gestes, et elle marche presque toujours. Je vous la donne
 lentement.
 Premier geste : trouvez la colonne. Un symbole est presque toujours bâti autour d'un trait
 vertical, qui est le passage du courant. Repérez-le, et vous savez déjà par où ça entre et par
@@ -20,16 +20,16 @@ sans essayer de deviner l'ensemble. Un trait incliné : ça s'ouvre. Une barre c
 condamne. Un crochet : la chaleur. Un demi-cercle : l'aimant. Un rectangle : quelque chose est
 inséré.
 Troisième geste : additionnez. Un appareil qui s'ouvre, qui se condamne, qui surveille la
-chaleur et l'aimant — c'est un disjoncteur moteur.
+chaleur et l'aimant — c'est un disjoncteur. Et si vous voyez aussi une petite croix posée sur la
+colonne, c'est le signe du disjoncteur : il coupe tout seul quand il détecte un défaut.
 Regardez ce que vous venez de faire. Vous ne l'avez pas reconnu. Vous l'avez lu.
 Et c'est toute la différence. Celui qui a appris par cœur est perdu devant un symbole nouveau,
-et il devine — ce qui, dans ce métier, veut dire qu'il se trompe. Celui qui sait lire n'est
-jamais perdu. Il prend trente secondes de plus, et il a raison.`,
+et il devine — ce qui, dans ce métier, risque de coûter une erreur. Celui qui sait lire sait
+toujours quoi chercher. Il prend trente secondes de plus, et il lit au lieu de deviner.`,
 
-  manipuler: `À vous de déchiffrer.
-Pour chaque symbole, appliquez les trois gestes, puis dites de quel appareil il s'agit.
-Et je vous préviens honnêtement : deux d'entre eux n'ont été montrés nulle part ailleurs dans
-ce réseau. C'est fait exprès. C'est même tout l'intérêt.`,
+  manipuler: `À vous. Retrouvez le trait incliné dans chacun de ces trois symboles : c'est le premier
+geste, la colonne et ce qui s'y accroche.
+Le déchiffrage complet, avec l'addition des signes, vous le ferez au dernier temps.`,
 
   representer: `Un dernier conseil, et il vaut pour toute votre carrière.
 Le jour où vous tomberez sur un symbole que vous ne connaissez pas — et ça arrivera, sur un

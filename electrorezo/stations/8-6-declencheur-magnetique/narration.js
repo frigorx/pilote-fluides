@@ -10,8 +10,9 @@ secondes. Tout de suite.`,
 
   comprendre: `La forme, encore une fois, vient de la pièce — et c'est ce qui rend cette écriture
 apprenable.
-Le demi-cercle représente une bobine, vue en coupe. Quelques spires de gros fil, montées
-directement sur le passage du courant.
+Le demi-cercle représente un électro-aimant : une bobine de quelques spires de gros fil, montée
+directement sur le passage du courant. C'est le même petit arc que vous avez vu à gauche des
+contacts, à la station huit point deux : là, c'est l'électro-aimant qui commande le contact.
 Quand le courant est normal, cette bobine ne fait rien de particulier. Mais si un court-circuit
 se produit, le courant devient énorme d'un coup. La bobine devient alors un aimant très
 puissant, et elle attire violemment un noyau de fer. Ce noyau frappe le mécanisme, et l'appareil
@@ -31,9 +32,8 @@ symbole, et il suffit de le lire.`,
 Puis prenez trente secondes pour regarder lesquels des symboles le portent et lesquels ne le
 portent pas. Vous êtes en train de lire, sans le savoir, la fiche technique de ces appareils.`,
 
-  representer: `Sur les symboles officiels, le déclencheur magnétique se dessine parfois comme un petit
-rectangle contenant un demi-disque, parfois noté par un signe qui veut dire « courant
-supérieur à ». La forme varie un peu selon les éditions de la norme.
+  representer: `Sur les symboles officiels, le déclencheur magnétique se dessine parfois par un petit
+rectangle portant le signe « I supérieur », c'est-à-dire « courant supérieur à ». La forme varie un peu selon les éditions de la norme.
 L'idée, elle, ne varie jamais : une bobine qui claque.
 Retenez le couple, et vous aurez la moitié de la ligne quatre dans la poche. Crochet : la
 chaleur, la durée, la surcharge. Demi-cercle : l'aimant, l'instant, le court-circuit.`

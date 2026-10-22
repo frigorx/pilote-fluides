@@ -17,7 +17,7 @@ ModeleSigne.construire({
   ouOnLaVoit: "Sur le disjoncteur magnéto-thermique et sur le disjoncteur moteur, presque toujours juste sous le crochet du thermique.",
 
   pourquoiCetteForme: [
-    "<strong>Le demi-cercle représente une bobine vue en coupe.</strong> Quelques spires de gros fil, montées directement sur le circuit.",
+    "<strong>Le demi-cercle (le petit arc posé sur le fil) représente un électro-aimant</strong> : une bobine de quelques spires de gros fil, montée directement sur le circuit. C’est le même petit arc que vous avez vu à gauche des contacts, à la station 8.2 : là, c’est l’électro-aimant qui commande le contact.",
     "En courant normal, elle ne fait rien. <strong>En court-circuit, le courant devient énorme d’un coup</strong> : la bobine devient un aimant puissant et attire violemment un noyau de fer, qui frappe le mécanisme.",
     "<strong>Déclenchement en quelques millièmes de seconde.</strong>",
     "<strong>Le couple à retenir</strong> : crochet = la chaleur, la durée, la surcharge. Demi-cercle = l’aimant, l’instant, le court-circuit. Un appareil qui porte les deux protège contre les deux."
@@ -31,22 +31,22 @@ ModeleSigne.construire({
       alt: "Symbole normalisé d’un disjoncteur : le contact incliné, le crochet du thermique, et le demi-cercle du magnétique, traversé par le conducteur.",
       legende: "Le demi-cercle, sur un vrai symbole" },
     { src: 'assets/dis_mag_term_2f-1.svg',
-      alt: "Le même déclencheur, noté par un rectangle contenant « I supérieur » au lieu du demi-cercle.",
-      legende: "L’autre notation : un rectangle et « I> »" }
+      alt: "Le même appareil, où le déclencheur est noté par un rectangle contenant « I> » au lieu du demi-cercle. Le symbole porte aussi le crochet du thermique, des pointillés et un petit carré de commande.",
+      legende: "L’autre notation : un rectangle et « I> », courant supérieur à" }
   ],
   duDessinAuPlan: [
-    "Sur les symboles officiels, il se dessine aussi comme <strong>un rectangle contenant un demi-disque</strong>. La forme varie selon les éditions, l’idée ne varie jamais.",
+    "Sur les symboles officiels, il se dessine aussi par <strong>un rectangle portant « I> »</strong>, c’est-à-dire « courant supérieur à » : un déclencheur à maximum de courant, qui réagit dès que le courant dépasse une valeur. La forme varie selon les écritures, l’idée ne varie pas. Ce second symbole porte aussi d’autres signes (pointillés, petit carré de commande) : on les lit dans les stations suivantes.",
     "<strong>Lisez les deux signes ensemble</strong> : leur présence ou leur absence est la fiche technique de l’appareil.",
     "Un appareil qui ne porte que le crochet ne vous protégera <strong>jamais</strong> d’un court-circuit. Ce n’est pas caché : c’est écrit sur le symbole."
   ],
 
   quiz: [
     { question: "Que représente le demi-cercle ?",
-      confirmation: "Une bobine vue en coupe, qui devient un aimant.",
+      confirmation: "Un électro-aimant : une bobine qui devient un aimant.",
       reponses: [
         { texte: "Un aimant permanent.", pourquoi: "Un aimant permanent n’aurait aucune raison de réagir au courant." },
         { texte: "Le boîtier arrondi de l’appareil.", pourquoi: "La norme ne dessine jamais les boîtiers." },
-        { texte: "Une bobine, qui attire un noyau quand le courant devient énorme.", juste: true },
+        { texte: "Un électro-aimant : une bobine qui attire un noyau quand le courant devient énorme.", juste: true },
         { texte: "Un condensateur.", pourquoi: "Le condensateur a son propre signe : deux traits parallèles." } ] },
 
     { question: "En combien de temps agit un déclencheur magnétique ?",
@@ -75,7 +75,7 @@ ModeleSigne.construire({
   ],
 
   retenir: [
-    "<strong>Le demi-cercle = une bobine</strong> qui claque sur un court-circuit.",
+    "<strong>Le demi-cercle = un électro-aimant</strong> qui claque sur un court-circuit.",
     "Il surveille <strong>l’intensité</strong>, et il est <strong>instantané</strong>.",
     "Crochet + demi-cercle = protégé contre les deux dangers.",
     "Crochet seul = <strong>aucune protection contre le court-circuit</strong>."
@@ -86,7 +86,7 @@ ModeleSigne.construire({
   credits: [
     { quoi: 'Symboles normalisés EN 60617',
       source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/200_fuses_protective_gears/12_magneto_thermal_circuit_breakers/' },
+      detail: 'svg/10_electric/10_allpole/200_fuses_protective_gears/11_circuit_breakers/ (disjonct-m_1f.svg) · 12_magneto_thermal_circuit_breakers/ (dis_mag_term_2f-1.svg)' },
     { quoi: 'Dessins de décomposition des signes',
       source: 'tracés pour ÉlectroRézo dans stations/_commun/signes.js',
       detail: 'représentations pédagogiques inspirées de la norme, faites pour être décomposées' } ],

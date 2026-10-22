@@ -32,12 +32,12 @@ ModeleAppareil.construire({
   technologie: [
     ["Le stator", "la partie fixe. Il porte les trois bobinages disposés à 120 degrés, ceux qui créent le champ tournant de la station 2.6."],
     ["Le rotor à cage", "la partie mobile. Et voici sa particularité : <strong>il n’est relié à rien</strong>. Ni fil, ni balai, ni bague. Juste des barres de métal reliées par deux anneaux, comme une cage d’écureuil."],
-    ["Le glissement", "le rotor tourne toujours un peu moins vite que le champ. Cet écart n’est pas un défaut : sans lui, le rotor ne verrait plus le champ varier, et il ne produirait aucun couple."],
+    ["Le glissement", "le rotor tourne toujours un peu moins vite que le champ. Cet écart n’est pas un défaut : sans lui, le rotor ne verrait plus le champ varier, et il ne produirait aucun couple (le couple, c’est la force qui fait tourner l’arbre)."],
     ["La mécanique", "deux roulements, un arbre, un ventilateur en bout d’arbre. C’est presque toujours là que ça lâche — les roulements avant le bobinage."]
   ],
 
   variantes: [
-    "<strong>Le nombre de pôles</strong> — deux pôles pour 3000 tr/min, quatre pour 1500, six pour 1000. Il est décidé à la fabrication et ne se change pas.",
+    "<strong>Le nombre de pôles</strong> — deux pôles pour 3000 tr/min, quatre pour 1500, six pour 1000. Il est décidé à la fabrication (sauf sur le Dahlander, ci-dessous).",
     "<strong>Le rotor bobiné</strong> — au lieu d’une cage, un vrai bobinage sorti sur des bagues. On peut y insérer des résistances au démarrage. Ancien, mais on en rencontre encore.",
     "<strong>Le moteur à deux vitesses</strong> — dit Dahlander, avec un bobinage qu’on recouple pour changer le nombre de pôles. Deux vitesses, dans un rapport de un à deux.",
     "<strong>Le moteur frein</strong> — un électro-aimant serre un disque à l’arrêt. Il faut alimenter la bobine pour desserrer : ainsi, une coupure de courant freine la machine."
@@ -80,7 +80,7 @@ ModeleAppareil.construire({
 
   quiz: [
     { question: "À quoi le rotor à cage est-il relié électriquement ?",
-      confirmation: "À rien. Ni fil, ni balai, ni bague — c’est ce qui le rend indestructible.",
+      confirmation: "À rien. Ni fil, ni balai, ni bague — c’est ce qui le rend très robuste : il n’y a rien à entretenir dans le rotor.",
       reponses: [
         { texte: "À rien du tout.", juste: true },
         { texte: "Aux trois phases, par des bagues.", pourquoi: "C’est le rotor bobiné, une autre construction, plus ancienne." },
@@ -113,7 +113,7 @@ ModeleAppareil.construire({
   ],
 
   retenir: [
-    "<strong>Le rotor n’est relié à rien.</strong> C’est ce qui le rend indestructible.",
+    "<strong>Le rotor n’est relié à rien.</strong> C’est ce qui le rend très robuste : rien à entretenir dans le rotor.",
     "<strong>Le glissement est nécessaire</strong>, pas subi.",
     "<strong>Cinq à huit fois</strong> l’intensité au démarrage.",
     "<strong>Ce sont les roulements</strong> qui lâchent, presque toujours."

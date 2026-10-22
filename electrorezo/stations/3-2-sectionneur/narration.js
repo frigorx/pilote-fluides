@@ -6,7 +6,7 @@ const NARRATION = {
   decouvrir: `Je vais vous parler de l'appareil le plus mal compris de tout l'atelier. Et je pèse mes
 mots : des gens se sont blessés à cause de cette confusion-là.
 Le voilà. Il ressemble à un interrupteur. Il se manœuvre comme un interrupteur. Vous mettriez
-les deux côte à côte, neuf personnes sur dix ne verraient pas la différence.
+les deux côte à côte, la plupart des gens ne verraient pas la différence.
 Et pourtant il ne fait pas du tout le même métier. Le sectionneur n'est pas là pour éteindre.
 Il est là pour qu'on puisse mettre les mains dans une machine sans y laisser sa vie. Ce n'est
 pas un appareil de commande. C'est un appareil de sécurité.`,
@@ -42,8 +42,9 @@ absolument indispensable.`,
 qui les sépare, et il est minuscule.
 Regardez l'extrémité du contact, du côté fixe. Sur le sectionneur, il y a un petit trait
 horizontal, court. Trois millimètres sur une feuille A4.
-Ce trait s'appelle l'aptitude au sectionnement. Il veut dire : cet appareil-là, et pas un
-autre, peut être condamné, et on peut travailler derrière.
+Ce trait s'appelle l'aptitude au sectionnement. Il veut dire : cet appareil est capable
+d'isoler et de se condamner. Pour travailler derrière, c'est toujours le même ordre : on ouvre,
+on condamne, on vérifie l'absence de tension.
 Alors prenez-en l'habitude, et gardez-la toute votre carrière : avant de préparer une
 intervention, vous cherchez ce trait sur le plan. Et comme un plan photocopié peut le manger,
 vous allez aussi vérifier sur l'appareil qu'il y a bien un trou de cadenas. Le plan dit

@@ -14,10 +14,7 @@ ModeleAppareil.construire({
   photos: [
     { src: 'assets/biblio/condensateur-de-demarrage.png',
       alt: "Schéma d’un moteur asynchrone monophasé avec son condensateur permanent et son condensateur de démarrage.",
-      titre: "Un ou deux condensateurs.", sous: "Le permanent reste, celui de démarrage se retire." },
-    { src: 'assets/biblio/klixon-et-condensateurs.png',
-      alt: "Schéma de câblage d’un compresseur monophasé : le klixon en série sur le commun, le relais de démarrage, et le condensateur Cd marqué « non » du côté de l’auxiliaire, « oui » du côté du principal.",
-      titre: "Sur un compresseur.", sous: "Le klixon coupe si ça chauffe. Et le Cd se pose d’un côté seulement : le schéma dit lequel." }
+      titre: "Un ou deux condensateurs.", sous: "Le permanent reste, celui de démarrage se retire." }
   ],
 
   aQuoiCaSert: "À faire tourner quelque chose là où il n’y a pas de triphasé. Une maison, un petit atelier, un compresseur de réfrigérateur. Et pour cela, il faut lui fabriquer artificiellement le décalage que le triphasé donne gratuitement.",
@@ -59,14 +56,14 @@ ModeleAppareil.construire({
     "Le condensateur se raccorde <strong>en série avec l’auxiliaire</strong>, jamais en parallèle sur l’alimentation.",
     "Un condensateur reste <strong>chargé</strong> après la coupure. On le décharge avant d’y toucher, avec une résistance et non par un court-circuit brutal."
   ],
-  piege: "Un moteur monophasé qui <strong>ronfle sans démarrer</strong>, et qui part si on le lance à la main dans le sens où on l’a lancé : c’est le condensateur. Ce symptôme est si caractéristique qu’il vaut diagnostic — allez le vérifier avant toute autre chose.",
+  piege: "Un moteur monophasé qui <strong>ronfle sans démarrer</strong>, et qui part si on le lance à la main dans le sens où on l’a lancé : l’enroulement auxiliaire ne travaille pas. Vérifiez d’abord le condensateur, puis le contact centrifuge ou le relais de démarrage, l’enroulement et les connexions. Le symptôme est caractéristique, mais il ne désigne pas une seule pièce.",
 
   symboles: [
-    { src: 'assets/moteur_mono.svg', alt: "Symbole normalisé d’un moteur monophasé.", legende: "Moteur monophasé" },
+    { src: 'assets/moteur_mono1.svg', alt: "Symbole normalisé d’un moteur monophasé : un rond avec M et 1 ~ à l’intérieur, deux fils qui arrivent.", legende: "Moteur monophasé : M, 1 ~ et deux fils" },
     { src: 'assets/motor-mono-cond.svg', alt: "Symbole normalisé d’un moteur monophasé avec son condensateur.", legende: "Avec condensateur" }
   ],
   lecturePlan: [
-    "Le symbole est le même <strong>rond marqué M</strong>, mais avec <strong>deux traits</strong> qui arrivent au lieu de trois, et le signe <em>1 ~</em>.",
+    "Le symbole est le même <strong>rond marqué M</strong>, mais avec <strong>deux traits</strong> qui arrivent au lieu de trois, et le signe <em>1 ~</em> (le 1 dit une phase, le petit tilde ~ dit courant alternatif), comme sur le premier symbole.",
     "Le <strong>condensateur</strong> se dessine par <strong>deux traits parallèles</strong>, courts et épais, sans se toucher. Il est en série avec l’enroulement auxiliaire.",
     "Un moteur avec deux condensateurs porte les deux symboles, et souvent un <strong>contact centrifuge</strong> en série avec celui de démarrage.",
     "Le repère du condensateur commence par <strong>C</strong>. Sa capacité, en microfarads, est écrite à côté — jamais dans le dessin."
@@ -100,8 +97,8 @@ ModeleAppareil.construire({
         { texte: "En inversant la phase et le neutre.", pourquoi: "En alternatif, cela ne change rien au sens." },
         { texte: "En échangeant deux phases.", pourquoi: "Il n’y a qu’une phase : c’est justement toute la difficulté." } ] },
 
-    { question: "Un moteur ronfle, ne démarre pas, mais part si on le lance à la main. Que soupçonner ?",
-      confirmation: "Le condensateur. Le symptôme est caractéristique.",
+    { question: "Un moteur ronfle, ne démarre pas, mais part si on le lance à la main. Que vérifier en premier ?",
+      confirmation: "Le condensateur d’abord : ce symptôme dit que l’auxiliaire ne travaille pas. Puis le contact centrifuge ou le relais de démarrage, l’enroulement et les connexions.",
       reponses: [
         { texte: "Un roulement grippé.", pourquoi: "Un roulement grippé empêcherait aussi le lancement à la main." },
         { texte: "Le condensateur.", juste: true },
@@ -113,7 +110,7 @@ ModeleAppareil.construire({
     "<strong>Un seul enroulement pulse</strong>, il ne tourne pas.",
     "<strong>Le condensateur décale</strong> le courant de l’auxiliaire.",
     "<strong>On inverse par l’auxiliaire</strong>, pas par l’alimentation.",
-    "<strong>Ronfle et part à la main</strong> : c’est le condensateur."
+    "<strong>Ronfle et part à la main</strong> : l’auxiliaire ne travaille pas. Vérifiez d’abord le condensateur."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre pourquoi un moteur monophasé ne démarre pas seul, ce que fait le condensateur, et diagnostiquer la panne la plus fréquente.</p><p><strong>Limite.</strong> Le calcul de la capacité et l’analyse du champ elliptique ne sont pas traités.</p>',

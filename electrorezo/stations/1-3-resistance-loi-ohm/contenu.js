@@ -15,8 +15,8 @@ ModeleGrandeur.construire({
 
   photos: [
     { src: 'assets/biblio/uab-egale-r-fois-i.png',
-      alt: "Document présentant deux fois la même relation : en haut Uab égale R électrique fois I, en bas la transposition thermique, écart de température égal à résistance thermique fois flux.",
-      titre: "La relation, écrite.", sous: "En haut l’électricité. En bas, la même idée transposée à la chaleur." }
+      alt: "La loi d’Ohm écrite : la tension en volts est égale à la résistance électrique en ohms fois l’intensité en ampères.",
+      titre: "La relation, écrite.", sous: "La tension (en volts) est égale à la résistance (en ohms) fois l’intensité (en ampères)." }
   ],
 
   lIdee: "Toute matière s’oppose au passage du courant, plus ou moins. Cette opposition, c’est la résistance. Et il existe entre elle, la tension et le courant une relation si simple qu’elle tient en trois lettres — et si utile qu’on s’en sert tous les jours.",
@@ -28,11 +28,12 @@ ModeleGrandeur.construire({
     ["La tension pousse, la résistance freine", "et ce qui passe est le résultat des deux. Beaucoup de tension et peu de résistance : beaucoup de courant. C’est tout ce que dit la loi d’Ohm."],
     ["Ce qui fait la résistance d’un fil", "sa <strong>longueur</strong> — plus il est long, plus il résiste ; sa <strong>section</strong> — plus il est gros, moins il résiste ; et le <strong>métal</strong> dont il est fait."],
     ["La température aussi", "un métal chaud résiste davantage. Un bobinage mesuré à froid et le même mesuré après une heure de marche ne donnent pas la même valeur."],
-    ["Elle n’est pas toujours constante", "une lampe à filament, une bobine, un moteur : leur résistance change avec les conditions. La loi d’Ohm reste vraie à chaque instant, mais avec la valeur du moment."]
+    ["Elle n’est pas toujours constante", "une lampe à filament : sa résistance augmente quand elle chauffe. La loi d’Ohm reste vraie à chaque instant, mais avec la valeur du moment. Pour une bobine ou un moteur en alternatif, le courant ne se calcule pas aussi simplement : ce n’est pas l’objet de cette station."]
   ],
   aRetenir: [
     "La résistance se note <strong>R</strong> et se mesure en <strong>ohms</strong>, symbole <strong>Ω</strong>.",
     "<strong>U = R × I</strong>. Les trois vont ensemble : fixez-en deux, la troisième est décidée.",
+    "<strong>Exemple résolu.</strong> Sous 230 V, une résistance de 100 Ω laisse passer : I = U ÷ R = 230 ÷ 100 = <strong>2,3 A</strong>. Vous le retrouvez sur les curseurs du temps 2.",
     "Un conducteur parfait n’existe pas. Tout câble a une résistance, donc toute ligne perd de la tension sur sa longueur."
   ],
 
@@ -61,7 +62,7 @@ ModeleGrandeur.construire({
   ],
 
   quiz: [
-    { question: "Sous 230 V, une résistance de 46 Ω laisse passer combien de courant ?",
+    { question: "Sous 230 V, une résistance de 46 Ω laisse passer combien de courant ? (Réglez les curseurs du temps 2 sur 230 V et 46 Ω, ou refaites le calcul de l’exemple.)",
       confirmation: "230 divisé par 46 : cinq ampères.",
       reponses: [
         { texte: "46 A.", pourquoi: "C’est la valeur de la résistance, pas celle du courant." },

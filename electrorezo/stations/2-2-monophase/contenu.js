@@ -14,7 +14,7 @@ ModeleGrandeur.construire({
   photos: [
     { src: 'assets/biblio/deux-fils-et-la-terre.png',
       alt: "Schéma de câblage d’un moteur monophasé avec sa phase, son neutre et sa terre.",
-      titre: "Deux actifs, une protection.", sous: "C’est tout ce qu’il y a dans une maison." },
+      titre: "Deux actifs, une protection.", sous: "C’est tout ce qu’il y a dans un circuit monophasé." },
     { src: 'assets/biblio/bornier-de-climatiseur.jpeg',
       alt: "Tableau de câblage d’un climatiseur split avec ses borniers numérotés et le repère N pour le neutre.",
       titre: "Un cas réel.", sous: "Le bornier d’un split : phase, neutre, et la liaison entre unités." }
@@ -27,9 +27,9 @@ ModeleGrandeur.construire({
 
   ceQuiSePasse: [
     ["Une seule tension", "230 volts entre la phase et le neutre. Il n’y a rien d’autre à mesurer : c’est la seule paire d’actifs."],
-    ["Une seule boucle", "le courant part par la phase, traverse la charge, et revient par le neutre. Cinquante fois par seconde, il fait l’inverse."],
-    ["La puissance disponible est limitée", "un branchement domestique courant tient entre 6 et 12 kilowatts. Au-delà, il faut du triphasé — c’est même la raison principale de le demander."],
-    ["Phase et neutre ne sont pas symétriques", "le neutre est relié à la terre en amont, la phase non. Toucher le neutre est généralement sans conséquence ; toucher la phase peut tuer. Ce n’est pas une question de couleur : c’est une question de raccordement au poste."]
+    ["Une seule boucle", "le courant part par la phase, traverse la charge, et revient par le neutre. Il s’inverse cent fois par seconde : cinquante allers-retours complets, c’est la fréquence de 50 Hz."],
+    ["La puissance disponible est limitée", "la puissance qu’un branchement monophasé peut fournir est limitée : elle se compte en kilovoltampères (kVA, la puissance apparente de la station 1.4) et le distributeur la fixe. Quand le besoin dépasse cette limite, on demande un branchement triphasé — c’est une des raisons principales de le faire : pas pour la tension, pour la puissance."],
+    ["Phase et neutre ne sont pas symétriques", "le neutre est relié à la terre en amont, la phase non. En marche normale, le neutre est proche du potentiel de la terre ; coupé en amont, il peut prendre la tension de la phase. On ne touche donc aucun conducteur sans avoir vérifié l’absence de tension. Ce n’est pas une question de couleur : c’est une question de raccordement au poste."]
   ],
   aRetenir: [
     "Un appareil monophasé se branche <strong>toujours</strong> sur une phase et un neutre — jamais entre deux phases.",
@@ -47,7 +47,7 @@ ModeleGrandeur.construire({
   dangerDeMesure: "Une prise à deux trous n’est pas forcément du 230 volts. Sur certaines installations industrielles anciennes, on trouve deux phases sans neutre. On mesure toujours avant de brancher.",
 
   ecriture: {
-    symbole: '1 ~', unite: 'V', nomUnite: 'une seule tension, 230 V',
+    sansUnite: true, titre: 'Les écritures du monophasé', entetes: ['On lit', 'Cela veut dire'],
     multiples: [
       ['1 ~', 'monophasé, sur une plaque ou une notice'],
       ['230 V', 'la seule tension du réseau domestique français'],
@@ -86,8 +86,8 @@ ModeleGrandeur.construire({
         { texte: "Oui, deux fils c’est du monophasé.", pourquoi: "Deux phases sans neutre font aussi deux fils." },
         { texte: "Non : il faut compter aussi le vert-jaune.", pourquoi: "Le PE n’entre jamais dans ce comptage." } ] },
 
-    { question: "Pourquoi toucher le neutre est-il généralement sans conséquence ?",
-      confirmation: "Parce qu’il est relié à la terre au poste : il est presque au même potentiel que vous.",
+    { question: "Pourquoi le neutre est-il, en marche normale, proche du potentiel de la terre ?",
+      confirmation: "Parce qu’il est relié à la terre au poste. Mais coupé en amont, il peut prendre la tension de la phase : on ne touche aucun conducteur sans avoir vérifié l’absence de tension.",
       reponses: [
         { texte: "Parce qu’il ne transporte pas de courant.", pourquoi: "Il en transporte autant que la phase." },
         { texte: "Parce qu’il est relié à la terre en amont.", juste: true },

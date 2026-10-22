@@ -28,7 +28,7 @@ ModeleGrandeur.construire({
   ceQuiSePasse: [
     ["Un aller-retour complet", "le courant monte, redescend, passe dans l’autre sens, et revient. Cela fait <strong>une période</strong>. La fréquence compte combien il y en a par seconde."],
     ["Cinquante par seconde", "cela veut dire cent passages par zéro, puisqu’il y en a deux par période. Ce détail explique pourquoi un arc alternatif s’éteint plus facilement qu’un arc continu."],
-    ["Elle décide de la vitesse des moteurs", "un moteur asynchrone à deux pôles tourne à 3000 tours par minute sous 50 Hz. À quatre pôles, 1500. La fréquence est dans le calcul, la construction du moteur aussi."],
+    ["Elle décide de la vitesse des moteurs", "un moteur asynchrone a un certain nombre de <strong>pôles</strong> (2, 4, 6… : ce sont les aimants que forment ses bobinages). Son champ tourne à 3000 tours par minute sous 50 Hz s’il a deux pôles, à 1500 s’il en a quatre : c’est la <strong>vitesse de synchronisme</strong>. Le rotor, lui, tourne un peu moins vite. La fréquence est dans le calcul, la construction du moteur aussi."],
     ["Elle ne se règle pas sur le réseau", "elle est tenue par le réseau lui-même, à quelques centièmes près. Pour en obtenir une autre, il faut la <strong>fabriquer</strong> : c’est le métier du variateur de fréquence."]
   ],
   aRetenir: [
@@ -77,10 +77,10 @@ ModeleGrandeur.construire({
         { texte: "Non : elle est imposée par le réseau.", juste: true },
         { texte: "Oui, en modifiant le couplage du moteur.", pourquoi: "Le couplage change la tension vue par les bobinages, pas la fréquence." } ] },
 
-    { question: "Un moteur asynchrone à quatre pôles, sous 50 Hz : quelle vitesse de synchronisme ?",
-      confirmation: "3000 divisé par deux paires de pôles : 1500 tours par minute.",
+    { question: "Un moteur asynchrone à quatre pôles, sous 50 Hz : à quelle vitesse tourne son champ (la vitesse de synchronisme) ?",
+      confirmation: "Avec quatre pôles, le champ tourne deux fois moins vite qu’avec deux : 3000 divisé par deux, soit 1500 tours par minute.",
       reponses: [
-        { texte: "3000 tr/min.", pourquoi: "C’est la valeur pour deux pôles, soit une seule paire." },
+        { texte: "3000 tr/min.", pourquoi: "C’est la valeur pour deux pôles." },
         { texte: "750 tr/min.", pourquoi: "C’est la valeur pour huit pôles." },
         { texte: "50 tr/min.", pourquoi: "C’est la fréquence en hertz, pas une vitesse de rotation." },
         { texte: "1500 tr/min.", juste: true } ] },

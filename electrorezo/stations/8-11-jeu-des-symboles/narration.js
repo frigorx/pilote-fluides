@@ -11,7 +11,7 @@ Elle va vérifier que ce que vous avez vu tient encore.
 Et il y a une raison à ça. Sur un chantier, personne ne vous laissera trente secondes pour
 retrouver dans quelle leçon vous aviez vu ce symbole-là. Vous le reconnaissez, ou vous
 allez chercher le dossier. Il n'y a pas de troisième solution, et se tromper n'est pas
-une option quand on décide si on peut aller travailler derrière un appareil.`,
+une option quand on décide ce qu'un appareil sait faire : couper seulement, ou aussi isoler.`,
 
   comprendre: `Avant de jouer, je veux vous donner une prise.
 Ne cherchez pas à reconnaître un symbole d'un seul coup d'œil, comme on reconnaît un logo.
@@ -23,7 +23,7 @@ est dans ce qui protège, et chaque signe est un danger surveillé. Est-ce que j
 rectangle relié à quelque chose par un trait en pointillé ? Alors on est dans ce qui
 commande, et ce pointillé me dit que les deux morceaux travaillent ensemble même s'ils
 sont dessinés loin l'un de l'autre.
-Une fois la famille trouvée, il ne reste que trois ou quatre possibilités. Et là, le détail
+Une fois la famille trouvée, il ne reste que quelques possibilités. Et là, le détail
 suffit.`,
 
   manipuler: `À vous.
@@ -32,7 +32,7 @@ chose : les mauvaises réponses ne sont pas tirées au hasard. Elles viennent de
 famille que la bonne.
 C'est volontaire, et ce n'est pas pour vous piéger. Personne ne confond un moteur avec un
 fusible. Ce qu'on confond, ce sont deux appareils voisins, qui se ressemblent, et dont
-l'un permet de travailler derrière quand l'autre ne le permet pas. C'est cette
+l'un sait isoler quand l'autre sait seulement couper. C'est cette
 confusion-là qui coûte cher, donc c'est celle-là qu'on travaille.
 Quand vous vous trompez, je ne vous donne pas seulement la bonne réponse. Je vous donne le
 numéro de la station où ce symbole est expliqué. Retournez-y. C'est plus utile que de

@@ -40,6 +40,19 @@ const Signes = (() => {
       source: '10_electric/10_allpole/114_connections/bod.svg',
       dessin: (x, y) => `<circle cx="${x}" cy="${y}" r="${2 * E}" fill="${C.navy}"/>` },
 
+    /* Un repère n'est pas un signe tracé : c'est du texte, posé à côté du symbole (la lettre
+       de la famille, puis un chiffre). On le montre à côté du contact de la lettre « contact »,
+       comme sur un plan. Il remplace, pour la station 8.9, la lettre « borne » (un disque noir,
+       qui n'a rien à voir avec un repère). */
+    repere: {
+      nom: 'Le repère', dit: 'une lettre et un chiffre, écrits à côté du symbole',
+      boite: [-17, -20, 1, 20],   /* en unités, autour du point d’ancrage */
+      source: 'NF EN 61346-2 · lettres de repérage des appareils',
+      legendeSource: 'du texte posé à côté du symbole, comme sur un plan',
+      dessin: (x, y) => `${LETTRES.contact.dessin(x, y)}
+        <text x="${x - 7 * E}" y="${y + 2 * E}" text-anchor="end" font-size="${7 * E}"
+              font-weight="700" fill="${C.navy}">KM1</text>` },
+
     /* act_electromagnetique_no.svg :
          line   0,-20 → 0,-10        la borne du haut
          polyline -5,-10  0,10  0,20 la lame, pivot en bas, ouverte vers la gauche  */
@@ -51,16 +64,15 @@ const Signes = (() => {
         <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y - 10 * E}"
               stroke="${C.navy}" stroke-width="${T}"/>
         <polyline points="${x - 5 * E},${y - 10 * E} ${x},${y + 10 * E} ${x},${y + 20 * E}"
-                  fill="none" stroke="${C.orange}" stroke-width="${T}" stroke-linejoin="round"/>
-        <circle cx="${x}" cy="${y + 10 * E}" r="${1.2 * E}" fill="${C.navy}"/>` },
+                  fill="none" stroke="${C.orange}" stroke-width="${T}" stroke-linejoin="round"/>` },
 
-    /* sectionneur_general.svg : line -8,-10 → -12,-10, et le même trait de 4
-       unités dans interrupteur_sectionneur_biphase.svg (2,-12 → -2,-12) :
+    /* sectionneur4.svg : line 2,-10 → -2,-10 (4 unités) sur chacun des trois pôles,
+       et le même trait dans interrupteur_sectionneur_biphase.svg (2,-12 → -2,-12) :
        un trait horizontal court, centré sur la borne fixe. */
     sectionnement: {
-      nom: 'La barre courte', dit: 'aptitude au sectionnement — on peut travailler derrière',
+      nom: 'La barre courte', dit: 'aptitude au sectionnement — l’appareil est capable d’isoler',
       boite: [-2, -11, 2, -9],   /* en unités, autour du point d’ancrage */
-      source: '10_electric/10_allpole/200_fuses_protective_gears/20_disconnecting_switches/sectionneur_general.svg',
+      source: '10_electric/10_allpole/200_fuses_protective_gears/20_disconnecting_switches/sectionneur4.svg',
       dessin: (x, y) => `
         <line x1="${x - 2 * E}" y1="${y - 10 * E}" x2="${x + 2 * E}" y2="${y - 10 * E}"
               stroke="${C.vert}" stroke-width="${T + 1}"/>` },
@@ -117,7 +129,8 @@ const Signes = (() => {
         <line x1="${x - 12 * E}" y1="${y}" x2="${x + 12 * E}" y2="${y}"
               stroke="${C.gris}" stroke-width="${T - 1.5}" stroke-dasharray="${6 * E * 0.5} ${3 * E * 0.5}"/>` },
 
-    /* 310_relays_contactors_contacts/01_coils/ : un rectangle traversé par le conducteur. */
+    /* 310_relays_contactors_contacts/01_coils/bobine3.svg : un grand rectangle 28 × 16, sans barre ;
+       le conducteur s'arrête à ses deux extrémités. */
     bobine: {
       nom: 'Le rectangle large', dit: 'une bobine — ce qui commande',
       boite: [-14, -20, 14, 20],   /* en unités, autour du point d’ancrage */
@@ -161,10 +174,10 @@ const Signes = (() => {
      Chaque symbole composé dit de quelles lettres il est fait, et d'où vient sa forme. */
   const MOTS = {
     interrupteur: { nom: 'Un interrupteur', lettres: ['contact', 'manuelle'],
-      lecture: 'un contact, plus le trait de commande manuelle : quelqu’un l’actionne.' },
+      lecture: 'un contact, plus le trait de commande manuelle : quelqu’un l’actionne. (Sur le symbole simplifié de la station 3.1, ce trait n’est pas dessiné : on ne voit que le contact et ses deux bornes.)' },
 
     sectionneur: { nom: 'Un sectionneur', lettres: ['contact', 'sectionnement'],
-      lecture: 'un contact, plus la barre courte sur la borne fixe : on peut le condamner et travailler derrière.' },
+      lecture: 'un contact, plus la barre courte sur la borne fixe : il est capable d’isoler et peut être condamné.' },
 
     fusible: { nom: 'Un fusible', lettres: ['rectangle'],
       lecture: 'un seul signe : le rectangle étroit que le conducteur traverse.' },
@@ -176,7 +189,7 @@ const Signes = (() => {
       lecture: 'un contact, le crochet rectangulaire du bilame et le demi-cercle de la bobine : il voit la surcharge lente ET le court-circuit brutal.' },
 
     disjoncteurMoteur: { nom: 'Un disjoncteur moteur', lettres: ['contact', 'thermique', 'magnetique', 'sectionnement'],
-      lecture: 'les trois du magnéto-thermique, plus la barre : celui-là se condamne aussi.' },
+      lecture: 'les trois du magnéto-thermique, plus la barre courte : ici, l’aptitude au sectionnement est dessinée sur le symbole.' },
 
     contacteur: { nom: 'Un contacteur', lettres: ['bobine', 'contact', 'pointille'],
       lecture: 'une bobine, des contacts, et le pointillé qui les relie : ils sont loin l’un de l’autre sur le plan, mais mécaniquement solidaires.' },
@@ -255,7 +268,7 @@ const Signes = (() => {
 <g class="a-tracer" transform="${cadrer(L.boite)}">${L.dessin(0, 0, arg)}</g>
 <text x="446" y="118" text-anchor="middle" font-size="21" font-weight="700" fill="${C.navy}">${L.nom}</text>
 <text x="446" y="152" text-anchor="middle" font-size="16" fill="${C.gris}">${L.dit}</text>
-<text x="446" y="214" text-anchor="middle" font-size="12" fill="${C.gris}">tracé relevé sur le symbole normalisé</text>
+<text x="446" y="214" text-anchor="middle" font-size="12" fill="${C.gris}">${L.legendeSource || 'tracé relevé sur le symbole normalisé'}</text>
 <text x="446" y="234" text-anchor="middle" font-size="11" fill="${C.gris}">${L.source.split(' · ')[0].split('/').pop()}</text>`;
     return d;
   }
@@ -325,7 +338,7 @@ ${mots.map((m, i) => `
              LETTRES[g.dataset.signe].dit : '') + ' — on cherche ' + L.nom.toLowerCase() + '.';
         } else {
           verdict.className = 'verdict wait';
-          verdict.innerHTML = '<span class="signe">•</span>' + trouves + ' sur ' + attendus + '.';
+          verdict.innerHTML = '<span class="signe">•</span>Bien vu. Continuez à chercher.';
         }
       });
     });
@@ -393,7 +406,7 @@ ${CAS.map((relie, i) => {
         t.setAttribute('fill', juste ? C.vert : C.rouge);
         if (juste) { bons++;
           v.className = 'verdict ok';
-          v.innerHTML = '<span class="signe">✔</span>' + bons + ' sur 6. ' +
+          v.innerHTML = '<span class="signe">✔</span>' +
             (CAS[i] ? 'Le point est là : les deux fils n’en font qu’un.'
                     : 'Pas de point : ils se croisent sans se toucher.');
         } else {

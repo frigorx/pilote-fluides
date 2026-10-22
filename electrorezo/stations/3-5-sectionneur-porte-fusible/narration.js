@@ -18,8 +18,9 @@ mobile elle-même. Quand vous abaissez la poignée, ce sont les cartouches qui s
 circuit.
 Prenez un instant pour vous représenter le mouvement, parce que la conséquence est très
 heureuse pour vous. Une fois l'appareil ouvert et cadenassé, les cartouches sont hors tension.
-Vous pouvez les changer sans risque, avec la même poignée qui a servi à vous mettre en
-sécurité. Vous ne choisissez plus entre protéger et intervenir : vous faites les deux d'un
+Une fois l'absence de tension vérifiée, vous pouvez les changer en sécurité, avec la même
+poignée qui a servi à vous mettre en sécurité. Attention : les bornes d'arrivée, elles, restent
+sous tension. Vous ne choisissez plus entre protéger et intervenir : vous faites les deux d'un
 seul geste.
 Maintenant, la mise en garde, et elle est importante. L'appareil garde le défaut du
 sectionneur, et ce défaut ne disparaît pas parce qu'on a ajouté des fusibles. Il n'a toujours
@@ -29,7 +30,8 @@ suis protégé si j'ouvre en charge ». C'est faux. Les fusibles protègent cont
 surintensités. Ils ne font absolument rien contre l'arc que vous créez vous-même en ouvrant.
 Une dernière chose, pour ne pas vous laisser dans l'erreur. Il existe une famille voisine :
 l'interrupteur-sectionneur à fusibles. Celui-là, lui, sait couper en charge. La différence se
-lit sur la plaque de l'appareil et sur son symbole. Et en cas de doute — retenez cette règle —
+lit sur la plaque de l'appareil et sur son symbole : un petit rond à côté de la barre de
+sectionnement. Et en cas de doute — retenez cette règle —
 on considère qu'on n'a pas le droit d'ouvrir en charge.`,
 
   manipuler: `Reprenez les trois questions une dernière fois pour cette ligne.

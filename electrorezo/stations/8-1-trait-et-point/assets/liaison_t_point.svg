@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-34.0 -34.0 68.0 48.0" width="68" height="48">
+<!-- Liaison en T — converti de en_60617_03_02_05.elmt par outils\elmt-vers-svg.py -->
+<line x1="-20" y1="-20" x2="20" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="-20.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="black"/>
+</svg>

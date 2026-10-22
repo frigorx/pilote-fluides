@@ -10,29 +10,30 @@ ModeleGrandeur.construire({
   prerequis: [
     { id: '1.6', quoi: "la fréquence" },
     { id: '6.3', quoi: "le moteur asynchrone" },
+    { id: '7.1', quoi: "l’appareil True RMS" },
   ],
 
   photos: [
     { src: 'assets/la-vraie-solution.svg',
-      alt: "Comparaison : en baissant la tension la vitesse ne bouge pas et le couple s’effondre ; en baissant la fréquence avec la tension qui suit, la vitesse baisse vraiment et le couple reste entier.",
+      alt: "Comparaison : en baissant la tension de 400 à 280 volts, la vitesse ne bouge presque pas et le couple tombe à la moitié ; en baissant la fréquence avec la tension qui suit, la vitesse baisse vraiment et le couple reste entier.",
       titre: "Les deux façons, comparées.", sous: "L’une affaiblit, l’autre ralentit vraiment." }
   ],
   creditPhoto: 'Coupe dessinée pour cette station. Détail dans « Crédits ».',
 
   lIdee: "La station 7.1 a montré ce qui ne marche pas. Voici ce qui marche. La vitesse d’un moteur asynchrone est fixée par la fréquence : alors on change la fréquence. Mais il y a une condition, et c’est toute la difficulté.",
-  ouOnLaRencontre: "Sur toutes les machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs de climatisation. C’est ce qui a transformé l’industrie ces trente dernières années.",
+  ouOnLaRencontre: "Sur beaucoup de machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs de climatisation. C’est ce qui a transformé l’industrie ces trente dernières années.",
 
   scene: () => SchemasMachines.loiUsurF(),
 
   ceQuiSePasse: [
     ["La vitesse suit la fréquence", "directement et proportionnellement. Moitié moins de fréquence, moitié moins de tours. C’est la relation la plus simple de toute la ligne."],
     ["Mais la tension doit suivre aussi", "et c’est la condition. Si on baisse la fréquence sans baisser la tension, le champ magnétique dans le fer devient trop fort : le fer <strong>sature</strong>."],
-    ["Ce que sature veut dire", "le fer ne peut plus canaliser davantage de champ. Le courant s’envole sans que le couple augmente. Le moteur chauffe très vite, pour rien."],
+    ["Ce que sature veut dire", "le fer ne peut plus canaliser davantage de champ. Le courant s’envole sans que le couple augmente : c’est le <strong>courant magnétisant</strong>, celui qui crée le champ dans le fer. Le moteur chauffe très vite, pour rien."],
     ["La loi U sur f", "on garde le rapport tension sur fréquence <strong>constant</strong>. 400 volts à 50 hertz, 200 volts à 25 hertz, 80 volts à 10 hertz. Le rapport vaut 8 dans les trois cas."]
   ],
   aRetenir: [
     "<strong>U / f constant</strong> : c’est la loi de toute la ligne 7.",
-    "Tant que le rapport est tenu, le <strong>couple reste entier</strong> à n’importe quelle vitesse.",
+    "Tant que le rapport est tenu, le <strong>couple reste entier</strong>, de 50 Hz jusqu’à 10 Hz. Plus bas, tout près de l’arrêt, la loi U/f ne suffit plus : c’est le rôle du contrôle vectoriel (station 7.4).",
     "Au-delà de 50 hertz, la tension ne peut plus suivre — on est au maximum du réseau. Le couple diminue alors, et c’est normal."
   ],
 
@@ -57,7 +58,7 @@ ModeleGrandeur.construire({
     "Sur un <strong>variateur</strong>, la plage de fréquence de sortie est écrite : souvent 0 à 400 Hz.",
     "Le paramètre <strong>U/f</strong> fait partie des premiers réglages à faire à la mise en service. Il est souvent nommé « loi tension-fréquence » dans le menu.",
     "La <strong>fréquence minimale</strong> se règle aussi : en dessous, le moteur ne se ventile plus assez, car son ventilateur est calé sur son arbre.",
-    "Un moteur qui tourne longtemps à basse vitesse a besoin d’une <strong>ventilation forcée</strong> indépendante. C’est une erreur de conception fréquente."
+    "Un moteur qui tourne longtemps à basse vitesse peut avoir besoin d’une <strong>ventilation forcée</strong> indépendante."
   ],
 
   quiz: [
@@ -85,7 +86,7 @@ ModeleGrandeur.construire({
         { texte: "400 V, comme au nominal.", pourquoi: "Le rapport doublerait, et le fer saturerait." },
         { texte: "Peu importe : seule la fréquence compte.", pourquoi: "C’est précisément l’erreur que cette station corrige." } ] },
 
-    { question: "Pourquoi un moteur qui tourne longtemps à basse vitesse a-t-il besoin d’une ventilation forcée ?",
+    { question: "Pourquoi un moteur qui tourne longtemps à basse vitesse peut-il avoir besoin d’une ventilation forcée ?",
       confirmation: "Parce que son ventilateur est calé sur son arbre : lentement, il ne ventile plus.",
       reponses: [
         { texte: "Parce qu’il consomme davantage.", pourquoi: "Il consomme moins à basse vitesse, en général." },
@@ -97,7 +98,7 @@ ModeleGrandeur.construire({
   retenir: [
     "<strong>La vitesse suit la fréquence.</strong> Directement.",
     "<strong>U / f constant</strong> : la loi de toute la ligne.",
-    "<strong>Rapport tenu = couple entier</strong>, à n’importe quelle vitesse.",
+    "<strong>Rapport tenu = couple entier</strong>, sauf tout près de l’arrêt.",
     "<strong>À basse vitesse, le moteur ne se ventile plus.</strong>"
   ],
 

@@ -9,6 +9,7 @@ ModeleGrandeur.construire({
 
   prerequis: [
     { id: '1.2', quoi: "la tension" },
+    { id: '1.5', quoi: "la valeur efficace" },
     { id: '6.3', quoi: "le moteur asynchrone" },
   ],
 
@@ -20,27 +21,27 @@ ModeleGrandeur.construire({
   creditPhoto: 'Coupe dessinée pour cette station. Détail dans « Crédits ».',
 
   lIdee: "Première idée qui vient à l’esprit pour ralentir un moteur : lui envoyer moins de tension. C’est ce qu’on fait avec une lampe, avec une résistance chauffante. Alors pourquoi pas avec un moteur ? Cette station répond, et la réponse est instructive.",
-  ouOnLaRencontre: "Sur les variateurs de lumière, sur les ventilateurs à plusieurs vitesses, sur les résistances de chauffage régulées. Et — c’est le point important — presque jamais pour régler la vitesse d’un moteur asynchrone.",
+  ouOnLaRencontre: "Sur les variateurs de lumière, sur les résistances de chauffage régulées. Et — c’est le point important — presque jamais pour régler la vitesse d’un moteur asynchrone ordinaire sous couple constant (une pompe, un convoyeur). Exception courante en froid : certains moteurs de ventilateur de condenseur, prévus pour cette variation de tension.",
 
   scene: () => SchemasMachines.baisserLaTension(),
 
   ceQuiSePasse: [
     ["Sur une résistance, ça marche", "moins de tension, moins de courant, moins de puissance. Une lampe s’éteint doucement, un radiateur chauffe moins. C’est simple et c’est efficace."],
-    ["Sur un moteur asynchrone, ça ne marche pas", "sa vitesse est fixée par la <strong>fréquence</strong>, pas par la tension. Baisser la tension ne le ralentit presque pas."],
+    ["Sur un moteur asynchrone ordinaire, ça ne marche pas", "sa vitesse est fixée par la <strong>fréquence</strong>, pas par la tension. Sous couple constant, baisser la tension ne le ralentit presque pas. Un moteur de ventilateur prévu pour, à fort glissement, fait exception : sa vitesse baisse nettement."],
     ["Ce qui baisse, c’est le couple", "et il baisse vite : il suit le <strong>carré</strong> de la tension. À 70 % de la tension, il ne reste que la moitié du couple."],
     ["Et l’intensité monte", "le moteur cherche à fournir la même puissance mécanique avec moins de tension. Il appelle donc plus de courant, et il chauffe."]
   ],
   aRetenir: [
     "Le couple suit le <strong>carré</strong> de la tension. C’est la relation à retenir de cette station.",
-    "Faire varier la tension d’un moteur asynchrone, c’est l’<strong>affaiblir</strong>, pas le ralentir.",
+    "Faire varier la tension d’un moteur asynchrone ordinaire, c’est l’<strong>affaiblir</strong>, pas le ralentir.",
     "Un moteur qui tourne sous-alimenté finit par déclencher son thermique — quand il ne brûle pas avant."
   ],
 
   mesure: () => SchemasMachines.ondeDecoupee(),
   instrument: [
-    "Un multimètre ordinaire mesure mal une onde découpée : il suppose une sinusoïde. Il faut un appareil <strong>True RMS</strong>.",
+    "Un multimètre ordinaire mesure mal une onde découpée (une onde dont on a supprimé un morceau à chaque alternance) : il suppose une sinusoïde. Il faut un appareil <strong>True RMS</strong>, c’est-à-dire qui mesure la vraie valeur efficace, même sur une onde déformée.",
     "Sans cette fonction, l’erreur peut atteindre <strong>vingt pour cent</strong> — et rien ne la signale.",
-    "Sur un moteur alimenté par un gradateur, mesurez plutôt <strong>l’intensité à la pince</strong> : elle est plus parlante que la tension.",
+    "Sur un moteur alimenté par un gradateur, mesurez plutôt <strong>l’intensité à la pince True RMS</strong> : elle est plus parlante que la tension.",
     "Et comparez-la à la plaque. Un moteur sous-alimenté qui force appelle plus que sa valeur nominale."
   ],
   dangerDeMesure: "Une onde découpée met en défaut beaucoup d’appareils de mesure et beaucoup de différentiels. Sur une installation à gradateurs, il faut des différentiels de type adapté.",
@@ -72,7 +73,7 @@ ModeleGrandeur.construire({
     { question: "Qu’est-ce qui fixe la vitesse d’un moteur asynchrone ?",
       confirmation: "La fréquence, et le nombre de pôles. Pas la tension.",
       reponses: [
-        { texte: "La tension appliquée.", pourquoi: "Elle ne fait varier la vitesse que de quelques dizaines de tours." },
+        { texte: "La tension appliquée.", pourquoi: "Sur un moteur ordinaire, elle ne fait varier la vitesse que de quelques dizaines de tours." },
         { texte: "La fréquence et le nombre de pôles.", juste: true },
         { texte: "L’intensité absorbée.", pourquoi: "L’intensité est une conséquence de la charge, pas une cause de vitesse." },
         { texte: "Le couplage étoile ou triangle.", pourquoi: "Le couplage change la tension vue par les bobinages, pas la vitesse." } ] },
@@ -96,8 +97,8 @@ ModeleGrandeur.construire({
 
   retenir: [
     "<strong>Le couple suit le CARRÉ</strong> de la tension.",
-    "<strong>La vitesse ne suit pas.</strong> Elle dépend de la fréquence.",
-    "<strong>Baisser la tension affaiblit</strong>, ça ne ralentit pas.",
+    "<strong>La vitesse d’un moteur ordinaire ne suit pas.</strong> Elle dépend de la fréquence.",
+    "<strong>Baisser la tension d’un moteur ordinaire l’affaiblit</strong>, ça ne le ralentit pas.",
     "<strong>Onde découpée</strong> : il faut un appareil True RMS pour la mesurer."
   ],
 

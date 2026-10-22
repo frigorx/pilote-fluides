@@ -18,7 +18,7 @@ Le crédit est sous l'image et dans le dialogue « Crédits » de la station.
 ## Symboles normalisés
 
 `C:\git\bibliotheque-symboles-energie\svg\10_electric\10_allpole\`
-→ dossier `200_fuses_protective_gears/10_fuses/` → porte_fusible_bi.svg, pojistka3p.svg
+→ dossier `200_fuses_protective_gears/10_fuses/` → pojistka1p.svg (un fusible : rectangle sur le trait du circuit), pojistka3p.svg
 
 Fond `#ffffff` remplacé par `#fffdf8` (charte : jamais de blanc pur). **Rien d'autre n'a été
 touché, aucun symbole n'a été redessiné.**

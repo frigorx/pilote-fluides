@@ -35,7 +35,7 @@ ModeleAppareil.construire({
 
   variantes: [
     "<strong>Le relais simple</strong> — une bobine, un ou plusieurs contacts inverseurs. Le cas général.",
-    "<strong>Le relais bistable, ou télérupteur</strong> — une impulsion le fait basculer, il y reste. L’impulsion suivante le fait revenir. Il <strong>garde</strong> sa position, contrairement à tous les autres.",
+    "<strong>Le relais bistable, ou télérupteur</strong> — une impulsion le fait basculer, il y reste. L’impulsion suivante le fait revenir. Il <strong>garde</strong> sa position, contrairement aux autres relais.",
     "<strong>Le relais statique</strong> — pas de pièce mobile du tout : un composant électronique fait le travail. Silencieux, très rapide, mais il chauffe et il ne coupe jamais complètement.",
     "<strong>Le relais de sécurité</strong> — plusieurs contacts contrôlés l’un par l’autre, pour qu’une pastille soudée soit détectée. On le trouve derrière les arrêts d’urgence."
   ],
@@ -63,8 +63,8 @@ ModeleAppareil.construire({
 
   symboles: [
     { src: 'assets/bobine3.svg', alt: "Symbole normalisé de la bobine d’un relais.", legende: "La bobine" },
-    { src: 'assets/contact_relais.svg', alt: "Symbole normalisé d’un contact de relais normalement ouvert.", legende: "Contact NO" },
-    { src: 'assets/contact_relais_nf.svg', alt: "Symbole normalisé d’un contact de relais normalement fermé.", legende: "Contact NF" },
+    { src: 'assets/con_simple.svg', alt: "Symbole normalisé d’un contact normalement ouvert, celui d’un relais comme de tout contact commandé : une lame inclinée qui ne touche pas.", legende: "Contact NO" },
+    { src: 'assets/con_simple_nf.svg', alt: "Symbole normalisé d’un contact normalement fermé : une lame inclinée qui touche sa butée, marquée d’un petit trait.", legende: "Contact NF" },
     { src: 'assets/telerupteur.svg', alt: "Symbole normalisé d’un télérupteur : la bobine porte un signe en marche d’escalier.", legende: "Télérupteur" }
   ],
   lecturePlan: [
@@ -121,8 +121,8 @@ ModeleAppareil.construire({
   objectifs: '<p><strong>Objectif.</strong> Distinguer un relais d’un contacteur, lire les repères KA et KM, et connaître le cas particulier du relais bistable.</p><p><strong>Limite.</strong> Les relais de sécurité et les architectures de sécurité machine ne sont qu’évoqués : ils relèvent d’une formation spécifique.</p>',
 
   credits: [
-    { quoi: 'Photographies', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+    { quoi: 'Coupes dessinées pour cette station', source: 'tracées pour ÉlectroRézo',
+      detail: 'assets/relais-et-son-embase.svg et assets/telerupteur-bascule.svg : aucune photographie dans cette station' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
       detail: 'svg/10_electric/10_allpole/310_relays_contactors_contacts/' } ],
 

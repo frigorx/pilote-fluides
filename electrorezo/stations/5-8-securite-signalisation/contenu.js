@@ -14,8 +14,8 @@ ModeleAppareil.construire({
 
   photos: [
     { src: 'assets/biblio/pupitre-boutons-et-coup-de-poing.jpeg',
-      alt: "Photo d’un pupitre portant plusieurs boutons-poussoirs noirs et un bouton rouge en champignon.",
-      titre: "Un pupitre réel.", sous: "Le champignon rouge se distingue de tous les autres." },
+      alt: "Photo d’un arrêt d’urgence démonté : à droite la tête rouge en champignon, au milieu la bague de fixation, à gauche deux blocs de contacts.",
+      titre: "Un arrêt d’urgence démonté.", sous: "La tête rouge, la bague de fixation, les deux blocs de contacts." },
     { src: 'assets/champignon-accrochage.svg',
       alt: "Coupe d’un arrêt d’urgence : au repos la lame touche ; frappé, la tête s’enfonce, un cran la retient et le contact s’ouvre.",
       titre: "Ce qui se passe dedans.", sous: "Le cran mord, et la tête ne remonte plus toute seule." },
@@ -25,7 +25,7 @@ ModeleAppareil.construire({
   ],
   creditPhoto: 'Photographie : document de cours indexé dans la base inerWeb. Les deux coupes sont dessinées pour cette station. Détail dans « Crédits ».',
 
-  aQuoiCaSert: "À arrêter une machine quand quelque chose se passe mal, et à dire à l’opérateur ce que la machine est en train de faire. Deux métiers différents, réunis ici parce qu’ils partagent la même règle de câblage.",
+  aQuoiCaSert: "À arrêter une machine quand quelque chose se passe mal, et à dire à l’opérateur ce que la machine est en train de faire. Deux métiers différents, réunis ici parce qu’ils obéissent au même principe : la panne doit tomber du bon côté.",
   ouOnLeTrouve: "L’arrêt d’urgence à portée de main de chaque poste de travail ; les voyants sur la porte de l’armoire ; les fins de course sur les parties mobiles des machines.",
 
   scene: () => SchemasCommande.chaineSecurite(),
@@ -40,7 +40,7 @@ ModeleAppareil.construire({
   variantes: [
     "<strong>Déverrouillage par rotation</strong> — le plus courant. On tourne le champignon d’un quart de tour, il ressort.",
     "<strong>Déverrouillage à clé</strong> — quand on veut que seule une personne habilitée puisse relancer la machine après un arrêt d’urgence.",
-    "<strong>Le voyant</strong> — il informe, il ne commande rien. Blanc pour un état, vert pour marche, rouge pour défaut, orange pour une alerte.",
+    "<strong>Le voyant</strong> — il informe, il ne commande rien. Vert : fonctionnement normal. Jaune (ambre) : situation anormale. Rouge : danger, action immédiate. Bleu : action obligatoire. Blanc : information neutre.",
     "<strong>La fin de course à galet ou à levier</strong> — même contact, organe de manœuvre différent. Le galet supporte le passage répété d’une came."
   ],
 
@@ -101,7 +101,7 @@ ModeleAppareil.construire({
     { question: "Comment se câblent plusieurs arrêts d’urgence sur une même machine ?",
       confirmation: "Tous en série : n’importe lequel doit tout arrêter.",
       reponses: [
-        { texte: "Un seul dans la chaîne, les autres sur un relais.", pourquoi: "Cela ajouterait un appareil entre l’urgence et l’arrêt : on ne le fait pas." },
+        { texte: "Un seul dans la chaîne, les autres sur un relais.", pourquoi: "Ce n’est pas la réponse attendue ici : au niveau de cette station, chaque arrêt d’urgence se câble dans la chaîne, tous en série. (Un relais de sécurité peut les regrouper : c’est hors programme.)" },
         { texte: "Tous en parallèle.", pourquoi: "En parallèle, il faudrait les frapper tous en même temps pour arrêter la machine." },
         { texte: "Tous en série.", juste: true },
         { texte: "En parallèle deux à deux.", pourquoi: "Le montage n’existe pas : la sécurité veut la série, sans exception." } ] },

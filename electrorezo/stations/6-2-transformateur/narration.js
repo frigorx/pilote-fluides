@@ -50,7 +50,8 @@ oubli du dessinateur — c'est l'information. Il n'y a pas de liaison électriqu
 la sortie.
 Cette absence de liaison, c'est ce qui fait qu'on peut toucher un secondaire vingt-quatre volts
 sans risque, alors que le primaire est en deux cent trente.
-Sur certains modèles, vous verrez un trait entre les deux cercles. C'est un écran de séparation,
+Sur certains modèles, vous verrez un petit trait qui touche l'espace commun aux deux cercles,
+comme sur le premier symbole de l'écran. C'est un écran de séparation,
 un blindage. Il ne change pas le principe : il améliore l'isolement.
 Les tensions sont écrites de part et d'autre. Et attention : c'est le sens du plan qui dit lequel
 est le primaire. Un transformateur peut souvent fonctionner dans les deux sens, mais il n'a pas

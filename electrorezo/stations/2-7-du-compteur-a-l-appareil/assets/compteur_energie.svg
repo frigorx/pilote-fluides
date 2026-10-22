@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -15.5 43 61" width="43" height="61">
+<!-- Compteur d’énergie — converti de compteur_energie.elmt par outils\elmt-vers-svg.py -->
+
+<line x1="-6" y1="10" x2="26" y2="10" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-6" y="0" width="32" height="40" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<text x="-4" y="30" font-family="Arial,sans-serif" font-size="10" fill="#000000">kWh</text>
+<line x1="0" y1="-10" x2="0" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-10" x2="20" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</svg>

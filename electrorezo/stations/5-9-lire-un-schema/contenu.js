@@ -13,12 +13,12 @@ ModeleAppareil.construire({
   ],
 
   photos: [
-    { src: 'assets/biblio/puissance-et-commande.jpeg',
-      alt: "Deux schémas d’un démarrage direct : à gauche le schéma de puissance avec Q1, Q2, KM1 et le moteur M1 ; en dessous le schéma de commande avec S1, S2, le contact KM1 13-14 et la bobine KM1.",
+    { src: 'assets/biblio/puissance-et-commande-sans-questions.jpeg',
+      alt: "Les deux schémas d’un démarrage direct : à gauche la puissance, avec Q1, Q2 et son relais thermique, les contacts de KM1 et le moteur M1 ; à droite la commande, avec le contact 13-14 de KM1 en parallèle sur le bouton de marche S1, l’arrêt S2 et la bobine KM1.",
       titre: "Le vrai document.", sous: "Un démarrage direct, tel qu’on le trouve dans un dossier." },
     { src: 'assets/biblio/platine-demarrage-direct.jpeg',
       alt: "Plan d’implantation d’une platine de démarrage direct : l’appareillage sur la grille, le bornier en bas, et sur la porte l’arrêt d’urgence S1, les boutons S2 et S3 et les voyants H1, H2, H3.",
-      titre: "Du dessin à l’armoire.", sous: "Les mêmes repères, posés à leur place réelle." }
+      titre: "Du dessin à l’armoire.", sous: "Même type d’appareillage, repères d’un autre dossier : ici, S1 est l’arrêt d’urgence." }
   ],
   creditPhoto: 'Documents de cours indexés dans la base inerWeb. Détail dans « Crédits ».',
 
@@ -30,7 +30,7 @@ ModeleAppareil.construire({
   technologie: [
     ["Deux schémas, un appareil", "la bobine de KM1 est sur le schéma de commande, ses contacts de puissance sur le schéma de puissance. C’est le même appareil, coupé en deux par le dessin."],
     ["Le schéma de puissance", "trois fils, épais, verticaux. On descend : sectionnement, protection, contacteur, moteur. L’ordre est presque toujours celui-là."],
-    ["Le schéma de commande", "deux fils fins, phase en haut, neutre en bas. On descend : sécurités, ordres, auto-maintien, bobine. La bobine est toujours en bas."],
+    ["Le schéma de commande", "deux fils fins, phase en haut, neutre en bas. On descend : sécurités, puis la marche avec son auto-maintien en parallèle, puis l’arrêt, puis la bobine. La bobine est toujours en bas."],
     ["Les repères", "ils font le lien entre les deux pages. <strong>Q</strong> pour ce qui coupe, <strong>F</strong> pour ce qui protège, <strong>KM</strong> pour un contacteur, <strong>S</strong> pour un ordre, <strong>M</strong> pour le moteur."]
   ],
 
@@ -56,7 +56,7 @@ ModeleAppareil.construire({
 
   cablage: [
     "Sur le schéma de puissance, on descend toujours : <strong>sectionnement</strong>, puis <strong>protection</strong>, puis <strong>contacteur</strong>, puis <strong>moteur</strong>.",
-    "Sur le schéma de commande, on descend aussi : <strong>sécurités</strong>, puis <strong>ordres</strong>, puis <strong>auto-maintien</strong>, puis <strong>bobine</strong>.",
+    "Sur le schéma de commande, on descend aussi : <strong>sécurités</strong>, puis la <strong>marche avec son auto-maintien en parallèle</strong>, puis l’<strong>arrêt</strong>, puis la <strong>bobine</strong>.",
     "La <strong>bobine est toujours en bas</strong>, juste au-dessus du neutre. Si vous la cherchez, commencez par là.",
     "Chaque fil de l’armoire porte à ses deux bouts un repère qui figure sur le plan. C’est ce qui rend un dépannage possible dix ans plus tard.",
     "À vous de le câbler : <a href=\"https://inerweb.fr/cablage-virtuel/jouer.html?ex=demarrage-direct-tri&amp;mode=guide\" target=\"_blank\" rel=\"noopener\">le même départ moteur dans le Câblage virtuel</a> — Q1, KM1, F1, le bornier XB et M1, posés fil par fil."
@@ -97,8 +97,8 @@ ModeleAppareil.construire({
         { texte: "Un appareil de coupure ou de sectionnement.", juste: true },
         { texte: "Un contacteur.", pourquoi: "Un contacteur porte KM." } ] },
 
-    { question: "Vous ne trouvez pas les contacts de KM1 sur la page de commande. Pourquoi ?",
-      confirmation: "Les contacts de puissance sont sur l’autre page. Le repère fait le lien.",
+    { question: "Vous ne trouvez pas les contacts de puissance de KM1 sur la page de commande. Pourquoi ?",
+      confirmation: "Les contacts de puissance sont sur l’autre page. Le repère fait le lien. (Le contact 13-14 de KM1, lui, est bien sur la commande.)",
       reponses: [
         { texte: "Parce que ce contacteur n’en a pas.", pourquoi: "Tout contacteur a des contacts de puissance : c’est sa raison d’être." },
         { texte: "Parce qu’ils sont dessinés en pointillé.", pourquoi: "Le pointillé relie, il ne remplace pas le dessin d’un contact." },

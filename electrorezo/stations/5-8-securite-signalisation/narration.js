@@ -4,10 +4,11 @@
 const NARRATION = {
 
   decouvrir: `Cette station parle de deux choses qui n'ont pas le même métier, et je vais vous dire tout de
-suite pourquoi elles sont ensemble : parce qu'elles obéissent à la même règle de câblage.
+suite pourquoi elles sont ensemble : parce qu'elles obéissent au même principe. La panne doit
+tomber du bon côté.
 D'un côté, l'arrêt d'urgence et la fin de course. Ils arrêtent.
 De l'autre, le voyant. Il informe.
-Et la règle qui les réunit, vous allez voir, est peut-être la plus importante de toute la ligne.`,
+Et ce principe, vous allez voir, est peut-être le plus important de toute la ligne.`,
 
   comprendre: `Commençons par une question que peu de gens se posent. Pourquoi les sécurités se câblent-elles
 en normalement fermé ?
@@ -38,8 +39,8 @@ Pour travailler, il faut un appareil qui a l'aptitude au sectionnement — celui
 vous a appris à reconnaître à sa petite barre.`,
 
   manipuler: `Les trois questions, pour l'arrêt d'urgence.
-Réfléchissez bien à la troisième : c'est le seul appareil de cette ligne, avec le sélecteur,
-pour lequel la réponse est oui — et ici, c'est vital.`,
+Réfléchissez bien à la troisième : c'est, avec le sélecteur, l'un des rares appareils de cette
+ligne pour lesquels la réponse est oui — et ici, c'est vital.`,
 
   representer: `Sur un plan, ces trois appareils se reconnaissent chacun à un signe.
 L'arrêt d'urgence porte une tête en demi-cercle — le champignon vu de côté — et un contact

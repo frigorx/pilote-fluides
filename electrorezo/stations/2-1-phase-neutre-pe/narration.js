@@ -28,18 +28,23 @@ métallique de la machine.
 Le courant part immédiatement par le vert et jaune. Il descend au piquet de terre. Et parce qu'il
 est parti par là, il manque au retour — ce qui est exactement ce que le différentiel détecte.
 Sa couleur est le vert et jaune, et elle lui est réservée elle aussi.
-Deux couleurs réservées, dans le monde entier. Employer du bleu pour une phase, ou du vert-jaune
+Deux couleurs réservées, en France et dans les pays qui suivent la même norme. Employer du bleu
+pour une phase, ou du vert-jaune
 pour autre chose que la protection, ce n'est pas une négligence de finition. C'est une faute qui
 peut coûter la vie à celui qui viendra après vous.`,
 
   manipuler: `Maintenant, un cas très concret. Vous ouvrez un coffret ancien. Trois fils, et les couleurs ne
 vous inspirent pas confiance — parce que quelqu'un est passé avant vous.
-Comment fait-on ? Trois mesures suffisent, et le tableau vous les donne.
+Comment fait-on ? Trois mesures repèrent déjà la phase, et le tableau vous les donne.
 Entre le premier et le deuxième : deux cent trente volts. Entre le premier et le troisième : deux
 cent trente volts aussi. Entre le deuxième et le troisième : zéro.
-Voilà, c'est fini. Les deux qui donnent zéro entre eux sont le neutre et la protection : ils sont
-reliés ensemble en amont. Et celui qui donne deux cent trente avec les deux autres, c'est la
+Voilà pour la phase. Les deux qui donnent zéro entre eux sont le neutre et la protection : ils
+sont reliés ensemble en amont. Et celui qui donne deux cent trente avec les deux autres, c'est la
 phase.
+Mais attention, ces mesures ne vous disent pas lequel des deux est le neutre et lequel est la
+protection. Les confondre, c'est justement la faute que cette station dénonce. Pour les
+départager, il faut le repérage, les couleurs, la continuité vers la borne de terre, ou une
+mesure de courant en charge.
 Un mot sur le tournevis testeur, celui qui a une petite lampe dans le manche. Il vous dit qu'il y
 a de la tension. Il ne vous dit pas combien, ni entre quoi et quoi.
 C'est un indicateur, pas un instrument de mesure. Il ne remplace ni le multimètre, ni le
@@ -57,7 +62,7 @@ Une précision de vocabulaire, parce qu'on emploie souvent un mot pour l'autre. 
 Ce n'est pas un pinaillage : sur un plan, les deux se dessinent différemment.
 Et maintenant, la chose que je veux que vous cherchiez sur tout schéma que vous ouvrirez.
 Le conducteur de protection ne porte jamais d'appareil de coupure. Jamais.
-Pas de disjoncteur dessus, pas de sectionneur, pas de fusible, pas de bornier débrochable. Rien.
+Pas de disjoncteur dessus, pas de sectionneur, pas de fusible. Rien.
 Si vous en voyez un sur un plan, ce n'est pas une subtilité que vous n'auriez pas comprise. C'est
 une faute, et il faut la signaler.
 Pourquoi cette sévérité ? Parce qu'un P E coupé ne se voit pas. L'installation continue de

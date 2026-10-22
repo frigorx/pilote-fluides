@@ -2,7 +2,6 @@
 
 ## Illustrations
 - `plaque-leroy-somer.png`
-- `plaque-leroy-somer-2.jpeg`
 - `plaque-commentee.png`
 
 Trouvées par `node outils/chercher-images.mjs`, dans la base de connaissances inerWeb

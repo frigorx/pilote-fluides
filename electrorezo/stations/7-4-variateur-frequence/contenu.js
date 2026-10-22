@@ -14,11 +14,8 @@ ModeleAppareil.construire({
 
   photos: [
     { src: 'assets/biblio/pompes-et-variateurs.jpeg',
-      alt: "Photo d’un groupe de pompes centrifuges équipées chacune de son variateur de fréquence.",
-      titre: "Sur les machines.", sous: "Chaque pompe a le sien, monté directement dessus." },
-    { src: 'assets/biblio/parametres-d-un-altivar.jpg',
-      alt: "Document listant les paramètres et les codes d’un variateur de vitesse Altivar.",
-      titre: "Ce qui se règle dedans.", sous: "Des dizaines de paramètres — et quelques-uns seulement comptent." }
+      alt: "Photo de deux pompes de circulation, chacune surmontée de son boîtier électronique.",
+      titre: "Sur les machines.", sous: "Ici, l’électronique de réglage est montée directement sur chaque pompe." }
   ],
 
   aQuoiCaSert: "À régler la vitesse d’un moteur asynchrone, vraiment. Et à bien davantage : démarrer en douceur, freiner, protéger, compter les heures, dialoguer avec un automate. C’est le terminus de ce réseau, et ce n’est pas un hasard.",
@@ -56,21 +53,20 @@ ModeleAppareil.construire({
 
   cablage: [
     "En amont : une <strong>protection</strong> et un <strong>sectionnement</strong>. Le variateur ne remplace ni l’un ni l’autre.",
-    "Entre le variateur et le moteur : <strong>rien</strong>. Pas de contacteur, pas de sectionnement. Ouvrir en charge la sortie d’un variateur le détruit.",
+    "Entre le variateur et le moteur : <strong>ne jamais ouvrir la sortie en charge</strong>. Un contacteur ou un sectionneur placé là n’est admis que s’il s’ouvre variateur bloqué (verrouillage), selon la notice : ouvrir en charge peut détruire l’onduleur.",
     "Le <strong>câble moteur</strong> doit être blindé, et son blindage raccordé aux deux extrémités. Le découpage rayonne, et il perturbe tout le reste de l’armoire.",
     "Le <strong>réglage de l’intensité nominale</strong> se fait sur la valeur de la plaque du moteur, correspondant au couplage retenu. C’est ce qui remplace le relais thermique."
   ],
-  piege: "Un <strong>différentiel ordinaire</strong> ne convient pas derrière un variateur. Le découpage engendre des courants de fuite à haute fréquence qu’il ne sait pas voir, et qui le font déclencher sans raison. Il faut un différentiel de <strong>type B</strong>.",
+  piege: "Un <strong>différentiel ordinaire</strong> ne convient pas toujours derrière un variateur. Derrière un variateur triphasé, un défaut peut produire du continu lisse que les types AC et A ne voient pas : il faut un différentiel de <strong>type B</strong>, ou celui que la notice impose. Les fuites à haute fréquence du découpage font aussi déclencher un différentiel ordinaire sans raison.",
 
   symboles: [
-    { src: 'assets/static_freq_converter.svg', alt: "Symbole normalisé d’un convertisseur statique de fréquence, montrant ses trois étages : redresseur, bus continu intermédiaire, onduleur.", legende: "Le convertisseur complet" },
     { src: 'assets/redresseur.svg', alt: "Symbole normalisé d’un redresseur : alternatif vers continu.", legende: "Le redresseur" },
     { src: 'assets/dc_ac1.svg', alt: "Symbole normalisé d’un onduleur : continu vers alternatif.", legende: "L’onduleur" }
   ],
   lecturePlan: [
-    "Le symbole reprend la <strong>diagonale</strong> des convertisseurs, vue à la station 7.2. Mais cette fois, ce qui est écrit de part et d’autre n’est pas la même chose.",
-    "Le symbole complet montre les <strong>trois étages</strong> : redresseur, bus continu, onduleur. Vous les reconnaissez maintenant.",
-    "Sur un plan de puissance, le variateur remplace à la fois le <strong>contacteur</strong> et le <strong>relais thermique</strong>. Ne les cherchez pas : ils n’y sont plus.",
+    "Les deux symboles reprennent la <strong>diagonale</strong> des convertisseurs, vue à la station 7.2. Mais cette fois, ce qui est écrit de part et d’autre n’est pas la même chose.",
+    "Mis bout à bout, ils donnent le variateur : le <strong>redresseur</strong> (alternatif vers continu), puis l’<strong>onduleur</strong> (continu vers alternatif). Entre les deux, le bus continu fait le lien.",
+    "Sur un plan de puissance, le variateur remplace, pour le démarrage, le <strong>contacteur</strong> de puissance et, pour la protection du moteur, le <strong>relais thermique</strong>. Un contacteur ou un sectionneur en amont reste courant.",
     "Et cherchez, en revanche, la <strong>résistance de freinage</strong> : deux bornes en plus, souvent repérées PA et PB. Sa présence vous dit que la machine freine, donc qu’elle a de l’inertie."
   ],
 
@@ -78,15 +74,15 @@ ModeleAppareil.construire({
   tableauTitre: 'Les machines des lignes 6 et 7',
 
   quiz: [
-    { question: "Peut-on mettre un contacteur entre un variateur et son moteur ?",
-      confirmation: "Non : ouvrir en charge la sortie d’un variateur le détruit.",
+    { question: "Le moteur tourne, le variateur est en marche : peut-on ouvrir un contacteur placé entre eux ?",
+      confirmation: "Non : ouvrir en charge la sortie d’un variateur peut le détruire. Un contacteur aval ne s’ouvre que variateur bloqué.",
       reponses: [
         { texte: "Oui, pour couper en urgence.", pourquoi: "L’arrêt d’urgence agit en amont, ou par une entrée dédiée du variateur." },
-        { texte: "Oui, c’est même recommandé.", pourquoi: "C’est exactement l’inverse : la coupure en charge détruit l’onduleur." },
-        { texte: "Oui, si le contacteur est calibré.", pourquoi: "Le calibre n’est pas en cause : c’est la coupure elle-même qui est interdite." },
+        { texte: "Oui, c’est même recommandé.", pourquoi: "C’est exactement l’inverse : la coupure en charge peut détruire l’onduleur." },
+        { texte: "Oui, si le contacteur est calibré.", pourquoi: "Le calibre n’est pas en cause : c’est la coupure en charge elle-même qui est interdite." },
         { texte: "Non.", juste: true } ] },
 
-    { question: "Sur quoi règle-t-on l’intensité nominale d’un variateur ?",
+    { question: "Sur quoi règle-t-on, dans un variateur, l’intensité nominale du moteur ?",
       confirmation: "Sur la valeur de la plaque du moteur, pour le couplage retenu.",
       reponses: [
         { texte: "Sur la valeur de la plaque du moteur.", juste: true },
@@ -95,10 +91,10 @@ ModeleAppareil.construire({
         { texte: "Sur la puissance divisée par la tension.", pourquoi: "Ce calcul néglige le rendement et le cos φ." } ] },
 
     { question: "Pourquoi faut-il un différentiel de type B derrière un variateur ?",
-      confirmation: "Parce que le découpage engendre des fuites à haute fréquence.",
+      confirmation: "Parce qu’un défaut derrière le redresseur peut donner du continu lisse que les types AC et A ne voient pas.",
       reponses: [
         { texte: "Parce que le variateur consomme plus.", pourquoi: "La consommation ne change pas le type de différentiel." },
-        { texte: "Parce que le découpage engendre des fuites qu’un différentiel ordinaire ne voit pas.", juste: true },
+        { texte: "Parce qu’un défaut après le redresseur peut donner un courant de fuite continu lisse qu’un différentiel ordinaire ne voit pas.", juste: true },
         { texte: "Parce que la tension de sortie est plus élevée.", pourquoi: "Elle ne dépasse pas celle du réseau." },
         { texte: "Parce que le moteur tourne plus vite.", pourquoi: "La vitesse n’a aucun rapport avec le type de différentiel." } ] },
 
@@ -113,9 +109,9 @@ ModeleAppareil.construire({
 
   retenir: [
     "<strong>Redresseur, bus continu, onduleur.</strong> Il défait, puis il refait.",
-    "<strong>Jamais de contacteur</strong> entre lui et le moteur.",
+    "<strong>Jamais d’ouverture en charge</strong> de sa sortie : un contacteur aval ne s’ouvre que variateur bloqué, selon la notice.",
     "<strong>Le bus reste chargé</strong> plusieurs minutes. Le délai est écrit dessus.",
-    "<strong>Différentiel de type B</strong>, et câble moteur blindé."
+    "<strong>Différentiel de type B</strong> (ou celui de la notice), et câble moteur blindé."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre les trois étages d’un variateur, connaître les quelques paramètres qui comptent, et les règles de câblage et de sécurité qui lui sont propres.</p><p><strong>Limite.</strong> La mise en service détaillée dépend de chaque constructeur : ce sont les notices qui font foi.</p>',

@@ -22,7 +22,7 @@ ModeleAppareil.construire({
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 
   aQuoiCaSert: "Protéger un départ moteur contre le court-circuit, <strong>sans fondre au démarrage</strong>. La lettre <strong>aM</strong> veut dire : accompagnement moteur.",
-  ouOnLeTrouve: "En tête d’un départ moteur, toujours accompagné d’un relais thermique — jamais seul.",
+  ouOnLeTrouve: "En tête d’un départ moteur, toujours accompagné d’un relais thermique (l’appareil qui surveille la surcharge du moteur, station 4.7) — jamais seul.",
 
   scene: () => SchemasProtection.courbesFusion(),
   tableau: (id) => SchemasProtection.tableauDefauts(id),
@@ -34,7 +34,7 @@ ModeleAppareil.construire({
     ["La pointe de démarrage", "un moteur qui démarre appelle plusieurs fois son courant nominal, pendant quelques secondes. Ce n’est pas un défaut : c’est normal."],
     ["Le fil calibré, mais autrement", "l’aM est conçu pour <strong>ignorer</strong> cette pointe, et pour fondre très vite au-delà."],
     ["La conséquence", "il ne protège <strong>pas</strong> contre la surcharge lente. Un moteur qui force pendant une heure ne le fera pas fondre."],
-    ["Donc il ne travaille jamais seul", "le relais thermique s’occupe de la surcharge, l’aM du court-circuit. Deux appareils, deux métiers."]
+    ["Donc il ne travaille jamais seul", "le <strong>relais thermique</strong> — l’appareil qui surveille la surcharge du moteur, vu à la station 4.7 — s’occupe de la surcharge, l’aM du court-circuit. Deux appareils, deux métiers."]
   ],
 
   variantes: [

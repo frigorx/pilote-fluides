@@ -3,7 +3,7 @@
 ## Illustrations
 - `trois-sinusoides-decalees.jpeg`
 - `trois-phases-et-le-neutre.jpeg`
-- `du-transformateur-a-l-abonne.jpeg`
+- `transformateur-en-etoile.jpeg` (même fichier que la station 2.4 : bibliothèque de la base d’images)
 
 Trouvées par `node outils/chercher-images.mjs`, dans la base de connaissances inerWeb.
 Les scènes commutables et les réglettes sont dessinées dans

@@ -25,7 +25,7 @@ D'où le ressort. Peu importe la lenteur de votre doigt : lui, il écarte les pi
 sec. L'arc n'a pas le temps de s'installer.
 Et c'est pour ça qu'un interrupteur claque. Ce petit bruit sec que vous entendez tous les
 jours, ce n'est pas de la mauvaise finition. C'est la sécurité même de l'appareil. Un
-interrupteur qui ne claquerait pas s'userait dix fois plus vite.
+interrupteur qui ne claquerait pas s'userait beaucoup plus vite.
 Un dernier point avant de passer à la suite. Sur le boîtier, deux nombres sont écrits :
 combien d'ampères il accepte de couper, et sous quelle tension. Ce ne sont pas des indications
 commerciales, ce sont ses limites. Les dépasser, c'est le condamner en quelques manœuvres.`,

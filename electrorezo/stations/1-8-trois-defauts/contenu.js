@@ -14,14 +14,14 @@ ModeleGrandeur.construire({
 
   photos: [
     { src: 'assets/biblio/courbe-de-danger.jpeg',
-      alt: "Courbe normalisée des zones temps-courant des effets du courant alternatif sur le corps humain, de la perception à la fibrillation cardiaque.",
-      titre: "Ce qui est en jeu.", sous: "Quelques dizaines de milliampères, et quelques dixièmes de seconde." },
+      alt: "Courbe normalisée des zones temps-courant des effets du courant alternatif sur le corps humain, de la perception à la fibrillation cardiaque. Le courant passant par le corps est en abscisse (en milliampères), la durée du passage en ordonnée (en millisecondes).",
+      titre: "Ce qui est en jeu.", sous: "Lecture : à droite, plus de courant ; en haut, plus longtemps. Les zones AC-1 à AC-4 vont de « on ne sent rien » à « le cœur peut fibriller »." },
     { src: 'assets/biblio/tableau-des-sections.jpeg',
       alt: "Tableau donnant, pour chaque section de conducteur en cuivre et chaque type d’isolant, l’intensité admissible.",
       titre: "Ce qu’un câble supporte.", sous: "Au-delà, il chauffe — sans que rien ne se voie." }
   ],
 
-  lIdee: "Une installation peut mal se comporter de trois façons, et de trois seulement. Trop de courant qui dure. Trop de courant d’un coup. Ou du courant qui part là où il ne devrait pas. Chacune a sa protection, et aucune protection ne les couvre toutes.",
+  lIdee: "Une installation peut mal se comporter de trois façons, et de trois seulement. Trop de courant qui dure. Trop de courant d’un coup. Ou du courant qui part là où il ne devrait pas. Chacune a sa protection ; un seul appareil les réunit toutes : le disjoncteur différentiel (station 4.6).",
   ouOnLaRencontre: "Ces trois mots reviendront à chaque station de la ligne 4. Ils y servent de fil rouge : pour chaque appareil, on demandera lequel des trois il sait voir.",
 
   scene: () => SchemasGrandeurs.troisDefauts(),
@@ -30,7 +30,7 @@ ModeleGrandeur.construire({
     ["La surcharge", "le courant emprunte le bon chemin, mais il est un peu trop fort, et il <strong>dure</strong>. Le conducteur chauffe, l’isolant vieillit. Cela peut prendre des mois, et rien ne se voit."],
     ["Le court-circuit", "deux conducteurs se touchent. Il n’y a presque plus de résistance sur le chemin, donc plus rien pour freiner : des milliers d’ampères en quelques millièmes de seconde."],
     ["Le défaut d’isolement", "le courant quitte son chemin et part vers la terre — par une carcasse métallique, ou par une personne. Il n’est ni fort ni lent : il est <strong>ailleurs</strong>."],
-    ["Trois défauts, trois protections", "un bilame pour la surcharge, une bobine ou un fusible pour le court-circuit, un différentiel pour le défaut d’isolement. Aucun appareil ne fait spontanément les trois."]
+    ["Trois défauts, trois protections", "un bilame (deux métaux collés qui se courbent à la chaleur) pour la surcharge, une bobine ou un fusible pour le court-circuit, un différentiel pour le défaut d’isolement. Un seul appareil les réunit tous les trois : le disjoncteur différentiel (station 4.6)."]
   ],
   aRetenir: [
     "Le <strong>plus discret</strong> est la surcharge : elle ne fait ni bruit ni étincelle.",
@@ -43,7 +43,7 @@ ModeleGrandeur.construire({
     "La <strong>surcharge</strong> se constate à la pince, en comparant avec la plaque. C’est la seule des trois qu’on mesure facilement en service.",
     "Le <strong>court-circuit</strong> ne se mesure pas sur le moment : il est trop rapide et trop dangereux. On le constate après coup, par ce qui a fondu ou déclenché.",
     "Le <strong>défaut d’isolement</strong> se mesure au <strong>mégohmmètre</strong>, installation consignée et débranchée. Il envoie une haute tension d’essai et regarde ce qui fuit.",
-    "Le bouton <strong>test</strong> d’un différentiel vérifie qu’il coupe encore. Deux fois par an, et cela ne remplace pas une mesure d’isolement."
+    "Le bouton <strong>test</strong> d’un différentiel vérifie qu’il coupe encore. Régulièrement, au moins tous les six mois, et cela ne remplace pas une mesure d’isolement."
   ],
   dangerDeMesure: "Un mégohmmètre envoie 500 volts, parfois 1000. On ne le branche jamais sur une installation en service, ni sur du matériel électronique qu’il détruirait.",
 
@@ -52,7 +52,7 @@ ModeleGrandeur.construire({
     multiples: [
       ['+20 % pendant des minutes', 'la surcharge'],
       ['×1000 pendant des millisecondes', 'le court-circuit'],
-      ['30 mA vers la terre', 'le défaut d’isolement — le seuil de la vie']
+      ['30 mA vers la terre', 'le défaut d’isolement — le niveau où le corps est en danger si cela dure']
     ]
   },
   surUnePlaque: [
@@ -72,7 +72,7 @@ ModeleGrandeur.construire({
         { texte: "La surcharge.", juste: true } ] },
 
     { question: "Quel appareil voit un défaut d’isolement ?",
-      confirmation: "Le différentiel, et lui seul.",
+      confirmation: "Le différentiel : pour une petite fuite vers la terre, il est le seul à la voir.",
       reponses: [
         { texte: "Le différentiel.", juste: true },
         { texte: "Le relais thermique.", pourquoi: "Il ne surveille que l’échauffement dû au courant du moteur." },
@@ -88,19 +88,19 @@ ModeleGrandeur.construire({
         { texte: "En appuyant sur le bouton test du différentiel.", pourquoi: "Ce bouton vérifie l’appareil, il ne mesure pas l’isolement de l’installation." } ] },
 
     { question: "Pourquoi le seuil de 30 mA a-t-il été choisi pour les différentiels ?",
-      confirmation: "Parce qu’en dessous, le courant n’est pas encore mortel pour le cœur.",
+      confirmation: "Parce qu’à partir de ce niveau, la respiration peut se bloquer si le contact dure, et un peu plus haut le cœur peut fibriller.",
       reponses: [
         { texte: "Parce que c’est un chiffre rond.", pourquoi: "Le choix vient des courbes d’effet du courant sur le corps." },
         { texte: "Parce que c’est le plus petit courant mesurable.", pourquoi: "On sait mesurer bien plus fin que cela." },
-        { texte: "Parce qu’au-dessus, le courant devient mortel.", juste: true },
+        { texte: "Parce qu’au-dessus, le courant devient dangereux pour le corps, surtout s’il dure.", juste: true },
         { texte: "Parce que c’est le seuil de destruction des câbles.", pourquoi: "Un câble ne craint rien à 30 milliampères." } ] }
   ],
 
   retenir: [
     "<strong>Surcharge</strong> : bon chemin, trop fort, longtemps. Le bilame.",
     "<strong>Court-circuit</strong> : plus rien ne freine. La bobine, ou le fusible.",
-    "<strong>Défaut d’isolement</strong> : le courant part ailleurs. Le différentiel, et lui seul.",
-    "<strong>Aucun appareil ne fait spontanément les trois.</strong>"
+    "<strong>Défaut d’isolement</strong> : le courant part ailleurs. Le différentiel : seul à voir les petites fuites vers la terre.",
+    "<strong>Un seul appareil réunit les trois : le disjoncteur différentiel (4.6).</strong>"
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Distinguer les trois défauts, savoir ce que chacun fait, et connaître l’appareil qui le voit.</p><p><strong>Limite.</strong> Le calcul des courants de court-circuit et les schémas de liaison à la terre relèvent d’un autre cours.</p>',

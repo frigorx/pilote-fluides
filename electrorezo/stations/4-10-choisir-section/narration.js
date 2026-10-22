@@ -12,11 +12,11 @@ Et à la fin, on garde la plus grosse des deux réponses.`,
 
   comprendre: `Prenez les deux curseurs sous le dessin. Le premier règle le courant demandé par l'appareil,
 le second la longueur du câble.
-Laissez seize ampères et une courte longueur. Regardez le cadre du haut : c'est l'échauffement qui
-décide. Le disjoncteur fait seize ampères, et le câble doit supporter au moins ce que le disjoncteur
+La scène s'ouvre sur seize ampères et dix mètres, une courte longueur. Regardez le cadre du haut :
+c'est l'échauffement qui décide. Le disjoncteur fait seize ampères, et le câble doit supporter au moins ce que le disjoncteur
 laisse passer.
-Maintenant, sans toucher au courant, allongez le câble. Doucement. À un moment, le cadre du bas
-s'allume, et la section grossit. Le courant n'a pas bougé. C'est la longueur qui commande.
+Maintenant, sans toucher au courant, allongez le câble. Doucement. À un moment, entre vingt et
+vingt-cinq mètres, le cadre du bas s'allume, et la section grossit. Le courant n'a pas bougé. C'est la longueur qui commande.
 C'est exactement ce qui arrive quand on installe un groupe au fond d'un jardin : le calibre est le
 même qu'à côté du tableau, mais le câble, lui, doit être plus gros.
 Essayez aussi le bouton éclairage. La limite passe de cinq à trois pour cent, et la section grossit

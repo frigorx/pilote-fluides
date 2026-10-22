@@ -31,14 +31,15 @@ fois par seconde. Donc l'attraction aussi. Sans précaution, l'armature retomber
 reviendrait cent fois par seconde : elle vibrerait.
 D'où la bague de déphasage : un anneau de cuivre serti dans le noyau, qui maintient un peu de
 champ pendant les passages par zéro.
-Quand vous entendez un contacteur ronfler, c'est souvent cette bague qui est cassée.`,
+Un léger bourdonnement est normal. Mais quand un contacteur ronfle fort et vibre, c'est souvent
+cette bague qui est cassée.`,
 
   manipuler: `Les trois questions de la ligne six.
 Réfléchissez à la troisième : une bobine et un transformateur sont faits du même cuivre autour du
 même fer. Et pourtant l'un des deux ne fonctionne qu'en alternatif, l'autre non.`,
 
   representer: `Sur un plan, la bobine se dessine par le rectangle que vous connaissez depuis la station huit
-point huit. Un cadre traversé par le conducteur.
+point huit. Un grand cadre, un fil qui arrive en haut, un fil qui repart en bas.
 Ce qui change d'un usage à l'autre, ce n'est pas le dessin : c'est le repère.
 K M pour un contacteur. K A pour un relais. Y V pour une électrovanne.
 Et retenez ce Y en tête de repère : il annonce toujours un actionneur, c'est-à-dire quelque

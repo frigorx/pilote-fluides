@@ -101,10 +101,12 @@ const ModeleGrandeur = (() => {
     /* ---------------------------------------------- 4 · l'écrire */
     function representer(hote) {
       const w = el('div', 'workspace');
-      const g = carte('Son symbole et son unité');
       const E = D.ecriture;
+      const g = carte(E.titre || 'Son symbole et son unité');
       const lect = el('div', 'lecture');
 
+      /* E.sansUnite : station qui n'a pas de grandeur ni d'unité nouvelle (1.7, la plaque) — on ne montre que le tableau */
+      if (!E.sansUnite) {
       const b1 = el('div', 'metric');
       b1.appendChild(el('span', null, 'La grandeur s’écrit'));
       const s1 = el('b', null, E.symbole); s1.style.fontSize = '2.6rem'; s1.style.display = 'block';
@@ -118,16 +120,18 @@ const ModeleGrandeur = (() => {
       b2.appendChild(el('span', null, E.nomUnite));
       lect.appendChild(b2);
       g.appendChild(lect);
+      }
 
       if (E.multiples && E.multiples.length) {
         const t = document.createElement('table');
         t.className = 'tab';
-        t.innerHTML = '<thead><tr><th>On écrit</th><th>Cela vaut</th></tr></thead><tbody>' +
+        const [h1, h2] = E.entetes || ['On écrit', 'Cela vaut'];
+        t.innerHTML = '<thead><tr><th>' + h1 + '</th><th>' + h2 + '</th></tr></thead><tbody>' +
           E.multiples.map(([q, v]) => '<tr><td><strong>' + q + '</strong></td><td>' + v + '</td></tr>').join('') +
           '</tbody>';
         g.appendChild(t);
       }
-      g.appendChild(el('p', 'legende',
+      if (!E.sansUnite) g.appendChild(el('p', 'legende',
         'Le symbole de la grandeur et celui de l’unité ne sont pas la même chose. On les confond souvent : ce sont deux écritures différentes, pour deux idées différentes.'));
 
       const d = carte('Où vous la lirez');

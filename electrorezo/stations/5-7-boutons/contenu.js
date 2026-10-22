@@ -24,7 +24,7 @@ ModeleAppareil.construire({
   ],
   creditPhoto: 'Documents de cours indexés dans la base inerWeb. Détail dans « Crédits ».',
 
-  aQuoiCaSert: "À donner un ordre avec le doigt. C’est le seul endroit de toute la ligne où c’est un être humain qui agit directement sur un contact — partout ailleurs, c’est une bobine.",
+  aQuoiCaSert: "À donner un ordre avec le doigt. C’est l’un des rares endroits de la ligne où c’est un être humain qui agit directement sur un contact (avec l’arrêt d’urgence de la station 5.8) — partout ailleurs, c’est une bobine ou une came.",
   ouOnLeTrouve: "Sur la porte des armoires, sur les pupitres, sur les boîtes à boutons pendantes au-dessus des machines.",
 
   scene: () => SchemasCommande.troisEtages(),
@@ -48,10 +48,10 @@ ModeleAppareil.construire({
   consigneAptitudes: 'Ici, c’est le bouton-poussoir qu’on juge — pas le sélecteur. Cochez, puis validez.',
   aptitudes: {
     puissance: false, distance: false, maintien: false,
-    bonneReponse: 'Exact, et cette station est la seule de la ligne où l’on répond non trois fois. Un poussoir ne porte rien, n’obéit à aucune bobine, et ne garde rien. Il transmet une intention humaine, c’est tout — et sans lui rien ne démarre.',
+    bonneReponse: 'Exact : ici encore, trois non. Un poussoir ne porte rien, n’obéit à aucune bobine, et ne garde rien. Il transmet une intention humaine, c’est tout — et sans lui rien ne démarre.',
     erreurs: {
       puissance: 'Ses blocs sont des contacts de commande. On ne fait pas passer un moteur dans un bouton.',
-      distance: 'C’est justement le contraire : c’est le seul appareil de la ligne qu’un être humain actionne directement.',
+      distance: 'C’est justement le contraire : avec le sélecteur et l’arrêt d’urgence, c’est l’un des rares appareils de la ligne qu’un être humain actionne directement.',
       maintien: 'Le ressort ramène la tête dès qu’on lâche. C’est le sélecteur qui garde sa position, pas le poussoir.'
     }
   },

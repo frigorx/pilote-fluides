@@ -39,8 +39,9 @@ et on met l'appareil dans le trou. C'est ce qu'on appelle brancher en série.
 Et maintenant, l'erreur à ne jamais faire. Un ampèremètre a une résistance presque nulle : c'est
 un fil, ou presque. Si vous le posez en parallèle, aux bornes de quelque chose, vous mettez la
 source en court-circuit.
-Regardez les deux montages sur l'écran. À gauche, le bon. À droite, celui qui fait partir le
-fusible de l'appareil, quand ce n'est pas l'appareil lui-même.
+Sous le dessin, il y a deux boutons. Essayez-les l'un après l'autre. En série, c'est le bon
+montage. En parallèle, c'est celui qui fait partir le fusible de l'appareil, quand ce n'est pas
+l'appareil lui-même.
 Heureusement, il existe beaucoup plus commode : la pince ampèremétrique. Elle s'ouvre, elle
 enserre le fil, et elle lit. Elle ne touche rien d'électrique, elle ne coupe rien, la machine
 continue de tourner.
@@ -53,12 +54,12 @@ Attention à ne pas confondre les deux : le I est la grandeur, le A est l'unité
 écritures différentes, pour deux idées différentes. On écrit I égale trois ampères, jamais I
 égale trois I.
 Les ordres de grandeur, maintenant, parce que ce sont eux qui vous serviront tous les jours.
-Le milliampère, un millième d'ampère. C'est l'échelle du danger pour le corps : trente
-milliampères suffisent à tuer quelqu'un.
-L'ampère. Une lampe ordinaire en tire à peu près un.
+Le milliampère, un millième d'ampère. C'est l'échelle du danger pour le corps : vers trente
+milliampères, le danger dépend de la durée du contact.
+L'ampère. Une lampe de deux cent trente watts en tire à peu près un.
 Le kiloampère, mille ampères. C'est l'échelle d'un court-circuit.
 Où allez-vous lire des ampères ? Sur la plaque d'un moteur, à côté de chaque tension. Sur un
-disjoncteur, dans son calibre. Et dans le carnet d'une installation, pour chaque circuit.
+disjoncteur, dans son calibre.
 Prenez ce réflexe : lire l'ampère écrit avant de brancher quoi que ce soit. C'est le nombre qui
 décide de la section du câble, du calibre de la protection, et du réglage du thermique.`
 };
