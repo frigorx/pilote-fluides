@@ -1,0 +1,117 @@
+{
+  "id": "sanitaire-evacuation",
+  "title": "Dimensionner une évacuation d’eaux usées et vannes (ventilation de chute comprise)",
+  "code": "E5+b",
+  "lines": [
+    "E"
+  ],
+  "status": "SATELLITE E5+b — EN COURS DE RELECTURE",
+  "version": "2026-10-22-n7-r2",
+  "referentiel": [
+    {
+      "formation": "TP TECVC, REAC TP-00133",
+      "code": "CP3",
+      "libelle": "Réaliser l’étude des réseaux de distribution et d’évacuation sanitaires",
+      "source": "C:/git/HAL-v3/donnees/referentiels/peda/TP_SUP_CVC.json (_note_perimetre)"
+    }
+  ],
+  "levels": {
+    "CAP": {
+      "objective": "Distinguer eaux usées, eaux vannes et eaux pluviales.",
+      "learn": [
+        "Classer les appareils d’un logement.",
+        "Nommer l’eau de chaque rejet.",
+        "Dire à quoi sert un siphon."
+      ]
+    },
+    "TP": {
+      "objective": "Lire dans le sujet le débit d’un appareil et la capacité d’un diamètre, puis choisir le diamètre.",
+      "learn": [
+        "Lire le débit d’évacuation d’un appareil dans les données du sujet.",
+        "Comparer le débit à évacuer à la capacité de chaque diamètre.",
+        "Prendre le plus petit diamètre dont la capacité suffit."
+      ],
+      "prompt": "Choisir le plus petit diamètre dont la capacité suffit."
+    },
+    "BTS": {
+      "objective": "Dimensionner un collecteur, une chute et sa ventilation primaire.",
+      "learn": [
+        "Calculer le débit probable d’évacuation (ΣQe × y).",
+        "Choisir le collecteur parmi les diamètres à essayer (capacité donnée par le sujet, calculée par la formule de Bazin, pente 1 cm/m) et le comparer à la chute.",
+        "Dimensionner la ventilation primaire et le regroupement de deux ventilations."
+      ],
+      "prompt": "Refaire le calcul d’un exemple sur un autre immeuble et justifier les diamètres."
+    }
+  },
+  "modalities": [
+    "CALCUL",
+    "TECHNOLOGIE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Calcul à saisir avec indice",
+    "rule": "Cinq étapes : les eaux, lire les données du sujet, exemple résolu, exercice seul, ventilation de chute. Une première erreur donne l’indice, la deuxième montre la solution.",
+    "success": "Cases justes ou solution montrée : aucun score.",
+    "feedback": "Mot (juste, à revoir) et trait, jamais la couleur seule."
+  },
+  "virtualPractice": {
+    "description": "Feuille de calcul d’évacuation d’un immeuble de logements : collecteur, chute, ventilation primaire.",
+    "measures": [
+      "débit de base d’évacuation",
+      "coefficient de simultanéité",
+      "débit probable",
+      "diamètre du collecteur",
+      "diamètre de la chute"
+    ],
+    "controls": [
+      "nombre d’appareils",
+      "pente (1 cm/m)"
+    ],
+    "limits": [
+      "cas fictifs",
+      "données de cas fournies par l’énoncé : les valeurs de la vie réelle se lisent dans le dossier technique et la norme de l’établissement",
+      "eaux usées et vannes seulement (séparatif) : pas d’eaux pluviales, pas de système unitaire",
+      "pente donnée par le sujet (1 cm/m)",
+      "ventilation secondaire et chute unique non dimensionnées",
+      "trois ou quatre diamètres à essayer donnés par le sujet : pas de série complète de tubes"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": false,
+    "dimensions": [
+      "classer",
+      "lire",
+      "calculer",
+      "justifier"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "DTU 60.11, Règles de calcul des installations de plomberie sanitaire et des installations d’évacuation des eaux pluviales (cité par son titre : référence de la méthode ; aucun tableau de la norme n’est reproduit)",
+    "16.L’évacuations des eaux usées prof.doc (fonds CAP IFCA) : EU, EV, EP, siphon, évent",
+    "Données de cas : valeurs données par l’énoncé de chaque exercice (voir SOURCES.md)",
+    "SOURCES.md"
+  ],
+  "assets": [
+    "../_commun/sanitaire-dtu.js (formules et données de cas)"
+  ],
+  "architectureVersion": "2026-10-19-satellite-eau-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "trois sortes d’eau",
+      "lire les données du sujet",
+      "exemple résolu complet",
+      "exercice seul",
+      "ventilation de chute"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne (non rattachée : station satellite)"
+  }
+}

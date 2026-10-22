@@ -1,0 +1,116 @@
+{
+  "id": "sanitaire-distribution",
+  "title": "Dimensionner une distribution d’eau sanitaire",
+  "code": "E5+a",
+  "lines": [
+    "E"
+  ],
+  "status": "SATELLITE E5+a — EN COURS DE RELECTURE",
+  "version": "2026-10-22-n7-r2",
+  "referentiel": [
+    {
+      "formation": "TP TECVC, REAC TP-00133",
+      "code": "CP3",
+      "libelle": "Réaliser l’étude des réseaux de distribution et d’évacuation sanitaires",
+      "source": "C:/git/HAL-v3/donnees/referentiels/peda/TP_SUP_CVC.json (_note_perimetre)"
+    }
+  ],
+  "levels": {
+    "CAP": {
+      "objective": "Lire le débit de base d’un appareil dans les données d’un sujet.",
+      "learn": [
+        "Trouver la ligne d’un appareil dans les données du sujet.",
+        "Lire son débit de base en litres par seconde.",
+        "Additionner des débits."
+      ]
+    },
+    "TP": {
+      "objective": "Calculer le débit probable d’un petit immeuble et en déduire un diamètre.",
+      "learn": [
+        "Additionner les débits de base et compter les appareils.",
+        "Calculer le coefficient de simultanéité y puis QP = ΣQb × y.",
+        "Calculer le diamètre intérieur minimal à 1,5 m/s."
+      ],
+      "prompt": "Refaire sur un autre immeuble le calcul d’un exemple résolu."
+    },
+    "BTS": {
+      "objective": "Dimensionner une antenne d’eau froide : débit probable, diamètre, vitesse.",
+      "learn": [
+        "Justifier le coefficient de simultanéité et son domaine (à partir de 6 appareils).",
+        "Choisir le plus petit tube proposé par le sujet qui garde la vitesse sous la limite du sujet (1,5 m/s).",
+        "Nommer ce que le calcul ne couvre pas : pertes de charge, pression au point le plus défavorisé, règles des écoles."
+      ],
+      "prompt": "Justifier le tube retenu par la vitesse et nommer les limites du calcul."
+    }
+  },
+  "modalities": [
+    "CALCUL",
+    "TECHNOLOGIE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Calcul à saisir avec indice",
+    "rule": "Cinq étapes : lire, comprendre, exemple résolu, exercice seul, vérifier la vitesse. Les cases se vérifient ; une première erreur donne l’indice, la deuxième montre la solution.",
+    "success": "Cases justes ou solution montrée : aucun score.",
+    "feedback": "Mot (juste, à revoir) et trait, jamais la couleur seule."
+  },
+  "virtualPractice": {
+    "description": "Feuille de calcul d’une distribution d’eau froide dans un immeuble de logements.",
+    "measures": [
+      "débit de base",
+      "coefficient de simultanéité",
+      "débit probable",
+      "diamètre intérieur minimal",
+      "vitesse"
+    ],
+    "controls": [
+      "nombre d’appareils",
+      "choix du tube"
+    ],
+    "limits": [
+      "cas fictifs",
+      "données de cas fournies par l’énoncé : les valeurs de la vie réelle se lisent dans le dossier technique et la norme de l’établissement",
+      "pas de pertes de charge",
+      "pas de pression disponible",
+      "pas de règle particulière aux écoles, gymnases, casernes",
+      "appareils à robinet de chasse non traités"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": false,
+    "dimensions": [
+      "lire",
+      "calculer",
+      "justifier"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "DTU 60.11, Règles de calcul des installations de plomberie sanitaire et des installations d’évacuation des eaux pluviales (cité par son titre : référence de la méthode ; aucun tableau de la norme n’est reproduit)",
+    "calcul de débit simultanéité.doc (lycée Alpilles, fonds Bac MFER) : coefficient de simultanéité",
+    "Données de cas : valeurs données par l’énoncé de chaque exercice (voir SOURCES.md)",
+    "SOURCES.md"
+  ],
+  "assets": [
+    "../_commun/sanitaire-dtu.js (formules et données de cas)"
+  ],
+  "architectureVersion": "2026-10-19-satellite-eau-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "lire les données du sujet",
+      "comprendre la simultanéité",
+      "exemple résolu complet",
+      "exercice seul",
+      "choisir le tube et vérifier la vitesse"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne (non rattachée : station satellite)"
+  }
+}
