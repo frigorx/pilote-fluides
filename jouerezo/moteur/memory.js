@@ -6,7 +6,8 @@
    trait, ✓) ; sinon → rouge tireté 0,9 s puis retour face cachée.
    Score affiché : nombre de coups (une paire retournée = un coup) ;
    le code de partie porte « paires trouvées / coups ».
-   ENTRÉES : theme.paires[] { a:{img|txt}, b:{txt} }, theme.type.
+   ENTRÉES : theme.paires[] { a:{img|txt}, b:{txt} }, theme.type, theme.large (cartes plus grandes :
+   3 colonnes au téléphone, pour les thèmes dont les faces sont des mots ou de courtes phrases).
    DÉPEND : JR (commun.js).
    ===================================================================== */
 (function () {
@@ -30,7 +31,7 @@
       '<h1>' + JR.esc(theme.emoji + " " + theme.nom) + '</h1>' +
       '<p class="chapo">' + JR.esc(window.JR_JEUX.memory.regle) + '</p>' +
       '<div class="bord"><span>Paires : <span id="m-paires">0</span> / ' + PAIRES + '</span><span>Coups : <span id="m-coups">0</span></span></div>' +
-      '<div class="grille-memory" id="m-grille" role="group" aria-label="Cartes du Memory"></div>' +
+      '<div class="grille-memory' + (theme.large ? " large" : "") + '" id="m-grille" role="group" aria-label="Cartes du Memory"></div>' +
       '<p class="legende" id="m-trouvees" aria-live="polite"></p>';
     const grille = main.querySelector("#m-grille"), nomsTrouves = [];
     ordre.forEach(function (c, idx) {

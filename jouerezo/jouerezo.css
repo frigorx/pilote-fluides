@@ -221,3 +221,71 @@ svg.installation .pt-lib { font: 11px Calibri, Arial, sans-serif; fill: var(--mu
 /* ---- la scène vivante du dépanneur ---- */
 .dep-scene { max-width: 60rem; margin: 0 auto; overflow: auto; }
 /* les règles des deux scènes vivent dans depanneur-scene-coupe.css et depanneur-scene-atelier.css */
+
+/* ---- Texte à trous (moteur/trous.js) ---- */
+.titre-texte { font-size: 1.15rem; margin-bottom: 6px; }
+.texte-trous { font-size: 1.15rem; line-height: 2.4; margin: 6px 0 10px; }
+.trou { display: inline-block; min-width: 6em; min-height: 40px; padding: 0 10px; margin: 0 2px; vertical-align: baseline; text-align: center;
+  background: #fff6ec; border: 2px dashed var(--orange-texte); border-radius: 8px; color: var(--bleu); font-weight: bold; font-size: 1rem; cursor: pointer; }
+.trou:empty::before { content: attr(data-n); color: var(--mut); font-weight: normal; }
+.trou.plein { border-style: solid; border-color: var(--bleu); background: #eef3f9; }
+.trou.vise, .trou.cible { outline: 3px solid var(--orange); outline-offset: 1px; background: #ffe9d6; }
+.trou:focus-visible, .mot-reserve:focus-visible, .etiquette:focus-visible, .bac-nom:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.trou:disabled { cursor: default; color: inherit; }
+.reserve { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px; background: #eef3f9; border: 1px solid var(--ligne); border-radius: 12px; margin: 8px 0; }
+.mot-reserve { min-height: 48px; padding: 8px 16px; background: var(--carte); border: 2px solid var(--bleu); border-radius: 12px; color: var(--txt);
+  font-weight: bold; font-size: 1.05rem; cursor: grab; touch-action: pan-y; }
+.mot-reserve[hidden] { display: none; }
+.mot-reserve[aria-pressed="true"] { outline: 3px solid var(--orange); outline-offset: 1px; background: #ffe9d6; }
+.mot-reserve:disabled { cursor: default; opacity: .6; }
+.glisse { position: fixed; z-index: 100; pointer-events: none; opacity: .92; box-shadow: var(--ombre); margin: 0; }
+.corrections { margin: 8px 0 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.texte-entier { margin-top: 8px; }
+
+/* ---- Ranger (moteur/ranger.js) ---- */
+.consigne { font-size: 1.05rem; }
+.pile { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 8px; grid-template-columns: 1fr 1fr; }
+.pile[hidden] { display: none; }
+.pile li, .bac-liste li { min-width: 0; }
+.etiquette { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 52px; padding: 6px 10px; text-align: left;
+  background: #fff6ec; border: 2px solid var(--bleu); border-radius: 12px; color: var(--txt); font-weight: bold; font-size: .98rem; line-height: 1.2;
+  cursor: grab; touch-action: pan-y; }
+.etiquette img { width: 40px; height: 40px; object-fit: contain; flex: none; }
+.etiquette span { min-width: 0; overflow-wrap: break-word; hyphens: auto; }
+.etiquette[aria-pressed="true"] { outline: 3px solid var(--orange); outline-offset: 1px; background: #ffe9d6; }
+.etiquette:disabled { cursor: default; }
+.etiquette.ok { background: #e9f5ee; }
+.etiquette.nok { background: #fbeceb; }
+.bacs { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; margin-top: 10px; }
+.bac { display: grid; align-content: start; gap: 8px; min-height: 120px; padding: 8px; background: #eef3f9; border: 3px solid var(--bleu); border-radius: 14px; }
+.bac.cible { outline: 3px solid var(--orange); outline-offset: 2px; background: #ffe9d6; }
+.bac-nom { min-height: 48px; padding: 6px 10px; background: var(--bleu); color: #fff; border: 0; border-radius: 10px; font-weight: bold; font-size: 1rem; cursor: pointer; line-height: 1.2; }
+.bac-nom small { display: block; font-weight: normal; font-size: .9rem; }
+.bac-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.bac.ferme .bac-nom { cursor: default; }
+@media (min-width: 700px) {
+  .pile { grid-template-columns: repeat(3, 1fr); }
+  .bacs-3 { grid-template-columns: repeat(3, 1fr); }
+  .bacs-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---- « Sert notamment pour » : les codes du référentiel, discrets, en fin de partie ---- */
+.sert { border-top: 1px solid var(--ligne); padding-top: 10px; color: var(--mut); font-size: .9rem; }
+.sert h3 { font-size: .95rem; color: var(--mut); font-family: inherit; }
+.sert ul { margin: 4px 0 0; padding-left: 1.1em; display: grid; gap: 2px; }
+
+/* Memory « large » : mots et courtes phrases, trois colonnes au téléphone (opt-in : theme.large) */
+.grille-memory.large { grid-template-columns: repeat(3, 1fr); }
+.grille-memory.large .carte-memory { aspect-ratio: 1 / 1; }
+.grille-memory.large .carte-memory .face.texte { font-size: .92rem; line-height: 1.2; padding: 6px; hyphens: auto; }
+@media (min-width: 560px) { .grille-memory.large { grid-template-columns: repeat(4, 1fr); } .grille-memory.large .carte-memory .face.texte { font-size: 1rem; } }
+.memo { padding: 8px 12px; background: #eef3f9; border-left: 5px solid var(--bleu); border-radius: 8px; font-size: .95rem; margin: 6px 0; }
+.texte-fr { margin-top: 8px; }
+.etiquette img.scene { object-fit: cover; border-radius: 6px; }
+.reserve[hidden], .actions [hidden] { display: none; }
+.etiquette.avec-image { flex-direction: column; justify-content: center; text-align: center; gap: 4px; }
+.etiquette.avec-image img { width: 56px; height: 56px; }
+.bac .etiquette.avec-image img { width: 44px; height: 44px; }
+/* une image d'étiquette ne démarre jamais un glisser natif du navigateur (il annulerait le glisser du jeu) */
+.etiquette img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
+.etiquette, .mot-reserve, .trou { user-select: none; -webkit-user-select: none; } /* un glisser ne démarre jamais une sélection de texte */

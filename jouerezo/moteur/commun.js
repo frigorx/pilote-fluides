@@ -34,6 +34,41 @@
     return '<img src="../symboles/svg/' + JR.esc(id) + '.svg" alt="' + JR.esc(alt || "") + '" loading="lazy">';
   };
 
+  /* ---------- glisser-déposer au pointeur (souris, doigt, stylet) ----------
+     JR.glisser(bouton, { commencer(), survol(x, y), deposer(x, y) }) : un fantôme (clone) suit le pointeur
+     après 6 px de mouvement ; au lâcher, deposer() décide. Un simple toucher n'est PAS un glisser : le clic
+     habituel fait le travail. Le clic qui suit un vrai glisser est avalé. Sert à trous.js et ranger.js. */
+  JR.glisser = function (b, o) {
+    b.addEventListener("pointerdown", function (ev) {
+      if (b.disabled || ev.button > 0) return;
+      let fantome = null;
+      const x0 = ev.clientX, y0 = ev.clientY;
+      try { b.setPointerCapture(ev.pointerId); } catch (e) { /* capture indisponible : on suit quand même */ }
+      function move(e2) {
+        if (!fantome && Math.hypot(e2.clientX - x0, e2.clientY - y0) < 6) return;
+        if (!fantome) {
+          fantome = b.cloneNode(true); fantome.className = b.className + " glisse"; fantome.removeAttribute("id");
+          fantome.style.width = b.offsetWidth + "px"; document.body.appendChild(fantome);
+          if (o.commencer) o.commencer();
+        }
+        fantome.style.left = (e2.clientX - fantome.offsetWidth / 2) + "px";
+        fantome.style.top = (e2.clientY - fantome.offsetHeight / 2) + "px";
+        if (o.survol) o.survol(e2.clientX, e2.clientY);
+      }
+      function up(e2) {
+        b.removeEventListener("pointermove", move); b.removeEventListener("pointerup", up); b.removeEventListener("pointercancel", up); b.removeEventListener("lostpointercapture", up);
+        if (!fantome) return;
+        fantome.remove();
+        if (o.survol) o.survol(-1, -1);
+        const avaler = function (c) { c.stopImmediatePropagation(); c.preventDefault(); };
+        b.addEventListener("click", avaler, true);
+        setTimeout(function () { b.removeEventListener("click", avaler, true); }, 50);
+        if (e2.type === "pointerup" && o.deposer) o.deposer(e2.clientX, e2.clientY);
+      }
+      b.addEventListener("pointermove", move); b.addEventListener("pointerup", up); b.addEventListener("pointercancel", up); b.addEventListener("lostpointercapture", up);
+    });
+  };
+
   /* ---------- sons : trois formes d'onde, aucun fichier ---------- */
   const CLE_SONS = "jouerezo_sons";
   let ctx = null;
@@ -140,6 +175,12 @@
       if (o.score > ancien) { localStorage.setItem(cle, String(o.score)); record = o.score; }
     } catch (e) { /* pas de stockage : pas de record */ }
     const portes = (theme.portes || []).map(p => '<li><a href="' + JR.esc(p.h) + '">' + JR.esc(p.t) + '</a></li>').join("");
+    /* « Sert notamment pour » : les codes du référentiel, discrets, en bas du panneau (libellés officiels : donnees/codes-referentiel.js) */
+    const refs = window.JR_CODES || {};
+    const codesLignes = Object.keys(theme.codes || {}).map(function (ref) {
+      const r = refs[ref]; if (!r) return "";
+      return (theme.codes[ref] || []).map(c => r.codes[c] ? '<li><strong>' + JR.esc(r.nom + " " + c) + '</strong> — ' + JR.esc(r.codes[c]) + '</li>' : "").join("");
+    }).join("");
     const panneau = JR.el(
       '<section class="carte fin" aria-live="polite">' +
       '<h2>Partie terminée</h2>' +
@@ -149,6 +190,7 @@
       (record !== null && record > o.score ? '<p class="legende">Votre meilleur score sur cet appareil : ' + record + '.</p>' : "") +
       '<p>Code de partie à donner à votre enseignant : <span class="code">' + code + '</span></p>' +
       (portes ? '<h3>Pour revoir avant de rejouer</h3><ul class="portes">' + portes + '</ul>' : "") +
+      (codesLignes ? '<div class="sert"><h3>Sert notamment pour</h3><ul>' + codesLignes + '</ul></div>' : "") +
       '<div class="actions"><button type="button" class="btn rejouer">Rejouer</button>' +
       '<a class="btn sec" href="./' + JR.esc(jeu) + '.html">Autre thème</a>' +
       '<a class="btn sec" href="./">Tous les jeux</a></div>' +

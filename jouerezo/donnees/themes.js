@@ -57,7 +57,13 @@ window.JR_JEUX = {
     regle: "Cinq temps, de la bouteille au poste rangé. Chaque erreur est expliquée sur le moment ; à la fin, un code pour le professeur." },
   depanneur: { nom: "Le dépanneur", lettre: "R", emoji: "🔧", station: true, /* retiré de la liste des jeux (Franck, 03/10 : « je supprime des jeux le dépannage ») : devient une station à part */
     phrase: "Une chambre froide en panne. Branchez le manifold, pincez le thermomètre, regardez, touchez, puis nommez la panne.",
-    regle: "Trois situations. Vous choisissez vos relevés comme sur le chantier ; les pressions se lisent sur le cadran, la surchauffe et le sous-refroidissement se calculent. Puis vous concluez. Moins de relevés inutiles, meilleur coefficient." }
+    regle: "Trois situations. Vous choisissez vos relevés comme sur le chantier ; les pressions se lisent sur le cadran, la surchauffe et le sous-refroidissement se calculent. Puis vous concluez. Moins de relevés inutiles, meilleur coefficient." },
+  trous: { nom: "Texte à trous", lettre: "T", emoji: "✍️", /* 19/10/2026 : vocabulaire, anglais, calcul des tonnes éq. CO₂ */
+    phrase: "Un court texte, des mots en réserve : replacez chaque mot au bon endroit.",
+    regle: "Touchez un mot de la réserve, puis le trou où il va — ou faites-le glisser. Pour reprendre un mot, touchez-le dans le trou. Quand tous les trous sont pleins, touchez « Vérifier » : chaque erreur est expliquée." },
+  ranger: { nom: "Ranger", lettre: "B", emoji: "🧺", /* 19/10/2026 : matériel, outillage, déchets, acteurs, papiers */
+    phrase: "Des étiquettes à ranger dans les bons bacs : le matériel, l'outillage, les déchets, les papiers.",
+    regle: "Touchez une étiquette, puis le bac où elle va — ou faites-la glisser. Pour la reprendre, touchez-la dans le bac. Quand tout est rangé, touchez « Vérifier » : chaque erreur est expliquée." }
 };
 
 /* ---------- portes partagées ---------- */
@@ -395,3 +401,91 @@ JR_THEMES.depanneur = (function (DP) {
     { id: "tout", nom: "Les deux chambres", emoji: "🎲", cas: DP.cas, portes: portes }
   ];
 })(window.JR_DEPANNEUR);
+
+/* =====================================================================
+   VOCABULAIRE, ANGLAIS, CHANTIER (19/10/2026) — deux moteurs nouveaux : trous.js et ranger.js
+   Les données vivent dans jeux-mots.js, jeux-chantier.js et jeux-co2.js (FABRIQUÉ) ; ici : portes, codes, titres.
+   `codes` = codes du référentiel affichés en fin de partie, sous « Sert notamment pour » (libellés officiels :
+   donnees/codes-referentiel.js, FABRIQUÉ par outils/extraire-codes.mjs). Aucun diplôme dans un titre ni une accroche.
+   ===================================================================== */
+(function () {
+  const JM = window.JR_JEUX_MOTS || {}, JC = window.JR_JEUX_CHANTIER || {}, J10 = window.JR_JEUX_CO2 || { textes: [] };
+  const LEG = "../legislation/stations/", TDM = "../tour-de-main/interventions/", STU = "../studio/securite/";
+  const p = (t, h) => ({ t: t, h: h });
+  const P_CIRCUIT = p("Le circuit, organe par organe (station du plan)", "../packs/fluides/res/circuit-organe-par-organe/");
+  const P_LIGNE = p("La ligne liquide : chaque organe protège le suivant", "../f/a-ligne-liquide-protection/");
+  const P_VIDE = p("Le tirage au vide : la courbe qui descend", "../f/a-tirage-au-vide/");
+  const P_PESEE = p("La pesée : deux pesées, jamais une", "../f/a-pesee-charge/");
+  const P_CUIVREZO = p("CuivRézo — les gestes de base", "../cuivrezo/");
+  const P_PLAQUE = p("ÉlectroRézo 1.7 — Lire une plaque signalétique", "../electrorezo/stations/1-7-plaque-signaletique/");
+  const P_FICHE = p("La fiche d'intervention et le bordereau BSFF", LEG + "fiche-intervention-bsff/");
+  const P_TRACA = p("Traçabilité des fluides : registre, fiche, bordereau", LEG + "tracabilite-fluides/");
+  const P_BRASAGE = p("Brasage : récupérer et balayer, jamais chauffer du fluide", "../f/a-secu-flamme/");
+  const P_BRASURE_FORTE = p("CuivRézo 3.2 — La brasure forte sous azote", "../cuivrezo/stations/3-2/");
+
+  /* ---- MEMORY : J1 les mots du métier, J3 English for the fridge ---- */
+  JR_THEMES.memory.push(
+    { id: "mots-du-metier", nom: "Les mots du métier", emoji: "📖", type: "texte", large: true,
+      portes: [P_CIRCUIT, P_LIGNE, p("HabFluide — Le compresseur", "../f/compresseur-1/"), P_CUIVREZO],
+      codes: { CAP_IFCA: ["S3.1"] },
+      paires: (JM.metier || []).map(x => ({ nom: x[0], a: { txt: x[0] }, b: { txt: x[1] } })) },
+    { id: "english-for-the-fridge", nom: "English for the fridge", emoji: "🔤", type: "texte", large: true,
+      portes: [P_CIRCUIT, P_VIDE, p("Deux écarts, deux points de mesure : la surchauffe", "../f/a-mesures-surchauffe-sous-refroidissement/"), p("Technologie des organes : réservoir de liquide, condenseur, groupe", "../packs/fluides/res/tome-3-technologie-organes/"), p("CuivRézo 1.6 — Serrer un raccord", "../cuivrezo/stations/1-6/")],
+      codes: { CAP_IFCA: ["S7"], BAC_MFER_2028: ["S8.3"] },
+      paires: (JM.anglais || []).map(x => ({ nom: x[0] + " = " + x[1], a: { txt: x[0] }, b: { txt: x[1] } })) });
+
+  /* ---- TROUS : J2 le bon mot, J4 read it in English, J10 tonnes éq. CO₂ ---- */
+  JR_THEMES.trous = [
+    { id: "le-bon-mot", nom: "Le bon mot", emoji: "✍️", parPartie: 3,
+      portes: [P_CIRCUIT, P_LIGNE, P_VIDE, P_PESEE],
+      codes: { CAP_IFCA: ["S3.1"], BAC_MFER_2028: ["S8.2"] },
+      textes: JM.bonMot || [] },
+    { id: "read-it-in-english", nom: "Read it in English", emoji: "📄", parPartie: 3,
+      portes: [P_BRASAGE, P_BRASURE_FORTE, P_LIGNE, p("Le tour de main — Les vannes de service (sens, montage)", TDM + "vannes-service/"), P_PLAQUE],
+      codes: { CAP_IFCA: ["S7"], BAC_MFER_2028: ["S8.3"] },
+      textes: (JM.notice || []).map(t => Object.assign({ source: JM.noticeSource }, t)) },
+    { id: "tonnes-eq-co2", nom: "Combien de tonnes éq. CO₂ ?", emoji: "🌍", parPartie: 3,
+      portes: [p("Un kilogramme n'égale pas un kilogramme (PRP)", "../f/a-prp-echelle/"), P_FICHE, P_TRACA, p("F-Gaz 3 : le règlement", LEG + "fgaz-3/")],
+      codes: { CAP_IFCA: ["S0.1"], BAC_MFER_2028: ["S2.3.1"] },
+      textes: J10.textes }
+  ];
+
+  /* ---- RANGER : J5 qui fait quoi, J6 quels papiers, J7 le bon matériel (3), J8 outillage, J9 déchets ---- */
+  JR_THEMES.ranger = [
+    { id: "qui-fait-quoi", nom: "Qui fait quoi ?", emoji: "🤝", parPartie: 2, parManche: 6,
+      portes: [p("Qui intervient sur une installation frigorifique ?", LEG + "acteurs-installation/"), p("Aptitude & capacité : les deux attestations", LEG + "aptitude-capacite/"), P_TRACA],
+      codes: { CAP_IFCA: ["S1.1", "C1.2", "T4"], BAC_MFER_2028: ["S1.2"] },
+      manches: JC.acteurs || [] },
+    { id: "quels-papiers", nom: "Quels papiers pour ce chantier ?", emoji: "📋", parManche: 6,
+      portes: [p("Les papiers du chantier : pièces et autorisations", LEG + "risques-papiers-chantier/"), p("Le permis de feu", LEG + "incendie-permis-de-feu/"), P_FICHE, p("Les garanties : la réception", LEG + "certif-garanties/")],
+      codes: { CAP_IFCA: ["S1.2"], BAC_MFER_2028: ["S1.4"] },
+      manches: JC.papiers || [] },
+    { id: "materiel-manometres", nom: "Le bon matériel : poser les manomètres", emoji: "🧰", parManche: 10,
+      portes: [p("Le tour de main — Poser les manomètres", TDM + "pose-manometres/"), p("Préparation de chantier : quatre temps avant de toucher", "../f/a-prepa-chantier/")],
+      codes: { CAP_IFCA: ["C2.2", "T6"], TNE: ["CC23"] },
+      manches: (JC.materiel || []).slice(0, 1) },
+    { id: "materiel-vide", nom: "Le bon matériel : tirer au vide", emoji: "🧰", parManche: 10,
+      portes: [p("Le tour de main — Tirer au vide et tester la remontée", TDM + "tirage-au-vide/"), P_VIDE],
+      codes: { CAP_IFCA: ["C2.2", "T6"], TNE: ["CC23"] },
+      manches: (JC.materiel || []).slice(1, 2) },
+    { id: "materiel-brasure", nom: "Le bon matériel : braser sous azote", emoji: "🧰", parManche: 10,
+      portes: [P_BRASURE_FORTE, p("CuivRézo 2.1 — Le poste oxyacétylénique en sécurité", "../cuivrezo/stations/2-1/"), P_BRASAGE],
+      codes: { CAP_IFCA: ["C2.2", "T6"], TNE: ["CC23"] },
+      manches: (JC.materiel || []).slice(2, 3) },
+    { id: "bon-pour-le-service", nom: "Bon pour le service ?", emoji: "🔎", parManche: 10,
+      portes: [p("Film : L'atelier n'est pas une cour de récré", STU + "securite-01-atelier.html"), p("Film : Le carter, c'est pas décoratif", STU + "securite-03-le-carter.html"), p("Film : Le retour de flamme", STU + "securite-06-chalumeau.html"), p("Film : La bouteille qui voulait s'envoler", STU + "securite-07-azote.html"), p("Le tour de main — Poser les manomètres", TDM + "pose-manometres/")],
+      codes: { CAP_IFCA: ["T6", "C2.2"] },
+      manches: JC.outillage || [] },
+    { id: "ou-va-ce-dechet", nom: "Où va ce déchet ?", emoji: "♻️", parManche: 6,
+      portes: [p("Trier : les 8 flux", LEG + "dechets-sept-flux/"), p("Déchets dangereux", LEG + "dechets-dangereux/"), p("Valoriser", LEG + "dechets-valoriser/"), p("Responsabilités", LEG + "dechets-responsabilites/")],
+      codes: { CAP_IFCA: ["C3.8", "S0.2"] },
+      manches: JC.dechets || [] }
+  ];
+
+  /* ---- QCM : J11 parler au client (le Chrono, qui partage cette liste, le joue aussi en vrai ou faux) ---- */
+  JR_THEMES.qcm.push(
+    { id: "parler-au-client", nom: "Parler au client", emoji: "💬",
+      questions: JC.client || [],
+      portes: [p("Remettre l'installation au client : expliquer, consigner, conseiller", "../packs/fluides/res/remise-au-client-interactif/index.html")],
+      codes: { CAP_IFCA: ["T3"], BAC_MFER_2028: ["S8.1"] } });
+})();
