@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 519,
+  "total": 522,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -3766,7 +3766,7 @@
       "resume": "Station autonome de la ligne 1 d’ÉlectroRézo : les grandeurs de l’électricité.",
       "niveaux": null,
       "competences": null,
-      "missionProf": "Les watts sont écrits sur tout : ampoules, radiateurs, moteurs, plaques de cuisson. Les kilowattheures, eux, ne sont écrits nulle part sur les appareils. Ils sont sur une seule chose : la facture.",
+      "missionProf": "Les watts sont écrits sur tout : ampoules, radiateurs, moteurs, plaques de cuisson. Les kilowattheures, eux, ne sont pas écrits sur les appareils. Ils sont sur le compteur et sur la facture.",
       "url": "https://inerweb.fr/electrorezo/stations/1-4-puissance-energie/",
       "chemin": "electrorezo/stations/1-4-puissance-energie/"
     },
@@ -3862,7 +3862,7 @@
       "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
       "niveaux": null,
       "competences": null,
-      "missionProf": "Dans tous les ateliers, toutes les armoires industrielles, toutes les machines de plus de quelques kilowatts. Et dans la rue : le réseau de distribution est triphasé de bout en bout.",
+      "missionProf": "Dans tous les ateliers, toutes les armoires industrielles, toutes les machines de plus de quelques kilowatts. Et dans la rue : le réseau de distribution est triphasé ; un logement n’en reçoit souvent qu’une phase.",
       "url": "https://inerweb.fr/electrorezo/stations/2-3-triphase/",
       "chemin": "electrorezo/stations/2-3-triphase/"
     },
@@ -3886,7 +3886,7 @@
       "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
       "niveaux": null,
       "competences": null,
-      "missionProf": "C’est la tension de la puissance industrielle. Tous les moteurs d’atelier, tous les schémas de puissance, tous les gros appareils sont dessus.",
+      "missionProf": "C’est la tension de la puissance industrielle. La plupart des moteurs d’atelier, des schémas de puissance et des gros appareils sont dessus.",
       "url": "https://inerweb.fr/electrorezo/stations/2-5-tension-composee/",
       "chemin": "electrorezo/stations/2-5-tension-composee/"
     },
@@ -3901,6 +3901,18 @@
       "missionProf": "Dans tous les moteurs triphasés de l’atelier. Et sur le terrain, ce champ décide d’une chose très concrète : le sens dans lequel la machine va tourner.",
       "url": "https://inerweb.fr/electrorezo/stations/2-6-champ-tournant/",
       "chemin": "electrorezo/stations/2-6-champ-tournant/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "2-7-du-compteur-a-l-appareil",
+      "titre": "Les réseaux électriques d’un site : du compteur à l’appareil",
+      "ligne": "Ligne 2",
+      "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : du compteur à l’appareil, reconnaître les réseaux électriques d’un site.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/2-7-du-compteur-a-l-appareil/",
+      "chemin": "electrorezo/stations/2-7-du-compteur-a-l-appareil/"
     },
     {
       "reseau": "ÉlectroRézo",
@@ -3967,7 +3979,7 @@
       "id": "4-1-fusible-gg",
       "titre": "Le fusible gG",
       "ligne": "Ligne 4",
-      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le fusible gG, ce qu’il protège et comment le lire.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -3988,6 +4000,18 @@
     },
     {
       "reseau": "ÉlectroRézo",
+      "id": "4-11-tableau-logement",
+      "titre": "Le tableau d’un logement : protections, circuits, différentiels",
+      "ligne": "Ligne 4",
+      "resume": "Station autonome de la ligne 4 d’ÉlectroRézo : lire le tableau d’un logement, ses protections, ses circuits et ses différentiels.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/4-11-tableau-logement/",
+      "chemin": "electrorezo/stations/4-11-tableau-logement/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
       "id": "4-2-fusible-am",
       "titre": "Le fusible aM",
       "ligne": "Ligne 4",
@@ -4003,7 +4027,7 @@
       "id": "4-3-disjoncteur-magneto-thermique",
       "titre": "Le disjoncteur magnéto-thermique",
       "ligne": "Ligne 4",
-      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le disjoncteur magnéto-thermique, ses deux déclencheurs et ce qui est écrit dessus.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4015,7 +4039,7 @@
       "id": "4-4-disjoncteur-moteur",
       "titre": "Le disjoncteur moteur",
       "ligne": "Ligne 4",
-      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le disjoncteur moteur, son réglage sur la plaque et ce qu’il remplace.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4075,7 +4099,7 @@
       "id": "4-9-cable-section",
       "titre": "Le câble : section et désignation",
       "ligne": "Ligne 4",
-      "resume": "Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le câble, sa section, et ce que le calibre protège.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4264,13 +4288,25 @@
     },
     {
       "reseau": "ÉlectroRézo",
+      "id": "6-7-autocontrole-mise-sous-tension",
+      "titre": "Autocontrôle électrique avant mise sous tension",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : l’autocontrôle électrique avant la mise sous tension.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-7-autocontrole-mise-sous-tension/",
+      "chemin": "electrorezo/stations/6-7-autocontrole-mise-sous-tension/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
       "id": "7-1-varier-la-tension",
       "titre": "Faire varier la tension",
       "ligne": "Ligne 7",
       "resume": "Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie.",
       "niveaux": null,
       "competences": null,
-      "missionProf": "Sur les variateurs de lumière, sur les ventilateurs à plusieurs vitesses, sur les résistances de chauffage régulées. Et — c’est le point important — presque jamais pour régler la vitesse d’un moteur asynchrone.",
+      "missionProf": "Sur les variateurs de lumière, sur les résistances de chauffage régulées. Et — c’est le point important — presque jamais pour régler la vitesse d’un moteur asynchrone ordinaire sous couple constant (une pompe, un convoyeur).",
       "url": "https://inerweb.fr/electrorezo/stations/7-1-varier-la-tension/",
       "chemin": "electrorezo/stations/7-1-varier-la-tension/"
     },
@@ -4294,7 +4330,7 @@
       "resume": "Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie.",
       "niveaux": null,
       "competences": null,
-      "missionProf": "Sur toutes les machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs de climatisation. C’est ce qui a transformé l’industrie ces trente dernières années.",
+      "missionProf": "Sur beaucoup de machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs de climatisation. C’est ce qui a transformé l’industrie ces trente dernières années.",
       "url": "https://inerweb.fr/electrorezo/stations/7-3-varier-la-frequence/",
       "chemin": "electrorezo/stations/7-3-varier-la-frequence/"
     },
@@ -6627,7 +6663,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-cat\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-pub\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -6639,7 +6675,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-cat\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-pub\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -6651,7 +6687,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-cat\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-pub\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -6663,7 +6699,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-cat\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-pub\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -6675,7 +6711,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-cat\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-pub\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -6687,7 +6723,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-cat\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-pub\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

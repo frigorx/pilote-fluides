@@ -9,7 +9,6 @@ ModelePratique.construire({
   kicker: 'ÉlectroRézo · Ligne 6 Machines et conversion · Station 7',
   titre: "Autocontrôle électrique avant mise sous tension",
   narration: NARRATION,
-  sansMp3: true,   /* aucun MP3 fabriqué (feu vert à part) : retirer cette ligne quand voix/ sera remplie */
 
   prerequis: [
     { id: '1.9', quoi: "mesurer" },

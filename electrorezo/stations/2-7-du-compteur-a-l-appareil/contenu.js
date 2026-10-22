@@ -7,7 +7,6 @@ ModelePratique.construire({
   kicker: 'ÉlectroRézo · Ligne 2 Les réseaux · Station 7',
   titre: "Les réseaux électriques d’un site : du compteur à l’appareil",
   narration: NARRATION,
-  sansMp3: true,   /* aucun MP3 fabriqué (feu vert à part) : retirer cette ligne quand voix/ sera remplie */
 
   prerequis: [
     { id: '1.2', quoi: "la tension" },
@@ -229,7 +228,7 @@ ModelePratique.construire({
     titre: 'Du compteur à l’appareil : ce qu’on y lit',
     corps: () => {
       const lignes = [
-        ['assets/biblio/compteur-linky.jpg', 'Le compteur', "l’énergie, en kWh ; il appartient au distributeur"],
+        ['assets/biblio/compteur-linky.jpg', 'Le compteur', "l’énergie, en kWh ; il est fourni par le distributeur"],
         ['assets/biblio/disjoncteur-differentiel-hager.jpeg', 'Le disjoncteur de branchement', "il coupe tout ; en tête de l’installation"],
         ['assets/biblio/tableau-annote.jpeg', 'Le tableau', "les étiquettes : repère + usage de chaque départ"],
         ['assets/biblio/disj-differentiel-c16.png', 'Le circuit', "le calibre sur l’appareil, la désignation sur le câble (3G2,5)"],

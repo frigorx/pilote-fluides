@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**519 stations** réparties en 18 réseaux.
+**522 stations** réparties en 18 réseaux.
 
 ## Plan thermo-techno — 125 stations
 
@@ -304,7 +304,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Parois et écarts de température](https://inerweb.fr/aerorezo/stations/transmission/) | C | CAP BAC BTS | — | Repérez mur, vitrage, toiture et plancher. |
 | [Ventilateur et équilibrage](https://inerweb.fr/aerorezo/stations/ventilateur-equilibrage/) | D | CAP BAC BTS | — | Vois le débit changer quand un registre bouge. |
 
-## ÉlectroRézo — 60 stations
+## ÉlectroRézo — 63 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -323,21 +323,23 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [La tension simple](https://inerweb.fr/electrorezo/stations/2-4-tension-simple/) | Ligne 2 | — | — | Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation. |
 | [La tension composée](https://inerweb.fr/electrorezo/stations/2-5-tension-composee/) | Ligne 2 | — | — | Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation. |
 | [Le champ tournant](https://inerweb.fr/electrorezo/stations/2-6-champ-tournant/) | Ligne 2 | — | — | Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation. |
+| [Les réseaux électriques d’un site : du compteur à l’appareil](https://inerweb.fr/electrorezo/stations/2-7-du-compteur-a-l-appareil/) | Ligne 2 | — | — | Station autonome de la ligne 2 d’ÉlectroRézo : du compteur à l’appareil, reconnaître les réseaux électriques d’un site. |
 | [L’interrupteur](https://inerweb.fr/electrorezo/stations/3-1-interrupteur/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
 | [Le sectionneur](https://inerweb.fr/electrorezo/stations/3-2-sectionneur/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
 | [L’interrupteur-sectionneur](https://inerweb.fr/electrorezo/stations/3-3-interrupteur-sectionneur/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
 | [Le porte-fusible](https://inerweb.fr/electrorezo/stations/3-4-porte-fusible/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
 | [Le sectionneur porte-fusible](https://inerweb.fr/electrorezo/stations/3-5-sectionneur-porte-fusible/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
-| [Le fusible gG](https://inerweb.fr/electrorezo/stations/4-1-fusible-gg/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
+| [Le fusible gG](https://inerweb.fr/electrorezo/stations/4-1-fusible-gg/) | Ligne 4 | — | — | Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le fusible gG, ce qu’il protège et comment le lire. |
 | [Choisir la section d’un câble](https://inerweb.fr/electrorezo/stations/4-10-choisir-section/) | Ligne 4 | — | — | Station autonome de la ligne 4 d’ÉlectroRézo : choisir la section d’un câble. |
+| [Le tableau d’un logement : protections, circuits, différentiels](https://inerweb.fr/electrorezo/stations/4-11-tableau-logement/) | Ligne 4 | — | — | Station autonome de la ligne 4 d’ÉlectroRézo : lire le tableau d’un logement, ses protections, ses circuits et ses différentiels. |
 | [Le fusible aM](https://inerweb.fr/electrorezo/stations/4-2-fusible-am/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
-| [Le disjoncteur magnéto-thermique](https://inerweb.fr/electrorezo/stations/4-3-disjoncteur-magneto-thermique/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
-| [Le disjoncteur moteur](https://inerweb.fr/electrorezo/stations/4-4-disjoncteur-moteur/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
+| [Le disjoncteur magnéto-thermique](https://inerweb.fr/electrorezo/stations/4-3-disjoncteur-magneto-thermique/) | Ligne 4 | — | — | Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le disjoncteur magnéto-thermique, ses deux déclencheurs et ce qui est écrit dessus. |
+| [Le disjoncteur moteur](https://inerweb.fr/electrorezo/stations/4-4-disjoncteur-moteur/) | Ligne 4 | — | — | Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le disjoncteur moteur, son réglage sur la plaque et ce qu’il remplace. |
 | [L’interrupteur différentiel](https://inerweb.fr/electrorezo/stations/4-5-interrupteur-differentiel/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
 | [Le disjoncteur différentiel](https://inerweb.fr/electrorezo/stations/4-6-disjoncteur-differentiel/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
 | [Le relais thermique](https://inerweb.fr/electrorezo/stations/4-7-relais-thermique/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
 | [La terre et la liaison équipotentielle](https://inerweb.fr/electrorezo/stations/4-8-terre/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
-| [Le câble : section et désignation](https://inerweb.fr/electrorezo/stations/4-9-cable-section/) | Ligne 4 | — | — | Station autonome de la ligne 4 dÉlectroRézo : couper, commander, isoler. |
+| [Le câble : section et désignation](https://inerweb.fr/electrorezo/stations/4-9-cable-section/) | Ligne 4 | — | — | Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le câble, sa section, et ce que le calibre protège. |
 | [Le contact : repos et travail](https://inerweb.fr/electrorezo/stations/5-1-contact-no-nf/) | Ligne 5 | — | — | Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais. |
 | [Le contacteur](https://inerweb.fr/electrorezo/stations/5-2-contacteur/) | Ligne 5 | — | — | Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais. |
 | [Le contact auxiliaire](https://inerweb.fr/electrorezo/stations/5-3-contact-auxiliaire/) | Ligne 5 | — | — | Station autonome de la ligne 5 d’ÉlectroRézo : commander avec des contacts et des relais. |
@@ -353,6 +355,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [L’atelier du lundi matin](https://inerweb.fr/electrorezo/stations/6-4-couplage/) | Ligne 6 | — | — | Station autonome : poser les barrettes d’un moteur triphasé en étoile ou en triangle, et comprendre pourquoi. |
 | [Le moteur monophasé](https://inerweb.fr/electrorezo/stations/6-5-moteur-monophase/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie. |
 | [Synchrone et courant continu](https://inerweb.fr/electrorezo/stations/6-6-synchrone-et-continu/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie. |
+| [Autocontrôle électrique avant mise sous tension](https://inerweb.fr/electrorezo/stations/6-7-autocontrole-mise-sous-tension/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : l’autocontrôle électrique avant la mise sous tension. |
 | [Faire varier la tension](https://inerweb.fr/electrorezo/stations/7-1-varier-la-tension/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |
 | [Le variateur de tension](https://inerweb.fr/electrorezo/stations/7-2-variateur-tension/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |
 | [Faire varier la fréquence](https://inerweb.fr/electrorezo/stations/7-3-varier-la-frequence/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |

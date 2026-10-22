@@ -8,7 +8,6 @@ ModelePratique.construire({
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 11',
   titre: "Le tableau d’un logement : protections, circuits, différentiels",
   narration: NARRATION,
-  sansMp3: true,   /* aucun MP3 fabriqué (feu vert à part) : retirer cette ligne quand voix/ sera remplie */
 
   prerequis: [
     { id: '2.7', quoi: "du compteur à l’appareil" },
@@ -132,7 +131,7 @@ ModelePratique.construire({
       { mode: 'guide',
         enonce: "Sur cet interrupteur différentiel, quelle est la sensibilité, et quel est le calibre ?",
         figure: () => photo('assets/biblio/differentiel-a-lire.png',
-          "Interrupteur différentiel annoté de flèches rouges, avec à sa droite trois disjoncteurs : deux nombres sont écrits sur la face du différentiel.",
+          "Interrupteur différentiel annoté de flèches rouges, avec à sa droite des disjoncteurs de 16 A et de 10 A : deux nombres sont écrits sur la face du différentiel.",
           'Un interrupteur différentiel. Touchez la photo pour l’agrandir.'),
         ou: "sur la photo, la face de l’interrupteur différentiel (le plus large, à gauche) : deux nombres y sont écrits.",
         comment: "le nombre suivi de « mA » est la sensibilité ; le nombre suivi de « A » seul est le calibre (la photo l’appelle « intensité nominale » : c’est le même nombre).",
