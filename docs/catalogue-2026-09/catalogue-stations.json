@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 522,
+  "total": 524,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -880,7 +880,7 @@
       "id": "pose-manifold-interactive",
       "titre": "Poser et déposer le manifold 4 voies — la voie de vide en plus",
       "ligne": null,
-      "resume": "Atelier interactif inerWeb : contrôler, poser, tirer au vide, mettre en lecture et déposer un manifold 4 voies sur deux vannes de service.",
+      "resume": "Atelier interactif inerWeb : contrôler, poser, tirer au vide le manifold et ses flexibles, mettre en lecture et déposer un manifold 4 voies sur deux vannes de service.",
       "niveaux": null,
       "competences": [
         "3.03",
@@ -3038,6 +3038,38 @@
       "missionProf": null,
       "url": "https://inerweb.fr/hydrometro/stations/releves/",
       "chemin": "hydrometro/stations/releves/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "sanitaire-distribution",
+      "titre": "Dimensionner une distribution d’eau sanitaire",
+      "ligne": "E",
+      "resume": "Lire le débit de base d’un appareil dans les données d’un sujet.",
+      "niveaux": {
+        "cap": "Lire le débit de base d’un appareil dans les données d’un sujet.",
+        "tp": "Calculer le débit probable d’un petit immeuble et en déduire un diamètre.",
+        "bts": "Dimensionner une antenne d’eau froide : débit probable, diamètre, vitesse."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/sanitaire-distribution/",
+      "chemin": "hydrometro/stations/sanitaire-distribution/"
+    },
+    {
+      "reseau": "HydroMétro",
+      "id": "sanitaire-evacuation",
+      "titre": "Dimensionner une évacuation d’eaux usées et vannes (ventilation de chute comprise)",
+      "ligne": "E",
+      "resume": "Distinguer eaux usées, eaux vannes et eaux pluviales.",
+      "niveaux": {
+        "cap": "Distinguer eaux usées, eaux vannes et eaux pluviales.",
+        "tp": "Lire dans le sujet le débit d’un appareil et la capacité d’un diamètre, puis choisir le diamètre.",
+        "bts": "Dimensionner un collecteur, une chute et sa ventilation primaire."
+      },
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/hydrometro/stations/sanitaire-evacuation/",
+      "chemin": "hydrometro/stations/sanitaire-evacuation/"
     },
     {
       "reseau": "HydroMétro",

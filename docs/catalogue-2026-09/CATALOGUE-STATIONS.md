@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**522 stations** réparties en 18 réseaux.
+**524 stations** réparties en 18 réseaux.
 
 ## Plan thermo-techno — 125 stations
 
@@ -64,7 +64,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Parcours manomètres — lire l'instrument, comprendre le circuit](https://inerweb.fr/packs/fluides/res/parcours-manometres/) | — | — | 1.02 1.03 1.06 5.05 | Deux modules inerweb.fr pour lire les manomètres frigorifiques puis calculer surchauffes et sous-refroidissements. |
 | [Plan de maintenance du froid commercial — périodicités, contrat](https://inerweb.fr/packs/fluides/res/plan-maintenance-commercial-interactif/) | — | — | — | Cours interactif : construire un plan de maintenance du froid commercial : maintenance systématique, conditionnelle et corrective, périodicités imposées par le règlement (contrôle d’étanchéité tous les 12, 6 ou 3 mois, détection des fuites, registre) et périodicités du contrat, lire un contrat de maintenance. |
 | [Pose et dépose du manifold 2 voies sur vannes de service Rotolock](https://inerweb.fr/packs/fluides/res/pose-manifold-2-voies-interactive/) | — | — | 3.03 3.04 4.05 5.01 12.02 | Entraîneur inerWeb pour comprendre, poser, utiliser et déposer un manifold 2 voies sur deux vannes de service Rotolock. |
-| [Poser et déposer le manifold 4 voies — la voie de vide en plus](https://inerweb.fr/packs/fluides/res/pose-manifold-interactive/) | — | — | 3.03 3.04 4.05 5.01 5.02 | Atelier interactif inerWeb : contrôler, poser, tirer au vide, mettre en lecture et déposer un manifold 4 voies sur deux vannes de service. |
+| [Poser et déposer le manifold 4 voies — la voie de vide en plus](https://inerweb.fr/packs/fluides/res/pose-manifold-interactive/) | — | — | 3.03 3.04 4.05 5.01 5.02 | Atelier interactif inerWeb : contrôler, poser, tirer au vide le manifold et ses flexibles, mettre en lecture et déposer un manifold 4 voies sur deux vannes de service. |
 | [Positif, négatif, congélation, surgélation : ce que le froid fait au produit](https://inerweb.fr/packs/fluides/res/positif-negatif-interactif/) | — | — | — | Cours interactif : froid positif et négatif, réfrigération, les trois temps de la congélation et son palier, surgélation, décongélation selon l’arrêté du 21 décembre 2009. |
 | [Raccorder les postes d’un magasin — meubles, chambres, électrovannes](https://inerweb.fr/packs/fluides/res/postes-magasin-interactif/) | — | — | — | Cours interactif : raccorder un poste (meuble ou chambre froide) à une centrale positive : l’ordre sur la ligne liquide, le sens de l’électrovanne, qui l’ouvre et la ferme, le bulbe du détendeur, la conduite d’aspiration, les contrôles. |
 | [Pression et température — la relation de saturation](https://inerweb.fr/packs/fluides/res/pression-temperature-interactive/) | — | — | 1.02 1.03 | Comprenez la relation pression-température, l’ébullition sous vide, la saturation et le glissement des fluides frigorigènes avec une expérience interactive. |
@@ -232,7 +232,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Se former](https://inerweb.fr/legislation/stations/travail-se-former/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires. |
 | [Temps & paie](https://inerweb.fr/legislation/stations/travail-temps-et-paie/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés. |
 
-## HydroMétro — 25 stations
+## HydroMétro — 27 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -257,6 +257,8 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Adoucisseur, inhibiteur, qualité de l’eau d’un circuit](https://inerweb.fr/hydrometro/stations/qualite-eau/) | E | CAP TP BTS | — | Dire ce qu’est la dureté de l’eau et à quoi sert un adoucisseur. |
 | [Régler une vanne d’équilibrage](https://inerweb.fr/hydrometro/stations/reglage-equilibrage/) | D | TP BTS | BTS C14 BTS C2 BTS C7 BTS C8 CAP C4.4 CAP C4.5 RNCP38748-BC01 RNCP38748-BC03 | Mesurer l’écart de pression, en déduire le débit et corriger la position jusqu’à la cible. |
 | [Relevés — La preuve exploitable](https://inerweb.fr/hydrometro/stations/releves/) | M | TP BTS | BTS C12-C14 BTS C7 BTS C8 CAP C4.5 RNCP38748-BC01 RNCP38748-BC03 | Renseigner une fiche avant/après compréhensible par un tiers. |
+| [Dimensionner une distribution d’eau sanitaire](https://inerweb.fr/hydrometro/stations/sanitaire-distribution/) | E | CAP TP BTS | — | Lire le débit de base d’un appareil dans les données d’un sujet. |
+| [Dimensionner une évacuation d’eaux usées et vannes (ventilation de chute comprise)](https://inerweb.fr/hydrometro/stations/sanitaire-evacuation/) | E | CAP TP BTS | — | Distinguer eaux usées, eaux vannes et eaux pluviales. |
 | [Sécurité](https://inerweb.fr/hydrometro/stations/securite/) | E | TP BTS | BTS C3-1 BTS C4-1 BTS C5 CAP C3.9 RNCP38748 prévention et sécurité RNCP38748-BC01 maintenance | Identifier et contrôler visuellement les organes de sécurité. |
 | [Volume tampon — Quatre piquages](https://inerweb.fr/hydrometro/stations/tampon/) | M | TP BTS | BTS C2 BTS C3 BTS C8 CAP C3.4 RNCP38748-BC01 RNCP38748-BC03 | Reconnaître le raccordement et attribuer seulement les fonctions visibles. |
 | [Vanne trois voies — Trois voies, une fonction](https://inerweb.fr/hydrometro/stations/v3v/) | D | TP BTS | BTS C2 BTS C4 BTS C7 BTS C8 CAP C3.4 CAP C4.4 RNCP38748-BC01 RNCP38748-BC03 | Identifier A, B, AB et contrôler le sens de circulation. |
