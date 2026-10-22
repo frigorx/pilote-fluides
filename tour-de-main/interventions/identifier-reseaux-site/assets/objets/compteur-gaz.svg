@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" width="240" height="150">
+<!-- Compteur de gaz et robinet de coupure. Dessin inerWeb fait main (22/10/2026), objet reconnaissable. -->
+<g stroke="#1b3a63" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<rect x="0" y="40" width="119" height="12" fill="#cfd8e0" stroke-width="1.5"/><rect x="113" y="40" width="12" height="30" fill="#cfd8e0" stroke-width="1.5"/><rect x="213" y="40" width="12" height="30" fill="#cfd8e0" stroke-width="1.5"/>
+<rect x="30" y="38" width="16" height="16" rx="3" fill="#d9b25a"/><rect x="62" y="38" width="16" height="16" rx="3" fill="#d9b25a"/>
+<rect x="44" y="30" width="20" height="32" rx="9" fill="#d9b25a"/><rect x="51" y="20" width="6" height="12" fill="#cfd8e0"/><rect x="28" y="8" width="52" height="10" rx="5" fill="#1b3a63"/>
+<rect x="98" y="66" width="140" height="78" rx="12" fill="#cfd8e0"/><rect x="116" y="80" width="104" height="28" rx="4" fill="#10233c"/>
+<text x="168" y="101" text-anchor="middle" font-family="Consolas,monospace" font-size="16" font-weight="700" fill="#fff" stroke="none">01234</text>
+<text x="168" y="130" text-anchor="middle" font-family="Calibri,sans-serif" font-size="13" font-weight="700" fill="#1b3a63" stroke="none">m³</text>
+</g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" role="img" aria-labelledby="title desc">
+  <title id="title">Échelle comme moyen d’accès</title>
+  <desc id="desc">Une échelle mène à une plateforme avec une flèche de montée et une flèche de descente.</desc>
+  <rect x="2" y="2" width="476" height="216" rx="24" fill="#FFFDF8" stroke="#C7D2E0" stroke-width="3"/>
+  <path d="M34 188H446" stroke="#C7D2E0" stroke-width="4" stroke-linecap="round"/>
+  <g fill="none" stroke="#1B3A63" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(236 188) skewX(-6)">
+    <path d="M-20 0L-20 -140M20 0L20 -140"/>
+    <path d="M-14 -122H14"/><path d="M-14 -100.8H14"/><path d="M-14 -79.6H14"/><path d="M-14 -58.400000000000006H14"/><path d="M-14 -37.2H14"/><path d="M-14 -16H14"/>
+  </g><path d="M250 48H420V188"/><path d="M120 150V70M120 70L106 90M120 70L134 90" stroke="#1E7E54" stroke-width="8"/><path d="M165 70V150M165 150L151 130M165 150L179 130" stroke="#3D7FCA" stroke-width="8"/>
+  </g>
+</svg>

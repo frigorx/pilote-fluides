@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 130" width="250" height="130">
+<!-- Colis en carton et bouteille de fluide sanglée. Dessin inerWeb fait main (22/10/2026), objet reconnaissable. -->
+<g stroke="#1b3a63" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<rect x="10" y="50" width="120" height="74" rx="3" fill="#d8b98a"/><path d="M10 74 H130" stroke-width="1.5"/><rect x="62" y="50" width="16" height="74" fill="#c9a26a" stroke-width="1.5"/>
+<rect x="76" y="86" width="40" height="26" rx="2" fill="#fffdf8" stroke-width="1.2"/><path d="M82 94 H108 M82 101 H100" stroke-width="1.2"/><path d="M96 38 L100 58" stroke="none"/>
+<path d="M16 50 L40 30 H150 L130 50 Z" fill="#e6cfa6" stroke-width="1.5"/>
+<rect x="164" y="22" width="48" height="100" rx="14" fill="#dfe6ec"/><rect x="180" y="8" width="16" height="16" rx="3" fill="#d9b25a"/><rect x="176" y="2" width="24" height="8" rx="3" fill="#1b3a63"/>
+<rect x="164" y="64" width="48" height="26" fill="#fffdf8" stroke-width="1.2"/><path d="M170 72 H206 M170 82 H196" stroke-width="1.2"/>
+<path d="M160 52 H216" stroke="#ff6b35" stroke-width="5"/><path d="M160 102 H216" stroke="#ff6b35" stroke-width="5"/>
+</g>
+</svg>

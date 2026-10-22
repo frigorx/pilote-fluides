@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Liste des réponses</title>
+  <desc id="desc">Planchette avec une liste cochée.</desc>
+  <g fill="none" stroke="#1B3A63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<rect x="13" y="12" width="38" height="46" rx="5" fill="#FFFDF8"/><rect x="23" y="6" width="18" height="12" rx="4" fill="#FF6B35"/><path d="M21 29L25 33L31 25M35 29H44M21 43L25 47L31 39M35 43H44" stroke="#1E7E54"/>
+  </g>
+</svg>

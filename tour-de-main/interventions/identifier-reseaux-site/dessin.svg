@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="scene" viewBox="0 0 1200 630" role="img" aria-labelledby="scene-title scene-desc">
+  <title id="scene-title">Schéma interactif du site : identifier les réseaux</title>
+  <desc id="scene-desc">Six cartes : l'électricité (compteur, disjoncteur général, tableau), l'eau (vannes et compteur), le gaz (compteur et robinet de coupure), les évacuations (siphon, regard, descente), le fluide frigorigène (groupe et vannes de service) et mon croquis du site.</desc>
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1b3a63" flood-opacity=".13"/></filter>
+    <symbol id="scene-background" viewBox="0 0 1200 630">
+      <rect x="12" y="12" width="1176" height="606" rx="28" fill="#fffdf8" stroke="#1b3a63" stroke-opacity=".16" stroke-width="3"/>
+            <g id="equipment-electricite" transform="translate(30 30)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="360" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="180" y="28" text-anchor="middle" class="svg-title">1 · ÉLECTRICITÉ</text>
+                  <image href="assets/objets/compteur-elec.svg" x="10" y="44" width="66" height="90" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/objets/tableau.svg" x="88" y="44" width="260" height="130" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="180" y="204" class="svg-small" text-anchor="middle">compteur, disjoncteur général, tableau</text>
+                  <text x="180" y="230" class="svg-tiny" text-anchor="middle">chaque départ a sa protection</text>
+                </g>
+      <g id="equipment-eau" transform="translate(420 30)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="360" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="180" y="28" text-anchor="middle" class="svg-title">2 · EAU</text>
+                  <image href="assets/objets/compteur-eau.svg" x="10" y="60" width="340" height="113" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="180" y="204" class="svg-small" text-anchor="middle">vanne avant · compteur · vanne après</text>
+                  <text x="180" y="230" class="svg-tiny" text-anchor="middle">index : les chiffres sur fond noir</text>
+                </g>
+      <g id="equipment-gaz" transform="translate(810 30)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="360" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="180" y="28" text-anchor="middle" class="svg-title">3 · GAZ</text>
+                  <image href="assets/objets/compteur-gaz.svg" x="40" y="44" width="280" height="175" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="180" y="244" class="svg-small" text-anchor="middle">robinet de coupure, puis compteur</text>
+                  <text x="180" y="264" class="svg-tiny" text-anchor="middle">On regarde : on ne manœuvre pas.</text>
+                </g>
+      <g id="equipment-evacuations" transform="translate(30 325)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="360" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="180" y="28" text-anchor="middle" class="svg-title">4 · ÉVACUATIONS</text>
+                  <image href="assets/objets/siphon.svg" x="20" y="46" width="72" height="96" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/objets/regard.svg" x="118" y="66" width="100" height="84" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/objets/descente.svg" x="258" y="40" width="56" height="120" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="56" y="162" class="svg-tiny" text-anchor="middle">siphon</text>
+                  <text x="168" y="162" class="svg-tiny" text-anchor="middle">regard</text>
+                  <text x="286" y="176" class="svg-tiny" text-anchor="middle">descente</text>
+                  <text x="180" y="212" class="svg-small" text-anchor="middle">EU : éviers, douches, lavabos</text>
+                  <text x="180" y="236" class="svg-small" text-anchor="middle">EV : WC · EP : pluie, à part</text>
+                </g>
+      <g id="equipment-fluide" transform="translate(420 325)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="360" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="180" y="28" text-anchor="middle" class="svg-title">5 · FLUIDE FRIGORIGÈNE</text>
+                  <image href="assets/objets/groupe.svg" x="6" y="40" width="220" height="140" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/objets/evaporateur.svg" x="232" y="56" width="118" height="86" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="180" y="204" class="svg-small" text-anchor="middle">le groupe et ses vannes de service A, B, C</text>
+                  <text x="180" y="228" class="svg-small" text-anchor="middle">les lignes jusqu'à l'évaporateur</text>
+                  <text x="180" y="256" class="svg-tiny" text-anchor="middle">Le fluide se lit sur la plaque.</text>
+                </g>
+      <g id="equipment-croquis" transform="translate(810 325)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="360" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="180" y="28" text-anchor="middle" class="svg-title">6 · LE PLAN ET MON CROQUIS</text>
+                  <image href="assets/planches/clipboard.svg" x="16" y="48" width="130" height="170" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="158" y="80" class="svg-small">le plan des réseaux du site</text>
+                  <text x="158" y="108" class="svg-small">où arrive chaque réseau</text>
+                  <text x="158" y="136" class="svg-small">où est sa coupure</text>
+                  <text x="158" y="164" class="svg-small">les étiquettes et la légende</text>
+                  <text x="158" y="192" class="svg-small">ce que je n'ai pas compris</text>
+                  <text x="180" y="250" class="svg-tiny" text-anchor="middle">Je note, je ne manœuvre rien.</text>
+                </g>
+    </symbol>
+  </defs>
+  <use href="#scene-background" x="0" y="0" width="1200" height="630"></use>
+</svg>

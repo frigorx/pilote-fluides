@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 120" width="90" height="120">
+<!-- Siphon : tube en U avec sa garde d'eau. Dessin inerWeb fait main (22/10/2026), objet reconnaissable. -->
+<g stroke="#1b3a63" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<rect x="18" y="4" width="22" height="46" fill="#f4f6f8"/><rect x="12" y="44" width="34" height="10" rx="3" fill="#cfd8e0"/>
+<path d="M29 54 V84 Q29 108 52 108 Q75 108 75 84 V60" fill="none" stroke-width="14" stroke="#f4f6f8"/><path d="M29 54 V84 Q29 108 52 108 Q75 108 75 84 V60" fill="none" stroke-width="2.5" stroke-dasharray="0.1 0"/>
+<rect x="66" y="50" width="22" height="14" rx="3" fill="#cfd8e0"/><path d="M36 92 Q52 104 68 92" fill="none" stroke="#3d7fca" stroke-width="4"/>
+</g>
+</svg>

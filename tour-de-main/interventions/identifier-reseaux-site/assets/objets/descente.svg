@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 130" width="60" height="130">
+<!-- Descente d'évacuation avec ses colliers. Dessin inerWeb fait main (22/10/2026), objet reconnaissable. -->
+<g stroke="#1b3a63" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<rect x="18" y="4" width="24" height="122" fill="#cfd3d8"/><rect x="12" y="24" width="36" height="9" rx="3" fill="#cfd8e0"/><rect x="12" y="78" width="36" height="9" rx="3" fill="#cfd8e0"/>
+<rect x="14" y="116" width="32" height="10" rx="3" fill="#aeb8c2"/>
+</g>
+</svg>

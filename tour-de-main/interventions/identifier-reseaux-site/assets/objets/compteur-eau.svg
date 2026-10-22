@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+<!-- Compteur d'eau entre sa vanne avant et sa vanne après. Dessin inerWeb fait main (22/10/2026), objet reconnaissable. -->
+<g stroke="#1b3a63" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<rect x="0" y="39" width="300" height="12" fill="#c97b4a" stroke-width="1.5"/>
+<rect x="16" y="38" width="14" height="14" rx="3" fill="#d9b25a"/><rect x="50" y="38" width="14" height="14" rx="3" fill="#d9b25a"/>
+<rect x="28" y="30" width="24" height="30" rx="9" fill="#d9b25a"/><rect x="37" y="22" width="6" height="10" fill="#cfd8e0"/>
+<rect x="20" y="14" width="40" height="8" rx="4" fill="#1b3a63"/><rect x="236" y="38" width="14" height="14" rx="3" fill="#d9b25a"/><rect x="270" y="38" width="14" height="14" rx="3" fill="#d9b25a"/>
+<rect x="248" y="30" width="24" height="30" rx="9" fill="#d9b25a"/><rect x="257" y="22" width="6" height="10" fill="#cfd8e0"/>
+<rect x="240" y="14" width="40" height="8" rx="4" fill="#1b3a63"/>
+<rect x="96" y="22" width="108" height="46" rx="10" fill="#d9b25a"/>
+<circle cx="150" cy="40" r="26" fill="#fffdf8"/><circle cx="150" cy="40" r="26" fill="none" stroke-width="3"/>
+<rect x="126" y="31" width="34" height="14" rx="2" fill="#10233c" stroke-width="1"/>
+<rect x="160" y="31" width="14" height="14" rx="2" fill="#c0392b" stroke-width="1"/>
+<text x="143" y="42" text-anchor="middle" font-family="Consolas,monospace" font-size="10" font-weight="700" fill="#fff" stroke="none">0123</text>
+<text x="167" y="42" text-anchor="middle" font-family="Consolas,monospace" font-size="8" font-weight="700" fill="#fff" stroke="none">456</text>
+<path d="M138 56 H162 M156 52 L162 56 L156 60" fill="none" stroke-width="2"/>
+</g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img"
+     aria-labelledby="t-bilm" aria-describedby="d-bilm" font-family="Calibri, 'Segoe UI', sans-serif">
+  <title id="t-bilm">Le réflexe : vérifier la plaque et le dossier technique</title>
+  <desc id="d-bilm">À gauche, une plaque signalétique portant le marquage CE et la PS. À droite,
+    un dossier contenant la déclaration de conformité et la notice d'instructions. Une flèche à
+    double sens relie les deux, car ils s'accompagnent toujours. Une bande en bas résume les
+    points clés de la station.</desc>
+  <style>
+    .ttl  { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:16px; fill:#fffdf8; }
+    .lbl  { font-size:15px; fill:#10233c; }
+    .ce   { font-family:'Trebuchet MS',Calibri,sans-serif; font-weight:bold; font-size:20px; fill:#0c4a6e; }
+    .cle  { font-size:15.5px; fill:#10233c; }
+    .note { font-size:15px; fill:#5a6b7d; font-style:italic; }
+  </style>
+
+  <!-- La plaque -->
+  <rect x="20" y="24" width="380" height="176" rx="14" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <rect x="20" y="24" width="380" height="40" rx="14" fill="#1b3a63"/>
+  <rect x="20" y="50" width="380" height="14" fill="#1b3a63"/>
+  <text class="ttl" x="210" y="51" text-anchor="middle">LA PLAQUE</text>
+  <circle cx="80" cy="118" r="28" fill="none" stroke="#0c4a6e" stroke-width="3"/>
+  <text class="ce" x="80" y="128" text-anchor="middle">CE</text>
+  <text class="lbl" x="130" y="102">Fabricant, PS,</text>
+  <text class="lbl" x="130" y="122">numéro de série :</text>
+  <text class="lbl" x="130" y="142">le CE s'y ajoute.</text>
+  <text class="lbl" x="210" y="180" text-anchor="middle">sur l'équipement lui-même</text>
+
+  <!-- La double flèche -->
+  <path d="M 410 112 H 490" stroke="#8fa0b0" stroke-width="3" fill="none"/>
+  <polygon points="410,103 390,112 410,121" fill="#8fa0b0"/>
+  <polygon points="490,103 510,112 490,121" fill="#8fa0b0"/>
+
+  <!-- Le dossier -->
+  <rect x="500" y="24" width="380" height="176" rx="14" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3"/>
+  <rect x="500" y="24" width="380" height="40" rx="14" fill="#0c4a6e"/>
+  <rect x="500" y="50" width="380" height="14" fill="#0c4a6e"/>
+  <text class="ttl" x="690" y="51" text-anchor="middle">LE DOSSIER</text>
+  <rect x="530" y="86" width="140" height="90" rx="6" fill="#eef3f9" stroke="#1b3a63" stroke-width="2" transform="rotate(-3 600 131)"/>
+  <rect x="560" y="96" width="140" height="90" rx="6" fill="#eef3f9" stroke="#1e7e54" stroke-width="2" transform="rotate(3 630 141)"/>
+  <text class="lbl" x="690" y="180" text-anchor="middle">déclaration + notice, conservées</text>
+
+  <!-- La bande de bilan -->
+  <rect x="20" y="216" width="860" height="66" rx="14" fill="#eef3f9" stroke="#2f5689" stroke-width="2"/>
+  <text class="cle" x="450" y="242" text-anchor="middle">Le CE et la déclaration accompagnent l'équipement · la notice précise conditions, entretien, limites</text>
+  <text class="cle" x="450" y="264" text-anchor="middle">l'installateur conserve ce qu'il reçoit · c'est ce dossier qui est demandé lors d'un contrôle</text>
+
+  <text class="note" x="450" y="308" text-anchor="middle">Le réflexe : vérifier la plaque, et le dossier technique fourni par le fabricant.</text>
+</svg>
