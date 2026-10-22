@@ -63,8 +63,9 @@
 
   let current = 0;
   let furthest = 0;
-  let level = "TP";
+  let level = config.niveau || "TP";   /* profondeur affichée à l’arrivée (stations de dimensionnement : BTS) ; le bouton actif est posé dans index.html */
   let stepReady = false;
+  let interagi = false;   /* l'élève a touché le panneau d'action : seulement alors le retour défile jusqu'à lui */
   let speechRun = 0;
   let speaking = false;
   let paused = false;
@@ -106,6 +107,8 @@
     }
     feedback.className = `feedback ${kind}`;
     feedback.innerHTML = message;
+    /* colonne ou carte défilante (stations « eau ») : le retour reste visible */
+    if (interagi && [".lesson-copy", ".lesson-card"].some((s) => { const c = els.actionPanel.closest(s); return c && getComputedStyle(c).overflowY === "auto"; })) feedback.scrollIntoView({ block: "nearest" });
   }
 
   function markReady() {
@@ -130,6 +133,19 @@
     els.scene.innerHTML = rendered;
     els.sceneEquivalent.textContent = typeof step.equivalent === "function" ? step.equivalent(value) : step.equivalent;
     if (typeof step.wire === "function") step.wire(els.scene);
+    renderAide(step, value);
+  }
+
+  /* Rappel en texte HTML sous la consigne (stations « eau »). `aide` : toujours visible, ce qu'il faut avoir sous les yeux pour
+     répondre (par exemple les valeurs d'un tableau d'une étape précédente). `aideMobile` : le contenu de la scène recopié en texte
+     lisible, visible sous 761 px seulement (la scène y est trop petite pour être lue). HTML, ou fonction de la valeur de la scène. */
+  function renderAide(step, value) {
+    let boite = document.getElementById("stepAide");
+    if (!boite) { boite = document.createElement("div"); boite.id = "stepAide"; boite.className = "aide-etape"; boite.setAttribute("role", "note"); els.levelNote.after(boite); }
+    const fournir = (a) => (typeof a === "function" ? a(value) : a) || "";
+    const html = fournir(step.aide) + (step.aideMobile ? `<div class="aide-mobile">${fournir(step.aideMobile)}</div>` : "");
+    boite.hidden = !html;
+    boite.innerHTML = html;
   }
 
   function renderChoice(action, step) {
@@ -174,7 +190,7 @@
   }
 
   function renderDualRange(action, step) {
-    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="dual-range">${action.controls.map((control) => `<div class="range-row"><label for="range-${control.id}">${escapeHtml(control.label)}</label><output id="readout-${control.id}" class="readout"></output><input id="range-${control.id}" data-dual="${control.id}" type="range" min="${control.min}" max="${control.max}" step="${control.step}" value="${control.value}"></div>`).join("")}</div><p class="formation-only-note">Comparez les deux débits ; le sens interne est recalculé.</p>`;
+    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="dual-range">${action.controls.map((control) => `<div class="range-row"><label for="range-${control.id}">${escapeHtml(control.label)}</label><output id="readout-${control.id}" class="readout"></output><input id="range-${control.id}" data-dual="${control.id}" type="range" min="${control.min}" max="${control.max}" step="${control.step}" value="${control.value}"></div>`).join("")}</div><p class="formation-only-note">${escapeHtml(action.note || "Comparez les deux débits ; le sens interne est recalculé.")}</p>`;
     const inputs = $$('[data-dual]', els.actionPanel);
     const update = (isUser) => {
       const values = Object.fromEntries(inputs.map((input) => [input.dataset.dual, Number(input.value)]));
@@ -243,6 +259,51 @@
     });
   }
 
+  /* Calcul à saisir (stations de dimensionnement). Chaque champ : label, unité, answer (calculée par le contenu), tol (tolérance
+     absolue), dec (décimales affichées), hint (OÙ et COMMENT, sans la réponse). Première vérification fausse : les indices ;
+     deuxième, ou « Afficher la solution » : les réponses. Entraînement sans score. */
+  function renderCalc(action, step) {
+    let essais = 0;
+    els.actionPanel.innerHTML = `<p class="action-title">${escapeHtml(action.prompt)}</p><div class="calc-grid">${action.fields.map((field, index) => `<label class="calc-row" for="calc-${index}"><span class="calc-label">${escapeHtml(field.label)}</span><span class="calc-input"><input id="calc-${index}" data-calc="${index}" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"><span class="calc-unit">${escapeHtml(field.unit || "")}</span></span><span class="calc-mark" aria-live="polite"></span></label>`).join("")}</div><div class="choice-grid"><button type="button" class="verify-btn">Vérifier</button><button type="button" class="solution-btn">Afficher la solution</button></div>`;
+    const inputs = $$("[data-calc]", els.actionPanel);
+    const marks = $$(".calc-mark", els.actionPanel);
+    const verify = $(".verify-btn", els.actionPanel);
+    const solution = $(".solution-btn", els.actionPanel);
+    const format = (field) => Number(field.answer).toLocaleString("fr-FR", { minimumFractionDigits: field.dec ?? 2, maximumFractionDigits: field.dec ?? 2 });
+    const lire = (input) => {   /* « 0,72 », « 0.72 » et « 0,72 l/s » se lisent pareil : le nombre en tête, une unité derrière est acceptée */
+      const m = String(input.value).replace(/\s/g, "").match(/^([-+]?\d+(?:[.,]\d+)?)([A-Za-zµ°³²\/·.]*)$/);
+      return m ? Number(m[1].replace(",", ".")) : NaN;
+    };
+    const juste = (field, valeur) => Number.isFinite(valeur) && Math.abs(valeur - field.answer) <= field.tol;
+    const finir = () => { inputs.forEach((input) => { input.disabled = true; }); verify.disabled = true; solution.disabled = true; if (action.sceneFor) renderScene(step, "resolu"); markReady(); };
+    verify.addEventListener("click", () => {
+      if (inputs.some((input) => input.value.trim() === "")) { setFeedback("Remplissez chaque case avant de vérifier, ou affichez la solution."); return; }
+      essais += 1;
+      const bons = action.fields.map((field, index) => juste(field, lire(inputs[index])));
+      inputs.forEach((input, index) => {
+        input.classList.toggle("is-ok", bons[index]);
+        input.classList.toggle("is-ko", !bons[index]);
+        input.setAttribute("aria-invalid", String(!bons[index]));
+        marks[index].textContent = bons[index] ? "✓ juste" : "✗ à revoir";
+      });
+      if (bons.every(Boolean)) { setFeedback(`✓ Compris. ${escapeHtml(action.explain)}`, "correct"); finir(); return; }
+      if (essais === 1) {
+        const indices = action.fields.filter((field, index) => !bons[index]).map((field) => `${escapeHtml(field.label)} : ${escapeHtml(field.hint || "relisez l’énoncé et la méthode.")}`).join("<br>");
+        setFeedback(`À revoir. ${indices}`, "wrong");
+        verify.textContent = "Vérifier à nouveau";
+        return;
+      }
+      action.fields.forEach((field, index) => { if (!bons[index]) { inputs[index].value = format(field); marks[index].textContent = "✗ voici la valeur"; } });
+      setFeedback(`À comparer : la solution est affichée. ${escapeHtml(action.explain)}`, "wrong");
+      finir();
+    });
+    solution.addEventListener("click", () => {
+      action.fields.forEach((field, index) => { inputs[index].value = format(field); inputs[index].classList.add("is-ok"); marks[index].textContent = "solution"; });
+      setFeedback(`Solution montrée. ${escapeHtml(action.explain)}`, "correct");
+      finir();
+    });
+  }
+
   function renderAction(step) {
     const action = step.action;
     if (!action) { els.actionPanel.innerHTML = ""; markReady(); return; }
@@ -251,19 +312,21 @@
     if (action.type === "dual-range") renderDualRange(action, step);
     if (action.type === "match") renderMatch(action);
     if (action.type === "sequence") renderSequence(action);
+    if (action.type === "calc") renderCalc(action, step);
   }
 
   function showExplanation(step) {
-    const guide = step.action?.explain || step.text;
+    const guide = step.action?.avant || step.action?.explain || step.text;   /* « avant » : ce qu’on lit avant d’essayer, sans la réponse (étapes à faire seul) */
     els.scene.classList.add("is-demonstrating");
     els.actionPanel.innerHTML = `<div class="explain-first"><p class="lesson-explanation"><strong>Ce qu’il faut comprendre :</strong> ${escapeHtml(guide)}</p><p class="method">Le dessin complet reste visible. L’animation met les repères en évidence ; le texte donne la même information.</p><button type="button" class="primary" id="tryStep">Manipuler avec aide</button></div>`;
-    $("#tryStep").addEventListener("click", () => { els.scene.classList.remove("is-demonstrating"); renderAction(step); });
+    $("#tryStep").addEventListener("click", () => { els.scene.classList.remove("is-demonstrating"); renderAction(step); interagi = false; });
   }
 
   function renderLesson() {
     stopSpeech("");
     const step = config.steps[current];
     stepReady = false;
+    interagi = false;
     els.stepKicker.textContent = `Station ${config.code} · ${step.kicker}`;
     els.stepTitle.textContent = step.title;
     els.stepText.textContent = step.text;
@@ -437,6 +500,7 @@
   window.addEventListener("pagehide", () => stopSpeech(""));
   window.addEventListener("beforeunload", () => stopSpeech(""));
 
+  ["pointerdown", "keydown", "input"].forEach((nom) => els.actionPanel.addEventListener(nom, () => { interagi = true; }, true));
   installVoice();
   render();
 })();

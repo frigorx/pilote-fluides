@@ -1,0 +1,110 @@
+{
+  "id": "embouage",
+  "title": "Embouage et désembouage : boues, filtre, pot à boues",
+  "code": "E7+a",
+  "lines": [
+    "E"
+  ],
+  "status": "SATELLITE E7+a — EN COURS DE RELECTURE",
+  "version": "2026-10-19-n7-r1",
+  "referentiel": [
+    {
+      "formation": "Bac Pro MFER 2028",
+      "code": "S4.3.4",
+      "libelle": "Les notions de traitements des eaux",
+      "source": "C:/git/HAL-v3/donnees/referentiels/peda/BAC_MFER_2028.json (savoirs, parent S4.3 « les réseaux hydrauliques »)"
+    }
+  ],
+  "levels": {
+    "CAP": {
+      "objective": "Reconnaître des boues et le filtre d’un circuit.",
+      "learn": [
+        "Dire ce qu’est l’embouage.",
+        "Nommer les trois origines des boues.",
+        "Repérer un filtre et ses deux robinets."
+      ]
+    },
+    "TP": {
+      "objective": "Expliquer d’où viennent les boues et choisir un remède avec sa limite.",
+      "learn": [
+        "Relier oxygène, rouille, boues et effets.",
+        "Nommer cinq remèdes et la limite de chacun.",
+        "Dire pourquoi un filtre se pose avec deux robinets."
+      ],
+      "prompt": "Relier cause, effet et remède sans oublier la limite du remède."
+    },
+    "BTS": {
+      "objective": "Comparer les remèdes et justifier leur limite.",
+      "learn": [
+        "Citer l’ordre de grandeur « 1 g d’oxygène, presque 4 g de rouille ».",
+        "Dire à quel maillon de la chaîne agit chaque remède.",
+        "Choisir un filtre selon le fluide, la pression et la température."
+      ],
+      "prompt": "Choisir et justifier un traitement de l’embouage."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "TECHNOLOGIE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Chaîne de causes et choix de remède",
+    "rule": "Cinq étapes : origines, oxygène et rouille, chaîne de causes à remettre dans l’ordre, cinq remèdes, filtre isolable.",
+    "success": "Réponses justes ou solution montrée : aucun score.",
+    "feedback": "Explication après chaque choix, jamais la couleur seule."
+  },
+  "virtualPractice": {
+    "description": "Lecture de schémas de principe : causes de l’embouage, remèdes, filtre isolable.",
+    "measures": [
+      "oxygène entré (g)",
+      "rouille formée (ordre de grandeur)"
+    ],
+    "controls": [
+      "quantité d’oxygène"
+    ],
+    "limits": [
+      "ordre de grandeur de la fiche (presque 4 g de rouille pour 1 g d’oxygène)",
+      "aucun dimensionnement de filtre ni de désemboueur",
+      "aucune intervention réelle sur un circuit"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "dimensions": [
+      "identifier",
+      "relier",
+      "choisir"
+    ],
+    "showsExplainedCorrection": true,
+    "retainedQuestionBank": false
+  },
+  "sources": [
+    "Fiche technique n° 6 du Centre du Cuivre « Les canalisations en cuivre comme moyen de lutter contre l’embouage des installations » (06_embouage.pdf, fonds Bac MFER)",
+    "Banc hydraulique HP10 : documentation du désemboueur SPIRO et du filtre à tamis 33.42 (fonds ERM, via le RAG)",
+    "SOURCES.md"
+  ],
+  "assets": [
+    "assets/pompe_debit_variable.svg",
+    "assets/vanne_manuelle.svg",
+    "assets/filtre_hydraulique.svg (symboles de la bibliothèque commune, copies sans modification : voir SOURCES.md)"
+  ],
+  "architectureVersion": "2026-10-19-satellite-eau-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "origines des boues",
+      "oxygène et rouille",
+      "chaîne de causes",
+      "cinq remèdes",
+      "filtre isolable"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne E (la station est un satellite de Sécurité)"
+  }
+}

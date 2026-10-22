@@ -1,0 +1,111 @@
+{
+  "id": "qualite-eau",
+  "title": "Adoucisseur, inhibiteur, qualité de l’eau d’un circuit",
+  "code": "E7+b",
+  "lines": [
+    "E"
+  ],
+  "status": "SATELLITE E7+b — EN COURS DE RELECTURE",
+  "version": "2026-10-19-n7-r1",
+  "referentiel": [
+    {
+      "formation": "Bac Pro MFER 2028",
+      "code": "S4.3.4",
+      "libelle": "Les notions de traitements des eaux",
+      "source": "C:/git/HAL-v3/donnees/referentiels/peda/BAC_MFER_2028.json (savoirs, parent S4.3 « les réseaux hydrauliques »)"
+    }
+  ],
+  "levels": {
+    "CAP": {
+      "objective": "Dire ce qu’est la dureté de l’eau et à quoi sert un adoucisseur.",
+      "learn": [
+        "Nommer le TH et le degré français.",
+        "Citer un endroit où le tartre se dépose.",
+        "Dire que l’adoucisseur retire calcium et magnésium."
+      ]
+    },
+    "TP": {
+      "objective": "Suivre le cycle d’un adoucisseur et régler une dureté résiduelle.",
+      "learn": [
+        "Classer une eau d’après son TH.",
+        "Dire ce que fait la résine au service et au saumurage.",
+        "Régler le by-pass pour obtenir 7 à 10 °f."
+      ],
+      "prompt": "Atteindre 7 à 10 °f au mélange et dire pourquoi."
+    },
+    "BTS": {
+      "objective": "Justifier un traitement d’eau : adoucissement, dureté résiduelle, inhibiteur.",
+      "learn": [
+        "Relier TH du mélange et part d’eau dure (proportionnalité).",
+        "Citer les règles du cours : eau non traitée disponible, clapet de non-retour, saumure déconnectée.",
+        "Justifier un plan de contrôle TH, pH, inhibiteur."
+      ],
+      "prompt": "Choisir et justifier un réglage et une surveillance."
+    }
+  },
+  "modalities": [
+    "IDENTIFICATION",
+    "TECHNOLOGIE",
+    "CALCUL",
+    "RÉGLAGE",
+    "EXPLICATION",
+    "MANIPULATION GUIDÉE",
+    "SYNTHÈSE"
+  ],
+  "game": {
+    "type": "Règle de dureté et réglage du by-pass",
+    "rule": "Cinq étapes : dureté, tartre, cycle de l’adoucisseur, réglage de la dureté résiduelle, mesures de l’eau d’un circuit.",
+    "success": "Réglage dans la plage 7 à 10 °f et réponses justes, ou solution montrée : aucun score.",
+    "feedback": "Mot (trop doux, dans la plage, trop dur) et trait, jamais la couleur seule."
+  },
+  "virtualPractice": {
+    "description": "Modèle de mélange eau adoucie (0 °f) et eau dure par le by-pass d’un adoucisseur.",
+    "measures": [
+      "TH (°f)",
+      "part d’eau dure (%)",
+      "TH du mélange (°f)"
+    ],
+    "controls": [
+      "TH du réseau",
+      "part du by-pass"
+    ],
+    "limits": [
+      "modèle linéaire à eau adoucie parfaite (0 °f)",
+      "aucune valeur de pH ni de concentration d’inhibiteur : le fonds n’en source aucune, la notice fait foi",
+      "aucun réglage réel d’adoucisseur"
+    ]
+  },
+  "assessment": {
+    "mode": "TRAINING_ONLY",
+    "scoredInStation": false,
+    "finalEvaluationLocation": "LINE_FINAL_STATION",
+    "retainedQuestionBank": false,
+    "dimensions": [
+      "classer",
+      "ordonner",
+      "régler",
+      "choisir"
+    ],
+    "showsExplainedCorrection": true
+  },
+  "sources": [
+    "L’adoucisseur.doc, TP adoucisseur.doc, questionnaire adoucisseur.doc (fonds CAP IFCA)",
+    "Fiches techniques n° 2, n° 6 et n° 12 du Centre du Cuivre (fonds Bac MFER)",
+    "SOURCES.md"
+  ],
+  "assets": [],
+  "architectureVersion": "2026-10-19-satellite-eau-v1",
+  "formativeJourney": {
+    "stepCount": 5,
+    "sequence": [
+      "dureté",
+      "tartre",
+      "adoucisseur",
+      "réglage",
+      "mesures du circuit"
+    ],
+    "explanationBeforeAction": true,
+    "scoredInStation": false,
+    "finalEvaluationLocation": "station Évaluation de fin de ligne E (la station est un satellite de Sécurité)"
+  }
+}

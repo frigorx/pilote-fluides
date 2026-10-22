@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>HydroMétro · Station</title>
+  <link rel="stylesheet" href="station.css?v=20261022-eau">
+  <script src="../../../moteur/animations.js?v=c71a0f27da"></script>
+  <script src="../../../moteur/voix-index.js?v=20261018-tom"></script>
+  <script src="../../../moteur/prononciation.js?v=20261004-2038"></script>
+  <script src="../../../moteur/voix.js?v=20261004-2038"></script>
+  <script src="../../../moteur/reglage-voix.js?v=20261004-2038"></script>
+<script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="hydrometro/index.html" data-reseau-nom="💧 HydroMétro"></script>
+</head>
+<body>
+  <a class="skip-link" href="#stationMain">Aller à l’activité</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand" aria-label="inerweb.fr, HydroMétro">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span><strong>HydroMétro</strong><small>Pour aller plus loin · Sécurité</small></span>
+      </div>
+      <div class="level-switch" role="group" aria-label="Profondeur pédagogique">
+        <button type="button" class="level-btn" data-level="CAP" aria-pressed="false">CAP</button><button type="button" class="level-btn is-active" data-level="TP" aria-pressed="true">Bac pro</button>
+        <button type="button" class="level-btn" data-level="BTS" aria-pressed="false">BTS</button>
+      </div>
+      <a class="plan-link" href="../../index.html#visited=securite" aria-label="Retour au plan HydroMétro">Plan</a>
+    </header>
+
+    <nav class="progress" id="progress" aria-label="Progression de la station"></nav>
+
+    <main id="stationMain" class="station-main" tabindex="-1">
+      <section class="lesson-card" aria-labelledby="stepTitle">
+        <div class="lesson-copy">
+          <p class="kicker" id="stepKicker"></p>
+          <h1 id="stationTitle"></h1>
+          <p class="codes-ref codes-haut"><span class="statut">En cours de relecture</span>Sert notamment pour : <strong>Bac Pro MFER 2028</strong> — <strong>S4.3.4</strong> Les notions de traitements des eaux</p>
+          <h2 id="stepTitle" tabindex="-1"></h2>
+          <p class="step-text" id="stepText"></p>
+          <div class="level-note" id="levelNote"></div>
+          <div class="action-panel" id="actionPanel" aria-live="polite"></div>
+        </div>
+        <div class="scene-panel">
+          <div id="scene" class="scene" aria-live="polite"></div>
+          <p class="scene-equivalent" id="sceneEquivalent"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottom-bar">
+      <div class="pied-gauche">
+        <p class="limit"><strong>Limite :</strong> simulation virtuelle. Elle ne remplace ni intervention réelle, ni procédure du site, ni validation certificative.</p>
+        <p class="codes-ref codes-bas"><span class="statut">En cours de relecture</span>Sert notamment pour : <strong>Bac Pro MFER 2028</strong> — <strong>S4.3.4</strong> Les notions de traitements des eaux</p>
+      </div>
+      <div class="nav-actions">
+        <button type="button" id="prevBtn" class="secondary">Retour</button>
+        <span id="stepCount" aria-live="polite"></span>
+        <button type="button" id="nextBtn" class="primary">Continuer</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../_commun/ecoulement.js?v=20261004-2038"></script>
+  <script src="content.js?v=20261022-eau"></script>
+  <script src="../_commun/formative-engine.js?v=20261022-eau"></script>
+  <script src="../../assets/logo-entete.js" defer></script>
+  <script src="../../assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" data-prototype defer></script>
+  <script src="../../../moteur/prof-vocal.js?v=20261017-voix"></script>
+</body>
+</html>
