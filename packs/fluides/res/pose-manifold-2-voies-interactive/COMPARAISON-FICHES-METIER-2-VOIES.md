@@ -47,9 +47,9 @@ La source propose, en étape 6 bis, d’ouvrir la BP installation en marche pour
 
 ### Fiche 06 — station de récupération
 
-Le principe du trajet est conservé, mais les positions des sélecteurs, la séquence d’auto-purge, les critères de fin et la masse admissible de la bouteille ne sont pas inventés. Ils dépendent de la notice de la station, de la bouteille et du fluide du plateau.
+Le principe du trajet est conservé, mais les positions des sélecteurs, la séquence d’auto-purge et les critères de fin ne sont pas inventés. Ils dépendent de la notice de la station, de la bouteille et du fluide du plateau. Pour la bouteille, le jeu rappelle seulement de ne jamais dépasser le taux de remplissage maximal inscrit sur son étiquette (aucune valeur chiffrée inventée).
 
-À valider : modèle de station, raccords/deux tés réels, mode de purge, critère de fin et contrôle de remplissage de la bouteille.
+À valider : modèle de station, raccords/deux tés réels, mode de purge et critère de fin.
 
 ## Règles transversales ajoutées ou précisées
 

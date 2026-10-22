@@ -412,6 +412,11 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .topbar { border-radius: 10px; }
   .course-name { font-size: 15px; }
   .brand-mark { width: 31px; height: 31px; border-width: 2px; font-size: 12px; }
+  .brand svg { width: 110px; height: auto; }
+  .course-app { grid-template-rows: auto 34px minmax(0, 1fr) 54px; }
+  .topbar { flex-wrap: wrap; }
+  .course-name { flex: 1 1 0; }
+  .tools { flex: 0 1 auto; flex-wrap: wrap; margin-left: auto; }
   .tool-button { font-size: 0; width: 33px; padding: 0; }
   .tool-button::first-letter { font-size: 15px; }
   #readButton::after { content: "▶"; font-size: 14px; }
@@ -511,7 +516,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"isochore","order":8,"title":"L’isochore","short":"Isochore","level":"approfondissement","symbol":"v = constante","goal":"Reconnaître les états de même volume massique.","discover":{"title":"Même volume massique","body":"Une isochore relie les points où le volume massique v reste constant. Le volume massique est le volume occupé par un kilogramme de fluide, exprimé en m³/kg.","remember":"ISOchore : même volume massique v.","narration":"Le volume massique, c'est la place qu'occupe un kilogramme de fluide, exprimée en mètres cubes par kilogramme. Une isochore rassemble tous les points où cette place reste la même. Chaque point de la ligne est un état du fluide, et tous ces états ont le même volume massique. Sur le schéma, elle est tracée en trait mixte. Le préfixe iso veut dire même : ici, même volume massique. Vous verrez ensuite dans quelle zone du diagramme on les repère surtout."},"function":{"title":"Une famille surtout visible côté vapeur","body":"Les isochores forment généralement un réseau de courbes dans la zone vapeur. Leur pente les distingue des isobares horizontales et des isenthalpes verticales.","terrain":"Lien métier : comprendre comment la masse volumique de la vapeur évolue avec l’état thermodynamique.","narration":"C'est du côté vapeur que cette famille se remarque le plus : les isochores y dessinent, en général, tout un réseau de courbes. Pour ne pas les confondre avec d'autres lignes, leur inclinaison est le bon critère. Une isobare est horizontale, une isenthalpe verticale, et l'isochore, elle, penche. Sur le chantier, ces lignes aident à suivre l'évolution de la masse volumique de la vapeur selon son état thermodynamique. Les questions du module prennent le relais."},"quiz":[{"question":"Que conserve une isochore ?","choices":["Le volume massique v","Le titre x","La température T"],"answer":0,"feedback":"Une isochore relie les états de même volume massique."},{"question":"Quelle unité convient au volume massique ?","choices":["m³/kg","bar absolu","kJ/kg"],"answer":0,"feedback":"Le volume massique s’exprime en mètres cubes par kilogramme."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"isochore","order":8,"title":"L’isochore","short":"Isochore","level":"approfondissement","symbol":"v = constante","goal":"Reconnaître les états de même volume massique.","discover":{"title":"Même volume massique","body":"Une isochore relie les points où le volume massique v reste constant. Le volume massique est le volume occupé par un kilogramme de fluide, exprimé en m³/kg.","remember":"ISOchore : même volume massique v.","narration":"Le volume massique, c'est la place qu'occupe un kilogramme de fluide, exprimée en mètres cubes par kilogramme. Une isochore rassemble tous les points où cette place reste la même. Chaque point de la ligne est un état du fluide, et tous ces états ont le même volume massique. Sur le schéma, elle est tracée en trait mixte. Le préfixe iso veut dire même : ici, même volume massique. Vous verrez ensuite dans quelle zone du diagramme on les repère surtout."},"function":{"title":"Une famille surtout visible côté vapeur","body":"Les isochores forment généralement un réseau de courbes dans la zone vapeur. Leur pente les distingue des isobares horizontales et des isenthalpes verticales.","terrain":"Lien métier : comprendre comment la masse volumique de la vapeur évolue avec l’état thermodynamique.","narration":"C'est du côté vapeur que cette famille se remarque le plus : les isochores y dessinent, en général, tout un réseau de courbes. Pour ne pas les confondre avec d'autres lignes, leur inclinaison est le bon critère. Une isobare est horizontale, une isenthalpe verticale, et l'isochore, elle, penche. Sur le chantier, ces lignes aident à suivre l'évolution de la masse volumique de la vapeur selon son état thermodynamique. Les questions du module prennent le relais."},"quiz":[{"question":"Que conserve une isochore ?","choices":["Le titre x","Le volume massique v","La température T"],"answer":1,"feedback":"Une isochore relie les états de même volume massique."},{"question":"Quelle unité convient au volume massique ?","choices":["m³/kg","bar absolu","kJ/kg"],"answer":0,"feedback":"Le volume massique s’exprime en mètres cubes par kilogramme."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — L’isochore","fixedIds":["isochore"]};
   </script>
   <script>(() => {
@@ -596,14 +601,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   function scoreFor(module) {
     return resultFor(module).answers.filter((answer) => answer?.correct).length;
-  }
-
-  function totalScore() {
-    return selectedModules.reduce((sum, module) => sum + scoreFor(module), 0);
-  }
-
-  function possibleScore() {
-    return selectedModules.reduce((sum, module) => sum + module.quiz.length, 0);
   }
 
   function captionFor(module) {
@@ -807,12 +804,12 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       dom.quizArea.innerHTML = `
         <div class="${perfect ? "remember" : "terrain"}">
           <strong>${perfect ? "✓ Acquis" : "À revoir"} :</strong>
-          ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${module.quiz.length}.
+          ${perfect ? "les deux réponses sont justes." : "relisez le repère ci-dessous."}
         </div>
         <p>${escapeHtml(module.discover.remember)}</p>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = state.stageIndex === stages.length - 2 ? "Voir le bilan →" : "Module suivant →";
-      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${module.quiz.length}`, module.discover.remember);
+      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, perfect ? "Les deux réponses sont justes" : "Relisez le repère", module.discover.remember);
       return;
     }
 
@@ -868,19 +865,17 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   }
 
   function renderFinal() {
-    const score = totalScore();
-    const possible = possibleScore();
     const toReview = selectedModules.filter((module) => scoreFor(module) < module.quiz.length);
     dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
     dom.progressModule.textContent = "Bilan de révision";
-    dom.moduleState.textContent = "Bilan · entraînement sans valeur d’examen";
+    dom.moduleState.textContent = "Bilan · entraînement";
     dom.lessonKicker.textContent = "Je fais le point";
     dom.lessonTitle.textContent = toReview.length ? "Vous savez quoi revoir" : "Tous les repères sont confirmés";
     dom.diagram.innerHTML = diagramSvg("overview");
     dom.visualCaption.textContent = captionFor(null);
     dom.lessonContent.innerHTML = `
       <div class="${toReview.length ? "terrain" : "remember"}">
-        <strong>Résultat :</strong> ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${possible}.
+        <strong>Résultat :</strong> ${toReview.length ? "des repères sont à revoir." : "tous les repères sont confirmés."}
       </div>
       ${toReview.length
         ? `<p><strong>Modules à reprendre :</strong> ${toReview.map((module) => escapeHtml(module.short)).join(" · ")}</p>`
@@ -891,7 +886,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     dom.nextButton.disabled = false;
     dom.nextButton.textContent = "Recommencer ↻";
     dom.backButton.disabled = false;
-    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${possible}`, toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
+    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, "", toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
   }
 
   function goNext() {

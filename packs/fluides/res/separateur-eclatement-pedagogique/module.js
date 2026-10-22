@@ -1,6 +1,5 @@
 window.OIL_MODULE = {
   id: "separateur-eclatement-pedagogique",
-  narration: "La mission ne change pas, c'est le moyen qui change. Vous savez où se place un séparateur : sur le refoulement, entre le compresseur et le condenseur. Vous savez ce qu'il fait : retirer au gaz une partie de l'huile qu'il emporte, et la renvoyer vers le carter ou vers une réserve. Ce que la station précédente résumait en une phrase — ralentir, changer de direction, traverser un élément de coalescence — recouvre en réalité deux familles d'appareils bien distinctes, que vous rencontrerez toutes les deux. Et aucune des deux ne récupère toute l'huile : dans les deux cas, le retour naturel des tuyauteries reste nécessaire.",
   title: "Le séparateur à éclatement",
   subtitle: "LE CIRCUIT D’HUILE · STATION 8",
   codes: ["1.05", "6.05", "9.07"],
@@ -12,7 +11,7 @@ window.OIL_MODULE = {
   lessons: [
     {
       id: "rappel",
-      narration: "Voici les deux familles. Dans un séparateur à coalescence, le gaz traverse une cartouche filtrante : les fines gouttelettes s'y accrochent, se rassemblent, grossissent, et finissent par tomber. Cette cartouche s'use et se remplace — c'est une pièce d'entretien à surveiller. Et tant qu'elle travaille, elle freine aussi le gaz : c'est sa perte de charge. Dans un séparateur à éclatement, il n'y a rien à traverser : le gaz est projeté par une buse sur une plaque de choc placée en face. Aucune pièce à remplacer, et une perte de charge faible. Le repère qui ne trompe pas : cherchez la cartouche. Si elle existe, c'est un coalescent. Le reste du raccordement est identique — d'où l'importance de nommer la famille avant de décrire le fonctionnement.",
+      narration: "La mission ne change pas, c'est le moyen qui change. Vous savez où se place un séparateur : sur le refoulement, entre le compresseur et le condenseur. Vous savez ce qu'il fait : retirer au gaz une partie de l'huile qu'il emporte, et la renvoyer vers le carter ou vers une réserve. Ce que la station précédente résumait en une phrase — ralentir, changer de direction, traverser un élément de coalescence — recouvre en réalité deux familles d'appareils bien distinctes, que vous rencontrerez toutes les deux. Et aucune des deux ne récupère toute l'huile : dans les deux cas, le retour naturel des tuyauteries reste nécessaire.",
       short: "Rappel",
       kicker: "Station 1 · Rappel",
       recall: true,
@@ -27,7 +26,7 @@ window.OIL_MODULE = {
     },
     {
       id: "familles",
-      narration: "Suivons le jet, de la buse jusqu'à la plaque. Le gaz de refoulement entre par une buse de petite section, donc à grande vitesse, et frappe une plaque placée juste en face. Les gouttes s'écrasent sur cette plaque et s'y rassemblent, tandis que le gaz change brutalement de direction et repart vers la sortie haute. Retenez bien la mécanique, parce qu'elle explique tout le reste : l'huile ne tombe pas parce qu'elle a été filtrée. Elle tombe parce qu'elle a été arrêtée net par un obstacle. Il n'y a aucun média, aucune grille, aucun tamis dans cet appareil.",
+      narration: "Voici les deux familles. Dans un séparateur à coalescence, le gaz traverse une cartouche filtrante : les fines gouttelettes s'y accrochent, se rassemblent, grossissent, et finissent par tomber. Cette cartouche s'use et se remplace — c'est une pièce d'entretien à surveiller. Et tant qu'elle travaille, elle freine aussi le gaz : c'est sa perte de charge. Dans un séparateur à éclatement, il n'y a rien à traverser : le gaz est projeté par une buse sur une plaque de choc placée en face. Aucune pièce à remplacer, et une perte de charge faible. Le repère qui ne trompe pas : cherchez la cartouche. Si elle existe, c'est un coalescent. Le reste du raccordement est identique — d'où l'importance de nommer la famille avant de décrire le fonctionnement.",
       short: "Familles",
       kicker: "Station 2 · Les deux familles",
       title: "À coalescence, ou à éclatement",
@@ -42,7 +41,7 @@ window.OIL_MODULE = {
     },
     {
       id: "choc",
-      narration: "Ce qui sépare vraiment, c'est la chute de vitesse. La buse a une petite section de passage : le gaz y file. Le corps du séparateur a une section bien plus grande : la vitesse s'y effondre. Notez que le débit, lui, ne change pas d'un point à l'autre — c'est la section qui change, et la vitesse avec elle. Or l'huile est beaucoup plus dense que le gaz : elle garde son élan quand le gaz ralentit et tourne. Elle continue donc tout droit, frappe la plaque, puis ruisselle vers le fond. Un conseil : ne retenez aucune vitesse « normale » par cœur. Les valeurs de passage se lisent dans la notice de l'appareil et dans l'étude de l'installation.",
+      narration: "Suivons le jet, de la buse jusqu'à la plaque. Le gaz de refoulement entre par une buse de petite section, donc à grande vitesse, et frappe une plaque placée juste en face. Les gouttes s'écrasent sur cette plaque et s'y rassemblent, tandis que le gaz change brutalement de direction et repart vers la sortie haute. Retenez bien la mécanique, parce qu'elle explique tout le reste : l'huile ne tombe pas parce qu'elle a été filtrée. Elle tombe parce qu'elle a été arrêtée net par un obstacle. Il n'y a aucun média, aucune grille, aucun tamis dans l'appareil montré ici.",
       short: "Le choc",
       kicker: "Station 3 · Animation guidée",
       title: "Suivre le jet, de la buse à la plaque",
@@ -52,11 +51,11 @@ window.OIL_MODULE = {
         "Les gouttes s’écrasent sur la plaque et s’y rassemblent ; le gaz, lui, change brutalement de direction et repart vers la sortie haute."
       ],
       box: { type: "key", text: "L’huile ne tombe pas parce qu’elle est filtrée : elle tombe parce qu’elle a été arrêtée net par un obstacle." },
-      visual: { kind: "eclatementFilmSlot", title: "Animation guidée : le choc et l’éclatement", label: "Animation inerWeb adaptée du projet Claude Design « Séparateur à éclatement », dix scènes commandées par l’élève", caption: "Adaptation complète et hors ligne du projet Claude fourni par Franck : lecture manuelle, texte visible et symboles de la bibliothèque technique inerWeb." }
+      visual: { kind: "eclatementFilmSlot", title: "Animation guidée : le choc et l’éclatement", label: "Animation guidée du séparateur à éclatement, dix scènes commandées par l’élève", caption: "Touchez Suivant pour passer à la scène d’après, Précédent pour revenir, ou Lire pour les voir défiler." }
     },
     {
       id: "vitesse",
-      narration: "Lequel choisir, et pourquoi ? Les deux ne se valent pas. Le coalescent sépare mieux — c'est le plus efficace des deux. Mais il coûte plus cher, il freine davantage le gaz, et sa cartouche est une pièce d'entretien récurrente. L'éclatement est simple et robuste : rien à remplacer, une perte de charge faible et stable, un prix modeste. Sa limite est réelle : le brouillard le plus fin le traverse. En France, l'éclatement équipe le plus souvent les installations classiques ; d'autres pays européens emploient plus largement le coalescent, précisément pour son rendement. Un cas mérite d'être connu : sur les centrales au dioxyde de carbone, le coalescent s'impose. La raison est technique — la densité du dioxyde de carbone se rapproche de celle de l'huile, et les gouttelettes y sont très fines. Or l'éclatement sépare grâce à l'écart de densité : quand cet écart s'amenuise, son moteur faiblit. Le choix se fait donc sur l'installation complète, jamais sur le seul prix de l'appareil.",
+      narration: "Ce qui sépare vraiment, c'est la chute de vitesse. La buse a une petite section de passage : le gaz y file. Le corps du séparateur a une section bien plus grande : la vitesse s'y effondre. Notez que le débit, lui, ne change pas d'un point à l'autre — c'est la section qui change, et la vitesse avec elle. Or l'huile est beaucoup plus dense que le gaz : elle garde son élan quand le gaz ralentit et tourne. Elle continue donc tout droit, frappe la plaque, puis ruisselle vers le fond. Un conseil : ne retenez aucune vitesse « normale » par cœur. Les valeurs de passage se lisent dans la notice de l'appareil et dans l'étude de l'installation.",
       short: "Vitesse",
       kicker: "Station 4 · Ce qui sépare",
       title: "Ce qui sépare, c’est la chute de vitesse",
@@ -70,14 +69,15 @@ window.OIL_MODULE = {
     },
     {
       id: "choisir",
+      narration: "Lequel choisir, et pourquoi ? Les deux ne se valent pas. Le coalescent sépare mieux — c'est le plus efficace des deux. Mais il coûte plus cher, il freine davantage le gaz, et sa cartouche est une pièce d'entretien récurrente. L'éclatement est simple et robuste : rien à remplacer, une perte de charge faible et stable, un prix modeste. Sa limite est réelle : le brouillard le plus fin le traverse. Sur le terrain, on rencontre les deux : le coalescent est choisi pour son rendement de séparation, l'éclatement pour sa simplicité. Un cas mérite d'être connu : sur les centrales au dioxyde de carbone, le coalescent est souvent préféré. La raison est technique — la densité du dioxyde de carbone se rapproche de celle de l'huile, et les gouttelettes y sont très fines. Or l'éclatement sépare grâce à l'écart de densité : quand cet écart s'amenuise, son moteur faiblit. Le choix se fait donc sur l'installation complète, jamais sur le seul prix de l'appareil.",
       short: "Choisir",
       kicker: "Station 5 · Décision",
       title: "Lequel choisir, et pourquoi",
       lead: "Les deux ne se valent pas. Le coalescent sépare mieux : c’est le plus efficace des deux. Mais il coûte plus cher, il freine davantage le gaz, et sa cartouche est une pièce d’entretien.",
       details: [
         "L’éclatement, lui, est simple et robuste : rien à remplacer, une perte de charge faible et stable, un prix modeste. Sa limite est réelle : le brouillard le plus fin le traverse.",
-        "En France, l’éclatement équipe le plus souvent les installations classiques ; d’autres pays européens emploient plus largement le coalescent, précisément pour son rendement de séparation.",
-        "Sur les centrales au CO₂, le coalescent s’impose. La raison est technique : la densité du CO₂ se rapproche de celle de l’huile et les gouttelettes sont très fines. Or l’éclatement sépare grâce à l’écart de densité — ici cet écart s’amenuise, et son moteur faiblit."
+        "Sur le terrain, on rencontre les deux : le coalescent est choisi pour son rendement de séparation, l’éclatement pour sa simplicité.",
+        "Sur les centrales au CO₂, le coalescent est souvent préféré. La raison est technique : la densité du CO₂ se rapproche de celle de l’huile et les gouttelettes sont très fines. Or l’éclatement sépare grâce à l’écart de densité — ici cet écart s’amenuise, et son moteur faiblit."
       ],
       box: { type: "exam", text: "Le choix se fait sur l’installation complète — fluide, architecture, longueur des lignes, plage de débit — jamais sur le seul prix de l’appareil." },
       visual: { kind: "separatorChoice", title: "Lire l’installation avant de choisir", label: "Un poste à lignes courtes appelle un séparateur à éclatement ; une centrale à lignes longues appelle un coalescent" }
@@ -120,11 +120,12 @@ window.OIL_MODULE = {
       code: "6.05 · 9.07"
     },
     {
-      prompt: "Pourquoi le coalescent s’impose-t-il sur les centrales au CO₂ ?",
-      options: ["Sa densité approche celle de l’huile", "Il attaque la plaque de choc en acier", "Il circule beaucoup plus lentement"],
+      prompt: "Pourquoi le coalescent est-il souvent préféré sur les centrales au CO₂ ?",
+      options: ["La densité du CO₂ approche celle de l’huile", "Le CO₂ attaque la plaque de choc en acier", "Le CO₂ circule beaucoup plus lentement"],
       correct: 0,
-      why: "L’éclatement sépare grâce à l’écart de densité entre le gaz et l’huile. En CO₂ cet écart s’amenuise, et les gouttelettes sont très fines : le coalescent, qui les rassemble au lieu de compter sur leur inertie, reprend l’avantage. Le CO₂ n’attaque pas l’acier, et il ne circule pas plus lentement.",
-      code: "1.05 · 6.05"
+      why: "L’éclatement sépare grâce à l’écart de densité entre le gaz et l’huile. En CO₂ cet écart s’amenuise et les gouttelettes sont très fines : le coalescent, qui les rassemble, reprend l’avantage. Le CO₂ n’attaque pas l’acier, et il ne circule pas plus lentement.",
+      code: "1.05 · 6.05",
+      sansEnregistrement: true
     }
   ],
   sources: [

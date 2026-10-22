@@ -8,7 +8,6 @@
     phase: "lesson",
     lesson: 0,
     quiz: 0,
-    score: 0,
     answered: false,
     answers: [],
     done: new Set(),
@@ -195,7 +194,7 @@
   }
 
   function libraryPressureSwitch(x, y, width, height, label) {
-    return '<g role="img" aria-label="' + esc(label || "Symbole de pressostat de la bibliothèque technique inerWeb") + '">' +
+    return '<g role="img" aria-label="' + esc(label || "Symbole de pressostat") + '">' +
       '<svg x="' + x + '" y="' + y + '" width="' + width + '" height="' + height + '" viewBox="-37 -30 50 60" overflow="visible">' +
       '<line x1="-3" y1="0" x2="-17" y2="0" stroke="#000" stroke-width="1" stroke-dasharray="4,2"/>' +
       '<circle cx="-17" cy="0" r="2.5" fill="none" stroke="#000" stroke-width="1"/>' +
@@ -329,10 +328,10 @@
     body += '<path d="M74 202 V340 H296" fill="none" stroke="#1b3a63" stroke-width="7" stroke-linejoin="round" marker-end="url(#fluid-arrow)"/>';
     body += '<path d="M401 340 H520 V180 H560" fill="none" stroke="#1b3a63" stroke-width="7" stroke-linejoin="round" marker-end="url(#fluid-arrow)"/>';
     body += libraryAirExchanger(290, 18, 140, 100, "Symbole de l’échangeur à air utilisé comme condenseur");
-    body += libraryExpansionValve(50, 120, 120, 100, "Détendeur thermostatique de la bibliothèque technique inerWeb");
+    body += libraryExpansionValve(50, 120, 120, 100, "Détendeur thermostatique");
     body += libraryAirExchanger(290, 260, 140, 100, "Symbole de l’échangeur à air utilisé comme évaporateur");
     body += '<rect x="548" y="125" width="132" height="120" rx="18" fill="#fff0e9" stroke="#c9451a" stroke-width="3"/>';
-    body += libraryCompressor(552, 137, 124, 92, "Compresseur de la bibliothèque technique inerWeb");
+    body += libraryCompressor(552, 137, 124, 92, "Compresseur");
     body += '<text class="svg-label" x="360" y="18" text-anchor="middle">CONDENSEUR</text>';
     body += '<text class="svg-label" x="110" y="244" text-anchor="middle">DÉTENDEUR</text>';
     body += '<text class="svg-label" x="360" y="378" text-anchor="middle">ÉVAPORATEUR</text>';
@@ -392,7 +391,7 @@
   function visualOilFamiliesHydrocarbon(v) {
     var body = oilFamilyCard(18, "MO", "HUILE MINÉRALE", "raffinage pétrolier", "R22 · HC · R717", "component");
     body += oilFamilyCard(255, "AB", "ALKYLBENZÈNE", "synthèse hydrocarbonée", "R22 · HC · R717", "good-shape");
-    body += oilFamilyCard(492, "PAO", "POLYALPHAOLÉFINE", "synthèse hydrocarbonée", "R717 · HC · cas CO₂", "warn-shape");
+    body += oilFamilyCard(492, "PAO", "POLYALPHAOLÉFINE", "synthèse hydrocarbonée", "R717 · HC", "warn-shape");
     body += '<text class="svg-small" x="360" y="375" text-anchor="middle">Le sigle nomme la famille ; le grade et la référence restent à lire séparément.</text>';
     return svg(v.label, body);
   }
@@ -532,6 +531,29 @@
     return svg(v.label, body);
   }
 
+  /* L'huile vidangée d'un circuit : trois gestes dans l'ordre, puis ce qu'on ne fait jamais. */
+  function visualOilWaste(v) {
+    var steps = [
+      ["1", "VIDANGER", "récipient étanche dédié"],
+      ["2", "ÉTIQUETER", "huile · fluide · date"],
+      ["3", "STOCKER", "en attente de la filière"]
+    ];
+    var body = circuitMarkers() + '<text class="svg-title" x="360" y="38" text-anchor="middle">HUILE CONTAMINÉE · DÉCHET DANGEREUX</text>';
+    steps.forEach(function (step, i) {
+      var x = 22 + i * 236;
+      body += '<rect x="' + x + '" y="70" width="212" height="220" rx="18" fill="' + (i === 2 ? "#e8f6ee" : "#fffdf8") + '" stroke="#1b3a63" stroke-width="3"/>';
+      body += '<circle cx="' + (x + 106) + '" cy="112" r="23" fill="#fff0e9" stroke="#c9451a" stroke-width="3"/><text class="svg-code" x="' + (x + 106) + '" y="120" text-anchor="middle">' + step[0] + '</text>';
+      body += '<text class="svg-title" x="' + (x + 106) + '" y="172" text-anchor="middle">' + step[1] + '</text><text class="svg-small" x="' + (x + 106) + '" y="205" text-anchor="middle">' + step[2] + '</text>';
+      if (i === 0) body += '<rect x="' + (x + 78) + '" y="222" width="56" height="52" rx="8" fill="#eaf2fb" stroke="#1b3a63" stroke-width="2"/>' + oilDrop(x + 106, 252, .5, "");
+      if (i === 1) body += '<rect x="' + (x + 66) + '" y="226" width="80" height="44" rx="6" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><line x1="' + (x + 76) + '" y1="240" x2="' + (x + 136) + '" y2="240" stroke="#b06a00" stroke-width="3"/><line x1="' + (x + 76) + '" y1="252" x2="' + (x + 126) + '" y2="252" stroke="#b06a00" stroke-width="3"/><line x1="' + (x + 76) + '" y1="264" x2="' + (x + 116) + '" y2="264" stroke="#b06a00" stroke-width="3"/>';
+      if (i === 2) body += '<text class="svg-code" x="' + (x + 106) + '" y="258" text-anchor="middle">FILIÈRE AGRÉÉE</text>';
+      if (i < 2) body += '<path d="M' + (x + 212) + ' 180 H' + (x + 234) + '" stroke="#1b3a63" stroke-width="4" marker-end="url(#fluid-arrow)"/>';
+    });
+    body += '<rect x="90" y="320" width="540" height="48" rx="15" fill="#fff0e9" stroke="#c9451a" stroke-width="3"/>';
+    body += '<text class="svg-label" x="360" y="342" text-anchor="middle">JAMAIS MÉLANGÉE À D’AUTRES HUILES</text><text class="svg-small" x="360" y="360" text-anchor="middle">ni reversée dans un bidon propre</text>';
+    return svg(v.label, body);
+  }
+
   function visualRoute(v) {
     var body = arrowMarker();
     /* Le circuit du fluide. */
@@ -541,7 +563,7 @@
        vers compresseur — et l'huile ne bouclait jamais. */
     body += '<path id="oil-loop-route" class="oil-line flowing" d="M546 210 C551 106 466 69 360 69 C254 69 169 106 174 210 C179 311 266 334 360 334 C456 334 541 300 546 210"/>';
     body += '<rect class="accent" x="505" y="145" width="160" height="118" rx="16"/>';
-    body += libraryCompressor(530, 155, 110, 88, "Compresseur de la bibliothèque technique inerWeb");
+    body += libraryCompressor(530, 155, 110, 88, "Compresseur");
     body += '<text class="svg-label" x="585" y="248" text-anchor="middle">COMPRESSEUR</text>';
     body += organe(275, 12, 170, 104, libraryAirExchanger, "CONDENSEUR", "HP");
     body += organe(52, 148, 156, 112, libraryExpansionValve, "DÉTENDEUR", "chute de pression");
@@ -584,7 +606,7 @@
     body += '<path class="oil-line flowing" d="M105 252 L545 181"/>';
     body += oilDrop(235, 222, .65, "bob") + oilDrop(430, 190, .65, "bob");
     body += '<rect class="accent" x="550" y="118" width="135" height="118" rx="16"/>';
-    body += libraryCompressor(568, 125, 102, 82, "Compresseur de la bibliothèque technique inerWeb");
+    body += libraryCompressor(568, 125, 102, 82, "Compresseur");
     body += '<text class="svg-label" x="618" y="220" text-anchor="middle">COMPRESSEUR</text>';
     body += '<text class="svg-title" x="250" y="105" text-anchor="middle">PENTE PRÉVUE PAR LA CONCEPTION</text>';
     body += '<text class="svg-label" x="260" y="132" text-anchor="middle">éviter les poches et guider le film</text>';
@@ -602,7 +624,7 @@
     body += '<text class="svg-label" x="315" y="87">contre-siphon</text>';
     body += '<text class="svg-small" x="315" y="107">si le plan ou la notice le prescrit</text>';
     body += '<rect class="accent" x="550" y="90" width="135" height="118" rx="16"/>';
-    body += libraryCompressor(568, 97, 102, 82, "Compresseur de la bibliothèque technique inerWeb");
+    body += libraryCompressor(568, 97, 102, 82, "Compresseur");
     body += '<text class="svg-label" x="618" y="192" text-anchor="middle">COMPRESSEUR</text>';
     return svg(v.label, body);
   }
@@ -630,7 +652,7 @@
 
   function visualNaturalCircuit(v) {
     var body = arrowMarker();
-    body += libraryAirExchanger(28, 188, 118, 118, "Évaporateur : symbole d’échangeur à air de la bibliothèque technique inerWeb");
+    body += libraryAirExchanger(28, 188, 118, 118, "Évaporateur : symbole d’échangeur à air");
     body += '<text class="svg-label" x="87" y="322" text-anchor="middle">ÉVAPORATEUR</text>';
     body += '<path class="pipe" d="M135 267 L290 290 V318 Q290 350 320 350 Q350 350 350 318 V112 Q350 80 382 80 Q414 80 414 112 V142 H565" marker-end="url(#arrow)"/>';
     body += '<path class="oil-line flowing" d="M147 267 L290 292 V318 Q290 350 320 350 Q350 350 350 318 V116 Q350 84 382 84 Q414 84 414 116 V142 H550"/>';
@@ -641,7 +663,7 @@
     body += '<text class="svg-label" x="435" y="74">contre-siphon selon plan</text>';
     body += '<text class="svg-label" x="355" y="190">colonne</text>';
     body += '<rect class="accent" x="550" y="92" width="140" height="118" rx="16"/>';
-    body += libraryCompressor(570, 99, 102, 82, "Compresseur de la bibliothèque technique inerWeb");
+    body += libraryCompressor(570, 99, 102, 82, "Compresseur");
     body += '<text class="svg-label" x="620" y="194" text-anchor="middle">COMPRESSEUR</text>';
     body += '<text class="svg-title" x="360" y="36" text-anchor="middle">TRACÉ D’ASPIRATION : LIRE LE CHEMIN DE L’HUILE</text>';
     return svg(v.label, body);
@@ -683,11 +705,11 @@
   function visualActive(v) {
     var body = arrowMarker();
     body += '<rect class="accent" x="22" y="86" width="145" height="118" rx="16"/>';
-    body += libraryCompressor(42, 94, 104, 83, "Compresseur de la bibliothèque technique inerWeb");
+    body += libraryCompressor(42, 94, 104, 83, "Compresseur");
     body += '<text class="svg-label" x="95" y="191" text-anchor="middle">COMPRESSEUR</text>';
     body += '<path class="pipe-thin" d="M167 125 H250" marker-end="url(#arrow)"/>';
     body += '<rect class="component" x="250" y="62" width="142" height="176" rx="16"/>';
-    body += libraryOilSeparator(275, 72, 92, 123, "Séparateur d’huile de la bibliothèque technique inerWeb");
+    body += libraryOilSeparator(275, 72, 92, 123, "Séparateur d’huile");
     body += '<text class="svg-label" x="321" y="222" text-anchor="middle">SÉPARATEUR</text>';
     body += '<path class="pipe-thin" d="M392 125 H640" marker-end="url(#arrow)"/>';
     body += '<text class="svg-small" x="510" y="108" text-anchor="middle">gaz vers condenseur</text>';
@@ -710,7 +732,7 @@
   function visualSeparator(v) {
     var body = arrowMarker();
     body += '<rect class="component" x="238" y="45" width="244" height="300" rx="20"/>';
-    body += libraryOilSeparator(270, 62, 180, 240, "Séparateur d’huile de la bibliothèque technique inerWeb");
+    body += libraryOilSeparator(270, 62, 180, 240, "Séparateur d’huile");
     body += '<path d="M75 125 H238" stroke="#1b3a63" stroke-width="10" marker-end="url(#arrow)"/>';
     body += '<path d="M482 125 H645" stroke="#1b3a63" stroke-width="10" marker-end="url(#arrow)"/>';
     body += '<path class="oil-line" d="M360 315 V372" marker-end="url(#arrow)"/>';
@@ -945,11 +967,11 @@
   function visualOilPressureSafety(v) {
     var body = arrowMarker();
     body += '<rect class="accent" x="28" y="118" width="145" height="125" rx="16"/>';
-    body += libraryCompressor(50, 135, 100, 78, "Compresseur de la bibliothèque technique inerWeb");
+    body += libraryCompressor(50, 135, 100, 78, "Compresseur");
     body += '<text class="svg-label" x="100" y="228" text-anchor="middle">COMPRESSEUR</text>';
     body += '<path d="M173 180 H250" stroke="#1b3a63" stroke-width="5" marker-end="url(#arrow)"/>';
     body += '<rect class="component" x="250" y="95" width="190" height="175" rx="18"/>';
-    body += libraryPressureSwitch(292, 118, 110, 118, "Pressostat validé de la bibliothèque technique inerWeb");
+    body += libraryPressureSwitch(292, 118, 110, 118, "Pressostat");
     body += '<text class="svg-label" x="345" y="252" text-anchor="middle">PRESSOSTAT</text>';
     body += '<path d="M440 180 H500" stroke="#1b3a63" stroke-width="5" marker-end="url(#arrow)"/>';
     body += component(500, 118, 175, 125, "CHAÎNE DE SÉCURITÉ", "contacteur ou automate", "warn-shape");
@@ -993,7 +1015,7 @@
 
   function visualEclatementFilmSlot(v) {
     return '<iframe class="claude-eclatement-frame" src="assets/claude-eclatement/index.html?v=20260820m" title="' + esc(v.label) + '"></iframe>' +
-      '<p class="sr-only">Huit scènes commandées par l’élève. Le gaz de refoulement entre par une buse de petite section, à grande vitesse, et frappe une plaque de choc placée en face. Les gouttes d’huile s’y écrasent et s’y rassemblent pendant que le gaz change de direction vers la sortie haute. Dans le corps, la section s’ouvre et la vitesse s’effondre : l’huile, bien plus dense, ne suit plus. Elle ruisselle sur la plaque et la paroi, s’accumule au fond, puis un flotteur commande un pointeau qui la renvoie vers le carter. Le brouillard le plus fin traverse : le rendement reste inférieur à celui d’un séparateur à coalescence.</p>';
+      '<p class="sr-only">Dix scènes commandées par l’élève. Le gaz de refoulement entre par une buse de petite section, à grande vitesse, et frappe une plaque de choc placée en face. Les gouttes d’huile s’y écrasent et s’y rassemblent pendant que le gaz change de direction vers la sortie haute. Dans le corps, la section s’ouvre et la vitesse s’effondre : l’huile, bien plus dense, ne suit plus. Elle ruisselle sur la plaque et la paroi, s’accumule au fond, puis un flotteur commande un pointeau qui la renvoie vers le carter. Le brouillard le plus fin traverse : le rendement reste inférieur à celui d’un séparateur à coalescence.</p>';
   }
 
   /* La chute de vitesse entre la buse et le corps. Les deux disques comparent les
@@ -1156,6 +1178,7 @@
       oilViscosityTemperature: visualOilViscosityTemperature,
       oilMoisture: visualOilMoisture,
       oilAcidTest: visualOilAcidTest,
+      oilWaste: visualOilWaste,
       route: visualRoute,
       drivers: visualDrivers,
       slope: visualSlope,
@@ -1263,7 +1286,7 @@
     ui.previous.disabled = state.quiz === 0;
     ui.next.disabled = true;
     ui.next.textContent = state.quiz === moduleData.quiz.length - 1 ? "Voir le bilan →" : "Question suivante →";
-    ui.status.textContent = "Question " + (state.quiz + 1) + " sur " + moduleData.quiz.length + " · score " + state.score;
+    ui.status.textContent = "Question " + (state.quiz + 1) + " sur " + moduleData.quiz.length;
     Array.prototype.forEach.call(ui.lessonCard.querySelectorAll("[data-answer]"), function (button) {
       button.addEventListener("click", answerQuiz);
     });
@@ -1287,7 +1310,7 @@
     feedback.className = "feedback show " + (good ? "good" : "bad");
     feedback.innerHTML = "<strong>" + (good ? "Correct." : "À revoir.") + "</strong> " + inline(q.why);
     ui.next.disabled = false;
-    ui.status.textContent = "Question " + (state.quiz + 1) + " sur " + moduleData.quiz.length + " · score " + state.score;
+    ui.status.textContent = "Question " + (state.quiz + 1) + " sur " + moduleData.quiz.length;
     if (shouldAnnounce) announce(good ? "Réponse correcte." : "Réponse à revoir.");
   }
 
@@ -1297,23 +1320,33 @@
     var q = moduleData.quiz[state.quiz];
     var picked = Number(event.currentTarget.dataset.answer);
     state.answers[state.quiz] = picked;
-    state.score = state.answers.reduce(function (total, answer, index) {
-      return total + (answer === moduleData.quiz[index].correct ? 1 : 0);
-    }, 0);
     showQuizAnswer(q, picked, true);
   }
 
   function renderSummary() {
-    var total = moduleData.quiz.length;
-    var strong = state.score >= Math.ceil(total * .7);
+    /* Pas de note ni de seuil : le bilan nomme les questions à revoir, avec leur compétence, et y renvoie. */
+    var aRevoir = [];
+    moduleData.quiz.forEach(function (q, index) { if (state.answers[index] !== q.correct) aRevoir.push(index); });
     ui.lessonCard.classList.remove("quiz-mode");
     ui.lessonCard.classList.add("summary-mode");
     var nextLink = moduleData.nextUrl ? '<a class="module-next-link" href="' + esc(moduleData.nextUrl) + '">' + esc(moduleData.nextLabel || "Ouvrir la station suivante") + ' <span aria-hidden="true">→</span></a>' : "";
-    ui.lessonCard.innerHTML = '<section class="copy-panel"><div class="kicker">Bilan du module</div><div class="score-card"><div class="score-number">' + state.score + " / " + total + "</div><h1>" + (strong ? "Les repères essentiels sont en place." : "Une reprise ciblée sera utile.") + '</h1><p class="lead">Ce score est un entraînement. Il ne remplace ni l’épreuve officielle ni l’observation pratique.</p><div class="' + (strong ? "key-box" : "warning-box") + '"><strong>PROCHAINE ACTION · </strong>' + inline(moduleData.nextStep) + "</div>" + nextLink + '</div></section><section class="visual-panel"><h2>La ligne « Circuit d’huile » continue</h2><div class="visual-stage">' + renderVisual(moduleData.summaryVisual || { kind: "route", label: "Synthèse du module" }) + '</div><p class="visual-caption">Le module reste un brouillon jusqu’au bon à tirer métier et pédagogique.</p></section>';
+    var revoir = aRevoir.length ? '<div class="warning-box"><strong>À REVOIR · </strong>Reprenez ces questions et lisez leur explication :<ul class="revoir-list">' + aRevoir.map(function (index) {
+      var q = moduleData.quiz[index];
+      return '<li><button type="button" class="revoir-link" data-revoir="' + index + '">Question ' + (index + 1) + " · compétence " + esc(q.code || moduleData.codes.join(" · ")) + "</button></li>";
+    }).join("") + "</ul></div>" : "";
+    ui.lessonCard.innerHTML = '<section class="copy-panel"><div class="kicker">Bilan du module</div><div class="score-card"><h1>' + (aRevoir.length ? "Quelques repères sont à revoir." : "Les repères essentiels sont en place.") + '</h1><p class="lead">Ce bilan est un entraînement. Il ne remplace ni l’épreuve officielle ni l’observation pratique.</p>' + revoir + '<div class="key-box"><strong>PROCHAINE ACTION · </strong>' + inline(moduleData.nextStep) + "</div>" + nextLink + '</div></section><section class="visual-panel"><h2>La ligne « Circuit d’huile » continue</h2><div class="visual-stage">' + renderVisual(moduleData.summaryVisual || { kind: "route", label: "Synthèse du module" }) + '</div><p class="visual-caption">Le module reste un brouillon jusqu’au bon à tirer métier et pédagogique.</p></section>';
+    Array.prototype.forEach.call(ui.lessonCard.querySelectorAll("[data-revoir]"), function (button) {
+      button.addEventListener("click", function () {
+        stopSpeech();
+        state.phase = "quiz";
+        state.quiz = Number(button.dataset.revoir);
+        render();
+      });
+    });
     ui.previous.disabled = false;
     ui.next.disabled = false;
     ui.next.textContent = "Recommencer les questions";
-    ui.status.textContent = "Bilan · " + state.score + " réponse(s) correcte(s) sur " + total;
+    ui.status.textContent = "Bilan du module";
   }
 
   function render() {
@@ -1329,7 +1362,7 @@
     if (state.phase === "lesson") {
       state.done.add("l" + state.lesson);
       if (state.lesson < moduleData.lessons.length - 1) state.lesson++;
-      else { state.phase = "quiz"; state.quiz = 0; state.score = 0; state.answers = []; }
+      else { state.phase = "quiz"; state.quiz = 0; state.answers = []; }
     } else if (state.phase === "quiz") {
       if (!state.answered) return;
       if (state.quiz < moduleData.quiz.length - 1) state.quiz++;
@@ -1337,7 +1370,6 @@
     } else {
       state.phase = "quiz";
       state.quiz = 0;
-      state.score = 0;
       state.answers = [];
     }
     render();
@@ -1453,11 +1485,14 @@
        et l'explication. Tant que l'élève n'a pas répondu on ne joue QUE l'énoncé,
        sinon la voix lui donnerait la réponse. */
     if (state.phase === "quiz") {
+      /* Une question réécrite ne joue plus son ancien MP3 (il dirait l'ancien énoncé) :
+         poser `sansEnregistrement: true` sur la question, la voix du navigateur la lit. */
+      if (moduleData.quiz[state.quiz] && moduleData.quiz[state.quiz].sansEnregistrement) return null;
       var n = state.quiz + 1;
       return "voix/" + g + "/q" + n + (state.answered ? "-reponse" : "") + ".mp3";
     }
-    /* Le bilan reste dit par le navigateur : il annonce le score réel et une
-       phrase qui en dépend. Un enregistrement figé y mentirait. */
+    /* Le bilan reste dit par le navigateur : il nomme les questions à revoir,
+       qui dépendent des réponses. Un enregistrement figé y mentirait. */
     return null;
   }
 

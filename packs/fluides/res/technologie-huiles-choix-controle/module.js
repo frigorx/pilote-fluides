@@ -92,6 +92,20 @@ window.OIL_MODULE = {
       ],
       box: { type: "warning", text: "Les kits contiennent des produits chimiques : EPI, fiche de données de sécurité, volumes, couleurs et élimination sont ceux de la notice exacte." },
       visual: { kind: "oilAcidTest", title: "La méthode en quatre opérations", label: "Prélever, doser selon la notice, mélanger et séparer les phases, puis lire le résultat d’acidité et décider sans parler de pH" }
+    },
+    {
+      id: "huile-usagee",
+      narration: "Dernier point : que faire d'une huile vidangée d'un circuit ? L'huile d'un compresseur contient du fluide dissous. Elle est donc contaminée, et elle se gère comme un déchet dangereux. On la vidange dans un récipient étanche réservé à cet usage, jamais mélangée à d'autres huiles. On l'étiquette avant de la stocker : le type d'huile, le fluide d'origine, la date. Puis elle attend son élimination par une filière agréée. Retenez l'interdit : on ne mélange jamais une huile vidangée à une autre huile.",
+      short: "Huile usagée",
+      kicker: "Station 7 · Gérer l’huile contaminée",
+      title: "L’huile vidangée est un déchet dangereux : où elle va",
+      lead: "L’huile d’un compresseur contient du fluide dissous : elle est contaminée et se gère comme un déchet dangereux.",
+      details: [
+        "La vidanger dans un récipient étanche réservé à cet usage, jamais mélangée à d’autres huiles.",
+        "L’étiqueter avant de la stocker (type d’huile, fluide d’origine, date), puis attendre son élimination par une filière agréée."
+      ],
+      box: { type: "warning", text: "Ne jamais mélanger une huile vidangée à une autre huile." },
+      visual: { kind: "oilWaste", title: "Du carter à la filière agréée", label: "Trois gestes dans l’ordre : vidanger dans un récipient étanche dédié, étiqueter, stocker en attente de la filière agréée" }
     }
   ],
   quiz: [
@@ -129,6 +143,14 @@ window.OIL_MODULE = {
       correct: 1,
       why: "Cette chaîne relie la machine réelle à la référence exacte : modèle, fluide, approbation, puis famille, grade et référence.",
       code: "1.05 · 6.01 · 6.05"
+    },
+    {
+      prompt: "Vous avez vidangé l’huile d’un circuit. Que faire ?",
+      options: ["Récipient étanche dédié, puis étiquette", "Je la verse dans le bidon d’huile neuve", "Je la mélange aux autres huiles usagées"],
+      correct: 0,
+      why: "L’huile contient du fluide dissous : c’est un déchet dangereux. Récipient étanche dédié, jamais mélangée à d’autres huiles, étiquetée (huile, fluide, date), puis éliminée par une filière agréée.",
+      code: "5.08",
+      sansEnregistrement: true
     }
   ],
   sources: [

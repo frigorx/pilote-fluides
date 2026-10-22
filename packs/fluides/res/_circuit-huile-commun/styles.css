@@ -452,6 +452,18 @@ body { display: flex; flex-direction: column; }
   line-height: .9;
 }
 
+.revoir-list { margin: 4px 0 0; padding-left: 18px; }
+.revoir-link {
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: var(--navy);
+  font: inherit;
+  font-weight: 900;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .module-next-link {
   display: inline-flex;
   min-height: 40px;

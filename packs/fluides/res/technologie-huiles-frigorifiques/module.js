@@ -2,7 +2,7 @@ window.OIL_MODULE = {
   id: "technologie-huiles-frigorifiques",
   title: "Les familles d’huile",
   subtitle: "LE CIRCUIT D’HUILE · STATION 1",
-  codes: ["1.05", "5.08", "6.01", "6.05"],
+  codes: ["1.05", "6.01", "6.05"],
   voix: true,
   nextStep: "Poursuivre avec « Choisir et contrôler l’huile » : lire un grade, comprendre miscibilité et solubilité, repérer l’eau et l’acidité.",
   nextUrl: "../technologie-huiles-choix-controle/index.html",
@@ -18,8 +18,7 @@ window.OIL_MODULE = {
       title: "L’huile appartient au compresseur, mais elle circule dans le vrai circuit",
       lead: "Le circuit reste composé du compresseur, du condenseur, du détendeur et de l’évaporateur. L’huile est d’abord la réserve de lubrification du compresseur.",
       details: [
-        "Une fraction de cette huile est entraînée par le gaz au refoulement. Elle suit alors le trajet réel du fluide : condenseur, ligne liquide, détendeur, évaporateur puis aspiration.",
-        "Le dessin utilise les symboles du compresseur, des échangeurs et du détendeur thermostatique de la bibliothèque technique inerWeb."
+        "Une fraction de cette huile est entraînée par le gaz au refoulement. Elle suit alors le trajet réel du fluide : condenseur, ligne liquide, détendeur, évaporateur puis aspiration."
       ],
       box: { type: "key", text: "L’huile ne remplace pas le fluide : elle doit protéger le compresseur tout en pouvant revenir à son carter." },
       visual: { kind: "oilCircuit", title: "Le circuit frigorifique complet", label: "Compresseur à droite, condenseur en haut, détendeur à gauche et évaporateur en bas ; le trajet d’huile suit la boucle du fluide" }
@@ -54,14 +53,14 @@ window.OIL_MODULE = {
     },
     {
       id: "familles-hydrocarbonees",
-      narration: "Passons aux familles d'huile, et commençons par les trois familles à base hydrocarbonée. M O, pour huile minérale, issue du raffinage du pétrole. A B, pour alkylbenzène, une huile synthétique hydrocarbonée. Et P A O, pour polyalphaoléfine, également synthétique. Vous les rencontrerez surtout sur des applications historiques au R 22, avec des hydrocarbures, ou avec l'ammoniac. Une précision importante : ces sigles désignent une famille chimique, rien de plus. Ils ne donnent ni le grade de viscosité, ni la référence approuvée, ni la quantité à charger.",
+      narration: "Passons aux familles d'huile, et commençons par les trois familles à base hydrocarbonée. M O, pour huile minérale, issue du raffinage du pétrole. A B, pour alkylbenzène, une huile synthétique hydrocarbonée. Et P A O, pour polyalphaoléfine, également synthétique. Vous les rencontrerez surtout sur des applications historiques au R 22, avec des hydrocarbures, notés H C, ou avec l'ammoniac, noté R 717. Une précision importante : ces sigles désignent une famille chimique, rien de plus. Ils ne donnent ni le grade de viscosité, ni la référence approuvée, ni la quantité à charger.",
       short: "MO · AB · PAO",
       kicker: "Station 4 · Familles 1 sur 2",
       title: "MO, AB et PAO : trois familles à base hydrocarbonée",
       lead: "Le sigle désigne une famille chimique. Il ne donne ni le grade, ni la référence approuvée, ni la quantité à charger.",
       details: [
         "MO signifie huile minérale, issue du raffinage pétrolier. AB signifie alkylbenzène, une huile synthétique hydrocarbonée. PAO signifie polyalphaoléfine, également synthétique.",
-        "On les rencontre notamment sur des applications historiques au R22, avec des hydrocarbures ou avec l’ammoniac, mais les associations exactes dépendent de l’installation."
+        "On les rencontre notamment sur des applications historiques au R22, avec des hydrocarbures (HC, comme le propane R290) ou avec l’ammoniac (R717), mais les associations exactes dépendent de l’installation."
       ],
       box: { type: "exam", text: "À l’oral, développer chaque sigle puis citer un usage typique et la limite : « selon le compresseur et sa notice »." },
       visual: { kind: "oilFamiliesHydrocarbon", title: "Trois sigles, trois natures", label: "MO huile minérale, AB alkylbenzène et PAO polyalphaoléfine avec leurs usages typiques" }
@@ -118,10 +117,11 @@ window.OIL_MODULE = {
       code: "1.05 · 6.01"
     },
     {
-      prompt: "Avec R717 et un évaporateur noyé, quelles huiles sont courantes ?",
+      prompt: "Avec R717 (ammoniac) et un évaporateur noyé (rempli de liquide), quelles huiles sont courantes ?",
       options: ["POE de climatisation automobile", "PVE seul, sans dispositif de retour", "MO, PAO ou AB, avec un retour adapté"],
       correct: 2,
       why: "MO, PAO et AB sont courantes dans ces architectures. Leur retour demande une conception spécifique.",
+      sansEnregistrement: true,
       code: "6.01"
     },
     {
@@ -166,7 +166,7 @@ window.OIL_MODULE = {
     {
       title: "Légifrance — Arrêté du 21 novembre 2025, attestation d’aptitude",
       url: "https://www.legifrance.gouv.fr/jorf/id/JORFSCTA000053004646",
-      use: "compétences 1.05, 5.08, 6.01 et 6.05"
+      use: "compétences 1.05, 6.01 et 6.05"
     }
   ]
 };

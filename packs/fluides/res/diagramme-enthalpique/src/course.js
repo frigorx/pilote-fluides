@@ -82,14 +82,6 @@
     return resultFor(module).answers.filter((answer) => answer?.correct).length;
   }
 
-  function totalScore() {
-    return selectedModules.reduce((sum, module) => sum + scoreFor(module), 0);
-  }
-
-  function possibleScore() {
-    return selectedModules.reduce((sum, module) => sum + module.quiz.length, 0);
-  }
-
   function captionFor(module) {
     if (!module) return "Vue d’ensemble qualitative — aucune valeur ne doit être relevée sur ce schéma.";
     const captions = {
@@ -291,12 +283,12 @@
       dom.quizArea.innerHTML = `
         <div class="${perfect ? "remember" : "terrain"}">
           <strong>${perfect ? "✓ Acquis" : "À revoir"} :</strong>
-          ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${module.quiz.length}.
+          ${perfect ? "les deux réponses sont justes." : "relisez le repère ci-dessous."}
         </div>
         <p>${escapeHtml(module.discover.remember)}</p>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = state.stageIndex === stages.length - 2 ? "Voir le bilan →" : "Module suivant →";
-      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${module.quiz.length}`, module.discover.remember);
+      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, perfect ? "Les deux réponses sont justes" : "Relisez le repère", module.discover.remember);
       return;
     }
 
@@ -352,19 +344,17 @@
   }
 
   function renderFinal() {
-    const score = totalScore();
-    const possible = possibleScore();
     const toReview = selectedModules.filter((module) => scoreFor(module) < module.quiz.length);
     dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
     dom.progressModule.textContent = "Bilan de révision";
-    dom.moduleState.textContent = "Bilan · entraînement sans valeur d’examen";
+    dom.moduleState.textContent = "Bilan · entraînement";
     dom.lessonKicker.textContent = "Je fais le point";
     dom.lessonTitle.textContent = toReview.length ? "Vous savez quoi revoir" : "Tous les repères sont confirmés";
     dom.diagram.innerHTML = diagramSvg("overview");
     dom.visualCaption.textContent = captionFor(null);
     dom.lessonContent.innerHTML = `
       <div class="${toReview.length ? "terrain" : "remember"}">
-        <strong>Résultat :</strong> ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${possible}.
+        <strong>Résultat :</strong> ${toReview.length ? "des repères sont à revoir." : "tous les repères sont confirmés."}
       </div>
       ${toReview.length
         ? `<p><strong>Modules à reprendre :</strong> ${toReview.map((module) => escapeHtml(module.short)).join(" · ")}</p>`
@@ -375,7 +365,7 @@
     dom.nextButton.disabled = false;
     dom.nextButton.textContent = "Recommencer ↻";
     dom.backButton.disabled = false;
-    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${possible}`, toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
+    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, "", toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
   }
 
   function goNext() {

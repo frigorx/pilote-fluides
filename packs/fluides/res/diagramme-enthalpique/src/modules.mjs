@@ -28,8 +28,8 @@ export const MODULES = [
       },
       {
         question: "Pourquoi la pression est-elle tracée sur une échelle logarithmique ?",
-        choices: ["Pour rendre les courbes décoratives", "Pour lire une grande plage de pressions", "Pour supprimer les unités"],
-        answer: 1,
+        choices: ["Pour rendre les courbes décoratives", "Pour supprimer les unités", "Pour lire une grande plage de pressions"],
+        answer: 2,
         feedback: "L’échelle logarithmique rend lisibles sur la même feuille les petites et les grandes pressions."
       }
     ]
@@ -92,8 +92,8 @@ export const MODULES = [
     quiz: [
       {
         question: "En partant d’un liquide que l’on chauffe, quelle frontière rencontre-t-on ?",
-        choices: ["La courbe de bulle", "La courbe de rosée", "Une isentrope"],
-        answer: 0,
+        choices: ["La courbe de rosée", "Une isentrope", "La courbe de bulle"],
+        answer: 2,
         feedback: "La première bulle de vapeur apparaît sur la courbe de bulle."
       },
       {
@@ -127,8 +127,8 @@ export const MODULES = [
     quiz: [
       {
         question: "Que trouve-t-on à l’intérieur de la cloche ?",
-        choices: ["Du liquide uniquement", "Un mélange liquide-vapeur", "De la vapeur uniquement"],
-        answer: 1,
+        choices: ["Du liquide uniquement", "De la vapeur uniquement", "Un mélange liquide-vapeur"],
+        answer: 2,
         feedback: "Dans la cloche, les phases liquide et vapeur coexistent."
       },
       {
@@ -162,14 +162,14 @@ export const MODULES = [
     quiz: [
       {
         question: "Que représente le titre x ?",
-        choices: ["La fraction massique de vapeur", "La pression absolue", "Le volume du local"],
-        answer: 0,
+        choices: ["La pression absolue", "La fraction massique de vapeur", "Le volume du local"],
+        answer: 1,
         feedback: "Le titre x indique la part massique du fluide présente sous forme de vapeur."
       },
       {
         question: "Où se trouvent les isotitres ?",
-        choices: ["Uniquement dans la cloche", "Uniquement à gauche", "Sur l’axe des pressions"],
-        answer: 0,
+        choices: ["Uniquement à gauche", "Sur l’axe des pressions", "Uniquement dans la cloche"],
+        answer: 2,
         feedback: "Le titre n’a de sens que dans la zone où liquide et vapeur coexistent."
       }
     ]
@@ -203,8 +203,8 @@ export const MODULES = [
       },
       {
         question: "Quelle allure a une isobare sur un diagramme p-h ?",
-        choices: ["Horizontale", "Verticale", "Circulaire"],
-        answer: 0,
+        choices: ["Verticale", "Horizontale", "Circulaire"],
+        answer: 1,
         feedback: "Une hauteur constante correspond à une pression constante : la ligne est horizontale."
       }
     ]
@@ -232,14 +232,14 @@ export const MODULES = [
     quiz: [
       {
         question: "Quelle grandeur reste constante sur une isotherme ?",
-        choices: ["Le volume massique", "La température", "La pression"],
-        answer: 1,
+        choices: ["Le volume massique", "La pression", "La température"],
+        answer: 2,
         feedback: "THERME renvoie à la température : T reste constante."
       },
       {
         question: "Pour identifier une isotherme sur un autre diagramme, que faut-il privilégier ?",
-        choices: ["Uniquement sa couleur", "La légende, la valeur T et son allure", "La taille du fichier"],
-        answer: 1,
+        choices: ["La légende, la valeur T et son allure", "Uniquement sa couleur", "La taille du fichier"],
+        answer: 0,
         feedback: "La couleur n’est pas une convention universelle. Le symbole T et la légende sont les repères fiables."
       }
     ]
@@ -267,8 +267,8 @@ export const MODULES = [
     quiz: [
       {
         question: "Que conserve une isochore ?",
-        choices: ["Le volume massique v", "Le titre x", "La température T"],
-        answer: 0,
+        choices: ["Le titre x", "Le volume massique v", "La température T"],
+        answer: 1,
         feedback: "Une isochore relie les états de même volume massique."
       },
       {
@@ -302,8 +302,8 @@ export const MODULES = [
     quiz: [
       {
         question: "À quelle transformation associe-t-on surtout l’isentrope dans ce parcours ?",
-        choices: ["À la compression idéale", "Au tirage au vide", "À la pesée du fluide"],
-        answer: 0,
+        choices: ["Au tirage au vide", "À la pesée du fluide", "À la compression idéale"],
+        answer: 2,
         feedback: "L’isentrope sert de référence pour représenter la compression idéale."
       },
       {
@@ -337,14 +337,14 @@ export const MODULES = [
     quiz: [
       {
         question: "Quelle grandeur reste constante pendant une détente isenthalpique ?",
-        choices: ["La pression", "L’enthalpie", "Le volume du local"],
-        answer: 1,
+        choices: ["L’enthalpie", "La pression", "Le volume du local"],
+        answer: 0,
         feedback: "Isenthalpique signifie : enthalpie h constante."
       },
       {
         question: "Quelle allure a une isenthalpe sur le diagramme p-h ?",
-        choices: ["Une ligne verticale", "Une ligne horizontale", "Une boucle fermée"],
-        answer: 0,
+        choices: ["Une ligne horizontale", "Une boucle fermée", "Une ligne verticale"],
+        answer: 2,
         feedback: "Une abscisse h constante produit une ligne verticale."
       }
     ]

@@ -9,7 +9,7 @@ Contenu :
     lecture de cadrans BP et HP sans affichage numérique, pression relative
     et absolue, série de six lectures, identification de fluide, incondensables ;
   - module 2, 11 étapes : choix du point de mesure et de la formule, calcul des
-    quatre écarts, mission complète à deux cadrans, évaluation notée sur 20 ;
+    quatre écarts, mission complète à deux cadrans, évaluation de niveau (de 1 à 4) ;
   - tables pression-température statiques contrôlées pour six fluides
     (R-134a, R-32, R-410A, R-404A, R-407C, R-290), rosée et bulle séparées ;
   - narration facultative, jamais déclenchée seule, texte toujours visible ;

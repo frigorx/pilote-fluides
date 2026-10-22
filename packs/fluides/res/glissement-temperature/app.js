@@ -131,7 +131,9 @@
       voiceSteps: [
         { state: 0, text: "Dans le condenseur, nous parcourons la même histoire en sens inverse. La vapeur refroidit jusqu'au point de rosée : la première goutte apparaît." },
         { state: 1, text: "Pendant la condensation zéotropique, la température descend à pression constante." },
-        { state: 2, text: "Au point de bulle, la dernière bulle de vapeur disparaît. Le fluide est entièrement liquide. Les noms bulle et rosée ne changent pas ; seul le sens du trajet change." }
+        { state: 2, text: "Au point de bulle, la dernière bulle de vapeur disparaît. Le fluide est entièrement liquide. Les noms bulle et rosée ne changent pas ; seul le sens du trajet change." },
+        { state: 2, text: "Deux calculs de terrain s'appuient sur ces deux points. La surchauffe se mesure sur une vapeur seule, donc après le point de rosée : c'est la température mesurée de la vapeur moins la température de rosée. Exemple, avec des chiffres choisis pour l'occasion : rosée à zéro degré, vapeur mesurée à six degrés, donc une surchauffe de six kelvins." },
+        { state: 2, text: "Le sous-refroidissement se mesure sur un liquide seul, donc après le point de bulle : c'est la température de bulle moins la température mesurée du liquide. Exemple : bulle à quarante degrés, liquide mesuré à trente-cinq degrés, donc un sous-refroidissement de cinq kelvins." }
       ],
       render: renderCondenser
     },
@@ -459,7 +461,7 @@
           <text class="svg-small" x="650" y="382">chaleur rejetée</text>
         </svg>
       </div>
-      <aside class="explain-card"><h3>Le sens en condensation</h3><ol><li><b>Rosée</b>&nbsp;: première goutte.</li><li><b>Zone diphasique</b>&nbsp;: T° descend.</li><li><b>Bulle</b>&nbsp;: dernière bulle disparue.</li></ol><div class="key">🔑 Les noms restent liés à l'état, pas au sens de circulation.</div></aside>
+      <aside class="explain-card"><h3>Le sens en condensation</h3><ol><li><b>Rosée</b>&nbsp;: première goutte.</li><li><b>Zone diphasique</b>&nbsp;: T° descend.</li><li><b>Bulle</b>&nbsp;: dernière bulle disparue.</li></ol><div class="key">🔑 Les noms restent liés à l'état, pas au sens de circulation.</div><p><b>Deux calculs qui s'appuient sur ces deux points</b></p><div class="definition-line"><b>Surchauffe</b> (vapeur seule, après la rosée)&nbsp;:<br>T mesurée de la vapeur − T<sub>rosée</sub><br>Exemple&nbsp;: 6 °C − 0 °C = 6 K</div><div class="definition-line"><b>Sous-refroidissement</b> (liquide seul, après la bulle)&nbsp;:<br>T<sub>bulle</sub> − T mesurée du liquide<br>Exemple&nbsp;: 40 °C − 35 °C = 5 K</div><p class="scientific-note">Chiffres choisis pour l'exemple, pas lus dans une table de fluide.</p></aside>
     </div>`;
   }
 

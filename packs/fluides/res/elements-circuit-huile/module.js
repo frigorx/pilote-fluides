@@ -26,17 +26,18 @@ window.OIL_MODULE = {
     },
     {
       id: "chaine",
-      narration: "Voyons la chaîne complète, parce que chaque organe y a une place et une seule mission. Le mélange part du refoulement vers le séparateur, puis l'huile récupérée rejoint une réserve. À partir de là, deux branches partent, et elles ne font pas la même chose. La première, la conduite d'huile, va du réservoir vers le régulateur — mécanique ou électronique — qui gère le niveau du carter : c'est le trajet de l'huile liquide. La seconde relie la partie haute du réservoir à l'aspiration par un clapet taré : elle établit un différentiel de pression, elle ne transporte pas l'huile. Le schéma exact dépend du système — retour direct, basse pression, haute pression — et la notice fait foi.",
+      narration: "Voyons la chaîne complète, parce que chaque organe y a une place et une seule mission. Le mélange part du refoulement vers le séparateur, puis l'huile récupérée rejoint une réserve. À partir de là, deux branches partent, et elles ne font pas la même chose. La première, la conduite d'huile, va du réservoir vers le régulateur — mécanique ou électronique — qui gère le niveau du carter : c'est le trajet de l'huile liquide. Le régulateur mécanique, c'est un flotteur qui commande un pointeau, une petite aiguille qui ouvre ou ferme le passage : le niveau baisse, le flotteur descend et le pointeau ouvre l'admission d'huile ; le niveau remonte, le flotteur monte et le pointeau la referme. La seconde relie la partie haute du réservoir à l'aspiration par un clapet taré : elle établit un différentiel de pression, elle ne transporte pas l'huile. Le schéma exact dépend du système — retour direct, basse pression, haute pression — et la notice fait foi.",
       short: "Chaîne",
       kicker: "Station 2 · Vue d’ensemble",
       title: "Chaque organe a une place et une seule mission principale",
       lead: "La chaîne type va du refoulement vers le séparateur puis la réserve. Deux branches remplissent ensuite deux missions différentes.",
       details: [
         "La conduite d’huile part du réservoir vers le régulateur mécanique ou électronique qui gère le niveau du carter.",
+        "Le régulateur mécanique est un flotteur qui commande un pointeau (une petite aiguille qui ouvre ou ferme le passage) : le niveau baisse, le flotteur descend et le pointeau ouvre l’admission d’huile ; le niveau remonte, il la referme.",
         "Une autre conduite relie la partie pression du réservoir à l’aspiration par le clapet taré : elle établit le différentiel utile sans être le trajet normal de l’huile liquide."
       ],
       box: { type: "warning", text: "Le schéma exact dépend du système : retour direct, basse pression ou haute pression. Toujours lire la notice." },
-      visual: { kind: "active", scene: "clapet", programme: "branches", caption: "Coupe animée inerWeb : le réservoir et son clapet taré. Touchez une étape pour la revoir.", title: "Distinguer les deux branches", label: "Compresseur, séparateur et réservoir, puis conduite d’huile vers le régulateur et branche de pression par clapet différentiel vers l’aspiration", caption: "Compresseur et séparateur repris de la bibliothèque technique validée ; enveloppes fonctionnelles pour les autres organes." }
+      visual: { kind: "active", scene: "clapet", programme: "branches", caption: "Coupe animée inerWeb : le réservoir et son clapet taré. Touchez une étape pour la revoir.", title: "Distinguer les deux branches", label: "Compresseur, séparateur et réservoir, puis conduite d’huile vers le régulateur et branche de pression par clapet différentiel vers l’aspiration" }
     },
     {
       id: "separateur",
@@ -50,7 +51,7 @@ window.OIL_MODULE = {
         "Un séparateur limite l’huile en circulation, mais n’annonce jamais une séparation absolue de 100 %."
       ],
       box: { type: "exam", text: "Pour vérifier son fonctionnement, recouper niveaux, températures, conduite de retour et stabilité ; un seul indice ne suffit pas." },
-      visual: { kind: "separator", title: "Séparer sans arrêter le gaz", label: "Symbole de séparateur d’huile : mélange entrant, gaz sortant et huile collectée vers le retour", caption: "Symbole exact « separateur_huile.svg » de la bibliothèque technique inerWeb, intégré sans redessiner l’organe." }
+      visual: { kind: "separator", title: "Séparer sans arrêter le gaz", label: "Symbole de séparateur d’huile : mélange entrant, gaz sortant et huile collectée vers le retour" }
     },
     {
       id: "reservoir",

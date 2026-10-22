@@ -25,13 +25,14 @@ window.OIL_MODULE = {
     },
     {
       id: "calcul-vitesse",
-      narration: "La vitesse du gaz ne se devine pas, elle se calcule : on divise le débit aspiré par la section de passage du tube. Réglez le diamètre intérieur, le régime et le débit, et regardez ce que devient la vitesse — puis ce que devient l'huile. Ce que la manipulation montre le plus vite, c'est qu'un tracé peut très bien convenir à pleine charge et ne plus rien entraîner du tout à charge réduite. Une précision honnête : le calcul vous donne une vitesse, c'est tout. Le repère auquel la comparer vient ensuite de la notice du constructeur et de l'étude de l'installation.",
+      narration: "La vitesse du gaz ne se devine pas, elle se calcule : on divise le débit aspiré par la section de passage du tube. Voici un exemple, avec les réglages de départ du simulateur. Un : le tube fait vingt-six millimètres de diamètre intérieur, et le simulateur affiche sa section, cinq cent trente et un millimètres carrés. Deux : le compresseur aspire dix-huit mètres cubes par heure à pleine charge. Trois : le simulateur divise le débit par la section et affiche la vitesse, environ neuf virgule quatre mètres par seconde. À vous maintenant de régler le diamètre intérieur, le régime et le débit, et de regarder ce que devient la vitesse — puis ce que devient l'huile. Ce que la manipulation montre le plus vite, c'est qu'un tracé peut très bien convenir à pleine charge et ne plus rien entraîner du tout à charge réduite. Une précision honnête : le calcul vous donne une vitesse, c'est tout. Le repère auquel la comparer vient ensuite de la notice du constructeur et de l'étude de l'installation.",
       short: "Calcul",
       kicker: "Station 2 · Calcul",
       title: "Calculer la vitesse, et voir ce qu’elle change",
       lead: "La vitesse du gaz ne se devine pas : elle se calcule en divisant le débit aspiré par la section de passage.",
       details: [
-        "Régler le diamètre intérieur, le régime et le débit aspiré, puis lire la vitesse obtenue et l’état de l’huile.",
+        "Exemple résolu, avec les réglages de départ : 1) le tube fait 26 mm de diamètre intérieur, le simulateur affiche sa section, 531 mm² ; 2) le compresseur aspire 18 m³/h à pleine charge ; 3) le simulateur divise le débit par la section et affiche la vitesse : 9,4 m/s.",
+        "À vous : régler le diamètre intérieur, le régime et le débit aspiré, puis lire la vitesse obtenue et l’état de l’huile.",
         "Un tracé peut convenir à pleine charge et ne plus rien entraîner à charge réduite : c’est ce que la manipulation montre le plus vite."
       ],
       box: { type: "exam", text: "Le calcul donne une vitesse ; le repère de comparaison vient ensuite de la notice du constructeur et de l’étude de l’installation." },
@@ -49,7 +50,7 @@ window.OIL_MODULE = {
         "Puis confronter ce tracé aux débits minimal et maximal : un dessin correct au nominal peut devenir insuffisant à charge réduite."
       ],
       box: { type: "key", text: "Un schéma fluidique se lit du point de départ au point de retour : géométrie + débit + temps de fonctionnement." },
-      visual: { kind: "oilReturnFilmSlot", title: "Animation guidée : suivre l’huile", label: "Animation inerWeb adaptée du projet Claude Design Retour d’huile, avec onze scènes commandées par l’élève", caption: "Adaptation complète et hors ligne du projet Claude fourni par Franck : lecture manuelle, texte visible et symboles de la bibliothèque technique inerWeb." }
+      visual: { kind: "oilReturnFilmSlot", title: "Animation guidée : suivre l’huile", label: "Animation guidée du retour d’huile, onze scènes commandées par l’élève", caption: "Touchez Suivant pour passer à la scène d’après, Précédent pour revenir, ou Lire pour les voir défiler." }
     },
     {
       id: "transitoires",
@@ -110,25 +111,28 @@ window.OIL_MODULE = {
       code: "6.05"
     },
     {
-      prompt: "Une colonne montante a 26 mm de diamètre intérieur. Quelle est sa section de passage ?",
+      prompt: "Simulateur de l’écran 2 réglé sur 26 mm : quelle section de passage affiche-t-il ?",
       options: ["2 124 mm²", "531 mm²", "82 mm²"],
       correct: 1,
-      why: "S = π × d² / 4, soit 3,14 × 26 × 26 / 4 ≈ 531 mm². Oublier le « divisé par 4 » donne 2 124 mm², et π × d donne le périmètre, pas la section.",
-      code: "6.05"
+      why: "Il affiche 531 mm² (π × d² / 4, soit 3,14 × 26 × 26 / 4). Oublier le « divisé par 4 » donne 2 124 mm² ; π × d donne le périmètre, pas la section.",
+      code: "6.05",
+      sansEnregistrement: true
     },
     {
-      prompt: "Le débit aspiré est de 18 m³/h dans cette section de 531 mm². Quelle vitesse de gaz ?",
+      prompt: "Simulateur réglé sur 26 mm, 18 m³/h, pleine charge, colonne simple : quelle vitesse lisez-vous ?",
       options: ["environ 0,009 m/s", "environ 5,6 m/s", "environ 9,4 m/s"],
       correct: 2,
-      why: "18 m³/h font 0,005 m³/s, et 531 mm² font 0,000531 m². 0,005 / 0,000531 ≈ 9,4 m/s. Les deux conversions doivent être faites avant la division.",
-      code: "6.05"
+      why: "Il affiche 9,4 m/s : 0,005 m³/s (18 m³/h) divisés par 0,000531 m² (531 mm²). Les deux conversions se font avant la division.",
+      code: "6.05",
+      sansEnregistrement: true
     },
     {
-      prompt: "À 40 % de charge, la vitesse calculée tombe à 3,8 m/s. Que faire ?",
+      prompt: "Simulateur sur « Charge réduite » (40 %), mêmes réglages : il affiche 3,8 m/s. Que faire ?",
       options: ["Conclure que le tube est trop petit", "Comparer au repère validé du tracé", "Ignorer la baisse due au débit"],
       correct: 1,
       why: "La section n’a pas changé : c’est le débit qui a chuté. La valeur se compare au repère du projet et du constructeur, pas à une règle apprise par cœur.",
-      code: "1.05 · 6.05"
+      code: "1.05 · 6.05",
+      sansEnregistrement: true
     }
   ],
   sources: [

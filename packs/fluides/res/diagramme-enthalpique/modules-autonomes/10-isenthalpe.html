@@ -412,6 +412,11 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .topbar { border-radius: 10px; }
   .course-name { font-size: 15px; }
   .brand-mark { width: 31px; height: 31px; border-width: 2px; font-size: 12px; }
+  .brand svg { width: 110px; height: auto; }
+  .course-app { grid-template-rows: auto 34px minmax(0, 1fr) 54px; }
+  .topbar { flex-wrap: wrap; }
+  .course-name { flex: 1 1 0; }
+  .tools { flex: 0 1 auto; flex-wrap: wrap; margin-left: auto; }
   .tool-button { font-size: 0; width: 33px; padding: 0; }
   .tool-button::first-letter { font-size: 15px; }
   #readButton::after { content: "▶"; font-size: 14px; }
@@ -511,7 +516,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"isenthalpe","order":10,"title":"L’isenthalpe","short":"Isenthalpe","level":"essentiel","symbol":"h = constante","goal":"Relier une ligne verticale à la détente au détendeur.","discover":{"title":"Même enthalpie","body":"Une isenthalpe relie les points ayant la même enthalpie h. Puisque h se lit horizontalement, conserver la même valeur revient à se déplacer verticalement.","remember":"ISenthalpe : même h. Sur le diagramme p-h : ligne verticale.","narration":"Rappelons où se lit l'enthalpie : à l'horizontale. Garder la même enthalpie, c'est donc rester au même endroit sur cet axe. Le seul déplacement possible est alors vers le haut ou vers le bas, ce qui change la pression sans changer l'enthalpie. D'où la ligne verticale tiretée que montre le schéma. L'objectif est de relier cette verticale à la détente qui se produit au détendeur, et l'écran suivant explique ce lien."},"function":{"title":"La forte chute de pression du détendeur","body":"Dans le modèle frigorifique courant, la détente au détendeur est représentée comme isenthalpique : la pression chute fortement tandis que l’enthalpie reste constante.","terrain":"Lien métier : reconnaître immédiatement le trait descendant associé au détendeur.","narration":"Dans la représentation habituelle du circuit frigorifique, la détente au détendeur se dessine sur une isenthalpe. La pression chute fortement, alors que l'enthalpie ne bouge pas. Comme la pression se lit en hauteur, on obtient un trait qui descend, sans déplacement sur le côté. Sur le chantier, ce trait descendant est celui qu'on associe au détendeur, et il faut le reconnaître immédiatement. Le repère à garder tient en quelques mots : enthalpie constante, donc ligne verticale. Les questions du module vous attendent."},"quiz":[{"question":"Quelle grandeur reste constante pendant une détente isenthalpique ?","choices":["La pression","L’enthalpie","Le volume du local"],"answer":1,"feedback":"Isenthalpique signifie : enthalpie h constante."},{"question":"Quelle allure a une isenthalpe sur le diagramme p-h ?","choices":["Une ligne verticale","Une ligne horizontale","Une boucle fermée"],"answer":0,"feedback":"Une abscisse h constante produit une ligne verticale."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"isenthalpe","order":10,"title":"L’isenthalpe","short":"Isenthalpe","level":"essentiel","symbol":"h = constante","goal":"Relier une ligne verticale à la détente au détendeur.","discover":{"title":"Même enthalpie","body":"Une isenthalpe relie les points ayant la même enthalpie h. Puisque h se lit horizontalement, conserver la même valeur revient à se déplacer verticalement.","remember":"ISenthalpe : même h. Sur le diagramme p-h : ligne verticale.","narration":"Rappelons où se lit l'enthalpie : à l'horizontale. Garder la même enthalpie, c'est donc rester au même endroit sur cet axe. Le seul déplacement possible est alors vers le haut ou vers le bas, ce qui change la pression sans changer l'enthalpie. D'où la ligne verticale tiretée que montre le schéma. L'objectif est de relier cette verticale à la détente qui se produit au détendeur, et l'écran suivant explique ce lien."},"function":{"title":"La forte chute de pression du détendeur","body":"Dans le modèle frigorifique courant, la détente au détendeur est représentée comme isenthalpique : la pression chute fortement tandis que l’enthalpie reste constante.","terrain":"Lien métier : reconnaître immédiatement le trait descendant associé au détendeur.","narration":"Dans la représentation habituelle du circuit frigorifique, la détente au détendeur se dessine sur une isenthalpe. La pression chute fortement, alors que l'enthalpie ne bouge pas. Comme la pression se lit en hauteur, on obtient un trait qui descend, sans déplacement sur le côté. Sur le chantier, ce trait descendant est celui qu'on associe au détendeur, et il faut le reconnaître immédiatement. Le repère à garder tient en quelques mots : enthalpie constante, donc ligne verticale. Les questions du module vous attendent."},"quiz":[{"question":"Quelle grandeur reste constante pendant une détente isenthalpique ?","choices":["L’enthalpie","La pression","Le volume du local"],"answer":0,"feedback":"Isenthalpique signifie : enthalpie h constante."},{"question":"Quelle allure a une isenthalpe sur le diagramme p-h ?","choices":["Une ligne horizontale","Une boucle fermée","Une ligne verticale"],"answer":2,"feedback":"Une abscisse h constante produit une ligne verticale."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — L’isenthalpe","fixedIds":["isenthalpe"]};
   </script>
   <script>(() => {
@@ -596,14 +601,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   function scoreFor(module) {
     return resultFor(module).answers.filter((answer) => answer?.correct).length;
-  }
-
-  function totalScore() {
-    return selectedModules.reduce((sum, module) => sum + scoreFor(module), 0);
-  }
-
-  function possibleScore() {
-    return selectedModules.reduce((sum, module) => sum + module.quiz.length, 0);
   }
 
   function captionFor(module) {
@@ -807,12 +804,12 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       dom.quizArea.innerHTML = `
         <div class="${perfect ? "remember" : "terrain"}">
           <strong>${perfect ? "✓ Acquis" : "À revoir"} :</strong>
-          ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${module.quiz.length}.
+          ${perfect ? "les deux réponses sont justes." : "relisez le repère ci-dessous."}
         </div>
         <p>${escapeHtml(module.discover.remember)}</p>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = state.stageIndex === stages.length - 2 ? "Voir le bilan →" : "Module suivant →";
-      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${module.quiz.length}`, module.discover.remember);
+      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, perfect ? "Les deux réponses sont justes" : "Relisez le repère", module.discover.remember);
       return;
     }
 
@@ -868,19 +865,17 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   }
 
   function renderFinal() {
-    const score = totalScore();
-    const possible = possibleScore();
     const toReview = selectedModules.filter((module) => scoreFor(module) < module.quiz.length);
     dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
     dom.progressModule.textContent = "Bilan de révision";
-    dom.moduleState.textContent = "Bilan · entraînement sans valeur d’examen";
+    dom.moduleState.textContent = "Bilan · entraînement";
     dom.lessonKicker.textContent = "Je fais le point";
     dom.lessonTitle.textContent = toReview.length ? "Vous savez quoi revoir" : "Tous les repères sont confirmés";
     dom.diagram.innerHTML = diagramSvg("overview");
     dom.visualCaption.textContent = captionFor(null);
     dom.lessonContent.innerHTML = `
       <div class="${toReview.length ? "terrain" : "remember"}">
-        <strong>Résultat :</strong> ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${possible}.
+        <strong>Résultat :</strong> ${toReview.length ? "des repères sont à revoir." : "tous les repères sont confirmés."}
       </div>
       ${toReview.length
         ? `<p><strong>Modules à reprendre :</strong> ${toReview.map((module) => escapeHtml(module.short)).join(" · ")}</p>`
@@ -891,7 +886,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     dom.nextButton.disabled = false;
     dom.nextButton.textContent = "Recommencer ↻";
     dom.backButton.disabled = false;
-    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${possible}`, toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
+    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, "", toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
   }
 
   function goNext() {

@@ -7,7 +7,7 @@ validé, ni publié, ni indexé dans le RAG actif.
 
 ## Intention
 
-Les douze écrans forment d’abord un cours. Les dix questions arrivent seulement
+Les six écrans forment d’abord un cours. Les cinq questions arrivent seulement
 après le cheminement complet. Le stagiaire doit pouvoir :
 
 - suivre la fraction d’huile entraînée sur un circuit frigorifique complet ;

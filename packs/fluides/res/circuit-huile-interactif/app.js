@@ -14,7 +14,7 @@
       title: "Choisir et contrôler l’huile",
       url: "../technologie-huiles-choix-controle/index.html",
       summary: "Passer de la famille à la référence exacte, lire un grade ISO VG, et reconnaître ce que l’eau et l’acidité font à une huile.",
-      topics: ["méthode de choix", "miscibilité et grade", "humidité et test acide"]
+      topics: ["méthode de choix", "miscibilité et grade", "humidité, test acide, huile usagée"]
     },
     {
       short: "Retour",
@@ -27,8 +27,8 @@
       short: "Vérifier",
       title: "Vérifier le retour d’huile",
       url: "../retour-huile-verifier/index.html",
-      summary: "Éprouver le tracé aux régimes réels : calculer la vitesse du gaz, lire un plan d’aspiration et conclure sans se fier à une seule mesure.",
-      topics: ["charge réduite et double colonne", "calcul de vitesse", "lecture de plan et diagnostic"]
+      summary: "Éprouver le tracé aux régimes réels : lire la vitesse du gaz sur un simulateur, lire un plan d’aspiration et conclure sans se fier à une seule mesure.",
+      topics: ["charge réduite et double colonne", "lecture de la vitesse", "lecture de plan et diagnostic"]
     },
     {
       short: "Séparer",

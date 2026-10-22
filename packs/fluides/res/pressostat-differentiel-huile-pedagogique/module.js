@@ -40,13 +40,14 @@ window.OIL_MODULE = {
     },
     {
       id: "prises",
-      narration: "Deux prises de pression construisent une seule information, et il faut les nommer avant de calculer. La prise repérée O I L reçoit la pression de sortie de pompe. La prise repérée L P reçoit la pression du carter, ou de l'aspiration prévue par le constructeur. Ce qui intéresse la sécurité, ce n'est ni l'une ni l'autre prise isolément : c'est leur différence, la pression nette réellement disponible pour les paliers. Prenez l'habitude de nommer les deux prises à voix haute avant de poser la soustraction — c'est ce qui évite d'inverser les valeurs.",
+      narration: "Deux prises de pression construisent une seule information, et il faut les nommer avant de calculer. La prise repérée O I L reçoit la pression de sortie de pompe. La prise repérée L P reçoit la pression du carter, ou de l'aspiration prévue par le constructeur. Ce qui intéresse la sécurité, ce n'est ni l'une ni l'autre prise isolément : c'est leur différence, la pression nette réellement disponible pour les paliers. Un exemple d'exercice, avec des valeurs inventées pour apprendre : P un vaut cinq virgule cinq bars à la sortie de la pompe, P deux vaut deux bars dans le carter, la pression nette est de trois virgule cinq bars. Lisez toujours les deux pressions dans la même unité, avec le même manomètre. Prenez l'habitude de nommer les deux prises à voix haute avant de poser la soustraction — c'est ce qui évite d'inverser les valeurs.",
       short: "P1 − P2",
       kicker: "Station 3 · Raccordements",
       title: "Deux prises de pression construisent une seule information",
       lead: "P1, côté OIL, reçoit la pression de sortie de pompe. P2, côté LP, reçoit la pression du carter ou de l’aspiration prévue.",
       details: [
         "La pression nette de lubrification se lit par la différence : Δp huile = P1 − P2.",
+        "Exemple d’exercice (valeurs inventées pour apprendre) : P1 = 5,5 bar à la sortie de la pompe, P2 = 2,0 bar dans le carter, donc Δp = 5,5 − 2,0 = 3,5 bar. Lire les deux pressions dans la même unité (ici le bar), avec le même manomètre.",
         "Une pression P1 apparemment élevée peut rester insuffisante si P2 est élevée elle aussi."
       ],
       box: { type: "exam", text: "Toujours nommer les deux prises avant de poser la soustraction." },
@@ -68,17 +69,17 @@ window.OIL_MODULE = {
     },
     {
       id: "mecanisme",
-      narration: "Voyons le mécanisme. Dans un modèle mécanique, deux éléments sensibles reçoivent les deux pressions en opposition : l'une pousse dans un sens, l'autre dans l'autre. C'est la différence entre les deux qui déplace le mécanisme, et non leur valeur absolue. Quand cette différence tombe sous le seuil, le mécanisme bascule et lance la temporisation. Vous retrouvez le principe du pressostat simple, avec cette particularité d'être commandé par un écart. Explorez les états proposés à l'écran : ils montrent le comportement, sans ajouter de règle qui ne serait pas dans le texte.",
+      narration: "Voyons le mécanisme. Dans un modèle mécanique, deux éléments sensibles reçoivent les deux pressions en opposition : l'une pousse dans un sens, l'autre dans l'autre. C'est la différence entre les deux qui déplace le mécanisme, et non leur valeur absolue. Quand cette différence tombe sous le seuil, le mécanisme bascule et lance la temporisation. Vous retrouvez le principe du pressostat simple, avec cette particularité d'être commandé par un écart. Touchez Démarrage, Pression suffisante ou Défaut persistant, et lisez ce que fait le contact.",
       short: "Mécanisme",
       kicker: "Station 5 · Fonctionnement",
       title: "Deux pressions opposées commandent un contact",
       lead: "Dans un modèle mécanique, deux éléments sensibles reçoivent P1 et P2 en opposition.",
       details: [
         "Leur différence déplace le mécanisme qui commande le circuit de temporisation.",
-        "L’adaptation du visuel Claude montre les deux côtés, le contact T1–T2, la résistance, le bilame et le contact L–M sans recopier une coupe constructeur."
+        "Le dessin montre les deux côtés, le contact T1–T2, la résistance, le bilame et le contact L–M."
       ],
-      box: { type: "exam", text: "Le texte porte déjà toute l’explication ; l’interaction montre les états, sans ajouter une règle cachée." },
-      visual: { kind: "oilPressureClaudeSlot", title: "Explorer les trois états du mécanisme", label: "Adaptation interactive du visuel Claude du pressostat différentiel d’huile", caption: "Choisir Démarrage, Pression suffisante ou Défaut persistant. Adaptation locale du projet Claude fourni par Franck." }
+      box: { type: "exam", text: "Touchez Démarrage, Pression suffisante ou Défaut persistant et lisez ce que fait le contact." },
+      visual: { kind: "oilPressureClaudeSlot", title: "Explorer les trois états du mécanisme", label: "Mécanisme interactif du pressostat différentiel d’huile : trois états à explorer", caption: "Touchez Démarrage, Pression suffisante ou Défaut persistant." }
     }
   ],
   quiz: [

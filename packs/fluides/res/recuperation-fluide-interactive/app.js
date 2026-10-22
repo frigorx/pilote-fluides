@@ -35,13 +35,13 @@ const disconnect = (id, phase, title, instruction, hose, port, hint, sourceNote,
 
 const actions = [
   check("check-poste", "prepare", "Choisir le bon mode d'intervention", "Localisez le composant à remplacer. Dans cette mission, il ne peut pas être isolé par transfert interne : choisissez la récupération totale, puis contrôlez EPI, ventilation et compatibilité du matériel.", "Récupération totale choisie", "Un composant situé dans une partie isolable peut permettre un transfert interne vers le condenseur ou le réservoir liquide. Ici, la récupération externe complète est obligatoire.", source.afpaOpen, "Situation analysée : récupération totale retenue et poste sécurisé."),
-  check("check-cylinder", "prepare", "Contrôler la bouteille de transfert", "Vérifiez le fluide indiqué, la capacité admissible, l'état du cylindre et ses deux robinets fermés.", "Bouteille vérifiée", "Le cylindre doit être dédié au fluide du poste. Sa limite vient de son marquage et de sa notice.", source.manual5, "Bouteille compatible, stable et robinets fermés."),
+  check("check-cylinder", "prepare", "Contrôler la bouteille de transfert", "Vérifiez le fluide indiqué, le remplissage maximal indiqué sur la bouteille (à ne pas dépasser), l'état du cylindre et ses deux robinets fermés.", "Bouteille vérifiée", "Le cylindre doit être dédié au fluide du poste. Ne dépassez jamais le remplissage maximal indiqué sur la bouteille : le fluide se dilate avec la chaleur, une bouteille trop pleine est un danger.", source.manual5, "Bouteille compatible, stable et robinets fermés."),
   check("balance-initial", "prepare", "Noter la masse de départ", "Posez la bouteille sur la balance stable et relevez la masse initiale du scénario.", "Noter 12,00 kg", "La quantité récupérée sera la différence entre la pesée finale et cette pesée initiale.", source.afpa, "Masse initiale enregistrée : 12,00 kg."),
   check("check-closed", "prepare", "Vérifier toutes les positions fermées", "Confirmez les quatre vannes du manifold, les cinq mini-vannes, les robinets de bouteille, l'entrée et la sortie station ainsi que l'isolement de pompe fermés. Les vannes de service restent au siège arrière.", "Positions de départ conformes", "Les aiguilles peuvent être lues vannes fermées. Ouvrir une vanne crée un passage.", source.afpa, "Position sûre de départ confirmée ; vannes de service au siège arrière."),
 
   check("check-manifold-zero", "connect", "Contrôler le manifold", "Observez le manifold à l'air libre. Vérifiez son état, puis confirmez que les deux aiguilles indiquent zéro avant tout raccordement.", "Manifold contrôlé et remis à zéro", "Une indication fausse au repos fausse ensuite le diagnostic et les contrôles de vide.", source.pose, "Manifold contrôlé ; aiguilles HP et BP remises à zéro."),
   check("check-hoses-joints", "connect", "Contrôler les flexibles et leurs joints", "Examinez les cinq flexibles, leurs raccords, leurs joints et leurs mini-vannes. Chaque mini-vanne doit être fermée et placée du côté de l'appareil à raccorder.", "Flexibles et mini-vannes conformes", "Un joint abîmé ou une mini-vanne placée du mauvais côté augmente le risque de fuite au débranchement.", source.pose, "Flexibles contrôlés ; mini-vannes fermées côté appareils."),
-  check("check-service-caps", "connect", "Préparer les vannes de service", "Repérez les trois vannes. Retirez les capuchons utiles, desserrez chaque presse-étoupe d'un quart de tour et vérifiez la position siège arrière avant d'ouvrir une prise de service.", "Vannes préparées au siège arrière", "Au siège arrière, le circuit principal reste passant tandis que la prise de service reste isolée.", source.pose, "Vannes de service contrôlées au siège arrière ; prises prêtes au raccordement."),
+  check("check-service-caps", "connect", "Préparer les vannes de service", "Repérez les trois vannes. Retirez les capuchons utiles, desserrez légèrement chaque presse-étoupe comme l'indique la fiche du poste (aucun nombre de tours universel) et vérifiez la position siège arrière avant d'ouvrir une prise de service.", "Vannes préparées au siège arrière", "Au siège arrière, le circuit principal reste passant tandis que la prise de service reste isolée.", source.pose, "Vannes de service contrôlées au siège arrière ; prises prêtes au raccordement."),
 
   connect("connect-blue", "connect", "Poser le flexible bleu", "Sélectionnez le flexible bleu. Placez son extrémité équipée de la mini-vanne sur la prise d'ASPIRATION, puis cliquez sur la vanne C du groupe.", "blue", "install-bp", "L'aspiration ramène le fluide de l'évaporateur vers le compresseur : c'est la basse pression.", source.pose, "Flexible bleu raccordé à la main sur l'aspiration ; mini-vanne côté groupe."),
   connect("connect-red", "connect", "Poser le flexible rouge", "Repérez les deux points HP. Pour ce scénario, placez l'extrémité équipée de la mini-vanne rouge sur le DÉPART LIQUIDE, puis cliquez sur la vanne B.", "red", "install-hp", "Le refoulement et le départ liquide sont en haute pression. Pour récupérer d'abord le liquide, ce TP retient le départ liquide.", source.pose, "Flexible rouge raccordé à la main sur le départ liquide ; mini-vanne côté groupe."),
@@ -83,7 +83,7 @@ const actions = [
   control("manifold-hp-open-liquid", "liquid", "Ouvrir le côté HP", "Ouvrez la vanne rouge HP du manifold pour récupérer d'abord le liquide.", "manifold-hp", "open", "Pendant cette phase, la vanne BP reste fermée.", source.afpa, "Chemin HP → SERVICE établi."),
   control("station-power-on-liquid", "liquid", "Mettre la station sous tension", "Placez l'interrupteur POWER sur MARCHE.", "station-power", "on", "Le ventilateur démarre avant le compresseur.", source.manual5, "Station sous tension ; ventilateur actif."),
   control("station-run-liquid", "liquid", "Démarrer la récupération", "Appuyez sur START pour lancer le compresseur de la Minimax-E.", "station-run", "running", "Le sélecteur noir reste sur RÉCUPÉRATION pendant que la machine tourne.", source.manual5, "Récupération liquide en cours."),
-  check("check-liquid", "liquid", "Surveiller aiguilles et balance", "Validez lorsque le débit liquide diminue. La masse du cylindre monte ; aucun chiffre de pression n'est imposé ici.", "Phase liquide terminée", "La balance contrôle la quantité ; les aiguilles renseignent sur le déroulement.", source.afpa, "Phase liquide terminée. Masse simulée : 13,75 kg."),
+  check("check-liquid", "liquid", "Surveiller aiguilles et balance", "Validez lorsque le débit liquide diminue. La masse du cylindre monte et ne doit pas dépasser le remplissage maximal indiqué sur la bouteille ; aucun chiffre de pression n'est imposé ici.", "Phase liquide terminée", "La balance contrôle la quantité ; les aiguilles renseignent sur le déroulement.", source.afpa, "Phase liquide terminée. Masse simulée : 13,75 kg."),
   control("manifold-hp-close-liquid", "liquid", "Isoler la HP", "Fermez la vanne rouge HP du manifold.", "manifold-hp", "closed", "Fermez la HP avant de passer à la récupération vapeur côté BP.", source.afpa, "Côté HP isolé."),
 
   control("station-stop-between", "vapor", "Arrêter avant de changer l'entrée", "Appuyez sur START / STOP pour arrêter le compresseur de la station.", "station-run", "stopped", "Ne changez pas la configuration de la station au milieu du débit.", source.manual5, "Compresseur station arrêté."),
@@ -108,7 +108,7 @@ const actions = [
   control("mini-orange-close-weigh", "weigh", "Fermer la mini-vanne bouteille", "Cliquez sur la mini-vanne placée au plus près du robinet VAPEUR.", "mini-orange", "closed", "Les deux extrémités sont maintenant fermées avant le desserrage.", source.practice, "Mini-vanne de sortie fermée côté bouteille."),
   control("mini-yellow-close-weigh", "weigh", "Fermer la mini-vanne station", "Cliquez sur la mini-vanne jaune placée au plus près de l'entrée de la station.", "mini-yellow", "closed", "La branche est isolée au plus près de la Minimax-E.", source.pose, "Mini-vanne jaune fermée côté station."),
 
-  check("balance-final", "weigh", "Noter la masse finale", "Relevez la masse finale stabilisée du scénario.", "Noter 14,30 kg", "Deux pesées sont nécessaires : une avant et une après.", source.afpa, "Masse finale enregistrée : 14,30 kg."),
+  check("balance-final", "weigh", "Noter la masse finale", "Relevez la masse finale stabilisée du scénario, puis contrôlez qu'elle ne dépasse pas le remplissage maximal indiqué sur la bouteille.", "Noter 14,30 kg", "Deux pesées sont nécessaires : une avant et une après. Une bouteille trop pleine est un danger : le fluide se dilate avec la chaleur.", source.afpa, "Masse finale enregistrée : 14,30 kg."),
   check("check-calc", "weigh", "Calculer la masse récupérée", "Soustrayez la masse initiale à la masse finale : 14,30 − 12,00.", "Valider 2,30 kg", "La balance dit combien de fluide a été transféré ; le manifold ne donne pas cette masse.", source.afpa, "Masse récupérée dans le scénario : 2,30 kg."),
   check("check-stable", "weigh", "Laisser les pressions se stabiliser", "Avant tout desserrage, attendez que les aiguilles et le vacuomètre confirment l'isolement.", "Pressions stabilisées", "La chorégraphie reste : fermer → stabiliser → desserrer lentement.", source.rag, "Pressions stabilisées ; déconnexion lente autorisée."),
   disconnect("disconnect-orange", "weigh", "Débrancher la bouteille", "Sélectionnez le flexible de sortie, puis cliquez sur le raccord VAPEUR de la bouteille pour le déposer lentement.", "orange", "bottle-vapor", "Le robinet vapeur et la mini-vanne sont fermés ; la branche contient moins de fluide résiduel.", source.practice, "Flexible déposé du raccord VAPEUR."),
@@ -673,7 +673,7 @@ const checkGuidance = {
   },
   "check-cylinder": {
     look: "L'étiquette, le marquage, l'état extérieur, la stabilité et les deux robinets de la bouteille.",
-    do: "Comparez le fluide indiqué avec celui du circuit. Lisez la limite du cylindre, inspectez son état, puis vérifiez VAPEUR fermé et LIQUIDE fermé.",
+    do: "Comparez le fluide indiqué avec celui du circuit. Lisez le remplissage maximal indiqué sur la bouteille (à ne pas dépasser), inspectez son état, puis vérifiez VAPEUR fermé et LIQUIDE fermé.",
     check: "La bouteille est compatible, en bon état, stable et ses deux robinets sont fermés.",
   },
   "balance-initial": {
@@ -698,7 +698,7 @@ const checkGuidance = {
   },
   "check-service-caps": {
     look: "Les vannes A, B et C, leurs capuchons, presse-étoupes et prises de service.",
-    do: "Repérez les prises utiles. Retirez leurs capuchons, desserrez le presse-étoupe d'un quart de tour et contrôlez le siège arrière avant raccordement.",
+    do: "Repérez les prises utiles. Retirez leurs capuchons, desserrez légèrement le presse-étoupe selon la fiche du poste (aucun nombre de tours universel) et contrôlez le siège arrière avant raccordement.",
     check: "Les prises utiles sont accessibles sans ouvrir le circuit vers les flexibles.",
   },
   "check-pre-vac": {
@@ -708,7 +708,7 @@ const checkGuidance = {
   },
   "check-liquid": {
     look: "L'aiguille HP, le débit simulé et l'augmentation de la masse sur la balance.",
-    do: "Surveillez la récupération. Validez lorsque le débit liquide diminue sans anomalie sur le poste.",
+    do: "Surveillez la récupération et la masse, qui ne doit pas dépasser le remplissage maximal de la bouteille. Validez lorsque le débit liquide diminue sans anomalie sur le poste.",
     check: "La phase liquide est terminée et la masse simulée atteint 13,75 kg.",
   },
   "check-recovery": {
@@ -723,8 +723,8 @@ const checkGuidance = {
   },
   "balance-final": {
     look: "La bouteille immobile sur la balance et l'afficheur stabilisé.",
-    do: "Attendez la stabilité de l'affichage, puis relevez la masse finale du scénario.",
-    check: "La masse finale 14,30 kg est notée avant la dépose de la branche.",
+    do: "Attendez la stabilité de l'affichage, puis relevez la masse finale du scénario et comparez-la au remplissage maximal indiqué sur la bouteille.",
+    check: "La masse finale 14,30 kg est notée et comparée au remplissage maximal de la bouteille avant la dépose de la branche.",
   },
   "check-calc": {
     look: "Les deux masses notées : 12,00 kg avant et 14,30 kg après.",
@@ -760,17 +760,17 @@ const checkGuidance = {
 
 const checkGuidanceShort = {
   "check-poste": ["Composant et organes d'isolement.", "Choisissez récupération totale. Contrôlez EPI et matériel.", "Poste prêt, sans rejet."],
-  "check-cylinder": ["Étiquette, limite, état et robinets.", "Comparez le fluide. Lisez la limite. Fermez VAPEUR et LIQUIDE.", "Bouteille compatible et stable."],
+  "check-cylinder": ["Étiquette, limite, état et robinets.", "Comparez le fluide. Lisez le remplissage maximal. Fermez VAPEUR et LIQUIDE.", "Bouteille compatible et stable."],
   "balance-initial": ["Bouteille verticale et afficheur.", "Posez-la seule. Attendez puis lisez 12,00 kg.", "Masse initiale notée."],
   "check-closed": ["Toutes les commandes du poste.", "Faites le tour de gauche à droite.", "Vannes fermées ; machines arrêtées."],
   "check-manifold-zero": ["Les deux aiguilles à l'air libre.", "Inspectez le manifold et contrôlez les zéros.", "BP et HP indiquent zéro."],
   "check-hoses-joints": ["Flexibles, raccords, joints, mini-vannes.", "Suivez et inspectez chaque flexible.", "Cinq flexibles conformes et fermés."],
   "check-service-caps": ["Vannes A, B, C et leurs capuchons.", "Préparez les prises utiles au siège arrière.", "Prises accessibles, circuit isolé."],
   "check-pre-vac": ["Vacuomètre des lignes.", "Attendez la cible puis la stabilité.", "Air évacué avant ouverture bouteille."],
-  "check-liquid": ["Aiguille HP, débit et balance.", "Surveillez jusqu'à la baisse du débit liquide.", "Phase liquide terminée : 13,75 kg."],
+  "check-liquid": ["Aiguille HP, débit et balance.", "Surveillez la masse et la baisse du débit liquide.", "Phase liquide terminée : 13,75 kg."],
   "check-recovery": ["Aiguilles, cible et balance.", "Attendez la cible puis la stabilisation.", "Récupération terminée : 14,30 kg."],
   "check-purge": ["Station en PURGE et indication de vide.", "Laissez vider la station vers la bouteille.", "Station vidée sans rejet."],
-  "balance-final": ["Bouteille immobile et afficheur.", "Attendez puis relevez la masse finale.", "Masse finale : 14,30 kg."],
+  "balance-final": ["Bouteille immobile et afficheur.", "Attendez, relevez la masse, comparez au remplissage maximal.", "Masse finale : 14,30 kg."],
   "check-calc": ["12,00 kg avant ; 14,30 kg après.", "Calculez 14,30 − 12,00.", "Masse récupérée : 2,30 kg."],
   "check-stable": ["Aiguilles et vacuomètre.", "Attendez sans toucher aux raccords.", "Pressions stables avant desserrage."],
   "check-repair": ["Ouvertures et contrôle d'étanchéité.", "Confirmez bouchonnage et épreuve à l'azote.", "Circuit étanche, prêt pour le vide."],

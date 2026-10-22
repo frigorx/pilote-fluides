@@ -10,9 +10,9 @@
     { id: "prepare", narration: "Avant le premier raccord, cette phase décide si l'on peut travailler, et dans quelles conditions. Elle part du danger : du liquide encore sous pression peut être projeté et brûler par le froid. L'ordre en découle : d'abord se protéger, ensuite savoir de quel fluide il s'agit et si le matériel lui convient, puis sécuriser la zone. Plusieurs de ces étapes vous demandent de choisir vous-même. Viennent enfin les instruments : le zéro de chaque cadran et l'état des trois flexibles. La phase suivante prépare les vannes Rotolock.", label: "Préparer" },
     { id: "rotalock", narration: "Cette phase prépare les deux vannes Rotolock à recevoir le manifold, sans jamais ouvrir le circuit. Tout commence par un repérage : P, près du carré, est la prise du flexible temporaire, alors que P1 reste au pressostat. Côté BP comme côté HP, le même principe s'applique. Le presse-étoupe est libéré avant chaque manœuvre et resserré aussitôt après, et le bouchon P ne s'enlève qu'une fois P isolée par le siège arrière. Se tromper de prise exposerait à une pression que rien n'isole. Les flexibles viennent ensuite.", label: "Rotolock" },
     { id: "connect", narration: "On relie ici le manifold aux deux vannes Rotolock et à la pompe, le circuit restant protégé par le siège arrière. Une étape s'intercale avant toute ouverture : la vérification du chemin complet. La couleur donne une indication, mais ce qui prouve qu'un flexible est du bon côté, c'est l'identification du circuit. On parcourt donc chaque flexible d'un bout à l'autre, pour s'assurer qu'aucun n'aboutit sur P1 et qu'aucune ligne n'est inversée. Les trois mini-vannes s'ouvrent ensuite, l'une après l'autre. Les lignes sont alors prêtes pour le vide.", label: "Raccorder" },
-    { id: "vacuum", narration: "Cette phase met sous vide le manifold et les trois flexibles. Les Rotolock restent en butée arrière : l'installation n'est jamais reliée à la pompe. Tout le trajet est ouvert avant le démarrage, puis le vide est emprisonné dans les lignes avant que la pompe s'arrête. Pour cela, on referme d'abord les deux robinets, on isole la pompe, et c'est le dernier geste qui l'arrête. Ce module ne fixe aucune durée ni aucune valeur valable partout : le critère vient du plateau. Si le vide remonte, on cherche une fuite ou de l'humidité. La lecture vient ensuite.", label: "Vide lignes" },
+    { id: "vacuum", narration: "Cette phase met sous vide le manifold et les trois flexibles. Les Rotolock restent en butée arrière : l'installation n'est jamais reliée à la pompe. Le trajet s'ouvre et la pompe démarre dans l'ordre que fixe la notice du poste, puis le vide est emprisonné dans les lignes avant que la pompe s'arrête. Pour cela, on referme d'abord les deux robinets, on isole la pompe, et c'est le dernier geste qui l'arrête. Ce module ne fixe aucune durée ni aucune valeur valable partout : le critère vient du plateau. Si le vide remonte, on cherche une fuite ou de l'humidité. La lecture vient ensuite.", label: "Vide lignes" },
     { id: "read", narration: "C'est la phase où la pression de l'installation arrive enfin aux cadrans. Pour cela, chaque Rotolock quitte le siège arrière et passe en position intermédiaire, ce qui met la prise P en relation avec l'installation. Les deux côtés se traitent séparément, presse-étoupe libéré avant la manœuvre, resserré après. Quant aux robinets du manifold, ils restent en place : lire, ce n'est pas mettre un côté en communication avec le flexible jaune. Une fois les valeurs relevées, on contrôle l'étanchéité, car un montage qui fuit ne prouve rien. Il restera à déposer.", label: "Lire" },
-    { id: "remove", narration: "Déposer, c'est défaire le montage en émettant le moins possible de fluide, puis prouver que le poste est redevenu étanche. L'idée directrice : le fluide des flexibles retourne dans l'installation, aspiré par le compresseur. D'où l'ordre : la HP s'isole en premier, on coupe l'alimentation liquide, puis le fluide emprunte la BP, qui ne s'isole qu'à la fin de la récupération. On débranche seulement à pression stable, lentement, hors de l'axe : c'est la pression observée qui autorise, jamais le temps écoulé. Bouchons, recherche de fuite et contrôle final terminent la phase.", label: "Déposer" },
+    { id: "remove", narration: "Déposer, c'est défaire le montage en émettant le moins possible de fluide, puis prouver que le poste est redevenu étanche. L'idée directrice : le fluide des flexibles retourne dans l'installation, aspiré par le compresseur. D'où l'ordre : la HP s'isole en premier ; la coupure de l'alimentation liquide et l'ouverture du chemin se font dans l'ordre de la procédure du poste ; puis le fluide emprunte la BP, qui ne s'isole qu'à la fin de la récupération. On débranche seulement à pression stable, lentement, hors de l'axe : c'est la pression observée qui autorise, jamais le temps écoulé. Bouchons, recherche de fuite et contrôle final terminent la phase.", label: "Déposer" },
     { id: "assess", label: "Évaluer" }
   ];
 
@@ -103,21 +103,21 @@
       position: "front"
     },
     {
-      title: "Vider le manifold et les flexibles avant la lecture", narration: "Avant de lire quoi que ce soit, on vide les lignes : le manifold et ses trois flexibles. Les deux Rotolock restent au siège arrière, donc la pompe n'agit que sur ces lignes, jamais sur l'installation. L'ordre est celui d'un chemin qu'on prépare : tout est ouvert jusqu'à la pompe, et seulement après, elle démarre. À la fin, on referme les deux robinets du manifold et on isole la pompe avant de l'arrêter, ce qui évite un retour d'huile. Reste à contrôler que le vide tient, avec les instruments du plateau.",
+      title: "Vider le manifold et les flexibles avant la lecture", narration: "Avant de lire quoi que ce soit, on vide les lignes : le manifold et ses trois flexibles. Les deux Rotolock restent au siège arrière, donc la pompe n'agit que sur ces lignes, jamais sur l'installation. Le chemin s'ouvre jusqu'à la pompe, et la pompe démarre, dans l'ordre que fixe la notice du poste. À la fin, on referme les deux robinets du manifold et on isole la pompe avant de l'arrêter, ce qui évite un retour d'huile. Reste à contrôler que le vide tient, avec les instruments du plateau.",
       intro: "Les Rotolock restent au siège arrière : la pompe agit sur les lignes, pas sur l’installation.",
       blocks: [
-        ["Chemin", "Mini-vannes des trois flexibles ouvertes, jaune vers pompe, robinets BP et HP ouverts, puis pompe en marche."],
+        ["Chemin", "Mini-vannes des trois flexibles ouvertes, jaune vers pompe, robinets BP et HP ouverts et pompe en marche, dans l’ordre indiqué par la notice du poste."],
         ["Isoler", "Fermer les deux robinets du manifold puis isoler la pompe avant de l’arrêter."],
         ["Contrôler", "Vérifier la tenue du vide selon la procédure et les instruments du plateau."]
       ],
       visual: "vacuum"
     },
     {
-      title: "Déposer : ramener le fluide des flexibles dans l’installation", narration: "À la dépose, les flexibles contiennent encore du fluide. On ne les purge pas : le compresseur ramène ce fluide dans l'installation. On commence par isoler la HP au siège arrière, pour que le flexible rouge ne reçoive plus rien du circuit. On coupe aussi l'arrivée de liquide, selon le poste : électrovanne ou vanne de départ liquide. Puis on ouvre les robinets HP et BP du manifold, ce qui crée un trajet vers l'aspiration. Le fluide rejoint ensuite le côté liquide, et la pression BP chute jusqu'à l'arrêt du compresseur par le pressostat. Il reste à tout refermer.",
+      title: "Déposer : ramener le fluide des flexibles dans l’installation", narration: "À la dépose, les flexibles contiennent encore du fluide. On ne les purge pas : le compresseur ramène ce fluide dans l'installation. On commence par isoler la HP au siège arrière, pour que le flexible rouge ne reçoive plus rien du circuit. On coupe aussi l'arrivée de liquide, selon le poste : électrovanne ou vanne de départ liquide, et on ouvre les robinets HP et BP du manifold, ce qui crée un trajet vers l'aspiration. L'ordre entre ces deux gestes est celui de la procédure du poste. Le fluide rejoint ensuite le côté liquide, et la pression BP chute jusqu'à l'arrêt du compresseur par le pressostat. Il reste à tout refermer.",
       intro: "On ne purge pas les flexibles. Le compresseur aspire leur fluide par la BP et le ramène vers le condenseur puis la bouteille liquide.",
       blocks: [
         ["1 · Isoler la HP", "Mettre la Rotolock HP au siège arrière et resserrer son presse-étoupe : le flexible rouge ne reçoit plus de fluide du circuit."],
-        ["2 · Couper l’alimentation liquide", "Selon le poste : commander la fermeture de l’électrovanne NF ou fermer la vanne de départ liquide."],
+        ["2 · Couper l’alimentation liquide", "Selon le poste : commander la fermeture de l’électrovanne NF ou fermer la vanne de départ liquide. L’ordre avec l’étape 3 est celui de la procédure du poste."],
         ["3 · Créer le chemin", "Ouvrir les robinets HP puis BP du manifold : rouge → manifold → bleu → aspiration."],
         ["4 · Observer", "Le compresseur ramène le fluide. La pression BP baisse jusqu’à l’arrêt prévu par le pressostat et la procédure du poste."]
       ],
@@ -171,7 +171,7 @@
     step("connect", "mini-red", "open", "Ouvrir la mini-vanne du flexible rouge", "La poignée noire quart de tour au bout du flexible rouge raccordé sur P HP.", "Tournez la poignée d’un quart de tour.", "Le flexible rouge est ouvert jusqu’à la prise P HP isolée.", "Chaque mini-vanne est manœuvrée séparément.", { side: "hp" }),
     step("connect", "mini-yellow", "open", "Ouvrir la mini-vanne du flexible jaune", "La poignée noire au raccord d’entrée de la pompe.", "Tournez-la d’un quart de tour.", "La voie jaune communique avec l’entrée de pompe.", "Les trois flexibles sont maintenant prêts à être tirés au vide."),
 
-    step("vacuum", "pump-isolation", "open", "Ouvrir l’isolement de la pompe", "Le robinet d’entrée de la pompe à vide.", "Cliquez sur ISOLEMENT.", "L’entrée de pompe communique avec le flexible jaune.", "Le trajet complet se prépare avant la mise en marche."),
+    step("vacuum", "pump-isolation", "open", "Ouvrir l’isolement de la pompe", "Le robinet d’entrée de la pompe à vide.", "Cliquez sur ISOLEMENT.", "L’entrée de pompe communique avec le flexible jaune.", "L’ordre de ce geste, des robinets du manifold et de la mise en marche est celui de la notice du poste."),
     step("vacuum", "manifold-bp", "open", "Ouvrir le robinet BP du manifold", "Le robinet bleu, sous le manomètre BP.", "Ouvrez-le.", "Le flexible bleu communique avec la voie centrale jaune.", "La Rotolock BP reste au siège arrière : le circuit est isolé."),
     step("vacuum", "manifold-hp", "open", "Ouvrir le robinet HP du manifold", "Le robinet rouge, sous le manomètre HP.", "Ouvrez-le.", "Les trois flexibles et le manifold communiquent avec la pompe.", "BP et HP sont ouvertes ensemble ici uniquement pour vider les lignes isolées."),
     step("vacuum", "pump-power", "on", "Démarrer la pompe à vide", "L’interrupteur de la pompe et le mouvement des aiguilles.", "Cliquez sur MARCHE.", "Les aiguilles se déplacent vers la zone de vide.", "Les Rotolock au siège arrière empêchent d’aspirer le fluide de l’installation.", { delay: 1000 }),
@@ -195,7 +195,7 @@
     step("remove", "hp-stem", "rear", "Isoler la prise HP au siège arrière", "Le carré HP, la tige et le pointeau.", "Ramenez la HP à la butée arrière, sans forcer.", "P HP est isolée du circuit ; le fluide du flexible rouge reste enfermé.", "Cette isolation empêche la HP du circuit d’alimenter le flexible pendant sa récupération.", { side: "hp", cutaway: true }),
     step("remove", "hp-gland", "tight", "Resserrer le presse-étoupe HP", "L’écrou jaune autour de la tige HP.", "Resserrez-le selon la fiche du poste.", "La tige HP au siège arrière est de nouveau étanche.", "Le presse-étoupe est un point de fuite potentiel : il ne reste jamais desserré.", { side: "hp" }),
     step("remove", "choose-isolation-method", true, "Choisir comment couper l’alimentation liquide", "Le schéma et la procédure du poste : électrovanne NF commandée ou vanne de départ liquide.", "Choisissez l’organe réellement prévu sur le poste virtuel.", "Une seule méthode est retenue pour la séquence ; l’autre reste une variante expliquée.", "On ne ferme pas un organe au hasard : le schéma fluidique et la procédure déterminent le choix."),
-    step("remove", "close-liquid-feed", "closed", "Fermer l’alimentation liquide", "L’organe choisi sur la ligne liquide.", "Fermez-le sans arrêter le compresseur.", "Le liquide ne rejoint plus le détendeur ; le compresseur peut ravaler la BP.", "Fermer l’alimentation liquide crée le pump-down ; couper le compresseur ici empêcherait le retour du fluide."),
+    step("remove", "close-liquid-feed", "closed", "Fermer l’alimentation liquide", "L’organe choisi sur la ligne liquide.", "Fermez-le sans arrêter le compresseur.", "Le liquide ne rejoint plus le détendeur ; le compresseur peut ravaler la BP.", "Fermer l’alimentation liquide crée le pump-down ; couper le compresseur ici empêcherait le retour du fluide. L’ordre avec l’ouverture des robinets du manifold est celui de la procédure du poste."),
     step("remove", "manifold-hp", "open", "Ouvrir le robinet HP du manifold", "Le robinet rouge et le flexible HP déjà isolé du circuit.", "Ouvrez le robinet HP.", "Le flexible rouge communique avec la voie centrale.", "Le fluide HP empruntera ensuite le chemin vers la BP, pas vers l’atmosphère."),
     step("remove", "manifold-bp", "open", "Ouvrir le robinet BP du manifold", "Le robinet bleu, la Rotolock BP encore en position intermédiaire et le compresseur en marche.", "Ouvrez le robinet BP.", "Le chemin rouge → manifold → bleu → aspiration est complet.", "Les deux robinets sont ouverts ensemble uniquement pour récupérer le fluide des volumes raccordés."),
     step("remove", "recover-hose-fluid", true, "Suivre la récupération du fluide", "Les points mobiles dans les flexibles et le circuit frigorifique.", "Cliquez sur SUIVRE LE FLUIDE puis observez tout le trajet.", "Le fluide quitte les flexibles, rejoint l’aspiration, traverse le compresseur et se stocke côté condenseur/bouteille liquide.", "La baisse de pression vient d’un transfert réel ; le fluide ne disparaît pas.", { delay: 1500 }),
@@ -247,7 +247,6 @@
     { q: "Quels points manipulés sont contrôlés pendant la recherche de fuite finale de cette activité ?", choices: ["Les deux bouchons P et les deux presse-étoupes", "Uniquement le flexible jaune rangé", "Seulement le cadran HP"], good: 0, why: "Les raccords ouverts et les étanchéités de tige manœuvrées sont vérifiés séparément." },
     { q: "Quel geste termine réellement la dépose ?", choices: ["Presse-étoupes serrés, bouchons remis, alimentation liquide rétablie et recherche de fuite terminée", "Poser les flexibles au sol, laisser les carrés accessibles pour la prochaine intervention et considérer le retour des aiguilles au zéro comme une preuve d’étanchéité", "Ranger immédiatement le manifold, conserver l’alimentation liquide isolée et reporter la recherche de fuite au prochain contrôle périodique de l’installation"], good: 0, why: "Le poste doit retrouver un état protégé, remis en service et contrôlé." }
   ];
-  const QUIZ_PASS = Math.ceil(QUIZ.length * 0.8);
 
   const ORDER_ITEMS = [
     { id: "prepare", label: "Analyser les risques, choisir les protections et contrôler le matériel" },
@@ -313,7 +312,7 @@
     feedback: "",
     feedbackType: "waiting",
     quizIndex: 0,
-    quizScore: 0,
+    quizMissed: [],
     quizAnswered: false,
     quizChoice: -1,
     quizOrder: [],
@@ -511,9 +510,8 @@
     const within = ACTIONS.filter((item) => item.phase === action.phase);
     const position = within.indexOf(action) + 1;
     const guided = state.practiceMode === "guided";
-    const firstTry = ACTIONS.length - state.autonomousMistakes.size;
     buildPhaseStrip(actionPhaseIndex(), actionPhaseIndex() - 1);
-    lessonPanel.innerHTML = `<p class="lesson-kicker">${esc(phase.label.toUpperCase())} · ${position} / ${within.length}</p><h1 id="practice-title" tabindex="-1">${esc(action.title)}</h1>${guided ? blocksMarkup([["1 · Regardez", action.look], ["2 · Faites", action.doText], ["3 · Vérifiez", action.check], ["Pourquoi ?", action.why]]) : `<p class="lesson-intro">À vous de retrouver le prochain geste dans l’ordre professionnel.</p><div class="lesson-blocks"><div class="lesson-block"><strong>Objectif</strong><span>${esc(action.title)}</span></div><div class="lesson-block danger"><strong>Aide disponible</strong><span>Ouvrez la coupe Rotolock si vous devez vérifier les passages.</span></div></div>`}<p class="tip-card ${state.feedbackType}">${esc(state.feedback)}</p>${state.practiceMode === "autonomous" ? `<p class="lesson-intro">Premier essai juste : <strong>${firstTry}/${ACTIONS.length}</strong></p>` : ""}`;
+    lessonPanel.innerHTML = `<p class="lesson-kicker">${esc(phase.label.toUpperCase())} · ${position} / ${within.length}</p><h1 id="practice-title" tabindex="-1">${esc(action.title)}</h1>${guided ? blocksMarkup([["1 · Regardez", action.look], ["2 · Faites", action.doText], ["3 · Vérifiez", action.check], ["Pourquoi ?", action.why]]) : `<p class="lesson-intro">À vous de retrouver le prochain geste dans l’ordre professionnel.</p><div class="lesson-blocks"><div class="lesson-block"><strong>Objectif</strong><span>${esc(action.title)}</span></div><div class="lesson-block danger"><strong>Aide disponible</strong><span>Ouvrez la coupe Rotolock si vous devez vérifier les passages.</span></div></div>`}<p class="tip-card ${state.feedbackType}">${esc(state.feedback)}</p>`;
     $("#visual-title").textContent = action.side ? `Geste ciblé · Rotolock ${action.side.toUpperCase()}` : "Geste ciblé · manifold 2 voies";
     $("#visual-status").textContent = `${state.actionIndex + 1} / ${ACTIONS.length}`;
     sceneFeedback.textContent = state.feedback;
@@ -735,7 +733,7 @@
     sceneFeedback.textContent = "Commencez par le QCM ou lancez directement la manipulation autonome.";
     visualRoot.innerHTML = `<div class="assessment-menu"><button class="assessment-card" data-assessment="quiz"><strong>QCM technique</strong><span>Vannes Rotolock, P/P1, robinets, vide et dépose.</span></button><button class="assessment-card" data-assessment="order"><strong>Jeu de l’ordre</strong><span>Reconstruire les huit grandes phases.</span></button><button class="assessment-card" data-assessment="autonomous"><strong>Parcours autonome</strong><span>${ACTIONS.length} gestes sur le poste virtuel.</span></button></div>`;
     $$('[data-assessment]', visualRoot).forEach((button) => button.addEventListener("click", () => {
-      if (button.dataset.assessment === "quiz") { state.quizIndex = 0; state.quizScore = 0; state.quizAnswered = false; state.quizChoice = -1; state.quizOrder = shuffledIndexes(QUIZ[0].choices.length); setScreen("quiz"); }
+      if (button.dataset.assessment === "quiz") { state.quizIndex = 0; state.quizMissed = []; state.quizAnswered = false; state.quizChoice = -1; state.quizOrder = shuffledIndexes(QUIZ[0].choices.length); setScreen("quiz"); }
       else if (button.dataset.assessment === "order") { state.orderChosen = []; state.orderBank = shuffledOrderIds(); state.orderDone = false; setScreen("order"); }
       else startPractice("autonomous", true);
     }));
@@ -746,12 +744,13 @@
   function renderQuiz() {
     buildPhaseStrip(7, 6);
     if (state.quizIndex >= QUIZ.length) {
-      const passed = state.quizScore >= QUIZ_PASS;
-      lessonPanel.innerHTML = `<p class="lesson-kicker">BILAN QCM</p><h1 tabindex="-1">${passed ? "Repères théoriques solides" : "Quelques règles sont à reprendre"}</h1><p class="lesson-intro">Seuil interne du module : ${QUIZ_PASS} réponses justes sur ${QUIZ.length}. Ce n’est pas un examen officiel.</p>${blocksMarkup([["Résultat", `${state.quizScore}/${QUIZ.length}`], ["Suite", "Refaites le QCM ou testez l’ordre des phases et le parcours autonome."]])}`;
-      visualRoot.innerHTML = `<div class="score-card"><div class="score-number">${state.quizScore}/${QUIZ.length}</div><p>${passed ? "Les décisions essentielles sont acquises dans ce QCM." : "Relisez les corrections puis recommencez."}</p><button type="button" class="nav-button primary" id="restart-quiz">Refaire le QCM</button></div>`;
-      $("#restart-quiz").addEventListener("click", () => { state.quizIndex = 0; state.quizScore = 0; state.quizAnswered = false; state.quizChoice = -1; state.quizOrder = shuffledIndexes(QUIZ[0].choices.length); renderQuiz(); });
+      const missed = state.quizMissed;
+      const acquired = missed.length === 0;
+      lessonPanel.innerHTML = `<p class="lesson-kicker">BILAN QCM</p><h1 tabindex="-1">${acquired ? "Repères théoriques solides" : "Quelques règles sont à reprendre"}</h1><p class="lesson-intro">Ce bilan montre ce qui est acquis et ce qui reste à revoir.</p>${blocksMarkup([[acquired ? "Acquis" : "À revoir", acquired ? "Toutes les décisions essentielles de ce QCM sont acquises." : `${missed.length > 1 ? "Questions" : "Question"} ${missed.join(", ")}.`], ["Suite", "Refaites le QCM ou testez l’ordre des phases et le parcours autonome."]])}`;
+      visualRoot.innerHTML = `<div class="score-card"><div class="score-number">${acquired ? "✓" : "↻"}</div><p>${acquired ? "Les décisions essentielles sont acquises dans ce QCM." : "Relisez les corrections des questions à revoir puis recommencez."}</p><button type="button" class="nav-button primary" id="restart-quiz">Refaire le QCM</button></div>`;
+      $("#restart-quiz").addEventListener("click", () => { state.quizIndex = 0; state.quizMissed = []; state.quizAnswered = false; state.quizChoice = -1; state.quizOrder = shuffledIndexes(QUIZ[0].choices.length); renderQuiz(); });
       $("#visual-title").textContent = "Résultat théorique";
-      $("#visual-status").textContent = `${state.quizScore}/${QUIZ.length}`;
+      $("#visual-status").textContent = "Bilan";
       sceneFeedback.textContent = "Ajoutez une preuve pratique avec le parcours autonome.";
       setNavigation({ previous: true, next: true, nextLabel: "Choisir une autre évaluation →", progress: 100, label: "QCM terminé" });
       return;
@@ -764,11 +763,11 @@
       if (state.quizAnswered) return;
       state.quizChoice = Number(button.dataset.choice);
       state.quizAnswered = true;
-      if (state.quizChoice === item.good) state.quizScore += 1;
+      if (state.quizChoice !== item.good) state.quizMissed.push(state.quizIndex + 1);
       renderQuiz();
     }));
     $("#visual-title").textContent = "QCM technique";
-    $("#visual-status").textContent = `${state.quizScore} point${state.quizScore > 1 ? "s" : ""}`;
+    $("#visual-status").textContent = `${state.quizIndex + 1} / ${QUIZ.length}`;
     sceneFeedback.textContent = state.quizAnswered ? item.why : "La correction ne sanctionne pas : elle explique la règle.";
     setNavigation({ previous: true, next: state.quizAnswered, nextLabel: state.quizIndex === QUIZ.length - 1 ? "Voir le résultat →" : "Question suivante →", progress: ((state.quizIndex + (state.quizAnswered ? 1 : 0)) / QUIZ.length) * 100, label: `Question ${state.quizIndex + 1} sur ${QUIZ.length}` });
     $("h1", lessonPanel)?.focus({ preventScroll: true });
@@ -779,11 +778,11 @@
     const expectedIds = ORDER_ITEMS.map((item) => item.id);
     if (state.orderChosen.length === ORDER_ITEMS.length) state.orderDone = true;
     const correctCount = state.orderChosen.filter((id, index) => id === expectedIds[index]).length;
-    lessonPanel.innerHTML = `<p class="lesson-kicker">MINI-JEU · ORDRE GLOBAL</p><h1 tabindex="-1">Reconstruire les huit phases</h1><p class="lesson-intro">Cliquez les cartes dans l’ordre professionnel, de l’analyse des risques au rangement.</p>${state.orderDone ? blocksMarkup([[correctCount === 8 ? "Ordre exact" : "À reprendre", `${correctCount}/8 phases sont à la bonne place.`], ["Règle", "La dépose comprend l’isolement, le traitement du fluide piégé et le contrôle final."]]) : ""}<p class="tip-card ${state.orderDone ? correctCount === 8 ? "correct" : "error" : ""}">${state.orderDone ? "La correction compare chaque place." : "Vous pouvez recommencer avant la correction finale."}</p>`;
+    lessonPanel.innerHTML = `<p class="lesson-kicker">MINI-JEU · ORDRE GLOBAL</p><h1 tabindex="-1">Reconstruire les huit phases</h1><p class="lesson-intro">Cliquez les cartes dans l’ordre professionnel, de l’analyse des risques au rangement.</p>${state.orderDone ? blocksMarkup([[correctCount === 8 ? "Ordre exact" : "À reprendre", correctCount === 8 ? "Les huit phases sont à la bonne place." : "Certaines phases ne sont pas à la bonne place : comparez avec les lignes vertes et rouges."], ["Règle", "La dépose comprend l’isolement, le traitement du fluide piégé et le contrôle final."]]) : ""}<p class="tip-card ${state.orderDone ? correctCount === 8 ? "correct" : "error" : ""}">${state.orderDone ? "La correction compare chaque place." : "Vous pouvez recommencer avant la correction finale."}</p>`;
     visualRoot.innerHTML = `<div class="order-board"><div class="order-bank"><h3>Phases disponibles</h3><div class="order-items">${state.orderBank.map((id) => { const item = ORDER_ITEMS.find((entry) => entry.id === id); const used = state.orderChosen.includes(id); return `<button type="button" class="order-item" data-order-id="${id}" ${used ? "disabled" : ""}>${esc(item.label)}</button>`; }).join("")}</div></div><div class="order-result"><h3>Votre ordre</h3>${state.orderChosen.map((id, index) => { const item = ORDER_ITEMS.find((entry) => entry.id === id); const status = state.orderDone ? id === expectedIds[index] ? " good" : " bad" : ""; return `<div class="order-line${status}"><strong>${index + 1}</strong><span>${esc(item.label)}</span></div>`; }).join("")}</div></div>`;
     $$('[data-order-id]', visualRoot).forEach((button) => button.addEventListener("click", () => { if (!state.orderDone) { state.orderChosen.push(button.dataset.orderId); renderOrderGame(); } }));
     $("#visual-title").textContent = "Ordre de pose et de dépose";
-    $("#visual-status").textContent = state.orderDone ? `${correctCount}/8` : `${state.orderChosen.length}/8`;
+    $("#visual-status").textContent = state.orderDone ? "Terminé" : `${state.orderChosen.length}/8`;
     sceneFeedback.textContent = state.orderDone ? (correctCount === 8 ? "Les huit phases sont dans l’ordre." : "Comparez les places en vert double et en rouge tireté.") : "Cliquez une phase pour l’ajouter à droite.";
     setNavigation({ previous: true, next: state.orderDone, nextLabel: "Revenir aux évaluations →", progress: (state.orderChosen.length / ORDER_ITEMS.length) * 100, label: `${state.orderChosen.length} phase${state.orderChosen.length > 1 ? "s" : ""} sur 8` });
     $("h1", lessonPanel)?.focus({ preventScroll: true });
@@ -811,13 +810,13 @@
 
   function renderResult() {
     buildPhaseStrip(state.practiceMode === "autonomous" ? 7 : 6, 6);
-    const firstTry = ACTIONS.length - state.autonomousMistakes.size;
     const autonomous = state.practiceMode === "autonomous";
+    const retries = autonomous && state.autonomousMistakes.size > 0;
     lessonPanel.innerHTML = `<p class="lesson-kicker">PARCOURS TERMINÉ</p><h1 tabindex="-1">Le poste est remis en état</h1><p class="lesson-intro">La simulation vérifie l’ordre numérique. Le geste réel doit encore être observé au plateau.</p>${blocksMarkup([["Préparation", "Risque compris, protections choisies, fluide identifié, compatibilité et matériel contrôlés."], ["Rotolock", "P/P1 distinguées ; chaque carré encadré par desserrage léger puis resserrage du presse-étoupe."], ["Pose", "Mini-vannes ouvertes ; lignes tirées au vide avant la mise en lecture."], ["Dépose", "Fluide des flexibles récupéré par l’aspiration ; presse-étoupes serrés ; bouchons remis ; alimentation liquide rétablie ; recherche de fuite terminée."]])}`;
-    visualRoot.innerHTML = `<div class="score-card"><div class="score-number">${autonomous ? `${firstTry}/${ACTIONS.length}` : "✓"}</div><p>${autonomous ? "gestes réussis du premier coup dans le parcours autonome" : "parcours guidé terminé"}</p><button type="button" class="nav-button primary" id="restart-practice">Recommencer</button></div>`;
+    visualRoot.innerHTML = `<div class="score-card"><div class="score-number">${retries ? "↻" : "✓"}</div><p>${autonomous ? (retries ? "parcours autonome terminé : certains gestes sont à revoir, le parcours guidé permet de les reprendre" : "parcours autonome terminé sans erreur") : "parcours guidé terminé"}</p><button type="button" class="nav-button primary" id="restart-practice">Recommencer</button></div>`;
     $("#restart-practice").addEventListener("click", () => startPractice(state.practiceMode, true));
     $("#visual-title").textContent = "Bilan de manipulation";
-    $("#visual-status").textContent = autonomous ? `${firstTry}/${ACTIONS.length}` : "Terminé";
+    $("#visual-status").textContent = "Terminé";
     sceneFeedback.textContent = "Utilisez ensuite le guide atelier avec le matériel réel et le formateur.";
     setNavigation({ previous: true, next: true, nextLabel: state.courseChain ? "Passer à l’évaluation →" : "Accueil →", progress: 100, label: "Parcours terminé" });
     $("h1", lessonPanel)?.focus({ preventScroll: true });

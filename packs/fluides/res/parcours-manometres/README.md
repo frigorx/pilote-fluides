@@ -3,7 +3,7 @@
 Brouillon autonome inerWeb Édu composé de deux modules :
 
 1. **Pression et température** — identifier les quatre organes et leurs fonctions, puis lire de vrais cadrans BP/HP sur la Croix du Frigoriste.
-2. **Surchauffe et sous-refroidissement** — choisir les points et les formules, calculer les quatre écarts, puis obtenir une note sur 20.
+2. **Surchauffe et sous-refroidissement** — choisir les points et les formules, calculer les quatre écarts, puis situer votre niveau, de 1 à 4.
 
 ## Deux formes au choix
 
@@ -19,7 +19,7 @@ glisser dans une séance qui n'a besoin que d'un morceau :
 | `lire-un-manometre` | 6 | aiguille, deux échelles, pression relative et absolue, série de six lectures |
 | `diagnostic-pression-temperature` | 2 | identifier un fluide, suspecter des incondensables |
 | `surchauffe-sous-refroidissement` | 7 | point de mesure, formule, calcul, rosée et bulle sur zéotrope |
-| `mission-releve-et-calculs` | 4 | deux cadrans, quatre écarts, évaluation notée sur 20 |
+| `mission-releve-et-calculs` | 4 | deux cadrans, quatre écarts, évaluation par niveau, de 1 à 4 |
 
 Une brique n'est pas une copie : c'est une tranche du même fichier d'étapes. Corriger
 une faute la corrige dans les deux formes. Dupliquer une étape pour fabriquer une

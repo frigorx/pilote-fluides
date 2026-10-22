@@ -85,6 +85,7 @@ footer { padding: 20px; color: var(--muted); text-align: center; border-top: 1px
 
 @media (max-width: 760px) {
   .hub-header { padding-inline: 12px; }
+  .brand svg { width: 130px; height: auto; }
   .version { display: none; }
   main { width: min(100% - 18px, 680px); margin-top: 12px; }
   .hero { grid-template-columns: 1fr; gap: 18px; padding: 23px; }

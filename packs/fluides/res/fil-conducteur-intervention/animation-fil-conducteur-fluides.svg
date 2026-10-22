@@ -62,9 +62,10 @@
       .fil-base { fill: none; stroke: #BBC9D8; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
       .fil-actif { fill: none; stroke: var(--bleu); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1500; stroke-dashoffset: 1500; }
       .note-finale { opacity: .20; }
+      .definition { font-size: 21px; font-weight: 600; opacity: .32; }
 
       @media print {
-        .etape, .note-finale { opacity: 1 !important; }
+        .etape, .note-finale, .definition { opacity: 1 !important; }
         .fil-actif { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
         #curseur { display: none; }
       }
@@ -79,6 +80,15 @@
     <text x="800" y="105" class="titre" text-anchor="middle">Manipuler un fluide : le fil conducteur</text>
     <text x="800" y="148" class="sous-titre" text-anchor="middle">Une intervention professionnelle protège les personnes, l'installation et l'environnement.</text>
   </g>
+
+  <text class="definition" x="790" y="188" text-anchor="end">
+    <animate attributeName="opacity" from=".32" to="1" begin="5.5s" dur=".8s" fill="freeze"/>
+    <tspan font-weight="700">Aptitude</tspan> : attestation de la personne · <tspan font-weight="700">capacité</tspan> : attestation de l’entreprise
+  </text>
+  <text class="definition" x="830" y="188" text-anchor="start">
+    <animate attributeName="opacity" from=".32" to="1" begin="10s" dur=".8s" fill="freeze"/>
+    <tspan font-weight="700">EPI</tspan> : équipements de protection individuelle (gants, lunettes…)
+  </text>
 
   <path id="fil" class="fil-base" d="M120 488 C180 420 215 420 270 488 S390 556 445 488 S565 420 620 488 S740 556 795 488 S915 420 970 488 S1090 556 1145 488 S1265 420 1320 488 S1435 556 1490 488" marker-end="url(#fleche)"/>
   <path class="fil-actif" d="M120 488 C180 420 215 420 270 488 S390 556 445 488 S565 420 620 488 S740 556 795 488 S915 420 970 488 S1090 556 1145 488 S1265 420 1320 488 S1435 556 1490 488" marker-end="url(#fleche)">

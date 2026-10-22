@@ -29,6 +29,6 @@
     "lire-un-manometre": "6 étapes · aiguille, deux échelles, pression relative et absolue, série de six lectures",
     "diagnostic-pression-temperature": "2 étapes · identifier un fluide, suspecter des incondensables",
     "surchauffe-sous-refroidissement": "7 étapes · point de mesure, formule, calcul, rosée et bulle sur zéotrope",
-    "mission-releve-et-calculs": "4 étapes · deux cadrans, quatre écarts, évaluation notée sur 20"
+    "mission-releve-et-calculs": "4 étapes · deux cadrans, quatre écarts, évaluation par niveau, de 1 à 4"
   }
 }

@@ -208,7 +208,7 @@ for (const module of modules) {
       questionsChecked += 1;
       await page.locator("#next-button").click();
     }
-    record((await page.locator(".score-number").textContent())?.trim() === `${module.quiz} / ${module.quiz}`, `${label}: score final incorrect`);
+    record((await page.locator(".score-card h1").textContent())?.trim() === "Les repères essentiels sont en place." && (await page.locator(".revoir-link").count()) === 0, `${label}: bilan final incorrect`);
     record((await page.locator(".module-next-link").count()) === 1, `${label}: lien vers la station suivante absent ou dupliqué`);
     record((await page.locator(".module-next-link").getAttribute("href")) === module.next, `${label}: mauvaise station suivante`);
     inspectLayout(await layoutMetrics(page), `${label} bilan relié`);
@@ -218,7 +218,7 @@ for (const module of modules) {
     record(!(await page.locator("#next-button").isDisabled()), `${label}: question déjà répondue reverrouillée`);
     await page.locator("#next-button").click();
     await page.locator("#next-button").click();
-    record((await page.locator(".module-status").textContent())?.includes("score 0"), `${label}: nouvelle tentative non remise à zéro`);
+    record((await page.locator(".module-status").textContent())?.includes("Question 1 sur"), `${label}: nouvelle tentative non remise à zéro`);
 
     await page.locator("#sources-button").click();
     record(await page.locator("#sources-dialog").evaluate((element) => element.open), `${label}: dialogue Sources fermé`);

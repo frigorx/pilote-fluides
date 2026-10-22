@@ -1,6 +1,6 @@
 # TraxOil — régulation électronique d’huile
 
-Station 8 de la ligne **Le circuit d’huile** : 9 leçons et 9 questions.
+Station 12 de la ligne **Le circuit d’huile** : 4 écrans et 4 questions.
 
 Le module couvre mesure Hall, électrovanne, zones de niveau, alarme, domaines
 OM3/OM4/OM5, montage et architectures BP/HP. Sources : documentation Copeland

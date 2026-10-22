@@ -23,7 +23,7 @@ différentes, ou rester un entraînement hors parcours.
 
 - `index.html` : portail des deux modules ;
 - `module-1-pression-temperature/` : Croix du Frigoriste, relation P/T, lecture des cadrans, identification et incondensables ;
-- `module-2-surchauffe-sous-refroidissement/` : choix des points et des formules, calculs, mission complète, évaluation sur 20 et mémo final ;
+- `module-2-surchauffe-sous-refroidissement/` : choix des points et des formules, calculs, mission complète, évaluation de niveau (1 à 4) et mémo final ;
 - `shared/thermo-core.js` : tables P/T statiques contrôlées, interpolation locale et conversions pression relative/absolue ;
 - `shared/gauge.js` : rendu SVG des cadrans BP/HP ;
 - `shared/circuit.js` : Croix du Frigoriste construite avec les symboles validés ;

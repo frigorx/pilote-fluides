@@ -412,6 +412,11 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .topbar { border-radius: 10px; }
   .course-name { font-size: 15px; }
   .brand-mark { width: 31px; height: 31px; border-width: 2px; font-size: 12px; }
+  .brand svg { width: 110px; height: auto; }
+  .course-app { grid-template-rows: auto 34px minmax(0, 1fr) 54px; }
+  .topbar { flex-wrap: wrap; }
+  .course-name { flex: 1 1 0; }
+  .tools { flex: 0 1 auto; flex-wrap: wrap; margin-left: auto; }
   .tool-button { font-size: 0; width: 33px; padding: 0; }
   .tool-button::first-letter { font-size: 15px; }
   #readButton::after { content: "▶"; font-size: 14px; }
@@ -511,7 +516,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"bulle-rosee","order":3,"title":"Bulle et rosée","short":"Bulle / rosée","level":"essentiel","symbol":"bulle ◁ cloche ▷ rosée","goal":"Distinguer les deux frontières de la cloche.","discover":{"title":"Deux côtés, deux noms","body":"La branche gauche est la courbe de bulle : en partant du liquide, la première bulle de vapeur apparaît. La branche droite est la courbe de rosée : en partant de la vapeur, la première goutte de liquide apparaît.","remember":"Bulle : côté liquide. Rosée : côté vapeur.","narration":"La cloche a deux flancs, et leurs noms disent ce qui s'y passe. À gauche, le trait plein du schéma s'appelle la courbe de bulle. Si l'on part du liquide, c'est là qu'apparaît la toute première bulle de vapeur. À droite, le trait tireté s'appelle la courbe de rosée. Si l'on part de la vapeur, c'est là que se forme la toute première goutte de liquide. Bulle du côté liquide, rosée du côté vapeur. La suite montre pourquoi cette distinction compte."},"function":{"title":"Le bon côté pour le bon calcul","body":"La température de rosée sert notamment de référence pour la surchauffe. La température de bulle sert notamment de référence pour le sous-refroidissement. Pour un mélange zéotropique, elles peuvent être différentes : c’est le glissement de température.","terrain":"Lien métier : choisir la bonne référence de saturation évite de fausser une surchauffe ou un sous-refroidissement.","narration":"Distinguer ces deux côtés change le résultat d'un calcul. Pour une surchauffe, on s'appuie notamment sur la température de rosée, celle du côté vapeur. Pour un sous-refroidissement, on s'appuie notamment sur la température de bulle, celle du côté liquide. Avec un mélange zéotropique, ces deux températures peuvent différer : on parle alors de glissement de température. Prendre la mauvaise référence fausserait donc la surchauffe ou le sous-refroidissement. Des questions du module prennent maintenant le relais."},"quiz":[{"question":"En partant d’un liquide que l’on chauffe, quelle frontière rencontre-t-on ?","choices":["La courbe de bulle","La courbe de rosée","Une isentrope"],"answer":0,"feedback":"La première bulle de vapeur apparaît sur la courbe de bulle."},{"question":"Quelle référence utilise-t-on généralement pour raisonner sur la surchauffe ?","choices":["La température de rosée","La température de bulle","Le point critique"],"answer":0,"feedback":"La surchauffe se raisonne côté vapeur, à partir de la température de rosée."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"bulle-rosee","order":3,"title":"Bulle et rosée","short":"Bulle / rosée","level":"essentiel","symbol":"bulle ◁ cloche ▷ rosée","goal":"Distinguer les deux frontières de la cloche.","discover":{"title":"Deux côtés, deux noms","body":"La branche gauche est la courbe de bulle : en partant du liquide, la première bulle de vapeur apparaît. La branche droite est la courbe de rosée : en partant de la vapeur, la première goutte de liquide apparaît.","remember":"Bulle : côté liquide. Rosée : côté vapeur.","narration":"La cloche a deux flancs, et leurs noms disent ce qui s'y passe. À gauche, le trait plein du schéma s'appelle la courbe de bulle. Si l'on part du liquide, c'est là qu'apparaît la toute première bulle de vapeur. À droite, le trait tireté s'appelle la courbe de rosée. Si l'on part de la vapeur, c'est là que se forme la toute première goutte de liquide. Bulle du côté liquide, rosée du côté vapeur. La suite montre pourquoi cette distinction compte."},"function":{"title":"Le bon côté pour le bon calcul","body":"La température de rosée sert notamment de référence pour la surchauffe. La température de bulle sert notamment de référence pour le sous-refroidissement. Pour un mélange zéotropique, elles peuvent être différentes : c’est le glissement de température.","terrain":"Lien métier : choisir la bonne référence de saturation évite de fausser une surchauffe ou un sous-refroidissement.","narration":"Distinguer ces deux côtés change le résultat d'un calcul. Pour une surchauffe, on s'appuie notamment sur la température de rosée, celle du côté vapeur. Pour un sous-refroidissement, on s'appuie notamment sur la température de bulle, celle du côté liquide. Avec un mélange zéotropique, ces deux températures peuvent différer : on parle alors de glissement de température. Prendre la mauvaise référence fausserait donc la surchauffe ou le sous-refroidissement. Des questions du module prennent maintenant le relais."},"quiz":[{"question":"En partant d’un liquide que l’on chauffe, quelle frontière rencontre-t-on ?","choices":["La courbe de rosée","Une isentrope","La courbe de bulle"],"answer":2,"feedback":"La première bulle de vapeur apparaît sur la courbe de bulle."},{"question":"Quelle référence utilise-t-on généralement pour raisonner sur la surchauffe ?","choices":["La température de rosée","La température de bulle","Le point critique"],"answer":0,"feedback":"La surchauffe se raisonne côté vapeur, à partir de la température de rosée."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — Bulle et rosée","fixedIds":["bulle-rosee"]};
   </script>
   <script>(() => {
@@ -596,14 +601,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   function scoreFor(module) {
     return resultFor(module).answers.filter((answer) => answer?.correct).length;
-  }
-
-  function totalScore() {
-    return selectedModules.reduce((sum, module) => sum + scoreFor(module), 0);
-  }
-
-  function possibleScore() {
-    return selectedModules.reduce((sum, module) => sum + module.quiz.length, 0);
   }
 
   function captionFor(module) {
@@ -807,12 +804,12 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       dom.quizArea.innerHTML = `
         <div class="${perfect ? "remember" : "terrain"}">
           <strong>${perfect ? "✓ Acquis" : "À revoir"} :</strong>
-          ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${module.quiz.length}.
+          ${perfect ? "les deux réponses sont justes." : "relisez le repère ci-dessous."}
         </div>
         <p>${escapeHtml(module.discover.remember)}</p>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = state.stageIndex === stages.length - 2 ? "Voir le bilan →" : "Module suivant →";
-      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${module.quiz.length}`, module.discover.remember);
+      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, perfect ? "Les deux réponses sont justes" : "Relisez le repère", module.discover.remember);
       return;
     }
 
@@ -868,19 +865,17 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   }
 
   function renderFinal() {
-    const score = totalScore();
-    const possible = possibleScore();
     const toReview = selectedModules.filter((module) => scoreFor(module) < module.quiz.length);
     dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
     dom.progressModule.textContent = "Bilan de révision";
-    dom.moduleState.textContent = "Bilan · entraînement sans valeur d’examen";
+    dom.moduleState.textContent = "Bilan · entraînement";
     dom.lessonKicker.textContent = "Je fais le point";
     dom.lessonTitle.textContent = toReview.length ? "Vous savez quoi revoir" : "Tous les repères sont confirmés";
     dom.diagram.innerHTML = diagramSvg("overview");
     dom.visualCaption.textContent = captionFor(null);
     dom.lessonContent.innerHTML = `
       <div class="${toReview.length ? "terrain" : "remember"}">
-        <strong>Résultat :</strong> ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${possible}.
+        <strong>Résultat :</strong> ${toReview.length ? "des repères sont à revoir." : "tous les repères sont confirmés."}
       </div>
       ${toReview.length
         ? `<p><strong>Modules à reprendre :</strong> ${toReview.map((module) => escapeHtml(module.short)).join(" · ")}</p>`
@@ -891,7 +886,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     dom.nextButton.disabled = false;
     dom.nextButton.textContent = "Recommencer ↻";
     dom.backButton.disabled = false;
-    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${possible}`, toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
+    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, "", toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
   }
 
   function goNext() {

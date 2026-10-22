@@ -4,6 +4,7 @@
   const $ = (root, selector) => root.querySelector(selector);
   const parseFrench = value => Number(String(value).trim().replace(",", "."));
   const format = (value, digits = 1) => Number(value).toFixed(digits).replace(".", ",");
+  const niveauSur4 = (bonnes, total) => { const r = total ? bonnes / total : 0; return r >= .9 ? { n: 4, nom: "Parfaitement maîtrisé" } : r >= .75 ? { n: 3, nom: "Acquis" } : r >= .5 ? { n: 2, nom: "En cours" } : { n: 1, nom: "Non acquis" }; };
   const fineStep = config => config.major / 5;
   const analogPressure = config => Math.round(config.pressure / fineStep(config)) * fineStep(config);
   const analogTolerance = config => Math.max(fineStep(config) / 2, (config.max - config.min) * .02);
@@ -317,7 +318,7 @@
     {
       short: "Série",
       kicker: "Étape 13 · Répéter pour confirmer",
-      title: "Six cadrans, six lectures complètes.", narration: "Une lecture réussie ne fait pas encore un réflexe. Cette série de six cadrans sert à le fabriquer, en variant les situations : basse pression, haute pression, plusieurs fluides. Pour chaque cadran, la première chose à regarder est donc l’indication de côté et de fluide, puisque la même position d’aiguille ne donne pas la même température d’un fluide à l’autre. Une marge d’erreur de lecture est acceptée, car la lecture est analogique. Le score se construit au fil des six lectures, avec la même méthode à chaque fois.",
+      title: "Six cadrans, six lectures complètes.", narration: "Une lecture réussie ne fait pas encore un réflexe. Cette série de six cadrans sert à le fabriquer, en variant les situations : basse pression, haute pression, plusieurs fluides. Pour chaque cadran, la première chose à regarder est donc l’indication de côté et de fluide, puisque la même position d’aiguille ne donne pas la même température d’un fluide à l’autre. Une marge d’erreur de lecture est acceptée, car la lecture est analogique. Chaque lecture se fait avec la même méthode, et un niveau de 1 à 4 vous est donné à la fin.",
       text: "Pour chaque cadran, indiquez la pression relative et la température de saturation. La série mélange BP, HP et plusieurs fluides.",
       locked: true,
       markup: gaugePanel,
@@ -332,7 +333,7 @@
           const acceptedPressure = analogPressure(item);
           const pressureTolerance = analogTolerance(item);
           drawGauge(svg, item, false);
-          controls.innerHTML = `<span class="state-label ${item.side}">${item.side === "bp" ? "BP" : "HP"} · ${item.fluid}</span><h3>Cadran ${index + 1} sur ${readingCases.length}</h3><div class="form-row"><span class="field"><label for="series-pressure">Pression</label><input id="series-pressure" inputmode="decimal" placeholder="bar"></span><span class="field"><label for="series-temperature">Saturation</label><input id="series-temperature" inputmode="decimal" placeholder="°C"></span></div><button class="check-button" id="series-check" type="button">Valider cette lecture</button><p class="analog-hint">Arrondissez à la graduation visible. Une marge de lecture analogique est acceptée.</p><p class="feedback">Score actuel : ${score} / ${index}</p>`;
+          controls.innerHTML = `<span class="state-label ${item.side}">${item.side === "bp" ? "BP" : "HP"} · ${item.fluid}</span><h3>Cadran ${index + 1} sur ${readingCases.length}</h3><div class="form-row"><span class="field"><label for="series-pressure">Pression</label><input id="series-pressure" inputmode="decimal" placeholder="bar"></span><span class="field"><label for="series-temperature">Saturation</label><input id="series-temperature" inputmode="decimal" placeholder="°C"></span></div><button class="check-button" id="series-check" type="button">Valider cette lecture</button><p class="analog-hint">Arrondissez à la graduation visible. Une marge de lecture analogique est acceptée.</p><p class="feedback">Lisez le cadran, puis validez votre lecture.</p>`;
           $(controls, "#series-check").addEventListener("click", () => {
             const pressure = parseFrench($(controls, "#series-pressure").value);
             const temperature = parseFrench($(controls, "#series-temperature").value);
@@ -349,9 +350,9 @@
               index += 1;
               if (index < readingCases.length) renderCase();
               else {
-                const acquired = score >= 5;
-                controls.innerHTML = `<div class="score-card ${acquired ? "success" : "retry"}"><p class="eyebrow">SÉRIE TERMINÉE</p><strong>${score}/6</strong><h3>${acquired ? "Lecture confirmée" : "Encore une répétition"}</h3><p>${acquired ? "Vous avez lu correctement au moins cinq cadrans." : "Relisez la méthode et recommencez la série pour automatiser le geste."}</p><button class="check-button" id="series-restart" type="button">Recommencer la série</button></div>`;
-                api.unlock(`<strong>Série terminée</strong> · score ${score} sur 6`);
+                const acquired = score >= 5, niveau = niveauSur4(score, readingCases.length);
+                controls.innerHTML = `<div class="score-card ${acquired ? "success" : "retry"}"><p class="eyebrow">SÉRIE TERMINÉE</p><strong>Niveau ${niveau.n} · ${niveau.nom}</strong><h3>${acquired ? "Lecture confirmée" : "Encore une répétition"}</h3><p>${acquired ? "Vous lisez correctement les cadrans." : "Relisez la méthode et recommencez la série pour automatiser le geste."}</p><button class="check-button" id="series-restart" type="button">Recommencer la série</button></div>`;
+                api.unlock(`<strong>Série terminée</strong> · niveau ${niveau.n} · ${niveau.nom}`);
                 $(controls, "#series-restart").addEventListener("click", () => { index = 0; score = 0; api.lock(); renderCase(); });
               }
             };

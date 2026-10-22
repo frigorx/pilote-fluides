@@ -313,9 +313,9 @@
     },
     {
       short: "Défi",
-      kicker: "Étape 10 · Évaluation notée",
+      kicker: "Étape 10 · Évaluation de niveau",
       title: "Dix questions situent votre niveau, de 1 à 4.", narration: "Cette évaluation vérifie ce que le module vient de construire. D’abord où l’on mesure, puis quelle formule on applique, quelle référence on prend selon la vapeur ou le liquide, et enfin un calcul mené jusqu’au bout. Dix questions s’enchaînent. Dans les réponses proposées, les mêmes éléments reviennent en combinaisons différentes : le point de mesure, la saturation de référence, le sens de la soustraction. Il faut donc lire chaque proposition en entier, sans se fier à sa ressemblance avec les autres. Voici, par exemple, la première question : Quelle formule donne la surchauffe à la sortie de l’évaporateur ?",
-      text: "Chaque question vaut deux points. Elles vérifient les quatre emplacements, les quatre formules, les références rosée/bulle et un calcul complet.",
+      text: "Les questions vérifient les quatre emplacements, les quatre formules, les références rosée/bulle et un calcul complet.",
       locked: true,
       markup() { return `<div class="panel" id="quiz-panel" style="height:100%"></div>`; },
       mount(scene, api) {
@@ -333,7 +333,7 @@
             return;
           }
           const question = quizQuestions[index];
-          panel.innerHTML = `<div class="readout"><span>Question<b>${index + 1} / ${quizQuestions.length}</b></span><span>Score<b>${score}</b></span></div><h2>${question.q}</h2><div class="choice-grid">${question.answers.map((answer, answerIndex) => `<button class="choice" data-answer="${answerIndex}" type="button">${answer}</button>`).join("")}</div><p class="feedback">Choisissez une réponse.</p>`;
+          panel.innerHTML = `<div class="readout"><span>Question<b>${index + 1} / ${quizQuestions.length}</b></span></div><h2>${question.q}</h2><div class="choice-grid">${question.answers.map((answer, answerIndex) => `<button class="choice" data-answer="${answerIndex}" type="button">${answer}</button>`).join("")}</div><p class="feedback">Choisissez une réponse.</p>`;
           panel.querySelectorAll("[data-answer]").forEach(button => button.addEventListener("click", () => {
             const chosen = Number(button.dataset.answer);
             const correct = chosen === question.correct;
@@ -354,7 +354,7 @@
     },
     {
       short: "Bilan",
-      kicker: "Bilan · Note et formules",
+      kicker: "Bilan · Niveau et formules",
       title: "Gardez les quatre formules et les quatre emplacements.", narration: "Ce bilan tient en une idée : la saturation donne la référence, et c’est l’endroit de la mesure, sur la vapeur ou sur le liquide, qui fixe la température réelle à utiliser. Côté vapeur, on retire la saturation BP de la température réelle. Côté liquide, on retire la température réelle de la saturation HP. Dans chaque famille, deux écarts : l’un s’arrête à la sortie de l’organe, l’autre va jusqu’à l’organe suivant. Avec un zéotrope, la saturation BP se lit à la rosée et la saturation HP à la bulle. L’évaluation reste disponible à votre rythme.",
       text: "La saturation est la référence ; la température réelle dépend du point jusqu’auquel on suit la vapeur ou le liquide.",
       markup() {

@@ -412,6 +412,11 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .topbar { border-radius: 10px; }
   .course-name { font-size: 15px; }
   .brand-mark { width: 31px; height: 31px; border-width: 2px; font-size: 12px; }
+  .brand svg { width: 110px; height: auto; }
+  .course-app { grid-template-rows: auto 34px minmax(0, 1fr) 54px; }
+  .topbar { flex-wrap: wrap; }
+  .course-name { flex: 1 1 0; }
+  .tools { flex: 0 1 auto; flex-wrap: wrap; margin-left: auto; }
   .tool-button { font-size: 0; width: 33px; padding: 0; }
   .tool-button::first-letter { font-size: 15px; }
   #readButton::after { content: "▶"; font-size: 14px; }
@@ -511,7 +516,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"zones","order":4,"title":"Les trois zones","short":"Zones du fluide","level":"essentiel","symbol":"liquide · mélange · vapeur","goal":"Identifier l’état du fluide à partir de la position d’un point.","discover":{"title":"Où se trouve le point ?","body":"À gauche de la cloche, le fluide est liquide sous-refroidi. Dans la cloche, liquide et vapeur coexistent. À droite, le fluide est vapeur surchauffée.","remember":"Gauche : liquide. Dedans : liquide + vapeur. Droite : vapeur.","narration":"Un point posé sur le diagramme prend son sens par sa place par rapport à la cloche. Sur le schéma, tout point situé à gauche de la cloche représente du liquide, qu'on dit sous-refroidi. À l'intérieur de la cloche, on a les deux phases à la fois. À droite, c'est de la vapeur, dite surchauffée. Il suffit donc de regarder où tombe un point pour savoir dans quel état est le fluide. À l'écran suivant, vous verrez pourquoi cette information passe avant toute lecture."},"function":{"title":"La zone donne déjà une information","body":"Avant de lire une température ou une enthalpie, repérez la zone. La position du point indique immédiatement l’état physique probable du fluide.","terrain":"Lien métier : à l’aspiration d’un compresseur, on recherche une vapeur ; avant le détendeur, on recherche un liquide.","narration":"Repérer la zone passe avant tout le reste : la position du point indique tout de suite l'état probable du fluide. On sait donc à quoi s'attendre avant de relever la moindre température ou enthalpie. Deux exemples sur une installation. Au niveau de l'aspiration du compresseur, on s'attend à de la vapeur. En amont du détendeur, on s'attend à du liquide. C'est le premier réflexe à avoir devant un point du diagramme. Les questions du module suivent."},"quiz":[{"question":"Que trouve-t-on à l’intérieur de la cloche ?","choices":["Du liquide uniquement","Un mélange liquide-vapeur","De la vapeur uniquement"],"answer":1,"feedback":"Dans la cloche, les phases liquide et vapeur coexistent."},{"question":"Dans quelle zone doit se trouver le fluide aspiré par le compresseur ?","choices":["Dans la vapeur, à droite de la cloche","Dans le liquide, à gauche","Toujours au point critique"],"answer":0,"feedback":"Le compresseur doit aspirer de la vapeur ; un retour de liquide est dangereux pour lui."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"zones","order":4,"title":"Les trois zones","short":"Zones du fluide","level":"essentiel","symbol":"liquide · mélange · vapeur","goal":"Identifier l’état du fluide à partir de la position d’un point.","discover":{"title":"Où se trouve le point ?","body":"À gauche de la cloche, le fluide est liquide sous-refroidi. Dans la cloche, liquide et vapeur coexistent. À droite, le fluide est vapeur surchauffée.","remember":"Gauche : liquide. Dedans : liquide + vapeur. Droite : vapeur.","narration":"Un point posé sur le diagramme prend son sens par sa place par rapport à la cloche. Sur le schéma, tout point situé à gauche de la cloche représente du liquide, qu'on dit sous-refroidi. À l'intérieur de la cloche, on a les deux phases à la fois. À droite, c'est de la vapeur, dite surchauffée. Il suffit donc de regarder où tombe un point pour savoir dans quel état est le fluide. À l'écran suivant, vous verrez pourquoi cette information passe avant toute lecture."},"function":{"title":"La zone donne déjà une information","body":"Avant de lire une température ou une enthalpie, repérez la zone. La position du point indique immédiatement l’état physique probable du fluide.","terrain":"Lien métier : à l’aspiration d’un compresseur, on recherche une vapeur ; avant le détendeur, on recherche un liquide.","narration":"Repérer la zone passe avant tout le reste : la position du point indique tout de suite l'état probable du fluide. On sait donc à quoi s'attendre avant de relever la moindre température ou enthalpie. Deux exemples sur une installation. Au niveau de l'aspiration du compresseur, on s'attend à de la vapeur. En amont du détendeur, on s'attend à du liquide. C'est le premier réflexe à avoir devant un point du diagramme. Les questions du module suivent."},"quiz":[{"question":"Que trouve-t-on à l’intérieur de la cloche ?","choices":["Du liquide uniquement","De la vapeur uniquement","Un mélange liquide-vapeur"],"answer":2,"feedback":"Dans la cloche, les phases liquide et vapeur coexistent."},{"question":"Dans quelle zone doit se trouver le fluide aspiré par le compresseur ?","choices":["Dans la vapeur, à droite de la cloche","Dans le liquide, à gauche","Toujours au point critique"],"answer":0,"feedback":"Le compresseur doit aspirer de la vapeur ; un retour de liquide est dangereux pour lui."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — Les trois zones","fixedIds":["zones"]};
   </script>
   <script>(() => {
@@ -596,14 +601,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   function scoreFor(module) {
     return resultFor(module).answers.filter((answer) => answer?.correct).length;
-  }
-
-  function totalScore() {
-    return selectedModules.reduce((sum, module) => sum + scoreFor(module), 0);
-  }
-
-  function possibleScore() {
-    return selectedModules.reduce((sum, module) => sum + module.quiz.length, 0);
   }
 
   function captionFor(module) {
@@ -807,12 +804,12 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       dom.quizArea.innerHTML = `
         <div class="${perfect ? "remember" : "terrain"}">
           <strong>${perfect ? "✓ Acquis" : "À revoir"} :</strong>
-          ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${module.quiz.length}.
+          ${perfect ? "les deux réponses sont justes." : "relisez le repère ci-dessous."}
         </div>
         <p>${escapeHtml(module.discover.remember)}</p>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = state.stageIndex === stages.length - 2 ? "Voir le bilan →" : "Module suivant →";
-      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${module.quiz.length}`, module.discover.remember);
+      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, perfect ? "Les deux réponses sont justes" : "Relisez le repère", module.discover.remember);
       return;
     }
 
@@ -868,19 +865,17 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   }
 
   function renderFinal() {
-    const score = totalScore();
-    const possible = possibleScore();
     const toReview = selectedModules.filter((module) => scoreFor(module) < module.quiz.length);
     dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
     dom.progressModule.textContent = "Bilan de révision";
-    dom.moduleState.textContent = "Bilan · entraînement sans valeur d’examen";
+    dom.moduleState.textContent = "Bilan · entraînement";
     dom.lessonKicker.textContent = "Je fais le point";
     dom.lessonTitle.textContent = toReview.length ? "Vous savez quoi revoir" : "Tous les repères sont confirmés";
     dom.diagram.innerHTML = diagramSvg("overview");
     dom.visualCaption.textContent = captionFor(null);
     dom.lessonContent.innerHTML = `
       <div class="${toReview.length ? "terrain" : "remember"}">
-        <strong>Résultat :</strong> ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${possible}.
+        <strong>Résultat :</strong> ${toReview.length ? "des repères sont à revoir." : "tous les repères sont confirmés."}
       </div>
       ${toReview.length
         ? `<p><strong>Modules à reprendre :</strong> ${toReview.map((module) => escapeHtml(module.short)).join(" · ")}</p>`
@@ -891,7 +886,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     dom.nextButton.disabled = false;
     dom.nextButton.textContent = "Recommencer ↻";
     dom.backButton.disabled = false;
-    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${possible}`, toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
+    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, "", toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
   }
 
   function goNext() {

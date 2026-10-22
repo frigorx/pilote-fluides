@@ -404,6 +404,11 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .topbar { border-radius: 10px; }
   .course-name { font-size: 15px; }
   .brand-mark { width: 31px; height: 31px; border-width: 2px; font-size: 12px; }
+  .brand svg { width: 110px; height: auto; }
+  .course-app { grid-template-rows: auto 34px minmax(0, 1fr) 54px; }
+  .topbar { flex-wrap: wrap; }
+  .course-name { flex: 1 1 0; }
+  .tools { flex: 0 1 auto; flex-wrap: wrap; margin-left: auto; }
   .tool-button { font-size: 0; width: 33px; padding: 0; }
   .tool-button::first-letter { font-size: 15px; }
   #readButton::after { content: "▶"; font-size: 14px; }

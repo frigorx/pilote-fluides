@@ -107,7 +107,7 @@ async function completeModule1(page, base) {
     await page.locator("#series-check").click();
     await page.locator("#series-check").click();
   }
-  assert((await page.locator(".score-card strong").textContent()).trim() === "6/6", "Module 1: série de lecture non validée");
+  assert((await page.locator(".score-card strong").textContent()).trim().startsWith("Niveau 4"), "Module 1: série de lecture non validée");
   await clickNext(page);
   await page.locator('[data-choice="R134a"]').click();
   await clickNext(page);
@@ -141,10 +141,10 @@ async function completeModule2(page, base, capture = false) {
     await page.locator(`[data-answer="${correct}"]`).click();
     await page.locator("#quiz-next").click();
   }
-  assert((await page.locator(".score-card strong").textContent()).trim() === "20/20", "Module 2: évaluation non validée");
+  assert((await page.locator(".score-card strong").textContent()).trim().startsWith("Niveau 4"), "Module 2: évaluation non validée");
   await clickNext(page);
   assert((await page.locator("#step-status").textContent()).includes("11"), "Module 2: bilan non atteint");
-  assert((await page.locator(".final-score strong").textContent()).trim() === "20/20", "Module 2: note absente du bilan");
+  assert((await page.locator(".final-score strong").textContent()).trim().startsWith("Niveau 4"), "Module 2: niveau absent du bilan");
   assert(await page.locator(".formula-summary article").count() === 4, "Module 2: quatre formules finales attendues");
   await assertFrame(page, `M2 bilan ${page.viewportSize().width}x${page.viewportSize().height}`, 11);
   if (capture) await page.screenshot({ path: path.join(screenshots, `module-2-bilan-${page.viewportSize().width}x${page.viewportSize().height}.png`), fullPage: false });

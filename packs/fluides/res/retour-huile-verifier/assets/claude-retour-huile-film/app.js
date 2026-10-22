@@ -8,23 +8,23 @@
       '</defs>';
   }
 
-  // Géométries reprises de la bibliothèque technique inerWeb.
+  // Géométries reprises.
   function compressor(x, y, scale) {
-    return '<g role="img" aria-label="Compresseur de la bibliothèque technique inerWeb" transform="translate(' + x + ' ' + y + ') scale(' + scale + ')">' +
+    return '<g role="img" aria-label="Compresseur" transform="translate(' + x + ' ' + y + ') scale(' + scale + ')">' +
       '<circle cx="0" cy="0" r="15" fill="#fffdf8" stroke="#000"/><line x1="-15" y1="0" x2="-16" y2="0" stroke="#000"/><line x1="15" y1="0" x2="16" y2="0" stroke="#000"/>' +
       '<line x1="-7" y1="-13" x2="13" y2="-7" stroke="#000"/><line x1="-7" y1="13" x2="13" y2="7" stroke="#000"/>' +
       '<circle cx="-16" cy="0" r="1.5"/><circle cx="16" cy="0" r="1.5"/><circle cx="-10" cy="10" r="1.5"/><circle cx="2" cy="11" r="1.5"/><circle cx="-10" cy="-10" r="1.5"/></g>';
   }
 
   function expansionValve(x, y, scale) {
-    return '<g role="img" aria-label="Détendeur thermostatique de la bibliothèque technique inerWeb" transform="translate(' + x + ' ' + y + ') scale(' + scale + ')">' +
+    return '<g role="img" aria-label="Détendeur thermostatique" transform="translate(' + x + ' ' + y + ') scale(' + scale + ')">' +
       '<circle cx="0" cy="-12" r="5.83" fill="#fffdf8" stroke="#000"/><line x1="0" y1="-18" x2="0" y2="-20" stroke="#000"/>' +
       '<polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0" fill="#fffdf8" stroke="#000"/><line x1="0" y1="0" x2="0" y2="-6" stroke="#000"/>' +
       '<line x1="10" y1="0" x2="11" y2="0" stroke="#000"/><line x1="-10" y1="0" x2="-11" y2="0" stroke="#000"/><circle cx="0" cy="-20" r="1.5"/><circle cx="11" cy="0" r="1.5"/><circle cx="-11" cy="0" r="1.5"/></g>';
   }
 
   function exchanger(x, y, scale, label) {
-    return '<g role="img" aria-label="' + label + ', symbole d’échangeur à air de la bibliothèque technique inerWeb" transform="translate(' + x + ' ' + y + ') scale(' + scale + ')">' +
+    return '<g role="img" aria-label="' + label + ', symbole d’échangeur à air" transform="translate(' + x + ' ' + y + ') scale(' + scale + ')">' +
       '<rect x="-18" y="-20" width="36" height="48" fill="none" stroke="#000"/><line x1="-19" y1="20" x2="19" y2="20" stroke="#000"/>' +
       '<line x1="-14" y1="16" x2="-14" y2="24" stroke="#000"/><line x1="-7" y1="16" x2="-7" y2="24" stroke="#000"/><line x1="0" y1="16" x2="0" y2="24" stroke="#000"/><line x1="7" y1="16" x2="7" y2="24" stroke="#000"/><line x1="14" y1="16" x2="14" y2="24" stroke="#000"/>' +
       '<circle cx="0" cy="-2" r="15" fill="none" stroke="#000"/><path d="M0 -2 C5 -15 13 -14 13 5 C2 5 -2 1 0 -2 C-5 10 -13 9 -13 5 C-5 -4 -2 -4 0 -2" fill="none" stroke="#000"/></g>';

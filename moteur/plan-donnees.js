@@ -84,7 +84,7 @@
       cours("circuit-organe-par-organe",                  "Organe par organe",           "animations · quiz")
     ],
     queue: [
-      cours("diagramme-enthalpique",                      "Diagramme enthalpique",       "le cycle tracé"),
+      cours("diagramme-enthalpique",                      "Diagramme enthalpique",       "reconnaître les courbes"),
       cours("bilan-thermique-performance-interactif",     "Bilan & performance",         "COP, EER, puissances")
     ],
     jalon: "🏁 Technologue du cycle"

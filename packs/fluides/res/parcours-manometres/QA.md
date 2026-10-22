@@ -6,8 +6,8 @@ Contrôles exécutés le 18 août 2026.
 
 `QA OK · 2 parcours complets · 4 formats · 0 requête externe · 0 erreur JS`
 
-- module 1 joué de l’étape 1 à l’étape 16, quatre définitions et série de six cadrans validées à 6/6 ;
-- module 2 joué de l’étape 1 à l’étape 11, quatre décisions point–formule–calcul, mission complète et évaluation validées à 20/20 ;
+- module 1 joué de l’étape 1 à l’étape 16, quatre définitions et série de six cadrans validées (niveau 4) ;
+- module 2 joué de l’étape 1 à l’étape 11, quatre décisions point–formule–calcul, mission complète et évaluation validées (niveau 4) ;
 - formats contrôlés : 1024 × 768, 1366 × 768, 360 × 640 et 390 × 844 ;
 - aucune barre de défilement au niveau de la page dans les modules ;
 - aucune requête vers Internet pendant l’utilisation ;

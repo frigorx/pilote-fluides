@@ -18,7 +18,7 @@
 
   var DIAM_PETITE = 16;      // mm — petite montée de l'exercice
 
-  var etat = { regime: 100, trace: "simple", d: 26, qvmax: 18, repere: 8 };
+  var etat = { regime: 100, trace: "simple", d: 26, qvmax: 18, repere: 6 };
 
   var el = {
     pipes: document.getElementById("pipes"),
@@ -80,6 +80,12 @@
         texte: "Dans ce scénario d’exercice, l’huile est représentée en train de " +
                "retomber. Cela ne fixe pas un seuil universel : comparer la vitesse " +
                "calculée à la valeur prescrite pour l’installation réelle."
+      };
+    }
+    if (r.bouchon && etat.regime === 100) {
+      return {
+        ton: "warn", mot: "Dimensionnement insuffisant à pleine charge",
+        texte: "Une double colonne bien dimensionnée garde les deux montées actives à pleine charge, et ne scelle la grande qu’à charge réduite. Ici, avec ce repère, la grande est déjà scellée à pleine charge : essayez un repère plus bas ou un diamètre plus petit."
       };
     }
     return {

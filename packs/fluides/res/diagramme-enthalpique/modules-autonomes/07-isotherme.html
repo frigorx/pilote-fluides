@@ -412,6 +412,11 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .topbar { border-radius: 10px; }
   .course-name { font-size: 15px; }
   .brand-mark { width: 31px; height: 31px; border-width: 2px; font-size: 12px; }
+  .brand svg { width: 110px; height: auto; }
+  .course-app { grid-template-rows: auto 34px minmax(0, 1fr) 54px; }
+  .topbar { flex-wrap: wrap; }
+  .course-name { flex: 1 1 0; }
+  .tools { flex: 0 1 auto; flex-wrap: wrap; margin-left: auto; }
   .tool-button { font-size: 0; width: 33px; padding: 0; }
   .tool-button::first-letter { font-size: 15px; }
   #readButton::after { content: "▶"; font-size: 14px; }
@@ -511,7 +516,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"isotherme","order":7,"title":"L’isotherme","short":"Isotherme","level":"essentiel","symbol":"T = constante","goal":"Reconnaître les états de même température.","discover":{"title":"Même température","body":"Une isotherme relie les points ayant la même température T. Sur un diagramme réel, plusieurs isothermes forment un réseau ; leur allure change selon la zone du fluide.","remember":"ISOtherme : même température. Pensez au thermomètre.","narration":"Une isotherme réunit les points qui ont la même température. Sur le schéma, c'est la ligne tiretée mise en évidence. Sur un diagramme réel, on en trouve plusieurs, qui forment un réseau. Leur allure n'est pas la même partout : elle change selon la zone où se trouve le fluide. Le thermomètre aide à retenir le mot. À l'écran suivant, vous verrez comment reconnaître cette famille sans vous fier à sa couleur."},"function":{"title":"Ne pas apprendre seulement une couleur","body":"Une couleur peut changer d’un éditeur de diagramme à l’autre. Pour identifier la famille, cherchez la légende, la valeur de température et l’allure de la courbe.","terrain":"Lien métier : comparer une température réelle à la température de saturation pour déterminer surchauffe ou sous-refroidissement.","narration":"Apprendre l'isotherme par sa seule couleur ne suffit pas, puisque la teinte varie selon l'éditeur du diagramme. Pour reconnaître la famille, trois appuis sont plus sûrs : la légende, la température indiquée, et la forme de la ligne. Sur le chantier, on met en regard la température réelle et la température de saturation. Cette comparaison permet de déterminer s'il y a surchauffe ou sous-refroidissement. Place maintenant aux questions du module."},"quiz":[{"question":"Quelle grandeur reste constante sur une isotherme ?","choices":["Le volume massique","La température","La pression"],"answer":1,"feedback":"THERME renvoie à la température : T reste constante."},{"question":"Pour identifier une isotherme sur un autre diagramme, que faut-il privilégier ?","choices":["Uniquement sa couleur","La légende, la valeur T et son allure","La taille du fichier"],"answer":1,"feedback":"La couleur n’est pas une convention universelle. Le symbole T et la légende sont les repères fiables."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"isotherme","order":7,"title":"L’isotherme","short":"Isotherme","level":"essentiel","symbol":"T = constante","goal":"Reconnaître les états de même température.","discover":{"title":"Même température","body":"Une isotherme relie les points ayant la même température T. Sur un diagramme réel, plusieurs isothermes forment un réseau ; leur allure change selon la zone du fluide.","remember":"ISOtherme : même température. Pensez au thermomètre.","narration":"Une isotherme réunit les points qui ont la même température. Sur le schéma, c'est la ligne tiretée mise en évidence. Sur un diagramme réel, on en trouve plusieurs, qui forment un réseau. Leur allure n'est pas la même partout : elle change selon la zone où se trouve le fluide. Le thermomètre aide à retenir le mot. À l'écran suivant, vous verrez comment reconnaître cette famille sans vous fier à sa couleur."},"function":{"title":"Ne pas apprendre seulement une couleur","body":"Une couleur peut changer d’un éditeur de diagramme à l’autre. Pour identifier la famille, cherchez la légende, la valeur de température et l’allure de la courbe.","terrain":"Lien métier : comparer une température réelle à la température de saturation pour déterminer surchauffe ou sous-refroidissement.","narration":"Apprendre l'isotherme par sa seule couleur ne suffit pas, puisque la teinte varie selon l'éditeur du diagramme. Pour reconnaître la famille, trois appuis sont plus sûrs : la légende, la température indiquée, et la forme de la ligne. Sur le chantier, on met en regard la température réelle et la température de saturation. Cette comparaison permet de déterminer s'il y a surchauffe ou sous-refroidissement. Place maintenant aux questions du module."},"quiz":[{"question":"Quelle grandeur reste constante sur une isotherme ?","choices":["Le volume massique","La pression","La température"],"answer":2,"feedback":"THERME renvoie à la température : T reste constante."},{"question":"Pour identifier une isotherme sur un autre diagramme, que faut-il privilégier ?","choices":["La légende, la valeur T et son allure","Uniquement sa couleur","La taille du fichier"],"answer":0,"feedback":"La couleur n’est pas une convention universelle. Le symbole T et la légende sont les repères fiables."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — L’isotherme","fixedIds":["isotherme"]};
   </script>
   <script>(() => {
@@ -596,14 +601,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   function scoreFor(module) {
     return resultFor(module).answers.filter((answer) => answer?.correct).length;
-  }
-
-  function totalScore() {
-    return selectedModules.reduce((sum, module) => sum + scoreFor(module), 0);
-  }
-
-  function possibleScore() {
-    return selectedModules.reduce((sum, module) => sum + module.quiz.length, 0);
   }
 
   function captionFor(module) {
@@ -807,12 +804,12 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       dom.quizArea.innerHTML = `
         <div class="${perfect ? "remember" : "terrain"}">
           <strong>${perfect ? "✓ Acquis" : "À revoir"} :</strong>
-          ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${module.quiz.length}.
+          ${perfect ? "les deux réponses sont justes." : "relisez le repère ci-dessous."}
         </div>
         <p>${escapeHtml(module.discover.remember)}</p>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = state.stageIndex === stages.length - 2 ? "Voir le bilan →" : "Module suivant →";
-      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${module.quiz.length}`, module.discover.remember);
+      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, perfect ? "Les deux réponses sont justes" : "Relisez le repère", module.discover.remember);
       return;
     }
 
@@ -868,19 +865,17 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   }
 
   function renderFinal() {
-    const score = totalScore();
-    const possible = possibleScore();
     const toReview = selectedModules.filter((module) => scoreFor(module) < module.quiz.length);
     dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
     dom.progressModule.textContent = "Bilan de révision";
-    dom.moduleState.textContent = "Bilan · entraînement sans valeur d’examen";
+    dom.moduleState.textContent = "Bilan · entraînement";
     dom.lessonKicker.textContent = "Je fais le point";
     dom.lessonTitle.textContent = toReview.length ? "Vous savez quoi revoir" : "Tous les repères sont confirmés";
     dom.diagram.innerHTML = diagramSvg("overview");
     dom.visualCaption.textContent = captionFor(null);
     dom.lessonContent.innerHTML = `
       <div class="${toReview.length ? "terrain" : "remember"}">
-        <strong>Résultat :</strong> ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${possible}.
+        <strong>Résultat :</strong> ${toReview.length ? "des repères sont à revoir." : "tous les repères sont confirmés."}
       </div>
       ${toReview.length
         ? `<p><strong>Modules à reprendre :</strong> ${toReview.map((module) => escapeHtml(module.short)).join(" · ")}</p>`
@@ -891,7 +886,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     dom.nextButton.disabled = false;
     dom.nextButton.textContent = "Recommencer ↻";
     dom.backButton.disabled = false;
-    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${possible}`, toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
+    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, "", toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
   }
 
   function goNext() {

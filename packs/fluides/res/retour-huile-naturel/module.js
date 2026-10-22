@@ -22,7 +22,7 @@ window.OIL_MODULE = {
         "Un bon retour maintient un niveau stable sans remplir les tuyauteries ou les échangeurs d’huile."
       ],
       box: { type: "key", text: "Ce qui part doit pouvoir revenir : le niveau du carter traduit un équilibre, pas seulement une quantité versée." },
-      visual: { kind: "route", title: "Reprendre le trajet de l’huile", label: "Boucle frigorifique montrant l’huile entraînée puis ramenée vers le compresseur", caption: "Schéma inerWeb recomposé avec le symbole de compresseur validé de la bibliothèque technique." }
+      visual: { kind: "route", title: "Reprendre le trajet de l’huile", label: "Boucle frigorifique montrant l’huile entraînée puis ramenée vers le compresseur" }
     },
     {
       id: "definition",
@@ -78,7 +78,7 @@ window.OIL_MODULE = {
         "La boucle haute, souvent appelée contre-siphon, limite un drainage inverse dans certaines configurations. Sa présence et sa forme suivent le plan ou la notice."
       ],
       box: { type: "warning", text: "Siphon et contre-siphon ne sont pas des décorations systématiques : chaque boucle répond à une géométrie et à des régimes définis." },
-      visual: { kind: "riser", title: "Lire la remontée complète", label: "Ligne d’aspiration avec siphon en pied, colonne montante, contre-siphon en tête et compresseur", caption: "Tracé inerWeb fondé sur le schéma d’aspiration existant ; compresseur repris de la bibliothèque technique validée." }
+      visual: { kind: "riser", title: "Lire la remontée complète", label: "Ligne d’aspiration avec siphon en pied, colonne montante, contre-siphon en tête et compresseur" }
     }
   ],
   quiz: [

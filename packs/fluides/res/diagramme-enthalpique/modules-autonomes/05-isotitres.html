@@ -412,6 +412,11 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .topbar { border-radius: 10px; }
   .course-name { font-size: 15px; }
   .brand-mark { width: 31px; height: 31px; border-width: 2px; font-size: 12px; }
+  .brand svg { width: 110px; height: auto; }
+  .course-app { grid-template-rows: auto 34px minmax(0, 1fr) 54px; }
+  .topbar { flex-wrap: wrap; }
+  .course-name { flex: 1 1 0; }
+  .tools { flex: 0 1 auto; flex-wrap: wrap; margin-left: auto; }
   .tool-button { font-size: 0; width: 33px; padding: 0; }
   .tool-button::first-letter { font-size: 15px; }
   #readButton::after { content: "▶"; font-size: 14px; }
@@ -511,7 +516,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   <noscript>Ce module nécessite JavaScript pour afficher les étapes et les exercices. Le contenu ne dépend d’aucun réseau.</noscript>
   <script>
-    window.__INERWEB_MODULES__ = [{"id":"isotitres","order":5,"title":"Les isotitres","short":"Isotitres x","level":"essentiel","symbol":"x = constante","goal":"Reconnaître les lignes de titre vapeur dans la zone diphasique.","discover":{"title":"Quelle part est déjà vapeur ?","body":"Dans la cloche, le titre x est la fraction massique de vapeur. Une isotitre relie des points de même titre. Ces lignes restent à l’intérieur de la zone liquide-vapeur.","remember":"x = 0 : liquide saturé. x = 1 : vapeur saturée. Entre les deux : mélange.","narration":"Dans la cloche, le fluide est un mélange, dont une part de la masse est déjà de la vapeur. Cette part s'appelle le titre vapeur. Sur le schéma, chaque ligne pointillée rassemble des points de même titre : c'est une isotitre, et elle reste à l'intérieur de la cloche. Un titre de zéro correspond au liquide saturé, un titre de un à la vapeur saturée. Tout ce qui se trouve entre les deux est un mélange. Vous verrez ensuite comment lire la qualité du mélange."},"function":{"title":"Lire la qualité du mélange","body":"Une isotitre n’est ni une température ni une pression. Elle indique la proportion massique de vapeur présente dans le mélange.","terrain":"Lien métier : savoir les reconnaître évite de confondre une ligne de titre avec une frontière ou une autre famille de courbes.","narration":"Une isotitre ne vous renseigne ni sur la température, ni sur la pression. Ce qu'elle exprime, c'est la qualité du mélange : la part de vapeur qu'il contient, comptée en masse. Sur le chantier, savoir la reconnaître évite deux confusions : la prendre pour une frontière, ou pour une courbe d'une autre famille. Chaque ligne de titre répond donc à une seule question, celle de la proportion de vapeur. Les questions du module viennent ensuite."},"quiz":[{"question":"Que représente le titre x ?","choices":["La fraction massique de vapeur","La pression absolue","Le volume du local"],"answer":0,"feedback":"Le titre x indique la part massique du fluide présente sous forme de vapeur."},{"question":"Où se trouvent les isotitres ?","choices":["Uniquement dans la cloche","Uniquement à gauche","Sur l’axe des pressions"],"answer":0,"feedback":"Le titre n’a de sens que dans la zone où liquide et vapeur coexistent."}]}];
+    window.__INERWEB_MODULES__ = [{"id":"isotitres","order":5,"title":"Les isotitres","short":"Isotitres x","level":"essentiel","symbol":"x = constante","goal":"Reconnaître les lignes de titre vapeur dans la zone diphasique.","discover":{"title":"Quelle part est déjà vapeur ?","body":"Dans la cloche, le titre x est la fraction massique de vapeur. Une isotitre relie des points de même titre. Ces lignes restent à l’intérieur de la zone liquide-vapeur.","remember":"x = 0 : liquide saturé. x = 1 : vapeur saturée. Entre les deux : mélange.","narration":"Dans la cloche, le fluide est un mélange, dont une part de la masse est déjà de la vapeur. Cette part s'appelle le titre vapeur. Sur le schéma, chaque ligne pointillée rassemble des points de même titre : c'est une isotitre, et elle reste à l'intérieur de la cloche. Un titre de zéro correspond au liquide saturé, un titre de un à la vapeur saturée. Tout ce qui se trouve entre les deux est un mélange. Vous verrez ensuite comment lire la qualité du mélange."},"function":{"title":"Lire la qualité du mélange","body":"Une isotitre n’est ni une température ni une pression. Elle indique la proportion massique de vapeur présente dans le mélange.","terrain":"Lien métier : savoir les reconnaître évite de confondre une ligne de titre avec une frontière ou une autre famille de courbes.","narration":"Une isotitre ne vous renseigne ni sur la température, ni sur la pression. Ce qu'elle exprime, c'est la qualité du mélange : la part de vapeur qu'il contient, comptée en masse. Sur le chantier, savoir la reconnaître évite deux confusions : la prendre pour une frontière, ou pour une courbe d'une autre famille. Chaque ligne de titre répond donc à une seule question, celle de la proportion de vapeur. Les questions du module viennent ensuite."},"quiz":[{"question":"Que représente le titre x ?","choices":["La pression absolue","La fraction massique de vapeur","Le volume du local"],"answer":1,"feedback":"Le titre x indique la part massique du fluide présente sous forme de vapeur."},{"question":"Où se trouvent les isotitres ?","choices":["Uniquement à gauche","Sur l’axe des pressions","Uniquement dans la cloche"],"answer":2,"feedback":"Le titre n’a de sens que dans la zone où liquide et vapeur coexistent."}]}];
     window.__INERWEB_CONFIG__ = {"documentTitle":"Diagramme enthalpique — Les isotitres","fixedIds":["isotitres"]};
   </script>
   <script>(() => {
@@ -596,14 +601,6 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
 
   function scoreFor(module) {
     return resultFor(module).answers.filter((answer) => answer?.correct).length;
-  }
-
-  function totalScore() {
-    return selectedModules.reduce((sum, module) => sum + scoreFor(module), 0);
-  }
-
-  function possibleScore() {
-    return selectedModules.reduce((sum, module) => sum + module.quiz.length, 0);
   }
 
   function captionFor(module) {
@@ -807,12 +804,12 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
       dom.quizArea.innerHTML = `
         <div class="${perfect ? "remember" : "terrain"}">
           <strong>${perfect ? "✓ Acquis" : "À revoir"} :</strong>
-          ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${module.quiz.length}.
+          ${perfect ? "les deux réponses sont justes." : "relisez le repère ci-dessous."}
         </div>
         <p>${escapeHtml(module.discover.remember)}</p>`;
       dom.nextButton.disabled = false;
       dom.nextButton.textContent = state.stageIndex === stages.length - 2 ? "Voir le bilan →" : "Module suivant →";
-      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${module.quiz.length}`, module.discover.remember);
+      state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, perfect ? "Les deux réponses sont justes" : "Relisez le repère", module.discover.remember);
       return;
     }
 
@@ -868,19 +865,17 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   }
 
   function renderFinal() {
-    const score = totalScore();
-    const possible = possibleScore();
     const toReview = selectedModules.filter((module) => scoreFor(module) < module.quiz.length);
     dom.courseName.textContent = config.documentTitle || "Diagramme enthalpique — parcours modulaire";
     dom.progressModule.textContent = "Bilan de révision";
-    dom.moduleState.textContent = "Bilan · entraînement sans valeur d’examen";
+    dom.moduleState.textContent = "Bilan · entraînement";
     dom.lessonKicker.textContent = "Je fais le point";
     dom.lessonTitle.textContent = toReview.length ? "Vous savez quoi revoir" : "Tous les repères sont confirmés";
     dom.diagram.innerHTML = diagramSvg("overview");
     dom.visualCaption.textContent = captionFor(null);
     dom.lessonContent.innerHTML = `
       <div class="${toReview.length ? "terrain" : "remember"}">
-        <strong>Résultat :</strong> ${score} bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} sur ${possible}.
+        <strong>Résultat :</strong> ${toReview.length ? "des repères sont à revoir." : "tous les repères sont confirmés."}
       </div>
       ${toReview.length
         ? `<p><strong>Modules à reprendre :</strong> ${toReview.map((module) => escapeHtml(module.short)).join(" · ")}</p>`
@@ -891,7 +886,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     dom.nextButton.disabled = false;
     dom.nextButton.textContent = "Recommencer ↻";
     dom.backButton.disabled = false;
-    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, `${score} bonnes réponses sur ${possible}`, toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
+    state.currentSpeechText = buildNarration(dom.lessonTitle.textContent, "", toReview.length ? `À reprendre : ${toReview.map((module) => module.short).join(", ")}` : "Tous les repères sont confirmés");
   }
 
   function goNext() {

@@ -33,7 +33,7 @@ Ouvrir `fiches-metier.html` ou utiliser l’entrée mise en avant dans `index.ht
 
 - `Découvrir` : la cible du geste est montrée et expliquée ;
 - `S’entraîner` : l’élève cherche seul et peut demander un repère ;
-- `Confirmer` : aucun repère n’est affiché et le premier essai juste est compté.
+- `Confirmer` : aucun repère n’est affiché ; le bilan dit seulement si des gestes sont à revoir, sans chiffre.
 
 Les six fiches utilisent un manifold 2 voies et des équipements SVG locaux. L’élève agit sur l’organe réellement concerné, au clic ou au clavier, puis lit le résultat avant de poursuivre. Une action concrète est demandée par écran.
 

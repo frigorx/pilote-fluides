@@ -25,7 +25,7 @@ window.OIL_MODULE = {
       lead: "Le séparateur se place sur le refoulement, après le compresseur et avant le condenseur.",
       details: ["L’entrée reçoit le mélange gaz-huile. La sortie principale conduit le gaz vers le condenseur.", "La sortie basse collecte l’huile pour un retour direct ou pour l’alimentation d’un réservoir."],
       box: { type: "exam", text: "À l’oral : montrer les trois chemins — entrée du mélange, sortie gaz, sortie huile." },
-      visual: { kind: "separator", scene: "separateur-chemins", title: "Lire les trois raccordements", label: "Symbole validé du séparateur avec mélange entrant, gaz sortant et retour d’huile", caption: "Coupe animée inerWeb ; symbole exact de la bibliothèque technique. Touchez une étape pour la revoir." }
+      visual: { kind: "separator", scene: "separateur-chemins", title: "Lire les trois raccordements", label: "Séparateur avec mélange entrant, gaz sortant et retour d’huile", caption: "Coupe animée inerWeb. Touchez une étape pour la revoir." }
     },
     {
       id: "technologies",

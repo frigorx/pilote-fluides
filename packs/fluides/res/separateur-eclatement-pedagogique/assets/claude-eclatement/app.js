@@ -10,7 +10,7 @@
       '</defs>';
   }
 
-  // Symbole normalisé repris de la bibliothèque technique inerWeb (engine.js).
+  // Symbole normalisé repris (engine.js).
   function librarySeparator(x, y, width, height, label) {
     return '<g role="img" aria-label="' + label + '">' +
       '<svg x="' + x + '" y="' + y + '" width="' + width + '" height="' + height + '" viewBox="-14.0 -18.0 30 40" overflow="visible">' +
@@ -23,9 +23,9 @@
       '</svg></g>';
   }
 
-  // Compresseur de la bibliothèque technique inerWeb.
+  // Compresseur.
   function compressor(x, y, scale) {
-    return '<g role="img" aria-label="Compresseur de la bibliothèque technique inerWeb" transform="translate(' + x + ' ' + y + ') scale(' + scale + ')">' +
+    return '<g role="img" aria-label="Compresseur" transform="translate(' + x + ' ' + y + ') scale(' + scale + ')">' +
       '<circle cx="0" cy="0" r="15" fill="#fffdf8" stroke="#000"/><line x1="-15" y1="0" x2="-16" y2="0" stroke="#000"/><line x1="15" y1="0" x2="16" y2="0" stroke="#000"/>' +
       '<line x1="-7" y1="-13" x2="13" y2="-7" stroke="#000"/><line x1="-7" y1="13" x2="13" y2="7" stroke="#000"/>' +
       '<circle cx="-16" cy="0" r="1.5"/><circle cx="16" cy="0" r="1.5"/><circle cx="-10" cy="10" r="1.5"/><circle cx="2" cy="11" r="1.5"/><circle cx="-10" cy="-10" r="1.5"/></g>';
@@ -231,7 +231,7 @@
     },
     {
       name: "Où va-t-on ?", duration: 12,
-      description: "En France, l’éclatement équipe le plus souvent les installations classiques. Sur le CO₂, la densité du fluide se rapproche de celle de l’huile : le coalescent s’impose.",
+      description: "Le choix se lit sur l’installation et sur la notice. Sur le CO₂, la densité du fluide se rapproche de celle de l’huile : le coalescent est souvent préféré.",
       draw: function () { return wrap("L’emploi de chaque famille selon l’installation", this.description,
         '<text class="heading" x="360" y="24" text-anchor="middle">8 · OÙ L’ON RENCONTRE CHACUN</text>' +
         // installation classique
