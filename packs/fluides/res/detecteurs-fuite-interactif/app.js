@@ -211,7 +211,7 @@ const screens = [
   screen({id:"bilan",dossier:"bilan",title:"À retenir, puis pratiquer",kicker:"Bilan · 2",codes:[CODES_CAP,"4.06","4.07","4.08"],level:"evaluer",
     text:"Deux familles de méthodes. Trois technologies de détecteur. Deux chiffres : 5 g par an et 12 mois. Un geste : balayer lentement, tout près, puis confirmer. Un interdit : ouvrir une bouteille pour tester.",
     prompt:"Pour pratiquer au poste : ouvrez une des trois suites.",
-    render:()=>liensMarkup([{href:"../../../../tour-de-main/interventions/etancheite-azote/",title:"Contrôler l’étanchéité sous azote",note:"La station du Tour de main sur l’épreuve à l’azote"},{href:"../etancheite-interactive/index.html",title:"L’étanchéité — de l’indice à la preuve",note:"Le cours : registre, relevés, localisation, trace"}])}),
+    render:()=>liensMarkup([{href:"../../../../tour-de-main/interventions/fuite-detecteur/",title:"Chercher une fuite au détecteur",note:"La gare du Tour de main : le geste au poste"},{href:"../../../../tour-de-main/interventions/etancheite-azote/",title:"Contrôler l’étanchéité sous azote",note:"La station du Tour de main sur l’épreuve à l’azote"},{href:"../etancheite-interactive/index.html",title:"L’étanchéité — de l’indice à la preuve",note:"Le cours : registre, relevés, localisation, trace"}])}),
 ];
 
 function renderHome(){$("#dossier-grid").innerHTML=dossiers.map((dossier,index)=>`<button class="dossier-button" type="button" data-dossier="${dossier.id}"><b>${index+1}</b><span>${esc(dossier.label)}<small>${esc(dossier.note)}</small></span></button>`).join("");$$('[data-dossier]').forEach(button=>button.addEventListener("click",()=>startCourse(button.dataset.dossier)))}

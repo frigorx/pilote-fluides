@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1b3a63">
 <title>La chaîne entière · Le tour de main</title>
-<meta name="description" content="Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste.">
+<meta name="description" content="Feuille de route : une installation neuve de bout en bout. Poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide, charger en fluide neuf : une gare après l'autre, ce qui est fait, ce qui reste. Puis la fiche de mise en service, remplie avec mes relevés.">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="../_moule/gare.css?v=4d41e01">
 <!-- Gare 8 (Franck, 08/10/2026 : « une feuille de route ») : aucune étape propre ; elle enchaîne les gares et lit,
@@ -27,6 +27,26 @@
 .etat{font-size:16px;color:var(--gris)}
 .etat b{color:var(--encre)}
 .intro{margin:0 0 12px}
+/* S2 (19/10/2026) : la fiche de mise en service, en bas de la feuille de route (tâche T15) */
+.fiche{margin:16px 0 8px}
+.fiche .lien-fiche{font-size:15px;color:var(--gris)}
+.fiche table{margin:6px 0}
+.fiche th.sec{text-align:left;background:var(--doux);color:var(--bleu);font-size:17px}
+.fiche td.rub{width:58%}
+.fiche td.rub small{display:block;font-size:15px;color:var(--gris)}
+.fiche td.rub small.pris{color:var(--vert)}
+.fiche td input[type=text]{font:inherit;width:96px;padding:5px 8px;border:2px solid var(--filet);border-radius:8px}
+.fiche td input.plein{width:100%;max-width:230px}
+.fiche td .unite{color:var(--gris);margin-left:4px}
+.fiche .calcul{font-weight:700;color:var(--bleu)}
+.fiche .verifs p{margin:4px 0}
+.fiche .arret{margin:8px 0}
+.fiche .sign{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.fiche .sign input{font:inherit;padding:5px 8px;border:2px solid var(--filet);border-radius:8px;flex:1 1 200px}
+.fiche .sign-papier{display:none}
+.fiche td.rub small.aide{color:var(--encre)}
+.fiche input:disabled{opacity:.5;cursor:not-allowed}
+@media print{.route,.intro,.danger,.voix-route,.fiche .bas,#f-relecture,#f-visa-ligne{display:none!important}.fiche .sign-papier{display:flex;gap:24px;margin:18px 0 6px}.fiche .sign-papier div{flex:1;border:1px solid #000;min-height:90px;padding:6px 8px}.fiche td input[type=text],.fiche .sign input{border:0;border-bottom:1px solid #000;border-radius:0}}
 </style>
 <script defer src="../../../moteur/retour-accueil.js?v=3c25e82f03" data-reseau-href="tour-de-main/index.html" data-reseau-nom="🔧 Le tour de main"></script>
 </head>
@@ -39,12 +59,30 @@
 <main data-prof-zone><div class="filigrane" aria-hidden="true"></div>
   <p class="voix-route"><button class="btn clair" id="ecouter-route" data-prof-ecouter aria-pressed="false">▶ Écouter</button></p>
   <p class="intro">Une installation neuve, montée et brasée, prête à être mise en service. Je fais les gares <b>dans l'ordre</b> :
-    chacune s'ouvre sur sa guidance au poste, avec ses points d'arrêt et sa trace. Je reviens ici entre deux gares.</p>
+    chacune s'ouvre sur sa guidance au poste, avec ses points d'arrêt et sa trace. Je reviens ici entre deux gares. À la fin, je reporte mes relevés dans <b>la fiche de mise en service</b>, en bas de cette page.</p>
   <p class="danger"><b>Danger · </b>Je ne passe à la gare suivante que si la précédente est finie : on ne tire pas au vide un circuit
     qui fuit, on ne charge pas un circuit dont le vide ne tient pas.</p>
   <ol class="route" id="route"></ol>
+  <section class="carte trace fiche" id="fiche-mise-en-service" aria-labelledby="fiche-titre">
+    <div class="entete"><h2 class="verbe" id="fiche-titre">Fiche de mise en service</h2></div>
+    <p>Une installation mise en service se rend avec sa fiche. Je reporte les valeurs que j'ai relevées dans les gares : la page les reprend
+      toute seule quand elles sont notées sur cet appareil. Ce qui manque, je le relève sur la machine, puis j'écris mon nom. Le professeur vérifie et signe.</p>
+    <p class="verdict ambre" id="f-relecture"><b>En cours de relecture.</b> Cette fiche attend le test du professeur : elle peut encore changer.</p>
+    <div class="sign"><input id="f-eleve" placeholder="Mon nom, mon prénom" aria-label="Mon nom, mon prénom"><input id="f-date" readonly aria-label="Date"></div>
+    <div class="tableau-defile"><table><tbody id="f-corps"></tbody></table></div>
+    <h3>Je contrôle ma fiche</h3>
+    <div class="verifs" id="f-verifs" aria-live="polite"></div>
+    <label class="arret" id="f-visa-ligne"><input type="checkbox" id="f-visa"><span>Point d'arrêt : j'appelle le professeur<small>Le professeur a vérifié ma fiche de mise en service et l'a signée.</small></span></label>
+    <p class="verdict" id="f-etat"></p>
+    <div class="sign-papier"><div>Signature de l'élève :</div><div>Visa du professeur :</div></div>
+    <div class="bas"><button class="btn clair" id="f-reporter" type="button">Reporter de nouveau mes relevés</button>
+      <button class="btn" id="f-imprimer" type="button">Imprimer la fiche</button></div>
+  </section>
   <p class="codes"><b>Référentiel.</b> Chaque gare porte ses codes (tâches, compétences, savoirs) pour le CAP IFCA et la 1re Bac Pro MFER,
-    et l'attendu commun : le niveau de l'attestation d'aptitude fluides.</p>
+    et l'attendu commun : le niveau de l'attestation d'aptitude fluides.<br>
+    <b>La fiche de mise en service.</b> CAP IFCA : tâche <b>T15</b> « Renseigner les documents de mise en service » · compétences C1.1 « Compléter, transmettre », C4.5 « Mesurer, comparer des grandeurs » · savoirs S3.1, S5.1.
+    1re Bac Pro MFER : tâches A3T2 « Réaliser la mise en service de l'installation », A5T2 « Renseigner les documents techniques et réglementaires » · compétences C7, C11, C12 · savoirs S6, S8, S1.
+    Attestation d'aptitude fluides (règlement (UE) 2024/2215, annexe I) : 3.05 et 5.07 (consigner les données et la quantité de fluide dans le registre), 4.05 (relevés).</p>
 </main>
 <!-- la voix du site (inerweb.fr) : vitesse commune, MP3 ou voix du navigateur, prof vocal — chantier prof vocal 17/10/2026 -->
 <script src="../../../moteur/reglage-voix.js?v=20261017-voix"></script>
@@ -88,9 +126,126 @@ async function avancement(g) {
   document.getElementById("barre").style.width = (100 * finies / GARES.length) + "%";
   document.getElementById("avance-txt").textContent = finies + " / " + GARES.length + " gares finies";
 })();
+/* ---------- La fiche de mise en service (S2, 19/10/2026 ; tâche T15) ----------
+   Elle lit, sur cet appareil, ce que l'élève a noté dans les gares (mémoire locale `tour-de-main:<gare>`) et la complète :
+   chaque valeur reste modifiable, l'intensité se relève sur place. Aucune donnée ne part sur le réseau. */
+const ATM = 1.01325, LECTURE = 0.3, TOL = 0.05;
+const CLE_FICHE = "tour-de-main:chaine-entiere";
+const lireGare = id => { try { return JSON.parse(localStorage.getItem("tour-de-main:" + id)) || {}; } catch (e) { return {}; } };
+const valeurDe = (S, etape, k = 0) => { const v = S && S.etapes && S.etapes[etape] && S.etapes[etape].valeurs; return v && v[k] != null && typeof v[k] !== "boolean" ? String(v[k]) : ""; };
+const nb = s => parseFloat(String(s == null ? "" : s).replace(",", "."));
+const fr = (v, d = 1) => (Math.round(v * 10 ** d) / 10 ** d).toFixed(d).replace(".", ",");
+function relevesDesGares() {
+  const c = lireGare("charge-fluide-neuf"), e = lireGare("etancheite-azote"), v = lireGare("tirage-au-vide"), mc = c.machine || {};
+  const f = (S, id, k) => valeurDe(S, id, k);
+  return { fluide: mc.fluide || "", charge: mc.charge || "", p1: f(e, "initial", 0), t1: f(e, "initial", 1), p2: f(e, "final", 0), t2: f(e, "final", 1),
+    unite: (v.machine || {}).unite || "", cible: (v.machine || {}).cible || "", adm: (v.machine || {}).remontee || "", vide: f(v, "descente", 0), apres: f(v, "remontee", 2), m1: f(c, "depart", 0), m2: f(c, "pesee-fin", 0),
+    bp: f(c, "fonct", 0), hp: f(c, "fonct", 1), ta: f(c, "fonct", 2), tl: f(c, "fonct", 3), sh: f(c, "fonct", 4), sr: f(c, "fonct", 5),
+    eleve: c.eleve || e.eleve || v.eleve || "" };
+}
+/* [rubrique, [ [id, libellé, unité, d'où ça vient] … ]] */
+const RUBRIQUES = [
+  ["Plaque de la machine", [["fluide", "Fluide frigorigène", "", "gare 6"], ["charge", "Charge de la plaque", "kg", "gare 6"]]],
+  ["Étanchéité sous azote", [["p1", "Pression au départ", "bar", "gare 4"], ["t1", "Température de l'air au départ", "°C", "gare 4"],
+    ["p2", "Pression à la fin", "bar", "gare 4"], ["t2", "Température de l'air à la fin", "°C", "gare 4"]]],
+  ["Tirage au vide", [["unite", "Unité du vacuomètre", "", "gare 5"], ["cible", "Cible de vide du poste", "", "gare 5"], ["adm", "Remontée admise pendant le test", "", "gare 5"],
+    ["vide", "Vide atteint", "", "gare 5"], ["apres", "Vide après le test de remontée", "", "gare 5"]]],
+  ["Charge à la balance", [["m1", "Masse de la bouteille avant la charge", "kg", "gare 6"], ["m2", "Masse de la bouteille après la charge", "kg", "gare 6"]]],
+  ["Machine en marche", [["bp", "Basse pression", "bar", "gare 6"], ["hp", "Haute pression", "bar", "gare 6"], ["ta", "Température d'aspiration", "°C", "gare 6"],
+    ["tl", "Température de la ligne liquide", "°C", "gare 6"], ["sh", "Surchauffe", "K", "gare 6"], ["sr", "Sous-refroidissement", "K", "gare 6"]]],
+  ["Électricité, à relever sur place", [
+    ["inten", "Intensité absorbée par le compresseur (pince)", "A", "", "Machine en marche, régime stable : la pince entoure UN seul conducteur d'alimentation du compresseur, hors bornier. Je ne touche à aucune borne. Coffret à ouvrir sous tension, ou titre B1V (exécutant hors tension) : le professeur mesure (voir la <a href='../remplacer-composant-electrique/index.html'>gare 11</a>)."],
+    ["inom", "Intensité nominale écrite sur la plaque du compresseur", "A", "", "Sur la plaque : l'intensité nominale, en service. Pas l'intensité du démarrage."]]]
+];
+const TOUS = RUBRIQUES.flatMap(r => r[1]);
+let F = { eleve: "", fiche: {}, visa: false };
+try { const lu = JSON.parse(localStorage.getItem(CLE_FICHE)); if (lu) F = Object.assign(F, lu); } catch (e) { /* page sans mémoire */ }
+const garderFiche = () => { try { localStorage.setItem(CLE_FICHE, JSON.stringify(F)); } catch (e) { /* idem */ } };
+
+function reporter(ecraser) {
+  const R = relevesDesGares();
+  TOUS.forEach(([id]) => { if (R[id] && (ecraser || !F.fiche[id])) F.fiche[id] = R[id]; });
+  if (R.eleve && !F.eleve) F.eleve = R.eleve;
+  F.repris = TOUS.filter(([id]) => R[id]).map(([id]) => id);
+}
+function dessinerFiche() {
+  const R = relevesDesGares();
+  const u = F.fiche.unite || "";
+  document.getElementById("f-corps").innerHTML = RUBRIQUES.map(([nom, lignes]) =>
+    `<tr><th class="sec" colspan="2">${nom}</th></tr>` + lignes.map(([id, lib, unite, gare, aide]) => {
+      const pris = !!R[id] && F.fiche[id] === R[id];
+      const src = aide ? `<small class="aide">${aide}</small>` : gare ? `<small class="${pris ? "pris" : ""}">${pris ? "✓ repris de la " + gare : "à relever (" + gare + ")"}</small>` : "<small>à relever sur la machine</small>";
+      const un = ["vide", "apres", "cible", "adm"].includes(id) ? u : unite;
+      return `<tr><td class="rub">${lib}${src}</td><td><input type="text" data-f="${id}" ${id === "fluide" || id === "unite" ? 'class="plein"' : 'inputmode="decimal"'} value="${(F.fiche[id] || "").replace(/"/g, "&quot;")}" aria-label="${lib}">${["vide", "apres", "cible", "adm"].includes(id) ? `<span class="unite u-vide">${un}</span>` : un ? `<span class="unite">${un}</span>` : ""}</td></tr>`;
+    }).join("")).join("") +
+    `<tr><td class="rub">Masse de fluide chargée<small>masse avant − masse après</small></td><td><span class="calcul" id="f-chargee">…</span></td></tr>`;
+  document.getElementById("f-eleve").value = F.eleve || "";
+  document.getElementById("f-date").value = new Date().toLocaleDateString("fr-FR");
+  document.getElementById("f-visa").checked = !!F.visa;
+  majVerifs();
+}
+function majVerifs() {
+  const g = id => nb(F.fiche[id]), L = [];
+  const ok = (cl, txt) => L.push(`<p class="verdict ${cl}">${txt}</p>`);
+  /* étanchéité : même gaz, même volume : P absolue / T absolue constant ; aucune baisse une fois la température prise en compte */
+  const [p1, t1, p2, t2] = ["p1", "t1", "p2", "t2"].map(g);
+  if ([p1, t1, p2, t2].some(isNaN)) ok("ambre", "Étanchéité : il manque la pression ou la température, au départ ou à la fin.");
+  else { const att = (p1 + ATM) * (t2 + 273.15) / (t1 + 273.15) - ATM;
+    if (p2 < att - 0.05) ok("rouge", "Étanchéité : STOP, la pression a baissé (" + fr(p1) + " bar, puis " + fr(p2) + " bar) plus que la température ne l'explique (j'attendais " + fr(att) + " bar). Une fiche ne dit pas « étanche » sur une fuite.");
+    else ok("vert", "Étanchéité : aucune baisse une fois la température prise en compte (" + fr(p1) + " bar, puis " + fr(p2) + " bar)."); }
+  /* vide : la cible du poste est atteinte, et la remontée pendant le test reste dans ce qui est admis (5 % de marge de mesure) */
+  const [v1, v2, cib, adm] = ["vide", "apres", "cible", "adm"].map(g);
+  if ([v1, v2, cib, adm].some(isNaN)) ok("ambre", "Vide : il manque le vide atteint, le vide après le test, la cible du poste ou la remontée admise.");
+  else if (v1 > cib * (1 + TOL)) ok("rouge", "Vide : STOP, la cible du poste (" + fr(cib, 2) + ") n'est pas atteinte (" + fr(v1, 2) + "). Je ne charge pas.");
+  else if (v2 - v1 > adm * (1 + TOL)) ok("rouge", "Vide : STOP, le vide est remonté de " + fr(v2 - v1, 2) + " pour " + fr(adm, 2) + " admis : il ne tient pas. Je ne charge pas.");
+  else ok("vert", "Vide : cible atteinte (" + fr(v1, 2) + " pour " + fr(cib, 2) + "), remontée de " + fr(Math.max(0, v2 - v1), 2) + " pour " + fr(adm, 2) + " admis.");
+  /* charge : masse chargée = avant − après, comparée à la plaque à 5 % près */
+  const m1 = g("m1"), m2 = g("m2"), ch = g("charge"), d = m1 - m2;
+  document.getElementById("f-chargee").textContent = isNaN(d) ? "…" : fr(d, 2) + " kg";
+  if (isNaN(d) || isNaN(ch)) ok("ambre", "Charge : il manque une masse, ou la charge de la plaque.");
+  else if (d <= 0) ok("rouge", "Charge : la bouteille doit peser moins après la charge. Je relis mes deux pesées.");
+  else if (Math.abs(d - ch) <= ch * TOL) ok("vert", "Charge : " + fr(d, 2) + " kg pour " + fr(ch, 2) + " kg sur la plaque, cohérent à 5 % près.");
+  else ok("ambre", "Charge : " + fr(d, 2) + " kg pour " + fr(ch, 2) + " kg sur la plaque. Un écart de plus de 5 % s'explique ou se corrige avec le professeur.");
+  /* marche : HP au-dessus de BP, surchauffe et sous-refroidissement positifs */
+  const [bp, hp, sh, sr] = ["bp", "hp", "sh", "sr"].map(g);
+  if ([bp, hp, sh, sr].some(isNaN)) ok("ambre", "Marche : il manque BP, HP, la surchauffe ou le sous-refroidissement.");
+  else if (hp <= bp) ok("rouge", "Marche : la HP doit être plus haute que la BP, en marche. Je relis mes aiguilles.");
+  else if (sh <= 0) ok("rouge", "Marche : surchauffe nulle ou négative : du liquide peut revenir au compresseur. J'arrête et j'appelle le professeur.");
+  else if (sr <= 0) ok("ambre", "Marche : sous-refroidissement nul ou négatif : j'en parle au professeur.");
+  else ok("vert", "Marche : HP au-dessus de BP, surchauffe " + fr(sh) + " K, sous-refroidissement " + fr(sr) + " K.");
+  /* électricité : l'intensité relevée ne dépasse pas celle de la plaque (5 % et 0,3 A de marge de mesure) */
+  const i = g("inten"), inom = g("inom");
+  if (isNaN(i) || isNaN(inom)) ok("ambre", "Électricité : à relever à la pince sur le compresseur, et à lire sur sa plaque.");
+  else if (i <= 0) ok("rouge", "Électricité : le compresseur ne consomme rien. Il ne tourne pas : j'appelle le professeur.");
+  else if (i > inom * (1 + TOL) + LECTURE) ok("ambre", "Électricité : " + fr(i) + " A, au-dessus de la plaque (" + fr(inom) + " A). J'arrête et j'en parle au professeur.");
+  else ok("vert", "Électricité : " + fr(i) + " A pour " + fr(inom) + " A sur la plaque.");
+  document.getElementById("f-verifs").innerHTML = L.join("");
+  /* complétude et signature */
+  const remplies = TOUS.filter(([id]) => String(F.fiche[id] || "").trim()).length, reste = TOUS.length - remplies;
+  const nom = !!String(F.eleve || "").trim(), rouges = L.some(x => x.includes('verdict rouge')), ambres = L.some(x => x.includes('verdict ambre'));
+  const e = document.getElementById("f-etat"), visa = document.getElementById("f-visa");
+  /* le professeur ne signe pas une fiche incomplète ou qui affiche un STOP : la case s'ouvre quand tout est en ordre */
+  visa.disabled = !!(reste || !nom || rouges);
+  if (visa.disabled && F.visa) { F.visa = false; visa.checked = false; garderFiche(); }
+  if (rouges) { e.className = "verdict rouge"; e.textContent = "Un STOP est affiché : je corrige la valeur avant de présenter la fiche."; }
+  else if (reste) { e.className = "verdict ambre"; e.textContent = "Il reste " + reste + " rubrique" + (reste > 1 ? "s" : "") + " à remplir sur " + TOUS.length + "."; }
+  else if (!nom) { e.className = "verdict ambre"; e.textContent = "Toutes les rubriques sont remplies : j'écris mon nom en haut de la fiche."; }
+  else if (ambres || !F.visa) { e.className = "verdict ambre"; e.textContent = ambres ? "Fiche remplie : je relis les remarques avec le professeur." : "Fiche remplie et cohérente : il reste la signature du professeur."; }
+  else { e.className = "verdict vert"; e.textContent = "Fiche de mise en service complète, vérifiée et signée."; }
+}
+reporter(false); garderFiche(); dessinerFiche();
+document.getElementById("f-corps").addEventListener("input", ev => {
+  const id = ev.target.dataset && ev.target.dataset.f; if (!id) return;
+  F.fiche[id] = ev.target.value.trim(); garderFiche();
+  if (id === "unite") document.querySelectorAll(".u-vide").forEach(x => { x.textContent = F.fiche.unite || ""; }); else majVerifs();
+});
+document.getElementById("f-eleve").addEventListener("input", ev => { F.eleve = ev.target.value; garderFiche(); majVerifs(); });
+document.getElementById("f-visa").addEventListener("change", ev => { F.visa = ev.target.checked; garderFiche(); majVerifs(); });
+document.getElementById("f-reporter").addEventListener("click", () => { reporter(true); garderFiche(); dessinerFiche(); });
+document.getElementById("f-imprimer").addEventListener("click", () => print());
 /* La voix (chantier prof vocal, 17/10/2026) : la feuille de route expliquée pour l'oreille, au clic seulement ;
    la vitesse commune du site la règle et la coupe. Le prof vocal la lit, puis laisse l'élève choisir sa gare. */
-const NARRATION = "Cette page est votre feuille de route pour mettre en service une installation neuve, déjà montée et brasée. Quatre gares se suivent : poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide puis tester la remontée, et enfin charger en fluide neuf à la balance. L'ordre n'est pas un détail : un circuit qui fuit ne se tire pas au vide, et un circuit dont le vide ne tient pas ne se charge pas. Chaque gare s'ouvre sur sa guidance au poste. Entre deux gares, vous revenez ici : la page affiche ce que vous avez déjà terminé.";
+const NARRATION = "Cette page est votre feuille de route pour mettre en service une installation neuve, déjà montée et brasée. Quatre gares se suivent : poser les manomètres, contrôler l'étanchéité sous azote, tirer au vide puis tester la remontée, et enfin charger en fluide neuf à la balance. L'ordre n'est pas un détail : un circuit qui fuit ne se tire pas au vide, et un circuit dont le vide ne tient pas ne se charge pas. Chaque gare s'ouvre sur sa guidance au poste. Entre deux gares, vous revenez ici : la page affiche ce que vous avez déjà terminé. Tout en bas, la fiche de mise en service reprend vos relevés : vous la complétez, vous écrivez votre nom, et le professeur la signe.";
 let parle = false;
 const bouton = document.getElementById("ecouter-route");
 const voixFr = () => {

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="scene" viewBox="0 0 1200 630" role="img" aria-labelledby="scene-title scene-desc">
+  <title id="scene-title">Schéma interactif du poste : remplacer un composant électrique sous consignation</title>
+  <desc id="scene-desc">Quatre cartes. En haut, la consignation en deux moitiés : séparer et condamner, puis identifier et vérifier l'absence de tension. En bas, le contacteur, composant à remplacer, avec sa bobine A1 A2 et ses contacts de puissance 1/2, 3/4, 5/6, et en variante le pressostat.</desc>
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1b3a63" flood-opacity=".13"/></filter>
+    <symbol id="scene-background" viewBox="0 0 1200 630">
+      <rect x="12" y="12" width="1176" height="606" rx="28" fill="#fffdf8" stroke="#1b3a63" stroke-opacity=".16" stroke-width="3"/>
+      <g id="equipment-consigner-1" transform="translate(30 30)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="560" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="280" y="28" text-anchor="middle" class="svg-title">SÉPARER ET CONDAMNER</text>
+                  <image href="assets/consignation/safe_separate.jpg" x="12" y="44" width="262" height="172" preserveAspectRatio="xMidYMid slice"/><text x="143" y="244" text-anchor="middle" class="svg-small">1 · SÉPARER</text><image href="assets/consignation/safe_lock.jpg" x="286" y="44" width="262" height="172" preserveAspectRatio="xMidYMid slice"/><text x="417" y="244" text-anchor="middle" class="svg-small">2 · CONDAMNER</text>
+                </g>
+      <g id="equipment-consigner-2" transform="translate(610 30)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="560" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="280" y="28" text-anchor="middle" class="svg-title">IDENTIFIER ET VÉRIFIER (VAT)</text>
+                  <image href="assets/consignation/safe_identify.jpg" x="12" y="44" width="262" height="172" preserveAspectRatio="xMidYMid slice"/><text x="143" y="244" text-anchor="middle" class="svg-small">3 · IDENTIFIER</text><image href="assets/consignation/safe_vat.jpg" x="286" y="44" width="262" height="172" preserveAspectRatio="xMidYMid slice"/><text x="417" y="244" text-anchor="middle" class="svg-small">4 · VAT : ABSENCE DE TENSION</text>
+                </g>
+      <g id="equipment-contacteur" transform="translate(30 325)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="560" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="280" y="28" text-anchor="middle" class="svg-title">LE CONTACTEUR</text>
+                  <image href="assets/symboles/contacteur-lc1d09.png" x="24" y="44" width="150" height="186" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/symboles/bobine3.svg" x="210" y="50" width="62" height="46" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="290" y="68" class="svg-small">bobine</text><text x="290" y="88" class="svg-small">A1 · A2</text>
+                  <image href="assets/symboles/com_puiss1.svg" x="224" y="108" width="34" height="62" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="290" y="132" class="svg-small">puissance</text><text x="290" y="152" class="svg-small">1/2 · 3/4 · 5/6</text>
+                  <text x="200" y="204" class="svg-small">auxiliaires : 13-14, 21-22</text>
+                  <text x="280" y="256" text-anchor="middle" class="svg-small">exemple principal</text>
+                </g>
+      <g id="equipment-pressostat" transform="translate(610 325)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="560" height="275" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="280" y="28" text-anchor="middle" class="svg-title">VARIANTE : PRESSOSTAT</text>
+                  <image href="assets/symboles/pressostat-kp1.svg" x="40" y="42" width="120" height="210" preserveAspectRatio="xMidYMid meet"/>
+                  <text x="200" y="96" class="svg-small">contact commandé par la pression</text>
+                  <text x="200" y="136" class="svg-small">bornes : 1 · 2 · 4 et la terre</text>
+                  <text x="200" y="176" class="svg-small">le raccord est sur le circuit</text><text x="200" y="198" class="svg-small">frigorifique, sous pression</text>
+                  <text x="280" y="256" text-anchor="middle" class="svg-small">variante</text>
+                </g>
+    </symbol>
+  </defs>
+  <use href="#scene-background" x="0" y="0" width="1200" height="630"></use>
+</svg>

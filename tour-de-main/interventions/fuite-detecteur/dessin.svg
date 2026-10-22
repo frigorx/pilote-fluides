@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="scene" viewBox="0 0 820 560" role="img" aria-labelledby="scene-title scene-desc">
+  <title id="scene-title">Schéma interactif du poste : chercher une fuite au détecteur électronique</title>
+  <desc id="scene-desc">À gauche, le groupe de condensation et ses vannes de service. Au centre, un raccord de la tuyauterie, point à contrôler, avec la sonde du détecteur. À droite, le détecteur électronique et la fuite étalon, un petit objet qui laisse sortir un peu de fluide en quantité connue.</desc>
+  <defs>
+              <g id="hit-help"><text class="svg-hit-help" x="0" y="-30" text-anchor="middle">ICI</text></g>
+              <linearGradient id="cylinderFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".32" stop-color="#dcecf7"/><stop offset=".57" stop-color="#f7fbfd"/><stop offset=".59" stop-color="#84b7ec"/><stop offset="1" stop-color="#3d7fca"/></linearGradient>
+              <linearGradient id="machineFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8fbfd"/><stop offset="1" stop-color="#d7e2e9"/></linearGradient>
+              <linearGradient id="metalFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset=".5" stop-color="#dfe8ee"/><stop offset="1" stop-color="#fffdf8"/></linearGradient>
+              <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1b3a63" flood-opacity=".13"/></filter>
+              <linearGradient id="g-acier" x1="0" x2="1"><stop offset="0" stop-color="#8f99a4"/><stop offset=".45" stop-color="#e4e8ec"/><stop offset="1" stop-color="#7f8994"/></linearGradient>
+              <linearGradient id="g-laiton" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3dc95"/><stop offset=".5" stop-color="#d4ad55"/><stop offset="1" stop-color="#a47a28"/></linearGradient>
+              <symbol id="scene-background" viewBox="0 0 820 560">
+                <rect x="12" y="12" width="796" height="536" rx="28" fill="#fffdf8" stroke="#1b3a63" stroke-opacity=".16" stroke-width="3"/>
+                <g id="equipment-installation" transform="translate(40 62)">
+                  <rect class="equipment-frame" x="0" y="0" width="300" height="305" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="150" y="26" text-anchor="middle" class="svg-title">GROUPE DE CONDENSATION</text>
+                  <image href="assets/symboles/groupe-condensation-complet.svg" x="8" y="35" width="284" height="159" preserveAspectRatio="xMidYMid meet"/>
+
+                  <g class="service-marker" transform="translate(109 77)"><circle r="13"/><text y="5">A</text></g>
+                  <g class="service-marker" transform="translate(256 74)"><circle r="13"/><text y="5">B</text></g>
+                  <g class="service-marker" transform="translate(256 143)"><circle r="13"/><text y="5">C</text></g>
+
+                  <g class="service-legend" transform="translate(12 202)">
+                    <text x="0" y="0"><tspan class="legend-letter">A</tspan><tspan dx="5">REFOULEMENT</tspan></text>
+                    <text x="145" y="0"><tspan class="legend-letter">B</tspan><tspan dx="5">DÉPART LIQUIDE</tspan></text>
+                    <text x="0" y="23"><tspan class="legend-letter">C</tspan><tspan dx="5">ASPIRATION</tspan></text>
+                  </g>
+
+                  <path d="M275 165 V258 H167" class="installation-line"/>
+                  <image href="assets/symboles/detendeur-thermostatique.svg" x="119" y="239" width="50" height="42" preserveAspectRatio="xMidYMid meet"/>
+                  <image href="assets/symboles/evaporateur-cubique.svg" x="169" y="232" width="113" height="61" preserveAspectRatio="xMidYMid meet"/>
+                  <path d="M282 263 H289 V188" class="installation-line"/>
+                  <text x="72" y="285" text-anchor="middle" class="svg-small">CIRCUIT SIMPLIFIÉ</text>
+                </g>
+                <g id="equipment-raccord" transform="translate(380 62)">
+                  <rect class="equipment-frame" x="0" y="0" width="400" height="305" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="200" y="26" text-anchor="middle" class="svg-title">RACCORD À CONTRÔLER</text>
+                  <g transform="translate(-205 0) scale(.9)">
+                    <path class="sym" d="M 275 190 L 400 190 M 500 190 L 625 190" style="stroke-width:8"/>
+                    <g class="sym" style="stroke-width:2.6">
+                      <rect x="400" y="176" width="44" height="28" rx="3" fill="#fff"/>
+                      <rect x="456" y="176" width="44" height="28" rx="3" fill="#fff"/>
+                      <path d="M 444 172 L 444 208 M 456 172 L 456 208"/>
+                    </g>
+                    <g id="svg-nuage" class="nuage">
+                      <circle cx="450" cy="158" r="9" fill="#ffb28f"/><circle cx="462" cy="146" r="6" fill="#ffb28f"/><circle cx="440" cy="148" r="5" fill="#ffb28f"/>
+                    </g>
+                    <g id="svg-sonde" class="sonde">
+                      <image href="assets/symboles/detecteur-portatif.svg" x="276" y="90" width="100" height="100"/>
+                    </g>
+                  </g>
+                  <text x="200" y="208" text-anchor="middle" class="svg-small">LE POINT SUSPECT</text>
+                  <text x="20" y="262" class="svg-small">Raccords, brasures, vannes, prises.</text>
+                  <text x="20" y="286" class="svg-small">La sonde longe le raccord, au contact.</text>
+                </g>
+                <g id="equipment-detecteur" transform="translate(40 390)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="300" height="150" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="150" y="26" text-anchor="middle" class="svg-title">DÉTECTEUR ÉLECTRONIQUE</text>
+                  <image href="assets/symboles/detecteur-portatif.svg" x="45" y="34" width="112" height="112"/>
+                  <text x="205" y="80" class="svg-small">appareil</text>
+                  <text x="205" y="102" class="svg-small">+ sonde</text>
+                </g>
+                <g id="equipment-etalon" transform="translate(380 390)" filter="url(#softShadow)">
+                  <rect class="equipment-frame" x="0" y="0" width="400" height="135" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
+                  <text x="200" y="26" text-anchor="middle" class="svg-title">FUITE ÉTALON</text>
+                  <image href="assets/symboles/fuite-etalon.svg" x="80" y="34" width="46" height="70" preserveAspectRatio="xMidYMid meet"/>
+                  <g class="nuage" transform="translate(-34 -4)">
+                    <circle cx="178" cy="62" r="7" fill="#ffb28f"/><circle cx="194" cy="52" r="5" fill="#ffb28f"/><circle cx="190" cy="72" r="4" fill="#ffb28f"/>
+                  </g>
+                  <text x="214" y="64" class="svg-small">un peu de fluide,</text>
+                  <text x="214" y="84" class="svg-small">débit connu</text>
+                  <text x="200" y="122" text-anchor="middle" class="svg-small">PAS la bouteille de fluide</text>
+                </g>
+              </symbol>
+            </defs>
+
+            <use href="#scene-background" x="0" y="0" width="820" height="560"></use>
+          </svg>
