@@ -46,7 +46,7 @@
                       <circle cx="450" cy="158" r="9" fill="#ffb28f"/><circle cx="462" cy="146" r="6" fill="#ffb28f"/><circle cx="440" cy="148" r="5" fill="#ffb28f"/>
                     </g>
                     <g id="svg-sonde" class="sonde">
-                      <image href="assets/symboles/detecteur-portatif.svg" x="276" y="90" width="100" height="100"/>
+                      <image href="assets/symboles/detecteur-portatif.svg?v=20261022-2" x="276" y="90" width="100" height="100"/>
                     </g>
                   </g>
                   <text x="200" y="208" text-anchor="middle" class="svg-small">LE POINT SUSPECT</text>
@@ -56,7 +56,7 @@
                 <g id="equipment-detecteur" transform="translate(40 390)" filter="url(#softShadow)">
                   <rect class="equipment-frame" x="0" y="0" width="300" height="150" rx="24" fill="#f8fbfd" stroke="#1b3a63" stroke-width="3"/>
                   <text x="150" y="26" text-anchor="middle" class="svg-title">DÉTECTEUR ÉLECTRONIQUE</text>
-                  <image href="assets/symboles/detecteur-portatif.svg" x="45" y="34" width="112" height="112"/>
+                  <image href="assets/symboles/detecteur-portatif.svg?v=20261022-2" x="45" y="34" width="112" height="112"/>
                   <text x="205" y="80" class="svg-small">appareil</text>
                   <text x="205" y="102" class="svg-small">+ sonde</text>
                 </g>
