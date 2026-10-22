@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 120" width="164" height="120">
+<!-- Évaporateur : caisson, deux ventilateurs. Dessin inerWeb fait main (22/10/2026), objet reconnaissable. -->
+<g stroke="#1b3a63" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<rect x="6" y="14" width="152" height="92" rx="8" fill="#cfd8e0"/><circle cx="46" cy="60" r="28" fill="#fff"/><circle cx="46" cy="60" r="28" fill="none" stroke-width="2.5"/><circle cx="46" cy="60" r="19" fill="none" stroke-width="1.2"/><path d="M18 60 H74 M46 32 V88" stroke-width="1" fill="none"/><circle cx="46" cy="60" r="5" fill="#1b3a63"/><circle cx="118" cy="60" r="28" fill="#fff"/><circle cx="118" cy="60" r="28" fill="none" stroke-width="2.5"/><circle cx="118" cy="60" r="19" fill="none" stroke-width="1.2"/><path d="M90 60 H146 M118 32 V88" stroke-width="1" fill="none"/><circle cx="118" cy="60" r="5" fill="#1b3a63"/><rect x="6" y="100" width="152" height="10" rx="3" fill="#eef2f6"/>
+<path d="M6 106 H158" stroke-width="1" stroke-dasharray="2 3"/>
+</g>
+</svg>

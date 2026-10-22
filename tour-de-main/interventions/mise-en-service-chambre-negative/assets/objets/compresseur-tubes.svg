@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" width="240" height="150">
+<!-- Compresseur avec son tube de refoulement, son tube d'aspiration givré et la ligne liquide. Dessin inerWeb fait main (22/10/2026), objet reconnaissable. -->
+<g stroke="#1b3a63" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<rect x="70" y="40" width="96" height="84" rx="26" fill="#cfd8e0"/><path d="M82 52 Q118 20 154 52" fill="#cfd8e0"/><rect x="104" y="22" width="30" height="18" rx="4" fill="#fffdf8"/><path d="M110 31 H128" stroke-width="1.5"/>
+<rect x="90" y="124" width="56" height="10" rx="3" fill="#1b3a63"/>
+<rect x="166" y="52" width="60" height="10" rx="4" fill="#c97b4a"/><path d="M178 46 V68 M194 46 V68" stroke-width="1.2" stroke="#fff"/>
+<rect x="166" y="86" width="60" height="16" rx="6" fill="#eaf3fb"/><path d="M172 90 L176 98 M184 90 L188 98 M196 90 L200 98 M208 90 L212 98" stroke-width="1.2" stroke="#9cc3e6"/>
+<rect x="12" y="84" width="58" height="8" rx="4" fill="#c97b4a"/>
+<rect x="8" y="64" width="40" height="14" rx="3" fill="#fffdf8" stroke-width="1.2"/><path d="M12 71 H44" stroke-width="1.2"/>
+</g>
+</svg>
