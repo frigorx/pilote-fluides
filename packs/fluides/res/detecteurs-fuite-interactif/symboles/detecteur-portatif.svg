@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20.0 -22.0 38.0 38.0" width="38" height="38">
 <!-- Détecteur électronique de fuite, portatif : boîtier, poignée, voyants, sonde souple. Dessin inerWeb fait main (22/10/2026).
-     Même cadre que l'ancien symbole (-20 -22 38 38) : la pointe de la sonde tombe sur le halo d'alarme (0,5 ; 7,5). -->
+     Retourné le 22/10 (Franck) : la sonde vers la fuite, le boîtier vers la main. Même cadre que l'ancien symbole (-20 -22 38 38) : la pointe de la sonde tombe sur le halo d'alarme (0,5 ; 7,5). -->
+<g transform="translate(1,0) scale(-1,1)">
 <g stroke="#1b3a63" stroke-linejoin="round" stroke-linecap="round">
   <!-- la sonde souple : un col de cygne qui descend vers la pointe -->
   <path d="M1.4,-8.2 C-4.6,-6.5 -4.8,0.5 0.4,5.6" fill="none" stroke-width="1.6"/>
@@ -22,5 +23,6 @@
     <!-- le départ de la sonde -->
     <rect x="-9.3" y="-1.1" width="2" height="2.2" rx="0.6" fill="#1b3a63" stroke-width="0.4"/>
   </g>
+</g>
 </g>
 </svg>
