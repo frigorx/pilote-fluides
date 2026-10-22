@@ -157,7 +157,8 @@
         cours("pose-manifold-interactive",         "Le manifold 4 voies",   "l’outil complet"),
         cours("recuperation-fluide-interactive",   "TP récupération",       "station, pesée, tirage au vide"),
         cours("mission-bouteilles",                "Mission bouteilles",    "la bonne bouteille, le bon geste"),
-        cours("chaine-intervention-interactive",   "La chaîne complète",    "tout enchaîner proprement")
+        cours("chaine-intervention-interactive",   "La chaîne complète",    "tout enchaîner proprement"),
+        cours("remise-au-client-interactif",       "Remettre au client",    "expliquer, consigner, conseiller")
       ] },
     { slug: "fluides", nom: "🌍 FLUIDES & ENVIRONNEMENT", sous: "F-Gas, sécurité, climat", couleur: "#7a4fa0", x: 1050,
       jalon: "🏁 Fluides maîtrisés",
@@ -169,6 +170,7 @@
         cours("film-effet-de-serre",                  "Effet de serre & PRP",    "film narré · 53 s"),
         cours("etancheite-interactive",               "L’étanchéité",            "de l’indice à la preuve"),
         cours("detecteurs-fuite-interactif",          "Les détecteurs de fuite", "technologies, contrôle, usage"),
+        cours("cout-du-froid-interactif",             "Ce que coûte le froid",   "énergie, fuites, entretien"),
         cours("hydrocarbures-a1-a2",                  "Mission 290",             "hydrocarbures en sécurité"),
         cours("intervention-hydrocarbures-interactive","Intervenir sur R-290",   "le chantier hydrocarbure")
       ] }
@@ -336,6 +338,24 @@
     ]
   };
 
+  /* --- La ligne « DE LA DENRÉE À LA CHAMBRE » (19/10/2026, cinq cours de la mission « stations manquantes ») :
+         on part de ce qu'on conserve (la denrée, ses températures), on passe à ce que le froid lui fait
+         (positif, négatif, congélation), puis à l'enceinte qui la garde (la chambre, ses sécurités) et enfin
+         à la machine qu'on règle dessus (la chambre négative). Bande autonome sous les détendeurs, mêmes
+         écarts entre bandes ; la conservation est en tête, comme demandé. --- */
+  var DENREE = {
+    slug: "denree", nom: "🥩 DE LA DENRÉE À LA CHAMBRE", sous: "conserver, isoler, régler",
+    couleur: "#0f766e",
+    jalon: "🏁 La chambre comprise",
+    stations: [
+      cours("conservation-denrees-interactif",        "Conserver les denrées",  "températures, chaîne du froid"),
+      cours("positif-negatif-interactif",             "Positif et négatif",     "congélation, surgélation"),
+      cours("chambre-froide-enceinte-interactif",     "La chambre froide",      "panneaux, porte, implantation"),
+      cours("chambre-froide-securites-interactif",    "Dégivrage et sécurités", "l’eau, la personne enfermée"),
+      cours("chambre-negative-reglages-interactif",   "Chambre négative",       "relevés et réglages")
+    ]
+  };
+
   var CEINTURE = {
     slug: "evaluer", nom: "✅ S’ÉVALUER", sous: "QCM · examens blancs A1 · A2 · D · E",
     couleur: "#b06a00", jalon: "🏁 Prêt pour l’attestation",
@@ -419,7 +439,7 @@
   window.PLAN_DONNEES = {
     SUPPORTS: SUPPORTS, TRONC: TRONC, LIGNES: LIGNES, HUILE: HUILE,
     HUILE_CIRCUIT: HUILE_CIRCUIT, CO2: CO2, CENTRALES: CENTRALES, REGULES: REGULES,
-    DETENDEURS: DETENDEURS, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH,
+    DETENDEURS: DETENDEURS, DENREE: DENREE, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH,
     CORRESPONDANCES: CORRESPONDANCES
   };
 })();

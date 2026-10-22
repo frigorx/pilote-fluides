@@ -1,0 +1,35 @@
+CONSERVER LES DENRÉES PAR LE FROID : TEMPÉRATURES, CHAÎNE DU FROID
+
+Cours interactif du plan thermo-techno, ligne « De la denrée à la chambre, en tête ».
+15 écrans, 5 dossiers, 9 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il pose la raison d’être du froid : conserver une denrée. Pourquoi un aliment s’abîme (micro-organismes, enzymes,
+  dessèchement), ce qui fait se multiplier les micro-organismes, les températures maximales de l’arrêté du 21/12/2009
+  (réfrigéré, congelé), les quatre catégories de chambre selon l’humidité relative, la chaîne du froid et les ruptures,
+  la dérive d’une chambre. Il précède « Positif, négatif, congélation, surgélation » et « La chambre froide ».
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  CAP IFCA : savoir associé S4.2 « Action du froid sur la conservation des denrées ».
+  Bac Pro MFER (référentiel 2028) : savoir S4.1.1 « L’action du froid au service de la conservation des produits ».
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (le tri, la lecture, le choix).
+  Le dernier exercice (« Un cas complet, seul ») n’a plus de guide : l’élève écrit son plan puis le compare à la réponse type.
+  Aucune valeur d’exemple tapée au hasard : chaque chiffre vient de SOURCES.md.
+
+POINT RÉGLEMENTAIRE
+  Les températures maximales viennent de l’arrêté du 21/12/2009, annexe I (Légifrance, version en vigueur depuis le
+  09/05/2020). Le détail des lignes lues, et ce que F. Henninot doit confirmer, est dans SOURCES.md.
+
+IMAGES
+  Aucune image produite par IA pour ce cours, aucun schéma dessiné : voir SOURCES-IMAGES.md (photos du fonds, illustrations
+  validées du réseau).
+
+ADRESSAGE
+  index.html?dossier=temperatures&ecran=1
+  index.html?extrait=ce-qui-fait-multiplier,arrete-refrigere
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : python -m http.server 8796 à la racine du site, puis node tests/qa.mjs (Chrome du poste, 1280 et 375 px).

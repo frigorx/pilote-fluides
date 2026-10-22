@@ -1,0 +1,25 @@
+{
+  "cours": "cout-du-froid-interactif",
+  "titre": "Ce que coûte le froid : énergie, fuites, entretien",
+  "reference": "Bac Pro MFER 2028 S2.3.1 ; document « Froid commercial et chambres froides »",
+  "ecrans": 12,
+  "codes": {},
+  "appui": {},
+  "badge": "Sert notamment pour : Bac S2.3.1",
+  "bac_mfer_2028": {
+    "S2.3.1": [
+      "ou-passe-largent",
+      "estimer-le-cout",
+      "quatre-leviers",
+      "petits-gestes",
+      "fuite-qui-coute",
+      "calcul-co2",
+      "conseil-fuite",
+      "entretien-rentable",
+      "entretien-exo",
+      "chiffrer-lentretien",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}

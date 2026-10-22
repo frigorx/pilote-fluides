@@ -1,0 +1,36 @@
+POSITIF, NÉGATIF, CONGÉLATION, SURGÉLATION : CE QUE LE FROID FAIT AU PRODUIT
+
+Cours interactif du plan thermo-techno, ligne « De la denrée à la chambre ».
+16 écrans, 6 dossiers, 9 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il montre ce que le froid fait au produit : froid positif (réfrigération, au-dessus de 0 °C) et négatif (congélation,
+  surgélation, sous 0 °C) ; les quatre altérations d’un entreposage réfrigéré et les facteurs qui les évitent ; les trois temps
+  de la congélation, le palier et les cristaux ; les procédés (plaque, saumure, air ou gaz) ; la surgélation ; la règle de
+  décongélation de l’arrêté du 21/12/2009 (annexe VI). Il suit « Conserver les denrées par le froid ».
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  CAP IFCA : savoir associé S4.2 « Action du froid sur la conservation des denrées ».
+  Bac Pro MFER (référentiel 2028) : savoir S4.1.1 « L’action du froid au service de la conservation des produits ».
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (le tri, la lecture, le choix).
+  Le dernier exercice (« Un cas complet, seul ») n’a plus de guide : l’élève écrit son plan puis le compare à la réponse type.
+  Aucune valeur d’exemple tapée au hasard : chaque chiffre vient de SOURCES.md.
+
+POINT RÉGLEMENTAIRE
+  Décongélation : arrêté du 21/12/2009, annexe VI (texte initial du JO du 31/12/2009, lu sur Légifrance ; consolidé à relire).
+  Congélation, surgélation, altérations : corrigé du BP Monteur dépanneur en froid et climatisation, épreuve E2/C (2010), pas un
+  texte réglementaire. Le détail et ce que F. Henninot doit confirmer : SOURCES.md.
+
+IMAGES
+  Aucune image produite par IA pour ce cours, aucun schéma dessiné : voir SOURCES-IMAGES.md (photos du fonds, illustrations
+  validées du réseau).
+
+ADRESSAGE
+  index.html?dossier=refrigerer&ecran=1
+  index.html?extrait=ranger-positif-negatif,refrigerer
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : python -m http.server 8796 à la racine du site, puis node tests/qa.mjs (Chrome du poste, 1280 et 375 px).

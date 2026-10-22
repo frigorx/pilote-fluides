@@ -1,0 +1,37 @@
+RELEVÉS ET RÉGLAGES D’UNE CHAMBRE NÉGATIVE : THERMOSTAT, PRESSOSTATS, DÉGIVRAGE
+
+Cours interactif du plan thermo-techno, ligne « De la denrée à la chambre ».
+14 écrans, 5 dossiers, 10 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il prend la chambre négative (−20/−18 °C, régulation pump-down) du point de vue du technicien : les organes de réglage et
+  leurs symboles, lire un relevé (température d’évaporation par la table, surchauffe, sous-refroidissement), le pump-down
+  (thermostat, électrovanne, BP), les quatre pressostats, thermostat (consigne, différentiel), BP de régulation (enclenchement,
+  coupure, différentiel), réglage du dégivrage (nombre, durée, fin). Renvois : gare « Mettre en service une chambre froide
+  négative » et simulateur du réglage des pressostats (Tour de main).
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  Titre professionnel Monteur dépanneur frigoriste : CP3 « Mettre en service une installation frigorifique monoposte à
+  température négative » (libellé donné par la fiche de mission).
+  Bac Pro MFER (référentiel 2028) : tâche A2T7 « Réaliser la mise en service de l’installation » ; compétences liées C7 et C8.
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (le tri, la lecture, le choix).
+  Le dernier exercice (« Un cas complet, seul ») n’a plus de guide : l’élève écrit son plan puis le compare à la réponse type.
+  Aucune valeur d’exemple tapée au hasard : chaque chiffre vient de SOURCES.md.
+
+POINT RÉGLEMENTAIRE
+  Aucun texte réglementaire n’est cité. Les pressions viennent des tables du simulateur de réglage des pressostats du réseau
+  (pressions effectives, R-449A). Détail et points à confirmer : SOURCES.md.
+
+IMAGES
+  Aucune image produite par IA pour ce cours, aucun schéma dessiné : voir SOURCES-IMAGES.md (photos du fonds, illustrations
+  validées du réseau).
+
+ADRESSAGE
+  index.html?dossier=releves&ecran=1
+  index.html?extrait=lire-un-releve,calcul-surchauffe
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : python -m http.server 8796 à la racine du site, puis node tests/qa.mjs (Chrome du poste, 1280 et 375 px).

@@ -1,0 +1,35 @@
+DÉGIVRAGE, ÉVACUATION DES CONDENSATS, SÉCURITÉS DE LA CHAMBRE (PERSONNE ENFERMÉE)
+
+Cours interactif du plan thermo-techno, ligne « De la denrée à la chambre ».
+14 écrans, 5 dossiers, 8 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il traite le givre (cause, conséquences), le cycle de dégivrage et ses quatre façons de chauffer, la commande par horloge ou
+  par régulation, le réglage (qualité d’abord, puis durée et nombre), l’évacuation de l’eau (bac, tuyau, siphon, gel en négatif),
+  et la sécurité de la personne (ouverture de secours depuis l’intérieur, éclairage, sol, prévenir avant d’entrer), avec une
+  liste de six contrôles avant de rendre la chambre.
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  CAP IFCA : savoir associé S5.7 « Enceintes isothermes positives et négatives ».
+  Bac Pro MFER (référentiel 2028) : savoir S4.1.5 « Les chambres froides ».
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (le tri, la lecture, le choix).
+  Le dernier exercice (« Un cas complet, seul ») n’a plus de guide : l’élève écrit son plan puis le compare à la réponse type.
+  Aucune valeur d’exemple tapée au hasard : chaque chiffre vient de SOURCES.md.
+
+POINT RÉGLEMENTAIRE
+  Aucun texte réglementaire n’est cité. Les dispositifs de sécurité décrits viennent de fiches de constructeur et de documents de
+  cours ; le texte qui les rend obligatoires n’a pas été retrouvé (à confirmer par F. Henninot : SOURCES.md).
+
+IMAGES
+  Aucune image produite par IA pour ce cours, aucun schéma dessiné : voir SOURCES-IMAGES.md (photos du fonds, illustrations
+  validées du réseau).
+
+ADRESSAGE
+  index.html?dossier=degivrage&ecran=1
+  index.html?extrait=consequences-givre,cycle-de-degivrage
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : python -m http.server 8796 à la racine du site, puis node tests/qa.mjs (Chrome du poste, 1280 et 375 px).

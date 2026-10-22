@@ -43,7 +43,7 @@ const D = new Function(
      20/08 en branchant la recherche dessus — chercher « huile » ne ramenait
      qu'un cours, et c'était « Le compresseur ». La liste se dit « la même
      donnée que le plan » : elle doit l'être. */
-  "; return { TRONC: TRONC, LIGNES: LIGNES, HUILE: HUILE, HUILE_CIRCUIT: HUILE_CIRCUIT, CO2: CO2, CENTRALES: CENTRALES, REGULES: REGULES, DETENDEURS: DETENDEURS, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH, CORRESPONDANCES: CORRESPONDANCES };"
+  "; return { TRONC: TRONC, LIGNES: LIGNES, HUILE: HUILE, HUILE_CIRCUIT: HUILE_CIRCUIT, CO2: CO2, CENTRALES: CENTRALES, REGULES: REGULES, DETENDEURS: DETENDEURS, DENREE: DENREE, CEINTURE: CEINTURE, OUTILS: OUTILS, ELECTROTECH: ELECTROTECH, CORRESPONDANCES: CORRESPONDANCES };"
 )();
 
 function esc(v) {
@@ -78,6 +78,7 @@ const groupes = [
   [D.CENTRALES.nom, D.CENTRALES.sous, D.CENTRALES.stations],
   [D.REGULES.nom, D.REGULES.sous, D.REGULES.stations],
   [D.DETENDEURS.nom, D.DETENDEURS.sous, D.DETENDEURS.stations],
+  [D.DENREE.nom, D.DENREE.sous, D.DENREE.stations],
   [D.ELECTROTECH.nom, D.ELECTROTECH.sous, D.ELECTROTECH.stations],
   [D.CEINTURE.nom, D.CEINTURE.sous, D.CEINTURE.stations],
   [D.OUTILS.nom, D.OUTILS.sous, D.OUTILS.stations],

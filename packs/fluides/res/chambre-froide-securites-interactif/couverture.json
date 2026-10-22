@@ -1,0 +1,45 @@
+{
+  "cours": "chambre-froide-securites-interactif",
+  "titre": "Dégivrage, évacuation des condensats, sécurités de la chambre (personne enfermée)",
+  "reference": "CAP IFCA S5.7 ; Bac Pro MFER 2028 S4.1.5 ; documents de cours et fiches de constructeur",
+  "ecrans": 14,
+  "codes": {},
+  "appui": {},
+  "badge": "Sert notamment pour : CAP S5.7 · Bac S4.1.5",
+  "cap_ifca": {
+    "S5.7": [
+      "le-givre",
+      "consequences-givre",
+      "cycle-de-degivrage",
+      "ordre-degivrage",
+      "commande-degivrage",
+      "regler-qualite",
+      "regler-quantite",
+      "ou-va-leau",
+      "ecoulement-bouche",
+      "personne-enfermee",
+      "ouverture-secours",
+      "avant-de-partir",
+      "cas-seul",
+      "bilan"
+    ]
+  },
+  "bac_mfer_2028": {
+    "S4.1.5": [
+      "le-givre",
+      "consequences-givre",
+      "cycle-de-degivrage",
+      "ordre-degivrage",
+      "commande-degivrage",
+      "regler-qualite",
+      "regler-quantite",
+      "ou-va-leau",
+      "ecoulement-bouche",
+      "personne-enfermee",
+      "ouverture-secours",
+      "avant-de-partir",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+CE QUE COÛTE LE FROID : ÉNERGIE, FUITES, ENTRETIEN
+
+Cours interactif du plan thermo-techno, ligne « Fluides & environnement, après « Les détecteurs de fuite » ».
+12 écrans, 5 dossiers, 7 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il chiffre le froid : le coût d’un compresseur (8 760 h × 60 % × puissance × prix du kWh, formule du document de cours), les
+  quatre leviers d’énergie, les gestes qui économisent ou gaspillent, les trois coûts d’une fuite (fluide, performance, climat),
+  l’équivalent CO₂ d’une fuite (masse × PRP), l’entretien d’un condenseur et d’un évaporateur, et la comparaison coût de
+  l’entretien / économie pour un devis.
+  Choix de la ligne : « Fluides & environnement » (le plan n’a ni ligne énergie ni ligne réglementation) : le cours prolonge
+  « Les détecteurs de fuite » et « Effet de serre & PRP ».
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  Bac Pro MFER (référentiel 2028) : savoir S2.3.1 « La dimension économique ».
+  Aucun code CAP n’est affiché (la fiche de mission n’en donne pas).
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (le tri, la lecture, le choix).
+  Le dernier exercice (« Un cas complet, seul ») n’a plus de guide : l’élève écrit son plan puis le compare à la réponse type.
+  Aucune valeur d’exemple tapée au hasard : chaque chiffre vient de SOURCES.md.
+
+POINT RÉGLEMENTAIRE
+  Aucun texte réglementaire n’est cité. Prix du kWh : prix d’exemple (0,20 €). Pourcentages de perte et formule : document « Froid
+  commercial et chambres froides ». PRP : valeurs du réseau. Détail et points à confirmer : SOURCES.md.
+
+IMAGES
+  Aucune image produite par IA pour ce cours, aucun schéma dessiné : voir SOURCES-IMAGES.md (photos du fonds, illustrations
+  validées du réseau).
+
+ADRESSAGE
+  index.html?dossier=fuites&ecran=1
+  index.html?extrait=estimer-le-cout,quatre-leviers
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : python -m http.server 8796 à la racine du site, puis node tests/qa.mjs (Chrome du poste, 1280 et 375 px).

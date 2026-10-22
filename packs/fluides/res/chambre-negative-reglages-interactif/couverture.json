@@ -1,0 +1,45 @@
+{
+  "cours": "chambre-negative-reglages-interactif",
+  "titre": "Relevés et réglages d’une chambre négative : thermostat, pressostats, dégivrage",
+  "reference": "TP MDF CP3 ; Bac Pro MFER 2028 A2T7 (C7, C8)",
+  "ecrans": 14,
+  "codes": {},
+  "appui": {},
+  "badge": "Sert notamment pour : TP MDF CP3 · Bac A2T7",
+  "tp_mdf": {
+    "CP3": [
+      "les-organes",
+      "lire-un-releve",
+      "calcul-surchauffe",
+      "calcul-sous-refroidissement",
+      "interpreter-releve",
+      "pump-down-lire",
+      "pump-down",
+      "roles-pressostats",
+      "thermostat",
+      "courts-cycles",
+      "pressostat-bp-regulation",
+      "regler-degivrage",
+      "cas-seul",
+      "bilan"
+    ]
+  },
+  "bac_mfer_2028": {
+    "A2T7": [
+      "les-organes",
+      "lire-un-releve",
+      "calcul-surchauffe",
+      "calcul-sous-refroidissement",
+      "interpreter-releve",
+      "pump-down-lire",
+      "pump-down",
+      "roles-pressostats",
+      "thermostat",
+      "courts-cycles",
+      "pressostat-bp-regulation",
+      "regler-degivrage",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}

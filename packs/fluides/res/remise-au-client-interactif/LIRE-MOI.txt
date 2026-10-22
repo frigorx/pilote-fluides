@@ -1,0 +1,37 @@
+REMETTRE L’INSTALLATION AU CLIENT : EXPLIQUER, CONSIGNER, CONSEILLER
+
+Cours interactif du plan thermo-techno, ligne « Les gestes, après « La chaîne complète » ».
+12 écrans, 5 dossiers, 7 exercices. Statut : EN COURS DE RELECTURE (pas validé par F. Henninot).
+
+CE QUE LE COURS FAIT
+  Il apprend la remise d’une installation au client en trois temps : expliquer (deux langages, client et collègue ; l’oral de
+  cinq temps : fait, fonctionnement, réglages, sécurité, réserves), consigner (la fiche de remise, la réserve dite et écrite avec
+  sa date), conseiller (écouter avant de proposer, les conseils d’une chambre froide, la consigne de sécurité d’une chambre
+  négative).
+  Choix de la ligne : « Les gestes » (« Prêt à intervenir ») : la remise est le dernier geste de « La chaîne complète ».
+
+CODES AFFICHÉS (accueil, bas de chaque écran, version imprimée, couverture.json)
+  CAP IFCA : tâche T3 « Communiquer avec le client, l’utilisateur ».
+  Bac Pro MFER (référentiel 2028) : tâche A3T5 « Conseiller le client et/ou l’exploitant » ; compétence C13 « Conseiller le client
+  et/ou l’exploitant du système » ; savoir S8.1 « la communication orale ».
+
+MÉTHODE D’ÉCRITURE (secrétaire de rédaction)
+  Chaque exercice dit où et comment répondre. Chaque geste a son exemple résolu juste avant (le tri, la lecture, le choix).
+  Le dernier exercice (« Un cas complet, seul ») n’a plus de guide : l’élève écrit son plan puis le compare à la réponse type.
+  Aucune valeur d’exemple tapée au hasard : chaque chiffre vient de SOURCES.md.
+
+POINT RÉGLEMENTAIRE
+  Aucun texte réglementaire n’est cité. Renvoi à la station Législation « La traçabilité des fluides » pour la fiche d’intervention
+  et le registre. Détail et points à confirmer : SOURCES.md.
+
+IMAGES
+  Aucune image produite par IA pour ce cours, aucun schéma dessiné : voir SOURCES-IMAGES.md (photos du fonds, illustrations
+  validées du réseau).
+
+ADRESSAGE
+  index.html?dossier=expliquer&ecran=1
+  index.html?extrait=deux-langages,plan-de-loral
+
+DONNÉES ET RÉSEAU
+  Aucune donnée personnelle, aucun stockage (la vitesse de la voix seulement). Pas de son ajouté, pas de score.
+  Contrôle : python -m http.server 8796 à la racine du site, puis node tests/qa.mjs (Chrome du poste, 1280 et 375 px).

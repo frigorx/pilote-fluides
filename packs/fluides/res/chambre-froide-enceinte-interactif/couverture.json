@@ -1,0 +1,47 @@
+{
+  "cours": "chambre-froide-enceinte-interactif",
+  "titre": "La chambre froide, enceinte isotherme : panneaux, porte, soupape d’équilibrage, résistance de porte, implantation",
+  "reference": "CAP IFCA S5.7 ; Bac Pro MFER 2028 S4.1.5 ; documents de cours et fiche constructeur",
+  "ecrans": 15,
+  "codes": {},
+  "appui": {},
+  "badge": "Sert notamment pour : CAP S5.7 · Bac S4.1.5",
+  "cap_ifca": {
+    "S5.7": [
+      "un-panneau",
+      "composants",
+      "epaisseur-lire",
+      "epaisseur-choisir",
+      "la-porte",
+      "quelle-porte",
+      "soupape",
+      "soupape-quiz",
+      "resistance-de-porte",
+      "resistance-quiz",
+      "implanter-regles",
+      "implanter-exo",
+      "position-porte",
+      "cas-seul",
+      "bilan"
+    ]
+  },
+  "bac_mfer_2028": {
+    "S4.1.5": [
+      "un-panneau",
+      "composants",
+      "epaisseur-lire",
+      "epaisseur-choisir",
+      "la-porte",
+      "quelle-porte",
+      "soupape",
+      "soupape-quiz",
+      "resistance-de-porte",
+      "resistance-quiz",
+      "implanter-regles",
+      "implanter-exo",
+      "position-porte",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "cours": "remise-au-client-interactif",
+  "titre": "Remettre l’installation au client : expliquer, consigner, conseiller",
+  "reference": "CAP IFCA T3 ; Bac Pro MFER 2028 A3T5, C13, S8.1",
+  "ecrans": 12,
+  "codes": {},
+  "appui": {},
+  "badge": "Sert notamment pour : CAP T3 · Bac A3T5 · C13 · S8.1",
+  "cap_ifca": {
+    "T3": [
+      "trois-choses",
+      "deux-langages",
+      "plan-de-loral",
+      "ordre-oral",
+      "consigner",
+      "une-reserve",
+      "ecouter",
+      "conseils-chambre",
+      "trier-les-conseils",
+      "consigne-securite",
+      "cas-seul",
+      "bilan"
+    ]
+  },
+  "bac_mfer_2028": {
+    "A3T5": [
+      "trois-choses",
+      "deux-langages",
+      "plan-de-loral",
+      "ordre-oral",
+      "consigner",
+      "une-reserve",
+      "ecouter",
+      "conseils-chambre",
+      "trier-les-conseils",
+      "consigne-securite",
+      "cas-seul",
+      "bilan"
+    ],
+    "C13": [
+      "trois-choses",
+      "deux-langages",
+      "plan-de-loral",
+      "ordre-oral",
+      "consigner",
+      "une-reserve",
+      "ecouter",
+      "conseils-chambre",
+      "trier-les-conseils",
+      "consigne-securite",
+      "cas-seul",
+      "bilan"
+    ],
+    "S8.1": [
+      "trois-choses",
+      "deux-langages",
+      "plan-de-loral",
+      "ordre-oral",
+      "consigner",
+      "une-reserve",
+      "ecouter",
+      "conseils-chambre",
+      "trier-les-conseils",
+      "consigne-securite",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}

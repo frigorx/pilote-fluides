@@ -1,0 +1,49 @@
+{
+  "cours": "positif-negatif-interactif",
+  "titre": "Positif, négatif, congélation, surgélation : ce que le froid fait au produit",
+  "reference": "CAP IFCA S4.2 ; Bac Pro MFER 2028 S4.1.1 ; arrêté du 21 décembre 2009, annexe VI ; corrigé BP MDFC E2/C 2010",
+  "ecrans": 16,
+  "codes": {},
+  "appui": {},
+  "badge": "Sert notamment pour : CAP S4.2 · Bac S4.1.1",
+  "cap_ifca": {
+    "S4.2": [
+      "positif-negatif",
+      "ranger-positif-negatif",
+      "refrigerer",
+      "quatre-facteurs",
+      "trois-phases",
+      "palier-figure",
+      "ordre-phases",
+      "cristaux",
+      "procedes",
+      "surgelation",
+      "congeler-ou-surgeler",
+      "garder-le-froid",
+      "decongeler",
+      "decongeler-exo",
+      "cas-seul",
+      "bilan"
+    ]
+  },
+  "bac_mfer_2028": {
+    "S4.1.1": [
+      "positif-negatif",
+      "ranger-positif-negatif",
+      "refrigerer",
+      "quatre-facteurs",
+      "trois-phases",
+      "palier-figure",
+      "ordre-phases",
+      "cristaux",
+      "procedes",
+      "surgelation",
+      "congeler-ou-surgeler",
+      "garder-le-froid",
+      "decongeler",
+      "decongeler-exo",
+      "cas-seul",
+      "bilan"
+    ]
+  }
+}
