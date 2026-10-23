@@ -1,5 +1,16 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ## 23/10/2026 — INERWEB AU TÉLÉPHONE (audit + chantiers 0 à 4 et 6)
+>
+> Audit de 986 pages au doigt (360×640) : 104 bloquantes le matin. En ligne : HydroMétro qui défile (`ce9d1d0c`) ; bouton
+> « Aa » en onglet au bord et liste unique « PC ou tablette » **`moteur/appareils.js`** — fenêtre au téléphone + pictogramme
+> sur les cartes ; ajouter une page = une ligne dans `LISTE` (`770ec86d`) ; pack fluides débloqué, texte à 14 px, « Agrandir »
+> partout (`53b783ac`, autre session). Clé de `retour-accueil.js` = sha1 du fichier en CRLF. Avant tout push du site :
+> `node C:/git/usine-contenu/outils/controle-telephone.cjs <pages touchées>`, 0 bloquant (skills fin-de-chantier et
+> secretaire-de-redaction). **La source de l'audit n'est pas ici** : `CLAUDE-ESPACE-TRAVAIL/RESEAU-PAR-DIPLOME-2026-10-18/
+> plan-stations-manquantes/outils/telephone/` (`AUDIT-TELEPHONE-2026-10-23.md`, `LISEZ-MOI.md`). Reste : chantier 5
+> (réunir les copies divergentes de `styles.css` : pack 54, Législation 32, CartoClim 18, Tour de main 17), essai sur un vrai téléphone.
+
 > ## 18/10/2026 (soir) — « MON PARCOURS PAR DIPLÔME » (`mon-parcours/`)
 >
 > En ligne après le feu vert de Franck (`88c82b40`, `b40b80f4`). On choisit son niveau puis son diplôme (CAP IFCA, Bac MFER 2028,
