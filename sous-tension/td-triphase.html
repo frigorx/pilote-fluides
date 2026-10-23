@@ -594,8 +594,16 @@
             color: #1e40af;
         }
         /* ========== FIN AJOUTS CLAUDE ========== */
-    </style>
-<script defer src="../moteur/retour-accueil.js?v=c7afca84a1"></script>
+    
+        /* Téléphone : texte à 14 px au moins (audit téléphone 23/10/2026) */
+        @media (max-width: 760px) {
+            .section, .score-badge, .level-badge, .input-group label, .btn-small, .anim-controls button, .quiz-meta, .formula small, table, .tag,
+            .legende, .step-explanation p, .step-explanation, .voltmetre-titre, .recap-item .label, .plan-deroulement, .plan-titre, .plan-etape,
+            .mini-qcm-choice, .mini-qcm-feedback, .exo-dropzone-label, .help-example { font-size: 14px; }
+            [style*="font-size:0.85rem"], [style*="font-size:0.8rem"], [style*="font-size: 0.85rem"], [style*="font-size: 0.8rem"] { font-size: 14px !important; }
+        }
+</style>
+<script defer src="../moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 <div class="container">

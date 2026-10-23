@@ -185,10 +185,15 @@
    la taille par defaut du navigateur. Fixee a la charte le 20/09, au moment
    ou la hierarchie des titres a ete remise d aplomb (h3 -> h2, h4 -> h3). */
 .bloc h2{margin:0 0 6px;font-family:var(--titre);font-size:19px;color:var(--bleu)}
+/* Téléphone (audit 23/10/2026) : texte à 14 px au moins, sur téléphone seulement. */
+@media (max-width:760px){
+  .bloc .pastille, .titre-som, li > a > .sous, .stations .etiq, .stations .quoi, caption, caption strong,
+  .etape .quand, .etape p, p.signature, p.signature em { font-size:14px !important; }
+}
 </style>
 <!-- La scène dessinée de « Une journée type » (04/10/2026) : sa feuille, à côté de son script. -->
 <link rel="stylesheet" href="metier/scene-journee.css?v=20261004">
-<script defer src="moteur/retour-accueil.js?v=c7afca84a1"></script>
+<script defer src="moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 <a class="evite" href="#contenu">Aller au contenu</a>
@@ -632,8 +637,8 @@
 <script src="metier/scene-expliquer.js?v=20261004b"></script>
 <script src="metier/scene-mesurer.js?v=20261004b"></script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=6f13d1c083"></script>
+<script src="moteur/lisibilite.js?v=84cea1aa90"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js. -->
-<script src="moteur/marque.js?v=6f13d1c083" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=84cea1aa90" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

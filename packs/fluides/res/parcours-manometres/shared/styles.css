@@ -253,3 +253,112 @@ h1,h2,h3{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy-70
   .portal-header,.header-actions,.progress-rail,.lesson-footer,.brand-host,.calc-toggle,.calculator{display:none!important}
   .lesson-page,.lesson-app{height:auto;overflow:visible}.lesson-app{display:block}.lesson-main{padding:0}.lesson-card{height:auto;box-shadow:none;border:1px solid #1b3a63}.scene{min-height:145mm;overflow:visible}.flow{animation:none!important}.portal-main{width:100%;padding:0}.module-cards{display:block}.module-card{break-inside:avoid;box-shadow:none;margin-bottom:10mm}
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : les leçons tenaient dans l'écran (100dvh, rien ne défile) : « Retour / Continuer »
+   et la zone de réponse tombaient sous l'écran, et le texte faisait 8 à 12 px. Ici : la page défile, le schéma passe
+   avant le texte, « Retour / Continuer » restent collés en bas, tout texte lisible fait 14 px au moins.
+   Feuille commune au portail, aux 2 modules et aux 5 briques. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body, .lesson-page { height: auto !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .lesson-app { display: flex !important; flex-direction: column; height: auto !important; min-height: 100dvh; overflow: visible !important; }
+  .lesson-header { flex: 0 0 auto; flex-wrap: wrap; height: auto !important; }
+  .header-actions { flex-wrap: wrap; }
+  .progress-rail { flex: 0 0 auto; }
+  .progress-step { height: 10px !important; }
+  .lesson-main { flex: 1 0 auto; height: auto !important; padding: 6px !important; }
+  .lesson-card { height: auto !important; display: flex !important; flex-direction: column; overflow: visible !important; padding: 10px !important; gap: 8px !important; }
+  .lesson-copy { grid-template-columns: minmax(0, 1fr) !important; }
+  .lesson-copy .eyebrow { display: block !important; }
+  .scene { overflow: visible !important; height: auto !important; min-height: 0 !important; display: block !important; }
+  .scene-grid, .gauge-layout, .mission-layout { height: auto !important; grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: none !important; }
+  .panel { overflow: visible !important; }
+  .choice-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .scene svg { height: auto !important; max-height: none !important; }
+  /* la barre du bas reste collée en bas de l'écran */
+  .lesson-footer { position: sticky; bottom: 0; z-index: 20; flex: 0 0 auto; grid-template-columns: auto minmax(0, 1fr) auto !important; gap: 8px !important; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; }
+  .nav-button { min-width: 0 !important; min-height: 44px !important; padding: 6px 16px !important; }
+  .icon-button, .voice-button, .speed-select, .exit-link, .choice, .check-button, .calc-toggle, .calculator-keys button, .field input, .field select, .measure-line input, .zoom-button { min-height: 44px !important; }
+  .voice-button, .exit-link { max-width: none !important; }
+  .lesson-ident { display: flex !important; }
+  /* lisibilité : seuls les textes qui font moins de 14 px dans la page d'origine passent à 14 px ; aucun texte plus grand n'est touché */
+  .prototype-badge,
+  #lisib-bouton,
+  .eyebrow,
+  #station-suivante > a,
+  a.ligne,
+  #lisib-raz,
+  .lesson-ident > small,
+  #pilote-prof-toggle,
+  .exit-link,
+  #lesson-eyebrow,
+  #lesson-text,
+  #activity-panel > h2,
+  #activity-panel > p,
+  #activity-panel .key-box,
+  .reading-prompt .key-box,
+  #activity-panel .key-box > strong,
+  .reading-prompt .key-box > strong,
+  #previous,
+  #step-status,
+  #step-status > strong,
+  #next,
+  .warning-box,
+  .warning-box > strong,
+  .state-label,
+  #gauge-controls > h3,
+  .choice,
+  .feedback,
+  .pressure,
+  .pressure > strong,
+  .temperature,
+  .temperature > strong,
+  .field,
+  .readout > span,
+  #discover-pressure,
+  #discover-temperature,
+  .measure-line > label,
+  .measure-line > strong,
+  .measure-line > span,
+  #marque-inerweb.marque-document > span,
+  #marque-inerweb.marque-document .marque-lic,
+  #marque-inerweb.marque-document .marque-droits,
+  #marque-inerweb.marque-document .marque-referentiel,
+  #marque-inerweb.marque-document .marque-proto,
+  #marque-inerweb .marque-mentions,
+  .readout b,
+  .field > label,
+  #check-reading,
+  .assist-toggle,
+  #reading-feedback,
+  .micro-question,
+  .choice > strong,
+  .formula,
+  #calculation-check,
+  .mini-gauge-card span,
+  .mobile-swipe-hint,
+  #activity-panel > h3,
+  .panel > h3,
+  #mission-check,
+  #mission-feedback,
+  #calc-toggle,
+  .sr-only,
+  #fluid-choice > option,
+  #fluid-temperature,
+  #observation-questions > h3,
+  #observation-feedback,
+  #reciprocity,
+  #reciprocity > strong,
+  #absolute-check,
+  #series-check,
+  .analog-hint,
+  #quiz-panel > h2,
+  .final-score > p,
+  .formula-summary b,
+  .formula-summary span,
+  .formula-summary code,
+  .final-report .primary-action { font-size: 14px !important; line-height: 1.35 !important; }
+}
+/* ===== /Téléphone ===== */

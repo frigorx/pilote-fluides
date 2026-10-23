@@ -85,3 +85,13 @@ main{max-width:1000px;margin:0 auto;padding:0 1rem 2rem}
 .zones-liste button span{background:var(--copper);color:#fff;border-radius:50%;width:1.5rem;height:1.5rem;display:grid;place-items:center;font-size:.8em;font-weight:700;flex:none}
 main .intro{margin:.2rem 0 1rem;max-width:70ch}
 @media (max-width:600px){.rz-stations li{flex-basis:50%}.rz-stations li:nth-child(4n)::before{display:block}.rz-stations li:nth-child(2n)::before{display:none}.rz-nom{font-size:.75em}}
+
+/* ===== Téléphone : texte à 14 px au moins, aucun débordement (audit téléphone 23/10/2026) =====
+   Noms de stations du plan, légendes et liste des zones tombaient à 12-13 px ; le bandeau du passeport,
+   en « nowrap », élargissait la page de 4 px. Sur téléphone seulement. */
+@media (max-width: 760px) {
+  .rz-nom, .arrets .p, .arrets .etat, .avenir li .p, .rz-titre, .plan h2 small, .fiche .phrase, .fiche .retour,
+  .fiche li small, .zones-liste button, .zones-liste button span { font-size: 14px; }
+  .entete .passeport-bandeau { flex-wrap: wrap; margin-left: 0; max-width: 100%; }
+  .entete .passeport-bandeau .gros-nombre, .entete .passeport-bandeau .bouton-lien { white-space: normal; }
+}

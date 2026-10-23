@@ -113,8 +113,13 @@
   .dys-fab[aria-pressed="true"]{ background:var(--green); }
   body.dys-mode, body.dys-mode input, body.dys-mode button{ font-family:'Atkinson Hyperlegible','Calibri',sans-serif !important; }
   body.dys-mode{ font-size:19px; line-height:1.9; letter-spacing:0.3px; word-spacing:1.5px; }
+  /* Téléphone : texte à 14 px au moins (audit téléphone 23/10/2026) */
+  @media (max-width:760px){
+    .topbar .badge-edu,.topbar .home,.filiere-btn .flabel,.filiere-btn .fcomp,.qcount,.q-context,.posit-filiere,.posit-step,.review-item .ra,.prof-line,.signature{ font-size:14px; }
+    [style*="font-size:13.5px"],[style*="font-size:13px"],[style*="font-size:10px"]{ font-size:14px !important; }
+  }
 </style>
-<script defer src="../moteur/retour-accueil.js?v=c7afca84a1"></script>
+<script defer src="../moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 

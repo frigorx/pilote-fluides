@@ -272,3 +272,30 @@ button.ecouter.actif{background:var(--bleu);color:#fff;border-color:var(--bleu)}
    les pages qui s appuient dessus (dont formation.html) dependaient du
    reglage par defaut du navigateur. Au clavier, on doit voir ou l on est. */
 :focus-visible{outline:3px solid #ff6b35;outline-offset:2px}
+
+/* ===== Téléphone : texte lisible, cibles au doigt (23/10/2026) =====
+   Audit téléphone du 23/10 : sur les cartes de formation (formation.html?carte=…, y compris les 132 QR f/ qui y
+   renvoient), le bandeau, le fil, les étiquettes, les compétences, les ressources et la barre du bas descendaient
+   à 12-13 px. Ici : 14 px au moins et boutons de 44 px de haut, sur téléphone seulement (bureau et tablette
+   inchangés). */
+@media (max-width:760px){
+  .barre .mode-tag, .fil, .carte .dc, .criteres .code, .criteres .etats button,
+  .competences .tp, .competences .cat, .competences .neuf, .competences .avert, .competences .plus button,
+  .competences .officiel, .competences .officiel .src, .pc .cd, .pc .st, .bilan-comp .code, .bilan-comp .n,
+  .bilan-comp .hr, .pilote .t, .ressources a, .pied, .pied a, .pied button, button.rejeu, button.ecouter,
+  .ress-liens .ress, #acces-ok, .voile .modale button { font-size:14px; line-height:1.4 }
+  .choix button, .liens button, .criteres .etats button, .competences .plus button, button.rejeu, button.ecouter,
+  .choix-cours .c-int, .choix-cours .c-txt, .ress-liens .ress, .ressources a, .barre .mode-tag, #acces-ok { min-height:44px }
+  .choix-cours .c-int, .ress-liens .ress, .ressources a { display:inline-flex; align-items:center }
+  .pied a, .pied button { min-height:44px; display:inline-flex; align-items:center }
+  .pied { padding-bottom:calc(8px + env(safe-area-inset-bottom)) }
+  .lien-experience span { font-size:14px !important }
+  /* la barre fixe du bas ne doit plus masquer le pied de page (Mentions légales) */
+  body:has(.pied) { padding-bottom:calc(64px + env(safe-area-inset-bottom)) }
+  /* page courte : la licence reste collée en bas de l'écran, la barre se pose juste au-dessus */
+  body:has(.marque-fixe) .pied { bottom:34px }
+  body:has(.marque-fixe):has(.pied) { padding-bottom:calc(98px + env(safe-area-inset-bottom)) }
+  /* fenêtre « Accès direct » plus haute que l'écran : le voile défile, le haut (✕) et le bas restent atteignables */
+  .voile { overflow-y:auto; overscroll-behavior:contain }
+  .voile .modale { margin:auto }
+}

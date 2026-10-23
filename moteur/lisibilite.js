@@ -98,8 +98,8 @@
        541 pages) : jamais de bouton rond flottant ; seul l'onglet « Aa » sort du bord droit, à
        mi-hauteur, loin des barres « Retour / Continuer » collées en bas. Il ouvre le panneau. */
     "@media (max-width:760px){#lisib-bouton,#lisib-masquer{display:none!important}" +
-    "#lisib-onglet{display:block!important;top:46%;bottom:auto;width:16px;height:44px;font-size:10px;letter-spacing:-.5px;opacity:.9}" +
-    "#lisib-panneau{top:calc(46% - 60px);bottom:auto;right:26px}}" +
+    "#lisib-onglet{display:block!important;top:46%;bottom:auto;width:26px;height:44px;padding:0 0 0 2px;font-size:14px;letter-spacing:-1px;text-align:left;opacity:.9}" +
+    "#lisib-panneau{top:calc(46% - 60px);bottom:auto;right:30px}}" +
     "@media print{#lisib-bouton,#lisib-panneau,#lisib-masquer,#lisib-onglet{display:none!important}}";
 
   var style = document.createElement("style");

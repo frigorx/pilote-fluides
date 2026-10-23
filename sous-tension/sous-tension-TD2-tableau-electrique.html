@@ -142,8 +142,15 @@
   .illustration-card img{ display:block; max-width:100%; height:auto; margin:0 auto; }
   .illustration-card figcaption{ margin-top:10px; font-size:14px; color:var(--muted); text-align:center; line-height:1.45; }
   body.dys-mode .illustration-card figcaption{ font-size:15px; }
+  /* Téléphone : texte à 14 px au moins (audit téléphone 23/10/2026) */
+  @media (max-width:760px){
+    .topbar .badge-edu,.topbar .niveau-tag,.td-progress,.signature,.svg-caption,.niveau-btn p,.memory-card{ font-size:14px; }
+    .topbar .niveau-tag{ white-space:normal; text-align:right; line-height:1.2; }
+    .stepper .node{ width:32px; height:32px; font-size:14px; }
+    [style*="font-size:12.5px"],[style*="font-size:13.5px"],[style*="font-size:13px"]{ font-size:14px !important; }
+  }
 </style>
-<script defer src="../moteur/retour-accueil.js?v=c7afca84a1"></script>
+<script defer src="../moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 

@@ -715,16 +715,68 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
   .callout, .mini-card, .lab-result, .quiz-choice, .feedback { background: #fff !important; }
   .visual-caption { color: #000; font-size: 10pt; }
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : la page était dessinée pour tenir dans l'écran (100dvh, rien ne défile) ;
+   « Retour / Continuer » tombaient sous l'écran et le texte faisait 5 à 11 px. Ici : la page défile, le schéma
+   passe avant le texte, « Retour / Continuer » restent collés en bas, tout texte lisible fait 14 px au moins.
+   Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; min-height: 100%; overflow: visible !important; overflow-x: clip !important; }
+  .course-app { width: 100% !important; height: auto !important; min-height: 100dvh; display: flex !important; flex-direction: column; overflow: visible !important; }
+  .course-app > .topbar, .course-app > .progress-row { flex: 0 0 auto; }
+  .topbar { display: flex !important; flex-wrap: wrap; gap: 6px 8px !important; padding: 6px 8px !important; }
+  .tools { flex-wrap: wrap; margin-left: auto; }
+  .progress-row { grid-template-columns: auto minmax(0, 1fr) auto !important; gap: 8px !important; padding: 4px 10px !important; }
+  .lesson-grid { flex: 1 0 auto; display: flex !important; flex-direction: column; gap: 10px !important; padding: 0 6px 10px !important; overflow: visible !important; }
+  .visual-panel, .lesson-panel { height: auto !important; overflow: visible !important; }
+  .visual-panel { order: 1; padding: 8px !important; }
+  .lesson-panel { order: 2; padding: 12px !important; }
+  .visual-stage, .visual-mode-body, .visual-composite, .visual-html, .visual-stage > div, .visual-mode-body > div { height: auto !important; min-height: 0; overflow: visible !important; }
+  .visual-stage > svg, .visual-mode-body > svg, .technical-svg { height: auto !important; max-height: none !important; }
+  .anim-hote { height: auto !important; aspect-ratio: 16 / 10; }
+  /* la barre du bas reste collée en bas de l'écran */
+  .navigation { position: sticky; bottom: 0; z-index: 20; flex: 0 0 auto; grid-template-columns: auto minmax(0, 1fr) auto !important; gap: 8px !important; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--cream, #f7f1e7); }
+  .nav-button { min-height: 44px; height: auto !important; padding: 6px 16px; }
+  .tool-button, .speed-select, .visual-tab, .activity-button, .quiz-choice, .target-tab, .formula-choices button { min-height: 44px !important; }
+  .tool-button.compact, .tool-button:not(.compact) { width: auto !important; min-width: 44px; padding: 0 10px !important; }
+  .visual-panel button, .lesson-panel button, .visual-panel select, .visual-panel input:not([type=checkbox]):not([type=radio]) { min-height: 44px !important; }
+  .kp-setting button { min-width: 44px; }
+  /* les visuels et activités tiennent en une colonne : les rangées de 3 à 7 cases passent l'une sous l'autre */
+  .visual-panel { display: flex !important; flex-direction: column; }
+  .visual-panel > * { min-width: 0; max-width: 100%; }
+  .visual-tabs { flex-wrap: wrap; }
+  .visual-stage[hidden] { display: none !important; } /* animation et schéma se relayaient dans la même case : ici ils s'empileraient */
+  .compare-grid, .model-grid, .record-grid, .model-compare, .snap-sequence, .kp-face-grid, .nitrogen-cycle, .running-circuit, .cycles-actions, .record-timeline, .summary-proof, .contact-lab { grid-template-columns: 1fr !important; }
+  .model-card { grid-template-columns: 96px minmax(0, 1fr) !important; }
+  .model-face i { height: 90px !important; }
+  .symbol-workflow, .running-priorities, .bench-legend, .mechanism-controls { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .workflow-line, .pipe-arrow { display: none !important; }
+  .mechanism-controls .lab-result, .calc-fields > button, .cycles-actions > *, .contact-buttons { grid-column: 1 / -1; }
+  .calc-fields { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .calc-fields > button { border-radius: 14px !important; min-height: 48px; }
+  .contact-symbol img { max-height: 120px; }
+  .cycles-lab table, .lesson-panel table { display: block; overflow-x: auto; }
+  /* lisibilité : 14 px au moins pour tout texte HTML (les schémas SVG gardent leur taille) */
+  :where(.course-app *:not(svg):not(svg *)) { font-size: 14px !important; line-height: 1.35 !important; }
+  .course-app h1 { font-size: 22px !important; line-height: 1.1 !important; }
+  /* « ← précédente · ↑ la ligne · suivante → » (moteur/suivant.js) : lisible et facile à toucher */
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; }
+  #station-suivante a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+/* ===== /Téléphone ===== */
 </style>
   <script src="../../../../moteur/voix-index.js?v=20261018-tom"></script>
   <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
-  <script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../moteur/reglage-voix.js?v=45451e558b"></script>
   <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
-  <script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
-<script src="../../../../moteur/lisibilite.js?v=20261023-tel" defer></script>
+  <script src="../../../../moteur/prof-vocal.js?v=9912c09150"></script>
+<script src="../../../../moteur/lisibilite.js?v=0f188557ff" defer></script>
   <script src="../../../../moteur/plan-donnees.js?v=20261023-tel"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
-<script defer src="../../../../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
 </head>
 <body>
   <div class="course-app" id="courseApp">
@@ -2143,6 +2195,6 @@ body.reading-mode .lesson-lead, body.reading-mode .lesson-list, body.reading-mod
   render();
 })();
 </script>
-<script src="../../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+<script src="../../../../moteur/agrandir.js?v=2426161abb" defer></script>
 </body>
 </html>

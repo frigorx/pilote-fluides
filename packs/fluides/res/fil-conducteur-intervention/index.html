@@ -105,10 +105,25 @@
       .vitesse select { min-height: 36px; padding: 4px 7px; font-size: 12px; }
       .transcription { padding: 6px 8px; line-height: 1.25; }
     }
-  </style>
+  
+
+/* ===== Téléphone : la page défile — gabarit « slide animée (planche seule) » (audit téléphone 23/10/2026) =====
+   La page tenait dans l'écran sans défiler : la ligne de mentions légales et le bas du texte de la voix étaient
+   hors d'atteinte, le texte faisait 12 px. Ici : la page défile (html seul), l'animation garde sa forme 16/9,
+   texte et boutons à 14 px au moins. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; max-height: none !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  main { height: auto !important; display: flex !important; flex-direction: column; }
+  .scene { aspect-ratio: 16 / 9; width: 100%; }
+  .barre p, .transcription, .vitesse label { font-size: 14px !important; line-height: 1.35 !important; }
+  button, .vitesse select { min-height: 44px !important; font-size: 14px !important; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}
+</style>
   <script src="../../../../moteur/plan-donnees.js?v=20261023-tel"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
-<script defer src="../../../../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
 </head>
 <body>
   <main>
@@ -209,10 +224,10 @@
 <script src="../../../../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
   <script src="../../../../moteur/voix-index.js?v=20261018-tom"></script>
   <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
-  <script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../moteur/reglage-voix.js?v=45451e558b"></script>
   <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
-  <script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
-<script src="../../../../moteur/lisibilite.js?v=20261023-tel" defer></script>
-<script src="../../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+  <script src="../../../../moteur/prof-vocal.js?v=9912c09150"></script>
+<script src="../../../../moteur/lisibilite.js?v=0f188557ff" defer></script>
+<script src="../../../../moteur/agrandir.js?v=2426161abb" defer></script>
 </body>
 </html>

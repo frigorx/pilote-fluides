@@ -603,3 +603,78 @@ svg text:not(.component-letter) {
   a[href^="http"]::after { content: " (" attr(href) ")"; }
   .mobile { display: none !important; }
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : en mode cours, la leçon prenait tout l'écran (position fixe, 100dvh, rien ne défile) :
+   les schémas et les réponses étaient rognés, « Retour / Continuer » sous l'écran, texte de 8 à 12 px. Ici : la page
+   défile, « Retour / Continuer » restent collés en bas, les repères d'étapes forment une rangée qui défile, tout texte
+   lisible fait 14 px au moins. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body, body.course-running, body.summary-running { height: auto !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .topbar { flex-wrap: wrap; gap: 6px 10px; }
+  .pill, .control, .nav, .speed select, .summary-exit, .summary-actions button, .interactive-zone button, .interactive-zone input, .interactive-zone select, .start, .secondary { min-height: 44px !important; }
+  .course:not([hidden]) { position: static !important; inset: auto !important; z-index: auto !important; display: flex !important; flex-direction: column; min-height: 100dvh; gap: 8px !important; padding: 6px !important; }
+  .stepper { display: flex !important; flex: 0 0 auto; overflow-x: auto; gap: 6px !important; padding-bottom: 4px; }
+  .step-button { flex: 0 0 44px; min-height: 44px !important; grid-template-columns: 1fr !important; place-items: center; padding: 0 !important; }
+  .step-button > :not(b) { display: none !important; }
+  .step-button b { width: 36px !important; height: 36px !important; }
+  .lesson-card { display: flex !important; flex-direction: column; height: auto !important; overflow: visible !important; padding: 10px !important; gap: 8px; }
+  .lesson-top { grid-template-columns: minmax(0, 1fr) !important; }
+  .voice-panel { max-width: none !important; justify-content: flex-start !important; }
+  .interactive-zone { overflow: visible !important; height: auto !important; min-height: 0 !important; }
+  .scene, .activity-layout { height: auto !important; grid-template-columns: minmax(0, 1fr) !important; }
+  .choice-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .visual-card { overflow: visible !important; height: auto !important; }
+  .visual-card svg { height: auto !important; max-height: none !important; }
+  .explain-card { overflow: visible !important; }
+  .transcript ol { max-height: none !important; }
+  .summary:not([hidden]) { position: static !important; display: flex !important; flex-direction: column; min-height: 100dvh; overflow: visible !important; padding: 14px 10px !important; }
+  .summary h2 { padding-right: 0 !important; }
+  .summary-exit { position: static !important; align-self: flex-start; }
+  /* la barre du bas reste collée en bas de l'écran */
+  .lesson-footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; margin: 0; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--paper, #fffdf8); border-top: 1px solid var(--line, #ddd); border-radius: 0; }
+  .lesson-footer .nav { white-space: nowrap; }
+  .voice-panel > * { flex: 0 0 auto !important; max-width: 100%; }
+  /* lisibilité : 14 px au moins, mais SEULEMENT pour les textes HTML qui font moins de 14 px dans la page d'origine (relevé état par état : accueil, chaque étape du cours, questionnaire, bilan) ; un texte déjà plus grand garde sa taille. Les schémas SVG gardent la leur. */
+  #course p,
+  #course span,
+  #main b,
+  #main i,
+  #main li,
+  #main small,
+  #main summary,
+  #restart,
+  #review-logph,
+  #summary p,
+  #summary span,
+  #summary strong,
+  #zone h3,
+  #zone sub,
+  .brand-context,
+  .choice,
+  .control,
+  .definition-line,
+  .eyebrow,
+  .glide sub,
+  .key,
+  .licence,
+  .nav,
+  .page-footer,
+  .pill,
+  .pilote-prof-transcript,
+  .trap,
+  .zeo strong { font-size: 14px !important; line-height: 1.35 !important; }
+  /* moteur/suivant.js ne pose « ← précédente · ↑ la ligne · suivante → » que si aucun bloc ne touche le bord bas à l'ouverture : ce décalage de l'accueil évite la rencontre fortuite à 360×640 et 320×568 */
+  .landing { margin-top: 28px; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+  /* barre du bas FIXE (et non collée à la carte) : à la fin de la page elle remontait au milieu de l'écran, sous la bulle des sous-titres de la voix ;
+     la bulle se pose au-dessus de la barre (sauf si l'élève l'a déplacée) et la page garde la place de la barre */
+  /* la bulle (posée à 70 px du bas) est plafonnée à 132px (elle défile au-delà) et la page réserve barre + bulle : la dernière réponse et « Question suivante » ne restent jamais dessous */
+  body.course-running { padding-bottom: calc(206px + env(safe-area-inset-bottom)); }
+  body.course-running .pst { max-height: 132px; overflow-y: auto; overscroll-behavior: contain; }
+  body.course-running .pst:not([style*="top"]), body.course-running .pst-ouvrir:not([style*="top"]) { bottom: calc(70px + env(safe-area-inset-bottom)) !important; }
+  #lisib-raz { font-size: 14px !important; }
+}
+/* ===== /Téléphone ===== */

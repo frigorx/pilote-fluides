@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1b3a63">
   <title>inerWeb HoCourant — se préparer à l'habilitation électrique</title>
   <meta name="description" content="S'entraîner en autonomie à l'habilitation électrique, de B0 à BR : on apprend en cherchant, chaque question part d'une situation réelle. Sans compte, sans donnée personnelle. Une ressource inerWeb.">
-  <link rel="stylesheet" href="hocourant.css?v=20261017-1836">
+  <link rel="stylesheet" href="hocourant.css?v=11e24170d4">
   <link rel="stylesheet" href="moteur/impression.css?v=20261017-1836" media="print">
 </head>
 <body>
@@ -64,11 +64,13 @@
   <script src="moteur/sous-titres.js?v=20261017-1836"></script>
   <script src="donnees/questions.js?v=20261017-1836"></script>
   <script src="restitution.js?v=20261017-1836"></script>
-  <script src="../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../moteur/reglage-voix.js?v=45451e558b"></script>
 <script src="../moteur/voix.js?v=20261017-voix"></script>
 <script src="app.js?v=20261017-1836"></script>
-<script src="../moteur/prof-vocal.js?v=20261017-voix"></script>
+<script src="../moteur/prof-vocal.js?v=9912c09150"></script>
   <script src="moteur/lisibilite.js?v=20261023-tel836"></script>
   <script src="moteur/marque.js?v=20261017-1836" data-cartouche="HoCourant"></script>
+  <!-- Téléphone (audit 23/10/2026) : « ⤢ Agrandir » sur les schémas, en dessous de 760 px seulement -->
+  <script>if (window.matchMedia("(max-width: 760px)").matches) { var ag = document.createElement("script"); ag.src = "../moteur/agrandir.js?v=2426161abb"; document.head.appendChild(ag); }</script>
 </body>
 </html>

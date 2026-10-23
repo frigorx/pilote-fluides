@@ -1,4 +1,4 @@
-@import url("../condenseur-interactif/styles.css?v=20261004-1");
+@import url("../condenseur-interactif/styles.css?v=dc431b31b9");
 
 :root{--mission:#c9451a;--mission-soft:#fff0e8}
 .brand-mark{background:var(--orange-dark)}
@@ -29,3 +29,18 @@
 .scene-lecon .scene-geste{display:block;flex:1 1 0;min-width:0;height:auto;background:#fdfbf5;border:1px solid var(--line);border-radius:16px}
 @media(min-width:651px){.lesson-card:has(.scene-lecon) .lesson-heading h2{white-space:normal;overflow:visible;text-overflow:clip;font-size:clamp(20px,2.2vw,28px);line-height:1.05}}
 @media(max-width:900px){.scene-lecon .scene-geste{flex:none;width:100%}}
+
+/* ===== Téléphone : la page défile (23/10/2026) — compléments propres à ce cours =====
+   La page défile, les boutons et la plupart des textes sont réglés par le socle commun (condenseur-interactif/styles.css,
+   importé en tête de cette feuille). Ici : les éléments qui n'existent que dans ce cours (embranchements, conséquence,
+   pastilles du parcours, cartes outils) passent à 14 px, en une colonne. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  .branch-context, .branch-choice strong, .branch-choice small, .consequence, .consequence strong, .return-safe, .route-node, .tool-card, .evidence-card, .branch-count { font-size: 14px !important; line-height: 1.3 !important; }
+  .branch-choices, .evidence { grid-template-columns: minmax(0, 1fr) !important; }
+  .tool-strip { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px !important; }
+  .route-node { min-width: 0 !important; min-height: 44px !important; padding: 6px 8px !important; }
+  .route-arrow { font-size: 18px !important; }
+  .return-safe { min-height: 44px; padding: 8px 14px !important; }
+  .tool-button { min-width: 44px; }
+}
+/* ===== /Téléphone ===== */

@@ -158,3 +158,15 @@
   .mission-carte:not([open]) > .mission-carte__corps { display: block; }
   .mission-tampon--pose, .mission-tampon--pose::after { animation: none; }
 }
+
+/* ===== Téléphone : textes à 14 px, boutons de 44 px (audit téléphone 23/10/2026) =====
+   Feuille commune aux stations de Législation : un seul endroit, les 32 copies de styles.css ne sont pas touchées.
+   Rien ne change au-dessus de 760 px. */
+@media (max-width: 760px) {
+  .fil-sous-ligne, .chapeau .mot, .numero, .vignette figcaption,
+  .mission-carte__etiquette, .mission-carte dt, .encadre > .mot { font-size: 14px; }
+  .outil { min-height: 44px; }
+  /* Barre d'outils non collée : collée, elle mangeait 38 à 52 % de l'écran et cachait les réponses du quiz. */
+  .barre-outils { position: static; }
+  html #pilote-prof-toggle.pilote-prof-encastre { font-size: 14px; min-height: 44px; }
+}

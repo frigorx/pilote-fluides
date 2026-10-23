@@ -84,7 +84,7 @@ h2 { font-size: clamp(24px, 3vw, 34px); }
 footer { padding: 20px; color: var(--muted); text-align: center; border-top: 1px solid var(--line); }
 
 @media (max-width: 760px) {
-  .hub-header { padding-inline: 12px; }
+  .hub-header { padding-inline: 12px; flex-wrap: wrap; gap: 8px; }
   .brand svg { width: 130px; height: auto; }
   .version { display: none; }
   main { width: min(100% - 18px, 680px); margin-top: 12px; }
@@ -96,6 +96,8 @@ footer { padding: 20px; color: var(--muted); text-align: center; border-top: 1px
   .button { width: 100%; }
   .standalone-item { grid-template-columns: 36px minmax(0, 1fr); }
   .standalone-item a { grid-column: 2; }
+  /* textes lisibles : 14 px au moins (réparation B1) */
+  .eyebrow, .module-choice .level, #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; }
 }
 
 @media print {

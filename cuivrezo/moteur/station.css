@@ -163,3 +163,25 @@ details.pourquoi summary{min-height:48px;display:flex;align-items:center;font-we
   .figure svg .cz-defaut{animation:cz-respire 2.4s ease-in-out infinite}
   @keyframes cz-respire{50%{opacity:.65}}
 }
+
+/* ===== Téléphone : texte lisible à 14 px au moins (audit téléphone 23/10/2026) =====
+   Titre, onglets des sept temps, commandes de voix et échelle 0-4 passaient sous 14 px (10 à 13 px).
+   Sur téléphone seulement ; rien ne change sur tablette ni sur ordinateur. */
+@media (max-width: 760px) {
+  .haut .kicker, .haut .carte, .temps button, .voix label, .voix .auto, .voix button, .echelle button { font-size: 14px !important; }
+  .echelle button .n { font-size: 22px; }
+  /* échelle 0-4 : en cinq colonnes, « Parfaitement maîtrisé » sortait de son bouton et élargissait la page ;
+     sur téléphone chaque niveau prend une ligne (chiffre à gauche, libellé à côté) */
+  .echelle { grid-template-columns: minmax(0, 1fr); }
+  .echelle button { min-height: 48px; display: flex; align-items: center; gap: .6rem; text-align: left; padding: .2rem .7rem; }
+  .echelle button .n { flex: none; min-width: 1.2em; text-align: center; }
+  /* barre du bas : elle mangeait 40 % de l'écran (voix sur trois rangées) ; ici « Écouter », « Prof vocal » et le débit
+     tiennent sur une rangée et les gros boutons restent à 52 px */
+  .bas { gap: .3rem; padding: .4rem .7rem calc(.4rem + env(safe-area-inset-bottom)); }
+  .bas button { min-height: 52px; }
+  .bas .voix { flex-wrap: wrap; gap: .3rem; white-space: nowrap; }
+  .bas .voix button { min-height: 44px; padding: .1rem .5rem; }
+  .bas .voix .reglage-voix { padding: .05rem .25rem; gap: .1rem; }
+  .bas .voix .reglage-voix button { min-width: 36px; min-height: 36px; padding: 0; }
+  .bas .voix .reglage-voix output { min-width: 2.6em; }
+}

@@ -370,3 +370,9 @@ html.sans-animation .film * { animation-duration: .01s !important; animation-del
   .ame-livre img { width: 64px; }
   .ame-livre-texte { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
 }
+
+/* Téléphone : texte lisible à 14 px au moins (audit téléphone 23/10/2026) :
+   sous-titre de l'en-tête, petit titre de la carte du plan et pastilles étaient à 12-13 px. */
+@media (max-width: 760px) {
+  .entete .titre-appli small, .rz-carte h2 small, .badge { font-size: 14px; }
+}

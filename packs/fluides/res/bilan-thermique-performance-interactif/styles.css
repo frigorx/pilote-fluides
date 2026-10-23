@@ -193,3 +193,238 @@ body.course-running,body.summary-running{height:100dvh;overflow:hidden}
 @media screen and (max-width:650px) and (max-height:700px){
   .course-running .eu-label-lab{grid-template-rows:116px minmax(0,1fr)}.course-running .official-label-figure{grid-template-columns:84px 1fr}.course-running .official-label-figure figcaption small{font-size:8.5px}.course-running .label-detail p{font-size:9px}.course-running .old-label-note{display:none}
 }
+
+/* ===== Téléphone : la page défile — gabarit « textes seuls » (audit téléphone 23/10/2026) =====
+   Cette page défilait déjà ; seuls les textes de 8 à 13 px sont portés à 14 px. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  /* textes qui font moins de 14 px dans la page d'origine : portés à 14 px (aucun texte plus grand n'est touché) */
+  .brand small,
+  #voice-toggle,
+  #refs-toggle,
+  .eyebrow,
+  .duration,
+  .hero-route small,
+  #stepper b,
+  #stepper span,
+  #kicker,
+  #speed-value,
+  #pilote-prof-toggle,
+  .heat-marker > b,
+  .heat-prompt,
+  .source-brick > i,
+  .source-brick b,
+  .source-brick small,
+  #heat-focus-title,
+  #heat-focus-copy,
+  .heat-rule > b,
+  .heat-rule > span,
+  #status,
+  #speech-warning,
+  .next-brick > small,
+  .source-links > a,
+  #restart,
+  #station-suivante > a,
+  a.ligne,
+  #lisib-raz,
+  #lisib-onglet,
+  .marque-mentions,
+  #exit-course,
+  #voice-choice > option,
+  .reglage-voix > button,
+  #slower,
+  #faster,
+  #listen > span,
+  #listen > b,
+  #lesson-text,
+  #prev,
+  #next,
+  .done > b,
+  .done > span,
+  .graph-type,
+  .equation,
+  .equation > i,
+  .field > span,
+  .field > small,
+  .callout,
+  .callout > b,
+  .readouts > span,
+  .total,
+  .result-card > p,
+  .wall-temp,
+  #wall-out-label,
+  .wall-slab > b,
+  #wall-e-0,
+  #wall-l-0,
+  #wall-e-1,
+  #wall-l-1,
+  #wall-e-2,
+  #wall-l-2,
+  #wall-in-label,
+  .wall-heat-arrow > b,
+  .wall-formula-path > span,
+  .wall-formula-path b,
+  .wall-formula-path > i,
+  .mode-button,
+  #wall-layer-name,
+  .wall-glossary > span,
+  .wall-glossary b,
+  #wall-direct-editor > h3,
+  #wall-direct-editor > p,
+  #tr-r-layer,
+  #tr-r-total,
+  #tr-u-result,
+  #tr-result,
+  #tr-line,
+  .formula-card small,
+  .formula-card:not(:has(.balance)) b,
+  .crate > b,
+  .crate > small,
+  .bar-row > span,
+  .field,
+  #cb-runtime-label,
+  #cb-explain,
+  #season-badge,
+  #season-left > b,
+  #season-left > small,
+  #season-right > b,
+  #season-right > small,
+  #season-split > b,
+  #season-split > small,
+  #season-sun > b,
+  #season-sun > small,
+  #season-copy,
+  #season-equation > b,
+  #season-equation > strong,
+  .formula-legend > span,
+  .formula-legend b,
+  .mini-room > span,
+  .heating-visual b,
+  .heating-visual small,
+  #cl-sensible-bar > b,
+  #cl-sensible-bar > small,
+  #cl-latent-bar > b,
+  #cl-latent-bar > small,
+  .warning,
+  .balance > span,
+  .metric > small,
+  .metric > span,
+  .winter,
+  .spring,
+  .summer,
+  .autumn,
+  .season-wheel > b,
+  #co-mode > option,
+  .conversion-flow > span,
+  .conversion-flow > i,
+  .conversion-flow > strong,
+  #official-label-open > span,
+  .official-label-figure b,
+  .official-label-figure small,
+  .label-focus-tabs > button,
+  .climate-switch > button,
+  .detail-kicker,
+  .label-number-list > span,
+  .label-number-list b,
+  .detail-values > span,
+  .detail-values b,
+  #label-detail > p,
+  .old-label-note,
+  .old-label-note > b,
+  #official-label-dialog p,
+  .project-chain small,
+  .project-chain b,
+  .project-chain span,
+  .check-source,
+  .quiz-head > strong,
+  .quiz-head > span,
+  .quiz-option,
+  #quiz-feedback,
+  #cold-room-visual figcaption span,
+  footer > span,
+  #marque-inerweb.marque-document > span,
+  #marque-inerweb.marque-document .marque-lic,
+  #marque-inerweb.marque-document .marque-droits,
+  #marque-inerweb.marque-document .marque-referentiel { font-size: 14px !important; line-height: 1.35 !important; }
+  button#voice-toggle.pill, button#refs-toggle.pill, button#pilote-prof-toggle.listen.pilote-prof-encastre, button#restart, #station-suivante a, a.ligne, button#exit-course.exit-course, button#prev.nav.subtle, button#next.nav, button.mode-button.active, button.mode-button { min-height: 44px; }
+}
+
+/* ===== Téléphone : le cours défile au lieu de tenir dans un écran fixe (réparation B1, 23/10/2026) =====
+   Avant : la coque du cours était collée à l'écran (position fixed, hauteur 100dvh, rien ne défile) ; avec des textes à
+   14 px, les champs, les cartes et le bouton « Continuer » se recouvraient. Ici : le cours devient une page qui défile,
+   le bandeau d'étapes passe sur plusieurs rangées, « Retour / Continuer » restent collés en bas, chaque schéma garde sa
+   géométrie de grand écran (valeurs « compactes » de 650 px abandonnées) et tout texte lisible fait 14 px au moins.
+   Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  body.course-running, body.summary-running { height: auto !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .course-running .module-shell { position: static !important; inset: auto !important; height: auto !important; width: 100% !important; display: flex !important; flex-direction: column; gap: 6px !important; padding: 6px !important; }
+  .course-running .stepper { display: grid !important; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)) !important; grid-template-rows: none !important; gap: 2px !important; overflow: visible !important; }
+  .course-running .stepper button { min-height: 44px !important; }
+  .course-running .stepper button b { width: 36px !important; height: 36px !important; flex-basis: 36px !important; }
+  .course-running .lesson-card { display: flex !important; flex-direction: column; height: auto !important; overflow: visible !important; }
+  .course-running .interactive-zone { overflow: visible !important; height: auto !important; min-height: 0 !important; }
+  .course-running .lesson-footer { position: sticky; bottom: 0; z-index: 20; padding: 8px 4px calc(8px + env(safe-area-inset-bottom)); background: var(--paper, #fffdf8); box-shadow: 0 -4px 10px rgba(27,58,99,.10); }
+}
+@media (max-width: 760px) {
+  .course-running .lesson-card { min-height: 0 !important; }
+  .course-running .lesson-top { flex-direction: column; align-items: stretch; }
+  .course-running .voice-controls { justify-content: flex-start; width: 100%; }
+  .course-running .exit-course { width: auto !important; padding: 0 14px !important; }
+  .course-running .exit-course::after { content: none !important; }
+  .course-running .listen { min-width: 44px; }
+  .course-running .voice-controls .pilote-prof-encastre { width: auto !important; }
+}
+@media (max-width: 760px) {
+  .course-running .lab, .course-running .heat-intro-lab, .course-running .label-lab, .course-running .wall-lab, .course-running .season-lab, .course-running .eu-label-lab { height: auto !important; grid-template-rows: none !important; }
+  .course-running .wall-visual-panel { grid-template-rows: none !important; }
+  .course-running .two-col, .course-running .two-col:has(>.heat-map), .course-running .two-col:has(>.building) { grid-template-columns: minmax(0, 1fr) !important; }
+}
+@media (max-width: 760px) {
+  .reglage-voix button, .reglage-voix output { font-size: 14px !important; min-width: 44px; min-height: 44px; }
+  .course-running .equation, .course-running .equation i, .course-running .heating-visual b, .course-running .heating-visual small, .course-running .season-flow b, .course-running .season-flow small, .course-running .season-wheel i, .course-running .season-wheel b,
+  .course-running .conversion-flow i, .course-running .conversion-flow strong, .course-running .season-equation strong, .course-running .season-equation b, .course-running .metric small, .course-running .project-chain small, .course-running .project-chain b, .course-running .label-focus-tabs button,
+  .course-running .label-detail p, .course-running .check-source, .course-running .quiz-head strong, .course-running .quiz-feedback, .course-running .quiz-option, .course-running .official-label-figure figcaption b, .course-running .official-label-figure figcaption small,
+  .source-brick i, .heat-marker b, .course-running .callout.key, .course-running .bar-row small, .course-running .bar-row span small, .course-running .wall-formula-path span, .course-running .wall-formula-path span b, .course-running .wall-slab span, .course-running .wall-slab small, .course-running .wall-slab b,
+  .course-running .wall-temp, .course-running .wall-heat-arrow b, .course-running .label-number-list span, .course-running .label-number-list b, .course-running .product-formulas small, .course-running .product-formulas b, .course-running .wall-glossary span, .course-running .wall-glossary b, .course-running .formula-legend span,
+  .course-running .crate b, .course-running .crate small, .course-running .load-split b, .course-running .load-split small { font-size: 14px !important; line-height: 1.3 !important; }
+}
+@media (max-width: 760px) {
+  /* schémas : on garde la géométrie « grand écran » (les valeurs compactes de 650 px ne portent que du 7-9 px) */
+  .course-running .product-journey .crate { height: auto !important; width: auto !important; min-height: 0 !important; padding: 6px 2px !important; }
+  .course-running .product-journey { height: auto !important; gap: 4px !important; padding: 6px !important; }
+  .course-running .wall-scene { min-height: 280px !important; border-width: 2px !important; border-radius: 14px !important; }
+  .course-running .wall-assembly { left: 8% !important; right: 8% !important; top: 22% !important; bottom: 24% !important; }
+  .course-running .wall-slab { max-width: none !important; flex-shrink: 1 !important; padding: 8px 4px !important; border-width: 2px !important; }
+  .course-running .wall-temp { top: 3% !important; }
+  .course-running .wall-temp.outdoor { left: 2% !important; text-align: left; }
+  .course-running .wall-temp.indoor { right: 2% !important; text-align: right; }
+  .course-running .wall-heat-arrow { height: 30px !important; border-top-width: 3px !important; }
+  .course-running .wall-visual-panel { gap: 6px !important; }
+  .course-running .wall-formula-path span { min-height: 0 !important; padding: 4px 6px !important; }
+  .course-running .clim-house-visual { max-height: none !important; aspect-ratio: auto !important; height: auto !important; display: flex; flex-direction: column; }
+  .course-running .clim-house-visual img { height: auto !important; aspect-ratio: 16 / 9; }
+  .course-running .season-flow { position: static !important; max-width: none !important; margin: 4px 6px 0; padding: 6px 8px !important; border-width: 2px !important; border-radius: 10px !important; }
+  .course-running .season-flow i { font-size: 22px !important; }
+  .course-running .heating-visual { grid-template-columns: 1fr 1fr !important; gap: 6px !important; padding: 6px !important; }
+  .course-running .heating-visual .mini-room { grid-column: 1 / -1; height: 78px !important; border-width: 5px !important; font-size: 18px; margin-right: 32px; }
+  .course-running .heating-visual .mini-room i { right: -30px !important; font-size: 24px !important; }
+  .course-running .season-wheel { min-height: 140px !important; border-radius: 18px !important; }
+  .course-running .season-wheel > i { padding: 4px 7px !important; }
+  .course-running .season-wheel::after { box-shadow: 0 -52px 0 5px var(--orange) !important; }
+}
+@media (max-width: 760px) {
+  .course-running .crate::before { font-size: 14px !important; }
+}
+@media (max-width: 760px) {
+  .course-running .detail-values b, .course-running .detail-values span b { font-size: 14px !important; }
+}
+@media (max-width: 760px) {
+  .summary-running .pillars, .summary-running .pillars i, .summary-running .pillars strong, .summary-running .pillars span, .summary-running .next-brick small { font-size: 14px !important; }
+}
+
+/* ===== Téléphone : le cours n'apparaît qu'après « Commencer le projet » (réparation C2, 23/10/2026) =====
+   Avant : en faisant défiler l'accueil sans toucher « Commencer le projet », le cours apparaissait sous l'accueil dans
+   l'ancienne mise en page (boîtes qui se chevauchent, sorties à droite). Ici : tant que le cours n'est pas lancé, il est
+   masqué ; « Commencer le projet » est la seule entrée (il pose body.course-running). Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  body:not(.course-running):not(.summary-running) .module-shell { display: none; }
+}

@@ -205,3 +205,26 @@ body.projection .outils .etiquette{display:none}
   .rail-jauge span{transition:none}
   [data-anime] *{animation-duration:.001s !important;animation-iteration-count:1 !important}
 }
+
+/* ===== Téléphone : lisible et atteignable (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : textes de 12 à 13,5 px, lien « Mentions légales » du filigrane recouvert par
+   le schéma (filigrane fixe, sans clic), « Précédent / Suivant » dispersés sur trois lignes. Ici : 14 px au
+   moins, filigrane posé en fin de page (cliquable), « Précédent / Suivant » côte à côte.
+   Rien ne change au-dessus de 760 px. */
+@media (max-width:760px){
+  .surtitre,.rail-tete,.rail-note,.accueil-compte,.accueil-codes li,.visuel figcaption,.reference,.vitesse,.message{font-size:14px}
+  .rail-points button{font-size:14px;min-height:44px}
+  .bouton-outil,.bouton-plat{font-size:14px;min-height:44px}
+  .bouton-outil.pilote-prof-encastre{font-size:14px !important}
+  .vitesse{min-height:44px}
+  .vitesse button{min-width:36px;min-height:36px;font-size:18px}
+  .bouton-nav{min-height:44px}
+  /* « Précédent / Suivant » côte à côte, le repère de code dessous (en trois lignes, il se dispersait) ;
+     la barre reste dans le flux : collée en bas, elle mangerait un sixième de l’écran */
+  .ecran-pied{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
+  .ecran-pied .reference{grid-column:1 / -1;order:3;min-width:0}
+  .bouton-nav{padding:10px 12px}
+  /* filigrane : en fin de page, avec son lien cliquable, au lieu d'un cadre fixe sous les schémas */
+  #marque-inerweb.marque-fixe{position:static !important;pointer-events:auto !important;margin:14px 12px 12px;flex-wrap:wrap}
+  #marque-inerweb .marque-mentions{font-size:14px !important;padding:10px 0}
+}

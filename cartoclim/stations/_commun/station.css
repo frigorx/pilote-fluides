@@ -239,3 +239,19 @@ dialog h2{margin-top:0;color:var(--navy)}
 .prerequis strong{color:var(--navy);font-weight:700}
 .prerequis a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
 .prerequis a:hover,.prerequis a:focus-visible{color:var(--orange)}
+
+/* ===== Téléphone : texte lisible à 14 px au moins (audit téléphone 23/10/2026) =====
+   Les 21 stations partagent cette feuille : corps à 13 px et tailles en « em » (.72 à .9) donnaient 10 à 12 px.
+   Ici, sur téléphone seulement : corps à 16 px, 14 px au minimum pour tout le reste, boutons de 44 px de haut. */
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .brand .cartouche, .titles .kicker, .level-switch button, .temps button, .voix-box button, .voix-box label,
+  .legende, .metric span, .corresp a, .corresp span.lien, .credit, .symboles figcaption, .footer-note,
+  .vignette figcaption, .scene-devant .choix button, .skip-link { font-size: 14px !important; }
+  .level-switch button, .temps button, .voix-box button, .scene-devant .choix button, .footer-nav button { min-height: 44px !important; }
+  .corresp a, .corresp span.lien { min-height: 36px; }
+  /* barre du haut : le titre garde toute la largeur, le niveau passe à droite dessous */
+  .topbar { grid-template-columns: minmax(0,1fr) auto; row-gap: .3rem; }
+  .topbar .brand { grid-column: 1 / -1; }
+  .titles h1 { font-size: 1.1em; overflow-wrap: anywhere; }
+}

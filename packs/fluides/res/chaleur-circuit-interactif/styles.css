@@ -757,3 +757,104 @@ body.course-running{height:100dvh;overflow:hidden;background:#eef2f6}
   .course-running .lesson-zone{min-height:0;padding:5px 7px;overflow:auto}
   .course-running .lesson-card{grid-template-rows:auto minmax(0,1fr) auto}
 }
+
+/* ===== Téléphone : la page défile — gabarit « course-running / lesson-card » (audit téléphone 23/10/2026) =====
+   Gabarit des cours à accueil « héros » dont le parcours passe en coque fixe (body.course-running) : Chaleur et circuit,
+   Circuit organe par organe… Recopié à l'identique dans chaque copie, pour une future fusion. Avant, la coque était
+   fixée à l'écran (position: fixed, hauteurs calées) : le bas des écrans et « Retour / Continuer » étaient hors d'atteinte
+   et le texte faisait 9 à 12 px. Ici : la page défile (html seul), « Retour / Continuer » restent collés en bas,
+   texte à 14 px au moins. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body.course-running { height: auto !important; max-height: none !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .course-running .topbar { position: static !important; flex-wrap: wrap; height: auto !important; gap: 6px 10px; }
+  .course-running .topbar-tools { flex: 1 1 auto; flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
+  .course-running .quiet-link, .course-running .quiet-button { min-height: 44px !important; font-size: 14px !important; }
+  .course-running .quiet-button::after { content: none !important; }
+  .course-running .quiet-link, .course-running .quiet-button { white-space: normal; }
+  .course-running main { overflow: visible !important; }
+  .course-running .course-shell { position: static !important; inset: auto !important; display: flex; flex-direction: column; gap: 6px; width: auto !important; padding: 6px !important; overflow: visible !important; }
+  .course-running .stepper { display: flex !important; flex-wrap: wrap; gap: 4px; height: auto !important; overflow: visible !important; }
+  .course-running .stepper button { flex: 0 0 44px; width: 44px; min-height: 44px !important; padding: 2px !important; font-size: 14px !important; }
+  .course-running .stepper button span { width: 30px !important; height: 30px !important; font-size: 14px !important; }
+  .course-running .lesson-card { height: auto !important; min-height: 0 !important; display: flex !important; flex-direction: column; overflow: visible !important; }
+  .course-running .lesson-heading { order: 1; min-height: 0 !important; }
+  .course-running .lesson-zone { order: 2; height: auto !important; overflow: visible !important; }
+  .course-running .speech-warning { order: 3; }
+  .course-running .speech-panel { flex-wrap: wrap; gap: 6px; }
+  .course-running .listen-button, .course-running .pause-button, .course-running .rate-control button, .course-running .voice-control select { min-height: 44px !important; font-size: 14px !important; }
+  .course-running .rate-control span, .course-running .voice-control, .course-running .voice-control span { font-size: 14px !important; }
+  .course-running .voice-control span { position: static !important; width: auto !important; height: auto !important; clip-path: none !important; overflow: visible !important; }
+  .course-running .lesson-intro { font-size: 14px !important; }
+  /* la barre du bas : Retour / Continuer collés au bas de l'écran, fond opaque */
+  .course-running .lesson-nav { order: 4; position: sticky; bottom: 0; z-index: 20; min-height: 0; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--paper, #fff); border-top: 1px solid var(--line, #ddd); box-shadow: 0 -4px 10px rgba(27,58,99,.10); }
+  .course-running .lesson-nav button { min-height: 44px !important; font-size: 14px !important; }
+  .course-running .lesson-nav > span { font-size: 14px !important; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}
+
+@media (max-width: 760px) {
+  /* textes propres à ce cours : 14 px au moins */
+  a.quiet-link,
+  button#restart-top.quiet-button,
+  p.eyebrow,
+  .goal-row span,
+  figcaption#hero-visual-title,
+  .hero-vessel b,
+  .hero-transfer span,
+  .spiral-strip span,
+  .spiral-strip small,
+  .active span,
+  .active small,
+  span#progress-label,
+  .voice-control span,
+  span#step-count,
+  .takeaway-grid small,
+  button#restart-bottom.quiet-button,
+  .page-footer span,
+  #stepper span,
+  p#lesson-kicker.eyebrow,
+  button#pilote-prof-toggle.listen-button.pilote-prof-encastre,
+  .circuit-organ b,
+  .circuit-organ small,
+  .knowledge-card span,
+  .mass-reminder small,
+  p.mini-kicker,
+  .thermometer b,
+  .thermometer small,
+  .professional-rule span,
+  .water-side small,
+  .heat-bridge b,
+  span#exchange-state,
+  .lab-rule span,
+  .equilibrium-equation span,
+  .formula-hero p,
+  .formula-hero small,
+  .variable-grid p,
+  .variable-grid small,
+  .sensible-line b,
+  .sensible-line small,
+  #energy-form label,
+  #energy-form span,
+  .input-pair label,
+  .input-pair span,
+  .calculation-result p,
+  div#energy-steps,
+  .calculation-warning span,
+  .power-formula p,
+  .unit-chain span,
+  #power-form label,
+  #power-form span,
+  small#power-steps,
+  .thermal-tag,
+  .thermal-tag b,
+  span.thermal-tag { font-size: 14px !important; line-height: 1.35 !important; }
+  a.quiet-link, button#restart-top.quiet-button, button#restart-bottom.quiet-button, button#pilote-prof-toggle.listen-button.pilote-prof-encastre { min-height: 44px; }
+}
+@media (max-width: 760px) {
+  /* lÃ©gendes, schÃ©mas HTML et quiz au-delÃ  des premiers Ã©crans : 14 px au moins (rÃ©paration B1) */
+  .latent-curve figcaption, .heater span, .phase-track span, .phase-track small, .phase-status span, .latent-formula-strip small, .latent-formula-strip span, .pressure-note span,
+  .air-label, .exchanger b, .refrigerant-stream span, .heat-direction b, .heat-direction span, .phase-zones span, .phase-zones b, .exchange-technical small, .exchange-technical b, .exchange-technical span, .exchange-technical sub,
+  .balance-card span, .balance-card small, .balance-vocabulary span, .balance-vocabulary b, .synthesis-panel span, .synthesis-panel b, .synthesis-panel small,
+  .quiz-progress span, .quiz-progress b, .quiz-feedback, .quiz-feedback b { font-size: 14px !important; line-height: 1.3 !important; }
+}

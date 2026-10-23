@@ -342,3 +342,38 @@ a:focus-visible {
   .print-list li { margin-bottom: 4mm; break-inside: avoid; }
   @page { margin: 15mm; }
 }
+
+/* ===== Téléphone : la page défile — gabarit « line-shell / carte de métro » (audit téléphone 23/10/2026) =====
+   La carte de 17 stations tenait dans l'écran (étiquettes de 7 px, « Station suivante » rognée). Sur téléphone :
+   la page défile (html seul), les stations deviennent une liste de deux colonnes (pastille + nom à 14 px), la fiche
+   de la station choisie vient dessous, « Station précédente / suivante » restent collées en bas. Rien ne change
+   au-delà de 760 px. */
+@media (max-width: 760px) {
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; max-height: none !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .line-shell { height: auto !important; min-height: 0 !important; display: flex !important; flex-direction: column; }
+  .line-header { height: auto !important; padding: 6px 0; }
+  .line-title p, .line-count span, .map-heading > p, .station-position, .draft-badge, .quiz-note, .map-help, .line-status, .kicker { font-size: calc(14px * var(--font-scale, 1)) !important; line-height: 1.3 !important; }
+  .map-heading > p { max-width: none !important; text-align: left !important; }
+  .map-heading { flex-wrap: wrap; }
+  .map-help { display: block !important; }
+  .line-main { display: flex !important; flex-direction: column; height: auto !important; overflow: visible !important; }
+  .map-card, .detail-card { overflow: visible !important; height: auto !important; }
+  .map-card { display: block !important; }
+  .metro-map { min-height: 0 !important; }
+  .route { display: none !important; }
+  .station-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; grid-template-rows: none !important; gap: 6px !important; height: auto !important; }
+  .station-grid .metro-station { grid-area: auto !important; display: flex !important; flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px !important; min-height: 44px; padding: 4px 8px !important; text-align: left; border: 1px solid var(--line); border-radius: 12px !important; background: var(--paper); }
+  .station-grid .metro-station.active { border-color: var(--orange-dark); background: #fff4e0; }
+  .station-dot { flex: 0 0 auto; width: 34px !important; height: 34px !important; font-size: calc(14px * var(--font-scale, 1)) !important; }
+  .station-label { position: static !important; transform: none !important; width: auto !important; text-align: left !important; font-size: calc(14px * var(--font-scale, 1)) !important; line-height: 1.2 !important; }
+  .metro-station.active .station-label::after { content: "" !important; }
+  .station-summary, .learn-box ul, .learn-box strong, .station-open { font-size: calc(14px * var(--font-scale, 1)) !important; line-height: 1.35 !important; }
+  .station-open { min-height: 44px !important; }
+  /* la barre du bas : station précédente / suivante collées au bas de l'écran */
+  .line-footer { position: sticky; bottom: 0; z-index: 20; grid-template-columns: auto minmax(0, 1fr) auto !important; padding: 8px 6px calc(8px + env(safe-area-inset-bottom)); background: var(--paper, #fffdf8); box-shadow: 0 -4px 10px rgba(27,58,99,.10); }
+  .line-button { min-height: 44px !important; padding: 0 12px !important; font-size: calc(14px * var(--font-scale, 1)) !important; }
+  #previous-station::after, #next-station::after { content: none !important; }
+  .skip-link { font-size: 14px !important; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}

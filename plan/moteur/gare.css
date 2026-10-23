@@ -87,3 +87,10 @@ nav.pied{z-index:50}
 }
 #zoom-fig{position:fixed;inset:0;z-index:200;background:#fffdf8;overflow:auto;padding:52px 8px 24px}
 #zoom-fig button{position:fixed;top:8px;right:8px;z-index:201;padding:8px 14px;border:2px solid var(--navy);border-radius:8px;background:#fff;color:var(--navy);font:inherit;font-weight:bold}
+
+/* ===== Téléphone : texte à 14 px, boutons de 44 px (audit téléphone 23/10/2026) =====
+   Rien ne change au-dessus de 760 px. Les schémas larges ont leur bouton « ⤢ Agrandir » (moteur/agrandir.js). */
+@media (max-width: 760px) {
+  .credit, .credit a, .statut, figcaption { font-size: 14px; }
+  .boutons-vues button, nav.pied button, .q .rep { min-height: 44px; }
+}

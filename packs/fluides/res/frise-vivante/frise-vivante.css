@@ -1167,3 +1167,50 @@ a:focus-visible {
     display: none;
   }
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : en mode cours, la leçon prenait tout l'écran (position fixe, 100dvh, rien ne défile) :
+   le titre était écrasé dans une colonne étroite, « Retour / Continuer » et les réponses tombaient sous l'écran, le texte
+   faisait 9 à 13 px. Ici : la page défile, « Retour / Continuer » restent collés en bas, les repères d'étapes forment une
+   rangée qui défile, et tout texte lisible fait 14 px au moins. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body, body.course-running, body.summary-running { height: auto !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .topbar { flex-wrap: wrap; gap: 6px 10px; }
+  /* en mode cours, l'accueil et le bandeau étaient recouverts par la leçon (position fixe) : on les retire au lieu de les empiler */
+  .course-running .hero, .course-running .topbar, .course-running .final-message, .course-running .refs, .course-running .experience > footer, .summary-running .hero, .summary-running .topbar, .summary-running .module-shell { display: none !important; }
+  .course-running .exit-course { position: static !important; width: auto !important; padding: 0 14px !important; }
+  .course-running .exit-course::before { content: none !important; }
+  .summary-running footer { position: static !important; }
+  .topbar-actions .pill, .topbar-actions .pill:first-child, .topbar-actions .pill:last-child { display: inline-flex !important; min-height: 44px !important; }
+  .course-running .module-shell { position: static !important; inset: auto !important; z-index: auto !important; width: 100% !important; height: auto !important; min-height: 100dvh; display: flex !important; flex-direction: column; gap: 8px !important; padding: 6px !important; }
+  .course-running .stepper { display: flex !important; flex: 0 0 auto; height: auto !important; overflow-x: auto !important; gap: 6px !important; padding: 4px !important; }
+  .course-running .stepper button { flex: 0 0 44px; min-width: 44px !important; min-height: 44px !important; padding: 0 !important; justify-content: center; }
+  .course-running .stepper button b { width: 36px !important; height: 36px !important; flex-basis: 36px !important; }
+  .course-running .lesson-card, .course-running .lesson-card:has(.scene-lecon) { display: flex !important; flex-direction: column; height: auto !important; overflow: visible !important; padding: 10px !important; gap: 8px; }
+  .course-running .lesson-top { display: flex !important; flex-direction: column; align-items: stretch; gap: 8px !important; }
+  .course-running .voice-controls { flex-wrap: wrap; gap: 6px; }
+  .course-running .interactive-zone, .course-running .lesson-card:has(.scene-lecon) .interactive-zone { overflow: visible !important; height: auto !important; min-height: 0 !important; }
+  .course-running .zone-grid, .course-running .reference-lab, .course-running .purpose-grid, .course-running .mission-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .summary-running .final-message { position: static !important; padding: 16px 10px !important; }
+  /* la barre du bas reste collée en bas de l'écran */
+  .course-running .lesson-footer { order: 9; position: sticky; bottom: 0; z-index: 20; margin: 0 -10px -10px; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--paper, #fffdf8); border-top: 1px solid var(--line, #ddd); border-radius: 0 0 18px 18px; }
+  .lesson-footer .nav, .lesson-footer .nav-button { white-space: nowrap; }
+  .lesson-footer .nav, .lesson-footer button, .nav, .nav-button, .listen-button, .start-button, .sound-toggle, .source-toggle, .pill, .listen, .speed button, .voice-choice-control select, .exit-course, .zone-card button, .interactive-zone button, .interactive-zone input, .interactive-zone select, footer button, .start { min-height: 44px !important; }
+  .listen, .exit-course { min-width: 44px; }
+  .voice-controls > * { flex: 0 0 auto !important; max-width: 100%; }
+  /* lisibilité : 14 px au moins pour tout texte HTML (les schémas SVG gardent leur taille) */
+  .skip-link, .sr-only, :where(.experience *:not(svg):not(svg *):not(h1 span, .narration-meta strong, .narration-copy h2, .takeaway span, .final-message h2, .final-message h2 span, .sources-panel h2, .final-pillars i), .refs *:not(svg):not(svg *):not(h1 span, .narration-meta strong, .narration-copy h2, .takeaway span, .final-message h2, .final-message h2 span, .sources-panel h2, .final-pillars i)) { font-size: 14px !important; line-height: 1.35 !important; }
+  .hero h1 { font-size: 32px !important; line-height: 1.08 !important; }
+  .lesson-top h2, .course-running .lesson-top h2 { font-size: 22px !important; line-height: 1.1 !important; }
+  .summary-running .final-message h2 { font-size: 24px !important; }
+  .hero-equations strong, .next-brick strong { font-size: 18px !important; }
+  .reglage-voix, .reglage-voix *, .voix-groupe, .voix-groupe *, .pilote-prof-encastre { font-size: 14px !important; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}
+@media (max-width: 760px) {
+  /* ce cours n'a pas de mode « plein écran » : la leçon est dans la page, sa barre « Retour / Continuer » se colle quand même en bas */
+  .lesson-footer { position: sticky; bottom: 0; z-index: 20; margin: 0 -10px -10px; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--paper, #fffdf8); border-top: 1px solid var(--line, #ddd); }
+}
+/* ===== /Téléphone ===== */

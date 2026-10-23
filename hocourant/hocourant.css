@@ -364,3 +364,12 @@ html.sans-animation .film * { animation-duration: .01s !important; animation-del
   .ame-livre img { width: 64px; }
   .ame-livre-texte { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
 }
+
+/* ===== Téléphone : textes à 14 px, boutons de 44 px (audit téléphone 23/10/2026) =====
+   Feuille commune de HoCourant (et des pages QR h/ et e/ qui y renvoient). Rien ne change au-dessus de 760 px. */
+@media (max-width: 760px) {
+  small, .rz-carte h2 small, .badge, .rz-nom, .scene figcaption,
+  .scenes.deux .scene figcaption, .scenes.quatre .scene figcaption { font-size: 14px; }
+  html #pilote-prof-toggle.pilote-prof-encastre { font-size: 14px; min-height: 44px; }
+  .fil-retour, .etapes button, .btn { min-height: 44px; }
+}

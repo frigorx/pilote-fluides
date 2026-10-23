@@ -138,3 +138,15 @@ figure.dessin svg{display:block;width:100%;height:auto;max-height:46vh}
 }
 /* la voix (17/10/2026) : « Écouter » à droite du verbe ; le réglage de vitesse du site dans l'en-tête */
 .entete .ecouter{margin-left:auto;flex:0 0 auto;font-size:16px}
+
+/* ===== Téléphone : cibles de 44 px, texte à 14 px (audit téléphone 23/10/2026) =====
+   Rien ne change au-dessus de 760 px. */
+@media (max-width: 760px) {
+  .poste { grid-template-columns: minmax(0, 1fr); } /* la colonne ne s'élargit plus à la largeur du dessin : plus de défilement de côté */
+  .haut { position: static; } /* l'en-tête collant mangeait plus du tiers de l'écran : il défile avec la page */
+  .entete { flex-wrap: wrap; } /* « Écouter » et « Prof vocal » passent à la ligne au lieu de pousser la page */
+  .pastilles button { width: 44px; height: 44px; }
+  .btn, .niveaux button { min-height: 44px; }
+  .coches label { min-height: 44px; }
+  html #pilote-prof-toggle.pilote-prof-encastre { font-size: 14px; min-height: 44px; }
+}

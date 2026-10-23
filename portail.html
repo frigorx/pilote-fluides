@@ -115,9 +115,13 @@
   footer{background:var(--bleu);color:rgba(255,255,255,.82);padding:34px 0;font-size:14.5px;margin-top:10px}
   footer a{color:#fff}
   footer .sep{opacity:.4;margin:0 8px}
+/* Téléphone (audit 23/10/2026) : texte à 14 px au moins, sur téléphone seulement. */
+@media (max-width:760px){
+  .portes a.porte .tag, .temps .tp .qui, .carte h3 > span, footer .wrap > span { font-size:14px !important; }
+}
 </style>
-  <link rel="stylesheet" href="moteur/impression.css?v=6f13d1c083" media="print">
-<script defer src="moteur/retour-accueil.js?v=c7afca84a1"></script>
+  <link rel="stylesheet" href="moteur/impression.css?v=84cea1aa90" media="print">
+<script defer src="moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 
@@ -434,9 +438,9 @@
 <!-- Compteurs relevés au build (build/chiffres.mjs), jamais saisis à la main :
      cette page annonçait encore 33 fiches, 206 questions et 270 diapositives
      quand il y en avait 44, 266 et 425. -->
-<script src="chiffres.gen.js?v=6f13d1c083"></script>
+<script src="chiffres.gen.js?v=84cea1aa90"></script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js?v=6f13d1c083"></script>
-<script src="moteur/marque.js?v=6f13d1c083" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/lisibilite.js?v=84cea1aa90"></script>
+<script src="moteur/marque.js?v=84cea1aa90" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

@@ -14,3 +14,9 @@ body::after {
   opacity: .10; mix-blend-mode: multiply;
 }
 @media print { body::after { opacity: .07; } }
+
+/* Téléphone : texte lisible à 14 px au moins (audit téléphone 23/10/2026).
+   Étiquettes de niveau, pied de page et exposants (« 1re ») restaient à 12-13 px. */
+@media (max-width: 760px) {
+  .etiq, footer, sup { font-size: 14px !important; }
+}

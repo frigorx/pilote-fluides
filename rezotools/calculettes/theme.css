@@ -1203,3 +1203,28 @@ body.iw-vitrine-active {
         z-index: -1;
     }
 }
+
+/* ===== Téléphone : texte à 14 px, cibles à 44 px (audit téléphone 23/10/2026) =====
+   Les calculettes défilent déjà ; leur défaut était la taille du texte (de 6 à 13 px : menu des outils, libellés,
+   notes, pied de page) et des cibles étroites (menus, champs, pas +/−). Sur téléphone seulement ; au-dessus de
+   760 px rien ne change. Feuille chargée par les 14 calculettes ; !important car des <style> propres à certaines
+   pages se chargent après. */
+@media (max-width: 760px) {
+    .iw-header-center h1, .iw-header-center h1 a, .iw-subtitle,
+    .iw-nav a, .iw-calc-label, body label, body small, body p,
+    body sub, body sup, body .iw-alert, body .iw-btn, body .iw-pill,
+    body .unit, body .val-num, body .val-label, body .label,
+    body .calc-label, body .ch-note, body .symptom-name, body .fluid-chip,
+    body .fluid-line-label, body .legend-item, body .info-tag,
+    body .safety-badge, body .category-label, body .cursor-value, body .hint-box,
+    body .step-btn, body #refFluidName, body #noteJeu, body h3,
+    body [style*="font-size:.7"], body [style*="font-size:.8"], body [style*="font-size: .7"], body [style*="font-size: .8"],
+    .iw-footer, .iw-footer p, .iw-footer a { font-size: 14px !important; line-height: 1.4 !important; }
+    /* texte courant qui faisait déjà 14 px ou plus : il garde la taille de son parent, il ne rapetisse pas */
+    body .ch-fig p, body .radio-group label, body .card > p, body footer p, body strong, body b { font-size: max(14px, 1em) !important; line-height: 1.4 !important; }
+    .iw-nav a { display: inline-flex !important; align-items: center; min-height: 44px; }
+    body .iw-btn, body button, body select, body input:not([type=checkbox]):not([type=radio]) { min-height: 44px !important; }
+    body .step-btn, body .btn-adj { min-width: 44px !important; min-height: 44px !important; }
+    body input[type=checkbox], body input[type=radio] { width: 24px; height: 24px; }
+    body .ch-puce { min-width: 44px !important; min-height: 44px !important; }
+}

@@ -157,8 +157,13 @@
     .barre .rail i { transition:none; }
     .titre-section, .periode > h2 { break-after:avoid; }
   }
+
+  /* Téléphone : texte à 14 px au moins (audit téléphone 23/10/2026). Rien ne change au-dessus de 760 px. */
+  @media (max-width: 760px) {
+    .pastille, .frise .p-sem, .frise .p-cpt, .case .etat { font-size:14px; }
+  }
 </style>
-<script defer src="../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
+<script defer src="../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
 </head>
 <body>
 <a class="evite" href="#contenu">Aller au contenu</a>
@@ -372,7 +377,7 @@
 })();
 </script>
 
-<script src="../moteur/lisibilite.js"></script>
+<script src="../moteur/lisibilite.js?v=0f188557ff"></script>
 <script src="../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

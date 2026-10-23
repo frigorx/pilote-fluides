@@ -62,3 +62,22 @@ button { font:inherit; }
 @media (max-width:330px) { .controls button span { display:none; } }
 @media (prefers-reduced-motion:reduce) { .oil-flow,.drop { animation-duration:7s; } }
 @media print { body { overflow:visible; background:#fff; } .player { height:170mm; grid-template-rows:12mm minmax(0,1fr) 18mm; } .controls { display:none; } }
+
+/* ===== Téléphone : la page défile, boutons et textes à 14 px (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : « Précédent / Lire / Suivant » tombaient sous l'écran (cadre à hauteur fixe)
+   et les textes mesuraient 8 à 12 px. Ici : la page défile, les boutons restent collés en bas, 14 px au moins.
+   Rien ne change au-dessus de 760 px. Les règles dépendent de la classe « tel » posée par index.html quand
+   la PAGE PARENTE est en téléphone (et non de la largeur du cadre, étroit aussi sur ordinateur). */
+@media (max-width:760px) {
+  html.tel { height:auto; overflow-x:hidden; overflow-y:auto; }
+  html.tel body { height:auto; overflow:visible; overflow-x:clip; }
+  html.tel .player { height:auto; grid-template-rows:auto auto auto auto; }
+  html.tel .scene-head { padding:6px 8px; }
+  html.tel .scene-head strong { font-size:14px; }
+  html.tel .scene-head > span { font-size:14px; }
+  html.tel .stage { display:block; }
+  html.tel .stage svg { height:auto; }
+  html.tel .description { padding:8px 10px; font-size:14px; line-height:1.3; }
+  html.tel .controls { position:sticky; bottom:0; z-index:20; gap:6px; padding:6px 6px calc(6px + env(safe-area-inset-bottom)); background:var(--paper); }
+  html.tel .controls button { min-height:44px; padding:4px; font-size:14px; }
+}

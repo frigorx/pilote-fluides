@@ -242,3 +242,23 @@ dialog h2{margin-top:0;color:var(--navy)}
 .prerequis strong{color:var(--navy);font-weight:700}
 .prerequis a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
 .prerequis a:hover,.prerequis a:focus-visible{color:var(--orange)}
+
+/* ===== Téléphone : texte et boutons lisibles (audit téléphone 23/10/2026) =====
+   Sur un écran de 360 px, le corps de page tombait à 13 px et les textes en « em » réduits (étiquettes, onglets,
+   boutons de niveau, légendes) à 10-11 px : illisible, et des boutons trop bas pour le doigt. Ici : corps de 16 px,
+   tout texte à 14 px au moins, boutons de 44 px de haut, titre de la station sous la marque plutôt que dans une
+   colonne étroite. Rien ne change au-dessus de 760 px. (La vue 3D a son propre bloc dans 3d/electro3d.css.) */
+@media (max-width:760px){
+  body{font-size:16px}
+  button,select.large{min-height:44px}
+  .topbar{grid-template-columns:1fr auto;gap:.3rem .6rem}
+  .topbar .titles{grid-column:1 / -1;grid-row:2}
+  .brand .cartouche,.titles .kicker,.legende,.metric span,.corresp a,.corresp span.lien,.footer-note,.credit,
+  .symboles figcaption,.vignette figcaption,.voix-box label,.voix-box output,.pastille{font-size:14px}
+  .pastille{width:22px;height:22px}
+  .level-switch button,.temps button,.voix-box button,.footer-nav button{min-height:44px;font-size:14px}
+  .corresp a,.corresp span.lien{min-height:36px;padding:.25rem .7rem}
+  .voix-box{flex-wrap:wrap}
+  .voix-box #pilote-prof-toggle.pilote-prof-encastre{font-size:14px;min-height:44px}
+  .footer-nav button{padding:.3rem .8rem}
+}

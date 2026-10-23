@@ -87,9 +87,19 @@ button[title="Télécharger la vidéo"] {
     transition: none !important;
   }
 }
+
+/* Téléphone (audit 23/10/2026) : le temps écoulé de la barre de lecture passe à 14 px. */
+@media (max-width: 760px) {
+  body > div[style*="z-index:9998"],
+  div[style*="JetBrains Mono"] {
+    font-size: 14px !important;
+  }
+  /* le sous-titre de la scène (7 px une fois réduite) est recopié à 16 px sous l'image : voir le script en bas de page */
+  .iw-st-tel [data-om-caption]:not(.iw-agrandi-voile [data-om-caption]) { visibility: hidden !important; }
+}
 </style>
 <script>try { localStorage.removeItem("animstage-v3:t"); } catch (err) {}</script>
-<script defer src="../../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio"></script>
+<script defer src="../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio"></script>
 </head>
 <body>
 <script type="text/plain" id="vendor0" data-url="https://unpkg.com/react@18.3.1/umd/react.production.min.js">/**
@@ -5431,5 +5441,52 @@ a:hover { color: #1b3a63; }
 })();
 </script>
 <script src="../film-accessible.js"></script>
+<script>
+/* Téléphone (audit 23/10/2026) : le sous-titre est réduit à 7 px avec la scène. On le recopie, mot pour mot, dans un cadre
+   lisible (16 px en portrait, sous l'image ; 14 px en paysage, au pied de l'image, à droite du bouton de voix).
+   Au-dessus de 760 px de large, rien ne change. */
+(function () {
+  var tel = window.matchMedia("(max-width: 760px)");
+  var racine = document.documentElement, boite = null;
+  function voix() {
+    var e = document.body.children;
+    for (var i = 0; i < e.length; i++) if (e[i].tagName === "BUTTON" && e[i].style.position === "fixed" && e[i].style.left === "18px") return e[i];
+    return null;
+  }
+  function legende() {
+    var l = document.querySelectorAll("[data-om-caption]"), s = null;
+    for (var i = 0; i < l.length; i++) if (!l[i].closest(".iw-agrandi-voile")) s = l[i];
+    return s;
+  }
+  function pas() {
+    requestAnimationFrame(pas);
+    racine.classList.toggle("iw-st-tel", tel.matches);
+    var s = tel.matches ? legende() : null, txt = s ? s.textContent : "";
+    if (!txt) { if (boite) boite.style.display = "none"; return; }
+    if (!boite) {
+      boite = document.createElement("div");
+      boite.setAttribute("style", "position:fixed;z-index:9990;box-sizing:border-box;padding:8px 12px;text-align:center;line-height:1.35;font-weight:700;color:#1b3a63;background:#f7f1e7;border:2px solid #1b3a63;border-radius:10px;pointer-events:none");
+      document.body.appendChild(boite);
+    }
+    var r = s.getBoundingClientRect(), W = window.innerWidth, H = window.innerHeight, droit = H > W, b = boite.style, v = voix(), vr = v ? v.getBoundingClientRect() : null;
+    if (boite.textContent !== txt) boite.textContent = txt;
+    boite.style.fontFamily = getComputedStyle(s).fontFamily;
+    b.display = "block";
+    b.fontSize = droit ? "16px" : "14px";
+    if (droit) {
+      b.left = (r.left + 8) + "px"; b.width = (r.width - 16) + "px"; b.bottom = "auto";
+      b.top = (r.bottom + 8) + "px";
+      var h = boite.offsetHeight, vh = vr ? vr.top : H;
+      if (r.bottom + 8 + h > vh - 6) b.top = (r.bottom - r.width * 9 / 16 - 8 - h) + "px"; /* pas la place dessous : au-dessus de l'image */
+    } else {
+      var g = r.left;
+      if (vr && vr.top < r.bottom && vr.right > g) g = vr.right + 8;
+      b.left = g + "px"; b.width = (r.right - g) + "px"; b.top = "auto";
+      b.bottom = (H - r.bottom) + "px";
+    }
+  }
+  requestAnimationFrame(pas);
+})();
+</script>
 </body>
 </html>

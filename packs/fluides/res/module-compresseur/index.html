@@ -1508,7 +1508,18 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
         @media (min-width: 901px) {
             body > #inerweb-retour-accueil-barre, body > .marque-document { margin-left: 280px; flex-basis: calc(100% - 280px); }
         }
-    </style>
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : cette page défile déjà ; seuls les textes de 11 à 13 px (menu, curseurs, barres de
+   rendement, boutons) sont portés à 14 px et les boutons à 44 px de haut. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  .module-title, .module-title *, .nav-section-title, .nav-item, .sidebar-footer, .sidebar-footer *, .anim-toggle, .anim-toggle *, .controls label, .controls span, .controls output,
+  .rv3-bar-label, .rv3-bar, .info-box, .info-box :not(h4), .btn, .pilote-prof-encastre, .reglage-voix, .reglage-voix *, .voix-groupe, .voix-groupe * { font-size: 14px !important; line-height: 1.35 !important; }
+  .nav-item, .btn, .anim-toggle, .controls input { min-height: 44px; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}
+/* ===== /Téléphone ===== */
+</style>
 <!-- (c) F. Henninot — inerWeb FRIGOLO — Tous droits réservés -->
   <script src="../../../../moteur/plan-donnees.js?v=20261023-tel"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
@@ -1516,7 +1527,7 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
     /* la voix (chantier prof vocal, 18/10/2026) : Écouter reste à portée pendant la lecture d'une longue section */
     .voix-barre { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .45rem 0; margin-bottom: .6rem; background: var(--bg, #f7f1e7); }
   </style>
-<script defer src="../../../../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
 </head>
 <body>
     <!-- ========== SIDEBAR CLAIRE ========== -->
@@ -3149,9 +3160,9 @@ body,html{font-family:Calibri,"Segoe UI",system-ui,-apple-system,sans-serif!impo
     <!-- ========== SCRIPTS ========== -->
     <script src="../../../../moteur/voix-index.js?v=20261018-tom"></script>
     <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
-    <script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+    <script src="../../../../moteur/reglage-voix.js?v=45451e558b"></script>
     <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
-    <script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
+    <script src="../../../../moteur/prof-vocal.js?v=9912c09150"></script>
     <script>
     /* ---------- la voix (chantier prof vocal, 18/10/2026) ----------
        Chaque section a son texte pour l'oreille (NARRATIONS) : la voix explique la section, elle ne relit pas l'écran.
@@ -5345,6 +5356,6 @@ th{background:#f5f5f5;}
     </script>
 <script src="marque.js?v=20260821-ui1" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script src="referentiel.js"></script>
-<script src="../../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+<script src="../../../../moteur/agrandir.js?v=2426161abb" defer></script>
 </body>
 </html>

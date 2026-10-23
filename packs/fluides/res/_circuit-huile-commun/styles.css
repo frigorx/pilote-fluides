@@ -701,3 +701,53 @@ body { display: flex; flex-direction: column; }
 @media (prefers-reduced-motion: no-preference) {
   .visual-stage .oil-line { animation: flow 2.8s linear infinite; }
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : ces cours étaient dessinés pour tenir dans l'écran (html et body sans
+   défilement, rangées de grille à hauteur fixe) avec des textes de 9 à 11 px pour « faire tenir ». Ici : la page
+   défile, le schéma passe avant le texte (sauf pour les questions), la barre « Retour / Continuer » reste
+   collée en bas, tout texte fait 14 px au moins. Rien ne change au-dessus de 760 px. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; max-height: none !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .app-shell { display: flex; flex: 1 0 auto; flex-direction: column; height: auto; min-height: 0; }
+  .topbar { display: flex; flex: 0 0 auto; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+  .module-heading { order: -1; flex: 1 0 100%; }
+  .tools { flex: 1 0 100%; justify-content: flex-start; flex-wrap: wrap; }
+  .module-copy strong { font-size: calc(15px * var(--font-scale)); white-space: normal; }
+  .module-copy span { font-size: calc(14px * var(--font-scale)); }
+  .tool-button, .speed-select { min-height: 44px; padding: 0 10px; font-size: calc(14px * var(--font-scale)); }
+  .tool-button.icon { min-width: 44px; }
+  .tool-button.pilote-prof-encastre { font-size: calc(14px * var(--font-scale)) !important; }
+  .speed-select { max-width: none; }
+  .work-area { display: flex; flex: 1 0 auto; flex-direction: column; gap: 7px; padding: 7px; overflow: visible; }
+  .station-list { flex: 0 0 auto; overflow: visible; }
+  .station-button { min-height: 44px; padding: 2px; }
+  .station-button span { width: 30px; height: 30px; font-size: calc(14px * var(--font-scale)); }
+  /* la carte : une colonne, hauteur libre ; le schéma avant le texte, sauf questions et bilan */
+  .lesson-card, .lesson-card.quiz-mode, .lesson-card.summary-mode { display: flex; flex: 0 0 auto; flex-direction: column; height: auto; overflow: visible; }
+  .lesson-card:not(.quiz-mode):not(.summary-mode) .visual-panel { order: -1; border-top: 0; border-bottom: 1px solid var(--line); }
+  .copy-panel { gap: 8px; padding: 12px; }
+  .visual-panel { grid-template-rows: auto auto; gap: 8px; padding: 8px; }
+  .visual-panel h2 { font-size: calc(16px * var(--font-scale)); }
+  .visual-stage { display: block; overflow: visible; }
+  .visual-stage svg { height: auto; }
+  .visual-stage.huile-scene { display: grid; grid-template-rows: auto auto; }
+  .huile-scene .ds-svg { height: auto; }
+  .claude-pressostat-frame, .claude-retour-huile-frame, .claude-retour-huile-film-frame, .claude-eclatement-frame { height: min(75dvh, 560px); }
+  .score-card { height: auto; }
+  /* barre du bas : collée à l'écran, fond opaque */
+  .bottom-bar { position: sticky; bottom: 0; z-index: 20; flex: 0 0 auto; gap: 6px; padding: 6px 7px calc(6px + env(safe-area-inset-bottom)); background: var(--paper); }
+  .nav-button { min-height: 44px; padding: 0 14px; font-size: calc(14px * var(--font-scale)); }
+  .module-status, .progress-label { font-size: calc(14px * var(--font-scale)); line-height: 1.2; }
+  /* lisibilité : 14 px au moins */
+  .kicker, .recall-badge, .key-box, .warning-box, .exam-box, .feedback, .module-next-link { font-size: calc(14px * var(--font-scale)); line-height: 1.3; }
+  .module-next-link { min-height: 44px; }
+  .lead { font-size: calc(16px * var(--font-scale)); line-height: 1.3; }
+  .details { gap: 6px; font-size: calc(15px * var(--font-scale)); line-height: 1.32; }
+  .key-box, .warning-box, .exam-box { padding: 8px 10px; }
+  .option-button { min-height: 48px; padding: 6px 9px; grid-template-columns: 30px 1fr; font-size: calc(15px * var(--font-scale)); line-height: 1.2; }
+  .option-button span { width: 27px; height: 27px; }
+  .recall-badge { padding: 3px 8px; }
+}

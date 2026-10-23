@@ -728,3 +728,35 @@ footer button{border:0;background:transparent;color:var(--blue);font-weight:800}
   .hero{min-height:auto}.module-shell{display:block}.stepper{display:none}
   .lesson-card{box-shadow:none}.interactive-zone{min-height:0}
 }
+
+/* ===== Téléphone : la page défile — gabarit « textes seuls » (audit téléphone 23/10/2026) =====
+   Cette page défilait déjà ; seuls les textes de 8 à 13 px sont portés à 14 px. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  /* textes propres à ce cours : 14 px au moins */
+  .brand small,
+  p.eyebrow,
+  small.duration,
+  .learning-goals span,
+  .active b,
+  #stepper b,
+  p#kicker.eyebrow,
+  button#pilote-prof-toggle.listen.pilote-prof-encastre,
+  .discovery-card small,
+  span#status,
+  .final-message p,
+  .next-brick small,
+  .next-brick b { font-size: 14px !important; line-height: 1.35 !important; }
+  button#pilote-prof-toggle.listen.pilote-prof-encastre { min-height: 44px; }
+}
+@media (max-width: 760px) {
+  /* lÃ©gendes, schÃ©mas HTML et fiches : 14 px au moins (rÃ©paration B1) */
+  #local-temperature-label, .fridge-instruction, .fridge-instruction b, .journey-pressure, .local-card small, .local-card p, #journey-vessel-temp-trend, .energy-token, .room-label, .fridge-zone span, .fridge-zone small, .fridge-zone strong, .fridge-zone b,
+  .cycle-link span, .cycle-link b, .foundation-question span, .temperature-scale span, #journey-temp-state, .foundation-path b, .foundation-path span, .foundation-path strong, .journey-graph-heading b, .journey-graph-heading span, .simulation-note,
+  #exchange-kicker, .pot-energy small, .environment-card small, .energy-bars small, .energy-bars span, .energy-bars strong, .graph-type, .fridge-energy-flow, .concept-card span, .formula-card span, .evaporation-balance span, .journey-energy-meter span,
+  #journey-badge, .energy-balance span, .energy-balance strong, #cool-curve-state, #cool-curve-temp, #fluid-energy-state, #heat-curve-state, #heat-curve-temp, #local-energy-state, .example-chain b, .example-chain i, #journey-copy, #journey-graph-note, #journey-graph-note strong,
+  .observation-pair span, .graph-reading span, .foundation-card small, .energy-control-card small, h3 sub, .evaporator-temperature small, #journey-vessel-temperature small, .evaporation-transfer small, .evaporation-transfer span { font-size: 14px !important; line-height: 1.3 !important; }
+}
+@media (max-width: 760px) {
+  .learning-goals b, .pot-energy b, .energy-balance sub { font-size: 14px !important; line-height: 1.3 !important; }
+  .learning-goals b { min-width: 24px; min-height: 24px; }
+}

@@ -34,8 +34,13 @@ input[type=radio]{width:1.15em;height:1.15em;margin:2px 0 0;accent-color:var(--b
 #score{font-size:1.2rem;font-weight:700;margin:8px 0;display:none}
 footer{color:var(--mut);font-size:.82rem;padding:10px 16px;text-align:center}
 footer a{color:var(--mut)}
+/* Téléphone (audit 23/10/2026) : pied de page et en-têtes de tableau à 14 px, boutons et choix de 44 px de haut. */
+@media (max-width:760px){footer,footer a,th{font-size:14px}
+.actions button,.actions a,.ch-liens a{min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.actions button[hidden],.actions a[hidden]{display:none}
+label{min-height:44px;box-sizing:border-box;align-items:center}}
 </style>
-<script defer src="../../moteur/retour-accueil.js?v=c7afca84a1"></script>
+<script defer src="../../moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 <header><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243.2 50" role="img" aria-label="inerWeb HabFluide">

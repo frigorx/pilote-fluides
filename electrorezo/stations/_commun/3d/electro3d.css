@@ -93,3 +93,14 @@ electro-3d.plein .e3d-cote{max-height:calc(100vh - 2rem)}
   .vue3d-schema,.vue3d-schema[hidden]{display:block!important}
   .vue3d-bascule{display:none!important}
 }
+
+/* ===== Téléphone : textes à 14 px, boutons à 44 px (audit téléphone 23/10/2026) =====
+   La vue 3D reste dans son cadre (elle ne recouvre aucun bouton) ; seuls les textes et les cibles du doigt grossissent. */
+@media (max-width:760px){
+  .e3d-num,.e3d-badge{font-size:14px}
+  .e3d-num{flex-basis:30px;height:30px}
+  .e3d-outils button,.e3d-etapes button,.vue3d-bascule button{min-height:44px}
+  .e3d-zoom button{min-width:44px}
+  .e3d-etapes-points button{min-width:44px;min-height:44px}
+  .e3d-piece{min-height:44px}
+}

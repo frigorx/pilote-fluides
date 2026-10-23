@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var m=top.matchMedia('(max-width: 760px)'),f=function(){document.documentElement.classList.toggle('tel',m.matches)};f();m.addEventListener('change',f)}catch(e){}</script>
 <title>Carte d'identité du fluide</title>
 <style>
   * { box-sizing:border-box; margin:0; }
@@ -28,6 +29,35 @@
   .calc .ligne { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
   .calc .res { font-size:19px; font-weight:700; color:#1b3a63; }
   .note { font-size:11.5px; color:#8494a4; margin-top:10px; }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : cette page défile déjà ; seuls les textes de 9 à 13 px sont portés à 14 px et les
+   boutons à 44 px de haut. Rien ne change au-delà de 760 px. Les règles dépendent de la classe « tel » posée en tête de page quand la FENÊTRE DU HAUT est en téléphone
+   (et non de la largeur du cadre, étroit aussi sur ordinateur et tablette quand la page est incluse dans un cours). */
+@media (max-width: 760px) {
+  html.tel { overflow-x: hidden !important; }
+  /* lisibilité : seuls les textes qui font moins de 14 px dans la page d'origine passent à 14 px ; aucun texte plus grand n'est touché */
+  html.tel .sub,
+  html.tel .haut label,
+  html.tel #statut,
+  html.tel #desc,
+  html.tel .u,
+  html.tel .ligne label,
+  html.tel .note,
+  html.tel div[style*="12.5px"],
+  html.tel #marque-inerweb.marque-document > span,
+  html.tel #marque-inerweb.marque-document .marque-lic,
+  html.tel #marque-inerweb.marque-document .marque-droits,
+  html.tel #marque-inerweb.marque-document .marque-referentiel,
+  html.tel #marque-inerweb.marque-document .marque-proto,
+  html.tel #marque-inerweb .marque-mentions { font-size: 14px !important; line-height: 1.35 !important; }
+  html.tel button,
+  html.tel .button,
+  html.tel input:not([type=checkbox]):not([type=radio]),
+  html.tel select { min-height: 44px; }
+  html.tel #station-suivante a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+/* ===== /Téléphone ===== */
 </style>
 </head>
 <body>

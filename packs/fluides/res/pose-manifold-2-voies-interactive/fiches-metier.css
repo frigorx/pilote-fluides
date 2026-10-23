@@ -218,3 +218,52 @@ h1, h2, h3 { font-family: "Trebuchet MS", Calibri, Arial, sans-serif; color: var
 @media print {
   .appbar, .catalogue, .fiche-intro, .trainer, .result { display: none !important; }
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : cette page défile déjà ; seuls les textes de 9 à 13 px sont portés à 14 px et les
+   boutons à 44 px de haut. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  html { overflow-x: hidden !important; }
+  /* lisibilité : seuls les textes qui font moins de 14 px dans la page d'origine passent à 14 px ; aucun texte plus grand n'est touché */
+  .brand small,
+  .draft-badge,
+  #mode-badge,
+  #home-button,
+  #exit-button,
+  .eyebrow,
+  .catalogue-head > p,
+  .fiche-number,
+  .fiche-card strong,
+  .fiche-card small,
+  .steps,
+  .catalogue-note,
+  .mode-card > strong,
+  .mode-card > small,
+  .action-block > strong,
+  .why-block > strong,
+  #help-button,
+  #stage-title,
+  #stage-status,
+  #feedback,
+  #previous-button,
+  #next-button,
+  #replay-button,
+  #return-button,
+  #lisib-raz,
+  #lisib-onglet,
+  #marque-inerweb.marque-document > span,
+  #marque-inerweb.marque-document .marque-lic,
+  #marque-inerweb.marque-document .marque-droits,
+  #marque-inerweb.marque-document .marque-referentiel,
+  #marque-inerweb.marque-document .marque-proto,
+  #marque-inerweb .marque-mentions,
+  #fiche-kicker,
+  #fiche-purpose,
+  #source-note,
+  #source-note > strong,
+  #open-points > strong,
+  #open-points li { font-size: 14px !important; line-height: 1.35 !important; }
+  button, .button, input:not([type=checkbox]):not([type=radio]), select { min-height: 44px; }
+  #station-suivante a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+/* ===== /Téléphone ===== */

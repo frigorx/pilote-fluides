@@ -196,3 +196,70 @@
   .lesson-grid .activity:has(electro-3d){padding:10px}
   .lesson-grid electro-3d .e3d-scene{aspect-ratio:auto;height:clamp(300px,calc(100dvh - 410px),620px)}
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026. La station tenait dans l'écran d'un ordinateur : cadre à hauteur fixe, zones qui
+   défilent chacune chez elles, texte de 10 à 12 px, boutons de 25 à 34 px, et sur les deux évaluations « Station
+   précédente » et « Bilan » sortaient de l'écran sans moyen de les atteindre. Ici, sur téléphone seulement : la page
+   défile, les zones internes se déroulent, les boutons « Précédent / Suivant » restent collés en bas, tout texte
+   lisible fait 14 px au moins et chaque bouton 44 px de haut. Rien ne change au-dessus de 760 px. */
+@media (max-width:760px){
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html{height:auto!important;overflow-x:hidden!important;overflow-y:auto!important}
+  body{height:auto!important;max-height:none!important;min-height:100%;overflow:visible!important;overflow-x:clip!important}
+  .station-view{height:auto!important;overflow:visible!important}
+  .station-view:not([hidden]){display:block!important}
+  .lesson-card{height:auto!important;display:block!important;overflow:visible!important;padding:10px!important}
+  /* le haut : les boutons d'écoute et de sortie gardent leur texte, sur une ligne à eux */
+  .topbar #voiceButton{font-size:14px!important;min-height:44px;padding:6px 14px}
+  .topbar #voiceButton::first-letter,.lesson-actions .small-button::first-letter{font-size:inherit!important}
+  .reglage-voix button{min-width:44px!important;min-height:44px!important}
+  .station-rail{display:flex!important;align-items:center;gap:8px;padding:4px!important;margin-bottom:8px}
+  .station-rail>.small-button{min-height:44px;padding:6px 14px!important;font-size:max(14px,1em)}
+  .station-progress{display:flex!important;gap:6px!important;margin:0!important}
+  .progress-stop{position:relative;flex:0 0 auto;width:44px!important;height:44px;padding:0!important;overflow:hidden;white-space:nowrap;font-size:14px!important;text-indent:-9999px}
+  .progress-stop::after{content:attr(data-index);position:absolute;inset:0;display:grid;place-items:center;text-indent:0;font-size:14px;font-weight:800;color:var(--ink)}
+  .progress-stop::before{display:none!important}
+  .lesson-head{display:block!important}
+  .lesson-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .lesson-actions .small-button,#pilote-prof-toggle{font-size:14px!important;min-height:44px!important;padding:6px 14px!important}
+  .eyebrow,.competence,.interchange-switch,.interchange-switch>span{font-size:14px!important}
+  .interchange-switch{flex-wrap:wrap;gap:6px!important;min-height:44px}
+  .interchange-switch:empty{display:none}
+  .interchange-switch button{width:44px!important;height:44px!important;font-size:14px!important}
+  /* les quatre étapes : deux par ligne, assez larges pour le texte */
+  .phase-progress{grid-template-columns:1fr 1fr!important;gap:6px!important;padding:8px 0!important}
+  .phase-progress button{min-height:44px;padding:6px 8px!important;font-size:14px!important}
+  .phase-progress button span{width:24px;height:24px;font-size:14px}
+  /* le texte puis l'activité, à la suite : la page défile, plus de cadre à part */
+  .lesson-grid,.lesson-grid[data-phase]{display:flex!important;flex-direction:column;gap:12px!important;padding:8px 0!important}
+  .lesson-copy,.lesson-grid[data-phase]:has(.vue3d) .lesson-copy{max-height:none!important;overflow:visible!important;font-size:15px!important;line-height:1.45!important;background:none!important}
+  .lesson-copy #stationText,.lesson-copy #stationMethod,.lesson-copy .method-box strong,.method-box,.formula,.lecture,.limites{font-size:15px!important}
+  .activity,.activity:has(.control-card),.activity:has(.choices){display:block!important;overflow:visible!important;min-height:0!important;padding:10px!important;background:#fff!important}
+  .scene,.activity:has(.control-card) .scene,.lesson-grid[data-phase] .scene{max-height:none!important}
+  .concept-step,.concept-step strong,.concept-caption{font-size:14px!important;line-height:1.35!important}
+  .concept-step span,.concept-arrow{font-size:14px!important}
+  .concept-flow,.method-sequence{grid-template-columns:1fr!important;gap:6px!important}
+  .concept-arrow{transform:rotate(90deg);justify-self:center}
+  .concept-step{min-height:44px!important;padding:8px 10px!important}
+  /* curseurs, relevés et réponses : lisibles et au doigt */
+  .readout{grid-template-columns:1fr!important;gap:8px!important}
+  .readout,.readout span,.readout strong{font-size:14px!important;line-height:1.4}
+  /* réponses, résultat et retour : ce qui faisait 14 px ou plus ne rapetisse pas */
+  .control-card,.control-card label,.result,.feedback,.choices button{font-size:max(14px,1em)!important;line-height:1.4}
+  .control-card{padding:10px!important}
+  input[type=range],.control-card input{min-height:44px}
+  .choices button,.piece-actions button,#restartQuiz,.activity button{min-height:44px}
+  /* le bilan d'évaluation et les mesures */
+  .lesson-copy electro-3d .metric span,.lesson-copy electro-3d .metric strong,.lesson-copy .metric span,.lesson-copy .metric strong{font-size:14px!important}
+  /* la barre du bas : le statut défile avec la page, les deux boutons restent collés en bas */
+  .lesson-nav{position:sticky;bottom:0;z-index:20;display:grid!important;grid-template-columns:1fr 1fr!important;gap:6px 10px!important;margin:8px -10px -10px;padding:8px 10px calc(8px + env(safe-area-inset-bottom))!important;background:var(--paper);border-top:1px solid var(--line);border-radius:0 0 12px 12px}
+  .lesson-nav span{grid-column:1/-1;grid-row:1;text-align:center;font-size:14px!important;line-height:1.3}
+  .lesson-nav button{grid-row:2;min-height:44px;padding:6px 10px!important;font-size:14px!important;line-height:1.2}
+  .lesson-nav button:last-child{justify-self:stretch!important}
+  /* la page d'accueil du réseau : choix du niveau et départ */
+  .eyebrow{font-size:14px!important}
+  .toolbar{flex-wrap:wrap}
+  .level-switch{flex-wrap:wrap;border-radius:22px}
+  .level-switch button,#startButton{font-size:14px!important;min-height:44px;padding:6px 12px!important}
+}

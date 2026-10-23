@@ -776,3 +776,96 @@ dialog::backdrop { background: rgba(27, 58, 99, 0.28); }
 .jsvg-code { font: 900 24px "Trebuchet MS", sans-serif; fill: #1b3a63; }
 .jsvg-mini { font: 700 15px "Trebuchet MS", sans-serif; fill: #52657a; }
 .jeu-rejouer { margin-top: 6px; }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : ces cours étaient dessinés pour tenir dans l'écran (html et body sans
+   défilement, rangées de grille à hauteur fixe). Sur un téléphone, « Précédent / Suivant » tombaient sous
+   l'écran et les textes étaient rognés : impossible d'avancer. Ici : la page défile, la scène passe avant
+   le texte, la barre « Précédent / Suivant » reste collée en bas, tout texte fait 14 px au moins.
+   Rien ne change au-dessus de 760 px (ordinateur, tablette). */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; max-height: none !important; min-height: 100%; overflow: visible !important; overflow-x: clip !important; }
+  .app { display: flex; flex-direction: column; height: auto; min-height: 100dvh; }
+  /* le titre passe sur sa propre ligne : à côté des outils, il était réduit à « La c… d… » */
+  .topbar { display: flex; flex: 0 0 auto; flex-wrap: wrap; align-items: center; gap: 4px 7px; padding: 5px 7px; min-height: 52px; }
+  .brand-logo { width: 66px; }
+  .tools { margin-left: auto; }
+  .module-heading { order: 3; flex: 1 0 100%; }
+  .module-heading p { display: none; }
+  .module-heading h1 { font-size: 1rem; line-height: 1.15; white-space: normal; }
+  .tools { gap: 4px; }
+  .tools #voice-rate, .tools #stop-voice, .voice-status, .rate-label { display: none; }
+  .tool-button span { display: none; }
+  .tool-button { min-width: 44px; min-height: 44px; padding: 4px; font-size: 0.875rem; }
+  .workbench { display: flex; flex-direction: column; flex: 1 0 auto; gap: 7px; padding: 7px; overflow: visible; }
+  .station-nav { display: grid; flex: 0 0 auto; grid-template-columns: repeat(var(--screen-count, 4), minmax(0, 1fr)); grid-template-rows: auto; gap: 5px; }
+  .station-tab { grid-template-columns: 1fr; place-items: center; min-height: 44px; padding: 3px; border-left-width: 1px; border-bottom: 4px solid #9aa8b6; text-align: center; }
+  .station-tab.visited { border-left-color: var(--line); border-bottom-color: var(--green); }
+  .station-tab.active { border-color: var(--blue); border-bottom-color: var(--orange); }
+  .station-tab span { width: 30px; height: 30px; font-size: 0.875rem; }
+  .station-tab b { display: none; }
+  /* la carte : une colonne, hauteur libre, scène avant le texte */
+  .lesson-card, .lesson-card.film-screen, .lesson-card.planche-screen { display: flex; flex: 0 0 auto; flex-direction: column; height: auto; overflow: visible; border-radius: 12px; }
+  .visual-panel, .film-stage { order: -1; overflow: visible; padding: 8px; }
+  .visual-panel { display: block; }
+  .copy-panel, .film-intro { overflow: visible; padding: 12px; border-right: 0; border-top: 1px solid var(--line); }
+  .film-stage iframe { height: min(60dvh, 440px); }
+  .planche-stage { height: min(78dvh, 560px); }
+  .visual-figure svg { max-height: none; height: auto; }
+  .lesson-box { margin-top: 12px; }
+  /* barre du bas : collée à l'écran, fond opaque, au-dessus de la zone du geste d'accueil */
+  .bottombar { position: sticky; bottom: 0; z-index: 20; flex: 0 0 auto; grid-template-columns: minmax(92px, 1fr) minmax(70px, 0.8fr) minmax(108px, 1fr); gap: 6px; padding: 6px 7px calc(6px + env(safe-area-inset-bottom)); background: var(--card); }
+  .nav-button { min-height: 44px; padding: 6px 8px; font-size: 0.875rem; }
+  .progress-wrap { grid-template-columns: 1fr; gap: 3px; font-size: 0.875rem; text-align: center; }
+  /* listes de pas : une colonne, lisibles */
+  .sequence-visual { padding: 3px; }
+  .sequence-visual ol { grid-template-columns: 1fr; gap: 8px; }
+  .sequence-step { grid-template-columns: 30px minmax(0, 1fr); min-height: 44px; gap: 8px; padding: 6px 8px; }
+  .sequence-step > span { width: 28px; height: 28px; font-size: 0.875rem; }
+  .sequence-step p { font-size: 0.875rem; line-height: 1.25; }
+  .sequence-step::after { content: none !important; }
+  .sequence-visual > .visual-note { display: block; }
+  .sequence-controls { gap: 10px; flex-wrap: wrap; }
+  .sequence-controls button { min-height: 44px; font-size: 0.875rem; }
+  .sequence-controls span { font-size: 0.875rem; }
+  .compare-visual { grid-template-columns: 1fr; gap: 8px; }
+  .compare-card { min-height: 0; padding: 8px 10px; }
+  .compare-card strong { font-size: 0.875rem; }
+  .compare-card p { margin-top: 4px; font-size: 0.875rem; }
+  .timeline-visual ol { grid-template-columns: 1fr; gap: 8px; }
+  .timeline-visual li { grid-template-columns: 34px minmax(0, 1fr); justify-items: start; align-items: center; gap: 10px; text-align: left; }
+  .timeline-visual li::before { content: none; }
+  .timeline-visual li span { width: 34px; height: 34px; font-size: 0.875rem; }
+  .timeline-visual li p { padding: 0; font-size: 0.875rem; }
+  .function-chain { flex-direction: column; gap: 4px; }
+  .function-chip { min-height: 44px; padding: 5px; }
+  .function-chip b { font-size: 0.875rem; }
+  .function-chip small { font-size: 0.875rem; }
+  .function-arrow { font-size: 1rem; transform: rotate(90deg); }
+  .function-row > strong { font-size: 0.875rem; }
+  .functional-head h3 { font-size: 1rem; }
+  .functional-head p { font-size: 0.875rem; }
+  .functional-figure figcaption, .visual-figure figcaption, .visual-note { font-size: 0.875rem; }
+  /* textes de cours */
+  .kicker, .lesson-box strong, .film-card small { font-size: 0.875rem; }
+  .lead { font-size: 1rem; line-height: 1.35; }
+  .details { font-size: 0.9375rem; line-height: 1.35; gap: 6px; }
+  .lesson-box p { font-size: 0.9375rem; line-height: 1.3; }
+  .film-intro .lead { font-size: 1rem; }
+  .film-audio-note, .film-open, .film-choice { font-size: 0.875rem; }
+  .film-open { min-height: 44px; }
+  .film-choice { min-height: 44px; }
+  .quiz-screen { display: block; overflow: visible; padding: 13px; }
+  .quiz-option { min-height: 52px; font-size: 0.9375rem; }
+  .quiz-feedback { font-size: 0.9375rem; }
+  .answer-word, .draft-note { font-size: 0.875rem; }
+  .quiz-next { float: none; margin-top: 10px; }
+  /* carte du parcours (hub) */
+  .hub-title p, .section-heading p, .section-heading span, .rail-group h3, .module-card p, .hub-foot { font-size: 0.875rem; }
+  .section-heading h2 { font-size: 1rem; }
+  .film-card strong { font-size: 0.9375rem; white-space: normal; }
+  .module-card .module-number { font-size: 0.9375rem; }
+  .module-card h3 { font-size: 1rem; }
+}

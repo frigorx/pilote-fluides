@@ -143,8 +143,14 @@
                       box-shadow:0 0 0 2.5px #98a6b3; }
   .corrs .c-nom { font-family:var(--titre); font-weight:bold; }
   .corrs .c-det { color:var(--mut); font-size:14.5px; }
+
+  /* Téléphone : texte à 14 px au moins (audit téléphone 23/10/2026). Rien ne change au-dessus de 760 px. */
+  @media (max-width: 760px) {
+    .pastille, .ouvert .o-det, .plan .legende-plan, .indice-glisser { font-size:14px; }
+    .pastille { white-space:normal; }
+  }
 </style>
-<script defer src="../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
+<script defer src="../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
 </head>
 <body>
 <a class="evite" href="#contenu">Aller au contenu</a>
@@ -574,12 +580,12 @@
   } catch (e) {}
 })();
 </script>
-<script src="../moteur/lisibilite.js"></script>
+<script src="../moteur/lisibilite.js?v=0f188557ff"></script>
 <script src="../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
   <script src="../moteur/voix-index.js?v=20261018-tom"></script>
   <script src="../moteur/prononciation.js?v=20260927-1"></script>
   <script src="../moteur/voix.js?v=20260927-1"></script>
-  <script src="../moteur/reglage-voix.js?v=20260927-1"></script>
+  <script src="../moteur/reglage-voix.js?v=45451e558b"></script>
 <script type="module">
   import { monterBatiment } from "./batiment3d/batiment.js";
   monterBatiment(document.getElementById("batiment3d"), { urlPlan: "#carte", auPlan: function (id) {

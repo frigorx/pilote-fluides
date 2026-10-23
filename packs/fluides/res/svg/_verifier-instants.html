@@ -45,8 +45,28 @@
   #sortie textarea{width:100%;height:60vh;font:13px/1.5 Consolas,monospace;border:1px solid var(--line);
                    border-radius:8px;padding:12px}
   @media print{ .barre,#sortie{display:none!important} }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : cette page défile déjà ; seuls les textes de 9 à 13 px sont portés à 14 px et les
+   boutons à 44 px de haut. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  html { overflow-x: hidden !important; }
+  /* lisibilité : seuls les textes qui font moins de 14 px dans la page d'origine passent à 14 px ; aucun texte plus grand n'est touché */
+  .meta,
+  .vue > b,
+  #b-fermer,
+  #marque-inerweb.marque-document > span,
+  #marque-inerweb.marque-document .marque-lic,
+  #marque-inerweb.marque-document .marque-droits,
+  #marque-inerweb.marque-document .marque-referentiel,
+  #marque-inerweb.marque-document .marque-proto,
+  #marque-inerweb .marque-mentions { font-size: 14px !important; line-height: 1.35 !important; }
+  button, .button, input:not([type=checkbox]):not([type=radio]), select { min-height: 44px; }
+  #station-suivante a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+/* ===== /Téléphone ===== */
 </style>
-<script defer src="../../../../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
 </head>
 <body>
 

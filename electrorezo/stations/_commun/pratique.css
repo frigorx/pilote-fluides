@@ -154,3 +154,8 @@
 .codes .code{background:var(--muted)}
 /* les photos d'appareils se montrent entières, sans être rognées */
 .maillon>button img,.terre img,.entree img,.dif img,.depart img,.panneau .img-etape{object-fit:contain!important;background:var(--paper)}
+
+/* ===== Téléphone : textes à 14 px (audit téléphone 23/10/2026) — les stations « pratique » ===== */
+@media (max-width:760px){
+  .codes h2,.codes li,.codes .type,.maillon .t small,.terre .t small,.entree .t small,.dif .t small,.panneau .quand,.liens-ex a span{font-size:14px}
+}

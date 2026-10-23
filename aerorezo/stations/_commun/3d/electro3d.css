@@ -127,3 +127,15 @@ electro-3d .metric strong{color:var(--navy,#1b3a63);font-variant-numeric:tabular
   .vue3d-tete h2{font-size:16px}
   .vue3d-bascule button{min-height:30px;padding:2px 10px}
 }
+/* Audit téléphone 23/10/2026 : au doigt, boutons de 44 px et texte de 14 px au moins (la page défile, voir styles.css) */
+@media (max-width: 760px){
+  .vue3d-bascule button,.e3d-outils button,.e3d-zoom button,.e3d-etapes-points button{min-height:44px;font-size:14px}
+  /* ce qui faisait déjà 14 px ou plus ne rapetisse pas : on ne relève que ce qui était dessous */
+  .e3d-etapes button,.e3d-piece{min-height:44px;font-size:max(14px,1em)}
+  .e3d-zoom button,.e3d-etapes button,.e3d-etapes-points button,.vue3d-bascule button{min-width:44px}
+  .e3d-num,.e3d-badge,.e3d-aide,electro-3d .metric span,electro-3d .metric strong{font-size:14px}
+  .e3d-etapes-titre,.e3d-cmd-titre,.e3d-phrase,electro-3d .reglette,electro-3d .reglette output{font-size:max(14px,1em)}
+  .e3d-legende-titre{font-size:max(14px,1.05em)}
+  .e3d-desc{font-size:max(14px,.95em)}
+  electro-3d .reglette input[type=range]{min-height:44px}
+}

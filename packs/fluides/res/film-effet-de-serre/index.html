@@ -23,8 +23,8 @@ window.__resources = {
   <script src="../../../../moteur/voix-index.js?v=20261018-tom"></script>
   <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
   <script src="../../../../moteur/voix.js?v=20260902-1"></script>
-  <script src="../../../../moteur/reglage-voix.js?v=20260902-1"></script>
-<script src="../../../../moteur/lisibilite.js?v=20261023-tel" defer></script>
+  <script src="../../../../moteur/reglage-voix.js?v=45451e558b"></script>
+<script src="../../../../moteur/lisibilite.js?v=0f188557ff" defer></script>
 <script src="./support.js"></script>
 <style>
 /* Le titre existe pour les lecteurs d'écran et pour la structure du document ;
@@ -120,10 +120,18 @@ body > #inerweb-retour-accueil-barre {
   position: fixed; top: 0; left: 0; z-index: 98;
   border-right: 1px solid #c9d3df; border-bottom-right-radius: 10px;
 }
+
+/* ===== Téléphone : la page défile — gabarit « film narré » (audit téléphone 23/10/2026) =====
+   Le film tient déjà dans l'écran et la barre de lecture est collée en bas : seule la taille du texte de la barre
+   (13 px à 360 px de large) passe à 14 px. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  #voix-barre, #voix-barre button, #voix-barre output, #voix-barre label, #voix-barre span { font-size: 14px !important; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}
 </style>
   <script src="../../../../moteur/plan-donnees.js?v=20261023-tel"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
-<script defer src="../../../../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio"></script>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio"></script>
 </head>
 <body>
 <h1 class="titre-du-film">Effet de serre, PRP et climat — Film narré de 53 secondes</h1>
@@ -391,6 +399,6 @@ a:hover { color: #ff6b35; }
   </ol>
 </details>
 <script src="../../../../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
-<script src="../../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+<script src="../../../../moteur/agrandir.js?v=2426161abb" defer></script>
 </body>
 </html>

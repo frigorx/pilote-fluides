@@ -79,3 +79,16 @@ button[title="Télécharger la vidéo"] {
     transition: none !important;
   }
 }
+
+/* ===== Téléphone : textes du film à 14 px (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : les durées de la barre de lecture étaient à 12-13 px. Et un film posé dans un
+   cours (cadre court) était recouvert par l'avis « passez en paysage » : le cours propose déjà « Ouvrir le film
+   en grand ». Rien ne change au-dessus de 760 px. Les règles dépendent de la classe « inerweb-film-tel » (film-accessible.js) : la page qui montre le
+   film est un téléphone, et non le cadre du film (744 px de large dans un cours sur ordinateur) */
+@media (max-width: 760px) {
+  .inerweb-film-tel .inerweb-film-controls span,
+  .inerweb-film-tel div[style*="JetBrains Mono"] { font-size: 14px !important; }
+  .inerweb-film-integre .inerweb-film-orientation { display: none !important; }
+  /* le bouton « Écouter les explications » recouvrait la barre de lecture (durées, téléchargement) du film intégré */
+  .inerweb-film-integre button[style*="bottom:18px"] { bottom: 70px !important; }
+}

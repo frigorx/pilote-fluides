@@ -153,6 +153,8 @@
     Array.prototype.forEach.call(grid.querySelectorAll("[data-station]"), function (button) {
       button.addEventListener("click", function () {
         selectStation(Number(button.dataset.station), false, true);
+        // téléphone : la fiche de la station est sous la liste, on la montre (audit téléphone 23/10/2026)
+        if (window.matchMedia("(max-width: 760px)").matches) document.getElementById("station-detail").scrollIntoView({ block: "start" });
       });
       button.addEventListener("keydown", function (event) {
         var index = Number(button.dataset.station);

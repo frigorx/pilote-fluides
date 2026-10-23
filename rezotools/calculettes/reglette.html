@@ -27,7 +27,7 @@
            aucun tracking, stockage local uniquement (préférences)
     ============================================================
     -->
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="theme.css?v=6782569dbd">
 <style>
         :root {
             --primary: #0f2d52;
@@ -533,9 +533,19 @@
             .main-display { grid-template-columns: 1fr; }
             .results-grid { grid-template-columns: 1fr; }
         }
+        /* Téléphone (audit 23/10/2026) : textes à 14 px et cibles à 44 px, sauf les graduations de la règle
+           (.val, .temp-val), qui sont un dessin à l'échelle. */
+        @media (max-width: 760px) {
+            .config-item label, .step-btn, .category-label, .fluid-chip, .legend-item, .fluid-line-label, .cursor-value,
+            .display-box .label, .display-box .unit, .main-display .label, .main-display .unit, #refFluidName,
+            .result-card h3, .panel-card h3, .safety-badge, .val-label, .val-num, .info-tag, .results-grid small { font-size: 14px !important; line-height: 1.3 !important; }
+            .btn-adj, .step-btn { min-width: 44px !important; min-height: 44px !important; }
+            .config-grid { grid-template-columns: 1fr !important; }
+            .config-item input, .config-item select { min-height: 44px !important; max-width: 100%; }
+        }
     </style>
 <link rel="stylesheet" href="theme_force.css">
-<script defer src="../../moteur/retour-accueil.js?v=c7afca84a1"></script>
+<script defer src="../../moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 

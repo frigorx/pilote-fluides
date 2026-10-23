@@ -685,3 +685,46 @@ body.visual-focus .focus-button { color: #fff; border-color: var(--ink); backgro
 @media (prefers-reduced-motion: reduce) {
   .step-button, .action-button, .family-button, .choice-button { transition-duration: .001ms !important; }
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : la page était dessinée pour tenir dans l'écran (100dvh, rien ne défile) ;
+   « Retour / Continuer » et la zone de réponse tombaient sous l'écran et le texte faisait 9 à 12 px. Ici : la page
+   défile, la scène passe avant le texte, « Retour / Continuer » restent collés en bas, tout texte lisible fait 14 px
+   au moins. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; min-height: 100%; overflow: visible !important; overflow-x: clip !important; }
+  .app-shell { display: flex !important; flex-direction: column; width: 100%; height: auto !important; min-height: 100dvh; overflow: visible !important; }
+  .app-shell > .topbar { flex: 0 0 auto; display: flex !important; flex-wrap: wrap; gap: 6px 8px !important; padding: 6px 8px !important; }
+  .top-tools, .voice-tools { flex-wrap: wrap; }
+  .course-grid { flex: 1 0 auto; display: flex !important; flex-direction: column; gap: 8px !important; padding: 6px !important; overflow: visible !important; }
+  .stepper { display: flex !important; flex: 0 0 auto; overflow-x: auto; gap: 6px !important; padding-bottom: 4px; }
+  .step-button { flex: 0 0 44px; min-height: 44px !important; padding: 0 !important; }
+  .step-button strong { display: none !important; }
+  .lesson { display: flex !important; flex-direction: column; gap: 10px !important; overflow: visible !important; }
+  .visual-card { order: 1; height: auto !important; overflow: visible !important; }
+  .lesson-copy { order: 2; height: auto !important; overflow: visible !important; }
+  .lesson-detail, .visual-root, .visual-controls { overflow: visible !important; }
+  .visual-root { height: auto !important; min-height: 220px; }
+  /* la barre du bas reste collée en bas de l'écran */
+  .bottom-nav { position: sticky; bottom: 0; z-index: 20; flex: 0 0 auto; grid-template-columns: auto minmax(0, 1fr) auto !important; gap: 8px !important; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--paper, #fffdf8); }
+  .nav-button { min-height: 44px !important; padding: 0 16px !important; }
+  .tool-button, .reading-tools button, .speed-control select, .source-button, .close-button, .choice-button, .action-button, .chip-button, .quiz-choice, .visual-controls button { min-height: 44px !important; }
+  .visual-card button, .lesson-copy button, .visual-card input:not([type=checkbox]):not([type=radio]), .visual-card select { min-height: 44px !important; }
+  /* lisibilité : 14 px au moins pour tout texte HTML (les schémas SVG gardent leur taille) */
+  .skip-link, .sr-only, :where(.app-shell *:not(svg):not(svg *):not(.dialog-heading h2, h3), .sources-dialog *:not(svg):not(svg *):not(.dialog-heading h2, h3)) { font-size: 14px !important; line-height: 1.35 !important; }
+  .lesson-copy h1 { font-size: 24px !important; line-height: 1.1 !important; }
+  .visual-heading h2 { font-size: 18px !important; line-height: 1.15 !important; }
+  /* « ← précédente · ↑ la ligne · suivante → » (moteur/suivant.js) : lisible et facile à toucher */
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; }
+  #station-suivante a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (max-width: 760px) {
+  /* ce cours a déjà un mode « plein écran du schéma » (body.visual-focus) : il garde sa hauteur d'écran ; en lecture normale, les hauteurs minimales prévues pour l'ordinateur sont levées */
+  body:not(.visual-focus) .visual-card, body:not(.visual-focus) .visual-root, body:not(.visual-focus) .placement-layout, body:not(.visual-focus) .placement-circuit, .cutaway, .product-viewer { min-height: 0 !important; }
+  .placement-circuit svg { height: auto !important; }
+  body.visual-focus .visual-card { height: calc(100dvh - 12px) !important; overflow: hidden !important; }
+  body.visual-focus .visual-root { overflow: auto !important; }
+}
+/* ===== /Téléphone ===== */

@@ -407,3 +407,84 @@ body.help-open .phase-map, body.help-open .score-strip, body.help-open .source-n
   .home-visual { box-shadow: none; break-inside: avoid; }
   .home-note { background: #fff; }
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : en mode jeu, la page tenait dans l'écran (100dvh, rien ne défile) : le plan de travail
+   était rogné sous l'écran et le texte faisait 8 à 13 px. Ici : la page défile, la consigne puis le plan de travail se
+   suivent en une colonne, et tout texte lisible fait 14 px au moins. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body, body.game-running, body.summary-running { height: auto !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .appbar { height: auto !important; flex-wrap: wrap; gap: 6px; padding: 6px 8px !important; }
+  .appbar-actions { flex-wrap: wrap; }
+  .game:not([hidden]) { display: flex !important; flex-direction: column; height: auto !important; gap: 10px !important; padding: 6px !important; }
+  .mission-panel, .workbench { overflow: visible !important; height: auto !important; }
+  .workbench { display: block !important; }
+  .scene-wrap { overflow: visible !important; height: auto !important; }
+  .scene-wrap > svg { height: auto !important; }
+  .equipment-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .mode-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .small-button, .mode-card, .help-action, .check-action, .equipment-tab, .mission-actions button, .primary-button, button { min-height: 44px; }
+  /* lisibilité : seuls les textes qui font moins de 14 px dans la page d'origine passent à 14 px ; aucun texte plus grand n'est touché */
+  .brand small,
+  .draft-badge,
+  #mode-badge,
+  #voice-button,
+  #reset-button,
+  #exit-button,
+  .eyebrow,
+  .mode-card > small,
+  .home-note,
+  .home-note > strong,
+  #home-visual-caption,
+  #phase-label,
+  #step-counter,
+  #mission-kicker,
+  .action-label,
+  #guided-sheet-title,
+  #guided-sheet strong,
+  #hint-button,
+  #feedback,
+  .phase-step,
+  .score-strip dt,
+  .equipment-tab,
+  .equipment-tab > span,
+  .hose-copy,
+  .hose-copy > small,
+  .closed > span,
+  .closed > strong,
+  .recover > span,
+  .recover > strong,
+  .control-grid span,
+  .control-grid strong,
+  .stopped > span,
+  .stopped > strong,
+  .summary-grid span,
+  .final-sequence > span,
+  .summary-warning,
+  .summary-warning > strong,
+  #retry-button,
+  #other-mode-button,
+  #summary-home-button,
+  #pilote-prof-toggle,
+  #station-suivante > a,
+  a.ligne,
+  #lisib-raz,
+  #lisib-onglet,
+  #marque-inerweb.marque-document > span,
+  #marque-inerweb.marque-document .marque-lic,
+  #marque-inerweb.marque-document .marque-droits,
+  #marque-inerweb.marque-document .marque-referentiel,
+  #marque-inerweb.marque-document .marque-proto,
+  #marque-inerweb .marque-mentions,
+  #mission-instruction,
+  #guide-look,
+  #guide-look-short,
+  #guide-do,
+  #guide-do-short,
+  #guide-check,
+  #guide-check-short,
+  #check-action { font-size: 14px !important; line-height: 1.35 !important; }
+}
+/* ===== /Téléphone ===== */

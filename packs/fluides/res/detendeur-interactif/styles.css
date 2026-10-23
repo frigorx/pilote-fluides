@@ -873,3 +873,61 @@ path.av-body-mark { fill: none; stroke: var(--navy); stroke-width: 3; stroke-lin
   .lesson-detail { font-size: .72em; }
   .takeaway { font-size: .7em; }
 }
+
+/* ===== Téléphone : la page défile — gabarit « app-shell / lesson » (audit téléphone 23/10/2026) =====
+   Gabarit des cours « La bouteille liquide », « Le détendeur », « L'électrovanne »… (coque app-shell, rail d'étapes,
+   carte de texte + carte de schéma, barre du bas), recopié à l'identique dans chaque copie, pour une future fusion.
+   Avant, la page tenait dans l'écran sans défiler : réponses, « Retour / Continuer » étaient sous l'écran et le texte
+   faisait 8 à 11 px. Ici : la page défile (html seul), le schéma passe avant le texte, « Retour / Continuer » restent
+   collés en bas, texte à 14 px au moins (le réglage A+ / A− continue de jouer). Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; max-height: none !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .app-shell { height: auto !important; min-height: 100dvh; display: flex !important; flex-direction: column; overflow: visible !important; flex: 0 0 auto !important; }
+  .topbar { display: flex !important; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px !important; height: auto !important; }
+  .top-tools { flex-wrap: wrap; width: 100%; gap: 6px !important; align-items: center; }
+  .voice-tools, .reading-tools { flex-wrap: wrap; gap: 6px !important; align-items: center; }
+  .tool-button, .reading-tools button { min-width: 44px !important; min-height: 44px !important; font-size: calc(14px * var(--font-scale, 1)) !important; }
+  .course-grid { flex: 1 0 auto; display: flex !important; flex-direction: column; overflow: visible !important; height: auto !important; }
+  .stepper { display: flex !important; flex-wrap: wrap; gap: 4px !important; }
+  .step-button { grid-template-columns: 1fr !important; justify-items: center; flex: 0 0 40px; width: 40px !important; min-width: 0; min-height: 44px; }
+  .step-button .step-number { width: 36px !important; height: 36px !important; font-size: calc(14px * var(--font-scale, 1)) !important; }
+  .lesson { display: flex !important; flex-direction: column; overflow: visible !important; height: auto !important; gap: 10px !important; }
+  .visual-card { order: 1; overflow: visible !important; height: auto !important; display: flex !important; flex-direction: column; }
+  .lesson-copy { order: 2; overflow: visible !important; height: auto !important; }
+  .visual-root { overflow: visible !important; display: block !important; min-height: 0 !important; height: auto !important; }
+  .visual-root > svg { height: auto !important; max-height: none !important; }
+  .visual-caption { display: block !important; }
+  .readout { position: static !important; margin-top: 6px; }
+  /* la barre du bas : Retour / Continuer collés au bas de l'écran, fond opaque */
+  .bottom-nav { position: sticky; bottom: 0; z-index: 20; grid-template-columns: auto minmax(0, 1fr) auto !important; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--paper, #fffdf8); box-shadow: 0 -4px 10px rgba(27,58,99,.10); }
+  .nav-button { min-height: 44px !important; padding: 6px 14px !important; white-space: nowrap; }
+  /* lisibilité : 14 px au moins */
+  .kicker, .lesson-intro, .lesson-detail, .lesson-detail p, .lesson-detail li, .fact, .key-box, .warning-box, .neutral-box, .takeaway, .visual-heading h2, .visual-heading p, .visual-caption,
+  .source-button, .action-button, .choice-button, .variation-controls label, .variation-status, .mini-card, .readout, .quiz-prompt, .quiz-choice, .quiz-feedback, .nav-button, .progress-copy, .lesson-link,
+  .component-grid, .safety-grid, .visual-controls, .visual-controls button, .visual-controls label, .visual-controls select, .module-name span, .command-node strong, .state-pill, .principle-badge { font-size: calc(14px * var(--font-scale, 1)) !important; line-height: 1.35 !important; }
+  .source-button, .action-button, .choice-button, .quiz-choice, .visual-controls button { min-height: 44px !important; }
+  .skip-link, .sr-only, .reglage-voix output { font-size: 14px !important; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}
+
+@media (max-width: 760px) {
+  /* textes propres à ce cours : 14 px au moins */
+  .e3d-outils button,
+  button.e3d-bt-fantome,
+  button.e3d-bt-eclate,
+  button.e3d-bt-ralenti,
+  button.primary,
+  .e3d-etapes button,
+  span.e3d-nom,
+  span.e3d-num,
+  span.e3d-badge,
+  .temperature-controls label,
+  .temperature-controls output,
+  .e3d-mesures span { font-size: 14px !important; line-height: 1.35 !important; }
+  .e3d-outils button, button.e3d-bt-fantome, button.e3d-bt-eclate, button.e3d-bt-ralenti, button.primary, .e3d-etapes button { min-height: 44px; }
+}
+@media (max-width: 760px) {
+  /* Ã©cran Â« surchauffe Â» : formule et Ã©tiquette Ã  14 px au moins (rÃ©paration B1) */
+  .superheat-lab .formula-card #formula-line, .superheat-lab .formula-card #superheat-word { font-size: calc(14px * var(--font-scale, 1)) !important; line-height: 1.35 !important; }
+}

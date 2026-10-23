@@ -177,8 +177,12 @@
     .diapo{display:flex!important;min-height:0;page-break-after:always;padding:0 0 18px}
     .barre,#sommaire,#loupe{display:none!important}body{background:#fff}
   }
+/* Téléphone (audit 23/10/2026) : texte à 14 px au moins, sur téléphone seulement. */
+@media (max-width:760px){
+  .identite .role, .methode .etape .ou, .trio .hab .s, sup { font-size:14px !important; }
+}
 </style>
-<script defer src="../moteur/retour-accueil.js?v=c7afca84a1"></script>
+<script defer src="../moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 

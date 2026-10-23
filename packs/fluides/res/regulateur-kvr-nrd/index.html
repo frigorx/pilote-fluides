@@ -90,10 +90,26 @@ main { height: 100%; }
 .etapes .cmd + button:not(.cmd) { margin-left: 10px; }
 @media (max-width: 640px) { .etapes { gap: 4px; padding: 6px 8px; } .etapes button { padding: 4px 9px; } }
 @media print { .etapes { display: none; } }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : lecteur de film dessiné pour une scène de taille fixe, que le téléphone ne peut pas
+   refaire ; seuls les textes de 12 à 13 px (liens de fin de ligne, voix, valeurs, boutons du lecteur) sont portés à 14 px.
+   Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  #station-suivante, #station-suivante a, #station-suivante .ligne, .reglage-voix, .reglage-voix *, .voix-groupe, .voix-groupe *, .pilote-prof-encastre,
+  .cmd, .transcription p, .transcription *, .lecteur button, .voix-debut { font-size: 14px !important; line-height: 1.4 !important; }
+  #station-suivante a { display: inline-flex; align-items: center; min-height: 44px; }
+  .cmd, .voix-debut, .lecteur button { min-height: 44px; }
+  /* barre d'étapes : une seule rangée qui défile, au lieu d'une colonne qui recouvre l'animation ; le pied de page garde sa place */
+  .etapes { flex-wrap: nowrap !important; overflow-x: auto; justify-content: flex-start !important; left: 8px !important; right: 8px; transform: none !important; max-width: none !important; border-radius: 14px !important; bottom: 40px !important; }
+  .etapes button { flex: 0 0 auto; min-height: 44px !important; white-space: nowrap; }
+  body:has(.etapes) { padding-bottom: 72px; }
+}
+/* ===== /Téléphone ===== */
 </style>
   <script src="../../../../moteur/plan-donnees.js?v=20261023-tel"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
-<script defer src="../../../../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
 </head>
 <body>
 <h1 class="titre-du-film">Le KVR et le NRD — tenir la pression de condensation par temps froid</h1>
@@ -158,9 +174,9 @@ main { height: 100%; }
      Un texte absent du catalogue se dit quand même — en voix de synthèse. -->
 <script src="../../../../moteur/voix-index.js?v=20261018-tom"></script>
 <script src="../../../../moteur/prononciation.js"></script>
-<script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+<script src="../../../../moteur/reglage-voix.js?v=45451e558b"></script>
 <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
-<script src="../../../../moteur/prof-vocal.js?v=20261017-voix"></script>
+<script src="../../../../moteur/prof-vocal.js?v=9912c09150"></script>
 
 <script>
 /* =====================================================================
@@ -443,6 +459,6 @@ main { height: 100%; }
 <script src="../../../../moteur/marque.js" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
 <!-- Le badge des codes couverts s'accroche à la ligne de marque : après elle. -->
 <script src="../../../../moteur/referentiel.js"></script>
-<script src="../../../../moteur/agrandir.js?v=20261008-pilote" defer></script>
+<script src="../../../../moteur/agrandir.js?v=2426161abb" defer></script>
 </body>
 </html>

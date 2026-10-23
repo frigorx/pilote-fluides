@@ -110,9 +110,13 @@
   #lecteur blockquote p:last-child { margin-bottom: 0; }
   .tableau-large { overflow-x: auto; }
   footer { color: var(--mut); font-size: .9em; margin-top: 3em; }
+/* Téléphone (audit 23/10/2026) : texte à 14 px au moins, sur téléphone seulement. */
+@media (max-width:760px){
+  .doc .m, .doc .m .ouvert { font-size:14px !important; }
+}
 </style>
-  <link rel="stylesheet" href="moteur/impression.css?v=6f13d1c083" media="print">
-<script defer src="moteur/retour-accueil.js?v=c7afca84a1"></script>
+  <link rel="stylesheet" href="moteur/impression.css?v=84cea1aa90" media="print">
+<script defer src="moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 
@@ -169,7 +173,7 @@
 </div>
 
 <!-- Le moteur d'accès enseignant : il doit être là AVANT le script de la page. -->
-<script src="moteur/acces.js?v=6f13d1c083"></script>
+<script src="moteur/acces.js?v=84cea1aa90"></script>
 <script>
 (function () {
   "use strict";
@@ -591,7 +595,7 @@
 })();
 </script>
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa ») -->
-<script src="moteur/lisibilite.js?v=6f13d1c083"></script>
-<script src="moteur/marque.js?v=6f13d1c083" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/lisibilite.js?v=84cea1aa90"></script>
+<script src="moteur/marque.js?v=84cea1aa90" data-cartouche="Pilote" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>

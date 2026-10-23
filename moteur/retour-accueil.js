@@ -29,6 +29,18 @@
     document.head.appendChild(ap);
   }
 
+  // 23/10/2026 (audit téléphone) : « ⤢ Agrandir » (le schéma en plein écran, zoom au doigt) sur toute page,
+  // au téléphone seulement ; aucun double chargement si la page a déjà son propre agrandir.js.
+  if (s && window.matchMedia("(max-width: 760px)").matches) {
+    var poserAgrandir = function () {
+      if (window.__iwAgrandir || document.querySelector('script[src*="agrandir.js"]')) return;
+      var ag = document.createElement("script");
+      ag.src = new URL("agrandir.js?v=2426161abb", new URL(s.getAttribute("src"), location.href)).href;
+      document.head.appendChild(ag);
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", poserAgrandir); else poserAgrandir();
+  }
+
   function lancer() {
     if (document.getElementById("inerweb-retour-accueil-barre")) return;
     var racine = s ? new URL(".", new URL(s.getAttribute("src"), location.href)).href.replace(/moteur\/$/, "") : location.origin + "/";

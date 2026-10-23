@@ -130,3 +130,8 @@
   #activity .piece-exo .scene{max-height:17vh}
 }
 #stationView[data-id="deperditions-piece"] .progress-stop{font-size:14px}
+/* Téléphone (audit 23/10/2026) : étiquette de ligne à 14 px, champs et boutons de 44 px (la page défile : voir ../../styles.css) */
+@media(max-width:760px){
+  .piece-rang{font-size:14px}
+  .piece-champ input,.piece-actions button{min-height:44px}
+}

@@ -1,4 +1,4 @@
-@import url("../condenseur-interactif/styles.css?v=20261004-1");
+@import url("../condenseur-interactif/styles.css?v=dc431b31b9");
 
 /* Les détecteurs de fuite — feuille de ce cours (19/10/2026). Le socle (coque, rail, carte, boutons, dessin vivant) vient du cours Condenseur, comme pour L'étanchéité. Ici : les activités propres à ce cours et une mise en page de téléphone lisible (texte jamais sous 14 px). */
 :root{--leak:#3d7fca}

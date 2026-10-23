@@ -55,6 +55,13 @@
     var largeParent = false;
     try { largeParent = window.self !== window.top && window.parent.innerWidth > 620; } catch (err) {}
     document.documentElement.classList.toggle("inerweb-film-parent-large", largeParent);
+    // téléphone seulement (audit 23/10/2026) : « tel » = la fenêtre DU HAUT est un téléphone (≤ 760 px), et non le cadre du film
+    // (étroit aussi sur ordinateur et tablette quand le film est posé dans un cours, même dans un cadre de cadre).
+    // « integre » = film dans un cours sur téléphone : il ne porte pas l’avis « paysage ».
+    var cadre = window.self !== window.top, tel = false;
+    try { tel = window.top.matchMedia("(max-width: 760px)").matches; } catch (err) {}
+    document.documentElement.classList.toggle("inerweb-film-tel", tel);
+    document.documentElement.classList.toggle("inerweb-film-integre", tel && cadre);
   }
 
   var note = document.createElement("p");

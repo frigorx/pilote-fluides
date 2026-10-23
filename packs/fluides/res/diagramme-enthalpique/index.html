@@ -104,7 +104,7 @@ h2 { font-size: clamp(24px, 3vw, 34px); }
 footer { padding: 20px; color: var(--muted); text-align: center; border-top: 1px solid var(--line); }
 
 @media (max-width: 760px) {
-  .hub-header { padding-inline: 12px; }
+  .hub-header { padding-inline: 12px; flex-wrap: wrap; gap: 8px; }
   .brand svg { width: 130px; height: auto; }
   .version { display: none; }
   main { width: min(100% - 18px, 680px); margin-top: 12px; }
@@ -116,6 +116,8 @@ footer { padding: 20px; color: var(--muted); text-align: center; border-top: 1px
   .button { width: 100%; }
   .standalone-item { grid-template-columns: 36px minmax(0, 1fr); }
   .standalone-item a { grid-column: 2; }
+  /* textes lisibles : 14 px au moins (réparation B1) */
+  .eyebrow, .module-choice .level, #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; }
 }
 
 @media print {
@@ -128,7 +130,7 @@ footer { padding: 20px; color: var(--muted); text-align: center; border-top: 1px
 </style>
   <script src="../../../../moteur/plan-donnees.js?v=20261023-tel"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
-<script defer src="../../../../moteur/retour-accueil.js?v=c7afca84a1" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="plan.html" data-reseau-nom="❄️ Le réseau thermo-techno"></script>
 </head>
 <body>
   <header class="hub-header">
@@ -284,9 +286,9 @@ footer { padding: 20px; color: var(--muted); text-align: center; border-top: 1px
   <!-- la voix de l'accueil (chantier prof vocal, 18/10/2026) : vitesse commune du site, MP3 quand ils existent -->
   <script src="../../../../moteur/voix-index.js?v=20261018-tom"></script>
   <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
-  <script src="../../../../moteur/reglage-voix.js?v=20261017-voix"></script>
+  <script src="../../../../moteur/reglage-voix.js?v=45451e558b"></script>
   <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
 <script src="../../../../moteur/marque.js" data-cartouche=".fr" data-licence="cc-by-nc-nd" data-prototype></script>
-<script src="../../../../moteur/agrandir.js?v=20261015-campagne" defer></script>
+<script src="../../../../moteur/agrandir.js?v=2426161abb" defer></script>
 </body>
 </html>

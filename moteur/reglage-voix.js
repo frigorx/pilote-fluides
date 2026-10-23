@@ -97,7 +97,9 @@
       + ".reglage-voix button:hover:not(:disabled){background:rgba(0,0,0,.08)}"
       + ".reglage-voix button:disabled{opacity:.35;cursor:default}"
       + ".reglage-voix button:focus-visible{outline:3px solid currentColor;outline-offset:2px}"
-      + ".reglage-voix output{min-width:3.2em;text-align:center;font-variant-numeric:tabular-nums;font-weight:600}";
+      + ".reglage-voix output{min-width:3.2em;text-align:center;font-variant-numeric:tabular-nums;font-weight:600}"
+      // téléphone (audit 23/10/2026) : cibles de 44 px, texte à 14 px au moins
+      + "@media (max-width:760px){.reglage-voix{font-size:max(14px,1em)}.reglage-voix button{min-width:44px;min-height:44px}}";
     document.head.appendChild(style);
   }
 

@@ -88,7 +88,13 @@
   footer { margin-top:40px; border-top:2px solid var(--bord); padding-top:14px; font-size:13px; color:var(--mut); }
   footer a { color:var(--bleu); }
   @media print { .barre, .actions, .rien { display:none } .carte, .planche { break-inside:avoid } }
-</style><script defer src="moteur/retour-accueil.js?v=c7afca84a1"></script>
+/* Téléphone (audit 23/10/2026) : texte à 14 px au moins, sur téléphone seulement. */
+@media (max-width:760px){
+  p.meta, p.meta *, .licence-ligne, .licence-ligne *, .cpt, .chip, .et, .cap, .carte p, button.lien, summary.reemploi,
+  .fichiers a, .util, .util *, .apercu, .vide, .planche .f, footer p, footer p * { font-size:14px !important; }
+  .chip, button.lien, summary.reemploi { min-height:44px; }
+}
+</style><script defer src="moteur/retour-accueil.js?v=93c85e5976"></script>
 </head><body>
 
 <!-- La galerie est le « Catalogue » du site : sans ce lien, c'était un
@@ -149,7 +155,7 @@
         <a href="packs/fluides/res/bilan-thermique-performance-interactif/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/bilan-thermique-performance-interactif/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/bilan-thermique-performance-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/bilan-thermique-performance-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/bilan-thermique-performance-interactif/styles.css?v=7e830df92b" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 3 fichiers :</div>
         <a href="packs/fluides/res/bilan-thermique-performance-interactif/assets/batiment-clim-3d.webp" download>⬇ assets/batiment-clim-3d.webp</a>
         <a href="packs/fluides/res/bilan-thermique-performance-interactif/assets/chambre-froide-3d.webp" download>⬇ assets/chambre-froide-3d.webp</a>
@@ -178,7 +184,7 @@
         <a href="packs/fluides/res/capsules/_controle.html" download>⬇ _controle.html</a>
         <a href="packs/fluides/res/capsules/_motifs.html" download>⬇ _motifs.html</a>
         <a href="packs/fluides/res/capsules/animations.js" download>⬇ animations.js</a>
-        <a href="packs/fluides/res/capsules/capsule.css" download>⬇ capsule.css</a>
+        <a href="packs/fluides/res/capsules/capsule.css?v=e85d7a5f91" download>⬇ capsule.css</a>
         <a href="packs/fluides/res/capsules/capsule.js" download>⬇ capsule.js</a>
         <a href="packs/fluides/res/capsules/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/capsules/index.html" download>⬇ index.html</a>
@@ -207,7 +213,7 @@
         <a href="packs/fluides/res/chaleur-interactive/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/chaleur-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/chaleur-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/chaleur-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/chaleur-interactive/styles.css?v=00c47c5cd7" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -234,7 +240,7 @@
         <a href="packs/fluides/res/circuit-organe-par-organe/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/circuit-organe-par-organe/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/circuit-organe-par-organe/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/circuit-organe-par-organe/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/circuit-organe-par-organe/styles.css?v=31029669ee" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 10 fichiers :</div>
         <a href="packs/fluides/res/circuit-organe-par-organe/animations/detendeur-regulation.svg" download>⬇ animations/detendeur-regulation.svg</a>
         <a href="packs/fluides/res/circuit-organe-par-organe/images-organes/compresseurs.webp" download>⬇ images-organes/compresseurs.webp</a>
@@ -342,7 +348,7 @@
         <a href="packs/fluides/res/electrovanne-interactive/lisibilite.js" download>⬇ lisibilite.js</a>
         <a href="packs/fluides/res/electrovanne-interactive/marque.js" download>⬇ marque.js</a>
         <a href="packs/fluides/res/electrovanne-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/electrovanne-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/electrovanne-interactive/styles.css?v=122464fc6a" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 5 fichiers :</div>
         <a href="packs/fluides/res/electrovanne-interactive/assets/symboles/bouteille_liquide.svg" download>⬇ assets/symboles/bouteille_liquide.svg</a>
         <a href="packs/fluides/res/electrovanne-interactive/assets/symboles/detendeur_thermo_ext.svg" download>⬇ assets/symboles/detendeur_thermo_ext.svg</a>
@@ -379,7 +385,7 @@
         <a href="packs/fluides/res/bouteille-liquide-pedagogique/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/bouteille-liquide-pedagogique/lisibilite.js" download>⬇ lisibilite.js</a>
         <a href="packs/fluides/res/bouteille-liquide-pedagogique/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/bouteille-liquide-pedagogique/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/bouteille-liquide-pedagogique/styles.css?v=29f3d4b51f" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 11 fichiers :</div>
         <a href="packs/fluides/res/bouteille-liquide-pedagogique/assets/symboles/bouteille_liquide.svg" download>⬇ assets/symboles/bouteille_liquide.svg</a>
         <a href="packs/fluides/res/bouteille-liquide-pedagogique/assets/symboles/compresseur_general.svg" download>⬇ assets/symboles/compresseur_general.svg</a>
@@ -425,7 +431,7 @@
         <a href="packs/fluides/res/detendeur-interactif/lisibilite.js" download>⬇ lisibilite.js</a>
         <a href="packs/fluides/res/detendeur-interactif/marque.js" download>⬇ marque.js</a>
         <a href="packs/fluides/res/detendeur-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/detendeur-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/detendeur-interactif/styles.css?v=3b55d7e9b5" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 4 fichiers :</div>
         <a href="packs/fluides/res/detendeur-interactif/assets/symboles/compresseur_general.svg" download>⬇ assets/symboles/compresseur_general.svg</a>
         <a href="packs/fluides/res/detendeur-interactif/assets/symboles/croix-frigoriste.svg" download>⬇ assets/symboles/croix-frigoriste.svg</a>
@@ -461,7 +467,7 @@
         <a href="packs/fluides/res/filtre-deshydrateur-pedagogique/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/filtre-deshydrateur-pedagogique/lisibilite.js" download>⬇ lisibilite.js</a>
         <a href="packs/fluides/res/filtre-deshydrateur-pedagogique/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/filtre-deshydrateur-pedagogique/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/filtre-deshydrateur-pedagogique/styles.css?v=af214bae1f" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 17 fichiers :</div>
         <a href="packs/fluides/res/filtre-deshydrateur-pedagogique/assets/images/biflow-coupe-3d.webp" download>⬇ assets/images/biflow-coupe-3d.webp</a>
         <a href="packs/fluides/res/filtre-deshydrateur-pedagogique/assets/images/coupe-filtre-3d.webp" download>⬇ assets/images/coupe-filtre-3d.webp</a>
@@ -511,7 +517,7 @@
         <a href="packs/fluides/res/voyant-liquide-pedagogique/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/voyant-liquide-pedagogique/lisibilite.js" download>⬇ lisibilite.js</a>
         <a href="packs/fluides/res/voyant-liquide-pedagogique/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/voyant-liquide-pedagogique/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/voyant-liquide-pedagogique/styles.css?v=c47058da1c" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 10 fichiers :</div>
         <a href="packs/fluides/res/voyant-liquide-pedagogique/assets/illustrations/diagnostic-filtre-colmate.svg" download>⬇ assets/illustrations/diagnostic-filtre-colmate.svg</a>
         <a href="packs/fluides/res/voyant-liquide-pedagogique/assets/illustrations/ligne-liquide-horizontale.svg" download>⬇ assets/illustrations/ligne-liquide-horizontale.svg</a>
@@ -549,7 +555,7 @@
         <a href="packs/fluides/res/compresseur-interactif/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/compresseur-interactif/marque.js" download>⬇ marque.js</a>
         <a href="packs/fluides/res/compresseur-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/compresseur-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/compresseur-interactif/styles.css?v=7511d52219" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -579,7 +585,7 @@
         <a href="packs/fluides/res/condenseur-interactif/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/condenseur-interactif/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/condenseur-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/condenseur-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/condenseur-interactif/styles.css?v=dc431b31b9" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 3 fichiers :</div>
         <a href="packs/fluides/res/condenseur-interactif/assets/condenseur-trois-zones.svg" download>⬇ assets/condenseur-trois-zones.svg</a>
         <a href="packs/fluides/res/condenseur-interactif/assets/diagramme-condenseur-focus.svg" download>⬇ assets/diagramme-condenseur-focus.svg</a>
@@ -637,7 +643,7 @@
         <a href="packs/fluides/res/nomenclature-interactive/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/nomenclature-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/nomenclature-interactive/molecule-animations.css" download>⬇ molecule-animations.css</a>
-        <a href="packs/fluides/res/nomenclature-interactive/nomenclature.css" download>⬇ nomenclature.css</a>
+        <a href="packs/fluides/res/nomenclature-interactive/nomenclature.css?v=a2397699fd" download>⬇ nomenclature.css</a>
         <a href="packs/fluides/res/nomenclature-interactive/nomenclature.js" download>⬇ nomenclature.js</a>
         <a href="packs/fluides/res/nomenclature-interactive/referentiel.js" download>⬇ referentiel.js</a>
         
@@ -729,7 +735,7 @@
         <a href="packs/fluides/res/evaporateur-interactif/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/evaporateur-interactif/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/evaporateur-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/evaporateur-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/evaporateur-interactif/styles.css?v=cd0bd16195" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 4 fichiers :</div>
         <a href="packs/fluides/res/evaporateur-interactif/images/evaporateur-air.webp" download>⬇ images/evaporateur-air.webp</a>
         <a href="packs/fluides/res/evaporateur-interactif/symboles/echangeur_a_air.svg" download>⬇ symboles/echangeur_a_air.svg</a>
@@ -760,7 +766,7 @@
         <a href="packs/fluides/res/froid-clim-academie/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/froid-clim-academie/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/froid-clim-academie/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/froid-clim-academie/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/froid-clim-academie/styles.css?v=56ef32d6c9" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -789,7 +795,7 @@
         <a href="packs/fluides/res/intervention-hydrocarbures-interactive/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/intervention-hydrocarbures-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/intervention-hydrocarbures-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/intervention-hydrocarbures-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/intervention-hydrocarbures-interactive/styles.css?v=eb61bde141" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -818,7 +824,7 @@
         <a href="packs/fluides/res/etancheite-interactive/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/etancheite-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/etancheite-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/etancheite-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/etancheite-interactive/styles.css?v=a9c0030daa" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -847,7 +853,7 @@
         <a href="packs/fluides/res/chaine-intervention-interactive/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/chaine-intervention-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/chaine-intervention-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/chaine-intervention-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/chaine-intervention-interactive/styles.css?v=360dad03ef" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -881,7 +887,7 @@
         <a href="packs/fluides/res/regulateurs-kv-pedagogiques/lisibilite.js" download>⬇ lisibilite.js</a>
         <a href="packs/fluides/res/regulateurs-kv-pedagogiques/marque.js" download>⬇ marque.js</a>
         <a href="packs/fluides/res/regulateurs-kv-pedagogiques/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/regulateurs-kv-pedagogiques/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/regulateurs-kv-pedagogiques/styles.css?v=5d19449c35" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 8 fichiers :</div>
         <a href="packs/fluides/res/regulateurs-kv-pedagogiques/assets/symboles/bouteille_liquide.svg" download>⬇ assets/symboles/bouteille_liquide.svg</a>
         <a href="packs/fluides/res/regulateurs-kv-pedagogiques/assets/symboles/detendeur_thermo_int.svg" download>⬇ assets/symboles/detendeur_thermo_int.svg</a>
@@ -912,7 +918,7 @@
     <details class="reemp"><summary class="reemploi">⚙ Réemployer — fichiers et licence</summary>
       <div class="fichiers">
         <a href="packs/fluides/res/frise-vivante/couverture.json" download>⬇ couverture.json</a>
-        <a href="packs/fluides/res/frise-vivante/frise-vivante.css" download>⬇ frise-vivante.css</a>
+        <a href="packs/fluides/res/frise-vivante/frise-vivante.css?v=ea730e709e" download>⬇ frise-vivante.css</a>
         <a href="packs/fluides/res/frise-vivante/frise-vivante.html" download>⬇ frise-vivante.html</a>
         <a href="packs/fluides/res/frise-vivante/frise-vivante.js" download>⬇ frise-vivante.js</a>
         <div class="util">Médias du cours — 10 fichiers :</div>
@@ -953,7 +959,7 @@
         <a href="packs/fluides/res/vanne-service-interactive/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/vanne-service-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/vanne-service-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/vanne-service-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/vanne-service-interactive/styles.css?v=45d0cecfe5" download>⬇ styles.css</a>
         <a href="packs/fluides/res/vanne-service-interactive/valve-diagram.js" download>⬇ valve-diagram.js</a>
         <a href="packs/fluides/res/vanne-service-interactive/vanne-3d.webp" download>⬇ vanne-3d.webp</a>
         
@@ -1042,7 +1048,7 @@
         <a href="packs/fluides/res/pupitre-reglage-interactif/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/pupitre-reglage-interactif/marque.js" download>⬇ marque.js</a>
         <a href="packs/fluides/res/pupitre-reglage-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/pupitre-reglage-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/pupitre-reglage-interactif/styles.css?v=2158bcae59" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -1074,7 +1080,7 @@
         <a href="packs/fluides/res/regulateur-electronique-interactif/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/regulateur-electronique-interactif/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/regulateur-electronique-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/regulateur-electronique-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/regulateur-electronique-interactif/styles.css?v=b5182bcd56" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -1103,7 +1109,7 @@
         <a href="packs/fluides/res/hydrocarbures-a1-a2/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/hydrocarbures-a1-a2/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/hydrocarbures-a1-a2/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/hydrocarbures-a1-a2/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/hydrocarbures-a1-a2/styles.css?v=991141b909" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 3 fichiers :</div>
         <a href="packs/fluides/res/hydrocarbures-a1-a2/symboles/alarme.svg" download>⬇ symboles/alarme.svg</a>
         <a href="packs/fluides/res/hydrocarbures-a1-a2/symboles/interrupteur.svg" download>⬇ symboles/interrupteur.svg</a>
@@ -1132,7 +1138,7 @@
         <a href="packs/fluides/res/mission-bouteilles/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/mission-bouteilles/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/mission-bouteilles/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/mission-bouteilles/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/mission-bouteilles/styles.css?v=a4e6e90334" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -1224,11 +1230,11 @@
         <a href="packs/fluides/res/pose-manifold-2-voies-interactive/SOURCES.md" download>⬇ SOURCES.md</a>
         <a href="packs/fluides/res/pose-manifold-2-voies-interactive/app.js?v=20261022-plan" download>⬇ app.js</a>
         <a href="packs/fluides/res/pose-manifold-2-voies-interactive/couverture.json" download>⬇ couverture.json</a>
-        <a href="packs/fluides/res/pose-manifold-2-voies-interactive/fiches-metier.css" download>⬇ fiches-metier.css</a>
+        <a href="packs/fluides/res/pose-manifold-2-voies-interactive/fiches-metier.css?v=26e8b9047f" download>⬇ fiches-metier.css</a>
         <a href="packs/fluides/res/pose-manifold-2-voies-interactive/fiches-metier.html" download>⬇ fiches-metier.html</a>
         <a href="packs/fluides/res/pose-manifold-2-voies-interactive/fiches-metier.js?v=20261022-plan" download>⬇ fiches-metier.js</a>
         <a href="packs/fluides/res/pose-manifold-2-voies-interactive/index.html" download>⬇ index.html</a>
-        <a href="packs/fluides/res/pose-manifold-2-voies-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/pose-manifold-2-voies-interactive/styles.css?v=95e08a6ab2" download>⬇ styles.css</a>
         <a href="packs/fluides/res/pose-manifold-2-voies-interactive/visuals.js" download>⬇ visuals.js</a>
         
         
@@ -1259,7 +1265,7 @@
         <a href="packs/fluides/res/pose-manifold-interactive/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/pose-manifold-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/pose-manifold-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/pose-manifold-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/pose-manifold-interactive/styles.css?v=5525b28d48" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -1290,7 +1296,7 @@
         <a href="packs/fluides/res/glissement-temperature/app.js?v=20261022-plan" download>⬇ app.js</a>
         <a href="packs/fluides/res/glissement-temperature/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/glissement-temperature/index.html" download>⬇ index.html</a>
-        <a href="packs/fluides/res/glissement-temperature/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/glissement-temperature/styles.css?v=57922a70ea" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 2 fichiers :</div>
         <a href="packs/fluides/res/glissement-temperature/assets/chaine-glissement.svg" download>⬇ assets/chaine-glissement.svg</a>
         <a href="packs/fluides/res/glissement-temperature/assets/logo-inerweb-edu.svg" download>⬇ assets/logo-inerweb-edu.svg</a>
@@ -1451,7 +1457,7 @@
         <a href="packs/fluides/res/pression-temperature-interactive/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/pression-temperature-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/pression-temperature-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/pression-temperature-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/pression-temperature-interactive/styles.css?v=d5e0478425" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -1479,7 +1485,7 @@
         <a href="packs/fluides/res/surchauffe-sous-refroidissement-interactif/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/surchauffe-sous-refroidissement-interactif/marque.js" download>⬇ marque.js</a>
         <a href="packs/fluides/res/surchauffe-sous-refroidissement-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/surchauffe-sous-refroidissement-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/surchauffe-sous-refroidissement-interactif/styles.css?v=beaba07104" download>⬇ styles.css</a>
         
         
         <div class="licence-ligne">© 2026 inerweb.fr · CC BY-NC-ND 4.0 : citer inerWeb, pas d'usage commercial, pas de modification.</div>
@@ -1506,7 +1512,7 @@
         <a href="packs/fluides/res/chaleur-circuit-interactif/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/chaleur-circuit-interactif/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/chaleur-circuit-interactif/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/chaleur-circuit-interactif/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/chaleur-circuit-interactif/styles.css?v=bae333fc91" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 4 fichiers :</div>
         <a href="packs/fluides/res/chaleur-circuit-interactif/symboles/chaleur-sensible-latente.svg" download>⬇ symboles/chaleur-sensible-latente.svg</a>
         <a href="packs/fluides/res/chaleur-circuit-interactif/symboles/compresseur_general.svg" download>⬇ symboles/compresseur_general.svg</a>
@@ -1540,7 +1546,7 @@
         <a href="packs/fluides/res/tome-3-technologie-organes/impression.css" download>⬇ impression.css</a>
         <a href="packs/fluides/res/tome-3-technologie-organes/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/tome-3-technologie-organes/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/tome-3-technologie-organes/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/tome-3-technologie-organes/styles.css?v=0c06f8d579" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 44 fichiers :</div>
         <a href="packs/fluides/res/tome-3-technologie-organes/images-organes/bouteille-anti-coup-liquide.webp" download>⬇ images-organes/bouteille-anti-coup-liquide.webp</a>
         <a href="packs/fluides/res/tome-3-technologie-organes/images-organes/capteur-pression.webp" download>⬇ images-organes/capteur-pression.webp</a>
@@ -1614,7 +1620,7 @@
         <a href="packs/fluides/res/recuperation-fluide-interactive/couverture.json" download>⬇ couverture.json</a>
         <a href="packs/fluides/res/recuperation-fluide-interactive/index.html" download>⬇ index.html</a>
         <a href="packs/fluides/res/recuperation-fluide-interactive/referentiel.js" download>⬇ referentiel.js</a>
-        <a href="packs/fluides/res/recuperation-fluide-interactive/styles.css" download>⬇ styles.css</a>
+        <a href="packs/fluides/res/recuperation-fluide-interactive/styles.css?v=73cd2f394a" download>⬇ styles.css</a>
         <div class="util">Médias du cours — 3 fichiers :</div>
         <a href="packs/fluides/res/recuperation-fluide-interactive/assets/symboles/detendeur-thermostatique.svg" download>⬇ assets/symboles/detendeur-thermostatique.svg</a>
         <a href="packs/fluides/res/recuperation-fluide-interactive/assets/symboles/evaporateur-cubique.svg" download>⬇ assets/symboles/evaporateur-cubique.svg</a>
@@ -2794,6 +2800,6 @@ Les images se chargent à mesure du défilement ; <b>↻ Rejouer</b> relance une
   filtrer();
 })();
 </script>
-<script src="moteur/lisibilite.js?v=6f13d1c083"></script>
-<script src="moteur/marque.js?v=6f13d1c083" data-cartouche="Pilote" data-licence="conditions"></script>
+<script src="moteur/lisibilite.js?v=84cea1aa90"></script>
+<script src="moteur/marque.js?v=84cea1aa90" data-cartouche="Pilote" data-licence="conditions"></script>
 </body></html>

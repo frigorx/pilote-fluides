@@ -313,3 +313,65 @@ html.lisibilite-agrandie body.course-running{height:auto;min-height:100dvh;overf
   .bornier-point{width:34px;height:34px;font-size:13px}
   .bornier-cadre::after{content:"↔ le schéma défile";display:block;text-align:right;color:var(--muted);font-size:10.5px;padding-top:2px}
 }
+
+/* ===== Téléphone : la page défile — gabarit « appbar / course-shell » (audit téléphone 23/10/2026) =====
+   Bloc commun aux cours à coque « bandeau + rail + carte » (Condenseur, Compresseur, Évaporateur, Détendeurs,
+   Étanchéité, Chambre froide…) : recopié à l'identique dans chaque copie, pour une future fusion. Avant, la page
+   tenait dans l'écran sans défiler : réponses, « Précédent / Suivant » et liens de fin étaient sous l'écran,
+   et tout le texte faisait 8 à 12 px. Ici : la page défile (html seul), le dessin passe avant le texte, la barre
+   « Précédent / Suivant » reste collée en bas, et tout texte lisible fait 14 px au moins. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body, body.course-running { height: auto !important; max-height: none !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .appbar { position: static !important; height: auto !important; min-height: 54px; flex-wrap: wrap; gap: 6px; }
+  .appbar-actions { flex-wrap: wrap; }
+  .small-button { min-height: 44px; font-size: 14px !important; }
+  body > main#app { flex: 0 0 auto !important; }
+  .course-shell { flex: 0 0 auto !important; height: auto !important; min-height: 0 !important; display: flex !important; flex-direction: column; gap: 6px; padding: 6px !important; overflow: visible !important; }
+  .course-rail { position: static !important; max-height: none !important; height: auto !important; display: flex !important; flex-wrap: nowrap; align-items: center; gap: 4px 8px; padding: 4px 6px !important; }
+  .rail-heading, .rail-heading strong { font-size: 14px !important; }
+  .stepper { flex: 1 1 auto; flex-wrap: wrap; justify-content: space-around; gap: 2px; }
+  .step-button { min-width: 40px; min-height: 44px; display: grid; place-items: center; }
+  .step-button b { width: 36px !important; height: 36px !important; font-size: 14px !important; }
+  .lesson-card { display: flex !important; flex-direction: column; height: auto !important; min-height: 0 !important; overflow: visible !important; }
+  .lesson-header { order: 1; position: static !important; display: flex !important; flex-direction: column !important; align-items: stretch !important; }
+  .lesson-heading, .lesson-tools { flex: 0 0 auto !important; }
+  .lesson-heading .eyebrow, .eyebrow { font-size: 14px !important; }
+  .lesson-heading h2 { white-space: normal !important; overflow: visible !important; text-overflow: clip !important; }
+  .lesson-tools { flex-wrap: wrap; width: 100%; gap: 6px !important; align-items: center !important; }
+  .tool-button, .tool-button span, .speed-control, #pilote-prof-toggle { font-size: 14px !important; min-height: 44px !important; }
+  .reglage-voix button, .speed-control button { min-width: 44px !important; min-height: 44px !important; font-size: 16px !important; }
+  .lesson-content { order: 2; display: flex !important; flex-direction: column; gap: 10px; height: auto !important; overflow: visible !important; padding: 8px !important; }
+  .scene-lecon { order: 1; width: 100%; position: static !important; }
+  .lesson-copy { order: 2; overflow: visible !important; display: block !important; }
+  .lesson-copy > p:first-child { display: block !important; -webkit-line-clamp: unset !important; line-clamp: none !important; overflow: visible !important; height: auto !important; }
+  .texte-entier { display: none !important; }
+  .activity-zone { order: 3; overflow: visible !important; height: auto !important; min-height: 0 !important; display: block !important; }
+  .panel { height: auto !important; }
+  .status-message { order: 3; min-height: 0 !important; }
+  /* la barre du bas : Précédent / Suivant collés au bas de l'écran, fond opaque */
+  .lesson-footer { order: 4; position: sticky !important; top: auto !important; bottom: 0 !important; z-index: 20; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--paper, #fffdf8) !important; border-top: 1px solid var(--line, #ddd); border-bottom: 0 !important; box-shadow: 0 -4px 10px rgba(27,58,99,.10) !important; }
+  .nav-button { min-height: 44px !important; padding: 8px 14px !important; font-size: 14px !important; }
+  .reference-box, .reference-box strong { font-size: 14px !important; line-height: 1.25 !important; }
+  /* lisibilité : 14 px au moins */
+  .lesson-copy > p, .lesson-copy > p:first-child, #lesson-text, .action-prompt, .texte-entier, .feedback, .status-message, .home-note, .home-note strong, .home-visual figcaption,
+  .choice, .choice strong, .choice small, .check-card, .check-card strong, .check-card small, .sequence-step, .flow-box, .hotspot-list button, .state-word, .gauge-wrap p,
+  .law-note strong, .law-note p, .registry button, .registry button strong, .report-grid label, .report-grid input, .report-grid textarea, .scene-barre button, .scene-legende, .scene-legende-box,
+  .tag, .range-row, .sort-btn, .order-item, .carte p, .geste p, .flux-case small, .images-rang figcaption, .tableau, .constat, .lecture, .interdits, .exemple-liste, .exemple small, .definition, .cas-boite, .cas { font-size: 14px !important; line-height: 1.35 !important; }
+  .choice, .check-card, .sequence-step, .hotspot-list button, .sort-btn, .order-item, .registry button { min-height: 44px; }
+  .range-row input { min-height: 44px; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}
+
+/* ===== Téléphone : la page défile (23/10/2026) — compléments propres à ce cours =====
+   Le bloc « appbar / course-shell » ci-dessus règle la page, les boutons et la plupart des textes ; ici, les petits
+   instruments de ce cours (ohmmètre, façade du régulateur, bornier, dégivrage, remplacement de tête) passent à 14 px.
+   Leurs mises en colonne pour petit écran existent déjà plus haut dans cette feuille. */
+@media (max-width: 760px) {
+  .dossier-button small, .dossier-button b, .dossier-button span, .note-exercice, .note-exercice *, .sonde-bouton strong, .sonde-bouton small, .ohmmetre small, .ohmmetre span, .cycle-bornes, .cycle-etat, .cycle-etat *, .offset-calcul small, .offset-resultat small,
+  .sequence-step, .sequence-step small, .facade-tete small, .facade-mode, .facade-ecran, .facade-ecran *, .facade-aide, .facade-cibles *, .facade-memoire *, .facade-touche, .secondary-button small,
+  .atteinte, .atteinte *, .degivrage-temps, .degivrage-temps *, .degivrage-sorties *, .bornier-consigne *, .bornier-appareil, .bornier-appareil *, .bornier-point, .bornier-organe, .bornier-organe *,
+  .remplacement-tete, .remplacement-tete *, .remplacement-grille, .remplacement-grille * { font-size: 14px !important; line-height: 1.3 !important; }
+  .facade-touche, .sonde-bouton, .degivrage-temps { min-height: 44px; }
+}
+/* ===== /Téléphone ===== */

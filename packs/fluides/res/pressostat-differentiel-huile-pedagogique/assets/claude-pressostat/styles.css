@@ -63,3 +63,18 @@ svg { display:block; width:100%; height:100%; }
 }
 @media (prefers-reduced-motion:reduce) { .rod,.common-rod,.contact,.heater,.bimetal { transition:none; } }
 @media print { body { overflow:visible; background:#fff; } .explainer { height:170mm; } .state-controls { display:none; } }
+
+/* ===== Téléphone : la page défile, boutons à 14 px (23/10/2026) =====
+   Audit téléphone du 23/10/2026 : les trois boutons d'état tombaient sous l'écran (cadre à hauteur fixe) et
+   mesuraient 8 à 11 px. Ici : la page défile, les boutons restent collés en bas, 14 px au moins. Rien ne change
+   au-dessus de 760 px. */
+@media (max-width:760px) {
+  html.tel { height:auto; overflow-x:hidden; overflow-y:auto; }
+  html.tel body { height:auto; overflow:visible; overflow-x:clip; }
+  html.tel .explainer { height:auto; grid-template-rows:auto auto auto; }
+  html.tel .state-head { flex-wrap:wrap; padding:6px 10px; }
+  html.tel .state-head p { font-size:14px; }
+  html.tel svg { height:auto; }
+  html.tel .state-controls { position:sticky; bottom:0; z-index:20; gap:6px; padding:6px 6px calc(6px + env(safe-area-inset-bottom)); background:var(--paper); }
+  html.tel .state-controls button { min-height:44px; padding:4px; font-size:14px; line-height:1.15; }
+}

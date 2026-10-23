@@ -67,8 +67,12 @@
   .access-chip b{ color:var(--blue); }
 
   .signature{ text-align:center; color:var(--muted); font-size:12px; margin:20px 0 0; }
+  /* Téléphone : texte à 14 px au moins (audit téléphone 23/10/2026) */
+  @media (max-width:760px){
+    .topbar .badge-edu,.td-head .num,.td-head .dur,.td-body ul,.access-row,.signature{ font-size:14px; }
+  }
 </style>
-<script defer src="../moteur/retour-accueil.js?v=c7afca84a1"></script>
+<script defer src="../moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
 <body>
 

@@ -1,4 +1,4 @@
-@import url("../condenseur-interactif/styles.css?v=20261004-1");
+@import url("../condenseur-interactif/styles.css?v=dc431b31b9");
 
 /* Raccorder les postes d’un magasin : meubles, chambres, électrovannes — feuille de ce cours (19/10/2026). Le socle (coque, rail, carte, boutons) vient du cours Condenseur, comme pour L'étanchéité et Les détecteurs de fuite. Ici : les activités propres à ces cours, un dessin des organes (Voyage) et une mise en page de téléphone lisible (texte jamais sous 14 px). */
 :root{--leak:#3d7fca}
