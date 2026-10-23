@@ -1,5 +1,8 @@
 (function () {
   "use strict";
+  // 23/10/2026 : remplacé par moteur/appareils.js (source unique, chargé par retour-accueil.js sur
+  // toutes les pages). Ce fichier, encore appelé par 25 cours, ne fait plus rien.
+  return;
 
   function installer() {
     var support = document.querySelector('meta[name="inerweb-support"]');

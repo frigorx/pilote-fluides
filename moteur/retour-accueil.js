@@ -20,6 +20,15 @@
   // Lue tout de suite : `currentScript` n'existe que pendant l'exécution du script.
   var s = document.currentScript || document.querySelector('script[src*="retour-accueil.js"]');
 
+  // 23/10/2026 : « PC ou tablette conseillé », source unique (moteur/appareils.js), sur toutes les pages
+  // — accueil compris, pour le pictogramme de ses cartes.
+  if (s && !document.querySelector('script[src*="appareils.js"]')) {
+    var ap = document.createElement("script");
+    ap.src = new URL("appareils.js?v=20261023-tel", new URL(s.getAttribute("src"), location.href)).href;
+    ap.defer = true;
+    document.head.appendChild(ap);
+  }
+
   function lancer() {
     if (document.getElementById("inerweb-retour-accueil-barre")) return;
     var racine = s ? new URL(".", new URL(s.getAttribute("src"), location.href)).href.replace(/moteur\/$/, "") : location.origin + "/";

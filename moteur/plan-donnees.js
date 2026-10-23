@@ -52,23 +52,10 @@
 
   /* Le téléphone reste un support de consultation. Ces stations conservent
      leurs schémas et leurs manipulations : un écran PC/tablette est simplement
-     annoncé avant l'ouverture quand la densité pédagogique le justifie. */
-  var SUPPORTS = {
-    "surchauffe-sous-refroidissement-interactif": true,
-    "diagramme-enthalpique": true,
-    "bilan-thermique-performance-interactif": true,
-    "module-compresseur": true,
-    "regulateur-electronique-interactif": true,
-    "pupitre-reglage-interactif": true,
-    "chaine-intervention-interactive": true,
-    "cours-classes-securite": true,
-    "etancheite-interactive": true,
-    "detecteurs-fuite-interactif": true,
-    "intervention-hydrocarbures-interactive": true,
-    "centrale-positive-interactif": true,
-    "postes-magasin-interactif": true,
-    "maintenance-centrale-interactif": true
-  };
+     annoncé avant l'ouverture quand la densité pédagogique le justifie.
+     23/10/2026 : la liste vit désormais dans moteur/appareils.js (source unique, qui pose
+     le pictogramme sur les cartes du Plan comme partout ailleurs) ; ne rien remettre ici. */
+  var SUPPORTS = {};
 
   /* --- Le tronc : la théorie, de la première notion au diagramme --- */
   var TRONC = {

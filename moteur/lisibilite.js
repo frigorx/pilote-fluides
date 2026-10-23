@@ -94,6 +94,12 @@
     "cursor:pointer;padding:0;display:none}" +
     "html.lisib-range #lisib-bouton,html.lisib-range #lisib-masquer,html.lisib-range #lisib-panneau{display:none!important}" +
     "html.lisib-range #lisib-onglet{display:block}" +
+    /* Téléphone (23/10/2026, audit téléphone : le bouton rond recouvrait texte et boutons sur
+       541 pages) : jamais de bouton rond flottant ; seul l'onglet « Aa » sort du bord droit, à
+       mi-hauteur, loin des barres « Retour / Continuer » collées en bas. Il ouvre le panneau. */
+    "@media (max-width:760px){#lisib-bouton,#lisib-masquer{display:none!important}" +
+    "#lisib-onglet{display:block!important;top:46%;bottom:auto;width:16px;height:44px;font-size:10px;letter-spacing:-.5px;opacity:.9}" +
+    "#lisib-panneau{top:calc(46% - 60px);bottom:auto;right:26px}}" +
     "@media print{#lisib-bouton,#lisib-panneau,#lisib-masquer,#lisib-onglet{display:none!important}}";
 
   var style = document.createElement("style");
@@ -140,7 +146,11 @@
     }
     try { if (sessionStorage.getItem("lisib_range") === "1") ranger(true); } catch (e) { /* tant pis */ }
     x.addEventListener("click", function () { basculer(false); ranger(true); o.focus(); });
-    o.addEventListener("click", function () { ranger(false); b.focus(); });
+    o.addEventListener("click", function () {
+      // téléphone : l'onglet est le seul accès, il ouvre directement le panneau
+      if (window.matchMedia("(max-width:760px)").matches) { basculer(!p.classList.contains("ouvert")); return; }
+      ranger(false); b.focus();
+    });
 
     /* Le bouton annonce son état, le panneau se ferme par Échap, et le
        focus revient à ce qui l'a ouvert : sinon il reste dans le vide,
