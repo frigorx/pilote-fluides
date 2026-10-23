@@ -380,3 +380,34 @@ dialog::backdrop { background: rgba(16, 35, 60, .38); }
   .svg-return { stroke-dasharray: none; }
   @page { size: A4 landscape; margin: 15mm; }
 }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   La station était dessinée pour tenir dans l'écran : sur un téléphone, le texte du cours, l'exercice et
+   « Continuer » étaient rognés, sans défilement possible, et le texte descendait à 11-12 px. Ici : la page
+   défile, le schéma passe avant le texte (hauteur plafonnée), la vue 3D suit, la barre du bas reste collée
+   en bas, tout texte lisible fait 14 px au moins. Même principe que _commun/formative-shared.css. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; max-height: none !important; min-height: 100%; overflow: visible !important; overflow-x: clip !important; }
+  body { display: flex !important; flex-direction: column; font-size: 15px !important; }
+  body > header, body > nav, body > footer { flex: 0 0 auto; }
+  main { flex: 1 0 auto; overflow: visible !important; }
+  .course-view, .quiz-view, .result-view, .quiz-card { height: auto !important; }
+  .lesson-card { display: flex !important; flex-direction: column; height: auto !important; }
+  .visuels { order: 1; overflow: visible !important; }
+  .visuels > .scene-panel { height: auto !important; }
+  .lesson-copy { order: 2; }
+  .lesson-copy, .scene-panel, .scene, .quiz-card, .result-card { overflow: visible !important; }
+  .scene svg { height: auto !important; max-height: 55vh !important; }
+  .level-note { display: block !important; }
+  .footer { position: sticky; bottom: 0; z-index: 20; padding-bottom: calc(.22rem + env(safe-area-inset-bottom)) !important; }
+  #backPlan { display: inline-block !important; }
+  h1 { white-space: normal !important; }
+  .top-actions, .voice-actions, .reglage-voix { flex-wrap: wrap; max-width: 100%; }
+  button, .footer-nav button, .lesson-controls button, .practice-choices button, .practice-slots button { min-height: 44px !important; }
+  .kicker, .lesson-kicker, .level-switch button, .voice-actions button, .course-progress button, .footer-nav button,
+  .step-count, .scene-equivalent, .practice-choices button, .practice-slots button, .practice-feedback, .level-note,
+  .key-box, .explanation, .answers button, .footer-note, .e3d-num, .e3d-badge, .vue3d-bascule button { font-size: 14px !important; }
+  .practice-choices, .practice-slots { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}

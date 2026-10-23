@@ -99,6 +99,37 @@ body.p-course-active .topbar { grid-template-columns: auto minmax(0, 1fr) auto a
   .p-voice-actions { display: none; }
 }
 
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Ces stations (débit, delta-t, énergie, mesurer, puissance) étaient dessinées pour tenir dans l'écran :
+   sur un téléphone, réglages, choix et « Valider » étaient rognés, sans défilement possible, et la consigne
+   coupée par des points de suspension. Ici : la page défile, le schéma passe avant le texte (hauteur
+   plafonnée), la barre du bas reste collée en bas, tout texte lisible fait 14 px au moins.
+   Même principe que formative-shared.css. Feuille ajoutée par p-formation.js après station.css. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; max-height: none !important; min-height: 100%; overflow: visible !important; overflow-x: clip !important; }
+  body { display: flex !important; flex-direction: column; font-size: 15px !important; }
+  body > header, body > nav, body > footer { flex: 0 0 auto; }
+  main { flex: 1 0 auto; overflow: visible !important; }
+  .stage, .quiz-view, .result-view, .p-course-view, .p-course-card, .quiz-card { height: auto !important; }
+  .workspace, .p-course-card { display: flex !important; flex-direction: column; gap: .5rem !important; }
+  .diagram-card, .control-card, .quiz-card, .result-card, .p-course-copy, .p-course-scene { overflow: visible !important; }
+  .p-course-scene { order: 1; display: block !important; }
+  .p-course-copy { order: 2; }
+  .diagram-card svg, .p-course-scene svg { height: auto !important; max-height: 55vh !important; }
+  .objective, .mission, h1 { white-space: normal !important; overflow: visible !important; }
+  .reglage-voix { flex-wrap: wrap; max-width: 100%; }
+  body.p-course-active .titles { flex: 1 0 100% !important; order: 5; }
+  .hint, .p-course-level { display: block !important; }
+  .footer { position: sticky; bottom: 0; z-index: 20; padding-bottom: calc(.25rem + env(safe-area-inset-bottom)) !important; }
+  button, .footer-nav button { min-height: 44px !important; }
+  .kicker, .hint, .footer-note, .metric, .status-pill, .feedback, .explanation, .quiz-progress, .answers button,
+  .level-switch button, .footer-nav button, .p-course-progress button, .p-voice-actions button, .p-course-kicker,
+  .p-course-equivalent, .p-course-key, .p-course-level, .p-course-body, .p-course-controls button, .svg-small,
+  .e3d-num, .e3d-badge, .vue3d-bascule button { font-size: 14px !important; }
+}
+
 @media print {
   .p-course-progress, .p-voice-actions, .p-course-controls { display: none !important; }
   .p-course-card { display: block; }

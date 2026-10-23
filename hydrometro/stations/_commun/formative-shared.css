@@ -165,3 +165,36 @@ button.progress-step.is-done {
 .aide-mobile { display: none; }
 @media (max-width: 760px) { .aide-mobile { display: block; } }
 @media print { .aide-etape { display: none; } }
+
+/* ===== Téléphone : la page défile (23/10/2026) =====
+   Les stations étaient dessinées pour tenir dans l'écran, sans défilement. Sur un téléphone, la zone de réponse
+   (boutons, choix, curseurs) était rognée par un cadre à hauteur fixe et rien ne permettait de l'atteindre :
+   impossible de répondre. Ici : la page défile, la scène passe avant le texte, le bouton « Continuer » reste
+   collé en bas, et tout texte lisible fait 14 px au moins. Feuille chargée par le moteur après station.css. */
+@media (max-width: 760px) {
+  /* défilement porté par html seul : un body qui défile annulerait le collage de la barre du bas */
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body { height: auto !important; max-height: none !important; min-height: 100%; overflow: visible !important; overflow-x: clip !important; }
+  .app-shell { height: auto !important; min-height: 100dvh; display: flex !important; flex-direction: column; overflow: visible !important; }
+  .app-shell > .topbar, .app-shell > .progress { flex: 0 0 auto; }
+  .station-main { flex: 1 0 auto; overflow: visible !important; padding: 0 6px 8px !important; }
+  .lesson-card { height: auto !important; display: flex !important; flex-direction: column; overflow: visible !important; gap: 10px !important; padding: 10px !important; }
+  .scene-panel { order: 1; overflow: visible !important; display: block !important; }
+  .lesson-copy { order: 2; overflow: visible !important; }
+  .scene { overflow: visible !important; display: block !important; }
+  .scene svg { height: auto !important; max-height: none !important; }
+  .action-panel { overflow: visible !important; margin-top: 10px !important; }
+  /* la barre du bas : la note de limite défile avec la page, les boutons restent collés en bas */
+  .bottom-bar { display: contents !important; }
+  .limit { order: 2; margin: 0 10px 8px !important; }
+  .nav-actions { order: 3; position: sticky; bottom: 0; z-index: 20; justify-content: space-between; gap: 10px !important; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: var(--paper, #fff); border-top: 1px solid var(--line, #ddd); }
+  .nav-actions button { min-height: 44px !important; padding: 6px 14px !important; }
+  /* lisibilité : 14 px au moins */
+  .kicker, .step-text, .level-note, .choice, .sequence-item, .match-row, .match-row select, .feedback, .range-row, .verify-btn,
+  .action-title, .quiz-question, .nav-actions button, #stepCount, .limit, .scene-equivalent, .sequence-order, .level-btn, .plan-link,
+  .progress-step span:first-child, .readout, .codes-ref, .codes-ref *, .e3d-num, .e3d-badge, .vue3d-bascule button { font-size: 14px !important; line-height: 1.35 !important; }
+  .choice, .sequence-item, .match-row select, .verify-btn { min-height: 44px !important; }
+  .range-row input { min-height: 44px !important; }
+  .progress-step span:first-child { width: 30px !important; height: 30px !important; }
+  .topbar { flex-wrap: wrap; height: auto !important; }
+}
