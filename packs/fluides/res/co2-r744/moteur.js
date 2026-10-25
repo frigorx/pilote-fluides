@@ -84,6 +84,7 @@
   let speechRun = 0;
   let speaking = false;
   let lectureSuivie = false;
+  let enPause = false; /* suivi par le module : avec un MP3 du site, speechSynthesis.speaking reste faux */
 
   const echapper = (v) => String(v)
     .replaceAll("&", "&amp;").replaceAll("<", "&lt;")
@@ -165,6 +166,7 @@
   function stopSpeech() {
     speechRun += 1;
     speaking = false;
+    enPause = false;
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     ui.speak.setAttribute("aria-pressed", "false");
     ui.speak.innerHTML = "▶ <span>Écouter</span>";
@@ -529,12 +531,12 @@
   ui.back.addEventListener("click", () => move(-1));
   ui.next.addEventListener("click", () => move(1));
   ui.speak.addEventListener("click", () => {
-    if (speaking && window.speechSynthesis.speaking) {
-      window.speechSynthesis.pause(); speaking = false;
+    if (speaking) {
+      window.speechSynthesis.pause(); speaking = false; enPause = true;
       ui.speak.setAttribute("aria-pressed", "false");
       ui.speak.innerHTML = "▶ <span>Reprendre</span>";
-    } else if (window.speechSynthesis && window.speechSynthesis.paused) {
-      window.speechSynthesis.resume(); speaking = true;
+    } else if (enPause) {
+      window.speechSynthesis.resume(); speaking = true; enPause = false;
       ui.speak.setAttribute("aria-pressed", "true");
       ui.speak.innerHTML = "❚❚ <span>Pause</span>";
     } else { lectureSuivie = true; speak(); }
