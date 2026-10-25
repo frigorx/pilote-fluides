@@ -1,6 +1,6 @@
 /* ÉlectroRézo 5.6 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 d'un temps dont le texte change sont supprimés, puis refaits en Piper. */
 const NARRATION = {
 
   decouvrir: `La station précédente vous a montré l'appareil. Celle-ci vous montre comment on écrit le temps
@@ -25,17 +25,19 @@ Alors comment lire, au temps quatre, lequel on a sous les yeux ? En deux temps, 
 D'abord la nature du contact, que vous savez déjà lire depuis la station cinq point un. Lame
 penchée à gauche, vide entre elle et la borne : normalement ouvert. Lame penchée à droite avec sa
 petite barre : normalement fermé.
-Ensuite le sens du parachute. Sa coupole est tournée d'un côté ou de l'autre, et c'est ce qui
-distingue le retard au travail du retard au repos.
-Un conseil pour ce dernier point, et je vous le donne franchement : ne cherchez pas à retenir
-l'orientation dans l'abstrait, ça ne tient jamais. Au temps quatre, regardez les quatre symboles côte à côte,
+Ensuite le sens du parachute. Sur ces symboles, si le dôme est tourné à l'opposé de la lame,
+c'est un retard au travail. S'il est tourné vers la lame, c'est un retard au repos.
+Un conseil pour retenir ce sens : au temps quatre, regardez les quatre symboles côte à côte,
 deux par deux. C'est en les comparant qu'on voit la différence, pas en les apprenant isolément.
-Et sur le terrain, vous avez un deuxième moyen, plus sûr que le dessin : les repères de bornes, que vous
-retrouverez au temps trois.
+Et sur le terrain, vous avez un autre repère : les repères de bornes, que vous retrouverez au
+temps trois. Ils disent si le contact est temporisé, et s'il est ouvert ou fermé. Ils ne disent
+pas si le retard porte sur le travail ou sur le repos : cela se lit sur le symbole, ou sur la
+référence du bloc.
 Sur un bloc temporisé de contacteur : soixante-sept soixante-huit pour un contact ouvert
-temporisé, cinquante-cinq cinquante-six pour un fermé temporisé. La règle : les unités sept huit
-pour un ouvert temporisé, cinq six pour un fermé temporisé. Sur un module autonome, les repères
-peuvent être autres.`,
+temporisé, cinquante-cinq cinquante-six pour un fermé temporisé. Les unités sept huit désignent
+un ouvert à fonction spéciale, les unités cinq six un fermé à fonction spéciale : sur un bloc de
+contacteur, c'est le temporisé ; sur un relais thermique, ce sont d'autres repères, que la
+station quatre point sept présente. Sur un module autonome, les repères peuvent être autres.`,
 
   manipuler: `Les trois questions, pour des contacts.
 Ce ne sont pas des appareils : ce sont des pièces d'appareil. Répondez en pensant à ce qu'ils
@@ -44,7 +46,7 @@ sont, pas à ce que fait le module autour d'eux.`,
   representer: `Les quatre symboles sont sous vos yeux : comparez-les deux par deux, comme je vous l'ai dit.
 Un dernier point sur le terrain, parce qu'il fait perdre du temps à ceux qui l'ignorent.
 Sur beaucoup de blocs, un contact temporisé et un contact instantané cohabitent dans le même
-boîtier. De l'extérieur, rien ne les distingue : mêmes vis, même plastique.
+boîtier. De l'extérieur, ils se ressemblent : mêmes vis, même plastique.
 Ce qui les distingue, ce sont les repères écrits à côté des bornes. Treize quatorze pour
 l'instantané, soixante-sept soixante-huit pour le temporisé, sur un bloc de contacteur.
 Alors avant de conclure qu'un module ne temporise pas, regardez sur quelles bornes vous êtes

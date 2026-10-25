@@ -2,7 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.4', ligne: 5,
-  vue3d: { modele: 'relais' },   /* 3D */
+  vue3d: { modele: 'relais', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 4',
   titre: "Le relais électromécanique",
   narration: NARRATION,
@@ -36,7 +36,7 @@ ModeleAppareil.construire({
   variantes: [
     "<strong>Le relais simple</strong> — une bobine, un ou plusieurs contacts inverseurs. Le cas général.",
     "<strong>Le relais bistable, ou télérupteur</strong> — une impulsion le fait basculer, il y reste. L’impulsion suivante le fait revenir. Il <strong>garde</strong> sa position, contrairement aux autres relais.",
-    "<strong>Le relais statique</strong> — pas de pièce mobile du tout : un composant électronique fait le travail. Silencieux, très rapide, mais il chauffe et il ne coupe jamais complètement.",
+    "<strong>Le relais statique</strong> — pas de pièce mobile du tout : un composant électronique fait le travail. Silencieux, très rapide, mais il chauffe et il ne coupe pas tout à fait : un petit courant de fuite subsiste.",
     "<strong>Le relais de sécurité</strong> — plusieurs contacts contrôlés l’un par l’autre, pour qu’une pastille soudée soit détectée. On le trouve derrière les arrêts d’urgence."
   ],
 
@@ -56,8 +56,8 @@ ModeleAppareil.construire({
   cablage: [
     "La bobine se raccorde sur deux bornes repérées <strong>A1</strong> et <strong>A2</strong>, comme sur un contacteur.",
     "Vérifiez la <strong>tension de bobine</strong> avant de brancher : 24 V continu et 230 V alternatif ne se distinguent que par ce qui est écrit dessus.",
-    "Sur une bobine en <strong>courant continu</strong>, on pose une diode en parallèle, dans le sens qui bloque. Elle absorbe la surtension au moment de la coupure, qui abîmerait le transistor de commande.",
-    "Sur une embase, repérez le <strong>détrompeur</strong> : un relais enfiché à l’envers ne fonctionne pas, et peut se détruire."
+    "Sur une bobine en <strong>courant continu</strong>, on pose une diode de roue libre : une diode en parallèle sur la bobine, dans le sens qui bloque. Elle absorbe la surtension au moment de la coupure, qui abîmerait le transistor de commande.",
+    "Sur une embase, repérez le <strong>détrompeur</strong> (l’ergot ou la forme qui empêche de se tromper de sens) : un relais enfiché à l’envers ne fonctionne pas, et peut se détruire."
   ],
   piege: "Un relais n’est pas un contacteur miniature de secours. Si le catalogue annonce dix ampères, c’est en charge résistive — une lampe, une résistance. Sur un moteur, l’arc de coupure est bien plus dur, et la valeur tombe très en dessous.",
 
@@ -115,7 +115,7 @@ ModeleAppareil.construire({
     "<strong>Même principe qu’un contacteur</strong>, contacts beaucoup plus fins.",
     "<strong>KA</strong> pour un relais, <strong>KM</strong> pour un contacteur. Lisez le repère.",
     "<strong>Le bistable garde sa position.</strong> Une impulsion, il bascule ; une autre, il revient.",
-    "<strong>Jamais de moteur</strong> sur les contacts d’un relais."
+    "<strong>Ne branchez pas de moteur</strong> sur un petit relais."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Distinguer un relais d’un contacteur, lire les repères KA et KM, et connaître le cas particulier du relais bistable.</p><p><strong>Limite.</strong> Les relais de sécurité et les architectures de sécurité machine ne sont qu’évoqués : ils relèvent d’une formation spécifique.</p>',
@@ -124,7 +124,7 @@ ModeleAppareil.construire({
     { quoi: 'Coupes dessinées pour cette station', source: 'tracées pour ÉlectroRézo',
       detail: 'assets/relais-et-son-embase.svg et assets/telerupteur-bascule.svg : aucune photographie dans cette station' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/310_relays_contactors_contacts/' } ],
+      detail: 'relais, contacteurs et contacts' } ],
 
   correspondances: [
     { ligne: 5, couleur: '#0f7b6c', texte: "5.2 Le contacteur" },

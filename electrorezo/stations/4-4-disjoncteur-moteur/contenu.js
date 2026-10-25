@@ -15,14 +15,14 @@ ModeleAppareil.construire({
   ],
 
   photos: [
-    { src: 'assets/biblio/disjoncteurs-gv2.jpg', alt: "Schémas techniques de disjoncteurs moteurs magnéto-thermiques, avec leurs symboles et leurs dimensions.",
-      titre: "Les plages de réglage.", sous: "Chaque modèle couvre une plage : on choisit celle où tombe l’intensité du moteur." },
+    { src: 'assets/biblio/disjoncteurs-gv2.jpg', alt: "Page de catalogue de disjoncteurs-moteurs magnétothermiques GV2, GV3 et GV7 : les symboles du constructeur, avec I>, et les dimensions du boîtier.",
+      titre: "Sur le catalogue.", sous: "Le symbole du constructeur, avec I>, et l’encombrement : 44,5 mm de large." },
     { src: 'assets/biblio/schema-disjoncteur-moteur.jpeg', alt: "Schéma d’un disjoncteur moteur repéré Q1, avec la numérotation de ses bornes.",
-      titre: "Sur le plan.", sous: "Repéré Q1, en tête du départ, juste avant le contacteur." }
+      titre: "Sur le plan.", sous: "Repéré Q1, en tête du départ." }
   ],
-  creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
+  creditPhoto: 'Illustrations : documents de cours de la base de connaissances inerWeb ; la première est une page du catalogue Schneider Electric (GV2, GV3, GV7). Détail dans « Crédits ».',
 
-  aQuoiCaSert: "Protéger un moteur contre la surcharge <em>et</em> le court-circuit, avec un seul appareil réglable — et qui se condamne.",
+  aQuoiCaSert: "Protéger un moteur contre la surcharge <em>et</em> le court-circuit, avec un seul appareil réglable — et qui, souvent, se condamne.",
   ouOnLeTrouve: "En tête d’un départ moteur, à la place du couple fusible aM + relais thermique (le relais thermique est l’appareil qui surveille la surcharge du moteur — station 4.7). Un appareil au lieu de deux.",
 
   scene: () => SchemasProtection.deuxDeclencheurs(),
@@ -33,8 +33,8 @@ ModeleAppareil.construire({
 
   technologie: [
     ["Les deux déclencheurs", "comme le magnéto-thermique : bilame pour la surcharge, bobine pour le court-circuit."],
-    ["La molette de réglage", "c’est ce qui le distingue. On règle le thermique sur <strong>l’intensité lue sur la plaque du moteur</strong>, pas au jugé. La plaque donne deux intensités : une par couplage (triangle ou étoile, les deux façons de brancher les bobinages du moteur — station 1.7)."],
-    ["Le magnétique fixe", "il ne se règle pas : il est fixe, calé très haut — la valeur est donnée par la notice du constructeur — pour laisser passer la pointe de démarrage."],
+    ["La molette de réglage", "c’est ce qui le distingue (elle se voit sur la vue en 3D). On règle le thermique sur <strong>l’intensité lue sur la plaque du moteur</strong>, pas au jugé. La plaque donne deux intensités : une par couplage (triangle ou étoile, les deux façons de brancher les bobinages du moteur — station 1.7)."],
+    ["Le magnétique fixe", "sur les modèles courants (GV2), il ne se règle pas : il est fixe, calé très haut — la valeur est donnée par la notice du constructeur — pour laisser passer la pointe de démarrage."],
     ["L’aptitude au sectionnement", "beaucoup de modèles se cadenassent : ils remplacent aussi le sectionneur du départ."]
   ],
 
@@ -42,16 +42,16 @@ ModeleAppareil.construire({
     "<strong>Plages de réglage</strong> : 0,16–0,25 A, 6–10 A, 17–23 A… on choisit la plage où tombe l’intensité du moteur.",
     "<strong>Avec ou sans contacts auxiliaires</strong> — pour signaler le déclenchement à l’automate.",
     "<strong>Boîtier ou modulaire</strong> — poignée rotative sur le coffret, ou rangée dans le tableau.",
-    "<strong>Il remplace le couple aM + relais thermique</strong>, mais il ne remplace pas le contacteur : lui ne commande pas."
+    "<strong>Il remplace le couple aM + relais thermique</strong>, mais il ne remplace pas le contacteur : sa manette se tourne à la main, il ne reçoit pas les ordres de l’automate et n’est pas fait pour démarrer et arrêter le moteur à longueur de journée."
   ],
 
   aptitudes: {
     surcharge: true, courtCircuit: true, defautIsolement: false,
     bonneReponse: "Les deux surintensités, comme le magnéto-thermique — mais avec un réglage. Il ne voit toujours pas le défaut d’isolement : pour cela il faut un différentiel en amont.",
     erreurs: {
-      surcharge: "Il voit la surcharge, et c’est même là qu’il est irremplaçable : réglé sur l’intensité de la plaque, il protège ce moteur-là précisément.",
+      surcharge: "Il voit la surcharge, et c’est là qu’il est le plus utile : réglé sur l’intensité de la plaque, il protège ce moteur-là précisément.",
       courtCircuit: "Il voit le court-circuit : sa bobine est calée haut, mais elle est bien là.",
-      defautIsolement: "Il ne voit pas le défaut d’isolement. Aucun appareil de cette famille ne le voit : il faut un tore différentiel."
+      defautIsolement: "Il ne voit pas le défaut d’isolement. En général, aucun appareil de cette famille ne le voit : il faut un tore différentiel."
     }
   },
 
@@ -66,7 +66,7 @@ ModeleAppareil.construire({
   symboles: [
     { src: 'assets/disjonct-m_3f.svg',
       alt: "Symbole normalisé d’un disjoncteur à trois pôles : contact incliné, croix, crochet du thermique, demi-cercle du magnétique, et la barre courte du sectionnement.",
-      legende: "Quatre signes : croix, crochet, demi-cercle, barre" },
+      legende: "La croix, puis trois signes : crochet, demi-cercle, barre" },
     { src: 'assets/dis_mag_term_3f-2.svg',
       alt: "Symbole normalisé d’un disjoncteur moteur à trois pôles : la croix, le crochet, des rectangles marqués « I> » à la place du demi-cercle, et les repères de bornes.",
       legende: "Le même, écrit avec I> et les repères de bornes" }
@@ -83,7 +83,7 @@ ModeleAppareil.construire({
       reponses: [
         { texte: "Sur la puissance en kilowatts.", pourquoi: "La puissance figure sur la plaque, mais la molette se règle en ampères." },
         { texte: "Sur la section du câble.", pourquoi: "La section conditionne le calibre d’une protection de circuit, pas le réglage d’une protection de moteur." },
-        { texte: "Au maximum, par sécurité.", pourquoi: "Au maximum, le moteur n’est plus protégé du tout : c’est l’erreur la plus fréquente." },
+        { texte: "Au maximum, par sécurité.", pourquoi: "Au maximum, le moteur n’est plus protégé contre la surcharge : le court-circuit coupe toujours, mais le moteur peut chauffer sans que rien ne déclenche. C’est une erreur fréquente." },
         { texte: "Sur l’intensité lue sur la plaque du moteur.", juste: true } ] },
 
     { question: "Un même moteur, dont la plaque porte deux intensités, passe du triangle à l’étoile parce que la tension du réseau change. Le réglage change-t-il ?",
@@ -97,7 +97,7 @@ ModeleAppareil.construire({
     { question: "Le disjoncteur moteur remplace…",
       confirmation: "Le couple fusible aM + relais thermique, en un seul appareil réglable.",
       reponses: [
-        { texte: "Le contacteur.", pourquoi: "Non : le disjoncteur protège, le contacteur commande. Deux métiers différents." },
+        { texte: "Le contacteur.", pourquoi: "Non : le contacteur reçoit les ordres de l’automate ; le disjoncteur moteur protège. Deux métiers différents." },
         { texte: "Le couple fusible aM + relais thermique.", juste: true },
         { texte: "Le bornier de raccordement.", pourquoi: "Aucun rapport : le bornier ne protège rien." },
         { texte: "Le différentiel.", pourquoi: "Il ne voit pas le défaut d’isolement : il ne remplace aucun différentiel." } ] },
@@ -122,12 +122,12 @@ ModeleAppareil.construire({
 
   credits: [
     { quoi: 'Photographies', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances inerWeb ; la première photo reproduit une page du catalogue Schneider Electric (GV2, GV3, GV7)' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
       detail: 'svg/10_electric/10_allpole/' } ],
 
   correspondances: [
     { ligne: 1, couleur: '#1b3a63', texte: "1.7 Lire une plaque signalétique" },
     { ligne: 4, couleur: '#c0392b', texte: "4.7 Le relais thermique" },
-    { ligne: 6, couleur: '#c9451a', texte: "6.4 Le couplage" } ]
+    { ligne: 6, couleur: '#c9451a', texte: "6.4 Le couplage de la plaque à bornes" } ]
 });

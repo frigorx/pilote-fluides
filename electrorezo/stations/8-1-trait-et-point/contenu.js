@@ -25,7 +25,7 @@ ModeleSigne.construire({
   <line x1="120" y1="110" x2="300" y2="110" stroke="#1b3a63" stroke-width="5"/>
   <line x1="210" y1="80"  x2="210" y2="200" stroke="#1b3a63" stroke-width="5"/>
   <circle cx="210" cy="110" r="9" fill="#1b3a63"/>
-  <text x="210" y="238" text-anchor="middle" font-size="16" font-weight="700" fill="#1e7e54">avec le point</text>
+  <text x="210" y="238" text-anchor="middle" font-size="16" font-weight="700" fill="#1b3a63">avec le point</text>
   <text x="210" y="262" text-anchor="middle" font-size="14" fill="#637285">les deux fils sont reliés</text>
   <text x="210" y="284" text-anchor="middle" font-size="14" fill="#637285">le courant passe de l’un à l’autre</text>
 </g>
@@ -33,7 +33,7 @@ ModeleSigne.construire({
 <g>
   <line x1="470" y1="110" x2="650" y2="110" stroke="#1b3a63" stroke-width="5"/>
   <line x1="560" y1="80"  x2="560" y2="200" stroke="#1b3a63" stroke-width="5"/>
-  <text x="560" y="238" text-anchor="middle" font-size="16" font-weight="700" fill="#c0392b">sans le point</text>
+  <text x="560" y="238" text-anchor="middle" font-size="16" font-weight="700" fill="#1b3a63">sans le point</text>
   <text x="560" y="262" text-anchor="middle" font-size="14" fill="#637285">ils se croisent sans se toucher</text>
   <text x="560" y="284" text-anchor="middle" font-size="14" fill="#637285">comme une route qui passe en pont</text>
 </g>
@@ -50,11 +50,12 @@ ModeleSigne.construire({
   ],
 
   exercice: () => Signes.exerciceCroisements(),
-  motsOuOnLaTrouve: ['interrupteur', 'fusible', 'moteur'],
-  motVedette: 'moteur',
+  motsOuOnLaTrouve: ['fusible', 'sectionneurFusible', 'moteur'],
+  motVedette: 'sectionneurFusible',
 
   symbolesBiblio: [
-    { src: 'assets/liaison_t_point.svg', alt: 'Symbole normalisé d’une connexion en T : un fil qui en rejoint un autre, avec un point à la jonction.', legende: 'Une connexion en T : le point dit que les fils sont reliés' },
+    { src: 'assets/liaison_t_point.svg', alt: 'Symbole normalisé d’une connexion en T : un fil qui en rejoint un autre, avec un point à la jonction.', legende: 'Une connexion en T, avec son point : les fils sont reliés' },
+    { src: 'assets/liaison_t.svg', alt: 'Symbole normalisé d’une liaison en T sans point : un fil qui en rejoint un autre, sans rien à la jonction.', legende: 'Une liaison en T, sans point : les fils sont reliés aussi' },
     { src: 'assets/cross.svg', alt: 'Symbole normalisé d’un croisement avec connexion : deux traits qui se croisent, avec un point au croisement.', legende: 'Un croisement avec connexion : le point est là' },
     { src: 'assets/jump.svg', alt: 'Symbole ancien d’un enjambement : un fil dessine une petite bosse pour passer par-dessus l’autre fil, qui n’est pas dessiné ici.', legende: 'Un enjambement : symbole ancien, encore présent sur des plans anciens ou étrangers' }
   ],
@@ -62,6 +63,7 @@ ModeleSigne.construire({
     'Sur un vrai plan, <strong>en général, aucune légende n’accompagne ces signes</strong>. Ils sont trop courants pour qu’on les explique : personne n’écrit « ici, connexion ».',
     'C’est pour cela qu’il faut les connaître par cœur, <strong>eux et seulement eux</strong> : les autres lettres, vous les déduirez.',
     'Un croisement <strong>sans</strong> connexion n’a pas de fichier à lui dans la bibliothèque : ce sont simplement deux traits qui se coupent, sans point (voir le temps 2).',
+    'Sur un croisement, c’est le point qui dit si les fils sont reliés. Un fil qui se branche sur un autre en formant un <strong>T</strong>, lui, est relié avec ou sans point : les deux symboles ci-dessus le montrent.',
     'Attention aux plans redessinés ou photocopiés : un point mal imprimé disparaît. Dans le doute, on suit le fil, on ne devine pas.'
   ],
 
@@ -71,7 +73,7 @@ ModeleSigne.construire({
       reponses: [
         { texte: 'Les deux fils sont reliés, le courant passe de l’un à l’autre.', juste: true },
         { texte: 'Les deux fils se croisent sans se toucher.', pourquoi: 'C’est justement le contraire : sans point, ils se croisent ; avec point, ils se relient.' },
-        { texte: 'C’est un repère de mesure.', pourquoi: 'Les points de mesure se signalent autrement, et sont toujours annotés.' },
+        { texte: 'C’est un repère de mesure.', pourquoi: 'Les points de mesure se signalent autrement, en général avec un repère écrit.' },
         { texte: 'Il y a une soudure à faire à cet endroit.', pourquoi: 'Le point dit une liaison électrique, pas une technique d’assemblage. La soudure, l’embout ou la borne se lisent ailleurs.' } ] },
 
     { question: 'Sur un plan, un trait tout seul représente…',
@@ -93,7 +95,7 @@ ModeleSigne.construire({
     { question: 'Un plan photocopié, un point qui a disparu à l’impression. Que faites-vous ?',
       confirmation: 'On suit le fil et on vérifie ailleurs. On ne parie pas sur un point.',
       reponses: [
-        { texte: 'Je regarde la couleur des fils sur la machine, c’est équivalent.', pourquoi: 'Les couleurs renseignent sur la fonction du conducteur, pas sur la topologie du schéma.' },
+        { texte: 'Je regarde la couleur des fils sur la machine, c’est équivalent.', pourquoi: 'La couleur dit à quoi sert le fil (phase, neutre, terre), pas à quel autre fil il est relié sur le plan.' },
         { texte: 'Je relie quand même : dans le doute, mieux vaut connecter.', pourquoi: 'Relier deux conducteurs qui ne devaient pas l’être peut créer un court-circuit franc.' },
         { texte: 'Je suppose qu’il n’y a pas de connexion, c’est le cas le plus courant.', pourquoi: 'Une supposition sur un plan, c’est une erreur de câblage qui attend son heure.' },
         { texte: 'Je demande un plan à jour, ou je suis le fil sur l’installation.', juste: true } ] }
@@ -101,17 +103,21 @@ ModeleSigne.construire({
 
   retenir: [
     '<strong>Le trait = un conducteur.</strong> La lettre la plus fréquente.',
-    '<strong>Le point = une connexion.</strong> Sans lui, les fils se croisent sans se toucher.',
+    '<strong>Sur un croisement, le point = une connexion.</strong> Sans lui, les fils se croisent sans se toucher. Un fil qui se branche en T est relié avec ou sans point.',
     'Ces deux-là ne sont presque jamais légendés sur un plan : c’est à vous de les lire.',
     'Un point douteux se vérifie, il ne se devine pas.'
   ],
+
+  /* Champs facultatifs lus par modele-signe.js une fois corrigé (voir RAPPORT « communs ») */
+  legendeForme: 'Le trait est le fil vu de loin ; le point, lui, est une convention : c’est l’un des rares signes à apprendre par cœur.',
+  creditSymboles: 'Symboles de la bibliothèque inerWeb, convertie depuis QElectroTech (liaison en T : EN 60617 ; croisement et enjambement : dossier des connexions). Les dessins des temps 1 à 3 sont, eux, des représentations pédagogiques faites pour être décomposées.',
 
   objectifs: '<p><strong>Objectif.</strong> Lire les deux signes les plus fréquents du schéma : le trait qui est un conducteur, et le point qui dit si deux fils sont reliés. Savoir ce que coûte la confusion.</p>',
 
   credits: [
     { quoi: 'Symboles de connexion, croisement et enjambement',
       source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/114_connections/ (cross.svg, jump.svg) · svg/10_electric/91_en_60617/en_60617_03/en_60617_03_02/en_60617_03_02_05.svg (liaison en T avec point)' } ],
+      detail: 'svg/10_electric/10_allpole/114_connections/ (cross.svg, jump.svg) · svg/10_electric/91_en_60617/en_60617_03/en_60617_03_02/en_60617_03_02_05.svg (liaison en T avec point) et en_60617_03_02_04.svg (liaison en T sans point)' } ],
 
   correspondances: [
     { ligne: 8, couleur: '#7c3aed', texte: '8.2 Le contact' },

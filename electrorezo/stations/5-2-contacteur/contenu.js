@@ -17,15 +17,15 @@ ModeleAppareil.construire({
       titre: "L’appareil.", sous: "Le cœur de toute armoire de commande." },
     { src: 'assets/biblio/contacteur-en-coupe.jpeg',
       alt: "Vue éclatée d’un contacteur LC1-D : boîtier d’arc, contacts fixes et mobiles, porte-contacts, armature, ressort de rappel, bobine, circuit magnétique, socle.",
-      titre: "Ouvert, pièce par pièce.", sous: "Chaque nom de cette planche va être expliqué." },
+      titre: "Ouvert, pièce par pièce.", sous: "Les pièces principales vont être expliquées." },
     { src: 'assets/biblio/contacteur-coupe-detaillee.jpeg',
-      alt: "Coupe détaillée d’un contacteur LC1-D montrant l’empilement du boîtier d’arc, des contacts et de la bobine.",
-      titre: "En coupe.", sous: "On voit la bobine en bas, les contacts en haut." }
+      alt: "Même vue éclatée d’un contacteur LC1-D, cadrée plus petit : on voit l’empilement du boîtier d’arc, des contacts et de la bobine.",
+      titre: "Même planche, plus petite.", sous: "Toujours la vue éclatée : la bobine en bas, les contacts en haut." }
   ],
   creditPhoto: 'Planches techniques issues de documents de cours indexés. Détail dans « Crédits ».',
 
   aQuoiCaSert: "À faire commander un gros courant par un tout petit. Vous alimentez une bobine avec quelques watts, et trois contacts capables de porter des dizaines d’ampères se ferment d’un coup.",
-  ouOnLeTrouve: "Dans toute armoire où il y a un moteur, un compresseur, un ventilateur, une résistance de chauffage. Dès qu’une machine se commande à distance, il y a un contacteur.",
+  ouOnLeTrouve: "Dans toute armoire où il y a un moteur, un compresseur, un ventilateur, une résistance de chauffage. Dès qu’un moteur se commande à distance, il y a presque toujours un contacteur (ou un variateur, ligne 7).",
 
   scene: () => SchemasCommande.coupeContacteur(),
 
@@ -40,7 +40,7 @@ ModeleAppareil.construire({
   variantes: [
     "<strong>Le calibre</strong> — un LC1D09 tient neuf ampères en service moteur, un LC1D65 en tient soixante-cinq. Il se choisit sur la puissance du moteur.",
     "<strong>La tension de bobine</strong> — 24 V, 48 V, 230 V, 400 V, en continu ou en alternatif. Elle est écrite sur la bobine, et elle n’a rien à voir avec la tension de puissance.",
-    "<strong>La catégorie d’emploi</strong> — <strong>AC-3</strong> pour un moteur qui démarre et s’arrête normalement, <strong>AC-4</strong> pour un moteur qu’on freine à contre-courant ou qu’on manœuvre par à-coups (démarrages et inversions rapides en marche). À calibre égal, l’AC-4 est bien plus dur. Un démarreur-inverseur ordinaire, qui attend l’arrêt complet avant de repartir dans l’autre sens, reste en AC-3.",
+    "<strong>La catégorie d’emploi</strong> — <strong>AC-3</strong> pour un moteur qui démarre et s’arrête normalement, <strong>AC-4</strong> pour un moteur qu’on freine à contre-courant ou qu’on manœuvre par à-coups (impulsions de marche répétées). À calibre égal, l’AC-4 est bien plus dur. Un démarreur-inverseur ordinaire, qui attend l’arrêt complet avant de repartir dans l’autre sens, reste en AC-3.",
     "<strong>Le contacteur-inverseur</strong> — deux contacteurs verrouillés l’un avec l’autre, pour faire tourner un moteur dans les deux sens sans jamais les coller ensemble."
   ],
   reglage: "Un contacteur ne se règle pas. Il se choisit : calibre selon le moteur, tension de bobine selon le circuit de commande, catégorie d’emploi selon le service. Une seule vérification a du sens sur le terrain : que la tension écrite sur la bobine soit bien celle que vous allez lui envoyer.",
@@ -54,15 +54,15 @@ ModeleAppareil.construire({
     erreurs: {
       puissance: 'Ses contacts principaux sont épais et logés dans un boîtier d’arc : ils sont faits pour le courant d’un moteur.',
       distance: 'C’est même sa raison d’être : une bobine de quelques watts, et trois gros contacts obéissent.',
-      maintien: 'Un contacteur ne garde rien. Le ressort de rappel le fait retomber dès que la bobine n’est plus alimentée. C’est un défaut voulu : après une coupure de courant, une machine ne doit pas repartir toute seule.'
+      maintien: 'Un contacteur ne garde rien. Le ressort de rappel le fait retomber dès que la bobine n’est plus alimentée. Ce n’est pas un défaut, c’est une sécurité : avec une commande par bouton et auto-maintien (station suivante), la machine ne repart pas toute seule au retour du courant. Avec un thermostat, elle repart : c’est le fonctionnement d’une régulation.'
     }
   },
 
   cablage: [
     "La <strong>bobine</strong> se raccorde entre <strong>A1</strong> et <strong>A2</strong>. Ces deux bornes sont sur le circuit de commande, jamais sur la puissance.",
-    "Les <strong>contacts de puissance</strong> portent 1/2, 3/4, 5/6. L’entrée en haut, la sortie en bas — toujours dans ce sens.",
+    "Les <strong>contacts de puissance</strong> portent 1/2, 3/4, 5/6. Les repères 1, 3, 5 reçoivent le réseau ; 2, 4, 6 partent vers le moteur : respectez ce repérage.",
     "Les <strong>contacts auxiliaires</strong> portent des repères à deux chiffres : 13-14, 21-22. Ce sont eux qui vont dans la commande.",
-    "En amont, il faut toujours une protection : disjoncteur moteur ou fusible aM plus relais thermique. Le contacteur commande, il ne protège pas."
+    "En amont, une protection contre le court-circuit : soit un disjoncteur moteur seul (il protège aussi contre la surcharge), soit des fusibles aM avec un relais thermique clipsé juste sous le contacteur. Le contacteur commande, il ne protège pas."
   ],
   piege: "Un contacteur n’est <strong>pas</strong> un appareil de sectionnement. Il n’a ni distance d’ouverture garantie, ni possibilité de cadenassage. Ouvrir un contacteur ne met personne en sécurité.",
 
@@ -128,9 +128,9 @@ ModeleAppareil.construire({
     { quoi: 'Vue éclatée du contacteur LC1-D', source: 'document de cours indexé dans la base inerWeb',
       detail: 'Activité 8 et 10 — Appareillages pour le câblage de moteurs' },
     { quoi: 'Photographies', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/310_relays_contactors_contacts/' } ],
+      detail: 'relais, contacteurs et contacts' } ],
 
   correspondances: [
     { ligne: 6, couleur: '#c9451a', texte: "6.1 La bobine et l’électro-aimant" },

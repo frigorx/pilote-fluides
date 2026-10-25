@@ -2,7 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.3', ligne: 5,
-  vue3d: { modele: 'contacteur', options: { blocAdditif: true } },   /* 3D */
+  vue3d: { modele: 'contacteur', options: { blocAdditif: true }, defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 3',
   titre: "Le contact auxiliaire",
   narration: NARRATION,
@@ -20,7 +20,7 @@ ModeleAppareil.construire({
       titre: "Des blocs à ajouter.", sous: "Latéral, frontal, temporisé : on complète l’appareil." },
     { src: 'assets/biblio/positions-des-contacts.jpeg',
       alt: "Schéma d’un contacteur détaillant les positions et repères de ses différents contacts.",
-      titre: "Chacun son repère.", sous: "13-14, 21-22 : le numéro dit tout." }
+      titre: "Chacun son repère.", sous: "13-14 : le numéro dit tout." }
   ],
   creditPhoto: 'Documents de cours indexés dans la base inerWeb. Détail dans « Crédits ».',
 
@@ -31,7 +31,7 @@ ModeleAppareil.construire({
 
   technologie: [
     ["Le même porte-contacts", "les auxiliaires sont montés sur la barre qui porte les contacts de puissance. Ils suivent donc le même mouvement, dans un ordre fixe : les NF s’ouvrent <strong>avant</strong> que les NO se ferment."],
-    ["Des pastilles fines", "quelques ampères tout au plus. Il n’y a pas de boîtier d’arc au-dessus : ces contacts ne sont pas faits pour couper de la puissance."],
+    ["Des pastilles fines", "les petites pièces de métal qui se touchent : quelques ampères tout au plus. Il n’y a pas de boîtier d’arc au-dessus : ces contacts ne sont pas faits pour couper de la puissance."],
     ["Des blocs additionnels", "quand les contacts intégrés ne suffisent pas, on clipse un bloc sur le côté ou en façade. Il se pilote par le même mouvement."],
     ["Le contact miroir", "un NF dont le constructeur garantit qu’il ne peut pas être fermé en même temps qu’un contact de puissance soudé. C’est un contact de sécurité."]
   ],
@@ -48,7 +48,7 @@ ModeleAppareil.construire({
   consigneAptitudes: 'Le contact auxiliaire ne porte rien, et pourtant il est indispensable. Cochez, puis validez.',
   aptitudes: {
     puissance: false, distance: true, maintien: false,
-    bonneReponse: 'Exact. Il n’a aucune puissance, il ne garde rien tout seul — et il est pourtant ce qui permet à un circuit de se tenir. Regardez bien la scène ci-dessus : c’est lui qui ferme la boucle.',
+    bonneReponse: 'Exact. Il n’a aucune puissance, il ne garde rien tout seul — et il est pourtant ce qui permet à un circuit de se tenir. Regardez bien la scène du temps 2 : c’est lui qui ferme la boucle.',
     erreurs: {
       puissance: 'Ses pastilles sont fines et il n’a pas de boîtier d’arc. Y brancher un moteur, c’est les souder au premier démarrage.',
       distance: 'Il bouge quand la bobine du contacteur colle : il obéit donc bien à distance, comme le reste de l’appareil.',
@@ -125,12 +125,12 @@ ModeleAppareil.construire({
 
   credits: [
     { quoi: 'Photographies et planches', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/310_relays_contactors_contacts/' } ],
+      detail: 'relais, contacteurs et contacts' } ],
 
   correspondances: [
     { ligne: 5, couleur: '#0f7b6c', texte: "5.2 Le contacteur" },
     { ligne: 8, couleur: '#7c3aed', texte: "8.9 Les repères" },
-    { ligne: 5, couleur: '#0f7b6c', texte: "5.9 Lire un schéma complet" } ]
+    { ligne: 5, couleur: '#0f7b6c', texte: "5.9 Lire un schéma : puissance et commande" } ]
 });

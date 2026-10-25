@@ -39,7 +39,7 @@ numéro de la station où ce symbole est expliqué. Retournez-y. C'est plus util
 recommencer le jeu en espérant mieux tomber.`,
 
   representer: `Cette page-là, gardez-la.
-Tous les symboles du réseau, rangés par famille, avec sous chacun le numéro de la station
+Les symboles principaux du réseau, rangés par famille, avec sous chacun le numéro de la station
 où il est expliqué. Imprimez-la si vous voulez, elle est faite pour ça.
 Un conseil sur la façon de s'en servir. Ne la relisez pas de haut en bas comme une leçon,
 ça ne rentre pas. Prenez une famille, une seule, et regardez ce qui distingue ses membres

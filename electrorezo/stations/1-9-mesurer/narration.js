@@ -1,6 +1,6 @@
 /* ÉlectroRézo 1.9 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 sont refaits en Piper à chaque changement de texte. */
 const NARRATION = {
 
   decouvrir: `Dernière station de la ligne, et c'est celle qui rend toutes les autres utiles.
@@ -25,9 +25,9 @@ Une habitude à prendre tout de suite : la pointe noire va dans la borne marqué
 bouge jamais. Jamais.
 C'est la rouge qu'on déplace selon ce qu'on veut mesurer. Et c'est donc elle, toujours elle, qui
 est en cause quand ça ne marche pas.
-Regardez maintenant la position ohms. Elle est bonne pour une résistance — mais seulement hors
-tension, sur un élément débranché d'au moins un côté. Sur une prise vivante, la valeur est fausse
-et l'appareil peut être détruit.`,
+Regardez maintenant la position ohms. La borne est la bonne pour une résistance — mais la position
+ne s'emploie que hors tension, sur un élément débranché d'au moins un côté. Sur une prise vivante,
+comme ici, la valeur est fausse et l'appareil peut être détruit.`,
 
   manipuler: `Passons à la pince, parce qu'elle mérite qu'on explique pourquoi elle est si commode.
 Pour mesurer un courant au multimètre, il faut ouvrir le circuit et y insérer l'appareil. Sur une
@@ -38,24 +38,25 @@ lit le champ magnétique qui entoure le fil, et elle en déduit le courant.
 Aucun contact électrique avec le fil, aucune coupure. La machine continue de tourner pendant que
 vous mesurez. Un seul point de vigilance : dans une armoire, ne refermez pas la mâchoire sur deux
 pièces nues à la fois. Et la pince porte, comme le multimètre, sa catégorie de mesure.
-Deux règles avec elle, et elles sont simples. Un seul conducteur à la fois — sinon l'aller annule
-le retour. Et bien refermer la mâchoire, sinon la lecture est basse.
+Deux règles avec elle, et elles sont simples. Un seul conducteur à la fois : si vous prenez la
+phase et le neutre d'un même circuit, l'aller annule le retour. Et bien refermer la mâchoire,
+sinon la lecture est basse.
 Une dernière chose, très importante, et je vais être direct.
 Ne concluez jamais « c'est hors tension » sur une seule lecture à zéro.
 Un appareil éteint affiche zéro. Un cordon coupé à l'intérieur affiche zéro. Une mauvaise position
-affiche zéro. Une pile morte affiche zéro.
+peut afficher zéro. Une pile usée peut fausser la lecture.
 La méthode, c'est : on vérifie l'appareil sur une source dont on sait qu'elle est vivante, on
 mesure ce qu'on veut mesurer, puis on revérifie l'appareil.
 Et pour intervenir, on n'emploie pas un multimètre du tout : on emploie un vérificateur d'absence
-de tension, qui est fait pour ça et qui ne se trompe pas de position.`,
+de tension, qui est fait pour ça, et que l'on vérifie lui aussi, avant et après.`,
 
   representer: `Cette station n'a pas d'unité à elle. Ce qu'elle a, c'est un marquage que je veux que vous
 sachiez lire, parce qu'il concerne votre sécurité.
-Sur le corps de tout appareil sérieux, il y a écrit quelque chose comme CAT III six cents volts.
+Sur le corps de tout appareil sérieux, il y a écrit quelque chose comme cat trois, six cents volts.
 Ce n'est pas une mention commerciale.
 La catégorie dit sur quel type d'installation l'appareil peut travailler sans danger.
 CAT deux, c'est les prises et les circuits terminaux. CAT trois, les tableaux et les armoires.
-CAT quatre, l'origine de l'installation, avant le disjoncteur de branchement.
+CAT quatre, l'origine de l'installation : le branchement, le compteur, le disjoncteur de branchement.
 Pourquoi ça compte ? Parce que plus on remonte vers la source, plus l'énergie disponible en cas
 de court-circuit est grande. Un appareil de catégorie deux employé dans une armoire peut exploser
 dans la main.

@@ -15,7 +15,7 @@ ModeleAppareil.construire({
     { src: 'assets/biblio/condamnation-cadenas.png',
       alt: 'Photo de deux mains qui posent un dispositif de condamnation rouge, avec son cadenas, sur un appareil modulaire d’un tableau électrique.',
       titre: 'La condamnation.',
-      sous: 'Un cadenas, une clé dans votre poche. C’est là qu’est toute la sécurité.' }
+      sous: 'Un cadenas, une clé dans votre poche : personne ne referme derrière vous.' }
   ],
   creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
 
@@ -26,15 +26,15 @@ ModeleAppareil.construire({
   tableauLigne: true,
 
   technologie: [
-    ['La distance garantie', 'ouvert, l’écart entre les pièces est calculé et vérifié par le constructeur. Aucun courant ne peut le franchir, même lors d’une surtension.'],
+    ['La distance garantie', 'ouvert, l’écart entre les pièces est calculé et vérifié par le constructeur. Il est suffisant pour tenir les surtensions prévues par le constructeur (tension de tenue aux chocs).'],
     ['La condamnation', 'un trou dans la poignée reçoit un cadenas. Vous gardez la clé, vous posez une étiquette à votre nom. Personne ne referme, même par erreur.'],
-    ['La coupure visible', 'sur beaucoup de modèles, on <em>voit</em> les pièces séparées. On ne croit pas une poignée sur parole : on regarde.'],
-    ['Pas de pouvoir de coupure', 'ni ressort, ni chambre d’extinction. <strong>Il n’est pas fait pour ouvrir pendant que le courant passe.</strong>']
+    ['La coupure visible', 'sur beaucoup de modèles, on <em>voit</em> les pièces séparées. On ne croit pas une poignée sur parole : on regarde. Mais seule la vérification d’absence de tension prouve qu’on peut travailler.'],
+    ['Pas de pouvoir de coupure', 'en général, ni ressort, ni chambre d’extinction. <strong>Il n’est pas fait pour ouvrir pendant que le courant passe.</strong>']
   ],
 
   variantes: [
     '<strong>Unipolaire, bipolaire, tripolaire, tétrapolaire</strong> — selon le nombre de fils à séparer.',
-    '<strong>Avec ou sans coupure visible</strong> — la coupure visible se voit à l’œil ; pour l’autre, on s’appuie sur l’indicateur de position, puis on vérifie l’absence de tension avec un vérificateur d’absence de tension (VAT).',
+    '<strong>Avec ou sans coupure visible</strong> — la coupure visible se voit à l’œil ; sans elle, un indicateur de position fiable dit où sont les contacts. Dans les deux cas, seule la vérification d’absence de tension, avec un vérificateur d’absence de tension (VAT), prouve qu’on peut travailler.',
     '<strong>À fusibles</strong> — il devient alors un sectionneur porte-fusible, station 3.5.',
     '<strong>De terre</strong> — il met à la terre ce qui est séparé. Surtout employé en haute tension.',
     'Un sectionneur porte un <strong>courant assigné</strong> : ce qu’il supporte de laisser passer, pas ce qu’il sait couper.'
@@ -56,18 +56,35 @@ ModeleAppareil.construire({
     'Le <strong>conducteur de protection n’est jamais coupé</strong>. Jamais.',
     'La poignée doit rester accessible et son trou de cadenas dégagé.'
   ],
-  piege: 'L’erreur qui tue : ouvrir un sectionneur en charge. On coupe d’abord ailleurs — interrupteur, disjoncteur, contacteur (vus plus loin) — <strong>ensuite</strong> on ouvre le sectionneur.',
+  piege: 'L’erreur qui tue : ouvrir un sectionneur en charge. On coupe d’abord ailleurs — interrupteur (3.1), disjoncteur et contacteur (vus plus loin) — <strong>ensuite</strong> on ouvre le sectionneur.',
 
   symboles: [
-    { src: 'assets/sectionneur4.svg', alt: 'Symbole normalisé d’un sectionneur à trois pôles : trois lames, chacune avec une petite barre au bout du contact fixe.', legende: 'Sectionneur, trois pôles' },
+    { src: 'assets/sectionneur4.svg', alt: 'Symbole normalisé d’un sectionneur à trois pôles : trois lames, chacune avec une petite barre au bout du contact fixe. La liaison entre les pôles n’est pas tracée dans ce dessin.', legende: 'Sectionneur, trois pôles' },
     { src: 'assets/sectionneur1.svg', alt: 'Symbole normalisé d’un sectionneur à un pôle : une lame, avec une petite barre au bout du contact fixe.', legende: 'Sectionneur, un pôle' }
   ],
   lecturePlan: [
     'Le détail qui distingue le sectionneur de l’interrupteur : une <strong>petite barre</strong> au bout du contact, côté fixe, là où la lame vient s’appuyer. Elle signifie « aptitude au sectionnement ».',
-    'Cette barre dit que l’appareil est capable d’isoler et de se condamner. Pour travailler derrière : ouvrir, condamner, vérifier l’absence de tension. <strong>Cherchez-la sur vos plans.</strong>'
+    'Cette barre dit que l’appareil est capable d’isoler. Pour le condamner, vérifiez sur l’appareil qu’il a un trou de cadenas. Pour travailler derrière : ouvrir, condamner, vérifier l’absence de tension. <strong>Cherchez la barre sur vos plans.</strong>',
+    'Les trois lames du dessin à trois pôles forment un seul appareil : elles s’ouvrent ensemble. Dans ce dessin de la bibliothèque, la liaison entre les pôles (un pointillé, station 8.7) n’est pas tracée.'
   ],
 
   quiz: [
+    { question: 'Sur un plan, comment reconnaît-on un sectionneur d’un simple interrupteur ?',
+      confirmation: 'La petite barre au bout du contact, côté fixe, là où la lame vient s’appuyer : l’aptitude au sectionnement.',
+      reponses: [
+        { texte: 'Il est toujours dessiné fermé.', pourquoi: 'Tous les appareils sont dessinés au repos, cela ne distingue rien.' },
+        { texte: 'Il est dessiné plus gros.', pourquoi: 'La taille d’un symbole ne porte jamais d’information : elle dépend de l’échelle du plan.' },
+        { texte: 'Il porte un repère qui commence par Q.', pourquoi: 'Le repère aide, mais il désigne aussi disjoncteurs et interrupteurs-sectionneurs : il ne suffit pas.' },
+        { texte: 'Une petite barre au bout du contact, côté fixe, là où la lame vient s’appuyer.', juste: true } ] },
+
+    { question: 'Que se passe-t-il si on ouvre un sectionneur en charge ?',
+      confirmation: 'Sans pouvoir de coupure, l’arc s’installe au lieu de s’éteindre.',
+      reponses: [
+        { texte: 'Rien de particulier, il s’ouvre comme un interrupteur.', pourquoi: 'Non : il n’a, en général, ni ressort ni chambre d’extinction. C’est exactement ce qui le différencie.' },
+        { texte: 'Un arc s’installe, il ne s’éteint pas, et il projette.', juste: true },
+        { texte: 'La machine redémarre toute seule.', pourquoi: 'Ce n’est pas un phénomène lié au sectionnement.' },
+        { texte: 'Le fusible en amont fond immédiatement et tout va bien.', pourquoi: 'Rien ne garantit qu’un fusible fonde à cet instant : l’arc, lui, est déjà là.' } ] },
+
     { question: 'À quoi sert d’abord un sectionneur ?',
       confirmation: 'C’est un appareil de sécurité, pas de commande.',
       reponses: [
@@ -76,29 +93,13 @@ ModeleAppareil.construire({
         { texte: 'À éteindre une machine en fin de journée.', pourquoi: 'Ce serait l’ouvrir en charge, ce qu’il ne sait pas faire. Pour éteindre, on utilise l’interrupteur ou le contacteur.' },
         { texte: 'À faire varier la puissance du récepteur.', pourquoi: 'Un sectionneur est ouvert ou fermé. Il n’y a pas de position intermédiaire.' } ] },
 
-    { question: 'Que se passe-t-il si on ouvre un sectionneur en charge ?',
-      confirmation: 'Sans pouvoir de coupure, l’arc s’installe au lieu de s’éteindre.',
-      reponses: [
-        { texte: 'Rien de particulier, il s’ouvre comme un interrupteur.', pourquoi: 'Non : il n’a ni ressort ni chambre d’extinction. C’est exactement ce qui le différencie.' },
-        { texte: 'Un arc s’installe, il ne s’éteint pas, et il projette.', juste: true },
-        { texte: 'La machine redémarre toute seule.', pourquoi: 'Ce n’est pas un phénomène lié au sectionnement.' },
-        { texte: 'Le fusible en amont fond immédiatement et tout va bien.', pourquoi: 'Rien ne garantit qu’un fusible fonde à cet instant : l’arc, lui, est déjà là.' } ] },
-
     { question: 'Qu’est-ce que la condamnation ?',
       confirmation: 'Le cadenas, la clé dans votre poche, l’étiquette à votre nom.',
       reponses: [
         { texte: 'Le fait de couper l’alimentation générale du bâtiment.', pourquoi: 'Couper au général n’empêche personne de refermer. Ce n’est pas une condamnation.' },
         { texte: 'Une déclaration écrite au responsable.', pourquoi: 'Aucun papier n’empêche une main de remettre sous tension.' },
         { texte: 'Un verrouillage matériel — cadenas — dont vous gardez la clé.', juste: true },
-        { texte: 'Une étiquette qui interdit la manœuvre.', pourquoi: 'L’étiquette informe, mais elle n’empêche rien. Il faut un dispositif matériel.' } ] },
-
-    { question: 'Sur un plan, comment reconnaît-on un sectionneur d’un simple interrupteur ?',
-      confirmation: 'La petite barre au bout du contact, côté fixe, là où la lame vient s’appuyer : l’aptitude au sectionnement.',
-      reponses: [
-        { texte: 'Il est toujours dessiné fermé.', pourquoi: 'Tous les appareils sont dessinés au repos, cela ne distingue rien.' },
-        { texte: 'Il est dessiné plus gros.', pourquoi: 'La taille d’un symbole ne porte jamais d’information : elle dépend de l’échelle du plan.' },
-        { texte: 'Il porte un repère qui commence par Q.', pourquoi: 'Le repère aide, mais il désigne aussi disjoncteurs et interrupteurs-sectionneurs : il ne suffit pas.' },
-        { texte: 'Une petite barre au bout du contact, côté fixe, là où la lame vient s’appuyer.', juste: true } ] }
+        { texte: 'Une étiquette qui interdit la manœuvre.', pourquoi: 'L’étiquette informe, mais elle n’empêche rien. Il faut un dispositif matériel.' } ] }
   ],
 
   retenir: [
@@ -118,5 +119,5 @@ ModeleAppareil.construire({
 
   correspondances: [
     { ligne: 3, couleur: '#5b4bd6', texte: '3.3 L’interrupteur-sectionneur' },
-    { ligne: 4, couleur: '#c0392b', texte: '4.8 La terre' } ]
+    { ligne: 4, couleur: '#c0392b', texte: '4.8 La terre et la liaison équipotentielle' } ]
 });

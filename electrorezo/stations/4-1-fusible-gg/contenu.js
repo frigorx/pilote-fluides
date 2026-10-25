@@ -37,7 +37,7 @@ ModeleAppareil.construire({
   technologie: [
     ["Le fil calibré", "il fond quand le courant dépasse nettement son calibre assez longtemps. C’est un objet à usage unique."],
     ["Le sable", "il éteint l’arc au moment de la fusion. C’est lui qui permet à un si petit objet de couper des courants énormes."],
-    ["La plage de protection", "le gG protège <strong>sur toute la plage</strong> : de la petite surcharge jusqu’au court-circuit franc."],
+    ["La plage de protection", "le gG protège <strong>sur toute la plage</strong> : des surcharges durables jusqu’au court-circuit franc."],
     ["Le pouvoir de coupure", "le courant de court-circuit maximal qu’il sait interrompre sans exploser. Écrit sur la cartouche."]
   ],
 
@@ -77,13 +77,13 @@ ModeleAppareil.construire({
   ],
 
   quiz: [
-    { question: "Que veut dire la lettre g dans gG ?",
-      confirmation: "Protection sur toute la plage, de la surcharge au court-circuit.",
+    { question: "Où se place un fusible gG ?",
+      confirmation: "Sur la phase, en tête du circuit qu’il protège.",
       reponses: [
-        { texte: "Qu’il protège sur toute la plage de surintensité.", juste: true },
-        { texte: "Qu’il est de grande taille.", pourquoi: "La taille se lit aux dimensions en millimètres, pas à la lettre." },
-        { texte: "Qu’il est garanti par le fabricant.", pourquoi: "Aucune lettre de calibre ne parle de garantie commerciale." },
-        { texte: "Qu’il est réservé au triphasé.", pourquoi: "gG et aM existent en monophasé comme en triphasé." } ] },
+        { texte: "Indifféremment, cela revient au même.", pourquoi: "Cela ne revient pas au même du tout : le circuit resterait sous tension." },
+        { texte: "Sur le conducteur de protection.", pourquoi: "Jamais : couper le PE supprimerait la protection des personnes." },
+        { texte: "Sur le neutre uniquement.", pourquoi: "Ce serait couper le mauvais fil : la phase resterait sous tension et le circuit paraîtrait mort." },
+        { texte: "Sur la phase, en tête du circuit.", juste: true } ] },
 
     { question: "Un fusible gG protège-t-il une personne contre l’électrisation ?",
       confirmation: "Un courant de fuite dangereux est bien trop faible pour le faire fondre.",
@@ -93,21 +93,21 @@ ModeleAppareil.construire({
         { texte: "Oui, si la terre est bonne.", pourquoi: "Une bonne terre aide, mais c’est le différentiel qui coupe." },
         { texte: "Oui, avec une bonne installation.", pourquoi: "Une bonne installation ne change pas la sensibilité du fusible : seul un différentiel voit les courants de fuite." } ] },
 
+    { question: "Que veut dire la lettre g dans gG ?",
+      confirmation: "Protection sur toute la plage, de la surcharge au court-circuit.",
+      reponses: [
+        { texte: "Qu’il protège sur toute la plage de surintensité.", juste: true },
+        { texte: "Qu’il est de grande taille.", pourquoi: "La taille se lit aux dimensions en millimètres, pas à la lettre." },
+        { texte: "Qu’il est garanti par le fabricant.", pourquoi: "Aucune lettre de calibre ne parle de garantie commerciale." },
+        { texte: "Qu’il est réservé au triphasé.", pourquoi: "gG et aM existent en monophasé comme en triphasé." } ] },
+
     { question: "Une cartouche a fondu. Le bon geste ?",
       confirmation: "On cherche la cause, puis on remplace à l’identique.",
       reponses: [
         { texte: "Ponter provisoirement pour finir la journée.", pourquoi: "Un pont supprime toute protection : le câble devient le fusible." },
         { texte: "Réarmer après refroidissement.", pourquoi: "Un fusible ne se réarme pas : le fil a fondu, il est détruit." },
         { texte: "Chercher pourquoi, puis remplacer à l’identique.", juste: true },
-        { texte: "Remplacer par un calibre supérieur.", pourquoi: "C’est l’erreur la plus grave : on supprime la protection au lieu de traiter la cause." } ] },
-
-    { question: "Où se place un fusible gG ?",
-      confirmation: "Sur la phase, en tête du circuit qu’il protège.",
-      reponses: [
-        { texte: "Indifféremment, cela revient au même.", pourquoi: "Cela ne revient pas au même du tout : le circuit resterait sous tension." },
-        { texte: "Sur le conducteur de protection.", pourquoi: "Jamais : couper le PE supprimerait la protection des personnes." },
-        { texte: "Sur le neutre uniquement.", pourquoi: "Ce serait couper le mauvais fil : la phase resterait sous tension et le circuit paraîtrait mort." },
-        { texte: "Sur la phase, en tête du circuit.", juste: true } ] }
+        { texte: "Remplacer par un calibre supérieur.", pourquoi: "C’est l’erreur la plus grave : on supprime la protection au lieu de traiter la cause." } ] }
   ],
 
   retenir: [
@@ -121,7 +121,7 @@ ModeleAppareil.construire({
 
   credits: [
     { quoi: 'Photographies', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances inerWeb' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
       detail: 'svg/10_electric/10_allpole/200_fuses_protective_gears/' } ],
 

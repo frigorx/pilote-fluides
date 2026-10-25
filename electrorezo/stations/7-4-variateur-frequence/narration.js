@@ -5,7 +5,7 @@ const NARRATION = {
 
   decouvrir: `Nous voici au terminus du réseau. Toutes les lignes convergent ici.
 Le variateur de fréquence, c'est l'appareil qui a transformé l'industrie ces trente dernières
-années. Avant lui, une pompe tournait à une vitesse et une seule. Aujourd'hui, elle tourne à
+années. Avant lui, une pompe tournait en général à une vitesse fixe. Aujourd'hui, elle tourne à
 celle qu'on veut.
 Et pour comprendre ce qu'il y a dedans, vous avez besoin de tout ce que ce réseau vous a
 appris.`,
@@ -25,29 +25,16 @@ Cette énergie fait monter la tension du bus continu. Si elle monte trop, le var
 défaut. D'où la résistance de freinage : une résistance externe qui dissipe cette énergie en
 chaleur.
 Troisième chose : il protège. Il surveille l'intensité en permanence, et il coupe si elle dépasse
-ce qu'on lui a dit. C'est pour ça qu'on peut se passer du relais thermique derrière un variateur :
-il fait le travail.
+ce qu'on lui a dit. C'est pour ça que le variateur peut assurer la protection thermique du moteur, et que le
+relais thermique devient en général inutile.
 Et enfin, il parle. La plupart dialoguent avec un automate. La consigne de vitesse arrive alors
 par deux fils au lieu d'un potentiomètre.
 Voilà pourquoi il a tout balayé. Il donne au moteur asynchrone — robuste, sans balais, sans
 entretien — la souplesse qu'avait le moteur à courant continu.`,
 
   manipuler: `Les trois questions, une dernière fois pour ce réseau.
-Et prenez le temps de regarder le tableau complet ensuite : vous verrez d'un coup d'œil toutes
-les machines des lignes six et sept.`,
-
-  representer: `Sur un plan, le variateur reprend la diagonale des convertisseurs que vous avez vue à la station
-sept point deux. Mais ce qui est écrit de part et d'autre n'est pas la même chose.
-Mis bout à bout, les deux symboles que vous avez sous les yeux donnent le variateur : le
-redresseur, puis l'onduleur. Entre les deux, le bus continu fait le lien.
-Et je veux attirer votre attention sur ce que le plan ne montre plus, ou plus de la même façon.
-Derrière un variateur, le relais thermique n'a plus de raison d'être : le variateur surveille
-l'intensité. Et pour démarrer le moteur, le variateur remplace le contacteur de puissance, même
-si un contacteur ou un sectionneur en amont reste courant.
-Cherchez en revanche deux bornes supplémentaires, souvent repérées P A et P B. C'est la
-résistance de freinage. Sa présence vous dit que la machine a de l'inertie et qu'on la freine
-activement.
-Maintenant, quatre règles de câblage. Elles sont courtes, et il faut les connaître.
+À côté, regardez la carte du câblage.
+Quatre règles de câblage. Elles sont courtes, et il faut les connaître.
 Un : en amont, une protection et un sectionnement. Le variateur ne remplace ni l'un ni l'autre.
 Deux : entre le variateur et le moteur, on n'ouvre jamais la sortie en charge. Un contacteur ou un
 sectionneur placé là n'est admis que s'il s'ouvre variateur bloqué, selon la notice. Ouvrir en
@@ -63,7 +50,22 @@ Le condensateur du bus continu reste chargé plusieurs minutes après la coupure
 cents volts continus.
 Le délai d'attente est écrit sur l'appareil. Cinq minutes, souvent.
 On coupe. On attend le temps indiqué. On vérifie l'absence de tension sur le bus. Et alors
-seulement on ouvre.
+seulement on ouvre.`,
+
+  representer: `Sur un plan, le variateur reprend la diagonale des convertisseurs que vous avez vue à la station
+sept point deux. Mais ce qui est écrit de part et d'autre n'est pas la même chose.
+Mis bout à bout, les deux symboles que vous avez sous les yeux donnent le variateur : le
+redresseur, puis l'onduleur. Entre les deux, le bus continu fait le lien.
+Et je veux attirer votre attention sur ce que le plan ne montre plus, ou plus de la même façon.
+Derrière un variateur, le variateur peut assurer lui-même la protection thermique du moteur : le
+relais thermique devient alors en général inutile, sauf par exemple si un seul variateur alimente
+plusieurs moteurs. Et pour démarrer le moteur, le variateur remplace le contacteur de puissance, même
+si un contacteur ou un sectionneur en amont reste courant.
+Cherchez en revanche deux bornes supplémentaires, souvent repérées P A et P B. C'est la
+résistance de freinage. Sa présence vous dit que la machine a de l'inertie et qu'on la freine
+activement.
+Et prenez le temps de regarder le tableau complet à l'étape suivante : vous verrez d'un coup d'œil
+toutes les machines des lignes six et sept.
 Voilà, vous êtes au terminus. Vous savez lire un schéma, reconnaître un appareil, comprendre une
 machine, et vérifier une installation. Le reste, c'est de la pratique — et elle commence
 maintenant.`

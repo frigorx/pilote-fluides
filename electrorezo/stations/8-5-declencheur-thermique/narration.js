@@ -1,13 +1,13 @@
 /* ÉlectroRézo 8.5 — textes POUR L'OREILLE, version « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. La version précédente est dans narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Voix fabriquées en Piper par le chef de chantier. */
 const NARRATION = {
 
   decouvrir: `Celui-là, je vais prendre le temps. Pas parce qu'il est compliqué — vous allez voir, c'est
 même l'un des plus simples — mais parce que c'est là que tout se met en place. C'est ici que vous
 allez comprendre pourquoi les symboles ne sont pas des dessins tombés du ciel.
 Le signe dont je vais vous parler ressemble à un petit crochet carré, accroché contre le trait
-du courant. Vous le trouverez sur les appareils de protection, jamais tout seul.
+du courant. Vous le trouverez, en général, accroché au trait du courant d'un appareil de protection.
 Ce qu'il annonce, c'est simple : cet appareil-là surveille la chaleur.`,
 
   comprendre: `Bon. Ouvrons un relais thermique, et regardons ce qu'il y a dedans.
@@ -42,7 +42,7 @@ Ce n'est pas un hasard de dessin. Vous êtes en train de lire, sans le savoir, l
 de ces appareils.`,
 
   representer: `Un dernier mot sur le dessin, et je vous laisse travailler.
-Sur les plans, ce déclencheur se dessine par un petit crochet rectangulaire, collé contre le
+Sur les plans, ce déclencheur se dessine par un petit crochet carré, collé contre le
 trait du courant. Sur d'autres écritures, vous le verrez à l'intérieur d'un rectangle : le même crochet,
 simplement encadré. Les deux se rencontrent, et ils veulent dire la même chose.
 Alors voilà ce que je vous demande de retenir. Le jour où vous repérez ce signe sur un plan,

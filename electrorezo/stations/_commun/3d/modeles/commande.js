@@ -285,7 +285,7 @@
         { id: 'ressort', nom: 'Le ressort de rappel', objets: [ressortRappel], desc: 'Dès que la bobine n’est plus alimentée, il repousse l’armature : le contacteur s’ouvre tout seul.' },
         { id: 'fixes', nom: 'Les contacts fixes', objets: [contactsFixes], desc: 'Reliés aux bornes : 1, 3, 5 en haut (l’arrivée), 2, 4, 6 en bas (vers le moteur).' },
         { id: 'ponts', nom: 'Les ponts de contact', objets: [ponts], desc: 'Trois ponts mobiles, un par phase. Un petit ressort les plaque sur les contacts fixes.' },
-        { id: 'aux', nom: 'Le contact 13 – 14', objets: [auxiliaire, bornesAux], desc: 'Un contact « NO » de commande. Il se ferme en même temps que les pôles : c’est lui qui sert à l’auto-maintien.' },
+        { id: 'aux', nom: 'Le contact 13 – 14', objets: [auxiliaire, bornesAux], desc: 'Un contact « NO » de commande. Il se ferme presque en même temps que les pôles : c’est lui qui sert à l’auto-maintien.' },
         { id: 'bornes', nom: 'Les bornes de puissance', objets: [bornesPuissance], desc: '1/L1, 3/L2, 5/L3 reçoivent le réseau ; 2/T1, 4/T2, 6/T3 partent vers le moteur.' },
         { id: 'bornesBobine', nom: 'Les bornes A1 et A2', objets: [bornesBobine], desc: 'L’entrée de la bobine. C’est le circuit de COMMANDE : quelques watts suffisent à commander des kilowatts.' },
         { id: 'rail', nom: 'Le rail DIN', objets: [rail], desc: 'Le contacteur s’y clipse, comme tout l’appareillage modulaire.' }

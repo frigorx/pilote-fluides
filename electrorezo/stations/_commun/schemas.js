@@ -138,9 +138,9 @@ const Schemas = (() => {
 <!-- cote de distance -->
 <g id="tCote">
   <line x1="336" y1="146" x2="392" y2="252" stroke="${C.vert}" stroke-width="3" stroke-dasharray="7 5"/>
-  <text x="470" y="180" text-anchor="middle" font-size="15" font-weight="700" fill="${C.vert}">distance garantie</text>
-  <text x="470" y="202" text-anchor="middle" font-size="13" fill="${C.vert}">calculée, vérifiée, suffisante</text>
-  <line x1="470" y1="190" x2="378" y2="200" stroke="${C.vert}" stroke-width="2"/>
+  <line x1="366" y1="199" x2="522" y2="122" stroke="${C.vert}" stroke-width="2"/>
+  <text x="530" y="106" font-size="15" font-weight="700" fill="${C.vert}">distance garantie</text>
+  <text x="530" y="126" font-size="13" fill="${C.vert}">calculée, vérifiée, suffisante</text>
 </g>
 
 <!-- cadenas -->
@@ -153,7 +153,7 @@ const Schemas = (() => {
   <text x="680" y="344" text-anchor="middle" font-size="13" fill="${C.gris}">la clé reste dans votre poche</text>
 </g>
 
-<text x="320" y="360" text-anchor="middle" font-size="14" fill="${C.gris}">pas de ressort, pas de chambre de coupure : on ne l’ouvre jamais en charge</text>`;
+<text x="320" y="360" text-anchor="middle" font-size="14" fill="${C.gris}">en général ni ressort ni chambre de coupure : on ne l’ouvre jamais en charge</text>`;
     return bloc(d, [], null,
       'Deux choses seulement, mais elles font tout : un écart garanti par le constructeur, et un trou qui reçoit un cadenas.');
   }
@@ -184,7 +184,7 @@ const Schemas = (() => {
 <path d="M656 240 v-12 a14 14 0 0 1 28 0 v12" fill="none" stroke="${C.navy}" stroke-width="6"/>
 <text x="610" y="318" text-anchor="middle" font-size="14" font-weight="700" fill="${C.vert}">→ il isole et se condamne</text>`;
     return bloc(d, [], null,
-      'À gauche ce qui permet d’ouvrir en marche, à droite ce qui permet de travailler derrière. Les deux, dans le même boîtier.');
+      'À gauche ce qui permet d’ouvrir en marche, à droite ce qui permet d’isoler et de se condamner. Pour travailler derrière : ouvrir, condamner, puis vérifier l’absence de tension. Les deux mécanismes, dans le même boîtier.');
   }
 
   /* ---------------------------------------------------------- 3.4 la cartouche */

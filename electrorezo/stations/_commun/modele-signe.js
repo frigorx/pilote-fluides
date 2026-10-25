@@ -35,7 +35,7 @@ const ModeleSigne = (() => {
       const g = carte('Pourquoi cette forme, et pas une autre');
       if (D.scene) g.appendChild(D.scene());
       else g.appendChild(Signes.lettreSeule(D.lettre, D.argLettre));
-      g.appendChild(el('p', 'legende',
+      g.appendChild(el('p', 'legende', D.legendeForme ||
         'Le dessin vient du mécanisme. Il n’a pas été choisi au hasard : c’est pour cela qu’on peut le reconnaître au lieu de l’apprendre par cœur.'));
 
       const d = carte('Le raisonnement');
@@ -44,7 +44,7 @@ const ModeleSigne = (() => {
       hote.appendChild(w);
       /* la lettre, dans l'appareil réel : la pièce qu'elle dessine s'allume */
       const v3 = window.Electro3D ? Electro3D.pourStation(D.vue3d, 'decouvrir', null, 'Dans l’appareil réel',
-        'La pièce allumée, c’est elle que la lettre dessine.') : null;
+        (D.vue3d && D.vue3d.legende) || 'La pièce allumée, c’est elle que la lettre dessine.') : null;
       if (v3) { v3.style.marginTop = '.9rem'; hote.appendChild(v3); }
     }
 
@@ -54,14 +54,16 @@ const ModeleSigne = (() => {
       const g = carte('Retrouvez-la');
       g.appendChild(D.exercice ? D.exercice() : Signes.retrouver(D.lettre, D.motsOuOnLaTrouve));
 
+      /* D.sansCartesMots : station dont la lettre n'est pas un signe tracé (8.9, les repères) */
       const d = carte('Les mots où elle entre');
-      D.motsOuOnLaTrouve.forEach(m => {
+      const mots = D.sansCartesMots ? [] : D.motsOuOnLaTrouve;
+      mots.forEach(m => {
         const M = Signes.MOTS[m];
         const p = el('p');
         p.innerHTML = '<strong>' + M.nom + '</strong> — ' + M.lecture;
         d.appendChild(p);
       });
-      w.append(g, d);
+      if (D.sansCartesMots) { w.classList.add('seul'); w.append(g); } else w.append(g, d);
       hote.appendChild(w);
     }
 
@@ -82,7 +84,7 @@ const ModeleSigne = (() => {
         lect.appendChild(b);
       });
       g.appendChild(lect);
-      Station.credit(g, 'Symboles EN 60617 — bibliothèque inerWeb, convertie depuis QElectroTech. Les dessins des temps 1 à 3 sont, eux, des représentations pédagogiques faites pour être décomposées.');
+      Station.credit(g, D.creditSymboles || 'Symboles EN 60617 — bibliothèque inerWeb, convertie depuis QElectroTech. Les dessins des temps 1 à 3 sont, eux, des représentations pédagogiques faites pour être décomposées.');
 
       const d = carte('Du dessin d’école au vrai plan');
       D.duDessinAuPlan.forEach(x => { const p = el('p'); p.innerHTML = x; d.appendChild(p); });
@@ -94,9 +96,11 @@ const ModeleSigne = (() => {
     function verifier(hote) {
       const w = el('div', 'workspace');
       const g = el('div'), d = el('div');
-      const rappel = carte('Le mot le plus dense où elle apparaît');
-      rappel.appendChild(Signes.motDecompose(D.motVedette || D.motsOuOnLaTrouve[0]));
-      g.appendChild(rappel);
+      if (!D.sansCartesMots) {
+        const rappel = carte('Le mot le plus dense où elle apparaît');
+        rappel.appendChild(Signes.motDecompose(D.motVedette || D.motsOuOnLaTrouve[0]));
+        g.appendChild(rappel);
+      }
       Station.monterQuiz(g, D.quiz);
       if (D.jeu) Station.monterJeu(d, D.jeu);
       else {

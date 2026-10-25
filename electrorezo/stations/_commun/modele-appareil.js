@@ -164,8 +164,10 @@ const ModeleAppareil = (() => {
 
       const d = carte('Le lire sur un plan');
       D.lecturePlan.forEach(x => { const p = el('p'); p.innerHTML = x; d.appendChild(p); });
-      d.appendChild(el('p', 'legende',
-        'Convention de la maison : schéma de commande vertical, phase en haut, neutre en bas, retour du neutre en orange.'));
+      /* la convention de commande n'a de sens que si un schéma est posé dans la carte */
+      if (/<svg|<img/.test(D.lecturePlan.join(' ')))
+        d.appendChild(el('p', 'legende',
+          'Convention de la maison : schéma de commande vertical, phase en haut, neutre en bas, retour du neutre en orange.'));
       w.append(g, d);
       hote.appendChild(w);
     }
@@ -187,7 +189,8 @@ const ModeleAppareil = (() => {
       if (D.jeu) Station.monterJeu(d, D.jeu);
       else {
         const c = carte('Ce qu’il faut retenir');
-        if (D.tableauLigne && typeof Schemas !== 'undefined')
+        /* le tableau de la ligne est déjà posé plus haut quand il n'y a pas de D.tableau */
+        if (D.tableauLigne && D.tableau && typeof Schemas !== 'undefined')
           c.appendChild(Schemas.tableauLigne3(D.id));
         D.retenir.forEach(x => { const p = el('p'); p.innerHTML = x; c.appendChild(p); });
         d.appendChild(c);

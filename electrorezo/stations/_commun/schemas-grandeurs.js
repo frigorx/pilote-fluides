@@ -9,7 +9,7 @@
      · aucun texte ne chevauche un tracé.
 
    Les symboles d'instruments reprennent la géométrie de la bibliothèque :
-     · ampèremètre / voltmètre — un cercle de rayon 10 traversé, comme lampe2.svg
+     · ampèremètre / voltmètre — un cercle de rayon 10 traversé par le fil, comme amperemetre-h.svg (390_sensors_instruments)
      · le rond du moteur — bobine_et_rond, ligne 8. */
 
 const SchemasGrandeurs = (() => {
@@ -71,37 +71,37 @@ const SchemasGrandeurs = (() => {
      Ce qui circule dans un fil, et ce que « intensité » veut dire : un débit,
      pas une quantité. */
   function debitDeCharges() {
-    const d = svg('0 0 760 300', 'Un conducteur vu de l’intérieur : les charges avancent toutes ensemble, et l’intensité compte celles qui passent une section par seconde.');
+    const d = svg('0 0 760 300', 'Un conducteur vu de l’intérieur : le fil contient toujours le même nombre de charges ; plus elles avancent vite, plus il en passe par la section chaque seconde.');
     const peindre = (fort) => {
-      const n = fort ? 22 : 9;
+      const n = 12;
       d.innerHTML = `
 <rect x="8" y="8" width="744" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-<text x="380" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${fort ? 'Beaucoup de charges passent : l’intensité est forte' : 'Peu de charges passent : l’intensité est faible'}</text>
+<text x="380" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${fort ? 'Les charges avancent vite : l’intensité est forte' : 'Les charges avancent lentement : l’intensité est faible'}</text>
 
 <rect x="60" y="96" width="640" height="70" rx="8" fill="${C.cuivre}" opacity=".22" stroke="${C.cuivre}" stroke-width="3"/>
-<text x="60" y="88" font-size="12" fill="${C.gris}">le conducteur, vu en coupe longitudinale</text>
+<text x="60" y="88" font-size="12" fill="${C.gris}">le conducteur, vu en coupe longitudinale : toujours ${n} charges</text>
 
 ${Array.from({ length: n }, (_, i) => {
-  const x = 78 + (i * 604) / n;
-  return `<circle cx="${x}" cy="${112 + (i % 3) * 20}" r="7" fill="${C.navy}"/>`;
+  const x = 96 + (i * 580) / n, y = 112 + (i % 3) * 20;
+  return `${fort ? `<line x1="${x - 34}" y1="${y}" x2="${x - 8}" y2="${y}" stroke="${C.navy}" stroke-width="3" stroke-linecap="round" opacity=".45"/>` : ''}<circle cx="${x}" cy="${y}" r="7" fill="${C.navy}"/>`;
 }).join('')}
 
-<path d="M300 200 L460 200" stroke="${C.orange}" stroke-width="4"/>
-<path d="M448 192 L462 200 L448 208" fill="none" stroke="${C.orange}" stroke-width="4"/>
-<text x="380" y="228" text-anchor="middle" font-size="13" fill="${C.orange}">elles avancent toutes dans le même sens</text>
+<path d="M${fort ? 240 : 320} 200 L${fort ? 520 : 440} 200" stroke="${C.orange}" stroke-width="4"/>
+<path d="M${fort ? 508 : 428} 192 L${fort ? 522 : 442} 200 L${fort ? 508 : 428} 208" fill="none" stroke="${C.orange}" stroke-width="4"/>
+<text x="380" y="228" text-anchor="middle" font-size="13" fill="${C.orange}">${fort ? 'elles avancent toutes dans le même sens, et vite' : 'elles avancent toutes dans le même sens, lentement'}</text>
 
-<line x1="500" y1="80" x2="500" y2="182" stroke="${C.rouge}" stroke-width="3" stroke-dasharray="7 5"/>
-<text x="512" y="86" font-size="13" font-weight="700" fill="${C.rouge}">une section</text>
-<text x="512" y="104" font-size="12" fill="${C.gris}">on compte ce qui la traverse</text>
-<text x="512" y="122" font-size="12" fill="${C.gris}">en une seconde</text>
+<line x1="500" y1="56" x2="500" y2="182" stroke="${C.rouge}" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="512" y="62" font-size="13" font-weight="700" fill="${C.rouge}">une section</text>
+<text x="512" y="77" font-size="12" fill="${C.gris}">on compte ce qui la traverse</text>
+<text x="512" y="92" font-size="12" fill="${C.gris}">en une seconde</text>
 
 <text x="380" y="264" text-anchor="middle" font-size="14" font-weight="700" fill="${C.navy}">L’intensité est un débit. Pas une quantité : une quantité par seconde.</text>`;
     };
     peindre(false);
     return bloc(d, [
-      { id: 'faible', libelle: 'Peu de charges', legende: 'Peu de charges franchissent la section chaque seconde : l’intensité est faible. Le fil ne chauffe presque pas.', appliquer: () => peindre(false) },
-      { id: 'fort', libelle: 'Beaucoup de charges', legende: 'Beaucoup de charges franchissent la même section dans le même temps : l’intensité est forte. C’est elle qui fait chauffer le conducteur.', appliquer: () => peindre(true) }
-    ], 'faible', 'Peu de charges franchissent la section chaque seconde : l’intensité est faible. Le fil ne chauffe presque pas.');
+      { id: 'faible', libelle: 'Courant faible', legende: 'Le fil contient autant de charges, mais elles avancent lentement : peu d’entre elles franchissent la section chaque seconde. L’intensité est faible. Le fil ne chauffe presque pas.', appliquer: () => peindre(false) },
+      { id: 'fort', libelle: 'Courant fort', legende: 'Le fil contient toujours autant de charges, mais elles avancent plus vite : beaucoup plus d’entre elles franchissent la même section dans le même temps. L’intensité est forte. C’est elle qui fait chauffer le conducteur.', appliquer: () => peindre(true) }
+    ], 'faible', 'Le fil contient autant de charges, mais elles avancent lentement : peu d’entre elles franchissent la section chaque seconde. L’intensité est faible. Le fil ne chauffe presque pas.');
   }
 
   /* 1.1 · mesurer — l'ampèremètre se met EN SÉRIE. L'erreur inverse détruit l'appareil. */
@@ -129,6 +129,7 @@ ${serie
   : `${instrument(350, 145, 'A', C.rouge, 22)}
      <line x1="350" y1="68" x2="350" y2="123" stroke="${C.rouge}" stroke-width="4"/>
      <line x1="350" y1="167" x2="350" y2="222" stroke="${C.rouge}" stroke-width="4"/>`}
+<text x="350" y="304" text-anchor="middle" font-size="12" fill="${C.gris}">Symbole d’après amperemetre-h.svg : un cercle posé sur le fil, avec la lettre A.</text>
 
 <line x1="560" y1="68" x2="560" y2="110" stroke="${serie ? C.orange : C.rouge}" stroke-width="4"/>
 <rect x="530" y="110" width="60" height="90" rx="6" fill="none" stroke="${C.navy}" stroke-width="4"/>
@@ -140,7 +141,7 @@ ${serie
   ? `<text x="350" y="262" text-anchor="middle" font-size="13" fill="${C.gris}">Tout le courant de la charge traverse l’appareil : c’est ce qu’il compte.</text>
      <text x="350" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="${C.vert}">On ouvre le circuit et on met l’appareil dans le trou.</text>`
   : `<text x="350" y="262" text-anchor="middle" font-size="13" fill="${C.gris}">Un ampèremètre est un fil, ou presque : sa résistance est minuscule.</text>
-     <text x="350" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="${C.rouge}">Branché ainsi, il court-circuite la source. L’appareil est détruit.</text>`}`;
+     <text x="350" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="${C.rouge}">Branché ainsi, il court-circuite la source. L’appareil ou son fusible est détruit.</text>`}`;
     };
     peindre('serie');
     hote.appendChild(d);
@@ -750,7 +751,7 @@ ${lignes.map(([, x, c], i) => `
       'V~|A':   ['bad',  'Non. Le sélecteur dit « tension », mais la pointe est dans la borne des ampères : sur une prise sous tension, cette borne est un quasi court-circuit. Le fusible de l’appareil fond, et un arc est possible.'],
       'A~|A':   ['ok',   'Correct pour un courant — mais il faut ouvrir le circuit et mettre l’appareil dans le trou. Sur un moteur, on préfère largement la pince : elle mesure sans rien débrancher.'],
       'A~|VΩ':  ['bad',  'Non. Le sélecteur dit « ampères » mais la pointe n’est pas dans la bonne borne : l’appareil ne verra rien passer.'],
-      'Ω|VΩ':   ['ok',   'Combinaison bonne pour une résistance — à condition que l’élément soit HORS TENSION et débranché d’au moins un côté. Sur une prise vivante, la valeur est fausse et l’appareil peut être détruit.'],
+      'Ω|VΩ':   ['att',  'Bonne combinaison, mauvais endroit : une résistance se mesure sur un élément HORS TENSION, débranché d’au moins un côté. Ici, les pointes sont sur une prise sous tension (le même appareil lisait 230,4 V sur la position tension). Le cadran ne donne rien de fiable, et l’appareil peut être détruit.'],
       'Ω|A':    ['bad',  'Ni la position ni la borne. La position ohms exige un circuit hors tension, et la borne des ampères est un quasi court-circuit.']
     };
 
@@ -765,7 +766,7 @@ ${lignes.map(([, x, c], i) => `
 <rect x="90" y="62" width="220" height="216" rx="14" fill="${C.creme}" stroke="${C.navy}" stroke-width="3"/>
 <rect x="112" y="80" width="176" height="46" rx="4" fill="${C.papier}" stroke="${C.navy}" stroke-width="2"/>
 <text x="200" y="113" text-anchor="middle" font-size="21" font-weight="700"
-      fill="${bon ? C.vert : C.gris}">${bon ? (pos === 'V~' ? '231 V' : pos === 'Ω' ? '12,4 Ω' : '4,9 A') : '— — —'}</text>
+      fill="${bon ? C.vert : C.gris}">${{ 'V~|VΩ': '230,4 V~', 'V~|A': '0,0 V~', 'A~|A': '0,43 A~', 'A~|VΩ': '0,00 A~', 'Ω|VΩ': '- - -', 'Ω|A': 'O.L MΩ' }[pos + '|' + borne]}</text>
 
 <circle cx="200" cy="182" r="38" fill="none" stroke="${C.navy}" stroke-width="3"/>
 <line x1="200" y1="182" x2="${200 + 30 * Math.cos({ 'V~': -Math.PI / 2, 'A~': Math.PI / 6, 'Ω': Math.PI * 5 / 6 }[pos])}"
@@ -791,7 +792,8 @@ ${lignes.map(([, x, c], i) => `
 <text x="630" y="170" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">COM, toujours</text>
 
 <text x="505" y="234" text-anchor="middle" font-size="16" font-weight="700"
-      fill="${bon ? C.vert : C.rouge}">${bon ? (pos === 'Ω' ? 'combinaison bonne, hors tension' : 'la combinaison est bonne') : 'la combinaison ne va pas'}</text>
+      fill="${bon ? C.vert : (etat === 'att' ? C.orange : C.rouge)}">${bon ? 'la combinaison est bonne' : (etat === 'att' ? 'bonne combinaison, mauvais endroit' : 'la combinaison ne va pas')}</text>
+${etat === 'att' ? `<text x="505" y="252" text-anchor="middle" font-size="12" fill="${C.gris}">ici, l’élément est sous tension</text>` : ''}
 <text x="505" y="268" text-anchor="middle" font-size="12" fill="${C.gris}">La pointe noire ne bouge jamais de COM.</text>
 <text x="505" y="288" text-anchor="middle" font-size="12" fill="${C.gris}">C’est la rouge qu’on déplace, et c’est elle qui se trompe.</text>`;
     };
@@ -800,8 +802,8 @@ ${lignes.map(([, x, c], i) => `
     const rendre = () => {
       peindre();
       const [etat, txt] = CAS[pos + '|' + borne] || ['bad', 'Cette combinaison n’a pas de sens.'];
-      verdict.className = 'verdict ' + etat;
-      verdict.innerHTML = '<span class="signe">' + (etat === 'ok' ? '✔' : '✘') + '</span>' + txt;
+      verdict.className = 'verdict ' + (etat === 'att' ? 'wait' : etat);
+      verdict.innerHTML = '<span class="signe">' + (etat === 'ok' ? '✔' : (etat === 'att' ? '⚠' : '✘')) + '</span>' + txt;
     };
 
     hote.appendChild(d);
@@ -859,9 +861,10 @@ ${instrument(156, 130, 'A', C.navy, 26)}
 <text x="520" y="206" text-anchor="middle" font-size="12.5" fill="${C.gris}">elle ne touche rien d’électrique</text>
 <text x="520" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="${C.vert}">la machine continue de tourner</text>
 
-<text x="350" y="276" text-anchor="middle" font-size="12.5" fill="${C.gris}">Un seul conducteur dans la pince à la fois. Deux ensemble, et elle affiche presque zéro.</text>`;
+<text x="350" y="262" text-anchor="middle" font-size="12.5" fill="${C.gris}">Un seul conducteur dans la pince à la fois.</text>
+<text x="350" y="281" text-anchor="middle" font-size="12.5" fill="${C.gris}">Phase et neutre d’un même circuit ensemble : l’aller annule le retour, elle affiche presque zéro.</text>`;
     return bloc(d, [], null,
-      'Sur une machine en service, la pince est le seul instrument raisonnable. Elle ne demande ni coupure, ni contact.');
+      'Sur une machine en service, la pince est l’instrument le plus commode. Elle ne demande ni coupure, ni contact avec le fil.');
   }
 
   return { bloc, reglette, instrument,

@@ -15,15 +15,15 @@ ModeleAppareil.construire({
   photos: [
     { src: 'assets/biblio/les-deux-declencheurs.jpg',
       alt: "Deux phrases d’un document de cours, chacune suivie de son symbole : le déclencheur thermique, dessiné par un crochet rectangulaire, détecte les surcharges ; le déclencheur magnétique, dessiné par un demi-cercle, détecte les courts-circuits.",
-      titre: "Deux déclencheurs, deux signes.", sous: "Le crochet et le demi-cercle : vous les reconnaîtrez sur tous les plans." },
+      titre: "Deux déclencheurs, deux signes.", sous: "Le crochet et le demi-cercle : vous les reconnaîtrez sur la plupart des plans. Certains écrivent I> à la place du demi-cercle (temps 4)." },
     { src: 'assets/biblio/courbes-b-c-d.jpg',
       alt: "Les trois courbes normalisées B, C et D, selon la NF EN 60898-1 (le document cite son ancienne référence, NF C 61-410). La bande de déclenchement magnétique va de 3 à 5 fois le calibre en courbe B, de 5 à 10 en courbe C, de 10 à 20 en courbe D.",
       titre: "Ce que dit la lettre.", sous: "À partir de combien de fois le calibre la bobine claque. B, C, ou D." },
     { src: 'assets/biblio/disjoncteurs-courbe-c.png',
-      alt: "Planche de deux disjoncteurs modulaires de courbe C, avec leurs caractéristiques et leur pouvoir de coupure.",
-      titre: "L’appareil.", sous: "Un boîtier, une manette, et deux caractères écrits dessus." }
+      alt: "Page de catalogue Legrand : disjoncteurs modulaires DNX³ (courbes C et D) et DX³ (courbe C), avec leurs caractéristiques et leur pouvoir de coupure.",
+      titre: "L’appareil.", sous: "Un boîtier, une manette, et une lettre et un nombre écrits dessus. Ici, les courbes C et D." }
   ],
-  creditPhoto: 'Photographies : base de connaissances inerWeb, documents de cours. Détail dans « Crédits ».',
+  creditPhoto: 'Photographies : documents de cours de la base de connaissances inerWeb ; la photo de l’appareil est une page du catalogue Legrand (DNX³ / DX³). Détail dans « Crédits ».',
 
   aQuoiCaSert: "Protéger un circuit contre la surcharge <em>et</em> le court-circuit, avec un appareil qui se <strong>réarme</strong> au lieu d’être remplacé.",
   ouOnLeTrouve: "Dans tous les tableaux, en tête de chaque circuit. Il a remplacé le fusible dans presque toute l’installation moderne.",
@@ -68,19 +68,19 @@ ModeleAppareil.construire({
 
   symboles: [
     { src: 'assets/disjonct-m_3f.svg',
-      alt: "Symbole normalisé d’un disjoncteur magnéto-thermique à trois pôles : sur chaque pôle, la croix du disjoncteur, le contact incliné, le crochet du déclencheur thermique et le demi-cercle du déclencheur magnétique.",
-      legende: "Trois pôles — la croix, le crochet et le demi-cercle" },
+      alt: "Symbole normalisé d’un disjoncteur magnéto-thermique à trois pôles : sur chaque pôle, la croix du disjoncteur, le contact incliné, le crochet du déclencheur thermique, le demi-cercle du déclencheur magnétique et, au bout du contact fixe, la petite barre du sectionnement.",
+      legende: "Trois pôles — la croix, le crochet, le demi-cercle et souvent la petite barre" },
     { src: 'assets/disjonct-m_1fn.svg',
       alt: "Symbole normalisé d’un disjoncteur magnéto-thermique un pôle plus neutre.",
       legende: "Un pôle + neutre — celui des tableaux d’habitation" },
     { src: 'assets/dis_mag_term_3f-1.svg',
-      alt: "Le même appareil, dessiné avec les repères de bornes 1-3-5 et 2-4-6, et le déclencheur magnétique noté « I supérieur ».",
+      alt: "Le même appareil, dessiné avec les repères de bornes 1-3-5 et 2-4-6, le déclencheur magnétique noté « I supérieur » et le crochet enfermé dans un rectangle. Les signes à gauche décrivent la commande, et un pointillé relie les pôles.",
       legende: "Le même, avec les repères de bornes et la notation « I> »" }
   ],
   lecturePlan: [
     "Le symbole porte <strong>les deux signes</strong> : le crochet du thermique et le demi-cercle du magnétique. Voir stations 8.5 et 8.6.",
-    "Sur chaque pôle, la <strong>croix ×</strong> est la marque du disjoncteur.",
-    "<strong>Deux écritures du même appareil.</strong> Certains plans remplacent le demi-cercle par un rectangle contenant <em>I&gt;</em> — « au-dessus de tel courant ». C’est le même déclencheur, dit autrement. Un plan peut aussi porter les repères de bornes : 1-3-5 en entrée, 2-4-6 en sortie.",
+    "Sur chaque pôle, la <strong>croix ×</strong> est la marque du disjoncteur. Souvent, une <strong>petite barre</strong> s’ajoute au bout du contact fixe : c’est la barre du sectionnement, l’appareil peut aussi servir de sectionneur (station 3.2).",
+    "<strong>Deux écritures du même appareil.</strong> Certains plans remplacent le demi-cercle par un rectangle contenant <em>I&gt;</em> — « au-dessus de tel courant ». C’est le même déclencheur, dit autrement ; sur le troisième symbole, le crochet est lui aussi enfermé dans un rectangle, et les signes à gauche décrivent la commande. Un plan peut aussi porter les repères de bornes : 1-3-5 en entrée, 2-4-6 en sortie.",
     "<strong>Leur présence est la fiche technique de l’appareil</strong> : ce qu’il voit, et ce qu’il ne voit pas.",
     "Repère <strong>Q</strong> ; calibre et courbe écrits à côté."
   ],
@@ -98,7 +98,7 @@ ModeleAppareil.construire({
       confirmation: "Le bilame chauffe et se courbe : c’est le thermique.",
       reponses: [
         { texte: "La bobine.", pourquoi: "La bobine est instantanée : elle ne réagit qu’aux courants énormes." },
-        { texte: "Le mécanisme à accrochage.", pourquoi: "Il exécute l’ouverture, il ne détecte rien non plus." },
+        { texte: "Le mécanisme à accrochage.", pourquoi: "Il exécute l’ouverture, il ne détecte rien." },
         { texte: "La chambre de coupure.", pourquoi: "La chambre éteint l’arc, elle ne détecte rien." },
         { texte: "Le bilame.", juste: true } ] },
 
@@ -107,7 +107,7 @@ ModeleAppareil.construire({
       reponses: [
         { texte: "Non : il faut un différentiel.", juste: true },
         { texte: "Oui, c’est inclus dans la courbe C.", pourquoi: "La courbe ne décrit que la sensibilité au court-circuit." },
-        { texte: "Oui, si l’installation est bien reliée à la terre.", pourquoi: "Une bonne terre fait monter le courant de défaut, mais souvent pas assez pour un disjoncteur." },
+        { texte: "Oui, si l’installation est bien reliée à la terre.", pourquoi: "Une bonne terre fait monter le courant de défaut, mais en installation domestique, souvent pas assez pour un disjoncteur." },
         { texte: "Oui, en coupant plus vite.", pourquoi: "Il ne coupe que si le courant qui le traverse est excessif." } ] },
 
     { question: "Un disjoncteur déclenche souvent. Le bon geste ?",
@@ -130,12 +130,12 @@ ModeleAppareil.construire({
 
   credits: [
     { quoi: 'Photographies', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances inerWeb ; la photo de l’appareil reproduit une page du catalogue Legrand (DNX³ / DX³)' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
       detail: 'svg/10_electric/10_allpole/200_fuses_protective_gears/' } ],
 
   correspondances: [
     { ligne: 8, couleur: '#7c3aed', texte: "8.5 Le déclencheur thermique" },
     { ligne: 8, couleur: '#7c3aed', texte: "8.6 Le déclencheur magnétique" },
-    { ligne: 4, couleur: '#c0392b', texte: "4.9 Le câble et sa section" } ]
+    { ligne: 4, couleur: '#c0392b', texte: "4.9 Le câble : section et désignation" } ]
 });

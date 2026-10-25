@@ -1,5 +1,12 @@
 /* ÉlectroRézo 7.1 — Le principe de la variation de tension. */
 
+const RETENIR_71 = [
+  "<strong>Le couple suit le CARRÉ</strong> de la tension.",
+  "<strong>La vitesse d’un moteur ordinaire ne suit pas.</strong> Elle dépend de la fréquence.",
+  "<strong>Baisser la tension d’un moteur ordinaire l’affaiblit</strong>, ça ne le ralentit pas.",
+  "<strong>Onde découpée</strong> : il faut un appareil True RMS pour la mesurer."
+];
+
 ModeleGrandeur.construire({
   id: '7.1', ligne: 7,
   vue3d: { modele: 'gradateur', options: { charge: 'moteur' }, defaut: 'schema' },   /* 3D */
@@ -55,6 +62,7 @@ ModeleGrandeur.construire({
     ]
   },
   surUnePlaque: [
+    "<img src=\"assets/ac1_ac1.svg\" alt=\"Symbole d’un convertisseur alternatif vers alternatif, celui d’un gradateur : un rectangle barré en diagonale, avec une petite onde de chaque côté.\" style=\"width:150px;height:auto;display:block;margin:0 auto .4rem\"><span class=\"legende\">Sur un plan, un gradateur se dessine ainsi (station 7.2).</span>",
     "Sur un <strong>gradateur</strong>, la puissance annoncée est celle qu’il peut commuter, pas celle qu’il fournit.",
     "Beaucoup de gradateurs portent la mention <strong>« charges résistives uniquement »</strong>. Elle est à prendre au sérieux : sur un moteur ou un transformateur, ils se détruisent.",
     "Sur un <strong>ventilateur à plusieurs vitesses</strong>, ce n’est pas la tension qui change : ce sont les <strong>enroulements</strong>. Ce n’est pas de la variation, c’est une sélection.",
@@ -95,20 +103,27 @@ ModeleGrandeur.construire({
         { texte: "Parce qu’il suppose une sinusoïde.", juste: true } ] }
   ],
 
-  retenir: [
-    "<strong>Le couple suit le CARRÉ</strong> de la tension.",
-    "<strong>La vitesse d’un moteur ordinaire ne suit pas.</strong> Elle dépend de la fréquence.",
-    "<strong>Baisser la tension d’un moteur ordinaire l’affaiblit</strong>, ça ne le ralentit pas.",
-    "<strong>Onde découpée</strong> : il faut un appareil True RMS pour la mesurer."
-  ],
+  retenir: RETENIR_71,
+  /* temps 5 : le récapitulatif visuel (le dessin du temps 1) puis les points à retenir */
+  finalTitre: 'Ce qu’il faut retenir',
+  final: () => {
+    const d = document.createElement('div');
+    const i = document.createElement('img');
+    i.src = 'assets/pourquoi-pas-la-tension.svg';
+    i.alt = 'Rappel : de 400 à 280 volts, la vitesse tient, le couple tombe à la moitié, l’intensité monte.';
+    i.style.width = '100%'; i.style.height = 'auto'; i.style.maxWidth = '520px';
+    d.appendChild(i);
+    RETENIR_71.forEach(x => { const p = document.createElement('p'); p.innerHTML = x; d.appendChild(p); });
+    return d;
+  },
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre pourquoi la variation de tension convient au chauffage et à l’éclairage mais pas à un moteur asynchrone.</p><p><strong>Limite.</strong> Le démarrage à tension réduite, qui est un autre usage de la même idée, n’est pas traité ici.</p>',
   credits: [
-    { quoi: 'Illustrations', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' } ],
+    { quoi: 'Illustrations', source: 'dessinées pour cette station',
+      detail: 'Le dessin des temps 1 et 5 est tracé pour la station. Le symbole du temps 4 vient de la bibliothèque de symboles inerWeb.' } ],
 
   correspondances: [
     { ligne: 1, couleur: '#2e6f9e', texte: "1.2 La tension" },
     { ligne: 6, couleur: '#c9451a', texte: "6.3 Le moteur asynchrone" },
-    { ligne: 7, couleur: '#0b7285', texte: "7.3 La variation de fréquence" } ]
+    { ligne: 7, couleur: '#0b7285', texte: "7.3 Faire varier la fréquence" } ]
 });

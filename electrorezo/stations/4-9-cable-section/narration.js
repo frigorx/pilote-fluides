@@ -1,6 +1,6 @@
 /* ÉlectroRézo 4.9 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Version précédente : narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 d'un temps dont le texte change sont supprimés, puis refaits en Piper. */
 const NARRATION = {
 
   decouvrir: `Cette station, je l'ai gardée pour la fin des appareils, exprès.

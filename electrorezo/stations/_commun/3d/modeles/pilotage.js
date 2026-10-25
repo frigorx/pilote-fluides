@@ -485,7 +485,7 @@
      (l'accrochage). On le libère en le tournant. Son contact NF (11-12) est en série dans la chaîne
      phase → NF → fil → bobine KM1 → neutre : qu'il s'ouvre, ou qu'un fil casse, la bobine retombe.
      Les trois voyants (informent, ne commandent rien) : vert = la bobine est alimentée, rouge = l'arrêt
-     d'urgence est frappé, orange = la chaîne est coupée (la machine est arrêtée).
+     d'urgence est frappé, jaune (ambre) = la chaîne est coupée (la machine est arrêtée).
      ===================================================================================== */
   Electro3D.definir('arretUrgence', (T, K, ctx) => {
     const M = K.mat;
@@ -537,7 +537,7 @@
     const rebord = new T.Mesh(new T.ExtrudeGeometry(bord, { depth: 8, bevelEnabled: false, curveSegments: 10 }), M.plastique);
     rebord.position.z = -10;
 
-    /* les trois voyants Ø 22 : vert, rouge, orange */
+    /* les trois voyants Ø 22 : vert, rouge, jaune (ambre) */
     const lampe = (offHex, onHex, y) => {
       const G = new T.Group(); G.position.set(XV, y, 0);
       const bague = new T.Group(), lentille = new T.Group(), corps = new T.Group(), ecrou = new T.Group();
@@ -602,8 +602,8 @@
     const deverrouiller = () => { if (verrou && !seq) { seq = 1; rot.cible = 1; } };
     const PHRASES = {
       ok: '<strong>Tout va bien.</strong> Le courant part de la phase, traverse le contact NF de l’arrêt d’urgence, le fil de la chaîne, puis la bobine du contacteur : la machine tourne. Le voyant vert est allumé.',
-      au: '<strong>On frappe l’arrêt d’urgence.</strong> Le champignon s’enfonce et un cran le retient : il reste enfoncé. Le contact NF s’ouvre, la chaîne est coupée, la bobine retombe : la machine s’arrête. Voyants rouge et orange allumés.',
-      fil: '<strong>Un fil casse.</strong> Personne n’a touché au champignon, et pourtant la chaîne est coupée : la bobine retombe, la machine s’arrête. C’est voulu : avec un contact NF, la panne tombe du bon côté. Voyant orange allumé.'
+      au: '<strong>On frappe l’arrêt d’urgence.</strong> Le champignon s’enfonce et un cran le retient : il reste enfoncé. Le contact NF s’ouvre, la chaîne est coupée, la bobine retombe : la machine s’arrête. Voyants rouge et jaune (ambre) allumés.',
+      fil: '<strong>Un fil casse.</strong> Personne n’a touché au champignon, et pourtant la chaîne est coupée : la bobine retombe, la machine s’arrête. C’est voulu : avec un contact NF, la panne tombe du bon côté. Voyant jaune (ambre) allumé.'
     };
     const maj = () => {
       const nfFerme = P.placer(pos.x)[0];
@@ -666,7 +666,7 @@
         { id: 'pont', nom: 'Le pont du NF', objets: [bloc.mobile], desc: 'Un ressort le plaque sur les plots. La tige le décolle de force quand on frappe.' },
         { id: 'chaine', nom: 'Les fils de la chaîne', objets: [groupeChaine], desc: 'La phase arrive par la vis 11. Le courant sort par la vis 12 et suit ce fil jusqu’à la bobine. Si ce fil casse, plus rien ne passe : la machine s’arrête.' },
         { id: 'bobine', nom: 'La bobine du contacteur (KM1)', objets: [groupeBobine], desc: 'C’est elle qu’on alimente par la chaîne. Plus de courant : elle retombe, le contacteur s’ouvre et la machine s’arrête.' },
-        { id: 'voyants', nom: 'Les voyants (vert, rouge, orange)', objets: lampes.map(l => l.G), desc: 'Ils informent, ils ne commandent rien. Vert : la bobine est alimentée. Rouge : l’arrêt d’urgence est frappé. Orange : la chaîne est coupée.' },
+        { id: 'voyants', nom: 'Les voyants (vert, rouge, jaune)', objets: lampes.map(l => l.G), desc: 'Ils informent, ils ne commandent rien. Vert : la bobine est alimentée. Rouge : l’arrêt d’urgence est frappé. Jaune (ambre) : la chaîne est coupée.' },
         { id: 'tole', nom: 'La face avant du coffret', objets: [tole, rebord], desc: 'Une tôle percée de quatre trous de 22 mm : l’arrêt d’urgence et les trois voyants.' },
         { id: 'corps', nom: 'Le corps, l’écrou et le support', objets: [P.corps, P.ecrou, P.support], desc: 'Le corps traverse la tôle, l’écrou le serre. Derrière, un support reçoit le bloc de contact et le cran.' }
       ],
@@ -683,7 +683,7 @@
           texte: 'La paume pousse le champignon. Il descend et entraîne la tige. Le contact n’a pas encore bougé : le courant passe toujours.' },
         { titre: 'Le NF s’ouvre : la chaîne est coupée', piece: 'pont', ralenti: true, voirDedans: true, actions: [['phase', 'coupe']],
           vue: { azimut: -58, elevation: 14, zoom: 1.15, cible: null },
-          texte: 'La tige décolle le pont du NF : le courant ne passe plus nulle part. La bobine n’est plus alimentée, la machine s’arrête. Le voyant vert s’éteint, l’orange s’allume.' },
+          texte: 'La tige décolle le pont du NF : le courant ne passe plus nulle part. La bobine n’est plus alimentée, la machine s’arrête. Le voyant vert s’éteint, le jaune (ambre) s’allume.' },
         { titre: 'Le cran accroche la tige', piece: 'cran', ralenti: true, voirDedans: true, actions: [['phase', 'accroche']],
           vue: { azimut: -140, elevation: 36, zoom: 2.3, cible: [XU + 6, -2, -14] },
           texte: 'Tout en bas de la course, le cliquet à ressort tombe dans la gorge de la tige : la tête reste enfoncée, même si on la lâche. Le voyant rouge s’allume : l’arrêt d’urgence est frappé.' },

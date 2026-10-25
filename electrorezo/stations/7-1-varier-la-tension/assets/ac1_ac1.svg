@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.5 -25.5 51 41" width="51" height="41">
+<!-- Alternatif monophasé > Alternatif monophasé — converti de ac1_ac1.elmt par outils\elmt-vers-svg.py -->
+
+<line x1="-15" y1="-10" x2="-20" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-15,-20 15,-20 15,10 -15,10" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -7.49,-14.78 A 2.50,2.50 0 0 0 -2.50,-15.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 7.51,5.22 A 2.50,2.50 0 0 0 12.50,5.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="0" x2="15" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="15" y1="-10" x2="20" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-20" y1="0" x2="-15" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -7.51,-15.22 A 2.50,2.50 0 0 0 -12.50,-15.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 7.49,4.78 A 2.50,2.50 0 0 0 2.50,5.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="14.5" y1="-19.5" x2="-14.5" y2="9.5" stroke="black" stroke-width="1" fill="none"/>
+</svg>

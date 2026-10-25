@@ -30,8 +30,9 @@ constant.
 Quatre cents volts à cinquante hertz. Deux cents volts à vingt-cinq hertz. Quatre-vingts volts à
 dix hertz. Le rapport vaut huit dans les trois cas.
 Tant qu'il est tenu, le couple reste entier, sur toute la plage que montre la scène, jusqu'à dix
-hertz. Plus bas, tout près de l'arrêt, la loi seule ne suffit plus. C'est ce qui rend le
-variateur de fréquence si supérieur au gradateur.
+hertz. Plus bas, tout près de l'arrêt, la loi seule ne suffit plus : c'est le rôle du contrôle
+vectoriel, dont on parle à la station sept point quatre. Le gradateur, lui, ne tient pas le
+couple, la station sept point un l'a montré.
 Une dernière remarque, parce qu'elle a des conséquences. Au-dessus de cinquante hertz, la tension
 ne peut plus suivre : on est déjà au maximum de ce que le réseau donne.
 Le rapport se met donc à tomber, et le couple avec. Un moteur peut tourner à soixante-quinze

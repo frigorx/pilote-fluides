@@ -2,7 +2,7 @@
 
 ModeleAppareil.construire({
   id: '5.8', ligne: 5,
-  vue3d: { modele: 'arretUrgence' },   /* 3D */
+  vue3d: { modele: 'arretUrgence', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 5 Commander · Station 8',
   titre: "Arrêt d’urgence et signalisation",
   narration: NARRATION,
@@ -69,6 +69,7 @@ ModeleAppareil.construire({
     { src: 'assets/au.svg', alt: "Symbole normalisé d’un arrêt d’urgence : tête en champignon et contact normalement fermé.", legende: "Arrêt d’urgence" },
     { src: 'assets/arret_urgence_tourner_deverouiller.svg', alt: "Symbole normalisé d’un arrêt d’urgence à déverrouillage par rotation.", legende: "Déverrouillage par rotation" },
     { src: 'assets/fin_de_course_came_no.svg', alt: "Symbole normalisé d’une fin de course à galet, contact normalement ouvert.", legende: "Fin de course NO" },
+    { src: 'assets/fin_de_course_came_nf.svg', alt: "Symbole normalisé d’une fin de course à galet, contact normalement fermé : celui d’une chaîne de sécurité.", legende: "Fin de course NF" },
     { src: 'assets/lampe2.svg', alt: "Symbole normalisé d’un voyant : un cercle barré d’une croix.", legende: "Voyant" }
   ],
   lecturePlan: [
@@ -98,20 +99,20 @@ ModeleAppareil.construire({
         { texte: "Oui, si on met un macaron.", pourquoi: "Un macaron ne remplace pas un appareil condamnable." },
         { texte: "Oui, c’est fait pour ça.", pourquoi: "Il est fait pour arrêter vite, ce qui est un autre métier." } ] },
 
-    { question: "Comment se câblent plusieurs arrêts d’urgence sur une même machine ?",
+    { question: "Sans relais de sécurité, comment se câblent plusieurs arrêts d’urgence sur une même machine ?",
       confirmation: "Tous en série : n’importe lequel doit tout arrêter.",
       reponses: [
-        { texte: "Un seul dans la chaîne, les autres sur un relais.", pourquoi: "Ce n’est pas la réponse attendue ici : au niveau de cette station, chaque arrêt d’urgence se câble dans la chaîne, tous en série. (Un relais de sécurité peut les regrouper : c’est hors programme.)" },
+        { texte: "Un seul dans la chaîne, les autres sur un relais.", pourquoi: "Sans relais de sécurité, chaque arrêt d’urgence se câble dans la chaîne, tous en série. (Avec un relais de sécurité, on peut les regrouper : c’est hors programme.)" },
         { texte: "Tous en parallèle.", pourquoi: "En parallèle, il faudrait les frapper tous en même temps pour arrêter la machine." },
         { texte: "Tous en série.", juste: true },
-        { texte: "En parallèle deux à deux.", pourquoi: "Le montage n’existe pas : la sécurité veut la série, sans exception." } ] },
+        { texte: "En parallèle deux à deux.", pourquoi: "Ce montage n’arrêterait pas la machine si on n’en frappait qu’un : il faut que chacun puisse tout arrêter, donc tous en série." } ] },
 
     { question: "Où se câble un voyant, et pourquoi ?",
       confirmation: "En parallèle : une lampe grillée ne doit jamais arrêter une machine.",
       reponses: [
         { texte: "En série, pour vérifier qu’il fonctionne.", pourquoi: "En série, une lampe grillée couperait le circuit qu’elle est censée signaler." },
         { texte: "Peu importe : il n’a pas de sens de branchement.", pourquoi: "Le sens du branchement change tout, et la série est ici une faute." },
-        { texte: "Directement sur la puissance.", pourquoi: "Un voyant est un appareil de commande : il ne se branche pas sur la puissance." },
+        { texte: "Dans la chaîne des sécurités, entre deux contacts NF.", pourquoi: "Dans la chaîne, une lampe grillée couperait la bobine : la machine s’arrêterait sans raison. Un voyant ne fait pas partie de la chaîne." },
         { texte: "En parallèle, pour qu’une lampe grillée n’arrête rien.", juste: true } ] }
   ],
 
@@ -126,9 +127,9 @@ ModeleAppareil.construire({
 
   credits: [
     { quoi: 'Photographies', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/380_signaling_operating/ et 390_sensors_instruments/' } ],
+      detail: 'appareils de commande, de signalisation et capteurs' } ],
 
   correspondances: [
     { ligne: 3, couleur: '#1b3a63', texte: "3.3 L’interrupteur-sectionneur" },

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25.0 -42.0 48.0 88.0" width="48" height="88">
+<!-- Source tripolaire + neutre — converti de src_3pn.elmt par outils\elmt-vers-svg.py -->
+<rect x="-25.0" y="-42.0" width="48.0" height="88.0" fill="#ffffff"/>
+<line x1="0" y1="10" x2="10" y2="10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="10" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="30" x2="10" y2="30" stroke="black" stroke-width="1" fill="none"/>
+<text x="-12" y="33" font-family="Arial,sans-serif" font-size="5" fill="#000000">N</text>
+<text x="-12" y="13" font-family="Arial,sans-serif" font-size="5" fill="#000000">L3</text>
+<text x="-12" y="-7" font-family="Arial,sans-serif" font-size="5" fill="#000000">L2</text>
+<text x="-12" y="-27" font-family="Arial,sans-serif" font-size="5" fill="#000000">L1</text>
+<line x1="0" y1="-30" x2="10" y2="-30" stroke="black" stroke-width="1" fill="none"/>
+</svg>

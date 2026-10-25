@@ -17,10 +17,11 @@ Voilà la première chose à comprendre : un électro-aimant n'attire pas progre
 seuil, et il est franchi ou il ne l'est pas.
 Pourquoi ? À cause du ressort. Il tire dans l'autre sens, avec une force à peu près constante.
 Tant que l'aimant est plus faible que lui, rien ne se passe. Dès qu'il devient plus fort, il
-gagne — et comme l'entrefer se referme, la force augmente encore. Ça s'emballe, et l'armature
-claque.
-Deuxième chose, regardez le nombre de la force pendant que vous manœuvrez. Elle suit le carré du
-courant. Doublez le courant, la force est multipliée par quatre.
+gagne — et dans la réalité, comme l'entrefer se referme, la force augmente encore. Ça s'emballe,
+et l'armature claque.
+Deuxième chose, regardez le nombre de la force pendant que vous manœuvrez. Il ne fait que suivre
+le carré du courant : il ne montre pas ce coup de fouet du collage. Doublez le courant, la force
+est multipliée par quatre.
 C'est la même loi qu'à la station un point un pour la chaleur. Le carré revient souvent en
 électricité.
 Troisième chose, le noyau de fer. Sans lui, une bobine attire à peine. Avec lui, la force est
@@ -42,13 +43,13 @@ même fer. Et pourtant l'un des deux ne fonctionne qu'en alternatif, l'autre non
 point huit. Un grand cadre, un fil qui arrive en haut, un fil qui repart en bas.
 Ce qui change d'un usage à l'autre, ce n'est pas le dessin : c'est le repère.
 K M pour un contacteur. K A pour un relais. Y V pour une électrovanne.
-Et retenez ce Y en tête de repère : il annonce toujours un actionneur, c'est-à-dire quelque
+Et retenez ce Y en tête de repère : il annonce en général un actionneur, c'est-à-dire quelque
 chose qui va bouger physiquement. Un clapet, un vérin, un frein.
-Enfin, la chose que le symbole ne dit jamais : la tension de la bobine.
+Enfin, la chose que le symbole ne dit pas : la tension de la bobine.
 Elle est écrite à côté. C'est toujours la même règle, celle que vous connaissez depuis la ligne
 quatre : le dessin donne la fonction, le texte donne la valeur.
 Et pour une bobine, cette valeur est la seule chose vraiment critique. Vingt-quatre volts sur du
-deux cent trente, elle grille en une seconde. Deux cent trente volts sur du vingt-quatre, elle
+deux cent trente, elle grille très vite. Deux cent trente volts sur du vingt-quatre, elle
 ne colle jamais et elle ronfle.
 Regardez ce qui est écrit dessus. Toujours.`
 };

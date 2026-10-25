@@ -44,7 +44,7 @@ Vous verrez à la station sept point quatre un symbole de la même famille, mais
 dedans. Et vous saurez immédiatement ce que fait l'appareil, sans notice.
 C'est exactement l'esprit de la ligne huit : on ne mémorise pas, on lit.
 Trois conseils de câblage pour finir.
-Un gradateur se monte en série sur la phase, comme un interrupteur. Jamais en parallèle.
+Un gradateur se monte en série sur la phase, comme un interrupteur, et non en parallèle.
 Vérifiez la nature de la charge avant de choisir. Résistive, inductive, à LED : ce n'est pas la
 même électronique, et un gradateur mal choisi grille.
 Et laissez de la place autour de son radiateur. Encastré dans une boîte fermée, un gradateur

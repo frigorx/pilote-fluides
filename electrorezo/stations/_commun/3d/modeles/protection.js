@@ -242,8 +242,8 @@
     let dernieresMesures = '';
     const majMesures = () => {
       let temps;
-      if (declenche) temps = cause === 'magnetique' ? 'moins de 10 ms' : 'quelques secondes (accéléré)';
-      else if (etat === 'surcharge') temps = 'dans ≈ ' + Math.max(1, Math.ceil((SEUIL - courbure()) / 0.44 * 1.1 / 0.3)) + ' s';
+      if (declenche) temps = cause === 'magnetique' ? 'moins de 10 ms' : 'accéléré ici ; en vrai, des minutes';
+      else if (etat === 'surcharge') temps = 'accéléré ici ; en vrai, des minutes';
       else if (etat === 'court') temps = 'moins de 10 ms';
       else temps = 'jamais : courant normal';
       const I = courantA();
@@ -263,7 +263,7 @@
     const PHRASES = {
       repos: '<strong>Au repos.</strong> Le courant entre en haut, traverse la bobine puis le bilame, et ressort en bas. Ni l’un ni l’autre ne bouge.',
       surcharge: '<strong>Surcharge.</strong> Un peu trop de courant, longtemps. Le bilame chauffe et se courbe <em>lentement</em>, jusqu’à pousser la barre de déclenchement.',
-      thermique: '<strong>Déclenché par le bilame.</strong> Il a poussé la barre : la serrure lâche, la manette retombe sur O, les contacts s’ouvrent. Ici le temps est accéléré : en vrai, des secondes ou des minutes.',
+      thermique: '<strong>Déclenché par le bilame.</strong> Il a poussé la barre : la serrure lâche, la manette retombe sur O, les contacts s’ouvrent. Ici le temps est accéléré : en vrai, plusieurs minutes à cette intensité.',
       magnetique: '<strong>Court-circuit.</strong> Le courant devient énorme d’un coup : la bobine attire le noyau, qui frappe la barre <em>instantanément</em>. L’arc part dans la chambre de coupure et s’éteint. Le bilame n’a pas eu le temps de bouger.',
       rearme: '<strong>Réarmé.</strong> On remonte la manette sur I : la serrure s’accroche de nouveau. Avant de réarmer, on cherche toujours la cause du défaut.'
     };
@@ -345,7 +345,7 @@
           texte: 'Le courant entre en haut, tourne dans la bobine, passe les contacts, descend dans le bilame et ressort en bas. Rien ne bouge : la manette est sur I.' },
         { titre: 'Surcharge : le bilame chauffe et se courbe', actions: [['phase', 'chauffe']],
           vue: { azimut: 58, elevation: 8, zoom: 1.75, cible: [9, -17, 36] }, duree: 7,
-          texte: 'Un peu trop de courant, longtemps. Le bilame chauffe — il rougit — et se courbe peu à peu vers la barre. C’est lent : des secondes ou des minutes.' },
+          texte: 'Un peu trop de courant, longtemps. Le bilame chauffe (la couleur montre la chaleur ; en vrai, il ne rougit pas) et se courbe peu à peu vers la barre. C’est lent : plusieurs minutes à cette intensité.' },
         { titre: 'Le bilame pousse la barre de déclenchement', piece: 'meca', actions: [['phase', 'pousse']],
           vue: { azimut: 56, elevation: 10, zoom: 1.3, cible: [9, -2, 38] },
           texte: 'Assez courbé, le bilame touche la barre et la pousse vers l’avant. En haut, la barre fait basculer le verrou de la serrure.' },
@@ -530,7 +530,7 @@
       let temps = 'jamais : courant normal';
       if (declenche) temps = cause === 'magnetique' ? 'moins de 10 ms' : 'déclenché';
       else if (etat === 'court') temps = 'moins de 10 ms';
-      else if (I / Ir > 1.12) temps = 'quelques secondes (accéléré)';
+      else if (I / Ir > 1.12) temps = 'accéléré ici ; en vrai, plusieurs minutes';
       else if (I > IN) temps = 'jamais : réglé trop haut';
       const liste = [
         { libelle: 'Courant du moteur (plaque : 8 A)', valeur: I >= 1000 ? '≈ 1 000 A' : String(I).replace('.', ',') + ' A' },
@@ -544,9 +544,9 @@
     const PHRASES = {
       repos: '<strong>Au repos.</strong> Le moteur tire 8 A, l’intensité de sa plaque ; la molette est réglée sur 8 A. Les bilames tiédissent et restent droits.',
       surcharge: '<strong>Surcharge.</strong> Le moteur force : 10,4 A au lieu de 8. Les trois bilames chauffent et se courbent <em>lentement</em> vers la barre.',
-      thermique: '<strong>Déclenché par les bilames.</strong> Ils ont poussé la barre : la serrure lâche, la manette tourne sur <em>Trip</em>, les trois pôles s’ouvrent ensemble. Temps accéléré : en vrai, des secondes ou des minutes.',
+      thermique: '<strong>Déclenché par les bilames.</strong> Ils ont poussé la barre : la serrure lâche, la manette tourne sur <em>Trip</em>, les trois pôles s’ouvrent ensemble. Temps accéléré : en vrai, plusieurs minutes à cette intensité.',
       magnetique: '<strong>Court-circuit.</strong> Le courant devient énorme : les bobines lancent leurs noyaux <em>instantanément</em>, la manette tourne sur <em>Trip</em>, l’arc s’éteint dans les chambres de coupure.',
-      haut: '<strong>Réglé trop haut.</strong> Avec la molette au-dessus de l’intensité de la plaque, la surcharge ne fait plus déclencher : le moteur n’est plus protégé.',
+      haut: '<strong>Réglé trop haut.</strong> Avec la molette au-dessus de l’intensité de la plaque, la surcharge ne fait plus déclencher : le moteur n’est plus protégé contre la surcharge (le court-circuit coupe toujours).',
       bas: '<strong>Réglé trop bas.</strong> La molette est sous l’intensité de la plaque : il déclenchera sans défaut. On règle sur la plaque, ni plus ni moins.',
       rearme: '<strong>Réarmé.</strong> On tourne la manette sur O, puis sur I : la serrure s’accroche de nouveau. Avant, on cherche pourquoi il a déclenché.'
     };
@@ -638,7 +638,7 @@
           texte: 'La plaque du moteur dit 8 A : on tourne la molette sur 8. Elle déplace la came, donc le point où les bilames feront déclencher.' },
         { titre: 'Surcharge : les bilames chauffent et se courbent', voirDedans: true, actions: [['focus', 'meca'], ['phase', 'chauffe']],
           vue: { azimut: 52, elevation: 8, zoom: 1.6, cible: [5, -16, 38] }, duree: 7,
-          texte: 'Le moteur force et tire 10,4 A. Les trois bilames rougissent et se courbent lentement vers leur barre.' },
+          texte: 'Le moteur force et tire 10,4 A. Les trois bilames chauffent (la couleur montre la chaleur ; en vrai, ils ne rougissent pas) et se courbent lentement vers leur barre.' },
         { titre: 'Les bilames poussent la barre', piece: 'meca', actions: [['focus', 'meca'], ['phase', 'pousse']],
           vue: { azimut: 52, elevation: 12, zoom: 1.12, cible: [6, 0, 40] },
           texte: 'Assez courbés, les bilames touchent la barre et la poussent vers l’avant. La barre commune bascule les verrous de la serrure.' },
@@ -944,7 +944,7 @@
           texte: 'Le courant du moteur traverse les trois éléments chauffants. Les bilames restent droits. Le contact 95-96 est fermé : la bobine du contacteur est alimentée.' },
         { titre: 'Surcharge : les bilames chauffent et se courbent', voirDedans: true, actions: [['focus', 'meca'], ['phase', 'chauffe']],
           vue: { azimut: 6, elevation: 6, zoom: 1.1, cible: [3, 2, 40] }, duree: 7,
-          texte: 'Le moteur force et tire 10,4 A. Les éléments chauffants rougissent, les bilames chauffent et se courbent lentement vers la droite.' },
+          texte: 'Le moteur force et tire 10,4 A. Les éléments chauffants et les bilames chauffent (la couleur montre la chaleur ; en vrai, ils ne rougissent pas) et se courbent lentement vers la droite.' },
         { titre: 'Les bilames poussent la réglette', piece: 'reglette', actions: [['focus', 'meca'], ['phase', 'pousse']],
           vue: { azimut: 8, elevation: 8, zoom: 1.45, cible: [6, 12, 40] },
           texte: 'Assez courbés, les bilames touchent les dents de la réglette et la poussent vers la droite, jusqu’au levier.' },
@@ -1469,7 +1469,7 @@
       const s = JSON.stringify(liste); if (s !== dern) { dern = s; ctx.mesures(liste); }
     };
     const PHRASES = {
-      gg: '<strong>gG seul.</strong> Le gG protège tout : câbles, prises, éclairage. Il fond dès que le courant dépasse durablement son calibre.',
+      gg: '<strong>gG seul.</strong> Le gG protège tout : câbles, prises, éclairage. Il fond quand le courant dépasse nettement son calibre assez longtemps : des minutes à une heure vers une fois et demie à deux fois, bien plus vite au-delà.',
       am: '<strong>aM seul.</strong> L’aM laisse passer la pointe du démarrage d’un moteur. En revanche il ne protège pas contre les petites surcharges.',
       deux: '<strong>Les deux.</strong> Même tube, même sable, même taille : seules deux lettres les distinguent. Faites monter le courant et comparez.',
       intacte: '<strong>Cartouche intacte.</strong> La lame laisse passer le courant. Elle chauffe un peu, sans conséquence.',
@@ -1485,7 +1485,7 @@
     const phase = v => {
       pasAPas = true; mode = 'deux'; ctx.regler('type', 'deux');
       [CG, CA].forEach(remplacer);
-      const k = { repos: 1, chauffe: 2.5, fond: 2.5, sable: 2.5, demarrage: 6, court: 20 }[v] || 1;
+      const k = { repos: 1, chauffe: 2, fond: 2, sable: 2, demarrage: 6, court: 20 }[v] || 1;
       [CG, CA].forEach(C => lancer(C, k));
       ctx.regler('courant', k); ctx.regler('etat', 'intacte');
       if (v === 'chauffe') { CG.gel = 0.8; CA.gel = 0.25; }
@@ -1542,7 +1542,7 @@
           texte: 'Coupée en deux : un tube de céramique, deux capsules de laiton, une lame à encoches, et du sable tout autour. En haut le gG, en bas l’aM : mêmes pièces.' },
         { titre: 'Surcharge : la lame chauffe aux encoches', voirDedans: true, actions: [['phase', 'chauffe']],
           vue: { azimut: 4, elevation: 8, zoom: 1.6, cible: [0, 13, 0] }, duree: 7,
-          texte: 'Deux fois et demie le calibre, longtemps. Aux encoches, la lame est plus fine : c’est là qu’elle chauffe le plus. L’aM, en bas, reste tiède : il n’est pas fait pour ça.' },
+          texte: 'Entre une fois et demie et deux fois le calibre, des minutes à une heure. Aux encoches, la lame est plus fine : c’est là qu’elle chauffe le plus. L’aM, en bas, reste tiède : il n’est pas fait pour ça.' },
         { titre: 'La lame fond à une encoche : l’arc naît', ralenti: true, actions: [['phase', 'fond']],
           vue: { azimut: 4, elevation: 8, zoom: 2.4, cible: [3, 13, 0] }, duree: 7,
           texte: 'Une encoche fond : la lame est coupée. Mais le courant saute encore l’écart : c’est l’arc, très chaud.' },

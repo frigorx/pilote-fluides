@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.0 -54.0 48.0 108.0" width="48" height="108">
+<!-- Transformateur monophasé — converti de transformator_1f_1.elmt par outils\elmt-vers-svg.py -->
+<rect x="-24.0" y="-54.0" width="48.0" height="108.0" fill="#ffffff"/>
+<ellipse cx="0.00" cy="-10.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="10.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-40" x2="0" y2="-25" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="25" x2="0" y2="40" stroke="black" stroke-width="1" fill="none"/>
+</svg>

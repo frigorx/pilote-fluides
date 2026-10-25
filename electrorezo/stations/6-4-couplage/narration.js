@@ -4,12 +4,12 @@
 const NARRATION = {
 
   decouvrir: `Sur le côté d'un moteur, il y a un petit couvercle. Vous l'ouvrez, et vous trouvez six vis
-en laiton, rangées sur deux lignes de trois. Entre elles, trois petites plaques de métal. On
-les appelle des barrettes.
+en laiton, rangées sur deux lignes de trois. Avec elles, trois petites plaques de métal, qu'on
+appelle des barrettes. Selon le couplage, on en pose deux ou trois.
 Maintenant, écoutez bien ce que je vais vous dire, parce que ça résume toute la station.
-Selon la façon dont vous posez ces trois plaques, ce moteur va tourner normalement pendant
+Selon la façon dont vous posez ces plaques, ce moteur va tourner normalement pendant
 vingt ans, ou se mettre à fumer en une demi-minute. La même machine. Les mêmes fils d'arrivée.
-Rien d'autre n'a changé que la position de trois morceaux de métal.
+Rien d'autre n'a changé que la position de quelques morceaux de métal.
 C'est le geste le plus simple de tout l'atelier. C'est aussi l'un de ceux qui coûtent le plus
 cher quand on le fait au hasard.`,
 
@@ -57,10 +57,10 @@ allez le voir tout de suite — et l'écran vous dira ce qui arriverait au moteu
   representer: `Sur un plan, personne ne dessine un moteur. On dessine un signe convenu, le même pour
 tout le monde, que vous soyez à Marseille ou à Hambourg.
 Le voici. Un rond, une lettre pour dire que c'est un moteur, et trois traits qui arrivent pour
-dire qu'il est alimenté par trois fils. À côté, les repères des bornes — exactement ceux que
-vous venez de manipuler dans la boîte.
+dire qu'il est alimenté par trois fils. À côté, les repères des bornes — les mêmes noms que
+ceux que vous venez de manipuler dans la boîte, rangés dans un ordre un peu différent en bas.
 Alors quand vous lirez un plan, c'est ce signe-là que vous chercherez. Et vous saurez que
-derrière, il y a six vis et trois barrettes à poser correctement.`,
+derrière, il y a six vis et des barrettes à poser correctement.`,
 
   verifier: ''   /* On ne parle pas pendant qu'on évalue. */
 };

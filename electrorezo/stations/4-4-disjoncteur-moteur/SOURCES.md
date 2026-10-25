@@ -16,4 +16,9 @@ Fond blanc remplace par `#fffdf8`. **Aucun symbole redessine.**
 
 ## Narration
 
-Ecrite le 28/08/2026, pour l'oreille. **Non validee.** Aucun MP3 fabrique.
+Ecrite le 28/08/2026, pour l'oreille. Les MP3 sont refaits en Piper a chaque changement de texte.
+
+## A trancher par F. Henninot
+
+- Droits de la page de catalogue Schneider Electric (GV2, GV3, GV7) reproduite dans un document de cours.
+- Magnetique fixe : vrai sur les GV2 ; le texte dit « sur les modeles courants (GV2) » ; verifier sur la notice du GV7 R, dont le seuil magnetique se regle.

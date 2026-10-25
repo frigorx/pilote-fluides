@@ -1,6 +1,6 @@
 /* ÉlectroRézo 8.1 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Version précédente : narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Voix fabriquées en Piper par le chef de chantier. */
 const NARRATION = {
 
   decouvrir: `Nous allons apprendre à lire. Et je pèse le mot : à lire, pas à reconnaître des dessins.
@@ -35,6 +35,7 @@ Sur un vrai plan, ces deux signes ne portent, en général, aucune légende. Ils
 les explique : personne n'écrit « ici, connexion ».
 C'est justement pour cette raison qu'il faut les connaître par cœur, eux — et eux seulement.
 Les autres lettres, vous apprendrez à les déduire.
+Une précision, pour ne pas vous tromper : quand un fil vient se brancher sur un autre en formant un T, il est relié lui aussi, avec ou sans point. C'est sur les croisements que le point fait la différence.
 Et méfiez-vous des plans photocopiés ou redessinés : un point mal imprimé disparaît. Dans le
 doute, on ne devine pas. On suit le fil sur l'installation, ou on demande un plan à jour.`
 };

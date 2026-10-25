@@ -39,7 +39,7 @@ ModeleAppareil.construire({
     "<strong>La bague de déphasage</strong> — un anneau de cuivre serti dans le noyau des bobines alternatives. Sans elle, l’attraction s’annulerait cent fois par seconde et l’appareil vibrerait.",
     "<strong>L’électrovanne</strong> — la même bobine, mais qui déplace un clapet au lieu d’un contact. On la rencontre partout en froid et en climatisation."
   ],
-  reglage: "Une bobine ne se règle pas : elle se choisit. La seule chose à vérifier est sa <strong>tension</strong>, et elle est écrite dessus. Une bobine 24 V sur du 230 V grille en une seconde ; une bobine 230 V sur du 24 V ne colle jamais et se met à ronfler.",
+  reglage: "Une bobine ne se règle pas : elle se choisit. La seule chose à vérifier est sa <strong>tension</strong>, et elle est écrite dessus. Une bobine 24 V sur du 230 V grille très vite ; une bobine 230 V sur du 24 V ne colle jamais et se met à ronfler.",
 
   picto: SchemasMachines.pictoTrois,
   colonnes: SchemasMachines.COLONNES,
@@ -69,8 +69,8 @@ ModeleAppareil.construire({
   lecturePlan: [
     "Le symbole de la bobine est le <strong>rectangle</strong> que vous connaissez depuis la station 8.8 : un grand cadre, un fil qui arrive en haut, un fil qui repart en bas.",
     "Ce qui change d’un usage à l’autre, c’est le <strong>repère</strong> : KM pour un contacteur, KA pour un relais, YV pour une électrovanne.",
-    "Un <strong>Y</strong> en tête de repère annonce toujours un actionneur : quelque chose va bouger physiquement.",
-    "Et la <strong>tension de bobine</strong> n’est jamais dans le dessin. Elle est écrite à côté — c’est la règle que vous connaissez : le dessin donne la fonction, le texte donne la valeur."
+    "Un <strong>Y</strong> en tête de repère annonce en général un actionneur : quelque chose va bouger physiquement.",
+    "Et la <strong>tension de bobine</strong> n’est pas dans le dessin. Elle est écrite à côté — c’est la règle que vous connaissez : le dessin donne la fonction, le texte donne la valeur."
   ],
 
   tableau: SchemasMachines.tableauMachines,
@@ -102,7 +102,7 @@ ModeleAppareil.construire({
         { texte: "C’est normal en alternatif.", pourquoi: "Un léger bourdonnement l’est, pas un ronflement fort qui vibre : la bague de déphasage existe justement pour l’éviter." } ] },
 
     { question: "Une bobine 24 V alimentée en 230 V : que se passe-t-il ?",
-      confirmation: "Elle grille en une seconde.",
+      confirmation: "Elle grille très vite.",
       reponses: [
         { texte: "Elle colle plus fort.", pourquoi: "Elle colle, en effet — puis elle brûle." },
         { texte: "Elle grille.", juste: true },

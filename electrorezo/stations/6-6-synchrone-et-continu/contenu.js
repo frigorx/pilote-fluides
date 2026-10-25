@@ -17,8 +17,8 @@ ModeleAppareil.construire({
       alt: "Coupe d’un moteur à courant continu : deux aimants fixes marqués N et S dans le stator, un bobinage sur le rotor, et sous l’arbre un collecteur fendu en deux segments sur lesquels frottent deux balais reliés au plus et au moins.",
       titre: "Le moteur à courant continu.", sous: "Deux aimants fixes, deux balais, un anneau fendu. Pas de champ tournant du tout." },
     { src: 'assets/biblio/polarites-qui-s-inversent.jpeg',
-      alt: "Deux vues d’un même moteur alternatif dont les polarités N et S du stator sont inversées de l’une à l’autre : toutes les centièmes de seconde elles s’inversent, et le rotor effectue un demi-tour.",
-      titre: "Le synchrone, lui, suit l’alternance.", sous: "Les polarités s’inversent cent fois par seconde, et le rotor reste accroché." }
+      alt: "Deux vues d’un même petit moteur alternatif à deux pôles dont les polarités N et S du stator sont inversées de l’une à l’autre : toutes les centièmes de seconde elles s’inversent, et le rotor effectue un demi-tour.",
+      titre: "Le synchrone, lui, suit l’alternance.", sous: "Sur ce petit moteur à deux pôles, les polarités s’inversent cent fois par seconde et le rotor reste accroché : un demi-tour à chaque inversion, soit 3000 tr/min. Le moteur de la vue 3D du temps 2 a quatre pôles : 1500 tr/min." }
   ],
   creditPhoto: 'La coupe du moteur à courant continu est dessinée pour cette station : la base d’images n’en contient aucun. Détail dans « Crédits ».',
 
@@ -46,11 +46,11 @@ ModeleAppareil.construire({
   consigneAptitudes: 'C’est le moteur à COURANT CONTINU qu’on juge ici. Cochez, puis validez.',
   aptitudes: {
     mouvement: true, tension: false, alternatif: false,
-    bonneReponse: 'Exact — et il est le seul moteur de la ligne à répondre non à la troisième. Il n’a pas besoin de champ tournant, donc pas besoin d’alternatif : son collecteur fabrique lui-même l’inversion, mécaniquement.',
+    bonneReponse: 'Exact — et, parmi les moteurs du tableau, il est le seul à répondre non à la troisième. Il n’a pas besoin de champ tournant, donc pas besoin d’alternatif : son collecteur fabrique lui-même l’inversion, mécaniquement.',
     erreurs: {
       mouvement: 'C’est son métier.',
       tension: 'Il consomme, il ne transforme pas.',
-      alternatif: 'C’est justement ce qui le distingue de tous les autres : il fonctionne en continu, et son collecteur remplace le champ tournant.'
+      alternatif: 'C’est ce qui le distingue des autres moteurs du tableau : il fonctionne en continu, et son collecteur remplace le champ tournant.'
     }
   },
 
@@ -60,7 +60,7 @@ ModeleAppareil.construire({
     "Les <strong>balais</strong> s’usent et se remplacent. C’est un entretien courant, prévu par le constructeur, avec des trappes d’accès.",
     "Un moteur à collecteur <strong>fait des étincelles</strong> : en atmosphère explosible, il n’est admis que s’il est certifié ATEX, et c’est une contrainte sérieuse en froid industriel."
   ],
-  piege: "Ne confondez pas <em>synchrone</em> et <em>asynchrone</em> sur une plaque. Une vitesse qui n’est pas ronde (1435 ou 2900 tr/min) est celle d’un asynchrone, à coup sûr. Un nombre rond, lui, ne prouve rien : cherchez aussi la mention « synchrone » sur la plaque.",
+  piege: "Ne confondez pas <em>synchrone</em> et <em>asynchrone</em> sur une plaque. Sur une plaque de moteur alternatif 50 Hz, une vitesse qui n’est pas ronde (1435 ou 2900 tr/min) est celle d’un asynchrone. Un nombre rond, lui, ne prouve rien : cherchez aussi la mention « synchrone » sur la plaque.",
 
   symboles: [
     { src: 'assets/moteur_dc.svg', alt: "Symbole normalisé d’un moteur à courant continu : un rond marqué M, avec les traits du collecteur.", legende: "Courant continu" },
@@ -116,13 +116,13 @@ ModeleAppareil.construire({
     "<strong>Synchrone</strong> : il suit exactement. Mais il ne démarre pas seul.",
     "<strong>Courant continu</strong> : pas de champ tournant. Un collecteur, des balais.",
     "<strong>Les balais s’usent</strong>, et ils font des étincelles.",
-    "Une vitesse <strong>pas ronde</strong> (1435) = asynchrone. Un nombre rond ne prouve rien : cherchez « synchrone » sur la plaque."
+    "Sur un moteur alternatif 50 Hz, une vitesse <strong>pas ronde</strong> (1435) = asynchrone. Un nombre rond ne prouve rien : cherchez « synchrone » sur la plaque."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Situer les trois familles de moteurs, comprendre le rôle du collecteur, et savoir reconnaître chaque famille sur une plaque et sur un plan.</p><p><strong>Limite.</strong> Station de découverte : les modes d’excitation et la commande des brushless ne sont pas traités.</p>',
   credits: [
     { quoi: 'Illustrations', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' } ],
+      detail: 'documents de cours indexés dans la base de connaissances inerWeb' } ],
 
   correspondances: [
     { ligne: 6, couleur: '#c9451a', texte: "6.3 Le moteur asynchrone triphasé" },

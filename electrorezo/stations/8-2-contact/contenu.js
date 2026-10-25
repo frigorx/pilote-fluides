@@ -17,13 +17,15 @@ ModeleSigne.construire({
   ouOnLaVoit: "Dans presque tous les symboles d’appareillage. Ce qui change d’un appareil à l’autre, ce sont les signes qu’on lui accroche.",
 
   pourquoiCetteForme: [
-    "<strong>Le trait part d’un pivot, en bas.</strong> La pièce mobile tourne autour de lui — le dessin est un croquis du mécanisme, vu de côté. Sur le vrai symbole, le pivot n’est pas marqué : il n’y a pas de point.",
+    "<strong>Le trait part d’un pivot, en bas.</strong> Le dessin est un croquis de la pièce mobile, vue de côté : une lame qui tourne autour de ce pivot. Sur un appareil réel, la pièce mobile peut aussi être un pont qui glisse (voir la vue 3D ci-dessous) : le dessin reste le même, c’est la convention. Sur le vrai symbole, le pivot n’est pas marqué : il n’y a pas de point.",
     "<strong>Le trait est la pièce mobile</strong>, dessinée dans la position où elle laisse un vide.",
     "<strong>La règle qui compte : un contact est toujours dessiné au repos</strong> — personne n’appuie, aucune bobine n’est alimentée, la machine est à l’arrêt. Ce n’est pas forcément l’état où vous le trouverez.",
     "<strong>Normalement ouvert</strong> : au repos, il laisse un vide. <strong>Normalement fermé</strong> : au repos, il est déjà fermé, et le dessin porte un petit trait qui barre. Le second sert aux sécurités : un fil arraché ouvre le circuit et arrête la machine."
   ],
 
-  motsOuOnLaTrouve: ['interrupteur', 'sectionneur', 'fusible'],
+  /* Le fusible est un leurre de l'exercice : il n'a pas de contact, donc il n'est pas dans la carte « Les mots où elle entre ». */
+  exercice: () => Signes.retrouver('contact', ['interrupteur', 'sectionneur', 'fusible']),
+  motsOuOnLaTrouve: ['interrupteur', 'sectionneur'],
   motVedette: 'sectionneur',
 
   symbolesBiblio: [
@@ -34,7 +36,7 @@ ModeleSigne.construire({
     "Sur un vrai plan, ce trait vient <strong>très souvent accompagné</strong> : il porte la barre du sectionnement, le crochet du thermique, un demi-cercle au bout d’un double trait pour la temporisation.",
     "Le trait incliné dit seulement « ici, ça s’ouvre et ça se ferme ». <strong>Tout le reste est écrit autour de lui.</strong>",
     "Sur les deux symboles ci-dessus, à gauche du trait, vous voyez un petit arc et un pointillé : c’est l’électro-aimant qui commande ce contact, et le lien mécanique entre les deux (stations 8.6 et 8.7).",
-    "Les numéros aux bornes le confirment : 13-14 pour un contact ouvert au repos, 21-22 pour un contact fermé au repos."
+    "Sur un plan, les numéros aux bornes le confirment : 13-14 pour un contact ouvert au repos, 21-22 pour un contact fermé au repos."
   ],
 
   quiz: [
@@ -73,7 +75,7 @@ ModeleSigne.construire({
 
   retenir: [
     "<strong>Le trait incliné = un contact.</strong> Ici, ça s’ouvre et ça se ferme.",
-    "<strong>Toujours dessiné au repos</strong>, jamais dans l’état où vous le trouverez.",
+    "<strong>Toujours dessiné au repos</strong>, pas forcément dans l’état où vous le trouverez.",
     "Le petit trait qui barre = fermé au repos. C’est la lettre des sécurités.",
     "Une cartouche de fusible n’en a pas : elle fond."
   ],

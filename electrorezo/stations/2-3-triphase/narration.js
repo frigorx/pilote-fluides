@@ -1,6 +1,6 @@
 /* ÉlectroRézo 2.3 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 sont refaits en Piper à chaque changement de texte. */
 const NARRATION = {
 
   decouvrir: `Nous passons de un à trois. Et je vais vous dire tout de suite pourquoi c'est intéressant, parce
@@ -21,15 +21,15 @@ disposés à cent vingt degrés l'un de l'autre autour du rotor. Quand le rotor 
 devant l'un, puis devant le deuxième, puis devant le troisième.
 Ce n'est donc pas un réglage. C'est de la mécanique.
 Maintenant, appuyez sur le second bouton : la somme des trois.
-Regardez bien la ligne rouge. Elle est plate, sur zéro, en permanence. À chaque instant, les
+Regardez bien la ligne de la somme. Elle est plate, sur zéro, en permanence. À chaque instant, les
 trois tensions s'annulent.
 Prenez la mesure de ce que ça implique. Si les trois phases alimentent des charges identiques, le
 courant qui revient par le neutre est nul lui aussi. Le neutre ne ramène rien.
 Attention quand même : ça ne vaut que si les charges sont équilibrées. Déséquilibrez-les — un
 gros appareil sur une seule phase — et le neutre se met à ramener du courant, donc à chauffer.
 Dernier point, et c'est le plus beau. Ce décalage entre les trois crée quelque chose de
-remarquable dans un moteur : un champ magnétique qui tourne. Le rotor n'a plus qu'à le suivre.
-Aucune pièce mobile, aucun dispositif de démarrage : le moteur part tout seul.
+remarquable dans un moteur : un champ magnétique qui tourne. Le champ tourne sans que rien ne tourne pour le créer. Le rotor n'a plus qu'à le suivre, sans
+condensateur ni dispositif de lancement : le moteur part tout seul.
 C'est la station six de cette ligne, et je vous la recommande.`,
 
   manipuler: `Pour la mesure, il y a une chose à savoir, et elle évite des erreurs coûteuses.
@@ -42,9 +42,10 @@ Voilà. Six mesures, deux valeurs.
 Maintenant, à quoi ça sert de les faire toutes les six ? À diagnostiquer.
 Elles doivent être très proches les unes des autres. Quatre cents, quatre cent deux, trois cent
 quatre-vingt-dix-huit : c'est normal.
-Mais si l'une sort du lot — si une mesure vers le neutre donne cent cinquante alors que les deux
-autres donnent deux cent trente — vous avez un conducteur coupé, ou un neutre mal raccordé. Et
-vous l'avez trouvé en trois minutes.
+Mais si des mesures sortent du lot, regardez quel conducteur elles ont en commun. Essayez le
+second bouton, sous le dessin : une mesure vers le neutre tombe à cent cinquante volts, et deux
+mesures entre phases à trois cent trente. Toutes passent par la même phase : c'est elle qui est
+coupée ou mal serrée. Et vous l'avez trouvée en trois minutes.
 Un avertissement pour finir. Sur la même prise, il y a deux cent trente et quatre cents volts,
 selon les bornes que vous choisissez.
 Se tromper de paire, c'est envoyer quatre cents volts dans un appareil qui en attend deux cent
@@ -56,15 +57,19 @@ Trois vague : trois conducteurs, pas de neutre.
 Trois N vague : quatre conducteurs, neutre distribué.
 Les deux existent, et les deux sont normales. Une machine triphasée sans neutre, c'est le cas le
 plus fréquent en atelier : un moteur n'a besoin que des trois phases.
-Sur une plaque ou une notice, vous verrez souvent l'écriture deux cent trente barre quatre cents
-volts : d'abord la tension vers le neutre, ensuite celle entre phases. Quelques constructeurs
-l'écrivent à l'envers, quatre cents barre deux cent trente : lisez toujours l'intitulé.
+Sur la plaque d'un moteur, les deux tensions écrites sont deux tensions entre phases, que le moteur
+accepte : deux cent trente en triangle, quatre cents en étoile. Vous le verrez à la station six
+point quatre.
+Sur une notice, ou un document qui décrit le réseau, l'écriture deux cent trente barre quatre cents
+volts dit autre chose : d'abord la tension vers le neutre, ensuite celle entre phases. Quelques
+constructeurs l'écrivent à l'envers, quatre cents barre deux cent trente : lisez toujours
+l'intitulé.
 Les repères des trois phases sont L un, L deux, L trois.
 Mais je dois vous prévenir : sur du matériel ancien, vous trouverez R, S, T. C'est exactement la
 même chose. Les anciennes lettres n'ont pas disparu des ateliers, et vous les rencontrerez sur
 des armoires qui tournent encore très bien.
 Enfin, sur un plan de puissance, le triphasé se reconnaît d'un coup d'œil : trois traits
-verticaux qui descendent en parallèle.
+parallèles, ou un seul trait qui porte trois petites barres obliques. Les symboles sont sous vos yeux.
 C'est la signature de la ligne. Dès que vous ouvrez un dossier, vous savez en une seconde si vous
 avez affaire à du monophasé ou à du triphasé.`
 };

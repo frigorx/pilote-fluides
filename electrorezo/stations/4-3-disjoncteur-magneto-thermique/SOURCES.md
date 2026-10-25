@@ -19,4 +19,8 @@ les deux declencheurs, le tore differentiel. Representations pedagogiques.
 
 ## Narration
 
-Ecrite le 28/08/2026, pour l'oreille. **Non validee.** Aucun MP3 fabrique.
+Ecrite le 28/08/2026, pour l'oreille. Les MP3 sont refaits en Piper a chaque changement de texte.
+
+## A trancher par F. Henninot
+
+- Droits de la photo de l'appareil (page du catalogue Legrand, DNX3 / DX3, reproduite dans un document de cours).

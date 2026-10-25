@@ -15,7 +15,7 @@ ModeleSigne.construire({
     { id: '8.2', quoi: "le contact" },
     { id: '8.7', quoi: "le pointillé" },
     { id: '8.8', quoi: "la bobine" },
-    { id: '8.9', quoi: "la borne" },
+    { id: '8.9', quoi: "les repères" },
   ],
 
   ceQuelleDit: 'Vous connaissez l’alphabet : le trait, le point, le contact, la barre, le rectangle, le crochet, le demi-cercle, le pointillé, la bobine, le rond, les repères. Une dizaine de signes — de quoi lire beaucoup de symboles, et savoir quoi demander pour le reste.',
@@ -41,7 +41,7 @@ ModeleSigne.construire({
 <g>
   <rect x="34" y="70" width="240" height="280" rx="12" fill="#f7f1e7" stroke="rgba(27,58,99,.18)"/>
   <text x="154" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#1b3a63">1 · La colonne</text>
-  <line x1="154" y1="130" x2="154" y2="270" stroke="#c9451a" stroke-width="8"/>
+  <line x1="154" y1="130" x2="154" y2="270" stroke="#1b3a63" stroke-width="8"/>
   <text x="154" y="300" text-anchor="middle" font-size="13" fill="#637285">le trait vertical :</text>
   <text x="154" y="320" text-anchor="middle" font-size="13" fill="#637285">par où passe le courant</text>
 </g>
@@ -52,7 +52,7 @@ ModeleSigne.construire({
   ${lettre('contact', 334, 150, .4)}
   <text x="372" y="155" font-size="14" fill="#1b3a63">ça s’ouvre</text>
   ${lettre('sectionnement', 334, 205, 1.4)}
-  <text x="372" y="210" font-size="14" fill="#1b3a63">ça se condamne</text>
+  <text x="372" y="210" font-size="14" fill="#1b3a63">ça peut isoler</text>
   ${lettre('thermique', 334, 260, 1.8)}
   <text x="372" y="265" font-size="14" fill="#1b3a63">la chaleur</text>
   ${lettre('magnetique', 334, 315, 2.2)}
@@ -63,7 +63,7 @@ ModeleSigne.construire({
   <rect x="546" y="70" width="240" height="280" rx="12" fill="#e3f5ec" stroke="#1e7e54" stroke-width="2"/>
   <text x="666" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#1e7e54">3 · On additionne</text>
   <text x="666" y="150" text-anchor="middle" font-size="14" fill="#1b3a63">ça s’ouvre</text>
-  <text x="666" y="176" text-anchor="middle" font-size="14" fill="#1b3a63">+ ça se condamne</text>
+  <text x="666" y="176" text-anchor="middle" font-size="14" fill="#1b3a63">+ ça peut isoler</text>
   <text x="666" y="202" text-anchor="middle" font-size="14" fill="#1b3a63">+ la chaleur</text>
   <text x="666" y="228" text-anchor="middle" font-size="14" fill="#1b3a63">+ l’aimant</text>
   <line x1="586" y1="248" x2="746" y2="248" stroke="#1e7e54" stroke-width="2"/>
@@ -76,7 +76,7 @@ ModeleSigne.construire({
   pourquoiCetteForme: [
     '<strong>Premier geste : trouvez la colonne.</strong> Un symbole est presque toujours bâti autour d’un trait vertical, le passage du courant. Repérez-le, et vous savez par où ça entre et par où ça sort.',
     '<strong>Deuxième geste : nommez chaque signe</strong> accroché à cette colonne, un par un, sans vous presser.',
-    '<strong>Troisième geste : additionnez.</strong> Ça s’ouvre, ça se condamne, ça surveille la chaleur et l’aimant : c’est un disjoncteur. La petite croix × posée sur la colonne le confirme : c’est son signe. Vous ne l’avez pas reconnu, vous l’avez lu.',
+    '<strong>Troisième geste : additionnez.</strong> Ça s’ouvre, ça peut isoler, ça surveille la chaleur et l’aimant : c’est un disjoncteur. La petite croix × posée sur la colonne le confirme : c’est son signe. Vous ne l’avez pas reconnu, vous l’avez lu.',
     '<strong>Toute la différence est là.</strong> Celui qui a appris par cœur est perdu devant un symbole nouveau. Celui qui sait lire sait toujours quoi chercher.'
   ],
 
@@ -108,7 +108,7 @@ ModeleSigne.construire({
         { texte: 'La couleur du trait.', pourquoi: 'Sur un plan imprimé en noir et blanc, la couleur ne dit rien : ce n’est pas un indice sur lequel compter.' } ] },
 
     { question: 'Un symbole porte : un contact, une barre courte, un crochet carré, un demi-cercle, et une petite croix sur la colonne. C’est…',
-      confirmation: 'Il s’ouvre, il se condamne, il voit la chaleur et l’aimant, et la croix dit : un disjoncteur.',
+      confirmation: 'Il s’ouvre, il peut isoler, il voit la chaleur et l’aimant, et la croix dit : un disjoncteur.',
       reponses: [
         { texte: 'Un relais thermique.', pourquoi: 'Le relais thermique n’a ni barre de sectionnement, ni demi-cercle magnétique.' },
         { texte: 'Un sectionneur porte-fusible.', pourquoi: 'Celui-là porte un rectangle de fusible, et aucun déclencheur.' },
@@ -134,8 +134,7 @@ ModeleSigne.construire({
 
   jeu: {
     titre: 'Le déchiffreur — le test de la ligne 8',
-    regle: 'Cinq symboles, décrits signe par signe. Pour chacun, additionnez les signes et dites quel appareil c’est, en vingt-cinq secondes.',
-    secondes: 25,
+    regle: 'Cinq symboles, décrits signe par signe. Pour chacun, additionnez les signes et dites quel appareil c’est.',
     actions: [
       { id: 'interrupteur', libelle: 'Un interrupteur' },
       { id: 'sectionneur', libelle: 'Un sectionneur' },
@@ -150,7 +149,7 @@ ModeleSigne.construire({
       { enonce: 'Un contact, et une barre courte à son extrémité.',
         fiche: [['Signes lus', 'contact + aptitude au sectionnement'], ['Déjà vu ?', 'oui, station 8.3']],
         bonne: 'sectionneur',
-        explication: 'Ça s’ouvre et ça se condamne : un sectionneur.' },
+        explication: 'Ça s’ouvre et ça peut isoler : un sectionneur.' },
       { enonce: 'Un contact, et un crochet carré accroché sous lui.',
         fiche: [['Signes lus', 'contact + déclencheur thermique'], ['Déjà vu ?', 'oui, station 8.5']],
         bonne: 'thermique',

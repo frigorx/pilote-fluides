@@ -1,14 +1,14 @@
 /* ÉlectroRézo 5.7 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 d'un temps dont le texte change sont supprimés, puis refaits en Piper. */
 const NARRATION = {
 
   decouvrir: `Arrêtons-nous un instant sur ce qui rend cette station particulière.
-Depuis le début de la ligne, tout est commandé par une bobine. Le contacteur obéit à une bobine.
+Depuis la station cinq point deux, presque tout est commandé par une bobine. Le contacteur obéit à une bobine.
 Le relais obéit à une bobine. Le temporisé aussi.
 Ici, c'est l'un des rares endroits de la ligne où un être humain agit directement sur le contact,
 avec son doigt. Vous retrouverez l'autre grand cas à la station cinq point huit : l'arrêt d'urgence.
-C'est le point d'entrée de toute la commande. Sans lui, rien ne démarre jamais.`,
+C'est le point d'entrée de la commande : c'est par lui que l'être humain donne son ordre.`,
 
   comprendre: `Première chose à comprendre : un bouton n'est pas une pièce, c'est un empilement de trois.
 Tout en haut, la tête. C'est ce que le doigt touche : ronde, plate, en champignon, verte, rouge,
@@ -38,12 +38,12 @@ sélecteur, non : il tient tout seul.`,
 
   manipuler: `Les trois questions, pour un bouton-poussoir — pas pour un sélecteur.
 Vous allez voir : ici aussi, on répond non aux trois. Et pourtant,
-sans lui, rien ne démarre.`,
+c'est par lui que l'ordre humain entre dans la commande.`,
 
   representer: `Sur un plan, le poussoir se reconnaît à sa tête.
 Un petit crochet carré, ouvert du côté du contact, relié à lui par une liaison en pointillé.
-Ce pointillé, vous savez déjà le lire : c'est la lettre de la station huit point sept. Ce n'est
-pas un fil, c'est un lien mécanique. Le doigt pousse la tête, la tête pousse la lame.
+Ce pointillé, si vous avez suivi la ligne huit, vous savez déjà le lire : c'est la lettre de la
+station huit point sept. Ce n'est pas un fil, c'est un lien mécanique. Le doigt pousse la tête, la tête pousse la lame.
 Le sélecteur, lui, n'a pas cette tête. Il porte un trait avec des positions marquées — et ce
 dessin-là dit qu'il reste où on l'a mis.
 Le repère est la lettre S. S un, S deux, S trois.

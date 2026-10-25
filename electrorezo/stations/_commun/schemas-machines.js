@@ -209,7 +209,7 @@ ${bob(410, N2, C.orange)}
     const peindre = () => {
       const ns = 1500;
       const g = 0.005 + (charge / 100) * 0.038;      /* glissement : 0,5 % à vide, ~4 % en charge */
-      const n = Math.round(ns * (1 - g));
+      const n = Math.floor(ns * (1 - g));      /* 1435,5 s'affiche 1435, comme la plaque */
       const I = 1.4 + (charge / 100) * 2.44;
       d.innerHTML = `
 <rect x="8" y="8" width="684" height="304" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
@@ -321,7 +321,7 @@ ${cadre(270, 'Synchrone', 'il est accroché au champ',
   `<circle cx="380" cy="172" r="34" fill="none" stroke="${C.vert}" stroke-width="4"/>
    <text x="380" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="${C.vert}">1500</text>
    <text x="380" y="220" text-anchor="middle" font-size="11" fill="${C.gris}">exactement 1500</text>`,
-  'vitesse exacte — mais il faut l’aider à démarrer')}
+  'exacte, mais démarrage aidé')}
 
 ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
   `<circle cx="620" cy="172" r="34" fill="none" stroke="${C.bleu}" stroke-width="4"/>
@@ -395,7 +395,7 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
 <text x="560" y="140" text-anchor="middle" font-size="26" font-weight="700" fill="${C.gris}">${vitesse}</text>
 <text x="560" y="164" text-anchor="middle" font-size="12" fill="${C.gris}">tr/min</text>
 <text x="560" y="196" text-anchor="middle" font-size="12" fill="${C.gris}">${cale ? 'il s’arrête' : 'elle baisse à peine'}</text>
-<text x="560" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="${C.navy}">et l’intensité monte : ${nb(I, 1)} A</text>
+<text x="560" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="${C.navy}">${U < 400 ? 'et l’intensité monte : ' : 'l’intensité : '}${nb(I, 1)} A</text>
 
 <text x="350" y="272" text-anchor="middle" font-size="13" fill="${C.gris}">Sur un moteur asynchrone ordinaire sous couple constant, baisser la tension</text>
 <text x="350" y="292" text-anchor="middle" font-size="13" fill="${C.gris}">ne le ralentit presque pas. Ça l’affaiblit, et ça le fait chauffer.</text>`;
@@ -422,7 +422,7 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
       for (let i = 0; i <= 560; i += 2) {
         const p = (i / 560) * 4;                       /* deux périodes */
         const frac = p % 1;
-        const y = frac < seuil ? 170 : 170 - 74 * Math.sin(p * Math.PI) * (p % 2 < 1 ? 1 : -1);
+        const y = frac < seuil ? 170 : 170 - 74 * Math.sin(p * Math.PI);
         pts.push((100 + i) + ',' + Math.min(244, Math.max(96, y)).toFixed(1));
       }
       /* valeur efficace d'une sinusoïde coupée à l'angle α : U √(1 − α/π + sin 2α / 2π)
@@ -536,10 +536,10 @@ ${cadre(510, 'Courant continu', 'il n’a pas de champ tournant',
   }
 
   function troisEtagesDuVariateur() {
-    const d = svg('0 0 760 300', 'Un variateur de fréquence en trois étages : il redresse, il lisse, puis il refabrique une tension alternative à la fréquence voulue.');
+    const d = svg('0 0 800 300', 'Un variateur de fréquence en trois étages : il redresse, il lisse, puis il refabrique une tension alternative à la fréquence voulue.');
     d.innerHTML = `
-<rect x="8" y="8" width="744" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
-<text x="380" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Il ne transforme pas : il défait, puis il refait</text>
+<rect x="8" y="8" width="784" height="284" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
+<text x="400" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Il ne transforme pas : il défait, puis il refait</text>
 
 <text x="60" y="120" text-anchor="end" font-size="13" font-weight="700" fill="${C.orange}">50 Hz</text>
 <path d="M70 140 Q84 108 98 140 Q112 172 126 140" fill="none" stroke="${C.orange}" stroke-width="3"/>
@@ -559,12 +559,12 @@ ${[[150, 'Le redresseur', 'il fait passer tout du même côté'],
 <path d="M518 134 L528 140 L518 146" fill="none" stroke="${C.navy}" stroke-width="3"/>
 <path d="M128 140 L146 140" stroke="${C.navy}" stroke-width="3"/>
 
-<text x="700" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="${C.vert}">0 à 400 Hz</text>
-<path d="M662 152 L672 132 L682 152 L692 132 L702 152 L712 132 L722 152" fill="none" stroke="${C.vert}" stroke-width="3"/>
+<text x="752" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="${C.vert}">0 à 400 Hz</text>
+<path d="M722 152 L732 132 L742 152 L752 132 L762 152 L772 132 L782 152" fill="none" stroke="${C.vert}" stroke-width="3"/>
 
-<text x="380" y="230" text-anchor="middle" font-size="13" fill="${C.gris}">Entre les deux, l’énergie passe par du continu. C’est pour cela qu’un variateur ne peut pas être un simple transformateur.</text>
-<text x="380" y="258" text-anchor="middle" font-size="13" font-weight="700" fill="${C.rouge}">Le condensateur du bus reste chargé après la coupure. On attend le temps indiqué avant d’ouvrir.</text>
-<text x="380" y="282" text-anchor="middle" font-size="12" fill="${C.gris}">Cinq minutes, souvent. C’est écrit sur l’appareil, et ce n’est pas une précaution de principe.</text>`;
+<text x="400" y="230" text-anchor="middle" font-size="13" fill="${C.gris}">Entre les deux, l’énergie passe par du continu. C’est pour cela qu’un variateur ne peut pas être un simple transformateur.</text>
+<text x="400" y="258" text-anchor="middle" font-size="13" font-weight="700" fill="${C.rouge}">Le condensateur du bus reste chargé après la coupure. On attend le temps indiqué avant d’ouvrir.</text>
+<text x="400" y="282" text-anchor="middle" font-size="12" fill="${C.gris}">Cinq minutes, souvent. C’est écrit sur l’appareil, et ce n’est pas une précaution de principe.</text>`;
     return bloc(d, [], null,
       'Trois étages, et une seule chose à retenir pour la sécurité : le bus continu garde sa charge longtemps après la coupure.');
   }
@@ -576,7 +576,8 @@ ${[[150, 'Le redresseur', 'il fait passer tout du même côté'],
     ['6.3', 'Le moteur asynchrone triphasé', true, false, true, 'Le moteur de l’atelier. Il démarre seul.'],
     ['6.4', 'Le couplage de la plaque à bornes', false, false, false, 'Ce n’est pas une machine : c’est un geste.'],
     ['6.5', 'Le moteur monophasé', true, false, true, 'Il lui faut un condensateur pour partir.'],
-    ['6.6', 'Le moteur à courant continu', true, false, false, 'Le seul qui se moque de l’alternatif.'],
+    ['6.6', 'Le moteur synchrone', true, false, true, 'Il suit exactement le champ, mais ne démarre pas seul.'],
+    ['6.6', 'Le moteur à courant continu', true, false, false, 'Parmi ceux du tableau, le seul moteur qui se moque de l’alternatif.'],
     ['7.2', 'Le variateur de tension', false, true, true, 'Il découpe l’onde. Il ne règle pas vraiment la vitesse.'],
     ['7.4', 'Le variateur de fréquence', false, true, true, 'Il refabrique tout. C’est lui qui règle la vitesse.']
   ];

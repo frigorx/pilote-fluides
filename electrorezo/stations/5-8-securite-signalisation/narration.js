@@ -1,6 +1,6 @@
 /* ÉlectroRézo 5.8 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 d'un temps dont le texte change sont supprimés, puis refaits en Piper. */
 const NARRATION = {
 
   decouvrir: `Cette station parle de deux choses qui n'ont pas le même métier, et je vais vous dire tout de
@@ -27,7 +27,7 @@ servirait plus à rien.
 Voilà la règle : la panne doit tomber du bon côté. Et pour ça, les sécurités sont en normalement
 fermé, en série. Toujours.
 Deuxième chose : l'accrochage. Quand vous frappez un arrêt d'urgence, il reste enfoncé. Pour le
-libérer, il faut le tourner, ou tourner une clé.
+libérer, il faut le tourner, le tirer, ou tourner une clé.
 Pourquoi ? Parce qu'un accident ne se relâche pas tout seul. Si le bouton revenait quand la main
 se retire, la machine repartirait — sur la personne qu'on essayait de sauver.
 Un mot enfin sur le voyant, parce que sa règle est l'inverse exact. Lui se câble en parallèle,

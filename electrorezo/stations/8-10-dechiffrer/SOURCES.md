@@ -14,4 +14,8 @@ Elles ne remplacent pas le symbole officiel, qui est montre au temps 4.
 
 ## Narration
 
-Ecrite le 28/08/2026 pour cette station, pour l'oreille. **Non validee.** Aucun MP3 fabrique.
+Ecrite le 28/08/2026 pour cette station, pour l'oreille. Les MP3 sont fabriques en Piper par le chef de chantier.
+
+## Correction du 25/10/2026 (audit 2)
+
+Scène du temps 2 : colonne en bleu nuit (l’orange est réservé au retour neutre) ; « ça peut isoler » à la place de « ça se condamne » (la barre dit l’aptitude au sectionnement) ; minuteur du jeu retiré du contenu.

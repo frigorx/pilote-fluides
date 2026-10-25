@@ -918,7 +918,7 @@
       const sur = fils.filter(f => I > f.s.iz).map(f => f.s.nom);
       const fume = fils.filter(f => f.cible >= 140).map(f => f.s.nom);
       const pl = l => l.length > 1;
-      if (fume.length) return '<strong>L’isolant ' + (pl(fume) ? 'des fils de ' : 'du fil de ') + joindre(fume) + ' mm² fume.</strong> Il noircit et finira par brûler. Plus un fil est gros, moins il chauffe : c’est pourquoi on choisit la section d’abord, puis le calibre du disjoncteur.';
+      if (fume.length) return '<strong>L’isolant ' + (pl(fume) ? 'des fils de ' : 'du fil de ') + joindre(fume) + ' mm² fume.</strong> Il noircit et finira par brûler. Plus un fil est gros, moins il chauffe : c’est pourquoi le calibre de la protection ne doit jamais dépasser ce que le fil supporte.';
       if (sur.length) return '<strong>' + (pl(sur) ? 'Les fils de ' : 'Le fil de ') + joindre(sur) + ' mm² ' + (pl(sur) ? 'dépassent' : 'dépasse') + ' ce qu’' + (pl(sur) ? 'ils supportent' : 'il supporte') + '.</strong> ' + (pl(sur) ? 'Ils chauffent' : 'Il chauffe') + ' trop. Les plus gros fils restent plus frais.';
       if (I >= 0.55 * fils[0].s.iz) return '<strong>Le courant monte.</strong> Le fil de 1,5 mm² est le premier à chauffer : c’est lui qui a le moins de cuivre.';
       return '<strong>Le même courant traverse les quatre fils.</strong> Il est faible : aucun ne chauffe.';

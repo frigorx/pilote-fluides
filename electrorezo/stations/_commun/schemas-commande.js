@@ -234,9 +234,9 @@ ${alimente ? '' : `<line x1="250" y1="342" x2="490" y2="342" stroke="${C.rouge}"
     peindre(false);
 
     return bloc(d, [
-      { id: 'repos', libelle: 'Bobine au repos', legende: 'Rien n’est alimenté. Le ressort maintient l’armature écartée et tous les contacts ouverts : chaque plot mobile est loin de son plot fixe.', appliquer: () => peindre(false) },
-      { id: 'colle', libelle: 'Bobine alimentée', legende: 'La bobine attire l’armature, qui écrase le ressort. Les contacts se ferment ensemble : chaque plot mobile vient toucher son plot fixe, tous sont sur la même barre.', appliquer: () => peindre(true) }
-    ], 'repos', 'Rien n’est alimenté. Le ressort maintient l’armature écartée et tous les contacts ouverts : chaque plot mobile est loin de son plot fixe.');
+      { id: 'repos', libelle: 'Bobine au repos', legende: 'Rien n’est alimenté. Le ressort maintient l’armature écartée et tous les contacts ouverts : chaque plot mobile est loin de son plot fixe. Dessin simplifié : sur l’appareil réel, un pont mobile coupe en deux endroits.', appliquer: () => peindre(false) },
+      { id: 'colle', libelle: 'Bobine alimentée', legende: 'La bobine attire l’armature, qui écrase le ressort. Les contacts se ferment ensemble : chaque plot mobile vient toucher son plot fixe, tous sont sur la même barre. Dessin simplifié : sur l’appareil réel, un pont mobile coupe en deux endroits.', appliquer: () => peindre(true) }
+    ], 'repos', 'Rien n’est alimenté. Le ressort maintient l’armature écartée et tous les contacts ouverts : chaque plot mobile est loin de son plot fixe. Dessin simplifié : sur l’appareil réel, un pont mobile coupe en deux endroits.');
   }
 
   /* ============================================================ 5.3 — l'auto-maintien
@@ -253,7 +253,7 @@ ${alimente ? '' : `<line x1="250" y1="342" x2="490" y2="342" stroke="${C.rouge}"
       const actif = C.rouge, retour = C.feu, mort = 'rgba(27,58,99,.22)';
       const fil = colle ? actif : mort;
       const titre = ['Au repos', 'On appuie sur S1', 'On relâche S1 — et ça tient'][t];
-      const sous = ['Rien n’est alimenté. Le contact 13-14 est ouvert, S1 est ouvert.',
+      const sous = ['La phase arrive aux contacts ouverts et s’y arrête. 13-14 est ouvert, S1 est ouvert.',
                     'Le courant passe par S1, la bobine colle. Et le contact 13-14 se ferme en même temps.',
                     'S1 s’est rouvert. Mais le courant passe maintenant par 13-14. La bobine se tient elle-même.'][t];
       d.innerHTML = `
@@ -269,18 +269,18 @@ ${alimente ? '' : `<line x1="250" y1="342" x2="490" y2="342" stroke="${C.rouge}"
 <text x="86" y="80" text-anchor="end" font-size="14" font-weight="700" fill="${actif}">Ph</text>
 
 <!-- la boucle : deux branches en parallèle -->
-<line x1="240" y1="76" x2="240" y2="120" stroke="${fil}" stroke-width="4"/>
-<line x1="240" y1="120" x2="470" y2="120" stroke="${fil}" stroke-width="4"/>
+<line x1="240" y1="76" x2="240" y2="120" stroke="${actif}" stroke-width="4"/>
+<line x1="240" y1="120" x2="470" y2="120" stroke="${actif}" stroke-width="4"/>
 
 <!-- branche gauche : le contact d'auto-maintien 13-14 -->
-<line x1="240" y1="120" x2="240" y2="160" stroke="${colle ? actif : mort}" stroke-width="4"/>
+<line x1="240" y1="120" x2="240" y2="160" stroke="${actif}" stroke-width="4"/>
 ${contact(240, 160, 208, -1, colle, colle ? actif : mort)}
 <text x="196" y="186" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">KM1</text>
 <text x="196" y="204" text-anchor="end" font-size="12" fill="${C.gris}">13 · 14</text>
 <text x="262" y="192" font-size="12" fill="${colle ? actif : C.gris}">${colle ? 'fermé' : 'ouvert'}</text>
 
 <!-- branche droite : le bouton de marche S1 -->
-<line x1="470" y1="120" x2="470" y2="160" stroke="${s1 ? actif : mort}" stroke-width="4"/>
+<line x1="470" y1="120" x2="470" y2="160" stroke="${actif}" stroke-width="4"/>
 ${contact(470, 160, 208, -1, s1, s1 ? actif : mort)}
 <polyline points="440,178 428,178 428,196 440,196" fill="none" stroke="${C.navy}" stroke-width="2"/>
 <line x1="428" y1="187" x2="452" y2="187" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="6 4"/>
@@ -315,10 +315,10 @@ ${contact(350, 282, 326, 1, true, fil)}
     peindre(0);
 
     return bloc(d, [
-      { id: 't0', libelle: '1 · Au repos', legende: 'Rien ne passe. Le contact 13-14 de KM1 est ouvert, S1 est ouvert. La bobine n’est pas alimentée.', appliquer: () => peindre(0) },
+      { id: 't0', libelle: '1 · Au repos', legende: 'La phase arrive jusqu’aux contacts ouverts, et s’y arrête. Le contact 13-14 de KM1 est ouvert, S1 est ouvert. La bobine n’est pas alimentée.', appliquer: () => peindre(0) },
       { id: 't1', libelle: '2 · On appuie', legende: 'Le courant emprunte S1, la bobine colle. Le contact 13-14, qui est monté sur la même armature, se ferme au même instant.', appliquer: () => peindre(1) },
       { id: 't2', libelle: '3 · On relâche', legende: 'S1 s’est rouvert, mais 13-14 est fermé : le courant a maintenant un deuxième chemin. La bobine s’alimente à travers son propre contact. C’est l’auto-maintien.', appliquer: () => peindre(2) }
-    ], 't0', 'Rien ne passe. Le contact 13-14 de KM1 est ouvert, S1 est ouvert. La bobine n’est pas alimentée.');
+    ], 't0', 'La phase arrive jusqu’aux contacts ouverts, et s’y arrête. Le contact 13-14 de KM1 est ouvert, S1 est ouvert. La bobine n’est pas alimentée.');
   }
 
   /* ============================================================ 5.4 — relais ou contacteur
@@ -571,10 +571,10 @@ ${tetes[k](c)}
      Le même appareil, dessiné à deux endroits. Ce que la ligne 8 avait annoncé. */
   function deuxSchemas() {
     /* Le départ moteur complet, comme dans un dossier : à gauche la puissance (Q1 sectionneur, F1 fusibles,
-       KM1 contacts, M1), à droite la commande (F2, un arrêt d'urgence S0, la marche S1 avec son auto-maintien
-       KM1 13-14, l'arrêt S2, la bobine KM1). Phase alimentée en rouge, retour neutre en orange, hors tension
+       KM1 contacts, F3 relais thermique d'après relais_therm4.svg, M1), à droite la commande (F2, un arrêt d'urgence S0,
+       la marche S1 avec son auto-maintien KM1 13-14, l'arrêt S2, le contact 95-96 de F3, la bobine KM1). Phase alimentée en rouge, retour neutre en orange, hors tension
        en gris. Les trois conducteurs vont aux trois bornes du moteur. */
-    const d = svg('0 0 780 610', 'Le schéma de puissance et le schéma de commande d’un démarrage direct, côte à côte : Q1, F1, les contacts de KM1 et le moteur à gauche ; F2, S0, S1 avec 13-14, S2 et la bobine KM1 à droite.');
+    const d = svg('0 0 780 670', 'Le schéma de puissance et le schéma de commande d’un démarrage direct, côte à côte : Q1, F1, les contacts de KM1, le relais thermique F3 et le moteur à gauche ; F2, S0, S1 avec 13-14, S2, le contact 95-96 de F3 et la bobine KM1 à droite.');
     const MORT = 'rgba(27,58,99,.25)';
 
     const peindre = (marche) => {
@@ -583,7 +583,7 @@ ${tetes[k](c)}
 
       /* ---------------- puissance ---------------- */
       let s = `
-<rect x="8" y="8" width="764" height="594" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
+<rect x="8" y="8" width="764" height="654" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="390" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">Un seul appareil, dessiné sur deux pages</text>
 
 <text x="196" y="68" text-anchor="middle" font-size="15" font-weight="700" fill="${C.navy}">Puissance</text>
@@ -593,7 +593,7 @@ ${tetes[k](c)}
         s += `
 <text x="${x}" y="108" text-anchor="middle" font-size="11" fill="${C.gris}">${['L1', 'L2', 'L3'][i]}</text>
 <line x1="${x}" y1="114" x2="${x}" y2="134" stroke="${C.rouge}" stroke-width="4"/>
-${contact(x, 134, 174, -1, true, C.rouge, 4)}
+${contact(x, 134, 174, -1, false, C.rouge, 4)}
 <line x1="${x - 6}" y1="134" x2="${x + 6}" y2="134" stroke="${C.navy}" stroke-width="3"/>
 <line x1="${x}" y1="210" x2="${x}" y2="236" stroke="${C.rouge}" stroke-width="4"/>
 <rect x="${x - 7}" y="236" width="14" height="42" fill="${C.papier}" stroke="${C.navy}" stroke-width="2.5"/>
@@ -601,28 +601,36 @@ ${contact(x, 134, 174, -1, true, C.rouge, 4)}
 <line x1="${x}" y1="278" x2="${x}" y2="326" stroke="${C.rouge}" stroke-width="4"/>
 ${contact(x, 326, 366, -1, marche, vive, 4)}
 <path d="M ${x} 318 A 7 7 0 0 0 ${x} 332" fill="none" stroke="${C.navy}" stroke-width="2"/>
-<line x1="${x}" y1="402" x2="${x}" y2="${i === 1 ? 452 : 430}" stroke="${vive}" stroke-width="4"/>`;
+<line x1="${x}" y1="402" x2="${x}" y2="412" stroke="${vive}" stroke-width="4"/>
+<polyline points="${x},412 ${x + 20},412 ${x + 20},452 ${x},452" fill="none" stroke="${vive}" stroke-width="4"/>
+<line x1="${x}" y1="452" x2="${x}" y2="462" stroke="${vive}" stroke-width="4"/>
+<line x1="${x}" y1="462" x2="${x}" y2="${i === 1 ? 512 : 490}" stroke="${vive}" stroke-width="4"/>`;
       });
       s += `
 <line x1="140" y1="154" x2="252" y2="154" stroke="${C.gris}" stroke-width="1.5" stroke-dasharray="5 4"/>
 <text x="104" y="160" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">Q1</text>
 <text x="104" y="176" text-anchor="end" font-size="11" fill="${C.gris}">sectionneur</text>
 <text x="104" y="262" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">F1</text>
-<text x="104" y="278" text-anchor="end" font-size="11" fill="${C.gris}">protection</text>
+<text x="104" y="278" text-anchor="end" font-size="11" fill="${C.gris}">fusibles</text>
+<text x="104" y="292" text-anchor="end" font-size="11" fill="${C.gris}">courts-circuits</text>
 <line x1="140" y1="346" x2="252" y2="346" stroke="${marche ? C.bleu : C.gris}" stroke-width="1.5" stroke-dasharray="5 4"/>
 <text x="104" y="350" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">KM1</text>
 <text x="104" y="366" text-anchor="end" font-size="11" fill="${C.gris}">1/2 3/4 5/6</text>
+<line x1="150" y1="432" x2="262" y2="432" stroke="${C.gris}" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="104" y="430" text-anchor="end" font-size="14" font-weight="700" fill="${C.navy}">F3</text>
+<text x="104" y="446" text-anchor="end" font-size="11" fill="${C.gris}">relais thermique</text>
+<text x="104" y="460" text-anchor="end" font-size="11" fill="${C.gris}">surcharges</text>
 
 <!-- les trois conducteurs atteignent les trois bornes du moteur -->
-<polyline points="140,430 179,457" fill="none" stroke="${vive}" stroke-width="4"/>
-<polyline points="252,430 213,457" fill="none" stroke="${vive}" stroke-width="4"/>
-<text x="124" y="424" text-anchor="end" font-size="11" fill="${C.gris}">U1</text>
-<text x="212" y="424" font-size="11" fill="${C.gris}">V1</text>
-<text x="268" y="424" font-size="11" fill="${C.gris}">W1</text>
-<circle cx="196" cy="486" r="34" fill="none" stroke="${marche ? C.rouge : C.navy}" stroke-width="4"/>
-<text x="196" y="484" text-anchor="middle" font-size="15" font-weight="700" fill="${marche ? C.rouge : C.navy}">M1</text>
-<text x="196" y="504" text-anchor="middle" font-size="13" fill="${marche ? C.rouge : C.navy}">3 ~</text>
-<text x="196" y="548" text-anchor="middle" font-size="13" font-weight="700"
+<polyline points="140,490 179,517" fill="none" stroke="${vive}" stroke-width="4"/>
+<polyline points="252,490 213,517" fill="none" stroke="${vive}" stroke-width="4"/>
+<text x="124" y="484" text-anchor="end" font-size="11" fill="${C.gris}">U1</text>
+<text x="212" y="484" font-size="11" fill="${C.gris}">V1</text>
+<text x="268" y="484" font-size="11" fill="${C.gris}">W1</text>
+<circle cx="196" cy="546" r="34" fill="none" stroke="${marche ? C.rouge : C.navy}" stroke-width="4"/>
+<text x="196" y="544" text-anchor="middle" font-size="15" font-weight="700" fill="${marche ? C.rouge : C.navy}">M1</text>
+<text x="196" y="564" text-anchor="middle" font-size="13" fill="${marche ? C.rouge : C.navy}">3 ~</text>
+<text x="196" y="608" text-anchor="middle" font-size="13" font-weight="700"
       fill="${marche ? C.vert : C.gris}">${marche ? 'le moteur tourne' : 'le moteur est à l’arrêt'}</text>`;
 
       /* ---------------- commande ---------------- */
@@ -649,8 +657,8 @@ ${contact(584, 140, 180, 1, true, C.rouge, 3)}
 
 <!-- la marche S1 et son auto-maintien KM1 13-14, en parallèle -->
 <line x1="520" y1="248" x2="648" y2="248" stroke="${C.rouge}" stroke-width="3"/>
-<line x1="520" y1="248" x2="520" y2="268" stroke="${vive}" stroke-width="3"/>
-<line x1="648" y1="248" x2="648" y2="268" stroke="${MORT}" stroke-width="3"/>
+<line x1="520" y1="248" x2="520" y2="268" stroke="${C.rouge}" stroke-width="3"/>
+<line x1="648" y1="248" x2="648" y2="268" stroke="${C.rouge}" stroke-width="3"/>
 ${contact(520, 268, 308, -1, marche, vive, 3)}
 ${contact(648, 268, 308, -1, false, MORT, 3)}
 <polyline points="626,284 616,284 616,300 626,300" fill="none" stroke="${C.navy}" stroke-width="2"/>
@@ -670,30 +678,38 @@ ${contact(584, 384, 424, 1, true, vive, 3)}
 <line x1="542" y1="406" x2="568" y2="406" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="5 3"/>
 <text x="618" y="408" font-size="13" font-weight="700" fill="${C.navy}">S2</text>
 <text x="618" y="424" font-size="11" fill="${C.gris}">arrêt · NF</text>
-<line x1="584" y1="460" x2="584" y2="484" stroke="${vive}" stroke-width="3"/>
+<line x1="584" y1="460" x2="584" y2="483" stroke="${vive}" stroke-width="3"/>
+
+<!-- le contact 95-96 du relais thermique F3, normalement fermé, en série : il s'ouvre sur une surcharge -->
+${contact(584, 480, 510, 1, true, vive, 3)}
+<!-- actionneur thermique d'après act_thermique_nf_esclave.svg : créneau « -18,7 -18,3 -13,3 -13,-3 -18,-3 -18,-7 » et pointillé « -13,0 3,0 », échelle 2, centrés sur la lame -->
+<polyline points="551,509 551,501 561,501 561,489 551,489 551,481" fill="none" stroke="${C.navy}" stroke-width="2"/>
+<line x1="561" y1="495" x2="592" y2="495" stroke="${C.navy}" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="618" y="500" font-size="13" font-weight="700" fill="${C.navy}">F3</text>
+<text x="618" y="516" font-size="11" fill="${C.gris}">thermique · 95-96</text>
 
 <!-- la bobine, au bout : là où le rouge devient orange -->
-<rect x="552" y="484" width="64" height="36" rx="2" fill="none" stroke="${marche ? C.rouge : C.navy}" stroke-width="${marche ? 4 : 3}"/>
-<text x="584" y="507" text-anchor="middle" font-size="14" font-weight="700" fill="${marche ? C.rouge : C.navy}">KM1</text>
-<text x="626" y="498" font-size="11" fill="${C.gris}">A1</text>
-<text x="626" y="516" font-size="11" fill="${C.gris}">A2</text>
-<line x1="584" y1="520" x2="584" y2="548" stroke="${marche ? C.feu : MORT}" stroke-width="3"/>
-<line x1="470" y1="548" x2="700" y2="548" stroke="${C.feu}" stroke-width="3"/>
-<text x="458" y="552" text-anchor="end" font-size="13" font-weight="700" fill="${C.feu}">N</text>
+<rect x="552" y="546" width="64" height="36" rx="2" fill="none" stroke="${marche ? C.rouge : C.navy}" stroke-width="${marche ? 4 : 3}"/>
+<text x="584" y="569" text-anchor="middle" font-size="14" font-weight="700" fill="${marche ? C.rouge : C.navy}">KM1</text>
+<text x="626" y="560" font-size="11" fill="${C.gris}">A1</text>
+<text x="626" y="578" font-size="11" fill="${C.gris}">A2</text>
+<line x1="584" y1="582" x2="584" y2="610" stroke="${marche ? C.feu : MORT}" stroke-width="3"/>
+<line x1="470" y1="610" x2="700" y2="610" stroke="${C.feu}" stroke-width="3"/>
+<text x="458" y="614" text-anchor="end" font-size="13" font-weight="700" fill="${C.feu}">N</text>
 
 <!-- le lien mécanique : de la bobine jusqu'aux trois contacts de KM1, qu'il fait bouger ensemble -->
-<path d="M552 502 H 430 V 346 H 262" fill="none" stroke="${marche ? C.bleu : C.trait}"
+<path d="M552 564 H 430 V 346 H 262" fill="none" stroke="${marche ? C.bleu : C.trait}"
       stroke-width="2.5" stroke-dasharray="7 5"/>
-<text x="390" y="578" text-anchor="middle" font-size="13" font-weight="700" fill="${marche ? C.bleu : C.gris}">le même KM1 — la bobine à droite, ses contacts à gauche</text>
-<text x="390" y="596" text-anchor="middle" font-size="12" fill="${C.gris}">Le pointillé n’est pas un fil. C’est le lien mécanique, et sur un vrai plan c’est le repère qui le dit.</text>`;
+<text x="390" y="640" text-anchor="middle" font-size="13" font-weight="700" fill="${marche ? C.bleu : C.gris}">le même KM1 — la bobine à droite, ses contacts à gauche</text>
+<text x="390" y="658" text-anchor="middle" font-size="12" fill="${C.gris}">Le pointillé n’est pas un fil. C’est le lien mécanique, et sur un vrai plan c’est le repère qui le dit.</text>`;
       d.innerHTML = s;
     };
     peindre(false);
 
     return bloc(d, [
-      { id: 'arret', libelle: 'À l’arrêt', legende: 'La bobine n’est pas alimentée. Les trois contacts de puissance sont ouverts : le courant va jusqu’à eux, pas plus. Le moteur ne reçoit rien.', appliquer: () => peindre(false) },
-      { id: 'marche', libelle: 'En marche', legende: 'La bobine est alimentée par le circuit de commande. Elle ferme les trois contacts de puissance, et le moteur tourne. Le contact 13-14 tient la bobine : S1 n’est plus pressé. Deux fils fins commandent trois gros fils.', appliquer: () => peindre(true) }
-    ], 'arret', 'La bobine n’est pas alimentée. Les trois contacts de puissance sont ouverts : le courant va jusqu’à eux, pas plus. Le moteur ne reçoit rien.');
+      { id: 'arret', libelle: 'À l’arrêt', legende: 'La bobine n’est pas alimentée. Les trois contacts de puissance de KM1 sont ouverts : le courant va jusqu’à eux, pas plus. Le moteur ne reçoit rien. Q1, le sectionneur, est dessiné au repos, comme sur un plan : ici il est fermé, le courant le traverse.', appliquer: () => peindre(false) },
+      { id: 'marche', libelle: 'En marche', legende: 'La bobine est alimentée par le circuit de commande. Elle ferme les trois contacts de puissance de KM1, et le moteur tourne. Le contact 13-14 tient la bobine : S1 n’est plus pressé. Deux fils fins commandent trois gros fils. Q1, le sectionneur, est dessiné au repos, comme sur un plan : ici il est fermé, le courant le traverse.', appliquer: () => peindre(true) }
+    ], 'arret', 'La bobine n’est pas alimentée. Les trois contacts de puissance de KM1 sont ouverts : le courant va jusqu’à eux, pas plus. Le moteur ne reçoit rien. Q1, le sectionneur, est dessiné au repos, comme sur un plan : ici il est fermé, le courant le traverse.');
   }
 
   /* ============================================================ le tableau de la ligne */
@@ -703,7 +719,7 @@ ${contact(584, 384, 424, 1, true, vive, 3)}
     ['5.3', 'Le contact auxiliaire', false, true, false, 'Il ne porte rien. Il informe, et il fait tenir.'],
     ['5.4', 'Le relais', false, true, false, 'Comme le contacteur, en petit. Commande seulement.'],
     ['5.5', 'Le relais temporisé', false, true, false, 'Un relais qui compte.'],
-    ['5.6', 'Les contacts temporisés', false, true, false, 'Les contacts d’un relais qui compte.'],
+    ['5.6', 'Les contacts temporisés', false, true, false, 'Des contacts qui attendent : sur un bloc de contacteur ou un relais temporisé.'],
     ['5.7', 'Bouton-poussoir', false, false, false, 'À impulsion : il ne garde rien.'],
     ['5.7', 'Sélecteur', false, false, true, 'À position maintenue : il garde.'],
     ['5.8', 'Arrêt d’urgence', false, false, true, 'Il reste enfoncé. Il faut aller le déverrouiller.'],

@@ -23,22 +23,22 @@ ModeleAppareil.construire({
   creditPhoto: 'Documents de cours indexés dans la base inerWeb. Détail dans « Crédits ».',
 
   aQuoiCaSert: "À lire un dossier électrique en entier. C’est la station de synthèse : tout ce que les lignes 3, 4, 5 et 8 ont installé se retrouve ici, sur un seul schéma qu’on va parcourir du haut vers le bas.",
-  ouOnLeTrouve: "Dans tous les dossiers de machine, sur toutes les armoires. Le démarrage direct est le montage le plus répandu au monde.",
+  ouOnLeTrouve: "Dans tous les dossiers de machine, sur toutes les armoires. Le démarrage direct est un montage très répandu.",
 
   scene: () => SchemasCommande.deuxSchemas(),
 
   technologie: [
     ["Deux schémas, un appareil", "la bobine de KM1 est sur le schéma de commande, ses contacts de puissance sur le schéma de puissance. C’est le même appareil, coupé en deux par le dessin."],
-    ["Le schéma de puissance", "trois fils, épais, verticaux. On descend : sectionnement, protection, contacteur, moteur. L’ordre est presque toujours celui-là."],
-    ["Le schéma de commande", "deux fils fins, phase en haut, neutre en bas. On descend : sécurités, puis la marche avec son auto-maintien en parallèle, puis l’arrêt, puis la bobine. La bobine est toujours en bas."],
-    ["Les repères", "ils font le lien entre les deux pages. <strong>Q</strong> pour ce qui coupe, <strong>F</strong> pour ce qui protège, <strong>KM</strong> pour un contacteur, <strong>S</strong> pour un ordre, <strong>M</strong> pour le moteur."]
+    ["Le schéma de puissance", "trois fils, épais, verticaux. On descend : sectionnement, protection contre les courts-circuits, contacteur, relais thermique, moteur. L’ordre est presque toujours celui-là ; un disjoncteur moteur remplace à lui seul les fusibles et le relais thermique."],
+    ["Le schéma de commande", "deux fils fins, phase en haut, neutre en bas. On descend : sécurités, puis la marche avec son auto-maintien en parallèle, puis l’arrêt, puis le contact du relais thermique, puis la bobine. La bobine est toujours en bas."],
+    ["Les repères", "ils font le lien entre les deux pages. <strong>Q</strong> pour ce qui coupe (disjoncteurs compris), <strong>F</strong> pour ce qui protège (fusibles, relais thermique), <strong>KM</strong> pour un contacteur, <strong>S</strong> pour un ordre, <strong>M</strong> pour le moteur."]
   ],
 
   variantes: [
     "<strong>Le démarrage direct</strong> — un seul contacteur. Le montage de base, celui de cette station.",
     "<strong>Le démarrage à deux sens</strong> — deux contacteurs verrouillés l’un avec l’autre, pour tourner dans les deux sens.",
     "<strong>Le démarrage étoile-triangle</strong> — trois contacteurs et une temporisation, pour réduire la pointe au démarrage. Il croise la station 6.4.",
-    "<strong>Le démarrage électronique</strong> — plus de contacteur du tout : un variateur fait le travail. C’est la ligne 7."
+    "<strong>Le démarrage électronique</strong> — souvent plus de contacteur de puissance : un variateur fait le travail. C’est la ligne 7."
   ],
 
   picto: SchemasCommande.pictoTrois,
@@ -55,11 +55,11 @@ ModeleAppareil.construire({
   },
 
   cablage: [
-    "Sur le schéma de puissance, on descend toujours : <strong>sectionnement</strong>, puis <strong>protection</strong>, puis <strong>contacteur</strong>, puis <strong>moteur</strong>.",
-    "Sur le schéma de commande, on descend aussi : <strong>sécurités</strong>, puis la <strong>marche avec son auto-maintien en parallèle</strong>, puis l’<strong>arrêt</strong>, puis la <strong>bobine</strong>.",
+    "Sur le schéma de puissance, on descend presque toujours : <strong>sectionnement</strong>, puis <strong>protection contre les courts-circuits</strong>, puis <strong>contacteur</strong>, puis <strong>relais thermique</strong>, puis <strong>moteur</strong>.",
+    "Sur le schéma de commande, on descend aussi, presque toujours : <strong>sécurités</strong>, puis la <strong>marche avec son auto-maintien en parallèle</strong>, puis l’<strong>arrêt</strong>, puis le <strong>contact 95-96 du relais thermique</strong>, puis la <strong>bobine</strong>.",
     "La <strong>bobine est toujours en bas</strong>, juste au-dessus du neutre. Si vous la cherchez, commencez par là.",
     "Chaque fil de l’armoire porte à ses deux bouts un repère qui figure sur le plan. C’est ce qui rend un dépannage possible dix ans plus tard.",
-    "À vous de le câbler : <a href=\"https://inerweb.fr/cablage-virtuel/jouer.html?ex=demarrage-direct-tri&amp;mode=guide\" target=\"_blank\" rel=\"noopener\">le même départ moteur dans le Câblage virtuel</a> — Q1, KM1, F1, le bornier XB et M1, posés fil par fil."
+    "À vous de le câbler : <a href=\"https://inerweb.fr/cablage-virtuel/jouer.html?ex=demarrage-direct-tri&amp;mode=guide\" target=\"_blank\" rel=\"noopener\">le même départ moteur dans le Câblage virtuel</a> — Q1, KM1, le relais thermique (repéré F1 dans l’exercice), le bornier XB et M1, posés fil par fil."
   ],
   piege: "Ne cherchez jamais un appareil sur une seule page. Un contacteur est écrit à deux endroits, un relais thermique aussi, un bouton parfois à trois. Si vous ne trouvez pas le second morceau, c’est qu’il faut tourner la page — pas que le plan est faux.",
 
@@ -73,7 +73,7 @@ ModeleAppareil.construire({
     "Voici la méthode, en trois gestes, et elle marche sur n’importe quel dossier.",
     "<strong>Un</strong> — trouvez le moteur, tout en bas de la puissance. C’est le terminus : tout converge vers lui.",
     "<strong>Deux</strong> — remontez, et nommez chaque appareil que vous croisez. Vous savez tous les lire : ils sont dans les lignes 3, 4 et 5.",
-    "<strong>Trois</strong> — passez à la commande, et cherchez la bobine, en bas. Puis remontez le chemin qui l’alimente : vous y trouverez l’auto-maintien, l’arrêt, la marche, les sécurités.",
+    "<strong>Trois</strong> — passez à la commande, et cherchez la bobine, en bas. Puis remontez le chemin qui l’alimente : vous y trouverez le contact 95-96 du relais thermique, l’arrêt, l’auto-maintien avec la marche, puis les sécurités.",
     "En trois gestes, vous avez lu un dossier que vous n’aviez jamais vu. Ce n’est pas de la mémoire : c’est de la lecture."
   ],
 
@@ -116,7 +116,7 @@ ModeleAppareil.construire({
 
   retenir: [
     "<strong>Deux schémas, un appareil.</strong> Le repère fait le lien.",
-    "<strong>On descend toujours</strong> : sectionner, protéger, commander, faire tourner.",
+    "<strong>On descend presque toujours dans cet ordre</strong> : sectionner, protéger des courts-circuits, commander, protéger des surcharges, faire tourner.",
     "<strong>La bobine est en bas.</strong> Commencez par là.",
     "<strong>Lire un plan</strong>, ce n’est pas le connaître par cœur : c’est le parcourir dans le bon ordre."
   ],
@@ -127,13 +127,13 @@ ModeleAppareil.construire({
     { quoi: 'Schémas de démarrage direct', source: 'documents de cours indexés dans la base inerWeb',
       detail: '02 Les schémas élèves — Bac MFER' },
     { quoi: 'Photographies et planches', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/' } ],
+      detail: 'symboles de schémas électriques' } ],
 
   correspondances: [
-    { ligne: 8, couleur: '#7c3aed', texte: "8.10 Déchiffrer un symbole" },
+    { ligne: 8, couleur: '#7c3aed', texte: "8.10 Déchiffrer" },
     { ligne: 3, couleur: '#1b3a63', texte: "3.5 Le sectionneur porte-fusible" },
     { ligne: 4, couleur: '#c0392b', texte: "4.4 Le disjoncteur moteur" },
-    { ligne: 6, couleur: '#c9451a', texte: "6.4 Le couplage étoile-triangle" } ]
+    { ligne: 6, couleur: '#c9451a', texte: "6.4 Le couplage de la plaque à bornes" } ]
 });

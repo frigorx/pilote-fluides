@@ -68,6 +68,7 @@ main{padding:.85rem;overflow:auto}
 .workspace{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(310px,.85fr);gap:.85rem;
            max-width:1560px;margin:0 auto;align-items:start}
 @media (max-width:1000px){.workspace{grid-template-columns:1fr}}
+.workspace.seul{grid-template-columns:1fr}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:.9rem}
 .card h2{margin:.05rem 0 .5rem;font-size:1.05em;color:var(--navy);font-family:"Trebuchet MS",Calibri,sans-serif}
 .card p{margin:.4rem 0}

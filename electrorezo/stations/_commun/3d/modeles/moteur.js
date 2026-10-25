@@ -324,7 +324,7 @@
       { id: 'bobinages', nom: 'Les trois bobinages', objets: [tetes.e, tetes.c], desc: 'Trois enroulements de cuivre décalés de 120°. Alimentés en triphasé, ils créent le champ tournant : regardez-les s’allumer tour à tour.' },
       { id: 'rotor', nom: 'Le rotor à cage', objets: [rotor], desc: 'La partie qui tourne. Des barres d’aluminium reliées par deux anneaux — une cage d’écureuil. Il n’est relié à aucun fil.' },
       { id: 'arbre', nom: 'L’arbre', objets: [arbre, clavette], desc: 'Il sort côté charge, avec sa clavette : c’est lui qui entraîne la pompe ou le ventilateur.' },
-      { id: 'roulements', nom: 'Les roulements', objets: [roulements], desc: 'Deux roulements à billes tiennent l’arbre. C’est presque toujours eux qui lâchent les premiers.' },
+      { id: 'roulements', nom: 'Les roulements', objets: [roulements], desc: 'Deux roulements à billes tiennent l’arbre. Ce sont le plus souvent eux qui lâchent les premiers.' },
       { id: 'flasques', nom: 'Les flasques', objets: [flasques.e, flasques.c], desc: 'Les deux couvercles d’extrémité. Ils portent les roulements et centrent le rotor dans le stator.' },
       { id: 'ventilateur', nom: 'Le ventilateur et son capot', objets: [ventilateur, capot], desc: 'Calé en bout d’arbre, il souffle l’air le long des ailettes pour refroidir le moteur.' },
       { id: 'carcasse', nom: 'La carcasse à ailettes', objets: [carcasse.e, carcasse.c, pattes, levage], desc: 'L’enveloppe en fonte ou en aluminium. Les ailettes évacuent la chaleur ; les pattes fixent le moteur.' },

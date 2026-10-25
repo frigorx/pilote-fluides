@@ -2,7 +2,7 @@
 
 ModeleAppareil.construire({
   id: '4.9', ligne: 4,
-  vue3d: { modele: 'cablesSections' },   /* 3D */
+  vue3d: { modele: 'cablesSections', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 4 Protéger · Station 9',
   titre: "Le câble : section et désignation",
   narration: NARRATION,
@@ -34,7 +34,7 @@ ModeleAppareil.construire({
     ["La section", "en millimètres carrés, celle du cuivre. Plus elle est grande, plus le courant admissible est élevé."],
     ["L’échauffement", "un conducteur trop chargé chauffe. L’isolant vieillit, durcit, puis lâche. C’est un processus lent et invisible."],
     ["La chute de tension", "sur une longue ligne, la tension se perd en route. On augmente alors la section, même si le courant ne l’exigeait pas."],
-    ["Les couleurs", "<strong>bleu clair</strong> le neutre, <strong>vert et jaune</strong> le conducteur de protection, les autres pour les phases. Deux couleurs réservées, jamais employées ailleurs."]
+    ["Les couleurs", "<strong>bleu clair</strong> le neutre, <strong>vert et jaune</strong> le conducteur de protection, les autres pour les phases. En France et en Europe (NF C 15-100), deux couleurs sont réservées : on ne les emploie pas pour autre chose."]
   ],
 
   variantes: [
@@ -60,7 +60,7 @@ ModeleAppareil.construire({
     "<strong>Embouts sur le fil souple</strong>, serrage au couple, longueur de dénudage juste.",
     "Repérage aux deux extrémités : un câble non repéré coûte une heure de recherche."
   ],
-  piege: "Augmenter le calibre du disjoncteur parce qu’il déclenche, sans toucher au câble. Le disjoncteur ne protège pas la machine : il protège le câble. Un calibre trop grand, c’est un câble qui chauffe sans que rien ne l’arrête — et un incendie possible des mois plus tard.",
+  piege: "Augmenter le calibre du disjoncteur parce qu’il déclenche, sans toucher au câble. Un disjoncteur de circuit ne protège pas la machine : il protège le câble. Un calibre trop grand, c’est un câble qui chauffe sans que rien ne l’arrête — et un incendie possible des mois plus tard.",
 
   symboles: [
     { src: 'assets/section3.svg', alt: "Symbole normalisé d’un câble de trois conducteurs : un trait avec trois petits traits obliques, un par conducteur.", legende: "Trois conducteurs : trois petits traits obliques" },
@@ -97,8 +97,8 @@ ModeleAppareil.construire({
         { texte: "Le calibre ne dépasse jamais ce que le câble supporte.", juste: true },
         { texte: "On peut augmenter le calibre sans revoir la section.", pourquoi: "Ce serait laisser le câble chauffer sans protection." } ] },
 
-    { question: "Quelles couleurs sont réservées ?",
-      confirmation: "Bleu clair pour le neutre, vert et jaune pour le conducteur de protection.",
+    { question: "En France, quelles couleurs sont réservées ?",
+      confirmation: "Bleu clair pour le neutre, vert et jaune pour le conducteur de protection (NF C 15-100).",
       reponses: [
         { texte: "Marron et gris.", pourquoi: "Également des couleurs de phase." },
         { texte: "Rouge et noir.", pourquoi: "Ce sont des couleurs de phase, utilisables librement." },
@@ -118,19 +118,19 @@ ModeleAppareil.construire({
     "<strong>Le fusible et le disjoncteur de circuit protègent d’abord le câble.</strong>",
     "<strong>Le calibre ne dépasse jamais ce que le câble supporte.</strong> On ne l’augmente pas sans revoir la section.",
     "Un câble trop chargé chauffe, et l’isolant lâche des mois plus tard.",
-    "<strong>Bleu clair et vert-jaune sont réservés.</strong>"
+    "<strong>En France et en Europe, le bleu clair et le vert-jaune sont réservés</strong> (NF C 15-100)."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre que la protection se choisit d’après le conducteur, savoir lire une section et une désignation, et connaître les deux couleurs réservées.</p>',
 
   credits: [
     { quoi: 'Photographies', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/10_electric/10_allpole/' } ],
+      detail: 'symboles de schémas électriques' } ],
 
   correspondances: [
-    { ligne: 1, couleur: '#1b3a63', texte: "1.8 Surcharge et court-circuit" },
+    { ligne: 1, couleur: '#1b3a63', texte: "1.8 Les trois défauts" },
     { ligne: 4, couleur: '#c0392b', texte: "4.3 Disjoncteur magnéto-thermique" },
     { ligne: 4, couleur: '#c0392b', texte: "4.10 Choisir la section" },
     { ligne: 8, couleur: '#7c3aed', texte: "8.1 Le trait et le point" } ]

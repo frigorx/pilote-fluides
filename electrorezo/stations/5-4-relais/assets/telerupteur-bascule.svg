@@ -32,6 +32,6 @@
 <circle cx="330" cy="156" r="4" fill="#1b3a63"/>
 <text x="345" y="204" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="13"
       font-weight="700" fill="#c0392b">il revient</text>
-<text x="345" y="226" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#1b3a63">C’est ce qu’il y a</text>
-<text x="345" y="244" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#1b3a63">dans une cage d’escalier.</text>
+<text x="345" y="226" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#1b3a63">On le trouve dans un couloir</text>
+<text x="345" y="244" text-anchor="middle" font-family="Bitter,Georgia,serif" font-size="12" fill="#1b3a63">à plusieurs boutons.</text>
 </svg>

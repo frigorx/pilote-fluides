@@ -88,7 +88,7 @@ const SchemasProtection = (() => {
       d.querySelector('#pointeDem').setAttribute('opacity', quoi === 'deux' ? '1' : '.3');
     };
     return bloc(d, [
-      { id:'gg', libelle:'gG seul', legende:'Le gG protège tout : câbles, prises, éclairage. Il fond quand le courant dépasse nettement son calibre assez longtemps : des minutes à une heure vers une fois et demie, bien plus vite quand ça monte.', appliquer:() => maj('gg') },
+      { id:'gg', libelle:'gG seul', legende:'Le gG protège tout : câbles, prises, éclairage. Il fond quand le courant dépasse nettement son calibre assez longtemps : des minutes à une heure vers une fois et demie à deux fois, bien plus vite quand ça monte.', appliquer:() => maj('gg') },
       { id:'am', libelle:'aM seul', legende:'L’aM laisse passer la pointe du démarrage d’un moteur, qui peut valoir plusieurs fois le courant nominal pendant quelques secondes. En revanche il ne protège pas contre les petites surcharges.', appliquer:() => maj('am') },
       { id:'deux', libelle:'Les deux', legende:'Un moteur démarre en appelant beaucoup de courant. Le gG y verrait une surcharge et fondrait. L’aM attend. C’est toute la différence entre les deux lettres.', appliquer:() => maj('deux') }
     ], 'deux',

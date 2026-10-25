@@ -15,7 +15,9 @@ const SchemasReseaux = (() => {
   'use strict';
   const C = { navy:'#1b3a63', bleu:'#3d7fca', doux:'#84b7ec', orange:'#c9451a', feu:'#ff6b35',
               vert:'#1e7e54', rouge:'#c0392b', gris:'#637285', papier:'#fffdf8',
-              creme:'#f7f1e7', trait:'rgba(27,58,99,.18)', jaune:'#c8a415' };
+              creme:'#f7f1e7', trait:'rgba(27,58,99,.18)', jaune:'#c8a415',
+              /* conducteurs d'une installation réelle (NF C 15-100) : phases marron / noir / gris */
+              marron:'#7a4a21', noir:'#1c1c1c', grisL:'#8d98a5', somme:'#3d4752' };
 
   const svg = (vb, aria) => {
     const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -38,8 +40,8 @@ const SchemasReseaux = (() => {
 <text x="380" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${defaut ? 'Un défaut apparaît — le PE se met au travail' : 'Marche normale — le PE ne fait rien du tout'}</text>
 
 <!-- la phase -->
-<line x1="90" y1="86" x2="470" y2="86" stroke="${C.orange}" stroke-width="6"/>
-<text x="78" y="91" text-anchor="end" font-size="15" font-weight="700" fill="${C.orange}">Ph</text>
+<line x1="90" y1="86" x2="470" y2="86" stroke="${C.marron}" stroke-width="6"/>
+<text x="78" y="91" text-anchor="end" font-size="15" font-weight="700" fill="${C.marron}">Ph</text>
 <text x="200" y="76" font-size="12" fill="${C.gris}">elle amène le courant</text>
 
 <!-- la charge -->
@@ -54,9 +56,11 @@ const SchemasReseaux = (() => {
 <text x="200" y="206" font-size="12" fill="${C.gris}">il ramène le courant</text>
 
 <!-- le PE -->
-<line x1="90" y1="262" x2="558" y2="262" stroke="${defaut ? C.jaune : 'rgba(27,58,99,.25)'}" stroke-width="6"/>
-<line x1="558" y1="262" x2="558" y2="218" stroke="${defaut ? C.jaune : 'rgba(27,58,99,.25)'}" stroke-width="6"/>
-<text x="78" y="267" text-anchor="end" font-size="15" font-weight="700" fill="${C.jaune}">PE</text>
+<g opacity="${defaut ? 1 : 0.4}">
+  <path d="M90 262 L558 262 L558 218" fill="none" stroke="${C.vert}" stroke-width="6"/>
+  <path d="M90 262 L558 262 L558 218" fill="none" stroke="${C.jaune}" stroke-width="6" stroke-dasharray="12 12"/>
+</g>
+<text x="78" y="267" text-anchor="end" font-size="15" font-weight="700" fill="${C.vert}">PE</text>
 <line x1="66" y1="278" x2="114" y2="278" stroke="${C.navy}" stroke-width="5"/>
 <line x1="76" y1="288" x2="104" y2="288" stroke="${C.navy}" stroke-width="5"/>
 <line x1="85" y1="298" x2="95" y2="298" stroke="${C.navy}" stroke-width="5"/>
@@ -64,7 +68,7 @@ const SchemasReseaux = (() => {
 ${defaut
   ? `<path d="M500 100 L540 100 L540 214" fill="none" stroke="${C.rouge}" stroke-width="5" stroke-dasharray="8 5"/>
      <circle cx="500" cy="100" r="9" fill="none" stroke="${C.rouge}" stroke-width="3"/>
-     <text x="200" y="248" font-size="13" font-weight="700" fill="${C.jaune}">il évacue le courant de défaut, tout de suite</text>
+     <text x="200" y="248" font-size="13" font-weight="700" fill="${C.vert}">il évacue le courant de défaut, tout de suite</text>
      <text x="380" y="316" text-anchor="middle" font-size="13" fill="${C.gris}">L’isolant a lâché : la phase touche la carcasse. Le courant part par le vert-jaune, et le différentiel le voit.</text>`
   : `<text x="200" y="248" font-size="12" fill="${C.gris}">il ne transporte rien — et c’est bon signe</text>
      <text x="380" y="316" text-anchor="middle" font-size="13" fill="${C.gris}">Un courant net dans le PE, en marche normale, annonce un défaut.</text>`}`;
@@ -173,22 +177,23 @@ ${[['entre le fil 1 et le fil 2', '230 V', 'l’un des deux est la phase', C.ver
 <text x="380" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${avecSomme ? 'Additionnez les trois à n’importe quel instant : zéro' : 'Trois tensions identiques, décalées d’un tiers de tour'}</text>
 
 <line x1="100" y1="170" x2="700" y2="170" stroke="${C.navy}" stroke-width="2"/>
-${cbe(0, C.orange, 3.5)}
-${cbe(2 * Math.PI / 3, C.navy, 3.5)}
-${cbe(4 * Math.PI / 3, C.vert, 3.5)}
-${avecSomme ? `<line x1="100" y1="170" x2="700" y2="170" stroke="${C.rouge}" stroke-width="5" stroke-dasharray="12 6"/>` : ''}
+${cbe(0, C.marron, 3.5)}
+${cbe(2 * Math.PI / 3, C.noir, 3.5)}
+${cbe(4 * Math.PI / 3, C.grisL, 3.5)}
+${avecSomme ? `<line x1="100" y1="170" x2="700" y2="170" stroke="${C.somme}" stroke-width="4" stroke-dasharray="12 6"/>` : ''}
 
-<text x="702" y="120" font-size="13" font-weight="700" fill="${C.orange}">L1</text>
-<text x="702" y="142" font-size="13" font-weight="700" fill="${C.navy}">L2</text>
-<text x="702" y="164" font-size="13" font-weight="700" fill="${C.vert}">L3</text>
-${avecSomme ? `<text x="702" y="188" font-size="13" font-weight="700" fill="${C.rouge}">somme</text>` : ''}
+<!-- chaque étiquette à la hauteur où sa courbe se termine (x = 700) : L1 à 170, L2 à 229, L3 à 111 -->
+<text x="706" y="175" font-size="13" font-weight="700" fill="${C.marron}">L1</text>
+<text x="706" y="234" font-size="13" font-weight="700" fill="${C.noir}">L2</text>
+<text x="706" y="116" font-size="13" font-weight="700" fill="${C.gris}">L3</text>
+${avecSomme ? `<path d="M700 172 L714 196" fill="none" stroke="${C.somme}" stroke-width="2"/><text x="708" y="210" font-size="13" font-weight="700" fill="${C.somme}">somme</text>` : ''}
 
 <text x="380" y="266" text-anchor="middle" font-size="13" fill="${C.gris}">${avecSomme
   ? 'Sur une installation équilibrée, le neutre ne ramène presque rien.'
   : 'Le décalage est d’un tiers de période, soit 120 degrés. Il n’est pas réglable : il vient de la construction de l’alternateur.'}</text>
 <text x="380" y="292" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">${avecSomme
   ? 'Déséquilibrez les charges, et le neutre se met à ramener du courant.'
-  : 'Trois phases, et jamais une de plus : c’est la nature du réseau.'}</text>`;
+  : 'Trois phases : c’est la nature du réseau de distribution.'}</text>`;
     };
     peindre(false);
     return bloc(d, [
@@ -208,14 +213,14 @@ ${avecSomme ? `<text x="702" y="188" font-size="13" font-weight="700" fill="${C.
 ${['L1 – L2', 'L1 – L3', 'L2 – L3'].map((t, i) => `
 <text x="80" y="${132 + i * 38}" font-size="14" fill="${C.navy}">${t}</text>
 <text x="300" y="${132 + i * 38}" text-anchor="end" font-size="17" font-weight="700" fill="${C.orange}">400 V</text>`).join('')}
-<text x="190" y="252" text-anchor="middle" font-size="12" fill="${C.gris}">la tension composée</text>
+<text x="190" y="252" text-anchor="middle" font-size="12" fill="${C.gris}">entre phases</text>
 
 <rect x="360" y="66" width="300" height="200" rx="10" fill="${C.creme}" stroke="${C.trait}"/>
 <text x="510" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="${C.bleu}">entre une phase et le neutre</text>
 ${['L1 – N', 'L2 – N', 'L3 – N'].map((t, i) => `
 <text x="400" y="${132 + i * 38}" font-size="14" fill="${C.navy}">${t}</text>
 <text x="620" y="${132 + i * 38}" text-anchor="end" font-size="17" font-weight="700" fill="${C.bleu}">230 V</text>`).join('')}
-<text x="510" y="252" text-anchor="middle" font-size="12" fill="${C.gris}">la tension simple</text>
+<text x="510" y="252" text-anchor="middle" font-size="12" fill="${C.gris}">vers le neutre</text>
 
 <text x="350" y="292" text-anchor="middle" font-size="13" fill="${C.gris}">Deux valeurs très différentes sur la même prise. Se tromper de paire de bornes, c’est brancher du 400 sur du 230.</text>`;
     return bloc(d, [], null,
@@ -236,10 +241,10 @@ ${['L1 – N', 'L2 – N', 'L3 – N'].map((t, i) => `
 <rect x="8" y="8" width="684" height="324" rx="16" fill="${C.papier}" stroke="${C.trait}"/>
 <text x="350" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="${C.navy}">${composee ? 'Entre deux phases : la tension composée' : 'Entre une phase et le neutre : la tension simple'}</text>
 
-<circle cx="${cx}" cy="${cy}" r="4" fill="${C.navy}"/>
+<circle cx="${cx}" cy="${cy}" r="4" fill="${C.bleu}"/>
 <text x="${cx + 14}" y="${cy - 8}" font-size="13" font-weight="700" fill="${C.bleu}">N</text>
 
-${[[x1, y1, 'L1', C.orange], [x2, y2, 'L2', C.navy], [x3, y3, 'L3', C.vert]].map(([x, y, t, coul]) => `
+${[[x1, y1, 'L1', C.marron], [x2, y2, 'L2', C.noir], [x3, y3, 'L3', C.grisL]].map(([x, y, t, coul]) => `
 <line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"
       stroke="${composee ? 'rgba(27,58,99,.3)' : coul}" stroke-width="${composee ? 3 : 5}"/>
 <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="${coul}"/>
@@ -263,7 +268,7 @@ ${composee
      <text x="535" y="236" text-anchor="middle" font-size="12" fill="${C.gris}">une maison en reçoit une seule</text>`}
 
 <text x="350" y="296" text-anchor="middle" font-size="13" fill="${C.gris}">${composee
-  ? 'Le côté du triangle est plus long que le rayon de l’étoile — et le rapport entre les deux vaut toujours 1,73.'
+  ? 'Le côté du triangle est plus long que le rayon de l’étoile — le rapport vaut 1,73 (réseau équilibré).'
   : 'Les trois branches partent du même point : le neutre. Elles ont la même longueur, à 120 degrés l’une de l’autre.'}</text>
 <text x="350" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="${C.navy}">${composee
   ? 'Ce n’est pas une convention : c’est de la géométrie.'
@@ -306,9 +311,9 @@ ${composee
 <text x="450" y="132" text-anchor="middle" font-size="26" font-weight="700" fill="${C.rouge}">${nb(U)} V</text>
 <text x="450" y="156" text-anchor="middle" font-size="12" fill="${C.gris}">entre deux phases</text>
 
-<text x="620" y="112" text-anchor="middle" font-size="12" fill="${C.gris}">${Math.abs(V - 230) < 3 ? 'le réseau français' : Math.abs(V - 127) < 3 ? 'l’ancien réseau 127 / 220' : Math.abs(V - 400) < 6 ? 'la distribution industrielle' : 'une valeur d’essai'}</text>
+<text x="620" y="112" text-anchor="middle" font-size="12" fill="${C.gris}">${Math.abs(V - 230) < 3 ? 'le réseau français' : Math.abs(V - 127) < 3 ? 'l’ancien réseau 127 / 220' : Math.abs(V - 400) < 6 ? 'un réseau 400 / 690 V' : 'une valeur d’essai'}</text>
 
-<text x="350" y="206" text-anchor="middle" font-size="13" fill="${C.gris}">Le rapport ne dépend ni du pays ni de l’installation : il vient de la géométrie du triangle.</text>`;
+<text x="350" y="206" text-anchor="middle" font-size="13" fill="${C.gris}">Le rapport vaut 1,73 sur tout réseau triphasé équilibré : il vient de la géométrie du triangle.</text>`;
     };
     peindre();
     hote.appendChild(d);

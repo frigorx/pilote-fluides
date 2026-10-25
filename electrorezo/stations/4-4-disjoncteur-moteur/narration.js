@@ -1,6 +1,6 @@
 /* ÉlectroRézo 4.4 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Version précédente : narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 sont refaits en Piper à chaque changement de texte. */
 const NARRATION = {
 
   decouvrir: `Celui-ci se reconnaît au premier coup d'œil : il a une molette. Une petite roue graduée en
@@ -17,20 +17,22 @@ Deux choses changent, et elles comptent toutes les deux.
 D'abord, le bilame est réglable. La molette déplace le point à partir duquel il déclenche. Et
 on la tourne sur l'intensité écrite sur la plaque du moteur. Pas au jugé, pas au maximum, pas
 sur ce qui vous arrange.
-Ensuite, la bobine est fixe, et calée très haut. On ne la règle pas, et la notice du
+Ensuite, sur les modèles courants, la bobine est fixe, et calée très haut. On ne la règle pas, et la notice du
 constructeur donne sa valeur. Pourquoi si haut ? Parce qu'un moteur qui démarre appelle une
-grosse pointe, et qu'on ne veut surtout pas qu'elle soit prise pour un court-circuit. C'est la même logique que le fusible aM, dans un
+grosse pointe, et qu'on ne veut surtout pas qu'elle soit prise pour un court-circuit. C'est la même logique que le fusible a M, dans un
 autre appareil.
 Maintenant, le réglage. C'est là que tout se joue, et je vais être direct avec vous.
-Si vous réglez au maximum pour que ça n'embête personne, le moteur n'est plus protégé du tout.
-Vous avez posé un appareil, il coûte cher, il est bien câblé, et il ne sert à rien.
+Si vous réglez au maximum pour que ça n'embête personne, le moteur n'est plus protégé contre la
+surcharge. Le court-circuit coupera toujours, mais le moteur peut chauffer sans que rien ne
+déclenche.
+Vous avez posé un appareil, il coûte cher, il est bien câblé, et il laisse le moteur sans protection contre la surcharge.
 Et attention à un cas que beaucoup oublient. Si le moteur est recouplé — si on passe d'un
 couplage à l'autre, parce que la tension du réseau a changé — il n'absorbe plus la même intensité. Le réglage doit suivre. Un
 disjoncteur moteur réglé pour un couplage et laissé tel quel après un changement, c'est un
-appareil qui ne protège plus.`,
+appareil qui ne protège plus correctement.`,
 
   manipuler: `Les trois défauts. Vous savez qu'il en surveille deux, avec un réglage en plus.
-Cochez, puis passez au câblage : c'est là que je vous dis où le poser.`,
+Cochez, puis lisez la carte du câblage, juste à côté : elle dit où le poser.`,
 
   representer: `Sur un plan, son symbole porte une croix, qui est la marque du disjoncteur, puis trois signes :
 le crochet du thermique, le demi-cercle du magnétique, et souvent la petite barre du

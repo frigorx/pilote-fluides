@@ -47,7 +47,7 @@ const Signes = (() => {
     repere: {
       nom: 'Le repère', dit: 'une lettre et un chiffre, écrits à côté du symbole',
       boite: [-17, -20, 1, 20],   /* en unités, autour du point d’ancrage */
-      source: 'NF EN 61346-2 · lettres de repérage des appareils',
+      source: 'repérage des appareils · lettres usuelles en France',
       legendeSource: 'du texte posé à côté du symbole, comme sur un plan',
       dessin: (x, y) => `${LETTRES.contact.dessin(x, y)}
         <text x="${x - 7 * E}" y="${y + 2 * E}" text-anchor="end" font-size="${7 * E}"
@@ -64,7 +64,7 @@ const Signes = (() => {
         <line x1="${x}" y1="${y - 20 * E}" x2="${x}" y2="${y - 10 * E}"
               stroke="${C.navy}" stroke-width="${T}"/>
         <polyline points="${x - 5 * E},${y - 10 * E} ${x},${y + 10 * E} ${x},${y + 20 * E}"
-                  fill="none" stroke="${C.orange}" stroke-width="${T}" stroke-linejoin="round"/>` },
+                  fill="none" stroke="${C.navy}" stroke-width="${T}" stroke-linejoin="round"/>` },
 
     /* sectionneur4.svg : line 2,-10 → -2,-10 (4 unités) sur chacun des trois pôles,
        et le même trait dans interrupteur_sectionneur_biphase.svg (2,-12 → -2,-12) :
@@ -95,7 +95,7 @@ const Signes = (() => {
        donnent la même forme : le crochet du bilame est à peu près carré, jamais
        allongé vers le haut. C'est à cette forme que l'élève doit le reconnaître. */
     thermique: {
-      nom: 'Le crochet rectangulaire', dit: 'déclencheur thermique — c’est un bilame',
+      nom: 'Le crochet carré', dit: 'déclencheur thermique — c’est un bilame',
       boite: [0, -3, 5, 3],   /* en unités, autour du point d’ancrage */
       source: '10_electric/10_allpole/200_fuses_protective_gears/12_magneto_thermal_circuit_breakers/dis_mag_term_2f-1.svg',
       dessin: (x, y) => `
@@ -159,7 +159,7 @@ const Signes = (() => {
        bouton-poussoir (poussoir.svg : polyline -7,-5 -10,-5 -10,5 -7,5), qui dit
        « on appuie », alors que celui-ci dit seulement « une main agit ». */
     manuelle: {
-      nom: 'Le trait de commande', dit: 'commande manuelle — une main agit',
+      nom: 'Le signe de commande', dit: 'commande manuelle — une main agit',
       boite: [-7, -14, -1, -9],   /* en unités, autour du point d’ancrage */
       source: 'CEI 60617 S00223 — à distinguer du carré de poussoir.svg',
       dessin: (x, y) => `
@@ -174,19 +174,19 @@ const Signes = (() => {
      Chaque symbole composé dit de quelles lettres il est fait, et d'où vient sa forme. */
   const MOTS = {
     interrupteur: { nom: 'Un interrupteur', lettres: ['contact', 'manuelle'],
-      lecture: 'un contact, plus le trait de commande manuelle : quelqu’un l’actionne. (Sur le symbole simplifié de la station 3.1, ce trait n’est pas dessiné : on ne voit que le contact et ses deux bornes.)' },
+      lecture: 'un contact, plus le petit signe de commande manuelle : quelqu’un l’actionne. (Sur le symbole simplifié de la station 3.1, ce signe n’est pas dessiné : on ne voit que le contact et ses deux bornes.)' },
 
     sectionneur: { nom: 'Un sectionneur', lettres: ['contact', 'sectionnement'],
-      lecture: 'un contact, plus la barre courte sur la borne fixe : il est capable d’isoler et peut être condamné.' },
+      lecture: 'un contact, plus la barre courte sur la borne fixe : il est capable d’isoler.' },
 
-    fusible: { nom: 'Un fusible', lettres: ['rectangle'],
-      lecture: 'un seul signe : le rectangle étroit que le conducteur traverse.' },
+    fusible: { nom: 'Un fusible', lettres: ['rectangle', 'conducteur'],
+      lecture: 'le rectangle étroit, et le trait (le conducteur) qui le traverse.' },
 
-    sectionneurFusible: { nom: 'Un sectionneur porte-fusible', lettres: ['contact', 'sectionnement', 'rectangle'],
-      lecture: 'trois lettres : il coupe, il se condamne, il porte la protection.' },
+    sectionneurFusible: { nom: 'Un sectionneur porte-fusible', lettres: ['contact', 'sectionnement', 'rectangle', 'conducteur'],
+      lecture: 'quatre lettres : le trait, et sur lui le contact qui coupe, la barre courte (il est capable d’isoler) et le rectangle qui porte la protection.' },
 
     magnetoThermique: { nom: 'Un disjoncteur magnéto-thermique', lettres: ['contact', 'thermique', 'magnetique'],
-      lecture: 'un contact, le crochet rectangulaire du bilame et le demi-cercle de la bobine : il voit la surcharge lente ET le court-circuit brutal.' },
+      lecture: 'un contact, le crochet carré du bilame et le demi-cercle de la bobine : il voit la surcharge lente ET le court-circuit brutal.' },
 
     disjoncteurMoteur: { nom: 'Un disjoncteur moteur', lettres: ['contact', 'thermique', 'magnetique', 'sectionnement'],
       lecture: 'les trois du magnéto-thermique, plus la barre courte : ici, l’aptitude au sectionnement est dessinée sur le symbole.' },
@@ -195,9 +195,9 @@ const Signes = (() => {
       lecture: 'une bobine, des contacts, et le pointillé qui les relie : ils sont loin l’un de l’autre sur le plan, mais mécaniquement solidaires.' },
 
     relaisThermique: { nom: 'Un relais thermique', lettres: ['contact', 'thermique'],
-      lecture: 'un contact et le crochet rectangulaire : il ne voit que la surcharge lente, pas le court-circuit.' },
+      lecture: 'un contact et le crochet carré : il ne voit que la surcharge lente, pas le court-circuit.' },
 
-    moteur: { nom: 'Un moteur triphasé', lettres: ['machine'],
+    moteur: { nom: 'Un moteur triphasé', lettres: ['machine', 'conducteur'],
       lecture: 'le rond, la lettre M, et trois traits qui arrivent : trois fils l’alimentent.' }
   };
 
@@ -311,7 +311,7 @@ ${mots.map((m, i) => `
 
     const verdict = document.createElement('p');
     verdict.className = 'verdict wait';
-    verdict.innerHTML = '<span class="signe">•</span>Trouvez-la dans les symboles où elle se cache — elle n’est pas dans tous.';
+    verdict.innerHTML = '<span class="signe">•</span>Trouvez-la dans les symboles où elle se cache.';
     hote.appendChild(verdict);
 
     let trouves = 0, rates = 0;
@@ -327,11 +327,12 @@ ${mots.map((m, i) => `
           if (f && f !== 'none' && f !== C.papier) e.setAttribute('fill', juste ? C.vert : C.rouge);
         });
         if (juste) trouves++; else rates++;
-        if (trouves === attendus && !rates) {
+        /* le message suit le clic en cours ; la réussite se dit dès que tout est trouvé, même après une erreur */
+        if (attendus && trouves === attendus) {
           verdict.className = 'verdict ok';
           verdict.innerHTML = '<span class="signe">✔</span>Les ' + attendus +
-            ' trouvées, sans erreur. ' + L.nom + ' : ' + L.dit;
-        } else if (rates) {
+            ' trouvées. ' + L.nom + ' : ' + L.dit;
+        } else if (!juste) {
           verdict.className = 'verdict bad';
           verdict.innerHTML = '<span class="signe">✘</span>Celle-là, c’est autre chose. ' +
             (LETTRES[g.dataset.signe] ? LETTRES[g.dataset.signe].nom + ' dit : ' +
@@ -350,7 +351,7 @@ ${mots.map((m, i) => `
     const hote = document.createElement('div');
     const c = document.createElement('p');
     c.className = 'legende';
-    c.innerHTML = 'Pour chaque croisement, dites si les deux fils sont <strong>reliés</strong> ou non. Le point seul tranche.';
+    c.innerHTML = 'Pour chaque croisement, dites si les deux fils sont <strong>reliés</strong> ou non. Sur un croisement, le point tranche.';
     hote.appendChild(c);
 
     const CAS = [true, false, false, true, false, true];
@@ -394,13 +395,13 @@ ${CAS.map((relie, i) => {
     v.innerHTML = '<span class="signe">•</span>Choisissez d’abord une réponse, puis cliquez sur les croisements concernés.';
     hote.appendChild(v);
 
-    let bons = 0;
+    let bons = 0, vues = 0;
     d.querySelectorAll('g.croisement').forEach(g => {
       g.addEventListener('click', () => {
         if (choisi === null || g.dataset.vu) return;
         const i = +g.dataset.cas;
         const juste = (CAS[i] === choisi);
-        g.dataset.vu = '1';
+        g.dataset.vu = '1'; vues++;
         const t = d.querySelector('#cas' + i);
         t.textContent = CAS[i] ? 'reliés' : 'pas reliés';
         t.setAttribute('fill', juste ? C.vert : C.rouge);
@@ -415,9 +416,9 @@ ${CAS.map((relie, i) => {
             (CAS[i] ? 'il y a bien un point, donc ils sont reliés.'
                     : 'il n’y a pas de point, donc ils ne se touchent pas.');
         }
-        if (bons === 6) {
+        if (vues === CAS.length) {
           v.className = 'verdict ok';
-          v.innerHTML = '<span class="signe">✔</span>Les six. Le point, et rien d’autre, fait la connexion.';
+          v.innerHTML = '<span class="signe">✔</span>Les six. Sur un croisement, c’est le point qui dit si les fils sont reliés.';
         }
       });
     });

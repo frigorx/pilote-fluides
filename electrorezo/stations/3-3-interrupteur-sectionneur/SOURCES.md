@@ -29,4 +29,9 @@ vue en coupe pédagogique, faite pour montrer ce dont la narration parle.
 
 ## Narration
 
-Écrite le 28/08/2026 pour cette station, pour l'oreille. **Non validée.** Aucun MP3 fabriqué.
+Écrite le 28/08/2026 pour cette station, pour l'oreille. Les MP3 sont refaits en Piper à chaque changement de texte.
+
+## À trancher par F. Henninot
+
+- Licence et définition de la photo de l'interrupteur-sectionneur rotatif (image de catalogue fabricant, environ 220 px).
+- Rouge sur fond jaune : l'énoncé (organes d'urgence, y compris un interrupteur-sectionneur qui sert aussi de coupure d'urgence) s'appuie sur des sources web ; le texte de la NF EN 60204-1 n'a pas été lu.

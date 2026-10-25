@@ -359,8 +359,8 @@
     const racine = new T.Group();
     const W = 90, H = 120, Z_AV = 72, E = 2.6;
     const XP = [-27, 0, 27], COUL = ['L1', 'L2', 'L3'];
-    const Y_ARBRE = 36, Z_ARBRE = 56, LONG_LAME = 64, Y_PINCE = -26;
-    const PHI_OUVERT = 38 * D2R, THETA_FERME = -20 * D2R;       /* la manette suit l'arbre : θ = THETA_FERME + φ */
+    const Y_ARBRE = -36, Z_ARBRE = 56, LONG_LAME = 64, Y_PINCE = 26;      /* l'axe des lames en bas (départ), les pinces fixes en haut (arrivée) */
+    const PHI_OUVERT = 38 * D2R, THETA_FERME = 20 * D2R;       /* la manette tourne à l'inverse de l'arbre : θ = −THETA_FERME + φ (fermée : elle pointe vers le haut, sur I ; on l'abaisse sur O pour ouvrir ; les lames, elles, s'ouvrent en reculant) */
     const Z_TROU = 34, X_OREILLE = 7.6;                          /* le trou de cadenas : à 34 mm de l'arbre sur la manette */
     const AXE_X = new T.Vector3(1, 0, 0);
 
@@ -368,7 +368,7 @@
     const rail = K.railDIN(110);
     const socle = coque(T, K, M.plastique, W, H, 0, 40, E, 3, 'arriere');
     const anneau = coque(T, K, M.plastique, W, H, 40, Z_AV, E, 3);
-    const FY = -5, FH = 58, FW = 78;
+    const FY = 5, FH = 58, FW = 78;
     const forme = K.formeArrondie(W - 2 * E + 0.4, H - 2 * E + 0.4, 1.5);
     forme.holes.push(new T.Path(K.formeArrondie(FW, FH, 3).getPoints(24).map(p => new T.Vector2(p.x, p.y + FY))));
     const face = K.mesh(K.extrusion(forme, E, 0.2), M.plastique, 0, 0, Z_AV - E / 2);
@@ -376,10 +376,10 @@
     const vitre = K.mesh(K.boite(FW + 1, FH + 1, 1, 0.3), M.transparent, 0, FY, Z_AV - 1.2);
     vitre.userData.voile = true;
     const griffe = K.mesh(K.boite(16, 6, 5, 1), M.plastiqueSombre, 0, -H / 2 + 1, 2.5);
-    const fente = K.mesh(K.boite(16, 20, 0.5, 0.2), M.sombre, 0, 38, Z_AV + 0.05);
+    const fente = K.mesh(K.boite(16, 20, 0.5, 0.2), M.sombre, 0, -38, Z_AV + 0.05);
     racine.add(rail, socle, capot, vitre, griffe, fente);
 
-    /* ---- les bornes (arrivée en haut, départ en bas) et les marquages */
+    /* ---- les bornes (arrivée en haut, sur les pinces fixes ; départ en bas, sur l'axe des lames) et les marquages */
     const bornes = new T.Group(), marquages = new T.Group();
     const REP = [['1/L1', '3/L2', '5/L3'], ['2/T1', '4/T2', '6/T3']];
     XP.forEach((x, i) => [1, -1].forEach((s, k) => {
@@ -391,9 +391,9 @@
       const g = K.gravure(REP[k][i], 3.2, { couleur: '#2b3138' });
       g.position.set(x, s * 43.5, Z_AV + 0.08); marquages.add(g);
     }));
-    const gI = K.gravure('I', 3.8, { couleur: '#1e7e54' }); gI.position.set(-17, 44, Z_AV + 0.08);
-    const gO = K.gravure('O', 3.8, { couleur: '#c0392b' }); gO.position.set(-17, 30, Z_AV + 0.08);
-    const gCal = K.gravure('63 A', 3, { couleur: '#2b3138' }); gCal.position.set(28, 37, Z_AV + 0.08);
+    const gI = K.gravure('I', 3.8, { couleur: '#1e7e54' }); gI.position.set(-17, -30, Z_AV + 0.08);
+    const gO = K.gravure('O', 3.8, { couleur: '#c0392b' }); gO.position.set(-17, -44, Z_AV + 0.08);
+    const gCal = K.gravure('63 A', 3, { couleur: '#2b3138' }); gCal.position.set(28, -37, Z_AV + 0.08);
     marquages.add(gI, gO, gCal);
     racine.add(bornes, marquages);
 
@@ -402,7 +402,7 @@
     const pinces = new T.Group(), bandes = new T.Group();
     XP.forEach(x => {
       [-1, 1].forEach(s => pinces.add(K.mesh(K.boite(8, 14, 2.2, 0.5), matPince, x, Y_PINCE, Z_ARBRE + s * 2.6)));
-      pinces.add(K.mesh(K.boite(8, 5, 8.6, 0.8), matPince, x, Y_PINCE - 9.5, Z_ARBRE));
+      pinces.add(K.mesh(K.boite(8, 5, 8.6, 0.8), matPince, x, Y_PINCE + 9.5, Z_ARBRE));
       bandes.add(K.mesh(K.boite(8, 14, 2.2, 0.5), M.cuivre, x, 43, Z_ARBRE));
       bandes.add(K.mesh(K.boite(8, 17, 2.2, 0.5), M.cuivre, x, -42.5, Z_ARBRE));
     });
@@ -414,8 +414,8 @@
     XP.forEach(x => {
       const l = new T.Group(); l.position.set(x, Y_ARBRE, Z_ARBRE);
       l.add(K.mesh(K.boite(10, 11, 9, 1.2), M.cuivre, 0, 0, 0));                              /* le palier de la charnière */
-      l.add(K.mesh(K.boite(8, LONG_LAME, 3, 0.5), M.cuivre, 0, -LONG_LAME / 2, 0));           /* la lame */
-      l.add(K.mesh(K.boite(7.4, 14, 3.6, 0.5), matPastille, 0, -LONG_LAME + 7, 0));           /* le bout d'argent */
+      l.add(K.mesh(K.boite(8, LONG_LAME, 3, 0.5), M.cuivre, 0, LONG_LAME / 2, 0));           /* la lame */
+      l.add(K.mesh(K.boite(7.4, 14, 3.6, 0.5), matPastille, 0, LONG_LAME - 7, 0));           /* le bout d'argent */
       lames.add(l); lamesListe.push(l);
     });
     racine.add(arbre, lames);
@@ -431,7 +431,7 @@
     racine.add(manette);
 
     /* ---- l'oreille fixe du boîtier : son trou tombe en face de celui de la manette ouverte */
-    const yTrou = Y_ARBRE - Z_TROU * Math.sin(PHI_OUVERT + THETA_FERME), zTrou = Z_ARBRE + Z_TROU * Math.cos(PHI_OUVERT + THETA_FERME);
+    const yTrou = Y_ARBRE - Z_TROU * Math.sin(PHI_OUVERT - THETA_FERME), zTrou = Z_ARBRE + Z_TROU * Math.cos(PHI_OUVERT - THETA_FERME);
     const oreille = new T.Group();
     oreille.add(K.mesh(K.boite(3, 24, 28, 0.8), M.plastique, X_OREILLE, yTrou + 0.5, zTrou - 2.3));
     const trouO = K.mesh(K.cylindre(3.3, 3.4, 16), M.sombre, X_OREILLE, yTrou, zTrou); trouO.rotation.z = Math.PI / 2;
@@ -455,7 +455,7 @@
     /* ---- le courant : seulement lames dans les pinces, et machine en marche */
     const ZG = Z_ARBRE + 1.6;                              /* sur la face avant des bandes : les grains se voient */
     const grains = XP.map((x, i) => {
-      const c = K.courant(K.chemin([filsH[i].courbe, [x, 50, ZG], [x, 36, ZG], [x, -28, ZG], [x, -34, ZG], [x, -50, ZG], filsB[i].courbe]),
+      const c = K.courant(K.chemin([filsH[i].courbe, [x, 50, ZG], [x, 36, ZG], [x, 28, ZG], [x, -36, ZG], [x, -50, ZG], filsB[i].courbe]),
         { pas: 7, rayon: 1.1, vitesse: 38 });
       c.regler({ debit: 1, alternatif: true, frequence: 0.7 });
       racine.add(c.objet); return c;
@@ -479,9 +479,9 @@
 
     const placer = () => {
       const p = eclatee ? 0 : phi.x;                      /* éclaté : les pièces se montrent fermées, rangées */
-      lamesListe.forEach(l => { l.rotation.x = p; });
-      arbre.rotation.x = p;
-      manette.rotation.x = THETA_FERME + p;
+      lamesListe.forEach(l => { l.rotation.x = -p; });
+      arbre.rotation.x = -p;
+      manette.rotation.x = p - THETA_FERME;
       cad.position.x = 1.5 + 36 * (1 - ins.x); cad.visible = ins.x > 0.01 && !eclatee;
       const touche = phi.x < 0.02;
       if (touche !== contact) {
@@ -493,7 +493,7 @@
       const arcOn = arcInstalle && !contact && !eclatee;
       arcs.forEach((a, i) => {
         a.regler(arcOn);
-        if (arcOn) poserArc(a, new T.Vector3(XP[i], Y_PINCE + 4, ZG), new T.Vector3(0, -(LONG_LAME - 5), 1.6).applyAxisAngle(AXE_X, phi.x).add(lamesListe[i].position));
+        if (arcOn) poserArc(a, new T.Vector3(XP[i], Y_PINCE - 4, ZG), new T.Vector3(0, LONG_LAME - 5, 1.6).applyAxisAngle(AXE_X, -phi.x).add(lamesListe[i].position));
       });
       const chaud = arcOn ? 1.0 : 0;
       K.chaleur(matPince, chaud); K.chaleur(matPastille, chaud);
@@ -513,7 +513,7 @@
       const mesures = [
         { libelle: 'Les trois lames', valeur: contact ? 'dans leurs pinces' : toutOuvert ? 'écartées' : 'en route' },
         { libelle: 'Courant vers la machine', valeur: contact && charge ? '6,5 A' : arcInstalle && ouvert ? 'passe dans l’arc' : '0 A' },
-        { libelle: 'Écart d’air', valeur: contact ? '0 mm' : toutOuvert ? '40 mm, garantis' : Math.round(2 * LONG_LAME * Math.sin(phi.x / 2)) + ' mm' }
+        { libelle: 'Écart d’air', valeur: contact ? '0 mm' : toutOuvert ? 'franc, garanti par le constructeur' : 's’ouvre' }
       ];
       const cle = JSON.stringify(mesures);
       if (cle !== derniereMesure) { derniereMesure = cle; ctx.mesures(mesures); }
@@ -565,14 +565,14 @@
       phrase: phrase(),
       pieces: [
         { id: 'boitier', nom: 'Le boîtier', objets: [socle, capot, griffe, fente, marquages], desc: 'Il tient les pièces à distance. « Voir dedans » le rend transparent. Il porte le courant qu’il laisse passer : 63 A.' },
-        { id: 'fenetre', nom: 'La fenêtre', objets: [vitre], desc: 'La coupure visible : on voit les lames séparées des pinces. Une poignée sur zéro ne prouve rien — ce qu’on voit, on peut le croire.' },
+        { id: 'fenetre', nom: 'La fenêtre', objets: [vitre], desc: 'La coupure visible : on voit les lames séparées des pinces. La coupure visible, ou un indicateur de position fiable, dit où sont les contacts ; seule la vérification d’absence de tension prouve qu’on peut travailler.' },
         { id: 'manette', nom: 'La manette (I – O)', objets: [manette], desc: 'Elle tourne l’arbre à la main, à la vitesse de la main : il n’y a pas de ressort. Elle porte un trou pour le cadenas.' },
         { id: 'arbre', nom: 'L’arbre isolant', objets: [arbre], desc: 'Il relie la manette aux trois lames : elles s’ouvrent toutes ensemble.' },
         { id: 'lames', nom: 'Les trois lames', objets: [lames], desc: 'Une lame de cuivre par phase, avec un bout d’argent. Elles pivotent sur l’arbre.' },
-        { id: 'pinces', nom: 'Les pinces', objets: [pinces], desc: 'Fixes. Fermé, elles serrent le bout de la lame. Ouvert, elles restent loin d’elle : c’est l’écart garanti.' },
+        { id: 'pinces', nom: 'Les pinces', objets: [pinces], desc: 'Fixes, côté arrivée : elles restent sous tension. Fermé, elles serrent le bout de la lame. Ouvert, elles restent loin d’elle : c’est l’écart garanti.' },
         { id: 'cadenas', nom: 'Le cadenas et l’oreille', objets: [cad, oreille], ancre: [X_OREILLE, yTrou, zTrou], desc: 'La condamnation. Ouvert, le trou de la manette tombe en face du trou de l’oreille : l’anse passe dans les deux. La clé reste dans votre poche.' },
-        { id: 'arc', nom: 'L’arc électrique', objets: arcs.map(a => a.objet), ancre: [0, Y_PINCE + 4, ZG], desc: 'Il n’apparaît que si on ouvre en charge. Ici, rien pour l’éteindre : il s’installe, brûle le métal et peut sauter au visage.' },
-        { id: 'bornes', nom: 'Les bornes', objets: [bornes, bandes], desc: 'L’arrivée en haut (1, 3, 5), le départ en bas (2, 4, 6). Le conducteur de protection n’est jamais coupé.' },
+        { id: 'arc', nom: 'L’arc électrique', objets: arcs.map(a => a.objet), ancre: [0, Y_PINCE - 4, ZG], desc: 'Il n’apparaît que si on ouvre en charge. Ici, rien pour l’éteindre : il s’installe, brûle le métal et peut sauter au visage.' },
+        { id: 'bornes', nom: 'Les bornes', objets: [bornes, bandes], desc: 'L’arrivée (1, 3, 5) est en haut, sur les pinces fixes ; le départ (2, 4, 6) est en bas, sur l’axe des lames : ouvert, les lames ne sont plus sous tension. Le conducteur de protection n’est jamais coupé.' },
         { id: 'fils', nom: 'Les trois phases', objets: [fils], desc: 'Marron, noir, gris : L1, L2, L3. On sépare tous les conducteurs actifs.' },
         { id: 'rail', nom: 'Le rail DIN', objets: [rail], desc: 'Le sectionneur s’y clipse.' }
       ],
@@ -588,16 +588,16 @@
           vue: { azimut: -46, elevation: 12, zoom: 1.1, cible: [0, 0, 44] },
           texte: 'Avec la commande de la machine, on arrête le courant : les grains s’arrêtent. Le sectionneur est encore fermé, mais plus rien ne passe : on peut l’ouvrir sans danger.' },
         { titre: 'On abaisse la manette : les trois lames se détachent ensemble', piece: 'manette', voirDedans: true, actions: [['focus', 'meca'], ['phase', 'mi']],
-          vue: { azimut: -64, elevation: 14, zoom: 1.25, cible: [0, 2, 50] }, duree: 7,
+          vue: { azimut: -64, elevation: 14, zoom: 1.25, cible: [0, -2, 50] }, duree: 7,
           texte: 'La manette fait tourner l’arbre, et l’arbre emporte les trois lames d’un même mouvement. Il n’y a pas de ressort : les lames vont aussi lentement que votre main.' },
         { titre: 'Ouvert : un écart d’air franc', piece: 'fenetre', voirDedans: false, actions: [['focus', 'meca'], ['phase', 'ouvert']],
-          vue: { azimut: -24, elevation: 10, zoom: 1.15, cible: [0, -2, 60] },
-          texte: 'Les lames sont loin des pinces : environ 40 mm d’air, calculés et garantis par le constructeur. On le voit à travers la fenêtre : c’est la coupure visible.' },
+          vue: { azimut: -24, elevation: 10, zoom: 1.15, cible: [0, 2, 60] },
+          texte: 'Les lames sont loin des pinces : un écart d’air garanti par le constructeur. On le voit à travers la fenêtre : c’est la coupure visible.' },
         { titre: 'On pose le cadenas : personne ne peut refermer', piece: 'cadenas', voirDedans: false, actions: [['focus', 'meca'], ['phase', 'cadenas']],
-          vue: { azimut: -36, elevation: 10, zoom: 1.45, cible: [4, 16, 80] },
+          vue: { azimut: -36, elevation: 10, zoom: 1.45, cible: [4, -32, 80] },
           texte: 'Le trou de la manette est en face du trou de l’oreille. L’anse du cadenas passe dans les deux : la manette ne peut plus bouger. On garde la clé.' },
         { titre: 'À ne jamais faire : ouvrir en charge', piece: 'arc', voirDedans: true, ralenti: true, actions: [['focus', 'meca'], ['phase', 'erreur']],
-          vue: { azimut: -58, elevation: 12, zoom: 1.25, cible: [0, -4, 50] }, duree: 8,
+          vue: { azimut: -58, elevation: 12, zoom: 1.25, cible: [0, 4, 50] }, duree: 8,
           texte: 'Si on l’ouvre pendant que le courant passe : pas de ressort, pas de chambre de coupure. L’arc s’installe entre la lame et la pince et ne s’éteint pas. Il chauffe et fond le métal.' }
       ],
       /* l'éclaté, le long du sens de montage (vers l'avant) : la manette sort, puis la face avant,
@@ -618,7 +618,7 @@
         if (cadenasVoulu && phi.x > PHI_OUVERT * 0.96) ins.cible = 1;
         const bougeI = ins.pas(dt);
         placer();
-        let actif = bougeP || bougeI || fermeVoulu || (cadenasVoulu && ins.x < 0.99);
+        let actif = bougeP || bougeI || fermeVoulu || phi.cible !== phi.x || (cadenasVoulu && ins.x < 0.99);
         if (!eclatee) {
           grains.forEach(g => { if (g.animer(dt)) actif = true; });
           arcs.forEach(a => { if (a.animer(dt)) actif = true; });
@@ -811,7 +811,7 @@
       const mesures = [
         { libelle: 'Courant vers la machine', valeur: contact && charge ? '12 A' : ouvert && charge && (etat === 'arc' || tArc > 0) ? 'dans les arcs' : '0 A' },
         { libelle: 'Les trois pôles', valeur: contact ? 'fermés' : tout ? 'ouverts' : 'en train de s’ouvrir' },
-        { libelle: 'Écart d’air par pôle', valeur: contact ? '0 mm' : tout ? '2 × 21 mm, garantis' : 'se creuse' }
+        { libelle: 'Écart d’air par pôle', valeur: contact ? '0 mm' : tout ? '2 grands écarts, garantis' : 'se creuse' }
       ];
       const cle = JSON.stringify(mesures);
       if (cle !== derniereMesure) { derniereMesure = cle; ctx.mesures(mesures); }
@@ -864,7 +864,7 @@
       phrase: phrase(),
       pieces: [
         { id: 'boitier', nom: 'Le boîtier', objets: [socle, capot, pattes, marquages], desc: 'Trois étages séparés par des cloisons : un par phase. Dessus, la tête avec la poignée. « Voir dedans » le rend transparent.' },
-        { id: 'poignee', nom: 'La poignée (0 – I)', objets: [poignee], desc: 'Un quart de tour : I est fermé, 0 est ouvert. Noire : le rouge sur jaune est réservé à l’arrêt d’urgence. Son bras est percé d’un trou pour le cadenas.' },
+        { id: 'poignee', nom: 'La poignée (0 – I)', objets: [poignee], desc: 'Un quart de tour : I est fermé, 0 est ouvert. Noire, comme sur la plupart des machines ; rouge sur fond jaune seulement s’il sert aussi de coupure d’urgence. Son bras est percé d’un trou pour le cadenas.' },
         { id: 'ressort', nom: 'Le ressort d’ouverture brusque', objets: [ressort], desc: 'La poignée le tend, l’arbre reste en place ; au milieu du mouvement il lâche d’un coup et fait claquer l’arbre. Peu importe la lenteur de la main.' },
         { id: 'arbre', nom: 'L’arbre et son petit bras', objets: [arbre], desc: 'Un arbre carré qui traverse les trois étages et porte les ponts. En haut, un petit bras : c’est là que le ressort s’accroche.' },
         { id: 'ponts', nom: 'Les ponts de contact', objets: [ponts], desc: 'Un pont de cuivre par phase, avec une pastille d’argent à chaque bout : il coupe en deux endroits.' },
@@ -893,10 +893,10 @@
           texte: 'L’arc est attiré entre les plaques d’acier, coupé en petits arcs, refroidi : il s’éteint en un instant. C’est la chambre de coupure : elle permet d’ouvrir en marche.' },
         { titre: 'Ouvert (0) : un grand écart d’air', piece: 'ponts', voirDedans: true, actions: [['focus', 'tout'], ['phase', 'ouvert']],
           vue: { azimut: -155, elevation: 22, zoom: 1.5, cible: [0, 0, 30] },
-          texte: 'Les ponts sont à angle droit des contacts : chaque pôle est coupé à deux endroits, avec environ 21 mm d’air de chaque côté. Cet écart est garanti : l’appareil isole.' },
-        { titre: 'On cadenasse en 0 : il isole pour de bon', piece: 'cadenas', voirDedans: false, actions: [['focus', 'tout'], ['phase', 'cadenas']],
+          texte: 'Les ponts sont à angle droit des contacts : chaque pôle est coupé à deux endroits, avec un grand écart d’air de chaque côté, garanti par le constructeur : l’appareil isole.' },
+        { titre: 'On cadenasse en 0 : la poignée ne peut plus tourner', piece: 'cadenas', voirDedans: false, actions: [['focus', 'tout'], ['phase', 'cadenas']],
           vue: { azimut: -30, elevation: 10, zoom: 1.5, cible: [0, -20, 80] },
-          texte: 'En position 0, le trou du bras est en face du trou de l’oreille. L’anse passe dans les deux : la poignée ne peut plus tourner. On garde la clé. Il a coupé en charge, puis isolé : c’est un cumul.' }
+          texte: 'En position 0, le trou du bras est en face du trou de l’oreille. L’anse passe dans les deux : la poignée ne peut plus tourner. On garde la clé. Avant d’intervenir, on vérifie encore l’absence de tension. Il a coupé en charge, puis isolé : c’est un cumul.' }
       ],
       eclate: [
         { objets: [poignee], vers: [0, 0, 150], debut: 0, fin: 0.5 },

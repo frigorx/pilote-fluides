@@ -12,11 +12,10 @@ const SYMBOLES = [
   { f: '010_switch_1pos.svg', nom: "Un interrupteur", famille: 'couper', vu: '3.1' },
   { f: 'sectionneur4.svg', nom: "Un sectionneur", famille: 'couper', vu: '3.2' },
   { f: 'interrupteur_sectionneur_biphase.svg', nom: "Un interrupteur-sectionneur", famille: 'couper', vu: '3.3' },
-  { f: 'porte_fusible_bi.svg', nom: "Un porte-fusible", famille: 'couper', vu: '3.4' },
   { f: 'sectionneur_fusible_bi.svg', nom: "Un sectionneur porte-fusible", famille: 'couper', vu: '3.5' },
   { f: 'pojistka1p.svg', nom: "Un fusible", famille: 'proteger', vu: '4.1' },
-  { f: 'disjonct-m_1fn.svg', nom: "Un disjoncteur magnéto-thermique", famille: 'proteger', vu: '4.3' },
-  { f: 'disjonct-m_3f.svg', nom: "Un disjoncteur moteur, trois pôles", famille: 'proteger', vu: '4.4' },
+  { f: 'disjonct-m_1fn.svg', nom: "Un disjoncteur, un pôle et neutre", famille: 'proteger', vu: '4.3' },
+  { f: 'disjonct-m_3f.svg', nom: "Un disjoncteur, trois pôles", famille: 'proteger', vu: '4.4' },
   { f: 'int_diff2.svg', nom: "Un interrupteur différentiel", famille: 'proteger', vu: '4.5' },
   { f: 'ddr3.svg', nom: "Un disjoncteur différentiel", famille: 'proteger', vu: '4.6' },
   { f: 'relais_therm4.svg', nom: "Un relais thermique", famille: 'proteger', vu: '4.7' },
@@ -34,12 +33,12 @@ const SYMBOLES = [
   { f: 'au.svg', nom: "Un arrêt d’urgence", famille: 'commander', vu: '5.8' },
   { f: 'fin_de_course_came_no.svg', nom: "Un contact de fin de course", famille: 'commander', vu: '5.8' },
   { f: 'lampe2.svg', nom: "Un voyant", famille: 'commander', vu: '5.8' },
-  { f: 'electrovanne.svg', nom: "Une électrovanne", famille: 'machines', vu: '6.1' },
-  { f: 'transfo_mono.svg', nom: "Un transformateur monophasé", famille: 'machines', vu: '6.2' },
-  { f: 'transfo_tri.svg', nom: "Un transformateur triphasé", famille: 'machines', vu: '6.2' },
   { f: 'moteur_tri.svg', nom: "Un moteur triphasé", famille: 'machines', vu: '6.3' },
   { f: 'moteur_mono1.svg', nom: "Un moteur monophasé", famille: 'machines', vu: '6.5' },
   { f: 'moteur_dc.svg', nom: "Un moteur à courant continu", famille: 'machines', vu: '6.6' },
+  { f: 'electrovanne.svg', nom: "Une électrovanne", famille: 'machines', vu: '6.1' },
+  { f: 'transfo_mono.svg', nom: "Un transformateur monophasé", famille: 'machines', vu: '6.2' },
+  { f: 'transfo_tri.svg', nom: "Un transformateur triphasé", famille: 'machines', vu: '6.2' },
   { f: 'ac1_ac1.svg', nom: "Un convertisseur alternatif vers alternatif (gradateur)", famille: 'varier', vu: '7.2' },
   { f: 'dc_ac1.svg', nom: "Un onduleur", famille: 'varier', vu: '7.4' },
   { f: 'redresseur.svg', nom: "Un redresseur", famille: 'varier', vu: '7.4' },
@@ -52,9 +51,9 @@ const FAMILLES = {
   couper:    { nom: 'Couper et isoler',   ligne: 3, dit: "Un contact qui s’ouvre. Ce qu’on ajoute autour dit s’il coupe seulement, ou s’il est aussi capable d’isoler." },
   proteger:  { nom: 'Protéger',           ligne: 4, dit: "Un crochet, un demi-cercle, un rectangle, un tore. Chaque signe est un défaut surveillé — et son absence, un défaut qui passera." },
   commander: { nom: 'Commander',          ligne: 5, dit: "Une bobine décide, des contacts obéissent. Le pointillé dit qu’ils sont reliés, même quand ils sont dessinés à trois mètres l’un de l’autre." },
-  machines:  { nom: 'Les machines',       ligne: 6, dit: "Un rond, et une lettre dedans. La lettre dit laquelle : M pour un moteur, G pour une génératrice." },
+  machines:  { nom: 'Les machines',       ligne: 6, dit: "Pour les moteurs : un rond, et une lettre dedans. La lettre dit laquelle : M pour un moteur, G pour une génératrice. L’électrovanne et les transformateurs ont leurs propres dessins." },
   varier:    { nom: 'Faire varier',       ligne: 7, dit: "Un rectangle traversé, avec deux signes qui disent ce qui entre et ce qui sort : alternatif, continu, ou l’un puis l’autre." },
-  lire:      { nom: 'Lire le plan',       ligne: 8, dit: "Ni un appareil, ni une fonction : la grammaire. Un point dit que les fils se touchent, un saut dit qu’ils ne se touchent pas." }
+  lire:      { nom: 'Lire le plan',       ligne: 8, dit: "Ni un appareil, ni une fonction : la grammaire. Sur un croisement, un point dit que les fils se touchent ; un saut, ancien, dit qu’ils ne se touchent pas." }
 };
 
 /* ---------------------------------------------------------------- le tirage
@@ -155,7 +154,7 @@ Station.demarrer({
     { id: 'representer', onglet: '4 · La planche', titre: 'Tout, sur une page',
       narration: NARRATION.representer,
       monter(hote) {
-        const g = carte('Les ' + SYMBOLES.length + ' symboles du réseau');
+        const g = carte('Les ' + SYMBOLES.length + ' symboles de la planche');
         g.appendChild(el('p', 'legende',
           'À garder, ou à imprimer. Le numéro sous chaque symbole est la station où on l’a vu : c’est là qu’il est expliqué.'));
         Object.entries(FAMILLES).forEach(([cle, fam]) => {
@@ -185,7 +184,7 @@ Station.demarrer({
             reponses: [
               { texte: "L’appareil est protégé contre les surcharges.",
                 pourquoi: "Ce serait le crochet du bilame. La barre courte parle du sectionnement, pas de protection." },
-              { texte: "L’appareil est capable d’isoler l’installation (aptitude au sectionnement) : il peut être condamné.", juste: true },
+              { texte: "L’appareil est capable d’isoler l’installation (aptitude au sectionnement).", juste: true },
               { texte: "L’appareil est commandé à distance.",
                 pourquoi: "Ce serait un pointillé vers une bobine. La barre ne dit rien de la commande." },
               { texte: "L’appareil est un fusible.",
@@ -232,7 +231,7 @@ Station.demarrer({
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Reconnaître, hors de leur station d’origine, les ' + SYMBOLES.length +
-    ' symboles normalisés rencontrés dans le réseau, et savoir dire à quelle fonction chacun répond.</p>' +
+    ' symboles de la planche, choisis parmi ceux rencontrés dans le réseau, et savoir dire à quelle fonction chacun répond.</p>' +
     '<p><strong>Limites.</strong> Cette station ne remplace aucune des huit lignes : elle les rejoue. ' +
     'Les symboles y sont montrés seuls, alors qu’un plan les montre reliés — lire un schéma entier ' +
     'reste l’affaire de la station 5.9.</p>',
@@ -315,7 +314,7 @@ function monterLeJeu(hote) {
       bon.nom + ' — ' + (juste ? 'trouvé' : 'raté, station ' + bon.vu));
     journal.appendChild(li);
 
-    const suite = el('button', 'primary', i + 1 >= tirage.length ? 'Voir le résultat' : 'Symbole suivant ▶');
+    const suite = el('button', 'primary', i + 1 >= tirage.length ? 'Terminer' : 'Symbole suivant ▶');
     suite.type = 'button';
     suite.addEventListener('click', () => { i++; poser(); });
     choix.appendChild(suite);

@@ -43,7 +43,7 @@ ModeleAppareil.construire({
   consigneAptitudes: 'Les trois questions, pour un gradateur.',
   aptitudes: {
     mouvement: false, tension: true, alternatif: true,
-    bonneReponse: 'Exact. Rien ne bouge, il change bien la tension efficace, et il lui faut absolument l’alternatif — c’est le passage par zéro qui referme son interrupteur. En continu, un triac fermé ne se rouvrirait jamais.',
+    bonneReponse: 'Exact. Rien ne bouge, il change bien la tension efficace, et il lui faut absolument l’alternatif — c’est le passage par zéro qui rouvre son interrupteur. En continu, un triac fermé ne se rouvrirait jamais.',
     erreurs: {
       mouvement: 'Aucune pièce mobile : c’est tout l’intérêt de l’électronique de puissance.',
       tension: 'Il change la valeur efficace, en découpant. C’est bien un changement de tension, obtenu autrement qu’avec un transformateur.',
@@ -52,7 +52,7 @@ ModeleAppareil.construire({
   },
 
   cablage: [
-    "Il se monte <strong>en série</strong> sur la phase, comme un interrupteur. Jamais en parallèle.",
+    "Il se monte <strong>en série</strong> sur la phase, comme un interrupteur, et non en parallèle.",
     "Vérifiez la <strong>nature de la charge</strong> : résistive, inductive, ou à LED. Ce n’est pas la même électronique, et un gradateur mal choisi grille.",
     "Respectez la <strong>puissance minimale</strong> autant que la maximale : beaucoup de gradateurs ne fonctionnent pas correctement en dessous d’un certain niveau.",
     "Laissez de la place autour du <strong>radiateur</strong>. Un gradateur encastré dans une boîte fermée déclasse fortement : sa puissance admissible chute."
@@ -105,7 +105,7 @@ ModeleAppareil.construire({
         { texte: "Il déclasse fortement.", juste: true },
         { texte: "Aucune, s’il est bien câblé.", pourquoi: "L’évacuation de la chaleur est une contrainte à part entière." },
         { texte: "Il fonctionne mieux, à l’abri.", pourquoi: "Le confinement empêche justement le refroidissement." },
-        { texte: "Il change de fréquence.", pourquoi: "Un gradateur ne touche jamais à la fréquence." } ] }
+        { texte: "Il change de fréquence.", pourquoi: "Un gradateur ne change pas la fréquence." } ] }
   ],
 
   retenir: [
@@ -117,8 +117,8 @@ ModeleAppareil.construire({
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre le principe du découpage, savoir où un gradateur se monte, et connaître les charges qui lui conviennent.</p><p><strong>Limite.</strong> Les harmoniques engendrées et leur traitement ne sont qu’évoqués.</p>',
   credits: [
-    { quoi: 'Illustrations', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' } ],
+    { quoi: 'Illustrations', source: 'dessinées pour cette station',
+      detail: 'Le schéma du principe est tracé pour la station, avec le symbole du triac de la bibliothèque. Les symboles du temps 4 viennent de la bibliothèque de symboles inerWeb.' } ],
 
   correspondances: [
     { ligne: 7, couleur: '#0b7285', texte: "7.1 Faire varier la tension" },

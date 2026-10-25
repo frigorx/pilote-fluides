@@ -1,6 +1,6 @@
 /* ÉlectroRézo 5.2 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 d'un temps dont le texte change sont supprimés, puis refaits en Piper. */
 const NARRATION = {
 
   decouvrir: `Voici l'appareil autour duquel tourne toute cette ligne. Ouvrez n'importe quelle armoire
@@ -26,9 +26,10 @@ Coupez la bobine maintenant. Un ressort, qui était comprimé, se détend et éc
 Tout se rouvre.
 Et je veux vous faire remarquer une chose sur ce ressort, parce qu'on la prend souvent pour un
 défaut. Un contacteur ne garde rien : il retombe dès qu'on lui coupe le courant.
-C'est voulu. Imaginez une coupure de courant dans un atelier, et toutes les machines qui
-redémarrent d'un coup au retour, sans que personne ne l'ait demandé. Le ressort est ce qui
-empêche ça.
+Ce n'est pas un défaut, c'est une sécurité. Imaginez une coupure de courant dans un atelier.
+Avec une commande par bouton et un auto-maintien, que vous découvrirez à la station suivante,
+la machine ne repart pas toute seule au retour du courant, parce que le contacteur est
+retombé. Avec un thermostat, en revanche, elle repart : c'est la régulation qui décide.
 Un dernier mot sur le boîtier au-dessus des contacts. Quand un contact s'ouvre sous charge, un
 arc se forme. Ces cloisons le découpent en petits morceaux et le refroidissent. Sans elles, les
 pastilles se souderaient au bout de quelques manœuvres.`,
@@ -46,5 +47,6 @@ Et maintenant, regardez de très près le contact de puissance, parce qu'il port
 contact auxiliaire n'a pas. Un petit demi-cercle, posé sur la borne fixe.
 Ce demi-cercle n'est pas un ornement. Il dit : ce contact-là est équipé pour couper un courant
 important, il a de quoi souffler l'arc.
-Un contact sans ce signe est un contact de commande. Ne lui faites pas porter un moteur.`
+Sur un contacteur, le contact sans ce signe est un contact auxiliaire, un contact de commande :
+ne lui faites pas porter un moteur.`
 };

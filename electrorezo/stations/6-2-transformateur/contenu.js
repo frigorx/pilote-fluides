@@ -17,12 +17,12 @@ ModeleAppareil.construire({
       alt: "Schéma d’un transformateur : le circuit magnétique en fer, le bobinage primaire à gauche, le bobinage secondaire à droite, et le flux qui circule dans le fer.",
       titre: "Deux bobinages, un fer.", sous: "Aucun fil ne relie les deux côtés." },
     { src: 'assets/biblio/transformateur-de-bruleur.png',
-      alt: "Schéma électrique d’un transformateur alimenté en 240 volts alternatif, dont le secondaire alimente des électrodes.",
-      titre: "Et un qui élève.", sous: "Sur un brûleur, il monte à plusieurs milliers de volts." }
+      alt: "Schéma électrique d’un transformateur de brûleur : le primaire alimenté en 240 volts alternatif, le secondaire à point milieu relié à la terre (7 500 volts de chaque côté, 15 000 volts entre les deux électrodes). Les bobinages sont dessinés en zigzag.",
+      titre: "Et un qui élève.", sous: "Sur un brûleur, il monte à plusieurs milliers de volts. Sur ce schéma, les bobinages sont dessinés en zigzag ; sur un plan, on les dessine en cercles ou en arcs. La tension y est notée 240 V : chez nous, c’est 230 V." }
   ],
 
   aQuoiCaSert: "À changer une tension. Vous entrez 230 volts, vous sortez 24. Ou l’inverse. Sans pièce mobile, sans usure, et sans aucune liaison électrique entre l’entrée et la sortie.",
-  ouOnLeTrouve: "Dans le poste de transformation du quartier, dans chaque armoire qui a besoin de 24 volts pour sa commande, dans chaque chargeur, dans chaque brûleur. C’est peut-être la machine la plus répandue au monde.",
+  ouOnLeTrouve: "Dans le poste de transformation du quartier, dans chaque armoire qui a besoin de 24 volts pour sa commande, dans les alimentations de nombreux appareils, dans les brûleurs. C’est peut-être la machine la plus répandue au monde.",
 
   scene: () => SchemasMachines.rapportDeTransformation(),
 
@@ -42,10 +42,10 @@ ModeleAppareil.construire({
 
   picto: SchemasMachines.pictoTrois,
   colonnes: SchemasMachines.COLONNES,
-  consigneAptitudes: 'Les trois questions. Le transformateur est le seul de la ligne à répondre ainsi.',
+  consigneAptitudes: 'Les trois questions. Le transformateur est le seul de la ligne 6 à répondre ainsi.',
   aptitudes: {
     mouvement: false, tension: true, alternatif: true,
-    bonneReponse: 'Exact — et c’est le seul de la ligne dans ce cas. Rien ne bouge chez lui, il change la tension, et il lui faut absolument l’alternatif. Un transformateur alimenté en continu ne transforme rien : il chauffe, puis il brûle.',
+    bonneReponse: 'Exact — et c’est le seul de la ligne 6 dans ce cas. Rien ne bouge chez lui, il change la tension, et il lui faut absolument l’alternatif. Un transformateur alimenté en continu ne transforme rien : il chauffe, puis il brûle.',
     erreurs: {
       mouvement: 'Aucune pièce ne bouge. C’est même son grand avantage : il ne s’use pas.',
       tension: 'C’est précisément son métier, et le seul.',
@@ -54,7 +54,7 @@ ModeleAppareil.construire({
   },
 
   cablage: [
-    "Le <strong>primaire</strong> et le <strong>secondaire</strong> sont repérés séparément, souvent en chiffres romains ou par les lettres H et X selon les constructeurs.",
+    "Le <strong>primaire</strong> et le <strong>secondaire</strong> ont leurs bornes repérées séparément. Les repères changent d’un constructeur à l’autre (la vue 3D prend H1-H2 et X1-X2 comme exemple) : lisez la plaque et le plan.",
     "Un transformateur de commande porte une <strong>protection de chaque côté</strong> : un disjoncteur au primaire, un fusible au secondaire.",
     "Certains ont <strong>plusieurs primaires</strong> — 230 et 400 — qu’on sélectionne par un pontage. Vérifiez ce pontage avant de mettre sous tension.",
     "Le <strong>secondaire de commande</strong> a souvent un point relié à la terre. Ce n’est pas un défaut : c’est voulu, pour que le premier défaut d’isolement soit détecté."
@@ -62,14 +62,14 @@ ModeleAppareil.construire({
   piege: "Un transformateur <strong>ne fabrique pas de puissance</strong>. Ce qu’il rend, il l’a pris — moins ses pertes. Baisser la tension fait monter le courant dans le même rapport : ne dimensionnez jamais le câble du secondaire sur l’intensité du primaire.",
 
   symboles: [
-    { src: 'assets/transfo_mono.svg', alt: "Symbole normalisé d’un transformateur monophasé : deux cercles qui se recouvrent, avec un petit trait à gauche qui touche leur espace commun : l’écran.", legende: "Monophasé, avec son écran (le petit trait à gauche)" },
-    { src: 'assets/transfo_tri.svg', alt: "Symbole normalisé d’un transformateur triphasé.", legende: "Triphasé" },
-    { src: 'assets/tranfo230_400_12_24.svg', alt: "Symbole d’un transformateur à plusieurs primaires et plusieurs secondaires, 230 ou 400 volts vers 12 ou 24 volts.", legende: "Plusieurs tensions" }
+    { src: 'assets/transformator_1f_1.svg', alt: "Symbole normalisé d’un transformateur monophasé, en dessin unifilaire : deux cercles qui se recouvrent, un seul trait en haut et un seul en bas pour figurer les deux fils de chaque côté, aucun trait entre les cercles.", legende: "Monophasé (dessin unifilaire : un trait figure les deux fils)" },
+    { src: 'assets/transfo_tri.svg', alt: "Symbole normalisé d’un transformateur triphasé : deux cercles, trois traits en haut et trois traits en bas, un par phase.", legende: "Triphasé (un trait par fil)" },
+    { src: 'assets/tranfo230_400_12_24.svg', alt: "Symbole d’un transformateur à plusieurs primaires et plusieurs secondaires, 230 ou 400 volts vers 12 ou 24 volts. Les bobinages sont dessinés en arcs, avec un trait épais entre le primaire et le secondaire : c’est le noyau de fer.", legende: "Plusieurs tensions" }
   ],
   lecturePlan: [
     "Le symbole est fait de <strong>deux cercles qui se recouvrent</strong>. Ils figurent les deux bobinages, couplés sans se toucher.",
-    "Regardez bien : aucun trait ne passe d’un cercle à l’autre. Ce vide entre eux <strong>est</strong> l’information — il n’y a pas de liaison électrique.",
-    "Le premier symbole porte, à gauche, un <strong>petit trait qui touche l’espace commun des deux cercles</strong> : c’est un écran de séparation, sur les transformateurs qui en portent un. Il ne relie pas le primaire au secondaire.",
+    "Regardez bien : sur les deux premiers symboles, aucun trait ne passe d’un cercle à l’autre. Ce vide entre eux <strong>est</strong> l’information — il n’y a pas de liaison électrique.",
+    "Le premier symbole est un dessin <strong>unifilaire</strong> : un seul trait figure les deux fils de chaque côté. Le deuxième montre un trait par fil. Sur le troisième, les bobinages sont dessinés en arcs ; le trait épais entre eux figure le <strong>noyau de fer</strong>, pas une liaison électrique.",
     "Les tensions sont écrites de part et d’autre : <em>230 V</em> d’un côté, <em>24 V</em> de l’autre. Et le sens compte : c’est celui du plan qui dit lequel est le primaire."
   ],
 
@@ -120,7 +120,7 @@ ModeleAppareil.construire({
   objectifs: '<p><strong>Objectif.</strong> Comprendre l’induction, employer le rapport des spires dans les deux sens, et savoir pourquoi un transformateur exige l’alternatif.</p><p><strong>Limite.</strong> Le rendement, les pertes fer et cuivre, et les couplages triphasés ne sont qu’évoqués.</p>',
   credits: [
     { quoi: 'Illustrations', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' } ],
+      detail: 'documents de cours indexés dans la base de connaissances inerWeb' } ],
 
   correspondances: [
     { ligne: 1, couleur: '#2e6f9e', texte: "1.5 Continu et alternatif" },

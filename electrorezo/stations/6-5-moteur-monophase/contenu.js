@@ -13,8 +13,8 @@ ModeleAppareil.construire({
 
   photos: [
     { src: 'assets/biblio/condensateur-de-demarrage.png',
-      alt: "Schéma d’un moteur asynchrone monophasé avec son condensateur permanent et son condensateur de démarrage.",
-      titre: "Un ou deux condensateurs.", sous: "Le permanent reste, celui de démarrage se retire." }
+      alt: "Schéma d’un moteur asynchrone monophasé avec ses deux condensateurs : Cd, le condensateur de démarrage, derrière un petit interrupteur, et Cp, le condensateur permanent.",
+      titre: "Un ou deux condensateurs.", sous: "Cd est le condensateur de démarrage : il se retire. Cp est le condensateur permanent : il reste. Le bouton « continuer » vient de l’animation d’origine, et les autres repères du dessin ne servent pas ici." }
   ],
 
   aQuoiCaSert: "À faire tourner quelque chose là où il n’y a pas de triphasé. Une maison, un petit atelier, un compresseur de réfrigérateur. Et pour cela, il faut lui fabriquer artificiellement le décalage que le triphasé donne gratuitement.",
@@ -33,9 +33,9 @@ ModeleAppareil.construire({
     "<strong>Condensateur permanent</strong> — il reste en service. Simple, silencieux, mais le couple de démarrage est modeste.",
     "<strong>Condensateur de démarrage</strong> — de forte valeur, déconnecté dès le lancement. Couple important, mais il ne supporte pas d’être maintenu.",
     "<strong>Les deux</strong> — un permanent, plus un de démarrage. C’est le montage des compresseurs qui doivent partir en charge.",
-    "<strong>À bague de déphasage</strong> — sans condensateur : une spire en court-circuit sur un coin du pôle suffit à décaler un peu. Couple très faible, mais indestructible. C’est le moteur des petits ventilateurs."
+    "<strong>À bague de déphasage</strong> — sans condensateur : une spire en court-circuit sur un coin du pôle suffit à décaler un peu. Couple très faible, mais très robuste : rien à entretenir. C’est le moteur des petits ventilateurs."
   ],
-  reglage: "Rien ne se règle. Mais un condensateur se <strong>choisit</strong> : sa capacité en microfarads et sa tension d’emploi sont écrites dessus. Monter une capacité plus forte ne donne pas plus de couple : cela déséquilibre le déphasage, et le moteur chauffe.",
+  reglage: "Rien ne se règle. Mais un condensateur se <strong>choisit</strong> : sa capacité en microfarads et sa tension d’emploi sont écrites dessus. Sur un condensateur permanent, monter une capacité supérieure à celle de la plaque ne donne pas plus de couple : cela déséquilibre le déphasage, et le moteur chauffe. Le condensateur de démarrage, lui, est choisi de forte valeur, pour donner du couple au lancement.",
 
   picto: SchemasMachines.pictoTrois,
   colonnes: SchemasMachines.COLONNES,
@@ -53,7 +53,7 @@ ModeleAppareil.construire({
   cablage: [
     "Les repères courants sont <strong>U1-U2</strong> pour le principal et <strong>Z1-Z2</strong> pour l’auxiliaire. La notice du constructeur fait foi.",
     "Pour <strong>inverser le sens</strong>, on inverse les bornes de <strong>l’enroulement auxiliaire</strong> — pas celles de l’alimentation. C’est le contraire du triphasé, et c’est une source d’erreur classique.",
-    "Le condensateur se raccorde <strong>en série avec l’auxiliaire</strong>, jamais en parallèle sur l’alimentation.",
+    "Le condensateur se raccorde <strong>en série avec l’auxiliaire</strong>, et non en parallèle sur l’alimentation.",
     "Un condensateur reste <strong>chargé</strong> après la coupure. On le décharge avant d’y toucher, avec une résistance et non par un court-circuit brutal."
   ],
   piege: "Un moteur monophasé qui <strong>ronfle sans démarrer</strong>, et qui part si on le lance à la main dans le sens où on l’a lancé : l’enroulement auxiliaire ne travaille pas. Vérifiez d’abord le condensateur, puis le contact centrifuge ou le relais de démarrage, l’enroulement et les connexions. Le symptôme est caractéristique, mais il ne désigne pas une seule pièce.",
@@ -64,9 +64,9 @@ ModeleAppareil.construire({
   ],
   lecturePlan: [
     "Le symbole est le même <strong>rond marqué M</strong>, mais avec <strong>deux traits</strong> qui arrivent au lieu de trois, et le signe <em>1 ~</em> (le 1 dit une phase, le petit tilde ~ dit courant alternatif), comme sur le premier symbole.",
-    "Le <strong>condensateur</strong> se dessine par <strong>deux traits parallèles</strong>, courts et épais, sans se toucher. Il est en série avec l’enroulement auxiliaire.",
+    "Le <strong>condensateur</strong> se dessine par <strong>deux traits parallèles</strong> courts, sans se toucher. Il est en série avec l’enroulement auxiliaire.",
     "Un moteur avec deux condensateurs porte les deux symboles, et souvent un <strong>contact centrifuge</strong> en série avec celui de démarrage.",
-    "Le repère du condensateur commence par <strong>C</strong>. Sa capacité, en microfarads, est écrite à côté — jamais dans le dessin."
+    "Le repère du condensateur commence par <strong>C</strong>. Sa capacité, en microfarads, est écrite à côté — pas dans le dessin."
   ],
 
   tableau: SchemasMachines.tableauMachines,

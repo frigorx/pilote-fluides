@@ -659,14 +659,14 @@
       if (xp === 'courant') {
         const fort = s.debit === 'fort';
         I = ouvert ? 0 : fort ? 1.75 : 0.42;
-        debit = ouvert ? 0 : fort ? 1 : 0.38; vitesse = fort ? 62 : 24;
+        debit = ouvert ? 0 : 0.7; vitesse = fort ? 70 : 20;
         lampes[0].groupe.visible = fort; lampeFaible.groupe.visible = !fort;
         (fort ? lampes[0] : lampeFaible).regler(ouvert ? 0 : fort ? 1.15 : 0.55);
         ampe.regler(I);
         labo.ecU.ecrire('12.0', 'V'); labo.ecI.ecrire(I.toFixed(2), 'A');
         phrase = ouvert ? '<strong>Interrupteur ouvert.</strong> La boucle est coupée : aucune charge ne bouge, nulle part. L’aiguille reste sur zéro.'
-          : fort ? '<strong>Beaucoup de charges passent : l’intensité est forte.</strong> Avec une lampe plus puissante, les grains sont plus serrés et plus rapides. L’ampèremètre, branché en série, en compte 1,75 A.'
-            : '<strong>Peu de charges passent : l’intensité est faible.</strong> Peu de grains franchissent chaque point du fil par seconde. L’ampèremètre, branché en série, compte 0,42 A.';
+          : fort ? '<strong>Les charges avancent vite : l’intensité est forte.</strong> Avec une lampe plus puissante, il y a toujours autant de grains dans le fil, mais ils sont plus rapides : beaucoup plus de grains franchissent chaque point par seconde. L’ampèremètre, branché en série, compte 1,75 A.'
+            : '<strong>Les charges avancent lentement : l’intensité est faible.</strong> Peu de grains franchissent chaque point du fil par seconde. L’ampèremètre, branché en série, compte 0,42 A.';
         mes = [{ libelle: 'Tension de la source', valeur: '12 V' }, { libelle: 'Intensité', valeur: nb(I, 2) + ' A' }, { libelle: 'Lampe', valeur: fort ? '21 W' : '5 W' }];
       } else if (xp === 'tension') {
         I = ouvert ? 0 : 1.2; debit = ouvert ? 0 : 0.7; vitesse = 40;
@@ -743,7 +743,7 @@
 
     /* ---------------------------------------------------------------- commandes et pièces */
     const COMMANDES = {
-      courant: [{ id: 'debit', type: 'choix', options: [['faible', 'Peu de charges'], ['fort', 'Beaucoup de charges']], valeur: 'faible' }],
+      courant: [{ id: 'debit', type: 'choix', options: [['faible', 'Courant faible'], ['fort', 'Courant fort']], valeur: 'faible' }],
       tension: [{ id: 'niveau', type: 'choix', options: [['normal', 'Deux niveaux'], ['fort', 'Écart plus grand'], ['egal', 'Même niveau']], valeur: 'normal' }],
       ohm: [{ id: 'ohmU', type: 'curseur', libelle: 'La tension', min: 12, max: 400, pas: 1, unite: 'V', valeur: 230 },
             { id: 'ohmR', type: 'curseur', libelle: 'La résistance', min: 5, max: 500, pas: 1, unite: 'Ω', valeur: 100 }],
@@ -782,7 +782,7 @@
         { titre: 'Interrupteur ouvert', texte: 'La boucle est coupée : aucune charge ne bouge, nulle part. L’aiguille reste sur zéro.', actions: [['debit', 'faible'], ['inter', 'ouvert']], piece: 'inter', vue: V(-18, 34, 1.15) },
         { titre: 'On ferme : tout part en même temps', texte: 'Les charges se mettent en marche partout à la fois, sur toute la boucle. C’est pour cela que la lampe s’allume tout de suite.', actions: [['inter', 'ferme']], piece: 'grains', vue: V(-18, 40, 1.05) },
         { titre: 'L’ampèremètre compte le débit', texte: 'Il est branché en série : tout le courant le traverse. L’aiguille indique 0,42 A — le nombre de charges qui passent chaque seconde.', piece: 'amperemetre', vue: V(-8, 22, 1.9, [55, 40, 70]) },
-        { titre: 'Une lampe plus puissante', texte: 'Elle laisse passer beaucoup plus de charges par seconde : les grains sont plus serrés et plus rapides, l’aiguille monte à 1,75 A.', actions: [['debit', 'fort']], piece: 'lampe', vue: V(-14, 30, 1.25) },
+        { titre: 'Une lampe plus puissante', texte: 'Elle laisse passer beaucoup plus de charges par seconde : le fil contient toujours autant de grains, mais ils vont plus vite, l’aiguille monte à 1,75 A.', actions: [['debit', 'fort']], piece: 'lampe', vue: V(-14, 30, 1.25) },
         { titre: 'Le même courant partout', texte: 'Dans le fil rouge comme dans le fil noir, avant et après la lampe : la même rivière de grains. Rien ne se perd en chemin.', piece: 'retour', vue: V(-6, 62, 1) }
       ],
       tension: [
@@ -905,7 +905,7 @@
       'V~|A': ['bad', 'Non. Le sélecteur dit « tension », mais la pointe rouge est dans la borne des ampères. Entre ses deux pointes, l’appareil n’est plus qu’un fil : posées sur une prise, elles la mettent <strong>en court-circuit</strong>. Le fusible de l’appareil fond — quand ce n’est pas l’appareil.'],
       'A~|A': ['ok', 'Correct pour un courant — mais il a fallu ouvrir le circuit et mettre l’appareil <strong>dans le trou</strong> : le domino de la lampe est ouvert, le multimètre le referme. Il lit <strong>0,43 A~</strong>. Sur un moteur, on préfère largement la pince.'],
       'A~|VO': ['bad', 'Non. Le sélecteur dit « ampères » mais la pointe n’est pas dans la bonne borne : l’appareil ne voit rien passer (0,00 A), et la lampe reste éteinte.'],
-      'Ω|VO': ['bad', 'La borne est bonne, mais la position ohms ne s’emploie que <strong>HORS TENSION</strong>, sur un élément débranché d’au moins un côté. Sur une prise vivante, la valeur affichée ne veut rien dire et l’appareil peut être détruit.'],
+      'Ω|VO': ['att', 'Position et borne vont ensemble pour une résistance, à condition que l’élément soit <strong>HORS TENSION</strong>, débranché d’au moins un côté. Ici, bonne combinaison, mauvais endroit : les pointes sont sur la prise, qui est sous tension. L’écran ne donne rien de fiable, et l’appareil peut être détruit.'],
       'Ω|A': ['bad', 'Ni la position ni la borne. La position ohms exige un circuit hors tension, et la borne des ampères est un quasi court-circuit : sur la prise, le fusible fond.']
     };
     const NOMS = { 'V~': 'V ~ (tension alternative)', 'A~': 'A ~ (courant alternatif)', 'Ω': 'Ω (résistance)', OFF: 'OFF (arrêt)' };
@@ -948,9 +948,10 @@
       else if (clef === 'A~|VO') mm.ecran.ecrire('0.00', 'A~', 'AC');
       else if (s.pos === 'V~') mm.ecran.ecrire('0.0', 'V~', 'AC');
       else if (clef === 'Ω|A') mm.ecran.ecrire('O.L', 'MΩ');
+      else if (clef === 'Ω|VO') mm.ecran.ecrire('- - -', '');
       const ver = CAS[clef];
       const phrase = s.pos === 'OFF' ? '<strong>Appareil à l’arrêt.</strong> Sélecteur sur OFF : l’écran est vide.'
-        : '<strong>' + (ver[0] === 'ok' ? '✔ La combinaison est bonne.' : '✘ La combinaison ne va pas.') + '</strong> ' + ver[1];
+        : '<strong>' + (ver[0] === 'ok' ? '✔ La combinaison est bonne.' : (ver[0] === 'att' ? '⚠ Bonne combinaison, mauvais endroit.' : '✘ La combinaison ne va pas.')) + '</strong> ' + ver[1];
       ctx.mesures([
         { libelle: 'Le sélecteur est sur', valeur: NOMS[s.pos] },
         { libelle: 'La pointe rouge est dans', valeur: s.borne === 'A' ? 'la borne A' : 'la borne V Ω' },

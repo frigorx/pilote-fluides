@@ -1,6 +1,6 @@
 /* ÉlectroRézo 5.5 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 d'un temps dont le texte change sont supprimés, puis refaits en Piper. */
 const NARRATION = {
 
   decouvrir: `Jusqu'ici, tout ce que nous avons vu réagit sur-le-champ. On appuie, ça bascule. On coupe, ça
@@ -12,11 +12,12 @@ compresseur démarre en même temps que le ventilateur. Vous ne voulez pas non p
 trois secondes après s'être arrêté — il n'y survivrait pas longtemps. Il faut donc un appareil
 qui compte.`,
 
-  comprendre: `À l'intérieur, c'est un relais ordinaire. La même bobine, les mêmes contacts. On lui a
-seulement ajouté un compteur de temps.
-Aujourd'hui c'est un circuit électronique qui charge un condensateur. Autrefois c'était de
-l'horlogerie, ou même un piston qui laissait fuir de l'air par un petit trou calibré. Le principe
-n'a pas changé : quelque chose met un certain temps, et ce temps est réglable.
+  comprendre: `Il existe deux familles. Le module autonome est un relais ordinaire : sa bobine, ses contacts,
+et un compteur de temps en plus. Le bloc qu'on clipse sur un contacteur, lui, n'a pas de bobine :
+c'est celle du contacteur qui le commande.
+Le compteur de temps, dans un module électronique, c'est un circuit qui charge un condensateur.
+Dans un bloc pneumatique, c'est un piston qui laisse fuir de l'air par un petit trou calibré.
+Le principe est le même : quelque chose met un certain temps, et ce temps est réglable.
 Maintenant, les deux façons de compter. C'est le cœur de la station, alors suivez bien le
 chronogramme : ce graphique où le temps s'écoule de gauche à droite.
 Première façon : temporisé au travail. Vous alimentez la bobine, et il ne se passe rien. Le
@@ -38,13 +39,13 @@ Vérifiez toujours les deux.`,
 Attention à la troisième : compter n'est pas garder, et beaucoup de gens confondent les deux.`,
 
   representer: `Sur un plan, la bobine d'un relais temporisé est celle d'un relais ordinaire, avec un petit
-rectangle ajouté sur son côté droit.
+rectangle dans son côté droit.
 Et ce petit rectangle porte toute l'information. Plein, c'est une temporisation au repos. Barré
 d'une croix, c'est une temporisation au travail. Regardez-le de près, il est minuscule.
 Le repère, lui, est souvent KT. T comme temps. Encore deux lettres qui vous disent la famille
-avant même que vous ayez examiné le dessin.
+avant même d'avoir regardé le dessin.
 Et une chose que le symbole ne dit jamais : la valeur du délai. Ni la molette, ni l'échelle ne se
 dessinent. Le délai est écrit à côté, ou il est dans le carnet de l'installation.
-C'est toujours la même règle, celle que vous avez rencontrée dès la ligne quatre : le dessin
+C'est toujours la même règle, celle que vous avez déjà rencontrée : le dessin
 donne la fonction, le texte donne la valeur.`
 };

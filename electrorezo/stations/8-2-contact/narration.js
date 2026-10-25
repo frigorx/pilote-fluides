@@ -1,6 +1,6 @@
 /* ÉlectroRézo 8.2 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Version précédente : narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Voix fabriquées en Piper par le chef de chantier. */
 const NARRATION = {
 
   decouvrir: `Voici la lettre la plus importante de tout l'alphabet. Si vous ne deviez en retenir qu'une
@@ -11,10 +11,11 @@ Ce qu'elle dit est simple : ici, le circuit peut s'ouvrir ou se fermer. Ici, que
 décide si le courant passe.`,
 
   comprendre: `Regardez comment elle est dessinée, et vous comprendrez pourquoi elle a cette forme-là.
-Le trait part d'un pivot, en bas, et il s'écarte. La pièce mobile tourne autour de ce pivot. Le
+Le trait part d'un pivot, en bas, et il s'écarte. Le
 trait, c'est la pièce mobile elle-même, dessinée dans la position où elle laisse un vide. Sur le
 vrai symbole, le pivot n'est pas marqué : il n'y a pas de point.
-Autrement dit, ce n'est pas un code : c'est un petit croquis du mécanisme réel, vu de côté.
+Autrement dit, ce n'est pas un code : c'est un petit croquis de la pièce mobile, vu de côté.
+Sur un appareil réel, cette pièce ne tourne pas toujours : ce peut être un pont qui glisse, comme dans la vue en trois dimensions. Le dessin, lui, ne change pas : c'est la convention.
 Et maintenant, la règle qui compte, celle que je vous demande de ne jamais oublier.
 Sur un schéma, un contact est toujours représenté au repos. Au repos, ça veut dire : personne
 n'appuie dessus, aucune bobine n'est alimentée, la machine est à l'arrêt.
@@ -23,7 +24,7 @@ montage, pas un instant.
 De là, deux familles. Le contact qui, au repos, laisse un vide : on l'appelle normalement
 ouvert. Et celui qui, au repos, est déjà fermé, dessiné avec un petit trait qui le barre : on
 l'appelle normalement fermé.
-Le second sert à toutes les sécurités, et je veux que vous compreniez pourquoi, parce que c'est
+Le second sert à la plupart des sécurités, et je veux que vous compreniez pourquoi, parce que c'est
 subtil. Un fil arraché ouvre le circuit. Si la sécurité est câblée en normalement fermé, un fil
 arraché arrête la machine. La panne tombe du bon côté.
 Ce n'est pas une subtilité de dessin : c'est un principe de sécurité, et on le retrouve partout

@@ -1,5 +1,12 @@
 /* ÉlectroRézo 7.3 — Le principe de la variation de fréquence. */
 
+const RETENIR_73 = [
+  "<strong>La vitesse suit la fréquence.</strong> Directement.",
+  "<strong>U / f constant</strong> : la loi de toute la ligne.",
+  "<strong>Rapport tenu = couple entier</strong>, sauf tout près de l’arrêt.",
+  "<strong>À basse vitesse, le moteur ne se ventile plus.</strong>"
+];
+
 ModeleGrandeur.construire({
   id: '7.3', ligne: 7,
   vue3d: { modele: 'moteurAsynchrone', options: { pilotage: 'frequence' }, defaut: 'schema' },   /* 3D */
@@ -21,7 +28,7 @@ ModeleGrandeur.construire({
   creditPhoto: 'Coupe dessinée pour cette station. Détail dans « Crédits ».',
 
   lIdee: "La station 7.1 a montré ce qui ne marche pas. Voici ce qui marche. La vitesse d’un moteur asynchrone est fixée par la fréquence : alors on change la fréquence. Mais il y a une condition, et c’est toute la difficulté.",
-  ouOnLaRencontre: "Sur beaucoup de machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs de climatisation. C’est ce qui a transformé l’industrie ces trente dernières années.",
+  ouOnLaRencontre: "Sur beaucoup de machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs (souvent entraînés par un moteur à aimants). C’est ce qui a transformé l’industrie ces trente dernières années.",
 
   scene: () => SchemasMachines.loiUsurF(),
 
@@ -55,6 +62,7 @@ ModeleGrandeur.construire({
     ]
   },
   surUnePlaque: [
+    "<img src=\"assets/loi-u-sur-f.svg\" alt=\"La loi U sur f : la tension monte avec la fréquence jusqu’à 400 volts à 50 hertz, puis reste à 400 volts. Le rapport vaut 8 volts par hertz.\" style=\"width:100%;max-width:380px;height:auto;display:block;margin:0 auto .4rem\">",
     "Sur un <strong>variateur</strong>, la plage de fréquence de sortie est écrite : souvent 0 à 400 Hz.",
     "Le paramètre <strong>U/f</strong> fait partie des premiers réglages à faire à la mise en service. Il est souvent nommé « loi tension-fréquence » dans le menu.",
     "La <strong>fréquence minimale</strong> se règle aussi : en dessous, le moteur ne se ventile plus assez, car son ventilateur est calé sur son arbre.",
@@ -95,17 +103,24 @@ ModeleGrandeur.construire({
         { texte: "Parce que la fréquence est trop basse pour l’isolant.", pourquoi: "L’isolant ne réagit pas à la fréquence de cette façon." } ] }
   ],
 
-  retenir: [
-    "<strong>La vitesse suit la fréquence.</strong> Directement.",
-    "<strong>U / f constant</strong> : la loi de toute la ligne.",
-    "<strong>Rapport tenu = couple entier</strong>, sauf tout près de l’arrêt.",
-    "<strong>À basse vitesse, le moteur ne se ventile plus.</strong>"
-  ],
+  retenir: RETENIR_73,
+  /* temps 5 : le récapitulatif visuel (la comparaison du temps 1) puis les points à retenir */
+  finalTitre: 'Ce qu’il faut retenir',
+  final: () => {
+    const d = document.createElement('div');
+    const i = document.createElement('img');
+    i.src = 'assets/la-vraie-solution.svg';
+    i.alt = 'Rappel : baisser la tension affaiblit le moteur sans le ralentir ; baisser la fréquence avec la tension qui suit le ralentit vraiment et garde le couple entier.';
+    i.style.width = '100%'; i.style.height = 'auto'; i.style.maxWidth = '520px';
+    d.appendChild(i);
+    RETENIR_73.forEach(x => { const p = document.createElement('p'); p.innerHTML = x; d.appendChild(p); });
+    return d;
+  },
 
   objectifs: '<p><strong>Objectif.</strong> Comprendre pourquoi la fréquence règle la vitesse, ce qu’est la saturation du fer, et pourquoi tension et fréquence doivent varier ensemble.</p><p><strong>Limite.</strong> Le contrôle vectoriel de flux, qui va plus loin que la loi U/f, n’est pas traité.</p>',
   credits: [
-    { quoi: 'Illustrations', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' } ],
+    { quoi: 'Illustrations', source: 'dessinées pour cette station',
+      detail: 'Les dessins des temps 1, 4 et 5 sont tracés pour la station, à partir des valeurs de la loi U/f (400 V à 50 Hz, rapport 8).' } ],
 
   correspondances: [
     { ligne: 1, couleur: '#2e6f9e', texte: "1.6 La fréquence" },

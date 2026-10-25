@@ -25,19 +25,19 @@ Le troisième, le moteur à courant continu. Et celui-là fonctionne sur un prin
 différent.
 Pas de champ tournant du tout. Un aimant fixe dans le stator, un bobinage sur le rotor, et deux
 balais qui amènent le courant au rotor par une pièce qu'on appelle le collecteur.
-Regardez la photo : le collecteur est un anneau fendu en plusieurs segments. À chaque demi-tour,
+Le collecteur est un anneau fendu. Le dessin du début le montre fendu en deux pour simplifier ; la vue 3D en montre douze, et un vrai moteur en a beaucoup. À chaque demi-tour,
 les balais passent d'un segment à l'autre, et le courant du rotor s'inverse.
 Pourquoi cette inversion ? Parce que sans elle, le rotor ferait un demi-tour, se retrouverait
 aligné avec l'aimant, et s'arrêterait là. En inversant le courant au bon moment, on le relance
 à chaque demi-tour.
 C'est ingénieux. Et c'est aussi la pièce qui s'use : les balais frottent, ils font des
 étincelles, et il faut les remplacer.
-Voilà pourquoi l'asynchrone a gagné. Il n'a rien qui frotte, rien qui s'use, rien qui étincelle.
+Voilà pourquoi l'asynchrone a gagné. Il n'a ni balais qui frottent, ni collecteur qui s'use, ni étincelles.
 Il lui manquait seulement la souplesse de vitesse du moteur à courant continu — et le variateur
 de fréquence la lui a donnée. C'est la ligne sept.`,
 
   manipuler: `Les trois questions, et ici c'est le moteur à courant continu qu'on juge.
-Faites attention à la troisième : il est le seul de toute la ligne à y répondre non.`,
+Faites attention à la troisième : parmi les moteurs du tableau, il est le seul à y répondre non.`,
 
   representer: `Sur un plan, les trois se ressemblent beaucoup — c'est toujours le rond marqué M.
 Deux indices les distinguent, et ils sont rapides à lire.
@@ -51,8 +51,8 @@ chaque côté du rond, qui figurent les balais.
 Cherchez ces deux traits. Ils sont la signature d'un moteur à collecteur, et ils annoncent un
 entretien.
 Un dernier conseil, très pratique, pour lire une plaque.
-Si la vitesse annoncée est un nombre bizarre — mille quatre cent trente-cinq, deux mille neuf
-cents — c'est un asynchrone, à coup sûr, et l'écart au nombre rond est son glissement.
+Si la vitesse annoncée, sur un moteur alternatif cinquante hertz, est un nombre bizarre — mille quatre cent trente-cinq, deux mille neuf
+cents — c'est un asynchrone, et l'écart au nombre rond est son glissement.
 Si c'est un nombre rond — quinze cents, trois mille, mille — ça ne prouve rien : cherchez aussi
 la mention synchrone sur la plaque.
 Ça ne coûte rien à vérifier.`

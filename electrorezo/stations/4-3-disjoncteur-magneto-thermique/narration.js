@@ -1,10 +1,10 @@
 /* ÉlectroRézo 4.3 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Version précédente : narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 sont refaits en Piper à chaque changement de texte. */
 const NARRATION = {
 
   decouvrir: `Vous en avez plusieurs chez vous, alignés dans le tableau. Un petit boîtier blanc, une
-manette, et deux caractères écrits dessus.
+manette, et une lettre et un nombre écrits dessus.
 Le disjoncteur a remplacé le fusible presque partout, pour une raison très terre-à-terre :
 quand il a coupé, on le remonte. Rien à racheter, rien à aller chercher au magasin à onze
 heures du soir.
@@ -15,7 +15,7 @@ surveillances au lieu d'une, et c'est ça qui compte.`,
 l'autre — l'ordre dépend du modèle — et il ressort. Deux pièces, deux façons complètement
 différentes de voir un défaut.
 Le bilame, vous le connaissez : deux métaux collés qui se courbent en chauffant. Il est lent —
-et c'est exactement ce qu'on lui demande. Si le courant dépasse un peu le calibre, il chauffe
+et c'est exactement ce qu'on lui demande. Si le courant dépasse nettement le calibre, il chauffe
 peu à peu, se courbe peu à peu, et finit par déclencher au bout de quelques secondes ou de
 quelques minutes. Il surveille la surcharge.
 La bobine, elle, ne fait strictement rien en courant normal. Mais si le courant devient énorme
@@ -39,7 +39,9 @@ Cochez, et regardez bien le troisième avant de le laisser de côté.`,
 
   representer: `Sur un plan, le symbole du disjoncteur porte une croix, qui est sa marque, et deux signes que
 vous apprendrez en détail dans la ligne huit, aux stations huit point cinq et huit point six :
-le crochet rectangulaire du bilame, et le demi-cercle de la bobine.
+le crochet rectangulaire du bilame, et le demi-cercle de la bobine. Souvent, une petite barre
+s'ajoute au bout du contact fixe : c'est la barre du sectionnement, que vous connaissez depuis
+la station trois point deux.
 Leur présence n'a rien de décoratif. C'est la fiche technique de l'appareil, écrite en deux
 petits dessins.
 Et voilà ce que ça vous donne concrètement. Un symbole qui ne porterait que le crochet ne

@@ -14,7 +14,7 @@
      mesure(),                       la scène du temps 3 — obligatoire
      instrument[],                   comment on mesure, en liste
      dangerDeMesure,                 l'avertissement du temps 3, facultatif
-     ecriture{symbole, unite, nomUnite, multiples[[quoi, vaut]]},
+     ecriture{symbole, unite, nomUnite, multiples[[quoi, vaut]], titre, figure},
      surUnePlaque[],                 où on la lit dans la vraie vie
      quiz[], final() + finalTitre | jeu | retenir[], objectifs, credits[], correspondances[] }) */
 
@@ -122,6 +122,9 @@ const ModeleGrandeur = (() => {
       g.appendChild(lect);
       }
 
+      /* E.figure : un symbole ou un dessin à montrer au temps 4 (nœud DOM, ou fonction qui le fabrique) */
+      if (E.figure) g.appendChild(typeof E.figure === 'function' ? E.figure() : E.figure);
+
       if (E.multiples && E.multiples.length) {
         const t = document.createElement('table');
         t.className = 'tab';
@@ -173,7 +176,7 @@ const ModeleGrandeur = (() => {
         { id: 'decouvrir',   onglet: '1 · L’idée',     titre: 'De quoi on parle',        monter: decouvrir,   narration: D.narration.decouvrir },
         { id: 'comprendre',  onglet: '2 · Comprendre', titre: 'Ce qui se passe vraiment', monter: comprendre,  narration: D.narration.comprendre },
         { id: 'manipuler',   onglet: '3 · Mesurer',    titre: 'La mesurer',              monter: manipuler,   narration: D.narration.manipuler },
-        { id: 'representer', onglet: '4 · L’écrire',   titre: 'Son symbole et son unité', monter: representer, narration: D.narration.representer },
+        { id: 'representer', onglet: '4 · L’écrire',   titre: (D.ecriture && D.ecriture.titre) || 'Son symbole et son unité', monter: representer, narration: D.narration.representer },
         { id: 'verifier',    onglet: '5 · Vérifier',   titre: 'Questions',               monter: verifier,    narration: '' }
       ]
     });

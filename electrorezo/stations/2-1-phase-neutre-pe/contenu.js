@@ -17,7 +17,7 @@ ModeleGrandeur.construire({
       titre: "Les couleurs sont une loi.", sous: "Deux d’entre elles sont réservées, en France et dans les pays qui suivent la même norme." },
     { src: 'assets/biblio/phase-neutre-terre-sur-un-moteur.png',
       alt: "Schéma de câblage d’un moteur monophasé montrant les raccordements de la phase, du neutre et de la terre.",
-      titre: "Sur un appareil réel.", sous: "Trois bornes, trois rôles, et jamais d’interversion." }
+      titre: "Sur un appareil réel.", sous: "Le fil noir va à la phase, le vert et jaune à la terre, le bleu au neutre : on ne les intervertit jamais. L’ordre des bornes varie d’un appareil à l’autre." }
   ],
 
   lIdee: "Dans une installation domestique, trois conducteurs arrivent. Ils se ressemblent tous : même cuivre, même épaisseur, même gaine. Ce qui les distingue, c’est leur rôle — et deux d’entre eux ont une couleur qui leur est réservée.",
@@ -99,13 +99,13 @@ ModeleGrandeur.construire({
     "<strong>La phase amène</strong>, <strong>le neutre ramène</strong>, <strong>le PE attend</strong>.",
     "<strong>Bleu clair</strong> et <strong>vert-jaune</strong> sont réservés, en France et dans les pays qui suivent la même norme.",
     "<strong>Le PE ne porte jamais d’appareil de coupure.</strong>",
-    "<strong>La couleur ne suffit pas</strong> sur une installation ancienne : on mesure."
+    "<strong>La couleur ne suffit pas</strong> sur une installation ancienne : on mesure pour repérer la phase, et on vérifie le reste."
   ],
 
-  objectifs: '<p><strong>Objectif.</strong> Identifier les trois conducteurs, connaître leur rôle, et savoir les distinguer à la mesure quand les couleurs ne sont pas fiables.</p><p><strong>Limite.</strong> Les schémas de liaison à la terre — TT, TN, IT — relèvent d’un cours d’habilitation.</p>',
+  objectifs: '<p><strong>Objectif.</strong> Identifier les trois conducteurs, connaître leur rôle, et savoir repérer la phase à la mesure, puis ce qu’il faut de plus (repérage, couleurs, continuité vers la terre, mesure de courant) pour reconnaître le neutre et le PE quand les couleurs ne sont pas fiables.</p><p><strong>Limite.</strong> Les schémas de liaison à la terre — TT, TN, IT — relèvent d’un cours d’habilitation.</p>',
   credits: [
     { quoi: 'Illustrations', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' } ],
+      detail: 'documents de cours indexés dans la base de connaissances inerWeb' } ],
 
   correspondances: [
     { ligne: 4, couleur: '#c0392b', texte: "4.8 La terre et la liaison équipotentielle" },

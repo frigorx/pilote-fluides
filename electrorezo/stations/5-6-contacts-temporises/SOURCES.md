@@ -14,7 +14,7 @@ Trouvées par `node outils/chercher-images.mjs`, dans la base de connaissances i
 - `con_simple_nf_tmp_t.svg`
 - `con_simple_nf_tmp_r.svg`
 
-Copiés sans retouche depuis `C:\git\bibliotheque-symboles-energie`,
+Tracé copié sans retouche (cadre recadré, fond blanc retiré) depuis `C:\git\bibliotheque-symboles-energie`,
 convertie depuis QElectroTech.
 
 ## Réserve

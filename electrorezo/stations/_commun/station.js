@@ -94,7 +94,11 @@ const Station = (() => {
   }
 
   function jouerLeMp3(t, tour, b) {
-    const a = new Audio('voix/' + S.genre + '/' + t.id + '.mp3');
+    /* La clé ?v= suit le texte dit (25/10/2026, comme CartoClim) : une narration revoicée change d'adresse,
+       et ni le CDN ni le navigateur ne ressert l'ancienne voix. */
+    let h = 0;
+    for (const c of (t.narration || '')) h = (h * 31 + c.charCodeAt(0)) | 0;
+    const a = new Audio('voix/' + S.genre + '/' + t.id + '.mp3?v=' + (h >>> 0).toString(36));
     a.playbackRate = vitesseVoix();
     let annonce = false;
     a.addEventListener('playing', () => {
@@ -321,7 +325,9 @@ const Station = (() => {
     const entete = el('div', 'jeu-entete');
     const compteur = el('span', 'compteur', '');
     const chrono = el('div', 'chrono'); const jauge = el('i'); chrono.appendChild(jauge);
-    entete.appendChild(compteur); entete.appendChild(chrono);
+    /* sans jeu.secondes : ni barre ni minuteur (un jeu sans chronomètre) */
+    const sansChrono = !jeu.secondes;
+    entete.appendChild(compteur); if (!sansChrono) entete.appendChild(chrono);
     const fiche = el('div', 'fiche');
     const choix = el('div', 'choix');
     const journal = el('ul', 'journal');
@@ -347,6 +353,7 @@ const Station = (() => {
         b.addEventListener('click', () => repondre(a.id));
         choix.appendChild(b);
       });
+      if (sansChrono) return;
       reste = jeu.secondes; chrono.classList.remove('presse'); jauge.style.width = '100%';
       minuteur = setInterval(() => {
         reste -= .1;

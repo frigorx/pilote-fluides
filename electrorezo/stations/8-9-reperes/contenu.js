@@ -7,19 +7,19 @@
 const REPERES = [
   { rep: 'Q1', lettre: 'Q', nom: 'Un sectionneur', img: 'assets/sectionneur4.svg',
     alt: 'Symbole d’un sectionneur à trois pôles.',
-    famille: 'Q est la lettre des sectionneurs, des disjoncteurs et des interrupteurs de tête' },
+    famille: 'Q est la lettre usuelle des sectionneurs, des disjoncteurs et des interrupteurs de tête' },
   { rep: 'KM1', lettre: 'KM', nom: 'Un contacteur (sa bobine)', img: 'assets/bobine3.svg',
     alt: 'Symbole d’une bobine de contacteur : un grand rectangle, un fil en haut, un fil en bas.',
-    famille: 'KM est la lettre des contacteurs' },
+    famille: 'KM est la lettre usuelle des contacteurs' },
   { rep: 'F1', lettre: 'F', nom: 'Un fusible', img: 'assets/pojistka1p.svg',
     alt: 'Symbole d’un fusible : un rectangle étroit traversé par le fil.',
-    famille: 'F est la lettre des protections' },
+    famille: 'F est la lettre usuelle des protections' },
   { rep: 'S1', lettre: 'S', nom: 'Un bouton-poussoir', img: 'assets/poussoir.svg',
     alt: 'Symbole d’un bouton-poussoir : un contact incliné et son carré de commande, en pointillé.',
-    famille: 'S est la lettre des organes de commande manuelle : boutons, sélecteurs' },
+    famille: 'S est la lettre usuelle des organes de commande manuelle : boutons, sélecteurs' },
   { rep: 'H1', lettre: 'H', nom: 'Un voyant', img: 'assets/lampe2.svg',
     alt: 'Symbole d’un voyant : un rond traversé par une croix.',
-    famille: 'H est la lettre des voyants et de la signalisation' }
+    famille: 'H est la lettre usuelle des voyants et de la signalisation' }
 ];
 
 /* une vignette d'appareil : le repère (s'il est montré), le symbole, le nom */
@@ -50,7 +50,8 @@ const grilleRepere = () => {
 
 ModeleSigne.construire({
   id: '8.9',
-  vue3d: { modele: 'contacteur', piece: 'bornes' },   /* 3D */
+  vue3d: { modele: 'contacteur', piece: 'bornes',
+    legende: 'Sur l’appareil, le repère est écrit sur l’étiquette ; les bornes allumées portent, elles, leurs propres numéros (1/L1, 2/T1…).' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 8 L’écriture du schéma · Station 9',
   titre: "Les repères",
   lettre: 'repere',
@@ -65,11 +66,11 @@ ModeleSigne.construire({
   ouOnLaVoit: "À côté de chaque appareil sur le plan, et sur l’étiquette collée sur l’appareil dans l’armoire.",
 
   pourquoiCetteForme: [
-    "<strong>La lettre dit la famille</strong> : <strong>Q</strong> sectionneurs, disjoncteurs, interrupteurs de tête · <strong>KM</strong> un contacteur · <strong>F</strong> une protection · <strong>S</strong> un organe de commande manuelle · <strong>H</strong> un voyant · <strong>M</strong> un moteur · <strong>X</strong> un bornier.",
+    "<strong>La lettre dit la famille</strong> : <strong>Q</strong> sectionneurs, disjoncteurs, interrupteurs de tête · <strong>KM</strong> un contacteur · <strong>F</strong> une protection · <strong>S</strong> un organe de commande manuelle · <strong>H</strong> un voyant · <strong>M</strong> un moteur · <strong>X</strong> un bornier. Ce sont les lettres usuelles dans les dossiers français : en cas de doute, c’est le dossier de l’installation qui fait foi.",
     "<strong>Le chiffre ne fait que numéroter</strong> : le premier, le deuxième. Il ne dit rien d’autre.",
     "<strong>Premier usage : retrouver l’appareil</strong> dans l’armoire. Le repère est sur le plan et sur l’étiquette.",
     "<strong>Second usage, plus subtil : relier des morceaux dispersés.</strong> La bobine KM1 en commande et un contact KM1 en puissance, c’est le même appareil — même sans pointillé.",
-    "<strong>Les numéros de bornes d’un contact portent eux aussi l’information</strong> : 13-14 pour un contact ouvert au repos, 21-22 pour un contact fermé au repos. Ne les confondez pas avec les repères d’un bornier : sur un bornier, chaque borne porte un repère X1, X2, X3…"
+    "<strong>Les numéros de bornes d’un contact portent eux aussi l’information</strong> : 13-14 pour un contact ouvert au repos, 21-22 pour un contact fermé au repos. Ne les confondez pas avec le repère de l’appareil : un bornier porte un repère comme les autres appareils (X1, X2…), et ses bornes sont numérotées une par une."
   ],
 
   /* Temps 2 : cinq appareils, chacun avec son repère posé à côté, comme sur un plan. */
@@ -166,19 +167,22 @@ ModeleSigne.construire({
 
   motsOuOnLaTrouve: ['contacteur', 'sectionneur', 'relaisThermique'],
   motVedette: 'contacteur',
+  /* Les deux cartes « Les mots où elle entre » (temps 3) et « Le mot le plus dense » (temps 5) n'ont aucun rapport
+     avec les repères : modele-signe.js, une fois corrigé (voir RAPPORT « communs »), les masque quand ce champ est vrai. */
+  sansCartesMots: true,
 
   symbolesBiblio: [
-    { src: 'assets/borne_3.svg', alt: "Symbole normalisé d’une borne de raccordement : un petit cercle ouvert, avec un fil de chaque côté.", legende: "Une borne : un petit cercle ouvert. Sur un bornier, son repère s’écrit X1, X2…" }
+    { src: 'assets/borne_3.svg', alt: "Symbole normalisé d’une borne de raccordement : un petit cercle ouvert, avec un fil de chaque côté.", legende: "Une borne : un petit cercle ouvert. Un bornier porte un repère (X1, X2…), et ses bornes sont numérotées une par une." }
   ],
   duDessinAuPlan: [
-    "Sur un plan bien fait, <strong>le repère est toujours du même côté du symbole, à la même distance</strong>. Ce n’est pas de la coquetterie : c’est ce qui rend un dossier lisible par quelqu’un qui ne l’a pas dessiné.",
+    "Sur un plan bien fait, <strong>le repère est en général du même côté du symbole, à la même distance</strong>. Ce n’est pas de la coquetterie : c’est ce qui rend un dossier lisible par quelqu’un qui ne l’a pas dessiné.",
     "<strong>Sur l’armoire, chaque appareil porte la même étiquette.</strong> Le plan et la machine se parlent.",
     "Un appareil sans repère sur un plan est un défaut de dossier, pas un oubli sans conséquence."
   ],
 
   quiz: [
     { question: "Un appareil repéré KM1 sur un plan, c’est…",
-      confirmation: "KM est la lettre des contacteurs.",
+      confirmation: "KM est la lettre usuelle des contacteurs.",
       reponses: [
         { texte: "Un moteur.", pourquoi: "Un moteur porte M." },
         { texte: "Un contacteur.", juste: true },
@@ -196,7 +200,7 @@ ModeleSigne.construire({
     { question: "Un contact porte les numéros 21 et 22. Que savez-vous de lui ?",
       confirmation: "Les chiffres de bornes portent l’information : 21-22 est fermé au repos.",
       reponses: [
-        { texte: "Il supporte 21 ampères.", pourquoi: "Le courant ne s’écrit jamais dans un numéro de borne." },
+        { texte: "Il supporte 21 ampères.", pourquoi: "Le courant ne s’écrit pas dans un numéro de borne." },
         { texte: "Il est ouvert au repos.", pourquoi: "Un contact ouvert au repos porte 13-14." },
         { texte: "C’est le vingt-et-unième appareil du plan.", pourquoi: "La numérotation des appareils se fait dans le repère, pas aux bornes." },
         { texte: "Il est fermé au repos.", juste: true } ] },

@@ -18,7 +18,7 @@
     d.setAttribute('role', 'img');
     d.setAttribute('aria-label',
       'Boîte à bornes d’un moteur triphasé : six bornes sur deux rangées décalées, ' +
-      'trois barrettes de couplage, et le schéma du branchement obtenu.');
+      'les barrettes de couplage, et le schéma du branchement obtenu.');
     d.innerHTML = `
 <rect x="18" y="26" width="430" height="418" rx="20" fill="#fffdf8" stroke="rgba(27,58,99,.18)"/>
 <text x="233" y="56" text-anchor="middle" font-size="17" font-weight="700" fill="#1b3a63">Boîte à bornes</text>
@@ -140,7 +140,7 @@
       'La plaque signalétique.',
       'Vissée sur le carter. C’est elle qui dit sous quelle tension chaque bobinage peut travailler.'));
     g.appendChild(bande);
-    Station.credit(g, 'Photographies : base de connaissances inerWeb, documents de cours Bac Pro MFER · plaque signalétique Leroy Somer. Détail dans « Crédits ».');
+    Station.credit(g, 'Photographies : base de connaissances inerWeb, extraites d’un document de cours de l’établissement · plaque signalétique Leroy Somer, Angoulême. Détail dans « Crédits ».');
 
     const d = carte('Lire cette plaque');
     d.appendChild(el('p', null, 'Sur la plaque de gauche, deux lignes seulement nous intéressent aujourd’hui.'));
@@ -154,9 +154,9 @@
     });
     d.appendChild(lect);
     d.appendChild(el('p', null,
-      'Une plaque porte toujours deux tensions, jamais une seule. « Ce moteur est en 400 volts » ne veut rien dire tant qu’on n’a pas regardé le réseau sur lequel on le branche.'));
+      'Une plaque de moteur prévu pour deux couplages porte deux tensions, pas une seule. « Ce moteur est en 400 volts » ne veut rien dire tant qu’on n’a pas regardé le réseau sur lequel on le branche.'));
     d.appendChild(el('p', null,
-      'Selon la façon dont on pose les trois barrettes, ce moteur tourne vingt ans ou fume en trente secondes. La même machine, les mêmes fils.'));
+      'Selon la façon dont on pose les barrettes, ce moteur tourne vingt ans ou fume en trente secondes. La même machine, les mêmes fils.'));
     d.appendChild(el('p', 'legende', 'Écoutez d’abord, puis passez au temps suivant.'));
 
     w.append(g, d);
@@ -325,12 +325,11 @@
     });
     g.appendChild(trio);
     g.appendChild(el('p', 'legende',
-      'Symboles normalisés EN 60617, pris dans la bibliothèque inerWeb — voir SOURCES.md. Rien n’a été redessiné.'));
+      'Symboles normalisés, pris dans la bibliothèque inerWeb. Rien n’a été redessiné.'));
 
     const d = carte('Ce qu’il faut retenir du symbole');
     d.appendChild(el('p', null, 'Un rond, une lettre pour dire que c’est un moteur, et trois traits d’arrivée pour dire qu’il est alimenté par trois fils.'));
-    d.appendChild(el('p', null, 'Les repères de bornes sont les mêmes que dans la boîte : U1 V1 W1 en haut, W2 U2 V2 en bas.'));
-    d.appendChild(el('p', 'legende', 'Sur un schéma de commande, la convention de la maison est constante : lecture verticale, phase en haut, neutre en bas, retour du neutre en orange.'));
+    d.appendChild(el('p', null, 'Ce sont les mêmes noms de bornes que dans la boîte : U1 V1 W1 en haut, et U2 V2 W2 en bas. Attention : le symbole range la rangée du bas dans l’ordre U2 V2 W2, alors que dans la boîte cette rangée est décalée (W2 U2 V2).'));
     w.append(g, d);
     hote.appendChild(w);
   }
@@ -367,13 +366,13 @@
       reponses: [
         { texte: 'Pour gagner de la place dans la boîte.', pourquoi: 'La place serait la même dans l’autre ordre : ce n’est pas une question d’encombrement.' },
         { texte: 'Pour que les barrettes du triangle restent droites, sans se croiser.', juste: true },
-        { texte: 'C’est une habitude des constructeurs, sans raison technique.', pourquoi: 'C’est au contraire une norme, et elle a une raison très précise : les barrettes droites.' },
+        { texte: 'C’est une habitude des constructeurs, sans raison technique.', pourquoi: 'Il y a au contraire une raison très précise : les barrettes droites.' },
         { texte: 'Pour empêcher le couplage en étoile.', pourquoi: 'L’étoile reste possible : deux barrettes couchées sur la rangée du bas suffisent.' } ] },
 
     { question: 'Le démarrage étoile-triangle, c’est…',
       confirmation: 'Trois contacteurs et un temporisateur, en marche, pour limiter le courant de démarrage.',
       reponses: [
-        { texte: 'La même chose que le couplage, dit autrement.', pourquoi: 'Le couplage se pose à l’arrêt avec trois barrettes, une fois pour toutes. Le démarrage est une manœuvre en marche.' },
+        { texte: 'La même chose que le couplage, dit autrement.', pourquoi: 'Le couplage se pose à l’arrêt avec deux ou trois barrettes, une fois pour toutes. Le démarrage est une manœuvre en marche.' },
         { texte: 'Une façon de poser les barrettes plus vite.', pourquoi: 'Il ne touche pas aux barrettes : il agit par des contacteurs, en amont du moteur.' },
         { texte: 'Une manœuvre en marche, avec des contacteurs, pour limiter le courant au démarrage.', juste: true },
         { texte: 'Un couplage réservé aux moteurs monophasés.', pourquoi: 'Un moteur monophasé n’a ni étoile ni triangle : il n’a pas trois bobinages branchés sur trois fils.' } ] }
@@ -381,8 +380,7 @@
 
   const JEU = {
     titre: 'L’atelier du lundi matin', etiquette: 'Moteur',
-    regle: 'Cinq moteurs arrivent sur l’établi. Pour chacun, vous avez vingt secondes pour poser les barrettes — ou pour refuser. Deviner juste ne compte pas comme réussir.',
-    secondes: 20,
+    regle: 'Cinq moteurs arrivent sur l’établi. Pour chacun, posez les barrettes — ou refusez. Deviner juste ne compte pas comme réussir.',
     actions: [
       { id: 'etoile', libelle: 'Coupler en étoile' },
       { id: 'triangle', libelle: 'Coupler en triangle' },
@@ -409,8 +407,7 @@
         fiche: [['Réseau', '400 V entre deux fils'], ['Plaque', 'illisible']],
         bonne: 'stop',
         explication: 'Sans la plaque, on ne peut pas savoir. On cherche la référence, on ne parie pas.' } ],
-    reussite: 'Cinq bons gestes sur cinq. Vous avez surtout su refuser et su vous arrêter — c’est ce qui distingue un professionnel.',
-    echec: 'On recommence. Regardez les deux cas où le bon geste n’était pas de coupler.'
+    fin: 'Relisez le journal : pour chaque moteur, il dit pourquoi le bon geste était celui-là. Deux cas ne demandaient pas de coupler : l’un pour refuser le moteur, l’autre pour s’arrêter et chercher. Rejouez quand vous voulez.'
   };
 
   function tempsVerifier(hote) {
@@ -454,14 +451,11 @@
     credits: [
       { quoi: 'Photo « moteur et boîte à bornes »',
         source: 'base de connaissances inerWeb',
-        detail: 'document de cours Bac Pro MFER — 03_BAC-MFER/S1-Analyse/coure tri.docx' },
+        detail: 'photographie extraite d’un document de cours de l’établissement' },
       { quoi: 'Photo « plaque signalétique »',
         source: 'base de connaissances inerWeb · constructeur Leroy Somer, Angoulême',
-        detail: 'document de cours — 03_BAC-MFER/S4-Electricite/Activité 17 couplage moteur asynchrone triphasé.pdf' },
-      { quoi: 'Tableau des familles de couplage',
-        source: 'dossier technique CAP IFCA EP1 2022',
-        detail: '02_CAP-IFCA/C1-Communiquer/Dossier technique.V2 CAP IFCA EP1 2022.pdf' },
-      { quoi: 'Symboles normalisés EN 60617',
+        detail: 'photographie extraite d’un document de cours de l’établissement' },
+      { quoi: 'Symboles normalisés',
         source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
         detail: 'moteur triphasé et moteur à six bornes — 391_consumers_actuators/10_engines/' } ],
     correspondances: [

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-18.2 -25.5 43.7 51" width="43.7" height="51">
+<!-- Interrupteur rotatif — converti de contact_001.elmt par outils\elmt-vers-svg.py -->
+
+<line x1="3" y1="3" x2="7" y2="-3" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<text x="-4" y="-5" font-family="Arial,sans-serif" font-size="4" fill="#000000">1</text>
+<line x1="-10" y1="0" x2="0" y2="0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<polyline points="5,0 8,0 10,3 12,0 17,0" stroke="black" stroke-width="0.4" fill="none" stroke-dasharray="6 3"/>
+<line x1="3" y1="3" x2="-1" y2="-3" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="-13,4 -10,4 -10,-4 -7,-4" stroke="black" stroke-width="0.4" fill="none"/>
+<text x="7" y="-5" font-family="Arial,sans-serif" font-size="4" fill="#000000">2</text>
+<polyline points="20,20 20,10 14,-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="-20" x2="20" y2="-9" stroke="black" stroke-width="1" fill="none"/>
+</svg>

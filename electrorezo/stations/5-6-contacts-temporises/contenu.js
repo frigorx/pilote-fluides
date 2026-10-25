@@ -28,14 +28,14 @@ ModeleAppareil.construire({
   scene: () => SchemasCommande.deuxTemporisations(),
 
   technologie: [
-    ["Le contact reste un contact", "les pastilles, la lame, le ressort n’ont pas changé. Ce qui change est ce qui les <strong>retient</strong>."],
-    ["Le frein", "un piston qui laisse fuir de l’air, un amortisseur à huile, ou aujourd’hui un circuit électronique qui décide du moment. Le résultat est le même : un mouvement retardé."],
+    ["Le contact reste un contact", "les pastilles (les petites pièces de métal qui se touchent), la lame, le ressort n’ont pas changé. Ce qui change est ce qui les <strong>retient</strong>."],
+    ["Le frein", "un piston qui laisse fuir de l’air, un amortisseur à huile, ou un circuit électronique qui décide du moment. Le résultat est le même : un mouvement retardé."],
     ["Quatre combinaisons", "un contact peut être NO ou NF, et le retard peut porter sur le travail ou sur le repos. Deux fois deux : quatre signes de base à savoir lire. Il existe des assemblages plus rares, comme le contact inverseur temporisé : ils se lisent à partir de ceux-là."],
     ["Le contact instantané voisin", "beaucoup de blocs contiennent aussi un contact qui ne temporise pas. Il porte alors des repères classiques, et sur le plan il n’a pas de parachute."]
   ],
 
   variantes: [
-    "<strong>NO temporisé au travail</strong> — il attend, puis ferme. Le plus utilisé : lancer quelque chose plus tard.",
+    "<strong>NO temporisé au travail</strong> — il attend, puis ferme. Pour lancer quelque chose plus tard.",
     "<strong>NF temporisé au travail</strong> — il attend, puis ouvre. Pour couper quelque chose après un délai.",
     "<strong>NO temporisé au repos</strong> — il ferme tout de suite, et attend avant de rouvrir. Pour prolonger une marche après l’arrêt : une ventilation qui continue.",
     "<strong>NF temporisé au repos</strong> — il ouvre tout de suite, et attend avant de refermer. Pour interdire un redémarrage pendant un temps donné."
@@ -55,8 +55,8 @@ ModeleAppareil.construire({
   },
 
   cablage: [
-    "Sur les blocs temporisés de contacteur, les contacts temporisés portent des repères de bornes distincts : <strong>67-68</strong> pour un NO temporisé, <strong>55-56</strong> pour un NF temporisé. La règle : les unités 7-8 pour un NO temporisé, 5-6 pour un NF temporisé.",
-    "Ces repères ne sont pas une convention locale : ils suivent la norme de repérage des bornes des contacts auxiliaires (NF EN 50005), et ils vous évitent de confondre deux blocs sur le même appareil. Un module temporisé autonome peut porter d’autres repères, comme 15-16-18.",
+    "Sur les blocs temporisés de contacteur, les contacts temporisés portent des repères de bornes distincts : <strong>67-68</strong> pour un NO temporisé, <strong>55-56</strong> pour un NF temporisé. Les unités 7-8 signalent un NO à fonction spéciale, les unités 5-6 un NF à fonction spéciale : sur un bloc de contacteur, c’est le temporisé ; sur un relais thermique, ce sont 95-96 et 97-98 (station 4.7).",
+    "Ces repères ne sont pas une convention locale : ils suivent un repérage normalisé des bornes des contacts auxiliaires, et ils vous évitent de confondre deux blocs sur le même appareil. Un module temporisé autonome peut porter d’autres repères, comme 15-16-18.",
     "Un bloc temporisé se clipse sur le contacteur : il obéit à la <strong>même bobine</strong>, pas à une alimentation séparée.",
     "Un module autonome, lui, a sa propre alimentation. Vérifiez laquelle vous avez en face de vous avant de chercher une panne."
   ],
@@ -71,7 +71,7 @@ ModeleAppareil.construire({
   lecturePlan: [
     "Le signe du temps est ce <strong>demi-cercle sur une hampe</strong>, accroché au contact. Tout le monde l’appelle le <strong>parachute</strong>, et l’image est bonne : un parachute freine.",
     "Il n’y a que deux choses à lire. D’abord le contact : penché à gauche sans barre, c’est un NO ; penché à droite avec sa barre, c’est un NF.",
-    "Ensuite le <strong>sens du parachute</strong> : sa coupole est tournée d’un côté ou de l’autre, et c’est cela qui distingue le retard au travail du retard au repos.",
+    "Ensuite le <strong>sens du parachute</strong> : sur ces symboles, le dôme tourné <strong>à l’opposé de la lame</strong> dit un retard au travail ; le dôme tourné <strong>vers la lame</strong> dit un retard au repos.",
     "Comparez les quatre symboles ci-dessus deux par deux plutôt que de les apprendre isolément. C’est en les mettant côte à côte que la différence se voit."
   ],
 
@@ -80,7 +80,7 @@ ModeleAppareil.construire({
 
   quiz: [
     { question: "Un contact repéré 67-68, c’est quoi ?",
-      confirmation: "Sur un bloc de contacteur, 67-68 est un contact NO temporisé (unités 7-8 : NO temporisé).",
+      confirmation: "Sur un bloc de contacteur, 67-68 est un contact NO temporisé (les unités 7-8 signalent un NO à fonction spéciale : ici, le temporisé).",
       reponses: [
         { texte: "Un contact de puissance.", pourquoi: "La puissance porte 1/2, 3/4, 5/6, sans dizaine." },
         { texte: "Un contact NF temporisé.", pourquoi: "Le NF temporisé porte 55-56." },
@@ -103,6 +103,14 @@ ModeleAppareil.construire({
         { texte: "Deux.", pourquoi: "Deux suffiraient si tous les contacts temporisés étaient des NO." },
         { texte: "Six.", pourquoi: "Pas parmi les symboles de base : quatre suffisent (NO ou NF, retard au travail ou au repos). D’autres existent, plus rares : retard aux deux sens, inverseur." } ] },
 
+    { question: "Sur un symbole de contact, le dôme du parachute est tourné vers la lame. De quel retard s’agit-il ?",
+      confirmation: "Dôme tourné vers la lame : retard au repos. Tourné à l’opposé de la lame : retard au travail.",
+      reponses: [
+        { texte: "Un retard au travail.", pourquoi: "Au travail, le dôme est tourné à l’opposé de la lame." },
+        { texte: "Un contact instantané.", pourquoi: "Un contact instantané n’a pas de parachute du tout." },
+        { texte: "Un retard au repos.", juste: true },
+        { texte: "Le repère de borne le dira.", pourquoi: "Le repère dit si le contact est temporisé, NO ou NF ; le sens du retard se lit sur le symbole." } ] },
+
     { question: "Un bloc porte un contact 13-14 et un contact 67-68. Que faut-il en conclure ?",
       confirmation: "L’un est instantané, l’autre temporisé, sur le même appareil.",
       reponses: [
@@ -115,7 +123,7 @@ ModeleAppareil.construire({
   retenir: [
     "<strong>Le parachute</strong> est le signe du temps.",
     "<strong>Quatre symboles de base</strong> : NO ou NF, croisés avec travail ou repos.",
-    "Sur un bloc de contacteur : <strong>67-68</strong> pour un NO temporisé, <strong>55-56</strong> pour un NF temporisé.",
+    "Sur un bloc de contacteur : <strong>67-68</strong> pour un NO temporisé, <strong>55-56</strong> pour un NF temporisé (unités 7-8 et 5-6 : contacts à fonction spéciale).",
     "<strong>Comparez-les deux par deux.</strong> Isolés, ils ne se retiennent pas."
   ],
 
@@ -123,12 +131,12 @@ ModeleAppareil.construire({
 
   credits: [
     { quoi: 'Photographies et planches', source: 'base de connaissances inerWeb',
-      detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' },
+      detail: 'documents de cours indexés dans la base de connaissances' },
     { quoi: 'Symboles normalisés EN 60617', source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
-      detail: 'svg/.../310_relays_contactors_contacts/02_contacts_cross_referencing/11_delayed_contacts/' } ],
+      detail: 'contacts temporisés' } ],
 
   correspondances: [
     { ligne: 5, couleur: '#0f7b6c', texte: "5.5 Le relais temporisé" },
     { ligne: 8, couleur: '#7c3aed', texte: "8.2 Le contact" },
-    { ligne: 8, couleur: '#7c3aed', texte: "8.10 Déchiffrer un symbole" } ]
+    { ligne: 8, couleur: '#7c3aed', texte: "8.10 Déchiffrer" } ]
 });

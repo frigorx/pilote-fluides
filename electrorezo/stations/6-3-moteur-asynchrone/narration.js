@@ -51,7 +51,7 @@ mais pas avec le moteur à courant continu.`,
 trois traits qui arrivent.
 À côté, le signe trois vague confirme le triphasé. Et les repères des bornes sont écrits : U un,
 V un, W un.
-Il est toujours tout en bas du schéma de puissance. C'est le terminus : tout converge vers lui.
+Sur un plan complet, il est tout en bas du schéma de puissance. C'est le terminus : tout converge vers lui.
 C'est d'ailleurs par là qu'on commence quand on découvre un dossier — vous vous en souvenez, la
 station cinq point neuf.
 Un détail à repérer. Si le symbole montre six bornes au lieu de trois, cela veut dire que la

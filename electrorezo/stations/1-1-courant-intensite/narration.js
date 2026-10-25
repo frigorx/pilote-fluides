@@ -1,13 +1,13 @@
 /* ÉlectroRézo 1.1 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 sont refaits en Piper à chaque changement de texte. */
 const NARRATION = {
 
   decouvrir: `Nous commençons par ce que vous ne verrez jamais.
 Un courant électrique ne se voit pas. Il ne se sent pas, il ne fait pas de bruit, il n'a pas
 d'odeur. Un fil sous tension et un fil mort ont exactement la même tête.
 C'est pour ça que ce métier demande des instruments, et c'est pour ça que la première ligne de
-ce réseau parle de mesure.
+ce réseau parle des grandeurs et de leur mesure.
 Alors qu'est-ce qui circule ? Des charges électriques, toutes dans le même sens. Et ce qu'on
 appelle l'intensité, ce n'est pas la quantité de ces charges. C'est le nombre qui passe chaque
 seconde.`,
@@ -16,11 +16,14 @@ seconde.`,
 dans le même sens.
 Maintenant, imaginez une ligne en travers du fil. Une section. On compte ce qui la franchit
 pendant une seconde. Ce nombre-là, c'est l'intensité.
+Un courant plus fort, ce n'est pas plus de charges dans le fil : il en contient toujours autant.
+C'est plus de charges qui franchissent la ligne, chaque seconde.
 Autrement dit : un ampère n'est pas une quantité, c'est une quantité par seconde. Comme un débit
 d'eau, qu'on donne en litres par minute et jamais en litres.
 Deux choses maintenant, qui surprennent presque tout le monde.
-La première : les charges avancent très lentement. Quelques millimètres par seconde. À cette
-vitesse, il faudrait des heures pour qu'une charge partie du tableau atteigne votre lampe.
+La première : les charges avancent très lentement. Moins d'un millimètre par seconde. À cette
+vitesse, une charge partie du tableau mettrait des heures à atteindre votre lampe. Et en
+alternatif, comme sur le réseau de la maison, elle ne fait même qu'aller et venir sur place.
 Alors pourquoi la lampe s'allume-t-elle tout de suite ? Parce que ce n'est pas la charge qui
 voyage vite : c'est l'ordre de se mettre en marche. Il se propage presque à la vitesse de la
 lumière, et toutes les charges du fil démarrent en même temps, sur toute la longueur.
@@ -45,7 +48,7 @@ l'appareil lui-même.
 Heureusement, il existe beaucoup plus commode : la pince ampèremétrique. Elle s'ouvre, elle
 enserre le fil, et elle lit. Elle ne touche rien d'électrique, elle ne coupe rien, la machine
 continue de tourner.
-Une seule règle avec elle : un seul conducteur à la fois. Si vous en prenez deux, l'aller annule
+Une seule règle avec elle : un seul conducteur à la fois. Si vous prenez la phase et le neutre d'un même circuit, l'aller annule
 le retour et elle affiche presque zéro. Ce n'est pas une panne — c'est de la physique, et c'est
 exactement le principe du différentiel.`,
 
@@ -61,5 +64,5 @@ Le kiloampère, mille ampères. C'est l'échelle d'un court-circuit.
 Où allez-vous lire des ampères ? Sur la plaque d'un moteur, à côté de chaque tension. Sur un
 disjoncteur, dans son calibre.
 Prenez ce réflexe : lire l'ampère écrit avant de brancher quoi que ce soit. C'est le nombre qui
-décide de la section du câble, du calibre de la protection, et du réglage du thermique.`
+décide de la section du câble, du calibre de la protection, et du réglage de la protection du moteur.`
 };

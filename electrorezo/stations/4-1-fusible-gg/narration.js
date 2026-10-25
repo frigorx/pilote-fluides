@@ -1,14 +1,14 @@
 /* ÉlectroRézo 4.1 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Version précédente : narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 sont refaits en Piper à chaque changement de texte. */
 const NARRATION = {
 
-  decouvrir: `Une cartouche, un tube, du sable, un fil de métal. Le fusible est le plus ancien appareil
-de protection encore en service, et je vais vous dire quelque chose qui va peut-être vous
+  decouvrir: `Une cartouche, un tube, du sable, un fil de métal. Le fusible est l'un des plus anciens
+appareils de protection encore en service, et je vais vous dire quelque chose qui va peut-être vous
 surprendre : pour un usage simple, il fait encore très bien l'affaire.
 Sur son corps, deux lettres sont écrites, et elles changent absolument tout. Aujourd'hui, on
 regarde le gé minuscule G majuscule.
-Le petit g veut dire que cette cartouche protège sur toute la plage. Du premier ampère de trop
+Le petit g veut dire que cette cartouche protège sur toute la plage : des surcharges durables
 jusqu'au court-circuit franc. C'est la cartouche à tout faire.`,
 
   comprendre: `Pour comprendre ce qu'elle sait faire, il faut regarder une seule chose : combien de temps
@@ -17,7 +17,7 @@ En bas, le courant qui traverse. À gauche, le temps qu'il faut pour que le fil 
 courbe descend : plus le courant est fort, plus la fusion est rapide.
 Prenez deux exemples concrets. Juste au-dessus du calibre, il ne fond pas : la courbe se redresse
 et monte vers le haut, ce qui veut dire qu'à ce niveau-là il tient longtemps. Il faut aller
-nettement plus haut, vers une fois et demie le calibre, pour qu'il fonde, et il faudra alors de
+nettement plus haut, vers une fois et demie à deux fois le calibre, pour qu'il fonde, et il faudra alors de
 longues minutes, voire une heure. Dix fois le calibre, il faudra quelques centièmes de seconde.
 Un court-circuit franc, encore moins. Entre les deux, tout est écrit sur cette courbe.
 Cette courbe, c'est la carte d'identité de la cartouche. Elle vous dit exactement dans quels

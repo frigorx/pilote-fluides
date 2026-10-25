@@ -12,7 +12,7 @@ Trouvées par `node outils/chercher-images.mjs`, dans la base de connaissances i
 - `poussoir.svg`
 - `poussoir_nf.svg`
 - `commut_2_position_fixe.svg`
-- `bouton_tournant_01.svg`
+- `contact_001.svg` (interrupteur rotatif sans clé ; remplace `bouton_tournant_01.svg`, qui porte une clé : 25/10/2026)
 
 Copiés sans retouche depuis `C:\git\bibliotheque-symboles-energie`,
 convertie depuis QElectroTech.

@@ -9,9 +9,9 @@ Ou l'inverse.
 Sans aucune pièce mobile. Sans usure. Et — c'est le point remarquable — sans qu'aucun fil ne
 relie l'entrée à la sortie.
 Il y en a un dans la rue, à cinquante mètres de chez vous. Il y en a un dans presque chaque
-armoire de commande. Il y en a un dans chaque chargeur de téléphone.`,
+armoire de commande. Il y en a un dans les alimentations de nombreux appareils.`,
 
-  comprendre: `Regardez le schéma de la première image, il dit presque tout.
+  comprendre: `Regardez le schéma : il dit presque tout.
 Un cadre de fer. Un bobinage d'un côté, qu'on appelle le primaire. Un autre bobinage de l'autre
 côté, le secondaire.
 Et entre les deux : rien. Pas de fil, pas de contact. Ils sont séparés.
@@ -38,21 +38,20 @@ Elle ne bouge pas d'un watt.
 Ce que ça veut dire, c'est que si la tension descend, le courant monte dans le même rapport. Un
 transformateur ne fabrique pas de puissance : il l'échange.`,
 
-  manipuler: `Les trois questions de la ligne six, et le transformateur est le seul appareil à y répondre de
+  manipuler: `Les trois questions de la ligne six, et le transformateur est le seul de la ligne six à y répondre de
 cette façon.
 Prenez le temps de la troisième. Une bobine et un transformateur sont faits du même cuivre autour
 du même fer — et pourtant l'un fonctionne en continu, l'autre pas.`,
 
   representer: `Sur un plan, le symbole du transformateur est simple et très parlant.
 Deux cercles qui se recouvrent partiellement. Chacun figure un bobinage.
-Et regardez bien : aucun trait ne les relie. Ce vide entre les deux cercles, ce n'est pas un
+Ce premier dessin est unifilaire : un seul trait figure les deux fils de chaque côté.
+Et regardez bien : aucun trait ne relie les deux cercles. Ce vide entre les deux cercles, ce n'est pas un
 oubli du dessinateur — c'est l'information. Il n'y a pas de liaison électrique entre l'entrée et
 la sortie.
 Cette absence de liaison, c'est ce qui fait qu'on peut toucher un secondaire vingt-quatre volts
-sans risque, alors que le primaire est en deux cent trente.
-Sur certains modèles, vous verrez un petit trait qui touche l'espace commun aux deux cercles,
-comme sur le premier symbole de l'écran. C'est un écran de séparation,
-un blindage. Il ne change pas le principe : il améliore l'isolement.
+avec bien moins de danger, alors que le primaire est en deux cent trente.
+Sur le dernier symbole de la page, les bobinages sont dessinés en arcs, avec un trait épais entre eux. Ce trait figure le noyau de fer, pas une liaison électrique.
 Les tensions sont écrites de part et d'autre. Et attention : c'est le sens du plan qui dit lequel
 est le primaire. Un transformateur peut souvent fonctionner dans les deux sens, mais il n'a pas
 été conçu pour.

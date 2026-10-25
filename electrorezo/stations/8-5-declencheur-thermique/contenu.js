@@ -13,7 +13,7 @@ ModeleSigne.construire({
   ],
 
   ceQuelleDit: "Un petit crochet carré, accroché à un appareil de protection. Il dit : cet appareil surveille la chaleur, et il déclenche quand le courant dure trop longtemps au-dessus du normal.",
-  ouOnLaVoit: "Sur le relais thermique, sur le disjoncteur magnéto-thermique, sur le disjoncteur moteur. Jamais seul : toujours sur le trait du courant d’un appareil de protection.",
+  ouOnLaVoit: "Sur le relais thermique, sur le disjoncteur magnéto-thermique, sur le disjoncteur moteur. En général accroché au trait du courant d’un appareil de protection.",
 
   pourquoiCetteForme: [
     "<strong>Ce crochet, c’est un bilame vu de profil.</strong> Deux métaux différents collés en une seule lame.",
@@ -22,16 +22,18 @@ ModeleSigne.construire({
     "<strong>La conséquence est immédiate</strong> : cet appareil voit très bien une surcharge qui dure, et pas du tout un court-circuit — fini avant que la lame ait bougé. Pour celui-là, il faut le signe de la station suivante."
   ],
 
-  motsOuOnLaTrouve: ['relaisThermique', 'magnetoThermique', 'sectionneur'],
+  /* Le sectionneur est un leurre de l'exercice : il n'a pas de crochet, donc il n'est pas dans la carte « Les mots où elle entre ». */
+  exercice: () => Signes.retrouver('thermique', ['relaisThermique', 'magnetoThermique', 'sectionneur']),
+  motsOuOnLaTrouve: ['relaisThermique', 'magnetoThermique'],
   motVedette: 'magnetoThermique',
 
   symbolesBiblio: [
-    { src: 'assets/relais_mono.svg', alt: "Symbole normalisé d’un relais thermique : trois crochets carrés posés sur les trois conducteurs, dans un cadre en pointillé.", legende: "Un relais thermique, avec son cadre en pointillé (station 8.7)" },
+    { src: 'assets/relais_mono.svg', alt: "Symbole normalisé d’un relais thermique : trois crochets, dans un cadre en pointillé.", legende: "Un relais thermique, avec son cadre en pointillé (station 8.7)" },
     { src: 'assets/organe_relais_thermique.svg', alt: "Symbole de l’organe de commande d’un relais thermique : un rectangle, avec à l’intérieur le même crochet carré.", legende: "Autre écriture : le même crochet, dans un rectangle" }
   ],
   duDessinAuPlan: [
     "Sur les symboles officiels, le bilame se dessine <strong>parfois par le crochet seul, parfois par le même crochet à l’intérieur d’un rectangle</strong> (l’organe de commande du relais). Les deux se rencontrent.",
-    "Ce qui ne change jamais : <strong>de la chaleur, du temps, et une protection contre les surcharges lentes</strong>.",
+    "Ce qui ne change pas : <strong>de la chaleur, du temps, et une protection contre les surcharges lentes</strong>.",
     "Sur un relais thermique ou un disjoncteur moteur, il se règle : le courant de réglage est écrit à côté. Un disjoncteur magnéto-thermique de logement, lui, n’est pas réglable."
   ],
 

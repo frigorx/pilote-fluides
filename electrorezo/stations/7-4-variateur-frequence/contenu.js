@@ -19,7 +19,7 @@ ModeleAppareil.construire({
   ],
 
   aQuoiCaSert: "À régler la vitesse d’un moteur asynchrone, vraiment. Et à bien davantage : démarrer en douceur, freiner, protéger, compter les heures, dialoguer avec un automate. C’est le terminus de ce réseau, et ce n’est pas un hasard.",
-  ouOnLeTrouve: "Sur presque toutes les machines installées depuis vingt ans. Pompes, ventilateurs, convoyeurs, compresseurs de climatisation, ascenseurs.",
+  ouOnLeTrouve: "Sur beaucoup de machines installées depuis vingt ans. Pompes, ventilateurs, convoyeurs, compresseurs de climatisation, ascenseurs.",
 
   scene: () => SchemasMachines.loiUsurF(),
 
@@ -55,18 +55,18 @@ ModeleAppareil.construire({
     "En amont : une <strong>protection</strong> et un <strong>sectionnement</strong>. Le variateur ne remplace ni l’un ni l’autre.",
     "Entre le variateur et le moteur : <strong>ne jamais ouvrir la sortie en charge</strong>. Un contacteur ou un sectionneur placé là n’est admis que s’il s’ouvre variateur bloqué (verrouillage), selon la notice : ouvrir en charge peut détruire l’onduleur.",
     "Le <strong>câble moteur</strong> doit être blindé, et son blindage raccordé aux deux extrémités. Le découpage rayonne, et il perturbe tout le reste de l’armoire.",
-    "Le <strong>réglage de l’intensité nominale</strong> se fait sur la valeur de la plaque du moteur, correspondant au couplage retenu. C’est ce qui remplace le relais thermique."
+    "Le <strong>réglage de l’intensité nominale</strong> se fait sur la valeur de la plaque du moteur, correspondant au couplage retenu. Ainsi réglé, le variateur peut assurer lui-même la protection thermique du moteur."
   ],
   piege: "Un <strong>différentiel ordinaire</strong> ne convient pas toujours derrière un variateur. Derrière un variateur triphasé, un défaut peut produire du continu lisse que les types AC et A ne voient pas : il faut un différentiel de <strong>type B</strong>, ou celui que la notice impose. Les fuites à haute fréquence du découpage font aussi déclencher un différentiel ordinaire sans raison.",
 
   symboles: [
     { src: 'assets/redresseur.svg', alt: "Symbole normalisé d’un redresseur : alternatif vers continu.", legende: "Le redresseur" },
-    { src: 'assets/dc_ac1.svg', alt: "Symbole normalisé d’un onduleur : continu vers alternatif.", legende: "L’onduleur" }
+    { src: 'assets/dc_ac1.svg', alt: "Symbole normalisé d’un onduleur monophasé : continu vers alternatif. Un seul signe alternatif, alors que l’onduleur d’un variateur triphasé a six interrupteurs.", legende: "L’onduleur (symbole monophasé, pour le principe)" }
   ],
   lecturePlan: [
     "Les deux symboles reprennent la <strong>diagonale</strong> des convertisseurs, vue à la station 7.2. Mais cette fois, ce qui est écrit de part et d’autre n’est pas la même chose.",
     "Mis bout à bout, ils donnent le variateur : le <strong>redresseur</strong> (alternatif vers continu), puis l’<strong>onduleur</strong> (continu vers alternatif). Entre les deux, le bus continu fait le lien.",
-    "Sur un plan de puissance, le variateur remplace, pour le démarrage, le <strong>contacteur</strong> de puissance et, pour la protection du moteur, le <strong>relais thermique</strong>. Un contacteur ou un sectionneur en amont reste courant.",
+    "Sur un plan de puissance, le variateur remplace, pour le démarrage, le <strong>contacteur</strong> de puissance. Il peut aussi assurer la protection thermique du moteur : le <strong>relais thermique</strong> devient alors en général inutile, sauf par exemple si un seul variateur alimente plusieurs moteurs. Un contacteur ou un sectionneur en amont reste courant.",
     "Et cherchez, en revanche, la <strong>résistance de freinage</strong> : deux bornes en plus, souvent repérées PA et PB. Sa présence vous dit que la machine freine, donc qu’elle a de l’inertie."
   ],
 
@@ -90,7 +90,7 @@ ModeleAppareil.construire({
         { texte: "Au maximum, pour éviter les déclenchements.", pourquoi: "C’est rendre la protection du moteur inopérante." },
         { texte: "Sur la puissance divisée par la tension.", pourquoi: "Ce calcul néglige le rendement et le cos φ." } ] },
 
-    { question: "Pourquoi faut-il un différentiel de type B derrière un variateur ?",
+    { question: "Pourquoi un différentiel de type B est-il souvent exigé derrière un variateur triphasé ?",
       confirmation: "Parce qu’un défaut derrière le redresseur peut donner du continu lisse que les types AC et A ne voient pas.",
       reponses: [
         { texte: "Parce que le variateur consomme plus.", pourquoi: "La consommation ne change pas le type de différentiel." },
@@ -120,7 +120,7 @@ ModeleAppareil.construire({
       detail: 'documents de cours indexés, trouvés par outils/chercher-images.mjs' } ],
 
   correspondances: [
-    { ligne: 7, couleur: '#0b7285', texte: "7.3 La variation de fréquence" },
+    { ligne: 7, couleur: '#0b7285', texte: "7.3 Faire varier la fréquence" },
     { ligne: 6, couleur: '#c9451a', texte: "6.3 Le moteur asynchrone" },
     { ligne: 4, couleur: '#c0392b', texte: "4.6 Le disjoncteur différentiel" },
     { ligne: 5, couleur: '#0f7b6c', texte: "5.9 Lire un schéma" } ]

@@ -17,24 +17,26 @@ ModeleSigne.construire({
   ouOnLaVoit: "Entre la bobine d’un contacteur et ses contacts, entre un bilame et le contact qu’il commande, partout où un appareil a plusieurs morceaux dispersés.",
 
   pourquoiCetteForme: [
-    "<strong>Dans un contacteur, la bobine et les contacts sont accrochés à la même pièce mobile.</strong> Ils bougent forcément ensemble.",
+    "<strong>Dans un contacteur, la bobine attire une pièce mobile, et tous les contacts sont accrochés à cette pièce.</strong> Ils bougent forcément ensemble.",
     "<strong>Mais sur un schéma, ils ne sont presque jamais au même endroit</strong> : la bobine est dans le circuit de commande, les contacts dans le circuit de puissance, parfois deux pages plus loin.",
     "<strong>Le pointillé dit ce lien</strong> : ce n’est pas un fil, c’est une liaison mécanique.",
     "<strong>Quand vous voyez un pointillé, arrêtez-vous</strong> : il y a un morceau de cet appareil ailleurs. C’est la lettre qui apprend qu’un schéma se lit dans les deux sens."
   ],
 
-  motsOuOnLaTrouve: ['contacteur', 'fusible', 'moteur'],
+  /* Le fusible et le moteur sont des leurres de l'exercice : ils n'ont pas de pointillé, donc ils ne sont pas dans la carte « Les mots où elle entre ». */
+  exercice: () => Signes.retrouver('pointille', ['contacteur', 'fusible', 'moteur']),
+  motsOuOnLaTrouve: ['contacteur'],
   motVedette: 'contacteur',
 
   symbolesBiblio: [
     { src: 'assets/bobine3.svg', alt: "Symbole normalisé d’une bobine de contacteur : un grand rectangle, un fil en haut, un fil en bas.", legende: "Une bobine : pas de pointillé, elle est seule sur ce dessin" },
     { src: 'assets/act_electromagnetique_no.svg', alt: "Symbole normalisé d’un contact et, à gauche, de l’électro-aimant qui le commande, reliés par une ligne en pointillé.", legende: "Un contact, son électro-aimant et le pointillé qui les relie" },
-    { src: 'assets/interrupteur_sectionneur_biphase.svg', alt: "Symbole normalisé d’un interrupteur-sectionneur à deux pôles : deux contacts côte à côte, reliés par une ligne en pointillé.", legende: "Un interrupteur-sectionneur à deux pôles : le pointillé relie les deux pôles" }
+    { src: 'assets/interrupteur_sectionneur_biphase.svg', alt: "Symbole normalisé d’un interrupteur-sectionneur à deux pôles : deux contacts côte à côte et, à gauche, un levier avec un petit cercle, reliés par une ligne en pointillé.", legende: "Un interrupteur-sectionneur à deux pôles : le pointillé relie les deux pôles et la poignée de commande (le levier à gauche)" }
   ],
   duDessinAuPlan: [
     "Sur les vrais plans, ce pointillé est <strong>souvent remplacé par un repère identique</strong> écrit à deux endroits : la bobine porte KM1, les contacts aussi.",
     "<strong>Le lien n’est plus dessiné, il est écrit.</strong> Vous rencontrerez les deux façons. C’est justement l’objet de la station 8.9, sur les repères.",
-    "Le pointillé relie aussi les pôles d’un même appareil dessinés côte à côte, comme les deux pôles de l’interrupteur-sectionneur ci-dessus."
+    "Le pointillé relie aussi les pôles d’un même appareil dessinés côte à côte, comme les deux pôles de l’interrupteur-sectionneur ci-dessus, et sa poignée de commande."
   ],
 
   quiz: [

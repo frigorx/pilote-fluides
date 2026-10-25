@@ -16,21 +16,19 @@ Seule la fenêtre a changé ; aucun trait n'a bougé.
 
 | Fichier | Ce qu'il représente | Vu d'abord en |
 |---|---|---|
-| `015_inter_2.svg` | Un interrupteur | 3.1 |
+| `010_switch_1pos.svg` | Un interrupteur | 3.1 |
 | `sectionneur4.svg` | Un sectionneur (trois lames, trois barres courtes) | 3.2 |
 | `interrupteur_sectionneur_biphase.svg` | Un interrupteur-sectionneur | 3.3 |
-| `porte_fusible_bi.svg` | Un porte-fusible | 3.4 |
 | `sectionneur_fusible_bi.svg` | Un sectionneur porte-fusible | 3.5 |
 | `pojistka1p.svg` | Un fusible | 4.1 |
-| `disjonct-m_1fn.svg` | Un disjoncteur magnéto-thermique | 4.3 |
-| `disjonct-m_3f.svg` | Un disjoncteur moteur, trois pôles | 4.4 |
-| `ddr2.svg` | Un interrupteur différentiel | 4.5 |
+| `disjonct-m_1fn.svg` | Un disjoncteur, un pôle et neutre | 4.3 |
+| `disjonct-m_3f.svg` | Un disjoncteur, trois pôles | 4.4 |
+| `int_diff2.svg` | Un interrupteur différentiel | 4.5 |
 | `ddr3.svg` | Un disjoncteur différentiel | 4.6 |
 | `relais_therm4.svg` | Un relais thermique | 4.7 |
-| `ground1.svg` · `masse.svg` | La terre, la masse | 4.8 |
+| `terre.svg` · `masse.svg` | La terre, la masse | 4.8 |
 | `con_simple.svg` · `con_simple_nf.svg` | Contact NO, contact NF | 5.1 |
 | `bobine3.svg` | Une bobine | 5.2 |
-| `contact_relais.svg` | Un contact de relais | 5.4 |
 | `bobine_tempo_travail.svg` | Une bobine temporisée au travail | 5.5 |
 | `con_simple_tmp_t.svg` · `con_simple_tmp_r.svg` | Contacts temporisés | 5.6 |
 | `poussoir.svg` · `poussoir_nf.svg` · `commut_2_position_fixe.svg` | Boutons | 5.7 |
@@ -64,3 +62,7 @@ travailler derrière et l'autre non. C'est cette confusion-là qui se travaille.
 ## Correction du 22/10/2026 (re-audit)
 
 `015_inter_2.svg` (inverseur à trois bornes) remplacé par `010_switch_1pos.svg` (le fichier de la station 3.1) ; `ddr2.svg` (disjoncteur différentiel, avec croix) remplacé par `int_diff2.svg` (le fichier de la station 4.5) ; `ground1.svg` (nommé « Masse ») remplacé par `terre.svg` (le fichier de la station 4.8). Score, total et seuil du jeu retirés : le journal « raté, station N.M » reste.
+
+## Correction du 25/10/2026 (audit 2)
+
+`porte_fusible_bi.svg` (deux lames, barres de sectionnement et fusible : un sectionneur à fusible, quasi identique à `sectionneur_fusible_bi.svg`) est retiré du jeu et des assets : la station 3.4 montre `pojistka1p.svg`, déjà présent comme « Un fusible ». Les deux disjoncteurs (`disjonct-m_1fn.svg`, `disjonct-m_3f.svg`) portent les mêmes signes : ils ne sont plus distingués que par le nombre de pôles. `electrovanne.svg` : fond blanc remplacé par `#fffdf8`.

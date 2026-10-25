@@ -1,6 +1,6 @@
 /* ÉlectroRézo 8.7 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Version précédente : narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Voix fabriquées en Piper par le chef de chantier. */
 const NARRATION = {
 
   decouvrir: `Une simple ligne en pointillé. Elle ne conduit aucun courant, elle ne fait passer aucune
@@ -18,8 +18,8 @@ Sur un schéma, cette bobine et ces contacts ne sont presque jamais au même end
 est dans le circuit de commande, souvent sous une autre tension que la puissance. Les contacts sont dans le circuit de
 puissance, parfois deux pages plus loin.
 Alors comment dire qu'ils sont liés ? Par le pointillé. Ce trait interrompu veut dire : ce n'est
-pas un fil, c'est une liaison mécanique. Ces pièces bougent ensemble, elles sont montées sur le
-même axe.
+pas un fil, c'est une liaison mécanique. Ces pièces bougent ensemble, elles sont montées sur la
+même pièce.
 Et voilà le réflexe que je vous demande de prendre. Quand vous voyez un pointillé sur un
 schéma, arrêtez-vous. Il vous dit : cherchez plus loin, il y a un morceau de cet appareil
 ailleurs.

@@ -39,10 +39,10 @@ pas dans ce qu'ils font, mais dans ce qu'il leur faut pour démarrer.`,
 
   representer: `Sur un plan, c'est le même rond marqué M, mais avec deux traits qui arrivent au lieu de trois,
 et le signe un, suivi d'une petite vague : une phase, en courant alternatif.
-Le condensateur se dessine par deux traits parallèles, courts et épais, qui ne se touchent pas.
+Le condensateur se dessine par deux traits parallèles, courts, qui ne se touchent pas.
 Ce vide entre les deux traits, c'est l'isolant du condensateur : deux plaques face à face, jamais
 en contact.
-Son repère commence par C, et sa capacité en microfarads est écrite à côté. Jamais dans le
+Son repère commence par C, et sa capacité en microfarads est écrite à côté. Pas dans le
 dessin.
 Maintenant, deux choses très pratiques pour finir, et je veux qu'elles vous restent.
 La première : pour inverser le sens d'un moteur monophasé, on inverse les bornes de

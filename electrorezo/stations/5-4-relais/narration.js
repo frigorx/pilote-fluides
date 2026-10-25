@@ -1,6 +1,6 @@
 /* ÉlectroRézo 5.4 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Écrits directement dans ce registre.
-   Non validés, aucun MP3 fabriqué. */
+   Les MP3 d'un temps dont le texte change sont supprimés, puis refaits en Piper. */
 const NARRATION = {
 
   decouvrir: `Vous savez déjà tout de cet appareil, et vous ne le savez pas encore.
@@ -24,9 +24,9 @@ Adapter, enfin. La sortie d'un automate ne peut pas alimenter directement une gr
 contacteur. On met un relais entre les deux.
 Et maintenant, une variante qui mérite votre attention, parce qu'elle fait exception à tout ce
 que je vous ai dit sur les relais. Le relais bistable, qu'on appelle aussi télérupteur.
-Une impulsion : il bascule et il y reste. L'impulsion suivante : il revient. C'est ce qu'il y a
-dans votre cage d'escalier — vous appuyez, ça s'allume et ça reste allumé.
-Retenez-le, parce que c'est le seul relais qui garde sa position sans qu'on
+Une impulsion : il bascule et il y reste. L'impulsion suivante : il revient. C'est ce qu'on trouve
+dans un couloir ou une pièce à plusieurs boutons : vous appuyez, ça s'allume et ça reste allumé.
+Retenez-le, parce que c'est le relais qui fait exception : il garde sa position sans qu'on
 l'alimente.`,
 
   manipuler: `Les trois questions, pour un relais ordinaire — pas pour le bistable.

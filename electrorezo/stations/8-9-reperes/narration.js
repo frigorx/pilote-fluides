@@ -1,6 +1,6 @@
 /* ÉlectroRézo 8.9 — textes POUR L'OREILLE, registre « professeur particulier ».
    Voir DOCTRINE-VOIX-PROF-PRIVE.md. Version précédente : narration-v1.js.
-   Non validés, aucun MP3 fabriqué. */
+   Voix fabriquées en Piper par le chef de chantier. */
 const NARRATION = {
 
   decouvrir: `Nous quittons les dessins pour les lettres — les vraies.
@@ -8,7 +8,7 @@ Sur un plan, chaque appareil porte un repère : une lettre, un chiffre. Q1, KM2,
 Ce ne sont pas des noms choisis au hasard par le dessinateur pour s'y retrouver. Ce sont des
 codes, et ils appartiennent à la même écriture que les symboles.`,
 
-  comprendre: `La lettre dit la famille de l'appareil. Q, ce sont les sectionneurs, les
+  comprendre: `La lettre dit la famille de l'appareil. Voici les lettres usuelles en France. Q, ce sont les sectionneurs, les
 disjoncteurs, les interrupteurs de tête. KM, c'est un contacteur. F, c'est une protection : fusible,
 relais thermique. S, c'est un organe de commande manuelle : bouton, sélecteur. H, c'est un
 voyant ou une signalisation. M, c'est un moteur. Et X, c'est un bornier.
@@ -33,7 +33,8 @@ l'appareil qu'il désigne. Un exemple est déjà fait pour vous : F1, le fusible
 La lettre dit la famille. Le chiffre, vous pouvez l'ignorer
 pour cet exercice.`,
 
-  representer: `Sur un plan bien fait, le repère est toujours écrit du même côté du symbole, à la même
+  representer: `Sur le dessin, une borne : un petit cercle ouvert. Un bornier porte un repère comme les autres appareils, X1, X2, et ses bornes sont numérotées une par une.
+Sur un plan bien fait, le repère est en général écrit du même côté du symbole, à la même
 distance.
 Ce n'est pas de la coquetterie de dessinateur. C'est ce qui rend un dossier lisible par
 quelqu'un qui ne l'a pas dessiné — c'est-à-dire par vous, dans dix ans, sur une machine dont
